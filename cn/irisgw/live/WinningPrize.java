@@ -18,7 +18,6 @@ import com.google.protobuf.UnknownFieldSet;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
-import java.util.List;
 
 /* loaded from: source-6737240-dex2jar.jar:cn/irisgw/live/WinningPrize.class */
 public final class WinningPrize extends GeneratedMessageV3 implements WinningPrizeOrBuilder {
@@ -48,8 +47,8 @@ public final class WinningPrize extends GeneratedMessageV3 implements WinningPri
     private volatile Object userName_;
     private static final WinningPrize DEFAULT_INSTANCE = new WinningPrize();
     private static final Parser<WinningPrize> PARSER = new AbstractParser<WinningPrize>() { // from class: cn.irisgw.live.WinningPrize.1
-        @Override // com.google.protobuf.Parser
-        public WinningPrize parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        /* renamed from: parsePartialFrom */
+        public WinningPrize m8168parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             return new WinningPrize(codedInputStream, extensionRegistryLite);
         }
     };
@@ -118,14 +117,14 @@ public final class WinningPrize extends GeneratedMessageV3 implements WinningPri
 
         public Builder addAllChatFrameBorderColor(Iterable<String> iterable) {
             ensureChatFrameBorderColorIsMutable();
-            AbstractMessageLite.Builder.addAll((Iterable) iterable, (List) this.chatFrameBorderColor_);
+            AbstractMessageLite.Builder.addAll(iterable, this.chatFrameBorderColor_);
             onChanged();
             return this;
         }
 
         public Builder addAllChatFrameFrameColor(Iterable<String> iterable) {
             ensureChatFrameFrameColorIsMutable();
-            AbstractMessageLite.Builder.addAll((Iterable) iterable, (List) this.chatFrameFrameColor_);
+            AbstractMessageLite.Builder.addAll(iterable, this.chatFrameFrameColor_);
             onChanged();
             return this;
         }
@@ -133,7 +132,7 @@ public final class WinningPrize extends GeneratedMessageV3 implements WinningPri
         public Builder addChatFrameBorderColor(String str) {
             if (str != null) {
                 ensureChatFrameBorderColorIsMutable();
-                this.chatFrameBorderColor_.add((LazyStringList) str);
+                this.chatFrameBorderColor_.add(str);
                 onChanged();
                 return this;
             }
@@ -154,7 +153,7 @@ public final class WinningPrize extends GeneratedMessageV3 implements WinningPri
         public Builder addChatFrameFrameColor(String str) {
             if (str != null) {
                 ensureChatFrameFrameColorIsMutable();
-                this.chatFrameFrameColor_.add((LazyStringList) str);
+                this.chatFrameFrameColor_.add(str);
                 onChanged();
                 return this;
             }
@@ -172,22 +171,22 @@ public final class WinningPrize extends GeneratedMessageV3 implements WinningPri
             throw null;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: addRepeatedField */
+        public Builder m8170addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.addRepeatedField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public WinningPrize build() {
-            WinningPrize buildPartial = buildPartial();
-            if (buildPartial.isInitialized()) {
-                return buildPartial;
+        /* renamed from: build */
+        public WinningPrize m8172build() {
+            WinningPrize m8174buildPartial = m8174buildPartial();
+            if (m8174buildPartial.isInitialized()) {
+                return m8174buildPartial;
             }
-            throw newUninitializedMessageException((Message) buildPartial);
+            throw newUninitializedMessageException(m8174buildPartial);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public WinningPrize buildPartial() {
+        /* renamed from: buildPartial */
+        public WinningPrize m8174buildPartial() {
             WinningPrize winningPrize = new WinningPrize(this);
             winningPrize.count_ = this.count_;
             winningPrize.goodsId_ = this.goodsId_;
@@ -212,8 +211,8 @@ public final class WinningPrize extends GeneratedMessageV3 implements WinningPri
             return winningPrize;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public Builder clear() {
+        /* renamed from: clear */
+        public Builder m8178clear() {
             super.clear();
             this.count_ = 0;
             this.goodsId_ = 0;
@@ -263,8 +262,8 @@ public final class WinningPrize extends GeneratedMessageV3 implements WinningPri
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+        /* renamed from: clearField */
+        public Builder m8180clearField(Descriptors.FieldDescriptor fieldDescriptor) {
             return (Builder) super.clearField(fieldDescriptor);
         }
 
@@ -286,8 +285,8 @@ public final class WinningPrize extends GeneratedMessageV3 implements WinningPri
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+        /* renamed from: clearOneof */
+        public Builder m8183clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
             return (Builder) super.clearOneof(oneofDescriptor);
         }
 
@@ -309,15 +308,14 @@ public final class WinningPrize extends GeneratedMessageV3 implements WinningPri
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder m8189clone() {
+            return (Builder) super.clone();
         }
 
         @Override // cn.irisgw.live.WinningPrizeOrBuilder
         public String getChatFrameBorderColor(int i) {
-            return this.chatFrameBorderColor_.get(i);
+            return (String) this.chatFrameBorderColor_.get(i);
         }
 
         @Override // cn.irisgw.live.WinningPrizeOrBuilder
@@ -331,13 +329,14 @@ public final class WinningPrize extends GeneratedMessageV3 implements WinningPri
         }
 
         @Override // cn.irisgw.live.WinningPrizeOrBuilder
-        public ProtocolStringList getChatFrameBorderColorList() {
+        /* renamed from: getChatFrameBorderColorList */
+        public ProtocolStringList mo8159getChatFrameBorderColorList() {
             return this.chatFrameBorderColor_.getUnmodifiableView();
         }
 
         @Override // cn.irisgw.live.WinningPrizeOrBuilder
         public String getChatFrameFrameColor(int i) {
-            return this.chatFrameFrameColor_.get(i);
+            return (String) this.chatFrameFrameColor_.get(i);
         }
 
         @Override // cn.irisgw.live.WinningPrizeOrBuilder
@@ -351,7 +350,8 @@ public final class WinningPrize extends GeneratedMessageV3 implements WinningPri
         }
 
         @Override // cn.irisgw.live.WinningPrizeOrBuilder
-        public ProtocolStringList getChatFrameFrameColorList() {
+        /* renamed from: getChatFrameFrameColorList */
+        public ProtocolStringList mo8160getChatFrameFrameColorList() {
             return this.chatFrameFrameColor_.getUnmodifiableView();
         }
 
@@ -382,12 +382,11 @@ public final class WinningPrize extends GeneratedMessageV3 implements WinningPri
             return this.count_;
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public WinningPrize getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public WinningPrize m8191getDefaultInstanceForType() {
             return WinningPrize.getDefaultInstance();
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
         public Descriptors.Descriptor getDescriptorForType() {
             return LiveConstants.internal_static_cn_irisgw_live_WinningPrize_descriptor;
         }
@@ -512,12 +511,10 @@ public final class WinningPrize extends GeneratedMessageV3 implements WinningPri
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_WinningPrize_fieldAccessorTable.ensureFieldAccessorsInitialized(WinningPrize.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             return true;
         }
@@ -579,18 +576,18 @@ public final class WinningPrize extends GeneratedMessageV3 implements WinningPri
             if (winningPrize.getUid() != 0) {
                 setUid(winningPrize.getUid());
             }
-            mergeUnknownFields(winningPrize.unknownFields);
+            m8200mergeUnknownFields(winningPrize.unknownFields);
             onChanged();
             return this;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+        /* renamed from: mergeFrom */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
         */
-        public cn.irisgw.live.WinningPrize.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+        public cn.irisgw.live.WinningPrize.Builder m8197mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
             /*
                 r4 = this;
                 r0 = 0
@@ -635,11 +632,11 @@ public final class WinningPrize extends GeneratedMessageV3 implements WinningPri
                 r0 = r6
                 throw r0
             */
-            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.WinningPrize.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.WinningPrize$Builder");
+            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.WinningPrize.Builder.m8197mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.WinningPrize$Builder");
         }
 
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder mergeFrom(Message message) {
+        /* renamed from: mergeFrom */
+        public Builder m8196mergeFrom(Message message) {
             if (message instanceof WinningPrize) {
                 return mergeFrom((WinningPrize) message);
             }
@@ -647,15 +644,15 @@ public final class WinningPrize extends GeneratedMessageV3 implements WinningPri
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: mergeUnknownFields */
+        public final Builder m8200mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.mergeUnknownFields(unknownFieldSet);
         }
 
         public Builder setChatFrameBorderColor(int i, String str) {
             if (str != null) {
                 ensureChatFrameBorderColorIsMutable();
-                this.chatFrameBorderColor_.set(i, (int) str);
+                this.chatFrameBorderColor_.set(i, str);
                 onChanged();
                 return this;
             }
@@ -665,7 +662,7 @@ public final class WinningPrize extends GeneratedMessageV3 implements WinningPri
         public Builder setChatFrameFrameColor(int i, String str) {
             if (str != null) {
                 ensureChatFrameFrameColorIsMutable();
-                this.chatFrameFrameColor_.set(i, (int) str);
+                this.chatFrameFrameColor_.set(i, str);
                 onChanged();
                 return this;
             }
@@ -716,8 +713,8 @@ public final class WinningPrize extends GeneratedMessageV3 implements WinningPri
             throw null;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: setField */
+        public Builder m8202setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.setField(fieldDescriptor, obj);
         }
 
@@ -765,8 +762,8 @@ public final class WinningPrize extends GeneratedMessageV3 implements WinningPri
             throw null;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+        /* renamed from: setRepeatedField */
+        public Builder m8204setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
             return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
         }
 
@@ -795,8 +792,8 @@ public final class WinningPrize extends GeneratedMessageV3 implements WinningPri
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: setUnknownFields */
+        public final Builder m8206setUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.setUnknownFields(unknownFieldSet);
         }
 
@@ -879,7 +876,7 @@ public final class WinningPrize extends GeneratedMessageV3 implements WinningPri
                                 this.chatFrameFrameColor_ = new LazyStringArrayList();
                                 z4 = z2 | true;
                             }
-                            this.chatFrameFrameColor_.add((LazyStringList) readStringRequireUtf8);
+                            this.chatFrameFrameColor_.add(readStringRequireUtf8);
                             z2 = z4;
                             continue;
                         case 82:
@@ -889,7 +886,7 @@ public final class WinningPrize extends GeneratedMessageV3 implements WinningPri
                                 this.chatFrameBorderColor_ = new LazyStringArrayList();
                                 z5 = z2 | true;
                             }
-                            this.chatFrameBorderColor_.add((LazyStringList) readStringRequireUtf82);
+                            this.chatFrameBorderColor_.add(readStringRequireUtf82);
                             z2 = z5;
                             continue;
                         case 88:
@@ -944,80 +941,79 @@ public final class WinningPrize extends GeneratedMessageV3 implements WinningPri
     }
 
     public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
+        return DEFAULT_INSTANCE.m8167toBuilder();
     }
 
     public static Builder newBuilder(WinningPrize winningPrize) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(winningPrize);
+        return DEFAULT_INSTANCE.m8167toBuilder().mergeFrom(winningPrize);
     }
 
     public static WinningPrize parseDelimitedFrom(InputStream inputStream) throws IOException {
-        return (WinningPrize) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
     }
 
     public static WinningPrize parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (WinningPrize) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static WinningPrize parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString);
+        return (WinningPrize) PARSER.parseFrom(byteString);
     }
 
     public static WinningPrize parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString, extensionRegistryLite);
+        return (WinningPrize) PARSER.parseFrom(byteString, extensionRegistryLite);
     }
 
     public static WinningPrize parseFrom(CodedInputStream codedInputStream) throws IOException {
-        return (WinningPrize) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
     }
 
     public static WinningPrize parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (WinningPrize) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
     }
 
     public static WinningPrize parseFrom(InputStream inputStream) throws IOException {
-        return (WinningPrize) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
     }
 
     public static WinningPrize parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (WinningPrize) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static WinningPrize parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer);
+        return (WinningPrize) PARSER.parseFrom(byteBuffer);
     }
 
     public static WinningPrize parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+        return (WinningPrize) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
     }
 
     public static WinningPrize parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr);
+        return (WinningPrize) PARSER.parseFrom(bArr);
     }
 
     public static WinningPrize parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr, extensionRegistryLite);
+        return (WinningPrize) PARSER.parseFrom(bArr, extensionRegistryLite);
     }
 
     public static Parser<WinningPrize> parser() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
         }
         if (obj instanceof WinningPrize) {
             WinningPrize winningPrize = (WinningPrize) obj;
-            return getCount() == winningPrize.getCount() && getGoodsId() == winningPrize.getGoodsId() && getGoodsName().equals(winningPrize.getGoodsName()) && getGoodsIcon().equals(winningPrize.getGoodsIcon()) && getUserName().equals(winningPrize.getUserName()) && getSource().equals(winningPrize.getSource()) && getEvent().equals(winningPrize.getEvent()) && getChatFrameIcon().equals(winningPrize.getChatFrameIcon()) && getChatFrameFrameColorList().equals(winningPrize.getChatFrameFrameColorList()) && getChatFrameBorderColorList().equals(winningPrize.getChatFrameBorderColorList()) && getUid() == winningPrize.getUid() && this.unknownFields.equals(winningPrize.unknownFields);
+            return getCount() == winningPrize.getCount() && getGoodsId() == winningPrize.getGoodsId() && getGoodsName().equals(winningPrize.getGoodsName()) && getGoodsIcon().equals(winningPrize.getGoodsIcon()) && getUserName().equals(winningPrize.getUserName()) && getSource().equals(winningPrize.getSource()) && getEvent().equals(winningPrize.getEvent()) && getChatFrameIcon().equals(winningPrize.getChatFrameIcon()) && mo8160getChatFrameFrameColorList().equals(winningPrize.mo8160getChatFrameFrameColorList()) && mo8159getChatFrameBorderColorList().equals(winningPrize.mo8159getChatFrameBorderColorList()) && getUid() == winningPrize.getUid() && this.unknownFields.equals(winningPrize.unknownFields);
         }
         return super.equals(obj);
     }
 
     @Override // cn.irisgw.live.WinningPrizeOrBuilder
     public String getChatFrameBorderColor(int i) {
-        return this.chatFrameBorderColor_.get(i);
+        return (String) this.chatFrameBorderColor_.get(i);
     }
 
     @Override // cn.irisgw.live.WinningPrizeOrBuilder
@@ -1031,13 +1027,14 @@ public final class WinningPrize extends GeneratedMessageV3 implements WinningPri
     }
 
     @Override // cn.irisgw.live.WinningPrizeOrBuilder
-    public ProtocolStringList getChatFrameBorderColorList() {
+    /* renamed from: getChatFrameBorderColorList */
+    public ProtocolStringList mo8159getChatFrameBorderColorList() {
         return this.chatFrameBorderColor_;
     }
 
     @Override // cn.irisgw.live.WinningPrizeOrBuilder
     public String getChatFrameFrameColor(int i) {
-        return this.chatFrameFrameColor_.get(i);
+        return (String) this.chatFrameFrameColor_.get(i);
     }
 
     @Override // cn.irisgw.live.WinningPrizeOrBuilder
@@ -1051,7 +1048,8 @@ public final class WinningPrize extends GeneratedMessageV3 implements WinningPri
     }
 
     @Override // cn.irisgw.live.WinningPrizeOrBuilder
-    public ProtocolStringList getChatFrameFrameColorList() {
+    /* renamed from: getChatFrameFrameColorList */
+    public ProtocolStringList mo8160getChatFrameFrameColorList() {
         return this.chatFrameFrameColor_;
     }
 
@@ -1082,8 +1080,8 @@ public final class WinningPrize extends GeneratedMessageV3 implements WinningPri
         return this.count_;
     }
 
-    @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-    public WinningPrize getDefaultInstanceForType() {
+    /* renamed from: getDefaultInstanceForType */
+    public WinningPrize m8162getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
     }
 
@@ -1158,12 +1156,10 @@ public final class WinningPrize extends GeneratedMessageV3 implements WinningPri
         return (ByteString) obj;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
     public Parser<WinningPrize> getParserForType() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public int getSerializedSize() {
         int i = this.memoizedSize;
         if (i != -1) {
@@ -1204,7 +1200,7 @@ public final class WinningPrize extends GeneratedMessageV3 implements WinningPri
         for (int i12 = 0; i12 < this.chatFrameFrameColor_.size(); i12++) {
             i11 += computeStringSizeNoTag(this.chatFrameFrameColor_.getRaw(i12));
         }
-        int size = getChatFrameFrameColorList().size();
+        int size = mo8160getChatFrameFrameColorList().size();
         int i13 = 0;
         int i14 = 0;
         while (true) {
@@ -1215,7 +1211,7 @@ public final class WinningPrize extends GeneratedMessageV3 implements WinningPri
             i13 += computeStringSizeNoTag(this.chatFrameBorderColor_.getRaw(i15));
             i14 = i15 + 1;
         }
-        int size2 = i10 + i11 + (size * 1) + i13 + (getChatFrameBorderColorList().size() * 1);
+        int size2 = i10 + i11 + (size * 1) + i13 + (mo8159getChatFrameBorderColorList().size() * 1);
         int i16 = this.uid_;
         int i17 = size2;
         if (i16 != 0) {
@@ -1253,7 +1249,6 @@ public final class WinningPrize extends GeneratedMessageV3 implements WinningPri
         return this.uid_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
     public final UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
     }
@@ -1280,7 +1275,6 @@ public final class WinningPrize extends GeneratedMessageV3 implements WinningPri
         return (ByteString) obj;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public int hashCode() {
         if (this.memoizedHashCode != 0) {
             return this.memoizedHashCode;
@@ -1288,23 +1282,21 @@ public final class WinningPrize extends GeneratedMessageV3 implements WinningPri
         int hashCode = ((((((((((((((((((((((((((((((((779 + getDescriptor().hashCode()) * 37) + 1) * 53) + getCount()) * 37) + 2) * 53) + getGoodsId()) * 37) + 3) * 53) + getGoodsName().hashCode()) * 37) + 4) * 53) + getGoodsIcon().hashCode()) * 37) + 5) * 53) + getUserName().hashCode()) * 37) + 6) * 53) + getSource().hashCode()) * 37) + 7) * 53) + getEvent().hashCode()) * 37) + 8) * 53) + getChatFrameIcon().hashCode();
         int i = hashCode;
         if (getChatFrameFrameColorCount() > 0) {
-            i = (((hashCode * 37) + 9) * 53) + getChatFrameFrameColorList().hashCode();
+            i = (((hashCode * 37) + 9) * 53) + mo8160getChatFrameFrameColorList().hashCode();
         }
         int i2 = i;
         if (getChatFrameBorderColorCount() > 0) {
-            i2 = (((i * 37) + 10) * 53) + getChatFrameBorderColorList().hashCode();
+            i2 = (((i * 37) + 10) * 53) + mo8159getChatFrameBorderColorList().hashCode();
         }
         int uid = (((((i2 * 37) + 11) * 53) + getUid()) * 29) + this.unknownFields.hashCode();
         this.memoizedHashCode = uid;
         return uid;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
         return LiveConstants.internal_static_cn_irisgw_live_WinningPrize_fieldAccessorTable.ensureFieldAccessorsInitialized(WinningPrize.class, Builder.class);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
     public final boolean isInitialized() {
         byte b = this.memoizedIsInitialized;
         if (b == 1) {
@@ -1317,28 +1309,26 @@ public final class WinningPrize extends GeneratedMessageV3 implements WinningPri
         return true;
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder newBuilderForType() {
+    /* renamed from: newBuilderForType */
+    public Builder m8165newBuilderForType() {
         return newBuilder();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.protobuf.GeneratedMessageV3
-    public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+    /* renamed from: newBuilderForType */
+    public Builder m8164newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
         return new Builder(builderParent);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
         return new WinningPrize();
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder toBuilder() {
+    /* renamed from: toBuilder */
+    public Builder m8167toBuilder() {
         return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
         int i;
         int i2 = this.count_;

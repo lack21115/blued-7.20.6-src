@@ -20,15 +20,15 @@ public interface IAIDLInvoke extends IInterface {
             public static IAIDLInvoke b;
 
             /* renamed from: a  reason: collision with root package name */
-            private IBinder f22673a;
+            private IBinder f9065a;
 
             a(IBinder iBinder) {
-                this.f22673a = iBinder;
+                this.f9065a = iBinder;
             }
 
             @Override // android.os.IInterface
             public IBinder asBinder() {
-                return this.f22673a;
+                return this.f9065a;
             }
 
             @Override // com.huawei.hms.core.aidl.IAIDLInvoke
@@ -43,7 +43,7 @@ public interface IAIDLInvoke extends IInterface {
                         obtain.writeInt(0);
                     }
                     obtain.writeStrongBinder(iAIDLCallback != null ? iAIDLCallback.asBinder() : null);
-                    if (this.f22673a.transact(2, obtain, null, 1) || Stub.getDefaultImpl() == null) {
+                    if (this.f9065a.transact(2, obtain, null, 1) || Stub.getDefaultImpl() == null) {
                         return;
                     }
                     Stub.getDefaultImpl().asyncCall(dataBuffer, iAIDLCallback);
@@ -64,7 +64,7 @@ public interface IAIDLInvoke extends IInterface {
                     } else {
                         obtain.writeInt(0);
                     }
-                    if (this.f22673a.transact(1, obtain, obtain2, 0) || Stub.getDefaultImpl() == null) {
+                    if (this.f9065a.transact(1, obtain, obtain2, 0) || Stub.getDefaultImpl() == null) {
                         obtain2.readException();
                     } else {
                         Stub.getDefaultImpl().syncCall(dataBuffer);

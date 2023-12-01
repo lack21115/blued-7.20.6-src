@@ -26,11 +26,11 @@ import java.util.ArrayList;
 public class FollowedAndFansFragment extends BaseFragment implements FollowAndFansSelectedTabObserver.IFollowAndFansSelectedTabObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f33855a;
+    private Context f20164a;
     private View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private View f33856c;
+    private View f20165c;
     private ImageView d;
     private ImageView e;
     private ViewPager f;
@@ -74,9 +74,9 @@ public class FollowedAndFansFragment extends BaseFragment implements FollowAndFa
         @Override // androidx.viewpager.widget.PagerAdapter
         public CharSequence getPageTitle(int i) {
             if (FollowedAndFansFragment.this.d()) {
-                return new String[]{FollowedAndFansFragment.this.f33855a.getResources().getString(2131886495), FollowedAndFansFragment.this.f33855a.getResources().getString(R.string.fans), FollowedAndFansFragment.this.f33855a.getResources().getString(2131888205)}[i];
+                return new String[]{FollowedAndFansFragment.this.f20164a.getResources().getString(2131886495), FollowedAndFansFragment.this.f20164a.getResources().getString(R.string.fans), FollowedAndFansFragment.this.f20164a.getResources().getString(2131888205)}[i];
             }
-            String[] strArr = {FollowedAndFansFragment.this.f33855a.getResources().getString(2131886495), FollowedAndFansFragment.this.f33855a.getResources().getString(R.string.fans)};
+            String[] strArr = {FollowedAndFansFragment.this.f20164a.getResources().getString(2131886495), FollowedAndFansFragment.this.f20164a.getResources().getString(R.string.fans)};
             return i < 2 ? strArr[i] : strArr[1];
         }
     }
@@ -100,12 +100,12 @@ public class FollowedAndFansFragment extends BaseFragment implements FollowAndFa
 
     private void b() {
         View findViewById = this.b.findViewById(2131370694);
-        this.f33856c = findViewById;
+        this.f20165c = findViewById;
         findViewById.setVisibility(0);
-        this.d = (ImageView) this.f33856c.findViewById(2131363120);
-        this.e = (ImageView) this.f33856c.findViewById(2131363126);
+        this.d = (ImageView) this.f20165c.findViewById(2131363120);
+        this.e = (ImageView) this.f20165c.findViewById(2131363126);
         this.d.setVisibility(0);
-        this.d.setImageDrawable(BluedSkinUtils.b(this.f33855a, 2131233902));
+        this.d.setImageDrawable(BluedSkinUtils.b(this.f20164a, 2131233902));
         this.e.setVisibility(4);
         this.d.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.FollowedAndFansFragment.1
             @Override // android.view.View.OnClickListener
@@ -139,7 +139,7 @@ public class FollowedAndFansFragment extends BaseFragment implements FollowAndFa
         MyAdapter myAdapter = new MyAdapter(getChildFragmentManager());
         this.j = myAdapter;
         this.f.setAdapter(myAdapter);
-        ((TabPageIndicatorWithDot) this.b.findViewById(2131373299)).setViewPager(this.f);
+        ((TabPageIndicatorWithDot) this.b.findViewById(R.id.vp_indicator)).setViewPager(this.f);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -158,9 +158,8 @@ public class FollowedAndFansFragment extends BaseFragment implements FollowAndFa
     public void b(int i) {
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.f33855a = getActivity();
+        this.f20164a = getActivity();
         View view = this.b;
         if (view == null) {
             this.b = layoutInflater.inflate(R.layout.fragment_followed_and_follower, viewGroup, false);
@@ -175,13 +174,11 @@ public class FollowedAndFansFragment extends BaseFragment implements FollowAndFa
         return this.b;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
         FollowAndFansSelectedTabObserver.a().b(this);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onViewCreated(View view, Bundle bundle) {
         super.onViewCreated(view, bundle);
     }

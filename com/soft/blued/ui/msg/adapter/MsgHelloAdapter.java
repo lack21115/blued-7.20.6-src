@@ -21,23 +21,24 @@ import com.soft.blued.ui.find.model.UserFindResult;
 import com.soft.blued.ui.msg.model.MsgSourceEntity;
 import com.soft.blued.ui.user.fragment.UserInfoFragmentNew;
 import com.soft.blued.utils.StringUtils;
+import com.xiaomi.mipush.sdk.Constants;
 import java.util.List;
 
 /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/msg/adapter/MsgHelloAdapter.class */
 public class MsgHelloAdapter extends BaseQuickAdapter<UserFindResult, BaseViewHolder> {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f32174a;
+    private Context f18484a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private IRequestHost f32175c;
+    private IRequestHost f18485c;
 
     public MsgHelloAdapter(IRequestHost iRequestHost, Context context) {
         super(R.layout.item_msg_hello, null);
         this.b = "";
-        this.f32174a = context;
-        this.f32175c = iRequestHost;
+        this.f18484a = context;
+        this.f18485c = iRequestHost;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -54,7 +55,7 @@ public class MsgHelloAdapter extends BaseQuickAdapter<UserFindResult, BaseViewHo
         logData2.from = "msg_recommend";
         logData2.is_hello = "1";
         logData2.target_uid = userFindResult.uid;
-        UserInfoFragmentNew.a(this.f32174a, userFindResult, "msg_hello", userFindResult.live > 0, imageView, logData2, new MsgSourceEntity(MessageProtos.StrangerSource.APPRECIATE_CALL_SHORT, ""));
+        UserInfoFragmentNew.a(this.f18484a, userFindResult, "msg_hello", userFindResult.live > 0, imageView, logData2, new MsgSourceEntity(MessageProtos.StrangerSource.APPRECIATE_CALL_SHORT, ""));
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -63,17 +64,17 @@ public class MsgHelloAdapter extends BaseQuickAdapter<UserFindResult, BaseViewHo
     public void convert(BaseViewHolder baseViewHolder, final UserFindResult userFindResult) {
         if (baseViewHolder != null) {
             final ImageView imageView = (ImageView) baseViewHolder.getView(2131364232);
-            ImageView imageView2 = (ImageView) baseViewHolder.getView(2131364720);
+            ImageView imageView2 = (ImageView) baseViewHolder.getView(R.id.img_verify);
             userFindResult.is_call = 1;
-            ImageLoader.a(this.f32175c, userFindResult.avatar).b(2131237310).c().a(imageView);
-            UserInfoHelper.a(imageView2, userFindResult.vbadge, 3, 1, this.f32174a.getResources().getColor(2131101191));
+            ImageLoader.a(this.f18485c, userFindResult.avatar).b(2131237310).c().a(imageView);
+            UserInfoHelper.a(imageView2, userFindResult.vbadge, 3, 1, this.f18484a.getResources().getColor(2131101191));
             baseViewHolder.setText(2131372046, userFindResult.name);
-            View view = baseViewHolder.getView(2131369318);
+            View view = baseViewHolder.getView(R.id.rl_header);
             ConstraintLayout.LayoutParams layoutParams = (ConstraintLayout.LayoutParams) view.getLayoutParams();
             if (getHeaderLayoutCount() <= 1 || baseViewHolder.getAdapterPosition() != 0) {
                 layoutParams.leftMargin = 0;
             } else {
-                layoutParams.leftMargin = DensityUtils.a(this.f32174a, 9.0f);
+                layoutParams.leftMargin = DensityUtils.a(this.f18484a, 9.0f);
             }
             view.setLayoutParams(layoutParams);
             imageView.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.adapter.-$$Lambda$MsgHelloAdapter$TOqt7UAhPgrthrkw8tFvDUDUlsw
@@ -112,7 +113,7 @@ public class MsgHelloAdapter extends BaseQuickAdapter<UserFindResult, BaseViewHo
             }
             StringBuilder sb = new StringBuilder();
             sb.append(this.b);
-            sb.append(StringUtils.d(this.b) ? "" : "-");
+            sb.append(StringUtils.d(this.b) ? "" : Constants.ACCEPT_TIME_SEPARATOR_SERVER);
             sb.append(((UserFindResult) this.mData.get(i2)).uid);
             this.b = sb.toString();
             i = i2 + 1;

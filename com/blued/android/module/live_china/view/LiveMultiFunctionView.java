@@ -42,13 +42,9 @@ import java.util.List;
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveMultiFunctionView.class */
 public class LiveMultiFunctionView extends FrameLayout implements View.OnClickListener {
     private int A;
-
-    /* renamed from: a  reason: collision with root package name */
-    public LiveEventListener f14612a;
+    public LiveEventListener a;
     private Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private LayoutInflater f14613c;
+    private LayoutInflater c;
     private View d;
     private View e;
     private View f;
@@ -90,7 +86,6 @@ public class LiveMultiFunctionView extends FrameLayout implements View.OnClickLi
             LiveMultiFunctionView.this.h.aB();
         }
 
-        @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemChildClickListener
         public void onItemChildClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
             LiveFunctionModel b = LiveMultiFunctionView.this.j.b(i);
             if (b != null) {
@@ -383,6 +378,7 @@ public class LiveMultiFunctionView extends FrameLayout implements View.OnClickLi
     }
 
     /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Type inference failed for: r1v2, types: [com.blued.android.module.live_china.view.LiveMultiFunctionView$10] */
     public void j() {
         Logger.d("LiveMultiFunctionView", "run timmer_3 ... ");
         this.k = new CountDownTimer((this.A - 3) * 60 * 1000, 1000L) { // from class: com.blued.android.module.live_china.view.LiveMultiFunctionView.10
@@ -427,8 +423,8 @@ public class LiveMultiFunctionView extends FrameLayout implements View.OnClickLi
                 if (liveMultiFunctionListener2 != null) {
                     liveMultiFunctionListener2.onClose();
                 }
-                if (LiveMultiFunctionView.this.f14612a != null) {
-                    LiveMultiFunctionView.this.f14612a.onClose();
+                if (LiveMultiFunctionView.this.a != null) {
+                    LiveMultiFunctionView.this.a.onClose();
                 }
             }
 
@@ -455,13 +451,13 @@ public class LiveMultiFunctionView extends FrameLayout implements View.OnClickLi
     public void a(boolean z, RecordingOnliveFragment recordingOnliveFragment) {
         this.h = recordingOnliveFragment;
         LayoutInflater from = LayoutInflater.from(this.b);
-        this.f14613c = from;
+        this.c = from;
         this.l = z;
         View inflate = from.inflate(z ? R.layout.live_multi_function_view_land : R.layout.live_multi_function_view, this);
         this.d = inflate;
         this.e = inflate.findViewById(R.id.ll_content);
         this.f = this.d.findViewById(R.id.live_multi_function_layer);
-        this.g = (RecyclerView) this.d.findViewById(R.id.rv_function_list);
+        this.g = this.d.findViewById(R.id.rv_function_list);
         this.g.setLayoutManager(new GridLayoutManager(this.b, 4));
         LiveFunctionAdapter liveFunctionAdapter = new LiveFunctionAdapter(getContext());
         this.j = liveFunctionAdapter;
@@ -601,15 +597,15 @@ public class LiveMultiFunctionView extends FrameLayout implements View.OnClickLi
     }
 
     public void setFlashLightBtnState(boolean z) {
-        LiveFunctionModel a2 = this.j.a(3);
-        if (a2 == null) {
+        LiveFunctionModel a = this.j.a(3);
+        if (a == null) {
             return;
         }
         this.x = z;
         if (z) {
-            a2.icon = R.drawable.flash_light_open;
+            a.icon = R.drawable.flash_light_open;
         } else {
-            a2.icon = R.drawable.flash_light_close;
+            a.icon = R.drawable.flash_light_close;
         }
         this.j.notifyDataSetChanged();
     }
@@ -629,19 +625,19 @@ public class LiveMultiFunctionView extends FrameLayout implements View.OnClickLi
     }
 
     public void setLiveEventListener(LiveEventListener liveEventListener) {
-        this.f14612a = liveEventListener;
+        this.a = liveEventListener;
     }
 
     public void setMirrorBtnState(boolean z) {
-        LiveFunctionModel a2 = this.j.a(2);
-        if (a2 == null) {
+        LiveFunctionModel a = this.j.a(2);
+        if (a == null) {
             return;
         }
         this.y = z;
         if (z) {
-            a2.icon = R.drawable.live_mirror_open;
+            a.icon = R.drawable.live_mirror_open;
         } else {
-            a2.icon = R.drawable.live_mirror_close;
+            a.icon = R.drawable.live_mirror_close;
         }
         this.j.notifyDataSetChanged();
     }

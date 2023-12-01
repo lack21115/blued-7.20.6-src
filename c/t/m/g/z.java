@@ -6,12 +6,12 @@ import java.util.Arrays;
 public class z {
 
     /* renamed from: a  reason: collision with root package name */
-    public double[] f4069a = {0.0d, 0.0d, 0.0d};
+    public double[] f4021a = {0.0d, 0.0d, 0.0d};
     public double[] b = {0.0d, 0.0d, 0.0d};
 
     public final double a(double[][] dArr, int i, int i2) {
         int i3;
-        Arrays.fill(this.f4069a, 0.0d);
+        Arrays.fill(this.f4021a, 0.0d);
         Arrays.fill(this.b, 0.0d);
         int i4 = (i + i2) / 2;
         int i5 = i;
@@ -25,7 +25,7 @@ public class z {
                 int i8 = i7;
                 if (i8 < 3) {
                     if (i6 < i4) {
-                        double[] dArr2 = this.f4069a;
+                        double[] dArr2 = this.f4021a;
                         dArr2[i8] = dArr2[i8] + dArr[i8 + 0][i6];
                     }
                     double[] dArr3 = this.b;
@@ -36,12 +36,12 @@ public class z {
             i5 = i6 + 1;
         }
         for (i3 = 0; i3 < 3; i3++) {
-            double[] dArr4 = this.f4069a;
+            double[] dArr4 = this.f4021a;
             dArr4[i3] = dArr4[i3] / (i4 - i);
             double[] dArr5 = this.b;
             dArr5[i3] = dArr5[i3] / (i2 - i);
         }
-        return Math.acos(h3.a(this.f4069a, this.b) / (h3.c(this.f4069a) * h3.c(this.b)));
+        return Math.acos(h3.a(this.f4021a, this.b) / (h3.c(this.f4021a) * h3.c(this.b)));
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:13:0x0062, code lost:

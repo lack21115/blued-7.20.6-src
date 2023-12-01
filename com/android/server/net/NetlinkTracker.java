@@ -33,7 +33,7 @@ public class NetlinkTracker extends BaseNetworkObserver {
     private void maybeLog(String str, String str2, LinkAddress linkAddress) {
     }
 
-    @Override // com.android.server.net.BaseNetworkObserver, android.net.INetworkManagementEventObserver
+    @Override // com.android.server.net.BaseNetworkObserver
     public void addressRemoved(String str, LinkAddress linkAddress) {
         boolean removeLinkAddress;
         if (this.mInterfaceName.equals(str)) {
@@ -47,7 +47,7 @@ public class NetlinkTracker extends BaseNetworkObserver {
         }
     }
 
-    @Override // com.android.server.net.BaseNetworkObserver, android.net.INetworkManagementEventObserver
+    @Override // com.android.server.net.BaseNetworkObserver
     public void addressUpdated(String str, LinkAddress linkAddress) {
         boolean addLinkAddress;
         if (this.mInterfaceName.equals(str)) {
@@ -77,7 +77,7 @@ public class NetlinkTracker extends BaseNetworkObserver {
         return linkProperties;
     }
 
-    @Override // com.android.server.net.BaseNetworkObserver, android.net.INetworkManagementEventObserver
+    @Override // com.android.server.net.BaseNetworkObserver
     public void interfaceDnsServerInfo(String str, long j, String[] strArr) {
         if (this.mInterfaceName.equals(str)) {
             maybeLog("interfaceDnsServerInfo", Arrays.toString(strArr));
@@ -90,7 +90,7 @@ public class NetlinkTracker extends BaseNetworkObserver {
         }
     }
 
-    @Override // com.android.server.net.BaseNetworkObserver, android.net.INetworkManagementEventObserver
+    @Override // com.android.server.net.BaseNetworkObserver
     public void routeRemoved(RouteInfo routeInfo) {
         boolean removeRoute;
         if (this.mInterfaceName.equals(routeInfo.getInterface())) {
@@ -104,7 +104,7 @@ public class NetlinkTracker extends BaseNetworkObserver {
         }
     }
 
-    @Override // com.android.server.net.BaseNetworkObserver, android.net.INetworkManagementEventObserver
+    @Override // com.android.server.net.BaseNetworkObserver
     public void routeUpdated(RouteInfo routeInfo) {
         boolean addRoute;
         if (this.mInterfaceName.equals(routeInfo.getInterface())) {

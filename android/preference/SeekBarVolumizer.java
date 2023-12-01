@@ -16,7 +16,6 @@ import android.preference.VolumePreference;
 import android.provider.Settings;
 import android.util.Log;
 import android.widget.SeekBar;
-import com.android.internal.R;
 
 /* loaded from: source-9557208-dex2jar.jar:android/preference/SeekBarVolumizer.class */
 public class SeekBarVolumizer implements SeekBar.OnSeekBarChangeListener, Handler.Callback {
@@ -160,7 +159,7 @@ public class SeekBarVolumizer implements SeekBar.OnSeekBarChangeListener, Handle
             this.mRingerMode = this.mAudioManager.getRingerModeInternal();
         }
         this.mMaxStreamVolume = this.mAudioManager.getStreamMaxVolume(this.mStreamType);
-        this.mVoiceCapable = context.getResources().getBoolean(R.bool.config_voice_capable);
+        this.mVoiceCapable = context.getResources().getBoolean(17956958);
         this.mCallback = callback;
         this.mOriginalStreamVolume = this.mAudioManager.getStreamVolume(this.mStreamType);
         this.mMuted = this.mAudioManager.isStreamMute(this.mStreamType);

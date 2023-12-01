@@ -15,18 +15,18 @@ public class z {
     public final Handler b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final f f40192c;
+    private final f f26501c;
     private final HashMap<String, ArrayList<Object>> d = new HashMap<>();
 
     /* renamed from: a  reason: collision with root package name */
-    public final HandlerThread f40191a = new HandlerThread("db-accelerator");
+    public final HandlerThread f26500a = new HandlerThread("db-accelerator");
     private final HashMap<String, Object> e = new HashMap<>();
     private final af f = new af();
 
     public z(f fVar) {
-        this.f40192c = fVar;
-        this.f40191a.start();
-        this.b = new Handler(this.f40191a.getLooper()) { // from class: com.tencent.txcopyrightedmedia.impl.utils.z.1
+        this.f26501c = fVar;
+        this.f26500a.start();
+        this.b = new Handler(this.f26500a.getLooper()) { // from class: com.tencent.txcopyrightedmedia.impl.utils.z.1
             @Override // android.os.Handler
             public final void handleMessage(Message message) {
                 switch (message.what) {
@@ -42,7 +42,7 @@ public class z {
                         z.this.f.a();
                         z.this.e.clear();
                         z.this.f.b();
-                        z.this.f40191a.quit();
+                        z.this.f26500a.quit();
                         return;
                     case 102:
                         if (message.obj instanceof String) {
@@ -66,7 +66,7 @@ public class z {
     static /* synthetic */ void a(z zVar) {
         synchronized (z.class) {
             try {
-                SQLiteDatabase writableDatabase = zVar.f40192c.getWritableDatabase();
+                SQLiteDatabase writableDatabase = zVar.f26501c.getWritableDatabase();
                 for (String str : zVar.d.keySet()) {
                     ArrayList<Object> arrayList = zVar.d.get(str);
                     if (arrayList != null && arrayList.size() != 0) {
@@ -117,7 +117,7 @@ public class z {
     }
 
     public final void a(String str, Object[] objArr) {
-        if (this.f40191a.isAlive()) {
+        if (this.f26500a.isAlive()) {
             synchronized (z.class) {
                 try {
                     ArrayList<Object> arrayList = this.d.get(str);

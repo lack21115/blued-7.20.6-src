@@ -16,9 +16,7 @@ import kotlinx.coroutines.internal.Symbol;
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/StateFlowImpl.class */
 public final class StateFlowImpl<T> extends AbstractSharedFlow<StateFlowSlot> implements CancellableFlow<T>, MutableStateFlow<T>, FusibleFlow<T> {
     private volatile /* synthetic */ Object _state;
-
-    /* renamed from: a  reason: collision with root package name */
-    private int f43432a;
+    private int a;
 
     public StateFlowImpl(Object obj) {
         this._state = obj;
@@ -35,15 +33,15 @@ public final class StateFlowImpl<T> extends AbstractSharedFlow<StateFlowSlot> im
                 return true;
             }
             this._state = obj2;
-            int i = this.f43432a;
+            int i = this.a;
             if ((i & 1) != 0) {
-                this.f43432a = i + 2;
+                this.a = i + 2;
                 return true;
             }
             int i2 = i + 1;
-            this.f43432a = i2;
+            this.a = i2;
             StateFlowSlot[] f = f();
-            Unit unit = Unit.f42314a;
+            Unit unit = Unit.a;
             while (true) {
                 StateFlowSlot[] stateFlowSlotArr = f;
                 if (stateFlowSlotArr != null) {
@@ -62,13 +60,13 @@ public final class StateFlowImpl<T> extends AbstractSharedFlow<StateFlowSlot> im
                     }
                 }
                 synchronized (this) {
-                    if (this.f43432a == i2) {
-                        this.f43432a = i2 + 1;
+                    if (this.a == i2) {
+                        this.a = i2 + 1;
                         return true;
                     }
-                    i2 = this.f43432a;
+                    i2 = this.a;
                     f = f();
-                    Unit unit2 = Unit.f42314a;
+                    Unit unit2 = Unit.a;
                 }
             }
         }
@@ -122,11 +120,11 @@ public final class StateFlowImpl<T> extends AbstractSharedFlow<StateFlowSlot> im
     public boolean a(T t, T t2) {
         T t3 = t;
         if (t == null) {
-            t3 = NullSurrogateKt.f43498a;
+            t3 = NullSurrogateKt.a;
         }
         T t4 = t2;
         if (t2 == null) {
-            t4 = NullSurrogateKt.f43498a;
+            t4 = NullSurrogateKt.a;
         }
         return b(t3, t4);
     }
@@ -154,14 +152,14 @@ public final class StateFlowImpl<T> extends AbstractSharedFlow<StateFlowSlot> im
     public void b(T t) {
         T t2 = t;
         if (t == null) {
-            t2 = NullSurrogateKt.f43498a;
+            t2 = NullSurrogateKt.a;
         }
         b(null, t2);
     }
 
     @Override // kotlinx.coroutines.flow.MutableStateFlow
     public T c() {
-        Symbol symbol = NullSurrogateKt.f43498a;
+        Symbol symbol = NullSurrogateKt.a;
         Object obj = this._state;
         Object obj2 = obj;
         if (obj == symbol) {
@@ -180,6 +178,6 @@ public final class StateFlowImpl<T> extends AbstractSharedFlow<StateFlowSlot> im
     @Override // kotlinx.coroutines.flow.FlowCollector
     public Object emit(T t, Continuation<? super Unit> continuation) {
         b((StateFlowImpl<T>) t);
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

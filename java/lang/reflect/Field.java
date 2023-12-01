@@ -67,7 +67,7 @@ public final class Field extends AccessibleObject implements Member {
 
     private native void setByte(Object obj, byte b, boolean z) throws IllegalAccessException, IllegalArgumentException;
 
-    private native void setChar(Object obj, char c2, boolean z) throws IllegalAccessException, IllegalArgumentException;
+    private native void setChar(Object obj, char c, boolean z) throws IllegalAccessException, IllegalArgumentException;
 
     private native void setDouble(Object obj, double d, boolean z) throws IllegalAccessException, IllegalArgumentException;
 
@@ -208,8 +208,8 @@ public final class Field extends AccessibleObject implements Member {
         setByte(obj, b, isAccessible());
     }
 
-    public void setChar(Object obj, char c2) throws IllegalAccessException, IllegalArgumentException {
-        setChar(obj, c2, isAccessible());
+    public void setChar(Object obj, char c) throws IllegalAccessException, IllegalArgumentException {
+        setChar(obj, c, isAccessible());
     }
 
     public void setDouble(Object obj, double d) throws IllegalAccessException, IllegalArgumentException {

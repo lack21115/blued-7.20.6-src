@@ -33,8 +33,8 @@ public final class FitemRandomGiftLoveItem extends FreedomItem {
         vh.b(R.id.rl_probability_up, this.b.is_hide() == 1 && this.b.is_percent_fly() == 1).a(R.id.iv_gift, this.b.getGoods_icon()).a(R.id.tv_name, (CharSequence) this.b.getGoods_name()).a(R.id.tv_name, true);
         if (this.b.getLight_count() > 0) {
             vh.d(R.id.tv_lighten_count).a(R.id.tv_lighten_count, (CharSequence) AppInfo.d().getString(R.string.live_random_gift_love_lighten_count, this.b.getLight_count() > 999 ? "999+" : String.valueOf(this.b.getLight_count()))).a(R.id.tv_lighten_count, LiveUtils.a(vh.b(R.id.tv_lighten_count), "#FF7B00", false)).a(R.id.iv_gift, 1.0f).b(R.id.tv_hide, this.b.is_hide() == 1);
-            String str = (String) vh.f10931a.a("highlight", "");
-            Integer full_times = (Integer) vh.f10931a.a("full_times", (String) 0);
+            String str = (String) vh.a.a("highlight", "");
+            Integer full_times = (Integer) vh.a.a("full_times", (String) 0);
             String str2 = str;
             if (!(str2 == null || str2.length() == 0)) {
                 Intrinsics.c(full_times, "full_times");
@@ -50,9 +50,9 @@ public final class FitemRandomGiftLoveItem extends FreedomItem {
         if (view == null) {
             return;
         }
-        Object a2 = vh.f10931a.a("is_horizontal", (String) false);
-        Intrinsics.c(a2, "vh.adapter.getVar(\"is_horizontal\", false)");
-        if (((Boolean) a2).booleanValue()) {
+        Object a = vh.a.a("is_horizontal", (String) false);
+        Intrinsics.c(a, "vh.adapter.getVar(\"is_horizontal\", false)");
+        if (((Boolean) a).booleanValue()) {
             view.getLayoutParams().width = -1;
         } else {
             view.getLayoutParams().width = -2;

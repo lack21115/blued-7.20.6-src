@@ -1,7 +1,6 @@
 package com.soft.blued.ui.msg.presenter;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -24,7 +23,6 @@ import com.blued.android.framework.http.parser.BluedEntityA;
 import com.blued.android.framework.ui.mvp.IFetchDataListener;
 import com.blued.android.framework.ui.mvp.MvpPresenter;
 import com.blued.android.framework.ui.xpop.XPopup;
-import com.blued.android.framework.ui.xpop.core.BasePopupView;
 import com.blued.android.framework.utils.AppUtils;
 import com.blued.android.framework.utils.Logger;
 import com.blued.android.module.chat.contract.FilterSessionListListener;
@@ -109,28 +107,28 @@ public class MsgPresenter extends MvpPresenter implements AdapterView.OnItemClic
     public static /* synthetic */ class AnonymousClass12 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f32580a;
+        static final /* synthetic */ int[] f18889a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x0036 -> B:21:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:13:0x003a -> B:19:0x001f). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:15:0x003e -> B:25:0x002a). Please submit an issue!!! */
         static {
             int[] iArr = new int[DateTodayManager.Status.values().length];
-            f32580a = iArr;
+            f18889a = iArr;
             try {
                 iArr[DateTodayManager.Status.HAVE_CHANCE.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f32580a[DateTodayManager.Status.BE_MATCHED.ordinal()] = 2;
+                f18889a[DateTodayManager.Status.BE_MATCHED.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f32580a[DateTodayManager.Status.MATCHED.ordinal()] = 3;
+                f18889a[DateTodayManager.Status.MATCHED.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f32580a[DateTodayManager.Status.COME_BACK_TOMORROW.ordinal()] = 4;
+                f18889a[DateTodayManager.Status.COME_BACK_TOMORROW.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
         }
@@ -141,9 +139,8 @@ public class MsgPresenter extends MvpPresenter implements AdapterView.OnItemClic
     class AnonymousClass7 implements FetchDataListener<List<SessionModel>> {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ MsgPresenter f32588a;
+        final /* synthetic */ MsgPresenter f18897a;
 
-        @Override // com.blued.android.chat.listener.FetchDataListener
         /* renamed from: a */
         public void onFetchData(List<SessionModel> list) {
             ChatHelperV4.a(list, true);
@@ -163,7 +160,7 @@ public class MsgPresenter extends MvpPresenter implements AdapterView.OnItemClic
                 if (i2 == 3) {
                     BluedPreferences.cM();
                     BluedPreferences.m(System.currentTimeMillis());
-                    this.f32588a.f_("showMsgBoxGuide");
+                    this.f18897a.f_("showMsgBoxGuide");
                     return;
                 }
             }
@@ -175,22 +172,21 @@ public class MsgPresenter extends MvpPresenter implements AdapterView.OnItemClic
         public MsgSessionListener() {
         }
 
-        @Override // com.blued.android.chat.StableSessionListListener
         public void onUISessionDataChanged(List<SessionModel> list) {
             MsgPresenter.this.c("onUISessionDataChanged start", list);
             MsgPresenter.this.h.c(list);
             MsgPresenter.this.c(list);
-            SessionModel a2 = YYChatRoomRecommend.f32453a.a(MsgPresenter.this.v, MsgPresenter.this.g());
+            SessionModel a2 = YYChatRoomRecommend.f18763a.a(MsgPresenter.this.v, MsgPresenter.this.g());
             if (a2 != null) {
                 list.add(a2);
             }
             ChatHelperV4.a(list, true);
             ArrayList arrayList = new ArrayList();
             if (list != null) {
-                arrayList.addAll(SubscribeNumberManager.f32449a.a(MsgBoxManager.a().a(list, false), false));
+                arrayList.addAll(SubscribeNumberManager.f18759a.a(MsgBoxManager.a().a(list, false), false));
             }
-            if (BluedConstant.f28239a) {
-                Iterator<E> it = arrayList.iterator();
+            if (BluedConstant.f14549a) {
+                Iterator it = arrayList.iterator();
                 while (it.hasNext()) {
                     SessionModel sessionModel = (SessionModel) it.next();
                     if (sessionModel.sessionType == 3) {
@@ -211,7 +207,7 @@ public class MsgPresenter extends MvpPresenter implements AdapterView.OnItemClic
             this.i = false;
             MsgFilterManager.getInstance().filterData();
         } else if (TextUtils.isEmpty(this.q)) {
-            a("dataUpdateFinish", (String) Integer.valueOf(s().size()));
+            a("dataUpdateFinish", Integer.valueOf(s().size()));
         } else {
             d(this.q);
         }
@@ -223,7 +219,7 @@ public class MsgPresenter extends MvpPresenter implements AdapterView.OnItemClic
     }
 
     private void H() {
-        OnlineStatusManager.f32435a.a(g(), new OnlineStatusManager.OnSyncOnlineStatusListener() { // from class: com.soft.blued.ui.msg.presenter.MsgPresenter.10
+        OnlineStatusManager.f18745a.a(g(), new OnlineStatusManager.OnSyncOnlineStatusListener() { // from class: com.soft.blued.ui.msg.presenter.MsgPresenter.10
             @Override // com.soft.blued.ui.msg.manager.OnlineStatusManager.OnSyncOnlineStatusListener
             public List<String> a() {
                 ArrayList arrayList = new ArrayList();
@@ -266,7 +262,7 @@ public class MsgPresenter extends MvpPresenter implements AdapterView.OnItemClic
     }
 
     private void K() {
-        if (DateTodayManager.f32404a.f()) {
+        if (DateTodayManager.f18714a.f()) {
             AppInfo.n().postDelayed(new Runnable() { // from class: com.soft.blued.ui.msg.presenter.-$$Lambda$MsgPresenter$EcgXZOfqbZlTFddl8Tzm9xBjKag
                 @Override // java.lang.Runnable
                 public final void run() {
@@ -283,12 +279,12 @@ public class MsgPresenter extends MvpPresenter implements AdapterView.OnItemClic
         int i2 = 0;
         while (true) {
             i = i2;
-            if (i >= a2.size() || DateTodayManager.f32404a.a(a2.get(i))) {
+            if (i >= a2.size() || DateTodayManager.f18714a.a(a2.get(i))) {
                 break;
             }
             i2 = i + 1;
         }
-        a("showDateTodayGuide", (String) Integer.valueOf(i));
+        a("showDateTodayGuide", Integer.valueOf(i));
     }
 
     private void a(List<SessionModel> list) {
@@ -296,7 +292,7 @@ public class MsgPresenter extends MvpPresenter implements AdapterView.OnItemClic
         int i2 = 0;
         while (true) {
             i = i2;
-            if (i >= list.size() || YYChatRoomRecommend.f32453a.a(list.get(i))) {
+            if (i >= list.size() || YYChatRoomRecommend.f18763a.a(list.get(i))) {
                 break;
             }
             i2 = i + 1;
@@ -311,7 +307,7 @@ public class MsgPresenter extends MvpPresenter implements AdapterView.OnItemClic
         int i2 = 0;
         while (true) {
             i = i2;
-            if (i >= list.size() || DateTodayManager.f32404a.a(list.get(i))) {
+            if (i >= list.size() || DateTodayManager.f18714a.a(list.get(i))) {
                 break;
             }
             i2 = i + 1;
@@ -324,9 +320,9 @@ public class MsgPresenter extends MvpPresenter implements AdapterView.OnItemClic
     private void c(SessionModel sessionModel) {
         String str;
         if (sessionModel.sessionType == 2) {
-            ChatOnlineStatusModel a2 = OnlineStatusManager.f32435a.a(Long.valueOf(sessionModel.sessionId));
+            ChatOnlineStatusModel a2 = OnlineStatusManager.f18745a.a(Long.valueOf(sessionModel.sessionId));
             MessageProtos.Event event = MessageProtos.Event.MSG_USER_AVATAR_TEXT_CLICK;
-            String a3 = OnlineStatusManager.f32435a.a(Integer.valueOf(a2 == null ? 0 : a2.getSocial_status()));
+            String a3 = OnlineStatusManager.f18745a.a(Integer.valueOf(a2 == null ? 0 : a2.getSocial_status()));
             String str2 = "";
             if (sessionModel.sessionId == 0) {
                 str = "";
@@ -368,13 +364,13 @@ public class MsgPresenter extends MvpPresenter implements AdapterView.OnItemClic
         this.h.c();
         if (r != null && r.size() > 0) {
             for (SessionModel sessionModel : r) {
-                SessionSettingModel sessionSettingModel = (SessionSettingModel) sessionModel.sessionSettingModel;
+                SessionSettingModel sessionSettingModel = sessionModel.sessionSettingModel;
                 if ((!TextUtils.isEmpty(sessionModel.nickName) && sessionModel.nickName.contains(str)) || ((!TextUtils.isEmpty(sessionModel.lastMsgFromNickname) && sessionModel.lastMsgFromNickname.contains(str)) || ((!TextUtils.isEmpty(sessionModel.lastMsgContent) && sessionModel.lastMsgContent.contains(str)) || (sessionSettingModel != null && !TextUtils.isEmpty(sessionSettingModel.getSessinoNote()) && sessionSettingModel.getSessinoNote().contains(str))))) {
                     this.h.a(sessionModel);
                 }
             }
         }
-        a("dataUpdateFinish", (String) Integer.valueOf(s().size()));
+        a("dataUpdateFinish", Integer.valueOf(s().size()));
         if (z) {
             a("filterOpenHasNewMessage", this.m);
         }
@@ -393,7 +389,7 @@ public class MsgPresenter extends MvpPresenter implements AdapterView.OnItemClic
                 if (next.lastMsgFromId != Long.parseLong(UserInfo.getInstance().getLoginUserInfo().uid)) {
                     sessionModel2 = sessionModel;
                     j2 = j;
-                    if (next.lastMsgTime + 86400000 > DateTodayManager.f32404a.d()) {
+                    if (next.lastMsgTime + 86400000 > DateTodayManager.f18714a.d()) {
                         sessionModel2 = sessionModel;
                         j2 = j;
                         if (j < next.lastMsgTime) {
@@ -410,24 +406,24 @@ public class MsgPresenter extends MvpPresenter implements AdapterView.OnItemClic
         Log.e("xxx", "processDateTodaySession() matchCard=" + sessionModel);
         if (sessionModel != null) {
             Log.e("xxx", "processDateTodaySession() -1");
-            DateTodayManager.f32404a.a(DateTodayManager.Status.BE_MATCHED, sessionModel, null);
+            DateTodayManager.f18714a.a(DateTodayManager.Status.BE_MATCHED, sessionModel, null);
         } else {
-            SessionModel c2 = DateTodayManager.f32404a.c();
+            SessionModel c2 = DateTodayManager.f18714a.c();
             if (c2 != null) {
                 if (c2.lastMsgFromId == 0) {
                     Log.e("xxx", "processDateTodaySession() -2");
-                    DateTodayManager.f32404a.a(DateTodayManager.Status.COME_BACK_TOMORROW, null, null);
+                    DateTodayManager.f18714a.a(DateTodayManager.Status.COME_BACK_TOMORROW, null, null);
                 } else {
                     for (SessionModel sessionModel3 : list) {
                         if (sessionModel3.sessionId == (-c2.lastMsgFromId) && sessionModel3.lastMsgType > 0 && sessionModel3.lastMsgType != 281) {
                             Log.e("xxx", "processDateTodaySession() -3");
-                            DateTodayManager.f32404a.a(DateTodayManager.Status.COME_BACK_TOMORROW, null, null);
+                            DateTodayManager.f18714a.a(DateTodayManager.Status.COME_BACK_TOMORROW, null, null);
                         }
                     }
                 }
             }
         }
-        SessionModel a2 = DateTodayManager.f32404a.a(this.w, g());
+        SessionModel a2 = DateTodayManager.f18714a.a(this.w, g());
         if (a2 != null) {
             Log.d("xxx", "add dateToday dateToday.lastMsgFromId=" + a2.lastMsgFromId + ", lastMsgContent=" + a2.lastMsgContent + ", lastMsgExtra=" + a2.lastMsgExtra);
             list.add(a2);
@@ -439,8 +435,8 @@ public class MsgPresenter extends MvpPresenter implements AdapterView.OnItemClic
 
     /* JADX INFO: Access modifiers changed from: private */
     public void d(final SessionModel sessionModel) {
-        if (!BluedSharedPreferences.a().a("IM_JOIN_YY_ROOM_LISTS_NOTIE", false) && YYChatRoomRecommend.f32453a.b() == 1) {
-            LiveAlterDialog.a((Context) h(), (int) R.layout.dialog_notic_one_btn_layout, new View.OnClickListener() { // from class: com.soft.blued.ui.msg.presenter.MsgPresenter.2
+        if (!BluedSharedPreferences.a().a("IM_JOIN_YY_ROOM_LISTS_NOTIE", false) && YYChatRoomRecommend.f18763a.b() == 1) {
+            LiveAlterDialog.a(h(), (int) R.layout.dialog_notic_one_btn_layout, new View.OnClickListener() { // from class: com.soft.blued.ui.msg.presenter.MsgPresenter.2
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view) {
                     Tracker.onClick(view);
@@ -455,17 +451,17 @@ public class MsgPresenter extends MvpPresenter implements AdapterView.OnItemClic
             }, true, true);
             return;
         }
-        if (YYChatRoomRecommend.f32453a.b() == 1) {
+        if (YYChatRoomRecommend.f18763a.b() == 1) {
             MessageProtos.Event event = MessageProtos.Event.MSG_YY_CLICK;
             String str = sessionModel.lastMsgExtra;
             EventTrackMessage.g(event, str, "" + sessionModel.lastMsgFromId);
-            YYChatRoomsListFragment.f17120a.a(h(), "msg_yy_room", "0", "", sessionModel.lastMsgExtra);
+            YYChatRoomsListFragment.a.a(h(), "msg_yy_room", "0", "", sessionModel.lastMsgExtra);
         } else {
             MessageProtos.Event event2 = MessageProtos.Event.MSG_YY_CLICK;
             EventTrackMessage.g(event2, "", "" + sessionModel.lastMsgFromId);
-            YYChatRoomsListFragment.f17120a.a(h(), "msg_yy_hall");
+            YYChatRoomsListFragment.a.a(h(), "msg_yy_hall");
         }
-        YYChatRoomRecommend.f32453a.e();
+        YYChatRoomRecommend.f18763a.e();
         G();
     }
 
@@ -492,7 +488,7 @@ public class MsgPresenter extends MvpPresenter implements AdapterView.OnItemClic
             c(this.q, z);
             return;
         }
-        a("dataUpdateFinish", (String) Integer.valueOf(s().size()));
+        a("dataUpdateFinish", Integer.valueOf(s().size()));
         if (t() && z) {
             a("filterOpenHasNewMessage", this.m);
         }
@@ -519,7 +515,7 @@ public class MsgPresenter extends MvpPresenter implements AdapterView.OnItemClic
     public void A() {
         ChatManager.getInstance().registerSessionListener(this.r);
         ChatRelationDataManager.getInstance().registerChatRelationDataListener(this);
-        DateTodayManager.f32404a.m();
+        DateTodayManager.f18714a.m();
     }
 
     public void B() {
@@ -530,7 +526,6 @@ public class MsgPresenter extends MvpPresenter implements AdapterView.OnItemClic
     public void C() {
         try {
             ChatRelationDataManager.getInstance().updateRelationData(new ChatRelationDataManager.UpdateRelationCallback() { // from class: com.soft.blued.ui.msg.presenter.MsgPresenter.9
-                @Override // com.blued.android.module.chat.manager.ChatRelationDataManager.UpdateRelationCallback
                 public void finish(int i, String str) {
                 }
             });
@@ -538,12 +533,12 @@ public class MsgPresenter extends MvpPresenter implements AdapterView.OnItemClic
             MemoryRequest.a().b();
         }
         H();
-        YYChatRoomRecommend.f32453a.a(this.v, g());
+        YYChatRoomRecommend.f18763a.a(this.v, g());
         d(false);
     }
 
     public void D() {
-        OnlineStatusManager.f32435a.b();
+        OnlineStatusManager.f18745a.b();
     }
 
     public void E() {
@@ -553,7 +548,7 @@ public class MsgPresenter extends MvpPresenter implements AdapterView.OnItemClic
         this.l = false;
         this.j = false;
         if (TextUtils.isEmpty(this.q)) {
-            a("dataUpdateFinish", (String) Integer.valueOf(s().size()));
+            a("dataUpdateFinish", Integer.valueOf(s().size()));
         } else {
             d(this.q);
         }
@@ -571,17 +566,15 @@ public class MsgPresenter extends MvpPresenter implements AdapterView.OnItemClic
         this.x = i;
         PayHttpUtils.c(new BluedUIHttpResponse<BluedEntityA<VipUpgradeModel>>(g()) { // from class: com.soft.blued.ui.msg.presenter.MsgPresenter.1
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<VipUpgradeModel> bluedEntityA) {
                 if (bluedEntityA == null || bluedEntityA.data == null || bluedEntityA.data.size() <= 0) {
                     PayUtils.a(MsgPresenter.this.h(), i, str);
                 } else {
-                    MsgPresenter.this.a("showVipUpgradeDialog", (String) bluedEntityA.data);
+                    MsgPresenter.this.a("showVipUpgradeDialog", bluedEntityA.data);
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i2, String str2, String str3) {
                 PayUtils.a(MsgPresenter.this.h(), i, str);
                 return true;
@@ -589,7 +582,6 @@ public class MsgPresenter extends MvpPresenter implements AdapterView.OnItemClic
         }, g());
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void a(FragmentActivity fragmentActivity, Bundle bundle, Bundle bundle2) {
         super.a(fragmentActivity, bundle, bundle2);
         this.r = new MsgSessionListener();
@@ -671,22 +663,22 @@ public class MsgPresenter extends MvpPresenter implements AdapterView.OnItemClic
         } else if (s != 6668) {
         } else {
             if (sessionModel.sessionId == 1) {
-                TerminalActivity.d(h(), MsgBoxFragment.class, null);
+                TerminalActivity.d(h(), MsgBoxFragment.class, (Bundle) null);
             } else if (sessionModel.sessionId == 2) {
                 ServiceMsgFragment.b.a(h());
                 EventTrackMessage.a(MessageProtos.Event.MSG_SERVICE_CELL_CLICK);
             } else if (sessionModel.sessionId == 3) {
                 d(sessionModel);
             } else if (sessionModel.sessionId == 4) {
-                DateTodayManager.f32404a.n();
-                int i9 = AnonymousClass12.f32580a[DateTodayManager.f32404a.a().ordinal()];
+                DateTodayManager.f18714a.n();
+                int i9 = AnonymousClass12.f18889a[DateTodayManager.f18714a.a().ordinal()];
                 if (i9 == 1) {
-                    DateTodayManager.f32404a.i();
-                    DateTodaySearchFragment.f31701a.a(h());
+                    DateTodayManager.f18714a.i();
+                    DateTodaySearchFragment.f18011a.a(h());
                     return;
                 }
                 if (i9 == 2) {
-                    DateTodayManager.f32404a.k();
+                    DateTodayManager.f18714a.k();
                 } else if (i9 != 3) {
                     if (i9 != 4) {
                         return;
@@ -695,7 +687,7 @@ public class MsgPresenter extends MvpPresenter implements AdapterView.OnItemClic
                     return;
                 }
                 try {
-                    DateTodayManager.f32404a.a(h(), (DateTodayMatchUserModel) AppInfo.f().fromJson(sessionModel.lastMsgExtra, (Class<Object>) DateTodayMatchUserModel.class));
+                    DateTodayManager.f18714a.a(h(), (DateTodayMatchUserModel) AppInfo.f().fromJson(sessionModel.lastMsgExtra, (Class<Object>) DateTodayMatchUserModel.class));
                 } catch (Exception e) {
                 }
             }
@@ -712,17 +704,17 @@ public class MsgPresenter extends MvpPresenter implements AdapterView.OnItemClic
                 BottomMenuPop bottomMenuPop = new BottomMenuPop(h());
                 this.t = bottomMenuPop;
                 bottomMenuPop.b = arrayList;
-                new XPopup.Builder(h()).a((BasePopupView) this.t).h();
+                new XPopup.Builder(h()).a(this.t).h();
                 return;
             }
             final String str = strArr[i2];
             BottomMenuPop.MenuItemInfo menuItemInfo = new BottomMenuPop.MenuItemInfo();
-            menuItemInfo.f11214a = str;
+            menuItemInfo.a = str;
             if (TextUtils.equals(str, AppUtils.a(2131890773))) {
-                menuItemInfo.f11215c = 2131233869;
+                menuItemInfo.c = 2131233869;
             }
             if (TextUtils.equals(str, h().getResources().getString(R.string.msg_box_close))) {
-                menuItemInfo.b = 2131101256;
+                menuItemInfo.b = R.color.popitems_font_red;
             } else if (TextUtils.equals(str, h().getResources().getString(R.string.msg_box_clear))) {
                 menuItemInfo.b = 2131101766;
             }
@@ -750,7 +742,6 @@ public class MsgPresenter extends MvpPresenter implements AdapterView.OnItemClic
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void a(IFetchDataListener iFetchDataListener) {
     }
 
@@ -773,7 +764,6 @@ public class MsgPresenter extends MvpPresenter implements AdapterView.OnItemClic
                 public void onClick(DialogInterface dialogInterface, int i) {
                     Tracker.onClick(dialogInterface, i);
                     ChatManager.getInstance().getSessionModelList(new FetchDataListener<List<SessionModel>>() { // from class: com.soft.blued.ui.msg.presenter.MsgPresenter.5.1
-                        @Override // com.blued.android.chat.listener.FetchDataListener
                         /* renamed from: a */
                         public void onFetchData(List<SessionModel> list) {
                             for (SessionModel sessionModel2 : MsgBoxManager.a().a(list, true)) {
@@ -787,28 +777,26 @@ public class MsgPresenter extends MvpPresenter implements AdapterView.OnItemClic
                     });
                 }
             }, (String) null, (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
-        } else if (SubscribeNumberManager.f32449a.a(sessionModel.sessionType, sessionModel.sessionId)) {
+        } else if (SubscribeNumberManager.f18759a.a(sessionModel.sessionType, sessionModel.sessionId)) {
             ChatManager.getInstance().getSessionModelList(new FetchDataListener<List<SessionModel>>() { // from class: com.soft.blued.ui.msg.presenter.MsgPresenter.6
-                @Override // com.blued.android.chat.listener.FetchDataListener
                 /* renamed from: a */
                 public void onFetchData(List<SessionModel> list) {
-                    for (SessionModel sessionModel2 : SubscribeNumberManager.f32449a.a(list, true)) {
-                        if (SubscribeNumberManager.f32449a.a(sessionModel2.sessionId, sessionModel2.sessionType)) {
+                    for (SessionModel sessionModel2 : SubscribeNumberManager.f18759a.a(list, true)) {
+                        if (SubscribeNumberManager.f18759a.a(sessionModel2.sessionId, sessionModel2.sessionType)) {
                             ChatManager.getInstance().deleteSession(sessionModel2.sessionType, sessionModel2.sessionId);
                         }
                     }
                 }
             });
-        } else if (!YYChatRoomRecommend.f32453a.a(sessionModel)) {
+        } else if (!YYChatRoomRecommend.f18763a.a(sessionModel)) {
             ChatManager.getInstance().deleteSession(sessionModel.sessionType, sessionModel.sessionId);
         } else {
             a(this.h.a());
             G();
-            YYChatRoomRecommend.f32453a.c();
+            YYChatRoomRecommend.f18763a.c();
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void b(IFetchDataListener iFetchDataListener) {
     }
 
@@ -831,7 +819,7 @@ public class MsgPresenter extends MvpPresenter implements AdapterView.OnItemClic
     }
 
     public void d(boolean z) {
-        GroupStatusManager.f32419a.a(g(), new GroupStatusManager.OnSyncGroupStatusListener() { // from class: com.soft.blued.ui.msg.presenter.MsgPresenter.11
+        GroupStatusManager.f18729a.a(g(), new GroupStatusManager.OnSyncGroupStatusListener() { // from class: com.soft.blued.ui.msg.presenter.MsgPresenter.11
             @Override // com.soft.blued.ui.msg.manager.GroupStatusManager.OnSyncGroupStatusListener
             public List<String> a() {
                 ArrayList arrayList = new ArrayList();
@@ -867,7 +855,6 @@ public class MsgPresenter extends MvpPresenter implements AdapterView.OnItemClic
         return this.k;
     }
 
-    @Override // com.blued.android.module.chat.contract.IChatRelationDataListener
     public void onDeleteSessions(List<Pair<Short, Long>> list) {
         if (list == null) {
             return;
@@ -929,7 +916,6 @@ public class MsgPresenter extends MvpPresenter implements AdapterView.OnItemClic
         return true;
     }
 
-    @Override // com.blued.android.module.chat.contract.FilterSessionListListener
     public void onUISessionDataChanged(List<SessionModel> list, List<SessionModel> list2) {
         if (t()) {
             ChatHelperV4.d(list);
@@ -993,12 +979,12 @@ public class MsgPresenter extends MvpPresenter implements AdapterView.OnItemClic
             arrayList.add(new Pair(Short.valueOf(sessionModel.sessionType), Long.valueOf(sessionModel.sessionId)));
         }
         ChatManager.getInstance().ignoredNoReadNum(arrayList);
-        SubscribeNumberManager.f32449a.c();
-        DateTodayManager.f32404a.i();
+        SubscribeNumberManager.f18759a.c();
+        DateTodayManager.f18714a.i();
     }
 
     public void y() {
-        Logger.e("MsgPresent test", "refreshSessionList====" + this.h.d().size());
+        Logger.e("MsgPresent test", new Object[]{"refreshSessionList====" + this.h.d().size()});
         ArrayList arrayList = new ArrayList();
         arrayList.addAll(this.h.d());
         RefreshSessionEvent refreshSessionEvent = new RefreshSessionEvent();
@@ -1012,48 +998,44 @@ public class MsgPresenter extends MvpPresenter implements AdapterView.OnItemClic
         UserHttpUtils.a(h(), new BluedUIHttpResponse<BluedEntity<UserFindResult, HelloDataExtra>>(g()) { // from class: com.soft.blued.ui.msg.presenter.MsgPresenter.8
             private boolean b = false;
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str) {
                 this.b = true;
                 return super.onUIFailure(i, str);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 super.onUIFinish();
                 if (this.b) {
                     MsgPresenter.this.f_("hideHelloView");
-                    MsgPresenter.this.a("helloViewShowBtn", (String) new Boolean(false));
+                    MsgPresenter.this.a("helloViewShowBtn", new Boolean(false));
                 }
                 MsgPresenter.this.f_("refreshComplete");
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 super.onUIStart();
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity<UserFindResult, HelloDataExtra> bluedEntity) {
                 if (bluedEntity == null) {
                     return;
                 }
-                HelloDataExtra helloDataExtra = bluedEntity.extra;
+                HelloDataExtra helloDataExtra = (HelloDataExtra) bluedEntity.extra;
                 boolean z = false;
                 if (helloDataExtra == null) {
                     if (bluedEntity.hasData()) {
-                        MsgPresenter.this.a("addHelloListData", (String) bluedEntity);
+                        MsgPresenter.this.a("addHelloListData", bluedEntity);
                     } else {
                         MsgPresenter.this.f_("hideHelloView");
                     }
-                    MsgPresenter.this.a("helloViewShowBtn", (String) new Boolean(false));
+                    MsgPresenter.this.a("helloViewShowBtn", new Boolean(false));
                     return;
                 }
                 if (helloDataExtra.view_type == 2) {
-                    MsgPresenter.this.a("setNewHelloView", (String) helloDataExtra);
+                    MsgPresenter.this.a("setNewHelloView", helloDataExtra);
                 } else if (bluedEntity.hasData()) {
-                    MsgPresenter.this.a("setNewHelloText", (String) helloDataExtra);
-                    MsgPresenter.this.a("addHelloListData", (String) bluedEntity);
+                    MsgPresenter.this.a("setNewHelloText", helloDataExtra);
+                    MsgPresenter.this.a("addHelloListData", bluedEntity);
                 } else {
                     MsgPresenter.this.f_("hideHelloView");
                 }
@@ -1061,7 +1043,7 @@ public class MsgPresenter extends MvpPresenter implements AdapterView.OnItemClic
                 if (helloDataExtra.show_call_btn == 1) {
                     z = true;
                 }
-                msgPresenter.a("helloViewShowBtn", (String) new Boolean(z));
+                msgPresenter.a("helloViewShowBtn", new Boolean(z));
                 if (helloDataExtra.show_call_btn == 1) {
                     CallHelloManager.a().a(MsgPresenter.this.h(), MsgPresenter.this.g(), 2, (CallHelloManager.ToOpenListener) null);
                 }

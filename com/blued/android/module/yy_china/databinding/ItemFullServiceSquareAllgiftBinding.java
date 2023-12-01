@@ -12,13 +12,9 @@ import com.blued.android.module.yy_china.view.YYLivingStreamView;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ItemFullServiceSquareAllgiftBinding.class */
 public final class ItemFullServiceSquareAllgiftBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ConstraintLayout f16593a;
+    public final ConstraintLayout a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f16594c;
+    public final ImageView c;
     public final ImageView d;
     public final ImageView e;
     public final YYLivingStreamView f;
@@ -29,9 +25,9 @@ public final class ItemFullServiceSquareAllgiftBinding implements ViewBinding {
 
     private ItemFullServiceSquareAllgiftBinding(FrameLayout frameLayout, ConstraintLayout constraintLayout, ImageView imageView, ImageView imageView2, ImageView imageView3, ImageView imageView4, YYLivingStreamView yYLivingStreamView, YYLivingStreamView yYLivingStreamView2, TextView textView, ShapeTextView shapeTextView) {
         this.j = frameLayout;
-        this.f16593a = constraintLayout;
+        this.a = constraintLayout;
         this.b = imageView;
-        this.f16594c = imageView2;
+        this.c = imageView2;
         this.d = imageView3;
         this.e = imageView4;
         this.f = yYLivingStreamView;
@@ -42,8 +38,8 @@ public final class ItemFullServiceSquareAllgiftBinding implements ViewBinding {
 
     public static ItemFullServiceSquareAllgiftBinding a(View view) {
         String str;
-        ConstraintLayout constraintLayout = (ConstraintLayout) view.findViewById(R.id.con_allgift);
-        if (constraintLayout != null) {
+        ConstraintLayout findViewById = view.findViewById(R.id.con_allgift);
+        if (findViewById != null) {
             ImageView imageView = (ImageView) view.findViewById(R.id.iv_all_gift);
             if (imageView != null) {
                 ImageView imageView2 = (ImageView) view.findViewById(R.id.iv_allgift_gift);
@@ -60,7 +56,7 @@ public final class ItemFullServiceSquareAllgiftBinding implements ViewBinding {
                                     if (textView != null) {
                                         ShapeTextView shapeTextView = (ShapeTextView) view.findViewById(R.id.tv_bg_allgift);
                                         if (shapeTextView != null) {
-                                            return new ItemFullServiceSquareAllgiftBinding((FrameLayout) view, constraintLayout, imageView, imageView2, imageView3, imageView4, yYLivingStreamView, yYLivingStreamView2, textView, shapeTextView);
+                                            return new ItemFullServiceSquareAllgiftBinding((FrameLayout) view, findViewById, imageView, imageView2, imageView3, imageView4, yYLivingStreamView, yYLivingStreamView2, textView, shapeTextView);
                                         }
                                         str = "tvBgAllgift";
                                     } else {
@@ -90,7 +86,6 @@ public final class ItemFullServiceSquareAllgiftBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.j;

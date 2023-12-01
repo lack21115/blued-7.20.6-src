@@ -14,13 +14,9 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/LiveHostFinishDetailItemBinding.class */
 public final class LiveHostFinishDetailItemBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final FrameLayout f12243a;
+    public final FrameLayout a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f12244c;
+    public final ImageView c;
     public final LiveFansLevelView d;
     public final LiveFansLevelView e;
     public final ImageView f;
@@ -38,9 +34,9 @@ public final class LiveHostFinishDetailItemBinding implements ViewBinding {
 
     private LiveHostFinishDetailItemBinding(ShapeConstraintLayout shapeConstraintLayout, FrameLayout frameLayout, ImageView imageView, ImageView imageView2, LiveFansLevelView liveFansLevelView, LiveFansLevelView liveFansLevelView2, ImageView imageView3, ShapeFrameLayout shapeFrameLayout, ImageView imageView4, ImageView imageView5, LinearLayout linearLayout, ShapeConstraintLayout shapeConstraintLayout2, ShapeTextView shapeTextView, ShapeTextView shapeTextView2, TextView textView, TextView textView2, TextView textView3) {
         this.q = shapeConstraintLayout;
-        this.f12243a = frameLayout;
+        this.a = frameLayout;
         this.b = imageView;
-        this.f12244c = imageView2;
+        this.c = imageView2;
         this.d = liveFansLevelView;
         this.e = liveFansLevelView2;
         this.f = imageView3;
@@ -141,7 +137,6 @@ public final class LiveHostFinishDetailItemBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ShapeConstraintLayout getRoot() {
         return this.q;

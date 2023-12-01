@@ -10,7 +10,6 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.core.content.ContextCompat;
-import com.amap.api.services.district.DistrictSearchQuery;
 import com.bytedance.applog.tracker.Tracker;
 import com.sobot.chat.activity.base.SobotBaseActivity;
 import com.sobot.chat.api.model.CommonModel;
@@ -71,7 +70,7 @@ public class SobotQueryFromActivity extends SobotBaseActivity implements View.On
             }
             if (arrayList.get(i2).getCusFieldConfig() != null) {
                 if (1 == arrayList.get(i2).getCusFieldConfig().getFillFlag()) {
-                    if (DistrictSearchQuery.KEYWORDS_CITY.equals(arrayList.get(i2).getCusFieldConfig().getFieldId())) {
+                    if ("city".equals(arrayList.get(i2).getCusFieldConfig().getFieldId())) {
                         if (arrayList.get(i2).getCusFieldConfig().getProvinceModel() == null) {
                             Context applicationContext = getApplicationContext();
                             ToastUtil.showToast(applicationContext, arrayList.get(i2).getCusFieldConfig().getFieldName() + "  " + getResString("sobot__is_null"));

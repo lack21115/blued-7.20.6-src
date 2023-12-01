@@ -13,16 +13,13 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/community/ui/send/adapter/EventAddPostTypeAdapter.class */
 public final class EventAddPostTypeAdapter extends BaseQuickAdapter<EventAddPostTypeModel, BaseViewHolder> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f19899a;
+    private String a;
 
     public EventAddPostTypeAdapter() {
         super(R.layout.item_event_add_post_type);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(BaseViewHolder helper, EventAddPostTypeModel item) {
         Intrinsics.e(helper, "helper");
@@ -38,7 +35,7 @@ public final class EventAddPostTypeAdapter extends BaseQuickAdapter<EventAddPost
         BluedQuickAdapterExtKt.a(helper, R.id.ly_type, 0.0f, 0.0f, 0.0f);
         helper.setText(R.id.tv_name, item.getType_name());
         helper.setGone(R.id.iv_more, false);
-        if (item.isSelect(this.f19899a)) {
+        if (item.isSelect(this.a)) {
             BluedQuickAdapterExtKt.a(helper, R.id.ly_type, R.color.syc_event_post_select);
             helper.setTextColor(R.id.tv_name, BluedSkinUtils.a(this.mContext, R.color.syc_a));
             return;
@@ -48,7 +45,7 @@ public final class EventAddPostTypeAdapter extends BaseQuickAdapter<EventAddPost
     }
 
     public final void a(String str) {
-        this.f19899a = str;
+        this.a = str;
         notifyDataSetChanged();
     }
 }

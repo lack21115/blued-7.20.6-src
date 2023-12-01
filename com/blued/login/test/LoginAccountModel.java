@@ -13,21 +13,21 @@ public final class LoginAccountModel {
     private boolean i;
 
     /* renamed from: a  reason: collision with root package name */
-    private String f20567a = "";
+    private String f6961a = "";
     private String b = "";
 
     /* renamed from: c  reason: collision with root package name */
-    private String f20568c = "";
+    private String f6962c = "";
     private String d = "";
     private String j = "";
 
     public final String a() {
-        return this.f20567a;
+        return this.f6961a;
     }
 
     public final void a(String str) {
         Intrinsics.e(str, "<set-?>");
-        this.f20567a = str;
+        this.f6961a = str;
     }
 
     public final void a(boolean z) {
@@ -35,7 +35,7 @@ public final class LoginAccountModel {
     }
 
     public final String b() {
-        return this.f20568c;
+        return this.f6962c;
     }
 
     public final void b(String str) {
@@ -49,7 +49,7 @@ public final class LoginAccountModel {
 
     public final void c(String str) {
         Intrinsics.e(str, "<set-?>");
-        this.f20568c = str;
+        this.f6962c = str;
     }
 
     public final String d() {

@@ -15,11 +15,11 @@ import com.opos.mobad.n.a;
 public abstract class c implements com.opos.mobad.n.a {
 
     /* renamed from: a  reason: collision with root package name */
-    protected Activity f26227a;
-    protected a.InterfaceC0708a b;
+    protected Activity f12539a;
+    protected a.InterfaceC0538a b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected RelativeLayout f26228c;
+    protected RelativeLayout f12540c;
     protected ImageView d;
     protected ImageView e;
     protected com.opos.cmn.e.a.a.a f;
@@ -30,9 +30,9 @@ public abstract class c implements com.opos.mobad.n.a {
     private int k;
     private com.opos.mobad.n.d.h l;
 
-    public c(Activity activity, int i, a.InterfaceC0708a interfaceC0708a) {
-        this.f26227a = activity;
-        this.b = interfaceC0708a;
+    public c(Activity activity, int i, a.InterfaceC0538a interfaceC0538a) {
+        this.f12539a = activity;
+        this.b = interfaceC0538a;
         this.k = i;
         h();
         f();
@@ -57,20 +57,20 @@ public abstract class c implements com.opos.mobad.n.a {
         float f;
         d(relativeLayout);
         if (this.e == null) {
-            ImageView imageView = new ImageView(this.f26227a);
+            ImageView imageView = new ImageView(this.f12539a);
             this.e = imageView;
             imageView.setAlpha(0.7f);
-            this.e.setImageDrawable(com.opos.cmn.an.d.a.a.c(this.f26227a, "opos_module_biz_ui_interstitial_close_bn_bg_img.png"));
+            this.e.setImageDrawable(com.opos.cmn.an.d.a.a.c(this.f12539a, "opos_module_biz_ui_interstitial_close_bn_bg_img.png"));
             this.e.setScaleType(ImageView.ScaleType.FIT_XY);
         }
-        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(this.f26227a, 37.0f), com.opos.cmn.an.h.f.a.a(this.f26227a, 37.0f));
+        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(this.f12539a, 37.0f), com.opos.cmn.an.h.f.a.a(this.f12539a, 37.0f));
         layoutParams.addRule(14);
         layoutParams.addRule(3, 1);
-        if (com.opos.cmn.an.h.f.a.d(this.f26227a)) {
-            activity = this.f26227a;
+        if (com.opos.cmn.an.h.f.a.d(this.f12539a)) {
+            activity = this.f12539a;
             f = 28.0f;
         } else {
-            activity = this.f26227a;
+            activity = this.f12539a;
             f = 21.0f;
         }
         layoutParams.topMargin = com.opos.cmn.an.h.f.a.a(activity, f);
@@ -79,27 +79,27 @@ public abstract class c implements com.opos.mobad.n.a {
 
     private void d(RelativeLayout relativeLayout) {
         if (this.i == null) {
-            ImageView imageView = new ImageView(this.f26227a);
+            ImageView imageView = new ImageView(this.f12539a);
             this.i = imageView;
             imageView.setAlpha(0.35f);
             this.i.setImageDrawable(new ColorDrawable(Color.parseColor("#808080")));
         }
-        RelativeLayout.LayoutParams layoutParams = com.opos.cmn.an.h.f.a.d(this.f26227a) ? new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(this.f26227a, 1.0f), com.opos.cmn.an.h.f.a.a(this.f26227a, 44.0f)) : new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(this.f26227a, 1.0f), com.opos.cmn.an.h.f.a.a(this.f26227a, 37.0f));
+        RelativeLayout.LayoutParams layoutParams = com.opos.cmn.an.h.f.a.d(this.f12539a) ? new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(this.f12539a, 1.0f), com.opos.cmn.an.h.f.a.a(this.f12539a, 44.0f)) : new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(this.f12539a, 1.0f), com.opos.cmn.an.h.f.a.a(this.f12539a, 37.0f));
         layoutParams.addRule(14);
         layoutParams.addRule(3, 1);
-        layoutParams.topMargin = com.opos.cmn.an.h.f.a.a(this.f26227a, -12.0f);
+        layoutParams.topMargin = com.opos.cmn.an.h.f.a.a(this.f12539a, -12.0f);
         relativeLayout.addView(this.i, layoutParams);
     }
 
     private void h() {
-        RelativeLayout relativeLayout = new RelativeLayout(this.f26227a);
-        this.f26228c = relativeLayout;
+        RelativeLayout relativeLayout = new RelativeLayout(this.f12539a);
+        this.f12540c = relativeLayout;
         relativeLayout.setLayoutParams(new RelativeLayout.LayoutParams(-1, -1));
-        RelativeLayout relativeLayout2 = new RelativeLayout(this.f26227a);
+        RelativeLayout relativeLayout2 = new RelativeLayout(this.f12539a);
         this.g = relativeLayout2;
         relativeLayout2.setId(1);
-        this.h = new RelativeLayout(this.f26227a);
-        this.f26228c.addOnAttachStateChangeListener(new View.OnAttachStateChangeListener() { // from class: com.opos.mobad.interstitial.a.c.1
+        this.h = new RelativeLayout(this.f12539a);
+        this.f12540c.addOnAttachStateChangeListener(new View.OnAttachStateChangeListener() { // from class: com.opos.mobad.interstitial.a.c.1
             @Override // android.view.View.OnAttachStateChangeListener
             public void onViewAttachedToWindow(View view) {
                 if (c.this.b != null) {
@@ -120,18 +120,18 @@ public abstract class c implements com.opos.mobad.n.a {
         }
         ImageView imageView2 = this.i;
         if (imageView2 != null) {
-            this.f26228c.removeView(imageView2);
+            this.f12540c.removeView(imageView2);
         }
         ImageView imageView3 = this.e;
         if (imageView3 != null) {
-            this.f26228c.removeView(imageView3);
+            this.f12540c.removeView(imageView3);
         }
     }
 
     private void j() {
         RelativeLayout relativeLayout = this.g;
         if (relativeLayout != null) {
-            this.f26228c.removeView(relativeLayout);
+            this.f12540c.removeView(relativeLayout);
         }
     }
 
@@ -147,7 +147,7 @@ public abstract class c implements com.opos.mobad.n.a {
             b(this.g);
             imageView = this.d;
         } else {
-            c(this.f26228c);
+            c(this.f12540c);
             imageView = this.e;
         }
         c(imageView);
@@ -169,7 +169,7 @@ public abstract class c implements com.opos.mobad.n.a {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public void a(RelativeLayout relativeLayout) {
-        com.opos.cmn.e.a.a.a aVar = new com.opos.cmn.e.a.a.a(this.f26227a, "opos_module_biz_ui_interstitial_click_bn_normal_yellow_bg_img.png", "opos_module_biz_ui_interstitial_click_bn_pressed_yellow_bg_img.png");
+        com.opos.cmn.e.a.a.a aVar = new com.opos.cmn.e.a.a.a(this.f12539a, "opos_module_biz_ui_interstitial_click_bn_normal_yellow_bg_img.png", "opos_module_biz_ui_interstitial_click_bn_pressed_yellow_bg_img.png");
         this.f = aVar;
         aVar.setId(3);
         this.f.setGravity(17);
@@ -178,7 +178,7 @@ public abstract class c implements com.opos.mobad.n.a {
         this.f.setTypeface(Typeface.defaultFromStyle(1));
         this.f.setSingleLine();
         this.f.setVisibility(8);
-        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(this.f26227a, 240.0f), com.opos.cmn.an.h.f.a.a(this.f26227a, 34.0f));
+        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(this.f12539a, 240.0f), com.opos.cmn.an.h.f.a.a(this.f12539a, 34.0f));
         layoutParams.addRule(12);
         layoutParams.addRule(3, 2);
         relativeLayout.addView(this.f, layoutParams);
@@ -196,8 +196,8 @@ public abstract class c implements com.opos.mobad.n.a {
     }
 
     @Override // com.opos.mobad.n.a
-    public void a(a.InterfaceC0708a interfaceC0708a) {
-        this.b = interfaceC0708a;
+    public void a(a.InterfaceC0538a interfaceC0538a) {
+        this.b = interfaceC0538a;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -218,9 +218,9 @@ public abstract class c implements com.opos.mobad.n.a {
 
     @Override // com.opos.mobad.n.a
     public void a(com.opos.mobad.n.d.h hVar) {
-        a.InterfaceC0708a interfaceC0708a;
-        if (this.l == null && (interfaceC0708a = this.b) != null) {
-            interfaceC0708a.e();
+        a.InterfaceC0538a interfaceC0538a;
+        if (this.l == null && (interfaceC0538a = this.b) != null) {
+            interfaceC0538a.e();
         }
         this.l = hVar;
     }
@@ -237,34 +237,34 @@ public abstract class c implements com.opos.mobad.n.a {
         StringBuilder sb;
         j();
         if (z) {
-            com.opos.mobad.cmn.a.b.g.a(this.g, com.opos.cmn.an.d.a.a.c(this.f26227a, "opos_module_biz_ui_interstitial_ad_rl_bg_img.png"));
+            com.opos.mobad.cmn.a.b.g.a(this.g, com.opos.cmn.an.d.a.a.c(this.f12539a, "opos_module_biz_ui_interstitial_ad_rl_bg_img.png"));
         }
-        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(this.f26227a, i2), com.opos.cmn.an.h.f.a.a(this.f26227a, i3));
-        if (com.opos.cmn.an.h.f.a.d(this.f26227a)) {
-            layoutParams.topMargin = com.opos.cmn.an.h.f.a.a(this.f26227a) ? com.opos.cmn.an.h.f.a.a(this.f26227a, 191.0f) : com.opos.cmn.an.h.f.a.a(this.f26227a, 191.0f) - com.opos.cmn.an.h.f.a.k(this.f26227a);
+        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(this.f12539a, i2), com.opos.cmn.an.h.f.a.a(this.f12539a, i3));
+        if (com.opos.cmn.an.h.f.a.d(this.f12539a)) {
+            layoutParams.topMargin = com.opos.cmn.an.h.f.a.a(this.f12539a) ? com.opos.cmn.an.h.f.a.a(this.f12539a, 191.0f) : com.opos.cmn.an.h.f.a.a(this.f12539a, 191.0f) - com.opos.cmn.an.h.f.a.k(this.f12539a);
             sb = new StringBuilder();
         } else {
             if (i == 1) {
                 f = 53.0f;
-                if (com.opos.cmn.an.h.f.a.a(this.f26227a)) {
+                if (com.opos.cmn.an.h.f.a.a(this.f12539a)) {
                     f2 = 53.0f;
-                    a2 = com.opos.cmn.an.h.f.a.a(this.f26227a, f2);
+                    a2 = com.opos.cmn.an.h.f.a.a(this.f12539a, f2);
                 }
-                a2 = com.opos.cmn.an.h.f.a.a(this.f26227a, f) - com.opos.cmn.an.h.f.a.k(this.f26227a);
+                a2 = com.opos.cmn.an.h.f.a.a(this.f12539a, f) - com.opos.cmn.an.h.f.a.k(this.f12539a);
             } else if (i != 2) {
                 f = 38.0f;
-                if (com.opos.cmn.an.h.f.a.a(this.f26227a)) {
+                if (com.opos.cmn.an.h.f.a.a(this.f12539a)) {
                     f2 = 38.0f;
-                    a2 = com.opos.cmn.an.h.f.a.a(this.f26227a, f2);
+                    a2 = com.opos.cmn.an.h.f.a.a(this.f12539a, f2);
                 }
-                a2 = com.opos.cmn.an.h.f.a.a(this.f26227a, f) - com.opos.cmn.an.h.f.a.k(this.f26227a);
+                a2 = com.opos.cmn.an.h.f.a.a(this.f12539a, f) - com.opos.cmn.an.h.f.a.k(this.f12539a);
             } else {
                 f = 29.0f;
-                if (com.opos.cmn.an.h.f.a.a(this.f26227a)) {
+                if (com.opos.cmn.an.h.f.a.a(this.f12539a)) {
                     f2 = 29.0f;
-                    a2 = com.opos.cmn.an.h.f.a.a(this.f26227a, f2);
+                    a2 = com.opos.cmn.an.h.f.a.a(this.f12539a, f2);
                 }
-                a2 = com.opos.cmn.an.h.f.a.a(this.f26227a, f) - com.opos.cmn.an.h.f.a.k(this.f26227a);
+                a2 = com.opos.cmn.an.h.f.a.a(this.f12539a, f) - com.opos.cmn.an.h.f.a.k(this.f12539a);
             }
             layoutParams.topMargin = a2;
             sb = new StringBuilder();
@@ -273,7 +273,7 @@ public abstract class c implements com.opos.mobad.n.a {
         sb.append(layoutParams.topMargin);
         com.opos.cmn.an.f.a.b("BaseInterstitialCreative", sb.toString());
         layoutParams.addRule(14);
-        this.f26228c.addView(this.g, layoutParams);
+        this.f12540c.addView(this.g, layoutParams);
     }
 
     @Override // com.opos.mobad.n.a
@@ -296,17 +296,17 @@ public abstract class c implements com.opos.mobad.n.a {
 
     protected void b(RelativeLayout relativeLayout) {
         if (this.d == null) {
-            ImageView imageView = new ImageView(this.f26227a);
+            ImageView imageView = new ImageView(this.f12539a);
             this.d = imageView;
             imageView.setAlpha(0.7f);
-            this.d.setImageDrawable(com.opos.cmn.an.d.a.a.c(this.f26227a, "opos_module_biz_ui_interstitial_close_bn_bg_img.png"));
+            this.d.setImageDrawable(com.opos.cmn.an.d.a.a.c(this.f12539a, "opos_module_biz_ui_interstitial_close_bn_bg_img.png"));
             this.d.setScaleType(ImageView.ScaleType.FIT_XY);
         }
-        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(this.f26227a, 37.0f), com.opos.cmn.an.h.f.a.a(this.f26227a, 37.0f));
+        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(this.f12539a, 37.0f), com.opos.cmn.an.h.f.a.a(this.f12539a, 37.0f));
         layoutParams.addRule(10);
         layoutParams.addRule(11);
-        layoutParams.topMargin = com.opos.cmn.an.h.f.a.a(this.f26227a, -4.0f);
-        layoutParams.rightMargin = com.opos.cmn.an.h.f.a.a(this.f26227a, -5.0f);
+        layoutParams.topMargin = com.opos.cmn.an.h.f.a.a(this.f12539a, -4.0f);
+        layoutParams.rightMargin = com.opos.cmn.an.h.f.a.a(this.f12539a, -5.0f);
         relativeLayout.addView(this.d, layoutParams);
     }
 
@@ -320,6 +320,6 @@ public abstract class c implements com.opos.mobad.n.a {
     @Override // com.opos.mobad.n.a
     /* renamed from: g */
     public RelativeLayout c() {
-        return this.f26228c;
+        return this.f12540c;
     }
 }

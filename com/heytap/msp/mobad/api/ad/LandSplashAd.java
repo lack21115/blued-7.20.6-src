@@ -23,10 +23,10 @@ public class LandSplashAd {
     public static class a implements c {
 
         /* renamed from: a  reason: collision with root package name */
-        private ISplashAdListener f22233a;
+        private ISplashAdListener f8625a;
 
         public a(ISplashAdListener iSplashAdListener) {
-            this.f22233a = iSplashAdListener;
+            this.f8625a = iSplashAdListener;
         }
 
         @Override // com.opos.mobad.ad.b.a
@@ -35,30 +35,30 @@ public class LandSplashAd {
 
         @Override // com.opos.mobad.ad.b.a
         public void a(int i, String str) {
-            ISplashAdListener iSplashAdListener = this.f22233a;
+            ISplashAdListener iSplashAdListener = this.f8625a;
             StringBuilder sb = new StringBuilder();
             sb.append("code=");
             sb.append(i);
             sb.append(",msg=");
             sb.append(str != null ? str : "");
             iSplashAdListener.onAdFailed(sb.toString());
-            this.f22233a.onAdFailed(i, str);
+            this.f8625a.onAdFailed(i, str);
         }
 
         @Override // com.opos.mobad.ad.i.b
         public void a(long j) {
-            this.f22233a.onAdClick();
+            this.f8625a.onAdClick();
         }
 
         @Override // com.opos.mobad.ad.i.b
         public void a(String str) {
-            this.f22233a.onAdShow(str);
-            this.f22233a.onAdShow();
+            this.f8625a.onAdShow(str);
+            this.f8625a.onAdShow();
         }
 
         @Override // com.opos.mobad.ad.b.a
         public void b() {
-            this.f22233a.onAdDismissed();
+            this.f8625a.onAdDismissed();
         }
     }
 

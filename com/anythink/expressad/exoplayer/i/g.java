@@ -7,15 +7,15 @@ import java.util.Arrays;
 public final class g {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f7544a;
+    public final int f4705a;
     private final f[] b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f7545c;
+    private int f4706c;
 
     public g(f... fVarArr) {
         this.b = fVarArr;
-        this.f7544a = fVarArr.length;
+        this.f4705a = fVarArr.length;
     }
 
     public final f a(int i) {
@@ -37,9 +37,9 @@ public final class g {
     }
 
     public final int hashCode() {
-        if (this.f7545c == 0) {
-            this.f7545c = Arrays.hashCode(this.b) + LiveProtos.Event.LIVE_END_PAGE_CLOSE_CLICK_VALUE;
+        if (this.f4706c == 0) {
+            this.f4706c = Arrays.hashCode(this.b) + LiveProtos.Event.LIVE_END_PAGE_CLOSE_CLICK_VALUE;
         }
-        return this.f7545c;
+        return this.f4706c;
     }
 }

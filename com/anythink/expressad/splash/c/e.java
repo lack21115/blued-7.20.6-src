@@ -11,38 +11,38 @@ import com.anythink.expressad.splash.view.ATSplashView;
 public final class e {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f8219a = "WebViewRenderManager";
+    private static final String f5379a = "WebViewRenderManager";
     private boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f8220c;
+    private boolean f5380c;
 
     /* renamed from: com.anythink.expressad.splash.c.e$1  reason: invalid class name */
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/splash/c/e$1.class */
     final class AnonymousClass1 extends com.anythink.expressad.atsignalcommon.a.b {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ b f8221a;
+        final /* synthetic */ b f5381a;
         final /* synthetic */ ATSplashView b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ com.anythink.expressad.foundation.d.c f8222c;
+        final /* synthetic */ com.anythink.expressad.foundation.d.c f5382c;
 
         AnonymousClass1(b bVar, ATSplashView aTSplashView, com.anythink.expressad.foundation.d.c cVar) {
-            this.f8221a = bVar;
+            this.f5381a = bVar;
             this.b = aTSplashView;
-            this.f8222c = cVar;
+            this.f5382c = cVar;
         }
 
         @Override // com.anythink.expressad.atsignalcommon.a.b, com.anythink.expressad.atsignalcommon.windvane.e
         public final void onPageFinished(WebView webView, String str) {
             super.onPageFinished(webView, str);
-            b bVar = this.f8221a;
+            b bVar = this.f5381a;
             if (bVar != null) {
                 bVar.a();
             }
             e.a(e.this);
-            if (!this.f8222c.s()) {
+            if (!this.f5382c.s()) {
                 this.b.setH5Ready(true);
                 o.a("WindVaneWebView", "======渲染成功：finish");
             }
@@ -52,7 +52,7 @@ public final class e {
         @Override // com.anythink.expressad.atsignalcommon.a.b, com.anythink.expressad.atsignalcommon.windvane.e
         public final void onReceivedError(WebView webView, int i, String str, String str2) {
             super.onReceivedError(webView, i, str, str2);
-            b bVar = this.f8221a;
+            b bVar = this.f5381a;
             if (bVar != null) {
                 bVar.a(str);
             }
@@ -64,7 +64,7 @@ public final class e {
         @Override // com.anythink.expressad.atsignalcommon.a.b, com.anythink.expressad.atsignalcommon.windvane.e
         public final void onReceivedSslError(WebView webView, SslErrorHandler sslErrorHandler, SslError sslError) {
             super.onReceivedSslError(webView, sslErrorHandler, sslError);
-            b bVar = this.f8221a;
+            b bVar = this.f5381a;
             if (bVar != null) {
                 bVar.a(sslError.toString());
             }
@@ -76,7 +76,7 @@ public final class e {
         @Override // com.anythink.expressad.atsignalcommon.a.b, com.anythink.expressad.atsignalcommon.windvane.e
         public final void readyState(WebView webView, int i) {
             super.readyState(webView, i);
-            b bVar = this.f8221a;
+            b bVar = this.f5381a;
             if (bVar != null) {
                 bVar.a(i);
             }
@@ -97,14 +97,14 @@ public final class e {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final e f8223a = new e((byte) 0);
+        private static final e f5383a = new e((byte) 0);
 
         a() {
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         public static /* synthetic */ e a() {
-            return f8223a;
+            return f5383a;
         }
     }
 
@@ -121,11 +121,11 @@ public final class e {
     public static final class c {
 
         /* renamed from: a  reason: collision with root package name */
-        private String f8224a;
+        private String f5384a;
         private String b;
 
         /* renamed from: c  reason: collision with root package name */
-        private com.anythink.expressad.foundation.d.c f8225c;
+        private com.anythink.expressad.foundation.d.c f5385c;
         private String d;
         private boolean e;
         private int f;
@@ -144,7 +144,7 @@ public final class e {
         }
 
         public final void a(com.anythink.expressad.foundation.d.c cVar) {
-            this.f8225c = cVar;
+            this.f5385c = cVar;
         }
 
         public final void a(String str) {
@@ -156,11 +156,11 @@ public final class e {
         }
 
         public final String b() {
-            return this.f8224a;
+            return this.f5384a;
         }
 
         public final void b(String str) {
-            this.f8224a = str;
+            this.f5384a = str;
         }
 
         public final void b(boolean z) {
@@ -176,7 +176,7 @@ public final class e {
         }
 
         public final com.anythink.expressad.foundation.d.c d() {
-            return this.f8225c;
+            return this.f5385c;
         }
 
         public final boolean e() {
@@ -190,7 +190,7 @@ public final class e {
 
     private e() {
         this.b = false;
-        this.f8220c = false;
+        this.f5380c = false;
     }
 
     /* synthetic */ e(byte b2) {
@@ -198,17 +198,17 @@ public final class e {
     }
 
     static /* synthetic */ boolean a(e eVar) {
-        eVar.f8220c = true;
+        eVar.f5380c = true;
         return true;
     }
 
     private static e b() {
-        return a.f8223a;
+        return a.f5383a;
     }
 
     public final void a() {
         this.b = false;
-        this.f8220c = false;
+        this.f5380c = false;
     }
 
     /* JADX WARN: Type inference failed for: r0v0, types: [java.lang.Throwable, java.lang.Runtime] */

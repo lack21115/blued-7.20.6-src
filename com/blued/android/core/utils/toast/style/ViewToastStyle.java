@@ -8,9 +8,7 @@ import com.blued.android.core.utils.toast.config.IToastStyle;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/utils/toast/style/ViewToastStyle.class */
 public class ViewToastStyle implements IToastStyle<View> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final int f9772a;
+    private final int a;
     private final IToastStyle<?> b;
 
     @Override // com.blued.android.core.utils.toast.config.IToastStyle
@@ -24,7 +22,7 @@ public class ViewToastStyle implements IToastStyle<View> {
 
     @Override // com.blued.android.core.utils.toast.config.IToastStyle
     public View a(Context context) {
-        return LayoutInflater.from(context).inflate(this.f9772a, (ViewGroup) null);
+        return LayoutInflater.from(context).inflate(this.a, (ViewGroup) null);
     }
 
     @Override // com.blued.android.core.utils.toast.config.IToastStyle

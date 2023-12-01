@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.view.animation.Interpolator;
 import android.widget.ImageView;
 import android.widget.TextView;
+import androidx.constraintlayout.motion.widget.Key;
 import androidx.core.view.animation.PathInterpolatorCompat;
 import com.bytedance.applog.tracker.Tracker;
 import com.kwad.sdk.R;
@@ -53,16 +54,16 @@ public final class k extends w implements View.OnClickListener {
         view.setPivotY(view.getHeight());
         ObjectAnimator ofFloat = ObjectAnimator.ofFloat(view, "alpha", 1.0f, 1.0f);
         ofFloat.setDuration(100L);
-        ObjectAnimator duration = ObjectAnimator.ofFloat(view, "rotation", 0.0f, f).setDuration(j);
+        ObjectAnimator duration = ObjectAnimator.ofFloat(view, Key.ROTATION, 0.0f, f).setDuration(j);
         float f2 = -f;
         float[] fArr = {f, f2};
         long j2 = j * 2;
-        ObjectAnimator duration2 = ObjectAnimator.ofFloat(view, "rotation", fArr).setDuration(j2);
+        ObjectAnimator duration2 = ObjectAnimator.ofFloat(view, Key.ROTATION, fArr).setDuration(j2);
         duration2.setInterpolator(create);
-        ObjectAnimator duration3 = ObjectAnimator.ofFloat(view, "rotation", f2, f).setDuration(j2);
-        ObjectAnimator duration4 = ObjectAnimator.ofFloat(view, "rotation", f, f2).setDuration(j2);
+        ObjectAnimator duration3 = ObjectAnimator.ofFloat(view, Key.ROTATION, f2, f).setDuration(j2);
+        ObjectAnimator duration4 = ObjectAnimator.ofFloat(view, Key.ROTATION, f, f2).setDuration(j2);
         duration4.setInterpolator(create);
-        animatorSet.playSequentially(ofFloat, duration, duration2, duration3, duration4, ObjectAnimator.ofFloat(view, "rotation", f2, 0.0f).setDuration(j));
+        animatorSet.playSequentially(ofFloat, duration, duration2, duration3, duration4, ObjectAnimator.ofFloat(view, Key.ROTATION, f2, 0.0f).setDuration(j));
         return animatorSet;
     }
 

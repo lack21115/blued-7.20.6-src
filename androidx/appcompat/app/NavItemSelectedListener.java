@@ -9,16 +9,16 @@ import com.bytedance.applog.tracker.Tracker;
 class NavItemSelectedListener implements AdapterView.OnItemSelectedListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ActionBar.OnNavigationListener f1594a;
+    private final ActionBar.OnNavigationListener f1546a;
 
     public NavItemSelectedListener(ActionBar.OnNavigationListener onNavigationListener) {
-        this.f1594a = onNavigationListener;
+        this.f1546a = onNavigationListener;
     }
 
     @Override // android.widget.AdapterView.OnItemSelectedListener
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long j) {
         Tracker.onItemSelected(adapterView, view, i, j);
-        ActionBar.OnNavigationListener onNavigationListener = this.f1594a;
+        ActionBar.OnNavigationListener onNavigationListener = this.f1546a;
         if (onNavigationListener != null) {
             onNavigationListener.onNavigationItemSelected(i, j);
         }

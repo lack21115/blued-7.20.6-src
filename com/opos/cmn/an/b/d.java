@@ -8,15 +8,15 @@ import android.text.TextUtils;
 public final class d {
     private static String e;
     private static String f;
-    private static final String g = "ro.build.version." + com.opos.cmn.an.a.a.f24484c + "rom";
-    private static final String h = "persist.sys." + com.opos.cmn.an.a.a.f24484c + ".region";
+    private static final String g = "ro.build.version." + com.opos.cmn.an.a.a.f10797c + "rom";
+    private static final String h = "persist.sys." + com.opos.cmn.an.a.a.f10797c + ".region";
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f24488a = com.opos.cmn.an.a.b.a("Z2V0Q29sb3JPU1ZFUlNJT04=");
+    public static final String f10801a = com.opos.cmn.an.a.b.a("Z2V0Q29sb3JPU1ZFUlNJT04=");
     public static final String b = com.opos.cmn.an.a.b.a("Y29tLmNvbG9yLm9zLkNvbG9yQnVpbGQ=");
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f24489c = com.opos.cmn.an.a.b.a("Z2V0Q29sb3JPU1Zlck5hbWU=");
+    public static final String f10802c = com.opos.cmn.an.a.b.a("Z2V0Q29sb3JPU1Zlck5hbWU=");
     public static final String d = com.opos.cmn.an.a.b.a("Z2V0Q29sb3JPU1ZlckNvZGU=");
 
     public static String a() {
@@ -43,7 +43,7 @@ public final class d {
                 try {
                     f = SystemProperties.get(g);
                 } catch (Exception e3) {
-                    com.opos.cmn.an.f.a.c("OSPropertyTool", f24489c, e3);
+                    com.opos.cmn.an.f.a.c("OSPropertyTool", f10802c, e3);
                 }
             }
         }
@@ -87,7 +87,7 @@ public final class d {
             if (r0 != 0) goto L49
             r0 = r6
             java.lang.String r0 = r0.trim()     // Catch: java.lang.Exception -> L50
-            java.lang.String r1 = com.opos.cmn.an.a.a.f24483a     // Catch: java.lang.Exception -> L50
+            java.lang.String r1 = com.opos.cmn.an.a.a.f10796a     // Catch: java.lang.Exception -> L50
             boolean r0 = r0.equalsIgnoreCase(r1)     // Catch: java.lang.Exception -> L50
             if (r0 == 0) goto L49
             java.lang.String r0 = "persist.sys.oem.region"

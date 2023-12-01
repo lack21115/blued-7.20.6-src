@@ -22,10 +22,10 @@ import java.util.Map;
 public class d {
 
     /* renamed from: c  reason: collision with root package name */
-    private static volatile d f9178c;
+    private static volatile d f6338c;
 
     /* renamed from: a  reason: collision with root package name */
-    String f9179a = "RewardVideoAuto";
+    String f6339a = "RewardVideoAuto";
     ATRewardVideoAutoLoadListener b = new ATRewardVideoAutoLoadListener() { // from class: com.anythink.rewardvideo.a.d.1
         @Override // com.anythink.rewardvideo.api.ATRewardVideoAutoLoadListener
         public final void onRewardVideoAutoLoadFail(final String str, final AdError adError) {
@@ -54,18 +54,18 @@ public class d {
     private ATRewardVideoAutoLoadListener d;
 
     public static d a() {
-        if (f9178c == null) {
+        if (f6338c == null) {
             synchronized (d.class) {
                 try {
-                    if (f9178c == null) {
-                        f9178c = new d();
+                    if (f6338c == null) {
+                        f6338c = new d();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f9178c;
+        return f6338c;
     }
 
     private void a(Activity activity, String str, ATRewardVideoAutoEventListener aTRewardVideoAutoEventListener) {
@@ -132,7 +132,7 @@ public class d {
 
     private ATAdStatusInfo d(String str) {
         if (n.a().g() == null || TextUtils.isEmpty(n.a().p()) || TextUtils.isEmpty(n.a().q())) {
-            Log.e(this.f9179a, "SDK init error!");
+            Log.e(this.f6339a, "SDK init error!");
             return null;
         }
         a a2 = a.a(n.a().E(), str);
@@ -145,24 +145,24 @@ public class d {
     public final void a(Activity activity, String str, String str2, ATRewardVideoAutoEventListener aTRewardVideoAutoEventListener) {
         com.anythink.core.common.k.n.b(str, g.i.o, g.i.s, g.i.h, "");
         if (TextUtils.isEmpty(str)) {
-            AdError errorCode = ErrorCode.getErrorCode(ErrorCode.exception, "", "placementId is empty.");
+            AdError errorCode = ErrorCode.getErrorCode("9999", "", "placementId is empty.");
             if (aTRewardVideoAutoEventListener != null) {
                 aTRewardVideoAutoEventListener.onRewardedVideoAdPlayFailed(errorCode, j.a((com.anythink.core.common.b.d) null));
             }
-            Log.e(this.f9179a, "PlacementId is Empty!");
+            Log.e(this.f6339a, "PlacementId is Empty!");
         }
         if (n.a().g() != null && !TextUtils.isEmpty(n.a().p()) && !TextUtils.isEmpty(n.a().q())) {
             if (activity == null) {
-                Log.e(this.f9179a, "RewardedVideo Show Activity is null.");
+                Log.e(this.f6339a, "RewardedVideo Show Activity is null.");
             }
             a.a(activity, str).a(activity, str2, new c(aTRewardVideoAutoEventListener), (ATEventInterface) null, (Map<String, Object>) null);
             return;
         }
-        AdError errorCode2 = ErrorCode.getErrorCode(ErrorCode.exception, "", "sdk init error");
+        AdError errorCode2 = ErrorCode.getErrorCode("9999", "", "sdk init error");
         if (aTRewardVideoAutoEventListener != null) {
             aTRewardVideoAutoEventListener.onRewardedVideoAdPlayFailed(errorCode2, j.a((com.anythink.core.common.b.d) null));
         }
-        Log.e(this.f9179a, "SDK init error!");
+        Log.e(this.f6339a, "SDK init error!");
     }
 
     public final void a(Context context, String[] strArr, ATRewardVideoAutoLoadListener aTRewardVideoAutoLoadListener) {
@@ -204,12 +204,12 @@ public class d {
     public final ATAdStatusInfo b(String str) {
         ATAdStatusInfo aTAdStatusInfo;
         if (TextUtils.isEmpty(str)) {
-            aTAdStatusInfo = new ATAdStatusInfo(false, false, null);
+            aTAdStatusInfo = new ATAdStatusInfo(false, false, (ATAdInfo) null);
         } else {
             ATAdStatusInfo d = d(str);
             aTAdStatusInfo = d;
             if (d == null) {
-                aTAdStatusInfo = new ATAdStatusInfo(false, false, null);
+                aTAdStatusInfo = new ATAdStatusInfo(false, false, (ATAdInfo) null);
             }
         }
         com.anythink.core.common.k.n.b(str, g.i.o, g.i.u, aTAdStatusInfo.toString(), "");
@@ -218,7 +218,7 @@ public class d {
 
     public final List<ATAdInfo> c(String str) {
         if (TextUtils.isEmpty(str)) {
-            Log.e(this.f9179a, "PlacementId is empty.");
+            Log.e(this.f6339a, "PlacementId is empty.");
             return null;
         }
         a a2 = a.a(n.a().E(), str);

@@ -15,9 +15,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8457232-dex2jar.jar:com/tencent/cos/xml/transfer/BaseUploadPartsTask.class */
-public abstract class BaseUploadPartsTask {
+abstract class BaseUploadPartsTask {
     protected COSDirect mCosDirect;
     protected long mOffset;
     protected PutObjectRequest mPutObjectRequest;

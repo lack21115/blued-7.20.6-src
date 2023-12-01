@@ -19,20 +19,20 @@ import java.net.URL;
 public class aw {
 
     /* renamed from: a  reason: collision with root package name */
-    private static long f41616a;
+    private static long f27925a;
 
     /* loaded from: source-8829756-dex2jar.jar:com/xiaomi/push/service/aw$a.class */
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        int f41617a;
+        int f27926a;
 
         /* renamed from: a  reason: collision with other field name */
-        byte[] f987a;
+        byte[] f940a;
 
         public a(byte[] bArr, int i) {
-            this.f987a = bArr;
-            this.f41617a = i;
+            this.f940a = bArr;
+            this.f27926a = i;
         }
     }
 
@@ -40,14 +40,14 @@ public class aw {
     public static class b {
 
         /* renamed from: a  reason: collision with root package name */
-        public long f41618a;
+        public long f27927a;
 
         /* renamed from: a  reason: collision with other field name */
-        public Bitmap f988a;
+        public Bitmap f941a;
 
         public b(Bitmap bitmap, long j) {
-            this.f988a = bitmap;
-            this.f41618a = j;
+            this.f941a = bitmap;
+            this.f27927a = j;
         }
     }
 
@@ -56,7 +56,7 @@ public class aw {
         options.inJustDecodeBounds = true;
         BitmapFactory.decodeStream(inputStream, null, options);
         if (options.outWidth == -1 || options.outHeight == -1) {
-            com.xiaomi.channel.commonutils.logger.b.m11394a("decode dimension failed for bitmap.");
+            com.xiaomi.channel.commonutils.logger.b.m8344a("decode dimension failed for bitmap.");
             return 1;
         }
         int round = Math.round((context.getResources().getDisplayMetrics().densityDpi / 160.0f) * 48.0f);
@@ -146,7 +146,7 @@ public class aw {
                 httpURLConnection.connect();
                 int contentLength = httpURLConnection.getContentLength();
                 if (z && contentLength > 102400) {
-                    com.xiaomi.channel.commonutils.logger.b.m11394a("Bitmap size is too big, max size is 102400  contentLen size is " + contentLength + " from url " + str);
+                    com.xiaomi.channel.commonutils.logger.b.m8344a("Bitmap size is too big, max size is 102400  contentLen size is " + contentLength + " from url " + str);
                     com.xiaomi.push.x.a((Closeable) null);
                     if (httpURLConnection != null) {
                         httpURLConnection.disconnect();
@@ -156,7 +156,7 @@ public class aw {
                 }
                 int responseCode = httpURLConnection.getResponseCode();
                 if (responseCode != 200) {
-                    com.xiaomi.channel.commonutils.logger.b.m11394a("Invalid Http Response Code " + responseCode + " received");
+                    com.xiaomi.channel.commonutils.logger.b.m8344a("Invalid Http Response Code " + responseCode + " received");
                     com.xiaomi.push.x.a((Closeable) null);
                     if (httpURLConnection != null) {
                         httpURLConnection.disconnect();
@@ -178,7 +178,7 @@ public class aw {
                         byteArrayOutputStream.write(bArr, 0, read);
                     }
                     if (i <= 0) {
-                        com.xiaomi.channel.commonutils.logger.b.m11394a("length 102400 exhausted.");
+                        com.xiaomi.channel.commonutils.logger.b.m8344a("length 102400 exhausted.");
                         a aVar = new a(null, 102400);
                         com.xiaomi.push.x.a((Closeable) inputStream2);
                         if (httpURLConnection != null) {
@@ -238,7 +238,7 @@ public class aw {
         b bVar = new b(null, 0L);
         Bitmap b2 = b(context, str);
         if (b2 != null) {
-            bVar.f988a = b2;
+            bVar.f941a = b2;
             return bVar;
         }
         ByteArrayInputStream byteArrayInputStream2 = null;
@@ -254,8 +254,8 @@ public class aw {
                 com.xiaomi.push.x.a((Closeable) null);
                 return bVar;
             }
-            bVar.f41618a = a2.f41617a;
-            byte[] bArr = a2.f987a;
+            bVar.f27927a = a2.f27926a;
+            byte[] bArr = a2.f940a;
             ByteArrayInputStream byteArrayInputStream4 = null;
             if (bArr != null) {
                 if (z) {
@@ -264,7 +264,7 @@ public class aw {
                         int a3 = a(context, byteArrayInputStream4);
                         BitmapFactory.Options options = new BitmapFactory.Options();
                         options.inSampleSize = a3;
-                        bVar.f988a = BitmapFactory.decodeByteArray(bArr, 0, bArr.length, options);
+                        bVar.f941a = BitmapFactory.decodeByteArray(bArr, 0, bArr.length, options);
                     } catch (Exception e2) {
                         e = e2;
                         byteArrayInputStream = byteArrayInputStream4;
@@ -278,12 +278,12 @@ public class aw {
                         throw th;
                     }
                 } else {
-                    bVar.f988a = BitmapFactory.decodeByteArray(bArr, 0, bArr.length);
+                    bVar.f941a = BitmapFactory.decodeByteArray(bArr, 0, bArr.length);
                     byteArrayInputStream4 = null;
                 }
             }
             byteArrayInputStream3 = byteArrayInputStream4;
-            a(context, a2.f987a, str);
+            a(context, a2.f940a, str);
             byteArrayInputStream = byteArrayInputStream4;
             com.xiaomi.push.x.a((Closeable) byteArrayInputStream);
             return bVar;
@@ -295,10 +295,10 @@ public class aw {
     private static void a(Context context) {
         File file = new File(context.getCacheDir().getPath() + File.separator + "mipush_icon");
         if (file.exists()) {
-            if (f41616a == 0) {
-                f41616a = com.xiaomi.push.w.a(file);
+            if (f27925a == 0) {
+                f27925a = com.xiaomi.push.w.a(file);
             }
-            if (f41616a > 15728640) {
+            if (f27925a > 15728640) {
                 try {
                     File[] listFiles = file.listFiles();
                     int i = 0;
@@ -315,7 +315,7 @@ public class aw {
                 } catch (Exception e) {
                     com.xiaomi.channel.commonutils.logger.b.a(e);
                 }
-                f41616a = 0L;
+                f27925a = 0L;
             }
         }
     }

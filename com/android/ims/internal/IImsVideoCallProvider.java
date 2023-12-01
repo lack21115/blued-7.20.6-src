@@ -229,11 +229,11 @@ public interface IImsVideoCallProvider extends IInterface {
                     return true;
                 case 3:
                     parcel.enforceInterface(DESCRIPTOR);
-                    setPreviewSurface(parcel.readInt() != 0 ? Surface.CREATOR.createFromParcel(parcel) : null);
+                    setPreviewSurface(parcel.readInt() != 0 ? (Surface) Surface.CREATOR.createFromParcel(parcel) : null);
                     return true;
                 case 4:
                     parcel.enforceInterface(DESCRIPTOR);
-                    setDisplaySurface(parcel.readInt() != 0 ? Surface.CREATOR.createFromParcel(parcel) : null);
+                    setDisplaySurface(parcel.readInt() != 0 ? (Surface) Surface.CREATOR.createFromParcel(parcel) : null);
                     return true;
                 case 5:
                     parcel.enforceInterface(DESCRIPTOR);
@@ -245,11 +245,11 @@ public interface IImsVideoCallProvider extends IInterface {
                     return true;
                 case 7:
                     parcel.enforceInterface(DESCRIPTOR);
-                    sendSessionModifyRequest(parcel.readInt() != 0 ? VideoProfile.CREATOR.createFromParcel(parcel) : null);
+                    sendSessionModifyRequest(parcel.readInt() != 0 ? (VideoProfile) VideoProfile.CREATOR.createFromParcel(parcel) : null);
                     return true;
                 case 8:
                     parcel.enforceInterface(DESCRIPTOR);
-                    sendSessionModifyResponse(parcel.readInt() != 0 ? VideoProfile.CREATOR.createFromParcel(parcel) : null);
+                    sendSessionModifyResponse(parcel.readInt() != 0 ? (VideoProfile) VideoProfile.CREATOR.createFromParcel(parcel) : null);
                     return true;
                 case 9:
                     parcel.enforceInterface(DESCRIPTOR);
@@ -263,7 +263,7 @@ public interface IImsVideoCallProvider extends IInterface {
                     parcel.enforceInterface(DESCRIPTOR);
                     setPauseImage(parcel.readString());
                     return true;
-                case IBinder.INTERFACE_TRANSACTION /* 1598968902 */:
+                case 1598968902:
                     parcel2.writeString(DESCRIPTOR);
                     return true;
                 default:

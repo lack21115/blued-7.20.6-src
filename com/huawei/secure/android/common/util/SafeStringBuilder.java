@@ -7,7 +7,7 @@ import android.util.Log;
 public class SafeStringBuilder {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23150a = "SafeStringBuilder";
+    private static final String f9542a = "SafeStringBuilder";
     private static final String b = "";
 
     public static String substring(StringBuilder sb, int i) {
@@ -17,7 +17,7 @@ public class SafeStringBuilder {
         try {
             return sb.substring(i);
         } catch (Exception e) {
-            String str = f23150a;
+            String str = f9542a;
             Log.e(str, "substring exception: " + e.getMessage());
             return "";
         }
@@ -30,7 +30,7 @@ public class SafeStringBuilder {
         try {
             return sb.substring(i, i2);
         } catch (Exception e) {
-            String str = f23150a;
+            String str = f9542a;
             Log.e(str, "substring: " + e.getMessage());
             return "";
         }

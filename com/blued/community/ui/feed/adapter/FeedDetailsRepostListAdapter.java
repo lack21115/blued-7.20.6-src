@@ -33,20 +33,16 @@ import com.chad.library.adapter.base.BaseViewHolder;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/community/ui/feed/adapter/FeedDetailsRepostListAdapter.class */
 public class FeedDetailsRepostListAdapter extends BaseQuickAdapter<FeedRepost, BaseViewHolder> implements RepostListDataObserver.IRepostListDataObserver {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f19611a;
+    private Context a;
     private IRequestHost b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f19612c;
+    private String c;
     private BluedIngSelfFeed d;
 
     public FeedDetailsRepostListAdapter(Context context, IRequestHost iRequestHost, String str) {
         super(R.layout.item_feed_repost);
-        this.f19611a = context;
+        this.a = context;
         this.b = iRequestHost;
-        this.f19612c = str;
+        this.c = str;
     }
 
     private void a(View view, final FeedRepost feedRepost) {
@@ -55,14 +51,14 @@ public class FeedDetailsRepostListAdapter extends BaseQuickAdapter<FeedRepost, B
             public boolean onLongClick(View view2) {
                 String str = feedRepost.repost_content;
                 if (Build.VERSION.SDK_INT < 11 || Build.VERSION.SDK_INT == 18) {
-                    ((ClipboardManager) FeedDetailsRepostListAdapter.this.f19611a.getSystemService(Context.CLIPBOARD_SERVICE)).setText(RegExpUtils.a(str));
+                    ((ClipboardManager) FeedDetailsRepostListAdapter.this.a.getSystemService("clipboard")).setText(RegExpUtils.a(str));
                 } else {
                     try {
-                        ((android.content.ClipboardManager) FeedDetailsRepostListAdapter.this.f19611a.getSystemService(Context.CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("simple text", RegExpUtils.a(str)));
+                        ((android.content.ClipboardManager) FeedDetailsRepostListAdapter.this.a.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("simple text", RegExpUtils.a(str)));
                     } catch (Exception e) {
                     }
                 }
-                AppMethods.a((CharSequence) FeedDetailsRepostListAdapter.this.f19611a.getResources().getString(R.string.copy));
+                AppMethods.a((CharSequence) FeedDetailsRepostListAdapter.this.a.getResources().getString(R.string.copy));
                 return true;
             }
         });
@@ -83,14 +79,13 @@ public class FeedDetailsRepostListAdapter extends BaseQuickAdapter<FeedRepost, B
             return;
         }
         if (TextUtils.isEmpty(feedRepost.repost_content)) {
-            feedRepost.repost_content = this.f19611a.getResources().getString(R.string.feed_forward);
+            feedRepost.repost_content = this.a.getResources().getString(R.string.feed_forward);
         }
         this.mData.add(0, feedRepost);
         notifyDataSetChanged();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(BaseViewHolder baseViewHolder, final FeedRepost feedRepost) {
         final ImageView imageView = (ImageView) baseViewHolder.getView(R.id.header_view);
@@ -109,7 +104,7 @@ public class FeedDetailsRepostListAdapter extends BaseQuickAdapter<FeedRepost, B
         if (TextUtils.isEmpty(feedRepost.repost_timestamp)) {
             textView.setText("");
         } else {
-            textView.setText(TimeAndDateUtils.g(this.f19611a, TimeAndDateUtils.c(feedRepost.repost_timestamp)));
+            textView.setText(TimeAndDateUtils.g(this.a, TimeAndDateUtils.c(feedRepost.repost_timestamp)));
         }
         if (TextUtils.isEmpty(feedRepost.user_name)) {
             textView2.setText("");
@@ -119,7 +114,7 @@ public class FeedDetailsRepostListAdapter extends BaseQuickAdapter<FeedRepost, B
             textView2.setText(StringUtils.a(feedRepost.note, feedRepost.user_name.replace(":", "")));
         }
         int i = 0;
-        final boolean a2 = FeedMethods.a(textView2, feedRepost.feed_uid, feedRepost.is_comment_anonym == 1);
+        final boolean a = FeedMethods.a(textView2, feedRepost.feed_uid, feedRepost.is_comment_anonym == 1);
         if (feedRepost.is_comment_anonym != 1) {
             i = 8;
         }
@@ -134,25 +129,25 @@ public class FeedDetailsRepostListAdapter extends BaseQuickAdapter<FeedRepost, B
         userBasicModel.is_vip_annual = feedRepost.is_vip_annual;
         userBasicModel.is_hide_vip_look = feedRepost.is_hide_vip_look;
         userBasicModel.vip_exp_lvl = feedRepost.vip_exp_lvl;
-        UserInfoHelper.a(this.f19611a, textView2, userBasicModel);
+        UserInfoHelper.a(this.a, textView2, userBasicModel);
         UserInfoHelper.a(imageView4, userBasicModel);
         View.OnClickListener onClickListener = new View.OnClickListener() { // from class: com.blued.community.ui.feed.adapter.FeedDetailsRepostListAdapter.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
-                if (a2 || feedRepost.repost_uid.equals(UserInfoUtils.c())) {
+                if (a || feedRepost.repost_uid.equals(UserInfoUtils.c())) {
                     return;
                 }
                 UserBasicModel userBasicModel2 = new UserBasicModel();
                 userBasicModel2.uid = feedRepost.repost_uid;
                 userBasicModel2.avatar = feedRepost.user_avatar;
                 userBasicModel2.name = feedRepost.user_name;
-                CommunityServiceManager.b().a(FeedDetailsRepostListAdapter.this.f19611a, userBasicModel2, FeedDetailsRepostListAdapter.this.d, FeedDetailsRepostListAdapter.this.f19612c, imageView);
+                CommunityServiceManager.b().a(FeedDetailsRepostListAdapter.this.a, userBasicModel2, FeedDetailsRepostListAdapter.this.d, FeedDetailsRepostListAdapter.this.c, imageView);
             }
         };
         textView2.setOnClickListener(onClickListener);
         imageView.setOnClickListener(onClickListener);
-        StringUtils.a(textView3, (CharSequence) feedRepost.repost_content, true, this.f19612c);
+        StringUtils.a(textView3, feedRepost.repost_content, true, this.c);
         a(baseViewHolder.getConvertView(), feedRepost);
         baseViewHolder.getConvertView().setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.feed.adapter.FeedDetailsRepostListAdapter.2
             @Override // android.view.View.OnClickListener
@@ -160,7 +155,7 @@ public class FeedDetailsRepostListAdapter extends BaseQuickAdapter<FeedRepost, B
                 Tracker.onClick(view);
                 BluedIngSelfFeed bluedIngSelfFeed = new BluedIngSelfFeed();
                 bluedIngSelfFeed.feed_id = feedRepost.repost_id;
-                FeedDetailsFragment.a(FeedDetailsRepostListAdapter.this.f19611a, bluedIngSelfFeed, -1, new FeedDetailParams(0));
+                FeedDetailsFragment.a(FeedDetailsRepostListAdapter.this.a, bluedIngSelfFeed, -1, new FeedDetailParams(0));
             }
         });
     }

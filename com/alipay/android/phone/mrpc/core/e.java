@@ -6,9 +6,7 @@ import org.apache.http.protocol.HttpContext;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alipay/android/phone/mrpc/core/e.class */
 final class e extends DefaultRedirectHandler {
-
-    /* renamed from: a  reason: collision with root package name */
-    int f4522a;
+    int a;
     final /* synthetic */ d b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -18,9 +16,9 @@ final class e extends DefaultRedirectHandler {
 
     public final boolean isRedirectRequested(HttpResponse httpResponse, HttpContext httpContext) {
         int statusCode;
-        this.f4522a++;
+        this.a++;
         boolean isRedirectRequested = super.isRedirectRequested(httpResponse, httpContext);
-        if (isRedirectRequested || this.f4522a >= 5 || !((statusCode = httpResponse.getStatusLine().getStatusCode()) == 301 || statusCode == 302)) {
+        if (isRedirectRequested || this.a >= 5 || !((statusCode = httpResponse.getStatusLine().getStatusCode()) == 301 || statusCode == 302)) {
             return isRedirectRequested;
         }
         return true;

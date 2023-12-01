@@ -103,16 +103,16 @@ public class e {
                         com.opos.mobad.service.f.a(context2, z, z2, z3, i2, new a.c() { // from class: com.opos.mobad.f.e.1
 
                             /* renamed from: c  reason: collision with root package name */
-                            private String f26138c;
+                            private String f12450c;
                             private String d;
                             private Boolean e;
 
                             @Override // com.opos.mobad.service.f.a.c
                             public String a() {
-                                if (TextUtils.isEmpty(this.f26138c)) {
-                                    this.f26138c = com.opos.mobad.cmn.a.b.c.a(context);
+                                if (TextUtils.isEmpty(this.f12450c)) {
+                                    this.f12450c = com.opos.mobad.cmn.a.b.c.a(context);
                                 }
-                                return this.f26138c;
+                                return this.f12450c;
                             }
 
                             @Override // com.opos.mobad.service.f.a.c
@@ -133,23 +133,23 @@ public class e {
 
                             @Override // com.opos.mobad.service.f.a.c
                             public void d() {
-                                this.f26138c = com.opos.mobad.cmn.a.b.c.a(context);
+                                this.f12450c = com.opos.mobad.cmn.a.b.c.a(context);
                                 this.d = com.opos.mobad.cmn.a.b.c.a();
                                 this.e = Boolean.valueOf(com.opos.mobad.cmn.a.b.c.b(context));
                             }
                         }, new a.g() { // from class: com.opos.mobad.f.e.2
 
                             /* renamed from: c  reason: collision with root package name */
-                            private String f26140c;
+                            private String f12452c;
                             private String d;
                             private Boolean e;
 
                             @Override // com.opos.mobad.service.f.a.g
                             public String a() {
-                                if (TextUtils.isEmpty(this.f26140c)) {
-                                    this.f26140c = com.opos.mobad.cmn.a.b.c.a(context);
+                                if (TextUtils.isEmpty(this.f12452c)) {
+                                    this.f12452c = com.opos.mobad.cmn.a.b.c.a(context);
                                 }
-                                return this.f26140c;
+                                return this.f12452c;
                             }
 
                             @Override // com.opos.mobad.service.f.a.g
@@ -170,21 +170,21 @@ public class e {
 
                             @Override // com.opos.mobad.service.f.a.g
                             public void d() {
-                                this.f26140c = com.opos.mobad.cmn.a.b.c.a(context);
+                                this.f12452c = com.opos.mobad.cmn.a.b.c.a(context);
                                 this.d = com.opos.mobad.cmn.a.b.c.a();
                                 this.e = Boolean.valueOf(com.opos.mobad.cmn.a.b.c.b(context));
                             }
-                        }, new a.InterfaceC0735a() { // from class: com.opos.mobad.f.e.3
+                        }, new a.InterfaceC0565a() { // from class: com.opos.mobad.f.e.3
                             private String d;
                             private String e;
                             private int f = -1;
 
-                            @Override // com.opos.mobad.service.f.a.InterfaceC0735a
+                            @Override // com.opos.mobad.service.f.a.InterfaceC0565a
                             public String a() {
                                 return str;
                             }
 
-                            @Override // com.opos.mobad.service.f.a.InterfaceC0735a
+                            @Override // com.opos.mobad.service.f.a.InterfaceC0565a
                             public String b() {
                                 if (TextUtils.isEmpty(this.d)) {
                                     this.d = context.getPackageName();
@@ -192,7 +192,7 @@ public class e {
                                 return this.d;
                             }
 
-                            @Override // com.opos.mobad.service.f.a.InterfaceC0735a
+                            @Override // com.opos.mobad.service.f.a.InterfaceC0565a
                             public String c() {
                                 if (TextUtils.isEmpty(this.e)) {
                                     Context context3 = context;
@@ -224,7 +224,7 @@ public class e {
                         c.d().a(context, str, i, z, z3);
                         if (com.opos.cmn.a.a.a()) {
                             c.a a2 = c.d().a();
-                            if (!a2.f25670a) {
+                            if (!a2.f11982a) {
                                 com.opos.cmn.an.f.a.d("MobAdManager", a2.b);
                                 if (eVar == null) {
                                     return;

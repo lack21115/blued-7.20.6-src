@@ -14,14 +14,14 @@ public final class a extends k implements com.tencent.liteav.beauty.b.b {
     private final d b = new d();
 
     /* renamed from: c  reason: collision with root package name */
-    private final e f36361c = new e();
+    private final e f22670c = new e();
     private final c d = new c();
 
     public a() {
-        k.a aVar = this.f36583a;
+        k.a aVar = this.f22892a;
         k.a a2 = a(this.b);
         a2.a(aVar);
-        k.a a3 = a(this.f36361c);
+        k.a a3 = a(this.f22670c);
         a3.a(a2);
         a3.a(j.SECOND_INPUT_SAMPLE2D_NAME, aVar);
         k.a a4 = a(this.d);
@@ -33,10 +33,10 @@ public final class a extends k implements com.tencent.liteav.beauty.b.b {
 
     @Override // com.tencent.liteav.beauty.b.b
     public final void a(float f) {
-        e eVar = this.f36361c;
+        e eVar = this.f22670c;
         if (eVar != null) {
             LiteavLog.i("SmoothVertical", "setBeautyLevel ".concat(String.valueOf(f)));
-            eVar.setFloatOnDraw(eVar.f36367a, f);
+            eVar.setFloatOnDraw(eVar.f22676a, f);
         }
     }
 
@@ -45,7 +45,7 @@ public final class a extends k implements com.tencent.liteav.beauty.b.b {
         b bVar = this.e;
         if (bVar != null) {
             LiteavLog.i("BeautyBlend", "setBrightLevel ".concat(String.valueOf(f)));
-            bVar.setFloatOnDraw(bVar.f36362a, f);
+            bVar.setFloatOnDraw(bVar.f22671a, f);
         }
     }
 
@@ -81,6 +81,6 @@ public final class a extends k implements com.tencent.liteav.beauty.b.b {
         }
         LiteavLog.i("BeautySmoothFilter", "mResampleRatio: %f, mResampleWidth: %d, mResampleHeight: %d", Float.valueOf(this.g), Integer.valueOf(this.h), Integer.valueOf(this.i));
         this.b.onOutputSizeChanged(this.h, this.i);
-        this.f36361c.onOutputSizeChanged(this.h, this.i);
+        this.f22670c.onOutputSizeChanged(this.h, this.i);
     }
 }

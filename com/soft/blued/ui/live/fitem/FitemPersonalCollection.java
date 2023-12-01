@@ -15,13 +15,11 @@ public class FitemPersonalCollection extends FreedomItem {
         this.b = livePersonalCollectionModel;
     }
 
-    @Override // com.blued.android.module.common.utils.freedom.FreedomItem
     public int a() {
         return R.layout.fitem_live_personal_collection;
     }
 
-    @Override // com.blued.android.module.common.utils.freedom.FreedomItem
     public void a(Context context, BaseViewHolder baseViewHolder, List<FreedomItem> list, int i) {
-        baseViewHolder.a(2131365504, this.b.icon).a(2131372754, (CharSequence) this.b.name);
+        baseViewHolder.a(2131365504, this.b.icon).a(2131372754, this.b.name);
     }
 }

@@ -7,12 +7,12 @@ import org.json.JSONObject;
 public class ab extends z {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f40612a;
+    private String f26921a;
     private String b;
 
     public ab(String str, ArrayList<aa> arrayList) {
         super(str, arrayList);
-        this.f40612a = "";
+        this.f26921a = "";
         this.b = "";
     }
 
@@ -21,7 +21,7 @@ public class ab extends z {
         JSONObject a2 = super.a(str, jSONObject);
         if (a2 != null) {
             try {
-                a2.put(com.umeng.ccg.a.s, this.f40612a);
+                a2.put(com.umeng.ccg.a.s, this.f26921a);
                 a2.put("action", this.b);
             } catch (Throwable th) {
                 return a2;
@@ -31,11 +31,11 @@ public class ab extends z {
     }
 
     public void c(String str) {
-        this.f40612a = str;
+        this.f26921a = str;
     }
 
     public String d() {
-        return this.f40612a;
+        return this.f26921a;
     }
 
     public void d(String str) {

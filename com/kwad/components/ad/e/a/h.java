@@ -20,7 +20,7 @@ public final class h extends com.kwad.components.ad.e.kwai.a implements View.OnC
     }
 
     private void eW() {
-        com.kwad.components.core.d.b.a.a(new a.C0519a(this.nB.getContext()).I(this.ni.mAdTemplate).ap(2).a(new a.b() { // from class: com.kwad.components.ad.e.a.h.2
+        com.kwad.components.core.d.b.a.a(new a.C0349a(this.nB.getContext()).I(this.ni.mAdTemplate).ap(2).a(new a.b() { // from class: com.kwad.components.ad.e.a.h.2
             @Override // com.kwad.components.core.d.b.a.b
             public final void onAdClicked() {
                 com.kwad.sdk.core.report.a.a(h.this.ni.mAdTemplate, 2, h.this.ni.nd.getTouchCoords());

@@ -7,27 +7,19 @@ import java.util.List;
 public final class lk {
     private static volatile lk g;
     private static Object h = new Object();
-
-    /* renamed from: c  reason: collision with root package name */
-    private long f5367c;
+    private long c;
     private mp d;
     private mp f = new mp();
-
-    /* renamed from: a  reason: collision with root package name */
-    private lj f5366a = new lj();
+    private lj a = new lj();
     private ll b = new ll();
     private lg e = new lg();
 
     /* renamed from: com.amap.api.col.3sl.lk$a */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/lk$a.class */
     public static final class a {
-
-        /* renamed from: a  reason: collision with root package name */
-        public mp f5368a;
+        public mp a;
         public List<mq> b;
-
-        /* renamed from: c  reason: collision with root package name */
-        public long f5369c;
+        public long c;
         public long d;
         public boolean e;
         public long f;
@@ -78,7 +70,7 @@ public final class lk {
             com.amap.api.col.3sl.mp r0 = r0.d
             if (r0 == 0) goto L2e
             r0 = r11
-            com.amap.api.col.3sl.mp r0 = r0.f5368a
+            com.amap.api.col.3sl.mp r0 = r0.a
             r1 = r10
             com.amap.api.col.3sl.mp r1 = r1.d
             double r0 = r0.a(r1)
@@ -87,9 +79,9 @@ public final class lk {
             if (r0 < 0) goto Lae
         L2e:
             r0 = r10
-            com.amap.api.col.3sl.lj r0 = r0.f5366a
+            com.amap.api.col.3sl.lj r0 = r0.a
             r1 = r11
-            com.amap.api.col.3sl.mp r1 = r1.f5368a
+            com.amap.api.col.3sl.mp r1 = r1.a
             r2 = r11
             boolean r2 = r2.j
             r3 = r11
@@ -103,7 +95,7 @@ public final class lk {
             r0 = r10
             com.amap.api.col.3sl.ll r0 = r0.b
             r1 = r11
-            com.amap.api.col.3sl.mp r1 = r1.f5368a
+            com.amap.api.col.3sl.mp r1 = r1.a
             r2 = r11
             java.util.List<com.amap.api.col.3sl.mq> r2 = r2.b
             r3 = r11
@@ -123,7 +115,7 @@ public final class lk {
             r0 = r10
             com.amap.api.col.3sl.mp r0 = r0.f
             r1 = r11
-            com.amap.api.col.3sl.mp r1 = r1.f5368a
+            com.amap.api.col.3sl.mp r1 = r1.a
             r2 = r11
             long r2 = r2.f
             r3 = r12
@@ -137,7 +129,7 @@ public final class lk {
             com.amap.api.col.3sl.mp r4 = r4.f
             r5 = r18
             r6 = r11
-            long r6 = r6.f5369c
+            long r6 = r6.c
             r7 = r19
             byte[] r3 = r3.a(r4, r5, r6, r7)
             r1.<init>(r2, r3)
@@ -145,11 +137,11 @@ public final class lk {
         La0:
             r0 = r10
             r1 = r11
-            com.amap.api.col.3sl.mp r1 = r1.f5368a
+            com.amap.api.col.3sl.mp r1 = r1.a
             r0.d = r1
             r0 = r10
             r1 = r14
-            r0.f5367c = r1
+            r0.c = r1
         Lae:
             r0 = r16
             return r0

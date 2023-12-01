@@ -24,13 +24,9 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYLateAcceptView.class */
 public class YYLateAcceptView extends LinearLayout implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    private TextView f18289a;
+    private TextView a;
     private TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private TextView f18290c;
+    private TextView c;
     private CountDownTimer d;
     private BaseYYStudioFragment e;
     private PopupWindow f;
@@ -52,11 +48,11 @@ public class YYLateAcceptView extends LinearLayout implements View.OnClickListen
 
     private void a() {
         LayoutInflater.from(getContext()).inflate(R.layout.dialog_late_accept_layout, (ViewGroup) this, true);
-        this.f18289a = (TextView) findViewById(R.id.tv_apply_content);
+        this.a = (TextView) findViewById(R.id.tv_apply_content);
         this.b = (TextView) findViewById(R.id.tv_apply_reject);
-        this.f18290c = (TextView) findViewById(R.id.tv_apply_now);
+        this.c = (TextView) findViewById(R.id.tv_apply_now);
         this.b.setOnClickListener(this);
-        this.f18290c.setOnClickListener(this);
+        this.c.setOnClickListener(this);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -84,6 +80,7 @@ public class YYLateAcceptView extends LinearLayout implements View.OnClickListen
         }, this.e.getFragmentActive());
     }
 
+    /* JADX WARN: Type inference failed for: r1v0, types: [com.blued.android.module.yy_china.view.YYLateAcceptView$1] */
     private void b() {
         c();
         this.d = new CountDownTimer(5000L, 1000L) { // from class: com.blued.android.module.yy_china.view.YYLateAcceptView.1
@@ -98,7 +95,7 @@ public class YYLateAcceptView extends LinearLayout implements View.OnClickListen
 
             @Override // android.os.CountDownTimer
             public void onTick(long j) {
-                YYLateAcceptView.this.f18289a.setText(String.format(YYLateAcceptView.this.getContext().getResources().getString(R.string.yy_late_apply_des), Long.valueOf((j / 1000) + 1)));
+                YYLateAcceptView.this.a.setText(String.format(YYLateAcceptView.this.getContext().getResources().getString(R.string.yy_late_apply_des), Long.valueOf((j / 1000) + 1)));
             }
         }.start();
     }

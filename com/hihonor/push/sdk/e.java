@@ -18,11 +18,11 @@ import java.util.concurrent.Callable;
 public class e {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f22288a;
+    public final Context f8680a;
     public k b = new k();
 
     public e(Context context) {
-        this.f22288a = context;
+        this.f8680a = context;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -31,20 +31,20 @@ public class e {
         try {
             o0 o0Var = new o0(UpMsgType.REQUEST_PUSH_TOKEN, null);
             o0Var.e = a.a();
-            String pushToken = ((PushTokenResult) a.a(j.f22302c.a(o0Var))).getPushToken();
+            String pushToken = ((PushTokenResult) a.a(j.f8694c.a(o0Var))).getPushToken();
             if (z && !TextUtils.isEmpty(pushToken)) {
                 Bundle bundle = new Bundle();
                 bundle.putString("event_type", DownMsgType.RECEIVE_TOKEN);
                 bundle.putString("push_token", pushToken);
                 q qVar = new q();
-                Context context = this.f22288a;
+                Context context = this.f8680a;
                 Log.i("MessengerSrvConnection", "start bind service.");
                 try {
                     Intent intent = new Intent();
                     intent.setPackage(context.getPackageName());
                     intent.setAction("com.hihonor.push.action.MESSAGING_EVENT");
                     Context applicationContext = context.getApplicationContext();
-                    qVar.f22321c = applicationContext;
+                    qVar.f8713c = applicationContext;
                     qVar.b = bundle;
                     if (applicationContext.bindService(intent, qVar, 1)) {
                         Log.i("MessengerSrvConnection", "bind service succeeded.");
@@ -63,12 +63,12 @@ public class e {
     /* JADX INFO: Access modifiers changed from: private */
     public Void a() throws Exception {
         k kVar = this.b;
-        Context context = this.f22288a;
+        Context context = this.f8680a;
         kVar.getClass();
         try {
             n0 n0Var = new n0(UpMsgType.UNREGISTER_PUSH_TOKEN, null);
             n0Var.e = a.a();
-            a.a(j.f22302c.a(n0Var));
+            a.a(j.f8694c.a(n0Var));
             c.b.a(context, null);
             return null;
         } catch (Exception e) {
@@ -127,7 +127,7 @@ public class e {
         try {
             m0 m0Var = new m0(UpMsgType.QUERY_PUSH_STATUS, null);
             m0Var.e = a.a();
-            return Boolean.valueOf(((BooleanResult) a.a(j.f22302c.a(m0Var))).getStatus());
+            return Boolean.valueOf(((BooleanResult) a.a(j.f8694c.a(m0Var))).getStatus());
         } catch (Exception e) {
             throw a.a(e);
         }
@@ -217,7 +217,7 @@ public class e {
         if (honorPushCallback == null) {
             return;
         }
-        j0 a2 = a.a(new z(this.f22288a));
+        j0 a2 = a.a(new z(this.f8680a));
         u uVar = new u() { // from class: com.hihonor.push.sdk.-$$Lambda$e$EX1SHELaUI8UBxA8bVHcgv37dLw
             @Override // com.hihonor.push.sdk.u
             public final void a(j0 j0Var) {
@@ -225,7 +225,7 @@ public class e {
             }
         };
         a2.getClass();
-        a2.a(new d0(y.f22325c.f22326a, uVar));
+        a2.a(new d0(y.f8717c.f8718a, uVar));
     }
 
     public void e(HonorPushCallback<Boolean> honorPushCallback) {

@@ -5,16 +5,15 @@ import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
 import android.util.Log;
+import com.anythink.core.common.c.d;
 
 /* loaded from: source-3503164-dex2jar.jar:org/repackage/com/vivo/identifier/DataBaseOperation.class */
 public class DataBaseOperation {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f44116a;
+    private Context a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public DataBaseOperation(Context context) {
-        this.f44116a = context;
+        this.a = context;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -45,7 +44,7 @@ public class DataBaseOperation {
                 return null;
             }
             try {
-                query = this.f44116a.getContentResolver().query(parse, null, null, null, null);
+                query = this.a.getContentResolver().query(parse, null, null, null, null);
             } catch (Exception e) {
                 cursor = null;
             } catch (Throwable th) {
@@ -59,7 +58,7 @@ public class DataBaseOperation {
                 if (query != null) {
                     str4 = null;
                     if (query.moveToNext()) {
-                        str4 = query.getString(query.getColumnIndex("value"));
+                        str4 = query.getString(query.getColumnIndex(d.a.d));
                     }
                 } else {
                     Log.d("VMS_SDK_DB", "return cursor is null,return");
@@ -105,7 +104,7 @@ public class DataBaseOperation {
             return false;
         }
         try {
-            int bulkInsert = this.f44116a.getContentResolver().bulkInsert(parse, contentValuesArr);
+            int bulkInsert = this.a.getContentResolver().bulkInsert(parse, contentValuesArr);
             Log.d("VMS_SDK_DB", "insert:" + bulkInsert);
             return bulkInsert != 0;
         } catch (Exception e) {

@@ -6,17 +6,17 @@ import com.tencent.liteav.videobase.frame.PixelFrame;
 final /* synthetic */ class ad implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final f f37110a;
+    private final f f23419a;
     private final PixelFrame b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final int f37111c;
+    private final int f23420c;
     private final int d;
 
     private ad(f fVar, PixelFrame pixelFrame, int i, int i2) {
-        this.f37110a = fVar;
+        this.f23419a = fVar;
         this.b = pixelFrame;
-        this.f37111c = i;
+        this.f23420c = i;
         this.d = i2;
     }
 
@@ -26,6 +26,6 @@ final /* synthetic */ class ad implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        f.a(this.f37110a, this.b, this.f37111c, this.d);
+        f.a(this.f23419a, this.b, this.f23420c, this.d);
     }
 }

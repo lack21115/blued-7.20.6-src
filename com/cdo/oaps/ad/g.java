@@ -4,7 +4,7 @@ package com.cdo.oaps.ad;
 public class g {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final char[] f21529a = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
+    private static final char[] f7923a = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
 
     public static int a(char c2, int i) {
         int digit = Character.digit(c2, 16);
@@ -41,7 +41,7 @@ public class g {
         int i = 0;
         for (int i2 = 0; i2 < length; i2++) {
             int i3 = i + 1;
-            char[] cArr2 = f21529a;
+            char[] cArr2 = f7923a;
             cArr[i] = cArr2[(bArr[i2] & 240) >>> 4];
             i = i3 + 1;
             cArr[i3] = cArr2[bArr[i2] & 15];

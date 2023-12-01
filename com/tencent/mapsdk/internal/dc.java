@@ -17,7 +17,7 @@ import javax.microedition.khronos.opengles.GL10;
 public class dc {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f37392a = 1;
+    public static final int f23701a = 1;
     public static final int b = 2;
 
     public static float a(float f, float f2) {

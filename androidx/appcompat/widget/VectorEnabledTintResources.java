@@ -24,7 +24,7 @@ public class VectorEnabledTintResources extends ResourcesWrapper {
     public static final int MAX_SDK_WHERE_REQUIRED = 20;
 
     /* renamed from: a  reason: collision with root package name */
-    private static boolean f1920a = false;
+    private static boolean f1872a = false;
     private final WeakReference<Context> b;
 
     public VectorEnabledTintResources(Context context, Resources resources) {
@@ -33,11 +33,11 @@ public class VectorEnabledTintResources extends ResourcesWrapper {
     }
 
     public static boolean isCompatVectorFromResourcesEnabled() {
-        return f1920a;
+        return f1872a;
     }
 
     public static void setCompatVectorFromResourcesEnabled(boolean z) {
-        f1920a = z;
+        f1872a = z;
     }
 
     public static boolean shouldBeUsed() {

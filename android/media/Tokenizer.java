@@ -1,7 +1,7 @@
 package android.media;
 
 import android.util.Log;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
+import com.huawei.hms.framework.common.ContainerUtils;
 import com.j256.ormlite.stmt.query.SimpleComparison;
 
 /* JADX INFO: Access modifiers changed from: package-private */
@@ -51,7 +51,7 @@ public class Tokenizer {
                     break;
                 }
                 if (Tokenizer.this.mLine.charAt(i3) == '&') {
-                    if (!replaceEscape("&amp;", "&", i3) && !replaceEscape("&lt;", SimpleComparison.LESS_THAN_OPERATION, i3) && !replaceEscape("&gt;", SimpleComparison.GREATER_THAN_OPERATION, i3) && !replaceEscape("&lrm;", "\u200e", i3) && !replaceEscape("&rlm;", "\u200f", i3) && !replaceEscape("&nbsp;", " ", i3)) {
+                    if (!replaceEscape("&amp;", ContainerUtils.FIELD_DELIMITER, i3) && !replaceEscape("&lt;", SimpleComparison.LESS_THAN_OPERATION, i3) && !replaceEscape("&gt;", SimpleComparison.GREATER_THAN_OPERATION, i3) && !replaceEscape("&lrm;", "\u200e", i3) && !replaceEscape("&rlm;", "\u200f", i3) && !replaceEscape("&nbsp;", " ", i3)) {
                     }
                 } else if (Tokenizer.this.mLine.charAt(i3) == '<') {
                     Tokenizer.this.mPhase = Tokenizer.this.mTagTokenizer.start();
@@ -91,7 +91,7 @@ public class Tokenizer {
         }
 
         private void yield_tag() {
-            if (this.mName.startsWith(BridgeUtil.SPLIT_MARK)) {
+            if (this.mName.startsWith("/")) {
                 Tokenizer.this.mListener.onEnd(this.mName.substring(1));
             } else if (this.mName.length() > 0 && Character.isDigit(this.mName.charAt(0))) {
                 try {

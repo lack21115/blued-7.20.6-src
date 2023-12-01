@@ -12,7 +12,7 @@ import com.soft.blued.R;
 public class PagerIndicator extends LinearLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    private LinearLayout.LayoutParams f28460a;
+    private LinearLayout.LayoutParams f14770a;
 
     public PagerIndicator(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
@@ -26,7 +26,7 @@ public class PagerIndicator extends LinearLayout {
 
     private void a() {
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(-2, -2);
-        this.f28460a = layoutParams;
+        this.f14770a = layoutParams;
         layoutParams.setMargins(0, 0, DensityUtils.a(getContext(), 2.5f), 0);
     }
 
@@ -69,7 +69,7 @@ public class PagerIndicator extends LinearLayout {
             while (getChildCount() < i) {
                 ImageView imageView = new ImageView(getContext());
                 imageView.setImageResource(R.drawable.pager_indicator);
-                addView(imageView, this.f28460a);
+                addView(imageView, this.f14770a);
             }
         }
     }

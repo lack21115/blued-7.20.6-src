@@ -11,11 +11,11 @@ import java.util.concurrent.atomic.AtomicLong;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    public Context f24889a;
+    public Context f11201a;
     int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public int f24890c;
+    public int f11202c;
     String d;
     public String e;
     public String f;
@@ -39,14 +39,14 @@ public final class b {
     public b(DownloadRequest downloadRequest, com.opos.cmn.func.dl.base.d dVar) {
         this.q = downloadRequest;
         this.p = dVar;
-        this.e = downloadRequest.f24869a;
+        this.e = downloadRequest.f11181a;
         this.d = downloadRequest.e;
         this.b = downloadRequest.d;
-        this.f24890c = downloadRequest.f;
-        this.h = downloadRequest.f24870c;
+        this.f11202c = downloadRequest.f;
+        this.h = downloadRequest.f11182c;
         this.g = downloadRequest.b;
         this.o = downloadRequest.g;
-        this.f24889a = dVar.f();
+        this.f11201a = dVar.f();
         this.r = dVar.h();
         this.v = dVar.b();
         this.u = dVar.a();
@@ -75,6 +75,6 @@ public final class b {
     }
 
     public final String toString() {
-        return "DownloadInfo{mContext=" + this.f24889a + ", priority=" + this.b + ", downloadId=" + this.f24890c + ", mMd5='" + this.d + "', mUrl='" + this.e + "', mRedrictUrl='" + this.f + "', mDirPath='" + this.g + "', mFileName='" + this.h + "', mPosFile=" + this.i + ", mTempFile=" + this.j + ", mTotalLength=" + this.k + ", mStartLenght=" + this.l + ", writeThreadCount=" + this.v + ", isAcceptRange=" + this.m + ", allowDownload=" + this.n + ", mManager=" + this.p + ", mRequest=" + this.q + ", mConnFactory=" + this.r + ", mCurrentLength=" + this.s + '}';
+        return "DownloadInfo{mContext=" + this.f11201a + ", priority=" + this.b + ", downloadId=" + this.f11202c + ", mMd5='" + this.d + "', mUrl='" + this.e + "', mRedrictUrl='" + this.f + "', mDirPath='" + this.g + "', mFileName='" + this.h + "', mPosFile=" + this.i + ", mTempFile=" + this.j + ", mTotalLength=" + this.k + ", mStartLenght=" + this.l + ", writeThreadCount=" + this.v + ", isAcceptRange=" + this.m + ", allowDownload=" + this.n + ", mManager=" + this.p + ", mRequest=" + this.q + ", mConnFactory=" + this.r + ", mCurrentLength=" + this.s + '}';
     }
 }

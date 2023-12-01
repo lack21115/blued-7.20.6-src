@@ -12,21 +12,17 @@ import com.blued.community.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/databinding/DialogEventTypeBinding.class */
 public final class DialogEventTypeBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f18799a;
+    public final ImageView a;
     public final ShapeLinearLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final RecyclerView f18800c;
+    public final RecyclerView c;
     public final FrameLayout d;
     private final FrameLayout e;
 
     private DialogEventTypeBinding(FrameLayout frameLayout, ImageView imageView, ShapeLinearLayout shapeLinearLayout, RecyclerView recyclerView, FrameLayout frameLayout2) {
         this.e = frameLayout;
-        this.f18799a = imageView;
+        this.a = imageView;
         this.b = shapeLinearLayout;
-        this.f18800c = recyclerView;
+        this.c = recyclerView;
         this.d = frameLayout2;
     }
 
@@ -48,11 +44,11 @@ public final class DialogEventTypeBinding implements ViewBinding {
         if (imageView != null) {
             ShapeLinearLayout shapeLinearLayout = (ShapeLinearLayout) view.findViewById(R.id.layout_event_type);
             if (shapeLinearLayout != null) {
-                RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recycleView);
-                if (recyclerView != null) {
+                RecyclerView findViewById = view.findViewById(R.id.recycleView);
+                if (findViewById != null) {
                     FrameLayout frameLayout = (FrameLayout) view.findViewById(R.id.rootLayout);
                     if (frameLayout != null) {
-                        return new DialogEventTypeBinding((FrameLayout) view, imageView, shapeLinearLayout, recyclerView, frameLayout);
+                        return new DialogEventTypeBinding((FrameLayout) view, imageView, shapeLinearLayout, findViewById, frameLayout);
                     }
                     str = "rootLayout";
                 } else {
@@ -67,7 +63,6 @@ public final class DialogEventTypeBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.e;

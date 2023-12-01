@@ -284,15 +284,15 @@ public class RttManager {
             switch (message.what) {
                 case 69632:
                     if (message.arg1 == 0) {
-                        RttManager.sAsyncChannel.sendMessage(AsyncChannel.CMD_CHANNEL_FULL_CONNECTION);
+                        RttManager.sAsyncChannel.sendMessage(69633);
                     } else {
                         Log.e(RttManager.TAG, "Failed to set up channel connection");
                         AsyncChannel unused = RttManager.sAsyncChannel = null;
                     }
                     RttManager.sConnected.countDown();
                     return;
-                case AsyncChannel.CMD_CHANNEL_FULL_CONNECTION /* 69633 */:
-                case AsyncChannel.CMD_CHANNEL_DISCONNECT /* 69635 */:
+                case 69633:
+                case 69635:
                 default:
                     Object listener = RttManager.getListener(message.arg2);
                     if (listener == null) {
@@ -317,9 +317,9 @@ public class RttManager {
                             Log.d(RttManager.TAG, "Ignoring message " + message.what);
                             return;
                     }
-                case AsyncChannel.CMD_CHANNEL_FULLY_CONNECTED /* 69634 */:
+                case 69634:
                     return;
-                case AsyncChannel.CMD_CHANNEL_DISCONNECTED /* 69636 */:
+                case 69636:
                     Log.e(RttManager.TAG, "Channel connection lost");
                     AsyncChannel unused2 = RttManager.sAsyncChannel = null;
                     getLooper().quit();
@@ -455,6 +455,6 @@ public class RttManager {
 
     public void stopRanging(RttListener rttListener) {
         validateChannel();
-        sAsyncChannel.sendMessage(CMD_OP_STOP_RANGING, 0, removeListener(rttListener));
+        sAsyncChannel.sendMessage((int) CMD_OP_STOP_RANGING, 0, removeListener(rttListener));
     }
 }

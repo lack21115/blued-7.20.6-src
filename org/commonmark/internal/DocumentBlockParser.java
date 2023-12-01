@@ -8,9 +8,7 @@ import org.commonmark.parser.block.ParserState;
 
 /* loaded from: source-3503164-dex2jar.jar:org/commonmark/internal/DocumentBlockParser.class */
 public class DocumentBlockParser extends AbstractBlockParser {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Document f44011a = new Document();
+    private final Document a = new Document();
 
     @Override // org.commonmark.parser.block.BlockParser
     public BlockContinue a(ParserState parserState) {
@@ -34,6 +32,6 @@ public class DocumentBlockParser extends AbstractBlockParser {
     @Override // org.commonmark.parser.block.BlockParser
     /* renamed from: aD_ */
     public Document c() {
-        return this.f44011a;
+        return this.a;
     }
 }

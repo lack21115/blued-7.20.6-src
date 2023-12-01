@@ -3,7 +3,6 @@ package android.content.pm;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
-import com.alipay.sdk.util.i;
 import com.tencent.open.GameAppOperation;
 
 /* loaded from: source-9557208-dex2jar.jar:android/content/pm/PermissionInfo.class */
@@ -124,7 +123,7 @@ public class PermissionInfo extends PackageItemInfo implements Parcelable {
     }
 
     public String toString() {
-        return "PermissionInfo{" + Integer.toHexString(System.identityHashCode(this)) + " " + this.name + i.d;
+        return "PermissionInfo{" + Integer.toHexString(System.identityHashCode(this)) + " " + this.name + "}";
     }
 
     @Override // android.content.pm.PackageItemInfo, android.os.Parcelable

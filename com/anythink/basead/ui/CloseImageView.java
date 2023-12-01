@@ -9,13 +9,9 @@ import com.anythink.core.common.k.u;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/ui/CloseImageView.class */
 public class CloseImageView extends ImageView implements a {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final String f6103a = CloseImageView.class.getSimpleName();
+    private static final String a = CloseImageView.class.getSimpleName();
     private float b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private Rect f6104c;
+    private Rect c;
 
     public CloseImageView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
@@ -35,7 +31,7 @@ public class CloseImageView extends ImageView implements a {
     @Override // android.view.View
     public boolean onTouchEvent(MotionEvent motionEvent) {
         int action;
-        if (this.b >= 1.0f || (!((action = motionEvent.getAction()) == 0 || action == 5) || this.f6104c.contains(getLeft() + ((int) motionEvent.getX()), getTop() + ((int) motionEvent.getY())))) {
+        if (this.b >= 1.0f || (!((action = motionEvent.getAction()) == 0 || action == 5) || this.c.contains(getLeft() + ((int) motionEvent.getX()), getTop() + ((int) motionEvent.getY())))) {
             return super.onTouchEvent(motionEvent);
         }
         return false;
@@ -53,15 +49,15 @@ public class CloseImageView extends ImageView implements a {
             post(new Runnable() { // from class: com.anythink.basead.ui.CloseImageView.1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    CloseImageView.this.f6104c = new Rect();
+                    CloseImageView.this.c = new Rect();
                     CloseImageView closeImageView = CloseImageView.this;
-                    closeImageView.getHitRect(closeImageView.f6104c);
-                    int width = ((int) (CloseImageView.this.f6104c.width() * (CloseImageView.this.b - 1.0f))) / 2;
-                    int height = ((int) (CloseImageView.this.f6104c.height() * (CloseImageView.this.b - 1.0f))) / 2;
-                    CloseImageView.this.f6104c.top -= height;
-                    CloseImageView.this.f6104c.bottom += height;
-                    CloseImageView.this.f6104c.left -= width;
-                    CloseImageView.this.f6104c.right += width;
+                    closeImageView.getHitRect(closeImageView.c);
+                    int width = ((int) (CloseImageView.this.c.width() * (CloseImageView.this.b - 1.0f))) / 2;
+                    int height = ((int) (CloseImageView.this.c.height() * (CloseImageView.this.b - 1.0f))) / 2;
+                    CloseImageView.this.c.top -= height;
+                    CloseImageView.this.c.bottom += height;
+                    CloseImageView.this.c.left -= width;
+                    CloseImageView.this.c.right += width;
                 }
             });
         } else if (f2 > 1.0f) {

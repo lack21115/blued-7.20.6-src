@@ -146,7 +146,7 @@ public class jj extends TextureView implements TextureView.SurfaceTextureListene
     public void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
     }
 
-    @Override // android.view.View
+    @Override // android.view.View, com.tencent.mapsdk.internal.x1
     public boolean onTouchEvent(MotionEvent motionEvent) {
         return false;
     }

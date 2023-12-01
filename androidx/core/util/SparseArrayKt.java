@@ -27,9 +27,9 @@ public final class SparseArrayKt {
         return sparseArray.indexOfValue(t) >= 0;
     }
 
-    public static final <T> void forEach(SparseArray<T> sparseArray, Function2<? super Integer, ? super T, Unit> action) {
+    public static final <T> void forEach(SparseArray<T> sparseArray, Function2<? super Integer, ? super T, Unit> function2) {
         Intrinsics.e(sparseArray, "<this>");
-        Intrinsics.e(action, "action");
+        Intrinsics.e(function2, "action");
         int size = sparseArray.size();
         if (size <= 0) {
             return;
@@ -38,7 +38,7 @@ public final class SparseArrayKt {
         while (true) {
             int i2 = i;
             int i3 = i2 + 1;
-            action.invoke(Integer.valueOf(sparseArray.keyAt(i2)), sparseArray.valueAt(i2));
+            function2.invoke(Integer.valueOf(sparseArray.keyAt(i2)), sparseArray.valueAt(i2));
             if (i3 >= size) {
                 return;
             }
@@ -52,13 +52,14 @@ public final class SparseArrayKt {
         return t2 == null ? t : t2;
     }
 
-    public static final <T> T getOrElse(SparseArray<T> sparseArray, int i, Function0<? extends T> defaultValue) {
+    /* JADX WARN: Multi-variable type inference failed */
+    public static final <T> T getOrElse(SparseArray<T> sparseArray, int i, Function0<? extends T> function0) {
         Intrinsics.e(sparseArray, "<this>");
-        Intrinsics.e(defaultValue, "defaultValue");
+        Intrinsics.e(function0, "defaultValue");
         T t = sparseArray.get(i);
         T t2 = t;
         if (t == null) {
-            t2 = defaultValue.invoke();
+            t2 = function0.invoke();
         }
         return t2;
     }
@@ -87,12 +88,10 @@ public final class SparseArrayKt {
                 return this.b;
             }
 
-            @Override // java.util.Iterator
             public boolean hasNext() {
                 return this.b < sparseArray.size();
             }
 
-            @Override // kotlin.collections.IntIterator
             public int nextInt() {
                 SparseArray<T> sparseArray2 = sparseArray;
                 int i = this.b;
@@ -106,19 +105,19 @@ public final class SparseArrayKt {
         };
     }
 
-    public static final <T> SparseArray<T> plus(SparseArray<T> sparseArray, SparseArray<T> other) {
+    public static final <T> SparseArray<T> plus(SparseArray<T> sparseArray, SparseArray<T> sparseArray2) {
         Intrinsics.e(sparseArray, "<this>");
-        Intrinsics.e(other, "other");
-        SparseArray<T> sparseArray2 = new SparseArray<>(sparseArray.size() + other.size());
-        putAll(sparseArray2, sparseArray);
-        putAll(sparseArray2, other);
-        return sparseArray2;
+        Intrinsics.e(sparseArray2, "other");
+        SparseArray<T> sparseArray3 = new SparseArray<>(sparseArray.size() + sparseArray2.size());
+        putAll(sparseArray3, sparseArray);
+        putAll(sparseArray3, sparseArray2);
+        return sparseArray3;
     }
 
-    public static final <T> void putAll(SparseArray<T> sparseArray, SparseArray<T> other) {
+    public static final <T> void putAll(SparseArray<T> sparseArray, SparseArray<T> sparseArray2) {
         Intrinsics.e(sparseArray, "<this>");
-        Intrinsics.e(other, "other");
-        int size = other.size();
+        Intrinsics.e(sparseArray2, "other");
+        int size = sparseArray2.size();
         if (size <= 0) {
             return;
         }
@@ -126,7 +125,7 @@ public final class SparseArrayKt {
         while (true) {
             int i2 = i;
             int i3 = i2 + 1;
-            sparseArray.put(other.keyAt(i2), other.valueAt(i2));
+            sparseArray.put(sparseArray2.keyAt(i2), sparseArray2.valueAt(i2));
             if (i3 >= size) {
                 return;
             }

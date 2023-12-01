@@ -14,11 +14,11 @@ import java.util.List;
 public final class d extends View implements j {
 
     /* renamed from: a  reason: collision with root package name */
-    private final List<e> f24996a;
+    private final List<e> f11308a;
     private List<com.opos.exoplayer.core.f.b> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f24997c;
+    private int f11309c;
     private float d;
     private boolean e;
     private boolean f;
@@ -31,20 +31,20 @@ public final class d extends View implements j {
 
     public d(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f24996a = new ArrayList();
-        this.f24997c = 0;
+        this.f11308a = new ArrayList();
+        this.f11309c = 0;
         this.d = 0.0533f;
         this.e = true;
         this.f = true;
-        this.g = com.opos.exoplayer.core.f.a.f25325a;
+        this.g = com.opos.exoplayer.core.f.a.f11637a;
         this.h = 0.08f;
     }
 
     private void a(int i, float f) {
-        if (this.f24997c == i && this.d == f) {
+        if (this.f11309c == i && this.d == f) {
             return;
         }
-        this.f24997c = i;
+        this.f11309c = i;
         this.d = f;
         invalidate();
     }
@@ -58,7 +58,7 @@ public final class d extends View implements j {
     }
 
     public void a() {
-        a(((u.f25510a < 19 || isInEditMode()) ? 1.0f : c()) * 0.0533f);
+        a(((u.f11822a < 19 || isInEditMode()) ? 1.0f : c()) * 0.0533f);
     }
 
     public void a(float f) {
@@ -84,7 +84,7 @@ public final class d extends View implements j {
     }
 
     public void b() {
-        a((u.f25510a < 19 || isInEditMode()) ? com.opos.exoplayer.core.f.a.f25325a : d());
+        a((u.f11822a < 19 || isInEditMode()) ? com.opos.exoplayer.core.f.a.f11637a : d());
     }
 
     public void b(List<com.opos.exoplayer.core.f.b> list) {
@@ -93,8 +93,8 @@ public final class d extends View implements j {
         }
         this.b = list;
         int size = list == null ? 0 : list.size();
-        while (this.f24996a.size() < size) {
-            this.f24996a.add(new e(getContext()));
+        while (this.f11308a.size() < size) {
+            this.f11308a.add(new e(getContext()));
         }
         invalidate();
     }
@@ -112,11 +112,11 @@ public final class d extends View implements j {
         if (paddingBottom <= paddingTop || right <= left) {
             return;
         }
-        int i = this.f24997c;
+        int i = this.f11309c;
         float f = i == 2 ? this.d : (i == 0 ? paddingBottom - paddingTop : bottom - top) * this.d;
         if (f > 0.0f) {
             for (int i2 = 0; i2 < size; i2++) {
-                this.f24996a.get(i2).a(this.b.get(i2), this.e, this.f, this.g, f, this.h, canvas, left, paddingTop, right, paddingBottom);
+                this.f11308a.get(i2).a(this.b.get(i2), this.e, this.f, this.g, f, this.h, canvas, left, paddingTop, right, paddingBottom);
             }
         }
     }

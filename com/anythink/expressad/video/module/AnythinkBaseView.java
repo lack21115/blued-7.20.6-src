@@ -27,11 +27,11 @@ public abstract class AnythinkBaseView extends RelativeLayout {
     private static final int n = -999;
 
     /* renamed from: a  reason: collision with root package name */
-    public Context f8440a;
+    public Context f5600a;
     protected c b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected LayoutInflater f8441c;
+    protected LayoutInflater f5601c;
     protected int d;
     public a e;
     protected boolean f;
@@ -54,8 +54,8 @@ public abstract class AnythinkBaseView extends RelativeLayout {
         this.f = false;
         this.l = 1;
         this.m = 0;
-        this.f8440a = context;
-        this.f8441c = LayoutInflater.from(context);
+        this.f5600a = context;
+        this.f5601c = LayoutInflater.from(context);
         init(context);
     }
 
@@ -66,8 +66,8 @@ public abstract class AnythinkBaseView extends RelativeLayout {
         this.f = false;
         this.l = 1;
         this.m = 0;
-        this.f8440a = context;
-        this.f8441c = LayoutInflater.from(context);
+        this.f5600a = context;
+        this.f5601c = LayoutInflater.from(context);
         this.i = z;
         this.j = i;
         this.k = z2;
@@ -121,11 +121,11 @@ public abstract class AnythinkBaseView extends RelativeLayout {
     }
 
     public int findColor(String str) {
-        return i.a(this.f8440a.getApplicationContext(), str, "color");
+        return i.a(this.f5600a.getApplicationContext(), str, "color");
     }
 
     public int findDrawable(String str) {
-        return i.a(this.f8440a.getApplicationContext(), str, i.f7952c);
+        return i.a(this.f5600a.getApplicationContext(), str, i.f5112c);
     }
 
     public int findDyID(String str) {
@@ -136,11 +136,11 @@ public abstract class AnythinkBaseView extends RelativeLayout {
     }
 
     public int findID(String str) {
-        return i.a(this.f8440a.getApplicationContext(), str, "id");
+        return i.a(this.f5600a.getApplicationContext(), str, "id");
     }
 
     public int findLayout(String str) {
-        return i.a(this.f8440a.getApplicationContext(), str, "layout");
+        return i.a(this.f5600a.getApplicationContext(), str, "layout");
     }
 
     public c getCampaign() {
@@ -166,7 +166,7 @@ public abstract class AnythinkBaseView extends RelativeLayout {
     public abstract void init(Context context);
 
     public boolean isLandscape() {
-        return this.f8440a.getResources().getConfiguration().orientation == 2;
+        return this.f5600a.getResources().getConfiguration().orientation == 2;
     }
 
     public boolean isNotNULL(View... viewArr) {

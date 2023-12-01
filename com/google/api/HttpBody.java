@@ -248,8 +248,8 @@ public final class HttpBody extends GeneratedMessageV3 implements HttpBodyOrBuil
 
         @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder mo2030clone() {
+            return (Builder) super.mo2030clone();
         }
 
         @Override // com.google.api.HttpBodyOrBuilder
@@ -537,6 +537,7 @@ public final class HttpBody extends GeneratedMessageV3 implements HttpBodyOrBuil
         this.extensions_ = Collections.emptyList();
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private HttpBody(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
         this();
         if (extensionRegistryLite == null) {

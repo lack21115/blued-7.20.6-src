@@ -6,6 +6,7 @@ import android.os.Looper;
 import android.webkit.ValueCallback;
 import android.webkit.WebView;
 import com.bytedance.applog.tracker.Tracker;
+import com.bytedance.applog.util.WebViewJsUtil;
 import org.json.JSONObject;
 
 /* loaded from: source-7994992-dex2jar.jar:com/kwad/sdk/utils/bo.class */
@@ -16,7 +17,7 @@ public final class bo {
                 @Override // java.lang.Runnable
                 public final void run() {
                     try {
-                        WebView.this.evaluateJavascript(str, r6);
+                        webView.evaluateJavascript(str, r6);
                     } catch (Exception e) {
                     }
                 }
@@ -27,7 +28,7 @@ public final class bo {
     }
 
     public static void a(WebView webView, String str, String str2) {
-        a(webView, "javascript:" + str + "(" + JSONObject.quote(str2) + ")", (ValueCallback<String>) null);
+        a(webView, WebViewJsUtil.JS_URL_PREFIX + str + "(" + JSONObject.quote(str2) + ")", (ValueCallback<String>) null);
     }
 
     private static void runOnUiThread(Runnable runnable) {

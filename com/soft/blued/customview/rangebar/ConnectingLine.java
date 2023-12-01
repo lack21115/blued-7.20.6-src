@@ -9,25 +9,25 @@ import android.util.TypedValue;
 class ConnectingLine {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Paint f28620a;
+    private final Paint f14930a;
     private final float b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final float f28621c;
+    private final float f14931c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public ConnectingLine(Context context, float f, float f2, int i) {
         this.b = TypedValue.applyDimension(1, f2, context.getResources().getDisplayMetrics());
         Paint paint = new Paint();
-        this.f28620a = paint;
+        this.f14930a = paint;
         paint.setColor(i);
-        this.f28620a.setStrokeWidth(this.b);
-        this.f28620a.setAntiAlias(true);
-        this.f28621c = f;
+        this.f14930a.setStrokeWidth(this.b);
+        this.f14930a.setAntiAlias(true);
+        this.f14931c = f;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a(Canvas canvas, Thumb thumb, Thumb thumb2) {
-        canvas.drawLine(thumb.b(), this.f28621c, thumb2.b(), this.f28621c, this.f28620a);
+        canvas.drawLine(thumb.b(), this.f14931c, thumb2.b(), this.f14931c, this.f14930a);
     }
 }

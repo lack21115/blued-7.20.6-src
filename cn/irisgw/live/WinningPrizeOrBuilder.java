@@ -12,7 +12,8 @@ public interface WinningPrizeOrBuilder extends MessageOrBuilder {
 
     int getChatFrameBorderColorCount();
 
-    List<String> getChatFrameBorderColorList();
+    /* renamed from: getChatFrameBorderColorList */
+    List<String> mo8159getChatFrameBorderColorList();
 
     String getChatFrameFrameColor(int i);
 
@@ -20,7 +21,8 @@ public interface WinningPrizeOrBuilder extends MessageOrBuilder {
 
     int getChatFrameFrameColorCount();
 
-    List<String> getChatFrameFrameColorList();
+    /* renamed from: getChatFrameFrameColorList */
+    List<String> mo8160getChatFrameFrameColorList();
 
     String getChatFrameIcon();
 

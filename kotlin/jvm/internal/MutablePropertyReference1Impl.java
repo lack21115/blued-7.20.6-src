@@ -6,6 +6,7 @@ public class MutablePropertyReference1Impl extends MutablePropertyReference1 {
         super(NO_RECEIVER, cls, str, str2, i);
     }
 
+    @Override // kotlin.reflect.KProperty1
     public Object a(Object obj) {
         return a().call(obj);
     }

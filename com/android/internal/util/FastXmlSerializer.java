@@ -1,6 +1,5 @@
 package com.android.internal.util;
 
-import com.j256.ormlite.stmt.query.SimpleComparison;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
@@ -30,14 +29,14 @@ public class FastXmlSerializer implements XmlSerializer {
     private int mNesting = 0;
     private boolean mLineStart = true;
 
-    private void append(char c2) throws IOException {
+    private void append(char c) throws IOException {
         int i = this.mPos;
         int i2 = i;
         if (i >= 8191) {
             flush();
             i2 = this.mPos;
         }
-        this.mText[i2] = c2;
+        this.mText[i2] = c;
         this.mPos = i2 + 1;
     }
 
@@ -131,11 +130,11 @@ public class FastXmlSerializer implements XmlSerializer {
         int i4 = i;
         int i5 = i;
         while (i5 < i + i2) {
-            char c2 = cArr[i5];
-            if (c2 >= length) {
+            char c = cArr[i5];
+            if (c >= length) {
                 i3 = i4;
             } else {
-                String str = strArr[c2];
+                String str = strArr[c];
                 i3 = i4;
                 if (str != null) {
                     if (i4 < i5) {
@@ -359,7 +358,7 @@ public class FastXmlSerializer implements XmlSerializer {
     @Override // org.xmlpull.v1.XmlSerializer
     public XmlSerializer text(String str) throws IOException, IllegalArgumentException, IllegalStateException {
         if (this.mInTag) {
-            append(SimpleComparison.GREATER_THAN_OPERATION);
+            append(">");
             this.mInTag = false;
         }
         escapeAndAppendString(str);
@@ -380,7 +379,7 @@ public class FastXmlSerializer implements XmlSerializer {
     public XmlSerializer text(char[] cArr, int i, int i2) throws IOException, IllegalArgumentException, IllegalStateException {
         boolean z = false;
         if (this.mInTag) {
-            append(SimpleComparison.GREATER_THAN_OPERATION);
+            append(">");
             this.mInTag = false;
         }
         escapeAndAppendString(cArr, i, i2);

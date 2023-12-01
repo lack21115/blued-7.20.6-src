@@ -13,7 +13,7 @@ import java.util.Map;
 public final class e implements SharedPreferences.OnSharedPreferenceChangeListener {
 
     /* renamed from: a  reason: collision with root package name */
-    volatile SharedPreferences f21756a;
+    volatile SharedPreferences f8150a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static boolean a() {
@@ -35,13 +35,13 @@ public final class e implements SharedPreferences.OnSharedPreferenceChangeListen
     }
 
     private void d() {
-        if (this.f21756a == null) {
+        if (this.f8150a == null) {
             synchronized (com.efs.sdk.base.core.c.b.class) {
                 try {
-                    if (this.f21756a == null) {
+                    if (this.f8150a == null) {
                         String appid = ControllerCenter.getGlobalEnvStruct().getAppid();
-                        this.f21756a = SharedPreferencesUtils.getSharedPreferences(ControllerCenter.getGlobalEnvStruct().mAppContext, com.efs.sdk.base.core.util.b.b.a(("config_" + appid.toLowerCase()).getBytes()));
-                        this.f21756a.registerOnSharedPreferenceChangeListener(this);
+                        this.f8150a = SharedPreferencesUtils.getSharedPreferences(ControllerCenter.getGlobalEnvStruct().mAppContext, com.efs.sdk.base.core.util.b.b.a(("config_" + appid.toLowerCase()).getBytes()));
+                        this.f8150a.registerOnSharedPreferenceChangeListener(this);
                     }
                 } finally {
                 }
@@ -52,12 +52,12 @@ public final class e implements SharedPreferences.OnSharedPreferenceChangeListen
     /* JADX INFO: Access modifiers changed from: package-private */
     public final boolean a(b bVar) {
         c();
-        if (this.f21756a == null) {
+        if (this.f8150a == null) {
             return false;
         }
-        SharedPreferences.Editor edit = this.f21756a.edit();
+        SharedPreferences.Editor edit = this.f8150a.edit();
         edit.clear();
-        edit.putInt("cver", bVar.f21749a);
+        edit.putInt("cver", bVar.f8143a);
         edit.putLong("last_refresh_time", System.currentTimeMillis());
         for (Map.Entry<String, String> entry : bVar.f.entrySet()) {
             edit.putString(entry.getKey(), entry.getValue());
@@ -78,7 +78,7 @@ public final class e implements SharedPreferences.OnSharedPreferenceChangeListen
     @Override // android.content.SharedPreferences.OnSharedPreferenceChangeListener
     public final void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String str) {
         f fVar;
-        fVar = f.a.f21744a;
+        fVar = f.a.f8138a;
         if (fVar.a()) {
             return;
         }

@@ -20,11 +20,11 @@ import java.util.concurrent.atomic.AtomicInteger;
 public final class b implements ServiceConnection {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Object f41032a = new Object();
+    private static final Object f27341a = new Object();
     private static Map<String, b> b = new HashMap();
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f41033c;
+    private boolean f27342c;
     private String d;
     private Context e;
     private volatile IPCInvoke g;
@@ -43,19 +43,19 @@ public final class b implements ServiceConnection {
         String b2 = t.b(context);
         this.d = b2;
         if (!TextUtils.isEmpty(b2) && !TextUtils.isEmpty(this.i)) {
-            this.f41033c = z.a(context, this.d) < 1260 ? false : z;
+            this.f27342c = z.a(context, this.d) < 1260 ? false : z;
             b();
             return;
         }
         com.vivo.push.util.p.c(this.e, "init error : push pkgname is " + this.d + " ; action is " + this.i);
-        this.f41033c = false;
+        this.f27342c = false;
     }
 
     public static b a(Context context, String str) {
         b bVar;
         b bVar2 = b.get(str);
         if (bVar2 == null) {
-            synchronized (f41032a) {
+            synchronized (f27341a) {
                 b bVar3 = b.get(str);
                 bVar = bVar3;
                 if (bVar3 == null) {
@@ -76,7 +76,7 @@ public final class b implements ServiceConnection {
     private void b() {
         int i = this.f.get();
         com.vivo.push.util.p.d("AidlManager", "Enter connect, Connection Status: ".concat(String.valueOf(i)));
-        if (i == 4 || i == 2 || i == 3 || i == 5 || !this.f41033c) {
+        if (i == 4 || i == 2 || i == 3 || i == 5 || !this.f27342c) {
             return;
         }
         a(2);
@@ -128,7 +128,7 @@ public final class b implements ServiceConnection {
         if (z.a(this.e, this.d) >= 1260) {
             z = true;
         }
-        this.f41033c = z;
+        this.f27342c = z;
         return z;
     }
 

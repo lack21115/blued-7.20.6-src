@@ -27,13 +27,9 @@ import kotlin.jvm.internal.Ref;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/operation/LiveOperationDescView.class */
 public final class LiveOperationDescView extends RelativeLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Context f15345a;
+    private final Context a;
     private final Lazy b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private CountDownTimer f15346c;
+    private CountDownTimer c;
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
     public LiveOperationDescView(Context mContext) {
@@ -51,7 +47,7 @@ public final class LiveOperationDescView extends RelativeLayout {
     public LiveOperationDescView(Context mContext, AttributeSet attributeSet, int i) {
         super(mContext, attributeSet, i);
         Intrinsics.e(mContext, "mContext");
-        this.f15345a = mContext;
+        this.a = mContext;
         this.b = LazyKt.a(new Function0<LiveOperationDescViewBinding>() { // from class: com.blued.android.module.live_china.view.operation.LiveOperationDescView$vb$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
@@ -61,9 +57,9 @@ public final class LiveOperationDescView extends RelativeLayout {
             @Override // kotlin.jvm.functions.Function0
             /* renamed from: a */
             public final LiveOperationDescViewBinding invoke() {
-                LiveOperationDescViewBinding a2 = LiveOperationDescViewBinding.a(LayoutInflater.from(LiveOperationDescView.this.getMContext()).inflate(R.layout.live_operation_desc_view, LiveOperationDescView.this));
-                Intrinsics.c(a2, "bind(\n            Layout…esc_view, this)\n        )");
-                return a2;
+                LiveOperationDescViewBinding a = LiveOperationDescViewBinding.a(LayoutInflater.from(LiveOperationDescView.this.getMContext()).inflate(R.layout.live_operation_desc_view, LiveOperationDescView.this));
+                Intrinsics.c(a, "bind(\n            Layout…esc_view, this)\n        )");
+                return a;
             }
         });
         a();
@@ -110,12 +106,12 @@ public final class LiveOperationDescView extends RelativeLayout {
     private final void a(LiveRoomOperationModel liveRoomOperationModel) {
         String title = liveRoomOperationModel.getTitle();
         if (title == null || title.length() == 0) {
-            getVb().f12310a.setVisibility(8);
+            getVb().a.setVisibility(8);
             return;
         }
         getVb().f.setText(liveRoomOperationModel.getTitle());
-        getVb().f12310a.setTranslationY(0.0f);
-        getVb().f12310a.setVisibility(0);
+        getVb().a.setTranslationY(0.0f);
+        getVb().a.setVisibility(0);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -154,7 +150,7 @@ public final class LiveOperationDescView extends RelativeLayout {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void b() {
-        CountDownTimer countDownTimer = this.f15346c;
+        CountDownTimer countDownTimer = this.c;
         if (countDownTimer == null) {
             return;
         }
@@ -163,13 +159,13 @@ public final class LiveOperationDescView extends RelativeLayout {
     }
 
     private final void b(LiveRoomOperationModel liveRoomOperationModel) {
-        getVb().f12310a.setTranslationY(0.0f);
-        getVb().f12310a.setVisibility(0);
+        getVb().a.setTranslationY(0.0f);
+        getVb().a.setVisibility(0);
         long currentTimeMillis = System.currentTimeMillis();
         long get_countdown_timemillis = liveRoomOperationModel.getGet_countdown_timemillis();
         Ref.LongRef longRef = new Ref.LongRef();
-        longRef.f42544a = (liveRoomOperationModel.getCountdown() * 1000) - (currentTimeMillis - get_countdown_timemillis);
-        this.f15346c = new LiveOperationDescView$initTimer$1(longRef, this, liveRoomOperationModel).start();
+        longRef.a = (liveRoomOperationModel.getCountdown() * 1000) - (currentTimeMillis - get_countdown_timemillis);
+        this.c = new LiveOperationDescView$initTimer$1(longRef, this, liveRoomOperationModel).start();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -239,14 +235,14 @@ public final class LiveOperationDescView extends RelativeLayout {
     }
 
     public final Context getMContext() {
-        return this.f15345a;
+        return this.a;
     }
 
     public final CountDownTimer getTimer() {
-        return this.f15346c;
+        return this.c;
     }
 
     public final void setTimer(CountDownTimer countDownTimer) {
-        this.f15346c = countDownTimer;
+        this.c = countDownTimer;
     }
 }

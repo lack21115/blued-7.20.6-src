@@ -11,6 +11,7 @@ import android.widget.FrameLayout;
 import androidx.fragment.app.FragmentActivity;
 import com.anythink.core.api.ATAdInfo;
 import com.anythink.core.api.AdError;
+import com.anythink.expressad.d.b;
 import com.anythink.splashad.api.ATSplashAd;
 import com.anythink.splashad.api.ATSplashAdExtraInfo;
 import com.anythink.splashad.api.ATSplashAdListener;
@@ -53,19 +54,17 @@ public class TopSplashFragment extends TimeoutFragment implements ATSplashAdList
         }
     }
 
-    @Override // com.blued.android.ui.TimeoutFragment
     public void g() {
-        Log.v("anythink", "onTimeoutFinish");
+        Log.v(b.f4297c, "onTimeoutFinish");
         l();
     }
 
-    @Override // com.blued.android.ui.TimeoutFragment
     public View h() {
         return this.o;
     }
 
     public void j() {
-        getActivity().getWindow().getDecorView().setBackground(BluedSkinUtils.b(this.n, R.drawable.app_loading_bg));
+        getActivity().getWindow().getDecorView().setBackground(BluedSkinUtils.b(this.n, (int) R.drawable.app_loading_bg));
         this.v = (FrameLayout) this.o.findViewById(R.id.fl_ad_content);
         View findViewById = this.o.findViewById(R.id.ll_click_skip);
         this.w = findViewById;
@@ -77,10 +76,10 @@ public class TopSplashFragment extends TimeoutFragment implements ATSplashAdList
         ATSplashAd aTSplashAd = new ATSplashAd(this.n, this.y, this);
         this.z = aTSplashAd;
         if (aTSplashAd.isAdReady()) {
-            Log.i("anythink", "SplashAd is ready to show.");
+            Log.i(b.f4297c, "SplashAd is ready to show.");
             this.z.show(getActivity(), this.v);
         } else {
-            Log.i("anythink", "SplashAd isn't ready to show, start to request.");
+            Log.i(b.f4297c, "SplashAd isn't ready to show, start to request.");
             this.z.loadAd();
         }
         e();
@@ -96,7 +95,7 @@ public class TopSplashFragment extends TimeoutFragment implements ATSplashAdList
 
     @Override // com.anythink.splashad.api.ATSplashAdListener
     public void onAdClick(ATAdInfo aTAdInfo) {
-        Log.i("anythink", "onAdClick:" + aTAdInfo.toString());
+        Log.i(b.f4297c, "onAdClick:" + aTAdInfo.toString());
         FindHttpUtils.b(this.t);
     }
 
@@ -111,8 +110,8 @@ public class TopSplashFragment extends TimeoutFragment implements ATSplashAdList
 
     @Override // com.anythink.splashad.api.ATSplashAdListener
     public void onAdLoaded(boolean z) {
-        Log.i("anythink", "onAdLoaded---------");
-        this.f18740c.removeCallbacks(this.b);
+        Log.i(b.f4297c, "onAdLoaded---------");
+        this.c.removeCallbacks(this.b);
         a();
         f();
         if (getActivity() != null) {
@@ -122,14 +121,13 @@ public class TopSplashFragment extends TimeoutFragment implements ATSplashAdList
 
     @Override // com.anythink.splashad.api.ATSplashAdListener
     public void onAdShow(ATAdInfo aTAdInfo) {
-        Log.i("anythink", "onAdShow:" + aTAdInfo.toString());
+        Log.i(b.f4297c, "onAdShow:" + aTAdInfo.toString());
         this.q = true;
         this.p = System.currentTimeMillis();
         FindHttpUtils.b(this.s);
         this.x.setBackgroundColor(this.n.getResources().getColor(2131102478));
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.n = getActivity();
         getActivity().overridePendingTransition(R.anim.activity_switch_none, R.anim.activity_switch_none);
@@ -150,7 +148,6 @@ public class TopSplashFragment extends TimeoutFragment implements ATSplashAdList
         return this.o;
     }
 
-    @Override // com.blued.android.ui.TimeoutFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
         ATSplashAd aTSplashAd = this.z;
@@ -161,7 +158,7 @@ public class TopSplashFragment extends TimeoutFragment implements ATSplashAdList
 
     @Override // com.anythink.splashad.api.ATSplashAdListener
     public void onNoAdError(AdError adError) {
-        Log.i("anythink", "onNoAdError---------:" + adError.getFullErrorInfo());
+        Log.i(b.f4297c, "onNoAdError---------:" + adError.getFullErrorInfo());
         k();
     }
 }

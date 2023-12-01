@@ -11,33 +11,33 @@ import com.soft.blued.R;
 public final class FragmentVirtualImageSettingBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ShapeFrameLayout f29031a;
+    public final ShapeFrameLayout f15341a;
     public final TextView b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final TextView f29032c;
+    public final TextView f15342c;
     public final TextView d;
     private final RelativeLayout e;
 
     private FragmentVirtualImageSettingBinding(RelativeLayout relativeLayout, ShapeFrameLayout shapeFrameLayout, TextView textView, TextView textView2, TextView textView3) {
         this.e = relativeLayout;
-        this.f29031a = shapeFrameLayout;
+        this.f15341a = shapeFrameLayout;
         this.b = textView;
-        this.f29032c = textView2;
+        this.f15342c = textView2;
         this.d = textView3;
     }
 
     public static FragmentVirtualImageSettingBinding a(View view) {
         String str;
-        ShapeFrameLayout shapeFrameLayout = (ShapeFrameLayout) view.findViewById(R.id.sfl_display_selected_bg);
-        if (shapeFrameLayout != null) {
+        ShapeFrameLayout findViewById = view.findViewById(R.id.sfl_display_selected_bg);
+        if (findViewById != null) {
             TextView textView = (TextView) view.findViewById(R.id.tv_delete_vi);
             if (textView != null) {
                 TextView textView2 = (TextView) view.findViewById(R.id.tv_display_avatar);
                 if (textView2 != null) {
                     TextView textView3 = (TextView) view.findViewById(R.id.tv_display_none);
                     if (textView3 != null) {
-                        return new FragmentVirtualImageSettingBinding((RelativeLayout) view, shapeFrameLayout, textView, textView2, textView3);
+                        return new FragmentVirtualImageSettingBinding((RelativeLayout) view, findViewById, textView, textView2, textView3);
                     }
                     str = "tvDisplayNone";
                 } else {

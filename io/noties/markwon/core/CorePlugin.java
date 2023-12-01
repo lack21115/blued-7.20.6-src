@@ -178,9 +178,9 @@ public class CorePlugin extends AbstractMarkwonPlugin {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static boolean isInTightList(Paragraph paragraph) {
-        Block a2 = paragraph.b();
-        if (a2 != null) {
-            Node b = a2.b();
+        Block a = paragraph.b();
+        if (a != null) {
+            Node b = a.b();
             if (b instanceof ListBlock) {
                 return ((ListBlock) b).e();
             }
@@ -207,12 +207,12 @@ public class CorePlugin extends AbstractMarkwonPlugin {
             public void visit(MarkwonVisitor markwonVisitor, ListItem listItem) {
                 int length = markwonVisitor.length();
                 markwonVisitor.visitChildren(listItem);
-                Block a2 = listItem.b();
-                if (a2 instanceof OrderedList) {
-                    OrderedList orderedList = (OrderedList) a2;
-                    int c2 = orderedList.c();
+                Block a = listItem.b();
+                if (a instanceof OrderedList) {
+                    OrderedList orderedList = (OrderedList) a;
+                    int c = orderedList.c();
                     CoreProps.LIST_ITEM_TYPE.set(markwonVisitor.renderProps(), CoreProps.ListItemType.ORDERED);
-                    CoreProps.ORDERED_LIST_ITEM_NUMBER.set(markwonVisitor.renderProps(), Integer.valueOf(c2));
+                    CoreProps.ORDERED_LIST_ITEM_NUMBER.set(markwonVisitor.renderProps(), Integer.valueOf(c));
                     orderedList.a(orderedList.c() + 1);
                 } else {
                     CoreProps.LIST_ITEM_TYPE.set(markwonVisitor.renderProps(), CoreProps.ListItemType.BULLET);
@@ -292,15 +292,15 @@ public class CorePlugin extends AbstractMarkwonPlugin {
         builder.on(Text.class, new MarkwonVisitor.NodeVisitor<Text>() { // from class: io.noties.markwon.core.CorePlugin.1
             @Override // io.noties.markwon.MarkwonVisitor.NodeVisitor
             public void visit(MarkwonVisitor markwonVisitor, Text text) {
-                String a2 = text.a();
-                markwonVisitor.builder().append(a2);
+                String a = text.a();
+                markwonVisitor.builder().append(a);
                 if (CorePlugin.this.onTextAddedListeners.isEmpty()) {
                     return;
                 }
                 int length = markwonVisitor.length();
-                int length2 = a2.length();
+                int length2 = a.length();
                 for (OnTextAddedListener onTextAddedListener : CorePlugin.this.onTextAddedListeners) {
-                    onTextAddedListener.onTextAdded(markwonVisitor, a2, length - length2);
+                    onTextAddedListener.onTextAdded(markwonVisitor, a, length - length2);
                 }
             }
         });

@@ -106,13 +106,13 @@ public interface IObbBackupService extends IInterface {
             switch (i) {
                 case 1:
                     parcel.enforceInterface(DESCRIPTOR);
-                    backupObbs(parcel.readString(), parcel.readInt() != 0 ? ParcelFileDescriptor.CREATOR.createFromParcel(parcel) : null, parcel.readInt(), IBackupManager.Stub.asInterface(parcel.readStrongBinder()));
+                    backupObbs(parcel.readString(), parcel.readInt() != 0 ? (ParcelFileDescriptor) ParcelFileDescriptor.CREATOR.createFromParcel(parcel) : null, parcel.readInt(), IBackupManager.Stub.asInterface(parcel.readStrongBinder()));
                     return true;
                 case 2:
                     parcel.enforceInterface(DESCRIPTOR);
-                    restoreObbFile(parcel.readString(), parcel.readInt() != 0 ? ParcelFileDescriptor.CREATOR.createFromParcel(parcel) : null, parcel.readLong(), parcel.readInt(), parcel.readString(), parcel.readLong(), parcel.readLong(), parcel.readInt(), IBackupManager.Stub.asInterface(parcel.readStrongBinder()));
+                    restoreObbFile(parcel.readString(), parcel.readInt() != 0 ? (ParcelFileDescriptor) ParcelFileDescriptor.CREATOR.createFromParcel(parcel) : null, parcel.readLong(), parcel.readInt(), parcel.readString(), parcel.readLong(), parcel.readLong(), parcel.readInt(), IBackupManager.Stub.asInterface(parcel.readStrongBinder()));
                     return true;
-                case IBinder.INTERFACE_TRANSACTION /* 1598968902 */:
+                case 1598968902:
                     parcel2.writeString(DESCRIPTOR);
                     return true;
                 default:

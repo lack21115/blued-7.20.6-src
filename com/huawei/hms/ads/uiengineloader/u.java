@@ -21,12 +21,12 @@ public class u {
     private static final String b = "lib";
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f22574c = "!";
+    private static final String f8966c = "!";
     private static final String d = "armeabi-v7a";
     private static final String e = "armeabi";
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f22573a = u.class.getSimpleName();
+    private static final String f8965a = u.class.getSimpleName();
     private static final Pattern f = Pattern.compile("lib/([^/]+)/(.*\\.so)$");
 
     public static String a(Context context, String str) {
@@ -35,7 +35,7 @@ public class u {
             String next = it.next();
             String str2 = str.substring(0, str.lastIndexOf(File.separator)) + File.separator + next;
             if (new File(str2).exists()) {
-                aa.b(f22573a, "The so has been unzipped, abi:".concat(String.valueOf(next)));
+                aa.b(f8965a, "The so has been unzipped, abi:".concat(String.valueOf(next)));
                 return str2;
             }
         }
@@ -44,7 +44,7 @@ public class u {
 
     private static boolean a(Context context) {
         if (context == null) {
-            aa.d(f22573a, "Null context, please check it.");
+            aa.d(f8965a, "Null context, please check it.");
             return false;
         }
         Context applicationContext = context.getApplicationContext() == null ? context : context.getApplicationContext();
@@ -56,18 +56,18 @@ public class u {
             try {
                 return applicationContext.getPackageManager().getApplicationInfo(applicationContext.getPackageName(), 128).nativeLibraryDir.contains("64");
             } catch (PackageManager.NameNotFoundException e2) {
-                aa.d(f22573a, "Get application info failed: name not found, try to get baseContext.");
+                aa.d(f8965a, "Get application info failed: name not found, try to get baseContext.");
                 z = false;
                 if (context instanceof ContextWrapper) {
                     Context baseContext = ((ContextWrapper) context).getBaseContext();
                     if (baseContext == null) {
-                        aa.c(f22573a, "Get baseContext failed: null. Return default: is64-bit.");
+                        aa.c(f8965a, "Get baseContext failed: null. Return default: is64-bit.");
                         return true;
                     }
                     try {
                         return baseContext.getPackageManager().getApplicationInfo(baseContext.getPackageName(), 128).nativeLibraryDir.contains("64");
                     } catch (PackageManager.NameNotFoundException e3) {
-                        aa.d(f22573a, "Get baseContext application info failed: name not found");
+                        aa.d(f8965a, "Get baseContext application info failed: name not found");
                         z = true;
                     }
                 }
@@ -82,14 +82,14 @@ public class u {
             while (entries.hasMoreElements()) {
                 String name = entries.nextElement().getName();
                 if (name.contains("../")) {
-                    aa.c(f22573a, "Unsafe zip name!");
+                    aa.c(f8965a, "Unsafe zip name!");
                     return false;
                 }
                 Matcher matcher = f.matcher(name);
                 if (matcher.matches()) {
                     String group = matcher.group(1);
                     if (TextUtils.equals(str, group)) {
-                        String str2 = f22573a;
+                        String str2 = f8965a;
                         aa.b(str2, "abiName:" + group + " matched.");
                         return true;
                     }
@@ -97,7 +97,7 @@ public class u {
             }
             return false;
         } catch (Exception e2) {
-            String str3 = f22573a;
+            String str3 = f8965a;
             aa.c(str3, "isApkContainPrefAbi exception:" + e2.getClass().getSimpleName());
             return false;
         }
@@ -109,12 +109,12 @@ public class u {
             while (it.hasNext()) {
                 String next = it.next();
                 if (a(new File(str), next)) {
-                    aa.b(f22573a, "use the preferred abi:".concat(String.valueOf(next)));
-                    return str + f22574c + File.separator + "lib" + File.separator + next;
+                    aa.b(f8965a, "use the preferred abi:".concat(String.valueOf(next)));
+                    return str + f8966c + File.separator + "lib" + File.separator + next;
                 }
             }
         }
-        aa.c(f22573a, "cannot get a valid native path, return null.");
+        aa.c(f8965a, "cannot get a valid native path, return null.");
         return null;
     }
 

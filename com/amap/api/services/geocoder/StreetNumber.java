@@ -21,13 +21,9 @@ public final class StreetNumber implements Parcelable {
             return null;
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f5642a;
+    private String a;
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private LatLonPoint f5643c;
+    private LatLonPoint c;
     private String d;
     private float e;
 
@@ -35,9 +31,9 @@ public final class StreetNumber implements Parcelable {
     }
 
     private StreetNumber(Parcel parcel) {
-        this.f5642a = parcel.readString();
+        this.a = parcel.readString();
         this.b = parcel.readString();
-        this.f5643c = (LatLonPoint) parcel.readValue(LatLonPoint.class.getClassLoader());
+        this.c = (LatLonPoint) parcel.readValue(LatLonPoint.class.getClassLoader());
         this.d = parcel.readString();
         this.e = parcel.readFloat();
     }
@@ -60,7 +56,7 @@ public final class StreetNumber implements Parcelable {
     }
 
     public final LatLonPoint getLatLonPoint() {
-        return this.f5643c;
+        return this.c;
     }
 
     public final String getNumber() {
@@ -68,7 +64,7 @@ public final class StreetNumber implements Parcelable {
     }
 
     public final String getStreet() {
-        return this.f5642a;
+        return this.a;
     }
 
     public final void setDirection(String str) {
@@ -80,7 +76,7 @@ public final class StreetNumber implements Parcelable {
     }
 
     public final void setLatLonPoint(LatLonPoint latLonPoint) {
-        this.f5643c = latLonPoint;
+        this.c = latLonPoint;
     }
 
     public final void setNumber(String str) {
@@ -88,14 +84,14 @@ public final class StreetNumber implements Parcelable {
     }
 
     public final void setStreet(String str) {
-        this.f5642a = str;
+        this.a = str;
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.f5642a);
+        parcel.writeString(this.a);
         parcel.writeString(this.b);
-        parcel.writeValue(this.f5643c);
+        parcel.writeValue(this.c);
         parcel.writeString(this.d);
         parcel.writeFloat(this.e);
     }

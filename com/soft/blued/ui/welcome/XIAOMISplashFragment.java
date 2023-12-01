@@ -95,12 +95,10 @@ public class XIAOMISplashFragment extends TimeoutFragment {
         return intent;
     }
 
-    @Override // com.blued.android.ui.TimeoutFragment
     public void g() {
         k();
     }
 
-    @Override // com.blued.android.ui.TimeoutFragment
     public View h() {
         return this.o;
     }
@@ -113,7 +111,6 @@ public class XIAOMISplashFragment extends TimeoutFragment {
         k();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.n = getActivity();
         getActivity().overridePendingTransition(R.anim.activity_switch_none, R.anim.activity_switch_none);
@@ -126,14 +123,13 @@ public class XIAOMISplashFragment extends TimeoutFragment {
                 this.v = getArguments().getString("SPLASH_ID");
             }
             this.o = layoutInflater.inflate(R.layout.fragment_tx_splash, viewGroup, false);
-            a(AppInfo.f9486a, this.w);
+            a(AppInfo.a, this.w);
         } else if (view.getParent() != null) {
             ((ViewGroup) this.o.getParent()).removeView(this.o);
         }
         return this.o;
     }
 
-    @Override // com.blued.android.ui.TimeoutFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
     }

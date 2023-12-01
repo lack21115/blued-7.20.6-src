@@ -29,7 +29,7 @@ import java.util.zip.ZipFile;
 public class FileUtil {
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f38922a;
+    public static String f25231a;
     public static final a b = new a() { // from class: com.tencent.smtt.utils.FileUtil.2
         @Override // com.tencent.smtt.utils.FileUtil.a
         public boolean a(File file, File file2) {
@@ -38,7 +38,7 @@ public class FileUtil {
     };
 
     /* renamed from: c  reason: collision with root package name */
-    private static final int f38923c = 4;
+    private static final int f25232c = 4;
     private static RandomAccessFile d;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/smtt/utils/FileUtil$a.class */
@@ -378,15 +378,15 @@ public class FileUtil {
                 boolean z3 = z;
                 boolean z4 = z2;
                 if (substring.endsWith(".so")) {
-                    if (!name.regionMatches(f38923c, str2, 0, str2.length()) || name.charAt(f38923c + str2.length()) != '/') {
-                        if (str3 != null && name.regionMatches(f38923c, str3, 0, str3.length()) && name.charAt(f38923c + str3.length()) == '/') {
+                    if (!name.regionMatches(f25232c, str2, 0, str2.length()) || name.charAt(f25232c + str2.length()) != '/') {
+                        if (str3 != null && name.regionMatches(f25232c, str3, 0, str3.length()) && name.charAt(f25232c + str3.length()) == '/') {
                             z4 = true;
                             z2 = true;
                             z3 = z;
                             if (z) {
                                 continue;
                             }
-                        } else if (str4 != null && name.regionMatches(f38923c, str4, 0, str4.length()) && name.charAt(f38923c + str4.length()) == '/' && !z) {
+                        } else if (str4 != null && name.regionMatches(f25232c, str4, 0, str4.length()) && name.charAt(f25232c + str4.length()) == '/' && !z) {
                             z3 = z;
                             z4 = z2;
                             if (z2) {
@@ -428,7 +428,7 @@ public class FileUtil {
             @Override // com.tencent.smtt.utils.FileUtil.b
             public boolean a(InputStream inputStream, ZipEntry zipEntry, String str6) throws Exception {
                 try {
-                    return FileUtil.b(inputStream, zipEntry, String.this, str6);
+                    return FileUtil.b(inputStream, zipEntry, str2, str6);
                 } catch (Exception e) {
                     throw new Exception("copyFileIfChanged Exception", e);
                 }
@@ -518,7 +518,7 @@ public class FileUtil {
                             if (channel != null) {
                                 channel.close();
                             }
-                            if (channel2 != null) {
+                            if (channel2 != 0) {
                                 channel2.close();
                                 return true;
                             }
@@ -529,7 +529,7 @@ public class FileUtil {
                         if (channel != null) {
                             channel.close();
                         }
-                        if (channel2 != null) {
+                        if (channel2 != 0) {
                             channel2.close();
                             return false;
                         }

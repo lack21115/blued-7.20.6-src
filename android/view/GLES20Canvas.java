@@ -426,9 +426,8 @@ public class GLES20Canvas extends HardwareCanvas {
         nDrawColor(this.mRenderer, i, mode.nativeInt);
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     @Override // android.view.HardwareCanvas
-    public void drawHardwareLayer(HardwareLayer hardwareLayer, float f, float f2, Paint paint) {
+    void drawHardwareLayer(HardwareLayer hardwareLayer, float f, float f2, Paint paint) {
         hardwareLayer.setLayerPaint(paint);
         nDrawLayer(this.mRenderer, hardwareLayer.getLayerHandle(), f, f2);
     }

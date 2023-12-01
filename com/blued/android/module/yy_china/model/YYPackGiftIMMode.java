@@ -1,5 +1,6 @@
 package com.blued.android.module.yy_china.model;
 
+import $r8;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
@@ -146,7 +147,7 @@ public final class YYPackGiftIMMode {
     }
 
     public int hashCode() {
-        return (((((((((((((C$r8$backportedMethods$utility$Long$1$hashCode.hashCode(this.round_end_time) * 31) + this.status) * 31) + this.special_effect_result.hashCode()) * 31) + this.content.hashCode()) * 31) + this.trigger_avatar.hashCode()) * 31) + this.trigger_uid.hashCode()) * 31) + this.trigger_name.hashCode()) * 31) + this.full_server_notification.hashCode();
+        return ((((((((((((($r8.backportedMethods.utility.Long.1.hashCode.hashCode(this.round_end_time) * 31) + this.status) * 31) + this.special_effect_result.hashCode()) * 31) + this.content.hashCode()) * 31) + this.trigger_avatar.hashCode()) * 31) + this.trigger_uid.hashCode()) * 31) + this.trigger_name.hashCode()) * 31) + this.full_server_notification.hashCode();
     }
 
     public String toString() {

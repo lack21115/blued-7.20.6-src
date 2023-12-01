@@ -29,7 +29,7 @@ public class SparseIntArray implements Cloneable {
             int[] iArr2 = iArr;
             if (i + 1 > iArr.length) {
                 iArr2 = new int[growSize(i)];
-                System.arraycopy((Object) iArr, 0, (Object) iArr2, 0, i);
+                System.arraycopy(iArr, 0, iArr2, 0, i);
             }
             iArr2[i] = i2;
             return iArr2;
@@ -65,14 +65,14 @@ public class SparseIntArray implements Cloneable {
         if (i > iArr.length) {
             throw new IllegalArgumentException("Bad currentSize, originalSize: " + iArr.length + " currentSize: " + i);
         } else if (i + 1 <= iArr.length) {
-            System.arraycopy((Object) iArr, i2, (Object) iArr, i2 + 1, i - i2);
+            System.arraycopy(iArr, i2, iArr, i2 + 1, i - i2);
             iArr[i2] = i3;
             return iArr;
         } else {
             int[] iArr2 = new int[growSize(i)];
-            System.arraycopy((Object) iArr, 0, (Object) iArr2, 0, i2);
+            System.arraycopy(iArr, 0, iArr2, 0, i2);
             iArr2[i2] = i3;
-            System.arraycopy((Object) iArr, i2, (Object) iArr2, i2 + 1, iArr.length - i2);
+            System.arraycopy(iArr, i2, iArr2, i2 + 1, iArr.length - i2);
             return iArr2;
         }
     }
@@ -93,7 +93,7 @@ public class SparseIntArray implements Cloneable {
     }
 
     /* renamed from: clone */
-    public SparseIntArray m10922clone() {
+    public SparseIntArray m7879clone() {
         SparseIntArray sparseIntArray = null;
         try {
             SparseIntArray sparseIntArray2 = (SparseIntArray) super.clone();
@@ -165,9 +165,9 @@ public class SparseIntArray implements Cloneable {
     public void removeAt(int i) {
         int[] iArr = this.mKeys;
         int i2 = i + 1;
-        System.arraycopy((Object) iArr, i2, (Object) iArr, i, this.mSize - i2);
+        System.arraycopy(iArr, i2, iArr, i, this.mSize - i2);
         int[] iArr2 = this.mValues;
-        System.arraycopy((Object) iArr2, i2, (Object) iArr2, i, this.mSize - i2);
+        System.arraycopy(iArr2, i2, iArr2, i, this.mSize - i2);
         this.mSize--;
     }
 

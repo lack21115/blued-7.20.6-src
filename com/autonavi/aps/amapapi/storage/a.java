@@ -4,12 +4,13 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.text.TextUtils;
-import com.amap.api.col.p0003sl.ht;
+import com.amap.api.col.3sl.ht;
 import com.amap.api.location.AMapLocation;
 import com.amap.api.location.AMapLocationClientOption;
 import com.autonavi.aps.amapapi.restruct.d;
 import com.autonavi.aps.amapapi.utils.i;
 import com.baidu.mobads.sdk.internal.bj;
+import com.huawei.hms.framework.common.ContainerUtils;
 import java.util.ArrayList;
 import java.util.Hashtable;
 import org.json.JSONObject;
@@ -18,7 +19,7 @@ import org.json.JSONObject;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    Hashtable<String, ArrayList<C0191a>> f9261a = new Hashtable<>();
+    Hashtable<String, ArrayList<C0120a>> f6421a = new Hashtable<>();
     private long i = 0;
     private boolean j = false;
     private String k = "2.0.201501131131".replace(".", "");
@@ -26,7 +27,7 @@ public final class a {
     boolean b = true;
 
     /* renamed from: c  reason: collision with root package name */
-    long f9262c = 0;
+    long f6422c = 0;
     String d = null;
     d e = null;
     private String m = null;
@@ -38,21 +39,21 @@ public final class a {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.autonavi.aps.amapapi.storage.a$a  reason: collision with other inner class name */
     /* loaded from: source-8756600-dex2jar.jar:com/autonavi/aps/amapapi/storage/a$a.class */
-    public static final class C0191a {
+    public static final class C0120a {
 
         /* renamed from: a  reason: collision with root package name */
-        private com.autonavi.aps.amapapi.model.a f9263a = null;
+        private com.autonavi.aps.amapapi.model.a f6423a = null;
         private String b = null;
 
-        protected C0191a() {
+        protected C0120a() {
         }
 
         public final com.autonavi.aps.amapapi.model.a a() {
-            return this.f9263a;
+            return this.f6423a;
         }
 
         public final void a(com.autonavi.aps.amapapi.model.a aVar) {
-            this.f9263a = aVar;
+            this.f6423a = aVar;
         }
 
         public final void a(String str) {
@@ -69,23 +70,23 @@ public final class a {
     }
 
     private com.autonavi.aps.amapapi.model.a a(String str, StringBuilder sb, boolean z) {
-        C0191a a2;
+        C0120a a2;
         try {
             if (!str.contains("cgiwifi") && !str.contains("wifi")) {
-                a2 = (str.contains("cgi") && this.f9261a.containsKey(str) && this.f9261a.get(str).size() > 0) ? this.f9261a.get(str).get(0) : null;
+                a2 = (str.contains("cgi") && this.f6421a.containsKey(str) && this.f6421a.get(str).size() > 0) ? this.f6421a.get(str).get(0) : null;
                 if (a2 == null && i.a(a2.a())) {
                     com.autonavi.aps.amapapi.model.a a3 = a2.a();
                     a3.e("mem");
                     a3.h(a2.b());
                     if (!z && !com.autonavi.aps.amapapi.utils.a.a(a3.getTime())) {
-                        if (this.f9261a == null || !this.f9261a.containsKey(str)) {
+                        if (this.f6421a == null || !this.f6421a.containsKey(str)) {
                             return null;
                         }
-                        this.f9261a.get(str).remove(a2);
+                        this.f6421a.get(str).remove(a2);
                         return null;
                     }
                     if (i.a(a3)) {
-                        this.f9262c = 0L;
+                        this.f6422c = 0L;
                     }
                     a3.setLocationType(4);
                     return a3;
@@ -106,7 +107,7 @@ public final class a {
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences
     */
-    private com.autonavi.aps.amapapi.storage.a.C0191a a(java.lang.StringBuilder r8, java.lang.String r9) {
+    private com.autonavi.aps.amapapi.storage.a.C0120a a(java.lang.StringBuilder r8, java.lang.String r9) {
         /*
             Method dump skipped, instructions count: 492
             To view this dump change 'Code comments level' option to 'DEBUG'
@@ -122,8 +123,8 @@ public final class a {
         try {
             this.l = i.l(context);
             String str2 = str;
-            if (str.contains("&")) {
-                str2 = str.substring(0, str.indexOf("&"));
+            if (str.contains(ContainerUtils.FIELD_DELIMITER)) {
+                str2 = str.substring(0, str.indexOf(ContainerUtils.FIELD_DELIMITER));
             }
             String substring = str2.substring(str2.lastIndexOf("#") + 1);
             if (substring.equals("cgi")) {
@@ -314,7 +315,7 @@ public final class a {
         if (j == 0) {
             return false;
         }
-        if (this.f9261a.size() > 360 || b - j > bj.e) {
+        if (this.f6421a.size() > 360 || b - j > bj.e) {
             z = true;
         }
         return z;
@@ -322,8 +323,8 @@ public final class a {
 
     private void c() {
         this.i = 0L;
-        if (!this.f9261a.isEmpty()) {
-            this.f9261a.clear();
+        if (!this.f6421a.isEmpty()) {
+            this.f6421a.clear();
         }
         this.j = false;
     }
@@ -366,7 +367,7 @@ public final class a {
 
     public final com.autonavi.aps.amapapi.model.a a(Context context, String str, StringBuilder sb, boolean z, boolean z2) {
         if (!TextUtils.isEmpty(str) && com.autonavi.aps.amapapi.utils.a.e()) {
-            String str2 = str + "&" + this.f + "&" + this.g + "&" + this.h;
+            String str2 = str + ContainerUtils.FIELD_DELIMITER + this.f + ContainerUtils.FIELD_DELIMITER + this.g + ContainerUtils.FIELD_DELIMITER + this.h;
             if (str2.contains("gps") || !com.autonavi.aps.amapapi.utils.a.e() || sb == null) {
                 return null;
             }
@@ -382,7 +383,7 @@ public final class a {
                 } catch (Throwable th) {
                 }
             }
-            if (this.f9261a.isEmpty()) {
+            if (this.f6421a.isEmpty()) {
                 return null;
             }
             return a(str2, sb, z2);
@@ -416,7 +417,7 @@ public final class a {
     }
 
     public final void a() {
-        this.f9262c = 0L;
+        this.f6422c = 0L;
         this.d = null;
     }
 
@@ -452,7 +453,7 @@ public final class a {
         int i;
         try {
             if (i.a(aVar)) {
-                String str2 = str + "&" + aVar.isOffset() + "&" + aVar.i() + "&" + aVar.j();
+                String str2 = str + ContainerUtils.FIELD_DELIMITER + aVar.isOffset() + ContainerUtils.FIELD_DELIMITER + aVar.i() + ContainerUtils.FIELD_DELIMITER + aVar.j();
                 if (!a(str2, aVar) || aVar.e().equals("mem") || aVar.e().equals(ContentResolver.SCHEME_FILE) || aVar.e().equals("wifioff") || "-3".equals(aVar.d())) {
                     return;
                 }
@@ -506,15 +507,15 @@ public final class a {
                     return;
                 }
                 this.i = i.b();
-                C0191a c0191a = new C0191a();
-                c0191a.a(aVar);
-                c0191a.a(TextUtils.isEmpty(sb) ? null : sb.toString());
-                if (this.f9261a.containsKey(str2)) {
-                    this.f9261a.get(str2).add(c0191a);
+                C0120a c0120a = new C0120a();
+                c0120a.a(aVar);
+                c0120a.a(TextUtils.isEmpty(sb) ? null : sb.toString());
+                if (this.f6421a.containsKey(str2)) {
+                    this.f6421a.get(str2).add(c0120a);
                 } else {
-                    ArrayList<C0191a> arrayList = new ArrayList<>();
-                    arrayList.add(c0191a);
-                    this.f9261a.put(str2, arrayList);
+                    ArrayList<C0120a> arrayList = new ArrayList<>();
+                    arrayList.add(c0120a);
+                    this.f6421a.put(str2, arrayList);
                 }
                 if (z) {
                     a(str2, aVar, sb, context);

@@ -31,11 +31,11 @@ public class a implements SurfaceTexture.OnFrameAvailableListener, Runnable {
     private int K;
 
     /* renamed from: a  reason: collision with root package name */
-    private int f27694a;
+    private int f14006a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f27695c;
+    private int f14007c;
     private int d;
     private int e;
     private int f;
@@ -51,7 +51,7 @@ public class a implements SurfaceTexture.OnFrameAvailableListener, Runnable {
     private g p;
     private c q;
     private b r;
-    private InterfaceC0748a s;
+    private InterfaceC0578a s;
     private List<Long> t;
     private int w;
     private volatile boolean x;
@@ -63,7 +63,7 @@ public class a implements SurfaceTexture.OnFrameAvailableListener, Runnable {
 
     /* renamed from: com.qiniu.pili.droid.shortvideo.gl.b.a$a  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/qiniu/pili/droid/shortvideo/gl/b/a$a.class */
-    public interface InterfaceC0748a {
+    public interface InterfaceC0578a {
         void a();
     }
 
@@ -85,16 +85,16 @@ public class a implements SurfaceTexture.OnFrameAvailableListener, Runnable {
     public static class c extends Handler {
 
         /* renamed from: a  reason: collision with root package name */
-        private WeakReference<a> f27696a;
+        private WeakReference<a> f14008a;
 
         public c(a aVar) {
-            this.f27696a = new WeakReference<>(aVar);
+            this.f14008a = new WeakReference<>(aVar);
         }
 
         @Override // android.os.Handler
         public void handleMessage(Message message) {
             super.handleMessage(message);
-            a aVar = this.f27696a.get();
+            a aVar = this.f14008a.get();
             if (aVar == null) {
                 return;
             }
@@ -113,9 +113,9 @@ public class a implements SurfaceTexture.OnFrameAvailableListener, Runnable {
     public a(Surface surface, int i, int i2, int i3, int i4, int i5, List<Long> list) {
         this.t = new LinkedList();
         this.m = surface;
-        this.f27694a = i;
+        this.f14006a = i;
         this.b = i2;
-        this.f27695c = i3;
+        this.f14007c = i3;
         this.g = i4;
         this.h = i5;
         this.t = list;
@@ -178,11 +178,11 @@ public class a implements SurfaceTexture.OnFrameAvailableListener, Runnable {
                 return;
             }
             long longValue = (long) (((this.t.remove(0).longValue() - this.F) * 1000) / this.E);
-            int i2 = (this.f27695c + this.z) % 180 == 90 ? this.b : this.f27694a;
-            int i3 = (this.f27695c + this.z) % 180 == 90 ? this.f27694a : this.b;
+            int i2 = (this.f14007c + this.z) % 180 == 90 ? this.b : this.f14006a;
+            int i3 = (this.f14007c + this.z) % 180 == 90 ? this.f14006a : this.b;
             if (this.x) {
                 b bVar = this.r;
-                c2 = bVar != null ? bVar.a(this.j, this.f27694a, this.b, longValue, this.u) : 0;
+                c2 = bVar != null ? bVar.a(this.j, this.f14006a, this.b, longValue, this.u) : 0;
             } else {
                 if (this.o == null) {
                     com.qiniu.pili.droid.shortvideo.gl.c.a aVar = new com.qiniu.pili.droid.shortvideo.gl.c.a();
@@ -224,7 +224,7 @@ public class a implements SurfaceTexture.OnFrameAvailableListener, Runnable {
                 this.p.a(i2, i3, this.A);
             }
             if (this.B <= 0 || this.o == null) {
-                synchronized (com.qiniu.pili.droid.shortvideo.f.d.f27670a) {
+                synchronized (com.qiniu.pili.droid.shortvideo.f.d.f13982a) {
                     GLES20.glClear(16384);
                     this.p.b(c2);
                 }
@@ -252,7 +252,7 @@ public class a implements SurfaceTexture.OnFrameAvailableListener, Runnable {
             }
             int intValue = this.C.get(i2).intValue();
             long longValue = this.D.get(i2).longValue();
-            synchronized (com.qiniu.pili.droid.shortvideo.f.d.f27670a) {
+            synchronized (com.qiniu.pili.droid.shortvideo.f.d.f13982a) {
                 GLES20.glClear(16384);
                 this.p.b(intValue);
             }
@@ -361,9 +361,9 @@ public class a implements SurfaceTexture.OnFrameAvailableListener, Runnable {
     }
 
     public void a(int i, int i2, int i3, List<Long> list) {
-        this.f27694a = i;
+        this.f14006a = i;
         this.b = i2;
-        this.f27695c = i3;
+        this.f14007c = i3;
         this.t = list;
         this.G = 0L;
         c cVar = this.q;
@@ -387,8 +387,8 @@ public class a implements SurfaceTexture.OnFrameAvailableListener, Runnable {
         this.A = pLDisplayMode;
     }
 
-    public void a(InterfaceC0748a interfaceC0748a) {
-        this.s = interfaceC0748a;
+    public void a(InterfaceC0578a interfaceC0578a) {
+        this.s = interfaceC0578a;
     }
 
     public void a(b bVar) {
@@ -501,9 +501,9 @@ public class a implements SurfaceTexture.OnFrameAvailableListener, Runnable {
             this.v = true;
             notify();
         }
-        InterfaceC0748a interfaceC0748a = this.s;
-        if (interfaceC0748a != null) {
-            interfaceC0748a.a();
+        InterfaceC0578a interfaceC0578a = this.s;
+        if (interfaceC0578a != null) {
+            interfaceC0578a.a();
         }
         Looper.loop();
         b bVar = this.r;

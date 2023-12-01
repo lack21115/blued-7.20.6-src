@@ -13,17 +13,17 @@ import java.util.Arrays;
 public abstract class e extends h {
 
     /* renamed from: a  reason: collision with root package name */
-    private a f7541a;
+    private a f4702a;
 
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/exoplayer/i/e$a.class */
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final int f7542a = 0;
+        public static final int f4703a = 0;
         public static final int b = 1;
 
         /* renamed from: c  reason: collision with root package name */
-        public static final int f7543c = 2;
+        public static final int f4704c = 2;
         public static final int d = 3;
         @Deprecated
         public final int e;
@@ -37,7 +37,7 @@ public abstract class e extends h {
         @Retention(RetentionPolicy.SOURCE)
         /* renamed from: com.anythink.expressad.exoplayer.i.e$a$a  reason: collision with other inner class name */
         /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/exoplayer/i/e$a$a.class */
-        @interface InterfaceC0137a {
+        @interface InterfaceC0066a {
         }
 
         a(int[] iArr, af[] afVarArr, int[] iArr2, int[][][] iArr3, af afVar) {
@@ -263,7 +263,7 @@ public abstract class e extends h {
 
         public final int a(int i, int i2) {
             int i3;
-            int i4 = this.h[i].a(i2).f7417a;
+            int i4 = this.h[i].a(i2).f4578a;
             int[] iArr = new int[i4];
             int i5 = 0;
             int i6 = 0;
@@ -319,7 +319,7 @@ public abstract class e extends h {
         for (int i2 = 0; i2 < zVarArr.length; i2++) {
             z zVar = zVarArr[i2];
             int i3 = 0;
-            while (i3 < aeVar.f7417a) {
+            while (i3 < aeVar.f4578a) {
                 int a2 = zVar.a(aeVar.a(i3)) & 7;
                 int i4 = i;
                 if (a2 > i) {
@@ -337,11 +337,11 @@ public abstract class e extends h {
     }
 
     private static int[] a(z zVar, ae aeVar) {
-        int[] iArr = new int[aeVar.f7417a];
+        int[] iArr = new int[aeVar.f4578a];
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= aeVar.f7417a) {
+            if (i2 >= aeVar.f4578a) {
                 return iArr;
             }
             iArr[i2] = zVar.a(aeVar.a(i2));
@@ -366,7 +366,7 @@ public abstract class e extends h {
     protected abstract Pair<aa[], f[]> a(a aVar, int[][][] iArr, int[] iArr2);
 
     public final a a() {
-        return this.f7541a;
+        return this.f4702a;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -417,7 +417,7 @@ public abstract class e extends h {
                 }
                 z zVar = zVarArr[i8];
                 int i10 = 0;
-                while (i10 < a2.f7417a) {
+                while (i10 < a2.f4578a) {
                     int a3 = zVar.a(a2.a(i10)) & 7;
                     int i11 = i9;
                     if (a3 > i9) {
@@ -434,14 +434,14 @@ public abstract class e extends h {
                 i8++;
             }
             if (i == zVarArr.length) {
-                iArr = new int[a2.f7417a];
+                iArr = new int[a2.f4578a];
             } else {
                 z zVar2 = zVarArr[i];
-                iArr = new int[a2.f7417a];
+                iArr = new int[a2.f4578a];
                 int i12 = 0;
                 while (true) {
                     int i13 = i12;
-                    if (i13 < a2.f7417a) {
+                    if (i13 < a2.f4578a) {
                         iArr[i13] = zVar2.a(a2.a(i13));
                         i12 = i13 + 1;
                     }
@@ -473,6 +473,6 @@ public abstract class e extends h {
 
     @Override // com.anythink.expressad.exoplayer.i.h
     public final void a(Object obj) {
-        this.f7541a = (a) obj;
+        this.f4702a = (a) obj;
     }
 }

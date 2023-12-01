@@ -24,12 +24,8 @@ import skin.support.utils.SkinPreference;
 
 /* loaded from: source-3503164-dex2jar.jar:skin/support/SkinCompatManager.class */
 public class SkinCompatManager extends SkinObservable {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static volatile SkinCompatManager f44189a;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final Context f44190c;
+    private static volatile SkinCompatManager a;
+    private final Context c;
     private final Object b = new Object();
     private boolean d = false;
     private List<SkinWrapper> e = new ArrayList();
@@ -44,13 +40,11 @@ public class SkinCompatManager extends SkinObservable {
     /* loaded from: source-3503164-dex2jar.jar:skin/support/SkinCompatManager$SkinLoadTask.class */
     public class SkinLoadTask extends AsyncTask<String, Void, String> {
         private final SkinLoaderListener b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private final SkinLoaderStrategy f44192c;
+        private final SkinLoaderStrategy c;
 
         SkinLoadTask(SkinLoaderListener skinLoaderListener, SkinLoaderStrategy skinLoaderStrategy) {
             this.b = skinLoaderListener;
-            this.f44192c = skinLoaderStrategy;
+            this.c = skinLoaderStrategy;
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
@@ -69,8 +63,8 @@ public class SkinCompatManager extends SkinObservable {
             }
             try {
                 if (strArr.length == 1) {
-                    if (TextUtils.isEmpty(this.f44192c.a(SkinCompatManager.this.f44190c, strArr[0]))) {
-                        SkinCompatResources.a().a(this.f44192c);
+                    if (TextUtils.isEmpty(this.c.a(SkinCompatManager.this.c, strArr[0]))) {
+                        SkinCompatResources.a().a(this.c);
                         return "";
                     }
                     return strArr[0];
@@ -88,7 +82,7 @@ public class SkinCompatManager extends SkinObservable {
         public void onPostExecute(String str) {
             synchronized (SkinCompatManager.this.b) {
                 if (str != null) {
-                    SkinPreference.a().a(str).a(this.f44192c.getType()).e();
+                    SkinPreference.a().a(str).a(this.c.getType()).e();
                     SkinCompatManager.this.j();
                     if (this.b != null) {
                         this.b.b();
@@ -138,26 +132,26 @@ public class SkinCompatManager extends SkinObservable {
     }
 
     private SkinCompatManager(Context context) {
-        this.f44190c = context.getApplicationContext();
+        this.c = context.getApplicationContext();
         k();
     }
 
     public static SkinCompatManager a() {
-        return f44189a;
+        return a;
     }
 
     public static SkinCompatManager a(Application application) {
         a((Context) application);
         SkinActivityLifecycle.a(application);
-        return f44189a;
+        return a;
     }
 
     public static SkinCompatManager a(Context context) {
-        if (f44189a == null) {
+        if (a == null) {
             synchronized (SkinCompatManager.class) {
                 try {
-                    if (f44189a == null) {
-                        f44189a = new SkinCompatManager(context);
+                    if (a == null) {
+                        a = new SkinCompatManager(context);
                     }
                 } catch (Throwable th) {
                     throw th;
@@ -165,7 +159,7 @@ public class SkinCompatManager extends SkinObservable {
             }
         }
         SkinPreference.a(context);
-        return f44189a;
+        return a;
     }
 
     private void k() {
@@ -188,7 +182,7 @@ public class SkinCompatManager extends SkinObservable {
     }
 
     public String a(String str) {
-        return this.f44190c.getPackageManager().getPackageArchiveInfo(str, 1).packageName;
+        return this.c.getPackageManager().getPackageArchiveInfo(str, 1).packageName;
     }
 
     public SkinCompatManager a(SkinLayoutInflater skinLayoutInflater) {
@@ -206,11 +200,11 @@ public class SkinCompatManager extends SkinObservable {
 
     public Resources b(String str) {
         try {
-            PackageInfo packageArchiveInfo = this.f44190c.getPackageManager().getPackageArchiveInfo(str, 0);
+            PackageInfo packageArchiveInfo = this.c.getPackageManager().getPackageArchiveInfo(str, 0);
             packageArchiveInfo.applicationInfo.sourceDir = str;
             packageArchiveInfo.applicationInfo.publicSourceDir = str;
-            Resources resourcesForApplication = this.f44190c.getPackageManager().getResourcesForApplication(packageArchiveInfo.applicationInfo);
-            Resources resources = this.f44190c.getResources();
+            Resources resourcesForApplication = this.c.getPackageManager().getResourcesForApplication(packageArchiveInfo.applicationInfo);
+            Resources resources = this.c.getResources();
             return new Resources(resourcesForApplication.getAssets(), resources.getDisplayMetrics(), resources.getConfiguration());
         } catch (Exception e) {
             e.printStackTrace();
@@ -255,7 +249,7 @@ public class SkinCompatManager extends SkinObservable {
     }
 
     public Context getContext() {
-        return this.f44190c;
+        return this.c;
     }
 
     public boolean h() {
@@ -264,10 +258,10 @@ public class SkinCompatManager extends SkinObservable {
 
     public AsyncTask i() {
         String b = SkinPreference.a().b();
-        int c2 = SkinPreference.a().c();
-        if (TextUtils.isEmpty(b) || c2 == -1) {
+        int c = SkinPreference.a().c();
+        if (TextUtils.isEmpty(b) || c == -1) {
             return null;
         }
-        return a(b, null, c2);
+        return a(b, null, c);
     }
 }

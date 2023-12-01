@@ -45,9 +45,8 @@ public class TableUtils {
                 List list2 = (List) hashMap.get(uniqueIndexName);
                 ArrayList arrayList = list2;
                 if (list2 == null) {
-                    ArrayList arrayList2 = new ArrayList();
-                    hashMap.put(uniqueIndexName, arrayList2);
-                    arrayList = arrayList2;
+                    arrayList = new ArrayList();
+                    hashMap.put(uniqueIndexName, arrayList);
                 }
                 arrayList.add(fieldType.getColumnName());
             }

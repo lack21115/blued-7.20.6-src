@@ -7,23 +7,23 @@ import com.anythink.expressad.exoplayer.i.f;
 public final class d extends b {
 
     /* renamed from: a  reason: collision with root package name */
-    private final int f7539a;
+    private final int f4700a;
     private final Object b;
 
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/exoplayer/i/d$a.class */
     public static final class a implements f.a {
 
         /* renamed from: a  reason: collision with root package name */
-        private final int f7540a;
+        private final int f4701a;
         private final Object b;
 
         public a() {
-            this.f7540a = 0;
+            this.f4701a = 0;
             this.b = null;
         }
 
         private a(int i, Object obj) {
-            this.f7540a = i;
+            this.f4701a = i;
             this.b = obj;
         }
 
@@ -33,7 +33,7 @@ public final class d extends b {
                 z = false;
             }
             com.anythink.expressad.exoplayer.k.a.a(z);
-            return new d(aeVar, iArr[0], this.f7540a, this.b);
+            return new d(aeVar, iArr[0], this.f4701a, this.b);
         }
 
         @Override // com.anythink.expressad.exoplayer.i.f.a
@@ -43,7 +43,7 @@ public final class d extends b {
                 z = false;
             }
             com.anythink.expressad.exoplayer.k.a.a(z);
-            return new d(aeVar, iArr[0], this.f7540a, this.b);
+            return new d(aeVar, iArr[0], this.f4701a, this.b);
         }
     }
 
@@ -53,7 +53,7 @@ public final class d extends b {
 
     public d(ae aeVar, int i, int i2, Object obj) {
         super(aeVar, i);
-        this.f7539a = i2;
+        this.f4700a = i2;
         this.b = obj;
     }
 
@@ -68,7 +68,7 @@ public final class d extends b {
 
     @Override // com.anythink.expressad.exoplayer.i.f
     public final int c() {
-        return this.f7539a;
+        return this.f4700a;
     }
 
     @Override // com.anythink.expressad.exoplayer.i.f

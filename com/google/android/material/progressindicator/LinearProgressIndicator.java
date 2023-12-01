@@ -58,7 +58,6 @@ public final class LinearProgressIndicator extends BaseProgressIndicator<LinearP
         return ((LinearProgressIndicatorSpec) this.spec).indicatorDirection;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     /* JADX WARN: Code restructure failed: missing block: B:7:0x0040, code lost:
         if (((com.google.android.material.progressindicator.LinearProgressIndicatorSpec) r7.spec).indicatorDirection != 2) goto L7;
      */
@@ -67,7 +66,7 @@ public final class LinearProgressIndicator extends BaseProgressIndicator<LinearP
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences
     */
-    public void onLayout(boolean r8, int r9, int r10, int r11, int r12) {
+    protected void onLayout(boolean r8, int r9, int r10, int r11, int r12) {
         /*
             r7 = this;
             r0 = r7
@@ -130,9 +129,8 @@ public final class LinearProgressIndicator extends BaseProgressIndicator<LinearP
         throw new UnsupportedOperationException("Method not decompiled: com.google.android.material.progressindicator.LinearProgressIndicator.onLayout(boolean, int, int, int, int):void");
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.ProgressBar, android.view.View
-    public void onSizeChanged(int i, int i2, int i3, int i4) {
+    protected void onSizeChanged(int i, int i2, int i3, int i4) {
         int paddingLeft = i - (getPaddingLeft() + getPaddingRight());
         int paddingTop = i2 - (getPaddingTop() + getPaddingBottom());
         IndeterminateDrawable indeterminateDrawable = getIndeterminateDrawable();

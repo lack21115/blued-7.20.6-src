@@ -62,16 +62,14 @@ public class DownloadProgressBar extends View {
         this.mPath = new Path();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         removeCallbacks(this.CI);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         canvas.clipPath(this.mPath);
         this.aCO.setShader(this.aCU);
@@ -106,9 +104,8 @@ public class DownloadProgressBar extends View {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onSizeChanged(int i, int i2, int i3, int i4) {
+    protected void onSizeChanged(int i, int i2, int i3, int i4) {
         super.onSizeChanged(i, i2, i3, i4);
         this.aCU = new LinearGradient(0.0f, 0.0f, getMeasuredWidth(), 0.0f, new int[]{1291525714, 1291569420}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
         this.aCV = new LinearGradient(0.0f, 0.0f, getMeasuredWidth(), 0.0f, new int[]{-319918, -276212}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
@@ -123,15 +120,13 @@ public class DownloadProgressBar extends View {
         this.mPath.addRoundRect(this.mRectF, f2, f2, Path.Direction.CW);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onVisibilityChanged(View view, int i) {
+    protected void onVisibilityChanged(View view, int i) {
         super.onVisibilityChanged(view, i);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onWindowVisibilityChanged(int i) {
+    protected void onWindowVisibilityChanged(int i) {
         super.onWindowVisibilityChanged(i);
         if (i != 0) {
             removeCallbacks(this.CI);

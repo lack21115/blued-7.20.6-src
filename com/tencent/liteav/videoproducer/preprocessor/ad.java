@@ -6,16 +6,16 @@ import com.tencent.liteav.videobase.base.GLConstants;
 final /* synthetic */ class ad implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final VideoPreprocessor f37054a;
+    private final VideoPreprocessor f23363a;
     private final GLConstants.GLScaleType b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final boolean f37055c;
+    private final boolean f23364c;
 
     private ad(VideoPreprocessor videoPreprocessor, GLConstants.GLScaleType gLScaleType, boolean z) {
-        this.f37054a = videoPreprocessor;
+        this.f23363a = videoPreprocessor;
         this.b = gLScaleType;
-        this.f37055c = z;
+        this.f23364c = z;
     }
 
     public static Runnable a(VideoPreprocessor videoPreprocessor, GLConstants.GLScaleType gLScaleType, boolean z) {
@@ -24,6 +24,6 @@ final /* synthetic */ class ad implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        VideoPreprocessor.lambda$setGreenScreenParam$6(this.f37054a, this.b, this.f37055c);
+        VideoPreprocessor.lambda$setGreenScreenParam$6(this.f23363a, this.b, this.f23364c);
     }
 }

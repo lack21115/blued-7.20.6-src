@@ -6,12 +6,12 @@ import android.view.animation.Interpolator;
 public class ViscousFluidInterpolator implements Interpolator {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final float f28000a;
+    private static final float f14312a;
     private static final float b;
 
     static {
         float a2 = 1.0f / a(1.0f);
-        f28000a = a2;
+        f14312a = a2;
         b = 1.0f - (a2 * a(1.0f));
     }
 
@@ -22,7 +22,7 @@ public class ViscousFluidInterpolator implements Interpolator {
 
     @Override // android.animation.TimeInterpolator
     public float getInterpolation(float f) {
-        float a2 = f28000a * a(f);
+        float a2 = f14312a * a(f);
         float f2 = a2;
         if (a2 > 0.0f) {
             f2 = a2 + b;

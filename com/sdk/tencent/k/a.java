@@ -12,7 +12,7 @@ import org.json.JSONObject;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f28059a = "com.sdk.tencent.k.a";
+    public static final String f14371a = "com.sdk.tencent.k.a";
     public static final boolean b = c.b;
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -73,7 +73,7 @@ public class a {
                 i = i2 + 1;
             }
         } catch (Exception e) {
-            b.a(f28059a, e.getMessage(), Boolean.valueOf(b));
+            b.a(f14371a, e.getMessage(), Boolean.valueOf(b));
             return null;
         }
     }

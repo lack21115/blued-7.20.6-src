@@ -39,7 +39,7 @@ public class ad extends af {
                             com.huawei.openalliance.ad.inter.data.v vVar = new com.huawei.openalliance.ad.inter.data.v(adContentData.p());
                             hashMap.put(com.huawei.openalliance.ad.constant.at.m, adContentData.B());
                             hashMap.put(com.huawei.openalliance.ad.constant.at.n, String.valueOf(adContentData.z()));
-                            hashMap.put(com.huawei.openalliance.ad.constant.at.q, adContentData.y() ? "true" : "false");
+                            hashMap.put(com.huawei.openalliance.ad.constant.at.q, adContentData.y() ? fw.Code : "false");
                             hashMap.put(com.huawei.openalliance.ad.constant.at.p, vVar.a());
                         }
                         com.huawei.openalliance.ad.uriaction.q Code = com.huawei.openalliance.ad.uriaction.r.Code(ad.this.Code(context), adContentData, hashMap);

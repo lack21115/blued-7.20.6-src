@@ -11,11 +11,11 @@ import java.util.List;
 public class fa {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final int f37442a = 20037508;
+    private static final int f23751a = 20037508;
     private static final int b = 30240971;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final int f37443c = 256;
+    public static final int f23752c = 256;
     public static final int d = 20;
     public static final double e = 4.272282972352698E7d;
     private static final double f = 111319.49077777778d;
@@ -48,7 +48,7 @@ public class fa {
     }
 
     public static int a(int i2) {
-        return i2 - f37442a;
+        return i2 - f23751a;
     }
 
     public static Point a(GeoPoint geoPoint) {
@@ -167,7 +167,7 @@ public class fa {
     }
 
     public static double c(int i2) {
-        return (i2 - f37442a) / f;
+        return (i2 - f23751a) / f;
     }
 
     public static int c(double d2) {
@@ -201,7 +201,7 @@ public class fa {
     }
 
     public static int e(int i2) {
-        return i2 + f37442a;
+        return i2 + f23751a;
     }
 
     public static int f(int i2) {

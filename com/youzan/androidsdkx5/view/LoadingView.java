@@ -16,13 +16,13 @@ import com.youzan.androidsdkx5.R;
 public class LoadingView extends RelativeLayout {
 
     /* renamed from: ˊ  reason: contains not printable characters */
-    LinearLayout f1208;
+    LinearLayout f1161;
 
     /* renamed from: ˋ  reason: contains not printable characters */
-    ImageView f1209;
+    ImageView f1162;
 
     /* renamed from: ˎ  reason: contains not printable characters */
-    ImageView f1210;
+    ImageView f1163;
 
     public LoadingView(Context context) {
         this(context, null, 0);
@@ -34,7 +34,7 @@ public class LoadingView extends RelativeLayout {
 
     public LoadingView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        m12280(context, attributeSet, i);
+        m9230(context, attributeSet, i);
     }
 
     public boolean abandonImageLoading(Context context) {
@@ -53,31 +53,31 @@ public class LoadingView extends RelativeLayout {
     }
 
     public void setImage() {
-        if (abandonImageLoading(this.f1209.getContext())) {
+        if (abandonImageLoading(this.f1162.getContext())) {
             return;
         }
-        Glide.b(this.f1209.getContext()).b(Integer.valueOf(R.drawable.yz_loading)).a(this.f1209);
+        Glide.b(this.f1162.getContext()).b(Integer.valueOf(R.drawable.yz_loading)).a(this.f1162);
     }
 
     public void setLoadImage(int i) {
-        if (abandonImageLoading(this.f1209.getContext())) {
+        if (abandonImageLoading(this.f1162.getContext())) {
             return;
         }
-        Glide.b(this.f1209.getContext()).b(Integer.valueOf(i)).a(this.f1209);
+        Glide.b(this.f1162.getContext()).b(Integer.valueOf(i)).a(this.f1162);
     }
 
     public void setLoadImage(String str) {
-        if (abandonImageLoading(this.f1209.getContext())) {
+        if (abandonImageLoading(this.f1162.getContext())) {
             return;
         }
-        Glide.b(this.f1209.getContext()).b(str).a(this.f1209);
+        Glide.b(this.f1162.getContext()).b(str).a(this.f1162);
     }
 
     /* renamed from: ˊ  reason: contains not printable characters */
-    void m12280(Context context, AttributeSet attributeSet, int i) {
+    void m9230(Context context, AttributeSet attributeSet, int i) {
         LayoutInflater.from(context).inflate(R.layout.yz_view_loading, this);
-        this.f1208 = (LinearLayout) findViewById(R.id.yz_ll_content);
-        this.f1209 = (ImageView) findViewById(R.id.yz_image);
+        this.f1161 = (LinearLayout) findViewById(R.id.yz_ll_content);
+        this.f1162 = (ImageView) findViewById(R.id.yz_image);
         setLayoutParams(new RelativeLayout.LayoutParams(-1, -1));
         setClickable(true);
     }

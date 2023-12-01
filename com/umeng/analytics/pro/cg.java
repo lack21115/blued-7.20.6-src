@@ -4,10 +4,10 @@ package com.umeng.analytics.pro;
 public class cg extends cd {
 
     /* renamed from: a  reason: collision with root package name */
-    public final cd f40688a;
+    public final cd f26997a;
 
     public cg(byte b, cd cdVar) {
         super(b);
-        this.f40688a = cdVar;
+        this.f26997a = cdVar;
     }
 }

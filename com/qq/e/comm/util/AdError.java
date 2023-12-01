@@ -4,19 +4,19 @@ package com.qq.e.comm.util;
 public class AdError {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f27929a;
+    private int f14241a;
     private String b;
 
     public AdError() {
     }
 
     public AdError(int i, String str) {
-        this.f27929a = i;
+        this.f14241a = i;
         this.b = str;
     }
 
     public int getErrorCode() {
-        return this.f27929a;
+        return this.f14241a;
     }
 
     public String getErrorMsg() {

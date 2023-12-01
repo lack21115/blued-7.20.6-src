@@ -30,11 +30,11 @@ public final class DialogSuperPrivilegePayBinding implements ViewBinding {
     private final RelativeLayout J;
 
     /* renamed from: a  reason: collision with root package name */
-    public final ImageView f28724a;
+    public final ImageView f15034a;
     public final LinearLayout b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final TextView f28725c;
+    public final TextView f15035c;
     public final TextView d;
     public final TextView e;
     public final ConstraintLayout f;
@@ -61,9 +61,9 @@ public final class DialogSuperPrivilegePayBinding implements ViewBinding {
 
     private DialogSuperPrivilegePayBinding(RelativeLayout relativeLayout, ImageView imageView, LinearLayout linearLayout, TextView textView, TextView textView2, TextView textView3, ConstraintLayout constraintLayout, ImageView imageView2, ImageView imageView3, ImageView imageView4, ImageView imageView5, ImageView imageView6, LinearLayout linearLayout2, ShapeConstraintLayout shapeConstraintLayout, LinearLayout linearLayout3, LinearLayout linearLayout4, LinearLayout linearLayout5, LinearLayout linearLayout6, LinearLayout linearLayout7, FrameLayout frameLayout, ShapeRelativeLayout shapeRelativeLayout, RelativeLayout relativeLayout2, ShapeLinearLayout shapeLinearLayout, FrameLayout frameLayout2, TextView textView4, TextView textView5, TextView textView6, TextView textView7, ShapeTextView shapeTextView, TextView textView8, ShapeTextView shapeTextView2, TextView textView9, TextView textView10, PrivilegeDialogBuyNewOptionView privilegeDialogBuyNewOptionView, PrivilegeDialogBuyNewOptionView privilegeDialogBuyNewOptionView2, PrivilegeDialogBuyNewOptionView privilegeDialogBuyNewOptionView3) {
         this.J = relativeLayout;
-        this.f28724a = imageView;
+        this.f15034a = imageView;
         this.b = linearLayout;
-        this.f28725c = textView;
+        this.f15035c = textView;
         this.d = textView2;
         this.e = textView3;
         this.f = constraintLayout;
@@ -112,38 +112,38 @@ public final class DialogSuperPrivilegePayBinding implements ViewBinding {
                         if (textView3 != null) {
                             ConstraintLayout constraintLayout = (ConstraintLayout) view.findViewById(R.id.fl_option);
                             if (constraintLayout != null) {
-                                ImageView imageView2 = (ImageView) view.findViewById(2131364488);
+                                ImageView imageView2 = (ImageView) view.findViewById(R.id.img_close);
                                 if (imageView2 != null) {
                                     ImageView imageView3 = (ImageView) view.findViewById(R.id.img_privilege_tab_bg);
                                     if (imageView3 != null) {
                                         ImageView imageView4 = (ImageView) view.findViewById(R.id.img_super_privilege_tab_bg);
                                         if (imageView4 != null) {
-                                            ImageView imageView5 = (ImageView) view.findViewById(2131364702);
+                                            ImageView imageView5 = (ImageView) view.findViewById(R.id.img_top_bg);
                                             if (imageView5 != null) {
                                                 ImageView imageView6 = (ImageView) view.findViewById(2131365504);
                                                 if (imageView6 != null) {
                                                     LinearLayout linearLayout2 = (LinearLayout) view.findViewById(2131367999);
                                                     if (linearLayout2 != null) {
-                                                        ShapeConstraintLayout shapeConstraintLayout = (ShapeConstraintLayout) view.findViewById(R.id.ll_mouth_card_item);
-                                                        if (shapeConstraintLayout != null) {
+                                                        ShapeConstraintLayout findViewById = view.findViewById(R.id.ll_mouth_card_item);
+                                                        if (findViewById != null) {
                                                             LinearLayout linearLayout3 = (LinearLayout) view.findViewById(R.id.ll_mouth_card_times_count);
                                                             if (linearLayout3 != null) {
                                                                 LinearLayout linearLayout4 = (LinearLayout) view.findViewById(R.id.ll_option);
                                                                 if (linearLayout4 != null) {
                                                                     LinearLayout linearLayout5 = (LinearLayout) view.findViewById(R.id.ll_option_area);
                                                                     if (linearLayout5 != null) {
-                                                                        LinearLayout linearLayout6 = (LinearLayout) view.findViewById(2131368267);
+                                                                        LinearLayout linearLayout6 = (LinearLayout) view.findViewById(R.id.ll_tab);
                                                                         if (linearLayout6 != null) {
                                                                             LinearLayout linearLayout7 = (LinearLayout) view.findViewById(R.id.privilege_layout_view);
                                                                             if (linearLayout7 != null) {
                                                                                 FrameLayout frameLayout = (FrameLayout) view.findViewById(R.id.privilege_tab);
                                                                                 if (frameLayout != null) {
-                                                                                    ShapeRelativeLayout shapeRelativeLayout = (ShapeRelativeLayout) view.findViewById(R.id.rl_pay_type);
-                                                                                    if (shapeRelativeLayout != null) {
+                                                                                    ShapeRelativeLayout findViewById2 = view.findViewById(R.id.rl_pay_type);
+                                                                                    if (findViewById2 != null) {
                                                                                         RelativeLayout relativeLayout = (RelativeLayout) view.findViewById(2131369468);
                                                                                         if (relativeLayout != null) {
-                                                                                            ShapeLinearLayout shapeLinearLayout = (ShapeLinearLayout) view.findViewById(R.id.super_privilege_item);
-                                                                                            if (shapeLinearLayout != null) {
+                                                                                            ShapeLinearLayout findViewById3 = view.findViewById(R.id.super_privilege_item);
+                                                                                            if (findViewById3 != null) {
                                                                                                 FrameLayout frameLayout2 = (FrameLayout) view.findViewById(R.id.super_privilege_tab);
                                                                                                 if (frameLayout2 != null) {
                                                                                                     TextView textView4 = (TextView) view.findViewById(R.id.tv_buy_privilege);
@@ -154,12 +154,12 @@ public final class DialogSuperPrivilegePayBinding implements ViewBinding {
                                                                                                             if (textView6 != null) {
                                                                                                                 TextView textView7 = (TextView) view.findViewById(R.id.tv_mouth_card_desc);
                                                                                                                 if (textView7 != null) {
-                                                                                                                    ShapeTextView shapeTextView = (ShapeTextView) view.findViewById(R.id.tv_mouth_card_favourate);
-                                                                                                                    if (shapeTextView != null) {
+                                                                                                                    ShapeTextView findViewById4 = view.findViewById(R.id.tv_mouth_card_favourate);
+                                                                                                                    if (findViewById4 != null) {
                                                                                                                         TextView textView8 = (TextView) view.findViewById(R.id.tv_mouth_card_per_amount);
                                                                                                                         if (textView8 != null) {
-                                                                                                                            ShapeTextView shapeTextView2 = (ShapeTextView) view.findViewById(R.id.tv_mouth_card_tag);
-                                                                                                                            if (shapeTextView2 != null) {
+                                                                                                                            ShapeTextView findViewById5 = view.findViewById(R.id.tv_mouth_card_tag);
+                                                                                                                            if (findViewById5 != null) {
                                                                                                                                 TextView textView9 = (TextView) view.findViewById(R.id.tv_pay_type);
                                                                                                                                 if (textView9 != null) {
                                                                                                                                     TextView textView10 = (TextView) view.findViewById(R.id.tv_super_privilege_option);
@@ -170,7 +170,7 @@ public final class DialogSuperPrivilegePayBinding implements ViewBinding {
                                                                                                                                             if (privilegeDialogBuyNewOptionView2 != null) {
                                                                                                                                                 PrivilegeDialogBuyNewOptionView privilegeDialogBuyNewOptionView3 = (PrivilegeDialogBuyNewOptionView) view.findViewById(R.id.view_option_3);
                                                                                                                                                 if (privilegeDialogBuyNewOptionView3 != null) {
-                                                                                                                                                    return new DialogSuperPrivilegePayBinding((RelativeLayout) view, imageView, linearLayout, textView, textView2, textView3, constraintLayout, imageView2, imageView3, imageView4, imageView5, imageView6, linearLayout2, shapeConstraintLayout, linearLayout3, linearLayout4, linearLayout5, linearLayout6, linearLayout7, frameLayout, shapeRelativeLayout, relativeLayout, shapeLinearLayout, frameLayout2, textView4, textView5, textView6, textView7, shapeTextView, textView8, shapeTextView2, textView9, textView10, privilegeDialogBuyNewOptionView, privilegeDialogBuyNewOptionView2, privilegeDialogBuyNewOptionView3);
+                                                                                                                                                    return new DialogSuperPrivilegePayBinding((RelativeLayout) view, imageView, linearLayout, textView, textView2, textView3, constraintLayout, imageView2, imageView3, imageView4, imageView5, imageView6, linearLayout2, findViewById, linearLayout3, linearLayout4, linearLayout5, linearLayout6, linearLayout7, frameLayout, findViewById2, relativeLayout, findViewById3, frameLayout2, textView4, textView5, textView6, textView7, findViewById4, textView8, findViewById5, textView9, textView10, privilegeDialogBuyNewOptionView, privilegeDialogBuyNewOptionView2, privilegeDialogBuyNewOptionView3);
                                                                                                                                                 }
                                                                                                                                                 str = "viewOption3";
                                                                                                                                             } else {

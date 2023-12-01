@@ -97,8 +97,8 @@ public final class ClientSendMessTaskNewModel {
         }
         if (z) {
             String json = AppInfo.f().toJson(new ClientSendMessTaskItemListModel(this.allTsak));
-            BluedSharedPreferences a2 = BluedSharedPreferences.a(this.SP_DATA_KEY);
-            Intrinsics.c(a2, "getSharedPreferences(SP_DATA_KEY)");
+            BluedSharedPreferences a = BluedSharedPreferences.a(this.SP_DATA_KEY);
+            Intrinsics.c(a, "getSharedPreferences(SP_DATA_KEY)");
             new BluedSharedPreferences.Editor().a(YYRoomInfoManager.e().k(), json);
         }
     }
@@ -121,9 +121,9 @@ public final class ClientSendMessTaskNewModel {
 
     public final void loadData(ActivityFragmentActive requestActive) {
         Intrinsics.e(requestActive, "requestActive");
-        String a2 = BluedSharedPreferences.a(this.SP_DATA_KEY).a(YYRoomInfoManager.e().k(), "");
-        if (!TextUtils.isEmpty(a2)) {
-            this.allTsak.addAll(((ClientSendMessTaskItemListModel) AppInfo.f().fromJson(a2, (Class<Object>) ClientSendMessTaskItemListModel.class)).getData());
+        String a = BluedSharedPreferences.a(this.SP_DATA_KEY).a(YYRoomInfoManager.e().k(), "");
+        if (!TextUtils.isEmpty(a)) {
+            this.allTsak.addAll(((ClientSendMessTaskItemListModel) AppInfo.f().fromJson(a, ClientSendMessTaskItemListModel.class)).getData());
         }
         loadTask(requestActive);
     }

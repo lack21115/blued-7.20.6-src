@@ -9,7 +9,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 public final class a implements ServiceConnection {
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f22353a = false;
+    public boolean f8745a = false;
     public final LinkedBlockingQueue<IBinder> b = new LinkedBlockingQueue<>(1);
 
     @Override // android.content.ServiceConnection

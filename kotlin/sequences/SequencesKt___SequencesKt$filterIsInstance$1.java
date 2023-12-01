@@ -8,9 +8,7 @@ import kotlin.jvm.internal.Lambda;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/sequences/SequencesKt___SequencesKt$filterIsInstance$1.class */
 public final class SequencesKt___SequencesKt$filterIsInstance$1 extends Lambda implements Function1<Object, Boolean> {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final SequencesKt___SequencesKt$filterIsInstance$1 f42664a = new SequencesKt___SequencesKt$filterIsInstance$1();
+    public static final SequencesKt___SequencesKt$filterIsInstance$1 a = new SequencesKt___SequencesKt$filterIsInstance$1();
 
     public SequencesKt___SequencesKt$filterIsInstance$1() {
         super(1);

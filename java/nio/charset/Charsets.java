@@ -15,11 +15,11 @@ public final class Charsets {
         byte[] bArr = new byte[i2 * 2];
         int i3 = 0;
         for (int i4 = i; i4 < i + i2; i4++) {
-            char c2 = cArr[i4];
+            char c = cArr[i4];
             int i5 = i3 + 1;
-            bArr[i3] = (byte) (c2 >> '\b');
+            bArr[i3] = (byte) (c >> '\b');
             i3 = i5 + 1;
-            bArr[i5] = (byte) c2;
+            bArr[i5] = (byte) c;
         }
         return bArr;
     }

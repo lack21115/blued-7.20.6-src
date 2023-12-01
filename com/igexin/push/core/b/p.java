@@ -6,7 +6,7 @@ import com.igexin.push.extension.mod.BaseActionBean;
 public final class p extends BaseActionBean {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f23455a;
+    public String f9847a;
     public String b;
 
     private String a() {
@@ -18,10 +18,10 @@ public final class p extends BaseActionBean {
     }
 
     private String b() {
-        return this.f23455a;
+        return this.f9847a;
     }
 
     private void b(String str) {
-        this.f23455a = str;
+        this.f9847a = str;
     }
 }

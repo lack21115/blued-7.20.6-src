@@ -4,5 +4,5 @@ package com.opos.exoplayer.core;
 public final class l {
 
     /* renamed from: a  reason: collision with root package name */
-    public Format f25515a;
+    public Format f11827a;
 }

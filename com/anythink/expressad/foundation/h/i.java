@@ -7,11 +7,11 @@ import android.content.res.Resources;
 public final class i {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f7951a = "layout";
+    public static final String f5111a = "layout";
     public static final String b = "id";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f7952c = "drawable";
+    public static final String f5112c = "drawable";
     public static final String d = "color";
     public static final String e = "style";
     public static final String f = "anim";

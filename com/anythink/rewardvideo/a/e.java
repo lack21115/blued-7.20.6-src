@@ -3,6 +3,7 @@ package com.anythink.rewardvideo.a;
 import android.content.Context;
 import android.os.SystemClock;
 import android.text.TextUtils;
+import com.anythink.core.api.ATAdInfo;
 import com.anythink.core.api.ATAdStatusInfo;
 import com.anythink.core.api.ATNetworkConfirmInfo;
 import com.anythink.core.api.AdError;
@@ -23,7 +24,7 @@ public final class e implements CustomRewardedVideoEventListener {
     long b;
 
     /* renamed from: c  reason: collision with root package name */
-    boolean f9185c;
+    boolean f6345c;
     com.anythink.core.common.e.e d;
     boolean e;
     long f;
@@ -36,7 +37,7 @@ public final class e implements CustomRewardedVideoEventListener {
     int h = 0;
 
     /* renamed from: a  reason: collision with root package name */
-    long f9184a = 0;
+    long f6344a = 0;
     boolean i = true;
 
     public e(CustomRewardVideoAdapter customRewardVideoAdapter, com.anythink.core.common.f.c cVar, ATRewardVideoListener aTRewardVideoListener) {
@@ -57,7 +58,7 @@ public final class e implements CustomRewardedVideoEventListener {
     }
 
     private void a(AdError adError, com.anythink.core.common.e.e eVar) {
-        g.a(eVar, g.i.f6512c, g.i.g, adError.printStackTrace());
+        g.a(eVar, g.i.c, g.i.g, adError.printStackTrace());
         CustomRewardVideoAdapter customRewardVideoAdapter = this.k;
         com.anythink.core.common.j.c.a(eVar, adError, customRewardVideoAdapter != null ? customRewardVideoAdapter.getNetworkInfoMap() : null);
     }
@@ -71,7 +72,7 @@ public final class e implements CustomRewardedVideoEventListener {
             com.anythink.core.common.j.a.a(n.a().g()).a(8, eVar);
         }
         com.anythink.core.common.j.a.a(n.a().g()).a(4, eVar, this.k.getUnitGroupInfo());
-        com.anythink.core.common.k.g.a(eVar, g.i.f6512c, g.i.f, "");
+        com.anythink.core.common.k.g.a(eVar, g.i.c, g.i.f, "");
     }
 
     private static void a(String str) {
@@ -133,13 +134,13 @@ public final class e implements CustomRewardedVideoEventListener {
     @Override // com.anythink.rewardvideo.unitgroup.api.CustomRewardedVideoEventListener
     public final void onReward() {
         com.anythink.core.common.f.c cVar;
-        if (!this.f9185c && (cVar = this.l) != null) {
+        if (!this.f6345c && (cVar = this.l) != null) {
             long j = this.m;
             long j2 = this.n;
             CustomRewardVideoAdapter customRewardVideoAdapter = this.k;
             cVar.a(j, j2, customRewardVideoAdapter, customRewardVideoAdapter.getTrackingInfo());
         }
-        this.f9185c = true;
+        this.f6345c = true;
         ATRewardVideoListener aTRewardVideoListener = this.j;
         if (aTRewardVideoListener != null) {
             aTRewardVideoListener.onReward(j.a(this.k));
@@ -178,7 +179,7 @@ public final class e implements CustomRewardedVideoEventListener {
     @Override // com.anythink.rewardvideo.unitgroup.api.CustomRewardedVideoEventListener
     public final void onRewardedVideoAdAgainPlayFailed(String str, String str2) {
         this.h = 99;
-        AdError errorCode = ErrorCode.getErrorCode(ErrorCode.adShowError, str, str2);
+        AdError errorCode = ErrorCode.getErrorCode("4006", str, str2);
         com.anythink.core.common.e.e a2 = a();
         if (this.k != null && a2 != null) {
             a(errorCode, a2);
@@ -225,12 +226,12 @@ public final class e implements CustomRewardedVideoEventListener {
             }
             trackingInfo.y(i3);
             com.anythink.core.common.k.g.a(trackingInfo, g.i.e, g.i.f, "");
-            long j = this.f9184a;
+            long j = this.f6344a;
             if (j != 0) {
-                com.anythink.core.common.j.c.a(trackingInfo, this.f9185c, j, System.currentTimeMillis(), SystemClock.elapsedRealtime() - this.b);
+                com.anythink.core.common.j.c.a(trackingInfo, this.f6345c, j, System.currentTimeMillis(), SystemClock.elapsedRealtime() - this.b);
             }
-            com.anythink.core.common.j.c.a(trackingInfo, this.f9185c);
-            if (this.f9185c) {
+            com.anythink.core.common.j.c.a(trackingInfo, this.f6345c);
+            if (this.f6345c) {
                 try {
                     this.k.clearImpressionListener();
                     this.k.destory();
@@ -291,7 +292,7 @@ public final class e implements CustomRewardedVideoEventListener {
     @Override // com.anythink.rewardvideo.unitgroup.api.CustomRewardedVideoEventListener
     public final void onRewardedVideoAdPlayFailed(String str, String str2) {
         this.h = 99;
-        AdError errorCode = ErrorCode.getErrorCode(ErrorCode.adShowError, str, str2);
+        AdError errorCode = ErrorCode.getErrorCode("4006", str, str2);
         CustomRewardVideoAdapter customRewardVideoAdapter = this.k;
         if (customRewardVideoAdapter != null) {
             com.anythink.core.common.e.e trackingInfo = customRewardVideoAdapter.getTrackingInfo();
@@ -320,13 +321,13 @@ public final class e implements CustomRewardedVideoEventListener {
     public final void onRewardedVideoAdPlayStart() {
         ATRewardVideoListener aTRewardVideoListener;
         String str;
-        this.f9184a = System.currentTimeMillis();
+        this.f6344a = System.currentTimeMillis();
         long elapsedRealtime = SystemClock.elapsedRealtime();
         this.b = elapsedRealtime;
         if (this.m == 0) {
             this.m = elapsedRealtime;
         }
-        j a2 = j.a(this.k);
+        ATAdInfo a2 = j.a(this.k);
         CustomRewardVideoAdapter customRewardVideoAdapter = this.k;
         if (customRewardVideoAdapter != null) {
             com.anythink.core.common.e.e trackingInfo = customRewardVideoAdapter.getTrackingInfo();

@@ -8,18 +8,18 @@ import java.io.File;
 public class g implements f {
 
     /* renamed from: a  reason: collision with root package name */
-    public Context f25985a;
+    public Context f12297a;
 
     public g(Context context) {
-        this.f25985a = context;
+        this.f12297a = context;
     }
 
     @Override // com.opos.mobad.d.f
     public File a(String str) {
-        if (this.f25985a == null || TextUtils.isEmpty(str) || !com.opos.cmn.an.d.b.a.a()) {
+        if (this.f12297a == null || TextUtils.isEmpty(str) || !com.opos.cmn.an.d.b.a.a()) {
             return null;
         }
-        String b = com.opos.cmn.d.c.b(this.f25985a);
+        String b = com.opos.cmn.d.c.b(this.f12297a);
         if (TextUtils.isEmpty(b)) {
             return null;
         }
@@ -37,10 +37,10 @@ public class g implements f {
 
     @Override // com.opos.mobad.d.f
     public File a(String str, String str2) {
-        if (this.f25985a == null || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || !com.opos.cmn.an.d.b.a.a()) {
+        if (this.f12297a == null || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || !com.opos.cmn.an.d.b.a.a()) {
             return null;
         }
-        String b = com.opos.cmn.d.c.b(this.f25985a);
+        String b = com.opos.cmn.d.c.b(this.f12297a);
         if (TextUtils.isEmpty(b)) {
             return null;
         }

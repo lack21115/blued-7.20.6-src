@@ -19,7 +19,7 @@ public final class ChannelFlowOperatorImpl<T> extends ChannelFlowOperator<T, T> 
     }
 
     public /* synthetic */ ChannelFlowOperatorImpl(Flow flow, CoroutineContext coroutineContext, int i, BufferOverflow bufferOverflow, int i2, DefaultConstructorMarker defaultConstructorMarker) {
-        this(flow, (i2 & 2) != 0 ? EmptyCoroutineContext.f42457a : coroutineContext, (i2 & 4) != 0 ? -3 : i, (i2 & 8) != 0 ? BufferOverflow.SUSPEND : bufferOverflow);
+        this(flow, (i2 & 2) != 0 ? EmptyCoroutineContext.a : coroutineContext, (i2 & 4) != 0 ? -3 : i, (i2 & 8) != 0 ? BufferOverflow.SUSPEND : bufferOverflow);
     }
 
     @Override // kotlinx.coroutines.flow.internal.ChannelFlow
@@ -29,7 +29,7 @@ public final class ChannelFlowOperatorImpl<T> extends ChannelFlowOperator<T, T> 
 
     @Override // kotlinx.coroutines.flow.internal.ChannelFlowOperator
     protected Object b(FlowCollector<? super T> flowCollector, Continuation<? super Unit> continuation) {
-        Object a2 = this.d.a(flowCollector, continuation);
-        return a2 == IntrinsicsKt.a() ? a2 : Unit.f42314a;
+        Object a = this.d.a(flowCollector, continuation);
+        return a == IntrinsicsKt.a() ? a : Unit.a;
     }
 }

@@ -1,8 +1,10 @@
 package com.amap.api.col.p0003sl;
 
 import android.content.Context;
+import com.alipay.sdk.sys.a;
 import com.amap.api.services.core.AMapException;
 import com.amap.api.services.core.ServiceSettings;
+import com.efs.sdk.base.Constants;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
@@ -34,7 +36,7 @@ public abstract class ex<T, V> extends ew<T, V> {
     }
 
     private static String c(String str) {
-        String[] split = str.split("&");
+        String[] split = str.split(a.b);
         Arrays.sort(split);
         StringBuffer stringBuffer = new StringBuffer();
         int length = split.length;
@@ -45,7 +47,7 @@ public abstract class ex<T, V> extends ew<T, V> {
                 break;
             }
             stringBuffer.append(d(split[i2]));
-            stringBuffer.append("&");
+            stringBuffer.append(a.b);
             i = i2 + 1;
         }
         String stringBuffer2 = stringBuffer.toString();
@@ -80,21 +82,21 @@ public abstract class ex<T, V> extends ew<T, V> {
     @Override // com.amap.api.col.p0003sl.kb
     public byte[] getEntityBytes() {
         try {
-            String c2 = c();
+            String c = c();
             StringBuffer stringBuffer = new StringBuffer();
-            if (c2 != null) {
-                stringBuffer.append(c2);
-                stringBuffer.append("&");
+            if (c != null) {
+                stringBuffer.append(c);
+                stringBuffer.append(a.b);
             }
             stringBuffer.append("language=");
             stringBuffer.append(ServiceSettings.getInstance().getLanguage());
             String stringBuffer2 = stringBuffer.toString();
-            String c3 = c(stringBuffer2);
+            String c2 = c(stringBuffer2);
             StringBuffer stringBuffer3 = new StringBuffer();
             stringBuffer3.append(stringBuffer2);
-            String a2 = hr.a();
-            stringBuffer3.append("&ts=".concat(String.valueOf(a2)));
-            stringBuffer3.append("&scode=" + hr.a(this.i, a2, c3));
+            String a = hr.a();
+            stringBuffer3.append("&ts=".concat(String.valueOf(a)));
+            stringBuffer3.append("&scode=" + hr.a(this.i, a, c2));
             return stringBuffer3.toString().getBytes("utf-8");
         } catch (Throwable th) {
             fe.a(th, "ProtocalHandler", "getEntity");
@@ -111,7 +113,7 @@ public abstract class ex<T, V> extends ew<T, V> {
     public Map<String, String> getRequestHead() {
         HashMap hashMap = new HashMap();
         hashMap.put("Content-Type", "application/x-www-form-urlencoded");
-        hashMap.put("Accept-Encoding", "gzip");
+        hashMap.put("Accept-Encoding", Constants.CP_GZIP);
         hashMap.put("User-Agent", "AMAP SDK Android Search 9.3.1");
         hashMap.put("X-INFO", hr.b(this.i));
         hashMap.put("platinfo", String.format("platform=Android&sdkversion=%s&product=%s", "9.3.1", "sea"));

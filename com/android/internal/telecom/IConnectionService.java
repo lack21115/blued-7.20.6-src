@@ -246,12 +246,12 @@ public interface IConnectionService extends IInterface {
             }
 
             @Override // com.android.internal.telecom.IConnectionService
-            public void playDtmfTone(String str, char c2) throws RemoteException {
+            public void playDtmfTone(String str, char c) throws RemoteException {
                 Parcel obtain = Parcel.obtain();
                 try {
                     obtain.writeInterfaceToken(Stub.DESCRIPTOR);
                     obtain.writeString(str);
-                    obtain.writeInt(c2);
+                    obtain.writeInt(c);
                     this.mRemote.transact(13, obtain, null, 1);
                 } finally {
                     obtain.recycle();
@@ -390,7 +390,7 @@ public interface IConnectionService extends IInterface {
                     return true;
                 case 3:
                     parcel.enforceInterface(DESCRIPTOR);
-                    createConnection(parcel.readInt() != 0 ? PhoneAccountHandle.CREATOR.createFromParcel(parcel) : null, parcel.readString(), parcel.readInt() != 0 ? ConnectionRequest.CREATOR.createFromParcel(parcel) : null, parcel.readInt() != 0, parcel.readInt() != 0);
+                    createConnection(parcel.readInt() != 0 ? (PhoneAccountHandle) PhoneAccountHandle.CREATOR.createFromParcel(parcel) : null, parcel.readString(), parcel.readInt() != 0 ? (ConnectionRequest) ConnectionRequest.CREATOR.createFromParcel(parcel) : null, parcel.readInt() != 0, parcel.readInt() != 0);
                     return true;
                 case 4:
                     parcel.enforceInterface(DESCRIPTOR);
@@ -426,7 +426,7 @@ public interface IConnectionService extends IInterface {
                     return true;
                 case 12:
                     parcel.enforceInterface(DESCRIPTOR);
-                    onAudioStateChanged(parcel.readString(), parcel.readInt() != 0 ? AudioState.CREATOR.createFromParcel(parcel) : null);
+                    onAudioStateChanged(parcel.readString(), parcel.readInt() != 0 ? (AudioState) AudioState.CREATOR.createFromParcel(parcel) : null);
                     return true;
                 case 13:
                     parcel.enforceInterface(DESCRIPTOR);
@@ -468,7 +468,7 @@ public interface IConnectionService extends IInterface {
                     parcel.enforceInterface(DESCRIPTOR);
                     addParticipantWithConference(parcel.readString(), parcel.readString());
                     return true;
-                case IBinder.INTERFACE_TRANSACTION /* 1598968902 */:
+                case 1598968902:
                     parcel2.writeString(DESCRIPTOR);
                     return true;
                 default:
@@ -503,7 +503,7 @@ public interface IConnectionService extends IInterface {
 
     void onPostDialContinue(String str, boolean z) throws RemoteException;
 
-    void playDtmfTone(String str, char c2) throws RemoteException;
+    void playDtmfTone(String str, char c) throws RemoteException;
 
     void reject(String str) throws RemoteException;
 

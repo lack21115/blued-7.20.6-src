@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemRedPackGuideBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ConstraintLayout f29299a;
+    private final ConstraintLayout f15609a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f29299a;
+        return this.f15609a;
     }
 }

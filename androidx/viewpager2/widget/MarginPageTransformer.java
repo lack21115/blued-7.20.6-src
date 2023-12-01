@@ -10,11 +10,11 @@ import androidx.viewpager2.widget.ViewPager2;
 public final class MarginPageTransformer implements ViewPager2.PageTransformer {
 
     /* renamed from: a  reason: collision with root package name */
-    private final int f3587a;
+    private final int f3539a;
 
     public MarginPageTransformer(int i) {
         Preconditions.checkArgumentNonnegative(i, "Margin must be non-negative");
-        this.f3587a = i;
+        this.f3539a = i;
     }
 
     private ViewPager2 a(View view) {
@@ -29,7 +29,7 @@ public final class MarginPageTransformer implements ViewPager2.PageTransformer {
     @Override // androidx.viewpager2.widget.ViewPager2.PageTransformer
     public void transformPage(View view, float f) {
         ViewPager2 a2 = a(view);
-        float f2 = this.f3587a * f;
+        float f2 = this.f3539a * f;
         if (a2.getOrientation() != 0) {
             view.setTranslationY(f2);
             return;

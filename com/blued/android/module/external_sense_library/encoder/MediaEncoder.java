@@ -7,13 +7,9 @@ import java.nio.ByteBuffer;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/external_sense_library/encoder/MediaEncoder.class */
 public abstract class MediaEncoder implements Runnable {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected final Object f11240a;
+    protected final Object a;
     protected volatile boolean b;
-
-    /* renamed from: c  reason: collision with root package name */
-    protected volatile boolean f11241c;
+    protected volatile boolean c;
     protected boolean d;
     protected boolean e;
     protected int f;
@@ -87,10 +83,10 @@ public abstract class MediaEncoder implements Runnable {
     }
 
     public boolean c() {
-        synchronized (this.f11240a) {
-            if (this.b && !this.f11241c) {
+        synchronized (this.a) {
+            if (this.b && !this.c) {
                 this.j++;
-                this.f11240a.notifyAll();
+                this.a.notifyAll();
                 return true;
             }
             return false;

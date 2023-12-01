@@ -33,11 +33,11 @@ import java.util.ArrayList;
 public class FeedDetailOldPresenter implements IFeedDataObserver, IFeedDetailContract.IPresenter {
 
     /* renamed from: a  reason: collision with root package name */
-    private BluedIngSelfFeed f20429a;
+    private BluedIngSelfFeed f6823a;
     private IFeedDetailContract.IView b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f20430c;
+    private Context f6824c;
     private IRequestHost d;
     private Dialog e;
     private int j;
@@ -53,7 +53,6 @@ public class FeedDetailOldPresenter implements IFeedDataObserver, IFeedDetailCon
     /* renamed from: com.blued.community.ui.video.presenter.FeedDetailOldPresenter$1  reason: invalid class name */
     /* loaded from: source-7206380-dex2jar.jar:com/blued/community/ui/video/presenter/FeedDetailOldPresenter$1.class */
     class AnonymousClass1 extends BluedUIHttpResponse<BluedEntityA> {
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public void onUIUpdate(BluedEntityA bluedEntityA) {
         }
@@ -64,38 +63,33 @@ public class FeedDetailOldPresenter implements IFeedDataObserver, IFeedDetailCon
     class AnonymousClass3 extends BluedUIHttpResponse<BluedEntity> {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ FeedDetailOldPresenter f20432a;
+        final /* synthetic */ FeedDetailOldPresenter f6826a;
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIFinish() {
-            this.f20432a.b.n();
+            this.f6826a.b.n();
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIStart() {
-            this.f20432a.b.m();
+            this.f6826a.b.m();
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIUpdate(BluedEntity bluedEntity) {
             AppMethods.d(R.string.del_success);
-            LiveEventBus.get("feed_delete").post(this.f20432a.f20429a);
-            if (this.f20432a.f20429a.repost != null) {
-                LiveEventBus.get("feed_delete_repost").post(this.f20432a.f20429a.repost.feed_id);
+            LiveEventBus.get("feed_delete").post(this.f6826a.f6823a);
+            if (this.f6826a.f6823a.repost != null) {
+                LiveEventBus.get("feed_delete_repost").post(this.f6826a.f6823a.repost.feed_id);
             }
-            this.f20432a.b.s();
+            this.f6826a.b.s();
         }
     }
 
     /* renamed from: com.blued.community.ui.video.presenter.FeedDetailOldPresenter$4  reason: invalid class name */
     /* loaded from: source-7206380-dex2jar.jar:com/blued/community/ui/video/presenter/FeedDetailOldPresenter$4.class */
     class AnonymousClass4 extends BluedUIHttpResponse<BluedEntity> {
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse, com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
         public void onSuccess(String str) {
             AppMethods.d(R.string.community_report_success);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIUpdate(BluedEntity bluedEntity) {
         }
     }
@@ -105,32 +99,31 @@ public class FeedDetailOldPresenter implements IFeedDataObserver, IFeedDetailCon
     class AnonymousClass5 extends BluedUIHttpResponse<BluedEntityA<FeedUserInfoModel>> {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ int f20433a;
+        final /* synthetic */ int f6827a;
         final /* synthetic */ FeedDetailOldPresenter b;
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public void onUIUpdate(BluedEntityA<FeedUserInfoModel> bluedEntityA) {
             boolean z = true;
             if (bluedEntityA != null) {
                 if (bluedEntityA.data == null || bluedEntityA.data.size() <= 0) {
-                    if (this.f20433a == 1) {
+                    if (this.f6827a == 1) {
                         this.b.b.a(new ArrayList());
                         this.b.i.d = 0;
                     }
-                } else if (this.f20433a == 1) {
+                } else if (this.f6827a == 1) {
                     this.b.b.a(bluedEntityA.data);
                 } else {
                     this.b.b.d(bluedEntityA.data);
                 }
-                if (bluedEntityA.extra != 0) {
+                if (bluedEntityA.extra != null) {
                     DataStatus dataStatus = this.b.i;
                     if (bluedEntityA.extra.hasmore != 1) {
                         z = false;
                     }
-                    dataStatus.f20440a = z;
+                    dataStatus.f6834a = z;
                 } else {
-                    this.b.i.f20440a = false;
+                    this.b.i.f6834a = false;
                 }
             } else {
                 this.b.i.d = 1;
@@ -138,15 +131,14 @@ public class FeedDetailOldPresenter implements IFeedDataObserver, IFeedDetailCon
             this.b.b.b(0);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse, com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
         public void onFailure(Throwable th, int i, String str) {
             super.onFailure(th, i, str);
             this.b.i.d = 2;
-            this.b.i.f20440a = false;
+            this.b.i.f6834a = false;
             AppInfo.n().post(new Runnable() { // from class: com.blued.community.ui.video.presenter.FeedDetailOldPresenter.5.1
                 @Override // java.lang.Runnable
                 public void run() {
-                    if (AnonymousClass5.this.f20433a == 1) {
+                    if (AnonymousClass5.this.f6827a == 1) {
                         AnonymousClass5.this.b.b.b(0);
                     } else {
                         AnonymousClass5.this.b.b.q();
@@ -155,7 +147,6 @@ public class FeedDetailOldPresenter implements IFeedDataObserver, IFeedDetailCon
             });
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIFinish() {
             this.b.b.r();
             this.b.b.u();
@@ -170,11 +161,11 @@ public class FeedDetailOldPresenter implements IFeedDataObserver, IFeedDetailCon
     public class DataStatus {
 
         /* renamed from: a  reason: collision with root package name */
-        public boolean f20440a = true;
+        public boolean f6834a = true;
         public boolean b = true;
 
         /* renamed from: c  reason: collision with root package name */
-        public boolean f20441c = true;
+        public boolean f6835c = true;
         public int d = 1;
         public int e = 1;
         public int f = 1;
@@ -186,36 +177,34 @@ public class FeedDetailOldPresenter implements IFeedDataObserver, IFeedDetailCon
 
     public FeedDetailOldPresenter(Context context, IFeedDetailContract.IView iView, BluedIngSelfFeed bluedIngSelfFeed, int i, IRequestHost iRequestHost) {
         this.j = -1;
-        this.f20430c = context;
+        this.f6824c = context;
         this.b = iView;
-        this.f20429a = bluedIngSelfFeed;
+        this.f6823a = bluedIngSelfFeed;
         this.d = iRequestHost;
         this.j = i;
-        this.e = DialogUtils.a(this.f20430c);
+        this.e = DialogUtils.a(this.f6824c);
     }
 
     private void h() {
         final int i = this.n;
-        Context context = this.f20430c;
+        Context context = this.f6824c;
         BluedUIHttpResponse<BluedEntityA<BluedIngSelfFeed>> bluedUIHttpResponse = new BluedUIHttpResponse<BluedEntityA<BluedIngSelfFeed>>(this.d) { // from class: com.blued.community.ui.video.presenter.FeedDetailOldPresenter.6
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public BluedEntityA<BluedIngSelfFeed> parseData(String str) {
-                BluedEntityA<BluedIngSelfFeed> bluedEntityA = (BluedEntityA) super.parseData(str);
-                if (bluedEntityA != null) {
-                    if (!bluedEntityA.hasData()) {
-                        return bluedEntityA;
+                BluedEntityA<BluedIngSelfFeed> parseData = super.parseData(str);
+                if (parseData != null) {
+                    if (!parseData.hasData()) {
+                        return parseData;
                     }
-                    for (BluedIngSelfFeed bluedIngSelfFeed : bluedEntityA.data) {
-                        bluedIngSelfFeed.feedParse = new FeedParse(FeedDetailOldPresenter.this.f20430c, bluedIngSelfFeed, 2);
+                    for (BluedIngSelfFeed bluedIngSelfFeed : parseData.data) {
+                        bluedIngSelfFeed.feedParse = new FeedParse(FeedDetailOldPresenter.this.f6824c, bluedIngSelfFeed, 2);
                     }
                 }
-                return bluedEntityA;
+                return parseData;
             }
 
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<BluedIngSelfFeed> bluedEntityA) {
                 boolean z = false;
@@ -223,7 +212,7 @@ public class FeedDetailOldPresenter implements IFeedDataObserver, IFeedDetailCon
                     FeedDetailOldPresenter.this.b.a(null, i, false);
                     return;
                 }
-                if (bluedEntityA.extra != 0) {
+                if (bluedEntityA.extra != null) {
                     DataStatus dataStatus = FeedDetailOldPresenter.this.i;
                     if (bluedEntityA.extra.hasmore == 1) {
                         z = true;
@@ -235,7 +224,6 @@ public class FeedDetailOldPresenter implements IFeedDataObserver, IFeedDetailCon
                 FeedDetailOldPresenter.this.b.a(bluedEntityA.data, i, FeedDetailOldPresenter.this.i.g);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish(boolean z) {
                 if (z) {
                     return;
@@ -243,7 +231,7 @@ public class FeedDetailOldPresenter implements IFeedDataObserver, IFeedDetailCon
                 FeedDetailOldPresenter.this.b.a(null, i, false);
             }
         };
-        String str = this.f20429a.feed_id;
+        String str = this.f6823a.feed_id;
         FeedHttpUtils.a(context, bluedUIHttpResponse, str, this.n + "", BaseWrapper.ENTER_ID_SYSTEM_HELPER, this.d);
     }
 
@@ -252,20 +240,19 @@ public class FeedDetailOldPresenter implements IFeedDataObserver, IFeedDetailCon
             private int b;
 
             /* renamed from: c  reason: collision with root package name */
-            private String f20437c;
+            private String f6831c;
             private boolean d;
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<BluedIngSelfFeed> bluedEntityA) {
                 boolean z = false;
                 if (bluedEntityA == null || bluedEntityA.data == null || bluedEntityA.data.size() <= 0) {
                     FeedDetailOldPresenter.this.i.e = 0;
                 } else {
-                    BluedIngSelfFeed bluedIngSelfFeed = bluedEntityA.data.get(0);
+                    BluedIngSelfFeed bluedIngSelfFeed = (BluedIngSelfFeed) bluedEntityA.data.get(0);
                     if (bluedIngSelfFeed != null && !TextUtils.isEmpty(bluedIngSelfFeed.feed_id)) {
-                        FeedDetailOldPresenter.this.f20429a = bluedIngSelfFeed;
-                        FeedDetailOldPresenter.this.b.c(FeedDetailOldPresenter.this.f20429a);
+                        FeedDetailOldPresenter.this.f6823a = bluedIngSelfFeed;
+                        FeedDetailOldPresenter.this.b.c(FeedDetailOldPresenter.this.f6823a);
                     }
                     if (FeedDetailOldPresenter.this.g == 1) {
                         if ((bluedIngSelfFeed.hot_comments == null || bluedIngSelfFeed.hot_comments.size() == 0) && (bluedIngSelfFeed.comments == null || bluedIngSelfFeed.comments.size() == 0)) {
@@ -273,9 +260,9 @@ public class FeedDetailOldPresenter implements IFeedDataObserver, IFeedDetailCon
                         } else if (bluedIngSelfFeed.hot_comments == null || bluedIngSelfFeed.hot_comments.size() <= 0) {
                             FeedDetailOldPresenter.this.b.e(bluedIngSelfFeed.comments);
                         } else {
-                            bluedIngSelfFeed.hot_comments.get(bluedIngSelfFeed.hot_comments.size() - 1).isLastHotComment = true;
+                            ((FeedComment) bluedIngSelfFeed.hot_comments.get(bluedIngSelfFeed.hot_comments.size() - 1)).isLastHotComment = true;
                             if (bluedIngSelfFeed.hot_comments_more == 1) {
-                                bluedIngSelfFeed.hot_comments.get(bluedIngSelfFeed.hot_comments.size() - 1).isHasMoreHotComment = true;
+                                ((FeedComment) bluedIngSelfFeed.hot_comments.get(bluedIngSelfFeed.hot_comments.size() - 1)).isHasMoreHotComment = true;
                             }
                             FeedDetailOldPresenter.this.b.e(bluedIngSelfFeed.hot_comments);
                             FeedDetailOldPresenter.this.b.f(bluedIngSelfFeed.comments);
@@ -286,7 +273,7 @@ public class FeedDetailOldPresenter implements IFeedDataObserver, IFeedDetailCon
                     } else {
                         FeedDetailOldPresenter.this.b.f(bluedIngSelfFeed.comments);
                     }
-                    if (bluedEntityA.extra != 0) {
+                    if (bluedEntityA.extra != null) {
                         DataStatus dataStatus = FeedDetailOldPresenter.this.i;
                         if (bluedEntityA.extra.hasmore == 1) {
                             z = true;
@@ -299,10 +286,9 @@ public class FeedDetailOldPresenter implements IFeedDataObserver, IFeedDetailCon
                 FeedDetailOldPresenter.this.b.b(1);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str) {
                 this.b = i;
-                this.f20437c = str;
+                this.f6831c = str;
                 FeedDetailOldPresenter.this.i.e = 2;
                 this.d = true;
                 if (FeedDetailOldPresenter.this.m && i == 404100) {
@@ -311,7 +297,6 @@ public class FeedDetailOldPresenter implements IFeedDataObserver, IFeedDetailCon
                 return super.onUIFailure(i, str);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 int i;
                 FeedDetailOldPresenter.this.b.r();
@@ -339,19 +324,18 @@ public class FeedDetailOldPresenter implements IFeedDataObserver, IFeedDetailCon
                 this.d = false;
             }
         };
-        String str = this.f20429a.feed_id;
-        FeedHttpUtils.a(bluedUIHttpResponse, str, this.g + "", this.m ? "100" : BaseWrapper.ENTER_ID_OAPS_PHONEMANAGER, "", this.f20429a.is_ads, this.d);
+        String str = this.f6823a.feed_id;
+        FeedHttpUtils.a(bluedUIHttpResponse, str, this.g + "", this.m ? "100" : BaseWrapper.ENTER_ID_OAPS_PHONEMANAGER, "", this.f6823a.is_ads, this.d);
     }
 
     private void j() {
         final int i = this.h;
-        Context context = this.f20430c;
+        Context context = this.f6824c;
         BluedUIHttpResponse<BluedEntity<FeedRepost, BluedEntityBaseExtra>> bluedUIHttpResponse = new BluedUIHttpResponse<BluedEntity<FeedRepost, BluedEntityBaseExtra>>() { // from class: com.blued.community.ui.video.presenter.FeedDetailOldPresenter.8
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse, com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
             public void onFailure(Throwable th, int i2, String str) {
                 super.onFailure(th, i2, str);
                 FeedDetailOldPresenter.this.i.f = 2;
-                FeedDetailOldPresenter.this.i.f20441c = false;
+                FeedDetailOldPresenter.this.i.f6835c = false;
                 AppInfo.n().post(new Runnable() { // from class: com.blued.community.ui.video.presenter.FeedDetailOldPresenter.8.1
                     @Override // java.lang.Runnable
                     public void run() {
@@ -365,13 +349,11 @@ public class FeedDetailOldPresenter implements IFeedDataObserver, IFeedDetailCon
                 });
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 FeedDetailOldPresenter.this.b.r();
                 FeedDetailOldPresenter.this.b.u();
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity<FeedRepost, BluedEntityBaseExtra> bluedEntity) {
                 if (bluedEntity != null) {
                     boolean z = false;
@@ -390,74 +372,68 @@ public class FeedDetailOldPresenter implements IFeedDataObserver, IFeedDetailCon
                         if (bluedEntity.extra.hasmore == 1) {
                             z = true;
                         }
-                        dataStatus.f20441c = z;
+                        dataStatus.f6835c = z;
                     }
                 }
                 FeedDetailOldPresenter.this.b.b(2);
             }
         };
-        String str = this.f20429a.feed_id;
-        FeedHttpUtils.a(context, bluedUIHttpResponse, str, this.h + "", BaseWrapper.ENTER_ID_SYSTEM_HELPER, this.f20429a.is_ads, this.d);
+        String str = this.f6823a.feed_id;
+        FeedHttpUtils.a(context, bluedUIHttpResponse, str, this.h + "", BaseWrapper.ENTER_ID_SYSTEM_HELPER, this.f6823a.is_ads, this.d);
     }
 
-    @Override // com.blued.community.ui.feed.observer.IFeedDataObserver
     public void a(BluedIngSelfFeed bluedIngSelfFeed) {
         if (bluedIngSelfFeed == null) {
             return;
         }
         String str = bluedIngSelfFeed.feed_id;
-        if (this.f20429a.feed_id.equals(str) && str.equals(this.f20429a.feed_id)) {
+        if (this.f6823a.feed_id.equals(str) && str.equals(this.f6823a.feed_id)) {
             this.b.s();
         }
     }
 
-    @Override // com.blued.community.ui.feed.observer.IFeedDataObserver
     public void a(FeedComment feedComment) {
-        if (this.f20429a.feed_id.equals(feedComment.feed_id)) {
-            this.f20429a.feed_comment++;
+        if (this.f6823a.feed_id.equals(feedComment.feed_id)) {
+            this.f6823a.feed_comment++;
             this.i.e = 1;
             this.b.b(1);
-            this.b.c(this.f20429a);
+            this.b.c(this.f6823a);
         }
     }
 
-    @Override // com.blued.community.ui.feed.observer.IFeedDataObserver
     public void a(BusFeedInteractModel busFeedInteractModel) {
     }
 
-    @Override // com.blued.community.ui.feed.observer.IFeedDataObserver
     public void a(FeedRepost feedRepost) {
-        if (this.f20429a.feed_id.equals(feedRepost.feed_id)) {
-            this.f20429a.repost_count++;
+        if (this.f6823a.feed_id.equals(feedRepost.feed_id)) {
+            this.f6823a.repost_count++;
             if (this.i.f != 1) {
-                this.i.f20441c = false;
+                this.i.f6835c = false;
                 this.i.f = 1;
             }
             this.b.b(2);
-            this.b.c(this.f20429a);
+            this.b.c(this.f6823a);
         }
     }
 
-    @Override // com.blued.community.ui.feed.observer.IFeedDataObserver
     public void a(String str, int i) {
-        this.f20429a.allow_comments = i;
-        this.b.c(this.f20429a);
+        this.f6823a.allow_comments = i;
+        this.b.c(this.f6823a);
     }
 
-    @Override // com.blued.community.ui.feed.observer.IFeedDataObserver
     public void a(String str, String str2) {
-        if (this.f20429a.feed_id.equals(str)) {
-            this.f20429a.feed_comment--;
-            if (this.f20429a.feed_comment < 0) {
-                this.f20429a.feed_comment = 0;
+        if (this.f6823a.feed_id.equals(str)) {
+            this.f6823a.feed_comment--;
+            if (this.f6823a.feed_comment < 0) {
+                this.f6823a.feed_comment = 0;
             }
-            if (this.f20429a.feed_comment == 0) {
+            if (this.f6823a.feed_comment == 0) {
                 this.i.e = 0;
             } else {
                 this.i.e = 1;
             }
             this.b.b(1);
-            this.b.c(this.f20429a);
+            this.b.c(this.f6823a);
         }
     }
 
@@ -465,11 +441,10 @@ public class FeedDetailOldPresenter implements IFeedDataObserver, IFeedDetailCon
         FeedComment feedComment = new FeedComment();
         if (!z) {
             feedComment.comment_id = str3;
-            feedComment.is_ads = this.f20429a.is_ads;
-            feedComment.aid = this.f20429a.aid;
+            feedComment.is_ads = this.f6823a.is_ads;
+            feedComment.aid = this.f6823a.aid;
         }
         FeedHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<FeedComment>>(this.d) { // from class: com.blued.community.ui.video.presenter.FeedDetailOldPresenter.2
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<FeedComment> bluedEntityA) {
                 if (bluedEntityA != null) {
@@ -477,39 +452,36 @@ public class FeedDetailOldPresenter implements IFeedDataObserver, IFeedDetailCon
                         if (bluedEntityA.data == null || bluedEntityA.data.size() <= 0) {
                             return;
                         }
-                        FeedComment feedComment2 = bluedEntityA.data.get(0);
+                        FeedComment feedComment2 = (FeedComment) bluedEntityA.data.get(0);
                         CommentListDataObserver.a().a(feedComment2, str3);
                         LiveEventBus.get("feed_add_comment").post(feedComment2);
                         FeedDetailOldPresenter.this.f().e = 1;
                         FeedDetailOldPresenter.this.b.d(1);
                         FeedDetailOldPresenter.this.b.l();
-                        AppMethods.a((CharSequence) FeedDetailOldPresenter.this.f20430c.getString(R.string.send_successful));
+                        AppMethods.a(FeedDetailOldPresenter.this.f6824c.getString(R.string.send_successful));
                     } catch (Exception e) {
-                        AppMethods.a((CharSequence) FeedDetailOldPresenter.this.f20430c.getResources().getString(R.string.common_net_error));
+                        AppMethods.a(FeedDetailOldPresenter.this.f6824c.getResources().getString(R.string.common_net_error));
                     }
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse, com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
             public void onFailure(Throwable th, int i, String str4) {
                 if (!FeedDetailOldPresenter.this.m) {
                     super.onFailure(th, i, str4);
                     return;
                 }
-                Pair<Integer, String> a2 = BluedHttpUtils.a(th, i, str4);
-                if (a2 == null || a2.first.intValue() != 404100) {
+                Pair a2 = BluedHttpUtils.a(th, i, str4);
+                if (a2 == null || ((Integer) a2.first).intValue() != 404100) {
                     super.onFailure(th, i, str4);
                 } else {
                     AppMethods.d(R.string.shine_video_has_delete);
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 FeedDetailOldPresenter.this.b.n();
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 FeedDetailOldPresenter.this.b.m();
             }
@@ -520,7 +492,6 @@ public class FeedDetailOldPresenter implements IFeedDataObserver, IFeedDetailCon
         this.l = z;
     }
 
-    @Override // com.blued.android.framework.mvp_similarity.BasePresenter
     public void ar_() {
     }
 
@@ -530,17 +501,14 @@ public class FeedDetailOldPresenter implements IFeedDataObserver, IFeedDetailCon
         h();
     }
 
-    @Override // com.blued.community.ui.feed.observer.IFeedDataObserver
     public void b(BluedIngSelfFeed bluedIngSelfFeed) {
     }
 
-    @Override // com.blued.community.ui.feed.observer.IFeedDataObserver
     public void b(String str, int i) {
-        this.f20429a.reading_scope = i;
-        this.b.c(this.f20429a);
+        this.f6823a.reading_scope = i;
+        this.b.c(this.f6823a);
     }
 
-    @Override // com.blued.community.ui.feed.observer.IFeedDataObserver
     public void b(String str, String str2) {
     }
 
@@ -549,50 +517,47 @@ public class FeedDetailOldPresenter implements IFeedDataObserver, IFeedDetailCon
         i();
     }
 
-    @Override // com.blued.community.ui.feed.observer.IFeedDataObserver
     public void c(int i) {
-        if (TextUtils.equals(this.f20429a.feed_uid, UserInfo.getInstance().getLoginUserInfo().uid)) {
-            this.f20429a.theme_id = i;
+        if (TextUtils.equals(this.f6823a.feed_uid, UserInfo.getInstance().getLoginUserInfo().uid)) {
+            this.f6823a.theme_id = i;
         }
-        this.b.c(this.f20429a);
+        this.b.c(this.f6823a);
     }
 
     public void c(BluedIngSelfFeed bluedIngSelfFeed) {
         this.m = true;
-        this.f20429a = bluedIngSelfFeed;
+        this.f6823a = bluedIngSelfFeed;
     }
 
-    @Override // com.blued.community.ui.feed.observer.IFeedDataObserver
     public void c(String str) {
-        if (this.f20429a.feed_id.equals(str) && !TextUtils.isEmpty(str) && str.equals(this.f20429a.feed_id)) {
-            this.f20429a.repost_count--;
-            BluedIngSelfFeed bluedIngSelfFeed = this.f20429a;
-            bluedIngSelfFeed.repost_count = bluedIngSelfFeed.repost_count < 0 ? 0 : this.f20429a.repost_count;
-            this.b.c(this.f20429a);
+        if (this.f6823a.feed_id.equals(str) && !TextUtils.isEmpty(str) && str.equals(this.f6823a.feed_id)) {
+            this.f6823a.repost_count--;
+            BluedIngSelfFeed bluedIngSelfFeed = this.f6823a;
+            bluedIngSelfFeed.repost_count = bluedIngSelfFeed.repost_count < 0 ? 0 : this.f6823a.repost_count;
+            this.b.c(this.f6823a);
             e();
         }
     }
 
-    @Override // com.blued.community.ui.feed.observer.IFeedDataObserver
     public void c(String str, int i) {
-        if (this.f20429a.feed_id.equals(str)) {
+        if (this.f6823a.feed_id.equals(str)) {
             if (i == 1) {
-                this.f20429a.feed_dig++;
+                this.f6823a.feed_dig++;
             } else {
-                this.f20429a.feed_dig--;
-                if (this.f20429a.feed_dig < 0) {
-                    this.f20429a.feed_dig = 0;
+                this.f6823a.feed_dig--;
+                if (this.f6823a.feed_dig < 0) {
+                    this.f6823a.feed_dig = 0;
                 }
             }
-            this.f20429a.iliked = i;
-            if (this.f20429a.feed_dig == 0) {
+            this.f6823a.iliked = i;
+            if (this.f6823a.feed_dig == 0) {
                 this.i.d = 0;
             } else {
                 this.i.d = 1;
             }
             this.b.b(0);
-            this.b.c(this.f20429a);
-            this.f20429a.isPlayLikeAnim = false;
+            this.b.c(this.f6823a);
+            this.f6823a.isPlayLikeAnim = false;
         }
     }
 
@@ -603,15 +568,13 @@ public class FeedDetailOldPresenter implements IFeedDataObserver, IFeedDetailCon
         }
     }
 
-    @Override // com.blued.community.ui.feed.observer.IFeedDataObserver
     public void d(int i) {
-        if (TextUtils.equals(this.f20429a.feed_uid, UserInfo.getInstance().getLoginUserInfo().uid)) {
-            this.f20429a.theme_pendant = i;
+        if (TextUtils.equals(this.f6823a.feed_uid, UserInfo.getInstance().getLoginUserInfo().uid)) {
+            this.f6823a.theme_pendant = i;
         }
-        this.b.c(this.f20429a);
+        this.b.c(this.f6823a);
     }
 
-    @Override // com.blued.community.ui.feed.observer.IFeedDataObserver
     public void d(String str, int i) {
     }
 
@@ -625,6 +588,6 @@ public class FeedDetailOldPresenter implements IFeedDataObserver, IFeedDetailCon
     }
 
     public BluedIngSelfFeed g() {
-        return this.f20429a;
+        return this.f6823a;
     }
 }

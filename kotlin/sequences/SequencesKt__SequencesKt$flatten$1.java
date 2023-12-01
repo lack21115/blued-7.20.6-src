@@ -10,9 +10,7 @@ import kotlin.jvm.internal.Lambda;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/sequences/SequencesKt__SequencesKt$flatten$1.class */
 final class SequencesKt__SequencesKt$flatten$1<T> extends Lambda implements Function1<Sequence<? extends T>, Iterator<? extends T>> {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final SequencesKt__SequencesKt$flatten$1 f42649a = new SequencesKt__SequencesKt$flatten$1();
+    public static final SequencesKt__SequencesKt$flatten$1 a = new SequencesKt__SequencesKt$flatten$1();
 
     SequencesKt__SequencesKt$flatten$1() {
         super(1);

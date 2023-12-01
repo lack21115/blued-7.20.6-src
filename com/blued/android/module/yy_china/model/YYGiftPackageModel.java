@@ -26,6 +26,6 @@ public class YYGiftPackageModel extends CommonGiftPackageModel<YYGiftModel> {
     }
 
     public boolean isBag() {
-        return TextUtils.equals("-1", this.type_id);
+        return TextUtils.equals(YY_GIFT_BAG_TYPE_ID, this.type_id);
     }
 }

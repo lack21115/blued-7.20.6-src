@@ -117,49 +117,45 @@ public class AMapException extends Exception {
     public static final int CODE_AMAP_SUCCESS = 1000;
     public static final int CODE_AMAP_USERKEY_PLAT_NOMATCH = 1009;
     public static final int CODE_AMAP_USER_KEY_RECYCLED = 1013;
-
-    /* renamed from: a  reason: collision with root package name */
-    private int f5608a;
+    private int a;
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f5609c;
+    private String c;
     private int d;
 
     public AMapException() {
-        this.f5608a = 0;
+        this.a = 0;
         this.b = null;
-        this.f5609c = "";
+        this.c = "";
         this.d = 1000;
     }
 
     public AMapException(String str) {
         super(str);
-        this.f5608a = 0;
+        this.a = 0;
         this.b = null;
-        this.f5609c = "";
+        this.c = "";
         this.d = 1000;
-        this.f5609c = str;
-        this.f5608a = 0;
+        this.c = str;
+        this.a = 0;
         a(str);
     }
 
     public AMapException(String str, int i, String str2) {
         super(str);
-        this.f5608a = 0;
+        this.a = 0;
         this.b = null;
-        this.f5609c = "";
+        this.c = "";
         this.d = 1000;
-        this.f5609c = str;
-        this.f5608a = i;
+        this.c = str;
+        this.a = i;
         this.b = str2;
         a(str);
     }
 
     public AMapException(String str, int i, String str2, int i2) {
         this(str);
-        this.f5609c = str;
-        this.f5608a = i;
+        this.c = str;
+        this.a = i;
         this.b = str2;
         this.d = i2;
     }
@@ -192,21 +188,21 @@ public class AMapException extends Exception {
         } else if (AMAP_USER_KEY_RECYCLED.equals(str)) {
             this.d = 1013;
         } else if (AMAP_ENGINE_RESPONSE_ERROR.equals(str)) {
-            this.d = 1100;
+            this.d = CODE_AMAP_ENGINE_RESPONSE_ERROR;
         } else if (AMAP_ENGINE_RESPONSE_DATA_ERROR.equals(str)) {
             this.d = 1101;
         } else if (AMAP_ENGINE_CONNECT_TIMEOUT.equals(str)) {
             this.d = 1102;
         } else if (AMAP_ENGINE_RETURN_TIMEOUT.equals(str)) {
-            this.d = 1103;
+            this.d = CODE_AMAP_ENGINE_RETURN_TIMEOUT;
         } else if (AMAP_SERVICE_INVALID_PARAMS.equals(str)) {
-            this.d = 1200;
+            this.d = CODE_AMAP_SERVICE_INVALID_PARAMS;
         } else if (AMAP_SERVICE_MISSING_REQUIRED_PARAMS.equals(str)) {
-            this.d = 1201;
+            this.d = CODE_AMAP_SERVICE_MISSING_REQUIRED_PARAMS;
         } else if (AMAP_SERVICE_ILLEGAL_REQUEST.equals(str)) {
-            this.d = 1202;
+            this.d = CODE_AMAP_SERVICE_ILLEGAL_REQUEST;
         } else if (AMAP_SERVICE_UNKNOWN_ERROR.equals(str)) {
-            this.d = 1203;
+            this.d = CODE_AMAP_SERVICE_UNKNOWN_ERROR;
         } else if ("协议解析错误 - ProtocolException".equals(str)) {
             this.d = CODE_AMAP_CLIENT_ERROR_PROTOCOL;
         } else if ("socket 连接超时 - SocketTimeoutException".equals(str)) {
@@ -214,11 +210,11 @@ public class AMapException extends Exception {
         } else if ("url异常 - MalformedURLException".equals(str)) {
             this.d = CODE_AMAP_CLIENT_URL_EXCEPTION;
         } else if ("未知主机 - UnKnowHostException".equals(str)) {
-            this.d = 1804;
+            this.d = CODE_AMAP_CLIENT_UNKNOWHOST_EXCEPTION;
         } else if ("无效的参数 - IllegalArgumentException".equals(str)) {
             this.d = CODE_AMAP_CLIENT_INVALID_PARAMETER;
         } else if (AMAP_CLIENT_NETWORK_EXCEPTION.equals(str)) {
-            this.d = 1806;
+            this.d = CODE_AMAP_CLIENT_NETWORK_EXCEPTION;
         } else if ("IO 操作异常 - IOException".equals(str)) {
             this.d = CODE_AMAP_CLIENT_IO_EXCEPTION;
         } else if ("空指针异常 - NullPointException".equals(str)) {
@@ -232,23 +228,23 @@ public class AMapException extends Exception {
         } else if (AMAP_ENGINE_TABLEID_NOT_EXIST.equals(str)) {
             this.d = 2003;
         } else if (AMAP_NEARBY_INVALID_USERID.equals(str)) {
-            this.d = 2100;
+            this.d = CODE_AMAP_NEARBY_INVALID_USERID;
         } else if (AMAP_NEARBY_KEY_NOT_BIND.equals(str)) {
-            this.d = 2101;
+            this.d = CODE_AMAP_NEARBY_KEY_NOT_BIND;
         } else if (AMAP_ROUTE_OUT_OF_SERVICE.equals(str)) {
-            this.d = 3000;
+            this.d = CODE_AMAP_ROUTE_OUT_OF_SERVICE;
         } else if (AMAP_ROUTE_NO_ROADS_NEARBY.equals(str)) {
-            this.d = 3001;
+            this.d = CODE_AMAP_ROUTE_NO_ROADS_NEARBY;
         } else if (AMAP_ROUTE_FAIL.equals(str)) {
-            this.d = 3002;
+            this.d = CODE_AMAP_ROUTE_FAIL;
         } else if (AMAP_OVER_DIRECTION_RANGE.equals(str)) {
-            this.d = 3003;
+            this.d = CODE_AMAP_OVER_DIRECTION_RANGE;
         } else if (AMAP_CLIENT_UPLOADAUTO_STARTED_ERROR.equals(str)) {
-            this.d = 2200;
+            this.d = CODE_AMAP_CLIENT_UPLOADAUTO_STARTED_ERROR;
         } else if (AMAP_CLIENT_USERID_ILLEGAL.equals(str)) {
-            this.d = 2201;
+            this.d = CODE_AMAP_CLIENT_USERID_ILLEGAL;
         } else if (AMAP_CLIENT_NEARBY_NULL_RESULT.equals(str)) {
-            this.d = 2202;
+            this.d = CODE_AMAP_CLIENT_NEARBY_NULL_RESULT;
         } else if (AMAP_CLIENT_UPLOAD_TOO_FREQUENT.equals(str)) {
             this.d = CODE_AMAP_CLIENT_UPLOAD_TOO_FREQUENT;
         } else if (AMAP_CLIENT_UPLOAD_LOCATION_ERROR.equals(str)) {
@@ -258,12 +254,12 @@ public class AMapException extends Exception {
         } else if (AMAP_SHARE_FAILURE.equals(str)) {
             this.d = 4001;
         } else if ("用户签名未通过".equals(str)) {
-            this.d = 4002;
+            this.d = CODE_AMAP_SHARE_SIGNATURE_FAILURE;
         } else if (AMAP_CLIENT_UNKNOWN_ERROR.equals(str)) {
-            this.d = 1900;
+            this.d = CODE_AMAP_CLIENT_UNKNOWN_ERROR;
             this.b = AMAP_CLIENT_UNKNOWN_ERROR_TYPE;
         } else if (AMAP_CLIENT_OVER_PASSAREA_ITEM_POINT_COUNT_EXCEPTION.equals(str)) {
-            this.d = 1812;
+            this.d = CODE_AMAP_CLIENT_OVER_PASSAREA_ITEM_POINT_COUNT_EXCEPTION;
         } else if (AMAP_CLIENT_OVER_KEYWORD_LEN_MAX_COUNT_EXCEPTION.equals(str)) {
             this.d = CODE_AMAP_CLIENT_OVER_KEYWORD_LEN_MAX_COUNT_EXCEPTION;
         } else if (AMAP_CLIENT_OVER_PASSAREA_MAX_AREA_EXCEPTION.equals(str)) {
@@ -273,7 +269,7 @@ public class AMapException extends Exception {
         } else if (AMAP_CLIENT_OVER_PASSBY_MAX_COUNT_EXCEPTION.equals(str)) {
             this.d = CODE_AMAP_CLIENT_OVER_PASSBY_MAX_COUNT_EXCEPTION;
         } else {
-            this.d = 1800;
+            this.d = CODE_AMAP_CLIENT_ERRORCODE_MISSSING;
             this.b = AMAP_CLIENT_ERRORCODE_MISSSING_TPPE;
         }
     }
@@ -283,11 +279,11 @@ public class AMapException extends Exception {
     }
 
     public int getErrorLevel() {
-        return this.f5608a;
+        return this.a;
     }
 
     public String getErrorMessage() {
-        return this.f5609c;
+        return this.c;
     }
 
     public String getErrorType() {

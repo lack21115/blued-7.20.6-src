@@ -16,14 +16,12 @@ import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.widget.ViewPager2;
 import com.soft.blued.R;
 import java.util.ArrayList;
-import java.util.Iterator;
 import kotlin.Metadata;
 import kotlin.Pair;
 import kotlin.collections.CollectionsKt;
 import kotlin.collections.IntIterator;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import kotlin.ranges.IntRange;
 import kotlin.ranges.RangesKt;
 
 @Metadata
@@ -31,11 +29,11 @@ import kotlin.ranges.RangesKt;
 public final class IndefinitePagerIndicator extends View implements ViewPager.OnPageChangeListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Companion f27932a = new Companion(null);
+    private static final Companion f14244a = new Companion(null);
     private RecyclerView b;
 
     /* renamed from: c  reason: collision with root package name */
-    private ViewPager f27933c;
+    private ViewPager f14245c;
     private ViewPager2 d;
     private InternalRecyclerScrollListener e;
     private InternalPageChangeCallback f;
@@ -71,16 +69,16 @@ public final class IndefinitePagerIndicator extends View implements ViewPager.On
     public final class InternalPageChangeCallback extends ViewPager2.OnPageChangeCallback {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ IndefinitePagerIndicator f27934a;
+        final /* synthetic */ IndefinitePagerIndicator f14246a;
 
         @Override // androidx.viewpager2.widget.ViewPager2.OnPageChangeCallback
         public void onPageScrolled(int i, float f, int i2) {
-            this.f27934a.onPageScrolled(i, f, i2);
+            this.f14246a.onPageScrolled(i, f, i2);
         }
 
         @Override // androidx.viewpager2.widget.ViewPager2.OnPageChangeCallback
         public void onPageSelected(int i) {
-            this.f27934a.onPageSelected(i);
+            this.f14246a.onPageSelected(i);
         }
     }
 
@@ -89,7 +87,7 @@ public final class IndefinitePagerIndicator extends View implements ViewPager.On
     public final class InternalRecyclerScrollListener extends RecyclerView.OnScrollListener {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ IndefinitePagerIndicator f27935a;
+        final /* synthetic */ IndefinitePagerIndicator f14247a;
         private View b;
 
         private final float a(View view) {
@@ -97,10 +95,10 @@ public final class IndefinitePagerIndicator extends View implements ViewPager.On
             int right = view.getRight();
             int width = view.getWidth();
             if (left >= 0) {
-                if (right <= this.f27935a.getWidth()) {
+                if (right <= this.f14247a.getWidth()) {
                     return 1.0f;
                 }
-                right = this.f27935a.getWidth() - left;
+                right = this.f14247a.getWidth() - left;
             }
             return right / width;
         }
@@ -108,7 +106,7 @@ public final class IndefinitePagerIndicator extends View implements ViewPager.On
         private final View a() {
             RecyclerView.LayoutManager layoutManager;
             RecyclerView.LayoutManager layoutManager2;
-            RecyclerView recyclerView = this.f27935a.b;
+            RecyclerView recyclerView = this.f14247a.b;
             Integer valueOf = (recyclerView == null || (layoutManager = recyclerView.getLayoutManager()) == null) ? null : Integer.valueOf(layoutManager.getChildCount());
             Intrinsics.a(valueOf);
             int intValue = valueOf.intValue() - 1;
@@ -120,7 +118,7 @@ public final class IndefinitePagerIndicator extends View implements ViewPager.On
             while (true) {
                 View view2 = view;
                 int i = intValue - 1;
-                RecyclerView recyclerView2 = this.f27935a.b;
+                RecyclerView recyclerView2 = this.f14247a.b;
                 View childAt = (recyclerView2 == null || (layoutManager2 = recyclerView2.getLayoutManager()) == null) ? null : layoutManager2.getChildAt(intValue);
                 float f2 = f;
                 View view3 = view2;
@@ -144,12 +142,12 @@ public final class IndefinitePagerIndicator extends View implements ViewPager.On
 
         private final void b(View view) {
             RecyclerView.ViewHolder findContainingViewHolder;
-            RecyclerView recyclerView = this.f27935a.b;
+            RecyclerView recyclerView = this.f14247a.b;
             if (recyclerView == null || (findContainingViewHolder = recyclerView.findContainingViewHolder(view)) == null) {
                 return;
             }
             int layoutPosition = findContainingViewHolder.getLayoutPosition();
-            IndefinitePagerIndicator indefinitePagerIndicator = this.f27935a;
+            IndefinitePagerIndicator indefinitePagerIndicator = this.f14247a;
             int i = layoutPosition;
             if (indefinitePagerIndicator.b()) {
                 i = layoutPosition;
@@ -166,19 +164,19 @@ public final class IndefinitePagerIndicator extends View implements ViewPager.On
             View a2 = a();
             if (a2 != null) {
                 b(a2);
-                this.f27935a.u = a2.getLeft() / a2.getMeasuredWidth();
+                this.f14247a.u = a2.getLeft() / a2.getMeasuredWidth();
             }
             RecyclerView.LayoutManager layoutManager = recyclerView.getLayoutManager();
             if (layoutManager == null) {
                 throw new NullPointerException("null cannot be cast to non-null type androidx.recyclerview.widget.LinearLayoutManager");
             }
             LinearLayoutManager linearLayoutManager = (LinearLayoutManager) layoutManager;
-            IndefinitePagerIndicator indefinitePagerIndicator = this.f27935a;
+            IndefinitePagerIndicator indefinitePagerIndicator = this.f14247a;
             if (this.b != linearLayoutManager.findViewByPosition(i >= 0 ? linearLayoutManager.findLastVisibleItemPosition() : linearLayoutManager.findFirstVisibleItemPosition())) {
                 indefinitePagerIndicator.s = indefinitePagerIndicator.t;
             }
             this.b = a2;
-            this.f27935a.invalidate();
+            this.f14247a.invalidate();
         }
     }
 
@@ -271,7 +269,7 @@ public final class IndefinitePagerIndicator extends View implements ViewPager.On
         if (internalRecyclerScrollListener != null && (recyclerView = this.b) != null) {
             recyclerView.removeOnScrollListener(internalRecyclerScrollListener);
         }
-        ViewPager viewPager = this.f27933c;
+        ViewPager viewPager = this.f14245c;
         if (viewPager != null) {
             viewPager.removeOnPageChangeListener(this);
         }
@@ -280,7 +278,7 @@ public final class IndefinitePagerIndicator extends View implements ViewPager.On
             viewPager2.unregisterOnPageChangeCallback(internalPageChangeCallback);
         }
         this.b = null;
-        this.f27933c = null;
+        this.f14245c = null;
         this.d = null;
     }
 
@@ -340,7 +338,7 @@ public final class IndefinitePagerIndicator extends View implements ViewPager.On
             }
             return adapter3.getItemCount();
         }
-        ViewPager viewPager = this.f27933c;
+        ViewPager viewPager = this.f14245c;
         if (viewPager != null) {
             if (viewPager == null || (adapter2 = viewPager.getAdapter()) == null) {
                 return 0;
@@ -359,34 +357,32 @@ public final class IndefinitePagerIndicator extends View implements ViewPager.On
 
     public final void a(ViewPager viewPager) {
         a();
-        this.f27933c = viewPager;
+        this.f14245c = viewPager;
         if (viewPager != null) {
             viewPager.addOnPageChangeListener(this);
         }
         this.s = viewPager == null ? 0 : viewPager.getCurrentItem();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         Intrinsics.e(canvas, "canvas");
         super.onDraw(canvas);
-        IntRange b = RangesKt.b(0, getItemCount());
+        Iterable b = RangesKt.b(0, getItemCount());
         ArrayList<Number> arrayList = new ArrayList(CollectionsKt.a(b, 10));
-        Iterator<Integer> it = b.iterator();
+        IntIterator it = b.iterator();
         while (it.hasNext()) {
-            arrayList.add(Float.valueOf(a(((IntIterator) it).nextInt())));
+            arrayList.add(Float.valueOf(a(it.nextInt())));
         }
         for (Number number : arrayList) {
             float floatValue = number.floatValue();
             Pair<Float, Float> a2 = a(floatValue);
-            canvas.drawCircle(a2.c().floatValue(), a2.d().floatValue(), b(floatValue), c(floatValue));
+            canvas.drawCircle(((Number) a2.c()).floatValue(), ((Number) a2.d()).floatValue(), b(floatValue), c(floatValue));
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         int i3 = this.j * 2;
         if (this.n) {
             setMeasuredDimension(i3, getCalculatedWidth());

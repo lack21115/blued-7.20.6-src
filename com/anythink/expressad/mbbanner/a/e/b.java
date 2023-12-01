@@ -6,6 +6,7 @@ import com.anythink.expressad.foundation.d.c;
 import com.anythink.expressad.foundation.g.a.f;
 import com.anythink.expressad.foundation.h.t;
 import com.anythink.expressad.foundation.h.w;
+import com.huawei.hms.framework.common.ContainerUtils;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -18,7 +19,7 @@ import org.json.JSONObject;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f8051a = b.class.getSimpleName();
+    private static final String f5211a = b.class.getSimpleName();
 
     public static c a(String str, c cVar) {
         String valueOf;
@@ -76,7 +77,7 @@ public class b {
                 Iterator<String> keys2 = optJSONObject.keys();
                 StringBuilder sb = new StringBuilder();
                 while (keys2.hasNext()) {
-                    sb.append("&");
+                    sb.append(ContainerUtils.FIELD_DELIMITER);
                     String next2 = keys2.next();
                     String optString3 = optJSONObject.optString(next2);
                     if (!com.anythink.expressad.foundation.g.a.cc.equals(next2)) {

@@ -7,7 +7,7 @@ import com.opos.exoplayer.core.c.l;
 public final class c implements com.opos.exoplayer.core.c.e {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final com.opos.exoplayer.core.c.h f25187a = new com.opos.exoplayer.core.c.h() { // from class: com.opos.exoplayer.core.c.f.c.1
+    public static final com.opos.exoplayer.core.c.h f11499a = new com.opos.exoplayer.core.c.h() { // from class: com.opos.exoplayer.core.c.f.c.1
         @Override // com.opos.exoplayer.core.c.h
         public com.opos.exoplayer.core.c.e[] a() {
             return new com.opos.exoplayer.core.c.e[]{new c()};
@@ -16,7 +16,7 @@ public final class c implements com.opos.exoplayer.core.c.e {
     private static final int b = com.opos.exoplayer.core.i.u.f("ID3");
 
     /* renamed from: c  reason: collision with root package name */
-    private final long f25188c;
+    private final long f11500c;
     private final d d;
     private final com.opos.exoplayer.core.i.m e;
     private boolean f;
@@ -26,21 +26,21 @@ public final class c implements com.opos.exoplayer.core.c.e {
     }
 
     public c(long j) {
-        this.f25188c = j;
+        this.f11500c = j;
         this.d = new d(true);
         this.e = new com.opos.exoplayer.core.i.m(200);
     }
 
     @Override // com.opos.exoplayer.core.c.e
     public int a(com.opos.exoplayer.core.c.f fVar, com.opos.exoplayer.core.c.k kVar) {
-        int a2 = fVar.a(this.e.f25496a, 0, 200);
+        int a2 = fVar.a(this.e.f11808a, 0, 200);
         if (a2 == -1) {
             return -1;
         }
         this.e.c(0);
         this.e.b(a2);
         if (!this.f) {
-            this.d.a(this.f25188c, true);
+            this.d.a(this.f11500c, true);
             this.f = true;
         }
         this.d.a(this.e);

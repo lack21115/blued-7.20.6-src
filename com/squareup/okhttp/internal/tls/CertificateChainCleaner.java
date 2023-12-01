@@ -27,7 +27,7 @@ public final class CertificateChainCleaner {
     }
 
     public List<Certificate> clean(List<Certificate> list) throws SSLPeerUnverifiedException {
-        Iterator<E> it;
+        Iterator it;
         X509Certificate x509Certificate;
         ArrayDeque arrayDeque = new ArrayDeque(list);
         ArrayList arrayList = new ArrayList();

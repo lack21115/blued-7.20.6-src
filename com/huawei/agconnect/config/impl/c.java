@@ -14,11 +14,11 @@ import java.util.Map;
 public class c extends AGConnectServicesConfig {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Context f22332a;
+    private final Context f8724a;
     private final String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private LazyInputStream f22333c;
+    private LazyInputStream f8725c;
     private volatile d d;
     private final Object e = new Object();
     private AGCRoutePolicy f = AGCRoutePolicy.UNKNOWN;
@@ -26,7 +26,7 @@ public class c extends AGConnectServicesConfig {
     private volatile e h;
 
     public c(Context context, String str) {
-        this.f22332a = context;
+        this.f8724a = context;
         this.b = str;
     }
 
@@ -58,12 +58,12 @@ public class c extends AGConnectServicesConfig {
         if (this.d == null) {
             synchronized (this.e) {
                 if (this.d == null) {
-                    if (this.f22333c != null) {
-                        this.d = new h(this.f22333c.loadInputStream());
-                        this.f22333c.close();
-                        this.f22333c = null;
+                    if (this.f8725c != null) {
+                        this.d = new h(this.f8725c.loadInputStream());
+                        this.f8725c.close();
+                        this.f8725c = null;
                     } else {
-                        this.d = new k(this.f22332a, this.b);
+                        this.d = new k(this.f8724a, this.b);
                     }
                     this.h = new e(this.d);
                 }
@@ -103,7 +103,7 @@ public class c extends AGConnectServicesConfig {
 
     @Override // com.huawei.agconnect.AGConnectOptions
     public Context getContext() {
-        return this.f22332a;
+        return this.f8724a;
     }
 
     @Override // com.huawei.agconnect.AGConnectOptions
@@ -178,12 +178,12 @@ public class c extends AGConnectServicesConfig {
 
     @Override // com.huawei.agconnect.config.AGConnectServicesConfig
     public void overlayWith(LazyInputStream lazyInputStream) {
-        this.f22333c = lazyInputStream;
+        this.f8725c = lazyInputStream;
     }
 
     @Override // com.huawei.agconnect.config.AGConnectServicesConfig
     public void overlayWith(InputStream inputStream) {
-        overlayWith(a(this.f22332a, inputStream));
+        overlayWith(a(this.f8724a, inputStream));
     }
 
     @Override // com.huawei.agconnect.config.AGConnectServicesConfig

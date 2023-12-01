@@ -29,8 +29,8 @@ public final class BluedChatContent extends GeneratedMessageV3 implements BluedC
     private byte memoizedIsInitialized;
     private static final BluedChatContent DEFAULT_INSTANCE = new BluedChatContent();
     private static final Parser<BluedChatContent> PARSER = new AbstractParser<BluedChatContent>() { // from class: cn.irisgw.live.BluedChatContent.1
-        @Override // com.google.protobuf.Parser
-        public BluedChatContent parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        /* renamed from: parsePartialFrom */
+        public BluedChatContent m578parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             return new BluedChatContent(codedInputStream, extensionRegistryLite);
         }
     };
@@ -65,22 +65,22 @@ public final class BluedChatContent extends GeneratedMessageV3 implements BluedC
             boolean unused = BluedChatContent.alwaysUseFieldBuilders;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: addRepeatedField */
+        public Builder m580addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.addRepeatedField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public BluedChatContent build() {
-            BluedChatContent buildPartial = buildPartial();
-            if (buildPartial.isInitialized()) {
-                return buildPartial;
+        /* renamed from: build */
+        public BluedChatContent m582build() {
+            BluedChatContent m584buildPartial = m584buildPartial();
+            if (m584buildPartial.isInitialized()) {
+                return m584buildPartial;
             }
-            throw newUninitializedMessageException((Message) buildPartial);
+            throw newUninitializedMessageException(m584buildPartial);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public BluedChatContent buildPartial() {
+        /* renamed from: buildPartial */
+        public BluedChatContent m584buildPartial() {
             BluedChatContent bluedChatContent = new BluedChatContent(this);
             bluedChatContent.content_ = this.content_;
             bluedChatContent.link_ = this.link_;
@@ -90,8 +90,8 @@ public final class BluedChatContent extends GeneratedMessageV3 implements BluedC
             return bluedChatContent;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public Builder clear() {
+        /* renamed from: clear */
+        public Builder m588clear() {
             super.clear();
             this.content_ = "";
             this.link_ = "";
@@ -106,8 +106,8 @@ public final class BluedChatContent extends GeneratedMessageV3 implements BluedC
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+        /* renamed from: clearField */
+        public Builder m590clearField(Descriptors.FieldDescriptor fieldDescriptor) {
             return (Builder) super.clearField(fieldDescriptor);
         }
 
@@ -129,15 +129,14 @@ public final class BluedChatContent extends GeneratedMessageV3 implements BluedC
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+        /* renamed from: clearOneof */
+        public Builder m593clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
             return (Builder) super.clearOneof(oneofDescriptor);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder m599clone() {
+            return (Builder) super.clone();
         }
 
         @Override // cn.irisgw.live.BluedChatContentOrBuilder
@@ -162,12 +161,11 @@ public final class BluedChatContent extends GeneratedMessageV3 implements BluedC
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public BluedChatContent getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public BluedChatContent m601getDefaultInstanceForType() {
             return BluedChatContent.getDefaultInstance();
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
         public Descriptors.Descriptor getDescriptorForType() {
             return LiveConstants.internal_static_cn_irisgw_live_BluedChatContent_descriptor;
         }
@@ -221,12 +219,10 @@ public final class BluedChatContent extends GeneratedMessageV3 implements BluedC
             return this.linkType_;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_BluedChatContent_fieldAccessorTable.ensureFieldAccessorsInitialized(BluedChatContent.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             return true;
         }
@@ -250,18 +246,18 @@ public final class BluedChatContent extends GeneratedMessageV3 implements BluedC
                 this.limitType_ = bluedChatContent.limitType_;
                 onChanged();
             }
-            mergeUnknownFields(bluedChatContent.unknownFields);
+            m610mergeUnknownFields(bluedChatContent.unknownFields);
             onChanged();
             return this;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+        /* renamed from: mergeFrom */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
         */
-        public cn.irisgw.live.BluedChatContent.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+        public cn.irisgw.live.BluedChatContent.Builder m607mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
             /*
                 r4 = this;
                 r0 = 0
@@ -306,11 +302,11 @@ public final class BluedChatContent extends GeneratedMessageV3 implements BluedC
                 r0 = r6
                 throw r0
             */
-            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.BluedChatContent.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.BluedChatContent$Builder");
+            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.BluedChatContent.Builder.m607mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.BluedChatContent$Builder");
         }
 
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder mergeFrom(Message message) {
+        /* renamed from: mergeFrom */
+        public Builder m606mergeFrom(Message message) {
             if (message instanceof BluedChatContent) {
                 return mergeFrom((BluedChatContent) message);
             }
@@ -318,8 +314,8 @@ public final class BluedChatContent extends GeneratedMessageV3 implements BluedC
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: mergeUnknownFields */
+        public final Builder m610mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.mergeUnknownFields(unknownFieldSet);
         }
 
@@ -342,8 +338,8 @@ public final class BluedChatContent extends GeneratedMessageV3 implements BluedC
             throw null;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: setField */
+        public Builder m612setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.setField(fieldDescriptor, obj);
         }
 
@@ -391,13 +387,13 @@ public final class BluedChatContent extends GeneratedMessageV3 implements BluedC
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+        /* renamed from: setRepeatedField */
+        public Builder m614setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
             return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: setUnknownFields */
+        public final Builder m616setUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.setUnknownFields(unknownFieldSet);
         }
     }
@@ -459,66 +455,65 @@ public final class BluedChatContent extends GeneratedMessageV3 implements BluedC
     }
 
     public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
+        return DEFAULT_INSTANCE.m577toBuilder();
     }
 
     public static Builder newBuilder(BluedChatContent bluedChatContent) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(bluedChatContent);
+        return DEFAULT_INSTANCE.m577toBuilder().mergeFrom(bluedChatContent);
     }
 
     public static BluedChatContent parseDelimitedFrom(InputStream inputStream) throws IOException {
-        return (BluedChatContent) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
     }
 
     public static BluedChatContent parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (BluedChatContent) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static BluedChatContent parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString);
+        return (BluedChatContent) PARSER.parseFrom(byteString);
     }
 
     public static BluedChatContent parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString, extensionRegistryLite);
+        return (BluedChatContent) PARSER.parseFrom(byteString, extensionRegistryLite);
     }
 
     public static BluedChatContent parseFrom(CodedInputStream codedInputStream) throws IOException {
-        return (BluedChatContent) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
     }
 
     public static BluedChatContent parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (BluedChatContent) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
     }
 
     public static BluedChatContent parseFrom(InputStream inputStream) throws IOException {
-        return (BluedChatContent) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
     }
 
     public static BluedChatContent parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (BluedChatContent) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static BluedChatContent parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer);
+        return (BluedChatContent) PARSER.parseFrom(byteBuffer);
     }
 
     public static BluedChatContent parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+        return (BluedChatContent) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
     }
 
     public static BluedChatContent parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr);
+        return (BluedChatContent) PARSER.parseFrom(bArr);
     }
 
     public static BluedChatContent parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr, extensionRegistryLite);
+        return (BluedChatContent) PARSER.parseFrom(bArr, extensionRegistryLite);
     }
 
     public static Parser<BluedChatContent> parser() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
@@ -552,8 +547,8 @@ public final class BluedChatContent extends GeneratedMessageV3 implements BluedC
         return (ByteString) obj;
     }
 
-    @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-    public BluedChatContent getDefaultInstanceForType() {
+    /* renamed from: getDefaultInstanceForType */
+    public BluedChatContent m572getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
     }
 
@@ -606,12 +601,10 @@ public final class BluedChatContent extends GeneratedMessageV3 implements BluedC
         return this.linkType_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
     public Parser<BluedChatContent> getParserForType() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public int getSerializedSize() {
         int i = this.memoizedSize;
         if (i != -1) {
@@ -639,12 +632,10 @@ public final class BluedChatContent extends GeneratedMessageV3 implements BluedC
         return serializedSize;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
     public final UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public int hashCode() {
         if (this.memoizedHashCode != 0) {
             return this.memoizedHashCode;
@@ -654,12 +645,10 @@ public final class BluedChatContent extends GeneratedMessageV3 implements BluedC
         return hashCode;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
         return LiveConstants.internal_static_cn_irisgw_live_BluedChatContent_fieldAccessorTable.ensureFieldAccessorsInitialized(BluedChatContent.class, Builder.class);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
     public final boolean isInitialized() {
         byte b = this.memoizedIsInitialized;
         if (b == 1) {
@@ -672,28 +661,26 @@ public final class BluedChatContent extends GeneratedMessageV3 implements BluedC
         return true;
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder newBuilderForType() {
+    /* renamed from: newBuilderForType */
+    public Builder m575newBuilderForType() {
         return newBuilder();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.protobuf.GeneratedMessageV3
-    public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+    /* renamed from: newBuilderForType */
+    public Builder m574newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
         return new Builder(builderParent);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
         return new BluedChatContent();
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder toBuilder() {
+    /* renamed from: toBuilder */
+    public Builder m577toBuilder() {
         return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
         if (!getContentBytes().isEmpty()) {
             GeneratedMessageV3.writeString(codedOutputStream, 1, this.content_);

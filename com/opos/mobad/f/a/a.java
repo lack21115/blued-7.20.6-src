@@ -15,11 +15,11 @@ public class a extends com.opos.mobad.l.a {
     private static Map<String, Boolean> g = new ConcurrentHashMap();
 
     /* renamed from: a  reason: collision with root package name */
-    private String f26011a;
+    private String f12323a;
     private com.opos.mobad.f.a.a.m<com.opos.mobad.ad.a.a> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private b f26012c;
+    private b f12324c;
     private n d;
     private Context h;
     private String i;
@@ -29,21 +29,21 @@ public class a extends com.opos.mobad.l.a {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.opos.mobad.f.a.a$a  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/opos/mobad/f/a/a$a.class */
-    public class C0692a extends com.opos.mobad.f.a.a.b implements com.opos.mobad.ad.a.b {
+    public class C0522a extends com.opos.mobad.f.a.a.b implements com.opos.mobad.ad.a.b {
 
         /* renamed from: c  reason: collision with root package name */
-        private final int f26020c;
+        private final int f12332c;
 
-        public C0692a(int i, com.opos.mobad.f.a.a.n nVar) {
+        public C0522a(int i, com.opos.mobad.f.a.a.n nVar) {
             super(i, nVar);
-            this.f26020c = i;
+            this.f12332c = i;
         }
 
         @Override // com.opos.mobad.f.a.a.b, com.opos.mobad.ad.b.a
         public void a(int i, String str) {
             if (1 == a.this.d()) {
                 super.a(i, str);
-            } else if (this.f26020c != a.this.b.j()) {
+            } else if (this.f12332c != a.this.b.j()) {
             } else {
                 a.this.c(i, str);
             }
@@ -51,32 +51,32 @@ public class a extends com.opos.mobad.l.a {
 
         @Override // com.opos.mobad.ad.i.b
         public void a(long j) {
-            if (this.f26020c != a.this.b.j()) {
+            if (this.f12332c != a.this.b.j()) {
                 return;
             }
-            com.opos.mobad.service.j.n.a().b(a.this.f26011a);
+            com.opos.mobad.service.j.n.a().b(a.this.f12323a);
             a.this.i();
         }
 
         @Override // com.opos.mobad.ad.i.b
         public void a(String str) {
-            if (this.f26020c != a.this.b.j()) {
+            if (this.f12332c != a.this.b.j()) {
                 return;
             }
-            com.opos.mobad.service.j.n.a().a(a.this.f26011a);
+            com.opos.mobad.service.j.n.a().a(a.this.f12323a);
             a.this.g_();
         }
 
         @Override // com.opos.mobad.f.a.a.b, com.opos.mobad.ad.b.a
         public void b() {
-            if (this.f26020c == a.this.j) {
+            if (this.f12332c == a.this.j) {
                 a.this.j = -1;
                 a.this.i_();
                 a.this.q();
                 return;
             }
             a aVar = a.this;
-            aVar.c("channel is diff =" + this.f26020c + ", " + a.this.b.j());
+            aVar.c("channel is diff =" + this.f12332c + ", " + a.this.b.j());
         }
     }
 
@@ -84,10 +84,10 @@ public class a extends com.opos.mobad.l.a {
         super(bVar);
         this.j = -1;
         this.k = false;
-        this.f26011a = str;
+        this.f12323a = str;
         Context applicationContext = activity.getApplicationContext();
         this.h = applicationContext;
-        this.f26012c = new b(applicationContext, new i.a() { // from class: com.opos.mobad.f.a.a.1
+        this.f12324c = new b(applicationContext, new i.a() { // from class: com.opos.mobad.f.a.a.1
             @Override // com.opos.mobad.f.a.i.a
             public void a(int i, int i2) {
                 a.this.b(i, i2);
@@ -97,13 +97,13 @@ public class a extends com.opos.mobad.l.a {
             @Override // com.opos.mobad.f.a.b.a
             /* renamed from: a */
             public com.opos.mobad.ad.a.a b(e.a aVar3, com.opos.mobad.f.a.a.n nVar) {
-                com.opos.mobad.ad.c b = bVar2.b(aVar3.f27301a);
+                com.opos.mobad.ad.c b = bVar2.b(aVar3.f13613a);
                 if (b == null) {
                     a aVar4 = a.this;
-                    aVar4.c("new banner ad but creator = null,channel is =" + aVar3.f27301a);
+                    aVar4.c("new banner ad but creator = null,channel is =" + aVar3.f13613a);
                     return null;
                 }
-                return b.a(activity, str, aVar3.b, z, new C0692a(aVar3.f27301a, nVar));
+                return b.a(activity, str, aVar3.b, z, new C0522a(aVar3.f13613a, nVar));
             }
         }, new com.opos.mobad.f.a.c.a(activity));
     }
@@ -146,7 +146,7 @@ public class a extends com.opos.mobad.l.a {
         c("banner showView");
         com.opos.mobad.ad.a.a i = this.b.i();
         this.j = this.b.j();
-        this.f26012c.a(i.h());
+        this.f12324c.a(i.h());
     }
 
     private void m() {
@@ -154,7 +154,7 @@ public class a extends com.opos.mobad.l.a {
             n nVar = new n(new Runnable() { // from class: com.opos.mobad.f.a.a.4
                 @Override // java.lang.Runnable
                 public void run() {
-                    if (a.this.f26012c == null || !a.this.f26012c.c()) {
+                    if (a.this.f12324c == null || !a.this.f12324c.c()) {
                         a.this.c("banner is invisibile");
                     } else if (a.this.r() || com.opos.cmn.i.j.a(a.this.h, a.this.h())) {
                         a.this.p();
@@ -164,23 +164,23 @@ public class a extends com.opos.mobad.l.a {
                         a.this.a();
                     }
                     if (a.this.d != null) {
-                        a.this.d.a(com.opos.mobad.service.f.a().a(a.this.f26011a));
+                        a.this.d.a(com.opos.mobad.service.f.a().a(a.this.f12323a));
                     }
                 }
             });
             this.d = nVar;
-            nVar.a(com.opos.mobad.service.f.a().a(this.f26011a));
+            nVar.a(com.opos.mobad.service.f.a().a(this.f12323a));
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void p() {
         try {
-            c("setBannerCovered posId=" + this.f26011a);
-            g.put(this.f26011a, true);
+            c("setBannerCovered posId=" + this.f12323a);
+            g.put(this.f12323a, true);
             q();
-            if (this.f26012c != null) {
-                this.f26012c.b();
+            if (this.f12324c != null) {
+                this.f12324c.b();
             }
         } catch (Exception e) {
             com.opos.cmn.an.f.a.b("delegator banner", "", e);
@@ -204,8 +204,8 @@ public class a extends com.opos.mobad.l.a {
         } catch (Exception e) {
             com.opos.cmn.an.f.a.b("delegator banner", "", e);
         }
-        if (g.containsKey(this.f26011a)) {
-            z = g.get(this.f26011a).booleanValue();
+        if (g.containsKey(this.f12323a)) {
+            z = g.get(this.f12323a).booleanValue();
             c("isBannerCovered=" + z);
             return z;
         }
@@ -227,9 +227,9 @@ public class a extends com.opos.mobad.l.a {
 
     @Override // com.opos.mobad.ad.g.a, com.opos.mobad.ad.g
     public void a(int i, String str, int i2) {
-        if (com.opos.mobad.service.f.b().b(this.f26011a) && d() == 2 && !this.k) {
+        if (com.opos.mobad.service.f.b().b(this.f12323a) && d() == 2 && !this.k) {
             this.k = true;
-            com.opos.mobad.service.i.d.a().a(this.f26011a, this.i, i, str, this.b.j(), g(), i2);
+            com.opos.mobad.service.i.d.a().a(this.f12323a, this.i, i, str, this.b.j(), g(), i2);
         }
     }
 
@@ -238,14 +238,14 @@ public class a extends com.opos.mobad.l.a {
         super.b();
         q();
         this.b.b();
-        this.f26012c.b();
+        this.f12324c.b();
     }
 
     @Override // com.opos.mobad.ad.g.a, com.opos.mobad.ad.g
     public void b(int i) {
-        if (com.opos.mobad.service.f.b().b(this.f26011a) && d() == 2 && !this.k) {
+        if (com.opos.mobad.service.f.b().b(this.f12323a) && d() == 2 && !this.k) {
             this.k = true;
-            com.opos.mobad.service.i.d.a().a(this.f26011a, this.i, this.b.j(), g(), i);
+            com.opos.mobad.service.i.d.a().a(this.f12323a, this.i, this.b.j(), g(), i);
         }
     }
 
@@ -277,7 +277,7 @@ public class a extends com.opos.mobad.l.a {
     @Override // com.opos.mobad.ad.g.a, com.opos.mobad.ad.g
     public void c(int i) {
         com.opos.mobad.ad.a.a i2;
-        if (com.opos.mobad.service.f.b().b(this.f26011a) && (i2 = this.b.i()) != null) {
+        if (com.opos.mobad.service.f.b().b(this.f12323a) && (i2 = this.b.i()) != null) {
             i2.c(i);
         }
     }
@@ -298,7 +298,7 @@ public class a extends com.opos.mobad.l.a {
     @Override // com.opos.mobad.ad.g.a, com.opos.mobad.ad.g
     public int g() {
         com.opos.mobad.ad.a.a i;
-        if (com.opos.mobad.service.f.b().b(this.f26011a) && (i = this.b.i()) != null) {
+        if (com.opos.mobad.service.f.b().b(this.f12323a) && (i = this.b.i()) != null) {
             int g2 = i.g();
             if (g2 > 0) {
                 return g2;
@@ -314,6 +314,6 @@ public class a extends com.opos.mobad.l.a {
 
     @Override // com.opos.mobad.ad.a.a
     public View h() {
-        return this.f26012c.a();
+        return this.f12324c.a();
     }
 }

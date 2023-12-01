@@ -16,17 +16,17 @@ public class a {
     private static final String f = "a";
 
     /* renamed from: a  reason: collision with root package name */
-    private final Map<String, Map<String, Map<String, String>>> f22685a = new ConcurrentHashMap(16);
+    private final Map<String, Map<String, Map<String, String>>> f9077a = new ConcurrentHashMap(16);
     private final Map<String, Long> b = new ConcurrentHashMap(16);
 
     /* renamed from: c  reason: collision with root package name */
-    private final c f22686c;
+    private final c f9078c;
     private final c d;
     private final h e;
 
     public a(c cVar, c cVar2, h hVar) {
         this.d = cVar2;
-        this.f22686c = cVar;
+        this.f9078c = cVar;
         this.e = hVar;
         hVar.a(this);
     }
@@ -50,11 +50,11 @@ public class a {
     }
 
     public c a() {
-        return this.f22686c;
+        return this.f9078c;
     }
 
     public Map<String, String> a(GrsBaseInfo grsBaseInfo, String str, b bVar, Context context) {
-        Map<String, Map<String, String>> map = this.f22685a.get(grsBaseInfo.getGrsParasKey(true, true, context));
+        Map<String, Map<String, String>> map = this.f9077a.get(grsBaseInfo.getGrsParasKey(true, true, context));
         if (map == null || map.isEmpty()) {
             return new HashMap();
         }
@@ -64,11 +64,11 @@ public class a {
 
     public void a(GrsBaseInfo grsBaseInfo, Context context) {
         String grsParasKey = grsBaseInfo.getGrsParasKey(true, true, context);
-        c cVar = this.f22686c;
+        c cVar = this.f9078c;
         cVar.b(grsParasKey + "time", "0");
         Map<String, Long> map = this.b;
         map.remove(grsParasKey + "time");
-        this.f22685a.remove(grsParasKey);
+        this.f9077a.remove(grsParasKey);
         this.e.a(grsParasKey);
     }
 
@@ -76,21 +76,21 @@ public class a {
         if (dVar.f() == 2) {
             Logger.w(f, "update cache from server failed");
         } else if (cVar.d().size() != 0) {
-            this.f22686c.b("geoipCountryCode", dVar.j());
-            this.f22686c.b("geoipCountryCodetime", dVar.a());
+            this.f9078c.b("geoipCountryCode", dVar.j());
+            this.f9078c.b("geoipCountryCodetime", dVar.a());
         } else {
             String grsParasKey = grsBaseInfo.getGrsParasKey(true, true, context);
             if (dVar.m()) {
-                this.f22685a.put(grsParasKey, com.huawei.hms.framework.network.grs.a.a(this.f22686c.a(grsParasKey, "")));
+                this.f9077a.put(grsParasKey, com.huawei.hms.framework.network.grs.a.a(this.f9078c.a(grsParasKey, "")));
             } else {
-                this.f22686c.b(grsParasKey, dVar.j());
-                this.f22685a.put(grsParasKey, com.huawei.hms.framework.network.grs.a.a(dVar.j()));
+                this.f9078c.b(grsParasKey, dVar.j());
+                this.f9077a.put(grsParasKey, com.huawei.hms.framework.network.grs.a.a(dVar.j()));
             }
             if (!TextUtils.isEmpty(dVar.e())) {
-                c cVar2 = this.f22686c;
+                c cVar2 = this.f9078c;
                 cVar2.b(grsParasKey + "ETag", dVar.e());
             }
-            c cVar3 = this.f22686c;
+            c cVar3 = this.f9078c;
             cVar3.b(grsParasKey + "time", dVar.a());
             this.b.put(grsParasKey, Long.valueOf(Long.parseLong(dVar.a())));
         }
@@ -102,8 +102,8 @@ public class a {
 
     public void b(GrsBaseInfo grsBaseInfo, Context context) {
         String grsParasKey = grsBaseInfo.getGrsParasKey(true, true, context);
-        String a2 = this.f22686c.a(grsParasKey, "");
-        String a3 = this.f22686c.a(grsParasKey + "time", "0");
+        String a2 = this.f9078c.a(grsParasKey, "");
+        String a3 = this.f9078c.a(grsParasKey + "time", "0");
         long j = 0L;
         if (!TextUtils.isEmpty(a3)) {
             j = 0;
@@ -116,7 +116,7 @@ public class a {
                 }
             }
         }
-        this.f22685a.put(grsParasKey, com.huawei.hms.framework.network.grs.a.a(a2));
+        this.f9077a.put(grsParasKey, com.huawei.hms.framework.network.grs.a.a(a2));
         this.b.put(grsParasKey, Long.valueOf(j));
         a(grsBaseInfo, grsParasKey, context);
     }

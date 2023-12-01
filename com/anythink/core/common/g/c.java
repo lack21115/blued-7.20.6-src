@@ -38,9 +38,7 @@ public final class c {
     public static final String X = "p2";
     public static final String Y = "sign";
     public static final String Z = "common";
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final String f6721a = "platform";
+    public static final String a = "platform";
     public static final int aa = 1;
     public static final int ab = 2;
     public static final int ac = 3;
@@ -59,9 +57,7 @@ public final class c {
     public static final String ap = "al_it_apil";
     public static final String aq = "wx_data";
     public static final String b = "os_vn";
-
-    /* renamed from: c  reason: collision with root package name */
-    public static final String f6722c = "os_vc";
+    public static final String c = "os_vc";
     public static final String d = "package_name";
     public static final String e = "app_vn";
     public static final String f = "app_vc";

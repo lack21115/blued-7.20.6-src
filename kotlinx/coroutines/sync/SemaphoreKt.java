@@ -7,13 +7,9 @@ import kotlinx.coroutines.internal.SystemPropsKt__SystemProps_commonKt;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/sync/SemaphoreKt.class */
 public final class SemaphoreKt {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final int f43637a;
+    private static final int a;
     private static final Symbol b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final Symbol f43638c;
+    private static final Symbol c;
     private static final Symbol d;
     private static final Symbol e;
     private static final int f;
@@ -22,9 +18,9 @@ public final class SemaphoreKt {
         int a2;
         int a3;
         a2 = SystemPropsKt__SystemProps_commonKt.a("kotlinx.coroutines.semaphore.maxSpinCycles", 100, 0, 0, 12, (Object) null);
-        f43637a = a2;
+        a = a2;
         b = new Symbol("PERMIT");
-        f43638c = new Symbol("TAKEN");
+        c = new Symbol("TAKEN");
         d = new Symbol("BROKEN");
         e = new Symbol("CANCELLED");
         a3 = SystemPropsKt__SystemProps_commonKt.a("kotlinx.coroutines.semaphore.segmentSize", 16, 0, 0, 12, (Object) null);
@@ -65,7 +61,7 @@ public final class SemaphoreKt {
             r8 = r0
         L32:
             r0 = r8
-            java.lang.Object r0 = r0.f43640c
+            java.lang.Object r0 = r0.c
             r9 = r0
             java.lang.Object r0 = kotlin.coroutines.intrinsics.IntrinsicsKt.a()
             r10 = r0
@@ -82,7 +78,7 @@ public final class SemaphoreKt {
             kotlin.jvm.functions.Function0 r0 = (kotlin.jvm.functions.Function0) r0
             r5 = r0
             r0 = r8
-            java.lang.Object r0 = r0.f43639a
+            java.lang.Object r0 = r0.a
             kotlinx.coroutines.sync.Semaphore r0 = (kotlinx.coroutines.sync.Semaphore) r0
             r6 = r0
             r0 = r9
@@ -99,7 +95,7 @@ public final class SemaphoreKt {
             kotlin.ResultKt.a(r0)
             r0 = r8
             r1 = r4
-            r0.f43639a = r1
+            r0.a = r1
             r0 = r8
             r1 = r5
             r0.b = r1

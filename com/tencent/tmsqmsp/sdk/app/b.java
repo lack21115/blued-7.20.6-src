@@ -14,24 +14,24 @@ public class b {
     private static b f;
 
     /* renamed from: a  reason: collision with root package name */
-    private List<HandlerThread> f39678a = new ArrayList();
+    private List<HandlerThread> f25987a = new ArrayList();
     private Handler b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Handler f39679c;
+    private Handler f25988c;
 
     private b() {
         this.b = null;
-        this.f39679c = null;
+        this.f25988c = null;
         this.b = a(h.a(d));
-        this.f39679c = a(h.a(e));
+        this.f25988c = a(h.a(e));
     }
 
     private Handler a(String str) {
         HandlerThread handlerThread = new HandlerThread(str);
         handlerThread.start();
         Handler handler = new Handler(handlerThread.getLooper());
-        this.f39678a.add(handlerThread);
+        this.f25987a.add(handlerThread);
         return handler;
     }
 
@@ -55,7 +55,7 @@ public class b {
     }
 
     public boolean a() {
-        for (HandlerThread handlerThread : this.f39678a) {
+        for (HandlerThread handlerThread : this.f25987a) {
             if (handlerThread.getName().equalsIgnoreCase(h.a(d))) {
                 return handlerThread.isAlive();
             }
@@ -64,7 +64,7 @@ public class b {
     }
 
     public Looper b() {
-        return this.f39679c.getLooper();
+        return this.f25988c.getLooper();
     }
 
     public Looper c() {
@@ -77,10 +77,10 @@ public class b {
             handler.getLooper().quit();
             this.b = null;
         }
-        Handler handler2 = this.f39679c;
+        Handler handler2 = this.f25988c;
         if (handler2 != null) {
             handler2.getLooper().quit();
-            this.f39679c = null;
+            this.f25988c = null;
         }
         if (f != null) {
             f = null;

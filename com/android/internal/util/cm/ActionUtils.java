@@ -18,20 +18,20 @@ public class ActionUtils {
 
     private static ActivityManager.RecentTaskInfo getLastTask(Context context, int i) throws RemoteException {
         String resolveCurrentLauncherPackage = resolveCurrentLauncherPackage(context, i);
-        List<ActivityManager.RecentTaskInfo> recentTasks = ActivityManagerNative.getDefault().getRecentTasks(5, 2, i);
+        List recentTasks = ActivityManagerNative.getDefault().getRecentTasks(5, 2, i);
         int i2 = 1;
         while (true) {
             int i3 = i2;
             if (i3 >= recentTasks.size()) {
                 return null;
             }
-            ActivityManager.RecentTaskInfo recentTaskInfo = recentTasks.get(i3);
+            ActivityManager.RecentTaskInfo recentTaskInfo = (ActivityManager.RecentTaskInfo) recentTasks.get(i3);
             if (recentTaskInfo.origActivity != null) {
                 recentTaskInfo.baseIntent.setComponent(recentTaskInfo.origActivity);
             }
             String packageName = recentTaskInfo.baseIntent.getComponent().getPackageName();
-            if (!packageName.equals(resolveCurrentLauncherPackage) && !packageName.equals("com.android.systemui")) {
-                return recentTasks.get(i3);
+            if (!packageName.equals(resolveCurrentLauncherPackage) && !packageName.equals(SYSTEMUI_PACKAGE)) {
+                return (ActivityManager.RecentTaskInfo) recentTasks.get(i3);
             }
             i2 = i3 + 1;
         }
@@ -62,7 +62,7 @@ public class ActionUtils {
     }
 
     private static String resolveCurrentLauncherPackage(Context context, int i) {
-        return context.getPackageManager().resolveActivityAsUser(new Intent(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_HOME), 0, i).activityInfo.packageName;
+        return context.getPackageManager().resolveActivityAsUser(new Intent("android.intent.action.MAIN").addCategory("android.intent.category.HOME"), 0, i).activityInfo.packageName;
     }
 
     public static boolean switchToLastApp(Context context, int i) {

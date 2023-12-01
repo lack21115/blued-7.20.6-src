@@ -9,13 +9,11 @@ import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/media/selector/model/AlbumSelectInfo.class */
 public class AlbumSelectInfo implements Serializable {
-
-    /* renamed from: a  reason: collision with root package name */
-    private List<MediaInfo> f15565a = new ArrayList();
+    private List<MediaInfo> a = new ArrayList();
     private int b;
 
     public int a(String str) {
-        List<MediaInfo> list = this.f15565a;
+        List<MediaInfo> list = this.a;
         if (list != null) {
             Iterator<MediaInfo> it = list.iterator();
             while (it.hasNext()) {
@@ -23,7 +21,7 @@ public class AlbumSelectInfo implements Serializable {
                     it.remove();
                 }
             }
-            return this.f15565a.size();
+            return this.a.size();
         }
         return 0;
     }
@@ -40,42 +38,42 @@ public class AlbumSelectInfo implements Serializable {
     public void a(AlbumSelectInfo albumSelectInfo) {
         if (albumSelectInfo != null) {
             this.b = albumSelectInfo.b;
-            this.f15565a.addAll(albumSelectInfo.f15565a);
+            this.a.addAll(albumSelectInfo.a);
         }
     }
 
     public void a(List<MediaInfo> list) {
-        this.f15565a.clear();
-        this.f15565a.addAll(list);
+        this.a.clear();
+        this.a.addAll(list);
     }
 
     public boolean a(MediaInfo mediaInfo) {
-        List<MediaInfo> list = this.f15565a;
+        List<MediaInfo> list = this.a;
         return list != null && list.contains(mediaInfo);
     }
 
     public int b(MediaInfo mediaInfo) {
         List<MediaInfo> list;
-        if (a(mediaInfo) || (list = this.f15565a) == null) {
+        if (a(mediaInfo) || (list = this.a) == null) {
             return 0;
         }
         list.add(mediaInfo);
-        return this.f15565a.size();
+        return this.a.size();
     }
 
     public void b() {
-        List<MediaInfo> list = this.f15565a;
+        List<MediaInfo> list = this.a;
         if (list != null) {
             list.clear();
         }
     }
 
     public List<MediaInfo> c() {
-        return this.f15565a;
+        return this.a;
     }
 
     public int d() {
-        List<MediaInfo> list = this.f15565a;
+        List<MediaInfo> list = this.a;
         if (list != null) {
             return list.size();
         }

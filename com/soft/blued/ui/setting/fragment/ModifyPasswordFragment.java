@@ -26,23 +26,20 @@ import com.soft.blued.utils.password.PasswordStatusView;
 public class ModifyPasswordFragment extends BaseFragment implements View.OnClickListener {
 
     /* renamed from: a  reason: collision with root package name */
-    public BluedUIHttpResponse f33430a = new BluedUIHttpResponse() { // from class: com.soft.blued.ui.setting.fragment.ModifyPasswordFragment.1
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
+    public BluedUIHttpResponse f19739a = new BluedUIHttpResponse() { // from class: com.soft.blued.ui.setting.fragment.ModifyPasswordFragment.1
         public void onUIFinish() {
             super.onUIFinish();
-            DialogUtils.b(ModifyPasswordFragment.this.f33431c);
+            DialogUtils.b(ModifyPasswordFragment.this.f19740c);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIStart() {
             super.onUIStart();
-            DialogUtils.a(ModifyPasswordFragment.this.f33431c);
+            DialogUtils.a(ModifyPasswordFragment.this.f19740c);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIUpdate(BluedEntity bluedEntity) {
             try {
-                DialogUtils.b(ModifyPasswordFragment.this.f33431c);
+                DialogUtils.b(ModifyPasswordFragment.this.f19740c);
                 AppMethods.d((int) R.string.modify_success);
                 BluedHttpTools.b(ModifyPasswordFragment.this.g.getText().toString());
                 ModifyPasswordFragment.this.getActivity().finish();
@@ -53,7 +50,7 @@ public class ModifyPasswordFragment extends BaseFragment implements View.OnClick
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Dialog f33431c;
+    private Dialog f19740c;
     private View d;
     private CommonEdittextView e;
     private CommonEdittextView f;
@@ -71,24 +68,24 @@ public class ModifyPasswordFragment extends BaseFragment implements View.OnClick
     }
 
     public void a() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.d.findViewById(2131370749);
-        commonTopTitleNoTrans.a();
-        commonTopTitleNoTrans.setLeftClickListener(this);
-        commonTopTitleNoTrans.setRightClickListener(this);
-        commonTopTitleNoTrans.f();
-        CommonEdittextView commonEdittextView = (CommonEdittextView) this.d.findViewById(R.id.et_origion_pwd);
-        this.e = commonEdittextView;
-        commonEdittextView.getEditText().setInputType(128);
-        CommonEdittextView commonEdittextView2 = (CommonEdittextView) this.d.findViewById(R.id.et_new_pwd);
-        this.f = commonEdittextView2;
-        commonEdittextView2.getEditText().setInputType(128);
-        CommonEdittextView commonEdittextView3 = (CommonEdittextView) this.d.findViewById(R.id.et_new_pwd_confirm);
-        this.g = commonEdittextView3;
-        commonEdittextView3.getEditText().setInputType(128);
-        TextView textView = (TextView) this.d.findViewById(2131371023);
+        CommonTopTitleNoTrans findViewById = this.d.findViewById(R.id.top_title);
+        findViewById.a();
+        findViewById.setLeftClickListener(this);
+        findViewById.setRightClickListener(this);
+        findViewById.f();
+        CommonEdittextView findViewById2 = this.d.findViewById(R.id.et_origion_pwd);
+        this.e = findViewById2;
+        findViewById2.getEditText().setInputType(128);
+        CommonEdittextView findViewById3 = this.d.findViewById(R.id.et_new_pwd);
+        this.f = findViewById3;
+        findViewById3.getEditText().setInputType(128);
+        CommonEdittextView findViewById4 = this.d.findViewById(R.id.et_new_pwd_confirm);
+        this.g = findViewById4;
+        findViewById4.getEditText().setInputType(128);
+        TextView textView = (TextView) this.d.findViewById(R.id.tv_btn);
         this.h = textView;
         textView.setOnClickListener(this);
-        this.f33431c = DialogUtils.a(getActivity());
+        this.f19740c = DialogUtils.a(getActivity());
         PasswordStatusView passwordStatusView = (PasswordStatusView) this.d.findViewById(R.id.pwd_check_view);
         this.i = passwordStatusView;
         passwordStatusView.a(this.f.getEditText(), this.g.getEditText(), UserInfo.getInstance().getUserName(), UserInfo.getInstance().getLoginUserInfo().name, PasswordCheckUtils.PWD_CHECK_PAGE.MODIFY_PWD, getFragmentActive(), new PasswordStatusView.OnCheckResult() { // from class: com.soft.blued.ui.setting.fragment.-$$Lambda$ModifyPasswordFragment$nIcibWCFRoocUgzJDiOntm982o8
@@ -100,7 +97,7 @@ public class ModifyPasswordFragment extends BaseFragment implements View.OnClick
     }
 
     public void a(String str, String str2) {
-        MineHttpUtils.i(getActivity(), this.f33430a, UserInfo.getInstance().getLoginUserInfo().getUid(), str, str2, getFragmentActive());
+        MineHttpUtils.i(getActivity(), this.f19739a, UserInfo.getInstance().getLoginUserInfo().getUid(), str, str2, getFragmentActive());
     }
 
     @Override // android.view.View.OnClickListener
@@ -123,7 +120,6 @@ public class ModifyPasswordFragment extends BaseFragment implements View.OnClick
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         View view = this.d;
         if (view == null) {

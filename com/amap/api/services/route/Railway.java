@@ -24,9 +24,7 @@ public class Railway implements Parcelable {
             return a(i);
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f5717a;
+    private String a;
     private String b;
 
     public Railway() {
@@ -34,7 +32,7 @@ public class Railway implements Parcelable {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public Railway(Parcel parcel) {
-        this.f5717a = parcel.readString();
+        this.a = parcel.readString();
         this.b = parcel.readString();
     }
 
@@ -44,7 +42,7 @@ public class Railway implements Parcelable {
     }
 
     public String getID() {
-        return this.f5717a;
+        return this.a;
     }
 
     public String getName() {
@@ -52,7 +50,7 @@ public class Railway implements Parcelable {
     }
 
     public void setID(String str) {
-        this.f5717a = str;
+        this.a = str;
     }
 
     public void setName(String str) {
@@ -61,7 +59,7 @@ public class Railway implements Parcelable {
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.f5717a);
+        parcel.writeString(this.a);
         parcel.writeString(this.b);
     }
 }

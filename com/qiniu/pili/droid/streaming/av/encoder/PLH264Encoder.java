@@ -18,11 +18,11 @@ public class PLH264Encoder {
     public static final boolean i = SharedLibraryNameHelper.getInstance().c();
 
     /* renamed from: a  reason: collision with root package name */
-    public ArrayDeque<PLAVFrame> f27839a = new ArrayDeque<>();
+    public ArrayDeque<PLAVFrame> f14151a = new ArrayDeque<>();
     public final Object b = new Object();
 
     /* renamed from: c  reason: collision with root package name */
-    public volatile int f27840c = 0;
+    public volatile int f14152c = 0;
     public boolean d = false;
     public a e = new a(2);
     public a.a.a.a.a.a.g.a f;
@@ -165,7 +165,7 @@ public class PLH264Encoder {
         this.h.a();
         release();
         synchronized (this.b) {
-            this.f27839a.clear();
+            this.f14151a.clear();
         }
         return 0;
     }
@@ -187,7 +187,7 @@ public class PLH264Encoder {
 
     public void a(PLAVFrame pLAVFrame) {
         synchronized (this.b) {
-            this.f27839a.add(pLAVFrame);
+            this.f14151a.add(pLAVFrame);
         }
     }
 
@@ -223,7 +223,7 @@ public class PLH264Encoder {
         eVar2.c("PLH264Encoder", "dest size = " + i3 + ", w = " + parameters.destWidth + ", h = " + parameters.destHeight);
         this.g = ByteBuffer.allocateDirect(i3);
         this.d = true;
-        this.f27840c = 0;
+        this.f14152c = 0;
     }
 
     public PLAVFrame b(int i2) {
@@ -233,19 +233,19 @@ public class PLH264Encoder {
                 e.i.e("PLH264Encoder", "Init improperly:" + i2);
                 return null;
             }
-            if (!this.f27839a.isEmpty()) {
-                PLAVFrame remove = this.f27839a.remove();
+            if (!this.f14151a.isEmpty()) {
+                PLAVFrame remove = this.f14151a.remove();
                 if (remove != null && remove.mBuffer != null && remove.mBuffer.capacity() >= i2) {
                     return remove;
                 }
                 e.i.d("PLH264Encoder", "The frame is:" + remove);
             }
-            if (this.f27840c < 2) {
+            if (this.f14152c < 2) {
                 try {
                     pLAVFrame = new PLAVFrame(ByteBuffer.allocateDirect(i2), 0, 0L);
                     try {
-                        this.f27840c++;
-                        e.i.c("PLH264Encoder", "Allocate extra buffer mInputExtraNum:" + this.f27840c + ",frame.buffer:" + pLAVFrame.mBuffer);
+                        this.f14152c++;
+                        e.i.c("PLH264Encoder", "Allocate extra buffer mInputExtraNum:" + this.f14152c + ",frame.buffer:" + pLAVFrame.mBuffer);
                     } catch (OutOfMemoryError e) {
                         e.i.e("PLH264Encoder", "Fatal Error. OOM !!!");
                         return pLAVFrame;

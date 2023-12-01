@@ -5,10 +5,10 @@ public class ct {
     public static final int b = 16;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f23799c = "a3NyaXNrY3RsYnVzaW5zc3Z4cHprd3NwYWlvcXBrc3M=";
+    public static final String f10191c = "a3NyaXNrY3RsYnVzaW5zc3Z4cHprd3NwYWlvcXBrc3M=";
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f23798a = b();
+    public static String f10190a = b();
     public static String d = c.b(d, 2);
     public static String d = c.b(d, 2);
     public static String e = c.b(e, 2);

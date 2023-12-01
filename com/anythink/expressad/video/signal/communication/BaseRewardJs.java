@@ -80,8 +80,8 @@ public class BaseRewardJs extends AbsFeedBackForH5 implements IRewardBridge {
             o.d(h, "getEndScreenInfo factory is null");
             if (obj != null) {
                 a aVar = (a) obj;
-                if (aVar.f7101a instanceof WindVaneWebView) {
-                    WindVaneWebView windVaneWebView = aVar.f7101a;
+                if (aVar.f4263a instanceof WindVaneWebView) {
+                    WindVaneWebView windVaneWebView = aVar.f4263a;
                     if (windVaneWebView.getWebViewListener() != null) {
                         ((com.anythink.expressad.atsignalcommon.a.a) windVaneWebView.getWebViewListener()).a(obj);
                     }
@@ -143,7 +143,7 @@ public class BaseRewardJs extends AbsFeedBackForH5 implements IRewardBridge {
                 this.i = (IRewardBridge) windVaneWebView.getObject();
             }
         } catch (Exception e2) {
-            if (com.anythink.expressad.a.f6941a) {
+            if (com.anythink.expressad.a.f4103a) {
                 e2.printStackTrace();
             }
         }
@@ -169,7 +169,7 @@ public class BaseRewardJs extends AbsFeedBackForH5 implements IRewardBridge {
                 this.i = (IRewardBridge) windVaneWebView.getObject();
             }
         } catch (Exception e2) {
-            if (com.anythink.expressad.a.f6941a) {
+            if (com.anythink.expressad.a.f4103a) {
                 e2.printStackTrace();
             }
         }
@@ -184,9 +184,9 @@ public class BaseRewardJs extends AbsFeedBackForH5 implements IRewardBridge {
             } else {
                 if (obj != null) {
                     a aVar = (a) obj;
-                    if (aVar.f7101a.getObject() instanceof com.anythink.expressad.video.signal.a.j) {
-                        com.anythink.expressad.video.signal.a.j jVar = (com.anythink.expressad.video.signal.a.j) aVar.f7101a.getObject();
-                        Context context = aVar.f7101a.getContext();
+                    if (aVar.f4263a.getObject() instanceof com.anythink.expressad.video.signal.a.j) {
+                        com.anythink.expressad.video.signal.a.j jVar = (com.anythink.expressad.video.signal.a.j) aVar.f4263a.getObject();
+                        Context context = aVar.f4263a.getContext();
                         if (context != null && context != context.getApplicationContext()) {
                             jVar.a(context);
                         }

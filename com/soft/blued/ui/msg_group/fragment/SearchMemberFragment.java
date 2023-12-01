@@ -9,7 +9,6 @@ import android.view.View;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
-import com.blued.android.chat.data.MsgType;
 import com.blued.android.core.ui.TerminalActivity;
 import com.blued.android.framework.ui.mvp.MvpFragment;
 import com.blued.android.framework.utils.KeyboardUtils;
@@ -35,11 +34,11 @@ import java.util.List;
 public class SearchMemberFragment extends MvpFragment<GroupMemberPresenter> implements BaseQuickAdapter.OnItemClickListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private SearchMemberAdapter f32777a;
+    private SearchMemberAdapter f19086a;
     private SearchMemberAdapter b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f32778c;
+    private String f19087c;
     private int d = 0;
     @BindView
     NoDataAndLoadFailView noDataView;
@@ -101,7 +100,6 @@ public class SearchMemberFragment extends MvpFragment<GroupMemberPresenter> impl
         return list;
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public void a(Bundle bundle) {
         super.a(bundle);
         if (getArguments() != null) {
@@ -127,19 +125,19 @@ public class SearchMemberFragment extends MvpFragment<GroupMemberPresenter> impl
         });
         this.noDataView.d();
         this.noDataView.setNoDataImg(2131233627);
-        this.noDataView.setNoDataStr(R.string.no_data);
+        this.noDataView.setNoDataStr((int) R.string.no_data);
         this.search_list.setLayoutManager(new LinearLayoutManager(getContext()));
         this.user_list.setLayoutManager(new LinearLayoutManager(getContext()));
-        this.f32777a = new SearchMemberAdapter(getFragmentActive());
+        this.f19086a = new SearchMemberAdapter(getFragmentActive());
         this.b = new SearchMemberAdapter(getFragmentActive());
-        if (this.d == 1 && (j().o == 1 || j().o == 2)) {
+        if (this.d == 1 && (((GroupMemberPresenter) j()).o == 1 || ((GroupMemberPresenter) j()).o == 2)) {
             View inflate = View.inflate(getContext(), R.layout.header_group_choose_at, null);
             inflate.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg_group.fragment.SearchMemberFragment.2
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view) {
                     Tracker.onClick(view);
                     GroupMemberModel groupMemberModel = new GroupMemberModel();
-                    groupMemberModel.uid = MsgType.UID_GROUP_AT_ALL;
+                    groupMemberModel.uid = "000000";
                     groupMemberModel.name = SearchMemberFragment.this.getResources().getString(R.string.group_at_all);
                     LiveEventBus.get("choose_at_user", GroupMemberModel.class).post(groupMemberModel);
                     SearchMemberFragment.this.t();
@@ -147,12 +145,12 @@ public class SearchMemberFragment extends MvpFragment<GroupMemberPresenter> impl
             });
             this.b.addHeaderView(inflate);
         }
-        this.search_list.setAdapter(this.f32777a);
+        this.search_list.setAdapter(this.f19086a);
         this.user_list.setAdapter(this.b);
         this.b.setLoadMoreView(new BluedAdapterLoadMoreView());
         this.b.disableLoadMoreIfNotFullPage(this.user_list);
         this.b.setOnItemClickListener(this);
-        this.f32777a.setOnItemClickListener(this);
+        this.f19086a.setOnItemClickListener(this);
         this.refresh_layout.l(false);
         this.refresh_layout.a(new OnRefreshListener() { // from class: com.soft.blued.ui.msg_group.fragment.SearchMemberFragment.3
             @Override // com.scwang.smartrefresh.layout.listener.OnRefreshListener
@@ -164,33 +162,30 @@ public class SearchMemberFragment extends MvpFragment<GroupMemberPresenter> impl
         this.b.setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() { // from class: com.soft.blued.ui.msg_group.fragment.SearchMemberFragment.4
             @Override // com.chad.library.adapter.base.BaseQuickAdapter.RequestLoadMoreListener
             public void onLoadMoreRequested() {
-                SearchMemberFragment.this.j().f();
+                ((GroupMemberPresenter) SearchMemberFragment.this.j()).f();
             }
         }, this.user_list);
         this.search_view.clearFocus();
         this.search_view.getEditView().setHint(getString(R.string.group_search_member_hint));
         this.search_view.setOnSearchInfoListener(new SearchView.OnSearchInfoListener() { // from class: com.soft.blued.ui.msg_group.fragment.SearchMemberFragment.5
-            @Override // com.blued.android.module.common.view.SearchView.OnSearchInfoListener
             public void a() {
                 SearchMemberFragment.this.b();
             }
 
-            @Override // com.blued.android.module.common.view.SearchView.OnSearchInfoListener
             public void a(String str) {
                 if (TextUtils.isEmpty(str)) {
                     SearchMemberFragment.this.b();
                     return;
                 }
                 SearchMemberFragment.this.refresh_layout.c(false);
-                SearchMemberFragment.this.f32778c = str;
-                SearchMemberFragment.this.f32777a.getData().clear();
-                SearchMemberFragment.this.f32777a.notifyDataSetChanged();
+                SearchMemberFragment.this.f19087c = str;
+                SearchMemberFragment.this.f19086a.getData().clear();
+                SearchMemberFragment.this.f19086a.notifyDataSetChanged();
                 SearchMemberFragment.this.search_list.setVisibility(0);
                 SearchMemberFragment.this.user_list.setVisibility(8);
-                SearchMemberFragment.this.j().e(SearchMemberFragment.this.f32778c);
+                ((GroupMemberPresenter) SearchMemberFragment.this.j()).e(SearchMemberFragment.this.f19087c);
             }
 
-            @Override // com.blued.android.module.common.view.SearchView.OnSearchInfoListener
             public void b() {
                 SearchMemberFragment.this.b();
             }
@@ -200,7 +195,7 @@ public class SearchMemberFragment extends MvpFragment<GroupMemberPresenter> impl
     public void a(Boolean bool) {
         if (!bool.booleanValue()) {
             this.noDataView.b();
-        } else if (this.f32777a.getData().size() <= 0) {
+        } else if (this.f19086a.getData().size() <= 0) {
             this.noDataView.a();
         } else {
             this.noDataView.d();
@@ -214,23 +209,22 @@ public class SearchMemberFragment extends MvpFragment<GroupMemberPresenter> impl
         t();
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void a(String str, boolean z) {
         super.a(str, z);
-        if (z || j().i == 1) {
+        if (z || ((GroupMemberPresenter) j()).i == 1) {
             return;
         }
         this.b.loadMoreFail();
     }
 
     public void a(List<GroupMemberModel> list) {
-        this.f32777a.a(c(list), this.f32778c);
+        this.f19086a.a(c(list), this.f19087c);
     }
 
     public void b() {
-        this.f32778c = "";
-        this.f32777a.getData().clear();
-        this.f32777a.notifyDataSetChanged();
+        this.f19087c = "";
+        this.f19086a.getData().clear();
+        this.f19086a.notifyDataSetChanged();
         this.search_list.setVisibility(8);
         this.refresh_layout.c(true);
         this.noDataView.d();
@@ -243,7 +237,6 @@ public class SearchMemberFragment extends MvpFragment<GroupMemberPresenter> impl
         this.b.setNewData(c(list));
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public int g() {
         return R.layout.fm_search_member;
     }
@@ -261,9 +254,9 @@ public class SearchMemberFragment extends MvpFragment<GroupMemberPresenter> impl
                 @Override // android.content.DialogInterface.OnClickListener
                 public void onClick(DialogInterface dialogInterface, int i3) {
                     Tracker.onClick(dialogInterface, i3);
-                    SearchMemberFragment.this.j().a(groupMemberModel.uid, 2, i);
+                    ((GroupMemberPresenter) SearchMemberFragment.this.j()).a(groupMemberModel.uid, 2, i);
                 }
-            }, getContext().getResources().getString(2131887258), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.msg_group.fragment.SearchMemberFragment.7
+            }, getContext().getResources().getString(R.string.common_cancel), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.msg_group.fragment.SearchMemberFragment.7
                 @Override // android.content.DialogInterface.OnClickListener
                 public void onClick(DialogInterface dialogInterface, int i3) {
                     Tracker.onClick(dialogInterface, i3);
@@ -272,14 +265,14 @@ public class SearchMemberFragment extends MvpFragment<GroupMemberPresenter> impl
         } else if (i2 == 1) {
             LiveEventBus.get("choose_at_user", GroupMemberModel.class).post(groupMemberModel);
             t();
-        } else if (i2 == 2 && j().o == 1 && groupMemberModel.group_role != 1) {
+        } else if (i2 == 2 && ((GroupMemberPresenter) j()).o == 1 && groupMemberModel.group_role != 1) {
             CommonAlertDialog.a(getContext(), getString(R.string.group_transfer_title), String.format(getString(R.string.group_dialog_transfer_hint), groupMemberModel.name), getContext().getResources().getString(2131887281), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.msg_group.fragment.SearchMemberFragment.8
                 @Override // android.content.DialogInterface.OnClickListener
                 public void onClick(DialogInterface dialogInterface, int i3) {
                     Tracker.onClick(dialogInterface, i3);
-                    SearchMemberFragment.this.j().a(groupMemberModel.uid, 1, i);
+                    ((GroupMemberPresenter) SearchMemberFragment.this.j()).a(groupMemberModel.uid, 1, i);
                 }
-            }, getContext().getResources().getString(2131887258), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.msg_group.fragment.SearchMemberFragment.9
+            }, getContext().getResources().getString(R.string.common_cancel), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.msg_group.fragment.SearchMemberFragment.9
                 @Override // android.content.DialogInterface.OnClickListener
                 public void onClick(DialogInterface dialogInterface, int i3) {
                     Tracker.onClick(dialogInterface, i3);
@@ -288,7 +281,6 @@ public class SearchMemberFragment extends MvpFragment<GroupMemberPresenter> impl
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void p() {
         super.p();
         this.b.loadMoreEnd();

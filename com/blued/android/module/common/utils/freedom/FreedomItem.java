@@ -6,9 +6,7 @@ import java.util.List;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/utils/freedom/FreedomItem.class */
 public abstract class FreedomItem implements Serializable {
-
-    /* renamed from: a  reason: collision with root package name */
-    public BaseViewHolder f10935a;
+    public BaseViewHolder a;
 
     protected abstract int a();
 
@@ -28,7 +26,7 @@ public abstract class FreedomItem implements Serializable {
     public abstract void a(Context context, BaseViewHolder baseViewHolder, List<FreedomItem> list, int i);
 
     public void a(BaseViewHolder baseViewHolder) {
-        this.f10935a = baseViewHolder;
+        this.a = baseViewHolder;
     }
 
     public int b() {

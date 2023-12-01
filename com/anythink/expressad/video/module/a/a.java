@@ -25,7 +25,7 @@ public interface a {
     public static final int b = -1;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final int f8504c = 1;
+    public static final int f5664c = 1;
     public static final int d = 2;
     public static final int e = 8;
     public static final int f = 5;

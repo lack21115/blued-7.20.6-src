@@ -9,21 +9,19 @@ import kotlinx.coroutines.internal.Symbol;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/sync/SemaphoreSegment.class */
 public final class SemaphoreSegment extends Segment<SemaphoreSegment> {
-
-    /* renamed from: a  reason: collision with root package name */
-    /* synthetic */ AtomicReferenceArray f43641a;
+    /* synthetic */ AtomicReferenceArray a;
 
     public SemaphoreSegment(long j, SemaphoreSegment semaphoreSegment, int i) {
         super(j, semaphoreSegment, i);
         int i2;
         i2 = SemaphoreKt.f;
-        this.f43641a = new AtomicReferenceArray(i2);
+        this.a = new AtomicReferenceArray(i2);
     }
 
     public final void a(int i) {
         Symbol symbol;
         symbol = SemaphoreKt.e;
-        this.f43641a.set(i, symbol);
+        this.a.set(i, symbol);
         k();
     }
 

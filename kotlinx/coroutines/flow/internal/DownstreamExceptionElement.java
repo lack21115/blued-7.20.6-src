@@ -8,13 +8,9 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/internal/DownstreamExceptionElement.class */
 public final class DownstreamExceptionElement implements CoroutineContext.Element {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Key f43491a = new Key(null);
+    public static final Key a = new Key(null);
     public final Throwable b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final CoroutineContext.Key<?> f43492c = f43491a;
+    private final CoroutineContext.Key<?> c = a;
 
     @Metadata
     /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/internal/DownstreamExceptionElement$Key.class */
@@ -43,7 +39,7 @@ public final class DownstreamExceptionElement implements CoroutineContext.Elemen
 
     @Override // kotlin.coroutines.CoroutineContext.Element
     public CoroutineContext.Key<?> getKey() {
-        return this.f43492c;
+        return this.c;
     }
 
     @Override // kotlin.coroutines.CoroutineContext

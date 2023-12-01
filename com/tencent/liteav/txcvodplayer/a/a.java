@@ -5,7 +5,6 @@ import android.content.pm.ApplicationInfo;
 import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.WindowManager;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.liteav.base.datareport.Event4XReporter;
 import com.tencent.liteav.base.system.LiteavSystemInfo;
 import com.tencent.liteav.base.util.LiteavLog;
@@ -22,7 +21,7 @@ public final class a {
     private Event4XReporter O;
 
     /* renamed from: a  reason: collision with root package name */
-    public Context f36507a;
+    public Context f22816a;
     public int o;
     public String y;
     public String z;
@@ -31,7 +30,7 @@ public final class a {
     public String b = null;
 
     /* renamed from: c  reason: collision with root package name */
-    public long f36508c = 0;
+    public long f22817c = 0;
     public long d = 0;
     public long e = 0;
     private boolean F = false;
@@ -62,7 +61,7 @@ public final class a {
 
     public a(Context context) {
         this.B = "";
-        this.f36507a = context;
+        this.f22816a = context;
         String appId = LicenseChecker.getInstance().getAppId();
         LiteavLog.i("VodLicenseCheck", "getLicenseAppId = ".concat(String.valueOf(appId)));
         this.B = appId;
@@ -81,14 +80,14 @@ public final class a {
             }
             int i = displayMetrics.heightPixels;
             int i2 = displayMetrics.widthPixels;
-            return i2 + BridgeUtil.UNDERLINE_STR + i;
+            return i2 + "_" + i;
         } catch (Throwable th) {
             return "";
         }
     }
 
     private String f() {
-        Context context = this.f36507a;
+        Context context = this.f22816a;
         ApplicationInfo applicationInfo = context.getApplicationInfo();
         int i = applicationInfo.labelRes;
         return i == 0 ? applicationInfo.nonLocalizedLabel.toString() : context.getString(i);
@@ -205,7 +204,7 @@ public final class a {
         this.C.SetEventIntValue("u32_realplaytime", this.k / 1000);
         this.C.SetEventIntValue("u64_timestamp", System.currentTimeMillis());
         this.C.SetEventIntValue("u32_speed", (int) (this.M * 100.0f));
-        this.C.SetEventIntValue("u32_segment_duration", b.a(this.f36507a).a(this.B));
+        this.C.SetEventIntValue("u32_segment_duration", b.a(this.f22816a).a(this.B));
         this.C.SendReport();
         LiteavLog.i("TXCVodPlayCollection", "report evt 40305: token=" + this.A + " ,dev_uuid=" + LiteavSystemInfo.getDeviceUuid() + " ,str_app_version=" + this.H + " ,sys_version=" + LiteavSystemInfo.getSystemOSVersionInt() + " ,str_stream_url=" + this.b + " ,u32_videotime=" + this.i + " ,u32_player_type=" + this.r + " ,u32_server_ip=" + this.y + " ,u32_drm_type=" + this.z + " ,str_fileid=" + this.t + " ,u32_playmode=" + this.s + " ,u32_videoindex=" + this.j + " ,u32_realplaytime=" + (this.k / 1000) + " ,u32_speed=" + (this.M * 100.0f) + " ,u32_app_id= ,u64_timestamp=" + System.currentTimeMillis());
     }
@@ -213,7 +212,7 @@ public final class a {
     public final void a() {
         this.C.SetEventStringValue("str_sdk_name", "liteavSdk");
         this.C.SetEventStringValue("str_brand_type", LiteavSystemInfo.getBrand());
-        this.C.SetEventStringValue("str_device_resolution", a(this.f36507a));
+        this.C.SetEventStringValue("str_device_resolution", a(this.f22816a));
         this.C.SetEventStringValue("str_device_type", LiteavSystemInfo.getModel());
         this.C.SetEventIntValue("u32_network_type", LiteavSystemInfo.getNetworkType());
         String deviceUuid = LiteavSystemInfo.getDeviceUuid();
@@ -225,7 +224,7 @@ public final class a {
         String deviceUuid2 = LiteavSystemInfo.getDeviceUuid();
         this.A = deviceUuid2;
         this.C.SetEventStringValue("token", deviceUuid2);
-        this.C.SetEventStringValue("str_user_id", BridgeUtil.UNDERLINE_STR.concat(String.valueOf(deviceUuid)));
+        this.C.SetEventStringValue("str_user_id", "_".concat(String.valueOf(deviceUuid)));
         this.C.SetEventStringValue("str_package_name", LiteavSystemInfo.getAppPackageName());
         this.C.SetEventStringValue("u32_app_id", this.B);
     }
@@ -254,7 +253,7 @@ public final class a {
         this.F = true;
         long currentTimeMillis = System.currentTimeMillis();
         this.d = currentTimeMillis;
-        this.f36508c = currentTimeMillis;
+        this.f22817c = currentTimeMillis;
         this.G = 0;
         this.k = 0L;
         this.j = 0;
@@ -279,9 +278,9 @@ public final class a {
         this.k = this.k + ((long) ((int) (System.currentTimeMillis() - this.d)));
         this.d = System.currentTimeMillis();
         if (this.s.equals("1")) {
-            boolean b = b.a(this.f36507a).b(this.B);
+            boolean b = b.a(this.f22816a).b(this.B);
             if (!b) {
-                b.a(this.f36507a).c(this.B);
+                b.a(this.f22816a).c(this.B);
             }
             if (this.F && b) {
                 h();

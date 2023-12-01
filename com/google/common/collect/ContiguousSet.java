@@ -69,7 +69,7 @@ public abstract class ContiguousSet<C extends Comparable> extends ImmutableSorte
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // com.google.common.collect.ImmutableSortedSet, java.util.NavigableSet
+    @Override // com.google.common.collect.ImmutableSortedSet, java.util.NavigableSet, java.util.SortedSet
     public /* bridge */ /* synthetic */ ImmutableSortedSet headSet(Object obj) {
         return headSet((ContiguousSet<C>) ((Comparable) obj));
     }
@@ -87,7 +87,7 @@ public abstract class ContiguousSet<C extends Comparable> extends ImmutableSorte
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // com.google.common.collect.ImmutableSortedSet, java.util.NavigableSet
+    @Override // com.google.common.collect.ImmutableSortedSet, java.util.NavigableSet, java.util.SortedSet
     public /* bridge */ /* synthetic */ SortedSet headSet(Object obj) {
         return headSet((ContiguousSet<C>) ((Comparable) obj));
     }
@@ -107,7 +107,7 @@ public abstract class ContiguousSet<C extends Comparable> extends ImmutableSorte
 
     public abstract Range<C> range(BoundType boundType, BoundType boundType2);
 
-    @Override // com.google.common.collect.ImmutableSortedSet, java.util.NavigableSet
+    @Override // com.google.common.collect.ImmutableSortedSet, java.util.NavigableSet, java.util.SortedSet
     public ContiguousSet<C> subSet(C c2, C c3) {
         Preconditions.checkNotNull(c2);
         Preconditions.checkNotNull(c3);
@@ -153,7 +153,7 @@ public abstract class ContiguousSet<C extends Comparable> extends ImmutableSorte
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // com.google.common.collect.ImmutableSortedSet, java.util.NavigableSet
+    @Override // com.google.common.collect.ImmutableSortedSet, java.util.NavigableSet, java.util.SortedSet
     public /* bridge */ /* synthetic */ ImmutableSortedSet tailSet(Object obj) {
         return tailSet((ContiguousSet<C>) ((Comparable) obj));
     }
@@ -171,7 +171,7 @@ public abstract class ContiguousSet<C extends Comparable> extends ImmutableSorte
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // com.google.common.collect.ImmutableSortedSet, java.util.NavigableSet
+    @Override // com.google.common.collect.ImmutableSortedSet, java.util.NavigableSet, java.util.SortedSet
     public /* bridge */ /* synthetic */ SortedSet tailSet(Object obj) {
         return tailSet((ContiguousSet<C>) ((Comparable) obj));
     }

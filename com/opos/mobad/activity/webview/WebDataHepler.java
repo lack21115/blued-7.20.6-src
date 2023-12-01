@@ -23,11 +23,11 @@ public class WebDataHepler implements Parcelable {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    private AdItemData f25630a;
+    private AdItemData f11942a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f25631c;
+    private String f11943c;
     private String d;
     private String e;
     private EventDescription f;
@@ -37,9 +37,9 @@ public class WebDataHepler implements Parcelable {
     private ComplianceInfo j;
 
     public WebDataHepler(Parcel parcel) {
-        this.f25630a = (AdItemData) parcel.readParcelable(AdItemData.class.getClassLoader());
+        this.f11942a = (AdItemData) parcel.readParcelable(AdItemData.class.getClassLoader());
         this.b = parcel.readString();
-        this.f25631c = parcel.readString();
+        this.f11943c = parcel.readString();
         this.d = parcel.readString();
         this.f = (EventDescription) parcel.readParcelable(EventDescription.class.getClassLoader());
         this.e = parcel.readString();
@@ -60,9 +60,9 @@ public class WebDataHepler implements Parcelable {
     }
 
     public WebDataHepler(AdItemData adItemData, String str, String str2, String str3, String str4, EventDescription eventDescription, int i, boolean z, boolean z2) {
-        this.f25630a = adItemData;
+        this.f11942a = adItemData;
         this.b = str;
-        this.f25631c = str2;
+        this.f11943c = str2;
         this.d = str3;
         this.e = str4;
         this.f = eventDescription;
@@ -72,7 +72,7 @@ public class WebDataHepler implements Parcelable {
     }
 
     public AdItemData a() {
-        return this.f25630a;
+        return this.f11942a;
     }
 
     public String b() {
@@ -80,7 +80,7 @@ public class WebDataHepler implements Parcelable {
     }
 
     public String c() {
-        return this.f25631c;
+        return this.f11943c;
     }
 
     public String d() {
@@ -117,7 +117,7 @@ public class WebDataHepler implements Parcelable {
     }
 
     public String toString() {
-        return "WebDataHepler{mAdItemData=" + this.f25630a + ", mPosId='" + this.b + "', mJsSign='" + this.f25631c + "', mWebUrl='" + this.d + "', mVideoUrl='" + this.e + "', mLandingPageId='" + this.f + "', mActionType=" + this.g + ", mShowTitleBar=" + this.h + ", mFitsSystemWindows=" + this.i + '}';
+        return "WebDataHepler{mAdItemData=" + this.f11942a + ", mPosId='" + this.b + "', mJsSign='" + this.f11943c + "', mWebUrl='" + this.d + "', mVideoUrl='" + this.e + "', mLandingPageId='" + this.f + "', mActionType=" + this.g + ", mShowTitleBar=" + this.h + ", mFitsSystemWindows=" + this.i + '}';
     }
 
     /* JADX WARN: Type inference failed for: r0v0, types: [java.lang.Throwable, java.lang.Runtime] */

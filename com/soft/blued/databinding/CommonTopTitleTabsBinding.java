@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class CommonTopTitleTabsBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f28691a;
+    private final LinearLayout f15001a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f28691a;
+        return this.f15001a;
     }
 }

@@ -1,5 +1,6 @@
 package com.anythink.expressad.foundation.g.d;
 
+import com.huawei.hms.framework.common.ContainerUtils;
 import com.j256.ormlite.stmt.query.SimpleComparison;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -83,7 +84,7 @@ public final class e {
     }
 
     private static String g(String str) {
-        return b(str) ? str : str.replaceAll("&lt;", SimpleComparison.LESS_THAN_OPERATION).replaceAll("&gt;", SimpleComparison.GREATER_THAN_OPERATION).replaceAll("&amp;", "&").replaceAll("&quot;", "\"");
+        return b(str) ? str : str.replaceAll("&lt;", SimpleComparison.LESS_THAN_OPERATION).replaceAll("&gt;", SimpleComparison.GREATER_THAN_OPERATION).replaceAll("&amp;", ContainerUtils.FIELD_DELIMITER).replaceAll("&quot;", "\"");
     }
 
     private static String h(String str) {

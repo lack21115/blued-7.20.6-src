@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public final class m extends s {
 
     /* renamed from: a  reason: collision with root package name */
-    private ArrayList<String> f41045a;
+    private ArrayList<String> f27354a;
 
     public m() {
         super(8);
@@ -15,17 +15,17 @@ public final class m extends s {
     @Override // com.vivo.push.b.s, com.vivo.push.o
     public final void c(com.vivo.push.a aVar) {
         super.c(aVar);
-        aVar.a("tags_list", this.f41045a);
+        aVar.a("tags_list", this.f27354a);
     }
 
     public final ArrayList<String> d() {
-        return this.f41045a;
+        return this.f27354a;
     }
 
     @Override // com.vivo.push.b.s, com.vivo.push.o
     public final void d(com.vivo.push.a aVar) {
         super.d(aVar);
-        this.f41045a = aVar.c("tags_list");
+        this.f27354a = aVar.c("tags_list");
     }
 
     @Override // com.vivo.push.b.s, com.vivo.push.o

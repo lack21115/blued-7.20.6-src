@@ -8,9 +8,7 @@ import android.text.style.ImageSpan;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/liveForMsg/ui/VerticalCenterImageSpan.class */
 public class VerticalCenterImageSpan extends ImageSpan {
-
-    /* renamed from: a  reason: collision with root package name */
-    private SpanDrawCallback f13564a;
+    private SpanDrawCallback a;
 
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/liveForMsg/ui/VerticalCenterImageSpan$SpanDrawCallback.class */
     public interface SpanDrawCallback {
@@ -23,7 +21,7 @@ public class VerticalCenterImageSpan extends ImageSpan {
 
     public VerticalCenterImageSpan(Drawable drawable, int i, SpanDrawCallback spanDrawCallback) {
         super(drawable, i);
-        this.f13564a = spanDrawCallback;
+        this.a = spanDrawCallback;
     }
 
     @Override // android.text.style.DynamicDrawableSpan, android.text.style.ReplacementSpan
@@ -35,9 +33,9 @@ public class VerticalCenterImageSpan extends ImageSpan {
             canvas.translate(f, i6);
             drawable.draw(canvas);
             canvas.restore();
-            if (this.f13564a != null) {
-                this.f13564a.drawFinish((int) f, i6);
-                this.f13564a = null;
+            if (this.a != null) {
+                this.a.drawFinish((int) f, i6);
+                this.a = null;
             }
         } catch (Exception e) {
             e.printStackTrace();

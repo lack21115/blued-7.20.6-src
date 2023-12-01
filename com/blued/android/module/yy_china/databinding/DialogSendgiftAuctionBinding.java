@@ -12,13 +12,9 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/DialogSendgiftAuctionBinding.class */
 public final class DialogSendgiftAuctionBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f16409a;
+    public final ImageView a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final TextView f16410c;
+    public final TextView c;
     public final TextView d;
     public final TextView e;
     public final TextView f;
@@ -27,9 +23,9 @@ public final class DialogSendgiftAuctionBinding implements ViewBinding {
 
     private DialogSendgiftAuctionBinding(LinearLayout linearLayout, ImageView imageView, ImageView imageView2, TextView textView, TextView textView2, TextView textView3, TextView textView4, ShapeTextView shapeTextView) {
         this.h = linearLayout;
-        this.f16409a = imageView;
+        this.a = imageView;
         this.b = imageView2;
-        this.f16410c = textView;
+        this.c = textView;
         this.d = textView2;
         this.e = textView3;
         this.f = textView4;
@@ -84,7 +80,6 @@ public final class DialogSendgiftAuctionBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
         return this.h;

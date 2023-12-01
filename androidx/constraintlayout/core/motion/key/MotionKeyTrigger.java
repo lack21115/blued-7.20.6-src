@@ -43,7 +43,7 @@ public class MotionKeyTrigger extends MotionKey {
     private int o = UNSET;
 
     /* renamed from: c  reason: collision with root package name */
-    float f2022c = 0.1f;
+    float f1974c = 0.1f;
     private boolean p = true;
     private boolean q = true;
     private boolean r = true;
@@ -66,7 +66,7 @@ public class MotionKeyTrigger extends MotionKey {
 
     @Override // androidx.constraintlayout.core.motion.key.MotionKey
     /* renamed from: clone */
-    public MotionKey mo1293clone() {
+    public MotionKey mo1156clone() {
         return new MotionKeyTrigger().copy((MotionKey) this);
     }
 
@@ -84,7 +84,7 @@ public class MotionKeyTrigger extends MotionKey {
         this.m = motionKeyTrigger.m;
         this.n = motionKeyTrigger.n;
         this.o = motionKeyTrigger.o;
-        this.f2022c = motionKeyTrigger.f2022c;
+        this.f1974c = motionKeyTrigger.f1974c;
         this.p = motionKeyTrigger.p;
         this.q = motionKeyTrigger.q;
         this.r = motionKeyTrigger.r;
@@ -219,7 +219,7 @@ public class MotionKeyTrigger extends MotionKey {
         if (i != 305) {
             return super.setValue(i, f);
         }
-        this.f2022c = f;
+        this.f1974c = f;
         return true;
     }
 

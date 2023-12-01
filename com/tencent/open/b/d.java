@@ -6,7 +6,7 @@ import com.tencent.open.utils.Util;
 public class d {
 
     /* renamed from: a  reason: collision with root package name */
-    protected static d f38247a;
+    protected static d f24556a;
 
     protected d() {
     }
@@ -15,10 +15,10 @@ public class d {
         d dVar;
         synchronized (d.class) {
             try {
-                if (f38247a == null) {
-                    f38247a = new d();
+                if (f24556a == null) {
+                    f24556a = new d();
                 }
-                dVar = f38247a;
+                dVar = f24556a;
             } catch (Throwable th) {
                 throw th;
             }

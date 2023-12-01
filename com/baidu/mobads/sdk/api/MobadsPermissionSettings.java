@@ -89,7 +89,7 @@ public class MobadsPermissionSettings {
     private static void postPermissionInfoRemote() {
         IXAdContainerFactory c2 = z.a().c();
         if (c2 != null) {
-            c2.onTaskDistribute(az.f9326a, getPermissionInfo());
+            c2.onTaskDistribute(az.f6486a, getPermissionInfo());
         }
     }
 

@@ -22,11 +22,11 @@ import org.json.JSONObject;
 public class i {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f40750a = 2049;
+    public static final int f27059a = 2049;
     public static final int b = 2050;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final int f40751c = 1000;
+    private static final int f27060c = 1000;
     private static Context d;
     private static String e;
     private static final String f = "umeng+";
@@ -47,11 +47,12 @@ public class i {
         INSTANTSESSIONBEGIN
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8829756-dex2jar.jar:com/umeng/analytics/pro/i$b.class */
-    static class b {
+    public static class b {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final i f40754a = new i();
+        private static final i f27063a = new i();
 
         private b() {
         }
@@ -80,7 +81,7 @@ public class i {
     }
 
     public static i a(Context context) {
-        i iVar = b.f40754a;
+        i iVar = b.f27063a;
         if (d == null && context != null) {
             d = context.getApplicationContext();
             iVar.k();
@@ -256,7 +257,7 @@ public class i {
             contentValues.put("__pp", str2);
             contentValues.put("__av", UMGlobalContext.getInstance(d).getAppVersion());
             contentValues.put("__vc", UMUtils.getAppVersionCode(d));
-            sQLiteDatabase.insert(e.c.f40735a, null, contentValues);
+            sQLiteDatabase.insert(e.c.f27044a, null, contentValues);
         } catch (Throwable th) {
         }
     }
@@ -404,7 +405,7 @@ public class i {
 
     /*  JADX ERROR: StackOverflowError in pass: MarkFinallyVisitor
         java.lang.StackOverflowError
-        	at jadx.core.dex.nodes.InsnNode.isSame(InsnNode.java:354)
+        	at jadx.core.dex.nodes.InsnNode.isSame(InsnNode.java:362)
         	at jadx.core.dex.instructions.InvokeNode.isSame(InvokeNode.java:97)
         	at jadx.core.dex.visitors.finaly.MarkFinallyVisitor.sameInsns(MarkFinallyVisitor.java:534)
         	at jadx.core.dex.visitors.finaly.MarkFinallyVisitor.compareBlocks(MarkFinallyVisitor.java:519)
@@ -458,7 +459,7 @@ public class i {
 
     /*  JADX ERROR: StackOverflowError in pass: MarkFinallyVisitor
         java.lang.StackOverflowError
-        	at jadx.core.dex.nodes.InsnNode.isSame(InsnNode.java:354)
+        	at jadx.core.dex.nodes.InsnNode.isSame(InsnNode.java:362)
         	at jadx.core.dex.instructions.InvokeNode.isSame(InvokeNode.java:97)
         	at jadx.core.dex.visitors.finaly.MarkFinallyVisitor.sameInsns(MarkFinallyVisitor.java:534)
         	at jadx.core.dex.visitors.finaly.MarkFinallyVisitor.compareBlocks(MarkFinallyVisitor.java:519)
@@ -477,7 +478,7 @@ public class i {
 
     /*  JADX ERROR: StackOverflowError in pass: MarkFinallyVisitor
         java.lang.StackOverflowError
-        	at jadx.core.dex.nodes.InsnNode.isSame(InsnNode.java:354)
+        	at jadx.core.dex.nodes.InsnNode.isSame(InsnNode.java:362)
         	at jadx.core.dex.instructions.InvokeNode.isSame(InvokeNode.java:97)
         	at jadx.core.dex.visitors.finaly.MarkFinallyVisitor.sameInsns(MarkFinallyVisitor.java:534)
         	at jadx.core.dex.visitors.finaly.MarkFinallyVisitor.compareBlocks(MarkFinallyVisitor.java:519)
@@ -759,7 +760,7 @@ public class i {
 
     /*  JADX ERROR: StackOverflowError in pass: MarkFinallyVisitor
         java.lang.StackOverflowError
-        	at jadx.core.dex.nodes.InsnNode.isSame(InsnNode.java:354)
+        	at jadx.core.dex.nodes.InsnNode.isSame(InsnNode.java:362)
         	at jadx.core.dex.instructions.InvokeNode.isSame(InvokeNode.java:97)
         	at jadx.core.dex.visitors.finaly.MarkFinallyVisitor.sameInsns(MarkFinallyVisitor.java:534)
         	at jadx.core.dex.visitors.finaly.MarkFinallyVisitor.compareBlocks(MarkFinallyVisitor.java:519)

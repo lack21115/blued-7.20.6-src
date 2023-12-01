@@ -30,7 +30,7 @@ public final class ThreadFactoryBuilder {
         return new ThreadFactory() { // from class: com.google.common.util.concurrent.ThreadFactoryBuilder.1
             @Override // java.util.concurrent.ThreadFactory
             public Thread newThread(Runnable runnable) {
-                Thread newThread = ThreadFactory.this.newThread(runnable);
+                Thread newThread = threadFactory2.newThread(runnable);
                 String str2 = str;
                 if (str2 != null) {
                     newThread.setName(ThreadFactoryBuilder.format(str2, Long.valueOf(atomicLong.getAndIncrement())));

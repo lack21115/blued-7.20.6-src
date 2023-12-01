@@ -7,7 +7,7 @@ import java.util.Map;
 public class BuglyStrategy {
 
     /* renamed from: c  reason: collision with root package name */
-    private String f35186c;
+    private String f21495c;
     private String d;
     private String e;
     private long f;
@@ -28,7 +28,7 @@ public class BuglyStrategy {
     private boolean t = false;
 
     /* renamed from: a  reason: collision with root package name */
-    protected int f35185a = 31;
+    protected int f21494a = 31;
     protected boolean b = false;
     private boolean v = false;
 
@@ -70,7 +70,7 @@ public class BuglyStrategy {
     public String getAppPackageName() {
         synchronized (this) {
             if (this.e == null) {
-                return aa.b().f35213c;
+                return aa.b().f21522c;
             }
             return this.e;
         }
@@ -86,17 +86,17 @@ public class BuglyStrategy {
 
     public String getAppVersion() {
         synchronized (this) {
-            if (this.f35186c == null) {
+            if (this.f21495c == null) {
                 return aa.b().o;
             }
-            return this.f35186c;
+            return this.f21495c;
         }
     }
 
     public int getCallBackType() {
         int i;
         synchronized (this) {
-            i = this.f35185a;
+            i = this.f21494a;
         }
         return i;
     }
@@ -248,7 +248,7 @@ public class BuglyStrategy {
 
     public BuglyStrategy setAppVersion(String str) {
         synchronized (this) {
-            this.f35186c = str;
+            this.f21495c = str;
         }
         return this;
     }
@@ -262,7 +262,7 @@ public class BuglyStrategy {
 
     public void setCallBackType(int i) {
         synchronized (this) {
-            this.f35185a = i;
+            this.f21494a = i;
         }
     }
 

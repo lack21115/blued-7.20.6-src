@@ -13,6 +13,7 @@ import android.text.TextUtils;
 import com.hihonor.push.framework.aidl.entity.RequestHeader;
 import com.hihonor.push.sdk.common.data.ApiException;
 import com.hihonor.push.sdk.internal.HonorPushErrorEnum;
+import com.xiaomi.mipush.sdk.Constants;
 import com.youzan.androidsdk.tool.AppSigning;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
@@ -57,12 +58,12 @@ public class a {
         requestHeader.setPushToken(cVar.b(a2));
         synchronized (cVar) {
             cVar.a(a2);
-            SharedPreferences sharedPreferences = c.f22282a.f22323a;
+            SharedPreferences sharedPreferences = c.f8674a.f8715a;
             String string = sharedPreferences != null ? sharedPreferences.getString("key_aaid", "") : "";
             str2 = string;
             if (TextUtils.isEmpty(string)) {
-                str2 = UUID.randomUUID().toString().replace("-", "");
-                c.f22282a.a("key_aaid", str2);
+                str2 = UUID.randomUUID().toString().replace(Constants.ACCEPT_TIME_SEPARATOR_SERVER, "");
+                c.f8674a.a("key_aaid", str2);
             }
         }
         requestHeader.setAAID(str2);
@@ -75,20 +76,20 @@ public class a {
     }
 
     public static <TResult> j0<TResult> a(Callable<TResult> callable) {
-        ExecutorService executorService = y.f22325c.b;
+        ExecutorService executorService = y.f8717c.b;
         x xVar = new x();
         try {
             executorService.execute(new i0(xVar, callable));
         } catch (Exception e) {
             xVar.a(e);
         }
-        return xVar.f22324a;
+        return xVar.f8716a;
     }
 
     public static <TResult> TResult a(j0<TResult> j0Var) throws ExecutionException, InterruptedException {
         boolean z;
         if (Looper.myLooper() != Looper.getMainLooper()) {
-            synchronized (j0Var.f22307a) {
+            synchronized (j0Var.f8699a) {
                 z = j0Var.b;
             }
             if (z) {
@@ -98,9 +99,9 @@ public class a {
                 throw new ExecutionException(j0Var.b());
             }
             l0 l0Var = new l0();
-            y yVar = y.f22325c;
-            j0Var.a(new h0(yVar.f22326a, l0Var)).a(new f0(yVar.f22326a, l0Var)).a(new b0(yVar.f22326a, l0Var));
-            l0Var.f22311a.await();
+            y yVar = y.f8717c;
+            j0Var.a(new h0(yVar.f8718a, l0Var)).a(new f0(yVar.f8718a, l0Var)).a(new b0(yVar.f8718a, l0Var));
+            l0Var.f8703a.await();
             if (j0Var.e()) {
                 return j0Var.c();
             }

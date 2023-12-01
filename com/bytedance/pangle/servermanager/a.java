@@ -19,15 +19,15 @@ public final class a implements Parcelable {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    final IBinder f21481a;
+    final IBinder f7875a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public a(IBinder iBinder) {
-        this.f21481a = iBinder;
+        this.f7875a = iBinder;
     }
 
     a(Parcel parcel) {
-        this.f21481a = parcel.readStrongBinder();
+        this.f7875a = parcel.readStrongBinder();
     }
 
     @Override // android.os.Parcelable
@@ -37,6 +37,6 @@ public final class a implements Parcelable {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
-        parcel.writeStrongBinder(this.f21481a);
+        parcel.writeStrongBinder(this.f7875a);
     }
 }

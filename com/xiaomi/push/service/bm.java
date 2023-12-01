@@ -16,17 +16,17 @@ public class bm implements ef {
     @Override // com.xiaomi.push.ef
     public void a(Context context, HashMap<String, String> hashMap) {
         Cif cif = new Cif();
-        cif.b(eb.a(context).m11711a());
+        cif.b(eb.a(context).m8661a());
         cif.d(eb.a(context).b());
-        cif.c(hq.AwakeAppResponse.f583a);
+        cif.c(hq.AwakeAppResponse.f536a);
         cif.a(bd.a());
-        cif.f725a = hashMap;
+        cif.f678a = hashMap;
         byte[] a2 = iq.a(ah.a(cif.c(), cif.b(), cif, hg.Notification));
         if (!(context instanceof XMPushService)) {
-            com.xiaomi.channel.commonutils.logger.b.m11394a("MoleInfo : context is not correct in pushLayer " + cif.m11963a());
+            com.xiaomi.channel.commonutils.logger.b.m8344a("MoleInfo : context is not correct in pushLayer " + cif.m8913a());
             return;
         }
-        com.xiaomi.channel.commonutils.logger.b.m11394a("MoleInfo : send data directly in pushLayer " + cif.m11963a());
+        com.xiaomi.channel.commonutils.logger.b.m8344a("MoleInfo : send data directly in pushLayer " + cif.m8913a());
         ((XMPushService) context).a(context.getPackageName(), a2, true);
     }
 
@@ -40,6 +40,6 @@ public class bm implements ef {
 
     @Override // com.xiaomi.push.ef
     public void c(Context context, HashMap<String, String> hashMap) {
-        com.xiaomi.channel.commonutils.logger.b.m11394a("MoleInfo：\u3000" + dw.b(hashMap));
+        com.xiaomi.channel.commonutils.logger.b.m8344a("MoleInfo：\u3000" + dw.b(hashMap));
     }
 }

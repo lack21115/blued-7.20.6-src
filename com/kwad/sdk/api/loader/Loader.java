@@ -167,7 +167,7 @@ public class Loader {
 
     public <T extends IComponentProxy> T newComponentProxy(Context context, Class<?> cls, Object obj) {
         if (!KsAdSDK.sHasInit.get()) {
-            KsAdSDK.init(context, SdkConfig.create(t.getString(context, "sdkconfig")));
+            KsAdSDK.init(context, SdkConfig.create(t.getString(context, com.getui.gtc.dyc.b.b.f8367a)));
         }
         return (T) this.ZV.newComponentProxy(cls, obj);
     }
@@ -179,7 +179,7 @@ public class Loader {
             if (context == null) {
                 application = KSLifecycleObserver.getInstance().getApplication();
             }
-            KsAdSDK.init(application, SdkConfig.create(t.getString(application, "sdkconfig")));
+            KsAdSDK.init(application, SdkConfig.create(t.getString(application, com.getui.gtc.dyc.b.b.f8367a)));
         }
         return (T) this.ZV.newInstance(cls);
     }

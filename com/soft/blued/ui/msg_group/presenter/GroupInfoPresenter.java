@@ -7,6 +7,7 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.provider.Contacts;
 import android.text.TextUtils;
+import android.view.View;
 import android.widget.ImageView;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
@@ -23,7 +24,6 @@ import com.blued.android.framework.http.parser.BluedEntityA;
 import com.blued.android.framework.ui.mvp.IFetchDataListener;
 import com.blued.android.framework.ui.mvp.MvpPresenter;
 import com.blued.android.framework.ui.xpop.XPopup;
-import com.blued.android.framework.ui.xpop.core.BasePopupView;
 import com.blued.android.framework.ui.xpop.enums.PopupAnimation;
 import com.blued.android.framework.utils.AppUtils;
 import com.blued.android.module.common.db.model.SessionSettingModel;
@@ -87,7 +87,7 @@ public class GroupInfoPresenter extends MvpPresenter implements FetchDataListene
     private void t() {
         SessionModel sessionModel = this.k;
         if (sessionModel != null) {
-            a("switch_top", (String) Integer.valueOf(sessionModel.lieTop));
+            a("switch_top", Integer.valueOf(sessionModel.lieTop));
         }
     }
 
@@ -97,7 +97,7 @@ public class GroupInfoPresenter extends MvpPresenter implements FetchDataListene
         if (this.j == null || (sessionModel = this.k) == null || sessionModel.sessionSettingModel == null) {
             return;
         }
-        SessionSettingModel sessionSettingModel = (SessionSettingModel) this.k.sessionSettingModel;
+        SessionSettingModel sessionSettingModel = this.k.sessionSettingModel;
         sessionSettingModel.is_super = this.j.is_super;
         sessionSettingModel.group_status = this.j.group_status;
         sessionSettingModel.setGroupCreateId(this.j.group_uid);
@@ -113,10 +113,10 @@ public class GroupInfoPresenter extends MvpPresenter implements FetchDataListene
         EventTrackGroup.a(SocialNetWorkProtos.Event.GROUP_INVITE_TASK_DOING_POP_SHOW);
         SocialNetWorkProtos.Event event = SocialNetWorkProtos.Event.GROUP_JOIN_LIMIT_POP_SHOW;
         EventTrackGroup.a(event, this.j.group_id + "", SocialNetWorkProtos.SourceType.UNKNOWN_SOURCE_TYPE);
-        XPopup.Builder d = new XPopup.Builder(h()).a(PopupAnimation.ScaleAlphaFromCenter).d((Boolean) true);
+        XPopup.Builder d = new XPopup.Builder(h()).a(PopupAnimation.a).d(true);
         Activity h = h();
         int i = this.n;
-        d.a((BasePopupView) new PopGroupHelpCreate(h, i, this.j.group_id + "", this.m, g())).h();
+        d.a(new PopGroupHelpCreate(h, i, this.j.group_id + "", this.m, g())).h();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -133,12 +133,10 @@ public class GroupInfoPresenter extends MvpPresenter implements FetchDataListene
     public void x() {
         MsgGroupHttpUtils.b(g(), this.h, new BluedUIHttpResponse<BluedEntityA>(g()) { // from class: com.soft.blued.ui.msg_group.presenter.GroupInfoPresenter.8
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA bluedEntityA) {
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish(boolean z) {
                 super.onUIFinish(z);
                 if (z) {
@@ -163,12 +161,10 @@ public class GroupInfoPresenter extends MvpPresenter implements FetchDataListene
         IRequestHost g = g();
         MsgGroupHttpUtils.a(g, this.j.group_id + "", hashMap, new BluedUIHttpResponse<BluedEntityA>(g()) { // from class: com.soft.blued.ui.msg_group.presenter.GroupInfoPresenter.9
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA bluedEntityA) {
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish(boolean z) {
                 super.onUIFinish(z);
                 GroupInfoPresenter.this.b(d.K, z);
@@ -188,7 +184,6 @@ public class GroupInfoPresenter extends MvpPresenter implements FetchDataListene
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 super.onUIStart();
                 GroupInfoPresenter.this.d_(d.K);
@@ -228,7 +223,6 @@ public class GroupInfoPresenter extends MvpPresenter implements FetchDataListene
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void a(FragmentActivity fragmentActivity, Bundle bundle, Bundle bundle2) {
         super.a(fragmentActivity, bundle, bundle2);
         if (bundle != null) {
@@ -239,13 +233,13 @@ public class GroupInfoPresenter extends MvpPresenter implements FetchDataListene
             if (!TextUtils.isEmpty(this.h)) {
                 EventTrackGroup.a(SocialNetWorkProtos.Event.GROUP_PROFILE_SHOW, this.h, this.l);
             }
-            GroupInfoModel groupInfoModel = (GroupInfoModel) bundle.getSerializable(d.K);
-            this.j = groupInfoModel;
-            if (groupInfoModel != null) {
-                if (groupInfoModel.group_id != 0) {
+            GroupInfoModel serializable = bundle.getSerializable(d.K);
+            this.j = serializable;
+            if (serializable != null) {
+                if (serializable.group_id != 0) {
                     this.h = this.j.group_id + "";
                 }
-                a(d.K, (String) this.j);
+                a(d.K, this.j);
             }
             SessionModel snapSessionModel = ChatManager.getInstance().getSnapSessionModel((short) 3, Long.valueOf(this.h).longValue());
             this.k = snapSessionModel;
@@ -257,33 +251,29 @@ public class GroupInfoPresenter extends MvpPresenter implements FetchDataListene
         }
     }
 
-    @Override // com.blued.android.chat.listener.FetchDataListener
     /* renamed from: a */
     public void onFetchData(SessionModel sessionModel) {
         this.k = sessionModel;
         t();
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void a(IFetchDataListener iFetchDataListener) {
         MsgGroupHttpUtils.a(g(), this.h, new BluedUIHttpResponse<BluedEntityA<GroupInfoModel>>(g()) { // from class: com.soft.blued.ui.msg_group.presenter.GroupInfoPresenter.1
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<GroupInfoModel> bluedEntityA) {
                 if (bluedEntityA.hasData()) {
-                    GroupInfoPresenter.this.j = bluedEntityA.data.get(0);
+                    GroupInfoPresenter.this.j = (GroupInfoModel) bluedEntityA.data.get(0);
                     GroupInfoPresenter.this.z();
                     GroupInfoPresenter.this.u();
                     GroupInfoPresenter groupInfoPresenter = GroupInfoPresenter.this;
-                    groupInfoPresenter.a(d.K, (String) groupInfoPresenter.j);
+                    groupInfoPresenter.a(d.K, groupInfoPresenter.j);
                     if (GroupInfoPresenter.this.i) {
                         GroupInfoPresenter.this.r();
                     }
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str) {
                 if (i == 40319010 || i == 40319059) {
                     GroupInfoPresenter.this.i();
@@ -305,12 +295,10 @@ public class GroupInfoPresenter extends MvpPresenter implements FetchDataListene
         IRequestHost g = g();
         MsgGroupHttpUtils.a(g, this.j.group_id + "", hashMap, new BluedUIHttpResponse<BluedEntityA>(g()) { // from class: com.soft.blued.ui.msg_group.presenter.GroupInfoPresenter.10
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA bluedEntityA) {
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish(boolean z) {
                 super.onUIFinish(z);
                 GroupInfoPresenter.this.b(d.K, z);
@@ -323,7 +311,7 @@ public class GroupInfoPresenter extends MvpPresenter implements FetchDataListene
                             GroupUtil.a(GroupInfoPresenter.this.j, (String) entry.getKey(), Integer.valueOf((String) entry.getValue()));
                         }
                         GroupInfoPresenter.this.z();
-                        GroupInfoPresenter.this.a("switch", (String) GroupInfoPresenter.this.j);
+                        GroupInfoPresenter.this.a("switch", GroupInfoPresenter.this.j);
                         GroupInfoPresenter.this.r();
                     } catch (Exception e) {
                         e.printStackTrace();
@@ -331,7 +319,6 @@ public class GroupInfoPresenter extends MvpPresenter implements FetchDataListene
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 super.onUIStart();
                 GroupInfoPresenter.this.d_(d.K);
@@ -344,7 +331,7 @@ public class GroupInfoPresenter extends MvpPresenter implements FetchDataListene
     }
 
     public void b(final ImageView imageView) {
-        if (!GroupUtil.f32829c) {
+        if (!GroupUtil.f19138c) {
             ToastUtils.a(imageView.getContext().getString(R.string.group_disable_share));
         } else if (this.j != null) {
             final BluedGroupLists bluedGroupLists = new BluedGroupLists();
@@ -359,7 +346,6 @@ public class GroupInfoPresenter extends MvpPresenter implements FetchDataListene
             final String format = String.format(h().getString(R.string.group_share_title), this.j.group_title);
             final String string = h().getString(R.string.group_share_content);
             ImageFileLoader.a(g()).a(bluedGroupLists.groups_avatar).a(new ImageFileLoader.OnLoadFileListener() { // from class: com.soft.blued.ui.msg_group.presenter.GroupInfoPresenter.11
-                @Override // com.blued.android.core.image.ImageFileLoader.OnLoadFileListener
                 public void onUIFinish(File file, Exception exc) {
                     Bitmap decodeFile = (file == null || !file.exists()) ? null : BitmapFactory.decodeFile(file.getPath());
                     BluedShareUtils b2 = BluedShareUtils.b();
@@ -375,7 +361,6 @@ public class GroupInfoPresenter extends MvpPresenter implements FetchDataListene
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void b(IFetchDataListener iFetchDataListener) {
     }
 
@@ -384,7 +369,6 @@ public class GroupInfoPresenter extends MvpPresenter implements FetchDataListene
             return;
         }
         MsgGroupHttpUtils.b(g(), this.h, str, this.j.allow_join, new BluedUIHttpResponse<BluedEntity<GroupApplyResp, GroupApplyExtra>>(g()) { // from class: com.soft.blued.ui.msg_group.presenter.GroupInfoPresenter.2
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str2) {
                 if (i == 40319016) {
                     GroupInfoPresenter.this.e();
@@ -416,7 +400,6 @@ public class GroupInfoPresenter extends MvpPresenter implements FetchDataListene
                 return super.onUIFailure(i, str2);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish(boolean z) {
                 super.onUIFinish(z);
                 GroupInfoPresenter.this.b("addGroup", z);
@@ -448,20 +431,18 @@ public class GroupInfoPresenter extends MvpPresenter implements FetchDataListene
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 super.onUIStart();
                 GroupInfoPresenter.this.d_("addGroup");
                 GroupInfoPresenter.this.m = null;
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity<GroupApplyResp, GroupApplyExtra> bluedEntity) {
                 if (bluedEntity.hasData()) {
-                    GroupInfoPresenter.this.m = bluedEntity.data.get(0);
+                    GroupInfoPresenter.this.m = (GroupApplyResp) bluedEntity.data.get(0);
                 }
                 if (bluedEntity.extra != null) {
-                    GroupInfoPresenter.this.n = bluedEntity.extra.getVip();
+                    GroupInfoPresenter.this.n = ((GroupApplyExtra) bluedEntity.extra).getVip();
                 }
             }
         });
@@ -488,7 +469,7 @@ public class GroupInfoPresenter extends MvpPresenter implements FetchDataListene
 
     public void p() {
         EventTrackGroup.a(SocialNetWorkProtos.Event.GROUP_INVITE_TASK_TRIGGER_POP_SHOW);
-        BluedAlertDialog a2 = CommonAlertDialog.a(h(), 0, AppUtils.a((int) R.string.group_add_limit), AppUtils.a((int) R.string.group_add_limit_help), null, AppUtils.a(this.n == 2 ? 2131888277 : 2131888276), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.msg_group.presenter.GroupInfoPresenter.3
+        BluedAlertDialog a2 = CommonAlertDialog.a(h(), 0, AppUtils.a((int) R.string.group_add_limit), AppUtils.a((int) R.string.group_add_limit_help), (View) null, AppUtils.a(this.n == 2 ? 2131888277 : 2131888276), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.msg_group.presenter.GroupInfoPresenter.3
             @Override // android.content.DialogInterface.OnClickListener
             public void onClick(DialogInterface dialogInterface, int i) {
                 Tracker.onClick(dialogInterface, i);
@@ -502,9 +483,9 @@ public class GroupInfoPresenter extends MvpPresenter implements FetchDataListene
                 if (GroupInfoPresenter.this.m == null) {
                     return;
                 }
-                PopGroupHelpCreate.f32798c.a(GroupInfoPresenter.this.h(), GroupInfoPresenter.this.m.getCode(), GroupInfoPresenter.this.h);
+                PopGroupHelpCreate.f19107c.a(GroupInfoPresenter.this.h(), GroupInfoPresenter.this.m.getCode(), GroupInfoPresenter.this.h);
             }
-        }, null, true, 1, 0, true, false);
+        }, (DialogInterface.OnDismissListener) null, true, 1, 0, true, false);
         if (this.n == 1) {
             a2.d().setVisibility(8);
             return;
@@ -565,7 +546,7 @@ public class GroupInfoPresenter extends MvpPresenter implements FetchDataListene
                     GroupInfoPresenter.this.x();
                 }
             }
-        }, h().getResources().getString(2131887258), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.msg_group.presenter.GroupInfoPresenter.7
+        }, h().getResources().getString(R.string.common_cancel), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.msg_group.presenter.GroupInfoPresenter.7
             @Override // android.content.DialogInterface.OnClickListener
             public void onClick(DialogInterface dialogInterface, int i4) {
                 Tracker.onClick(dialogInterface, i4);

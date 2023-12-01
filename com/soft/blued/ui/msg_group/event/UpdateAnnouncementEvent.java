@@ -8,17 +8,17 @@ import kotlin.jvm.internal.Intrinsics;
 public final class UpdateAnnouncementEvent {
 
     /* renamed from: a  reason: collision with root package name */
-    private final long f32666a;
+    private final long f18975a;
     private final String b;
 
-    public UpdateAnnouncementEvent(long j, String announcement) {
-        Intrinsics.e(announcement, "announcement");
-        this.f32666a = j;
-        this.b = announcement;
+    public UpdateAnnouncementEvent(long j, String str) {
+        Intrinsics.e(str, "announcement");
+        this.f18975a = j;
+        this.b = str;
     }
 
     public final long a() {
-        return this.f32666a;
+        return this.f18975a;
     }
 
     public final String b() {

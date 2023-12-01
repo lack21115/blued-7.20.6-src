@@ -18,10 +18,10 @@ public interface hj extends IInterface {
 
         /* renamed from: com.ss.android.downloadlib.mb.ox.hj$mb$mb  reason: collision with other inner class name */
         /* loaded from: source-8457232-dex2jar.jar:com/ss/android/downloadlib/mb/ox/hj$mb$mb.class */
-        static class C0875mb implements hj {
+        static class C0705mb implements hj {
             private IBinder mb;
 
-            C0875mb(IBinder iBinder) {
+            C0705mb(IBinder iBinder) {
                 if (TextUtils.isEmpty(mb.mb)) {
                     JSONObject lz = x.lz();
                     String unused = mb.mb = com.ss.android.socialbase.appdownloader.u.b.mb(lz.optString("t"), lz.optString("s"));
@@ -60,7 +60,7 @@ public interface hj extends IInterface {
                 return null;
             }
             IInterface queryLocalInterface = iBinder.queryLocalInterface(mb);
-            return (queryLocalInterface == null || !(queryLocalInterface instanceof hj)) ? new C0875mb(iBinder) : (hj) queryLocalInterface;
+            return (queryLocalInterface == null || !(queryLocalInterface instanceof hj)) ? new C0705mb(iBinder) : (hj) queryLocalInterface;
         }
 
         @Override // android.os.Binder

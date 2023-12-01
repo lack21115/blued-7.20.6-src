@@ -13,11 +13,11 @@ import com.opos.mobad.f.a.i;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f26058a = b.class.getSimpleName();
+    private static final String f12370a = b.class.getSimpleName();
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private LinearLayout f26059c;
+    private LinearLayout f12371c;
     private i d;
     private int e;
     private int f;
@@ -48,10 +48,10 @@ public class b {
     public class a implements i.a {
 
         /* renamed from: a  reason: collision with root package name */
-        i.a f26062a;
+        i.a f12374a;
 
         public a(i.a aVar) {
-            this.f26062a = aVar;
+            this.f12374a = aVar;
         }
 
         @Override // com.opos.mobad.f.a.i.a
@@ -59,7 +59,7 @@ public class b {
             b.this.f = i2;
             b.this.e = i;
             b.this.g = true;
-            i.a aVar = this.f26062a;
+            i.a aVar = this.f12374a;
             if (aVar != null) {
                 aVar.a(i, i2);
             }
@@ -68,7 +68,7 @@ public class b {
 
     public b(Context context, i.a aVar) {
         this.b = context.getApplicationContext();
-        this.f26059c = new LinearLayout(this.b);
+        this.f12371c = new LinearLayout(this.b);
         int b = com.opos.cmn.an.h.f.a.b(this.b);
         int a2 = com.opos.cmn.an.h.f.a.a(this.b, 60.0f);
         this.e = b;
@@ -79,8 +79,8 @@ public class b {
         this.d.a(aVar2);
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(-1, -1);
         layoutParams.gravity = 81;
-        this.f26059c.addView(this.d, layoutParams);
-        this.f26059c.setGravity(81);
+        this.f12371c.addView(this.d, layoutParams);
+        this.f12371c.setGravity(81);
         e();
         FrameLayout frameLayout = new FrameLayout(this.b);
         FrameLayout frameLayout2 = new FrameLayout(this.b);
@@ -139,7 +139,7 @@ public class b {
     }
 
     public View a() {
-        return this.f26059c;
+        return this.f12371c;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:22:0x00be  */
@@ -151,7 +151,7 @@ public class b {
     public void a(android.view.View r6) {
         /*
             r5 = this;
-            java.lang.String r0 = com.opos.mobad.f.a.b.f26058a
+            java.lang.String r0 = com.opos.mobad.f.a.b.f12370a
             r10 = r0
             java.lang.StringBuilder r0 = new java.lang.StringBuilder
             r1 = r0
@@ -256,16 +256,16 @@ public class b {
     public void b() {
         this.h = true;
         this.d.a(null);
-        this.f26059c.removeAllViews();
+        this.f12371c.removeAllViews();
     }
 
     public boolean c() {
-        LinearLayout linearLayout = this.f26059c;
-        if (linearLayout != null && linearLayout.isShown() && com.opos.cmn.i.j.a(this.b) && this.f26059c.hasWindowFocus()) {
-            com.opos.cmn.an.f.a.b(f26058a, "isBannerShown");
+        LinearLayout linearLayout = this.f12371c;
+        if (linearLayout != null && linearLayout.isShown() && com.opos.cmn.i.j.a(this.b) && this.f12371c.hasWindowFocus()) {
+            com.opos.cmn.an.f.a.b(f12370a, "isBannerShown");
             return true;
         }
-        com.opos.cmn.an.f.a.b(f26058a, "isBanner not Shown");
+        com.opos.cmn.an.f.a.b(f12370a, "isBanner not Shown");
         return false;
     }
 }

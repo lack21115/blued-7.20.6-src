@@ -7,17 +7,17 @@ import android.os.Bundle;
 public class MessageBean {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f23174a;
+    private String f9566a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Object f23175c;
+    private Object f9567c;
     private Context d;
     public final Bundle extra = new Bundle();
 
     public MessageBean(Context context, String str, Object obj) {
         this.b = str;
-        this.f23175c = obj;
+        this.f9567c = obj;
         this.d = context;
     }
 
@@ -26,11 +26,11 @@ public class MessageBean {
     }
 
     public Object getMessage() {
-        return this.f23175c;
+        return this.f9567c;
     }
 
     public String getMessageSource() {
-        return this.f23174a;
+        return this.f9566a;
     }
 
     public String getMessageType() {
@@ -38,11 +38,11 @@ public class MessageBean {
     }
 
     public Object getObjectMessage() {
-        return this.f23175c;
+        return this.f9567c;
     }
 
     public String getStringMessage() {
-        Object obj = this.f23175c;
+        Object obj = this.f9567c;
         if (obj instanceof String) {
             return (String) obj;
         }
@@ -50,6 +50,6 @@ public class MessageBean {
     }
 
     public void setMessageSource(String str) {
-        this.f23174a = str;
+        this.f9566a = str;
     }
 }

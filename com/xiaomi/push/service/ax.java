@@ -18,29 +18,29 @@ import java.util.WeakHashMap;
 public class ax {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Context f41619a;
+    private static Context f27928a;
 
     /* renamed from: a  reason: collision with other field name */
-    private static Object f989a;
+    private static Object f942a;
 
     /* renamed from: a  reason: collision with other field name */
-    private static WeakHashMap<Integer, ax> f990a = new WeakHashMap<>();
+    private static WeakHashMap<Integer, ax> f943a = new WeakHashMap<>();
 
     /* renamed from: a  reason: collision with other field name */
-    private static boolean f991a;
+    private static boolean f944a;
 
     /* renamed from: a  reason: collision with other field name */
-    private String f992a;
+    private String f945a;
     private String b;
 
     private ax(String str) {
-        this.f992a = str;
+        this.f945a = str;
     }
 
     private static int a(String str) {
         if (Build.VERSION.SDK_INT >= 24) {
             try {
-                return f41619a.getPackageManager().getPackageUid(str, 0);
+                return f27928a.getPackageManager().getPackageUid(str, 0);
             } catch (Exception e) {
                 return -1;
             }
@@ -49,17 +49,17 @@ public class ax {
     }
 
     private static NotificationManager a() {
-        return (NotificationManager) f41619a.getSystemService("notification");
+        return (NotificationManager) f27928a.getSystemService("notification");
     }
 
     public static ax a(Context context, String str) {
         a(context);
         int hashCode = str.hashCode();
-        ax axVar = f990a.get(Integer.valueOf(hashCode));
+        ax axVar = f943a.get(Integer.valueOf(hashCode));
         ax axVar2 = axVar;
         if (axVar == null) {
             axVar2 = new ax(str);
-            f990a.put(Integer.valueOf(hashCode), axVar2);
+            f943a.put(Integer.valueOf(hashCode), axVar2);
         }
         return axVar2;
     }
@@ -96,49 +96,49 @@ public class ax {
     }
 
     private static void a(Context context) {
-        if (f41619a == null) {
-            f41619a = context.getApplicationContext();
+        if (f27928a == null) {
+            f27928a = context.getApplicationContext();
             NotificationManager a2 = a();
             Boolean bool = (Boolean) com.xiaomi.push.bi.a((Object) a2, "isSystemConditionProviderEnabled", "xmsf_fake_condition_provider_path");
-            m12131a("fwk is support.init:".concat(String.valueOf(bool)));
+            m9081a("fwk is support.init:".concat(String.valueOf(bool)));
             boolean booleanValue = bool != null ? bool.booleanValue() : false;
-            f991a = booleanValue;
+            f944a = booleanValue;
             if (booleanValue) {
-                f989a = com.xiaomi.push.bi.a((Object) a2, "getService", new Object[0]);
+                f942a = com.xiaomi.push.bi.a((Object) a2, "getService", new Object[0]);
             }
         }
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    static void m12131a(String str) {
-        com.xiaomi.channel.commonutils.logger.b.m11394a("NMHelper:".concat(String.valueOf(str)));
+    static void m9081a(String str) {
+        com.xiaomi.channel.commonutils.logger.b.m8344a("NMHelper:".concat(String.valueOf(str)));
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    private static boolean m12132a() {
-        if (com.xiaomi.push.j.m12047a() && ba.a(f41619a).a(hl.NotificationBelongToAppSwitch.a(), true)) {
-            return f991a;
+    private static boolean m9082a() {
+        if (com.xiaomi.push.j.m8997a() && ba.a(f27928a).a(hl.NotificationBelongToAppSwitch.a(), true)) {
+            return f944a;
         }
         return false;
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public static boolean m12133a(Context context) {
+    public static boolean m9083a(Context context) {
         a(context);
-        return m12132a();
+        return m9082a();
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    private StatusBarNotification[] m12134a() {
-        if (com.xiaomi.push.j.m12048a(m12136a())) {
+    private StatusBarNotification[] m9084a() {
+        if (com.xiaomi.push.j.m8998a(m9086a())) {
             try {
-                Object a2 = com.xiaomi.push.bi.a(f989a, "getActiveNotifications", m12136a().getPackageName());
+                Object a2 = com.xiaomi.push.bi.a(f942a, "getActiveNotifications", m9086a().getPackageName());
                 if (a2 instanceof StatusBarNotification[]) {
                     return (StatusBarNotification[]) a2;
                 }
                 return null;
             } catch (Throwable th) {
-                m12131a("getAllNotifications error ".concat(String.valueOf(th)));
+                m9081a("getAllNotifications error ".concat(String.valueOf(th)));
                 return null;
             }
         }
@@ -146,17 +146,17 @@ public class ax {
     }
 
     private String b(String str) {
-        return a(m12132a() ? "mipush|%s|%s" : "mipush_%s_%s", this.f992a, str);
+        return a(m9082a() ? "mipush|%s|%s" : "mipush_%s_%s", this.f945a, str);
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public NotificationChannel m12135a(String str) {
+    public NotificationChannel m9085a(String str) {
         NotificationChannel next;
         try {
-            if (m12132a()) {
-                List<NotificationChannel> m12139a = m12139a();
-                if (m12139a != null) {
-                    Iterator<NotificationChannel> it = m12139a.iterator();
+            if (m9082a()) {
+                List<NotificationChannel> m9089a = m9089a();
+                if (m9089a != null) {
+                    Iterator<NotificationChannel> it = m9089a.iterator();
                     do {
                         if (!it.hasNext()) {
                             return null;
@@ -169,28 +169,28 @@ public class ax {
             }
             return a().getNotificationChannel(str);
         } catch (Exception e) {
-            m12131a("getNotificationChannel error".concat(String.valueOf(e)));
+            m9081a("getNotificationChannel error".concat(String.valueOf(e)));
             return null;
         }
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public Context m12136a() {
-        return f41619a;
+    public Context m9086a() {
+        return f27928a;
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public String m12137a() {
-        return this.f992a;
+    public String m9087a() {
+        return this.f945a;
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public String m12138a(String str) {
+    public String m9088a(String str) {
         if (TextUtils.isEmpty(str)) {
             return b();
         }
         String str2 = str;
-        if (com.xiaomi.push.j.m12048a(m12136a())) {
+        if (com.xiaomi.push.j.m8998a(m9086a())) {
             str2 = b(str);
         }
         return str2;
@@ -199,17 +199,17 @@ public class ax {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: Multi-variable type inference failed */
     /* renamed from: a  reason: collision with other method in class */
-    public List<NotificationChannel> m12139a() {
+    public List<NotificationChannel> m9089a() {
         List<NotificationChannel> list;
         String str;
-        String str2 = this.f992a;
+        String str2 = this.f945a;
         List<NotificationChannel> list2 = null;
         List<NotificationChannel> list3 = null;
         try {
-            if (m12132a()) {
+            if (m9082a()) {
                 int a2 = a(str2);
                 if (a2 != -1) {
-                    list2 = (List) a(com.xiaomi.push.bi.a(f989a, "getNotificationChannelsForPackage", str2, Integer.valueOf(a2), Boolean.FALSE));
+                    list2 = (List) a(com.xiaomi.push.bi.a(f942a, "getNotificationChannelsForPackage", str2, Integer.valueOf(a2), Boolean.FALSE));
                     str = "mipush|%s|%s";
                 } else {
                     str = null;
@@ -219,7 +219,7 @@ public class ax {
                 str = "mipush_%s_%s";
             }
             list = list2;
-            if (com.xiaomi.push.j.m12047a()) {
+            if (com.xiaomi.push.j.m8997a()) {
                 list = list2;
                 if (list2 != null) {
                     ArrayList arrayList = new ArrayList();
@@ -243,38 +243,38 @@ public class ax {
                 }
             }
         } catch (Exception e) {
-            m12131a("getNotificationChannels error ".concat(String.valueOf(e)));
+            m9081a("getNotificationChannels error ".concat(String.valueOf(e)));
             list = list3;
         }
         return list;
     }
 
     public void a(int i) {
-        String str = this.f992a;
+        String str = this.f945a;
         try {
-            if (!m12132a()) {
+            if (!m9082a()) {
                 a().cancel(i);
                 return;
             }
             int a2 = com.xiaomi.push.i.a();
-            String packageName = m12136a().getPackageName();
+            String packageName = m9086a().getPackageName();
             if (Build.VERSION.SDK_INT >= 30) {
-                com.xiaomi.push.bi.b(f989a, "cancelNotificationWithTag", str, packageName, null, Integer.valueOf(i), Integer.valueOf(a2));
+                com.xiaomi.push.bi.b(f942a, "cancelNotificationWithTag", str, packageName, null, Integer.valueOf(i), Integer.valueOf(a2));
             } else {
-                com.xiaomi.push.bi.b(f989a, "cancelNotificationWithTag", str, null, Integer.valueOf(i), Integer.valueOf(a2));
+                com.xiaomi.push.bi.b(f942a, "cancelNotificationWithTag", str, null, Integer.valueOf(i), Integer.valueOf(a2));
             }
-            m12131a("cancel succ:".concat(String.valueOf(i)));
+            m9081a("cancel succ:".concat(String.valueOf(i)));
         } catch (Exception e) {
-            m12131a("cancel error".concat(String.valueOf(e)));
+            m9081a("cancel error".concat(String.valueOf(e)));
         }
     }
 
     public void a(int i, Notification notification) {
-        String str = this.f992a;
+        String str = this.f945a;
         NotificationManager a2 = a();
         try {
             int i2 = Build.VERSION.SDK_INT;
-            if (!m12132a()) {
+            if (!m9082a()) {
                 a2.notify(i, notification);
                 return;
             }
@@ -292,24 +292,24 @@ public class ax {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a(NotificationChannel notificationChannel) {
-        String str = this.f992a;
+        String str = this.f945a;
         try {
-            if (!m12132a()) {
+            if (!m9082a()) {
                 a().createNotificationChannel(notificationChannel);
                 return;
             }
             int a2 = a(str);
             if (a2 != -1) {
-                com.xiaomi.push.bi.b(f989a, "createNotificationChannelsForPackage", str, Integer.valueOf(a2), a(Arrays.asList(notificationChannel)));
+                com.xiaomi.push.bi.b(f942a, "createNotificationChannelsForPackage", str, Integer.valueOf(a2), a(Arrays.asList(notificationChannel)));
             }
         } catch (Exception e) {
-            m12131a("createNotificationChannel error".concat(String.valueOf(e)));
+            m9081a("createNotificationChannel error".concat(String.valueOf(e)));
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a(NotificationChannel notificationChannel, boolean z) {
-        String str = this.f992a;
+        String str = this.f945a;
         try {
             if (!z) {
                 a(notificationChannel);
@@ -317,15 +317,15 @@ public class ax {
             }
             int a2 = a(str);
             if (a2 != -1) {
-                com.xiaomi.push.bi.b(f989a, "updateNotificationChannelForPackage", str, Integer.valueOf(a2), notificationChannel);
+                com.xiaomi.push.bi.b(f942a, "updateNotificationChannelForPackage", str, Integer.valueOf(a2), notificationChannel);
             }
         } catch (Exception e) {
-            m12131a("updateNotificationChannel error ".concat(String.valueOf(e)));
+            m9081a("updateNotificationChannel error ".concat(String.valueOf(e)));
         }
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public boolean m12140a(String str) {
+    public boolean m9090a(String str) {
         if (TextUtils.isEmpty(str)) {
             return false;
         }
@@ -341,27 +341,27 @@ public class ax {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public String b(String str, String str2) {
-        if (!m12132a()) {
+        if (!m9082a()) {
             str = str2;
         }
         return str;
     }
 
     /* renamed from: b  reason: collision with other method in class */
-    public List<StatusBarNotification> m12141b() {
+    public List<StatusBarNotification> m9091b() {
         ArrayList arrayList;
         ArrayList arrayList2;
-        String str = this.f992a;
+        String str = this.f945a;
         NotificationManager a2 = a();
         try {
-            if (m12132a()) {
+            if (m9082a()) {
                 int a3 = com.xiaomi.push.i.a();
                 arrayList2 = null;
                 if (a3 != -1) {
-                    return (List) a(com.xiaomi.push.bi.a(f989a, "getAppActiveNotifications", str, Integer.valueOf(a3)));
+                    return (List) a(com.xiaomi.push.bi.a(f942a, "getAppActiveNotifications", str, Integer.valueOf(a3)));
                 }
             } else {
-                StatusBarNotification[] activeNotifications = Build.VERSION.SDK_INT >= 23 ? a2.getActiveNotifications() : m12134a();
+                StatusBarNotification[] activeNotifications = Build.VERSION.SDK_INT >= 23 ? a2.getActiveNotifications() : m9084a();
                 arrayList2 = null;
                 if (activeNotifications != null) {
                     arrayList2 = null;
@@ -377,7 +377,7 @@ public class ax {
                         } catch (Throwable th) {
                             arrayList = arrayList3;
                             th = th;
-                            m12131a("getActiveNotifications error ".concat(String.valueOf(th)));
+                            m9081a("getActiveNotifications error ".concat(String.valueOf(th)));
                             arrayList2 = arrayList;
                             return arrayList2;
                         }
@@ -392,6 +392,6 @@ public class ax {
     }
 
     public String toString() {
-        return "NotificationManagerHelper{" + this.f992a + com.alipay.sdk.util.i.d;
+        return "NotificationManagerHelper{" + this.f945a + "}";
     }
 }

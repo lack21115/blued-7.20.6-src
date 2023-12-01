@@ -9,11 +9,11 @@ import com.github.mikephil.charting.utils.ViewPortHandler;
 public class MoveViewJob extends ViewPortJob {
 
     /* renamed from: a  reason: collision with root package name */
-    private static ObjectPool<MoveViewJob> f22156a;
+    private static ObjectPool<MoveViewJob> f8549a;
 
     static {
         ObjectPool<MoveViewJob> a2 = ObjectPool.a(2, new MoveViewJob(null, 0.0f, 0.0f, null, null));
-        f22156a = a2;
+        f8549a = a2;
         a2.a(0.5f);
     }
 
@@ -22,7 +22,7 @@ public class MoveViewJob extends ViewPortJob {
     }
 
     public static void a(MoveViewJob moveViewJob) {
-        f22156a.a((ObjectPool<MoveViewJob>) moveViewJob);
+        f8549a.a((ObjectPool<MoveViewJob>) moveViewJob);
     }
 
     @Override // com.github.mikephil.charting.utils.ObjectPool.Poolable

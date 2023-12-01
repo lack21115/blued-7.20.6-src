@@ -3,12 +3,10 @@ package com.anythink.network.gdt;
 import android.content.Context;
 import android.text.TextUtils;
 import android.util.Log;
-import com.anythink.core.api.ATBidRequestInfo;
 import com.anythink.core.api.ATBidRequestInfoListener;
 import com.anythink.core.api.ATInitMediation;
 import com.anythink.core.api.ATSDK;
 import com.anythink.core.api.MediationInitCallback;
-import com.anythink.core.common.b.g;
 import com.qq.e.ads.interstitial2.UnifiedInterstitialAD;
 import com.qq.e.ads.rewardvideo.RewardVideoAD;
 import com.qq.e.comm.constants.LoadAdParams;
@@ -29,13 +27,13 @@ public class GDTATInitManager extends ATInitMediation {
     private String g;
 
     /* renamed from: c  reason: collision with root package name */
-    private Map<String, WeakReference> f8934c = new ConcurrentHashMap();
+    private Map<String, WeakReference> f6094c = new ConcurrentHashMap();
     private Map<String, RewardVideoAD> d = new ConcurrentHashMap();
     private Map<String, UnifiedInterstitialAD> e = new ConcurrentHashMap();
     private final Object h = new Object();
 
     /* renamed from: a  reason: collision with root package name */
-    int f8933a = 0;
+    int f6093a = 0;
 
     private GDTATInitManager() {
     }
@@ -62,10 +60,10 @@ public class GDTATInitManager extends ATInitMediation {
     /* JADX INFO: Access modifiers changed from: protected */
     public static void a(Map map, Map<String, Object> map2) {
         try {
-            Object obj = map2.get(g.k.n);
+            Object obj = map2.get("anythink_stk_info");
             map.put("staIn", obj != null ? obj.toString() : "");
             map.put("meSrc", "299");
-            Object obj2 = map2.get(g.k.m);
+            Object obj2 = map2.get("anythink_mediation_wf_id");
             map.put("thrmei", obj2 != null ? obj2.toString() : "");
         } catch (Exception e) {
         }
@@ -73,9 +71,9 @@ public class GDTATInitManager extends ATInitMediation {
 
     private void c() {
         try {
-            for (Map.Entry<String, WeakReference> entry : this.f8934c.entrySet()) {
-                if (entry.getValue().get() == 0) {
-                    this.f8934c.remove(entry.getKey());
+            for (Map.Entry<String, WeakReference> entry : this.f6094c.entrySet()) {
+                if (entry.getValue().get() == null) {
+                    this.f6094c.remove(entry.getKey());
                 }
             }
         } catch (Throwable th) {
@@ -105,15 +103,13 @@ public class GDTATInitManager extends ATInitMediation {
     /* JADX INFO: Access modifiers changed from: package-private */
     public final void a(Context context, final Map<String, Object> map, final Map<String, Object> map2, final ATBidRequestInfoListener aTBidRequestInfoListener) {
         getInstance().initSDK(context, map, new MediationInitCallback() { // from class: com.anythink.network.gdt.GDTATInitManager.1
-            @Override // com.anythink.core.api.MediationInitCallback
             public final void onFail(String str) {
                 ATBidRequestInfoListener aTBidRequestInfoListener2 = aTBidRequestInfoListener;
                 if (aTBidRequestInfoListener2 != null) {
-                    aTBidRequestInfoListener2.onFailed(ATBidRequestInfo.INIT_ERROR_TYPE);
+                    aTBidRequestInfoListener2.onFailed("Network init error.");
                 }
             }
 
-            @Override // com.anythink.core.api.MediationInitCallback
             public final void onSuccess() {
                 GDTATInitManager.this.runOnThreadPool(new Runnable() { // from class: com.anythink.network.gdt.GDTATInitManager.1.1
                     @Override // java.lang.Runnable
@@ -127,7 +123,7 @@ public class GDTATInitManager extends ATInitMediation {
                                 aTBidRequestInfoListener.onSuccess(gDTBidRequestInfo);
                             }
                         } else if (aTBidRequestInfoListener != null) {
-                            aTBidRequestInfoListener.onFailed(ATBidRequestInfo.BIDTOKEN_EMPTY_ERROR_TYPE);
+                            aTBidRequestInfoListener.onFailed("Network BidToken or Custom bid info is Empty.");
                         }
                     }
                 });
@@ -150,7 +146,7 @@ public class GDTATInitManager extends ATInitMediation {
     /* JADX INFO: Access modifiers changed from: protected */
     public final void a(String str, WeakReference weakReference) {
         try {
-            this.f8934c.put(str, weakReference);
+            this.f6094c.put(str, weakReference);
         } catch (Throwable th) {
         }
     }
@@ -160,7 +156,6 @@ public class GDTATInitManager extends ATInitMediation {
         this.e.clear();
     }
 
-    @Override // com.anythink.core.api.ATInitMediation
     public List getActivityStatus() {
         ArrayList arrayList = new ArrayList();
         arrayList.add("com.qq.e.ads.ADActivity");
@@ -171,22 +166,18 @@ public class GDTATInitManager extends ATInitMediation {
         return arrayList;
     }
 
-    @Override // com.anythink.core.api.ATInitMediation
     public String getNetworkName() {
         return "Tencent";
     }
 
-    @Override // com.anythink.core.api.ATInitMediation
     public String getNetworkSDKClass() {
         return "com.qq.e.ads.ADActivity";
     }
 
-    @Override // com.anythink.core.api.ATInitMediation
     public String getNetworkVersion() {
         return GDTATConst.getNetworkVersion();
     }
 
-    @Override // com.anythink.core.api.ATInitMediation
     public List getServiceStatus() {
         ArrayList arrayList = new ArrayList();
         arrayList.add("com.qq.e.comm.DownloadService");
@@ -199,14 +190,13 @@ public class GDTATInitManager extends ATInitMediation {
         }
     }
 
-    @Override // com.anythink.core.api.ATInitMediation
     public void initSDK(Context context, Map<String, Object> map, MediationInitCallback mediationInitCallback) {
         synchronized (this) {
             try {
-                this.f8933a = ATSDK.getPersionalizedAdStatus();
+                this.f6093a = ATSDK.getPersionalizedAdStatus();
             } catch (Throwable th) {
             }
-            if (this.f8933a == 2) {
+            if (this.f6093a == 2) {
                 GlobalSetting.setPersonalizedState(1);
             } else {
                 GlobalSetting.setPersonalizedState(0);
@@ -217,10 +207,10 @@ public class GDTATInitManager extends ATInitMediation {
             }
             c();
             String stringFromMap = getStringFromMap(map, "app_id");
-            if (map.containsKey(ATInitMediation.KEY_LOCAL)) {
+            if (map.containsKey("anythink_local")) {
                 this.g = stringFromMap;
             } else if (this.g != null && !TextUtils.equals(this.g, stringFromMap)) {
-                checkToSaveInitData(getNetworkName(), map, this.g);
+                checkToSaveInitData(getNetworkName(), map, new String[]{this.g});
                 this.g = null;
             }
             if (!this.f) {

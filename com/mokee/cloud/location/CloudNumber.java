@@ -15,13 +15,9 @@ import java.util.concurrent.Callable;
 
 /* loaded from: source-4181928-dex2jar.jar:com/mokee/cloud/location/CloudNumber.class */
 public class CloudNumber {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final String[] f24204a = null;
+    private static final String[] a = null;
     public static boolean b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private static boolean f24205c;
+    private static boolean c;
     private static String d;
     private static String e;
     private static int f;
@@ -37,9 +33,7 @@ public class CloudNumber {
     public static final class EngineType {
         public static final EngineType OFFLINE = null;
         public static final EngineType ONLINE = null;
-
-        /* renamed from: a  reason: collision with root package name */
-        private static final /* synthetic */ EngineType[] f24206a = null;
+        private static final /* synthetic */ EngineType[] a = null;
         private static final String[] b = null;
 
         static {
@@ -55,7 +49,7 @@ public class CloudNumber {
         }
 
         public static EngineType[] values() {
-            EngineType[] engineTypeArr = f24206a;
+            EngineType[] engineTypeArr = a;
             int length = engineTypeArr.length;
             EngineType[] engineTypeArr2 = new EngineType[length];
             System.arraycopy(engineTypeArr, 0, engineTypeArr2, 0, length);
@@ -70,9 +64,7 @@ public class CloudNumber {
         public static final PhoneType FRAUD = null;
         public static final PhoneType HARASS = null;
         public static final PhoneType NORMAL = null;
-
-        /* renamed from: a  reason: collision with root package name */
-        private static final /* synthetic */ PhoneType[] f24207a = null;
+        private static final /* synthetic */ PhoneType[] a = null;
         private static final String[] b = null;
 
         static {
@@ -88,7 +80,7 @@ public class CloudNumber {
         }
 
         public static PhoneType[] values() {
-            PhoneType[] phoneTypeArr = f24207a;
+            PhoneType[] phoneTypeArr = a;
             int length = phoneTypeArr.length;
             PhoneType[] phoneTypeArr2 = new PhoneType[length];
             System.arraycopy(phoneTypeArr, 0, phoneTypeArr2, 0, length);
@@ -98,9 +90,7 @@ public class CloudNumber {
 
     /* loaded from: source-4181928-dex2jar.jar:com/mokee/cloud/location/CloudNumber$a.class */
     class a implements Callable<Object> {
-
-        /* renamed from: a  reason: collision with root package name */
-        private static final String[] f24208a = null;
+        private static final String[] a = null;
         private final /* synthetic */ String val$formatNumber;
         private final /* synthetic */ boolean val$longRequest;
 
@@ -120,8 +110,8 @@ public class CloudNumber {
             StringBuilder sb = new StringBuilder();
             try {
                 try {
-                    httpURLConnection.setRequestProperty(f24208a[2], f24208a[5]);
-                    httpURLConnection.setRequestProperty(f24208a[0], f24208a[6]);
+                    httpURLConnection.setRequestProperty(a[2], a[5]);
+                    httpURLConnection.setRequestProperty(a[0], a[6]);
                     try {
                         httpURLConnection.setConnectTimeout(this.val$longRequest ? CloudNumber.g : CloudNumber.f);
                         httpURLConnection.setReadTimeout(this.val$longRequest ? CloudNumber.g : CloudNumber.f);
@@ -147,7 +137,7 @@ public class CloudNumber {
                         inputStreamReader.close();
                         inputStream.close();
                         CloudNumber.d = CloudUtils.getInfoFromResult(sb.toString());
-                        CloudNumber.f24205c = (TextUtils.isEmpty(CloudNumber.d) || CloudNumber.d.contains(f24208a[3])) ? false : true;
+                        CloudNumber.c = (TextUtils.isEmpty(CloudNumber.d) || CloudNumber.d.contains(a[3])) ? false : true;
                     } catch (Exception e3) {
                         throw e3;
                     }
@@ -155,9 +145,9 @@ public class CloudNumber {
                     throw e4;
                 }
             } catch (Exception e5) {
-                Log.e(f24208a[1], f24208a[7], e5);
+                Log.e(a[1], a[7], e5);
             }
-            return f24208a[4];
+            return a[4];
         }
     }
 

@@ -17,43 +17,43 @@ public class g extends com.opos.cmn.e.a.b.b.b {
     }
 
     private void f() {
-        this.e = new RelativeLayout(this.f24760a);
+        this.e = new RelativeLayout(this.f11072a);
         g();
         h();
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(-2, -2);
         layoutParams.addRule(13);
-        this.f24761c.addView(this.e, layoutParams);
+        this.f11073c.addView(this.e, layoutParams);
     }
 
     private void g() {
-        this.d = new ImageView(this.f24760a);
+        this.d = new ImageView(this.f11072a);
         this.d.setId(1);
         this.d.setScaleType(ImageView.ScaleType.FIT_XY);
-        this.d.setImageDrawable(com.opos.cmn.an.d.a.a.c(this.f24760a, "opos_module_biz_ui_native_video_loading_img.png"));
-        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(this.f24760a, 24.0f), com.opos.cmn.an.h.f.a.a(this.f24760a, 24.0f));
+        this.d.setImageDrawable(com.opos.cmn.an.d.a.a.c(this.f11072a, "opos_module_biz_ui_native_video_loading_img.png"));
+        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(this.f11072a, 24.0f), com.opos.cmn.an.h.f.a.a(this.f11072a, 24.0f));
         layoutParams.addRule(14);
         this.e.addView(this.d, layoutParams);
     }
 
     private void h() {
-        TextView textView = new TextView(this.f24760a);
+        TextView textView = new TextView(this.f11072a);
         this.f = textView;
         textView.setText("加载中...");
         this.f.setTextColor(-1);
         this.f.setTextSize(1, 14.0f);
         this.f.setGravity(17);
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(-2, -2);
-        layoutParams.topMargin = com.opos.cmn.an.h.f.a.a(this.f24760a, 12.0f);
+        layoutParams.topMargin = com.opos.cmn.an.h.f.a.a(this.f11072a, 12.0f);
         layoutParams.addRule(3, 1);
         this.e.addView(this.f, layoutParams);
     }
 
     @Override // com.opos.cmn.e.a.b.b.b
     public void a() {
-        ImageView imageView = new ImageView(this.f24760a);
+        ImageView imageView = new ImageView(this.f11072a);
         imageView.setImageDrawable(new ColorDrawable(Color.parseColor("#000000")));
         imageView.setAlpha(0.4f);
-        this.f24761c.addView(imageView, new RelativeLayout.LayoutParams(-1, -1));
+        this.f11073c.addView(imageView, new RelativeLayout.LayoutParams(-1, -1));
     }
 
     @Override // com.opos.cmn.e.a.b.b.b

@@ -24,14 +24,12 @@ public class FeedbackFragment extends CommonWriteTextFragment {
         }
         DialogUtils.a(this.k);
         FeedHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<Object>>() { // from class: com.soft.blued.ui.setting.fragment.FeedbackFragment.1
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<Object> bluedEntityA) {
                 AppMethods.d((int) R.string.receive_nopraise);
                 FeedbackFragment.this.getActivity().finish();
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 DialogUtils.b(FeedbackFragment.this.k);
             }

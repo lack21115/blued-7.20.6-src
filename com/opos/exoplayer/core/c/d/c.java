@@ -14,7 +14,7 @@ import java.util.Stack;
 public final class c implements com.opos.exoplayer.core.c.e, com.opos.exoplayer.core.c.l {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final com.opos.exoplayer.core.c.h f25118a = new com.opos.exoplayer.core.c.h() { // from class: com.opos.exoplayer.core.c.d.c.1
+    public static final com.opos.exoplayer.core.c.h f11430a = new com.opos.exoplayer.core.c.h() { // from class: com.opos.exoplayer.core.c.d.c.1
         @Override // com.opos.exoplayer.core.c.h
         public com.opos.exoplayer.core.c.e[] a() {
             return new com.opos.exoplayer.core.c.e[]{new c()};
@@ -23,7 +23,7 @@ public final class c implements com.opos.exoplayer.core.c.e, com.opos.exoplayer.
     private static final int b = u.f("qt  ");
 
     /* renamed from: c  reason: collision with root package name */
-    private final int f25119c;
+    private final int f11431c;
     private final com.opos.exoplayer.core.i.m d;
     private final com.opos.exoplayer.core.i.m e;
     private final com.opos.exoplayer.core.i.m f;
@@ -48,17 +48,17 @@ public final class c implements com.opos.exoplayer.core.c.e, com.opos.exoplayer.
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public final e f25120a;
+        public final e f11432a;
         public final m b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final n f25121c;
+        public final n f11433c;
         public int d;
 
         public a(e eVar, m mVar, n nVar) {
-            this.f25120a = eVar;
+            this.f11432a = eVar;
             this.b = mVar;
-            this.f25121c = nVar;
+            this.f11433c = nVar;
         }
     }
 
@@ -67,10 +67,10 @@ public final class c implements com.opos.exoplayer.core.c.e, com.opos.exoplayer.
     }
 
     public c(int i) {
-        this.f25119c = i;
+        this.f11431c = i;
         this.f = new com.opos.exoplayer.core.i.m(16);
         this.g = new Stack<>();
-        this.d = new com.opos.exoplayer.core.i.m(com.opos.exoplayer.core.i.k.f25488a);
+        this.d = new com.opos.exoplayer.core.i.m(com.opos.exoplayer.core.i.k.f11800a);
         this.e = new com.opos.exoplayer.core.i.m(4);
         this.m = -1;
     }
@@ -126,24 +126,24 @@ public final class c implements com.opos.exoplayer.core.c.e, com.opos.exoplayer.
         for (int i3 = 0; i3 < aVar.aS.size(); i3++) {
             g.a aVar2 = aVar.aS.get(i3);
             if (aVar2.aP == g.D) {
-                e a3 = h.a(aVar2, aVar.d(g.C), (long) com.anythink.expressad.exoplayer.b.b, (DrmInitData) null, (this.f25119c & 1) != 0, this.u);
+                e a3 = h.a(aVar2, aVar.d(g.C), (long) com.anythink.expressad.exoplayer.b.b, (DrmInitData) null, (this.f11431c & 1) != 0, this.u);
                 if (a3 != null) {
                     m a4 = h.a(a3, aVar2.e(g.E).e(g.F).e(g.G), iVar);
-                    if (a4.f25150a != 0) {
+                    if (a4.f11462a != 0) {
                         a aVar3 = new a(a3, a4, this.p.a(i3, a3.b));
                         Format a5 = a3.f.a(a4.d + 30);
                         Format format = a5;
                         if (a3.b == 1) {
                             Format format2 = a5;
                             if (iVar.a()) {
-                                format2 = a5.a(iVar.b, iVar.f25246c);
+                                format2 = a5.a(iVar.b, iVar.f11558c);
                             }
                             format = format2;
                             if (metadata != null) {
                                 format = format2.a(metadata);
                             }
                         }
-                        aVar3.f25121c.a(format);
+                        aVar3.f11433c.a(format);
                         j = Math.max(j, a3.e != com.anythink.expressad.exoplayer.b.b ? a3.e : a4.g);
                         if (a3.b == 2) {
                             i = i2;
@@ -169,7 +169,7 @@ public final class c implements com.opos.exoplayer.core.c.e, com.opos.exoplayer.
     }
 
     private static boolean a(int i) {
-        return i == g.R || i == g.C || i == g.S || i == g.T || i == g.am || i == g.an || i == g.ao || i == g.Q || i == g.ap || i == g.aq || i == g.f25129ar || i == g.as || i == g.at || i == g.O || i == g.f25128a || i == g.aA;
+        return i == g.R || i == g.C || i == g.S || i == g.T || i == g.am || i == g.an || i == g.ao || i == g.Q || i == g.ap || i == g.aq || i == g.f11441ar || i == g.as || i == g.at || i == g.O || i == g.f11440a || i == g.aA;
     }
 
     private static boolean a(com.opos.exoplayer.core.i.m mVar) {
@@ -199,7 +199,7 @@ public final class c implements com.opos.exoplayer.core.c.e, com.opos.exoplayer.
             if (i2 >= aVarArr.length) {
                 break;
             }
-            r0[i2] = new long[aVarArr[i2].b.f25150a];
+            r0[i2] = new long[aVarArr[i2].b.f11462a];
             jArr[i2] = aVarArr[i2].b.e[0];
             i = i2 + 1;
         }
@@ -226,7 +226,7 @@ public final class c implements com.opos.exoplayer.core.c.e, com.opos.exoplayer.
             }
             int i7 = iArr[i4];
             r0[i4][i7] = j;
-            j += aVarArr[i4].b.f25151c[i7];
+            j += aVarArr[i4].b.f11463c[i7];
             int i8 = i7 + 1;
             iArr[i4] = i8;
             if (i8 < r0[i4].length) {
@@ -263,14 +263,14 @@ public final class c implements com.opos.exoplayer.core.c.e, com.opos.exoplayer.
         long c2 = fVar.c();
         com.opos.exoplayer.core.i.m mVar = this.l;
         if (mVar != null) {
-            fVar.b(mVar.f25496a, this.k, (int) j);
-            if (this.i == g.f25128a) {
+            fVar.b(mVar.f11808a, this.k, (int) j);
+            if (this.i == g.f11440a) {
                 this.u = a(this.l);
             } else if (!this.g.isEmpty()) {
                 this.g.peek().a(new g.b(this.i, this.l));
             }
         } else if (j >= 262144) {
-            kVar.f25249a = fVar.c() + j;
+            kVar.f11561a = fVar.c() + j;
             z = true;
             a(c2 + j);
             return z && this.h != 2;
@@ -312,23 +312,23 @@ public final class c implements com.opos.exoplayer.core.c.e, com.opos.exoplayer.
             }
         }
         a aVar = this.q[this.m];
-        n nVar = aVar.f25121c;
+        n nVar = aVar.f11433c;
         int i2 = aVar.d;
         long j = aVar.b.b[i2];
-        int i3 = aVar.b.f25151c[i2];
+        int i3 = aVar.b.f11463c[i2];
         long j2 = (j - c2) + this.n;
         if (j2 < 0 || j2 >= 262144) {
-            kVar.f25249a = j;
+            kVar.f11561a = j;
             return 1;
         }
         long j3 = j2;
         int i4 = i3;
-        if (aVar.f25120a.g == 1) {
+        if (aVar.f11432a.g == 1) {
             j3 = j2 + 8;
             i4 = i3 - 8;
         }
         fVar.b((int) j3);
-        if (aVar.f25120a.j == 0) {
+        if (aVar.f11432a.j == 0) {
             while (true) {
                 int i5 = this.n;
                 i = i4;
@@ -340,13 +340,13 @@ public final class c implements com.opos.exoplayer.core.c.e, com.opos.exoplayer.
                 this.o -= a2;
             }
         } else {
-            byte[] bArr = this.e.f25496a;
+            byte[] bArr = this.e.f11808a;
             byte b2 = (byte) 0;
             bArr[0] = b2;
             bArr[1] = b2;
             bArr[2] = b2;
-            int i6 = aVar.f25120a.j;
-            int i7 = 4 - aVar.f25120a.j;
+            int i6 = aVar.f11432a.j;
+            int i7 = 4 - aVar.f11432a.j;
             while (true) {
                 i = i4;
                 if (this.n >= i4) {
@@ -354,7 +354,7 @@ public final class c implements com.opos.exoplayer.core.c.e, com.opos.exoplayer.
                 }
                 int i8 = this.o;
                 if (i8 == 0) {
-                    fVar.b(this.e.f25496a, i7, i6);
+                    fVar.b(this.e.f11808a, i7, i6);
                     this.e.c(0);
                     this.o = this.e.u();
                     this.d.c(0);
@@ -465,18 +465,18 @@ public final class c implements com.opos.exoplayer.core.c.e, com.opos.exoplayer.
         int b2;
         a[] aVarArr = this.q;
         if (aVarArr.length == 0) {
-            return new l.a(com.opos.exoplayer.core.c.m.f25252a);
+            return new l.a(com.opos.exoplayer.core.c.m.f11564a);
         }
         int i = this.s;
         if (i != -1) {
             m mVar = aVarArr[i].b;
             int a2 = a(mVar, j);
             if (a2 == -1) {
-                return new l.a(com.opos.exoplayer.core.c.m.f25252a);
+                return new l.a(com.opos.exoplayer.core.c.m.f11564a);
             }
             j4 = mVar.e[a2];
             long j7 = mVar.b[a2];
-            if (j4 >= j || a2 >= mVar.f25150a - 1 || (b2 = mVar.b(j)) == -1 || b2 == a2) {
+            if (j4 >= j || a2 >= mVar.f11462a - 1 || (b2 = mVar.b(j)) == -1 || b2 == a2) {
                 j5 = -1;
                 j6 = -9223372036854775807L;
             } else {

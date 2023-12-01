@@ -6,11 +6,11 @@ import com.meizu.cloud.pushsdk.c.c.c;
 public class k {
 
     /* renamed from: a  reason: collision with root package name */
-    private final i f24045a;
+    private final i f10434a;
     private final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final String f24046c;
+    private final String f10435c;
     private final c d;
     private final l e;
     private final k f;
@@ -21,10 +21,10 @@ public class k {
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private i f24047a;
+        private i f10436a;
 
         /* renamed from: c  reason: collision with root package name */
-        private String f24048c;
+        private String f10437c;
         private l e;
         private k f;
         private k g;
@@ -43,7 +43,7 @@ public class k {
         }
 
         public a a(i iVar) {
-            this.f24047a = iVar;
+            this.f10436a = iVar;
             return this;
         }
 
@@ -53,12 +53,12 @@ public class k {
         }
 
         public a a(String str) {
-            this.f24048c = str;
+            this.f10437c = str;
             return this;
         }
 
         public k a() {
-            if (this.f24047a != null) {
+            if (this.f10436a != null) {
                 if (this.b >= 0) {
                     return new k(this);
                 }
@@ -69,9 +69,9 @@ public class k {
     }
 
     private k(a aVar) {
-        this.f24045a = aVar.f24047a;
+        this.f10434a = aVar.f10436a;
         this.b = aVar.b;
-        this.f24046c = aVar.f24048c;
+        this.f10435c = aVar.f10437c;
         this.d = aVar.d.a();
         this.e = aVar.e;
         this.f = aVar.f;
@@ -88,6 +88,6 @@ public class k {
     }
 
     public String toString() {
-        return "Response{protocol=, code=" + this.b + ", message=" + this.f24046c + ", url=" + this.f24045a.a() + '}';
+        return "Response{protocol=, code=" + this.b + ", message=" + this.f10435c + ", url=" + this.f10434a.a() + '}';
     }
 }

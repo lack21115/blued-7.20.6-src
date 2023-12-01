@@ -17,11 +17,11 @@ import com.soft.blued.utils.password.PasswordStatusView;
 public final class FragmentResetPwdBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final TextView f28955a;
+    public final TextView f15265a;
     public final ClearEditText b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final CommonEdittextView f28956c;
+    public final CommonEdittextView f15266c;
     public final CommonEdittextView d;
     public final ImageView e;
     public final ShapeLinearLayout f;
@@ -35,9 +35,9 @@ public final class FragmentResetPwdBinding implements ViewBinding {
 
     private FragmentResetPwdBinding(LinearLayout linearLayout, TextView textView, ClearEditText clearEditText, CommonEdittextView commonEdittextView, CommonEdittextView commonEdittextView2, ImageView imageView, ShapeLinearLayout shapeLinearLayout, PasswordStatusView passwordStatusView, ShapeRelativeLayout shapeRelativeLayout, CommonTopTitleNoTrans commonTopTitleNoTrans, TextView textView2, TextView textView3, TextView textView4) {
         this.m = linearLayout;
-        this.f28955a = textView;
+        this.f15265a = textView;
         this.b = clearEditText;
-        this.f28956c = commonEdittextView;
+        this.f15266c = commonEdittextView;
         this.d = commonEdittextView2;
         this.e = imageView;
         this.f = shapeLinearLayout;
@@ -51,31 +51,31 @@ public final class FragmentResetPwdBinding implements ViewBinding {
 
     public static FragmentResetPwdBinding a(View view) {
         String str;
-        TextView textView = (TextView) view.findViewById(2131362557);
+        TextView textView = (TextView) view.findViewById(R.id.btn_confirm);
         if (textView != null) {
-            ClearEditText clearEditText = (ClearEditText) view.findViewById(R.id.edt_phone_vcode);
-            if (clearEditText != null) {
-                CommonEdittextView commonEdittextView = (CommonEdittextView) view.findViewById(R.id.et_new_pwd);
-                if (commonEdittextView != null) {
-                    CommonEdittextView commonEdittextView2 = (CommonEdittextView) view.findViewById(R.id.et_new_pwd_confirm);
-                    if (commonEdittextView2 != null) {
-                        ImageView imageView = (ImageView) view.findViewById(2131365072);
+            ClearEditText findViewById = view.findViewById(R.id.edt_phone_vcode);
+            if (findViewById != null) {
+                CommonEdittextView findViewById2 = view.findViewById(R.id.et_new_pwd);
+                if (findViewById2 != null) {
+                    CommonEdittextView findViewById3 = view.findViewById(R.id.et_new_pwd_confirm);
+                    if (findViewById3 != null) {
+                        ImageView imageView = (ImageView) view.findViewById(R.id.iv_arrow);
                         if (imageView != null) {
-                            ShapeLinearLayout shapeLinearLayout = (ShapeLinearLayout) view.findViewById(R.id.ll_phone_vcode);
-                            if (shapeLinearLayout != null) {
+                            ShapeLinearLayout findViewById4 = view.findViewById(R.id.ll_phone_vcode);
+                            if (findViewById4 != null) {
                                 PasswordStatusView passwordStatusView = (PasswordStatusView) view.findViewById(R.id.pwd_check_view);
                                 if (passwordStatusView != null) {
-                                    ShapeRelativeLayout shapeRelativeLayout = (ShapeRelativeLayout) view.findViewById(R.id.rl_phone_num);
-                                    if (shapeRelativeLayout != null) {
-                                        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) view.findViewById(2131370749);
-                                        if (commonTopTitleNoTrans != null) {
+                                    ShapeRelativeLayout findViewById5 = view.findViewById(R.id.rl_phone_num);
+                                    if (findViewById5 != null) {
+                                        CommonTopTitleNoTrans findViewById6 = view.findViewById(R.id.top_title);
+                                        if (findViewById6 != null) {
                                             TextView textView2 = (TextView) view.findViewById(2131371675);
                                             if (textView2 != null) {
                                                 TextView textView3 = (TextView) view.findViewById(2131372234);
                                                 if (textView3 != null) {
                                                     TextView textView4 = (TextView) view.findViewById(R.id.tv_vcode_desc);
                                                     if (textView4 != null) {
-                                                        return new FragmentResetPwdBinding((LinearLayout) view, textView, clearEditText, commonEdittextView, commonEdittextView2, imageView, shapeLinearLayout, passwordStatusView, shapeRelativeLayout, commonTopTitleNoTrans, textView2, textView3, textView4);
+                                                        return new FragmentResetPwdBinding((LinearLayout) view, textView, findViewById, findViewById2, findViewById3, imageView, findViewById4, passwordStatusView, findViewById5, findViewById6, textView2, textView3, textView4);
                                                     }
                                                     str = "tvVcodeDesc";
                                                 } else {

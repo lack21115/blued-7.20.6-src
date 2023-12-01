@@ -9,16 +9,15 @@ import com.tencent.liteav.base.system.LiteavSystemInfo;
 import com.tencent.liteav.base.util.LiteavLog;
 import com.tencent.liteav.videoproducer.encoder.VideoEncoderDef;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8829756-dex2jar.jar:com/tencent/liteav/videoproducer/encoder/v.class */
-public final class v {
+final class v {
 
     /* renamed from: a  reason: collision with root package name */
-    boolean f37038a = true;
+    boolean f23347a = true;
     boolean b = true;
 
     /* renamed from: c  reason: collision with root package name */
-    boolean f37039c = true;
+    boolean f23348c = true;
     private final MediaCodec d;
     private final String e;
     private final VideoEncodeParams f;
@@ -29,7 +28,7 @@ public final class v {
     public static final /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f37040a;
+        static final /* synthetic */ int[] f23349a;
         static final /* synthetic */ int[] b;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:16:0x0055 -> B:32:0x0014). Please submit an issue!!! */
@@ -53,17 +52,17 @@ public final class v {
             } catch (NoSuchFieldError e3) {
             }
             int[] iArr2 = new int[VideoEncoderDef.BitrateMode.values().length];
-            f37040a = iArr2;
+            f23349a = iArr2;
             try {
                 iArr2[VideoEncoderDef.BitrateMode.CBR.ordinal()] = 1;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f37040a[VideoEncoderDef.BitrateMode.VBR.ordinal()] = 2;
+                f23349a[VideoEncoderDef.BitrateMode.VBR.ordinal()] = 2;
             } catch (NoSuchFieldError e5) {
             }
             try {
-                f37040a[VideoEncoderDef.BitrateMode.CQ.ordinal()] = 3;
+                f23349a[VideoEncoderDef.BitrateMode.CQ.ordinal()] = 3;
             } catch (NoSuchFieldError e6) {
             }
         }
@@ -80,7 +79,7 @@ public final class v {
         if (bitrateMode == null) {
             return 2;
         }
-        int i2 = AnonymousClass1.f37040a[bitrateMode.ordinal()];
+        int i2 = AnonymousClass1.f23349a[bitrateMode.ordinal()];
         if (i2 != 1) {
             if (i2 != 2) {
                 return i2 != 3 ? 2 : 0;

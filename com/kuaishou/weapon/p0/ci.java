@@ -4,7 +4,6 @@ import android.content.Context;
 import android.hardware.Camera;
 import android.os.Environment;
 import android.text.TextUtils;
-import com.anythink.core.api.ATAdConst;
 import com.cdo.oaps.ad.wrapper.BaseWrapper;
 import com.huawei.hms.ads.hn;
 import com.huawei.openalliance.ad.activity.PPSLauncherActivity;
@@ -17,16 +16,16 @@ import org.json.JSONObject;
 public class ci {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f23781a;
+    private Context f10173a;
 
     public ci(Context context) {
-        this.f23781a = context;
+        this.f10173a = context;
     }
 
     public String a(String str) {
         JSONObject a2;
         try {
-            JSONObject a3 = new cl(str, cj.j).a(this.f23781a);
+            JSONObject a3 = new cl(str, cj.j).a(this.f10173a);
             if (a3 == null || (a2 = a()) == null) {
                 return null;
             }
@@ -41,13 +40,13 @@ public class ci {
         JSONObject g;
         try {
             JSONObject jSONObject = new JSONObject();
-            h a2 = h.a(this.f23781a, "re_po_rt");
+            h a2 = h.a(this.f10173a, "re_po_rt");
             boolean e = a2.e("a1_p_s_p_s");
             boolean e2 = a2.e("a1_p_s_p_s_c_b");
             if (a2.b(de.E, 1) == 1) {
                 long currentTimeMillis = System.currentTimeMillis();
                 if (a2.b(de.I, 1) == 1 && Engine.loadSuccess) {
-                    ap apVar = new ap(this.f23781a);
+                    ap apVar = new ap(this.f10173a);
                     jSONObject.put("0", apVar.b("0"));
                     jSONObject.put("1", apVar.b("1"));
                     jSONObject.put("2", apVar.b("2"));
@@ -94,14 +93,14 @@ public class ci {
                     jSONObject.put("43", apVar.a("43"));
                     jSONObject.put("44", apVar.a("44"));
                     jSONObject.put("101", apVar.b("101"));
-                    jSONObject.put(ATAdConst.BIDDING_TYPE.BIDDING_LOSS_WITH_LOW_PRICE_IN_HB, apVar.b(ATAdConst.BIDDING_TYPE.BIDDING_LOSS_WITH_LOW_PRICE_IN_HB));
+                    jSONObject.put("102", apVar.b("102"));
                     jSONObject.put("105", apVar.b("105"));
                     jSONObject.put("106", apVar.b("106"));
-                    jSONObject.put(com.huawei.openalliance.ad.beans.inner.a.V, dk.b(this.f23781a));
-                    jSONObject.put("50", dk.a(this.f23781a));
+                    jSONObject.put(com.huawei.openalliance.ad.beans.inner.a.V, dk.b(this.f10173a));
+                    jSONObject.put("50", dk.a(this.f10173a));
                 }
                 if (a2.b(de.H, 1) == 1 && Engine.loadSuccess) {
-                    at atVar = new at(this.f23781a);
+                    at atVar = new at(this.f10173a);
                     jSONObject.put("45", atVar.d("45"));
                     if (atVar.a()) {
                         jSONObject.put("93", 1);
@@ -112,13 +111,13 @@ public class ci {
                     jSONObject.put(BaseWrapper.ENTER_ID_OAPS_HEYTAPMULTIAPP, atVar.d(BaseWrapper.ENTER_ID_OAPS_HEYTAPMULTIAPP));
                     jSONObject.put(com.huawei.openalliance.ad.beans.inner.a.Code, atVar.a(com.huawei.openalliance.ad.beans.inner.a.Code));
                     jSONObject.put("51", atVar.b("51"));
-                    jSONObject.put("52", atVar.a(this.f23781a, "52", 0));
+                    jSONObject.put("52", atVar.a(this.f10173a, "52", 0));
                     jSONObject.put("55", atVar.c("55"));
                     jSONObject.put("66", atVar.a("66"));
                     jSONObject.put("67", dh.d());
                     jSONObject.put("78", atVar.a("78"));
                     jSONObject.put("79", atVar.a("79"));
-                    ay ayVar = new ay(this.f23781a, 200);
+                    ay ayVar = new ay(this.f10173a, 200);
                     jSONObject.put(hn.Code, ayVar.a(hn.Code));
                     jSONObject.put("71", ayVar.a("71"));
                     jSONObject.put("72", ayVar.a("72"));
@@ -126,25 +125,25 @@ public class ci {
                     jSONObject.put("74", ayVar.a("74"));
                 }
                 if (a2.b(de.K, 1) == 1) {
-                    aw awVar = new aw(this.f23781a);
-                    jSONObject.put("53", awVar.a(this.f23781a, "53", 1));
+                    aw awVar = new aw(this.f10173a);
+                    jSONObject.put("53", awVar.a(this.f10173a, "53", 1));
                     jSONObject.put("56", awVar.a("56"));
                     jSONObject.put("57", awVar.a("57"));
                     if (e || e2) {
                         aj ajVar = new aj();
-                        jSONObject.put("47", ajVar.a(this.f23781a));
-                        jSONObject.put("59", ajVar.d(this.f23781a));
-                        jSONObject.put(Camera.Parameters.VIDEO_HFR_2X, ajVar.c(this.f23781a));
-                        jSONObject.put("61", ajVar.b(this.f23781a));
-                        jSONObject.put("62", ajVar.e(this.f23781a));
-                        jSONObject.put("65", ajVar.f(this.f23781a));
-                        jSONObject.put(PPSLauncherActivity.Code, ajVar.g(this.f23781a));
-                        jSONObject.put("75", ajVar.h(this.f23781a));
+                        jSONObject.put("47", ajVar.a(this.f10173a));
+                        jSONObject.put("59", ajVar.d(this.f10173a));
+                        jSONObject.put(Camera.Parameters.VIDEO_HFR_2X, ajVar.c(this.f10173a));
+                        jSONObject.put("61", ajVar.b(this.f10173a));
+                        jSONObject.put("62", ajVar.e(this.f10173a));
+                        jSONObject.put("65", ajVar.f(this.f10173a));
+                        jSONObject.put(PPSLauncherActivity.Code, ajVar.g(this.f10173a));
+                        jSONObject.put("75", ajVar.h(this.f10173a));
                         jSONObject.put("80", aj.a());
-                        jSONObject.put("85", ajVar.i(this.f23781a));
-                        jSONObject.put("87", ajVar.j(this.f23781a));
-                        jSONObject.put("91", ajVar.k(this.f23781a));
-                        jSONObject.put("92", ajVar.l(this.f23781a));
+                        jSONObject.put("85", ajVar.i(this.f10173a));
+                        jSONObject.put("87", ajVar.j(this.f10173a));
+                        jSONObject.put("91", ajVar.k(this.f10173a));
+                        jSONObject.put("92", ajVar.l(this.f10173a));
                     }
                     jSONObject.put("64", dh.a());
                 }
@@ -157,8 +156,8 @@ public class ci {
                         jSONObject.put("77", d);
                     }
                     jSONObject.put("104", am.c());
-                    jSONObject.put("109", dk.e(this.f23781a));
-                    ai aiVar = new ai(this.f23781a);
+                    jSONObject.put("109", dk.e(this.f10173a));
+                    ai aiVar = new ai(this.f10173a);
                     jSONObject.put("82", aiVar.h());
                     String i = aiVar.i();
                     if (!TextUtils.isEmpty(i)) {
@@ -174,7 +173,7 @@ public class ci {
                     }
                 }
                 if (a2.b(de.J, 1) == 1) {
-                    au auVar = new au(this.f23781a);
+                    au auVar = new au(this.f10173a);
                     jSONObject.put("95", auVar.b("95"));
                     jSONObject.put("96", auVar.a() ? 1 : 0);
                     jSONObject.put("97", dh.e());
@@ -186,17 +185,17 @@ public class ci {
                     }
                 }
                 try {
-                    if (h.a(this.f23781a, "re_po_rt").b(de.aB, 1) == 1) {
-                        JSONObject c2 = new ba(this.f23781a, 100, Environment.getExternalStorageDirectory().getAbsolutePath(), ba.a(this.f23781a)).c();
+                    if (h.a(this.f10173a, "re_po_rt").b(de.aB, 1) == 1) {
+                        JSONObject c2 = new ba(this.f10173a, 100, Environment.getExternalStorageDirectory().getAbsolutePath(), ba.a(this.f10173a)).c();
                         if (c2 == null || c2.length() <= 10) {
                             try {
-                                jSONObject.put("16102", new ba(this.f23781a, 200, "", true).a("16102"));
+                                jSONObject.put("16102", new ba(this.f10173a, 200, "", true).a("16102"));
                             } catch (Throwable th2) {
                             }
                         } else {
                             jSONObject.put("16002", c2);
                         }
-                        if ((e || e2) && (g = bf.g(this.f23781a)) != null && g.length() > 0) {
+                        if ((e || e2) && (g = bf.g(this.f10173a)) != null && g.length() > 0) {
                             jSONObject.put("16116", g);
                         }
                     }

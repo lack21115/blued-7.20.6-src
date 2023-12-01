@@ -19,11 +19,11 @@ import javax.security.auth.x500.X500Principal;
 public final class e implements b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static PrivateKey f41064a;
+    private static PrivateKey f27373a;
     private static PublicKey b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static KeyStore f41065c;
+    private static KeyStore f27374c;
     private static X500Principal d;
     private Context e;
 
@@ -63,8 +63,8 @@ public final class e implements b {
 
     private static PrivateKey b(Context context) {
         try {
-            if (f41064a != null) {
-                return f41064a;
+            if (f27373a != null) {
+                return f27373a;
             }
             if (context == null) {
                 p.d("RsaSecurity", " getPrivateKeySigin context == null ");
@@ -73,10 +73,10 @@ public final class e implements b {
             if (!b("PushRsaKeyAlias")) {
                 a(context);
             }
-            KeyStore.Entry entry = f41065c.getEntry("PushRsaKeyAlias", null);
+            KeyStore.Entry entry = f27374c.getEntry("PushRsaKeyAlias", null);
             if (entry instanceof KeyStore.PrivateKeyEntry) {
                 PrivateKey privateKey = ((KeyStore.PrivateKeyEntry) entry).getPrivateKey();
-                f41064a = privateKey;
+                f27373a = privateKey;
                 return privateKey;
             }
             return null;
@@ -90,7 +90,7 @@ public final class e implements b {
     private static void b() {
         try {
             KeyStore keyStore = KeyStore.getInstance("AndroidKeyStore");
-            f41065c = keyStore;
+            f27374c = keyStore;
             keyStore.load(null);
             d = new X500Principal("CN=Push SDK, OU=VIVO, O=VIVO PUSH, C=CN");
         } catch (Exception e) {
@@ -104,10 +104,10 @@ public final class e implements b {
             return false;
         }
         try {
-            if (f41065c == null) {
+            if (f27374c == null) {
                 b();
             }
-            return f41065c.containsAlias(str);
+            return f27374c.containsAlias(str);
         } catch (Exception e) {
             e.printStackTrace();
             p.a("RsaSecurity", "getPrivateKeySigin error" + e.getMessage());
@@ -145,7 +145,7 @@ public final class e implements b {
             if (!b("PushRsaKeyAlias")) {
                 a(this.e);
             }
-            KeyStore.Entry entry = f41065c.getEntry("PushRsaKeyAlias", null);
+            KeyStore.Entry entry = f27374c.getEntry("PushRsaKeyAlias", null);
             if (entry instanceof KeyStore.PrivateKeyEntry) {
                 PublicKey publicKey = ((KeyStore.PrivateKeyEntry) entry).getCertificate().getPublicKey();
                 b = publicKey;

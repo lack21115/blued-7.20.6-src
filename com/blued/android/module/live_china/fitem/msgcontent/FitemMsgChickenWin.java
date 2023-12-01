@@ -7,6 +7,8 @@ import android.text.TextPaint;
 import android.text.TextUtils;
 import android.text.style.CharacterStyle;
 import android.view.View;
+import com.alipay.sdk.cons.c;
+import com.alipay.sdk.util.l;
 import com.blued.android.core.AppInfo;
 import com.blued.android.module.common.utils.freedom.BaseViewHolder;
 import com.blued.android.module.common.utils.freedom.FreedomItem;
@@ -39,7 +41,7 @@ public final class FitemMsgChickenWin extends FitemMsgBase {
     }
 
     private final void a(String str) {
-        this.f10935a.a(R.id.live_msg_content_text, LiveUtils.a((CharSequence) new SpannableString(str), "#FFD228", false));
+        this.a.a(R.id.live_msg_content_text, LiveUtils.a((CharSequence) new SpannableString(str), "#FFD228", false));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -47,24 +49,24 @@ public final class FitemMsgChickenWin extends FitemMsgBase {
         Intrinsics.e(linkUrl, "$linkUrl");
         Intrinsics.e(linkHalfOpen, "$linkHalfOpen");
         Intrinsics.e(vh, "$vh");
-        String str = (String) linkUrl.f42545a;
-        if (!linkHalfOpen.f42538a) {
-            LiveSetDataObserver.a().f((String) linkUrl.f42545a);
+        String str = (String) linkUrl.a;
+        if (!linkHalfOpen.a) {
+            LiveSetDataObserver.a().f((String) linkUrl.a);
             return;
         }
-        Object a2 = vh.f10931a.a("isHost", (String) false);
-        Intrinsics.c(a2, "vh.adapter.getVar(\"isHost\", false)");
-        if (((Boolean) a2).booleanValue()) {
-            LiveSetDataObserver.a().b((String) linkUrl.f42545a, 0);
+        Object a = vh.a.a("isHost", (String) false);
+        Intrinsics.c(a, "vh.adapter.getVar(\"isHost\", false)");
+        if (((Boolean) a).booleanValue()) {
+            LiveSetDataObserver.a().b((String) linkUrl.a, 0);
         } else {
-            LiveRefreshUIObserver.a().b((String) linkUrl.f42545a, 0);
+            LiveRefreshUIObserver.a().b((String) linkUrl.a, 0);
         }
     }
 
     private final void f() {
         int i;
         String k = k();
-        Object obj = e().msgMapExtra.get("result");
+        Object obj = e().msgMapExtra.get(l.c);
         if (obj == null) {
             throw new NullPointerException("null cannot be cast to non-null type kotlin.Int");
         }
@@ -85,10 +87,10 @@ public final class FitemMsgChickenWin extends FitemMsgBase {
             i = R.string.live_chicken_all_win_msg;
         }
         if (i == -1) {
-            this.f10935a.a(R.id.live_msg_content_text, (CharSequence) "");
+            this.a.a(R.id.live_msg_content_text, (CharSequence) "");
             return;
         }
-        StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
+        StringCompanionObject stringCompanionObject = StringCompanionObject.a;
         String string = AppInfo.d().getResources().getString(i);
         Intrinsics.c(string, "getAppContext().resources.getString(strId)");
         String format = String.format(string, Arrays.copyOf(new Object[]{k}, 1));
@@ -105,7 +107,7 @@ public final class FitemMsgChickenWin extends FitemMsgBase {
                 ds.clearShadowLayer();
             }
         }, i2, k.length() + i2, 33);
-        this.f10935a.a(R.id.live_msg_content_text, spannableStringBuilder);
+        this.a.a(R.id.live_msg_content_text, spannableStringBuilder);
     }
 
     @Override // com.blued.android.module.common.utils.freedom.FreedomItem
@@ -129,7 +131,7 @@ public final class FitemMsgChickenWin extends FitemMsgBase {
             });
             return;
         }
-        Object obj = e().msgMapExtra.get("msg");
+        Object obj = e().msgMapExtra.get(c.b);
         if (obj == null) {
             throw new NullPointerException("null cannot be cast to non-null type kotlin.String");
         }
@@ -145,7 +147,7 @@ public final class FitemMsgChickenWin extends FitemMsgBase {
             if (obj2 == null) {
                 throw new NullPointerException("null cannot be cast to non-null type kotlin.String");
             }
-            objectRef.f42545a = (String) obj2;
+            objectRef.a = (String) obj2;
         }
         final Ref.BooleanRef booleanRef = new Ref.BooleanRef();
         if (e().msgMapExtra.get("link_half_open") != null && (e().msgMapExtra.get("link_half_open") instanceof Boolean)) {
@@ -153,7 +155,7 @@ public final class FitemMsgChickenWin extends FitemMsgBase {
             if (obj3 == null) {
                 throw new NullPointerException("null cannot be cast to non-null type kotlin.Boolean");
             }
-            booleanRef.f42538a = ((Boolean) obj3).booleanValue();
+            booleanRef.a = ((Boolean) obj3).booleanValue();
         }
         vh.a(R.id.live_msg_content_text, new View.OnClickListener() { // from class: com.blued.android.module.live_china.fitem.msgcontent.-$$Lambda$FitemMsgChickenWin$WQh5-9u8lGxdb0fYsmBUDZwlHro
             @Override // android.view.View.OnClickListener

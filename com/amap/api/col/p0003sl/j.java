@@ -3,6 +3,8 @@ package com.amap.api.col.p0003sl;
 import android.content.Context;
 import android.text.TextUtils;
 import com.amap.api.location.AMapLocation;
+import com.android.internal.widget.LockPatternUtils;
+import com.anythink.core.common.k.f;
 import com.autonavi.aps.amapapi.security.a;
 import com.autonavi.aps.amapapi.storage.b;
 import com.autonavi.aps.amapapi.storage.c;
@@ -16,12 +18,8 @@ public final class j {
     static b b;
     static ja e;
     static long g;
-
-    /* renamed from: a  reason: collision with root package name */
-    String f5198a = null;
-
-    /* renamed from: c  reason: collision with root package name */
-    b f5199c = null;
+    String a = null;
+    b c = null;
     b d = null;
     long f = 0;
     boolean h = false;
@@ -68,13 +66,13 @@ public final class j {
             bVar = bVar4;
             try {
                 byte[] b4 = ht.b(bVar4.c());
-                String str2 = (b4 == null || b4.length <= 0 || (b2 = a.b(b4, this.f5198a)) == null || b2.length <= 0) ? null : new String(b2, "UTF-8");
+                String str2 = (b4 == null || b4.length <= 0 || (b2 = a.b(b4, this.a)) == null || b2.length <= 0) ? null : new String(b2, "UTF-8");
                 byte[] b5 = ht.b(bVar4.b());
                 String str3 = null;
                 if (b5 != null) {
                     str3 = null;
                     if (b5.length > 0) {
-                        byte[] b6 = a.b(b5, this.f5198a);
+                        byte[] b6 = a.b(b5, this.a);
                         str3 = null;
                         if (b6 != null) {
                             str3 = null;
@@ -113,7 +111,7 @@ public final class j {
     }
 
     public final AMapLocation a(AMapLocation aMapLocation, String str, long j) {
-        boolean a2;
+        boolean a;
         if (aMapLocation == null) {
             return aMapLocation;
         }
@@ -129,29 +127,29 @@ public final class j {
                     if (b != null && b.a() != null) {
                         if (TextUtils.isEmpty(str)) {
                             long b2 = i.b() - b.d();
-                            a2 = false;
+                            a = false;
                             if (b2 >= 0) {
-                                a2 = false;
+                                a = false;
                                 if (b2 <= j) {
-                                    a2 = true;
+                                    a = true;
                                 }
                             }
                             aMapLocation.setTrustedLevel(3);
                         } else {
-                            a2 = i.a(b.b(), str);
+                            a = i.a(b.b(), str);
                             aMapLocation.setTrustedLevel(2);
                         }
                         aMapLocation2 = aMapLocation;
-                        if (a2) {
-                            AMapLocation a3 = b.a();
+                        if (a) {
+                            AMapLocation a2 = b.a();
                             try {
-                                a3.setLocationType(9);
-                                a3.setFixLastLocation(true);
-                                a3.setLocationDetail(aMapLocation.getLocationDetail());
-                                return a3;
+                                a2.setLocationType(9);
+                                a2.setFixLastLocation(true);
+                                a2.setLocationDetail(aMapLocation.getLocationDetail());
+                                return a2;
                             } catch (Throwable th) {
                                 th = th;
-                                aMapLocation = a3;
+                                aMapLocation = a2;
                                 com.autonavi.aps.amapapi.utils.b.a(th, "LastLocationManager", "fixLastLocation");
                                 aMapLocation2 = aMapLocation;
                                 return aMapLocation2;
@@ -172,8 +170,8 @@ public final class j {
             return;
         }
         try {
-            if (this.f5198a == null) {
-                this.f5198a = a.a("MD5", hs.v(this.i));
+            if (this.a == null) {
+                this.a = a.a(f.a, hs.v(this.i));
             }
             if (e == null) {
                 e = new ja(this.i, ja.a((Class<? extends iz>) c.class));
@@ -198,9 +196,9 @@ public final class j {
         try {
             b = bVar;
             g = i.b();
-            this.f5199c = bVar;
+            this.c = bVar;
             if (this.d == null || i.a(this.d.a(), bVar.a()) > 500.0f) {
-                return i.b() - this.f > 30000;
+                return i.b() - this.f > LockPatternUtils.FAILED_ATTEMPT_TIMEOUT_MS;
             }
             return false;
         } catch (Throwable th) {
@@ -223,7 +221,7 @@ public final class j {
             d();
             this.f = 0L;
             this.h = false;
-            this.f5199c = null;
+            this.c = null;
             this.d = null;
         } catch (Throwable th) {
             com.autonavi.aps.amapapi.utils.b.a(th, "LastLocationManager", "destroy");
@@ -233,20 +231,20 @@ public final class j {
     public final void d() {
         try {
             a();
-            if (this.f5199c == null || !i.a(this.f5199c.a()) || e == null || this.f5199c == this.d || this.f5199c.d() != 0) {
+            if (this.c == null || !i.a(this.c.a()) || e == null || this.c == this.d || this.c.d() != 0) {
                 return;
             }
-            String str = this.f5199c.a().toStr();
-            String b2 = this.f5199c.b();
-            this.d = this.f5199c;
+            String str = this.c.a().toStr();
+            String b2 = this.c.b();
+            this.d = this.c;
             String str2 = null;
             String str3 = null;
             if (TextUtils.isEmpty(str)) {
                 str2 = null;
             } else {
-                str3 = ht.b(a.a(str.getBytes("UTF-8"), this.f5198a));
+                str3 = ht.b(a.a(str.getBytes("UTF-8"), this.a));
                 if (!TextUtils.isEmpty(b2)) {
-                    str2 = ht.b(a.a(b2.getBytes("UTF-8"), this.f5198a));
+                    str2 = ht.b(a.a(b2.getBytes("UTF-8"), this.a));
                 }
             }
             if (TextUtils.isEmpty(str3)) {

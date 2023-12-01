@@ -16,13 +16,9 @@ import androidx.core.widget.PopupWindowCompat;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/widget/pop/BluedPopupWindow.class */
 public class BluedPopupWindow extends PopupWindow {
-
-    /* renamed from: a  reason: collision with root package name */
-    private int f11216a;
+    private int a;
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private float f11217c;
+    private float c;
     private Context d;
     private View e;
     private boolean f;
@@ -37,15 +33,13 @@ public class BluedPopupWindow extends PopupWindow {
 
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/widget/pop/BluedPopupWindow$Builder.class */
     public static class Builder {
-
-        /* renamed from: a  reason: collision with root package name */
-        private BluedPopupWindow f11223a;
+        private BluedPopupWindow a;
 
         private Builder(Activity activity, View view) {
             BluedPopupWindow bluedPopupWindow = new BluedPopupWindow(activity);
-            this.f11223a = bluedPopupWindow;
+            this.a = bluedPopupWindow;
             bluedPopupWindow.d = activity;
-            this.f11223a.e = view;
+            this.a.e = view;
         }
 
         public static Builder a(Activity activity, View view) {
@@ -53,24 +47,24 @@ public class BluedPopupWindow extends PopupWindow {
         }
 
         public Builder a(float f) {
-            this.f11223a.f11217c = f;
+            this.a.c = f;
             return this;
         }
 
         public Builder a(int i, int i2) {
-            this.f11223a.f11216a = i;
-            this.f11223a.b = i2;
+            this.a.a = i;
+            this.a.b = i2;
             return this;
         }
 
         public Builder a(boolean z) {
-            this.f11223a.f = z;
+            this.a.f = z;
             return this;
         }
 
         public BluedPopupWindow a() {
-            this.f11223a.a();
-            return this.f11223a;
+            this.a.a();
+            return this.a;
         }
     }
 
@@ -84,9 +78,9 @@ public class BluedPopupWindow extends PopupWindow {
 
     public BluedPopupWindow(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f11216a = -2;
+        this.a = -2;
         this.b = -2;
-        this.f11217c = 1.0f;
+        this.c = 1.0f;
         this.f = true;
         this.g = -1;
         this.h = true;
@@ -96,7 +90,7 @@ public class BluedPopupWindow extends PopupWindow {
             @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
             public void onGlobalLayout() {
                 BluedPopupWindow bluedPopupWindow = BluedPopupWindow.this;
-                bluedPopupWindow.f11216a = bluedPopupWindow.getContentView().getWidth();
+                bluedPopupWindow.a = bluedPopupWindow.getContentView().getWidth();
                 BluedPopupWindow bluedPopupWindow2 = BluedPopupWindow.this;
                 bluedPopupWindow2.b = bluedPopupWindow2.getContentView().getHeight();
                 if (BluedPopupWindow.this.h) {
@@ -104,7 +98,7 @@ public class BluedPopupWindow extends PopupWindow {
                     return;
                 }
                 BluedPopupWindow bluedPopupWindow3 = BluedPopupWindow.this;
-                bluedPopupWindow3.a(bluedPopupWindow3.f11216a, BluedPopupWindow.this.b, BluedPopupWindow.this.i, BluedPopupWindow.this.j, BluedPopupWindow.this.k, BluedPopupWindow.this.l, BluedPopupWindow.this.m);
+                bluedPopupWindow3.a(bluedPopupWindow3.a, BluedPopupWindow.this.b, BluedPopupWindow.this.i, BluedPopupWindow.this.j, BluedPopupWindow.this.k, BluedPopupWindow.this.l, BluedPopupWindow.this.m);
                 BluedPopupWindow.this.b();
             }
         };
@@ -177,7 +171,7 @@ public class BluedPopupWindow extends PopupWindow {
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 int x = (int) motionEvent.getX();
                 int y = (int) motionEvent.getY();
-                return (motionEvent.getAction() == 0 && (x < 0 || x >= BluedPopupWindow.this.f11216a || y < 0 || y >= BluedPopupWindow.this.b)) || motionEvent.getAction() == 4;
+                return (motionEvent.getAction() == 0 && (x < 0 || x >= BluedPopupWindow.this.a || y < 0 || y >= BluedPopupWindow.this.b)) || motionEvent.getAction() == 4;
             }
         });
     }
@@ -217,7 +211,7 @@ public class BluedPopupWindow extends PopupWindow {
     }
 
     private void c() {
-        float f = this.f11217c;
+        float f = this.c;
         if (f >= 1.0f) {
             return;
         }
@@ -233,7 +227,7 @@ public class BluedPopupWindow extends PopupWindow {
     }
 
     private void d() {
-        float f = this.f11217c;
+        float f = this.c;
         if (f >= 1.0f) {
             return;
         }
@@ -251,7 +245,7 @@ public class BluedPopupWindow extends PopupWindow {
     public void a() {
         setContentView(this.e);
         setHeight(this.b);
-        setWidth(this.f11216a);
+        setWidth(this.a);
         a(this.f);
         int i = this.g;
         if (i != -1) {
@@ -289,12 +283,12 @@ public class BluedPopupWindow extends PopupWindow {
                 i5 = i3 + iArr[0];
                 i6 = i4 + iArr[1] + view.getHeight();
             }
-            int a2 = a(view, i, measuredHeight, i6);
+            int a = a(view, i, measuredHeight, i6);
             int b = b(view, i2, measuredWidth, i5);
             if (z) {
-                PopupWindowCompat.showAsDropDown(this, view, b, a2, 0);
+                PopupWindowCompat.showAsDropDown(this, view, b, a, 0);
             } else {
-                showAtLocation(view, 0, b, a2);
+                showAtLocation(view, 0, b, a);
             }
         } catch (Exception e) {
         }

@@ -7,29 +7,29 @@ import com.tencent.cloud.huiyansdkface.normal.tools.WLogger;
 public class WbFaceModeProviders {
 
     /* renamed from: a  reason: collision with root package name */
-    private static boolean f35655a;
+    private static boolean f21964a;
     private static WbFaceModeInterface b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static WbFaceModeInterface f35656c = new WbFaceLiveImpl();
+    private static WbFaceModeInterface f21965c = new WbFaceLiveImpl();
 
     static {
         try {
             Class.forName("com.tencent.cloud.huiyansdkface.wbwillexpressionsdk.WbFaceWillImpl");
-            f35655a = true;
+            f21964a = true;
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
-            f35655a = false;
+            f21964a = false;
         }
     }
 
     public static WbFaceModeInterface faceMode() {
-        if (d.z().x().T() && f35655a) {
+        if (d.z().x().T() && f21964a) {
             try {
                 if (b != null) {
                     return b;
                 }
-                WbFaceModeInterface wbFaceModeInterface = (WbFaceModeInterface) Class.forName("com.tencent.cloud.huiyansdkface.wbwillexpressionsdk.WbFaceWillImpl").getConstructor(WbFaceModeInterface.class).newInstance(f35656c);
+                WbFaceModeInterface wbFaceModeInterface = (WbFaceModeInterface) Class.forName("com.tencent.cloud.huiyansdkface.wbwillexpressionsdk.WbFaceWillImpl").getConstructor(WbFaceModeInterface.class).newInstance(f21965c);
                 b = wbFaceModeInterface;
                 return wbFaceModeInterface;
             } catch (Exception e) {
@@ -37,12 +37,12 @@ public class WbFaceModeProviders {
                 throw new RuntimeException("can't load WbWillExpressionHelper!");
             }
         }
-        return f35656c;
+        return f21965c;
     }
 
     public static boolean isUseWillSdk() {
-        boolean z = d.z().x().T() && f35655a;
-        WLogger.d("WbFaceModeProviders", "hasWbIntentionSdk:" + f35655a + ";isUseWillSdk =" + z);
+        boolean z = d.z().x().T() && f21964a;
+        WLogger.d("WbFaceModeProviders", "hasWbIntentionSdk:" + f21964a + ";isUseWillSdk =" + z);
         return z;
     }
 }

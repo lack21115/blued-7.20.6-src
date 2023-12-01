@@ -58,7 +58,7 @@ public final class e extends d {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final e f21941a = new e((byte) 0);
+        private static final e f8334a = new e((byte) 0);
     }
 
     private e() {
@@ -69,7 +69,7 @@ public final class e extends d {
     }
 
     public static e a() {
-        return a.f21941a;
+        return a.f8334a;
     }
 
     private static Object a(String str, AppDataProvider appDataProvider, Class<?> cls, boolean z, Object obj) {

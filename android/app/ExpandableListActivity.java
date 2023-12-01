@@ -1,5 +1,6 @@
 package android.app;
 
+import android.R;
 import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.View;
@@ -16,7 +17,7 @@ public class ExpandableListActivity extends Activity implements View.OnCreateCon
         if (this.mList != null) {
             return;
         }
-        setContentView(17367041);
+        setContentView(R.layout.expandable_list_content);
     }
 
     public ExpandableListAdapter getExpandableListAdapter() {
@@ -44,8 +45,8 @@ public class ExpandableListActivity extends Activity implements View.OnCreateCon
     @Override // android.app.Activity, android.view.Window.Callback
     public void onContentChanged() {
         super.onContentChanged();
-        View findViewById = findViewById(16908292);
-        this.mList = (ExpandableListView) findViewById(16908298);
+        View findViewById = findViewById(R.id.empty);
+        this.mList = (ExpandableListView) findViewById(R.id.list);
         if (this.mList == null) {
             throw new RuntimeException("Your content must have a ExpandableListView whose id attribute is 'android.R.id.list'");
         }

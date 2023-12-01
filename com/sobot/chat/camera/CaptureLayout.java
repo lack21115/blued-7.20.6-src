@@ -221,9 +221,8 @@ public class CaptureLayout extends FrameLayout {
         this.btn_confirm.setVisibility(8);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         super.onMeasure(i, i2);
         setMeasuredDimension(this.layout_width, this.layout_height);
     }

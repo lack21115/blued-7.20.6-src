@@ -29,11 +29,11 @@ import kotlin.jvm.internal.Intrinsics;
 public final class DownLoadADApkHelper {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final DownLoadADApkHelper f34639a = new DownLoadADApkHelper();
+    public static final DownLoadADApkHelper f20948a = new DownLoadADApkHelper();
     private static File b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static String[] f34640c;
+    private static String[] f20949c;
     private static String[] d;
     private static String[] e;
 
@@ -42,11 +42,11 @@ public final class DownLoadADApkHelper {
     static final class DownApkAsyncTask extends AsyncTask<Void, Long, Void> {
 
         /* renamed from: a  reason: collision with root package name */
-        private final String f34641a;
+        private final String f20950a;
         private final File b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final Drawable f34642c;
+        private final Drawable f20951c;
 
         /* JADX INFO: Access modifiers changed from: protected */
         /* JADX WARN: Not initialized variable reg: 12, insn: 0x02af: MOVE  (r0 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = (r12 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]), block:B:96:0x02a8 */
@@ -116,37 +116,34 @@ public final class DownLoadADApkHelper {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(BluedADExtra.DownLoadModel this_apply, File baseFile, final NotificationManager manager, final Drawable resource) {
-        Intrinsics.e(this_apply, "$this_apply");
-        Intrinsics.e(baseFile, "$baseFile");
-        Intrinsics.e(manager, "$manager");
-        Intrinsics.e(resource, "$resource");
-        FileDownloader.a(this_apply.down_link, baseFile.getPath(), new FileHttpResponseHandler() { // from class: com.soft.blued.ui.welcome.helper.DownLoadADApkHelper$downloadApk$1$1$1
-            @Override // com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
+    public static final void a(BluedADExtra.DownLoadModel downLoadModel, File file, final NotificationManager notificationManager, final Drawable drawable) {
+        Intrinsics.e(downLoadModel, "$this_apply");
+        Intrinsics.e(file, "$baseFile");
+        Intrinsics.e(notificationManager, "$manager");
+        Intrinsics.e(drawable, "$resource");
+        FileDownloader.a(downLoadModel.down_link, file.getPath(), new FileHttpResponseHandler() { // from class: com.soft.blued.ui.welcome.helper.DownLoadADApkHelper$downloadApk$1$1$1
             /* renamed from: a */
-            public void onSuccess(File file) {
+            public void onSuccess(File file2) {
                 Log.v("drb", "「开机图下载」onSuccess");
-                FindHttpUtils.b(DownLoadADApkHelper.f34639a.a());
-                DownLoadADApkHelper.f34639a.a(NotificationManager.this);
+                FindHttpUtils.b(DownLoadADApkHelper.f20948a.a());
+                DownLoadADApkHelper.f20948a.a(NotificationManager.this);
             }
 
-            @Override // com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
             /* renamed from: a */
-            public void onFailure(Throwable th, int i, File file) {
+            public void onFailure(Throwable th, int i, File file2) {
                 StringBuilder sb = new StringBuilder();
                 sb.append("「开机图下载」onFailure error:");
                 sb.append(th);
                 sb.append(" statusCode:");
                 sb.append(i);
                 sb.append(" content:");
-                sb.append((Object) (file == null ? null : file.getPath()));
+                sb.append((Object) (file2 == null ? null : file2.getPath()));
                 Log.v("drb", sb.toString());
             }
 
-            @Override // com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
             public void onProgress(int i, int i2) {
-                Log.v("drb", Intrinsics.a("「开机图下载」onProgress percent:", (Object) Integer.valueOf(i)));
-                DownLoadADApkHelper.f34639a.a(AppInfo.d(), i, 100, NotificationManager.this, resource);
+                Log.v("drb", Intrinsics.a("「开机图下载」onProgress percent:", Integer.valueOf(i)));
+                DownLoadADApkHelper.f20948a.a(AppInfo.d(), i, 100, NotificationManager.this, drawable);
             }
         });
     }
@@ -157,19 +154,19 @@ public final class DownLoadADApkHelper {
         e = null;
     }
 
-    public final void a(final Drawable resource, final BluedADExtra.DownLoadModel downLoadModel) {
-        Intrinsics.e(resource, "resource");
+    public final void a(final Drawable drawable, final BluedADExtra.DownLoadModel downLoadModel) {
+        Intrinsics.e(drawable, "resource");
         if (downLoadModel == null) {
             return;
         }
-        f34639a.a(downLoadModel.down_finish);
-        f34639a.b(downLoadModel.install_start);
-        f34639a.c(downLoadModel.install_finish);
+        f20948a.a(downLoadModel.down_finish);
+        f20948a.b(downLoadModel.install_start);
+        f20948a.c(downLoadModel.install_finish);
         StringBuilder sb = new StringBuilder(System.currentTimeMillis() + "_app");
         sb.append(".apk");
         final File file = new File(AppMethods.d(), sb.toString());
         Log.v("drb", "「开机图下载」absolutePath:" + ((Object) file.getAbsolutePath()) + "  path:" + ((Object) file.getPath()) + " down_link:" + ((Object) downLoadModel.down_link) + " AppMethods.getAppDownloadDirs()：" + ((Object) AppMethods.d()));
-        f34639a.a(new File(AppMethods.d(), sb.toString()));
+        f20948a.a(new File(AppMethods.d(), sb.toString()));
         Object systemService = ContextCompat.getSystemService(AppInfo.d(), "notification");
         if (systemService == null) {
             throw new NullPointerException("null cannot be cast to non-null type android.app.NotificationManager");
@@ -178,11 +175,11 @@ public final class DownLoadADApkHelper {
         new Thread(new Runnable() { // from class: com.soft.blued.ui.welcome.helper.-$$Lambda$DownLoadADApkHelper$rmszfqoaAZW155SjwxfFCYX35tE
             @Override // java.lang.Runnable
             public final void run() {
-                DownLoadADApkHelper.a(BluedADExtra.DownLoadModel.this, file, notificationManager, resource);
+                DownLoadADApkHelper.a(downLoadModel, file, notificationManager, drawable);
             }
         }).start();
         FindHttpUtils.b(downLoadModel.down_start);
-        f34639a.a(downLoadModel.down_finish);
+        f20948a.a(downLoadModel.down_finish);
     }
 
     public final void a(File file) {
@@ -190,11 +187,11 @@ public final class DownLoadADApkHelper {
     }
 
     public final void a(String[] strArr) {
-        f34640c = strArr;
+        f20949c = strArr;
     }
 
     public final String[] a() {
-        return f34640c;
+        return f20949c;
     }
 
     public final void b(String[] strArr) {

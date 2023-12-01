@@ -4,7 +4,6 @@ import android.os.Process;
 import android.os.StrictMode;
 import android.text.TextUtils;
 import android.util.Log;
-import com.blued.android.chat.core.pack.ReqAckPackage;
 import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.Callable;
@@ -22,32 +21,32 @@ import java.util.concurrent.TimeoutException;
 public final class GlideExecutor implements ExecutorService {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final long f20842a = TimeUnit.SECONDS.toMillis(10);
+    private static final long f7236a = TimeUnit.SECONDS.toMillis(10);
     private static volatile int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final ExecutorService f20843c;
+    private final ExecutorService f7237c;
 
     /* loaded from: source-7206380-dex2jar.jar:com/bumptech/glide/load/engine/executor/GlideExecutor$Builder.class */
     public static final class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        private final boolean f20844a;
+        private final boolean f7238a;
         private int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f20845c;
+        private int f7239c;
         private UncaughtThrowableStrategy d = UncaughtThrowableStrategy.d;
         private String e;
         private long f;
 
         Builder(boolean z) {
-            this.f20844a = z;
+            this.f7238a = z;
         }
 
         public Builder a(int i) {
             this.b = i;
-            this.f20845c = i;
+            this.f7239c = i;
             return this;
         }
 
@@ -60,7 +59,7 @@ public final class GlideExecutor implements ExecutorService {
             if (TextUtils.isEmpty(this.e)) {
                 throw new IllegalArgumentException("Name must be non-null and non-empty, but given: " + this.e);
             }
-            ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(this.b, this.f20845c, this.f, TimeUnit.MILLISECONDS, new PriorityBlockingQueue(), new DefaultThreadFactory(this.e, this.d, this.f20844a));
+            ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(this.b, this.f7239c, this.f, TimeUnit.MILLISECONDS, new PriorityBlockingQueue(), new DefaultThreadFactory(this.e, this.d, this.f7238a));
             if (this.f != 0) {
                 threadPoolExecutor.allowCoreThreadTimeOut(true);
             }
@@ -73,16 +72,16 @@ public final class GlideExecutor implements ExecutorService {
     public static final class DefaultThreadFactory implements ThreadFactory {
 
         /* renamed from: a  reason: collision with root package name */
-        final UncaughtThrowableStrategy f20846a;
+        final UncaughtThrowableStrategy f7240a;
         final boolean b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final String f20847c;
+        private final String f7241c;
         private int d;
 
         DefaultThreadFactory(String str, UncaughtThrowableStrategy uncaughtThrowableStrategy, boolean z) {
-            this.f20847c = str;
-            this.f20846a = uncaughtThrowableStrategy;
+            this.f7241c = str;
+            this.f7240a = uncaughtThrowableStrategy;
             this.b = z;
         }
 
@@ -90,7 +89,7 @@ public final class GlideExecutor implements ExecutorService {
         public Thread newThread(Runnable runnable) {
             Thread thread;
             synchronized (this) {
-                thread = new Thread(runnable, "glide-" + this.f20847c + "-thread-" + this.d) { // from class: com.bumptech.glide.load.engine.executor.GlideExecutor.DefaultThreadFactory.1
+                thread = new Thread(runnable, "glide-" + this.f7241c + "-thread-" + this.d) { // from class: com.bumptech.glide.load.engine.executor.GlideExecutor.DefaultThreadFactory.1
                     @Override // java.lang.Thread, java.lang.Runnable
                     public void run() {
                         Process.setThreadPriority(9);
@@ -100,7 +99,7 @@ public final class GlideExecutor implements ExecutorService {
                         try {
                             super.run();
                         } catch (Throwable th) {
-                            DefaultThreadFactory.this.f20846a.a(th);
+                            DefaultThreadFactory.this.f7240a.a(th);
                         }
                     }
                 };
@@ -114,7 +113,7 @@ public final class GlideExecutor implements ExecutorService {
     public interface UncaughtThrowableStrategy {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final UncaughtThrowableStrategy f20849a = new UncaughtThrowableStrategy() { // from class: com.bumptech.glide.load.engine.executor.GlideExecutor.UncaughtThrowableStrategy.1
+        public static final UncaughtThrowableStrategy f7243a = new UncaughtThrowableStrategy() { // from class: com.bumptech.glide.load.engine.executor.GlideExecutor.UncaughtThrowableStrategy.1
             @Override // com.bumptech.glide.load.engine.executor.GlideExecutor.UncaughtThrowableStrategy
             public void a(Throwable th) {
             }
@@ -130,7 +129,7 @@ public final class GlideExecutor implements ExecutorService {
         };
 
         /* renamed from: c  reason: collision with root package name */
-        public static final UncaughtThrowableStrategy f20850c = new UncaughtThrowableStrategy() { // from class: com.bumptech.glide.load.engine.executor.GlideExecutor.UncaughtThrowableStrategy.3
+        public static final UncaughtThrowableStrategy f7244c = new UncaughtThrowableStrategy() { // from class: com.bumptech.glide.load.engine.executor.GlideExecutor.UncaughtThrowableStrategy.3
             @Override // com.bumptech.glide.load.engine.executor.GlideExecutor.UncaughtThrowableStrategy
             public void a(Throwable th) {
                 if (th != null) {
@@ -144,7 +143,7 @@ public final class GlideExecutor implements ExecutorService {
     }
 
     GlideExecutor(ExecutorService executorService) {
-        this.f20843c = executorService;
+        this.f7237c = executorService;
     }
 
     public static Builder a() {
@@ -164,11 +163,11 @@ public final class GlideExecutor implements ExecutorService {
     }
 
     public static GlideExecutor e() {
-        return new GlideExecutor(new ThreadPoolExecutor(0, Integer.MAX_VALUE, f20842a, TimeUnit.MILLISECONDS, new SynchronousQueue(), new DefaultThreadFactory("source-unlimited", UncaughtThrowableStrategy.d, false)));
+        return new GlideExecutor(new ThreadPoolExecutor(0, Integer.MAX_VALUE, f7236a, TimeUnit.MILLISECONDS, new SynchronousQueue(), new DefaultThreadFactory("source-unlimited", UncaughtThrowableStrategy.d, false)));
     }
 
     public static Builder f() {
-        return new Builder(true).a(h() >= 4 ? 2 : 1).a(ReqAckPackage.REQ_RESPONSE_KEY.ANIMATION);
+        return new Builder(true).a(h() >= 4 ? 2 : 1).a("animation");
     }
 
     public static GlideExecutor g() {
@@ -184,70 +183,70 @@ public final class GlideExecutor implements ExecutorService {
 
     @Override // java.util.concurrent.ExecutorService
     public boolean awaitTermination(long j, TimeUnit timeUnit) throws InterruptedException {
-        return this.f20843c.awaitTermination(j, timeUnit);
+        return this.f7237c.awaitTermination(j, timeUnit);
     }
 
     @Override // java.util.concurrent.Executor
     public void execute(Runnable runnable) {
-        this.f20843c.execute(runnable);
+        this.f7237c.execute(runnable);
     }
 
     @Override // java.util.concurrent.ExecutorService
     public <T> List<Future<T>> invokeAll(Collection<? extends Callable<T>> collection) throws InterruptedException {
-        return this.f20843c.invokeAll(collection);
+        return this.f7237c.invokeAll(collection);
     }
 
     @Override // java.util.concurrent.ExecutorService
     public <T> List<Future<T>> invokeAll(Collection<? extends Callable<T>> collection, long j, TimeUnit timeUnit) throws InterruptedException {
-        return this.f20843c.invokeAll(collection, j, timeUnit);
+        return this.f7237c.invokeAll(collection, j, timeUnit);
     }
 
     @Override // java.util.concurrent.ExecutorService
     public <T> T invokeAny(Collection<? extends Callable<T>> collection) throws InterruptedException, ExecutionException {
-        return (T) this.f20843c.invokeAny(collection);
+        return (T) this.f7237c.invokeAny(collection);
     }
 
     @Override // java.util.concurrent.ExecutorService
     public <T> T invokeAny(Collection<? extends Callable<T>> collection, long j, TimeUnit timeUnit) throws InterruptedException, ExecutionException, TimeoutException {
-        return (T) this.f20843c.invokeAny(collection, j, timeUnit);
+        return (T) this.f7237c.invokeAny(collection, j, timeUnit);
     }
 
     @Override // java.util.concurrent.ExecutorService
     public boolean isShutdown() {
-        return this.f20843c.isShutdown();
+        return this.f7237c.isShutdown();
     }
 
     @Override // java.util.concurrent.ExecutorService
     public boolean isTerminated() {
-        return this.f20843c.isTerminated();
+        return this.f7237c.isTerminated();
     }
 
     @Override // java.util.concurrent.ExecutorService
     public void shutdown() {
-        this.f20843c.shutdown();
+        this.f7237c.shutdown();
     }
 
     @Override // java.util.concurrent.ExecutorService
     public List<Runnable> shutdownNow() {
-        return this.f20843c.shutdownNow();
+        return this.f7237c.shutdownNow();
     }
 
     @Override // java.util.concurrent.ExecutorService
     public Future<?> submit(Runnable runnable) {
-        return this.f20843c.submit(runnable);
+        return this.f7237c.submit(runnable);
     }
 
     @Override // java.util.concurrent.ExecutorService
     public <T> Future<T> submit(Runnable runnable, T t) {
-        return this.f20843c.submit(runnable, t);
+        return this.f7237c.submit(runnable, t);
     }
 
     @Override // java.util.concurrent.ExecutorService
     public <T> Future<T> submit(Callable<T> callable) {
-        return this.f20843c.submit(callable);
+        return this.f7237c.submit(callable);
     }
 
     public String toString() {
-        return this.f20843c.toString();
+        return this.f7237c.toString();
     }
 }

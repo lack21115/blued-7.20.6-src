@@ -7,11 +7,11 @@ import com.tencent.liteav.videobase.base.GLConstants;
 public final /* synthetic */ class o implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final g f36837a;
+    private final g f23146a;
     private final GLConstants.GLScaleType b;
 
     private o(g gVar, GLConstants.GLScaleType gLScaleType) {
-        this.f36837a = gVar;
+        this.f23146a = gVar;
         this.b = gLScaleType;
     }
 
@@ -21,6 +21,6 @@ public final /* synthetic */ class o implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        g.a(this.f36837a, this.b);
+        g.a(this.f23146a, this.b);
     }
 }

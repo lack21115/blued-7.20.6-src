@@ -4,19 +4,19 @@ package com.umeng.analytics.pro;
 public final class cm {
 
     /* renamed from: a  reason: collision with root package name */
-    public final byte f40702a;
+    public final byte f27011a;
     public final byte b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final int f40703c;
+    public final int f27012c;
 
     public cm() {
         this((byte) 0, (byte) 0, 0);
     }
 
     public cm(byte b, byte b2, int i) {
-        this.f40702a = b;
+        this.f27011a = b;
         this.b = b2;
-        this.f40703c = i;
+        this.f27012c = i;
     }
 }

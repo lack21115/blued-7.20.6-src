@@ -15,11 +15,11 @@ import java.util.Map;
 final class StickyHeaderPositioner {
 
     /* renamed from: a  reason: collision with root package name */
-    private final RecyclerView f20631a;
+    private final RecyclerView f7025a;
     private final boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private View f20632c;
+    private View f7026c;
     private List<Integer> e;
     private int f;
     private boolean g;
@@ -31,13 +31,13 @@ final class StickyHeaderPositioner {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public StickyHeaderPositioner(RecyclerView recyclerView) {
-        this.f20631a = recyclerView;
+        this.f7025a = recyclerView;
         recyclerView.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() { // from class: com.brandongogetap.stickyheaders.StickyHeaderPositioner.1
             @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
             public void onGlobalLayout() {
-                int visibility = StickyHeaderPositioner.this.f20631a.getVisibility();
-                if (StickyHeaderPositioner.this.f20632c != null) {
-                    StickyHeaderPositioner.this.f20632c.setVisibility(visibility);
+                int visibility = StickyHeaderPositioner.this.f7025a.getVisibility();
+                if (StickyHeaderPositioner.this.f7026c != null) {
+                    StickyHeaderPositioner.this.f7026c.setVisibility(visibility);
                 }
             }
         });
@@ -51,12 +51,12 @@ final class StickyHeaderPositioner {
     private float a(View view) {
         if (b(view)) {
             if (this.f == 1) {
-                float f = -(this.f20632c.getHeight() - view.getY());
-                this.f20632c.setTranslationY(f);
+                float f = -(this.f7026c.getHeight() - view.getY());
+                this.f7026c.setTranslationY(f);
                 return f;
             }
-            float f2 = -(this.f20632c.getWidth() - view.getX());
-            this.f20632c.setTranslationX(f2);
+            float f2 = -(this.f7026c.getWidth() - view.getX());
+            this.f7026c.setTranslationX(f2);
             return f2;
         }
         return -1.0f;
@@ -93,19 +93,19 @@ final class StickyHeaderPositioner {
     }
 
     private void a(ViewGroup.MarginLayoutParams marginLayoutParams) {
-        marginLayoutParams.setMargins(this.f == 1 ? this.f20631a.getPaddingLeft() : 0, this.f == 1 ? 0 : this.f20631a.getPaddingTop(), this.f == 1 ? this.f20631a.getPaddingRight() : 0, 0);
+        marginLayoutParams.setMargins(this.f == 1 ? this.f7025a.getPaddingLeft() : 0, this.f == 1 ? 0 : this.f7025a.getPaddingTop(), this.f == 1 ? this.f7025a.getPaddingRight() : 0, 0);
     }
 
     private void b() {
         if (this.f == 1) {
-            this.f20632c.setTranslationY(0.0f);
+            this.f7026c.setTranslationY(0.0f);
         } else {
-            this.f20632c.setTranslationX(0.0f);
+            this.f7026c.setTranslationX(0.0f);
         }
     }
 
     private void b(final Map<Integer, View> map) {
-        final View view = this.f20632c;
+        final View view = this.f7026c;
         if (view == null) {
             return;
         }
@@ -117,7 +117,7 @@ final class StickyHeaderPositioner {
                 } else {
                     view.getViewTreeObserver().removeGlobalOnLayoutListener(this);
                 }
-                if (StickyHeaderPositioner.this.f20632c == null) {
+                if (StickyHeaderPositioner.this.f7026c == null) {
                     return;
                 }
                 StickyHeaderPositioner.this.j().requestLayout();
@@ -129,13 +129,13 @@ final class StickyHeaderPositioner {
     private boolean b(View view) {
         boolean z = false;
         if (this.f == 1) {
-            if (view.getY() < this.f20632c.getHeight()) {
+            if (view.getY() < this.f7026c.getHeight()) {
                 z = true;
             }
             return z;
         }
         boolean z2 = false;
-        if (view.getX() < this.f20632c.getWidth()) {
+        if (view.getX() < this.f7026c.getWidth()) {
             z2 = true;
         }
         return z2;
@@ -143,7 +143,7 @@ final class StickyHeaderPositioner {
 
     /* JADX INFO: Access modifiers changed from: private */
     public int c() {
-        View view = this.f20632c;
+        View view = this.f7026c;
         if (view == null) {
             return 0;
         }
@@ -152,7 +152,7 @@ final class StickyHeaderPositioner {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void c(int i) {
-        View view = this.f20632c;
+        View view = this.f7026c;
         if (view == null) {
             return;
         }
@@ -217,10 +217,10 @@ final class StickyHeaderPositioner {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void d(int i) {
-        if (this.f20632c != null) {
-            j().removeView(this.f20632c);
+        if (this.f7026c != null) {
+            j().removeView(this.f7026c);
             f(i);
-            this.f20632c = null;
+            this.f7026c = null;
             this.j = null;
         }
     }
@@ -231,7 +231,7 @@ final class StickyHeaderPositioner {
 
     /* JADX INFO: Access modifiers changed from: private */
     public boolean d() {
-        View view = this.f20632c;
+        View view = this.f7026c;
         boolean z = false;
         if (view == null) {
             return false;
@@ -250,17 +250,17 @@ final class StickyHeaderPositioner {
     }
 
     private void e() {
-        final View view = this.f20632c;
+        final View view = this.f7026c;
         if (view == null) {
             return;
         }
         view.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() { // from class: com.brandongogetap.stickyheaders.StickyHeaderPositioner.3
 
             /* renamed from: a  reason: collision with root package name */
-            int f20635a;
+            int f7029a;
 
             {
-                this.f20635a = StickyHeaderPositioner.this.c();
+                this.f7029a = StickyHeaderPositioner.this.c();
             }
 
             @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
@@ -271,11 +271,11 @@ final class StickyHeaderPositioner {
                 } else {
                     view.getViewTreeObserver().removeGlobalOnLayoutListener(this);
                 }
-                if (StickyHeaderPositioner.this.f20632c == null) {
+                if (StickyHeaderPositioner.this.f7026c == null) {
                     return;
                 }
                 int c2 = StickyHeaderPositioner.this.c();
-                if (!StickyHeaderPositioner.this.d() || (i = this.f20635a) == c2) {
+                if (!StickyHeaderPositioner.this.d() || (i = this.f7029a) == c2) {
                     return;
                 }
                 StickyHeaderPositioner.this.c(i - c2);
@@ -286,7 +286,7 @@ final class StickyHeaderPositioner {
     private void e(int i) {
         StickyHeaderListener stickyHeaderListener = this.k;
         if (stickyHeaderListener != null) {
-            stickyHeaderListener.a(this.f20632c, i);
+            stickyHeaderListener.a(this.f7026c, i);
         }
     }
 
@@ -345,10 +345,10 @@ final class StickyHeaderPositioner {
     /* JADX INFO: Access modifiers changed from: private */
     public void f() {
         View view;
-        if (this.h == -1.0f || (view = this.f20632c) == null) {
+        if (this.h == -1.0f || (view = this.f7026c) == null) {
             return;
         }
-        if ((this.f == 1 && view.getTranslationY() == 0.0f) || (this.f == 0 && this.f20632c.getTranslationX() == 0.0f)) {
+        if ((this.f == 1 && view.getTranslationY() == 0.0f) || (this.f == 0 && this.f7026c.getTranslationX() == 0.0f)) {
             g();
         } else {
             h();
@@ -358,33 +358,33 @@ final class StickyHeaderPositioner {
     private void f(int i) {
         StickyHeaderListener stickyHeaderListener = this.k;
         if (stickyHeaderListener != null) {
-            stickyHeaderListener.b(this.f20632c, i);
+            stickyHeaderListener.b(this.f7026c, i);
         }
     }
 
     private void g() {
-        if (Build.VERSION.SDK_INT < 21 || this.f20632c.getTag() != null) {
+        if (Build.VERSION.SDK_INT < 21 || this.f7026c.getTag() != null) {
             return;
         }
-        this.f20632c.setTag(true);
-        this.f20632c.animate().z(this.h);
+        this.f7026c.setTag(true);
+        this.f7026c.animate().z(this.h);
     }
 
     private void h() {
-        if (Build.VERSION.SDK_INT < 21 || this.f20632c.getTag() == null) {
+        if (Build.VERSION.SDK_INT < 21 || this.f7026c.getTag() == null) {
             return;
         }
-        this.f20632c.setTag(null);
-        this.f20632c.animate().z(0.0f);
+        this.f7026c.setTag(null);
+        this.f7026c.animate().z(0.0f);
     }
 
     private boolean i() {
-        return this.f20631a.getPaddingLeft() > 0 || this.f20631a.getPaddingRight() > 0 || this.f20631a.getPaddingTop() > 0;
+        return this.f7025a.getPaddingLeft() > 0 || this.f7025a.getPaddingRight() > 0 || this.f7025a.getPaddingTop() > 0;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public ViewGroup j() {
-        return (ViewGroup) this.f20631a.getParent();
+        return (ViewGroup) this.f7025a.getParent();
     }
 
     private void k() {
@@ -432,7 +432,7 @@ final class StickyHeaderPositioner {
             this.d = -1;
         }
         a(map);
-        this.f20631a.post(new Runnable() { // from class: com.brandongogetap.stickyheaders.StickyHeaderPositioner.2
+        this.f7025a.post(new Runnable() { // from class: com.brandongogetap.stickyheaders.StickyHeaderPositioner.2
             @Override // java.lang.Runnable
             public void run() {
                 StickyHeaderPositioner.this.f();
@@ -443,7 +443,7 @@ final class StickyHeaderPositioner {
     void a(RecyclerView.ViewHolder viewHolder, int i) {
         if (this.j == viewHolder) {
             f(this.d);
-            this.f20631a.getAdapter().onBindViewHolder(this.j, i);
+            this.f7025a.getAdapter().onBindViewHolder(this.j, i);
             this.j.itemView.requestLayout();
             e();
             e(i);
@@ -452,15 +452,15 @@ final class StickyHeaderPositioner {
         }
         d(this.d);
         this.j = viewHolder;
-        this.f20631a.getAdapter().onBindViewHolder(this.j, i);
-        this.f20632c = this.j.itemView;
+        this.f7025a.getAdapter().onBindViewHolder(this.j, i);
+        this.f7026c = this.j.itemView;
         e(i);
-        a(this.f20632c.getContext());
-        this.f20632c.setVisibility(4);
-        this.f20632c.setId(R.id.header_view);
-        j().addView(this.f20632c);
+        a(this.f7026c.getContext());
+        this.f7026c.setVisibility(4);
+        this.f7026c.setId(R.id.header_view);
+        j().addView(this.f7026c);
         if (this.b) {
-            d(this.f20632c);
+            d(this.f7026c);
         }
         this.g = false;
     }
@@ -477,7 +477,7 @@ final class StickyHeaderPositioner {
 
     void a(Map<Integer, View> map) {
         boolean z;
-        View view = this.f20632c;
+        View view = this.f7026c;
         if (view == null) {
             return;
         }
@@ -499,7 +499,7 @@ final class StickyHeaderPositioner {
         if (z) {
             b();
         }
-        this.f20632c.setVisibility(0);
+        this.f7026c.setVisibility(0);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

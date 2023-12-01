@@ -3,6 +3,7 @@ package com.blued.android.module.yy_china.adapter;
 import android.content.Context;
 import android.view.View;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.lifecycle.LifecycleOwner;
 import com.blued.android.core.AppMethods;
 import com.blued.android.framework.permission.PermissionCallbacks;
 import com.blued.android.framework.view.shape.ShapeLinearLayout;
@@ -65,7 +66,7 @@ public final class YYSeatCPWithVipAdapter extends YYSeatCPAdapter implements Vie
         ShapeTextView shapeTextView;
         ShapeTextView shapeTextView2;
         ItemYyConnectingCpVipLayoutBinding itemYyConnectingCpVipLayoutBinding = this.f;
-        if (itemYyConnectingCpVipLayoutBinding != null && (shapeTextView2 = itemYyConnectingCpVipLayoutBinding.f16686a) != null) {
+        if (itemYyConnectingCpVipLayoutBinding != null && (shapeTextView2 = itemYyConnectingCpVipLayoutBinding.a) != null) {
             shapeTextView2.setOnClickListener(this);
         }
         ItemYyConnectingCpVipLayoutBinding itemYyConnectingCpVipLayoutBinding2 = this.f;
@@ -103,16 +104,15 @@ public final class YYSeatCPWithVipAdapter extends YYSeatCPAdapter implements Vie
                 YYStepModel yYStepModel = this.d.get(i);
                 Intrinsics.c(yYStepModel, "stepList[i]");
                 YYStepModel yYStepModel2 = yYStepModel;
-                BaseYYStudioFragment fragment = this.f16234a;
+                BaseYYStudioFragment fragment = this.a;
                 Intrinsics.c(fragment, "fragment");
-                yYStepView.a(yYStepModel2, fragment, true);
-                shapeLinearLayout.addView(yYStepView);
+                yYStepView.a(yYStepModel2, (LifecycleOwner) fragment, true);
+                shapeLinearLayout.addView((View) yYStepView);
             }
         }
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(BaseViewHolder baseViewHolder, YYSeatMemberModel yYSeatMemberModel) {
         View view;
@@ -211,7 +211,7 @@ public final class YYSeatCPWithVipAdapter extends YYSeatCPAdapter implements Vie
     @Override // com.blued.android.module.yy_china.adapter.YYSeatCPAdapter
     public View e() {
         ItemYyConnectingCpVipLayoutBinding itemYyConnectingCpVipLayoutBinding = this.f;
-        return itemYyConnectingCpVipLayoutBinding == null ? null : itemYyConnectingCpVipLayoutBinding.f16686a;
+        return (View) (itemYyConnectingCpVipLayoutBinding == null ? null : itemYyConnectingCpVipLayoutBinding.a);
     }
 
     @Override // com.blued.android.module.yy_china.adapter.YYSeatCPAdapter

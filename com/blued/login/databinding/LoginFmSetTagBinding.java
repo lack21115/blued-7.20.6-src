@@ -13,19 +13,19 @@ import com.blued.login.view.TagViewPager;
 public final class LoginFmSetTagBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final LinearLayout f20527a;
+    public final LinearLayout f6921a;
     public final TagIndicator b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final TextView f20528c;
+    public final TextView f6922c;
     public final TagViewPager d;
     private final ConstraintLayout e;
 
     private LoginFmSetTagBinding(ConstraintLayout constraintLayout, LinearLayout linearLayout, TagIndicator tagIndicator, TextView textView, TagViewPager tagViewPager) {
         this.e = constraintLayout;
-        this.f20527a = linearLayout;
+        this.f6921a = linearLayout;
         this.b = tagIndicator;
-        this.f20528c = textView;
+        this.f6922c = textView;
         this.d = tagViewPager;
     }
 

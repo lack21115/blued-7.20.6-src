@@ -26,11 +26,11 @@ public class JceRequestEntity {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private String f39510a;
+        private String f25819a;
         private int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private String f39511c;
+        private String f25820c;
         private int d;
         private int e;
         private RequestType f;
@@ -56,7 +56,7 @@ public class JceRequestEntity {
         }
 
         public a a(String str) {
-            this.f39511c = str;
+            this.f25820c = str;
             return this;
         }
 
@@ -79,10 +79,10 @@ public class JceRequestEntity {
         }
 
         public JceRequestEntity a() {
-            if (TextUtils.isEmpty(this.f39510a) && TextUtils.isEmpty(this.g)) {
+            if (TextUtils.isEmpty(this.f25819a) && TextUtils.isEmpty(this.g)) {
                 throw new IllegalArgumentException("url || domain == null");
             }
-            if (TextUtils.isEmpty(this.f39511c)) {
+            if (TextUtils.isEmpty(this.f25820c)) {
                 throw new IllegalArgumentException("appKey == null");
             }
             com.tencent.tmsbeacon.base.net.c c2 = com.tencent.tmsbeacon.base.net.c.c();
@@ -91,9 +91,9 @@ public class JceRequestEntity {
                 this.j = c2.e.c().a((RequestPackageV2) this.k);
             } else {
                 AbstractJceStruct abstractJceStruct = this.k;
-                this.j = c2.d.c().a(d.a(this.d, abstractJceStruct == null ? "".getBytes() : abstractJceStruct.toByteArray(), this.i, this.f39511c));
+                this.j = c2.d.c().a(d.a(this.d, abstractJceStruct == null ? "".getBytes() : abstractJceStruct.toByteArray(), this.i, this.f25820c));
             }
-            return new JceRequestEntity(this.f, this.f39510a, this.g, this.b, this.f39511c, this.j, this.h, this.d, this.e);
+            return new JceRequestEntity(this.f, this.f25819a, this.g, this.b, this.f25820c, this.j, this.h, this.d, this.e);
         }
 
         public a b(int i) {
@@ -102,7 +102,7 @@ public class JceRequestEntity {
         }
 
         public a b(String str) {
-            this.f39510a = str;
+            this.f25819a = str;
             return this;
         }
 

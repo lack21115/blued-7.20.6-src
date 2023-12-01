@@ -3,7 +3,6 @@ package com.tencent.bugly.proguard;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -14,17 +13,17 @@ import java.util.Map;
 public final class n {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final long f35391a = System.currentTimeMillis();
+    public static final long f21700a = System.currentTimeMillis();
     private static n b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f35392c;
+    private Context f21701c;
     private SharedPreferences f;
     private Map<Integer, Map<String, m>> e = new HashMap();
     private String d = com.tencent.bugly.crashreport.common.info.a.b().d;
 
     private n(Context context) {
-        this.f35392c = context;
+        this.f21701c = context;
         this.f = context.getSharedPreferences("crashrecord", 0);
     }
 
@@ -73,7 +72,7 @@ public final class n {
             return
         L9:
             r0 = r6
-            android.content.Context r0 = r0.f35392c     // Catch: java.lang.Throwable -> L94 java.lang.Exception -> La9
+            android.content.Context r0 = r0.f21701c     // Catch: java.lang.Throwable -> L94 java.lang.Exception -> La9
             java.lang.String r1 = "crashrecord"
             r2 = 0
             java.io.File r0 = r0.getDir(r1, r2)     // Catch: java.lang.Throwable -> L94 java.lang.Exception -> La9
@@ -193,7 +192,7 @@ public final class n {
                     if (mVar.b != null && mVar.b.equalsIgnoreCase(this.d) && mVar.d > 0) {
                         arrayList.add(mVar);
                     }
-                    if (mVar.f35390c + 86400000 < currentTimeMillis) {
+                    if (mVar.f21699c + 86400000 < currentTimeMillis) {
                         arrayList2.add(mVar);
                     }
                 }
@@ -202,7 +201,7 @@ public final class n {
                     c2.removeAll(arrayList2);
                     a(i, (int) c2);
                     return false;
-                } else if (arrayList.size() <= 0 || ((m) arrayList.get(arrayList.size() - 1)).f35390c + 86400000 >= currentTimeMillis) {
+                } else if (arrayList.size() <= 0 || ((m) arrayList.get(arrayList.size() - 1)).f21699c + 86400000 >= currentTimeMillis) {
                     return true;
                 } else {
                     c2.clear();
@@ -259,12 +258,12 @@ public final class n {
                     }
                     if (((Map) n.this.e.get(Integer.valueOf(r5))).get(n.this.d) == null) {
                         mVar = new m();
-                        mVar.f35389a = r5;
-                        mVar.g = n.f35391a;
+                        mVar.f21698a = r5;
+                        mVar.g = n.f21700a;
                         mVar.b = n.this.d;
                         mVar.f = com.tencent.bugly.crashreport.common.info.a.b().k;
                         mVar.e = com.tencent.bugly.crashreport.common.info.a.b().f;
-                        mVar.f35390c = System.currentTimeMillis();
+                        mVar.f21699c = System.currentTimeMillis();
                         mVar.d = i2;
                         ((Map) n.this.e.get(Integer.valueOf(r5))).put(n.this.d, mVar);
                     } else {
@@ -313,7 +312,7 @@ public final class n {
                 SharedPreferences sharedPreferences = this.f;
                 StringBuilder sb = new StringBuilder();
                 sb.append(i);
-                sb.append(BridgeUtil.UNDERLINE_STR);
+                sb.append("_");
                 sb.append(this.d);
                 z = sharedPreferences.getBoolean(sb.toString(), true);
                 z2 = z;
@@ -322,7 +321,7 @@ public final class n {
                     public final void run() {
                         boolean b2 = n.this.b(i);
                         SharedPreferences.Editor edit = n.this.f.edit();
-                        edit.putBoolean(i + BridgeUtil.UNDERLINE_STR + n.this.d, !b2).commit();
+                        edit.putBoolean(i + "_" + n.this.d, !b2).commit();
                     }
                 });
             } catch (Exception e) {

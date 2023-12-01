@@ -4,19 +4,19 @@ package com.anythink.expressad.foundation.d;
 public final class j {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f7789a;
+    private String f4949a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f7790c;
+    private int f4950c;
     private long d;
 
     private String a() {
-        return this.f7789a;
+        return this.f4949a;
     }
 
     private void a(int i) {
-        this.f7790c = i;
+        this.f4950c = i;
     }
 
     private void a(long j) {
@@ -24,7 +24,7 @@ public final class j {
     }
 
     private void a(String str) {
-        this.f7789a = str;
+        this.f4949a = str;
     }
 
     private String b() {
@@ -36,7 +36,7 @@ public final class j {
     }
 
     private int c() {
-        return this.f7790c;
+        return this.f4950c;
     }
 
     private long d() {

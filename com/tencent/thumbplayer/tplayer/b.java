@@ -13,8 +13,6 @@ import android.text.TextUtils;
 import android.util.SparseIntArray;
 import android.view.Surface;
 import android.view.SurfaceHolder;
-import com.android.internal.telephony.PhoneConstants;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.thumbplayer.adapter.a.c;
 import com.tencent.thumbplayer.api.ITPPlayer;
 import com.tencent.thumbplayer.api.ITPPlayerListener;
@@ -63,14 +61,14 @@ public class b implements ITPPlayer {
     private static final SparseIntArray C;
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f39400a = "api call:";
+    private static String f25709a = "api call:";
     private static AtomicInteger u = new AtomicInteger(1000);
     private int A;
     private int B;
     private final com.tencent.thumbplayer.adapter.a b;
 
     /* renamed from: c  reason: collision with root package name */
-    private c f39401c;
+    private c f25710c;
     private com.tencent.thumbplayer.c.a d;
     private com.tencent.thumbplayer.tplayer.plugins.report.b e;
     private com.tencent.thumbplayer.c.a.a f;
@@ -110,7 +108,7 @@ public class b implements ITPPlayer {
 
         @Override // android.os.Handler
         public void handleMessage(Message message) {
-            c cVar = b.this.f39401c;
+            c cVar = b.this.f25710c;
             if (cVar == null) {
                 return;
             }
@@ -130,10 +128,10 @@ public class b implements ITPPlayer {
                         b.this.b(message.arg1);
                         e.a aVar = (e.a) message.obj;
                         if (aVar != null && !b.this.d.c()) {
-                            cVar.onInfo(this.b, message.arg1, aVar.f39408a, aVar.b, aVar.f39409c);
+                            cVar.onInfo(this.b, message.arg1, aVar.f25717a, aVar.b, aVar.f25718c);
                             return;
                         } else if (aVar != null) {
-                            cVar.onInfo(this.b, message.arg1, aVar.f39408a, aVar.b, aVar.f39409c);
+                            cVar.onInfo(this.b, message.arg1, aVar.f25717a, aVar.b, aVar.f25718c);
                             return;
                         } else {
                             return;
@@ -141,7 +139,7 @@ public class b implements ITPPlayer {
                     case 262:
                         e.a aVar2 = (e.a) message.obj;
                         if (aVar2 != null) {
-                            cVar.onError(this.b, message.arg1, message.arg2, aVar2.f39408a, aVar2.b);
+                            cVar.onError(this.b, message.arg1, message.arg2, aVar2.f25717a, aVar2.b);
                             return;
                         }
                         return;
@@ -151,7 +149,7 @@ public class b implements ITPPlayer {
                     case 264:
                         e.a aVar3 = (e.a) message.obj;
                         if (aVar3 != null) {
-                            cVar.onVideoSizeChanged(this.b, aVar3.f39408a, aVar3.b);
+                            cVar.onVideoSizeChanged(this.b, aVar3.f25717a, aVar3.b);
                             return;
                         }
                         return;
@@ -225,13 +223,13 @@ public class b implements ITPPlayer {
 
     /* renamed from: com.tencent.thumbplayer.tplayer.b$b  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/thumbplayer/tplayer/b$b.class */
-    class C1026b implements c.a, c.b, c.InterfaceC1013c, c.d, c.e, c.f, c.h, c.i, c.j, c.k, c.l, c.m, c.n, c.o, c.p, ITPPlayListener {
-        C1026b() {
+    class C0856b implements c.a, c.b, c.InterfaceC0843c, c.d, c.e, c.f, c.h, c.i, c.j, c.k, c.l, c.m, c.n, c.o, c.p, ITPPlayListener {
+        C0856b() {
         }
 
         @Override // com.tencent.thumbplayer.adapter.a.c.o
         public TPPostProcessFrameBuffer a(TPPostProcessFrameBuffer tPPostProcessFrameBuffer) {
-            c cVar = b.this.f39401c;
+            c cVar = b.this.f25710c;
             if (cVar != null) {
                 return cVar.onVideoProcessFrameOut(b.this, tPPostProcessFrameBuffer);
             }
@@ -240,7 +238,7 @@ public class b implements ITPPlayer {
 
         @Override // com.tencent.thumbplayer.adapter.a.c.d
         public TPRemoteSdpInfo a(String str, int i) {
-            c cVar = b.this.f39401c;
+            c cVar = b.this.f25710c;
             if (cVar != null) {
                 return cVar.onSdpExchange(b.this, str, i);
             }
@@ -254,7 +252,7 @@ public class b implements ITPPlayer {
             b.this.updateTaskInfo(TPDownloadProxyEnum.TASKINFO_GET_METADATA_PLAY_OFFSET, 1);
             b.this.d.a(0);
             com.tencent.thumbplayer.adapter.b e = b.this.b.e();
-            String str = e.a() + PhoneConstants.APN_TYPE_ALL + e.b();
+            String str = e.a() + "*" + e.b();
             TPTrackInfo[] r = b.this.b.r();
             if (r != null) {
                 int length = r.length;
@@ -304,7 +302,7 @@ public class b implements ITPPlayer {
             b.this.a(i3, i4);
             b.this.t.c("onError errorTypeReal=" + i3 + ", errorCodeReal=" + i4);
             e.a aVar = new e.a();
-            aVar.f39408a = j;
+            aVar.f25717a = j;
             aVar.b = j2;
             b.this.a(262, i3, i4, (Object) aVar);
         }
@@ -322,9 +320,9 @@ public class b implements ITPPlayer {
                     l = Long.valueOf(b.this.b(((Long) obj).longValue(), "async call select track"));
                 }
                 e.a aVar = new e.a();
-                aVar.f39408a = j;
+                aVar.f25717a = j;
                 aVar.b = j2;
-                aVar.f39409c = l;
+                aVar.f25718c = l;
                 b.this.a(261, i, 0, (Object) aVar);
             }
         }
@@ -332,14 +330,14 @@ public class b implements ITPPlayer {
         @Override // com.tencent.thumbplayer.adapter.a.c.p
         public void a(long j, long j2) {
             e.a aVar = new e.a();
-            aVar.f39408a = j;
+            aVar.f25717a = j;
             aVar.b = j2;
             b.this.a(264, 0, 0, (Object) aVar);
         }
 
         @Override // com.tencent.thumbplayer.adapter.a.c.a
         public void a(TPAudioFrameBuffer tPAudioFrameBuffer) {
-            c cVar = b.this.f39401c;
+            c cVar = b.this.f25710c;
             if (cVar != null) {
                 cVar.onAudioFrameOut(b.this, tPAudioFrameBuffer);
             }
@@ -347,7 +345,7 @@ public class b implements ITPPlayer {
 
         @Override // com.tencent.thumbplayer.adapter.a.c.e
         public void a(TPPlayerDetailInfo tPPlayerDetailInfo) {
-            c cVar = b.this.f39401c;
+            c cVar = b.this.f25710c;
             if (cVar != null) {
                 cVar.onDetailInfo(b.this, tPPlayerDetailInfo);
             }
@@ -365,7 +363,7 @@ public class b implements ITPPlayer {
 
         @Override // com.tencent.thumbplayer.adapter.a.c.n
         public void a(TPVideoFrameBuffer tPVideoFrameBuffer) {
-            c cVar = b.this.f39401c;
+            c cVar = b.this.f25710c;
             if (cVar != null) {
                 cVar.onVideoFrameOut(b.this, tPVideoFrameBuffer);
             }
@@ -373,14 +371,14 @@ public class b implements ITPPlayer {
 
         @Override // com.tencent.thumbplayer.adapter.a.c.b
         public TPPostProcessFrameBuffer b(TPPostProcessFrameBuffer tPPostProcessFrameBuffer) {
-            c cVar = b.this.f39401c;
+            c cVar = b.this.f25710c;
             if (cVar != null) {
                 return cVar.onAudioProcessFrameOut(b.this, tPPostProcessFrameBuffer);
             }
             return null;
         }
 
-        @Override // com.tencent.thumbplayer.adapter.a.c.InterfaceC1013c
+        @Override // com.tencent.thumbplayer.adapter.a.c.InterfaceC0843c
         public void b() {
             b.this.a(111, 0, 0, (String) null, new com.tencent.thumbplayer.utils.g().a("etime", Long.valueOf(System.currentTimeMillis())).a("reason", 0).a());
             b.this.a(260, 0, 0, (Object) null);
@@ -770,7 +768,7 @@ public class b implements ITPPlayer {
     }
 
     private void a(TPPlayerDetailInfo tPPlayerDetailInfo) {
-        c cVar = this.f39401c;
+        c cVar = this.f25710c;
         if (cVar != null) {
             cVar.onDetailInfo(this, tPPlayerDetailInfo);
         }
@@ -907,7 +905,7 @@ public class b implements ITPPlayer {
 
     private void f() {
         e.a aVar = new e.a();
-        aVar.f39408a = d() ? 1L : 0L;
+        aVar.f25717a = d() ? 1L : 0L;
         a(261, 1009, 0, (Object) aVar);
     }
 
@@ -924,14 +922,14 @@ public class b implements ITPPlayer {
     @n.b
     public void addAudioTrackSource(String str, String str2) {
         com.tencent.thumbplayer.e.a aVar = this.t;
-        aVar.c(f39400a + "addAudioTrackSource, url:" + str + ", name:" + str2);
+        aVar.c(f25709a + "addAudioTrackSource, url:" + str + ", name:" + str2);
         addAudioTrackSource(str, str2, null);
     }
 
     @Override // com.tencent.thumbplayer.api.ITPPlayer
     @n.b
     public void addAudioTrackSource(String str, String str2, TPDownloadParamData tPDownloadParamData) {
-        this.t.c(f39400a + "addAudioTrackSource, url:" + str + ", name:" + str2 + ", downloadParamData:" + tPDownloadParamData);
+        this.t.c(f25709a + "addAudioTrackSource, url:" + str + ", name:" + str2 + ", downloadParamData:" + tPDownloadParamData);
         if (TextUtils.isEmpty(str2) || !com.tencent.thumbplayer.utils.b.b(str)) {
             this.t.e("handleAddAudioSource, illegal argument.");
             return;
@@ -963,7 +961,7 @@ public class b implements ITPPlayer {
     @n.b(c = true)
     public void addSubtitleSource(String str, String str2, String str3) {
         com.tencent.thumbplayer.e.a aVar = this.t;
-        aVar.c(f39400a + "addSubtitleSource, url:" + str + ", mimeType:" + str2 + ", name:" + str3);
+        aVar.c(f25709a + "addSubtitleSource, url:" + str + ", mimeType:" + str2 + ", name:" + str3);
         addSubtitleSource(str, str2, str3, null);
     }
 
@@ -971,7 +969,7 @@ public class b implements ITPPlayer {
     @n.b(c = true)
     public void addSubtitleSource(String str, String str2, String str3, TPDownloadParamData tPDownloadParamData) {
         String str4;
-        this.t.c(f39400a + "addSubtitleSource, url:" + str + ", name:" + str3 + ", downloadParamData:" + tPDownloadParamData);
+        this.t.c(f25709a + "addSubtitleSource, url:" + str + ", name:" + str3 + ", downloadParamData:" + tPDownloadParamData);
         try {
             long currentTimeMillis = System.currentTimeMillis();
             if (d() && com.tencent.thumbplayer.utils.b.b(str)) {
@@ -1005,7 +1003,7 @@ public class b implements ITPPlayer {
     @n.b(a = true)
     public void captureVideo(TPCaptureParams tPCaptureParams, TPCaptureCallBack tPCaptureCallBack) {
         com.tencent.thumbplayer.e.a aVar = this.t;
-        aVar.c(f39400a + "captureVideo, params:" + tPCaptureParams + ", captureCallBack:" + tPCaptureCallBack);
+        aVar.c(f25709a + "captureVideo, params:" + tPCaptureParams + ", captureCallBack:" + tPCaptureCallBack);
         try {
             this.b.a(tPCaptureParams, tPCaptureCallBack);
         } catch (Exception e) {
@@ -1017,7 +1015,7 @@ public class b implements ITPPlayer {
     @n.b
     public void deselectTrack(int i, long j) {
         com.tencent.thumbplayer.e.a aVar = this.t;
-        aVar.c(f39400a + "deselectTrack, trackIndex:" + i + ", opaque:" + j);
+        aVar.c(f25709a + "deselectTrack, trackIndex:" + i + ", opaque:" + j);
         try {
             this.b.b(i, j);
         } catch (Exception e) {
@@ -1136,7 +1134,7 @@ public class b implements ITPPlayer {
     @n.b
     public void pause() {
         com.tencent.thumbplayer.e.a aVar = this.t;
-        aVar.c(f39400a + com.anythink.expressad.foundation.d.c.cb);
+        aVar.c(f25709a + com.anythink.expressad.foundation.d.c.cb);
         this.b.i();
         try {
             a(106, 0, 0, (String) null, new com.tencent.thumbplayer.utils.g().a("stime", Long.valueOf(System.currentTimeMillis())).a());
@@ -1150,7 +1148,7 @@ public class b implements ITPPlayer {
     @n.b
     public void pauseDownload() {
         com.tencent.thumbplayer.e.a aVar = this.t;
-        aVar.c(f39400a + "pauseDownload");
+        aVar.c(f25709a + "pauseDownload");
         try {
             this.b.a(new TPOptionalParam().buildLong(502, 0L));
         } catch (Exception e) {
@@ -1162,9 +1160,9 @@ public class b implements ITPPlayer {
     @Override // com.tencent.thumbplayer.api.ITPPlayer
     @n.b
     public void prepareAsync() {
-        String str = UUID.randomUUID().toString() + System.nanoTime() + BridgeUtil.UNDERLINE_STR + TPPlayerConfig.getPlatform();
+        String str = UUID.randomUUID().toString() + System.nanoTime() + "_" + TPPlayerConfig.getPlatform();
         a(1003);
-        this.t.c(f39400a + "prepareAsync");
+        this.t.c(f25709a + "prepareAsync");
         try {
             this.d.i();
             this.b.g();
@@ -1184,10 +1182,10 @@ public class b implements ITPPlayer {
     @n.b(a = true)
     public void release() {
         com.tencent.thumbplayer.e.a aVar = this.t;
-        aVar.c(f39400a + "release");
+        aVar.c(f25709a + "release");
         this.b.l();
         a(112, 0, 0, (String) null, new com.tencent.thumbplayer.utils.g().a("etime", Long.valueOf(System.currentTimeMillis())).a("reason", 1).a());
-        this.f39401c.a();
+        this.f25710c.a();
         this.d.e();
         this.p.clear();
         com.tencent.thumbplayer.c.a.a aVar2 = this.f;
@@ -1212,11 +1210,11 @@ public class b implements ITPPlayer {
     @n.b(a = true)
     public void reset() {
         com.tencent.thumbplayer.e.a aVar = this.t;
-        aVar.c(f39400a + "reset");
+        aVar.c(f25709a + "reset");
         if (this.w) {
             this.t.a(String.valueOf(this.v.incrementAndGet()));
             this.b.a(this.t.a());
-            this.f39401c.a(this.t.a().a());
+            this.f25710c.a(this.t.a().a());
         }
         this.b.k();
         a(113, 0, 0, (String) null, new com.tencent.thumbplayer.utils.g().a("etime", Long.valueOf(System.currentTimeMillis())).a("reason", 1).a());
@@ -1246,7 +1244,7 @@ public class b implements ITPPlayer {
     @n.b
     public void resumeDownload() {
         com.tencent.thumbplayer.e.a aVar = this.t;
-        aVar.c(f39400a + "resumeDownload");
+        aVar.c(f25709a + "resumeDownload");
         this.d.i();
         try {
             this.b.a(new TPOptionalParam().buildLong(502, 1L));
@@ -1259,7 +1257,7 @@ public class b implements ITPPlayer {
     @n.b
     public void seekTo(int i) {
         com.tencent.thumbplayer.e.a aVar = this.t;
-        aVar.c(f39400a + "seekTo, positionMs:" + i);
+        aVar.c(f25709a + "seekTo, positionMs:" + i);
         this.b.a(i);
         this.d.a(1);
         a(109, 0, 0, (String) null, new com.tencent.thumbplayer.utils.g().a("stime", Long.valueOf(System.currentTimeMillis())).a("format", 0).a("pstime", Long.valueOf(getCurrentPositionMs())).a());
@@ -1269,7 +1267,7 @@ public class b implements ITPPlayer {
     @n.b
     public void seekTo(int i, int i2) {
         com.tencent.thumbplayer.e.a aVar = this.t;
-        aVar.c(f39400a + "seekTo, positionMs:" + i + ", mode:" + i2);
+        aVar.c(f25709a + "seekTo, positionMs:" + i + ", mode:" + i2);
         if (i2 > 0) {
             this.b.a(i, i2);
         } else {
@@ -1283,7 +1281,7 @@ public class b implements ITPPlayer {
     @n.b
     public void selectProgram(int i, long j) {
         com.tencent.thumbplayer.e.a aVar = this.t;
-        aVar.c(f39400a + "selectProgram, programIndex:" + i + ", opaque:" + j);
+        aVar.c(f25709a + "selectProgram, programIndex:" + i + ", opaque:" + j);
         try {
             this.b.c(i, j);
         } catch (Exception e) {
@@ -1295,7 +1293,7 @@ public class b implements ITPPlayer {
     @n.b
     public void selectTrack(int i, long j) {
         com.tencent.thumbplayer.e.a aVar = this.t;
-        aVar.c(f39400a + "selectTrack, trackIndex:" + i + ", opaque:" + j);
+        aVar.c(f25709a + "selectTrack, trackIndex:" + i + ", opaque:" + j);
         try {
             long a2 = a(j, "selectTrack");
             TPTrackInfo[] r = this.b.r();
@@ -1312,7 +1310,7 @@ public class b implements ITPPlayer {
     @n.b(b = true)
     public void setAudioGainRatio(float f) {
         com.tencent.thumbplayer.e.a aVar = this.t;
-        aVar.c(f39400a + "setAudioGainRatio, gainRatio:" + f);
+        aVar.c(f25709a + "setAudioGainRatio, gainRatio:" + f);
         try {
             this.b.a(f);
         } catch (Exception e) {
@@ -1324,7 +1322,7 @@ public class b implements ITPPlayer {
     @n.b(b = true)
     public void setAudioNormalizeVolumeParams(String str) {
         com.tencent.thumbplayer.e.a aVar = this.t;
-        aVar.c(f39400a + "setAudioNormalizeVolumeParams, audioNormalizeVolumeParams:" + str);
+        aVar.c(f25709a + "setAudioNormalizeVolumeParams, audioNormalizeVolumeParams:" + str);
         try {
             this.b.a(str);
         } catch (Exception e) {
@@ -1343,7 +1341,7 @@ public class b implements ITPPlayer {
         }
         a("", 4, false);
         com.tencent.thumbplayer.e.a aVar = this.t;
-        aVar.c(f39400a + "setDataSource, AssetFileDescriptor");
+        aVar.c(f25709a + "setDataSource, AssetFileDescriptor");
         try {
             this.b.a(assetFileDescriptor);
         } catch (IOException | SecurityException e) {
@@ -1362,7 +1360,7 @@ public class b implements ITPPlayer {
         }
         a("", 4, false);
         com.tencent.thumbplayer.e.a aVar = this.t;
-        aVar.c(f39400a + "setDataSource, ParcelFileDescriptor");
+        aVar.c(f25709a + "setDataSource, ParcelFileDescriptor");
         try {
             this.b.a(parcelFileDescriptor);
         } catch (IOException | SecurityException e) {
@@ -1399,7 +1397,7 @@ public class b implements ITPPlayer {
         a(str, a(str), d());
         a(1000);
         com.tencent.thumbplayer.e.a aVar = this.t;
-        aVar.c(f39400a + "setDataSource, url:" + str);
+        aVar.c(f25709a + "setDataSource, url:" + str);
         this.l = str;
         com.tencent.thumbplayer.adapter.a.e eVar = new com.tencent.thumbplayer.adapter.a.e(str);
         this.t.c("handleSetDataSource originalUrl=".concat(String.valueOf(str)));
@@ -1427,7 +1425,7 @@ public class b implements ITPPlayer {
         a(str, a(str), d());
         a(1000);
         com.tencent.thumbplayer.e.a aVar = this.t;
-        aVar.c(f39400a + "setDataSource, url:" + str + ", httpHeader:" + map);
+        aVar.c(f25709a + "setDataSource, url:" + str + ", httpHeader:" + map);
         this.l = str;
         com.tencent.thumbplayer.adapter.a.e eVar = new com.tencent.thumbplayer.adapter.a.e(str);
         this.t.c("handleSetDataSource originalUrl=".concat(String.valueOf(str)));
@@ -1447,7 +1445,7 @@ public class b implements ITPPlayer {
     @n.b(b = true, c = true)
     public void setLoopback(boolean z) {
         com.tencent.thumbplayer.e.a aVar = this.t;
-        aVar.c(f39400a + "setLoopback, isLoopback:" + z);
+        aVar.c(f25709a + "setLoopback, isLoopback:" + z);
         try {
             this.b.b(z);
         } catch (Exception e) {
@@ -1459,7 +1457,7 @@ public class b implements ITPPlayer {
     @n.b(b = true, c = true)
     public void setLoopback(boolean z, long j, long j2) {
         com.tencent.thumbplayer.e.a aVar = this.t;
-        aVar.c(f39400a + "setLoopback, isLoopback:" + z + ", loopStartPositionMs:" + j + ", loopEndPositionMs:" + j2);
+        aVar.c(f25709a + "setLoopback, isLoopback:" + z + ", loopStartPositionMs:" + j + ", loopEndPositionMs:" + j2);
         try {
             this.b.a(z, j, j2);
         } catch (Exception e) {
@@ -1469,7 +1467,7 @@ public class b implements ITPPlayer {
 
     @Override // com.tencent.thumbplayer.api.ITPPlayer
     public void setOnAudioFrameOutputListener(ITPPlayerListener.IOnAudioFrameOutputListener iOnAudioFrameOutputListener) {
-        c cVar = this.f39401c;
+        c cVar = this.f25710c;
         if (cVar != null) {
             cVar.a(iOnAudioFrameOutputListener);
         }
@@ -1477,7 +1475,7 @@ public class b implements ITPPlayer {
 
     @Override // com.tencent.thumbplayer.api.ITPPlayer
     public void setOnAudioProcessFrameOutputListener(ITPPlayerListener.IOnAudioProcessFrameOutputListener iOnAudioProcessFrameOutputListener) {
-        c cVar = this.f39401c;
+        c cVar = this.f25710c;
         if (cVar != null) {
             cVar.a(iOnAudioProcessFrameOutputListener);
         }
@@ -1485,7 +1483,7 @@ public class b implements ITPPlayer {
 
     @Override // com.tencent.thumbplayer.api.ITPPlayer
     public void setOnCompletionListener(ITPPlayerListener.IOnCompletionListener iOnCompletionListener) {
-        c cVar = this.f39401c;
+        c cVar = this.f25710c;
         if (cVar != null) {
             cVar.a(iOnCompletionListener);
         }
@@ -1493,7 +1491,7 @@ public class b implements ITPPlayer {
 
     @Override // com.tencent.thumbplayer.api.ITPPlayer
     public void setOnDemuxerListener(ITPPlayerListener.IOnDemuxerListener iOnDemuxerListener) {
-        c cVar = this.f39401c;
+        c cVar = this.f25710c;
         if (cVar != null) {
             cVar.a(iOnDemuxerListener);
         }
@@ -1501,7 +1499,7 @@ public class b implements ITPPlayer {
 
     @Override // com.tencent.thumbplayer.api.ITPPlayer
     public void setOnDetailInfoListener(ITPPlayerListener.IOnDetailInfoListener iOnDetailInfoListener) {
-        c cVar = this.f39401c;
+        c cVar = this.f25710c;
         if (cVar != null) {
             cVar.a(iOnDetailInfoListener);
         }
@@ -1509,7 +1507,7 @@ public class b implements ITPPlayer {
 
     @Override // com.tencent.thumbplayer.api.ITPPlayer
     public void setOnErrorListener(ITPPlayerListener.IOnErrorListener iOnErrorListener) {
-        c cVar = this.f39401c;
+        c cVar = this.f25710c;
         if (cVar != null) {
             cVar.a(iOnErrorListener);
         }
@@ -1517,7 +1515,7 @@ public class b implements ITPPlayer {
 
     @Override // com.tencent.thumbplayer.api.ITPPlayer
     public void setOnInfoListener(ITPPlayerListener.IOnInfoListener iOnInfoListener) {
-        c cVar = this.f39401c;
+        c cVar = this.f25710c;
         if (cVar != null) {
             cVar.a(iOnInfoListener);
         }
@@ -1525,7 +1523,7 @@ public class b implements ITPPlayer {
 
     @Override // com.tencent.thumbplayer.api.ITPPlayer
     public void setOnPlayerStateChangeListener(ITPPlayerListener.IOnStateChangeListener iOnStateChangeListener) {
-        c cVar = this.f39401c;
+        c cVar = this.f25710c;
         if (cVar != null) {
             cVar.a(iOnStateChangeListener);
         }
@@ -1533,7 +1531,7 @@ public class b implements ITPPlayer {
 
     @Override // com.tencent.thumbplayer.api.ITPPlayer
     public void setOnPreparedListener(ITPPlayerListener.IOnPreparedListener iOnPreparedListener) {
-        c cVar = this.f39401c;
+        c cVar = this.f25710c;
         if (cVar != null) {
             cVar.a(iOnPreparedListener);
         }
@@ -1541,7 +1539,7 @@ public class b implements ITPPlayer {
 
     @Override // com.tencent.thumbplayer.api.ITPPlayer
     public void setOnSeekCompleteListener(ITPPlayerListener.IOnSeekCompleteListener iOnSeekCompleteListener) {
-        c cVar = this.f39401c;
+        c cVar = this.f25710c;
         if (cVar != null) {
             cVar.a(iOnSeekCompleteListener);
         }
@@ -1549,7 +1547,7 @@ public class b implements ITPPlayer {
 
     @Override // com.tencent.thumbplayer.api.ITPPlayer
     public void setOnStopAsyncCompleteListener(ITPPlayerListener.IOnStopAsyncCompleteListener iOnStopAsyncCompleteListener) {
-        c cVar = this.f39401c;
+        c cVar = this.f25710c;
         if (cVar != null) {
             cVar.a(iOnStopAsyncCompleteListener);
         }
@@ -1557,7 +1555,7 @@ public class b implements ITPPlayer {
 
     @Override // com.tencent.thumbplayer.api.ITPPlayer
     public void setOnSubtitleDataListener(ITPPlayerListener.IOnSubtitleDataListener iOnSubtitleDataListener) {
-        c cVar = this.f39401c;
+        c cVar = this.f25710c;
         if (cVar != null) {
             cVar.a(iOnSubtitleDataListener);
         }
@@ -1565,7 +1563,7 @@ public class b implements ITPPlayer {
 
     @Override // com.tencent.thumbplayer.api.ITPPlayer
     public void setOnSubtitleFrameOutListener(ITPPlayerListener.IOnSubtitleFrameOutListener iOnSubtitleFrameOutListener) {
-        c cVar = this.f39401c;
+        c cVar = this.f25710c;
         if (cVar != null) {
             cVar.a(iOnSubtitleFrameOutListener);
         }
@@ -1573,7 +1571,7 @@ public class b implements ITPPlayer {
 
     @Override // com.tencent.thumbplayer.api.ITPPlayer
     public void setOnVideoFrameOutListener(ITPPlayerListener.IOnVideoFrameOutListener iOnVideoFrameOutListener) {
-        c cVar = this.f39401c;
+        c cVar = this.f25710c;
         if (cVar != null) {
             cVar.a(iOnVideoFrameOutListener);
         }
@@ -1581,7 +1579,7 @@ public class b implements ITPPlayer {
 
     @Override // com.tencent.thumbplayer.api.ITPPlayer
     public void setOnVideoProcessFrameOutputListener(ITPPlayerListener.IOnVideoProcessFrameOutputListener iOnVideoProcessFrameOutputListener) {
-        c cVar = this.f39401c;
+        c cVar = this.f25710c;
         if (cVar != null) {
             cVar.a(iOnVideoProcessFrameOutputListener);
         }
@@ -1589,7 +1587,7 @@ public class b implements ITPPlayer {
 
     @Override // com.tencent.thumbplayer.api.ITPPlayer
     public void setOnVideoSizeChangedListener(ITPPlayerListener.IOnVideoSizeChangedListener iOnVideoSizeChangedListener) {
-        c cVar = this.f39401c;
+        c cVar = this.f25710c;
         if (cVar != null) {
             cVar.a(iOnVideoSizeChangedListener);
         }
@@ -1599,7 +1597,7 @@ public class b implements ITPPlayer {
     @n.b(b = true)
     public void setOutputMute(boolean z) {
         com.tencent.thumbplayer.e.a aVar = this.t;
-        aVar.c(f39400a + "setOutputMute, isOutputMute:" + z);
+        aVar.c(f25709a + "setOutputMute, isOutputMute:" + z);
         try {
             this.b.a(z);
         } catch (Exception e) {
@@ -1611,7 +1609,7 @@ public class b implements ITPPlayer {
     @n.b(b = true)
     public void setPlaySpeedRatio(float f) {
         com.tencent.thumbplayer.e.a aVar = this.t;
-        aVar.c(f39400a + "setPlaySpeedRatio, speedRatio:" + f);
+        aVar.c(f25709a + "setPlaySpeedRatio, speedRatio:" + f);
         try {
             this.d.a(f);
             this.b.b(f);
@@ -1648,7 +1646,7 @@ public class b implements ITPPlayer {
     @n.b
     public void setSurface(Surface surface) {
         com.tencent.thumbplayer.e.a aVar = this.t;
-        aVar.c(f39400a + "setSurface, surface:" + surface);
+        aVar.c(f25709a + "setSurface, surface:" + surface);
         try {
             this.b.a(surface);
         } catch (Exception e) {
@@ -1660,7 +1658,7 @@ public class b implements ITPPlayer {
     @n.b
     public void setSurfaceHolder(SurfaceHolder surfaceHolder) {
         com.tencent.thumbplayer.e.a aVar = this.t;
-        aVar.c(f39400a + "setSurfaceHolder, SurfaceHolder:" + surfaceHolder);
+        aVar.c(f25709a + "setSurfaceHolder, SurfaceHolder:" + surfaceHolder);
         try {
             this.b.a(surfaceHolder);
         } catch (Exception e) {
@@ -1686,7 +1684,7 @@ public class b implements ITPPlayer {
     @n.b
     public void start() {
         com.tencent.thumbplayer.e.a aVar = this.t;
-        aVar.c(f39400a + "start");
+        aVar.c(f25709a + "start");
         this.b.h();
         try {
             a(104, 0, 0, (String) null, new com.tencent.thumbplayer.utils.g().a("stime", Long.valueOf(System.currentTimeMillis())).a());
@@ -1700,7 +1698,7 @@ public class b implements ITPPlayer {
     @n.b(a = true)
     public void stop() {
         com.tencent.thumbplayer.e.a aVar = this.t;
-        aVar.c(f39400a + "stop");
+        aVar.c(f25709a + "stop");
         c();
     }
 
@@ -1708,7 +1706,7 @@ public class b implements ITPPlayer {
     @n.b
     public void stopAsync() {
         com.tencent.thumbplayer.e.a aVar = this.t;
-        aVar.c(f39400a + "stopAsync");
+        aVar.c(f25709a + "stopAsync");
         c();
         a(280, 0, 0, (Object) null);
     }
@@ -1717,7 +1715,7 @@ public class b implements ITPPlayer {
     @n.b(b = true, c = true)
     public void switchDefinition(ITPMediaAsset iTPMediaAsset, long j, TPVideoInfo tPVideoInfo) {
         com.tencent.thumbplayer.e.a aVar = this.t;
-        aVar.c(f39400a + "switchDefinition, mediaAsset:" + iTPMediaAsset + ", defID:" + j + ", videoInfo:" + tPVideoInfo);
+        aVar.c(f25709a + "switchDefinition, mediaAsset:" + iTPMediaAsset + ", defID:" + j + ", videoInfo:" + tPVideoInfo);
         switchDefinition(iTPMediaAsset, j, tPVideoInfo, 0);
     }
 
@@ -1728,7 +1726,7 @@ public class b implements ITPPlayer {
             throw new IllegalStateException("error : switchDefinition , state invalid");
         }
         com.tencent.thumbplayer.e.a aVar = this.t;
-        aVar.c(f39400a + "switchDefinition, mediaAsset:" + iTPMediaAsset + ", defID:" + j + ", videoInfo:" + tPVideoInfo + ", mode:" + i);
+        aVar.c(f25709a + "switchDefinition, mediaAsset:" + iTPMediaAsset + ", defID:" + j + ", videoInfo:" + tPVideoInfo + ", mode:" + i);
         TPVideoInfo a2 = a(tPVideoInfo, (int) getCurrentPositionMs(), this.B);
         ITPMediaAsset iTPMediaAsset2 = iTPMediaAsset;
         if (d()) {
@@ -1747,7 +1745,7 @@ public class b implements ITPPlayer {
     @n.b(b = true, c = true)
     public void switchDefinition(String str, long j, TPVideoInfo tPVideoInfo) {
         com.tencent.thumbplayer.e.a aVar = this.t;
-        aVar.c(f39400a + "switchDefinition, defUrl:" + str + ", defID:" + j);
+        aVar.c(f25709a + "switchDefinition, defUrl:" + str + ", defID:" + j);
         switchDefinition(str, j, tPVideoInfo, 0);
     }
 
@@ -1758,7 +1756,7 @@ public class b implements ITPPlayer {
             throw new IllegalStateException("error : switchDefinition , state invalid");
         }
         com.tencent.thumbplayer.e.a aVar = this.t;
-        aVar.c(f39400a + "switchDefinition, defUrl:" + str + ", defID:" + j + ", mode:" + i);
+        aVar.c(f25709a + "switchDefinition, defUrl:" + str + ", defID:" + j + ", mode:" + i);
         TPVideoInfo a2 = a(tPVideoInfo, (int) getCurrentPositionMs(), this.B);
         com.tencent.thumbplayer.adapter.a.e eVar = new com.tencent.thumbplayer.adapter.a.e(str);
         if (d()) {
@@ -1779,7 +1777,7 @@ public class b implements ITPPlayer {
     @n.b(b = true, c = true)
     public void switchDefinition(String str, long j, TPVideoInfo tPVideoInfo, Map<String, String> map) {
         com.tencent.thumbplayer.e.a aVar = this.t;
-        aVar.c(f39400a + "switchDefinition, defUrl:" + str + ", defID:" + j + ", videoInfo:" + tPVideoInfo + ", httpHeader:" + map);
+        aVar.c(f25709a + "switchDefinition, defUrl:" + str + ", defID:" + j + ", videoInfo:" + tPVideoInfo + ", httpHeader:" + map);
         switchDefinition(str, j, tPVideoInfo, map, 0);
     }
 
@@ -1790,7 +1788,7 @@ public class b implements ITPPlayer {
             throw new IllegalStateException("error : switchDefinition , state invalid");
         }
         com.tencent.thumbplayer.e.a aVar = this.t;
-        aVar.c(f39400a + "switchDefinition, defUrl:" + str + ", defID:" + j + ", httpHeader:" + map + ", mode:" + i);
+        aVar.c(f25709a + "switchDefinition, defUrl:" + str + ", defID:" + j + ", httpHeader:" + map + ", mode:" + i);
         TPVideoInfo a2 = a(tPVideoInfo, (int) getCurrentPositionMs(), this.B);
         com.tencent.thumbplayer.adapter.a.e eVar = new com.tencent.thumbplayer.adapter.a.e(str);
         if (d()) {
@@ -1813,7 +1811,7 @@ public class b implements ITPPlayer {
             this.w = false;
             this.t.a(new com.tencent.thumbplayer.e.b(bVar, "TPPlayer"));
             this.b.a(this.t.a());
-            this.f39401c.a(this.t.a().a());
+            this.f25710c.a(this.t.a().a());
         }
     }
 

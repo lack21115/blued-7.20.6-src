@@ -1,6 +1,5 @@
 package com.blued.android.chat.utils;
 
-import com.anythink.expressad.video.dynview.a.a;
 import com.blued.android.chat.ChatManager;
 import java.util.Locale;
 
@@ -19,6 +18,6 @@ public class BlueAppChatLocal {
     }
 
     public static boolean isZh() {
-        return a.V.equals(getLanguage());
+        return "zh".equals(getLanguage());
     }
 }

@@ -5,13 +5,13 @@ package com.tencent.ugc;
 public final /* synthetic */ class ct implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final ct f40303a = new ct();
+    private static final ct f26612a = new ct();
 
     private ct() {
     }
 
     public static Runnable a() {
-        return f40303a;
+        return f26612a;
     }
 
     @Override // java.lang.Runnable

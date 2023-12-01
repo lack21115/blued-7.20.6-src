@@ -101,7 +101,7 @@ public class a extends c {
     @Override // com.meizu.cloud.pushsdk.platform.b.c
     protected Intent c() {
         Intent intent = new Intent();
-        intent.putExtra("strategy_package_name", this.f24187a.getPackageName());
+        intent.putExtra("strategy_package_name", this.f10572a.getPackageName());
         intent.putExtra("strategy_type", g());
         intent.putExtra("strategy_child_type", this.i);
         int i = this.i;
@@ -130,7 +130,7 @@ public class a extends c {
                 }
                 DebugLogger.i("Strategy", "send notifyId " + this.h[i2] + " to PushManagerService");
                 Intent intent = new Intent();
-                intent.putExtra("strategy_package_name", this.f24187a.getPackageName());
+                intent.putExtra("strategy_package_name", this.f10572a.getPackageName());
                 intent.putExtra("strategy_type", g());
                 intent.putExtra("strategy_child_type", this.i);
                 intent.putExtra("strategy_params", "" + this.h[i2]);
@@ -149,15 +149,15 @@ public class a extends c {
         if (i == 0) {
             if (!MinSdkChecker.isSupportSetDrawableSmallIcon()) {
                 DebugLogger.e("Strategy", "android 6.0 blow so cancel all by context");
-                com.meizu.cloud.pushsdk.notification.c.b.a(this.f24187a);
+                com.meizu.cloud.pushsdk.notification.c.b.a(this.f10572a);
             }
-            com.meizu.cloud.pushsdk.notification.c.b.a(this.f24187a, this.d);
+            com.meizu.cloud.pushsdk.notification.c.b.a(this.f10572a, this.d);
             return null;
         } else if (i != 1) {
             if (i != 2) {
                 return null;
             }
-            com.meizu.cloud.pushsdk.notification.c.b.a(this.f24187a, this.d, this.j);
+            com.meizu.cloud.pushsdk.notification.c.b.a(this.f10572a, this.d, this.j);
             return null;
         } else {
             int[] iArr = this.h;
@@ -173,7 +173,7 @@ public class a extends c {
                 }
                 int i4 = iArr[i3];
                 DebugLogger.e("Strategy", "clear notifyId " + i4);
-                com.meizu.cloud.pushsdk.notification.c.b.a(this.f24187a, this.d, i4);
+                com.meizu.cloud.pushsdk.notification.c.b.a(this.f10572a, this.d, i4);
                 i2 = i3 + 1;
             }
         }

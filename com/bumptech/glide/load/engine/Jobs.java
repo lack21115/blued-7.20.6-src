@@ -8,11 +8,11 @@ import java.util.Map;
 final class Jobs {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Map<Key, EngineJob<?>> f20787a = new HashMap();
+    private final Map<Key, EngineJob<?>> f7181a = new HashMap();
     private final Map<Key, EngineJob<?>> b = new HashMap();
 
     private Map<Key, EngineJob<?>> a(boolean z) {
-        return z ? this.b : this.f20787a;
+        return z ? this.b : this.f7181a;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

@@ -16,11 +16,11 @@ import java.io.InputStream;
 public class AssetUriLoader<Data> implements ModelLoader<Uri, Data> {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final int f20858a = 22;
+    private static final int f7252a = 22;
     private final AssetManager b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final AssetFetcherFactory<Data> f20859c;
+    private final AssetFetcherFactory<Data> f7253c;
 
     /* loaded from: source-7206380-dex2jar.jar:com/bumptech/glide/load/model/AssetUriLoader$AssetFetcherFactory.class */
     public interface AssetFetcherFactory<Data> {
@@ -31,10 +31,10 @@ public class AssetUriLoader<Data> implements ModelLoader<Uri, Data> {
     public static class FileDescriptorFactory implements AssetFetcherFactory<ParcelFileDescriptor>, ModelLoaderFactory<Uri, ParcelFileDescriptor> {
 
         /* renamed from: a  reason: collision with root package name */
-        private final AssetManager f20860a;
+        private final AssetManager f7254a;
 
         public FileDescriptorFactory(AssetManager assetManager) {
-            this.f20860a = assetManager;
+            this.f7254a = assetManager;
         }
 
         @Override // com.bumptech.glide.load.model.AssetUriLoader.AssetFetcherFactory
@@ -44,7 +44,7 @@ public class AssetUriLoader<Data> implements ModelLoader<Uri, Data> {
 
         @Override // com.bumptech.glide.load.model.ModelLoaderFactory
         public ModelLoader<Uri, ParcelFileDescriptor> a(MultiModelLoaderFactory multiModelLoaderFactory) {
-            return new AssetUriLoader(this.f20860a, this);
+            return new AssetUriLoader(this.f7254a, this);
         }
 
         @Override // com.bumptech.glide.load.model.ModelLoaderFactory
@@ -56,10 +56,10 @@ public class AssetUriLoader<Data> implements ModelLoader<Uri, Data> {
     public static class StreamFactory implements AssetFetcherFactory<InputStream>, ModelLoaderFactory<Uri, InputStream> {
 
         /* renamed from: a  reason: collision with root package name */
-        private final AssetManager f20861a;
+        private final AssetManager f7255a;
 
         public StreamFactory(AssetManager assetManager) {
-            this.f20861a = assetManager;
+            this.f7255a = assetManager;
         }
 
         @Override // com.bumptech.glide.load.model.AssetUriLoader.AssetFetcherFactory
@@ -69,7 +69,7 @@ public class AssetUriLoader<Data> implements ModelLoader<Uri, Data> {
 
         @Override // com.bumptech.glide.load.model.ModelLoaderFactory
         public ModelLoader<Uri, InputStream> a(MultiModelLoaderFactory multiModelLoaderFactory) {
-            return new AssetUriLoader(this.f20861a, this);
+            return new AssetUriLoader(this.f7255a, this);
         }
 
         @Override // com.bumptech.glide.load.model.ModelLoaderFactory
@@ -79,12 +79,12 @@ public class AssetUriLoader<Data> implements ModelLoader<Uri, Data> {
 
     public AssetUriLoader(AssetManager assetManager, AssetFetcherFactory<Data> assetFetcherFactory) {
         this.b = assetManager;
-        this.f20859c = assetFetcherFactory;
+        this.f7253c = assetFetcherFactory;
     }
 
     @Override // com.bumptech.glide.load.model.ModelLoader
     public ModelLoader.LoadData<Data> a(Uri uri, int i, int i2, Options options) {
-        return new ModelLoader.LoadData<>(new ObjectKey(uri), this.f20859c.a(this.b, uri.toString().substring(f20858a)));
+        return new ModelLoader.LoadData<>(new ObjectKey(uri), this.f7253c.a(this.b, uri.toString().substring(f7252a)));
     }
 
     @Override // com.bumptech.glide.load.model.ModelLoader

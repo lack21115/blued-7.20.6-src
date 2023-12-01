@@ -27,10 +27,10 @@ public class GroupFragment extends BaseFragment implements View.OnClickListener 
     private static int A = 3;
 
     /* renamed from: a  reason: collision with root package name */
-    public static int f30779a = 0;
+    public static int f17089a = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    public static String f30780c = "ISNEARBY";
+    public static String f17090c = "ISNEARBY";
     public static String d = "NEARBYGROUP1";
     public static String e = "NEARBYGROUP2";
     public BluedGroupCheck.GroupFailureReason b;
@@ -112,10 +112,10 @@ public class GroupFragment extends BaseFragment implements View.OnClickListener 
 
     private void b() {
         this.r = this.j.findViewById(2131370694);
-        ViewGroup viewGroup = (ViewGroup) this.j.findViewById(2131363133);
+        ViewGroup viewGroup = (ViewGroup) this.j.findViewById(R.id.ctt_right_menu);
         this.s = viewGroup;
         viewGroup.setVisibility(8);
-        this.t = (TextView) this.j.findViewById(2131363135);
+        this.t = (TextView) this.j.findViewById(R.id.ctt_right_text);
         ImageView imageView = (ImageView) this.j.findViewById(2131363120);
         this.v = imageView;
         imageView.setImageDrawable(BluedSkinUtils.b(this.k, 2131233902));
@@ -132,23 +132,23 @@ public class GroupFragment extends BaseFragment implements View.OnClickListener 
         Bundle arguments = getArguments();
         this.w = arguments;
         if (arguments != null) {
-            this.x = arguments.getBoolean(f30780c);
+            this.x = arguments.getBoolean(f17090c);
         }
         this.l = (LayoutInflater) this.k.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         if (this.x) {
-            f30779a = 0;
+            f17089a = 0;
         } else {
-            f30779a = 1;
+            f17089a = 1;
         }
         View inflate = this.l.inflate(R.layout.fragment_group_lists_header, (ViewGroup) null);
         this.m = inflate;
-        SearchView searchView = (SearchView) inflate.findViewById(R.id.group_search);
-        this.n = searchView;
-        searchView.setMaskLayerOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.group.GroupFragment.1
+        SearchView findViewById = inflate.findViewById(R.id.group_search);
+        this.n = findViewById;
+        findViewById.setMaskLayerOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.group.GroupFragment.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
-                TerminalActivity.d(GroupFragment.this.k, GroupSearchFragment.class, null);
+                TerminalActivity.d(GroupFragment.this.k, GroupSearchFragment.class, (Bundle) null);
             }
         });
         this.o = (TextView) this.m.findViewById(R.id.tv_same_city);
@@ -166,16 +166,16 @@ public class GroupFragment extends BaseFragment implements View.OnClickListener 
         this.z.setAdapter(new MyAdapter(getChildFragmentManager()));
         this.z.setOnPageChangeListener(this.B);
         this.z.setOffscreenPageLimit(2);
-        if (f30779a == 0) {
+        if (f17089a == 0) {
             this.z.setCurrentItem(1);
         }
-        ((TabPageIndicatorWithDot) this.j.findViewById(2131373299)).setViewPager(this.z);
+        ((TabPageIndicatorWithDot) this.j.findViewById(R.id.vp_indicator)).setViewPager(this.z);
         A = 3;
         this.f = new GroupFragmentRecommend();
         this.g = new GroupFragmentNear();
-        if (f30779a == 0) {
+        if (f17089a == 0) {
             Bundle bundle = new Bundle();
-            bundle.putSerializable(GroupFragmentNear.f30784a, this.w.getSerializable(d));
+            bundle.putSerializable(GroupFragmentNear.f17094a, this.w.getSerializable(d));
             bundle.putSerializable(GroupFragmentNear.b, this.w.getSerializable(e));
             this.g.setArguments(bundle);
         }
@@ -195,16 +195,14 @@ public class GroupFragment extends BaseFragment implements View.OnClickListener 
             getActivity().finish();
         } else if (id != 2131363135) {
         } else {
-            TerminalActivity.d(getActivity(), GroupCreateFragment.class, null);
+            TerminalActivity.d(getActivity(), GroupCreateFragment.class, (Bundle) null);
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.k = getActivity();
         View view = this.j;
@@ -219,7 +217,6 @@ public class GroupFragment extends BaseFragment implements View.OnClickListener 
         return this.j;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
     }

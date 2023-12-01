@@ -12,13 +12,9 @@ import com.blued.android.module.live_china.view.MarqueeTextView;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/LiveOperationDescViewBinding.class */
 public final class LiveOperationDescViewBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ShapeFrameLayout f12310a;
+    public final ShapeFrameLayout a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final RelativeLayout f12311c;
+    public final RelativeLayout c;
     public final MarqueeTextView d;
     public final ShapeTextView e;
     public final TextView f;
@@ -26,9 +22,9 @@ public final class LiveOperationDescViewBinding implements ViewBinding {
 
     private LiveOperationDescViewBinding(RelativeLayout relativeLayout, ShapeFrameLayout shapeFrameLayout, ImageView imageView, RelativeLayout relativeLayout2, MarqueeTextView marqueeTextView, ShapeTextView shapeTextView, TextView textView) {
         this.g = relativeLayout;
-        this.f12310a = shapeFrameLayout;
+        this.a = shapeFrameLayout;
         this.b = imageView;
-        this.f12311c = relativeLayout2;
+        this.c = relativeLayout2;
         this.d = marqueeTextView;
         this.e = shapeTextView;
         this.f = textView;
@@ -69,7 +65,6 @@ public final class LiveOperationDescViewBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
         return this.g;

@@ -24,13 +24,9 @@ import com.blued.android.module.live_china.view.pkdared.PkDaredMatchView;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/pkdared/PkDaredMatchView.class */
 public class PkDaredMatchView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private IRequestHost f15390a;
+    private IRequestHost a;
     private TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private TextView f15391c;
+    private TextView c;
     private TextView d;
     private TextView e;
     private OvershootInterpolator f;
@@ -104,7 +100,7 @@ public class PkDaredMatchView extends FrameLayout {
             return;
         }
         b();
-        IRequestHost iRequestHost = this.f15390a;
+        IRequestHost iRequestHost = this.a;
         if (iRequestHost != null) {
             LiveRoomHttpUtils.d(new BluedUIHttpResponse<BluedEntity<BluedEntityBaseExtra, LiveDaredPKExtraModel>>(iRequestHost) { // from class: com.blued.android.module.live_china.view.pkdared.PkDaredMatchView.1
                 @Override // com.blued.android.framework.http.BluedUIHttpResponse
@@ -122,7 +118,7 @@ public class PkDaredMatchView extends FrameLayout {
                 public void onUIUpdate(BluedEntity<BluedEntityBaseExtra, LiveDaredPKExtraModel> bluedEntity) {
                     PkDaredObserver.a().b();
                 }
-            }, this.f15390a);
+            }, this.a);
         }
     }
 
@@ -138,7 +134,7 @@ public class PkDaredMatchView extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: private */
     public void b(View view) {
         IRequestHost iRequestHost;
-        if (ClickUtils.a(R.id.btn_retry) || (iRequestHost = this.f15390a) == null) {
+        if (ClickUtils.a(R.id.btn_retry) || (iRequestHost = this.a) == null) {
             return;
         }
         LiveRoomHttpUtils.c(new BluedUIHttpResponse<BluedEntity<BluedEntityBaseExtra, LiveDaredPKExtraModel>>(iRequestHost) { // from class: com.blued.android.module.live_china.view.pkdared.PkDaredMatchView.2
@@ -161,7 +157,7 @@ public class PkDaredMatchView extends FrameLayout {
                 PkDaredMatchView pkDaredMatchView = PkDaredMatchView.this;
                 pkDaredMatchView.a(pkDaredMatchView.k = bluedEntity.extra.countdown, true);
             }
-        }, this.f15390a);
+        }, this.a);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -176,21 +172,21 @@ public class PkDaredMatchView extends FrameLayout {
     private void c() {
         this.e.setAlpha(0.0f);
         this.d.setAlpha(0.0f);
-        this.f15391c.setTranslationY(getHeight() / 2);
+        this.c.setTranslationY(getHeight() / 2);
         this.b.setTranslationY(getHeight() / 2);
-        this.f15391c.setAlpha(0.0f);
+        this.c.setAlpha(0.0f);
         this.b.setAlpha(0.0f);
-        this.f15391c.setText(R.string.live_pk_dared_match_cancel);
-        this.f15391c.animate().alpha(1.0f).translationY(0.0f).setDuration(350L).setStartDelay(80L);
+        this.c.setText(R.string.live_pk_dared_match_cancel);
+        this.c.animate().alpha(1.0f).translationY(0.0f).setDuration(350L).setStartDelay(80L);
         this.b.animate().alpha(1.0f).translationY(0.0f).setDuration(320L).setStartDelay(20L);
         this.d.setTranslationZ(0.0f);
-        this.f15391c.setTranslationZ(1.0f);
+        this.c.setTranslationZ(1.0f);
     }
 
     private void d() {
-        this.g = this.f15391c.getTop();
+        this.g = this.c.getTop();
         this.h = this.d.getTop();
-        this.f15391c.setText(R.string.live_pk_dared_match_cancel);
+        this.c.setText(R.string.live_pk_dared_match_cancel);
         this.e.animate().alpha(0.0f).setDuration(200L).setStartDelay(0L);
         this.d.animate().alpha(0.0f).translationY(this.g - this.h).setDuration(350L).setStartDelay(0L).setListener(new AnimatorListenerAdapter() { // from class: com.blued.android.module.live_china.view.pkdared.PkDaredMatchView.4
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
@@ -198,29 +194,29 @@ public class PkDaredMatchView extends FrameLayout {
                 PkDaredMatchView.this.d.setTranslationY(0.0f);
             }
         });
-        this.f15391c.setTranslationY(this.h - this.g);
-        this.f15391c.animate().alpha(1.0f).translationY(0.0f).setDuration(350L).setStartDelay(0L);
+        this.c.setTranslationY(this.h - this.g);
+        this.c.animate().alpha(1.0f).translationY(0.0f).setDuration(350L).setStartDelay(0L);
         this.b.animate().alpha(1.0f).setDuration(200L).setStartDelay(100L);
         this.d.setTranslationZ(0.0f);
-        this.f15391c.setTranslationZ(1.0f);
+        this.c.setTranslationZ(1.0f);
     }
 
     private void e() {
-        this.g = this.f15391c.getTop();
+        this.g = this.c.getTop();
         this.h = this.d.getTop();
         this.d.setText(R.string.live_pk_dared_retry);
         this.b.animate().alpha(0.0f).setDuration(200L).setStartDelay(0L);
-        this.f15391c.animate().alpha(0.0f).translationY(this.h - this.g).setDuration(350L).setStartDelay(0L);
+        this.c.animate().alpha(0.0f).translationY(this.h - this.g).setDuration(350L).setStartDelay(0L);
         this.d.setTranslationY(this.g - this.h);
         this.d.animate().alpha(1.0f).translationY(0.0f).setDuration(350L).setStartDelay(0L).setListener(null);
         this.e.animate().alpha(1.0f).setDuration(200L).setStartDelay(100L);
         this.d.setTranslationZ(1.0f);
-        this.f15391c.setTranslationZ(0.0f);
+        this.c.setTranslationZ(0.0f);
     }
 
     private void f() {
         this.b.setAlpha(0.0f);
-        this.f15391c.setAlpha(0.0f);
+        this.c.setAlpha(0.0f);
         this.d.setText(R.string.live_pk_dared_match_retry);
         this.d.setTranslationY(getHeight() / 2);
         this.e.setTranslationY(getHeight() / 2);
@@ -229,19 +225,19 @@ public class PkDaredMatchView extends FrameLayout {
         this.d.animate().alpha(1.0f).translationY(0.0f).setDuration(320L).setStartDelay(20L).setListener(null);
         this.e.animate().alpha(1.0f).translationY(0.0f).setDuration(350L).setStartDelay(80L);
         this.d.setTranslationZ(1.0f);
-        this.f15391c.setTranslationZ(0.0f);
+        this.c.setTranslationZ(0.0f);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void g() {
-        this.g = this.f15391c.getTop();
+        this.g = this.c.getTop();
         this.h = this.d.getTop();
     }
 
     public void a() {
         b();
         this.b.setText("");
-        this.f15391c.setText("");
+        this.c.setText("");
         this.d.setText("");
         this.e.setText("");
         setVisibility(8);
@@ -261,11 +257,11 @@ public class PkDaredMatchView extends FrameLayout {
     protected void a(Context context) {
         LayoutInflater.from(getContext()).inflate(R.layout.live_pk_dared_match, this);
         this.b = (TextView) findViewById(R.id.tv_match_ing);
-        this.f15391c = (TextView) findViewById(R.id.btn_cancel);
+        this.c = (TextView) findViewById(R.id.btn_cancel);
         this.d = (TextView) findViewById(R.id.btn_retry);
         this.e = (TextView) findViewById(R.id.tv_auto_close);
         this.b.animate().setInterpolator(this.f);
-        this.f15391c.animate().setInterpolator(this.f);
+        this.c.animate().setInterpolator(this.f);
         this.d.animate().setInterpolator(this.f).setListener(null);
         this.e.animate().setInterpolator(this.f);
         post(new Runnable() { // from class: com.blued.android.module.live_china.view.pkdared.-$$Lambda$PkDaredMatchView$CG-WSLVnqbJkUmyOtr6N3Dp07jM
@@ -274,7 +270,7 @@ public class PkDaredMatchView extends FrameLayout {
                 PkDaredMatchView.this.g();
             }
         });
-        this.f15391c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.pkdared.-$$Lambda$PkDaredMatchView$8IsQt9IgtFfL8V-709zNauaYMaQ
+        this.c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.pkdared.-$$Lambda$PkDaredMatchView$8IsQt9IgtFfL8V-709zNauaYMaQ
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 PkDaredMatchView.this.a(view);
@@ -301,6 +297,7 @@ public class PkDaredMatchView extends FrameLayout {
         }
     }
 
+    /* JADX WARN: Type inference failed for: r1v0, types: [com.blued.android.module.live_china.view.pkdared.PkDaredMatchView$5] */
     public void b(int i, final boolean z) {
         b();
         this.j = new CountDownTimer(i * 1000, 1000L) { // from class: com.blued.android.module.live_china.view.pkdared.PkDaredMatchView.5
@@ -324,6 +321,6 @@ public class PkDaredMatchView extends FrameLayout {
     }
 
     public void setRequestHost(IRequestHost iRequestHost) {
-        this.f15390a = iRequestHost;
+        this.a = iRequestHost;
     }
 }

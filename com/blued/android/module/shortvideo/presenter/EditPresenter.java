@@ -52,13 +52,9 @@ public class EditPresenter extends ShortVideoBasePresent<IEditView> implements E
     private GestureDetector l;
     private Bundle m;
     private EditDataModel n;
-
-    /* renamed from: a  reason: collision with root package name */
-    public int f15787a = 0;
+    public int a = 0;
     public String b = "";
-
-    /* renamed from: c  reason: collision with root package name */
-    public int f15788c = 0;
+    public int c = 0;
     private GestureDetector.OnGestureListener o = new GestureDetector.OnGestureListener() { // from class: com.blued.android.module.shortvideo.presenter.EditPresenter.7
         @Override // android.view.GestureDetector.OnGestureListener
         public boolean onDown(MotionEvent motionEvent) {
@@ -151,43 +147,35 @@ public class EditPresenter extends ShortVideoBasePresent<IEditView> implements E
         }
     };
     PLVideoFilterListener d = new PLVideoFilterListener() { // from class: com.blued.android.module.shortvideo.presenter.EditPresenter.8
-        @Override // com.qiniu.pili.droid.shortvideo.PLVideoFilterListener
         public int onDrawFrame(int i, int i2, int i3, long j, float[] fArr) {
             return EditPresenter.this.k.drawFrame(i, i2, i3, false);
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.PLVideoFilterListener
         public void onSurfaceChanged(int i, int i2) {
             EditPresenter.this.k.adjustViewPort(i, i2);
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.PLVideoFilterListener
         public void onSurfaceCreated() {
             EditPresenter.this.k.onSurfaceCreated();
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.PLVideoFilterListener
         public void onSurfaceDestroy() {
             EditPresenter.this.k.onSurfaceDestroyed();
         }
     };
     PLVideoFilterListener e = new PLVideoFilterListener() { // from class: com.blued.android.module.shortvideo.presenter.EditPresenter.9
-        @Override // com.qiniu.pili.droid.shortvideo.PLVideoFilterListener
         public int onDrawFrame(int i, int i2, int i3, long j, float[] fArr) {
             return EditPresenter.this.j.drawFrame(i, i2, i3, false);
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.PLVideoFilterListener
         public void onSurfaceChanged(int i, int i2) {
             EditPresenter.this.j.adjustViewPort(i, i2);
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.PLVideoFilterListener
         public void onSurfaceCreated() {
             EditPresenter.this.j.onSurfaceCreated();
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.PLVideoFilterListener
         public void onSurfaceDestroy() {
             EditPresenter.this.j.onSurfaceDestroyed();
         }
@@ -196,9 +184,7 @@ public class EditPresenter extends ShortVideoBasePresent<IEditView> implements E
     /* renamed from: com.blued.android.module.shortvideo.presenter.EditPresenter$10  reason: invalid class name */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/shortvideo/presenter/EditPresenter$10.class */
     static /* synthetic */ class AnonymousClass10 {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f15790a;
+        static final /* synthetic */ int[] a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:13:0x0041 -> B:27:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:15:0x0045 -> B:25:0x001f). Please submit an issue!!! */
@@ -206,25 +192,25 @@ public class EditPresenter extends ShortVideoBasePresent<IEditView> implements E
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:19:0x004d -> B:29:0x0035). Please submit an issue!!! */
         static {
             int[] iArr = new int[EventType.VALUE.values().length];
-            f15790a = iArr;
+            a = iArr;
             try {
                 iArr[EventType.VALUE.CONFIG_MUSIC.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f15790a[EventType.VALUE.UPDATE_FILTER.ordinal()] = 2;
+                a[EventType.VALUE.UPDATE_FILTER.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f15790a[EventType.VALUE.EDIT_FINISH.ordinal()] = 3;
+                a[EventType.VALUE.EDIT_FINISH.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f15790a[EventType.VALUE.CONFIG_COVER.ordinal()] = 4;
+                a[EventType.VALUE.CONFIG_COVER.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f15790a[EventType.VALUE.HIDE_COVER.ordinal()] = 5;
+                a[EventType.VALUE.HIDE_COVER.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
         }
@@ -383,9 +369,9 @@ public class EditPresenter extends ShortVideoBasePresent<IEditView> implements E
                 AppMethods.a((CharSequence) "请检查License授权！");
                 D().getActivity().finish();
             } else {
-                this.f15787a = bundle.getInt("from");
+                this.a = bundle.getInt("from");
                 this.b = bundle.getString("delete_auto_checkbox_text");
-                this.f15788c = bundle.getInt("delete_auto_number");
+                this.c = bundle.getInt("delete_auto_number");
                 CommonModel commonModel = (CommonModel) bundle.getSerializable("commont_model");
                 EditDataModel.SerializableData serializableData = (EditDataModel.SerializableData) bundle.getSerializable("serializeble_data");
                 if (commonModel == null && serializableData == null) {
@@ -416,8 +402,8 @@ public class EditPresenter extends ShortVideoBasePresent<IEditView> implements E
                 this.n.setScreenWidth(D.getContext().getResources().getDisplayMetrics().widthPixels);
                 this.n.getSerializableData().setUseData(Boolean.valueOf(z));
                 this.n.getSerializableData().setFilters(new FilterConfigModel().getFilters());
-                String a2 = UserProxy.b().a();
-                if (!TextUtils.isEmpty(a2) && (a2.equals(String.valueOf(2)) || a2.equals(String.valueOf(3)))) {
+                String a = UserProxy.b().a();
+                if (!TextUtils.isEmpty(a) && (a.equals(String.valueOf(2)) || a.equals(String.valueOf(3)))) {
                     this.n.getSerializableData().setPrivilegeUser(true);
                 }
                 String videoPath = this.n.getSerializableData().getVideoPath();
@@ -444,7 +430,7 @@ public class EditPresenter extends ShortVideoBasePresent<IEditView> implements E
                     pLVideoEncodeSetting.setEncodingBitrateMode(PLVideoEncodeSetting.BitrateMode.QUALITY_PRIORITY);
                     pLVideoEncodeSetting.setEncodingFps(30);
                     pLVideoEncodeSetting.setPreferredEncodingSize(this.n.getEncodingW(), this.n.getEncodingH());
-                    pLVideoEncodeSetting.setHWCodecEnabled(VideoConfigData.f15874a.booleanValue());
+                    pLVideoEncodeSetting.setHWCodecEnabled(VideoConfigData.a.booleanValue());
                     this.i.setVideoEncodeSetting(pLVideoEncodeSetting);
                 }
                 this.i.setVideoSaveListener(this);
@@ -529,7 +515,7 @@ public class EditPresenter extends ShortVideoBasePresent<IEditView> implements E
 
     @Override // com.blued.android.module.shortvideo.observer.EventObserver
     public void a(EventType.VALUE value) {
-        int i = AnonymousClass10.f15790a[value.ordinal()];
+        int i = AnonymousClass10.a[value.ordinal()];
         if (i == 1) {
             m();
         } else if (i == 2) {
@@ -750,7 +736,6 @@ public class EditPresenter extends ShortVideoBasePresent<IEditView> implements E
         this.i.resumePlayback();
     }
 
-    @Override // com.qiniu.pili.droid.shortvideo.PLVideoSaveListener
     public void onProgressUpdate(float f2) {
         IEditView D = D();
         if (D != null && D.b() != null && D.b().isAdded()) {
@@ -760,7 +745,6 @@ public class EditPresenter extends ShortVideoBasePresent<IEditView> implements E
         StvLogUtils.a(f + " getView() == null!!!", new Object[0]);
     }
 
-    @Override // com.qiniu.pili.droid.shortvideo.PLVideoSaveListener
     public void onSaveVideoCanceled() {
         StvLogUtils.a(f + " 转码取消", new Object[0]);
         IEditView D = D();
@@ -780,7 +764,6 @@ public class EditPresenter extends ShortVideoBasePresent<IEditView> implements E
         StvLogUtils.a(f + " getView() == null!!!", new Object[0]);
     }
 
-    @Override // com.qiniu.pili.droid.shortvideo.PLVideoSaveListener
     public void onSaveVideoFailed(final int i) {
         StvLogUtils.a(f + " 转码失败 errorCode:" + i, new Object[0]);
         IEditView D = D();
@@ -809,7 +792,6 @@ public class EditPresenter extends ShortVideoBasePresent<IEditView> implements E
         StvLogUtils.a(f + " getView() == null!!!", new Object[0]);
     }
 
-    @Override // com.qiniu.pili.droid.shortvideo.PLVideoSaveListener
     public void onSaveVideoSuccess(String str) {
         StvLogUtils.a(f + " 转码成功 succes | path:" + str, new Object[0]);
         IEditView D = D();

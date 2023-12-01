@@ -31,7 +31,7 @@ public interface ab {
     public static final int Z = -302;
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f22936a = -10;
+    public static final int f9328a = -10;
     public static final int aa = 900;
     public static final int ab = 901;
     public static final int ac = 902;
@@ -43,7 +43,7 @@ public interface ab {
     public static final int b = 1001;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final int f22937c = -1;
+    public static final int f9329c = -1;
     public static final int d = -10;
     public static final int e = 200;
     public static final int f = 201;

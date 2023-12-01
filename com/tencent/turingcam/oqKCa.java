@@ -19,7 +19,8 @@ import android.text.TextUtils;
 import android.util.JsonWriter;
 import android.util.Log;
 import android.util.SparseArray;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
+import com.anythink.expressad.foundation.h.s;
+import com.huawei.openalliance.ad.constant.t;
 import com.tencent.tinker.loader.shareutil.ShareConstants;
 import com.tencent.turingface.sdk.mfa.Bwfl9;
 import com.tencent.turingface.sdk.mfa.G1g37;
@@ -68,7 +69,7 @@ import java.util.zip.InflaterInputStream;
 public class oqKCa {
 
     /* renamed from: a  reason: collision with root package name */
-    public static int f39831a;
+    public static int f26140a;
 
     public static byte a(Context context) {
         boolean z = true;
@@ -185,13 +186,13 @@ public class oqKCa {
                 com.tencent.turingface.sdk.mfa.nyvKz nyvkz = new com.tencent.turingface.sdk.mfa.nyvKz(bArr2, 4);
                 nyvkz.b = "UTF-8";
                 kkoxw.a(nyvkz);
-                nyvkz.f39970a = ByteBuffer.wrap(kkoxw.j);
-                if (G2SZT.f39878a == null) {
+                nyvkz.f26279a = ByteBuffer.wrap(kkoxw.j);
+                if (G2SZT.f26187a == null) {
                     HashMap<String, byte[]> hashMap2 = new HashMap<>();
-                    G2SZT.f39878a = hashMap2;
+                    G2SZT.f26187a = hashMap2;
                     hashMap2.put("", new byte[0]);
                 }
-                HashMap a3 = nyvkz.a((Map) G2SZT.f39878a, 0, false);
+                HashMap a3 = nyvkz.a((Map) G2SZT.f26187a, 0, false);
                 Object obj = null;
                 try {
                     if (a3.containsKey("resp")) {
@@ -201,7 +202,7 @@ public class oqKCa {
                             byte[] bArr3 = (byte[]) a3.get("resp");
                             try {
                                 com.tencent.turingface.sdk.mfa.nyvKz nyvkz2 = new com.tencent.turingface.sdk.mfa.nyvKz();
-                                nyvkz2.f39970a = ByteBuffer.wrap(bArr3);
+                                nyvkz2.f26279a = ByteBuffer.wrap(bArr3);
                                 nyvkz2.b = "UTF-8";
                                 Object a4 = nyvkz2.a((com.tencent.turingface.sdk.mfa.nyvKz) uct3w, 0, true);
                                 obj = a4;
@@ -294,7 +295,7 @@ public class oqKCa {
             if (trim.startsWith("/data/")) {
                 return null;
             }
-            return split[1] + ";" + trim;
+            return split[1] + t.aE + trim;
         }
         return null;
     }
@@ -318,7 +319,7 @@ public class oqKCa {
                 if (endsWith && str3 != null && trim.startsWith(str3)) {
                     return null;
                 }
-                String str5 = "/data/data/" + str2 + BridgeUtil.SPLIT_MARK;
+                String str5 = "/data/data/" + str2 + "/";
                 if (trim.startsWith(str5)) {
                     return null;
                 }
@@ -327,7 +328,7 @@ public class oqKCa {
                 }
                 if (endsWith) {
                     try {
-                        str4 = new File(str5 + "lib").getCanonicalPath();
+                        str4 = new File(str5 + ShareConstants.SO_PATH).getCanonicalPath();
                     } catch (IOException e) {
                         str4 = null;
                     }
@@ -468,7 +469,7 @@ public class oqKCa {
         }
         String trim = str2.substring(indexOf).trim();
         if (trim.startsWith("/data/")) {
-            if (trim.startsWith("/data/data/" + str + BridgeUtil.SPLIT_MARK)) {
+            if (trim.startsWith("/data/data/" + str + "/")) {
                 return false;
             }
             boolean endsWith = trim.endsWith(".so");
@@ -525,7 +526,7 @@ public class oqKCa {
                 byte[] bArr2 = bArr;
                 if (i2 < i) {
                     bArr2 = new byte[i2];
-                    System.arraycopy((Object) bArr, 0, (Object) bArr2, 0, i2);
+                    System.arraycopy(bArr, 0, bArr2, 0, i2);
                 }
                 b(fileInputStream2);
                 return bArr2;
@@ -833,7 +834,7 @@ public class oqKCa {
         }
         try {
             boolean z = false;
-            context.getPackageManager().getPackageInfo("com.android.vending", 0);
+            context.getPackageManager().getPackageInfo(s.a.f5134a, 0);
             tbHx2 tbhx2 = new tbHx2();
             Intent intent = new Intent("com.google.android.gms.ads.identifier.service.START");
             intent.setPackage("com.google.android.gms");
@@ -882,7 +883,7 @@ public class oqKCa {
             sb.append(",");
             sb.append(b.b);
             sb.append(",");
-            sb.append(b.f39940c);
+            sb.append(b.f26249c);
             sb.append(",");
             sb.append(i);
             sb.append(",");
@@ -890,7 +891,7 @@ public class oqKCa {
             if (b2 != null) {
                 sb.append(b2.d);
                 sb.append(",");
-                sb.append(b2.f39940c);
+                sb.append(b2.f26249c);
                 sb.append(",");
                 sb.append(b2.b);
             }
@@ -953,7 +954,7 @@ public class oqKCa {
         Iterator it = ((ArrayList) com.tencent.turingface.sdk.mfa.wmqhz.a()).iterator();
         while (it.hasNext()) {
             Bwfl9 bwfl9 = (Bwfl9) it.next();
-            if (bwfl9.f39862a.contains(com.tencent.turingface.sdk.mfa.uAnWx.f40001c)) {
+            if (bwfl9.f26171a.contains(com.tencent.turingface.sdk.mfa.uAnWx.f26310c)) {
                 return bwfl9.b;
             }
         }
@@ -989,7 +990,7 @@ public class oqKCa {
             bufferedReader = null;
         }
         b(bufferedReader);
-        String[] strArr = V3a8U.f39925a;
+        String[] strArr = V3a8U.f26234a;
         synchronized (V3a8U.class) {
             try {
                 if (V3a8U.b != null) {
@@ -1045,7 +1046,7 @@ public class oqKCa {
                 }
                 i5 = i6;
                 if (it2.hasNext()) {
-                    sb.append(BridgeUtil.UNDERLINE_STR);
+                    sb.append("_");
                     i5 = i6;
                 }
             }
@@ -1118,7 +1119,7 @@ public class oqKCa {
         Iterator it = ((ArrayList) com.tencent.turingface.sdk.mfa.wmqhz.a()).iterator();
         while (it.hasNext()) {
             Bwfl9 bwfl9 = (Bwfl9) it.next();
-            if (bwfl9.f39862a.contains(com.tencent.turingface.sdk.mfa.uAnWx.d)) {
+            if (bwfl9.f26171a.contains(com.tencent.turingface.sdk.mfa.uAnWx.d)) {
                 return bwfl9.b;
             }
         }
@@ -1180,7 +1181,7 @@ public class oqKCa {
             if (a2.isEmpty()) {
                 return "";
             }
-            HashSet hashSet = new HashSet(Arrays.asList(a2.split(";")));
+            HashSet hashSet = new HashSet(Arrays.asList(a2.split(t.aE)));
             StringWriter stringWriter = new StringWriter();
             JsonWriter jsonWriter = new JsonWriter(stringWriter);
             try {
@@ -1192,7 +1193,7 @@ public class oqKCa {
                     ORjG3.SkEpO a3 = com.tencent.turingface.sdk.mfa.SkEpO.a(str2);
                     jsonWriter.beginObject();
                     jsonWriter.name("std");
-                    jsonWriter.value(a3.f39905a);
+                    jsonWriter.value(a3.f26214a);
                     jsonWriter.name("err");
                     jsonWriter.value(a3.b);
                     jsonWriter.endObject();
@@ -1322,7 +1323,7 @@ public class oqKCa {
                             break;
                         }
                         if (i3 > 0) {
-                            sb.append(";");
+                            sb.append(t.aE);
                         }
                         sb.append(telephonyManager.getSimState(i3));
                         i2 = i3 + 1;

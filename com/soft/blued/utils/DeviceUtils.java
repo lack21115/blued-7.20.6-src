@@ -10,6 +10,7 @@ import android.util.Log;
 import com.anythink.expressad.video.dynview.a.a;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.BlueAppLocal;
+import com.blued.android.core.net.HttpResponseHandler;
 import com.blued.android.core.utils.Md5;
 import com.blued.android.framework.download.model.DownloadBaseInfo;
 import com.blued.android.framework.http.BluedUIHttpResponse;
@@ -29,6 +30,7 @@ import com.soft.blued.log.track.EventTrackSystemAuthority;
 import com.soft.blued.ui.home.manager.WelcomeADManager;
 import com.soft.blued.version.update.UpdateVersionFragment;
 import com.soft.blued.version.update.UpdateVersionHelper;
+import com.xiaomi.mipush.sdk.Constants;
 import java.lang.reflect.Method;
 import java.net.Inet4Address;
 import java.net.Inet6Address;
@@ -43,7 +45,7 @@ import java.util.UUID;
 public class DeviceUtils {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f34734a = DeviceUtils.class.getSimpleName();
+    private static final String f21043a = DeviceUtils.class.getSimpleName();
 
     public static void a(Context context) {
         if (f()) {
@@ -60,22 +62,20 @@ public class DeviceUtils {
             }
             UpdateVersionFragment.a(context2, "i_s_install_update");
         } else if (BluedPreferences.aC() == 1 || BluedPreferences.aD()) {
-            MineHttpUtils.a(context2, "0", new BluedUIHttpResponse<BluedEntityA<DownloadBaseInfo>>() { // from class: com.soft.blued.utils.DeviceUtils.4
+            MineHttpUtils.a(context2, "0", (HttpResponseHandler) new BluedUIHttpResponse<BluedEntityA<DownloadBaseInfo>>() { // from class: com.soft.blued.utils.DeviceUtils.4
                 /* JADX INFO: Access modifiers changed from: protected */
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 /* renamed from: a */
                 public BluedEntityA<DownloadBaseInfo> parseData(String str) {
-                    Logger.a(DeviceUtils.f34734a + "===update json", str);
-                    return (BluedEntityA) super.parseData(str);
+                    Logger.a(DeviceUtils.f21043a + "===update json", str);
+                    return super.parseData(str);
                 }
 
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 /* renamed from: a */
                 public void onUIUpdate(BluedEntityA<DownloadBaseInfo> bluedEntityA) {
                     if (bluedEntityA != null) {
                         try {
                             if (bluedEntityA.hasData()) {
-                                DownloadBaseInfo downloadBaseInfo = bluedEntityA.data.get(0);
+                                DownloadBaseInfo downloadBaseInfo = (DownloadBaseInfo) bluedEntityA.data.get(0);
                                 String str = downloadBaseInfo.type;
                                 if (!TextUtils.isEmpty(downloadBaseInfo.version_code)) {
                                     BluedPreferences.I(downloadBaseInfo.version_code);
@@ -92,14 +92,12 @@ public class DeviceUtils {
                     }
                 }
 
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse, com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
                 public void onFailure(Throwable th, int i, String str) {
-                    String str2 = DeviceUtils.f34734a;
+                    String str2 = DeviceUtils.f21043a;
                     Logger.a(str2, "===update responseCode json===" + str);
                     super.onFailure(th, i, str);
                 }
 
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public void onUIFinish() {
                 }
             });
@@ -116,25 +114,23 @@ public class DeviceUtils {
             AppInfo.n().post(new Runnable() { // from class: com.soft.blued.utils.DeviceUtils.2
                 @Override // java.lang.Runnable
                 public void run() {
-                    DeviceUtils.b(LocationHelperNew.LocationFinishListener.this);
+                    DeviceUtils.b(locationFinishListener);
                 }
             });
             return;
         }
-        EventTrackSystemAuthority.a(SystemAuthorityProtos.Event.SYSTEM_AUTHORITY, SystemAuthorityProtos.Type.LOCATION, PermissionUtils.a("android.permission.ACCESS_FINE_LOCATION"));
+        EventTrackSystemAuthority.a(SystemAuthorityProtos.Event.SYSTEM_AUTHORITY, SystemAuthorityProtos.Type.LOCATION, PermissionUtils.a(new String[]{"android.permission.ACCESS_FINE_LOCATION"}));
         PermissionUtils.c(new PermissionCallbacks() { // from class: com.soft.blued.utils.DeviceUtils.1
-            @Override // com.blued.android.framework.permission.PermissionCallbacks
             public void U_() {
-                DeviceUtils.b(LocationHelperNew.LocationFinishListener.this);
+                DeviceUtils.b(locationFinishListener);
             }
 
-            @Override // com.blued.android.framework.permission.PermissionCallbacks
             public void a(String[] strArr) {
-                LocationHelperNew.LocationFinishListener locationFinishListener2 = LocationHelperNew.LocationFinishListener.this;
+                LocationHelperNew.LocationFinishListener locationFinishListener2 = locationFinishListener;
                 if (locationFinishListener2 != null) {
                     locationFinishListener2.a(-1001);
                 }
-                BluedStatistics.c().a("LOCATION", 0L, -1001, null);
+                BluedStatistics.c().a("LOCATION", 0L, -1001, (String) null);
             }
         });
     }
@@ -152,25 +148,23 @@ public class DeviceUtils {
     public static void b(final LocationHelperNew.LocationFinishListener locationFinishListener) {
         Log.v("drb", "updateLocation");
         GaoDeUtils.a(new OnLocationListener() { // from class: com.soft.blued.utils.DeviceUtils.3
-            @Override // com.blued.android.module.common.utils.gaode.OnLocationListener
             public void a(double d, double d2) {
                 CommonPreferences.a(d, d2);
                 Event c2 = BluedStatistics.c();
                 c2.a("LOCATION_POSITION", 0L, 0, "nearby home longitude:" + d + " -- latitude:" + d2);
                 Event c3 = BluedStatistics.c();
                 c3.a("LOCATION", 0L, 0, "longitude:" + d + " -- latitude:" + d2);
-                LocationHelperNew.LocationFinishListener locationFinishListener2 = LocationHelperNew.LocationFinishListener.this;
+                LocationHelperNew.LocationFinishListener locationFinishListener2 = locationFinishListener;
                 if (locationFinishListener2 != null) {
                     locationFinishListener2.a();
                 }
             }
 
-            @Override // com.blued.android.module.common.utils.gaode.OnLocationListener
             public void a(int i) {
-                LocationHelperNew.LocationFinishListener locationFinishListener2 = LocationHelperNew.LocationFinishListener.this;
+                LocationHelperNew.LocationFinishListener locationFinishListener2 = locationFinishListener;
                 if (locationFinishListener2 != null) {
                     locationFinishListener2.a(i);
-                    BluedStatistics.c().a("LOCATION", 0L, i, null);
+                    BluedStatistics.c().a("LOCATION", 0L, i, (String) null);
                 }
             }
         });
@@ -327,7 +321,7 @@ public class DeviceUtils {
     }
 
     public static boolean f() {
-        return TextUtils.equals("a0300a", AppInfo.f9487c);
+        return TextUtils.equals("a0300a", AppInfo.c);
     }
 
     public static String g() {
@@ -336,7 +330,7 @@ public class DeviceUtils {
             String a2 = BluedPreferences.c().a("uuid", (String) null);
             str = a2;
             if (TextUtils.isEmpty(a2)) {
-                str = UUID.randomUUID().toString().replaceAll("-", "");
+                str = UUID.randomUUID().toString().replaceAll(Constants.ACCEPT_TIME_SEPARATOR_SERVER, "");
                 BluedPreferences.c().c().a("uuid", str).a();
             }
         } else {
@@ -357,7 +351,7 @@ public class DeviceUtils {
             String a2 = BluedPreferences.c().a("uuid", (String) null);
             str = a2;
             if (TextUtils.isEmpty(a2)) {
-                str = UUID.randomUUID().toString().replaceAll("-", "");
+                str = UUID.randomUUID().toString().replaceAll(Constants.ACCEPT_TIME_SEPARATOR_SERVER, "");
                 BluedPreferences.c().c().a("uuid", str).a();
             }
         } else if (Build.VERSION.SDK_INT < 21) {

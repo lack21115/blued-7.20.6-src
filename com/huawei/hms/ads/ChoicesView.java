@@ -18,16 +18,15 @@ import org.json.JSONObject;
 /* loaded from: source-7994992-dex2jar.jar:com/huawei/hms/ads/ChoicesView.class */
 public class ChoicesView extends ImageView {
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.huawei.hms.ads.ChoicesView$1  reason: invalid class name */
     /* loaded from: source-7994992-dex2jar.jar:com/huawei/hms/ads/ChoicesView$1.class */
-    public class AnonymousClass1 implements Runnable {
+    class AnonymousClass1 implements Runnable {
         final /* synthetic */ String Code;
 
         /* renamed from: com.huawei.hms.ads.ChoicesView$1$1  reason: invalid class name and collision with other inner class name */
         /* loaded from: source-7994992-dex2jar.jar:com/huawei/hms/ads/ChoicesView$1$1.class */
-        class C03881 implements RemoteCallResultCallback<String> {
-            C03881() {
+        class C02181 implements RemoteCallResultCallback<String> {
+            C02181() {
             }
 
             @Override // com.huawei.openalliance.ad.ipc.RemoteCallResultCallback
@@ -77,7 +76,7 @@ public class ChoicesView extends ImageView {
             JSONObject jSONObject = new JSONObject();
             try {
                 jSONObject.put("content", com.huawei.openalliance.ad.utils.z.V(sourceParam));
-                com.huawei.openalliance.ad.ipc.g.V(ChoicesView.this.getContext()).Code(com.huawei.openalliance.ad.constant.p.L, jSONObject.toString(), new C03881(), String.class);
+                com.huawei.openalliance.ad.ipc.g.V(ChoicesView.this.getContext()).Code(com.huawei.openalliance.ad.constant.p.L, jSONObject.toString(), new C02181(), String.class);
             } catch (JSONException e) {
                 ge.I("ChoicesView", "load ad choice icon jsonex");
             }

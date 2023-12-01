@@ -22,24 +22,22 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fitem/FitemBattlePassTask.class */
 public final class FitemBattlePassTask extends FreedomItem {
     private final Fragment b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final BattlePassTaskDataModel f12528c;
+    private final BattlePassTaskDataModel c;
 
     public FitemBattlePassTask(Fragment fragment, BattlePassTaskDataModel model) {
         Intrinsics.e(fragment, "fragment");
         Intrinsics.e(model, "model");
         this.b = fragment;
-        this.f12528c = model;
+        this.c = model;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(FitemBattlePassTask this$0, BaseViewHolder vh, View view) {
         Intrinsics.e(this$0, "this$0");
         Intrinsics.e(vh, "$vh");
-        if (this$0.f12528c.getState() == 1) {
+        if (this$0.c.getState() == 1) {
             this$0.b(vh);
-        } else if (this$0.f12528c.getState() == 2) {
+        } else if (this$0.c.getState() == 2) {
             this$0.e();
         }
     }
@@ -48,9 +46,9 @@ public final class FitemBattlePassTask extends FreedomItem {
         if (ClickUtils.a(baseViewHolder.a(R.id.iv_btn).getId())) {
             return;
         }
-        EventTrackLive.b(LiveProtos.Event.LIVE_BATTLE_PASS_TASK_GO_CLICK, LiveRoomManager.a().e(), LiveRoomManager.a().g(), String.valueOf(this.f12528c.getId()));
+        EventTrackLive.b(LiveProtos.Event.LIVE_BATTLE_PASS_TASK_GO_CLICK, LiveRoomManager.a().e(), LiveRoomManager.a().g(), String.valueOf(this.c.getId()));
         LiveEventBusUtil.g();
-        BattlePassTaskDataModel battlePassTaskDataModel = this.f12528c;
+        BattlePassTaskDataModel battlePassTaskDataModel = this.c;
         if (battlePassTaskDataModel == null) {
             return;
         }
@@ -65,8 +63,8 @@ public final class FitemBattlePassTask extends FreedomItem {
     }
 
     private final void e() {
-        EventTrackLive.b(LiveProtos.Event.LIVE_BATTLE_PASS_TASK_GET_CLICK, LiveRoomManager.a().e(), LiveRoomManager.a().g(), String.valueOf(this.f12528c.getId()));
-        LiveBattleShopDialog.f12741a.a(this.b, this.f12528c.getId());
+        EventTrackLive.b(LiveProtos.Event.LIVE_BATTLE_PASS_TASK_GET_CLICK, LiveRoomManager.a().e(), LiveRoomManager.a().g(), String.valueOf(this.c.getId()));
+        LiveBattleShopDialog.a.a(this.b, this.c.getId());
     }
 
     @Override // com.blued.android.module.common.utils.freedom.FreedomItem
@@ -78,15 +76,15 @@ public final class FitemBattlePassTask extends FreedomItem {
     public void a(Context context, final BaseViewHolder vh, List<FreedomItem> list, int i) {
         Intrinsics.e(context, "context");
         Intrinsics.e(vh, "vh");
-        BaseViewHolder a2 = vh.a(R.id.tv_exp, (CharSequence) Intrinsics.a("x", (Object) Integer.valueOf(this.f12528c.getExp()))).a(R.id.tv_desc, (CharSequence) this.f12528c.getTask()).a(R.id.tv_current, (CharSequence) String.valueOf(this.f12528c.getCurrent()));
+        BaseViewHolder a = vh.a(R.id.tv_exp, (CharSequence) Intrinsics.a("x", (Object) Integer.valueOf(this.c.getExp()))).a(R.id.tv_desc, (CharSequence) this.c.getTask()).a(R.id.tv_current, (CharSequence) String.valueOf(this.c.getCurrent()));
         int i2 = R.id.tv_target;
-        a2.a(i2, (CharSequence) ('/' + this.f12528c.getTarget() + this.f12528c.getUnit())).a(R.id.tv_exp, true).a(R.id.tv_desc, true).a(R.id.tv_current, true).a(R.id.tv_target, true).a(R.id.iv_btn, new View.OnClickListener() { // from class: com.blued.android.module.live_china.fitem.-$$Lambda$FitemBattlePassTask$9rckgzN0nQduCeM58hzSHjLixZ4
+        a.a(i2, (CharSequence) ('/' + this.c.getTarget() + this.c.getUnit())).a(R.id.tv_exp, true).a(R.id.tv_desc, true).a(R.id.tv_current, true).a(R.id.tv_target, true).a(R.id.iv_btn, new View.OnClickListener() { // from class: com.blued.android.module.live_china.fitem.-$$Lambda$FitemBattlePassTask$9rckgzN0nQduCeM58hzSHjLixZ4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 FitemBattlePassTask.a(FitemBattlePassTask.this, vh, view);
             }
         });
-        int state = this.f12528c.getState();
+        int state = this.c.getState();
         if (state == 1) {
             vh.c(R.id.iv_btn, R.drawable.selector_battle_task_go_tasks);
         } else if (state == 2) {

@@ -12,11 +12,11 @@ public class c {
     private static String e = "LXOP";
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f39772a;
+    private Context f26081a;
     public com.tencent.tmsqmsp.sdk.g.c.a b;
 
     /* renamed from: c  reason: collision with root package name */
-    private ServiceConnection f39773c;
+    private ServiceConnection f26082c;
     public b d;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/tmsqmsp/sdk/g/c/c$a.class */
@@ -27,7 +27,7 @@ public class c {
         @Override // android.content.ServiceConnection
         public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
             synchronized (this) {
-                c.this.b = a.AbstractBinderC1052a.a(iBinder);
+                c.this.b = a.AbstractBinderC0882a.a(iBinder);
                 c cVar = c.this;
                 b bVar = cVar.d;
                 if (bVar != null) {
@@ -52,17 +52,17 @@ public class c {
 
     public c(Context context, b bVar) {
         String str;
-        this.f39772a = null;
+        this.f26081a = null;
         this.d = null;
         if (context == null) {
             throw new NullPointerException("Context can not be null.");
         }
-        this.f39772a = context;
+        this.f26081a = context;
         this.d = bVar;
-        this.f39773c = new a();
+        this.f26082c = new a();
         Intent intent = new Intent();
         intent.setClassName("com.zui.deviceidservice", "com.zui.deviceidservice.DeviceidService");
-        if (this.f39772a.bindService(intent, this.f39773c, 1)) {
+        if (this.f26081a.bindService(intent, this.f26082c, 1)) {
             str = "bindService Successful!";
         } else {
             b bVar2 = this.d;
@@ -84,7 +84,7 @@ public class c {
     }
 
     public String a() {
-        if (this.f39772a == null) {
+        if (this.f26081a == null) {
             a("Context is null.");
             throw new IllegalArgumentException("Context is null, must be new OpenDeviceId first");
         }
@@ -115,7 +115,7 @@ public class c {
     }
 
     public String c() {
-        Context context = this.f39772a;
+        Context context = this.f26081a;
         if (context == null) {
             b("Context is null.");
             throw new IllegalArgumentException("Context is null, must be new OpenDeviceId first");
@@ -140,7 +140,7 @@ public class c {
 
     public void d() {
         try {
-            this.f39772a.unbindService(this.f39773c);
+            this.f26081a.unbindService(this.f26082c);
             b("unBind Service successful");
         } catch (IllegalArgumentException e2) {
             a("unBind Service exception");

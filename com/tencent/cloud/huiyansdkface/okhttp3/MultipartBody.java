@@ -14,11 +14,11 @@ import java.util.UUID;
 public final class MultipartBody extends RequestBody {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final MediaType f35865a = MediaType.get("multipart/mixed");
+    public static final MediaType f22174a = MediaType.get("multipart/mixed");
     public static final MediaType b = MediaType.get("multipart/alternative");
 
     /* renamed from: c  reason: collision with root package name */
-    public static final MediaType f35866c = MediaType.get("multipart/digest");
+    public static final MediaType f22175c = MediaType.get("multipart/digest");
     public static final MediaType d = MediaType.get("multipart/parallel");
     public static final MediaType e = MediaType.get(HttpConstants.ContentType.MULTIPART_FORM_DATA);
     private static final byte[] f = {58, 32};
@@ -34,20 +34,20 @@ public final class MultipartBody extends RequestBody {
     public static final class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        private final ByteString f35867a;
+        private final ByteString f22176a;
         private MediaType b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final List<Part> f35868c;
+        private final List<Part> f22177c;
 
         public Builder() {
             this(UUID.randomUUID().toString());
         }
 
         public Builder(String str) {
-            this.b = MultipartBody.f35865a;
-            this.f35868c = new ArrayList();
-            this.f35867a = ByteString.encodeUtf8(str);
+            this.b = MultipartBody.f22174a;
+            this.f22177c = new ArrayList();
+            this.f22176a = ByteString.encodeUtf8(str);
         }
 
         public Builder addFormDataPart(String str, String str2) {
@@ -64,7 +64,7 @@ public final class MultipartBody extends RequestBody {
 
         public Builder addPart(Part part) {
             if (part != null) {
-                this.f35868c.add(part);
+                this.f22177c.add(part);
                 return this;
             }
             throw new NullPointerException("part == null");
@@ -75,10 +75,10 @@ public final class MultipartBody extends RequestBody {
         }
 
         public MultipartBody build() {
-            if (this.f35868c.isEmpty()) {
+            if (this.f22177c.isEmpty()) {
                 throw new IllegalStateException("Multipart body must have at least one part.");
             }
-            return new MultipartBody(this.f35867a, this.b, this.f35868c);
+            return new MultipartBody(this.f22176a, this.b, this.f22177c);
         }
 
         public Builder setType(MediaType mediaType) {
@@ -97,11 +97,11 @@ public final class MultipartBody extends RequestBody {
     public static final class Part {
 
         /* renamed from: a  reason: collision with root package name */
-        final Headers f35869a;
+        final Headers f22178a;
         final RequestBody b;
 
         private Part(Headers headers, RequestBody requestBody) {
-            this.f35869a = headers;
+            this.f22178a = headers;
             this.b = requestBody;
         }
 
@@ -144,7 +144,7 @@ public final class MultipartBody extends RequestBody {
         }
 
         public Headers headers() {
-            return this.f35869a;
+            return this.f22178a;
         }
     }
 
@@ -183,7 +183,7 @@ public final class MultipartBody extends RequestBody {
                 return j2;
             }
             Part part = this.l.get(i2);
-            Headers headers = part.f35869a;
+            Headers headers = part.f22178a;
             RequestBody requestBody = part.b;
             buffer.write(h);
             buffer.write(this.i);

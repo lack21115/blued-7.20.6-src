@@ -55,7 +55,6 @@ public class EmojiTextView extends SkinCompatTextView {
         setText(getText());
     }
 
-    @Override // android.widget.TextView
     public void setText(CharSequence charSequence, TextView.BufferType bufferType) {
         CharSequence charSequence2 = charSequence;
         if (charSequence == null) {

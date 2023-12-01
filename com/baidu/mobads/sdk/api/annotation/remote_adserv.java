@@ -9,7 +9,7 @@ import java.util.HashMap;
 public class remote_adserv {
     public static HashMap<String, RouteInfo> getRoutesMap() {
         HashMap<String, RouteInfo> hashMap = new HashMap<>();
-        hashMap.put(c.a.f9369a, RouteInfo.build(AdservRemoteLoaderImpl.class, c.a.f9369a));
+        hashMap.put(c.a.f6529a, RouteInfo.build(AdservRemoteLoaderImpl.class, c.a.f6529a));
         return hashMap;
     }
 }

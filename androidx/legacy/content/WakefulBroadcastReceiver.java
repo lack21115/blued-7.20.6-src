@@ -13,7 +13,7 @@ import android.util.SparseArray;
 public abstract class WakefulBroadcastReceiver extends BroadcastReceiver {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final SparseArray<PowerManager.WakeLock> f3073a = new SparseArray<>();
+    private static final SparseArray<PowerManager.WakeLock> f3025a = new SparseArray<>();
     private static int b = 1;
 
     public static boolean completeWakefulIntent(Intent intent) {
@@ -21,11 +21,11 @@ public abstract class WakefulBroadcastReceiver extends BroadcastReceiver {
         if (intExtra == 0) {
             return false;
         }
-        synchronized (f3073a) {
-            PowerManager.WakeLock wakeLock = f3073a.get(intExtra);
+        synchronized (f3025a) {
+            PowerManager.WakeLock wakeLock = f3025a.get(intExtra);
             if (wakeLock != null) {
                 wakeLock.release();
-                f3073a.remove(intExtra);
+                f3025a.remove(intExtra);
                 return true;
             }
             Log.w("WakefulBroadcastReceiv.", "No active wake lock id #" + intExtra);
@@ -34,7 +34,7 @@ public abstract class WakefulBroadcastReceiver extends BroadcastReceiver {
     }
 
     public static ComponentName startWakefulService(Context context, Intent intent) {
-        synchronized (f3073a) {
+        synchronized (f3025a) {
             int i = b;
             int i2 = b + 1;
             b = i2;
@@ -46,11 +46,11 @@ public abstract class WakefulBroadcastReceiver extends BroadcastReceiver {
             if (startService == null) {
                 return null;
             }
-            PowerManager powerManager = (PowerManager) context.getSystemService("power");
+            PowerManager powerManager = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
             PowerManager.WakeLock newWakeLock = powerManager.newWakeLock(1, "androidx.core:wake:" + startService.flattenToShortString());
             newWakeLock.setReferenceCounted(false);
             newWakeLock.acquire(60000L);
-            f3073a.put(i, newWakeLock);
+            f3025a.put(i, newWakeLock);
             return startService;
         }
     }

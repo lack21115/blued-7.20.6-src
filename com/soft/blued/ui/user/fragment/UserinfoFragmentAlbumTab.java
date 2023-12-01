@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.blued.android.core.AppMethods;
+import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.ui.BaseFragment;
 import com.blued.android.framework.http.BluedUIHttpResponse;
 import com.blued.android.framework.http.parser.BluedEntityA;
@@ -46,11 +47,11 @@ import java.util.List;
 public class UserinfoFragmentAlbumTab extends BaseFragment implements AlbumViewObserver.IAblumViewObserver, AlbumDataObserver.IAlbumObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    public Context f34071a;
+    public Context f20380a;
     public View b;
 
     /* renamed from: c  reason: collision with root package name */
-    public SmartRefreshLayout f34072c;
+    public SmartRefreshLayout f20381c;
     public RecyclerView d;
     public UserBasicModel e;
     private NoDataAndLoadFailView f;
@@ -147,7 +148,7 @@ public class UserinfoFragmentAlbumTab extends BaseFragment implements AlbumViewO
             return;
         }
         if ("1".equals(this.j.getData().get(i).is_videos) && AudioChannelManager.j().n()) {
-            AppMethods.a(this.f34071a.getResources().getText(2131893031));
+            AppMethods.a(this.f20380a.getResources().getText(R.string.yy_in_use));
             return;
         }
         Iterator<AlbumFlow> it = this.j.getData().iterator();
@@ -161,7 +162,7 @@ public class UserinfoFragmentAlbumTab extends BaseFragment implements AlbumViewO
             }
         }
         String str = TextUtils.equals(this.e.uid, UserInfo.getInstance().getLoginUserInfo().uid) ? null : this.e.name;
-        Context context = this.f34071a;
+        Context context = this.f20380a;
         AlbumForDataTrans albumForDataTrans = this.k;
         int i2 = i;
         if (z) {
@@ -180,7 +181,7 @@ public class UserinfoFragmentAlbumTab extends BaseFragment implements AlbumViewO
     }
 
     private void d() {
-        this.d.setLayoutManager(new GridLayoutManager(this.f34071a, this.l));
+        this.d.setLayoutManager(new GridLayoutManager(this.f20380a, this.l));
         this.j.notifyDataSetChanged();
     }
 
@@ -226,26 +227,23 @@ public class UserinfoFragmentAlbumTab extends BaseFragment implements AlbumViewO
             return;
         }
         Log.v("drb", "getAlbumFlowList mPage:" + this.g);
-        UserHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<AlbumDataForJsonParse>>(getFragmentActive()) { // from class: com.soft.blued.ui.user.fragment.UserinfoFragmentAlbumTab.3
+        BluedUIHttpResponse<BluedEntityA<AlbumDataForJsonParse>> bluedUIHttpResponse = new BluedUIHttpResponse<BluedEntityA<AlbumDataForJsonParse>>(getFragmentActive()) { // from class: com.soft.blued.ui.user.fragment.UserinfoFragmentAlbumTab.3
 
             /* renamed from: a  reason: collision with root package name */
-            boolean f34075a = false;
+            boolean f20384a = false;
 
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<AlbumDataForJsonParse> bluedEntityA) {
                 UserinfoFragmentAlbumTab.this.a(bluedEntityA);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i2, String str) {
-                this.f34075a = true;
+                this.f20384a = true;
                 AlbumViewDataManager.a().c();
                 return super.onUIFailure(i2, str);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 super.onUIFinish();
                 try {
@@ -254,21 +252,21 @@ public class UserinfoFragmentAlbumTab extends BaseFragment implements AlbumViewO
                     }
                     if (UserinfoFragmentAlbumTab.this.j == null || UserinfoFragmentAlbumTab.this.j.getItemCount() != 0) {
                         UserinfoFragmentAlbumTab.this.f.d();
-                    } else if (this.f34075a) {
+                    } else if (this.f20384a) {
                         Log.v("drb", "showFail");
                         UserinfoFragmentAlbumTab.this.f.b();
                     } else {
                         Log.v("drb", "showNodata");
                         UserinfoFragmentAlbumTab.this.f.a();
                     }
-                    this.f34075a = false;
+                    this.f20384a = false;
                     if (UserinfoFragmentAlbumTab.this.i) {
-                        UserinfoFragmentAlbumTab.this.f34072c.l(true);
+                        UserinfoFragmentAlbumTab.this.f20381c.l(true);
                     } else {
-                        UserinfoFragmentAlbumTab.this.f34072c.l(false);
+                        UserinfoFragmentAlbumTab.this.f20381c.l(false);
                     }
-                    UserinfoFragmentAlbumTab.this.f34072c.j();
-                    UserinfoFragmentAlbumTab.this.f34072c.h();
+                    UserinfoFragmentAlbumTab.this.f20381c.j();
+                    UserinfoFragmentAlbumTab.this.f20381c.h();
                     boolean z2 = false;
                     if (UserinfoFragmentAlbumTab.this.j != null) {
                         z2 = false;
@@ -281,7 +279,6 @@ public class UserinfoFragmentAlbumTab extends BaseFragment implements AlbumViewO
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 super.onUIStart();
                 if (UserinfoFragmentAlbumTab.this.j == null || UserinfoFragmentAlbumTab.this.j.getItemCount() != 0) {
@@ -289,7 +286,8 @@ public class UserinfoFragmentAlbumTab extends BaseFragment implements AlbumViewO
                 }
                 UserinfoFragmentAlbumTab.this.m.setVisibility(0);
             }
-        }, this.e.uid, "", this.g + "", this.h + "", getFragmentActive());
+        };
+        UserHttpUtils.a((BluedUIHttpResponse) bluedUIHttpResponse, this.e.uid, "", this.g + "", this.h + "", (IRequestHost) getFragmentActive());
     }
 
     @Override // com.soft.blued.ui.user.observer.AlbumDataObserver.IAlbumObserver
@@ -314,18 +312,18 @@ public class UserinfoFragmentAlbumTab extends BaseFragment implements AlbumViewO
     }
 
     public void b() {
-        this.m = this.b.findViewById(2131368385);
-        NoDataAndLoadFailView noDataAndLoadFailView = (NoDataAndLoadFailView) this.b.findViewById(R.id.nodataview);
-        this.f = noDataAndLoadFailView;
-        noDataAndLoadFailView.d();
+        this.m = this.b.findViewById(R.id.loading_view);
+        NoDataAndLoadFailView findViewById = this.b.findViewById(R.id.nodataview);
+        this.f = findViewById;
+        findViewById.d();
         this.f.setImageScale(0.8f);
-        this.f.setTopSpace(DensityUtils.a(this.f34071a, 58.0f));
+        this.f.setTopSpace(DensityUtils.a(this.f20380a, 58.0f));
         this.f.setOnTouchEvent(false);
-        SmartRefreshLayout smartRefreshLayout = (SmartRefreshLayout) this.b.findViewById(2131369119);
-        this.f34072c = smartRefreshLayout;
+        SmartRefreshLayout smartRefreshLayout = (SmartRefreshLayout) this.b.findViewById(R.id.refresh_layout);
+        this.f20381c = smartRefreshLayout;
         smartRefreshLayout.c(false);
         this.d = (RecyclerView) this.b.findViewById(2131369105);
-        this.j = new AlbumAdapterNew(this.f34071a, getFragmentActive());
+        this.j = new AlbumAdapterNew(this.f20380a, getFragmentActive());
         FeedMethods.a(getActivity(), this.j);
         this.d.setAdapter(this.j);
         this.j.setHeaderAndEmpty(true);
@@ -345,7 +343,7 @@ public class UserinfoFragmentAlbumTab extends BaseFragment implements AlbumViewO
             }
         });
         this.j.setEnableLoadMore(false);
-        this.f34072c.a(new OnLoadMoreListener() { // from class: com.soft.blued.ui.user.fragment.UserinfoFragmentAlbumTab.2
+        this.f20381c.a(new OnLoadMoreListener() { // from class: com.soft.blued.ui.user.fragment.UserinfoFragmentAlbumTab.2
             @Override // com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
             public void onLoadMore(RefreshLayout refreshLayout) {
                 UserinfoFragmentAlbumTab.this.a(false);
@@ -363,18 +361,17 @@ public class UserinfoFragmentAlbumTab extends BaseFragment implements AlbumViewO
     public void c() {
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.f34071a = getActivity();
+        this.f20380a = getActivity();
         View view = this.b;
         if (view == null) {
             this.b = layoutInflater.inflate(R.layout.fragment_userinfo_album_tab, viewGroup, false);
-            UserBasicModel userBasicModel = (UserBasicModel) getArguments().getSerializable("user");
-            this.e = userBasicModel;
-            if (userBasicModel == null) {
-                UserBasicModel userBasicModel2 = new UserBasicModel();
-                this.e = userBasicModel2;
-                userBasicModel2.uid = UserInfo.getInstance().getLoginUserInfo().uid;
+            UserBasicModel serializable = getArguments().getSerializable("user");
+            this.e = serializable;
+            if (serializable == null) {
+                UserBasicModel userBasicModel = new UserBasicModel();
+                this.e = userBasicModel;
+                userBasicModel.uid = UserInfo.getInstance().getLoginUserInfo().uid;
             }
             this.k = new AlbumForDataTrans();
             b();
@@ -387,19 +384,16 @@ public class UserinfoFragmentAlbumTab extends BaseFragment implements AlbumViewO
         return this.b;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
         AlbumViewObserver.a().b(this);
         AlbumDataObserver.a().b(this);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onPause() {
         super.onPause();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onResume() {
         super.onResume();
     }

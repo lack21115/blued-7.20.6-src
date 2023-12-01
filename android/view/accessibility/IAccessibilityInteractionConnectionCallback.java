@@ -17,9 +17,8 @@ public interface IAccessibilityInteractionConnectionCallback extends IInterface 
         static final int TRANSACTION_setFindAccessibilityNodeInfosResult = 2;
         static final int TRANSACTION_setPerformAccessibilityActionResult = 3;
 
-        /* JADX INFO: Access modifiers changed from: private */
         /* loaded from: source-4181928-dex2jar.jar:android/view/accessibility/IAccessibilityInteractionConnectionCallback$Stub$Proxy.class */
-        public static class Proxy implements IAccessibilityInteractionConnectionCallback {
+        private static class Proxy implements IAccessibilityInteractionConnectionCallback {
             private IBinder mRemote;
 
             Proxy(IBinder iBinder) {
@@ -116,7 +115,7 @@ public interface IAccessibilityInteractionConnectionCallback extends IInterface 
                     parcel.enforceInterface(DESCRIPTOR);
                     setPerformAccessibilityActionResult(parcel.readInt() != 0, parcel.readInt());
                     return true;
-                case IBinder.INTERFACE_TRANSACTION /* 1598968902 */:
+                case 1598968902:
                     parcel2.writeString(DESCRIPTOR);
                     return true;
                 default:

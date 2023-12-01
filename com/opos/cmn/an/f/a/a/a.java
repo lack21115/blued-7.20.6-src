@@ -6,7 +6,7 @@ import android.util.Log;
 public class a implements b {
 
     /* renamed from: a  reason: collision with root package name */
-    private com.opos.cmn.an.f.b.b f24507a;
+    private com.opos.cmn.an.f.b.b f10820a;
     private int b = -1;
 
     private void a(int i, String str, String str2) {
@@ -35,7 +35,7 @@ public class a implements b {
 
     @Override // com.opos.cmn.an.f.a.a.b
     public void a(com.opos.cmn.an.f.a.b.d dVar) {
-        if (dVar == null || dVar.b == null || dVar.f24518a == null) {
+        if (dVar == null || dVar.b == null || dVar.f10831a == null) {
             return;
         }
         int i = dVar.d;
@@ -45,7 +45,7 @@ public class a implements b {
             }
             String a2 = com.opos.cmn.an.f.c.b.a(dVar);
             if (a2.length() <= 3072) {
-                a(i, this.f24507a.f24530a, a2);
+                a(i, this.f10820a.f10843a, a2);
                 return;
             }
             int length = a2.length();
@@ -59,7 +59,7 @@ public class a implements b {
                 if (length <= i4) {
                     i4 = length;
                 }
-                a(i, this.f24507a.f24530a, a2.substring(i3, i4));
+                a(i, this.f10820a.f10843a, a2.substring(i3, i4));
                 i2 = i4;
             }
         } catch (Throwable th) {
@@ -69,13 +69,13 @@ public class a implements b {
     @Override // com.opos.cmn.an.f.a.a.b
     public void a(com.opos.cmn.an.f.b.b bVar) {
         int i;
-        this.f24507a = bVar;
+        this.f10820a = bVar;
         try {
             if (com.opos.cmn.an.f.c.b.a()) {
                 com.opos.cmn.an.f.a.c.a();
                 i = 1;
             } else {
-                i = this.f24507a.f24531c;
+                i = this.f10820a.f10844c;
             }
             this.b = i;
         } catch (Throwable th) {

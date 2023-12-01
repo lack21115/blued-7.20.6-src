@@ -6,14 +6,10 @@ import org.json.JSONArray;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/s.class */
 public class s {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final int f6917a = 35;
+    public static final int a = 35;
     public static final String b = "isDefaultOffer";
     private static volatile s g;
-
-    /* renamed from: c  reason: collision with root package name */
-    Method f6918c;
+    Method c;
     Method d;
     Method e;
     Method f;
@@ -21,7 +17,7 @@ public class s {
     private s() {
         try {
             Class<?> cls = Class.forName("com.anythink.network.myoffer.MyOfferAPI");
-            this.f6918c = cls.getDeclaredMethod("preloadTopOnOffer", Context.class, com.anythink.core.common.e.t.class);
+            this.c = cls.getDeclaredMethod("preloadTopOnOffer", Context.class, com.anythink.core.common.e.t.class);
             this.d = cls.getDeclaredMethod("getOutOfCapOfferIds", Context.class);
             this.e = cls.getDeclaredMethod("getDefaultOfferId", Context.class, String.class);
             this.f = cls.getDeclaredMethod("checkOffersOutOfCap", Context.class, String.class);
@@ -58,10 +54,10 @@ public class s {
 
     public final void a(Context context, String str) {
         try {
-            if (this.f6918c != null) {
+            if (this.c != null) {
                 com.anythink.core.common.e.t tVar = new com.anythink.core.common.e.t();
-                tVar.f6677a = str;
-                this.f6918c.invoke(null, context, tVar);
+                tVar.a = str;
+                this.c.invoke(null, context, tVar);
             }
         } catch (Exception e) {
             e.printStackTrace();

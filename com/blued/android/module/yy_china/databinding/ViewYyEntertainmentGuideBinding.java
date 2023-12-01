@@ -9,12 +9,10 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ViewYyEntertainmentGuideBinding.class */
 public final class ViewYyEntertainmentGuideBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f16907a;
+    private final LinearLayout a;
 
     private ViewYyEntertainmentGuideBinding(LinearLayout linearLayout) {
-        this.f16907a = linearLayout;
+        this.a = linearLayout;
     }
 
     public static ViewYyEntertainmentGuideBinding a(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
@@ -32,9 +30,8 @@ public final class ViewYyEntertainmentGuideBinding implements ViewBinding {
         throw new NullPointerException("rootView");
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f16907a;
+        return this.a;
     }
 }

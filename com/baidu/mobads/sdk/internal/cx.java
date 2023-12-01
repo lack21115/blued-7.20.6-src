@@ -8,17 +8,17 @@ import com.baidu.mobads.sdk.api.IOAdEventListener;
 public class cx implements IOAdEventListener {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ cv f9406a;
+    final /* synthetic */ cv f6566a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public cx(cv cvVar) {
-        this.f9406a = cvVar;
+        this.f6566a = cvVar;
     }
 
     @Override // com.baidu.mobads.sdk.api.IOAdEventListener
     public void run(IOAdEvent iOAdEvent) {
         if (iOAdEvent != null) {
-            this.f9406a.y();
+            this.f6566a.y();
         }
     }
 }

@@ -1,5 +1,6 @@
 package kotlinx.coroutines.flow;
 
+import com.android.ims.ImsReasonInfo;
 import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
@@ -11,16 +12,12 @@ import kotlinx.coroutines.CoroutineScope;
 
 /* JADX INFO: Add missing generic type declarations: [T] */
 @Metadata
-@DebugMetadata(b = "Delay.kt", c = {224, 358}, d = "invokeSuspend", e = "kotlinx.coroutines.flow.FlowKt__DelayKt$debounceInternal$1")
+@DebugMetadata(b = "Delay.kt", c = {224, ImsReasonInfo.CODE_SIP_SERVER_PRECONDITION_FAILURE}, d = "invokeSuspend", e = "kotlinx.coroutines.flow.FlowKt__DelayKt$debounceInternal$1")
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt__DelayKt$debounceInternal$1.class */
 final class FlowKt__DelayKt$debounceInternal$1<T> extends SuspendLambda implements Function3<CoroutineScope, FlowCollector<? super T>, Continuation<? super Unit>, Object> {
-
-    /* renamed from: a  reason: collision with root package name */
-    Object f43122a;
+    Object a;
     Object b;
-
-    /* renamed from: c  reason: collision with root package name */
-    int f43123c;
+    int c;
     /* synthetic */ Object d;
     final /* synthetic */ Function1<T, Long> e;
     final /* synthetic */ Flow<T> f;
@@ -43,7 +40,7 @@ final class FlowKt__DelayKt$debounceInternal$1<T> extends SuspendLambda implemen
         FlowKt__DelayKt$debounceInternal$1 flowKt__DelayKt$debounceInternal$1 = new FlowKt__DelayKt$debounceInternal$1(this.e, this.f, continuation);
         flowKt__DelayKt$debounceInternal$1.g = coroutineScope;
         flowKt__DelayKt$debounceInternal$1.d = flowCollector;
-        return flowKt__DelayKt$debounceInternal$1.invokeSuspend(Unit.f42314a);
+        return flowKt__DelayKt$debounceInternal$1.invokeSuspend(Unit.a);
     }
 
     /* JADX WARN: Can't wrap try/catch for region: R(14:68|30|34|(4:36|(1:45)(1:40)|41|(2:43|44))|46|47|48|(1:50)|51|52|53|(1:55)|56|(2:58|59)(1:60)) */

@@ -8,13 +8,13 @@ import java.util.Comparator;
 public final /* synthetic */ class ds implements Comparator {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final ds f40333a = new ds();
+    private static final ds f26642a = new ds();
 
     private ds() {
     }
 
     public static Comparator a() {
-        return f40333a;
+        return f26642a;
     }
 
     @Override // java.util.Comparator

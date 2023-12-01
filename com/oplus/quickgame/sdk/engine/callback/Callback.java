@@ -22,14 +22,14 @@ public abstract class Callback {
         public static final String UPDATE_SUCCESS_MESSAGE = "platform update success, please call request again";
 
         /* renamed from: a  reason: collision with root package name */
-        int f24399a;
+        int f10712a;
         String b;
 
         /* renamed from: c  reason: collision with root package name */
-        Map<String, Object> f24400c = new HashMap();
+        Map<String, Object> f10713c = new HashMap();
 
         public int getCode() {
-            return this.f24399a;
+            return this.f10712a;
         }
 
         public String getMsg() {
@@ -37,15 +37,15 @@ public abstract class Callback {
         }
 
         public Map<String, Object> getParams() {
-            return this.f24400c;
+            return this.f10713c;
         }
 
         public void putParams(Map<String, Object> map) {
-            this.f24400c.putAll(map);
+            this.f10713c.putAll(map);
         }
 
         public void setCode(int i) {
-            this.f24399a = i;
+            this.f10712a = i;
         }
 
         public void setMsg(String str) {
@@ -53,7 +53,7 @@ public abstract class Callback {
         }
 
         public String toString() {
-            return this.f24399a + "#" + this.b;
+            return this.f10712a + "#" + this.b;
         }
     }
 
@@ -63,11 +63,11 @@ public abstract class Callback {
         Map<String, Object> b = k.b(cursor);
         Response response = new Response();
         if (b != null) {
-            response.f24399a = Long.valueOf(((Long) b.get("code")).longValue()).intValue();
+            response.f10712a = Long.valueOf(((Long) b.get("code")).longValue()).intValue();
             response.b = (String) b.get("msg");
             response.putParams(b);
         } else {
-            response.f24399a = -1;
+            response.f10712a = -1;
             response.b = "fail to get response";
         }
         onResponse(response);

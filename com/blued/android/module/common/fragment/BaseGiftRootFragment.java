@@ -23,12 +23,8 @@ import javax.annotation.OverridingMethodsMustInvokeSuper;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/fragment/BaseGiftRootFragment.class */
 public abstract class BaseGiftRootFragment<T extends CommonGiftPackageModel> extends BaseViewPagerParentFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected CommonGiftTabView f10811a;
-
-    /* renamed from: c  reason: collision with root package name */
-    public String f10812c;
+    protected CommonGiftTabView a;
+    public String c;
     protected final List<T> b = new ArrayList();
     protected int d = 0;
     protected boolean e = false;
@@ -41,24 +37,24 @@ public abstract class BaseGiftRootFragment<T extends CommonGiftPackageModel> ext
         }
         String[] split = baseGiftModel.index.split(BridgeUtil.UNDERLINE_STR);
         if (split.length > 1) {
-            int a2 = CommonStringUtils.a(split[0]);
-            int a3 = CommonStringUtils.a(split[1]);
+            int a = CommonStringUtils.a(split[0]);
+            int a2 = CommonStringUtils.a(split[1]);
             LogUtils.c("GIFT_ITEM_UPDATE: " + baseGiftModel.index);
-            if (this.b.size() <= a2 || this.b.get(a2).goods.size() <= a3) {
+            if (this.b.size() <= a || this.b.get(a).goods.size() <= a2) {
                 return;
             }
-            BaseGiftModel baseGiftModel2 = (BaseGiftModel) this.b.get(a2).goods.get(a3);
+            BaseGiftModel baseGiftModel2 = (BaseGiftModel) this.b.get(a).goods.get(a2);
             if (StringUtils.a(baseGiftModel2.getCompareParam(), baseGiftModel.getCompareParam())) {
-                if (!this.b.get(a2).deleteItemIfZeroCount || baseGiftModel2.getDeleteItemCount() > 0) {
-                    this.b.get(a2).goods.set(a3, baseGiftModel);
-                    LiveEventBus.get("gift_item_update_by_root").post(new GiftItemChangeEvent(a2, a(a2, a3), baseGiftModel));
+                if (!this.b.get(a).deleteItemIfZeroCount || baseGiftModel2.getDeleteItemCount() > 0) {
+                    this.b.get(a).goods.set(a2, baseGiftModel);
+                    LiveEventBus.get("gift_item_update_by_root").post(new GiftItemChangeEvent(a, a(a, a2), baseGiftModel));
                     return;
                 }
-                this.b.get(a2).goods.remove(a3);
+                this.b.get(a).goods.remove(a2);
                 LogUtils.c("GIFT_ITEM_UPDATE: remove " + baseGiftModel.index);
-                this.f10812c = null;
-                a(this.b.get(a2));
-                LiveEventBus.get("gift_package_change").post(this.b.get(a2).index);
+                this.c = null;
+                a(this.b.get(a));
+                LiveEventBus.get("gift_package_change").post(this.b.get(a).index);
             }
         }
     }
@@ -68,37 +64,37 @@ public abstract class BaseGiftRootFragment<T extends CommonGiftPackageModel> ext
         if (str == null) {
             return;
         }
-        String str2 = this.f10812c;
+        String str2 = this.c;
         if (str2 != null) {
             String[] split = str2.split(BridgeUtil.UNDERLINE_STR);
             if (split.length > 1) {
-                int a2 = CommonStringUtils.a(split[0]);
-                int a3 = CommonStringUtils.a(split[1]);
-                if (this.b.size() > a2 && this.b.get(a2).goods.size() > a3) {
-                    ((BaseGiftModel) this.b.get(a2).goods.get(a3)).isSelected = false;
-                    LiveEventBus.get("gift_page_change").post(new CommonGiftPageChangeEvent(a2, a(a2, a3)));
-                    LogUtils.c("Uncheck: " + a2 + ", " + a3);
+                int a = CommonStringUtils.a(split[0]);
+                int a2 = CommonStringUtils.a(split[1]);
+                if (this.b.size() > a && this.b.get(a).goods.size() > a2) {
+                    ((BaseGiftModel) this.b.get(a).goods.get(a2)).isSelected = false;
+                    LiveEventBus.get("gift_page_change").post(new CommonGiftPageChangeEvent(a, a(a, a2)));
+                    LogUtils.c("Uncheck: " + a + ", " + a2);
                 }
             }
         }
-        this.f10812c = str;
+        this.c = str;
         String[] split2 = str.split(BridgeUtil.UNDERLINE_STR);
         if (split2.length > 1) {
-            int a4 = CommonStringUtils.a(split2[0]);
-            int a5 = CommonStringUtils.a(split2[1]);
-            if (this.b.size() > a4 && this.b.get(a4).goods.size() > a5) {
-                BaseGiftModel baseGiftModel = (BaseGiftModel) this.b.get(a4).goods.get(a5);
+            int a3 = CommonStringUtils.a(split2[0]);
+            int a4 = CommonStringUtils.a(split2[1]);
+            if (this.b.size() > a3 && this.b.get(a3).goods.size() > a4) {
+                BaseGiftModel baseGiftModel = (BaseGiftModel) this.b.get(a3).goods.get(a4);
                 if (!baseGiftModel.isSelected) {
                     baseGiftModel.isSelected = true;
-                    LiveEventBus.get("gift_page_change").post(new CommonGiftPageChangeEvent(a4, a(a4, a5)));
-                    LiveEventBus.get("gift_page_selected").post(new CommonGiftPageChangeEvent(a4, a(a4, a5)));
-                    LogUtils.c("Checked: " + a4 + ", " + a5);
+                    LiveEventBus.get("gift_page_change").post(new CommonGiftPageChangeEvent(a3, a(a3, a4)));
+                    LiveEventBus.get("gift_page_selected").post(new CommonGiftPageChangeEvent(a3, a(a3, a4)));
+                    LogUtils.c("Checked: " + a3 + ", " + a4);
                     a(baseGiftModel, z);
                 }
             }
-            if (a4 < this.b.size()) {
-                this.h.setCurrentItem(a4, false);
-                this.f10811a.setToolBtnSelect(a4);
+            if (a3 < this.b.size()) {
+                this.h.setCurrentItem(a3, false);
+                this.a.setToolBtnSelect(a3);
             }
         }
     }
@@ -118,18 +114,18 @@ public abstract class BaseGiftRootFragment<T extends CommonGiftPackageModel> ext
         }
         String[] split = str.split(BridgeUtil.UNDERLINE_STR);
         if (split.length > 1) {
-            int a2 = CommonStringUtils.a(split[0]);
-            int a3 = CommonStringUtils.a(split[1]);
-            if (this.b.size() <= a2 || this.b.get(a2).goods.size() <= a3) {
+            int a = CommonStringUtils.a(split[0]);
+            int a2 = CommonStringUtils.a(split[1]);
+            if (this.b.size() <= a || this.b.get(a).goods.size() <= a2) {
                 return null;
             }
-            return (BaseGiftModel) this.b.get(a2).goods.get(a3);
+            return (BaseGiftModel) this.b.get(a).goods.get(a2);
         }
         return null;
     }
 
     public void a(int i) {
-        CommonGiftTabView commonGiftTabView = this.f10811a;
+        CommonGiftTabView commonGiftTabView = this.a;
         if (commonGiftTabView != null) {
             commonGiftTabView.a(i);
         }
@@ -186,23 +182,23 @@ public abstract class BaseGiftRootFragment<T extends CommonGiftPackageModel> ext
             bundle.putString("package_index", t.index);
             bundle.putInt("package_tab_index", t.tabIndex);
         }
-        BaseFragment a2 = a(t, bundle);
-        a2.setArguments(bundle);
+        BaseFragment a = a(t, bundle);
+        a.setArguments(bundle);
         LogUtils.c("instanceFragment: " + i);
-        return a2;
+        return a;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     public CommonGiftPackageModel b(String str) {
-        int a2;
+        int a;
         if (str == null) {
             return null;
         }
         String[] split = str.split(BridgeUtil.UNDERLINE_STR);
-        if (split.length <= 1 || this.b.size() <= (a2 = CommonStringUtils.a(split[0]))) {
+        if (split.length <= 1 || this.b.size() <= (a = CommonStringUtils.a(split[0]))) {
             return null;
         }
-        return this.b.get(a2);
+        return this.b.get(a);
     }
 
     public String b() {
@@ -255,28 +251,24 @@ public abstract class BaseGiftRootFragment<T extends CommonGiftPackageModel> ext
     @Override // com.blued.android.module.common.fragment.BaseViewPagerParentFragment
     public void e() {
         super.e();
-        this.f10811a.setData(this.b);
+        this.a.setData(this.b);
     }
 
-    @Override // com.blued.android.framework.ui.SimpleFragment
     @OverridingMethodsMustInvokeSuper
     public void onInitListener() {
         super.onInitListener();
         this.h.addOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: com.blued.android.module.common.fragment.BaseGiftRootFragment.1
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageScrollStateChanged(int i) {
                 if (i == 1) {
                     BaseGiftRootFragment.this.e = true;
                 }
             }
 
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageScrolled(int i, float f, int i2) {
             }
 
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageSelected(int i) {
-                BaseGiftRootFragment.this.f10811a.setToolBtnSelect(i);
+                BaseGiftRootFragment.this.a.setToolBtnSelect(i);
                 BaseGiftRootFragment.this.c(i);
                 if (BaseGiftRootFragment.this.e && BaseGiftRootFragment.this.j.size() > i && BaseGiftRootFragment.this.j.get(i) != null && BaseGiftRootFragment.this.j.get(i).isAdded() && (BaseGiftRootFragment.this.j.get(i) instanceof BaseGiftParentFragment)) {
                     if (BaseGiftRootFragment.this.d < i) {
@@ -290,27 +282,23 @@ public abstract class BaseGiftRootFragment<T extends CommonGiftPackageModel> ext
             }
         });
         LiveEventBus.get("gift_item_selected", String.class).observe(this, new Observer<String>() { // from class: com.blued.android.module.common.fragment.BaseGiftRootFragment.2
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(String str) {
                 BaseGiftRootFragment.this.a(str, false);
             }
         });
         LiveEventBus.get("gift_item_clicked", String.class).observe(this, new Observer<String>() { // from class: com.blued.android.module.common.fragment.BaseGiftRootFragment.3
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(String str) {
                 BaseGiftRootFragment.this.a(str, true);
             }
         });
         LiveEventBus.get("gift_item_update", BaseGiftModel.class).observe(this, new Observer() { // from class: com.blued.android.module.common.fragment.-$$Lambda$BaseGiftRootFragment$6pmjS5bsfF1VR7BIKZ6CQhcmsQY
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 BaseGiftRootFragment.this.a((BaseGiftModel) obj);
             }
         });
         LiveEventBus.get("gift_package_selected", String.class).observe(this, new Observer<String>() { // from class: com.blued.android.module.common.fragment.BaseGiftRootFragment.4
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(String str) {
                 int i;
@@ -330,20 +318,19 @@ public abstract class BaseGiftRootFragment<T extends CommonGiftPackageModel> ext
                         i2 = i + 1;
                     }
                 }
-                BaseGiftRootFragment.this.f10811a.setToolBtnSelect(i);
+                BaseGiftRootFragment.this.a.setToolBtnSelect(i);
                 BaseGiftRootFragment.this.c(i);
                 BaseGiftRootFragment.this.b.get(i).hasNew = false;
             }
         });
     }
 
-    @Override // com.blued.android.module.common.fragment.BaseViewPagerParentFragment, com.blued.android.framework.ui.SimpleFragment
+    @Override // com.blued.android.module.common.fragment.BaseViewPagerParentFragment
     public void onInitView() {
         super.onInitView();
-        this.f10811a = (CommonGiftTabView) this.rootView.findViewById(R.id.base_gift_toolbar_view);
+        this.a = (CommonGiftTabView) this.rootView.findViewById(R.id.base_gift_toolbar_view);
     }
 
-    @Override // com.blued.android.framework.ui.SimpleFragment
     public int onSetRootViewId() {
         return R.layout.fragment_base_gift;
     }

@@ -19,7 +19,7 @@ public final class MemoryCacheUtils {
         return new Comparator<String>() { // from class: com.kwad.sdk.core.imageloader.utils.MemoryCacheUtils.1
             @Override // java.util.Comparator
             public final int compare(String str, String str2) {
-                return str.substring(0, str.lastIndexOf("_")).compareTo(str2.substring(0, str2.lastIndexOf("_")));
+                return str.substring(0, str.lastIndexOf(MemoryCacheUtils.URI_AND_SIZE_SEPARATOR)).compareTo(str2.substring(0, str2.lastIndexOf(MemoryCacheUtils.URI_AND_SIZE_SEPARATOR)));
             }
         };
     }
@@ -45,7 +45,7 @@ public final class MemoryCacheUtils {
     }
 
     public static String generateKey(String str, ImageSize imageSize) {
-        return str + "_" + imageSize.getWidth() + WIDTH_AND_HEIGHT_SEPARATOR + imageSize.getHeight();
+        return str + URI_AND_SIZE_SEPARATOR + imageSize.getWidth() + WIDTH_AND_HEIGHT_SEPARATOR + imageSize.getHeight();
     }
 
     public static void removeFromCache(String str, MemoryCache memoryCache) {

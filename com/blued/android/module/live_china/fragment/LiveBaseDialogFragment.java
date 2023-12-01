@@ -21,13 +21,9 @@ import com.jeremyliao.liveeventbus.LiveEventBus;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveBaseDialogFragment.class */
 public abstract class LiveBaseDialogFragment<T> extends BaseDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public Context f12719a;
+    public Context a;
     public View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public IDialogEvent f12720c;
+    public IDialogEvent c;
     private ViewPager d;
     private FragmentPagerAdapter e;
 
@@ -39,14 +35,14 @@ public abstract class LiveBaseDialogFragment<T> extends BaseDialogFragment {
     }
 
     public void a(IDialogEvent iDialogEvent) {
-        this.f12720c = iDialogEvent;
+        this.c = iDialogEvent;
     }
 
     public void a(T t) {
     }
 
     public void b(T t) {
-        IDialogEvent iDialogEvent = this.f12720c;
+        IDialogEvent iDialogEvent = this.c;
         if (iDialogEvent != null) {
             iDialogEvent.a(t);
         }
@@ -63,15 +59,14 @@ public abstract class LiveBaseDialogFragment<T> extends BaseDialogFragment {
     public abstract FragmentPagerAdapter h();
 
     public void i() {
-        IDialogEvent iDialogEvent = this.f12720c;
+        IDialogEvent iDialogEvent = this.c;
         if (iDialogEvent != null) {
             iDialogEvent.a();
         }
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
-        this.f12719a = getContext();
+        this.a = getContext();
         this.b = getActivity().getLayoutInflater().inflate(R.layout.dialog_live_base_view, (ViewGroup) null);
         int f = f();
         Dialog dialog = new Dialog(getActivity(), R.style.transparentFrameWindowStyleLive);
@@ -87,7 +82,6 @@ public abstract class LiveBaseDialogFragment<T> extends BaseDialogFragment {
         attributes.y = getActivity().getWindowManager().getDefaultDisplay().getHeight() - f;
         dialog.onWindowAttributesChanged(attributes);
         LiveEventBus.get("live_dialog_cancel", String.class).observe(this, new Observer<String>() { // from class: com.blued.android.module.live_china.fragment.LiveBaseDialogFragment.1
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(String str) {
                 LiveBaseDialogFragment.this.dismiss();
@@ -97,11 +91,11 @@ public abstract class LiveBaseDialogFragment<T> extends BaseDialogFragment {
         return dialog;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(0));
         View inflate = layoutInflater.inflate(R.layout.dialog_live_base_view, viewGroup);
-        this.d = (ViewPager) inflate.findViewById(R.id.lover_view_pager);
+        this.d = inflate.findViewById(R.id.lover_view_pager);
         FragmentPagerAdapter h = h();
         this.e = h;
         this.d.setAdapter(h);
@@ -109,13 +103,13 @@ public abstract class LiveBaseDialogFragment<T> extends BaseDialogFragment {
         return inflate;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onDestroy() {
         super.onDestroy();
         i();
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void show(FragmentManager fragmentManager, String str) {
         try {
             ReflectionUtils.a(this, "mDismissed", false);

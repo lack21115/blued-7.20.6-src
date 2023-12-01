@@ -6,10 +6,10 @@ import com.tencent.youtu.liveness.YTFaceTracker;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    public YTFaceTracker.TrackedFace[] f35535a;
+    public YTFaceTracker.TrackedFace[] f21844a;
     public byte[] b;
 
     /* renamed from: c  reason: collision with root package name */
-    public int f35536c;
+    public int f21845c;
     public int d;
 }

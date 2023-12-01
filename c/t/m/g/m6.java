@@ -10,13 +10,13 @@ public class m6 implements TencentLocation {
     public static final m6 b = new m6();
 
     /* renamed from: a  reason: collision with root package name */
-    public TencentLocation f3886a;
+    public TencentLocation f3838a;
 
     public m6() {
     }
 
     public m6(TencentLocation tencentLocation) {
-        this.f3886a = tencentLocation;
+        this.f3838a = tencentLocation;
     }
 
     public final float a() {
@@ -53,7 +53,7 @@ public class m6 implements TencentLocation {
 
     @Override // com.tencent.map.geolocation.TencentLocation
     public float getAccuracy() {
-        TencentLocation tencentLocation = this.f3886a;
+        TencentLocation tencentLocation = this.f3838a;
         if (tencentLocation == null) {
             return 0.0f;
         }
@@ -62,7 +62,7 @@ public class m6 implements TencentLocation {
 
     @Override // com.tencent.map.geolocation.TencentLocation
     public String getAddress() {
-        TencentLocation tencentLocation = this.f3886a;
+        TencentLocation tencentLocation = this.f3838a;
         if (tencentLocation == null) {
             return null;
         }
@@ -71,7 +71,7 @@ public class m6 implements TencentLocation {
 
     @Override // com.tencent.map.geolocation.TencentLocation
     public double getAltitude() {
-        TencentLocation tencentLocation = this.f3886a;
+        TencentLocation tencentLocation = this.f3838a;
         if (tencentLocation == null) {
             return 0.0d;
         }
@@ -80,7 +80,7 @@ public class m6 implements TencentLocation {
 
     @Override // com.tencent.map.geolocation.TencentLocation
     public Integer getAreaStat() {
-        TencentLocation tencentLocation = this.f3886a;
+        TencentLocation tencentLocation = this.f3838a;
         if (tencentLocation == null) {
             return null;
         }
@@ -89,7 +89,7 @@ public class m6 implements TencentLocation {
 
     @Override // com.tencent.map.geolocation.TencentLocation
     public float getBearing() {
-        TencentLocation tencentLocation = this.f3886a;
+        TencentLocation tencentLocation = this.f3838a;
         if (tencentLocation == null) {
             return 0.0f;
         }
@@ -98,7 +98,7 @@ public class m6 implements TencentLocation {
 
     @Override // com.tencent.map.geolocation.TencentLocation
     public String getCity() {
-        TencentLocation tencentLocation = this.f3886a;
+        TencentLocation tencentLocation = this.f3838a;
         if (tencentLocation == null) {
             return null;
         }
@@ -107,7 +107,7 @@ public class m6 implements TencentLocation {
 
     @Override // com.tencent.map.geolocation.TencentLocation
     public String getCityCode() {
-        TencentLocation tencentLocation = this.f3886a;
+        TencentLocation tencentLocation = this.f3838a;
         if (tencentLocation == null) {
             return null;
         }
@@ -116,7 +116,7 @@ public class m6 implements TencentLocation {
 
     @Override // com.tencent.map.geolocation.TencentLocation
     public String getCityPhoneCode() {
-        TencentLocation tencentLocation = this.f3886a;
+        TencentLocation tencentLocation = this.f3838a;
         if (tencentLocation == null) {
             return null;
         }
@@ -125,7 +125,7 @@ public class m6 implements TencentLocation {
 
     @Override // com.tencent.map.geolocation.TencentLocation
     public int getCoordinateType() {
-        TencentLocation tencentLocation = this.f3886a;
+        TencentLocation tencentLocation = this.f3838a;
         if (tencentLocation == null) {
             return 0;
         }
@@ -134,7 +134,7 @@ public class m6 implements TencentLocation {
 
     @Override // com.tencent.map.geolocation.TencentLocation
     public double getDirection() {
-        TencentLocation tencentLocation = this.f3886a;
+        TencentLocation tencentLocation = this.f3838a;
         if (tencentLocation == null) {
             return 0.0d;
         }
@@ -143,7 +143,7 @@ public class m6 implements TencentLocation {
 
     @Override // com.tencent.map.geolocation.TencentLocation
     public String getDistrict() {
-        TencentLocation tencentLocation = this.f3886a;
+        TencentLocation tencentLocation = this.f3838a;
         if (tencentLocation == null) {
             return null;
         }
@@ -152,7 +152,7 @@ public class m6 implements TencentLocation {
 
     @Override // com.tencent.map.geolocation.TencentLocation
     public long getElapsedRealtime() {
-        TencentLocation tencentLocation = this.f3886a;
+        TencentLocation tencentLocation = this.f3838a;
         if (tencentLocation == null) {
             return 0L;
         }
@@ -161,7 +161,7 @@ public class m6 implements TencentLocation {
 
     @Override // com.tencent.map.geolocation.TencentLocation
     public Bundle getExtra() {
-        TencentLocation tencentLocation = this.f3886a;
+        TencentLocation tencentLocation = this.f3838a;
         if (tencentLocation == null) {
             return null;
         }
@@ -175,7 +175,7 @@ public class m6 implements TencentLocation {
 
     @Override // com.tencent.map.geolocation.TencentLocation
     public int getFakeReason() {
-        TencentLocation tencentLocation = this.f3886a;
+        TencentLocation tencentLocation = this.f3838a;
         if (tencentLocation == null) {
             return 0;
         }
@@ -184,7 +184,7 @@ public class m6 implements TencentLocation {
 
     @Override // com.tencent.map.geolocation.TencentLocation
     public int getGPSRssi() {
-        TencentLocation tencentLocation = this.f3886a;
+        TencentLocation tencentLocation = this.f3838a;
         if (tencentLocation == null) {
             return 0;
         }
@@ -193,7 +193,7 @@ public class m6 implements TencentLocation {
 
     @Override // com.tencent.map.geolocation.TencentLocation
     public String getIndoorBuildingFloor() {
-        TencentLocation tencentLocation = this.f3886a;
+        TencentLocation tencentLocation = this.f3838a;
         if (tencentLocation == null) {
             return null;
         }
@@ -202,7 +202,7 @@ public class m6 implements TencentLocation {
 
     @Override // com.tencent.map.geolocation.TencentLocation
     public String getIndoorBuildingId() {
-        TencentLocation tencentLocation = this.f3886a;
+        TencentLocation tencentLocation = this.f3838a;
         if (tencentLocation == null) {
             return null;
         }
@@ -211,7 +211,7 @@ public class m6 implements TencentLocation {
 
     @Override // com.tencent.map.geolocation.TencentLocation
     public int getIndoorLocationType() {
-        TencentLocation tencentLocation = this.f3886a;
+        TencentLocation tencentLocation = this.f3838a;
         if (tencentLocation == null) {
             return 0;
         }
@@ -220,7 +220,7 @@ public class m6 implements TencentLocation {
 
     @Override // com.tencent.map.geolocation.TencentLocation
     public double getLatitude() {
-        TencentLocation tencentLocation = this.f3886a;
+        TencentLocation tencentLocation = this.f3838a;
         if (tencentLocation == null) {
             return 0.0d;
         }
@@ -229,7 +229,7 @@ public class m6 implements TencentLocation {
 
     @Override // com.tencent.map.geolocation.TencentLocation
     public double getLongitude() {
-        TencentLocation tencentLocation = this.f3886a;
+        TencentLocation tencentLocation = this.f3838a;
         if (tencentLocation == null) {
             return 0.0d;
         }
@@ -238,7 +238,7 @@ public class m6 implements TencentLocation {
 
     @Override // com.tencent.map.geolocation.TencentLocation
     public String getName() {
-        TencentLocation tencentLocation = this.f3886a;
+        TencentLocation tencentLocation = this.f3838a;
         if (tencentLocation == null) {
             return null;
         }
@@ -247,7 +247,7 @@ public class m6 implements TencentLocation {
 
     @Override // com.tencent.map.geolocation.TencentLocation
     public String getNation() {
-        TencentLocation tencentLocation = this.f3886a;
+        TencentLocation tencentLocation = this.f3838a;
         if (tencentLocation == null) {
             return null;
         }
@@ -261,7 +261,7 @@ public class m6 implements TencentLocation {
 
     @Override // com.tencent.map.geolocation.TencentLocation
     public List<TencentPoi> getPoiList() {
-        TencentLocation tencentLocation = this.f3886a;
+        TencentLocation tencentLocation = this.f3838a;
         if (tencentLocation == null) {
             return null;
         }
@@ -270,7 +270,7 @@ public class m6 implements TencentLocation {
 
     @Override // com.tencent.map.geolocation.TencentLocation
     public String getProvider() {
-        TencentLocation tencentLocation = this.f3886a;
+        TencentLocation tencentLocation = this.f3838a;
         if (tencentLocation == null) {
             return null;
         }
@@ -279,7 +279,7 @@ public class m6 implements TencentLocation {
 
     @Override // com.tencent.map.geolocation.TencentLocation
     public String getProvince() {
-        TencentLocation tencentLocation = this.f3886a;
+        TencentLocation tencentLocation = this.f3838a;
         if (tencentLocation == null) {
             return null;
         }
@@ -288,7 +288,7 @@ public class m6 implements TencentLocation {
 
     @Override // com.tencent.map.geolocation.TencentLocation
     public String getSourceProvider() {
-        TencentLocation tencentLocation = this.f3886a;
+        TencentLocation tencentLocation = this.f3838a;
         if (tencentLocation == null) {
             return null;
         }
@@ -297,7 +297,7 @@ public class m6 implements TencentLocation {
 
     @Override // com.tencent.map.geolocation.TencentLocation
     public float getSpeed() {
-        TencentLocation tencentLocation = this.f3886a;
+        TencentLocation tencentLocation = this.f3838a;
         if (tencentLocation == null) {
             return 0.0f;
         }
@@ -306,7 +306,7 @@ public class m6 implements TencentLocation {
 
     @Override // com.tencent.map.geolocation.TencentLocation
     public String getStreet() {
-        TencentLocation tencentLocation = this.f3886a;
+        TencentLocation tencentLocation = this.f3838a;
         if (tencentLocation == null) {
             return null;
         }
@@ -315,7 +315,7 @@ public class m6 implements TencentLocation {
 
     @Override // com.tencent.map.geolocation.TencentLocation
     public String getStreetNo() {
-        TencentLocation tencentLocation = this.f3886a;
+        TencentLocation tencentLocation = this.f3838a;
         if (tencentLocation == null) {
             return null;
         }
@@ -324,7 +324,7 @@ public class m6 implements TencentLocation {
 
     @Override // com.tencent.map.geolocation.TencentLocation
     public long getTime() {
-        TencentLocation tencentLocation = this.f3886a;
+        TencentLocation tencentLocation = this.f3838a;
         if (tencentLocation == null) {
             return 0L;
         }
@@ -333,7 +333,7 @@ public class m6 implements TencentLocation {
 
     @Override // com.tencent.map.geolocation.TencentLocation
     public String getTown() {
-        TencentLocation tencentLocation = this.f3886a;
+        TencentLocation tencentLocation = this.f3838a;
         if (tencentLocation == null) {
             return null;
         }
@@ -342,7 +342,7 @@ public class m6 implements TencentLocation {
 
     @Override // com.tencent.map.geolocation.TencentLocation
     public String getVillage() {
-        TencentLocation tencentLocation = this.f3886a;
+        TencentLocation tencentLocation = this.f3838a;
         if (tencentLocation == null) {
             return null;
         }
@@ -351,7 +351,7 @@ public class m6 implements TencentLocation {
 
     @Override // com.tencent.map.geolocation.TencentLocation
     public String getadCode() {
-        TencentLocation tencentLocation = this.f3886a;
+        TencentLocation tencentLocation = this.f3838a;
         if (tencentLocation == null) {
             return null;
         }
@@ -360,7 +360,7 @@ public class m6 implements TencentLocation {
 
     @Override // com.tencent.map.geolocation.TencentLocation
     public int isMockGps() {
-        TencentLocation tencentLocation = this.f3886a;
+        TencentLocation tencentLocation = this.f3838a;
         if (tencentLocation == null) {
             return 0;
         }

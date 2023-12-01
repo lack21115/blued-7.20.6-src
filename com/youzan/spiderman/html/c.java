@@ -7,28 +7,28 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public final class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private l f41829a;
+    private l f28138a;
     private HtmlResponse b;
 
     /* renamed from: c  reason: collision with root package name */
-    private HtmlResponse f41830c;
+    private HtmlResponse f28139c;
     private boolean d;
     private AtomicBoolean e = new AtomicBoolean(false);
     private long f;
 
     public c(l lVar) {
-        this.f41829a = lVar;
+        this.f28138a = lVar;
         b(System.currentTimeMillis());
     }
 
     public final HtmlResponse a(f fVar) {
         g a2;
-        HtmlResponse htmlResponse = this.f41830c;
+        HtmlResponse htmlResponse = this.f28139c;
         if (htmlResponse != null) {
             return htmlResponse;
         }
         if (this.b != null) {
-            g a3 = h.a.f41839a.a(this.f41829a.c());
+            g a3 = h.a.f28148a.a(this.f28138a.c());
             if (a3 != null && fVar.a(a3)) {
                 return this.b;
             }
@@ -36,7 +36,7 @@ public final class c {
         }
         if (!this.d) {
             this.d = true;
-            if (this.b == null && (a2 = h.a.f41839a.a(this.f41829a.c())) != null && fVar.a(a2)) {
+            if (this.b == null && (a2 = h.a.f28148a.a(this.f28138a.c())) != null && fVar.a(a2)) {
                 this.b = com.youzan.spiderman.cache.b.a(a2);
             }
             HtmlResponse htmlResponse2 = this.b;
@@ -49,7 +49,7 @@ public final class c {
                 synchronized (this) {
                     wait(1000L);
                 }
-                return this.f41830c;
+                return this.f28139c;
             } catch (InterruptedException e) {
                 e.printStackTrace();
                 return null;
@@ -60,8 +60,8 @@ public final class c {
 
     public final void a(HtmlCallback htmlCallback) {
         if (this.e.compareAndSet(false, true)) {
-            if (this.f41830c == null) {
-                this.f41830c = new b(this.f41829a).a();
+            if (this.f28139c == null) {
+                this.f28139c = new b(this.f28138a).a();
                 this.b = null;
             }
             this.e.set(false);
@@ -80,8 +80,8 @@ public final class c {
             }
         }
         if (htmlCallback != null) {
-            if (this.f41830c != null) {
-                htmlCallback.onSuccess(this.f41829a.a(), this.f41830c.getHeader(), this.f41830c.getContentStream(), this.f41830c.getEncoding());
+            if (this.f28139c != null) {
+                htmlCallback.onSuccess(this.f28138a.a(), this.f28139c.getHeader(), this.f28139c.getContentStream(), this.f28139c.getEncoding());
             } else {
                 htmlCallback.onFailed();
             }
@@ -94,7 +94,7 @@ public final class c {
 
     public final void b(long j) {
         this.b = null;
-        this.f41830c = null;
+        this.f28139c = null;
         this.d = false;
         this.e.set(false);
         this.f = j;

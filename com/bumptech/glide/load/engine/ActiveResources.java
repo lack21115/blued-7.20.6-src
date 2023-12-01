@@ -12,16 +12,15 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadFactory;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-7206380-dex2jar.jar:com/bumptech/glide/load/engine/ActiveResources.class */
-public final class ActiveResources {
+final class ActiveResources {
 
     /* renamed from: a  reason: collision with root package name */
-    final Map<Key, ResourceWeakReference> f20734a;
+    final Map<Key, ResourceWeakReference> f7128a;
     private final boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final Executor f20735c;
+    private final Executor f7129c;
     private final ReferenceQueue<EngineResource<?>> d;
     private EngineResource.ResourceListener e;
     private volatile boolean f;
@@ -38,21 +37,21 @@ public final class ActiveResources {
     public static final class ResourceWeakReference extends WeakReference<EngineResource<?>> {
 
         /* renamed from: a  reason: collision with root package name */
-        final Key f20738a;
+        final Key f7132a;
         final boolean b;
 
         /* renamed from: c  reason: collision with root package name */
-        Resource<?> f20739c;
+        Resource<?> f7133c;
 
         ResourceWeakReference(Key key, EngineResource<?> engineResource, ReferenceQueue<? super EngineResource<?>> referenceQueue, boolean z) {
             super(engineResource, referenceQueue);
-            this.f20738a = (Key) Preconditions.a(key);
-            this.f20739c = (engineResource.e() && z) ? (Resource) Preconditions.a(engineResource.d()) : null;
+            this.f7132a = (Key) Preconditions.a(key);
+            this.f7133c = (engineResource.e() && z) ? (Resource) Preconditions.a(engineResource.d()) : null;
             this.b = engineResource.e();
         }
 
         void a() {
-            this.f20739c = null;
+            this.f7133c = null;
             clear();
         }
     }
@@ -74,10 +73,10 @@ public final class ActiveResources {
     }
 
     ActiveResources(boolean z, Executor executor) {
-        this.f20734a = new HashMap();
+        this.f7128a = new HashMap();
         this.d = new ReferenceQueue<>();
         this.b = z;
-        this.f20735c = executor;
+        this.f7129c = executor;
         executor.execute(new Runnable() { // from class: com.bumptech.glide.load.engine.ActiveResources.2
             @Override // java.lang.Runnable
             public void run() {
@@ -103,7 +102,7 @@ public final class ActiveResources {
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a(Key key) {
         synchronized (this) {
-            ResourceWeakReference remove = this.f20734a.remove(key);
+            ResourceWeakReference remove = this.f7128a.remove(key);
             if (remove != null) {
                 remove.a();
             }
@@ -113,7 +112,7 @@ public final class ActiveResources {
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a(Key key, EngineResource<?> engineResource) {
         synchronized (this) {
-            ResourceWeakReference put = this.f20734a.put(key, new ResourceWeakReference(key, engineResource, this.d, this.b));
+            ResourceWeakReference put = this.f7128a.put(key, new ResourceWeakReference(key, engineResource, this.d, this.b));
             if (put != null) {
                 put.a();
             }
@@ -122,9 +121,9 @@ public final class ActiveResources {
 
     void a(ResourceWeakReference resourceWeakReference) {
         synchronized (this) {
-            this.f20734a.remove(resourceWeakReference.f20738a);
-            if (resourceWeakReference.b && resourceWeakReference.f20739c != null) {
-                this.e.a(resourceWeakReference.f20738a, new EngineResource<>(resourceWeakReference.f20739c, true, false, resourceWeakReference.f20738a, this.e));
+            this.f7128a.remove(resourceWeakReference.f7132a);
+            if (resourceWeakReference.b && resourceWeakReference.f7133c != null) {
+                this.e.a(resourceWeakReference.f7132a, new EngineResource<>(resourceWeakReference.f7133c, true, false, resourceWeakReference.f7132a, this.e));
             }
         }
     }
@@ -141,11 +140,11 @@ public final class ActiveResources {
     /* JADX INFO: Access modifiers changed from: package-private */
     public EngineResource<?> b(Key key) {
         synchronized (this) {
-            ResourceWeakReference resourceWeakReference = this.f20734a.get(key);
+            ResourceWeakReference resourceWeakReference = this.f7128a.get(key);
             if (resourceWeakReference == null) {
                 return null;
             }
-            EngineResource<?> engineResource = resourceWeakReference.get();
+            EngineResource<?> engineResource = (EngineResource) resourceWeakReference.get();
             if (engineResource == null) {
                 a(resourceWeakReference);
             }

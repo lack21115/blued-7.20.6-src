@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemGameHallBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29182a;
+    private final LinearLayout f15492a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29182a;
+        return this.f15492a;
     }
 }

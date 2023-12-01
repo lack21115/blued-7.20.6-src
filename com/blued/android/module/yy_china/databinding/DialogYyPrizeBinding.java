@@ -9,21 +9,17 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/DialogYyPrizeBinding.class */
 public final class DialogYyPrizeBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final View f16451a;
+    public final View a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final TextView f16452c;
+    public final TextView c;
     public final TextView d;
     private final FrameLayout e;
 
     private DialogYyPrizeBinding(FrameLayout frameLayout, View view, ImageView imageView, TextView textView, TextView textView2) {
         this.e = frameLayout;
-        this.f16451a = view;
+        this.a = view;
         this.b = imageView;
-        this.f16452c = textView;
+        this.c = textView;
         this.d = textView2;
     }
 
@@ -52,7 +48,6 @@ public final class DialogYyPrizeBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.e;

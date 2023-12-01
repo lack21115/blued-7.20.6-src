@@ -9,9 +9,7 @@ import kotlin.jvm.internal.Ref;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/StartedLazily$command$1$invokeSuspend$$inlined$collect$1.class */
 public final class StartedLazily$command$1$invokeSuspend$$inlined$collect$1 implements FlowCollector<Integer> {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ Ref.BooleanRef f43423a;
+    final /* synthetic */ Ref.BooleanRef a;
     final /* synthetic */ FlowCollector b;
 
     @Metadata
@@ -19,9 +17,7 @@ public final class StartedLazily$command$1$invokeSuspend$$inlined$collect$1 impl
     /* renamed from: kotlinx.coroutines.flow.StartedLazily$command$1$invokeSuspend$$inlined$collect$1$1  reason: invalid class name */
     /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/StartedLazily$command$1$invokeSuspend$$inlined$collect$1$1.class */
     public static final class AnonymousClass1 extends ContinuationImpl {
-
-        /* renamed from: a  reason: collision with root package name */
-        /* synthetic */ Object f43424a;
+        /* synthetic */ Object a;
         int b;
 
         public AnonymousClass1(Continuation continuation) {
@@ -30,14 +26,14 @@ public final class StartedLazily$command$1$invokeSuspend$$inlined$collect$1 impl
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Object invokeSuspend(Object obj) {
-            this.f43424a = obj;
+            this.a = obj;
             this.b |= Integer.MIN_VALUE;
             return StartedLazily$command$1$invokeSuspend$$inlined$collect$1.this.emit(null, this);
         }
     }
 
     public StartedLazily$command$1$invokeSuspend$$inlined$collect$1(Ref.BooleanRef booleanRef, FlowCollector flowCollector) {
-        this.f43423a = booleanRef;
+        this.a = booleanRef;
         this.b = flowCollector;
     }
 
@@ -80,7 +76,7 @@ public final class StartedLazily$command$1$invokeSuspend$$inlined$collect$1 impl
             r7 = r0
         L35:
             r0 = r7
-            java.lang.Object r0 = r0.f43424a
+            java.lang.Object r0 = r0.a
             r10 = r0
             java.lang.Object r0 = kotlin.coroutines.intrinsics.IntrinsicsKt.a()
             r9 = r0
@@ -112,13 +108,13 @@ public final class StartedLazily$command$1$invokeSuspend$$inlined$collect$1 impl
             int r0 = r0.intValue()
             if (r0 <= 0) goto La7
             r0 = r5
-            kotlin.jvm.internal.Ref$BooleanRef r0 = r0.f43423a
-            boolean r0 = r0.f42538a
+            kotlin.jvm.internal.Ref$BooleanRef r0 = r0.a
+            boolean r0 = r0.a
             if (r0 != 0) goto La7
             r0 = r5
-            kotlin.jvm.internal.Ref$BooleanRef r0 = r0.f43423a
+            kotlin.jvm.internal.Ref$BooleanRef r0 = r0.a
             r1 = 1
-            r0.f42538a = r1
+            r0.a = r1
             r0 = r5
             kotlinx.coroutines.flow.FlowCollector r0 = r0.b
             r6 = r0
@@ -136,7 +132,7 @@ public final class StartedLazily$command$1$invokeSuspend$$inlined$collect$1 impl
             r0 = r9
             return r0
         La7:
-            kotlin.Unit r0 = kotlin.Unit.f42314a
+            kotlin.Unit r0 = kotlin.Unit.a
             return r0
         */
         throw new UnsupportedOperationException("Method not decompiled: kotlinx.coroutines.flow.StartedLazily$command$1$invokeSuspend$$inlined$collect$1.emit(java.lang.Object, kotlin.coroutines.Continuation):java.lang.Object");

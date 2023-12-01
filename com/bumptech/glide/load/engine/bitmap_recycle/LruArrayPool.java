@@ -11,11 +11,11 @@ import java.util.TreeMap;
 public final class LruArrayPool implements ArrayPool {
 
     /* renamed from: a  reason: collision with root package name */
-    private final GroupedLinkedMap<Key, Object> f20806a;
+    private final GroupedLinkedMap<Key, Object> f7200a;
     private final KeyPool b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final Map<Class<?>, NavigableMap<Integer, Integer>> f20807c;
+    private final Map<Class<?>, NavigableMap<Integer, Integer>> f7201c;
     private final Map<Class<?>, ArrayAdapterInterface<?>> d;
     private final int e;
     private int f;
@@ -25,11 +25,11 @@ public final class LruArrayPool implements ArrayPool {
     public static final class Key implements Poolable {
 
         /* renamed from: a  reason: collision with root package name */
-        int f20808a;
+        int f7202a;
         private final KeyPool b;
 
         /* renamed from: c  reason: collision with root package name */
-        private Class<?> f20809c;
+        private Class<?> f7203c;
 
         Key(KeyPool keyPool) {
             this.b = keyPool;
@@ -41,8 +41,8 @@ public final class LruArrayPool implements ArrayPool {
         }
 
         void a(int i, Class<?> cls) {
-            this.f20808a = i;
-            this.f20809c = cls;
+            this.f7202a = i;
+            this.f7203c = cls;
         }
 
         public boolean equals(Object obj) {
@@ -50,9 +50,9 @@ public final class LruArrayPool implements ArrayPool {
             if (obj instanceof Key) {
                 Key key = (Key) obj;
                 z = false;
-                if (this.f20808a == key.f20808a) {
+                if (this.f7202a == key.f7202a) {
                     z = false;
-                    if (this.f20809c == key.f20809c) {
+                    if (this.f7203c == key.f7203c) {
                         z = true;
                     }
                 }
@@ -61,13 +61,13 @@ public final class LruArrayPool implements ArrayPool {
         }
 
         public int hashCode() {
-            int i = this.f20808a;
-            Class<?> cls = this.f20809c;
+            int i = this.f7202a;
+            Class<?> cls = this.f7203c;
             return (i * 31) + (cls != null ? cls.hashCode() : 0);
         }
 
         public String toString() {
-            return "Key{size=" + this.f20808a + "array=" + this.f20809c + '}';
+            return "Key{size=" + this.f7202a + "array=" + this.f7203c + '}';
         }
     }
 
@@ -91,23 +91,23 @@ public final class LruArrayPool implements ArrayPool {
     }
 
     public LruArrayPool() {
-        this.f20806a = new GroupedLinkedMap<>();
+        this.f7200a = new GroupedLinkedMap<>();
         this.b = new KeyPool();
-        this.f20807c = new HashMap();
+        this.f7201c = new HashMap();
         this.d = new HashMap();
         this.e = 4194304;
     }
 
     public LruArrayPool(int i) {
-        this.f20806a = new GroupedLinkedMap<>();
+        this.f7200a = new GroupedLinkedMap<>();
         this.b = new KeyPool();
-        this.f20807c = new HashMap();
+        this.f7201c = new HashMap();
         this.d = new HashMap();
         this.e = i;
     }
 
     private <T> T a(Key key) {
-        return (T) this.f20806a.a((GroupedLinkedMap<Key, Object>) key);
+        return (T) this.f7200a.a((GroupedLinkedMap<Key, Object>) key);
     }
 
     private <T> T a(Key key, Class<T> cls) {
@@ -120,19 +120,19 @@ public final class LruArrayPool implements ArrayPool {
         T t2 = t;
         if (t == null) {
             if (Log.isLoggable(b.a(), 2)) {
-                Log.v(b.a(), "Allocated " + key.f20808a + " bytes");
+                Log.v(b.a(), "Allocated " + key.f7202a + " bytes");
             }
-            t2 = b.a(key.f20808a);
+            t2 = b.a(key.f7202a);
         }
         return t2;
     }
 
     private NavigableMap<Integer, Integer> a(Class<?> cls) {
-        NavigableMap<Integer, Integer> navigableMap = this.f20807c.get(cls);
+        NavigableMap<Integer, Integer> navigableMap = this.f7201c.get(cls);
         TreeMap treeMap = navigableMap;
         if (navigableMap == null) {
             treeMap = new TreeMap();
-            this.f20807c.put(cls, treeMap);
+            this.f7201c.put(cls, treeMap);
         }
         return treeMap;
     }
@@ -180,7 +180,7 @@ public final class LruArrayPool implements ArrayPool {
 
     private void c(int i) {
         while (this.f > i) {
-            Object a2 = this.f20806a.a();
+            Object a2 = this.f7200a.a();
             Preconditions.a(a2);
             ArrayAdapterInterface b = b((LruArrayPool) a2);
             this.f -= b.a((ArrayAdapterInterface) a2) * b.b();
@@ -193,7 +193,7 @@ public final class LruArrayPool implements ArrayPool {
 
     private void c(int i, Class<?> cls) {
         NavigableMap<Integer, Integer> a2 = a(cls);
-        Integer num = a2.get(Integer.valueOf(i));
+        Integer num = (Integer) a2.get(Integer.valueOf(i));
         if (num != null) {
             if (num.intValue() == 1) {
                 a2.remove(Integer.valueOf(i));
@@ -243,10 +243,10 @@ public final class LruArrayPool implements ArrayPool {
             int b2 = b.b() * a2;
             if (b(b2)) {
                 Key a3 = this.b.a(a2, cls);
-                this.f20806a.a(a3, t);
+                this.f7200a.a(a3, t);
                 NavigableMap<Integer, Integer> a4 = a(cls);
-                Integer num = a4.get(Integer.valueOf(a3.f20808a));
-                int i = a3.f20808a;
+                Integer num = (Integer) a4.get(Integer.valueOf(a3.f7202a));
+                int i = a3.f7202a;
                 int i2 = 1;
                 if (num != null) {
                     i2 = 1 + num.intValue();

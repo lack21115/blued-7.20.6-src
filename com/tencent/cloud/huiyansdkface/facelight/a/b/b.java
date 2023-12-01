@@ -15,7 +15,7 @@ public class b {
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public int f35519a = 0;
+        public int f21828a = 0;
         public String b;
 
         public static a a() {
@@ -24,20 +24,20 @@ public class b {
 
         public static a a(String str) {
             a aVar = new a();
-            aVar.f35519a = 2;
+            aVar.f21828a = 2;
             aVar.b = str;
             return aVar;
         }
 
         public static a b(String str) {
             a aVar = new a();
-            aVar.f35519a = 1;
+            aVar.f21828a = 1;
             aVar.b = str;
             return aVar;
         }
 
         public boolean b() {
-            int i = this.f35519a;
+            int i = this.f21828a;
             boolean z = true;
             if (i != 1) {
                 if (i == 0) {
@@ -49,7 +49,7 @@ public class b {
         }
 
         public boolean c() {
-            return this.f35519a == 0;
+            return this.f21828a == 0;
         }
     }
 
@@ -58,10 +58,10 @@ public class b {
         com.tencent.cloud.huiyansdkface.facelight.a.b.a aVar = new com.tencent.cloud.huiyansdkface.facelight.a.b.a();
         WLogger.d("SdkConfigReader", "readSdkConfig");
         aVar.b = z2;
-        aVar.f35517a = z;
-        aVar.f35518c = z3;
+        aVar.f21826a = z;
+        aVar.f21827c = z3;
         if (z3) {
-            aVar.f35517a = true;
+            aVar.f21826a = true;
         }
         aVar.g = bundle.getBoolean(WbCloudFaceContant.IS_ENABLE_LOG, false);
         aVar.d = bundle.getBoolean(WbCloudFaceContant.IS_UNI, false);

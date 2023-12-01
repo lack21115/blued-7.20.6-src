@@ -50,14 +50,14 @@ public class MraidBannerAdView extends BaseBannerAdView {
 
     private void o() {
         boolean z;
-        int a2;
-        String r = this.f6049c.m.r();
+        int a;
+        String r = this.c.m.r();
         LayoutInflater.from(getContext()).inflate(h.a(getContext(), "myoffer_web_banner_ad_layout", "layout"), this);
-        int a3 = h.a(getContext(), 50.0f);
-        int a4 = h.a(getContext(), 320.0f);
+        int a2 = h.a(getContext(), 50.0f);
+        int a3 = h.a(getContext(), 320.0f);
         int hashCode = r.hashCode();
         if (hashCode == -559799608) {
-            if (r.equals(k.f6666c)) {
+            if (r.equals(k.c)) {
                 z = true;
             }
             z = true;
@@ -73,47 +73,47 @@ public class MraidBannerAdView extends BaseBannerAdView {
             z = true;
         }
         if (!z) {
-            a4 = h.a(getContext(), 320.0f);
-            a2 = h.a(getContext(), 90.0f);
+            a3 = h.a(getContext(), 320.0f);
+            a = h.a(getContext(), 90.0f);
         } else if (z) {
-            a4 = h.a(getContext(), 720.0f);
-            a2 = h.a(getContext(), 90.0f);
+            a3 = h.a(getContext(), 720.0f);
+            a = h.a(getContext(), 90.0f);
         } else if (!z) {
-            a2 = a3;
+            a = a2;
         } else {
-            a4 = h.a(getContext(), 300.0f);
-            a2 = h.a(getContext(), 250.0f);
+            a3 = h.a(getContext(), 300.0f);
+            a = h.a(getContext(), 250.0f);
         }
-        int min = Math.min(a4, getResources().getDisplayMetrics().widthPixels);
-        MraidContainerView mraidContainerView = new MraidContainerView(getContext(), this.d, this.f6049c, new AnonymousClass1());
+        int min = Math.min(a3, getResources().getDisplayMetrics().widthPixels);
+        MraidContainerView mraidContainerView = new MraidContainerView(getContext(), this.d, this.c, new AnonymousClass1());
         this.u = mraidContainerView;
         mraidContainerView.init();
         FrameLayout frameLayout = (FrameLayout) findViewById(h.a(getContext(), "myoffer_banner_web", "id"));
         this.u.setMinimumHeight(h.a(getContext(), 50.0f));
-        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(min, a2);
+        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(min, a);
         layoutParams.gravity = 17;
         frameLayout.addView(this.u, 0, layoutParams);
-        setLayoutParams(new ViewGroup.LayoutParams(min, a2));
+        setLayoutParams(new ViewGroup.LayoutParams(min, a));
         this.t = (CloseImageView) findViewById(h.a(getContext(), "myoffer_banner_close", "id"));
-        if (this.f6049c.m.s() != 0) {
+        if (this.c.m.s() != 0) {
             this.t.setVisibility(8);
             return;
         }
         this.t.setVisibility(0);
-        a(this.t, this.f6049c.m.h());
+        a(this.t, this.c.m.h());
     }
 
     @Override // com.anythink.basead.ui.BaseAdView
     protected final void a() {
         boolean z;
-        int a2;
-        String r = this.f6049c.m.r();
+        int a;
+        String r = this.c.m.r();
         LayoutInflater.from(getContext()).inflate(h.a(getContext(), "myoffer_web_banner_ad_layout", "layout"), this);
-        int a3 = h.a(getContext(), 50.0f);
-        int a4 = h.a(getContext(), 320.0f);
+        int a2 = h.a(getContext(), 50.0f);
+        int a3 = h.a(getContext(), 320.0f);
         int hashCode = r.hashCode();
         if (hashCode == -559799608) {
-            if (r.equals(k.f6666c)) {
+            if (r.equals(k.c)) {
                 z = true;
             }
             z = true;
@@ -129,38 +129,39 @@ public class MraidBannerAdView extends BaseBannerAdView {
             z = true;
         }
         if (!z) {
-            a4 = h.a(getContext(), 320.0f);
-            a2 = h.a(getContext(), 90.0f);
+            a3 = h.a(getContext(), 320.0f);
+            a = h.a(getContext(), 90.0f);
         } else if (z) {
-            a4 = h.a(getContext(), 720.0f);
-            a2 = h.a(getContext(), 90.0f);
+            a3 = h.a(getContext(), 720.0f);
+            a = h.a(getContext(), 90.0f);
         } else if (!z) {
-            a2 = a3;
+            a = a2;
         } else {
-            a4 = h.a(getContext(), 300.0f);
-            a2 = h.a(getContext(), 250.0f);
+            a3 = h.a(getContext(), 300.0f);
+            a = h.a(getContext(), 250.0f);
         }
-        int min = Math.min(a4, getResources().getDisplayMetrics().widthPixels);
-        MraidContainerView mraidContainerView = new MraidContainerView(getContext(), this.d, this.f6049c, new AnonymousClass1());
+        int min = Math.min(a3, getResources().getDisplayMetrics().widthPixels);
+        MraidContainerView mraidContainerView = new MraidContainerView(getContext(), this.d, this.c, new AnonymousClass1());
         this.u = mraidContainerView;
         mraidContainerView.init();
         FrameLayout frameLayout = (FrameLayout) findViewById(h.a(getContext(), "myoffer_banner_web", "id"));
         this.u.setMinimumHeight(h.a(getContext(), 50.0f));
-        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(min, a2);
+        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(min, a);
         layoutParams.gravity = 17;
         frameLayout.addView(this.u, 0, layoutParams);
-        setLayoutParams(new ViewGroup.LayoutParams(min, a2));
+        setLayoutParams(new ViewGroup.LayoutParams(min, a));
         this.t = (CloseImageView) findViewById(h.a(getContext(), "myoffer_banner_close", "id"));
-        if (this.f6049c.m.s() != 0) {
+        if (this.c.m.s() != 0) {
             this.t.setVisibility(8);
             return;
         }
         this.t.setVisibility(0);
-        a(this.t, this.f6049c.m.h());
+        a(this.t, this.c.m.h());
     }
 
+    /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.anythink.basead.ui.BaseBannerAdView
-    protected final void b() {
+    public final void b() {
         if (this.u == null) {
             return;
         }

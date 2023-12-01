@@ -4,11 +4,11 @@ package com.bumptech.glide.gifdecoder;
 class GifFrame {
 
     /* renamed from: a  reason: collision with root package name */
-    int f20685a;
+    int f7079a;
     int b;
 
     /* renamed from: c  reason: collision with root package name */
-    int f20686c;
+    int f7080c;
     int d;
     boolean e;
     boolean f;

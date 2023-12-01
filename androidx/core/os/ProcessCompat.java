@@ -12,20 +12,20 @@ public final class ProcessCompat {
     static class Api16Impl {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final Object f2516a = new Object();
+        private static final Object f2468a = new Object();
         private static Method b;
 
         /* renamed from: c  reason: collision with root package name */
-        private static boolean f2517c;
+        private static boolean f2469c;
 
         private Api16Impl() {
         }
 
         static boolean a(int i) {
             try {
-                synchronized (f2516a) {
-                    if (!f2517c) {
-                        f2517c = true;
+                synchronized (f2468a) {
+                    if (!f2469c) {
+                        f2469c = true;
                         b = Class.forName("android.os.UserId").getDeclaredMethod("isApp", Integer.TYPE);
                     }
                 }
@@ -48,20 +48,20 @@ public final class ProcessCompat {
     static class Api17Impl {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final Object f2518a = new Object();
+        private static final Object f2470a = new Object();
         private static Method b;
 
         /* renamed from: c  reason: collision with root package name */
-        private static boolean f2519c;
+        private static boolean f2471c;
 
         private Api17Impl() {
         }
 
         static boolean a(int i) {
             try {
-                synchronized (f2518a) {
-                    if (!f2519c) {
-                        f2519c = true;
+                synchronized (f2470a) {
+                    if (!f2471c) {
+                        f2471c = true;
                         b = UserHandle.class.getDeclaredMethod("isApp", Integer.TYPE);
                     }
                 }

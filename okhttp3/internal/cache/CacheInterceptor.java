@@ -1,7 +1,5 @@
 package okhttp3.internal.cache;
 
-import com.anythink.expressad.foundation.g.f.g.c;
-import com.google.common.net.HttpHeaders;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import okhttp3.Headers;
@@ -12,6 +10,7 @@ import okhttp3.Response;
 import okhttp3.internal.Internal;
 import okhttp3.internal.Util;
 import okhttp3.internal.cache.CacheStrategy;
+import okhttp3.internal.http.HttpHeaders;
 import okhttp3.internal.http.HttpMethod;
 import okhttp3.internal.http.RealResponseBody;
 import okio.Buffer;
@@ -24,12 +23,10 @@ import okio.Timeout;
 
 /* loaded from: source-3503164-dex2jar.jar:okhttp3/internal/cache/CacheInterceptor.class */
 public final class CacheInterceptor implements Interceptor {
-
-    /* renamed from: a  reason: collision with root package name */
-    final InternalCache f43843a;
+    final InternalCache a;
 
     public CacheInterceptor(InternalCache internalCache) {
-        this.f43843a = internalCache;
+        this.a = internalCache;
     }
 
     private static Headers a(Headers headers, Headers headers2) {
@@ -43,7 +40,7 @@ public final class CacheInterceptor implements Interceptor {
             }
             String name = headers.name(i2);
             String value = headers.value(i2);
-            if ((!HttpHeaders.WARNING.equalsIgnoreCase(name) || !value.startsWith("1")) && (b(name) || !a(name) || headers2.get(name) == null)) {
+            if ((!"Warning".equalsIgnoreCase(name) || !value.startsWith("1")) && (b(name) || !a(name) || headers2.get(name) == null)) {
                 Internal.instance.addLenient(builder, name, value);
             }
             i = i2 + 1;
@@ -80,14 +77,12 @@ public final class CacheInterceptor implements Interceptor {
             final BufferedSource source = response.body().source();
             final BufferedSink buffer = Okio.buffer(body);
             return response.newBuilder().body(new RealResponseBody(response.header("Content-Type"), response.body().contentLength(), Okio.buffer(new Source() { // from class: okhttp3.internal.cache.CacheInterceptor.1
-
-                /* renamed from: a  reason: collision with root package name */
-                boolean f43844a;
+                boolean a;
 
                 @Override // okio.Source, java.io.Closeable, java.lang.AutoCloseable
                 public void close() throws IOException {
-                    if (!this.f43844a && !Util.a(this, 100, TimeUnit.MILLISECONDS)) {
-                        this.f43844a = true;
+                    if (!this.a && !Util.a(this, 100, TimeUnit.MILLISECONDS)) {
+                        this.a = true;
                         cacheRequest.abort();
                     }
                     source.close();
@@ -101,16 +96,16 @@ public final class CacheInterceptor implements Interceptor {
                             buffer2.copyTo(buffer.buffer(), buffer2.size() - read, read);
                             buffer.emitCompleteSegments();
                             return read;
-                        } else if (this.f43844a) {
+                        } else if (this.a) {
                             return -1L;
                         } else {
-                            this.f43844a = true;
+                            this.a = true;
                             buffer.close();
                             return -1L;
                         }
                     } catch (IOException e) {
-                        if (!this.f43844a) {
-                            this.f43844a = true;
+                        if (!this.a) {
+                            this.a = true;
                             cacheRequest.abort();
                         }
                         throw e;
@@ -127,7 +122,7 @@ public final class CacheInterceptor implements Interceptor {
     }
 
     static boolean a(String str) {
-        return ("Connection".equalsIgnoreCase(str) || c.f7906c.equalsIgnoreCase(str) || HttpHeaders.PROXY_AUTHENTICATE.equalsIgnoreCase(str) || HttpHeaders.PROXY_AUTHORIZATION.equalsIgnoreCase(str) || HttpHeaders.TE.equalsIgnoreCase(str) || "Trailers".equalsIgnoreCase(str) || "Transfer-Encoding".equalsIgnoreCase(str) || HttpHeaders.UPGRADE.equalsIgnoreCase(str)) ? false : true;
+        return ("Connection".equalsIgnoreCase(str) || "Keep-Alive".equalsIgnoreCase(str) || "Proxy-Authenticate".equalsIgnoreCase(str) || "Proxy-Authorization".equalsIgnoreCase(str) || "TE".equalsIgnoreCase(str) || "Trailers".equalsIgnoreCase(str) || "Transfer-Encoding".equalsIgnoreCase(str) || "Upgrade".equalsIgnoreCase(str)) ? false : true;
     }
 
     static boolean b(String str) {
@@ -137,20 +132,20 @@ public final class CacheInterceptor implements Interceptor {
     /* JADX WARN: Finally extract failed */
     @Override // okhttp3.Interceptor
     public Response intercept(Interceptor.Chain chain) throws IOException {
-        InternalCache internalCache = this.f43843a;
+        InternalCache internalCache = this.a;
         Response response = internalCache != null ? internalCache.get(chain.request()) : null;
-        CacheStrategy a2 = new CacheStrategy.Factory(System.currentTimeMillis(), chain.request(), response).a();
-        Request request = a2.f43846a;
-        Response response2 = a2.b;
-        InternalCache internalCache2 = this.f43843a;
+        CacheStrategy a = new CacheStrategy.Factory(System.currentTimeMillis(), chain.request(), response).a();
+        Request request = a.a;
+        Response response2 = a.b;
+        InternalCache internalCache2 = this.a;
         if (internalCache2 != null) {
-            internalCache2.trackResponse(a2);
+            internalCache2.trackResponse(a);
         }
         if (response != null && response2 == null) {
             Util.a(response.body());
         }
         if (request == null && response2 == null) {
-            return new Response.Builder().request(chain.request()).protocol(Protocol.HTTP_1_1).code(504).message("Unsatisfiable Request (only-if-cached)").body(Util.f43841c).sentRequestAtMillis(-1L).receivedResponseAtMillis(System.currentTimeMillis()).build();
+            return new Response.Builder().request(chain.request()).protocol(Protocol.HTTP_1_1).code(504).message("Unsatisfiable Request (only-if-cached)").body(Util.c).sentRequestAtMillis(-1L).receivedResponseAtMillis(System.currentTimeMillis()).build();
         }
         if (request == null) {
             return response2.newBuilder().cacheResponse(a(response2)).build();
@@ -164,20 +159,20 @@ public final class CacheInterceptor implements Interceptor {
                 if (proceed.code() == 304) {
                     Response build = response2.newBuilder().headers(a(response2.headers(), proceed.headers())).sentRequestAtMillis(proceed.sentRequestAtMillis()).receivedResponseAtMillis(proceed.receivedResponseAtMillis()).cacheResponse(a(response2)).networkResponse(a(proceed)).build();
                     proceed.body().close();
-                    this.f43843a.trackConditionalCacheHit();
-                    this.f43843a.update(response2, build);
+                    this.a.trackConditionalCacheHit();
+                    this.a.update(response2, build);
                     return build;
                 }
                 Util.a(response2.body());
             }
             Response build2 = proceed.newBuilder().cacheResponse(a(response2)).networkResponse(a(proceed)).build();
-            if (this.f43843a != null) {
-                if (okhttp3.internal.http.HttpHeaders.d(build2) && CacheStrategy.a(build2, request)) {
-                    return a(this.f43843a.put(build2), build2);
+            if (this.a != null) {
+                if (HttpHeaders.d(build2) && CacheStrategy.a(build2, request)) {
+                    return a(this.a.put(build2), build2);
                 }
                 if (HttpMethod.a(request.method())) {
                     try {
-                        this.f43843a.remove(request);
+                        this.a.remove(request);
                     } catch (IOException e) {
                         return build2;
                     }

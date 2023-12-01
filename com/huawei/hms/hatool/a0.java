@@ -7,7 +7,7 @@ import android.util.Log;
 public class a0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f22732a = false;
+    public boolean f9124a = false;
     public int b = 4;
 
     public static String a() {
@@ -33,7 +33,7 @@ public class a0 {
         sb.append(str);
         Log.i("FormalHASDK", sb.toString());
         this.b = i;
-        this.f22732a = true;
+        this.f9124a = true;
     }
 
     public void a(int i, String str, String str2) {
@@ -53,6 +53,6 @@ public class a0 {
     }
 
     public boolean b(int i) {
-        return this.f22732a && i >= this.b;
+        return this.f9124a && i >= this.b;
     }
 }

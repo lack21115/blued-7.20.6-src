@@ -10,20 +10,18 @@ public final class OverscrollHelper {
     /* renamed from: com.blued.android.framework.view.pulltorefresh.OverscrollHelper$1  reason: invalid class name */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/view/pulltorefresh/OverscrollHelper$1.class */
     public static /* synthetic */ class AnonymousClass1 {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f10228a;
+        static final /* synthetic */ int[] a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:7:0x0020 -> B:11:0x0014). Please submit an issue!!! */
         static {
             int[] iArr = new int[PullToRefreshBase.Orientation.values().length];
-            f10228a = iArr;
+            a = iArr;
             try {
                 iArr[PullToRefreshBase.Orientation.HORIZONTAL.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f10228a[PullToRefreshBase.Orientation.VERTICAL.ordinal()] = 2;
+                a[PullToRefreshBase.Orientation.VERTICAL.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
         }
@@ -32,7 +30,7 @@ public final class OverscrollHelper {
     public static void a(PullToRefreshBase<?> pullToRefreshBase, int i, int i2, int i3, int i4, int i5, int i6, float f, boolean z) {
         int scrollX;
         int i7;
-        if (AnonymousClass1.f10228a[pullToRefreshBase.getPullToRefreshScrollDirection().ordinal()] != 1) {
+        if (AnonymousClass1.a[pullToRefreshBase.getPullToRefreshScrollDirection().ordinal()] != 1) {
             i7 = i3;
             scrollX = pullToRefreshBase.getScrollY();
         } else {

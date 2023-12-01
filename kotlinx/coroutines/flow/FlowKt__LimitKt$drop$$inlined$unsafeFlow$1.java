@@ -10,31 +10,29 @@ import kotlin.jvm.internal.Ref;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt__LimitKt$drop$$inlined$unsafeFlow$1.class */
 public final class FlowKt__LimitKt$drop$$inlined$unsafeFlow$1<T> implements Flow<T> {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ Flow f43186a;
+    final /* synthetic */ Flow a;
     final /* synthetic */ int b;
 
     @Override // kotlinx.coroutines.flow.Flow
     public Object a(final FlowCollector<? super T> flowCollector, Continuation<? super Unit> continuation) {
         final Ref.IntRef intRef = new Ref.IntRef();
-        Flow flow = this.f43186a;
+        Flow flow = this.a;
         final int i = this.b;
-        Object a2 = flow.a((FlowCollector) ((FlowCollector<T>) new FlowCollector<T>() { // from class: kotlinx.coroutines.flow.FlowKt__LimitKt$drop$lambda-2$$inlined$collect$1
+        Object a = flow.a((FlowCollector) ((FlowCollector<T>) new FlowCollector<T>() { // from class: kotlinx.coroutines.flow.FlowKt__LimitKt$drop$lambda-2$$inlined$collect$1
             @Override // kotlinx.coroutines.flow.FlowCollector
             public Object emit(T t, Continuation<? super Unit> continuation2) {
-                if (Ref.IntRef.this.f42543a >= i) {
+                if (Ref.IntRef.this.a >= i) {
                     Object emit = flowCollector.emit(t, continuation2);
                     if (emit == IntrinsicsKt.a()) {
                         return emit;
                     }
                 } else {
-                    Ref.IntRef.this.f42543a++;
-                    int i2 = Ref.IntRef.this.f42543a;
+                    Ref.IntRef.this.a++;
+                    int i2 = Ref.IntRef.this.a;
                 }
-                return Unit.f42314a;
+                return Unit.a;
             }
         }), continuation);
-        return a2 == IntrinsicsKt.a() ? a2 : Unit.f42314a;
+        return a == IntrinsicsKt.a() ? a : Unit.a;
     }
 }

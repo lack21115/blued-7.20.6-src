@@ -23,13 +23,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/circle/dialog/CircleDeletePostReasonDialogFragment.class */
 public final class CircleDeletePostReasonDialogFragment extends BottomSheetDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f19138a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private final String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private DialogCircleDeletePostReasonBinding f19139c;
+    private DialogCircleDeletePostReasonBinding c;
     private Dialog d;
 
     @Metadata
@@ -59,7 +55,7 @@ public final class CircleDeletePostReasonDialogFragment extends BottomSheetDialo
     }
 
     private final void a(final Dialog dialog) {
-        DialogCircleDeletePostReasonBinding dialogCircleDeletePostReasonBinding = this.f19139c;
+        DialogCircleDeletePostReasonBinding dialogCircleDeletePostReasonBinding = this.c;
         DialogCircleDeletePostReasonBinding dialogCircleDeletePostReasonBinding2 = dialogCircleDeletePostReasonBinding;
         if (dialogCircleDeletePostReasonBinding == null) {
             Intrinsics.c("viewBinding");
@@ -68,10 +64,10 @@ public final class CircleDeletePostReasonDialogFragment extends BottomSheetDialo
         dialogCircleDeletePostReasonBinding2.g.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.circle.dialog.-$$Lambda$CircleDeletePostReasonDialogFragment$x9MZ4zF32S8xEo9X4SIZXkOEP-0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CircleDeletePostReasonDialogFragment.a(Dialog.this, view);
+                CircleDeletePostReasonDialogFragment.a(dialog, view);
             }
         });
-        DialogCircleDeletePostReasonBinding dialogCircleDeletePostReasonBinding3 = this.f19139c;
+        DialogCircleDeletePostReasonBinding dialogCircleDeletePostReasonBinding3 = this.c;
         DialogCircleDeletePostReasonBinding dialogCircleDeletePostReasonBinding4 = dialogCircleDeletePostReasonBinding3;
         if (dialogCircleDeletePostReasonBinding3 == null) {
             Intrinsics.c("viewBinding");
@@ -83,7 +79,7 @@ public final class CircleDeletePostReasonDialogFragment extends BottomSheetDialo
                 CircleDeletePostReasonDialogFragment.a(CircleDeletePostReasonDialogFragment.this, view);
             }
         });
-        DialogCircleDeletePostReasonBinding dialogCircleDeletePostReasonBinding5 = this.f19139c;
+        DialogCircleDeletePostReasonBinding dialogCircleDeletePostReasonBinding5 = this.c;
         if (dialogCircleDeletePostReasonBinding5 == null) {
             Intrinsics.c("viewBinding");
             dialogCircleDeletePostReasonBinding5 = null;
@@ -111,14 +107,14 @@ public final class CircleDeletePostReasonDialogFragment extends BottomSheetDialo
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(CircleDeletePostReasonDialogFragment this$0, RadioGroup radioGroup, int i) {
         Intrinsics.e(this$0, "this$0");
-        DialogCircleDeletePostReasonBinding dialogCircleDeletePostReasonBinding = this$0.f19139c;
+        DialogCircleDeletePostReasonBinding dialogCircleDeletePostReasonBinding = this$0.c;
         DialogCircleDeletePostReasonBinding dialogCircleDeletePostReasonBinding2 = dialogCircleDeletePostReasonBinding;
         if (dialogCircleDeletePostReasonBinding == null) {
             Intrinsics.c("viewBinding");
             dialogCircleDeletePostReasonBinding2 = null;
         }
         dialogCircleDeletePostReasonBinding2.k.setEnabled(true);
-        DialogCircleDeletePostReasonBinding dialogCircleDeletePostReasonBinding3 = this$0.f19139c;
+        DialogCircleDeletePostReasonBinding dialogCircleDeletePostReasonBinding3 = this$0.c;
         if (dialogCircleDeletePostReasonBinding3 == null) {
             Intrinsics.c("viewBinding");
             dialogCircleDeletePostReasonBinding3 = null;
@@ -164,7 +160,7 @@ public final class CircleDeletePostReasonDialogFragment extends BottomSheetDialo
     }
 
     private final int j() {
-        DialogCircleDeletePostReasonBinding dialogCircleDeletePostReasonBinding = this.f19139c;
+        DialogCircleDeletePostReasonBinding dialogCircleDeletePostReasonBinding = this.c;
         DialogCircleDeletePostReasonBinding dialogCircleDeletePostReasonBinding2 = dialogCircleDeletePostReasonBinding;
         if (dialogCircleDeletePostReasonBinding == null) {
             Intrinsics.c("viewBinding");
@@ -193,13 +189,13 @@ public final class CircleDeletePostReasonDialogFragment extends BottomSheetDialo
         return this.b;
     }
 
-    @Override // com.blued.android.module.common.base.dialog.bottomsheet.BottomSheetDialogFragment, androidx.fragment.app.DialogFragment
+    @Override // com.blued.android.module.common.base.dialog.bottomsheet.BottomSheetDialogFragment
     public void setupDialog(Dialog dialog, int i) {
         Intrinsics.e(dialog, "dialog");
         super.setupDialog(dialog, i);
         DialogCircleDeletePostReasonBinding a2 = DialogCircleDeletePostReasonBinding.a(LayoutInflater.from(getContext()));
         Intrinsics.c(a2, "inflate(LayoutInflater.from(context))");
-        this.f19139c = a2;
+        this.c = a2;
         DialogCircleDeletePostReasonBinding dialogCircleDeletePostReasonBinding = a2;
         if (a2 == null) {
             Intrinsics.c("viewBinding");

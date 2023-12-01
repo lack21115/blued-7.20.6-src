@@ -4,7 +4,6 @@ import android.content.Context;
 import android.os.Build;
 import android.text.TextUtils;
 import android.util.Base64;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.getui.gtc.base.GtcProvider;
 import com.getui.gtc.base.util.CommonUtil;
 import com.getui.gtc.base.util.io.IOUtils;
@@ -17,8 +16,6 @@ import java.io.FileFilter;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
@@ -28,11 +25,11 @@ import java.util.regex.Pattern;
 public final class j {
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f23654a;
+    public static String f10046a;
     public static String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public static String f23655c;
+    public static String f10047c;
     public static String d;
     public static String e;
     public static String f;
@@ -143,11 +140,11 @@ public final class j {
             }
             String packageName = com.igexin.push.core.e.l.getPackageName();
             b = "/sdcard/libs/" + packageName + com.umeng.analytics.process.a.d;
-            f23655c = "/sdcard/libs/com.igexin.sdk.deviceId.db";
-            f23654a = "/sdcard/libs/" + packageName + ".properties";
+            f10047c = "/sdcard/libs/com.igexin.sdk.deviceId.db";
+            f10046a = "/sdcard/libs/" + packageName + ".properties";
             d = "/sdcard/libs/" + packageName + ".bin";
-            e = com.igexin.push.core.e.l.getFilesDir().getPath() + BridgeUtil.SPLIT_MARK + packageName + ".properties";
-            g = com.igexin.push.core.e.l.getFilesDir().getPath() + BridgeUtil.SPLIT_MARK + packageName + "-guard.properties";
+            e = com.igexin.push.core.e.l.getFilesDir().getPath() + "/" + packageName + ".properties";
+            g = com.igexin.push.core.e.l.getFilesDir().getPath() + "/" + packageName + "-guard.properties";
             StringBuilder sb = new StringBuilder();
             sb.append(com.igexin.push.core.e.l.getFilesDir().getPath());
             sb.append("/init_c1.pid");
@@ -210,7 +207,7 @@ public final class j {
     }
 
     public static boolean a(Context context) {
-        return (new File(context.getFilesDir().getAbsolutePath(), com.igexin.push.core.d.d.f23484a).exists() || new SdkInitSwitch(context).isSwitchOn()) ? false : true;
+        return (new File(context.getFilesDir().getAbsolutePath(), com.igexin.push.core.d.d.f9876a).exists() || new SdkInitSwitch(context).isSwitchOn()) ? false : true;
     }
 
     private static boolean a(File file) {
@@ -254,7 +251,7 @@ public final class j {
                     sb2.append(com.igexin.push.config.c.w + n.c());
                     sb2.append(com.igexin.push.core.e.z);
                     sb2.append("|");
-                    sb2.append(com.igexin.push.core.e.f23495a);
+                    sb2.append(com.igexin.push.core.e.f9887a);
                     sb2.append("|");
                     sb2.append(com.igexin.push.core.e.A);
                     sb2.append("|");
@@ -319,7 +316,7 @@ public final class j {
         Closeable closeable;
         FileInputStream fileInputStream;
         ByteArrayOutputStream byteArrayOutputStream;
-        InputStream inputStream;
+        FileInputStream fileInputStream2;
         byte[] bArr;
         ByteArrayOutputStream byteArrayOutputStream2;
         if (!new File(str).exists()) {
@@ -336,7 +333,7 @@ public final class j {
                 } catch (Exception e2) {
                     e = e2;
                     byteArrayOutputStream = null;
-                    inputStream = null;
+                    fileInputStream2 = null;
                 } catch (Throwable th) {
                     th = th;
                     closeable = null;
@@ -353,27 +350,27 @@ public final class j {
                             byteArrayOutputStream2.write(bArr2, 0, read);
                         } catch (Exception e3) {
                             e = e3;
-                            inputStream = fileInputStream;
+                            fileInputStream2 = fileInputStream;
                             byteArrayOutputStream = byteArrayOutputStream2;
                             com.igexin.c.a.c.a.a(e);
-                            InputStream inputStream2 = inputStream;
+                            FileInputStream fileInputStream3 = fileInputStream2;
                             StringBuilder sb = new StringBuilder("FileUtils|");
-                            InputStream inputStream3 = inputStream;
+                            FileInputStream fileInputStream4 = fileInputStream2;
                             sb.append(e.toString());
-                            InputStream inputStream4 = inputStream;
+                            FileInputStream fileInputStream5 = fileInputStream2;
                             com.igexin.c.a.c.a.a(sb.toString(), new Object[0]);
                             bArr = null;
                             byteArrayOutputStream2 = byteArrayOutputStream;
-                            IOUtils.safeClose(inputStream);
+                            IOUtils.safeClose(fileInputStream2);
                             IOUtils.safeClose(byteArrayOutputStream2);
                             return bArr;
                         }
                     }
-                    inputStream = fileInputStream;
+                    fileInputStream2 = fileInputStream;
                     bArr = byteArrayOutputStream2.toByteArray();
                 } catch (Exception e4) {
                     e = e4;
-                    inputStream = fileInputStream;
+                    fileInputStream2 = fileInputStream;
                     byteArrayOutputStream = null;
                 } catch (Throwable th2) {
                     th = th2;
@@ -382,7 +379,7 @@ public final class j {
                     IOUtils.safeClose(closeable);
                     throw th;
                 }
-                IOUtils.safeClose(inputStream);
+                IOUtils.safeClose(fileInputStream2);
                 IOUtils.safeClose(byteArrayOutputStream2);
                 return bArr;
             } catch (Throwable th3) {
@@ -468,8 +465,8 @@ public final class j {
             return null;
         }
         try {
-            com.igexin.c.a.c.a.a("FileUtils|get device id from file : " + f23655c, new Object[0]);
-            byte[] b2 = b(f23655c);
+            com.igexin.c.a.c.a.a("FileUtils|get device id from file : " + f10047c, new Object[0]);
+            byte[] b2 = b(f10047c);
             if (b2 == null) {
                 com.igexin.c.a.c.a.a(i, "read file device id = null");
                 com.igexin.c.a.c.a.a("FileUtils|read file device id = null", new Object[0]);
@@ -555,7 +552,7 @@ public final class j {
     }
 
     private static void e(String str) {
-        OutputStream outputStream;
+        FileOutputStream fileOutputStream;
         if (!i()) {
             int i2 = Build.VERSION.SDK_INT;
             com.igexin.c.a.c.a.a("FileUtils | saveDeviceIdToNewFile no permission , v-" + Build.VERSION.SDK_INT, new Object[0]);
@@ -563,8 +560,8 @@ public final class j {
         }
         com.igexin.c.a.c.a.a("FileUtils|save deviceId = " + str + " to " + k, new Object[0]);
         ReentrantReadWriteLock.WriteLock writeLock = new ReentrantReadWriteLock().writeLock();
-        FileOutputStream fileOutputStream = null;
-        OutputStream outputStream2 = null;
+        FileOutputStream fileOutputStream2 = null;
+        FileOutputStream fileOutputStream3 = null;
         try {
             try {
                 if (writeLock.tryLock()) {
@@ -578,35 +575,35 @@ public final class j {
                         writeLock.unlock();
                         return;
                     }
-                    fileOutputStream = new FileOutputStream(k);
+                    fileOutputStream2 = new FileOutputStream(k);
                     try {
-                        fileOutputStream.write(com.igexin.c.b.a.b("V1|".concat(String.valueOf(str)).getBytes("utf-8")));
+                        fileOutputStream2.write(com.igexin.c.b.a.b("V1|".concat(String.valueOf(str)).getBytes("utf-8")));
                     } catch (Exception e2) {
-                        outputStream = fileOutputStream;
+                        fileOutputStream = fileOutputStream2;
                         e = e2;
                         com.igexin.c.a.c.a.a(e);
-                        OutputStream outputStream3 = outputStream;
+                        FileOutputStream fileOutputStream4 = fileOutputStream;
                         StringBuilder sb2 = new StringBuilder("FileUtils|");
-                        OutputStream outputStream4 = outputStream;
+                        FileOutputStream fileOutputStream5 = fileOutputStream;
                         sb2.append(e.toString());
-                        OutputStream outputStream5 = outputStream;
+                        FileOutputStream fileOutputStream6 = fileOutputStream;
                         com.igexin.c.a.c.a.a(sb2.toString(), new Object[0]);
-                        com.igexin.c.a.b.g.a(outputStream);
+                        com.igexin.c.a.b.g.a(fileOutputStream);
                         writeLock.unlock();
                         return;
                     } catch (Throwable th) {
                         th = th;
-                        outputStream2 = fileOutputStream;
-                        com.igexin.c.a.b.g.a(outputStream2);
+                        fileOutputStream3 = fileOutputStream2;
+                        com.igexin.c.a.b.g.a(fileOutputStream3);
                         writeLock.unlock();
                         throw th;
                     }
                 }
-                com.igexin.c.a.b.g.a(fileOutputStream);
+                com.igexin.c.a.b.g.a(fileOutputStream2);
                 writeLock.unlock();
             } catch (Exception e3) {
                 e = e3;
-                outputStream = null;
+                fileOutputStream = null;
             }
         } catch (Throwable th2) {
             th = th2;
@@ -623,14 +620,14 @@ public final class j {
             com.igexin.c.a.c.a.a("FileUtils | save device id to file no permission , v-" + Build.VERSION.SDK_INT, new Object[0]);
             return;
         }
-        com.igexin.c.a.c.a.a("FileUtils|save device id to file : " + f23655c, new Object[0]);
+        com.igexin.c.a.c.a.a("FileUtils|save device id to file : " + f10047c, new Object[0]);
         FileOutputStream fileOutputStream = null;
         ReentrantReadWriteLock.WriteLock writeLock = new ReentrantReadWriteLock().writeLock();
         FileOutputStream fileOutputStream2 = null;
         try {
             try {
                 if (writeLock.tryLock()) {
-                    File file = new File(f23655c);
+                    File file = new File(f10047c);
                     if (!file.exists() && !file.createNewFile()) {
                         StringBuilder sb = new StringBuilder("FileUtils|create file : ");
                         sb.append(file.toString());
@@ -639,7 +636,7 @@ public final class j {
                         writeLock.unlock();
                         return;
                     }
-                    fileOutputStream = new FileOutputStream(f23655c);
+                    fileOutputStream = new FileOutputStream(f10047c);
                     try {
                         byte[] bytes = com.igexin.push.core.e.H.getBytes("utf-8");
                         new String(bytes, "utf-8");
@@ -746,12 +743,12 @@ public final class j {
         if (!file.exists() || (listFiles = file.listFiles(new FileFilter() { // from class: com.igexin.push.f.j.1
 
             /* renamed from: a  reason: collision with root package name */
-            final long f23656a = System.currentTimeMillis();
+            final long f10048a = System.currentTimeMillis();
             final long b = 604800000;
 
             @Override // java.io.FileFilter
             public final boolean accept(File file2) {
-                return this.f23656a - file2.lastModified() >= 604800000;
+                return this.f10048a - file2.lastModified() >= 604800000;
             }
         })) == null) {
             return;
@@ -777,12 +774,12 @@ public final class j {
         if (!file.exists() || (listFiles = file.listFiles(new FileFilter() { // from class: com.igexin.push.f.j.2
 
             /* renamed from: a  reason: collision with root package name */
-            final long f23657a = System.currentTimeMillis();
+            final long f10049a = System.currentTimeMillis();
             final long b = 604800000;
 
             @Override // java.io.FileFilter
             public final boolean accept(File file2) {
-                return this.f23657a - file2.lastModified() >= 604800000;
+                return this.f10049a - file2.lastModified() >= 604800000;
             }
         })) == null) {
             return;
@@ -833,7 +830,7 @@ public final class j {
             com.igexin.c.a.c.a.a("FileUtils|save deviceId = " + str2 + " to " + k, new Object[0]);
             ReentrantReadWriteLock.WriteLock writeLock = new ReentrantReadWriteLock().writeLock();
             FileOutputStream fileOutputStream = null;
-            OutputStream outputStream = null;
+            FileOutputStream fileOutputStream2 = null;
             try {
                 try {
                     if (writeLock.tryLock()) {
@@ -853,19 +850,19 @@ public final class j {
                         } catch (Exception e3) {
                             e2 = e3;
                             com.igexin.c.a.c.a.a(e2);
-                            FileOutputStream fileOutputStream2 = fileOutputStream;
-                            StringBuilder sb2 = new StringBuilder("FileUtils|");
                             FileOutputStream fileOutputStream3 = fileOutputStream;
-                            sb2.append(e2.toString());
+                            StringBuilder sb2 = new StringBuilder("FileUtils|");
                             FileOutputStream fileOutputStream4 = fileOutputStream;
+                            sb2.append(e2.toString());
+                            FileOutputStream fileOutputStream5 = fileOutputStream;
                             com.igexin.c.a.c.a.a(sb2.toString(), new Object[0]);
                             com.igexin.c.a.b.g.a(fileOutputStream);
                             writeLock.unlock();
                             return;
                         } catch (Throwable th2) {
-                            outputStream = fileOutputStream;
+                            fileOutputStream2 = fileOutputStream;
                             th = th2;
-                            com.igexin.c.a.b.g.a(outputStream);
+                            com.igexin.c.a.b.g.a(fileOutputStream2);
                             writeLock.unlock();
                             throw th;
                         }
@@ -960,7 +957,7 @@ public final class j {
     private static String o() {
         ByteArrayOutputStream byteArrayOutputStream;
         FileInputStream fileInputStream;
-        InputStream inputStream;
+        FileInputStream fileInputStream2;
         ByteArrayOutputStream byteArrayOutputStream2;
         String str;
         ByteArrayOutputStream byteArrayOutputStream3;
@@ -976,7 +973,7 @@ public final class j {
                 fileInputStream = new FileInputStream(k);
             } catch (Exception e2) {
                 e = e2;
-                inputStream = null;
+                fileInputStream2 = null;
                 byteArrayOutputStream2 = null;
             } catch (Throwable th) {
                 th = th;
@@ -986,7 +983,7 @@ public final class j {
             try {
                 ByteArrayOutputStream byteArrayOutputStream4 = new ByteArrayOutputStream();
                 while (true) {
-                    InputStream inputStream2 = fileInputStream;
+                    FileInputStream fileInputStream3 = fileInputStream;
                     byteArrayOutputStream = byteArrayOutputStream4;
                     try {
                         try {
@@ -997,42 +994,42 @@ public final class j {
                             byteArrayOutputStream4.write(bArr, 0, read);
                         } catch (Throwable th2) {
                             th = th2;
-                            fileInputStream = inputStream2;
+                            fileInputStream = fileInputStream3;
                             com.igexin.c.a.b.g.a(fileInputStream);
                             com.igexin.c.a.b.g.a(byteArrayOutputStream);
                             throw th;
                         }
                     } catch (Exception e3) {
                         e = e3;
-                        inputStream = fileInputStream;
+                        fileInputStream2 = fileInputStream;
                         byteArrayOutputStream2 = byteArrayOutputStream4;
-                        inputStream2 = inputStream;
+                        fileInputStream3 = fileInputStream2;
                         byteArrayOutputStream = byteArrayOutputStream2;
                         com.igexin.c.a.c.a.a(e);
                         str = null;
                         byteArrayOutputStream3 = byteArrayOutputStream2;
-                        com.igexin.c.a.b.g.a(inputStream);
+                        com.igexin.c.a.b.g.a(fileInputStream2);
                         com.igexin.c.a.b.g.a(byteArrayOutputStream3);
                         return str;
                     }
                 }
                 String[] split = new String(com.igexin.c.b.a.c(byteArrayOutputStream4.toByteArray()), "utf-8").split("\\|");
                 str = null;
-                inputStream = fileInputStream;
+                fileInputStream2 = fileInputStream;
                 byteArrayOutputStream3 = byteArrayOutputStream4;
                 if (split.length > 1) {
                     str = null;
-                    inputStream = fileInputStream;
+                    fileInputStream2 = fileInputStream;
                     byteArrayOutputStream3 = byteArrayOutputStream4;
                     if (com.igexin.push.core.g.e.equals(split[0])) {
                         str = split[1];
                         byteArrayOutputStream3 = byteArrayOutputStream4;
-                        inputStream = fileInputStream;
+                        fileInputStream2 = fileInputStream;
                     }
                 }
             } catch (Exception e4) {
                 e = e4;
-                inputStream = fileInputStream;
+                fileInputStream2 = fileInputStream;
                 byteArrayOutputStream2 = null;
             } catch (Throwable th3) {
                 th = th3;
@@ -1041,7 +1038,7 @@ public final class j {
                 com.igexin.c.a.b.g.a(byteArrayOutputStream);
                 throw th;
             }
-            com.igexin.c.a.b.g.a(inputStream);
+            com.igexin.c.a.b.g.a(fileInputStream2);
             com.igexin.c.a.b.g.a(byteArrayOutputStream3);
             return str;
         }

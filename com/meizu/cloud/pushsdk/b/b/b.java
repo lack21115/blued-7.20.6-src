@@ -7,22 +7,22 @@ import java.lang.reflect.Constructor;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private final a f23970a;
+    private final a f10359a;
     private final Class<?>[] b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public b(a aVar, Class<?>... clsArr) {
-        this.f23970a = aVar;
+        this.f10359a = aVar;
         this.b = clsArr;
     }
 
     public <T> d<T> a(Object... objArr) {
         d<T> dVar = new d<>();
         try {
-            Constructor<?> declaredConstructor = this.f23970a.a().getDeclaredConstructor(this.b);
+            Constructor<?> declaredConstructor = this.f10359a.a().getDeclaredConstructor(this.b);
             declaredConstructor.setAccessible(true);
             dVar.b = (T) declaredConstructor.newInstance(objArr);
-            dVar.f23973a = true;
+            dVar.f10362a = true;
             return dVar;
         } catch (Exception e) {
             DebugLogger.e("ReflectConstructor", "newInstance", e);

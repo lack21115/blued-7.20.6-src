@@ -2,7 +2,6 @@ package com.tencent.smtt.export.external;
 
 import android.content.Context;
 import android.os.Build;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.io.File;
 import java.util.ArrayList;
 
@@ -54,7 +53,7 @@ public class LibraryLoader {
                     return;
                 }
             }
-            String str2 = librarySearchPaths[i2] + BridgeUtil.SPLIT_MARK + mapLibraryName;
+            String str2 = librarySearchPaths[i2] + "/" + mapLibraryName;
             if (new File(str2).exists()) {
                 try {
                     System.load(str2);

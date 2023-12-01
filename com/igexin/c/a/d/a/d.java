@@ -9,11 +9,11 @@ public interface d {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final int f23261a = 1;
+        public static final int f9653a = 1;
         public static final int b = 2;
 
         /* renamed from: c  reason: collision with root package name */
-        public static final int f23262c = 3;
+        public static final int f9654c = 3;
         public static final int d = 4;
         public static final int e = 5;
         public static final int f = 6;

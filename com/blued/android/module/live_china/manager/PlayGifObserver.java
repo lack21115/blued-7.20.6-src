@@ -5,9 +5,7 @@ import java.util.Iterator;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/manager/PlayGifObserver.class */
 public class PlayGifObserver {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static PlayGifObserver f13677a = new PlayGifObserver();
+    private static PlayGifObserver a = new PlayGifObserver();
     private ArrayList<IPlayGifObserver> b = new ArrayList<>();
 
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/manager/PlayGifObserver$IPlayGifObserver.class */
@@ -19,7 +17,7 @@ public class PlayGifObserver {
     }
 
     public static PlayGifObserver a() {
-        return f13677a;
+        return a;
     }
 
     public void a(IPlayGifObserver iPlayGifObserver) {

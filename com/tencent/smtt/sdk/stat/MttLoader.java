@@ -77,11 +77,11 @@ public class MttLoader {
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public String f38880a;
+        public String f25189a;
         public String b;
 
         private a() {
-            this.f38880a = "";
+            this.f25189a = "";
             this.b = "";
         }
     }
@@ -115,11 +115,11 @@ public class MttLoader {
         for (ResolveInfo resolveInfo : queryIntentActivities) {
             String str = resolveInfo.activityInfo.packageName;
             if (str.contains(TbsConfig.APP_QB)) {
-                aVar.f38880a = resolveInfo.activityInfo.name;
+                aVar.f25189a = resolveInfo.activityInfo.name;
                 aVar.b = resolveInfo.activityInfo.packageName;
                 return aVar;
             } else if (str.contains("com.tencent.qbx")) {
-                aVar.f38880a = resolveInfo.activityInfo.name;
+                aVar.f25189a = resolveInfo.activityInfo.name;
                 aVar.b = resolveInfo.activityInfo.packageName;
             }
         }
@@ -406,10 +406,10 @@ public class MttLoader {
                             intent = intent3;
                             if (a3 != null) {
                                 intent = intent3;
-                                if (!TextUtils.isEmpty(a3.f38880a)) {
+                                if (!TextUtils.isEmpty(a3.f25189a)) {
                                     intent = intent3;
                                     a2 = a3;
-                                    intent.setClassName(a2.b, a2.f38880a);
+                                    intent.setClassName(a2.b, a2.f25189a);
                                 }
                             }
                         }
@@ -433,9 +433,9 @@ public class MttLoader {
                     intent = intent4;
                     if (a2 != null) {
                         intent = intent4;
-                        if (!TextUtils.isEmpty(a2.f38880a)) {
+                        if (!TextUtils.isEmpty(a2.f25189a)) {
                             intent = intent4;
-                            intent.setClassName(a2.b, a2.f38880a);
+                            intent.setClassName(a2.b, a2.f25189a);
                         }
                     }
                 } else if (browserInfo.ver < 4 || browserInfo.ver > 6) {
@@ -446,9 +446,9 @@ public class MttLoader {
                         intent = intent5;
                         if (a2 != null) {
                             intent = intent5;
-                            if (!TextUtils.isEmpty(a2.f38880a)) {
+                            if (!TextUtils.isEmpty(a2.f25189a)) {
                                 intent = intent5;
-                                intent.setClassName(a2.b, a2.f38880a);
+                                intent.setClassName(a2.b, a2.f25189a);
                             }
                         }
                     }

@@ -9,14 +9,14 @@ import com.opos.cmn.e.a.b.e.b;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private c f24756a;
+    private c f11068a;
     private com.opos.cmn.e.a.b.e.c b;
 
     public a(Activity activity) {
-        this.f24756a = new c(activity);
-        b bVar = new b(activity, new a.C0634a().a(com.opos.cmn.an.h.f.a.a(activity) ? 16973841 : 16973840).a(false).b(false).a());
+        this.f11068a = new c(activity);
+        b bVar = new b(activity, new a.C0464a().a(com.opos.cmn.an.h.f.a.a(activity) ? 16973841 : 16973840).a(false).b(false).a());
         this.b = bVar;
-        bVar.a(this.f24756a.b());
+        bVar.a(this.f11068a.b());
     }
 
     public void a() {
@@ -26,10 +26,10 @@ public class a {
     }
 
     public void a(String str, String str2, String str3, com.opos.cmn.e.a.b.c.a aVar) {
-        this.f24756a.a((CharSequence) str);
-        this.f24756a.b(str2);
-        this.f24756a.a(str3);
-        this.f24756a.a(aVar);
+        this.f11068a.a((CharSequence) str);
+        this.f11068a.b(str2);
+        this.f11068a.a(str3);
+        this.f11068a.a(aVar);
         this.b.b();
     }
 }

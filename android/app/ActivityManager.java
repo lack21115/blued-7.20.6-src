@@ -1,5 +1,6 @@
 package android.app;
 
+import android.R;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -28,10 +29,9 @@ import android.os.UserHandle;
 import android.text.TextUtils;
 import android.util.Size;
 import android.util.Slog;
-import com.android.internal.R;
-import com.android.internal.app.ProcessStats;
 import com.android.internal.os.TransferPipe;
 import com.android.internal.util.FastPrintWriter;
+import com.huawei.hms.ads.fw;
 import java.io.FileDescriptor;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -999,7 +999,7 @@ public class ActivityManager {
         fastPrintWriter.println();
         dumpService(fastPrintWriter, fileDescriptor, "meminfo", new String[]{"--local", "--package", str});
         fastPrintWriter.println();
-        dumpService(fastPrintWriter, fileDescriptor, ProcessStats.SERVICE_NAME, new String[]{str});
+        dumpService(fastPrintWriter, fileDescriptor, "procstats", new String[]{str});
         fastPrintWriter.println();
         dumpService(fastPrintWriter, fileDescriptor, Context.USAGE_STATS_SERVICE, new String[]{"--packages", str});
         fastPrintWriter.println();
@@ -1069,7 +1069,7 @@ public class ActivityManager {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static int getLauncherLargeIconSizeInner(Context context) {
         Resources resources = context.getResources();
-        int dimensionPixelSize = resources.getDimensionPixelSize(17104896);
+        int dimensionPixelSize = resources.getDimensionPixelSize(R.dimen.app_icon_size);
         if (resources.getConfiguration().smallestScreenWidthDp < 600) {
             return dimensionPixelSize;
         }
@@ -1127,11 +1127,11 @@ public class ActivityManager {
     }
 
     public static boolean isHighEndGfx() {
-        return !(isLowRamDeviceStatic() || Resources.getSystem().getBoolean(R.bool.config_avoidGfxAccel)) || isForcedHighEndGfx();
+        return !(isLowRamDeviceStatic() || Resources.getSystem().getBoolean(17956888)) || isForcedHighEndGfx();
     }
 
     public static boolean isLowRamDeviceStatic() {
-        return "true".equals(SystemProperties.get("ro.config.low_ram", "false"));
+        return fw.Code.equals(SystemProperties.get("ro.config.low_ram", "false"));
     }
 
     public static boolean isRunningInTestHarness() {

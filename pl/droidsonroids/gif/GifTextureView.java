@@ -18,13 +18,9 @@ import pl.droidsonroids.gif.InputSource;
 
 /* loaded from: source-3503164-dex2jar.jar:pl/droidsonroids/gif/GifTextureView.class */
 public class GifTextureView extends TextureView {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final ImageView.ScaleType[] f44145a = {ImageView.ScaleType.MATRIX, ImageView.ScaleType.FIT_XY, ImageView.ScaleType.FIT_START, ImageView.ScaleType.FIT_CENTER, ImageView.ScaleType.FIT_END, ImageView.ScaleType.CENTER, ImageView.ScaleType.CENTER_CROP, ImageView.ScaleType.CENTER_INSIDE};
+    private static final ImageView.ScaleType[] a = {ImageView.ScaleType.MATRIX, ImageView.ScaleType.FIT_XY, ImageView.ScaleType.FIT_START, ImageView.ScaleType.FIT_CENTER, ImageView.ScaleType.FIT_END, ImageView.ScaleType.CENTER, ImageView.ScaleType.CENTER_CROP, ImageView.ScaleType.CENTER_INSIDE};
     private ImageView.ScaleType b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final Matrix f44146c;
+    private final Matrix c;
     private InputSource d;
     private boolean e;
     private RenderThread f;
@@ -34,9 +30,7 @@ public class GifTextureView extends TextureView {
     /* renamed from: pl.droidsonroids.gif.GifTextureView$1  reason: invalid class name */
     /* loaded from: source-3503164-dex2jar.jar:pl/droidsonroids/gif/GifTextureView$1.class */
     public static /* synthetic */ class AnonymousClass1 {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f44147a;
+        static final /* synthetic */ int[] a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:19:0x0065 -> B:41:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:21:0x0069 -> B:37:0x001f). Please submit an issue!!! */
@@ -47,37 +41,37 @@ public class GifTextureView extends TextureView {
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:31:0x007d -> B:47:0x0058). Please submit an issue!!! */
         static {
             int[] iArr = new int[ImageView.ScaleType.values().length];
-            f44147a = iArr;
+            a = iArr;
             try {
                 iArr[ImageView.ScaleType.CENTER.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f44147a[ImageView.ScaleType.CENTER_CROP.ordinal()] = 2;
+                a[ImageView.ScaleType.CENTER_CROP.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f44147a[ImageView.ScaleType.CENTER_INSIDE.ordinal()] = 3;
+                a[ImageView.ScaleType.CENTER_INSIDE.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f44147a[ImageView.ScaleType.FIT_CENTER.ordinal()] = 4;
+                a[ImageView.ScaleType.FIT_CENTER.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f44147a[ImageView.ScaleType.FIT_END.ordinal()] = 5;
+                a[ImageView.ScaleType.FIT_END.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
             try {
-                f44147a[ImageView.ScaleType.FIT_START.ordinal()] = 6;
+                a[ImageView.ScaleType.FIT_START.ordinal()] = 6;
             } catch (NoSuchFieldError e6) {
             }
             try {
-                f44147a[ImageView.ScaleType.FIT_XY.ordinal()] = 7;
+                a[ImageView.ScaleType.FIT_XY.ordinal()] = 7;
             } catch (NoSuchFieldError e7) {
             }
             try {
-                f44147a[ImageView.ScaleType.MATRIX.ordinal()] = 8;
+                a[ImageView.ScaleType.MATRIX.ordinal()] = 8;
             } catch (NoSuchFieldError e8) {
             }
         }
@@ -91,27 +85,23 @@ public class GifTextureView extends TextureView {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-3503164-dex2jar.jar:pl/droidsonroids/gif/GifTextureView$RenderThread.class */
     public static class RenderThread extends Thread implements TextureView.SurfaceTextureListener {
-
-        /* renamed from: a  reason: collision with root package name */
-        final ConditionVariable f44148a;
+        final ConditionVariable a;
         long[] b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private GifInfoHandle f44149c;
+        private GifInfoHandle c;
         private IOException d;
         private final WeakReference<GifTextureView> e;
 
         RenderThread(GifTextureView gifTextureView) {
             super("GifRenderThread");
-            this.f44148a = new ConditionVariable();
-            this.f44149c = new GifInfoHandle();
+            this.a = new ConditionVariable();
+            this.c = new GifInfoHandle();
             this.e = new WeakReference<>(gifTextureView);
         }
 
         void a(GifTextureView gifTextureView, PlaceholderDrawListener placeholderDrawListener) {
-            this.f44148a.b();
+            this.a.b();
             gifTextureView.setSuperSurfaceTextureListener(placeholderDrawListener != null ? new PlaceholderDrawingSurfaceTextureListener(placeholderDrawListener) : null);
-            this.f44149c.l();
+            this.c.l();
             interrupt();
         }
 
@@ -119,15 +109,15 @@ public class GifTextureView extends TextureView {
         public void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i, int i2) {
             GifTextureView gifTextureView = this.e.get();
             if (gifTextureView != null) {
-                gifTextureView.a(this.f44149c);
+                gifTextureView.a(this.c);
             }
-            this.f44148a.a();
+            this.a.a();
         }
 
         @Override // android.view.TextureView.SurfaceTextureListener
         public boolean onSurfaceTextureDestroyed(SurfaceTexture surfaceTexture) {
-            this.f44148a.b();
-            this.f44149c.l();
+            this.a.b();
+            this.c.l();
             return false;
         }
 
@@ -146,34 +136,34 @@ public class GifTextureView extends TextureView {
                 if (gifTextureView == null) {
                     return;
                 }
-                GifInfoHandle a2 = gifTextureView.d.a();
-                this.f44149c = a2;
-                a2.a((char) 1, gifTextureView.isOpaque());
+                GifInfoHandle a = gifTextureView.d.a();
+                this.c = a;
+                a.a((char) 1, gifTextureView.isOpaque());
                 final GifTextureView gifTextureView2 = this.e.get();
                 if (gifTextureView2 == null) {
-                    this.f44149c.a();
+                    this.c.a();
                     return;
                 }
                 gifTextureView2.setSuperSurfaceTextureListener(this);
                 boolean isAvailable = gifTextureView2.isAvailable();
-                this.f44148a.a(isAvailable);
+                this.a.a(isAvailable);
                 if (isAvailable) {
                     gifTextureView2.post(new Runnable() { // from class: pl.droidsonroids.gif.GifTextureView.RenderThread.1
                         @Override // java.lang.Runnable
                         public void run() {
-                            gifTextureView2.a(RenderThread.this.f44149c);
+                            gifTextureView2.a(RenderThread.this.c);
                         }
                     });
                 }
-                this.f44149c.a(gifTextureView2.g);
+                this.c.a(gifTextureView2.g);
                 while (!isInterrupted()) {
                     try {
-                        this.f44148a.c();
+                        this.a.c();
                         SurfaceTexture surfaceTexture = gifTextureView2.getSurfaceTexture();
                         if (surfaceTexture != null) {
                             Surface surface = new Surface(surfaceTexture);
                             try {
-                                this.f44149c.a(surface, this.b);
+                                this.c.a(surface, this.b);
                             } finally {
                                 surface.release();
                                 surfaceTexture.release();
@@ -183,8 +173,8 @@ public class GifTextureView extends TextureView {
                         Thread.currentThread().interrupt();
                     }
                 }
-                this.f44149c.a();
-                this.f44149c = new GifInfoHandle();
+                this.c.a();
+                this.c = new GifInfoHandle();
             } catch (IOException e2) {
                 this.d = e2;
             }
@@ -194,7 +184,7 @@ public class GifTextureView extends TextureView {
     public GifTextureView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         this.b = ImageView.ScaleType.FIT_CENTER;
-        this.f44146c = new Matrix();
+        this.c = new Matrix();
         this.g = 1.0f;
         a(attributeSet, 0, 0);
     }
@@ -202,7 +192,7 @@ public class GifTextureView extends TextureView {
     public GifTextureView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         this.b = ImageView.ScaleType.FIT_CENTER;
-        this.f44146c = new Matrix();
+        this.c = new Matrix();
         this.g = 1.0f;
         a(attributeSet, i, 0);
     }
@@ -212,7 +202,7 @@ public class GifTextureView extends TextureView {
         if (typedArray.getValue(R.styleable.GifTextureView_gifSource, typedValue)) {
             if (typedValue.resourceId != 0) {
                 String resourceTypeName = typedArray.getResources().getResourceTypeName(typedValue.resourceId);
-                if (GifViewUtils.f44152a.contains(resourceTypeName)) {
+                if (GifViewUtils.a.contains(resourceTypeName)) {
                     return new InputSource.ResourcesSource(typedArray.getResources(), typedValue.resourceId);
                 }
                 if (!"string".equals(resourceTypeName)) {
@@ -228,7 +218,7 @@ public class GifTextureView extends TextureView {
         if (attributeSet != null) {
             int attributeIntValue = attributeSet.getAttributeIntValue("http://schemas.android.com/apk/res/android", "scaleType", -1);
             if (attributeIntValue >= 0) {
-                ImageView.ScaleType[] scaleTypeArr = f44145a;
+                ImageView.ScaleType[] scaleTypeArr = a;
                 if (attributeIntValue < scaleTypeArr.length) {
                     this.b = scaleTypeArr[attributeIntValue];
                 }
@@ -261,7 +251,7 @@ public class GifTextureView extends TextureView {
         RectF rectF = new RectF(0.0f, 0.0f, gifInfoHandle.n(), gifInfoHandle.o());
         RectF rectF2 = new RectF(0.0f, 0.0f, width, height);
         float f = 1.0f;
-        switch (AnonymousClass1.f44147a[this.b.ordinal()]) {
+        switch (AnonymousClass1.a[this.b.ordinal()]) {
             case 1:
                 matrix.setScale(n, o, width / 2.0f, height / 2.0f);
                 break;
@@ -290,7 +280,7 @@ public class GifTextureView extends TextureView {
             case 7:
                 return;
             case 8:
-                matrix.set(this.f44146c);
+                matrix.set(this.c);
                 matrix.preScale(n, o);
                 break;
         }
@@ -315,7 +305,7 @@ public class GifTextureView extends TextureView {
     }
 
     public IOException getIOException() {
-        return this.f.d != null ? this.f.d : GifIOException.a(this.f.f44149c.f());
+        return this.f.d != null ? this.f.d : GifIOException.a(this.f.c.f());
     }
 
     public ImageView.ScaleType getScaleType() {
@@ -333,7 +323,7 @@ public class GifTextureView extends TextureView {
         if (matrix == null) {
             matrix2 = new Matrix();
         }
-        matrix2.set(this.f44146c);
+        matrix2.set(this.c);
         return matrix2;
     }
 
@@ -356,13 +346,13 @@ public class GifTextureView extends TextureView {
         }
         GifViewSavedState gifViewSavedState = (GifViewSavedState) parcelable;
         super.onRestoreInstanceState(gifViewSavedState.getSuperState());
-        this.f.b = gifViewSavedState.f44151a[0];
+        this.f.b = gifViewSavedState.a[0];
     }
 
     @Override // android.view.View
     public Parcelable onSaveInstanceState() {
         RenderThread renderThread = this.f;
-        renderThread.b = renderThread.f44149c.m();
+        renderThread.b = renderThread.c.m();
         return new GifViewSavedState(super.onSaveInstanceState(), this.e ? this.f.b : null);
     }
 
@@ -390,12 +380,12 @@ public class GifTextureView extends TextureView {
 
     public void setScaleType(ImageView.ScaleType scaleType) {
         this.b = scaleType;
-        a(this.f.f44149c);
+        a(this.f.c);
     }
 
     public void setSpeed(float f) {
         this.g = f;
-        this.f.f44149c.a(f);
+        this.f.c.a(f);
     }
 
     @Override // android.view.TextureView
@@ -410,7 +400,7 @@ public class GifTextureView extends TextureView {
 
     @Override // android.view.TextureView
     public void setTransform(Matrix matrix) {
-        this.f44146c.set(matrix);
-        a(this.f.f44149c);
+        this.c.set(matrix);
+        a(this.f.c);
     }
 }

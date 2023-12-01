@@ -8,12 +8,14 @@ import com.blued.android.module.common.api.annotation.InterruptError;
 import com.blued.android.module.common.api.annotation.Param;
 import com.blued.android.module.common.api.annotation.ParamsMap;
 import com.blued.android.module.common.user.model.UserInfo;
+import com.cdo.oaps.ad.OapsKey;
 import com.cdo.oaps.ad.wrapper.BaseWrapper;
 import com.sina.weibo.sdk.constant.WBPageConstants;
 import com.soft.blued.ui.msg_group.model.MyGroupModel;
 import com.soft.blued.ui.user.model.UserInfoEntity;
 import java.util.Map;
 import kotlin.Metadata;
+import kotlin.Pair;
 import kotlin.TuplesKt;
 import kotlin.collections.MapsKt;
 import kotlin.coroutines.Continuation;
@@ -40,7 +42,7 @@ public interface TestService extends BluedApiService {
         public static /* synthetic */ Object a(TestService testService, Map map, Continuation continuation, int i, Object obj) {
             if (obj == null) {
                 if ((i & 1) != 0) {
-                    map = MapsKt.a(TuplesKt.a("size", BaseWrapper.ENTER_ID_SYSTEM_HELPER), TuplesKt.a(WBPageConstants.ParamKey.PAGE, "1"));
+                    map = MapsKt.a(new Pair[]{TuplesKt.a(OapsKey.KEY_SIZE, BaseWrapper.ENTER_ID_SYSTEM_HELPER), TuplesKt.a(WBPageConstants.ParamKey.PAGE, "1")});
                 }
                 return testService.a(map, continuation);
             }

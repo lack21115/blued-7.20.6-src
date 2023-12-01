@@ -20,10 +20,10 @@ import java.util.regex.Pattern;
 public final class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f7334a = "MediaCodecUtil";
+    private static final String f4495a = "MediaCodecUtil";
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f7335c = "OMX.MTK.AUDIO.DECODER.RAW";
+    private static final String f4496c = "OMX.MTK.AUDIO.DECODER.RAW";
     private static final SparseIntArray g;
     private static final SparseIntArray h;
     private static final String i = "avc1";
@@ -42,11 +42,11 @@ public final class d {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public final String f7336a;
+        public final String f4497a;
         public final boolean b;
 
         public a(String str, boolean z) {
-            this.f7336a = str;
+            this.f4497a = str;
             this.b = z;
         }
 
@@ -58,11 +58,11 @@ public final class d {
                 return false;
             }
             a aVar = (a) obj;
-            return TextUtils.equals(this.f7336a, aVar.f7336a) && this.b == aVar.b;
+            return TextUtils.equals(this.f4497a, aVar.f4497a) && this.b == aVar.b;
         }
 
         public final int hashCode() {
-            String str = this.f7336a;
+            String str = this.f4497a;
             return (((str == null ? 0 : str.hashCode()) + 31) * 31) + (this.b ? 1231 : 1237);
         }
     }
@@ -93,11 +93,11 @@ public final class d {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.anythink.expressad.exoplayer.f.d$d  reason: collision with other inner class name */
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/exoplayer/f/d$d.class */
-    public static final class C0128d implements c {
-        private C0128d() {
+    public static final class C0057d implements c {
+        private C0057d() {
         }
 
-        /* synthetic */ C0128d(byte b) {
+        /* synthetic */ C0057d(byte b) {
             this();
         }
 
@@ -127,7 +127,7 @@ public final class d {
     public static final class e implements c {
 
         /* renamed from: a  reason: collision with root package name */
-        private final int f7337a;
+        private final int f4498a;
         private MediaCodecInfo[] b;
 
         /* JADX WARN: Type inference failed for: r0v0, types: [java.lang.Throwable, java.lang.Runtime] */
@@ -137,7 +137,7 @@ public final class d {
 
         private void c() {
             if (this.b == null) {
-                this.b = new MediaCodecList(this.f7337a).getCodecInfos();
+                this.b = new MediaCodecList(this.f4498a).getCodecInfos();
             }
         }
 
@@ -274,26 +274,26 @@ public final class d {
     private static Pair<Integer, Integer> a(String str, String[] strArr) {
         int i2;
         if (strArr.length < 4) {
-            Log.w(f7334a, "Ignoring malformed HEVC codec string: ".concat(String.valueOf(str)));
+            Log.w(f4495a, "Ignoring malformed HEVC codec string: ".concat(String.valueOf(str)));
             return null;
         }
         Matcher matcher = e.matcher(strArr[1]);
         if (!matcher.matches()) {
-            Log.w(f7334a, "Ignoring malformed HEVC codec string: ".concat(String.valueOf(str)));
+            Log.w(f4495a, "Ignoring malformed HEVC codec string: ".concat(String.valueOf(str)));
             return null;
         }
         String group = matcher.group(1);
         if ("1".equals(group)) {
             i2 = 1;
         } else if (!"2".equals(group)) {
-            Log.w(f7334a, "Unknown HEVC profile string: ".concat(String.valueOf(group)));
+            Log.w(f4495a, "Unknown HEVC profile string: ".concat(String.valueOf(group)));
             return null;
         } else {
             i2 = 2;
         }
         Integer num = k.get(strArr[3]);
         if (num == null) {
-            Log.w(f7334a, "Unknown HEVC level string: " + matcher.group(1));
+            Log.w(f4495a, "Unknown HEVC level string: " + matcher.group(1));
             return null;
         }
         return new Pair<>(Integer.valueOf(i2), num);
@@ -333,13 +333,13 @@ public final class d {
     }
 
     private static void a(List<com.anythink.expressad.exoplayer.f.a> list) {
-        if (af.f7632a < 26) {
-            if (list.size() <= 1 || !f7335c.equals(list.get(0).f7330c)) {
+        if (af.f4793a < 26) {
+            if (list.size() <= 1 || !f4496c.equals(list.get(0).f4491c)) {
                 return;
             }
             for (int i2 = 1; i2 < list.size(); i2++) {
                 com.anythink.expressad.exoplayer.f.a aVar = list.get(i2);
-                if (b.equals(aVar.f7330c)) {
+                if (b.equals(aVar.f4491c)) {
                     list.remove(i2);
                     list.add(0, aVar);
                     return;
@@ -353,27 +353,27 @@ public final class d {
             return false;
         }
         if (z || !str.endsWith(".secure")) {
-            if (af.f7632a >= 21 || !("CIPAACDecoder".equals(str) || "CIPMP3Decoder".equals(str) || "CIPVorbisDecoder".equals(str) || "CIPAMRNBDecoder".equals(str) || "AACDecoder".equals(str) || "MP3Decoder".equals(str))) {
-                if (af.f7632a >= 18 || !"OMX.SEC.MP3.Decoder".equals(str)) {
-                    if (af.f7632a < 18 && "OMX.MTK.AUDIO.DECODER.AAC".equals(str)) {
+            if (af.f4793a >= 21 || !("CIPAACDecoder".equals(str) || "CIPMP3Decoder".equals(str) || "CIPVorbisDecoder".equals(str) || "CIPAMRNBDecoder".equals(str) || "AACDecoder".equals(str) || "MP3Decoder".equals(str))) {
+                if (af.f4793a >= 18 || !"OMX.SEC.MP3.Decoder".equals(str)) {
+                    if (af.f4793a < 18 && "OMX.MTK.AUDIO.DECODER.AAC".equals(str)) {
                         if ("a70".equals(af.b)) {
                             return false;
                         }
-                        if ("Xiaomi".equals(af.f7633c) && af.b.startsWith("HM")) {
+                        if ("Xiaomi".equals(af.f4794c) && af.b.startsWith("HM")) {
                             return false;
                         }
                     }
-                    if (af.f7632a == 16 && "OMX.qcom.audio.decoder.mp3".equals(str) && ("dlxu".equals(af.b) || "protou".equals(af.b) || "ville".equals(af.b) || "villeplus".equals(af.b) || "villec2".equals(af.b) || af.b.startsWith("gee") || "C6602".equals(af.b) || "C6603".equals(af.b) || "C6606".equals(af.b) || "C6616".equals(af.b) || "L36h".equals(af.b) || "SO-02E".equals(af.b))) {
+                    if (af.f4793a == 16 && "OMX.qcom.audio.decoder.mp3".equals(str) && ("dlxu".equals(af.b) || "protou".equals(af.b) || "ville".equals(af.b) || "villeplus".equals(af.b) || "villec2".equals(af.b) || af.b.startsWith("gee") || "C6602".equals(af.b) || "C6603".equals(af.b) || "C6606".equals(af.b) || "C6616".equals(af.b) || "L36h".equals(af.b) || "SO-02E".equals(af.b))) {
                         return false;
                     }
-                    if (af.f7632a == 16 && "OMX.qcom.audio.decoder.aac".equals(str) && ("C1504".equals(af.b) || "C1505".equals(af.b) || "C1604".equals(af.b) || "C1605".equals(af.b))) {
+                    if (af.f4793a == 16 && "OMX.qcom.audio.decoder.aac".equals(str) && ("C1504".equals(af.b) || "C1505".equals(af.b) || "C1604".equals(af.b) || "C1605".equals(af.b))) {
                         return false;
                     }
-                    if (af.f7632a >= 24 || !(("OMX.SEC.aac.dec".equals(str) || "OMX.Exynos.AAC.Decoder".equals(str)) && "samsung".equals(af.f7633c) && (af.b.startsWith("zeroflte") || af.b.startsWith("zerolte") || af.b.startsWith("zenlte") || "SC-05G".equals(af.b) || "marinelteatt".equals(af.b) || "404SC".equals(af.b) || "SC-04G".equals(af.b) || "SCV31".equals(af.b)))) {
-                        if (af.f7632a <= 19 && "OMX.SEC.vp8.dec".equals(str) && "samsung".equals(af.f7633c) && (af.b.startsWith(com.anythink.expressad.foundation.g.a.O) || af.b.startsWith("serrano") || af.b.startsWith("jflte") || af.b.startsWith("santos") || af.b.startsWith("t0"))) {
+                    if (af.f4793a >= 24 || !(("OMX.SEC.aac.dec".equals(str) || "OMX.Exynos.AAC.Decoder".equals(str)) && "samsung".equals(af.f4794c) && (af.b.startsWith("zeroflte") || af.b.startsWith("zerolte") || af.b.startsWith("zenlte") || "SC-05G".equals(af.b) || "marinelteatt".equals(af.b) || "404SC".equals(af.b) || "SC-04G".equals(af.b) || "SCV31".equals(af.b)))) {
+                        if (af.f4793a <= 19 && "OMX.SEC.vp8.dec".equals(str) && "samsung".equals(af.f4794c) && (af.b.startsWith(com.anythink.expressad.foundation.g.a.O) || af.b.startsWith("serrano") || af.b.startsWith("jflte") || af.b.startsWith("santos") || af.b.startsWith("t0"))) {
                             return false;
                         }
-                        if (af.f7632a <= 19 && af.b.startsWith("jflte") && "OMX.qcom.video.decoder.vp8".equals(str)) {
+                        if (af.f4793a <= 19 && af.b.startsWith("jflte") && "OMX.qcom.video.decoder.vp8".equals(str)) {
                             return false;
                         }
                         return (o.B.equals(str2) && "OMX.MTK.AUDIO.DECODER.DSPAC3".equals(str)) ? false : true;
@@ -438,7 +438,7 @@ public final class d {
                     }
                     i3 = Math.max(i5, i3);
                 }
-                i2 = Math.max(i3, af.f7632a >= 21 ? 345600 : 172800);
+                i2 = Math.max(i3, af.f4793a >= 21 ? 345600 : 172800);
             }
             n = i2;
         }
@@ -449,7 +449,7 @@ public final class d {
         Integer valueOf;
         Integer valueOf2;
         if (strArr.length < 2) {
-            Log.w(f7334a, "Ignoring malformed AVC codec string: ".concat(String.valueOf(str)));
+            Log.w(f4495a, "Ignoring malformed AVC codec string: ".concat(String.valueOf(str)));
             return null;
         }
         try {
@@ -458,7 +458,7 @@ public final class d {
                 valueOf = Integer.valueOf(Integer.parseInt(strArr[1].substring(4), 16));
                 valueOf2 = valueOf3;
             } else if (strArr.length < 3) {
-                Log.w(f7334a, "Ignoring malformed AVC codec string: ".concat(String.valueOf(str)));
+                Log.w(f4495a, "Ignoring malformed AVC codec string: ".concat(String.valueOf(str)));
                 return null;
             } else {
                 int parseInt = Integer.parseInt(strArr[1]);
@@ -467,17 +467,17 @@ public final class d {
             }
             int i2 = g.get(valueOf2.intValue(), -1);
             if (i2 == -1) {
-                Log.w(f7334a, "Unknown AVC profile: ".concat(String.valueOf(valueOf2)));
+                Log.w(f4495a, "Unknown AVC profile: ".concat(String.valueOf(valueOf2)));
                 return null;
             }
             int i3 = h.get(valueOf.intValue(), -1);
             if (i3 == -1) {
-                Log.w(f7334a, "Unknown AVC level: ".concat(String.valueOf(valueOf)));
+                Log.w(f4495a, "Unknown AVC level: ".concat(String.valueOf(valueOf)));
                 return null;
             }
             return new Pair<>(Integer.valueOf(i2), Integer.valueOf(i3));
         } catch (NumberFormatException e2) {
-            Log.w(f7334a, "Ignoring malformed AVC codec string: ".concat(String.valueOf(str)));
+            Log.w(f4495a, "Ignoring malformed AVC codec string: ".concat(String.valueOf(str)));
             return null;
         }
     }
@@ -486,12 +486,12 @@ public final class d {
         try {
             c(str, z);
         } catch (b e2) {
-            Log.e(f7334a, "Codec warming failed", e2);
+            Log.e(f4495a, "Codec warming failed", e2);
         }
     }
 
     private static boolean b(String str) {
-        if (af.f7632a <= 22) {
+        if (af.f4793a <= 22) {
             if ("ODROID-XU3".equals(af.d) || "Nexus 10".equals(af.d)) {
                 return "OMX.Exynos.AVC.Decoder".equals(str) || "OMX.Exynos.AVC.Decoder.secure".equals(str);
             }
@@ -508,7 +508,7 @@ public final class d {
                 if (list != null) {
                     return list;
                 }
-                c eVar = af.f7632a >= 21 ? new e(z) : new C0128d((byte) 0);
+                c eVar = af.f4793a >= 21 ? new e(z) : new C0057d((byte) 0);
                 ArrayList<com.anythink.expressad.exoplayer.f.a> a2 = a(aVar, eVar, str);
                 c cVar = eVar;
                 ArrayList<com.anythink.expressad.exoplayer.f.a> arrayList = a2;
@@ -518,18 +518,18 @@ public final class d {
                     if (a2.isEmpty()) {
                         cVar = eVar;
                         arrayList = a2;
-                        if (21 <= af.f7632a) {
+                        if (21 <= af.f4793a) {
                             cVar = eVar;
                             arrayList = a2;
-                            if (af.f7632a <= 23) {
-                                c c0128d = new C0128d((byte) 0);
-                                ArrayList<com.anythink.expressad.exoplayer.f.a> a3 = a(aVar, c0128d, str);
-                                cVar = c0128d;
+                            if (af.f4793a <= 23) {
+                                c c0057d = new C0057d((byte) 0);
+                                ArrayList<com.anythink.expressad.exoplayer.f.a> a3 = a(aVar, c0057d, str);
+                                cVar = c0057d;
                                 arrayList = a3;
                                 if (!a3.isEmpty()) {
-                                    Log.w(f7334a, "MediaCodecList API didn't list secure decoder for: " + str + ". Assuming: " + a3.get(0).f7330c);
+                                    Log.w(f4495a, "MediaCodecList API didn't list secure decoder for: " + str + ". Assuming: " + a3.get(0).f4491c);
                                     arrayList = a3;
-                                    cVar = c0128d;
+                                    cVar = c0057d;
                                 }
                             }
                         }

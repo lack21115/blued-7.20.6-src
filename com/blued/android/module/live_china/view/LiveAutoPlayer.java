@@ -9,12 +9,8 @@ import com.blued.android.module.player.txplayer.view.BlLiveView;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveAutoPlayer.class */
 public class LiveAutoPlayer {
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f14377a;
-
-    /* renamed from: c  reason: collision with root package name */
-    private BlLiveView f14378c;
+    private String a;
+    private BlLiveView c;
     private LiveAutoPlayerListener d;
     private OnMediaPlayerListener e = new OnMediaPlayerListener() { // from class: com.blued.android.module.live_china.view.LiveAutoPlayer.1
         @Override // com.blued.android.module.player.live.manager.OnMediaPlayerListener
@@ -101,15 +97,15 @@ public class LiveAutoPlayer {
             Logger.b("LiveAutoPlayer", "prepare discard, mPlayView is null");
         } else {
             Logger.b("LiveAutoPlayer", "prepare mVideoPath = ", str);
-            this.f14377a = str;
-            this.f14378c = blLiveView;
+            this.a = str;
+            this.c = blLiveView;
             if (!a()) {
                 this.b = new LiveMediaPlayerManager();
             }
             try {
                 Logger.b("LiveAutoPlayer", "prepare play");
-                this.f14378c.a();
-                this.b.a(this.f14377a, this.f14378c);
+                this.c.a();
+                this.b.a(this.a, this.c);
                 this.b.a(this.e);
                 this.b.f();
             } catch (Exception e) {

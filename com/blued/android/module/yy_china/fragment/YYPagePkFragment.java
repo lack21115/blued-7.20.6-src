@@ -6,12 +6,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.ToggleButton;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentResultListener;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.blued.android.core.image.ImageLoader;
@@ -49,7 +50,6 @@ import com.google.android.material.imageview.ShapeableImageView;
 import com.jeremyliao.liveeventbus.LiveEventBus;
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import kotlin.Metadata;
 import kotlin.jvm.internal.DefaultConstructorMarker;
@@ -59,13 +59,9 @@ import kotlin.text.StringsKt;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYPagePkFragment.class */
 public class YYPagePkFragment extends BaseFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f17374a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private PkRotationView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private TextView f17375c;
+    private TextView c;
     private ShapeTextView d;
     private RecyclerView e;
     private LinearLayout f;
@@ -94,23 +90,19 @@ public class YYPagePkFragment extends BaseFragment {
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYPagePkFragment$RoomAdapter.class */
     public final class RoomAdapter extends BaseMultiItemQuickAdapter<YYRecommendPkModel, BaseViewHolder> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ YYPagePkFragment f17376a;
+        final /* synthetic */ YYPagePkFragment a;
         private final int b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private final int f17377c;
+        private final int c;
         private BluedEntityA<YYPKConfigureModel> d;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public RoomAdapter(YYPagePkFragment this$0) {
             super(new ArrayList());
             Intrinsics.e(this$0, "this$0");
-            this.f17376a = this$0;
-            this.f17377c = 1;
+            this.a = this$0;
+            this.c = 1;
             addItemType(this.b, R.layout.item_yy_pk_room);
-            addItemType(this.f17377c, R.layout.item_yy_pk_room_info);
+            addItemType(this.c, R.layout.item_yy_pk_room_info);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -121,12 +113,12 @@ public class YYPagePkFragment extends BaseFragment {
         }
 
         private final void b(BaseViewHolder baseViewHolder) {
-            YYPagePkFragment yYPagePkFragment = this.f17376a;
+            YYPagePkFragment yYPagePkFragment = this.a;
             View view = baseViewHolder == null ? null : baseViewHolder.itemView;
             Intrinsics.a(view);
             Intrinsics.c(view, "helper?.itemView!!");
             yYPagePkFragment.a(view);
-            YYPagePkFragment yYPagePkFragment2 = this.f17376a;
+            YYPagePkFragment yYPagePkFragment2 = this.a;
             View view2 = baseViewHolder.itemView;
             Intrinsics.c(view2, "helper.itemView");
             yYPagePkFragment2.c(view2);
@@ -134,13 +126,13 @@ public class YYPagePkFragment extends BaseFragment {
             if (bluedEntityA == null) {
                 return;
             }
-            this.f17376a.a(bluedEntityA);
+            this.a.a(bluedEntityA);
         }
 
         private final void b(BaseViewHolder baseViewHolder, final YYRecommendPkModel yYRecommendPkModel) {
             String str;
             SVGAImageView sVGAImageView = baseViewHolder == null ? null : (SVGAImageView) baseViewHolder.getView(R.id.iv_apng);
-            ShapeableImageView shapeableImageView = baseViewHolder == null ? null : (ShapeableImageView) baseViewHolder.getView(R.id.room_pic);
+            ShapeableImageView view = baseViewHolder == null ? null : baseViewHolder.getView(R.id.room_pic);
             TextView textView = baseViewHolder == null ? null : (TextView) baseViewHolder.getView(R.id.tv_room_name);
             TextView textView2 = baseViewHolder == null ? null : (TextView) baseViewHolder.getView(R.id.tv_host_name);
             TextView textView3 = baseViewHolder == null ? null : (TextView) baseViewHolder.getView(R.id.tv_count);
@@ -149,10 +141,10 @@ public class YYPagePkFragment extends BaseFragment {
             ShapeLinearLayout shapeLinearLayout = baseViewHolder == null ? null : (ShapeLinearLayout) baseViewHolder.getView(R.id.ll_live_type);
             if (sVGAImageView != null) {
                 sVGAImageView.setMIsNeedOnDetachedFromWindow(true);
-                new SVGAPlayer.Builder(ImgURLMap.f10885a.a("yy_home_small_white")).a(sVGAImageView);
+                new SVGAPlayer.Builder(ImgURLMap.a.a("yy_home_small_white")).a(sVGAImageView);
             }
             if (yYRecommendPkModel != null && (str = yYRecommendPkModel.user_avatar) != null) {
-                ImageLoader.a(this.f17376a.getFragmentActive(), str).b(R.drawable.user_header_square).a(shapeableImageView);
+                ImageLoader.a(this.a.getFragmentActive(), str).b(R.drawable.user_header_square).a((ImageView) view);
             }
             if (textView != null) {
                 textView.setText(yYRecommendPkModel == null ? null : yYRecommendPkModel.room_name);
@@ -172,7 +164,7 @@ public class YYPagePkFragment extends BaseFragment {
             if (shapeLinearLayout != null) {
                 ShapeLinearLayout shapeLinearLayout2 = shapeLinearLayout;
                 ShapeHelper.a(shapeLinearLayout2, shapeLinearLayout.getResources().getDimension(R.dimen.dp_10));
-                YyChatRoomTagShapeUtils yyChatRoomTagShapeUtils = YyChatRoomTagShapeUtils.f10915a;
+                YyChatRoomTagShapeUtils yyChatRoomTagShapeUtils = YyChatRoomTagShapeUtils.a;
                 String str2 = yYRecommendPkModel == null ? null : yYRecommendPkModel.room_type_id;
                 Intrinsics.a((Object) str2);
                 yyChatRoomTagShapeUtils.a(shapeLinearLayout2, str2);
@@ -180,11 +172,11 @@ public class YYPagePkFragment extends BaseFragment {
             if (shapeTextView == null) {
                 return;
             }
-            final YYPagePkFragment yYPagePkFragment = this.f17376a;
+            final YYPagePkFragment yYPagePkFragment = this.a;
             shapeTextView.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYPagePkFragment$RoomAdapter$2GkBtHZ1GDW7YgMwSEA0dyOViFs
                 @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    YYPagePkFragment.RoomAdapter.a(YYPagePkFragment.this, yYRecommendPkModel, view);
+                public final void onClick(View view2) {
+                    YYPagePkFragment.RoomAdapter.a(YYPagePkFragment.this, yYRecommendPkModel, view2);
                 }
             });
         }
@@ -194,11 +186,10 @@ public class YYPagePkFragment extends BaseFragment {
             notifyDataSetChanged();
         }
 
-        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         /* renamed from: a */
         public void onViewRecycled(BaseViewHolder holder) {
             Intrinsics.e(holder, "holder");
-            super.onViewRecycled(holder);
+            super.onViewRecycled((RecyclerView.ViewHolder) holder);
             SVGAImageView sVGAImageView = (SVGAImageView) holder.getView(R.id.iv_apng);
             if (sVGAImageView == null) {
                 return;
@@ -207,11 +198,10 @@ public class YYPagePkFragment extends BaseFragment {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.chad.library.adapter.base.BaseQuickAdapter
         /* renamed from: a */
         public void convert(BaseViewHolder baseViewHolder, YYRecommendPkModel yYRecommendPkModel) {
             Integer valueOf = yYRecommendPkModel == null ? null : Integer.valueOf(yYRecommendPkModel.getItemType());
-            int i = this.f17377c;
+            int i = this.c;
             if (valueOf != null && valueOf.intValue() == i) {
                 b(baseViewHolder);
                 return;
@@ -332,8 +322,8 @@ public class YYPagePkFragment extends BaseFragment {
     }
 
     private final void b(View view) {
-        this.e = (RecyclerView) view.findViewById(R.id.rv_room_list);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        this.e = view.findViewById(R.id.rv_room_list);
+        RecyclerView.LayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setOrientation(1);
         this.k = getContext() == null ? null : new RoomAdapter(this);
         RecyclerView recyclerView = this.e;
@@ -476,7 +466,7 @@ public class YYPagePkFragment extends BaseFragment {
         if (this.m == null) {
             a(5, true);
         }
-        YYConfigureTimeDialog a2 = YYConfigureTimeDialog.f17171a.a(this.o);
+        YYConfigureTimeDialog a2 = YYConfigureTimeDialog.a.a(this.o);
         this.m = a2;
         if (a2 == null) {
             return;
@@ -510,7 +500,7 @@ public class YYPagePkFragment extends BaseFragment {
     public void a(View view) {
         Intrinsics.e(view, "view");
         this.b = (PkRotationView) view.findViewById(R.id.living_room_list);
-        this.f17375c = (TextView) view.findViewById(R.id.tv_living_count);
+        this.c = (TextView) view.findViewById(R.id.tv_living_count);
         ShapeTextView shapeTextView = (ShapeTextView) view.findViewById(R.id.btn_match);
         this.d = shapeTextView;
         if (shapeTextView == null) {
@@ -530,11 +520,11 @@ public class YYPagePkFragment extends BaseFragment {
             YYEventMatching yYEventMatching = new YYEventMatching();
             yYEventMatching.matchType = type;
             LiveEventBus.get("show_matching_pk").post(yYEventMatching);
-            Fragment parentFragment = getParentFragment();
+            BaseDialogFragment parentFragment = getParentFragment();
             if (parentFragment == null) {
                 throw new NullPointerException("null cannot be cast to non-null type com.blued.android.core.ui.BaseDialogFragment");
             }
-            ((BaseDialogFragment) parentFragment).dismiss();
+            parentFragment.dismiss();
         } catch (Exception e) {
         }
     }
@@ -652,7 +642,7 @@ public class YYPagePkFragment extends BaseFragment {
                 }
                 List<YYRecommendPkModel> list = bluedEntityA == null ? null : bluedEntityA.data;
                 Intrinsics.a(list);
-                f.addData((Collection) list);
+                f.addData(list);
             }
         }, getFragmentActive());
     }
@@ -671,7 +661,7 @@ public class YYPagePkFragment extends BaseFragment {
         }, getFragmentActive());
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         this.l = YYRoomInfoManager.e().b();
@@ -684,22 +674,20 @@ public class YYPagePkFragment extends BaseFragment {
             str = yYRoomModel2.uid;
         }
         EventTrackYY.d(event, str2, str);
-        YYPagePkFragment yYPagePkFragment = this;
-        getChildFragmentManager().setFragmentResultListener("search_name", yYPagePkFragment, new FragmentResultListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYPagePkFragment$cH48MWkZSXSsfvdKLkiah1tAKUQ
-            @Override // androidx.fragment.app.FragmentResultListener
+        LifecycleOwner lifecycleOwner = (LifecycleOwner) this;
+        getChildFragmentManager().setFragmentResultListener("search_name", lifecycleOwner, new FragmentResultListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYPagePkFragment$cH48MWkZSXSsfvdKLkiah1tAKUQ
             public final void onFragmentResult(String str3, Bundle bundle2) {
                 YYPagePkFragment.a(YYPagePkFragment.this, str3, bundle2);
             }
         });
-        getChildFragmentManager().setFragmentResultListener("option_time", yYPagePkFragment, new FragmentResultListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYPagePkFragment$l52Mc39oEiPIldS0AXjcfEFBIpw
-            @Override // androidx.fragment.app.FragmentResultListener
+        getChildFragmentManager().setFragmentResultListener("option_time", lifecycleOwner, new FragmentResultListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYPagePkFragment$l52Mc39oEiPIldS0AXjcfEFBIpw
             public final void onFragmentResult(String str3, Bundle bundle2) {
                 YYPagePkFragment.b(YYPagePkFragment.this, str3, bundle2);
             }
         });
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
         View view = getLayoutInflater().inflate(R.layout.fragment_page_pk_layout, (ViewGroup) null);
@@ -710,7 +698,7 @@ public class YYPagePkFragment extends BaseFragment {
         return view;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onDestroyView() {
         super.onDestroyView();
         YYConfigureTimeDialog yYConfigureTimeDialog = this.m;
@@ -728,7 +716,7 @@ public class YYPagePkFragment extends BaseFragment {
         pkRotationView.a();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onViewCreated(View view, Bundle bundle) {
         Intrinsics.e(view, "view");
         super.onViewCreated(view, bundle);

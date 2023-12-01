@@ -16,7 +16,7 @@ public class PngChunkOFFS extends PngChunkSingle {
 
     @Override // ar.com.hjg.pngj.chunks.PngChunk
     public void a(ChunkRaw chunkRaw) {
-        if (chunkRaw.f3659a != 9) {
+        if (chunkRaw.f3611a != 9) {
             throw new PngjException("bad chunk length " + chunkRaw);
         }
         long c2 = PngHelperInternal.c(chunkRaw.d, 0);

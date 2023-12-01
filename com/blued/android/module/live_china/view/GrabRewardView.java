@@ -41,13 +41,9 @@ import com.jeremyliao.liveeventbus.LiveEventBus;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/GrabRewardView.class */
 public class GrabRewardView extends FrameLayout implements View.OnClickListener, LiveRewardStatusObserver.ILiveRewardStatusObserver {
-
-    /* renamed from: a  reason: collision with root package name */
-    public BaseFragment f14291a;
+    public BaseFragment a;
     public boolean b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private View f14292c;
+    private View c;
     private Context d;
     private LayoutInflater e;
     private RecordingOnliveFragment f;
@@ -124,24 +120,24 @@ public class GrabRewardView extends FrameLayout implements View.OnClickListener,
         LayoutInflater from = LayoutInflater.from(this.d);
         this.e = from;
         View inflate = from.inflate(R.layout.live_grab_reward_layout, (ViewGroup) this, true);
-        this.f14292c = inflate;
+        this.c = inflate;
         this.h = (ImageView) inflate.findViewById(R.id.grab_reward_image);
-        this.i = (TextView) this.f14292c.findViewById(R.id.grab_reward_btn);
-        this.j = (TextView) this.f14292c.findViewById(R.id.got_reward_btn);
-        this.k = (TextView) this.f14292c.findViewById(R.id.robbed_reward_btn);
-        this.l = this.f14292c.findViewById(R.id.grab_reward_chronomete_root);
-        this.m = (Chronometer) this.f14292c.findViewById(R.id.grab_reward_chronometer);
+        this.i = (TextView) this.c.findViewById(R.id.grab_reward_btn);
+        this.j = (TextView) this.c.findViewById(R.id.got_reward_btn);
+        this.k = (TextView) this.c.findViewById(R.id.robbed_reward_btn);
+        this.l = this.c.findViewById(R.id.grab_reward_chronomete_root);
+        this.m = (Chronometer) this.c.findViewById(R.id.grab_reward_chronometer);
         this.h.setOnClickListener(this);
         this.i.setOnClickListener(this);
     }
 
     private void j() {
-        if (this.f14291a.getParentFragment() == null || !this.f14291a.getParentFragment().isAdded()) {
+        if (this.a.getParentFragment() == null || !this.a.getParentFragment().isAdded()) {
             return;
         }
         LiveGrabRewardFansGrayDlgFragment liveGrabRewardFansGrayDlgFragment = new LiveGrabRewardFansGrayDlgFragment();
         liveGrabRewardFansGrayDlgFragment.setCancelable(true);
-        liveGrabRewardFansGrayDlgFragment.show(this.f14291a.getParentFragment().getChildFragmentManager(), liveGrabRewardFansGrayDlgFragment.b());
+        liveGrabRewardFansGrayDlgFragment.show(this.a.getParentFragment().getChildFragmentManager(), liveGrabRewardFansGrayDlgFragment.b());
     }
 
     public Boolean a(LiveRewardModel liveRewardModel) {
@@ -160,7 +156,7 @@ public class GrabRewardView extends FrameLayout implements View.OnClickListener,
                 setRewardView(liveRewardModel.status);
             }
             Logger.a("drb", "mLiveRewardModel is_anim = ", Integer.valueOf(liveRewardModel.is_anim));
-            if ((this.f14291a instanceof PlayingOnliveBaseModeFragment) && liveRewardModel.status == 0 && liveRewardModel.is_anim == 1) {
+            if ((this.a instanceof PlayingOnliveBaseModeFragment) && liveRewardModel.status == 0 && liveRewardModel.is_anim == 1) {
                 LiveGiftModel liveGiftModel = new LiveGiftModel();
                 liveGiftModel.anim_code = "hongbao";
                 PlayingOnliveBaseModeFragment playingOnliveBaseModeFragment = this.g;
@@ -175,6 +171,7 @@ public class GrabRewardView extends FrameLayout implements View.OnClickListener,
         return true;
     }
 
+    /* JADX WARN: Type inference failed for: r1v5, types: [com.blued.android.module.live_china.view.GrabRewardView$2] */
     public void a() {
         Logger.a("drb", "mLiveRewardModel.start_second = ", Long.valueOf(this.q.start_second));
         Logger.a("drb", "mLiveRewardModel.remaining_millisecond = ", Long.valueOf(this.q.remaining_millisecond));
@@ -202,6 +199,7 @@ public class GrabRewardView extends FrameLayout implements View.OnClickListener,
         }
         final long j = this.q.remaining_millisecond % 1000;
         AppInfo.n().postDelayed(new Runnable() { // from class: com.blued.android.module.live_china.view.GrabRewardView.1
+            /* JADX WARN: Type inference failed for: r1v0, types: [com.blued.android.module.live_china.view.GrabRewardView$1$1] */
             @Override // java.lang.Runnable
             public void run() {
                 GrabRewardView.this.p = new CountDownTimer(GrabRewardView.this.q.remaining_millisecond - j, 1000L) { // from class: com.blued.android.module.live_china.view.GrabRewardView.1.1
@@ -234,7 +232,7 @@ public class GrabRewardView extends FrameLayout implements View.OnClickListener,
     }
 
     public void a(BaseFragment baseFragment) {
-        this.f14291a = baseFragment;
+        this.a = baseFragment;
         if (baseFragment instanceof RecordingOnliveFragment) {
             this.b = true;
             RecordingOnliveFragment recordingOnliveFragment = (RecordingOnliveFragment) baseFragment;
@@ -249,7 +247,7 @@ public class GrabRewardView extends FrameLayout implements View.OnClickListener,
     }
 
     public void a(String str, long j, String str2, final String str3) {
-        LiveRoomHttpUtils.a(new BluedUIHttpResponse<BluedEntity<LiveRewardListModel, LiveRewardExtraModel>>(this.f14291a.getFragmentActive()) { // from class: com.blued.android.module.live_china.view.GrabRewardView.5
+        LiveRoomHttpUtils.a(new BluedUIHttpResponse<BluedEntity<LiveRewardListModel, LiveRewardExtraModel>>(this.a.getFragmentActive()) { // from class: com.blued.android.module.live_china.view.GrabRewardView.5
             @Override // com.blued.android.framework.http.BluedUIHttpResponse, com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
             public void onFailure(final Throwable th, final int i, final String str4) {
                 AppInfo.n().post(new Runnable() { // from class: com.blued.android.module.live_china.view.GrabRewardView.5.1
@@ -275,7 +273,7 @@ public class GrabRewardView extends FrameLayout implements View.OnClickListener,
                     if (bluedEntity.data == null || bluedEntity.data.size() <= 0) {
                         return;
                     }
-                    PopRewardListView.a(GrabRewardView.this.f14291a, GrabRewardView.this.q, bluedEntity.data.get(0), null);
+                    PopRewardListView.a(GrabRewardView.this.a, GrabRewardView.this.q, bluedEntity.data.get(0), null);
                     if (TextUtils.isEmpty(str3)) {
                         return;
                     }
@@ -292,26 +290,27 @@ public class GrabRewardView extends FrameLayout implements View.OnClickListener,
     }
 
     public void a(Throwable th, int i, String str) {
-        Pair<Integer, String> a2 = BluedHttpUtils.a(th, i, str);
+        Pair<Integer, String> a = BluedHttpUtils.a(th, i, str);
         RewardErrorModel rewardErrorModel = new RewardErrorModel();
         rewardErrorModel.throwable = th;
         rewardErrorModel.statusCode = i;
         rewardErrorModel.content = str;
-        if (a2.first.intValue() == 4032014) {
-            PopRewardListView.a(this.f14291a, this.q, null, rewardErrorModel);
-        } else if (a2.first.intValue() == 4032021) {
-            PopRewardListView.a(this.f14291a, this.q, null, rewardErrorModel);
-        } else if (a2.first.intValue() == 4032022) {
-            PopRewardListView.a(this.f14291a, this.q, null, rewardErrorModel);
-        } else if (a2.first.intValue() == 4032015) {
+        if (((Integer) a.first).intValue() == 4032014) {
+            PopRewardListView.a(this.a, this.q, null, rewardErrorModel);
+        } else if (((Integer) a.first).intValue() == 4032021) {
+            PopRewardListView.a(this.a, this.q, null, rewardErrorModel);
+        } else if (((Integer) a.first).intValue() == 4032022) {
+            PopRewardListView.a(this.a, this.q, null, rewardErrorModel);
+        } else if (((Integer) a.first).intValue() == 4032015) {
             AppMethods.a((CharSequence) this.d.getString(R.string.live_live_receive_conditions_toast), true);
-        } else if (a2.first.intValue() == 4034003) {
+        } else if (((Integer) a.first).intValue() == 4034003) {
             j();
         } else {
             BluedHttpUtils.b(th, i, str);
         }
     }
 
+    /* JADX WARN: Type inference failed for: r1v0, types: [com.blued.android.module.live_china.view.GrabRewardView$3] */
     public void b() {
         this.o = new CountDownTimer(1000 * this.q.end_second, 1000L) { // from class: com.blued.android.module.live_china.view.GrabRewardView.3
             @Override // android.os.CountDownTimer
@@ -345,18 +344,18 @@ public class GrabRewardView extends FrameLayout implements View.OnClickListener,
                     AppMethods.d(R.string.live_reward_after_count_down);
                 }
             } else if (this.b) {
-                PopRewardListView.a(this.f14291a, this.q);
+                PopRewardListView.a(this.a, this.q);
             } else {
                 LiveRewardModel liveRewardModel = this.q;
                 if (liveRewardModel != null) {
                     if (liveRewardModel.status == 1) {
-                        PopRewardListView.a(this.f14291a, this.q);
+                        PopRewardListView.a(this.a, this.q);
                     } else if (this.q.status == 2) {
-                        PopRewardListView.a(this.f14291a, this.q);
+                        PopRewardListView.a(this.a, this.q);
                     } else if (TextUtils.isEmpty(this.q.pwd) || this.q.hasPwdTip) {
                         a(this.q.hongbao_id, this.n, "", this.q.pwd);
                     } else {
-                        PopRewardListView.a(this.f14291a, this.q).a(new PopRewardListView.OnPopEventCallBack() { // from class: com.blued.android.module.live_china.view.GrabRewardView.4
+                        PopRewardListView.a(this.a, this.q).a(new PopRewardListView.OnPopEventCallBack() { // from class: com.blued.android.module.live_china.view.GrabRewardView.4
                             @Override // com.blued.android.module.live_china.view.PopRewardListView.OnPopEventCallBack
                             public void a(boolean z) {
                                 GrabRewardView.this.q.hasPwdTip = z;

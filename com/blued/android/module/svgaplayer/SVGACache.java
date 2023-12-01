@@ -1,6 +1,7 @@
 package com.blued.android.module.svgaplayer;
 
 import android.content.Context;
+import com.anythink.core.common.k.f;
 import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.blued.android.module.svgaplayer.utils.log.LogUtils;
 import java.io.File;
@@ -15,13 +16,9 @@ import kotlin.jvm.internal.StringCompanionObject;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/svgaplayer/SVGACache.class */
 public final class SVGACache {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final SVGACache f15940a = new SVGACache();
+    public static final SVGACache a = new SVGACache();
     private static Type b = Type.FILE;
-
-    /* renamed from: c  reason: collision with root package name */
-    private static String f15941c = BridgeUtil.SPLIT_MARK;
+    private static String c = BridgeUtil.SPLIT_MARK;
 
     @Metadata
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/svgaplayer/SVGACache$Type.class */
@@ -34,13 +31,13 @@ public final class SVGACache {
     }
 
     private final String c() {
-        if (!Intrinsics.a((Object) f15941c, (Object) BridgeUtil.SPLIT_MARK)) {
-            File file = new File(f15941c);
+        if (!Intrinsics.a((Object) c, (Object) BridgeUtil.SPLIT_MARK)) {
+            File file = new File(c);
             if (!file.exists()) {
                 file.mkdirs();
             }
         }
-        return f15941c;
+        return c;
     }
 
     public final String a(URL url) {
@@ -60,8 +57,8 @@ public final class SVGACache {
         if (a() || context == null || (externalCacheDir = context.getExternalCacheDir()) == null) {
             return;
         }
-        f15941c = externalCacheDir.getAbsolutePath() + "/svga/";
-        File file = new File(f15940a.c());
+        c = externalCacheDir.getAbsolutePath() + "/svga/";
+        File file = new File(a.c());
         if (!(!file.exists())) {
             file = null;
         }
@@ -86,7 +83,7 @@ public final class SVGACache {
             for (File file2 : listFiles) {
                 if (file2.exists()) {
                     if (file2.isDirectory()) {
-                        SVGACache sVGACache = f15940a;
+                        SVGACache sVGACache = a;
                         String absolutePath = file2.getAbsolutePath();
                         Intrinsics.c(absolutePath, "file.absolutePath");
                         sVGACache.a(absolutePath);
@@ -95,7 +92,7 @@ public final class SVGACache {
                 }
             }
         } catch (Exception e) {
-            LogUtils.f16034a.a("SVGACache", "Clear svga cache path: " + path + " fail", e);
+            LogUtils.a.a("SVGACache", "Clear svga cache path: " + path + " fail", e);
         }
     }
 
@@ -114,7 +111,7 @@ public final class SVGACache {
 
     public final String c(String str) {
         Intrinsics.e(str, "str");
-        MessageDigest messageDigest = MessageDigest.getInstance("MD5");
+        MessageDigest messageDigest = MessageDigest.getInstance(f.a);
         Charset forName = Charset.forName("UTF-8");
         Intrinsics.c(forName, "forName(charsetName)");
         byte[] bytes = str.getBytes(forName);
@@ -133,7 +130,7 @@ public final class SVGACache {
             byte b2 = digest[i2];
             StringBuilder sb = new StringBuilder();
             sb.append(str2);
-            StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
+            StringCompanionObject stringCompanionObject = StringCompanionObject.a;
             String format = String.format("%02x", Arrays.copyOf(new Object[]{Byte.valueOf(b2)}, 1));
             Intrinsics.c(format, "format(format, *args)");
             sb.append(format);

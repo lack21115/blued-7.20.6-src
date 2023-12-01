@@ -12,7 +12,7 @@ public final class MessageDecoder {
     private ByteBuffer buf = ByteBuffer.allocate(defaultDecoderCapacity);
 
     private void byteBufferCopy(ByteBuffer byteBuffer, ByteBuffer byteBuffer2) {
-        System.arraycopy((Object) byteBuffer2.array(), 0, (Object) byteBuffer.array(), 0, byteBuffer2.position());
+        System.arraycopy(byteBuffer2.array(), 0, byteBuffer.array(), 0, byteBuffer2.position());
         byteBuffer.position(byteBuffer2.position());
     }
 

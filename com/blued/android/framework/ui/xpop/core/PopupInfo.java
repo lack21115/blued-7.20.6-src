@@ -17,13 +17,9 @@ public class PopupInfo {
     public ViewGroup q;
     public int x;
     public int y;
-
-    /* renamed from: a  reason: collision with root package name */
-    public PopupType f9987a = null;
+    public PopupType a = null;
     public Boolean b = true;
-
-    /* renamed from: c  reason: collision with root package name */
-    public Boolean f9988c = true;
+    public Boolean c = true;
     public Boolean d = true;
     public Boolean e = true;
     public Boolean f = false;

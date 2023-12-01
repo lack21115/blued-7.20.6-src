@@ -5,7 +5,7 @@ public final class f extends com.igexin.c.a.d.c {
     private static final String b = "SocketTimeoutCallBack";
 
     public f() {
-        this.f23264a = true;
+        this.f9656a = true;
     }
 
     @Override // com.igexin.c.a.d.a.g

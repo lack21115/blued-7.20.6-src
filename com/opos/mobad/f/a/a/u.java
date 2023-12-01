@@ -8,14 +8,14 @@ import java.util.List;
 public class u {
 
     /* renamed from: a  reason: collision with root package name */
-    private List<e.a> f26056a;
+    private List<e.a> f12368a;
     private HashMap<Integer, e.a> b = new HashMap<>();
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public u(List<e.a> list) {
-        this.f26056a = list;
-        for (e.a aVar : this.f26056a) {
-            this.b.put(Integer.valueOf(aVar.f27301a), aVar);
+        this.f12368a = list;
+        for (e.a aVar : this.f12368a) {
+            this.b.put(Integer.valueOf(aVar.f13613a), aVar);
         }
     }
 

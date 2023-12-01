@@ -7,6 +7,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.util.AttributeSet;
+import android.view.View;
 import com.blued.android.module.common.R;
 import com.blued.android.module.common.svg_android.SVGParser;
 
@@ -28,7 +29,7 @@ public class SvgImageView extends BaseImageView {
         Bitmap createBitmap = Bitmap.createBitmap(i, i2, Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(createBitmap);
         Paint paint = new Paint(1);
-        paint.setColor(-16777216);
+        paint.setColor(View.MEASURED_STATE_MASK);
         if (i3 > 0) {
             canvas.drawPicture(SVGParser.a(context.getResources().openRawResource(i3), i, i2).a());
             return createBitmap;
@@ -45,6 +46,6 @@ public class SvgImageView extends BaseImageView {
 
     @Override // com.blued.android.module.common.view.BaseImageView
     public Bitmap getBitmap() {
-        return a(this.f10944a, getWidth(), getHeight(), this.b);
+        return a(this.a, getWidth(), getHeight(), this.b);
     }
 }

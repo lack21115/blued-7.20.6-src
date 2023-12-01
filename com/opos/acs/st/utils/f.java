@@ -8,21 +8,21 @@ import java.util.TimerTask;
 public final class f extends TimerTask {
 
     /* renamed from: a  reason: collision with root package name */
-    private long f24467a;
+    private long f10780a;
     private long b;
 
     /* renamed from: c  reason: collision with root package name */
-    private long f24468c;
+    private long f10781c;
     private Context d;
 
     public f(Context context, long j, long j2, long j3) {
-        this.f24467a = 60000L;
+        this.f10780a = 60000L;
         this.b = 60000L;
-        this.f24468c = 60000L;
+        this.f10781c = 60000L;
         this.d = context;
-        this.f24467a = j;
+        this.f10780a = j;
         this.b = j2;
-        this.f24468c = j3;
+        this.f10781c = j3;
     }
 
     private void a(long j) {
@@ -52,22 +52,22 @@ public final class f extends TimerTask {
                 return;
             }
             h.b(this.d);
-            long j2 = this.f24467a;
+            long j2 = this.f10780a;
             if (j2 != 0) {
                 long j3 = this.b;
                 if (j3 == 0 || j2 == j3) {
                     return;
                 }
-                if (h.d(this.d) && this.f24468c == this.f24467a) {
+                if (h.d(this.d) && this.f10781c == this.f10780a) {
                     a(this.b);
                     j = this.b;
-                } else if (h.d(this.d) || this.f24468c != this.b) {
+                } else if (h.d(this.d) || this.f10781c != this.b) {
                     return;
                 } else {
-                    a(this.f24467a);
-                    j = this.f24467a;
+                    a(this.f10780a);
+                    j = this.f10780a;
                 }
-                this.f24468c = j;
+                this.f10781c = j;
             }
         }
     }

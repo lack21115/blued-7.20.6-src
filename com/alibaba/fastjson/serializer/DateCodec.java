@@ -8,8 +8,6 @@ import com.alibaba.fastjson.parser.deserializer.AbstractDateDeserializer;
 import com.alibaba.fastjson.parser.deserializer.ObjectDeserializer;
 import com.alibaba.fastjson.util.IOUtils;
 import com.alibaba.fastjson.util.TypeUtils;
-import com.google.android.material.timepicker.TimeModel;
-import com.tencent.thumbplayer.tplayer.plugins.report.TPReportParams;
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.text.DateFormat;
@@ -17,6 +15,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Grego;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alibaba/fastjson/serializer/DateCodec.class */
 public class DateCodec extends AbstractDateDeserializer implements ObjectDeserializer, ObjectSerializer {
@@ -92,7 +91,7 @@ public class DateCodec extends AbstractDateDeserializer implements ObjectDeseria
             serializeWriter.write(123);
             serializeWriter.writeFieldName(JSON.DEFAULT_TYPE_KEY);
             jSONSerializer.write(obj.getClass().getName());
-            serializeWriter.writeFieldValue(',', TPReportParams.JSON_KEY_VAL, ((Date) obj).getTime());
+            serializeWriter.writeFieldValue(',', "val", ((Date) obj).getTime());
             serializeWriter.write(125);
         } else {
             long time = castToDate.getTime();
@@ -135,14 +134,14 @@ public class DateCodec extends AbstractDateDeserializer implements ObjectDeseria
                 IOUtils.getChars(i3, 4, charArray);
             }
             serializeWriter.write(charArray);
-            int rawOffset = calendar.getTimeZone().getRawOffset() / 3600000;
+            int rawOffset = calendar.getTimeZone().getRawOffset() / Grego.MILLIS_PER_HOUR;
             if (rawOffset == 0) {
                 serializeWriter.write(90);
             } else {
                 if (rawOffset > 0) {
-                    serializeWriter.append('+').append((CharSequence) String.format(TimeModel.ZERO_LEADING_NUMBER_FORMAT, Integer.valueOf(rawOffset)));
+                    serializeWriter.append('+').append((CharSequence) String.format("%02d", Integer.valueOf(rawOffset)));
                 } else {
-                    serializeWriter.append('-').append((CharSequence) String.format(TimeModel.ZERO_LEADING_NUMBER_FORMAT, Integer.valueOf(-rawOffset)));
+                    serializeWriter.append('-').append((CharSequence) String.format("%02d", Integer.valueOf(-rawOffset)));
                 }
                 serializeWriter.append((CharSequence) ":00");
             }

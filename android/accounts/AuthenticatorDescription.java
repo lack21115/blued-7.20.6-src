@@ -2,7 +2,6 @@ package android.accounts;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.alipay.sdk.util.i;
 
 /* loaded from: source-9557208-dex2jar.jar:android/accounts/AuthenticatorDescription.class */
 public class AuthenticatorDescription implements Parcelable {
@@ -95,7 +94,7 @@ public class AuthenticatorDescription implements Parcelable {
     }
 
     public String toString() {
-        return "AuthenticatorDescription {type=" + this.type + i.d;
+        return "AuthenticatorDescription {type=" + this.type + "}";
     }
 
     @Override // android.os.Parcelable

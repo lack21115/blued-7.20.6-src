@@ -47,8 +47,9 @@ public abstract class ArrayBasedCharEscaper extends CharEscaper {
         return str2;
     }
 
+    /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.google.common.escape.CharEscaper
-    protected final char[] escape(char c2) {
+    public final char[] escape(char c2) {
         char[] cArr;
         if (c2 >= this.replacementsLength || (cArr = this.replacements[c2]) == null) {
             if (c2 < this.safeMin || c2 > this.safeMax) {

@@ -315,7 +315,7 @@ public final class e extends b implements bm.a {
 
     private void initContentView() {
         this.mPageUrl = com.kwad.sdk.core.response.a.b.bg(this.mAdTemplate);
-        this.mLandingPageView = com.kwad.components.core.page.c.b(this.mContext, new AdWebViewActivityProxy.a.C0529a().av(this.mPageUrl).L(this.mAdTemplate).oc());
+        this.mLandingPageView = com.kwad.components.core.page.c.b(this.mContext, new AdWebViewActivityProxy.a.C0359a().av(this.mPageUrl).L(this.mAdTemplate).oc());
         this.kB.a(this.kT);
         this.mLandingPageView.setLandPageViewListener(this.mLandPageViewListener);
         this.mLandingPageView.setWebCardCloseListener(this.mWebCardCloseListener);

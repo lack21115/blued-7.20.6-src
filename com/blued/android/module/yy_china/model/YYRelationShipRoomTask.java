@@ -153,7 +153,6 @@ public final class YYRelationShipRoomTask implements MultiItemEntity {
         return this.itemExtra;
     }
 
-    @Override // com.chad.library.adapter.base.entity.MultiItemEntity
     public int getItemType() {
         return this.itemTypes;
     }

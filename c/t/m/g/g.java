@@ -8,7 +8,6 @@ import android.os.Build;
 import android.os.Looper;
 import android.os.Message;
 import c.t.m.g.j3;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -61,10 +60,10 @@ public class g extends c2 {
     public class b implements t1 {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ File f3814a;
+        public final /* synthetic */ File f3766a;
 
         public b(g gVar, File file) {
-            this.f3814a = file;
+            this.f3766a = file;
         }
 
         @Override // c.t.m.g.t1
@@ -75,7 +74,7 @@ public class g extends c2 {
         @Override // c.t.m.g.t1
         public void b(String str) {
             g3.a();
-            this.f3814a.delete();
+            this.f3766a.delete();
         }
     }
 
@@ -287,11 +286,11 @@ public class g extends c2 {
                 int length = bytes.length;
                 int length2 = a2.length;
             }
-            File file = new File(this.f, "utr_" + i3.a(e.class.getName(), "SHA-256").substring(0, 8) + BridgeUtil.UNDERLINE_STR + t2.a("yyyyMMdd"));
+            File file = new File(this.f, "utr_" + i3.a(e.class.getName(), "SHA-256").substring(0, 8) + "_" + t2.a("yyyyMMdd"));
             z2.a(file, a2, true);
             if (file.length() > 51200) {
                 String parent = file.getParent();
-                file.renameTo(new File(parent, file.getName() + BridgeUtil.UNDERLINE_STR + t2.a("HHmmss")));
+                file.renameTo(new File(parent, file.getName() + "_" + t2.a("HHmmss")));
             }
         } catch (Throwable th) {
             g3.a();

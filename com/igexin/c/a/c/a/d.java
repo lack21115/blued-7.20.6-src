@@ -13,12 +13,12 @@ public class d extends Handler {
     public static final int b = 1;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final int f23257c = 2;
+    public static final int f9649c = 2;
     public static final String d = "log_data";
     private static final String e = d.class.getSimpleName();
 
     /* renamed from: a  reason: collision with root package name */
-    public final Messenger f23258a;
+    public final Messenger f9650a;
     private final StringBuffer f;
     private Messenger g;
 
@@ -26,7 +26,7 @@ public class d extends Handler {
     static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final d f23259a = new d((byte) 0);
+        private static final d f9651a = new d((byte) 0);
 
         private a() {
         }
@@ -34,7 +34,7 @@ public class d extends Handler {
 
     private d() {
         super(Looper.getMainLooper());
-        this.f23258a = new Messenger(this);
+        this.f9650a = new Messenger(this);
         this.f = new StringBuffer();
     }
 
@@ -43,7 +43,7 @@ public class d extends Handler {
     }
 
     public static d a() {
-        return a.f23259a;
+        return a.f9651a;
     }
 
     private void a(Message message) {
@@ -77,7 +77,7 @@ public class d extends Handler {
     }
 
     private IBinder c() {
-        return this.f23258a.getBinder();
+        return this.f9650a.getBinder();
     }
 
     public final void a(String str) {

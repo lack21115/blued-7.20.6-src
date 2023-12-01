@@ -26,9 +26,9 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
             this();
         }
 
-        public final int a(Collection<?> c2) {
-            Intrinsics.e(c2, "c");
-            Iterator<?> it = c2.iterator();
+        public final int a(Collection<?> c) {
+            Intrinsics.e(c, "c");
+            Iterator<?> it = c.iterator();
             int i = 1;
             while (true) {
                 int i2 = i;
@@ -55,14 +55,14 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
             }
         }
 
-        public final boolean a(Collection<?> c2, Collection<?> other) {
-            Intrinsics.e(c2, "c");
+        public final boolean a(Collection<?> c, Collection<?> other) {
+            Intrinsics.e(c, "c");
             Intrinsics.e(other, "other");
-            if (c2.size() != other.size()) {
+            if (c.size() != other.size()) {
                 return false;
             }
             Iterator<?> it = other.iterator();
-            Iterator<?> it2 = c2.iterator();
+            Iterator<?> it2 = c.iterator();
             while (it2.hasNext()) {
                 if (!Intrinsics.a(it2.next(), it.next())) {
                     return false;
@@ -174,32 +174,28 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
     @Metadata
     /* loaded from: source-3503164-dex2jar.jar:kotlin/collections/AbstractList$SubList.class */
     static final class SubList<E> extends AbstractList<E> implements RandomAccess {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final AbstractList<E> f42325a;
+        private final AbstractList<E> a;
         private final int b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private int f42326c;
+        private int c;
 
         /* JADX WARN: Multi-variable type inference failed */
         public SubList(AbstractList<? extends E> list, int i, int i2) {
             Intrinsics.e(list, "list");
-            this.f42325a = list;
+            this.a = list;
             this.b = i;
-            AbstractList.Companion.a(this.b, i2, this.f42325a.size());
-            this.f42326c = i2 - this.b;
+            AbstractList.Companion.a(this.b, i2, this.a.size());
+            this.c = i2 - this.b;
         }
 
         @Override // kotlin.collections.AbstractList, java.util.List
         public E get(int i) {
-            AbstractList.Companion.a(i, this.f42326c);
-            return this.f42325a.get(this.b + i);
+            AbstractList.Companion.a(i, this.c);
+            return this.a.get(this.b + i);
         }
 
         @Override // kotlin.collections.AbstractList, kotlin.collections.AbstractCollection
         public int getSize() {
-            return this.f42326c;
+            return this.c;
         }
     }
 
@@ -213,7 +209,7 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
@@ -224,12 +220,13 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
         return false;
     }
 
+    @Override // java.util.List
     public abstract E get(int i);
 
     @Override // kotlin.collections.AbstractCollection
     public abstract int getSize();
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     public int hashCode() {
         return Companion.a(this);
     }

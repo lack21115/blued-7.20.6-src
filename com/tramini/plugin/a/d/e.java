@@ -12,13 +12,13 @@ public final class e extends a {
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f40512c;
+    private String f26821c;
     private JSONObject d;
     private JSONObject e;
 
     public e(Context context, String str, JSONObject jSONObject, JSONObject jSONObject2) {
         this.b = context;
-        this.f40512c = str;
+        this.f26821c = str;
         this.d = jSONObject;
         this.e = jSONObject2;
     }
@@ -30,11 +30,11 @@ public final class e extends a {
 
     @Override // com.tramini.plugin.a.d.a
     protected final String a() {
-        com.tramini.plugin.a.c.c cVar = com.tramini.plugin.b.b.a(this.b).b().e().get(this.f40512c);
+        com.tramini.plugin.a.c.c cVar = com.tramini.plugin.b.b.a(this.b).b().e().get(this.f26821c);
         com.tramini.plugin.a.a.a();
         String c2 = com.tramini.plugin.a.a.c();
         if (cVar != null) {
-            c2 = cVar.f40502a;
+            c2 = cVar.f26811a;
         }
         return c2;
     }

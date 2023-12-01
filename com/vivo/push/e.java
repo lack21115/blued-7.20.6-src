@@ -21,7 +21,7 @@ import org.json.JSONObject;
 public final class e {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile e f41091a;
+    private static volatile e f27400a;
     private Context h;
     private com.vivo.push.util.b j;
     private String k;
@@ -33,7 +33,7 @@ public final class e {
     private long b = -1;
 
     /* renamed from: c  reason: collision with root package name */
-    private long f41092c = -1;
+    private long f27401c = -1;
     private long d = -1;
     private long e = -1;
     private long f = -1;
@@ -47,17 +47,17 @@ public final class e {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private IPushActionListener f41094a;
+        private IPushActionListener f27403a;
         private com.vivo.push.b.c b;
 
         /* renamed from: c  reason: collision with root package name */
-        private IPushActionListener f41095c;
+        private IPushActionListener f27404c;
         private Runnable d;
         private Object[] e;
 
         public a(com.vivo.push.b.c cVar, IPushActionListener iPushActionListener) {
             this.b = cVar;
-            this.f41094a = iPushActionListener;
+            this.f27403a = iPushActionListener;
         }
 
         public final void a() {
@@ -71,18 +71,18 @@ public final class e {
 
         public final void a(int i, Object... objArr) {
             this.e = objArr;
-            IPushActionListener iPushActionListener = this.f41095c;
+            IPushActionListener iPushActionListener = this.f27404c;
             if (iPushActionListener != null) {
                 iPushActionListener.onStateChanged(i);
             }
-            IPushActionListener iPushActionListener2 = this.f41094a;
+            IPushActionListener iPushActionListener2 = this.f27403a;
             if (iPushActionListener2 != null) {
                 iPushActionListener2.onStateChanged(i);
             }
         }
 
         public final void a(IPushActionListener iPushActionListener) {
-            this.f41095c = iPushActionListener;
+            this.f27404c = iPushActionListener;
         }
 
         public final void a(Runnable runnable) {
@@ -109,10 +109,10 @@ public final class e {
         e eVar;
         synchronized (e.class) {
             try {
-                if (f41091a == null) {
-                    f41091a = new e();
+                if (f27400a == null) {
+                    f27400a = new e();
                 }
-                eVar = f41091a;
+                eVar = f27400a;
             } catch (Throwable th) {
                 throw th;
             }
@@ -466,12 +466,12 @@ public final class e {
             }
         } else if ("".equals(this.k)) {
             iPushActionListener.onStateChanged(0);
-        } else if (!a(this.f41092c)) {
+        } else if (!a(this.f27401c)) {
             if (iPushActionListener != null) {
                 iPushActionListener.onStateChanged(1002);
             }
         } else {
-            this.f41092c = SystemClock.elapsedRealtime();
+            this.f27401c = SystemClock.elapsedRealtime();
             String packageName = this.h.getPackageName();
             if (this.h == null) {
                 aVar = null;

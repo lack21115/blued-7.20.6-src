@@ -18,11 +18,11 @@ import com.tencent.smtt.export.external.DexLoader;
 class t extends FrameLayout implements MediaPlayer.OnErrorListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private Object f38885a;
+    private Object f25194a;
     private v b;
 
     /* renamed from: c  reason: collision with root package name */
-    private VideoView f38886c;
+    private VideoView f25195c;
     private Context d;
     private String e;
 
@@ -37,24 +37,24 @@ class t extends FrameLayout implements MediaPlayer.OnErrorListener {
         a();
         if (b()) {
             bundle.putInt("callMode", bundle.getInt("callMode"));
-            z = this.b.a(this.f38885a, bundle, this, obj);
+            z = this.b.a(this.f25194a, bundle, this, obj);
         } else {
             z = false;
         }
         if (z) {
             return;
         }
-        VideoView videoView = this.f38886c;
+        VideoView videoView = this.f25195c;
         if (videoView != null) {
             videoView.stopPlayback();
         }
-        if (this.f38886c == null) {
-            this.f38886c = new VideoView(getContext());
+        if (this.f25195c == null) {
+            this.f25195c = new VideoView(getContext());
         }
         String string = bundle.getString("videoUrl");
         this.e = string;
-        this.f38886c.setVideoURI(Uri.parse(string));
-        this.f38886c.setOnErrorListener(this);
+        this.f25195c.setVideoURI(Uri.parse(string));
+        this.f25195c.setOnErrorListener(this);
         Intent intent = new Intent("com.tencent.smtt.tbs.video.PLAY");
         intent.addFlags(268435456);
         Context applicationContext = getContext().getApplicationContext();
@@ -77,15 +77,15 @@ class t extends FrameLayout implements MediaPlayer.OnErrorListener {
             }
         }
         v vVar = this.b;
-        if (vVar == null || this.f38885a != null) {
+        if (vVar == null || this.f25194a != null) {
             return;
         }
-        this.f38885a = vVar.a(getContext().getApplicationContext());
+        this.f25194a = vVar.a(getContext().getApplicationContext());
     }
 
     public void a(Activity activity) {
         VideoView videoView;
-        if (b() || (videoView = this.f38886c) == null) {
+        if (b() || (videoView = this.f25195c) == null) {
             return;
         }
         if (videoView.getParent() == null) {
@@ -95,14 +95,14 @@ class t extends FrameLayout implements MediaPlayer.OnErrorListener {
             window.addFlags(128);
             frameLayout.setBackgroundColor(-16777216);
             MediaController mediaController = new MediaController(activity);
-            mediaController.setMediaPlayer(this.f38886c);
-            this.f38886c.setMediaController(mediaController);
+            mediaController.setMediaPlayer(this.f25195c);
+            this.f25195c.setMediaController(mediaController);
             FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-1, -1);
             layoutParams.gravity = 17;
-            frameLayout.addView(this.f38886c, layoutParams);
+            frameLayout.addView(this.f25195c, layoutParams);
         }
         if (Build.VERSION.SDK_INT >= 8) {
-            this.f38886c.start();
+            this.f25195c.start();
         }
     }
 
@@ -110,14 +110,14 @@ class t extends FrameLayout implements MediaPlayer.OnErrorListener {
     public void a(Activity activity, int i) {
         VideoView videoView;
         VideoView videoView2;
-        if (i == 3 && !b() && (videoView2 = this.f38886c) != null) {
+        if (i == 3 && !b() && (videoView2 = this.f25195c) != null) {
             videoView2.pause();
         }
         if (i == 4) {
             this.d = null;
-            if (!b() && (videoView = this.f38886c) != null) {
+            if (!b() && (videoView = this.f25195c) != null) {
                 videoView.stopPlayback();
-                this.f38886c = null;
+                this.f25195c = null;
             }
         }
         if (i == 2 && !b()) {
@@ -125,7 +125,7 @@ class t extends FrameLayout implements MediaPlayer.OnErrorListener {
             a(activity);
         }
         if (b()) {
-            this.b.a(this.f38885a, activity, i);
+            this.b.a(this.f25194a, activity, i);
         }
     }
 
@@ -135,12 +135,12 @@ class t extends FrameLayout implements MediaPlayer.OnErrorListener {
     }
 
     public boolean b() {
-        return (this.b == null || this.f38885a == null) ? false : true;
+        return (this.b == null || this.f25194a == null) ? false : true;
     }
 
     public void c() {
         if (b()) {
-            this.b.a(this.f38885a);
+            this.b.a(this.f25194a);
         }
     }
 

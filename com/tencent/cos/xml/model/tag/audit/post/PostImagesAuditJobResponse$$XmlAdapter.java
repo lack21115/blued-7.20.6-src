@@ -19,6 +19,7 @@ public class PostImagesAuditJobResponse$$XmlAdapter implements IXmlAdapter<PostI
         HashMap<String, ChildElementBinder<PostImagesAuditJobResponse>> hashMap = new HashMap<>();
         this.childElementBinders = hashMap;
         hashMap.put("JobsDetail", new ChildElementBinder<PostImagesAuditJobResponse>() { // from class: com.tencent.cos.xml.model.tag.audit.post.PostImagesAuditJobResponse$$XmlAdapter.1
+            /* JADX WARN: Multi-variable type inference failed */
             @Override // com.tencent.qcloud.qcloudxml.core.ChildElementBinder
             public void fromXml(XmlPullParser xmlPullParser, PostImagesAuditJobResponse postImagesAuditJobResponse, String str) throws IOException, XmlPullParserException {
                 if (postImagesAuditJobResponse.jobsDetail == null) {

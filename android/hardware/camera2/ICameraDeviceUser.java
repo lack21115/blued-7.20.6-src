@@ -30,9 +30,8 @@ public interface ICameraDeviceUser extends IInterface {
         static final int TRANSACTION_submitRequestList = 3;
         static final int TRANSACTION_waitUntilIdle = 11;
 
-        /* JADX INFO: Access modifiers changed from: private */
         /* loaded from: source-9557208-dex2jar.jar:android/hardware/camera2/ICameraDeviceUser$Stub$Proxy.class */
-        public static class Proxy implements ICameraDeviceUser {
+        private static class Proxy implements ICameraDeviceUser {
             private IBinder mRemote;
 
             Proxy(IBinder iBinder) {

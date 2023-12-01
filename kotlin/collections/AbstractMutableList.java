@@ -22,7 +22,7 @@ public abstract class AbstractMutableList<E> extends java.util.AbstractList<E> i
     @Override // java.util.AbstractList, java.util.List
     public abstract E set(int i, E e);
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    @Override // java.util.AbstractCollection, java.util.Collection
     public final int size() {
         return getSize();
     }

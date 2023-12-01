@@ -24,11 +24,11 @@ import com.soft.blued.ui.msg.ShareToGroupsFragment;
 public class YYInviteFragment extends BaseDialogFragment {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f34694a;
+    private Context f21003a;
     private ViewPager b;
 
     /* renamed from: c  reason: collision with root package name */
-    private PageTabLayout f34695c;
+    private PageTabLayout f21004c;
     private Bundle d;
     private View e;
     private View f;
@@ -62,9 +62,9 @@ public class YYInviteFragment extends BaseDialogFragment {
     private void e() {
         this.f = this.e.findViewById(R.id.invite_default_view);
         this.b = (ViewPager) this.e.findViewById(R.id.invite_pagers);
-        this.f34695c = (PageTabLayout) this.e.findViewById(R.id.invite_tablayout);
+        this.f21004c = this.e.findViewById(R.id.invite_tablayout);
         this.b.setId(R.id.invite_pagers);
-        this.f34695c.setupWithViewPager(this.b);
+        this.f21004c.setupWithViewPager(this.b);
         this.b.setAdapter(new MyAdapter(getChildFragmentManager()));
         this.f.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.yy_room.fragment.YYInviteFragment.1
             @Override // android.view.View.OnClickListener
@@ -79,7 +79,6 @@ public class YYInviteFragment extends BaseDialogFragment {
         return new String[]{getResources().getString(2131893151), getResources().getString(2131892981)};
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityCreated(Bundle bundle) {
         super.onActivityCreated(bundle);
         if (Build.VERSION.SDK_INT >= 23) {
@@ -91,33 +90,30 @@ public class YYInviteFragment extends BaseDialogFragment {
         e();
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        this.f34694a = getActivity();
+        this.f21003a = getActivity();
         setStyle(0, 2131952825);
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         View inflate = layoutInflater.inflate(R.layout.fragment_yy_invite_layout, viewGroup, false);
         this.e = inflate;
         return inflate;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
         LiveEventBus.get("inner_fragment_close").post("");
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment
+    /* JADX WARN: Multi-variable type inference failed */
     public void show(FragmentManager fragmentManager, String str) {
         try {
             ReflectionUtils.a(this, "mDismissed", false);
             ReflectionUtils.a(this, "mShownByMe", true);
             FragmentTransaction beginTransaction = fragmentManager.beginTransaction();
-            beginTransaction.add(this, str);
+            beginTransaction.add((Fragment) this, str);
             beginTransaction.commitAllowingStateLoss();
         } catch (Exception e) {
             super.show(fragmentManager, str);

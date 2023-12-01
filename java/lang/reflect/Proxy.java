@@ -1,6 +1,5 @@
 package java.lang.reflect;
 
-import com.bytedance.sdk.openadsdk.downloadnew.core.TTDownloadField;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -73,7 +72,7 @@ public class Proxy implements Serializable {
         ArrayList arrayList = new ArrayList();
         try {
             arrayList.add(Object.class.getMethod("equals", Object.class));
-            arrayList.add(Object.class.getMethod(TTDownloadField.TT_HASHCODE, EmptyArray.CLASS));
+            arrayList.add(Object.class.getMethod("hashCode", EmptyArray.CLASS));
             arrayList.add(Object.class.getMethod("toString", EmptyArray.CLASS));
             getMethodsRecursive(clsArr, arrayList);
             return arrayList;

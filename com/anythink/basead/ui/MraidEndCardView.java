@@ -36,7 +36,7 @@ public class MraidEndCardView extends BaseEndCardView {
     }
 
     public void init(boolean z) {
-        MraidContainerView mraidContainerView = new MraidContainerView(getContext(), this.b, this.f6058c, new MraidContainerView.a() { // from class: com.anythink.basead.ui.MraidEndCardView.1
+        MraidContainerView mraidContainerView = new MraidContainerView(getContext(), this.b, this.c, new MraidContainerView.a() { // from class: com.anythink.basead.ui.MraidEndCardView.1
             @Override // com.anythink.basead.ui.MraidContainerView.a
             public final void a() {
                 if (MraidEndCardView.this.f != null) {

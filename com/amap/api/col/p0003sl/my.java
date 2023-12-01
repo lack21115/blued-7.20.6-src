@@ -5,9 +5,7 @@ import java.text.SimpleDateFormat;
 /* renamed from: com.amap.api.col.3sl.my  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/my.class */
 public final class my {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static SimpleDateFormat f5398a;
+    private static SimpleDateFormat a;
     private static String b;
 
     public static String a(byte[] bArr, String str) {

@@ -11,25 +11,25 @@ import android.widget.RelativeLayout;
 public class PreviewMask extends RelativeLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f35774a = PreviewMask.class.getSimpleName();
+    private static final String f22083a = PreviewMask.class.getSimpleName();
     private static final int b = Color.argb(0, 0, 0, 0);
 
     /* renamed from: c  reason: collision with root package name */
-    private HeadBorderView f35775c;
+    private HeadBorderView f22084c;
     private int d;
 
     public PreviewMask(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         ViewGroup.LayoutParams layoutParams = new RelativeLayout.LayoutParams(-1, -1);
         HeadBorderView headBorderView = new HeadBorderView(context.getApplicationContext());
-        this.f35775c = headBorderView;
+        this.f22084c = headBorderView;
         addView(headBorderView, layoutParams);
         this.d = b;
         setWillNotDraw(false);
     }
 
     public HeadBorderView a() {
-        return this.f35775c;
+        return this.f22084c;
     }
 
     public void b() {
@@ -37,15 +37,14 @@ public class PreviewMask extends RelativeLayout {
         invalidate();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
     }
 
     public void setReflectColor(int i) {
         this.d = i;
-        this.f35775c.b(i);
+        this.f22084c.b(i);
         invalidate();
     }
 }

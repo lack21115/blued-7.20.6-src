@@ -23,7 +23,7 @@ public abstract class AutoScrollHelper implements View.OnTouchListener {
     final View b;
 
     /* renamed from: c  reason: collision with root package name */
-    boolean f2743c;
+    boolean f2695c;
     boolean d;
     boolean e;
     private Runnable g;
@@ -34,7 +34,7 @@ public abstract class AutoScrollHelper implements View.OnTouchListener {
     private boolean q;
 
     /* renamed from: a  reason: collision with root package name */
-    final ClampedScroller f2742a = new ClampedScroller();
+    final ClampedScroller f2694a = new ClampedScroller();
     private final Interpolator f = new AccelerateInterpolator();
     private float[] h = {0.0f, 0.0f};
     private float[] i = {Float.MAX_VALUE, Float.MAX_VALUE};
@@ -47,11 +47,11 @@ public abstract class AutoScrollHelper implements View.OnTouchListener {
     public static class ClampedScroller {
 
         /* renamed from: a  reason: collision with root package name */
-        private int f2744a;
+        private int f2696a;
         private int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private float f2745c;
+        private float f2697c;
         private float d;
         private float j;
         private int k;
@@ -74,7 +74,7 @@ public abstract class AutoScrollHelper implements View.OnTouchListener {
             }
             long j2 = this.i;
             if (j2 < 0 || j < j2) {
-                return AutoScrollHelper.a(((float) (j - this.e)) / this.f2744a, 0.0f, 1.0f) * 0.5f;
+                return AutoScrollHelper.a(((float) (j - this.e)) / this.f2696a, 0.0f, 1.0f) * 0.5f;
             }
             float f = this.j;
             return (1.0f - f) + (f * AutoScrollHelper.a(((float) (j - j2)) / this.k, 0.0f, 1.0f));
@@ -89,7 +89,7 @@ public abstract class AutoScrollHelper implements View.OnTouchListener {
             long j = this.f;
             this.f = currentAnimationTimeMillis;
             float f = ((float) (currentAnimationTimeMillis - j)) * a2;
-            this.g = (int) (this.f2745c * f);
+            this.g = (int) (this.f2697c * f);
             this.h = (int) (f * this.d);
         }
 
@@ -102,7 +102,7 @@ public abstract class AutoScrollHelper implements View.OnTouchListener {
         }
 
         public int getHorizontalDirection() {
-            float f = this.f2745c;
+            float f = this.f2697c;
             return (int) (f / Math.abs(f));
         }
 
@@ -127,11 +127,11 @@ public abstract class AutoScrollHelper implements View.OnTouchListener {
         }
 
         public void setRampUpDuration(int i) {
-            this.f2744a = i;
+            this.f2696a = i;
         }
 
         public void setTargetVelocity(float f, float f2) {
-            this.f2745c = f;
+            this.f2697c = f;
             this.d = f2;
         }
 
@@ -155,11 +155,11 @@ public abstract class AutoScrollHelper implements View.OnTouchListener {
         @Override // java.lang.Runnable
         public void run() {
             if (AutoScrollHelper.this.e) {
-                if (AutoScrollHelper.this.f2743c) {
-                    AutoScrollHelper.this.f2743c = false;
-                    AutoScrollHelper.this.f2742a.start();
+                if (AutoScrollHelper.this.f2695c) {
+                    AutoScrollHelper.this.f2695c = false;
+                    AutoScrollHelper.this.f2694a.start();
                 }
-                ClampedScroller clampedScroller = AutoScrollHelper.this.f2742a;
+                ClampedScroller clampedScroller = AutoScrollHelper.this.f2694a;
                 if (clampedScroller.isFinished() || !AutoScrollHelper.this.a()) {
                     AutoScrollHelper.this.e = false;
                     return;
@@ -251,7 +251,7 @@ public abstract class AutoScrollHelper implements View.OnTouchListener {
             this.g = new ScrollAnimationRunnable();
         }
         this.e = true;
-        this.f2743c = true;
+        this.f2695c = true;
         if (this.o || (i = this.k) <= 0) {
             this.g.run();
         } else {
@@ -261,15 +261,15 @@ public abstract class AutoScrollHelper implements View.OnTouchListener {
     }
 
     private void d() {
-        if (this.f2743c) {
+        if (this.f2695c) {
             this.e = false;
         } else {
-            this.f2742a.requestStop();
+            this.f2694a.requestStop();
         }
     }
 
     boolean a() {
-        ClampedScroller clampedScroller = this.f2742a;
+        ClampedScroller clampedScroller = this.f2694a;
         int verticalDirection = clampedScroller.getVerticalDirection();
         int horizontalDirection = clampedScroller.getHorizontalDirection();
         if (verticalDirection == 0 || !canTargetScrollVertically(verticalDirection)) {
@@ -373,7 +373,7 @@ public abstract class AutoScrollHelper implements View.OnTouchListener {
             float r0 = r0.a(r1, r2, r3, r4)
             r10 = r0
             r0 = r6
-            androidx.core.widget.AutoScrollHelper$ClampedScroller r0 = r0.f2742a
+            androidx.core.widget.AutoScrollHelper$ClampedScroller r0 = r0.f2694a
             r1 = r9
             r2 = r10
             r0.setTargetVelocity(r1, r2)
@@ -452,12 +452,12 @@ public abstract class AutoScrollHelper implements View.OnTouchListener {
     }
 
     public AutoScrollHelper setRampDownDuration(int i) {
-        this.f2742a.setRampDownDuration(i);
+        this.f2694a.setRampDownDuration(i);
         return this;
     }
 
     public AutoScrollHelper setRampUpDuration(int i) {
-        this.f2742a.setRampUpDuration(i);
+        this.f2694a.setRampUpDuration(i);
         return this;
     }
 

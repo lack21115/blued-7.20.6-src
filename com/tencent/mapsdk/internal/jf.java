@@ -19,29 +19,29 @@ public final class jf extends JsonComposer {
     @Json(name = "detail")
 
     /* renamed from: a  reason: collision with root package name */
-    public d f37568a;
+    public d f23877a;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/mapsdk/internal/jf$a.class */
     public static final class a extends JsonComposer {
         @Json(name = "aoi_latitude")
 
         /* renamed from: a  reason: collision with root package name */
-        public String f37569a;
+        public String f23878a;
         @Json(name = "aoi_longitude")
         public String b;
         @Json(name = "area")
 
         /* renamed from: c  reason: collision with root package name */
-        public b f37570c;
+        public b f23879c;
 
         public String toString() {
             StringBuffer stringBuffer = new StringBuffer("PoiArea{");
             stringBuffer.append("latitude=");
-            stringBuffer.append(this.f37569a);
+            stringBuffer.append(this.f23878a);
             stringBuffer.append(", longitude=");
             stringBuffer.append(this.b);
             stringBuffer.append(", area=");
-            stringBuffer.append(this.f37570c);
+            stringBuffer.append(this.f23879c);
             stringBuffer.append('}');
             return stringBuffer.toString();
         }
@@ -52,7 +52,7 @@ public final class jf extends JsonComposer {
         @Json(name = "type")
 
         /* renamed from: a  reason: collision with root package name */
-        public String f37571a;
+        public String f23880a;
         @Json(deserializer = b.class, name = "coordinates")
         public List<List<LatLng>> b;
 
@@ -126,7 +126,7 @@ public final class jf extends JsonComposer {
             }
             StringBuffer stringBuffer = new StringBuffer("AreaData{");
             stringBuffer.append("type='");
-            stringBuffer.append(this.f37571a);
+            stringBuffer.append(this.f23880a);
             stringBuffer.append('\'');
             stringBuffer.append(", coordinates=");
             stringBuffer.append(i);
@@ -142,24 +142,24 @@ public final class jf extends JsonComposer {
         @Json(name = "fill_color")
 
         /* renamed from: a  reason: collision with root package name */
-        public String f37572a;
+        public String f23881a;
         @Json(name = "stroke_color")
         public String b;
         @Json(name = "stroke_width")
 
         /* renamed from: c  reason: collision with root package name */
-        public int f37573c;
+        public int f23882c;
 
         public String toString() {
             StringBuffer stringBuffer = new StringBuffer("AoiStyle{");
             stringBuffer.append("fillColor='");
-            stringBuffer.append(this.f37572a);
+            stringBuffer.append(this.f23881a);
             stringBuffer.append('\'');
             stringBuffer.append(", strokeColor='");
             stringBuffer.append(this.b);
             stringBuffer.append('\'');
             stringBuffer.append(", strokeWidth=");
-            stringBuffer.append(this.f37573c);
+            stringBuffer.append(this.f23882c);
             stringBuffer.append('}');
             return stringBuffer.toString();
         }
@@ -170,13 +170,13 @@ public final class jf extends JsonComposer {
         @Json(ignore = true)
 
         /* renamed from: a  reason: collision with root package name */
-        public int f37574a = -1;
+        public int f23883a = -1;
         @Json(name = "uid")
         public String b;
         @Json(name = "name")
 
         /* renamed from: c  reason: collision with root package name */
-        public String f37575c;
+        public String f23884c;
         @Json(name = "alias")
         public String d;
         @Json(name = "type")
@@ -193,18 +193,18 @@ public final class jf extends JsonComposer {
         public List<d> j;
 
         public String a() {
-            return !TextUtils.isEmpty(this.d) ? this.d : this.f37575c;
+            return !TextUtils.isEmpty(this.d) ? this.d : this.f23884c;
         }
 
         public String toString() {
             StringBuffer stringBuffer = new StringBuffer("PoiDetail{");
             stringBuffer.append("displayId=");
-            stringBuffer.append(this.f37574a);
+            stringBuffer.append(this.f23883a);
             stringBuffer.append(", poiId='");
             stringBuffer.append(this.b);
             stringBuffer.append('\'');
             stringBuffer.append(", name='");
-            stringBuffer.append(this.f37575c);
+            stringBuffer.append(this.f23884c);
             stringBuffer.append('\'');
             stringBuffer.append(", alias='");
             stringBuffer.append(this.d);
@@ -233,14 +233,14 @@ public final class jf extends JsonComposer {
         @Json(ignore = true)
 
         /* renamed from: a  reason: collision with root package name */
-        public BitmapDescriptor f37576a;
+        public BitmapDescriptor f23885a;
         @Json(ignore = true)
         public BitmapDescriptor b;
         @Json(name = "style_class")
 
         /* renamed from: c  reason: collision with root package name */
-        public int f37577c;
-        @Json(name = "icon_url")
+        public int f23886c;
+        @Json(name = com.anythink.expressad.foundation.d.c.H)
         public String d;
         @Json(name = com.anythink.expressad.d.a.b.cf)
         public int e;
@@ -262,9 +262,9 @@ public final class jf extends JsonComposer {
         public String toString() {
             StringBuffer stringBuffer = new StringBuffer("PoiStyle{");
             stringBuffer.append("icon=");
-            stringBuffer.append(this.f37576a);
+            stringBuffer.append(this.f23885a);
             stringBuffer.append(", type=");
-            stringBuffer.append(this.f37577c);
+            stringBuffer.append(this.f23886c);
             stringBuffer.append(", iconUrl='");
             stringBuffer.append(this.d);
             stringBuffer.append('\'');
@@ -294,7 +294,7 @@ public final class jf extends JsonComposer {
     public String toString() {
         StringBuffer stringBuffer = new StringBuffer("AoiInfo{");
         stringBuffer.append("poiDetail=");
-        stringBuffer.append(this.f37568a);
+        stringBuffer.append(this.f23877a);
         stringBuffer.append('}');
         return stringBuffer.toString();
     }

@@ -37,13 +37,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LivePlanetAreaView.class */
 public final class LivePlanetAreaView extends RelativeLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Context f14858a;
+    private final Context a;
     private IRequestHost b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private boolean f14859c;
+    private boolean c;
     private int d;
     private int e;
     private int f;
@@ -67,12 +63,12 @@ public final class LivePlanetAreaView extends RelativeLayout {
     public LivePlanetAreaView(Context mContext, AttributeSet attributeSet, int i) {
         super(mContext, attributeSet, i);
         Intrinsics.e(mContext, "mContext");
-        this.f14858a = mContext;
+        this.a = mContext;
         this.d = 1;
         this.f = 9999;
-        LivePlanetAreaItemBinding a2 = LivePlanetAreaItemBinding.a(LayoutInflater.from(mContext).inflate(R.layout.live_planet_area_item, this));
-        Intrinsics.c(a2, "bind(\n        LayoutInfl…et_area_item, this)\n    )");
-        this.i = a2;
+        LivePlanetAreaItemBinding a = LivePlanetAreaItemBinding.a(LayoutInflater.from(mContext).inflate(R.layout.live_planet_area_item, this));
+        Intrinsics.c(a, "bind(\n        LayoutInfl…et_area_item, this)\n    )");
+        this.i = a;
         f();
     }
 
@@ -153,8 +149,8 @@ public final class LivePlanetAreaView extends RelativeLayout {
                 this$0.setState(1);
                 LiveEventBusUtil.h();
             }
-        } else if (this$0.e <= 0 && LivePlanetDialog.f13103a.a() >= LivePlanetDialog.f13103a.b()) {
-            String string = AppInfo.d().getString(R.string.live_planet_toast_max_dispatch_count, Integer.valueOf(LivePlanetDialog.f13103a.b()));
+        } else if (this$0.e <= 0 && LivePlanetDialog.a.a() >= LivePlanetDialog.a.b()) {
+            String string = AppInfo.d().getString(R.string.live_planet_toast_max_dispatch_count, Integer.valueOf(LivePlanetDialog.a.b()));
             Intrinsics.c(string, "getAppContext().getStrin…                        )");
             ToastUtils.b(string);
         } else {
@@ -271,7 +267,7 @@ public final class LivePlanetAreaView extends RelativeLayout {
         layoutTransition.setInterpolator(2, new DecelerateInterpolator());
         layoutTransition.setInterpolator(3, new DecelerateInterpolator());
         layoutTransition.setDuration(300L);
-        this.i.f12358a.setLayoutTransition(layoutTransition);
+        this.i.a.setLayoutTransition(layoutTransition);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -310,12 +306,12 @@ public final class LivePlanetAreaView extends RelativeLayout {
         ImageView imageView2 = this.i.i;
         Intrinsics.c(imageView2, "vb.ivLotteryBorderJack");
         BluedViewExKt.a(imageView2);
-        if (this.f14859c) {
-            this.i.f12358a.setClickable(false);
+        if (this.c) {
+            this.i.a.setClickable(false);
             this.i.f.setClickable(false);
             return;
         }
-        this.i.f12358a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.-$$Lambda$LivePlanetAreaView$5p8YOv0XvqSu5z2YR-QDeIKLHuY
+        this.i.a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.-$$Lambda$LivePlanetAreaView$5p8YOv0XvqSu5z2YR-QDeIKLHuY
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 LivePlanetAreaView.a(LivePlanetAreaView.this, view);
@@ -387,7 +383,7 @@ public final class LivePlanetAreaView extends RelativeLayout {
     }
 
     public final Context getMContext() {
-        return this.f14858a;
+        return this.a;
     }
 
     public final int getMaxNum() {
@@ -430,7 +426,7 @@ public final class LivePlanetAreaView extends RelativeLayout {
     public final void setFragmentActive(IRequestHost iRequestHost) {
         Intrinsics.e(iRequestHost, "iRequestHost");
         this.b = iRequestHost;
-        this.f14859c = TextUtils.equals(LiveRoomInfo.a().f(), LiveRoomManager.a().g());
+        this.c = TextUtils.equals(LiveRoomInfo.a().f(), LiveRoomManager.a().g());
     }
 
     public final void setMaxNum(int i) {
@@ -459,14 +455,14 @@ public final class LivePlanetAreaView extends RelativeLayout {
                     ImageView imageView2 = this.i.e;
                     Intrinsics.c(imageView2, "vb.ivBorderGold");
                     BluedViewExKt.a(imageView2);
-                    ImageView imageView3 = this.i.f12359c;
+                    ImageView imageView3 = this.i.c;
                     Intrinsics.c(imageView3, "vb.ivBorderBlue");
                     BluedViewExKt.a(imageView3);
                     this.i.l.animate().alpha(0.5f).setDuration(250L).start();
                     this.i.f.setImageResource(R.drawable.live_planet_close_blue);
                     this.i.f.setClickable(false);
                 } else {
-                    ImageView imageView4 = this.i.f12359c;
+                    ImageView imageView4 = this.i.c;
                     Intrinsics.c(imageView4, "vb.ivBorderBlue");
                     BluedViewExKt.b(imageView4);
                     ImageView imageView5 = this.i.e;
@@ -484,7 +480,7 @@ public final class LivePlanetAreaView extends RelativeLayout {
                 ImageView imageView7 = this.i.e;
                 Intrinsics.c(imageView7, "vb.ivBorderGold");
                 BluedViewExKt.b(imageView7);
-                ImageView imageView8 = this.i.f12359c;
+                ImageView imageView8 = this.i.c;
                 Intrinsics.c(imageView8, "vb.ivBorderBlue");
                 BluedViewExKt.a(imageView8);
                 ImageView imageView9 = this.i.d;
@@ -498,7 +494,7 @@ public final class LivePlanetAreaView extends RelativeLayout {
                 return;
             } else {
                 if (this.e > 0) {
-                    ImageView imageView10 = this.i.f12359c;
+                    ImageView imageView10 = this.i.c;
                     Intrinsics.c(imageView10, "vb.ivBorderBlue");
                     BluedViewExKt.b(imageView10);
                     ImageView imageView11 = this.i.d;
@@ -508,7 +504,7 @@ public final class LivePlanetAreaView extends RelativeLayout {
                     ImageView imageView12 = this.i.d;
                     Intrinsics.c(imageView12, "vb.ivBorderDefault");
                     BluedViewExKt.b(imageView12);
-                    ImageView imageView13 = this.i.f12359c;
+                    ImageView imageView13 = this.i.c;
                     Intrinsics.c(imageView13, "vb.ivBorderBlue");
                     BluedViewExKt.a(imageView13);
                 }

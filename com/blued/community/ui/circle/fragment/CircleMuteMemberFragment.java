@@ -22,17 +22,17 @@ public class CircleMuteMemberFragment extends CircleJoinMemberFragment<CircleMut
     @Override // com.blued.community.ui.circle.fragment.CircleJoinMemberFragment
     protected void a(final CircleBaseMember.Member member, final int i) {
         ArrayList arrayList = new ArrayList();
-        final BasePopupView a2 = CommonShowBottomWindow.a(getContext(), arrayList);
+        final BasePopupView a = CommonShowBottomWindow.a(getContext(), arrayList);
         BottomMenuPop.MenuItemInfo menuItemInfo = new BottomMenuPop.MenuItemInfo();
-        menuItemInfo.f11214a = getResources().getString(R.string.circle_member_mute_cancel);
+        menuItemInfo.a = getResources().getString(R.string.circle_member_mute_cancel);
         menuItemInfo.b = R.color.syc_g;
         menuItemInfo.d = new View.OnClickListener() { // from class: com.blued.community.ui.circle.fragment.-$$Lambda$CircleMuteMemberFragment$B6Er2Wy5jw9BNqGnamlunZ7EAP4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CircleMuteMemberFragment.this.a(member, i, a2, view);
+                CircleMuteMemberFragment.this.a(member, i, a, view);
             }
         };
         arrayList.add(menuItemInfo);
-        a2.h();
+        a.h();
     }
 }

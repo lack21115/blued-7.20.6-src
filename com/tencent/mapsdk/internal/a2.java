@@ -12,17 +12,17 @@ public class a2 extends JsonComposer {
     @Json(name = "name")
 
     /* renamed from: a  reason: collision with root package name */
-    public String f37285a;
+    public String f23594a;
     @Json(name = "pinyin")
     public String b;
     @Json(name = "cityList")
 
     /* renamed from: c  reason: collision with root package name */
-    public List<a2> f37286c;
+    public List<a2> f23595c;
 
     public OfflineCity a(OfflineProvince offlineProvince) {
         OfflineCity offlineCity = new OfflineCity();
-        offlineCity.setName(this.f37285a);
+        offlineCity.setName(this.f23594a);
         offlineCity.setPinyin(this.b);
         offlineCity.setProvince(offlineProvince);
         return offlineCity;
@@ -30,14 +30,14 @@ public class a2 extends JsonComposer {
 
     public OfflineNation a() {
         OfflineNation offlineNation = new OfflineNation();
-        offlineNation.setName(this.f37285a);
+        offlineNation.setName(this.f23594a);
         offlineNation.setPinyin(this.b);
         return offlineNation;
     }
 
     public OfflineProvince a(List<OfflineCity> list) {
         OfflineProvince offlineProvince = new OfflineProvince();
-        offlineProvince.setName(this.f37285a);
+        offlineProvince.setName(this.f23594a);
         offlineProvince.setPinyin(this.b);
         offlineProvince.setCities(list);
         return offlineProvince;

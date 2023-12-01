@@ -13,24 +13,24 @@ public class b3 {
     public static final class a extends TimerTask {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ HandlerThread f3760a;
+        public final /* synthetic */ HandlerThread f3712a;
         public final /* synthetic */ Handler b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ boolean f3761c;
+        public final /* synthetic */ boolean f3713c;
         public final /* synthetic */ Timer d;
 
         public a(HandlerThread handlerThread, Handler handler, boolean z, Timer timer) {
-            this.f3760a = handlerThread;
+            this.f3712a = handlerThread;
             this.b = handler;
-            this.f3761c = z;
+            this.f3713c = z;
             this.d = timer;
         }
 
         @Override // java.util.TimerTask, java.lang.Runnable
         public void run() {
             try {
-                b3.b(this.f3760a, this.b, this.f3761c);
+                b3.b(this.f3712a, this.b, this.f3713c);
                 if (this.d != null) {
                     this.d.cancel();
                 }

@@ -23,7 +23,6 @@ import com.blued.android.framework.http.parser.BluedEntity;
 import com.blued.android.framework.http.parser.BluedEntityA;
 import com.blued.android.framework.http.parser.BluedEntityBaseExtra;
 import com.blued.android.framework.utils.AesCrypto2;
-import com.blued.android.module.common.db.model.UserAccountsModel;
 import com.blued.android.module.common.login.model.UserBasicModel;
 import com.blued.android.module.common.user.UserInfoHelper;
 import com.blued.android.module.common.user.model.BluedLoginResult;
@@ -51,6 +50,7 @@ import com.soft.blued.ui.mine.model.MineEntryInfo;
 import com.soft.blued.ui.setting.activity.SwitchAccountActivity;
 import com.soft.blued.utils.third.YouMengUtils;
 import com.tencent.bugly.crashreport.CrashReport;
+import com.xiaomi.mipush.sdk.Constants;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -60,11 +60,11 @@ public class UserRelationshipUtils {
     private static final String m = UserRelationshipUtils.class.getSimpleName();
 
     /* renamed from: a  reason: collision with root package name */
-    public static ArrayMap<String, String> f34798a = new ArrayMap<>();
+    public static ArrayMap<String, String> f21107a = new ArrayMap<>();
     public static ArrayMap<String, String> b = new ArrayMap<>();
 
     /* renamed from: c  reason: collision with root package name */
-    public static ArrayMap<String, String> f34799c = new ArrayMap<>();
+    public static ArrayMap<String, String> f21108c = new ArrayMap<>();
     public static ArrayMap<String, String> d = new ArrayMap<>();
     public static ArrayMap<String, String> e = new ArrayMap<>();
     public static ArrayMap<String, String> f = new ArrayMap<>();
@@ -120,13 +120,13 @@ public class UserRelationshipUtils {
     }
 
     public static void a() {
-        Iterator<Activity> it = ActivityStack.a().b().iterator();
+        Iterator it = ActivityStack.a().b().iterator();
         while (it.hasNext()) {
-            Activity next = it.next();
-            if (next.getClass() != LoginV1ForThreeActivity.class && next.getClass() != SignInActivity.class && next.getClass() != PhoneOrEmailLoginActivity.class && next.getClass() != SwitchAccountActivity.class && !next.getClass().getSimpleName().equals("OneLoginActivity") && !a(next)) {
+            Activity activity = (Activity) it.next();
+            if (activity.getClass() != LoginV1ForThreeActivity.class && activity.getClass() != SignInActivity.class && activity.getClass() != PhoneOrEmailLoginActivity.class && activity.getClass() != SwitchAccountActivity.class && !activity.getClass().getSimpleName().equals("OneLoginActivity") && !a(activity)) {
                 String str = m;
-                Logger.c(str, "切换账号-移除： " + next.getClass().getSimpleName());
-                next.finish();
+                Logger.c(str, "切换账号-移除： " + activity.getClass().getSimpleName());
+                activity.finish();
             }
         }
     }
@@ -197,33 +197,29 @@ public class UserRelationshipUtils {
         LoginRegisterHttpUtils.b(new BluedUIHttpResponse<BluedEntityA<BluedEntityBaseExtra>>() { // from class: com.soft.blued.utils.UserRelationshipUtils.6
 
             /* renamed from: c  reason: collision with root package name */
-            private boolean f34808c = false;
+            private boolean f21117c = false;
 
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<BluedEntityBaseExtra> bluedEntityA) {
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i2, String str2) {
                 if (i2 == 4036501) {
-                    this.f34808c = true;
+                    this.f21117c = true;
                     return true;
                 }
                 return true;
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 super.onUIFinish();
                 DialogUtils.b(Dialog.this);
-                if (this.f34808c) {
+                if (this.f21117c) {
                     UserRelationshipUtils.a(str, new int[0]);
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 super.onUIStart();
                 DialogUtils.a(Dialog.this);
@@ -317,21 +313,18 @@ public class UserRelationshipUtils {
         PushManager.a().f();
         LoginRegisterHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<AppConfigModel>>() { // from class: com.soft.blued.utils.UserRelationshipUtils.2
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<AppConfigModel> bluedEntityA) {
-                if (Runnable.this != null) {
+                if (runnable != null) {
                     UserRelationshipUtils.a(str, new int[0]);
-                    Runnable.this.run();
+                    runnable.run();
                 }
             }
 
-            @Override // com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
             public void onFailure(Throwable th) {
                 super.onFailure(th);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse, com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
             public void onFailure(Throwable th, int i2, String str2) {
                 super.onFailure(th, i2, str2);
             }
@@ -522,16 +515,14 @@ public class UserRelationshipUtils {
     public static void b(final Runnable runnable, int i2) {
         LoginRegisterHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<AppConfigModel>>() { // from class: com.soft.blued.utils.UserRelationshipUtils.3
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<AppConfigModel> bluedEntityA) {
-                Runnable runnable2 = Runnable.this;
+                Runnable runnable2 = runnable;
                 if (runnable2 != null) {
                     runnable2.run();
                 }
             }
 
-            @Override // com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
             public void onFailure(Throwable th) {
             }
         }, (IRequestHost) null, i2);
@@ -605,8 +596,8 @@ public class UserRelationshipUtils {
     }
 
     public static ArrayMap<String, String> g() {
-        String[] stringArray = AppInfo.d().getResources().getStringArray(2130903112);
-        String[] stringArray2 = AppInfo.d().getResources().getStringArray(2130903111);
+        String[] stringArray = AppInfo.d().getResources().getStringArray(R.array.register_time_key);
+        String[] stringArray2 = AppInfo.d().getResources().getStringArray(R.array.register_time);
         int i2 = 0;
         while (true) {
             int i3 = i2;
@@ -626,9 +617,8 @@ public class UserRelationshipUtils {
         LoginRegisterHttpUtils.a(new BluedUIHttpResponse<BluedEntity<BluedLoginResult, AVConfigExtra>>() { // from class: com.soft.blued.utils.UserRelationshipUtils.4
 
             /* renamed from: a  reason: collision with root package name */
-            String f34804a = "";
+            String f21113a = "";
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse, com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
             public void onFailure(Throwable th, int i2, String str2) {
                 super.onFailure(th, i2, str2);
                 try {
@@ -643,12 +633,12 @@ public class UserRelationshipUtils {
                         }
                         return;
                     }
-                    Pair<Integer, String> a2 = BluedHttpUtils.a(th, i2, str2);
-                    switch (a2.first.intValue()) {
+                    Pair a2 = BluedHttpUtils.a(th, i2, str2);
+                    switch (((Integer) a2.first).intValue()) {
                         case 403600:
                         case 403800:
                         case 403801:
-                            UserRelationshipUtils.a(AppInfo.d().getResources().getString(R.string.account_abnormal) + "-" + a2.first, new int[0]);
+                            UserRelationshipUtils.a(AppInfo.d().getResources().getString(R.string.account_abnormal) + Constants.ACCEPT_TIME_SEPARATOR_SERVER + a2.first, new int[0]);
                             return;
                         case 4036501:
                             UserRelationshipUtils.a(AppInfo.d().getResources().getString(R.string.e4036501), new int[0]);
@@ -661,26 +651,25 @@ public class UserRelationshipUtils {
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity<BluedLoginResult, AVConfigExtra> bluedEntity) {
                 if (bluedEntity == null || bluedEntity.data == null || bluedEntity.data.size() <= 0) {
                     return;
                 }
                 if (bluedEntity.extra != null) {
-                    AVConfig.a().a(bluedEntity.extra.f20538a, AVConfig.a().f20536a);
+                    AVConfig.a().a(((AVConfigExtra) bluedEntity.extra).f6932a, AVConfig.a().f6930a);
                 }
                 PushManager.a().d();
                 int i2 = loginType;
                 int i3 = (i2 != 0 && i2 == 1) ? 1 : 0;
                 try {
-                    String a2 = AesCrypto2.a(bluedEntity.data.get(0).getEncrypted());
+                    String a2 = AesCrypto2.a(((BluedLoginResult) bluedEntity.data.get(0)).getEncrypted());
                     Logger.b(UserRelationshipUtils.m, "解密：deData===", a2);
                     BluedLoginResult bluedLoginResult = (BluedLoginResult) AppInfo.f().fromJson(a2, (Class<Object>) BluedLoginResult.class);
                     CrashReport.setUserId(bluedLoginResult.uid);
                     YouMengUtils.a(bluedLoginResult.uid);
                     String str2 = UserRelationshipUtils.m;
                     Logger.c(str2, "relation_mobile" + bluedLoginResult.getVerified_bindings().relation_mobile);
-                    UserInfo.getInstance().saveUserInfo(userName, i3, this.f34804a, bluedLoginResult, new String[0]);
+                    UserInfo.getInstance().saveUserInfo(userName, i3, this.f21113a, bluedLoginResult, new String[0]);
                     String str3 = UserRelationshipUtils.m;
                     Logger.c(str3, "IM=token==UserRenew=" + bluedLoginResult.getAccess_token());
                     LoginRegisterTools.a();
@@ -688,9 +677,8 @@ public class UserRelationshipUtils {
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public BluedEntity<BluedLoginResult, AVConfigExtra> parseData(String str2) {
-                this.f34804a = str2;
+                this.f21113a = str2;
                 return super.parseData(str2);
             }
         }, str, LoginRegisterTools.f(UserInfo.getInstance().getAccessToken()), UserInfo.getInstance().getLoginUserInfo().uid);
@@ -704,9 +692,8 @@ public class UserRelationshipUtils {
         LoginRegisterHttpUtils.a(new BluedUIHttpResponse<BluedEntity<BluedLoginResult, AVConfigExtra>>() { // from class: com.soft.blued.utils.UserRelationshipUtils.5
 
             /* renamed from: a  reason: collision with root package name */
-            String f34806a = "";
+            String f21115a = "";
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse, com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
             public void onFailure(Throwable th, int i2, String str) {
                 super.onFailure(th, i2, str);
                 try {
@@ -721,8 +708,8 @@ public class UserRelationshipUtils {
                         }
                         return;
                     }
-                    Pair<Integer, String> a2 = BluedHttpUtils.a(th, i2, str);
-                    switch (a2.first.intValue()) {
+                    Pair a2 = BluedHttpUtils.a(th, i2, str);
+                    switch (((Integer) a2.first).intValue()) {
                         case 403600:
                         case 403800:
                         case 403801:
@@ -744,30 +731,28 @@ public class UserRelationshipUtils {
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity<BluedLoginResult, AVConfigExtra> bluedEntity) {
                 if (bluedEntity == null || bluedEntity.data == null || bluedEntity.data.size() <= 0) {
                     return;
                 }
                 if (bluedEntity.extra != null) {
-                    AVConfig.a().a(bluedEntity.extra.f20538a, false);
+                    AVConfig.a().a(((AVConfigExtra) bluedEntity.extra).f6932a, false);
                 }
                 try {
-                    BluedLoginResult bluedLoginResult = (BluedLoginResult) AppInfo.f().fromJson(AesCrypto2.a(bluedEntity.data.get(0).getEncrypted()), (Class<Object>) BluedLoginResult.class);
+                    BluedLoginResult bluedLoginResult = (BluedLoginResult) AppInfo.f().fromJson(AesCrypto2.a(((BluedLoginResult) bluedEntity.data.get(0)).getEncrypted()), (Class<Object>) BluedLoginResult.class);
                     CrashReport.setUserId(bluedLoginResult.uid);
                     YouMengUtils.a(bluedLoginResult.uid);
                     String str = UserRelationshipUtils.m;
                     Logger.c(str, "relation_mobile" + bluedLoginResult.getVerified_bindings().relation_mobile);
-                    UserInfo.getInstance().saveUserInfo(String.this, 2, this.f34806a, bluedLoginResult, new String[0]);
+                    UserInfo.getInstance().saveUserInfo(userName, 2, this.f21115a, bluedLoginResult, new String[0]);
                 } catch (Exception e2) {
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public BluedEntity<BluedLoginResult, AVConfigExtra> parseData(String str) {
-                this.f34806a = str;
+                this.f21115a = str;
                 return super.parseData(str);
             }
-        }, UserAccountsModel.ACCOUNT_THREE_WEIXIN, LoginRegisterTools.f(UserInfo.getInstance().getAccessToken()), UserInfo.getInstance().getLoginUserInfo().uid);
+        }, "weixin", LoginRegisterTools.f(UserInfo.getInstance().getAccessToken()), UserInfo.getInstance().getLoginUserInfo().uid);
     }
 }

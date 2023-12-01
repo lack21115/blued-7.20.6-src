@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentUserinfoVipBgBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final FrameLayout f29009a;
+    private final FrameLayout f15319a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f29009a;
+        return this.f15319a;
     }
 }

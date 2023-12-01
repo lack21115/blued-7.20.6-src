@@ -1,5 +1,6 @@
 package com.huawei.hms.framework.network.grs.g;
 
+import android.accounts.AccountManager;
 import android.text.TextUtils;
 import com.google.common.net.HttpHeaders;
 import com.huawei.hms.framework.common.Logger;
@@ -18,11 +19,11 @@ public class d {
     private static final String o = "d";
 
     /* renamed from: a  reason: collision with root package name */
-    private Map<String, List<String>> f22705a;
+    private Map<String, List<String>> f9097a;
     private byte[] b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f22706c;
+    private int f9098c;
     private long d;
     private long e;
     private long f;
@@ -36,21 +37,21 @@ public class d {
     private String n;
 
     public d(int i, Map<String, List<String>> map, byte[] bArr, long j) {
-        this.f22706c = 0;
+        this.f9098c = 0;
         this.h = 2;
         this.i = 9001;
         this.j = "";
         this.k = 0L;
         this.l = "";
-        this.f22706c = i;
-        this.f22705a = map;
+        this.f9098c = i;
+        this.f9097a = map;
         this.b = ByteBuffer.wrap(bArr).array();
         this.d = j;
         s();
     }
 
     public d(Exception exc, long j) {
-        this.f22706c = 0;
+        this.f9098c = 0;
         this.h = 2;
         this.i = 9001;
         this.j = "";
@@ -179,7 +180,7 @@ public class d {
                     e(jSONObject.has("errorList") ? jSONObject.getJSONObject("errorList").toString() : "");
                     return;
                 }
-                b(jSONObject.has("errorCode") ? jSONObject.getInt("errorCode") : 9001);
+                b(jSONObject.has(AccountManager.KEY_ERROR_CODE) ? jSONObject.getInt(AccountManager.KEY_ERROR_CODE) : 9001);
                 d(jSONObject.has("errorDesc") ? jSONObject.getString("errorDesc") : "");
             } catch (JSONException e) {
                 Logger.w(o, "GrsResponse GrsResponse(String result) JSONException: %s", StringUtils.anonymizeMessage(e.getMessage()));
@@ -211,12 +212,12 @@ public class d {
 
     private Map<String, String> r() {
         HashMap hashMap = new HashMap(16);
-        Map<String, List<String>> map = this.f22705a;
+        Map<String, List<String>> map = this.f9097a;
         if (map == null || map.size() <= 0) {
             Logger.v(o, "parseRespHeaders {respHeaders == null} or {respHeaders.size() <= 0}");
             return hashMap;
         }
-        for (Map.Entry<String, List<String>> entry : this.f22705a.entrySet()) {
+        for (Map.Entry<String, List<String>> entry : this.f9097a.entrySet()) {
             String key = entry.getKey();
             for (String str : entry.getValue()) {
                 hashMap.put(key, str);
@@ -246,7 +247,7 @@ public class d {
     }
 
     public int b() {
-        return this.f22706c;
+        return this.f9098c;
     }
 
     public void b(long j) {
@@ -298,14 +299,14 @@ public class d {
     }
 
     public boolean m() {
-        return this.f22706c == 304;
+        return this.f9098c == 304;
     }
 
     public boolean n() {
-        return this.f22706c == 503;
+        return this.f9098c == 503;
     }
 
     public boolean o() {
-        return this.f22706c == 200;
+        return this.f9098c == 200;
     }
 }

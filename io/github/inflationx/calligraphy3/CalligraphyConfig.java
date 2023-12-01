@@ -88,14 +88,16 @@ public class CalligraphyConfig {
     static {
         HashMap hashMap = new HashMap();
         DEFAULT_STYLES = hashMap;
-        hashMap.put(TextView.class, 16842884);
-        DEFAULT_STYLES.put(Button.class, 16842824);
-        DEFAULT_STYLES.put(EditText.class, 16842862);
-        DEFAULT_STYLES.put(AutoCompleteTextView.class, 16842859);
-        DEFAULT_STYLES.put(MultiAutoCompleteTextView.class, 16842859);
-        DEFAULT_STYLES.put(CheckBox.class, 16842860);
-        DEFAULT_STYLES.put(RadioButton.class, 16842878);
-        DEFAULT_STYLES.put(ToggleButton.class, 16842827);
+        hashMap.put(TextView.class, Integer.valueOf((int) android.R.attr.textViewStyle));
+        DEFAULT_STYLES.put(Button.class, Integer.valueOf((int) android.R.attr.buttonStyle));
+        DEFAULT_STYLES.put(EditText.class, Integer.valueOf((int) android.R.attr.editTextStyle));
+        Map<Class<? extends TextView>, Integer> map = DEFAULT_STYLES;
+        Integer valueOf = Integer.valueOf((int) android.R.attr.autoCompleteTextViewStyle);
+        map.put(AutoCompleteTextView.class, valueOf);
+        DEFAULT_STYLES.put(MultiAutoCompleteTextView.class, valueOf);
+        DEFAULT_STYLES.put(CheckBox.class, Integer.valueOf((int) android.R.attr.checkboxStyle));
+        DEFAULT_STYLES.put(RadioButton.class, Integer.valueOf((int) android.R.attr.radioButtonStyle));
+        DEFAULT_STYLES.put(ToggleButton.class, Integer.valueOf((int) android.R.attr.buttonStyleToggle));
         if (CalligraphyUtils.canAddV7AppCompatViews()) {
             addAppCompatViews();
         }
@@ -114,15 +116,17 @@ public class CalligraphyConfig {
     }
 
     private static void addAppCompatViews() {
-        DEFAULT_STYLES.put(AppCompatTextView.class, 16842884);
-        DEFAULT_STYLES.put(AppCompatButton.class, 16842824);
-        DEFAULT_STYLES.put(AppCompatEditText.class, 16842862);
-        DEFAULT_STYLES.put(AppCompatAutoCompleteTextView.class, 16842859);
-        DEFAULT_STYLES.put(AppCompatMultiAutoCompleteTextView.class, 16842859);
-        DEFAULT_STYLES.put(AppCompatCheckBox.class, 16842860);
-        DEFAULT_STYLES.put(AppCompatRadioButton.class, 16842878);
+        DEFAULT_STYLES.put(AppCompatTextView.class, Integer.valueOf((int) android.R.attr.textViewStyle));
+        DEFAULT_STYLES.put(AppCompatButton.class, Integer.valueOf((int) android.R.attr.buttonStyle));
+        DEFAULT_STYLES.put(AppCompatEditText.class, Integer.valueOf((int) android.R.attr.editTextStyle));
+        Map<Class<? extends TextView>, Integer> map = DEFAULT_STYLES;
+        Integer valueOf = Integer.valueOf((int) android.R.attr.autoCompleteTextViewStyle);
+        map.put(AppCompatAutoCompleteTextView.class, valueOf);
+        DEFAULT_STYLES.put(AppCompatMultiAutoCompleteTextView.class, valueOf);
+        DEFAULT_STYLES.put(AppCompatCheckBox.class, Integer.valueOf((int) android.R.attr.checkboxStyle));
+        DEFAULT_STYLES.put(AppCompatRadioButton.class, Integer.valueOf((int) android.R.attr.radioButtonStyle));
         if (Build.VERSION.SDK_INT >= 17) {
-            DEFAULT_STYLES.put(AppCompatCheckedTextView.class, 16843720);
+            DEFAULT_STYLES.put(AppCompatCheckedTextView.class, Integer.valueOf((int) android.R.attr.checkedTextViewStyle));
         }
     }
 

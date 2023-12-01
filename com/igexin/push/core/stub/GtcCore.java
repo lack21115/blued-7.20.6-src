@@ -23,7 +23,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class GtcCore implements IPushCore {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23583a = "GtcCore";
+    private static final String f9975a = "GtcCore";
 
     static /* synthetic */ void a(String str) {
         try {

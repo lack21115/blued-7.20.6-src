@@ -17,9 +17,8 @@ final /* synthetic */ class ServiceMsgFragment$liveDataObserver$1 extends Functi
         ((ServiceMsgFragment) this.receiver).a(z);
     }
 
-    @Override // kotlin.jvm.functions.Function1
-    public /* synthetic */ Unit invoke(Boolean bool) {
-        a(bool.booleanValue());
-        return Unit.f42314a;
+    public /* synthetic */ Object invoke(Object obj) {
+        a(((Boolean) obj).booleanValue());
+        return Unit.a;
     }
 }

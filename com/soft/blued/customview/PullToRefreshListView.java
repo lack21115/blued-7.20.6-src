@@ -19,7 +19,6 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import androidx.core.view.ViewCompat;
-import com.blued.android.chat.data.MsgType;
 import com.blued.android.framework.utils.DensityUtils;
 import com.blued.android.framework.view.PauseOnScrollListener;
 import com.blued.android.module.common.view.RotateLayout;
@@ -54,12 +53,12 @@ public class PullToRefreshListView extends ListView implements AbsListView.OnScr
     private FrameLayout W;
 
     /* renamed from: a  reason: collision with root package name */
-    int f28480a;
+    int f14790a;
     private CustomOnScrollListner aa;
     public Map<String, AnimationSet> b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final String f28481c;
+    public final String f14791c;
     public final String d;
     private float e;
     private float f;
@@ -118,7 +117,7 @@ public class PullToRefreshListView extends ListView implements AbsListView.OnScr
         private final Interpolator b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final int f28487c;
+        private final int f14797c;
         private final int d;
         private final long e;
         private OnSmoothScrollFinishedListener f;
@@ -128,7 +127,7 @@ public class PullToRefreshListView extends ListView implements AbsListView.OnScr
 
         public SmoothScrollRunnable(int i, int i2, long j, OnSmoothScrollFinishedListener onSmoothScrollFinishedListener) {
             this.d = i;
-            this.f28487c = i2;
+            this.f14797c = i2;
             this.b = PullToRefreshListView.this.p;
             this.e = j;
             this.f = onSmoothScrollFinishedListener;
@@ -139,11 +138,11 @@ public class PullToRefreshListView extends ListView implements AbsListView.OnScr
             if (this.h == -1) {
                 this.h = System.currentTimeMillis();
             } else {
-                int round = this.d - Math.round((this.d - this.f28487c) * this.b.getInterpolation(((float) Math.max(Math.min(((System.currentTimeMillis() - this.h) * 1000) / this.e, 1000L), 0L)) / 1000.0f));
+                int round = this.d - Math.round((this.d - this.f14797c) * this.b.getInterpolation(((float) Math.max(Math.min(((System.currentTimeMillis() - this.h) * 1000) / this.e, 1000L), 0L)) / 1000.0f));
                 this.i = round;
                 PullToRefreshListView.this.a(round);
             }
-            if (this.g && this.f28487c != this.i) {
+            if (this.g && this.f14797c != this.i) {
                 ViewCompat.postOnAnimation(PullToRefreshListView.this, this);
                 return;
             }
@@ -160,10 +159,10 @@ public class PullToRefreshListView extends ListView implements AbsListView.OnScr
         this.o = 0;
         this.u = false;
         this.v = false;
-        this.f28480a = -1;
+        this.f14790a = -1;
         this.y = false;
         this.z = 0;
-        this.f28481c = "Positive Animation";
+        this.f14791c = "Positive Animation";
         this.d = "Negative Animation";
         this.H = 0;
         this.I = 0;
@@ -378,7 +377,7 @@ public class PullToRefreshListView extends ListView implements AbsListView.OnScr
 
     @Override // android.widget.AbsListView.OnScrollListener
     public void onScroll(AbsListView absListView, int i, int i2, int i3) {
-        ListAdapter adapter;
+        ListAdapter listAdapter;
         View view;
         this.x.onScroll(absListView, i, i2, i3);
         if (i + i2 == i3 && i3 > 0) {
@@ -441,7 +440,7 @@ public class PullToRefreshListView extends ListView implements AbsListView.OnScr
             this.k = top;
             this.m = System.currentTimeMillis();
         }
-        if (this.P && !this.u && !this.v && this.s != null && (adapter = absListView.getAdapter()) != null) {
+        if (this.P && !this.u && !this.v && this.s != null && (listAdapter = (ListAdapter) absListView.getAdapter()) != null) {
             long currentTimeMillis2 = System.currentTimeMillis();
             long j = this.S;
             if (j == 0) {
@@ -453,22 +452,22 @@ public class PullToRefreshListView extends ListView implements AbsListView.OnScr
                 this.Q = i;
                 this.S = currentTimeMillis2;
                 if (d <= 30.0d) {
-                    int count = adapter.getCount();
-                    int count2 = adapter.getCount();
+                    int count = listAdapter.getCount();
+                    int count2 = listAdapter.getCount();
                     if (lastVisiblePosition >= (count < 15 ? (count2 - i) / 2 : count2 - 14)) {
                         this.v = true;
                         this.s.a(getInstance());
                     }
                 } else if (d <= 220.0d) {
-                    int count3 = adapter.getCount();
-                    int count4 = adapter.getCount();
+                    int count3 = listAdapter.getCount();
+                    int count4 = listAdapter.getCount();
                     if (lastVisiblePosition >= (count3 < 15 ? (count4 - i) / 2 : count4 - 12)) {
                         this.v = true;
                         this.s.a(getInstance());
                     }
                 } else {
-                    int count5 = adapter.getCount();
-                    int count6 = adapter.getCount();
+                    int count5 = listAdapter.getCount();
+                    int count6 = listAdapter.getCount();
                     if (lastVisiblePosition >= (count5 < 15 ? ((count6 - i) * 2) / 3 : count6 - 10)) {
                         this.v = true;
                         this.s.a(getInstance());
@@ -557,7 +556,7 @@ public class PullToRefreshListView extends ListView implements AbsListView.OnScr
         if (hexString.length() == 1) {
             str = "0" + hexString;
         }
-        String str2 = "#" + str + MsgType.UID_GROUP_AT_ALL;
+        String str2 = "#" + str + "000000";
         String str3 = "#" + str + "e1e1e1";
         TextView textView = this.E;
         if (textView != null) {

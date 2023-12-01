@@ -1,6 +1,5 @@
 package io.grpc.internal;
 
-import android.provider.Downloads;
 import com.google.common.base.Charsets;
 import com.google.common.base.Preconditions;
 import io.grpc.InternalMetadata;
@@ -22,15 +21,14 @@ public abstract class Http2ClientStreamTransportState extends AbstractClientStre
 
     static {
         InternalMetadata.TrustedAsciiMarshaller<Integer> trustedAsciiMarshaller = new InternalMetadata.TrustedAsciiMarshaller<Integer>() { // from class: io.grpc.internal.Http2ClientStreamTransportState.1
-            @Override // io.grpc.Metadata.TrustedAsciiMarshaller
-            public Integer parseAsciiString(byte[] bArr) {
+            /* renamed from: parseAsciiString */
+            public Integer m11416parseAsciiString(byte[] bArr) {
                 if (bArr.length >= 3) {
                     return Integer.valueOf(((bArr[0] - 48) * 100) + ((bArr[1] - 48) * 10) + (bArr[2] - 48));
                 }
                 throw new NumberFormatException("Malformed status code " + new String(bArr, InternalMetadata.US_ASCII));
             }
 
-            @Override // io.grpc.Metadata.TrustedAsciiMarshaller
             public byte[] toAsciiString(Integer num) {
                 throw new UnsupportedOperationException();
             }
@@ -119,7 +117,7 @@ public abstract class Http2ClientStreamTransportState extends AbstractClientStre
     /* JADX INFO: Access modifiers changed from: protected */
     public void transportHeadersReceived(Metadata metadata) {
         Status status;
-        Preconditions.checkNotNull(metadata, Downloads.Impl.RequestHeaders.URI_SEGMENT);
+        Preconditions.checkNotNull(metadata, "headers");
         Status status2 = this.transportError;
         if (status2 != null) {
             this.transportError = status2.augmentDescription("headers: " + metadata);

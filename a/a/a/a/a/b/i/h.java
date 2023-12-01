@@ -27,13 +27,13 @@ public abstract class h {
         float[] fArr2 = this.p;
         float[] fArr3 = fArr2;
         if (fArr2 == null) {
-            fArr3 = a.a.a.a.a.a.h.f.f1239c;
+            fArr3 = a.a.a.a.a.a.h.f.f1191c;
         }
         GLES20.glUniformMatrix4fv(i2, 1, false, fArr3, 0);
         int i3 = this.t;
         float[] fArr4 = fArr;
         if (fArr == null) {
-            fArr4 = a.a.a.a.a.a.h.f.f1239c;
+            fArr4 = a.a.a.a.a.a.h.f.f1191c;
         }
         GLES20.glUniformMatrix4fv(i3, 1, false, fArr4, 0);
         GLES20.glViewport(0, 0, this.m, this.n);

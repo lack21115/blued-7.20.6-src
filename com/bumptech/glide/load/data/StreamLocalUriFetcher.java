@@ -12,17 +12,17 @@ import java.io.InputStream;
 public class StreamLocalUriFetcher extends LocalUriFetcher<InputStream> {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final UriMatcher f20727a;
+    private static final UriMatcher f7121a;
 
     static {
         UriMatcher uriMatcher = new UriMatcher(-1);
-        f20727a = uriMatcher;
+        f7121a = uriMatcher;
         uriMatcher.addURI(ContactsContract.AUTHORITY, "contacts/lookup/*/#", 1);
-        f20727a.addURI(ContactsContract.AUTHORITY, "contacts/lookup/*", 1);
-        f20727a.addURI(ContactsContract.AUTHORITY, "contacts/#/photo", 2);
-        f20727a.addURI(ContactsContract.AUTHORITY, "contacts/#", 3);
-        f20727a.addURI(ContactsContract.AUTHORITY, "contacts/#/display_photo", 4);
-        f20727a.addURI(ContactsContract.AUTHORITY, "phone_lookup/*", 5);
+        f7121a.addURI(ContactsContract.AUTHORITY, "contacts/lookup/*", 1);
+        f7121a.addURI(ContactsContract.AUTHORITY, "contacts/#/photo", 2);
+        f7121a.addURI(ContactsContract.AUTHORITY, "contacts/#", 3);
+        f7121a.addURI(ContactsContract.AUTHORITY, "contacts/#/display_photo", 4);
+        f7121a.addURI(ContactsContract.AUTHORITY, "phone_lookup/*", 5);
     }
 
     public StreamLocalUriFetcher(ContentResolver contentResolver, Uri uri) {
@@ -34,7 +34,7 @@ public class StreamLocalUriFetcher extends LocalUriFetcher<InputStream> {
     }
 
     private InputStream c(Uri uri, ContentResolver contentResolver) throws FileNotFoundException {
-        int match = f20727a.match(uri);
+        int match = f7121a.match(uri);
         if (match != 1) {
             if (match == 3) {
                 return a(contentResolver, uri);

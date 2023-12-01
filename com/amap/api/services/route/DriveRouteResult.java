@@ -27,13 +27,9 @@ public class DriveRouteResult extends RouteResult implements Parcelable {
             return a(i);
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    private float f5704a;
+    private float a;
     private List<DrivePath> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private RouteSearch.DriveRouteQuery f5705c;
+    private RouteSearch.DriveRouteQuery c;
 
     public DriveRouteResult() {
         this.b = new ArrayList();
@@ -42,9 +38,9 @@ public class DriveRouteResult extends RouteResult implements Parcelable {
     public DriveRouteResult(Parcel parcel) {
         super(parcel);
         this.b = new ArrayList();
-        this.f5704a = parcel.readFloat();
+        this.a = parcel.readFloat();
         this.b = parcel.createTypedArrayList(DrivePath.CREATOR);
-        this.f5705c = (RouteSearch.DriveRouteQuery) parcel.readParcelable(RouteSearch.DriveRouteQuery.class.getClassLoader());
+        this.c = (RouteSearch.DriveRouteQuery) parcel.readParcelable(RouteSearch.DriveRouteQuery.class.getClassLoader());
     }
 
     @Override // com.amap.api.services.route.RouteResult, android.os.Parcelable
@@ -53,7 +49,7 @@ public class DriveRouteResult extends RouteResult implements Parcelable {
     }
 
     public RouteSearch.DriveRouteQuery getDriveQuery() {
-        return this.f5705c;
+        return this.c;
     }
 
     public List<DrivePath> getPaths() {
@@ -61,11 +57,11 @@ public class DriveRouteResult extends RouteResult implements Parcelable {
     }
 
     public float getTaxiCost() {
-        return this.f5704a;
+        return this.a;
     }
 
     public void setDriveQuery(RouteSearch.DriveRouteQuery driveRouteQuery) {
-        this.f5705c = driveRouteQuery;
+        this.c = driveRouteQuery;
     }
 
     public void setPaths(List<DrivePath> list) {
@@ -73,14 +69,14 @@ public class DriveRouteResult extends RouteResult implements Parcelable {
     }
 
     public void setTaxiCost(float f) {
-        this.f5704a = f;
+        this.a = f;
     }
 
     @Override // com.amap.api.services.route.RouteResult, android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
         super.writeToParcel(parcel, i);
-        parcel.writeFloat(this.f5704a);
+        parcel.writeFloat(this.a);
         parcel.writeTypedList(this.b);
-        parcel.writeParcelable(this.f5705c, i);
+        parcel.writeParcelable(this.c, i);
     }
 }

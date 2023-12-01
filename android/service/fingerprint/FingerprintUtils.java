@@ -4,7 +4,6 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.hardware.fingerprint.Fingerprint;
 import android.provider.Settings;
-import com.android.internal.R;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
@@ -24,7 +23,7 @@ public class FingerprintUtils {
                 return;
             }
         }
-        fingerprintsForUser.add(new Fingerprint(context.getString(R.string.fingerprint_default_name, Integer.valueOf(i)), Integer.valueOf(i), Integer.valueOf(i2)));
+        fingerprintsForUser.add(new Fingerprint(context.getString(17039568, Integer.valueOf(i)), Integer.valueOf(i), Integer.valueOf(i2)));
         saveFingerprints(fingerprintsForUser, context.getContentResolver(), i2);
     }
 

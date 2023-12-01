@@ -1,7 +1,6 @@
 package com.tencent.txcopyrightedmedia.impl.utils;
 
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 
@@ -9,11 +8,11 @@ import java.util.ArrayList;
 public class at extends bb {
 
     /* renamed from: a  reason: collision with root package name */
-    String f40069a;
+    String f26378a;
     public int b;
 
     /* renamed from: c  reason: collision with root package name */
-    int f40070c;
+    int f26379c;
     public String d;
     public aq e;
     public final ArrayList<ar> f;
@@ -30,16 +29,16 @@ public class at extends bb {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public String f40071a;
+        public String f26380a;
         public int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public int f40072c;
+        public int f26381c;
 
         public a(String str, int i, int i2) {
-            this.f40071a = str;
+            this.f26380a = str;
             this.b = i;
-            this.f40072c = i2;
+            this.f26381c = i2;
         }
     }
 
@@ -48,11 +47,11 @@ public class at extends bb {
         this.f = new ArrayList<>();
         this.p = new az();
         this.i = false;
-        this.f40069a = str;
+        this.f26378a = str;
         this.n = str2;
         this.o = str3;
         this.d = str4;
-        this.f40070c = 0;
+        this.f26379c = 0;
         if (TextUtils.equals(str2, "Accompaniment")) {
             if (TextUtils.equals(str, "StandardOriginal")) {
                 this.b = 1;
@@ -65,7 +64,7 @@ public class at extends bb {
             } else {
                 this.b = 2;
             }
-            this.f40069a = "audio/default";
+            this.f26378a = "audio/default";
         } else if (!TextUtils.equals(str2, "ChorusClip")) {
             if (TextUtils.equals(str2, "Original")) {
                 this.b = 1;
@@ -77,12 +76,12 @@ public class at extends bb {
                 if (TextUtils.equals(str, "Subtitles")) {
                     this.b = 3;
                 }
-                this.f40070c = 1;
+                this.f26379c = 1;
             } else {
                 this.b = 2;
             }
-            this.f40069a = "audio/default";
-            this.f40070c = 1;
+            this.f26378a = "audio/default";
+            this.f26379c = 1;
         }
     }
 
@@ -97,7 +96,7 @@ public class at extends bb {
             } catch (Exception e) {
                 e.printStackTrace();
                 i iVar = new i(-5, "Content format error.");
-                iVar.f40101a.a(e.toString());
+                iVar.f26410a.a(e.toString());
                 return iVar;
             }
         }
@@ -123,7 +122,7 @@ public class at extends bb {
 
     @Override // com.tencent.txcopyrightedmedia.impl.utils.bb
     public final String c() {
-        return "txcm://bgmStream/" + URLEncoder.encode(i()) + BridgeUtil.SPLIT_MARK + URLEncoder.encode(j()) + BridgeUtil.SPLIT_MARK + this.b;
+        return "txcm://bgmStream/" + URLEncoder.encode(i()) + "/" + URLEncoder.encode(j()) + "/" + this.b;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:164:0x0596, code lost:

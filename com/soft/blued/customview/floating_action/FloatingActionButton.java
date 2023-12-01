@@ -16,11 +16,11 @@ import com.soft.blued.R;
 public class FloatingActionButton extends AppCompatImageView implements View.OnTouchListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f28580a;
+    private Context f14890a;
     int b;
 
     /* renamed from: c  reason: collision with root package name */
-    int f28581c;
+    int f14891c;
     int d;
     String e;
     String f;
@@ -49,11 +49,11 @@ public class FloatingActionButton extends AppCompatImageView implements View.OnT
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a(Context context, AttributeSet attributeSet) {
-        this.f28580a = context;
+        this.f14890a = context;
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.FloatingActionButton, 0, 0);
-        this.b = obtainStyledAttributes.getColor(9, a(17170451));
-        this.f28581c = obtainStyledAttributes.getColor(10, a(17170450));
-        this.d = obtainStyledAttributes.getColor(8, a(17170432));
+        this.b = obtainStyledAttributes.getColor(9, a(android.R.color.holo_blue_dark));
+        this.f14891c = obtainStyledAttributes.getColor(10, a(android.R.color.holo_blue_light));
+        this.d = obtainStyledAttributes.getColor(8, a(android.R.color.darker_gray));
         this.i = obtainStyledAttributes.getResourceId(11, 0);
         this.e = obtainStyledAttributes.getString(14);
         this.g = obtainStyledAttributes.getBoolean(13, true);
@@ -76,12 +76,12 @@ public class FloatingActionButton extends AppCompatImageView implements View.OnT
     @Override // android.view.View.OnTouchListener
     public boolean onTouch(View view, MotionEvent motionEvent) {
         if (motionEvent.getAction() == 0) {
-            Animation loadAnimation = AnimationUtils.loadAnimation(this.f28580a, R.anim.button_scale_down);
+            Animation loadAnimation = AnimationUtils.loadAnimation(this.f14890a, R.anim.button_scale_down);
             this.h = loadAnimation;
             startAnimation(loadAnimation);
         }
         if (motionEvent.getAction() == 1) {
-            Animation loadAnimation2 = AnimationUtils.loadAnimation(this.f28580a, R.anim.button_scale_up);
+            Animation loadAnimation2 = AnimationUtils.loadAnimation(this.f14890a, R.anim.button_scale_up);
             this.h = loadAnimation2;
             startAnimation(loadAnimation2);
             return false;

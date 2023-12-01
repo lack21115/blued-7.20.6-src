@@ -15,7 +15,7 @@ import java.io.InputStream;
 public final class DataUrlLoader<Model, Data> implements ModelLoader<Model, Data> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final DataDecoder<Data> f20867a;
+    private final DataDecoder<Data> f7261a;
 
     /* loaded from: source-7206380-dex2jar.jar:com/bumptech/glide/load/model/DataUrlLoader$DataDecoder.class */
     public interface DataDecoder<Data> {
@@ -30,21 +30,21 @@ public final class DataUrlLoader<Model, Data> implements ModelLoader<Model, Data
     static final class DataUriFetcher<Data> implements DataFetcher<Data> {
 
         /* renamed from: a  reason: collision with root package name */
-        private final String f20868a;
+        private final String f7262a;
         private final DataDecoder<Data> b;
 
         /* renamed from: c  reason: collision with root package name */
-        private Data f20869c;
+        private Data f7263c;
 
         DataUriFetcher(String str, DataDecoder<Data> dataDecoder) {
-            this.f20868a = str;
+            this.f7262a = str;
             this.b = dataDecoder;
         }
 
         @Override // com.bumptech.glide.load.data.DataFetcher
         public void a() {
             try {
-                this.b.a((DataDecoder<Data>) this.f20869c);
+                this.b.a((DataDecoder<Data>) this.f7263c);
             } catch (IOException e) {
             }
         }
@@ -53,8 +53,8 @@ public final class DataUrlLoader<Model, Data> implements ModelLoader<Model, Data
         @Override // com.bumptech.glide.load.data.DataFetcher
         public void a(Priority priority, DataFetcher.DataCallback<? super Data> dataCallback) {
             try {
-                Data a2 = this.b.a(this.f20868a);
-                this.f20869c = a2;
+                Data a2 = this.b.a(this.f7262a);
+                this.f7263c = a2;
                 dataCallback.a((DataFetcher.DataCallback<? super Data>) a2);
             } catch (IllegalArgumentException e) {
                 dataCallback.a((Exception) e);
@@ -80,7 +80,7 @@ public final class DataUrlLoader<Model, Data> implements ModelLoader<Model, Data
     public static final class StreamFactory<Model> implements ModelLoaderFactory<Model, InputStream> {
 
         /* renamed from: a  reason: collision with root package name */
-        private final DataDecoder<InputStream> f20870a = new DataDecoder<InputStream>() { // from class: com.bumptech.glide.load.model.DataUrlLoader.StreamFactory.1
+        private final DataDecoder<InputStream> f7264a = new DataDecoder<InputStream>() { // from class: com.bumptech.glide.load.model.DataUrlLoader.StreamFactory.1
             @Override // com.bumptech.glide.load.model.DataUrlLoader.DataDecoder
             public Class<InputStream> a() {
                 return InputStream.class;
@@ -110,7 +110,7 @@ public final class DataUrlLoader<Model, Data> implements ModelLoader<Model, Data
 
         @Override // com.bumptech.glide.load.model.ModelLoaderFactory
         public ModelLoader<Model, InputStream> a(MultiModelLoaderFactory multiModelLoaderFactory) {
-            return new DataUrlLoader(this.f20870a);
+            return new DataUrlLoader(this.f7264a);
         }
 
         @Override // com.bumptech.glide.load.model.ModelLoaderFactory
@@ -119,12 +119,12 @@ public final class DataUrlLoader<Model, Data> implements ModelLoader<Model, Data
     }
 
     public DataUrlLoader(DataDecoder<Data> dataDecoder) {
-        this.f20867a = dataDecoder;
+        this.f7261a = dataDecoder;
     }
 
     @Override // com.bumptech.glide.load.model.ModelLoader
     public ModelLoader.LoadData<Data> a(Model model, int i, int i2, Options options) {
-        return new ModelLoader.LoadData<>(new ObjectKey(model), new DataUriFetcher(model.toString(), this.f20867a));
+        return new ModelLoader.LoadData<>(new ObjectKey(model), new DataUriFetcher(model.toString(), this.f7261a));
     }
 
     @Override // com.bumptech.glide.load.model.ModelLoader

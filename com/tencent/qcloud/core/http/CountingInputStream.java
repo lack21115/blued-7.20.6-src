@@ -133,13 +133,13 @@ class CountingInputStream extends FilterInputStream {
     @Override // java.io.FilterInputStream, java.io.InputStream
     public void reset() throws IOException {
         synchronized (this) {
-            if (!this.f42254in.markSupported()) {
+            if (!this.in.markSupported()) {
                 throw new IOException("Mark not supported");
             }
             if (this.mark == -1) {
                 throw new IOException("Mark not set");
             }
-            this.f42254in.reset();
+            this.in.reset();
             this.bytesWritten = this.mark;
         }
     }

@@ -1,7 +1,6 @@
 package com.anythink.expressad.foundation.g.f.h;
 
 import android.text.TextUtils;
-import com.amap.api.col.p0003sl.iu;
 import com.anythink.expressad.foundation.h.o;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -19,11 +18,11 @@ public final class b {
     private static final String d = b.class.getSimpleName();
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f7914a = "a";
+    public static String f5074a = "a";
     public static String b = "d";
 
     /* renamed from: c  reason: collision with root package name */
-    public static String f7915c = iu.h;
+    public static String f5075c = "e";
 
     public b() {
     }

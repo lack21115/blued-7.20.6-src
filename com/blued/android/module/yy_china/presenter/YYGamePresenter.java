@@ -28,11 +28,10 @@ public class YYGamePresenter extends AbstractBasePresenter {
     @Override // com.blued.android.module.yy_china.presenter.AbstractBasePresenter
     public void b(LifecycleOwner lifecycleOwner) {
         LiveEventBus.get("show_game_step", YYImModel.class).observe(lifecycleOwner, new Observer<YYImModel>() { // from class: com.blued.android.module.yy_china.presenter.YYGamePresenter.1
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(YYImModel yYImModel) {
                 YYMsgGameExtra yYMsgGameExtra;
-                if (YYGamePresenter.this.f17634a == null || YYGamePresenter.this.f17634a.u == null || (yYMsgGameExtra = (YYMsgGameExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) YYMsgGameExtra.class)) == null) {
+                if (YYGamePresenter.this.a == null || YYGamePresenter.this.a.u == null || (yYMsgGameExtra = (YYMsgGameExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), YYMsgGameExtra.class)) == null) {
                     return;
                 }
                 if (yYMsgGameExtra.step < 0) {
@@ -40,92 +39,90 @@ public class YYGamePresenter extends AbstractBasePresenter {
                 }
                 YYAudienceModel yYAudienceModel = yYImModel.target_profile;
                 YYRoomInfoManager.e().a(yYMsgGameExtra.time <= 0 ? 20L : yYMsgGameExtra.time, yYMsgGameExtra.step == 1 ? 2 : -1);
-                YYGamePresenter.this.f17634a.u.c(yYMsgGameExtra.step_title);
-                YYGamePresenter.this.f17634a.u.d(yYMsgGameExtra.active_left_value);
-                YYGamePresenter.this.f17634a.u.e(yYMsgGameExtra.active_right_value);
-                YYGamePresenter.this.f17634a.y();
+                YYGamePresenter.this.a.u.c(yYMsgGameExtra.step_title);
+                YYGamePresenter.this.a.u.d(yYMsgGameExtra.active_left_value);
+                YYGamePresenter.this.a.u.e(yYMsgGameExtra.active_right_value);
+                YYGamePresenter.this.a.y();
                 switch (yYMsgGameExtra.step) {
                     case 1:
-                        YYGamePresenter.this.f17634a.u.a(false);
+                        YYGamePresenter.this.a.u.a(false);
                         return;
                     case 2:
-                        YYGamePresenter.this.f17634a.u.a(yYMsgGameExtra.member_left, yYMsgGameExtra.member_right);
+                        YYGamePresenter.this.a.u.a(yYMsgGameExtra.member_left, yYMsgGameExtra.member_right);
                         return;
                     case 3:
-                        YYGamePresenter.this.f17634a.u.a(yYMsgGameExtra.member_left, yYMsgGameExtra.member_right);
+                        YYGamePresenter.this.a.u.a(yYMsgGameExtra.member_left, yYMsgGameExtra.member_right);
                         if (yYAudienceModel == null || !TextUtils.equals(yYAudienceModel.getUid(), YYRoomInfoManager.e().k())) {
                             return;
                         }
-                        YYTeamMemberView yYTeamMemberView = new YYTeamMemberView(YYGamePresenter.this.f17634a.getContext());
-                        yYTeamMemberView.a(YYGamePresenter.this.f17634a, YYGamePresenter.this.f17634a.getResources().getString(R.string.yy_game_choose_member), 1);
-                        YYGamePresenter.this.f17634a.a((View) yYTeamMemberView, -2, false);
+                        YYTeamMemberView yYTeamMemberView = new YYTeamMemberView(YYGamePresenter.this.a.getContext());
+                        yYTeamMemberView.a(YYGamePresenter.this.a, YYGamePresenter.this.a.getResources().getString(R.string.yy_game_choose_member), 1);
+                        YYGamePresenter.this.a.a((View) yYTeamMemberView, -2, false);
                         return;
                     case 4:
-                        YYGamePresenter.this.f17634a.u.b();
+                        YYGamePresenter.this.a.u.b();
                         return;
                     case 5:
                     case 10:
-                        YYGamePresenter.this.f17634a.u.a(yYMsgGameExtra.step_content);
+                        YYGamePresenter.this.a.u.a(yYMsgGameExtra.step_content);
                         return;
                     case 6:
-                        YYGamePresenter.this.f17634a.u.a(yYMsgGameExtra.step_content);
+                        YYGamePresenter.this.a.u.a(yYMsgGameExtra.step_content);
                         if (yYAudienceModel == null || !TextUtils.equals(yYAudienceModel.getUid(), YYRoomInfoManager.e().k())) {
                             return;
                         }
-                        YYTeamMemberView yYTeamMemberView2 = new YYTeamMemberView(YYGamePresenter.this.f17634a.getContext());
-                        yYTeamMemberView2.a(YYGamePresenter.this.f17634a, YYGamePresenter.this.f17634a.getResources().getString(R.string.yy_game_battle_member), 2);
-                        YYGamePresenter.this.f17634a.a((View) yYTeamMemberView2, -2, false);
+                        YYTeamMemberView yYTeamMemberView2 = new YYTeamMemberView(YYGamePresenter.this.a.getContext());
+                        yYTeamMemberView2.a(YYGamePresenter.this.a, YYGamePresenter.this.a.getResources().getString(R.string.yy_game_battle_member), 2);
+                        YYGamePresenter.this.a.a((View) yYTeamMemberView2, -2, false);
                         return;
                     case 7:
-                        YYGamePresenter.this.f17634a.u.a(yYMsgGameExtra.member_left, yYMsgGameExtra.member_right);
+                        YYGamePresenter.this.a.u.a(yYMsgGameExtra.member_left, yYMsgGameExtra.member_right);
                         if (yYAudienceModel == null || !TextUtils.equals(yYAudienceModel.getUid(), YYRoomInfoManager.e().k())) {
                             return;
                         }
-                        YYPlayGameView yYPlayGameView = new YYPlayGameView(YYGamePresenter.this.f17634a.getContext());
-                        yYPlayGameView.a(YYGamePresenter.this.f17634a);
-                        YYGamePresenter.this.f17634a.a((View) yYPlayGameView, -2, false);
+                        YYPlayGameView yYPlayGameView = new YYPlayGameView(YYGamePresenter.this.a.getContext());
+                        yYPlayGameView.a(YYGamePresenter.this.a);
+                        YYGamePresenter.this.a.a((View) yYPlayGameView, -2, false);
                         return;
                     case 8:
-                        YYGamePresenter.this.f17634a.u.a(yYMsgGameExtra.left_increase, yYMsgGameExtra.right_increase);
-                        YYGamePresenter.this.f17634a.u.a(yYMsgGameExtra.victory, yYMsgGameExtra.left_increase, yYMsgGameExtra.right_increase);
+                        YYGamePresenter.this.a.u.a(yYMsgGameExtra.left_increase, yYMsgGameExtra.right_increase);
+                        YYGamePresenter.this.a.u.a(yYMsgGameExtra.victory, yYMsgGameExtra.left_increase, yYMsgGameExtra.right_increase);
                         return;
                     case 9:
-                        YYGamePresenter.this.f17634a.u.a(yYMsgGameExtra.step_content);
+                        YYGamePresenter.this.a.u.a(yYMsgGameExtra.step_content);
                         if (yYAudienceModel == null || !TextUtils.equals(yYAudienceModel.getUid(), YYRoomInfoManager.e().k())) {
                             return;
                         }
-                        YYGamePresenter.this.f17634a.u.c();
+                        YYGamePresenter.this.a.u.c();
                         return;
                     case 11:
-                        YYGamePresenter.this.f17634a.u.b(yYMsgGameExtra.step_content);
+                        YYGamePresenter.this.a.u.b(yYMsgGameExtra.step_content);
                         return;
                     case 12:
                         if (yYMsgGameExtra.victory == null) {
                             return;
                         }
-                        int a2 = StringUtils.a(yYMsgGameExtra.victory.team_num, 0);
-                        String str = a2 == 1 ? yYMsgGameExtra.active_left_value : "0";
-                        if (a2 == 2) {
+                        int a = StringUtils.a(yYMsgGameExtra.victory.team_num, 0);
+                        String str = a == 1 ? yYMsgGameExtra.active_left_value : "0";
+                        if (a == 2) {
                             str = yYMsgGameExtra.active_right_value;
                         }
-                        YYGamePresenter.this.f17634a.u.a(yYMsgGameExtra.victory, a2, str);
+                        YYGamePresenter.this.a.u.a(yYMsgGameExtra.victory, a, str);
                         return;
                     default:
-                        YYGamePresenter.this.f17634a.u.a();
+                        YYGamePresenter.this.a.u.a();
                         return;
                 }
             }
         });
         LiveEventBus.get("show_game_team_active_value", YYMsgGameExtra.class).observe(lifecycleOwner, new Observer<YYMsgGameExtra>() { // from class: com.blued.android.module.yy_china.presenter.YYGamePresenter.2
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(YYMsgGameExtra yYMsgGameExtra) {
-                YYGamePresenter.this.f17634a.u.e(yYMsgGameExtra.active_right_value);
-                YYGamePresenter.this.f17634a.u.d(yYMsgGameExtra.active_left_value);
+                YYGamePresenter.this.a.u.e(yYMsgGameExtra.active_right_value);
+                YYGamePresenter.this.a.u.d(yYMsgGameExtra.active_left_value);
             }
         });
         LiveEventBus.get("event_game_member_status", YYMsgUpdateMemberExtra.class).observe(lifecycleOwner, new Observer<YYMsgUpdateMemberExtra>() { // from class: com.blued.android.module.yy_china.presenter.YYGamePresenter.3
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(YYMsgUpdateMemberExtra yYMsgUpdateMemberExtra) {
                 List<YYSeatMemberModel> list;
@@ -134,7 +131,7 @@ public class YYGamePresenter extends AbstractBasePresenter {
                 }
                 for (YYSeatMemberModel yYSeatMemberModel : list) {
                     if (yYSeatMemberModel != null) {
-                        YYGamePresenter.this.f17634a.E.a(yYSeatMemberModel);
+                        YYGamePresenter.this.a.E.a(yYSeatMemberModel);
                     }
                 }
             }

@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentEmotionListBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ScrollView f28815a;
+    private final ScrollView f15125a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ScrollView getRoot() {
-        return this.f28815a;
+        return this.f15125a;
     }
 }

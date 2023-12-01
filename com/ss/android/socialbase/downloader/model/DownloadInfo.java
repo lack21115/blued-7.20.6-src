@@ -14,6 +14,7 @@ import com.ss.android.socialbase.downloader.constants.ByteInvalidRetryStatus;
 import com.ss.android.socialbase.downloader.constants.DBDefinition;
 import com.ss.android.socialbase.downloader.constants.DbJsonConstants;
 import com.ss.android.socialbase.downloader.constants.DownloadConstants;
+import com.ss.android.socialbase.downloader.constants.DownloadErrorCode;
 import com.ss.android.socialbase.downloader.constants.DownloadStatus;
 import com.ss.android.socialbase.downloader.constants.EnqueueType;
 import com.ss.android.socialbase.downloader.constants.RetryDelayStatus;
@@ -2275,7 +2276,7 @@ public class DownloadInfo implements Parcelable {
                 }
             } catch (Throwable th) {
                 th.printStackTrace();
-                iTempFileSaveCompleteCallback.onFailed(new BaseException(1038, DownloadUtils.getErrorMsgWithTagPrefix(th, "registerTempFileSaveCallback")));
+                iTempFileSaveCompleteCallback.onFailed(new BaseException((int) DownloadErrorCode.ERROR_TEMP_TO_TARGET_FAILED, DownloadUtils.getErrorMsgWithTagPrefix(th, "registerTempFileSaveCallback")));
             }
         }
     }

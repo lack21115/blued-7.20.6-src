@@ -2,27 +2,23 @@ package com.amap.api.services.core;
 
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/services/core/SuggestionCity.class */
 public class SuggestionCity {
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f5616a;
+    private String a;
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f5617c;
+    private String c;
     private int d;
 
     protected SuggestionCity() {
     }
 
     public SuggestionCity(String str, String str2, String str3, int i) {
-        this.f5616a = str;
+        this.a = str;
         this.b = str2;
-        this.f5617c = str3;
+        this.c = str3;
         this.d = i;
     }
 
     public String getAdCode() {
-        return this.f5617c;
+        return this.c;
     }
 
     public String getCityCode() {
@@ -30,7 +26,7 @@ public class SuggestionCity {
     }
 
     public String getCityName() {
-        return this.f5616a;
+        return this.a;
     }
 
     public int getSuggestionNum() {
@@ -38,7 +34,7 @@ public class SuggestionCity {
     }
 
     public void setAdCode(String str) {
-        this.f5617c = str;
+        this.c = str;
     }
 
     public void setCityCode(String str) {
@@ -46,7 +42,7 @@ public class SuggestionCity {
     }
 
     public void setCityName(String str) {
-        this.f5616a = str;
+        this.a = str;
     }
 
     public void setSuggestionNum(int i) {

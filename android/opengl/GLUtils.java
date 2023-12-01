@@ -39,9 +39,9 @@ public final class GLUtils {
                 return "EGL_BAD_NATIVE_WINDOW";
             case 12300:
                 return "EGL_BAD_PARAMETER";
-            case 12301:
+            case EGL14.EGL_BAD_SURFACE /* 12301 */:
                 return "EGL_BAD_SURFACE";
-            case 12302:
+            case EGL14.EGL_CONTEXT_LOST /* 12302 */:
                 return "EGL_CONTEXT_LOST";
             default:
                 return "0x" + Integer.toHexString(i);

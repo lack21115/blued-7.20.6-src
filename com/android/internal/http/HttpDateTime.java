@@ -1,6 +1,8 @@
 package com.android.internal.http;
 
 import android.text.format.Time;
+import com.amap.api.services.core.AMapException;
+import com.android.internal.R;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -32,7 +34,7 @@ public final class HttpDateTime {
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
     private static int getMonth(String str) {
         int i = 0;
-        switch (((Character.toLowerCase(str.charAt(0)) + Character.toLowerCase(str.charAt(1))) + Character.toLowerCase(str.charAt(2))) - 291) {
+        switch (((Character.toLowerCase(str.charAt(0)) + Character.toLowerCase(str.charAt(1))) + Character.toLowerCase(str.charAt(2))) - R.styleable.Theme_preferencePanelStyle) {
             case 9:
                 return 11;
             case 10:
@@ -85,9 +87,9 @@ public final class HttpDateTime {
     private static int getYear(String str) {
         if (str.length() == 2) {
             int charAt = ((str.charAt(0) - '0') * 10) + (str.charAt(1) - '0');
-            return charAt >= 70 ? charAt + 1900 : charAt + 2000;
+            return charAt >= 70 ? charAt + AMapException.CODE_AMAP_CLIENT_UNKNOWN_ERROR : charAt + 2000;
         } else if (str.length() == 3) {
-            return ((str.charAt(0) - '0') * 100) + ((str.charAt(1) - '0') * 10) + (str.charAt(2) - '0') + 1900;
+            return ((str.charAt(0) - '0') * 100) + ((str.charAt(1) - '0') * 10) + (str.charAt(2) - '0') + AMapException.CODE_AMAP_CLIENT_UNKNOWN_ERROR;
         } else {
             if (str.length() == 4) {
                 return ((str.charAt(0) - '0') * 1000) + ((str.charAt(1) - '0') * 100) + ((str.charAt(2) - '0') * 10) + (str.charAt(3) - '0');
@@ -124,7 +126,7 @@ public final class HttpDateTime {
             i = 0;
             date = 1;
         }
-        Time time2 = new Time(Time.TIMEZONE_UTC);
+        Time time2 = new Time("UTC");
         time2.set(time.second, time.minute, time.hour, date, i, i2);
         return time2.toMillis(false);
     }

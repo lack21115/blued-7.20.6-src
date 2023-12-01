@@ -5,13 +5,15 @@ import android.content.Intent;
 import android.content.pm.ResolveInfo;
 import android.net.Uri;
 import android.util.Log;
+import android.webkit.WebView;
+import com.alipay.sdk.util.i;
 import com.blued.android.core.AppInfo;
 import java.util.List;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/web/CommonUrlHandler.class */
 public class CommonUrlHandler {
     public static boolean a(Context context, String str) {
-        if (str.startsWith("tel:")) {
+        if (str.startsWith(WebView.SCHEME_TEL)) {
             b(context, str);
             return true;
         } else if (str.startsWith("wtai://wp/mc")) {
@@ -20,7 +22,7 @@ public class CommonUrlHandler {
         } else if (str.startsWith("sms:")) {
             d(context, str);
             return true;
-        } else if (str.startsWith("mailto:")) {
+        } else if (str.startsWith(WebView.SCHEME_MAILTO)) {
             e(context, str);
             return true;
         } else {
@@ -34,7 +36,7 @@ public class CommonUrlHandler {
     }
 
     private static void b(Context context, String str) {
-        Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse(str));
+        Intent intent = new Intent("android.intent.action.DIAL", Uri.parse(str));
         if (a(intent)) {
             context.startActivity(intent);
             return;
@@ -43,9 +45,9 @@ public class CommonUrlHandler {
     }
 
     private static void c(Context context, String str) {
-        String[] split = str.split(";");
+        String[] split = str.split(i.b);
         if (split.length == 2) {
-            Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel://" + split[1]));
+            Intent intent = new Intent("android.intent.action.DIAL", Uri.parse("tel://" + split[1]));
             if (a(intent)) {
                 context.startActivity(intent);
                 return;
@@ -55,7 +57,7 @@ public class CommonUrlHandler {
     }
 
     private static void d(Context context, String str) {
-        Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.parse("smsto:" + str.substring(4, str.length())));
+        Intent intent = new Intent("android.intent.action.SENDTO", Uri.parse("smsto:" + str.substring(4, str.length())));
         intent.putExtra("sms_body", "");
         if (a(intent)) {
             context.startActivity(intent);
@@ -65,7 +67,7 @@ public class CommonUrlHandler {
     }
 
     private static void e(Context context, String str) {
-        Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.parse(str));
+        Intent intent = new Intent("android.intent.action.SENDTO", Uri.parse(str));
         if (a(intent)) {
             context.startActivity(intent);
             return;

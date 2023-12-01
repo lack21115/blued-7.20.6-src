@@ -7,11 +7,11 @@ import com.tencent.ugc.TXVideoEditConstants;
 public final /* synthetic */ class aj implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final TXVideoEditer f40225a;
+    private final TXVideoEditer f26534a;
     private final TXVideoEditConstants.TXPreviewParam b;
 
     private aj(TXVideoEditer tXVideoEditer, TXVideoEditConstants.TXPreviewParam tXPreviewParam) {
-        this.f40225a = tXVideoEditer;
+        this.f26534a = tXVideoEditer;
         this.b = tXPreviewParam;
     }
 
@@ -21,6 +21,6 @@ public final /* synthetic */ class aj implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        TXVideoEditer.lambda$initWithPreview$39(this.f40225a, this.b);
+        TXVideoEditer.lambda$initWithPreview$39(this.f26534a, this.b);
     }
 }

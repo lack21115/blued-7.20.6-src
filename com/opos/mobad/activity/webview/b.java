@@ -10,11 +10,11 @@ import java.util.HashMap;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private e f25641a;
+    private e f11953a;
     private c b;
 
     /* renamed from: c  reason: collision with root package name */
-    private WebDataHepler f25642c;
+    private WebDataHepler f11954c;
     private com.opos.mobad.activity.webview.a.b d;
     private Activity e;
     private com.opos.mobad.activity.webview.a.a f;
@@ -29,7 +29,7 @@ public class b {
 
     public b(Activity activity, WebDataHepler webDataHepler) {
         this.e = activity;
-        this.f25642c = webDataHepler;
+        this.f11954c = webDataHepler;
         c.a a2 = new c.a().b("ad_mob").a(true).a(webDataHepler.c());
         this.g = com.opos.mobad.cmn.service.a.a().b();
         this.f = new com.opos.mobad.activity.webview.a.a(activity);
@@ -37,15 +37,15 @@ public class b {
     }
 
     private void a(com.opos.mobad.activity.webview.a.b bVar, com.opos.mobad.activity.webview.a.a aVar, com.opos.mobad.cmn.a.d dVar) {
-        if (this.f25641a != null) {
+        if (this.f11953a != null) {
             return;
         }
         HashMap hashMap = new HashMap();
         hashMap.put("mixad", bVar);
-        c cVar = new c(this.e, new d(hashMap, this.f25642c.g(), this.f25642c.i(), this.f25642c.j()));
+        c cVar = new c(this.e, new d(hashMap, this.f11954c.g(), this.f11954c.i(), this.f11954c.j()));
         this.b = cVar;
         e eVar = new e(this.e, cVar);
-        this.f25641a = eVar;
+        this.f11953a = eVar;
         com.opos.mobad.activity.webview.b.d dVar2 = this.h;
         if (dVar2 != null) {
             eVar.a(dVar2);
@@ -53,18 +53,18 @@ public class b {
         a aVar2 = this.i;
         if (aVar2 != null) {
             this.f.a(aVar2);
-            this.f25641a.a(this.i);
+            this.f11953a.a(this.i);
         }
-        aVar.a(this.f25641a, this.f25642c, dVar);
+        aVar.a(this.f11953a, this.f11954c, dVar);
     }
 
     public void a() {
         com.opos.cmn.an.f.a.b("WebPresenter", "render");
-        if (this.f25641a != null) {
+        if (this.f11953a != null) {
             return;
         }
         a(this.d, this.f, this.g);
-        this.f25641a.a(this.f25642c);
+        this.f11953a.a(this.f11954c);
     }
 
     public void a(a aVar) {
@@ -73,7 +73,7 @@ public class b {
         if (aVar2 != null) {
             aVar2.a(aVar);
         }
-        e eVar = this.f25641a;
+        e eVar = this.f11953a;
         if (eVar != null) {
             eVar.a(aVar);
         }
@@ -81,14 +81,14 @@ public class b {
 
     public void a(com.opos.mobad.activity.webview.b.d dVar) {
         this.h = dVar;
-        e eVar = this.f25641a;
+        e eVar = this.f11953a;
         if (eVar != null) {
             eVar.a(dVar);
         }
     }
 
     public boolean a(int i, KeyEvent keyEvent) {
-        e eVar = this.f25641a;
+        e eVar = this.f11953a;
         return eVar != null && eVar.a(i, keyEvent);
     }
 
@@ -113,7 +113,7 @@ public class b {
         if (bVar != null) {
             bVar.a();
         }
-        e eVar = this.f25641a;
+        e eVar = this.f11953a;
         if (eVar != null) {
             eVar.b();
         }

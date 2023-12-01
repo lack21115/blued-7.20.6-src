@@ -1,5 +1,6 @@
 package com.bytedance.pangle.activity;
 
+import android.R;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.app.ActivityManager;
@@ -728,6 +729,7 @@ public abstract class GeneratePluginAppCompatActivity extends AppCompatActivity 
         this.mProxyActivity.zeusSuperOnProvideAssistData(bundle);
     }
 
+    @Override // android.view.Window.Callback
     public void onProvideKeyboardShortcuts(List list, Menu menu, int i) {
         this.mProxyActivity.zeusSuperOnProvideKeyboardShortcuts(list, menu, i);
     }
@@ -784,6 +786,7 @@ public abstract class GeneratePluginAppCompatActivity extends AppCompatActivity 
         return this.mProxyActivity.zeusSuperOnSearchRequested();
     }
 
+    @Override // android.view.Window.Callback
     public boolean onSearchRequested(SearchEvent searchEvent) {
         return this.mProxyActivity.zeusSuperOnSearchRequested(searchEvent);
     }
@@ -858,6 +861,7 @@ public abstract class GeneratePluginAppCompatActivity extends AppCompatActivity 
         return this.mProxyActivity.zeusSuperOnWindowStartingActionMode(callback);
     }
 
+    @Override // android.view.Window.Callback
     public ActionMode onWindowStartingActionMode(ActionMode.Callback callback, int i) {
         return this.mProxyActivity.zeusSuperOnWindowStartingActionMode(callback, i);
     }
@@ -930,7 +934,7 @@ public abstract class GeneratePluginAppCompatActivity extends AppCompatActivity 
         ZeusTransformUtils.clearConstructorCache();
         this.mProxyActivity.zeusSuperSetContentView(i);
         ZeusTransformUtils.clearConstructorCache();
-        c.a(this, findViewById(16908290));
+        c.a(this, findViewById(R.id.content));
     }
 
     @Override // androidx.appcompat.app.AppCompatActivity, androidx.activity.ComponentActivity, android.app.Activity

@@ -9,7 +9,7 @@ import com.cmic.gen.sdk.tencent.e.q;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f21618a;
+    private String f8012a;
     private String b;
 
     private c a(String str, String str2, String str3, g gVar) {
@@ -36,7 +36,7 @@ public class a {
     }
 
     public String a() {
-        return this.f21618a;
+        return this.f8012a;
     }
 
     public c b(c cVar, com.cmic.gen.sdk.tencent.c.d.b bVar, com.cmic.gen.sdk.tencent.a aVar) {
@@ -50,9 +50,9 @@ public class a {
         } else {
             dVar.b("authz");
         }
-        c a2 = a(this.f21618a, cVar.f(), "POST", dVar);
+        c a2 = a(this.f8012a, cVar.f(), "POST", dVar);
         a2.a(cVar.h());
-        this.f21618a = null;
+        this.f8012a = null;
         return a2;
     }
 }

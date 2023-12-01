@@ -80,7 +80,6 @@ public class YYAudienceModel implements MultiItemEntity {
         return "1".equals(this.chat_anchor) ? "房主" : "2".equals(this.chat_anchor) ? "场控" : "";
     }
 
-    @Override // com.chad.library.adapter.base.entity.MultiItemEntity
     public int getItemType() {
         return this.itemType;
     }

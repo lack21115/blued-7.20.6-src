@@ -10,13 +10,9 @@ import com.anythink.china.a.a.c;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/china/a/a/d.class */
 public final class d {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final String f6223a = "OaidAidlUtil";
+    private static final String a = "OaidAidlUtil";
     private static final String b = "com.huawei.hwid";
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final String f6224c = "com.uodis.opendevice.OPENIDS_SERVICE";
+    private static final String c = "com.uodis.opendevice.OPENIDS_SERVICE";
     private Context d;
     private ServiceConnection e;
     private c f;
@@ -74,8 +70,8 @@ public final class d {
             return false;
         }
         this.e = new a(this, (byte) 0);
-        Intent intent = new Intent(f6224c);
-        intent.setPackage("com.huawei.hwid");
+        Intent intent = new Intent(c);
+        intent.setPackage(b);
         return this.d.bindService(intent, this.e, 1);
     }
 
@@ -113,8 +109,8 @@ public final class d {
         this.g = aVar;
         if (this.d != null) {
             this.e = new a(this, (byte) 0);
-            Intent intent = new Intent(f6224c);
-            intent.setPackage("com.huawei.hwid");
+            Intent intent = new Intent(c);
+            intent.setPackage(b);
             this.d.bindService(intent, this.e, 1);
         }
     }

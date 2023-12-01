@@ -14,6 +14,7 @@ import android.os.ParcelFileDescriptor;
 import android.os.SELinux;
 import android.util.Log;
 import com.android.org.bouncycastle.util.encoders.Base64;
+import com.anythink.core.common.g.g;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -53,8 +54,8 @@ public class LocalTransport extends BackupTransport {
     private int mRestoreType;
     private ParcelFileDescriptor mSocket;
     private FileInputStream mSocketInputStream;
-    private File mDataDir = new File(Environment.getDownloadCacheDirectory(), Context.BACKUP_SERVICE);
-    private File mCurrentSetDir = new File(this.mDataDir, Long.toString(1));
+    private File mDataDir = new File(Environment.getDownloadCacheDirectory(), "backup");
+    private File mCurrentSetDir = new File(this.mDataDir, Long.toString(CURRENT_SET_TOKEN));
     private File mCurrentSetIncrementalDir = new File(this.mCurrentSetDir, INCREMENTAL_DIR);
     private File mCurrentSetFullDir = new File(this.mCurrentSetDir, FULL_DATA_DIR);
     private PackageInfo[] mRestorePackages = null;
@@ -160,7 +161,6 @@ public class LocalTransport extends BackupTransport {
         return 0;
     }
 
-    @Override // android.app.backup.BackupTransport
     public int abortFullRestore() {
         if (this.mRestoreType != 2) {
             throw new IllegalStateException("abortFullRestore() but not currently restoring");
@@ -170,7 +170,6 @@ public class LocalTransport extends BackupTransport {
         return 0;
     }
 
-    @Override // android.app.backup.BackupTransport
     public void cancelFullBackup() {
         File tarballFile = tarballFile(this.mFullTargetPackage);
         tearDownFullBackup();
@@ -179,7 +178,6 @@ public class LocalTransport extends BackupTransport {
         }
     }
 
-    @Override // android.app.backup.BackupTransport
     public int clearBackupData(PackageInfo packageInfo) {
         File file = new File(this.mCurrentSetIncrementalDir, packageInfo.packageName);
         File[] listFiles = file.listFiles();
@@ -214,32 +212,26 @@ public class LocalTransport extends BackupTransport {
         }
     }
 
-    @Override // android.app.backup.BackupTransport
     public Intent configurationIntent() {
         return null;
     }
 
-    @Override // android.app.backup.BackupTransport
     public String currentDestinationString() {
         return TRANSPORT_DESTINATION_STRING;
     }
 
-    @Override // android.app.backup.BackupTransport
     public Intent dataManagementIntent() {
         return null;
     }
 
-    @Override // android.app.backup.BackupTransport
     public String dataManagementLabel() {
         return "";
     }
 
-    @Override // android.app.backup.BackupTransport
     public int finishBackup() {
         return tearDownFullBackup();
     }
 
-    @Override // android.app.backup.BackupTransport
     public void finishRestore() {
         if (this.mRestoreType == 2) {
             resetFullRestoreState();
@@ -247,7 +239,6 @@ public class LocalTransport extends BackupTransport {
         this.mRestoreType = 0;
     }
 
-    @Override // android.app.backup.BackupTransport
     public RestoreSet[] getAvailableRestoreSets() {
         long[] jArr;
         long[] jArr2 = new long[POSSIBLE_SETS.length + 1];
@@ -271,12 +262,10 @@ public class LocalTransport extends BackupTransport {
         }
     }
 
-    @Override // android.app.backup.BackupTransport
     public long getCurrentRestoreSet() {
-        return 1L;
+        return CURRENT_SET_TOKEN;
     }
 
-    @Override // android.app.backup.BackupTransport
     public int getNextFullRestoreDataChunk(ParcelFileDescriptor parcelFileDescriptor) {
         if (this.mRestoreType != 2) {
             throw new IllegalStateException("Asked for full restore data for non-stream package");
@@ -289,7 +278,7 @@ public class LocalTransport extends BackupTransport {
                 this.mFullRestoreBuffer = new byte[2048];
             } catch (IOException e) {
                 Log.e(TAG, "Unable to read archive for " + str);
-                return -1002;
+                return g.c;
             }
         }
         try {
@@ -308,7 +297,6 @@ public class LocalTransport extends BackupTransport {
         }
     }
 
-    @Override // android.app.backup.BackupTransport
     public int getRestoreData(ParcelFileDescriptor parcelFileDescriptor) {
         if (this.mRestorePackages == null) {
             throw new IllegalStateException("startRestore not called");
@@ -346,18 +334,15 @@ public class LocalTransport extends BackupTransport {
         }
     }
 
-    @Override // android.app.backup.BackupTransport
     public int initializeDevice() {
         deleteContents(this.mCurrentSetDir);
         return 0;
     }
 
-    @Override // android.app.backup.BackupTransport
     public String name() {
         return new ComponentName(this.mContext, getClass()).flattenToShortString();
     }
 
-    @Override // android.app.backup.BackupTransport
     public RestoreDescription nextRestorePackage() {
         String str;
         boolean z;
@@ -395,7 +380,6 @@ public class LocalTransport extends BackupTransport {
         return new RestoreDescription(str, this.mRestoreType);
     }
 
-    @Override // android.app.backup.BackupTransport
     public int performBackup(PackageInfo packageInfo, ParcelFileDescriptor parcelFileDescriptor) {
         File file = new File(this.mCurrentSetIncrementalDir, packageInfo.packageName);
         file.mkdirs();
@@ -437,7 +421,6 @@ public class LocalTransport extends BackupTransport {
         }
     }
 
-    @Override // android.app.backup.BackupTransport
     public int performFullBackup(PackageInfo packageInfo, ParcelFileDescriptor parcelFileDescriptor) {
         if (this.mSocket != null) {
             Log.e(TAG, "Attempt to initiate full backup while one is in progress");
@@ -460,17 +443,14 @@ public class LocalTransport extends BackupTransport {
         }
     }
 
-    @Override // android.app.backup.BackupTransport
     public long requestBackupTime() {
         return 0L;
     }
 
-    @Override // android.app.backup.BackupTransport
     public long requestFullBackupTime() {
         return 0L;
     }
 
-    @Override // android.app.backup.BackupTransport
     public int sendBackupData(int i) {
         if (this.mFullBackupBuffer == null) {
             Log.w(TAG, "Attempted sendBackupData before performFullBackup");
@@ -498,7 +478,6 @@ public class LocalTransport extends BackupTransport {
         return 0;
     }
 
-    @Override // android.app.backup.BackupTransport
     public int startRestore(long j, PackageInfo[] packageInfoArr) {
         this.mRestorePackages = packageInfoArr;
         this.mRestorePackage = -1;
@@ -509,7 +488,6 @@ public class LocalTransport extends BackupTransport {
         return 0;
     }
 
-    @Override // android.app.backup.BackupTransport
     public String transportDirName() {
         return TRANSPORT_DIR_NAME;
     }

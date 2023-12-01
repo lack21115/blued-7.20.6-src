@@ -7,7 +7,7 @@ class BaselineDimensionDependency extends DimensionDependency {
     }
 
     public void update(DependencyNode dependencyNode) {
-        ((VerticalWidgetRun) this.f2135a).baseline.f2136c = this.f2135a.b.getBaselineDistance();
+        ((VerticalWidgetRun) this.f2087a).baseline.f2088c = this.f2087a.b.getBaselineDistance();
         this.resolved = true;
     }
 }

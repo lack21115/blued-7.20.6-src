@@ -14,7 +14,6 @@ import android.os.Looper;
 import android.os.Message;
 import android.text.TextUtils;
 import android.util.Pair;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.sina.weibo.sdk.WeiboAppManager;
 import com.sina.weibo.sdk.exception.WeiboException;
 import com.sina.weibo.sdk.net.NetUtils;
@@ -131,7 +130,7 @@ public class AppInstallCmdExecutor implements CmdExecutor<AppInstallCmd> {
     }
 
     private static String generateSaveFileName(String str) {
-        int lastIndexOf = str.lastIndexOf(BridgeUtil.SPLIT_MARK);
+        int lastIndexOf = str.lastIndexOf("/");
         return lastIndexOf != -1 ? str.substring(lastIndexOf + 1, str.length()) : "";
     }
 

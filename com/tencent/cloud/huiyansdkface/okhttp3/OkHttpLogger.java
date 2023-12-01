@@ -6,7 +6,7 @@ import com.tencent.cloud.huiyansdkface.okhttp3.internal.platform.Platform;
 public class OkHttpLogger {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Log f35874a = new Log() { // from class: com.tencent.cloud.huiyansdkface.okhttp3.OkHttpLogger.1
+    private static Log f22183a = new Log() { // from class: com.tencent.cloud.huiyansdkface.okhttp3.OkHttpLogger.1
         @Override // com.tencent.cloud.huiyansdkface.okhttp3.OkHttpLogger.Log
         public void log(String str, Throwable th) {
             Platform.get().log(4, str, th);
@@ -23,12 +23,12 @@ public class OkHttpLogger {
     }
 
     public static void log(String str, Throwable th) {
-        f35874a.log(str, th);
+        f22183a.log(str, th);
     }
 
     public static void proxy(Log log) {
         if (log != null) {
-            f35874a = log;
+            f22183a = log;
         }
     }
 }

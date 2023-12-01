@@ -294,9 +294,8 @@ public enum LiveMsgType implements ProtocolMessageEnum {
     public static final int WISHING_DRAW_VALUE = 236;
     private final int value;
     private static final Internal.EnumLiteMap<LiveMsgType> internalValueMap = new Internal.EnumLiteMap<LiveMsgType>() { // from class: cn.irisgw.live.LiveMsgType.1
-        /* JADX WARN: Can't rename method to resolve collision */
-        @Override // com.google.protobuf.Internal.EnumLiteMap
-        public LiveMsgType findValueByNumber(int i) {
+        /* renamed from: findValueByNumber */
+        public LiveMsgType m4940findValueByNumber(int i) {
             return LiveMsgType.forNumber(i);
         }
     };
@@ -622,7 +621,7 @@ public enum LiveMsgType implements ProtocolMessageEnum {
     }
 
     public static final Descriptors.EnumDescriptor getDescriptor() {
-        return LiveConstants.getDescriptor().getEnumTypes().get(0);
+        return (Descriptors.EnumDescriptor) LiveConstants.getDescriptor().getEnumTypes().get(0);
     }
 
     public static Internal.EnumLiteMap<LiveMsgType> internalGetValueMap() {
@@ -641,12 +640,10 @@ public enum LiveMsgType implements ProtocolMessageEnum {
         throw new IllegalArgumentException("EnumValueDescriptor is not for this type.");
     }
 
-    @Override // com.google.protobuf.ProtocolMessageEnum
     public final Descriptors.EnumDescriptor getDescriptorForType() {
         return getDescriptor();
     }
 
-    @Override // com.google.protobuf.ProtocolMessageEnum, com.google.protobuf.Internal.EnumLite
     public final int getNumber() {
         if (this != UNRECOGNIZED) {
             return this.value;
@@ -654,10 +651,9 @@ public enum LiveMsgType implements ProtocolMessageEnum {
         throw new IllegalArgumentException("Can't get the number of an unknown enum value.");
     }
 
-    @Override // com.google.protobuf.ProtocolMessageEnum
     public final Descriptors.EnumValueDescriptor getValueDescriptor() {
         if (this != UNRECOGNIZED) {
-            return getDescriptor().getValues().get(ordinal());
+            return (Descriptors.EnumValueDescriptor) getDescriptor().getValues().get(ordinal());
         }
         throw new IllegalStateException("Can't get the descriptor of an unrecognized enum value.");
     }

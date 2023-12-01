@@ -11,14 +11,12 @@ import kotlinx.coroutines.flow.internal.FusibleFlow;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/ReadonlyStateFlow.class */
 final class ReadonlyStateFlow<T> implements CancellableFlow<T>, StateFlow<T>, FusibleFlow<T> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Job f43407a;
+    private final Job a;
     private final /* synthetic */ StateFlow<T> b;
 
     /* JADX WARN: Multi-variable type inference failed */
     public ReadonlyStateFlow(StateFlow<? extends T> stateFlow, Job job) {
-        this.f43407a = job;
+        this.a = job;
         this.b = stateFlow;
     }
 

@@ -18,7 +18,6 @@ import com.blued.android.core.BlueAppLocal;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.net.IRequestHost;
 import com.blued.android.framework.ui.xpop.XPopup;
-import com.blued.android.framework.ui.xpop.core.BasePopupView;
 import com.blued.android.framework.ui.xpop.core.CenterPopupView;
 import com.blued.android.module.common.widget.dialog.CommonAlertDialog;
 import com.blued.das.message.MessageProtos;
@@ -36,7 +35,7 @@ import com.soft.blued.utils.Logger;
 public class BirthCardPop extends CenterPopupView implements Observer<GiftGivingOptionForJsonParse.CardGift> {
 
     /* renamed from: c  reason: collision with root package name */
-    public IRequestHost f32459c;
+    public IRequestHost f18768c;
     private BirthCardRelativeLayout d;
     private GiftGivingOptionForJsonParse e;
     private boolean f;
@@ -69,7 +68,6 @@ public class BirthCardPop extends CenterPopupView implements Observer<GiftGiving
         this.i.setText(cardGift.text);
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.CenterPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
     public void b() {
         super.b();
         this.d = (BirthCardRelativeLayout) findViewById(2131369264);
@@ -126,9 +124,9 @@ public class BirthCardPop extends CenterPopupView implements Observer<GiftGiving
         }
         this.i.setText(str);
         this.e.extra_info.text = str;
-        ImageLoader.a(this.f32459c, this.e.extra_info.background_image).a((ImageView) findViewById(2131365126));
-        ImageLoader.a(this.f32459c, this.e.extra_info.after_effects).f().g(-1).a((ImageView) findViewById(R.id.iv_pre));
-        TextView textView4 = (TextView) findViewById(2131372555);
+        ImageLoader.a(this.f18768c, this.e.extra_info.background_image).a((ImageView) findViewById(R.id.iv_bg));
+        ImageLoader.a(this.f18768c, this.e.extra_info.after_effects).f().g(-1).a((ImageView) findViewById(R.id.iv_pre));
+        TextView textView4 = (TextView) findViewById(R.id.tv_send_gift);
         if (this.f) {
             textView4.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.pop.BirthCardPop.2
                 @Override // android.view.View.OnClickListener
@@ -142,7 +140,7 @@ public class BirthCardPop extends CenterPopupView implements Observer<GiftGiving
         } else {
             textView4.setVisibility(8);
         }
-        TextView textView5 = (TextView) findViewById(2131371131);
+        TextView textView5 = (TextView) findViewById(R.id.tv_close);
         textView5.setText(getResources().getString(this.f ? 2131886885 : 2131887220));
         textView5.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.pop.BirthCardPop.3
             @Override // android.view.View.OnClickListener
@@ -154,7 +152,7 @@ public class BirthCardPop extends CenterPopupView implements Observer<GiftGiving
                 BirthCardPop.this.c();
             }
         });
-        TextView textView6 = (TextView) findViewById(2131371310);
+        TextView textView6 = (TextView) findViewById(R.id.tv_edit);
         DisplayMetrics displayMetrics = new DisplayMetrics();
         ((Activity) getContext()).getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         if (displayMetrics.density == 2.75f) {
@@ -167,7 +165,7 @@ public class BirthCardPop extends CenterPopupView implements Observer<GiftGiving
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view) {
                     Tracker.onClick(view);
-                    new XPopup.Builder(BirthCardPop.this.getContext()).e(true).a((BasePopupView) new GiftCardEditPop(BirthCardPop.this.getContext(), BirthCardPop.this.e.extra_info)).h();
+                    new XPopup.Builder(BirthCardPop.this.getContext()).e(true).a(new GiftCardEditPop(BirthCardPop.this.getContext(), BirthCardPop.this.e.extra_info)).h();
                 }
             });
         } else {
@@ -200,18 +198,15 @@ public class BirthCardPop extends CenterPopupView implements Observer<GiftGiving
         }
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.CenterPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
     public int getImplLayoutId() {
         return R.layout.pop_birth_card;
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.BasePopupView
     public void u() {
         super.u();
         LiveEventBus.get(EventBusConstant.KEY_EVENT_CARD_EDIT, GiftGivingOptionForJsonParse.CardGift.class).removeObserver(this);
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.BasePopupView
     public void w() {
         super.w();
         this.d.a();

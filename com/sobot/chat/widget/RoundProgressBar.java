@@ -85,9 +85,8 @@ public class RoundProgressBar extends View {
         return this.textSize;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         int i;
         super.onDraw(canvas);
         int width = getWidth() / 2;

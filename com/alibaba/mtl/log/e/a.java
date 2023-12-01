@@ -1,7 +1,6 @@
 package com.alibaba.mtl.log.e;
 
 import android.text.TextUtils;
-import com.baidu.mobads.sdk.internal.bw;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -10,10 +9,8 @@ public class a {
 
     /* renamed from: com.alibaba.mtl.log.e.a$a  reason: collision with other inner class name */
     /* loaded from: source-6737240-dex2jar.jar:com/alibaba/mtl/log/e/a$a.class */
-    public static class C0043a {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static C0043a f4490a = new C0043a();
+    public static class C0003a {
+        public static C0003a a = new C0003a();
         public boolean G = false;
         public String ad = null;
 
@@ -26,23 +23,23 @@ public class a {
         }
     }
 
-    public static C0043a a(String str) {
-        C0043a c0043a = new C0043a();
+    public static C0003a a(String str) {
+        C0003a c0003a = new C0003a();
         try {
             JSONObject jSONObject = new JSONObject(str);
-            if (jSONObject.has(bw.o)) {
-                String string = jSONObject.getString(bw.o);
-                if (!TextUtils.isEmpty(string) && string.equals(bw.o)) {
-                    c0043a.G = true;
+            if (jSONObject.has("success")) {
+                String string = jSONObject.getString("success");
+                if (!TextUtils.isEmpty(string) && string.equals("success")) {
+                    c0003a.G = true;
                 }
             }
             if (jSONObject.has("ret")) {
-                c0043a.ad = jSONObject.getString("ret");
-                return c0043a;
+                c0003a.ad = jSONObject.getString("ret");
+                return c0003a;
             }
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        return c0043a;
+        return c0003a;
     }
 }

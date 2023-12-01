@@ -15,6 +15,8 @@ import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import com.android.internal.util.Protocol;
+import com.blued.android.chat.grpc.backup.MsgBackupManager;
 import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import de.robv.android.xposed.XC_MethodHook;
 import de.robv.android.xposed.XposedBridge;
@@ -278,7 +280,7 @@ public class XResources extends XResourcesSuperClass {
         String str3;
         PackageParser.PackageLite parsePackageLite;
         if (str == null) {
-            str3 = "android";
+            str3 = MsgBackupManager.PLATFORM_ANDROID;
         } else {
             synchronized (sResDirPackageNames) {
                 str2 = sResDirPackageNames.get(str);
@@ -321,10 +323,10 @@ public class XResources extends XResourcesSuperClass {
             return null;
         }
         if (i < 2130706432) {
-            if ((sSystemReplacementsCache[((i & 458752) >> 11) | ((i & 248) >> 3)] & (1 << (i & 7))) == 0) {
+            if ((sSystemReplacementsCache[((i & Protocol.BASE_NETWORK_STATE_TRACKER) >> 11) | ((i & 248) >> 3)] & (1 << (i & 7))) == 0) {
                 return null;
             }
-        } else if (this.mResDir != null && (this.mReplacementsCache[((i & 458752) >> 12) | ((i & 120) >> 3)] & (1 << (i & 7))) == 0) {
+        } else if (this.mResDir != null && (this.mReplacementsCache[((i & Protocol.BASE_NETWORK_STATE_TRACKER) >> 12) | ((i & 120) >> 3)] & (1 << (i & 7))) == 0) {
             return null;
         }
         synchronized (sReplacements) {
@@ -512,7 +514,7 @@ public class XResources extends XResourcesSuperClass {
             throw new IllegalArgumentException("Drawable replacements are deprecated since Xposed 2.1. Use DrawableLoader instead.");
         }
         if (i < 2130706432) {
-            int i2 = ((i & 458752) >> 11) | ((i & 248) >> 3);
+            int i2 = ((i & Protocol.BASE_NETWORK_STATE_TRACKER) >> 11) | ((i & 248) >> 3);
             str = sSystemReplacementsCache;
             synchronized (str) {
                 try {
@@ -523,7 +525,7 @@ public class XResources extends XResourcesSuperClass {
                 }
             }
         } else {
-            int i3 = ((i & 458752) >> 12) | ((i & 120) >> 3);
+            int i3 = ((i & Protocol.BASE_NETWORK_STATE_TRACKER) >> 12) | ((i & 120) >> 3);
             synchronized (xResources.mReplacementsCache) {
                 str = xResources.mReplacementsCache;
                 str[i3] = (byte) (str[i3] | (1 << (i & 7)));

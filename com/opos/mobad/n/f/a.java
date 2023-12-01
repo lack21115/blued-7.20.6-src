@@ -10,7 +10,7 @@ public interface a {
 
     void a(View view);
 
-    void a(a.InterfaceC0708a interfaceC0708a);
+    void a(a.InterfaceC0538a interfaceC0538a);
 
     void a(com.opos.mobad.n.d.h hVar);
 

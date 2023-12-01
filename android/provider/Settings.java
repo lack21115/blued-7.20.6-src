@@ -21,6 +21,7 @@ import android.text.TextUtils;
 import android.util.AndroidException;
 import android.util.Log;
 import com.android.internal.widget.ILockSettings;
+import com.xiaomi.mipush.sdk.Constants;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -1269,7 +1270,7 @@ public final class Settings {
         public static final boolean setLocationProviderEnabledForUser(ContentResolver contentResolver, String str, boolean z, int i) {
             boolean putStringForUser;
             synchronized (Settings.mLocationSettingsLock) {
-                putStringForUser = putStringForUser(contentResolver, "location_providers_allowed", z ? "+" + str : "-" + str, i);
+                putStringForUser = putStringForUser(contentResolver, "location_providers_allowed", z ? "+" + str : Constants.ACCEPT_TIME_SEPARATOR_SERVER + str, i);
             }
             return putStringForUser;
         }

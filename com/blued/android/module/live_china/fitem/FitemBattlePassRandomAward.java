@@ -118,7 +118,7 @@ public final class FitemBattlePassRandomAward extends FreedomItem {
             java.lang.String r1 = r1.getBubble_desc()
             r0.setBubble_desc(r1)
             r0 = r6
-            com.blued.android.module.common.utils.freedom.FreedomAdapter r0 = r0.f10931a
+            com.blued.android.module.common.utils.freedom.FreedomAdapter r0 = r0.a
             android.content.Context r0 = r0.b
             r5 = r0
             r0 = r5
@@ -147,10 +147,10 @@ public final class FitemBattlePassRandomAward extends FreedomItem {
     public void a(Context context, final BaseViewHolder vh, List<FreedomItem> list, int i) {
         Intrinsics.e(context, "context");
         Intrinsics.e(vh, "vh");
-        BaseViewHolder a2 = vh.a(R.id.iv_icon, this.b.getIcon()).a(R.id.tv_count, (CharSequence) String.valueOf(this.b.getLabel())).a(R.id.tv_count, true);
+        BaseViewHolder a = vh.a(R.id.iv_icon, this.b.getIcon()).a(R.id.tv_count, (CharSequence) String.valueOf(this.b.getLabel())).a(R.id.tv_count, true);
         int i2 = R.id.tv_count;
         String label = this.b.getLabel();
-        a2.b(i2, true ^ (label == null || label.length() == 0)).a(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fitem.-$$Lambda$FitemBattlePassRandomAward$iKPsWbiq0wphZoAyKB7nf0huNgs
+        a.b(i2, true ^ (label == null || label.length() == 0)).a(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fitem.-$$Lambda$FitemBattlePassRandomAward$iKPsWbiq0wphZoAyKB7nf0huNgs
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 FitemBattlePassRandomAward.a(FitemBattlePassRandomAward.this, vh, view);

@@ -7,22 +7,6 @@ import com.tencent.qmsp.sdk.f.g;
 
 /* loaded from: source-8829756-dex2jar.jar:com/tencent/qmsp/sdk/app/QmspSDK.class */
 public class QmspSDK extends a {
-    public static /* bridge */ /* synthetic */ String getAppID() {
-        return a.getAppID();
-    }
-
-    public static /* bridge */ /* synthetic */ Context getContext() {
-        return a.getContext();
-    }
-
-    public static /* bridge */ /* synthetic */ String getDevId() {
-        return a.getDevId();
-    }
-
-    public static /* bridge */ /* synthetic */ String getQImeiVer() {
-        return a.getQImeiVer();
-    }
-
     public static String getQmspVer() {
         return c.d();
     }
@@ -32,14 +16,6 @@ public class QmspSDK extends a {
             return b.e().a();
         }
         return false;
-    }
-
-    public static /* bridge */ /* synthetic */ String getUid() {
-        return a.getUid();
-    }
-
-    public static /* bridge */ /* synthetic */ String getmOAID() {
-        return a.getmOAID();
     }
 
     public static int sendCmdToLib(int i, int i2, int i3, Object[] objArr, Object[] objArr2) {

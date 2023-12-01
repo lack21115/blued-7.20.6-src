@@ -1,7 +1,6 @@
 package libcore.net.url;
 
-import android.content.ClipDescription;
-import android.net.http.Headers;
+import com.alipay.sdk.packet.e;
 import java.io.BufferedInputStream;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -59,7 +58,7 @@ public class FileURLConnection extends URLConnection {
             this.filename = "";
         }
         this.filename = UriCodec.decode(this.filename);
-        this.headerKeysAndValues = new String[]{"content-type", null, Headers.CONTENT_LEN, null, "last-modified", null};
+        this.headerKeysAndValues = new String[]{e.d, null, "content-length", null, "last-modified", null};
     }
 
     private long getContentLengthLong() {
@@ -111,7 +110,7 @@ public class FileURLConnection extends URLConnection {
             this.isDir = true;
             this.is = getDirectoryListing(file);
             this.lastModified = file.lastModified();
-            this.headerKeysAndValues[1] = ClipDescription.MIMETYPE_TEXT_HTML;
+            this.headerKeysAndValues[1] = "text/html";
         } else {
             try {
                 this.is = new BufferedInputStream(new FileInputStream(file));

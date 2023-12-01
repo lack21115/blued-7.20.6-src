@@ -10,12 +10,12 @@ import java.util.Collection;
 public final class SCFileUpdateRsp extends MapJceStruct {
 
     /* renamed from: c  reason: collision with root package name */
-    public static ArrayList<FileUpdateRsp> f37266c = new ArrayList<>();
+    public static ArrayList<FileUpdateRsp> f23575c = new ArrayList<>();
     public int iRet;
     public ArrayList<FileUpdateRsp> vItems;
 
     static {
-        f37266c.add(new FileUpdateRsp());
+        f23575c.add(new FileUpdateRsp());
     }
 
     public SCFileUpdateRsp() {
@@ -38,7 +38,7 @@ public final class SCFileUpdateRsp extends MapJceStruct {
     @Override // com.tencent.mapsdk.internal.p
     public void readFrom(m mVar) {
         this.iRet = mVar.a(this.iRet, 0, true);
-        this.vItems = (ArrayList) mVar.a((m) f37266c, 1, false);
+        this.vItems = (ArrayList) mVar.a((m) f23575c, 1, false);
     }
 
     @Override // com.tencent.mapsdk.internal.p

@@ -10,13 +10,9 @@ import com.blued.android.core.imagecache.drawable.IRecyclingDrawable;
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/imagecache/drawable/RecyclingBitmapDrawable.class */
 public class RecyclingBitmapDrawable extends BitmapDrawable implements IRecyclingDrawable {
     private static boolean d = true;
-
-    /* renamed from: a  reason: collision with root package name */
-    public int f9619a;
+    public int a;
     public int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public int f9620c;
+    public int c;
     private IRecyclingDrawable.CountRef e;
     private String f;
 
@@ -76,9 +72,9 @@ public class RecyclingBitmapDrawable extends BitmapDrawable implements IRecyclin
 
     @Override // com.blued.android.core.imagecache.drawable.IRecyclingDrawable
     public int e() {
-        int a2 = RecyclingUtils.a(this);
-        int i = a2;
-        if (a2 == 0) {
+        int a = RecyclingUtils.a(this);
+        int i = a;
+        if (a == 0) {
             i = 1;
         }
         return i;

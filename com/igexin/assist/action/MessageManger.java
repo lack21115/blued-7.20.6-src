@@ -26,7 +26,7 @@ import org.json.JSONObject;
 public class MessageManger {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23176a = "Assist_MessageManger";
+    private static final String f9568a = "Assist_MessageManger";
     private String b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -35,34 +35,34 @@ public class MessageManger {
     public final class AnonymousClass1 implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ String f23177a;
+        final /* synthetic */ String f9569a;
         final /* synthetic */ boolean b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ Context f23178c;
+        final /* synthetic */ Context f9570c;
 
         AnonymousClass1(String str, boolean z, Context context) {
-            this.f23177a = str;
+            this.f9569a = str;
             this.b = z;
-            this.f23178c = context;
+            this.f9570c = context;
         }
 
         @Override // java.lang.Runnable
         public final void run() {
             if (e.m.get()) {
-                com.igexin.c.a.c.a.b(MessageManger.f23176a, "delay 1s save token = " + this.f23177a);
-                MessageManger.b(this.f23177a, this.b);
+                com.igexin.c.a.c.a.b(MessageManger.f9568a, "delay 1s save token = " + this.f9569a);
+                MessageManger.b(this.f9569a, this.b);
                 return;
             }
-            Context context = this.f23178c;
+            Context context = this.f9570c;
             if (context == null) {
-                com.igexin.c.a.c.a.b(MessageManger.f23176a, " save token in SP ,but context is null " + this.f23177a);
+                com.igexin.c.a.c.a.b(MessageManger.f9568a, " save token in SP ,but context is null " + this.f9569a);
                 return;
             }
             d a2 = d.a(context);
             JSONObject jSONObject = new JSONObject();
             try {
-                jSONObject.put("token", this.f23177a);
+                jSONObject.put("token", this.f9569a);
                 jSONObject.put("isForce", this.b);
             } catch (JSONException e) {
                 com.igexin.c.a.c.a.a(e);
@@ -75,18 +75,18 @@ public class MessageManger {
     final class a implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        MessageBean f23179a;
+        MessageBean f9571a;
 
         a(MessageBean messageBean) {
-            this.f23179a = messageBean;
+            this.f9571a = messageBean;
         }
 
         @Override // java.lang.Runnable
         public final void run() {
             try {
-                if (this.f23179a != null) {
-                    GtcProvider.setContext(this.f23179a.getContext());
-                    String messageType = this.f23179a.getMessageType();
+                if (this.f9571a != null) {
+                    GtcProvider.setContext(this.f9571a.getContext());
+                    String messageType = this.f9571a.getMessageType();
                     boolean z = true;
                     int hashCode = messageType.hashCode();
                     if (hashCode != -1161803523) {
@@ -94,28 +94,28 @@ public class MessageManger {
                             if (hashCode == 110541305 && messageType.equals("token")) {
                                 z = false;
                             }
-                        } else if (messageType.equals("payload")) {
+                        } else if (messageType.equals(AssistPushConsts.MSG_TYPE_PAYLOAD)) {
                             z = true;
                         }
                     } else if (messageType.equals(AssistPushConsts.MSG_TYPE_ACTIONS)) {
                         z = true;
                     }
                     if (!z) {
-                        MessageManger.a(MessageManger.this, this.f23179a.getContext(), this.f23179a.getStringMessage(), this.f23179a.extra.getBoolean("isForce"));
+                        MessageManger.a(MessageManger.this, this.f9571a.getContext(), this.f9571a.getStringMessage(), this.f9571a.extra.getBoolean("isForce"));
                     } else if (z) {
-                        if (TextUtils.isEmpty(this.f23179a.getStringMessage())) {
+                        if (TextUtils.isEmpty(this.f9571a.getStringMessage())) {
                             return;
                         }
                         com.igexin.assist.action.a aVar = new com.igexin.assist.action.a();
-                        aVar.a(this.f23179a);
+                        aVar.a(this.f9571a);
                         if (aVar.a(false) && aVar.e.equals(AssistPushConsts.MSG_VALUE_PAYLOAD)) {
-                            MessageManger.a(MessageManger.this, aVar, this.f23179a.getContext());
+                            MessageManger.a(MessageManger.this, aVar, this.f9571a.getContext());
                         }
-                    } else if (z && !TextUtils.isEmpty(this.f23179a.getStringMessage())) {
+                    } else if (z && !TextUtils.isEmpty(this.f9571a.getStringMessage())) {
                         com.igexin.assist.action.a aVar2 = new com.igexin.assist.action.a();
-                        aVar2.a(this.f23179a);
+                        aVar2.a(this.f9571a);
                         if (aVar2.a(true) && aVar2.e.equals(AssistPushConsts.MSG_VALUE_PAYLOAD)) {
-                            MessageManger.a(this.f23179a.getContext(), aVar2);
+                            MessageManger.a(this.f9571a.getContext(), aVar2);
                         }
                     }
                 }
@@ -129,7 +129,7 @@ public class MessageManger {
     static final class b {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final MessageManger f23180a = new MessageManger((byte) 0);
+        private static final MessageManger f9572a = new MessageManger((byte) 0);
 
         private b() {
         }
@@ -146,7 +146,7 @@ public class MessageManger {
         long currentTimeMillis = System.currentTimeMillis();
         PushTaskBean pushTaskBean = new PushTaskBean();
         pushTaskBean.setAppid(aVar.d);
-        pushTaskBean.setMessageId(aVar.f23182c);
+        pushTaskBean.setMessageId(aVar.f9574c);
         pushTaskBean.setTaskId(aVar.b);
         pushTaskBean.setId(String.valueOf(currentTimeMillis));
         pushTaskBean.setCurrentActionid(1);
@@ -162,18 +162,18 @@ public class MessageManger {
         obtain.obj = aVar.f;
         Bundle bundle = new Bundle();
         bundle.putString("content", aVar.f);
-        if (aVar.f23181a != null) {
-            bundle.putByteArray("payload", aVar.f23181a);
+        if (aVar.f9573a != null) {
+            bundle.putByteArray(AssistPushConsts.MSG_TYPE_PAYLOAD, aVar.f9573a);
         }
         obtain.setData(bundle);
-        d.a.f23474a.a(obtain);
+        d.a.f9866a.a(obtain);
     }
 
     private void a(Context context, String str, boolean z) {
         if (TextUtils.isEmpty(str)) {
             return;
         }
-        com.igexin.c.a.c.a.e.a(f23176a, "other token = ".concat(String.valueOf(str)));
+        com.igexin.c.a.c.a.e.a(f9568a, "other token = ".concat(String.valueOf(str)));
         if (e.m.get()) {
             b(str, z);
         } else {
@@ -185,7 +185,7 @@ public class MessageManger {
         if (TextUtils.isEmpty(str)) {
             return;
         }
-        com.igexin.c.a.c.a.e.a(f23176a, "other token = ".concat(String.valueOf(str)));
+        com.igexin.c.a.c.a.e.a(f9568a, "other token = ".concat(String.valueOf(str)));
         if (e.m.get()) {
             b(str, z);
         } else {
@@ -207,8 +207,8 @@ public class MessageManger {
             Bundle bundle = new Bundle();
             bundle.putInt("action", 10001);
             String str = aVar.b;
-            String str2 = aVar.f23182c;
-            bundle.putSerializable(PushConsts.KEY_MESSAGE_DATA, new GTTransmitMessage(str, str2, aVar.f23182c + ":" + aVar.b, aVar.f23181a));
+            String str2 = aVar.f9574c;
+            bundle.putSerializable(PushConsts.KEY_MESSAGE_DATA, new GTTransmitMessage(str, str2, aVar.f9574c + ":" + aVar.b, aVar.f9573a));
             l.a(context);
             l.a().a(bundle);
             messageManger.feedbackPushMessage(context, aVar, messageManger.getBrandCode() + "0");
@@ -231,8 +231,8 @@ public class MessageManger {
             Bundle bundle = new Bundle();
             bundle.putInt("action", 10001);
             String str = aVar.b;
-            String str2 = aVar.f23182c;
-            bundle.putSerializable(PushConsts.KEY_MESSAGE_DATA, new GTTransmitMessage(str, str2, aVar.f23182c + ":" + aVar.b, aVar.f23181a));
+            String str2 = aVar.f9574c;
+            bundle.putSerializable(PushConsts.KEY_MESSAGE_DATA, new GTTransmitMessage(str, str2, aVar.f9574c + ":" + aVar.b, aVar.f9573a));
             l.a(context);
             l.a().a(bundle);
             feedbackPushMessage(context, aVar, getBrandCode() + "0");
@@ -261,11 +261,11 @@ public class MessageManger {
         obtain.obj = aVar.f;
         Bundle bundle = new Bundle();
         bundle.putString("content", aVar.f);
-        if (aVar.f23181a != null) {
-            bundle.putByteArray("payload", aVar.f23181a);
+        if (aVar.f9573a != null) {
+            bundle.putByteArray(AssistPushConsts.MSG_TYPE_PAYLOAD, aVar.f9573a);
         }
         obtain.setData(bundle);
-        d.a.f23474a.a(obtain);
+        d.a.f9866a.a(obtain);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -283,7 +283,7 @@ public class MessageManger {
         }
         f.a().b(str);
         if (e.u) {
-            com.igexin.c.a.c.a.b(f23176a, "online, send addphoneinfo");
+            com.igexin.c.a.c.a.b(f9568a, "online, send addphoneinfo");
             com.igexin.push.core.a.b.d().i();
         } else if (z) {
             f.a().c("");
@@ -291,11 +291,11 @@ public class MessageManger {
     }
 
     public static MessageManger getInstance() {
-        return b.f23180a;
+        return b.f9572a;
     }
 
     public void addMessage(MessageBean messageBean) {
-        com.igexin.b.a.a().f23194a.execute(new a(messageBean));
+        com.igexin.b.a.a().f9586a.execute(new a(messageBean));
     }
 
     public void feedbackPushMessage(Context context, com.igexin.assist.action.a aVar, String str) {
@@ -305,7 +305,7 @@ public class MessageManger {
                 long currentTimeMillis = System.currentTimeMillis();
                 PushTaskBean pushTaskBean = new PushTaskBean();
                 pushTaskBean.setAppid(aVar.d);
-                pushTaskBean.setMessageId(aVar.f23182c);
+                pushTaskBean.setMessageId(aVar.f9574c);
                 pushTaskBean.setTaskId(aVar.b);
                 pushTaskBean.setId(String.valueOf(currentTimeMillis));
                 pushTaskBean.setCurrentActionid(1);
@@ -316,7 +316,7 @@ public class MessageManger {
             long currentTimeMillis2 = System.currentTimeMillis();
             JSONObject jSONObject = new JSONObject();
             jSONObject.put("id", String.valueOf(currentTimeMillis2));
-            jSONObject.put("messageid", aVar.f23182c);
+            jSONObject.put("messageid", aVar.f9574c);
             jSONObject.put("taskid", aVar.b);
             jSONObject.put("multaid", str);
             jSONObject.put("timestamp", String.valueOf(System.currentTimeMillis()));

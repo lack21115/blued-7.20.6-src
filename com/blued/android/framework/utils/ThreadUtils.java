@@ -5,9 +5,7 @@ import android.os.Looper;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/utils/ThreadUtils.class */
 public class ThreadUtils {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final Handler f10117a = new Handler(Looper.getMainLooper());
+    private static final Handler a = new Handler(Looper.getMainLooper());
 
     private ThreadUtils() {
     }
@@ -16,12 +14,12 @@ public class ThreadUtils {
         if (a()) {
             runnable.run();
         } else {
-            f10117a.post(runnable);
+            a.post(runnable);
         }
     }
 
     public static void a(Runnable runnable, long j) {
-        f10117a.postDelayed(runnable, j);
+        a.postDelayed(runnable, j);
     }
 
     public static boolean a() {
@@ -29,10 +27,10 @@ public class ThreadUtils {
     }
 
     public static void b(Runnable runnable) {
-        f10117a.post(runnable);
+        a.post(runnable);
     }
 
     public static void c(Runnable runnable) {
-        f10117a.removeCallbacks(runnable);
+        a.removeCallbacks(runnable);
     }
 }

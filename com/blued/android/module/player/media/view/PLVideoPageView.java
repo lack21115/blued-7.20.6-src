@@ -14,7 +14,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
-import com.anythink.expressad.video.module.a.a.m;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.image.ImageWrapper;
@@ -348,23 +347,23 @@ public class PLVideoPageView extends AbsPlayerView {
     }
 
     private void u() {
-        this.f15662a = AppInfo.d();
-        this.b = LayoutInflater.from(this.f15662a);
-        this.f15663c = this.b.inflate(R.layout.pl_texture_video_view_new, this);
-        this.i = (FrameLayout) this.f15663c.findViewById(R.id.video_root);
-        this.p = (SeekBar) this.f15663c.findViewById(R.id.pl_seek_bar);
-        this.o = (TextView) this.f15663c.findViewById(R.id.pl_tip);
+        this.a = AppInfo.d();
+        this.b = LayoutInflater.from(this.a);
+        this.c = this.b.inflate(R.layout.pl_texture_video_view_new, this);
+        this.i = (FrameLayout) this.c.findViewById(R.id.video_root);
+        this.p = (SeekBar) this.c.findViewById(R.id.pl_seek_bar);
+        this.o = (TextView) this.c.findViewById(R.id.pl_tip);
         if (StatusBarHelper.a()) {
             LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) this.o.getLayoutParams();
-            layoutParams.topMargin += StatusBarHelper.a(this.f15662a);
+            layoutParams.topMargin += StatusBarHelper.a(this.a);
             this.o.setLayoutParams(layoutParams);
         }
-        this.q = (SeekBar) this.f15663c.findViewById(R.id.volume_bar);
-        this.e = this.f15663c.findViewById(R.id.cover_view);
+        this.q = (SeekBar) this.c.findViewById(R.id.volume_bar);
+        this.e = this.c.findViewById(R.id.cover_view);
         this.e.setVisibility(0);
-        this.f = (ImageView) this.f15663c.findViewById(R.id.preview);
-        this.g = (ImageView) this.f15663c.findViewById(R.id.video_state_icon);
-        this.h = this.f15663c.findViewById(R.id.LoadingView);
+        this.f = (ImageView) this.c.findViewById(R.id.preview);
+        this.g = (ImageView) this.c.findViewById(R.id.video_state_icon);
+        this.h = this.c.findViewById(R.id.LoadingView);
         this.p.setMax(1000);
         this.p.setPadding(0, 0, 0, 0);
         this.p.setVisibility(4);
@@ -472,37 +471,37 @@ public class PLVideoPageView extends AbsPlayerView {
         String str = m;
         Log.c(str, "loadVideoSource: url = " + videoPlayConfig.b);
         if (a(videoPlayConfig)) {
-            this.f15663c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.player.media.view.-$$Lambda$PLVideoPageView$jz2Wb-owqo7i_s3Fgsj_pruhZ3c
+            this.c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.player.media.view.-$$Lambda$PLVideoPageView$jz2Wb-owqo7i_s3Fgsj_pruhZ3c
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     PLVideoPageView.this.b(view);
                 }
             });
-            this.f15663c.setOnLongClickListener(new View.OnLongClickListener() { // from class: com.blued.android.module.player.media.view.-$$Lambda$PLVideoPageView$aeh22Jy6tESvagwyAzXbH9-teUg
+            this.c.setOnLongClickListener(new View.OnLongClickListener() { // from class: com.blued.android.module.player.media.view.-$$Lambda$PLVideoPageView$aeh22Jy6tESvagwyAzXbH9-teUg
                 @Override // android.view.View.OnLongClickListener
                 public final boolean onLongClick(View view) {
-                    boolean a2;
-                    a2 = PLVideoPageView.this.a(view);
-                    return a2;
+                    boolean a;
+                    a = PLVideoPageView.this.a(view);
+                    return a;
                 }
             });
             if (this.j.j) {
                 Utils.a(this.j);
             }
-            this.o.setText(String.format(this.f15662a.getResources().getString(R.string.short_video_size_tip), String.format("%s", Long.valueOf(this.j.f15653c / 1024))));
+            this.o.setText(String.format(this.a.getResources().getString(R.string.short_video_size_tip), String.format("%s", Long.valueOf(this.j.c / 1024))));
             if (this.j.e != 0 && this.j.f != 0) {
                 if (z) {
                     layoutParams = (FrameLayout.LayoutParams) this.f.getLayoutParams();
-                    int[] a2 = Utils.a(this.j.e, this.j.f);
-                    layoutParams.width = a2[0];
-                    layoutParams.height = a2[1];
+                    int[] a = Utils.a(this.j.e, this.j.f);
+                    layoutParams.width = a[0];
+                    layoutParams.height = a[1];
                 } else {
                     layoutParams = new FrameLayout.LayoutParams(this.j.e, this.j.f);
                 }
                 layoutParams.gravity = 17;
                 this.f.setLayoutParams(layoutParams);
             }
-            if (TextUtils.isEmpty(this.j.f15652a)) {
+            if (TextUtils.isEmpty(this.j.a)) {
                 this.f.setVisibility(8);
                 this.f.setImageResource(R.drawable.defaultpicture);
             } else {
@@ -571,7 +570,7 @@ public class PLVideoPageView extends AbsPlayerView {
 
     public void e() {
         if (b()) {
-            if (!TextUtils.isEmpty(this.j.i) && this.r >= m.ag) {
+            if (!TextUtils.isEmpty(this.j.i) && this.r >= 3000) {
                 try {
                     StatisticsProxy.a().a(2, this.j.i, (int) (this.r / 1000));
                 } catch (Exception e) {
@@ -680,19 +679,19 @@ public class PLVideoPageView extends AbsPlayerView {
             j();
         } else if (this.j.o) {
             long duration = b() ? this.d.getDuration() : 0L;
-            if (this.j.f15653c <= 0 || duration <= 16000) {
+            if (this.j.c <= 0 || duration <= 16000) {
                 Log.c(m, "video size is 0");
                 return;
             }
             String str = m;
-            Log.c(str, "video size is :" + this.j.f15653c + "  totalDuration:" + duration);
+            Log.c(str, "video size is :" + this.j.c + "  totalDuration:" + duration);
             if (this.j != null && this.j.w) {
                 this.o.setVisibility(0);
             }
             AppInfo.n().postDelayed(new Runnable() { // from class: com.blued.android.module.player.media.view.PLVideoPageView.4
                 @Override // java.lang.Runnable
                 public void run() {
-                    Animation loadAnimation = AnimationUtils.loadAnimation(PLVideoPageView.this.f15662a, R.anim.push_up_out);
+                    Animation loadAnimation = AnimationUtils.loadAnimation(PLVideoPageView.this.a, R.anim.push_up_out);
                     loadAnimation.setAnimationListener(new Animation.AnimationListener() { // from class: com.blued.android.module.player.media.view.PLVideoPageView.4.1
                         @Override // android.view.animation.Animation.AnimationListener
                         public void onAnimationEnd(Animation animation) {
@@ -709,7 +708,7 @@ public class PLVideoPageView extends AbsPlayerView {
                     });
                     PLVideoPageView.this.o.startAnimation(loadAnimation);
                 }
-            }, m.ag);
+            }, 3000L);
         }
     }
 
@@ -743,10 +742,10 @@ public class PLVideoPageView extends AbsPlayerView {
     }
 
     public void setCoverImageWithBlur(boolean z) {
-        if (this.j == null || TextUtils.isEmpty(this.j.f15652a) || this.f == null || this.f.getVisibility() != 0) {
+        if (this.j == null || TextUtils.isEmpty(this.j.a) || this.f == null || this.f.getVisibility() != 0) {
             return;
         }
-        ImageWrapper d = !this.j.f15652a.contains("http") ? ImageLoader.d(null, this.j.f15652a) : ImageLoader.a((IRequestHost) null, this.j.f15652a);
+        ImageWrapper d = !this.j.a.contains("http") ? ImageLoader.d(null, this.j.a) : ImageLoader.a((IRequestHost) null, this.j.a);
         if (z) {
             d.a(80);
         }

@@ -7,13 +7,9 @@ import java.util.Map;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/k/a/c.class */
 public class c {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final f f6783a;
+    private final f a;
     private final Map<View, b> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final Map<View, d<b>> f6784c;
+    private final Map<View, d<b>> c;
     private final f.b d;
     private f.d e;
 
@@ -98,9 +94,9 @@ public class c {
 
     private c(Map<View, b> map, Map<View, d<b>> map2, f.b bVar, f fVar) {
         this.b = map;
-        this.f6784c = map2;
+        this.c = map2;
         this.d = bVar;
-        this.f6783a = fVar;
+        this.a = fVar;
         f.d dVar = new f.d() { // from class: com.anythink.core.common.k.a.c.1
             @Override // com.anythink.core.common.k.a.f.d
             public final void a(List<View> list) {
@@ -116,11 +112,11 @@ public class c {
             }
         };
         this.e = dVar;
-        this.f6783a.a(dVar);
+        this.a.a(dVar);
     }
 
     private void b(View view) {
-        this.f6784c.remove(view);
+        this.c.remove(view);
     }
 
     @Deprecated
@@ -130,14 +126,14 @@ public class c {
 
     public final void a() {
         this.b.clear();
-        this.f6784c.clear();
-        this.f6783a.a();
+        this.c.clear();
+        this.a.a();
     }
 
     public final void a(View view) {
         this.b.remove(view);
         b(view);
-        this.f6783a.a(view);
+        this.a.a(view);
     }
 
     public final void a(View view, b bVar) {
@@ -149,14 +145,14 @@ public class c {
             return;
         }
         this.b.put(view, bVar);
-        f fVar = this.f6783a;
+        f fVar = this.a;
         int impressionMinPercentageViewed = bVar.getImpressionMinPercentageViewed();
         fVar.a(view, view, impressionMinPercentageViewed, impressionMinPercentageViewed, bVar.getImpressionMinVisiblePx());
     }
 
     public final void b() {
         a();
-        this.f6783a.b();
+        this.a.b();
         this.e = null;
     }
 }

@@ -12,7 +12,7 @@ public final class DisplayManagerCompat {
     public static final String DISPLAY_CATEGORY_PRESENTATION = "android.hardware.display.category.PRESENTATION";
 
     /* renamed from: a  reason: collision with root package name */
-    private static final WeakHashMap<Context, DisplayManagerCompat> f2477a = new WeakHashMap<>();
+    private static final WeakHashMap<Context, DisplayManagerCompat> f2429a = new WeakHashMap<>();
     private final Context b;
 
     private DisplayManagerCompat(Context context) {
@@ -21,12 +21,12 @@ public final class DisplayManagerCompat {
 
     public static DisplayManagerCompat getInstance(Context context) {
         DisplayManagerCompat displayManagerCompat;
-        synchronized (f2477a) {
-            DisplayManagerCompat displayManagerCompat2 = f2477a.get(context);
+        synchronized (f2429a) {
+            DisplayManagerCompat displayManagerCompat2 = f2429a.get(context);
             displayManagerCompat = displayManagerCompat2;
             if (displayManagerCompat2 == null) {
                 displayManagerCompat = new DisplayManagerCompat(context);
-                f2477a.put(context, displayManagerCompat);
+                f2429a.put(context, displayManagerCompat);
             }
         }
         return displayManagerCompat;

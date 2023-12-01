@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemAlbumThreeItemsBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29074a;
+    private final LinearLayout f15384a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29074a;
+        return this.f15384a;
     }
 }

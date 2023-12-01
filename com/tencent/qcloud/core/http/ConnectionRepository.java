@@ -67,7 +67,7 @@ public class ConnectionRepository {
             List<InetAddress> fetch;
             synchronized (this) {
                 hashMap = new HashMap();
-                Iterator<E> it = new LinkedList(this.hosts).iterator();
+                Iterator it = new LinkedList(this.hosts).iterator();
                 while (it.hasNext()) {
                     String str = (String) it.next();
                     if (!TextUtils.isEmpty(str) && (fetch = fetch(str, this.maxRetry)) != null) {

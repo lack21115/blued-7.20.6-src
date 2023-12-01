@@ -16,7 +16,8 @@ public interface BattlePassRewardNotifyOrBuilder extends MessageOrBuilder {
 
     int getChatFrameBorderColorCount();
 
-    List<String> getChatFrameBorderColorList();
+    /* renamed from: getChatFrameBorderColorList */
+    List<String> mo522getChatFrameBorderColorList();
 
     ByteString getChatFrameBytes();
 
@@ -28,7 +29,8 @@ public interface BattlePassRewardNotifyOrBuilder extends MessageOrBuilder {
 
     int getChatFrameFrameColorCount();
 
-    List<String> getChatFrameFrameColorList();
+    /* renamed from: getChatFrameFrameColorList */
+    List<String> mo523getChatFrameFrameColorList();
 
     int getChatFrameGradientType();
 

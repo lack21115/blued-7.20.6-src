@@ -41,13 +41,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/community/ui/send/dialog/SelectCityDialogFragment.class */
 public final class SelectCityDialogFragment extends BottomSheetDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f19926a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final Lazy f19927c = LazyKt.a(new Function0<DialogSelectCityBinding>() { // from class: com.blued.community.ui.send.dialog.SelectCityDialogFragment$viewBinding$2
+    private final Lazy c = LazyKt.a(new Function0<DialogSelectCityBinding>() { // from class: com.blued.community.ui.send.dialog.SelectCityDialogFragment$viewBinding$2
         /* JADX INFO: Access modifiers changed from: package-private */
         {
             super(0);
@@ -199,12 +195,12 @@ public final class SelectCityDialogFragment extends BottomSheetDialogFragment {
             }
             ((EventAddPostCityAdapter.EventAddPostCity) arrayList.get(arrayList.size() - 1)).a(true);
         }
-        i().f18805a.setIndexName(str);
+        i().a.setIndexName(str);
         k().setNewData(arrayList);
     }
 
     private final void n() {
-        i().f18805a.setListener(new FastIndexView.OnLetterUpdateListener() { // from class: com.blued.community.ui.send.dialog.-$$Lambda$SelectCityDialogFragment$hrImZC8MpZm6EfsukoPU1pugIIc
+        i().a.setListener(new FastIndexView.OnLetterUpdateListener() { // from class: com.blued.community.ui.send.dialog.-$$Lambda$SelectCityDialogFragment$hrImZC8MpZm6EfsukoPU1pugIIc
             @Override // com.blued.android.module.common.view.FastIndexView.OnLetterUpdateListener
             public final void onLetterUpdate(String str) {
                 SelectCityDialogFragment.a(SelectCityDialogFragment.this, str);
@@ -214,13 +210,11 @@ public final class SelectCityDialogFragment extends BottomSheetDialogFragment {
 
     private final void o() {
         k().setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() { // from class: com.blued.community.ui.send.dialog.-$$Lambda$SelectCityDialogFragment$HvwWCd0v2S7xmbOAwFNF4KtHCl4
-            @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemClickListener
             public final void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
                 SelectCityDialogFragment.a(SelectCityDialogFragment.this, baseQuickAdapter, view, i);
             }
         });
         k().setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() { // from class: com.blued.community.ui.send.dialog.-$$Lambda$SelectCityDialogFragment$_9HnoBdkUm8s3_mVNTxUlzsq42s
-            @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemChildClickListener
             public final void onItemChildClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
                 SelectCityDialogFragment.b(SelectCityDialogFragment.this, baseQuickAdapter, view, i);
             }
@@ -244,7 +238,7 @@ public final class SelectCityDialogFragment extends BottomSheetDialogFragment {
     }
 
     public final DialogSelectCityBinding i() {
-        return (DialogSelectCityBinding) this.f19927c.getValue();
+        return (DialogSelectCityBinding) this.c.getValue();
     }
 
     public final SelectCityViewModel j() {
@@ -259,11 +253,11 @@ public final class SelectCityDialogFragment extends BottomSheetDialogFragment {
         return this.f;
     }
 
-    @Override // com.blued.android.module.common.base.dialog.bottomsheet.BottomSheetDialogFragment, androidx.fragment.app.DialogFragment
+    @Override // com.blued.android.module.common.base.dialog.bottomsheet.BottomSheetDialogFragment
     public void setupDialog(Dialog dialog, int i) {
         Intrinsics.e(dialog, "dialog");
         super.setupDialog(dialog, i);
-        dialog.setContentView(i().getRoot());
+        dialog.setContentView((View) i().getRoot());
         BottomSheetDialog R_ = R_();
         BottomSheetBehavior<FrameLayout> a2 = R_ == null ? null : R_.a();
         if (a2 != null) {

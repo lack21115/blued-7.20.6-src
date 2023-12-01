@@ -2,18 +2,17 @@ package com.tencent.turingcam;
 
 import android.hardware.Camera;
 import android.view.View;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.util.Map;
 
 /* loaded from: source-8829756-dex2jar.jar:com/tencent/turingcam/kWj12.class */
 public class kWj12 {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f39824a = WOMZP.b("MtgFbiApIVD3jXJqCLt/bt5rkOw=");
+    private static final String f26133a = WOMZP.b("MtgFbiApIVD3jXJqCLt/bt5rkOw=");
     private static final String b = WOMZP.b("+cCcc23pI7PKMKrSVgxsZsPbclBvL8nzPyVl/A==");
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f39825c = WOMZP.b("zJ+vMS29evWmRb1DSUyS4qT5+NHKl4KpLi9JENdY++M=");
+    private static final String f26134c = WOMZP.b("zJ+vMS29evWmRb1DSUyS4qT5+NHKl4KpLi9JENdY++M=");
     private static final String d = WOMZP.b("F7V8SjDFWDGEHyhQJR/vmJ2PsYQvMxifBN46aQ==");
     private static final String e = WOMZP.b("loortpg4288gBQkZu13SWTiWdIoZjskllRDZLQ==");
     private static final String f = WOMZP.b("6DSRX7wn8gyuk+q/kxETe0VQRVj1BK8BZd0Lbw==");
@@ -28,14 +27,14 @@ public class kWj12 {
     public static class spXPg {
 
         /* renamed from: a  reason: collision with root package name */
-        private float f39826a;
+        private float f26135a;
         private Camera b;
         private String g;
         private int h;
         private View i;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f39827c = 0;
+        private int f26136c = 0;
         private int d = 0;
         private int e = 0;
         private int f = 0;
@@ -69,15 +68,15 @@ public class kWj12 {
             }
             String str = map.get(kWj12.g);
             if (str != null) {
-                str.split(BridgeUtil.UNDERLINE_STR);
+                str.split("_");
             }
-            String str2 = map.get(kWj12.f39824a);
+            String str2 = map.get(kWj12.f26133a);
             if (str2 != null) {
-                this.f39826a = Float.parseFloat(str2);
+                this.f26135a = Float.parseFloat(str2);
             }
             String str3 = map.get(kWj12.e);
             if (str3 != null) {
-                str3.split(BridgeUtil.UNDERLINE_STR);
+                str3.split("_");
             }
             String str4 = map.get(kWj12.d);
             if (str4 != null) {
@@ -88,7 +87,7 @@ public class kWj12 {
             }
             String str5 = map.get(kWj12.e);
             if (str5 != null) {
-                str5.split(BridgeUtil.UNDERLINE_STR);
+                str5.split("_");
             }
             String str6 = map.get(kWj12.f);
             if (str6 != null) {
@@ -100,11 +99,11 @@ public class kWj12 {
             String str7 = map.get(kWj12.h);
             if (str7 != null) {
                 try {
-                    this.f39827c = Integer.parseInt(str7);
+                    this.f26136c = Integer.parseInt(str7);
                 } catch (Exception e3) {
                 }
             }
-            String str8 = map.get(kWj12.f39825c);
+            String str8 = map.get(kWj12.f26134c);
             if (str8 != null) {
                 try {
                     this.e = Integer.parseInt(str8);
@@ -138,7 +137,7 @@ public class kWj12 {
         }
 
         public int b(int i) {
-            int i2 = this.f39827c;
+            int i2 = this.f26136c;
             if (i2 > 0) {
                 i = i2;
             }
@@ -150,7 +149,7 @@ public class kWj12 {
         }
 
         public float c() {
-            return this.f39826a;
+            return this.f26135a;
         }
 
         public int c(int i) {

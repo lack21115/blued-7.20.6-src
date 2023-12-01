@@ -9,17 +9,17 @@ import com.anythink.expressad.videocommon.b.i;
 public final class g {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f8736a = "<anythinkloadend></anythinkloadend>";
+    public static final String f5896a = "<anythinkloadend></anythinkloadend>";
     private static final String b = "DownLoadUtils";
 
     /* renamed from: c  reason: collision with root package name */
-    private static final int f8737c = 20000;
+    private static final int f5897c = 20000;
     private static final int d = 30000;
 
     public static void a(final String str, final i.c cVar) {
         try {
             if (!w.a(str) && URLUtil.isNetworkUrl(str)) {
-                h.a.f8740a.a(new com.anythink.expressad.foundation.g.g.a() { // from class: com.anythink.expressad.videocommon.b.g.1
+                h.a.f5900a.a(new com.anythink.expressad.foundation.g.g.a() { // from class: com.anythink.expressad.videocommon.b.g.1
                     final /* synthetic */ boolean f = true;
 
                     /* JADX WARN: Multi-variable type inference failed */
@@ -63,7 +63,7 @@ public final class g {
             }
             cVar.a("url is error");
         } catch (Throwable th) {
-            if (com.anythink.expressad.a.f6941a) {
+            if (com.anythink.expressad.a.f4103a) {
                 th.printStackTrace();
             }
         }

@@ -6,26 +6,24 @@ import java.util.List;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alipay/a/a/e.class */
 public final class e {
-
-    /* renamed from: a  reason: collision with root package name */
-    static List<i> f4505a;
+    static List<i> a;
 
     static {
         ArrayList arrayList = new ArrayList();
-        f4505a = arrayList;
+        a = arrayList;
         arrayList.add(new l());
-        f4505a.add(new d());
-        f4505a.add(new c());
-        f4505a.add(new h());
-        f4505a.add(new k());
-        f4505a.add(new b());
-        f4505a.add(new a());
-        f4505a.add(new g());
+        a.add(new d());
+        a.add(new c());
+        a.add(new h());
+        a.add(new k());
+        a.add(new b());
+        a.add(new a());
+        a.add(new g());
     }
 
     public static final <T> T a(Object obj, Type type) {
         T t;
-        for (i iVar : f4505a) {
+        for (i iVar : a) {
             if (iVar.a(com.alipay.a.b.a.a(type)) && (t = (T) iVar.a(obj, type)) != null) {
                 return t;
             }

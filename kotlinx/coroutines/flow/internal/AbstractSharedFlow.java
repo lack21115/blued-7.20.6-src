@@ -14,13 +14,9 @@ import kotlinx.coroutines.flow.internal.AbstractSharedFlowSlot;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/internal/AbstractSharedFlow.class */
 public abstract class AbstractSharedFlow<S extends AbstractSharedFlowSlot<?>> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private S[] f43443a;
+    private S[] a;
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f43444c;
+    private int c;
     private MutableStateFlow<Integer> d;
 
     public final StateFlow<Integer> a() {
@@ -46,7 +42,7 @@ public abstract class AbstractSharedFlow<S extends AbstractSharedFlowSlot<?>> {
             mutableStateFlow = this.d;
             i = 0;
             if (g() == 0) {
-                this.f43444c = 0;
+                this.c = 0;
             }
             b = s.b(this);
         }
@@ -55,8 +51,8 @@ public abstract class AbstractSharedFlow<S extends AbstractSharedFlowSlot<?>> {
             Continuation<Unit> continuation = b[i];
             i++;
             if (continuation != null) {
-                Unit unit = Unit.f42314a;
-                Result.Companion companion = Result.f42293a;
+                Unit unit = Unit.a;
+                Result.Companion companion = Result.a;
                 continuation.resumeWith(Result.f(unit));
             }
         }
@@ -72,7 +68,7 @@ public abstract class AbstractSharedFlow<S extends AbstractSharedFlowSlot<?>> {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public final S[] f() {
-        return this.f43443a;
+        return this.a;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -92,17 +88,17 @@ public abstract class AbstractSharedFlow<S extends AbstractSharedFlowSlot<?>> {
             S[] f = f();
             if (f == null) {
                 sArr = b(2);
-                this.f43443a = sArr;
+                this.a = sArr;
             } else {
                 sArr = f;
                 if (g() >= f.length) {
                     Object[] copyOf = Arrays.copyOf(f, f.length * 2);
                     Intrinsics.c(copyOf, "java.util.Arrays.copyOf(this, newSize)");
-                    this.f43443a = (S[]) ((AbstractSharedFlowSlot[]) copyOf);
+                    this.a = (S[]) ((AbstractSharedFlowSlot[]) copyOf);
                     sArr = (AbstractSharedFlowSlot[]) copyOf;
                 }
             }
-            int i2 = this.f43444c;
+            int i2 = this.c;
             do {
                 S s2 = sArr[i2];
                 s = s2;
@@ -117,7 +113,7 @@ public abstract class AbstractSharedFlow<S extends AbstractSharedFlowSlot<?>> {
                 }
                 i2 = i;
             } while (!s.a(this));
-            this.f43444c = i;
+            this.c = i;
             this.b = g() + 1;
             mutableStateFlow = this.d;
         }

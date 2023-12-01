@@ -4,6 +4,7 @@ import android.animation.Animator;
 import android.animation.TypeEvaluator;
 import android.animation.ValueAnimator;
 import android.content.Context;
+import android.graphics.Point;
 import android.location.Location;
 import android.os.RemoteException;
 import com.amap.api.maps.model.BitmapDescriptorFactory;
@@ -34,12 +35,8 @@ public final class ck {
     private boolean q = false;
     private boolean r = false;
     private boolean s = false;
-
-    /* renamed from: a  reason: collision with root package name */
-    a f4804a = null;
-
-    /* renamed from: c  reason: collision with root package name */
-    Animator.AnimatorListener f4805c = new Animator.AnimatorListener() { // from class: com.amap.api.col.3sl.ck.1
+    a a = null;
+    Animator.AnimatorListener c = new Animator.AnimatorListener() { // from class: com.amap.api.col.3sl.ck.1
         @Override // android.animation.Animator.AnimatorListener
         public final void onAnimationCancel(Animator animator) {
         }
@@ -118,18 +115,18 @@ public final class ck {
         if (position == null) {
             latLng2 = new LatLng(0.0d, 0.0d);
         }
-        if (this.f4804a == null) {
-            this.f4804a = new a();
+        if (this.a == null) {
+            this.a = new a();
         }
         ValueAnimator valueAnimator = this.b;
         if (valueAnimator == null) {
             ValueAnimator ofObject = ValueAnimator.ofObject(new a(), latLng2, latLng);
             this.b = ofObject;
-            ofObject.addListener(this.f4805c);
+            ofObject.addListener(this.c);
             this.b.addUpdateListener(this.d);
         } else {
             valueAnimator.setObjectValues(latLng2, latLng);
-            this.b.setEvaluator(this.f4804a);
+            this.b.setEvaluator(this.a);
         }
         if (latLng2.latitude == 0.0d && latLng2.longitude == 0.0d) {
             this.b.setDuration(1L);
@@ -216,7 +213,7 @@ public final class ck {
             try {
                 IPoint obtain = IPoint.obtain();
                 GLMapState.lonlat2Geo(this.i.longitude, this.i.latitude, obtain);
-                this.e.animateCamera(ak.a(obtain));
+                this.e.animateCamera(ak.a((Point) obtain));
             } catch (Throwable th) {
                 iw.c(th, "MyLocationOverlay", "moveMapToLocation");
                 th.printStackTrace();

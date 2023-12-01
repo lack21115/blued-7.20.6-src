@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentMyGroupListsHeaderBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f28912a;
+    private final LinearLayout f15222a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f28912a;
+        return this.f15222a;
     }
 }

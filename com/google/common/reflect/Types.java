@@ -524,22 +524,22 @@ public final class Types {
         new TypeVisitor() { // from class: com.google.common.reflect.Types.2
             @Override // com.google.common.reflect.TypeVisitor
             void visitClass(Class<?> cls) {
-                AtomicReference.this.set(cls.getComponentType());
+                atomicReference.set(cls.getComponentType());
             }
 
             @Override // com.google.common.reflect.TypeVisitor
             void visitGenericArrayType(GenericArrayType genericArrayType) {
-                AtomicReference.this.set(genericArrayType.getGenericComponentType());
+                atomicReference.set(genericArrayType.getGenericComponentType());
             }
 
             @Override // com.google.common.reflect.TypeVisitor
             void visitTypeVariable(TypeVariable<?> typeVariable) {
-                AtomicReference.this.set(Types.subtypeOfComponentType(typeVariable.getBounds()));
+                atomicReference.set(Types.subtypeOfComponentType(typeVariable.getBounds()));
             }
 
             @Override // com.google.common.reflect.TypeVisitor
             void visitWildcardType(WildcardType wildcardType) {
-                AtomicReference.this.set(Types.subtypeOfComponentType(wildcardType.getUpperBounds()));
+                atomicReference.set(Types.subtypeOfComponentType(wildcardType.getUpperBounds()));
             }
         }.visit(type);
         return (Type) atomicReference.get();

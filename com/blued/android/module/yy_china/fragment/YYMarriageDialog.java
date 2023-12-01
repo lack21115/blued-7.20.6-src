@@ -37,13 +37,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYMarriageDialog.class */
 public final class YYMarriageDialog extends BaseFullScreenDialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    private BaseFragment f17336a;
+    private BaseFragment a;
     private ArrayList<BlindMatchUserPairModel> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private DialogYyMarriageBinding f17337c;
+    private DialogYyMarriageBinding c;
     private float d;
     private YYRoomModel e;
     private ImageView f;
@@ -52,7 +48,7 @@ public final class YYMarriageDialog extends BaseFullScreenDialog {
     public YYMarriageDialog(BaseFragment fragment, ArrayList<BlindMatchUserPairModel> coupleList) {
         Intrinsics.e(fragment, "fragment");
         Intrinsics.e(coupleList, "coupleList");
-        this.f17336a = fragment;
+        this.a = fragment;
         this.b = coupleList;
         this.e = YYRoomInfoManager.e().b();
     }
@@ -91,8 +87,8 @@ public final class YYMarriageDialog extends BaseFullScreenDialog {
                         DialogYyMarriageBinding dialogYyMarriageBinding;
                         DialogYyMarriageBinding dialogYyMarriageBinding2;
                         SVGAImageView.this.b();
-                        dialogYyMarriageBinding = yYMarriageDialog.f17337c;
-                        SVGAImageView sVGAImageView3 = dialogYyMarriageBinding == null ? null : dialogYyMarriageBinding.f16433c;
+                        dialogYyMarriageBinding = yYMarriageDialog.c;
+                        SVGAImageView sVGAImageView3 = dialogYyMarriageBinding == null ? null : dialogYyMarriageBinding.c;
                         if (sVGAImageView3 != null) {
                             sVGAImageView3.setVisibility(8);
                         }
@@ -101,7 +97,7 @@ public final class YYMarriageDialog extends BaseFullScreenDialog {
                             yYMarriageDialog.g();
                             return;
                         }
-                        dialogYyMarriageBinding2 = yYMarriageDialog.f17337c;
+                        dialogYyMarriageBinding2 = yYMarriageDialog.c;
                         SVGAImageView sVGAImageView4 = dialogYyMarriageBinding2 == null ? null : dialogYyMarriageBinding2.b;
                         if (sVGAImageView4 != null) {
                             sVGAImageView4.setVisibility(8);
@@ -130,8 +126,8 @@ public final class YYMarriageDialog extends BaseFullScreenDialog {
     }
 
     private final void a(BlindMatchUserModel blindMatchUserModel, BlindMatchUserModel blindMatchUserModel2) {
-        YYRoomInfoManager.e().b(this.f17336a.getFragmentActive(), this.f, blindMatchUserModel.uid, blindMatchUserModel.avatar);
-        YYRoomInfoManager.e().b(this.f17336a.getFragmentActive(), this.g, blindMatchUserModel2.uid, blindMatchUserModel2.avatar);
+        YYRoomInfoManager.e().b(this.a.getFragmentActive(), this.f, blindMatchUserModel.uid, blindMatchUserModel.avatar);
+        YYRoomInfoManager.e().b(this.a.getFragmentActive(), this.g, blindMatchUserModel2.uid, blindMatchUserModel2.avatar);
     }
 
     private final void a(boolean z) {
@@ -203,34 +199,34 @@ public final class YYMarriageDialog extends BaseFullScreenDialog {
             g();
             return;
         }
-        View inflate = LayoutInflater.from(getContext()).inflate(R.layout.item_couple_layout, (ViewGroup) null);
+        ShapeableImageView inflate = LayoutInflater.from(getContext()).inflate(R.layout.item_couple_layout, (ViewGroup) null);
         if (inflate == null) {
             throw new NullPointerException("null cannot be cast to non-null type com.google.android.material.imageview.ShapeableImageView");
         }
-        ShapeableImageView shapeableImageView = (ShapeableImageView) inflate;
-        this.f = shapeableImageView;
-        if (shapeableImageView != null) {
-            shapeableImageView.setId(R.id.couple_source);
+        ImageView imageView = (ImageView) inflate;
+        this.f = imageView;
+        if (imageView != null) {
+            imageView.setId(R.id.couple_source);
         }
-        View inflate2 = LayoutInflater.from(getContext()).inflate(R.layout.item_couple_layout, (ViewGroup) null);
+        ShapeableImageView inflate2 = LayoutInflater.from(getContext()).inflate(R.layout.item_couple_layout, (ViewGroup) null);
         if (inflate2 == null) {
             throw new NullPointerException("null cannot be cast to non-null type com.google.android.material.imageview.ShapeableImageView");
         }
-        ShapeableImageView shapeableImageView2 = (ShapeableImageView) inflate2;
-        this.g = shapeableImageView2;
-        if (shapeableImageView2 != null) {
-            shapeableImageView2.setId(R.id.couple_target);
+        ImageView imageView2 = (ImageView) inflate2;
+        this.g = imageView2;
+        if (imageView2 != null) {
+            imageView2.setId(R.id.couple_target);
         }
-        DialogYyMarriageBinding dialogYyMarriageBinding = this.f17337c;
+        DialogYyMarriageBinding dialogYyMarriageBinding = this.c;
         if (dialogYyMarriageBinding != null && (constraintLayout2 = dialogYyMarriageBinding.d) != null) {
             constraintLayout2.addView(this.f);
         }
-        DialogYyMarriageBinding dialogYyMarriageBinding2 = this.f17337c;
+        DialogYyMarriageBinding dialogYyMarriageBinding2 = this.c;
         if (dialogYyMarriageBinding2 != null && (constraintLayout = dialogYyMarriageBinding2.d) != null) {
             constraintLayout.addView(this.g);
         }
         ConstraintSet constraintSet = new ConstraintSet();
-        DialogYyMarriageBinding dialogYyMarriageBinding3 = this.f17337c;
+        DialogYyMarriageBinding dialogYyMarriageBinding3 = this.c;
         constraintSet.clone(dialogYyMarriageBinding3 == null ? null : dialogYyMarriageBinding3.d);
         constraintSet.constrainHeight(R.id.couple_source, DensityUtils.a(getContext(), 108.0f));
         constraintSet.constrainWidth(R.id.couple_source, DensityUtils.a(getContext(), 108.0f));
@@ -240,15 +236,15 @@ public final class YYMarriageDialog extends BaseFullScreenDialog {
         constraintSet.connect(R.id.couple_target, 4, R.id.img_cheerful_view, 4, DensityUtils.a(getContext(), 60.0f));
         constraintSet.constrainHeight(R.id.couple_target, DensityUtils.a(getContext(), 108.0f));
         constraintSet.constrainWidth(R.id.couple_target, DensityUtils.a(getContext(), 108.0f));
-        DialogYyMarriageBinding dialogYyMarriageBinding4 = this.f17337c;
+        DialogYyMarriageBinding dialogYyMarriageBinding4 = this.c;
         constraintSet.applyTo(dialogYyMarriageBinding4 == null ? null : dialogYyMarriageBinding4.d);
-        ImageView imageView = this.f;
-        if (imageView != null) {
-            imageView.setVisibility(8);
+        ImageView imageView3 = this.f;
+        if (imageView3 != null) {
+            imageView3.setVisibility(8);
         }
-        ImageView imageView2 = this.g;
-        if (imageView2 != null) {
-            imageView2.setVisibility(8);
+        ImageView imageView4 = this.g;
+        if (imageView4 != null) {
+            imageView4.setVisibility(8);
         }
         BlindMatchUserModel target = blindMatchUserPairModel.target;
         Intrinsics.c(target, "target");
@@ -264,13 +260,13 @@ public final class YYMarriageDialog extends BaseFullScreenDialog {
 
     private final void h() {
         SVGAImageView sVGAImageView;
-        DialogYyMarriageBinding dialogYyMarriageBinding = this.f17337c;
-        SVGAImageView sVGAImageView2 = dialogYyMarriageBinding == null ? null : dialogYyMarriageBinding.f16433c;
+        DialogYyMarriageBinding dialogYyMarriageBinding = this.c;
+        SVGAImageView sVGAImageView2 = dialogYyMarriageBinding == null ? null : dialogYyMarriageBinding.c;
         if (sVGAImageView2 != null) {
             sVGAImageView2.setVisibility(0);
         }
-        DialogYyMarriageBinding dialogYyMarriageBinding2 = this.f17337c;
-        if (dialogYyMarriageBinding2 != null && (sVGAImageView = dialogYyMarriageBinding2.f16433c) != null) {
+        DialogYyMarriageBinding dialogYyMarriageBinding2 = this.c;
+        if (dialogYyMarriageBinding2 != null && (sVGAImageView = dialogYyMarriageBinding2.c) != null) {
             a(sVGAImageView, "animation_normal_match.svga", false);
         }
         a(false);
@@ -280,22 +276,22 @@ public final class YYMarriageDialog extends BaseFullScreenDialog {
     private final void i() {
         SVGAImageView sVGAImageView;
         SVGAImageView sVGAImageView2;
-        DialogYyMarriageBinding dialogYyMarriageBinding = this.f17337c;
-        SVGAImageView sVGAImageView3 = dialogYyMarriageBinding == null ? null : dialogYyMarriageBinding.f16433c;
+        DialogYyMarriageBinding dialogYyMarriageBinding = this.c;
+        SVGAImageView sVGAImageView3 = dialogYyMarriageBinding == null ? null : dialogYyMarriageBinding.c;
         if (sVGAImageView3 != null) {
             sVGAImageView3.setVisibility(0);
         }
-        DialogYyMarriageBinding dialogYyMarriageBinding2 = this.f17337c;
+        DialogYyMarriageBinding dialogYyMarriageBinding2 = this.c;
         SVGAImageView sVGAImageView4 = dialogYyMarriageBinding2 == null ? null : dialogYyMarriageBinding2.b;
         if (sVGAImageView4 != null) {
             sVGAImageView4.setVisibility(0);
         }
-        DialogYyMarriageBinding dialogYyMarriageBinding3 = this.f17337c;
+        DialogYyMarriageBinding dialogYyMarriageBinding3 = this.c;
         if (dialogYyMarriageBinding3 != null && (sVGAImageView2 = dialogYyMarriageBinding3.b) != null) {
             a(sVGAImageView2, "animation_vip_wave.svga");
         }
-        DialogYyMarriageBinding dialogYyMarriageBinding4 = this.f17337c;
-        if (dialogYyMarriageBinding4 != null && (sVGAImageView = dialogYyMarriageBinding4.f16433c) != null) {
+        DialogYyMarriageBinding dialogYyMarriageBinding4 = this.c;
+        if (dialogYyMarriageBinding4 != null && (sVGAImageView = dialogYyMarriageBinding4.c) != null) {
             a(sVGAImageView, "animation_vip_match.svga", true);
         }
         a(true);
@@ -341,7 +337,7 @@ public final class YYMarriageDialog extends BaseFullScreenDialog {
         if (imageView != null && (animation2 = imageView.getAnimation()) != null) {
             animation2.cancel();
         }
-        DialogYyMarriageBinding dialogYyMarriageBinding = this.f17337c;
+        DialogYyMarriageBinding dialogYyMarriageBinding = this.c;
         if (dialogYyMarriageBinding != null && (constraintLayout2 = dialogYyMarriageBinding.d) != null) {
             constraintLayout2.removeView(this.g);
         }
@@ -349,24 +345,24 @@ public final class YYMarriageDialog extends BaseFullScreenDialog {
         if (imageView2 != null && (animation = imageView2.getAnimation()) != null) {
             animation.cancel();
         }
-        DialogYyMarriageBinding dialogYyMarriageBinding2 = this.f17337c;
+        DialogYyMarriageBinding dialogYyMarriageBinding2 = this.c;
         if (dialogYyMarriageBinding2 == null || (constraintLayout = dialogYyMarriageBinding2.d) == null) {
             return;
         }
         constraintLayout.removeView(this.f);
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
         View inflate = inflater.inflate(R.layout.dialog_yy_marriage, viewGroup, true);
         Intrinsics.c(inflate, "inflater.inflate(R.layou…arriage, container, true)");
-        this.f17337c = DialogYyMarriageBinding.a(inflate);
+        this.c = DialogYyMarriageBinding.a(inflate);
         f();
         return inflate;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onStart() {
         super.onStart();
         Dialog dialog = getDialog();
@@ -384,7 +380,7 @@ public final class YYMarriageDialog extends BaseFullScreenDialog {
         window.setAttributes(layoutParams);
     }
 
-    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment
     public void onViewCreated(View view, Bundle bundle) {
         Intrinsics.e(view, "view");
         super.onViewCreated(view, bundle);

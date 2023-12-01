@@ -12,13 +12,9 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/DialogHomeRoomsGuideBinding.class */
 public final class DialogHomeRoomsGuideBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ConstraintLayout f16352a;
+    public final ConstraintLayout a;
     public final RelativeLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f16353c;
+    public final ImageView c;
     public final ShapeTextView d;
     public final AutoScrollViewPager e;
     public final LinePageIndicator f;
@@ -26,9 +22,9 @@ public final class DialogHomeRoomsGuideBinding implements ViewBinding {
 
     private DialogHomeRoomsGuideBinding(RelativeLayout relativeLayout, ConstraintLayout constraintLayout, RelativeLayout relativeLayout2, ImageView imageView, ShapeTextView shapeTextView, AutoScrollViewPager autoScrollViewPager, LinePageIndicator linePageIndicator) {
         this.g = relativeLayout;
-        this.f16352a = constraintLayout;
+        this.a = constraintLayout;
         this.b = relativeLayout2;
-        this.f16353c = imageView;
+        this.c = imageView;
         this.d = shapeTextView;
         this.e = autoScrollViewPager;
         this.f = linePageIndicator;
@@ -36,8 +32,8 @@ public final class DialogHomeRoomsGuideBinding implements ViewBinding {
 
     public static DialogHomeRoomsGuideBinding a(View view) {
         String str;
-        ConstraintLayout constraintLayout = (ConstraintLayout) view.findViewById(R.id.con);
-        if (constraintLayout != null) {
+        ConstraintLayout findViewById = view.findViewById(R.id.con);
+        if (findViewById != null) {
             RelativeLayout relativeLayout = (RelativeLayout) view.findViewById(R.id.fl_con);
             if (relativeLayout != null) {
                 ImageView imageView = (ImageView) view.findViewById(R.id.iv_backs);
@@ -48,7 +44,7 @@ public final class DialogHomeRoomsGuideBinding implements ViewBinding {
                         if (autoScrollViewPager != null) {
                             LinePageIndicator linePageIndicator = (LinePageIndicator) view.findViewById(R.id.yy_lpi_line);
                             if (linePageIndicator != null) {
-                                return new DialogHomeRoomsGuideBinding((RelativeLayout) view, constraintLayout, relativeLayout, imageView, shapeTextView, autoScrollViewPager, linePageIndicator);
+                                return new DialogHomeRoomsGuideBinding((RelativeLayout) view, findViewById, relativeLayout, imageView, shapeTextView, autoScrollViewPager, linePageIndicator);
                             }
                             str = "yyLpiLine";
                         } else {
@@ -69,7 +65,6 @@ public final class DialogHomeRoomsGuideBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
         return this.g;

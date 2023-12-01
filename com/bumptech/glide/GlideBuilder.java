@@ -29,7 +29,7 @@ public final class GlideBuilder {
     private Engine b;
 
     /* renamed from: c  reason: collision with root package name */
-    private BitmapPool f20648c;
+    private BitmapPool f7042c;
     private ArrayPool d;
     private MemoryCache e;
     private GlideExecutor f;
@@ -45,7 +45,7 @@ public final class GlideBuilder {
     private boolean r;
 
     /* renamed from: a  reason: collision with root package name */
-    private final Map<Class<?>, TransitionOptions<?, ?>> f20647a = new ArrayMap();
+    private final Map<Class<?>, TransitionOptions<?, ?>> f7041a = new ArrayMap();
     private int k = 4;
     private Glide.RequestOptionsFactory l = new Glide.RequestOptionsFactory() { // from class: com.bumptech.glide.GlideBuilder.1
         @Override // com.bumptech.glide.Glide.RequestOptionsFactory
@@ -59,11 +59,11 @@ public final class GlideBuilder {
     class AnonymousClass2 implements Glide.RequestOptionsFactory {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ RequestOptions f20650a;
+        final /* synthetic */ RequestOptions f7044a;
 
         @Override // com.bumptech.glide.Glide.RequestOptionsFactory
         public RequestOptions a() {
-            RequestOptions requestOptions = this.f20650a;
+            RequestOptions requestOptions = this.f7044a;
             return requestOptions != null ? requestOptions : new RequestOptions();
         }
     }
@@ -85,12 +85,12 @@ public final class GlideBuilder {
         if (this.j == null) {
             this.j = new DefaultConnectivityMonitorFactory();
         }
-        if (this.f20648c == null) {
+        if (this.f7042c == null) {
             int b = this.i.b();
             if (b > 0) {
-                this.f20648c = new LruBitmapPool(b);
+                this.f7042c = new LruBitmapPool(b);
             } else {
-                this.f20648c = new BitmapPoolAdapter();
+                this.f7042c = new BitmapPoolAdapter();
             }
         }
         if (this.d == null) {
@@ -111,7 +111,7 @@ public final class GlideBuilder {
         } else {
             this.p = Collections.unmodifiableList(list);
         }
-        return new Glide(context, this.b, this.e, this.f20648c, this.d, new RequestManagerRetriever(this.m), this.j, this.k, this.l, this.f20647a, this.p, this.q, this.r);
+        return new Glide(context, this.b, this.e, this.f7042c, this.d, new RequestManagerRetriever(this.m), this.j, this.k, this.l, this.f7041a, this.p, this.q, this.r);
     }
 
     public GlideBuilder a(int i) {
@@ -123,7 +123,7 @@ public final class GlideBuilder {
     }
 
     public GlideBuilder a(BitmapPool bitmapPool) {
-        this.f20648c = bitmapPool;
+        this.f7042c = bitmapPool;
         return this;
     }
 

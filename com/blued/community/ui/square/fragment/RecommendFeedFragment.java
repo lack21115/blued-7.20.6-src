@@ -32,6 +32,7 @@ import com.blued.community.http.FeedHttpUtils;
 import com.blued.community.manager.CommunityManager;
 import com.blued.community.model.BluedIngSelfFeed;
 import com.blued.community.model.FeedDiversionModel;
+import com.blued.community.model.FeedOperationFloatModel;
 import com.blued.community.track.ByteDanceEvent;
 import com.blued.community.track.EventTrackFeed;
 import com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView;
@@ -59,12 +60,8 @@ import org.json.JSONObject;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/square/fragment/RecommendFeedFragment.class */
 public class RecommendFeedFragment<T extends RecommendFeedPresenter> extends MvpFragment<RecommendFeedPresenter> {
-
-    /* renamed from: a  reason: collision with root package name */
-    FeedListAdapterForRecyclerView f20169a;
-
-    /* renamed from: c  reason: collision with root package name */
-    private CoordinatorLayout f20170c;
+    FeedListAdapterForRecyclerView a;
+    private CoordinatorLayout c;
     private AppBarLayout d;
     private CommAutoScrollBannerView e;
     private LinearLayout f;
@@ -124,12 +121,12 @@ public class RecommendFeedFragment<T extends RecommendFeedPresenter> extends Mvp
     private void B() {
         FeedDiversionModel feedDiversionModel = this.t;
         if (feedDiversionModel == null) {
-            this.p.setOperationData(null);
+            this.p.setOperationData((FeedOperationFloatModel) null);
             return;
         }
         this.p.setOperationData(feedDiversionModel.getSuspension_bubble());
         if (this.t.getSuspension_bubble() != null) {
-            CommunityManager.f19086a.a().a(0);
+            CommunityManager.a.a().a(0);
             CommunityPreferences.w("RecommendDrawDepthBubbleShowCount");
         }
         this.x = true;
@@ -159,14 +156,14 @@ public class RecommendFeedFragment<T extends RecommendFeedPresenter> extends Mvp
         if (this.w || this.x) {
             return;
         }
-        RecommendFeedRefreshGuideModel a2 = this.f20169a.a(1, 2);
-        if (a2 == null || a2.getLocY() < 0) {
+        RecommendFeedRefreshGuideModel a = this.a.a(1, 2);
+        if (a == null || a.getLocY() < 0) {
             LogUtils.c("推荐下滑 model == null || model.getLocY() < 0");
             return;
         }
-        this.C = a2.getIndex();
-        LogUtils.c("推荐下滑 getItemViewLocY: " + a2);
-        int locY = (a2.getLocY() - AppInfo.m) + FeedMethods.c(44) + FeedMethods.c(68);
+        this.C = a.getIndex();
+        LogUtils.c("推荐下滑 getItemViewLocY: " + a);
+        int locY = (a.getLocY() - AppInfo.m) + FeedMethods.c(44) + FeedMethods.c(68);
         int abs = (int) (((float) Math.abs(locY)) / 2.1f);
         LogUtils.c("推荐下滑 distance: " + locY + ", time:" + abs);
         this.m.smoothScrollBy(0, locY, new LinearInterpolator(), abs);
@@ -224,15 +221,15 @@ public class RecommendFeedFragment<T extends RecommendFeedPresenter> extends Mvp
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void a(RecommendFeedRefreshGuideModel recommendFeedRefreshGuideModel, int i) {
         LogUtils.c("推荐下滑 列表滑动后设置动画， position:" + recommendFeedRefreshGuideModel.getIndex());
-        if (this.f20169a.getData().size() > 0) {
+        if (this.a.getData().size() > 0) {
             if (i == 2) {
-                this.f20169a.e(recommendFeedRefreshGuideModel.getIndex());
+                this.a.e(recommendFeedRefreshGuideModel.getIndex());
             } else if (i == 1 && this.A) {
-                this.f20169a.e(recommendFeedRefreshGuideModel.getIndex());
+                this.a.e(recommendFeedRefreshGuideModel.getIndex());
             } else {
-                ((BluedIngSelfFeed) this.f20169a.getData().get(recommendFeedRefreshGuideModel.getIndex())).isRecommendRefreshGuideFeed = true;
-                ((BluedIngSelfFeed) this.f20169a.getData().get(recommendFeedRefreshGuideModel.getIndex())).playAnimType = 8;
-                FeedListAdapterForRecyclerView feedListAdapterForRecyclerView = this.f20169a;
+                ((BluedIngSelfFeed) this.a.getData().get(recommendFeedRefreshGuideModel.getIndex())).isRecommendRefreshGuideFeed = true;
+                ((BluedIngSelfFeed) this.a.getData().get(recommendFeedRefreshGuideModel.getIndex())).playAnimType = 8;
+                FeedListAdapterForRecyclerView feedListAdapterForRecyclerView = this.a;
                 feedListAdapterForRecyclerView.notifyItemChanged(feedListAdapterForRecyclerView.getHeaderLayoutCount() + recommendFeedRefreshGuideModel.getIndex());
                 LogUtils.c("推荐下滑 设置赞转评缩放动画， position:" + recommendFeedRefreshGuideModel.getIndex());
             }
@@ -250,9 +247,9 @@ public class RecommendFeedFragment<T extends RecommendFeedPresenter> extends Mvp
     }
 
     private void b(boolean z) {
-        this.l.j();
+        this.l.g();
         this.l.h();
-        if (this.f20169a.getData().size() > 0) {
+        if (this.a.getData().size() > 0) {
             this.k.d();
         } else if (z) {
             this.k.a();
@@ -272,14 +269,14 @@ public class RecommendFeedFragment<T extends RecommendFeedPresenter> extends Mvp
         if (i2 < 0) {
             i2 = 0;
         }
-        final RecommendFeedRefreshGuideModel a2 = this.f20169a.a(i2, 1);
-        if (a2 == null || a2.getLocY() < 0) {
+        final RecommendFeedRefreshGuideModel a = this.a.a(i2, 1);
+        if (a == null || a.getLocY() < 0) {
             LogUtils.c("推荐下滑 model == null || model.getLocY() < 0");
             return;
         }
-        this.C = a2.getIndex();
-        LogUtils.c("推荐下滑 getItemViewLocY: " + a2);
-        int locY = a2.getLocY() - (AppInfo.m / 2);
+        this.C = a.getIndex();
+        LogUtils.c("推荐下滑 getItemViewLocY: " + a);
+        int locY = a.getLocY() - (AppInfo.m / 2);
         int abs = (int) (((float) Math.abs(locY)) / 2.1f);
         LogUtils.c("推荐下滑 执行列表滑动 distance: " + locY + ", time:" + abs);
         int height = this.d.getHeight();
@@ -289,13 +286,13 @@ public class RecommendFeedFragment<T extends RecommendFeedPresenter> extends Mvp
         LogUtils.c(sb.toString());
         AppBarLayout appBarLayout = this.d;
         if (appBarLayout != null) {
-            CoordinatorLayout.Behavior behavior = ((CoordinatorLayout.LayoutParams) appBarLayout.getLayoutParams()).getBehavior();
-            LogUtils.c("推荐下滑 topAndBottomOffset:" + (behavior instanceof AppBarLayout.Behavior ? ((AppBarLayout.Behavior) behavior).getTopAndBottomOffset() : 0));
+            AppBarLayout.Behavior behavior = appBarLayout.getLayoutParams().getBehavior();
+            LogUtils.c("推荐下滑 topAndBottomOffset:" + (behavior instanceof AppBarLayout.Behavior ? behavior.getTopAndBottomOffset() : 0));
             if (behavior == null || locY > height) {
-                behavior.onNestedPreScroll(this.f20170c, this.d, this.m, 0, height, new int[]{0, 0}, 1);
+                behavior.onNestedPreScroll(this.c, this.d, this.m, 0, height, new int[]{0, 0}, 1);
                 this.m.smoothScrollBy(0, locY - height, new LinearInterpolator(), abs);
             } else {
-                behavior.onNestedPreScroll(this.f20170c, this.d, this.m, 0, locY, new int[]{0, 0}, 1);
+                behavior.onNestedPreScroll(this.c, this.d, this.m, 0, locY, new int[]{0, 0}, 1);
             }
         } else {
             this.m.smoothScrollBy(0, locY, new LinearInterpolator(), abs);
@@ -303,25 +300,25 @@ public class RecommendFeedFragment<T extends RecommendFeedPresenter> extends Mvp
         postDelaySafeRunOnUiThread(new Runnable() { // from class: com.blued.community.ui.square.fragment.-$$Lambda$RecommendFeedFragment$5XCWAzNsXlvIfo2aaiYxo08jYYs
             @Override // java.lang.Runnable
             public final void run() {
-                RecommendFeedFragment.this.a(a2, i);
+                RecommendFeedFragment.this.a(a, i);
             }
         }, abs);
     }
 
     private void w() {
-        this.f20170c = (CoordinatorLayout) this.i.findViewById(R.id.coordinator);
-        this.d = (AppBarLayout) this.i.findViewById(R.id.appbar);
-        this.e = (CommAutoScrollBannerView) this.i.findViewById(R.id.fl_ads);
+        this.c = this.i.findViewById(R.id.coordinator);
+        this.d = this.i.findViewById(R.id.appbar);
+        this.e = this.i.findViewById(R.id.fl_ads);
         this.f = (LinearLayout) this.i.findViewById(R.id.ll_entry);
         this.g = this.i.findViewById(R.id.line_entry);
         this.k = (NoDataAndLoadFailView) this.i.findViewById(R.id.view_nodata);
-        this.l = (SmartRefreshLayout) this.i.findViewById(R.id.refresh_layout);
-        this.m = (RecyclerView) this.i.findViewById(R.id.recycler_view);
-        this.n = (FloatFooterView) this.i.findViewById(R.id.ll_feed_post);
+        this.l = this.i.findViewById(R.id.refresh_layout);
+        this.m = this.i.findViewById(R.id.recycler_view);
+        this.n = this.i.findViewById(R.id.ll_feed_post);
         this.o = (ImageView) this.i.findViewById(R.id.img_guide);
-        FeedOperationFloatView feedOperationFloatView = (FeedOperationFloatView) this.i.findViewById(R.id.feed_operation_float_view_id);
-        this.p = feedOperationFloatView;
-        feedOperationFloatView.setFrom(2);
+        FeedOperationFloatView findViewById = this.i.findViewById(R.id.feed_operation_float_view_id);
+        this.p = findViewById;
+        findViewById.setFrom(2);
         this.q = this.i.findViewById(R.id.feed_refresh_guide_layout);
         this.r = (SVGAImageView) this.i.findViewById(R.id.feed_refresh_guide_iv);
     }
@@ -392,9 +389,9 @@ public class RecommendFeedFragment<T extends RecommendFeedPresenter> extends Mvp
 
     public void a(RecyclerView recyclerView, int i) {
         if (k()) {
-            FeedListAdapterForRecyclerView feedListAdapterForRecyclerView = this.f20169a;
+            FeedListAdapterForRecyclerView feedListAdapterForRecyclerView = this.a;
             if (feedListAdapterForRecyclerView != null && feedListAdapterForRecyclerView.s != null) {
-                this.f20169a.s.onScrollStateChanged(recyclerView, i);
+                this.a.s.onScrollStateChanged(recyclerView, i);
             }
             if (this.n == null || i != 0) {
                 return;
@@ -483,7 +480,7 @@ public class RecommendFeedFragment<T extends RecommendFeedPresenter> extends Mvp
             case false:
                 this.b = false;
                 this.C = -1;
-                this.f20169a.a(System.currentTimeMillis());
+                this.a.a(System.currentTimeMillis());
                 return;
             case true:
                 MvpUtils.a(list, CommBannerModel.class, new MvpUtils.DataListHandler<CommBannerModel>() { // from class: com.blued.community.ui.square.fragment.RecommendFeedFragment.5
@@ -506,7 +503,7 @@ public class RecommendFeedFragment<T extends RecommendFeedPresenter> extends Mvp
 
                     @Override // com.blued.android.framework.ui.mvp.MvpUtils.DataHandler
                     public void a(String str2) {
-                        RecommendFeedFragment.this.f20169a.b(str2);
+                        RecommendFeedFragment.this.a.b(str2);
                     }
                 });
                 return;
@@ -530,7 +527,7 @@ public class RecommendFeedFragment<T extends RecommendFeedPresenter> extends Mvp
                                 i = i2;
                             }
                         }
-                        RecommendFeedFragment.this.f20169a.setNewData(list2);
+                        RecommendFeedFragment.this.a.setNewData(list2);
                         if ("featured_list".equalsIgnoreCase(str)) {
                             RecommendFeedFragment.this.C();
                         }
@@ -615,13 +612,11 @@ public class RecommendFeedFragment<T extends RecommendFeedPresenter> extends Mvp
 
     public void b() {
         this.n.setOnBtnClickListener(new FloatFooterView.OnBtnClickListener() { // from class: com.blued.community.ui.square.fragment.RecommendFeedFragment.1
-            @Override // com.blued.community.view.FloatFooterView.OnBtnClickListener
             public void onPostFeedClick() {
                 RecommendFeedFragment.this.z();
             }
         });
         this.n.setBtnAnimatorUpdateListener(new FloatFooterView.BtnAnimatorUpdateListener() { // from class: com.blued.community.ui.square.fragment.RecommendFeedFragment.2
-            @Override // com.blued.community.view.FloatFooterView.BtnAnimatorUpdateListener
             public void onAnimationUpdate(ValueAnimator valueAnimator) {
                 if (RecommendFeedFragment.this.o != null) {
                     int intValue = ((Integer) valueAnimator.getAnimatedValue()).intValue();
@@ -631,21 +626,19 @@ public class RecommendFeedFragment<T extends RecommendFeedPresenter> extends Mvp
                 }
             }
         });
-        if (this.f20169a == null) {
-            this.f20169a = new FeedListAdapterForRecyclerView(getContext(), this, this.m, 6);
+        if (this.a == null) {
+            this.a = new FeedListAdapterForRecyclerView(getContext(), this, this.m, 6);
         }
-        j().a(this.f20169a);
-        this.m.setAdapter(this.f20169a);
+        j().a(this.a);
+        this.m.setAdapter(this.a);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         this.s = linearLayoutManager;
         this.m.setLayoutManager(linearLayoutManager);
         this.l.a(new OnRefreshLoadMoreListener() { // from class: com.blued.community.ui.square.fragment.RecommendFeedFragment.3
-            @Override // com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
             public void onLoadMore(RefreshLayout refreshLayout) {
                 RecommendFeedFragment.this.j().f();
             }
 
-            @Override // com.scwang.smartrefresh.layout.listener.OnRefreshListener
             public void onRefresh(RefreshLayout refreshLayout) {
                 RecommendFeedFragment.this.j().e();
                 EventTrackGuy.a("find_recommend");
@@ -658,16 +651,15 @@ public class RecommendFeedFragment<T extends RecommendFeedPresenter> extends Mvp
             }
         });
         LiveEventBus.get("FEED_RECOMMEND_BANNER_ADV_ANIM_FINISH", Boolean.class).observe(this, new Observer() { // from class: com.blued.community.ui.square.fragment.-$$Lambda$RecommendFeedFragment$DWQvndibKqVDxoSktyhxbSYH67s
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 RecommendFeedFragment.this.a((Boolean) obj);
             }
         });
-        String a2 = BluedStatistics.g().a("推荐feed下滑交互引导实验_RecommendedMore", "");
-        LogUtils.c("推荐下滑--> getAbConfig=" + a2);
-        if ("RecommendedBehavior".equalsIgnoreCase(a2)) {
+        String a = BluedStatistics.g().a("推荐feed下滑交互引导实验_RecommendedMore", "");
+        LogUtils.c("推荐下滑--> getAbConfig=" + a);
+        if ("RecommendedBehavior".equalsIgnoreCase(a)) {
             this.u = 1;
-        } else if ("RecommendedDirectly".equalsIgnoreCase(a2)) {
+        } else if ("RecommendedDirectly".equalsIgnoreCase(a)) {
             this.u = 2;
         }
         LogUtils.c("推荐下滑--> 实验组=" + this.u);
@@ -691,8 +683,7 @@ public class RecommendFeedFragment<T extends RecommendFeedPresenter> extends Mvp
         LogUtils.c("推荐下滑 点击进入详情页");
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    public void d() {
+    protected void d() {
         RecyclerView recyclerView;
         if (this.l == null || (recyclerView = this.m) == null) {
             return;
@@ -717,16 +708,16 @@ public class RecommendFeedFragment<T extends RecommendFeedPresenter> extends Mvp
         this.l.i();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onPause() {
         super.onPause();
-        FeedListAdapterForRecyclerView feedListAdapterForRecyclerView = this.f20169a;
+        FeedListAdapterForRecyclerView feedListAdapterForRecyclerView = this.a;
         if (feedListAdapterForRecyclerView != null) {
             feedListAdapterForRecyclerView.e();
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onResume() {
         super.onResume();
         ByteDanceEvent.a("A58", new JSONObject());
@@ -746,10 +737,10 @@ public class RecommendFeedFragment<T extends RecommendFeedPresenter> extends Mvp
                 i = i2 + 1;
             }
         }
-        if (this.f20169a != null && getUserVisibleHint()) {
-            this.f20169a.d();
+        if (this.a != null && getUserVisibleHint()) {
+            this.a.d();
         }
-        FeedListAdapterForRecyclerView feedListAdapterForRecyclerView = this.f20169a;
+        FeedListAdapterForRecyclerView feedListAdapterForRecyclerView = this.a;
         if (feedListAdapterForRecyclerView != null) {
             feedListAdapterForRecyclerView.notifyDataSetChanged();
         }
@@ -773,7 +764,7 @@ public class RecommendFeedFragment<T extends RecommendFeedPresenter> extends Mvp
 
     @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void p() {
-        this.l.l(false);
+        this.l.b(false);
         AppMethods.a((CharSequence) getString(R.string.no_more_please_try_again));
     }
 
@@ -787,10 +778,10 @@ public class RecommendFeedFragment<T extends RecommendFeedPresenter> extends Mvp
         return true;
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment
     public void setUserVisibleHint(boolean z) {
         super.setUserVisibleHint(z);
-        FeedListAdapterForRecyclerView feedListAdapterForRecyclerView = this.f20169a;
+        FeedListAdapterForRecyclerView feedListAdapterForRecyclerView = this.a;
         if (feedListAdapterForRecyclerView != null) {
             if (z) {
                 feedListAdapterForRecyclerView.d();

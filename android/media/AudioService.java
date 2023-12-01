@@ -57,10 +57,8 @@ import android.util.Slog;
 import android.view.OrientationEventListener;
 import android.view.WindowManager;
 import android.view.accessibility.AccessibilityManager;
-import com.android.internal.R;
 import com.android.internal.util.XmlUtils;
 import com.android.server.LocalServices;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.zego.zegoliveroom.constants.ZegoConstants;
 import java.io.FileDescriptor;
 import java.io.IOException;
@@ -2041,7 +2039,7 @@ public class AudioService extends IAudioService.Stub {
         public String getSettingNameForDevice(int i) {
             String str = this.mVolumeIndexSettingName;
             String outputDeviceName = AudioSystem.getOutputDeviceName(i);
-            return outputDeviceName.isEmpty() ? str : str + BridgeUtil.UNDERLINE_STR + outputDeviceName;
+            return outputDeviceName.isEmpty() ? str : str + "_" + outputDeviceName;
         }
 
         public int getStreamType() {
@@ -2177,7 +2175,7 @@ public class AudioService extends IAudioService.Stub {
         this.mContext = context;
         this.mContentResolver = context.getContentResolver();
         this.mAppOps = (AppOpsManager) context.getSystemService(Context.APP_OPS_SERVICE);
-        this.mVoiceCapable = context.getResources().getBoolean(R.bool.config_voice_capable);
+        this.mVoiceCapable = context.getResources().getBoolean(17956958);
         if (this.mVoiceCapable) {
             this.mPlatformType = 1;
         } else if (context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_LEANBACK)) {
@@ -2185,7 +2183,7 @@ public class AudioService extends IAudioService.Stub {
         } else {
             this.mPlatformType = 0;
         }
-        this.mAudioEventWakeLock = ((PowerManager) context.getSystemService("power")).newWakeLock(1, "handleAudioEvent");
+        this.mAudioEventWakeLock = ((PowerManager) context.getSystemService(Context.POWER_SERVICE)).newWakeLock(1, "handleAudioEvent");
         Vibrator vibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
         this.mHasVibrator = vibrator == null ? false : vibrator.hasVibrator();
         int i = SystemProperties.getInt("ro.config.vc_call_vol_steps", MAX_STREAM_VOLUME[0]);
@@ -2198,21 +2196,21 @@ public class AudioService extends IAudioService.Stub {
             MAX_STREAM_VOLUME[3] = i2;
             DEFAULT_STREAM_VOLUME[3] = (i2 * 3) / 4;
         }
-        sSoundEffectVolumeDb = context.getResources().getInteger(R.integer.config_soundEffectVolumeDb);
+        sSoundEffectVolumeDb = context.getResources().getInteger(17694725);
         this.mForcedUseForComm = 0;
         createAudioSystemThread();
         this.mMediaFocusControl = new MediaFocusControl(this.mAudioHandler.getLooper(), this.mContext, this.mVolumeController, this);
         AudioSystem.setErrorCallback(this.mAudioSystemCallback);
-        boolean z = this.mContext.getResources().getBoolean(R.bool.config_camera_sound_forced);
+        boolean z = this.mContext.getResources().getBoolean(17956993);
         this.mCameraSoundForced = new Boolean(z);
         sendMsg(this.mAudioHandler, 8, 2, 4, z ? 11 : 0, null, 0);
         this.mSafeMediaVolumeState = new Integer(Settings.Global.getInt(this.mContentResolver, Settings.Global.AUDIO_SAFE_VOLUME_STATE, 0));
-        this.mSafeMediaVolumeIndex = this.mContext.getResources().getInteger(R.integer.config_safe_media_volume_index) * 10;
-        this.mUseFixedVolume = this.mContext.getResources().getBoolean(R.bool.config_useFixedVolume);
-        this.mUseMasterVolume = context.getResources().getBoolean(R.bool.config_useMasterVolume);
-        this.mMasterVolumeRamp = context.getResources().getIntArray(R.array.config_masterVolumeRamp);
-        this.mForceAnalogDeskDock = this.mContext.getResources().getBoolean(R.bool.config_forceAnalogDeskDock);
-        this.mForceAnalogCarDock = this.mContext.getResources().getBoolean(R.bool.config_forceAnalogCarDock);
+        this.mSafeMediaVolumeIndex = this.mContext.getResources().getInteger(17694849) * 10;
+        this.mUseFixedVolume = this.mContext.getResources().getBoolean(17956998);
+        this.mUseMasterVolume = context.getResources().getBoolean(17956883);
+        this.mMasterVolumeRamp = context.getResources().getIntArray(17235990);
+        this.mForceAnalogDeskDock = this.mContext.getResources().getBoolean(17956921);
+        this.mForceAnalogCarDock = this.mContext.getResources().getBoolean(17956923);
         this.mLinkNotificationWithVolume = Settings.Secure.getInt(this.mContext.getContentResolver(), Settings.Secure.VOLUME_LINK_NOTIFICATION, 1) == 1;
         updateStreamVolumeAlias(false);
         readPersistedSettings();
@@ -2857,7 +2855,7 @@ public class AudioService extends IAudioService.Stub {
                 setOrientationForAudioSystem();
             }
             sendMsg(this.mAudioHandler, 16, 0, 0, 0, null, 0);
-            boolean z = this.mContext.getResources().getBoolean(R.bool.config_camera_sound_forced);
+            boolean z = this.mContext.getResources().getBoolean(17956993);
             synchronized (this.mSettingsLock) {
                 boolean z2 = false;
                 synchronized (this.mCameraSoundForced) {
@@ -2978,7 +2976,7 @@ public class AudioService extends IAudioService.Stub {
             loadTouchSoundAssetDefaults();
             try {
                 try {
-                    XmlResourceParser xml = this.mContext.getResources().getXml(R.xml.audio_assets);
+                    XmlResourceParser xml = this.mContext.getResources().getXml(17891329);
                     XmlUtils.beginDocument(xml, TAG_AUDIO_ASSETS);
                     boolean z = false;
                     if ("1.0".equals(xml.getAttributeValue(null, "version"))) {

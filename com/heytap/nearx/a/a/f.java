@@ -10,23 +10,23 @@ import okio.ByteString;
 public final class f {
 
     /* renamed from: a  reason: collision with root package name */
-    private final BufferedSource f22264a;
+    private final BufferedSource f8656a;
     private int d;
     private a h;
     private long b = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    private long f22265c = Long.MAX_VALUE;
+    private long f8657c = Long.MAX_VALUE;
     private int e = 2;
     private int f = -1;
     private long g = -1;
 
     public f(BufferedSource bufferedSource) {
-        this.f22264a = bufferedSource;
+        this.f8656a = bufferedSource;
     }
 
     private void a(int i) throws IOException {
-        while (this.b < this.f22265c && !this.f22264a.exhausted()) {
+        while (this.b < this.f8657c && !this.f8656a.exhausted()) {
             int j = j();
             if (j == 0) {
                 throw new ProtocolException("Unexpected tag 0");
@@ -42,7 +42,7 @@ public final class f {
             } else if (i3 == 2) {
                 long j2 = j();
                 this.b += j2;
-                this.f22264a.skip(j2);
+                this.f8656a.skip(j2);
             } else if (i3 == 3) {
                 a(i2);
             } else if (i3 == 4) {
@@ -63,14 +63,14 @@ public final class f {
     private void b(int i) throws IOException {
         if (this.e != i) {
             long j = this.b;
-            long j2 = this.f22265c;
+            long j2 = this.f8657c;
             if (j > j2) {
-                throw new IOException("Expected to end at " + this.f22265c + " but was " + this.b);
+                throw new IOException("Expected to end at " + this.f8657c + " but was " + this.b);
             } else if (j != j2) {
                 this.e = 7;
                 return;
             } else {
-                this.f22265c = this.g;
+                this.f8657c = this.g;
                 this.g = -1L;
             }
         }
@@ -80,28 +80,28 @@ public final class f {
     private int j() throws IOException {
         int i;
         this.b++;
-        byte readByte = this.f22264a.readByte();
+        byte readByte = this.f8656a.readByte();
         if (readByte >= 0) {
             return readByte;
         }
         int i2 = readByte & Byte.MAX_VALUE;
         this.b++;
-        byte readByte2 = this.f22264a.readByte();
+        byte readByte2 = this.f8656a.readByte();
         if (readByte2 >= 0) {
             i = readByte2 << 7;
         } else {
             i2 |= (readByte2 & Byte.MAX_VALUE) << 7;
             this.b++;
-            byte readByte3 = this.f22264a.readByte();
+            byte readByte3 = this.f8656a.readByte();
             if (readByte3 >= 0) {
                 i = readByte3 << 14;
             } else {
                 int i3 = i2 | ((readByte3 & Byte.MAX_VALUE) << 14);
                 this.b++;
-                byte readByte4 = this.f22264a.readByte();
+                byte readByte4 = this.f8656a.readByte();
                 if (readByte4 < 0) {
                     this.b++;
-                    byte readByte5 = this.f22264a.readByte();
+                    byte readByte5 = this.f8656a.readByte();
                     if (readByte5 < 0) {
                         int i4 = 0;
                         while (true) {
@@ -110,7 +110,7 @@ public final class f {
                                 throw new ProtocolException("Malformed VARINT");
                             }
                             this.b++;
-                            if (this.f22264a.readByte() >= 0) {
+                            if (this.f8656a.readByte() >= 0) {
                                 break;
                             }
                             i4 = i5 + 1;
@@ -129,11 +129,11 @@ public final class f {
         if (this.e != 2) {
             throw new ProtocolException("Expected LENGTH_DELIMITED but was " + this.e);
         }
-        long j = this.f22265c - this.b;
-        this.f22264a.require(j);
+        long j = this.f8657c - this.b;
+        this.f8656a.require(j);
         this.e = 6;
-        this.b = this.f22265c;
-        this.f22265c = this.g;
+        this.b = this.f8657c;
+        this.f8657c = this.g;
         this.g = -1L;
         return j;
     }
@@ -162,18 +162,18 @@ public final class f {
         if (i < 0 || this.g != -1) {
             throw new IllegalStateException("No corresponding call to beginMessage()");
         }
-        if (this.b == this.f22265c || i == 0) {
-            this.f22265c = j;
+        if (this.b == this.f8657c || i == 0) {
+            this.f8657c = j;
             return;
         }
-        throw new IOException("Expected to end at " + this.f22265c + " but was " + this.b);
+        throw new IOException("Expected to end at " + this.f8657c + " but was " + this.b);
     }
 
     public int b() throws IOException {
         int i = this.e;
         if (i != 7) {
             if (i == 6) {
-                while (this.b < this.f22265c && !this.f22264a.exhausted()) {
+                while (this.b < this.f8657c && !this.f8656a.exhausted()) {
                     int j = j();
                     if (j == 0) {
                         throw new ProtocolException("Unexpected tag 0");
@@ -196,10 +196,10 @@ public final class f {
                         } else if (this.g != -1) {
                             throw new IllegalStateException();
                         } else {
-                            long j3 = this.f22265c;
+                            long j3 = this.f8657c;
                             this.g = j3;
                             long j4 = j2 + this.b;
-                            this.f22265c = j4;
+                            this.f8657c = j4;
                             if (j4 > j3) {
                                 throw new EOFException();
                             }
@@ -229,11 +229,11 @@ public final class f {
     }
 
     public ByteString d() throws IOException {
-        return this.f22264a.readByteString(k());
+        return this.f8656a.readByteString(k());
     }
 
     public String e() throws IOException {
-        return this.f22264a.readUtf8(k());
+        return this.f8656a.readUtf8(k());
     }
 
     public int f() throws IOException {
@@ -261,7 +261,7 @@ public final class f {
             }
             this.b++;
             j |= (readByte & Byte.MAX_VALUE) << i3;
-            if ((this.f22264a.readByte() & 128) == 0) {
+            if ((this.f8656a.readByte() & 128) == 0) {
                 b(0);
                 return j;
             }
@@ -274,9 +274,9 @@ public final class f {
         if (i != 5 && i != 2) {
             throw new ProtocolException("Expected FIXED32 or LENGTH_DELIMITED but was " + this.e);
         }
-        this.f22264a.require(4L);
+        this.f8656a.require(4L);
         this.b += 4;
-        int readIntLe = this.f22264a.readIntLe();
+        int readIntLe = this.f8656a.readIntLe();
         b(5);
         return readIntLe;
     }
@@ -286,9 +286,9 @@ public final class f {
         if (i != 1 && i != 2) {
             throw new ProtocolException("Expected FIXED64 or LENGTH_DELIMITED but was " + this.e);
         }
-        this.f22264a.require(8L);
+        this.f8656a.require(8L);
         this.b += 8;
-        long readLongLe = this.f22264a.readLongLe();
+        long readLongLe = this.f8656a.readLongLe();
         b(1);
         return readLongLe;
     }

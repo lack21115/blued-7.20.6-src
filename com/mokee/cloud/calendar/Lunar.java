@@ -1,19 +1,17 @@
 package com.mokee.cloud.calendar;
 
+import com.amap.api.services.core.AMapException;
+import com.android.org.conscrypt.NativeCrypto;
 import java.text.SimpleDateFormat;
 
 /* loaded from: source-4181928-dex2jar.jar:com/mokee/cloud/calendar/Lunar.class */
 public class Lunar {
-
-    /* renamed from: c  reason: collision with root package name */
-    private static String[] f24201c;
+    private static String[] c;
     private static String[] h;
     private static int[] i;
     private static final long[] o = null;
     private static final String[] q = null;
-
-    /* renamed from: a  reason: collision with root package name */
-    private int f24202a;
+    private int a;
     private String[] b;
     private String[] d;
     private String[] e;
@@ -69,16 +67,16 @@ public class Lunar {
     }
 
     private static int a(int i2) {
-        return (int) (o[i2 - 1900] & 15);
+        return (int) (o[i2 - AMapException.CODE_AMAP_CLIENT_UNKNOWN_ERROR] & 15);
     }
 
     private static int a(int i2, int i3) {
-        return (o[i2 - 1900] & ((long) (65536 >> i3))) == 0 ? 29 : 30;
+        return (o[i2 - AMapException.CODE_AMAP_CLIENT_UNKNOWN_ERROR] & ((long) (65536 >> i3))) == 0 ? 29 : 30;
     }
 
     private static int b(int i2) {
         if (a(i2) != 0) {
-            return (o[i2 - 1900] & 65536) != 0 ? 30 : 29;
+            return (o[i2 - AMapException.CODE_AMAP_CLIENT_UNKNOWN_ERROR] & NativeCrypto.SSL_OP_NO_SESSION_RESUMPTION_ON_RENEGOTIATION) != 0 ? 30 : 29;
         }
         return 0;
     }
@@ -93,7 +91,7 @@ public class Lunar {
         r6 = r8;
      */
     /* JADX WARN: Code restructure failed: missing block: B:5:0x0029, code lost:
-        if ((com.mokee.cloud.calendar.Lunar.o[r5 - 1900] & r9) == 0) goto L6;
+        if ((com.mokee.cloud.calendar.Lunar.o[r5 - com.amap.api.services.core.AMapException.CODE_AMAP_CLIENT_UNKNOWN_ERROR] & r9) == 0) goto L6;
      */
     /* JADX WARN: Code restructure failed: missing block: B:6:0x002c, code lost:
         r6 = r8 + 1;
@@ -197,7 +195,7 @@ public class Lunar {
             r0 = 0
             r7 = r0
         L19:
-            java.lang.String[] r0 = com.mokee.cloud.calendar.Lunar.f24201c
+            java.lang.String[] r0 = com.mokee.cloud.calendar.Lunar.c
             r1 = r7
             r0 = r0[r1]
             java.lang.String r1 = " "
@@ -235,7 +233,7 @@ public class Lunar {
             r0 = r6
             r7 = r0
             r0 = r6
-            java.lang.String[] r1 = com.mokee.cloud.calendar.Lunar.f24201c
+            java.lang.String[] r1 = com.mokee.cloud.calendar.Lunar.c
             int r1 = r1.length
             if (r0 < r1) goto L19
             r0 = 0
@@ -342,7 +340,7 @@ public class Lunar {
     }
 
     public String getAnimalString() {
-        return this.e[(this.f24202a - 4) % 12];
+        return this.e[(this.a - 4) % 12];
     }
 
     public String getLunarDayString(int i2) {
@@ -350,11 +348,11 @@ public class Lunar {
     }
 
     public String getLunarYearString() {
-        return d((this.f24202a - 1900) + 36);
+        return d((this.a - AMapException.CODE_AMAP_CLIENT_UNKNOWN_ERROR) + 36);
     }
 
     public boolean isMajorMonth() {
-        return a(this.f24202a, this.m) == 30;
+        return a(this.a, this.m) == 30;
     }
 
     public String toString() {

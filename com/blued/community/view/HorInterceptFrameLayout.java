@@ -55,16 +55,16 @@ public class HorInterceptFrameLayout extends FrameLayout {
             this.mInitialMotionY = y;
             this.mLastMotionY = y;
             this.mIsBeingDragged = false;
-            Logger.b(TAG, "onInterceptTouchEvent ACTION_DOWN");
+            Logger.b(TAG, new Object[]{"onInterceptTouchEvent ACTION_DOWN"});
         } else if (action == 2) {
             float abs = Math.abs(motionEvent.getX() - this.mInitialMotionX);
             float abs2 = Math.abs(motionEvent.getY() - this.mInitialMotionY);
             if (abs > this.mTouchSlop && abs * 0.5f > abs2) {
                 this.mIsBeingDragged = true;
             }
-            Logger.b(TAG, "onInterceptTouchEvent ACTION_MOVE");
+            Logger.b(TAG, new Object[]{"onInterceptTouchEvent ACTION_MOVE"});
         } else if (action == 6) {
-            Logger.b(TAG, "onInterceptTouchEvent ACTION_POINTER_UP");
+            Logger.b(TAG, new Object[]{"onInterceptTouchEvent ACTION_POINTER_UP"});
         }
         return this.mIsBeingDragged;
     }
@@ -82,7 +82,7 @@ public class HorInterceptFrameLayout extends FrameLayout {
                     float y = motionEvent.getY();
                     this.mInitialMotionY = y;
                     this.mLastMotionY = y;
-                    Logger.b(TAG, "ACTION_DOWN");
+                    Logger.b(TAG, new Object[]{"ACTION_DOWN"});
                     return true;
                 }
                 if (i != 1) {
@@ -97,20 +97,20 @@ public class HorInterceptFrameLayout extends FrameLayout {
                         this.mLastMotionY = y2;
                         return true;
                     } else if (i == 3) {
-                        Logger.b(TAG, "ACTION_CANCEL");
+                        Logger.b(TAG, new Object[]{"ACTION_CANCEL"});
                         if (this.onHorScrollListener != null) {
                             this.onHorScrollListener.horScrolling(action, 0.0f);
                             return true;
                         }
                         return true;
                     } else if (i == 5) {
-                        Logger.b(TAG, "ACTION_POINTER_DOWN");
+                        Logger.b(TAG, new Object[]{"ACTION_POINTER_DOWN"});
                         return true;
                     } else if (i != 6) {
                         return true;
                     }
                 }
-                Logger.b(TAG, "ACTION_UP");
+                Logger.b(TAG, new Object[]{"ACTION_UP"});
                 if (this.onHorScrollListener != null) {
                     this.onHorScrollListener.horScrolling(action, 0.0f);
                     return true;

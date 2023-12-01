@@ -16,6 +16,6 @@ public class b extends a.a.a.a.a.a.a {
         createAudioFormat.setInteger(MediaFormat.KEY_MAX_INPUT_SIZE, 16384);
         this.b = new a.a.a.a.a.a.g.c(createAudioFormat, "audio/mp4a-latm", false);
         c().start();
-        this.f1213c = 0;
+        this.f1165c = 0;
     }
 }

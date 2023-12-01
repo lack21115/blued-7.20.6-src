@@ -2,6 +2,7 @@ package com.soft.blued.ui.share_custom;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Parcelable;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -41,10 +42,10 @@ import java.util.ArrayList;
 public class BaseShareToPlatform {
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f33703c = BaseShareToPlatform.class.getSimpleName();
+    private static final String f20012c = BaseShareToPlatform.class.getSimpleName();
 
     /* renamed from: a  reason: collision with root package name */
-    protected Context f33704a;
+    protected Context f20013a;
     ShareCoreUtils.ShareBackLister b;
     private PopMenuFromBottom d;
     private View e;
@@ -60,7 +61,7 @@ public class BaseShareToPlatform {
     public static class PopWindowSetting {
 
         /* renamed from: a  reason: collision with root package name */
-        public boolean f33708a = false;
+        public boolean f20017a = false;
         public boolean b = false;
     }
 
@@ -69,14 +70,12 @@ public class BaseShareToPlatform {
         public ShareCallbackListener() {
         }
 
-        @Override // com.blued.android.share.CallbackListener
         public void onCancel(String str) {
             if (BaseShareToPlatform.this.b != null) {
                 BaseShareToPlatform.this.b.c(str);
             }
         }
 
-        @Override // com.blued.android.share.CallbackListener
         public void onFailure(String str) {
             if (BaseShareToPlatform.this.b != null) {
                 BaseShareToPlatform.this.b.b(str);
@@ -86,14 +85,12 @@ public class BaseShareToPlatform {
             }
         }
 
-        @Override // com.blued.android.share.CallbackListener
         public void onResume(String str) {
             if (BaseShareToPlatform.this.b != null) {
                 BaseShareToPlatform.this.b.d(str);
             }
         }
 
-        @Override // com.blued.android.share.CallbackListener
         public void onSuccess(String str) {
             BaseShareToPlatform.this.a(str);
         }
@@ -101,18 +98,18 @@ public class BaseShareToPlatform {
 
     public BaseShareToPlatform(Context context, final ShareCoreUtils.ShareBackLister shareBackLister, PopWindowSetting popWindowSetting, final ShareOptionRecyclerAdapter.ShareOptionsItemClickListener shareOptionsItemClickListener) {
         PopWindowSetting popWindowSetting2 = popWindowSetting == null ? new PopWindowSetting() : popWindowSetting;
-        this.f33704a = context;
+        this.f20013a = context;
         this.e = LayoutInflater.from(context).inflate(R.layout.share_common_layout, (ViewGroup) null);
-        a(popWindowSetting2.f33708a);
+        a(popWindowSetting2.f20017a);
         this.f = (RecyclerView) this.e.findViewById(R.id.lv_platforms);
         this.g = (RecyclerView) this.e.findViewById(R.id.lv_blued);
         LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) this.e.findViewById(R.id.ll_all).getLayoutParams();
         if (popWindowSetting2.b) {
-            layoutParams.width = DensityUtils.a(this.f33704a, 355.0f);
+            layoutParams.width = DensityUtils.a(this.f20013a, 355.0f);
         }
         this.e.findViewById(R.id.ll_all).setLayoutParams(layoutParams);
         ArrayList arrayList = new ArrayList();
-        if (popWindowSetting2.f33708a) {
+        if (popWindowSetting2.f20017a) {
             arrayList.add(new ShareOption(R.drawable.icon_share_to_people_dark, R.string.share_to_friends));
             arrayList.add(new ShareOption(R.drawable.icon_share_to_feed_dark, R.string.common_main_feed));
             arrayList.add(new ShareOption(R.drawable.icon_share_repost_to_feed_dark, R.string.feed_repost));
@@ -121,8 +118,8 @@ public class BaseShareToPlatform {
             arrayList.add(new ShareOption(R.drawable.icon_share_to_feed, R.string.common_main_feed));
             arrayList.add(new ShareOption(R.drawable.icon_share_repost_to_feed, R.string.feed_repost));
         }
-        this.i = new ShareOptionRecyclerAdapter(context, arrayList, popWindowSetting2.f33708a);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.f33704a);
+        this.i = new ShareOptionRecyclerAdapter(context, arrayList, popWindowSetting2.f20017a);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.f20013a);
         linearLayoutManager.setStackFromEnd(true);
         linearLayoutManager.setOrientation(0);
         linearLayoutManager.scrollToPosition(0);
@@ -131,7 +128,7 @@ public class BaseShareToPlatform {
         this.g.setAdapter(this.i);
         this.i.notifyDataSetChanged();
         ArrayList arrayList2 = new ArrayList();
-        if (popWindowSetting2.f33708a) {
+        if (popWindowSetting2.f20017a) {
             arrayList2.add(new ShareOption(R.drawable.icon_share_to_wechat_dark, R.string.ssdk_wechat));
             arrayList2.add(new ShareOption(R.drawable.icon_share_to_wechat_moment_dark, R.string.ssdk_wechatmoments));
             arrayList2.add(new ShareOption(R.drawable.icon_share_to_qq_dark, R.string.ssdk_qq));
@@ -142,8 +139,8 @@ public class BaseShareToPlatform {
             arrayList2.add(new ShareOption(R.drawable.icon_share_to_qq, R.string.ssdk_qq));
             arrayList2.add(new ShareOption(R.drawable.icon_share_to_sina_weibo, R.string.ssdk_sinaweibo));
         }
-        this.h = new ShareOptionRecyclerAdapter(context, arrayList2, popWindowSetting2.f33708a);
-        LinearLayoutManager linearLayoutManager2 = new LinearLayoutManager(this.f33704a);
+        this.h = new ShareOptionRecyclerAdapter(context, arrayList2, popWindowSetting2.f20017a);
+        LinearLayoutManager linearLayoutManager2 = new LinearLayoutManager(this.f20013a);
         linearLayoutManager2.setStackFromEnd(true);
         linearLayoutManager2.setOrientation(0);
         linearLayoutManager2.scrollToPosition(0);
@@ -167,19 +164,19 @@ public class BaseShareToPlatform {
         this.i.a(this.l);
         this.b = shareBackLister;
         if (popWindowSetting2.b) {
-            this.d = new PopMenuFromCenter(this.f33704a, this.e);
+            this.d = new PopMenuFromCenter(this.f20013a, this.e);
         } else {
-            this.d = new PopMenuFromBottom(this.f33704a, this.e);
+            this.d = new PopMenuFromBottom(this.f20013a, this.e);
         }
     }
 
     private void a() {
         if (this.j.shareFrom == 8) {
             BaseShareEntity baseShareEntity = this.j;
-            baseShareEntity.content = this.j.content + " " + String.format(this.f33704a.getResources().getString(R.string.live_share_enterToPersionPage), "");
+            baseShareEntity.content = this.j.content + " " + String.format(this.f20013a.getResources().getString(R.string.live_share_enterToPersionPage), "");
             this.j.netImgUrl = "";
         }
-        Intent intent = new Intent(this.f33704a, SinaShareActivity.class);
+        Intent intent = new Intent(this.f20013a, SinaShareActivity.class);
         if (this.j.shareFrom == 6) {
             intent.putExtra("title", "");
             intent.putExtra("des", this.j.title);
@@ -198,23 +195,23 @@ public class BaseShareToPlatform {
         intent.putExtra("linkUrl", this.j.linkUrl);
         intent.putExtra("fileUrl", this.j.fileUrl);
         ShareProvider.getInstance().registerCallback(new ShareCallbackListener());
-        this.f33704a.startActivity(intent);
+        this.f20013a.startActivity(intent);
     }
 
     private void a(int i) {
-        MsgImageText msgImageText = new MsgImageText();
-        msgImageText.pType = 2;
-        msgImageText.appName = this.k;
-        msgImageText.title = this.j.title;
-        msgImageText.summary = this.j.mainBody;
+        Parcelable msgImageText = new MsgImageText();
+        ((MsgImageText) msgImageText).pType = 2;
+        ((MsgImageText) msgImageText).appName = this.k;
+        ((MsgImageText) msgImageText).title = this.j.title;
+        ((MsgImageText) msgImageText).summary = this.j.mainBody;
         if (this.j.flag == 1) {
-            msgImageText.imageUrl = this.j.netImgUrl;
+            ((MsgImageText) msgImageText).imageUrl = this.j.netImgUrl;
         } else {
-            msgImageText.imageUrl = this.j.fileUrl;
+            ((MsgImageText) msgImageText).imageUrl = this.j.fileUrl;
         }
-        msgImageText.targetUrl = this.j.linkUrl;
-        Intent intent = new Intent(this.f33704a, QQActivity.class);
-        intent.putExtra(Constants.BUNDLE_SHOW, msgImageText);
+        ((MsgImageText) msgImageText).targetUrl = this.j.linkUrl;
+        Intent intent = new Intent(this.f20013a, QQActivity.class);
+        intent.putExtra("QQEnetry_jrj_show", msgImageText);
         if (i == 1) {
             intent.putExtra("type", 1);
         } else {
@@ -222,12 +219,12 @@ public class BaseShareToPlatform {
         }
         intent.putExtra("flag", this.j.flag);
         ShareProvider.getInstance().registerCallback(new ShareCallbackListener());
-        this.f33704a.startActivity(intent);
+        this.f20013a.startActivity(intent);
     }
 
     private void a(int i, int i2) {
         String str;
-        Intent intent = new Intent(this.f33704a, WXEntryActivity.class);
+        Intent intent = new Intent(this.f20013a, WXEntryActivity.class);
         if (i2 == 2) {
             MsgWeixinVideoText msgWeixinVideoText = new MsgWeixinVideoText();
             msgWeixinVideoText.pType = i;
@@ -239,7 +236,7 @@ public class BaseShareToPlatform {
                 msgWeixinVideoText.imageUrl = this.j.fileUrl;
             }
             msgWeixinVideoText.targetUrl = this.j.linkUrl;
-            intent.putExtra("WXEnetry_jrj_show", msgWeixinVideoText);
+            intent.putExtra("WXEnetry_jrj_show", (Parcelable) msgWeixinVideoText);
         } else if (i2 == 1) {
             MsgImage msgImage = new MsgImage();
             if (this.j.flag == 1) {
@@ -248,7 +245,7 @@ public class BaseShareToPlatform {
                 msgImage.imageUrl = this.j.fileUrl;
             }
             msgImage.pType = i;
-            intent.putExtra("WXEnetry_jrj_show", msgImage);
+            intent.putExtra("WXEnetry_jrj_show", (Parcelable) msgImage);
         } else {
             MsgImageText msgImageText = new MsgImageText();
             msgImageText.pType = i;
@@ -258,7 +255,7 @@ public class BaseShareToPlatform {
                 if (i == 8) {
                     str = this.j.title;
                 } else {
-                    str = this.j.title + "-" + this.j.content;
+                    str = this.j.title + com.xiaomi.mipush.sdk.Constants.ACCEPT_TIME_SEPARATOR_SERVER + this.j.content;
                 }
                 msgImageText.title = str;
             } else if (this.j.shareFrom == 14) {
@@ -273,11 +270,11 @@ public class BaseShareToPlatform {
                 msgImageText.imageUrl = this.j.fileUrl;
             }
             msgImageText.targetUrl = this.j.linkUrl;
-            intent.putExtra("WXEnetry_jrj_show", msgImageText);
+            intent.putExtra("WXEnetry_jrj_show", (Parcelable) msgImageText);
         }
         intent.putExtra("intent_mode", "intent_mode_share");
         ShareProvider.getInstance().registerCallback(new ShareCallbackListener());
-        this.f33704a.startActivity(intent);
+        this.f20013a.startActivity(intent);
     }
 
     public void a(int i, ShareCoreUtils.ShareBackLister shareBackLister, PopWindowSetting popWindowSetting) {
@@ -309,7 +306,7 @@ public class BaseShareToPlatform {
             baseShareEntity4.linkUrl = HttpUtils.a(arrayMap, baseShareEntity4.linkUrl);
             a(this.j.shareType);
         }
-        Logger.c(f33703c, "mShareEntity.linkUrl platform", this.j.linkUrl);
+        Logger.c(f20012c, new Object[]{"mShareEntity.linkUrl platform", this.j.linkUrl});
     }
 
     public void a(BaseShareEntity baseShareEntity) {
@@ -346,12 +343,12 @@ public class BaseShareToPlatform {
     }
 
     public void a(boolean z) {
-        ShapeLinearLayout shapeLinearLayout = (ShapeLinearLayout) this.e.findViewById(R.id.ll_all);
+        ShapeLinearLayout findViewById = this.e.findViewById(R.id.ll_all);
         TextView textView = (TextView) this.e.findViewById(R.id.tv_cancel);
         if (z) {
-            ShapeHelper.b(shapeLinearLayout, R.color.share_dark_bg);
-            textView.setTextColor(this.f33704a.getResources().getColor(R.color.share_dark_text));
-            textView.setBackgroundColor(this.f33704a.getResources().getColor(R.color.share_dark_btn));
+            ShapeHelper.b(findViewById, R.color.share_dark_bg);
+            textView.setTextColor(this.f20013a.getResources().getColor(R.color.share_dark_text));
+            textView.setBackgroundColor(this.f20013a.getResources().getColor(R.color.share_dark_btn));
         }
     }
 

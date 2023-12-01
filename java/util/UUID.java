@@ -1,6 +1,7 @@
 package java.util;
 
-import com.google.common.primitives.Longs;
+import com.android.internal.content.NativeLibraryHelper;
+import com.anythink.core.common.k.f;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.Serializable;
@@ -33,7 +34,7 @@ public final class UUID implements Serializable, Comparable<UUID> {
         if (str == null) {
             throw new NullPointerException("uuid == null");
         }
-        String[] split = str.split("-");
+        String[] split = str.split(NativeLibraryHelper.CLEAR_ABI_OVERRIDE);
         if (split.length != 5) {
             throw new IllegalArgumentException("Invalid UUID: " + str);
         }
@@ -44,7 +45,7 @@ public final class UUID implements Serializable, Comparable<UUID> {
         this.hash = ((int) (this.mostSigBits ^ (this.mostSigBits >>> 32))) ^ ((int) (this.leastSigBits ^ (this.leastSigBits >>> 32)));
         if ((this.leastSigBits & Long.MIN_VALUE) == 0) {
             this.variant = 0;
-        } else if ((this.leastSigBits & Longs.MAX_POWER_OF_TWO) != 0) {
+        } else if ((this.leastSigBits & 4611686018427387904L) != 0) {
             this.variant = (int) ((this.leastSigBits & (-2305843009213693952L)) >>> 61);
         } else {
             this.variant = 2;
@@ -66,7 +67,7 @@ public final class UUID implements Serializable, Comparable<UUID> {
             throw new NullPointerException("name == null");
         }
         try {
-            return makeUuid(MessageDigest.getInstance("MD5").digest(bArr), 3);
+            return makeUuid(MessageDigest.getInstance(f.a).digest(bArr), 3);
         } catch (NoSuchAlgorithmException e) {
             throw new AssertionError(e);
         }

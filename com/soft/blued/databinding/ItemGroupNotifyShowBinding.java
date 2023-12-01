@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemGroupNotifyShowBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final RelativeLayout f29199a;
+    private final RelativeLayout f15509a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
-        return this.f29199a;
+        return this.f15509a;
     }
 }

@@ -573,7 +573,7 @@ public final class SharedPreferencesNewImpl implements SharedPreferences {
     private Pair<byte[], Integer> getOneString(byte[] bArr, int i) {
         int i2;
         byte[] bArr2 = new byte[4];
-        System.arraycopy((Object) bArr, i, (Object) bArr2, 0, 4);
+        System.arraycopy(bArr, i, bArr2, 0, 4);
         int i3 = i + 4;
         if (bArr[i3] == 18 || bArr[i3] == getMaskByte(bArr2)) {
             int i4 = i3 + 1;
@@ -585,7 +585,7 @@ public final class SharedPreferencesNewImpl implements SharedPreferences {
             int i5 = i4;
             if (bytesToInt != 0) {
                 bArr3 = new byte[bytesToInt];
-                System.arraycopy((Object) bArr, i4, (Object) bArr3, 0, bytesToInt);
+                System.arraycopy(bArr, i4, bArr3, 0, bytesToInt);
                 if (bArr[i2] != 18 && bArr[i2] != getMaskByte(bArr3)) {
                     throw new Exception("Stored bytes' finish mark missing");
                 }
@@ -642,10 +642,10 @@ public final class SharedPreferencesNewImpl implements SharedPreferences {
         if (this.mMappedByteBuffer != null) {
             byte[] bArr = new byte[10];
             byte[] intToBytes = ByteIntUtils.intToBytes(0);
-            System.arraycopy((Object) intToBytes, 0, (Object) bArr, 0, 4);
+            System.arraycopy(intToBytes, 0, bArr, 0, 4);
             bArr[4] = getMaskByte(intToBytes);
             byte[] intToBytes2 = ByteIntUtils.intToBytes(0);
-            System.arraycopy((Object) intToBytes2, 0, (Object) bArr, 5, 4);
+            System.arraycopy(intToBytes2, 0, bArr, 5, 4);
             bArr[9] = getMaskByte(intToBytes2);
             this.mMappedByteBuffer.position(0);
             this.mMappedByteBuffer.put(bArr);
@@ -979,12 +979,12 @@ public final class SharedPreferencesNewImpl implements SharedPreferences {
         }
         byte[] bArr = new byte[i];
         byte[] intToBytes = ByteIntUtils.intToBytes(i);
-        System.arraycopy((Object) intToBytes, 0, (Object) bArr, 0, intToBytes.length);
+        System.arraycopy(intToBytes, 0, bArr, 0, intToBytes.length);
         int length = intToBytes.length + 0;
         bArr[length] = getMaskByte(intToBytes);
         int i2 = length + 1;
         byte[] intToBytes2 = ByteIntUtils.intToBytes(increaseModifyID());
-        System.arraycopy((Object) intToBytes2, 0, (Object) bArr, i2, intToBytes2.length);
+        System.arraycopy(intToBytes2, 0, bArr, i2, intToBytes2.length);
         int length2 = i2 + intToBytes2.length;
         bArr[length2] = getMaskByte(intToBytes2);
         int i3 = length2 + 1;
@@ -999,7 +999,7 @@ public final class SharedPreferencesNewImpl implements SharedPreferences {
             int i5 = i3;
             if (bArr3 != null) {
                 if (bArr3.length + i3 + 1 <= Integer.MAX_VALUE) {
-                    System.arraycopy((Object) bArr3, 0, (Object) bArr, i3, bArr3.length);
+                    System.arraycopy(bArr3, 0, bArr, i3, bArr3.length);
                     int length4 = i3 + bArr3.length;
                     bArr[length4] = getMaskByte(bArr3);
                     i5 = length4 + 1;

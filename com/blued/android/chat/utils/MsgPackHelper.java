@@ -4,7 +4,6 @@ import android.text.TextUtils;
 import androidx.collection.ArrayMap;
 import com.blued.android.chat.ChatManager;
 import com.blued.android.chat.core.utils.Log;
-import com.igexin.push.core.b;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -205,11 +204,11 @@ public class MsgPackHelper {
         } else {
             StringBuilder sb = new StringBuilder();
             sb.append("pack failed, invalid value type:");
-            sb.append(obj == null ? b.l : obj.getClass().getSimpleName());
+            sb.append(obj == null ? "null" : obj.getClass().getSimpleName());
             Log.e(TAG, sb.toString());
             StringBuilder sb2 = new StringBuilder();
             sb2.append("Invalid value type:");
-            sb2.append(obj == null ? b.l : obj.getClass().getSimpleName());
+            sb2.append(obj == null ? "null" : obj.getClass().getSimpleName());
             messagePacker.packString(sb2.toString());
         }
     }
@@ -245,7 +244,7 @@ public class MsgPackHelper {
     }
 
     public static Map<String, Object> unpackMap(byte[] bArr, int i, int i2) {
-        ArrayMap arrayMap;
+        Map<String, Object> map;
         if (i2 <= i) {
             if (ChatManager.debug) {
                 Log.e(TAG, "unpackMap failed, data length is invalid, offset:" + i + ", length:" + i2);
@@ -257,21 +256,21 @@ public class MsgPackHelper {
         try {
             try {
                 int unpackMapHeader = newDefaultUnpacker.unpackMapHeader();
-                arrayMap = new ArrayMap();
+                map = new ArrayMap<>();
                 int i3 = 0;
                 while (true) {
                     int i4 = i3;
                     if (i4 >= unpackMapHeader) {
                         try {
                             newDefaultUnpacker.close();
-                            return arrayMap;
+                            return map;
                         } catch (IOException e) {
                             e.printStackTrace();
-                            return arrayMap;
+                            return map;
                         }
                     }
                     try {
-                        arrayMap.put(newDefaultUnpacker.unpackString(), unpackValue(newDefaultUnpacker.unpackValue()));
+                        map.put(newDefaultUnpacker.unpackString(), unpackValue(newDefaultUnpacker.unpackValue()));
                         i3 = i4 + 1;
                     } catch (IOException e2) {
                         e = e2;
@@ -281,12 +280,12 @@ public class MsgPackHelper {
                         } catch (IOException e3) {
                             e3.printStackTrace();
                         }
-                        return arrayMap;
+                        return map;
                     }
                 }
             } catch (IOException e4) {
                 e = e4;
-                arrayMap = null;
+                map = null;
             }
         } catch (Throwable th) {
             try {

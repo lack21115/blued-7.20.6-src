@@ -3,6 +3,7 @@ package com.tencent.bugly.crashreport.crash.jni;
 import android.content.Context;
 import android.os.Build;
 import com.anythink.expressad.video.module.a.a.m;
+import com.huawei.hms.ads.fw;
 import com.tencent.bugly.crashreport.common.strategy.StrategyBean;
 import com.tencent.bugly.crashreport.crash.CrashDetailBean;
 import com.tencent.bugly.crashreport.crash.c;
@@ -16,14 +17,14 @@ public class NativeCrashHandler implements com.tencent.bugly.crashreport.a {
     public static int JNI_CALL_TYPE = 1;
 
     /* renamed from: a  reason: collision with root package name */
-    private static NativeCrashHandler f35179a;
+    private static NativeCrashHandler f21488a;
     private static boolean l = false;
     private static boolean m = false;
     private static boolean o = true;
     private final Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final com.tencent.bugly.crashreport.common.info.a f35180c;
+    private final com.tencent.bugly.crashreport.common.info.a f21489c;
     private final w d;
     private NativeExceptionHandler e;
     private String f;
@@ -41,11 +42,11 @@ public class NativeCrashHandler implements com.tencent.bugly.crashreport.a {
                 str = context.getDir("bugly", 0).getAbsolutePath();
             }
         } catch (Throwable th) {
-            str = "/data/data/" + com.tencent.bugly.crashreport.common.info.a.a(context).f35130c + "/app_bugly";
+            str = "/data/data/" + com.tencent.bugly.crashreport.common.info.a.a(context).f21439c + "/app_bugly";
         }
         this.n = bVar;
         this.f = str;
-        this.f35180c = aVar;
+        this.f21489c = aVar;
         this.d = wVar;
         this.g = z;
         this.e = new a(context, aVar, bVar, com.tencent.bugly.crashreport.common.strategy.a.a());
@@ -155,7 +156,7 @@ public class NativeCrashHandler implements com.tencent.bugly.crashreport.a {
         NativeCrashHandler nativeCrashHandler;
         synchronized (NativeCrashHandler.class) {
             try {
-                nativeCrashHandler = f35179a;
+                nativeCrashHandler = f21488a;
             } catch (Throwable th) {
                 throw th;
             }
@@ -167,10 +168,10 @@ public class NativeCrashHandler implements com.tencent.bugly.crashreport.a {
         NativeCrashHandler nativeCrashHandler;
         synchronized (NativeCrashHandler.class) {
             try {
-                if (f35179a == null) {
-                    f35179a = new NativeCrashHandler(context, aVar, bVar, wVar, z, str);
+                if (f21488a == null) {
+                    f21488a = new NativeCrashHandler(context, aVar, bVar, wVar, z, str);
                 }
-                nativeCrashHandler = f35179a;
+                nativeCrashHandler = f21488a;
             } catch (Throwable th) {
                 throw th;
             }
@@ -184,7 +185,7 @@ public class NativeCrashHandler implements com.tencent.bugly.crashreport.a {
 
     public static void setShouldHandleInJava(boolean z) {
         o = z;
-        NativeCrashHandler nativeCrashHandler = f35179a;
+        NativeCrashHandler nativeCrashHandler = f21488a;
         if (nativeCrashHandler != null) {
             StringBuilder sb = new StringBuilder();
             sb.append(z);
@@ -307,7 +308,7 @@ public class NativeCrashHandler implements com.tencent.bugly.crashreport.a {
     }
 
     public boolean filterSigabrtSysLog() {
-        return a(998, "true");
+        return a(998, fw.Code);
     }
 
     public String getDumpFilePath() {
@@ -428,7 +429,7 @@ public class NativeCrashHandler implements com.tencent.bugly.crashreport.a {
 
     @Override // com.tencent.bugly.crashreport.a
     public boolean setNativeIsAppForeground(boolean z) {
-        return a(14, z ? "true" : "false");
+        return a(14, z ? fw.Code : "false");
     }
 
     public boolean setNativeLaunchTime(long j) {
@@ -467,24 +468,24 @@ public class NativeCrashHandler implements com.tencent.bugly.crashreport.a {
         synchronized (this) {
             if (!this.i && !this.h) {
                 String str = "Bugly";
-                boolean z = !z.a(this.f35180c.n);
-                String str2 = this.f35180c.n;
+                boolean z = !z.a(this.f21489c.n);
+                String str2 = this.f21489c.n;
                 if (z) {
                     str = str2;
                 } else {
-                    this.f35180c.getClass();
+                    this.f21489c.getClass();
                 }
                 boolean a2 = a(str, z);
                 this.i = a2;
                 if (a2 || this.h) {
                     a(this.g);
                     if (l) {
-                        setNativeAppVersion(this.f35180c.k);
-                        setNativeAppChannel(this.f35180c.m);
-                        setNativeAppPackage(this.f35180c.f35130c);
-                        setNativeUserId(this.f35180c.g());
-                        setNativeIsAppForeground(this.f35180c.a());
-                        setNativeLaunchTime(this.f35180c.f35129a);
+                        setNativeAppVersion(this.f21489c.k);
+                        setNativeAppChannel(this.f21489c.m);
+                        setNativeAppPackage(this.f21489c.f21439c);
+                        setNativeUserId(this.f21489c.g());
+                        setNativeIsAppForeground(this.f21489c.a());
+                        setNativeLaunchTime(this.f21489c.f21438a);
                     }
                     return;
                 }

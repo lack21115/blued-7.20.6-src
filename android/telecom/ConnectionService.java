@@ -11,7 +11,6 @@ import android.os.Looper;
 import android.os.Message;
 import android.telecom.Conference;
 import android.telecom.Connection;
-import com.android.ims.ImsCallProfile;
 import com.android.internal.os.SomeArgs;
 import com.android.internal.telecom.IConnectionService;
 import com.android.internal.telecom.IConnectionServiceAdapter;
@@ -62,17 +61,14 @@ public abstract class ConnectionService extends Service {
     private final ConnectionServiceAdapter mAdapter = new ConnectionServiceAdapter();
     private boolean mAreAccountsInitialized = false;
     private final IBinder mBinder = new IConnectionService.Stub() { // from class: android.telecom.ConnectionService.1
-        @Override // com.android.internal.telecom.IConnectionService
         public void abort(String str) {
             ConnectionService.this.mHandler.obtainMessage(3, str).sendToTarget();
         }
 
-        @Override // com.android.internal.telecom.IConnectionService
         public void addConnectionServiceAdapter(IConnectionServiceAdapter iConnectionServiceAdapter) {
             ConnectionService.this.mHandler.obtainMessage(1, iConnectionServiceAdapter).sendToTarget();
         }
 
-        @Override // com.android.internal.telecom.IConnectionService
         public void addParticipantWithConference(String str, String str2) {
             SomeArgs obtain = SomeArgs.obtain();
             obtain.arg1 = str;
@@ -80,12 +76,10 @@ public abstract class ConnectionService extends Service {
             ConnectionService.this.mHandler.obtainMessage(23, obtain).sendToTarget();
         }
 
-        @Override // com.android.internal.telecom.IConnectionService
         public void answer(String str) {
             ConnectionService.this.mHandler.obtainMessage(4, str).sendToTarget();
         }
 
-        @Override // com.android.internal.telecom.IConnectionService
         public void answerVideo(String str, int i) {
             SomeArgs obtain = SomeArgs.obtain();
             obtain.arg1 = str;
@@ -93,7 +87,6 @@ public abstract class ConnectionService extends Service {
             ConnectionService.this.mHandler.obtainMessage(17, obtain).sendToTarget();
         }
 
-        @Override // com.android.internal.telecom.IConnectionService
         public void conference(String str, String str2) {
             SomeArgs obtain = SomeArgs.obtain();
             obtain.arg1 = str;
@@ -101,7 +94,6 @@ public abstract class ConnectionService extends Service {
             ConnectionService.this.mHandler.obtainMessage(12, obtain).sendToTarget();
         }
 
-        @Override // com.android.internal.telecom.IConnectionService
         public void createConnection(PhoneAccountHandle phoneAccountHandle, String str, ConnectionRequest connectionRequest, boolean z, boolean z2) {
             SomeArgs obtain = SomeArgs.obtain();
             obtain.arg1 = phoneAccountHandle;
@@ -112,7 +104,6 @@ public abstract class ConnectionService extends Service {
             ConnectionService.this.mHandler.obtainMessage(2, obtain).sendToTarget();
         }
 
-        @Override // com.android.internal.telecom.IConnectionService
         public void deflect(String str, String str2) {
             SomeArgs obtain = SomeArgs.obtain();
             obtain.arg1 = str;
@@ -120,22 +111,18 @@ public abstract class ConnectionService extends Service {
             ConnectionService.this.mHandler.obtainMessage(22, obtain).sendToTarget();
         }
 
-        @Override // com.android.internal.telecom.IConnectionService
         public void disconnect(String str) {
             ConnectionService.this.mHandler.obtainMessage(6, str).sendToTarget();
         }
 
-        @Override // com.android.internal.telecom.IConnectionService
         public void hold(String str) {
             ConnectionService.this.mHandler.obtainMessage(7, str).sendToTarget();
         }
 
-        @Override // com.android.internal.telecom.IConnectionService
         public void mergeConference(String str) {
             ConnectionService.this.mHandler.obtainMessage(18, str).sendToTarget();
         }
 
-        @Override // com.android.internal.telecom.IConnectionService
         public void onAudioStateChanged(String str, AudioState audioState) {
             SomeArgs obtain = SomeArgs.obtain();
             obtain.arg1 = str;
@@ -143,7 +130,6 @@ public abstract class ConnectionService extends Service {
             ConnectionService.this.mHandler.obtainMessage(9, obtain).sendToTarget();
         }
 
-        @Override // com.android.internal.telecom.IConnectionService
         public void onPostDialContinue(String str, boolean z) {
             SomeArgs obtain = SomeArgs.obtain();
             obtain.arg1 = str;
@@ -151,28 +137,23 @@ public abstract class ConnectionService extends Service {
             ConnectionService.this.mHandler.obtainMessage(14, obtain).sendToTarget();
         }
 
-        @Override // com.android.internal.telecom.IConnectionService
         public void playDtmfTone(String str, char c2) {
             ConnectionService.this.mHandler.obtainMessage(10, c2, 0, str).sendToTarget();
         }
 
-        @Override // com.android.internal.telecom.IConnectionService
         public void reject(String str) {
             ConnectionService.this.mHandler.obtainMessage(5, str).sendToTarget();
         }
 
-        @Override // com.android.internal.telecom.IConnectionService
         public void removeConnectionServiceAdapter(IConnectionServiceAdapter iConnectionServiceAdapter) {
             ConnectionService.this.mHandler.obtainMessage(16, iConnectionServiceAdapter).sendToTarget();
         }
 
-        @Override // com.android.internal.telecom.IConnectionService
         public void setActiveSubscription(String str) {
             Log.i(this, "setActiveSubscription %s", str);
             ConnectionService.this.mHandler.obtainMessage(21, str).sendToTarget();
         }
 
-        @Override // com.android.internal.telecom.IConnectionService
         public void setLocalCallHold(String str, int i) {
             SomeArgs obtain = SomeArgs.obtain();
             obtain.arg1 = str;
@@ -180,22 +161,18 @@ public abstract class ConnectionService extends Service {
             ConnectionService.this.mHandler.obtainMessage(20, obtain).sendToTarget();
         }
 
-        @Override // com.android.internal.telecom.IConnectionService
         public void splitFromConference(String str) {
             ConnectionService.this.mHandler.obtainMessage(13, str).sendToTarget();
         }
 
-        @Override // com.android.internal.telecom.IConnectionService
         public void stopDtmfTone(String str) {
             ConnectionService.this.mHandler.obtainMessage(11, str).sendToTarget();
         }
 
-        @Override // com.android.internal.telecom.IConnectionService
         public void swapConference(String str) {
             ConnectionService.this.mHandler.obtainMessage(19, str).sendToTarget();
         }
 
-        @Override // com.android.internal.telecom.IConnectionService
         public void unhold(String str) {
             ConnectionService.this.mHandler.obtainMessage(8, str).sendToTarget();
         }
@@ -593,17 +570,17 @@ public abstract class ConnectionService extends Service {
     /* JADX INFO: Access modifiers changed from: private */
     public void conference(String str, String str2) {
         Log.d(this, "conference %s, %s", str, str2);
-        Connection findConnectionForAction = findConnectionForAction(str2, ImsCallProfile.EXTRA_CONFERENCE);
+        Connection findConnectionForAction = findConnectionForAction(str2, "conference");
         Conference nullConference = getNullConference();
         if (findConnectionForAction == getNullConnection()) {
-            Conference findConferenceForAction = findConferenceForAction(str2, ImsCallProfile.EXTRA_CONFERENCE);
+            Conference findConferenceForAction = findConferenceForAction(str2, "conference");
             nullConference = findConferenceForAction;
             if (findConferenceForAction == getNullConference()) {
                 Log.w(this, "Connection2 or Conference2 missing in conference request %s.", str2);
                 return;
             }
         }
-        Connection findConnectionForAction2 = findConnectionForAction(str, ImsCallProfile.EXTRA_CONFERENCE);
+        Connection findConnectionForAction2 = findConnectionForAction(str, "conference");
         if (findConnectionForAction2 != getNullConnection()) {
             if (nullConference != getNullConference()) {
                 nullConference.onMerge(findConnectionForAction2);
@@ -777,7 +754,6 @@ public abstract class ConnectionService extends Service {
             return;
         }
         this.mAdapter.queryRemoteConnectionServices(new RemoteServiceCallback.Stub() { // from class: android.telecom.ConnectionService.5
-            @Override // com.android.internal.telecom.RemoteServiceCallback
             public void onError() {
                 ConnectionService.this.mHandler.post(new Runnable() { // from class: android.telecom.ConnectionService.5.2
                     @Override // java.lang.Runnable
@@ -787,7 +763,6 @@ public abstract class ConnectionService extends Service {
                 });
             }
 
-            @Override // com.android.internal.telecom.RemoteServiceCallback
             public void onResult(final List<ComponentName> list, final List<IBinder> list2) {
                 ConnectionService.this.mHandler.post(new Runnable() { // from class: android.telecom.ConnectionService.5.1
                     @Override // java.lang.Runnable

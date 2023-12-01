@@ -1,6 +1,5 @@
 package kotlinx.coroutines.internal;
 
-import com.sensetime.stmobile.STMobileHumanActionNative;
 import java.util.concurrent.atomic.AtomicLongFieldUpdater;
 import java.util.concurrent.atomic.AtomicReferenceArray;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
@@ -11,17 +10,13 @@ import kotlinx.coroutines.DebugKt;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/internal/LockFreeTaskQueueCore.class */
 public final class LockFreeTaskQueueCore<E> {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f43548a = new Companion(null);
+    public static final Companion a = new Companion(null);
     public static final Symbol b = new Symbol("REMOVE_FROZEN");
     private static final /* synthetic */ AtomicReferenceFieldUpdater f = AtomicReferenceFieldUpdater.newUpdater(LockFreeTaskQueueCore.class, Object.class, "_next");
     private static final /* synthetic */ AtomicLongFieldUpdater g = AtomicLongFieldUpdater.newUpdater(LockFreeTaskQueueCore.class, "_state");
     private volatile /* synthetic */ Object _next = null;
     private volatile /* synthetic */ long _state = 0;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final int f43549c;
+    private final int c;
     private final boolean d;
     private final int e;
     private /* synthetic */ AtomicReferenceArray h;
@@ -37,7 +32,7 @@ public final class LockFreeTaskQueueCore<E> {
         }
 
         public final int a(long j) {
-            return (j & STMobileHumanActionNative.ST_MOBILE_DEPTH_ESTIMATION) != 0 ? 2 : 1;
+            return (j & 2305843009213693952L) != 0 ? 2 : 1;
         }
 
         public final long a(long j, int i) {
@@ -56,24 +51,22 @@ public final class LockFreeTaskQueueCore<E> {
     @Metadata
     /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/internal/LockFreeTaskQueueCore$Placeholder.class */
     public static final class Placeholder {
-
-        /* renamed from: a  reason: collision with root package name */
-        public final int f43550a;
+        public final int a;
 
         public Placeholder(int i) {
-            this.f43550a = i;
+            this.a = i;
         }
     }
 
     public LockFreeTaskQueueCore(int i, boolean z) {
-        this.f43549c = i;
+        this.c = i;
         this.d = z;
         this.e = i - 1;
-        this.h = new AtomicReferenceArray(this.f43549c);
+        this.h = new AtomicReferenceArray(this.c);
         if (!(this.e <= 1073741823)) {
             throw new IllegalStateException("Check failed.".toString());
         }
-        if (!((this.f43549c & this.e) == 0)) {
+        if (!((this.c & this.e) == 0)) {
             throw new IllegalStateException("Check failed.".toString());
         }
     }
@@ -93,17 +86,17 @@ public final class LockFreeTaskQueueCore<E> {
                     throw new AssertionError();
                 }
             }
-            if ((STMobileHumanActionNative.ST_MOBILE_SEG_SKY & j) != 0) {
+            if ((1152921504606846976L & j) != 0) {
                 return e();
             }
-        } while (!g.compareAndSet(this, j, f43548a.a(j, i2)));
+        } while (!g.compareAndSet(this, j, a.a(j, i2)));
         this.h.set(this.e & i3, null);
         return null;
     }
 
     private final LockFreeTaskQueueCore<E> a(int i, E e) {
         Object obj = this.h.get(this.e & i);
-        if ((obj instanceof Placeholder) && ((Placeholder) obj).f43550a == i) {
+        if ((obj instanceof Placeholder) && ((Placeholder) obj).a == i) {
             this.h.set(i & this.e, e);
             return this;
         }
@@ -122,13 +115,13 @@ public final class LockFreeTaskQueueCore<E> {
 
     /* JADX WARN: Multi-variable type inference failed */
     private final LockFreeTaskQueueCore<E> b(long j) {
-        LockFreeTaskQueueCore<E> lockFreeTaskQueueCore = new LockFreeTaskQueueCore<>(this.f43549c * 2, this.d);
+        LockFreeTaskQueueCore<E> lockFreeTaskQueueCore = new LockFreeTaskQueueCore<>(this.c * 2, this.d);
         int i = (int) ((1073741823 & j) >> 0);
         int i2 = (int) ((1152921503533105152L & j) >> 30);
         while (true) {
             int i3 = this.e;
             if ((i & i3) == (i2 & i3)) {
-                lockFreeTaskQueueCore._state = f43548a.a(j, STMobileHumanActionNative.ST_MOBILE_SEG_SKY);
+                lockFreeTaskQueueCore._state = a.a(j, 1152921504606846976L);
                 return lockFreeTaskQueueCore;
             }
             Object obj = this.h.get(i3 & i);
@@ -146,10 +139,10 @@ public final class LockFreeTaskQueueCore<E> {
         long j2;
         do {
             j = this._state;
-            if ((j & STMobileHumanActionNative.ST_MOBILE_SEG_SKY) != 0) {
+            if ((j & 1152921504606846976L) != 0) {
                 return j;
             }
-            j2 = j | STMobileHumanActionNative.ST_MOBILE_SEG_SKY;
+            j2 = j | 1152921504606846976L;
         } while (!g.compareAndSet(this, j, j2));
         return j2;
     }
@@ -158,7 +151,7 @@ public final class LockFreeTaskQueueCore<E> {
         while (true) {
             long j = this._state;
             if ((3458764513820540928L & j) != 0) {
-                return f43548a.a(j);
+                return a.a(j);
             }
             int i = (int) ((1073741823 & j) >> 0);
             int i2 = (int) ((1152921503533105152L & j) >> 30);
@@ -167,14 +160,14 @@ public final class LockFreeTaskQueueCore<E> {
                 return 1;
             }
             if (!this.d && this.h.get(i2 & i3) != null) {
-                int i4 = this.f43549c;
+                int i4 = this.c;
                 if (i4 < 1024 || ((i2 - i) & 1073741823) > (i4 >> 1)) {
                     return 1;
                 }
-            } else if (g.compareAndSet(this, j, f43548a.b(j, (i2 + 1) & 1073741823))) {
+            } else if (g.compareAndSet(this, j, a.b(j, (i2 + 1) & 1073741823))) {
                 this.h.set(i2 & i3, e);
                 LockFreeTaskQueueCore<E> lockFreeTaskQueueCore = this;
-                while ((lockFreeTaskQueueCore._state & STMobileHumanActionNative.ST_MOBILE_SEG_SKY) != 0) {
+                while ((lockFreeTaskQueueCore._state & 1152921504606846976L) != 0) {
                     LockFreeTaskQueueCore<E> a2 = lockFreeTaskQueueCore.e().a(i2, (int) e);
                     lockFreeTaskQueueCore = a2;
                     if (a2 == null) {
@@ -204,13 +197,13 @@ public final class LockFreeTaskQueueCore<E> {
         long j;
         do {
             j = this._state;
-            if ((j & STMobileHumanActionNative.ST_MOBILE_DEPTH_ESTIMATION) != 0) {
+            if ((j & 2305843009213693952L) != 0) {
                 return true;
             }
-            if ((STMobileHumanActionNative.ST_MOBILE_SEG_SKY & j) != 0) {
+            if ((1152921504606846976L & j) != 0) {
                 return false;
             }
-        } while (!g.compareAndSet(this, j, j | STMobileHumanActionNative.ST_MOBILE_DEPTH_ESTIMATION));
+        } while (!g.compareAndSet(this, j, j | 2305843009213693952L));
         return true;
     }
 
@@ -218,7 +211,7 @@ public final class LockFreeTaskQueueCore<E> {
         LockFreeTaskQueueCore<E> a2;
         while (true) {
             long j = this._state;
-            if ((STMobileHumanActionNative.ST_MOBILE_SEG_SKY & j) != 0) {
+            if ((1152921504606846976L & j) != 0) {
                 return b;
             }
             int i = (int) ((1073741823 & j) >> 0);
@@ -236,7 +229,7 @@ public final class LockFreeTaskQueueCore<E> {
                 return null;
             } else {
                 int i4 = (i + 1) & 1073741823;
-                if (g.compareAndSet(this, j, f43548a.a(j, i4))) {
+                if (g.compareAndSet(this, j, a.a(j, i4))) {
                     this.h.set(this.e & i, null);
                     return obj;
                 } else if (this.d) {

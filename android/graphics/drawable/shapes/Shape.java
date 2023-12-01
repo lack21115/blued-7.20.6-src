@@ -11,7 +11,7 @@ public abstract class Shape implements Cloneable {
 
     @Override // 
     /* renamed from: clone */
-    public Shape mo346clone() throws CloneNotSupportedException {
+    public Shape mo343clone() throws CloneNotSupportedException {
         return (Shape) super.clone();
     }
 

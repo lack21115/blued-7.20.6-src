@@ -18,11 +18,11 @@ import java.util.List;
 public class HomeNearbyEntrancesAdapter extends RecyclerView.Adapter<ViewHolder> implements View.OnClickListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private LayoutInflater f30052a;
+    private LayoutInflater f16362a;
     private List<JoyEntryModel> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private IRequestHost f30053c;
+    private IRequestHost f16363c;
     private HomeNearbyEntranceItemClickListener d;
 
     /* loaded from: source-8303388-dex2jar.jar:com/soft/blued/ui/find/adapter/HomeNearbyEntrancesAdapter$HomeNearbyEntranceItemClickListener.class */
@@ -35,24 +35,24 @@ public class HomeNearbyEntrancesAdapter extends RecyclerView.Adapter<ViewHolder>
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         /* renamed from: a  reason: collision with root package name */
-        public ImageView f30054a;
+        public ImageView f16364a;
         public TextView b;
 
         /* renamed from: c  reason: collision with root package name */
-        public LinearLayout f30055c;
+        public LinearLayout f16365c;
 
         public ViewHolder(View view) {
             super(view);
-            this.f30054a = (ImageView) view.findViewById(2131364496);
+            this.f16364a = (ImageView) view.findViewById(R.id.img_cover);
             this.b = (TextView) view.findViewById(2131372046);
-            this.f30055c = (LinearLayout) view.findViewById(2131367715);
+            this.f16365c = (LinearLayout) view.findViewById(2131367715);
         }
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     /* renamed from: a */
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        View inflate = this.f30052a.inflate(R.layout.item_nearby_entrances_btest, (ViewGroup) null);
+        View inflate = this.f16362a.inflate(R.layout.item_nearby_entrances_btest, (ViewGroup) null);
         inflate.setOnClickListener(this);
         return new ViewHolder(inflate);
     }
@@ -63,8 +63,8 @@ public class HomeNearbyEntrancesAdapter extends RecyclerView.Adapter<ViewHolder>
         if (viewHolder != null) {
             JoyEntryModel joyEntryModel = this.b.get(i);
             viewHolder.b.setText(joyEntryModel.name);
-            ImageLoader.a(this.f30053c, joyEntryModel.icon).b(2131231620).a(viewHolder.f30054a);
-            viewHolder.f30055c.setTag(Integer.valueOf(i));
+            ImageLoader.a(this.f16363c, joyEntryModel.icon).b(2131231620).a(viewHolder.f16364a);
+            viewHolder.f16365c.setTag(Integer.valueOf(i));
         }
     }
 

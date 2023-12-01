@@ -64,7 +64,7 @@ public class OptvDevUtil {
     private static String getMacFromHardware(String str) {
         NetworkInterface networkInterface;
         try {
-            Iterator<E> it = Collections.list(NetworkInterface.getNetworkInterfaces()).iterator();
+            Iterator it = Collections.list(NetworkInterface.getNetworkInterfaces()).iterator();
             do {
                 if (!it.hasNext()) {
                     return "02:00:00:00:00:00";

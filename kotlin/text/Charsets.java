@@ -8,13 +8,9 @@ import org.apache.commons.codec.CharEncoding;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/text/Charsets.class */
 public final class Charsets {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Charsets f42718a = new Charsets();
+    public static final Charsets a = new Charsets();
     public static final Charset b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public static final Charset f42719c;
+    public static final Charset c;
     public static final Charset d;
     public static final Charset e;
     public static final Charset f;
@@ -24,9 +20,9 @@ public final class Charsets {
         Charset forName = Charset.forName("UTF-8");
         Intrinsics.c(forName, "forName(\"UTF-8\")");
         b = forName;
-        Charset forName2 = Charset.forName("UTF-16");
+        Charset forName2 = Charset.forName(CharEncoding.UTF_16);
         Intrinsics.c(forName2, "forName(\"UTF-16\")");
-        f42719c = forName2;
+        c = forName2;
         Charset forName3 = Charset.forName(CharEncoding.UTF_16BE);
         Intrinsics.c(forName3, "forName(\"UTF-16BE\")");
         d = forName3;

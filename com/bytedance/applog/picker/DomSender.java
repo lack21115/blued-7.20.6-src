@@ -30,11 +30,11 @@ public class DomSender extends t implements Handler.Callback, i1.b {
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public String f21178a;
+        public String f7572a;
         public JSONArray b = new JSONArray();
 
         /* renamed from: c  reason: collision with root package name */
-        public int f21179c;
+        public int f7573c;
         public int d;
     }
 

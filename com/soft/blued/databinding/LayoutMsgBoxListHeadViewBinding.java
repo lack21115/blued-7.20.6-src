@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class LayoutMsgBoxListHeadViewBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ConstraintLayout f29408a;
+    private final ConstraintLayout f15718a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f29408a;
+        return this.f15718a;
     }
 }

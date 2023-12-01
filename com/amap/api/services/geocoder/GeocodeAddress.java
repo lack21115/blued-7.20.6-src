@@ -21,13 +21,9 @@ public final class GeocodeAddress implements Parcelable {
             return null;
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f5629a;
+    private String a;
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f5630c;
+    private String c;
     private String d;
     private String e;
     private String f;
@@ -42,9 +38,9 @@ public final class GeocodeAddress implements Parcelable {
     }
 
     private GeocodeAddress(Parcel parcel) {
-        this.f5629a = parcel.readString();
+        this.a = parcel.readString();
         this.b = parcel.readString();
-        this.f5630c = parcel.readString();
+        this.c = parcel.readString();
         this.d = parcel.readString();
         this.e = parcel.readString();
         this.f = parcel.readString();
@@ -74,7 +70,7 @@ public final class GeocodeAddress implements Parcelable {
     }
 
     public final String getCity() {
-        return this.f5630c;
+        return this.c;
     }
 
     public final String getCountry() {
@@ -86,7 +82,7 @@ public final class GeocodeAddress implements Parcelable {
     }
 
     public final String getFormatAddress() {
-        return this.f5629a;
+        return this.a;
     }
 
     public final LatLonPoint getLatLonPoint() {
@@ -122,7 +118,7 @@ public final class GeocodeAddress implements Parcelable {
     }
 
     public final void setCity(String str) {
-        this.f5630c = str;
+        this.c = str;
     }
 
     public final void setCountry(String str) {
@@ -134,7 +130,7 @@ public final class GeocodeAddress implements Parcelable {
     }
 
     public final void setFormatAddress(String str) {
-        this.f5629a = str;
+        this.a = str;
     }
 
     public final void setLatLonPoint(LatLonPoint latLonPoint) {
@@ -163,9 +159,9 @@ public final class GeocodeAddress implements Parcelable {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.f5629a);
+        parcel.writeString(this.a);
         parcel.writeString(this.b);
-        parcel.writeString(this.f5630c);
+        parcel.writeString(this.c);
         parcel.writeString(this.d);
         parcel.writeString(this.e);
         parcel.writeString(this.f);

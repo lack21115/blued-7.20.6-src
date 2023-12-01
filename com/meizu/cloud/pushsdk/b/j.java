@@ -9,18 +9,18 @@ import java.util.concurrent.atomic.AtomicLong;
 public final class j {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f23993a = null;
+    private String f10382a = null;
     private Boolean b = null;
 
     /* renamed from: c  reason: collision with root package name */
-    private Integer f23994c = null;
+    private Integer f10383c = null;
     private Thread.UncaughtExceptionHandler d = null;
     private ThreadFactory e = null;
 
     private static ThreadFactory a(j jVar) {
-        final String str = jVar.f23993a;
+        final String str = jVar.f10382a;
         final Boolean bool = jVar.b;
-        final Integer num = jVar.f23994c;
+        final Integer num = jVar.f10383c;
         final Thread.UncaughtExceptionHandler uncaughtExceptionHandler = jVar.d;
         ThreadFactory threadFactory = jVar.e;
         if (threadFactory == null) {
@@ -31,7 +31,7 @@ public final class j {
         return new ThreadFactory() { // from class: com.meizu.cloud.pushsdk.b.j.1
             @Override // java.util.concurrent.ThreadFactory
             public Thread newThread(Runnable runnable) {
-                Thread newThread = ThreadFactory.this.newThread(runnable);
+                Thread newThread = threadFactory2.newThread(runnable);
                 String str2 = str;
                 if (str2 != null) {
                     newThread.setName(String.format(str2, Long.valueOf(atomicLong.getAndIncrement())));
@@ -55,7 +55,7 @@ public final class j {
 
     public j a(String str) {
         String.format(str, 0);
-        this.f23993a = str;
+        this.f10382a = str;
         return this;
     }
 

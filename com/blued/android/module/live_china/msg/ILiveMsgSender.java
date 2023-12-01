@@ -82,18 +82,18 @@ public abstract class ILiveMsgSender {
         if (profileData == null) {
             return;
         }
-        LiveChattingModel a2 = a(109, "解禁");
+        LiveChattingModel a = a(109, "解禁");
         ArrayMap arrayMap = new ArrayMap();
         MsgPackHelper.putMapValue((Map<String, Object>) arrayMap, "uid", profileData.uid);
-        MsgPackHelper.putMapValue(arrayMap, "name", profileData.name);
+        MsgPackHelper.putMapValue((Map<String, Object>) arrayMap, "name", profileData.name);
         ArrayMap arrayMap2 = new ArrayMap();
         arrayMap2.put("mute_profile", arrayMap);
-        a2.fromRichLevel = LiveRoomInfo.a().r();
+        a.fromRichLevel = LiveRoomInfo.a().r();
         if (LiveFloatManager.a().w()) {
-            a2.fromLiveManager = 1;
+            a.fromLiveManager = 1;
         }
-        a2.msgMapExtra = arrayMap2;
-        a(a2);
+        a.msgMapExtra = arrayMap2;
+        a(a);
         LogUtils.a("聊天场控解禁");
     }
 
@@ -112,14 +112,14 @@ public abstract class ILiveMsgSender {
     }
 
     public void a(LiveGiftModel liveGiftModel) {
-        LiveChattingModel a2 = a(33, "LiveGift");
-        a2.fromId = LiveRoomInfo.a().g();
-        a2.msgMapExtra = new HashMap();
+        LiveChattingModel a = a(33, "LiveGift");
+        a.fromId = LiveRoomInfo.a().g();
+        a.msgMapExtra = new HashMap();
         b(liveGiftModel);
         liveGiftModel.extraModel = LiveRoomManager.a().M();
-        a2.msgMapExtra.put("gift_model", liveGiftModel);
-        a2.fromRichLevel = LiveRoomInfo.a().r();
-        a(a2);
+        a.msgMapExtra.put("gift_model", liveGiftModel);
+        a.fromRichLevel = LiveRoomInfo.a().r();
+        a(a);
     }
 
     public void a(String str) {
@@ -142,18 +142,18 @@ public abstract class ILiveMsgSender {
         if (profileData == null) {
             return;
         }
-        LiveChattingModel a2 = a(104, "禁言");
+        LiveChattingModel a = a(104, "禁言");
         ArrayMap arrayMap = new ArrayMap();
         MsgPackHelper.putMapValue((Map<String, Object>) arrayMap, "uid", profileData.uid);
-        MsgPackHelper.putMapValue(arrayMap, "name", profileData.name);
+        MsgPackHelper.putMapValue((Map<String, Object>) arrayMap, "name", profileData.name);
         ArrayMap arrayMap2 = new ArrayMap();
         arrayMap2.put("mute_profile", arrayMap);
-        a2.fromRichLevel = LiveRoomInfo.a().r();
+        a.fromRichLevel = LiveRoomInfo.a().r();
         if (LiveFloatManager.a().w()) {
-            a2.fromLiveManager = 1;
+            a.fromLiveManager = 1;
         }
-        a2.msgMapExtra = arrayMap2;
-        a(a2);
+        a.msgMapExtra = arrayMap2;
+        a(a);
         LogUtils.a("聊天场控禁言");
     }
 
@@ -162,9 +162,9 @@ public abstract class ILiveMsgSender {
     }
 
     public void b(String str) {
-        LiveChattingModel a2 = a(1, str);
-        a2.fromNickName = "测试";
-        a(a2);
+        LiveChattingModel a = a(1, str);
+        a.fromNickName = "测试";
+        a(a);
     }
 
     public abstract void b(short s, long j, LiveChatInfoListener liveChatInfoListener);

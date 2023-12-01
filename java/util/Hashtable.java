@@ -43,12 +43,12 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
         private EntrySet() {
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public void clear() {
             Hashtable.this.clear();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean contains(Object obj) {
             if (obj instanceof Map.Entry) {
                 Map.Entry entry = (Map.Entry) obj;
@@ -57,7 +57,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
             return false;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean containsAll(Collection<?> collection) {
             boolean containsAll;
             synchronized (Hashtable.this) {
@@ -66,7 +66,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
             return containsAll;
         }
 
-        @Override // java.util.AbstractSet, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractSet, java.util.Collection
         public boolean equals(Object obj) {
             boolean equals;
             synchronized (Hashtable.this) {
@@ -75,7 +75,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
             return equals;
         }
 
-        @Override // java.util.AbstractSet, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractSet, java.util.Collection
         public int hashCode() {
             return Hashtable.this.hashCode();
         }
@@ -85,7 +85,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
             return new EntryIterator();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean remove(Object obj) {
             if (obj instanceof Map.Entry) {
                 Map.Entry entry = (Map.Entry) obj;
@@ -94,7 +94,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
             return false;
         }
 
-        @Override // java.util.AbstractSet, java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractSet, java.util.AbstractCollection, java.util.Collection
         public boolean removeAll(Collection<?> collection) {
             boolean removeAll;
             synchronized (Hashtable.this) {
@@ -103,7 +103,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
             return removeAll;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean retainAll(Collection<?> collection) {
             boolean retainAll;
             synchronized (Hashtable.this) {
@@ -112,12 +112,12 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
             return retainAll;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection
         public int size() {
             return Hashtable.this.size();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public Object[] toArray() {
             Object[] array;
             synchronized (Hashtable.this) {
@@ -126,7 +126,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
             return array;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public <T> T[] toArray(T[] tArr) {
             T[] tArr2;
             synchronized (Hashtable.this) {
@@ -324,17 +324,17 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
         private KeySet() {
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public void clear() {
             Hashtable.this.clear();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean contains(Object obj) {
             return Hashtable.this.containsKey(obj);
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean containsAll(Collection<?> collection) {
             boolean containsAll;
             synchronized (Hashtable.this) {
@@ -343,7 +343,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
             return containsAll;
         }
 
-        @Override // java.util.AbstractSet, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractSet, java.util.Collection
         public boolean equals(Object obj) {
             boolean equals;
             synchronized (Hashtable.this) {
@@ -352,7 +352,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
             return equals;
         }
 
-        @Override // java.util.AbstractSet, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractSet, java.util.Collection
         public int hashCode() {
             int hashCode;
             synchronized (Hashtable.this) {
@@ -366,7 +366,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
             return new KeyIterator();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean remove(Object obj) {
             boolean z;
             synchronized (Hashtable.this) {
@@ -377,7 +377,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
             return z;
         }
 
-        @Override // java.util.AbstractSet, java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractSet, java.util.AbstractCollection, java.util.Collection
         public boolean removeAll(Collection<?> collection) {
             boolean removeAll;
             synchronized (Hashtable.this) {
@@ -386,7 +386,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
             return removeAll;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean retainAll(Collection<?> collection) {
             boolean retainAll;
             synchronized (Hashtable.this) {
@@ -395,12 +395,12 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
             return retainAll;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection
         public int size() {
             return Hashtable.this.size();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public Object[] toArray() {
             Object[] array;
             synchronized (Hashtable.this) {
@@ -409,7 +409,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
             return array;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public <T> T[] toArray(T[] tArr) {
             T[] tArr2;
             synchronized (Hashtable.this) {
@@ -463,17 +463,17 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
         private Values() {
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public void clear() {
             Hashtable.this.clear();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean contains(Object obj) {
             return Hashtable.this.containsValue(obj);
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean containsAll(Collection<?> collection) {
             boolean containsAll;
             synchronized (Hashtable.this) {
@@ -487,12 +487,12 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
             return new ValueIterator();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection
         public int size() {
             return Hashtable.this.size();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public Object[] toArray() {
             Object[] array;
             synchronized (Hashtable.this) {
@@ -501,7 +501,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
             return array;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public <T> T[] toArray(T[] tArr) {
             T[] tArr2;
             synchronized (Hashtable.this) {
@@ -913,8 +913,8 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
     private void writeObject(ObjectOutputStream objectOutputStream) throws IOException {
         synchronized (this) {
             ObjectOutputStream.PutField putFields = objectOutputStream.putFields();
-            putFields.put("threshold", (int) (this.table.length * 0.75f));
-            putFields.put("loadFactor", 0.75f);
+            putFields.put("threshold", (int) (this.table.length * DEFAULT_LOAD_FACTOR));
+            putFields.put("loadFactor", DEFAULT_LOAD_FACTOR);
             objectOutputStream.writeFields();
             objectOutputStream.writeInt(this.table.length);
             objectOutputStream.writeInt(this.size);

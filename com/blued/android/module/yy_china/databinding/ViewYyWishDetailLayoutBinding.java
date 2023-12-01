@@ -11,13 +11,9 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ViewYyWishDetailLayoutBinding.class */
 public final class ViewYyWishDetailLayoutBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f16974a;
+    public final ImageView a;
     public final View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final RelativeLayout f16975c;
+    public final RelativeLayout c;
     public final RecyclerView d;
     public final RecyclerView e;
     public final TextView f;
@@ -30,9 +26,9 @@ public final class ViewYyWishDetailLayoutBinding implements ViewBinding {
 
     private ViewYyWishDetailLayoutBinding(ConstraintLayout constraintLayout, ImageView imageView, View view, RelativeLayout relativeLayout, RecyclerView recyclerView, RecyclerView recyclerView2, TextView textView, TextView textView2, TextView textView3, TextView textView4, TextView textView5, TextView textView6) {
         this.l = constraintLayout;
-        this.f16974a = imageView;
+        this.a = imageView;
         this.b = view;
-        this.f16975c = relativeLayout;
+        this.c = relativeLayout;
         this.d = recyclerView;
         this.e = recyclerView2;
         this.f = textView;
@@ -51,10 +47,10 @@ public final class ViewYyWishDetailLayoutBinding implements ViewBinding {
             if (findViewById != null) {
                 RelativeLayout relativeLayout = (RelativeLayout) view.findViewById(R.id.rl_gold);
                 if (relativeLayout != null) {
-                    RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rv_gold_list);
-                    if (recyclerView != null) {
-                        RecyclerView recyclerView2 = (RecyclerView) view.findViewById(R.id.rv_wish_list);
-                        if (recyclerView2 != null) {
+                    RecyclerView findViewById2 = view.findViewById(R.id.rv_gold_list);
+                    if (findViewById2 != null) {
+                        RecyclerView findViewById3 = view.findViewById(R.id.rv_wish_list);
+                        if (findViewById3 != null) {
                             TextView textView = (TextView) view.findViewById(R.id.tv_reset);
                             if (textView != null) {
                                 TextView textView2 = (TextView) view.findViewById(R.id.tv_wish_list_title);
@@ -67,7 +63,7 @@ public final class ViewYyWishDetailLayoutBinding implements ViewBinding {
                                             if (textView5 != null) {
                                                 TextView textView6 = (TextView) view.findViewById(R.id.tv_wish_title);
                                                 if (textView6 != null) {
-                                                    return new ViewYyWishDetailLayoutBinding((ConstraintLayout) view, imageView, findViewById, relativeLayout, recyclerView, recyclerView2, textView, textView2, textView3, textView4, textView5, textView6);
+                                                    return new ViewYyWishDetailLayoutBinding((ConstraintLayout) view, imageView, findViewById, relativeLayout, findViewById2, findViewById3, textView, textView2, textView3, textView4, textView5, textView6);
                                                 }
                                                 str = "tvWishTitle";
                                             } else {
@@ -103,7 +99,6 @@ public final class ViewYyWishDetailLayoutBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.l;

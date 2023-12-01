@@ -12,11 +12,11 @@ import com.anythink.expressad.video.signal.j;
 public class a implements IJSFactory {
 
     /* renamed from: a  reason: collision with root package name */
-    protected com.anythink.expressad.video.signal.a f8714a;
+    protected com.anythink.expressad.video.signal.a f5874a;
     protected c b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected j f8715c;
+    protected j f5875c;
     protected g d;
     protected e e;
     protected i f;
@@ -24,10 +24,10 @@ public class a implements IJSFactory {
 
     @Override // com.anythink.expressad.video.signal.factory.IJSFactory
     public com.anythink.expressad.video.signal.a getActivityProxy() {
-        if (this.f8714a == null) {
-            this.f8714a = new com.anythink.expressad.video.signal.a.a();
+        if (this.f5874a == null) {
+            this.f5874a = new com.anythink.expressad.video.signal.a.a();
         }
-        return this.f8714a;
+        return this.f5874a;
     }
 
     @Override // com.anythink.expressad.video.signal.factory.IJSFactory
@@ -72,9 +72,9 @@ public class a implements IJSFactory {
 
     @Override // com.anythink.expressad.video.signal.factory.IJSFactory
     public j getJSVideoModule() {
-        if (this.f8715c == null) {
-            this.f8715c = new com.anythink.expressad.video.signal.a.g();
+        if (this.f5875c == null) {
+            this.f5875c = new com.anythink.expressad.video.signal.a.g();
         }
-        return this.f8715c;
+        return this.f5875c;
     }
 }

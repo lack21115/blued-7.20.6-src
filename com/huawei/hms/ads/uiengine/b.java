@@ -48,7 +48,7 @@ public interface b extends IInterface {
 
     /* renamed from: com.huawei.hms.ads.uiengine.b$b  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/huawei/hms/ads/uiengine/b$b.class */
-    public static abstract class AbstractBinderC0425b extends Binder implements b {
+    public static abstract class AbstractBinderC0255b extends Binder implements b {
         static final int B = 5;
         static final int C = 6;
         static final int Code = 1;
@@ -73,13 +73,13 @@ public interface b extends IInterface {
                 Parcel obtain = Parcel.obtain();
                 Parcel obtain2 = Parcel.obtain();
                 try {
-                    obtain.writeInterfaceToken(AbstractBinderC0425b.S);
+                    obtain.writeInterfaceToken(AbstractBinderC0255b.S);
                     obtain.writeStrongBinder(iObjectWrapper != null ? iObjectWrapper.asBinder() : null);
-                    if (this.V.transact(4, obtain, obtain2, 0) || AbstractBinderC0425b.Code() == null) {
+                    if (this.V.transact(4, obtain, obtain2, 0) || AbstractBinderC0255b.Code() == null) {
                         obtain2.readException();
                         return IObjectWrapper.Stub.asInterface(obtain2.readStrongBinder());
                     }
-                    return AbstractBinderC0425b.Code().Code(iObjectWrapper);
+                    return AbstractBinderC0255b.Code().Code(iObjectWrapper);
                 } finally {
                     obtain2.recycle();
                     obtain.recycle();
@@ -87,7 +87,7 @@ public interface b extends IInterface {
             }
 
             public String Code() {
-                return AbstractBinderC0425b.S;
+                return AbstractBinderC0255b.S;
             }
 
             @Override // com.huawei.hms.ads.uiengine.b
@@ -95,18 +95,18 @@ public interface b extends IInterface {
                 Parcel obtain = Parcel.obtain();
                 Parcel obtain2 = Parcel.obtain();
                 try {
-                    obtain.writeInterfaceToken(AbstractBinderC0425b.S);
+                    obtain.writeInterfaceToken(AbstractBinderC0255b.S);
                     if (bundle != null) {
                         obtain.writeInt(1);
                         bundle.writeToParcel(obtain, 0);
                     } else {
                         obtain.writeInt(0);
                     }
-                    if (this.V.transact(1, obtain, obtain2, 0) || AbstractBinderC0425b.Code() == null) {
+                    if (this.V.transact(1, obtain, obtain2, 0) || AbstractBinderC0255b.Code() == null) {
                         obtain2.readException();
                         return obtain2.createStringArrayList();
                     }
-                    return AbstractBinderC0425b.Code().Code(bundle);
+                    return AbstractBinderC0255b.Code().Code(bundle);
                 } finally {
                     obtain2.recycle();
                     obtain.recycle();
@@ -118,7 +118,7 @@ public interface b extends IInterface {
                 Parcel obtain = Parcel.obtain();
                 Parcel obtain2 = Parcel.obtain();
                 try {
-                    obtain.writeInterfaceToken(AbstractBinderC0425b.S);
+                    obtain.writeInterfaceToken(AbstractBinderC0255b.S);
                     obtain.writeStrongBinder(iObjectWrapper != null ? iObjectWrapper.asBinder() : null);
                     if (bundle != null) {
                         obtain.writeInt(1);
@@ -126,10 +126,10 @@ public interface b extends IInterface {
                     } else {
                         obtain.writeInt(0);
                     }
-                    if (this.V.transact(5, obtain, obtain2, 0) || AbstractBinderC0425b.Code() == null) {
+                    if (this.V.transact(5, obtain, obtain2, 0) || AbstractBinderC0255b.Code() == null) {
                         obtain2.readException();
                     } else {
-                        AbstractBinderC0425b.Code().Code(iObjectWrapper, bundle);
+                        AbstractBinderC0255b.Code().Code(iObjectWrapper, bundle);
                     }
                 } finally {
                     obtain2.recycle();
@@ -142,7 +142,7 @@ public interface b extends IInterface {
                 Parcel obtain = Parcel.obtain();
                 Parcel obtain2 = Parcel.obtain();
                 try {
-                    obtain.writeInterfaceToken(AbstractBinderC0425b.S);
+                    obtain.writeInterfaceToken(AbstractBinderC0255b.S);
                     obtain.writeString(str);
                     if (bundle != null) {
                         obtain.writeInt(1);
@@ -150,10 +150,10 @@ public interface b extends IInterface {
                     } else {
                         obtain.writeInt(0);
                     }
-                    if (this.V.transact(2, obtain, obtain2, 0) || AbstractBinderC0425b.Code() == null) {
+                    if (this.V.transact(2, obtain, obtain2, 0) || AbstractBinderC0255b.Code() == null) {
                         obtain2.readException();
                     } else {
-                        AbstractBinderC0425b.Code().Code(str, bundle);
+                        AbstractBinderC0255b.Code().Code(str, bundle);
                     }
                 } finally {
                     obtain2.recycle();
@@ -166,7 +166,7 @@ public interface b extends IInterface {
                 Parcel obtain = Parcel.obtain();
                 Parcel obtain2 = Parcel.obtain();
                 try {
-                    obtain.writeInterfaceToken(AbstractBinderC0425b.S);
+                    obtain.writeInterfaceToken(AbstractBinderC0255b.S);
                     obtain.writeString(str);
                     obtain.writeInt(i);
                     boolean z = true;
@@ -176,7 +176,7 @@ public interface b extends IInterface {
                     } else {
                         obtain.writeInt(0);
                     }
-                    if (this.V.transact(3, obtain, obtain2, 0) || AbstractBinderC0425b.Code() == null) {
+                    if (this.V.transact(3, obtain, obtain2, 0) || AbstractBinderC0255b.Code() == null) {
                         obtain2.readException();
                         if (obtain2.readInt() == 0) {
                             z = false;
@@ -185,7 +185,7 @@ public interface b extends IInterface {
                         obtain.recycle();
                         return z;
                     }
-                    return AbstractBinderC0425b.Code().Code(str, i, bundle);
+                    return AbstractBinderC0255b.Code().Code(str, i, bundle);
                 } finally {
                     obtain2.recycle();
                     obtain.recycle();
@@ -197,7 +197,7 @@ public interface b extends IInterface {
                 Parcel obtain = Parcel.obtain();
                 Parcel obtain2 = Parcel.obtain();
                 try {
-                    obtain.writeInterfaceToken(AbstractBinderC0425b.S);
+                    obtain.writeInterfaceToken(AbstractBinderC0255b.S);
                     obtain.writeStrongBinder(iObjectWrapper != null ? iObjectWrapper.asBinder() : null);
                     if (bundle != null) {
                         obtain.writeInt(1);
@@ -205,10 +205,10 @@ public interface b extends IInterface {
                     } else {
                         obtain.writeInt(0);
                     }
-                    if (this.V.transact(6, obtain, obtain2, 0) || AbstractBinderC0425b.Code() == null) {
+                    if (this.V.transact(6, obtain, obtain2, 0) || AbstractBinderC0255b.Code() == null) {
                         obtain2.readException();
                     } else {
-                        AbstractBinderC0425b.Code().V(iObjectWrapper, bundle);
+                        AbstractBinderC0255b.Code().V(iObjectWrapper, bundle);
                     }
                 } finally {
                     obtain2.recycle();
@@ -222,7 +222,7 @@ public interface b extends IInterface {
             }
         }
 
-        public AbstractBinderC0425b() {
+        public AbstractBinderC0255b() {
             attachInterface(this, S);
         }
 

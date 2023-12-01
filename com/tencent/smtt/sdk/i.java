@@ -23,17 +23,17 @@ import com.tencent.smtt.utils.TbsLog;
 public class i extends X5ProxyWebViewClient {
 
     /* renamed from: c  reason: collision with root package name */
-    private static String f38853c;
+    private static String f25162c;
 
     /* renamed from: a  reason: collision with root package name */
-    private WebViewClient f38854a;
+    private WebViewClient f25163a;
     private WebView b;
 
     public i(IX5WebViewClient iX5WebViewClient, WebView webView, WebViewClient webViewClient) {
         super(iX5WebViewClient);
         this.b = webView;
-        this.f38854a = webViewClient;
-        webViewClient.f38816a = this;
+        this.f25163a = webViewClient;
+        webViewClient.f25125a = this;
     }
 
     public void a(WebView webView, String str, Bitmap bitmap) {
@@ -54,49 +54,49 @@ public class i extends X5ProxyWebViewClient {
 
     @Override // com.tencent.smtt.export.external.proxy.ProxyWebViewClient
     public void countPVContentCacheCallBack(String str) {
-        this.b.f38805a++;
+        this.b.f25114a++;
     }
 
     @Override // com.tencent.smtt.export.external.proxy.ProxyWebViewClient, com.tencent.smtt.export.external.interfaces.IX5WebViewClient
     public void doUpdateVisitedHistory(IX5WebViewBase iX5WebViewBase, String str, boolean z) {
         this.b.a(iX5WebViewBase);
-        this.f38854a.doUpdateVisitedHistory(this.b, str, z);
+        this.f25163a.doUpdateVisitedHistory(this.b, str, z);
     }
 
     @Override // com.tencent.smtt.export.external.proxy.ProxyWebViewClient, com.tencent.smtt.export.external.interfaces.IX5WebViewClient
     public void onDetectedBlankScreen(IX5WebViewBase iX5WebViewBase, String str, int i) {
         this.b.a(iX5WebViewBase);
-        this.f38854a.onDetectedBlankScreen(str, i);
+        this.f25163a.onDetectedBlankScreen(str, i);
     }
 
     @Override // com.tencent.smtt.export.external.proxy.ProxyWebViewClient, com.tencent.smtt.export.external.interfaces.IX5WebViewClient
     public void onFormResubmission(IX5WebViewBase iX5WebViewBase, Message message, Message message2) {
         this.b.a(iX5WebViewBase);
-        this.f38854a.onFormResubmission(this.b, message, message2);
+        this.f25163a.onFormResubmission(this.b, message, message2);
     }
 
     @Override // com.tencent.smtt.export.external.proxy.ProxyWebViewClient, com.tencent.smtt.export.external.interfaces.IX5WebViewClient
     public void onLoadResource(IX5WebViewBase iX5WebViewBase, String str) {
         this.b.a(iX5WebViewBase);
-        this.f38854a.onLoadResource(this.b, str);
+        this.f25163a.onLoadResource(this.b, str);
     }
 
     @Override // com.tencent.smtt.export.external.proxy.ProxyWebViewClient, com.tencent.smtt.export.external.interfaces.IX5WebViewClient
     public void onPageCommitVisible(IX5WebViewBase iX5WebViewBase, String str) {
         this.b.a(iX5WebViewBase);
-        this.f38854a.onPageCommitVisible(this.b, str);
+        this.f25163a.onPageCommitVisible(this.b, str);
     }
 
     @Override // com.tencent.smtt.export.external.proxy.ProxyWebViewClient, com.tencent.smtt.export.external.interfaces.IX5WebViewClient
     public void onPageFinished(IX5WebViewBase iX5WebViewBase, int i, int i2, String str) {
         com.tencent.smtt.utils.n a2;
-        if (f38853c == null && (a2 = com.tencent.smtt.utils.n.a()) != null) {
+        if (f25162c == null && (a2 = com.tencent.smtt.utils.n.a()) != null) {
             a2.a(false);
-            f38853c = Boolean.toString(false);
+            f25162c = Boolean.toString(false);
         }
         this.b.a(iX5WebViewBase);
-        this.b.f38805a++;
-        this.f38854a.onPageFinished(this.b, str);
+        this.b.f25114a++;
+        this.f25163a.onPageFinished(this.b, str);
         if ("com.qzone".equals(iX5WebViewBase.getView().getContext().getApplicationInfo().packageName)) {
             this.b.a(iX5WebViewBase.getView().getContext());
         }
@@ -133,7 +133,7 @@ public class i extends X5ProxyWebViewClient {
     @Override // com.tencent.smtt.export.external.proxy.ProxyWebViewClient, com.tencent.smtt.export.external.interfaces.IX5WebViewClient
     public void onPageStarted(IX5WebViewBase iX5WebViewBase, int i, int i2, String str, Bitmap bitmap) {
         this.b.a(iX5WebViewBase);
-        this.f38854a.onPageStarted(this.b, str, bitmap);
+        this.f25163a.onPageStarted(this.b, str, bitmap);
     }
 
     @Override // com.tencent.smtt.export.external.proxy.ProxyWebViewClient, com.tencent.smtt.export.external.interfaces.IX5WebViewClient
@@ -144,7 +144,7 @@ public class i extends X5ProxyWebViewClient {
     @Override // com.tencent.smtt.export.external.proxy.ProxyWebViewClient, com.tencent.smtt.export.external.interfaces.IX5WebViewClient
     public void onReceivedClientCertRequest(IX5WebViewBase iX5WebViewBase, ClientCertRequest clientCertRequest) {
         this.b.a(iX5WebViewBase);
-        this.f38854a.onReceivedClientCertRequest(this.b, clientCertRequest);
+        this.f25163a.onReceivedClientCertRequest(this.b, clientCertRequest);
     }
 
     @Override // com.tencent.smtt.export.external.proxy.ProxyWebViewClient, com.tencent.smtt.export.external.interfaces.IX5WebViewClient
@@ -157,79 +157,79 @@ public class i extends X5ProxyWebViewClient {
             i2 = -1;
         }
         this.b.a(iX5WebViewBase);
-        this.f38854a.onReceivedError(this.b, i2, str, str2);
+        this.f25163a.onReceivedError(this.b, i2, str, str2);
     }
 
     @Override // com.tencent.smtt.export.external.proxy.ProxyWebViewClient, com.tencent.smtt.export.external.interfaces.IX5WebViewClient
     public void onReceivedError(IX5WebViewBase iX5WebViewBase, WebResourceRequest webResourceRequest, WebResourceError webResourceError) {
         this.b.a(iX5WebViewBase);
-        this.f38854a.onReceivedError(this.b, webResourceRequest, webResourceError);
+        this.f25163a.onReceivedError(this.b, webResourceRequest, webResourceError);
     }
 
     @Override // com.tencent.smtt.export.external.proxy.ProxyWebViewClient, com.tencent.smtt.export.external.interfaces.IX5WebViewClient
     public void onReceivedHttpAuthRequest(IX5WebViewBase iX5WebViewBase, HttpAuthHandler httpAuthHandler, String str, String str2) {
         this.b.a(iX5WebViewBase);
-        this.f38854a.onReceivedHttpAuthRequest(this.b, httpAuthHandler, str, str2);
+        this.f25163a.onReceivedHttpAuthRequest(this.b, httpAuthHandler, str, str2);
     }
 
     @Override // com.tencent.smtt.export.external.proxy.ProxyWebViewClient, com.tencent.smtt.export.external.interfaces.IX5WebViewClient
     public void onReceivedHttpError(IX5WebViewBase iX5WebViewBase, WebResourceRequest webResourceRequest, WebResourceResponse webResourceResponse) {
         this.b.a(iX5WebViewBase);
-        this.f38854a.onReceivedHttpError(this.b, webResourceRequest, webResourceResponse);
+        this.f25163a.onReceivedHttpError(this.b, webResourceRequest, webResourceResponse);
     }
 
     @Override // com.tencent.smtt.export.external.proxy.ProxyWebViewClient, com.tencent.smtt.export.external.interfaces.IX5WebViewClient
     public void onReceivedLoginRequest(IX5WebViewBase iX5WebViewBase, String str, String str2, String str3) {
         this.b.a(iX5WebViewBase);
-        this.f38854a.onReceivedLoginRequest(this.b, str, str2, str3);
+        this.f25163a.onReceivedLoginRequest(this.b, str, str2, str3);
     }
 
     @Override // com.tencent.smtt.export.external.proxy.ProxyWebViewClient, com.tencent.smtt.export.external.interfaces.IX5WebViewClient
     public void onReceivedSslError(IX5WebViewBase iX5WebViewBase, SslErrorHandler sslErrorHandler, SslError sslError) {
         this.b.a(iX5WebViewBase);
-        this.f38854a.onReceivedSslError(this.b, sslErrorHandler, sslError);
+        this.f25163a.onReceivedSslError(this.b, sslErrorHandler, sslError);
     }
 
     @Override // com.tencent.smtt.export.external.proxy.ProxyWebViewClient, com.tencent.smtt.export.external.interfaces.IX5WebViewClient
     public void onScaleChanged(IX5WebViewBase iX5WebViewBase, float f, float f2) {
         this.b.a(iX5WebViewBase);
-        this.f38854a.onScaleChanged(this.b, f, f2);
+        this.f25163a.onScaleChanged(this.b, f, f2);
     }
 
     @Override // com.tencent.smtt.export.external.proxy.ProxyWebViewClient, com.tencent.smtt.export.external.interfaces.IX5WebViewClient
     public void onTooManyRedirects(IX5WebViewBase iX5WebViewBase, Message message, Message message2) {
         this.b.a(iX5WebViewBase);
-        this.f38854a.onTooManyRedirects(this.b, message, message2);
+        this.f25163a.onTooManyRedirects(this.b, message, message2);
     }
 
     @Override // com.tencent.smtt.export.external.proxy.ProxyWebViewClient, com.tencent.smtt.export.external.interfaces.IX5WebViewClient
     public void onUnhandledKeyEvent(IX5WebViewBase iX5WebViewBase, KeyEvent keyEvent) {
         this.b.a(iX5WebViewBase);
-        this.f38854a.onUnhandledKeyEvent(this.b, keyEvent);
+        this.f25163a.onUnhandledKeyEvent(this.b, keyEvent);
     }
 
     @Override // com.tencent.smtt.export.external.proxy.ProxyWebViewClient, com.tencent.smtt.export.external.interfaces.IX5WebViewClient
     public WebResourceResponse shouldInterceptRequest(IX5WebViewBase iX5WebViewBase, WebResourceRequest webResourceRequest) {
         this.b.a(iX5WebViewBase);
-        return this.f38854a.shouldInterceptRequest(this.b, webResourceRequest);
+        return this.f25163a.shouldInterceptRequest(this.b, webResourceRequest);
     }
 
     @Override // com.tencent.smtt.export.external.proxy.ProxyWebViewClient, com.tencent.smtt.export.external.interfaces.IX5WebViewClient
     public WebResourceResponse shouldInterceptRequest(IX5WebViewBase iX5WebViewBase, WebResourceRequest webResourceRequest, Bundle bundle) {
         this.b.a(iX5WebViewBase);
-        return this.f38854a.shouldInterceptRequest(this.b, webResourceRequest, bundle);
+        return this.f25163a.shouldInterceptRequest(this.b, webResourceRequest, bundle);
     }
 
     @Override // com.tencent.smtt.export.external.proxy.ProxyWebViewClient, com.tencent.smtt.export.external.interfaces.IX5WebViewClient
     public WebResourceResponse shouldInterceptRequest(IX5WebViewBase iX5WebViewBase, String str) {
         this.b.a(iX5WebViewBase);
-        return this.f38854a.shouldInterceptRequest(this.b, str);
+        return this.f25163a.shouldInterceptRequest(this.b, str);
     }
 
     @Override // com.tencent.smtt.export.external.proxy.ProxyWebViewClient, com.tencent.smtt.export.external.interfaces.IX5WebViewClient
     public boolean shouldOverrideKeyEvent(IX5WebViewBase iX5WebViewBase, KeyEvent keyEvent) {
         this.b.a(iX5WebViewBase);
-        return this.f38854a.shouldOverrideKeyEvent(this.b, keyEvent);
+        return this.f25163a.shouldOverrideKeyEvent(this.b, keyEvent);
     }
 
     @Override // com.tencent.smtt.export.external.proxy.ProxyWebViewClient, com.tencent.smtt.export.external.interfaces.IX5WebViewClient
@@ -239,12 +239,12 @@ public class i extends X5ProxyWebViewClient {
             return true;
         }
         this.b.a(iX5WebViewBase);
-        boolean shouldOverrideUrlLoading = this.f38854a.shouldOverrideUrlLoading(this.b, webResourceRequest);
+        boolean shouldOverrideUrlLoading = this.f25163a.shouldOverrideUrlLoading(this.b, webResourceRequest);
         if (!shouldOverrideUrlLoading) {
             if (uri.startsWith("wtai://wp/mc;")) {
-                this.b.getContext().startActivity(new Intent("android.intent.action.VIEW", Uri.parse("tel:" + uri.substring(13))));
+                this.b.getContext().startActivity(new Intent("android.intent.action.VIEW", Uri.parse(WebView.SCHEME_TEL + uri.substring(13))));
                 return true;
-            } else if (uri.startsWith("tel:")) {
+            } else if (uri.startsWith(WebView.SCHEME_TEL)) {
                 a(uri);
                 return true;
             }
@@ -258,12 +258,12 @@ public class i extends X5ProxyWebViewClient {
             return true;
         }
         this.b.a(iX5WebViewBase);
-        boolean shouldOverrideUrlLoading = this.f38854a.shouldOverrideUrlLoading(this.b, str);
+        boolean shouldOverrideUrlLoading = this.f25163a.shouldOverrideUrlLoading(this.b, str);
         if (!shouldOverrideUrlLoading) {
             if (str.startsWith("wtai://wp/mc;")) {
-                this.b.getContext().startActivity(new Intent("android.intent.action.VIEW", Uri.parse("tel:" + str.substring(13))));
+                this.b.getContext().startActivity(new Intent("android.intent.action.VIEW", Uri.parse(WebView.SCHEME_TEL + str.substring(13))));
                 return true;
-            } else if (str.startsWith("tel:")) {
+            } else if (str.startsWith(WebView.SCHEME_TEL)) {
                 a(str);
                 return true;
             }

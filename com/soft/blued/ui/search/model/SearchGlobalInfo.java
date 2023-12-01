@@ -1,5 +1,6 @@
 package com.soft.blued.ui.search.model;
 
+import com.anythink.expressad.foundation.d.c;
 import com.blued.android.module.common.group.GroupInfoModel;
 import com.blued.android.module.common.login.model.UserBasicModel;
 import com.blued.community.ui.circle.model.MyCircleModel;
@@ -14,11 +15,11 @@ import kotlin.jvm.internal.Intrinsics;
 public final class SearchGlobalInfo implements MultiItemEntity {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Companion f33160a = new Companion(null);
+    public static final Companion f19469a = new Companion(null);
     private int b = 1;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f33161c = 1;
+    private int f19470c = 1;
     private boolean d;
     private SearchSessionModel e;
     private SearchUserModel f;
@@ -48,13 +49,13 @@ public final class SearchGlobalInfo implements MultiItemEntity {
             this(null, null, null, 7, null);
         }
 
-        public SearchShortcutModel(String name, String icon_url, String target_url) {
-            Intrinsics.e(name, "name");
-            Intrinsics.e(icon_url, "icon_url");
-            Intrinsics.e(target_url, "target_url");
-            this.name = name;
-            this.icon_url = icon_url;
-            this.target_url = target_url;
+        public SearchShortcutModel(String str, String str2, String str3) {
+            Intrinsics.e(str, "name");
+            Intrinsics.e(str2, c.H);
+            Intrinsics.e(str3, "target_url");
+            this.name = str;
+            this.icon_url = str2;
+            this.target_url = str3;
         }
 
         public /* synthetic */ SearchShortcutModel(String str, String str2, String str3, int i, DefaultConstructorMarker defaultConstructorMarker) {
@@ -86,11 +87,11 @@ public final class SearchGlobalInfo implements MultiItemEntity {
             return this.target_url;
         }
 
-        public final SearchShortcutModel copy(String name, String icon_url, String target_url) {
-            Intrinsics.e(name, "name");
-            Intrinsics.e(icon_url, "icon_url");
-            Intrinsics.e(target_url, "target_url");
-            return new SearchShortcutModel(name, icon_url, target_url);
+        public final SearchShortcutModel copy(String str, String str2, String str3) {
+            Intrinsics.e(str, "name");
+            Intrinsics.e(str2, c.H);
+            Intrinsics.e(str3, "target_url");
+            return new SearchShortcutModel(str, str2, str3);
         }
 
         public boolean equals(Object obj) {
@@ -99,7 +100,7 @@ public final class SearchGlobalInfo implements MultiItemEntity {
             }
             if (obj instanceof SearchShortcutModel) {
                 SearchShortcutModel searchShortcutModel = (SearchShortcutModel) obj;
-                return Intrinsics.a((Object) this.name, (Object) searchShortcutModel.name) && Intrinsics.a((Object) this.icon_url, (Object) searchShortcutModel.icon_url) && Intrinsics.a((Object) this.target_url, (Object) searchShortcutModel.target_url);
+                return Intrinsics.a(this.name, searchShortcutModel.name) && Intrinsics.a(this.icon_url, searchShortcutModel.icon_url) && Intrinsics.a(this.target_url, searchShortcutModel.target_url);
             }
             return false;
         }
@@ -141,7 +142,7 @@ public final class SearchGlobalInfo implements MultiItemEntity {
     }
 
     public final int a() {
-        return this.f33161c;
+        return this.f19470c;
     }
 
     public final void a(int i) {
@@ -173,7 +174,7 @@ public final class SearchGlobalInfo implements MultiItemEntity {
     }
 
     public final void b(int i) {
-        this.f33161c = i;
+        this.f19470c = i;
     }
 
     public final boolean b() {

@@ -10,17 +10,17 @@ import com.qq.e.ads.splash.SplashAD;
 public class GDTATSplashEyeAd extends CustomSplashEyeAd {
 
     /* renamed from: a  reason: collision with root package name */
-    SplashAD f8970a;
+    SplashAD f6130a;
 
     public GDTATSplashEyeAd(ATBaseAdAdapter aTBaseAdAdapter, SplashAD splashAD) {
         super(aTBaseAdAdapter);
         this.mAtBaseAdAdapter = aTBaseAdAdapter;
-        this.f8970a = splashAD;
+        this.f6130a = splashAD;
     }
 
     @Override // com.anythink.splashad.unitgroup.api.CustomSplashEyeAd
     public void customResourceDestory() {
-        this.f8970a = null;
+        this.f6130a = null;
     }
 
     @Override // com.anythink.splashad.api.IATSplashEyeAd
@@ -30,7 +30,7 @@ public class GDTATSplashEyeAd extends CustomSplashEyeAd {
 
     @Override // com.anythink.splashad.api.IATSplashEyeAd
     public void onFinished() {
-        SplashAD splashAD = this.f8970a;
+        SplashAD splashAD = this.f6130a;
         if (splashAD != null) {
             splashAD.zoomOutAnimationFinish();
         }

@@ -41,14 +41,14 @@ public class VideoPreprocessor implements BeautyProcessor.a {
         this.mVideoReporter = iVideoReporter;
         beautyProcessor.setBeautyManagerStatusListener(this);
         com.tencent.liteav.beauty.a.a(this.mVideoReporter);
-        this.mAverageCostCalculator = new com.tencent.liteav.videobase.utils.a("preprocess", new a.InterfaceC0937a(this) { // from class: com.tencent.liteav.videoproducer.preprocessor.q
+        this.mAverageCostCalculator = new com.tencent.liteav.videobase.utils.a("preprocess", new a.InterfaceC0767a(this) { // from class: com.tencent.liteav.videoproducer.preprocessor.q
 
             /* renamed from: a  reason: collision with root package name */
-            private final VideoPreprocessor f37084a;
+            private final VideoPreprocessor f23393a;
 
             /* JADX INFO: Access modifiers changed from: package-private */
             {
-                this.f37084a = this;
+                this.f23393a = this;
             }
         });
     }
@@ -93,7 +93,7 @@ public class VideoPreprocessor implements BeautyProcessor.a {
             }
             hVar.f.setTimestamp(pixelFrame.getTimestamp());
             com.tencent.liteav.videobase.frame.d a4 = hVar.n.a(hVar.i, hVar.j);
-            hVar.f.onDraw(a2.getTextureId(), a4, hVar.b, hVar.f37066c);
+            hVar.f.onDraw(a2.getTextureId(), a4, hVar.b, hVar.f23375c);
             a2.release();
             a4.release();
         } catch (com.tencent.liteav.videobase.b.g e) {
@@ -251,9 +251,9 @@ public class VideoPreprocessor implements BeautyProcessor.a {
                 break;
             }
             com.tencent.liteav.videobase.videobase.a valueAt = this.mConvertParamsList.valueAt(i2);
-            boolean z = valueAt.f36669c == Rotation.ROTATION_90 || valueAt.f36669c == Rotation.ROTATION_270;
-            int i5 = z ? valueAt.b : valueAt.f36668a;
-            int i6 = z ? valueAt.f36668a : valueAt.b;
+            boolean z = valueAt.f22978c == Rotation.ROTATION_90 || valueAt.f22978c == Rotation.ROTATION_270;
+            int i5 = z ? valueAt.b : valueAt.f22977a;
+            int i6 = z ? valueAt.f22977a : valueAt.b;
             if (i3 * i6 != i * i5) {
                 LiteavLog.w(TAG, "video preprocessor has different w/h ratio: %dx%d vs %dx%d", Integer.valueOf(i3), Integer.valueOf(i), Integer.valueOf(i5), Integer.valueOf(i6));
             }

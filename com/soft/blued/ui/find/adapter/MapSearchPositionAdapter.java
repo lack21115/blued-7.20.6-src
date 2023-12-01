@@ -18,11 +18,11 @@ import java.util.List;
 public class MapSearchPositionAdapter extends RecyclerView.Adapter<ViewHolder> {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f30064a;
+    private Context f16374a;
     private List<SearchPositionModel> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private LayoutInflater f30065c;
+    private LayoutInflater f16375c;
     private OnItemClickListener d;
 
     /* loaded from: source-8303388-dex2jar.jar:com/soft/blued/ui/find/adapter/MapSearchPositionAdapter$OnItemClickListener.class */
@@ -34,24 +34,24 @@ public class MapSearchPositionAdapter extends RecyclerView.Adapter<ViewHolder> {
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         /* renamed from: a  reason: collision with root package name */
-        public ConstraintLayout f30068a;
+        public ConstraintLayout f16378a;
         public TextView b;
 
         /* renamed from: c  reason: collision with root package name */
-        public TextView f30069c;
+        public TextView f16379c;
         public TextView d;
 
         public ViewHolder(View view) {
             super(view);
-            this.f30068a = (ConstraintLayout) view.findViewById(2131364780);
+            this.f16378a = (ConstraintLayout) view.findViewById(2131364780);
             this.b = (TextView) view.findViewById(2131370786);
-            this.f30069c = (TextView) view.findViewById(R.id.tv_del);
-            this.d = (TextView) view.findViewById(2131371817);
+            this.f16379c = (TextView) view.findViewById(R.id.tv_del);
+            this.d = (TextView) view.findViewById(R.id.tv_line);
         }
     }
 
     public MapSearchPositionAdapter(Context context, List<SearchPositionModel> list) {
-        this.f30064a = context;
+        this.f16374a = context;
         if (list.size() > 0) {
             SearchPositionModel searchPositionModel = new SearchPositionModel();
             searchPositionModel.isDel = true;
@@ -62,7 +62,7 @@ public class MapSearchPositionAdapter extends RecyclerView.Adapter<ViewHolder> {
     }
 
     public MapSearchPositionAdapter(Context context, List<String> list, int i) {
-        this.f30064a = context;
+        this.f16374a = context;
         this.b = c(list, true);
     }
 
@@ -85,8 +85,8 @@ public class MapSearchPositionAdapter extends RecyclerView.Adapter<ViewHolder> {
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     /* renamed from: a */
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        LayoutInflater from = LayoutInflater.from(this.f30064a);
-        this.f30065c = from;
+        LayoutInflater from = LayoutInflater.from(this.f16374a);
+        this.f16375c = from;
         return new ViewHolder(from.inflate(R.layout.item_map_search_position, viewGroup, false));
     }
 
@@ -106,14 +106,14 @@ public class MapSearchPositionAdapter extends RecyclerView.Adapter<ViewHolder> {
         if (searchPositionModel.isDel) {
             viewHolder.b.setVisibility(8);
             viewHolder.d.setVisibility(8);
-            viewHolder.f30069c.setVisibility(0);
+            viewHolder.f16379c.setVisibility(0);
         } else {
             viewHolder.b.setVisibility(0);
             viewHolder.d.setVisibility(0);
-            viewHolder.f30069c.setVisibility(8);
+            viewHolder.f16379c.setVisibility(8);
         }
         viewHolder.b.setText(searchPositionModel.name);
-        viewHolder.f30068a.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.adapter.MapSearchPositionAdapter.1
+        viewHolder.f16378a.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.adapter.MapSearchPositionAdapter.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);

@@ -11,10 +11,9 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.reflect.KClass;
 import okio.ByteString;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 @Metadata
 /* loaded from: source-8457232-dex2jar.jar:com/squareup/wire/internal/RuntimeMessageBinding.class */
-public final class RuntimeMessageBinding<M extends Message<M, B>, B extends Message.Builder<M, B>> implements MessageBinding<M, B> {
+final class RuntimeMessageBinding<M extends Message<M, B>, B extends Message.Builder<M, B>> implements MessageBinding<M, B> {
     private final Class<B> builderType;
     private final Function0<B> createBuilder;
     private final Map<Integer, FieldOrOneOfBinding<M, B>> fields;
@@ -23,24 +22,24 @@ public final class RuntimeMessageBinding<M extends Message<M, B>, B extends Mess
     private final String typeUrl;
 
     /* JADX WARN: Multi-variable type inference failed */
-    public RuntimeMessageBinding(KClass<M> messageType, Class<B> builderType, Function0<? extends B> createBuilder, Map<Integer, ? extends FieldOrOneOfBinding<M, B>> fields, String str, Syntax syntax) {
-        Intrinsics.e(messageType, "messageType");
-        Intrinsics.e(builderType, "builderType");
-        Intrinsics.e(createBuilder, "createBuilder");
-        Intrinsics.e(fields, "fields");
+    public RuntimeMessageBinding(KClass<M> kClass, Class<B> cls, Function0<? extends B> function0, Map<Integer, ? extends FieldOrOneOfBinding<M, B>> map, String str, Syntax syntax) {
+        Intrinsics.e(kClass, "messageType");
+        Intrinsics.e(cls, "builderType");
+        Intrinsics.e(function0, "createBuilder");
+        Intrinsics.e(map, "fields");
         Intrinsics.e(syntax, "syntax");
-        this.messageType = messageType;
-        this.builderType = builderType;
-        this.createBuilder = createBuilder;
-        this.fields = fields;
+        this.messageType = kClass;
+        this.builderType = cls;
+        this.createBuilder = function0;
+        this.fields = map;
         this.typeUrl = str;
         this.syntax = syntax;
     }
 
-    public void addUnknownField(B builder, int i, FieldEncoding fieldEncoding, Object obj) {
-        Intrinsics.e(builder, "builder");
+    public void addUnknownField(B b, int i, FieldEncoding fieldEncoding, Object obj) {
+        Intrinsics.e(b, "builder");
         Intrinsics.e(fieldEncoding, "fieldEncoding");
-        builder.addUnknownField(i, fieldEncoding, obj);
+        b.addUnknownField(i, fieldEncoding, obj);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -49,9 +48,9 @@ public final class RuntimeMessageBinding<M extends Message<M, B>, B extends Mess
         addUnknownField((RuntimeMessageBinding<M, B>) ((Message.Builder) obj), i, fieldEncoding, obj2);
     }
 
-    public M build(B builder) {
-        Intrinsics.e(builder, "builder");
-        return (M) builder.build();
+    public M build(B b) {
+        Intrinsics.e(b, "builder");
+        return (M) b.build();
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -60,9 +59,9 @@ public final class RuntimeMessageBinding<M extends Message<M, B>, B extends Mess
         return build((RuntimeMessageBinding<M, B>) ((Message.Builder) obj));
     }
 
-    public void clearUnknownFields(B builder) {
-        Intrinsics.e(builder, "builder");
-        builder.clearUnknownFields();
+    public void clearUnknownFields(B b) {
+        Intrinsics.e(b, "builder");
+        b.clearUnknownFields();
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -71,9 +70,9 @@ public final class RuntimeMessageBinding<M extends Message<M, B>, B extends Mess
         clearUnknownFields((RuntimeMessageBinding<M, B>) ((Message.Builder) obj));
     }
 
-    public int getCachedSerializedSize(M message) {
-        Intrinsics.e(message, "message");
-        return message.getCachedSerializedSize$wire_runtime();
+    public int getCachedSerializedSize(M m) {
+        Intrinsics.e(m, "message");
+        return m.getCachedSerializedSize$wire_runtime();
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -104,12 +103,12 @@ public final class RuntimeMessageBinding<M extends Message<M, B>, B extends Mess
 
     @Override // com.squareup.wire.internal.MessageBinding
     public B newBuilder() {
-        return this.createBuilder.invoke();
+        return (B) this.createBuilder.invoke();
     }
 
-    public void setCachedSerializedSize(M message, int i) {
-        Intrinsics.e(message, "message");
-        message.setCachedSerializedSize$wire_runtime(i);
+    public void setCachedSerializedSize(M m, int i) {
+        Intrinsics.e(m, "message");
+        m.setCachedSerializedSize$wire_runtime(i);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -118,9 +117,9 @@ public final class RuntimeMessageBinding<M extends Message<M, B>, B extends Mess
         setCachedSerializedSize((RuntimeMessageBinding<M, B>) ((Message) obj), i);
     }
 
-    public ByteString unknownFields(M message) {
-        Intrinsics.e(message, "message");
-        return message.unknownFields();
+    public ByteString unknownFields(M m) {
+        Intrinsics.e(m, "message");
+        return m.unknownFields();
     }
 
     /* JADX WARN: Multi-variable type inference failed */

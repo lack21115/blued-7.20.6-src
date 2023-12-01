@@ -16,30 +16,30 @@ public abstract class FileUtil {
     public static final long LOCAL_REPORT_FILE_MAX_SIZE = 10240;
 
     /* renamed from: a  reason: collision with root package name */
-    public static boolean f22909a = false;
+    public static boolean f9301a = false;
     public static ScheduledExecutorService b = Executors.newSingleThreadScheduledExecutor();
 
     /* loaded from: source-7994992-dex2jar.jar:com/huawei/hms/utils/FileUtil$a.class */
     public static final class a implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ File f22910a;
+        public final /* synthetic */ File f9302a;
         public final /* synthetic */ long b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ String f22911c;
+        public final /* synthetic */ String f9303c;
 
         public a(File file, long j, String str) {
-            this.f22910a = file;
+            this.f9302a = file;
             this.b = j;
-            this.f22911c = str;
+            this.f9303c = str;
         }
 
         @Override // java.lang.Runnable
         public void run() {
             RandomAccessFile randomAccessFile;
             IOException e;
-            File file = this.f22910a;
+            File file = this.f9302a;
             if (file == null) {
                 HMSLog.e(p.Code, "In writeFile Failed to get local file.");
                 return;
@@ -53,15 +53,15 @@ public abstract class FileUtil {
             RandomAccessFile randomAccessFile3 = null;
             try {
                 try {
-                    long length = this.f22910a.length();
+                    long length = this.f9302a.length();
                     if (length > this.b) {
-                        String canonicalPath = this.f22910a.getCanonicalPath();
-                        if (!this.f22910a.delete()) {
+                        String canonicalPath = this.f9302a.getCanonicalPath();
+                        if (!this.f9302a.delete()) {
                             HMSLog.e(p.Code, "last file delete failed.");
                         }
                         randomAccessFile = new RandomAccessFile(new File(canonicalPath), "rw");
                     } else {
-                        randomAccessFile = new RandomAccessFile(this.f22910a, "rw");
+                        randomAccessFile = new RandomAccessFile(this.f9302a, "rw");
                         try {
                             randomAccessFile.seek(length);
                         } catch (IOException e2) {
@@ -78,7 +78,7 @@ public abstract class FileUtil {
                     RandomAccessFile randomAccessFile4 = randomAccessFile;
                     StringBuilder sb = new StringBuilder();
                     RandomAccessFile randomAccessFile5 = randomAccessFile;
-                    sb.append(this.f22911c);
+                    sb.append(this.f9303c);
                     RandomAccessFile randomAccessFile6 = randomAccessFile;
                     sb.append(System.getProperty("line.separator"));
                     randomAccessFile2 = randomAccessFile;
@@ -105,11 +105,11 @@ public abstract class FileUtil {
 
     public static void writeFileReport(Context context, File file, File file2, String str, long j, int i) {
         if (file != null && file.isFile() && file.exists()) {
-            if (!f22909a) {
+            if (!f9301a) {
                 if (file2 != null && file2.exists() && !file2.delete()) {
                     HMSLog.e(p.Code, "file delete failed.");
                 }
-                f22909a = true;
+                f9301a = true;
             }
             writeFile(file2, str + "|" + j + "|" + i, LOCAL_REPORT_FILE_MAX_SIZE);
         }

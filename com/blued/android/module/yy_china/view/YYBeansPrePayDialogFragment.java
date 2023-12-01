@@ -16,7 +16,6 @@ import android.widget.TextView;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
-import com.anythink.expressad.video.module.a.a.m;
 import com.blued.android.chat.core.pack.ReqAckPackage;
 import com.blued.android.core.AppMethods;
 import com.blued.android.core.ui.BaseFragment;
@@ -56,13 +55,9 @@ import java.util.Locale;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYBeansPrePayDialogFragment.class */
 public class YYBeansPrePayDialogFragment extends BottomSheetDialogFragment implements View.OnClickListener, YYIVIPBuyResultObserver {
-
-    /* renamed from: a  reason: collision with root package name */
-    public Context f18055a;
+    public Context a;
     public View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private BaseFragment f18056c;
+    private BaseFragment c;
     private RelativeLayout e;
     private TextView f;
     private TextView g;
@@ -102,18 +97,18 @@ public class YYBeansPrePayDialogFragment extends BottomSheetDialogFragment imple
     /* JADX INFO: Access modifiers changed from: private */
     public void a(View view) {
         YYPrePayViewPagerAdapter yYPrePayViewPagerAdapter = this.o;
-        if (yYPrePayViewPagerAdapter == null || yYPrePayViewPagerAdapter.f16210a == null || this.n == null) {
+        if (yYPrePayViewPagerAdapter == null || yYPrePayViewPagerAdapter.a == null || this.n == null) {
             return;
         }
-        this.o.f16210a.choosed = false;
+        this.o.a.choosed = false;
         if (i()) {
-            String a2 = !StringUtils.b(YYChatRoomsListFragment.f17120a.a()) ? YYChatRoomsListFragment.f17120a.a() : "yy_chat";
+            String a = !StringUtils.b(YYChatRoomsListFragment.a.a()) ? YYChatRoomsListFragment.a.a() : "yy_chat";
             if (!StringUtils.b(YYRoomInfoManager.e().f())) {
-                a2 = YYRoomInfoManager.e().f();
+                a = YYRoomInfoManager.e().f();
             }
             YYRoomInfoManager e = YYRoomInfoManager.e();
             Context context = getContext();
-            e.a(context, this.o.f16210a.id + "", "", "", "", "yy_chat", a2, (int) this.o.f16210a.money);
+            e.a(context, this.o.a.id + "", "", "", "", "yy_chat", a, (int) this.o.a.money);
         }
     }
 
@@ -166,7 +161,7 @@ public class YYBeansPrePayDialogFragment extends BottomSheetDialogFragment imple
             public final void run() {
                 YYBeansPrePayDialogFragment.this.a(view2, view);
             }
-        }, m.ag);
+        }, 3000L);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -189,7 +184,7 @@ public class YYBeansPrePayDialogFragment extends BottomSheetDialogFragment imple
         this.e = (RelativeLayout) this.b.findViewById(R.id.rl_root);
         this.f = (TextView) this.b.findViewById(R.id.tv_balance_title);
         this.g = (TextView) this.b.findViewById(R.id.tv_balance);
-        this.h = (ViewPager) this.b.findViewById(R.id.vp_pre_pay);
+        this.h = this.b.findViewById(R.id.vp_pre_pay);
         this.i = (LinearLayout) this.b.findViewById(R.id.view_indicator);
         this.j = (TextView) this.b.findViewById(R.id.tv_pre_pay);
         this.k = (TextView) this.b.findViewById(R.id.tv_agreement);
@@ -206,9 +201,9 @@ public class YYBeansPrePayDialogFragment extends BottomSheetDialogFragment imple
         });
         this.s.setOnClickListener(this);
         n();
-        Object a2 = YYRoomInfoManager.e().a((YYIVIPBuyResultObserver) this);
-        this.r = a2;
-        if (a2 == null) {
+        Object a = YYRoomInfoManager.e().a((YYIVIPBuyResultObserver) this);
+        this.r = a;
+        if (a == null) {
             dismiss();
         }
     }
@@ -277,13 +272,13 @@ public class YYBeansPrePayDialogFragment extends BottomSheetDialogFragment imple
         if (count == 0) {
             return;
         }
-        int a2 = DensityUtils.a(requireContext(), 5.0f);
-        int i = a2 / 2;
+        int a = DensityUtils.a(requireContext(), 5.0f);
+        int i = a / 2;
         int i2 = 0;
         this.i.setPadding(i, 0, i, 0);
         while (i2 < count) {
             View view = new View(getContext());
-            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(a2, a2);
+            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(a, a);
             layoutParams.leftMargin = i;
             layoutParams.rightMargin = i;
             view.setLayoutParams(layoutParams);
@@ -293,11 +288,9 @@ public class YYBeansPrePayDialogFragment extends BottomSheetDialogFragment imple
             i2++;
         }
         this.h.addOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: com.blued.android.module.yy_china.view.YYBeansPrePayDialogFragment.4
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageScrollStateChanged(int i3) {
             }
 
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageScrolled(int i3, float f, int i4) {
                 if (i3 >= YYBeansPrePayDialogFragment.this.i.getChildCount()) {
                     return;
@@ -310,7 +303,6 @@ public class YYBeansPrePayDialogFragment extends BottomSheetDialogFragment imple
                 }
             }
 
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageSelected(int i3) {
                 int i4 = 0;
                 while (true) {
@@ -335,7 +327,7 @@ public class YYBeansPrePayDialogFragment extends BottomSheetDialogFragment imple
 
     /* JADX INFO: Access modifiers changed from: private */
     public void o() {
-        if (this.f18056c != null) {
+        if (this.c != null) {
             YYRoomHttpUtils.f(new BluedUIHttpResponse<BluedEntityA<YYPerFirstGiftModel>>(a()) { // from class: com.blued.android.module.yy_china.view.YYBeansPrePayDialogFragment.5
                 /* JADX INFO: Access modifiers changed from: protected */
                 @Override // com.blued.android.framework.http.BluedUIHttpResponse
@@ -431,22 +423,22 @@ public class YYBeansPrePayDialogFragment extends BottomSheetDialogFragment imple
                 break;
             }
             if (this.m.pay_list.get(i2).id == this.u.getPay_id()) {
-                this.o.f16211c = i2;
+                this.o.c = i2;
                 a(this.m.pay_list.get(i2).money);
                 this.o.a();
             }
             i = i2 + 1;
         }
-        int i3 = this.o.f16211c / 6;
+        int i3 = this.o.c / 6;
         if (i3 < this.h.getCurrentItem()) {
             this.h.setCurrentItem(i3);
         }
     }
 
     public YYBeansPrePayDialogFragment a(Context context, BaseFragment baseFragment, int i) {
-        this.f18055a = context;
+        this.a = context;
         this.d = i;
-        this.f18056c = baseFragment;
+        this.c = baseFragment;
         return this;
     }
 
@@ -653,7 +645,7 @@ public class YYBeansPrePayDialogFragment extends BottomSheetDialogFragment imple
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, android.content.DialogInterface.OnDismissListener
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onDismiss(DialogInterface dialogInterface) {
         super.onDismiss(dialogInterface);
         if (this.r != null) {
@@ -665,7 +657,7 @@ public class YYBeansPrePayDialogFragment extends BottomSheetDialogFragment imple
         }
     }
 
-    @Override // com.blued.android.module.common.base.dialog.bottomsheet.BottomSheetDialogFragment, androidx.fragment.app.DialogFragment
+    @Override // com.blued.android.module.common.base.dialog.bottomsheet.BottomSheetDialogFragment
     public void setupDialog(Dialog dialog, int i) {
         super.setupDialog(dialog, i);
         dialog.requestWindowFeature(1);
@@ -678,7 +670,7 @@ public class YYBeansPrePayDialogFragment extends BottomSheetDialogFragment imple
         k();
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void show(FragmentManager fragmentManager, String str) {
         try {
             ReflectionUtils.a(this, "mDismissed", false);

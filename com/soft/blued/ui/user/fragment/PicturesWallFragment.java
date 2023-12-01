@@ -114,12 +114,10 @@ public class PicturesWallFragment extends PreloadFragment implements IFeedDataOb
     /* JADX INFO: Access modifiers changed from: private */
     public void a(AlbumFlow albumFlow) {
         FeedHttpUtils.a(this.l, new BluedUIHttpResponse<BluedEntity>() { // from class: com.soft.blued.ui.user.fragment.PicturesWallFragment.7
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse, com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
             public void onFailure(Throwable th, int i, String str) {
                 BluedHttpUtils.b(th, i, str);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity bluedEntity) {
             }
         }, UserInfo.getInstance().getLoginUserInfo().getUid(), albumFlow.feed_id, albumFlow.is_ads, getFragmentActive());
@@ -128,12 +126,10 @@ public class PicturesWallFragment extends PreloadFragment implements IFeedDataOb
     /* JADX INFO: Access modifiers changed from: private */
     public void a(AlbumFlow albumFlow, int i, String str) {
         FeedHttpUtils.a(this.l, new BluedUIHttpResponse<BluedEntity>() { // from class: com.soft.blued.ui.user.fragment.PicturesWallFragment.6
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse, com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
             public void onFailure(Throwable th, int i2, String str2) {
                 BluedHttpUtils.b(th, i2, str2);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity bluedEntity) {
             }
         }, UserInfo.getInstance().getLoginUserInfo().getUid(), albumFlow.feed_id, i, str, getFragmentActive());
@@ -155,9 +151,9 @@ public class PicturesWallFragment extends PreloadFragment implements IFeedDataOb
         this.n = progressBar;
         progressBar.setVisibility(8);
         this.r = new StaggeredGridLayoutManager(2, 1);
-        PullToRefreshRecyclerView pullToRefreshRecyclerView = (PullToRefreshRecyclerView) view.findViewById(R.id.ptrrv_picture_list);
-        this.q = pullToRefreshRecyclerView;
-        this.o = pullToRefreshRecyclerView.getRefreshableView();
+        PullToRefreshRecyclerView findViewById = view.findViewById(R.id.ptrrv_picture_list);
+        this.q = findViewById;
+        this.o = (RecyclerView) findViewById.getRefreshableView();
         this.p.setLoadMoreView(new RecyclerViewLoadMoreView());
         this.p.setEnableLoadMore(false);
         this.p.setOnLoadMoreListener(this, this.o);
@@ -201,7 +197,6 @@ public class PicturesWallFragment extends PreloadFragment implements IFeedDataOb
             }
         });
         this.q.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener<RecyclerView>() { // from class: com.soft.blued.ui.user.fragment.PicturesWallFragment.4
-            @Override // com.blued.android.framework.view.pulltorefresh.PullToRefreshBase.OnRefreshListener
             public void onRefresh(PullToRefreshBase<RecyclerView> pullToRefreshBase) {
                 PicturesWallFragment.this.u.refresh();
                 PicturesWallFragment.this.v = 1;
@@ -211,16 +206,15 @@ public class PicturesWallFragment extends PreloadFragment implements IFeedDataOb
         this.o.addItemDecoration(new SpacingItemDecoration(DensityUtils.a(this.l, 10.0f)));
         this.o.setLayoutManager(this.r);
         this.o.setAdapter(this.p);
-        NoDataAndLoadFailView noDataAndLoadFailView = new NoDataAndLoadFailView(this.l);
+        View noDataAndLoadFailView = new NoDataAndLoadFailView(this.l);
         noDataAndLoadFailView.b();
         this.p.setEmptyView(noDataAndLoadFailView);
         BluedUIHttpResponse<BluedEntityA<AlbumFlow>> bluedUIHttpResponse = new BluedUIHttpResponse<BluedEntityA<AlbumFlow>>(this.s, getFragmentActive()) { // from class: com.soft.blued.ui.user.fragment.PicturesWallFragment.5
 
             /* renamed from: a  reason: collision with root package name */
-            boolean f33893a = false;
+            boolean f20202a = false;
 
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUICache(BluedEntityA<AlbumFlow> bluedEntityA) {
                 super.onUICache(bluedEntityA);
@@ -233,29 +227,26 @@ public class PicturesWallFragment extends PreloadFragment implements IFeedDataOb
             }
 
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: b */
             public void onUIUpdate(BluedEntityA<AlbumFlow> bluedEntityA) {
                 PicturesWallFragment.this.a(bluedEntityA);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str) {
-                this.f33893a = true;
+                this.f20202a = true;
                 AlbumViewDataManager.a().c();
                 return super.onUIFailure(i, str);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 super.onUIFinish();
                 if (PicturesWallFragment.this.v == 1) {
                     PicturesWallFragment.this.q.j();
-                    if (this.f33893a && !PicturesWallFragment.this.x) {
+                    if (this.f20202a && !PicturesWallFragment.this.x) {
                         PicturesWallFragment.this.m.setVisibility(0);
                     }
                     PicturesWallFragment.this.p.disableLoadMoreIfNotFullPage();
-                } else if (this.f33893a) {
+                } else if (this.f20202a) {
                     if (PicturesWallFragment.this.v != 1) {
                         PicturesWallFragment.j(PicturesWallFragment.this);
                     }
@@ -269,7 +260,6 @@ public class PicturesWallFragment extends PreloadFragment implements IFeedDataOb
                 PicturesWallFragment.this.y = false;
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 super.onUIStart();
                 PicturesWallFragment.this.y = true;
@@ -302,68 +292,53 @@ public class PicturesWallFragment extends PreloadFragment implements IFeedDataOb
         this.r.scrollToPositionWithOffset(i - 1, 30);
     }
 
-    @Override // com.blued.android.framework.activity.PreloadFragment
     public void a(View view) {
         LayoutInflater.from(this.l).inflate(R.layout.fragment_pictures_wall, (ViewGroup) view, true);
         d(view);
     }
 
-    @Override // com.blued.community.ui.feed.observer.IFeedDataObserver
     public void a(BluedIngSelfFeed bluedIngSelfFeed) {
     }
 
-    @Override // com.blued.community.ui.feed.observer.IFeedDataObserver
     public void a(FeedComment feedComment) {
     }
 
-    @Override // com.blued.community.ui.feed.observer.IFeedDataObserver
     public void a(BusFeedInteractModel busFeedInteractModel) {
     }
 
-    @Override // com.blued.community.ui.feed.observer.IFeedDataObserver
     public void a(FeedRepost feedRepost) {
     }
 
-    @Override // com.blued.community.ui.feed.observer.IFeedDataObserver
     public void a(String str, int i) {
     }
 
-    @Override // com.blued.community.ui.feed.observer.IFeedDataObserver
     public void a(String str, String str2) {
     }
 
-    @Override // com.blued.community.ui.feed.observer.IFeedDataObserver
     public void b(BluedIngSelfFeed bluedIngSelfFeed) {
     }
 
-    @Override // com.blued.community.ui.feed.observer.IFeedDataObserver
     public void b(String str, int i) {
     }
 
-    @Override // com.blued.community.ui.feed.observer.IFeedDataObserver
     public void b(String str, String str2) {
     }
 
-    @Override // com.blued.community.ui.feed.observer.IFeedDataObserver
     public void c(int i) {
     }
 
-    @Override // com.blued.community.ui.feed.observer.IFeedDataObserver
     public void c(String str) {
     }
 
-    @Override // com.blued.community.ui.feed.observer.IFeedDataObserver
     public void c(String str, int i) {
         this.p.a(str, i);
         this.t.data.clear();
         a(this.p.getData());
     }
 
-    @Override // com.blued.community.ui.feed.observer.IFeedDataObserver
     public void d(int i) {
     }
 
-    @Override // com.blued.community.ui.feed.observer.IFeedDataObserver
     public void d(String str, int i) {
     }
 
@@ -374,7 +349,6 @@ public class PicturesWallFragment extends PreloadFragment implements IFeedDataOb
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onAttach(Context context) {
         super.onAttach(context);
         this.l = context;
@@ -389,7 +363,6 @@ public class PicturesWallFragment extends PreloadFragment implements IFeedDataOb
         i();
     }
 
-    @Override // com.blued.android.framework.activity.PreloadFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void setUserVisibleHint(boolean z) {
         super.setUserVisibleHint(z);
         if (!z) {

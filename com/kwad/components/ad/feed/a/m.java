@@ -94,7 +94,7 @@ public final class m extends com.kwad.components.core.widget.b<AdTemplate> imple
     private com.kwad.components.core.video.e eO;
     private d eP;
     private boolean eQ;
-    private final a.InterfaceC0534a eS;
+    private final a.InterfaceC0364a eS;
     private IAdLiveOfflineView eT;
     private com.kwad.components.core.offline.api.kwai.a eU;
     private IAdLivePlayModule eV;
@@ -341,8 +341,8 @@ public final class m extends com.kwad.components.core.widget.b<AdTemplate> imple
                 }
             }
         };
-        this.eS = new a.InterfaceC0534a() { // from class: com.kwad.components.ad.feed.a.m.18
-            @Override // com.kwad.components.core.video.a.InterfaceC0534a
+        this.eS = new a.InterfaceC0364a() { // from class: com.kwad.components.ad.feed.a.m.18
+            @Override // com.kwad.components.core.video.a.InterfaceC0364a
             public final void a(int i, ac.a aVar) {
                 int i2;
                 int i3 = 2;
@@ -362,7 +362,7 @@ public final class m extends com.kwad.components.core.widget.b<AdTemplate> imple
                 bVar.jW = aVar;
                 bVar.jU = i2;
                 m.this.bD();
-                com.kwad.components.core.d.b.a.a(new a.C0519a(m.this.getContext()).I(m.this.mAdTemplate).b(m.this.mApkDownloadHelper).ap(i3).ao(z).aq(true).a(bVar).as(true).a(new a.b() { // from class: com.kwad.components.ad.feed.a.m.18.1
+                com.kwad.components.core.d.b.a.a(new a.C0349a(m.this.getContext()).I(m.this.mAdTemplate).b(m.this.mApkDownloadHelper).ap(i3).ao(z).aq(true).a(bVar).as(true).a(new a.b() { // from class: com.kwad.components.ad.feed.a.m.18.1
                     @Override // com.kwad.components.core.d.b.a.b
                     public final void onAdClicked() {
                         m.this.eh();
@@ -502,7 +502,7 @@ public final class m extends com.kwad.components.core.widget.b<AdTemplate> imple
             AdVideoPlayerViewCache.getInstance().a(E, this.eN);
             FeedType.fromInt(this.mAdTemplate.type);
             bD();
-            com.kwad.components.core.d.b.a.a(new a.C0519a(getContext()).I(this.mAdTemplate).b(this.mApkDownloadHelper).ap(2).as(com.kwad.sdk.core.response.a.a.aU(this.mAdInfo)).a(new a.b() { // from class: com.kwad.components.ad.feed.a.m.17
+            com.kwad.components.core.d.b.a.a(new a.C0349a(getContext()).I(this.mAdTemplate).b(this.mApkDownloadHelper).ap(2).as(com.kwad.sdk.core.response.a.a.aU(this.mAdInfo)).a(new a.b() { // from class: com.kwad.components.ad.feed.a.m.17
                 @Override // com.kwad.components.core.d.b.a.b
                 public final void onAdClicked() {
                     m.this.aL(i);
@@ -573,7 +573,7 @@ public final class m extends com.kwad.components.core.widget.b<AdTemplate> imple
                 boolean z = false;
                 if (bl.o(m.this.fx, (int) (com.kwad.sdk.core.config.d.uF() * 100.0f))) {
                     z = true;
-                    com.kwad.components.core.d.b.a.a(new a.C0519a(m.this.getContext()).I(m.this.mAdTemplate).b(m.this.mApkDownloadHelper).ap(2).ao(false).aq(false).ao(157).an(5).as(true).a(new a.b() { // from class: com.kwad.components.ad.feed.a.m.5.1
+                    com.kwad.components.core.d.b.a.a(new a.C0349a(m.this.getContext()).I(m.this.mAdTemplate).b(m.this.mApkDownloadHelper).ap(2).ao(false).aq(false).ao(157).an(5).as(true).a(new a.b() { // from class: com.kwad.components.ad.feed.a.m.5.1
                         @Override // com.kwad.components.core.d.b.a.b
                         public final void onAdClicked() {
                             com.kwad.sdk.core.d.b.d("FeedWebView", "convertEnable End" + com.kwad.sdk.core.response.a.d.cl(m.this.mAdTemplate));
@@ -866,7 +866,7 @@ public final class m extends com.kwad.components.core.widget.b<AdTemplate> imple
                 if (aVar.TD != null && !TextUtils.isEmpty(aVar.TD.Ts)) {
                     bVar.Ts = aVar.TD.Ts;
                 }
-                com.kwad.components.core.d.b.a.a(new a.C0519a(m.this.getContext()).I(m.this.mAdTemplate).b(m.this.mApkDownloadHelper).ao(m.a(m.this, aVar)).ap(i).ao(aVar.jU).an(5).au(aVar.II).as(aU).q(m.this.eV == null ? 0L : m.this.eV.getPlayDuration()).a(bVar).aq(true).a(new a.b() { // from class: com.kwad.components.ad.feed.a.m.7.1
+                com.kwad.components.core.d.b.a.a(new a.C0349a(m.this.getContext()).I(m.this.mAdTemplate).b(m.this.mApkDownloadHelper).ao(m.a(m.this, aVar)).ap(i).ao(aVar.jU).an(5).au(aVar.II).as(aU).q(m.this.eV == null ? 0L : m.this.eV.getPlayDuration()).a(bVar).aq(true).a(new a.b() { // from class: com.kwad.components.ad.feed.a.m.7.1
                     @Override // com.kwad.components.core.d.b.a.b
                     public final void onAdClicked() {
                         if (m.this.VS != null) {
@@ -910,7 +910,7 @@ public final class m extends com.kwad.components.core.widget.b<AdTemplate> imple
         return new ag.a() { // from class: com.kwad.components.ad.feed.a.m.6
             @Override // com.kwad.components.core.webview.jshandler.ag.a
             public final void a(com.kwad.components.core.webview.kwai.b bVar) {
-                AdWebViewActivityProxy.launch(m.this.mContext, new AdWebViewActivityProxy.a.C0529a().au(bVar.title).av(bVar.url).aA(true).L(m.this.mAdTemplate).oc());
+                AdWebViewActivityProxy.launch(m.this.mContext, new AdWebViewActivityProxy.a.C0359a().au(bVar.title).av(bVar.url).aA(true).L(m.this.mAdTemplate).oc());
             }
         };
     }
@@ -1034,7 +1034,7 @@ public final class m extends com.kwad.components.core.widget.b<AdTemplate> imple
     /* JADX INFO: Access modifiers changed from: private */
     public void y(final int i) {
         bD();
-        com.kwad.components.core.d.b.a.a(new a.C0519a(getContext()).I(this.mAdTemplate).b(this.mApkDownloadHelper).ap(1).ao(true).ao(i).an(5).aq(false).as(true).a(new a.b() { // from class: com.kwad.components.ad.feed.a.m.16
+        com.kwad.components.core.d.b.a.a(new a.C0349a(getContext()).I(this.mAdTemplate).b(this.mApkDownloadHelper).ap(1).ao(true).ao(i).an(5).aq(false).as(true).a(new a.b() { // from class: com.kwad.components.ad.feed.a.m.16
             @Override // com.kwad.components.core.d.b.a.b
             public final void onAdClicked() {
                 m.this.aL(i);

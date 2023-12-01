@@ -18,31 +18,31 @@ import java.util.List;
 public class ModuleEditAdapterForListview extends BaseAdapter {
 
     /* renamed from: a  reason: collision with root package name */
-    public View.OnClickListener f30070a;
+    public View.OnClickListener f16380a;
     private List<NearbyModule> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f30071c;
+    private Context f16381c;
     private LayoutInflater d;
 
     /* loaded from: source-8303388-dex2jar.jar:com/soft/blued/ui/find/adapter/ModuleEditAdapterForListview$ViewHolder.class */
     public class ViewHolder {
 
         /* renamed from: a  reason: collision with root package name */
-        public TextView f30074a;
+        public TextView f16384a;
         public ImageView b;
 
         /* renamed from: c  reason: collision with root package name */
-        public LinearLayout f30075c;
+        public LinearLayout f16385c;
 
         public ViewHolder() {
         }
     }
 
     public ModuleEditAdapterForListview(Context context, View.OnClickListener onClickListener) {
-        this.f30071c = context;
+        this.f16381c = context;
         this.d = LayoutInflater.from(context);
-        this.f30070a = onClickListener;
+        this.f16380a = onClickListener;
     }
 
     public List<NearbyModule> a() {
@@ -86,22 +86,22 @@ public class ModuleEditAdapterForListview extends BaseAdapter {
         if (view == null) {
             viewHolder = new ViewHolder();
             view2 = this.d.inflate(R.layout.item_nearby_module_edit, viewGroup, false);
-            viewHolder.f30074a = (TextView) view2.findViewById(2131372754);
+            viewHolder.f16384a = (TextView) view2.findViewById(2131372754);
             viewHolder.b = (ImageView) view2.findViewById(R.id.img_on_off);
-            viewHolder.f30075c = (LinearLayout) view2.findViewById(R.id.ll_item);
+            viewHolder.f16385c = (LinearLayout) view2.findViewById(R.id.ll_item);
             view2.setTag(viewHolder);
         } else {
             view2 = view;
             viewHolder = (ViewHolder) view.getTag();
         }
         final NearbyModule nearbyModule = this.b.get(i);
-        viewHolder.f30074a.setText(nearbyModule.title);
+        viewHolder.f16384a.setText(nearbyModule.title);
         if (nearbyModule.is_fixed == 1) {
-            viewHolder.f30074a.setTextColor(this.f30071c.getResources().getColor(2131101206));
+            viewHolder.f16384a.setTextColor(this.f16381c.getResources().getColor(2131101206));
             viewHolder.b.setVisibility(8);
             return view2;
         }
-        viewHolder.f30074a.setTextColor(this.f30071c.getResources().getColor(2131101202));
+        viewHolder.f16384a.setTextColor(this.f16381c.getResources().getColor(2131101202));
         viewHolder.b.setVisibility(0);
         viewHolder.b.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.adapter.ModuleEditAdapterForListview.1
             @Override // android.view.View.OnClickListener
@@ -114,7 +114,7 @@ public class ModuleEditAdapterForListview extends BaseAdapter {
                 }
                 nearbyModule2.is_show = i2;
                 ModuleEditAdapterForListview.this.notifyDataSetChanged();
-                ModuleEditAdapterForListview.this.f30070a.onClick(view3);
+                ModuleEditAdapterForListview.this.f16380a.onClick(view3);
             }
         });
         if (this.b.get(i).is_show == 1) {

@@ -353,8 +353,8 @@ public final class Logging extends GeneratedMessageV3 implements LoggingOrBuilde
 
         @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder mo2030clone() {
+            return (Builder) super.mo2030clone();
         }
 
         @Override // com.google.api.LoggingOrBuilder
@@ -733,7 +733,7 @@ public final class Logging extends GeneratedMessageV3 implements LoggingOrBuilde
             public Builder addLogs(String str) {
                 if (str != null) {
                     ensureLogsIsMutable();
-                    this.logs_.add((LazyStringList) str);
+                    this.logs_.add(str);
                     onChanged();
                     return this;
                 }
@@ -813,8 +813,8 @@ public final class Logging extends GeneratedMessageV3 implements LoggingOrBuilde
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder mo2030clone() {
+                return (Builder) super.mo2030clone();
             }
 
             @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
@@ -829,7 +829,7 @@ public final class Logging extends GeneratedMessageV3 implements LoggingOrBuilde
 
             @Override // com.google.api.Logging.LoggingDestinationOrBuilder
             public String getLogs(int i) {
-                return this.logs_.get(i);
+                return (String) this.logs_.get(i);
             }
 
             @Override // com.google.api.Logging.LoggingDestinationOrBuilder
@@ -978,7 +978,7 @@ public final class Logging extends GeneratedMessageV3 implements LoggingOrBuilde
             public Builder setLogs(int i, String str) {
                 if (str != null) {
                     ensureLogsIsMutable();
-                    this.logs_.set(i, (int) str);
+                    this.logs_.set(i, str);
                     onChanged();
                     return this;
                 }
@@ -1042,7 +1042,7 @@ public final class Logging extends GeneratedMessageV3 implements LoggingOrBuilde
                                     this.logs_ = new LazyStringArrayList();
                                     z4 = z2 | true;
                                 }
-                                this.logs_.add((LazyStringList) readStringRequireUtf8);
+                                this.logs_.add(readStringRequireUtf8);
                                 z2 = z4;
                             } else if (readTag == 26) {
                                 this.monitoredResource_ = codedInputStream.readStringRequireUtf8();
@@ -1163,7 +1163,7 @@ public final class Logging extends GeneratedMessageV3 implements LoggingOrBuilde
 
         @Override // com.google.api.Logging.LoggingDestinationOrBuilder
         public String getLogs(int i) {
-            return this.logs_.get(i);
+            return (String) this.logs_.get(i);
         }
 
         @Override // com.google.api.Logging.LoggingDestinationOrBuilder
@@ -1321,6 +1321,7 @@ public final class Logging extends GeneratedMessageV3 implements LoggingOrBuilde
         this.consumerDestinations_ = Collections.emptyList();
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private Logging(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
         this();
         if (extensionRegistryLite == null) {

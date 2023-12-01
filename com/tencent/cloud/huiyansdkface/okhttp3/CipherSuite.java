@@ -1,6 +1,5 @@
 package com.tencent.cloud.huiyansdkface.okhttp3;
 
-import com.android.org.conscrypt.NativeCrypto;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -13,7 +12,7 @@ public final class CipherSuite {
     final String bq;
 
     /* renamed from: a  reason: collision with root package name */
-    static final Comparator<String> f35831a = new Comparator<String>() { // from class: com.tencent.cloud.huiyansdkface.okhttp3.CipherSuite.1
+    static final Comparator<String> f22140a = new Comparator<String>() { // from class: com.tencent.cloud.huiyansdkface.okhttp3.CipherSuite.1
         @Override // java.util.Comparator
         public int compare(String str, String str2) {
             int min = Math.min(str.length(), str2.length());
@@ -41,7 +40,7 @@ public final class CipherSuite {
     public static final CipherSuite b = a("SSL_RSA_WITH_NULL_MD5", 1);
 
     /* renamed from: c  reason: collision with root package name */
-    public static final CipherSuite f35833c = a("SSL_RSA_WITH_NULL_SHA", 2);
+    public static final CipherSuite f22142c = a("SSL_RSA_WITH_NULL_SHA", 2);
     public static final CipherSuite d = a("SSL_RSA_EXPORT_WITH_RC4_40_MD5", 3);
     public static final CipherSuite e = a("SSL_RSA_WITH_RC4_128_MD5", 4);
     public static final CipherSuite f = a("SSL_RSA_WITH_RC4_128_SHA", 5);
@@ -105,12 +104,12 @@ public final class CipherSuite {
     public static final CipherSuite al = a("TLS_DHE_DSS_WITH_AES_256_GCM_SHA384", 163);
     public static final CipherSuite am = a("TLS_DH_anon_WITH_AES_128_GCM_SHA256", 166);
     public static final CipherSuite an = a("TLS_DH_anon_WITH_AES_256_GCM_SHA384", 167);
-    public static final CipherSuite ao = a(NativeCrypto.TLS_EMPTY_RENEGOTIATION_INFO_SCSV, 255);
-    public static final CipherSuite ap = a(NativeCrypto.TLS_FALLBACK_SCSV, 22016);
+    public static final CipherSuite ao = a("TLS_EMPTY_RENEGOTIATION_INFO_SCSV", 255);
+    public static final CipherSuite ap = a("TLS_FALLBACK_SCSV", 22016);
     public static final CipherSuite aq = a("TLS_ECDH_ECDSA_WITH_NULL_SHA", 49153);
 
     /* renamed from: ar  reason: collision with root package name */
-    public static final CipherSuite f35832ar = a("TLS_ECDH_ECDSA_WITH_RC4_128_SHA", 49154);
+    public static final CipherSuite f22141ar = a("TLS_ECDH_ECDSA_WITH_RC4_128_SHA", 49154);
     public static final CipherSuite as = a("TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA", 49155);
     public static final CipherSuite at = a("TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA", 49156);
     public static final CipherSuite au = a("TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA", 49157);

@@ -4,7 +4,7 @@ package com.tencent.smtt.sdk;
 public class MimeTypeMap {
 
     /* renamed from: a  reason: collision with root package name */
-    private static MimeTypeMap f38713a;
+    private static MimeTypeMap f25022a;
 
     private MimeTypeMap() {
     }
@@ -18,10 +18,10 @@ public class MimeTypeMap {
         MimeTypeMap mimeTypeMap;
         synchronized (MimeTypeMap.class) {
             try {
-                if (f38713a == null) {
-                    f38713a = new MimeTypeMap();
+                if (f25022a == null) {
+                    f25022a = new MimeTypeMap();
                 }
-                mimeTypeMap = f38713a;
+                mimeTypeMap = f25022a;
             } catch (Throwable th) {
                 throw th;
             }

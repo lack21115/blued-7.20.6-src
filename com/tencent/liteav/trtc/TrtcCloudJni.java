@@ -55,26 +55,26 @@ public class TrtcCloudJni {
     static class AudioFrame {
 
         /* renamed from: a  reason: collision with root package name */
-        private TRTCCloudDef.TRTCAudioFrame f36446a;
+        private TRTCCloudDef.TRTCAudioFrame f22755a;
 
         public AudioFrame(TRTCCloudDef.TRTCAudioFrame tRTCAudioFrame) {
-            this.f36446a = tRTCAudioFrame;
+            this.f22755a = tRTCAudioFrame;
         }
 
         public int getChannel() {
-            return this.f36446a.channel;
+            return this.f22755a.channel;
         }
 
         public byte[] getData() {
-            return this.f36446a.data;
+            return this.f22755a.data;
         }
 
         public int getSampleRate() {
-            return this.f36446a.sampleRate;
+            return this.f22755a.sampleRate;
         }
 
         public long getTimestamp() {
-            return this.f36446a.timestamp;
+            return this.f22755a.timestamp;
         }
     }
 
@@ -82,18 +82,18 @@ public class TrtcCloudJni {
     static class AudioParallelParams {
 
         /* renamed from: a  reason: collision with root package name */
-        private TRTCCloudDef.TRTCAudioParallelParams f36447a;
+        private TRTCCloudDef.TRTCAudioParallelParams f22756a;
 
         public AudioParallelParams(TRTCCloudDef.TRTCAudioParallelParams tRTCAudioParallelParams) {
-            this.f36447a = tRTCAudioParallelParams;
+            this.f22756a = tRTCAudioParallelParams;
         }
 
         public String[] getIncludeUsers() {
-            return (String[]) this.f36447a.includeUsers.toArray(new String[this.f36447a.includeUsers.size()]);
+            return (String[]) this.f22756a.includeUsers.toArray(new String[this.f22756a.includeUsers.size()]);
         }
 
         public int getMaxCount() {
-            return this.f36447a.maxCount;
+            return this.f22756a.maxCount;
         }
     }
 
@@ -101,18 +101,18 @@ public class TrtcCloudJni {
     static class AudioRecordingParams {
 
         /* renamed from: a  reason: collision with root package name */
-        private final TRTCCloudDef.TRTCAudioRecordingParams f36448a;
+        private final TRTCCloudDef.TRTCAudioRecordingParams f22757a;
 
         public AudioRecordingParams(TRTCCloudDef.TRTCAudioRecordingParams tRTCAudioRecordingParams) {
-            this.f36448a = tRTCAudioRecordingParams;
+            this.f22757a = tRTCAudioRecordingParams;
         }
 
         public int getContent() {
-            return this.f36448a.recordingContent;
+            return this.f22757a.recordingContent;
         }
 
         public String getFilePath() {
-            return this.f36448a.filePath;
+            return this.f22757a.filePath;
         }
     }
 
@@ -120,50 +120,50 @@ public class TrtcCloudJni {
     static class EnterRoomParams {
 
         /* renamed from: a  reason: collision with root package name */
-        private TRTCCloudDef.TRTCParams f36449a;
+        private TRTCCloudDef.TRTCParams f22758a;
 
         public EnterRoomParams(TRTCCloudDef.TRTCParams tRTCParams) {
-            this.f36449a = tRTCParams;
+            this.f22758a = tRTCParams;
         }
 
         public String getBusinessInfo() {
-            return this.f36449a.businessInfo;
+            return this.f22758a.businessInfo;
         }
 
         public String getPrivateMapKey() {
-            return this.f36449a.privateMapKey;
+            return this.f22758a.privateMapKey;
         }
 
         public String getRecordId() {
-            return this.f36449a.userDefineRecordId;
+            return this.f22758a.userDefineRecordId;
         }
 
         public int getRole() {
-            return this.f36449a.role;
+            return this.f22758a.role;
         }
 
         public int getRoomId() {
-            return this.f36449a.roomId;
+            return this.f22758a.roomId;
         }
 
         public int getSdkAppId() {
-            return this.f36449a.sdkAppId;
+            return this.f22758a.sdkAppId;
         }
 
         public String getStrRoomId() {
-            return this.f36449a.strRoomId;
+            return this.f22758a.strRoomId;
         }
 
         public String getStreamId() {
-            return this.f36449a.streamId;
+            return this.f22758a.streamId;
         }
 
         public String getUserId() {
-            return this.f36449a.userId;
+            return this.f22758a.userId;
         }
 
         public String getUserSig() {
-            return this.f36449a.userSig;
+            return this.f22758a.userSig;
         }
     }
 
@@ -171,22 +171,22 @@ public class TrtcCloudJni {
     static class LocalRecordingParams {
 
         /* renamed from: a  reason: collision with root package name */
-        private final TRTCCloudDef.TRTCLocalRecordingParams f36450a;
+        private final TRTCCloudDef.TRTCLocalRecordingParams f22759a;
 
         public LocalRecordingParams(TRTCCloudDef.TRTCLocalRecordingParams tRTCLocalRecordingParams) {
-            this.f36450a = tRTCLocalRecordingParams;
+            this.f22759a = tRTCLocalRecordingParams;
         }
 
         public String getFilePath() {
-            return this.f36450a.filePath;
+            return this.f22759a.filePath;
         }
 
         public int getInterval() {
-            return this.f36450a.interval;
+            return this.f22759a.interval;
         }
 
         public int getRecordType() {
-            return this.f36450a.recordType;
+            return this.f22759a.recordType;
         }
     }
 
@@ -194,7 +194,7 @@ public class TrtcCloudJni {
     static class LocalStatistics {
 
         /* renamed from: a  reason: collision with root package name */
-        private TRTCStatistics.TRTCLocalStatistics f36451a = new TRTCStatistics.TRTCLocalStatistics();
+        private TRTCStatistics.TRTCLocalStatistics f22760a = new TRTCStatistics.TRTCLocalStatistics();
 
         LocalStatistics() {
         }
@@ -205,14 +205,14 @@ public class TrtcCloudJni {
 
         public static LocalStatistics createLocalStatistics(int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8) {
             LocalStatistics localStatistics = new LocalStatistics();
-            localStatistics.f36451a.streamType = i;
-            localStatistics.f36451a.width = i2;
-            localStatistics.f36451a.height = i3;
-            localStatistics.f36451a.frameRate = i4;
-            localStatistics.f36451a.videoBitrate = i5;
-            localStatistics.f36451a.audioBitrate = i7;
-            localStatistics.f36451a.audioSampleRate = i6;
-            localStatistics.f36451a.audioCaptureState = i8;
+            localStatistics.f22760a.streamType = i;
+            localStatistics.f22760a.width = i2;
+            localStatistics.f22760a.height = i3;
+            localStatistics.f22760a.frameRate = i4;
+            localStatistics.f22760a.videoBitrate = i5;
+            localStatistics.f22760a.audioBitrate = i7;
+            localStatistics.f22760a.audioSampleRate = i6;
+            localStatistics.f22760a.audioCaptureState = i8;
             return localStatistics;
         }
 
@@ -225,10 +225,10 @@ public class TrtcCloudJni {
     static class MixUser {
 
         /* renamed from: a  reason: collision with root package name */
-        private TRTCCloudDef.TRTCMixUser f36452a;
+        private TRTCCloudDef.TRTCMixUser f22761a;
 
         private MixUser(TRTCCloudDef.TRTCMixUser tRTCMixUser) {
-            this.f36452a = tRTCMixUser;
+            this.f22761a = tRTCMixUser;
         }
 
         /* synthetic */ MixUser(TRTCCloudDef.TRTCMixUser tRTCMixUser, byte b) {
@@ -236,55 +236,55 @@ public class TrtcCloudJni {
         }
 
         public int getHeight() {
-            return this.f36452a.height;
+            return this.f22761a.height;
         }
 
         public String getImage() {
-            return TextUtils.isEmpty(this.f36452a.image) ? "" : this.f36452a.image;
+            return TextUtils.isEmpty(this.f22761a.image) ? "" : this.f22761a.image;
         }
 
         public int getInputType() {
-            return this.f36452a.inputType;
+            return this.f22761a.inputType;
         }
 
         public boolean getPureAudio() {
-            return this.f36452a.pureAudio;
+            return this.f22761a.pureAudio;
         }
 
         public int getRenderMode() {
-            return this.f36452a.renderMode;
+            return this.f22761a.renderMode;
         }
 
         public String getRoomId() {
-            return TextUtils.isEmpty(this.f36452a.roomId) ? "" : this.f36452a.roomId;
+            return TextUtils.isEmpty(this.f22761a.roomId) ? "" : this.f22761a.roomId;
         }
 
         public int getSoundLevel() {
-            return this.f36452a.soundLevel;
+            return this.f22761a.soundLevel;
         }
 
         public int getStreamType() {
-            return this.f36452a.streamType;
+            return this.f22761a.streamType;
         }
 
         public String getUserId() {
-            return TextUtils.isEmpty(this.f36452a.userId) ? "" : this.f36452a.userId;
+            return TextUtils.isEmpty(this.f22761a.userId) ? "" : this.f22761a.userId;
         }
 
         public int getWidth() {
-            return this.f36452a.width;
+            return this.f22761a.width;
         }
 
         public int getX() {
-            return this.f36452a.x;
+            return this.f22761a.x;
         }
 
         public int getY() {
-            return this.f36452a.y;
+            return this.f22761a.y;
         }
 
         public int getZOrder() {
-            return this.f36452a.zOrder;
+            return this.f22761a.zOrder;
         }
     }
 
@@ -292,26 +292,26 @@ public class TrtcCloudJni {
     public static class PublishCDNParams {
 
         /* renamed from: a  reason: collision with root package name */
-        private TRTCCloudDef.TRTCPublishCDNParam f36453a;
+        private TRTCCloudDef.TRTCPublishCDNParam f22762a;
 
         public PublishCDNParams(TRTCCloudDef.TRTCPublishCDNParam tRTCPublishCDNParam) {
-            this.f36453a = tRTCPublishCDNParam;
+            this.f22762a = tRTCPublishCDNParam;
         }
 
         public int getAppId() {
-            return this.f36453a.appId;
+            return this.f22762a.appId;
         }
 
         public int getBizId() {
-            return this.f36453a.bizId;
+            return this.f22762a.bizId;
         }
 
         public String getStreamId() {
-            return TextUtils.isEmpty(this.f36453a.streamId) ? "" : this.f36453a.streamId;
+            return TextUtils.isEmpty(this.f22762a.streamId) ? "" : this.f22762a.streamId;
         }
 
         public String getUrl() {
-            return TextUtils.isEmpty(this.f36453a.url) ? "" : this.f36453a.url;
+            return TextUtils.isEmpty(this.f22762a.url) ? "" : this.f22762a.url;
         }
     }
 
@@ -319,18 +319,18 @@ public class TrtcCloudJni {
     static class PublishCdnUrl {
 
         /* renamed from: a  reason: collision with root package name */
-        private TRTCCloudDef.TRTCPublishCdnUrl f36454a;
+        private TRTCCloudDef.TRTCPublishCdnUrl f22763a;
 
         public PublishCdnUrl(TRTCCloudDef.TRTCPublishCdnUrl tRTCPublishCdnUrl) {
-            this.f36454a = tRTCPublishCdnUrl;
+            this.f22763a = tRTCPublishCdnUrl;
         }
 
         public boolean getIsInternalLine() {
-            return this.f36454a.isInternalLine;
+            return this.f22763a.isInternalLine;
         }
 
         public String getRtmpUrl() {
-            return this.f36454a.rtmpUrl != null ? this.f36454a.rtmpUrl : "";
+            return this.f22763a.rtmpUrl != null ? this.f22763a.rtmpUrl : "";
         }
     }
 
@@ -338,34 +338,34 @@ public class TrtcCloudJni {
     static class PublishTarget {
 
         /* renamed from: a  reason: collision with root package name */
-        private TRTCCloudDef.TRTCPublishTarget f36455a;
+        private TRTCCloudDef.TRTCPublishTarget f22764a;
 
         public PublishTarget(TRTCCloudDef.TRTCPublishTarget tRTCPublishTarget) {
-            this.f36455a = tRTCPublishTarget;
+            this.f22764a = tRTCPublishTarget;
         }
 
         public int getMode() {
-            return this.f36455a.mode;
+            return this.f22764a.mode;
         }
 
         public PublishCdnUrl[] getPublishCdnUrls() {
-            if (this.f36455a.cdnUrlList == null) {
+            if (this.f22764a.cdnUrlList == null) {
                 return null;
             }
-            PublishCdnUrl[] publishCdnUrlArr = new PublishCdnUrl[this.f36455a.cdnUrlList.size()];
+            PublishCdnUrl[] publishCdnUrlArr = new PublishCdnUrl[this.f22764a.cdnUrlList.size()];
             int i = 0;
             while (true) {
                 int i2 = i;
-                if (i2 >= this.f36455a.cdnUrlList.size()) {
+                if (i2 >= this.f22764a.cdnUrlList.size()) {
                     return publishCdnUrlArr;
                 }
-                publishCdnUrlArr[i2] = new PublishCdnUrl(this.f36455a.cdnUrlList.get(i2));
+                publishCdnUrlArr[i2] = new PublishCdnUrl(this.f22764a.cdnUrlList.get(i2));
                 i = i2 + 1;
             }
         }
 
         public TRTCUser getTRTCUser() {
-            return new TRTCUser(this.f36455a.mixStreamIdentity);
+            return new TRTCUser(this.f22764a.mixStreamIdentity);
         }
     }
 
@@ -373,7 +373,7 @@ public class TrtcCloudJni {
     static class RemoteStatistics {
 
         /* renamed from: a  reason: collision with root package name */
-        public TRTCStatistics.TRTCRemoteStatistics f36456a = new TRTCStatistics.TRTCRemoteStatistics();
+        public TRTCStatistics.TRTCRemoteStatistics f22765a = new TRTCStatistics.TRTCRemoteStatistics();
 
         RemoteStatistics() {
         }
@@ -384,23 +384,23 @@ public class TrtcCloudJni {
 
         public static RemoteStatistics createRemoteStatistics(String str, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8, int i9, int i10, int i11, int i12, int i13, int i14, int i15, int i16) {
             RemoteStatistics remoteStatistics = new RemoteStatistics();
-            remoteStatistics.f36456a.userId = str;
-            remoteStatistics.f36456a.streamType = i;
-            remoteStatistics.f36456a.width = i2;
-            remoteStatistics.f36456a.height = i3;
-            remoteStatistics.f36456a.frameRate = i4;
-            remoteStatistics.f36456a.audioPacketLoss = i11;
-            remoteStatistics.f36456a.videoPacketLoss = i5;
-            remoteStatistics.f36456a.videoBlockRate = i8;
-            remoteStatistics.f36456a.videoTotalBlockTime = i7;
-            remoteStatistics.f36456a.videoBitrate = i6;
-            remoteStatistics.f36456a.audioBitrate = i10;
-            remoteStatistics.f36456a.audioSampleRate = i9;
-            remoteStatistics.f36456a.audioTotalBlockTime = i12;
-            remoteStatistics.f36456a.audioBlockRate = i13;
-            remoteStatistics.f36456a.jitterBufferDelay = i14;
-            remoteStatistics.f36456a.point2PointDelay = i15;
-            remoteStatistics.f36456a.finalLoss = i16;
+            remoteStatistics.f22765a.userId = str;
+            remoteStatistics.f22765a.streamType = i;
+            remoteStatistics.f22765a.width = i2;
+            remoteStatistics.f22765a.height = i3;
+            remoteStatistics.f22765a.frameRate = i4;
+            remoteStatistics.f22765a.audioPacketLoss = i11;
+            remoteStatistics.f22765a.videoPacketLoss = i5;
+            remoteStatistics.f22765a.videoBlockRate = i8;
+            remoteStatistics.f22765a.videoTotalBlockTime = i7;
+            remoteStatistics.f22765a.videoBitrate = i6;
+            remoteStatistics.f22765a.audioBitrate = i10;
+            remoteStatistics.f22765a.audioSampleRate = i9;
+            remoteStatistics.f22765a.audioTotalBlockTime = i12;
+            remoteStatistics.f22765a.audioBlockRate = i13;
+            remoteStatistics.f22765a.jitterBufferDelay = i14;
+            remoteStatistics.f22765a.point2PointDelay = i15;
+            remoteStatistics.f22765a.finalLoss = i16;
             return remoteStatistics;
         }
 
@@ -413,14 +413,14 @@ public class TrtcCloudJni {
     static class ScreenShareParams {
 
         /* renamed from: a  reason: collision with root package name */
-        private final TRTCCloudDef.TRTCScreenShareParams f36457a;
+        private final TRTCCloudDef.TRTCScreenShareParams f22766a;
 
         public ScreenShareParams(TRTCCloudDef.TRTCScreenShareParams tRTCScreenShareParams) {
-            this.f36457a = tRTCScreenShareParams;
+            this.f22766a = tRTCScreenShareParams;
         }
 
         public Object getMediaProjection() {
-            return this.f36457a.mediaProjection;
+            return this.f22766a.mediaProjection;
         }
     }
 
@@ -428,30 +428,30 @@ public class TrtcCloudJni {
     static class SpeedTestParams {
 
         /* renamed from: a  reason: collision with root package name */
-        private final TRTCCloudDef.TRTCSpeedTestParams f36458a;
+        private final TRTCCloudDef.TRTCSpeedTestParams f22767a;
 
         public SpeedTestParams(TRTCCloudDef.TRTCSpeedTestParams tRTCSpeedTestParams) {
-            this.f36458a = tRTCSpeedTestParams;
+            this.f22767a = tRTCSpeedTestParams;
         }
 
         public int getExpectedDownBandwidth() {
-            return this.f36458a.expectedDownBandwidth;
+            return this.f22767a.expectedDownBandwidth;
         }
 
         public int getExpectedUpBandwidth() {
-            return this.f36458a.expectedUpBandwidth;
+            return this.f22767a.expectedUpBandwidth;
         }
 
         public int getSDKAppId() {
-            return this.f36458a.sdkAppId;
+            return this.f22767a.sdkAppId;
         }
 
         public String getUserId() {
-            return this.f36458a.userId;
+            return this.f22767a.userId;
         }
 
         public String getUserSig() {
-            return this.f36458a.userSig;
+            return this.f22767a.userSig;
         }
     }
 
@@ -459,22 +459,22 @@ public class TrtcCloudJni {
     static class SpeedTestResult {
 
         /* renamed from: a  reason: collision with root package name */
-        private TRTCCloudDef.TRTCSpeedTestResult f36459a = new TRTCCloudDef.TRTCSpeedTestResult();
+        private TRTCCloudDef.TRTCSpeedTestResult f22768a = new TRTCCloudDef.TRTCSpeedTestResult();
 
         SpeedTestResult() {
         }
 
         public static SpeedTestResult createSpeedTestResult(boolean z, String str, String str2, int i, float f, float f2, int i2, int i3, int i4) {
             SpeedTestResult speedTestResult = new SpeedTestResult();
-            speedTestResult.f36459a.success = z;
-            speedTestResult.f36459a.errMsg = str;
-            speedTestResult.f36459a.ip = str2;
-            speedTestResult.f36459a.quality = i;
-            speedTestResult.f36459a.upLostRate = f;
-            speedTestResult.f36459a.downLostRate = f2;
-            speedTestResult.f36459a.rtt = i2;
-            speedTestResult.f36459a.availableUpBandwidth = i3;
-            speedTestResult.f36459a.availableDownBandwidth = i4;
+            speedTestResult.f22768a.success = z;
+            speedTestResult.f22768a.errMsg = str;
+            speedTestResult.f22768a.ip = str2;
+            speedTestResult.f22768a.quality = i;
+            speedTestResult.f22768a.upLostRate = f;
+            speedTestResult.f22768a.downLostRate = f2;
+            speedTestResult.f22768a.rtt = i2;
+            speedTestResult.f22768a.availableUpBandwidth = i3;
+            speedTestResult.f22768a.availableDownBandwidth = i4;
             return speedTestResult;
         }
     }
@@ -483,33 +483,33 @@ public class TrtcCloudJni {
     static class Statistics {
 
         /* renamed from: a  reason: collision with root package name */
-        private TRTCStatistics f36460a = new TRTCStatistics();
+        private TRTCStatistics f22769a = new TRTCStatistics();
 
         Statistics() {
         }
 
         public static Statistics createStatistics(int i, int i2, int i3, int i4, int i5, int i6, long j, long j2, ArrayList<LocalStatistics> arrayList, ArrayList<RemoteStatistics> arrayList2) {
             Statistics statistics = new Statistics();
-            statistics.f36460a.appCpu = i;
-            statistics.f36460a.systemCpu = i2;
-            statistics.f36460a.upLoss = i3;
-            statistics.f36460a.downLoss = i4;
-            statistics.f36460a.rtt = i5;
-            statistics.f36460a.gatewayRtt = i6;
-            statistics.f36460a.sendBytes = j;
-            statistics.f36460a.receiveBytes = j2;
-            statistics.f36460a.localArray = new ArrayList<>();
-            statistics.f36460a.remoteArray = new ArrayList<>();
+            statistics.f22769a.appCpu = i;
+            statistics.f22769a.systemCpu = i2;
+            statistics.f22769a.upLoss = i3;
+            statistics.f22769a.downLoss = i4;
+            statistics.f22769a.rtt = i5;
+            statistics.f22769a.gatewayRtt = i6;
+            statistics.f22769a.sendBytes = j;
+            statistics.f22769a.receiveBytes = j2;
+            statistics.f22769a.localArray = new ArrayList<>();
+            statistics.f22769a.remoteArray = new ArrayList<>();
             if (arrayList != null) {
                 Iterator<LocalStatistics> it = arrayList.iterator();
                 while (it.hasNext()) {
-                    statistics.f36460a.localArray.add(it.next().f36451a);
+                    statistics.f22769a.localArray.add(it.next().f22760a);
                 }
             }
             if (arrayList2 != null) {
                 Iterator<RemoteStatistics> it2 = arrayList2.iterator();
                 while (it2.hasNext()) {
-                    statistics.f36460a.remoteArray.add(it2.next().f36456a);
+                    statistics.f22769a.remoteArray.add(it2.next().f22765a);
                 }
             }
             return statistics;
@@ -520,46 +520,46 @@ public class TrtcCloudJni {
     static class StreamEncoderParam {
 
         /* renamed from: a  reason: collision with root package name */
-        private TRTCCloudDef.TRTCStreamEncoderParam f36461a;
+        private TRTCCloudDef.TRTCStreamEncoderParam f22770a;
 
         public StreamEncoderParam(TRTCCloudDef.TRTCStreamEncoderParam tRTCStreamEncoderParam) {
-            this.f36461a = tRTCStreamEncoderParam;
+            this.f22770a = tRTCStreamEncoderParam;
         }
 
         public int getAudioEncodedChannelNum() {
-            return this.f36461a.audioEncodedChannelNum;
+            return this.f22770a.audioEncodedChannelNum;
         }
 
         public int getAudioEncodedCodecType() {
-            return this.f36461a.audioEncodedCodecType;
+            return this.f22770a.audioEncodedCodecType;
         }
 
         public int getAudioEncodedKbps() {
-            return this.f36461a.audioEncodedKbps;
+            return this.f22770a.audioEncodedKbps;
         }
 
         public int getAudioEncodedSampleRate() {
-            return this.f36461a.audioEncodedSampleRate;
+            return this.f22770a.audioEncodedSampleRate;
         }
 
         public int getVideoEncodedFPS() {
-            return this.f36461a.videoEncodedFPS;
+            return this.f22770a.videoEncodedFPS;
         }
 
         public int getVideoEncodedGOP() {
-            return this.f36461a.videoEncodedGOP;
+            return this.f22770a.videoEncodedGOP;
         }
 
         public int getVideoEncodedHeight() {
-            return this.f36461a.videoEncodedHeight;
+            return this.f22770a.videoEncodedHeight;
         }
 
         public int getVideoEncodedKbps() {
-            return this.f36461a.videoEncodedKbps;
+            return this.f22770a.videoEncodedKbps;
         }
 
         public int getVideoEncodedWidth() {
-            return this.f36461a.videoEncodedWidth;
+            return this.f22770a.videoEncodedWidth;
         }
     }
 
@@ -567,64 +567,64 @@ public class TrtcCloudJni {
     static class StreamMixingConfig {
 
         /* renamed from: a  reason: collision with root package name */
-        private TRTCCloudDef.TRTCStreamMixingConfig f36462a;
+        private TRTCCloudDef.TRTCStreamMixingConfig f22771a;
 
         public StreamMixingConfig(TRTCCloudDef.TRTCStreamMixingConfig tRTCStreamMixingConfig) {
-            this.f36462a = tRTCStreamMixingConfig;
+            this.f22771a = tRTCStreamMixingConfig;
         }
 
         public TRTCUser[] getAudioMixUserList() {
-            if (this.f36462a.audioMixUserList == null) {
+            if (this.f22771a.audioMixUserList == null) {
                 return null;
             }
-            TRTCUser[] tRTCUserArr = new TRTCUser[this.f36462a.audioMixUserList.size()];
+            TRTCUser[] tRTCUserArr = new TRTCUser[this.f22771a.audioMixUserList.size()];
             int i = 0;
             while (true) {
                 int i2 = i;
-                if (i2 >= this.f36462a.audioMixUserList.size()) {
+                if (i2 >= this.f22771a.audioMixUserList.size()) {
                     return tRTCUserArr;
                 }
-                tRTCUserArr[i2] = new TRTCUser(this.f36462a.audioMixUserList.get(i2));
+                tRTCUserArr[i2] = new TRTCUser(this.f22771a.audioMixUserList.get(i2));
                 i = i2 + 1;
             }
         }
 
         public int getBackgroundColor() {
-            return this.f36462a.backgroundColor;
+            return this.f22771a.backgroundColor;
         }
 
         public String getBackgroundImage() {
-            return this.f36462a.backgroundImage != null ? this.f36462a.backgroundImage : "";
+            return this.f22771a.backgroundImage != null ? this.f22771a.backgroundImage : "";
         }
 
         public VideoLayout[] getVideoLayoutList() {
-            if (this.f36462a.videoLayoutList == null) {
+            if (this.f22771a.videoLayoutList == null) {
                 return null;
             }
-            VideoLayout[] videoLayoutArr = new VideoLayout[this.f36462a.videoLayoutList.size()];
+            VideoLayout[] videoLayoutArr = new VideoLayout[this.f22771a.videoLayoutList.size()];
             int i = 0;
             while (true) {
                 int i2 = i;
-                if (i2 >= this.f36462a.videoLayoutList.size()) {
+                if (i2 >= this.f22771a.videoLayoutList.size()) {
                     return videoLayoutArr;
                 }
-                videoLayoutArr[i2] = new VideoLayout(this.f36462a.videoLayoutList.get(i2));
+                videoLayoutArr[i2] = new VideoLayout(this.f22771a.videoLayoutList.get(i2));
                 i = i2 + 1;
             }
         }
 
         public Watermark[] getWatermarkList() {
-            if (this.f36462a.watermarkList == null) {
+            if (this.f22771a.watermarkList == null) {
                 return null;
             }
-            Watermark[] watermarkArr = new Watermark[this.f36462a.watermarkList.size()];
+            Watermark[] watermarkArr = new Watermark[this.f22771a.watermarkList.size()];
             int i = 0;
             while (true) {
                 int i2 = i;
-                if (i2 >= this.f36462a.watermarkList.size()) {
+                if (i2 >= this.f22771a.watermarkList.size()) {
                     return watermarkArr;
                 }
-                watermarkArr[i2] = new Watermark(this.f36462a.watermarkList.get(i2));
+                watermarkArr[i2] = new Watermark(this.f22771a.watermarkList.get(i2));
                 i = i2 + 1;
             }
         }
@@ -634,26 +634,26 @@ public class TrtcCloudJni {
     static class SwitchRoomConfig {
 
         /* renamed from: a  reason: collision with root package name */
-        private TRTCCloudDef.TRTCSwitchRoomConfig f36463a;
+        private TRTCCloudDef.TRTCSwitchRoomConfig f22772a;
 
         public SwitchRoomConfig(TRTCCloudDef.TRTCSwitchRoomConfig tRTCSwitchRoomConfig) {
-            this.f36463a = tRTCSwitchRoomConfig;
+            this.f22772a = tRTCSwitchRoomConfig;
         }
 
         public String getPrivateMapKey() {
-            return this.f36463a.privateMapKey != null ? this.f36463a.privateMapKey : "";
+            return this.f22772a.privateMapKey != null ? this.f22772a.privateMapKey : "";
         }
 
         public int getRoomId() {
-            return this.f36463a.roomId;
+            return this.f22772a.roomId;
         }
 
         public String getStringRoomId() {
-            return this.f36463a.strRoomId != null ? this.f36463a.strRoomId : "";
+            return this.f22772a.strRoomId != null ? this.f22772a.strRoomId : "";
         }
 
         public String getUserSig() {
-            return this.f36463a.userSig != null ? this.f36463a.userSig : "";
+            return this.f22772a.userSig != null ? this.f22772a.userSig : "";
         }
     }
 
@@ -661,22 +661,22 @@ public class TrtcCloudJni {
     static class TRTCUser {
 
         /* renamed from: a  reason: collision with root package name */
-        private TRTCCloudDef.TRTCUser f36464a;
+        private TRTCCloudDef.TRTCUser f22773a;
 
         public TRTCUser(TRTCCloudDef.TRTCUser tRTCUser) {
-            this.f36464a = tRTCUser;
+            this.f22773a = tRTCUser;
         }
 
         public int getIntRoomId() {
-            return this.f36464a.intRoomId;
+            return this.f22773a.intRoomId;
         }
 
         public String getStrRoomId() {
-            return this.f36464a.strRoomId != null ? this.f36464a.strRoomId : "";
+            return this.f22773a.strRoomId != null ? this.f22773a.strRoomId : "";
         }
 
         public String getUserId() {
-            return this.f36464a.userId != null ? this.f36464a.userId : "";
+            return this.f22773a.userId != null ? this.f22773a.userId : "";
         }
     }
 
@@ -684,82 +684,82 @@ public class TrtcCloudJni {
     static class TranscodingConfig {
 
         /* renamed from: a  reason: collision with root package name */
-        private TRTCCloudDef.TRTCTranscodingConfig f36465a;
+        private TRTCCloudDef.TRTCTranscodingConfig f22774a;
 
         public TranscodingConfig(TRTCCloudDef.TRTCTranscodingConfig tRTCTranscodingConfig) {
-            this.f36465a = tRTCTranscodingConfig;
+            this.f22774a = tRTCTranscodingConfig;
         }
 
         public int getAppId() {
-            return this.f36465a.appId;
+            return this.f22774a.appId;
         }
 
         public int getAudioBitrate() {
-            return this.f36465a.audioBitrate;
+            return this.f22774a.audioBitrate;
         }
 
         public int getAudioChannels() {
-            return this.f36465a.audioChannels;
+            return this.f22774a.audioChannels;
         }
 
         public int getAudioSampleRate() {
-            return this.f36465a.audioSampleRate;
+            return this.f22774a.audioSampleRate;
         }
 
         public int getBackgroundColor() {
-            return this.f36465a.backgroundColor;
+            return this.f22774a.backgroundColor;
         }
 
         public String getBackgroundImage() {
-            return TextUtils.isEmpty(this.f36465a.backgroundImage) ? "" : this.f36465a.backgroundImage;
+            return TextUtils.isEmpty(this.f22774a.backgroundImage) ? "" : this.f22774a.backgroundImage;
         }
 
         public int getBizId() {
-            return this.f36465a.bizId;
+            return this.f22774a.bizId;
         }
 
         public MixUser[] getMixUsers() {
-            if (this.f36465a.mixUsers == null) {
+            if (this.f22774a.mixUsers == null) {
                 return null;
             }
-            MixUser[] mixUserArr = new MixUser[this.f36465a.mixUsers.size()];
+            MixUser[] mixUserArr = new MixUser[this.f22774a.mixUsers.size()];
             int i = 0;
             while (true) {
                 int i2 = i;
-                if (i2 >= this.f36465a.mixUsers.size()) {
+                if (i2 >= this.f22774a.mixUsers.size()) {
                     return mixUserArr;
                 }
-                mixUserArr[i2] = new MixUser(this.f36465a.mixUsers.get(i2), (byte) 0);
+                mixUserArr[i2] = new MixUser(this.f22774a.mixUsers.get(i2), (byte) 0);
                 i = i2 + 1;
             }
         }
 
         public int getMode() {
-            return this.f36465a.mode;
+            return this.f22774a.mode;
         }
 
         public String getStreamId() {
-            return TextUtils.isEmpty(this.f36465a.streamId) ? "" : this.f36465a.streamId;
+            return TextUtils.isEmpty(this.f22774a.streamId) ? "" : this.f22774a.streamId;
         }
 
         public int getVideoBitrate() {
-            return this.f36465a.videoBitrate;
+            return this.f22774a.videoBitrate;
         }
 
         public int getVideoFramerate() {
-            return this.f36465a.videoFramerate;
+            return this.f22774a.videoFramerate;
         }
 
         public int getVideoGOP() {
-            return this.f36465a.videoGOP;
+            return this.f22774a.videoGOP;
         }
 
         public int getVideoHeight() {
-            return this.f36465a.videoHeight;
+            return this.f22774a.videoHeight;
         }
 
         public int getVideoWidth() {
-            return this.f36465a.videoWidth;
+            return this.f22774a.videoWidth;
         }
     }
 
@@ -767,34 +767,34 @@ public class TrtcCloudJni {
     static class VideoEncParams {
 
         /* renamed from: a  reason: collision with root package name */
-        private TRTCCloudDef.TRTCVideoEncParam f36466a;
+        private TRTCCloudDef.TRTCVideoEncParam f22775a;
 
         public VideoEncParams(TRTCCloudDef.TRTCVideoEncParam tRTCVideoEncParam) {
-            this.f36466a = tRTCVideoEncParam;
+            this.f22775a = tRTCVideoEncParam;
         }
 
         public int getMinVideoBitrate() {
-            return this.f36466a.minVideoBitrate;
+            return this.f22775a.minVideoBitrate;
         }
 
         public int getVideoBitrate() {
-            return this.f36466a.videoBitrate;
+            return this.f22775a.videoBitrate;
         }
 
         public int getVideoFps() {
-            return this.f36466a.videoFps;
+            return this.f22775a.videoFps;
         }
 
         public int getVideoResolution() {
-            return this.f36466a.videoResolution;
+            return this.f22775a.videoResolution;
         }
 
         public int getVideoResolutionMode() {
-            return this.f36466a.videoResolutionMode;
+            return this.f22775a.videoResolutionMode;
         }
 
         public boolean isEnableAdjustRes() {
-            return this.f36466a.enableAdjustRes;
+            return this.f22775a.enableAdjustRes;
         }
     }
 
@@ -802,50 +802,50 @@ public class TrtcCloudJni {
     static class VideoLayout {
 
         /* renamed from: a  reason: collision with root package name */
-        private TRTCCloudDef.TRTCVideoLayout f36467a;
+        private TRTCCloudDef.TRTCVideoLayout f22776a;
 
         public VideoLayout(TRTCCloudDef.TRTCVideoLayout tRTCVideoLayout) {
-            this.f36467a = tRTCVideoLayout;
+            this.f22776a = tRTCVideoLayout;
         }
 
         public int getBackgroundColor() {
-            return this.f36467a.backgroundColor;
+            return this.f22776a.backgroundColor;
         }
 
         public int getFillMode() {
-            return this.f36467a.fillMode;
+            return this.f22776a.fillMode;
         }
 
         public int getHeight() {
-            return this.f36467a.height;
+            return this.f22776a.height;
         }
 
         public String getPlaceHolderImage() {
-            return this.f36467a.placeHolderImage != null ? this.f36467a.placeHolderImage : "";
+            return this.f22776a.placeHolderImage != null ? this.f22776a.placeHolderImage : "";
         }
 
         public TRTCUser getTRTCUser() {
-            return new TRTCUser(this.f36467a.fixedVideoUser);
+            return new TRTCUser(this.f22776a.fixedVideoUser);
         }
 
         public int getVideoStreamType() {
-            return this.f36467a.fixedVideoStreamType;
+            return this.f22776a.fixedVideoStreamType;
         }
 
         public int getWidth() {
-            return this.f36467a.width;
+            return this.f22776a.width;
         }
 
         public int getX() {
-            return this.f36467a.x;
+            return this.f22776a.x;
         }
 
         public int getY() {
-            return this.f36467a.y;
+            return this.f22776a.y;
         }
 
         public int getZOrder() {
-            return this.f36467a.zOrder;
+            return this.f22776a.zOrder;
         }
     }
 
@@ -853,34 +853,34 @@ public class TrtcCloudJni {
     static class Watermark {
 
         /* renamed from: a  reason: collision with root package name */
-        private TRTCCloudDef.TRTCWatermark f36468a;
+        private TRTCCloudDef.TRTCWatermark f22777a;
 
         public Watermark(TRTCCloudDef.TRTCWatermark tRTCWatermark) {
-            this.f36468a = tRTCWatermark;
+            this.f22777a = tRTCWatermark;
         }
 
         public int getHeight() {
-            return this.f36468a.height;
+            return this.f22777a.height;
         }
 
         public String getWatermarkUrl() {
-            return this.f36468a.watermarkUrl != null ? this.f36468a.watermarkUrl : "";
+            return this.f22777a.watermarkUrl != null ? this.f22777a.watermarkUrl : "";
         }
 
         public int getWidth() {
-            return this.f36468a.width;
+            return this.f22777a.width;
         }
 
         public int getX() {
-            return this.f36468a.x;
+            return this.f22777a.x;
         }
 
         public int getY() {
-            return this.f36468a.y;
+            return this.f22777a.y;
         }
 
         public int getZOrder() {
-            return this.f36468a.zOrder;
+            return this.f22777a.zOrder;
         }
     }
 
@@ -888,11 +888,11 @@ public class TrtcCloudJni {
     static final class a<T> {
 
         /* renamed from: a  reason: collision with root package name */
-        public int f36469a;
+        public int f22778a;
         public GLConstants.PixelFormatType b;
 
         /* renamed from: c  reason: collision with root package name */
-        public GLConstants.PixelBufferType f36470c;
+        public GLConstants.PixelBufferType f22779c;
         public T d;
 
         private a() {
@@ -2000,14 +2000,14 @@ public class TrtcCloudJni {
     public void onSpeedTest(SpeedTestResult speedTestResult, int i, int i2) {
         TRTCCloudListener tRTCCloudListener = this.mListener;
         if (tRTCCloudListener != null) {
-            tRTCCloudListener.onSpeedTest(speedTestResult.f36459a, i, i2);
+            tRTCCloudListener.onSpeedTest(speedTestResult.f22768a, i, i2);
         }
     }
 
     public void onSpeedTestResult(SpeedTestResult speedTestResult) {
         TRTCCloudListener tRTCCloudListener = this.mListener;
         if (tRTCCloudListener != null) {
-            tRTCCloudListener.onSpeedTestResult(speedTestResult.f36459a);
+            tRTCCloudListener.onSpeedTestResult(speedTestResult.f22768a);
         }
     }
 
@@ -2035,7 +2035,7 @@ public class TrtcCloudJni {
     public void onStatistics(Statistics statistics) {
         TRTCCloudListener tRTCCloudListener = this.mListener;
         if (tRTCCloudListener != null) {
-            tRTCCloudListener.onStatistics(statistics.f36460a);
+            tRTCCloudListener.onStatistics(statistics.f22769a);
         }
     }
 
@@ -2393,14 +2393,14 @@ public class TrtcCloudJni {
                 } else {
                     synchronized (this.mVideoFrameListenerWrapper) {
                         if (this.mVideoFrameListenerWrapper.d != null) {
-                            nativeEnableVideoCustomPreprocess(this.mNativeTrtcCloudJni, false, this.mVideoFrameListenerWrapper.f36469a, this.mVideoFrameListenerWrapper.b.getValue(), this.mVideoFrameListenerWrapper.f36470c.mValue);
+                            nativeEnableVideoCustomPreprocess(this.mNativeTrtcCloudJni, false, this.mVideoFrameListenerWrapper.f22778a, this.mVideoFrameListenerWrapper.b.getValue(), this.mVideoFrameListenerWrapper.f22779c.mValue);
                         }
                         this.mVideoFrameListenerWrapper.d = tRTCVideoFrameListener;
-                        this.mVideoFrameListenerWrapper.f36469a = i;
+                        this.mVideoFrameListenerWrapper.f22778a = i;
                         this.mVideoFrameListenerWrapper.b = convertTRTCFormatTypeToPixelFormatType;
-                        this.mVideoFrameListenerWrapper.f36470c = convertTRTCBufferTypeToPixelBufferType;
+                        this.mVideoFrameListenerWrapper.f22779c = convertTRTCBufferTypeToPixelBufferType;
                         if (tRTCVideoFrameListener != 0) {
-                            nativeEnableVideoCustomPreprocess(this.mNativeTrtcCloudJni, true, this.mVideoFrameListenerWrapper.f36469a, this.mVideoFrameListenerWrapper.b.getValue(), this.mVideoFrameListenerWrapper.f36470c.mValue);
+                            nativeEnableVideoCustomPreprocess(this.mNativeTrtcCloudJni, true, this.mVideoFrameListenerWrapper.f22778a, this.mVideoFrameListenerWrapper.b.getValue(), this.mVideoFrameListenerWrapper.f22779c.mValue);
                         }
                     }
                 }
@@ -2430,11 +2430,11 @@ public class TrtcCloudJni {
                 } else {
                     synchronized (this.mLocalVideoRenderListenerWrapper) {
                         if (this.mLocalVideoRenderListenerWrapper.d != null) {
-                            if (this.mLocalVideoRenderListenerWrapper.b == convertTRTCFormatTypeToPixelFormatType && this.mLocalVideoRenderListenerWrapper.f36470c == convertTRTCBufferTypeToPixelBufferType) {
+                            if (this.mLocalVideoRenderListenerWrapper.b == convertTRTCFormatTypeToPixelFormatType && this.mLocalVideoRenderListenerWrapper.f22779c == convertTRTCBufferTypeToPixelBufferType) {
                                 z = false;
                                 if (!z || tRTCVideoRenderListener == 0) {
-                                    nativeEnableVideoCustomRender(this.mNativeTrtcCloudJni, false, "", 0, this.mLocalVideoRenderListenerWrapper.b.getValue(), this.mLocalVideoRenderListenerWrapper.f36470c.mValue);
-                                    nativeEnableVideoCustomRender(this.mNativeTrtcCloudJni, false, "", 2, this.mLocalVideoRenderListenerWrapper.b.getValue(), this.mLocalVideoRenderListenerWrapper.f36470c.mValue);
+                                    nativeEnableVideoCustomRender(this.mNativeTrtcCloudJni, false, "", 0, this.mLocalVideoRenderListenerWrapper.b.getValue(), this.mLocalVideoRenderListenerWrapper.f22779c.mValue);
+                                    nativeEnableVideoCustomRender(this.mNativeTrtcCloudJni, false, "", 2, this.mLocalVideoRenderListenerWrapper.b.getValue(), this.mLocalVideoRenderListenerWrapper.f22779c.mValue);
                                 } else {
                                     this.mLocalVideoRenderListenerWrapper.d = tRTCVideoRenderListener;
                                 }
@@ -2442,15 +2442,15 @@ public class TrtcCloudJni {
                             z = true;
                             if (z) {
                             }
-                            nativeEnableVideoCustomRender(this.mNativeTrtcCloudJni, false, "", 0, this.mLocalVideoRenderListenerWrapper.b.getValue(), this.mLocalVideoRenderListenerWrapper.f36470c.mValue);
-                            nativeEnableVideoCustomRender(this.mNativeTrtcCloudJni, false, "", 2, this.mLocalVideoRenderListenerWrapper.b.getValue(), this.mLocalVideoRenderListenerWrapper.f36470c.mValue);
+                            nativeEnableVideoCustomRender(this.mNativeTrtcCloudJni, false, "", 0, this.mLocalVideoRenderListenerWrapper.b.getValue(), this.mLocalVideoRenderListenerWrapper.f22779c.mValue);
+                            nativeEnableVideoCustomRender(this.mNativeTrtcCloudJni, false, "", 2, this.mLocalVideoRenderListenerWrapper.b.getValue(), this.mLocalVideoRenderListenerWrapper.f22779c.mValue);
                         }
                         this.mLocalVideoRenderListenerWrapper.d = tRTCVideoRenderListener;
                         this.mLocalVideoRenderListenerWrapper.b = convertTRTCFormatTypeToPixelFormatType;
-                        this.mLocalVideoRenderListenerWrapper.f36470c = convertTRTCBufferTypeToPixelBufferType;
+                        this.mLocalVideoRenderListenerWrapper.f22779c = convertTRTCBufferTypeToPixelBufferType;
                         if (tRTCVideoRenderListener != 0) {
-                            nativeEnableVideoCustomRender(this.mNativeTrtcCloudJni, true, "", 0, this.mLocalVideoRenderListenerWrapper.b.getValue(), this.mLocalVideoRenderListenerWrapper.f36470c.mValue);
-                            nativeEnableVideoCustomRender(this.mNativeTrtcCloudJni, true, "", 2, this.mLocalVideoRenderListenerWrapper.b.getValue(), this.mLocalVideoRenderListenerWrapper.f36470c.mValue);
+                            nativeEnableVideoCustomRender(this.mNativeTrtcCloudJni, true, "", 0, this.mLocalVideoRenderListenerWrapper.b.getValue(), this.mLocalVideoRenderListenerWrapper.f22779c.mValue);
+                            nativeEnableVideoCustomRender(this.mNativeTrtcCloudJni, true, "", 2, this.mLocalVideoRenderListenerWrapper.b.getValue(), this.mLocalVideoRenderListenerWrapper.f22779c.mValue);
                         }
                     }
                 }
@@ -2594,11 +2594,11 @@ public class TrtcCloudJni {
                     synchronized (this.mRemoteVideoRenderListenerMap) {
                         a<TRTCCloudListener.TRTCVideoRenderListener> aVar = this.mRemoteVideoRenderListenerMap.get(str);
                         if (aVar != null) {
-                            if (aVar.b == convertTRTCFormatTypeToPixelFormatType && aVar.f36470c == convertTRTCBufferTypeToPixelBufferType) {
+                            if (aVar.b == convertTRTCFormatTypeToPixelFormatType && aVar.f22779c == convertTRTCBufferTypeToPixelBufferType) {
                                 z = false;
                                 if (!z || tRTCVideoRenderListener == 0) {
-                                    nativeEnableVideoCustomRender(this.mNativeTrtcCloudJni, false, "", 0, aVar.b.getValue(), aVar.f36470c.mValue);
-                                    nativeEnableVideoCustomRender(this.mNativeTrtcCloudJni, false, "", 2, aVar.b.getValue(), aVar.f36470c.mValue);
+                                    nativeEnableVideoCustomRender(this.mNativeTrtcCloudJni, false, "", 0, aVar.b.getValue(), aVar.f22779c.mValue);
+                                    nativeEnableVideoCustomRender(this.mNativeTrtcCloudJni, false, "", 2, aVar.b.getValue(), aVar.f22779c.mValue);
                                 } else {
                                     aVar.d = tRTCVideoRenderListener;
                                     this.mRemoteVideoRenderListenerMap.put(str, aVar);
@@ -2607,16 +2607,16 @@ public class TrtcCloudJni {
                             z = true;
                             if (z) {
                             }
-                            nativeEnableVideoCustomRender(this.mNativeTrtcCloudJni, false, "", 0, aVar.b.getValue(), aVar.f36470c.mValue);
-                            nativeEnableVideoCustomRender(this.mNativeTrtcCloudJni, false, "", 2, aVar.b.getValue(), aVar.f36470c.mValue);
+                            nativeEnableVideoCustomRender(this.mNativeTrtcCloudJni, false, "", 0, aVar.b.getValue(), aVar.f22779c.mValue);
+                            nativeEnableVideoCustomRender(this.mNativeTrtcCloudJni, false, "", 2, aVar.b.getValue(), aVar.f22779c.mValue);
                         }
                         if (tRTCVideoRenderListener != 0) {
                             a<TRTCCloudListener.TRTCVideoRenderListener> aVar2 = new a<>((byte) 0);
                             aVar2.d = tRTCVideoRenderListener;
                             aVar2.b = convertTRTCFormatTypeToPixelFormatType;
-                            aVar2.f36470c = convertTRTCBufferTypeToPixelBufferType;
-                            nativeEnableVideoCustomRender(this.mNativeTrtcCloudJni, true, str, 0, aVar2.b.getValue(), aVar2.f36470c.mValue);
-                            nativeEnableVideoCustomRender(this.mNativeTrtcCloudJni, true, str, 2, aVar2.b.getValue(), aVar2.f36470c.mValue);
+                            aVar2.f22779c = convertTRTCBufferTypeToPixelBufferType;
+                            nativeEnableVideoCustomRender(this.mNativeTrtcCloudJni, true, str, 0, aVar2.b.getValue(), aVar2.f22779c.mValue);
+                            nativeEnableVideoCustomRender(this.mNativeTrtcCloudJni, true, str, 2, aVar2.b.getValue(), aVar2.f22779c.mValue);
                             this.mRemoteVideoRenderListenerMap.put(str, aVar2);
                         } else {
                             this.mRemoteVideoRenderListenerMap.remove(str);

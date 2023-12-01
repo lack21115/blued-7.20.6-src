@@ -165,7 +165,7 @@ public class EfsReporter {
         }
 
         public Builder maxConcurrentUploadCnt(int i) {
-            d.a().f21737a = i;
+            d.a().a = i;
             return this;
         }
 
@@ -210,9 +210,9 @@ public class EfsReporter {
     }
 
     public void flushRecordLogImmediately(String str) {
-        e a2 = a.b.a().f21726c.a((byte) 1);
-        if (a2 != null) {
-            a2.a(str);
+        e a = a.b.a().c.a((byte) 1);
+        if (a != null) {
+            a.a(str);
         }
     }
 
@@ -225,12 +225,12 @@ public class EfsReporter {
     }
 
     public void getAllSdkConfig(String[] strArr, IConfigCallback iConfigCallback) {
-        c a2 = c.a();
-        a2.e.put(iConfigCallback, strArr);
-        if (a2.d.f.isEmpty()) {
+        c a = c.a();
+        a.e.put(iConfigCallback, strArr);
+        if (a.d.f.isEmpty()) {
             return;
         }
-        a2.d();
+        a.d();
     }
 
     public void refreshConfig(String str) {
@@ -254,6 +254,6 @@ public class EfsReporter {
     }
 
     public void setEnableRefreshConfigFromRemote(boolean z) {
-        c.a().f21752c = z;
+        c.a().c = z;
     }
 }

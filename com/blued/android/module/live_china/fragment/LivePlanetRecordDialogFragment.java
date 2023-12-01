@@ -32,7 +32,6 @@ import com.blued.android.module.live_china.utils.LiveRoomHttpUtils;
 import com.chad.library.adapter.base.BaseMultiItemQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
-import com.scwang.smartrefresh.layout.listener.OnMultiPurposeListener;
 import com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener;
 import java.util.ArrayList;
 import java.util.List;
@@ -47,9 +46,7 @@ import kotlin.jvm.internal.Ref;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LivePlanetRecordDialogFragment.class */
 public final class LivePlanetRecordDialogFragment extends BaseDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f13135a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private MyAdapter d;
     private int f;
     private boolean g;
@@ -65,9 +62,7 @@ public final class LivePlanetRecordDialogFragment extends BaseDialogFragment {
             return FragmentLivePlanetRecordBinding.a(LayoutInflater.from(LivePlanetRecordDialogFragment.this.getContext()));
         }
     });
-
-    /* renamed from: c  reason: collision with root package name */
-    private List<LivePlanetRecordModel> f13136c = new ArrayList();
+    private List<LivePlanetRecordModel> c = new ArrayList();
     private String e = "";
 
     @Metadata
@@ -135,9 +130,7 @@ public final class LivePlanetRecordDialogFragment extends BaseDialogFragment {
     @Metadata
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LivePlanetRecordDialogFragment$MyAdapter.class */
     public static final class MyAdapter extends BaseMultiItemQuickAdapter<LivePlanetRecordModel, BaseViewHolder> {
-
-        /* renamed from: a  reason: collision with root package name */
-        private Context f13137a;
+        private Context a;
         private List<LivePlanetRecordModel> b;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -146,7 +139,7 @@ public final class LivePlanetRecordDialogFragment extends BaseDialogFragment {
             Intrinsics.e(models, "models");
             ArrayList arrayList = new ArrayList();
             this.b = arrayList;
-            this.f13137a = context;
+            this.a = context;
             arrayList.clear();
             this.b.addAll(models);
             addItemType(0, R.layout.live_planet_record_item);
@@ -161,7 +154,7 @@ public final class LivePlanetRecordDialogFragment extends BaseDialogFragment {
         public static final void a(Ref.BooleanRef reslut, LivePlanetRecordModel livePlanetRecordModel, MyAdapter this$0, BaseViewHolder baseViewHolder, View view) {
             Intrinsics.e(reslut, "$reslut");
             Intrinsics.e(this$0, "this$0");
-            if (reslut.f42538a) {
+            if (reslut.a) {
                 Intrinsics.a(livePlanetRecordModel);
                 livePlanetRecordModel.setExpand(!livePlanetRecordModel.getExpand());
                 this$0.a(livePlanetRecordModel.getExpand(), baseViewHolder);
@@ -169,7 +162,6 @@ public final class LivePlanetRecordDialogFragment extends BaseDialogFragment {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.chad.library.adapter.base.BaseQuickAdapter
         /* renamed from: a */
         public void convert(BaseViewHolder baseViewHolder, LivePlanetRecordModel livePlanetRecordModel) {
             if (baseViewHolder != null) {
@@ -247,7 +239,7 @@ public final class LivePlanetRecordDialogFragment extends BaseDialogFragment {
         }
 
         public final Context getContext() {
-            return this.f13137a;
+            return this.a;
         }
     }
 
@@ -260,7 +252,7 @@ public final class LivePlanetRecordDialogFragment extends BaseDialogFragment {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void b(LivePlanetRecordDialogFragment this$0) {
         Intrinsics.e(this$0, "this$0");
-        this$0.i().f11965c.i();
+        this$0.i().c.i();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -269,19 +261,17 @@ public final class LivePlanetRecordDialogFragment extends BaseDialogFragment {
     }
 
     private final void j() {
-        i().f11965c.l(false);
+        i().c.b(false);
         BluedLoadMoreView bluedLoadMoreView = new BluedLoadMoreView(getContext());
         bluedLoadMoreView.setBackgroundColorRes(R.color.transparent);
-        i().f11965c.a(bluedLoadMoreView);
-        i().f11965c.b((OnMultiPurposeListener) new SimpleMultiPurposeListener() { // from class: com.blued.android.module.live_china.fragment.LivePlanetRecordDialogFragment$initView$1
-            @Override // com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener, com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
+        i().c.a(bluedLoadMoreView);
+        i().c.a(new SimpleMultiPurposeListener() { // from class: com.blued.android.module.live_china.fragment.LivePlanetRecordDialogFragment$initView$1
             public void onLoadMore(RefreshLayout refreshLayout) {
                 Intrinsics.e(refreshLayout, "refreshLayout");
                 super.onLoadMore(refreshLayout);
                 LivePlanetRecordDialogFragment.this.b(false);
             }
 
-            @Override // com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener, com.scwang.smartrefresh.layout.listener.OnRefreshListener
             public void onRefresh(RefreshLayout refreshLayout) {
                 Intrinsics.e(refreshLayout, "refreshLayout");
                 super.onRefresh(refreshLayout);
@@ -289,9 +279,9 @@ public final class LivePlanetRecordDialogFragment extends BaseDialogFragment {
             }
         });
         i().d.setLayoutManager(new LinearLayoutManager(getContext(), 1, false));
-        this.d = new MyAdapter(getContext(), this.f13136c);
+        this.d = new MyAdapter(getContext(), this.c);
         i().d.setAdapter(this.d);
-        i().f11964a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LivePlanetRecordDialogFragment$ay0IUMataml5uTA4BjroH0tN3U0
+        i().a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LivePlanetRecordDialogFragment$ay0IUMataml5uTA4BjroH0tN3U0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 LivePlanetRecordDialogFragment.a(LivePlanetRecordDialogFragment.this, view);
@@ -344,11 +334,11 @@ public final class LivePlanetRecordDialogFragment extends BaseDialogFragment {
                 FragmentLivePlanetRecordBinding i4;
                 super.onUIFinish();
                 i2 = LivePlanetRecordDialogFragment.this.i();
-                i2.f11965c.j();
+                i2.c.g();
                 i3 = LivePlanetRecordDialogFragment.this.i();
-                i3.f11965c.h();
+                i3.c.h();
                 i4 = LivePlanetRecordDialogFragment.this.i();
-                i4.f11965c.l(LivePlanetRecordDialogFragment.this.f());
+                i4.c.b(LivePlanetRecordDialogFragment.this.f());
             }
 
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
@@ -382,7 +372,7 @@ public final class LivePlanetRecordDialogFragment extends BaseDialogFragment {
     }
 
     public final List<LivePlanetRecordModel> d() {
-        return this.f13136c;
+        return this.c;
     }
 
     public final int e() {
@@ -394,7 +384,7 @@ public final class LivePlanetRecordDialogFragment extends BaseDialogFragment {
     }
 
     public final void g() {
-        List<LivePlanetRecordModel> list = this.f13136c;
+        List<LivePlanetRecordModel> list = this.c;
         if (list == null || list.size() <= 0) {
             i().b.setVisibility(0);
             i().d.setVisibility(8);
@@ -415,12 +405,12 @@ public final class LivePlanetRecordDialogFragment extends BaseDialogFragment {
             String string4 = getString(R.string.live_planet_record_time);
             Intrinsics.c(string4, "getString(R.string.live_planet_record_time)");
             livePlanetRecordModel.setCreate_time(string4);
-            this.f13136c.add(0, livePlanetRecordModel);
+            this.c.add(0, livePlanetRecordModel);
         }
         if (!this.g) {
             LivePlanetRecordModel livePlanetRecordModel2 = new LivePlanetRecordModel();
             livePlanetRecordModel2.setType(2);
-            this.f13136c.add(livePlanetRecordModel2);
+            this.c.add(livePlanetRecordModel2);
         }
         i().b.setVisibility(8);
         i().d.setVisibility(0);
@@ -433,7 +423,7 @@ public final class LivePlanetRecordDialogFragment extends BaseDialogFragment {
         if (myAdapter == null) {
             return;
         }
-        myAdapter.setNewData(this.f13136c);
+        myAdapter.setNewData(this.c);
     }
 
     public final void h() {
@@ -446,7 +436,6 @@ public final class LivePlanetRecordDialogFragment extends BaseDialogFragment {
         }
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
         int a2 = DensityUtils.a(getContext(), 520.0f);
         Dialog dialog = new Dialog(requireActivity(), R.style.transparentFrameWindowStyleLive);
@@ -464,7 +453,6 @@ public final class LivePlanetRecordDialogFragment extends BaseDialogFragment {
         return dialog;
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public void setupDialog(Dialog dialog, int i) {
         Intrinsics.e(dialog, "dialog");
         super.setupDialog(dialog, i);
@@ -482,13 +470,13 @@ public final class LivePlanetRecordDialogFragment extends BaseDialogFragment {
         j();
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void show(FragmentManager manager, String str) {
         Intrinsics.e(manager, "manager");
         try {
             FragmentTransaction beginTransaction = manager.beginTransaction();
             Intrinsics.c(beginTransaction, "manager.beginTransaction()");
-            beginTransaction.add(this, str);
+            beginTransaction.add((Fragment) this, str);
             beginTransaction.commitAllowingStateLoss();
         } catch (Exception e) {
             super.show(manager, str);

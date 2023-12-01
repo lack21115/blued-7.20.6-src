@@ -8,7 +8,7 @@ import android.os.Build;
 import android.os.Environment;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
+import com.huawei.hms.framework.common.ContainerUtils;
 import com.tencent.map.tools.net.NetUtil;
 import java.io.Closeable;
 import java.io.File;
@@ -54,13 +54,13 @@ public class c7 {
     private static float Z = 0.0f;
 
     /* renamed from: a  reason: collision with root package name */
-    public static final File f37350a;
+    public static final File f23659a;
     private static final int a0 = 20;
     public static final File b;
     private static final double b0 = 6378137.0d;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final File f37351c;
+    public static final File f23660c;
     private static final double c0 = 4.007501668557849E7d;
     private static final String d = "Tencent";
     private static final double d0 = 0.017453292519943295d;
@@ -92,10 +92,10 @@ public class c7 {
     public static final class b {
 
         /* renamed from: a  reason: collision with root package name */
-        private final boolean f37352a;
+        private final boolean f23661a;
 
         private b(boolean z) {
-            this.f37352a = z;
+            this.f23661a = z;
         }
 
         public final String a() {
@@ -103,7 +103,7 @@ public class c7 {
         }
 
         public final String b() {
-            return this.f37352a ? "" : c7.w;
+            return this.f23661a ? "" : c7.w;
         }
 
         public final String c() {
@@ -119,15 +119,15 @@ public class c7 {
         }
 
         public final String f() {
-            return (this.f37352a || c7.v == null) ? "" : c7.v;
+            return (this.f23661a || c7.v == null) ? "" : c7.v;
         }
 
         public final String g() {
-            return (this.f37352a || c7.r == null) ? "" : c7.r;
+            return (this.f23661a || c7.r == null) ? "" : c7.r;
         }
 
         public final String h() {
-            return (this.f37352a || c7.q == null) ? "" : c7.q;
+            return (this.f23661a || c7.q == null) ? "" : c7.q;
         }
 
         public final String i() {
@@ -139,11 +139,11 @@ public class c7 {
         }
 
         public final String k() {
-            return (this.f37352a || c7.s == null) ? "" : c7.s;
+            return (this.f23661a || c7.s == null) ? "" : c7.s;
         }
 
         public final int l() {
-            if (this.f37352a) {
+            if (this.f23661a) {
                 return 0;
             }
             return c7.u;
@@ -154,7 +154,7 @@ public class c7 {
         }
 
         public final String n() {
-            return (this.f37352a || c7.p == null) ? "" : c7.p;
+            return (this.f23661a || c7.p == null) ? "" : c7.p;
         }
 
         public final int o() {
@@ -168,10 +168,10 @@ public class c7 {
 
     static {
         File file = new File(Environment.getExternalStorageDirectory(), D());
-        f37350a = file;
+        f23659a = file;
         File file2 = new File(file, C());
         b = file2;
-        f37351c = new File(file2, B());
+        f23660c = new File(file2, B());
         g = null;
         h = null;
         i = null;
@@ -355,7 +355,7 @@ public class c7 {
     }
 
     public static void a(Context context, String str, String str2, String str3) {
-        ga.e = f37351c;
+        ga.e = f23660c;
         h = str;
         i = str2;
         w = str3;
@@ -475,14 +475,14 @@ public class c7 {
         }
         StringBuilder sb = new StringBuilder();
         sb.append(fileStreamPath.getPath());
-        sb.append(BridgeUtil.SPLIT_MARK);
+        sb.append("/");
         sb.append(str);
         return ha.a(bArr, sb.toString(), false) != 0;
     }
 
     public static byte[] a(Context context, String str) {
         File fileStreamPath = context.getFileStreamPath("tecentmap");
-        InputStream c2 = ha.c(fileStreamPath.getPath() + BridgeUtil.SPLIT_MARK + str);
+        InputStream c2 = ha.c(fileStreamPath.getPath() + "/" + str);
         byte[] b2 = ha.b(c2);
         ha.a((Closeable) c2);
         return b2;
@@ -564,7 +564,7 @@ public class c7 {
     }
 
     private static String b(String str) {
-        return str == null ? "" : str.replace("&", "").replace("#", "").replace("?", "");
+        return str == null ? "" : str.replace(ContainerUtils.FIELD_DELIMITER, "").replace("#", "").replace("?", "");
     }
 
     private static void b(DisplayMetrics displayMetrics) {

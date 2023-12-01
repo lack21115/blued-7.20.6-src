@@ -18,14 +18,14 @@ import java.util.Map;
 public class BuglyCrashRecorder extends CrashReport.CrashHandleCallback {
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f34723a = "";
+    public static String f21032a = "";
 
     @Override // com.tencent.bugly.BuglyStrategy.a
     public Map<String, String> onCrashHandleStart(int i, String str, String str2, String str3) {
         LinkedHashMap linkedHashMap = new LinkedHashMap();
-        linkedHashMap.put("TopFragment", BaseFragmentActivity.f9721a);
-        linkedHashMap.put("TopActivity", f34723a);
-        linkedHashMap.put("RoutePath", BaseActivity.f9718a);
+        linkedHashMap.put("TopFragment", BaseFragmentActivity.a);
+        linkedHashMap.put("TopActivity", f21032a);
+        linkedHashMap.put("RoutePath", BaseActivity.a);
         linkedHashMap.put("Tinker patch", TinkerTools.a());
         linkedHashMap.put("versionCode", "" + DeviceUtils.b());
         linkedHashMap.put("uid", UserInfo.getInstance().getLoginUserInfo().uid);

@@ -10,7 +10,7 @@ import org.json.JSONObject;
 final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f7237a = "ClearKeyUtil";
+    private static final String f4398a = "ClearKeyUtil";
 
     private a() {
     }
@@ -20,7 +20,7 @@ final class a {
     }
 
     public static byte[] a(byte[] bArr) {
-        if (af.f7632a >= 27) {
+        if (af.f4793a >= 27) {
             return bArr;
         }
         try {
@@ -48,7 +48,7 @@ final class a {
                 i = i2 + 1;
             }
         } catch (JSONException e) {
-            Log.e(f7237a, "Failed to adjust response data: " + af.a(bArr), e);
+            Log.e(f4398a, "Failed to adjust response data: " + af.a(bArr), e);
             return bArr;
         }
     }
@@ -58,6 +58,6 @@ final class a {
     }
 
     private static byte[] b(byte[] bArr) {
-        return af.f7632a >= 27 ? bArr : af.c(af.a(bArr).replace('+', '-').replace('/', '_'));
+        return af.f4793a >= 27 ? bArr : af.c(af.a(bArr).replace('+', '-').replace('/', '_'));
     }
 }

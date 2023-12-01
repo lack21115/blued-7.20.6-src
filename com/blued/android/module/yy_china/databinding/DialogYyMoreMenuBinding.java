@@ -11,17 +11,13 @@ import com.blued.android.module.yy_china.view.YYMoreMenuView;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/DialogYyMoreMenuBinding.class */
 public final class DialogYyMoreMenuBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f16440a;
+    public final ImageView a;
     public final YYMoreMenuView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final LinearLayout f16441c;
+    private final LinearLayout c;
 
     private DialogYyMoreMenuBinding(LinearLayout linearLayout, ImageView imageView, YYMoreMenuView yYMoreMenuView) {
-        this.f16441c = linearLayout;
-        this.f16440a = imageView;
+        this.c = linearLayout;
+        this.a = imageView;
         this.b = yYMoreMenuView;
     }
 
@@ -48,9 +44,8 @@ public final class DialogYyMoreMenuBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f16441c;
+        return this.c;
     }
 }

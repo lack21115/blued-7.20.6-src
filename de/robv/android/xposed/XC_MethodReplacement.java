@@ -1,10 +1,11 @@
 package de.robv.android.xposed;
 
+import android.view.Window;
 import de.robv.android.xposed.XC_MethodHook;
 
 /* loaded from: source-259656-dex2jar.jar:de/robv/android/xposed/XC_MethodReplacement.class */
 public abstract class XC_MethodReplacement extends XC_MethodHook {
-    public static final XC_MethodReplacement DO_NOTHING = new XC_MethodReplacement(20000) { // from class: de.robv.android.xposed.XC_MethodReplacement.1
+    public static final XC_MethodReplacement DO_NOTHING = new XC_MethodReplacement(Window.PROGRESS_SECONDARY_START) { // from class: de.robv.android.xposed.XC_MethodReplacement.1
         @Override // de.robv.android.xposed.XC_MethodReplacement
         protected Object replaceHookedMethod(XC_MethodHook.MethodHookParam methodHookParam) throws Throwable {
             return null;

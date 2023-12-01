@@ -15,11 +15,11 @@ import java.lang.ref.WeakReference;
 public final class ViewStubCompat extends View {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f1921a;
+    private int f1873a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private WeakReference<View> f1922c;
+    private WeakReference<View> f1874c;
     private LayoutInflater d;
     private OnInflateListener e;
 
@@ -34,19 +34,18 @@ public final class ViewStubCompat extends View {
 
     public ViewStubCompat(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f1921a = 0;
+        this.f1873a = 0;
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.ViewStubCompat, i, 0);
         this.b = obtainStyledAttributes.getResourceId(R.styleable.ViewStubCompat_android_inflatedId, -1);
-        this.f1921a = obtainStyledAttributes.getResourceId(R.styleable.ViewStubCompat_android_layout, 0);
+        this.f1873a = obtainStyledAttributes.getResourceId(R.styleable.ViewStubCompat_android_layout, 0);
         setId(obtainStyledAttributes.getResourceId(R.styleable.ViewStubCompat_android_id, -1));
         obtainStyledAttributes.recycle();
         setVisibility(8);
         setWillNotDraw(true);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void dispatchDraw(Canvas canvas) {
+    protected void dispatchDraw(Canvas canvas) {
     }
 
     @Override // android.view.View
@@ -62,19 +61,19 @@ public final class ViewStubCompat extends View {
     }
 
     public int getLayoutResource() {
-        return this.f1921a;
+        return this.f1873a;
     }
 
     public View inflate() {
         ViewParent parent = getParent();
         if (parent instanceof ViewGroup) {
-            if (this.f1921a != 0) {
+            if (this.f1873a != 0) {
                 ViewGroup viewGroup = (ViewGroup) parent;
                 LayoutInflater layoutInflater = this.d;
                 if (layoutInflater == null) {
                     layoutInflater = LayoutInflater.from(getContext());
                 }
-                View inflate = layoutInflater.inflate(this.f1921a, viewGroup, false);
+                View inflate = layoutInflater.inflate(this.f1873a, viewGroup, false);
                 int i = this.b;
                 if (i != -1) {
                     inflate.setId(i);
@@ -87,7 +86,7 @@ public final class ViewStubCompat extends View {
                 } else {
                     viewGroup.addView(inflate, indexOfChild);
                 }
-                this.f1922c = new WeakReference<>(inflate);
+                this.f1874c = new WeakReference<>(inflate);
                 OnInflateListener onInflateListener = this.e;
                 if (onInflateListener != null) {
                     onInflateListener.onInflate(this, inflate);
@@ -99,9 +98,8 @@ public final class ViewStubCompat extends View {
         throw new IllegalStateException("ViewStub must have a non-null ViewGroup viewParent");
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         setMeasuredDimension(0, 0);
     }
 
@@ -114,7 +112,7 @@ public final class ViewStubCompat extends View {
     }
 
     public void setLayoutResource(int i) {
-        this.f1921a = i;
+        this.f1873a = i;
     }
 
     public void setOnInflateListener(OnInflateListener onInflateListener) {
@@ -123,7 +121,7 @@ public final class ViewStubCompat extends View {
 
     @Override // android.view.View
     public void setVisibility(int i) {
-        WeakReference<View> weakReference = this.f1922c;
+        WeakReference<View> weakReference = this.f1874c;
         if (weakReference != null) {
             View view = weakReference.get();
             if (view == null) {

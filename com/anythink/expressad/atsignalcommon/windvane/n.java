@@ -10,11 +10,11 @@ import java.util.regex.Pattern;
 public final class n {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String[] f7112a = {"wv_hybrid:", "mraid:", "ssp:", "mvb_hybrid:"};
+    private static final String[] f4274a = {"wv_hybrid:", "mraid:", "ssp:", "mvb_hybrid:"};
     private static final Pattern b = Pattern.compile("hybrid://(.+?):(.+?)/(.+?)(\\?(.*?))?");
 
     /* renamed from: c  reason: collision with root package name */
-    private static final Pattern f7113c = Pattern.compile("mraid://(.+?):(.+?)/(.+?)(\\?(.*?))?");
+    private static final Pattern f4275c = Pattern.compile("mraid://(.+?):(.+?)/(.+?)(\\?(.*?))?");
     private static final Pattern d = Pattern.compile("ssp://(.+?):(.+?)/(.+?)(\\?(.*?))?");
     private static final Pattern e = Pattern.compile("mv://(.+?):(.+?)/(.+?)(\\?(.*?))?");
     private static Map<String, String> f = new HashMap();
@@ -35,7 +35,7 @@ public final class n {
     }
 
     public static boolean a(String str) {
-        String[] strArr = f7112a;
+        String[] strArr = f4274a;
         int length = strArr.length;
         int i = 0;
         while (true) {
@@ -55,7 +55,7 @@ public final class n {
             return e;
         }
         if ("mraid:".equals(str)) {
-            return f7113c;
+            return f4275c;
         }
         if ("ssp:".equals(str)) {
             return d;

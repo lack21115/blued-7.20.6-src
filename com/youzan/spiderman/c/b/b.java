@@ -7,18 +7,18 @@ public final class b {
     @SerializedName("resource_config")
 
     /* renamed from: a  reason: collision with root package name */
-    private e f41745a;
+    private e f28054a;
     @SerializedName("sync_config")
     private f b;
     @SerializedName("upload_config")
 
     /* renamed from: c  reason: collision with root package name */
-    private g f41746c;
+    private g f28055c;
     @SerializedName("html_config")
     private d d;
 
     public final e a() {
-        return this.f41745a;
+        return this.f28054a;
     }
 
     public final void a(d dVar) {
@@ -26,7 +26,7 @@ public final class b {
     }
 
     public final void a(e eVar) {
-        this.f41745a = eVar;
+        this.f28054a = eVar;
     }
 
     public final void a(f fVar) {
@@ -34,7 +34,7 @@ public final class b {
     }
 
     public final void a(g gVar) {
-        this.f41746c = gVar;
+        this.f28055c = gVar;
     }
 
     public final f b() {
@@ -42,7 +42,7 @@ public final class b {
     }
 
     public final g c() {
-        return this.f41746c;
+        return this.f28055c;
     }
 
     public final d d() {

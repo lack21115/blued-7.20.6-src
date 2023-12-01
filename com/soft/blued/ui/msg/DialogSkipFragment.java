@@ -23,11 +23,11 @@ import com.soft.blued.ui.msg.model.ChannelModel;
 public class DialogSkipFragment extends BaseFragment implements View.OnClickListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private ChannelModel f31708a;
+    private ChannelModel f18018a;
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private View f31709c;
+    private View f18019c;
     private CustomDialog d;
     private boolean e = false;
     private int f = 0;
@@ -64,7 +64,7 @@ public class DialogSkipFragment extends BaseFragment implements View.OnClickList
                     bundle3.putSerializable("CHANNEL", channelModel);
                     TransparentActivity.b(context, DialogSkipFragment.class, bundle3);
                 } else if (AudioChannelManager.j().n()) {
-                    AppMethods.a(context.getResources().getText(2131893031));
+                    AppMethods.a(context.getResources().getText(R.string.yy_in_use));
                 } else {
                     ChannelFragment.a(AppInfo.d(), channelModel);
                 }
@@ -84,7 +84,7 @@ public class DialogSkipFragment extends BaseFragment implements View.OnClickList
     public void b() {
         CustomDialog customDialog = this.d;
         if (customDialog == null || !customDialog.isShowing()) {
-            this.f31709c.postDelayed(new Runnable() { // from class: com.soft.blued.ui.msg.DialogSkipFragment.1
+            this.f18019c.postDelayed(new Runnable() { // from class: com.soft.blued.ui.msg.DialogSkipFragment.1
                 @Override // java.lang.Runnable
                 public void run() {
                     View inflate = LayoutInflater.from(DialogSkipFragment.this.b).inflate(2131560351, (ViewGroup) null);
@@ -98,10 +98,10 @@ public class DialogSkipFragment extends BaseFragment implements View.OnClickList
                     View findViewById = inflate.findViewById(2131371289);
                     TextView textView3 = (TextView) inflate.findViewById(2131371259);
                     if (DialogSkipFragment.this.f == 0) {
-                        if (DialogSkipFragment.this.f31708a.callType == 0 || DialogSkipFragment.this.f31708a.callType == 1) {
+                        if (DialogSkipFragment.this.f18018a.callType == 0 || DialogSkipFragment.this.f18018a.callType == 1) {
                             DialogSkipFragment.this.e = true;
                             textView3.setText(DialogSkipFragment.this.getString(R.string.channel_start_on_live_tip));
-                            textView2.setText(DialogSkipFragment.this.getString(2131890371));
+                            textView2.setText(DialogSkipFragment.this.getString(R.string.live_window_indicate_know));
                             findViewById.setVisibility(8);
                             textView.setVisibility(8);
                         } else {
@@ -110,19 +110,19 @@ public class DialogSkipFragment extends BaseFragment implements View.OnClickList
                         }
                     } else if (DialogSkipFragment.this.f == 1) {
                         textView3.setText(DialogSkipFragment.this.getString(R.string.channel_start_on_live_lrs_tip));
-                        textView2.setText(DialogSkipFragment.this.getString(2131890371));
+                        textView2.setText(DialogSkipFragment.this.getString(R.string.live_window_indicate_know));
                         findViewById.setVisibility(8);
                         textView.setVisibility(8);
                     } else if (DialogSkipFragment.this.f == 2) {
                         textView3.setText(DialogSkipFragment.this.getString(R.string.channel_start_on_live_flash_tip));
-                        textView2.setText(DialogSkipFragment.this.getString(2131890371));
+                        textView2.setText(DialogSkipFragment.this.getString(R.string.live_window_indicate_know));
                         findViewById.setVisibility(8);
                         textView.setVisibility(8);
                     } else if (DialogSkipFragment.this.f == 3) {
                         textView3.setText(DialogSkipFragment.this.getString(R.string.flash_close_tip));
                     } else if (DialogSkipFragment.this.f == 4) {
                         textView3.setText(DialogSkipFragment.this.getString(R.string.channel_start_on_live_shine_video_tip));
-                        textView2.setText(DialogSkipFragment.this.getString(2131890371));
+                        textView2.setText(DialogSkipFragment.this.getString(R.string.live_window_indicate_know));
                         findViewById.setVisibility(8);
                         textView.setVisibility(8);
                     } else if (DialogSkipFragment.this.f == 5) {
@@ -130,7 +130,6 @@ public class DialogSkipFragment extends BaseFragment implements View.OnClickList
                     }
                     DialogSkipFragment.this.d = new CustomDialog(DialogSkipFragment.this.b, 2131952378);
                     DialogSkipFragment.this.d.a(inflate, new CustomDialog.OnBackCallBack() { // from class: com.soft.blued.ui.msg.DialogSkipFragment.1.1
-                        @Override // com.blued.android.framework.view.CustomDialog.OnBackCallBack
                         public void a() {
                             DialogSkipFragment.this.getActivity().finish();
                         }
@@ -151,45 +150,43 @@ public class DialogSkipFragment extends BaseFragment implements View.OnClickList
             int i = this.f;
             if (i == 0) {
                 if (!this.e) {
-                    ChannelFragment.a(AppInfo.d(), this.f31708a);
+                    ChannelFragment.a(AppInfo.d(), this.f18018a);
                 }
             } else if (i == 3) {
                 if (FlashZegoApiManager.a().e()) {
-                    FlashZegoApiManager.a().a(this.f31708a);
+                    FlashZegoApiManager.a().a(this.f18018a);
                 }
             } else if (i == 5) {
                 ShortVideoProxy.e().c();
-                ChannelFragment.a(AppInfo.d(), this.f31708a);
+                ChannelFragment.a(AppInfo.d(), this.f18018a);
             }
             a();
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         int i;
         Bundle arguments = getArguments();
         int i2 = arguments.getInt("flag", 0);
         this.f = i2;
         if (i2 == 0 || i2 == 3 || i2 == 5) {
-            this.f31708a = (ChannelModel) arguments.getSerializable("CHANNEL");
+            this.f18018a = (ChannelModel) arguments.getSerializable("CHANNEL");
         }
-        if (this.f31708a == null && ((i = this.f) == 0 || i == 3 || i == 5)) {
+        if (this.f18018a == null && ((i = this.f) == 0 || i == 3 || i == 5)) {
             getActivity().finish();
         }
         this.b = getActivity();
-        View view = this.f31709c;
+        View view = this.f18019c;
         if (view == null) {
-            this.f31709c = layoutInflater.inflate(R.layout.channel_dialog_layout, viewGroup, false);
+            this.f18019c = layoutInflater.inflate(R.layout.channel_dialog_layout, viewGroup, false);
             b();
         } else if (view.getParent() != null) {
-            ((ViewGroup) this.f31709c.getParent()).removeView(this.f31709c);
+            ((ViewGroup) this.f18019c.getParent()).removeView(this.f18019c);
         }
-        return this.f31709c;
+        return this.f18019c;
     }
 }

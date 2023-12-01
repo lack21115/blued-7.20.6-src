@@ -26,6 +26,7 @@ import com.blued.android.module.yy_china.R;
 import com.blued.android.module.yy_china.manager.YYRoomInfoManager;
 import com.blued.android.module.yy_china.model.YYGlobalMsgMarqueeModel;
 import com.bumptech.glide.request.target.SimpleTarget;
+import com.bumptech.glide.request.target.Target;
 import com.bumptech.glide.request.transition.Transition;
 import com.bytedance.applog.tracker.Tracker;
 import java.text.SimpleDateFormat;
@@ -34,13 +35,9 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/MarqueeTextImagesView.class */
 public class MarqueeTextImagesView extends FrameLayout implements View.OnClickListener, View.OnTouchListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    private int f17954a;
+    private int a;
     private SimpleDateFormat b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private CopyOnWriteArrayList<NotiData> f17955c;
+    private CopyOnWriteArrayList<NotiData> c;
     private Paint d;
     private int e;
     private LinearLayout f;
@@ -62,8 +59,8 @@ public class MarqueeTextImagesView extends FrameLayout implements View.OnClickLi
 
     public MarqueeTextImagesView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f17954a = -1;
-        this.f17955c = new CopyOnWriteArrayList<>();
+        this.a = -1;
+        this.c = new CopyOnWriteArrayList<>();
         LayoutInflater.from(context).inflate(R.layout.view_marquee_text_imge, (ViewGroup) this, true);
         this.f = (LinearLayout) findViewById(R.id.ll_mar);
         this.g = (TextView) findViewById(R.id.tv_mess);
@@ -79,7 +76,7 @@ public class MarqueeTextImagesView extends FrameLayout implements View.OnClickLi
             @Override // java.lang.Runnable
             public void run() {
                 MarqueeTextImagesView marqueeTextImagesView = MarqueeTextImagesView.this;
-                marqueeTextImagesView.f17954a = marqueeTextImagesView.getMeasuredWidth() - MarqueeTextImagesView.this.getResources().getDimensionPixelOffset(R.dimen.dp_20);
+                marqueeTextImagesView.a = marqueeTextImagesView.getMeasuredWidth() - MarqueeTextImagesView.this.getResources().getDimensionPixelOffset(R.dimen.dp_20);
             }
         });
         this.l.setOnTouchListener(this);
@@ -89,15 +86,15 @@ public class MarqueeTextImagesView extends FrameLayout implements View.OnClickLi
 
     /* JADX INFO: Access modifiers changed from: private */
     public void b() {
-        CopyOnWriteArrayList<NotiData> copyOnWriteArrayList = this.f17955c;
+        CopyOnWriteArrayList<NotiData> copyOnWriteArrayList = this.c;
         if (copyOnWriteArrayList == null) {
             return;
         }
         if (copyOnWriteArrayList.size() > 0) {
-            this.f17955c.remove(0);
+            this.c.remove(0);
         }
-        if (this.f17955c.size() > 0) {
-            setText(this.f17955c.get(0));
+        if (this.c.size() > 0) {
+            setText(this.c.get(0));
         } else {
             setVisibility(8);
         }
@@ -110,8 +107,7 @@ public class MarqueeTextImagesView extends FrameLayout implements View.OnClickLi
         if (StringUtils.b(notiData.b)) {
             this.k.setImageResource(R.drawable.shape_fc3883fd_fc00e0ab);
         } else {
-            ImageLoader.a((IRequestHost) null, notiData.b).a(new SimpleTarget<Drawable>() { // from class: com.blued.android.module.yy_china.view.MarqueeTextImagesView.2
-                @Override // com.bumptech.glide.request.target.Target
+            ImageLoader.a((IRequestHost) null, notiData.b).a((Target<Drawable>) new SimpleTarget<Drawable>() { // from class: com.blued.android.module.yy_china.view.MarqueeTextImagesView.2
                 /* renamed from: a */
                 public void onResourceReady(Drawable drawable, Transition<? super Drawable> transition) {
                     MarqueeTextImagesView.this.k.setBackground(drawable);
@@ -121,11 +117,11 @@ public class MarqueeTextImagesView extends FrameLayout implements View.OnClickLi
         setVisibility(0);
         this.h.setImageResource(R.color.transparent);
         this.g.setText("");
-        float measureText = this.g.getPaint().measureText(notiData.f17962a.toString()) + (this.e * 2);
-        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this.f, "translationX", this.f17954a);
+        float measureText = this.g.getPaint().measureText(notiData.a.toString()) + (this.e * 2);
+        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this.f, "translationX", this.a);
         ofFloat.setDuration(1000L);
-        final ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(this.f, "translationX", this.f17954a, -measureText);
-        ofFloat2.setDuration((measureText + this.f17954a) * 8.0f);
+        final ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(this.f, "translationX", this.a, -measureText);
+        ofFloat2.setDuration((measureText + this.a) * 8.0f);
         ofFloat2.setInterpolator(new LinearInterpolator());
         ofFloat2.addListener(new AnimatorListenerAdapter() { // from class: com.blued.android.module.yy_china.view.MarqueeTextImagesView.3
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
@@ -140,17 +136,17 @@ public class MarqueeTextImagesView extends FrameLayout implements View.OnClickLi
                 if (MarqueeTextImagesView.this.g == null) {
                     return;
                 }
-                MarqueeTextImagesView.this.g.setText(notiData.f17962a);
+                MarqueeTextImagesView.this.g.setText(notiData.a);
                 if (StringUtils.b(notiData.d)) {
                     MarqueeTextImagesView.this.h.setVisibility(4);
                 } else {
                     ImageLoader.a(MarqueeTextImagesView.this.j, notiData.d).a(MarqueeTextImagesView.this.h);
                     MarqueeTextImagesView.this.h.setVisibility(0);
                 }
-                if (StringUtils.b(notiData.f17963c)) {
+                if (StringUtils.b(notiData.c)) {
                     MarqueeTextImagesView.this.i.setVisibility(4);
                 } else {
-                    ImageLoader.a(MarqueeTextImagesView.this.j, notiData.f17963c).a(MarqueeTextImagesView.this.i);
+                    ImageLoader.a(MarqueeTextImagesView.this.j, notiData.c).a(MarqueeTextImagesView.this.i);
                     MarqueeTextImagesView.this.i.setVisibility(0);
                 }
                 if (!StringUtils.b(notiData.e)) {
@@ -178,10 +174,10 @@ public class MarqueeTextImagesView extends FrameLayout implements View.OnClickLi
     }
 
     public void a(SpannableStringBuilder spannableStringBuilder, String str) {
-        if (this.f17955c != null) {
+        if (this.c != null) {
             NotiData notiData = new NotiData(spannableStringBuilder, str);
-            this.f17955c.add(notiData);
-            if (this.f17955c.size() == 1) {
+            this.c.add(notiData);
+            if (this.c.size() == 1) {
                 setText(notiData);
             }
         }
@@ -192,10 +188,10 @@ public class MarqueeTextImagesView extends FrameLayout implements View.OnClickLi
     }
 
     public void a(YYGlobalMsgMarqueeModel yYGlobalMsgMarqueeModel) {
-        if (this.f17955c != null) {
+        if (this.c != null) {
             NotiData notiData = new NotiData(yYGlobalMsgMarqueeModel);
-            this.f17955c.add(notiData);
-            if (this.f17955c.size() == 1) {
+            this.c.add(notiData);
+            if (this.c.size() == 1) {
                 setText(notiData);
             }
         }

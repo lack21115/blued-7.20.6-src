@@ -24,7 +24,7 @@ public class MarkerOptionsCreator implements Parcelable.Creator<MarkerOptions> {
         markerOptions.infoWindowEnable(zArr[5]);
         markerOptions.belowMaskLayer(zArr[6]);
         markerOptions.setRotatingMode(zArr[7]);
-        markerOptions.f5534a = parcel.readString();
+        markerOptions.a = parcel.readString();
         markerOptions.period(parcel.readInt());
         markerOptions.icons(parcel.readArrayList(BitmapDescriptor.class.getClassLoader()));
         markerOptions.zIndex(parcel.readFloat());

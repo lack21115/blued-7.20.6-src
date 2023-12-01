@@ -19,15 +19,15 @@ public class InterstitialVideoAd implements IBidding {
     public static class a implements d {
 
         /* renamed from: a  reason: collision with root package name */
-        private IInterstitialVideoAdListener f22232a;
+        private IInterstitialVideoAdListener f8624a;
 
         public a(IInterstitialVideoAdListener iInterstitialVideoAdListener) {
-            this.f22232a = iInterstitialVideoAdListener;
+            this.f8624a = iInterstitialVideoAdListener;
         }
 
         @Override // com.opos.mobad.ad.b.a
         public void a() {
-            IInterstitialVideoAdListener iInterstitialVideoAdListener = this.f22232a;
+            IInterstitialVideoAdListener iInterstitialVideoAdListener = this.f8624a;
             if (iInterstitialVideoAdListener != null) {
                 iInterstitialVideoAdListener.onAdReady();
             }
@@ -35,7 +35,7 @@ public class InterstitialVideoAd implements IBidding {
 
         @Override // com.opos.mobad.ad.b.a
         public void a(int i, String str) {
-            IInterstitialVideoAdListener iInterstitialVideoAdListener = this.f22232a;
+            IInterstitialVideoAdListener iInterstitialVideoAdListener = this.f8624a;
             if (iInterstitialVideoAdListener != null) {
                 StringBuilder sb = new StringBuilder();
                 sb.append("code=");
@@ -43,13 +43,13 @@ public class InterstitialVideoAd implements IBidding {
                 sb.append(",msg=");
                 sb.append(str != null ? str : "");
                 iInterstitialVideoAdListener.onAdFailed(sb.toString());
-                this.f22232a.onAdFailed(i, str);
+                this.f8624a.onAdFailed(i, str);
             }
         }
 
         @Override // com.opos.mobad.ad.i.b
         public void a(long j) {
-            IInterstitialVideoAdListener iInterstitialVideoAdListener = this.f22232a;
+            IInterstitialVideoAdListener iInterstitialVideoAdListener = this.f8624a;
             if (iInterstitialVideoAdListener != null) {
                 iInterstitialVideoAdListener.onAdClick();
             }
@@ -57,7 +57,7 @@ public class InterstitialVideoAd implements IBidding {
 
         @Override // com.opos.mobad.ad.i.b
         public void a(String str) {
-            IInterstitialVideoAdListener iInterstitialVideoAdListener = this.f22232a;
+            IInterstitialVideoAdListener iInterstitialVideoAdListener = this.f8624a;
             if (iInterstitialVideoAdListener != null) {
                 iInterstitialVideoAdListener.onAdShow();
             }
@@ -65,7 +65,7 @@ public class InterstitialVideoAd implements IBidding {
 
         @Override // com.opos.mobad.ad.b.a
         public void b() {
-            IInterstitialVideoAdListener iInterstitialVideoAdListener = this.f22232a;
+            IInterstitialVideoAdListener iInterstitialVideoAdListener = this.f8624a;
             if (iInterstitialVideoAdListener != null) {
                 iInterstitialVideoAdListener.onAdClose();
             }
@@ -73,7 +73,7 @@ public class InterstitialVideoAd implements IBidding {
 
         @Override // com.opos.mobad.ad.b.d
         public void c() {
-            IInterstitialVideoAdListener iInterstitialVideoAdListener = this.f22232a;
+            IInterstitialVideoAdListener iInterstitialVideoAdListener = this.f8624a;
             if (iInterstitialVideoAdListener != null) {
                 iInterstitialVideoAdListener.onVideoPlayComplete();
             }

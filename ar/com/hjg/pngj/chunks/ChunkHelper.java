@@ -17,11 +17,11 @@ import java.util.zip.InflaterInputStream;
 public class ChunkHelper {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final byte[] f3654a = a("IHDR");
+    public static final byte[] f3606a = a("IHDR");
     public static final byte[] b = a("PLTE");
 
     /* renamed from: c  reason: collision with root package name */
-    public static final byte[] f3655c = a("IDAT");
+    public static final byte[] f3607c = a("IDAT");
     public static final byte[] d = a("IEND");
     private static byte[] e = new byte[4096];
 
@@ -30,23 +30,23 @@ public class ChunkHelper {
     static /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f3656a;
+        static final /* synthetic */ int[] f3608a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x002f -> B:19:0x001f). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:9:0x002b -> B:15:0x0014). Please submit an issue!!! */
         static {
             int[] iArr = new int[ChunkLoadBehaviour.values().length];
-            f3656a = iArr;
+            f3608a = iArr;
             try {
                 iArr[ChunkLoadBehaviour.LOAD_CHUNK_ALWAYS.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f3656a[ChunkLoadBehaviour.LOAD_CHUNK_IF_SAFE.ordinal()] = 2;
+                f3608a[ChunkLoadBehaviour.LOAD_CHUNK_IF_SAFE.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f3656a[ChunkLoadBehaviour.LOAD_CHUNK_NEVER.ordinal()] = 3;
+                f3608a[ChunkLoadBehaviour.LOAD_CHUNK_NEVER.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
         }
@@ -100,7 +100,7 @@ public class ChunkHelper {
         if (pngChunk == pngChunk2) {
             return true;
         }
-        if (pngChunk == null || pngChunk2 == null || !pngChunk.f3667a.equals(pngChunk2.f3667a) || pngChunk.b || pngChunk.getClass() != pngChunk2.getClass()) {
+        if (pngChunk == null || pngChunk2 == null || !pngChunk.f3619a.equals(pngChunk2.f3619a) || pngChunk.b || pngChunk.getClass() != pngChunk2.getClass()) {
             return false;
         }
         if (pngChunk2.a()) {

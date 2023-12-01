@@ -69,11 +69,11 @@ public class PPSSplashView extends RelativeLayout implements lh, ls {
     RelativeLayout V;
 
     /* renamed from: a  reason: collision with root package name */
-    private PPSWLSView f23029a;
+    private PPSWLSView f9421a;
     private PPSSplashAdSourceView b;
 
     /* renamed from: c  reason: collision with root package name */
-    private gz f23030c;
+    private gz f9422c;
     private ki d;
     private com.huawei.openalliance.ad.inter.listeners.b e;
     private com.huawei.openalliance.ad.inter.listeners.a f;
@@ -114,8 +114,8 @@ public class PPSSplashView extends RelativeLayout implements lh, ls {
             Tracker.onClick(view);
             final PPSSplashView pPSSplashView = this.Code.get();
             if (pPSSplashView != null) {
-                final int[] choiceViewLoc = pPSSplashView.f23029a.getChoiceViewLoc();
-                final int[] choiceViewSize = pPSSplashView.f23029a.getChoiceViewSize();
+                final int[] choiceViewLoc = pPSSplashView.f9421a.getChoiceViewLoc();
+                final int[] choiceViewSize = pPSSplashView.f9421a.getChoiceViewSize();
                 if (v.Code(choiceViewLoc, 2) && v.Code(choiceViewSize, 2)) {
                     ba.Code(new Runnable() { // from class: com.huawei.openalliance.ad.views.PPSSplashView.a.1
                         @Override // java.lang.Runnable
@@ -288,7 +288,7 @@ public class PPSSplashView extends RelativeLayout implements lh, ls {
             }
             pPSSkipButton = new PPSSkipButton(getContext(), str, V, I, i, str2, z, i3, f, i2, z2);
         }
-        pPSSkipButton.setAdMediator(this.f23030c);
+        pPSSkipButton.setAdMediator(this.f9422c);
         return pPSSkipButton;
     }
 
@@ -460,7 +460,7 @@ public class PPSSplashView extends RelativeLayout implements lh, ls {
     private void V(Context context) {
         inflate(context, R.layout.hiad_view_splash_ad, this);
         this.V = (RelativeLayout) findViewById(R.id.rl_splash_container);
-        this.f23029a = (PPSWLSView) findViewById(R.id.splash_wls_view);
+        this.f9421a = (PPSWLSView) findViewById(R.id.splash_wls_view);
         this.b = (PPSSplashAdSourceView) findViewById(R.id.splash_ad_source_view);
         this.u = dt.Code(context).V();
         this.z = (PPSSplashProView) findViewById(R.id.hiad_splash_pro_view);
@@ -488,7 +488,7 @@ public class PPSSplashView extends RelativeLayout implements lh, ls {
             Integer B = av == null ? null : av.B();
             L();
             if (this.u) {
-                this.b.setAdMediator(this.f23030c);
+                this.b.setAdMediator(this.f9422c);
                 this.b.Code(Code, B);
                 this.b.setVisibility(0);
                 if (1 == V) {
@@ -518,11 +518,11 @@ public class PPSSplashView extends RelativeLayout implements lh, ls {
                 pPSSplashAdSourceView.Code(adContentData, z2, i, V, z3);
                 return;
             }
-            this.f23029a.setAdMediator(this.f23030c);
-            this.f23029a.Code(Code, B);
-            this.f23029a.setVisibility(0);
+            this.f9421a.setAdMediator(this.f9422c);
+            this.f9421a.Code(Code, B);
+            this.f9421a.setVisibility(0);
             if (1 == V) {
-                pPSWLSView = this.f23029a;
+                pPSWLSView = this.f9421a;
                 boolean z8 = adContentData.D() == 1;
                 i2 = this.p;
                 z6 = false;
@@ -536,7 +536,7 @@ public class PPSSplashView extends RelativeLayout implements lh, ls {
                     i2 = this.r;
                     z4 = false;
                 }
-                pPSWLSView = this.f23029a;
+                pPSWLSView = this.f9421a;
                 if (adContentData.D() == 1) {
                     z5 = true;
                     z6 = z4;
@@ -549,7 +549,7 @@ public class PPSSplashView extends RelativeLayout implements lh, ls {
             if (aa.Code(adContentData.aG())) {
                 return;
             }
-            this.f23029a.setChoiceViewOnClickListener(new a(this, adContentData));
+            this.f9421a.setChoiceViewOnClickListener(new a(this, adContentData));
         }
     }
 
@@ -708,13 +708,13 @@ public class PPSSplashView extends RelativeLayout implements lh, ls {
 
     public void Code(int i) {
         gv Code = gw.Code(i, this);
-        this.f23030c = Code;
+        this.f9422c = Code;
         Code.Code(this.e);
-        this.f23030c.Code(this.f);
-        this.f23030c.Code(this.s);
-        this.f23030c.V(this.C);
-        this.f23030c.Code(this.y);
-        this.f23030c.k();
+        this.f9422c.Code(this.f);
+        this.f9422c.Code(this.s);
+        this.f9422c.V(this.C);
+        this.f9422c.Code(this.y);
+        this.f9422c.k();
     }
 
     @Override // com.huawei.hms.ads.lh
@@ -910,7 +910,7 @@ public class PPSSplashView extends RelativeLayout implements lh, ls {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public gz getAdMediator() {
-        return this.f23030c;
+        return this.f9422c;
     }
 
     @Override // com.huawei.hms.ads.lh
@@ -963,7 +963,7 @@ public class PPSSplashView extends RelativeLayout implements lh, ls {
     }
 
     public String getUniqueId() {
-        gz gzVar = this.f23030c;
+        gz gzVar = this.f9422c;
         if (gzVar != null) {
             return gzVar.j();
         }
@@ -971,7 +971,7 @@ public class PPSSplashView extends RelativeLayout implements lh, ls {
     }
 
     public boolean isLoaded() {
-        gz gzVar = this.f23030c;
+        gz gzVar = this.f9422c;
         boolean z = false;
         if (gzVar == null) {
             return false;
@@ -983,7 +983,7 @@ public class PPSSplashView extends RelativeLayout implements lh, ls {
     }
 
     public boolean isLoading() {
-        gz gzVar = this.f23030c;
+        gz gzVar = this.f9422c;
         return gzVar == null ? this.g : gzVar.Code() == com.huawei.openalliance.ad.constant.a.LOADING;
     }
 
@@ -1008,16 +1008,14 @@ public class PPSSplashView extends RelativeLayout implements lh, ls {
         return super.onApplyWindowInsets(windowInsets);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         ge.V("PPSSplashView", "onAttachedToWindow");
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         ba.Code(this.w);
         PPSSplashProView pPSSplashProView = this.z;
@@ -1062,7 +1060,7 @@ public class PPSSplashView extends RelativeLayout implements lh, ls {
 
     public void setAdActionListener(com.huawei.openalliance.ad.inter.listeners.a aVar) {
         this.f = aVar;
-        gz gzVar = this.f23030c;
+        gz gzVar = this.f9422c;
         if (gzVar != null) {
             gzVar.Code(aVar);
         }
@@ -1071,7 +1069,7 @@ public class PPSSplashView extends RelativeLayout implements lh, ls {
     public void setAdListener(com.huawei.openalliance.ad.inter.listeners.b bVar) {
         this.e = bVar;
         this.d.Code(bVar);
-        gz gzVar = this.f23030c;
+        gz gzVar = this.f9422c;
         if (gzVar != null) {
             gzVar.Code(bVar);
         }

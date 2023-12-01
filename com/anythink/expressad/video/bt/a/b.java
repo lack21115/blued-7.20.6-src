@@ -13,10 +13,10 @@ import org.json.JSONObject;
 public final class b {
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f8287c = "HandlerH5MessageManager";
+    private static final String f5447c = "HandlerH5MessageManager";
 
     /* renamed from: a  reason: collision with root package name */
-    int f8288a;
+    int f5448a;
     int b;
     private String d;
 
@@ -24,7 +24,7 @@ public final class b {
     static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static b f8289a = new b((byte) 0);
+        private static b f5449a = new b((byte) 0);
 
         private a() {
         }
@@ -32,7 +32,7 @@ public final class b {
 
     private b() {
         this.d = "handlerNativeResult";
-        this.f8288a = 0;
+        this.f5448a = 0;
         this.b = 1;
     }
 
@@ -41,7 +41,7 @@ public final class b {
     }
 
     public static b a() {
-        return a.f8289a;
+        return a.f5449a;
     }
 
     private static void a(int i, String str, Object obj) {
@@ -51,9 +51,9 @@ public final class b {
             jSONObject.put("message", str);
             j.a().a(obj, Base64.encodeToString(jSONObject.toString().getBytes(), 2));
         } catch (JSONException e) {
-            o.a(f8287c, e.getMessage());
+            o.a(f5447c, e.getMessage());
         } catch (Throwable th) {
-            o.a(f8287c, th.getMessage());
+            o.a(f5447c, th.getMessage());
         }
     }
 
@@ -71,7 +71,7 @@ public final class b {
                 if (optJSONObject != null && !TextUtils.isEmpty(optJSONObject.toString())) {
                     optJSONObject.optInt("type", 0);
                 }
-                a(this.f8288a, "receivedMessage", obj);
+                a(this.f5448a, "receivedMessage", obj);
                 if (optString.equalsIgnoreCase("reporter") || !optString.equalsIgnoreCase("MediaPlayer")) {
                     return;
                 }
@@ -80,10 +80,10 @@ public final class b {
             }
             a(this.b, "module or method is null", obj);
         } catch (Exception e) {
-            o.a(f8287c, e.getMessage());
+            o.a(f5447c, e.getMessage());
             a(this.b, e.getMessage(), obj);
         } catch (Throwable th) {
-            o.a(f8287c, th.getMessage());
+            o.a(f5447c, th.getMessage());
             a(this.b, th.getMessage(), obj);
         }
     }

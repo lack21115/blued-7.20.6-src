@@ -15,20 +15,20 @@ import java.util.List;
 public final class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f8400a = "ViewOptionWrapper";
+    private static final String f5560a = "ViewOptionWrapper";
     private static final String b = "\\.xml";
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f8401c = "\\/xml";
+    private static final String f5561c = "\\/xml";
 
     public static com.anythink.expressad.video.dynview.c a(Context context, com.anythink.expressad.foundation.d.c cVar, int i) {
         if (cVar == null) {
             return null;
         }
         try {
-            return new c.a().a(k.b(context) == 1 ? com.anythink.expressad.video.dynview.a.a.b : com.anythink.expressad.video.dynview.a.a.f8347a).a(4).a(context).b(k.b(context)).b("").e(cVar.k()).d(i).a();
+            return new c.a().a(k.b(context) == 1 ? com.anythink.expressad.video.dynview.a.a.b : com.anythink.expressad.video.dynview.a.a.f5507a).a(4).a(context).b(k.b(context)).b("").e(cVar.k()).d(i).a();
         } catch (Exception e) {
-            o.d(f8400a, e.getMessage());
+            o.d(f5560a, e.getMessage());
             return null;
         }
     }
@@ -69,7 +69,7 @@ public final class c {
             }
             return new c.a().a(context).a(str).a(1).a(e).b(f).a(list).b(i2).b("").a();
         } catch (Exception e2) {
-            o.d(f8400a, e2.getMessage());
+            o.d(f5560a, e2.getMessage());
             return null;
         }
     }
@@ -98,7 +98,7 @@ public final class c {
                 str2 = K;
                 str3 = a3;
             } catch (Exception e) {
-                o.d(f8400a, e.getMessage());
+                o.d(f5560a, e.getMessage());
                 return null;
             }
         } else {
@@ -135,7 +135,7 @@ public final class c {
             int b2 = k.b(context);
             return new c.a().a(b2 == 1 ? com.anythink.expressad.video.dynview.a.a.k : com.anythink.expressad.video.dynview.a.a.l).a(5).a(context).a(e).b(f).a(list).b(b2).b("").e(i).d(i).a();
         } catch (Exception e2) {
-            o.d(f8400a, e2.getMessage());
+            o.d(f5560a, e2.getMessage());
             return null;
         }
     }
@@ -151,7 +151,7 @@ public final class c {
                 str = cVar.K();
                 a2 = a(3);
             } catch (Exception e) {
-                o.d(f8400a, e.getMessage());
+                o.d(f5560a, e.getMessage());
                 return null;
             }
         } else {

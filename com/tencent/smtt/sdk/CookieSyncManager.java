@@ -8,11 +8,11 @@ import java.lang.reflect.Field;
 public class CookieSyncManager {
 
     /* renamed from: a  reason: collision with root package name */
-    private static android.webkit.CookieSyncManager f38698a;
+    private static android.webkit.CookieSyncManager f25007a;
     private static CookieSyncManager b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static boolean f38699c = false;
+    private static boolean f25008c = false;
 
     private CookieSyncManager(Context context) {
         w a2 = w.a();
@@ -20,15 +20,15 @@ public class CookieSyncManager {
             return;
         }
         a2.c().b().invokeStaticMethod("com.tencent.tbs.tbsshell.WebCoreProxy", "cookieSyncManager_createInstance", new Class[]{Context.class}, context);
-        f38699c = true;
+        f25008c = true;
     }
 
     public static CookieSyncManager createInstance(Context context) {
         CookieSyncManager cookieSyncManager;
         synchronized (CookieSyncManager.class) {
             try {
-                f38698a = android.webkit.CookieSyncManager.createInstance(context);
-                if (b == null || !f38699c) {
+                f25007a = android.webkit.CookieSyncManager.createInstance(context);
+                if (b == null || !f25008c) {
                     b = new CookieSyncManager(context.getApplicationContext());
                 }
                 cookieSyncManager = b;
@@ -59,11 +59,11 @@ public class CookieSyncManager {
             a2.c().b().invokeStaticMethod("com.tencent.tbs.tbsshell.WebCoreProxy", "cookieSyncManager_startSync", new Class[0], new Object[0]);
             return;
         }
-        f38698a.startSync();
+        f25007a.startSync();
         try {
             Field declaredField = Class.forName("android.webkit.WebSyncManager").getDeclaredField("mSyncThread");
             declaredField.setAccessible(true);
-            ((Thread) declaredField.get(f38698a)).setUncaughtExceptionHandler(new g());
+            ((Thread) declaredField.get(f25007a)).setUncaughtExceptionHandler(new g());
         } catch (Exception e) {
         }
     }
@@ -71,7 +71,7 @@ public class CookieSyncManager {
     public void stopSync() {
         w a2 = w.a();
         if (a2 == null || !a2.b()) {
-            f38698a.stopSync();
+            f25007a.stopSync();
         } else {
             a2.c().b().invokeStaticMethod("com.tencent.tbs.tbsshell.WebCoreProxy", "cookieSyncManager_stopSync", new Class[0], new Object[0]);
         }
@@ -80,7 +80,7 @@ public class CookieSyncManager {
     public void sync() {
         w a2 = w.a();
         if (a2 == null || !a2.b()) {
-            f38698a.sync();
+            f25007a.sync();
         } else {
             a2.c().b().invokeStaticMethod("com.tencent.tbs.tbsshell.WebCoreProxy", "cookieSyncManager_Sync", new Class[0], new Object[0]);
         }

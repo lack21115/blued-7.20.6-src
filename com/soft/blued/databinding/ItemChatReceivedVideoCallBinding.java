@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemChatReceivedVideoCallBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29125a;
+    private final LinearLayout f15435a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29125a;
+        return this.f15435a;
     }
 }

@@ -8,11 +8,11 @@ import java.util.concurrent.ConcurrentHashMap;
 public class k implements com.anythink.expressad.e.b {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f8075a = 6;
+    public static final int f5235a = 6;
     public static final int b = 7;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final int f8076c = 8;
+    public static final int f5236c = 8;
     private static String d = "CustomInfoManager";
     private static volatile k e;
     private ConcurrentHashMap<String, String> f = new ConcurrentHashMap<>();

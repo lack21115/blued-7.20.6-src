@@ -1,6 +1,5 @@
 package com.kwad.sdk.core.a.kwai;
 
-import com.anythink.core.common.c.m;
 import com.kwad.components.ad.reward.monitor.RewardMonitorInfo;
 import org.json.JSONObject;
 
@@ -18,13 +17,13 @@ public final class ha implements com.kwad.sdk.core.d<RewardMonitorInfo> {
         rewardMonitorInfo.downloadDuration = jSONObject.optLong("download_duration_ms");
         rewardMonitorInfo.totalDuration = jSONObject.optLong("total_duration_ms");
         rewardMonitorInfo.downloadType = jSONObject.optInt("download_type");
-        rewardMonitorInfo.downloadSize = jSONObject.optLong(m.a.e);
+        rewardMonitorInfo.downloadSize = jSONObject.optLong("download_size");
         rewardMonitorInfo.errorCode = jSONObject.optInt("error_code");
         rewardMonitorInfo.errorMsg = jSONObject.optString("error_msg");
         if (rewardMonitorInfo.errorMsg == JSONObject.NULL) {
             rewardMonitorInfo.errorMsg = "";
         }
-        rewardMonitorInfo.creativeId = jSONObject.optLong("creative_id");
+        rewardMonitorInfo.creativeId = jSONObject.optLong(com.anythink.expressad.foundation.d.c.l);
         rewardMonitorInfo.videoUrl = jSONObject.optString("video_url");
         if (rewardMonitorInfo.videoUrl == JSONObject.NULL) {
             rewardMonitorInfo.videoUrl = "";
@@ -69,7 +68,7 @@ public final class ha implements com.kwad.sdk.core.d<RewardMonitorInfo> {
             com.kwad.sdk.utils.t.putValue(jSONObject2, "download_type", rewardMonitorInfo.downloadType);
         }
         if (rewardMonitorInfo.downloadSize != 0) {
-            com.kwad.sdk.utils.t.putValue(jSONObject2, m.a.e, rewardMonitorInfo.downloadSize);
+            com.kwad.sdk.utils.t.putValue(jSONObject2, "download_size", rewardMonitorInfo.downloadSize);
         }
         if (rewardMonitorInfo.errorCode != 0) {
             com.kwad.sdk.utils.t.putValue(jSONObject2, "error_code", rewardMonitorInfo.errorCode);
@@ -78,7 +77,7 @@ public final class ha implements com.kwad.sdk.core.d<RewardMonitorInfo> {
             com.kwad.sdk.utils.t.putValue(jSONObject2, "error_msg", rewardMonitorInfo.errorMsg);
         }
         if (rewardMonitorInfo.creativeId != 0) {
-            com.kwad.sdk.utils.t.putValue(jSONObject2, "creative_id", rewardMonitorInfo.creativeId);
+            com.kwad.sdk.utils.t.putValue(jSONObject2, com.anythink.expressad.foundation.d.c.l, rewardMonitorInfo.creativeId);
         }
         if (rewardMonitorInfo.videoUrl != null && !rewardMonitorInfo.videoUrl.equals("")) {
             com.kwad.sdk.utils.t.putValue(jSONObject2, "video_url", rewardMonitorInfo.videoUrl);

@@ -14,11 +14,11 @@ public final class SpringForce implements Force {
     public static final float STIFFNESS_VERY_LOW = 50.0f;
 
     /* renamed from: a  reason: collision with root package name */
-    double f2809a;
+    double f2761a;
     double b;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f2810c;
+    private boolean f2762c;
     private double d;
     private double e;
     private double f;
@@ -28,24 +28,24 @@ public final class SpringForce implements Force {
     private final DynamicAnimation.MassState j;
 
     public SpringForce() {
-        this.f2809a = Math.sqrt(1500.0d);
+        this.f2761a = Math.sqrt(1500.0d);
         this.b = 0.5d;
-        this.f2810c = false;
+        this.f2762c = false;
         this.i = Double.MAX_VALUE;
         this.j = new DynamicAnimation.MassState();
     }
 
     public SpringForce(float f) {
-        this.f2809a = Math.sqrt(1500.0d);
+        this.f2761a = Math.sqrt(1500.0d);
         this.b = 0.5d;
-        this.f2810c = false;
+        this.f2762c = false;
         this.i = Double.MAX_VALUE;
         this.j = new DynamicAnimation.MassState();
         this.i = f;
     }
 
     private void a() {
-        if (this.f2810c) {
+        if (this.f2762c) {
             return;
         }
         if (this.i == Double.MAX_VALUE) {
@@ -54,16 +54,16 @@ public final class SpringForce implements Force {
         double d = this.b;
         if (d > 1.0d) {
             double d2 = -d;
-            double d3 = this.f2809a;
+            double d3 = this.f2761a;
             this.f = (d2 * d3) + (d3 * Math.sqrt((d * d) - 1.0d));
             double d4 = this.b;
             double d5 = -d4;
-            double d6 = this.f2809a;
+            double d6 = this.f2761a;
             this.g = (d5 * d6) - (d6 * Math.sqrt((d4 * d4) - 1.0d));
         } else if (d >= 0.0d && d < 1.0d) {
-            this.h = this.f2809a * Math.sqrt(1.0d - (d * d));
+            this.h = this.f2761a * Math.sqrt(1.0d - (d * d));
         }
-        this.f2810c = true;
+        this.f2762c = true;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -85,18 +85,18 @@ public final class SpringForce implements Force {
             double d11 = this.f;
             cos = (d8 * d10 * pow2) + (d9 * d11 * Math.pow(2.718281828459045d, d11 * d3));
         } else if (d5 == 1.0d) {
-            double d12 = this.f2809a;
+            double d12 = this.f2761a;
             double d13 = d2 + (d12 * d4);
             double d14 = d4 + (d13 * d3);
             pow = Math.pow(2.718281828459045d, (-d12) * d3) * d14;
-            double pow3 = Math.pow(2.718281828459045d, (-this.f2809a) * d3);
-            double d15 = this.f2809a;
+            double pow3 = Math.pow(2.718281828459045d, (-this.f2761a) * d3);
+            double d15 = this.f2761a;
             cos = (d13 * Math.pow(2.718281828459045d, (-d15) * d3)) + (d14 * pow3 * (-d15));
         } else {
-            double d16 = this.f2809a;
+            double d16 = this.f2761a;
             double d17 = (1.0d / this.h) * ((d5 * d16 * d4) + d2);
             pow = Math.pow(2.718281828459045d, (-d5) * d16 * d3) * ((Math.cos(this.h * d3) * d4) + (Math.sin(this.h * d3) * d17));
-            double d18 = this.f2809a;
+            double d18 = this.f2761a;
             double d19 = -d18;
             double d20 = this.b;
             double pow4 = Math.pow(2.718281828459045d, (-d20) * d18 * d3);
@@ -106,7 +106,7 @@ public final class SpringForce implements Force {
             double d23 = this.h;
             cos = (d19 * pow * d20) + (pow4 * ((d22 * d4 * sin) + (d17 * d23 * Math.cos(d23 * d3))));
         }
-        this.j.f2804a = (float) (pow + this.i);
+        this.j.f2756a = (float) (pow + this.i);
         this.j.b = (float) cos;
         return this.j;
     }
@@ -121,7 +121,7 @@ public final class SpringForce implements Force {
     @Override // androidx.dynamicanimation.animation.Force
     public float getAcceleration(float f, float f2) {
         float finalPosition = getFinalPosition();
-        double d = this.f2809a;
+        double d = this.f2761a;
         return (float) (((-(d * d)) * (f - finalPosition)) - (((d * 2.0d) * this.b) * f2));
     }
 
@@ -134,7 +134,7 @@ public final class SpringForce implements Force {
     }
 
     public float getStiffness() {
-        double d = this.f2809a;
+        double d = this.f2761a;
         return (float) (d * d);
     }
 
@@ -146,7 +146,7 @@ public final class SpringForce implements Force {
     public SpringForce setDampingRatio(float f) {
         if (f >= 0.0f) {
             this.b = f;
-            this.f2810c = false;
+            this.f2762c = false;
             return this;
         }
         throw new IllegalArgumentException("Damping ratio must be non-negative");
@@ -159,8 +159,8 @@ public final class SpringForce implements Force {
 
     public SpringForce setStiffness(float f) {
         if (f > 0.0f) {
-            this.f2809a = Math.sqrt(f);
-            this.f2810c = false;
+            this.f2761a = Math.sqrt(f);
+            this.f2762c = false;
             return this;
         }
         throw new IllegalArgumentException("Spring stiffness constant must be positive.");

@@ -19,11 +19,11 @@ import java.util.List;
 public class BaiduATNativeExpressAd extends CustomNativeAd {
 
     /* renamed from: a  reason: collision with root package name */
-    BDImpressionTracker f8880a;
+    BDImpressionTracker f6040a;
     private NativeResponse b;
 
     /* renamed from: c  reason: collision with root package name */
-    private FeedNativeView f8881c;
+    private FeedNativeView f6041c;
     private StyleParams d;
     private Context e;
     private FrameLayout f;
@@ -50,7 +50,7 @@ public class BaiduATNativeExpressAd extends CustomNativeAd {
         this.f = new FrameLayout(this.e);
         this.b = nativeResponse;
         this.d = styleParams;
-        this.f8880a = new BDImpressionTracker(this.e, 50);
+        this.f6040a = new BDImpressionTracker(this.e, 50);
     }
 
     private List<View> a(View view) {
@@ -73,29 +73,29 @@ public class BaiduATNativeExpressAd extends CustomNativeAd {
     }
 
     private void a(Context context) {
-        if (this.f8881c == null) {
+        if (this.f6041c == null) {
             FeedNativeView feedNativeView = new FeedNativeView(context);
-            this.f8881c = feedNativeView;
+            this.f6041c = feedNativeView;
             feedNativeView.setAdData((XAdNativeResponse) this.b);
-            this.f8881c.changeViewLayoutParams(this.d);
+            this.f6041c.changeViewLayoutParams(this.d);
             new Handler(Looper.getMainLooper()).post(new AnonymousClass1());
-            this.f.addView(this.f8881c);
+            this.f.addView(this.f6041c);
         }
     }
 
-    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd, com.anythink.core.api.BaseAd
+    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd
     public void destroy() {
         super.destroy();
         this.f = null;
         this.d = null;
-        BDImpressionTracker bDImpressionTracker = this.f8880a;
+        BDImpressionTracker bDImpressionTracker = this.f6040a;
         if (bDImpressionTracker != null) {
             bDImpressionTracker.clear();
-            this.f8880a = null;
+            this.f6040a = null;
         }
     }
 
-    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd, com.anythink.nativead.unitgroup.a, com.anythink.core.api.IATThirdPartyMaterial
+    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd, com.anythink.nativead.unitgroup.a
     public View getAdMediaView(Object... objArr) {
         FrameLayout frameLayout = this.f;
         if (frameLayout != null) {
@@ -104,18 +104,18 @@ public class BaiduATNativeExpressAd extends CustomNativeAd {
         return null;
     }
 
-    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd, com.anythink.core.api.IATThirdPartyMaterial
+    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd
     public int getNativeExpressHeight() {
-        FeedNativeView feedNativeView = this.f8881c;
+        FeedNativeView feedNativeView = this.f6041c;
         if (feedNativeView != null) {
             return feedNativeView.getAdContainerHeight();
         }
         return 0;
     }
 
-    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd, com.anythink.core.api.IATThirdPartyMaterial
+    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd
     public int getNativeExpressWidth() {
-        FeedNativeView feedNativeView = this.f8881c;
+        FeedNativeView feedNativeView = this.f6041c;
         if (feedNativeView != null) {
             return feedNativeView.getAdContainerWidth();
         }
@@ -160,7 +160,7 @@ public class BaiduATNativeExpressAd extends CustomNativeAd {
             r11 = r0
         L11:
             r0 = r8
-            com.baidu.mobads.sdk.api.FeedNativeView r0 = r0.f8881c
+            com.baidu.mobads.sdk.api.FeedNativeView r0 = r0.f6041c
             if (r0 != 0) goto L5d
             com.baidu.mobads.sdk.api.FeedNativeView r0 = new com.baidu.mobads.sdk.api.FeedNativeView
             r1 = r0
@@ -169,14 +169,14 @@ public class BaiduATNativeExpressAd extends CustomNativeAd {
             r11 = r0
             r0 = r8
             r1 = r11
-            r0.f8881c = r1
+            r0.f6041c = r1
             r0 = r11
             r1 = r8
             com.baidu.mobads.sdk.api.NativeResponse r1 = r1.b
             com.baidu.mobads.sdk.api.XAdNativeResponse r1 = (com.baidu.mobads.sdk.api.XAdNativeResponse) r1
             r0.setAdData(r1)
             r0 = r8
-            com.baidu.mobads.sdk.api.FeedNativeView r0 = r0.f8881c
+            com.baidu.mobads.sdk.api.FeedNativeView r0 = r0.f6041c
             r1 = r8
             com.baidu.mobads.sdk.api.StyleParams r1 = r1.d
             r0.changeViewLayoutParams(r1)
@@ -192,7 +192,7 @@ public class BaiduATNativeExpressAd extends CustomNativeAd {
             r0 = r8
             android.widget.FrameLayout r0 = r0.f
             r1 = r8
-            com.baidu.mobads.sdk.api.FeedNativeView r1 = r1.f8881c
+            com.baidu.mobads.sdk.api.FeedNativeView r1 = r1.f6041c
             r0.addView(r1)
         L5d:
             r0 = r10
@@ -240,10 +240,10 @@ public class BaiduATNativeExpressAd extends CustomNativeAd {
             r5.<init>()
             r0.registerViewForInteraction(r1, r2, r3, r4)
             r0 = r8
-            com.anythink.network.baidu.impression.BDImpressionTracker r0 = r0.f8880a     // Catch: java.lang.Throwable -> Lce
+            com.anythink.network.baidu.impression.BDImpressionTracker r0 = r0.f6040a     // Catch: java.lang.Throwable -> Lce
             if (r0 == 0) goto Lcd
             r0 = r8
-            com.anythink.network.baidu.impression.BDImpressionTracker r0 = r0.f8880a     // Catch: java.lang.Throwable -> Lce
+            com.anythink.network.baidu.impression.BDImpressionTracker r0 = r0.f6040a     // Catch: java.lang.Throwable -> Lce
             r1 = r9
             com.anythink.network.baidu.BaiduATNativeExpressAd$3 r2 = new com.anythink.network.baidu.BaiduATNativeExpressAd$3     // Catch: java.lang.Throwable -> Lce
             r3 = r2

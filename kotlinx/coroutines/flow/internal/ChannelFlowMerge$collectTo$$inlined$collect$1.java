@@ -14,13 +14,9 @@ import kotlinx.coroutines.sync.Semaphore;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/internal/ChannelFlowMerge$collectTo$$inlined$collect$1.class */
 public final class ChannelFlowMerge$collectTo$$inlined$collect$1<T> implements FlowCollector<Flow<? extends T>> {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ Job f43452a;
+    final /* synthetic */ Job a;
     final /* synthetic */ Semaphore b;
-
-    /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ ProducerScope f43453c;
+    final /* synthetic */ ProducerScope c;
     final /* synthetic */ SendingCollector d;
 
     @Metadata
@@ -28,9 +24,7 @@ public final class ChannelFlowMerge$collectTo$$inlined$collect$1<T> implements F
     /* renamed from: kotlinx.coroutines.flow.internal.ChannelFlowMerge$collectTo$$inlined$collect$1$1  reason: invalid class name */
     /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/internal/ChannelFlowMerge$collectTo$$inlined$collect$1$1.class */
     public static final class AnonymousClass1 extends ContinuationImpl {
-
-        /* renamed from: a  reason: collision with root package name */
-        /* synthetic */ Object f43454a;
+        /* synthetic */ Object a;
         int b;
         Object d;
         Object e;
@@ -41,16 +35,16 @@ public final class ChannelFlowMerge$collectTo$$inlined$collect$1<T> implements F
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Object invokeSuspend(Object obj) {
-            this.f43454a = obj;
+            this.a = obj;
             this.b |= Integer.MIN_VALUE;
             return ChannelFlowMerge$collectTo$$inlined$collect$1.this.emit(null, this);
         }
     }
 
     public ChannelFlowMerge$collectTo$$inlined$collect$1(Job job, Semaphore semaphore, ProducerScope producerScope, SendingCollector sendingCollector) {
-        this.f43452a = job;
+        this.a = job;
         this.b = semaphore;
-        this.f43453c = producerScope;
+        this.c = producerScope;
         this.d = sendingCollector;
     }
 

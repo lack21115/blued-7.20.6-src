@@ -13,13 +13,11 @@ import okhttp3.internal.Util;
 
 /* loaded from: source-3503164-dex2jar.jar:okhttp3/internal/platform/Jdk9Platform.class */
 final class Jdk9Platform extends Platform {
-
-    /* renamed from: a  reason: collision with root package name */
-    final Method f43971a;
+    final Method a;
     final Method b;
 
     Jdk9Platform(Method method, Method method2) {
-        this.f43971a = method;
+        this.a = method;
         this.b = method2;
     }
 
@@ -62,8 +60,8 @@ final class Jdk9Platform extends Platform {
     public void a(SSLSocket sSLSocket, String str, List<Protocol> list) {
         try {
             SSLParameters sSLParameters = sSLSocket.getSSLParameters();
-            List<String> a2 = a(list);
-            this.f43971a.invoke(sSLParameters, a2.toArray(new String[a2.size()]));
+            List<String> a = a(list);
+            this.a.invoke(sSLParameters, a.toArray(new String[a.size()]));
             sSLSocket.setSSLParameters(sSLParameters);
         } catch (IllegalAccessException | InvocationTargetException e) {
             throw Util.a("unable to set ssl parameters", (Exception) e);

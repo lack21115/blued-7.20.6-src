@@ -13,13 +13,9 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/LiveGiftSetBannerViewBinding.class */
 public final class LiveGiftSetBannerViewBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ShapeTextView f12225a;
+    public final ShapeTextView a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f12226c;
+    public final ImageView c;
     public final RecyclerView d;
     public final TextView e;
     public final TextView f;
@@ -27,9 +23,9 @@ public final class LiveGiftSetBannerViewBinding implements ViewBinding {
 
     private LiveGiftSetBannerViewBinding(FrameLayout frameLayout, ShapeTextView shapeTextView, ImageView imageView, ImageView imageView2, RecyclerView recyclerView, TextView textView, TextView textView2) {
         this.g = frameLayout;
-        this.f12225a = shapeTextView;
+        this.a = shapeTextView;
         this.b = imageView;
-        this.f12226c = imageView2;
+        this.c = imageView2;
         this.d = recyclerView;
         this.e = textView;
         this.f = textView2;
@@ -51,13 +47,13 @@ public final class LiveGiftSetBannerViewBinding implements ViewBinding {
             if (imageView != null) {
                 ImageView imageView2 = (ImageView) view.findViewById(R.id.iv_anim_two);
                 if (imageView2 != null) {
-                    RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rv_list);
-                    if (recyclerView != null) {
+                    RecyclerView findViewById = view.findViewById(R.id.rv_list);
+                    if (findViewById != null) {
                         TextView textView = (TextView) view.findViewById(R.id.tv_look);
                         if (textView != null) {
                             TextView textView2 = (TextView) view.findViewById(R.id.tv_title);
                             if (textView2 != null) {
-                                return new LiveGiftSetBannerViewBinding((FrameLayout) view, shapeTextView, imageView, imageView2, recyclerView, textView, textView2);
+                                return new LiveGiftSetBannerViewBinding((FrameLayout) view, shapeTextView, imageView, imageView2, findViewById, textView, textView2);
                             }
                             str = "tvTitle";
                         } else {
@@ -78,7 +74,6 @@ public final class LiveGiftSetBannerViewBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.g;

@@ -23,23 +23,19 @@ public class TMC implements Parcelable {
             return null;
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    private int f5766a;
+    private int a;
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private List<LatLonPoint> f5767c;
+    private List<LatLonPoint> c;
 
     public TMC() {
-        this.f5767c = new ArrayList();
+        this.c = new ArrayList();
     }
 
     public TMC(Parcel parcel) {
-        this.f5767c = new ArrayList();
-        this.f5766a = parcel.readInt();
+        this.c = new ArrayList();
+        this.a = parcel.readInt();
         this.b = parcel.readString();
-        this.f5767c = parcel.createTypedArrayList(LatLonPoint.CREATOR);
+        this.c = parcel.createTypedArrayList(LatLonPoint.CREATOR);
     }
 
     @Override // android.os.Parcelable
@@ -48,11 +44,11 @@ public class TMC implements Parcelable {
     }
 
     public int getDistance() {
-        return this.f5766a;
+        return this.a;
     }
 
     public List<LatLonPoint> getPolyline() {
-        return this.f5767c;
+        return this.c;
     }
 
     public String getStatus() {
@@ -60,11 +56,11 @@ public class TMC implements Parcelable {
     }
 
     public void setDistance(int i) {
-        this.f5766a = i;
+        this.a = i;
     }
 
     public void setPolyline(List<LatLonPoint> list) {
-        this.f5767c = list;
+        this.c = list;
     }
 
     public void setStatus(String str) {
@@ -73,8 +69,8 @@ public class TMC implements Parcelable {
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeInt(this.f5766a);
+        parcel.writeInt(this.a);
         parcel.writeString(this.b);
-        parcel.writeTypedList(this.f5767c);
+        parcel.writeTypedList(this.c);
     }
 }

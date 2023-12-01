@@ -41,8 +41,8 @@ public class TwoLineListItem extends RelativeLayout {
     @Override // android.view.View
     public void onFinishInflate() {
         super.onFinishInflate();
-        this.mText1 = (TextView) findViewById(16908308);
-        this.mText2 = (TextView) findViewById(16908309);
+        this.mText1 = (TextView) findViewById(R.id.text1);
+        this.mText2 = (TextView) findViewById(R.id.text2);
     }
 
     @Override // android.widget.RelativeLayout, android.view.View

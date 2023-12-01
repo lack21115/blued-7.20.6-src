@@ -20,11 +20,11 @@ import java.util.List;
 class TypefaceCompatApi24Impl extends TypefaceCompatBaseImpl {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Class<?> f2460a;
+    private static final Class<?> f2412a;
     private static final Constructor<?> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final Method f2461c;
+    private static final Method f2413c;
     private static final Method d;
 
     static {
@@ -45,14 +45,14 @@ class TypefaceCompatApi24Impl extends TypefaceCompatBaseImpl {
             method2 = null;
         }
         b = constructor;
-        f2460a = cls;
-        f2461c = method2;
+        f2412a = cls;
+        f2413c = method2;
         d = method;
     }
 
     private static Typeface a(Object obj) {
         try {
-            Object newInstance = Array.newInstance(f2460a, 1);
+            Object newInstance = Array.newInstance(f2412a, 1);
             Array.set(newInstance, 0, obj);
             return (Typeface) d.invoke(null, newInstance);
         } catch (IllegalAccessException | InvocationTargetException e) {
@@ -70,17 +70,17 @@ class TypefaceCompatApi24Impl extends TypefaceCompatBaseImpl {
 
     private static boolean a(Object obj, ByteBuffer byteBuffer, int i, int i2, boolean z) {
         try {
-            return ((Boolean) f2461c.invoke(obj, byteBuffer, Integer.valueOf(i), null, Integer.valueOf(i2), Boolean.valueOf(z))).booleanValue();
+            return ((Boolean) f2413c.invoke(obj, byteBuffer, Integer.valueOf(i), null, Integer.valueOf(i2), Boolean.valueOf(z))).booleanValue();
         } catch (IllegalAccessException | InvocationTargetException e) {
             return false;
         }
     }
 
     public static boolean isUsable() {
-        if (f2461c == null) {
+        if (f2413c == null) {
             Log.w("TypefaceCompatApi24Impl", "Unable to collect necessary private methods.Fallback to legacy implementation.");
         }
-        return f2461c != null;
+        return f2413c != null;
     }
 
     @Override // androidx.core.graphics.TypefaceCompatBaseImpl

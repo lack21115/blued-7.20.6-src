@@ -7,11 +7,11 @@ import android.os.SystemClock;
 public final class a<T> {
 
     /* renamed from: a  reason: collision with root package name */
-    final T f8908a;
+    final T f6068a;
     long b = SystemClock.uptimeMillis();
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public a(T t) {
-        this.f8908a = t;
+        this.f6068a = t;
     }
 }

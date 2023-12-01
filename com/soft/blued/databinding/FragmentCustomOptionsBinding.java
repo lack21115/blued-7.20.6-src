@@ -11,18 +11,18 @@ import com.soft.blued.R;
 public final class FragmentCustomOptionsBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final LinearLayout f28806a;
+    public final LinearLayout f15116a;
     public final ToggleButton b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final CommonTopTitleNoTrans f28807c;
+    public final CommonTopTitleNoTrans f15117c;
     private final LinearLayout d;
 
     private FragmentCustomOptionsBinding(LinearLayout linearLayout, LinearLayout linearLayout2, ToggleButton toggleButton, CommonTopTitleNoTrans commonTopTitleNoTrans) {
         this.d = linearLayout;
-        this.f28806a = linearLayout2;
+        this.f15116a = linearLayout2;
         this.b = toggleButton;
-        this.f28807c = commonTopTitleNoTrans;
+        this.f15117c = commonTopTitleNoTrans;
     }
 
     public static FragmentCustomOptionsBinding a(View view) {
@@ -31,9 +31,9 @@ public final class FragmentCustomOptionsBinding implements ViewBinding {
         if (linearLayout != null) {
             ToggleButton toggleButton = (ToggleButton) view.findViewById(R.id.tglbtnCustomRecommend);
             if (toggleButton != null) {
-                CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) view.findViewById(2131370694);
-                if (commonTopTitleNoTrans != null) {
-                    return new FragmentCustomOptionsBinding((LinearLayout) view, linearLayout, toggleButton, commonTopTitleNoTrans);
+                CommonTopTitleNoTrans findViewById = view.findViewById(2131370694);
+                if (findViewById != null) {
+                    return new FragmentCustomOptionsBinding((LinearLayout) view, linearLayout, toggleButton, findViewById);
                 }
                 str = "title";
             } else {

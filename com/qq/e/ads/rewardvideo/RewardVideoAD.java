@@ -20,7 +20,7 @@ public class RewardVideoAD extends LiteAbstractAD<RVADI> implements NFBI {
     private final RewardVideoADListener b;
 
     /* renamed from: c  reason: collision with root package name */
-    private volatile boolean f27893c;
+    private volatile boolean f14205c;
     private LoadAdParams d;
     private ServerSideVerificationOptions e;
     private final boolean f;
@@ -30,7 +30,7 @@ public class RewardVideoAD extends LiteAbstractAD<RVADI> implements NFBI {
     public static class ADListenerAdapter implements ADListener {
 
         /* renamed from: a  reason: collision with root package name */
-        private NegativeFeedbackListener f27894a;
+        private NegativeFeedbackListener f14206a;
         public RewardVideoADListener adListener;
 
         public ADListenerAdapter(RewardVideoADListener rewardVideoADListener) {
@@ -38,7 +38,7 @@ public class RewardVideoAD extends LiteAbstractAD<RVADI> implements NFBI {
         }
 
         static void a(ADListenerAdapter aDListenerAdapter, NegativeFeedbackListener negativeFeedbackListener) {
-            aDListenerAdapter.f27894a = negativeFeedbackListener;
+            aDListenerAdapter.f14206a = negativeFeedbackListener;
         }
 
         @Override // com.qq.e.comm.adevent.ADListener
@@ -51,7 +51,7 @@ public class RewardVideoAD extends LiteAbstractAD<RVADI> implements NFBI {
             } else if (type == 206) {
                 this.adListener.onVideoComplete();
             } else if (type == 304) {
-                NegativeFeedbackListener negativeFeedbackListener = this.f27894a;
+                NegativeFeedbackListener negativeFeedbackListener = this.f14206a;
                 if (negativeFeedbackListener != null) {
                     negativeFeedbackListener.onComplainSuccess();
                 }
@@ -124,7 +124,7 @@ public class RewardVideoAD extends LiteAbstractAD<RVADI> implements NFBI {
         rvadi.setVolumeOn(this.f);
         rvadi.setLoadAdParams(this.d);
         rvadi.setServerSideVerificationOptions(this.e);
-        if (this.f27893c) {
+        if (this.f14205c) {
             loadAD();
         }
     }
@@ -138,7 +138,7 @@ public class RewardVideoAD extends LiteAbstractAD<RVADI> implements NFBI {
     }
 
     public String getAdNetWorkName() {
-        T t = this.f27851a;
+        T t = this.f14163a;
         if (t != 0) {
             return ((RVADI) t).getAdNetWorkName();
         }
@@ -147,7 +147,7 @@ public class RewardVideoAD extends LiteAbstractAD<RVADI> implements NFBI {
     }
 
     public int getRewardAdType() {
-        T t = this.f27851a;
+        T t = this.f14163a;
         if (t != 0) {
             return ((RVADI) t).getRewardAdType();
         }
@@ -156,7 +156,7 @@ public class RewardVideoAD extends LiteAbstractAD<RVADI> implements NFBI {
     }
 
     public int getVideoDuration() {
-        T t = this.f27851a;
+        T t = this.f14163a;
         if (t != 0) {
             return ((RVADI) t).getVideoDuration();
         }
@@ -165,7 +165,7 @@ public class RewardVideoAD extends LiteAbstractAD<RVADI> implements NFBI {
     }
 
     public boolean hasShown() {
-        T t = this.f27851a;
+        T t = this.f14163a;
         if (t != 0) {
             return ((RVADI) t).hasShown();
         }
@@ -176,10 +176,10 @@ public class RewardVideoAD extends LiteAbstractAD<RVADI> implements NFBI {
     public void loadAD() {
         if (a()) {
             if (!b()) {
-                this.f27893c = true;
+                this.f14205c = true;
                 return;
             }
-            T t = this.f27851a;
+            T t = this.f14163a;
             if (t != 0) {
                 ((RVADI) t).loadAD();
             } else {
@@ -190,7 +190,7 @@ public class RewardVideoAD extends LiteAbstractAD<RVADI> implements NFBI {
 
     public void setLoadAdParams(LoadAdParams loadAdParams) {
         this.d = loadAdParams;
-        T t = this.f27851a;
+        T t = this.f14163a;
         if (t != 0) {
             ((RVADI) t).setLoadAdParams(loadAdParams);
         }
@@ -203,14 +203,14 @@ public class RewardVideoAD extends LiteAbstractAD<RVADI> implements NFBI {
 
     public void setServerSideVerificationOptions(ServerSideVerificationOptions serverSideVerificationOptions) {
         this.e = serverSideVerificationOptions;
-        T t = this.f27851a;
+        T t = this.f14163a;
         if (t != 0) {
             ((RVADI) t).setServerSideVerificationOptions(serverSideVerificationOptions);
         }
     }
 
     public void showAD() {
-        T t = this.f27851a;
+        T t = this.f14163a;
         if (t != 0) {
             ((RVADI) t).showAD();
         } else {
@@ -219,7 +219,7 @@ public class RewardVideoAD extends LiteAbstractAD<RVADI> implements NFBI {
     }
 
     public void showAD(Activity activity) {
-        T t = this.f27851a;
+        T t = this.f14163a;
         if (t != 0) {
             ((RVADI) t).showAD(activity);
         } else {

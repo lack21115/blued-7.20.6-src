@@ -4,10 +4,10 @@ import android.content.Context;
 import android.os.Message;
 import android.text.TextUtils;
 import android.util.Pair;
+import com.alipay.sdk.util.i;
 import com.amap.api.col.p0003sl.hp;
 import com.autonavi.base.amap.api.mapcore.IAMapDelegate;
 import com.autonavi.base.amap.mapcore.tools.GLFileUtil;
-import com.meizu.cloud.pushsdk.notification.model.AppIconSetting;
 import java.lang.ref.WeakReference;
 import java.util.Map;
 import org.json.JSONObject;
@@ -15,15 +15,13 @@ import org.json.JSONObject;
 /* renamed from: com.amap.api.col.3sl.t  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/t.class */
 public final class t extends Thread {
-
-    /* renamed from: a  reason: collision with root package name */
-    WeakReference<IAMapDelegate> f5422a;
+    WeakReference<IAMapDelegate> a;
     private Context b;
 
     public t(Context context, IAMapDelegate iAMapDelegate) {
-        this.f5422a = null;
+        this.a = null;
         this.b = context;
-        this.f5422a = new WeakReference<>(iAMapDelegate);
+        this.a = new WeakReference<>(iAMapDelegate);
     }
 
     private Pair<JSONObject, hp.b.a> a(StringBuilder sb) {
@@ -35,42 +33,42 @@ public final class t extends Thread {
             long currentTimeMillis = System.currentTimeMillis();
             if (Math.abs(currentTimeMillis - longValue) >= 86400000) {
                 str = sb.toString();
-                str.replaceAll(";;", ";");
+                str.replaceAll(";;", i.b);
                 dm.a(this.b, "cloud_config_pull", "cloud_config_pull_timestamp", (Object) new Long(currentTimeMillis));
             } else {
                 str = "";
             }
-            hp.b a2 = hp.a(this.b, dw.a(), str, (Map<String, String>) null);
-            if (hp.f5080a != 1 && str != "" && a2 != null && this.f5422a != null && this.f5422a.get() != null) {
-                Message obtainMessage = this.f5422a.get().getMainHandler().obtainMessage();
+            hp.b a = hp.a(this.b, dw.a(), str, (Map<String, String>) null);
+            if (hp.a != 1 && str != "" && a != null && this.a != null && this.a.get() != null) {
+                Message obtainMessage = this.a.get().getMainHandler().obtainMessage();
                 obtainMessage.what = 2;
-                if (a2.f5085c != null) {
-                    obtainMessage.obj = a2.f5085c;
+                if (a.c != null) {
+                    obtainMessage.obj = a.c;
                 }
-                this.f5422a.get().getMainHandler().sendMessage(obtainMessage);
+                this.a.get().getMainHandler().sendMessage(obtainMessage);
             }
             String str2 = GLFileUtil.getCacheDir(this.b).getAbsolutePath() + "/authCustomConfigName";
-            if (TextUtils.isEmpty(str) || a2 == null || a2.f == null) {
+            if (TextUtils.isEmpty(str) || a == null || a.f == null) {
                 jSONObject = new JSONObject(new String(GLFileUtil.readFileContents(str2)));
             } else {
-                jSONObject = a2.f;
-                GLFileUtil.writeDatasToFile(str2, a2.f.toString().getBytes());
+                jSONObject = a.f;
+                GLFileUtil.writeDatasToFile(str2, a.f.toString().getBytes());
             }
             String str3 = GLFileUtil.getCacheDir(this.b).getAbsolutePath() + "/authLogConfigName";
-            if (TextUtils.isEmpty(str) || a2 == null || a2.g == null) {
+            if (TextUtils.isEmpty(str) || a == null || a.g == null) {
                 byte[] readFileContents = GLFileUtil.readFileContents(str3);
                 aVar = new hp.b.a();
                 JSONObject jSONObject2 = new JSONObject(new String(readFileContents));
-                aVar.f5086a = jSONObject2.getBoolean("IsExceptionUpdate");
+                aVar.a = jSONObject2.getBoolean("IsExceptionUpdate");
                 if (jSONObject2.has("mOfflineLoc")) {
-                    aVar.f5087c = jSONObject2.getJSONObject("mOfflineLoc");
+                    aVar.c = jSONObject2.getJSONObject("mOfflineLoc");
                 }
             } else {
                 JSONObject jSONObject3 = new JSONObject();
-                jSONObject3.put("IsExceptionUpdate", a2.g.f5086a);
-                jSONObject3.put("mOfflineLoc", a2.g.f5087c);
+                jSONObject3.put("IsExceptionUpdate", a.g.a);
+                jSONObject3.put("mOfflineLoc", a.g.c);
                 GLFileUtil.writeDatasToFile(str3, jSONObject3.toString().getBytes());
-                aVar = a2.g;
+                aVar = a.g;
             }
             return new Pair<>(jSONObject, aVar);
         } catch (Throwable th) {
@@ -84,12 +82,12 @@ public final class t extends Thread {
         }
         try {
             JSONObject optJSONObject = jSONObject.optJSONObject("16V");
-            boolean a2 = hp.a(optJSONObject.optString(AppIconSetting.DEFAULT_LARGE_ICON, ""), false);
+            boolean a = hp.a(optJSONObject.optString("di", ""), false);
             String optString = optJSONObject.optString("dis", "");
-            boolean a3 = hp.a(optJSONObject.optString("able", ""), false);
-            boolean a4 = hp.a(optJSONObject.optString("isFilter", ""), true);
-            if (!a2 || ib.e(optString)) {
-                je.a(iaVar).a(context, a3, a4);
+            boolean a2 = hp.a(optJSONObject.optString("able", ""), false);
+            boolean a3 = hp.a(optJSONObject.optString("isFilter", ""), true);
+            if (!a || ib.e(optString)) {
+                je.a(iaVar).a(context, a2, a3);
             }
         } catch (Throwable th) {
         }
@@ -98,8 +96,8 @@ public final class t extends Thread {
     private void a(hp.b.a aVar) {
         if (aVar != null) {
             try {
-                ds.a(this.b, "maploc", "ue", Boolean.valueOf(aVar.f5086a));
-                JSONObject jSONObject = aVar.f5087c;
+                ds.a(this.b, "maploc", "ue", Boolean.valueOf(aVar.a));
+                JSONObject jSONObject = aVar.c;
                 int optInt = jSONObject.optInt("fn", 1000);
                 int optInt2 = jSONObject.optInt("mpn", 0);
                 int i = optInt2;
@@ -134,12 +132,12 @@ public final class t extends Thread {
         }
         try {
             JSONObject optJSONObject = jSONObject.optJSONObject("16G");
-            boolean a2 = hp.a(optJSONObject.optString("able", ""), false);
-            boolean a3 = hp.a(optJSONObject.optString("removeCache", ""), false);
-            boolean a4 = hp.a(optJSONObject.optString("uploadInfo", ""), false);
-            dn.a(a2);
-            dn.b(a3);
-            dn.c(a4);
+            boolean a = hp.a(optJSONObject.optString("able", ""), false);
+            boolean a2 = hp.a(optJSONObject.optString("removeCache", ""), false);
+            boolean a3 = hp.a(optJSONObject.optString("uploadInfo", ""), false);
+            dn.a(a);
+            dn.b(a2);
+            dn.c(a3);
         } catch (Throwable th) {
         }
     }
@@ -150,9 +148,9 @@ public final class t extends Thread {
         }
         try {
             boolean z = false;
-            boolean a2 = hp.a(jSONObject.optJSONObject("17W").optString("able", ""), false);
+            boolean a = hp.a(jSONObject.optJSONObject("17W").optString("able", ""), false);
             Context context = this.b;
-            if (!a2) {
+            if (!a) {
                 z = true;
             }
             dm.a(context, "amap_param", "overlay_use_old_type", Boolean.valueOf(z));

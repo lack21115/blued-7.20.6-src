@@ -9,17 +9,13 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ItemYyFirstMeetItemBinding.class */
 public final class ItemYyFirstMeetItemBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final SquareImageView f16714a;
+    public final SquareImageView a;
     public final TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final ConstraintLayout f16715c;
+    private final ConstraintLayout c;
 
     private ItemYyFirstMeetItemBinding(ConstraintLayout constraintLayout, SquareImageView squareImageView, TextView textView) {
-        this.f16715c = constraintLayout;
-        this.f16714a = squareImageView;
+        this.c = constraintLayout;
+        this.a = squareImageView;
         this.b = textView;
     }
 
@@ -38,9 +34,8 @@ public final class ItemYyFirstMeetItemBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f16715c;
+        return this.c;
     }
 }

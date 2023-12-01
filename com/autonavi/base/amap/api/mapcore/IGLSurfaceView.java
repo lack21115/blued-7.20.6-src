@@ -3,8 +3,8 @@ package com.autonavi.base.amap.api.mapcore;
 import android.opengl.GLSurfaceView;
 import android.view.SurfaceHolder;
 import android.view.ViewParent;
-import com.amap.api.col.p0003sl.dg;
-import com.amap.api.col.p0003sl.dh;
+import com.amap.api.col.3sl.dg;
+import com.amap.api.col.3sl.dh;
 
 /* loaded from: source-8756600-dex2jar.jar:com/autonavi/base/amap/api/mapcore/IGLSurfaceView.class */
 public interface IGLSurfaceView {

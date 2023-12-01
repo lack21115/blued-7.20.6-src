@@ -83,8 +83,8 @@ public abstract class StableIMConnectListener implements IMStatusListener {
         this.uiCallback.setData(iMStatus);
         AppInfo.n().removeCallbacks(this.uiCallback);
         long currentTimeMillis = System.currentTimeMillis();
-        if (currentTimeMillis - this.lastNotifyTime < 500) {
-            AppInfo.n().postDelayed(this.uiCallback, 500L);
+        if (currentTimeMillis - this.lastNotifyTime < MIN_CALLBACK_SPAN_MS) {
+            AppInfo.n().postDelayed(this.uiCallback, MIN_CALLBACK_SPAN_MS);
             return;
         }
         this.lastNotifyTime = currentTimeMillis;

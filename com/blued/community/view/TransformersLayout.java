@@ -97,13 +97,13 @@ public class TransformersLayout extends FrameLayout {
                 addItemFullView(nearbyTransformersModel, rotation, a2.b);
             }
         }
-        ImageLoader.a((IRequestHost) null, BluedSkinUtils.c() ? nearbyTransformersModel.white_background_img : nearbyTransformersModel.black_background_img).d(R.drawable.shape_nearby_view_flipper_bg).a(a2.f19015a);
+        ImageLoader.a((IRequestHost) null, BluedSkinUtils.c() ? nearbyTransformersModel.white_background_img : nearbyTransformersModel.black_background_img).d(R.drawable.shape_nearby_view_flipper_bg).a(a2.a);
         if (nearbyTransformersModel.rotation == null || nearbyTransformersModel.rotation.size() <= 1) {
             a2.b.stopFlipping();
         } else {
             a2.b.startFlipping();
         }
-        addView(a2.getRoot());
+        addView(a2.a());
     }
 
     private void addHalfEventView(final NearbyTransformersModel nearbyTransformersModel) {
@@ -114,11 +114,11 @@ public class TransformersLayout extends FrameLayout {
         for (NearbyTransformersModel.Rotation rotation : nearbyTransformersModel.rotation) {
             addItemHalfEventView(nearbyTransformersModel, rotation, a2.j);
         }
-        ImageLoader.a((IRequestHost) null, BluedSkinUtils.c() ? nearbyTransformersModel.white_background_img : nearbyTransformersModel.black_background_img).d(R.drawable.shape_nearby_view_flipper_bg).a(a2.f19018c);
+        ImageLoader.a((IRequestHost) null, BluedSkinUtils.c() ? nearbyTransformersModel.white_background_img : nearbyTransformersModel.black_background_img).d(R.drawable.shape_nearby_view_flipper_bg).a(a2.c);
         a2.i.setText(nearbyTransformersModel.title);
-        a2.g.setText(!TextUtils.isEmpty(nearbyTransformersModel.rotation.get(0).name) ? nearbyTransformersModel.rotation.get(0).name : nearbyTransformersModel.describe);
-        if (nearbyTransformersModel.rotation.get(0).showDate()) {
-            a2.e.setText(nearbyTransformersModel.rotation.get(0).getDate());
+        a2.g.setText(!TextUtils.isEmpty(((NearbyTransformersModel.Rotation) nearbyTransformersModel.rotation.get(0)).name) ? ((NearbyTransformersModel.Rotation) nearbyTransformersModel.rotation.get(0)).name : nearbyTransformersModel.describe);
+        if (((NearbyTransformersModel.Rotation) nearbyTransformersModel.rotation.get(0)).showDate()) {
+            a2.e.setText(((NearbyTransformersModel.Rotation) nearbyTransformersModel.rotation.get(0)).getDate());
         }
         if (nearbyTransformersModel.rotation == null || nearbyTransformersModel.rotation.size() <= 1) {
             a2.j.stopFlipping();
@@ -143,18 +143,18 @@ public class TransformersLayout extends FrameLayout {
                 int displayedChild = a2.j.getDisplayedChild();
                 if (a2.b.getVisibility() == 0) {
                     linearLayout = a2.b;
-                    linearLayout2 = a2.f19017a;
+                    linearLayout2 = a2.a;
                     textView = a2.g;
                     textView2 = a2.e;
                 } else {
-                    linearLayout = a2.f19017a;
+                    linearLayout = a2.a;
                     linearLayout2 = a2.b;
                     textView = a2.h;
                     textView2 = a2.f;
                 }
-                textView.setText(!TextUtils.isEmpty(nearbyTransformersModel.rotation.get(displayedChild).name) ? nearbyTransformersModel.rotation.get(displayedChild).name : nearbyTransformersModel.describe);
-                if (nearbyTransformersModel.rotation.get(displayedChild).showDate()) {
-                    textView2.setText(nearbyTransformersModel.rotation.get(displayedChild).getDate());
+                textView.setText(!TextUtils.isEmpty(((NearbyTransformersModel.Rotation) nearbyTransformersModel.rotation.get(displayedChild)).name) ? ((NearbyTransformersModel.Rotation) nearbyTransformersModel.rotation.get(displayedChild)).name : nearbyTransformersModel.describe);
+                if (((NearbyTransformersModel.Rotation) nearbyTransformersModel.rotation.get(displayedChild)).showDate()) {
+                    textView2.setText(((NearbyTransformersModel.Rotation) nearbyTransformersModel.rotation.get(displayedChild)).getDate());
                 }
                 ObjectAnimator ofFloat = ObjectAnimator.ofFloat(linearLayout, "alpha", 1.0f, 0.1f);
                 ofFloat.setDuration(300L);
@@ -203,8 +203,8 @@ public class TransformersLayout extends FrameLayout {
                 ofFloat2.start();
             }
         });
-        addView(a2.getRoot());
-        a2.getRoot().setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.view.-$$Lambda$TransformersLayout$8CKM71uKIo0OrAPNF7NyPyv_bj8
+        addView(a2.a());
+        a2.a().setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.view.-$$Lambda$TransformersLayout$8CKM71uKIo0OrAPNF7NyPyv_bj8
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 TransformersLayout.this.lambda$addHalfEventView$0$TransformersLayout(a2, nearbyTransformersModel, view);
@@ -228,29 +228,29 @@ public class TransformersLayout extends FrameLayout {
                 addItemHalfView(nearbyTransformersModel, rotation, a2.b);
             }
         }
-        ImageLoader.a((IRequestHost) null, BluedSkinUtils.c() ? nearbyTransformersModel.white_background_img : nearbyTransformersModel.black_background_img).d(R.drawable.shape_nearby_view_flipper_bg).a(a2.f19015a);
+        ImageLoader.a((IRequestHost) null, BluedSkinUtils.c() ? nearbyTransformersModel.white_background_img : nearbyTransformersModel.black_background_img).d(R.drawable.shape_nearby_view_flipper_bg).a(a2.a);
         if (nearbyTransformersModel.rotation == null || nearbyTransformersModel.rotation.size() <= 1) {
             a2.b.stopFlipping();
         } else {
             a2.b.startFlipping();
         }
-        addView(a2.getRoot());
+        addView(a2.a());
     }
 
     private void addItemFullView(final NearbyTransformersModel nearbyTransformersModel, final NearbyTransformersModel.Rotation rotation, ViewFlipper viewFlipper) {
         ItemNearbyTransformersFullBinding a2 = ItemNearbyTransformersFullBinding.a(LayoutInflater.from(getContext()));
         String str = TextUtils.isEmpty(rotation.pic) ? nearbyTransformersModel.icon : rotation.pic;
         if (TextUtils.isEmpty(str)) {
-            a2.f19009a.setVisibility(8);
+            a2.a.setVisibility(8);
         } else {
-            ImageLoader.a((IRequestHost) null, str).b(R.drawable.defaultpicture).d(R.drawable.defaultpicture).a(6.0f).a(a2.f19009a);
+            ImageLoader.a((IRequestHost) null, str).b(R.drawable.defaultpicture).d(R.drawable.defaultpicture).a(6.0f).a(a2.a);
         }
         a2.f.setText(nearbyTransformersModel.title);
         a2.e.setText(rotation.name);
         a2.d.setText(rotation.getDate());
-        a2.f19010c.setText(nearbyTransformersModel.button);
+        a2.c.setText(nearbyTransformersModel.button);
         postCityFirstShow(nearbyTransformersModel, rotation);
-        a2.getRoot().setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.view.TransformersLayout.1
+        a2.a().setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.view.TransformersLayout.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
@@ -259,36 +259,36 @@ public class TransformersLayout extends FrameLayout {
                 NearbyFeedFragment.r = SystemClock.elapsedRealtime();
             }
         });
-        viewFlipper.addView(a2.getRoot());
+        viewFlipper.addView(a2.a());
     }
 
     private void addItemHalfEventView(NearbyTransformersModel nearbyTransformersModel, NearbyTransformersModel.Rotation rotation, ViewFlipper viewFlipper) {
         ItemNearbyTransformersFlipperEventBinding a2 = ItemNearbyTransformersFlipperEventBinding.a(LayoutInflater.from(getContext()));
         String str = TextUtils.isEmpty(rotation.pic) ? nearbyTransformersModel.icon : rotation.pic;
         if (TextUtils.isEmpty(str)) {
-            a2.f19008a.setVisibility(8);
+            a2.a.setVisibility(8);
         } else {
-            ImageLoader.a((IRequestHost) null, str).b(R.drawable.defaultpicture).d(R.drawable.defaultpicture).a(6.0f).a(a2.f19008a);
+            ImageLoader.a((IRequestHost) null, str).b(R.drawable.defaultpicture).d(R.drawable.defaultpicture).a(6.0f).a(a2.a);
         }
         postCityFirstShow(nearbyTransformersModel, rotation);
-        viewFlipper.addView(a2.getRoot());
+        viewFlipper.addView(a2.a());
     }
 
     private void addItemHalfView(final NearbyTransformersModel nearbyTransformersModel, final NearbyTransformersModel.Rotation rotation, ViewFlipper viewFlipper) {
         ItemNearbyTransformersHalfBinding a2 = ItemNearbyTransformersHalfBinding.a(LayoutInflater.from(getContext()));
         String str = TextUtils.isEmpty(rotation.pic) ? nearbyTransformersModel.icon : rotation.pic;
         if (TextUtils.isEmpty(str)) {
-            a2.f19011a.setVisibility(8);
+            a2.a.setVisibility(8);
         } else {
-            ImageLoader.a((IRequestHost) null, str).b(R.drawable.defaultpicture).d(R.drawable.defaultpicture).a(6.0f).a(a2.f19011a);
+            ImageLoader.a((IRequestHost) null, str).b(R.drawable.defaultpicture).d(R.drawable.defaultpicture).a(6.0f).a(a2.a);
         }
         a2.e.setText(nearbyTransformersModel.title);
         a2.d.setText(!TextUtils.isEmpty(rotation.name) ? rotation.name : nearbyTransformersModel.describe);
         if (rotation.showDate()) {
-            a2.f19012c.setText(rotation.getDate());
+            a2.c.setText(rotation.getDate());
         }
         postCityFirstShow(nearbyTransformersModel, rotation);
-        a2.getRoot().setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.view.TransformersLayout.2
+        a2.a().setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.view.TransformersLayout.2
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
@@ -297,14 +297,14 @@ public class TransformersLayout extends FrameLayout {
                 NearbyFeedFragment.r = SystemClock.elapsedRealtime();
             }
         });
-        viewFlipper.addView(a2.getRoot());
+        viewFlipper.addView(a2.a());
     }
 
     private void addItemQuarterView(final NearbyTransformersModel nearbyTransformersModel, final NearbyTransformersModel.Rotation rotation, ViewFlipper viewFlipper) {
         ItemNearbyTransformersQuarterBinding a2 = ItemNearbyTransformersQuarterBinding.a(LayoutInflater.from(getContext()));
         a2.b.setText(nearbyTransformersModel.title);
         postCityFirstShow(nearbyTransformersModel, rotation);
-        a2.getRoot().setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.view.TransformersLayout.4
+        a2.a().setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.view.TransformersLayout.4
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
@@ -313,7 +313,7 @@ public class TransformersLayout extends FrameLayout {
                 NearbyFeedFragment.r = SystemClock.elapsedRealtime();
             }
         });
-        viewFlipper.addView(a2.getRoot());
+        viewFlipper.addView(a2.a());
     }
 
     private void addQuarterView(NearbyTransformersModel nearbyTransformersModel) {
@@ -326,27 +326,26 @@ public class TransformersLayout extends FrameLayout {
             }
         }
         if (BluedSkinUtils.c()) {
-            ImageLoader.a((IRequestHost) null, nearbyTransformersModel.white_background_img).d(R.drawable.shape_nearby_view_flipper_bg).a(a2.f19015a);
+            ImageLoader.a((IRequestHost) null, nearbyTransformersModel.white_background_img).d(R.drawable.shape_nearby_view_flipper_bg).a(a2.a);
         } else {
-            ImageLoader.a((IRequestHost) null, nearbyTransformersModel.black_background_img).d(R.drawable.shape_nearby_view_flipper_bg).a(a2.f19015a);
+            ImageLoader.a((IRequestHost) null, nearbyTransformersModel.black_background_img).d(R.drawable.shape_nearby_view_flipper_bg).a(a2.a);
         }
         if (nearbyTransformersModel.rotation == null || nearbyTransformersModel.rotation.size() <= 1) {
             a2.b.stopFlipping();
         } else {
             a2.b.startFlipping();
         }
-        addView(a2.getRoot());
+        addView(a2.a());
     }
 
     public /* synthetic */ void lambda$addHalfEventView$0$TransformersLayout(ItemNearbyViewFlipperWithImgBinding itemNearbyViewFlipperWithImgBinding, NearbyTransformersModel nearbyTransformersModel, View view) {
-        postCityFirstClick(nearbyTransformersModel, nearbyTransformersModel.rotation.get(itemNearbyViewFlipperWithImgBinding.j.getDisplayedChild()));
+        postCityFirstClick(nearbyTransformersModel, (NearbyTransformersModel.Rotation) nearbyTransformersModel.rotation.get(itemNearbyViewFlipperWithImgBinding.j.getDisplayedChild()));
         CommunityServiceManager.b().a(getContext(), nearbyTransformersModel.url);
         NearbyFeedFragment.r = SystemClock.elapsedRealtime();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z, int i, int i2, int i3, int i4) {
+    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         int childCount = getChildCount();
         if (childCount == 1) {
             oneLayout(z, i, i2, i3, i4);
@@ -358,9 +357,8 @@ public class TransformersLayout extends FrameLayout {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         int i3 = this.measure;
         if (i3 == 1) {
             super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) (View.MeasureSpec.getSize(i2) * this.ratio), 1073741824), i2);
@@ -388,11 +386,11 @@ public class TransformersLayout extends FrameLayout {
     }
 
     public void postCityFirstClick(NearbyTransformersModel nearbyTransformersModel, NearbyTransformersModel.Rotation rotation) {
-        EventTrackFeed.b(FeedProtos.Event.CITY_FIRST_CLICK, rotation.id, nearbyTransformersModel.type, CommunityManager.f19086a.a().t());
+        EventTrackFeed.b(FeedProtos.Event.CITY_FIRST_CLICK, rotation.id, nearbyTransformersModel.type, CommunityManager.a.a().t());
     }
 
     public void postCityFirstShow(NearbyTransformersModel nearbyTransformersModel, NearbyTransformersModel.Rotation rotation) {
-        EventTrackFeed.b(FeedProtos.Event.CITY_FIRST_SHOW, rotation.id, nearbyTransformersModel.type, CommunityManager.f19086a.a().t());
+        EventTrackFeed.b(FeedProtos.Event.CITY_FIRST_SHOW, rotation.id, nearbyTransformersModel.type, CommunityManager.a.a().t());
     }
 
     public void setTransformersData(List<NearbyTransformersModel> list) {

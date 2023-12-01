@@ -2,6 +2,7 @@ package com.huawei.openalliance.ad.utils;
 
 import android.text.TextUtils;
 import com.huawei.hms.ads.ge;
+import com.xiaomi.mipush.sdk.Constants;
 
 /* loaded from: source-7994992-dex2jar.jar:com/huawei/openalliance/ad/utils/av.class */
 public abstract class av {
@@ -15,7 +16,7 @@ public abstract class av {
         if (TextUtils.isEmpty(str) || i2 < 0) {
             return null;
         }
-        String[] split = str.split("-");
+        String[] split = str.split(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
         if (split.length < i2 + 1) {
             return null;
         }

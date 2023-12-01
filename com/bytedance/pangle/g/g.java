@@ -10,17 +10,17 @@ import java.util.ArrayList;
 abstract class g {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final byte[] f21415a = new byte[8];
+    private static final byte[] f7809a = new byte[8];
 
     /* loaded from: source-7206380-dex2jar.jar:com/bytedance/pangle/g/g$a.class */
     static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public final ByteBuffer f21416a;
+        public final ByteBuffer f7810a;
         public final byte[] b;
 
         a(ByteBuffer byteBuffer, byte[] bArr) {
-            this.f21416a = byteBuffer;
+            this.f7810a = byteBuffer;
             this.b = bArr;
         }
     }
@@ -30,11 +30,11 @@ abstract class g {
     public static final class b implements j {
 
         /* renamed from: a  reason: collision with root package name */
-        private int f21417a;
+        private int f7811a;
         private final ByteBuffer b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final MessageDigest f21418c;
+        private final MessageDigest f7812c;
         private final byte[] d;
         private final byte[] e;
 
@@ -43,9 +43,9 @@ abstract class g {
             this.e = bArr;
             this.b = byteBuffer.slice();
             MessageDigest messageDigest = MessageDigest.getInstance("SHA-256");
-            this.f21418c = messageDigest;
+            this.f7812c = messageDigest;
             messageDigest.update(this.e);
-            this.f21417a = 0;
+            this.f7811a = 0;
         }
 
         /* synthetic */ b(byte[] bArr, ByteBuffer byteBuffer, byte b) {
@@ -53,10 +53,10 @@ abstract class g {
         }
 
         public final void a() {
-            if (this.f21417a == 0) {
+            if (this.f7811a == 0) {
                 return;
             }
-            throw new IllegalStateException("Buffer is not empty: " + this.f21417a);
+            throw new IllegalStateException("Buffer is not empty: " + this.f7811a);
         }
 
         @Override // com.bytedance.pangle.g.j
@@ -64,20 +64,20 @@ abstract class g {
             byteBuffer.position();
             int remaining = byteBuffer.remaining();
             while (remaining > 0) {
-                int min = Math.min(remaining, 4096 - this.f21417a);
+                int min = Math.min(remaining, 4096 - this.f7811a);
                 byteBuffer.limit(byteBuffer.position() + min);
-                this.f21418c.update(byteBuffer);
+                this.f7812c.update(byteBuffer);
                 int i = remaining - min;
-                int i2 = this.f21417a + min;
-                this.f21417a = i2;
+                int i2 = this.f7811a + min;
+                this.f7811a = i2;
                 remaining = i;
                 if (i2 == 4096) {
-                    MessageDigest messageDigest = this.f21418c;
+                    MessageDigest messageDigest = this.f7812c;
                     byte[] bArr = this.d;
                     messageDigest.digest(bArr, 0, bArr.length);
                     this.b.put(this.d);
-                    this.f21418c.update(this.e);
-                    this.f21417a = 0;
+                    this.f7812c.update(this.e);
+                    this.f7811a = 0;
                     remaining = i;
                 }
             }
@@ -94,7 +94,7 @@ abstract class g {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static a a(RandomAccessFile randomAccessFile, m mVar, i iVar) {
-        int[] a2 = a(randomAccessFile.length() - (mVar.f21423c - mVar.b));
+        int[] a2 = a(randomAccessFile.length() - (mVar.f7817c - mVar.b));
         int i = a2[a2.length - 1];
         int i2 = i + 4096;
         ByteBuffer a3 = iVar.a(i2);
@@ -108,13 +108,13 @@ abstract class g {
         wrap.order(ByteOrder.LITTLE_ENDIAN);
         if (mVar.b % 4096 != 0) {
             throw new IllegalArgumentException("APK Signing Block does not start at the page  boundary: " + mVar.b);
-        } else if ((mVar.f21423c - mVar.b) % 4096 != 0) {
-            throw new IllegalArgumentException("Size of APK Signing Block is not a multiple of 4096: " + (mVar.f21423c - mVar.b));
+        } else if ((mVar.f7817c - mVar.b) % 4096 != 0) {
+            throw new IllegalArgumentException("Size of APK Signing Block is not a multiple of 4096: " + (mVar.f7817c - mVar.b));
         } else {
-            long j = mVar.f21423c - mVar.b;
+            long j = mVar.f7817c - mVar.b;
             int[] a7 = a(randomAccessFile.length() - j);
             if (a4 != null) {
-                byte[] a8 = a(randomAccessFile, mVar, f21415a, a7, a4);
+                byte[] a8 = a(randomAccessFile, mVar, f7809a, a7, a4);
                 if (wrap != null) {
                     wrap.put(a8);
                     wrap.flip();
@@ -123,7 +123,7 @@ abstract class g {
             if (a5 != null) {
                 a5.order(ByteOrder.LITTLE_ENDIAN);
                 long length = randomAccessFile.length();
-                byte[] bArr2 = f21415a;
+                byte[] bArr2 = f7809a;
                 if (bArr2.length != 8) {
                     throw new IllegalArgumentException("salt is not 8 bytes long");
                 }
@@ -195,7 +195,7 @@ abstract class g {
         b bVar = new b(bArr, a(byteBuffer, iArr[iArr.length - 2], iArr[iArr.length - 1]), (byte) 0);
         a(bVar, new l(randomAccessFile.getFD(), 0L, mVar.b), 1048576);
         long j = mVar.d + 16;
-        a(bVar, new l(randomAccessFile.getFD(), mVar.f21423c, j - mVar.f21423c), 1048576);
+        a(bVar, new l(randomAccessFile.getFD(), mVar.f7817c, j - mVar.f7817c), 1048576);
         ByteBuffer order = ByteBuffer.allocate(4).order(ByteOrder.LITTLE_ENDIAN);
         order.putInt(c(mVar.b));
         order.flip();

@@ -13,11 +13,11 @@ import org.json.JSONObject;
 public final class c {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f7145a = 1;
+    public static final int f4306a = 1;
     public static final int b = 2;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final int f7146c = 3;
+    public static final int f4307c = 3;
     public static final int d = 3;
     private String A;
     private int B;

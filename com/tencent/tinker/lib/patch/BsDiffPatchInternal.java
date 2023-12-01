@@ -3,7 +3,6 @@ package com.tencent.tinker.lib.patch;
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.os.SystemClock;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.tinker.bsdiff.BSPatch;
 import com.tencent.tinker.commons.util.IOHelper;
 import com.tencent.tinker.lib.tinker.Tinker;
@@ -59,11 +58,11 @@ public class BsDiffPatchInternal extends BasePatchInternal {
                         if (shareBsDiffPatchInfo.path.equals("")) {
                             str3 = shareBsDiffPatchInfo.name;
                         } else {
-                            str3 = shareBsDiffPatchInfo.path + BridgeUtil.SPLIT_MARK + shareBsDiffPatchInfo.name;
+                            str3 = shareBsDiffPatchInfo.path + "/" + shareBsDiffPatchInfo.name;
                         }
                         String str4 = shareBsDiffPatchInfo.md5;
                         if (SharePatchFileUtil.checkIfMd5Valid(str4)) {
-                            File file3 = new File(str + (shareBsDiffPatchInfo.path + BridgeUtil.SPLIT_MARK + shareBsDiffPatchInfo.name));
+                            File file3 = new File(str + (shareBsDiffPatchInfo.path + "/" + shareBsDiffPatchInfo.name));
                             if (!file3.exists()) {
                                 file3.getParentFile().mkdirs();
                             } else if (str4.equals(SharePatchFileUtil.getMD5(file3))) {
@@ -167,7 +166,7 @@ public class BsDiffPatchInternal extends BasePatchInternal {
     }
 
     private static boolean patchLibraryExtractViaBsDiff(Context context, String str, String str2, File file) {
-        return extractBsDiffInternals(context, str + BridgeUtil.SPLIT_MARK + "lib" + BridgeUtil.SPLIT_MARK, str2, file, 5);
+        return extractBsDiffInternals(context, str + "/" + ShareConstants.SO_PATH + "/", str2, file, 5);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

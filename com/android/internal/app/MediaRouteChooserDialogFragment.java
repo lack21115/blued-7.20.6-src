@@ -5,6 +5,7 @@ import android.app.DialogFragment;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
+import com.android.internal.R;
 
 /* loaded from: source-4181928-dex2jar.jar:com/android/internal/app/MediaRouteChooserDialogFragment.class */
 public class MediaRouteChooserDialogFragment extends DialogFragment {
@@ -13,7 +14,7 @@ public class MediaRouteChooserDialogFragment extends DialogFragment {
 
     public MediaRouteChooserDialogFragment() {
         setCancelable(true);
-        setStyle(0, 16974126);
+        setStyle(0, R.style.Theme_DeviceDefault_Dialog);
     }
 
     public int getRouteTypes() {

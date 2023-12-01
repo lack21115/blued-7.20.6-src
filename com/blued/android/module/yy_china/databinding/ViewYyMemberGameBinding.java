@@ -12,13 +12,9 @@ import com.blued.android.module.yy_china.view.YYBaseUserHeadView;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ViewYyMemberGameBinding.class */
 public final class ViewYyMemberGameBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final YYBaseUserHeadView f16930a;
+    public final YYBaseUserHeadView a;
     public final LinearLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final TextView f16931c;
+    public final TextView c;
     public final TextView d;
     public final TextView e;
     public final TextView f;
@@ -27,9 +23,9 @@ public final class ViewYyMemberGameBinding implements ViewBinding {
 
     private ViewYyMemberGameBinding(ConstraintLayout constraintLayout, YYBaseUserHeadView yYBaseUserHeadView, LinearLayout linearLayout, TextView textView, TextView textView2, TextView textView3, TextView textView4, TextView textView5) {
         this.h = constraintLayout;
-        this.f16930a = yYBaseUserHeadView;
+        this.a = yYBaseUserHeadView;
         this.b = linearLayout;
-        this.f16931c = textView;
+        this.c = textView;
         this.d = textView2;
         this.e = textView3;
         this.f = textView4;
@@ -84,7 +80,6 @@ public final class ViewYyMemberGameBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.h;

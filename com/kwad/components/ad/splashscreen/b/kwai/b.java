@@ -84,9 +84,9 @@ public final class b extends com.kwad.components.ad.splashscreen.b.e implements 
     public final void onClick(View view) {
         Tracker.onClick(view);
         if (view == this.DD) {
-            AdWebViewActivityProxy.launch(getContext(), new AdWebViewActivityProxy.a.C0529a().au("隐私政策").av(this.DF.appPrivacyUrl).aA(true).L(this.Cg.mAdTemplate).oc());
+            AdWebViewActivityProxy.launch(getContext(), new AdWebViewActivityProxy.a.C0359a().au("隐私政策").av(this.DF.appPrivacyUrl).aA(true).L(this.Cg.mAdTemplate).oc());
         } else if (view == this.DC) {
-            AdWebViewActivityProxy.launch(getContext(), new AdWebViewActivityProxy.a.C0529a().au("权限信息").aA(true).av(this.DF.appPermissionInfoUrl).L(this.Cg.mAdTemplate).oc());
+            AdWebViewActivityProxy.launch(getContext(), new AdWebViewActivityProxy.a.C0359a().au("权限信息").aA(true).av(this.DF.appPermissionInfoUrl).L(this.Cg.mAdTemplate).oc());
         }
     }
 

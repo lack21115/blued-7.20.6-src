@@ -6,7 +6,7 @@ import java.lang.reflect.Method;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Method f27918a;
+    private static Method f14230a;
     private static boolean b = false;
 
     public static void a(Throwable th, String str) {
@@ -15,12 +15,12 @@ public class a {
             if (b) {
                 return;
             }
-            if (f27918a == null) {
+            if (f14230a == null) {
                 Method declaredMethod = Class.forName("com.tencent.bugly.crashreport.CrashReport").getDeclaredMethod("postCatchedException", Throwable.class);
-                f27918a = declaredMethod;
+                f14230a = declaredMethod;
                 declaredMethod.setAccessible(true);
             }
-            f27918a.invoke(null, exc);
+            f14230a.invoke(null, exc);
         } catch (Throwable th2) {
             b = true;
         }

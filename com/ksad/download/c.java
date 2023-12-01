@@ -22,9 +22,8 @@ public final class c {
     private final Map<String, Integer> bq = new ConcurrentHashMap();
     private boolean bs = false;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-7994992-dex2jar.jar:com/ksad/download/c$a.class */
-    public static final class a {
+    static final class a {
         private static final c bv = new c();
     }
 

@@ -15,11 +15,11 @@ import java.util.List;
 public class s {
 
     /* renamed from: a  reason: collision with root package name */
-    public static boolean f35337a = false;
+    public static boolean f21646a = false;
     public static r b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static int f35338c = 10;
+    private static int f21647c = 10;
     private static long d = 300000;
     private static long e = 30000;
     private static long f = 0;
@@ -99,7 +99,7 @@ public class s {
                     b.c();
                     s.g();
                     al.a("[session] launch app one times (app in background %d seconds and over %d seconds)", Long.valueOf(j / 1000), Long.valueOf(s.e / 1000));
-                    if (s.g % s.f35338c == 0) {
+                    if (s.g % s.f21647c == 0) {
                         s.b.a(4, s.m);
                         return;
                     }
@@ -153,7 +153,7 @@ public class s {
     }
 
     public static void a(Context context) {
-        if (!f35337a || context == null) {
+        if (!f21646a || context == null) {
             return;
         }
         Application application = null;
@@ -173,18 +173,18 @@ public class s {
                 }
             }
         }
-        f35337a = false;
+        f21646a = false;
     }
 
     public static void a(final Context context, final BuglyStrategy buglyStrategy) {
         long j2;
-        if (f35337a) {
+        if (f21646a) {
             return;
         }
         boolean z = aa.a(context).f;
         m = z;
         b = new r(context, z);
-        f35337a = true;
+        f21646a = true;
         if (buglyStrategy != null) {
             l = buglyStrategy.getUserInfoActivity();
             j2 = buglyStrategy.getAppReportDelay();
@@ -215,7 +215,7 @@ public class s {
             e = strategyBean.p;
         }
         if (strategyBean.u > 0) {
-            f35338c = strategyBean.u;
+            f21647c = strategyBean.u;
         }
         if (strategyBean.v > 0) {
             d = strategyBean.v;

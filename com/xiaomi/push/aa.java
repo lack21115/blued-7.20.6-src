@@ -4,17 +4,17 @@ package com.xiaomi.push;
 public class aa {
 
     /* renamed from: a  reason: collision with root package name */
-    private static int f41242a;
+    private static int f27551a;
 
     /* renamed from: a  reason: collision with other field name */
-    public static final String f169a;
+    public static final String f122a;
 
     /* renamed from: a  reason: collision with other field name */
-    public static final boolean f170a;
+    public static final boolean f123a;
     public static final boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final boolean f41243c;
+    public static final boolean f27552c;
     public static final boolean d;
     public static boolean e;
     public static final boolean f;
@@ -22,16 +22,16 @@ public class aa {
 
     static {
         int i;
-        String str = ae.f171a ? "ONEBOX" : "@SHIP.TO.2A2FE0D7@";
-        f169a = str;
+        String str = ae.f124a ? "ONEBOX" : "@SHIP.TO.2A2FE0D7@";
+        f122a = str;
         boolean contains = str.contains("2A2FE0D7");
-        f170a = contains;
-        b = contains || "DEBUG".equalsIgnoreCase(f169a);
-        f41243c = "LOGABLE".equalsIgnoreCase(f169a);
-        d = f169a.contains("YY");
-        e = f169a.equalsIgnoreCase("TEST");
-        f = "BETA".equalsIgnoreCase(f169a);
-        String str2 = f169a;
+        f123a = contains;
+        b = contains || "DEBUG".equalsIgnoreCase(f122a);
+        f27552c = "LOGABLE".equalsIgnoreCase(f122a);
+        d = f122a.contains("YY");
+        e = f122a.equalsIgnoreCase("TEST");
+        f = "BETA".equalsIgnoreCase(f122a);
+        String str2 = f122a;
         boolean z = false;
         if (str2 != null) {
             z = false;
@@ -40,32 +40,32 @@ public class aa {
             }
         }
         g = z;
-        f41242a = 1;
-        if (f169a.equalsIgnoreCase("SANDBOX")) {
+        f27551a = 1;
+        if (f122a.equalsIgnoreCase("SANDBOX")) {
             i = 2;
-        } else if (!f169a.equalsIgnoreCase("ONEBOX")) {
-            f41242a = 1;
+        } else if (!f122a.equalsIgnoreCase("ONEBOX")) {
+            f27551a = 1;
             return;
         } else {
             i = 3;
         }
-        f41242a = i;
+        f27551a = i;
     }
 
     public static int a() {
-        return f41242a;
+        return f27551a;
     }
 
     public static void a(int i) {
-        f41242a = i;
+        f27551a = i;
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public static boolean m11495a() {
-        return f41242a == 2;
+    public static boolean m8445a() {
+        return f27551a == 2;
     }
 
     public static boolean b() {
-        return f41242a == 3;
+        return f27551a == 3;
     }
 }

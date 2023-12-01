@@ -22,7 +22,7 @@ public class f {
     static {
         ArrayList arrayList = new ArrayList();
         S = arrayList;
-        arrayList.add(com.huawei.openalliance.ad.constant.t.f22960cn);
+        arrayList.add(com.huawei.openalliance.ad.constant.t.f9352cn);
     }
 
     public static IRemoteCreator Code(Context context) {

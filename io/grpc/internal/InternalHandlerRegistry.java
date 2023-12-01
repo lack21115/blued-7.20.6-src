@@ -30,7 +30,7 @@ final class InternalHandlerRegistry extends HandlerRegistry {
         public InternalHandlerRegistry build() {
             HashMap hashMap = new HashMap();
             for (ServerServiceDefinition serverServiceDefinition : this.services.values()) {
-                for (ServerMethodDefinition<?, ?> serverMethodDefinition : serverServiceDefinition.getMethods()) {
+                for (ServerMethodDefinition serverMethodDefinition : serverServiceDefinition.getMethods()) {
                     hashMap.put(serverMethodDefinition.getMethodDescriptor().getFullMethodName(), serverMethodDefinition);
                 }
             }
@@ -43,12 +43,10 @@ final class InternalHandlerRegistry extends HandlerRegistry {
         this.methods = map;
     }
 
-    @Override // io.grpc.HandlerRegistry
     public List<ServerServiceDefinition> getServices() {
         return this.services;
     }
 
-    @Override // io.grpc.HandlerRegistry
     @Nullable
     public ServerMethodDefinition<?, ?> lookupMethod(String str, @Nullable String str2) {
         return this.methods.get(str);

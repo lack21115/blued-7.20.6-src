@@ -5,18 +5,16 @@ import org.commonmark.node.Delimited;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/ui/markdown/atuser/AtUserNode.class */
 public class AtUserNode extends CustomNode implements Delimited {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final String f9901a;
+    private final String a;
     private final String b;
 
     public AtUserNode(String str, String str2) {
-        this.f9901a = str;
+        this.a = str;
         this.b = str2;
     }
 
     public String a() {
-        return this.f9901a;
+        return this.a;
     }
 
     public String p_() {
@@ -25,6 +23,6 @@ public class AtUserNode extends CustomNode implements Delimited {
 
     @Override // org.commonmark.node.Node
     public String toString() {
-        return "AtUserNode {userName='" + this.f9901a + "', userId='" + this.b + "'}";
+        return "AtUserNode {userName='" + this.a + "', userId='" + this.b + "'}";
     }
 }

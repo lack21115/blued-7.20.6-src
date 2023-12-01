@@ -16,7 +16,7 @@ public final class a extends com.kwad.components.core.offline.init.a {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.kwad.components.offline.adLive.a$a  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/components/offline/adLive/a$a.class */
-    public static final class C0545a {
+    public static final class C0375a {
         private static final a Xi = new a((byte) 0);
     }
 
@@ -32,7 +32,7 @@ public final class a extends com.kwad.components.core.offline.init.a {
     }
 
     private static a rL() {
-        return C0545a.Xi;
+        return C0375a.Xi;
     }
 
     @Override // com.kwad.components.core.offline.init.a

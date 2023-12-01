@@ -145,7 +145,6 @@ public class ToolbarActionBar extends ActionBar {
         throw new UnsupportedOperationException("Tabs are not supported in toolbar action bars");
     }
 
-    @Override // android.app.ActionBar
     public boolean collapseActionView() {
         if (this.mDecorToolbar.hasExpandedActionView()) {
             this.mDecorToolbar.collapseActionView();
@@ -154,7 +153,6 @@ public class ToolbarActionBar extends ActionBar {
         return false;
     }
 
-    @Override // android.app.ActionBar
     public void dispatchMenuVisibilityChanged(boolean z) {
         if (z == this.mLastMenuVisibility) {
             return;
@@ -246,7 +244,6 @@ public class ToolbarActionBar extends ActionBar {
         this.mDecorToolbar.setVisibility(8);
     }
 
-    @Override // android.app.ActionBar
     public boolean invalidateOptionsMenu() {
         this.mDecorToolbar.getViewGroup().removeCallbacks(this.mMenuInvalidator);
         this.mDecorToolbar.getViewGroup().postOnAnimation(this.mMenuInvalidator);
@@ -258,7 +255,6 @@ public class ToolbarActionBar extends ActionBar {
         return this.mDecorToolbar.getVisibility() == 0;
     }
 
-    @Override // android.app.ActionBar
     public boolean isTitleTruncated() {
         return super.isTitleTruncated();
     }
@@ -268,12 +264,10 @@ public class ToolbarActionBar extends ActionBar {
         throw new UnsupportedOperationException("Tabs are not supported in toolbar action bars");
     }
 
-    @Override // android.app.ActionBar
     public void onConfigurationChanged(Configuration configuration) {
         super.onConfigurationChanged(configuration);
     }
 
-    @Override // android.app.ActionBar
     public boolean onMenuKeyEvent(KeyEvent keyEvent) {
         if (keyEvent.getAction() == 1) {
             openOptionsMenu();
@@ -282,7 +276,6 @@ public class ToolbarActionBar extends ActionBar {
         return true;
     }
 
-    @Override // android.app.ActionBar
     public boolean openOptionsMenu() {
         return this.mDecorToolbar.showOverflowMenu();
     }
@@ -358,7 +351,6 @@ public class ToolbarActionBar extends ActionBar {
         this.mDecorToolbar.setCustomView(view);
     }
 
-    @Override // android.app.ActionBar
     public void setDefaultDisplayHomeAsUpEnabled(boolean z) {
     }
 
@@ -470,7 +462,6 @@ public class ToolbarActionBar extends ActionBar {
         }
     }
 
-    @Override // android.app.ActionBar
     public void setShowHideAnimationEnabled(boolean z) {
     }
 
@@ -502,7 +493,6 @@ public class ToolbarActionBar extends ActionBar {
         this.mDecorToolbar.setTitle(charSequence);
     }
 
-    @Override // android.app.ActionBar
     public void setWindowTitle(CharSequence charSequence) {
         this.mDecorToolbar.setWindowTitle(charSequence);
     }
@@ -512,7 +502,6 @@ public class ToolbarActionBar extends ActionBar {
         this.mDecorToolbar.setVisibility(0);
     }
 
-    @Override // android.app.ActionBar
     public ActionMode startActionMode(ActionMode.Callback callback) {
         return null;
     }

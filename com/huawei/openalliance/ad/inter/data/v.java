@@ -19,11 +19,11 @@ public class v implements Serializable {
     private int Z;
 
     /* renamed from: a  reason: collision with root package name */
-    private String f22978a;
+    private String f9370a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f22979c;
+    private boolean f9371c;
     private int d;
     private int e;
     private int f;
@@ -37,7 +37,7 @@ public class v implements Serializable {
         this.S = "n";
         this.F = 200;
         this.L = 0;
-        this.f22978a = "n";
+        this.f9370a = "n";
         this.b = 1;
         this.d = 100;
         this.e = 90;
@@ -51,7 +51,7 @@ public class v implements Serializable {
         this.S = "n";
         this.F = 200;
         this.L = 0;
-        this.f22978a = "n";
+        this.f9370a = "n";
         this.b = 1;
         this.d = 100;
         this.e = 90;
@@ -71,8 +71,8 @@ public class v implements Serializable {
             this.F = videoInfo.S();
             this.D = videoInfo.F();
             this.b = videoInfo.D();
-            this.f22978a = this.S;
-            this.f22979c = videoInfo.L() == 0;
+            this.f9370a = this.S;
+            this.f9371c = videoInfo.L() == 0;
             if (videoInfo.a() != null) {
                 this.d = videoInfo.a().intValue();
             }
@@ -129,7 +129,7 @@ public class v implements Serializable {
     }
 
     public void Code(String str) {
-        this.f22978a = str;
+        this.f9370a = str;
     }
 
     public void Code(boolean z) {
@@ -181,11 +181,11 @@ public class v implements Serializable {
     }
 
     public String a() {
-        return this.f22978a;
+        return this.f9370a;
     }
 
     public boolean b() {
-        return this.f22979c;
+        return this.f9371c;
     }
 
     public int c() {

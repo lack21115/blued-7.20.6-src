@@ -28,14 +28,14 @@ public class BluedMyVisitorList extends UserBasicModel implements Cloneable {
 
         @Override // com.soft.blued.ui.find.model.BluedMyVisitorList
         /* renamed from: clone */
-        public /* bridge */ /* synthetic */ Object mo9108clone() throws CloneNotSupportedException {
-            return super.mo9108clone();
+        public /* bridge */ /* synthetic */ Object mo6059clone() throws CloneNotSupportedException {
+            return super.mo6059clone();
         }
     }
 
     @Override // 
     /* renamed from: clone */
-    public BluedMyVisitorList mo9108clone() {
+    public BluedMyVisitorList mo6059clone() {
         try {
             return (BluedMyVisitorList) super.clone();
         } catch (Exception e) {

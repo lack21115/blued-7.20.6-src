@@ -3,7 +3,6 @@ package android.text.format;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.Resources;
-import com.android.internal.R;
 import com.anythink.expressad.d.a.b;
 import java.io.IOException;
 import java.util.Date;
@@ -110,13 +109,13 @@ public class DateUtils {
         Resources system = Resources.getSystem();
         if (j >= 3600000) {
             int i = (int) ((1800000 + j) / 3600000);
-            return system.getQuantityString(R.plurals.duration_hours, i, Integer.valueOf(i));
+            return system.getQuantityString(18087956, i, Integer.valueOf(i));
         } else if (j >= 60000) {
             int i2 = (int) ((30000 + j) / 60000);
-            return system.getQuantityString(R.plurals.duration_minutes, i2, Integer.valueOf(i2));
+            return system.getQuantityString(18087955, i2, Integer.valueOf(i2));
         } else {
             int i3 = (int) ((500 + j) / 1000);
-            return system.getQuantityString(R.plurals.duration_seconds, i3, Integer.valueOf(i3));
+            return system.getQuantityString(18087954, i3, Integer.valueOf(i3));
         }
     }
 
@@ -233,7 +232,7 @@ public class DateUtils {
             }
         }
         String formatDateRange = formatDateRange(context, j, j, 1);
-        return abs < j4 ? system.getString(R.string.relative_time, getRelativeTimeSpanString(j, currentTimeMillis, j2, i), formatDateRange) : system.getString(R.string.date_time, getRelativeTimeSpanString(context, j, false), formatDateRange);
+        return abs < j4 ? system.getString(17040692, getRelativeTimeSpanString(j, currentTimeMillis, j2, i), formatDateRange) : system.getString(17039661, getRelativeTimeSpanString(context, j, false), formatDateRange);
     }
 
     private static final String getRelativeDayString(Resources resources, long j, long j2) {
@@ -315,7 +314,7 @@ public class DateUtils {
                     formatDateRange = formatDateRange(context, j, j, 131092);
                     i = 17040677;
                 } else {
-                    formatDateRange = formatDateRange(context, j, j, com.igexin.push.c.b.b.f23326a);
+                    formatDateRange = formatDateRange(context, j, j, com.igexin.push.c.b.b.f9718a);
                     i = 17040677;
                 }
                 str = formatDateRange;
@@ -340,8 +339,8 @@ public class DateUtils {
         Configuration configuration = system.getConfiguration();
         if (sLastConfig == null || !sLastConfig.equals(configuration)) {
             sLastConfig = configuration;
-            sElapsedFormatMMSS = system.getString(R.string.elapsed_time_short_format_mm_ss);
-            sElapsedFormatHMMSS = system.getString(R.string.elapsed_time_short_format_h_mm_ss);
+            sElapsedFormatMMSS = system.getString(17040697);
+            sElapsedFormatHMMSS = system.getString(17040698);
         }
     }
 

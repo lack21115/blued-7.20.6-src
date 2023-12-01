@@ -16,13 +16,9 @@ import java.util.concurrent.locks.ReentrantLock;
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/net/deque/LinkedBlockingDeque.class */
 public class LinkedBlockingDeque<E> extends AbstractQueue<E> implements BlockingDeque<E>, Serializable {
     private static final long serialVersionUID = -387911632671998426L;
-
-    /* renamed from: a  reason: collision with root package name */
-    transient Node<E> f9670a;
+    transient Node<E> a;
     transient Node<E> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    final ReentrantLock f9671c;
+    final ReentrantLock c;
     private transient int d;
     private final int e;
     private final Condition f;
@@ -30,19 +26,17 @@ public class LinkedBlockingDeque<E> extends AbstractQueue<E> implements Blocking
 
     /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/net/deque/LinkedBlockingDeque$AbstractItr.class */
     abstract class AbstractItr implements Iterator<E> {
-
-        /* renamed from: a  reason: collision with root package name */
-        Node<E> f9672a;
+        Node<E> a;
         E b;
         private Node<E> d;
 
         AbstractItr() {
-            ReentrantLock reentrantLock = LinkedBlockingDeque.this.f9671c;
+            ReentrantLock reentrantLock = LinkedBlockingDeque.this.c;
             reentrantLock.lock();
             try {
-                Node<E> a2 = a();
-                this.f9672a = a2;
-                this.b = a2 == null ? null : a2.f9674a;
+                Node<E> a = a();
+                this.a = a;
+                this.b = a == null ? null : a.a;
             } finally {
                 reentrantLock.unlock();
             }
@@ -50,17 +44,17 @@ public class LinkedBlockingDeque<E> extends AbstractQueue<E> implements Blocking
 
         private Node<E> b(Node<E> node) {
             while (true) {
-                Node<E> a2 = a(node);
-                if (a2 == null) {
+                Node<E> a = a(node);
+                if (a == null) {
                     return null;
                 }
-                if (a2.f9674a != null) {
-                    return a2;
+                if (a.a != null) {
+                    return a;
                 }
-                if (a2 == node) {
+                if (a == node) {
                     return a();
                 }
-                node = a2;
+                node = a;
             }
         }
 
@@ -69,12 +63,12 @@ public class LinkedBlockingDeque<E> extends AbstractQueue<E> implements Blocking
         abstract Node<E> a(Node<E> node);
 
         void b() {
-            ReentrantLock reentrantLock = LinkedBlockingDeque.this.f9671c;
+            ReentrantLock reentrantLock = LinkedBlockingDeque.this.c;
             reentrantLock.lock();
             try {
-                Node<E> b = b(this.f9672a);
-                this.f9672a = b;
-                this.b = b == null ? null : b.f9674a;
+                Node<E> b = b(this.a);
+                this.a = b;
+                this.b = b == null ? null : b.a;
             } finally {
                 reentrantLock.unlock();
             }
@@ -82,12 +76,12 @@ public class LinkedBlockingDeque<E> extends AbstractQueue<E> implements Blocking
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f9672a != null;
+            return this.a != null;
         }
 
         @Override // java.util.Iterator
         public E next() {
-            Node<E> node = this.f9672a;
+            Node<E> node = this.a;
             if (node != null) {
                 this.d = node;
                 E e = this.b;
@@ -104,10 +98,10 @@ public class LinkedBlockingDeque<E> extends AbstractQueue<E> implements Blocking
                 throw new IllegalStateException();
             }
             this.d = null;
-            ReentrantLock reentrantLock = LinkedBlockingDeque.this.f9671c;
+            ReentrantLock reentrantLock = LinkedBlockingDeque.this.c;
             reentrantLock.lock();
             try {
-                if (node.f9674a != null) {
+                if (node.a != null) {
                     LinkedBlockingDeque.this.a((Node) node);
                 }
             } finally {
@@ -139,28 +133,24 @@ public class LinkedBlockingDeque<E> extends AbstractQueue<E> implements Blocking
 
         @Override // com.blued.android.core.net.deque.LinkedBlockingDeque.AbstractItr
         Node<E> a() {
-            return LinkedBlockingDeque.this.f9670a;
+            return LinkedBlockingDeque.this.a;
         }
 
         @Override // com.blued.android.core.net.deque.LinkedBlockingDeque.AbstractItr
         Node<E> a(Node<E> node) {
-            return node.f9675c;
+            return node.c;
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/net/deque/LinkedBlockingDeque$Node.class */
     public static final class Node<E> {
-
-        /* renamed from: a  reason: collision with root package name */
-        E f9674a;
+        E a;
         Node<E> b;
-
-        /* renamed from: c  reason: collision with root package name */
-        Node<E> f9675c;
+        Node<E> c;
 
         Node(E e) {
-            this.f9674a = e;
+            this.a = e;
         }
     }
 
@@ -170,9 +160,9 @@ public class LinkedBlockingDeque<E> extends AbstractQueue<E> implements Blocking
 
     public LinkedBlockingDeque(int i) {
         ReentrantLock reentrantLock = new ReentrantLock();
-        this.f9671c = reentrantLock;
+        this.c = reentrantLock;
         this.f = reentrantLock.newCondition();
-        this.g = this.f9671c.newCondition();
+        this.g = this.c.newCondition();
         if (i <= 0) {
             throw new IllegalArgumentException();
         }
@@ -183,9 +173,9 @@ public class LinkedBlockingDeque<E> extends AbstractQueue<E> implements Blocking
         if (this.d >= this.e) {
             return false;
         }
-        Node<E> node2 = this.f9670a;
-        node.f9675c = node2;
-        this.f9670a = node;
+        Node<E> node2 = this.a;
+        node.c = node2;
+        this.a = node;
         if (this.b == null) {
             this.b = node;
         } else {
@@ -203,10 +193,10 @@ public class LinkedBlockingDeque<E> extends AbstractQueue<E> implements Blocking
         Node<E> node2 = this.b;
         node.b = node2;
         this.b = node;
-        if (this.f9670a == null) {
-            this.f9670a = node;
+        if (this.a == null) {
+            this.a = node;
         } else {
-            node2.f9675c = node;
+            node2.c = node;
         }
         this.d++;
         this.f.signal();
@@ -214,15 +204,15 @@ public class LinkedBlockingDeque<E> extends AbstractQueue<E> implements Blocking
     }
 
     private E f() {
-        Node<E> node = this.f9670a;
+        Node<E> node = this.a;
         if (node == null) {
             return null;
         }
-        Node<E> node2 = node.f9675c;
-        E e = node.f9674a;
-        node.f9674a = null;
-        node.f9675c = node;
-        this.f9670a = node2;
+        Node<E> node2 = node.c;
+        E e = node.a;
+        node.a = null;
+        node.c = node;
+        this.a = node2;
         if (node2 == null) {
             this.b = null;
         } else {
@@ -239,14 +229,14 @@ public class LinkedBlockingDeque<E> extends AbstractQueue<E> implements Blocking
             return null;
         }
         Node<E> node2 = node.b;
-        E e = node.f9674a;
-        node.f9674a = null;
+        E e = node.a;
+        node.a = null;
         node.b = node;
         this.b = node2;
         if (node2 == null) {
-            this.f9670a = null;
+            this.a = null;
         } else {
-            node2.f9675c = null;
+            node2.c = null;
         }
         this.d--;
         this.g.signal();
@@ -257,7 +247,7 @@ public class LinkedBlockingDeque<E> extends AbstractQueue<E> implements Blocking
     private void readObject(ObjectInputStream objectInputStream) throws IOException, ClassNotFoundException {
         objectInputStream.defaultReadObject();
         this.d = 0;
-        this.f9670a = null;
+        this.a = null;
         this.b = null;
         while (true) {
             Object readObject = objectInputStream.readObject();
@@ -269,12 +259,12 @@ public class LinkedBlockingDeque<E> extends AbstractQueue<E> implements Blocking
     }
 
     private void writeObject(ObjectOutputStream objectOutputStream) throws IOException {
-        ReentrantLock reentrantLock = this.f9671c;
+        ReentrantLock reentrantLock = this.c;
         reentrantLock.lock();
         try {
             objectOutputStream.defaultWriteObject();
-            for (Node<E> node = this.f9670a; node != null; node = node.f9675c) {
-                objectOutputStream.writeObject(node.f9674a);
+            for (Node<E> node = this.a; node != null; node = node.c) {
+                objectOutputStream.writeObject(node.a);
             }
             objectOutputStream.writeObject(null);
         } finally {
@@ -292,7 +282,7 @@ public class LinkedBlockingDeque<E> extends AbstractQueue<E> implements Blocking
 
     public E a(long j, TimeUnit timeUnit) throws InterruptedException {
         long nanos = timeUnit.toNanos(j);
-        ReentrantLock reentrantLock = this.f9671c;
+        ReentrantLock reentrantLock = this.c;
         reentrantLock.lockInterruptibly();
         while (true) {
             try {
@@ -313,15 +303,15 @@ public class LinkedBlockingDeque<E> extends AbstractQueue<E> implements Blocking
 
     void a(Node<E> node) {
         Node<E> node2 = node.b;
-        Node<E> node3 = node.f9675c;
+        Node<E> node3 = node.c;
         if (node2 == null) {
             f();
         } else if (node3 == null) {
             g();
         } else {
-            node2.f9675c = node3;
+            node2.c = node3;
             node3.b = node2;
-            node.f9674a = null;
+            node.a = null;
             this.d--;
             this.g.signal();
         }
@@ -338,7 +328,7 @@ public class LinkedBlockingDeque<E> extends AbstractQueue<E> implements Blocking
         if (e != null) {
             Node<E> node = new Node<>(e);
             long nanos = timeUnit.toNanos(j);
-            ReentrantLock reentrantLock = this.f9671c;
+            ReentrantLock reentrantLock = this.c;
             reentrantLock.lockInterruptibly();
             while (true) {
                 try {
@@ -362,14 +352,14 @@ public class LinkedBlockingDeque<E> extends AbstractQueue<E> implements Blocking
         throw null;
     }
 
-    @Override // java.util.AbstractQueue, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractQueue, java.util.AbstractCollection, java.util.Collection
     public boolean add(E e) {
         a((LinkedBlockingDeque<E>) e);
         return true;
     }
 
     public E b() {
-        ReentrantLock reentrantLock = this.f9671c;
+        ReentrantLock reentrantLock = this.c;
         reentrantLock.lock();
         try {
             return f();
@@ -381,7 +371,7 @@ public class LinkedBlockingDeque<E> extends AbstractQueue<E> implements Blocking
     public boolean b(E e) {
         if (e != null) {
             Node<E> node = new Node<>(e);
-            ReentrantLock reentrantLock = this.f9671c;
+            ReentrantLock reentrantLock = this.c;
             reentrantLock.lock();
             try {
                 return b((Node) node);
@@ -393,7 +383,7 @@ public class LinkedBlockingDeque<E> extends AbstractQueue<E> implements Blocking
     }
 
     public E c() throws InterruptedException {
-        ReentrantLock reentrantLock = this.f9671c;
+        ReentrantLock reentrantLock = this.c;
         reentrantLock.lock();
         while (true) {
             try {
@@ -411,7 +401,7 @@ public class LinkedBlockingDeque<E> extends AbstractQueue<E> implements Blocking
     public boolean c(E e) {
         if (e != null) {
             Node<E> node = new Node<>(e);
-            ReentrantLock reentrantLock = this.f9671c;
+            ReentrantLock reentrantLock = this.c;
             reentrantLock.lock();
             try {
                 return c((Node) node);
@@ -422,25 +412,25 @@ public class LinkedBlockingDeque<E> extends AbstractQueue<E> implements Blocking
         throw null;
     }
 
-    @Override // java.util.AbstractQueue, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractQueue, java.util.AbstractCollection, java.util.Collection
     public void clear() {
-        ReentrantLock reentrantLock = this.f9671c;
+        ReentrantLock reentrantLock = this.c;
         reentrantLock.lock();
         try {
-            Node<E> node = this.f9670a;
+            Node<E> node = this.a;
             while (true) {
                 Node<E> node2 = node;
                 if (node2 == null) {
                     this.b = null;
-                    this.f9670a = null;
+                    this.a = null;
                     this.d = 0;
                     this.g.signalAll();
                     return;
                 }
-                node2.f9674a = null;
-                Node<E> node3 = node2.f9675c;
+                node2.a = null;
+                Node<E> node3 = node2.c;
                 node2.b = null;
-                node2.f9675c = null;
+                node2.c = null;
                 node = node3;
             }
         } finally {
@@ -448,16 +438,16 @@ public class LinkedBlockingDeque<E> extends AbstractQueue<E> implements Blocking
         }
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean contains(Object obj) {
         if (obj == null) {
             return false;
         }
-        ReentrantLock reentrantLock = this.f9671c;
+        ReentrantLock reentrantLock = this.c;
         reentrantLock.lock();
         try {
-            for (Node<E> node = this.f9670a; node != null; node = node.f9675c) {
-                if (obj.equals(node.f9674a)) {
+            for (Node<E> node = this.a; node != null; node = node.c) {
+                if (obj.equals(node.a)) {
                     reentrantLock.unlock();
                     return true;
                 }
@@ -483,7 +473,7 @@ public class LinkedBlockingDeque<E> extends AbstractQueue<E> implements Blocking
             throw null;
         }
         Node<E> node = new Node<>(e);
-        ReentrantLock reentrantLock = this.f9671c;
+        ReentrantLock reentrantLock = this.c;
         reentrantLock.lock();
         while (!c((Node) node)) {
             try {
@@ -507,7 +497,7 @@ public class LinkedBlockingDeque<E> extends AbstractQueue<E> implements Blocking
         if (collection == this) {
             throw new IllegalArgumentException();
         }
-        ReentrantLock reentrantLock = this.f9671c;
+        ReentrantLock reentrantLock = this.c;
         reentrantLock.lock();
         try {
             int min = Math.min(i, this.d);
@@ -517,7 +507,7 @@ public class LinkedBlockingDeque<E> extends AbstractQueue<E> implements Blocking
                 if (i3 >= min) {
                     return min;
                 }
-                collection.add((E) this.f9670a.f9674a);
+                collection.add((E) this.a.a);
                 f();
                 i2 = i3 + 1;
             }
@@ -527,10 +517,10 @@ public class LinkedBlockingDeque<E> extends AbstractQueue<E> implements Blocking
     }
 
     public E e() {
-        ReentrantLock reentrantLock = this.f9671c;
+        ReentrantLock reentrantLock = this.c;
         reentrantLock.lock();
         try {
-            E e = this.f9670a == null ? null : this.f9670a.f9674a;
+            E e = this.a == null ? null : this.a.a;
             reentrantLock.unlock();
             return e;
         } catch (Throwable th) {
@@ -543,11 +533,11 @@ public class LinkedBlockingDeque<E> extends AbstractQueue<E> implements Blocking
         if (obj == null) {
             return false;
         }
-        ReentrantLock reentrantLock = this.f9671c;
+        ReentrantLock reentrantLock = this.c;
         reentrantLock.lock();
         try {
-            for (Node<E> node = this.f9670a; node != null; node = node.f9675c) {
-                if (obj.equals(node.f9674a)) {
+            for (Node<E> node = this.a; node != null; node = node.c) {
+                if (obj.equals(node.a)) {
                     a((Node) node);
                     reentrantLock.unlock();
                     return true;
@@ -602,7 +592,7 @@ public class LinkedBlockingDeque<E> extends AbstractQueue<E> implements Blocking
 
     @Override // java.util.concurrent.BlockingQueue
     public int remainingCapacity() {
-        ReentrantLock reentrantLock = this.f9671c;
+        ReentrantLock reentrantLock = this.c;
         reentrantLock.lock();
         try {
             int i = this.e;
@@ -620,14 +610,14 @@ public class LinkedBlockingDeque<E> extends AbstractQueue<E> implements Blocking
         return a();
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean remove(Object obj) {
         return e(obj);
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    @Override // java.util.AbstractCollection, java.util.Collection
     public int size() {
-        ReentrantLock reentrantLock = this.f9671c;
+        ReentrantLock reentrantLock = this.c;
         reentrantLock.lock();
         try {
             return this.d;
@@ -641,17 +631,17 @@ public class LinkedBlockingDeque<E> extends AbstractQueue<E> implements Blocking
         return c();
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public Object[] toArray() {
-        ReentrantLock reentrantLock = this.f9671c;
+        ReentrantLock reentrantLock = this.c;
         reentrantLock.lock();
         try {
             Object[] objArr = new Object[this.d];
             int i = 0;
-            Node<E> node = this.f9670a;
+            Node<E> node = this.a;
             while (node != null) {
-                objArr[i] = node.f9674a;
-                node = node.f9675c;
+                objArr[i] = node.a;
+                node = node.c;
                 i++;
             }
             return objArr;
@@ -662,9 +652,9 @@ public class LinkedBlockingDeque<E> extends AbstractQueue<E> implements Blocking
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r0v26, types: [java.lang.Object[]] */
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public <T> T[] toArray(T[] tArr) {
-        ReentrantLock reentrantLock = this.f9671c;
+        ReentrantLock reentrantLock = this.c;
         reentrantLock.lock();
         T[] tArr2 = tArr;
         try {
@@ -672,10 +662,10 @@ public class LinkedBlockingDeque<E> extends AbstractQueue<E> implements Blocking
                 tArr2 = (Object[]) Array.newInstance(tArr.getClass().getComponentType(), this.d);
             }
             int i = 0;
-            Node<E> node = this.f9670a;
+            Node<E> node = this.a;
             while (node != null) {
-                tArr2[i] = node.f9674a;
-                node = node.f9675c;
+                tArr2[i] = node.a;
+                node = node.c;
                 i++;
             }
             if (tArr2.length > i) {
@@ -691,10 +681,10 @@ public class LinkedBlockingDeque<E> extends AbstractQueue<E> implements Blocking
 
     @Override // java.util.AbstractCollection
     public String toString() {
-        ReentrantLock reentrantLock = this.f9671c;
+        ReentrantLock reentrantLock = this.c;
         reentrantLock.lock();
         try {
-            Node<E> node = this.f9670a;
+            Node<E> node = this.a;
             if (node == null) {
                 reentrantLock.unlock();
                 return "[]";
@@ -702,13 +692,13 @@ public class LinkedBlockingDeque<E> extends AbstractQueue<E> implements Blocking
             StringBuilder sb = new StringBuilder();
             sb.append('[');
             while (true) {
-                E e = node.f9674a;
+                E e = node.a;
                 E e2 = e;
                 if (e == this) {
                     e2 = "(this Collection)";
                 }
                 sb.append(e2);
-                node = node.f9675c;
+                node = node.c;
                 if (node == null) {
                     sb.append(']');
                     return sb.toString();

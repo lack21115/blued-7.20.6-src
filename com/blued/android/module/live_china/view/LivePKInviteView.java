@@ -31,13 +31,9 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LivePKInviteView.class */
 public class LivePKInviteView extends FrameLayout implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    public int f14743a;
+    public int a;
     private Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private LayoutInflater f14744c;
+    private LayoutInflater c;
     private View d;
     private View e;
     private LinearLayout f;
@@ -131,7 +127,7 @@ public class LivePKInviteView extends FrameLayout implements View.OnClickListene
 
     private void g() {
         LayoutInflater from = LayoutInflater.from(this.b);
-        this.f14744c = from;
+        this.c = from;
         View inflate = from.inflate(R.layout.live_pk_invite_loading, this);
         this.d = inflate.findViewById(R.id.content_layout);
         this.e = inflate.findViewById(R.id.live_pk_invite_layer);
@@ -163,7 +159,7 @@ public class LivePKInviteView extends FrameLayout implements View.OnClickListene
         }
         this.l.setText(LiveRoomManager.a().h());
         ImageLoader.a((IRequestHost) null, LiveRoomManager.a().i()).b(R.drawable.user_bg_round).c().a(this.n);
-        if (this.f14743a == 0) {
+        if (this.a == 0) {
             this.q.setVisibility(0);
             this.p.setVisibility(8);
             this.j.setText(this.b.getString(R.string.live_invite_pking_tile));
@@ -205,7 +201,7 @@ public class LivePKInviteView extends FrameLayout implements View.OnClickListene
     }
 
     public void a(LiveFriendModel liveFriendModel, final boolean z, int i) {
-        this.f14743a = i;
+        this.a = i;
         this.s = liveFriendModel;
         setVisibility(0);
         this.d.setVisibility(0);
@@ -273,7 +269,7 @@ public class LivePKInviteView extends FrameLayout implements View.OnClickListene
     }
 
     public void a(final boolean z) {
-        LiveRoomHttpUtils.c(new BluedUIHttpResponse(this.h.f14428a.getFragmentActive()) { // from class: com.blued.android.module.live_china.view.LivePKInviteView.9
+        LiveRoomHttpUtils.c(new BluedUIHttpResponse(this.h.a.getFragmentActive()) { // from class: com.blued.android.module.live_china.view.LivePKInviteView.9
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str) {
                 return super.onUIFailure(i, str);
@@ -287,7 +283,7 @@ public class LivePKInviteView extends FrameLayout implements View.OnClickListene
                     @Override // com.blued.android.module.live_china.view.ILiveConnectionAnimListener
                     public void onAnimationEnd() {
                         if (z) {
-                            LivePKInviteView.this.h.a(false, LivePKInviteView.this.f14743a);
+                            LivePKInviteView.this.h.a(false, LivePKInviteView.this.a);
                         }
                     }
                 });
@@ -305,12 +301,12 @@ public class LivePKInviteView extends FrameLayout implements View.OnClickListene
                 @Override // com.blued.android.module.live_china.view.ILiveConnectionAnimListener
                 public void onAnimationEnd() {
                     if (z) {
-                        LivePKInviteView.this.h.a(false, LivePKInviteView.this.f14743a);
+                        LivePKInviteView.this.h.a(false, LivePKInviteView.this.a);
                     }
                 }
             });
         } else {
-            LiveRoomHttpUtils.d(new BluedUIHttpResponse(this.h.f14428a.getFragmentActive()) { // from class: com.blued.android.module.live_china.view.LivePKInviteView.11
+            LiveRoomHttpUtils.d(new BluedUIHttpResponse(this.h.a.getFragmentActive()) { // from class: com.blued.android.module.live_china.view.LivePKInviteView.11
                 @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public boolean onUIFailure(int i, String str) {
                     return super.onUIFailure(i, str);
@@ -324,7 +320,7 @@ public class LivePKInviteView extends FrameLayout implements View.OnClickListene
                         @Override // com.blued.android.module.live_china.view.ILiveConnectionAnimListener
                         public void onAnimationEnd() {
                             if (z) {
-                                LivePKInviteView.this.h.a(false, LivePKInviteView.this.f14743a);
+                                LivePKInviteView.this.h.a(false, LivePKInviteView.this.a);
                             }
                         }
                     });
@@ -356,32 +352,33 @@ public class LivePKInviteView extends FrameLayout implements View.OnClickListene
                 public void onAnimationEnd() {
                     LivePKInviteView.this.e.setVisibility(0);
                     LivePKInviteView livePKInviteView = LivePKInviteView.this;
-                    livePKInviteView.a(livePKInviteView.s, false, LivePKInviteView.this.f14743a);
+                    livePKInviteView.a(livePKInviteView.s, false, LivePKInviteView.this.a);
                 }
             });
         }
     }
 
     public void d() {
-        if (this.f14743a == 0) {
+        if (this.a == 0) {
             a(false);
         } else {
             b(false);
         }
     }
 
+    /* JADX WARN: Type inference failed for: r1v0, types: [com.blued.android.module.live_china.view.LivePKInviteView$12] */
     public void e() {
         j();
         this.t = new CountDownTimer(20000L, 1000L) { // from class: com.blued.android.module.live_china.view.LivePKInviteView.12
             @Override // android.os.CountDownTimer
             public void onFinish() {
                 if (LivePKInviteView.this.f.getVisibility() == 0) {
-                    if (LivePKInviteView.this.f14743a == 0) {
+                    if (LivePKInviteView.this.a == 0) {
                         LivePKInviteView.this.a(false);
                     } else {
                         LivePKInviteView.this.b(false);
                     }
-                } else if (LivePKInviteView.this.f14743a == 0) {
+                } else if (LivePKInviteView.this.a == 0) {
                     LivePKInviteView.this.a(true);
                 } else {
                     LivePKInviteView.this.b(true);
@@ -405,14 +402,14 @@ public class LivePKInviteView extends FrameLayout implements View.OnClickListene
         if (view.getId() == R.id.live_pk_invite_layer) {
             c();
         } else if (view.getId() == R.id.live_invite_cancel) {
-            String string = this.f14743a == 0 ? this.b.getString(R.string.live_pk_cancel_this_invitation) : this.b.getString(R.string.live_connection_cancel_this_invitation);
+            String string = this.a == 0 ? this.b.getString(R.string.live_pk_cancel_this_invitation) : this.b.getString(R.string.live_connection_cancel_this_invitation);
             Context context = this.b;
             CommonAlertDialog.a(context, "", string, context.getString(R.string.biao_v4_ok), new DialogInterface.OnClickListener() { // from class: com.blued.android.module.live_china.view.LivePKInviteView.8
                 @Override // android.content.DialogInterface.OnClickListener
                 public void onClick(DialogInterface dialogInterface, int i) {
                     Tracker.onClick(dialogInterface, i);
                     LivePKInviteView.this.r.setVisibility(0);
-                    if (LivePKInviteView.this.f14743a == 0) {
+                    if (LivePKInviteView.this.a == 0) {
                         LivePKInviteView.this.a(true);
                     } else {
                         LivePKInviteView.this.b(true);

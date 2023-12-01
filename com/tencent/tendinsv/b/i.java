@@ -8,40 +8,40 @@ import com.tencent.tendinsv.utils.t;
 public class i {
 
     /* renamed from: a  reason: collision with root package name */
-    private static i f39009a;
+    private static i f25318a;
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f39010c;
+    private Context f25319c;
     private k b = g.a(Build.MANUFACTURER.toUpperCase());
     private boolean d = false;
     private boolean e = false;
 
     public static i a() {
-        if (f39009a == null) {
-            f39009a = new i();
+        if (f25318a == null) {
+            f25318a = new i();
         }
-        return f39009a;
+        return f25318a;
     }
 
     private void b(Context context) {
         if (this.b != null && context != null) {
-            this.f39010c = context.getApplicationContext();
+            this.f25319c = context.getApplicationContext();
         }
         boolean b = b();
         this.d = b;
         if (b) {
-            this.e = this.b.c_(this.f39010c);
+            this.e = this.b.c_(this.f25319c);
         }
     }
 
     private boolean b() {
         boolean z = false;
         try {
-            if (this.f39010c != null) {
+            if (this.f25319c != null) {
                 if (this.b == null) {
                     return false;
                 }
-                z = this.b.b_(this.f39010c);
+                z = this.b.b_(this.f25319c);
             }
             return z;
         } catch (Throwable th) {
@@ -52,13 +52,13 @@ public class i {
     private String c() {
         String str = null;
         try {
-            if (this.f39010c != null) {
+            if (this.f25319c != null) {
                 str = null;
                 if (this.b != null) {
                     if (!this.e) {
                         return null;
                     }
-                    str = this.b.b(this.f39010c);
+                    str = this.b.b(this.f25319c);
                 }
             }
             return str;

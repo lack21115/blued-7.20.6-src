@@ -1,12 +1,11 @@
 package com.blued.android.module.shortvideo.model;
 
 import android.media.MediaExtractor;
-import android.media.MediaFormat;
 import android.text.TextUtils;
 import com.qiniu.pili.droid.shortvideo.PLMediaFile;
-import com.tencent.ugc.UGCTransitionRules;
 import java.io.File;
 import java.io.IOException;
+import javax.microedition.khronos.opengles.GL10;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/shortvideo/model/EditDataModel.class */
 public class EditDataModel {
@@ -43,13 +42,9 @@ public class EditDataModel {
         private int x;
         private int y;
         private String z;
-
-        /* renamed from: a  reason: collision with root package name */
-        public int f15749a = 100;
+        public int a = 100;
         public int b = 100;
-
-        /* renamed from: c  reason: collision with root package name */
-        public long f15750c = -1;
+        public long c = -1;
         public boolean l = false;
         public boolean p = true;
 
@@ -62,9 +57,9 @@ public class EditDataModel {
         public void a(SerializableData serializableData) {
             if (serializableData != null) {
                 super.copyModel(serializableData);
-                this.f15749a = serializableData.f15749a;
+                this.a = serializableData.a;
                 this.b = serializableData.b;
-                this.f15750c = serializableData.f15750c;
+                this.c = serializableData.c;
                 this.d = serializableData.d;
                 this.e = serializableData.e;
                 this.f = serializableData.f;
@@ -92,15 +87,15 @@ public class EditDataModel {
         }
 
         public boolean a() {
-            return this.f15750c != -1;
+            return this.c != -1;
         }
 
         @Override // com.blued.android.module.shortvideo.model.CommonModel
         public void clear() {
             super.clear();
-            this.f15749a = 100;
+            this.a = 100;
             this.b = 100;
-            this.f15750c = -1L;
+            this.c = -1L;
             this.e = 0;
             this.f = 0;
             this.h = 0;
@@ -150,21 +145,21 @@ public class EditDataModel {
         float f5 = i3;
         int i4 = ((f4 / f5) > 1.0d ? 1 : ((f4 / f5) == 1.0d ? 0 : -1));
         if (i4 == 0) {
-            setEncodingW(UGCTransitionRules.DEFAULT_IMAGE_WIDTH);
-            setEncodingH(UGCTransitionRules.DEFAULT_IMAGE_WIDTH);
+            setEncodingW(720);
+            setEncodingH(720);
         } else if (i4 > 0) {
             if (f4 / 1280.0f > (f5 * 1.0f) / 720.0f) {
-                setEncodingW(1280);
+                setEncodingW(GL10.GL_INVALID_ENUM);
                 setEncodingH((int) (Math.ceil((1280.0f / f) / 8.0d) * 8.0d));
             } else {
-                setEncodingH(UGCTransitionRules.DEFAULT_IMAGE_WIDTH);
+                setEncodingH(720);
                 setEncodingW((int) (Math.ceil((f * 720.0f) / 8.0d) * 8.0d));
             }
         } else if (f4 / 720.0f > (f5 * 1.0f) / 1280.0f) {
-            setEncodingW(UGCTransitionRules.DEFAULT_IMAGE_WIDTH);
+            setEncodingW(720);
             setEncodingH((int) (Math.ceil((720.0f / f) / 8.0d) * 8.0d));
         } else {
-            setEncodingH(1280);
+            setEncodingH(GL10.GL_INVALID_ENUM);
             setEncodingW((int) (Math.ceil((f * 1280.0f) / 8.0d) * 8.0d));
         }
         if (i2 > getEncodingW()) {
@@ -226,11 +221,11 @@ public class EditDataModel {
     }
 
     public long getCurrentCoverTime() {
-        return this.serializableData.f15750c;
+        return this.serializableData.c;
     }
 
     public int getCurrentFgVolume() {
-        return this.serializableData.f15749a;
+        return this.serializableData.a;
     }
 
     public long getDurationMs() {
@@ -344,7 +339,7 @@ public class EditDataModel {
                     setTranscode(false);
                     return false;
                 }
-                String string = mediaExtractor.getTrackFormat(i2).getString(MediaFormat.KEY_MIME);
+                String string = mediaExtractor.getTrackFormat(i2).getString("mime");
                 if (string.startsWith("video/")) {
                     if (string.equals("video/avc")) {
                         setTranscode(false);
@@ -399,11 +394,11 @@ public class EditDataModel {
     }
 
     public void setCurrentCoverTime(long j) {
-        this.serializableData.f15750c = j;
+        this.serializableData.c = j;
     }
 
     public void setCurrentFgVolume(int i) {
-        this.serializableData.f15749a = i;
+        this.serializableData.a = i;
     }
 
     public void setFirstImgPath(String str) {

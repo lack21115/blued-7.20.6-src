@@ -33,7 +33,7 @@ public class PngChunkFCTL extends PngChunkMultiple {
     }
 
     public ImageInfo e() {
-        return new ImageInfo(this.i, this.j, this.e.f3639c, this.e.e, this.e.f, this.e.g);
+        return new ImageInfo(this.i, this.j, this.e.f3591c, this.e.e, this.e.f, this.e.g);
     }
 
     public int f() {

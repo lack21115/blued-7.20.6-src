@@ -4,9 +4,8 @@ import com.google.common.base.Objects;
 import java.util.Map;
 import org.checkerframework.checker.nullness.compatqual.NullableDecl;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8110460-dex2jar.jar:com/google/common/collect/AbstractMapEntry.class */
-public abstract class AbstractMapEntry<K, V> implements Map.Entry<K, V> {
+abstract class AbstractMapEntry<K, V> implements Map.Entry<K, V> {
     @Override // java.util.Map.Entry
     public boolean equals(@NullableDecl Object obj) {
         boolean z = false;

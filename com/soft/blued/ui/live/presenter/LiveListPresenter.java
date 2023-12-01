@@ -27,11 +27,11 @@ import java.util.List;
 public class LiveListPresenter implements LiveListContract.IPresenter {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f31285a = LiveListPresenter.class.getSimpleName();
+    private static final String f17595a = LiveListPresenter.class.getSimpleName();
     private BluedLiveState b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f31286c;
+    private Context f17596c;
     private LiveListCommonModel d;
     private LiveListContract.IView e;
     private int f;
@@ -43,7 +43,7 @@ public class LiveListPresenter implements LiveListContract.IPresenter {
     public LiveListPresenter(Context context, String str, int i) {
         if (context != null) {
             this.d = new LiveListCommonModel();
-            this.f31286c = context;
+            this.f17596c = context;
             this.g = str;
             this.h = i;
             this.i = new ArrayList();
@@ -54,7 +54,6 @@ public class LiveListPresenter implements LiveListContract.IPresenter {
     private void a(final String str, final int i) {
         if (NetworkUtils.b()) {
             LiveHttpUtils.a(new BluedUIHttpResponse<BluedEntity<BluedLiveListData, LiveListRankFlagExtra>>() { // from class: com.soft.blued.ui.live.presenter.LiveListPresenter.1
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse, com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
                 public void onFailure(Throwable th, int i2, String str2) {
                     super.onFailure(th, i2, str2);
                     AppInfo.n().post(new Runnable() { // from class: com.soft.blued.ui.live.presenter.LiveListPresenter.1.1
@@ -67,9 +66,8 @@ public class LiveListPresenter implements LiveListContract.IPresenter {
                     });
                 }
 
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public void onUIFinish() {
-                    Logger.a(LiveListPresenter.f31285a, "onUIFinish");
+                    Logger.a(LiveListPresenter.f17595a, "onUIFinish");
                     LiveSwipeRefreshObserver.a().b();
                     if (LiveListPresenter.this.e != null) {
                         LiveListPresenter.this.e.c();
@@ -77,11 +75,10 @@ public class LiveListPresenter implements LiveListContract.IPresenter {
                     }
                 }
 
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public void onUIUpdate(BluedEntity<BluedLiveListData, LiveListRankFlagExtra> bluedEntity) {
                     try {
                         if (bluedEntity.extra != null) {
-                            LiveListPresenter.this.d.setCanReCommend(bluedEntity.extra.recommend == 1);
+                            LiveListPresenter.this.d.setCanReCommend(((LiveListRankFlagExtra) bluedEntity.extra).recommend == 1);
                         }
                         if (bluedEntity.data == null || bluedEntity.data.size() <= 0) {
                             if (LiveListPresenter.this.d.getPage() != 1) {
@@ -130,7 +127,7 @@ public class LiveListPresenter implements LiveListContract.IPresenter {
                         if (LiveListPresenter.this.d.getPage() != 1) {
                             LiveListPresenter.this.d.setPage(LiveListPresenter.this.d.getPage() - 1);
                         }
-                        AppMethods.a((CharSequence) LiveListPresenter.this.f31286c.getResources().getString(2131887272));
+                        AppMethods.a(LiveListPresenter.this.f17596c.getResources().getString(2131887272));
                     }
                 }
             }, str, String.valueOf(this.d.getPage()), (IRequestHost) null);
@@ -157,9 +154,8 @@ public class LiveListPresenter implements LiveListContract.IPresenter {
     public void a(String str, boolean z) {
         if (this.d.isCanReCommend()) {
             LiveHttpUtils.b(new BluedUIHttpResponse<BluedEntity<BluedLiveListData, LiveListRankFlagExtra>>() { // from class: com.soft.blued.ui.live.presenter.LiveListPresenter.3
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public void onUIFinish() {
-                    Logger.a(LiveListPresenter.f31285a, "onUIFinish");
+                    Logger.a(LiveListPresenter.f17595a, "onUIFinish");
                     LiveSwipeRefreshObserver.a().b();
                     if (LiveListPresenter.this.e != null) {
                         LiveListPresenter.this.e.c();
@@ -167,7 +163,6 @@ public class LiveListPresenter implements LiveListContract.IPresenter {
                     }
                 }
 
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public void onUIUpdate(BluedEntity<BluedLiveListData, LiveListRankFlagExtra> bluedEntity) {
                     try {
                         if (bluedEntity.data != null && bluedEntity.data.size() > 0) {
@@ -188,7 +183,7 @@ public class LiveListPresenter implements LiveListContract.IPresenter {
                         if (LiveListPresenter.this.d.getRecommendPage() != 0) {
                             LiveListPresenter.this.d.setRecommendPage(LiveListPresenter.this.d.getRecommendPage() - 1);
                         }
-                        AppMethods.a((CharSequence) LiveListPresenter.this.f31286c.getResources().getString(2131887272));
+                        AppMethods.a(LiveListPresenter.this.f17596c.getResources().getString(2131887272));
                     }
                 }
             }, str, String.valueOf(this.d.getRecommendPage()), null);
@@ -217,7 +212,7 @@ public class LiveListPresenter implements LiveListContract.IPresenter {
             }
             LiveListCommonModel liveListCommonModel3 = this.d;
             liveListCommonModel3.setPage(liveListCommonModel3.getPage() - 1);
-            AppMethods.a((CharSequence) this.f31286c.getResources().getString(2131887275));
+            AppMethods.a(this.f17596c.getResources().getString(2131887275));
             LiveListContract.IView iView = this.e;
             if (iView != null) {
                 iView.c();
@@ -281,7 +276,6 @@ public class LiveListPresenter implements LiveListContract.IPresenter {
         LiveRoomHttpUtils.e(new BluedUIHttpResponse<BluedEntityA<BluedLiveState>>() { // from class: com.soft.blued.ui.live.presenter.LiveListPresenter.2
             /* JADX WARN: Removed duplicated region for block: B:16:0x0069 A[Catch: Exception -> 0x0073, TryCatch #0 {Exception -> 0x0073, blocks: (B:2:0x0000, B:4:0x0007, B:6:0x0013, B:8:0x0036, B:11:0x0047, B:14:0x005d, B:16:0x0069, B:12:0x0053), top: B:21:0x0000 }] */
             /* JADX WARN: Removed duplicated region for block: B:25:? A[RETURN, SYNTHETIC] */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
@@ -291,16 +285,16 @@ public class LiveListPresenter implements LiveListContract.IPresenter {
                 /*
                     r4 = this;
                     r0 = r5
-                    java.util.List<T> r0 = r0.data     // Catch: java.lang.Exception -> L73
+                    java.util.List r0 = r0.data     // Catch: java.lang.Exception -> L73
                     if (r0 == 0) goto L78
                     r0 = r5
-                    java.util.List<T> r0 = r0.data     // Catch: java.lang.Exception -> L73
+                    java.util.List r0 = r0.data     // Catch: java.lang.Exception -> L73
                     int r0 = r0.size()     // Catch: java.lang.Exception -> L73
                     if (r0 <= 0) goto L78
                     r0 = r4
                     com.soft.blued.ui.live.presenter.LiveListPresenter r0 = com.soft.blued.ui.live.presenter.LiveListPresenter.this     // Catch: java.lang.Exception -> L73
                     r1 = r5
-                    java.util.List<T> r1 = r1.data     // Catch: java.lang.Exception -> L73
+                    java.util.List r1 = r1.data     // Catch: java.lang.Exception -> L73
                     r2 = 0
                     java.lang.Object r1 = r1.get(r2)     // Catch: java.lang.Exception -> L73
                     com.blued.android.module.live_china.model.BluedLiveState r1 = (com.blued.android.module.live_china.model.BluedLiveState) r1     // Catch: java.lang.Exception -> L73
@@ -354,7 +348,6 @@ public class LiveListPresenter implements LiveListContract.IPresenter {
 
     public void h() {
         LiveHttpUtils.e(new BluedUIHttpResponse<BluedEntityA<BannerModel>>() { // from class: com.soft.blued.ui.live.presenter.LiveListPresenter.4
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<BannerModel> bluedEntityA) {
                 if (LiveListPresenter.this.e == null || bluedEntityA == null) {
@@ -363,7 +356,6 @@ public class LiveListPresenter implements LiveListContract.IPresenter {
                 LiveListPresenter.this.e.a(bluedEntityA.data);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str) {
                 if (LiveListPresenter.this.e != null) {
                     LiveListPresenter.this.e.a((List<BannerModel>) null);

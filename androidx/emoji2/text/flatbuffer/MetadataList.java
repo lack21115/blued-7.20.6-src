@@ -19,7 +19,7 @@ public final class MetadataList extends Table {
         }
 
         public MetadataList get(MetadataList metadataList, int i) {
-            return metadataList.__assign(MetadataList.b(a(i), this.f2849a), this.f2849a);
+            return metadataList.__assign(MetadataList.b(a(i), this.f2801a), this.f2801a);
         }
     }
 
@@ -133,7 +133,7 @@ public final class MetadataList extends Table {
     public String sourceSha() {
         int a2 = a(8);
         if (a2 != 0) {
-            return c(a2 + this.f2871a);
+            return c(a2 + this.f2823a);
         }
         return null;
     }
@@ -149,7 +149,7 @@ public final class MetadataList extends Table {
     public int version() {
         int a2 = a(4);
         if (a2 != 0) {
-            return this.b.getInt(a2 + this.f2871a);
+            return this.b.getInt(a2 + this.f2823a);
         }
         return 0;
     }

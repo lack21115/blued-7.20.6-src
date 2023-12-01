@@ -38,7 +38,7 @@ public class Base64InputStream extends FilterInputStream {
         if (this.eof) {
             return;
         }
-        int read = this.f42254in.read(this.inputBuffer);
+        int read = this.in.read(this.inputBuffer);
         if (read == -1) {
             this.eof = true;
             process = this.coder.process(EMPTY, 0, 0, true);
@@ -59,7 +59,7 @@ public class Base64InputStream extends FilterInputStream {
 
     @Override // java.io.FilterInputStream, java.io.InputStream, java.io.Closeable, java.lang.AutoCloseable
     public void close() throws IOException {
-        this.f42254in.close();
+        this.in.close();
         this.inputBuffer = null;
     }
 

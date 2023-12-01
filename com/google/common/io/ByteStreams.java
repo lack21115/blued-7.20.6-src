@@ -353,13 +353,13 @@ public final class ByteStreams {
 
         @Override // java.io.FilterInputStream, java.io.InputStream
         public int available() throws IOException {
-            return (int) Math.min(this.f42254in.available(), this.left);
+            return (int) Math.min(this.in.available(), this.left);
         }
 
         @Override // java.io.FilterInputStream, java.io.InputStream
         public void mark(int i) {
             synchronized (this) {
-                this.f42254in.mark(i);
+                this.in.mark(i);
                 this.mark = this.left;
             }
         }
@@ -369,7 +369,7 @@ public final class ByteStreams {
             if (this.left == 0) {
                 return -1;
             }
-            int read = this.f42254in.read();
+            int read = this.in.read();
             if (read != -1) {
                 this.left--;
             }
@@ -382,7 +382,7 @@ public final class ByteStreams {
             if (j == 0) {
                 return -1;
             }
-            int read = this.f42254in.read(bArr, i, (int) Math.min(i2, j));
+            int read = this.in.read(bArr, i, (int) Math.min(i2, j));
             if (read != -1) {
                 this.left -= read;
             }
@@ -392,20 +392,20 @@ public final class ByteStreams {
         @Override // java.io.FilterInputStream, java.io.InputStream
         public void reset() throws IOException {
             synchronized (this) {
-                if (!this.f42254in.markSupported()) {
+                if (!this.in.markSupported()) {
                     throw new IOException("Mark not supported");
                 }
                 if (this.mark == -1) {
                     throw new IOException("Mark not set");
                 }
-                this.f42254in.reset();
+                this.in.reset();
                 this.left = this.mark;
             }
         }
 
         @Override // java.io.FilterInputStream, java.io.InputStream
         public long skip(long j) throws IOException {
-            long skip = this.f42254in.skip(Math.min(j, this.left));
+            long skip = this.in.skip(Math.min(j, this.left));
             this.left -= skip;
             return skip;
         }
@@ -424,7 +424,7 @@ public final class ByteStreams {
             }
             byte[] removeFirst = deque.removeFirst();
             int min = Math.min(i3, removeFirst.length);
-            System.arraycopy((Object) removeFirst, 0, (Object) bArr, i - i3, min);
+            System.arraycopy(removeFirst, 0, bArr, i - i3, min);
             i2 = i3 - min;
         }
     }

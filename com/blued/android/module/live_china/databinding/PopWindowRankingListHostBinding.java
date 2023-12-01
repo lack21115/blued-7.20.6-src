@@ -12,22 +12,18 @@ import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/PopWindowRankingListHostBinding.class */
 public final class PopWindowRankingListHostBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f12497a;
+    public final ImageView a;
     public final RelativeLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final RecyclerView f12498c;
+    public final RecyclerView c;
     public final SmartRefreshLayout d;
     public final TextView e;
     private final FrameLayout f;
 
     private PopWindowRankingListHostBinding(FrameLayout frameLayout, ImageView imageView, RelativeLayout relativeLayout, RecyclerView recyclerView, SmartRefreshLayout smartRefreshLayout, TextView textView) {
         this.f = frameLayout;
-        this.f12497a = imageView;
+        this.a = imageView;
         this.b = relativeLayout;
-        this.f12498c = recyclerView;
+        this.c = recyclerView;
         this.d = smartRefreshLayout;
         this.e = textView;
     }
@@ -38,13 +34,13 @@ public final class PopWindowRankingListHostBinding implements ViewBinding {
         if (imageView != null) {
             RelativeLayout relativeLayout = (RelativeLayout) view.findViewById(R.id.rl_empty_view);
             if (relativeLayout != null) {
-                RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rv_list);
-                if (recyclerView != null) {
-                    SmartRefreshLayout smartRefreshLayout = (SmartRefreshLayout) view.findViewById(R.id.smart_refresh);
-                    if (smartRefreshLayout != null) {
+                RecyclerView findViewById = view.findViewById(R.id.rv_list);
+                if (findViewById != null) {
+                    SmartRefreshLayout findViewById2 = view.findViewById(R.id.smart_refresh);
+                    if (findViewById2 != null) {
                         TextView textView = (TextView) view.findViewById(R.id.tv_empty_view);
                         if (textView != null) {
-                            return new PopWindowRankingListHostBinding((FrameLayout) view, imageView, relativeLayout, recyclerView, smartRefreshLayout, textView);
+                            return new PopWindowRankingListHostBinding((FrameLayout) view, imageView, relativeLayout, findViewById, findViewById2, textView);
                         }
                         str = "tvEmptyView";
                     } else {
@@ -62,7 +58,6 @@ public final class PopWindowRankingListHostBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.f;

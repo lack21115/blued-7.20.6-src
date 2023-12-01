@@ -12,13 +12,9 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/LiveFansProgressViewBinding.class */
 public final class LiveFansProgressViewBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final LinearLayout f12196a;
+    public final LinearLayout a;
     public final ShapeTextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ShapeTextView f12197c;
+    public final ShapeTextView c;
     public final ImageView d;
     public final ProgressBar e;
     public final ShapeTextView f;
@@ -26,9 +22,9 @@ public final class LiveFansProgressViewBinding implements ViewBinding {
 
     private LiveFansProgressViewBinding(LinearLayout linearLayout, LinearLayout linearLayout2, ShapeTextView shapeTextView, ShapeTextView shapeTextView2, ImageView imageView, ProgressBar progressBar, ShapeTextView shapeTextView3) {
         this.g = linearLayout;
-        this.f12196a = linearLayout2;
+        this.a = linearLayout2;
         this.b = shapeTextView;
-        this.f12197c = shapeTextView2;
+        this.c = shapeTextView2;
         this.d = imageView;
         this.e = progressBar;
         this.f = shapeTextView3;
@@ -77,7 +73,6 @@ public final class LiveFansProgressViewBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
         return this.g;

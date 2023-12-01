@@ -2,6 +2,8 @@ package com.igexin.push.core.a.c;
 
 import android.content.Intent;
 import android.net.Uri;
+import com.huawei.hms.ads.fw;
+import com.huawei.hms.framework.common.ContainerUtils;
 import com.igexin.push.core.b.q;
 import com.igexin.push.extension.mod.BaseActionBean;
 import com.igexin.push.extension.mod.PushMessageInterface;
@@ -13,18 +15,18 @@ import org.json.JSONObject;
 public final class k implements PushMessageInterface {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23424a = com.igexin.push.config.c.f23373a;
+    private static final String f9816a = com.igexin.push.config.c.f9765a;
 
     private static void a(q qVar, String str) {
         int indexOf;
         String str2;
         String str3;
-        String str4 = qVar.f23456a;
+        String str4 = qVar.f9848a;
         if (str4 == null || (indexOf = str4.indexOf(str)) == -1) {
             return;
         }
         String str5 = null;
-        int indexOf2 = str4.indexOf("&");
+        int indexOf2 = str4.indexOf(ContainerUtils.FIELD_DELIMITER);
         String str6 = "";
         if (indexOf2 == -1) {
             String substring = str4.substring(0, indexOf - 1);
@@ -35,7 +37,7 @@ public final class k implements PushMessageInterface {
                 str2 = substring;
                 str5 = str3.substring(str3.indexOf("=") + 1);
             }
-            qVar.f23456a = str2;
+            qVar.f9848a = str2;
             qVar.d = str5;
         }
         int i = indexOf - 1;
@@ -53,7 +55,7 @@ public final class k implements PushMessageInterface {
             if (str4.charAt(i) == '&') {
                 String substring4 = str4.substring(0, i);
                 String substring5 = str4.substring(indexOf);
-                int indexOf3 = substring5.indexOf("&");
+                int indexOf3 = substring5.indexOf(ContainerUtils.FIELD_DELIMITER);
                 String str8 = substring5;
                 if (indexOf3 != -1) {
                     str6 = substring5.substring(indexOf3);
@@ -63,7 +65,7 @@ public final class k implements PushMessageInterface {
                 str2 = substring4 + str6;
             }
         }
-        qVar.f23456a = str2;
+        qVar.f9848a = str2;
         qVar.d = str5;
     }
 
@@ -75,10 +77,10 @@ public final class k implements PushMessageInterface {
         String str2;
         String str3;
         q qVar = (q) baseActionBean;
-        String str4 = qVar.f23456a;
+        String str4 = qVar.f9848a;
         if (str4 != null && (indexOf = str4.indexOf(com.igexin.push.core.b.w)) != -1) {
             String str5 = null;
-            int indexOf2 = str4.indexOf("&");
+            int indexOf2 = str4.indexOf(ContainerUtils.FIELD_DELIMITER);
             if (indexOf2 == -1) {
                 String substring2 = str4.substring(0, indexOf - 1);
                 String substring3 = str4.substring(indexOf);
@@ -88,7 +90,7 @@ public final class k implements PushMessageInterface {
                     str3 = substring3;
                     str5 = str3.substring(str3.indexOf("=") + 1);
                 }
-                qVar.f23456a = str;
+                qVar.f9848a = str;
                 qVar.d = str5;
             } else {
                 int i = indexOf - 1;
@@ -104,7 +106,7 @@ public final class k implements PushMessageInterface {
                 } else if (str4.charAt(i) == '&') {
                     String substring5 = str4.substring(0, i);
                     String substring6 = str4.substring(indexOf);
-                    int indexOf3 = substring6.indexOf("&");
+                    int indexOf3 = substring6.indexOf(ContainerUtils.FIELD_DELIMITER);
                     if (indexOf3 != -1) {
                         str2 = substring6.substring(indexOf3);
                         String substring7 = substring6.substring(0, indexOf3);
@@ -118,7 +120,7 @@ public final class k implements PushMessageInterface {
                 } else {
                     str = "";
                 }
-                qVar.f23456a = str;
+                qVar.f9848a = str;
                 qVar.d = str5;
             }
         }
@@ -154,12 +156,12 @@ public final class k implements PushMessageInterface {
                 qVar.setType(com.igexin.push.core.b.r);
                 qVar.setActionId(jSONObject.getString("actionid"));
                 qVar.setDoActionId(jSONObject.getString(com.anythink.expressad.foundation.d.d.s));
-                qVar.f23456a = string;
-                if (jSONObject.has("is_withcid") && "true".equals(jSONObject.getString("is_withcid"))) {
+                qVar.f9848a = string;
+                if (jSONObject.has("is_withcid") && fw.Code.equals(jSONObject.getString("is_withcid"))) {
                     qVar.b = true;
                 }
-                if (jSONObject.has("is_withnettype") && "true".equals(jSONObject.getString("is_withnettype"))) {
-                    qVar.f23457c = true;
+                if (jSONObject.has("is_withnettype") && fw.Code.equals(jSONObject.getString("is_withnettype"))) {
+                    qVar.f9849c = true;
                 }
                 return qVar;
             }

@@ -8,9 +8,7 @@ import com.blued.community.utils.UserInfoUtils;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/send/presenter/AlbumSelectPresent.class */
 public class AlbumSelectPresent {
-
-    /* renamed from: a  reason: collision with root package name */
-    private AlbumOperateModel f20080a;
+    private AlbumOperateModel a;
 
     public AlbumSelectPresent(Activity activity) {
         a(activity);
@@ -20,7 +18,7 @@ public class AlbumSelectPresent {
         if (UserInfoUtils.a() == null) {
             activity.finish();
         } else {
-            this.f20080a = new AlbumOperateModel();
+            this.a = new AlbumOperateModel();
         }
     }
 
@@ -29,7 +27,7 @@ public class AlbumSelectPresent {
     }
 
     public void a(BaseFragment baseFragment, AlbumSelectInfo albumSelectInfo, int i, int i2) {
-        AlbumOperateModel albumOperateModel = this.f20080a;
+        AlbumOperateModel albumOperateModel = this.a;
         if (albumOperateModel != null) {
             albumOperateModel.nextOperate(baseFragment, albumSelectInfo, i, i2);
         }

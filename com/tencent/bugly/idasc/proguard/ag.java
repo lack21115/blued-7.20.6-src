@@ -17,17 +17,17 @@ import java.util.Locale;
 public final class ag {
 
     /* renamed from: a  reason: collision with root package name */
-    private final SimpleDateFormat f35221a;
+    private final SimpleDateFormat f21530a;
     private final ad b;
 
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/bugly/idasc/proguard/ag$a.class */
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final ag f35223a = new ag((byte) 0);
+        private static final ag f21532a = new ag((byte) 0);
 
         public static /* synthetic */ ag a() {
-            return f35223a;
+            return f21532a;
         }
     }
 
@@ -35,14 +35,14 @@ public final class ag {
     public static final class b {
 
         /* renamed from: a  reason: collision with root package name */
-        String f35224a;
+        String f21533a;
         public long b;
 
         /* renamed from: c  reason: collision with root package name */
-        public String f35225c;
+        public String f21534c;
 
         public final String toString() {
-            return "SLAData{uuid='" + this.f35224a + "', time=" + this.b + ", data='" + this.f35225c + "'}";
+            return "SLAData{uuid='" + this.f21533a + "', time=" + this.b + ", data='" + this.f21534c + "'}";
         }
     }
 
@@ -50,11 +50,11 @@ public final class ag {
     public static final class c {
 
         /* renamed from: a  reason: collision with root package name */
-        String f35226a;
+        String f21535a;
         String b;
 
         /* renamed from: c  reason: collision with root package name */
-        long f35227c;
+        long f21536c;
         boolean d;
         long e;
         String f;
@@ -64,9 +64,9 @@ public final class ag {
         }
 
         public c(String str, String str2, long j, boolean z, long j2, String str3, String str4) {
-            this.f35226a = str;
+            this.f21535a = str;
             this.b = str2;
-            this.f35227c = j;
+            this.f21536c = j;
             this.d = z;
             this.e = j2;
             this.f = str3;
@@ -75,7 +75,7 @@ public final class ag {
     }
 
     private ag() {
-        this.f35221a = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss:SSS", Locale.US);
+        this.f21530a = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss:SSS", Locale.US);
         this.b = new ad();
     }
 
@@ -91,7 +91,7 @@ public final class ag {
         StringBuilder sb = new StringBuilder();
         while (true) {
             sb.append("'");
-            sb.append(it.next().f35224a);
+            sb.append(it.next().f21533a);
             sb.append("'");
             if (!it.hasNext()) {
                 return sb.toString();
@@ -113,9 +113,9 @@ public final class ag {
         while (a2.moveToNext()) {
             try {
                 b bVar = new b();
-                bVar.f35224a = a2.getString(a2.getColumnIndex("_id"));
+                bVar.f21533a = a2.getString(a2.getColumnIndex("_id"));
                 bVar.b = a2.getLong(a2.getColumnIndex("_tm"));
-                bVar.f35225c = a2.getString(a2.getColumnIndex("_dt"));
+                bVar.f21534c = a2.getString(a2.getColumnIndex("_dt"));
                 al.c(bVar.toString(), new Object[0]);
                 arrayList.add(bVar);
             } finally {
@@ -145,7 +145,7 @@ public final class ag {
         }
         ArrayList arrayList = new ArrayList();
         for (b bVar : list2) {
-            arrayList.add(bVar.f35225c);
+            arrayList.add(bVar.f21534c);
         }
         Pair<Integer, String> a2 = ad.a(arrayList);
         al.c("sla batch report result, rspCode:%s rspMsg:%s", a2.first, a2.second);
@@ -171,12 +171,12 @@ public final class ag {
 
     private static void e(List<b> list) {
         for (b bVar : list) {
-            al.c("sla save id:%s time:%s msg:%s", bVar.f35224a, Long.valueOf(bVar.b), bVar.f35225c);
+            al.c("sla save id:%s time:%s msg:%s", bVar.f21533a, Long.valueOf(bVar.b), bVar.f21534c);
             try {
                 ContentValues contentValues = new ContentValues();
-                contentValues.put("_id", bVar.f35224a);
+                contentValues.put("_id", bVar.f21533a);
                 contentValues.put("_tm", Long.valueOf(bVar.b));
-                contentValues.put("_dt", bVar.f35225c);
+                contentValues.put("_dt", bVar.f21534c);
                 w.a().a("t_sla", contentValues, (v) null);
             } catch (Throwable th) {
                 al.b(th);

@@ -1,6 +1,7 @@
 package com.blued.android.chat.core.pack;
 
 import androidx.collection.ArrayMap;
+import com.anythink.core.common.b.e;
 import com.blued.android.chat.core.pack.ReqAckPackage;
 import java.util.Map;
 
@@ -25,10 +26,10 @@ public class ReqNotifyLiveJoinStartPackage extends ReqBasePackage {
     protected Map<String, Object> getReqInfo() {
         ArrayMap arrayMap = new ArrayMap();
         arrayMap.put(ReqAckPackage.REQ_RESPONSE_KEY.SESSION_TYPE, Short.valueOf(this.sessionType));
-        arrayMap.put("session_id", Long.valueOf(this.sessionId));
+        arrayMap.put(ReqAckPackage.REQ_RESPONSE_KEY.SESSION_ID, Long.valueOf(this.sessionId));
         arrayMap.put("uid", Long.valueOf(this.uid));
         arrayMap.put("name", this.name);
-        arrayMap.put("start_time", Long.valueOf(this.startTime));
+        arrayMap.put(e.a, Long.valueOf(this.startTime));
         return arrayMap;
     }
 

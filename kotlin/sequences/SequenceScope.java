@@ -14,7 +14,7 @@ public abstract class SequenceScope<T> {
     public abstract Object a(Iterator<? extends T> it, Continuation<? super Unit> continuation);
 
     public final Object a(Sequence<? extends T> sequence, Continuation<? super Unit> continuation) {
-        Object a2 = a((Iterator) sequence.iterator(), continuation);
-        return a2 == IntrinsicsKt.a() ? a2 : Unit.f42314a;
+        Object a = a((Iterator) sequence.iterator(), continuation);
+        return a == IntrinsicsKt.a() ? a : Unit.a;
     }
 }

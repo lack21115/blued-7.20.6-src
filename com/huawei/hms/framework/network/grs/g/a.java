@@ -9,11 +9,11 @@ import java.util.concurrent.Callable;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    protected d f22695a;
+    protected d f9087a;
     private final String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final c f22696c;
+    private final c f9088c;
     private final int d;
     private final Context e;
     private final String f;
@@ -23,7 +23,7 @@ public class a {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.huawei.hms.framework.network.grs.g.a$a  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/huawei/hms/framework/network/grs/g/a$a.class */
-    public enum EnumC0428a {
+    public enum EnumC0258a {
         GRSPOST,
         GRSGET,
         GRSDEFAULT
@@ -31,7 +31,7 @@ public class a {
 
     public a(String str, int i, c cVar, Context context, String str2, GrsBaseInfo grsBaseInfo, com.huawei.hms.framework.network.grs.e.c cVar2) {
         this.b = str;
-        this.f22696c = cVar;
+        this.f9088c = cVar;
         this.d = i;
         this.e = context;
         this.f = str2;
@@ -43,12 +43,12 @@ public class a {
         return Uri.parse(str).getPath();
     }
 
-    private EnumC0428a h() {
+    private EnumC0258a h() {
         if (this.b.isEmpty()) {
-            return EnumC0428a.GRSDEFAULT;
+            return EnumC0258a.GRSDEFAULT;
         }
         String a2 = a(this.b);
-        return a2.contains("1.0") ? EnumC0428a.GRSGET : a2.contains("2.0") ? EnumC0428a.GRSPOST : EnumC0428a.GRSDEFAULT;
+        return a2.contains("1.0") ? EnumC0258a.GRSGET : a2.contains("2.0") ? EnumC0258a.GRSPOST : EnumC0258a.GRSDEFAULT;
     }
 
     public Context a() {
@@ -56,7 +56,7 @@ public class a {
     }
 
     public c b() {
-        return this.f22696c;
+        return this.f9088c;
     }
 
     public String c() {
@@ -76,9 +76,9 @@ public class a {
     }
 
     public Callable<d> g() {
-        if (EnumC0428a.GRSDEFAULT.equals(h())) {
+        if (EnumC0258a.GRSDEFAULT.equals(h())) {
             return null;
         }
-        return EnumC0428a.GRSGET.equals(h()) ? new f(this.b, this.d, this.f22696c, this.e, this.f, this.g) : new g(this.b, this.d, this.f22696c, this.e, this.f, this.g, this.h);
+        return EnumC0258a.GRSGET.equals(h()) ? new f(this.b, this.d, this.f9088c, this.e, this.f, this.g) : new g(this.b, this.d, this.f9088c, this.e, this.f, this.g, this.h);
     }
 }

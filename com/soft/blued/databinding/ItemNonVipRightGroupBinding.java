@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemNonVipRightGroupBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29272a;
+    private final LinearLayout f15582a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29272a;
+        return this.f15582a;
     }
 }

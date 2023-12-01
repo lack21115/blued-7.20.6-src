@@ -41,9 +41,8 @@ public class AdBaseFrameLayout extends FrameLayout implements e {
         this.aoo.add(onTouchListener);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void dispatchRestoreInstanceState(SparseArray<Parcelable> sparseArray) {
+    protected void dispatchRestoreInstanceState(SparseArray<Parcelable> sparseArray) {
         try {
             super.dispatchRestoreInstanceState(sparseArray);
         } catch (Throwable th) {
@@ -52,9 +51,8 @@ public class AdBaseFrameLayout extends FrameLayout implements e {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void dispatchSaveInstanceState(SparseArray<Parcelable> sparseArray) {
+    protected void dispatchSaveInstanceState(SparseArray<Parcelable> sparseArray) {
     }
 
     @Override // android.view.ViewGroup, android.view.View

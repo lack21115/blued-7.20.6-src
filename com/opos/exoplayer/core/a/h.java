@@ -1,6 +1,8 @@
 package com.opos.exoplayer.core.a;
 
+import android.bluetooth.BluetoothClass;
 import android.media.AudioSystem;
+import android.opengl.GLES11;
 import android.opengl.GLES30;
 import android.text.format.DateUtils;
 import com.opos.exoplayer.core.Format;
@@ -13,11 +15,11 @@ import java.util.Arrays;
 public final class h {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final int[] f25035a = {1, 2, 2, 2, 2, 3, 3, 4, 4, 5, 6, 6, 6, 7, 8, 8};
+    private static final int[] f11347a = {1, 2, 2, 2, 2, 3, 3, 4, 4, 5, 6, 6, 6, 7, 8, 8};
     private static final int[] b = {-1, 8000, 16000, 32000, -1, -1, 11025, 22050, 44100, -1, -1, 12000, 24000, 48000, -1, -1};
 
     /* renamed from: c  reason: collision with root package name */
-    private static final int[] f25036c = {64, 112, 128, 192, 224, 256, 384, 448, 512, 640, 768, AudioSystem.DEVICE_OUT_ALL_A2DP, 1024, 1152, 1280, 1536, WBConstants.SDK_NEW_PAY_VERSION, 2048, 2304, DateUtils.FORMAT_NO_NOON_MIDNIGHT, 2688, 2816, 2823, 2944, 3072, 3840, 4096, GLES30.GL_COLOR, 7680};
+    private static final int[] f11348c = {64, 112, 128, 192, 224, 256, 384, 448, 512, 640, 768, AudioSystem.DEVICE_OUT_ALL_A2DP, 1024, 1152, 1280, BluetoothClass.Device.Major.IMAGING, WBConstants.SDK_NEW_PAY_VERSION, 2048, 2304, DateUtils.FORMAT_NO_NOON_MIDNIGHT, 2688, GLES11.GL_CURRENT_COLOR, 2823, 2944, 3072, 3840, 4096, GLES30.GL_COLOR, 7680};
 
     public static int a(ByteBuffer byteBuffer) {
         byte b2;
@@ -79,10 +81,10 @@ public final class h {
     public static Format a(byte[] bArr, String str, String str2, DrmInitData drmInitData) {
         com.opos.exoplayer.core.i.l c2 = c(bArr);
         c2.b(60);
-        int i = f25035a[c2.c(6)];
+        int i = f11347a[c2.c(6)];
         int i2 = b[c2.c(4)];
         int c3 = c2.c(5);
-        int[] iArr = f25036c;
+        int[] iArr = f11348c;
         int i3 = c3 >= iArr.length ? -1 : (iArr[c3] * 1000) / 2;
         c2.b(10);
         return Format.a(str, com.anythink.expressad.exoplayer.k.o.D, null, i3, -1, i + (c2.c(2) > 0 ? 1 : 0), i2, null, drmInitData, 0, str2);

@@ -73,26 +73,18 @@ import kotlin.text.StringsKt;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYChatRoomItemFragment.class */
 public final class YYChatRoomItemFragment extends MvpFragment<YYChatRoomItemPresenter> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private FragmentChatRoomItemBinding f17109a;
+    private FragmentChatRoomItemBinding a;
     private OnCLickRoomItemToGoRoomListener b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final AdHandler f17110c = new AdHandler(this, this);
+    private final AdHandler c = new AdHandler(this, this);
     private final Ad d = new Ad(this);
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYChatRoomItemFragment$Ad.class */
     public final class Ad extends BaseMultiItemQuickAdapter<YyHomeChatItemDataMode, BaseViewHolder> implements BGABanner.Adapter<View, Object> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ YYChatRoomItemFragment f17111a;
+        final /* synthetic */ YYChatRoomItemFragment a;
         private OnCLickRoomItemToGoRoomListener b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private String f17112c;
+        private String c;
         private String d;
         private boolean e;
         private int f;
@@ -102,7 +94,7 @@ public final class YYChatRoomItemFragment extends MvpFragment<YYChatRoomItemPres
         public Ad(YYChatRoomItemFragment this$0) {
             super(new ArrayList());
             Intrinsics.e(this$0, "this$0");
-            this.f17111a = this$0;
+            this.a = this$0;
             this.e = true;
             this.g = new HashMap<>();
             addItemType(0, R.layout.item_yy_home_rooms_room);
@@ -123,13 +115,13 @@ public final class YYChatRoomItemFragment extends MvpFragment<YYChatRoomItemPres
                 AppMethods.a((CharSequence) this$0.mContext.getString(R.string.yy_living_toast));
                 return;
             }
-            EventTrackYY.a(ChatRoomProtos.Event.CHAT_ROOM_TAB_PAGE_ROOM_CLICK, item.getRoom_id(), item.getUid(), this$0.d, item.getRoom_type_id(), !StringUtils.b(item.getThe_same_city()), "theme_room", this$0.f17112c, item.getLabel_link());
+            EventTrackYY.a(ChatRoomProtos.Event.CHAT_ROOM_TAB_PAGE_ROOM_CLICK, item.getRoom_id(), item.getUid(), this$0.d, item.getRoom_type_id(), !StringUtils.b(item.getThe_same_city()), "theme_room", this$0.c, item.getLabel_link());
             this$1.j().b(true);
             OnCLickRoomItemToGoRoomListener onCLickRoomItemToGoRoomListener = this$0.b;
             if (onCLickRoomItemToGoRoomListener == null) {
                 return;
             }
-            onCLickRoomItemToGoRoomListener.a(item.getRoom_id(), this$0.f17112c);
+            onCLickRoomItemToGoRoomListener.a(item.getRoom_id(), this$0.c);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -143,9 +135,9 @@ public final class YYChatRoomItemFragment extends MvpFragment<YYChatRoomItemPres
             String lowerCase = str.toLowerCase(Locale.ROOT);
             Intrinsics.c(lowerCase, "this as java.lang.String).toLowerCase(Locale.ROOT)");
             if (StringsKt.b(lowerCase, "png", false, 2, (Object) null)) {
-                ImageLoader.a(this.f17111a.getFragmentActive(), str).d(R.drawable.bg_yy_home_top_2).f().a(sVGAImageView);
+                ImageLoader.a(this.a.getFragmentActive(), str).d(R.drawable.bg_yy_home_top_2).f().a(sVGAImageView);
             } else {
-                SVGAParser.a(SVGAParser.f15958a.b(), new URL(str), new SVGAParser.ParseCompletion() { // from class: com.blued.android.module.yy_china.fragment.YYChatRoomItemFragment$Ad$playSvgaAnimation$1
+                SVGAParser.a(SVGAParser.a.b(), new URL(str), new SVGAParser.ParseCompletion() { // from class: com.blued.android.module.yy_china.fragment.YYChatRoomItemFragment$Ad$playSvgaAnimation$1
                     @Override // com.blued.android.module.svgaplayer.SVGAParser.ParseCompletion
                     public void onComplete(SVGAVideoEntity videoItem) {
                         Intrinsics.e(videoItem, "videoItem");
@@ -169,12 +161,12 @@ public final class YYChatRoomItemFragment extends MvpFragment<YYChatRoomItemPres
             }
             List<String> list = banner.click_url;
             if (list != null) {
-                IYYRoomInfoCallback c2 = YYRoomInfoManager.e().c();
+                IYYRoomInfoCallback c = YYRoomInfoManager.e().c();
                 Object[] array = list.toArray(new String[0]);
                 if (array == null) {
                     throw new NullPointerException("null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>");
                 }
-                c2.a((String[]) array);
+                c.a((String[]) array);
             }
             EventTrackYY.a(ChatRoomProtos.Event.CHAT_ROOM_HOT_BANNER_CLICK, banner.ads_id, banner.target_url);
             YYRoomInfoManager.e().c().a(imageView.getContext(), str, 9);
@@ -203,61 +195,61 @@ public final class YYChatRoomItemFragment extends MvpFragment<YYChatRoomItemPres
         }
 
         private final void b(BaseViewHolder baseViewHolder, YyHomeChatItemDataMode yyHomeChatItemDataMode) {
-            ItemYyHomeRoomsRoomBinding a2 = ItemYyHomeRoomsRoomBinding.a(baseViewHolder.itemView);
-            Intrinsics.c(a2, "bind(helper.itemView)");
+            ItemYyHomeRoomsRoomBinding a = ItemYyHomeRoomsRoomBinding.a(baseViewHolder.itemView);
+            Intrinsics.c(a, "bind(helper.itemView)");
             final YyHomeChatItemDataInfoMode data = yyHomeChatItemDataMode.getData();
             if (data == null) {
                 return;
             }
             int i = 8;
             if (data.getChat_anchor_level() == null || data.getChat_anchor_level().getLevel() <= 0) {
-                a2.f16736c.setVisibility(8);
+                a.c.setVisibility(8);
             } else {
-                a2.f16736c.setImageResource(YYRoomInfoManager.e().b(data.getChat_anchor_level().getLevel()));
-                a2.f16736c.setVisibility(0);
+                a.c.setImageResource(YYRoomInfoManager.e().b(data.getChat_anchor_level().getLevel()));
+                a.c.setVisibility(0);
             }
             if (data.getIn_pk() == 1) {
-                a2.e.setVisibility(0);
+                a.e.setVisibility(0);
             } else {
-                a2.e.setVisibility(8);
+                a.e.setVisibility(8);
             }
-            a2.i.removeAllViews();
+            a.i.removeAllViews();
             if (StringUtils.b(data.getThe_same_city())) {
-                a2.d.setVisibility(8);
-                a2.m.setVisibility(8);
+                a.d.setVisibility(8);
+                a.m.setVisibility(8);
             } else {
-                a2.m.setVisibility(0);
-                a2.d.setVisibility(0);
-                a2.m.setText(data.getThe_same_city());
+                a.m.setVisibility(0);
+                a.d.setVisibility(0);
+                a.m.setText(data.getThe_same_city());
             }
             if (StringUtils.b(data.getLabel_link())) {
-                a2.i.setVisibility(8);
+                a.i.setVisibility(8);
             } else {
-                a2.i.setVisibility(0);
-                LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(-2, a2.i.getResources().getDimensionPixelOffset(R.dimen.dp_16));
-                ImageView imageView = new ImageView(a2.i.getContext());
-                a2.i.addView(imageView, layoutParams);
+                a.i.setVisibility(0);
+                LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(-2, a.i.getResources().getDimensionPixelOffset(R.dimen.dp_16));
+                ImageView imageView = new ImageView(a.i.getContext());
+                a.i.addView(imageView, layoutParams);
                 if (this.e) {
-                    ImageLoader.a(this.f17111a.getFragmentActive(), data.getLabel_link()).g().a(imageView);
+                    ImageLoader.a(this.a.getFragmentActive(), data.getLabel_link()).g().a(imageView);
                 } else {
-                    ImageLoader.a(this.f17111a.getFragmentActive(), data.getLabel_link()).a(imageView);
+                    ImageLoader.a(this.a.getFragmentActive(), data.getLabel_link()).a(imageView);
                 }
             }
             if (BluedSkinUtils.c()) {
-                a2.f16735a.setBackgroundResource(R.color.white);
+                a.a.setBackgroundResource(R.color.white);
             } else {
-                a2.f16735a.setBackgroundResource(R.color.ksad_white_alpha_20);
+                a.a.setBackgroundResource(R.color.ksad_white_alpha_20);
             }
-            ImageLoader.a(this.f17111a.getFragmentActive(), data.getUser_avatar()).b(R.drawable.user_bg_round).c().a(a2.g);
-            a2.q.setText(data.getUser_name());
-            TextView textView = a2.p;
-            StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
+            ImageLoader.a(this.a.getFragmentActive(), data.getUser_avatar()).b(R.drawable.user_bg_round).c().a((ImageView) a.g);
+            a.q.setText(data.getUser_name());
+            TextView textView = a.p;
+            StringCompanionObject stringCompanionObject = StringCompanionObject.a;
             String string = this.mContext.getResources().getString(R.string.yy_home_onlin_count);
             Intrinsics.c(string, "mContext.resources.getSt…ring.yy_home_onlin_count)");
             String format = String.format(string, Arrays.copyOf(new Object[]{data.getRoom_member_count()}, 1));
             Intrinsics.c(format, "format(format, *args)");
             textView.setText(format);
-            a2.n.setText(data.getRoom_name());
+            a.n.setText(data.getRoom_name());
             View findViewById = baseViewHolder.itemView.findViewById(R.id.ll_room_type);
             if (findViewById == null) {
                 throw new NullPointerException("null cannot be cast to non-null type com.blued.android.framework.view.shape.ShapeLinearLayout");
@@ -265,41 +257,41 @@ public final class YYChatRoomItemFragment extends MvpFragment<YYChatRoomItemPres
             ShapeLinearLayout shapeLinearLayout = (ShapeLinearLayout) findViewById;
             ShapeLinearLayout shapeLinearLayout2 = shapeLinearLayout;
             ShapeHelper.a(shapeLinearLayout2, shapeLinearLayout.getResources().getDimension(R.dimen.dp_8), shapeLinearLayout.getResources().getDimension(R.dimen.dp_8), shapeLinearLayout.getResources().getDimension(R.dimen.dp_8), shapeLinearLayout.getResources().getDimension(R.dimen.dp_8));
-            YyChatRoomTagShapeUtils.f10915a.a(shapeLinearLayout2, data.getRoom_type_id());
-            YyChatRoomTagShapeUtils yyChatRoomTagShapeUtils = YyChatRoomTagShapeUtils.f10915a;
-            ShapeTextView shapeTextView = a2.l;
+            YyChatRoomTagShapeUtils.a.a(shapeLinearLayout2, data.getRoom_type_id());
+            YyChatRoomTagShapeUtils yyChatRoomTagShapeUtils = YyChatRoomTagShapeUtils.a;
+            ShapeTextView shapeTextView = a.l;
             Intrinsics.c(shapeTextView, "bind.tvBgTop");
             yyChatRoomTagShapeUtils.b(shapeTextView, data.getRoom_type_id());
-            a2.o.setText(data.getRoom_type_name());
-            a2.f.setMIsNeedOnDetachedFromWindow(true);
-            SVGAPlayer.Builder builder = new SVGAPlayer.Builder(ImgURLMap.f10885a.a("yy_home_small_white"));
-            SVGAImageView sVGAImageView = a2.f;
+            a.o.setText(data.getRoom_type_name());
+            a.f.setMIsNeedOnDetachedFromWindow(true);
+            SVGAPlayer.Builder builder = new SVGAPlayer.Builder(ImgURLMap.a.a("yy_home_small_white"));
+            SVGAImageView sVGAImageView = a.f;
             Intrinsics.c(sVGAImageView, "bind.ivRoomTypeAni");
             builder.a(sVGAImageView);
             YyHomeChatItemRoomCradInfo room_card = data.getProp_info().getRoom_card();
             if (!StringUtils.b(room_card.getImg())) {
                 String img = room_card.getImg();
-                YYSvgaView yYSvgaView = a2.k;
+                YYSvgaView yYSvgaView = a.k;
                 Intrinsics.c(yYSvgaView, "bind.svga");
                 a(img, yYSvgaView);
             }
             if (!data.isDraw()) {
                 data.setDraw(true);
-                EventTrackYY.a(ChatRoomProtos.Event.CHAT_ROOM_TAB_PAGE_ROOM_DRAW, data.getRoom_id(), data.getUid(), this.d, data.getRoom_type_id(), !StringUtils.b(data.getThe_same_city()), "theme_room", this.f17112c, data.getLabel_link());
+                EventTrackYY.a(ChatRoomProtos.Event.CHAT_ROOM_TAB_PAGE_ROOM_DRAW, data.getRoom_id(), data.getUid(), this.d, data.getRoom_type_id(), !StringUtils.b(data.getThe_same_city()), "theme_room", this.c, data.getLabel_link());
                 OnCLickRoomItemToGoRoomListener onCLickRoomItemToGoRoomListener = this.b;
                 if (onCLickRoomItemToGoRoomListener != null) {
                     onCLickRoomItemToGoRoomListener.p();
                 }
             }
-            CardView cardView = a2.j;
-            final YYChatRoomItemFragment yYChatRoomItemFragment = this.f17111a;
+            CardView cardView = a.j;
+            final YYChatRoomItemFragment yYChatRoomItemFragment = this.a;
             cardView.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYChatRoomItemFragment$Ad$6TEMR-yUD2ZMoyW2t61_AevJa60
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     YYChatRoomItemFragment.Ad.a(YYChatRoomItemFragment.Ad.this, data, yYChatRoomItemFragment, view);
                 }
             });
-            ShapeableImageView shapeableImageView = a2.b;
+            ShapeableImageView shapeableImageView = a.b;
             if (TextUtils.equals(data.getRoom_type_id(), "11")) {
                 i = 0;
             }
@@ -307,20 +299,20 @@ public final class YYChatRoomItemFragment extends MvpFragment<YYChatRoomItemPres
         }
 
         private final void c(BaseViewHolder baseViewHolder, YyHomeChatItemDataMode yyHomeChatItemDataMode) {
-            ItemYyHomeChatsNewRoomsBinding a2 = ItemYyHomeChatsNewRoomsBinding.a(baseViewHolder.itemView);
-            Intrinsics.c(a2, "bind(helper.itemView)");
-            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(a2.getRoot().getContext());
+            ItemYyHomeChatsNewRoomsBinding a = ItemYyHomeChatsNewRoomsBinding.a(baseViewHolder.itemView);
+            Intrinsics.c(a, "bind(helper.itemView)");
+            RecyclerView.LayoutManager linearLayoutManager = new LinearLayoutManager(a.getRoot().getContext());
             linearLayoutManager.setOrientation(0);
-            a2.f16729a.setLayoutManager(linearLayoutManager);
+            a.a.setLayoutManager(linearLayoutManager);
             if (BluedSkinUtils.c()) {
-                a2.b.setTextColor(a2.b.getResources().getColor(R.color.syc_dark_222));
+                a.b.setTextColor(a.b.getResources().getColor(R.color.syc_dark_222));
             } else {
-                a2.b.setTextColor(a2.b.getResources().getColor(R.color.white));
+                a.b.setTextColor(a.b.getResources().getColor(R.color.white));
             }
-            NewRoomAdapter newRoomAdapter = new NewRoomAdapter(this.f17111a);
+            RecyclerView.Adapter newRoomAdapter = new NewRoomAdapter(this.a);
             newRoomAdapter.a(this.b);
-            newRoomAdapter.a(this.f17112c);
-            a2.f16729a.setAdapter(newRoomAdapter);
+            newRoomAdapter.a(this.c);
+            a.a.setAdapter(newRoomAdapter);
             if (yyHomeChatItemDataMode.getData().getLists().size() == 0) {
                 return;
             }
@@ -332,22 +324,22 @@ public final class YYChatRoomItemFragment extends MvpFragment<YYChatRoomItemPres
         }
 
         private final void d(BaseViewHolder baseViewHolder, YyHomeChatItemDataMode yyHomeChatItemDataMode) {
-            ItemYyHomeRoomsBannerBinding a2 = ItemYyHomeRoomsBannerBinding.a(baseViewHolder.itemView);
-            Intrinsics.c(a2, "bind(helper.itemView)");
+            ItemYyHomeRoomsBannerBinding a = ItemYyHomeRoomsBannerBinding.a(baseViewHolder.itemView);
+            Intrinsics.c(a, "bind(helper.itemView)");
             ArrayList<YYBannerModel> adv_list = yyHomeChatItemDataMode.getData().getAdv_list();
-            a2.f16734a.setAdapter(this);
+            a.a.setAdapter(this);
             if (adv_list.size() > 1) {
-                a2.f16734a.setAutoPlayAble(true);
+                a.a.setAutoPlayAble(true);
             } else {
-                a2.f16734a.setAutoPlayAble(false);
+                a.a.setAutoPlayAble(false);
             }
-            a2.f16734a.setmIsNeedShowIndicator(false);
-            a2.f16734a.a(R.layout.item_home_more_adpics, adv_list, (List<String>) null);
+            a.a.setmIsNeedShowIndicator(false);
+            a.a.a(R.layout.item_home_more_adpics, adv_list, (List<String>) null);
         }
 
         private final void e(BaseViewHolder baseViewHolder, YyHomeChatItemDataMode yyHomeChatItemDataMode) {
-            ItemYyHomeRoomsAdBinding a2 = ItemYyHomeRoomsAdBinding.a(baseViewHolder.itemView);
-            Intrinsics.c(a2, "bind(helper.itemView)");
+            ItemYyHomeRoomsAdBinding a = ItemYyHomeRoomsAdBinding.a(baseViewHolder.itemView);
+            Intrinsics.c(a, "bind(helper.itemView)");
             if (yyHomeChatItemDataMode.getData().getConfig() == null || yyHomeChatItemDataMode.getData().getConfig().size() == 0) {
                 return;
             }
@@ -365,16 +357,16 @@ public final class YYChatRoomItemFragment extends MvpFragment<YYChatRoomItemPres
                     YYChatRoomItemFragment.Ad.a(YYHomeChatsRightTopMode.this, view);
                 }
             });
-            a2.b.setText(yYHomeChatsRightTopMode2.getTitle());
-            this.g.put(yYHomeChatsRightTopMode2, a2.f16733c);
+            a.b.setText(yYHomeChatsRightTopMode2.getTitle());
+            this.g.put(yYHomeChatsRightTopMode2, a.c);
             ArrayList<String> sub_title = yYHomeChatsRightTopMode2.getSub_title();
             if (sub_title.size() > 0) {
-                a2.f16733c.setText(sub_title.get(this.f % sub_title.size()));
+                a.c.setText(sub_title.get(this.f % sub_title.size()));
             } else {
-                a2.f16733c.setText("");
+                a.c.setText("");
             }
             String background_image = yYHomeChatsRightTopMode2.getBackground_image();
-            YYSvgaView yYSvgaView = a2.f16732a;
+            YYSvgaView yYSvgaView = a.a;
             Intrinsics.c(yYSvgaView, "bind.svga");
             a(background_image, yYSvgaView);
         }
@@ -406,14 +398,14 @@ public final class YYChatRoomItemFragment extends MvpFragment<YYChatRoomItemPres
             if (imageView2 != null) {
                 imageView2.setVisibility(8);
             }
-            ImageLoader.a(this.f17111a.getFragmentActive(), yYBannerModel.ads_pics).b(R.drawable.defaultpicture).a(imageView);
+            ImageLoader.a(this.a.getFragmentActive(), yYBannerModel.ads_pics).b(R.drawable.defaultpicture).a(imageView);
             if (!yYBannerModel.isShowUrlVisited && list != null) {
-                IYYRoomInfoCallback c2 = YYRoomInfoManager.e().c();
+                IYYRoomInfoCallback c = YYRoomInfoManager.e().c();
                 Object[] array = list.toArray(new String[0]);
                 if (array == null) {
                     throw new NullPointerException("null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>");
                 }
-                c2.a((String[]) array);
+                c.a((String[]) array);
                 yYBannerModel.isShowUrlVisited = true;
                 EventTrackYY.a(ChatRoomProtos.Event.CHAT_ROOM_HOT_BANNER_SHOW, yYBannerModel.ads_id, yYBannerModel.target_url);
             }
@@ -429,11 +421,10 @@ public final class YYChatRoomItemFragment extends MvpFragment<YYChatRoomItemPres
             });
         }
 
-        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         /* renamed from: a */
         public void onViewRecycled(BaseViewHolder holder) {
             Intrinsics.e(holder, "holder");
-            super.onViewRecycled(holder);
+            super.onViewRecycled((RecyclerView.ViewHolder) holder);
             YYSvgaView yYSvgaView = (YYSvgaView) holder.itemView.findViewById(R.id.svga);
             if (yYSvgaView != null) {
                 yYSvgaView.a(true);
@@ -447,7 +438,6 @@ public final class YYChatRoomItemFragment extends MvpFragment<YYChatRoomItemPres
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.chad.library.adapter.base.BaseQuickAdapter
         /* renamed from: a */
         public void convert(BaseViewHolder helper, YyHomeChatItemDataMode item) {
             Intrinsics.e(helper, "helper");
@@ -466,7 +456,7 @@ public final class YYChatRoomItemFragment extends MvpFragment<YYChatRoomItemPres
         }
 
         public final void a(String str) {
-            this.f17112c = str;
+            this.c = str;
         }
 
         public final void a(boolean z) {
@@ -483,14 +473,12 @@ public final class YYChatRoomItemFragment extends MvpFragment<YYChatRoomItemPres
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYChatRoomItemFragment$AdHandler.class */
     public final class AdHandler extends Handler {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ YYChatRoomItemFragment f17114a;
+        final /* synthetic */ YYChatRoomItemFragment a;
         private final WeakReference<YYChatRoomItemFragment> b;
 
         public AdHandler(YYChatRoomItemFragment this$0, YYChatRoomItemFragment yYChatRoomItemFragment) {
             Intrinsics.e(this$0, "this$0");
-            this.f17114a = this$0;
+            this.a = this$0;
             this.b = new WeakReference<>(yYChatRoomItemFragment);
         }
 
@@ -523,19 +511,15 @@ public final class YYChatRoomItemFragment extends MvpFragment<YYChatRoomItemPres
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYChatRoomItemFragment$NewRoomAdapter.class */
     public final class NewRoomAdapter extends BaseMultiItemQuickAdapter<YyHomeChatItemDataMode, BaseViewHolder> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ YYChatRoomItemFragment f17115a;
+        final /* synthetic */ YYChatRoomItemFragment a;
         private OnCLickRoomItemToGoRoomListener b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private String f17116c;
+        private String c;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public NewRoomAdapter(YYChatRoomItemFragment this$0) {
             super(new ArrayList());
             Intrinsics.e(this$0, "this$0");
-            this.f17115a = this$0;
+            this.a = this$0;
             addItemType(1, R.layout.item_yy_home_chats_new_rooms_item);
         }
 
@@ -560,8 +544,8 @@ public final class YYChatRoomItemFragment extends MvpFragment<YYChatRoomItemPres
         }
 
         private final void b(BaseViewHolder baseViewHolder, YyHomeChatItemDataMode yyHomeChatItemDataMode) {
-            ItemYyHomeChatsNewRoomsItemBinding a2 = ItemYyHomeChatsNewRoomsItemBinding.a(baseViewHolder.itemView);
-            Intrinsics.c(a2, "bind(helper.itemView)");
+            ItemYyHomeChatsNewRoomsItemBinding a = ItemYyHomeChatsNewRoomsItemBinding.a(baseViewHolder.itemView);
+            Intrinsics.c(a, "bind(helper.itemView)");
             if (yyHomeChatItemDataMode.getData() == null) {
                 return;
             }
@@ -570,9 +554,9 @@ public final class YYChatRoomItemFragment extends MvpFragment<YYChatRoomItemPres
                 EventTrackYY.a(ChatRoomProtos.Event.CHAT_ROOM_TAB_PAGE_ROOM_DRAW, data.getRoom_id(), data.getUid(), "0", data.getRoom_type_id(), !StringUtils.b(data.getThe_same_city()), "theme_room", "new_anchor", data.getLabel_link());
                 data.setDraw(true);
             }
-            ImageLoader.a(this.f17115a.getFragmentActive(), data.getUser_avatar()).b(R.drawable.user_bg_round).c().a(a2.f16731a);
-            ImageView imageView = a2.f16731a;
-            final YYChatRoomItemFragment yYChatRoomItemFragment = this.f17115a;
+            ImageLoader.a(this.a.getFragmentActive(), data.getUser_avatar()).b(R.drawable.user_bg_round).c().a(a.a);
+            ImageView imageView = a.a;
+            final YYChatRoomItemFragment yYChatRoomItemFragment = this.a;
             imageView.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYChatRoomItemFragment$NewRoomAdapter$mMDr0d9IN6cRptN_sbTLstxg1EM
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -586,7 +570,6 @@ public final class YYChatRoomItemFragment extends MvpFragment<YYChatRoomItemPres
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.chad.library.adapter.base.BaseQuickAdapter
         /* renamed from: a */
         public void convert(BaseViewHolder helper, YyHomeChatItemDataMode item) {
             Intrinsics.e(helper, "helper");
@@ -597,7 +580,7 @@ public final class YYChatRoomItemFragment extends MvpFragment<YYChatRoomItemPres
         }
 
         public final void a(String str) {
-            this.f17116c = str;
+            this.c = str;
         }
     }
 
@@ -607,29 +590,29 @@ public final class YYChatRoomItemFragment extends MvpFragment<YYChatRoomItemPres
         NoDataAndLoadFailView noDataAndLoadFailView3;
         SmartRefreshLayout smartRefreshLayout;
         SmartRefreshLayout smartRefreshLayout2;
-        FragmentChatRoomItemBinding fragmentChatRoomItemBinding = this.f17109a;
-        if (fragmentChatRoomItemBinding != null && (smartRefreshLayout2 = fragmentChatRoomItemBinding.f16469c) != null) {
-            smartRefreshLayout2.j();
+        FragmentChatRoomItemBinding fragmentChatRoomItemBinding = this.a;
+        if (fragmentChatRoomItemBinding != null && (smartRefreshLayout2 = fragmentChatRoomItemBinding.c) != null) {
+            smartRefreshLayout2.g();
         }
-        FragmentChatRoomItemBinding fragmentChatRoomItemBinding2 = this.f17109a;
-        if (fragmentChatRoomItemBinding2 != null && (smartRefreshLayout = fragmentChatRoomItemBinding2.f16469c) != null) {
+        FragmentChatRoomItemBinding fragmentChatRoomItemBinding2 = this.a;
+        if (fragmentChatRoomItemBinding2 != null && (smartRefreshLayout = fragmentChatRoomItemBinding2.c) != null) {
             smartRefreshLayout.h();
         }
         if (this.d.getData().size() > 0) {
-            FragmentChatRoomItemBinding fragmentChatRoomItemBinding3 = this.f17109a;
-            if (fragmentChatRoomItemBinding3 == null || (noDataAndLoadFailView = fragmentChatRoomItemBinding3.f16468a) == null) {
+            FragmentChatRoomItemBinding fragmentChatRoomItemBinding3 = this.a;
+            if (fragmentChatRoomItemBinding3 == null || (noDataAndLoadFailView = fragmentChatRoomItemBinding3.a) == null) {
                 return;
             }
             noDataAndLoadFailView.d();
         } else if (z) {
-            FragmentChatRoomItemBinding fragmentChatRoomItemBinding4 = this.f17109a;
-            if (fragmentChatRoomItemBinding4 == null || (noDataAndLoadFailView3 = fragmentChatRoomItemBinding4.f16468a) == null) {
+            FragmentChatRoomItemBinding fragmentChatRoomItemBinding4 = this.a;
+            if (fragmentChatRoomItemBinding4 == null || (noDataAndLoadFailView3 = fragmentChatRoomItemBinding4.a) == null) {
                 return;
             }
             noDataAndLoadFailView3.a();
         } else {
-            FragmentChatRoomItemBinding fragmentChatRoomItemBinding5 = this.f17109a;
-            if (fragmentChatRoomItemBinding5 == null || (noDataAndLoadFailView2 = fragmentChatRoomItemBinding5.f16468a) == null) {
+            FragmentChatRoomItemBinding fragmentChatRoomItemBinding5 = this.a;
+            if (fragmentChatRoomItemBinding5 == null || (noDataAndLoadFailView2 = fragmentChatRoomItemBinding5.a) == null) {
                 return;
             }
             noDataAndLoadFailView2.b();
@@ -642,13 +625,13 @@ public final class YYChatRoomItemFragment extends MvpFragment<YYChatRoomItemPres
         this.d.a(this.b);
         this.d.a(j().o());
         this.d.b(j().p());
-        FragmentChatRoomItemBinding a2 = FragmentChatRoomItemBinding.a(this.i);
-        this.f17109a = a2;
-        if (a2 != null && (noDataAndLoadFailView2 = a2.f16468a) != null) {
+        FragmentChatRoomItemBinding a = FragmentChatRoomItemBinding.a(this.i);
+        this.a = a;
+        if (a != null && (noDataAndLoadFailView2 = a.a) != null) {
             noDataAndLoadFailView2.setNoDataStr(R.string.yy_no_data_room);
         }
-        FragmentChatRoomItemBinding fragmentChatRoomItemBinding = this.f17109a;
-        if (fragmentChatRoomItemBinding != null && (noDataAndLoadFailView = fragmentChatRoomItemBinding.f16468a) != null) {
+        FragmentChatRoomItemBinding fragmentChatRoomItemBinding = this.a;
+        if (fragmentChatRoomItemBinding != null && (noDataAndLoadFailView = fragmentChatRoomItemBinding.a) != null) {
             noDataAndLoadFailView.setNoDataImg(R.drawable.icon_no_live_posted);
         }
         d();
@@ -656,35 +639,32 @@ public final class YYChatRoomItemFragment extends MvpFragment<YYChatRoomItemPres
 
     private final void d() {
         SmartRefreshLayout smartRefreshLayout;
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2, 1, false);
+        RecyclerView.LayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2, 1, false);
         gridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() { // from class: com.blued.android.module.yy_china.fragment.YYChatRoomItemFragment$initRecyclerView$1
-            @Override // androidx.recyclerview.widget.GridLayoutManager.SpanSizeLookup
             public int getSpanSize(int i) {
                 return YYChatRoomItemFragment.this.d.a(i);
             }
         });
-        FragmentChatRoomItemBinding fragmentChatRoomItemBinding = this.f17109a;
+        FragmentChatRoomItemBinding fragmentChatRoomItemBinding = this.a;
         RecyclerView recyclerView = fragmentChatRoomItemBinding == null ? null : fragmentChatRoomItemBinding.b;
         if (recyclerView != null) {
             recyclerView.setAdapter(this.d);
         }
-        FragmentChatRoomItemBinding fragmentChatRoomItemBinding2 = this.f17109a;
+        FragmentChatRoomItemBinding fragmentChatRoomItemBinding2 = this.a;
         RecyclerView recyclerView2 = fragmentChatRoomItemBinding2 == null ? null : fragmentChatRoomItemBinding2.b;
         if (recyclerView2 != null) {
             recyclerView2.setLayoutManager(gridLayoutManager);
         }
-        FragmentChatRoomItemBinding fragmentChatRoomItemBinding3 = this.f17109a;
-        if (fragmentChatRoomItemBinding3 == null || (smartRefreshLayout = fragmentChatRoomItemBinding3.f16469c) == null) {
+        FragmentChatRoomItemBinding fragmentChatRoomItemBinding3 = this.a;
+        if (fragmentChatRoomItemBinding3 == null || (smartRefreshLayout = fragmentChatRoomItemBinding3.c) == null) {
             return;
         }
         smartRefreshLayout.a(new OnRefreshLoadMoreListener() { // from class: com.blued.android.module.yy_china.fragment.YYChatRoomItemFragment$initRecyclerView$2
-            @Override // com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
             public void onLoadMore(RefreshLayout refreshLayout) {
                 Intrinsics.e(refreshLayout, "refreshLayout");
                 YYChatRoomItemFragment.this.j().f();
             }
 
-            @Override // com.scwang.smartrefresh.layout.listener.OnRefreshListener
             public void onRefresh(RefreshLayout refreshLayout) {
                 Intrinsics.e(refreshLayout, "refreshLayout");
                 YYChatRoomItemFragment.this.j().e();
@@ -729,7 +709,7 @@ public final class YYChatRoomItemFragment extends MvpFragment<YYChatRoomItemPres
                                 Message obtain = Message.obtain();
                                 obtain.what = 1;
                                 obtain.arg1 = yyHomeChatItemDataMode.getData().getConfig().get(0).getFrequency_seconds();
-                                adHandler = YYChatRoomItemFragment.this.f17110c;
+                                adHandler = YYChatRoomItemFragment.this.c;
                                 adHandler.sendMessageDelayed(obtain, yyHomeChatItemDataMode.getData().getConfig().get(0).getFrequency_seconds() * 1000);
                             }
                         }
@@ -772,34 +752,34 @@ public final class YYChatRoomItemFragment extends MvpFragment<YYChatRoomItemPres
     public void o() {
         SmartRefreshLayout smartRefreshLayout;
         super.o();
-        FragmentChatRoomItemBinding fragmentChatRoomItemBinding = this.f17109a;
-        if (fragmentChatRoomItemBinding == null || (smartRefreshLayout = fragmentChatRoomItemBinding.f16469c) == null) {
+        FragmentChatRoomItemBinding fragmentChatRoomItemBinding = this.a;
+        if (fragmentChatRoomItemBinding == null || (smartRefreshLayout = fragmentChatRoomItemBinding.c) == null) {
             return;
         }
-        smartRefreshLayout.l(true);
+        smartRefreshLayout.b(true);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment
     public void onDestroy() {
         super.onDestroy();
-        this.f17110c.removeCallbacksAndMessages(null);
+        this.c.removeCallbacksAndMessages(null);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onPause() {
         super.onPause();
         this.d.a(false);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onResume() {
         SmartRefreshLayout smartRefreshLayout;
         super.onResume();
         this.d.a(true);
         if (j().r()) {
             j().b(false);
-            FragmentChatRoomItemBinding fragmentChatRoomItemBinding = this.f17109a;
-            if (fragmentChatRoomItemBinding == null || (smartRefreshLayout = fragmentChatRoomItemBinding.f16469c) == null) {
+            FragmentChatRoomItemBinding fragmentChatRoomItemBinding = this.a;
+            if (fragmentChatRoomItemBinding == null || (smartRefreshLayout = fragmentChatRoomItemBinding.c) == null) {
                 return;
             }
             smartRefreshLayout.i();
@@ -810,10 +790,10 @@ public final class YYChatRoomItemFragment extends MvpFragment<YYChatRoomItemPres
     public void p() {
         SmartRefreshLayout smartRefreshLayout;
         super.p();
-        FragmentChatRoomItemBinding fragmentChatRoomItemBinding = this.f17109a;
-        if (fragmentChatRoomItemBinding == null || (smartRefreshLayout = fragmentChatRoomItemBinding.f16469c) == null) {
+        FragmentChatRoomItemBinding fragmentChatRoomItemBinding = this.a;
+        if (fragmentChatRoomItemBinding == null || (smartRefreshLayout = fragmentChatRoomItemBinding.c) == null) {
             return;
         }
-        smartRefreshLayout.l(false);
+        smartRefreshLayout.b(false);
     }
 }

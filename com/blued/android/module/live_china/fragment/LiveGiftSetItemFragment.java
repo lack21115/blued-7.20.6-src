@@ -10,7 +10,7 @@ import android.view.ViewParent;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.core.widget.NestedScrollView;
-import androidx.fragment.app.Fragment;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.AppMethods;
@@ -60,15 +60,11 @@ import kotlin.jvm.internal.Ref;
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveGiftSetItemFragment.class */
 public final class LiveGiftSetItemFragment extends BaseFragment {
     private LiveGiftSetCardAdapter b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private LiveGiftSetDesAdapter f12914c;
+    private LiveGiftSetDesAdapter c;
     private boolean d;
     private LiveGiftSetModel e;
     private CountDownTimer g;
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Lazy f12913a = LazyKt.a(new Function0<FragmentLiveGiftSetItemViewBinding>() { // from class: com.blued.android.module.live_china.fragment.LiveGiftSetItemFragment$vb$2
+    private final Lazy a = LazyKt.a(new Function0<FragmentLiveGiftSetItemViewBinding>() { // from class: com.blued.android.module.live_china.fragment.LiveGiftSetItemFragment$vb$2
         /* JADX INFO: Access modifiers changed from: package-private */
         {
             super(0);
@@ -85,20 +81,16 @@ public final class LiveGiftSetItemFragment extends BaseFragment {
     @Metadata
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveGiftSetItemFragment$LiveGiftSetCardAdapter.class */
     public final class LiveGiftSetCardAdapter extends CommonRecycleAdapter<LiveGiftSetItemModel> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ LiveGiftSetItemFragment f12915a;
+        final /* synthetic */ LiveGiftSetItemFragment a;
         private float b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private int f12916c;
+        private int c;
         private int d;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public LiveGiftSetCardAdapter(LiveGiftSetItemFragment this$0) {
             super(this$0.getContext());
             Intrinsics.e(this$0, "this$0");
-            this.f12915a = this$0;
+            this.a = this$0;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -132,39 +124,39 @@ public final class LiveGiftSetItemFragment extends BaseFragment {
             ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) layoutParams;
             marginLayoutParams.width = (int) this.b;
             if (getItemCount() == 1) {
-                marginLayoutParams.leftMargin = (int) ((this.f12916c - this.b) / 2);
+                marginLayoutParams.leftMargin = (int) ((this.c - this.b) / 2);
                 marginLayoutParams.rightMargin = 0;
             } else if (getItemCount() == 2) {
                 if (i == 0) {
                     float f = 2;
-                    marginLayoutParams.leftMargin = (int) ((this.f12916c - ((this.b * f) + this.d)) / f);
+                    marginLayoutParams.leftMargin = (int) ((this.c - ((this.b * f) + this.d)) / f);
                 } else {
                     marginLayoutParams.leftMargin = this.d;
                 }
                 marginLayoutParams.rightMargin = 0;
             } else if (getItemCount() == 3) {
                 if (i == 0) {
-                    marginLayoutParams.leftMargin = (int) ((this.f12916c - ((this.b * 3) + (this.d * 2))) / 2);
+                    marginLayoutParams.leftMargin = (int) ((this.c - ((this.b * 3) + (this.d * 2))) / 2);
                 } else {
                     marginLayoutParams.leftMargin = this.d;
                 }
                 marginLayoutParams.rightMargin = 0;
             } else if (i == 0) {
-                marginLayoutParams.leftMargin = DensityUtils.a(this.f12915a.getContext(), 16.0f);
+                marginLayoutParams.leftMargin = DensityUtils.a(this.a.getContext(), 16.0f);
                 marginLayoutParams.rightMargin = 0;
             } else if (i < getItemCount() - 1) {
                 marginLayoutParams.leftMargin = this.d;
                 marginLayoutParams.rightMargin = 0;
             } else {
                 marginLayoutParams.leftMargin = this.d;
-                marginLayoutParams.rightMargin = DensityUtils.a(this.f12915a.getContext(), 16.0f);
+                marginLayoutParams.rightMargin = DensityUtils.a(this.a.getContext(), 16.0f);
             }
             helper.a(R.id.view_root).setLayoutParams(marginLayoutParams);
-            ImageLoader.a(this.f12915a.getFragmentActive(), item.getImage()).e(-1).a((ImageView) helper.a(R.id.iv_icon));
+            ImageLoader.a(this.a.getFragmentActive(), item.getImage()).e(-1).a((ImageView) helper.a(R.id.iv_icon));
             ((TextView) helper.a(R.id.tv_name)).setText(item.getName());
             ((TextView) helper.a(R.id.tv_num)).setText(Intrinsics.a("X", (Object) Integer.valueOf(item.getTotal())));
             ((TextView) helper.a(R.id.tv_beans)).setText(String.valueOf(item.getBeans()));
-            final LiveGiftSetItemFragment liveGiftSetItemFragment = this.f12915a;
+            final LiveGiftSetItemFragment liveGiftSetItemFragment = this.a;
             ((TextView) helper.a(R.id.tv_send)).setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveGiftSetItemFragment$LiveGiftSetCardAdapter$XMLc2Uz3IAnCrbriGOl2u2NYo_k
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -180,9 +172,9 @@ public final class LiveGiftSetItemFragment extends BaseFragment {
 
         @Override // com.blued.android.module.common.adapter.CommonRecycleAdapter
         public void setDataAndNotify(List<LiveGiftSetItemModel> list) {
-            this.d = DensityUtils.a(this.f12915a.getContext(), 4.5f);
-            this.b = (AppInfo.l - DensityUtils.a(this.f12915a.getContext(), (this.d * 3) + 32.0f)) / 3.5f;
-            this.f12916c = AppInfo.l - DensityUtils.a(this.f12915a.getContext(), 32.0f);
+            this.d = DensityUtils.a(this.a.getContext(), 4.5f);
+            this.b = (AppInfo.l - DensityUtils.a(this.a.getContext(), (this.d * 3) + 32.0f)) / 3.5f;
+            this.c = AppInfo.l - DensityUtils.a(this.a.getContext(), 32.0f);
             super.setDataAndNotify(list);
         }
     }
@@ -190,15 +182,13 @@ public final class LiveGiftSetItemFragment extends BaseFragment {
     @Metadata
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveGiftSetItemFragment$LiveGiftSetDesAdapter.class */
     public final class LiveGiftSetDesAdapter extends CommonRecycleAdapter<LiveGiftSetDesModel> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ LiveGiftSetItemFragment f12917a;
+        final /* synthetic */ LiveGiftSetItemFragment a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public LiveGiftSetDesAdapter(LiveGiftSetItemFragment this$0) {
             super(this$0.getContext());
             Intrinsics.e(this$0, "this$0");
-            this.f12917a = this$0;
+            this.a = this$0;
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
@@ -209,30 +199,30 @@ public final class LiveGiftSetItemFragment extends BaseFragment {
             Intrinsics.e(item, "item");
             Intrinsics.e(helper, "helper");
             final Ref.ObjectRef objectRef = new Ref.ObjectRef();
-            objectRef.f42545a = helper.a(R.id.iv_icon);
+            objectRef.a = helper.a(R.id.iv_icon);
             final ImageSize imageSize = new ImageSize();
-            ImageFileWrapper a2 = ImageFileLoader.a(this.f12917a.getFragmentActive()).a(item.getImage()).a(imageSize);
-            final LiveGiftSetItemFragment liveGiftSetItemFragment = this.f12917a;
-            a2.a(new ImageFileLoader.OnLoadFileListener() { // from class: com.blued.android.module.live_china.fragment.LiveGiftSetItemFragment$LiveGiftSetDesAdapter$onBindViewHolderData$1
+            ImageFileWrapper a = ImageFileLoader.a(this.a.getFragmentActive()).a(item.getImage()).a(imageSize);
+            final LiveGiftSetItemFragment liveGiftSetItemFragment = this.a;
+            a.a(new ImageFileLoader.OnLoadFileListener() { // from class: com.blued.android.module.live_china.fragment.LiveGiftSetItemFragment$LiveGiftSetDesAdapter$onBindViewHolderData$1
                 @Override // com.blued.android.core.image.ImageFileLoader.OnLoadFileListener
                 public void onUIFinish(File file, Exception exc) {
                     if (file == null || !file.exists()) {
                         return;
                     }
-                    float a3 = ImageSize.this.a();
+                    float a2 = ImageSize.this.a();
                     float b = ImageSize.this.b();
-                    int a4 = AppInfo.l - DensityUtils.a(AppInfo.d(), 100.0f);
-                    if (a3 > 0.0f && b > 0.0f) {
-                        int i2 = (int) ((b / a3) * a4);
-                        ViewGroup.LayoutParams layoutParams = objectRef.f42545a.getLayoutParams();
+                    int a3 = AppInfo.l - DensityUtils.a(AppInfo.d(), 100.0f);
+                    if (a2 > 0.0f && b > 0.0f) {
+                        int i2 = (int) ((b / a2) * a3);
+                        ViewGroup.LayoutParams layoutParams = objectRef.a.getLayoutParams();
                         if (layoutParams == null) {
                             throw new NullPointerException("null cannot be cast to non-null type android.view.ViewGroup.LayoutParams");
                         }
-                        layoutParams.width = a4;
+                        layoutParams.width = a3;
                         layoutParams.height = i2;
-                        objectRef.f42545a.setLayoutParams(layoutParams);
+                        objectRef.a.setLayoutParams(layoutParams);
                     }
-                    ImageLoader.a(liveGiftSetItemFragment.getFragmentActive(), item.getImage()).a(8.0f).e(-1).a(objectRef.f42545a);
+                    ImageLoader.a(liveGiftSetItemFragment.getFragmentActive(), item.getImage()).a(8.0f).e(-1).a(objectRef.a);
                 }
             }).a();
             ((TextView) helper.a(R.id.tv_name)).setText(item.getText());
@@ -262,7 +252,7 @@ public final class LiveGiftSetItemFragment extends BaseFragment {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final FragmentLiveGiftSetItemViewBinding g() {
-        return (FragmentLiveGiftSetItemViewBinding) this.f12913a.getValue();
+        return (FragmentLiveGiftSetItemViewBinding) this.a.getValue();
     }
 
     private final void h() {
@@ -280,9 +270,8 @@ public final class LiveGiftSetItemFragment extends BaseFragment {
             }
         }
         g().e.setVisibility(0);
-        g().f11937c.setVisibility(8);
-        LiveEventBus.get("live_gift_set_buy_success", LiveGiftSetBuyModel.class).observe(this, new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveGiftSetItemFragment$5AvDVzpxuyZZuC-J3XdabVW-8Rc
-            @Override // androidx.lifecycle.Observer
+        g().c.setVisibility(8);
+        LiveEventBus.get("live_gift_set_buy_success", LiveGiftSetBuyModel.class).observe((LifecycleOwner) this, new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveGiftSetItemFragment$5AvDVzpxuyZZuC-J3XdabVW-8Rc
             public final void onChanged(Object obj) {
                 LiveGiftSetItemFragment.a(LiveGiftSetItemFragment.this, (LiveGiftSetBuyModel) obj);
             }
@@ -309,6 +298,7 @@ public final class LiveGiftSetItemFragment extends BaseFragment {
         return this.e;
     }
 
+    /* JADX WARN: Type inference failed for: r1v0, types: [com.blued.android.module.live_china.fragment.LiveGiftSetItemFragment$startPunishTimer$1] */
     public final void a(int i) {
         f();
         final long j = i * 1000;
@@ -402,11 +392,11 @@ public final class LiveGiftSetItemFragment extends BaseFragment {
                     }
                     for (final LiveGiftSetTaskModel liveGiftSetTaskModel : task_info) {
                         Ref.ObjectRef objectRef = new Ref.ObjectRef();
-                        ?? a2 = LiveGiftSetTaskItemBinding.a(LayoutInflater.from(getContext()));
-                        Intrinsics.c(a2, "inflate(LayoutInflater.from(context))");
-                        objectRef.f42545a = a2;
-                        g().d.addView(((LiveGiftSetTaskItemBinding) objectRef.f42545a).getRoot());
-                        TextView textView = ((LiveGiftSetTaskItemBinding) objectRef.f42545a).f12232c;
+                        ?? a = LiveGiftSetTaskItemBinding.a(LayoutInflater.from(getContext()));
+                        Intrinsics.c(a, "inflate(LayoutInflater.from(context))");
+                        objectRef.a = a;
+                        g().d.addView(((LiveGiftSetTaskItemBinding) objectRef.a).getRoot());
+                        TextView textView = ((LiveGiftSetTaskItemBinding) objectRef.a).c;
                         Intrinsics.c(textView, "taskVB.tvName");
                         LiveTextSpanExKt.a(textView, new Function1<DslSpannableStringBuilder, Unit>() { // from class: com.blued.android.module.live_china.fragment.LiveGiftSetItemFragment$addTask$1$1
                             /* JADX INFO: Access modifiers changed from: package-private */
@@ -427,7 +417,7 @@ public final class LiveGiftSetItemFragment extends BaseFragment {
                                     @Override // kotlin.jvm.functions.Function1
                                     public /* synthetic */ Unit invoke(DslSpanBuilder dslSpanBuilder) {
                                         a(dslSpanBuilder);
-                                        return Unit.f42314a;
+                                        return Unit.a;
                                     }
                                 });
                             }
@@ -435,30 +425,30 @@ public final class LiveGiftSetItemFragment extends BaseFragment {
                             @Override // kotlin.jvm.functions.Function1
                             public /* synthetic */ Unit invoke(DslSpannableStringBuilder dslSpannableStringBuilder) {
                                 a(dslSpannableStringBuilder);
-                                return Unit.f42314a;
+                                return Unit.a;
                             }
                         });
                         String icon = liveGiftSetTaskModel.getIcon();
                         if (icon == null || icon.length() == 0) {
-                            ((LiveGiftSetTaskItemBinding) objectRef.f42545a).f12231a.setVisibility(8);
+                            ((LiveGiftSetTaskItemBinding) objectRef.a).a.setVisibility(8);
                         } else {
-                            ((LiveGiftSetTaskItemBinding) objectRef.f42545a).f12231a.setVisibility(0);
-                            int a3 = DensityUtils.a(AppInfo.d(), 50.0f);
-                            int a4 = DensityUtils.a(AppInfo.d(), 19.0f);
-                            int a5 = AppMethods.a(4.5f);
-                            TextView textView2 = ((LiveGiftSetTaskItemBinding) objectRef.f42545a).f12232c;
+                            ((LiveGiftSetTaskItemBinding) objectRef.a).a.setVisibility(0);
+                            int a2 = DensityUtils.a(AppInfo.d(), 50.0f);
+                            int a3 = DensityUtils.a(AppInfo.d(), 19.0f);
+                            int a4 = AppMethods.a(4.5f);
+                            TextView textView2 = ((LiveGiftSetTaskItemBinding) objectRef.a).c;
                             Intrinsics.c(textView2, "taskVB.tvName");
-                            LiveTextSpanExKt.a(textView2, new LiveGiftSetItemFragment$addTask$1$2(a5, a3, a4, objectRef, this, liveGiftSetTaskModel));
+                            LiveTextSpanExKt.a(textView2, new LiveGiftSetItemFragment$addTask$1$2(a4, a2, a3, objectRef, this, liveGiftSetTaskModel));
                         }
                         if (liveGiftSetTaskModel.getCount().compareTo(liveGiftSetTaskModel.getTotal()) < 0) {
-                            ((LiveGiftSetTaskItemBinding) objectRef.f42545a).d.setAlpha(0.4f);
-                            ((LiveGiftSetTaskItemBinding) objectRef.f42545a).d.setTextColor(getResources().getColor(R.color.syc_dark_b));
-                            TextView textView3 = ((LiveGiftSetTaskItemBinding) objectRef.f42545a).d;
+                            ((LiveGiftSetTaskItemBinding) objectRef.a).d.setAlpha(0.4f);
+                            ((LiveGiftSetTaskItemBinding) objectRef.a).d.setTextColor(getResources().getColor(R.color.syc_dark_b));
+                            TextView textView3 = ((LiveGiftSetTaskItemBinding) objectRef.a).d;
                             textView3.setText(AppInfo.d().getString(R.string.live_gift_set_task_un_complete) + '(' + liveGiftSetTaskModel.getCount() + '/' + liveGiftSetTaskModel.getTotal() + ')');
                         } else {
-                            ((LiveGiftSetTaskItemBinding) objectRef.f42545a).d.setAlpha(1.0f);
-                            ((LiveGiftSetTaskItemBinding) objectRef.f42545a).d.setTextColor(getResources().getColor(R.color.syc_dark_FFE6BC));
-                            TextView textView4 = ((LiveGiftSetTaskItemBinding) objectRef.f42545a).d;
+                            ((LiveGiftSetTaskItemBinding) objectRef.a).d.setAlpha(1.0f);
+                            ((LiveGiftSetTaskItemBinding) objectRef.a).d.setTextColor(getResources().getColor(R.color.syc_dark_FFE6BC));
+                            TextView textView4 = ((LiveGiftSetTaskItemBinding) objectRef.a).d;
                             textView4.setText(AppInfo.d().getString(R.string.live_gift_set_task_complete) + '(' + liveGiftSetTaskModel.getCount() + '/' + liveGiftSetTaskModel.getTotal() + ')');
                         }
                     }
@@ -482,9 +472,9 @@ public final class LiveGiftSetItemFragment extends BaseFragment {
                     return;
                 }
                 LiveGiftSetItemFragment.this.a(bluedEntity.data.get(0));
-                LiveGiftSetModel a2 = LiveGiftSetItemFragment.this.a();
-                if (a2 != null) {
-                    a2.setId(StringUtils.a(LiveGiftSetItemFragment.this.b(), 0));
+                LiveGiftSetModel a = LiveGiftSetItemFragment.this.a();
+                if (a != null) {
+                    a.setId(StringUtils.a(LiveGiftSetItemFragment.this.b(), 0));
                 }
                 LiveGiftSetItemFragment.this.i();
             }
@@ -503,9 +493,9 @@ public final class LiveGiftSetItemFragment extends BaseFragment {
 
     public final LiveGiftSetDialogFragment e() {
         if (getParentFragment() instanceof LiveGiftSetDialogFragment) {
-            Fragment parentFragment = getParentFragment();
+            LiveGiftSetDialogFragment parentFragment = getParentFragment();
             if (parentFragment != null) {
-                return (LiveGiftSetDialogFragment) parentFragment;
+                return parentFragment;
             }
             throw new NullPointerException("null cannot be cast to non-null type com.blued.android.module.live_china.fragment.LiveGiftSetDialogFragment");
         }
@@ -520,7 +510,7 @@ public final class LiveGiftSetItemFragment extends BaseFragment {
         countDownTimer.cancel();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         NestedScrollView root;
         NestedScrollView root2;
@@ -544,19 +534,19 @@ public final class LiveGiftSetItemFragment extends BaseFragment {
         return g4 == null ? null : g4.getRoot();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onDestroy() {
         super.onDestroy();
         f();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onPause() {
         super.onPause();
         this.d = false;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onResume() {
         super.onResume();
         this.d = true;

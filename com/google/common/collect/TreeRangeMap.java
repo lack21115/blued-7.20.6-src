@@ -226,7 +226,7 @@ public final class TreeRangeMap<K extends Comparable, V> implements RangeMap<K, 
                         return !iterator().hasNext();
                     }
 
-                    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+                    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
                     public Iterator<Map.Entry<Range<K>, V>> iterator() {
                         return SubRangeMapAsMap.this.entryIterator();
                     }
@@ -241,7 +241,7 @@ public final class TreeRangeMap<K extends Comparable, V> implements RangeMap<K, 
                         return SubRangeMapAsMap.this.removeEntryIf(Predicates.not(Predicates.in(collection)));
                     }
 
-                    @Override // com.google.common.collect.Maps.EntrySet, java.util.AbstractCollection, java.util.Collection, java.util.List
+                    @Override // com.google.common.collect.Maps.EntrySet, java.util.AbstractCollection, java.util.Collection, java.util.Set
                     public int size() {
                         return Iterators.size(iterator());
                     }
@@ -302,12 +302,12 @@ public final class TreeRangeMap<K extends Comparable, V> implements RangeMap<K, 
             @Override // java.util.AbstractMap, java.util.Map
             public Collection<V> values() {
                 return new Maps.Values<Range<K>, V>(this) { // from class: com.google.common.collect.TreeRangeMap.SubRangeMap.SubRangeMapAsMap.4
-                    @Override // com.google.common.collect.Maps.Values, java.util.AbstractCollection, java.util.Collection, java.util.Set
+                    @Override // com.google.common.collect.Maps.Values, java.util.AbstractCollection, java.util.Collection
                     public boolean removeAll(Collection<?> collection) {
                         return SubRangeMapAsMap.this.removeEntryIf(Predicates.compose(Predicates.in(collection), Maps.valueFunction()));
                     }
 
-                    @Override // com.google.common.collect.Maps.Values, java.util.AbstractCollection, java.util.Collection, java.util.Set
+                    @Override // com.google.common.collect.Maps.Values, java.util.AbstractCollection, java.util.Collection
                     public boolean retainAll(Collection<?> collection) {
                         return SubRangeMapAsMap.this.removeEntryIf(Predicates.compose(Predicates.not(Predicates.in(collection)), Maps.valueFunction()));
                     }
@@ -479,7 +479,7 @@ public final class TreeRangeMap<K extends Comparable, V> implements RangeMap<K, 
     }
 
     private void putRangeMapEntry(Cut<K> cut, Cut<K> cut2, V v) {
-        this.entriesByLowerBound.put(cut, new RangeMapEntry<>(cut, cut2, v));
+        this.entriesByLowerBound.put(cut, new RangeMapEntry(cut, cut2, v));
     }
 
     @Override // com.google.common.collect.RangeMap
@@ -537,7 +537,7 @@ public final class TreeRangeMap<K extends Comparable, V> implements RangeMap<K, 
         }
         Preconditions.checkNotNull(v);
         remove(range);
-        this.entriesByLowerBound.put(range.lowerBound, new RangeMapEntry<>(range, v));
+        this.entriesByLowerBound.put(range.lowerBound, new RangeMapEntry(range, v));
     }
 
     @Override // com.google.common.collect.RangeMap

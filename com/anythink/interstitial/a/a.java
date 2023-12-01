@@ -20,6 +20,7 @@ import com.anythink.core.api.AdError;
 import com.anythink.core.api.BaseAd;
 import com.anythink.core.api.IExHandler;
 import com.anythink.core.common.b.n;
+import com.anythink.core.common.e.j;
 import com.anythink.core.common.h;
 import com.anythink.core.common.k.g;
 import com.anythink.core.common.k.s;
@@ -37,7 +38,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public class a extends com.anythink.core.common.f<e> {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f8794a = a.class.getSimpleName();
+    public static final String f5954a = a.class.getSimpleName();
     Runnable n;
     private View o;
     private AtomicBoolean p;
@@ -61,31 +62,29 @@ public class a extends com.anythink.core.common.f<e> {
     public final class AnonymousClass3 implements b.a {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ WeakReference f8801a;
+        final /* synthetic */ WeakReference f5961a;
         final /* synthetic */ String b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ int f8802c;
+        final /* synthetic */ int f5962c;
 
         AnonymousClass3(WeakReference weakReference, String str, int i) {
-            this.f8801a = weakReference;
+            this.f5961a = weakReference;
             this.b = str;
-            this.f8802c = i;
+            this.f5962c = i;
         }
 
-        @Override // com.anythink.core.common.res.b.a
         public final void onFail(String str, String str2) {
-            Log.e(a.f8794a, "load: image load fail:".concat(String.valueOf(str2)));
-            ImageView imageView = (ImageView) this.f8801a.get();
+            Log.e(a.f5954a, "load: image load fail:".concat(String.valueOf(str2)));
+            ImageView imageView = (ImageView) this.f5961a.get();
             if (!TextUtils.equals(this.b, str) || imageView == null) {
                 return;
             }
-            imageView.setImageResource(this.f8802c);
+            imageView.setImageResource(this.f5962c);
         }
 
-        @Override // com.anythink.core.common.res.b.a
         public final void onSuccess(String str, Bitmap bitmap) {
-            ImageView imageView = (ImageView) this.f8801a.get();
+            ImageView imageView = (ImageView) this.f5961a.get();
             if (!TextUtils.equals(this.b, str) || imageView == null) {
                 return;
             }
@@ -96,69 +95,61 @@ public class a extends com.anythink.core.common.f<e> {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.anythink.interstitial.a.a$5  reason: invalid class name */
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/interstitial/a/a$5.class */
-    public final class AnonymousClass5 implements b.InterfaceC0079b {
+    public final class AnonymousClass5 implements b.b {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ d f8804a;
+        final /* synthetic */ d f5964a;
         final /* synthetic */ String b;
 
         AnonymousClass5(d dVar, String str) {
-            this.f8804a = dVar;
+            this.f5964a = dVar;
             this.b = str;
         }
 
-        @Override // com.anythink.basead.e.b.InterfaceC0079b
         public final void a() {
-            d dVar = this.f8804a;
+            d dVar = this.f5964a;
             if (dVar != null) {
                 dVar.onInterstitialAdShow();
             }
         }
 
-        @Override // com.anythink.basead.e.b.InterfaceC0079b
         public final void a(int i) {
-            d dVar = this.f8804a;
+            d dVar = this.f5964a;
             if (dVar != null) {
                 dVar.onInterstitialAdClicked();
             }
         }
 
-        @Override // com.anythink.basead.e.b.InterfaceC0079b
         public final void a(com.anythink.basead.c.e eVar) {
-            d dVar = this.f8804a;
+            d dVar = this.f5964a;
             if (dVar != null) {
                 dVar.onInterstitialAdVideoError(eVar.a(), eVar.b());
             }
         }
 
-        @Override // com.anythink.basead.e.b.InterfaceC0079b
         public final void a(boolean z) {
         }
 
-        @Override // com.anythink.basead.e.b.InterfaceC0079b
         public final void b() {
-            d dVar = this.f8804a;
+            d dVar = this.f5964a;
             if (dVar != null) {
                 dVar.onInterstitialAdVideoStart();
             }
         }
 
-        @Override // com.anythink.basead.e.b.InterfaceC0079b
         public final void c() {
-            d dVar = this.f8804a;
+            d dVar = this.f5964a;
             if (dVar != null) {
                 dVar.onInterstitialAdVideoEnd();
             }
         }
 
-        @Override // com.anythink.basead.e.b.InterfaceC0079b
         public final void d() {
         }
 
-        @Override // com.anythink.basead.e.b.InterfaceC0079b
         public final void e() {
             com.anythink.basead.e.b.a().b(this.b);
-            d dVar = this.f8804a;
+            d dVar = this.f5964a;
             if (dVar != null) {
                 dVar.onInterstitialAdClose();
             }
@@ -178,8 +169,7 @@ public class a extends com.anythink.core.common.f<e> {
         };
     }
 
-    /* renamed from: a  reason: avoid collision after fix types in other method */
-    private static h a2(e eVar) {
+    private static h a(e eVar) {
         f fVar = new f(eVar.a());
         fVar.a(eVar.d);
         return fVar;
@@ -244,7 +234,7 @@ public class a extends com.anythink.core.common.f<e> {
         imageView.setMaxWidth(a3);
         imageView.setMaxHeight(a3);
         imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
-        int a4 = com.anythink.core.common.k.h.a(activity, "interstitial_loading_default", i.f7952c);
+        int a4 = com.anythink.core.common.k.h.a(activity, "interstitial_loading_default", i.f5112c);
         if (TextUtils.isEmpty(n)) {
             imageView.setImageResource(a4);
         } else {
@@ -264,7 +254,7 @@ public class a extends com.anythink.core.common.f<e> {
 
     private void a(Activity activity, d dVar, BaseAd baseAd, com.anythink.core.common.e.e eVar, String str) {
         if (baseAd == null || !(baseAd instanceof com.anythink.core.common.e.a.e)) {
-            Log.e("anythink", "showThirdPartyNativeSplash fail,AdCache return illegal type adObject");
+            Log.e(com.anythink.expressad.d.b.f4297c, "showThirdPartyNativeSplash fail,AdCache return illegal type adObject");
             if (dVar != null) {
                 dVar.onInterstitialAdVideoError("", "showThirdPartyNativeInterstitial fail,AdCache return illegal type adObject");
                 return;
@@ -273,13 +263,13 @@ public class a extends com.anythink.core.common.f<e> {
         }
         com.anythink.core.common.e.a.b bVar = new com.anythink.core.common.e.a.b((com.anythink.core.common.e.a.e) baseAd);
         com.anythink.core.common.e.a.c cVar = new com.anythink.core.common.e.a.c((com.anythink.core.common.e.a.a) baseAd, eVar, Integer.parseInt("3"));
-        String a2 = a(cVar);
+        String a2 = a((j) cVar);
         com.anythink.basead.e.b.a().a(a2, new AnonymousClass5(dVar, a2));
         com.anythink.basead.d.i.a().a(a2, baseAd);
         com.anythink.core.basead.b.a aVar = new com.anythink.core.basead.b.a();
-        aVar.f6395c = bVar;
+        aVar.c = bVar;
         aVar.d = a2;
-        aVar.f6394a = 3;
+        aVar.a = 3;
         aVar.h = cVar;
         aVar.e = com.anythink.core.common.k.d.g(activity);
         aVar.b = str;
@@ -304,7 +294,7 @@ public class a extends com.anythink.core.common.f<e> {
             imageView.setMaxWidth(a3);
             imageView.setMaxHeight(a3);
             imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
-            int a4 = com.anythink.core.common.k.h.a(activity, "interstitial_loading_default", i.f7952c);
+            int a4 = com.anythink.core.common.k.h.a(activity, "interstitial_loading_default", i.f5112c);
             if (TextUtils.isEmpty(n)) {
                 imageView.setImageResource(a4);
             } else {
@@ -325,19 +315,19 @@ public class a extends com.anythink.core.common.f<e> {
 
     static /* synthetic */ void a(a aVar, Activity activity, d dVar, BaseAd baseAd, com.anythink.core.common.e.e eVar, String str) {
         if (baseAd == null || !(baseAd instanceof com.anythink.core.common.e.a.e)) {
-            Log.e("anythink", "showThirdPartyNativeSplash fail,AdCache return illegal type adObject");
+            Log.e(com.anythink.expressad.d.b.f4297c, "showThirdPartyNativeSplash fail,AdCache return illegal type adObject");
             dVar.onInterstitialAdVideoError("", "showThirdPartyNativeInterstitial fail,AdCache return illegal type adObject");
             return;
         }
         com.anythink.core.common.e.a.b bVar = new com.anythink.core.common.e.a.b((com.anythink.core.common.e.a.e) baseAd);
         com.anythink.core.common.e.a.c cVar = new com.anythink.core.common.e.a.c((com.anythink.core.common.e.a.a) baseAd, eVar, Integer.parseInt("3"));
-        String a2 = a(cVar);
+        String a2 = a((j) cVar);
         com.anythink.basead.e.b.a().a(a2, new AnonymousClass5(dVar, a2));
         com.anythink.basead.d.i.a().a(a2, baseAd);
         com.anythink.core.basead.b.a aVar2 = new com.anythink.core.basead.b.a();
-        aVar2.f6395c = bVar;
+        aVar2.c = bVar;
         aVar2.d = a2;
-        aVar2.f6394a = 3;
+        aVar2.a = 3;
         aVar2.h = cVar;
         aVar2.e = com.anythink.core.common.k.d.g(activity);
         aVar2.b = str;
@@ -357,7 +347,6 @@ public class a extends com.anythink.core.common.f<e> {
         n.a().a(this.n, ((long) Math.pow(2.0d, this.h)) * 1000);
     }
 
-    @Override // com.anythink.core.common.f
     public final ATAdStatusInfo a(Context context, Map<String, Object> map) {
         ATAdStatusInfo a2 = super.a(context, map);
         if (!c() && a(a2)) {
@@ -366,15 +355,13 @@ public class a extends com.anythink.core.common.f<e> {
         return a2;
     }
 
-    @Override // com.anythink.core.common.f
-    public final /* synthetic */ h a(e eVar) {
-        e eVar2 = eVar;
-        f fVar = new f(eVar2.a());
-        fVar.a(eVar2.d);
+    public final /* synthetic */ h a(com.anythink.core.common.j jVar) {
+        e eVar = (e) jVar;
+        f fVar = new f(eVar.a());
+        fVar.a(eVar.d);
         return fVar;
     }
 
-    @Override // com.anythink.core.common.f
     public final String a() {
         return "3";
     }
@@ -383,11 +370,11 @@ public class a extends com.anythink.core.common.f<e> {
         synchronized (this) {
             if (this.p.get()) {
                 StringBuilder sb = new StringBuilder("The placementId(");
-                sb.append(this.f6687c);
+                sb.append(this.c);
                 sb.append(") is already in the process of being delayed.");
                 return;
             }
-            final com.anythink.core.common.e.b a2 = a((Context) activity, false, true, map);
+            final com.anythink.core.common.e.b a2 = a(activity, false, true, map);
             if (a2 == null || !(a2.e() instanceof CustomInterstitialAdapter)) {
                 if (a((ATAdStatusInfo) null)) {
                     a(n.a().E(), 7, (com.anythink.core.common.b.a) null, (com.anythink.core.common.b.b) null, map);
@@ -435,7 +422,7 @@ public class a extends com.anythink.core.common.f<e> {
                             IExHandler b = n.a().b();
                             if (b != null) {
                                 CustomInterstitialAdapter customInterstitialAdapter2 = customInterstitialAdapter;
-                                customInterstitialAdapter2.setAdDownloadListener(b.createDownloadListener(customInterstitialAdapter2, null, aTEventInterface));
+                                customInterstitialAdapter2.setAdDownloadListener(b.createDownloadListener(customInterstitialAdapter2, (BaseAd) null, aTEventInterface));
                             }
                             if (customInterstitialAdapter.getMixedFormatAdType() == 0) {
                                 a.a(a.this, activity, new d(customInterstitialAdapter, aTInterstitialListener), a2.f(), trackingInfo, str);
@@ -462,38 +449,34 @@ public class a extends com.anythink.core.common.f<e> {
         eVar.d = i;
         eVar.e = bVar;
         eVar.g = map;
-        super.a(this.b, "3", this.f6687c, (String) eVar, aVar);
+        super.a(this.b, "3", this.c, eVar, aVar);
     }
 
-    @Override // com.anythink.core.common.f
     public final void b(AdError adError) {
         super.b(adError);
         if (j()) {
             n.a().a(this.n, ((long) Math.pow(2.0d, this.h)) * 1000);
             ATInterstitialAutoLoadListener aTInterstitialAutoLoadListener = b.a().b;
             if (aTInterstitialAutoLoadListener != null) {
-                aTInterstitialAutoLoadListener.onInterstitialAutoLoadFail(this.f6687c, adError);
+                aTInterstitialAutoLoadListener.onInterstitialAutoLoadFail(this.c, adError);
             }
         }
     }
 
-    @Override // com.anythink.core.common.f
     public final boolean j() {
-        return v.a().f(this.f6687c);
+        return v.a().f(this.c);
     }
 
-    @Override // com.anythink.core.common.f
     public final void k() {
         n.a().c(this.n);
     }
 
-    @Override // com.anythink.core.common.f
     public final void l() {
         ATInterstitialAutoLoadListener aTInterstitialAutoLoadListener;
         super.l();
         if (!j() || (aTInterstitialAutoLoadListener = b.a().b) == null) {
             return;
         }
-        aTInterstitialAutoLoadListener.onInterstitialAutoLoaded(this.f6687c);
+        aTInterstitialAutoLoadListener.onInterstitialAutoLoaded(this.c);
     }
 }

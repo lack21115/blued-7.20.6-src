@@ -27,7 +27,7 @@ public abstract class BaseChattingPanelView {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public int getResDrawableId(String str) {
-        return ResourceUtils.getIdByName(this.context, i.f7952c, str);
+        return ResourceUtils.getIdByName(this.context, i.f5112c, str);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemDateTodayFunctionalEvaluationBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29167a;
+    private final LinearLayout f15477a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29167a;
+        return this.f15477a;
     }
 }

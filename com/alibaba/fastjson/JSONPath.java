@@ -13,7 +13,7 @@ import com.alibaba.fastjson.serializer.ObjectSerializer;
 import com.alibaba.fastjson.serializer.SerializeConfig;
 import com.alibaba.fastjson.util.IOUtils;
 import com.android.internal.telephony.PhoneConstants;
-import com.igexin.push.core.b;
+import com.anythink.core.api.ATAdConst;
 import java.io.IOException;
 import java.lang.reflect.Array;
 import java.lang.reflect.Type;
@@ -271,22 +271,22 @@ public class JSONPath implements JSONAware {
             next();
         }
 
-        static boolean isDigitFirst(char c2) {
-            if (c2 == '-' || c2 == '+') {
+        static boolean isDigitFirst(char c) {
+            if (c == '-' || c == '+') {
                 return true;
             }
-            return c2 >= '0' && c2 <= '9';
+            return c >= '0' && c <= '9';
         }
 
-        void accept(char c2) {
-            if (this.ch == c2) {
+        void accept(char c) {
+            if (this.ch == c) {
                 if (isEOF()) {
                     return;
                 }
                 next();
                 return;
             }
-            throw new JSONPathException("expect '" + c2 + ", but '" + this.ch + "'");
+            throw new JSONPathException("expect '" + c + ", but '" + this.ch + "'");
         }
 
         Segement buildArraySegement(String str) {
@@ -415,8 +415,8 @@ public class JSONPath implements JSONAware {
             if (!z2 && !IOUtils.firstIdentifier(this.ch)) {
                 int i3 = this.pos;
                 while (true) {
-                    char c2 = this.ch;
-                    if (c2 == ']' || c2 == '/' || isEOF()) {
+                    char c = this.ch;
+                    if (c == ']' || c == '/' || isEOF()) {
                         break;
                     }
                     next();
@@ -469,9 +469,9 @@ public class JSONPath implements JSONAware {
                     }
                     throw new JSONPathException(this.path);
                 } else if (readOp != Operator.IN && readOp != Operator.NOT_IN) {
-                    char c3 = this.ch;
-                    if (c3 != '\'' && c3 != '\"') {
-                        if (isDigitFirst(c3)) {
+                    char c2 = this.ch;
+                    if (c2 != '\'' && c2 != '\"') {
+                        if (isDigitFirst(c2)) {
                             long readLongValue = readLongValue();
                             if (z2) {
                                 accept(')');
@@ -480,7 +480,7 @@ public class JSONPath implements JSONAware {
                                 accept(']');
                             }
                             return new FilterSegement(new IntOpSegement(readName, readLongValue, readOp));
-                        } else if (this.ch == 'n' && b.l.equals(readName())) {
+                        } else if (this.ch == 'n' && "null".equals(readName())) {
                             if (z2) {
                                 accept(')');
                             }
@@ -681,13 +681,13 @@ public class JSONPath implements JSONAware {
 
         protected long readLongValue() {
             int i = this.pos;
-            char c2 = this.ch;
-            if (c2 == '+' || c2 == '-') {
+            char c = this.ch;
+            if (c == '+' || c == '-') {
                 next();
             }
             while (true) {
-                char c3 = this.ch;
-                if (c3 < '0' || c3 > '9') {
+                char c2 = this.ch;
+                if (c2 < '0' || c2 > '9') {
                     break;
                 }
                 next();
@@ -697,21 +697,21 @@ public class JSONPath implements JSONAware {
 
         String readName() {
             skipWhitespace();
-            char c2 = this.ch;
-            if (c2 != '\\' && !IOUtils.firstIdentifier(c2)) {
+            char c = this.ch;
+            if (c != '\\' && !IOUtils.firstIdentifier(c)) {
                 throw new JSONPathException("illeal jsonpath syntax. " + this.path);
             }
             StringBuilder sb = new StringBuilder();
             while (!isEOF()) {
-                char c3 = this.ch;
-                if (c3 == '\\') {
+                char c2 = this.ch;
+                if (c2 == '\\') {
                     next();
                     sb.append(this.ch);
                     if (isEOF()) {
                         break;
                     }
                     next();
-                } else if (!IOUtils.isIdent(c3)) {
+                } else if (!IOUtils.isIdent(c2)) {
                     break;
                 } else {
                     sb.append(this.ch);
@@ -726,15 +726,15 @@ public class JSONPath implements JSONAware {
 
         protected Operator readOp() {
             Operator operator;
-            char c2 = this.ch;
-            if (c2 == '=') {
+            char c = this.ch;
+            if (c == '=') {
                 next();
                 operator = Operator.EQ;
-            } else if (c2 == '!') {
+            } else if (c == '!') {
                 next();
                 accept('=');
                 operator = Operator.NE;
-            } else if (c2 == '<') {
+            } else if (c == '<') {
                 next();
                 if (this.ch == '=') {
                     next();
@@ -742,7 +742,7 @@ public class JSONPath implements JSONAware {
                 } else {
                     operator = Operator.LT;
                 }
-            } else if (c2 == '>') {
+            } else if (c == '>') {
                 next();
                 if (this.ch == '=') {
                     next();
@@ -790,25 +790,25 @@ public class JSONPath implements JSONAware {
         }
 
         Segement readSegement() {
-            char c2;
+            char c;
             if (this.level == 0 && this.path.length() == 1) {
                 if (isDigitFirst(this.ch)) {
                     return new ArrayAccessSegement(this.ch - '0');
                 }
-                char c3 = this.ch;
-                if ((c3 >= 'a' && c3 <= 'z') || ((c2 = this.ch) >= 'A' && c2 <= 'Z')) {
+                char c2 = this.ch;
+                if ((c2 >= 'a' && c2 <= 'z') || ((c = this.ch) >= 'A' && c <= 'Z')) {
                     return new PropertySegement(Character.toString(this.ch));
                 }
             }
             while (!isEOF()) {
                 skipWhitespace();
-                char c4 = this.ch;
-                if (c4 == '@') {
+                char c3 = this.ch;
+                if (c3 == '@') {
                     next();
                     return SelfSegement.instance;
-                } else if (c4 != '$') {
-                    if (c4 != '.' && c4 != '/') {
-                        if (c4 == '[') {
+                } else if (c3 != '$') {
+                    if (c3 != '.' && c3 != '/') {
+                        if (c3 == '[') {
                             return parseArrayAccess(true);
                         }
                         if (this.level == 0) {
@@ -817,13 +817,13 @@ public class JSONPath implements JSONAware {
                         throw new UnsupportedOperationException();
                     }
                     next();
-                    char c5 = this.ch;
-                    if (c5 == '*') {
+                    char c4 = this.ch;
+                    if (c4 == '*') {
                         if (!isEOF()) {
                             next();
                         }
                         return WildCardSegement.instance;
-                    } else if (isDigitFirst(c5)) {
+                    } else if (isDigitFirst(c4)) {
                         return parseArrayAccess(false);
                     } else {
                         String readName = readName();
@@ -833,7 +833,7 @@ public class JSONPath implements JSONAware {
                                 if (!isEOF()) {
                                     next();
                                 }
-                                if ("size".equals(readName)) {
+                                if (ATAdConst.NETWORK_REQUEST_PARAMS_KEY.BANNER_SIZE.equals(readName)) {
                                     return SizeSegement.instance;
                                 }
                                 throw new UnsupportedOperationException();
@@ -850,14 +850,14 @@ public class JSONPath implements JSONAware {
         }
 
         String readString() {
-            char c2 = this.ch;
+            char c = this.ch;
             next();
             int i = this.pos;
-            while (this.ch != c2 && !isEOF()) {
+            while (this.ch != c && !isEOF()) {
                 next();
             }
             String substring = this.path.substring(i - 1, isEOF() ? this.pos : this.pos - 1);
-            accept(c2);
+            accept(c);
             return substring;
         }
 
@@ -866,12 +866,12 @@ public class JSONPath implements JSONAware {
             if (isDigitFirst(this.ch)) {
                 return Long.valueOf(readLongValue());
             }
-            char c2 = this.ch;
-            if (c2 == '\"' || c2 == '\'') {
+            char c = this.ch;
+            if (c == '\"' || c == '\'') {
                 return readString();
             }
-            if (c2 == 'n') {
-                if (b.l.equals(readName())) {
+            if (c == 'n') {
+                if ("null".equals(readName())) {
                     return null;
                 }
                 throw new JSONPathException(this.path);
@@ -881,11 +881,11 @@ public class JSONPath implements JSONAware {
 
         public final void skipWhitespace() {
             while (true) {
-                char c2 = this.ch;
-                if (c2 > ' ') {
+                char c = this.ch;
+                if (c > ' ') {
                     return;
                 }
-                if (c2 != ' ' && c2 != '\r' && c2 != '\n' && c2 != '\t' && c2 != '\f' && c2 != '\b') {
+                if (c != ' ' && c != '\r' && c != '\n' && c != '\t' && c != '\f' && c != '\b') {
                     return;
                 }
                 next();

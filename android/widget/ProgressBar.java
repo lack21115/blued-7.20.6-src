@@ -123,15 +123,15 @@ public class ProgressBar extends View {
         }
 
         public static RefreshData obtain(int i, int i2, boolean z) {
-            RefreshData acquire = sPool.acquire();
-            RefreshData refreshData = acquire;
-            if (acquire == null) {
-                refreshData = new RefreshData();
+            RefreshData refreshData = (RefreshData) sPool.acquire();
+            RefreshData refreshData2 = refreshData;
+            if (refreshData == null) {
+                refreshData2 = new RefreshData();
             }
-            refreshData.id = i;
-            refreshData.progress = i2;
-            refreshData.fromUser = z;
-            return refreshData;
+            refreshData2.id = i;
+            refreshData2.progress = i2;
+            refreshData2.fromUser = z;
+            return refreshData2;
         }
 
         public void recycle() {
@@ -208,7 +208,7 @@ public class ProgressBar extends View {
     }
 
     public ProgressBar(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, 16842871);
+        this(context, attributeSet, R.attr.progressBarStyle);
     }
 
     public ProgressBar(Context context, AttributeSet attributeSet, int i) {
@@ -235,7 +235,7 @@ public class ProgressBar extends View {
         this.mMinHeight = obtainStyledAttributes.getDimensionPixelSize(12, this.mMinHeight);
         this.mMaxHeight = obtainStyledAttributes.getDimensionPixelSize(1, this.mMaxHeight);
         this.mBehavior = obtainStyledAttributes.getInt(10, this.mBehavior);
-        int resourceId = obtainStyledAttributes.getResourceId(13, 17432587);
+        int resourceId = obtainStyledAttributes.getResourceId(13, R.anim.linear_interpolator);
         if (resourceId > 0) {
             setInterpolator(context, resourceId);
         }
@@ -335,7 +335,7 @@ public class ProgressBar extends View {
 
     private void applyPrimaryProgressTint() {
         Drawable tintTarget;
-        if ((this.mProgressTintInfo.mHasProgressTint || this.mProgressTintInfo.mHasProgressTintMode) && (tintTarget = getTintTarget(16908301, true)) != null) {
+        if ((this.mProgressTintInfo.mHasProgressTint || this.mProgressTintInfo.mHasProgressTintMode) && (tintTarget = getTintTarget(R.id.progress, true)) != null) {
             if (this.mProgressTintInfo.mHasProgressTint) {
                 tintTarget.setTintList(this.mProgressTintInfo.mProgressTintList);
             }
@@ -350,7 +350,7 @@ public class ProgressBar extends View {
 
     private void applyProgressBackgroundTint() {
         Drawable tintTarget;
-        if ((this.mProgressTintInfo.mHasProgressBackgroundTint || this.mProgressTintInfo.mHasProgressBackgroundTintMode) && (tintTarget = getTintTarget(16908288, false)) != null) {
+        if ((this.mProgressTintInfo.mHasProgressBackgroundTint || this.mProgressTintInfo.mHasProgressBackgroundTintMode) && (tintTarget = getTintTarget(R.id.background, false)) != null) {
             if (this.mProgressTintInfo.mHasProgressBackgroundTint) {
                 tintTarget.setTintList(this.mProgressTintInfo.mProgressBackgroundTintList);
             }
@@ -374,7 +374,7 @@ public class ProgressBar extends View {
 
     private void applySecondaryProgressTint() {
         Drawable tintTarget;
-        if ((this.mProgressTintInfo.mHasSecondaryProgressTint || this.mProgressTintInfo.mHasSecondaryProgressTintMode) && (tintTarget = getTintTarget(16908303, false)) != null) {
+        if ((this.mProgressTintInfo.mHasSecondaryProgressTint || this.mProgressTintInfo.mHasSecondaryProgressTintMode) && (tintTarget = getTintTarget(R.id.secondaryProgress, false)) != null) {
             if (this.mProgressTintInfo.mHasSecondaryProgressTint) {
                 tintTarget.setTintList(this.mProgressTintInfo.mSecondaryProgressTintList);
             }
@@ -1091,7 +1091,7 @@ public class ProgressBar extends View {
                 if (this.mProgress > i2) {
                     this.mProgress = i2;
                 }
-                refreshProgress(16908301, this.mProgress, false);
+                refreshProgress(R.id.progress, this.mProgress, false);
             }
         }
     }
@@ -1118,7 +1118,7 @@ public class ProgressBar extends View {
                 }
                 if (i3 != this.mProgress) {
                     this.mProgress = i3;
-                    refreshProgress(16908301, this.mProgress, z);
+                    refreshProgress(R.id.progress, this.mProgress, z);
                 }
             }
         }
@@ -1173,8 +1173,8 @@ public class ProgressBar extends View {
             }
             updateDrawableBounds(getWidth(), getHeight());
             updateDrawableState();
-            doRefreshProgress(16908301, this.mProgress, false, false);
-            doRefreshProgress(16908303, this.mSecondaryProgress, false, false);
+            doRefreshProgress(R.id.progress, this.mProgress, false, false);
+            doRefreshProgress(R.id.secondaryProgress, this.mSecondaryProgress, false, false);
         }
     }
 
@@ -1223,7 +1223,7 @@ public class ProgressBar extends View {
                 }
                 if (i3 != this.mSecondaryProgress) {
                     this.mSecondaryProgress = i3;
-                    refreshProgress(16908303, this.mSecondaryProgress, false);
+                    refreshProgress(R.id.secondaryProgress, this.mSecondaryProgress, false);
                 }
             }
         }

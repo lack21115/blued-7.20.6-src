@@ -3,7 +3,6 @@ package android.app;
 import android.content.Intent;
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.alipay.sdk.util.i;
 
 /* loaded from: source-9557208-dex2jar.jar:android/app/ResultInfo.class */
 public class ResultInfo implements Parcelable {
@@ -49,7 +48,7 @@ public class ResultInfo implements Parcelable {
     }
 
     public String toString() {
-        return "ResultInfo{who=" + this.mResultWho + ", request=" + this.mRequestCode + ", result=" + this.mResultCode + ", data=" + this.mData + i.d;
+        return "ResultInfo{who=" + this.mResultWho + ", request=" + this.mRequestCode + ", result=" + this.mResultCode + ", data=" + this.mData + "}";
     }
 
     @Override // android.os.Parcelable

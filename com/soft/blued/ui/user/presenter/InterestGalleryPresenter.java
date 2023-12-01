@@ -11,15 +11,14 @@ import com.soft.blued.ui.user.model.PictureTabModel;
 public class InterestGalleryPresenter implements InterestGalleryContract.IPresenter {
 
     /* renamed from: a  reason: collision with root package name */
-    private InterestGalleryContract.IView f34257a;
+    private InterestGalleryContract.IView f20566a;
     private IRequestHost b;
 
     public InterestGalleryPresenter(InterestGalleryContract.IView iView, IRequestHost iRequestHost) {
-        this.f34257a = iView;
+        this.f20566a = iView;
         this.b = iRequestHost;
     }
 
-    @Override // com.blued.android.framework.mvp_similarity.BasePresenter
     public void ar_() {
         b();
     }
@@ -27,13 +26,12 @@ public class InterestGalleryPresenter implements InterestGalleryContract.IPresen
     public void b() {
         MineHttpUtils.c(new BluedUIHttpResponse<BluedEntityA<PictureTabModel>>() { // from class: com.soft.blued.ui.user.presenter.InterestGalleryPresenter.1
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<PictureTabModel> bluedEntityA) {
                 if (bluedEntityA != null) {
                     try {
                         if (bluedEntityA.hasData()) {
-                            InterestGalleryPresenter.this.f34257a.a(bluedEntityA.data);
+                            InterestGalleryPresenter.this.f20566a.a(bluedEntityA.data);
                         }
                     } catch (Exception e) {
                         e.printStackTrace();
@@ -41,10 +39,9 @@ public class InterestGalleryPresenter implements InterestGalleryContract.IPresen
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 super.onUIFinish();
-                InterestGalleryPresenter.this.f34257a.a();
+                InterestGalleryPresenter.this.f20566a.a();
             }
         }, this.b);
     }

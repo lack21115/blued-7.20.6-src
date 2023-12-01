@@ -7,19 +7,19 @@ import android.text.TextUtils;
 public class e implements k {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f39003a;
+    private static String f25312a;
     private Class b = null;
 
     @Override // com.tencent.tendinsv.b.k
     public String b(Context context) {
-        if (TextUtils.isEmpty(f39003a)) {
+        if (TextUtils.isEmpty(f25312a)) {
             try {
-                f39003a = String.valueOf(this.b.getMethod("getOAID", Context.class).invoke(this.b.newInstance(), context));
+                f25312a = String.valueOf(this.b.getMethod("getOAID", Context.class).invoke(this.b.newInstance(), context));
             } catch (Throwable th) {
-                f39003a = null;
+                f25312a = null;
             }
         }
-        return f39003a;
+        return f25312a;
     }
 
     @Override // com.tencent.tendinsv.b.k

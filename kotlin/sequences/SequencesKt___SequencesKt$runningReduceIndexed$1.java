@@ -1,5 +1,6 @@
 package kotlin.sequences;
 
+import com.amap.api.services.core.AMapException;
 import java.util.Iterator;
 import kotlin.Metadata;
 import kotlin.ResultKt;
@@ -15,16 +16,12 @@ import kotlin.jvm.functions.Function3;
 
 /* JADX INFO: Add missing generic type declarations: [S] */
 @Metadata
-@DebugMetadata(b = "_Sequences.kt", c = {2202, 2206}, d = "invokeSuspend", e = "kotlin.sequences.SequencesKt___SequencesKt$runningReduceIndexed$1")
+@DebugMetadata(b = "_Sequences.kt", c = {AMapException.CODE_AMAP_CLIENT_NEARBY_NULL_RESULT, 2206}, d = "invokeSuspend", e = "kotlin.sequences.SequencesKt___SequencesKt$runningReduceIndexed$1")
 /* loaded from: source-3503164-dex2jar.jar:kotlin/sequences/SequencesKt___SequencesKt$runningReduceIndexed$1.class */
 final class SequencesKt___SequencesKt$runningReduceIndexed$1<S> extends RestrictedSuspendLambda implements Function2<SequenceScope<? super S>, Continuation<? super Unit>, Object> {
-
-    /* renamed from: a  reason: collision with root package name */
-    Object f42687a;
+    Object a;
     Object b;
-
-    /* renamed from: c  reason: collision with root package name */
-    int f42688c;
+    int c;
     int d;
     final /* synthetic */ Sequence<T> e;
     final /* synthetic */ Function3<Integer, S, T, S> f;
@@ -41,7 +38,7 @@ final class SequencesKt___SequencesKt$runningReduceIndexed$1<S> extends Restrict
     @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(SequenceScope<? super S> sequenceScope, Continuation<? super Unit> continuation) {
-        return ((SequencesKt___SequencesKt$runningReduceIndexed$1) create(sequenceScope, continuation)).invokeSuspend(Unit.f42314a);
+        return ((SequencesKt___SequencesKt$runningReduceIndexed$1) create(sequenceScope, continuation)).invokeSuspend(Unit.a);
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -57,7 +54,7 @@ final class SequencesKt___SequencesKt$runningReduceIndexed$1<S> extends Restrict
         Iterator it;
         Object obj2;
         SequenceScope sequenceScope;
-        Object a2 = IntrinsicsKt.a();
+        Object a = IntrinsicsKt.a();
         int i = this.d;
         int i2 = 1;
         if (i == 0) {
@@ -67,28 +64,28 @@ final class SequencesKt___SequencesKt$runningReduceIndexed$1<S> extends Restrict
             if (it.hasNext()) {
                 Object next = it.next();
                 this.g = sequenceScope2;
-                this.f42687a = it;
+                this.a = it;
                 this.b = next;
                 this.d = 1;
                 obj2 = next;
                 sequenceScope = sequenceScope2;
-                if (sequenceScope2.a((SequenceScope) next, (Continuation<? super Unit>) this) == a2) {
-                    return a2;
+                if (sequenceScope2.a((SequenceScope) next, (Continuation<? super Unit>) this) == a) {
+                    return a;
                 }
             }
-            return Unit.f42314a;
+            return Unit.a;
         } else if (i == 1) {
             Object obj3 = this.b;
-            it = (Iterator) this.f42687a;
+            it = (Iterator) this.a;
             sequenceScope = (SequenceScope) this.g;
             ResultKt.a(obj);
             obj2 = obj3;
         } else if (i != 2) {
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         } else {
-            i2 = this.f42688c;
+            i2 = this.c;
             Object obj4 = this.b;
-            it = (Iterator) this.f42687a;
+            it = (Iterator) this.a;
             sequenceScope = (SequenceScope) this.g;
             ResultKt.a(obj);
             obj2 = obj4;
@@ -101,15 +98,15 @@ final class SequencesKt___SequencesKt$runningReduceIndexed$1<S> extends Restrict
             }
             obj2 = function3.a(Boxing.a(i2), obj2, it.next());
             this.g = sequenceScope;
-            this.f42687a = it;
+            this.a = it;
             this.b = obj2;
-            this.f42688c = i3;
+            this.c = i3;
             this.d = 2;
-            if (sequenceScope.a((SequenceScope) obj2, (Continuation<? super Unit>) this) == a2) {
-                return a2;
+            if (sequenceScope.a((SequenceScope) obj2, (Continuation<? super Unit>) this) == a) {
+                return a;
             }
             i2 = i3;
         }
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

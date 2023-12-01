@@ -12,13 +12,9 @@ import com.blued.android.module.player.media.view.PLVideoPageView;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/player/media/view/AbBaseVideoView.class */
 public abstract class AbBaseVideoView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static String f15658a = "PLVideoPageView";
+    public static String a = "PLVideoPageView";
     protected String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    protected VideoPlayConfig f15659c;
+    protected VideoPlayConfig c;
     protected String d;
     protected OnVideoStatusListener e;
     protected PLVideoPageView.OnSeekListener f;
@@ -54,40 +50,40 @@ public abstract class AbBaseVideoView extends FrameLayout {
         AppInfo.n().post(new Runnable() { // from class: com.blued.android.module.player.media.view.AbBaseVideoView.1
             @Override // java.lang.Runnable
             public void run() {
-                if (AbBaseVideoView.this.f15659c == null) {
+                if (AbBaseVideoView.this.c == null) {
                     return;
                 }
-                String str = AbBaseVideoView.f15658a;
+                String str = AbBaseVideoView.a;
                 Log.c(str, "onVideoSizeChanged: width = " + i + ", height = " + i2);
-                String str2 = AbBaseVideoView.f15658a;
-                Log.c(str2, "onVideoSizeChanged: mwidth = " + AbBaseVideoView.this.f15659c.e + ", mHeight = " + AbBaseVideoView.this.f15659c.f);
+                String str2 = AbBaseVideoView.a;
+                Log.c(str2, "onVideoSizeChanged: mwidth = " + AbBaseVideoView.this.c.e + ", mHeight = " + AbBaseVideoView.this.c.f);
                 if (i != 0) {
-                    AbBaseVideoView.this.f15659c.a(i);
+                    AbBaseVideoView.this.c.a(i);
                 }
                 if (i2 != 0) {
-                    AbBaseVideoView.this.f15659c.b(i2);
+                    AbBaseVideoView.this.c.b(i2);
                 }
-                if (AbBaseVideoView.this.f15659c.e == 0) {
-                    AbBaseVideoView.this.f15659c.e = AbBaseVideoView.this.f15659c.a();
+                if (AbBaseVideoView.this.c.e == 0) {
+                    AbBaseVideoView.this.c.e = AbBaseVideoView.this.c.a();
                 }
-                if (AbBaseVideoView.this.f15659c.f == 0) {
-                    AbBaseVideoView.this.f15659c.f = AbBaseVideoView.this.f15659c.b();
+                if (AbBaseVideoView.this.c.f == 0) {
+                    AbBaseVideoView.this.c.f = AbBaseVideoView.this.c.b();
                 }
-                if (AbBaseVideoView.this.f15659c.j) {
-                    Utils.a(AbBaseVideoView.this.f15659c);
+                if (AbBaseVideoView.this.c.j) {
+                    Utils.a(AbBaseVideoView.this.c);
                 } else {
-                    Utils.b(AbBaseVideoView.this.f15659c);
+                    Utils.b(AbBaseVideoView.this.c);
                 }
-                if (i == 0 || i2 == 0 || AbBaseVideoView.this.f15659c.e == 0 || AbBaseVideoView.this.f15659c.f == 0) {
+                if (i == 0 || i2 == 0 || AbBaseVideoView.this.c.e == 0 || AbBaseVideoView.this.c.f == 0) {
                     return;
                 }
-                String str3 = AbBaseVideoView.f15658a;
-                Log.c(str3, "onVideoSizeChanged: mwidth = " + AbBaseVideoView.this.f15659c.e + ", mHeight = " + AbBaseVideoView.this.f15659c.f);
-                FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(AbBaseVideoView.this.f15659c.e, AbBaseVideoView.this.f15659c.f);
+                String str3 = AbBaseVideoView.a;
+                Log.c(str3, "onVideoSizeChanged: mwidth = " + AbBaseVideoView.this.c.e + ", mHeight = " + AbBaseVideoView.this.c.f);
+                FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(AbBaseVideoView.this.c.e, AbBaseVideoView.this.c.f);
                 layoutParams.gravity = 17;
                 view.setLayoutParams(layoutParams);
                 if (AbBaseVideoView.this.e != null) {
-                    AbBaseVideoView.this.e.a(AbBaseVideoView.this.f15659c.e, AbBaseVideoView.this.f15659c.f);
+                    AbBaseVideoView.this.e.a(AbBaseVideoView.this.c.e, AbBaseVideoView.this.c.f);
                 }
             }
         });
@@ -96,7 +92,7 @@ public abstract class AbBaseVideoView extends FrameLayout {
     public abstract void a(long j);
 
     public void a(VideoPlayConfig videoPlayConfig) {
-        this.f15659c = videoPlayConfig;
+        this.c = videoPlayConfig;
     }
 
     public abstract void a(boolean z);
@@ -133,7 +129,7 @@ public abstract class AbBaseVideoView extends FrameLayout {
     }
 
     public String getSetUrl() {
-        VideoPlayConfig videoPlayConfig = this.f15659c;
+        VideoPlayConfig videoPlayConfig = this.c;
         return videoPlayConfig != null ? videoPlayConfig.b : "";
     }
 

@@ -4,10 +4,10 @@ package com.anythink.expressad.exoplayer.j;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public final byte[] f7550a;
+    public final byte[] f4711a;
     public final int b = 0;
 
     public a(byte[] bArr) {
-        this.f7550a = bArr;
+        this.f4711a = bArr;
     }
 }

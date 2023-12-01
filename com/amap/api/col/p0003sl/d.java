@@ -2,7 +2,6 @@ package com.amap.api.col.p0003sl;
 
 import android.app.Application;
 import android.app.Notification;
-import android.app.backup.FullBackup;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -25,6 +24,9 @@ import com.amap.api.location.AMapLocationListener;
 import com.amap.api.location.AMapLocationQualityReport;
 import com.amap.api.location.APSService;
 import com.amap.api.location.UmidtokenInfo;
+import com.amap.api.services.core.AMapException;
+import com.amap.api.services.geocoder.GeocodeSearch;
+import com.android.internal.telephony.RILConstants;
 import com.autonavi.aps.amapapi.utils.e;
 import com.autonavi.aps.amapapi.utils.f;
 import com.autonavi.aps.amapapi.utils.g;
@@ -42,12 +44,8 @@ public final class d {
     public static volatile boolean g = false;
     private Context C;
     private g D;
-
-    /* renamed from: a  reason: collision with root package name */
-    com.autonavi.aps.amapapi.model.a f4836a;
-
-    /* renamed from: c  reason: collision with root package name */
-    public c f4837c;
+    com.autonavi.aps.amapapi.model.a a;
+    public c c;
     j j;
     Intent m;
     AMapLocationClientOption b = new AMapLocationClientOption();
@@ -102,25 +100,23 @@ public final class d {
     /* renamed from: com.amap.api.col.3sl.d$3  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/d$3.class */
     public static final /* synthetic */ class AnonymousClass3 {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f4840a;
+        static final /* synthetic */ int[] a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x002f -> B:19:0x001f). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:9:0x002b -> B:15:0x0014). Please submit an issue!!! */
         static {
             int[] iArr = new int[AMapLocationClientOption.AMapLocationMode.values().length];
-            f4840a = iArr;
+            a = iArr;
             try {
                 iArr[AMapLocationClientOption.AMapLocationMode.Battery_Saving.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f4840a[AMapLocationClientOption.AMapLocationMode.Device_Sensors.ordinal()] = 2;
+                a[AMapLocationClientOption.AMapLocationMode.Device_Sensors.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f4840a[AMapLocationClientOption.AMapLocationMode.Hight_Accuracy.ordinal()] = 3;
+                a[AMapLocationClientOption.AMapLocationMode.Hight_Accuracy.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
         }
@@ -169,26 +165,26 @@ public final class d {
                                     case 1014:
                                         d.this.a(message);
                                         return;
-                                    case 1015:
+                                    case RILConstants.RIL_UNSOL_STK_CALL_SETUP /* 1015 */:
                                         d.this.d.a(d.this.b);
-                                        d.this.a(1025, (Object) null, 300000L);
+                                        d.this.a((int) RILConstants.RIL_UNSOL_CDMA_CALL_WAITING, (Object) null, 300000L);
                                         return;
-                                    case 1016:
+                                    case RILConstants.RIL_UNSOL_SIM_SMS_STORAGE_FULL /* 1016 */:
                                         if (i.m(d.this.C)) {
                                             d.this.r();
                                             return;
                                         } else if (d.this.d.b()) {
-                                            d.this.a(1016, (Object) null, 1000L);
+                                            d.this.a((int) RILConstants.RIL_UNSOL_SIM_SMS_STORAGE_FULL, (Object) null, 1000L);
                                             return;
                                         } else {
                                             d.this.n();
                                             return;
                                         }
-                                    case 1017:
+                                    case RILConstants.RIL_UNSOL_SIM_REFRESH /* 1017 */:
                                         d.this.d.a();
-                                        d.this.a(1025);
+                                        d.this.a(RILConstants.RIL_UNSOL_CDMA_CALL_WAITING);
                                         return;
-                                    case 1018:
+                                    case RILConstants.RIL_UNSOL_CALL_RING /* 1018 */:
                                         d.this.b = (AMapLocationClientOption) message.obj;
                                         if (d.this.b != null) {
                                             d.this.s();
@@ -203,17 +199,17 @@ public final class d {
                                             case 1024:
                                                 d.this.d(message);
                                                 return;
-                                            case 1025:
+                                            case RILConstants.RIL_UNSOL_CDMA_CALL_WAITING /* 1025 */:
                                                 if (d.this.d.f()) {
                                                     d.this.d.a();
                                                     d.this.d.a(d.this.b);
                                                 }
-                                                d.this.a(1025, (Object) null, 300000L);
+                                                d.this.a((int) RILConstants.RIL_UNSOL_CDMA_CALL_WAITING, (Object) null, 300000L);
                                                 return;
-                                            case 1026:
+                                            case RILConstants.RIL_UNSOL_CDMA_OTA_PROVISION_STATUS /* 1026 */:
                                                 d.this.D.a(d.this.b);
                                                 return;
-                                            case 1027:
+                                            case RILConstants.RIL_UNSOL_CDMA_INFO_REC /* 1027 */:
                                                 d.this.D.a();
                                                 return;
                                             case 1028:
@@ -244,26 +240,23 @@ public final class d {
     /* renamed from: com.amap.api.col.3sl.d$b */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/d$b.class */
     public static final class b extends HandlerThread {
-
-        /* renamed from: a  reason: collision with root package name */
-        d f4842a;
+        d a;
 
         public b(String str, d dVar) {
             super(str);
-            this.f4842a = null;
-            this.f4842a = dVar;
+            this.a = null;
+            this.a = dVar;
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // android.os.HandlerThread
-        public final void onLooperPrepared() {
+        protected final void onLooperPrepared() {
             try {
-                this.f4842a.j.a();
-                f.a(this.f4842a.C);
-                this.f4842a.p();
-                if (this.f4842a != null && this.f4842a.C != null) {
-                    com.autonavi.aps.amapapi.utils.a.b(this.f4842a.C);
-                    com.autonavi.aps.amapapi.utils.a.a(this.f4842a.C);
+                this.a.j.a();
+                f.a(this.a.C);
+                this.a.p();
+                if (this.a != null && this.a.C != null) {
+                    com.autonavi.aps.amapapi.utils.a.b(this.a.C);
+                    com.autonavi.aps.amapapi.utils.a.a(this.a.C);
                 }
                 super.onLooperPrepared();
             } catch (Throwable th) {
@@ -307,8 +300,8 @@ public final class d {
                 }
                 if (i != 2) {
                     if (i == 13) {
-                        if (d.this.f4836a != null) {
-                            d.this.a(d.this.f4836a);
+                        if (d.this.a != null) {
+                            d.this.a((AMapLocation) d.this.a);
                             return;
                         }
                         AMapLocation aMapLocation = new AMapLocation("LBS");
@@ -367,10 +360,10 @@ public final class d {
                             obtain.what = 1028;
                             obtain.obj = message.obj;
                             d.this.z.sendMessage(obtain);
-                            if (d.this.K == null || !d.this.K.getCacheCallBack() || d.this.f4837c == null) {
+                            if (d.this.K == null || !d.this.K.getCacheCallBack() || d.this.c == null) {
                                 return;
                             }
-                            d.this.f4837c.removeMessages(13);
+                            d.this.c.removeMessages(13);
                             return;
                     }
                 }
@@ -378,10 +371,10 @@ public final class d {
                 obtain2.what = 12;
                 obtain2.obj = message.obj;
                 d.this.z.sendMessage(obtain2);
-                if (d.this.K == null || !d.this.K.getCacheCallBack() || d.this.f4837c == null) {
+                if (d.this.K == null || !d.this.K.getCacheCallBack() || d.this.c == null) {
                     return;
                 }
-                d.this.f4837c.removeMessages(13);
+                d.this.c.removeMessages(13);
             } catch (Throwable th) {
                 String str = null;
                 if (0 == 0) {
@@ -480,8 +473,8 @@ public final class d {
                 @Override // com.amap.api.col.p0003sl.lc
                 public final void runTask() {
                     hs.e();
-                    hs.a(Context.this);
-                    hs.h(Context.this);
+                    hs.a(context);
+                    hs.h(context);
                 }
             });
         }
@@ -523,7 +516,7 @@ public final class d {
             try {
                 bundle.setClassLoader(AMapLocation.class.getClassLoader());
                 AMapLocation aMapLocation3 = (AMapLocation) bundle.getParcelable("loc");
-                this.A = bundle.getString(FullBackup.NO_BACKUP_TREE_TOKEN);
+                this.A = bundle.getString("nb");
                 com.autonavi.aps.amapapi.a aVar3 = (com.autonavi.aps.amapapi.a) bundle.getParcelable("statics");
                 aMapLocation = aMapLocation3;
                 aVar2 = aVar3;
@@ -606,7 +599,7 @@ public final class d {
                     aMapLocation.setLocationDetail("LatLng is error#0802");
                 }
             }
-            if ("gps".equalsIgnoreCase(aMapLocation.getProvider()) || !this.d.b()) {
+            if (GeocodeSearch.GPS.equalsIgnoreCase(aMapLocation.getProvider()) || !this.d.b()) {
                 aMapLocation.setAltitude(i.c(aMapLocation.getAltitude()));
                 aMapLocation.setBearing(i.a(aMapLocation.getBearing()));
                 aMapLocation.setSpeed(i.a(aMapLocation.getSpeed()));
@@ -636,7 +629,7 @@ public final class d {
                     return;
                 }
             }
-            if (!"gps".equalsIgnoreCase(aMapLocation2.getProvider())) {
+            if (!GeocodeSearch.GPS.equalsIgnoreCase(aMapLocation2.getProvider())) {
                 aMapLocation2.setProvider("lbs");
             }
             if (this.w == null) {
@@ -649,7 +642,7 @@ public final class d {
             }
             this.w.setWifiAble(i.g(this.C));
             this.w.setNetworkType(i.h(this.C));
-            if (aMapLocation2.getLocationType() == 1 || "gps".equalsIgnoreCase(aMapLocation2.getProvider())) {
+            if (aMapLocation2.getLocationType() == 1 || GeocodeSearch.GPS.equalsIgnoreCase(aMapLocation2.getProvider())) {
                 this.w.setNetUseTime(0L);
             }
             if (aVar != null) {
@@ -664,7 +657,7 @@ public final class d {
                 }
                 g.a(this.C, aMapLocation2, aVar);
                 g.a(this.C, aMapLocation2);
-                c(aMapLocation2.m2371clone());
+                c(aMapLocation2.m8814clone());
                 f.a(this.C).a(aMapLocation2);
                 f.a(this.C).b();
             }
@@ -741,11 +734,11 @@ public final class d {
     private void b(Looper looper) {
         try {
             if (looper != null) {
-                this.f4837c = new c(looper);
+                this.c = new c(looper);
             } else if (Looper.myLooper() == null) {
-                this.f4837c = new c(this.C.getMainLooper());
+                this.c = new c(this.C.getMainLooper());
             } else {
-                this.f4837c = new c();
+                this.c = new c();
             }
         } catch (Throwable th) {
             com.autonavi.aps.amapapi.utils.b.a(th, "ALManager", "init 1");
@@ -758,8 +751,8 @@ public final class d {
             this.o.start();
             this.z = a(this.o.getLooper());
             try {
-                this.d = new h(this.C, this.f4837c);
-                this.D = new g(this.C, this.f4837c);
+                this.d = new h(this.C, this.c);
+                this.D = new g(this.C, this.c);
             } catch (Throwable th2) {
                 com.autonavi.aps.amapapi.utils.b.a(th2, "ALManager", "init 3");
             }
@@ -784,8 +777,8 @@ public final class d {
                 this.h = false;
             }
             a(aMapLocation, (com.autonavi.aps.amapapi.a) null);
-            a(1025);
-            a(1025, (Object) null, 300000L);
+            a(RILConstants.RIL_UNSOL_CDMA_CALL_WAITING);
+            a(RILConstants.RIL_UNSOL_CDMA_CALL_WAITING, (Object) null, 300000L);
         } catch (Throwable th) {
             com.autonavi.aps.amapapi.utils.b.a(th, "ALManager", "resultGpsLocationSuccess");
         }
@@ -825,11 +818,11 @@ public final class d {
                 return;
             }
             int i = data.getInt("i", 0);
-            Notification notification = (Notification) data.getParcelable("h");
+            Notification notification = (Notification) data.getParcelable(iu.g);
             Intent q = q();
             q.putExtra("i", i);
-            q.putExtra("h", notification);
-            q.putExtra("g", 1);
+            q.putExtra(iu.g, notification);
+            q.putExtra(iu.f, 1);
             a(q, true);
         } catch (Throwable th) {
             com.autonavi.aps.amapapi.utils.b.a(th, "ALManager", "doEnableBackgroundLocation");
@@ -837,10 +830,10 @@ public final class d {
     }
 
     private void c(AMapLocation aMapLocation) {
-        Message obtainMessage = this.f4837c.obtainMessage();
+        Message obtainMessage = this.c.obtainMessage();
         obtainMessage.what = 10;
         obtainMessage.obj = aMapLocation;
-        this.f4837c.sendMessage(obtainMessage);
+        this.c.sendMessage(obtainMessage);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -867,10 +860,10 @@ public final class d {
             if (data == null) {
                 return;
             }
-            boolean z = data.getBoolean("j", true);
+            boolean z = data.getBoolean(iu.j, true);
             Intent q = q();
-            q.putExtra("j", z);
-            q.putExtra("g", 2);
+            q.putExtra(iu.j, z);
+            q.putExtra(iu.f, 2);
             a(q, false);
         } catch (Throwable th) {
             com.autonavi.aps.amapapi.utils.b.a(th, "ALManager", "doDisableBackgroundLocation");
@@ -905,7 +898,7 @@ public final class d {
             aMapLocation2.setLocationQualityReport(this.w);
             if (this.F) {
                 g.a(this.C, aMapLocation2);
-                c(aMapLocation2.m2371clone());
+                c(aMapLocation2.m8814clone());
                 f.a(this.C).a(aMapLocation2);
                 f.a(this.C).b();
             }
@@ -1001,7 +994,7 @@ public final class d {
             bundle.putParcelable("loc", aMapLocation);
             obtain.setData(bundle);
             obtain.what = 1;
-            this.f4837c.sendMessage(obtain);
+            this.c.sendMessage(obtain);
         } else {
             z = true;
         }
@@ -1010,7 +1003,7 @@ public final class d {
                 g.a((String) null, 2103);
                 return z;
             }
-            g.a((String) null, 2101);
+            g.a((String) null, (int) AMapException.CODE_AMAP_NEARBY_KEY_NOT_BIND);
         }
         return z;
     }
@@ -1029,31 +1022,31 @@ public final class d {
                 return;
             }
             this.F = true;
-            int i = AnonymousClass3.f4840a[this.b.getLocationMode().ordinal()];
+            int i = AnonymousClass3.a[this.b.getLocationMode().ordinal()];
             if (i == 1) {
-                a(1027, (Object) null, 0L);
-                a(1017, (Object) null, 0L);
-                a(1016, (Object) null, 0L);
+                a(RILConstants.RIL_UNSOL_CDMA_INFO_REC, (Object) null, 0L);
+                a(RILConstants.RIL_UNSOL_SIM_REFRESH, (Object) null, 0L);
+                a(RILConstants.RIL_UNSOL_SIM_SMS_STORAGE_FULL, (Object) null, 0L);
             } else if (i == 2) {
                 if (i.m(this.C)) {
-                    a(1016);
-                    a(1017, (Object) null, 0L);
-                    a(1026, (Object) null, 0L);
+                    a(RILConstants.RIL_UNSOL_SIM_SMS_STORAGE_FULL);
+                    a(RILConstants.RIL_UNSOL_SIM_REFRESH, (Object) null, 0L);
+                    a(RILConstants.RIL_UNSOL_CDMA_OTA_PROVISION_STATUS, (Object) null, 0L);
                     return;
                 }
-                a(1016);
-                a(1027, (Object) null, 0L);
-                a(1015, (Object) null, 0L);
+                a(RILConstants.RIL_UNSOL_SIM_SMS_STORAGE_FULL);
+                a(RILConstants.RIL_UNSOL_CDMA_INFO_REC, (Object) null, 0L);
+                a(RILConstants.RIL_UNSOL_STK_CALL_SETUP, (Object) null, 0L);
             } else {
                 if (i == 3) {
                     if (i.m(this.C)) {
-                        a(1016);
-                        a(1017, (Object) null, 0L);
-                        a(1026, (Object) null, 0L);
+                        a(RILConstants.RIL_UNSOL_SIM_SMS_STORAGE_FULL);
+                        a(RILConstants.RIL_UNSOL_SIM_REFRESH, (Object) null, 0L);
+                        a(RILConstants.RIL_UNSOL_CDMA_OTA_PROVISION_STATUS, (Object) null, 0L);
                         return;
                     }
-                    a(1027, (Object) null, 0L);
-                    a(1015, (Object) null, 0L);
+                    a(RILConstants.RIL_UNSOL_CDMA_INFO_REC, (Object) null, 0L);
+                    a(RILConstants.RIL_UNSOL_STK_CALL_SETUP, (Object) null, 0L);
                     long j = 0;
                     if (this.b.isGpsFirst()) {
                         j = 0;
@@ -1061,7 +1054,7 @@ public final class d {
                             j = this.b.getGpsFirstTimeout();
                         }
                     }
-                    a(1016, (Object) null, j);
+                    a(RILConstants.RIL_UNSOL_SIM_SMS_STORAGE_FULL, (Object) null, j);
                 }
             }
         }
@@ -1090,14 +1083,14 @@ public final class d {
     /* JADX INFO: Access modifiers changed from: private */
     public void l() {
         try {
-            a(1025);
+            a(RILConstants.RIL_UNSOL_CDMA_CALL_WAITING);
             if (this.d != null) {
                 this.d.a();
             }
             if (this.D != null) {
                 this.D.a();
             }
-            a(1016);
+            a(RILConstants.RIL_UNSOL_SIM_SMS_STORAGE_FULL);
             this.F = false;
             this.n = 0;
         } catch (Throwable th) {
@@ -1168,7 +1161,7 @@ public final class d {
             if (this.b.getInterval() >= 1000) {
                 j = this.b.getInterval();
             }
-            a(1016, (Object) null, j);
+            a(RILConstants.RIL_UNSOL_SIM_SMS_STORAGE_FULL, (Object) null, j);
         }
     }
 
@@ -1176,7 +1169,7 @@ public final class d {
     public void p() {
         try {
             if (this.l == null) {
-                this.l = new Messenger(this.f4837c);
+                this.l = new Messenger(this.c);
             }
             a(q());
         } catch (Throwable th) {
@@ -1210,7 +1203,7 @@ public final class d {
             com.autonavi.aps.amapapi.model.a aVar = new com.autonavi.aps.amapapi.model.a("");
             aVar.setErrorCode(20);
             aVar.setLocationDetail(sb.toString());
-            f(aVar);
+            f((AMapLocation) aVar);
         } catch (Throwable th) {
             com.autonavi.aps.amapapi.utils.b.a(th, "ALManager", "apsLocation:callback");
         }
@@ -1239,7 +1232,7 @@ public final class d {
         if (i.j(this.C)) {
             int i = -1;
             try {
-                i = e.b(((Application) this.C.getApplicationContext()).getBaseContext(), "checkSelfPermission", "android.permission.FOREGROUND_SERVICE");
+                i = e.b(((Application) this.C.getApplicationContext()).getBaseContext(), "checkSelfPermission", new Object[]{"android.permission.FOREGROUND_SERVICE"});
             } catch (Throwable th) {
             }
             return i == 0;
@@ -1254,7 +1247,7 @@ public final class d {
         try {
             Bundle bundle = new Bundle();
             bundle.putInt("i", i);
-            bundle.putParcelable("h", notification);
+            bundle.putParcelable(iu.g, notification);
             a(1023, bundle, 0L);
         } catch (Throwable th) {
             com.autonavi.aps.amapapi.utils.b.a(th, "ALManager", "disableBackgroundLocation");
@@ -1270,8 +1263,8 @@ public final class d {
 
     public final void a(AMapLocationClientOption aMapLocationClientOption) {
         try {
-            this.K = aMapLocationClientOption.m2373clone();
-            a(1018, aMapLocationClientOption.m2373clone(), 0L);
+            this.K = aMapLocationClientOption.m8816clone();
+            a(RILConstants.RIL_UNSOL_CALL_RING, aMapLocationClientOption.m8816clone(), 0L);
         } catch (Throwable th) {
             com.autonavi.aps.amapapi.utils.b.a(th, "ALManager", "setLocationOption");
         }
@@ -1288,7 +1281,7 @@ public final class d {
     public final void a(boolean z) {
         try {
             Bundle bundle = new Bundle();
-            bundle.putBoolean("j", z);
+            bundle.putBoolean(iu.j, z);
             a(1024, bundle, 0L);
         } catch (Throwable th) {
             com.autonavi.aps.amapapi.utils.b.a(th, "ALManager", "disableBackgroundLocation");
@@ -1301,8 +1294,8 @@ public final class d {
 
     public final void b() {
         try {
-            if (this.K.getCacheCallBack() && this.f4837c != null) {
-                this.f4837c.sendEmptyMessageDelayed(13, this.K.getCacheCallBackTime());
+            if (this.K.getCacheCallBack() && this.c != null) {
+                this.c.sendEmptyMessageDelayed(13, this.K.getCacheCallBackTime());
             }
         } catch (Throwable th) {
         }
@@ -1421,7 +1414,7 @@ public final class d {
             }
         }
         this.o = null;
-        c cVar = this.f4837c;
+        c cVar = this.c;
         if (cVar != null) {
             cVar.removeCallbacksAndMessages(null);
         }

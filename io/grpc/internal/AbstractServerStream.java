@@ -1,6 +1,5 @@
 package io.grpc.internal;
 
-import android.provider.Downloads;
 import com.google.common.base.Preconditions;
 import io.grpc.Attributes;
 import io.grpc.Decompressor;
@@ -237,7 +236,7 @@ public abstract class AbstractServerStream extends AbstractStream implements Mes
 
     @Override // io.grpc.internal.ServerStream
     public final void writeHeaders(Metadata metadata) {
-        Preconditions.checkNotNull(metadata, Downloads.Impl.RequestHeaders.URI_SEGMENT);
+        Preconditions.checkNotNull(metadata, "headers");
         this.headersSent = true;
         abstractServerStreamSink().writeHeaders(metadata);
     }

@@ -28,7 +28,7 @@ import java.util.Locale;
 public final class a extends BaseAdapter {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f8402a = "OrderCampAdapter";
+    private static final String f5562a = "OrderCampAdapter";
     private static final String e = "anythink_lv_item_rl";
     private static final String f = "anythink_lv_iv";
     private static final String g = "anythink_lv_icon_iv";
@@ -49,7 +49,7 @@ public final class a extends BaseAdapter {
     private boolean b = false;
 
     /* renamed from: c  reason: collision with root package name */
-    private C0162a f8403c;
+    private C0091a f5563c;
     private List<c> d;
 
     /* renamed from: com.anythink.expressad.video.dynview.ordercamp.a.a$2  reason: invalid class name */
@@ -57,10 +57,10 @@ public final class a extends BaseAdapter {
     final class AnonymousClass2 implements com.anythink.expressad.foundation.g.d.c {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ Context f8406a;
+        final /* synthetic */ Context f5566a;
 
         AnonymousClass2(Context context) {
-            this.f8406a = context;
+            this.f5566a = context;
         }
 
         @Override // com.anythink.expressad.foundation.g.d.c
@@ -70,12 +70,12 @@ public final class a extends BaseAdapter {
             }
             try {
                 float width = (bitmap.getWidth() * 1.0f) / bitmap.getHeight();
-                int b = t.b(this.f8406a, 12.0f);
+                int b = t.b(this.f5566a, 12.0f);
                 int i = (int) (b * width);
-                a.this.f8403c.j.getLayoutParams().height = b;
-                a.this.f8403c.j.getLayoutParams().width = i;
-                a.this.f8403c.j.setImageBitmap(bitmap);
-                a.this.f8403c.j.setBackgroundColor(1426063360);
+                a.this.f5563c.j.getLayoutParams().height = b;
+                a.this.f5563c.j.getLayoutParams().width = i;
+                a.this.f5563c.j.setImageBitmap(bitmap);
+                a.this.f5563c.j.setBackgroundColor(1426063360);
             } catch (Throwable th) {
             }
         }
@@ -87,14 +87,14 @@ public final class a extends BaseAdapter {
 
     /* renamed from: com.anythink.expressad.video.dynview.ordercamp.a.a$a  reason: collision with other inner class name */
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/video/dynview/ordercamp/a/a$a.class */
-    static final class C0162a {
+    static final class C0091a {
 
         /* renamed from: a  reason: collision with root package name */
-        RelativeLayout f8407a;
+        RelativeLayout f5567a;
         ATRotationView b;
 
         /* renamed from: c  reason: collision with root package name */
-        AnyThinkImageView f8408c;
+        AnyThinkImageView f5568c;
         RoundImageView d;
         TextView e;
         TextView f;
@@ -103,7 +103,7 @@ public final class a extends BaseAdapter {
         AnyThinkLevelLayoutView i;
         ImageView j;
 
-        C0162a() {
+        C0091a() {
         }
     }
 
@@ -117,54 +117,54 @@ public final class a extends BaseAdapter {
 
     private View a() {
         View inflate = LayoutInflater.from(n.a().g()).inflate(i.a(n.a().g().getApplicationContext(), p, "layout"), (ViewGroup) null);
-        C0162a c0162a = new C0162a();
-        this.f8403c = c0162a;
-        c0162a.f8408c = (AnyThinkImageView) inflate.findViewById(b(f));
-        this.f8403c.d = (RoundImageView) inflate.findViewById(b(g));
-        this.f8403c.i = (AnyThinkLevelLayoutView) inflate.findViewById(b(j));
-        this.f8403c.b = (ATRotationView) inflate.findViewById(b(l));
-        inflate.setTag(this.f8403c);
+        C0091a c0091a = new C0091a();
+        this.f5563c = c0091a;
+        c0091a.f5568c = (AnyThinkImageView) inflate.findViewById(b(f));
+        this.f5563c.d = (RoundImageView) inflate.findViewById(b(g));
+        this.f5563c.i = (AnyThinkLevelLayoutView) inflate.findViewById(b(j));
+        this.f5563c.b = (ATRotationView) inflate.findViewById(b(l));
+        inflate.setTag(this.f5563c);
         return inflate;
     }
 
     private void a(int i2) {
         List<c> list = this.d;
-        if (list == null || this.f8403c == null || list.size() == 0) {
+        if (list == null || this.f5563c == null || list.size() == 0) {
             return;
         }
-        if (this.f8403c.f8408c != null) {
-            a(this.f8403c.f8408c, this.d.get(i2).be(), false);
+        if (this.f5563c.f5568c != null) {
+            a(this.f5563c.f5568c, this.d.get(i2).be(), false);
         }
-        if (this.f8403c.d != null) {
-            this.f8403c.d.setBorderRadius(25);
-            a(this.f8403c.d, this.d.get(i2).bd(), true);
+        if (this.f5563c.d != null) {
+            this.f5563c.d.setBorderRadius(25);
+            a(this.f5563c.d, this.d.get(i2).bd(), true);
         }
         double aX = this.d.get(i2).aX();
         double d = aX;
         if (aX <= 0.0d) {
             d = 5.0d;
         }
-        if (this.f8403c.i != null) {
-            this.f8403c.i.setRatingAndUser(d, this.d.get(i2).aY());
-            this.f8403c.i.setOrientation(0);
+        if (this.f5563c.i != null) {
+            this.f5563c.i.setRatingAndUser(d, this.d.get(i2).aY());
+            this.f5563c.i.setOrientation(0);
         }
-        if (this.f8403c.b != null) {
-            this.f8403c.b.setWidthRatio(1.0f);
-            this.f8403c.b.setHeightRatio(1.0f);
-            this.f8403c.b.setAutoscroll(false);
+        if (this.f5563c.b != null) {
+            this.f5563c.b.setWidthRatio(1.0f);
+            this.f5563c.b.setHeightRatio(1.0f);
+            this.f5563c.b.setAutoscroll(false);
         }
-        if (this.f8403c.f8408c != null) {
-            this.f8403c.f8408c.setCustomBorder(30, 30, 30, 30, 10, -1728053248);
+        if (this.f5563c.f5568c != null) {
+            this.f5563c.f5568c.setCustomBorder(30, 30, 30, 30, 10, -1728053248);
         }
     }
 
     private void a(View view) {
-        this.f8403c.f8407a = (RelativeLayout) view.findViewById(d(e));
-        this.f8403c.e = (TextView) view.findViewById(d(h));
-        this.f8403c.g = (TextView) view.findViewById(d(i));
-        this.f8403c.f = (TextView) view.findViewById(d(m));
-        this.f8403c.j = (ImageView) view.findViewById(d(n));
-        this.f8403c.h = (TextView) view.findViewById(d(o));
+        this.f5563c.f5567a = (RelativeLayout) view.findViewById(d(e));
+        this.f5563c.e = (TextView) view.findViewById(d(h));
+        this.f5563c.g = (TextView) view.findViewById(d(i));
+        this.f5563c.f = (TextView) view.findViewById(d(m));
+        this.f5563c.j = (ImageView) view.findViewById(d(n));
+        this.f5563c.h = (TextView) view.findViewById(d(o));
     }
 
     private void a(final ImageView imageView, String str, final boolean z) {
@@ -181,7 +181,7 @@ public final class a extends BaseAdapter {
                         }
                         imageView.setImageBitmap(bitmap);
                     } catch (Throwable th) {
-                        o.d(a.f8402a, th.getMessage());
+                        o.d(a.f5562a, th.getMessage());
                     }
                 }
 
@@ -203,48 +203,48 @@ public final class a extends BaseAdapter {
 
     private View b() {
         View inflate = LayoutInflater.from(n.a().g()).inflate(i.a(n.a().g().getApplicationContext(), p, "layout"), (ViewGroup) null);
-        C0162a c0162a = new C0162a();
-        this.f8403c = c0162a;
-        c0162a.f8408c = (AnyThinkImageView) inflate.findViewById(b(f));
-        this.f8403c.d = (RoundImageView) inflate.findViewById(b(g));
-        this.f8403c.i = (AnyThinkLevelLayoutView) inflate.findViewById(b(j));
-        this.f8403c.b = (ATRotationView) inflate.findViewById(b(l));
-        inflate.setTag(this.f8403c);
+        C0091a c0091a = new C0091a();
+        this.f5563c = c0091a;
+        c0091a.f5568c = (AnyThinkImageView) inflate.findViewById(b(f));
+        this.f5563c.d = (RoundImageView) inflate.findViewById(b(g));
+        this.f5563c.i = (AnyThinkLevelLayoutView) inflate.findViewById(b(j));
+        this.f5563c.b = (ATRotationView) inflate.findViewById(b(l));
+        inflate.setTag(this.f5563c);
         return inflate;
     }
 
     private void b(int i2) {
-        if (this.f8403c != null) {
+        if (this.f5563c != null) {
             c cVar = this.d.get(i2);
-            if (this.f8403c.e != null) {
-                this.f8403c.e.setText(cVar.bb());
+            if (this.f5563c.e != null) {
+                this.f5563c.e.setText(cVar.bb());
             }
-            if (this.f8403c.f != null) {
-                this.f8403c.f.setText(cVar.bc());
+            if (this.f5563c.f != null) {
+                this.f5563c.f.setText(cVar.bc());
             }
-            if (this.f8403c.g != null) {
+            if (this.f5563c.g != null) {
                 String str = cVar.cU;
-                if (this.f8403c.g instanceof AnyThinkTextView) {
+                if (this.f5563c.g instanceof AnyThinkTextView) {
                     new com.anythink.expressad.video.dynview.h.b();
-                    ((AnyThinkTextView) this.f8403c.g).setObjectAnimator(com.anythink.expressad.video.dynview.h.b.c(this.f8403c.g));
+                    ((AnyThinkTextView) this.f5563c.g).setObjectAnimator(com.anythink.expressad.video.dynview.h.b.c(this.f5563c.g));
                 }
-                this.f8403c.g.setText(str);
+                this.f5563c.g.setText(str);
             }
-            if (this.f8403c.j != null) {
+            if (this.f5563c.j != null) {
                 try {
                     Locale.getDefault().getLanguage();
                     Context g2 = n.a().g();
                     b.a(g2).a(cVar.aE(), new AnonymousClass2(g2));
                 } catch (Exception e2) {
-                    o.d(f8402a, e2.getMessage());
+                    o.d(f5562a, e2.getMessage());
                 }
             }
-            if (this.f8403c.h != null) {
+            if (this.f5563c.h != null) {
                 try {
-                    this.f8403c.h.setText(n.a().g().getResources().getString(n.a().g().getResources().getIdentifier("anythink_reward_viewed_text_str", "string", n.a().g().getPackageName())));
-                    this.f8403c.h.setVisibility(0);
+                    this.f5563c.h.setText(n.a().g().getResources().getString(n.a().g().getResources().getIdentifier("anythink_reward_viewed_text_str", "string", n.a().g().getPackageName())));
+                    this.f5563c.h.setVisibility(0);
                 } catch (Exception e3) {
-                    o.d(f8402a, e3.getMessage());
+                    o.d(f5562a, e3.getMessage());
                 }
             }
         }
@@ -298,44 +298,44 @@ public final class a extends BaseAdapter {
         try {
             if (view == null) {
                 View inflate = LayoutInflater.from(n.a().g()).inflate(i.a(n.a().g().getApplicationContext(), p, "layout"), (ViewGroup) null);
-                C0162a c0162a = new C0162a();
-                this.f8403c = c0162a;
-                c0162a.f8408c = (AnyThinkImageView) inflate.findViewById(b(f));
-                this.f8403c.d = (RoundImageView) inflate.findViewById(b(g));
-                this.f8403c.i = (AnyThinkLevelLayoutView) inflate.findViewById(b(j));
-                this.f8403c.b = (ATRotationView) inflate.findViewById(b(l));
-                inflate.setTag(this.f8403c);
+                C0091a c0091a = new C0091a();
+                this.f5563c = c0091a;
+                c0091a.f5568c = (AnyThinkImageView) inflate.findViewById(b(f));
+                this.f5563c.d = (RoundImageView) inflate.findViewById(b(g));
+                this.f5563c.i = (AnyThinkLevelLayoutView) inflate.findViewById(b(j));
+                this.f5563c.b = (ATRotationView) inflate.findViewById(b(l));
+                inflate.setTag(this.f5563c);
                 view = inflate;
             } else {
-                this.f8403c = (C0162a) view.getTag();
+                this.f5563c = (C0091a) view.getTag();
             }
             View view3 = view;
-            this.f8403c.f8407a = (RelativeLayout) view.findViewById(d(e));
+            this.f5563c.f5567a = (RelativeLayout) view.findViewById(d(e));
             View view4 = view;
-            this.f8403c.e = (TextView) view.findViewById(d(h));
+            this.f5563c.e = (TextView) view.findViewById(d(h));
             View view5 = view;
-            this.f8403c.g = (TextView) view.findViewById(d(i));
+            this.f5563c.g = (TextView) view.findViewById(d(i));
             View view6 = view;
-            this.f8403c.f = (TextView) view.findViewById(d(m));
+            this.f5563c.f = (TextView) view.findViewById(d(m));
             View view7 = view;
-            this.f8403c.j = (ImageView) view.findViewById(d(n));
+            this.f5563c.j = (ImageView) view.findViewById(d(n));
             View view8 = view;
-            this.f8403c.h = (TextView) view.findViewById(d(o));
+            this.f5563c.h = (TextView) view.findViewById(d(o));
             View view9 = view;
             if (this.d != null) {
                 View view10 = view;
-                if (this.f8403c != null && this.d.size() != 0) {
+                if (this.f5563c != null && this.d.size() != 0) {
                     View view11 = view;
-                    if (this.f8403c.f8408c != null) {
+                    if (this.f5563c.f5568c != null) {
                         View view12 = view;
-                        a(this.f8403c.f8408c, this.d.get(i2).be(), false);
+                        a(this.f5563c.f5568c, this.d.get(i2).be(), false);
                     }
                     View view13 = view;
-                    if (this.f8403c.d != null) {
+                    if (this.f5563c.d != null) {
                         View view14 = view;
-                        this.f8403c.d.setBorderRadius(25);
+                        this.f5563c.d.setBorderRadius(25);
                         View view15 = view;
-                        a(this.f8403c.d, this.d.get(i2).bd(), true);
+                        a(this.f5563c.d, this.d.get(i2).bd(), true);
                     }
                     View view16 = view;
                     double aX = this.d.get(i2).aX();
@@ -343,89 +343,89 @@ public final class a extends BaseAdapter {
                     if (aX <= 0.0d) {
                         d = 5.0d;
                     }
-                    if (this.f8403c.i != null) {
+                    if (this.f5563c.i != null) {
                         View view17 = view;
-                        this.f8403c.i.setRatingAndUser(d, this.d.get(i2).aY());
+                        this.f5563c.i.setRatingAndUser(d, this.d.get(i2).aY());
                         View view18 = view;
-                        this.f8403c.i.setOrientation(0);
+                        this.f5563c.i.setOrientation(0);
                     }
                     View view19 = view;
-                    if (this.f8403c.b != null) {
+                    if (this.f5563c.b != null) {
                         View view20 = view;
-                        this.f8403c.b.setWidthRatio(1.0f);
+                        this.f5563c.b.setWidthRatio(1.0f);
                         View view21 = view;
-                        this.f8403c.b.setHeightRatio(1.0f);
+                        this.f5563c.b.setHeightRatio(1.0f);
                         View view22 = view;
-                        this.f8403c.b.setAutoscroll(false);
+                        this.f5563c.b.setAutoscroll(false);
                     }
                     View view23 = view;
-                    if (this.f8403c.f8408c != null) {
+                    if (this.f5563c.f5568c != null) {
                         View view24 = view;
-                        this.f8403c.f8408c.setCustomBorder(30, 30, 30, 30, 10, -1728053248);
+                        this.f5563c.f5568c.setCustomBorder(30, 30, 30, 30, 10, -1728053248);
                     }
                 }
             }
             View view25 = view;
             view2 = view;
-            if (this.f8403c != null) {
+            if (this.f5563c != null) {
                 View view26 = view;
                 c cVar = this.d.get(i2);
                 View view27 = view;
-                if (this.f8403c.e != null) {
+                if (this.f5563c.e != null) {
                     View view28 = view;
                     String bb = cVar.bb();
                     View view29 = view;
-                    this.f8403c.e.setText(bb);
+                    this.f5563c.e.setText(bb);
                 }
                 View view30 = view;
-                if (this.f8403c.f != null) {
+                if (this.f5563c.f != null) {
                     View view31 = view;
                     String bc = cVar.bc();
                     View view32 = view;
-                    this.f8403c.f.setText(bc);
+                    this.f5563c.f.setText(bc);
                 }
                 View view33 = view;
-                if (this.f8403c.g != null) {
+                if (this.f5563c.g != null) {
                     View view34 = view;
                     String str = cVar.cU;
                     View view35 = view;
-                    if (this.f8403c.g instanceof AnyThinkTextView) {
+                    if (this.f5563c.g instanceof AnyThinkTextView) {
                         View view36 = view;
                         new com.anythink.expressad.video.dynview.h.b();
                         View view37 = view;
                         View view38 = view;
-                        ((AnyThinkTextView) this.f8403c.g).setObjectAnimator(com.anythink.expressad.video.dynview.h.b.c(this.f8403c.g));
+                        ((AnyThinkTextView) this.f5563c.g).setObjectAnimator(com.anythink.expressad.video.dynview.h.b.c(this.f5563c.g));
                     }
                     View view39 = view;
-                    this.f8403c.g.setText(str);
+                    this.f5563c.g.setText(str);
                 }
                 viewGroup = view;
-                if (this.f8403c.j != null) {
+                if (this.f5563c.j != null) {
                     try {
                         Locale.getDefault().getLanguage();
                         viewGroup = n.a().g();
                         b.a((Context) viewGroup).a(cVar.aE(), new AnonymousClass2(viewGroup));
                     } catch (Exception e2) {
-                        o.d(f8402a, e2.getMessage());
+                        o.d(f5562a, e2.getMessage());
                     }
                 }
                 viewGroup = view;
                 view2 = view;
-                if (this.f8403c.h != null) {
+                if (this.f5563c.h != null) {
                     try {
                         viewGroup = n.a().g().getPackageName();
-                        this.f8403c.h.setText(n.a().g().getResources().getString(n.a().g().getResources().getIdentifier("anythink_reward_viewed_text_str", "string", viewGroup)));
-                        this.f8403c.h.setVisibility(0);
+                        this.f5563c.h.setText(n.a().g().getResources().getString(n.a().g().getResources().getIdentifier("anythink_reward_viewed_text_str", "string", viewGroup)));
+                        this.f5563c.h.setVisibility(0);
                         return view;
                     } catch (Exception e3) {
                         viewGroup = view;
-                        o.d(f8402a, e3.getMessage());
+                        o.d(f5562a, e3.getMessage());
                         return view;
                     }
                 }
             }
         } catch (Exception e4) {
-            o.d(f8402a, e4.getMessage());
+            o.d(f5562a, e4.getMessage());
             view2 = viewGroup;
         }
         return view2;

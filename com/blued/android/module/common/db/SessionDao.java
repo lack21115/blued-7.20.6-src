@@ -15,27 +15,25 @@ import java.util.concurrent.Callable;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/db/SessionDao.class */
 public class SessionDao {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static SessionDao f10772a;
+    private static SessionDao a;
     private Dao<SessionModelDB, Integer> b;
 
     private SessionDao() {
     }
 
     public static SessionDao a() {
-        if (f10772a == null) {
+        if (a == null) {
             synchronized (SessionDao.class) {
                 try {
-                    if (f10772a == null) {
-                        f10772a = new SessionDao();
+                    if (a == null) {
+                        a = new SessionDao();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f10772a;
+        return a;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -93,7 +91,7 @@ public class SessionDao {
 
     public int b(SessionModelDB sessionModelDB) {
         try {
-            return b().update((Dao<SessionModelDB, Integer>) sessionModelDB);
+            return b().update(sessionModelDB);
         } catch (Throwable th) {
             th.printStackTrace();
             return -1;
@@ -113,11 +111,11 @@ public class SessionDao {
 
     public List<SessionModelDB> c() {
         try {
-            QueryBuilder<SessionModelDB, Integer> queryBuilder = b().queryBuilder();
+            QueryBuilder queryBuilder = b().queryBuilder();
             String uid = UserInfo.getInstance().getLoginUserInfo().getUid();
             if (!uid.equals(ChatManager.userInfo.uid + "")) {
-                Event c2 = BluedStatistics.c();
-                c2.a("loadSessionError", 0L, 0, "userInfo: " + UserInfo.getInstance().getLoginUserInfo().getUid() + "   chat: " + ChatManager.userInfo.uid);
+                Event c = BluedStatistics.c();
+                c.a("loadSessionError", 0L, 0, "userInfo: " + UserInfo.getInstance().getLoginUserInfo().getUid() + "   chat: " + ChatManager.userInfo.uid);
             }
             queryBuilder.where().eq("loadName", Long.valueOf(ChatManager.userInfo.uid));
             queryBuilder.orderBy("lastMsgTime", false);
@@ -147,7 +145,7 @@ public class SessionDao {
     }
 
     public void f() {
-        UpdateBuilder<SessionModelDB, Integer> updateBuilder = b().updateBuilder();
+        UpdateBuilder updateBuilder = b().updateBuilder();
         try {
             updateBuilder.updateColumnValue("noReadMsgCount", 0);
             updateBuilder.updateColumnValue("lastMsgId", 0);

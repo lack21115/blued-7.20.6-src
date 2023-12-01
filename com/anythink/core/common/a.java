@@ -18,30 +18,26 @@ import org.json.JSONObject;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/a.class */
 public class a {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static volatile a f6439a;
+    private static volatile a a;
     private final String b = getClass().getSimpleName();
-
-    /* renamed from: c  reason: collision with root package name */
-    private ConcurrentHashMap<String, ConcurrentHashMap<String, aj>> f6440c = new ConcurrentHashMap<>();
+    private ConcurrentHashMap<String, ConcurrentHashMap<String, aj>> c = new ConcurrentHashMap<>();
 
     private a() {
     }
 
     public static a a() {
-        if (f6439a == null) {
+        if (a == null) {
             synchronized (a.class) {
                 try {
-                    if (f6439a == null) {
-                        f6439a = new a();
+                    if (a == null) {
+                        a = new a();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f6439a;
+        return a;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:24:0x00bc, code lost:
@@ -61,11 +57,11 @@ public class a {
 
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:8:0x0080 -> B:5:0x0032). Please submit an issue!!! */
     private static void a(ATBaseAdAdapter aTBaseAdAdapter, String str, String str2, com.anythink.core.c.d dVar, ai aiVar, int i, Map<String, Object> map) {
-        Map<String, Object> c2 = v.a().c(str2);
+        Map<String, Object> c = v.a().c(str2);
         int[] iArr = {0};
-        if (c2.containsKey(ah.O)) {
+        if (c.containsKey(ah.O)) {
             try {
-                iArr[0] = ((Integer) c2.get(ah.O)).intValue();
+                iArr[0] = ((Integer) c.get(ah.O)).intValue();
             } catch (Throwable th) {
             }
         }
@@ -85,13 +81,13 @@ public class a {
             com.anythink.core.common.e.m N = unitGroupInfo.N();
             if (N != null) {
                 com.anythink.core.common.e.e h = bVar.h();
-                ai c2 = com.anythink.core.b.f.a().c(str);
-                double a2 = com.anythink.core.common.k.g.a(c2);
+                ai c = com.anythink.core.b.f.a().c(str);
+                double a2 = com.anythink.core.common.k.g.a(c);
                 com.anythink.core.common.e.r rVar = new com.anythink.core.common.e.r();
-                rVar.f6674a = 1;
+                rVar.a = 1;
                 rVar.b = a2;
                 rVar.e = h;
-                rVar.f6675c = c2;
+                rVar.c = c;
                 rVar.d = unitGroupInfo;
                 N.a(rVar, true);
             }
@@ -106,7 +102,7 @@ public class a {
             jSONObject.put("unit_id", str);
             jSONObject.put("nw_firm_id", i2);
             jSONObject.put("nw_ver", str2);
-            jSONObject.put("result", z ? 1 : 0);
+            jSONObject.put(com.alipay.sdk.util.l.c, z ? 1 : 0);
             if (i3 != -1) {
                 jSONObject.put("reason", i3);
             }
@@ -152,23 +148,23 @@ public class a {
     public final aj a(String str, int i, ATBaseAdAdapter aTBaseAdAdapter, List<? extends BaseAd> list, long j) {
         aj ajVar;
         synchronized (v.a().a(str)) {
-            ConcurrentHashMap<String, aj> concurrentHashMap = this.f6440c.get(str);
+            ConcurrentHashMap<String, aj> concurrentHashMap = this.c.get(str);
             ai unitGroupInfo = aTBaseAdAdapter.getUnitGroupInfo();
             String t = aTBaseAdAdapter.getUnitGroupInfo().t();
             ConcurrentHashMap<String, aj> concurrentHashMap2 = concurrentHashMap;
             if (concurrentHashMap == null) {
                 concurrentHashMap2 = new ConcurrentHashMap<>();
-                this.f6440c.put(str, concurrentHashMap2);
+                this.c.put(str, concurrentHashMap2);
             }
             aj ajVar2 = concurrentHashMap2.get(t);
             if (ajVar2 == null) {
                 aj ajVar3 = new aj();
-                ajVar3.f6636a = i;
+                ajVar3.a = i;
                 ajVar3.b = aTBaseAdAdapter.getTrackingInfo().X();
                 concurrentHashMap2.put(t, ajVar3);
                 ajVar = ajVar3;
             } else {
-                ajVar2.f6636a = i;
+                ajVar2.a = i;
                 ajVar2.b = aTBaseAdAdapter.getTrackingInfo().X();
                 ajVar = ajVar2;
             }
@@ -230,7 +226,7 @@ public class a {
     public final com.anythink.core.common.e.b a(String str, ai aiVar) {
         com.anythink.core.common.e.m a2;
         ConcurrentHashMap<String, aj> concurrentHashMap;
-        if (((aiVar.l() == 3 || aiVar.l() == 7) && ((a2 = com.anythink.core.b.f.a().a(aiVar)) == null || a2.a())) || (concurrentHashMap = this.f6440c.get(str)) == null) {
+        if (((aiVar.l() == 3 || aiVar.l() == 7) && ((a2 = com.anythink.core.b.f.a().a(aiVar)) == null || a2.a())) || (concurrentHashMap = this.c.get(str)) == null) {
             return null;
         }
         aj ajVar = concurrentHashMap.get(aiVar.t());
@@ -288,7 +284,7 @@ public class a {
     public final void a(String str, String str2) {
         aj remove;
         synchronized (v.a().a(str)) {
-            ConcurrentHashMap<String, aj> concurrentHashMap = this.f6440c.get(str);
+            ConcurrentHashMap<String, aj> concurrentHashMap = this.c.get(str);
             if (concurrentHashMap != null && concurrentHashMap.size() > 0 && (remove = concurrentHashMap.remove(str2)) != null) {
                 remove.c();
             }
@@ -298,7 +294,7 @@ public class a {
     public final void a(String str, String str2, com.anythink.core.c.d dVar) {
         com.anythink.core.common.e.b a2;
         synchronized (v.a().a(str)) {
-            ConcurrentHashMap<String, aj> concurrentHashMap = this.f6440c.get(str);
+            ConcurrentHashMap<String, aj> concurrentHashMap = this.c.get(str);
             if (concurrentHashMap != null && concurrentHashMap.size() != 0) {
                 Iterator<Map.Entry<String, aj>> it = concurrentHashMap.entrySet().iterator();
                 while (it != null && it.hasNext()) {
@@ -327,7 +323,7 @@ public class a {
             if (bVar == null) {
                 return;
             }
-            ConcurrentHashMap<String, aj> concurrentHashMap = this.f6440c.get(str);
+            ConcurrentHashMap<String, aj> concurrentHashMap = this.c.get(str);
             if (concurrentHashMap != null && concurrentHashMap.size() > 0 && (ajVar = concurrentHashMap.get(str2)) != null) {
                 ajVar.a(bVar);
                 if (!ajVar.d()) {

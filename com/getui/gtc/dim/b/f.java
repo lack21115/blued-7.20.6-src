@@ -4,11 +4,11 @@ package com.getui.gtc.dim.b;
 public final class f {
 
     /* renamed from: a  reason: collision with root package name */
-    public Object f21942a;
+    public Object f8335a;
     public long b;
 
     public f(Object obj, long j) {
-        this.f21942a = obj;
+        this.f8335a = obj;
         this.b = j;
     }
 }

@@ -8,22 +8,18 @@ import com.blued.community.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/databinding/FragmentFeedMineVisitTipsBinding.class */
 public final class FragmentFeedMineVisitTipsBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f18874a;
+    public final ImageView a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f18875c;
+    public final ImageView c;
     public final FrameLayout d;
     public final FrameLayout e;
     private final FrameLayout f;
 
     private FragmentFeedMineVisitTipsBinding(FrameLayout frameLayout, ImageView imageView, ImageView imageView2, ImageView imageView3, FrameLayout frameLayout2, FrameLayout frameLayout3) {
         this.f = frameLayout;
-        this.f18874a = imageView;
+        this.a = imageView;
         this.b = imageView2;
-        this.f18875c = imageView3;
+        this.c = imageView3;
         this.d = frameLayout2;
         this.e = frameLayout3;
     }
@@ -58,7 +54,6 @@ public final class FragmentFeedMineVisitTipsBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.f;

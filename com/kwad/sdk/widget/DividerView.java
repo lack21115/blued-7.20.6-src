@@ -44,9 +44,8 @@ public class DividerView extends View {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         float width;
         float f;
         float height;

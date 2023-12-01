@@ -22,7 +22,7 @@ public class Mesh extends BaseObj {
         class Entry {
 
             /* renamed from: a  reason: collision with root package name */
-            Allocation f1476a;
+            Allocation f1428a;
             Primitive prim;
 
             Entry() {
@@ -35,7 +35,7 @@ public class Mesh extends BaseObj {
 
         public AllocationBuilder addIndexSetAllocation(Allocation allocation, Primitive primitive) {
             Entry entry = new Entry();
-            entry.f1476a = allocation;
+            entry.f1428a = allocation;
             entry.prim = primitive;
             this.mIndexTypes.addElement(entry);
             return this;
@@ -43,7 +43,7 @@ public class Mesh extends BaseObj {
 
         public AllocationBuilder addIndexSetType(Primitive primitive) {
             Entry entry = new Entry();
-            entry.f1476a = null;
+            entry.f1428a = null;
             entry.prim = primitive;
             this.mIndexTypes.addElement(entry);
             return this;
@@ -54,7 +54,7 @@ public class Mesh extends BaseObj {
                 throw new IllegalStateException("Max vertex types exceeded.");
             }
             this.mVertexTypes[this.mVertexTypeCount] = new Entry();
-            this.mVertexTypes[this.mVertexTypeCount].f1476a = allocation;
+            this.mVertexTypes[this.mVertexTypeCount].f1428a = allocation;
             this.mVertexTypeCount++;
             return this;
         }
@@ -74,8 +74,8 @@ public class Mesh extends BaseObj {
                     break;
                 }
                 Entry entry = this.mVertexTypes[i2];
-                allocationArr2[i2] = entry.f1476a;
-                jArr[i2] = entry.f1476a.getID(this.mRS);
+                allocationArr2[i2] = entry.f1428a;
+                jArr[i2] = entry.f1428a.getID(this.mRS);
                 i = i2 + 1;
             }
             int i3 = 0;
@@ -89,8 +89,8 @@ public class Mesh extends BaseObj {
                     return mesh;
                 }
                 Entry entry2 = (Entry) this.mIndexTypes.elementAt(i4);
-                long id = entry2.f1476a == null ? 0L : entry2.f1476a.getID(this.mRS);
-                allocationArr[i4] = entry2.f1476a;
+                long id = entry2.f1428a == null ? 0L : entry2.f1428a.getID(this.mRS);
+                allocationArr[i4] = entry2.f1428a;
                 primitiveArr[i4] = entry2.prim;
                 jArr2[i4] = id;
                 iArr[i4] = entry2.prim.mID;

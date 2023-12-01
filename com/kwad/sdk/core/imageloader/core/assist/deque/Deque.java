@@ -5,14 +5,14 @@ import java.util.Queue;
 
 /* loaded from: source-7994992-dex2jar.jar:com/kwad/sdk/core/imageloader/core/assist/deque/Deque.class */
 public interface Deque<E> extends Queue<E> {
-    @Override // java.util.Queue, java.util.Collection, java.util.Set
+    @Override // java.util.Queue, java.util.Collection, java.util.concurrent.BlockingQueue
     boolean add(E e);
 
     void addFirst(E e);
 
     void addLast(E e);
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection, java.util.concurrent.BlockingQueue
     boolean contains(Object obj);
 
     Iterator<E> descendingIterator();
@@ -55,7 +55,7 @@ public interface Deque<E> extends Queue<E> {
     @Override // java.util.Queue
     E remove();
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection, java.util.concurrent.BlockingQueue
     boolean remove(Object obj);
 
     E removeFirst();
@@ -66,6 +66,6 @@ public interface Deque<E> extends Queue<E> {
 
     boolean removeLastOccurrence(Object obj);
 
-    @Override // java.util.Collection, java.util.List
+    @Override // java.util.Collection
     int size();
 }

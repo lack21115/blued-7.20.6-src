@@ -11,7 +11,7 @@ public class TypefaceCompatApi28Impl extends TypefaceCompatApi26Impl {
     @Override // androidx.core.graphics.TypefaceCompatApi26Impl
     protected Typeface a(Object obj) {
         try {
-            Object newInstance = Array.newInstance(this.f2462a, 1);
+            Object newInstance = Array.newInstance(this.f2414a, 1);
             Array.set(newInstance, 0, obj);
             return (Typeface) this.g.invoke(null, newInstance, b.m, -1, -1);
         } catch (IllegalAccessException | InvocationTargetException e) {

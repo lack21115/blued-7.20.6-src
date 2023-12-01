@@ -33,7 +33,7 @@ public final class b {
             @Override // com.kwad.sdk.core.network.a
             /* renamed from: Ad */
             public com.kwad.sdk.crash.report.request.a createRequest() {
-                return new com.kwad.sdk.crash.report.request.a(List.this);
+                return new com.kwad.sdk.crash.report.request.a(list);
             }
 
             private static CrashReportResult dT(String str) {

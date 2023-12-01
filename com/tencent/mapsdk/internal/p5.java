@@ -7,14 +7,14 @@ public class p5 implements Coordinate {
     public double b;
 
     /* renamed from: c  reason: collision with root package name */
-    public double f37683c;
+    public double f23992c;
 
     public p5() {
     }
 
     public p5(double d, double d2) {
         this.b = d;
-        this.f37683c = d2;
+        this.f23992c = d2;
     }
 
     public static boolean a(double d, double d2) {
@@ -38,12 +38,12 @@ public class p5 implements Coordinate {
 
     public p5 a(float f) {
         double d = f;
-        return new p5((float) ((Math.cos(d) * this.b) - (Math.sin(d) * this.f37683c)), (float) ((Math.sin(d) * this.b) + (Math.cos(d) * this.f37683c)));
+        return new p5((float) ((Math.cos(d) * this.b) - (Math.sin(d) * this.f23992c)), (float) ((Math.sin(d) * this.b) + (Math.cos(d) * this.f23992c)));
     }
 
     public p5 a(int i) {
         double d = this.b;
-        double d2 = this.f37683c;
+        double d2 = this.f23992c;
         int i2 = 0;
         while (i2 < i) {
             double d3 = -d;
@@ -63,24 +63,24 @@ public class p5 implements Coordinate {
         if (d < 0.0d || d > 1.0d) {
             return false;
         }
-        double d2 = this.f37683c;
+        double d2 = this.f23992c;
         return d2 >= 0.0d && d2 <= 1.0d;
     }
 
     public float b() {
-        return (float) Math.hypot(this.b, this.f37683c);
+        return (float) Math.hypot(this.b, this.f23992c);
     }
 
     public p5 b(double d) {
-        return new p5(this.b * d, this.f37683c * d);
+        return new p5(this.b * d, this.f23992c * d);
     }
 
     public p5 b(double d, double d2) {
-        return new p5(this.b - d, this.f37683c - d2);
+        return new p5(this.b - d, this.f23992c - d2);
     }
 
     public p5 b(p5 p5Var) {
-        return b(p5Var.b, p5Var.f37683c);
+        return b(p5Var.b, p5Var.f23992c);
     }
 
     public p5 c() {
@@ -88,20 +88,20 @@ public class p5 implements Coordinate {
     }
 
     public p5 c(double d, double d2) {
-        return new p5(this.b * d, this.f37683c * d2);
+        return new p5(this.b * d, this.f23992c * d2);
     }
 
     public p5 c(p5 p5Var) {
-        return d(p5Var.b, p5Var.f37683c);
+        return d(p5Var.b, p5Var.f23992c);
     }
 
     public p5 d(double d, double d2) {
-        return new p5(this.b + d, this.f37683c + d2);
+        return new p5(this.b + d, this.f23992c + d2);
     }
 
     public void e(double d, double d2) {
         this.b = d;
-        this.f37683c = d2;
+        this.f23992c = d2;
     }
 
     public boolean equals(Object obj) {
@@ -111,7 +111,7 @@ public class p5 implements Coordinate {
             z = false;
             if (!a(this.b, p5Var.b)) {
                 z = false;
-                if (!a(this.f37683c, p5Var.f37683c)) {
+                if (!a(this.f23992c, p5Var.f23992c)) {
                     z = true;
                 }
             }
@@ -126,7 +126,7 @@ public class p5 implements Coordinate {
 
     @Override // com.tencent.tencentmap.mapsdk.maps.interfaces.Coordinate
     public void setY(double d) {
-        this.f37683c = d;
+        this.f23992c = d;
     }
 
     @Override // com.tencent.tencentmap.mapsdk.maps.interfaces.Coordinate
@@ -134,7 +134,7 @@ public class p5 implements Coordinate {
     }
 
     public String toString() {
-        return this.b + "," + this.f37683c;
+        return this.b + "," + this.f23992c;
     }
 
     @Override // com.tencent.tencentmap.mapsdk.maps.interfaces.Coordinate
@@ -144,7 +144,7 @@ public class p5 implements Coordinate {
 
     @Override // com.tencent.tencentmap.mapsdk.maps.interfaces.Coordinate
     public double y() {
-        return this.f37683c;
+        return this.f23992c;
     }
 
     @Override // com.tencent.tencentmap.mapsdk.maps.interfaces.Coordinate

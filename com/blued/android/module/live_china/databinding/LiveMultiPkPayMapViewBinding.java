@@ -14,13 +14,9 @@ import com.blued.android.module.svgaplayer.SVGAImageView;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/LiveMultiPkPayMapViewBinding.class */
 public final class LiveMultiPkPayMapViewBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final FrameLayout f12298a;
+    public final FrameLayout a;
     public final FrameLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final FrameLayout f12299c;
+    public final FrameLayout c;
     public final ImageView d;
     public final ImageView e;
     public final SVGAImageView f;
@@ -34,9 +30,9 @@ public final class LiveMultiPkPayMapViewBinding implements ViewBinding {
 
     private LiveMultiPkPayMapViewBinding(FrameLayout frameLayout, FrameLayout frameLayout2, FrameLayout frameLayout3, FrameLayout frameLayout4, ImageView imageView, ImageView imageView2, SVGAImageView sVGAImageView, SVGAImageView sVGAImageView2, ImageView imageView3, ImageView imageView4, ShapeFrameLayout shapeFrameLayout, ShapeTextView shapeTextView, TextView textView) {
         this.m = frameLayout;
-        this.f12298a = frameLayout2;
+        this.a = frameLayout2;
         this.b = frameLayout3;
-        this.f12299c = frameLayout4;
+        this.c = frameLayout4;
         this.d = imageView;
         this.e = imageView2;
         this.f = sVGAImageView;
@@ -121,7 +117,6 @@ public final class LiveMultiPkPayMapViewBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.m;

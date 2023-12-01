@@ -26,7 +26,6 @@ import com.blued.android.core.utils.skin.BluedSkinUtils;
 import com.blued.android.framework.ui.custom.KeyboardListenLinearLayout;
 import com.blued.android.framework.ui.custom.MvpKeyBoardFragment;
 import com.blued.android.framework.ui.xpop.XPopup;
-import com.blued.android.framework.ui.xpop.core.BasePopupView;
 import com.blued.android.framework.ui.xpop.enums.PopupAnimation;
 import com.blued.android.framework.utils.DensityUtils;
 import com.blued.android.framework.utils.KeyboardUtils;
@@ -37,7 +36,6 @@ import com.blued.android.module.common.group.GroupInfoModel;
 import com.blued.android.module.common.group.GroupMemberModel;
 import com.blued.android.module.common.utils.ToastUtils;
 import com.blued.android.module.common.view.CommonTopTitleNoTrans;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.blued.android.module.common.widget.dialog.CommonAlertDialog;
 import com.blued.community.ui.circle.fragment.CircleDetailsFragment;
 import com.blued.community.ui.circle.manager.CircleConstants;
@@ -241,7 +239,7 @@ public class GroupInfoFragment extends MvpKeyBoardFragment<GroupInfoPresenter> {
                 }
             }, (DialogInterface.OnDismissListener) null);
         } else if (groupPrivilegeModel.getPrivilege() != 1) {
-            WebViewShowInfoFragment.show(getContext(), GroupConstant.f32663a + "group_up");
+            WebViewShowInfoFragment.show(getContext(), GroupConstant.f18972a + "group_up");
         } else {
             int super_max_group = groupPrivilegeModel.getSuper_max_group() - groupPrivilegeModel.getSuper_group();
             if (super_max_group <= 0) {
@@ -251,7 +249,7 @@ public class GroupInfoFragment extends MvpKeyBoardFragment<GroupInfoPresenter> {
                         Tracker.onClick(dialogInterface, i);
                         dialogInterface.dismiss();
                         Context context = GroupInfoFragment.this.getContext();
-                        WebViewShowInfoFragment.show(context, GroupConstant.f32663a + "group_up");
+                        WebViewShowInfoFragment.show(context, GroupConstant.f18972a + "group_up");
                     }
                 }, getString(2131886885), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.msg_group.fragment.GroupInfoFragment.14
                     @Override // android.content.DialogInterface.OnClickListener
@@ -367,7 +365,7 @@ public class GroupInfoFragment extends MvpKeyBoardFragment<GroupInfoPresenter> {
                             return;
                         }
                         Context context = GroupInfoFragment.this.getContext();
-                        CircleDetailsFragment.a(context, groupInfoModel.circle.id + "", CircleConstants.CIRCLE_FROM_PAGE.GROUP);
+                        CircleDetailsFragment.a(context, groupInfoModel.circle.id + "", CircleConstants.CIRCLE_FROM_PAGE.r);
                     }
                 });
                 return;
@@ -381,7 +379,7 @@ public class GroupInfoFragment extends MvpKeyBoardFragment<GroupInfoPresenter> {
                     this.iv_user_avatar.setVisibility(8);
                     this.tv_base_name.setVisibility(0);
                     this.tv_base_name.setText(groupInfoModel.event.name);
-                    this.tv_hint_link.setText(getString(2131887728));
+                    this.tv_hint_link.setText(getString(R.string.event_details));
                     this.rl_group_link.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg_group.fragment.GroupInfoFragment.22
                         @Override // android.view.View.OnClickListener
                         public void onClick(View view) {
@@ -389,7 +387,7 @@ public class GroupInfoFragment extends MvpKeyBoardFragment<GroupInfoPresenter> {
                             EventLogData eventLogData = new EventLogData();
                             eventLogData.setEventId(groupInfoModel.event.id + "");
                             eventLogData.setSourcePage(FeedProtos.SourcePage.GROUP_ACTIVITY);
-                            EventDetailsFragment.Companion companion = EventDetailsFragment.f19534a;
+                            EventDetailsFragment.Companion companion = EventDetailsFragment.a;
                             Context context = GroupInfoFragment.this.getContext();
                             companion.a(context, groupInfoModel.event.id + "", eventLogData);
                         }
@@ -418,6 +416,7 @@ public class GroupInfoFragment extends MvpKeyBoardFragment<GroupInfoPresenter> {
         }
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private void w() {
         LiveEventBus.get("refresh_manager_list", GroupInfoModel.class).observe(this, new Observer<GroupInfoModel>() { // from class: com.soft.blued.ui.msg_group.fragment.GroupInfoFragment.4
             @Override // androidx.lifecycle.Observer
@@ -529,7 +528,7 @@ public class GroupInfoFragment extends MvpKeyBoardFragment<GroupInfoPresenter> {
     private void y() {
         this.apply_reason.setVisibility(8);
         ShapeHelper.b(this.tv_apply, 2131101766);
-        ShapeHelper.a((ShapeHelper.ShapeView) this.tv_apply, 2131102170);
+        ShapeHelper.a(this.tv_apply, 2131102170);
         this.tv_apply.setClickable(true);
         this.tv_apply_hint.setVisibility(0);
         this.rl_et.setVisibility(0);
@@ -537,13 +536,13 @@ public class GroupInfoFragment extends MvpKeyBoardFragment<GroupInfoPresenter> {
         this.tv_apply.setText(getString(R.string.btn_joingroup));
         this.tv_add_group.setVisibility(8);
         ShapeHelper.b(this.tv_add_group, 2131101766);
-        ShapeHelper.a((ShapeHelper.ShapeView) this.tv_add_group, 2131102170);
+        ShapeHelper.a(this.tv_add_group, 2131102170);
         this.tv_add_group.setClickable(true);
         this.tv_add_group.setText(getString(R.string.group_join_now));
     }
 
     private void z() {
-        new XPopup.Builder(getContext()).a(PopupAnimation.ScaleAlphaFromCenter).c((Boolean) false).d((Boolean) true).a((BasePopupView) new ApplyGroupHintPop(getContext(), new View.OnClickListener() { // from class: com.soft.blued.ui.msg_group.fragment.GroupInfoFragment.26
+        new XPopup.Builder(getContext()).a(PopupAnimation.a).c(false).d(true).a(new ApplyGroupHintPop(getContext(), new View.OnClickListener() { // from class: com.soft.blued.ui.msg_group.fragment.GroupInfoFragment.26
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
@@ -559,7 +558,6 @@ public class GroupInfoFragment extends MvpKeyBoardFragment<GroupInfoPresenter> {
         })).h();
     }
 
-    @Override // com.blued.android.framework.ui.custom.MvpKeyBoardFragment
     public void a(int i) {
         if (i == -3) {
             this.apply_reason.setClickable(true);
@@ -569,7 +567,7 @@ public class GroupInfoFragment extends MvpKeyBoardFragment<GroupInfoPresenter> {
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
+    /* JADX WARN: Multi-variable type inference failed */
     public void a(Bundle bundle) {
         super.a(bundle);
         this.scrollView.setBackgroundColor(BluedSkinUtils.a(getContext(), 2131102360));
@@ -603,7 +601,7 @@ public class GroupInfoFragment extends MvpKeyBoardFragment<GroupInfoPresenter> {
         this.title.getContent().addView(this.m, layoutParams);
         ImageView imageView = new ImageView(getContext());
         this.l = imageView;
-        imageView.setImageDrawable(BluedSkinUtils.b(getContext(), R.drawable.icon_group_edit));
+        imageView.setImageDrawable(BluedSkinUtils.b(getContext(), (int) R.drawable.icon_group_edit));
         RelativeLayout.LayoutParams layoutParams2 = new RelativeLayout.LayoutParams(-2, -2);
         this.l.setPadding(DensityUtils.a(getContext(), 15.0f), DensityUtils.a(getContext(), 5.0f), DensityUtils.a(getContext(), 0.0f), DensityUtils.a(getContext(), 5.0f));
         layoutParams2.addRule(0, 2131369384);
@@ -659,7 +657,7 @@ public class GroupInfoFragment extends MvpKeyBoardFragment<GroupInfoPresenter> {
                 this.rl_announcement.setVisibility(0);
                 this.m.setVisibility(8);
                 this.iv_arrow_right.setVisibility(0);
-                this.l.setImageDrawable(BluedSkinUtils.b(getContext(), R.drawable.icon_group_edit));
+                this.l.setImageDrawable(BluedSkinUtils.b(getContext(), (int) R.drawable.icon_group_edit));
                 this.l.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg_group.fragment.GroupInfoFragment.18
                     @Override // android.view.View.OnClickListener
                     public void onClick(View view) {
@@ -697,8 +695,8 @@ public class GroupInfoFragment extends MvpKeyBoardFragment<GroupInfoPresenter> {
                     this.ll_setting.setVisibility(8);
                 }
             }
-            GroupUtil.a(this.tv_frozen, groupInfoModel.group_role, groupInfoModel.group_status);
-            GroupUtil.b(getFragmentActive(), groupInfoModel.group_cover, this.iv_icon);
+            GroupUtil.a((TextView) this.tv_frozen, groupInfoModel.group_role, groupInfoModel.group_status);
+            GroupUtil.b((IRequestHost) getFragmentActive(), groupInfoModel.group_cover, this.iv_icon);
             if (!TextUtils.isEmpty(groupInfoModel.group_desc)) {
                 this.tv_desc.setText(groupInfoModel.group_desc);
             }
@@ -723,7 +721,7 @@ public class GroupInfoFragment extends MvpKeyBoardFragment<GroupInfoPresenter> {
             }
             GroupUtil.a(groupInfoModel, this.tv_group_name);
             TextView textView = this.tv_member_num;
-            textView.setText(groupInfoModel.group_now_population + BridgeUtil.SPLIT_MARK + groupInfoModel.group_max_population);
+            textView.setText(groupInfoModel.group_now_population + "/" + groupInfoModel.group_max_population);
             if (groupInfoModel.group_now_population > groupInfoModel.group_max_population) {
                 this.tv_member_num.setTextColor(BluedSkinUtils.a(getContext(), 2131102251));
             } else {
@@ -788,19 +786,16 @@ public class GroupInfoFragment extends MvpKeyBoardFragment<GroupInfoPresenter> {
         this.tv_announcement.setText(str);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public int g() {
         return R.layout.fm_msg_group_info;
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, androidx.fragment.app.Fragment
     public void onActivityCreated(Bundle bundle) {
         super.onActivityCreated(bundle);
         getActivity().getWindow().setSoftInputMode(19);
         this.apply_reason.setClickable(false);
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         super.onActivityResult(i, i2, intent);
         if (i == 888 && i2 == -1 && intent != null) {
@@ -872,7 +867,7 @@ public class GroupInfoFragment extends MvpKeyBoardFragment<GroupInfoPresenter> {
                 return;
             case R.id.rl_announcement /* 2131369230 */:
                 if (((GroupInfoPresenter) j()).m() != null) {
-                    GroupAnnouncementFragment.f32668a.a(getActivity(), ((GroupInfoPresenter) j()).m());
+                    GroupAnnouncementFragment.f18977a.a(getActivity(), ((GroupInfoPresenter) j()).m());
                     return;
                 }
                 return;
@@ -909,7 +904,7 @@ public class GroupInfoFragment extends MvpKeyBoardFragment<GroupInfoPresenter> {
                             Tracker.onClick(dialogInterface, i6);
                             ChatManager.getInstance().deleteSessionAndChatting((short) 3, Long.valueOf(((GroupInfoPresenter) GroupInfoFragment.this.j()).n().sessionId).longValue());
                         }
-                    }, getContext().getResources().getString(2131887258), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.msg_group.fragment.GroupInfoFragment.25
+                    }, getContext().getResources().getString(R.string.common_cancel), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.msg_group.fragment.GroupInfoFragment.25
                         @Override // android.content.DialogInterface.OnClickListener
                         public void onClick(DialogInterface dialogInterface, int i6) {
                             Tracker.onClick(dialogInterface, i6);
@@ -918,16 +913,16 @@ public class GroupInfoFragment extends MvpKeyBoardFragment<GroupInfoPresenter> {
                     return;
                 }
                 return;
-            case 2131371378:
+            case R.id.tv_exit /* 2131371378 */:
                 ((GroupInfoPresenter) j()).q();
                 return;
             case R.id.tv_freeze /* 2131371493 */:
-                WebViewShowInfoFragment.show(getContext(), GroupConstant.f32663a + "relieve");
+                WebViewShowInfoFragment.show(getContext(), GroupConstant.f18972a + "relieve");
                 return;
             case R.id.tv_go_chat /* 2131371563 */:
                 ((GroupInfoPresenter) j()).s();
                 return;
-            case 2131372428:
+            case R.id.tv_report /* 2131372428 */:
                 ReportFragmentNew.a(getActivity(), 4, ((GroupInfoPresenter) j()).m().group_id + "", ((GroupInfoPresenter) j()).m().group_title);
                 return;
             default:
@@ -942,14 +937,14 @@ public class GroupInfoFragment extends MvpKeyBoardFragment<GroupInfoPresenter> {
         if (((GroupInfoPresenter) j()).m().allow_join == 1) {
             this.tv_add_group.setVisibility(0);
             ShapeHelper.b(this.tv_add_group, 2131102264);
-            ShapeHelper.a((ShapeHelper.ShapeView) this.tv_add_group, 2131102263);
+            ShapeHelper.a(this.tv_add_group, 2131102263);
             this.tv_add_group.setText(((GroupInfoPresenter) j()).m().apply_status == 1 ? getString(R.string.group_apply_sent) : getString(R.string.group_join_reject));
             this.tv_add_group.setClickable(false);
             return;
         }
         this.apply_reason.setVisibility(0);
         ShapeHelper.b(this.tv_apply, 2131102264);
-        ShapeHelper.a((ShapeHelper.ShapeView) this.tv_apply, 2131102263);
+        ShapeHelper.a(this.tv_apply, 2131102263);
         this.tv_apply.setClickable(false);
         this.tv_apply_hint.setVisibility(4);
         this.rl_et.setVisibility(4);

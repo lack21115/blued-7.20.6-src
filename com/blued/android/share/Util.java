@@ -6,6 +6,7 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.text.TextUtils;
+import com.anythink.core.common.b.g;
 import com.blued.android.core.imagecache.MemoryRequest;
 import com.blued.android.core.imagecache.RecyclingUtils;
 import com.blued.android.framework.utils.Logger;
@@ -163,7 +164,7 @@ public class Util {
         } else {
             byte[] bArr = null;
             try {
-                RandomAccessFile randomAccessFile = new RandomAccessFile(str, "r");
+                RandomAccessFile randomAccessFile = new RandomAccessFile(str, g.o.o);
                 byte[] bArr2 = new byte[i3];
                 randomAccessFile.seek(i);
                 randomAccessFile.readFully(bArr2);

@@ -4,7 +4,7 @@ package com.sdk.tencent.c;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Boolean f28026a = Boolean.valueOf(com.sdk.tencent.f.c.b);
+    public static final Boolean f14338a = Boolean.valueOf(com.sdk.tencent.f.c.b);
 
     /* JADX WARN: Removed duplicated region for block: B:39:0x00ef A[RETURN] */
     /* JADX WARN: Removed duplicated region for block: B:41:0x00f1  */

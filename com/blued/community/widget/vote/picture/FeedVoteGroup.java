@@ -22,11 +22,11 @@ import com.blued.community.ui.feed.manager.FeedMethods;
 public class FeedVoteGroup extends FrameLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    private CardView f20486a;
+    private CardView f6880a;
     private LinearLayout b;
 
     /* renamed from: c  reason: collision with root package name */
-    private View f20487c;
+    private View f6881c;
     private ImageView d;
     private CardView e;
     private View f;
@@ -73,9 +73,9 @@ public class FeedVoteGroup extends FrameLayout {
 
     private void a() {
         View inflate = LayoutInflater.from(getContext()).inflate(R.layout.feed_vote_root_layout, (ViewGroup) null, false);
-        this.f20486a = (CardView) inflate.findViewById(R.id.feed_vote_root_layout);
+        this.f6880a = (CardView) inflate.findViewById(R.id.feed_vote_root_layout);
         this.b = (LinearLayout) inflate.findViewById(R.id.feed_vote_content_layout);
-        this.f20487c = inflate.findViewById(R.id.feed_vote_part_left);
+        this.f6881c = inflate.findViewById(R.id.feed_vote_part_left);
         this.d = (ImageView) inflate.findViewById(R.id.feed_vote_iv_left);
         this.e = (CardView) inflate.findViewById(R.id.feed_vote_btn_left);
         this.f = inflate.findViewById(R.id.feed_vote_part_right);
@@ -112,13 +112,13 @@ public class FeedVoteGroup extends FrameLayout {
     }
 
     private void b() {
-        if (CommunityManager.f19086a.a().s()) {
-            this.f20486a.setCardBackgroundColor(Color.parseColor("#1B1B1B"));
+        if (CommunityManager.a.a().s()) {
+            this.f6880a.setCardBackgroundColor(Color.parseColor("#1B1B1B"));
             this.e.setCardBackgroundColor(Color.parseColor("#482923"));
             this.h.setCardBackgroundColor(Color.parseColor("#22304B"));
             return;
         }
-        this.f20486a.setCardBackgroundColor(Color.parseColor("#F8F8F8"));
+        this.f6880a.setCardBackgroundColor(Color.parseColor("#F8F8F8"));
         this.e.setCardBackgroundColor(Color.parseColor("#FFDED7"));
         this.h.setCardBackgroundColor(Color.parseColor("#D1E0FF"));
     }
@@ -132,7 +132,7 @@ public class FeedVoteGroup extends FrameLayout {
     }
 
     private void c() {
-        this.f20487c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.widget.vote.picture.-$$Lambda$FeedVoteGroup$ZLqHn9JwJ-2ZM9MOKG87ir1vPhc
+        this.f6881c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.widget.vote.picture.-$$Lambda$FeedVoteGroup$ZLqHn9JwJ-2ZM9MOKG87ir1vPhc
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 FeedVoteGroup.this.d(view);
@@ -201,7 +201,7 @@ public class FeedVoteGroup extends FrameLayout {
             textView2.setText(this.s + "%");
             this.l.setVisibility(0);
             this.m.setVisibility(0);
-            boolean s = CommunityManager.f19086a.a().s();
+            boolean s = CommunityManager.a.a().s();
             if (this.r == 0) {
                 this.l.setVisibility(8);
                 if (s) {

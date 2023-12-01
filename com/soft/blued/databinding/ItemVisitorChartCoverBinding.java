@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemVisitorChartCoverBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29368a;
+    private final LinearLayout f15678a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29368a;
+        return this.f15678a;
     }
 }

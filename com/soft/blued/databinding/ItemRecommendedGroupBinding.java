@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemRecommendedGroupBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ConstraintLayout f29297a;
+    private final ConstraintLayout f15607a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f29297a;
+        return this.f15607a;
     }
 }

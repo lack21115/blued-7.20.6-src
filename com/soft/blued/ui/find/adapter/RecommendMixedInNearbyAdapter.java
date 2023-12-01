@@ -30,11 +30,11 @@ import java.io.File;
 public class RecommendMixedInNearbyAdapter extends BaseQuickAdapter<FindRecommendData, BaseViewHolder> {
 
     /* renamed from: a  reason: collision with root package name */
-    private IRequestHost f30126a;
+    private IRequestHost f16436a;
 
     public RecommendMixedInNearbyAdapter(Context context, IRequestHost iRequestHost, RecyclerView recyclerView) {
-        super(2131559720);
-        this.f30126a = iRequestHost;
+        super((int) R.layout.item_find_recommend);
+        this.f16436a = iRequestHost;
         this.mContext = context;
     }
 
@@ -45,7 +45,7 @@ public class RecommendMixedInNearbyAdapter extends BaseQuickAdapter<FindRecommen
         layoutParams.width = a2;
         layoutParams.height = DensityUtils.a(this.mContext, 15.0f);
         imageView.setLayoutParams(layoutParams);
-        ImageLoader.a(this.f30126a, findRecommendData.type_pic).e(baseViewHolder.hashCode()).g(-1).a(imageView);
+        ImageLoader.a(this.f16436a, findRecommendData.type_pic).e(baseViewHolder.hashCode()).g(-1).a(imageView);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -55,24 +55,23 @@ public class RecommendMixedInNearbyAdapter extends BaseQuickAdapter<FindRecommen
         if (baseViewHolder == null || findRecommendData == null) {
             return;
         }
-        RelativeLayout relativeLayout = (RelativeLayout) baseViewHolder.getView(2131369318);
+        RelativeLayout relativeLayout = (RelativeLayout) baseViewHolder.getView(R.id.rl_header);
         ImageView imageView = (ImageView) baseViewHolder.getView(2131364232);
         TextView textView = (TextView) baseViewHolder.getView(2131372046);
-        ImageView imageView2 = (ImageView) baseViewHolder.getView(2131365581);
-        RelativeLayout relativeLayout2 = (RelativeLayout) baseViewHolder.getView(2131369319);
-        ImageView imageView3 = (ImageView) baseViewHolder.getView(2131364238);
-        final ImageView imageView4 = (ImageView) baseViewHolder.getView(2131365582);
-        TextView textView2 = (TextView) baseViewHolder.getView(2131372052);
+        ImageView imageView2 = (ImageView) baseViewHolder.getView(R.id.iv_live_type);
+        RelativeLayout relativeLayout2 = (RelativeLayout) baseViewHolder.getView(R.id.rl_header_new);
+        ImageView imageView3 = (ImageView) baseViewHolder.getView(R.id.header_view_new);
+        final ImageView imageView4 = (ImageView) baseViewHolder.getView(R.id.iv_live_type_new);
+        TextView textView2 = (TextView) baseViewHolder.getView(R.id.tv_name_new);
         if (BluedConfig.a().B()) {
             textView2.setText(findRecommendData.title);
-            ImageLoader.a(this.f30126a, findRecommendData.pic).b(2131237314).a(imageView3);
+            ImageLoader.a(this.f16436a, findRecommendData.pic).b(2131237314).a(imageView3);
             if (TextUtils.isEmpty(findRecommendData.type_pic) || findRecommendData.live_type == -1) {
                 imageView4.setVisibility(8);
             } else {
                 imageView4.setVisibility(0);
                 final ImageSize imageSize = new ImageSize();
-                ImageFileLoader.a(this.f30126a).a(findRecommendData.type_pic).a(imageSize).a(new ImageFileLoader.OnLoadFileListener() { // from class: com.soft.blued.ui.find.adapter.-$$Lambda$RecommendMixedInNearbyAdapter$G0x9ySje8gat5Z4lk-6nULuWDjg
-                    @Override // com.blued.android.core.image.ImageFileLoader.OnLoadFileListener
+                ImageFileLoader.a(this.f16436a).a(findRecommendData.type_pic).a(imageSize).a(new ImageFileLoader.OnLoadFileListener() { // from class: com.soft.blued.ui.find.adapter.-$$Lambda$RecommendMixedInNearbyAdapter$G0x9ySje8gat5Z4lk-6nULuWDjg
                     public final void onUIFinish(File file, Exception exc) {
                         RecommendMixedInNearbyAdapter.this.a(imageSize, imageView4, findRecommendData, baseViewHolder, file, exc);
                     }
@@ -85,7 +84,7 @@ public class RecommendMixedInNearbyAdapter extends BaseQuickAdapter<FindRecommen
             imageView2.setVisibility(8);
         } else {
             textView.setText(findRecommendData.title);
-            ImageLoader.a(this.f30126a, findRecommendData.pic).b(2131237310).c().a(imageView);
+            ImageLoader.a(this.f16436a, findRecommendData.pic).b(2131237310).c().a(imageView);
             if (findRecommendData.live_type == 0) {
                 imageView2.setImageResource(R.drawable.icon_live_type_0);
                 imageView2.setVisibility(0);
@@ -112,7 +111,7 @@ public class RecommendMixedInNearbyAdapter extends BaseQuickAdapter<FindRecommen
             relativeLayout2.setVisibility(8);
             textView2.setVisibility(8);
         }
-        baseViewHolder.getView(2131362934).setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.adapter.RecommendMixedInNearbyAdapter.1
+        baseViewHolder.getView(R.id.cl_root).setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.adapter.RecommendMixedInNearbyAdapter.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);

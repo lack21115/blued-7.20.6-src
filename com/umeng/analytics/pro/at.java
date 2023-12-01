@@ -1,7 +1,6 @@
 package com.umeng.analytics.pro;
 
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -14,11 +13,11 @@ public class at {
     private static String E;
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f40633a = "env";
+    public static final String f26942a = "env";
     public static final String b = "exp";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f40634c = "imp";
+    public static final String f26943c = "imp";
     public static final String d = "ua";
     public static final String e = "zc";
     public static final String f = "id";
@@ -43,12 +42,11 @@ public class at {
     public static final String y = "emi";
     public static final String z = "sli";
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8829756-dex2jar.jar:com/umeng/analytics/pro/at$a.class */
-    public static class a {
+    static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final at f40635a = new at();
+        private static final at f26944a = new at();
 
         private a() {
         }
@@ -58,7 +56,7 @@ public class at {
         HashMap hashMap = new HashMap();
         D = hashMap;
         E = "";
-        hashMap.put(f40633a, "envelope");
+        hashMap.put(f26942a, "envelope");
         D.put(b, ".umeng");
         D.put("imp", ".imprint");
         D.put("ua", "ua.db");
@@ -79,7 +77,7 @@ public class at {
         D.put(s, "UM_PROBE_DATA");
         D.put(t, "ekv_bl");
         D.put(u, "ekv_wl");
-        D.put(v, e.f40723a);
+        D.put(v, e.f27032a);
         D.put(w, "ua_");
         D.put(x, "stateless");
         D.put(y, ".emitter");
@@ -93,7 +91,7 @@ public class at {
     }
 
     public static at b() {
-        return a.f40635a;
+        return a.f26944a;
     }
 
     public void a() {
@@ -103,10 +101,10 @@ public class at {
     public void a(String str) {
         if (!TextUtils.isEmpty(str) && TextUtils.isEmpty(E)) {
             if (str.length() > 3) {
-                E = str.substring(0, 3) + BridgeUtil.UNDERLINE_STR;
+                E = str.substring(0, 3) + "_";
                 return;
             }
-            E = str + BridgeUtil.UNDERLINE_STR;
+            E = str + "_";
         }
     }
 

@@ -33,11 +33,11 @@ import java.util.List;
 public class MsgBoxFragment extends MvpFragment<MsgBoxPresent> implements View.OnClickListener, IMsgView {
 
     /* renamed from: a  reason: collision with root package name */
-    private ListView f31726a;
+    private ListView f18036a;
     private View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Unbinder f31727c;
+    private Unbinder f18037c;
     private HeaderHolder d;
     private ChatFriendListAdapter e;
     @BindView
@@ -70,7 +70,7 @@ public class MsgBoxFragment extends MvpFragment<MsgBoxPresent> implements View.O
             this.b = headerHolder;
             headerHolder.secretView = (TextView) Utils.a(view, R.id.tv_secreting, "field 'secretView'", TextView.class);
             headerHolder.rl_hint = (RelativeLayout) Utils.a(view, R.id.rl_hint, "field 'rl_hint'", RelativeLayout.class);
-            headerHolder.view_line = Utils.a(view, 2131373186, "field 'view_line'");
+            headerHolder.view_line = Utils.a(view, R.id.view_line, "field 'view_line'");
             headerHolder.iv_close = (ImageView) Utils.a(view, 2131365207, "field 'iv_close'", ImageView.class);
         }
 
@@ -88,18 +88,19 @@ public class MsgBoxFragment extends MvpFragment<MsgBoxPresent> implements View.O
         }
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private void b() {
         this.pullRefresh.setRefreshEnabled(false);
         this.pullRefresh.p();
-        this.f31726a = (ListView) this.pullRefresh.getRefreshableView();
+        this.f18036a = (ListView) this.pullRefresh.getRefreshableView();
         View inflate = View.inflate(getActivity(), R.layout.layout_msg_box_list_head_view, null);
         this.b = inflate;
-        this.f31726a.addHeaderView(inflate);
+        this.f18036a.addHeaderView(inflate);
         HeaderHolder headerHolder = new HeaderHolder();
         this.d = headerHolder;
-        this.f31727c = ButterKnife.a(headerHolder, this.b);
-        this.nodataview.setNoDataImg(R.drawable.msg_box_no_data);
-        this.nodataview.setNoDataStr(R.string.msg_box_no_data);
+        this.f18037c = ButterKnife.a(headerHolder, this.b);
+        this.nodataview.setNoDataImg((int) R.drawable.msg_box_no_data);
+        this.nodataview.setNoDataStr((int) R.string.msg_box_no_data);
         this.d.iv_close.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.MsgBoxFragment.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
@@ -116,14 +117,14 @@ public class MsgBoxFragment extends MvpFragment<MsgBoxPresent> implements View.O
         }
         ChatFriendListAdapter chatFriendListAdapter = new ChatFriendListAdapter(getFragmentActive(), this);
         this.e = chatFriendListAdapter;
-        this.f31726a.setAdapter((ListAdapter) chatFriendListAdapter);
-        this.f31726a.setOnItemClickListener(j().p());
-        this.f31726a.setOnItemLongClickListener(j().o());
+        this.f18036a.setAdapter((ListAdapter) chatFriendListAdapter);
+        this.f18036a.setOnItemClickListener(((MsgBoxPresent) j()).p());
+        this.f18036a.setOnItemLongClickListener(((MsgBoxPresent) j()).o());
         LiveEventBus.get(EventBusConstant.KEY_EVENT_REFRESH_SESSION_LIST, Void.class).observe(this, new Observer<Void>() { // from class: com.soft.blued.ui.msg.MsgBoxFragment.2
             @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(Void r3) {
-                MsgBoxFragment.this.j().q();
+                ((MsgBoxPresent) MsgBoxFragment.this.j()).q();
             }
         });
     }
@@ -137,21 +138,18 @@ public class MsgBoxFragment extends MvpFragment<MsgBoxPresent> implements View.O
         this.title.f();
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public void a(Bundle bundle) {
         super.a(bundle);
         c();
         b();
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void a(String str, List list) {
         super.a(str, list);
         if (!str.equals("session_list") || list == null) {
             return;
         }
         MvpUtils.a(list, SessionModel.class, new MvpUtils.DataListHandler<SessionModel>() { // from class: com.soft.blued.ui.msg.MsgBoxFragment.3
-            @Override // com.blued.android.framework.ui.mvp.MvpUtils.DataListHandler
             public void a() {
                 MsgBoxFragment.this.nodataview.setVisibility(0);
                 MsgBoxFragment.this.nodataview.a();
@@ -159,7 +157,6 @@ public class MsgBoxFragment extends MvpFragment<MsgBoxPresent> implements View.O
                 MsgBoxFragment.this.e.notifyDataSetChanged();
             }
 
-            @Override // com.blued.android.framework.ui.mvp.MvpUtils.DataListHandler
             public void a(List<SessionModel> list2) {
                 MsgBoxFragment.this.nodataview.setVisibility(8);
                 MsgBoxFragment.this.e.a(list2, false);
@@ -168,17 +165,15 @@ public class MsgBoxFragment extends MvpFragment<MsgBoxPresent> implements View.O
         });
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public void af_() {
         super.af_();
-        this.f31726a = null;
-        Unbinder unbinder = this.f31727c;
+        this.f18036a = null;
+        Unbinder unbinder = this.f18037c;
         if (unbinder != null) {
             unbinder.unbind();
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public int g() {
         return R.layout.fragment_msg_box;
     }
@@ -197,15 +192,13 @@ public class MsgBoxFragment extends MvpFragment<MsgBoxPresent> implements View.O
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onStart() {
         super.onStart();
-        j().m();
+        ((MsgBoxPresent) j()).m();
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onStop() {
         super.onStop();
-        j().n();
+        ((MsgBoxPresent) j()).n();
     }
 }

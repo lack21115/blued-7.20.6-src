@@ -1,6 +1,5 @@
 package com.google.android.gles_jni;
 
-import com.blued.das.live.LiveProtos;
 import javax.microedition.khronos.egl.EGLContext;
 import javax.microedition.khronos.opengles.GL;
 
@@ -26,6 +25,6 @@ public class EGLContextImpl extends EGLContext {
     }
 
     public int hashCode() {
-        return ((int) (this.mEGLContext ^ (this.mEGLContext >>> 32))) + LiveProtos.Event.LIVE_END_PAGE_CLOSE_CLICK_VALUE;
+        return ((int) (this.mEGLContext ^ (this.mEGLContext >>> 32))) + 527;
     }
 }

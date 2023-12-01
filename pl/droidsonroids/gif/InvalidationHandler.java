@@ -6,20 +6,19 @@ import android.os.Message;
 import java.lang.ref.WeakReference;
 import java.util.Iterator;
 
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-3503164-dex2jar.jar:pl/droidsonroids/gif/InvalidationHandler.class */
-class InvalidationHandler extends Handler {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final WeakReference<GifDrawable> f44164a;
+public class InvalidationHandler extends Handler {
+    private final WeakReference<GifDrawable> a;
 
     public InvalidationHandler(GifDrawable gifDrawable) {
         super(Looper.getMainLooper());
-        this.f44164a = new WeakReference<>(gifDrawable);
+        this.a = new WeakReference<>(gifDrawable);
     }
 
     @Override // android.os.Handler
     public void handleMessage(Message message) {
-        GifDrawable gifDrawable = this.f44164a.get();
+        GifDrawable gifDrawable = this.a.get();
         if (gifDrawable == null) {
             return;
         }

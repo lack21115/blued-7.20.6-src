@@ -252,7 +252,7 @@ public final class HashBiMap<K, V> extends AbstractMap<K, V> implements BiMap<K,
             return this.forward.values();
         }
 
-        @Override // java.util.AbstractMap, java.util.Map
+        @Override // java.util.AbstractMap, java.util.Map, com.google.common.collect.BiMap
         @NullableDecl
         public K put(@NullableDecl V v, @NullableDecl K k) {
             return this.forward.putInverse(v, k, false);
@@ -398,7 +398,7 @@ public final class HashBiMap<K, V> extends AbstractMap<K, V> implements BiMap<K,
 
         abstract T forEntry(int i);
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+        @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
         public Iterator<T> iterator() {
             return new Iterator<T>() { // from class: com.google.common.collect.HashBiMap.View.1
                 private int expectedModCount;
@@ -450,7 +450,7 @@ public final class HashBiMap<K, V> extends AbstractMap<K, V> implements BiMap<K,
             };
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
         public int size() {
             return this.biMap.size;
         }
@@ -896,7 +896,7 @@ public final class HashBiMap<K, V> extends AbstractMap<K, V> implements BiMap<K,
         return keySet;
     }
 
-    @Override // java.util.AbstractMap, java.util.Map
+    @Override // java.util.AbstractMap, java.util.Map, com.google.common.collect.BiMap
     public V put(@NullableDecl K k, @NullableDecl V v) {
         return put(k, v, false);
     }

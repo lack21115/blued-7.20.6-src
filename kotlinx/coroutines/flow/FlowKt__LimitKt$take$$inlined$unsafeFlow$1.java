@@ -9,9 +9,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt__LimitKt$take$$inlined$unsafeFlow$1.class */
 public final class FlowKt__LimitKt$take$$inlined$unsafeFlow$1<T> implements Flow<T> {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ Flow f43194a;
+    final /* synthetic */ Flow a;
     final /* synthetic */ int b;
 
     @Metadata
@@ -19,9 +17,7 @@ public final class FlowKt__LimitKt$take$$inlined$unsafeFlow$1<T> implements Flow
     /* renamed from: kotlinx.coroutines.flow.FlowKt__LimitKt$take$$inlined$unsafeFlow$1$1  reason: invalid class name */
     /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt__LimitKt$take$$inlined$unsafeFlow$1$1.class */
     public static final class AnonymousClass1 extends ContinuationImpl {
-
-        /* renamed from: a  reason: collision with root package name */
-        /* synthetic */ Object f43195a;
+        /* synthetic */ Object a;
         int b;
         Object d;
 
@@ -31,7 +27,7 @@ public final class FlowKt__LimitKt$take$$inlined$unsafeFlow$1<T> implements Flow
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Object invokeSuspend(Object obj) {
-            this.f43195a = obj;
+            this.a = obj;
             this.b |= Integer.MIN_VALUE;
             return FlowKt__LimitKt$take$$inlined$unsafeFlow$1.this.a(null, this);
         }

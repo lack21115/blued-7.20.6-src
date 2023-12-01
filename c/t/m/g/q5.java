@@ -22,11 +22,11 @@ public class q5 implements Parcelable, TencentLocation {
     public static final q5 q = new q5(-1);
 
     /* renamed from: a  reason: collision with root package name */
-    public n5 f3948a;
+    public n5 f3900a;
     public m5 b;
 
     /* renamed from: c  reason: collision with root package name */
-    public int f3949c;
+    public int f3901c;
     public int d;
     public String e;
     public int f;
@@ -50,22 +50,22 @@ public class q5 implements Parcelable, TencentLocation {
             n5 n5Var = new n5();
             l5 l5Var = new l5();
             p5 p5Var = new p5();
-            l5Var.f3875c = p5Var;
+            l5Var.f3827c = p5Var;
             q5Var.i = parcel.readString();
             q5Var.j = parcel.readString();
-            n5Var.f3896a = parcel.readDouble();
+            n5Var.f3848a = parcel.readDouble();
             n5Var.b = parcel.readDouble();
             n5Var.d = parcel.readFloat();
-            n5Var.f3897c = parcel.readDouble();
+            n5Var.f3849c = parcel.readDouble();
             n5Var.g = parcel.readString();
-            p5Var.f3933a = parcel.readString();
+            p5Var.f3885a = parcel.readString();
             p5Var.e = parcel.readString();
             p5Var.f = parcel.readString();
             p5Var.g = parcel.readString();
             p5Var.j = parcel.readString();
             p5Var.k = parcel.readString();
             p5Var.b = parcel.readString();
-            q5Var.f3948a = n5Var;
+            q5Var.f3900a = n5Var;
             q5Var.g = l5Var;
             q5Var.m = parcel.readLong();
             q5Var.n = parcel.readLong();
@@ -87,17 +87,17 @@ public class q5 implements Parcelable, TencentLocation {
     public static class b {
 
         /* renamed from: a  reason: collision with root package name */
-        public String f3950a;
+        public String f3902a;
         public q5 b;
 
         /* renamed from: c  reason: collision with root package name */
-        public int f3951c;
+        public int f3903c;
         public String d = "network";
         public Location e;
         public Bundle f;
 
         public b a(int i) {
-            this.f3951c = i;
+            this.f3903c = i;
             return this;
         }
 
@@ -117,13 +117,13 @@ public class q5 implements Parcelable, TencentLocation {
         }
 
         public b a(String str) {
-            this.f3950a = str;
+            this.f3902a = str;
             return this;
         }
 
         public q5 a() {
             q5 q5Var;
-            String str = this.f3950a;
+            String str = this.f3902a;
             if (str != null) {
                 try {
                     q5Var = new q5(str, (a) null);
@@ -133,12 +133,12 @@ public class q5 implements Parcelable, TencentLocation {
             } else {
                 q5Var = q5.c(this.b);
             }
-            q5Var.b(this.f3951c).a(this.d).a(this.e);
+            q5Var.b(this.f3903c).a(this.d).a(this.e);
             if (this.f != null) {
                 q5Var.h.putAll(this.f);
             }
             h5.a(q5Var, this.e);
-            n2.a(q5Var.h, "lastNetLocationTimeStampUseWifi", new Long(f6.f3812a), Long.class);
+            n2.a(q5Var.h, "lastNetLocationTimeStampUseWifi", new Long(f6.f3764a), Long.class);
             n2.a(q5Var.h, "lastNetLocationTimeStampUseCellOnly", new Long(f6.b), Long.class);
             return q5Var;
         }
@@ -153,7 +153,7 @@ public class q5 implements Parcelable, TencentLocation {
         this.h = new Bundle(9);
         this.i = "network";
         this.j = "wifi";
-        this.f3949c = i;
+        this.f3901c = i;
         this.l = SystemClock.elapsedRealtime();
         this.m = System.currentTimeMillis();
     }
@@ -171,7 +171,7 @@ public class q5 implements Parcelable, TencentLocation {
         this.m = System.currentTimeMillis();
         JSONObject jSONObject = new JSONObject(str);
         try {
-            this.f3948a = new n5(jSONObject.getJSONObject("location"));
+            this.f3900a = new n5(jSONObject.getJSONObject("location"));
             try {
                 this.b = new m5(jSONObject.getJSONObject("indoorinfo"));
             } catch (Throwable th) {
@@ -202,7 +202,7 @@ public class q5 implements Parcelable, TencentLocation {
                 }
             }
             l5 l5Var = this.g;
-            if (l5Var == null || (p5Var = l5Var.f3875c) == null) {
+            if (l5Var == null || (p5Var = l5Var.f3827c) == null) {
                 return;
             }
             this.h.putAll(p5Var.m);
@@ -217,16 +217,16 @@ public class q5 implements Parcelable, TencentLocation {
 
     public static q5 a(q5 q5Var, q5 q5Var2) {
         if (q5Var != null && q5Var2 != null) {
-            n5 n5Var = q5Var2.f3948a;
+            n5 n5Var = q5Var2.f3900a;
             if (n5Var != null) {
-                n5 n5Var2 = q5Var.f3948a;
+                n5 n5Var2 = q5Var.f3900a;
                 n5 n5Var3 = n5Var2;
                 if (n5Var2 == null) {
                     n5Var3 = new n5();
                 }
                 n5Var3.f = n5Var.f;
                 n5Var3.g = n5Var.g;
-                q5Var.f3948a = n5Var3;
+                q5Var.f3900a = n5Var3;
             }
             q5Var.g = l5.a(q5Var2.g);
         }
@@ -243,7 +243,7 @@ public class q5 implements Parcelable, TencentLocation {
                     i = Integer.parseInt(str.split(",")[1]);
                 }
             }
-            n5 n5Var = q5Var.f3948a;
+            n5 n5Var = q5Var.f3900a;
             if (n5Var != null) {
                 try {
                     n5Var.d = (float) SoUtils.fun_r(n5Var.d, i, -70);
@@ -263,11 +263,11 @@ public class q5 implements Parcelable, TencentLocation {
     public static q5 c(q5 q5Var) {
         q5 q5Var2 = new q5(-1);
         if (q5Var == null) {
-            q5Var2.f3948a = new n5();
+            q5Var2.f3900a = new n5();
             return q5Var2;
         }
-        q5Var2.f3948a = n5.a(q5Var.f3948a);
-        q5Var2.f3949c = q5Var.f3949c;
+        q5Var2.f3900a = n5.a(q5Var.f3900a);
+        q5Var2.f3901c = q5Var.f3901c;
         q5Var2.e = q5Var.e;
         q5Var2.g = l5.a(q5Var.g);
         if (q5Var.h.size() > 0) {
@@ -330,8 +330,8 @@ public class q5 implements Parcelable, TencentLocation {
     }
 
     public void a(double d, double d2) {
-        this.f3948a.f3896a = Math.round(d * 1000000.0d) / 1000000.0d;
-        this.f3948a.b = Math.round(d2 * 1000000.0d) / 1000000.0d;
+        this.f3900a.f3848a = Math.round(d * 1000000.0d) / 1000000.0d;
+        this.f3900a.b = Math.round(d2 * 1000000.0d) / 1000000.0d;
     }
 
     public void a(int i) {
@@ -339,31 +339,31 @@ public class q5 implements Parcelable, TencentLocation {
     }
 
     public final q5 b(int i) {
-        this.f3949c = i;
+        this.f3901c = i;
         return this;
     }
 
     public String b() {
         l5 l5Var = this.g;
         if (l5Var != null) {
-            return l5Var.f3875c.f3934c;
+            return l5Var.f3827c.f3886c;
         }
         return null;
     }
 
     public void b(Location location) {
-        if (location == null || this.f3948a == null) {
+        if (location == null || this.f3900a == null) {
             return;
         }
         double latitude = location.getLatitude();
         double longitude = location.getLongitude();
         double round = Math.round(latitude * 1000000.0d) / 1000000.0d;
         double round2 = Math.round(longitude * 1000000.0d) / 1000000.0d;
-        n5 n5Var = this.f3948a;
-        n5Var.f3896a = round;
+        n5 n5Var = this.f3900a;
+        n5Var.f3848a = round;
         n5Var.b = round2;
-        n5Var.f3897c = location.getAltitude();
-        this.f3948a.d = location.getAccuracy();
+        n5Var.f3849c = location.getAltitude();
+        this.f3900a.d = location.getAccuracy();
     }
 
     public long c() {
@@ -396,7 +396,7 @@ public class q5 implements Parcelable, TencentLocation {
 
     @Override // com.tencent.map.geolocation.TencentLocation
     public float getAccuracy() {
-        n5 n5Var = this.f3948a;
+        n5 n5Var = this.f3900a;
         if (n5Var != null) {
             return n5Var.d;
         }
@@ -405,7 +405,7 @@ public class q5 implements Parcelable, TencentLocation {
 
     @Override // com.tencent.map.geolocation.TencentLocation
     public String getAddress() {
-        int i = this.f3949c;
+        int i = this.f3901c;
         if (i == 5) {
             return this.h.getString("addrdesp.name");
         }
@@ -413,11 +413,11 @@ public class q5 implements Parcelable, TencentLocation {
         if (i == 3) {
             l5 l5Var = this.g;
             if (l5Var != null) {
-                str = l5Var.f3875c.l;
+                str = l5Var.f3827c.l;
             }
             return str;
         }
-        n5 n5Var = this.f3948a;
+        n5 n5Var = this.f3900a;
         String str2 = null;
         if (n5Var != null) {
             str2 = n5Var.g;
@@ -427,9 +427,9 @@ public class q5 implements Parcelable, TencentLocation {
 
     @Override // com.tencent.map.geolocation.TencentLocation
     public double getAltitude() {
-        n5 n5Var = this.f3948a;
+        n5 n5Var = this.f3900a;
         if (n5Var != null) {
-            return n5Var.f3897c;
+            return n5Var.f3849c;
         }
         return 0.0d;
     }
@@ -438,7 +438,7 @@ public class q5 implements Parcelable, TencentLocation {
     public Integer getAreaStat() {
         l5 l5Var = this.g;
         if (l5Var != null) {
-            return Integer.valueOf(l5Var.f3874a);
+            return Integer.valueOf(l5Var.f3826a);
         }
         return null;
     }
@@ -456,7 +456,7 @@ public class q5 implements Parcelable, TencentLocation {
     public String getCity() {
         l5 l5Var = this.g;
         if (l5Var != null) {
-            return l5Var.f3875c.f;
+            return l5Var.f3827c.f;
         }
         return null;
     }
@@ -465,7 +465,7 @@ public class q5 implements Parcelable, TencentLocation {
     public String getCityCode() {
         l5 l5Var = this.g;
         if (l5Var != null) {
-            return l5Var.f3875c.f3934c;
+            return l5Var.f3827c.f3886c;
         }
         return null;
     }
@@ -474,7 +474,7 @@ public class q5 implements Parcelable, TencentLocation {
     public String getCityPhoneCode() {
         l5 l5Var = this.g;
         if (l5Var != null) {
-            return l5Var.f3875c.d;
+            return l5Var.f3827c.d;
         }
         return null;
     }
@@ -497,7 +497,7 @@ public class q5 implements Parcelable, TencentLocation {
     public String getDistrict() {
         l5 l5Var = this.g;
         if (l5Var != null) {
-            return l5Var.f3875c.g;
+            return l5Var.f3827c.g;
         }
         return null;
     }
@@ -542,7 +542,7 @@ public class q5 implements Parcelable, TencentLocation {
     public String getIndoorBuildingId() {
         m5 m5Var = this.b;
         if (m5Var != null) {
-            return m5Var.f3884a;
+            return m5Var.f3836a;
         }
         return null;
     }
@@ -551,23 +551,23 @@ public class q5 implements Parcelable, TencentLocation {
     public int getIndoorLocationType() {
         m5 m5Var = this.b;
         if (m5Var != null) {
-            return m5Var.f3885c;
+            return m5Var.f3837c;
         }
         return -1;
     }
 
     @Override // com.tencent.map.geolocation.TencentLocation
     public double getLatitude() {
-        n5 n5Var = this.f3948a;
+        n5 n5Var = this.f3900a;
         if (n5Var != null) {
-            return n5Var.f3896a;
+            return n5Var.f3848a;
         }
         return 0.0d;
     }
 
     @Override // com.tencent.map.geolocation.TencentLocation
     public double getLongitude() {
-        n5 n5Var = this.f3948a;
+        n5 n5Var = this.f3900a;
         if (n5Var != null) {
             return n5Var.b;
         }
@@ -576,7 +576,7 @@ public class q5 implements Parcelable, TencentLocation {
 
     @Override // com.tencent.map.geolocation.TencentLocation
     public String getName() {
-        int i = this.f3949c;
+        int i = this.f3901c;
         if (i == 5) {
             return this.h.getString("addrdesp.name");
         }
@@ -584,11 +584,11 @@ public class q5 implements Parcelable, TencentLocation {
         if (i == 3) {
             l5 l5Var = this.g;
             if (l5Var != null) {
-                str = l5Var.f3875c.b;
+                str = l5Var.f3827c.b;
             }
             return str;
         }
-        n5 n5Var = this.f3948a;
+        n5 n5Var = this.f3900a;
         String str2 = null;
         if (n5Var != null) {
             str2 = n5Var.f;
@@ -600,7 +600,7 @@ public class q5 implements Parcelable, TencentLocation {
     public String getNation() {
         l5 l5Var = this.g;
         if (l5Var != null) {
-            return l5Var.f3875c.f3933a;
+            return l5Var.f3827c.f3885a;
         }
         return null;
     }
@@ -623,7 +623,7 @@ public class q5 implements Parcelable, TencentLocation {
     @Override // com.tencent.map.geolocation.TencentLocation
     public String getProvince() {
         l5 l5Var = this.g;
-        return l5Var != null ? l5Var.f3875c.e : "";
+        return l5Var != null ? l5Var.f3827c.e : "";
     }
 
     @Override // com.tencent.map.geolocation.TencentLocation
@@ -644,7 +644,7 @@ public class q5 implements Parcelable, TencentLocation {
     public String getStreet() {
         l5 l5Var = this.g;
         if (l5Var != null) {
-            return l5Var.f3875c.j;
+            return l5Var.f3827c.j;
         }
         return null;
     }
@@ -653,7 +653,7 @@ public class q5 implements Parcelable, TencentLocation {
     public String getStreetNo() {
         l5 l5Var = this.g;
         if (l5Var != null) {
-            return l5Var.f3875c.k;
+            return l5Var.f3827c.k;
         }
         return null;
     }
@@ -667,7 +667,7 @@ public class q5 implements Parcelable, TencentLocation {
     public String getTown() {
         l5 l5Var = this.g;
         if (l5Var != null) {
-            return l5Var.f3875c.h;
+            return l5Var.f3827c.h;
         }
         return null;
     }
@@ -676,7 +676,7 @@ public class q5 implements Parcelable, TencentLocation {
     public String getVillage() {
         l5 l5Var = this.g;
         if (l5Var != null) {
-            return l5Var.f3875c.i;
+            return l5Var.f3827c.i;
         }
         return null;
     }
@@ -685,7 +685,7 @@ public class q5 implements Parcelable, TencentLocation {
     public String getadCode() {
         l5 l5Var = this.g;
         if (l5Var != null) {
-            return l5Var.f3875c.f3934c;
+            return l5Var.f3827c.f3886c;
         }
         return null;
     }
@@ -698,7 +698,7 @@ public class q5 implements Parcelable, TencentLocation {
     public String toString() {
         StringBuilder sb = new StringBuilder("TxLocation{");
         sb.append("level=");
-        sb.append(this.f3949c);
+        sb.append(this.f3901c);
         sb.append(",");
         sb.append("name=");
         sb.append(getName());
@@ -772,13 +772,13 @@ public class q5 implements Parcelable, TencentLocation {
             sb.append(",");
         }
         sb.append("]");
-        sb.append(com.alipay.sdk.util.i.d);
+        sb.append("}");
         return sb.toString();
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeInt(this.f3949c);
+        parcel.writeInt(this.f3901c);
         parcel.writeString(getProvider());
         parcel.writeDouble(getLatitude());
         parcel.writeDouble(getLongitude());

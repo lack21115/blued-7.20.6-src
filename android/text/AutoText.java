@@ -4,7 +4,6 @@ import android.content.res.Resources;
 import android.content.res.XmlResourceParser;
 import android.provider.UserDictionary;
 import android.view.View;
-import com.android.internal.R;
 import com.android.internal.util.XmlUtils;
 import com.cdo.oaps.ad.OapsKey;
 import java.io.IOException;
@@ -102,7 +101,7 @@ public class AutoText {
 
     private void init(Resources resources) {
         char length;
-        XmlResourceParser xml = resources.getXml(R.xml.autotext);
+        XmlResourceParser xml = resources.getXml(17891330);
         StringBuilder sb = new StringBuilder((int) RIGHT);
         this.mTrie = new char[14337];
         this.mTrie[0] = 65535;

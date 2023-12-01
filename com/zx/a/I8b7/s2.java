@@ -14,11 +14,11 @@ import android.widget.TextView;
 public class s2 extends Dialog {
 
     /* renamed from: a  reason: collision with root package name */
-    public View.OnClickListener f42196a;
+    public View.OnClickListener f28505a;
     public View.OnClickListener b;
 
     /* renamed from: c  reason: collision with root package name */
-    public View.OnClickListener f42197c;
+    public View.OnClickListener f28506c;
 
     public s2(Context context) {
         super(context);
@@ -84,9 +84,9 @@ public class s2 extends Dialog {
         linearLayout.addView(textView3);
         linearLayout.addView(textView4);
         setContentView(linearLayout);
-        textView4.setOnClickListener(this.f42196a);
+        textView4.setOnClickListener(this.f28505a);
         textView3.setOnClickListener(this.b);
-        textView2.setOnClickListener(this.f42197c);
+        textView2.setOnClickListener(this.f28506c);
         setCancelable(false);
     }
 }

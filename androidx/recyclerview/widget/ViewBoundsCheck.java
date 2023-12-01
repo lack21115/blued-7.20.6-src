@@ -4,24 +4,22 @@ import android.view.View;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8756600-dex2jar.jar:androidx/recyclerview/widget/ViewBoundsCheck.class */
-public class ViewBoundsCheck {
+class ViewBoundsCheck {
 
     /* renamed from: a  reason: collision with root package name */
-    final Callback f3361a;
+    final Callback f3313a;
     BoundFlags b = new BoundFlags();
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8756600-dex2jar.jar:androidx/recyclerview/widget/ViewBoundsCheck$BoundFlags.class */
-    public static class BoundFlags {
+    static class BoundFlags {
 
         /* renamed from: a  reason: collision with root package name */
-        int f3362a = 0;
+        int f3314a = 0;
         int b;
 
         /* renamed from: c  reason: collision with root package name */
-        int f3363c;
+        int f3315c;
         int d;
         int e;
 
@@ -36,29 +34,29 @@ public class ViewBoundsCheck {
         }
 
         void a() {
-            this.f3362a = 0;
+            this.f3314a = 0;
         }
 
         void a(int i) {
-            this.f3362a = i | this.f3362a;
+            this.f3314a = i | this.f3314a;
         }
 
         void a(int i, int i2, int i3, int i4) {
             this.b = i;
-            this.f3363c = i2;
+            this.f3315c = i2;
             this.d = i3;
             this.e = i4;
         }
 
         boolean b() {
-            int i = this.f3362a;
+            int i = this.f3314a;
             if ((i & 7) == 0 || (i & (a(this.d, this.b) << 0)) != 0) {
-                int i2 = this.f3362a;
-                if ((i2 & 112) == 0 || (i2 & (a(this.d, this.f3363c) << 4)) != 0) {
-                    int i3 = this.f3362a;
+                int i2 = this.f3314a;
+                if ((i2 & 112) == 0 || (i2 & (a(this.d, this.f3315c) << 4)) != 0) {
+                    int i3 = this.f3314a;
                     if ((i3 & 1792) == 0 || (i3 & (a(this.e, this.b) << 8)) != 0) {
-                        int i4 = this.f3362a;
-                        return (i4 & 28672) == 0 || (i4 & (a(this.e, this.f3363c) << 12)) != 0;
+                        int i4 = this.f3314a;
+                        return (i4 & 28672) == 0 || (i4 & (a(this.e, this.f3315c) << 12)) != 0;
                     }
                     return false;
                 }
@@ -68,9 +66,8 @@ public class ViewBoundsCheck {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8756600-dex2jar.jar:androidx/recyclerview/widget/ViewBoundsCheck$Callback.class */
-    public interface Callback {
+    interface Callback {
         View getChildAt(int i);
 
         int getChildEnd(View view);
@@ -89,13 +86,13 @@ public class ViewBoundsCheck {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public ViewBoundsCheck(Callback callback) {
-        this.f3361a = callback;
+        this.f3313a = callback;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public View a(int i, int i2, int i3, int i4) {
-        int parentStart = this.f3361a.getParentStart();
-        int parentEnd = this.f3361a.getParentEnd();
+        int parentStart = this.f3313a.getParentStart();
+        int parentEnd = this.f3313a.getParentEnd();
         int i5 = i2 > i ? 1 : -1;
         View view = null;
         while (true) {
@@ -103,8 +100,8 @@ public class ViewBoundsCheck {
             if (i == i2) {
                 return view2;
             }
-            View childAt = this.f3361a.getChildAt(i);
-            this.b.a(parentStart, parentEnd, this.f3361a.getChildStart(childAt), this.f3361a.getChildEnd(childAt));
+            View childAt = this.f3313a.getChildAt(i);
+            this.b.a(parentStart, parentEnd, this.f3313a.getChildStart(childAt), this.f3313a.getChildEnd(childAt));
             if (i3 != 0) {
                 this.b.a();
                 this.b.a(i3);
@@ -128,7 +125,7 @@ public class ViewBoundsCheck {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public boolean a(View view, int i) {
-        this.b.a(this.f3361a.getParentStart(), this.f3361a.getParentEnd(), this.f3361a.getChildStart(view), this.f3361a.getChildEnd(view));
+        this.b.a(this.f3313a.getParentStart(), this.f3313a.getParentEnd(), this.f3313a.getChildStart(view), this.f3313a.getChildEnd(view));
         if (i != 0) {
             this.b.a();
             this.b.a(i);

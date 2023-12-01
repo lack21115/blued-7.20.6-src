@@ -23,11 +23,11 @@ public abstract class JobIntentService extends Service {
     static final HashMap<ComponentName, WorkEnqueuer> i = new HashMap<>();
 
     /* renamed from: a  reason: collision with root package name */
-    CompatJobEngine f2330a;
+    CompatJobEngine f2282a;
     WorkEnqueuer b;
 
     /* renamed from: c  reason: collision with root package name */
-    CommandProcessor f2331c;
+    CommandProcessor f2283c;
     boolean d = false;
     boolean e = false;
     boolean f = false;
@@ -81,7 +81,7 @@ public abstract class JobIntentService extends Service {
     public static final class CompatWorkEnqueuer extends WorkEnqueuer {
 
         /* renamed from: a  reason: collision with root package name */
-        boolean f2333a;
+        boolean f2285a;
         boolean b;
         private final Context f;
         private final PowerManager.WakeLock g;
@@ -90,7 +90,7 @@ public abstract class JobIntentService extends Service {
         CompatWorkEnqueuer(Context context, ComponentName componentName) {
             super(componentName);
             this.f = context.getApplicationContext();
-            PowerManager powerManager = (PowerManager) context.getSystemService("power");
+            PowerManager powerManager = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
             PowerManager.WakeLock newWakeLock = powerManager.newWakeLock(1, componentName.getClassName() + ":launch");
             this.g = newWakeLock;
             newWakeLock.setReferenceCounted(false);
@@ -102,11 +102,11 @@ public abstract class JobIntentService extends Service {
         @Override // androidx.core.app.JobIntentService.WorkEnqueuer
         void a(Intent intent) {
             Intent intent2 = new Intent(intent);
-            intent2.setComponent(this.f2340c);
+            intent2.setComponent(this.f2292c);
             if (this.f.startService(intent2) != null) {
                 synchronized (this) {
-                    if (!this.f2333a) {
-                        this.f2333a = true;
+                    if (!this.f2285a) {
+                        this.f2285a = true;
                         if (!this.b) {
                             this.g.acquire(60000L);
                         }
@@ -119,7 +119,7 @@ public abstract class JobIntentService extends Service {
         public void serviceProcessingFinished() {
             synchronized (this) {
                 if (this.b) {
-                    if (this.f2333a) {
+                    if (this.f2285a) {
                         this.g.acquire(60000L);
                     }
                     this.b = false;
@@ -142,7 +142,7 @@ public abstract class JobIntentService extends Service {
         @Override // androidx.core.app.JobIntentService.WorkEnqueuer
         public void serviceStartReceived() {
             synchronized (this) {
-                this.f2333a = false;
+                this.f2285a = false;
             }
         }
     }
@@ -152,11 +152,11 @@ public abstract class JobIntentService extends Service {
     public final class CompatWorkItem implements GenericWorkItem {
 
         /* renamed from: a  reason: collision with root package name */
-        final Intent f2334a;
+        final Intent f2286a;
         final int b;
 
         CompatWorkItem(Intent intent, int i) {
-            this.f2334a = intent;
+            this.f2286a = intent;
             this.b = i;
         }
 
@@ -167,7 +167,7 @@ public abstract class JobIntentService extends Service {
 
         @Override // androidx.core.app.JobIntentService.GenericWorkItem
         public Intent getIntent() {
-            return this.f2334a;
+            return this.f2286a;
         }
     }
 
@@ -183,41 +183,41 @@ public abstract class JobIntentService extends Service {
     static final class JobServiceEngineImpl extends JobServiceEngine implements CompatJobEngine {
 
         /* renamed from: a  reason: collision with root package name */
-        final JobIntentService f2336a;
+        final JobIntentService f2288a;
         final Object b;
 
         /* renamed from: c  reason: collision with root package name */
-        JobParameters f2337c;
+        JobParameters f2289c;
 
         /* loaded from: source-8756600-dex2jar.jar:androidx/core/app/JobIntentService$JobServiceEngineImpl$WrapperWorkItem.class */
         final class WrapperWorkItem implements GenericWorkItem {
 
             /* renamed from: a  reason: collision with root package name */
-            final JobWorkItem f2338a;
+            final JobWorkItem f2290a;
 
             WrapperWorkItem(JobWorkItem jobWorkItem) {
-                this.f2338a = jobWorkItem;
+                this.f2290a = jobWorkItem;
             }
 
             @Override // androidx.core.app.JobIntentService.GenericWorkItem
             public void complete() {
                 synchronized (JobServiceEngineImpl.this.b) {
-                    if (JobServiceEngineImpl.this.f2337c != null) {
-                        JobServiceEngineImpl.this.f2337c.completeWork(this.f2338a);
+                    if (JobServiceEngineImpl.this.f2289c != null) {
+                        JobServiceEngineImpl.this.f2289c.completeWork(this.f2290a);
                     }
                 }
             }
 
             @Override // androidx.core.app.JobIntentService.GenericWorkItem
             public Intent getIntent() {
-                return this.f2338a.getIntent();
+                return this.f2290a.getIntent();
             }
         }
 
         JobServiceEngineImpl(JobIntentService jobIntentService) {
             super(jobIntentService);
             this.b = new Object();
-            this.f2336a = jobIntentService;
+            this.f2288a = jobIntentService;
         }
 
         @Override // androidx.core.app.JobIntentService.CompatJobEngine
@@ -228,12 +228,12 @@ public abstract class JobIntentService extends Service {
         @Override // androidx.core.app.JobIntentService.CompatJobEngine
         public GenericWorkItem dequeueWork() {
             synchronized (this.b) {
-                if (this.f2337c == null) {
+                if (this.f2289c == null) {
                     return null;
                 }
-                JobWorkItem dequeueWork = this.f2337c.dequeueWork();
+                JobWorkItem dequeueWork = this.f2289c.dequeueWork();
                 if (dequeueWork != null) {
-                    dequeueWork.getIntent().setExtrasClassLoader(this.f2336a.getClassLoader());
+                    dequeueWork.getIntent().setExtrasClassLoader(this.f2288a.getClassLoader());
                     return new WrapperWorkItem(dequeueWork);
                 }
                 return null;
@@ -242,16 +242,16 @@ public abstract class JobIntentService extends Service {
 
         @Override // android.app.job.JobServiceEngine
         public boolean onStartJob(JobParameters jobParameters) {
-            this.f2337c = jobParameters;
-            this.f2336a.a(false);
+            this.f2289c = jobParameters;
+            this.f2288a.a(false);
             return true;
         }
 
         @Override // android.app.job.JobServiceEngine
         public boolean onStopJob(JobParameters jobParameters) {
-            boolean a2 = this.f2336a.a();
+            boolean a2 = this.f2288a.a();
             synchronized (this.b) {
-                this.f2337c = null;
+                this.f2289c = null;
             }
             return a2;
         }
@@ -262,19 +262,19 @@ public abstract class JobIntentService extends Service {
     public static final class JobWorkEnqueuer extends WorkEnqueuer {
 
         /* renamed from: a  reason: collision with root package name */
-        private final JobInfo f2339a;
+        private final JobInfo f2291a;
         private final JobScheduler b;
 
         JobWorkEnqueuer(Context context, ComponentName componentName, int i) {
             super(componentName);
             a(i);
-            this.f2339a = new JobInfo.Builder(i, this.f2340c).setOverrideDeadline(0L).build();
+            this.f2291a = new JobInfo.Builder(i, this.f2292c).setOverrideDeadline(0L).build();
             this.b = (JobScheduler) context.getApplicationContext().getSystemService(Context.JOB_SCHEDULER_SERVICE);
         }
 
         @Override // androidx.core.app.JobIntentService.WorkEnqueuer
         void a(Intent intent) {
-            this.b.enqueue(this.f2339a, new JobWorkItem(intent));
+            this.b.enqueue(this.f2291a, new JobWorkItem(intent));
         }
     }
 
@@ -283,12 +283,12 @@ public abstract class JobIntentService extends Service {
     public static abstract class WorkEnqueuer {
 
         /* renamed from: c  reason: collision with root package name */
-        final ComponentName f2340c;
+        final ComponentName f2292c;
         boolean d;
         int e;
 
         WorkEnqueuer(ComponentName componentName) {
-            this.f2340c = componentName;
+            this.f2292c = componentName;
         }
 
         void a(int i) {
@@ -357,18 +357,18 @@ public abstract class JobIntentService extends Service {
     protected abstract void a(Intent intent);
 
     void a(boolean z) {
-        if (this.f2331c == null) {
-            this.f2331c = new CommandProcessor();
+        if (this.f2283c == null) {
+            this.f2283c = new CommandProcessor();
             WorkEnqueuer workEnqueuer = this.b;
             if (workEnqueuer != null && z) {
                 workEnqueuer.serviceProcessingStarted();
             }
-            this.f2331c.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, new Void[0]);
+            this.f2283c.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, new Void[0]);
         }
     }
 
     boolean a() {
-        CommandProcessor commandProcessor = this.f2331c;
+        CommandProcessor commandProcessor = this.f2283c;
         if (commandProcessor != null) {
             commandProcessor.cancel(this.d);
         }
@@ -380,7 +380,7 @@ public abstract class JobIntentService extends Service {
         ArrayList<CompatWorkItem> arrayList = this.g;
         if (arrayList != null) {
             synchronized (arrayList) {
-                this.f2331c = null;
+                this.f2283c = null;
                 if (this.g != null && this.g.size() > 0) {
                     a(false);
                 } else if (!this.f) {
@@ -391,7 +391,7 @@ public abstract class JobIntentService extends Service {
     }
 
     GenericWorkItem c() {
-        CompatJobEngine compatJobEngine = this.f2330a;
+        CompatJobEngine compatJobEngine = this.f2282a;
         if (compatJobEngine != null) {
             return compatJobEngine.dequeueWork();
         }
@@ -409,7 +409,7 @@ public abstract class JobIntentService extends Service {
 
     @Override // android.app.Service
     public IBinder onBind(Intent intent) {
-        CompatJobEngine compatJobEngine = this.f2330a;
+        CompatJobEngine compatJobEngine = this.f2282a;
         if (compatJobEngine != null) {
             return compatJobEngine.compatGetBinder();
         }
@@ -420,11 +420,11 @@ public abstract class JobIntentService extends Service {
     public void onCreate() {
         super.onCreate();
         if (Build.VERSION.SDK_INT >= 26) {
-            this.f2330a = new JobServiceEngineImpl(this);
+            this.f2282a = new JobServiceEngineImpl(this);
             this.b = null;
             return;
         }
-        this.f2330a = null;
+        this.f2282a = null;
         this.b = a(this, new ComponentName(this, getClass()), false, 0);
     }
 

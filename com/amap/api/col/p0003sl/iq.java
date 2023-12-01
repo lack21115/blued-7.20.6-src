@@ -1,16 +1,15 @@
 package com.amap.api.col.p0003sl;
 
 import android.os.Build;
-import com.igexin.assist.util.AssistUtils;
 
 /* renamed from: com.amap.api.col.3sl.iq  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/iq.class */
 public enum iq {
-    MIUI(AssistUtils.BRAND_XIAOMI),
-    Flyme(AssistUtils.BRAND_MZ),
-    EMUI(AssistUtils.BRAND_HW),
-    ColorOS(AssistUtils.BRAND_OPPO),
-    FuntouchOS(AssistUtils.BRAND_VIVO),
+    MIUI("xiaomi"),
+    Flyme("meizu"),
+    EMUI("huawei"),
+    ColorOS("oppo"),
+    FuntouchOS("vivo"),
     SmartisanOS("smartisan"),
     AmigoOS("amigo"),
     EUI("letv"),

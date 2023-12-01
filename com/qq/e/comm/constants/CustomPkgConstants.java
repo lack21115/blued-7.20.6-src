@@ -13,11 +13,11 @@ import com.qq.e.comm.managers.setting.GlobalSetting;
 public class CustomPkgConstants {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f27905a = DownloadService.class.getName();
+    private static final String f14217a = DownloadService.class.getName();
     private static final String b = ADActivity.class.getName();
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f27906c = PortraitADActivity.class.getName();
+    private static final String f14218c = PortraitADActivity.class.getName();
     private static final String d = RewardvideoPortraitADActivity.class.getName();
     private static final String e = LandscapeADActivity.class.getName();
     private static final String f = RewardvideoLandscapeADActivity.class.getName();
@@ -32,7 +32,7 @@ public class CustomPkgConstants {
     }
 
     public static String getDownLoadServiceName() {
-        return f27905a;
+        return f14217a;
     }
 
     public static String getLandscapeADActivityName() {
@@ -42,7 +42,7 @@ public class CustomPkgConstants {
 
     public static String getPortraitADActivityName() {
         String customPortraitActivityClassName = GlobalSetting.getCustomPortraitActivityClassName();
-        return !TextUtils.isEmpty(customPortraitActivityClassName) ? customPortraitActivityClassName : f27906c;
+        return !TextUtils.isEmpty(customPortraitActivityClassName) ? customPortraitActivityClassName : f14218c;
     }
 
     public static String getRewardvideoLandscapeADActivityName() {

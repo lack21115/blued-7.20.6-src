@@ -11,7 +11,7 @@ import kotlin.Metadata;
 public final class CommEventBusUtil {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final CommEventBusUtil f20461a = new CommEventBusUtil();
+    public static final CommEventBusUtil f6855a = new CommEventBusUtil();
 
     private CommEventBusUtil() {
     }

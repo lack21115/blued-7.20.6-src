@@ -99,14 +99,14 @@ public final class ProtoWriter {
         }
     }
 
-    public ProtoWriter(BufferedSink sink) {
-        Intrinsics.e(sink, "sink");
-        this.sink = sink;
+    public ProtoWriter(BufferedSink bufferedSink) {
+        Intrinsics.e(bufferedSink, "sink");
+        this.sink = bufferedSink;
     }
 
-    public final void writeBytes(ByteString value) throws IOException {
-        Intrinsics.e(value, "value");
-        this.sink.write(value);
+    public final void writeBytes(ByteString byteString) throws IOException {
+        Intrinsics.e(byteString, "value");
+        this.sink.write(byteString);
     }
 
     public final void writeFixed32(int i) throws IOException {
@@ -125,9 +125,9 @@ public final class ProtoWriter {
         }
     }
 
-    public final void writeString(String value) throws IOException {
-        Intrinsics.e(value, "value");
-        this.sink.writeUtf8(value);
+    public final void writeString(String str) throws IOException {
+        Intrinsics.e(str, "value");
+        this.sink.writeUtf8(str);
     }
 
     public final void writeTag(int i, FieldEncoding fieldEncoding) throws IOException {

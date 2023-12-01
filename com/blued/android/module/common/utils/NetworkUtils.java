@@ -1,8 +1,8 @@
 package com.blued.android.module.common.utils;
 
-import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import com.android.internal.util.cm.QSConstants;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.AppMethods;
 import com.blued.android.framework.utils.Logger;
@@ -10,25 +10,23 @@ import com.blued.android.module.common.R;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/utils/NetworkUtils.class */
 public class NetworkUtils {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final String f10889a = NetworkUtils.class.getSimpleName();
+    private static final String a = NetworkUtils.class.getSimpleName();
 
     public static boolean a() {
-        NetworkInfo activeNetworkInfo = ((ConnectivityManager) AppInfo.d().getSystemService(Context.CONNECTIVITY_SERVICE)).getActiveNetworkInfo();
+        NetworkInfo activeNetworkInfo = ((ConnectivityManager) AppInfo.d().getSystemService("connectivity")).getActiveNetworkInfo();
         if (activeNetworkInfo == null || !activeNetworkInfo.isAvailable()) {
             return false;
         }
         if (activeNetworkInfo == null || activeNetworkInfo.getType() != 1) {
-            Logger.b(f10889a, "  正常联网的非wifi状态");
+            Logger.b(a, "  正常联网的非wifi状态");
             return true;
         }
-        Logger.b(f10889a, "  wifi状态");
+        Logger.b(a, "  wifi状态");
         return false;
     }
 
     public static boolean b() {
-        NetworkInfo activeNetworkInfo = ((ConnectivityManager) AppInfo.d().getSystemService(Context.CONNECTIVITY_SERVICE)).getActiveNetworkInfo();
+        NetworkInfo activeNetworkInfo = ((ConnectivityManager) AppInfo.d().getSystemService("connectivity")).getActiveNetworkInfo();
         return activeNetworkInfo != null && activeNetworkInfo.isAvailable();
     }
 
@@ -42,7 +40,7 @@ public class NetworkUtils {
 
     public static String d() {
         try {
-            NetworkInfo activeNetworkInfo = ((ConnectivityManager) AppInfo.d().getSystemService(Context.CONNECTIVITY_SERVICE)).getActiveNetworkInfo();
+            NetworkInfo activeNetworkInfo = ((ConnectivityManager) AppInfo.d().getSystemService("connectivity")).getActiveNetworkInfo();
             String str = "";
             if (activeNetworkInfo != null) {
                 str = "";
@@ -81,7 +79,7 @@ public class NetworkUtils {
                             }
                         }
                     } else {
-                        return "wifi";
+                        return QSConstants.TILE_WIFI;
                     }
                 }
             }

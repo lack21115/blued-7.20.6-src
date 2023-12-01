@@ -35,13 +35,9 @@ import com.blued.android.module.yy_china.model.YYMsgJsonGiftExtra;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/GiftBaseHitView.class */
 public class GiftBaseHitView extends LinearLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f17932a;
+    private String a;
     private View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private ImageView f17933c;
+    private ImageView c;
     private ShapeTextView d;
     private TextView e;
     private TextView f;
@@ -68,7 +64,7 @@ public class GiftBaseHitView extends LinearLayout {
 
     public GiftBaseHitView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f17932a = GiftBaseHitView.class.getSimpleName();
+        this.a = GiftBaseHitView.class.getSimpleName();
         this.q = false;
         this.r = new Runnable() { // from class: com.blued.android.module.yy_china.view.GiftBaseHitView.1
             @Override // java.lang.Runnable
@@ -85,7 +81,7 @@ public class GiftBaseHitView extends LinearLayout {
     private void a(Context context) {
         View inflate = LayoutInflater.from(context).inflate(R.layout.item_yy_msg_gift_hit, (ViewGroup) this, true);
         this.b = inflate;
-        this.f17933c = (ImageView) inflate.findViewById(R.id.iv_user_img);
+        this.c = (ImageView) inflate.findViewById(R.id.iv_user_img);
         this.d = (ShapeTextView) this.b.findViewById(R.id.tv_role);
         this.e = (TextView) this.b.findViewById(R.id.tv_source_name);
         this.f = (TextView) this.b.findViewById(R.id.tv_target_name);
@@ -110,7 +106,7 @@ public class GiftBaseHitView extends LinearLayout {
         this.e.setText(YYRoomInfoManager.e().a(this.m.source_profile.getUid(), this.m.source_profile.getName()));
         TextView textView = this.f;
         textView.setText("送给  " + YYRoomInfoManager.e().a(this.m.target_profile.getUid(), this.m.target_profile.getName()));
-        YYRoomInfoManager.e().a((IRequestHost) null, this.f17933c, this.m.source_profile.getUid(), this.m.source_profile.getAvatar());
+        YYRoomInfoManager.e().a((IRequestHost) null, this.c, this.m.source_profile.getUid(), this.m.source_profile.getAvatar());
         this.d.setVisibility(0);
         ShapeModel shapeModel = this.d.getShapeModel();
         if (TextUtils.equals("2", this.m.source_profile.chat_anchor)) {
@@ -250,7 +246,7 @@ public class GiftBaseHitView extends LinearLayout {
     public YYMsgGiftExtra a(String str) {
         YYMsgGiftExtra yYMsgGiftExtra = new YYMsgGiftExtra();
         if (str != null) {
-            yYMsgGiftExtra = (YYMsgGiftExtra) AppInfo.f().fromJson(str, (Class<Object>) YYMsgGiftExtra.class);
+            yYMsgGiftExtra = (YYMsgGiftExtra) AppInfo.f().fromJson(str, YYMsgGiftExtra.class);
         }
         return yYMsgGiftExtra;
     }
@@ -284,10 +280,10 @@ public class GiftBaseHitView extends LinearLayout {
 
     public void setHitModel(YYImModel yYImModel) {
         this.m = yYImModel;
-        YYMsgGiftExtra a2 = a(yYImModel.getMsgExtra());
-        this.n = a2;
-        if (!StringUtils.b(a2.json_contents)) {
-            this.n.json_contents_modes = (YYMsgJsonGiftExtra) AppInfo.f().fromJson(this.n.json_contents, (Class<Object>) YYMsgJsonGiftExtra.class);
+        YYMsgGiftExtra a = a(yYImModel.getMsgExtra());
+        this.n = a;
+        if (!StringUtils.b(a.json_contents)) {
+            this.n.json_contents_modes = (YYMsgJsonGiftExtra) AppInfo.f().fromJson(this.n.json_contents, YYMsgJsonGiftExtra.class);
         }
         this.n.extra = (LuckGiftModel) yYImModel.msgMapExtra.get("extra");
         if (this.n.hit_batch == 1) {

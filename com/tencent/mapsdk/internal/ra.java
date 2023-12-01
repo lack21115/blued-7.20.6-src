@@ -40,12 +40,12 @@ public class ra implements qa {
     public static class b implements za.l {
 
         /* renamed from: a  reason: collision with root package name */
-        private int f37737a = 3;
+        private int f24046a = 3;
         private String b = "TT";
 
         public b a(int i) {
             ra.a0.incrementAndGet();
-            this.f37737a = i;
+            this.f24046a = i;
             return this;
         }
 
@@ -62,7 +62,7 @@ public class ra implements qa {
 
         public void a(Object... objArr) {
             ra.a0.incrementAndGet();
-            ra.b(this.f37737a, this.b, objArr);
+            ra.b(this.f24046a, this.b, objArr);
             ra.Z.a(this);
         }
     }
@@ -77,7 +77,7 @@ public class ra implements qa {
         private String b;
 
         /* renamed from: c  reason: collision with root package name */
-        private String f37739c;
+        private String f24048c;
         private c e;
         private Map<String, Object> f;
         private String g;
@@ -85,16 +85,16 @@ public class ra implements qa {
         public List<Long> d = new CopyOnWriteArrayList();
 
         /* renamed from: a  reason: collision with root package name */
-        private AtomicInteger f37738a = new AtomicInteger(0);
+        private AtomicInteger f24047a = new AtomicInteger(0);
 
         public d(String str, String str2) {
             this.b = str;
-            this.f37739c = str2;
+            this.f24048c = str2;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
         public void a() {
-            this.f37738a.set(0);
+            this.f24047a.set(0);
             this.d.clear();
             this.e = null;
             Map<String, Object> map = this.f;
@@ -114,7 +114,7 @@ public class ra implements qa {
         }
 
         public boolean a(String str) {
-            return this.f37739c.equals(str);
+            return this.f24048c.equals(str);
         }
 
         public Object b(String str) {
@@ -131,14 +131,14 @@ public class ra implements qa {
             if (!TextUtils.isEmpty(this.h)) {
                 sb.append(this.h);
             }
-            if (this.b.equals(this.f37739c)) {
+            if (this.b.equals(this.f24048c)) {
                 sb.append("|");
                 sb.append(this.b);
             } else {
                 sb.append("|");
                 sb.append(this.b);
                 sb.append("|");
-                sb.append(this.f37739c);
+                sb.append(this.f24048c);
             }
             if (!TextUtils.isEmpty(this.g)) {
                 sb.append("|");
@@ -149,7 +149,7 @@ public class ra implements qa {
         }
 
         public String toString() {
-            return "TraceInfo{id='" + this.f37739c + "', values=" + this.f + '}';
+            return "TraceInfo{id='" + this.f24048c + "', values=" + this.f + '}';
         }
     }
 
@@ -211,9 +211,9 @@ public class ra implements qa {
             StringBuilder sb = new StringBuilder();
             sb.append(dVar.b());
             sb.append("\n");
-            if (dVar.f37738a.get() != 0) {
+            if (dVar.f24047a.get() != 0) {
                 sb.append("idx:");
-                sb.append(dVar.f37738a.get());
+                sb.append(dVar.f24047a.get());
                 sb.append("\n");
             }
             if (j2 > 0) {
@@ -255,7 +255,7 @@ public class ra implements qa {
             d a2 = a(str, str2);
             if (a2 != null) {
                 a2.h = "Log";
-                a2.f37738a.incrementAndGet();
+                a2.f24047a.incrementAndGet();
                 a2.g = str3;
                 a2.d.add(Long.valueOf(System.currentTimeMillis()));
             }
@@ -267,7 +267,7 @@ public class ra implements qa {
     public static b a(int i) {
         a0.incrementAndGet();
         b a2 = Z.a();
-        a2.f37737a = i;
+        a2.f24046a = i;
         return a2;
     }
 
@@ -286,7 +286,7 @@ public class ra implements qa {
             List<String> g = ga.g(new File(na.a(), "kv"));
             if (g == null || g.isEmpty() || TextUtils.isEmpty(g.get(0))) {
                 try {
-                    String a2 = sa.a(c7.t() + mi.j + mi.i + mi.f37650c + mi.b);
+                    String a2 = sa.a(c7.t() + mi.j + mi.i + mi.f23959c + mi.b);
                     str2 = a2;
                     na.d("kv", a2);
                     str2 = a2;
@@ -359,7 +359,7 @@ public class ra implements qa {
                     dVar = dVar3;
                 }
             }
-            dVar.f37739c = str2;
+            dVar.f24048c = str2;
             dVar.e = cVar;
             dVar.d.add(Long.valueOf(System.currentTimeMillis()));
             dVar.h = "Begin";

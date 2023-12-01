@@ -55,13 +55,13 @@ public final class a {
     private String af;
     private String ao;
     private String b;
-    private Map<String, C0117a> be;
+    private Map<String, C0046a> be;
     private b bg;
     private String bl;
     private String bm;
 
     /* renamed from: c  reason: collision with root package name */
-    private long f7125c;
+    private long f4287c;
     private int d;
     private int f;
     private boolean g;
@@ -85,7 +85,7 @@ public final class a {
     private int z;
 
     /* renamed from: a  reason: collision with root package name */
-    private int f7123a = 0;
+    private int f4285a = 0;
     private long e = 86400;
     private String k = "";
     private boolean O = false;
@@ -108,7 +108,7 @@ public final class a {
     private String aq = "LdxThdi1WBK\\/WgfPhbxQYkeXHBPwHZKAJ7eXHM==";
 
     /* renamed from: ar  reason: collision with root package name */
-    private String f7124ar = "LdxThdi1WBK\\/WgfPhbxQYkeXHBPwHZKsYFh=";
+    private String f4286ar = "LdxThdi1WBK\\/WgfPhbxQYkeXHBPwHZKsYFh=";
     private int as = 1;
     private int at = 30;
     private int au = 5;
@@ -157,22 +157,22 @@ public final class a {
 
     /* renamed from: com.anythink.expressad.d.a$a  reason: collision with other inner class name */
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/d/a$a.class */
-    public static final class C0117a {
+    public static final class C0046a {
 
         /* renamed from: a  reason: collision with root package name */
-        private List<String> f7126a;
+        private List<String> f4288a;
         private List<String> b;
 
         /* renamed from: c  reason: collision with root package name */
-        private List<String> f7127c;
+        private List<String> f4289c;
         private List<String> d;
 
         private List<String> a() {
-            return this.f7126a;
+            return this.f4288a;
         }
 
         private void a(List<String> list) {
-            this.f7126a = list;
+            this.f4288a = list;
         }
 
         private List<String> b() {
@@ -184,11 +184,11 @@ public final class a {
         }
 
         private List<String> c() {
-            return this.f7127c;
+            return this.f4289c;
         }
 
         private void c(List<String> list) {
-            this.f7127c = list;
+            this.f4289c = list;
         }
 
         private List<String> d() {
@@ -203,7 +203,7 @@ public final class a {
             try {
                 JSONArray optJSONArray = jSONObject.optJSONArray("x");
                 if (optJSONArray != null) {
-                    this.f7126a = h.a(optJSONArray);
+                    this.f4288a = h.a(optJSONArray);
                 }
                 JSONArray optJSONArray2 = jSONObject.optJSONArray("y");
                 if (optJSONArray2 != null) {
@@ -211,14 +211,14 @@ public final class a {
                 }
                 JSONArray optJSONArray3 = jSONObject.optJSONArray("width");
                 if (optJSONArray3 != null) {
-                    this.f7127c = h.a(optJSONArray3);
+                    this.f4289c = h.a(optJSONArray3);
                 }
                 JSONArray optJSONArray4 = jSONObject.optJSONArray("height");
                 if (optJSONArray4 != null) {
                     this.d = h.a(optJSONArray4);
                 }
             } catch (Exception e) {
-                if (com.anythink.expressad.a.f6941a) {
+                if (com.anythink.expressad.a.f4103a) {
                     e.printStackTrace();
                 }
             }
@@ -229,11 +229,11 @@ public final class a {
     public static final class b {
 
         /* renamed from: a  reason: collision with root package name */
-        private String f7128a;
+        private String f4290a;
         private String b;
 
         /* renamed from: c  reason: collision with root package name */
-        private String f7129c;
+        private String f4291c;
         private JSONArray d;
 
         public static b a(JSONObject jSONObject) {
@@ -243,9 +243,9 @@ public final class a {
             }
             b bVar = new b();
             Context g = n.a().g();
-            bVar.f7128a = jSONObject2.optString("title", g.getString(i.a(g, "anythink_cm_feedback_dialog_title", "string")));
+            bVar.f4290a = jSONObject2.optString("title", g.getString(i.a(g, "anythink_cm_feedback_dialog_title", "string")));
             bVar.b = jSONObject2.optString(com.anythink.expressad.d.a.b.dO, g.getString(i.a(g, "anythink_cm_feedback_dialog_close_close", "string")));
-            bVar.f7129c = jSONObject2.optString(com.anythink.expressad.d.a.b.dP, g.getString(i.a(g, "anythink_cm_feedback_dialog_close_submit", "string")));
+            bVar.f4291c = jSONObject2.optString(com.anythink.expressad.d.a.b.dP, g.getString(i.a(g, "anythink_cm_feedback_dialog_close_submit", "string")));
             JSONArray optJSONArray = jSONObject2.optJSONArray("content");
             bVar.d = optJSONArray;
             if (optJSONArray == null) {
@@ -260,7 +260,7 @@ public final class a {
         }
 
         private void a(String str) {
-            this.f7128a = str;
+            this.f4290a = str;
         }
 
         private void a(JSONArray jSONArray) {
@@ -272,11 +272,11 @@ public final class a {
         }
 
         private void c(String str) {
-            this.f7129c = str;
+            this.f4291c = str;
         }
 
         public final String a() {
-            return this.f7128a;
+            return this.f4290a;
         }
 
         public final String b() {
@@ -284,7 +284,7 @@ public final class a {
         }
 
         public final String c() {
-            return this.f7129c;
+            return this.f4291c;
         }
 
         public final JSONArray d() {
@@ -598,7 +598,7 @@ public final class a {
     }
 
     private int ac() {
-        return this.f7123a;
+        return this.f4285a;
     }
 
     private void ac(int i) {
@@ -662,7 +662,7 @@ public final class a {
     }
 
     private String am() {
-        return this.f7124ar;
+        return this.f4286ar;
     }
 
     private int an() {
@@ -757,7 +757,7 @@ public final class a {
         this.Z = list;
     }
 
-    private void b(Map<String, C0117a> map) {
+    private void b(Map<String, C0046a> map) {
         this.be = map;
     }
 
@@ -777,7 +777,7 @@ public final class a {
         return this.bd;
     }
 
-    private Map<String, C0117a> bD() {
+    private Map<String, C0046a> bD() {
         return this.be;
     }
 
@@ -862,7 +862,7 @@ public final class a {
     }
 
     private long bd() {
-        return this.f7125c;
+        return this.f4287c;
     }
 
     private int be() {
@@ -989,7 +989,7 @@ public final class a {
     }
 
     private void e(long j) {
-        this.f7125c = j;
+        this.f4287c = j;
     }
 
     private void e(String str) {
@@ -1001,7 +1001,7 @@ public final class a {
     }
 
     private void f(String str) {
-        this.f7124ar = str;
+        this.f4286ar = str;
     }
 
     private void g(int i) {
@@ -1152,7 +1152,7 @@ public final class a {
         this.bd = str;
     }
 
-    private static Map<String, C0117a> y(String str) {
+    private static Map<String, C0046a> y(String str) {
         try {
             if (TextUtils.isEmpty(str)) {
                 return null;
@@ -1162,22 +1162,22 @@ public final class a {
             Iterator<String> keys = jSONObject.keys();
             while (keys.hasNext()) {
                 String next = keys.next();
-                C0117a c0117a = new C0117a();
+                C0046a c0046a = new C0046a();
                 JSONObject optJSONObject = jSONObject.optJSONObject(next);
                 if (optJSONObject != null) {
-                    c0117a.a(optJSONObject);
+                    c0046a.a(optJSONObject);
                 }
-                hashMap.put(next, c0117a);
+                hashMap.put(next, c0046a);
             }
             return hashMap;
         } catch (JSONException e) {
-            if (com.anythink.expressad.a.f6941a) {
+            if (com.anythink.expressad.a.f4103a) {
                 e.printStackTrace();
                 return null;
             }
             return null;
         } catch (Exception e2) {
-            if (com.anythink.expressad.a.f6941a) {
+            if (com.anythink.expressad.a.f4103a) {
                 e2.printStackTrace();
                 return null;
             }
@@ -1296,7 +1296,7 @@ public final class a {
         try {
             JSONObject jSONObject = new JSONObject();
             jSONObject.put("cc", this.b);
-            jSONObject.put(com.anythink.expressad.d.a.b.l, this.f7125c);
+            jSONObject.put(com.anythink.expressad.d.a.b.l, this.f4287c);
             jSONObject.put(com.anythink.expressad.d.a.b.m, this.d);
             jSONObject.put(com.anythink.expressad.d.a.b.p, this.f);
             jSONObject.put(com.anythink.expressad.d.a.b.w, this.g);
@@ -1342,7 +1342,7 @@ public final class a {
             jSONObject.put(com.anythink.expressad.d.a.b.bJ, this.al);
             jSONObject.put(com.anythink.expressad.d.a.b.bV, this.an);
             jSONObject.put(com.anythink.expressad.d.a.b.bY, this.ap);
-            jSONObject.put(com.anythink.expressad.d.a.b.cO, this.f7123a);
+            jSONObject.put(com.anythink.expressad.d.a.b.cO, this.f4285a);
             jSONObject.put(com.anythink.expressad.d.a.b.cT, this.bi);
             jSONObject.put(com.anythink.expressad.d.a.b.di, this.W);
             jSONObject.put(com.anythink.expressad.d.a.b.dg, this.V);
@@ -1399,7 +1399,7 @@ public final class a {
     }
 
     public final void c() {
-        this.f7123a = 0;
+        this.f4285a = 0;
     }
 
     public final void c(int i) {
@@ -1494,7 +1494,7 @@ public final class a {
     }
 
     public final String toString() {
-        return "cc=" + this.b + " upal=" + this.f7125c + " cfc=" + this.d + " getpf=" + this.e + " uplc=" + this.f + " rurl=" + this.m;
+        return "cc=" + this.b + " upal=" + this.f4287c + " cfc=" + this.d + " getpf=" + this.e + " uplc=" + this.f + " rurl=" + this.m;
     }
 
     public final void u() {

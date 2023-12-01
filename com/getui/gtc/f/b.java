@@ -41,11 +41,11 @@ public final class b {
 
     public static Map<String, String> a(final d dVar) {
         final String server = ServerManager.getServer("gtc.cs");
-        return com.getui.gtc.f.a.a(GtcProvider.context(), new c.a().b("GTC").a(String.format("%s/api.php?format=json&t=1", server)).c(com.getui.gtc.c.b.f21920a).d(com.getui.gtc.c.b.d).e(BuildConfig.VERSION_NAME).a().a(new d() { // from class: com.getui.gtc.f.b.1
+        return com.getui.gtc.f.a.a(GtcProvider.context(), new c.a().b("GTC").a(String.format("%s/api.php?format=json&t=1", server)).c(com.getui.gtc.c.b.f8313a).d(com.getui.gtc.c.b.d).e(BuildConfig.VERSION_NAME).a().a(new d() { // from class: com.getui.gtc.f.b.1
             @Override // com.getui.gtc.f.d
             public final void a(Exception exc) {
-                if ((exc.getCause() instanceof IOException) && ServerManager.switchServer("gtc.cs", String.this)) {
-                    com.getui.gtc.i.c.a.b("gtc config failed with server: " + String.this + ", try again with: " + ServerManager.getServer("gtc.cs"));
+                if ((exc.getCause() instanceof IOException) && ServerManager.switchServer("gtc.cs", server)) {
+                    com.getui.gtc.i.c.a.b("gtc config failed with server: " + server + ", try again with: " + ServerManager.getServer("gtc.cs"));
                     b.a(dVar);
                 }
             }
@@ -61,7 +61,7 @@ public final class b {
 
             @Override // com.getui.gtc.f.d
             public final void a(Map<String, String> map, Map<String, String> map2) {
-                ServerManager.confirmServer("gtc.cs", String.this);
+                ServerManager.confirmServer("gtc.cs", server);
                 d dVar2 = dVar;
                 if (dVar2 != null) {
                     dVar2.a(map, map2);

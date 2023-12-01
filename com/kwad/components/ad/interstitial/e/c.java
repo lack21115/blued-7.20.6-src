@@ -178,9 +178,8 @@ public final class c extends a {
         return R.layout.ksad_interstitial;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
+    protected final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         com.kwad.components.ad.interstitial.c.c cVar = this.jt;
         if (cVar != null) {

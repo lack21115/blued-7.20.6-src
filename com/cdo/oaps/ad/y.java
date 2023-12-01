@@ -7,6 +7,7 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.net.Uri;
 import android.text.TextUtils;
+import com.huawei.hms.framework.common.ContainerUtils;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -16,11 +17,11 @@ import java.util.Map;
 public class y {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f21551a = "Y29tLm9wcG8ubWFpbi5BQ1RJT05fTEFVTkNI";
+    public static final String f7945a = "Y29tLm9wcG8ubWFpbi5BQ1RJT05fTEFVTkNI";
     public static final String b = "b3Bwby9sYXVuY2g=";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f21552c = "scheme";
+    public static final String f7946c = "scheme";
     public static final String d = "host";
     public static final String e = "params";
     public static final String f = "gb";
@@ -79,7 +80,7 @@ public class y {
                     if (map.containsKey(f)) {
                         i = a(map.get(f), 0);
                     }
-                    str4 = str + "://" + str2 + "?params=" + str3 + "&" + f + "=" + i;
+                    str4 = str + "://" + str2 + "?params=" + str3 + ContainerUtils.FIELD_DELIMITER + f + "=" + i;
                 }
             }
         }
@@ -108,7 +109,7 @@ public class y {
             String a2 = a(b(str));
             PackageManager packageManager = context.getPackageManager();
             String str2 = null;
-            Intent a3 = a(a.b(f21551a), str2, a2, a.b(b), str2);
+            Intent a3 = a(a.b(f7945a), str2, a2, a.b(b), str2);
             z = false;
             if (!TextUtils.isEmpty(a2)) {
                 z = false;
@@ -131,7 +132,7 @@ public class y {
     public static boolean a(PackageManager packageManager, String str) {
         String str2 = b(str).get("scheme");
         String str3 = null;
-        List<ResolveInfo> queryIntentActivities = packageManager.queryIntentActivities(a(a.b(f21551a), str3, str2 + "://", a.b(b), str3), 160);
+        List<ResolveInfo> queryIntentActivities = packageManager.queryIntentActivities(a(a.b(f7945a), str3, str2 + "://", a.b(b), str3), 160);
         boolean z = false;
         if (queryIntentActivities != null) {
             z = false;
@@ -162,7 +163,7 @@ public class y {
     public static float b(PackageManager packageManager, String str) {
         String str2 = b(str).get("scheme");
         String str3 = null;
-        List<ResolveInfo> queryIntentActivities = packageManager.queryIntentActivities(a(a.b(f21551a), str3, str2 + "://", a.b(b), str3), 160);
+        List<ResolveInfo> queryIntentActivities = packageManager.queryIntentActivities(a(a.b(f7945a), str3, str2 + "://", a.b(b), str3), 160);
         float f2 = -1.0f;
         if (queryIntentActivities != null) {
             f2 = -1.0f;
@@ -199,7 +200,7 @@ public class y {
         }
         int i = 0;
         do {
-            indexOf = substring2.indexOf("&", i) + 1;
+            indexOf = substring2.indexOf(ContainerUtils.FIELD_DELIMITER, i) + 1;
             if (indexOf > 0) {
                 substring = substring2.substring(i, indexOf - 1);
                 i = indexOf;

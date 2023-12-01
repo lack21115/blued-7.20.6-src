@@ -16,7 +16,7 @@ import org.json.JSONObject;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final ReentrantReadWriteLock f24449a = new ReentrantReadWriteLock();
+    private static final ReentrantReadWriteLock f10762a = new ReentrantReadWriteLock();
     private static final ReentrantReadWriteLock b = new ReentrantReadWriteLock();
 
     public static int a(Context context, String str, long j) {
@@ -29,14 +29,14 @@ public final class b {
         try {
             SQLiteDatabase a2 = a.a(context);
             try {
-                f24449a.writeLock().lock();
+                f10762a.writeLock().lock();
                 int delete = a2.delete("t_acs_st_db_cache", str2, null);
-                writeLock = f24449a.writeLock();
+                writeLock = f10762a.writeLock();
                 i = delete;
             } catch (Exception e) {
-                writeLock = f24449a.writeLock();
+                writeLock = f10762a.writeLock();
             } catch (Throwable th) {
-                f24449a.writeLock().unlock();
+                f10762a.writeLock().unlock();
                 throw th;
             }
             writeLock.unlock();
@@ -50,16 +50,16 @@ public final class b {
     private static ContentValues a(com.opos.acs.st.b.b bVar) {
         ContentValues contentValues = new ContentValues();
         contentValues.put("BATCH_ID", bVar.b);
-        contentValues.put("ACS_POS_IDS", bVar.f24454c);
+        contentValues.put("ACS_POS_IDS", bVar.f10767c);
         contentValues.put("EFFECTIVE_TAG", Integer.valueOf(bVar.d));
         return contentValues;
     }
 
     private static com.opos.acs.st.b.c a(Context context, Cursor cursor) {
         com.opos.acs.st.b.c cVar = new com.opos.acs.st.b.c();
-        cVar.f24455a = cursor.getInt(cursor.getColumnIndex(STManager.REGION_OF_ID));
+        cVar.f10768a = cursor.getInt(cursor.getColumnIndex(STManager.REGION_OF_ID));
         cVar.b = cursor.getString(cursor.getColumnIndex("EVENT_ID"));
-        cVar.f24456c = cursor.getString(cursor.getColumnIndex("ACS_ID"));
+        cVar.f10769c = cursor.getString(cursor.getColumnIndex("ACS_ID"));
         cVar.d = cursor.getString(cursor.getColumnIndex("URL"));
         cVar.h = cursor.getString(cursor.getColumnIndex("BATCH_ID"));
         cVar.i = cursor.getLong(cursor.getColumnIndex("EVENT_TIME"));
@@ -99,23 +99,23 @@ public final class b {
         try {
             try {
                 SQLiteDatabase a2 = a.a(context);
-                f24449a.writeLock().lock();
+                f10762a.writeLock().lock();
                 Cursor rawQuery = a2.rawQuery(str2, null);
                 rawQuery.moveToFirst();
                 cursor = rawQuery;
                 cursor2 = rawQuery;
                 int i = rawQuery.getInt(0);
-                f24449a.writeLock().unlock();
+                f10762a.writeLock().unlock();
                 a(rawQuery);
                 return Integer.valueOf(i);
             } catch (Exception e) {
                 com.opos.cmn.an.f.a.d("STDBUtils", "queryAllStatItemEntityCount", e);
-                f24449a.writeLock().unlock();
+                f10762a.writeLock().unlock();
                 a(cursor2);
                 return 0;
             }
         } catch (Throwable th) {
-            f24449a.writeLock().unlock();
+            f10762a.writeLock().unlock();
             a(cursor);
             throw th;
         }
@@ -190,11 +190,11 @@ public final class b {
                         try {
                             SQLiteDatabase a2 = a.a(context);
                             try {
-                                f24449a.readLock().lock();
+                                f10762a.readLock().lock();
                                 cursor = a2.rawQuery("select * from t_acs_st_db_cache where EVENT_ID = ? AND URL = ? ", new String[]{str, str2});
                                 try {
                                     try {
-                                        f24449a.readLock().unlock();
+                                        f10762a.readLock().unlock();
                                         ArrayList arrayList3 = null;
                                         if (cursor != null) {
                                             arrayList3 = null;
@@ -291,12 +291,12 @@ public final class b {
                 z2 = false;
                 try {
                     SQLiteDatabase a2 = a.a(context);
-                    f24449a.writeLock().lock();
+                    f10762a.writeLock().lock();
                     if (-1 != a2.insert("t_acs_st_db_cache", null, c2)) {
                         z = true;
                     }
                     z2 = z;
-                    f24449a.writeLock().unlock();
+                    f10762a.writeLock().unlock();
                     return z;
                 } catch (Exception e) {
                     com.opos.cmn.an.f.a.d("STDBUtils", "insertStatItemEntity", e);
@@ -355,13 +355,13 @@ public final class b {
             try {
                 SQLiteDatabase a2 = a.a(context);
                 try {
-                    f24449a.writeLock().lock();
+                    f10762a.writeLock().lock();
                     a2.execSQL(str);
                 } catch (Exception e) {
-                    f24449a.writeLock().unlock();
+                    f10762a.writeLock().unlock();
                     return false;
                 } catch (Throwable th) {
-                    f24449a.writeLock().unlock();
+                    f10762a.writeLock().unlock();
                     throw th;
                 }
             } catch (Exception e2) {
@@ -369,7 +369,7 @@ public final class b {
                 z = false;
             }
             try {
-                f24449a.writeLock().unlock();
+                f10762a.writeLock().unlock();
                 return true;
             } catch (Exception e3) {
                 e = e3;
@@ -398,7 +398,7 @@ public final class b {
         if (context != null) {
             z = false;
             if (bVar != null) {
-                int i = bVar.f24453a;
+                int i = bVar.f10766a;
                 ContentValues a2 = a(bVar);
                 try {
                     SQLiteDatabase a3 = a.a(context);
@@ -427,18 +427,18 @@ public final class b {
         if (context != null) {
             z = false;
             if (cVar != null) {
-                int i = cVar.f24455a;
+                int i = cVar.f10768a;
                 ContentValues c2 = c(context, cVar);
                 try {
                     SQLiteDatabase a2 = a.a(context);
-                    f24449a.writeLock().lock();
+                    f10762a.writeLock().lock();
                     a2.update("t_acs_st_db_cache", c2, "ID = ? ", new String[]{String.valueOf(i)});
                 } catch (Exception e) {
                     e = e;
                     z = false;
                 }
                 try {
-                    f24449a.writeLock().unlock();
+                    f10762a.writeLock().unlock();
                     return true;
                 } catch (Exception e2) {
                     e = e2;
@@ -462,7 +462,7 @@ public final class b {
         }
         ContentValues contentValues = new ContentValues();
         contentValues.put("EVENT_ID", cVar.b);
-        contentValues.put("ACS_ID", cVar.f24456c);
+        contentValues.put("ACS_ID", cVar.f10769c);
         contentValues.put("URL", cVar.d);
         contentValues.put("BATCH_ID", cVar.h);
         contentValues.put("EVENT_TIME", Long.valueOf(cVar.i));

@@ -44,7 +44,7 @@ import java.util.zip.ZipOutputStream;
 public class z {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Map<String, String> f35422a;
+    private static Map<String, String> f21731a;
 
     public static Context a(Context context) {
         Context applicationContext;
@@ -237,8 +237,8 @@ public class z {
         if (str == null || str.trim().equals("")) {
             return "";
         }
-        if (f35422a == null) {
-            f35422a = new HashMap();
+        if (f21731a == null) {
+            f21731a = new HashMap();
             String str2 = "/system/bin/sh";
             if (!new File("/system/bin/sh").exists() || !new File("/system/bin/sh").canExecute()) {
                 str2 = com.anythink.expressad.foundation.d.d.t;
@@ -250,13 +250,13 @@ public class z {
                 for (String str3 : a2) {
                     Matcher matcher = compile.matcher(str3);
                     if (matcher.find()) {
-                        f35422a.put(matcher.group(1), matcher.group(2));
+                        f21731a.put(matcher.group(1), matcher.group(2));
                     }
                 }
-                x.b(z.class, "Systems properties number: %d.", Integer.valueOf(f35422a.size()));
+                x.b(z.class, "Systems properties number: %d.", Integer.valueOf(f21731a.size()));
             }
         }
-        return f35422a.containsKey(str) ? f35422a.get(str) : bc.b.S;
+        return f21731a.containsKey(str) ? f21731a.get(str) : bc.b.S;
     }
 
     public static String a(File file, int i, boolean z) {
@@ -595,8 +595,8 @@ public class z {
             i2 = i3 + 1;
         }
         for (i = 0; i < arrayList.size(); i++) {
-            bundle.putString("pluginVal" + i + "plugInId", ((PlugInBean) arrayList2.get(i)).f35127a);
-            bundle.putString("pluginVal" + i + "plugInUUID", ((PlugInBean) arrayList2.get(i)).f35128c);
+            bundle.putString("pluginVal" + i + "plugInId", ((PlugInBean) arrayList2.get(i)).f21436a);
+            bundle.putString("pluginVal" + i + "plugInUUID", ((PlugInBean) arrayList2.get(i)).f21437c);
             bundle.putString("pluginVal" + i + "plugInVersion", ((PlugInBean) arrayList2.get(i)).b);
         }
         parcel.writeBundle(bundle);

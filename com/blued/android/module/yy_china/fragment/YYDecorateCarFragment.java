@@ -15,8 +15,10 @@ import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentResultListener;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import com.anythink.core.common.g.c;
 import com.blued.android.chat.core.pack.ReqAckPackage;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.image.ImageWrapper;
@@ -68,18 +70,14 @@ import kotlin.text.StringsKt;
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYDecorateCarFragment.class */
 public final class YYDecorateCarFragment extends BaseLazyFragment {
     private FragmentPageCarBinding b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private TabAdapter f17205c;
+    private TabAdapter c;
     private CarAdapter d;
     private ColorAdapter e;
     private ReceiverAdapter f;
     private YYCarPreviewModel g;
     private YYCarBasicModel h;
     private YYCarItemModel i;
-
-    /* renamed from: a  reason: collision with root package name */
-    private final String f17204a = "YYDecorateCarFragment";
+    private final String a = "YYDecorateCarFragment";
     private String j = "";
     private int k = -1;
     private String l = "0";
@@ -90,13 +88,9 @@ public final class YYDecorateCarFragment extends BaseLazyFragment {
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYDecorateCarFragment$CarAdapter.class */
     public final class CarAdapter extends BaseQuickAdapter<YYCarItemModel, BaseViewHolder> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ YYDecorateCarFragment f17206a;
+        final /* synthetic */ YYDecorateCarFragment a;
         private final int b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private final int f17207c;
+        private final int c;
         private final int d;
         private final int e;
         private final int f;
@@ -108,22 +102,21 @@ public final class YYDecorateCarFragment extends BaseLazyFragment {
         public CarAdapter(YYDecorateCarFragment this$0) {
             super(R.layout.item_car_style_layout);
             Intrinsics.e(this$0, "this$0");
-            this.f17206a = this$0;
-            this.b = DensityUtils.a(this.f17206a.getContext(), 73.0f);
-            this.f17207c = DensityUtils.a(this.f17206a.getContext(), 51.0f);
-            this.d = DensityUtils.a(this.f17206a.getContext(), 81.0f);
-            this.e = DensityUtils.a(this.f17206a.getContext(), 56.0f);
-            this.f = DensityUtils.a(this.f17206a.getContext(), 25.0f);
-            this.g = DensityUtils.a(this.f17206a.getContext(), 17.0f);
-            this.h = DensityUtils.a(this.f17206a.getContext(), 10.0f);
-            this.i = DensityUtils.a(this.f17206a.getContext(), 20.0f);
+            this.a = this$0;
+            this.b = DensityUtils.a(this.a.getContext(), 73.0f);
+            this.c = DensityUtils.a(this.a.getContext(), 51.0f);
+            this.d = DensityUtils.a(this.a.getContext(), 81.0f);
+            this.e = DensityUtils.a(this.a.getContext(), 56.0f);
+            this.f = DensityUtils.a(this.a.getContext(), 25.0f);
+            this.g = DensityUtils.a(this.a.getContext(), 17.0f);
+            this.h = DensityUtils.a(this.a.getContext(), 10.0f);
+            this.i = DensityUtils.a(this.a.getContext(), 20.0f);
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.chad.library.adapter.base.BaseQuickAdapter
         /* renamed from: a */
         public void convert(BaseViewHolder baseViewHolder, YYCarItemModel yYCarItemModel) {
-            ConstraintLayout constraintLayout = baseViewHolder == null ? null : (ConstraintLayout) baseViewHolder.getView(R.id.item_root_view);
+            ConstraintLayout view = baseViewHolder == null ? null : baseViewHolder.getView(R.id.item_root_view);
             ImageView imageView = baseViewHolder == null ? null : (ImageView) baseViewHolder.getView(R.id.img_car);
             ImageView imageView2 = baseViewHolder == null ? null : (ImageView) baseViewHolder.getView(R.id.img_car_name);
             TextView textView = baseViewHolder == null ? null : (TextView) baseViewHolder.getView(R.id.tv_car_price);
@@ -131,16 +124,16 @@ public final class YYDecorateCarFragment extends BaseLazyFragment {
             if (layoutParams == null) {
                 throw new NullPointerException("null cannot be cast to non-null type androidx.constraintlayout.widget.ConstraintLayout.LayoutParams");
             }
-            ConstraintLayout.LayoutParams layoutParams2 = (ConstraintLayout.LayoutParams) layoutParams;
+            ConstraintLayout.LayoutParams layoutParams2 = layoutParams;
             ViewGroup.LayoutParams layoutParams3 = imageView2 == null ? null : imageView2.getLayoutParams();
             if (layoutParams3 == null) {
                 throw new NullPointerException("null cannot be cast to non-null type androidx.constraintlayout.widget.ConstraintLayout.LayoutParams");
             }
-            ConstraintLayout.LayoutParams layoutParams4 = (ConstraintLayout.LayoutParams) layoutParams3;
+            ConstraintLayout.LayoutParams layoutParams4 = layoutParams3;
             if (yYCarItemModel == null) {
                 return;
             }
-            YYDecorateCarFragment yYDecorateCarFragment = this.f17206a;
+            YYDecorateCarFragment yYDecorateCarFragment = this.a;
             if (textView != null) {
                 textView.setText(yYCarItemModel.getBeans());
             }
@@ -149,8 +142,8 @@ public final class YYDecorateCarFragment extends BaseLazyFragment {
                 layoutParams2.width = this.d;
                 layoutParams2.height = this.e;
                 layoutParams2.topMargin = this.g;
-                if (constraintLayout != null) {
-                    constraintLayout.setBackgroundResource(R.drawable.icon_car_item_selected);
+                if (view != null) {
+                    view.setBackgroundResource(R.drawable.icon_car_item_selected);
                 }
                 layoutParams4.leftMargin = this.i;
                 layoutParams4.bottomMargin = this.i;
@@ -158,10 +151,10 @@ public final class YYDecorateCarFragment extends BaseLazyFragment {
                 return;
             }
             layoutParams2.width = this.b;
-            layoutParams2.height = this.f17207c;
+            layoutParams2.height = this.c;
             layoutParams2.topMargin = this.f;
-            if (constraintLayout != null) {
-                constraintLayout.setBackgroundResource(R.drawable.icon_car_item_normal);
+            if (view != null) {
+                view.setBackgroundResource(R.drawable.icon_car_item_normal);
             }
             layoutParams4.leftMargin = this.h;
             layoutParams4.bottomMargin = this.g;
@@ -173,36 +166,33 @@ public final class YYDecorateCarFragment extends BaseLazyFragment {
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYDecorateCarFragment$ColorAdapter.class */
     public final class ColorAdapter extends BaseQuickAdapter<YYCarItemModel, BaseViewHolder> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ YYDecorateCarFragment f17208a;
+        final /* synthetic */ YYDecorateCarFragment a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public ColorAdapter(YYDecorateCarFragment this$0) {
             super(R.layout.item_car_color_layout);
             Intrinsics.e(this$0, "this$0");
-            this.f17208a = this$0;
+            this.a = this$0;
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.chad.library.adapter.base.BaseQuickAdapter
         /* renamed from: a */
         public void convert(BaseViewHolder baseViewHolder, YYCarItemModel yYCarItemModel) {
-            ConstraintLayout constraintLayout = baseViewHolder == null ? null : (ConstraintLayout) baseViewHolder.getView(R.id.item_root_view);
+            ConstraintLayout view = baseViewHolder == null ? null : baseViewHolder.getView(R.id.item_root_view);
             TextView textView = baseViewHolder == null ? null : (TextView) baseViewHolder.getView(R.id.tv_color_name);
             ImageView imageView = baseViewHolder == null ? null : (ImageView) baseViewHolder.getView(R.id.item_car_color);
             if (yYCarItemModel == null) {
                 return;
             }
-            YYDecorateCarFragment yYDecorateCarFragment = this.f17208a;
+            YYDecorateCarFragment yYDecorateCarFragment = this.a;
             if (textView != null) {
                 textView.setText(yYCarItemModel.getName());
             }
             ImageLoader.a(yYDecorateCarFragment.getFragmentActive(), yYCarItemModel.getImage()).a(imageView);
-            if (constraintLayout == null) {
+            if (view == null) {
                 return;
             }
-            constraintLayout.setBackgroundResource(yYCarItemModel.getSelected() ? R.drawable.icon_car_color_selected : R.drawable.icon_car_color_normal);
+            view.setBackgroundResource(yYCarItemModel.getSelected() ? R.drawable.icon_car_color_selected : R.drawable.icon_car_color_normal);
         }
     }
 
@@ -210,56 +200,51 @@ public final class YYDecorateCarFragment extends BaseLazyFragment {
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYDecorateCarFragment$ReceiverAdapter.class */
     public final class ReceiverAdapter extends BaseQuickAdapter<YYSeatMemberModel, BaseViewHolder> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ YYDecorateCarFragment f17209a;
+        final /* synthetic */ YYDecorateCarFragment a;
         private int b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private int f17210c;
+        private int c;
         private int d;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public ReceiverAdapter(YYDecorateCarFragment this$0) {
             super(R.layout.item_car_receiver_layout);
             Intrinsics.e(this$0, "this$0");
-            this.f17209a = this$0;
-            this.b = DensityUtils.a(this.f17209a.getContext(), 8.0f);
-            this.f17210c = DensityUtils.a(this.f17209a.getContext(), 1.0f);
-            this.d = DensityUtils.a(this.f17209a.getContext(), 14.0f);
+            this.a = this$0;
+            this.b = DensityUtils.a(this.a.getContext(), 8.0f);
+            this.c = DensityUtils.a(this.a.getContext(), 1.0f);
+            this.d = DensityUtils.a(this.a.getContext(), 14.0f);
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.chad.library.adapter.base.BaseQuickAdapter
         /* renamed from: a */
         public void convert(BaseViewHolder baseViewHolder, YYSeatMemberModel yYSeatMemberModel) {
-            ConstraintLayout constraintLayout = baseViewHolder == null ? null : (ConstraintLayout) baseViewHolder.getView(R.id.item_root_view);
+            ConstraintLayout view = baseViewHolder == null ? null : baseViewHolder.getView(R.id.item_root_view);
             ImageView imageView = baseViewHolder == null ? null : (ImageView) baseViewHolder.getView(R.id.img_receiver_portrait);
             ImageView imageView2 = baseViewHolder == null ? null : (ImageView) baseViewHolder.getView(R.id.img_checked_symbol);
             TextView textView = baseViewHolder == null ? null : (TextView) baseViewHolder.getView(R.id.tv_role_text);
-            CardView cardView = baseViewHolder == null ? null : (CardView) baseViewHolder.getView(R.id.ll_portrait_layout);
+            CardView view2 = baseViewHolder == null ? null : baseViewHolder.getView(R.id.ll_portrait_layout);
             if (yYSeatMemberModel != null && yYSeatMemberModel.isSelected) {
                 if (imageView2 != null) {
                     imageView2.setVisibility(0);
                 }
-                if (cardView != null) {
-                    cardView.setContentPadding(0, 0, 0, 0);
+                if (view2 != null) {
+                    view2.setContentPadding(0, 0, 0, 0);
                 }
             } else {
                 if (imageView2 != null) {
                     imageView2.setVisibility(4);
                 }
-                if (cardView != null) {
-                    int i = this.f17210c;
-                    cardView.setContentPadding(i, i, i, i);
+                if (view2 != null) {
+                    int i = this.c;
+                    view2.setContentPadding(i, i, i, i);
                 }
             }
-            YYRoomInfoManager.e().a(this.f17209a.getFragmentActive(), imageView, yYSeatMemberModel == null ? null : yYSeatMemberModel.getUid(), yYSeatMemberModel == null ? null : yYSeatMemberModel.getAvatar());
-            ViewGroup.LayoutParams layoutParams = constraintLayout == null ? null : constraintLayout.getLayoutParams();
+            YYRoomInfoManager.e().a(this.a.getFragmentActive(), imageView, yYSeatMemberModel == null ? null : yYSeatMemberModel.getUid(), yYSeatMemberModel == null ? null : yYSeatMemberModel.getAvatar());
+            ViewGroup.LayoutParams layoutParams = view == null ? null : view.getLayoutParams();
             if (layoutParams == null) {
                 throw new NullPointerException("null cannot be cast to non-null type androidx.recyclerview.widget.RecyclerView.LayoutParams");
             }
-            RecyclerView.LayoutParams layoutParams2 = (RecyclerView.LayoutParams) layoutParams;
+            RecyclerView.LayoutParams layoutParams2 = layoutParams;
             if (baseViewHolder.getAdapterPosition() == 0) {
                 layoutParams2.leftMargin = this.d;
             } else {
@@ -303,19 +288,16 @@ public final class YYDecorateCarFragment extends BaseLazyFragment {
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYDecorateCarFragment$TabAdapter.class */
     public final class TabAdapter extends BaseQuickAdapter<YYCarTabModel, BaseViewHolder> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ YYDecorateCarFragment f17211a;
+        final /* synthetic */ YYDecorateCarFragment a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public TabAdapter(YYDecorateCarFragment this$0) {
             super(R.layout.view_decorate_car_tab);
             Intrinsics.e(this$0, "this$0");
-            this.f17211a = this$0;
+            this.a = this$0;
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.chad.library.adapter.base.BaseQuickAdapter
         /* renamed from: a */
         public void convert(BaseViewHolder baseViewHolder, YYCarTabModel yYCarTabModel) {
             TextView textView = baseViewHolder == null ? null : (TextView) baseViewHolder.getView(R.id.tv_tab_name);
@@ -324,7 +306,7 @@ public final class YYDecorateCarFragment extends BaseLazyFragment {
             if (yYCarTabModel == null) {
                 return;
             }
-            YYDecorateCarFragment yYDecorateCarFragment = this.f17211a;
+            YYDecorateCarFragment yYDecorateCarFragment = this.a;
             if (textView != null) {
                 textView.setText(yYCarTabModel.getName());
             }
@@ -363,13 +345,13 @@ public final class YYDecorateCarFragment extends BaseLazyFragment {
     private final void a(int i) {
         this.k = i;
         o();
-        TabAdapter tabAdapter = this.f17205c;
+        TabAdapter tabAdapter = this.c;
         TabAdapter tabAdapter2 = tabAdapter;
         if (tabAdapter == null) {
             Intrinsics.c("tabAdapter");
             tabAdapter2 = null;
         }
-        tabAdapter2.getData().get(3).setComplete_status(1);
+        ((YYCarTabModel) tabAdapter2.getData().get(3)).setComplete_status(1);
         FragmentPageCarBinding fragmentPageCarBinding = this.b;
         FragmentPageCarBinding fragmentPageCarBinding2 = fragmentPageCarBinding;
         if (fragmentPageCarBinding == null) {
@@ -418,7 +400,7 @@ public final class YYDecorateCarFragment extends BaseLazyFragment {
             Intrinsics.c("carAdapter");
             carAdapter2 = null;
         }
-        YYCarItemModel yYCarItemModel = carAdapter2.getData().get(i);
+        YYCarItemModel yYCarItemModel = (YYCarItemModel) carAdapter2.getData().get(i);
         YYCarItemModel yYCarItemModel2 = this$0.i;
         if (TextUtils.equals(yYCarItemModel2 == null ? null : yYCarItemModel2.getId(), yYCarItemModel == null ? null : yYCarItemModel.getId())) {
             CarAdapter carAdapter3 = this$0.d;
@@ -427,7 +409,7 @@ public final class YYDecorateCarFragment extends BaseLazyFragment {
                 Intrinsics.c("carAdapter");
                 carAdapter4 = null;
             }
-            YYCarItemModel yYCarItemModel3 = carAdapter4.getData().get(i);
+            YYCarItemModel yYCarItemModel3 = (YYCarItemModel) carAdapter4.getData().get(i);
             Intrinsics.a(yYCarItemModel == null ? null : Boolean.valueOf(yYCarItemModel.getSelected()));
             yYCarItemModel3.setSelected(!valueOf.booleanValue());
             CarAdapter carAdapter5 = this$0.d;
@@ -443,14 +425,14 @@ public final class YYDecorateCarFragment extends BaseLazyFragment {
                 Intrinsics.c("carAdapter");
                 carAdapter8 = null;
             }
-            if (!carAdapter8.getData().get(i).getSelected()) {
+            if (!((YYCarItemModel) carAdapter8.getData().get(i)).getSelected()) {
                 this$0.i = null;
-                TabAdapter tabAdapter = this$0.f17205c;
+                TabAdapter tabAdapter = this$0.c;
                 if (tabAdapter == null) {
                     Intrinsics.c("tabAdapter");
                     tabAdapter = null;
                 }
-                tabAdapter.getData().get(0).setComplete_status(0);
+                ((YYCarTabModel) tabAdapter.getData().get(0)).setComplete_status(0);
             }
         } else {
             CarAdapter carAdapter9 = this$0.d;
@@ -468,21 +450,21 @@ public final class YYDecorateCarFragment extends BaseLazyFragment {
                 Intrinsics.c("carAdapter");
                 carAdapter12 = null;
             }
-            carAdapter12.getData().get(i).setSelected(true);
+            ((YYCarItemModel) carAdapter12.getData().get(i)).setSelected(true);
             CarAdapter carAdapter13 = this$0.d;
             CarAdapter carAdapter14 = carAdapter13;
             if (carAdapter13 == null) {
                 Intrinsics.c("carAdapter");
                 carAdapter14 = null;
             }
-            this$0.i = carAdapter14.getData().get(i);
-            TabAdapter tabAdapter2 = this$0.f17205c;
+            this$0.i = (YYCarItemModel) carAdapter14.getData().get(i);
+            TabAdapter tabAdapter2 = this$0.c;
             TabAdapter tabAdapter3 = tabAdapter2;
             if (tabAdapter2 == null) {
                 Intrinsics.c("tabAdapter");
                 tabAdapter3 = null;
             }
-            tabAdapter3.getData().get(0).setComplete_status(1);
+            ((YYCarTabModel) tabAdapter3.getData().get(0)).setComplete_status(1);
             CarAdapter carAdapter15 = this$0.d;
             if (carAdapter15 == null) {
                 Intrinsics.c("carAdapter");
@@ -499,7 +481,7 @@ public final class YYDecorateCarFragment extends BaseLazyFragment {
         Intrinsics.e(this$0, "this$0");
         Intrinsics.e(noName_0, "$noName_0");
         Intrinsics.e(noName_1, "$noName_1");
-        LogUtils.d(Intrinsics.a(this$0.f17204a, (Object) " close keyboard ..."));
+        LogUtils.d(Intrinsics.a(this$0.a, (Object) " close keyboard ..."));
         this$0.c();
     }
 
@@ -521,14 +503,14 @@ public final class YYDecorateCarFragment extends BaseLazyFragment {
                     fragmentPageCarBinding2 = null;
                 }
                 fragmentPageCarBinding2.L.setText(str);
-                tabAdapter = YYDecorateCarFragment.this.f17205c;
+                tabAdapter = YYDecorateCarFragment.this.c;
                 YYDecorateCarFragment.TabAdapter tabAdapter2 = tabAdapter;
                 if (tabAdapter2 == null) {
                     Intrinsics.c("tabAdapter");
                     tabAdapter2 = null;
                 }
                 str2 = YYDecorateCarFragment.this.j;
-                tabAdapter2.getData().get(2).setComplete_status(!TextUtils.isEmpty(str2) ? 1 : 0);
+                ((YYCarTabModel) tabAdapter2.getData().get(2)).setComplete_status(!TextUtils.isEmpty(str2) ? 1 : 0);
                 YYDecorateCarFragment.this.o();
                 ToastUtils.a("保存成功");
             }
@@ -545,13 +527,13 @@ public final class YYDecorateCarFragment extends BaseLazyFragment {
                 }
                 fragmentPageCarBinding2.z.setText("");
                 YYDecorateCarFragment.this.j = "";
-                tabAdapter = YYDecorateCarFragment.this.f17205c;
+                tabAdapter = YYDecorateCarFragment.this.c;
                 YYDecorateCarFragment.TabAdapter tabAdapter2 = tabAdapter;
                 if (tabAdapter2 == null) {
                     Intrinsics.c("tabAdapter");
                     tabAdapter2 = null;
                 }
-                tabAdapter2.getData().get(2).setComplete_status(0);
+                ((YYCarTabModel) tabAdapter2.getData().get(2)).setComplete_status(0);
                 return super.onUIFailure(i, str2);
             }
         }, getFragmentActive());
@@ -597,7 +579,7 @@ public final class YYDecorateCarFragment extends BaseLazyFragment {
         int i = this.k;
         String f = i != 0 ? i != 1 ? "" : f() : e();
         jsonObject.addProperty(ReqAckPackage.REQ_RESPONSE_KEY.AVATAR, f);
-        jsonObject.addProperty("sign", this.j);
+        jsonObject.addProperty(c.Y, this.j);
         yYGiftModel.goodsDescribe = f;
         yYPayRequestModel.extra_contents = jsonObject.toString();
         if (z2 && (b = YYRoomInfoManager.e().b()) != null) {
@@ -681,13 +663,13 @@ public final class YYDecorateCarFragment extends BaseLazyFragment {
                 }
                 fragmentPageCarBinding14.m.setImageResource(R.drawable.icon_car_signature_save_normal);
                 YYDecorateCarFragment.this.j = "";
-                tabAdapter = YYDecorateCarFragment.this.f17205c;
+                tabAdapter = YYDecorateCarFragment.this.c;
                 YYDecorateCarFragment.TabAdapter tabAdapter2 = tabAdapter;
                 if (tabAdapter == null) {
                     Intrinsics.c("tabAdapter");
                     tabAdapter2 = null;
                 }
-                tabAdapter2.getData().get(2).setComplete_status(0);
+                ((YYCarTabModel) tabAdapter2.getData().get(2)).setComplete_status(0);
                 fragmentPageCarBinding9 = YYDecorateCarFragment.this.b;
                 FragmentPageCarBinding fragmentPageCarBinding15 = fragmentPageCarBinding9;
                 if (fragmentPageCarBinding9 == null) {
@@ -781,7 +763,7 @@ public final class YYDecorateCarFragment extends BaseLazyFragment {
             Intrinsics.c("colorAdapter");
             colorAdapter2 = null;
         }
-        YYCarItemModel yYCarItemModel = colorAdapter2.getData().get(i);
+        YYCarItemModel yYCarItemModel = (YYCarItemModel) colorAdapter2.getData().get(i);
         if (TextUtils.equals(this$0.l, yYCarItemModel == null ? null : yYCarItemModel.getId())) {
             ColorAdapter colorAdapter3 = this$0.e;
             ColorAdapter colorAdapter4 = colorAdapter3;
@@ -789,7 +771,7 @@ public final class YYDecorateCarFragment extends BaseLazyFragment {
                 Intrinsics.c("colorAdapter");
                 colorAdapter4 = null;
             }
-            YYCarItemModel yYCarItemModel2 = colorAdapter4.getData().get(i);
+            YYCarItemModel yYCarItemModel2 = (YYCarItemModel) colorAdapter4.getData().get(i);
             Intrinsics.a(yYCarItemModel == null ? null : Boolean.valueOf(yYCarItemModel.getSelected()));
             yYCarItemModel2.setSelected(!valueOf.booleanValue());
             ColorAdapter colorAdapter5 = this$0.e;
@@ -805,14 +787,14 @@ public final class YYDecorateCarFragment extends BaseLazyFragment {
                 Intrinsics.c("colorAdapter");
                 colorAdapter8 = null;
             }
-            if (!colorAdapter8.getData().get(i).getSelected()) {
+            if (!((YYCarItemModel) colorAdapter8.getData().get(i)).getSelected()) {
                 this$0.l = "0";
-                TabAdapter tabAdapter = this$0.f17205c;
+                TabAdapter tabAdapter = this$0.c;
                 if (tabAdapter == null) {
                     Intrinsics.c("tabAdapter");
                     tabAdapter = null;
                 }
-                tabAdapter.getData().get(1).setComplete_status(0);
+                ((YYCarTabModel) tabAdapter.getData().get(1)).setComplete_status(0);
             }
         } else {
             ColorAdapter colorAdapter9 = this$0.e;
@@ -830,21 +812,21 @@ public final class YYDecorateCarFragment extends BaseLazyFragment {
                 Intrinsics.c("colorAdapter");
                 colorAdapter12 = null;
             }
-            colorAdapter12.getData().get(i).setSelected(true);
+            ((YYCarItemModel) colorAdapter12.getData().get(i)).setSelected(true);
             ColorAdapter colorAdapter13 = this$0.e;
             ColorAdapter colorAdapter14 = colorAdapter13;
             if (colorAdapter13 == null) {
                 Intrinsics.c("colorAdapter");
                 colorAdapter14 = null;
             }
-            this$0.l = colorAdapter14.getData().get(i).getId();
-            TabAdapter tabAdapter2 = this$0.f17205c;
+            this$0.l = ((YYCarItemModel) colorAdapter14.getData().get(i)).getId();
+            TabAdapter tabAdapter2 = this$0.c;
             TabAdapter tabAdapter3 = tabAdapter2;
             if (tabAdapter2 == null) {
                 Intrinsics.c("tabAdapter");
                 tabAdapter3 = null;
             }
-            tabAdapter3.getData().get(1).setComplete_status(1);
+            ((YYCarTabModel) tabAdapter3.getData().get(1)).setComplete_status(1);
             ColorAdapter colorAdapter15 = this$0.e;
             if (colorAdapter15 == null) {
                 Intrinsics.c("colorAdapter");
@@ -859,7 +841,7 @@ public final class YYDecorateCarFragment extends BaseLazyFragment {
     private final void c() {
         View currentFocus;
         FragmentActivity activity = getActivity();
-        Object systemService = activity == null ? null : activity.getSystemService(Context.INPUT_METHOD_SERVICE);
+        Object systemService = activity == null ? null : activity.getSystemService("input_method");
         if (systemService == null) {
             throw new NullPointerException("null cannot be cast to non-null type android.view.inputmethod.InputMethodManager");
         }
@@ -907,39 +889,39 @@ public final class YYDecorateCarFragment extends BaseLazyFragment {
     public static final void c(YYDecorateCarFragment this$0, BaseQuickAdapter baseQuickAdapter, View view, int i) {
         Intrinsics.e(this$0, "this$0");
         this$0.c();
-        TabAdapter tabAdapter = this$0.f17205c;
+        TabAdapter tabAdapter = this$0.c;
         TabAdapter tabAdapter2 = tabAdapter;
         if (tabAdapter == null) {
             Intrinsics.c("tabAdapter");
             tabAdapter2 = null;
         }
-        YYCarTabModel item = tabAdapter2.getItem(i);
-        TabAdapter tabAdapter3 = this$0.f17205c;
+        YYCarTabModel yYCarTabModel = (YYCarTabModel) tabAdapter2.getItem(i);
+        TabAdapter tabAdapter3 = this$0.c;
         TabAdapter tabAdapter4 = tabAdapter3;
         if (tabAdapter3 == null) {
             Intrinsics.c("tabAdapter");
             tabAdapter4 = null;
         }
-        for (YYCarTabModel yYCarTabModel : tabAdapter4.getData()) {
-            yYCarTabModel.setStatus(0);
+        for (YYCarTabModel yYCarTabModel2 : tabAdapter4.getData()) {
+            yYCarTabModel2.setStatus(0);
         }
-        TabAdapter tabAdapter5 = this$0.f17205c;
+        TabAdapter tabAdapter5 = this$0.c;
         TabAdapter tabAdapter6 = tabAdapter5;
         if (tabAdapter5 == null) {
             Intrinsics.c("tabAdapter");
             tabAdapter6 = null;
         }
-        tabAdapter6.getData().get(i).setStatus(1);
-        TabAdapter tabAdapter7 = this$0.f17205c;
+        ((YYCarTabModel) tabAdapter6.getData().get(i)).setStatus(1);
+        TabAdapter tabAdapter7 = this$0.c;
         if (tabAdapter7 == null) {
             Intrinsics.c("tabAdapter");
             tabAdapter7 = null;
         }
         tabAdapter7.notifyDataSetChanged();
-        if (item == null) {
+        if (yYCarTabModel == null) {
             return;
         }
-        this$0.b(item.getId());
+        this$0.b(yYCarTabModel.getId());
     }
 
     private final void d() {
@@ -988,7 +970,7 @@ public final class YYDecorateCarFragment extends BaseLazyFragment {
             Intrinsics.c("receiverAdapter");
             receiverAdapter2 = null;
         }
-        receiverAdapter2.getData().get(i).isSelected = !yYSeatMemberModel.isSelected;
+        ((YYSeatMemberModel) receiverAdapter2.getData().get(i)).isSelected = !yYSeatMemberModel.isSelected;
         ReceiverAdapter receiverAdapter3 = this$0.f;
         if (receiverAdapter3 == null) {
             Intrinsics.c("receiverAdapter");
@@ -1048,18 +1030,18 @@ public final class YYDecorateCarFragment extends BaseLazyFragment {
             } else {
                 fragmentPageCarBinding = fragmentPageCarBinding2;
             }
-            b.a(fragmentPageCarBinding.f16480c);
+            b.a(fragmentPageCarBinding.c);
             this$0.a(0);
             return;
         }
         this$0.k = -1;
-        TabAdapter tabAdapter = this$0.f17205c;
+        TabAdapter tabAdapter = this$0.c;
         TabAdapter tabAdapter2 = tabAdapter;
         if (tabAdapter == null) {
             Intrinsics.c("tabAdapter");
             tabAdapter2 = null;
         }
-        tabAdapter2.getData().get(3).setComplete_status(0);
+        ((YYCarTabModel) tabAdapter2.getData().get(3)).setComplete_status(0);
         FragmentPageCarBinding fragmentPageCarBinding3 = this$0.b;
         FragmentPageCarBinding fragmentPageCarBinding4 = fragmentPageCarBinding3;
         if (fragmentPageCarBinding3 == null) {
@@ -1073,7 +1055,7 @@ public final class YYDecorateCarFragment extends BaseLazyFragment {
             Intrinsics.c("mBinding");
             fragmentPageCarBinding5 = null;
         }
-        b2.a(fragmentPageCarBinding5.f16480c);
+        b2.a(fragmentPageCarBinding5.c);
         this$0.o();
     }
 
@@ -1100,7 +1082,7 @@ public final class YYDecorateCarFragment extends BaseLazyFragment {
                 yYCarBasicModel = YYDecorateCarFragment.this.h;
                 if (yYCarBasicModel != null) {
                     YYDecorateCarFragment yYDecorateCarFragment = YYDecorateCarFragment.this;
-                    tabAdapter = yYDecorateCarFragment.f17205c;
+                    tabAdapter = yYDecorateCarFragment.c;
                     YYDecorateCarFragment.TabAdapter tabAdapter3 = tabAdapter;
                     if (tabAdapter == null) {
                         Intrinsics.c("tabAdapter");
@@ -1148,14 +1130,14 @@ public final class YYDecorateCarFragment extends BaseLazyFragment {
                     sb3.append((Object) (beans3 == null ? null : beans3.getColor()));
                     sb3.append("弯豆");
                     textView3.setText(sb3.toString());
-                    ImageWrapper a2 = ImageLoader.a(yYDecorateCarFragment.getFragmentActive(), yYCarBasicModel.getDefault_car().getImage());
+                    ImageWrapper a = ImageLoader.a(yYDecorateCarFragment.getFragmentActive(), yYCarBasicModel.getDefault_car().getImage());
                     fragmentPageCarBinding4 = yYDecorateCarFragment.b;
                     FragmentPageCarBinding fragmentPageCarBinding10 = fragmentPageCarBinding4;
                     if (fragmentPageCarBinding4 == null) {
                         Intrinsics.c("mBinding");
                         fragmentPageCarBinding10 = null;
                     }
-                    a2.a(fragmentPageCarBinding10.e);
+                    a.a(fragmentPageCarBinding10.e);
                     HonorInfo honor_info = yYCarBasicModel.getHonor_info();
                     fragmentPageCarBinding5 = yYDecorateCarFragment.b;
                     FragmentPageCarBinding fragmentPageCarBinding11 = fragmentPageCarBinding5;
@@ -1176,13 +1158,13 @@ public final class YYDecorateCarFragment extends BaseLazyFragment {
                     }
                     fragmentPageCarBinding12.A.setText(honor_info.getIntroduce());
                     yYDecorateCarFragment.o();
-                    tabAdapter2 = yYDecorateCarFragment.f17205c;
+                    tabAdapter2 = yYDecorateCarFragment.c;
                     YYDecorateCarFragment.TabAdapter tabAdapter4 = tabAdapter2;
                     if (tabAdapter4 == null) {
                         Intrinsics.c("tabAdapter");
                         tabAdapter4 = null;
                     }
-                    yYDecorateCarFragment.b(tabAdapter4.getData().get(0).getId());
+                    yYDecorateCarFragment.b(((YYCarTabModel) tabAdapter4.getData().get(0)).getId());
                 }
                 YYDecorateCarFragment.this.h();
                 YYDecorateCarFragment.this.i();
@@ -1211,19 +1193,19 @@ public final class YYDecorateCarFragment extends BaseLazyFragment {
                 } else {
                     fragmentPageCarBinding = fragmentPageCarBinding2;
                 }
-                b2.a(fragmentPageCarBinding.f16480c);
+                b2.a(fragmentPageCarBinding.c);
             }
             this$0.a(1);
             return;
         }
         this$0.k = -1;
-        TabAdapter tabAdapter = this$0.f17205c;
+        TabAdapter tabAdapter = this$0.c;
         TabAdapter tabAdapter2 = tabAdapter;
         if (tabAdapter == null) {
             Intrinsics.c("tabAdapter");
             tabAdapter2 = null;
         }
-        tabAdapter2.getData().get(3).setComplete_status(0);
+        ((YYCarTabModel) tabAdapter2.getData().get(3)).setComplete_status(0);
         FragmentPageCarBinding fragmentPageCarBinding3 = this$0.b;
         FragmentPageCarBinding fragmentPageCarBinding4 = fragmentPageCarBinding3;
         if (fragmentPageCarBinding3 == null) {
@@ -1237,7 +1219,7 @@ public final class YYDecorateCarFragment extends BaseLazyFragment {
             Intrinsics.c("mBinding");
             fragmentPageCarBinding5 = null;
         }
-        b3.a(fragmentPageCarBinding5.f16480c);
+        b3.a(fragmentPageCarBinding5.c);
         this$0.o();
     }
 
@@ -1262,14 +1244,14 @@ public final class YYDecorateCarFragment extends BaseLazyFragment {
                     carAdapter2 = null;
                 }
                 carAdapter2.setNewData(bluedEntityA.data);
-                tabAdapter = YYDecorateCarFragment.this.f17205c;
+                tabAdapter = YYDecorateCarFragment.this.c;
                 YYDecorateCarFragment.TabAdapter tabAdapter3 = tabAdapter;
                 if (tabAdapter == null) {
                     Intrinsics.c("tabAdapter");
                     tabAdapter3 = null;
                 }
-                tabAdapter3.getData().get(0).setStatus(1);
-                tabAdapter2 = YYDecorateCarFragment.this.f17205c;
+                ((YYCarTabModel) tabAdapter3.getData().get(0)).setStatus(1);
+                tabAdapter2 = YYDecorateCarFragment.this.c;
                 YYDecorateCarFragment.TabAdapter tabAdapter4 = tabAdapter2;
                 if (tabAdapter4 == null) {
                     Intrinsics.c("tabAdapter");
@@ -1305,7 +1287,7 @@ public final class YYDecorateCarFragment extends BaseLazyFragment {
 
     private final void j() {
         this.d = new CarAdapter(this);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        RecyclerView.LayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setOrientation(0);
         FragmentPageCarBinding fragmentPageCarBinding = this.b;
         FragmentPageCarBinding fragmentPageCarBinding2 = fragmentPageCarBinding;
@@ -1321,20 +1303,19 @@ public final class YYDecorateCarFragment extends BaseLazyFragment {
             fragmentPageCarBinding4 = null;
         }
         RecyclerView recyclerView = fragmentPageCarBinding4.u;
-        CarAdapter carAdapter = this.d;
-        CarAdapter carAdapter2 = carAdapter;
-        if (carAdapter == null) {
+        RecyclerView.Adapter adapter = this.d;
+        CarAdapter carAdapter = adapter;
+        if (adapter == null) {
+            Intrinsics.c("carAdapter");
+            carAdapter = null;
+        }
+        recyclerView.setAdapter(carAdapter);
+        CarAdapter carAdapter2 = this.d;
+        if (carAdapter2 == null) {
             Intrinsics.c("carAdapter");
             carAdapter2 = null;
         }
-        recyclerView.setAdapter(carAdapter2);
-        CarAdapter carAdapter3 = this.d;
-        if (carAdapter3 == null) {
-            Intrinsics.c("carAdapter");
-            carAdapter3 = null;
-        }
-        carAdapter3.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYDecorateCarFragment$Uxnzon6_0rpRlN4TnpJcRSnKwaY
-            @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemClickListener
+        carAdapter2.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYDecorateCarFragment$Uxnzon6_0rpRlN4TnpJcRSnKwaY
             public final void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
                 YYDecorateCarFragment.a(YYDecorateCarFragment.this, baseQuickAdapter, view, i);
             }
@@ -1370,7 +1351,7 @@ public final class YYDecorateCarFragment extends BaseLazyFragment {
                         Intrinsics.c("mBinding");
                         fragmentPageCarBinding6 = null;
                     }
-                    b2.a(fragmentPageCarBinding6.k);
+                    b2.a((ImageView) fragmentPageCarBinding6.k);
                 }
                 ImageWrapper b3 = ImageLoader.a(getFragmentActive(), e()).b(R.drawable.user_bg_round);
                 FragmentPageCarBinding fragmentPageCarBinding7 = this.b;
@@ -1379,7 +1360,7 @@ public final class YYDecorateCarFragment extends BaseLazyFragment {
                     Intrinsics.c("mBinding");
                     fragmentPageCarBinding8 = null;
                 }
-                b3.a(fragmentPageCarBinding8.j);
+                b3.a((ImageView) fragmentPageCarBinding8.j);
             }
             if (TextUtils.equals(b.chat_type, "9")) {
                 FragmentPageCarBinding fragmentPageCarBinding9 = this.b;
@@ -1406,7 +1387,7 @@ public final class YYDecorateCarFragment extends BaseLazyFragment {
             Intrinsics.c("mBinding");
             fragmentPageCarBinding14 = null;
         }
-        b4.a(fragmentPageCarBinding14.f16480c);
+        b4.a(fragmentPageCarBinding14.c);
         FragmentPageCarBinding fragmentPageCarBinding15 = this.b;
         FragmentPageCarBinding fragmentPageCarBinding16 = fragmentPageCarBinding15;
         if (fragmentPageCarBinding15 == null) {
@@ -1434,7 +1415,7 @@ public final class YYDecorateCarFragment extends BaseLazyFragment {
 
     private final void l() {
         this.e = new ColorAdapter(this);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        RecyclerView.LayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setOrientation(0);
         FragmentPageCarBinding fragmentPageCarBinding = this.b;
         FragmentPageCarBinding fragmentPageCarBinding2 = fragmentPageCarBinding;
@@ -1450,20 +1431,19 @@ public final class YYDecorateCarFragment extends BaseLazyFragment {
             fragmentPageCarBinding4 = null;
         }
         RecyclerView recyclerView = fragmentPageCarBinding4.v;
-        ColorAdapter colorAdapter = this.e;
-        ColorAdapter colorAdapter2 = colorAdapter;
-        if (colorAdapter == null) {
+        RecyclerView.Adapter adapter = this.e;
+        ColorAdapter colorAdapter = adapter;
+        if (adapter == null) {
+            Intrinsics.c("colorAdapter");
+            colorAdapter = null;
+        }
+        recyclerView.setAdapter(colorAdapter);
+        ColorAdapter colorAdapter2 = this.e;
+        if (colorAdapter2 == null) {
             Intrinsics.c("colorAdapter");
             colorAdapter2 = null;
         }
-        recyclerView.setAdapter(colorAdapter2);
-        ColorAdapter colorAdapter3 = this.e;
-        if (colorAdapter3 == null) {
-            Intrinsics.c("colorAdapter");
-            colorAdapter3 = null;
-        }
-        colorAdapter3.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYDecorateCarFragment$BypLh5T5-t1XZlBsdhYSZxxRtpI
-            @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemClickListener
+        colorAdapter2.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYDecorateCarFragment$BypLh5T5-t1XZlBsdhYSZxxRtpI
             public final void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
                 YYDecorateCarFragment.b(YYDecorateCarFragment.this, baseQuickAdapter, view, i);
             }
@@ -1471,8 +1451,8 @@ public final class YYDecorateCarFragment extends BaseLazyFragment {
     }
 
     private final void m() {
-        this.f17205c = new TabAdapter(this);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        this.c = new TabAdapter(this);
+        RecyclerView.LayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setOrientation(0);
         FragmentPageCarBinding fragmentPageCarBinding = this.b;
         FragmentPageCarBinding fragmentPageCarBinding2 = fragmentPageCarBinding;
@@ -1488,20 +1468,19 @@ public final class YYDecorateCarFragment extends BaseLazyFragment {
             fragmentPageCarBinding4 = null;
         }
         RecyclerView recyclerView = fragmentPageCarBinding4.x;
-        TabAdapter tabAdapter = this.f17205c;
-        TabAdapter tabAdapter2 = tabAdapter;
-        if (tabAdapter == null) {
+        RecyclerView.Adapter adapter = this.c;
+        TabAdapter tabAdapter = adapter;
+        if (adapter == null) {
+            Intrinsics.c("tabAdapter");
+            tabAdapter = null;
+        }
+        recyclerView.setAdapter(tabAdapter);
+        TabAdapter tabAdapter2 = this.c;
+        if (tabAdapter2 == null) {
             Intrinsics.c("tabAdapter");
             tabAdapter2 = null;
         }
-        recyclerView.setAdapter(tabAdapter2);
-        TabAdapter tabAdapter3 = this.f17205c;
-        if (tabAdapter3 == null) {
-            Intrinsics.c("tabAdapter");
-            tabAdapter3 = null;
-        }
-        tabAdapter3.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYDecorateCarFragment$MaBAL1MPm7RongoxKwf4wnZh0jU
-            @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemClickListener
+        tabAdapter2.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYDecorateCarFragment$MaBAL1MPm7RongoxKwf4wnZh0jU
             public final void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
                 YYDecorateCarFragment.c(YYDecorateCarFragment.this, baseQuickAdapter, view, i);
             }
@@ -1511,7 +1490,7 @@ public final class YYDecorateCarFragment extends BaseLazyFragment {
     private final void n() {
         List<YYSeatMemberModel> hasPeopleMicsExceptMyself;
         this.f = new ReceiverAdapter(this);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        RecyclerView.LayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setOrientation(0);
         FragmentPageCarBinding fragmentPageCarBinding = this.b;
         FragmentPageCarBinding fragmentPageCarBinding2 = fragmentPageCarBinding;
@@ -1527,21 +1506,20 @@ public final class YYDecorateCarFragment extends BaseLazyFragment {
             fragmentPageCarBinding4 = null;
         }
         RecyclerView recyclerView = fragmentPageCarBinding4.w;
-        ReceiverAdapter receiverAdapter = this.f;
-        ReceiverAdapter receiverAdapter2 = receiverAdapter;
-        if (receiverAdapter == null) {
+        RecyclerView.Adapter adapter = this.f;
+        ReceiverAdapter receiverAdapter = adapter;
+        if (adapter == null) {
             Intrinsics.c("receiverAdapter");
-            receiverAdapter2 = null;
+            receiverAdapter = null;
         }
-        recyclerView.setAdapter(receiverAdapter2);
-        ReceiverAdapter receiverAdapter3 = this.f;
-        ReceiverAdapter receiverAdapter4 = receiverAdapter3;
-        if (receiverAdapter3 == null) {
+        recyclerView.setAdapter(receiverAdapter);
+        ReceiverAdapter receiverAdapter2 = this.f;
+        ReceiverAdapter receiverAdapter3 = receiverAdapter2;
+        if (receiverAdapter2 == null) {
             Intrinsics.c("receiverAdapter");
-            receiverAdapter4 = null;
+            receiverAdapter3 = null;
         }
-        receiverAdapter4.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYDecorateCarFragment$k5OYSXY2ScQ45qK68-41T2yVUiI
-            @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemClickListener
+        receiverAdapter3.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYDecorateCarFragment$k5OYSXY2ScQ45qK68-41T2yVUiI
             public final void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
                 YYDecorateCarFragment.d(YYDecorateCarFragment.this, baseQuickAdapter, view, i);
             }
@@ -1556,21 +1534,21 @@ public final class YYDecorateCarFragment extends BaseLazyFragment {
             } else if (hasPeopleMicsExceptMyself.size() > 1) {
                 hasPeopleMicsExceptMyself.get(1).isSelected = true;
             }
-            ReceiverAdapter receiverAdapter5 = this.f;
-            ReceiverAdapter receiverAdapter6 = receiverAdapter5;
-            if (receiverAdapter5 == null) {
+            ReceiverAdapter receiverAdapter4 = this.f;
+            ReceiverAdapter receiverAdapter5 = receiverAdapter4;
+            if (receiverAdapter4 == null) {
                 Intrinsics.c("receiverAdapter");
-                receiverAdapter6 = null;
+                receiverAdapter5 = null;
             }
-            receiverAdapter6.setNewData(hasPeopleMicsExceptMyself);
+            receiverAdapter5.setNewData(hasPeopleMicsExceptMyself);
         }
-        ReceiverAdapter receiverAdapter7 = this.f;
-        ReceiverAdapter receiverAdapter8 = receiverAdapter7;
-        if (receiverAdapter7 == null) {
+        ReceiverAdapter receiverAdapter6 = this.f;
+        ReceiverAdapter receiverAdapter7 = receiverAdapter6;
+        if (receiverAdapter6 == null) {
             Intrinsics.c("receiverAdapter");
-            receiverAdapter8 = null;
+            receiverAdapter7 = null;
         }
-        if (receiverAdapter8.getData().size() <= 1) {
+        if (receiverAdapter7.getData().size() <= 1) {
             FragmentPageCarBinding fragmentPageCarBinding5 = this.b;
             FragmentPageCarBinding fragmentPageCarBinding6 = fragmentPageCarBinding5;
             if (fragmentPageCarBinding5 == null) {
@@ -1608,15 +1586,15 @@ public final class YYDecorateCarFragment extends BaseLazyFragment {
         ConfigBean beans3;
         ConfigBean beans4;
         YYCarBasicModel yYCarBasicModel = this.h;
-        int a2 = StringUtils.a((yYCarBasicModel == null || (beans = yYCarBasicModel.getBeans()) == null) ? null : beans.getBase(), 0);
+        int a = StringUtils.a((yYCarBasicModel == null || (beans = yYCarBasicModel.getBeans()) == null) ? null : beans.getBase(), 0);
         YYCarItemModel yYCarItemModel = this.i;
         if (yYCarItemModel != null) {
-            a2 += StringUtils.a(yYCarItemModel.getBeans(), 0);
+            a += StringUtils.a(yYCarItemModel.getBeans(), 0);
         }
-        int i = a2;
+        int i = a;
         if (!TextUtils.isEmpty(this.j)) {
             YYCarBasicModel yYCarBasicModel2 = this.h;
-            i = a2 + StringUtils.a((yYCarBasicModel2 == null || (beans4 = yYCarBasicModel2.getBeans()) == null) ? null : beans4.getSign(), 0);
+            i = a + StringUtils.a((yYCarBasicModel2 == null || (beans4 = yYCarBasicModel2.getBeans()) == null) ? null : beans4.getSign(), 0);
         }
         int i2 = i;
         if (this.k >= 0) {
@@ -1628,7 +1606,7 @@ public final class YYDecorateCarFragment extends BaseLazyFragment {
             YYCarBasicModel yYCarBasicModel4 = this.h;
             i3 = i2 + StringUtils.a((yYCarBasicModel4 == null || (beans2 = yYCarBasicModel4.getBeans()) == null) ? null : beans2.getColor(), 0);
         }
-        TabAdapter tabAdapter = this.f17205c;
+        TabAdapter tabAdapter = this.c;
         TabAdapter tabAdapter2 = tabAdapter;
         if (tabAdapter == null) {
             Intrinsics.c("tabAdapter");
@@ -1642,7 +1620,7 @@ public final class YYDecorateCarFragment extends BaseLazyFragment {
             fragmentPageCarBinding = null;
         }
         TextView textView = fragmentPageCarBinding.M;
-        StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
+        StringCompanionObject stringCompanionObject = StringCompanionObject.a;
         String string = getResources().getString(R.string.yy_car_value);
         Intrinsics.c(string, "resources.getString(R.string.yy_car_value)");
         String format = String.format(string, Arrays.copyOf(new Object[]{Integer.valueOf(i3)}, 1));
@@ -1665,14 +1643,14 @@ public final class YYDecorateCarFragment extends BaseLazyFragment {
                     return;
                 }
                 YYDecorateCarFragment.this.g = bluedEntityA.getSingleData();
-                ImageWrapper a2 = ImageLoader.a(YYDecorateCarFragment.this.getFragmentActive(), bluedEntityA.getSingleData().getImage());
+                ImageWrapper a = ImageLoader.a(YYDecorateCarFragment.this.getFragmentActive(), bluedEntityA.getSingleData().getImage());
                 fragmentPageCarBinding = YYDecorateCarFragment.this.b;
                 FragmentPageCarBinding fragmentPageCarBinding2 = fragmentPageCarBinding;
                 if (fragmentPageCarBinding == null) {
                     Intrinsics.c("mBinding");
                     fragmentPageCarBinding2 = null;
                 }
-                a2.a(fragmentPageCarBinding2.e);
+                a.a(fragmentPageCarBinding2.e);
             }
         }, getFragmentActive());
     }
@@ -1683,13 +1661,13 @@ public final class YYDecorateCarFragment extends BaseLazyFragment {
         g();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
         View inflate = LayoutInflater.from(getContext()).inflate(R.layout.fragment_page_car, (ViewGroup) null);
-        FragmentPageCarBinding a2 = FragmentPageCarBinding.a(inflate);
-        Intrinsics.c(a2, "bind(view)");
-        this.b = a2;
+        FragmentPageCarBinding a = FragmentPageCarBinding.a(inflate);
+        Intrinsics.c(a, "bind(view)");
+        this.b = a;
         j();
         b();
         k();
@@ -1699,13 +1677,12 @@ public final class YYDecorateCarFragment extends BaseLazyFragment {
         return inflate;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onViewCreated(View view, Bundle bundle) {
         Intrinsics.e(view, "view");
         super.onViewCreated(view, bundle);
-        LogUtils.d(Intrinsics.a(this.f17204a, (Object) " onViewCreated ..."));
-        getParentFragmentManager().setFragmentResultListener("close_keyboard", this, new FragmentResultListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYDecorateCarFragment$u7y76T1Z5DlPL9ubueXfu5YkbWY
-            @Override // androidx.fragment.app.FragmentResultListener
+        LogUtils.d(Intrinsics.a(this.a, (Object) " onViewCreated ..."));
+        getParentFragmentManager().setFragmentResultListener("close_keyboard", (LifecycleOwner) this, new FragmentResultListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYDecorateCarFragment$u7y76T1Z5DlPL9ubueXfu5YkbWY
             public final void onFragmentResult(String str, Bundle bundle2) {
                 YYDecorateCarFragment.a(YYDecorateCarFragment.this, str, bundle2);
             }
@@ -1728,7 +1705,7 @@ public final class YYDecorateCarFragment extends BaseLazyFragment {
             Intrinsics.c("mBinding");
             fragmentPageCarBinding4 = null;
         }
-        fragmentPageCarBinding4.f16479a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYDecorateCarFragment$dunHAAX-tWSFRgqRyBERkC7lnHw
+        fragmentPageCarBinding4.a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYDecorateCarFragment$dunHAAX-tWSFRgqRyBERkC7lnHw
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 YYDecorateCarFragment.b(YYDecorateCarFragment.this, view2);

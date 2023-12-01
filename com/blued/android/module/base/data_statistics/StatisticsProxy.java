@@ -26,36 +26,36 @@ public class StatisticsProxy extends BaseProxy<IStatistics> implements IStatisti
 
     @Override // com.blued.android.module.base.data_statistics.IStatistics
     public void a(int i, String str, int i2) {
-        if (this.f10426a != 0) {
-            ((IStatistics) this.f10426a).a(i, str, i2);
+        if (this.a != 0) {
+            ((IStatistics) this.a).a(i, str, i2);
         }
     }
 
     @Override // com.blued.android.module.base.data_statistics.IStatistics
     public void a(String str) {
-        if (this.f10426a != 0) {
-            ((IStatistics) this.f10426a).a(str);
+        if (this.a != 0) {
+            ((IStatistics) this.a).a(str);
         }
     }
 
     @Override // com.blued.android.module.base.data_statistics.IStatistics
     public void a(String str, int i) {
-        if (this.f10426a != 0) {
-            ((IStatistics) this.f10426a).a(str, i);
+        if (this.a != 0) {
+            ((IStatistics) this.a).a(str, i);
         }
     }
 
     @Override // com.blued.android.module.base.data_statistics.IStatistics
     public void a(String str, Object obj) {
-        if (this.f10426a != 0) {
-            ((IStatistics) this.f10426a).a(str, obj);
+        if (this.a != 0) {
+            ((IStatistics) this.a).a(str, obj);
         }
     }
 
     @Override // com.blued.android.module.base.data_statistics.IStatistics
     public void a(String str, String str2) {
-        if (this.f10426a != 0) {
-            ((IStatistics) this.f10426a).a(str, str2);
+        if (this.a != 0) {
+            ((IStatistics) this.a).a(str, str2);
         }
     }
 }

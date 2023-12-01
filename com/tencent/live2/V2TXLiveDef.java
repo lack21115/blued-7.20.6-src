@@ -235,7 +235,7 @@ public class V2TXLiveDef {
             this.videoResolution = v2TXLiveVideoResolution;
             V2TXLiveUtils.a bitrateByResolution = V2TXLiveUtils.getBitrateByResolution(v2TXLiveVideoResolution);
             this.videoBitrate = bitrateByResolution.b;
-            this.minVideoBitrate = bitrateByResolution.f37189a;
+            this.minVideoBitrate = bitrateByResolution.f23498a;
         }
 
         public final String toString() {

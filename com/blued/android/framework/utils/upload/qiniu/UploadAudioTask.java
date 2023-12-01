@@ -20,8 +20,8 @@ public class UploadAudioTask extends UploadBaseTask {
     public UploadAudioTask(String str, List<Pair<String, String>> list, String str2, SenderListener senderListener) {
         super(str, senderListener);
         this.s = 0;
-        this.f10137c = list;
-        this.d.addAll(this.f10137c);
+        this.c = list;
+        this.d.addAll(this.c);
         this.p = str2;
         a(false);
         this.o = 1;
@@ -32,13 +32,11 @@ public class UploadAudioTask extends UploadBaseTask {
         synchronized (this) {
             b("获取Task token！");
             QiniuTokenUtils.a(str, i, new BluedUIHttpResponse<BluedEntity<BluedToken, QiniuUploadExtra>>() { // from class: com.blued.android.framework.utils.upload.qiniu.UploadAudioTask.2
-
-                /* renamed from: a  reason: collision with root package name */
-                boolean f10134a;
+                boolean a;
 
                 @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public boolean onUIFailure(int i2, String str2) {
-                    this.f10134a = true;
+                    this.a = true;
                     UploadAudioTask uploadAudioTask = UploadAudioTask.this;
                     uploadAudioTask.c("getTaskToken Error ! errorCode:" + i2 + " | errorMessage:" + str2);
                     return super.onUIFailure(i2, str2);
@@ -55,7 +53,7 @@ public class UploadAudioTask extends UploadBaseTask {
 
                 @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public void onUIStart() {
-                    this.f10134a = false;
+                    this.a = false;
                     super.onUIStart();
                 }
 
@@ -65,7 +63,7 @@ public class UploadAudioTask extends UploadBaseTask {
                         UploadAudioTask.this.c("getTaskToken Error !  No Data");
                         return;
                     }
-                    this.f10134a = false;
+                    this.a = false;
                     UploadAudioTask uploadAudioTask = UploadAudioTask.this;
                     uploadAudioTask.b("获取Task token成功！！！ " + bluedEntity.toString());
                     UploadAudioTask.this.q = bluedEntity.data.get(0);
@@ -95,7 +93,7 @@ public class UploadAudioTask extends UploadBaseTask {
     @Override // com.blued.android.framework.utils.upload.qiniu.UploadBaseTask, com.blued.android.framework.utils.upload.qiniu.IUploadTask
     public void a(IUploadTask.IUploadStateListener iUploadStateListener) {
         super.a(iUploadStateListener);
-        a(this.p, this.f10137c.size(), new IUploadTask.IUploadStateListener() { // from class: com.blued.android.framework.utils.upload.qiniu.UploadAudioTask.1
+        a(this.p, this.c.size(), new IUploadTask.IUploadStateListener() { // from class: com.blued.android.framework.utils.upload.qiniu.UploadAudioTask.1
             @Override // com.blued.android.framework.utils.upload.qiniu.IUploadTask.IUploadStateListener
             public void a() {
                 UploadAudioTask uploadAudioTask = UploadAudioTask.this;
@@ -106,11 +104,11 @@ public class UploadAudioTask extends UploadBaseTask {
                 } else if (UploadAudioTask.this.s <= 0) {
                     UploadAudioTask.d(UploadAudioTask.this);
                     UploadAudioTask uploadAudioTask2 = UploadAudioTask.this;
-                    uploadAudioTask2.a(uploadAudioTask2.p, UploadAudioTask.this.f10137c.size(), this);
+                    uploadAudioTask2.a(uploadAudioTask2.p, UploadAudioTask.this.c.size(), this);
                 } else {
                     UploadAudioTask.this.e();
                     if (UploadAudioTask.this.j != null) {
-                        UploadAudioTask.this.j.a(UploadAudioTask.this.a(), false, UploadAudioTask.this.f10137c);
+                        UploadAudioTask.this.j.a(UploadAudioTask.this.a(), false, UploadAudioTask.this.c);
                     }
                     if (UploadAudioTask.this.i != null) {
                         UploadAudioTask.this.i.a();
@@ -123,7 +121,7 @@ public class UploadAudioTask extends UploadBaseTask {
     @Override // com.blued.android.framework.utils.upload.qiniu.UploadBaseTask
     public void a(String str, String str2, double d) {
         synchronized (this) {
-            a((int) (((this.e.size() * 1.0f) / this.f10137c.size()) * 100.0f));
+            a((int) (((this.e.size() * 1.0f) / this.c.size()) * 100.0f));
         }
     }
 
@@ -146,7 +144,7 @@ public class UploadAudioTask extends UploadBaseTask {
         String g = g();
         String str = this.q.token;
         if (!TextUtils.isEmpty(g) && !TextUtils.isEmpty(str)) {
-            a(g, str, this.r, 2, d, d.first, iUploadStateListener, 0);
+            a(g, str, this.r, 2, d, (String) d.first, iUploadStateListener, 0);
             return;
         }
         a(2, "", "", d);

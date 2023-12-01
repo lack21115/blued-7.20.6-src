@@ -6,11 +6,11 @@ import com.huawei.secure.android.common.encrypt.hash.PBKDF2;
 public class BaseKeyUtil {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23085a = "BaseKeyUtil";
+    private static final String f9477a = "BaseKeyUtil";
     private static final int b = 16;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final int f23086c = 16;
+    private static final int f9478c = 16;
     private static final int d = 10000;
     private static final int e = 32;
     private static final int f = 1;
@@ -60,10 +60,10 @@ public class BaseKeyUtil {
                 i3 = i4 + 1;
             }
             if (z) {
-                b.c(f23085a, "exportRootKey: sha256");
+                b.c(f9477a, "exportRootKey: sha256");
                 return PBKDF2.pbkdf2SHA256(cArr, bArr, i, i2 * 8);
             }
-            b.c(f23085a, "exportRootKey: sha1");
+            b.c(f9477a, "exportRootKey: sha1");
             return PBKDF2.pbkdf2(cArr, bArr, i, i2 * 8);
         }
         throw new IllegalArgumentException("key length must be more than 128bit.");

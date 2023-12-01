@@ -6,16 +6,16 @@ import android.hardware.Camera;
 public class l {
 
     /* renamed from: a  reason: collision with root package name */
-    private Camera f35471a;
+    private Camera f21780a;
 
     public l(Camera camera) {
-        this.f35471a = camera;
+        this.f21780a = camera;
     }
 
     public void a(float f) {
         com.tencent.cloud.huiyansdkface.a.d.a.a("V1ZoomOperator", "take scale:" + f, new Object[0]);
         try {
-            Camera.Parameters parameters = this.f35471a.getParameters();
+            Camera.Parameters parameters = this.f21780a.getParameters();
             if (!parameters.isZoomSupported()) {
                 com.tencent.cloud.huiyansdkface.a.d.a.a("V1ZoomOperator", "zoom unsupported", new Object[0]);
                 return;
@@ -30,7 +30,7 @@ public class l {
                 f3 = 0.0f;
             }
             parameters.setZoom((int) (maxZoom * f3));
-            this.f35471a.setParameters(parameters);
+            this.f21780a.setParameters(parameters);
             com.tencent.cloud.huiyansdkface.a.d.a.a("V1ZoomOperator", "take scale success.", new Object[0]);
         } catch (Exception e) {
             com.tencent.cloud.huiyansdkface.a.b.b.a(com.tencent.cloud.huiyansdkface.a.b.c.a(63, "set zoom failed", e));

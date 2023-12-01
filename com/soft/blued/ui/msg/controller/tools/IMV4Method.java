@@ -5,7 +5,6 @@ import com.blued.android.chat.model.ChattingModel;
 import com.blued.android.core.AppMethods;
 import com.blued.android.core.utils.Md5;
 import com.blued.android.module.common.user.model.UserInfo;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -33,7 +32,7 @@ public class IMV4Method {
     }
 
     public static String a(int i, long j) {
-        return "" + i + BridgeUtil.UNDERLINE_STR + j;
+        return "" + i + "_" + j;
     }
 
     public static String a(ChattingModel chattingModel) {
@@ -56,7 +55,7 @@ public class IMV4Method {
                 j2 = -j;
             }
         }
-        return AppMethods.b(a(s, j2)) + BridgeUtil.SPLIT_MARK + Md5.a(str.toLowerCase().trim());
+        return AppMethods.b(a(s, j2)) + "/" + Md5.a(str.toLowerCase().trim());
     }
 
     public static ArrayList<String> a(List<ChattingModel> list) {

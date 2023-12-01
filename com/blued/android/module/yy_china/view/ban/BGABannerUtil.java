@@ -122,24 +122,24 @@ public class BGABannerUtil {
     }
 
     public static Bitmap a(Context context, int i, int i2, int i3, float f, float f2) {
-        LoadBitmapPair<Throwable> a2;
+        LoadBitmapPair<Throwable> a;
         int i4;
         do {
-            a2 = a(context, i, i2, i3);
-            if (a2 != null && a2.first != 0) {
+            a = a(context, i, i2, i3);
+            if (a != null && a.first != null) {
                 break;
             }
             i2 /= 2;
             i4 = i3 / 2;
-            if (a2 == null || !(a2.second instanceof OutOfMemoryError) || i2 <= f) {
+            if (a == null || !(a.second instanceof OutOfMemoryError) || i2 <= f) {
                 break;
             }
             i3 = i4;
         } while (i4 > f2);
-        if (a2 == null) {
+        if (a == null) {
             return null;
         }
-        return (Bitmap) a2.first;
+        return (Bitmap) a.first;
     }
 
     public static ImageView a(Context context, int i, BGALocalImageSize bGALocalImageSize, ImageView.ScaleType scaleType) {
@@ -184,19 +184,19 @@ public class BGABannerUtil {
                             openRawResource2.close();
                             int i4 = options.outWidth;
                             int i5 = options.outHeight;
-                            int a2 = a(i2, i3, i4, i5);
-                            int a3 = a(i3, i2, i5, i4);
+                            int a = a(i2, i3, i4, i5);
+                            int a2 = a(i3, i2, i5, i4);
                             options.inJustDecodeBounds = false;
-                            options.inSampleSize = a(options, a2, a3);
+                            options.inSampleSize = a(options, a, a2);
                             options.inPreferredConfig = config;
                             openRawResource = context.getResources().openRawResource(i);
                             Bitmap decodeStream = BitmapFactory.decodeStream(openRawResource, null, options);
                             openRawResource.close();
-                            if (decodeStream == null || (decodeStream.getWidth() <= a2 && decodeStream.getHeight() <= a3)) {
+                            if (decodeStream == null || (decodeStream.getWidth() <= a && decodeStream.getHeight() <= a2)) {
                                 context2 = openRawResource;
                                 loadBitmapPair3 = new LoadBitmapPair<>(decodeStream, null);
                             } else {
-                                LoadBitmapPair<Throwable> loadBitmapPair5 = new LoadBitmapPair<>(Bitmap.createScaledBitmap(decodeStream, a2, a3, true), null);
+                                LoadBitmapPair<Throwable> loadBitmapPair5 = new LoadBitmapPair<>(Bitmap.createScaledBitmap(decodeStream, a, a2, true), null);
                                 context2 = openRawResource;
                                 decodeStream.recycle();
                                 loadBitmapPair3 = loadBitmapPair5;

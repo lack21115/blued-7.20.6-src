@@ -6,7 +6,7 @@ import java.nio.ByteBuffer;
 public abstract class Utf8 {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Utf8 f2874a;
+    private static Utf8 f2826a;
 
     /* loaded from: source-8756600-dex2jar.jar:androidx/emoji2/text/flatbuffer/Utf8$DecodeUtil.class */
     static class DecodeUtil {
@@ -14,7 +14,7 @@ public abstract class Utf8 {
         }
 
         private static char a(int i) {
-            return (char) ((i >>> 10) + okio.Utf8.HIGH_SURROGATE_HEADER);
+            return (char) ((i >>> 10) + 55232);
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
@@ -84,14 +84,14 @@ public abstract class Utf8 {
     }
 
     public static Utf8 getDefault() {
-        if (f2874a == null) {
-            f2874a = new Utf8Safe();
+        if (f2826a == null) {
+            f2826a = new Utf8Safe();
         }
-        return f2874a;
+        return f2826a;
     }
 
     public static void setDefault(Utf8 utf8) {
-        f2874a = utf8;
+        f2826a = utf8;
     }
 
     public abstract String decodeUtf8(ByteBuffer byteBuffer, int i, int i2);

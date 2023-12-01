@@ -7,16 +7,16 @@ import com.tencent.liteav.videobase.frame.PixelFrame;
 public final /* synthetic */ class z implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final VideoPreprocessor f37095a;
+    private final VideoPreprocessor f23404a;
     private final PixelFrame b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final long f37096c;
+    private final long f23405c;
 
     private z(VideoPreprocessor videoPreprocessor, PixelFrame pixelFrame, long j) {
-        this.f37095a = videoPreprocessor;
+        this.f23404a = videoPreprocessor;
         this.b = pixelFrame;
-        this.f37096c = j;
+        this.f23405c = j;
     }
 
     public static Runnable a(VideoPreprocessor videoPreprocessor, PixelFrame pixelFrame, long j) {
@@ -25,6 +25,6 @@ public final /* synthetic */ class z implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        VideoPreprocessor.lambda$processFrame$2(this.f37095a, this.b, this.f37096c);
+        VideoPreprocessor.lambda$processFrame$2(this.f23404a, this.b, this.f23405c);
     }
 }

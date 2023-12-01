@@ -10,11 +10,11 @@ import com.github.mikephil.charting.utils.ViewPortHandler;
 public abstract class LineScatterCandleRadarRenderer extends BarLineScatterCandleBubbleRenderer {
 
     /* renamed from: a  reason: collision with root package name */
-    private Path f22190a;
+    private Path f8583a;
 
     public LineScatterCandleRadarRenderer(ChartAnimator chartAnimator, ViewPortHandler viewPortHandler) {
         super(chartAnimator, viewPortHandler);
-        this.f22190a = new Path();
+        this.f8583a = new Path();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -23,16 +23,16 @@ public abstract class LineScatterCandleRadarRenderer extends BarLineScatterCandl
         this.i.setStrokeWidth(iLineScatterCandleRadarDataSet.V());
         this.i.setPathEffect(iLineScatterCandleRadarDataSet.W());
         if (iLineScatterCandleRadarDataSet.T()) {
-            this.f22190a.reset();
-            this.f22190a.moveTo(f, this.o.e());
-            this.f22190a.lineTo(f, this.o.h());
-            canvas.drawPath(this.f22190a, this.i);
+            this.f8583a.reset();
+            this.f8583a.moveTo(f, this.o.e());
+            this.f8583a.lineTo(f, this.o.h());
+            canvas.drawPath(this.f8583a, this.i);
         }
         if (iLineScatterCandleRadarDataSet.U()) {
-            this.f22190a.reset();
-            this.f22190a.moveTo(this.o.f(), f2);
-            this.f22190a.lineTo(this.o.g(), f2);
-            canvas.drawPath(this.f22190a, this.i);
+            this.f8583a.reset();
+            this.f8583a.moveTo(this.o.f(), f2);
+            this.f8583a.lineTo(this.o.g(), f2);
+            canvas.drawPath(this.f8583a, this.i);
         }
     }
 }

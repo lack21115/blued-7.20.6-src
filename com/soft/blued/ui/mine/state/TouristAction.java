@@ -13,7 +13,7 @@ public abstract class TouristAction implements UiAction {
     public static final class GetData extends TouristAction {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final GetData f31642a = new GetData();
+        public static final GetData f17952a = new GetData();
 
         private GetData() {
             super(null);

@@ -16,7 +16,7 @@ public final class i extends FilterInputStream implements DataInput {
     }
 
     private byte b() {
-        int read = this.f42254in.read();
+        int read = this.in.read();
         if (-1 != read) {
             return (byte) read;
         }
@@ -24,7 +24,7 @@ public final class i extends FilterInputStream implements DataInput {
     }
 
     public final e a() {
-        return (e) this.f42254in;
+        return (e) this.in;
     }
 
     @Override // java.io.DataInput
@@ -92,12 +92,12 @@ public final class i extends FilterInputStream implements DataInput {
 
     @Override // java.io.DataInput
     public final String readUTF() {
-        return new DataInputStream(this.f42254in).readUTF();
+        return new DataInputStream(this.in).readUTF();
     }
 
     @Override // java.io.DataInput
     public final int readUnsignedByte() {
-        int read = this.f42254in.read();
+        int read = this.in.read();
         if (read >= 0) {
             return read;
         }
@@ -111,6 +111,6 @@ public final class i extends FilterInputStream implements DataInput {
 
     @Override // java.io.DataInput
     public final int skipBytes(int i) {
-        return (int) this.f42254in.skip(i);
+        return (int) this.in.skip(i);
     }
 }

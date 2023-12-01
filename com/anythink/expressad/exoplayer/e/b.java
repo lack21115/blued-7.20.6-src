@@ -8,11 +8,11 @@ import java.util.Arrays;
 public final class b implements f {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final int f7312a = 65536;
+    private static final int f4473a = 65536;
     private static final int b = 524288;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final int f7313c = 4096;
+    private static final int f4474c = 4096;
     private final com.anythink.expressad.exoplayer.j.h e;
     private final long f;
     private long g;
@@ -47,7 +47,7 @@ public final class b implements f {
             return 0;
         }
         int min = Math.min(i3, i2);
-        System.arraycopy((Object) this.h, 0, (Object) bArr, i, min);
+        System.arraycopy(this.h, 0, bArr, i, min);
         h(min);
         return min;
     }
@@ -75,7 +75,7 @@ public final class b implements f {
         if (i2 < bArr.length - 524288) {
             bArr2 = new byte[i2 + 65536];
         }
-        System.arraycopy((Object) this.h, i, (Object) bArr2, 0, this.j);
+        System.arraycopy(this.h, i, bArr2, 0, this.j);
         this.h = bArr2;
     }
 
@@ -182,7 +182,7 @@ public final class b implements f {
     @Override // com.anythink.expressad.exoplayer.e.f
     public final boolean c(byte[] bArr, int i, int i2) {
         if (d(i2)) {
-            System.arraycopy((Object) this.h, this.i - i2, (Object) bArr, i, i2);
+            System.arraycopy(this.h, this.i - i2, bArr, i, i2);
             return true;
         }
         return false;
@@ -196,7 +196,7 @@ public final class b implements f {
     @Override // com.anythink.expressad.exoplayer.e.f
     public final void d(byte[] bArr, int i, int i2) {
         if (d(i2)) {
-            System.arraycopy((Object) this.h, this.i - i2, (Object) bArr, i, i2);
+            System.arraycopy(this.h, this.i - i2, bArr, i, i2);
         }
     }
 

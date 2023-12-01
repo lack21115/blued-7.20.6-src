@@ -8,37 +8,37 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-8457232-dex2jar.jar:com/squareup/wire/EnumAdapterKt.class */
 public final class EnumAdapterKt {
-    public static final <E extends WireEnum> E commonDecode(EnumAdapter<E> enumAdapter, ProtoReader reader, Function1<? super Integer, ? extends E> fromValue) {
+    public static final <E extends WireEnum> E commonDecode(EnumAdapter<E> enumAdapter, ProtoReader protoReader, Function1<? super Integer, ? extends E> function1) {
         Intrinsics.e(enumAdapter, "<this>");
-        Intrinsics.e(reader, "reader");
-        Intrinsics.e(fromValue, "fromValue");
-        int readVarint32 = reader.readVarint32();
-        E invoke = fromValue.invoke(Integer.valueOf(readVarint32));
-        if (invoke != null) {
-            return invoke;
+        Intrinsics.e(protoReader, "reader");
+        Intrinsics.e(function1, "fromValue");
+        int readVarint32 = protoReader.readVarint32();
+        E e = (E) function1.invoke(Integer.valueOf(readVarint32));
+        if (e != null) {
+            return e;
         }
         throw new ProtoAdapter.EnumConstantNotFoundException(readVarint32, enumAdapter.getType());
     }
 
-    public static final <E extends WireEnum> void commonEncode(ProtoWriter writer, E value) {
-        Intrinsics.e(writer, "writer");
-        Intrinsics.e(value, "value");
-        writer.writeVarint32(value.getValue());
+    public static final <E extends WireEnum> void commonEncode(ProtoWriter protoWriter, E e) {
+        Intrinsics.e(protoWriter, "writer");
+        Intrinsics.e(e, "value");
+        protoWriter.writeVarint32(e.getValue());
     }
 
-    public static final <E extends WireEnum> void commonEncode(ReverseProtoWriter writer, E value) {
-        Intrinsics.e(writer, "writer");
-        Intrinsics.e(value, "value");
-        writer.writeVarint32(value.getValue());
+    public static final <E extends WireEnum> void commonEncode(ReverseProtoWriter reverseProtoWriter, E e) {
+        Intrinsics.e(reverseProtoWriter, "writer");
+        Intrinsics.e(e, "value");
+        reverseProtoWriter.writeVarint32(e.getValue());
     }
 
-    public static final <E extends WireEnum> int commonEncodedSize(E value) {
-        Intrinsics.e(value, "value");
-        return ProtoWriter.Companion.varint32Size$wire_runtime(value.getValue());
+    public static final <E extends WireEnum> int commonEncodedSize(E e) {
+        Intrinsics.e(e, "value");
+        return ProtoWriter.Companion.varint32Size$wire_runtime(e.getValue());
     }
 
-    public static final <E extends WireEnum> E commonRedact(E value) {
-        Intrinsics.e(value, "value");
+    public static final <E extends WireEnum> E commonRedact(E e) {
+        Intrinsics.e(e, "value");
         throw new UnsupportedOperationException();
     }
 }

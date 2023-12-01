@@ -12,11 +12,11 @@ import com.soft.blued.R;
 public final class FragmentWebLinkPromptBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ImageView f29036a;
+    public final ImageView f15346a;
     public final CommonTopTitleNoTrans b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final TextView f29037c;
+    public final TextView f15347c;
     public final TextView d;
     public final TextView e;
     public final TextView f;
@@ -24,9 +24,9 @@ public final class FragmentWebLinkPromptBinding implements ViewBinding {
 
     private FragmentWebLinkPromptBinding(LinearLayout linearLayout, ImageView imageView, CommonTopTitleNoTrans commonTopTitleNoTrans, TextView textView, TextView textView2, TextView textView3, TextView textView4) {
         this.g = linearLayout;
-        this.f29036a = imageView;
+        this.f15346a = imageView;
         this.b = commonTopTitleNoTrans;
-        this.f29037c = textView;
+        this.f15347c = textView;
         this.d = textView2;
         this.e = textView3;
         this.f = textView4;
@@ -36,8 +36,8 @@ public final class FragmentWebLinkPromptBinding implements ViewBinding {
         String str;
         ImageView imageView = (ImageView) view.findViewById(R.id.iv_prompt_icon);
         if (imageView != null) {
-            CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) view.findViewById(2131370749);
-            if (commonTopTitleNoTrans != null) {
+            CommonTopTitleNoTrans findViewById = view.findViewById(R.id.top_title);
+            if (findViewById != null) {
                 TextView textView = (TextView) view.findViewById(R.id.tv_prompt_continue);
                 if (textView != null) {
                     TextView textView2 = (TextView) view.findViewById(R.id.tv_prompt_desc);
@@ -46,7 +46,7 @@ public final class FragmentWebLinkPromptBinding implements ViewBinding {
                         if (textView3 != null) {
                             TextView textView4 = (TextView) view.findViewById(R.id.tv_prompt_url);
                             if (textView4 != null) {
-                                return new FragmentWebLinkPromptBinding((LinearLayout) view, imageView, commonTopTitleNoTrans, textView, textView2, textView3, textView4);
+                                return new FragmentWebLinkPromptBinding((LinearLayout) view, imageView, findViewById, textView, textView2, textView3, textView4);
                             }
                             str = "tvPromptUrl";
                         } else {

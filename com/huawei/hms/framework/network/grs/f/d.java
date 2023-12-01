@@ -27,10 +27,10 @@ public class d extends a {
 
     @Override // com.huawei.hms.framework.network.grs.f.a
     public int a(String str) {
-        this.f22690a = new com.huawei.hms.framework.network.grs.local.model.a();
+        this.f9082a = new com.huawei.hms.framework.network.grs.local.model.a();
         try {
             JSONObject jSONObject = new JSONObject(str).getJSONArray("applications").getJSONObject(0);
-            this.f22690a.b(jSONObject.getString("name"));
+            this.f9082a.b(jSONObject.getString("name"));
             JSONArray jSONArray = jSONObject.getJSONArray(k2.d);
             if (jSONArray == null || jSONArray.length() == 0) {
                 return -1;

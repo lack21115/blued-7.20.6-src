@@ -19,18 +19,18 @@ import java.util.List;
 public class a extends h {
 
     /* renamed from: a  reason: collision with root package name */
-    protected InterfaceC0670a f25625a;
+    protected InterfaceC0500a f11937a;
 
     /* renamed from: com.opos.mobad.activity.a$a  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/opos/mobad/activity/a$a.class */
-    public interface InterfaceC0670a {
+    public interface InterfaceC0500a {
         void a(Bitmap bitmap, String str);
     }
 
     public a(Context context, d dVar, FrameLayout frameLayout) {
         super(context, dVar, frameLayout, true);
-        this.f25625a = new InterfaceC0670a() { // from class: com.opos.mobad.activity.a.1
-            @Override // com.opos.mobad.activity.a.InterfaceC0670a
+        this.f11937a = new InterfaceC0500a() { // from class: com.opos.mobad.activity.a.1
+            @Override // com.opos.mobad.activity.a.InterfaceC0500a
             public void a(final Bitmap bitmap, final String str) {
                 if (a.this.l == null || bitmap == null || bitmap.isRecycled()) {
                     return;
@@ -59,9 +59,9 @@ public class a extends h {
         if (com.opos.cmn.an.h.c.a.d(this.b)) {
             aa();
             if (k.a().c(this.A) == -1) {
-                k.a().c(this.b, this.A, this.f27042c != null ? this.f27042c.P() : 2, this.n, this, this.E);
+                k.a().c(this.b, this.A, this.f13354c != null ? this.f13354c.P() : 2, this.n, this, this.E);
             } else {
-                k.a().a(this.b, this.A, this.f27042c != null ? this.f27042c.P() : 2, this.n, this, this.E);
+                k.a().a(this.b, this.A, this.f13354c != null ? this.f13354c.P() : 2, this.n, this, this.E);
             }
         }
     }
@@ -78,7 +78,7 @@ public class a extends h {
         }
         if (k.a().c(this.A) == -1 || k.a().c(this.A) == 0 || k.a().c(this.A) == 5) {
             N();
-            k.a().a(this.b, this.A, this.f27042c != null ? this.f27042c.P() : 2, this.n, this, this.E);
+            k.a().a(this.b, this.A, this.f13354c != null ? this.f13354c.P() : 2, this.n, this, this.E);
         } else {
             k.a().a(this.A, this.n);
         }
@@ -87,12 +87,12 @@ public class a extends h {
 
     public void a(AdItemData adItemData, String str) {
         if (adItemData != null) {
-            this.f27042c = adItemData;
+            this.f13354c = adItemData;
             this.A = str;
             if (this.D != null) {
-                b(!this.f27042c.D());
+                b(!this.f13354c.D());
             }
-            com.opos.cmn.an.f.a.b("MediaCreative", "mAdItemData:" + this.f27042c);
+            com.opos.cmn.an.f.a.b("MediaCreative", "mAdItemData:" + this.f13354c);
             MaterialData materialData = adItemData.i().get(0);
             if (materialData != null) {
                 List<MaterialFileData> f = materialData.f();
@@ -112,7 +112,7 @@ public class a extends h {
                     Z();
                 } else {
                     Y();
-                    k.a().b(this.b, str, this.f27042c != null ? this.f27042c.P() : 2, this.n, this, this.E);
+                    k.a().b(this.b, str, this.f13354c != null ? this.f13354c.P() : 2, this.n, this, this.E);
                 }
             }
         }
@@ -130,7 +130,7 @@ public class a extends h {
                 a aVar = a.this;
                 aVar.m = g.a(str, com.opos.cmn.an.h.f.a.b(aVar.b), (com.opos.cmn.an.h.f.a.b(a.this.b) * 9) / 16);
                 if (a.this.m != null) {
-                    a.this.f25625a.a(a.this.m, str);
+                    a.this.f11937a.a(a.this.m, str);
                 }
             }
         });
@@ -159,7 +159,7 @@ public class a extends h {
     public void b(View view, int[] iArr) {
         if (k.a() != null) {
             aa();
-            k.a().a(this.b, this.A, this.f27042c != null ? this.f27042c.P() : 2, this.n, this, this.E);
+            k.a().a(this.b, this.A, this.f13354c != null ? this.f13354c.P() : 2, this.n, this, this.E);
         }
     }
 }

@@ -10,11 +10,11 @@ import android.text.TextUtils;
 public class bj {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f9341a = "mobads_builds";
+    public static final String f6501a = "mobads_builds";
     public static final String b = "brand_period";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f9342c = "version_period";
+    public static final String f6502c = "version_period";
     public static final long d = 604800000;
     public static final long e = 172800000;
     public static final String f = "sdk_int";
@@ -39,7 +39,7 @@ public class bj {
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final bj f9343a = new bj();
+        private static final bj f6503a = new bj();
 
         private a() {
         }
@@ -56,8 +56,8 @@ public class bj {
     }
 
     public static bj a(Context context) {
-        a.f9343a.b(context);
-        return a.f9343a;
+        a.f6503a.b(context);
+        return a.f6503a;
     }
 
     private String a(String str) {
@@ -147,7 +147,7 @@ public class bj {
 
     private void j() {
         try {
-            if (System.currentTimeMillis() <= b(f9342c).longValue()) {
+            if (System.currentTimeMillis() <= b(f6502c).longValue()) {
                 this.m = c(f);
                 this.n = a("sdk");
                 this.o = a("release");
@@ -159,7 +159,7 @@ public class bj {
             a(f, this.m);
             a("sdk", this.n);
             a("release", this.o);
-            a(f9342c, Long.valueOf(System.currentTimeMillis() + e));
+            a(f6502c, Long.valueOf(System.currentTimeMillis() + e));
         } catch (Throwable th) {
             bq.a().c(th.getMessage());
         }
@@ -185,7 +185,7 @@ public class bj {
 
     public void b(Context context) {
         if (this.t != null || context == null) {
-            if (a.f9343a == null) {
+            if (a.f6503a == null) {
                 ay.a(context);
                 return;
             }
@@ -195,7 +195,7 @@ public class bj {
         this.t = applicationContext;
         try {
             if (this.u == null) {
-                this.u = applicationContext.getSharedPreferences(f9341a, 0);
+                this.u = applicationContext.getSharedPreferences(f6501a, 0);
                 h();
             }
         } catch (Throwable th) {

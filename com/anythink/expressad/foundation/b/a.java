@@ -11,11 +11,11 @@ import org.json.JSONObject;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f7751a = a.class.getSimpleName();
+    public static final String f4912a = a.class.getSimpleName();
     private static volatile a b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f7752c;
+    private Context f4913c;
     private String d;
     private String e;
     private JSONObject g;
@@ -53,8 +53,8 @@ public class a {
 
     public final String a() {
         try {
-            if (this.f7752c != null) {
-                return this.f7752c.getPackageName();
+            if (this.f4913c != null) {
+                return this.f4913c.getPackageName();
             }
             return null;
         } catch (Exception e) {
@@ -64,7 +64,7 @@ public class a {
     }
 
     public final void a(Context context) {
-        this.f7752c = context;
+        this.f4913c = context;
     }
 
     public final void a(String str) {
@@ -93,7 +93,7 @@ public class a {
     }
 
     public final Context d() {
-        return this.f7752c;
+        return this.f4913c;
     }
 
     public final String e() {

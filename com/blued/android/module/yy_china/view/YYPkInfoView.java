@@ -13,9 +13,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYPkInfoView.class */
 public final class YYPkInfoView extends BottomSheetDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    private View f18366a;
+    private View a;
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(YYPkInfoView this$0, View view) {
@@ -28,12 +26,12 @@ public final class YYPkInfoView extends BottomSheetDialogFragment {
         return false;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         ImageView imageView;
         Intrinsics.e(inflater, "inflater");
         View inflate = inflater.inflate(R.layout.fragment_yy_room_pk_info, viewGroup, true);
-        this.f18366a = inflate;
+        this.a = inflate;
         if (inflate != null && (imageView = (ImageView) inflate.findViewById(R.id.iv_back)) != null) {
             imageView.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYPkInfoView$keOHtw8iyxLTyasf3wSTcDThdlI
                 @Override // android.view.View.OnClickListener
@@ -42,6 +40,6 @@ public final class YYPkInfoView extends BottomSheetDialogFragment {
                 }
             });
         }
-        return this.f18366a;
+        return this.a;
     }
 }

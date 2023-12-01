@@ -26,21 +26,21 @@ import java.util.List;
 public class GroupListsAdapter extends BaseAdapter implements PinnedSectionListView.PinnedSectionListAdapter {
 
     /* renamed from: a  reason: collision with root package name */
-    private List<BluedGroupLists> f30905a;
+    private List<BluedGroupLists> f17215a;
     private LayoutInflater b;
 
     /* renamed from: c  reason: collision with root package name */
-    private IRequestHost f30906c;
+    private IRequestHost f17216c;
 
     /* loaded from: source-8303388-dex2jar.jar:com/soft/blued/ui/group/adapter/GroupListsAdapter$ViewHolder.class */
     public class ViewHolder {
 
         /* renamed from: a  reason: collision with root package name */
-        public LinearLayout f30907a;
+        public LinearLayout f17217a;
         public TextView b;
 
         /* renamed from: c  reason: collision with root package name */
-        public LinearLayout f30908c;
+        public LinearLayout f17218c;
         public ImageView d;
         public TextView e;
         public TextView f;
@@ -53,13 +53,13 @@ public class GroupListsAdapter extends BaseAdapter implements PinnedSectionListV
     }
 
     public GroupListsAdapter(Context context) {
-        this.f30905a = new ArrayList();
+        this.f17215a = new ArrayList();
         this.b = LayoutInflater.from(context);
     }
 
     public GroupListsAdapter(Context context, IRequestHost iRequestHost, List<BluedGroupLists> list) {
-        this.f30905a = list;
-        this.f30906c = iRequestHost;
+        this.f17215a = list;
+        this.f17216c = iRequestHost;
         this.b = LayoutInflater.from(context);
     }
 
@@ -67,14 +67,14 @@ public class GroupListsAdapter extends BaseAdapter implements PinnedSectionListV
         LoadOptions loadOptions = new LoadOptions();
         loadOptions.d = R.drawable.group_default_head;
         loadOptions.b = R.drawable.group_default_head;
-        viewHolder.f30907a.setVisibility(8);
-        viewHolder.f30908c.setVisibility(0);
+        viewHolder.f17217a.setVisibility(8);
+        viewHolder.f17218c.setVisibility(0);
         if (bluedGroupLists.is_title == 2) {
-            viewHolder.f30908c.setBackgroundColor(Color.parseColor("#f7f7f7"));
+            viewHolder.f17218c.setBackgroundColor(Color.parseColor("#f7f7f7"));
         } else {
-            viewHolder.f30908c.setBackgroundColor(Color.parseColor("#ffffff"));
+            viewHolder.f17218c.setBackgroundColor(Color.parseColor("#ffffff"));
         }
-        ImageLoader.a(this.f30906c, bluedGroupLists.groups_avatar).b(2131237310).c().a(viewHolder.d);
+        ImageLoader.a(this.f17216c, bluedGroupLists.groups_avatar).b(2131237310).c().a(viewHolder.d);
         if (StringUtils.d(bluedGroupLists.groups_name)) {
             viewHolder.e.setVisibility(4);
         } else {
@@ -112,9 +112,9 @@ public class GroupListsAdapter extends BaseAdapter implements PinnedSectionListV
 
     public void a(List<BluedGroupLists> list) {
         if (list != null) {
-            List<BluedGroupLists> list2 = this.f30905a;
+            List<BluedGroupLists> list2 = this.f17215a;
             if (list2 == null) {
-                this.f30905a = new ArrayList();
+                this.f17215a = new ArrayList();
                 return;
             }
             list2.clear();
@@ -122,27 +122,26 @@ public class GroupListsAdapter extends BaseAdapter implements PinnedSectionListV
         }
     }
 
-    @Override // com.blued.android.framework.view.pulltorefresh.PinnedSectionListView.PinnedSectionListAdapter
     public boolean a(int i) {
         return i == 1;
     }
 
     public void b(List<BluedGroupLists> list) {
-        if (this.f30905a == null) {
-            this.f30905a = new ArrayList();
+        if (this.f17215a == null) {
+            this.f17215a = new ArrayList();
         }
-        this.f30905a.addAll(list);
+        this.f17215a.addAll(list);
         notifyDataSetChanged();
     }
 
     @Override // android.widget.Adapter
     public int getCount() {
-        return this.f30905a.size();
+        return this.f17215a.size();
     }
 
     @Override // android.widget.Adapter
     public Object getItem(int i) {
-        return this.f30905a.get(i);
+        return this.f17215a.get(i);
     }
 
     @Override // android.widget.Adapter
@@ -158,13 +157,13 @@ public class GroupListsAdapter extends BaseAdapter implements PinnedSectionListV
     @Override // android.widget.Adapter
     public View getView(int i, View view, ViewGroup viewGroup) {
         ViewHolder viewHolder;
-        BluedGroupLists bluedGroupLists = this.f30905a.get(i);
+        BluedGroupLists bluedGroupLists = this.f17215a.get(i);
         if (view == null) {
             viewHolder = new ViewHolder();
             view = this.b.inflate(R.layout.item_group_list_show, (ViewGroup) null);
-            viewHolder.f30907a = (LinearLayout) view.findViewById(R.id.ll_group_list_title);
+            viewHolder.f17217a = (LinearLayout) view.findViewById(R.id.ll_group_list_title);
             viewHolder.b = (TextView) view.findViewById(R.id.tv_group_list_title);
-            viewHolder.f30908c = (LinearLayout) view.findViewById(R.id.ll_group_info);
+            viewHolder.f17218c = (LinearLayout) view.findViewById(R.id.ll_group_info);
             viewHolder.d = (ImageView) view.findViewById(R.id.iv_group_profile_photo);
             viewHolder.e = (TextView) view.findViewById(R.id.tv_group_name_info);
             viewHolder.f = (TextView) view.findViewById(R.id.tv_groupSize);

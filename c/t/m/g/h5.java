@@ -8,7 +8,7 @@ import com.tencent.map.geolocation.TencentLocationRequest;
 public class h5 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static boolean f3832a = true;
+    public static boolean f3784a = true;
 
     public static TencentLocation a(TencentLocation tencentLocation, byte[] bArr) {
         return tencentLocation;
@@ -18,7 +18,7 @@ public class h5 {
     }
 
     public static void a(boolean z) {
-        f3832a = z;
+        f3784a = z;
     }
 
     public static boolean a(int i) {

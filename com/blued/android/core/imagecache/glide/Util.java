@@ -13,39 +13,35 @@ import java.util.regex.Pattern;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/imagecache/glide/Util.class */
 public final class Util {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final char[] f9654a = "0123456789abcdef".toCharArray();
+    private static final char[] a = "0123456789abcdef".toCharArray();
     private static final char[] b = new char[64];
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.blued.android.core.imagecache.glide.Util$2  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/imagecache/glide/Util$2.class */
     public static /* synthetic */ class AnonymousClass2 {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f9656a;
+        static final /* synthetic */ int[] a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x0036 -> B:21:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:13:0x003a -> B:19:0x001f). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:15:0x003e -> B:25:0x002a). Please submit an issue!!! */
         static {
             int[] iArr = new int[Bitmap.Config.values().length];
-            f9656a = iArr;
+            a = iArr;
             try {
                 iArr[Bitmap.Config.ALPHA_8.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f9656a[Bitmap.Config.RGB_565.ordinal()] = 2;
+                a[Bitmap.Config.RGB_565.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f9656a[Bitmap.Config.ARGB_4444.ordinal()] = 3;
+                a[Bitmap.Config.ARGB_4444.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f9656a[Bitmap.Config.ARGB_8888.ordinal()] = 4;
+                a[Bitmap.Config.ARGB_8888.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
         }
@@ -68,7 +64,7 @@ public final class Util {
             });
         } catch (Throwable th) {
             try {
-                if (ImageLoaderUtils.f9582a) {
+                if (ImageLoaderUtils.a) {
                     Log.a("IMAGE_LOADER", "Failed to calculate accurate cpu count", th);
                 }
                 StrictMode.setThreadPolicy(allowThreadDiskReads);
@@ -90,7 +86,7 @@ public final class Util {
         if (config == null) {
             config2 = Bitmap.Config.ARGB_8888;
         }
-        int i2 = AnonymousClass2.f9656a[config2.ordinal()];
+        int i2 = AnonymousClass2.a[config2.ordinal()];
         if (i2 != 1) {
             i = 2;
             if (i2 != 2) {

@@ -15,13 +15,9 @@ public final class f {
     public static final String K = "Video player prepare fail!";
     public static final String L = "Mraid Html or url is empty.";
     public static final String M = "Failed to play the first frame of the video";
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final String f5898a = "-9999";
+    public static final String a = "-9999";
     public static final String b = "10000";
-
-    /* renamed from: c  reason: collision with root package name */
-    public static final String f5899c = "10001";
+    public static final String c = "10001";
     public static final String d = "20001";
     public static final String e = "20003";
     public static final String f = "20004";

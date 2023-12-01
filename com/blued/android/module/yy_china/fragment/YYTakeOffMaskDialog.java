@@ -25,9 +25,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYTakeOffMaskDialog.class */
 public final class YYTakeOffMaskDialog extends BaseFullScreenDialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    private DialogTakeOffMaskBinding f17460a;
+    private DialogTakeOffMaskBinding a;
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(View view) {
@@ -75,14 +73,14 @@ public final class YYTakeOffMaskDialog extends BaseFullScreenDialog {
         this$0.dismissAllowingStateLoss();
     }
 
-    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog
     public void onActivityCreated(Bundle bundle) {
         ShapeTextView shapeTextView;
         ShapeTextView shapeTextView2;
         View view;
         super.onActivityCreated(bundle);
-        DialogTakeOffMaskBinding dialogTakeOffMaskBinding = this.f17460a;
-        if (dialogTakeOffMaskBinding != null && (view = dialogTakeOffMaskBinding.f16417a) != null) {
+        DialogTakeOffMaskBinding dialogTakeOffMaskBinding = this.a;
+        if (dialogTakeOffMaskBinding != null && (view = dialogTakeOffMaskBinding.a) != null) {
             view.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYTakeOffMaskDialog$DzHhG6KtTSOV1704prf73Clnz5I
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {
@@ -90,8 +88,8 @@ public final class YYTakeOffMaskDialog extends BaseFullScreenDialog {
                 }
             });
         }
-        DialogTakeOffMaskBinding dialogTakeOffMaskBinding2 = this.f17460a;
-        if (dialogTakeOffMaskBinding2 != null && (shapeTextView2 = dialogTakeOffMaskBinding2.f16418c) != null) {
+        DialogTakeOffMaskBinding dialogTakeOffMaskBinding2 = this.a;
+        if (dialogTakeOffMaskBinding2 != null && (shapeTextView2 = dialogTakeOffMaskBinding2.c) != null) {
             shapeTextView2.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYTakeOffMaskDialog$jc4Lg7FUIzM5JL8SPuvSJgHDNqk
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {
@@ -99,7 +97,7 @@ public final class YYTakeOffMaskDialog extends BaseFullScreenDialog {
                 }
             });
         }
-        DialogTakeOffMaskBinding dialogTakeOffMaskBinding3 = this.f17460a;
+        DialogTakeOffMaskBinding dialogTakeOffMaskBinding3 = this.a;
         if (dialogTakeOffMaskBinding3 == null || (shapeTextView = dialogTakeOffMaskBinding3.d) == null) {
             return;
         }
@@ -111,11 +109,11 @@ public final class YYTakeOffMaskDialog extends BaseFullScreenDialog {
         });
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
         View inflate = inflater.inflate(R.layout.dialog_take_off_mask, (ViewGroup) null);
-        this.f17460a = DialogTakeOffMaskBinding.a(inflate);
+        this.a = DialogTakeOffMaskBinding.a(inflate);
         YYRoomModel b = YYRoomInfoManager.e().b();
         if (b == null) {
             return inflate;
@@ -124,7 +122,7 @@ public final class YYTakeOffMaskDialog extends BaseFullScreenDialog {
         return inflate;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onDestroy() {
         super.onDestroy();
         LiveEventBus.get("inner_fragment_close").post("");

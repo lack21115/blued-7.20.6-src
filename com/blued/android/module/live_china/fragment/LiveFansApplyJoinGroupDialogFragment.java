@@ -28,13 +28,9 @@ import com.blued.android.module.live_china.utils.LiveRoomHttpUtils;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveFansApplyJoinGroupDialogFragment.class */
 public class LiveFansApplyJoinGroupDialogFragment extends BaseDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public Context f12839a;
+    public Context a;
     private View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private View f12840c;
+    private View c;
     private TextView d;
     private EditText e;
     private TextView f;
@@ -47,7 +43,7 @@ public class LiveFansApplyJoinGroupDialogFragment extends BaseDialogFragment {
     }
 
     public LiveFansApplyJoinGroupDialogFragment(Context context, LiveFansGroupModel liveFansGroupModel, CallBack callBack) {
-        this.f12839a = context;
+        this.a = context;
         this.g = liveFansGroupModel;
         this.h = callBack;
     }
@@ -92,19 +88,18 @@ public class LiveFansApplyJoinGroupDialogFragment extends BaseDialogFragment {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void g() {
-        this.f12840c.animate().translationY(0.0f).setDuration(300L).start();
+        this.c.animate().translationY(0.0f).setDuration(300L).start();
     }
 
     public void d() {
         super.dismiss();
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public void dismiss() {
-        if (this.f12840c.getTranslationY() != 0.0f) {
+        if (this.c.getTranslationY() != 0.0f) {
             return;
         }
-        this.f12840c.animate().translationY(this.f12840c.getHeight()).setDuration(300L).setListener(new AnimatorListenerAdapter() { // from class: com.blued.android.module.live_china.fragment.LiveFansApplyJoinGroupDialogFragment.1
+        this.c.animate().translationY(this.c.getHeight()).setDuration(300L).setListener(new AnimatorListenerAdapter() { // from class: com.blued.android.module.live_china.fragment.LiveFansApplyJoinGroupDialogFragment.1
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator) {
                 LiveFansApplyJoinGroupDialogFragment.this.d();
@@ -113,9 +108,8 @@ public class LiveFansApplyJoinGroupDialogFragment extends BaseDialogFragment {
         }).start();
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
-        this.f12839a = getActivity();
+        this.a = getActivity();
         View inflate = getActivity().getLayoutInflater().inflate(R.layout.dialog_live_fans_apply_join_group, (ViewGroup) null);
         int width = getActivity().getWindowManager().getDefaultDisplay().getWidth();
         Dialog dialog = new Dialog(getActivity(), R.style.transparentFrameWindowStyleLive);
@@ -137,11 +131,11 @@ public class LiveFansApplyJoinGroupDialogFragment extends BaseDialogFragment {
         return dialog;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         View inflate = layoutInflater.inflate(R.layout.dialog_live_fans_apply_join_group, viewGroup);
         this.b = inflate.findViewById(R.id.view_background);
-        this.f12840c = inflate.findViewById(R.id.rl_content);
+        this.c = inflate.findViewById(R.id.rl_content);
         this.d = (TextView) inflate.findViewById(R.id.tv_title);
         this.e = (EditText) inflate.findViewById(R.id.et_apply_reason);
         this.f = (TextView) inflate.findViewById(R.id.tv_apply_join);
@@ -166,7 +160,7 @@ public class LiveFansApplyJoinGroupDialogFragment extends BaseDialogFragment {
         return inflate;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void show(FragmentManager fragmentManager, String str) {
         try {
             ReflectionUtils.a(this, "mDismissed", false);

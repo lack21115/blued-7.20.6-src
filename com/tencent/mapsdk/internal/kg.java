@@ -2,7 +2,6 @@ package com.tencent.mapsdk.internal;
 
 import android.graphics.Bitmap;
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.map.lib.callbacks.TileOverlayCallback;
 import com.tencent.mapsdk.core.utils.cache.DiskCache;
 import com.tencent.mapsdk.core.utils.cache.MemoryCache;
@@ -316,7 +315,7 @@ public class kg extends ze implements TileOverlayCallback {
         sb.append(pg.g);
         sb.append("://");
         sb.append(pg.h);
-        sb.append(BridgeUtil.SPLIT_MARK);
+        sb.append("/");
         sb.append(this.B);
         sb.append("?");
         sb.append("x=");
@@ -326,7 +325,7 @@ public class kg extends ze implements TileOverlayCallback {
         sb.append("&z=");
         sb.append(i3);
         byte[] bytes = sb.toString().getBytes();
-        System.arraycopy((Object) bytes, 0, (Object) bArr, 0, bytes.length);
+        System.arraycopy(bytes, 0, bArr, 0, bytes.length);
         return null;
     }
 

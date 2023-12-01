@@ -5,7 +5,6 @@ import com.android.internal.util.cm.QSConstants;
 import com.blued.android.chat.ChatManager;
 import com.blued.android.chat.core.utils.Log;
 import com.blued.android.chat.utils.BytesUtils;
-import com.huawei.hms.support.hianalytics.HiAnalyticsConstant;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/chat/core/pack/BasePackage.class */
 public class BasePackage {
@@ -144,7 +143,7 @@ public class BasePackage {
                     case 6:
                         return "delete";
                     case 7:
-                        return HiAnalyticsConstant.Direction.REQUEST;
+                        return "req";
                     default:
                         return "unknown(" + ((int) basePackage.type) + ")";
                 }

@@ -101,7 +101,7 @@ public class YAxisRenderer extends AxisRenderer {
 
     public RectF b() {
         this.j.set(this.o.k());
-        this.j.inset(0.0f, -this.f22168a.f());
+        this.j.inset(0.0f, -this.f8561a.f());
         return this.j;
     }
 
@@ -123,9 +123,9 @@ public class YAxisRenderer extends AxisRenderer {
                 int save = canvas.save();
                 canvas.clipRect(b());
                 float[] c2 = c();
-                this.f22169c.setColor(this.g.d());
-                this.f22169c.setStrokeWidth(this.g.f());
-                this.f22169c.setPathEffect(this.g.r());
+                this.f8562c.setColor(this.g.d());
+                this.f8562c.setStrokeWidth(this.g.f());
+                this.f8562c.setPathEffect(this.g.r());
                 Path path = this.i;
                 path.reset();
                 int i = 0;
@@ -134,7 +134,7 @@ public class YAxisRenderer extends AxisRenderer {
                     if (i2 >= c2.length) {
                         break;
                     }
-                    canvas.drawPath(a(path, i2, c2), this.f22169c);
+                    canvas.drawPath(a(path, i2, c2), this.f8562c);
                     path.reset();
                     i = i2 + 2;
                 }

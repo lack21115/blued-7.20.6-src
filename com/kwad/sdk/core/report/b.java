@@ -1,5 +1,6 @@
 package com.kwad.sdk.core.report;
 
+import android.R;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
@@ -41,9 +42,9 @@ public abstract class b<T extends f, R extends com.kwad.sdk.core.network.g> {
             if (mHandler == null) {
                 return;
             }
-            mHandler.removeMessages(16843025);
+            mHandler.removeMessages(R.attr.childDivider);
             Message obtain = Message.obtain(mHandler, a(this.mContext, this.ahW, this.ahY));
-            obtain.what = 16843025;
+            obtain.what = R.attr.childDivider;
             mHandler.sendMessageDelayed(obtain, j);
         }
     }
@@ -144,7 +145,7 @@ public abstract class b<T extends f, R extends com.kwad.sdk.core.network.g> {
         ahX.execute(new Runnable() { // from class: com.kwad.sdk.core.report.b.1
             @Override // java.lang.Runnable
             public final void run() {
-                if (b.mHandler != null && !b.mHandler.hasMessages(16843025)) {
+                if (b.mHandler != null && !b.mHandler.hasMessages(R.attr.childDivider)) {
                     b bVar = b.this;
                     bVar.R(bVar.ahV);
                 }

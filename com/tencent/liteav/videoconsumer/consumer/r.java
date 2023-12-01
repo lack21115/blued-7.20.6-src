@@ -8,17 +8,17 @@ import com.tencent.liteav.videoconsumer.renderer.VideoRenderListener;
 final /* synthetic */ class r implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final j f36723a;
+    private final j f23032a;
     private final GLConstants.PixelFormatType b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final GLConstants.PixelBufferType f36724c;
+    private final GLConstants.PixelBufferType f23033c;
     private final VideoRenderListener d;
 
     private r(j jVar, GLConstants.PixelFormatType pixelFormatType, GLConstants.PixelBufferType pixelBufferType, VideoRenderListener videoRenderListener) {
-        this.f36723a = jVar;
+        this.f23032a = jVar;
         this.b = pixelFormatType;
-        this.f36724c = pixelBufferType;
+        this.f23033c = pixelBufferType;
         this.d = videoRenderListener;
     }
 
@@ -28,11 +28,11 @@ final /* synthetic */ class r implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        j jVar = this.f36723a;
+        j jVar = this.f23032a;
         GLConstants.PixelFormatType pixelFormatType = this.b;
-        GLConstants.PixelBufferType pixelBufferType = this.f36724c;
+        GLConstants.PixelBufferType pixelBufferType = this.f23033c;
         VideoRenderListener videoRenderListener = this.d;
-        String str = jVar.f36705a;
+        String str = jVar.f23014a;
         LiteavLog.i(str, "setCustomRenderListener: formatType = " + pixelFormatType + " bufferType = " + pixelBufferType + " ," + videoRenderListener);
         jVar.h = videoRenderListener;
         if (jVar.h != null) {

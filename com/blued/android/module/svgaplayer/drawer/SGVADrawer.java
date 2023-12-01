@@ -18,26 +18,20 @@ import kotlin.text.StringsKt;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/svgaplayer/drawer/SGVADrawer.class */
 public class SGVADrawer {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final SVGAVideoEntity f15990a;
+    private final SVGAVideoEntity a;
     private final SVGAScaleInfo b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final Pools.SimplePool<SVGADrawerSprite> f15991c;
+    private final Pools.SimplePool<SVGADrawerSprite> c;
 
     @Metadata
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/svgaplayer/drawer/SGVADrawer$SVGADrawerSprite.class */
     public final class SVGADrawerSprite {
         private String b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private String f15993c;
+        private String c;
         private SVGAVideoSpriteFrameEntity d;
 
         public SVGADrawerSprite(String str, String str2, SVGAVideoSpriteFrameEntity sVGAVideoSpriteFrameEntity) {
             this.b = str;
-            this.f15993c = str2;
+            this.c = str2;
             this.d = sVGAVideoSpriteFrameEntity;
         }
 
@@ -58,11 +52,11 @@ public class SGVADrawer {
         }
 
         public final String b() {
-            return this.f15993c;
+            return this.c;
         }
 
         public final void b(String str) {
-            this.f15993c = str;
+            this.c = str;
         }
 
         public final SVGAVideoSpriteFrameEntity c() {
@@ -75,30 +69,30 @@ public class SGVADrawer {
     public SGVADrawer(SVGAVideoEntity videoItem) {
         List<SVGAVideoSpriteEntity> f;
         Intrinsics.e(videoItem, "videoItem");
-        this.f15990a = videoItem;
+        this.a = videoItem;
         this.b = new SVGAScaleInfo();
-        SVGAVideoData a2 = this.f15990a.a();
-        this.f15991c = new Pools.SimplePool<>(Math.max(1, (a2 == null || (f = a2.f()) == null) ? 0 : f.size()));
+        SVGAVideoData a = this.a.a();
+        this.c = new Pools.SimplePool<>(Math.max(1, (a == null || (f = a.f()) == null) ? 0 : f.size()));
     }
 
     public final SVGAVideoEntity a() {
-        return this.f15990a;
+        return this.a;
     }
 
     public final List<SVGADrawerSprite> a(int i) {
         SVGADrawerSprite sVGADrawerSprite;
-        String a2;
-        SVGAVideoData a3 = this.f15990a.a();
-        List<SVGAVideoSpriteEntity> f = a3 != null ? a3.f() : null;
+        String a;
+        SVGAVideoData a2 = this.a.a();
+        List<SVGAVideoSpriteEntity> f = a2 != null ? a2.f() : null;
         Intrinsics.a(f);
         ArrayList arrayList = new ArrayList();
         for (SVGAVideoSpriteEntity sVGAVideoSpriteEntity : f) {
-            if (i < 0 || i >= sVGAVideoSpriteEntity.c().size() || (a2 = sVGAVideoSpriteEntity.a()) == null || (!StringsKt.b(a2, ".matte", false, 2, (Object) null) && sVGAVideoSpriteEntity.c().get(i).a() <= 0.0d)) {
+            if (i < 0 || i >= sVGAVideoSpriteEntity.c().size() || (a = sVGAVideoSpriteEntity.a()) == null || (!StringsKt.b(a, ".matte", false, 2, (Object) null) && sVGAVideoSpriteEntity.c().get(i).a() <= 0.0d)) {
                 sVGADrawerSprite = null;
             } else {
-                SVGADrawerSprite a4 = this.f15991c.a();
-                sVGADrawerSprite = a4;
-                if (a4 == null) {
+                SVGADrawerSprite a3 = this.c.a();
+                sVGADrawerSprite = a3;
+                if (a3 == null) {
                     sVGADrawerSprite = new SVGADrawerSprite(this, null, null, null, 7, null);
                 }
                 sVGADrawerSprite.a(sVGAVideoSpriteEntity.b());
@@ -115,17 +109,17 @@ public class SGVADrawer {
     public void a(Canvas canvas, int i, ImageView.ScaleType scaleType) {
         Intrinsics.e(canvas, "canvas");
         Intrinsics.e(scaleType, "scaleType");
-        SVGAVideoData a2 = this.f15990a.a();
-        if (a2 == null) {
+        SVGAVideoData a = this.a.a();
+        if (a == null) {
             return;
         }
-        this.b.a(canvas.getWidth(), canvas.getHeight(), (float) a2.c().a(), (float) a2.c().b(), scaleType);
+        this.b.a(canvas.getWidth(), canvas.getHeight(), (float) a.c().a(), (float) a.c().b(), scaleType);
     }
 
     public final void a(List<SVGADrawerSprite> sprites) {
         Intrinsics.e(sprites, "sprites");
         for (SVGADrawerSprite sVGADrawerSprite : sprites) {
-            this.f15991c.a(sVGADrawerSprite);
+            this.c.a(sVGADrawerSprite);
         }
     }
 

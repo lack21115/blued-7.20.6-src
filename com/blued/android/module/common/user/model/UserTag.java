@@ -64,7 +64,6 @@ public class UserTag implements MultiItemEntity, Serializable {
         return this.id.equals(((UserTag) obj).id);
     }
 
-    @Override // com.chad.library.adapter.base.entity.MultiItemEntity
     public int getItemType() {
         return this.type;
     }

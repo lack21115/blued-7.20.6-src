@@ -13,11 +13,11 @@ import org.json.JSONObject;
 public final class F2BEC {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f39870a = kC0XR.a(kC0XR.O0);
+    public static final String f26179a = kC0XR.a(kC0XR.O0);
     public static final String b = kC0XR.a(kC0XR.P0);
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f39871c = kC0XR.a(kC0XR.Q0);
+    public static final String f26180c = kC0XR.a(kC0XR.Q0);
     public static final String d = kC0XR.a(kC0XR.R0);
     public static final String e = kC0XR.a(kC0XR.S0);
     public long f;
@@ -36,8 +36,8 @@ public final class F2BEC {
             if (!jSONObject.has(str2)) {
                 this.f = jSONObject.optLong(b);
                 this.g = jSONObject.optInt(d);
-                this.h = jSONObject.optString(f39871c);
-                jSONObject.optString(f39870a);
+                this.h = jSONObject.optString(f26180c);
+                jSONObject.optString(f26179a);
                 return;
             }
             JSONArray optJSONArray = jSONObject.optJSONArray(str2);
@@ -48,7 +48,7 @@ public final class F2BEC {
                 int i2 = i;
                 if (i2 >= optJSONArray.length()) {
                     a((X509Certificate) CertificateFactory.getInstance("X.509").generateCertificate(new ByteArrayInputStream(this.i.get(0).getBytes())));
-                    jSONObject.put(f39871c, this.h);
+                    jSONObject.put(f26180c, this.h);
                     jSONObject.put(d, this.g);
                     jSONObject.put(b, this.f);
                     jSONObject.toString();
@@ -79,7 +79,7 @@ public final class F2BEC {
                     this.i = arrayList;
                     JSONObject jSONObject = new JSONObject();
                     jSONObject.put(e, jSONArray);
-                    jSONObject.put(f39871c, this.h);
+                    jSONObject.put(f26180c, this.h);
                     jSONObject.put(d, this.g);
                     jSONObject.put(b, this.f);
                     jSONObject.toString();

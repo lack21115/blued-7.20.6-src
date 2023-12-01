@@ -25,17 +25,17 @@ public class eh implements ee {
     }
 
     private void b(Context context, ea eaVar) {
-        String m11708a = eaVar.m11708a();
+        String m8658a = eaVar.m8658a();
         String b = eaVar.b();
         String d = eaVar.d();
         int a2 = eaVar.a();
-        if (context == null || TextUtils.isEmpty(m11708a) || TextUtils.isEmpty(b) || TextUtils.isEmpty(d)) {
+        if (context == null || TextUtils.isEmpty(m8658a) || TextUtils.isEmpty(b) || TextUtils.isEmpty(d)) {
             if (TextUtils.isEmpty(d)) {
                 dx.a(context, "service", 1008, "argument error");
             } else {
                 dx.a(context, d, 1008, "argument error");
             }
-        } else if (!com.xiaomi.push.service.l.a(context, m11708a, b)) {
+        } else if (!com.xiaomi.push.service.l.a(context, m8658a, b)) {
             dx.a(context, d, 1003, "B is not ready");
         } else {
             dx.a(context, d, 1002, "B is ready");
@@ -43,9 +43,9 @@ public class eh implements ee {
             try {
                 Intent intent = new Intent();
                 intent.setAction(b);
-                intent.setPackage(m11708a);
+                intent.setPackage(m8658a);
                 intent.putExtra("awake_info", dw.a(d));
-                if (a2 == 1 && !eb.m11709a(context)) {
+                if (a2 == 1 && !eb.m8659a(context)) {
                     dx.a(context, d, 1008, "A not in foreground");
                 } else if (context.startService(intent) == null) {
                     dx.a(context, d, 1008, "A is fail to help B's service");

@@ -6,11 +6,11 @@ import androidx.constraintlayout.core.widgets.ConstraintWidget;
 public class Dimension {
 
     /* renamed from: a  reason: collision with root package name */
-    int f2090a;
+    int f2042a;
     int b;
 
     /* renamed from: c  reason: collision with root package name */
-    float f2091c;
+    float f2043c;
     int d;
     String e;
     Object f;
@@ -33,9 +33,9 @@ public class Dimension {
 
     private Dimension() {
         this.h = -2;
-        this.f2090a = 0;
+        this.f2042a = 0;
         this.b = Integer.MAX_VALUE;
-        this.f2091c = 1.0f;
+        this.f2043c = 1.0f;
         this.d = 0;
         this.e = null;
         this.f = WRAP_DIMENSION;
@@ -44,9 +44,9 @@ public class Dimension {
 
     private Dimension(Object obj) {
         this.h = -2;
-        this.f2090a = 0;
+        this.f2042a = 0;
         this.b = Integer.MAX_VALUE;
-        this.f2091c = 1.0f;
+        this.f2043c = 1.0f;
         this.d = 0;
         this.e = null;
         this.f = WRAP_DIMENSION;
@@ -116,10 +116,10 @@ public class Dimension {
             if (this.g) {
                 constraintWidget.setHorizontalDimensionBehaviour(ConstraintWidget.DimensionBehaviour.MATCH_CONSTRAINT);
                 Object obj = this.f;
-                constraintWidget.setHorizontalMatchStyle(obj == WRAP_DIMENSION ? 1 : obj == PERCENT_DIMENSION ? 2 : 0, this.f2090a, this.b, this.f2091c);
+                constraintWidget.setHorizontalMatchStyle(obj == WRAP_DIMENSION ? 1 : obj == PERCENT_DIMENSION ? 2 : 0, this.f2042a, this.b, this.f2043c);
                 return;
             }
-            int i2 = this.f2090a;
+            int i2 = this.f2042a;
             if (i2 > 0) {
                 constraintWidget.setMinWidth(i2);
             }
@@ -139,9 +139,9 @@ public class Dimension {
         } else if (this.g) {
             constraintWidget.setVerticalDimensionBehaviour(ConstraintWidget.DimensionBehaviour.MATCH_CONSTRAINT);
             Object obj3 = this.f;
-            constraintWidget.setVerticalMatchStyle(obj3 == WRAP_DIMENSION ? 1 : obj3 == PERCENT_DIMENSION ? 2 : 0, this.f2090a, this.b, this.f2091c);
+            constraintWidget.setVerticalMatchStyle(obj3 == WRAP_DIMENSION ? 1 : obj3 == PERCENT_DIMENSION ? 2 : 0, this.f2042a, this.b, this.f2043c);
         } else {
-            int i4 = this.f2090a;
+            int i4 = this.f2042a;
             if (i4 > 0) {
                 constraintWidget.setMinHeight(i4);
             }
@@ -198,20 +198,20 @@ public class Dimension {
 
     public Dimension min(int i) {
         if (i >= 0) {
-            this.f2090a = i;
+            this.f2042a = i;
         }
         return this;
     }
 
     public Dimension min(Object obj) {
         if (obj == WRAP_DIMENSION) {
-            this.f2090a = -2;
+            this.f2042a = -2;
         }
         return this;
     }
 
     public Dimension percent(Object obj, float f) {
-        this.f2091c = f;
+        this.f2043c = f;
         return this;
     }
 

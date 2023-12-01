@@ -1,5 +1,6 @@
 package android.net.http;
 
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.EOFException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -263,7 +264,7 @@ public class Request {
         if (this.mReceivedBytes > 0) {
             this.mFailCount = 0;
             HttpLog.v("*** Request.reset() to range:" + this.mReceivedBytes);
-            this.mHttpRequest.setHeader("Range", "bytes=" + this.mReceivedBytes + "-");
+            this.mHttpRequest.setHeader("Range", "bytes=" + this.mReceivedBytes + Constants.ACCEPT_TIME_SEPARATOR_SERVER);
         }
     }
 

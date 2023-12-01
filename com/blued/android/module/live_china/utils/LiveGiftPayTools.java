@@ -38,7 +38,6 @@ import com.bytedance.applog.tracker.Tracker;
 import com.google.gson.JsonSyntaxException;
 import com.google.gson.reflect.TypeToken;
 import com.jeremyliao.liveeventbus.LiveEventBus;
-import com.soft.blued.constant.EventBusConstant;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
@@ -46,24 +45,16 @@ import java.util.List;
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/utils/LiveGiftPayTools.class */
 public class LiveGiftPayTools {
     public static DialogWith6PW b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final String f14163c = LiveGiftPayTools.class.getSimpleName();
-
-    /* renamed from: a  reason: collision with root package name */
-    public static boolean f14162a = false;
+    private static final String c = LiveGiftPayTools.class.getSimpleName();
+    public static boolean a = false;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.blued.android.module.live_china.utils.LiveGiftPayTools$1  reason: invalid class name */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/utils/LiveGiftPayTools$1.class */
     public class AnonymousClass1 extends BluedUIHttpResponse<BluedEntity<PayRemaining, LiveZanExtraModel>> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ Context f14164a;
+        final /* synthetic */ Context a;
         final /* synthetic */ long b;
-
-        /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ String f14165c;
+        final /* synthetic */ String c;
         final /* synthetic */ int d;
         final /* synthetic */ BackGiftStatusListener e;
         final /* synthetic */ LiveGiftModel f;
@@ -81,8 +72,8 @@ public class LiveGiftPayTools {
             /* JADX INFO: Access modifiers changed from: package-private */
             /* renamed from: com.blued.android.module.live_china.utils.LiveGiftPayTools$1$2$1  reason: invalid class name and collision with other inner class name */
             /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/utils/LiveGiftPayTools$1$2$1.class */
-            public class C02411 implements CommonAlertDialog.PWDListener {
-                C02411() {
+            public class C01171 implements CommonAlertDialog.PWDListener {
+                C01171() {
                 }
 
                 @Override // com.blued.android.module.live_china.same.tip.CommonAlertDialog.PWDListener
@@ -97,37 +88,37 @@ public class LiveGiftPayTools {
                         e.printStackTrace();
                         str2 = "";
                     }
-                    String str3 = AnonymousClass1.this.f14165c;
+                    String str3 = AnonymousClass1.this.c;
                     LiveRoomHttpUtils.a(str3, AnonymousClass1.this.b + "", AnonymousClass1.this.f, AnonymousClass1.this.i, str2, "", z, AnonymousClass1.this.j, new BluedUIHttpResponse<BluedEntity<PayRemaining, LiveZanExtraModel>>() { // from class: com.blued.android.module.live_china.utils.LiveGiftPayTools.1.2.1.1
                         @Override // com.blued.android.framework.http.BluedUIHttpResponse, com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
                         public void onFailure(Throwable th, int i, String str4) {
                             super.onFailure(th, i, str4);
                             LiveGiftPayTools.a(str4);
-                            final Pair<Integer, String> a2 = BluedHttpUtils.a(th, i, str4);
-                            int intValue = a2.first.intValue();
+                            final Pair<Integer, String> a = BluedHttpUtils.a(th, i, str4);
+                            int intValue = ((Integer) a.first).intValue();
                             if (intValue == 4221004) {
-                                if (TextUtils.isEmpty(a2.second)) {
+                                if (TextUtils.isEmpty((CharSequence) a.second)) {
                                     return;
                                 }
                                 AppInfo.n().post(new Runnable() { // from class: com.blued.android.module.live_china.utils.LiveGiftPayTools.1.2.1.1.2
                                     @Override // java.lang.Runnable
                                     public void run() {
-                                        if (LiveGiftPayTools.b == null || LiveGiftPayTools.b.f14129c == null || LiveGiftPayTools.b.b == null) {
+                                        if (LiveGiftPayTools.b == null || LiveGiftPayTools.b.c == null || LiveGiftPayTools.b.b == null) {
                                             return;
                                         }
-                                        LiveGiftPayTools.b.f14129c.setTextColor(AnonymousClass1.this.f14164a.getResources().getColor(R.color.biao_live_bug_gift_paycode_error));
-                                        LiveGiftPayTools.b.f14129c.setText((CharSequence) a2.second);
+                                        LiveGiftPayTools.b.c.setTextColor(AnonymousClass1.this.a.getResources().getColor(R.color.biao_live_bug_gift_paycode_error));
+                                        LiveGiftPayTools.b.c.setText((CharSequence) a.second);
                                         LiveGiftPayTools.b.b.a();
                                     }
                                 });
                             } else if (intValue == 4221008) {
                                 LiveGiftPayTools.this.a(AnonymousClass1.this.e, AnonymousClass1.this.f);
-                                LiveGiftPayTools.this.a(AnonymousClass1.this.f14164a, AnonymousClass1.this.k, AnonymousClass1.this.e, AnonymousClass1.this.h, AnonymousClass1.this.f);
+                                LiveGiftPayTools.this.a(AnonymousClass1.this.a, AnonymousClass1.this.k, AnonymousClass1.this.e, AnonymousClass1.this.h, AnonymousClass1.this.f);
                             } else {
-                                if (!TextUtils.isEmpty(a2.second)) {
-                                    AppMethods.a((CharSequence) a2.second);
+                                if (!TextUtils.isEmpty((CharSequence) a.second)) {
+                                    AppMethods.a((CharSequence) a.second);
                                 }
-                                AnonymousClass1.this.f.errorMessage = a2.second;
+                                AnonymousClass1.this.f.errorMessage = (String) a.second;
                                 LiveGiftPayTools.this.a(AnonymousClass1.this.e, AnonymousClass1.this.f);
                                 BluedHttpUtils.b(th, i, str4);
                             }
@@ -152,7 +143,7 @@ public class LiveGiftPayTools {
                                     LiveSetDataObserver.a().d(0);
                                 }
                             });
-                            LiveGiftPayTools.this.a(AnonymousClass1.this.f14164a, AnonymousClass1.this.b, AnonymousClass1.this.f14165c, AnonymousClass1.this.d, AnonymousClass1.this.e, AnonymousClass1.this.f, liveZanExtraModel, payRemaining, AnonymousClass1.this.g, AnonymousClass1.this.b);
+                            LiveGiftPayTools.this.a(AnonymousClass1.this.a, AnonymousClass1.this.b, AnonymousClass1.this.c, AnonymousClass1.this.d, AnonymousClass1.this.e, AnonymousClass1.this.f, liveZanExtraModel, payRemaining, AnonymousClass1.this.g, AnonymousClass1.this.b);
                         }
                     }, AnonymousClass1.this.h);
                 }
@@ -163,8 +154,8 @@ public class LiveGiftPayTools {
 
             @Override // java.lang.Runnable
             public void run() {
-                if (LiveGiftPayTools.b == null || LiveGiftPayTools.b.f14128a == null || !LiveGiftPayTools.b.f14128a.isShowing()) {
-                    LiveGiftPayTools.b = CommonAlertDialog.a(AnonymousClass1.this.f14164a, AnonymousClass1.this.f14164a.getResources().getString(R.string.Live_SendPresent_verifyPassword), AnonymousClass1.this.f14164a.getResources().getString(R.string.Live_SendPresent_verifyPasswordText), false, false, true, !LiveFloatManager.a().C(), new C02411(), new DialogInterface.OnCancelListener() { // from class: com.blued.android.module.live_china.utils.LiveGiftPayTools.1.2.2
+                if (LiveGiftPayTools.b == null || LiveGiftPayTools.b.a == null || !LiveGiftPayTools.b.a.isShowing()) {
+                    LiveGiftPayTools.b = CommonAlertDialog.a(AnonymousClass1.this.a, AnonymousClass1.this.a.getResources().getString(R.string.Live_SendPresent_verifyPassword), AnonymousClass1.this.a.getResources().getString(R.string.Live_SendPresent_verifyPasswordText), false, false, true, !LiveFloatManager.a().C(), new C01171(), new DialogInterface.OnCancelListener() { // from class: com.blued.android.module.live_china.utils.LiveGiftPayTools.1.2.2
                         @Override // android.content.DialogInterface.OnCancelListener
                         public void onCancel(DialogInterface dialogInterface) {
                             LiveGiftPayTools.this.a(AnonymousClass1.this.e, AnonymousClass1.this.f);
@@ -175,9 +166,9 @@ public class LiveGiftPayTools {
         }
 
         AnonymousClass1(Context context, long j, String str, int i, BackGiftStatusListener backGiftStatusListener, LiveGiftModel liveGiftModel, short s, IRequestHost iRequestHost, String str2, int i2, FragmentManager fragmentManager) {
-            this.f14164a = context;
+            this.a = context;
             this.b = j;
-            this.f14165c = str;
+            this.c = str;
             this.d = i;
             this.e = backGiftStatusListener;
             this.f = liveGiftModel;
@@ -191,30 +182,30 @@ public class LiveGiftPayTools {
         @Override // com.blued.android.framework.http.BluedUIHttpResponse, com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
         public void onFailure(Throwable th, int i, String str) {
             LiveGiftPayTools.a(str);
-            Pair<Integer, String> a2 = BluedHttpUtils.a(th, i, str);
-            if (a2.first.intValue() == 0) {
+            Pair<Integer, String> a = BluedHttpUtils.a(th, i, str);
+            if (((Integer) a.first).intValue() == 0) {
                 return;
             }
-            int intValue = a2.first.intValue();
+            int intValue = ((Integer) a.first).intValue();
             if (intValue == 4221002) {
                 LiveGiftPayTools.this.a(this.e, this.f);
                 AppInfo.n().post(new Runnable() { // from class: com.blued.android.module.live_china.utils.LiveGiftPayTools.1.1
                     @Override // java.lang.Runnable
                     public void run() {
-                        LiveGiftPayTools.a(AnonymousClass1.this.f14164a, AnonymousClass1.this.h);
+                        LiveGiftPayTools.a(AnonymousClass1.this.a, AnonymousClass1.this.h);
                     }
                 });
             } else if (intValue == 4221005) {
                 AppInfo.n().post(new AnonymousClass2());
             } else if (intValue == 4221008) {
                 LiveGiftPayTools.this.a(this.e, this.f);
-                LiveGiftPayTools.this.a(this.f14164a, this.k, this.e, this.h, this.f);
+                LiveGiftPayTools.this.a(this.a, this.k, this.e, this.h, this.f);
             } else {
-                if (!TextUtils.isEmpty(a2.second)) {
-                    AppMethods.a((CharSequence) a2.second);
+                if (!TextUtils.isEmpty((CharSequence) a.second)) {
+                    AppMethods.a((CharSequence) a.second);
                 }
-                Log.v("pk", "liveGiftModel default = " + a2.second);
-                this.f.errorMessage = a2.second;
+                Log.v("pk", "liveGiftModel default = " + ((String) a.second));
+                this.f.errorMessage = (String) a.second;
                 LiveGiftPayTools.this.a(this.e, this.f);
             }
         }
@@ -229,9 +220,9 @@ public class LiveGiftPayTools {
             LiveZanExtraModel liveZanExtraModel = bluedEntity.extra;
             Logger.a("ddrb", "giftSuccess");
             LiveGiftPayTools liveGiftPayTools = LiveGiftPayTools.this;
-            Context context = this.f14164a;
+            Context context = this.a;
             long j = this.b;
-            liveGiftPayTools.a(context, j, this.f14165c, this.d, this.e, this.f, liveZanExtraModel, payRemaining, this.g, j);
+            liveGiftPayTools.a(context, j, this.c, this.d, this.e, this.f, liveZanExtraModel, payRemaining, this.g, j);
         }
     }
 
@@ -245,16 +236,14 @@ public class LiveGiftPayTools {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/utils/LiveGiftPayTools$SingletonCreator.class */
     public static class SingletonCreator {
-
-        /* renamed from: a  reason: collision with root package name */
-        private static final LiveGiftPayTools f14179a = new LiveGiftPayTools();
+        private static final LiveGiftPayTools a = new LiveGiftPayTools();
 
         private SingletonCreator() {
         }
     }
 
     public static LiveGiftPayTools a() {
-        return SingletonCreator.f14179a;
+        return SingletonCreator.a;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -290,7 +279,7 @@ public class LiveGiftPayTools {
                 if (i == 2) {
                     LiveEventBus.get("live_fans_guide_pop").post(true);
                 }
-                LiveEventBus.get(EventBusConstant.KEY_EVENT_LIVE_REFRESH_GIFT_LIST).post(true);
+                LiveEventBus.get("live_refresh_gift_list").post(true);
                 LiveEventBus.get("key_event_live_add_fans_club_success").post(true);
             }
             if (LiveRoomManager.a().q() != null && LiveRoomManager.a().q().fans_status == 2 && liveGiftModel2.beans_count >= 6.0d) {
@@ -305,7 +294,7 @@ public class LiveGiftPayTools {
                 }
             }
             backGiftStatusListener.a(liveGiftModel, liveGiftModel2, liveZanExtraModel.box);
-            Logger.b(f14163c, "可以发礼物===", 3);
+            Logger.b(c, "可以发礼物===", 3);
             if (TextUtils.isEmpty(liveGiftModel.contents) && liveGiftModel.effect == null) {
                 if (liveGiftModel.selectNumModel == null || liveGiftModel.selectNumModel.count <= 1) {
                     liveGiftModel.hit_batch = 0;
@@ -358,7 +347,7 @@ public class LiveGiftPayTools {
             @Override // java.lang.Runnable
             public void run() {
                 IRequestHost iRequestHost2;
-                if (LiveGiftPayTools.f14162a || (iRequestHost2 = iRequestHost) == null || !iRequestHost2.isActive()) {
+                if (LiveGiftPayTools.a || (iRequestHost2 = iRequestHost) == null || !iRequestHost2.isActive()) {
                     return;
                 }
                 String string = context.getResources().getString(R.string.Live_SendPresent_notEnoughWandou);
@@ -369,7 +358,7 @@ public class LiveGiftPayTools {
                         str = context.getResources().getString(R.string.Live_effect_not_enough);
                     }
                 }
-                LiveGiftPayTools.f14162a = true;
+                LiveGiftPayTools.a = true;
                 Context context2 = context;
                 CommonAlertDialog.a(context2, (View) null, "", str, context2.getResources().getString(R.string.cancel), context.getResources().getString(R.string.Live_SendPresent_recharge), new DialogInterface.OnClickListener() { // from class: com.blued.android.module.live_china.utils.LiveGiftPayTools.3.1
                     @Override // android.content.DialogInterface.OnClickListener
@@ -383,18 +372,18 @@ public class LiveGiftPayTools {
                         } else {
                             LiveRoomInfo.a().a(context, fragmentManager, 2);
                         }
-                        LiveGiftPayTools.f14162a = false;
+                        LiveGiftPayTools.a = false;
                     }
                 }, new DialogInterface.OnClickListener() { // from class: com.blued.android.module.live_china.utils.LiveGiftPayTools.3.2
                     @Override // android.content.DialogInterface.OnClickListener
                     public void onClick(DialogInterface dialogInterface, int i) {
                         Tracker.onClick(dialogInterface, i);
-                        LiveGiftPayTools.f14162a = false;
+                        LiveGiftPayTools.a = false;
                     }
                 }, new DialogInterface.OnCancelListener() { // from class: com.blued.android.module.live_china.utils.LiveGiftPayTools.3.3
                     @Override // android.content.DialogInterface.OnCancelListener
                     public void onCancel(DialogInterface dialogInterface) {
-                        LiveGiftPayTools.f14162a = false;
+                        LiveGiftPayTools.a = false;
                     }
                 }, true);
             }
@@ -403,7 +392,7 @@ public class LiveGiftPayTools {
 
     public static void a(Context context, final IRequestHost iRequestHost) {
         DialogWith6PW dialogWith6PW = b;
-        if (dialogWith6PW == null || dialogWith6PW.f14128a == null || !b.f14128a.isShowing()) {
+        if (dialogWith6PW == null || dialogWith6PW.a == null || !b.a.isShowing()) {
             b = CommonAlertDialog.a(context, context.getResources().getString(R.string.Live_SendPresent_resetPayPassword), context.getResources().getString(R.string.live_set_6_num), true, new CommonAlertDialog.PWDListener() { // from class: com.blued.android.module.live_china.utils.LiveGiftPayTools.2
                 @Override // com.blued.android.module.live_china.same.tip.CommonAlertDialog.PWDListener
                 public void a(String str, boolean z, DialogWith6PW dialogWith6PW2) {
@@ -423,9 +412,10 @@ public class LiveGiftPayTools {
         liveGiftModel2.sendGiftStatus = 2;
         Log.v("pk", "liveGiftModel = " + liveGiftModel.errorMessage);
         backGiftStatusListener.a(liveGiftModel, liveGiftModel2, null);
-        Logger.b(f14163c, "取消发礼物===", 2);
+        Logger.b(c, "取消发礼物===", 2);
     }
 
+    /* JADX WARN: Type inference failed for: r2v0, types: [com.blued.android.module.live_china.utils.LiveGiftPayTools$4] */
     public static void a(String str) {
         if (TextUtils.isEmpty(str)) {
             return;
@@ -447,10 +437,10 @@ public class LiveGiftPayTools {
 
     public static void b() {
         DialogWith6PW dialogWith6PW = b;
-        if (dialogWith6PW == null || dialogWith6PW.f14128a == null) {
+        if (dialogWith6PW == null || dialogWith6PW.a == null) {
             return;
         }
-        b.f14128a.dismiss();
+        b.a.dismiss();
     }
 
     public void a(Context context, FragmentManager fragmentManager, short s, long j, int i, IRequestHost iRequestHost, LiveGiftModel liveGiftModel, String str, String str2, int i2, BackGiftStatusListener backGiftStatusListener) {

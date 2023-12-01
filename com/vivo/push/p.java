@@ -6,11 +6,11 @@ import android.net.Uri;
 public final class p {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Uri f41113a = Uri.parse("content://com.vivo.push.sdk.service.SystemPushConfig/config");
+    public static final Uri f27422a = Uri.parse("content://com.vivo.push.sdk.service.SystemPushConfig/config");
     public static final Uri b = Uri.parse("content://com.vivo.push.sdk.service.SystemPushConfig/permission");
 
     /* renamed from: c  reason: collision with root package name */
-    public static final Uri f41114c = Uri.parse("content://com.vivo.push.sdk.service.SystemPushConfig/clientState");
+    public static final Uri f27423c = Uri.parse("content://com.vivo.push.sdk.service.SystemPushConfig/clientState");
     public static final Uri d = Uri.parse("content://com.vivo.push.sdk.service.SystemPushConfig/debugInfo");
 
     public static String a(int i) {

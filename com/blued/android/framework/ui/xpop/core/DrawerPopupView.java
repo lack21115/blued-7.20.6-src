@@ -17,13 +17,9 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/ui/xpop/core/DrawerPopupView.class */
 public abstract class DrawerPopupView extends BasePopupView {
-
-    /* renamed from: a  reason: collision with root package name */
-    PopupDrawerLayout f9981a;
+    PopupDrawerLayout a;
     float b;
-
-    /* renamed from: c  reason: collision with root package name */
-    Paint f9982c;
+    Paint c;
     Rect d;
     public ArgbEvaluator e;
     int f;
@@ -32,27 +28,25 @@ public abstract class DrawerPopupView extends BasePopupView {
     /* renamed from: com.blued.android.framework.ui.xpop.core.DrawerPopupView$1  reason: invalid class name */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/ui/xpop/core/DrawerPopupView$1.class */
     class AnonymousClass1 implements PopupDrawerLayout.OnCloseListener {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ DrawerPopupView f9983a;
+        final /* synthetic */ DrawerPopupView a;
 
         @Override // com.blued.android.framework.ui.xpop.widget.PopupDrawerLayout.OnCloseListener
         public void a() {
-            this.f9983a.v();
-            if (this.f9983a.l.p != null) {
-                this.f9983a.l.p.e(this.f9983a);
+            this.a.v();
+            if (this.a.l.p != null) {
+                this.a.l.p.e(this.a);
             }
-            this.f9983a.r();
+            this.a.r();
         }
 
         @Override // com.blued.android.framework.ui.xpop.widget.PopupDrawerLayout.OnCloseListener
         public void a(int i, float f, boolean z) {
-            this.f9983a.f9981a.g = this.f9983a.l.t.booleanValue();
-            if (this.f9983a.l.p != null) {
-                this.f9983a.l.p.a(this.f9983a, i, f, z);
+            this.a.a.g = this.a.l.t.booleanValue();
+            if (this.a.l.p != null) {
+                this.a.l.p.a(this.a, i, f, z);
             }
-            this.f9983a.b = f;
-            this.f9983a.postInvalidate();
+            this.a.b = f;
+            this.a.postInvalidate();
         }
 
         @Override // com.blued.android.framework.ui.xpop.widget.PopupDrawerLayout.OnCloseListener
@@ -64,14 +58,12 @@ public abstract class DrawerPopupView extends BasePopupView {
     /* renamed from: com.blued.android.framework.ui.xpop.core.DrawerPopupView$2  reason: invalid class name */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/ui/xpop/core/DrawerPopupView$2.class */
     class AnonymousClass2 implements View.OnClickListener {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ DrawerPopupView f9984a;
+        final /* synthetic */ DrawerPopupView a;
 
         @Override // android.view.View.OnClickListener
         public void onClick(View view) {
             Tracker.onClick(view);
-            this.f9984a.p();
+            this.a.p();
         }
     }
 
@@ -79,9 +71,9 @@ public abstract class DrawerPopupView extends BasePopupView {
         if (this.l.t.booleanValue()) {
             ArgbEvaluator argbEvaluator = this.e;
             int i = 0;
-            int i2 = z ? 0 : XPopup.f9936a;
+            int i2 = z ? 0 : XPopup.a;
             if (z) {
-                i = XPopup.f9936a;
+                i = XPopup.a;
             }
             ValueAnimator ofObject = ValueAnimator.ofObject(argbEvaluator, Integer.valueOf(i2), Integer.valueOf(i));
             ofObject.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.blued.android.framework.ui.xpop.core.DrawerPopupView.3
@@ -103,8 +95,8 @@ public abstract class DrawerPopupView extends BasePopupView {
             if (this.d == null) {
                 this.d = new Rect(0, 0, getMeasuredWidth(), XPopupUtils.a());
             }
-            this.f9982c.setColor(((Integer) this.e.evaluate(this.b, Integer.valueOf(this.g), Integer.valueOf(XPopup.f9936a))).intValue());
-            canvas.drawRect(this.d, this.f9982c);
+            this.c.setColor(((Integer) this.e.evaluate(this.b, Integer.valueOf(this.g), Integer.valueOf(XPopup.a))).intValue());
+            canvas.drawRect(this.d, this.c);
         }
     }
 
@@ -139,6 +131,6 @@ public abstract class DrawerPopupView extends BasePopupView {
         }
         clearFocus();
         c(false);
-        this.f9981a.a();
+        this.a.a();
     }
 }

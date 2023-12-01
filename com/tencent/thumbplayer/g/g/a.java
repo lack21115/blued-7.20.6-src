@@ -1,7 +1,6 @@
 package com.tencent.thumbplayer.g.g;
 
 import android.text.TextUtils;
-import com.alipay.sdk.util.i;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -10,13 +9,13 @@ public class a {
     private long b;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f39357c;
+    private boolean f25666c;
     private boolean d;
     private boolean e;
     private boolean g;
 
     /* renamed from: a  reason: collision with root package name */
-    private final Map<String, Long> f39356a = new HashMap();
+    private final Map<String, Long> f25665a = new HashMap();
     private String f = "";
 
     public a(boolean z) {
@@ -24,7 +23,7 @@ public class a {
     }
 
     private final void c(boolean z) {
-        this.f39357c = z;
+        this.f25666c = z;
         this.e = true;
     }
 
@@ -34,7 +33,7 @@ public class a {
 
     public final void a() {
         this.f = "";
-        this.f39356a.clear();
+        this.f25665a.clear();
         this.b = System.currentTimeMillis();
     }
 
@@ -44,12 +43,12 @@ public class a {
     }
 
     public final void b() {
-        this.f39356a.put("createCodec", Long.valueOf(System.currentTimeMillis() - this.b));
+        this.f25665a.put("createCodec", Long.valueOf(System.currentTimeMillis() - this.b));
     }
 
     public final void b(boolean z) {
         c(z);
-        this.f39356a.put("configCodec", Long.valueOf(System.currentTimeMillis() - this.b));
+        this.f25665a.put("configCodec", Long.valueOf(System.currentTimeMillis() - this.b));
     }
 
     public final void c() {
@@ -57,7 +56,7 @@ public class a {
     }
 
     public final void d() {
-        this.f39356a.put("startCodec", Long.valueOf(System.currentTimeMillis() - this.b));
+        this.f25665a.put("startCodec", Long.valueOf(System.currentTimeMillis() - this.b));
     }
 
     public final String e() {
@@ -67,12 +66,12 @@ public class a {
             sb.append(this.g + " ,");
             if (this.e) {
                 sb.append("\"isReuse\":");
-                sb.append(this.f39357c + " ,");
+                sb.append(this.f25666c + " ,");
             }
             sb.append("\"reuseEnable\":");
             sb.append(this.d + " ,");
             long j = 0L;
-            for (Map.Entry<String, Long> entry : this.f39356a.entrySet()) {
+            for (Map.Entry<String, Long> entry : this.f25665a.entrySet()) {
                 long j2 = j;
                 if (entry != null) {
                     j2 = j + entry.getValue().longValue();
@@ -83,7 +82,7 @@ public class a {
             }
             sb.append("\"totalCodec\":");
             sb.append(j);
-            sb.append(i.d);
+            sb.append("}");
             this.f = sb.toString();
         }
         return this.f;

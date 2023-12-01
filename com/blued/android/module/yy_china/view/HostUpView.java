@@ -18,9 +18,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/HostUpView.class */
 public final class HostUpView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private ViewHostUpBinding f17949a;
+    private ViewHostUpBinding a;
     private ArrayList<Integer> b;
 
     public HostUpView(Context context) {
@@ -35,14 +33,14 @@ public final class HostUpView extends FrameLayout {
     public HostUpView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         Intrinsics.a(context);
-        ViewHostUpBinding a2 = ViewHostUpBinding.a(LayoutInflater.from(getContext()), this, true);
-        Intrinsics.c(a2, "inflate(LayoutInflater.from(context), this, true)");
-        this.f17949a = a2;
+        ViewHostUpBinding a = ViewHostUpBinding.a(LayoutInflater.from(getContext()), this, true);
+        Intrinsics.c(a, "inflate(LayoutInflater.from(context), this, true)");
+        this.a = a;
         this.b = CollectionsKt.d(Integer.valueOf(R.drawable.yy_icon_host_up_0), Integer.valueOf(R.drawable.yy_icon_host_up_1), Integer.valueOf(R.drawable.yy_icon_host_up_2), Integer.valueOf(R.drawable.yy_icon_host_up_3), Integer.valueOf(R.drawable.yy_icon_host_up_4), Integer.valueOf(R.drawable.yy_icon_host_up_5), Integer.valueOf(R.drawable.yy_icon_host_up_6), Integer.valueOf(R.drawable.yy_icon_host_up_7), Integer.valueOf(R.drawable.yy_icon_host_up_8), Integer.valueOf(R.drawable.yy_icon_host_up_9));
     }
 
     public final ViewHostUpBinding getBinding() {
-        return this.f17949a;
+        return this.a;
     }
 
     public final ArrayList<Integer> getIms() {
@@ -51,7 +49,7 @@ public final class HostUpView extends FrameLayout {
 
     public final void setBinding(ViewHostUpBinding viewHostUpBinding) {
         Intrinsics.e(viewHostUpBinding, "<set-?>");
-        this.f17949a = viewHostUpBinding;
+        this.a = viewHostUpBinding;
     }
 
     public final void setIms(ArrayList<Integer> arrayList) {
@@ -73,9 +71,9 @@ public final class HostUpView extends FrameLayout {
             Integer num = getIms().get(Integer.parseInt(String.valueOf(charAt)));
             Intrinsics.c(num, "ims[i.toString().toInt()]");
             imageView.setImageResource(num.intValue());
-            getBinding().f16857c.addView(imageView);
+            getBinding().c.addView(imageView);
         }
-        ImageLoader.a((IRequestHost) null, yYHostUpMode.getAvatar()).a(getBinding().f16856a);
+        ImageLoader.a((IRequestHost) null, yYHostUpMode.getAvatar()).a((ImageView) getBinding().a);
         if (yYHostUpMode.getName().length() > 6) {
             getBinding().d.setText("恭喜" + ((Object) yYHostUpMode.getName().subSequence(0, 5)) + "...主播");
             return;

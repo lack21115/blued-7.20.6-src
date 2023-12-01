@@ -22,7 +22,7 @@ public final class an {
             if (this.aAh == null && context != null) {
                 synchronized (this) {
                     if (this.aAh == null) {
-                        this.aAh = (PowerManager) context.getApplicationContext().getSystemService("power");
+                        this.aAh = (PowerManager) context.getApplicationContext().getSystemService(Context.POWER_SERVICE);
                     }
                 }
             }

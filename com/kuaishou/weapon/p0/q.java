@@ -3,7 +3,6 @@ package com.kuaishou.weapon.p0;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.text.TextUtils;
-import com.amap.api.col.p0003sl.iu;
 import java.io.File;
 import java.util.HashMap;
 import java.util.Timer;
@@ -13,12 +12,12 @@ import java.util.TimerTask;
 public class q {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f23852a = 3;
+    public static final int f10244a = 3;
     private static q b;
     private static final String g = "1";
 
     /* renamed from: c  reason: collision with root package name */
-    private volatile boolean f23853c = false;
+    private volatile boolean f10245c = false;
     private Cdo d;
     private Context e;
     private t f;
@@ -61,7 +60,7 @@ public class q {
                 sb.append(i);
                 hashMap.put("pk", sb.toString());
                 hashMap.put("pv", str);
-                hashMap.put(iu.h, cj.m);
+                hashMap.put("e", cj.m);
                 bg.a(this.e, "1002001", hashMap);
                 return false;
             } else if (!dm.a(new File(a2.e))) {
@@ -71,7 +70,7 @@ public class q {
                 sb2.append(i);
                 hashMap2.put("pk", sb2.toString());
                 hashMap2.put("pv", str);
-                hashMap2.put(iu.h, cj.n);
+                hashMap2.put("e", cj.n);
                 hashMap2.put("l", "CBH");
                 bg.a(this.e, "1002001", hashMap2);
                 return false;
@@ -94,7 +93,7 @@ public class q {
                 sb3.append(i);
                 hashMap3.put("pk", sb3.toString());
                 hashMap3.put("pv", str);
-                hashMap3.put(iu.h, cj.o);
+                hashMap3.put("e", cj.o);
                 hashMap3.put("l", "CBH");
                 bg.a(this.e, "1002001", hashMap3);
                 return false;
@@ -188,20 +187,20 @@ public class q {
             File file = new File(sVar.e);
             if (dm.a(file)) {
                 try {
-                    if (!this.f.b(sVar.f23861a)) {
+                    if (!this.f.b(sVar.f10253a)) {
                         this.f.a(sVar);
                     }
                     a2 = r.a(this.e.getApplicationContext(), true);
-                    this.f.a(sVar.f23861a, 1);
-                    b(sVar.f23862c);
+                    this.f.a(sVar.f10253a, 1);
+                    b(sVar.f10254c);
                 } catch (Throwable th) {
                 }
                 if (!a2.a(sVar, true)) {
                     file.delete();
-                    a(sVar.f23861a, sVar.d, null, true, null);
-                    this.f.a(sVar.f23861a, 0);
+                    a(sVar.f10253a, sVar.d, null, true, null);
+                    this.f.a(sVar.f10253a, 0);
                     HashMap hashMap2 = new HashMap();
-                    hashMap2.put(iu.h, cj.u);
+                    hashMap2.put("e", cj.u);
                     hashMap2.put("l", "CBH");
                     hashMap2.put("apk", sVar.toString());
                     bg.a(this.e, "1002001", hashMap2);
@@ -211,9 +210,9 @@ public class q {
                 sVar = c2;
                 if (c2 == null) {
                     try {
-                        this.f.a(c2.f23861a, 0);
+                        this.f.a(c2.f10253a, 0);
                         HashMap hashMap3 = new HashMap();
-                        hashMap3.put(iu.h, cj.s);
+                        hashMap3.put("e", cj.s);
                         hashMap3.put("l", "CBH");
                         bg.a(this.e, "1002001", hashMap3);
                         return false;
@@ -222,7 +221,7 @@ public class q {
                     }
                 }
                 try {
-                    s a3 = this.f.a(sVar.f23861a);
+                    s a3 = this.f.a(sVar.f10253a);
                     File file2 = null;
                     if (a3 != null) {
                         file2 = null;
@@ -235,7 +234,7 @@ public class q {
                     if (this.f.a(sVar) > 0 && file2 != null && file2.exists()) {
                         file2.delete();
                     }
-                    this.f.a(sVar.f23861a, 0);
+                    this.f.a(sVar.f10253a, 0);
                     return true;
                 } catch (Throwable th3) {
                     return false;
@@ -244,7 +243,7 @@ public class q {
             hashMap = new HashMap();
             str3 = cj.t;
         }
-        hashMap.put(iu.h, str3);
+        hashMap.put("e", str3);
         hashMap.put("l", "CBH");
         bg.a(this.e, "1002001", hashMap);
         return false;
@@ -253,10 +252,10 @@ public class q {
     public void b() {
         synchronized (this) {
             try {
-                if (this.f23853c) {
+                if (this.f10245c) {
                     return;
                 }
-                this.f23853c = true;
+                this.f10245c = true;
                 for (s sVar : this.f.a()) {
                     String str = null;
                     try {
@@ -264,7 +263,7 @@ public class q {
                     } catch (Throwable th) {
                     }
                     if (str != null) {
-                        sVar.m = str + bh.j + sVar.f23861a;
+                        sVar.m = str + bh.j + sVar.f10253a;
                         StringBuilder sb = new StringBuilder();
                         sb.append(sVar.m);
                         sb.append("/lib");
@@ -298,8 +297,8 @@ public class q {
     public void c() {
         for (s sVar : this.f.a()) {
             r a2 = r.a();
-            if ((a2 != null ? a2.d(sVar.f23862c) : null) == null) {
-                a(sVar.f23861a, sVar.d, (PackageInfo) null);
+            if ((a2 != null ? a2.d(sVar.f10254c) : null) == null) {
+                a(sVar.f10253a, sVar.d, (PackageInfo) null);
             }
         }
     }

@@ -5,6 +5,9 @@ import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.parser.DefaultJSONParser;
 import com.alibaba.fastjson.parser.JSONLexer;
 import com.alibaba.fastjson.parser.deserializer.ObjectDeserializer;
+import com.amap.api.col.p0003sl.iu;
+import com.anythink.core.api.ATAdConst;
+import com.anythink.core.common.b.g;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Point;
@@ -67,11 +70,11 @@ public class AwtCodec implements ObjectDeserializer, ObjectSerializer {
             }
             int intValue = jSONLexer.intValue();
             jSONLexer.nextToken();
-            if (stringVal.equalsIgnoreCase("r")) {
+            if (stringVal.equalsIgnoreCase(g.o.o)) {
                 i3 = i5;
                 i2 = i6;
                 i = i7;
-            } else if (stringVal.equalsIgnoreCase("g")) {
+            } else if (stringVal.equalsIgnoreCase(iu.f)) {
                 i3 = intValue;
                 intValue = i4;
                 i2 = i6;
@@ -135,7 +138,7 @@ public class AwtCodec implements ObjectDeserializer, ObjectSerializer {
                 jSONLexer.nextToken();
                 intValue = i3;
                 str = str2;
-            } else if (!stringVal.equalsIgnoreCase("size")) {
+            } else if (!stringVal.equalsIgnoreCase(ATAdConst.NETWORK_REQUEST_PARAMS_KEY.BANNER_SIZE)) {
                 throw new JSONException("syntax error, " + stringVal);
             } else if (jSONLexer.token() != 2) {
                 throw new JSONException("syntax error");
@@ -272,7 +275,7 @@ public class AwtCodec implements ObjectDeserializer, ObjectSerializer {
             Font font = (Font) obj;
             serializeWriter.writeFieldValue(writeClassName(serializeWriter, Font.class, '{'), "name", font.getName());
             serializeWriter.writeFieldValue(',', "style", font.getStyle());
-            serializeWriter.writeFieldValue(',', "size", font.getSize());
+            serializeWriter.writeFieldValue(',', ATAdConst.NETWORK_REQUEST_PARAMS_KEY.BANNER_SIZE, font.getSize());
         } else if (obj instanceof Rectangle) {
             Rectangle rectangle = (Rectangle) obj;
             serializeWriter.writeFieldValue(writeClassName(serializeWriter, Rectangle.class, '{'), "x", rectangle.getX());
@@ -283,8 +286,8 @@ public class AwtCodec implements ObjectDeserializer, ObjectSerializer {
             throw new JSONException("not support awt class : " + obj.getClass().getName());
         } else {
             Color color = (Color) obj;
-            serializeWriter.writeFieldValue(writeClassName(serializeWriter, Color.class, '{'), "r", color.getRed());
-            serializeWriter.writeFieldValue(',', "g", color.getGreen());
+            serializeWriter.writeFieldValue(writeClassName(serializeWriter, Color.class, '{'), g.o.o, color.getRed());
+            serializeWriter.writeFieldValue(',', iu.f, color.getGreen());
             serializeWriter.writeFieldValue(',', "b", color.getBlue());
             if (color.getAlpha() > 0) {
                 serializeWriter.writeFieldValue(',', "alpha", color.getAlpha());
@@ -293,13 +296,13 @@ public class AwtCodec implements ObjectDeserializer, ObjectSerializer {
         serializeWriter.write(125);
     }
 
-    protected char writeClassName(SerializeWriter serializeWriter, Class<?> cls, char c2) {
+    protected char writeClassName(SerializeWriter serializeWriter, Class<?> cls, char c) {
         if (serializeWriter.isEnabled(SerializerFeature.WriteClassName)) {
             serializeWriter.write(123);
             serializeWriter.writeFieldName(JSON.DEFAULT_TYPE_KEY);
             serializeWriter.writeString(cls.getName());
-            c2 = ',';
+            c = ',';
         }
-        return c2;
+        return c;
     }
 }

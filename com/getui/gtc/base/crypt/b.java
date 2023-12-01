@@ -13,18 +13,18 @@ import javax.crypto.spec.IvParameterSpec;
 final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private SecretKey f21901a;
+    private SecretKey f8294a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public b(String str) throws NoSuchAlgorithmException {
-        this.f21901a = CryptTools.wrapperKey("RC4", CryptTools.digest("MD5", str.getBytes()));
+        this.f8294a = CryptTools.wrapperKey("RC4", CryptTools.digest("MD5", str.getBytes()));
     }
 
     public final byte[] a(byte[] bArr) throws NoSuchPaddingException, InvalidAlgorithmParameterException, NoSuchAlgorithmException, IllegalBlockSizeException, BadPaddingException, InvalidKeyException {
-        return CryptTools.encrypt("RC4", this.f21901a, (IvParameterSpec) null, bArr);
+        return CryptTools.encrypt("RC4", this.f8294a, (IvParameterSpec) null, bArr);
     }
 
     public final byte[] b(byte[] bArr) throws NoSuchPaddingException, InvalidKeyException, NoSuchAlgorithmException, IllegalBlockSizeException, BadPaddingException, InvalidAlgorithmParameterException {
-        return CryptTools.decrypt("RC4", this.f21901a, (IvParameterSpec) null, bArr);
+        return CryptTools.decrypt("RC4", this.f8294a, (IvParameterSpec) null, bArr);
     }
 }

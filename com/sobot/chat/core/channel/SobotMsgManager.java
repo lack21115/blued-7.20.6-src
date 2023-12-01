@@ -2,7 +2,6 @@ package com.sobot.chat.core.channel;
 
 import android.content.Context;
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.sobot.chat.api.ZhiChiApi;
 import com.sobot.chat.api.a;
 import com.sobot.chat.api.model.SobotMsgCenterModel;
@@ -113,7 +112,7 @@ public class SobotMsgManager {
         if (str == null) {
             str4 = "";
         }
-        return str4 + BridgeUtil.UNDERLINE_STR + str3 + BridgeUtil.UNDERLINE_STR + ZhiChiConstant.SOBOT_MSG_CENTER_DATA;
+        return str4 + "_" + str3 + "_" + ZhiChiConstant.SOBOT_MSG_CENTER_DATA;
     }
 
     public static String getMsgCenterListKey(String str) {
@@ -121,7 +120,7 @@ public class SobotMsgManager {
         if (str == null) {
             str2 = "";
         }
-        return str2 + BridgeUtil.UNDERLINE_STR + ZhiChiConstant.SOBOT_MSG_CENTER_LIST;
+        return str2 + "_" + ZhiChiConstant.SOBOT_MSG_CENTER_LIST;
     }
 
     public int addUnreadCount(ZhiChiPushMessage zhiChiPushMessage, String str, String str2) {

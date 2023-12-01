@@ -13,26 +13,24 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/model/ClientSendMessTaskNewModel$loadTask$1.class */
 public final class ClientSendMessTaskNewModel$loadTask$1 extends BluedUIHttpResponse<BluedEntityA<YYDailyTaskModel>> {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ ActivityFragmentActive f17610a;
+    final /* synthetic */ ActivityFragmentActive a;
     final /* synthetic */ ClientSendMessTaskNewModel b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public ClientSendMessTaskNewModel$loadTask$1(ActivityFragmentActive activityFragmentActive, ClientSendMessTaskNewModel clientSendMessTaskNewModel) {
         super(activityFragmentActive);
-        this.f17610a = activityFragmentActive;
+        this.a = activityFragmentActive;
         this.b = clientSendMessTaskNewModel;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a() {
-        ClientSendMessTaskModel.ClientTaskDataListener a2 = ClientSendMessTaskNewModel.Companion.a();
-        if (a2 == null) {
+        ClientSendMessTaskModel.ClientTaskDataListener a = ClientSendMessTaskNewModel.Companion.a();
+        if (a == null) {
             return;
         }
-        a2.a(null);
+        a.a(null);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -43,16 +41,16 @@ public final class ClientSendMessTaskNewModel$loadTask$1 extends BluedUIHttpResp
             return;
         }
         if (bluedEntityA.getSingleData() == null) {
-            ClientSendMessTaskModel.ClientTaskDataListener a2 = ClientSendMessTaskNewModel.Companion.a();
-            if (a2 == null) {
+            ClientSendMessTaskModel.ClientTaskDataListener a = ClientSendMessTaskNewModel.Companion.a();
+            if (a == null) {
                 return;
             }
-            a2.a(bluedEntityA.getSingleData());
+            a.a(bluedEntityA.getSingleData());
             return;
         }
-        ClientSendMessTaskModel.ClientTaskDataListener a3 = ClientSendMessTaskNewModel.Companion.a();
-        if (a3 != null) {
-            a3.a(bluedEntityA.getSingleData());
+        ClientSendMessTaskModel.ClientTaskDataListener a2 = ClientSendMessTaskNewModel.Companion.a();
+        if (a2 != null) {
+            a2.a(bluedEntityA.getSingleData());
         }
         if (this.b.getAllTsak().size() == 0 || (this.b.getAllTsak().size() > 0 && this.b.getAllTsak().get(0).getEndTime() != bluedEntityA.getSingleData().getEnd_time())) {
             this.b.getAllTsak().clear();

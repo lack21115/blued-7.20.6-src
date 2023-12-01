@@ -11,22 +11,22 @@ import java.security.PrivilegedAction;
 public class ScreenUtil {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23151a = "ScreenUtil";
+    private static final String f9543a = "ScreenUtil";
     private static final int b = 524288;
 
     /* loaded from: source-7994992-dex2jar.jar:com/huawei/secure/android/common/util/ScreenUtil$a.class */
     static class a implements PrivilegedAction {
 
         /* renamed from: a  reason: collision with root package name */
-        Method f23152a;
+        Method f9544a;
 
         public a(Method method) {
-            this.f23152a = method;
+            this.f9544a = method;
         }
 
         @Override // java.security.PrivilegedAction
         public Object run() {
-            Method method = this.f23152a;
+            Method method = this.f9544a;
             if (method == null) {
                 return null;
             }
@@ -69,13 +69,13 @@ public class ScreenUtil {
             AccessController.doPrivileged(new a(declaredMethod));
             declaredMethod.invoke(window, 524288);
         } catch (ClassNotFoundException e) {
-            LogsUtil.e(f23151a, "hideOverlayWindows ClassNotFoundException");
+            LogsUtil.e(f9543a, "hideOverlayWindows ClassNotFoundException");
         } catch (IllegalAccessException e2) {
-            LogsUtil.e(f23151a, "hideOverlayWindows IllegalAccessException");
+            LogsUtil.e(f9543a, "hideOverlayWindows IllegalAccessException");
         } catch (NoSuchMethodException e3) {
-            LogsUtil.e(f23151a, "hideOverlayWindows NoSuchMethodException");
+            LogsUtil.e(f9543a, "hideOverlayWindows NoSuchMethodException");
         } catch (InvocationTargetException e4) {
-            LogsUtil.e(f23151a, "hideOverlayWindows InvocationTargetException");
+            LogsUtil.e(f9543a, "hideOverlayWindows InvocationTargetException");
         }
     }
 }

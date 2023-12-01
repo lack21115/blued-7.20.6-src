@@ -4,7 +4,7 @@ package androidx.dynamicanimation.animation;
 public final class FloatValueHolder {
 
     /* renamed from: a  reason: collision with root package name */
-    private float f2808a = 0.0f;
+    private float f2760a = 0.0f;
 
     public FloatValueHolder() {
     }
@@ -14,10 +14,10 @@ public final class FloatValueHolder {
     }
 
     public float getValue() {
-        return this.f2808a;
+        return this.f2760a;
     }
 
     public void setValue(float f) {
-        this.f2808a = f;
+        this.f2760a = f;
     }
 }

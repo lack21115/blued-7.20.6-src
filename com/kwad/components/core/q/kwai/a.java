@@ -140,13 +140,13 @@ public class a extends com.kwad.components.core.j.b<b> {
         }
         com.kwad.components.core.a.a aVar = new com.kwad.components.core.a.a((ViewGroup) findViewById(R.id.ksad_kwad_web_title_bar));
         this.mTitleBarHelper = aVar;
-        aVar.a(new a.InterfaceC0509a() { // from class: com.kwad.components.core.q.kwai.a.1
-            @Override // com.kwad.components.core.a.a.InterfaceC0509a
+        aVar.a(new a.InterfaceC0339a() { // from class: com.kwad.components.core.q.kwai.a.1
+            @Override // com.kwad.components.core.a.a.InterfaceC0339a
             public final void t(View view) {
                 a.this.finish();
             }
 
-            @Override // com.kwad.components.core.a.a.InterfaceC0509a
+            @Override // com.kwad.components.core.a.a.InterfaceC0339a
             public final void u(View view) {
             }
         });

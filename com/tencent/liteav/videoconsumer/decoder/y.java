@@ -6,11 +6,11 @@ import com.tencent.liteav.videoconsumer.consumer.ServerVideoConsumerConfig;
 final /* synthetic */ class y implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final r f36811a;
+    private final r f23120a;
     private final ServerVideoConsumerConfig b;
 
     private y(r rVar, ServerVideoConsumerConfig serverVideoConsumerConfig) {
-        this.f36811a = rVar;
+        this.f23120a = rVar;
         this.b = serverVideoConsumerConfig;
     }
 
@@ -20,6 +20,6 @@ final /* synthetic */ class y implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        r.a(this.f36811a, this.b);
+        r.a(this.f23120a, this.b);
     }
 }

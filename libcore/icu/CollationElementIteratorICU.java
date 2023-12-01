@@ -21,11 +21,11 @@ public final class CollationElementIteratorICU {
     }
 
     public static int primaryOrder(int i) {
-        return (((-65536) & i) >> 16) & 65535;
+        return ((PRIMARY_ORDER_MASK_ & i) >> 16) & 65535;
     }
 
     public static int secondaryOrder(int i) {
-        return (65280 & i) >> 8;
+        return (SECONDARY_ORDER_MASK_ & i) >> 8;
     }
 
     public static int tertiaryOrder(int i) {

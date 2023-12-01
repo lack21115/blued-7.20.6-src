@@ -8,16 +8,16 @@ import com.tencent.ugc.TXVideoEditConstants;
 public final /* synthetic */ class a implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final WatermarkProcessor f40449a;
+    private final WatermarkProcessor f26758a;
     private final Bitmap b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final TXVideoEditConstants.TXRect f40450c;
+    private final TXVideoEditConstants.TXRect f26759c;
 
     private a(WatermarkProcessor watermarkProcessor, Bitmap bitmap, TXVideoEditConstants.TXRect tXRect) {
-        this.f40449a = watermarkProcessor;
+        this.f26758a = watermarkProcessor;
         this.b = bitmap;
-        this.f40450c = tXRect;
+        this.f26759c = tXRect;
     }
 
     public static Runnable a(WatermarkProcessor watermarkProcessor, Bitmap bitmap, TXVideoEditConstants.TXRect tXRect) {
@@ -26,6 +26,6 @@ public final /* synthetic */ class a implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        WatermarkProcessor.lambda$setWaterMark$0(this.f40449a, this.b, this.f40450c);
+        WatermarkProcessor.lambda$setWaterMark$0(this.f26758a, this.b, this.f26759c);
     }
 }

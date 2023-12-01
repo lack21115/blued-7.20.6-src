@@ -17,13 +17,9 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LivePKProgressView.class */
 public class LivePKProgressView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f14792a;
+    private Context a;
     private LayoutInflater b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private ViewGroup f14793c;
+    private ViewGroup c;
     private ProgressBar d;
     private TextView e;
     private TextView f;
@@ -45,30 +41,30 @@ public class LivePKProgressView extends FrameLayout {
     public LivePKProgressView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         this.i = false;
-        this.f14792a = context;
+        this.a = context;
         c();
     }
 
     private void c() {
-        LayoutInflater from = LayoutInflater.from(this.f14792a);
+        LayoutInflater from = LayoutInflater.from(this.a);
         this.b = from;
         from.inflate(R.layout.live_pk_progress_view, this);
-        this.f14793c = (ViewGroup) findViewById(R.id.content_layout);
+        this.c = (ViewGroup) findViewById(R.id.content_layout);
         this.d = (ProgressBar) findViewById(R.id.live_pk_progress_view);
         this.e = (TextView) findViewById(R.id.live_pk_our_progress);
         this.f = (TextView) findViewById(R.id.live_pk_other_progress);
         this.k = findViewById(R.id.fl_bar);
         this.j = (ImageView) findViewById(R.id.live_pk_progress_anim);
-        this.l = AppInfo.l - DensityUtils.a(this.f14792a, 38.0f);
+        this.l = AppInfo.l - DensityUtils.a(this.a, 38.0f);
         b();
         ImageLoader.c(null, "live_pk_progress_anim.png").g(-1).e(this.j.hashCode()).a(this.j);
     }
 
     private void setAnimMargin(int i) {
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.k.getLayoutParams();
-        int a2 = DensityUtils.a(this.f14792a, 36.0f);
-        layoutParams.leftMargin = (((int) (this.l * (i / 100.0f))) + DensityUtils.a(this.f14792a, 16.0f)) - (a2 / 2);
-        Log.i("==opop", " progress:" + i + "  pkIconwidth:" + a2 + "  mProgressWidth: " + this.l + "  margin:" + layoutParams.leftMargin);
+        int a = DensityUtils.a(this.a, 36.0f);
+        layoutParams.leftMargin = (((int) (this.l * (i / 100.0f))) + DensityUtils.a(this.a, 16.0f)) - (a / 2);
+        Log.i("==opop", " progress:" + i + "  pkIconwidth:" + a + "  mProgressWidth: " + this.l + "  margin:" + layoutParams.leftMargin);
         this.k.setLayoutParams(layoutParams);
     }
 
@@ -90,8 +86,8 @@ public class LivePKProgressView extends FrameLayout {
         setProgress(50);
         this.g = 0;
         this.h = 0;
-        this.e.setText(String.format(this.f14792a.getString(R.string.live_pk_my_result), "0"));
-        this.f.setText(String.format(this.f14792a.getString(R.string.live_pk_your_result), "0"));
+        this.e.setText(String.format(this.a.getString(R.string.live_pk_my_result), "0"));
+        this.f.setText(String.format(this.a.getString(R.string.live_pk_your_result), "0"));
     }
 
     public void setOtherProgress(int i) {
@@ -105,7 +101,7 @@ public class LivePKProgressView extends FrameLayout {
             }
             this.h = i;
             TextView textView = this.f;
-            String string = this.f14792a.getString(R.string.live_pk_your_result);
+            String string = this.a.getString(R.string.live_pk_your_result);
             textView.setText(String.format(string, i + ""));
         }
     }
@@ -121,7 +117,7 @@ public class LivePKProgressView extends FrameLayout {
             }
             this.g = i;
             TextView textView = this.e;
-            String string = this.f14792a.getString(R.string.live_pk_my_result);
+            String string = this.a.getString(R.string.live_pk_my_result);
             textView.setText(String.format(string, i + ""));
         }
     }

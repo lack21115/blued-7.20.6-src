@@ -17,8 +17,7 @@ public final class WithLifecycleStateKt$withStateAtLeastUnchecked$2<R> extends L
         this.$block = function0;
     }
 
-    @Override // kotlin.jvm.functions.Function0
     public final R invoke() {
-        return this.$block.invoke();
+        return (R) this.$block.invoke();
     }
 }

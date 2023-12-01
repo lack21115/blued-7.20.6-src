@@ -12,7 +12,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public class FragmentLifecycleCallbacksDispatcher {
 
     /* renamed from: a  reason: collision with root package name */
-    private final CopyOnWriteArrayList<FragmentLifecycleCallbacksHolder> f2965a = new CopyOnWriteArrayList<>();
+    private final CopyOnWriteArrayList<FragmentLifecycleCallbacksHolder> f2917a = new CopyOnWriteArrayList<>();
     private final FragmentManager b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -20,11 +20,11 @@ public class FragmentLifecycleCallbacksDispatcher {
     public static final class FragmentLifecycleCallbacksHolder {
 
         /* renamed from: a  reason: collision with root package name */
-        final FragmentManager.FragmentLifecycleCallbacks f2966a;
+        final FragmentManager.FragmentLifecycleCallbacks f2918a;
         final boolean b;
 
         FragmentLifecycleCallbacksHolder(FragmentManager.FragmentLifecycleCallbacks fragmentLifecycleCallbacks, boolean z) {
-            this.f2966a = fragmentLifecycleCallbacks;
+            this.f2918a = fragmentLifecycleCallbacks;
             this.b = z;
         }
     }
@@ -40,11 +40,11 @@ public class FragmentLifecycleCallbacksDispatcher {
         if (i != null) {
             i.getParentFragmentManager().z().a(fragment, bundle, true);
         }
-        Iterator<FragmentLifecycleCallbacksHolder> it = this.f2965a.iterator();
+        Iterator<FragmentLifecycleCallbacksHolder> it = this.f2917a.iterator();
         while (it.hasNext()) {
             FragmentLifecycleCallbacksHolder next = it.next();
             if (!z || next.b) {
-                next.f2966a.onFragmentPreCreated(this.b, fragment, bundle);
+                next.f2918a.onFragmentPreCreated(this.b, fragment, bundle);
             }
         }
     }
@@ -55,11 +55,11 @@ public class FragmentLifecycleCallbacksDispatcher {
         if (i != null) {
             i.getParentFragmentManager().z().a(fragment, view, bundle, true);
         }
-        Iterator<FragmentLifecycleCallbacksHolder> it = this.f2965a.iterator();
+        Iterator<FragmentLifecycleCallbacksHolder> it = this.f2917a.iterator();
         while (it.hasNext()) {
             FragmentLifecycleCallbacksHolder next = it.next();
             if (!z || next.b) {
-                next.f2966a.onFragmentViewCreated(this.b, fragment, view, bundle);
+                next.f2918a.onFragmentViewCreated(this.b, fragment, view, bundle);
             }
         }
     }
@@ -71,11 +71,11 @@ public class FragmentLifecycleCallbacksDispatcher {
         if (i != null) {
             i.getParentFragmentManager().z().a(fragment, true);
         }
-        Iterator<FragmentLifecycleCallbacksHolder> it = this.f2965a.iterator();
+        Iterator<FragmentLifecycleCallbacksHolder> it = this.f2917a.iterator();
         while (it.hasNext()) {
             FragmentLifecycleCallbacksHolder next = it.next();
             if (!z || next.b) {
-                next.f2966a.onFragmentPreAttached(this.b, fragment, context);
+                next.f2918a.onFragmentPreAttached(this.b, fragment, context);
             }
         }
     }
@@ -86,11 +86,11 @@ public class FragmentLifecycleCallbacksDispatcher {
         if (i != null) {
             i.getParentFragmentManager().z().b(fragment, bundle, true);
         }
-        Iterator<FragmentLifecycleCallbacksHolder> it = this.f2965a.iterator();
+        Iterator<FragmentLifecycleCallbacksHolder> it = this.f2917a.iterator();
         while (it.hasNext()) {
             FragmentLifecycleCallbacksHolder next = it.next();
             if (!z || next.b) {
-                next.f2966a.onFragmentCreated(this.b, fragment, bundle);
+                next.f2918a.onFragmentCreated(this.b, fragment, bundle);
             }
         }
     }
@@ -102,11 +102,11 @@ public class FragmentLifecycleCallbacksDispatcher {
         if (i != null) {
             i.getParentFragmentManager().z().b(fragment, true);
         }
-        Iterator<FragmentLifecycleCallbacksHolder> it = this.f2965a.iterator();
+        Iterator<FragmentLifecycleCallbacksHolder> it = this.f2917a.iterator();
         while (it.hasNext()) {
             FragmentLifecycleCallbacksHolder next = it.next();
             if (!z || next.b) {
-                next.f2966a.onFragmentAttached(this.b, fragment, context);
+                next.f2918a.onFragmentAttached(this.b, fragment, context);
             }
         }
     }
@@ -117,11 +117,11 @@ public class FragmentLifecycleCallbacksDispatcher {
         if (i != null) {
             i.getParentFragmentManager().z().c(fragment, bundle, true);
         }
-        Iterator<FragmentLifecycleCallbacksHolder> it = this.f2965a.iterator();
+        Iterator<FragmentLifecycleCallbacksHolder> it = this.f2917a.iterator();
         while (it.hasNext()) {
             FragmentLifecycleCallbacksHolder next = it.next();
             if (!z || next.b) {
-                next.f2966a.onFragmentActivityCreated(this.b, fragment, bundle);
+                next.f2918a.onFragmentActivityCreated(this.b, fragment, bundle);
             }
         }
     }
@@ -132,11 +132,11 @@ public class FragmentLifecycleCallbacksDispatcher {
         if (i != null) {
             i.getParentFragmentManager().z().c(fragment, true);
         }
-        Iterator<FragmentLifecycleCallbacksHolder> it = this.f2965a.iterator();
+        Iterator<FragmentLifecycleCallbacksHolder> it = this.f2917a.iterator();
         while (it.hasNext()) {
             FragmentLifecycleCallbacksHolder next = it.next();
             if (!z || next.b) {
-                next.f2966a.onFragmentStarted(this.b, fragment);
+                next.f2918a.onFragmentStarted(this.b, fragment);
             }
         }
     }
@@ -147,11 +147,11 @@ public class FragmentLifecycleCallbacksDispatcher {
         if (i != null) {
             i.getParentFragmentManager().z().d(fragment, bundle, true);
         }
-        Iterator<FragmentLifecycleCallbacksHolder> it = this.f2965a.iterator();
+        Iterator<FragmentLifecycleCallbacksHolder> it = this.f2917a.iterator();
         while (it.hasNext()) {
             FragmentLifecycleCallbacksHolder next = it.next();
             if (!z || next.b) {
-                next.f2966a.onFragmentSaveInstanceState(this.b, fragment, bundle);
+                next.f2918a.onFragmentSaveInstanceState(this.b, fragment, bundle);
             }
         }
     }
@@ -162,11 +162,11 @@ public class FragmentLifecycleCallbacksDispatcher {
         if (i != null) {
             i.getParentFragmentManager().z().d(fragment, true);
         }
-        Iterator<FragmentLifecycleCallbacksHolder> it = this.f2965a.iterator();
+        Iterator<FragmentLifecycleCallbacksHolder> it = this.f2917a.iterator();
         while (it.hasNext()) {
             FragmentLifecycleCallbacksHolder next = it.next();
             if (!z || next.b) {
-                next.f2966a.onFragmentResumed(this.b, fragment);
+                next.f2918a.onFragmentResumed(this.b, fragment);
             }
         }
     }
@@ -177,11 +177,11 @@ public class FragmentLifecycleCallbacksDispatcher {
         if (i != null) {
             i.getParentFragmentManager().z().e(fragment, true);
         }
-        Iterator<FragmentLifecycleCallbacksHolder> it = this.f2965a.iterator();
+        Iterator<FragmentLifecycleCallbacksHolder> it = this.f2917a.iterator();
         while (it.hasNext()) {
             FragmentLifecycleCallbacksHolder next = it.next();
             if (!z || next.b) {
-                next.f2966a.onFragmentPaused(this.b, fragment);
+                next.f2918a.onFragmentPaused(this.b, fragment);
             }
         }
     }
@@ -192,11 +192,11 @@ public class FragmentLifecycleCallbacksDispatcher {
         if (i != null) {
             i.getParentFragmentManager().z().f(fragment, true);
         }
-        Iterator<FragmentLifecycleCallbacksHolder> it = this.f2965a.iterator();
+        Iterator<FragmentLifecycleCallbacksHolder> it = this.f2917a.iterator();
         while (it.hasNext()) {
             FragmentLifecycleCallbacksHolder next = it.next();
             if (!z || next.b) {
-                next.f2966a.onFragmentStopped(this.b, fragment);
+                next.f2918a.onFragmentStopped(this.b, fragment);
             }
         }
     }
@@ -207,11 +207,11 @@ public class FragmentLifecycleCallbacksDispatcher {
         if (i != null) {
             i.getParentFragmentManager().z().g(fragment, true);
         }
-        Iterator<FragmentLifecycleCallbacksHolder> it = this.f2965a.iterator();
+        Iterator<FragmentLifecycleCallbacksHolder> it = this.f2917a.iterator();
         while (it.hasNext()) {
             FragmentLifecycleCallbacksHolder next = it.next();
             if (!z || next.b) {
-                next.f2966a.onFragmentViewDestroyed(this.b, fragment);
+                next.f2918a.onFragmentViewDestroyed(this.b, fragment);
             }
         }
     }
@@ -222,11 +222,11 @@ public class FragmentLifecycleCallbacksDispatcher {
         if (i != null) {
             i.getParentFragmentManager().z().h(fragment, true);
         }
-        Iterator<FragmentLifecycleCallbacksHolder> it = this.f2965a.iterator();
+        Iterator<FragmentLifecycleCallbacksHolder> it = this.f2917a.iterator();
         while (it.hasNext()) {
             FragmentLifecycleCallbacksHolder next = it.next();
             if (!z || next.b) {
-                next.f2966a.onFragmentDestroyed(this.b, fragment);
+                next.f2918a.onFragmentDestroyed(this.b, fragment);
             }
         }
     }
@@ -237,28 +237,28 @@ public class FragmentLifecycleCallbacksDispatcher {
         if (i != null) {
             i.getParentFragmentManager().z().i(fragment, true);
         }
-        Iterator<FragmentLifecycleCallbacksHolder> it = this.f2965a.iterator();
+        Iterator<FragmentLifecycleCallbacksHolder> it = this.f2917a.iterator();
         while (it.hasNext()) {
             FragmentLifecycleCallbacksHolder next = it.next();
             if (!z || next.b) {
-                next.f2966a.onFragmentDetached(this.b, fragment);
+                next.f2918a.onFragmentDetached(this.b, fragment);
             }
         }
     }
 
     public void registerFragmentLifecycleCallbacks(FragmentManager.FragmentLifecycleCallbacks fragmentLifecycleCallbacks, boolean z) {
-        this.f2965a.add(new FragmentLifecycleCallbacksHolder(fragmentLifecycleCallbacks, z));
+        this.f2917a.add(new FragmentLifecycleCallbacksHolder(fragmentLifecycleCallbacks, z));
     }
 
     public void unregisterFragmentLifecycleCallbacks(FragmentManager.FragmentLifecycleCallbacks fragmentLifecycleCallbacks) {
-        synchronized (this.f2965a) {
+        synchronized (this.f2917a) {
             int i = 0;
-            int size = this.f2965a.size();
+            int size = this.f2917a.size();
             while (true) {
                 if (i >= size) {
                     break;
-                } else if (this.f2965a.get(i).f2966a == fragmentLifecycleCallbacks) {
-                    this.f2965a.remove(i);
+                } else if (this.f2917a.get(i).f2918a == fragmentLifecycleCallbacks) {
+                    this.f2917a.remove(i);
                     break;
                 } else {
                     i++;

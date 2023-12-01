@@ -1,6 +1,5 @@
 package com.blued.android.module.common.user.model;
 
-import android.provider.ContactsContract;
 import com.blued.android.chat.core.pack.ReqAckPackage;
 import java.util.List;
 import java.util.Locale;
@@ -169,7 +168,7 @@ public final class UserRestrictedDescModel {
                 str2 = "";
                 break;
             case 70690926:
-                if (lowerCase.equals(ContactsContract.Contacts.AggregationSuggestions.PARAMETER_MATCH_NICKNAME)) {
+                if (lowerCase.equals("nickname")) {
                     str2 = this.nickname_desc;
                     break;
                 }

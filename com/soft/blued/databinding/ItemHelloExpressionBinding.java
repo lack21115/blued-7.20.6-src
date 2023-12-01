@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemHelloExpressionBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ImageView f29201a;
+    private final ImageView f15511a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ImageView getRoot() {
-        return this.f29201a;
+        return this.f15511a;
     }
 }

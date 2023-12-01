@@ -24,9 +24,7 @@ import com.bytedance.applog.tracker.Tracker;
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/shortvideo/fragment/AuthPreviewFragment.class */
 public class AuthPreviewFragment extends ShortVideoBaseFragment<IAuthPreviewView, AuthPreviewPresenter> implements View.OnClickListener, IAuthPreviewView {
     private LinearLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private LinearLayout f15704c;
+    private LinearLayout c;
     private TextView n;
     private TextView o;
     private TextView p;
@@ -117,7 +115,7 @@ public class AuthPreviewFragment extends ShortVideoBaseFragment<IAuthPreviewView
             @Override // java.lang.Runnable
             public void run() {
                 AuthPreviewFragment.this.b.setVisibility(0);
-                AuthPreviewFragment.this.f15704c.setVisibility(8);
+                AuthPreviewFragment.this.c.setVisibility(8);
                 TextView textView = AuthPreviewFragment.this.p;
                 textView.setText(AuthPreviewFragment.this.getString(R.string.uploading) + f + "%");
             }
@@ -155,7 +153,7 @@ public class AuthPreviewFragment extends ShortVideoBaseFragment<IAuthPreviewView
         this.n = (TextView) this.m.findViewById(R.id.upload_btn);
         this.o = (TextView) this.m.findViewById(R.id.re_recorder_btn);
         this.b = (LinearLayout) this.m.findViewById(R.id.upload_video_layout);
-        this.f15704c = (LinearLayout) this.m.findViewById(R.id.upload_btn_layout);
+        this.c = (LinearLayout) this.m.findViewById(R.id.upload_btn_layout);
         this.p = (TextView) this.m.findViewById(R.id.upload_video_text);
         this.q = (TextView) this.m.findViewById(R.id.upload_video_cancel);
         this.r = (TextView) this.m.findViewById(R.id.prompt_top);
@@ -211,7 +209,7 @@ public class AuthPreviewFragment extends ShortVideoBaseFragment<IAuthPreviewView
     @Override // com.blued.android.module.shortvideo.fragment.ShortVideoBaseFragment
     protected void h() {
         this.b.setVisibility(4);
-        this.f15704c.setVisibility(0);
+        this.c.setVisibility(0);
         this.n.setOnClickListener(this);
         this.o.setOnClickListener(this);
         this.q.setOnClickListener(this);
@@ -244,20 +242,20 @@ public class AuthPreviewFragment extends ShortVideoBaseFragment<IAuthPreviewView
         }
     }
 
-    @Override // com.blued.android.module.shortvideo.fragment.ShortVideoBaseFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.shortvideo.fragment.ShortVideoBaseFragment, com.blued.android.core.ui.BaseFragment
     public void onCreate(Bundle bundle) {
         getActivity().getWindow().setSoftInputMode(19);
         super.onCreate(bundle);
         this.v = getContext();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         super.a(layoutInflater, R.layout.auth_upload_video_v, viewGroup, bundle);
         return this.m;
     }
 
-    @Override // com.blued.android.module.shortvideo.fragment.ShortVideoBaseFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.shortvideo.fragment.ShortVideoBaseFragment, com.blued.android.core.ui.BaseFragment
     public void onPause() {
         super.onPause();
     }

@@ -2,7 +2,6 @@ package android.text.format;
 
 import android.content.Context;
 import android.net.NetworkUtils;
-import com.android.internal.R;
 import com.anythink.expressad.d.a.b;
 
 /* loaded from: source-9557208-dex2jar.jar:android/text/format/Formatter.class */
@@ -47,7 +46,7 @@ public final class Formatter {
             i = 17039688;
             f6 = f5 / 1024.0f;
         }
-        return context.getResources().getString(R.string.fileSizeSuffix, f6 < 1.0f ? String.format("%.2f", Float.valueOf(f6)) : f6 < 10.0f ? z ? String.format("%.1f", Float.valueOf(f6)) : String.format("%.2f", Float.valueOf(f6)) : f6 < 100.0f ? z ? String.format("%.0f", Float.valueOf(f6)) : String.format("%.2f", Float.valueOf(f6)) : String.format("%.0f", Float.valueOf(f6)), context.getString(i));
+        return context.getResources().getString(17039689, f6 < 1.0f ? String.format("%.2f", Float.valueOf(f6)) : f6 < 10.0f ? z ? String.format("%.1f", Float.valueOf(f6)) : String.format("%.2f", Float.valueOf(f6)) : f6 < 100.0f ? z ? String.format("%.0f", Float.valueOf(f6)) : String.format("%.2f", Float.valueOf(f6)) : String.format("%.0f", Float.valueOf(f6)), context.getString(i));
     }
 
     @Deprecated
@@ -76,12 +75,12 @@ public final class Formatter {
             j5 = j4 - (i3 * 60);
         }
         int i4 = (int) j5;
-        return i >= 2 ? context.getString(R.string.durationDays, Integer.valueOf(i + ((i2 + 12) / 24))) : i > 0 ? i2 == 1 ? context.getString(R.string.durationDayHour, Integer.valueOf(i), Integer.valueOf(i2)) : context.getString(R.string.durationDayHours, Integer.valueOf(i), Integer.valueOf(i2)) : i2 >= 2 ? context.getString(R.string.durationHours, Integer.valueOf(i2 + ((i3 + 30) / 60))) : i2 > 0 ? i3 == 1 ? context.getString(R.string.durationHourMinute, Integer.valueOf(i2), Integer.valueOf(i3)) : context.getString(R.string.durationHourMinutes, Integer.valueOf(i2), Integer.valueOf(i3)) : i3 >= 2 ? context.getString(R.string.durationMinutes, Integer.valueOf(i3 + ((i4 + 30) / 60))) : i3 > 0 ? i4 == 1 ? context.getString(R.string.durationMinuteSecond, Integer.valueOf(i3), Integer.valueOf(i4)) : context.getString(R.string.durationMinuteSeconds, Integer.valueOf(i3), Integer.valueOf(i4)) : i4 == 1 ? context.getString(R.string.durationSecond, Integer.valueOf(i4)) : context.getString(R.string.durationSeconds, Integer.valueOf(i4));
+        return i >= 2 ? context.getString(17039690, Integer.valueOf(i + ((i2 + 12) / 24))) : i > 0 ? i2 == 1 ? context.getString(17039692, Integer.valueOf(i), Integer.valueOf(i2)) : context.getString(17039691, Integer.valueOf(i), Integer.valueOf(i2)) : i2 >= 2 ? context.getString(17039693, Integer.valueOf(i2 + ((i3 + 30) / 60))) : i2 > 0 ? i3 == 1 ? context.getString(17039695, Integer.valueOf(i2), Integer.valueOf(i3)) : context.getString(17039694, Integer.valueOf(i2), Integer.valueOf(i3)) : i3 >= 2 ? context.getString(17039696, Integer.valueOf(i3 + ((i4 + 30) / 60))) : i3 > 0 ? i4 == 1 ? context.getString(17039699, Integer.valueOf(i3), Integer.valueOf(i4)) : context.getString(17039698, Integer.valueOf(i3), Integer.valueOf(i4)) : i4 == 1 ? context.getString(17039701, Integer.valueOf(i4)) : context.getString(17039700, Integer.valueOf(i4));
     }
 
     public static String formatShortElapsedTimeRoundingUpToMinutes(Context context, long j) {
         long j2 = ((j + 60000) - 1) / 60000;
-        return j2 == 0 ? context.getString(R.string.durationMinutes, 0) : j2 == 1 ? context.getString(R.string.durationMinute, 1) : formatShortElapsedTime(context, j2 * 60000);
+        return j2 == 0 ? context.getString(17039696, 0) : j2 == 1 ? context.getString(17039697, 1) : formatShortElapsedTime(context, j2 * 60000);
     }
 
     public static String formatShortFileSize(Context context, long j) {

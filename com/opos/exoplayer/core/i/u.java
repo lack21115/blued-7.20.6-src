@@ -6,7 +6,6 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.util.Arrays;
@@ -22,11 +21,11 @@ import java.util.regex.Pattern;
 public final class u {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f25510a;
+    public static final int f11822a;
     public static final String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f25511c;
+    public static final String f11823c;
     public static final String d;
     public static final String e;
     private static final Pattern f;
@@ -35,11 +34,11 @@ public final class u {
     private static final int[] i;
 
     static {
-        f25510a = (Build.VERSION.SDK_INT == 25 && Build.VERSION.CODENAME.charAt(0) == 'O') ? 26 : Build.VERSION.SDK_INT;
+        f11822a = (Build.VERSION.SDK_INT == 25 && Build.VERSION.CODENAME.charAt(0) == 'O') ? 26 : Build.VERSION.SDK_INT;
         b = Build.DEVICE;
-        f25511c = Build.MANUFACTURER;
+        f11823c = Build.MANUFACTURER;
         d = Build.MODEL;
-        e = b + ", " + d + ", " + f25511c + ", " + f25510a;
+        e = b + ", " + d + ", " + f11823c + ", " + f11822a;
         f = Pattern.compile("(\\d\\d\\d\\d)\\-(\\d\\d)\\-(\\d\\d)[Tt](\\d\\d):(\\d\\d):(\\d\\d)([\\.,](\\d+))?([Zz]|((\\+|\\-)(\\d?\\d):?(\\d\\d)))?");
         g = Pattern.compile("^(-)?P(([0-9]*)Y)?(([0-9]*)M)?(([0-9]*)D)?(T(([0-9]*)H)?(([0-9]*)M)?(([0-9.]*)S)?)?$");
         h = Pattern.compile("%([A-Fa-f0-9]{2})");
@@ -115,7 +114,7 @@ public final class u {
     */
     public static long a(long r7, com.opos.exoplayer.core.w r9, long r10, long r12) {
         /*
-            com.opos.exoplayer.core.w r0 = com.opos.exoplayer.core.w.f25588a
+            com.opos.exoplayer.core.w r0 = com.opos.exoplayer.core.w.f11900a
             r1 = r9
             boolean r0 = r0.equals(r1)
             if (r0 == 0) goto Lc
@@ -204,7 +203,7 @@ public final class u {
         } catch (PackageManager.NameNotFoundException e2) {
             str2 = "?";
         }
-        return str + BridgeUtil.SPLIT_MARK + str2 + " (Linux;Android " + Build.VERSION.RELEASE + ") ExoPlayerLib/2.7.3";
+        return str + "/" + str2 + " (Linux;Android " + Build.VERSION.RELEASE + ") ExoPlayerLib/2.7.3";
     }
 
     public static String a(Object[] objArr) {
@@ -227,7 +226,7 @@ public final class u {
         return Executors.newSingleThreadExecutor(new ThreadFactory() { // from class: com.opos.exoplayer.core.i.u.1
             @Override // java.util.concurrent.ThreadFactory
             public Thread newThread(Runnable runnable) {
-                return new Thread(runnable, String.this);
+                return new Thread(runnable, str);
             }
         });
     }

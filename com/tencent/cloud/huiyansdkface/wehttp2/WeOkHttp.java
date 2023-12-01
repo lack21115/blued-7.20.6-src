@@ -13,7 +13,7 @@ import java.util.List;
 public class WeOkHttp {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Handler f36135a = new Handler(Looper.getMainLooper());
+    private static Handler f22444a = new Handler(Looper.getMainLooper());
     private WeConfig b;
 
     public WeOkHttp() {
@@ -52,7 +52,7 @@ public class WeOkHttp {
 
     public static void runUi(Runnable runnable) {
         if (runnable != null) {
-            f36135a.post(runnable);
+            f22444a.post(runnable);
         }
     }
 

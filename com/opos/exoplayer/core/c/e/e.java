@@ -7,11 +7,11 @@ import java.util.Arrays;
 final class e {
 
     /* renamed from: a  reason: collision with root package name */
-    private final f f25168a = new f();
+    private final f f11480a = new f();
     private final m b = new m(new byte[65025], 0);
 
     /* renamed from: c  reason: collision with root package name */
-    private int f25169c = -1;
+    private int f11481c = -1;
     private int d;
     private boolean e;
 
@@ -22,10 +22,10 @@ final class e {
         this.d = 0;
         do {
             i2 = i4;
-            if (this.d + i >= this.f25168a.g) {
+            if (this.d + i >= this.f11480a.g) {
                 break;
             }
-            int[] iArr = this.f25168a.j;
+            int[] iArr = this.f11480a.j;
             int i5 = this.d;
             this.d = i5 + 1;
             i3 = iArr[i5 + i];
@@ -36,9 +36,9 @@ final class e {
     }
 
     public void a() {
-        this.f25168a.a();
+        this.f11480a.a();
         this.b.a();
-        this.f25169c = -1;
+        this.f11481c = -1;
         this.e = false;
     }
 
@@ -50,43 +50,43 @@ final class e {
             this.b.a();
         }
         while (!this.e) {
-            if (this.f25169c < 0) {
-                if (!this.f25168a.a(fVar, true)) {
+            if (this.f11481c < 0) {
+                if (!this.f11480a.a(fVar, true)) {
                     return false;
                 }
-                int i2 = this.f25168a.h;
-                if ((this.f25168a.b & 1) == 1 && this.b.c() == 0) {
+                int i2 = this.f11480a.h;
+                if ((this.f11480a.b & 1) == 1 && this.b.c() == 0) {
                     i2 += a(0);
                     i = this.d + 0;
                 } else {
                     i = 0;
                 }
                 fVar.b(i2);
-                this.f25169c = i;
+                this.f11481c = i;
             }
-            int a2 = a(this.f25169c);
-            int i3 = this.f25169c + this.d;
+            int a2 = a(this.f11481c);
+            int i3 = this.f11481c + this.d;
             if (a2 > 0) {
                 if (this.b.e() < this.b.c() + a2) {
                     m mVar = this.b;
-                    mVar.f25496a = Arrays.copyOf(mVar.f25496a, this.b.c() + a2);
+                    mVar.f11808a = Arrays.copyOf(mVar.f11808a, this.b.c() + a2);
                 }
-                fVar.b(this.b.f25496a, this.b.c(), a2);
+                fVar.b(this.b.f11808a, this.b.c(), a2);
                 m mVar2 = this.b;
                 mVar2.b(a2 + mVar2.c());
-                this.e = this.f25168a.j[i3 - 1] != 255;
+                this.e = this.f11480a.j[i3 - 1] != 255;
             }
             int i4 = i3;
-            if (i3 == this.f25168a.g) {
+            if (i3 == this.f11480a.g) {
                 i4 = -1;
             }
-            this.f25169c = i4;
+            this.f11481c = i4;
         }
         return true;
     }
 
     public f b() {
-        return this.f25168a;
+        return this.f11480a;
     }
 
     public m c() {
@@ -94,10 +94,10 @@ final class e {
     }
 
     public void d() {
-        if (this.b.f25496a.length == 65025) {
+        if (this.b.f11808a.length == 65025) {
             return;
         }
         m mVar = this.b;
-        mVar.f25496a = Arrays.copyOf(mVar.f25496a, Math.max(65025, this.b.c()));
+        mVar.f11808a = Arrays.copyOf(mVar.f11808a, Math.max(65025, this.b.c()));
     }
 }

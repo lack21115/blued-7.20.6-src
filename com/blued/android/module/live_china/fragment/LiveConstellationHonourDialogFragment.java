@@ -12,6 +12,7 @@ import android.view.WindowManager;
 import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import com.blued.android.core.ui.ActivityFragmentActive;
 import com.blued.android.core.ui.BaseDialogFragment;
 import com.blued.android.framework.http.BluedUIHttpResponse;
@@ -41,12 +42,8 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveConstellationHonourDialogFragment.class */
 public final class LiveConstellationHonourDialogFragment extends BaseDialogFragment implements OnClickCallback {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f12800a = new Companion(null);
-
-    /* renamed from: c  reason: collision with root package name */
-    private FreedomAdapter f12801c;
+    public static final Companion a = new Companion(null);
+    private FreedomAdapter c;
     private final Lazy b = LazyKt.a(new Function0<DialogLiveConstellationHonourBinding>() { // from class: com.blued.android.module.live_china.fragment.LiveConstellationHonourDialogFragment$vb$2
         /* JADX INFO: Access modifiers changed from: package-private */
         {
@@ -130,7 +127,7 @@ public final class LiveConstellationHonourDialogFragment extends BaseDialogFragm
     public final void f() {
         ViewPropertyAnimator alpha;
         ViewPropertyAnimator duration;
-        FreedomAdapter freedomAdapter = this.f12801c;
+        FreedomAdapter freedomAdapter = this.c;
         if (freedomAdapter != null) {
             if (freedomAdapter == null) {
                 return;
@@ -138,9 +135,8 @@ public final class LiveConstellationHonourDialogFragment extends BaseDialogFragm
             freedomAdapter.notifyDataSetChanged();
             return;
         }
-        final GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 1);
+        final RecyclerView.LayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 1);
         gridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() { // from class: com.blued.android.module.live_china.fragment.LiveConstellationHonourDialogFragment$notifyList$1
-            @Override // androidx.recyclerview.widget.GridLayoutManager.SpanSizeLookup
             public int getSpanSize(int i) {
                 ArrayList arrayList;
                 arrayList = LiveConstellationHonourDialogFragment.this.d;
@@ -149,10 +145,10 @@ public final class LiveConstellationHonourDialogFragment extends BaseDialogFragm
                 return ((FitemGiftConstellationHonour) obj).a(gridLayoutManager.getSpanCount());
             }
         });
-        this.f12801c = new FreedomAdapter(getContext(), a(), this.d, this);
+        this.c = new FreedomAdapter(getContext(), a(), this.d, this);
         d().e.setLayoutManager(gridLayoutManager);
         d().e.setItemAnimator(new DefaultItemAnimator());
-        d().e.setAdapter(this.f12801c);
+        d().e.setAdapter(this.c);
         ViewPropertyAnimator animate = d().e.animate();
         if (animate == null || (alpha = animate.alpha(1.0f)) == null || (duration = alpha.setDuration(300L)) == null) {
             return;
@@ -160,7 +156,6 @@ public final class LiveConstellationHonourDialogFragment extends BaseDialogFragm
         duration.start();
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public void dismissAllowingStateLoss() {
         super.dismissAllowingStateLoss();
     }
@@ -169,7 +164,6 @@ public final class LiveConstellationHonourDialogFragment extends BaseDialogFragm
     public void onClick(View view, int i, BaseViewHolder baseViewHolder) {
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
         EventTrackLive.b(LiveProtos.Event.LIVE_STAR_HONOUR_PAGE_SHOW, LiveRoomManager.a().e(), LiveRoomManager.a().g());
         int a2 = DensityUtils.a(getContext(), 608.0f);
@@ -197,12 +191,12 @@ public final class LiveConstellationHonourDialogFragment extends BaseDialogFragm
         return dialog;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onDestroy() {
         super.onDestroy();
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onStart() {
         super.onStart();
         Dialog dialog = getDialog();
@@ -224,7 +218,6 @@ public final class LiveConstellationHonourDialogFragment extends BaseDialogFragm
         });
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public void setupDialog(Dialog dialog, int i) {
         Intrinsics.e(dialog, "dialog");
         super.setupDialog(dialog, i);

@@ -7,9 +7,7 @@ import org.commonmark.parser.delimiter.DelimiterRun;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/ui/markdown/atuser/AtUserProcessor.class */
 public class AtUserProcessor implements DelimiterProcessor {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Pattern f9907a = Pattern.compile(AtRegExpUtils.AT_USERNAME_PATTERN2);
+    public static final Pattern a = Pattern.compile(AtRegExpUtils.AT_USERNAME_PATTERN2);
 
     @Override // org.commonmark.parser.delimiter.DelimiterProcessor
     public char getClosingCharacter() {
@@ -74,7 +72,7 @@ public class AtUserProcessor implements DelimiterProcessor {
             r0 = r10
             java.lang.String r0 = r0.toString()
             r9 = r0
-            java.util.regex.Pattern r0 = com.blued.android.framework.ui.markdown.atuser.AtUserProcessor.f9907a
+            java.util.regex.Pattern r0 = com.blued.android.framework.ui.markdown.atuser.AtUserProcessor.a
             r1 = r9
             java.util.regex.Matcher r0 = r0.matcher(r1)
             r9 = r0

@@ -6,7 +6,7 @@ import android.opengl.Matrix;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static float f27727a = 0.5625f;
+    private static float f14039a = 0.5625f;
 
     public static final float[] a() {
         return new float[]{1.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f};

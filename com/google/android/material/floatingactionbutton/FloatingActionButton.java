@@ -481,9 +481,8 @@ public class FloatingActionButton extends VisibilityAwareImageButton implements 
         setCustomSize(0);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.ImageView, android.view.View
-    public void drawableStateChanged() {
+    protected void drawableStateChanged() {
         super.drawableStateChanged();
         getImpl().onDrawableStateChanged(getDrawableState());
     }
@@ -633,23 +632,20 @@ public class FloatingActionButton extends VisibilityAwareImageButton implements 
         getImpl().jumpDrawableToCurrentState();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.ImageView, android.view.View
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         getImpl().onAttachedToWindow();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.ImageView, android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         getImpl().onDetachedFromWindow();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.ImageView, android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         int sizeDimension = getSizeDimension();
         this.imagePadding = (sizeDimension - this.maxImageSize) / 2;
         getImpl().updatePadding();
@@ -657,9 +653,8 @@ public class FloatingActionButton extends VisibilityAwareImageButton implements 
         setMeasuredDimension(this.shadowPadding.left + min + this.shadowPadding.right, min + this.shadowPadding.top + this.shadowPadding.bottom);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onRestoreInstanceState(Parcelable parcelable) {
+    protected void onRestoreInstanceState(Parcelable parcelable) {
         if (!(parcelable instanceof ExtendableSavedState)) {
             super.onRestoreInstanceState(parcelable);
             return;
@@ -669,9 +664,8 @@ public class FloatingActionButton extends VisibilityAwareImageButton implements 
         this.expandableWidgetHelper.onRestoreInstanceState((Bundle) Preconditions.checkNotNull(extendableSavedState.extendableStates.get(EXPANDABLE_WIDGET_HELPER_KEY)));
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public Parcelable onSaveInstanceState() {
+    protected Parcelable onSaveInstanceState() {
         Parcelable onSaveInstanceState = super.onSaveInstanceState();
         Bundle bundle = onSaveInstanceState;
         if (onSaveInstanceState == null) {

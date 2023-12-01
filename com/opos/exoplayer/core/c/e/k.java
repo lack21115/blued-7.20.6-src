@@ -11,31 +11,31 @@ import java.util.ArrayList;
 final class k extends i {
 
     /* renamed from: a  reason: collision with root package name */
-    private a f25179a;
+    private a f11491a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f25180c;
+    private boolean f11492c;
     private b.d d;
-    private b.C0653b e;
+    private b.C0483b e;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8303388-dex2jar.jar:com/opos/exoplayer/core/c/e/k$a.class */
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public final b.d f25181a;
-        public final b.C0653b b;
+        public final b.d f11493a;
+        public final b.C0483b b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final byte[] f25182c;
+        public final byte[] f11494c;
         public final b.c[] d;
         public final int e;
 
-        public a(b.d dVar, b.C0653b c0653b, byte[] bArr, b.c[] cVarArr, int i) {
-            this.f25181a = dVar;
-            this.b = c0653b;
-            this.f25182c = bArr;
+        public a(b.d dVar, b.C0483b c0483b, byte[] bArr, b.c[] cVarArr, int i) {
+            this.f11493a = dVar;
+            this.b = c0483b;
+            this.f11494c = bArr;
             this.d = cVarArr;
             this.e = i;
         }
@@ -46,15 +46,15 @@ final class k extends i {
     }
 
     private static int a(byte b, a aVar) {
-        return !aVar.d[a(b, aVar.e, 1)].f25158a ? aVar.f25181a.g : aVar.f25181a.h;
+        return !aVar.d[a(b, aVar.e, 1)].f11470a ? aVar.f11493a.g : aVar.f11493a.h;
     }
 
     static void a(m mVar, long j) {
         mVar.b(mVar.c() + 4);
-        mVar.f25496a[mVar.c() - 4] = (byte) (j & 255);
-        mVar.f25496a[mVar.c() - 3] = (byte) ((j >>> 8) & 255);
-        mVar.f25496a[mVar.c() - 2] = (byte) ((j >>> 16) & 255);
-        mVar.f25496a[mVar.c() - 1] = (byte) ((j >>> 24) & 255);
+        mVar.f11808a[mVar.c() - 4] = (byte) (j & 255);
+        mVar.f11808a[mVar.c() - 3] = (byte) ((j >>> 8) & 255);
+        mVar.f11808a[mVar.c() - 2] = (byte) ((j >>> 16) & 255);
+        mVar.f11808a[mVar.c() - 1] = (byte) ((j >>> 24) & 255);
     }
 
     public static boolean a(m mVar) {
@@ -70,44 +70,44 @@ final class k extends i {
     public void a(boolean z) {
         super.a(z);
         if (z) {
-            this.f25179a = null;
+            this.f11491a = null;
             this.d = null;
             this.e = null;
         }
         this.b = 0;
-        this.f25180c = false;
+        this.f11492c = false;
     }
 
     @Override // com.opos.exoplayer.core.c.e.i
     protected boolean a(m mVar, long j, i.a aVar) {
-        if (this.f25179a != null) {
+        if (this.f11491a != null) {
             return false;
         }
         a c2 = c(mVar);
-        this.f25179a = c2;
+        this.f11491a = c2;
         if (c2 == null) {
             return true;
         }
         ArrayList arrayList = new ArrayList();
-        arrayList.add(this.f25179a.f25181a.j);
-        arrayList.add(this.f25179a.f25182c);
-        aVar.f25176a = Format.a(null, "audio/vorbis", null, this.f25179a.f25181a.e, -1, this.f25179a.f25181a.b, (int) this.f25179a.f25181a.f25161c, arrayList, null, 0, null);
+        arrayList.add(this.f11491a.f11493a.j);
+        arrayList.add(this.f11491a.f11494c);
+        aVar.f11488a = Format.a(null, "audio/vorbis", null, this.f11491a.f11493a.e, -1, this.f11491a.f11493a.b, (int) this.f11491a.f11493a.f11473c, arrayList, null, 0, null);
         return true;
     }
 
     @Override // com.opos.exoplayer.core.c.e.i
     protected long b(m mVar) {
         int i = 0;
-        if ((mVar.f25496a[0] & 1) == 1) {
+        if ((mVar.f11808a[0] & 1) == 1) {
             return -1L;
         }
-        int a2 = a(mVar.f25496a[0], this.f25179a);
-        if (this.f25180c) {
+        int a2 = a(mVar.f11808a[0], this.f11491a);
+        if (this.f11492c) {
             i = (this.b + a2) / 4;
         }
         long j = i;
         a(mVar, j);
-        this.f25180c = true;
+        this.f11492c = true;
         this.b = a2;
         return j;
     }
@@ -121,7 +121,7 @@ final class k extends i {
             return null;
         } else {
             byte[] bArr = new byte[mVar.c()];
-            System.arraycopy((Object) mVar.f25496a, 0, (Object) bArr, 0, mVar.c());
+            System.arraycopy(mVar.f11808a, 0, bArr, 0, mVar.c());
             b.c[] a2 = b.a(mVar, this.d.b);
             return new a(this.d, this.e, bArr, a2, b.a(a2.length - 1));
         }
@@ -132,7 +132,7 @@ final class k extends i {
     public void c(long j) {
         super.c(j);
         int i = 0;
-        this.f25180c = j != 0;
+        this.f11492c = j != 0;
         b.d dVar = this.d;
         if (dVar != null) {
             i = dVar.g;

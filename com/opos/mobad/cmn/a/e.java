@@ -22,7 +22,7 @@ public class e {
         if (adItemData == null || adItemData.O() == null) {
             return null;
         }
-        return new ComplianceInfo(adItemData.O().b, adItemData.O().f26468a);
+        return new ComplianceInfo(adItemData.O().b, adItemData.O().f12780a);
     }
 
     public static void a(final Context context, List<View> list, final a aVar, List<View> list2, final a aVar2, final com.opos.mobad.ad.privacy.b bVar, final ComplianceInfo complianceInfo) {

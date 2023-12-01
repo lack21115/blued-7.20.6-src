@@ -1,7 +1,6 @@
 package com.qiniu.pili.droid.crash;
 
 import android.content.Context;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FilenameFilter;
@@ -13,11 +12,11 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class f {
 
     /* renamed from: a  reason: collision with root package name */
-    private static f f27478a;
+    private static f f13790a;
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f27479c = "placeholder";
+    private String f13791c = "placeholder";
     private String d = ".clean.xcrash";
     private String e = ".dirty.xcrash";
     private String f = null;
@@ -28,14 +27,14 @@ public class f {
     class AnonymousClass1 implements FilenameFilter {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ f f27480a;
+        final /* synthetic */ f f13792a;
 
         @Override // java.io.FilenameFilter
         public boolean accept(File file, String str) {
             StringBuilder sb = new StringBuilder();
-            sb.append(this.f27480a.f27479c);
-            sb.append(BridgeUtil.UNDERLINE_STR);
-            return str.startsWith(sb.toString()) && str.endsWith(this.f27480a.d);
+            sb.append(this.f13792a.f13791c);
+            sb.append("_");
+            return str.startsWith(sb.toString()) && str.endsWith(this.f13792a.d);
         }
     }
 
@@ -43,10 +42,10 @@ public class f {
     }
 
     public static f a() {
-        if (f27478a == null) {
-            f27478a = new f();
+        if (f13790a == null) {
+            f13790a = new f();
         }
-        return f27478a;
+        return f13790a;
     }
 
     private File[] f() {

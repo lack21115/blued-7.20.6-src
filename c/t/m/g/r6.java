@@ -10,6 +10,7 @@ import android.provider.ContactsContract;
 import androidx.core.content.PermissionChecker;
 import c.t.m.g.d3;
 import c.t.m.g.j3;
+import com.huawei.hms.framework.common.ContainerUtils;
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -25,7 +26,7 @@ public class r6 extends d2 {
     public a d;
 
     /* renamed from: c  reason: collision with root package name */
-    public SimpleDateFormat f3965c = t2.b("HHmmss");
+    public SimpleDateFormat f3917c = t2.b("HHmmss");
     public boolean e = false;
     public HashSet<String> f = new HashSet<>();
 
@@ -33,20 +34,20 @@ public class r6 extends d2 {
     public class a extends Handler {
 
         /* renamed from: a  reason: collision with root package name */
-        public StringBuffer f3966a;
+        public StringBuffer f3918a;
         public long b;
 
         public a(Looper looper) {
             super(looper);
-            this.f3966a = new StringBuffer(18432);
+            this.f3918a = new StringBuffer(18432);
         }
 
         public void a() {
-            StringBuffer stringBuffer = this.f3966a;
+            StringBuffer stringBuffer = this.f3918a;
             stringBuffer.append('$');
-            stringBuffer.append(r6.this.f3965c.format(new Date()) + ",LOC,shutdown");
-            String stringBuffer2 = this.f3966a.toString();
-            this.f3966a.setLength(0);
+            stringBuffer.append(r6.this.f3917c.format(new Date()) + ",LOC,shutdown");
+            String stringBuffer2 = this.f3918a.toString();
+            this.f3918a.setLength(0);
             r6.this.a(stringBuffer2, true);
             c3.b(r6.this.d);
         }
@@ -56,14 +57,14 @@ public class r6 extends d2 {
                 case 101:
                     removeMessages(101);
                     this.b = System.currentTimeMillis();
-                    String stringBuffer = this.f3966a.toString();
-                    this.f3966a.setLength(0);
-                    StringBuffer stringBuffer2 = this.f3966a;
+                    String stringBuffer = this.f3918a.toString();
+                    this.f3918a.setLength(0);
+                    StringBuffer stringBuffer2 = this.f3918a;
                     stringBuffer2.append("LOC_CORE");
                     stringBuffer2.append(',');
                     stringBuffer2.append(r6.i());
                     if (!m3.a(stringBuffer)) {
-                        this.f3966a.append(stringBuffer);
+                        this.f3918a.append(stringBuffer);
                     }
                     r6.this.b("SYSTEM", r6.j());
                     removeMessages(102);
@@ -78,27 +79,27 @@ public class r6 extends d2 {
                     r6Var2.b("PERMISSION", r6Var2.a(q2.a()));
                     return;
                 case 103:
-                    StringBuffer stringBuffer3 = this.f3966a;
+                    StringBuffer stringBuffer3 = this.f3918a;
                     stringBuffer3.append('$');
                     stringBuffer3.append((String) message.obj);
-                    if (this.f3966a.length() < 18432 && System.currentTimeMillis() - this.b < 180000) {
+                    if (this.f3918a.length() < 18432 && System.currentTimeMillis() - this.b < 180000) {
                         return;
                     }
-                    r6.this.a(this.f3966a.toString(), false);
-                    this.f3966a.setLength(0);
+                    r6.this.a(this.f3918a.toString(), false);
+                    this.f3918a.setLength(0);
                     c3.b(r6.this.d, 101);
                     return;
                 case 104:
                     r6.this.a("", true);
                     return;
                 case 105:
-                    r6.this.a(this.f3966a.toString(), false);
-                    this.f3966a.setLength(0);
+                    r6.this.a(this.f3918a.toString(), false);
+                    this.f3918a.setLength(0);
                     c3.b(r6.this.d, 101);
                     return;
                 case 106:
                     removeMessages(106);
-                    this.f3966a.insert(0, (String) message.obj);
+                    this.f3918a.insert(0, (String) message.obj);
                     return;
                 default:
                     return;
@@ -118,18 +119,18 @@ public class r6 extends d2 {
     public class b implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        public String f3968a;
+        public String f3920a;
         public boolean b;
 
         /* loaded from: source-8756600-dex2jar.jar:c/t/m/g/r6$b$a.class */
         public class a implements d3.c {
 
             /* renamed from: a  reason: collision with root package name */
-            public final /* synthetic */ byte[] f3970a;
+            public final /* synthetic */ byte[] f3922a;
             public final /* synthetic */ boolean[] b;
 
             public a(b bVar, byte[] bArr, boolean[] zArr) {
-                this.f3970a = bArr;
+                this.f3922a = bArr;
                 this.b = zArr;
             }
 
@@ -140,7 +141,7 @@ public class r6 extends d2 {
                     if (!file.exists()) {
                         file.mkdirs();
                     }
-                    z2.a(new File(file, "mllc_" + System.currentTimeMillis() + ".enc"), this.f3970a, true);
+                    z2.a(new File(file, "mllc_" + System.currentTimeMillis() + ".enc"), this.f3922a, true);
                 } catch (Throwable th) {
                 }
                 this.b[0] = false;
@@ -152,9 +153,9 @@ public class r6 extends d2 {
         }
 
         public b(String str, boolean z) {
-            this.f3968a = "";
+            this.f3920a = "";
             this.b = false;
-            this.f3968a = str;
+            this.f3920a = str;
             this.b = z;
         }
 
@@ -239,9 +240,9 @@ public class r6 extends d2 {
 
         @Override // java.lang.Runnable
         public void run() {
-            if (!m3.a(this.f3968a)) {
+            if (!m3.a(this.f3920a)) {
                 try {
-                    a(this.f3968a.getBytes("utf-8"), true);
+                    a(this.f3920a.getBytes("utf-8"), true);
                 } catch (Exception e) {
                 }
             }
@@ -326,7 +327,7 @@ public class r6 extends d2 {
                 i2 = -1;
             }
         }
-        return Build.VERSION.SDK_INT + "&" + i3 + "&" + i2 + "&" + q6.a().b(context);
+        return Build.VERSION.SDK_INT + ContainerUtils.FIELD_DELIMITER + i3 + ContainerUtils.FIELD_DELIMITER + i2 + ContainerUtils.FIELD_DELIMITER + q6.a().b(context);
     }
 
     public void a(long j2) {
@@ -376,7 +377,7 @@ public class r6 extends d2 {
             return;
         }
         Message obtainMessage = aVar.obtainMessage(103);
-        obtainMessage.obj = this.f3965c.format(new Date()) + "," + str + "," + str2;
+        obtainMessage.obj = this.f3917c.format(new Date()) + "," + str + "," + str2;
         obtainMessage.sendToTarget();
     }
 

@@ -12,7 +12,6 @@ import android.os.Build;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.WindowManager;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.util.Locale;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -108,7 +107,7 @@ public class j {
         }
         sb.append(str2);
         sb.append(trim);
-        return a(sb.toString()).replace(" ", BridgeUtil.UNDERLINE_STR);
+        return a(sb.toString()).replace(" ", "_");
     }
 
     private static int c(int i) {

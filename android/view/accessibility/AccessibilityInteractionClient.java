@@ -207,7 +207,7 @@ public final class AccessibilityInteractionClient extends IAccessibilityInteract
             if (this.mInteractionId > i) {
                 return false;
             }
-            long uptimeMillis2 = 5000 - (SystemClock.uptimeMillis() - uptimeMillis);
+            long uptimeMillis2 = TIMEOUT_INTERACTION_MILLIS - (SystemClock.uptimeMillis() - uptimeMillis);
             if (uptimeMillis2 <= 0) {
                 return false;
             }

@@ -13,13 +13,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.anythink.core.common.b.n;
 import com.anythink.core.common.k.h;
-import com.anythink.expressad.foundation.h.i;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/ui/ShakeView.class */
 public class ShakeView extends BaseShakeView {
-
-    /* renamed from: c  reason: collision with root package name */
-    private ImageView f6190c;
+    private ImageView c;
     private View d;
 
     public ShakeView(Context context) {
@@ -39,11 +36,11 @@ public class ShakeView extends BaseShakeView {
     }
 
     private void a(View view) {
-        int a2 = h.a(getContext(), 115.0f);
+        int a = h.a(getContext(), 115.0f);
         int parseColor = Color.parseColor("#99000000");
         GradientDrawable gradientDrawable = new GradientDrawable();
         gradientDrawable.setColor(parseColor);
-        gradientDrawable.setCornerRadius(a2);
+        gradientDrawable.setCornerRadius(a);
         view.setBackgroundDrawable(gradientDrawable);
     }
 
@@ -51,25 +48,25 @@ public class ShakeView extends BaseShakeView {
     final void a() {
         setOrientation(1);
         setGravity(1);
-        this.f6190c = new ImageView(getContext());
-        this.f6190c.setLayoutParams(new LinearLayout.LayoutParams(h.a(getContext(), 115.0f), h.a(getContext(), 115.0f)));
-        ImageView imageView = this.f6190c;
-        int a2 = h.a(getContext(), 115.0f);
+        this.c = new ImageView(getContext());
+        this.c.setLayoutParams(new LinearLayout.LayoutParams(h.a(getContext(), 115.0f), h.a(getContext(), 115.0f)));
+        ImageView imageView = this.c;
+        int a = h.a(getContext(), 115.0f);
         int parseColor = Color.parseColor("#99000000");
         GradientDrawable gradientDrawable = new GradientDrawable();
         gradientDrawable.setColor(parseColor);
-        gradientDrawable.setCornerRadius(a2);
+        gradientDrawable.setCornerRadius(a);
         imageView.setBackgroundDrawable(gradientDrawable);
-        this.f6086a = new ImageView(getContext());
+        this.a = new ImageView(getContext());
         FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(h.a(getContext(), 76.0f), h.a(getContext(), 76.0f));
         layoutParams.gravity = 17;
-        this.f6086a.setLayoutParams(layoutParams);
-        this.f6086a.setImageResource(h.a(n.a().g(), "myoffer_shake_icon", i.f7952c));
+        this.a.setLayoutParams(layoutParams);
+        this.a.setImageResource(h.a(n.a().g(), "myoffer_shake_icon", "drawable"));
         FrameLayout frameLayout = new FrameLayout(getContext());
         LinearLayout.LayoutParams layoutParams2 = new LinearLayout.LayoutParams(-2, -2);
         frameLayout.setLayoutParams(layoutParams2);
-        frameLayout.addView(this.f6190c);
-        frameLayout.addView(this.f6086a);
+        frameLayout.addView(this.c);
+        frameLayout.addView(this.a);
         View inflate = LayoutInflater.from(getContext()).inflate(h.a(getContext(), "myoffer_splash_shake_hint_text", "layout"), (ViewGroup) null);
         this.d = inflate;
         inflate.setLayoutParams(layoutParams2);
@@ -93,8 +90,8 @@ public class ShakeView extends BaseShakeView {
     @Override // android.view.View
     public void setOnClickListener(View.OnClickListener onClickListener) {
         try {
-            this.f6086a.setOnClickListener(onClickListener);
-            this.f6190c.setOnClickListener(onClickListener);
+            this.a.setOnClickListener(onClickListener);
+            this.c.setOnClickListener(onClickListener);
             this.d.setOnClickListener(onClickListener);
         } catch (Throwable th) {
         }

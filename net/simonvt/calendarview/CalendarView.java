@@ -30,7 +30,6 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import cn.blued.blued_third_library.R;
-import com.google.android.material.timepicker.TimeModel;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -39,9 +38,7 @@ import java.util.Locale;
 
 /* loaded from: source-3503164-dex2jar.jar:net/simonvt/calendarview/CalendarView.class */
 public class CalendarView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final String f43802a = CalendarView.class.getSimpleName();
+    private static final String a = CalendarView.class.getSimpleName();
     private int A;
     private long B;
     private boolean C;
@@ -56,9 +53,7 @@ public class CalendarView extends FrameLayout {
     private final DateFormat L;
     private Locale M;
     private final int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f43803c;
+    private int c;
     private Drawable d;
     private final int e;
     private int f;
@@ -92,24 +87,22 @@ public class CalendarView extends FrameLayout {
     /* loaded from: source-3503164-dex2jar.jar:net/simonvt/calendarview/CalendarView$ScrollStateRunnable.class */
     public class ScrollStateRunnable implements Runnable {
         private AbsListView b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private int f43807c;
+        private int c;
 
         private ScrollStateRunnable() {
         }
 
         public void a(AbsListView absListView, int i) {
             this.b = absListView;
-            this.f43807c = i;
+            this.c = i;
             CalendarView.this.removeCallbacks(this);
             CalendarView.this.postDelayed(this, 40L);
         }
 
         @Override // java.lang.Runnable
         public void run() {
-            CalendarView.this.E = this.f43807c;
-            if (this.f43807c == 0 && CalendarView.this.D != 0) {
+            CalendarView.this.E = this.c;
+            if (this.c == 0 && CalendarView.this.D != 0) {
                 View childAt = this.b.getChildAt(0);
                 if (childAt == null) {
                     return;
@@ -123,7 +116,7 @@ public class CalendarView extends FrameLayout {
                     }
                 }
             }
-            CalendarView.this.D = this.f43807c;
+            CalendarView.this.D = this.c;
         }
     }
 
@@ -131,9 +124,7 @@ public class CalendarView extends FrameLayout {
     /* loaded from: source-3503164-dex2jar.jar:net/simonvt/calendarview/CalendarView$WeekView.class */
     public class WeekView extends View {
         private final Rect b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private final Paint f43809c;
+        private final Paint c;
         private final Paint d;
         private String[] e;
         private boolean[] f;
@@ -155,7 +146,7 @@ public class CalendarView extends FrameLayout {
         public WeekView(Context context) {
             super(context);
             this.b = new Rect();
-            this.f43809c = new Paint();
+            this.c = new Paint();
             this.d = new Paint();
             this.j = -1;
             this.k = -1;
@@ -171,7 +162,7 @@ public class CalendarView extends FrameLayout {
         private void a(Canvas canvas) {
             int i;
             if (this.o) {
-                this.f43809c.setColor(CalendarView.this.f);
+                this.c.setColor(CalendarView.this.f);
                 this.b.top = CalendarView.this.b;
                 this.b.bottom = this.n;
                 boolean f = CalendarView.this.f();
@@ -187,7 +178,7 @@ public class CalendarView extends FrameLayout {
                     rect.left = i2;
                     this.b.right = this.r - 2;
                 }
-                canvas.drawRect(this.b, this.f43809c);
+                canvas.drawRect(this.b, this.c);
                 if (f) {
                     this.b.left = this.s + 3;
                     Rect rect2 = this.b;
@@ -202,21 +193,21 @@ public class CalendarView extends FrameLayout {
                     this.b.left = this.s + 3;
                     this.b.right = this.m;
                 }
-                canvas.drawRect(this.b, this.f43809c);
+                canvas.drawRect(this.b, this.c);
             }
         }
 
         private void b(Canvas canvas) {
-            int textSize = ((int) ((this.n + this.f43809c.getTextSize()) / 2.0f)) - CalendarView.this.b;
+            int textSize = ((int) ((this.n + this.c.getTextSize()) / 2.0f)) - CalendarView.this.b;
             int i = this.q;
             int i2 = i * 2;
-            this.f43809c.setTextAlign(Paint.Align.CENTER);
-            this.f43809c.setTextSize(CalendarView.this.f43803c);
+            this.c.setTextAlign(Paint.Align.CENTER);
+            this.c.setTextSize(CalendarView.this.c);
             int i3 = 0;
             if (!CalendarView.this.f()) {
                 if (CalendarView.this.q) {
-                    this.f43809c.setColor(CalendarView.this.j);
-                    canvas.drawText(this.e[0], this.m / i2, textSize, this.f43809c);
+                    this.c.setColor(CalendarView.this.j);
+                    canvas.drawText(this.e[0], this.m / i2, textSize, this.c);
                     i3 = 1;
                 }
                 while (i3 < i) {
@@ -238,9 +229,9 @@ public class CalendarView extends FrameLayout {
                 i4 = i5 + 1;
             }
             if (CalendarView.this.q) {
-                this.f43809c.setColor(CalendarView.this.j);
+                this.c.setColor(CalendarView.this.j);
                 int i7 = this.m;
-                canvas.drawText(this.e[0], i7 - (i7 / i2), textSize, this.f43809c);
+                canvas.drawText(this.e[0], i7 - (i7 / i2), textSize, this.c);
             }
         }
 
@@ -255,8 +246,8 @@ public class CalendarView extends FrameLayout {
             if (i2 == this.l) {
                 return;
             }
-            this.f43809c.setColor(CalendarView.this.i);
-            this.f43809c.setStrokeWidth(CalendarView.this.b);
+            this.c.setColor(CalendarView.this.i);
+            this.c.setStrokeWidth(CalendarView.this.b);
             float f2 = 0.0f;
             if (CalendarView.this.f()) {
                 if (CalendarView.this.q) {
@@ -273,18 +264,18 @@ public class CalendarView extends FrameLayout {
                 }
                 f = this.m;
             }
-            canvas.drawLine(f2, 0.0f, f, 0.0f, this.f43809c);
+            canvas.drawLine(f2, 0.0f, f, 0.0f, this.c);
         }
 
         private void d() {
-            this.f43809c.setFakeBoldText(false);
-            this.f43809c.setAntiAlias(true);
-            this.f43809c.setStyle(Paint.Style.FILL);
+            this.c.setFakeBoldText(false);
+            this.c.setAntiAlias(true);
+            this.c.setStyle(Paint.Style.FILL);
             this.d.setFakeBoldText(true);
             this.d.setAntiAlias(true);
             this.d.setStyle(Paint.Style.FILL);
             this.d.setTextAlign(Paint.Align.CENTER);
-            this.d.setTextSize(CalendarView.this.f43803c);
+            this.d.setTextSize(CalendarView.this.c);
         }
 
         private void d(Canvas canvas) {
@@ -337,7 +328,7 @@ public class CalendarView extends FrameLayout {
             this.e = new String[i5];
             this.f = new boolean[i5];
             if (CalendarView.this.q) {
-                this.e[0] = String.format(this.t, TimeModel.NUMBER_FORMAT, Integer.valueOf(CalendarView.this.H.get(3)));
+                this.e[0] = String.format(this.t, "%d", Integer.valueOf(CalendarView.this.H.get(3)));
                 i4 = 1;
             } else {
                 i4 = 0;
@@ -354,7 +345,7 @@ public class CalendarView extends FrameLayout {
                 if (CalendarView.this.H.before(CalendarView.this.J) || CalendarView.this.H.after(CalendarView.this.K)) {
                     this.e[i4] = "";
                 } else {
-                    this.e[i4] = String.format(this.t, TimeModel.NUMBER_FORMAT, Integer.valueOf(CalendarView.this.H.get(5)));
+                    this.e[i4] = String.format(this.t, "%d", Integer.valueOf(CalendarView.this.H.get(5)));
                 }
                 CalendarView.this.H.add(5, 1);
                 i4++;
@@ -436,9 +427,7 @@ public class CalendarView extends FrameLayout {
     /* loaded from: source-3503164-dex2jar.jar:net/simonvt/calendarview/CalendarView$WeeksAdapter.class */
     public class WeeksAdapter extends BaseAdapter implements View.OnTouchListener {
         private int b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private GestureDetector f43811c;
+        private GestureDetector c;
         private int d;
         private final Calendar e = Calendar.getInstance();
         private int f;
@@ -455,7 +444,7 @@ public class CalendarView extends FrameLayout {
         }
 
         public WeeksAdapter(Context context) {
-            this.f43811c = new GestureDetector(CalendarView.this.getContext(), new CalendarGestureListener());
+            this.c = new GestureDetector(CalendarView.this.getContext(), new CalendarGestureListener());
             b();
         }
 
@@ -530,7 +519,7 @@ public class CalendarView extends FrameLayout {
 
         @Override // android.view.View.OnTouchListener
         public boolean onTouch(View view, MotionEvent motionEvent) {
-            if (CalendarView.this.v.isEnabled() && this.f43811c.onTouchEvent(motionEvent)) {
+            if (CalendarView.this.v.isEnabled() && this.c.onTouchEvent(motionEvent)) {
                 if (!((WeekView) view).a(motionEvent.getX(), CalendarView.this.H) || CalendarView.this.H.before(CalendarView.this.J) || CalendarView.this.H.after(CalendarView.this.K)) {
                     return true;
                 }
@@ -584,7 +573,7 @@ public class CalendarView extends FrameLayout {
         this.i = obtainStyledAttributes.getColor(R.styleable.CalendarView_cv_weekSeparatorLineColor, 0);
         this.j = obtainStyledAttributes.getColor(R.styleable.CalendarView_cv_weekNumberColor, 0);
         this.d = obtainStyledAttributes.getDrawable(R.styleable.CalendarView_cv_selectedDateVerticalBar);
-        this.l = obtainStyledAttributes.getResourceId(R.styleable.CalendarView_cv_dateTextAppearance, 16973894);
+        this.l = obtainStyledAttributes.getResourceId(R.styleable.CalendarView_cv_dateTextAppearance, com.android.internal.R.style.TextAppearance_Small);
         a();
         this.k = obtainStyledAttributes.getResourceId(R.styleable.CalendarView_cv_weekDayTextAppearance, -1);
         Drawable drawable = obtainStyledAttributes.getDrawable(R.styleable.CalendarView_cv_dividerHorizontal);
@@ -595,9 +584,9 @@ public class CalendarView extends FrameLayout {
         this.o = (int) TypedValue.applyDimension(1, 20.0f, displayMetrics);
         this.e = (int) TypedValue.applyDimension(1, 6.0f, displayMetrics);
         this.b = (int) TypedValue.applyDimension(1, 1.0f, displayMetrics);
-        View inflate = ((LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.calendar_view, (ViewGroup) null, false);
+        View inflate = ((LayoutInflater) context.getSystemService("layout_inflater")).inflate(R.layout.calendar_view, (ViewGroup) null, false);
         addView(inflate);
-        this.v = (ListView) findViewById(16908298);
+        this.v = (ListView) findViewById(com.android.internal.R.id.list);
         this.x = (ViewGroup) inflate.findViewById(R.id.cv_day_names);
         this.w = (TextView) inflate.findViewById(R.id.cv_month_name);
         ((ImageView) findViewById(R.id.cv_divider)).setImageDrawable(drawable);
@@ -635,7 +624,7 @@ public class CalendarView extends FrameLayout {
 
     private void a() {
         TypedArray obtainStyledAttributes = getContext().obtainStyledAttributes(this.l, R.styleable.TextAppearanceCompatStyleable);
-        this.f43803c = obtainStyledAttributes.getDimensionPixelSize(R.styleable.TextAppearanceCompatStyleable_android_textSize, 14);
+        this.c = obtainStyledAttributes.getDimensionPixelSize(R.styleable.TextAppearanceCompatStyleable_android_textSize, 14);
         obtainStyledAttributes.recycle();
     }
 
@@ -671,13 +660,13 @@ public class CalendarView extends FrameLayout {
         int a2 = this.C ? weekView.a() : weekView.b();
         int i5 = (this.A == 11 && a2 == 0) ? 1 : (this.A == 0 && a2 == 11) ? -1 : a2 - this.A;
         if ((!this.C && i5 > 0) || (this.C && i5 < 0)) {
-            Calendar c2 = weekView.c();
+            Calendar c = weekView.c();
             if (this.C) {
-                c2.add(5, -7);
+                c.add(5, -7);
             } else {
-                c2.add(5, 7);
+                c.add(5, 7);
             }
-            setMonthDisplayed(c2);
+            setMonthDisplayed(c);
         }
         this.B = firstVisiblePosition;
         this.D = this.E;
@@ -733,7 +722,7 @@ public class CalendarView extends FrameLayout {
             calendar.setTime(this.L.parse(str));
             return true;
         } catch (ParseException e) {
-            String str2 = f43802a;
+            String str2 = a;
             Log.w(str2, "Date: " + str + " not in format: MM/dd/yyyy");
             return false;
         }

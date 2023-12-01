@@ -6,7 +6,7 @@ import android.os.SystemClock;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private long f36282a = 0;
+    private long f22591a = 0;
     private final long b;
 
     public a(long j) {
@@ -15,9 +15,9 @@ public final class a {
 
     public final boolean a() {
         long elapsedRealtime = SystemClock.elapsedRealtime();
-        long j = this.f36282a;
+        long j = this.f22591a;
         if (j == 0 || elapsedRealtime - j > this.b) {
-            this.f36282a = SystemClock.elapsedRealtime();
+            this.f22591a = SystemClock.elapsedRealtime();
             return true;
         }
         return false;

@@ -19,12 +19,12 @@ import com.soft.blued.utils.BluedPreferences;
 public class MineFourEntryAdapter extends BaseQuickAdapter<MineEntryInfo.ColumnsItem, BaseViewHolder> {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f31585a;
+    private Context f17895a;
     private IRequestHost b;
 
     public MineFourEntryAdapter(Context context, IRequestHost iRequestHost) {
         super((int) R.layout.item_mine_four_entry);
-        this.f31585a = context;
+        this.f17895a = context;
         this.b = iRequestHost;
     }
 
@@ -40,9 +40,9 @@ public class MineFourEntryAdapter extends BaseQuickAdapter<MineEntryInfo.Columns
             baseViewHolder.setText(2131371186, columnsItem.recommend_text);
         }
         if (BluedPreferences.P(columnsItem.item_key)) {
-            baseViewHolder.setGone(2131365270, true);
+            baseViewHolder.setGone(R.id.iv_dot, true);
         } else {
-            baseViewHolder.setGone(2131365270, false);
+            baseViewHolder.setGone(R.id.iv_dot, false);
         }
         baseViewHolder.getView(2131366742).setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.mine.adapter.MineFourEntryAdapter.1
             /* JADX WARN: Code restructure failed: missing block: B:19:0x00b4, code lost:
@@ -88,12 +88,12 @@ public class MineFourEntryAdapter extends BaseQuickAdapter<MineEntryInfo.Columns
             baseViewHolder.setGone(2131371196, true);
             long j = columnsItem.extra.beans;
             UserInfo.getInstance().setUserPrice(j);
-            baseViewHolder.setText(2131371196, DistanceUtils.a(this.f31585a, Long.valueOf(j)));
-            baseViewHolder.setText(2131371186, this.f31585a.getString(2131886105));
+            baseViewHolder.setText(2131371196, DistanceUtils.a(this.f17895a, Long.valueOf(j)));
+            baseViewHolder.setText(2131371186, this.f17895a.getString(R.string.Live_SendPresent_wandou));
         } else if (z) {
             baseViewHolder.setGone(2131371186, false);
             baseViewHolder.setGone(2131365504, true);
-            BitmapUtils.a(this.f31585a, (ImageView) baseViewHolder.getView(2131365504), columnsItem.extra.rich_level, false);
+            BitmapUtils.a(this.f17895a, (ImageView) baseViewHolder.getView(2131365504), columnsItem.extra.rich_level, false);
         } else if (!z) {
             if (TextUtils.isEmpty(columnsItem.recommend_text)) {
                 baseViewHolder.setGone(R.id.layout_content, false);
@@ -102,9 +102,9 @@ public class MineFourEntryAdapter extends BaseQuickAdapter<MineEntryInfo.Columns
             baseViewHolder.setGone(2131371196, false);
             int i = columnsItem.extra.times;
             if (i > 0) {
-                baseViewHolder.setText(2131371186, String.format(this.f31585a.getString(R.string.blued_call_times), Integer.valueOf(i)));
+                baseViewHolder.setText(2131371186, String.format(this.f17895a.getString(R.string.blued_call_times), Integer.valueOf(i)));
             } else {
-                baseViewHolder.setText(2131371186, this.f31585a.getString(R.string.blued_call_buy));
+                baseViewHolder.setText(2131371186, this.f17895a.getString(R.string.blued_call_buy));
             }
         }
     }

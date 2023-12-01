@@ -11,11 +11,11 @@ public interface BiMap<K, V> extends Map<K, V> {
 
     BiMap<V, K> inverse();
 
-    @Override // java.util.Map
+    @Override // com.google.common.collect.BiMap
     @NullableDecl
     V put(@NullableDecl K k, @NullableDecl V v);
 
-    @Override // java.util.Map
+    @Override // com.google.common.collect.BiMap
     void putAll(Map<? extends K, ? extends V> map);
 
     @Override // java.util.Map

@@ -46,7 +46,7 @@ public final class c extends com.kwad.components.ad.reward.presenter.a implement
         }
         bVar.a(frameLayout, this.qt.mRootContainer, adTemplate, this.qt.mApkDownloadHelper, this.qt.mScreenOrientation);
         ViewGroup.MarginLayoutParams marginLayoutParams = null;
-        this.oS.a((b.InterfaceC0479b) null);
+        this.oS.a((b.InterfaceC0309b) null);
         ViewGroup.LayoutParams layoutParams = this.vi.getLayoutParams();
         if (layoutParams instanceof ViewGroup.MarginLayoutParams) {
             marginLayoutParams = (ViewGroup.MarginLayoutParams) layoutParams;
@@ -95,7 +95,7 @@ public final class c extends com.kwad.components.ad.reward.presenter.a implement
         com.kwad.components.ad.reward.c.fj().a(this.mRewardVerifyListener);
         this.cp.a(this.mWebCardClickListener);
         this.cp.a(this.df, this.qt.mRootContainer, adTemplate, this.qt.mApkDownloadHelper, this.qt.mScreenOrientation);
-        this.cp.a((b.InterfaceC0479b) null);
+        this.cp.a((b.InterfaceC0309b) null);
         com.kwad.components.ad.i.b bVar = this.qt.oS;
         this.oS = bVar;
         if (bVar != null) {

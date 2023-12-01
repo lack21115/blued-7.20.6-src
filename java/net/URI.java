@@ -1,8 +1,9 @@
 package java.net;
 
-import android.provider.ContactsContract;
+import com.alipay.sdk.cons.b;
+import com.android.internal.content.NativeLibraryHelper;
 import com.blued.android.module.common.web.jsbridge.BridgeUtil;
-import com.cdo.oaps.ad.OapsWrapper;
+import io.grpc.internal.GrpcUtil;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -37,8 +38,8 @@ public final class URI implements Comparable<URI>, Serializable {
     static final UriCodec ALL_LEGAL_ENCODER = new PartEncoder("?/[]@");
     private static final UriCodec ASCII_ONLY = new UriCodec() { // from class: java.net.URI.1
         @Override // libcore.net.UriCodec
-        protected boolean isRetained(char c2) {
-            return c2 <= 127;
+        protected boolean isRetained(char c) {
+            return c <= 127;
         }
     };
 
@@ -51,9 +52,9 @@ public final class URI implements Comparable<URI>, Serializable {
         }
 
         @Override // libcore.net.UriCodec
-        protected boolean isRetained(char c2) {
-            if (URI.UNRESERVED.indexOf(c2) == -1 && URI.PUNCTUATION.indexOf(c2) == -1 && this.extraLegalCharacters.indexOf(c2) == -1) {
-                return (c2 <= 127 || Character.isSpaceChar(c2) || Character.isISOControl(c2)) ? false : true;
+        protected boolean isRetained(char c) {
+            if (URI.UNRESERVED.indexOf(c) == -1 && URI.PUNCTUATION.indexOf(c) == -1 && this.extraLegalCharacters.indexOf(c) == -1) {
+                return (c <= 127 || Character.isSpaceChar(c) || Character.isISOControl(c)) ? false : true;
             }
             return true;
         }
@@ -256,7 +257,10 @@ public final class URI implements Comparable<URI>, Serializable {
         if ("http".equalsIgnoreCase(str)) {
             return 80;
         }
-        return "https".equalsIgnoreCase(str) ? 443 : -1;
+        if (b.a.equalsIgnoreCase(str)) {
+            return GrpcUtil.DEFAULT_PORT_SSL;
+        }
+        return -1;
     }
 
     private String getHashString() {
@@ -314,7 +318,7 @@ public final class URI implements Comparable<URI>, Serializable {
                     return false;
                 }
                 str2 = split[i2];
-                if (str2.startsWith("-") || str2.endsWith("-")) {
+                if (str2.startsWith(NativeLibraryHelper.CLEAR_ABI_OVERRIDE) || str2.endsWith(NativeLibraryHelper.CLEAR_ABI_OVERRIDE)) {
                     return false;
                 }
                 i = i2 + 1;
@@ -501,12 +505,12 @@ public final class URI implements Comparable<URI>, Serializable {
             }
             i = findFirstOf3;
             if (i3 < findFirstOf3) {
-                this.authority = AUTHORITY_ENCODER.validate(str, i3, findFirstOf3, ContactsContract.Directory.DIRECTORY_AUTHORITY);
+                this.authority = AUTHORITY_ENCODER.validate(str, i3, findFirstOf3, "authority");
                 i = findFirstOf3;
             }
         }
         int findFirstOf4 = UrlUtils.findFirstOf(str, "?", i, findFirstOf);
-        this.path = PATH_ENCODER.validate(str, i, findFirstOf4, OapsWrapper.KEY_PATH);
+        this.path = PATH_ENCODER.validate(str, i, findFirstOf4, "path");
         if (findFirstOf4 < findFirstOf) {
             this.query = ALL_LEGAL_ENCODER.validate(str, findFirstOf4 + 1, findFirstOf, "query");
         }

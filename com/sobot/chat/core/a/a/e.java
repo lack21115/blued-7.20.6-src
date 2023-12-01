@@ -4,16 +4,16 @@ package com.sobot.chat.core.a.a;
 public class e {
 
     /* renamed from: a  reason: collision with root package name */
-    final e f28204a = this;
+    final e f14515a = this;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private a f28205c;
+    private a f14516c;
     private i d;
     private f e;
 
     public e a(a aVar) {
-        this.f28205c = aVar.a();
+        this.f14516c = aVar.a();
         return this;
     }
 
@@ -37,7 +37,7 @@ public class e {
     }
 
     public a b() {
-        return this.f28205c;
+        return this.f14516c;
     }
 
     public i c() {

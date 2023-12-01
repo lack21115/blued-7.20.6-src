@@ -11,29 +11,29 @@ import com.soft.blued.R;
 public final class FragmentBluedInterstitialBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ShapeTextView f28788a;
+    public final ShapeTextView f15098a;
     public final ImageView b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final ShapeTextView f28789c;
+    public final ShapeTextView f15099c;
     private final FrameLayout d;
 
     private FragmentBluedInterstitialBinding(FrameLayout frameLayout, ShapeTextView shapeTextView, ImageView imageView, ShapeTextView shapeTextView2) {
         this.d = frameLayout;
-        this.f28788a = shapeTextView;
+        this.f15098a = shapeTextView;
         this.b = imageView;
-        this.f28789c = shapeTextView2;
+        this.f15099c = shapeTextView2;
     }
 
     public static FragmentBluedInterstitialBinding a(View view) {
         String str;
-        ShapeTextView shapeTextView = (ShapeTextView) view.findViewById(R.id.iv_ad_close);
-        if (shapeTextView != null) {
+        ShapeTextView findViewById = view.findViewById(R.id.iv_ad_close);
+        if (findViewById != null) {
             ImageView imageView = (ImageView) view.findViewById(R.id.iv_ad_picture);
             if (imageView != null) {
-                ShapeTextView shapeTextView2 = (ShapeTextView) view.findViewById(R.id.tv_ad_icon);
-                if (shapeTextView2 != null) {
-                    return new FragmentBluedInterstitialBinding((FrameLayout) view, shapeTextView, imageView, shapeTextView2);
+                ShapeTextView findViewById2 = view.findViewById(R.id.tv_ad_icon);
+                if (findViewById2 != null) {
+                    return new FragmentBluedInterstitialBinding((FrameLayout) view, findViewById, imageView, findViewById2);
                 }
                 str = "tvAdIcon";
             } else {

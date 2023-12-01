@@ -8,12 +8,10 @@ import kotlin.jvm.internal.Lambda;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt__DelayKt$debounce$2.class */
 final class FlowKt__DelayKt$debounce$2<T> extends Lambda implements Function1<T, Long> {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ long f43120a;
+    final /* synthetic */ long a;
 
     public final long a(T t) {
-        return this.f43120a;
+        return this.a;
     }
 
     /* JADX WARN: Multi-variable type inference failed */

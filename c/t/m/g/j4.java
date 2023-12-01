@@ -10,10 +10,10 @@ public class j4 {
     public double f = -1.0d;
 
     /* renamed from: a  reason: collision with root package name */
-    public float f3851a = -1.0f;
+    public float f3803a = -1.0f;
 
     /* renamed from: c  reason: collision with root package name */
-    public long f3852c = -1;
+    public long f3804c = -1;
     public double h = 0.0d;
     public double i = 0.0d;
 
@@ -25,19 +25,19 @@ public class j4 {
         if (d3 < 1.0d) {
             d3 = 1.0d;
         }
-        if (j - this.f3852c >= 20000) {
+        if (j - this.f3804c >= 20000) {
             c();
         }
-        this.f3851a = (float) (Math.abs(d - this.d) * 1000000.0d);
+        this.f3803a = (float) (Math.abs(d - this.d) * 1000000.0d);
         this.b = (float) (Math.abs(d2 - this.e) * 1000000.0d);
         if (this.f < 0.0d) {
-            this.f3852c = j;
+            this.f3804c = j;
             this.d = d;
             this.e = d2;
             this.f = d3 * d3;
             return;
         }
-        long j2 = j - this.f3852c;
+        long j2 = j - this.f3804c;
         long j3 = j2;
         if (j2 < 1000) {
             j3 = 1000;
@@ -49,7 +49,7 @@ public class j4 {
         }
         double d5 = this.f;
         double d6 = d3 * d3;
-        double d7 = d5 / ((d5 + d6) + (this.f3851a * 5.0f));
+        double d7 = d5 / ((d5 + d6) + (this.f3803a * 5.0f));
         double d8 = this.g;
         double d9 = d8 / ((d8 + d6) + (this.b * 5.0f));
         if (d7 < 0.4d || d9 < 0.4d) {
@@ -82,14 +82,14 @@ public class j4 {
             this.i = (d17 - d15) / d14;
             this.f = (1.0d - d7) * this.f;
             this.g = (1.0d - d9) * this.g;
-            this.f3852c = j;
+            this.f3804c = j;
         }
         if (d3 == 30.0d && d7 >= 0.5d && d9 >= 0.5d) {
             this.d = d;
             this.e = d2;
             this.h = 0.0d;
             this.i = 0.0d;
-            this.f3852c = j;
+            this.f3804c = j;
             this.f = d6;
         }
         if (this.j > 100.0d && d3 <= 30.0d) {
@@ -97,7 +97,7 @@ public class j4 {
             this.e = d2;
             this.h = 0.0d;
             this.i = 0.0d;
-            this.f3852c = j;
+            this.f3804c = j;
             this.f = d6;
         }
         this.j = d3;
@@ -109,8 +109,8 @@ public class j4 {
 
     public void c() {
         this.f = -1.0d;
-        this.f3851a = -1.0f;
-        this.f3852c = -1L;
+        this.f3803a = -1.0f;
+        this.f3804c = -1L;
         this.h = 0.0d;
         this.i = 0.0d;
     }

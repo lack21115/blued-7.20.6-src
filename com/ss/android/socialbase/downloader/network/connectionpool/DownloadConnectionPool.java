@@ -17,8 +17,9 @@ public class DownloadConnectionPool {
     private final Map<String, FakeDownloadHeadHttpConnection> mCachedHeadConnections;
     protected int maxCacheSize;
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8457232-dex2jar.jar:com/ss/android/socialbase/downloader/network/connectionpool/DownloadConnectionPool$InstanceHolder.class */
-    static final class InstanceHolder {
+    public static final class InstanceHolder {
         private static final DownloadConnectionPool INSTANCE = new DownloadConnectionPool();
 
         private InstanceHolder() {

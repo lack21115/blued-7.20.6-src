@@ -5,28 +5,29 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
+import com.soft.blued.R;
 
 /* loaded from: source-8303388-dex2jar.jar:com/soft/blued/databinding/PopTabBubbleBinding.class */
 public final class PopTabBubbleBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ImageView f29557a;
+    public final ImageView f15867a;
     public final ConstraintLayout b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final TextView f29558c;
+    public final TextView f15868c;
     private final ConstraintLayout d;
 
     private PopTabBubbleBinding(ConstraintLayout constraintLayout, ImageView imageView, ConstraintLayout constraintLayout2, TextView textView) {
         this.d = constraintLayout;
-        this.f29557a = imageView;
+        this.f15867a = imageView;
         this.b = constraintLayout2;
-        this.f29558c = textView;
+        this.f15868c = textView;
     }
 
     public static PopTabBubbleBinding a(View view) {
         String str;
-        ImageView imageView = (ImageView) view.findViewById(2131365477);
+        ImageView imageView = (ImageView) view.findViewById(R.id.iv_header);
         if (imageView != null) {
             ConstraintLayout constraintLayout = (ConstraintLayout) view.findViewById(2131369459);
             if (constraintLayout != null) {

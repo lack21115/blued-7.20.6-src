@@ -1,5 +1,6 @@
 package com.sobot.chat.viewHolder;
 
+import android.R;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
@@ -12,7 +13,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
-import com.blued.android.chat.data.MsgType;
 import com.bytedance.applog.tracker.Tracker;
 import com.sobot.chat.activity.WebViewActivity;
 import com.sobot.chat.api.apiUtils.GsonUtil;
@@ -143,7 +143,7 @@ public class RobotTemplateMessageHolder2 extends MessageHolderBase {
                 this.sobot_ll_content.setVisibility(0);
             }
             checkShowTransferBtn();
-            if (MsgType.UID_GROUP_AT_ALL.equals(multiDiaRespInfo.getRetCode())) {
+            if ("000000".equals(multiDiaRespInfo.getRetCode())) {
                 List<Map<String, String>> interfaceRetList = multiDiaRespInfo.getInterfaceRetList();
                 String[] inputContentList = multiDiaRespInfo.getInputContentList();
                 ArrayList arrayList = new ArrayList();
@@ -289,7 +289,7 @@ public class RobotTemplateMessageHolder2 extends MessageHolderBase {
         if (this.pageBuilder != null) {
             return;
         }
-        PageBuilder.Builder space = new PageBuilder.Builder().setGrid(i, i2).setPageMargin(10).setIndicatorMargins(5, 10, 5, 10).setIndicatorSize(10).setIndicatorRes(17301609, 17301611).setIndicatorGravity(17).setSwipePercent(40).setShowIndicator(false).setSpace(2);
+        PageBuilder.Builder space = new PageBuilder.Builder().setGrid(i, i2).setPageMargin(10).setIndicatorMargins(5, 10, 5, 10).setIndicatorSize(10).setIndicatorRes(R.drawable.presence_invisible, R.drawable.presence_online).setIndicatorGravity(17).setSwipePercent(40).setShowIndicator(false).setSpace(2);
         if ("0".equals(str)) {
             context = this.mContext;
             f = 42.0f;

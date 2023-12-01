@@ -19,10 +19,10 @@ public class IntegerKeyframeAnimation extends KeyframeAnimation<Integer> {
 
     int c(Keyframe<Integer> keyframe, float f) {
         Integer num;
-        if (keyframe.f4418a == null || keyframe.b == null) {
+        if (keyframe.a == null || keyframe.b == null) {
             throw new IllegalStateException("Missing values for keyframe.");
         }
-        return (this.b == null || (num = (Integer) this.b.a(keyframe.d, keyframe.e.floatValue(), keyframe.f4418a, keyframe.b, f, d(), h())) == null) ? MiscUtils.a(keyframe.h(), keyframe.i(), f) : num.intValue();
+        return (this.b == null || (num = (Integer) this.b.a(keyframe.d, keyframe.e.floatValue(), keyframe.a, keyframe.b, f, d(), h())) == null) ? MiscUtils.a(keyframe.h(), keyframe.i(), f) : num.intValue();
     }
 
     public int i() {

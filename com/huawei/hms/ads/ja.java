@@ -2,14 +2,13 @@ package com.huawei.hms.ads;
 
 import com.baidu.mobads.sdk.api.IAdInterListener;
 import com.iab.omid.library.huawei.adsession.media.Position;
-import javax.xml.transform.OutputKeys;
 
 /* loaded from: source-7994992-dex2jar.jar:com/huawei/hms/ads/ja.class */
 public enum ja implements it {
     PREROLL(IAdInterListener.AdProdType.PRODUCT_PREROLL),
     MIDROLL("midroll"),
     POSTROLL("postroll"),
-    STANDALONE(OutputKeys.STANDALONE);
+    STANDALONE("standalone");
     
     private static boolean B;
     private final String C;

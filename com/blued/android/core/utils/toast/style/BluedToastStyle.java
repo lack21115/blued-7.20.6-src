@@ -6,6 +6,7 @@ import android.graphics.drawable.GradientDrawable;
 import android.os.Build;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import com.android.internal.R;
 import com.blued.android.core.utils.toast.config.IToastStyle;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/utils/toast/style/BluedToastStyle.class */
@@ -39,7 +40,7 @@ public class BluedToastStyle implements IToastStyle<TextView> {
     /* renamed from: d */
     public TextView a(Context context) {
         TextView textView = new TextView(context);
-        textView.setId(16908299);
+        textView.setId(R.id.message);
         textView.setGravity(e(context));
         textView.setTextColor(f(context));
         textView.setTextSize(0, g(context));

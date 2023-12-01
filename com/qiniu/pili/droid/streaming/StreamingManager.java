@@ -17,11 +17,11 @@ import java.nio.ByteBuffer;
 public final class StreamingManager implements b.InterfaceC0000b, c {
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f27830a;
+    public boolean f14142a;
     public a.a.a.a.a.a.i.c b;
 
     /* renamed from: c  reason: collision with root package name */
-    public a.a.a.a.a.a.e.a f27831c;
+    public a.a.a.a.a.a.e.a f14143c;
     public b d;
     public StreamingProfile e;
     public a.a.a.a.a.a.e.c f;
@@ -45,7 +45,7 @@ public final class StreamingManager implements b.InterfaceC0000b, c {
     public static /* synthetic */ class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final /* synthetic */ int[] f27832a;
+        public static final /* synthetic */ int[] f14144a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:33:0x00b9 -> B:79:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:35:0x00bd -> B:91:0x001f). Please submit an issue!!! */
@@ -63,65 +63,65 @@ public final class StreamingManager implements b.InterfaceC0000b, c {
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:59:0x00ed -> B:73:0x00ac). Please submit an issue!!! */
         static {
             int[] iArr = new int[b.c.values().length];
-            f27832a = iArr;
+            f14144a = iArr;
             try {
                 iArr[b.c.READY.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f27832a[b.c.PREPARING.ordinal()] = 2;
+                f14144a[b.c.PREPARING.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f27832a[b.c.CONNECTING.ordinal()] = 3;
+                f14144a[b.c.CONNECTING.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f27832a[b.c.STREAMING.ordinal()] = 4;
+                f14144a[b.c.STREAMING.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f27832a[b.c.SHUTDOWN.ordinal()] = 5;
+                f14144a[b.c.SHUTDOWN.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
             try {
-                f27832a[b.c.IOERROR.ordinal()] = 6;
+                f14144a[b.c.IOERROR.ordinal()] = 6;
             } catch (NoSuchFieldError e6) {
             }
             try {
-                f27832a[b.c.FRAME_QUEUE_EMPTY.ordinal()] = 7;
+                f14144a[b.c.FRAME_QUEUE_EMPTY.ordinal()] = 7;
             } catch (NoSuchFieldError e7) {
             }
             try {
-                f27832a[b.c.FRAME_QUEUE_FULL.ordinal()] = 8;
+                f14144a[b.c.FRAME_QUEUE_FULL.ordinal()] = 8;
             } catch (NoSuchFieldError e8) {
             }
             try {
-                f27832a[b.c.FRAME_QUEUE_HAS_FEW_ELEMENTS.ordinal()] = 9;
+                f14144a[b.c.FRAME_QUEUE_HAS_FEW_ELEMENTS.ordinal()] = 9;
             } catch (NoSuchFieldError e9) {
             }
             try {
-                f27832a[b.c.FRAME_QUEUE_HAS_MANY_ELEMENTS.ordinal()] = 10;
+                f14144a[b.c.FRAME_QUEUE_HAS_MANY_ELEMENTS.ordinal()] = 10;
             } catch (NoSuchFieldError e10) {
             }
             try {
-                f27832a[b.c.ADJUST_BITRATE.ordinal()] = 11;
+                f14144a[b.c.ADJUST_BITRATE.ordinal()] = 11;
             } catch (NoSuchFieldError e11) {
             }
             try {
-                f27832a[b.c.DISCONNECTED.ordinal()] = 12;
+                f14144a[b.c.DISCONNECTED.ordinal()] = 12;
             } catch (NoSuchFieldError e12) {
             }
             try {
-                f27832a[b.c.AUDIO_RECORDING_EXCEPTION.ordinal()] = 13;
+                f14144a[b.c.AUDIO_RECORDING_EXCEPTION.ordinal()] = 13;
             } catch (NoSuchFieldError e13) {
             }
             try {
-                f27832a[b.c.UNAUTHORIZED_URL.ordinal()] = 14;
+                f14144a[b.c.UNAUTHORIZED_URL.ordinal()] = 14;
             } catch (NoSuchFieldError e14) {
             }
             try {
-                f27832a[b.c.INVALID_FORMAT.ordinal()] = 15;
+                f14144a[b.c.INVALID_FORMAT.ordinal()] = 15;
             } catch (NoSuchFieldError e15) {
             }
         }
@@ -184,7 +184,7 @@ public final class StreamingManager implements b.InterfaceC0000b, c {
             e.f.c("StreamingManager", "startStreamingInternal -");
             return false;
         }
-        this.f27830a = true;
+        this.f14142a = true;
         C();
         F();
         e eVar = e.f;
@@ -261,7 +261,7 @@ public final class StreamingManager implements b.InterfaceC0000b, c {
         StreamingState streamingState2 = StreamingState.UNKNOWN;
         e eVar = e.f;
         eVar.b("StreamingManager", "muxerStatusUpdate muxerState:" + cVar + ",isNeedUpdateProfile:" + this.p);
-        switch (a.f27832a[cVar.ordinal()]) {
+        switch (a.f14144a[cVar.ordinal()]) {
             case 1:
                 StreamingState streamingState3 = StreamingState.READY;
                 return;
@@ -393,7 +393,7 @@ public final class StreamingManager implements b.InterfaceC0000b, c {
     }
 
     public final boolean c() {
-        if (this.f27830a) {
+        if (this.f14142a) {
             return m() || this.r;
         }
         return false;
@@ -401,7 +401,7 @@ public final class StreamingManager implements b.InterfaceC0000b, c {
 
     public final boolean c(int i, int i2, int i3, boolean z, int i4) {
         f.a aVar = this.n;
-        return (aVar != null && aVar.b * aVar.f1272c == i * i2 && aVar.e == i3 && aVar.f == i4) ? false : true;
+        return (aVar != null && aVar.b * aVar.f1224c == i * i2 && aVar.e == i3 && aVar.f == i4) ? false : true;
     }
 
     @Override // a.a.a.a.a.a.c
@@ -430,7 +430,7 @@ public final class StreamingManager implements b.InterfaceC0000b, c {
             throw new IllegalStateException("In wrong Encoding Type. Only HW_SCREEN_VIDEO_WITH_HW_AUDIO_CODEC is supported");
         }
         f fVar = this.g;
-        if (fVar == null || !this.f27830a) {
+        if (fVar == null || !this.f14142a) {
             return;
         }
         fVar.c(z);
@@ -448,7 +448,7 @@ public final class StreamingManager implements b.InterfaceC0000b, c {
 
     public Surface getInputSurface(int i, int i2) {
         if (o()) {
-            if (this.g == null || !this.f27830a) {
+            if (this.g == null || !this.f14142a) {
                 return null;
             }
             a(i, i2, 0, false, PLFourCC.FOURCC_ABGR);
@@ -458,7 +458,7 @@ public final class StreamingManager implements b.InterfaceC0000b, c {
     }
 
     public boolean h() {
-        return this.f27830a;
+        return this.f14142a;
     }
 
     public final void i() {
@@ -488,7 +488,7 @@ public final class StreamingManager implements b.InterfaceC0000b, c {
     }
 
     public void inputVideoFrame(ByteBuffer byteBuffer, int i, int i2, int i3, int i4, boolean z, int i5, long j) {
-        if (this.g == null || !this.f27830a) {
+        if (this.g == null || !this.f14142a) {
             return;
         }
         this.b.c(true);
@@ -507,32 +507,32 @@ public final class StreamingManager implements b.InterfaceC0000b, c {
         if (this.e.getEncodingOrientation() == null) {
             this.e.setEncodingOrientation(h.c(this.j) ? StreamingProfile.ENCODING_ORIENTATION.LAND : StreamingProfile.ENCODING_ORIENTATION.PORT);
         }
-        this.f27831c = a.a.a.a.a.a.e.a.a(this.e.getAudioProfile());
+        this.f14143c = a.a.a.a.a.a.e.a.a(this.e.getAudioProfile());
         b bVar = new b(this.j, this);
         this.d = bVar;
         bVar.a(this.e);
         this.d.a(this.e.getVideoEncodingSize(null));
-        this.d.a(this.f27831c);
+        this.d.a(this.f14143c);
     }
 
     public final void k() {
         if (m()) {
             a.a.a.a.a.a.i.b bVar = new a.a.a.a.a.a.i.b();
             this.b = bVar;
-            bVar.e().f1243a = true;
+            bVar.e().f1195a = true;
             this.b.e().b = false;
         } else if (t()) {
             a.a.a.a.a.a.i.d dVar = new a.a.a.a.a.a.i.d();
             this.b = dVar;
-            dVar.e().f1243a = false;
+            dVar.e().f1195a = false;
             this.b.e().b = true;
         } else {
             a.a.a.a.a.a.i.a aVar = new a.a.a.a.a.a.i.a();
             this.b = aVar;
-            aVar.e().f1243a = true;
+            aVar.e().f1195a = true;
             this.b.e().b = true;
         }
-        this.b.e().f1244c = System.currentTimeMillis();
+        this.b.e().f1196c = System.currentTimeMillis();
         StreamStatusCallback streamStatusCallback = this.m;
         if (streamStatusCallback != null) {
             this.b.a(streamStatusCallback);
@@ -555,7 +555,7 @@ public final class StreamingManager implements b.InterfaceC0000b, c {
                 dVar.a(this.u);
             }
             this.g.a(this);
-            this.f27830a = this.g.f();
+            this.f14142a = this.g.f();
         }
     }
 
@@ -681,7 +681,7 @@ public final class StreamingManager implements b.InterfaceC0000b, c {
         e.d.c("StreamingManager", "pause +");
         this.o = false;
         stopStreaming();
-        this.f27830a = false;
+        this.f14142a = false;
         a.a.a.a.a.k.b.b();
         e.d.c("StreamingManager", "pause -");
     }
@@ -719,7 +719,7 @@ public final class StreamingManager implements b.InterfaceC0000b, c {
         e.d.c("StreamingManager", "resume +");
         a.a.a.a.a.k.b.a(this.j);
         if (this.f == null) {
-            e.f1361c.c("StreamingManager", "try to initializeAudio again");
+            e.f1313c.c("StreamingManager", "try to initializeAudio again");
             i();
         }
         StreamingStateChangedListener streamingStateChangedListener = this.k;
@@ -824,8 +824,8 @@ public final class StreamingManager implements b.InterfaceC0000b, c {
             return false;
         } else if (r()) {
             e eVar = e.d;
-            eVar.c("StreamingManager", "startStreaming mRecordingEnabled=" + this.f27830a);
-            if (this.f27830a || !this.d.i()) {
+            eVar.c("StreamingManager", "startStreaming mRecordingEnabled=" + this.f14142a);
+            if (this.f14142a || !this.d.i()) {
                 return false;
             }
             return E();
@@ -837,9 +837,9 @@ public final class StreamingManager implements b.InterfaceC0000b, c {
     public boolean stopStreaming() {
         if (r()) {
             e eVar = e.d;
-            eVar.c("StreamingManager", "stopStreaming mRecordingEnabled:" + this.f27830a + ",mIsInitialized:" + this.o);
-            if (this.f27830a) {
-                this.f27830a = false;
+            eVar.c("StreamingManager", "stopStreaming mRecordingEnabled:" + this.f14142a + ",mIsInitialized:" + this.o);
+            if (this.f14142a) {
+                this.f14142a = false;
                 I();
                 a.a.a.a.a.d.b.h();
                 return true;

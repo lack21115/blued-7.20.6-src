@@ -8,7 +8,6 @@ import android.os.SystemProperties;
 import android.renderscript.Element;
 import android.util.Log;
 import android.view.Surface;
-import android.widget.ExpandableListView;
 import java.io.File;
 import java.lang.reflect.Method;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
@@ -197,7 +196,7 @@ public class RenderScript {
                 } else if (this.mRS.nContextGetUserMessage(this.mRS.mContext, iArr) != 5) {
                     throw new RSDriverException("Error processing message from RenderScript.");
                 } else {
-                    Allocation.sendBufferNotification((iArr[1] << 32) + (iArr[0] & ExpandableListView.PACKED_POSITION_VALUE_NULL));
+                    Allocation.sendBufferNotification((iArr[1] << 32) + (iArr[0] & 4294967295L));
                 }
             }
         }

@@ -66,9 +66,7 @@ public abstract class Animation {
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/maps/model/animation/Animation$a.class */
     final class a implements AnimationListener {
         private final lc b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private final lc f5543c;
+        private final lc c;
 
         private a(final AnimationListener animationListener) {
             this.b = new lc() { // from class: com.amap.api.maps.model.animation.Animation.a.1
@@ -83,7 +81,7 @@ public abstract class Animation {
                     }
                 }
             };
-            this.f5543c = new lc() { // from class: com.amap.api.maps.model.animation.Animation.a.2
+            this.c = new lc() { // from class: com.amap.api.maps.model.animation.Animation.a.2
                 @Override // com.amap.api.col.p0003sl.lc
                 public final void runTask() {
                     try {
@@ -103,7 +101,7 @@ public abstract class Animation {
 
         @Override // com.amap.api.maps.model.animation.Animation.AnimationListener
         public final void onAnimationEnd() {
-            du.a().a(this.f5543c);
+            du.a().a(this.c);
         }
 
         @Override // com.amap.api.maps.model.animation.Animation.AnimationListener

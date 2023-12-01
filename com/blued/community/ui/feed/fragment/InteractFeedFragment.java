@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
+import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 import com.blued.android.core.ui.TerminalActivity;
 import com.blued.android.module.common.base.mvvm.EmptyViewModel;
@@ -32,13 +33,9 @@ import kotlin.reflect.KProperty;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/community/ui/feed/fragment/InteractFeedFragment.class */
 public final class InteractFeedFragment extends MVVMBaseFragment<EmptyViewModel> {
-
-    /* renamed from: c  reason: collision with root package name */
-    private final ViewBindingProperty f19803c;
+    private final ViewBindingProperty c;
     static final /* synthetic */ KProperty<Object>[] b = {Reflection.a(new PropertyReference1Impl(InteractFeedFragment.class, "viewBinding", "getViewBinding()Lcom/blued/community/databinding/FragmentInteractFeedBinding;", 0))};
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f19802a = new Companion(null);
+    public static final Companion a = new Companion(null);
 
     @Metadata
     /* loaded from: source-4169892-dex2jar.jar:com/blued/community/ui/feed/fragment/InteractFeedFragment$Companion.class */
@@ -58,43 +55,38 @@ public final class InteractFeedFragment extends MVVMBaseFragment<EmptyViewModel>
     @Metadata
     /* loaded from: source-4169892-dex2jar.jar:com/blued/community/ui/feed/fragment/InteractFeedFragment$MyAdapter.class */
     static final class MyAdapter extends FragmentStatePagerAdapter {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final Context f19804a;
+        private final Context a;
         private final List<Integer> b;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public MyAdapter(Context context, FragmentManager fm) {
             super(fm, 1);
             Intrinsics.e(fm, "fm");
-            this.f19804a = context;
+            this.a = context;
             this.b = CollectionsKt.b(Integer.valueOf(R.string.feed_liked_page_title), Integer.valueOf(R.string.feed_commented_page_title));
         }
 
         public final Context getContext() {
-            return this.f19804a;
+            return this.a;
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public int getCount() {
             return this.b.size();
         }
 
-        @Override // androidx.fragment.app.FragmentStatePagerAdapter
         public Fragment getItem(int i) {
             return i == 0 ? new LikedFeedFragment() : new CommentedFeedFragment();
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public CharSequence getPageTitle(int i) {
-            Context context = this.f19804a;
+            Context context = this.a;
             return context == null ? null : context.getString(this.b.get(i).intValue());
         }
     }
 
     public InteractFeedFragment() {
         super(R.layout.fragment_interact_feed);
-        this.f19803c = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<InteractFeedFragment, FragmentInteractFeedBinding>() { // from class: com.blued.community.ui.feed.fragment.InteractFeedFragment$special$$inlined$viewBindingFragment$default$1
+        this.c = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<InteractFeedFragment, FragmentInteractFeedBinding>() { // from class: com.blued.community.ui.feed.fragment.InteractFeedFragment$special$$inlined$viewBindingFragment$default$1
             @Override // kotlin.jvm.functions.Function1
             /* renamed from: a */
             public final FragmentInteractFeedBinding invoke(InteractFeedFragment fragment) {
@@ -122,7 +114,7 @@ public final class InteractFeedFragment extends MVVMBaseFragment<EmptyViewModel>
     }
 
     private final FragmentInteractFeedBinding p() {
-        return (FragmentInteractFeedBinding) this.f19803c.b(this, b[0]);
+        return (FragmentInteractFeedBinding) this.c.b(this, b[0]);
     }
 
     @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
@@ -145,10 +137,10 @@ public final class InteractFeedFragment extends MVVMBaseFragment<EmptyViewModel>
             Context context = getContext();
             FragmentManager childFragmentManager = getChildFragmentManager();
             Intrinsics.c(childFragmentManager, "childFragmentManager");
-            customViewPager2.setAdapter(new MyAdapter(context, childFragmentManager));
+            customViewPager2.setAdapter((PagerAdapter) new MyAdapter(context, childFragmentManager));
         }
         FragmentInteractFeedBinding p3 = p();
-        if (p3 != null && (pageTabLayout = p3.f18893c) != null) {
+        if (p3 != null && (pageTabLayout = p3.c) != null) {
             FragmentInteractFeedBinding p4 = p();
             pageTabLayout.setupWithViewPager(p4 == null ? null : p4.e);
         }
@@ -157,15 +149,12 @@ public final class InteractFeedFragment extends MVVMBaseFragment<EmptyViewModel>
             return;
         }
         customViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: com.blued.community.ui.feed.fragment.InteractFeedFragment$initView$2
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageScrollStateChanged(int i) {
             }
 
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageScrolled(int i, float f, int i2) {
             }
 
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageSelected(int i) {
             }
         });

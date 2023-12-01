@@ -1,7 +1,6 @@
 package com.blued.android.chat.core.worker.chat;
 
 import androidx.collection.ArrayMap;
-import com.anythink.expressad.video.module.a.a.m;
 import com.blued.android.chat.ChatManager;
 import com.blued.android.chat.core.utils.Log;
 import com.blued.android.chat.data.SessionHeader;
@@ -106,7 +105,7 @@ public class ReadFlagSender {
                 }
                 this.readPackagePending.clear();
             }
-            if (System.currentTimeMillis() - this.lastTime > m.ag) {
+            if (System.currentTimeMillis() - this.lastTime > 3000) {
                 synchronized (this.timerLock) {
                     if (this.timer != null) {
                         this.timer.cancel();

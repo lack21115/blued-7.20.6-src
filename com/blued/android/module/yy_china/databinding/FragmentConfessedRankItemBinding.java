@@ -11,22 +11,18 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/FragmentConfessedRankItemBinding.class */
 public final class FragmentConfessedRankItemBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final TextView f16472a;
+    public final TextView a;
     public final SquareImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final LinearLayout f16473c;
+    public final LinearLayout c;
     public final RecyclerView d;
     public final TextView e;
     private final ConstraintLayout f;
 
     private FragmentConfessedRankItemBinding(ConstraintLayout constraintLayout, TextView textView, SquareImageView squareImageView, LinearLayout linearLayout, RecyclerView recyclerView, TextView textView2) {
         this.f = constraintLayout;
-        this.f16472a = textView;
+        this.a = textView;
         this.b = squareImageView;
-        this.f16473c = linearLayout;
+        this.c = linearLayout;
         this.d = recyclerView;
         this.e = textView2;
     }
@@ -39,11 +35,11 @@ public final class FragmentConfessedRankItemBinding implements ViewBinding {
             if (squareImageView != null) {
                 LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.ll_null);
                 if (linearLayout != null) {
-                    RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rec);
-                    if (recyclerView != null) {
+                    RecyclerView findViewById = view.findViewById(R.id.rec);
+                    if (findViewById != null) {
                         TextView textView2 = (TextView) view.findViewById(R.id.tv_mess);
                         if (textView2 != null) {
-                            return new FragmentConfessedRankItemBinding((ConstraintLayout) view, textView, squareImageView, linearLayout, recyclerView, textView2);
+                            return new FragmentConfessedRankItemBinding((ConstraintLayout) view, textView, squareImageView, linearLayout, findViewById, textView2);
                         }
                         str = "tvMess";
                     } else {
@@ -61,7 +57,6 @@ public final class FragmentConfessedRankItemBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.f;

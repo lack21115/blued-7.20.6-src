@@ -22,11 +22,12 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
 import androidx.viewpager2.widget.ViewPager2;
+import com.anythink.core.common.l;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.AppMethods;
 import com.blued.android.core.ui.ActivityFragmentActive;
@@ -177,7 +178,7 @@ public class LiveGiftBackpackFragment extends LiveGiftBackpackBaseFragment<LiveG
         public final ViewPager2 invoke() {
             View view;
             view = LiveGiftBackpackFragment.this.i;
-            return (ViewPager2) view.findViewById(R.id.base_view_pager_id);
+            return view.findViewById(R.id.base_view_pager_id);
         }
     });
     private final Lazy H = LazyKt.a(LazyThreadSafetyMode.NONE, new Function0<LiveVp2Adapter>() { // from class: com.blued.android.module.live_china.mine.backpack.LiveGiftBackpackFragment$giftBackpackVpAdapter$2
@@ -218,7 +219,6 @@ public class LiveGiftBackpackFragment extends LiveGiftBackpackBaseFragment<LiveG
     private final HashMap<String, LiveGiftBackpackItemFragment> ab = new HashMap<>();
     private String ac = "";
     private final Observer<LiveGiftBackpackModel> ae = new Observer() { // from class: com.blued.android.module.live_china.mine.backpack.-$$Lambda$LiveGiftBackpackFragment$YASZnpqosvHs_k8LnFxBXfPTj-c
-        @Override // androidx.lifecycle.Observer
         public final void onChanged(Object obj) {
             LiveGiftBackpackFragment.a(LiveGiftBackpackFragment.this, (LiveGiftBackpackModel) obj);
         }
@@ -249,11 +249,11 @@ public class LiveGiftBackpackFragment extends LiveGiftBackpackBaseFragment<LiveG
 
     private final void G() {
         if (this.I.size() > 2) {
-            Fragment fragment = this.I.get(2);
-            Intrinsics.c(fragment, "viewFragmentList[2]");
-            Fragment fragment2 = fragment;
-            if (fragment2 instanceof LiveGiftBackpackItemFragment) {
-                ((LiveGiftBackpackItemFragment) fragment2).k();
+            LiveGiftBackpackItemFragment liveGiftBackpackItemFragment = this.I.get(2);
+            Intrinsics.c(liveGiftBackpackItemFragment, "viewFragmentList[2]");
+            LiveGiftBackpackItemFragment liveGiftBackpackItemFragment2 = (Fragment) liveGiftBackpackItemFragment;
+            if (liveGiftBackpackItemFragment2 instanceof LiveGiftBackpackItemFragment) {
+                liveGiftBackpackItemFragment2.k();
             }
         }
     }
@@ -269,11 +269,11 @@ public class LiveGiftBackpackFragment extends LiveGiftBackpackBaseFragment<LiveG
 
     /* JADX INFO: Access modifiers changed from: private */
     public final LiveGiftFragment I() {
-        return (LiveGiftFragment) getParentFragment();
+        return getParentFragment();
     }
 
     private final LiveGiftFragment J() {
-        return (LiveGiftFragment) getParentFragment();
+        return getParentFragment();
     }
 
     private final void K() {
@@ -313,7 +313,7 @@ public class LiveGiftBackpackFragment extends LiveGiftBackpackBaseFragment<LiveG
             LiveGiftModel liveGiftModel3 = this.O;
             Intrinsics.a(liveGiftModel3);
             if (liveGiftModel3.is_join_ticket == 1 && LiveRoomManager.a().q() != null && LiveRoomManager.a().q().fans_status == 0) {
-                StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
+                StringCompanionObject stringCompanionObject = StringCompanionObject.a;
                 String string = getResources().getString(R.string.live_fans_name_join_tip);
                 Intrinsics.c(string, "resources.getString(R.st….live_fans_name_join_tip)");
                 LiveGiftModel liveGiftModel4 = this.O;
@@ -422,9 +422,7 @@ public class LiveGiftBackpackFragment extends LiveGiftBackpackBaseFragment<LiveG
         final ActivityFragmentActive fragmentActive = getFragmentActive();
         LiveRoomHttpUtils.a(liveGiftModel.decoration_id, liveGiftModel.decoration_type, z, new BluedUIHttpResponse<BluedEntityA<CountModel>>(z2, this, fragmentActive) { // from class: com.blued.android.module.live_china.mine.backpack.LiveGiftBackpackFragment$useCardFrame$1
             final /* synthetic */ boolean b;
-
-            /* renamed from: c  reason: collision with root package name */
-            final /* synthetic */ LiveGiftBackpackFragment f13918c;
+            final /* synthetic */ LiveGiftBackpackFragment c;
 
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -444,7 +442,7 @@ public class LiveGiftBackpackFragment extends LiveGiftBackpackBaseFragment<LiveG
             public void onUIFinish() {
                 Dialog dialog;
                 super.onUIFinish();
-                dialog = this.f13918c.P;
+                dialog = this.c.P;
                 DialogUtils.b(dialog);
             }
         }, getFragmentActive());
@@ -469,9 +467,7 @@ public class LiveGiftBackpackFragment extends LiveGiftBackpackBaseFragment<LiveG
         final ActivityFragmentActive fragmentActive = getFragmentActive();
         LiveRoomHttpUtils.a(liveGiftModel.goods_id, z, new BluedUIHttpResponse<BluedEntityA<CountModel>>(z2, this, fragmentActive) { // from class: com.blued.android.module.live_china.mine.backpack.LiveGiftBackpackFragment$useAvatar$1
             final /* synthetic */ boolean b;
-
-            /* renamed from: c  reason: collision with root package name */
-            final /* synthetic */ LiveGiftBackpackFragment f13912c;
+            final /* synthetic */ LiveGiftBackpackFragment c;
 
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -491,7 +487,7 @@ public class LiveGiftBackpackFragment extends LiveGiftBackpackBaseFragment<LiveG
             public void onUIFinish() {
                 Dialog dialog;
                 super.onUIFinish();
-                dialog = this.f13912c.P;
+                dialog = this.c.P;
                 DialogUtils.b(dialog);
             }
         }, getFragmentActive());
@@ -516,9 +512,7 @@ public class LiveGiftBackpackFragment extends LiveGiftBackpackBaseFragment<LiveG
         final ActivityFragmentActive fragmentActive = getFragmentActive();
         LiveRoomHttpUtils.b(liveGiftModel.goods_id, z, new BluedUIHttpResponse<BluedEntityA<CountModel>>(z2, this, fragmentActive) { // from class: com.blued.android.module.live_china.mine.backpack.LiveGiftBackpackFragment$useBadge$1
             final /* synthetic */ boolean b;
-
-            /* renamed from: c  reason: collision with root package name */
-            final /* synthetic */ LiveGiftBackpackFragment f13914c;
+            final /* synthetic */ LiveGiftBackpackFragment c;
 
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -538,7 +532,7 @@ public class LiveGiftBackpackFragment extends LiveGiftBackpackBaseFragment<LiveG
             public void onUIFinish() {
                 Dialog dialog;
                 super.onUIFinish();
-                dialog = this.f13914c.P;
+                dialog = this.c.P;
                 DialogUtils.b(dialog);
             }
         }, getFragmentActive());
@@ -576,7 +570,7 @@ public class LiveGiftBackpackFragment extends LiveGiftBackpackBaseFragment<LiveG
                         ToastUtils.a(getResources().getString(R.string.live_shout_card_send_tips));
                         return;
                     }
-                    LiveShoutCardViewDialog.Companion companion = LiveShoutCardViewDialog.f13263a;
+                    LiveShoutCardViewDialog.Companion companion = LiveShoutCardViewDialog.a;
                     String str2 = liveGiftModel.pop_up_title;
                     Intrinsics.c(str2, "selectedModel.pop_up_title");
                     String str3 = liveGiftModel.pop_up_description;
@@ -592,14 +586,14 @@ public class LiveGiftBackpackFragment extends LiveGiftBackpackBaseFragment<LiveG
                     }, 200L);
                 }
             } else if (str.equals("1")) {
-                LiveRoomInfo a2 = LiveRoomInfo.a();
-                FragmentActivity activity = getActivity();
+                LiveRoomInfo a = LiveRoomInfo.a();
+                Context context = (Context) getActivity();
                 FragmentManager fragmentManager = getFragmentManager();
                 Object obj = liveGiftModel.extraModel;
                 if (obj == null) {
                     throw new NullPointerException("null cannot be cast to non-null type com.blued.android.module.common.model.LiveChargeCouponModel");
                 }
-                a2.a(activity, fragmentManager, 2, (LiveChargeCouponModel) obj);
+                a.a(context, fragmentManager, 2, (LiveChargeCouponModel) obj);
             }
             EventTrackLive.p(LiveProtos.Event.LIVE_GIFT_COUPON_PAGE_ONE_USE, LiveRoomManager.a().e(), LiveRoomManager.a().g(), liveGiftModel.goods_id);
         }
@@ -621,9 +615,7 @@ public class LiveGiftBackpackFragment extends LiveGiftBackpackBaseFragment<LiveG
         final ActivityFragmentActive fragmentActive = getFragmentActive();
         LiveRoomHttpUtils.c(liveGiftModel.goods_id, z, new BluedUIHttpResponse<BluedEntityA<CountModel>>(z2, this, fragmentActive) { // from class: com.blued.android.module.live_china.mine.backpack.LiveGiftBackpackFragment$useBubbleBg$1
             final /* synthetic */ boolean b;
-
-            /* renamed from: c  reason: collision with root package name */
-            final /* synthetic */ LiveGiftBackpackFragment f13916c;
+            final /* synthetic */ LiveGiftBackpackFragment c;
 
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -643,7 +635,7 @@ public class LiveGiftBackpackFragment extends LiveGiftBackpackBaseFragment<LiveG
             public void onUIFinish() {
                 Dialog dialog;
                 super.onUIFinish();
-                dialog = this.f13916c.P;
+                dialog = this.c.P;
                 DialogUtils.b(dialog);
             }
         }, getFragmentActive());
@@ -684,11 +676,11 @@ public class LiveGiftBackpackFragment extends LiveGiftBackpackBaseFragment<LiveG
                     AppMethods.a((CharSequence) bluedEntityA.message);
                 }
                 if (this.b.getParentFragment() instanceof LivePocketDialogFragment) {
-                    Fragment parentFragment = this.b.getParentFragment();
+                    LivePocketDialogFragment parentFragment = this.b.getParentFragment();
                     if (parentFragment == null) {
                         throw new NullPointerException("null cannot be cast to non-null type com.blued.android.module.live_china.fragment.LivePocketDialogFragment");
                     }
-                    ((LivePocketDialogFragment) parentFragment).g();
+                    parentFragment.g();
                 }
             }
         });
@@ -896,12 +888,12 @@ public class LiveGiftBackpackFragment extends LiveGiftBackpackBaseFragment<LiveG
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(DialogInterface dialogInterface) {
-        LiveGiftPayTools.f14162a = false;
+        LiveGiftPayTools.a = false;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(DialogInterface dialogInterface, int i) {
-        LiveGiftPayTools.f14162a = false;
+        LiveGiftPayTools.a = false;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1196,7 +1188,7 @@ public class LiveGiftBackpackFragment extends LiveGiftBackpackBaseFragment<LiveG
             liveGiftPackageModel.red_point = next.getRed_point();
             liveGiftPackageModel.red_point_cancel = next.getRed_point_cancel();
             if (next.getRed_point() == 1) {
-                LiveGiftBagRedDotControlManager.f13644a.a().a(next.getRed_point_word());
+                LiveGiftBagRedDotControlManager.a.a().a(next.getRed_point_word());
             }
             liveGiftPackageModel.red_point_word = next.getRed_point_word();
             liveGiftPackageModel.type_name = next.getKey();
@@ -1207,9 +1199,9 @@ public class LiveGiftBackpackFragment extends LiveGiftBackpackBaseFragment<LiveG
                 liveGiftPackageModel.showQuestion = true;
             }
             arrayList.add(liveGiftPackageModel);
-            BaseFragment a2 = this$0.a(liveGiftPackageModel);
-            this$0.ab.put(next.getKey(), (LiveGiftBackpackItemFragment) a2);
-            arrayList2.add(a2);
+            BaseFragment a = this$0.a(liveGiftPackageModel);
+            this$0.ab.put(next.getKey(), (LiveGiftBackpackItemFragment) a);
+            arrayList2.add(a);
         }
         this$0.E.clear();
         this$0.E.addAll(arrayList);
@@ -1230,7 +1222,7 @@ public class LiveGiftBackpackFragment extends LiveGiftBackpackBaseFragment<LiveG
         Intrinsics.e(this$0, "this$0");
         Intrinsics.c(liveGiftModel, "liveGiftModel");
         this$0.a((BaseGiftModel) liveGiftModel, true);
-        LiveGiftBackpackItemObserver.f13929a.a().a(liveGiftModel);
+        LiveGiftBackpackItemObserver.a.a().a(liveGiftModel);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1254,7 +1246,7 @@ public class LiveGiftBackpackFragment extends LiveGiftBackpackBaseFragment<LiveG
 
     private final void a(LiveGiftModel liveGiftModel) {
         LiveGiftPayTools.b();
-        if (LiveGiftPayTools.f14162a) {
+        if (LiveGiftPayTools.a) {
             return;
         }
         LiveGiftFragment J = J();
@@ -1273,8 +1265,8 @@ public class LiveGiftBackpackFragment extends LiveGiftBackpackBaseFragment<LiveG
                         Intrinsics.c(str, "getString(R.string.Live_effect_not_enough)");
                     }
                 }
-                LiveGiftPayTools.f14162a = true;
-                CommonAlertDialog.a((Context) getActivity(), (View) null, "", str, getString(R.string.cancel), getString(R.string.Live_SendPresent_recharge), new DialogInterface.OnClickListener() { // from class: com.blued.android.module.live_china.mine.backpack.-$$Lambda$LiveGiftBackpackFragment$MMFdI5XVjQPz0_Hq-nIYe6icHYE
+                LiveGiftPayTools.a = true;
+                CommonAlertDialog.a(getActivity(), (View) null, "", str, getString(R.string.cancel), getString(R.string.Live_SendPresent_recharge), new DialogInterface.OnClickListener() { // from class: com.blued.android.module.live_china.mine.backpack.-$$Lambda$LiveGiftBackpackFragment$MMFdI5XVjQPz0_Hq-nIYe6icHYE
                     @Override // android.content.DialogInterface.OnClickListener
                     public final void onClick(DialogInterface dialogInterface, int i) {
                         LiveGiftBackpackFragment.b(LiveGiftBackpackFragment.this, dialogInterface, i);
@@ -1303,9 +1295,7 @@ public class LiveGiftBackpackFragment extends LiveGiftBackpackBaseFragment<LiveG
         final ActivityFragmentActive fragmentActive = getFragmentActive();
         LiveRoomHttpUtils.a(str, i, new BluedUIHttpResponse<BluedEntityA<LiveGiftModel>>(i2, this, fragmentActive) { // from class: com.blued.android.module.live_china.mine.backpack.LiveGiftBackpackFragment$equipEffectGift$1
             final /* synthetic */ int b;
-
-            /* renamed from: c  reason: collision with root package name */
-            final /* synthetic */ LiveGiftBackpackFragment f13903c;
+            final /* synthetic */ LiveGiftBackpackFragment c;
 
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -1322,20 +1312,20 @@ public class LiveGiftBackpackFragment extends LiveGiftBackpackBaseFragment<LiveG
                 LiveGiftModel.this.sendGiftStatus = 0;
                 if (this.b == 1) {
                     ToastUtils.a("装备成功");
-                    textView2 = this.f13903c.y;
+                    textView2 = this.c.y;
                     if (textView2 != null) {
                         textView2.setText("取下");
                     }
                 } else {
                     ToastUtils.a("取消装备成功");
-                    textView = this.f13903c.y;
+                    textView = this.c.y;
                     if (textView != null) {
                         textView.setText("装备");
                     }
                 }
                 LiveGiftModel.this.is_use = this.b;
                 LiveEventBus.get("live_equip_effect_gift", LiveGiftModel.class).post(LiveGiftModel.this);
-                LiveGiftBackpackItemObserver.f13929a.a().a(LiveGiftModel.this, 16, this.b);
+                LiveGiftBackpackItemObserver.a.a().a(LiveGiftModel.this, 16, this.b);
             }
         });
         if (i2 == 0) {
@@ -1361,7 +1351,7 @@ public class LiveGiftBackpackFragment extends LiveGiftBackpackBaseFragment<LiveG
                 bundle.putSerializable("selected_model", liveGiftModel);
                 bundle.putInt("gift_count", i);
                 bundle.putString("title", getString(R.string.Live_SendPresent_resetPayPassword));
-                bundle.putString("content", getString(R.string.live_set_6_num));
+                bundle.putString(l.y, getString(R.string.live_set_6_num));
                 bundle.putString("http_host", LiveRoomInfo.a().m());
                 LiveRouteUtil.a(this, bundle, i2);
                 return;
@@ -1386,7 +1376,7 @@ public class LiveGiftBackpackFragment extends LiveGiftBackpackBaseFragment<LiveG
                 } else {
                     bundle2.putString("title", str);
                 }
-                bundle2.putString("content", getString(R.string.Live_SendPresent_verifyPasswordText));
+                bundle2.putString(l.y, getString(R.string.Live_SendPresent_verifyPasswordText));
                 LiveRouteUtil.a(this, bundle2, i2);
                 return;
             case 4221008:
@@ -1476,7 +1466,7 @@ public class LiveGiftBackpackFragment extends LiveGiftBackpackBaseFragment<LiveG
             liveGiftModel.user_store_count = liveZanExtraModel.user_store_count;
             liveGiftModel.danmu_count = liveZanExtraModel.danmu_count;
         }
-        LiveGiftBackpackItemObserver.f13929a.a().a(liveGiftModel, 19);
+        LiveGiftBackpackItemObserver.a.a().a(liveGiftModel, 19);
         if (LiveRoomManager.a().q() != null && LiveRoomManager.a().q().fans_status == 2 && liveGiftModel.beans_count >= 6.0d) {
             LiveFansObserver.a().d();
         }
@@ -1732,14 +1722,14 @@ public class LiveGiftBackpackFragment extends LiveGiftBackpackBaseFragment<LiveG
                 TextView textView2 = this.A;
                 Intrinsics.a(textView2);
                 textView2.setTextColor(getResources().getColor(R.color.syc_dark_b));
-                this.f13894a.setAlpha(1.0f);
+                this.a.setAlpha(1.0f);
                 return;
             }
         }
         TextView textView3 = this.A;
         Intrinsics.a(textView3);
         textView3.setTextColor(Color.parseColor("#8A8A8A"));
-        this.f13894a.setAlpha(0.15f);
+        this.a.setAlpha(0.15f);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:38:0x009f  */
@@ -1812,16 +1802,16 @@ public class LiveGiftBackpackFragment extends LiveGiftBackpackBaseFragment<LiveG
                             Intrinsics.a(liveGiftModel8);
                             long j = liveGiftModel8.effect.get(i2).expire;
                             Intrinsics.a(this.O);
-                            String a2 = CommonStringUtils.a(liveGiftModel.effect.get(i2).beans);
+                            String a = CommonStringUtils.a(liveGiftModel.effect.get(i2).beans);
                             StringBuilder sb = new StringBuilder();
-                            StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
+                            StringCompanionObject stringCompanionObject = StringCompanionObject.a;
                             String string = getResources().getString(R.string.bug_1_months);
                             Intrinsics.c(string, "resources.getString(R.string.bug_1_months)");
                             String format = String.format(string, Arrays.copyOf(new Object[]{String.valueOf(j)}, 1));
                             Intrinsics.c(format, "format(format, *args)");
                             sb.append(format);
                             sb.append('(');
-                            sb.append((Object) a2);
+                            sb.append((Object) a);
                             sb.append(getResources().getString(R.string.Live_SendPresent_wandou));
                             sb.append(')');
                             strArr[i2] = sb.toString();
@@ -1888,8 +1878,8 @@ public class LiveGiftBackpackFragment extends LiveGiftBackpackBaseFragment<LiveG
             if (liveGiftModel.effectModel == null) {
                 return;
             }
-            FragmentActivity activity = getActivity();
-            StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
+            Context activity = getActivity();
+            StringCompanionObject stringCompanionObject = StringCompanionObject.a;
             String string = getString(R.string.verify_renew_mounts);
             Intrinsics.c(string, "getString(R.string.verify_renew_mounts)");
             LiveGiftModel liveGiftModel2 = this.O;
@@ -1963,7 +1953,7 @@ public class LiveGiftBackpackFragment extends LiveGiftBackpackBaseFragment<LiveG
         }
         StringBuilder sb = new StringBuilder();
         sb.append('(');
-        StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
+        StringCompanionObject stringCompanionObject = StringCompanionObject.a;
         String string = getResources().getString(R.string.live_contain);
         Intrinsics.c(string, "resources.getString(R.string.live_contain)");
         String format = String.format(string, Arrays.copyOf(new Object[]{CommonStringUtils.d(String.valueOf(basePayRemaining.bonus))}, 1));
@@ -1982,11 +1972,11 @@ public class LiveGiftBackpackFragment extends LiveGiftBackpackBaseFragment<LiveG
                 Intrinsics.a(J);
                 J.finish();
             }
-            LiveRoomInfo.a().a(this$0.getActivity(), 2);
+            LiveRoomInfo.a().a((Context) this$0.getActivity(), 2);
         } else {
-            LiveRoomInfo.a().a(this$0.getActivity(), this$0.getFragmentManager(), 2);
+            LiveRoomInfo.a().a((Context) this$0.getActivity(), this$0.getFragmentManager(), 2);
         }
-        LiveGiftPayTools.f14162a = false;
+        LiveGiftPayTools.a = false;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -2054,7 +2044,7 @@ public class LiveGiftBackpackFragment extends LiveGiftBackpackBaseFragment<LiveG
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void d(int i) {
-        LiveGiftBagRedDotControlManager.f13644a.a().b(C().getAdapter().getDataList().get(i).red_point_word);
+        LiveGiftBagRedDotControlManager.a.a().b(C().getAdapter().getDataList().get(i).red_point_word);
         C().getAdapter().getDataList().get(i).hasNew = false;
         C().getAdapter().getDataList().get(i).red_point_cancel = 0;
         LiveRoomHttpUtils.b((BluedUIHttpResponse) null, C().getAdapter().getDataList().get(i).red_point_word);
@@ -2298,11 +2288,11 @@ public class LiveGiftBackpackFragment extends LiveGiftBackpackBaseFragment<LiveG
     public static final void o(LiveGiftBackpackFragment this$0) {
         Intrinsics.e(this$0, "this$0");
         if (this$0.I.size() > 0) {
-            Fragment fragment = this$0.I.get(0);
-            Intrinsics.c(fragment, "viewFragmentList[position]");
-            Fragment fragment2 = fragment;
-            if (fragment2 instanceof LiveGiftBackpackItemFragment) {
-                ((LiveGiftBackpackItemFragment) fragment2).j();
+            LiveGiftBackpackItemFragment liveGiftBackpackItemFragment = this$0.I.get(0);
+            Intrinsics.c(liveGiftBackpackItemFragment, "viewFragmentList[position]");
+            LiveGiftBackpackItemFragment liveGiftBackpackItemFragment2 = (Fragment) liveGiftBackpackItemFragment;
+            if (liveGiftBackpackItemFragment2 instanceof LiveGiftBackpackItemFragment) {
+                liveGiftBackpackItemFragment2.j();
             }
         }
     }
@@ -2459,20 +2449,20 @@ public class LiveGiftBackpackFragment extends LiveGiftBackpackBaseFragment<LiveG
                 }
             }
             liveGiftBackpackItemFragment.setArguments(bundle);
-            return liveGiftBackpackItemFragment;
+            return (BaseFragment) liveGiftBackpackItemFragment;
         }
         throw new NullPointerException("null cannot be cast to non-null type com.blued.android.module.live_china.model.LiveGiftPackageModel");
     }
 
     public final void a(int i) {
         if (this.I.size() > i) {
-            Fragment fragment = this.I.get(i);
-            Intrinsics.c(fragment, "viewFragmentList[position]");
-            Fragment fragment2 = fragment;
-            if (fragment2 instanceof LiveGiftBackpackItemFragment) {
-                BaseFragment c2 = ((LiveGiftBackpackItemFragment) fragment2).c();
-                if (c2 != null && (c2 instanceof LiveGiftBackpackParentFragment)) {
-                    ((LiveGiftBackpackParentFragment) c2).g();
+            LiveGiftBackpackItemFragment liveGiftBackpackItemFragment = this.I.get(i);
+            Intrinsics.c(liveGiftBackpackItemFragment, "viewFragmentList[position]");
+            LiveGiftBackpackItemFragment liveGiftBackpackItemFragment2 = (Fragment) liveGiftBackpackItemFragment;
+            if (liveGiftBackpackItemFragment2 instanceof LiveGiftBackpackItemFragment) {
+                BaseFragment c = liveGiftBackpackItemFragment2.c();
+                if (c != null && (c instanceof LiveGiftBackpackParentFragment)) {
+                    ((LiveGiftBackpackParentFragment) c).g();
                     return;
                 }
                 LiveEventBus.get("live_gift_backpack_pager_send_status").post(false);
@@ -2496,7 +2486,7 @@ public class LiveGiftBackpackFragment extends LiveGiftBackpackBaseFragment<LiveG
         this.p = (ImageView) this.i.findViewById(R.id.live_gift_first_charge_iv);
         this.t = (TextView) this.i.findViewById(R.id.price_view);
         this.A = (TextView) this.i.findViewById(R.id.gift_select_num_text);
-        this.f13894a = (ImageView) this.i.findViewById(R.id.gift_select_num_image);
+        this.a = (ImageView) this.i.findViewById(R.id.gift_select_num_image);
         this.B = (LinearLayout) this.i.findViewById(R.id.gift_select_num_view);
         this.u = (TextView) this.i.findViewById(R.id.top_up_view);
         LinearLayout linearLayout = this.B;
@@ -2514,7 +2504,7 @@ public class LiveGiftBackpackFragment extends LiveGiftBackpackBaseFragment<LiveG
         }
         this.b = this.i.findViewById(R.id.live_gift_number_select_layout);
         this.C = this.i.findViewById(R.id.live_gift_number_select_card);
-        this.f13895c = (ListView) this.i.findViewById(R.id.live_gift_number_select_list);
+        this.c = (ListView) this.i.findViewById(R.id.live_gift_number_select_list);
         this.r = (FrameLayout) this.i.findViewById(R.id.live_gift_avatar_qa_layout);
         this.s = (ImageView) this.i.findViewById(R.id.live_gift_avatar_qa_iv);
         ImageView imageView = (ImageView) this.i.findViewById(R.id.iv_live_backpack_back);
@@ -2596,7 +2586,6 @@ public class LiveGiftBackpackFragment extends LiveGiftBackpackBaseFragment<LiveG
         D().registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() { // from class: com.blued.android.module.live_china.mine.backpack.LiveGiftBackpackFragment$onInitView$7
             /* JADX WARN: Removed duplicated region for block: B:12:0x005a  */
             /* JADX WARN: Removed duplicated region for block: B:43:0x0134  */
-            @Override // androidx.viewpager2.widget.ViewPager2.OnPageChangeCallback
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
                 To view partially-correct code enable 'Show inconsistent code' option in preferences
@@ -2709,11 +2698,11 @@ public class LiveGiftBackpackFragment extends LiveGiftBackpackBaseFragment<LiveG
 
     public final void b(int i) {
         if (this.I.size() > i) {
-            Fragment fragment = this.I.get(i);
-            Intrinsics.c(fragment, "viewFragmentList[position]");
-            Fragment fragment2 = fragment;
-            if (fragment2 instanceof LiveGiftBackpackItemFragment) {
-                ((LiveGiftBackpackItemFragment) fragment2).g();
+            LiveGiftBackpackItemFragment liveGiftBackpackItemFragment = this.I.get(i);
+            Intrinsics.c(liveGiftBackpackItemFragment, "viewFragmentList[position]");
+            LiveGiftBackpackItemFragment liveGiftBackpackItemFragment2 = (Fragment) liveGiftBackpackItemFragment;
+            if (liveGiftBackpackItemFragment2 instanceof LiveGiftBackpackItemFragment) {
+                liveGiftBackpackItemFragment2.g();
             }
         }
     }
@@ -2729,17 +2718,17 @@ public class LiveGiftBackpackFragment extends LiveGiftBackpackBaseFragment<LiveG
     }
 
     protected final CommonGiftPackageModel<?> c(String str) {
-        int a2;
+        int a;
         if (str == null) {
             return null;
         }
         Object[] array = StringsKt.b((CharSequence) str, new String[]{BridgeUtil.UNDERLINE_STR}, false, 0, 6, (Object) null).toArray(new String[0]);
         if (array != null) {
             String[] strArr = (String[]) array;
-            if (strArr.length <= 1 || this.E.size() <= (a2 = CommonStringUtils.a(strArr[0]))) {
+            if (strArr.length <= 1 || this.E.size() <= (a = CommonStringUtils.a(strArr[0]))) {
                 return null;
             }
-            return this.E.get(a2);
+            return this.E.get(a);
         }
         throw new NullPointerException("null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>");
     }
@@ -2820,7 +2809,6 @@ public class LiveGiftBackpackFragment extends LiveGiftBackpackBaseFragment<LiveG
         return LiveDataManager.a().f() ? R.layout.fragment_live_gift_backpack_land : R.layout.fragment_live_gift_backpack;
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         super.onActivityResult(i, i2, intent);
         if (i2 == -1) {
@@ -2851,7 +2839,7 @@ public class LiveGiftBackpackFragment extends LiveGiftBackpackBaseFragment<LiveG
         }
     }
 
-    @Override // com.blued.android.module.live_china.mine.backpack.LiveGiftBackpackBaseFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.live_china.mine.backpack.LiveGiftBackpackBaseFragment, com.blued.android.core.ui.BaseFragment
     public void onHiddenChanged(boolean z) {
         super.onHiddenChanged(z);
         if (z) {
@@ -2880,58 +2868,49 @@ public class LiveGiftBackpackFragment extends LiveGiftBackpackBaseFragment<LiveG
     }
 
     public final void z() {
-        LiveGiftBackpackFragment liveGiftBackpackFragment = this;
-        LiveEventBus.get("key_event_live_gift_backpack_data", LiveGiftBackpackModel.class).observe(liveGiftBackpackFragment, this.ae);
-        LiveEventBus.get(LiveEventBusUtil.s, String.class).observe(liveGiftBackpackFragment, new Observer() { // from class: com.blued.android.module.live_china.mine.backpack.-$$Lambda$LiveGiftBackpackFragment$POCyL2ExvjC3PynAunSgXmmgo58
-            @Override // androidx.lifecycle.Observer
+        LifecycleOwner lifecycleOwner = (LifecycleOwner) this;
+        LiveEventBus.get("key_event_live_gift_backpack_data", LiveGiftBackpackModel.class).observe(lifecycleOwner, this.ae);
+        LiveEventBus.get(LiveEventBusUtil.s, String.class).observe(lifecycleOwner, new Observer() { // from class: com.blued.android.module.live_china.mine.backpack.-$$Lambda$LiveGiftBackpackFragment$POCyL2ExvjC3PynAunSgXmmgo58
             public final void onChanged(Object obj) {
                 LiveGiftBackpackFragment.b(LiveGiftBackpackFragment.this, (String) obj);
             }
         });
-        LiveEventBus.get("gift_backpack_item_clicked", LiveGiftModel.class).observe(liveGiftBackpackFragment, new Observer() { // from class: com.blued.android.module.live_china.mine.backpack.-$$Lambda$LiveGiftBackpackFragment$XMFNXQFdKTDiOcxJXijQ6NRqlWA
-            @Override // androidx.lifecycle.Observer
+        LiveEventBus.get("gift_backpack_item_clicked", LiveGiftModel.class).observe(lifecycleOwner, new Observer() { // from class: com.blued.android.module.live_china.mine.backpack.-$$Lambda$LiveGiftBackpackFragment$XMFNXQFdKTDiOcxJXijQ6NRqlWA
             public final void onChanged(Object obj) {
                 LiveGiftBackpackFragment.a(LiveGiftBackpackFragment.this, (LiveGiftModel) obj);
             }
         });
-        LiveEventBus.get("gift_backpack_renew_clicked", Boolean.TYPE).observe(liveGiftBackpackFragment, new Observer() { // from class: com.blued.android.module.live_china.mine.backpack.-$$Lambda$LiveGiftBackpackFragment$qS_iL8euN3-7pG3T5zXylDj7JSA
-            @Override // androidx.lifecycle.Observer
+        LiveEventBus.get("gift_backpack_renew_clicked", Boolean.TYPE).observe(lifecycleOwner, new Observer() { // from class: com.blued.android.module.live_china.mine.backpack.-$$Lambda$LiveGiftBackpackFragment$qS_iL8euN3-7pG3T5zXylDj7JSA
             public final void onChanged(Object obj) {
                 LiveGiftBackpackFragment.a(LiveGiftBackpackFragment.this, (Boolean) obj);
             }
         });
-        LiveEventBus.get("live_gift_backpack_pager_send_status", Boolean.TYPE).observe(liveGiftBackpackFragment, new Observer() { // from class: com.blued.android.module.live_china.mine.backpack.-$$Lambda$LiveGiftBackpackFragment$IrPVlzhPSmuH6Q6b1nGbINQXMHA
-            @Override // androidx.lifecycle.Observer
+        LiveEventBus.get("live_gift_backpack_pager_send_status", Boolean.TYPE).observe(lifecycleOwner, new Observer() { // from class: com.blued.android.module.live_china.mine.backpack.-$$Lambda$LiveGiftBackpackFragment$IrPVlzhPSmuH6Q6b1nGbINQXMHA
             public final void onChanged(Object obj) {
                 LiveGiftBackpackFragment.b(LiveGiftBackpackFragment.this, (Boolean) obj);
             }
         });
-        LiveEventBus.get("gold_remain_result", BasePayRemaining.class).observe(liveGiftBackpackFragment, new Observer() { // from class: com.blued.android.module.live_china.mine.backpack.-$$Lambda$LiveGiftBackpackFragment$Q9MXKCralfQJF5m0su_KULRE2hA
-            @Override // androidx.lifecycle.Observer
+        LiveEventBus.get("gold_remain_result", BasePayRemaining.class).observe(lifecycleOwner, new Observer() { // from class: com.blued.android.module.live_china.mine.backpack.-$$Lambda$LiveGiftBackpackFragment$Q9MXKCralfQJF5m0su_KULRE2hA
             public final void onChanged(Object obj) {
                 LiveGiftBackpackFragment.a(LiveGiftBackpackFragment.this, (BasePayRemaining) obj);
             }
         });
-        LiveEventBus.get(LiveEventBusUtil.j, Integer.TYPE).observe(liveGiftBackpackFragment, new Observer() { // from class: com.blued.android.module.live_china.mine.backpack.-$$Lambda$LiveGiftBackpackFragment$14rHuUz1JE9RsUQ6H3j-Y1lqUQM
-            @Override // androidx.lifecycle.Observer
+        LiveEventBus.get(LiveEventBusUtil.j, Integer.TYPE).observe(lifecycleOwner, new Observer() { // from class: com.blued.android.module.live_china.mine.backpack.-$$Lambda$LiveGiftBackpackFragment$14rHuUz1JE9RsUQ6H3j-Y1lqUQM
             public final void onChanged(Object obj) {
                 LiveGiftBackpackFragment.a(LiveGiftBackpackFragment.this, (Integer) obj);
             }
         });
-        LiveEventBus.get("live_gift_bag_page_switch", String.class).observe(liveGiftBackpackFragment, new Observer() { // from class: com.blued.android.module.live_china.mine.backpack.-$$Lambda$LiveGiftBackpackFragment$0iXViUqBT5GqpRbzD0K4ikXT5N0
-            @Override // androidx.lifecycle.Observer
+        LiveEventBus.get("live_gift_bag_page_switch", String.class).observe(lifecycleOwner, new Observer() { // from class: com.blued.android.module.live_china.mine.backpack.-$$Lambda$LiveGiftBackpackFragment$0iXViUqBT5GqpRbzD0K4ikXT5N0
             public final void onChanged(Object obj) {
                 LiveGiftBackpackFragment.c(LiveGiftBackpackFragment.this, (String) obj);
             }
         });
-        LiveEventBus.get("gift_backpack_package_selected", Integer.TYPE).observe(liveGiftBackpackFragment, new Observer() { // from class: com.blued.android.module.live_china.mine.backpack.-$$Lambda$LiveGiftBackpackFragment$9nS-VtxxQVShrWiZrN2oHmF2bME
-            @Override // androidx.lifecycle.Observer
+        LiveEventBus.get("gift_backpack_package_selected", Integer.TYPE).observe(lifecycleOwner, new Observer() { // from class: com.blued.android.module.live_china.mine.backpack.-$$Lambda$LiveGiftBackpackFragment$9nS-VtxxQVShrWiZrN2oHmF2bME
             public final void onChanged(Object obj) {
                 LiveGiftBackpackFragment.b(LiveGiftBackpackFragment.this, (Integer) obj);
             }
         });
-        LiveEventBus.get(LiveEventBusUtil.w, Integer.TYPE).observe(liveGiftBackpackFragment, new Observer() { // from class: com.blued.android.module.live_china.mine.backpack.-$$Lambda$LiveGiftBackpackFragment$2NabsVy8-MtKdl9yWembtzyARlg
-            @Override // androidx.lifecycle.Observer
+        LiveEventBus.get(LiveEventBusUtil.w, Integer.TYPE).observe(lifecycleOwner, new Observer() { // from class: com.blued.android.module.live_china.mine.backpack.-$$Lambda$LiveGiftBackpackFragment$2NabsVy8-MtKdl9yWembtzyARlg
             public final void onChanged(Object obj) {
                 LiveGiftBackpackFragment.d(LiveGiftBackpackFragment.this, ((Integer) obj).intValue());
             }

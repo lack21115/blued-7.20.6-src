@@ -45,7 +45,6 @@ import com.blued.android.module.common.url.BluedHttpUrl;
 import com.blued.android.module.common.url.Host;
 import com.blued.android.module.common.utils.BluedSharedPreferences;
 import com.blued.android.module.common.utils.NetworkUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.blued.android.module.live_china.observer.LiveSysNetworkObserver;
 import com.blued.android.module.svgaplayer.SVGAParser;
 import com.blued.android.module.yy_china.broadcastReceiver.YYNetworkReceiver;
@@ -203,7 +202,7 @@ public class BluedApplicationLike extends DefaultApplicationLike {
                     str2 = context.getPackageName();
                 }
                 WebView.setDataDirectorySuffix(str2);
-                str = BridgeUtil.UNDERLINE_STR + str2;
+                str = "_" + str2;
             }
             tryLockOrRecreateFile(context, str);
         } catch (Exception e) {
@@ -225,7 +224,7 @@ public class BluedApplicationLike extends DefaultApplicationLike {
         Host.a();
         initCoroutineRequestHost();
         initChatManager();
-        BDActivityManager.f34819a.a(application, null);
+        BDActivityManager.f21128a.a(application, null);
         application.registerActivityLifecycleCallbacks(new Application.ActivityLifecycleCallbacks() { // from class: com.soft.blued.app.BluedApplicationLike.2
             @Override // android.app.Application.ActivityLifecycleCallbacks
             public void onActivityCreated(Activity activity, Bundle bundle) {
@@ -242,7 +241,7 @@ public class BluedApplicationLike extends DefaultApplicationLike {
             @Override // android.app.Application.ActivityLifecycleCallbacks
             public void onActivityResumed(Activity activity) {
                 SendNotificationManager.a().b(activity);
-                FollowedUsersNotificationManager.f29698a.b(activity);
+                FollowedUsersNotificationManager.f16008a.b(activity);
             }
 
             @Override // android.app.Application.ActivityLifecycleCallbacks
@@ -256,7 +255,7 @@ public class BluedApplicationLike extends DefaultApplicationLike {
             @Override // android.app.Application.ActivityLifecycleCallbacks
             public void onActivityStopped(Activity activity) {
                 SendNotificationManager.a().a(activity);
-                FollowedUsersNotificationManager.f29698a.a(activity);
+                FollowedUsersNotificationManager.f16008a.a(activity);
             }
         });
     }
@@ -284,7 +283,7 @@ public class BluedApplicationLike extends DefaultApplicationLike {
             e = c2;
         } else {
             LocaleUtils.a(AppInfo.d(), e);
-            Logger.b("xpf", "not equal");
+            Logger.b("xpf", new Object[]{"not equal"});
         }
         String language = e != null ? e.getLanguage() : "";
         if (!TextUtils.isEmpty(language)) {
@@ -305,8 +304,8 @@ public class BluedApplicationLike extends DefaultApplicationLike {
         BluedURIRouter.a().d("bd_uri_router.json");
         BluedURIRouter.a().e("bd_uri_prefix.json");
         BluedURIRouter.a().c("com.blued.android.similarity_operation_provider.BluedURIRouterAdapter");
-        BluedWebViewCache.a("https://web.bldimg.com", "https://www.bldimg.com");
-        BluedWebViewCache.b(Stone.CSS_SUFFIX, Stone.JS_SUFFIX);
+        BluedWebViewCache.a(new String[]{"https://web.bldimg.com", "https://www.bldimg.com"});
+        BluedWebViewCache.b(new String[]{Stone.CSS_SUFFIX, Stone.JS_SUFFIX});
     }
 
     public static void initChatManager() {
@@ -407,7 +406,7 @@ public class BluedApplicationLike extends DefaultApplicationLike {
         getApplication().getBaseContext().registerReceiver(new BroadcastReceiver() { // from class: com.soft.blued.app.BluedApplicationLike.7
             @Override // android.content.BroadcastReceiver
             public void onReceive(Context context, Intent intent) {
-                DownLoadADApkHelper.f34639a.a(intent);
+                DownLoadADApkHelper.f20948a.a(intent);
             }
         }, intentFilter);
         IntentFilter intentFilter2 = new IntentFilter();
@@ -543,12 +542,12 @@ public class BluedApplicationLike extends DefaultApplicationLike {
         new BluedTinkerReport().a(new BluedTinkerReport.Reporter() { // from class: com.soft.blued.app.BluedApplicationLike.1
             @Override // com.soft.blued.tinker.reporter.BluedTinkerReport.Reporter
             public void a(int i) {
-                Logger.b("PTH", "key:", Integer.valueOf(i));
+                Logger.b("PTH", new Object[]{"key:", Integer.valueOf(i)});
             }
 
             @Override // com.soft.blued.tinker.reporter.BluedTinkerReport.Reporter
             public void a(String str) {
-                Logger.b("PTH", "message:", str);
+                Logger.b("PTH", new Object[]{"message:", str});
             }
         });
         handleWebViewDir(getApplication());
@@ -578,7 +577,7 @@ public class BluedApplicationLike extends DefaultApplicationLike {
             initYYRoomCallBack();
             initSobotSdk();
             uploadExceptionEvent();
-            SVGAParser.f15958a.b().a(getApplication());
+            SVGAParser.a.b().a(getApplication());
             try {
                 InitTaskManager.a().a(getApplication(), GOTO_FIRST_ACTIVITY_CLASSES, (InitTaskManager.OnTaskListBuilder) Class.forName("com.soft.blued.app.InitTaskUtil").getMethod("generateTaskListBuilder", new Class[0]).invoke(null, new Object[0]));
             } catch (ClassNotFoundException e) {

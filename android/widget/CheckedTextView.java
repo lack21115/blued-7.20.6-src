@@ -16,7 +16,7 @@ import com.android.internal.R;
 
 /* loaded from: source-4181928-dex2jar.jar:android/widget/CheckedTextView.class */
 public class CheckedTextView extends TextView implements Checkable {
-    private static final int[] CHECKED_STATE_SET = {16842912};
+    private static final int[] CHECKED_STATE_SET = {R.attr.state_checked};
     private int mBasePadding;
     private Drawable mCheckMarkDrawable;
     private int mCheckMarkGravity;
@@ -34,7 +34,7 @@ public class CheckedTextView extends TextView implements Checkable {
     }
 
     public CheckedTextView(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, 16843720);
+        this(context, attributeSet, R.attr.checkedTextViewStyle);
     }
 
     public CheckedTextView(Context context, AttributeSet attributeSet, int i) {

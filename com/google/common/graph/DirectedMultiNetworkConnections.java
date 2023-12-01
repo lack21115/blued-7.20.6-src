@@ -39,7 +39,7 @@ final class DirectedMultiNetworkConnections<N, E> extends AbstractDirectedNetwor
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static <N, E> DirectedMultiNetworkConnections<N, E> ofImmutable(Map<E, N> map, Map<E, N> map2, int i) {
-        return new DirectedMultiNetworkConnections<>(ImmutableMap.copyOf(map), ImmutableMap.copyOf(map2), i);
+        return new DirectedMultiNetworkConnections<>(ImmutableMap.copyOf((Map) map), ImmutableMap.copyOf((Map) map2), i);
     }
 
     private Multiset<N> predecessorsMultiset() {
@@ -84,7 +84,7 @@ final class DirectedMultiNetworkConnections<N, E> extends AbstractDirectedNetwor
     @Override // com.google.common.graph.NetworkConnections
     public Set<E> edgesConnecting(final N n) {
         return new MultiEdgesConnecting<E>(this.outEdgeMap, n) { // from class: com.google.common.graph.DirectedMultiNetworkConnections.1
-            @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+            @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
             public int size() {
                 return DirectedMultiNetworkConnections.this.successorsMultiset().count(n);
             }

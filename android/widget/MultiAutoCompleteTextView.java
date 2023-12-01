@@ -10,6 +10,7 @@ import android.util.AttributeSet;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.AutoCompleteTextView;
+import com.android.internal.R;
 
 /* loaded from: source-4181928-dex2jar.jar:android/widget/MultiAutoCompleteTextView.class */
 public class MultiAutoCompleteTextView extends AutoCompleteTextView {
@@ -88,7 +89,7 @@ public class MultiAutoCompleteTextView extends AutoCompleteTextView {
     }
 
     public MultiAutoCompleteTextView(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, 16842859);
+        this(context, attributeSet, R.attr.autoCompleteTextViewStyle);
     }
 
     public MultiAutoCompleteTextView(Context context, AttributeSet attributeSet, int i) {

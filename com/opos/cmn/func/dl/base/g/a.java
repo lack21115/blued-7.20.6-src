@@ -9,11 +9,11 @@ import com.opos.libs.a.a;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f24931a = a.class.getSimpleName();
+    private static final String f11243a = a.class.getSimpleName();
     private com.opos.libs.a.a b;
 
     /* renamed from: c  reason: collision with root package name */
-    private b f24932c;
+    private b f11244c;
     private DownloadRequest d;
     private DownloadResponse e = new DownloadResponse();
     private com.opos.cmn.func.dl.base.a.b f;
@@ -21,8 +21,8 @@ public class a {
     public a(com.opos.cmn.func.dl.base.a.b bVar, b bVar2) {
         this.f = bVar;
         this.d = bVar.q;
-        this.f24932c = bVar2;
-        a.C0668a a2 = new a.C0668a(0).a(0, 1).a(1, 2, 7, 4).a(2, 3, 4, 5).a(3, 4, 5, 6, 7).a(4, 1, 5);
+        this.f11244c = bVar2;
+        a.C0498a a2 = new a.C0498a(0).a(0, 1).a(1, 2, 7, 4).a(2, 3, 4, 5).a(3, 4, 5, 6, 7).a(4, 1, 5);
         if (bVar.o) {
             a2.a(7, 1, 5, 4);
         }
@@ -34,17 +34,17 @@ public class a {
         synchronized (this) {
             int a2 = a();
             z = i == this.b.a(i) && i != a2;
-            String str = f24931a;
+            String str = f11243a;
             com.opos.cmn.an.f.a.b(str, "Change state:" + a2 + "to " + i + ",result:" + z);
         }
         return z;
     }
 
     private void i() {
-        this.e.f24873a = a();
+        this.e.f11185a = a();
         this.e.d = this.f.k;
         this.e.b = this.f.l;
-        this.e.f24874c = this.f.s.get();
+        this.e.f11186c = this.f.s.get();
         this.e.e = a() == 3 ? this.e.e : 0L;
     }
 
@@ -61,7 +61,7 @@ public class a {
             if (a() == 3) {
                 i();
                 this.e.e = j;
-                this.f24932c.c(this.d, this.e);
+                this.f11244c.c(this.d, this.e);
             }
         }
     }
@@ -74,7 +74,7 @@ public class a {
                     this.f.a(0L);
                 }
                 i();
-                this.f24932c.a(this.d, this.e, dlException);
+                this.f11244c.a(this.d, this.e, dlException);
             }
         }
     }
@@ -101,7 +101,7 @@ public class a {
         synchronized (this) {
             if (a(2)) {
                 i();
-                this.f24932c.a(this.d, this.e);
+                this.f11244c.a(this.d, this.e);
                 z = true;
             } else {
                 z = false;
@@ -115,7 +115,7 @@ public class a {
         synchronized (this) {
             if (a(3)) {
                 i();
-                this.f24932c.b(this.d, this.e);
+                this.f11244c.b(this.d, this.e);
                 z = true;
             } else {
                 z = false;
@@ -133,7 +133,7 @@ public class a {
                     this.f.a(0L);
                 }
                 i();
-                this.f24932c.d(this.d, this.e);
+                this.f11244c.d(this.d, this.e);
                 z = true;
             } else {
                 z = false;
@@ -147,7 +147,7 @@ public class a {
         synchronized (this) {
             if (a(5)) {
                 i();
-                this.f24932c.e(this.d, this.e);
+                this.f11244c.e(this.d, this.e);
                 z = true;
             } else {
                 z = false;
@@ -163,7 +163,7 @@ public class a {
                     this.f.k = this.f.s.get();
                 }
                 i();
-                this.f24932c.f(this.d, this.e);
+                this.f11244c.f(this.d, this.e);
             }
         }
     }

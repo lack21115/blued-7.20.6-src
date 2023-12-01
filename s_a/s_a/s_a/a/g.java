@@ -9,18 +9,13 @@ import android.os.RemoteException;
 import android.text.TextUtils;
 import android.util.Log;
 import com.anythink.core.api.ErrorCode;
-import com.youzan.androidsdk.tool.AppSigning;
 import s_a.s_a.s_a.b;
 
 /* loaded from: source-3503164-dex2jar.jar:s_a/s_a/s_a/a/g.class */
 public class g {
-
-    /* renamed from: a  reason: collision with root package name */
-    public volatile s_a.s_a.s_a.b f44184a = null;
+    public volatile s_a.s_a.s_a.b a = null;
     public String b = null;
-
-    /* renamed from: c  reason: collision with root package name */
-    public String f44185c = null;
+    public String c = null;
     public final Object d = new Object();
     public ServiceConnection e = new a();
 
@@ -32,7 +27,7 @@ public class g {
         @Override // android.content.ServiceConnection
         public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
             f.a(ErrorCode.inNetworkErrorCodeRequestFailPacing);
-            g.this.f44184a = b.a.a(iBinder);
+            g.this.a = b.a.a(iBinder);
             synchronized (g.this.d) {
                 f.a("2015");
                 g.this.d.notify();
@@ -42,15 +37,13 @@ public class g {
         @Override // android.content.ServiceConnection
         public void onServiceDisconnected(ComponentName componentName) {
             f.a("2016");
-            g.this.f44184a = null;
+            g.this.a = null;
         }
     }
 
     /* loaded from: source-3503164-dex2jar.jar:s_a/s_a/s_a/a/g$b.class */
     public static class b {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static final g f44187a = new g();
+        public static final g a = new g();
     }
 
     public String a(Context context, String str) {
@@ -59,7 +52,7 @@ public class g {
         } catch (RemoteException e) {
             str2 = "1005";
         }
-        if (this.f44184a == null) {
+        if (this.a == null) {
             f.a(ErrorCode.loadCappingError);
             Intent intent = new Intent();
             intent.setComponent(new ComponentName(s_a.s_a.s_a.a.a.a("Y29tLmNvbG9yb3MubWNz"), "com.oplus.stdid.IdentifyService"));
@@ -68,10 +61,10 @@ public class g {
             try {
                 if (context.bindService(intent, this.e, 1)) {
                     f.a(ErrorCode.networkFirmIdfilterSourceError);
-                    if (this.f44184a == null) {
+                    if (this.a == null) {
                         synchronized (this.d) {
                             try {
-                                if (this.f44184a == null) {
+                                if (this.a == null) {
                                     this.d.wait(10000L);
                                 }
                             } catch (InterruptedException e2) {
@@ -88,7 +81,7 @@ public class g {
                 sb.append(e3.getMessage() != null ? e3.getMessage() : e3.getLocalizedMessage());
                 Log.e("IDHelper", sb.toString());
             }
-            if (this.f44184a == null) {
+            if (this.a == null) {
                 str2 = "1004";
                 Log.e("IDHelper", str2);
                 return "";
@@ -104,12 +97,12 @@ public class g {
         if (TextUtils.isEmpty(this.b)) {
             this.b = context.getPackageName();
         }
-        if (TextUtils.isEmpty(this.f44185c)) {
-            this.f44185c = s_a.s_a.s_a.a.a.a(context, this.b, AppSigning.SHA1);
+        if (TextUtils.isEmpty(this.c)) {
+            this.c = s_a.s_a.s_a.a.a.a(context, this.b, "SHA1");
         }
         f.a("2017");
-        if (this.f44184a != null) {
-            String a2 = this.f44184a.a(this.b, this.f44185c, str);
+        if (this.a != null) {
+            String a2 = this.a.a(this.b, this.c, str);
             f.a("2018");
             return TextUtils.isEmpty(a2) ? "" : a2;
         }

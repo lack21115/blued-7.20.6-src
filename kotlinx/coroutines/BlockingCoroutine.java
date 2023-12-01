@@ -16,11 +16,11 @@ final class BlockingCoroutine<T> extends AbstractCoroutine<T> {
             return;
         }
         Thread thread = this.b;
-        AbstractTimeSource a2 = AbstractTimeSourceKt.a();
-        if (a2 == null) {
+        AbstractTimeSource a = AbstractTimeSourceKt.a();
+        if (a == null) {
             LockSupport.unpark(thread);
         } else {
-            a2.a(thread);
+            a.a(thread);
         }
     }
 

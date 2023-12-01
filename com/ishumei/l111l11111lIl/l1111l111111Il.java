@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.text.TextUtils;
 import android.util.Log;
+import com.baidu.mobads.sdk.internal.at;
 import com.ishumei.l1111l111111Il.l111l1111llIl;
 import com.ishumei.l1111l111111Il.l11l1111I1l;
 import com.ishumei.l111l1111llIl.l111l1111lI1l;
@@ -30,10 +31,10 @@ public class l1111l111111Il {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.ishumei.l111l11111lIl.l1111l111111Il$l1111l111111Il  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/ishumei/l111l11111lIl/l1111l111111Il$l1111l111111Il.class */
-    public static final class C0455l1111l111111Il {
+    public static final class C0285l1111l111111Il {
         private static final l1111l111111Il l1111l111111Il = new l1111l111111Il((byte) 0);
 
-        private C0455l1111l111111Il() {
+        private C0285l1111l111111Il() {
         }
     }
 
@@ -49,7 +50,7 @@ public class l1111l111111Il {
     }
 
     public static l1111l111111Il l1111l111111Il() {
-        return C0455l1111l111111Il.l1111l111111Il;
+        return C0285l1111l111111Il.l1111l111111Il;
     }
 
     private l111l11111lIl l1111l111111Il(Context context) {
@@ -65,7 +66,7 @@ public class l1111l111111Il {
             i2 = jSONObject.getInt("ver");
         }
         l111l11111lIl l1111l111111Il2 = l1111l111111Il(jSONObject.getString("data"), i, i3, i2);
-        l1111l111111Il2.l1111l111111Il("local");
+        l1111l111111Il2.l1111l111111Il(at.f6479a);
         return l1111l111111Il2;
     }
 
@@ -158,7 +159,7 @@ public class l1111l111111Il {
             if (!l111l1111lI1l.l111l11111I1l(string)) {
                 JSONObject jSONObject = new JSONObject(string);
                 l111l11111lil = l1111l111111Il(jSONObject.getString("data"), jSONObject.getInt("length"), jSONObject.has("enc") ? jSONObject.getInt("enc") : 0, jSONObject.has("ver") ? jSONObject.getInt("ver") : 0);
-                l111l11111lil.l1111l111111Il("local");
+                l111l11111lil.l1111l111111Il(at.f6479a);
             }
             if (l111l11111lil != null) {
                 return l111l11111lil;

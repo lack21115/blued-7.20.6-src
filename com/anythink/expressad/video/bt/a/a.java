@@ -12,28 +12,28 @@ import org.json.JSONObject;
 public class a {
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f8284c = a.class.getSimpleName();
+    private static final String f5444c = a.class.getSimpleName();
     private static LinkedHashMap<String, AnythinkBTVideoView> e = new LinkedHashMap<>();
     private String d = "handlerNativeResult";
 
     /* renamed from: a  reason: collision with root package name */
-    int f8285a = 0;
+    int f5445a = 0;
     int b = 1;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.anythink.expressad.video.bt.a.a$a  reason: collision with other inner class name */
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/video/bt/a/a$a.class */
-    public static final class C0158a {
+    public static final class C0087a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static a f8286a = new a();
+        private static a f5446a = new a();
 
-        private C0158a() {
+        private C0087a() {
         }
     }
 
     public static a a() {
-        return C0158a.f8286a;
+        return C0087a.f5446a;
     }
 
     private static void a(int i, String str, Object obj) {
@@ -43,9 +43,9 @@ public class a {
             jSONObject.put("message", str);
             j.a().a(obj, Base64.encodeToString(jSONObject.toString().getBytes(), 2));
         } catch (JSONException e2) {
-            o.a(f8284c, e2.getMessage());
+            o.a(f5444c, e2.getMessage());
         } catch (Throwable th) {
-            o.a(f8284c, th.getMessage());
+            o.a(f5444c, th.getMessage());
         }
     }
 

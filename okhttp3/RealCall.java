@@ -1,5 +1,6 @@
 package okhttp3;
 
+import com.android.internal.location.GpsNetInitiatedHandler;
 import java.io.IOException;
 import java.io.InterruptedIOException;
 import java.util.ArrayList;
@@ -252,7 +253,7 @@ public final class RealCall implements Call {
     @Nullable
     public IOException timeoutExit(@Nullable IOException iOException) {
         if (this.timeout.exit()) {
-            InterruptedIOException interruptedIOException = new InterruptedIOException("timeout");
+            InterruptedIOException interruptedIOException = new InterruptedIOException(GpsNetInitiatedHandler.NI_INTENT_KEY_TIMEOUT);
             if (iOException != null) {
                 interruptedIOException.initCause(iOException);
             }

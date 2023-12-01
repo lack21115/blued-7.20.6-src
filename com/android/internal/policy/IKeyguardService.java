@@ -532,7 +532,7 @@ public interface IKeyguardService extends IInterface {
                     return true;
                 case 17:
                     parcel.enforceInterface(DESCRIPTOR);
-                    doKeyguardTimeout(parcel.readInt() != 0 ? Bundle.CREATOR.createFromParcel(parcel) : null);
+                    doKeyguardTimeout(parcel.readInt() != 0 ? (Bundle) Bundle.CREATOR.createFromParcel(parcel) : null);
                     return true;
                 case 18:
                     parcel.enforceInterface(DESCRIPTOR);
@@ -544,7 +544,7 @@ public interface IKeyguardService extends IInterface {
                     return true;
                 case 20:
                     parcel.enforceInterface(DESCRIPTOR);
-                    dispatch(parcel.readInt() != 0 ? MotionEvent.CREATOR.createFromParcel(parcel) : null);
+                    dispatch(parcel.readInt() != 0 ? (MotionEvent) MotionEvent.CREATOR.createFromParcel(parcel) : null);
                     return true;
                 case 21:
                     parcel.enforceInterface(DESCRIPTOR);
@@ -558,7 +558,7 @@ public interface IKeyguardService extends IInterface {
                     parcel.enforceInterface(DESCRIPTOR);
                     onActivityDrawn();
                     return true;
-                case IBinder.INTERFACE_TRANSACTION /* 1598968902 */:
+                case 1598968902:
                     parcel2.writeString(DESCRIPTOR);
                     return true;
                 default:

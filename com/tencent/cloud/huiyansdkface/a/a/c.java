@@ -6,16 +6,16 @@ import java.util.List;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private List<e> f35435a;
+    private List<e> f21744a;
     private f b;
 
     /* renamed from: c  reason: collision with root package name */
-    private g<com.tencent.cloud.huiyansdkface.a.a.a.d> f35436c = com.tencent.cloud.huiyansdkface.a.a.b.e.f35433a;
-    private g<com.tencent.cloud.huiyansdkface.a.a.a.d> d = com.tencent.cloud.huiyansdkface.a.a.b.e.f35433a;
-    private g<com.tencent.cloud.huiyansdkface.a.a.a.d> e = com.tencent.cloud.huiyansdkface.a.a.b.e.f35433a;
-    private g<String> f = com.tencent.cloud.huiyansdkface.a.a.b.e.f35433a;
-    private g<String> g = com.tencent.cloud.huiyansdkface.a.a.b.e.f35433a;
-    private g<com.tencent.cloud.huiyansdkface.a.a.a.b> h = com.tencent.cloud.huiyansdkface.a.a.b.e.f35433a;
+    private g<com.tencent.cloud.huiyansdkface.a.a.a.d> f21745c = com.tencent.cloud.huiyansdkface.a.a.b.e.f21742a;
+    private g<com.tencent.cloud.huiyansdkface.a.a.a.d> d = com.tencent.cloud.huiyansdkface.a.a.b.e.f21742a;
+    private g<com.tencent.cloud.huiyansdkface.a.a.a.d> e = com.tencent.cloud.huiyansdkface.a.a.b.e.f21742a;
+    private g<String> f = com.tencent.cloud.huiyansdkface.a.a.b.e.f21742a;
+    private g<String> g = com.tencent.cloud.huiyansdkface.a.a.b.e.f21742a;
+    private g<com.tencent.cloud.huiyansdkface.a.a.a.b> h = com.tencent.cloud.huiyansdkface.a.a.b.e.f21742a;
     private float i = -1.0f;
 
     public c a(float f) {
@@ -32,18 +32,18 @@ public class c {
 
     public c a(g<com.tencent.cloud.huiyansdkface.a.a.a.d> gVar) {
         if (gVar != null) {
-            this.f35436c = gVar;
+            this.f21745c = gVar;
         }
         return this;
     }
 
     public c a(List<e> list) {
-        this.f35435a = list;
+        this.f21744a = list;
         return this;
     }
 
     public List<e> a() {
-        return this.f35435a;
+        return this.f21744a;
     }
 
     public c b(g<com.tencent.cloud.huiyansdkface.a.a.a.d> gVar) {
@@ -76,7 +76,7 @@ public class c {
     }
 
     public g<com.tencent.cloud.huiyansdkface.a.a.a.d> d() {
-        return this.f35436c;
+        return this.f21745c;
     }
 
     public c e(g<String> gVar) {

@@ -54,7 +54,7 @@ public class ShareActionProvider extends ActionProvider {
             Intent chooseActivity = ActivityChooserModel.get(ShareActionProvider.this.mContext, ShareActionProvider.this.mShareHistoryFileName).chooseActivity(menuItem.getItemId());
             if (chooseActivity != null) {
                 String action = chooseActivity.getAction();
-                if (Intent.ACTION_SEND.equals(action) || Intent.ACTION_SEND_MULTIPLE.equals(action)) {
+                if ("android.intent.action.SEND".equals(action) || "android.intent.action.SEND_MULTIPLE".equals(action)) {
                     chooseActivity.addFlags(134742016);
                 }
                 ShareActionProvider.this.mContext.startActivity(chooseActivity);
@@ -68,7 +68,7 @@ public class ShareActionProvider extends ActionProvider {
         super(context);
         this.mMaxShownActivityCount = 4;
         this.mOnMenuItemClickListener = new ShareMenuItemOnMenuItemClickListener();
-        this.mShareHistoryFileName = "share_history.xml";
+        this.mShareHistoryFileName = DEFAULT_SHARE_HISTORY_FILE_NAME;
         this.mContext = context;
     }
 
@@ -94,7 +94,7 @@ public class ShareActionProvider extends ActionProvider {
             activityChooserView.setActivityChooserModel(ActivityChooserModel.get(this.mContext, this.mShareHistoryFileName));
         }
         TypedValue typedValue = new TypedValue();
-        this.mContext.getTheme().resolveAttribute(16843897, typedValue, true);
+        this.mContext.getTheme().resolveAttribute(R.attr.actionModeShareDrawable, typedValue, true);
         activityChooserView.setExpandActivityOverflowButtonDrawable(this.mContext.getDrawable(typedValue.resourceId));
         activityChooserView.setProvider(this);
         activityChooserView.setDefaultActionButtonContentDescription(R.string.shareactionprovider_share_with_application);
@@ -148,7 +148,7 @@ public class ShareActionProvider extends ActionProvider {
     public void setShareIntent(Intent intent) {
         if (intent != null) {
             String action = intent.getAction();
-            if (Intent.ACTION_SEND.equals(action) || Intent.ACTION_SEND_MULTIPLE.equals(action)) {
+            if ("android.intent.action.SEND".equals(action) || "android.intent.action.SEND_MULTIPLE".equals(action)) {
                 intent.addFlags(134742016);
             }
         }

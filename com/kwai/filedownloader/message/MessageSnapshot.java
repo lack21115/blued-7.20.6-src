@@ -11,7 +11,7 @@ public abstract class MessageSnapshot implements Parcelable, c {
         private static MessageSnapshot a(Parcel parcel) {
             boolean z = parcel.readByte() == 1;
             byte readByte = parcel.readByte();
-            MessageSnapshot bVar = readByte != -4 ? readByte != -3 ? readByte != -1 ? readByte != 1 ? readByte != 2 ? readByte != 3 ? readByte != 5 ? readByte != 6 ? null : new b(parcel) : z ? new d.h(parcel) : new h.C0592h(parcel) : z ? new d.g(parcel) : new h.g(parcel) : z ? new d.c(parcel) : new h.c(parcel) : z ? new d.f(parcel) : new h.f(parcel) : z ? new d.C0591d(parcel) : new h.d(parcel) : z ? new d.b(parcel) : new h.b(parcel) : z ? new d.j(parcel) : new h.j(parcel);
+            MessageSnapshot bVar = readByte != -4 ? readByte != -3 ? readByte != -1 ? readByte != 1 ? readByte != 2 ? readByte != 3 ? readByte != 5 ? readByte != 6 ? null : new b(parcel) : z ? new d.h(parcel) : new h.C0422h(parcel) : z ? new d.g(parcel) : new h.g(parcel) : z ? new d.c(parcel) : new h.c(parcel) : z ? new d.f(parcel) : new h.f(parcel) : z ? new d.C0421d(parcel) : new h.d(parcel) : z ? new d.b(parcel) : new h.b(parcel) : z ? new d.j(parcel) : new h.j(parcel);
             if (bVar != null) {
                 bVar.aIv = z;
                 return bVar;

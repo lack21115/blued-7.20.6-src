@@ -1,6 +1,7 @@
 package com.blued.android.module.live_china.mine;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -77,11 +78,11 @@ public class LiveGiftSkinDlgFragment extends LiveBaseDialogFragment {
         public void onBindViewHolderData(final LiveGiftSkinItemModel liveGiftSkinItemModel, int i, CommonRecycleAdapter.CommonAdapterHolder commonAdapterHolder) {
             String str;
             String str2;
-            View a2 = commonAdapterHolder.a(R.id.item_live_gift_skin_layout);
-            ViewGroup.LayoutParams layoutParams = a2.getLayoutParams();
+            View a = commonAdapterHolder.a(R.id.item_live_gift_skin_layout);
+            ViewGroup.LayoutParams layoutParams = a.getLayoutParams();
             if (layoutParams.width != a()) {
                 layoutParams.width = a();
-                a2.setLayoutParams(layoutParams);
+                a.setLayoutParams(layoutParams);
             }
             int i2 = R.id.item_live_gift_skin_body_level;
             if (liveGiftSkinItemModel.is_original) {
@@ -207,15 +208,15 @@ public class LiveGiftSkinDlgFragment extends LiveBaseDialogFragment {
             @Override // com.blued.android.module.common.adapter.CommonAdapter
             public void a(CommonAdapter.ViewHolder viewHolder, LiveGiftSkinModel liveGiftSkinModel, int i) {
                 viewHolder.a(R.id.item_live_gift_skin_name, liveGiftSkinModel.name);
-                RecyclerView recyclerView = (RecyclerView) viewHolder.a(R.id.item_live_gift_skin_rv);
-                if (recyclerView.getLayoutManager() == null) {
-                    recyclerView.setLayoutManager(new LinearLayoutManager(recyclerView.getContext(), 0, false));
+                RecyclerView a = viewHolder.a(R.id.item_live_gift_skin_rv);
+                if (a.getLayoutManager() == null) {
+                    a.setLayoutManager(new LinearLayoutManager(a.getContext(), 0, false));
                 }
-                GiftSkinAdapter giftSkinAdapter = (GiftSkinAdapter) recyclerView.getAdapter();
+                GiftSkinAdapter giftSkinAdapter = (GiftSkinAdapter) a.getAdapter();
                 GiftSkinAdapter giftSkinAdapter2 = giftSkinAdapter;
                 if (giftSkinAdapter == null) {
                     giftSkinAdapter2 = new GiftSkinAdapter(AppInfo.d());
-                    recyclerView.setAdapter(giftSkinAdapter2);
+                    a.setAdapter(giftSkinAdapter2);
                 }
                 giftSkinAdapter2.setDataAndNotify(liveGiftSkinModel.data);
             }
@@ -251,7 +252,7 @@ public class LiveGiftSkinDlgFragment extends LiveBaseDialogFragment {
     @Override // com.blued.android.module.common.fragment.LiveBaseDialogFragment
     public void f() {
         super.f();
-        this.r = this.f10822c.getString("goods_id");
+        this.r = this.c.getString("goods_id");
     }
 
     @Override // com.blued.android.module.common.fragment.LiveBaseDialogFragment
@@ -319,7 +320,7 @@ public class LiveGiftSkinDlgFragment extends LiveBaseDialogFragment {
     @Override // com.blued.android.module.common.fragment.LiveBaseDialogFragment
     public void j() {
         if (getTargetFragment() != null) {
-            getTargetFragment().onActivityResult(getTargetRequestCode(), -1, null);
+            getTargetFragment().onActivityResult(getTargetRequestCode(), -1, (Intent) null);
         }
         super.j();
     }
@@ -330,7 +331,7 @@ public class LiveGiftSkinDlgFragment extends LiveBaseDialogFragment {
         return true;
     }
 
-    @Override // com.blued.android.module.common.fragment.LiveBaseDialogFragment, com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.common.fragment.LiveBaseDialogFragment, com.blued.android.core.ui.BaseDialogFragment
     public void onViewCreated(View view, Bundle bundle) {
         super.onViewCreated(view, bundle);
         ViewGroup.LayoutParams layoutParams = this.k.getLayoutParams();

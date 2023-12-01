@@ -21,13 +21,9 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/b/a.class */
 public class a extends d {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final String f6337a = a.class.getSimpleName();
+    public static final String a = a.class.getSimpleName();
     private List<ai> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private com.anythink.core.b.b.a f6338c;
+    private com.anythink.core.b.b.a c;
     private long g;
 
     public a(com.anythink.core.common.e.a aVar) {
@@ -66,7 +62,7 @@ public class a extends d {
         double a2 = a(lVar.getSortPrice(), aiVar);
         double d = a2;
         if (a2 <= 0.0d) {
-            Log.w(n.f6818a, "NetworkName:" + aiVar.d() + ",AdSoruceId:" + aiVar.t() + " c2s price return 0,please check network placement c2s config");
+            Log.w(n.a, "NetworkName:" + aiVar.d() + ",AdSoruceId:" + aiVar.t() + " c2s price return 0,please check network placement c2s config");
             d = com.anythink.core.common.k.g.a(aiVar);
         }
         m mVar = new m(true, d, lVar.token, lVar.winNoticeUrl, lVar.loseNoticeUrl, lVar.displayNoticeUrl, "");
@@ -79,7 +75,7 @@ public class a extends d {
         mVar.r = aVar;
         mVar.s = aVar != null;
         if (this.d != null) {
-            mVar.b(this.d.f6612c);
+            mVar.b(this.d.c);
         }
         a(aiVar.c(), mVar, 0.0d);
         a(aiVar, mVar);
@@ -121,15 +117,15 @@ public class a extends d {
             if (this.b.size() == 0) {
                 this.f.set(true);
             }
-            if (this.f6338c != null) {
+            if (this.c != null) {
                 if (!z) {
                     z = a(aiVar, aTBiddingResult.errorMsg, -1);
                 }
                 if (z) {
-                    this.f6338c.a(synchronizedList, (List<ai>) null);
+                    this.c.a(synchronizedList, (List<ai>) null);
                     return;
                 }
-                this.f6338c.a((List<ai>) null, synchronizedList);
+                this.c.a((List<ai>) null, synchronizedList);
             }
         }
     }
@@ -151,10 +147,10 @@ public class a extends d {
                 }
                 this.b.clear();
                 this.f.set(true);
-                if (this.f6338c != null) {
-                    this.f6338c.a(arrayList, arrayList2);
+                if (this.c != null) {
+                    this.c.a(arrayList, arrayList2);
                 }
-                this.f6338c = null;
+                this.c = null;
             }
         }
     }
@@ -162,7 +158,7 @@ public class a extends d {
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.anythink.core.b.d
     public final void a(com.anythink.core.b.b.a aVar) {
-        this.f6338c = aVar;
+        this.c = aVar;
         List<ai> list = this.d.i;
         int size = list.size();
         this.g = SystemClock.elapsedRealtime();
@@ -190,23 +186,23 @@ public class a extends d {
 
                         @Override // com.anythink.core.api.ATBiddingListener
                         public final void onC2SBidResult(ATBiddingResult aTBiddingResult) {
-                            if (this.f6360c != null) {
-                                this.f6360c.releaseLoadResource();
+                            if (this.c != null) {
+                                this.c.releaseLoadResource();
                             }
                             a(aTBiddingResult, null);
                         }
 
                         @Override // com.anythink.core.api.ATBiddingListener
                         public final void onC2SBiddingResultWithCache(ATBiddingResult aTBiddingResult, BaseAd baseAd) {
-                            if (this.f6360c != null) {
-                                this.f6360c.releaseLoadResource();
+                            if (this.c != null) {
+                                this.c.releaseLoadResource();
                             }
-                            a(aTBiddingResult, new com.anythink.core.b.c.a(this.f6360c, baseAd));
+                            a(aTBiddingResult, new com.anythink.core.b.c.a(this.c, baseAd));
                         }
                     };
                     new StringBuilder("start c2s bid request: ").append(a2.getNetworkName());
-                    com.anythink.core.c.d a3 = com.anythink.core.c.e.a(this.d.f6611a).a(this.d.d);
-                    Map<String, Object> a4 = a3.a(this.d.d, this.d.f6612c, aiVar);
+                    com.anythink.core.c.d a3 = com.anythink.core.c.e.a(this.d.a).a(this.d.d);
+                    Map<String, Object> a4 = a3.a(this.d.d, this.d.c, aiVar);
                     double a5 = aiVar.a(a3);
                     if (a5 > 0.0d) {
                         a4.put("bid_floor", Double.valueOf(a5 * a(aiVar)));
@@ -220,7 +216,7 @@ public class a extends d {
                     Context a6 = this.d.b != null ? this.d.b.a() : null;
                     Context context = a6;
                     if (a6 == null) {
-                        context = this.d.f6611a;
+                        context = this.d.a;
                     }
                     boolean internalStartBiddingRequest = a2.internalStartBiddingRequest(context, a4, this.d.q, bVar);
                     aVar.a(aiVar, a2);

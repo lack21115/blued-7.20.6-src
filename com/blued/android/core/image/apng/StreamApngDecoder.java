@@ -16,12 +16,10 @@ import java.nio.ByteBuffer;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/image/apng/StreamApngDecoder.class */
 public class StreamApngDecoder implements ResourceDecoder<InputStream, APNGDrawable> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final ResourceDecoder<ByteBuffer, APNGDrawable> f9517a;
+    private final ResourceDecoder<ByteBuffer, APNGDrawable> a;
 
     public StreamApngDecoder(ResourceDecoder<ByteBuffer, APNGDrawable> resourceDecoder) {
-        this.f9517a = resourceDecoder;
+        this.a = resourceDecoder;
     }
 
     private static byte[] a(InputStream inputStream) {
@@ -41,11 +39,10 @@ public class StreamApngDecoder implements ResourceDecoder<InputStream, APNGDrawa
         }
     }
 
-    @Override // com.bumptech.glide.load.ResourceDecoder
     public Resource<APNGDrawable> a(InputStream inputStream, int i, int i2, Options options) throws IOException {
-        byte[] a2 = a(inputStream);
-        if (a2 != null) {
-            return this.f9517a.a(ByteBuffer.wrap(a2), i, i2, options);
+        byte[] a = a(inputStream);
+        if (a != null) {
+            return this.a.a(ByteBuffer.wrap(a), i, i2, options);
         } else if (ImageLoader.a()) {
             Log.e("IMAGE", "StreamApngDecoder -- decode null!!!");
             return null;
@@ -54,7 +51,6 @@ public class StreamApngDecoder implements ResourceDecoder<InputStream, APNGDrawa
         }
     }
 
-    @Override // com.bumptech.glide.load.ResourceDecoder
     public boolean a(InputStream inputStream, Options options) {
         if (ImageLoader.a()) {
             boolean booleanValue = ((Boolean) options.a(ImageLoaderOptions.b)).booleanValue();

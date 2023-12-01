@@ -11,11 +11,11 @@ abstract class g {
     public final int aP;
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f25128a = u.f("ftyp");
+    public static final int f11440a = u.f("ftyp");
     public static final int b = u.f("avc1");
 
     /* renamed from: c  reason: collision with root package name */
-    public static final int f25130c = u.f("avc3");
+    public static final int f11442c = u.f("avc3");
     public static final int d = u.f("hvc1");
     public static final int e = u.f("hev1");
     public static final int f = u.f("s263");
@@ -84,7 +84,7 @@ abstract class g {
     public static final int aq = u.f("stsz");
 
     /* renamed from: ar  reason: collision with root package name */
-    public static final int f25129ar = u.f("stz2");
+    public static final int f11441ar = u.f("stz2");
     public static final int as = u.f("stco");
     public static final int at = u.f("co64");
     public static final int au = u.f("tx3g");

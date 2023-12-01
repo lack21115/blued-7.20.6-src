@@ -10,14 +10,12 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ViewYyGoldListViewBinding.class */
 public final class ViewYyGoldListViewBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final RecyclerView f16920a;
+    public final RecyclerView a;
     private final ShapeLinearLayout b;
 
     private ViewYyGoldListViewBinding(ShapeLinearLayout shapeLinearLayout, RecyclerView recyclerView) {
         this.b = shapeLinearLayout;
-        this.f16920a = recyclerView;
+        this.a = recyclerView;
     }
 
     public static ViewYyGoldListViewBinding a(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
@@ -29,14 +27,13 @@ public final class ViewYyGoldListViewBinding implements ViewBinding {
     }
 
     public static ViewYyGoldListViewBinding a(View view) {
-        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rv_rank_list);
-        if (recyclerView != null) {
-            return new ViewYyGoldListViewBinding((ShapeLinearLayout) view, recyclerView);
+        RecyclerView findViewById = view.findViewById(R.id.rv_rank_list);
+        if (findViewById != null) {
+            return new ViewYyGoldListViewBinding((ShapeLinearLayout) view, findViewById);
         }
         throw new NullPointerException("Missing required view with ID: ".concat("rvRankList"));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ShapeLinearLayout getRoot() {
         return this.b;

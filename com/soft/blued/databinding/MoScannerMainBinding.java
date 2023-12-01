@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class MoScannerMainBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final RelativeLayout f29465a;
+    private final RelativeLayout f15775a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
-        return this.f29465a;
+        return this.f15775a;
     }
 }

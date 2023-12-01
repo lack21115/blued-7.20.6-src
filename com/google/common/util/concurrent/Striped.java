@@ -193,21 +193,21 @@ public abstract class Striped<L> {
                 Preconditions.checkElementIndex(i, size());
             }
             ArrayReference<? extends L> arrayReference = this.locks.get(i);
-            L l = arrayReference == null ? null : arrayReference.get();
-            if (l != null) {
-                return l;
+            Object obj = arrayReference == null ? null : arrayReference.get();
+            if (obj != null) {
+                return (L) obj;
             }
-            L l2 = this.supplier.get();
-            ArrayReference<? extends L> arrayReference2 = new ArrayReference<>(l2, i, this.queue);
+            L l = this.supplier.get();
+            ArrayReference<? extends L> arrayReference2 = new ArrayReference<>(l, i, this.queue);
             while (!this.locks.compareAndSet(i, arrayReference, arrayReference2)) {
                 arrayReference = this.locks.get(i);
-                L l3 = arrayReference == null ? null : arrayReference.get();
-                if (l3 != null) {
-                    return l3;
+                Object obj2 = arrayReference == null ? null : arrayReference.get();
+                if (obj2 != null) {
+                    return (L) obj2;
                 }
             }
             drainQueue();
-            return l2;
+            return l;
         }
 
         @Override // com.google.common.util.concurrent.Striped

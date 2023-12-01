@@ -51,7 +51,7 @@ public final class ChatroomRecommendUserModel {
         }
         if (obj instanceof ChatroomRecommendUserModel) {
             ChatroomRecommendUserModel chatroomRecommendUserModel = (ChatroomRecommendUserModel) obj;
-            return this.user_id == chatroomRecommendUserModel.user_id && Intrinsics.a((Object) this.avatar, (Object) chatroomRecommendUserModel.avatar);
+            return this.user_id == chatroomRecommendUserModel.user_id && Intrinsics.a(this.avatar, chatroomRecommendUserModel.avatar);
         }
         return false;
     }

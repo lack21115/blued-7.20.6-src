@@ -8,11 +8,11 @@ import java.util.concurrent.TimeoutException;
 public final class x {
 
     /* renamed from: a  reason: collision with root package name */
-    private final b f7742a;
+    private final b f4903a;
     private final a b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final ae f7743c;
+    private final ae f4904c;
     private int d;
     private Object e;
     private Handler f;
@@ -36,8 +36,8 @@ public final class x {
 
     public x(a aVar, b bVar, ae aeVar, int i, Handler handler) {
         this.b = aVar;
-        this.f7742a = bVar;
-        this.f7743c = aeVar;
+        this.f4903a = bVar;
+        this.f4904c = aeVar;
         this.f = handler;
         this.g = i;
     }
@@ -49,8 +49,8 @@ public final class x {
             z = false;
         }
         com.anythink.expressad.exoplayer.k.a.a(z);
-        if (i < 0 || (!this.f7743c.a() && i >= this.f7743c.b())) {
-            throw new o(this.f7743c, i, j);
+        if (i < 0 || (!this.f4904c.a() && i >= this.f4904c.b())) {
+            throw new o(this.f4904c, i, j);
         }
         this.g = i;
         this.h = j;
@@ -85,7 +85,7 @@ public final class x {
     }
 
     public final ae a() {
-        return this.f7743c;
+        return this.f4904c;
     }
 
     public final x a(int i) {
@@ -109,7 +109,7 @@ public final class x {
     }
 
     public final b b() {
-        return this.f7742a;
+        return this.f4903a;
     }
 
     public final int c() {

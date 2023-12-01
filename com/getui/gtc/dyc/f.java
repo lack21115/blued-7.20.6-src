@@ -13,10 +13,10 @@ import java.util.concurrent.ConcurrentHashMap;
 public class f {
 
     /* renamed from: a  reason: collision with root package name */
-    private e f21983a;
+    private e f8376a;
 
     /* renamed from: c  reason: collision with root package name */
-    private g f21984c;
+    private g f8377c;
     private final List<com.getui.gtc.dyc.b.c> d;
     private final Map<String, Object> e;
 
@@ -25,18 +25,18 @@ public class f {
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static f f21987a = new f();
+        private static f f8380a = new f();
     }
 
     private f() {
-        this.f21983a = e.a();
-        this.f21984c = g.a();
+        this.f8376a = e.a();
+        this.f8377c = g.a();
         this.d = new ArrayList();
         this.e = new ConcurrentHashMap();
     }
 
     public static f a() {
-        return a.f21987a;
+        return a.f8380a;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -46,7 +46,7 @@ public class f {
 
     public Map<String, String> a(final b bVar) {
         try {
-            final h a2 = this.f21983a.a(bVar.b());
+            final h a2 = this.f8376a.a(bVar.b());
             if (a2 == null || a(bVar, a2)) {
                 ScheduleQueue.getInstance().addSchedule(new Runnable() { // from class: com.getui.gtc.dyc.f.1
                     @Override // java.lang.Runnable
@@ -57,7 +57,7 @@ public class f {
                             }
                         }
                         synchronized (f.this.e.get(bVar.b())) {
-                            h a3 = f.this.f21983a.a(bVar.b());
+                            h a3 = f.this.f8376a.a(bVar.b());
                             if (a3 != null && ((a2 == null || (a3.f() != null && !a3.f().equals(a2.f()))) && bVar.i() != null)) {
                                 bVar.i().a(a2 == null ? null : a2.f(), a3.f());
                             }
@@ -65,15 +65,15 @@ public class f {
                                 if (a3 != null) {
                                     bVar.f(a3.d());
                                 }
-                                h a4 = f.this.f21984c.a(bVar);
+                                h a4 = f.this.f8377c.a(bVar);
                                 if (a4 != null) {
                                     if (TextUtils.isEmpty(a4.d())) {
                                         if (a3 != null) {
                                             a3.a(a4.c());
-                                            f.this.f21983a.a(bVar.b(), a3, a3);
+                                            f.this.f8376a.a(bVar.b(), a3, a3);
                                         }
                                     } else if (a4.f() != null) {
-                                        f.this.f21983a.a(bVar.b(), a3, a4);
+                                        f.this.f8376a.a(bVar.b(), a3, a4);
                                         if (bVar.i() != null) {
                                             bVar.i().a(a3 == null ? null : a3.f(), a4.f());
                                         }
@@ -98,7 +98,7 @@ public class f {
     }
 
     public Map<String, String> a(String str) {
-        h a2 = this.f21983a.a(str);
+        h a2 = this.f8376a.a(str);
         if (a2 == null) {
             return null;
         }
@@ -114,15 +114,15 @@ public class f {
     }
 
     public void a(String str, Map<String, String> map) {
-        h a2 = this.f21983a.a(str);
+        h a2 = this.f8376a.a(str);
         Map<String, String> f = a2.f();
         f.clear();
         f.putAll(map);
-        this.f21983a.a(str, a2, a2);
+        this.f8376a.a(str, a2, a2);
     }
 
     public Map<String, Map<String, String>> c() {
-        HashMap<String, h> c2 = this.f21983a.c();
+        HashMap<String, h> c2 = this.f8376a.c();
         if (c2 == null || c2.size() <= 0) {
             return null;
         }

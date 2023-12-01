@@ -23,6 +23,7 @@ public class LPaint extends Paint {
         setXfermode(new PorterDuffXfermode(mode));
     }
 
+    @Override // android.graphics.Paint
     public void setTextLocales(LocaleList localeList) {
     }
 }

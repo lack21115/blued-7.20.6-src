@@ -11,13 +11,9 @@ import kotlin.jvm.functions.Function3;
 @DebugMetadata(b = "Reduce.kt", c = {173}, d = "reduce", e = "kotlinx.coroutines.flow.FlowKt__ReduceKt")
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt__ReduceKt$reduce$1.class */
 public final class FlowKt__ReduceKt$reduce$1<S, T extends S> extends ContinuationImpl {
-
-    /* renamed from: a  reason: collision with root package name */
-    Object f43271a;
+    Object a;
     /* synthetic */ Object b;
-
-    /* renamed from: c  reason: collision with root package name */
-    int f43272c;
+    int c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public FlowKt__ReduceKt$reduce$1(Continuation<? super FlowKt__ReduceKt$reduce$1> continuation) {
@@ -27,7 +23,7 @@ public final class FlowKt__ReduceKt$reduce$1<S, T extends S> extends Continuatio
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         this.b = obj;
-        this.f43272c |= Integer.MIN_VALUE;
+        this.c |= Integer.MIN_VALUE;
         return FlowKt.a((Flow) null, (Function3) null, this);
     }
 }

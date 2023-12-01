@@ -72,9 +72,9 @@ public final class ConnectionPool {
             if (reference.get() != null) {
                 i++;
             } else {
-                Platform.e().a("A connection to " + realConnection.route().address().url() + " was leaked. Did you forget to close a response body?", ((StreamAllocation.StreamAllocationReference) reference).f43881a);
+                Platform.e().a("A connection to " + realConnection.route().address().url() + " was leaked. Did you forget to close a response body?", ((StreamAllocation.StreamAllocationReference) reference).a);
                 list.remove(i);
-                realConnection.f43871a = true;
+                realConnection.a = true;
                 if (list.isEmpty()) {
                     realConnection.e = j - this.keepAliveDurationNs;
                     return 0;
@@ -122,7 +122,7 @@ public final class ConnectionPool {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public boolean connectionBecameIdle(RealConnection realConnection) {
-        if (realConnection.f43871a || this.maxIdleConnections == 0) {
+        if (realConnection.a || this.maxIdleConnections == 0) {
             this.connections.remove(realConnection);
             return true;
         }
@@ -156,7 +156,7 @@ public final class ConnectionPool {
             while (it.hasNext()) {
                 RealConnection next = it.next();
                 if (next.d.isEmpty()) {
-                    next.f43871a = true;
+                    next.a = true;
                     arrayList.add(next);
                     it.remove();
                 }

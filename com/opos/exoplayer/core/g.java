@@ -9,11 +9,11 @@ import java.util.ArrayList;
 public class g implements v {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Context f25415a;
+    private final Context f11727a;
     private final com.opos.exoplayer.core.drm.b<com.opos.exoplayer.core.drm.d> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final int f25416c;
+    private final int f11728c;
     private final long d;
 
     public g(Context context) {
@@ -29,9 +29,9 @@ public class g implements v {
     }
 
     public g(Context context, com.opos.exoplayer.core.drm.b<com.opos.exoplayer.core.drm.d> bVar, int i, long j) {
-        this.f25415a = context;
+        this.f11727a = context;
         this.b = bVar;
-        this.f25416c = i;
+        this.f11728c = i;
         this.d = j;
     }
 
@@ -39,7 +39,7 @@ public class g implements v {
     }
 
     protected void a(Context context, com.opos.exoplayer.core.drm.b<com.opos.exoplayer.core.drm.d> bVar, long j, Handler handler, com.opos.exoplayer.core.video.f fVar, int i, ArrayList<s> arrayList) {
-        arrayList.add(new com.opos.exoplayer.core.video.c(context, com.opos.exoplayer.core.d.c.f25262a, j, bVar, false, handler, fVar, 50));
+        arrayList.add(new com.opos.exoplayer.core.video.c(context, com.opos.exoplayer.core.d.c.f11574a, j, bVar, false, handler, fVar, 50));
         if (i == 0) {
             return;
         }
@@ -60,7 +60,7 @@ public class g implements v {
     protected void a(Context context, com.opos.exoplayer.core.drm.b<com.opos.exoplayer.core.drm.d> bVar, com.opos.exoplayer.core.a.d[] dVarArr, Handler handler, com.opos.exoplayer.core.a.e eVar, int i, ArrayList<s> arrayList) {
         int i2;
         int i3;
-        arrayList.add(new com.opos.exoplayer.core.a.i(com.opos.exoplayer.core.d.c.f25262a, bVar, true, handler, eVar, com.opos.exoplayer.core.a.c.a(context), dVarArr));
+        arrayList.add(new com.opos.exoplayer.core.a.i(com.opos.exoplayer.core.d.c.f11574a, bVar, true, handler, eVar, com.opos.exoplayer.core.a.c.a(context), dVarArr));
         if (i == 0) {
             return;
         }
@@ -132,11 +132,11 @@ public class g implements v {
     @Override // com.opos.exoplayer.core.v
     public s[] a(Handler handler, com.opos.exoplayer.core.video.f fVar, com.opos.exoplayer.core.a.e eVar, com.opos.exoplayer.core.f.j jVar, com.opos.exoplayer.core.metadata.e eVar2) {
         ArrayList<s> arrayList = new ArrayList<>();
-        a(this.f25415a, this.b, this.d, handler, fVar, this.f25416c, arrayList);
-        a(this.f25415a, this.b, a(), handler, eVar, this.f25416c, arrayList);
-        a(this.f25415a, jVar, handler.getLooper(), this.f25416c, arrayList);
-        a(this.f25415a, eVar2, handler.getLooper(), this.f25416c, arrayList);
-        a(this.f25415a, handler, this.f25416c, arrayList);
+        a(this.f11727a, this.b, this.d, handler, fVar, this.f11728c, arrayList);
+        a(this.f11727a, this.b, a(), handler, eVar, this.f11728c, arrayList);
+        a(this.f11727a, jVar, handler.getLooper(), this.f11728c, arrayList);
+        a(this.f11727a, eVar2, handler.getLooper(), this.f11728c, arrayList);
+        a(this.f11727a, handler, this.f11728c, arrayList);
         return (s[]) arrayList.toArray(new s[arrayList.size()]);
     }
 }

@@ -15,7 +15,7 @@ import com.google.android.material.theme.overlay.MaterialThemeOverlay;
 /* loaded from: source-8110460-dex2jar.jar:com/google/android/material/switchmaterial/SwitchMaterial.class */
 public class SwitchMaterial extends SwitchCompat {
     private static final int DEF_STYLE_RES = R.style.Widget_MaterialComponents_CompoundButton_Switch;
-    private static final int[][] ENABLED_CHECKED_STATES = {new int[]{16842910, 16842912}, new int[]{16842910, -16842912}, new int[]{-16842910, 16842912}, new int[]{-16842910, -16842912}};
+    private static final int[][] ENABLED_CHECKED_STATES = {new int[]{android.R.attr.state_enabled, android.R.attr.state_checked}, new int[]{android.R.attr.state_enabled, -16842912}, new int[]{-16842910, android.R.attr.state_checked}, new int[]{-16842910, -16842912}};
     private final ElevationOverlayProvider elevationOverlayProvider;
     private ColorStateList materialThemeColorsThumbTintList;
     private ColorStateList materialThemeColorsTrackTintList;
@@ -77,9 +77,8 @@ public class SwitchMaterial extends SwitchCompat {
         return this.useMaterialThemeColors;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.TextView, android.view.View
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         if (this.useMaterialThemeColors && getThumbTintList() == null) {
             setThumbTintList(getMaterialThemeColorsThumbTintList());

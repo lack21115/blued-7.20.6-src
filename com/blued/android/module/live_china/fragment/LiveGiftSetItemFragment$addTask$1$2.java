@@ -15,16 +15,13 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
 import kotlin.jvm.internal.Ref;
 
+/* JADX INFO: Access modifiers changed from: package-private */
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveGiftSetItemFragment$addTask$1$2.class */
-final class LiveGiftSetItemFragment$addTask$1$2 extends Lambda implements Function1<DslSpannableStringBuilder, Unit> {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ int f12922a;
+public final class LiveGiftSetItemFragment$addTask$1$2 extends Lambda implements Function1<DslSpannableStringBuilder, Unit> {
+    final /* synthetic */ int a;
     final /* synthetic */ int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ int f12923c;
+    final /* synthetic */ int c;
     final /* synthetic */ Ref.ObjectRef<LiveGiftSetTaskItemBinding> d;
     final /* synthetic */ LiveGiftSetItemFragment e;
     final /* synthetic */ LiveGiftSetTaskModel f;
@@ -33,9 +30,9 @@ final class LiveGiftSetItemFragment$addTask$1$2 extends Lambda implements Functi
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public LiveGiftSetItemFragment$addTask$1$2(int i, int i2, int i3, Ref.ObjectRef<LiveGiftSetTaskItemBinding> objectRef, LiveGiftSetItemFragment liveGiftSetItemFragment, LiveGiftSetTaskModel liveGiftSetTaskModel) {
         super(1);
-        this.f12922a = i;
+        this.a = i;
         this.b = i2;
-        this.f12923c = i3;
+        this.c = i3;
         this.d = objectRef;
         this.e = liveGiftSetItemFragment;
         this.f = liveGiftSetTaskModel;
@@ -46,7 +43,7 @@ final class LiveGiftSetItemFragment$addTask$1$2 extends Lambda implements Functi
         Intrinsics.e(taskVB, "$taskVB");
         Intrinsics.e(this$0, "this$0");
         Intrinsics.e(info, "$info");
-        ImageView imageView = ((LiveGiftSetTaskItemBinding) taskVB.f42545a).f12231a;
+        ImageView imageView = ((LiveGiftSetTaskItemBinding) taskVB.a).a;
         if (imageView == null) {
             return;
         }
@@ -54,15 +51,15 @@ final class LiveGiftSetItemFragment$addTask$1$2 extends Lambda implements Functi
         layoutParams.leftMargin = i3;
         layoutParams.topMargin = i4;
         imageView.setLayoutParams(layoutParams);
-        ImageLoader.a(this$0.getFragmentActive(), info.getIcon()).g().g(-1).a(((LiveGiftSetTaskItemBinding) taskVB.f42545a).f12231a);
+        ImageLoader.a(this$0.getFragmentActive(), info.getIcon()).g().g(-1).a(((LiveGiftSetTaskItemBinding) taskVB.a).a);
     }
 
     public final void a(DslSpannableStringBuilder buildSpannableString) {
         Intrinsics.e(buildSpannableString, "$this$buildSpannableString");
         ColorDrawable colorDrawable = new ColorDrawable();
-        int i = this.f12922a;
+        int i = this.a;
         final int i2 = this.b;
-        final int i3 = this.f12923c;
+        final int i3 = this.c;
         final Ref.ObjectRef<LiveGiftSetTaskItemBinding> objectRef = this.d;
         final LiveGiftSetItemFragment liveGiftSetItemFragment = this.e;
         final LiveGiftSetTaskModel liveGiftSetTaskModel = this.f;
@@ -77,6 +74,6 @@ final class LiveGiftSetItemFragment$addTask$1$2 extends Lambda implements Functi
     @Override // kotlin.jvm.functions.Function1
     public /* synthetic */ Unit invoke(DslSpannableStringBuilder dslSpannableStringBuilder) {
         a(dslSpannableStringBuilder);
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

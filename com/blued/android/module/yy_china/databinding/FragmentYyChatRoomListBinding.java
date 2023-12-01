@@ -20,13 +20,9 @@ import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/FragmentYyChatRoomListBinding.class */
 public final class FragmentYyChatRoomListBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final AppBarLayout f16492a;
+    public final AppBarLayout a;
     public final BGABanner b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final CoordinatorLayout f16493c;
+    public final CoordinatorLayout c;
     public final FrameLayout d;
     public final LinearLayout e;
     public final NoDataAndLoadFailView f;
@@ -42,9 +38,9 @@ public final class FragmentYyChatRoomListBinding implements ViewBinding {
 
     private FragmentYyChatRoomListBinding(ConstraintLayout constraintLayout, AppBarLayout appBarLayout, BGABanner bGABanner, CoordinatorLayout coordinatorLayout, FrameLayout frameLayout, LinearLayout linearLayout, NoDataAndLoadFailView noDataAndLoadFailView, SmartRefreshLayout smartRefreshLayout, RelativeLayout relativeLayout, ViewPager viewPager, ShapeLinearLayout shapeLinearLayout, YYHomeTabView yYHomeTabView, TextView textView, ShapeTextView shapeTextView, TextView textView2) {
         this.o = constraintLayout;
-        this.f16492a = appBarLayout;
+        this.a = appBarLayout;
         this.b = bGABanner;
-        this.f16493c = coordinatorLayout;
+        this.c = coordinatorLayout;
         this.d = frameLayout;
         this.e = linearLayout;
         this.f = noDataAndLoadFailView;
@@ -60,24 +56,24 @@ public final class FragmentYyChatRoomListBinding implements ViewBinding {
 
     public static FragmentYyChatRoomListBinding a(View view) {
         String str;
-        AppBarLayout appBarLayout = (AppBarLayout) view.findViewById(R.id.appbar);
-        if (appBarLayout != null) {
+        AppBarLayout findViewById = view.findViewById(R.id.appbar);
+        if (findViewById != null) {
             BGABanner bGABanner = (BGABanner) view.findViewById(R.id.banner);
             if (bGABanner != null) {
-                CoordinatorLayout coordinatorLayout = (CoordinatorLayout) view.findViewById(R.id.coordinator);
-                if (coordinatorLayout != null) {
+                CoordinatorLayout findViewById2 = view.findViewById(R.id.coordinator);
+                if (findViewById2 != null) {
                     FrameLayout frameLayout = (FrameLayout) view.findViewById(R.id.fl_code_of_condut_layout);
                     if (frameLayout != null) {
                         LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.ll_red_envelope);
                         if (linearLayout != null) {
                             NoDataAndLoadFailView noDataAndLoadFailView = (NoDataAndLoadFailView) view.findViewById(R.id.no_data_view);
                             if (noDataAndLoadFailView != null) {
-                                SmartRefreshLayout smartRefreshLayout = (SmartRefreshLayout) view.findViewById(R.id.refresh_layout);
-                                if (smartRefreshLayout != null) {
+                                SmartRefreshLayout findViewById3 = view.findViewById(R.id.refresh_layout);
+                                if (findViewById3 != null) {
                                     RelativeLayout relativeLayout = (RelativeLayout) view.findViewById(R.id.rl);
                                     if (relativeLayout != null) {
-                                        ViewPager viewPager = (ViewPager) view.findViewById(R.id.room_view_pager);
-                                        if (viewPager != null) {
+                                        ViewPager findViewById4 = view.findViewById(R.id.room_view_pager);
+                                        if (findViewById4 != null) {
                                             ShapeLinearLayout shapeLinearLayout = (ShapeLinearLayout) view.findViewById(R.id.shall_home_bottoms);
                                             if (shapeLinearLayout != null) {
                                                 YYHomeTabView yYHomeTabView = (YYHomeTabView) view.findViewById(R.id.tablayout);
@@ -88,7 +84,7 @@ public final class FragmentYyChatRoomListBinding implements ViewBinding {
                                                         if (shapeTextView != null) {
                                                             TextView textView2 = (TextView) view.findViewById(R.id.tv_match_room_bottom);
                                                             if (textView2 != null) {
-                                                                return new FragmentYyChatRoomListBinding((ConstraintLayout) view, appBarLayout, bGABanner, coordinatorLayout, frameLayout, linearLayout, noDataAndLoadFailView, smartRefreshLayout, relativeLayout, viewPager, shapeLinearLayout, yYHomeTabView, textView, shapeTextView, textView2);
+                                                                return new FragmentYyChatRoomListBinding((ConstraintLayout) view, findViewById, bGABanner, findViewById2, frameLayout, linearLayout, noDataAndLoadFailView, findViewById3, relativeLayout, findViewById4, shapeLinearLayout, yYHomeTabView, textView, shapeTextView, textView2);
                                                             }
                                                             str = "tvMatchRoomBottom";
                                                         } else {
@@ -133,7 +129,6 @@ public final class FragmentYyChatRoomListBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.o;

@@ -16,7 +16,7 @@ public class jg {
     public static final int z = 4096;
 
     /* renamed from: a  reason: collision with root package name */
-    private GeoPoint f37578a;
+    private GeoPoint f23887a;
     private Bitmap[] b;
     private int g;
     private boolean h;
@@ -30,7 +30,7 @@ public class jg {
     private boolean r;
 
     /* renamed from: c  reason: collision with root package name */
-    private float f37579c = 0.5f;
+    private float f23888c = 0.5f;
     private float d = 0.5f;
     private float e = 1.0f;
     private boolean f = false;
@@ -52,7 +52,7 @@ public class jg {
     }
 
     public jg a(float f, float f2) {
-        this.f37579c = f;
+        this.f23888c = f;
         this.d = f2;
         return this;
     }
@@ -69,7 +69,7 @@ public class jg {
     }
 
     public jg a(GeoPoint geoPoint) {
-        this.f37578a = geoPoint;
+        this.f23887a = geoPoint;
         return this;
     }
 
@@ -86,11 +86,11 @@ public class jg {
 
     public jg a(int... iArr) {
         if (iArr == null) {
-            this.f37579c = 0.5f;
+            this.f23888c = 0.5f;
             this.d = 1.0f;
             return this;
         }
-        this.f37579c = 0.5f;
+        this.f23888c = 0.5f;
         this.d = 0.5f;
         if (iArr.length != 1) {
             return this;
@@ -101,11 +101,11 @@ public class jg {
             this.d = 1.0f;
         }
         if ((iArr[0] & 4096) == 4096) {
-            this.f37579c = 0.0f;
+            this.f23888c = 0.0f;
             return this;
         }
         if ((iArr[0] & 65536) == 65536) {
-            this.f37579c = 1.0f;
+            this.f23888c = 1.0f;
         }
         return this;
     }
@@ -121,14 +121,14 @@ public class jg {
     }
 
     public int[] b() {
-        float f = this.f37579c;
+        float f = this.f23888c;
         int i = f == 0.0f ? 4096 : f == 1.0f ? 65536 : 1;
         float f2 = this.d;
         return new int[]{i | (f2 == 0.0f ? 256 : f2 == 1.0f ? 16 : 1)};
     }
 
     public float c() {
-        return this.f37579c;
+        return this.f23888c;
     }
 
     public jg c(int i) {
@@ -195,7 +195,7 @@ public class jg {
     }
 
     public GeoPoint k() {
-        return this.f37578a;
+        return this.f23887a;
     }
 
     public int l() {

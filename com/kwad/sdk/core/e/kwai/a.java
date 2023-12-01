@@ -43,7 +43,7 @@ public final class a {
             if (this.mContext.bindService(intent, this.ahE, 1)) {
                 String str4 = str2;
                 try {
-                    str = new a.C0562a(this.ahD.take()).getID();
+                    str = new a.C0392a(this.ahD.take()).getID();
                     str4 = str;
                     str2 = str;
                     new StringBuilder("getOAID oaid:").append(str);

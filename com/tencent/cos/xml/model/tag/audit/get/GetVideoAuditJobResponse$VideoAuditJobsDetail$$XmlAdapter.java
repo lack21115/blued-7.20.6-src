@@ -66,6 +66,7 @@ public class GetVideoAuditJobResponse$VideoAuditJobsDetail$$XmlAdapter implement
             }
         });
         this.childElementBinders.put("Snapshot", new ChildElementBinder<GetVideoAuditJobResponse.VideoAuditJobsDetail>() { // from class: com.tencent.cos.xml.model.tag.audit.get.GetVideoAuditJobResponse$VideoAuditJobsDetail$$XmlAdapter.8
+            /* JADX WARN: Multi-variable type inference failed */
             @Override // com.tencent.qcloud.qcloudxml.core.ChildElementBinder
             public void fromXml(XmlPullParser xmlPullParser, GetVideoAuditJobResponse.VideoAuditJobsDetail videoAuditJobsDetail, String str) throws IOException, XmlPullParserException {
                 if (videoAuditJobsDetail.snapshot == null) {
@@ -75,6 +76,7 @@ public class GetVideoAuditJobResponse$VideoAuditJobsDetail$$XmlAdapter implement
             }
         });
         this.childElementBinders.put("AudioSection", new ChildElementBinder<GetVideoAuditJobResponse.VideoAuditJobsDetail>() { // from class: com.tencent.cos.xml.model.tag.audit.get.GetVideoAuditJobResponse$VideoAuditJobsDetail$$XmlAdapter.9
+            /* JADX WARN: Multi-variable type inference failed */
             @Override // com.tencent.qcloud.qcloudxml.core.ChildElementBinder
             public void fromXml(XmlPullParser xmlPullParser, GetVideoAuditJobResponse.VideoAuditJobsDetail videoAuditJobsDetail, String str) throws IOException, XmlPullParserException {
                 if (videoAuditJobsDetail.audioSection == null) {

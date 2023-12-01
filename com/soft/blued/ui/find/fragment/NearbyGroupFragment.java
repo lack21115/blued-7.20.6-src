@@ -61,9 +61,9 @@ public class NearbyGroupFragment extends PreloadFragment implements HomeTabClick
     }
 
     private void h() {
-        RenrenPullToRefreshListView renrenPullToRefreshListView = (RenrenPullToRefreshListView) this.j.findViewById(2131366898);
-        this.p = renrenPullToRefreshListView;
-        renrenPullToRefreshListView.setRefreshEnabled(true);
+        RenrenPullToRefreshListView findViewById = this.j.findViewById(R.id.list_view);
+        this.p = findViewById;
+        findViewById.setRefreshEnabled(true);
         ListView listView = (ListView) this.p.getRefreshableView();
         this.s = listView;
         listView.setClipToPadding(false);
@@ -75,13 +75,11 @@ public class NearbyGroupFragment extends PreloadFragment implements HomeTabClick
         this.s.setAdapter((ListAdapter) groupListsAdapter);
         this.s.addHeaderView(this.k);
         this.p.setOnPullDownListener(new RenrenPullToRefreshListView.OnPullDownListener() { // from class: com.soft.blued.ui.find.fragment.NearbyGroupFragment.1
-            @Override // com.blued.android.framework.view.pulltorefresh.RenrenPullToRefreshListView.OnPullDownListener
             public void a() {
                 NearbyGroupFragment.this.w = 1;
                 NearbyGroupFragment.this.i();
             }
 
-            @Override // com.blued.android.framework.view.pulltorefresh.RenrenPullToRefreshListView.OnPullDownListener
             public void b() {
                 NearbyGroupFragment.b(NearbyGroupFragment.this);
                 NearbyGroupFragment.this.i();
@@ -109,14 +107,12 @@ public class NearbyGroupFragment extends PreloadFragment implements HomeTabClick
     public void i() {
         if (this.w == 1 || this.y) {
             GroupHttpUtils.e(this.l, new BluedUIHttpResponse<BluedEntity<BluedGroupLists, BluedGroupExtra>>() { // from class: com.soft.blued.ui.find.fragment.NearbyGroupFragment.4
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse, com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
                 public void onFailure(Throwable th, int i, String str) {
                     super.onFailure(th, i, str);
                     NearbyGroupFragment.this.z = true;
                     NearbyGroupFragment.k(NearbyGroupFragment.this);
                 }
 
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public void onUIFinish() {
                     super.onUIFinish();
                     if (NearbyGroupFragment.this.t.getCount() == 0) {
@@ -142,12 +138,10 @@ public class NearbyGroupFragment extends PreloadFragment implements HomeTabClick
                     NearbyGroupFragment.this.z = false;
                 }
 
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public void onUIStart() {
                     super.onUIStart();
                 }
 
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public void onUIUpdate(BluedEntity<BluedGroupLists, BluedGroupExtra> bluedEntity) {
                     if (bluedEntity != null && bluedEntity.data != null && bluedEntity.data.size() > 0) {
                         if (NearbyGroupFragment.this.w == 1) {
@@ -162,7 +156,7 @@ public class NearbyGroupFragment extends PreloadFragment implements HomeTabClick
                         NearbyGroupFragment.this.y = false;
                     }
                     if (NearbyGroupFragment.this.w == 1) {
-                        if (bluedEntity == null || bluedEntity.extra == null || bluedEntity.extra.recommend_groups == null || bluedEntity.extra.recommend_groups.size() < 2) {
+                        if (bluedEntity == null || bluedEntity.extra == null || ((BluedGroupExtra) bluedEntity.extra).recommend_groups == null || ((BluedGroupExtra) bluedEntity.extra).recommend_groups.size() < 2) {
                             NearbyGroupFragment.this.o.setVisibility(8);
                             NearbyGroupFragment.this.A.setVisibility(8);
                             NearbyGroupFragment.this.r.setVisibility(8);
@@ -172,7 +166,7 @@ public class NearbyGroupFragment extends PreloadFragment implements HomeTabClick
                         NearbyGroupFragment.this.o.setVisibility(0);
                         NearbyGroupFragment.this.A.setVisibility(0);
                         NearbyGroupFragment.this.r.setVisibility(0);
-                        NearbyGroupFragment.this.u.a(bluedEntity.extra.recommend_groups);
+                        NearbyGroupFragment.this.u.a(((BluedGroupExtra) bluedEntity.extra).recommend_groups);
                     }
                 }
             }, this.w + "", this.x + "", getFragmentActive());
@@ -180,22 +174,22 @@ public class NearbyGroupFragment extends PreloadFragment implements HomeTabClick
     }
 
     private void j() {
-        NoDataAndLoadFailView noDataAndLoadFailView = (NoDataAndLoadFailView) this.k.findViewById(R.id.nodataview);
-        this.m = noDataAndLoadFailView;
-        noDataAndLoadFailView.setNoDataImg(2131233642);
+        NoDataAndLoadFailView findViewById = this.k.findViewById(R.id.nodataview);
+        this.m = findViewById;
+        findViewById.setNoDataImg(2131233642);
         this.m.a();
-        SearchView searchView = (SearchView) this.k.findViewById(R.id.group_search);
-        this.n = searchView;
-        searchView.setMaskLayerOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.fragment.NearbyGroupFragment.5
+        SearchView findViewById2 = this.k.findViewById(R.id.group_search);
+        this.n = findViewById2;
+        findViewById2.setMaskLayerOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.fragment.NearbyGroupFragment.5
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
-                TerminalActivity.d(NearbyGroupFragment.this.l, GroupSearchFragment.class, null);
+                TerminalActivity.d(NearbyGroupFragment.this.l, GroupSearchFragment.class, (Bundle) null);
             }
         });
-        View findViewById = this.k.findViewById(R.id.ll_group_list);
-        this.o = findViewById;
-        findViewById.setOnClickListener(null);
+        View findViewById3 = this.k.findViewById(R.id.ll_group_list);
+        this.o = findViewById3;
+        findViewById3.setOnClickListener(null);
         this.A = this.k.findViewById(R.id.line_nearby_top);
         TextView textView = (TextView) this.k.findViewById(R.id.tv_nearby_title);
         this.r = textView;
@@ -216,7 +210,6 @@ public class NearbyGroupFragment extends PreloadFragment implements HomeTabClick
         return i;
     }
 
-    @Override // com.blued.android.framework.activity.PreloadFragment
     public void a(View view) {
         FragmentActivity activity = getActivity();
         this.l = activity;
@@ -241,18 +234,15 @@ public class NearbyGroupFragment extends PreloadFragment implements HomeTabClick
         c(str);
     }
 
-    @Override // com.blued.android.framework.activity.PreloadFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         return super.onCreateView(layoutInflater, viewGroup, bundle);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         HomeTabClick.b("find", this);
         super.onDestroy();
     }
 
-    @Override // com.blued.android.framework.activity.PreloadFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void setUserVisibleHint(boolean z) {
         super.setUserVisibleHint(z);
         if (z) {

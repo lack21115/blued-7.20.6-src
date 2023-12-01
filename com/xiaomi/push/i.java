@@ -22,31 +22,31 @@ import java.util.Set;
 public class i {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f41505a;
+    private static String f27814a;
 
     /* renamed from: a  reason: collision with other field name */
-    private static final Set<String> f678a;
+    private static final Set<String> f631a;
 
     /* renamed from: a  reason: collision with other field name */
-    private static boolean f679a = false;
+    private static boolean f632a = false;
 
     /* renamed from: a  reason: collision with other field name */
-    private static final String[] f680a = {"--", "a-", "u-", "v-", "o-", "g-"};
+    private static final String[] f633a = {"--", "a-", "u-", "v-", "o-", "g-"};
     private static String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static String f41506c = "";
+    private static String f27815c = "";
     private static String d;
     private static String e;
     private static final String f = "\u0002";
 
     static {
         HashSet hashSet = new HashSet();
-        f678a = hashSet;
+        f631a = hashSet;
         hashSet.add("com.xiaomi.xmsf");
-        f678a.add("com.xiaomi.finddevice");
-        f678a.add("com.miui.securitycenter");
-        f679a = true;
+        f631a.add("com.xiaomi.finddevice");
+        f631a.add("com.miui.securitycenter");
+        f632a = true;
     }
 
     private static double a(double d2) {
@@ -84,19 +84,19 @@ public class i {
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public static String m11926a() {
+    public static String m8876a() {
         return a(b()) + "GB";
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    private static String m11927a(int i) {
+    private static String m8877a(int i) {
         if (i > 0) {
-            String[] strArr = f680a;
+            String[] strArr = f633a;
             if (i < strArr.length) {
                 return strArr[i];
             }
         }
-        return f680a[0];
+        return f633a[0];
     }
 
     @Deprecated
@@ -109,12 +109,12 @@ public class i {
         int i;
         if (d == null) {
             String b2 = b(context);
-            String c2 = !j.m12053d() ? z ? c(context) : j(context) : "";
+            String c2 = !j.m9003d() ? z ? c(context) : j(context) : "";
             String a2 = a(context);
             if (!(Build.VERSION.SDK_INT < 26) && b(c2) && b(a2)) {
                 String b3 = ay.a(context).b();
                 if (TextUtils.isEmpty(b3)) {
-                    str = ay.a(context).mo11508a();
+                    str = ay.a(context).mo8458a();
                     if (TextUtils.isEmpty(str) || str.startsWith("00000000-0000-0000-0000-000000000000")) {
                         i = 5;
                         str = b2;
@@ -133,7 +133,7 @@ public class i {
             if (i == 3) {
                 d = str;
             } else {
-                d = m11927a(i) + bn.b(str);
+                d = m8877a(i) + bn.b(str);
             }
         }
         return d;
@@ -147,7 +147,7 @@ public class i {
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences
     */
-    public static boolean m11928a(android.content.Context r6) {
+    public static boolean m8878a(android.content.Context r6) {
         /*
             r0 = r6
             r1 = 0
@@ -183,7 +183,7 @@ public class i {
             r0 = r8
             return r0
         */
-        throw new UnsupportedOperationException("Method not decompiled: com.xiaomi.push.i.m11928a(android.content.Context):boolean");
+        throw new UnsupportedOperationException("Method not decompiled: com.xiaomi.push.i.m8878a(android.content.Context):boolean");
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:9:0x0053, code lost:
@@ -261,7 +261,7 @@ public class i {
         int i = 0;
         while (true) {
             int i2 = i;
-            String[] strArr = f680a;
+            String[] strArr = f633a;
             if (i2 >= strArr.length) {
                 return false;
             }
@@ -327,20 +327,20 @@ public class i {
     }
 
     /* renamed from: b  reason: collision with other method in class */
-    public static String m11929b() {
+    public static String m8879b() {
         double a2 = a(((a(Environment.getDataDirectory()) / 1024.0d) / 1024.0d) / 1024.0d);
         return a2 + "GB";
     }
 
     public static String b(Context context) {
-        if (b == null && f679a) {
-            boolean m11931c = m11931c(context);
-            f679a = m11931c;
-            if (m11931c) {
+        if (b == null && f632a) {
+            boolean m8881c = m8881c(context);
+            f632a = m8881c;
+            if (m8881c) {
                 try {
                     b = Settings.Secure.getString(context.getContentResolver(), "android_id");
                 } catch (Throwable th) {
-                    com.xiaomi.channel.commonutils.logger.b.m11394a("failure to get androidId: ".concat(String.valueOf(th)));
+                    com.xiaomi.channel.commonutils.logger.b.m8344a("failure to get androidId: ".concat(String.valueOf(th)));
                 }
                 return b;
             }
@@ -350,8 +350,8 @@ public class i {
     }
 
     /* renamed from: b  reason: collision with other method in class */
-    public static boolean m11930b(Context context) {
-        PowerManager powerManager = (PowerManager) context.getSystemService("power");
+    public static boolean m8880b(Context context) {
+        PowerManager powerManager = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
         return powerManager == null || powerManager.isScreenOn();
     }
 
@@ -373,7 +373,7 @@ public class i {
     }
 
     /* renamed from: c  reason: collision with other method in class */
-    private static boolean m11931c(Context context) {
+    private static boolean m8881c(Context context) {
         if ("com.xiaomi.xmsf".equals(context.getPackageName())) {
             return true;
         }

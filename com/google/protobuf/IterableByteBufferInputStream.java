@@ -88,7 +88,7 @@ public class IterableByteBufferInputStream extends InputStream {
             i3 = limit;
         }
         if (this.hasArray) {
-            System.arraycopy((Object) this.currentArray, this.currentByteBufferPos + this.currentArrayOffset, (Object) bArr, i, i3);
+            System.arraycopy(this.currentArray, this.currentByteBufferPos + this.currentArrayOffset, bArr, i, i3);
             updateCurrentByteBufferPos(i3);
             return i3;
         }

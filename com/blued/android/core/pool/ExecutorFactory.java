@@ -9,17 +9,13 @@ import java.util.concurrent.TimeUnit;
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/pool/ExecutorFactory.class */
 public class ExecutorFactory {
     private static ExecutorFactory b;
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final String f9708a = ExecutorFactory.class.getSimpleName();
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final Long f9709c = 10L;
+    private static final String a = ExecutorFactory.class.getSimpleName();
+    private static final Long c = 10L;
     private ThreadPoolExecutor d = new ThreadPoolExecutor(2, 2, 0, TimeUnit.SECONDS, new LinkedBlockingDeque(), new DefaultThreadFactory("data"), new ThreadPoolExecutor.DiscardOldestPolicy() { // from class: com.blued.android.core.pool.ExecutorFactory.1
         @Override // java.util.concurrent.ThreadPoolExecutor.DiscardOldestPolicy, java.util.concurrent.RejectedExecutionHandler
         public void rejectedExecution(Runnable runnable, ThreadPoolExecutor threadPoolExecutor) {
             super.rejectedExecution(runnable, threadPoolExecutor);
-            String str = ExecutorFactory.f9708a;
+            String str = ExecutorFactory.a;
             Log.e(str, "DataExecutor rejectedExecution(), e:" + threadPoolExecutor);
         }
     });
@@ -27,7 +23,7 @@ public class ExecutorFactory {
         @Override // java.util.concurrent.ThreadPoolExecutor.DiscardOldestPolicy, java.util.concurrent.RejectedExecutionHandler
         public void rejectedExecution(Runnable runnable, ThreadPoolExecutor threadPoolExecutor) {
             super.rejectedExecution(runnable, threadPoolExecutor);
-            String str = ExecutorFactory.f9708a;
+            String str = ExecutorFactory.a;
             Log.e(str, "ImageLoader.prePareExecutor rejectedExecution(), e:" + threadPoolExecutor);
         }
     });
@@ -35,7 +31,7 @@ public class ExecutorFactory {
         @Override // java.util.concurrent.ThreadPoolExecutor.DiscardOldestPolicy, java.util.concurrent.RejectedExecutionHandler
         public void rejectedExecution(Runnable runnable, ThreadPoolExecutor threadPoolExecutor) {
             super.rejectedExecution(runnable, threadPoolExecutor);
-            String str = ExecutorFactory.f9708a;
+            String str = ExecutorFactory.a;
             Log.e(str, "HttpExecutor rejectedExecution(), e:" + threadPoolExecutor);
         }
     });

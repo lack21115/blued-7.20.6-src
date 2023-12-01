@@ -12,10 +12,10 @@ import org.json.JSONObject;
 public class f1 implements IDataObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ ComponentContainer f21217a;
+    public final /* synthetic */ ComponentContainer f7611a;
 
     public f1(DeviceComponentRegistrar.a aVar, ComponentContainer componentContainer) {
-        this.f21217a = componentContainer;
+        this.f7611a = componentContainer;
     }
 
     @Override // com.bytedance.applog.IDataObserver
@@ -27,7 +27,7 @@ public class f1 implements IDataObserver {
         if (TextUtils.isEmpty(AppLog.getDid())) {
             return;
         }
-        this.f21217a.set(new g1(), new Class[]{Device.class});
+        this.f7611a.set(new g1(), new Class[]{Device.class});
         AppLog.removeDataObserver(this);
     }
 
@@ -44,7 +44,7 @@ public class f1 implements IDataObserver {
         if (TextUtils.isEmpty(AppLog.getDid())) {
             return;
         }
-        this.f21217a.set(new g1(), new Class[]{Device.class});
+        this.f7611a.set(new g1(), new Class[]{Device.class});
         AppLog.removeDataObserver(this);
     }
 }

@@ -1,7 +1,6 @@
 package com.bumptech.glide.load.engine;
 
 import androidx.core.util.Pools;
-import com.alipay.sdk.util.i;
 import com.bumptech.glide.load.Options;
 import com.bumptech.glide.load.data.DataRewinder;
 import com.bumptech.glide.load.engine.DecodePath;
@@ -14,23 +13,23 @@ import java.util.List;
 public class LoadPath<Data, ResourceType, Transcode> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Class<Data> f20788a;
+    private final Class<Data> f7182a;
     private final Pools.Pool<List<Throwable>> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final List<? extends DecodePath<Data, ResourceType, Transcode>> f20789c;
+    private final List<? extends DecodePath<Data, ResourceType, Transcode>> f7183c;
     private final String d;
 
     public LoadPath(Class<Data> cls, Class<ResourceType> cls2, Class<Transcode> cls3, List<DecodePath<Data, ResourceType, Transcode>> list, Pools.Pool<List<Throwable>> pool) {
-        this.f20788a = cls;
+        this.f7182a = cls;
         this.b = pool;
-        this.f20789c = (List) Preconditions.a(list);
-        this.d = "Failed LoadPath{" + cls.getSimpleName() + "->" + cls2.getSimpleName() + "->" + cls3.getSimpleName() + i.d;
+        this.f7183c = (List) Preconditions.a(list);
+        this.d = "Failed LoadPath{" + cls.getSimpleName() + "->" + cls2.getSimpleName() + "->" + cls3.getSimpleName() + "}";
     }
 
     private Resource<Transcode> a(DataRewinder<Data> dataRewinder, Options options, int i, int i2, DecodePath.DecodeCallback<ResourceType> decodeCallback, List<Throwable> list) throws GlideException {
         Resource<Transcode> resource;
-        int size = this.f20789c.size();
+        int size = this.f7183c.size();
         Resource<Transcode> resource2 = null;
         int i3 = 0;
         while (true) {
@@ -40,7 +39,7 @@ public class LoadPath<Data, ResourceType, Transcode> {
                 break;
             }
             try {
-                resource2 = this.f20789c.get(i4).a(dataRewinder, i, i2, options, decodeCallback);
+                resource2 = this.f7183c.get(i4).a(dataRewinder, i, i2, options, decodeCallback);
             } catch (GlideException e) {
                 list.add(e);
             }
@@ -66,6 +65,6 @@ public class LoadPath<Data, ResourceType, Transcode> {
     }
 
     public String toString() {
-        return "LoadPath{decodePaths=" + Arrays.toString(this.f20789c.toArray()) + '}';
+        return "LoadPath{decodePaths=" + Arrays.toString(this.f7183c.toArray()) + '}';
     }
 }

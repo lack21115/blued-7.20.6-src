@@ -10,11 +10,11 @@ import java.net.UnknownHostException;
 public class e {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f23831a = 0;
+    public static final int f10223a = 0;
     public static final int b = 1;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final int f23832c = 2;
+    public static final int f10224c = 2;
     public static final int d = 3;
     public static final int e = -1;
     public static int f = -1;

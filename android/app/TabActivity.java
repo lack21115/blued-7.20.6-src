@@ -1,11 +1,11 @@
 package android.app;
 
+import android.R;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TabHost;
 import android.widget.TabWidget;
 import android.widget.TextView;
-import com.android.internal.R;
 
 @Deprecated
 /* loaded from: source-9557208-dex2jar.jar:android/app/TabActivity.class */
@@ -16,7 +16,7 @@ public class TabActivity extends ActivityGroup {
 
     private void ensureTabHost() {
         if (this.mTabHost == null) {
-            setContentView(R.layout.tab_content);
+            setContentView(17367251);
         }
     }
 
@@ -41,7 +41,7 @@ public class TabActivity extends ActivityGroup {
     @Override // android.app.Activity, android.view.Window.Callback
     public void onContentChanged() {
         super.onContentChanged();
-        this.mTabHost = (TabHost) findViewById(16908306);
+        this.mTabHost = (TabHost) findViewById(R.id.tabhost);
         if (this.mTabHost == null) {
             throw new RuntimeException("Your content must have a TabHost whose id attribute is 'android.R.id.tabhost'");
         }

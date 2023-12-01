@@ -9,9 +9,7 @@ public class Abtest {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/statistics/biz/Abtest$InstanceHolder.class */
     public static class InstanceHolder {
-
-        /* renamed from: a  reason: collision with root package name */
-        private static final Abtest f18681a = new Abtest();
+        private static final Abtest a = new Abtest();
 
         private InstanceHolder() {
         }
@@ -26,7 +24,7 @@ public class Abtest {
     }
 
     public static Abtest a() {
-        return InstanceHolder.f18681a;
+        return InstanceHolder.a;
     }
 
     private boolean b() {

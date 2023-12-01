@@ -49,7 +49,7 @@ public abstract class c extends com.kwad.components.ad.reward.presenter.a implem
             y.b bVar = new y.b();
             bVar.jU = i;
             bVar.jW = c.this.qt.mRootContainer.getTouchCoords();
-            com.kwad.components.core.d.b.a.a(new a.C0519a(c.this.getContext()).I(c.this.qt.mAdTemplate).b(c.this.qt.mApkDownloadHelper).ao(false).a(bVar).aq(true));
+            com.kwad.components.core.d.b.a.a(new a.C0349a(c.this.getContext()).I(c.this.qt.mAdTemplate).b(c.this.qt.mApkDownloadHelper).ao(false).a(bVar).aq(true));
         }
     };
     private final h.a gV = new h.a() { // from class: com.kwad.components.ad.reward.presenter.f.c.5
@@ -351,7 +351,7 @@ public abstract class c extends com.kwad.components.ad.reward.presenter.a implem
         dVar.a(new d.a() { // from class: com.kwad.components.ad.reward.presenter.f.c.12
             @Override // com.kwad.components.ad.reward.h.d.a
             public final void a(final q qVar) {
-                com.kwad.components.core.d.b.a.a(new a.C0519a(c.this.getContext()).I(c.this.qt.mAdTemplate).b(c.this.qt.mApkDownloadHelper).ap(1).a(new a.b() { // from class: com.kwad.components.ad.reward.presenter.f.c.12.1
+                com.kwad.components.core.d.b.a.a(new a.C0349a(c.this.getContext()).I(c.this.qt.mAdTemplate).b(c.this.qt.mApkDownloadHelper).ap(1).a(new a.b() { // from class: com.kwad.components.ad.reward.presenter.f.c.12.1
                     @Override // com.kwad.components.core.d.b.a.b
                     public final void onAdClicked() {
                         if (qVar.Vi) {
@@ -368,7 +368,7 @@ public abstract class c extends com.kwad.components.ad.reward.presenter.a implem
         eVar.a(new e.a() { // from class: com.kwad.components.ad.reward.presenter.f.c.13
             @Override // com.kwad.components.ad.reward.h.e.a
             public final void iS() {
-                com.kwad.components.core.d.b.a.a(new a.C0519a(c.this.getContext()).I(c.this.qt.mAdTemplate).b(c.this.qt.mApkDownloadHelper).ap(2).a(new a.b() { // from class: com.kwad.components.ad.reward.presenter.f.c.13.1
+                com.kwad.components.core.d.b.a.a(new a.C0349a(c.this.getContext()).I(c.this.qt.mAdTemplate).b(c.this.qt.mApkDownloadHelper).ap(2).a(new a.b() { // from class: com.kwad.components.ad.reward.presenter.f.c.13.1
                     @Override // com.kwad.components.core.d.b.a.b
                     public final void onAdClicked() {
                         c.this.iO();

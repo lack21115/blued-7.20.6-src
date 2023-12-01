@@ -5,7 +5,6 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
-import android.net.ConnectivityManager;
 import android.text.Editable;
 import android.text.Spanned;
 import android.text.TextUtils;
@@ -23,7 +22,6 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.view.accessibility.AccessibilityNodeProvider;
 import android.view.inputmethod.InputMethodManager;
 import com.android.internal.R;
-import com.google.android.material.timepicker.TimeModel;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -678,7 +676,7 @@ public class NumberPicker extends LinearLayout {
             }
             this.mArgs[0] = Integer.valueOf(i);
             this.mBuilder.delete(0, this.mBuilder.length());
-            this.mFmt.format(TimeModel.ZERO_LEADING_NUMBER_FORMAT, this.mArgs);
+            this.mFmt.format("%02d", this.mArgs);
             return this.mFmt.toString();
         }
     }
@@ -785,7 +783,7 @@ public class NumberPicker extends LinearLayout {
             if (Math.abs(i) > this.mSelectorElementHeight / 2) {
                 i2 = i + (i > 0 ? -this.mSelectorElementHeight : this.mSelectorElementHeight);
             }
-            this.mAdjustScroller.startScroll(0, 0, 0, i2, 800);
+            this.mAdjustScroller.startScroll(0, 0, 0, i2, SELECTOR_ADJUSTMENT_DURATION_MILLIS);
             invalidate();
             z = true;
         }
@@ -808,7 +806,7 @@ public class NumberPicker extends LinearLayout {
     }
 
     private static String formatNumberWithLocale(int i) {
-        return String.format(Locale.getDefault(), TimeModel.NUMBER_FORMAT, Integer.valueOf(i));
+        return String.format(Locale.getDefault(), "%d", Integer.valueOf(i));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1178,9 +1176,8 @@ public class NumberPicker extends LinearLayout {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public int computeVerticalScrollExtent() {
+    protected int computeVerticalScrollExtent() {
         return getHeight();
     }
 
@@ -1313,7 +1310,7 @@ public class NumberPicker extends LinearLayout {
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
     public float getBottomFadingEdgeStrength() {
-        return 0.9f;
+        return TOP_AND_BOTTOM_FADING_EDGE_STRENGTH;
     }
 
     public String[] getDisplayedValues() {
@@ -1336,7 +1333,7 @@ public class NumberPicker extends LinearLayout {
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
     public float getTopFadingEdgeStrength() {
-        return 0.9f;
+        return TOP_AND_BOTTOM_FADING_EDGE_STRENGTH;
     }
 
     public int getValue() {
@@ -1616,7 +1613,7 @@ public class NumberPicker extends LinearLayout {
         }
         this.mDisplayedValues = strArr;
         if (this.mDisplayedValues != null) {
-            this.mInputText.setRawInputType(ConnectivityManager.CALLBACK_PRECHECK);
+            this.mInputText.setRawInputType(524289);
         } else {
             this.mInputText.setRawInputType(2);
         }

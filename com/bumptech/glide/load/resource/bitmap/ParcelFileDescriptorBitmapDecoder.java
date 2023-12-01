@@ -11,19 +11,19 @@ import java.io.IOException;
 public final class ParcelFileDescriptorBitmapDecoder implements ResourceDecoder<ParcelFileDescriptor, Bitmap> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Downsampler f20964a;
+    private final Downsampler f7358a;
 
     public ParcelFileDescriptorBitmapDecoder(Downsampler downsampler) {
-        this.f20964a = downsampler;
+        this.f7358a = downsampler;
     }
 
     @Override // com.bumptech.glide.load.ResourceDecoder
     public Resource<Bitmap> a(ParcelFileDescriptor parcelFileDescriptor, int i, int i2, Options options) throws IOException {
-        return this.f20964a.a(parcelFileDescriptor, i, i2, options);
+        return this.f7358a.a(parcelFileDescriptor, i, i2, options);
     }
 
     @Override // com.bumptech.glide.load.ResourceDecoder
     public boolean a(ParcelFileDescriptor parcelFileDescriptor, Options options) {
-        return this.f20964a.a(parcelFileDescriptor);
+        return this.f7358a.a(parcelFileDescriptor);
     }
 }

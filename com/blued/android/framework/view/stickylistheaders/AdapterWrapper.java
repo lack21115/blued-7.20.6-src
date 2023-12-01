@@ -13,13 +13,9 @@ import java.util.List;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/view/stickylistheaders/AdapterWrapper.class */
 class AdapterWrapper extends BaseAdapter implements StickyListHeadersAdapter {
-
-    /* renamed from: a  reason: collision with root package name */
-    final StickyListHeadersAdapter f10326a;
+    final StickyListHeadersAdapter a;
     private final List<View> b = new LinkedList();
-
-    /* renamed from: c  reason: collision with root package name */
-    private final Context f10327c;
+    private final Context c;
     private Drawable d;
     private int e;
     private OnHeaderClickListener f;
@@ -45,8 +41,8 @@ class AdapterWrapper extends BaseAdapter implements StickyListHeadersAdapter {
             }
         };
         this.g = dataSetObserver;
-        this.f10327c = context;
-        this.f10326a = stickyListHeadersAdapter;
+        this.c = context;
+        this.a = stickyListHeadersAdapter;
         stickyListHeadersAdapter.registerDataSetObserver(dataSetObserver);
     }
 
@@ -58,7 +54,7 @@ class AdapterWrapper extends BaseAdapter implements StickyListHeadersAdapter {
     }
 
     private View a(WrapperView wrapperView, final int i) {
-        View b = this.f10326a.b(i, wrapperView.d == null ? a() : wrapperView.d, wrapperView);
+        View b = this.a.b(i, wrapperView.d == null ? a() : wrapperView.d, wrapperView);
         if (b != null) {
             b.setClickable(true);
             b.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.framework.view.stickylistheaders.AdapterWrapper.2
@@ -66,7 +62,7 @@ class AdapterWrapper extends BaseAdapter implements StickyListHeadersAdapter {
                 public void onClick(View view) {
                     Tracker.onClick(view);
                     if (AdapterWrapper.this.f != null) {
-                        AdapterWrapper.this.f.a(view, i, AdapterWrapper.this.f10326a.a(i));
+                        AdapterWrapper.this.f.a(view, i, AdapterWrapper.this.a.a(i));
                     }
                 }
             });
@@ -84,20 +80,20 @@ class AdapterWrapper extends BaseAdapter implements StickyListHeadersAdapter {
     }
 
     private boolean b(int i) {
-        return i != 0 && this.f10326a.a(i) == this.f10326a.a(i - 1);
+        return i != 0 && this.a.a(i) == this.a.a(i - 1);
     }
 
     @Override // com.blued.android.framework.view.stickylistheaders.StickyListHeadersAdapter
     public long a(int i) {
-        return this.f10326a.a(i);
+        return this.a.a(i);
     }
 
     @Override // android.widget.Adapter
     /* renamed from: a */
     public WrapperView getView(int i, View view, ViewGroup viewGroup) {
         CheckableWrapperView checkableWrapperView;
-        WrapperView wrapperView = view == null ? new WrapperView(this.f10327c) : (WrapperView) view;
-        View view2 = this.f10326a.getView(i, wrapperView.f10346a, viewGroup);
+        WrapperView wrapperView = view == null ? new WrapperView(this.c) : (WrapperView) view;
+        View view2 = this.a.getView(i, wrapperView.a, viewGroup);
         View view3 = null;
         if (b(i)) {
             a(wrapperView);
@@ -110,11 +106,11 @@ class AdapterWrapper extends BaseAdapter implements StickyListHeadersAdapter {
             if (!z) {
                 checkableWrapperView = wrapperView;
                 if (wrapperView instanceof CheckableWrapperView) {
-                    checkableWrapperView = new WrapperView(this.f10327c);
+                    checkableWrapperView = new WrapperView(this.c);
                 }
             }
         } else {
-            checkableWrapperView = new CheckableWrapperView(this.f10327c);
+            checkableWrapperView = new CheckableWrapperView(this.c);
         }
         checkableWrapperView.update(view2, view3, this.d, this.e);
         return checkableWrapperView;
@@ -133,78 +129,78 @@ class AdapterWrapper extends BaseAdapter implements StickyListHeadersAdapter {
 
     @Override // android.widget.BaseAdapter, android.widget.ListAdapter
     public boolean areAllItemsEnabled() {
-        return this.f10326a.areAllItemsEnabled();
+        return this.a.areAllItemsEnabled();
     }
 
     @Override // com.blued.android.framework.view.stickylistheaders.StickyListHeadersAdapter
     public View b(int i, View view, ViewGroup viewGroup) {
-        return this.f10326a.b(i, view, viewGroup);
+        return this.a.b(i, view, viewGroup);
     }
 
     public boolean equals(Object obj) {
-        return this.f10326a.equals(obj);
+        return this.a.equals(obj);
     }
 
     @Override // android.widget.Adapter
     public int getCount() {
-        return this.f10326a.getCount();
+        return this.a.getCount();
     }
 
     @Override // android.widget.BaseAdapter, android.widget.SpinnerAdapter
     public View getDropDownView(int i, View view, ViewGroup viewGroup) {
-        return ((BaseAdapter) this.f10326a).getDropDownView(i, view, viewGroup);
+        return ((BaseAdapter) this.a).getDropDownView(i, view, viewGroup);
     }
 
     @Override // android.widget.Adapter
     public Object getItem(int i) {
-        return this.f10326a.getItem(i);
+        return this.a.getItem(i);
     }
 
     @Override // android.widget.Adapter
     public long getItemId(int i) {
-        return this.f10326a.getItemId(i);
+        return this.a.getItemId(i);
     }
 
     @Override // android.widget.BaseAdapter, android.widget.Adapter
     public int getItemViewType(int i) {
-        return this.f10326a.getItemViewType(i);
+        return this.a.getItemViewType(i);
     }
 
     @Override // android.widget.BaseAdapter, android.widget.Adapter
     public int getViewTypeCount() {
-        return this.f10326a.getViewTypeCount();
+        return this.a.getViewTypeCount();
     }
 
     @Override // android.widget.BaseAdapter, android.widget.Adapter
     public boolean hasStableIds() {
-        return this.f10326a.hasStableIds();
+        return this.a.hasStableIds();
     }
 
     public int hashCode() {
-        return this.f10326a.hashCode();
+        return this.a.hashCode();
     }
 
     @Override // android.widget.BaseAdapter, android.widget.Adapter
     public boolean isEmpty() {
-        return this.f10326a.isEmpty();
+        return this.a.isEmpty();
     }
 
     @Override // android.widget.BaseAdapter, android.widget.ListAdapter
     public boolean isEnabled(int i) {
-        return this.f10326a.isEnabled(i);
+        return this.a.isEnabled(i);
     }
 
     @Override // android.widget.BaseAdapter
     public void notifyDataSetChanged() {
-        ((BaseAdapter) this.f10326a).notifyDataSetChanged();
+        ((BaseAdapter) this.a).notifyDataSetChanged();
     }
 
     @Override // android.widget.BaseAdapter
     public void notifyDataSetInvalidated() {
-        ((BaseAdapter) this.f10326a).notifyDataSetInvalidated();
+        ((BaseAdapter) this.a).notifyDataSetInvalidated();
     }
 
     public String toString() {
-        return this.f10326a.toString();
+        return this.a.toString();
     }
 }

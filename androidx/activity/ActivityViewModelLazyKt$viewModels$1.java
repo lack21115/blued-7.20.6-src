@@ -11,18 +11,17 @@ import kotlin.jvm.internal.Lambda;
 public final class ActivityViewModelLazyKt$viewModels$1 extends Lambda implements Function0<ViewModelStore> {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ ComponentActivity f1478a;
+    final /* synthetic */ ComponentActivity f1430a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public ActivityViewModelLazyKt$viewModels$1(ComponentActivity componentActivity) {
         super(0);
-        this.f1478a = componentActivity;
+        this.f1430a = componentActivity;
     }
 
-    /* JADX WARN: Can't rename method to resolve collision */
-    @Override // kotlin.jvm.functions.Function0
-    public final ViewModelStore invoke() {
-        ViewModelStore viewModelStore = this.f1478a.getViewModelStore();
+    /* renamed from: invoke */
+    public final ViewModelStore m1065invoke() {
+        ViewModelStore viewModelStore = this.f1430a.getViewModelStore();
         Intrinsics.c(viewModelStore, "viewModelStore");
         return viewModelStore;
     }

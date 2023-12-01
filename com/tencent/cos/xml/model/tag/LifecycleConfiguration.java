@@ -1,6 +1,5 @@
 package com.tencent.cos.xml.model.tag;
 
-import com.alipay.sdk.util.i;
 import java.util.List;
 
 /* loaded from: source-8457232-dex2jar.jar:com/tencent/cos/xml/model/tag/LifecycleConfiguration.class */
@@ -12,7 +11,7 @@ public class LifecycleConfiguration {
         public int daysAfterInitiation;
 
         public String toString() {
-            return "{AbortIncompleteMultiUpload:\nDaysAfterInitiation:" + this.daysAfterInitiation + "\n" + i.d;
+            return "{AbortIncompleteMultiUpload:\nDaysAfterInitiation:" + this.daysAfterInitiation + "\n}";
         }
     }
 
@@ -23,7 +22,7 @@ public class LifecycleConfiguration {
         public String expiredObjectDeleteMarker;
 
         public String toString() {
-            return "{Expiration:\nDays:" + this.days + "\nDate:" + this.date + "\nExpiredObjectDeleteMarker:" + this.expiredObjectDeleteMarker + "\n" + i.d;
+            return "{Expiration:\nDays:" + this.days + "\nDate:" + this.date + "\nExpiredObjectDeleteMarker:" + this.expiredObjectDeleteMarker + "\n}";
         }
     }
 
@@ -32,7 +31,7 @@ public class LifecycleConfiguration {
         public String prefix;
 
         public String toString() {
-            return "{Filter:\nPrefix:" + this.prefix + "\n" + i.d;
+            return "{Filter:\nPrefix:" + this.prefix + "\n}";
         }
     }
 
@@ -41,7 +40,7 @@ public class LifecycleConfiguration {
         public int noncurrentDays;
 
         public String toString() {
-            return "{NoncurrentVersionExpiration:\nNoncurrentDays:" + this.noncurrentDays + "\n" + i.d;
+            return "{NoncurrentVersionExpiration:\nNoncurrentDays:" + this.noncurrentDays + "\n}";
         }
     }
 
@@ -51,7 +50,7 @@ public class LifecycleConfiguration {
         public String storageClass;
 
         public String toString() {
-            return "{NoncurrentVersionTransition:\nNoncurrentDays:" + this.noncurrentDays + "\nStorageClass:" + this.storageClass + "\n" + i.d;
+            return "{NoncurrentVersionTransition:\nNoncurrentDays:" + this.noncurrentDays + "\nStorageClass:" + this.storageClass + "\n}";
         }
     }
 
@@ -104,7 +103,7 @@ public class LifecycleConfiguration {
                 sb.append(abortIncompleteMultiUpload.toString());
                 sb.append("\n");
             }
-            sb.append(i.d);
+            sb.append("}");
             return sb.toString();
         }
     }
@@ -116,7 +115,7 @@ public class LifecycleConfiguration {
         public String storageClass;
 
         public String toString() {
-            return "{Transition:\nDays:" + this.days + "\nDate:" + this.date + "\nStorageClass:" + this.storageClass + "\n" + i.d;
+            return "{Transition:\nDays:" + this.days + "\nDate:" + this.date + "\nStorageClass:" + this.storageClass + "\n}";
         }
     }
 
@@ -131,7 +130,7 @@ public class LifecycleConfiguration {
                 }
             }
         }
-        sb.append(i.d);
+        sb.append("}");
         return sb.toString();
     }
 }

@@ -53,14 +53,14 @@ public final class WebViewDelegate {
     }
 
     public int getPackageId(Resources resources, String str) {
-        SparseArray<String> assignedPackageIdentifiers = resources.getAssets().getAssignedPackageIdentifiers();
+        SparseArray assignedPackageIdentifiers = resources.getAssets().getAssignedPackageIdentifiers();
         int i = 0;
         while (true) {
             int i2 = i;
             if (i2 >= assignedPackageIdentifiers.size()) {
                 throw new RuntimeException("Package not found: " + str);
             }
-            if (str.equals(assignedPackageIdentifiers.valueAt(i2))) {
+            if (str.equals((String) assignedPackageIdentifiers.valueAt(i2))) {
                 return assignedPackageIdentifiers.keyAt(i2);
             }
             i = i2 + 1;

@@ -7,16 +7,16 @@ import android.os.Parcelable;
 public final class SWw7W implements Parcelable {
 
     /* renamed from: a  reason: collision with root package name */
-    public int f39919a;
+    public int f26228a;
     public byte[] b;
 
     /* renamed from: c  reason: collision with root package name */
-    public int f39920c;
+    public int f26229c;
 
     public SWw7W(Parcel parcel) {
-        this.f39919a = parcel.readInt();
+        this.f26228a = parcel.readInt();
         this.b = parcel.createByteArray();
-        this.f39920c = parcel.readInt();
+        this.f26229c = parcel.readInt();
     }
 
     @Override // android.os.Parcelable
@@ -26,8 +26,8 @@ public final class SWw7W implements Parcelable {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
-        parcel.writeInt(this.f39919a);
+        parcel.writeInt(this.f26228a);
         parcel.writeByteArray(this.b);
-        parcel.writeInt(this.f39920c);
+        parcel.writeInt(this.f26229c);
     }
 }

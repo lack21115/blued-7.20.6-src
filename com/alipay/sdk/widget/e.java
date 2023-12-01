@@ -20,10 +20,10 @@ public class e {
     }
 
     public static Dialog a(Context context, String str, String str2, String str3, DialogInterface.OnClickListener onClickListener, String str4, DialogInterface.OnClickListener onClickListener2) {
-        AlertDialog.Builder a2 = a(context, str, str3, onClickListener, str4, onClickListener2);
-        a2.setTitle(str);
-        a2.setMessage(str2);
-        AlertDialog create = a2.create();
+        AlertDialog.Builder a = a(context, str, str3, onClickListener, str4, onClickListener2);
+        a.setTitle(str);
+        a.setMessage(str2);
+        AlertDialog create = a.create();
         create.setCanceledOnTouchOutside(false);
         create.setOnKeyListener(new f());
         try {

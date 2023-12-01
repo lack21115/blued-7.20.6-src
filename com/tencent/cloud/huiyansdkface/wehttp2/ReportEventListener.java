@@ -20,7 +20,7 @@ public class ReportEventListener extends EventListener {
     private Map<Request, EventReport> b = new ConcurrentHashMap();
 
     /* renamed from: c  reason: collision with root package name */
-    private EventReportFactory f36101c;
+    private EventReportFactory f22410c;
 
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/cloud/huiyansdkface/wehttp2/ReportEventListener$EventReportFactory.class */
     public interface EventReportFactory {
@@ -28,7 +28,7 @@ public class ReportEventListener extends EventListener {
     }
 
     public ReportEventListener(EventReportFactory eventReportFactory) {
-        this.f36101c = eventReportFactory;
+        this.f22410c = eventReportFactory;
     }
 
     private EventReport a(Call call) {
@@ -60,7 +60,7 @@ public class ReportEventListener extends EventListener {
     @Override // com.tencent.cloud.huiyansdkface.okhttp3.EventListener
     public void callStart(Call call) {
         if (a(call) == null) {
-            EventReport create = this.f36101c.create(call.request());
+            EventReport create = this.f22410c.create(call.request());
             create.callStart();
             this.b.put(call.request(), create);
         }

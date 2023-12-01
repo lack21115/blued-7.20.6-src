@@ -8,7 +8,7 @@ import java.io.File;
 import java.util.ArrayList;
 
 /* loaded from: source-7994992-dex2jar.jar:com/kwai/filedownloader/c.class */
-public final class c implements com.kwai.filedownloader.a, a.InterfaceC0583a, d.a {
+public final class c implements com.kwai.filedownloader.a, a.InterfaceC0413a, d.a {
     private final x aEU;
     private final x.a aEV;
     private int aEW;
@@ -99,32 +99,32 @@ public final class c implements com.kwai.filedownloader.a, a.InterfaceC0583a, d.
         return true;
     }
 
-    @Override // com.kwai.filedownloader.a.InterfaceC0583a
+    @Override // com.kwai.filedownloader.a.InterfaceC0413a
     public final int GA() {
         return this.aFk;
     }
 
-    @Override // com.kwai.filedownloader.a.InterfaceC0583a
+    @Override // com.kwai.filedownloader.a.InterfaceC0413a
     public final void GB() {
         this.aFk = Gn() != null ? Gn().hashCode() : hashCode();
     }
 
-    @Override // com.kwai.filedownloader.a.InterfaceC0583a
+    @Override // com.kwai.filedownloader.a.InterfaceC0413a
     public final boolean GC() {
         return this.aFo;
     }
 
-    @Override // com.kwai.filedownloader.a.InterfaceC0583a
+    @Override // com.kwai.filedownloader.a.InterfaceC0413a
     public final void GD() {
         this.aFo = true;
     }
 
-    @Override // com.kwai.filedownloader.a.InterfaceC0583a
+    @Override // com.kwai.filedownloader.a.InterfaceC0413a
     public final void GE() {
         GJ();
     }
 
-    @Override // com.kwai.filedownloader.a.InterfaceC0583a
+    @Override // com.kwai.filedownloader.a.InterfaceC0413a
     public final boolean GF() {
         ArrayList<Object> arrayList = this.aEX;
         return arrayList != null && arrayList.size() > 0;
@@ -136,7 +136,7 @@ public final class c implements com.kwai.filedownloader.a, a.InterfaceC0583a, d.
     }
 
     @Override // com.kwai.filedownloader.d.a
-    public final a.InterfaceC0583a GM() {
+    public final a.InterfaceC0413a GM() {
         return this;
     }
 
@@ -238,12 +238,12 @@ public final class c implements com.kwai.filedownloader.a, a.InterfaceC0583a, d.
         return this.aFg;
     }
 
-    @Override // com.kwai.filedownloader.a.InterfaceC0583a
+    @Override // com.kwai.filedownloader.a.InterfaceC0413a
     public final com.kwai.filedownloader.a Gy() {
         return this;
     }
 
-    @Override // com.kwai.filedownloader.a.InterfaceC0583a
+    @Override // com.kwai.filedownloader.a.InterfaceC0413a
     public final x.a Gz() {
         return this.aEV;
     }
@@ -293,7 +293,7 @@ public final class c implements com.kwai.filedownloader.a, a.InterfaceC0583a, d.
         return this;
     }
 
-    @Override // com.kwai.filedownloader.a.InterfaceC0583a
+    @Override // com.kwai.filedownloader.a.InterfaceC0413a
     public final boolean cw(int i) {
         return getId() == i;
     }
@@ -332,7 +332,7 @@ public final class c implements com.kwai.filedownloader.a, a.InterfaceC0583a, d.
         this.aEZ = str;
     }
 
-    @Override // com.kwai.filedownloader.a.InterfaceC0583a
+    @Override // com.kwai.filedownloader.a.InterfaceC0413a
     public final void free() {
         this.aEU.free();
         if (h.GW().a(this)) {
@@ -405,7 +405,7 @@ public final class c implements com.kwai.filedownloader.a, a.InterfaceC0583a, d.
         return this.mUrl;
     }
 
-    @Override // com.kwai.filedownloader.a.InterfaceC0583a
+    @Override // com.kwai.filedownloader.a.InterfaceC0413a
     public final boolean isOver() {
         return com.kwai.filedownloader.c.d.dd(Gq());
     }

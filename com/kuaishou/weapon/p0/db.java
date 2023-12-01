@@ -9,10 +9,10 @@ public class db {
     private static volatile db b;
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f23817a;
+    private Context f10209a;
 
     private db(Context context) {
-        this.f23817a = context;
+        this.f10209a = context;
     }
 
     public static db a(Context context) {
@@ -35,9 +35,9 @@ public class db {
             @Override // java.lang.Runnable
             public void run() {
                 try {
-                    h a2 = h.a(db.this.f23817a, "re_po_rt");
+                    h a2 = h.a(db.this.f10209a, "re_po_rt");
                     if (a2.b(de.au, 1) == 1) {
-                        long a3 = de.a(db.this.f23817a).a();
+                        long a3 = de.a(db.this.f10209a).a();
                         long currentTimeMillis = System.currentTimeMillis();
                         long b2 = a2.b(de.aw, 8);
                         if (a3 > 0 && currentTimeMillis - a3 < WeaponHI.ii * 3600000 && WeaponHI.isList != null) {
@@ -50,8 +50,8 @@ public class db {
                             }
                         }
                         if (currentTimeMillis - a3 >= b2 * 3600000) {
-                            co.a(db.this.f23817a, new cm(db.this.f23817a, i).a(cj.b), cj.b, true, true);
-                            de.a(db.this.f23817a).a(currentTimeMillis);
+                            co.a(db.this.f10209a, new cm(db.this.f10209a, i).a(cj.b), cj.b, true, true);
+                            de.a(db.this.f10209a).a(currentTimeMillis);
                         }
                     }
                 } catch (Throwable th) {

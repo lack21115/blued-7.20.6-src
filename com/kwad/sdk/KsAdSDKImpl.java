@@ -317,8 +317,8 @@ public class KsAdSDKImpl implements IKsAdSDK {
 
     private void initSOLoader() {
         try {
-            com.kwai.sodler.kwai.a.a(new a.InterfaceC0594a() { // from class: com.kwad.sdk.KsAdSDKImpl.8
-                @Override // com.kwai.sodler.kwai.a.InterfaceC0594a
+            com.kwai.sodler.kwai.a.a(new a.InterfaceC0424a() { // from class: com.kwad.sdk.KsAdSDKImpl.8
+                @Override // com.kwai.sodler.kwai.a.InterfaceC0424a
                 public final void a(com.kwai.sodler.lib.a.f fVar, File file) {
                     try {
                         com.kwad.sdk.core.download.a.a(fVar.getDownloadUrl(), file, (a.b) null, -1, true);
@@ -330,12 +330,12 @@ public class KsAdSDKImpl implements IKsAdSDK {
                     }
                 }
 
-                @Override // com.kwai.sodler.kwai.a.InterfaceC0594a
+                @Override // com.kwai.sodler.kwai.a.InterfaceC0424a
                 public final int getMaxRetryCount() {
                     return com.kwad.sdk.core.config.d.a(com.kwad.sdk.core.config.c.adi);
                 }
 
-                @Override // com.kwai.sodler.kwai.a.InterfaceC0594a
+                @Override // com.kwai.sodler.kwai.a.InterfaceC0424a
                 public final boolean sp() {
                     return com.kwad.sdk.core.config.d.a(com.kwad.sdk.core.config.c.adh);
                 }

@@ -7,16 +7,16 @@ import java.util.HashMap;
 public class w {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final HashMap<String, String> f41713a;
+    private static final HashMap<String, String> f28022a;
 
     static {
         HashMap<String, String> hashMap = new HashMap<>();
-        f41713a = hashMap;
+        f28022a = hashMap;
         hashMap.put("FFD8FF", "jpg");
-        f41713a.put("89504E47", "png");
-        f41713a.put(com.huawei.openalliance.ad.constant.t.an, "gif");
-        f41713a.put("474946", "gif");
-        f41713a.put("424D", "bmp");
+        f28022a.put("89504E47", "png");
+        f28022a.put(com.huawei.openalliance.ad.constant.t.an, "gif");
+        f28022a.put("474946", "gif");
+        f28022a.put("424D", "bmp");
     }
 
     public static long a(File file) {

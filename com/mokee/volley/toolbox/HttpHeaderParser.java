@@ -5,9 +5,7 @@ import org.apache.http.impl.cookie.DateUtils;
 
 /* loaded from: source-4181928-dex2jar.jar:com/mokee/volley/toolbox/HttpHeaderParser.class */
 public class HttpHeaderParser {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final String[] f24258a = null;
+    private static final String[] a = null;
 
     static {
         String[] strArr = new String[12];
@@ -15,10 +13,10 @@ public class HttpHeaderParser {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:10:0x007a, code lost:
-        if (r0.equals(com.mokee.volley.toolbox.HttpHeaderParser.f24258a[7]) != false) goto L10;
+        if (r0.equals(com.mokee.volley.toolbox.HttpHeaderParser.a[7]) != false) goto L10;
      */
     /* JADX WARN: Code restructure failed: missing block: B:12:0x008c, code lost:
-        if (r0.equals(com.mokee.volley.toolbox.HttpHeaderParser.f24258a[10]) == false) goto L15;
+        if (r0.equals(com.mokee.volley.toolbox.HttpHeaderParser.a[10]) == false) goto L15;
      */
     /* JADX WARN: Code restructure failed: missing block: B:13:0x008f, code lost:
         return null;
@@ -30,7 +28,7 @@ public class HttpHeaderParser {
         throw r5;
      */
     /* JADX WARN: Code restructure failed: missing block: B:19:0x009e, code lost:
-        if (r0.startsWith(com.mokee.volley.toolbox.HttpHeaderParser.f24258a[3]) == false) goto L17;
+        if (r0.startsWith(com.mokee.volley.toolbox.HttpHeaderParser.a[3]) == false) goto L17;
      */
     /* JADX WARN: Code restructure failed: missing block: B:20:0x00a1, code lost:
         r13 = java.lang.Long.parseLong(r0.substring(8));
@@ -60,13 +58,13 @@ public class HttpHeaderParser {
         if (r0 == false) goto L24;
      */
     /* JADX WARN: Code restructure failed: missing block: B:44:0x0185, code lost:
-        if (r0.equals(com.mokee.volley.toolbox.HttpHeaderParser.f24258a[11]) != false) goto L27;
+        if (r0.equals(com.mokee.volley.toolbox.HttpHeaderParser.a[11]) != false) goto L27;
      */
     /* JADX WARN: Code restructure failed: missing block: B:45:0x0188, code lost:
         r13 = r15;
      */
     /* JADX WARN: Code restructure failed: missing block: B:47:0x0197, code lost:
-        if (r0.equals(com.mokee.volley.toolbox.HttpHeaderParser.f24258a[6]) == false) goto L24;
+        if (r0.equals(com.mokee.volley.toolbox.HttpHeaderParser.a[6]) == false) goto L24;
      */
     /* JADX WARN: Code restructure failed: missing block: B:49:0x019d, code lost:
         r5 = move-exception;
@@ -118,7 +116,7 @@ public class HttpHeaderParser {
             boolean r0 = com.mokee.volley.toolbox.ImageLoader.h
             r7 = r0
             r0 = r4
-            java.lang.String[] r1 = com.mokee.volley.toolbox.HttpHeaderParser.f24258a
+            java.lang.String[] r1 = com.mokee.volley.toolbox.HttpHeaderParser.a
             r2 = 2
             r1 = r1[r2]
             java.lang.Object r0 = r0.get(r1)
@@ -149,7 +147,7 @@ public class HttpHeaderParser {
             r0 = r8
             r1 = 0
             r0 = r0[r1]
-            java.lang.String[] r1 = com.mokee.volley.toolbox.HttpHeaderParser.f24258a
+            java.lang.String[] r1 = com.mokee.volley.toolbox.HttpHeaderParser.a
             r2 = 1
             r1 = r1[r2]
             boolean r0 = r0.equals(r1)
@@ -171,7 +169,7 @@ public class HttpHeaderParser {
             int r1 = r1.length
             if (r0 < r1) goto L24
         L58:
-            java.lang.String[] r0 = com.mokee.volley.toolbox.HttpHeaderParser.f24258a
+            java.lang.String[] r0 = com.mokee.volley.toolbox.HttpHeaderParser.a
             r1 = 0
             r0 = r0[r1]
             return r0

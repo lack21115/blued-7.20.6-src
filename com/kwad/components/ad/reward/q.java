@@ -4,6 +4,7 @@ import com.baidu.mobads.sdk.internal.bw;
 import com.kwad.sdk.core.response.model.AdInfo;
 import com.kwad.sdk.core.response.model.AdTemplate;
 import com.kwad.sdk.utils.bb;
+import com.xiaomi.mipush.sdk.Constants;
 import org.json.JSONObject;
 
 /* loaded from: source-7994992-dex2jar.jar:com/kwad/components/ad/reward/q.class */
@@ -16,7 +17,7 @@ public final class q {
 
         public a(String str) {
             JSONObject jSONObject;
-            this.errorMsg = "-";
+            this.errorMsg = Constants.ACCEPT_TIME_SEPARATOR_SERVER;
             try {
                 jSONObject = new JSONObject(str);
             } catch (Throwable th) {
@@ -59,7 +60,7 @@ public final class q {
             public final void run() {
                 String str;
                 try {
-                    com.kwad.sdk.core.network.c doGet = com.kwad.sdk.b.rZ().doGet(String.this, null);
+                    com.kwad.sdk.core.network.c doGet = com.kwad.sdk.b.rZ().doGet(bC, null);
                     if (doGet == null) {
                         str = "Network Error: url invalid";
                     } else if (doGet.code != 200) {

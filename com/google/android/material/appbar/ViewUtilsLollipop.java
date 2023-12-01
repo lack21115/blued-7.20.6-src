@@ -1,5 +1,6 @@
 package com.google.android.material.appbar;
 
+import android.R;
 import android.animation.AnimatorInflater;
 import android.animation.ObjectAnimator;
 import android.animation.StateListAnimator;
@@ -8,13 +9,12 @@ import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewOutlineProvider;
-import com.google.android.material.R;
 import com.google.android.material.internal.ThemeEnforcement;
 
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8110460-dex2jar.jar:com/google/android/material/appbar/ViewUtilsLollipop.class */
 public class ViewUtilsLollipop {
-    private static final int[] STATE_LIST_ANIM_ATTRS = {16843848};
+    private static final int[] STATE_LIST_ANIM_ATTRS = {R.attr.stateListAnimator};
 
     ViewUtilsLollipop() {
     }
@@ -26,11 +26,11 @@ public class ViewUtilsLollipop {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static void setDefaultAppBarLayoutStateListAnimator(View view, float f) {
-        int integer = view.getResources().getInteger(R.integer.app_bar_elevation_anim_duration);
+        int integer = view.getResources().getInteger(com.google.android.material.R.integer.app_bar_elevation_anim_duration);
         StateListAnimator stateListAnimator = new StateListAnimator();
         long j = integer;
-        stateListAnimator.addState(new int[]{16842910, R.attr.state_liftable, -R.attr.state_lifted}, ObjectAnimator.ofFloat(view, "elevation", 0.0f).setDuration(j));
-        stateListAnimator.addState(new int[]{16842910}, ObjectAnimator.ofFloat(view, "elevation", f).setDuration(j));
+        stateListAnimator.addState(new int[]{R.attr.state_enabled, com.google.android.material.R.attr.state_liftable, -com.google.android.material.R.attr.state_lifted}, ObjectAnimator.ofFloat(view, "elevation", 0.0f).setDuration(j));
+        stateListAnimator.addState(new int[]{R.attr.state_enabled}, ObjectAnimator.ofFloat(view, "elevation", f).setDuration(j));
         stateListAnimator.addState(new int[0], ObjectAnimator.ofFloat(view, "elevation", 0.0f).setDuration(0L));
         view.setStateListAnimator(stateListAnimator);
     }

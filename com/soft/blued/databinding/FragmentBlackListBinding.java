@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentBlackListBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f28786a;
+    private final LinearLayout f15096a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f28786a;
+        return this.f15096a;
     }
 }

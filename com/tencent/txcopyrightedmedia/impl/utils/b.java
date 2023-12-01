@@ -6,11 +6,11 @@ import android.content.Context;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    public final e f40084a;
+    public final e f26393a;
     public final c b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final d f40085c;
+    public final d f26394c;
     public final g d;
     private final f e;
     private z f;
@@ -20,13 +20,13 @@ public final class b {
         this.d = new g(context);
         f fVar = new f(context, this);
         this.e = fVar;
-        this.f40084a = new e(fVar, this);
+        this.f26393a = new e(fVar, this);
         this.b = new c(this.e);
-        this.f40085c = new d();
+        this.f26394c = new d();
         if (!g.b || (b = this.d.b()) == -1 || b == 1) {
             return;
         }
-        this.f40084a.a();
+        this.f26393a.a();
         this.b.b();
         d.a();
     }

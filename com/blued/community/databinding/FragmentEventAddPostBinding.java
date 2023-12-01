@@ -28,13 +28,9 @@ public final class FragmentEventAddPostBinding implements ViewBinding {
     public final ShapeTextView H;
     public final TextView I;
     private final ConstraintLayout J;
-
-    /* renamed from: a  reason: collision with root package name */
-    public final LinearLayout f18849a;
+    public final LinearLayout a;
     public final TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final EditText f18850c;
+    public final EditText c;
     public final SelectionEditText d;
     public final SelectionEditText e;
     public final EditText f;
@@ -61,9 +57,9 @@ public final class FragmentEventAddPostBinding implements ViewBinding {
 
     private FragmentEventAddPostBinding(ConstraintLayout constraintLayout, LinearLayout linearLayout, TextView textView, EditText editText, SelectionEditText selectionEditText, SelectionEditText selectionEditText2, EditText editText2, EditText editText3, ImageView imageView, ImageView imageView2, EditInputNumView editInputNumView, EditInputNumView editInputNumView2, EditInputNumView editInputNumView3, ImageView imageView3, ImageView imageView4, ImageView imageView5, ShapeLinearLayout shapeLinearLayout, ConstraintLayout constraintLayout2, ShapeLinearLayout shapeLinearLayout2, ShapeLinearLayout shapeLinearLayout3, ShapeLinearLayout shapeLinearLayout4, ShapeLinearLayout shapeLinearLayout5, ShapeLinearLayout shapeLinearLayout6, ShapeFrameLayout shapeFrameLayout, ShapeFrameLayout shapeFrameLayout2, RecyclerView recyclerView, RecyclerView recyclerView2, ToggleButton toggleButton, TextView textView2, TextView textView3, TextView textView4, TextView textView5, TextView textView6, TextView textView7, ShapeTextView shapeTextView, TextView textView8) {
         this.J = constraintLayout;
-        this.f18849a = linearLayout;
+        this.a = linearLayout;
         this.b = textView;
-        this.f18850c = editText;
+        this.c = editText;
         this.d = selectionEditText;
         this.e = selectionEditText2;
         this.f = editText2;
@@ -106,10 +102,10 @@ public final class FragmentEventAddPostBinding implements ViewBinding {
             if (textView != null) {
                 EditText editText = (EditText) view.findViewById(R.id.edt_address);
                 if (editText != null) {
-                    SelectionEditText selectionEditText = (SelectionEditText) view.findViewById(R.id.edt_content);
-                    if (selectionEditText != null) {
-                        SelectionEditText selectionEditText2 = (SelectionEditText) view.findViewById(R.id.edt_hyperlinks);
-                        if (selectionEditText2 != null) {
+                    SelectionEditText findViewById = view.findViewById(R.id.edt_content);
+                    if (findViewById != null) {
+                        SelectionEditText findViewById2 = view.findViewById(R.id.edt_hyperlinks);
+                        if (findViewById2 != null) {
                             EditText editText2 = (EditText) view.findViewById(R.id.edt_number);
                             if (editText2 != null) {
                                 EditText editText3 = (EditText) view.findViewById(R.id.edt_title);
@@ -118,12 +114,12 @@ public final class FragmentEventAddPostBinding implements ViewBinding {
                                     if (imageView != null) {
                                         ImageView imageView2 = (ImageView) view.findViewById(R.id.img_add_pic_btn);
                                         if (imageView2 != null) {
-                                            EditInputNumView editInputNumView = (EditInputNumView) view.findViewById(R.id.inv_address);
-                                            if (editInputNumView != null) {
-                                                EditInputNumView editInputNumView2 = (EditInputNumView) view.findViewById(R.id.inv_content);
-                                                if (editInputNumView2 != null) {
-                                                    EditInputNumView editInputNumView3 = (EditInputNumView) view.findViewById(R.id.inv_title);
-                                                    if (editInputNumView3 != null) {
+                                            EditInputNumView findViewById3 = view.findViewById(R.id.inv_address);
+                                            if (findViewById3 != null) {
+                                                EditInputNumView findViewById4 = view.findViewById(R.id.inv_content);
+                                                if (findViewById4 != null) {
+                                                    EditInputNumView findViewById5 = view.findViewById(R.id.inv_title);
+                                                    if (findViewById5 != null) {
                                                         ImageView imageView3 = (ImageView) view.findViewById(R.id.iv_close);
                                                         if (imageView3 != null) {
                                                             ImageView imageView4 = (ImageView) view.findViewById(R.id.iv_offline);
@@ -132,8 +128,8 @@ public final class FragmentEventAddPostBinding implements ViewBinding {
                                                                 if (imageView5 != null) {
                                                                     ShapeLinearLayout shapeLinearLayout = (ShapeLinearLayout) view.findViewById(R.id.lay_add_pic);
                                                                     if (shapeLinearLayout != null) {
-                                                                        ConstraintLayout constraintLayout = (ConstraintLayout) view.findViewById(R.id.ll_title);
-                                                                        if (constraintLayout != null) {
+                                                                        ConstraintLayout findViewById6 = view.findViewById(R.id.ll_title);
+                                                                        if (findViewById6 != null) {
                                                                             ShapeLinearLayout shapeLinearLayout2 = (ShapeLinearLayout) view.findViewById(R.id.ly_date);
                                                                             if (shapeLinearLayout2 != null) {
                                                                                 ShapeLinearLayout shapeLinearLayout3 = (ShapeLinearLayout) view.findViewById(R.id.ly_hyperlinks);
@@ -148,10 +144,10 @@ public final class FragmentEventAddPostBinding implements ViewBinding {
                                                                                                 if (shapeFrameLayout != null) {
                                                                                                     ShapeFrameLayout shapeFrameLayout2 = (ShapeFrameLayout) view.findViewById(R.id.ly_online);
                                                                                                     if (shapeFrameLayout2 != null) {
-                                                                                                        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rv_add_photo);
-                                                                                                        if (recyclerView != null) {
-                                                                                                            RecyclerView recyclerView2 = (RecyclerView) view.findViewById(R.id.rv_event_type);
-                                                                                                            if (recyclerView2 != null) {
+                                                                                                        RecyclerView findViewById7 = view.findViewById(R.id.rv_add_photo);
+                                                                                                        if (findViewById7 != null) {
+                                                                                                            RecyclerView findViewById8 = view.findViewById(R.id.rv_event_type);
+                                                                                                            if (findViewById8 != null) {
                                                                                                                 ToggleButton toggleButton = (ToggleButton) view.findViewById(R.id.tgb_join_review);
                                                                                                                 if (toggleButton != null) {
                                                                                                                     TextView textView2 = (TextView) view.findViewById(R.id.tv_add_cover);
@@ -170,7 +166,7 @@ public final class FragmentEventAddPostBinding implements ViewBinding {
                                                                                                                                             if (shapeTextView != null) {
                                                                                                                                                 TextView textView8 = (TextView) view.findViewById(R.id.tv_title);
                                                                                                                                                 if (textView8 != null) {
-                                                                                                                                                    return new FragmentEventAddPostBinding((ConstraintLayout) view, linearLayout, textView, editText, selectionEditText, selectionEditText2, editText2, editText3, imageView, imageView2, editInputNumView, editInputNumView2, editInputNumView3, imageView3, imageView4, imageView5, shapeLinearLayout, constraintLayout, shapeLinearLayout2, shapeLinearLayout3, shapeLinearLayout4, shapeLinearLayout5, shapeLinearLayout6, shapeFrameLayout, shapeFrameLayout2, recyclerView, recyclerView2, toggleButton, textView2, textView3, textView4, textView5, textView6, textView7, shapeTextView, textView8);
+                                                                                                                                                    return new FragmentEventAddPostBinding((ConstraintLayout) view, linearLayout, textView, editText, findViewById, findViewById2, editText2, editText3, imageView, imageView2, findViewById3, findViewById4, findViewById5, imageView3, imageView4, imageView5, shapeLinearLayout, findViewById6, shapeLinearLayout2, shapeLinearLayout3, shapeLinearLayout4, shapeLinearLayout5, shapeLinearLayout6, shapeFrameLayout, shapeFrameLayout2, findViewById7, findViewById8, toggleButton, textView2, textView3, textView4, textView5, textView6, textView7, shapeTextView, textView8);
                                                                                                                                                 }
                                                                                                                                                 str = "tvTitle";
                                                                                                                                             } else {
@@ -278,7 +274,6 @@ public final class FragmentEventAddPostBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.J;

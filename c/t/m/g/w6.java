@@ -16,11 +16,11 @@ import java.util.concurrent.TimeUnit;
 public class w6 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final List<x6> f4040a;
+    public final List<x6> f3992a;
     public boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    public boolean f4041c;
+    public boolean f3993c;
     public boolean d;
     public boolean e;
     public long f;
@@ -41,7 +41,7 @@ public class w6 {
 
         @Override // android.location.GnssStatus.Callback
         public void onSatelliteStatusChanged(GnssStatus gnssStatus) {
-            for (x6 x6Var : w6.this.f4040a) {
+            for (x6 x6Var : w6.this.f3992a) {
                 x6Var.a(gnssStatus);
             }
         }
@@ -62,8 +62,8 @@ public class w6 {
 
         @Override // android.location.GnssNavigationMessage.Callback
         public void onGnssNavigationMessageReceived(GnssNavigationMessage gnssNavigationMessage) {
-            if (w6.this.f4041c) {
-                for (x6 x6Var : w6.this.f4040a) {
+            if (w6.this.f3993c) {
+                for (x6 x6Var : w6.this.f3992a) {
                     x6Var.a(gnssNavigationMessage);
                 }
             }
@@ -71,8 +71,8 @@ public class w6 {
 
         @Override // android.location.GnssNavigationMessage.Callback
         public void onStatusChanged(int i) {
-            if (w6.this.f4041c) {
-                for (x6 x6Var : w6.this.f4040a) {
+            if (w6.this.f3993c) {
+                for (x6 x6Var : w6.this.f3992a) {
                     x6Var.a(i);
                 }
             }
@@ -87,7 +87,7 @@ public class w6 {
         @Override // android.location.GnssMeasurementsEvent.Callback
         public void onGnssMeasurementsReceived(GnssMeasurementsEvent gnssMeasurementsEvent) {
             if (w6.this.d) {
-                for (x6 x6Var : w6.this.f4040a) {
+                for (x6 x6Var : w6.this.f3992a) {
                     x6Var.a(gnssMeasurementsEvent);
                 }
             }
@@ -96,7 +96,7 @@ public class w6 {
         @Override // android.location.GnssMeasurementsEvent.Callback
         public void onStatusChanged(int i) {
             if (w6.this.d) {
-                for (x6 x6Var : w6.this.f4040a) {
+                for (x6 x6Var : w6.this.f3992a) {
                     x6Var.b(i);
                 }
             }
@@ -110,7 +110,7 @@ public class w6 {
     public w6(Context context, x6... x6VarArr) {
         new a();
         this.b = true;
-        this.f4041c = true;
+        this.f3993c = true;
         new b();
         this.d = true;
         new c();
@@ -124,7 +124,7 @@ public class w6 {
         handlerThread.start();
         this.k = this.j.getLooper();
         new Handler(this.k);
-        this.f4040a = Arrays.asList(x6VarArr);
+        this.f3992a = Arrays.asList(x6VarArr);
         LocationManager locationManager = (LocationManager) context.getSystemService("location");
     }
 }

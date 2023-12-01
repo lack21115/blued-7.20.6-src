@@ -15,9 +15,7 @@ public class StrictLineReader implements Closeable {
     private byte[] buf;
     private final Charset charset;
     private int end;
-
-    /* renamed from: in  reason: collision with root package name */
-    private final InputStream f43649in;
+    private final InputStream in;
     private int pos;
 
     public StrictLineReader(InputStream inputStream) {
@@ -41,7 +39,7 @@ public class StrictLineReader implements Closeable {
         if (!charset.equals(StandardCharsets.US_ASCII) && !charset.equals(StandardCharsets.UTF_8) && !charset.equals(StandardCharsets.ISO_8859_1)) {
             throw new IllegalArgumentException("Unsupported encoding");
         }
-        this.f43649in = inputStream;
+        this.in = inputStream;
         this.charset = charset;
         this.buf = new byte[i];
     }
@@ -51,7 +49,7 @@ public class StrictLineReader implements Closeable {
     }
 
     private void fillBuf() throws IOException {
-        int read = this.f43649in.read(this.buf, 0, this.buf.length);
+        int read = this.in.read(this.buf, 0, this.buf.length);
         if (read == -1) {
             throw new EOFException();
         }
@@ -61,10 +59,10 @@ public class StrictLineReader implements Closeable {
 
     @Override // java.io.Closeable, java.lang.AutoCloseable
     public void close() throws IOException {
-        synchronized (this.f43649in) {
+        synchronized (this.in) {
             if (this.buf != null) {
                 this.buf = null;
-                this.f43649in.close();
+                this.in.close();
             }
         }
     }
@@ -84,7 +82,7 @@ public class StrictLineReader implements Closeable {
 
     public String readLine() throws IOException {
         int i;
-        synchronized (this.f43649in) {
+        synchronized (this.in) {
             if (this.buf == null) {
                 throw new IOException("LineReader is closed");
             }

@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentLiveChatReportWebViewBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final RelativeLayout f28866a;
+    private final RelativeLayout f15176a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
-        return this.f28866a;
+        return this.f15176a;
     }
 }

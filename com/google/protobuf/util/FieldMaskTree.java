@@ -11,9 +11,8 @@ import java.util.SortedMap;
 import java.util.TreeMap;
 import java.util.logging.Logger;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8110460-dex2jar.jar:com/google/protobuf/util/FieldMaskTree.class */
-public final class FieldMaskTree {
+final class FieldMaskTree {
     private static final String FIELD_PATH_SEPARATOR_REGEX = "\\.";
     private static final Logger logger = Logger.getLogger(FieldMaskTree.class.getName());
     private final Node root = new Node();

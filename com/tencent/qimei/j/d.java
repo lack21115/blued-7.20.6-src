@@ -6,13 +6,13 @@ import android.content.Context;
 public class d {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f38343a;
+    public String f24652a;
 
     public d(Context context, String str) {
         if (context == null) {
             return;
         }
-        this.f38343a = str;
+        this.f24652a = str;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:12:0x0091, code lost:

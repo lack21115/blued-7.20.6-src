@@ -5,16 +5,15 @@ import android.view.ViewGroup;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8756600-dex2jar.jar:androidx/transition/ViewGroupUtils.class */
-public class ViewGroupUtils {
+class ViewGroupUtils {
 
     /* renamed from: a  reason: collision with root package name */
-    private static boolean f3493a = true;
+    private static boolean f3445a = true;
     private static Method b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static boolean f3494c;
+    private static boolean f3446c;
 
     private ViewGroupUtils() {
     }
@@ -24,14 +23,14 @@ public class ViewGroupUtils {
         if (Build.VERSION.SDK_INT >= 29) {
             return viewGroup.getChildDrawingOrder(i);
         }
-        if (!f3494c) {
+        if (!f3446c) {
             try {
                 Method declaredMethod = ViewGroup.class.getDeclaredMethod("getChildDrawingOrder", Integer.TYPE, Integer.TYPE);
                 b = declaredMethod;
                 declaredMethod.setAccessible(true);
             } catch (NoSuchMethodException e) {
             }
-            f3494c = true;
+            f3446c = true;
         }
         Method method = b;
         if (method != null) {
@@ -61,11 +60,11 @@ public class ViewGroupUtils {
     }
 
     private static void b(ViewGroup viewGroup, boolean z) {
-        if (f3493a) {
+        if (f3445a) {
             try {
                 viewGroup.suppressLayout(z);
             } catch (NoSuchMethodError e) {
-                f3493a = false;
+                f3445a = false;
             }
         }
     }

@@ -15,9 +15,7 @@ import com.tencent.rtmp.ui.TXCloudVideoView;
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/player/live/manager/LiveMediaPlayerManagerTX.class */
 public class LiveMediaPlayerManagerTX extends AbsLiveManager {
     private static String b = "LiveMediaPlayerManagerTX";
-
-    /* renamed from: c  reason: collision with root package name */
-    private static int f15630c = 10;
+    private static int c = 10;
     private static String d = "rtmp://";
     private static String e = "http://";
     private static String f = "https://";
@@ -28,11 +26,9 @@ public class LiveMediaPlayerManagerTX extends AbsLiveManager {
     private TXCloudVideoView l;
     private int h = 1;
     private ITXLivePlayListener m = new ITXLivePlayListener() { // from class: com.blued.android.module.player.live.manager.LiveMediaPlayerManagerTX.2
-        @Override // com.tencent.rtmp.ITXLivePlayListener
         public void onNetStatus(Bundle bundle) {
         }
 
-        @Override // com.tencent.rtmp.ITXLivePlayListener
         public void onPlayEvent(int i, Bundle bundle) {
             Log.b(LiveMediaPlayerManagerTX.b, "receive event: " + i + ", " + bundle.getString("EVT_MSG"));
             if (i != -2301) {
@@ -40,35 +36,35 @@ public class LiveMediaPlayerManagerTX extends AbsLiveManager {
                     if (i != 2013) {
                         if (i == 2003) {
                             Log.b(LiveMediaPlayerManagerTX.b, "PLAY_EVT_RCV_FIRST_I_FRAME");
-                            if (LiveMediaPlayerManagerTX.this.f15626a != null) {
-                                LiveMediaPlayerManagerTX.this.f15626a.c();
+                            if (LiveMediaPlayerManagerTX.this.a != null) {
+                                LiveMediaPlayerManagerTX.this.a.c();
                             }
                         } else if (i != 2004) {
                             if (i != 2006) {
                                 if (i == 2007) {
                                     Log.c(LiveMediaPlayerManagerTX.b, "onMediaBufferStart");
-                                    if (LiveMediaPlayerManagerTX.this.f15626a != null) {
-                                        LiveMediaPlayerManagerTX.this.f15626a.a();
+                                    if (LiveMediaPlayerManagerTX.this.a != null) {
+                                        LiveMediaPlayerManagerTX.this.a.a();
                                     }
                                 }
                             }
-                        } else if (LiveMediaPlayerManagerTX.this.f15626a != null) {
-                            LiveMediaPlayerManagerTX.this.f15626a.b();
+                        } else if (LiveMediaPlayerManagerTX.this.a != null) {
+                            LiveMediaPlayerManagerTX.this.a.b();
                         }
                     } else if (LiveMediaPlayerManagerTX.this.j != null) {
                         LiveMediaPlayerManagerTX.this.j.resumeLive();
                     }
-                } else if (LiveMediaPlayerManagerTX.this.f15626a != null) {
-                    LiveMediaPlayerManagerTX.this.f15626a.a(bundle.getInt("EVT_PARAM1"), bundle.getInt("EVT_PARAM2"));
+                } else if (LiveMediaPlayerManagerTX.this.a != null) {
+                    LiveMediaPlayerManagerTX.this.a.a(bundle.getInt("EVT_PARAM1"), bundle.getInt("EVT_PARAM2"));
                 }
-                if (i < 0 || LiveMediaPlayerManagerTX.this.f15626a == null) {
+                if (i < 0 || LiveMediaPlayerManagerTX.this.a == null) {
                 }
-                LiveMediaPlayerManagerTX.this.f15626a.d();
+                LiveMediaPlayerManagerTX.this.a.d();
                 return;
             }
             Log.c(LiveMediaPlayerManagerTX.b, "onCompletion");
-            if (LiveMediaPlayerManagerTX.this.f15626a != null) {
-                LiveMediaPlayerManagerTX.this.f15626a.e();
+            if (LiveMediaPlayerManagerTX.this.a != null) {
+                LiveMediaPlayerManagerTX.this.a.e();
             }
             if (i < 0) {
             }
@@ -78,14 +74,11 @@ public class LiveMediaPlayerManagerTX extends AbsLiveManager {
     /* renamed from: com.blued.android.module.player.live.manager.LiveMediaPlayerManagerTX$1  reason: invalid class name */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/player/live/manager/LiveMediaPlayerManagerTX$1.class */
     class AnonymousClass1 implements TXLivePlayer.ITXSnapshotListener {
+        final /* synthetic */ LiveMediaPlayerManagerTX a;
 
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ LiveMediaPlayerManagerTX f15631a;
-
-        @Override // com.tencent.rtmp.TXLivePlayer.ITXSnapshotListener
         public void onSnapshot(Bitmap bitmap) {
-            if (this.f15631a.f15626a != null) {
-                this.f15631a.f15626a.a(bitmap);
+            if (this.a.a != null) {
+                this.a.a.a(bitmap);
             }
         }
     }
@@ -122,7 +115,7 @@ public class LiveMediaPlayerManagerTX extends AbsLiveManager {
         } else {
             this.i = str;
             if (blLiveView.getChildAt(0) != null && (blLiveView.getChildAt(0) instanceof TXCloudVideoView)) {
-                this.l = (TXCloudVideoView) blLiveView.getChildAt(0);
+                this.l = blLiveView.getChildAt(0);
             }
             if (this.l == null) {
                 Log.c(b, "TXCloudVideoView is null");
@@ -132,7 +125,7 @@ public class LiveMediaPlayerManagerTX extends AbsLiveManager {
                 this.j = new TXLivePlayer(AppInfo.d());
                 TXLivePlayConfig tXLivePlayConfig = new TXLivePlayConfig();
                 this.k = tXLivePlayConfig;
-                tXLivePlayConfig.setConnectRetryCount(f15630c);
+                tXLivePlayConfig.setConnectRetryCount(c);
                 this.j.setConfig(this.k);
                 this.j.enableHardwareDecode(false);
             }
@@ -205,7 +198,7 @@ public class LiveMediaPlayerManagerTX extends AbsLiveManager {
     public void g() {
         if (this.j != null) {
             Log.b(b, "releaseWithoutStop");
-            this.j.setPlayerView(null);
+            this.j.setPlayerView((TXCloudVideoView) null);
         }
     }
 
@@ -214,10 +207,10 @@ public class LiveMediaPlayerManagerTX extends AbsLiveManager {
         Log.b(b, "release");
         TXLivePlayer tXLivePlayer = this.j;
         if (tXLivePlayer != null) {
-            tXLivePlayer.setPlayListener(null);
+            tXLivePlayer.setPlayListener((ITXLivePlayListener) null);
             this.j.stopPlay(true);
         }
-        this.f15626a = null;
+        this.a = null;
         this.j = null;
     }
 
@@ -226,7 +219,7 @@ public class LiveMediaPlayerManagerTX extends AbsLiveManager {
         if (this.j != null) {
             Log.c(b, "setMediaEmpty");
             this.j.pause();
-            this.j.setPlayListener(null);
+            this.j.setPlayListener((ITXLivePlayListener) null);
             this.j.stopPlay(true);
             this.j = null;
         }

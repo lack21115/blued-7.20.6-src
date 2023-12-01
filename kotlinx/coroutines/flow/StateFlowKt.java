@@ -10,9 +10,7 @@ import kotlinx.coroutines.internal.Symbol;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/StateFlowKt.class */
 public final class StateFlowKt {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final Symbol f43435a = new Symbol("NONE");
+    private static final Symbol a = new Symbol("NONE");
     private static final Symbol b = new Symbol("PENDING");
 
     public static final <T> Flow<T> a(StateFlow<? extends T> stateFlow, CoroutineContext coroutineContext, int i, BufferOverflow bufferOverflow) {
@@ -29,7 +27,7 @@ public final class StateFlowKt {
     public static final <T> MutableStateFlow<T> a(T t) {
         T t2 = t;
         if (t == null) {
-            t2 = NullSurrogateKt.f43498a;
+            t2 = NullSurrogateKt.a;
         }
         return new StateFlowImpl(t2);
     }

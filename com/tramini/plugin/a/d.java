@@ -7,6 +7,7 @@ import android.os.Build;
 import android.text.TextUtils;
 import com.tramini.plugin.a.g.g;
 import com.tramini.plugin.a.g.i;
+import com.xiaomi.mipush.sdk.Constants;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -23,18 +24,18 @@ import org.json.JSONObject;
 public class d {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f40506a = d.class.getSimpleName();
+    public static final String f26815a = d.class.getSimpleName();
     private static volatile d b = null;
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f40507c;
+    private Context f26816c;
     private final int d = 500;
     private Map<String, com.tramini.plugin.a.c.d> e;
     private Set<com.tramini.plugin.a.c.d> f;
     private PackageManager g;
 
     private d(Context context) {
-        this.f40507c = context;
+        this.f26816c = context;
     }
 
     public static d a(Context context) {
@@ -53,21 +54,21 @@ public class d {
     }
 
     static /* synthetic */ void a(d dVar, Set set, Set set2) {
-        if (dVar.f40507c == null) {
+        if (dVar.f26816c == null) {
             return;
         }
         Iterator it = set.iterator();
         while (it.hasNext()) {
             com.tramini.plugin.a.c.d dVar2 = (com.tramini.plugin.a.c.d) it.next();
-            dVar2.f40505c = System.currentTimeMillis();
-            com.tramini.plugin.a.b.e.b(com.tramini.plugin.a.b.d.a(dVar.f40507c)).a(dVar2);
-            dVar.e.put(dVar2.f40504a, dVar2);
+            dVar2.f26814c = System.currentTimeMillis();
+            com.tramini.plugin.a.b.e.b(com.tramini.plugin.a.b.d.a(dVar.f26816c)).a(dVar2);
+            dVar.e.put(dVar2.f26813a, dVar2);
         }
         Iterator it2 = set2.iterator();
         while (it2.hasNext()) {
             com.tramini.plugin.a.c.d dVar3 = (com.tramini.plugin.a.c.d) it2.next();
-            com.tramini.plugin.a.b.e.b(com.tramini.plugin.a.b.d.a(dVar.f40507c)).b(dVar3);
-            dVar.e.remove(dVar3.f40504a);
+            com.tramini.plugin.a.b.e.b(com.tramini.plugin.a.b.d.a(dVar.f26816c)).b(dVar3);
+            dVar.e.remove(dVar3.f26813a);
         }
         int size = dVar.e.size() - 500;
         if (size <= 0) {
@@ -85,8 +86,8 @@ public class d {
                 return;
             }
             com.tramini.plugin.a.c.d dVar4 = (com.tramini.plugin.a.c.d) arrayList.get(i2);
-            com.tramini.plugin.a.b.e.b(com.tramini.plugin.a.b.d.a(dVar.f40507c)).b(dVar4);
-            dVar.e.remove(dVar4.f40504a);
+            com.tramini.plugin.a.b.e.b(com.tramini.plugin.a.b.d.a(dVar.f26816c)).b(dVar4);
+            dVar.e.remove(dVar4.f26813a);
             i = i2 + 1;
         }
     }
@@ -97,21 +98,21 @@ public class d {
         JSONObject jSONObject3 = new JSONObject();
         for (com.tramini.plugin.a.c.d dVar : set) {
             try {
-                jSONObject.put(dVar.f40504a, 1);
+                jSONObject.put(dVar.f26813a, 1);
             } catch (JSONException e) {
             }
             try {
                 PackageInfo packageInfo = this.g.getPackageInfo(com.tramini.plugin.a.g.c.a(dVar.b), 0);
                 String str = packageInfo.versionName;
                 long longVersionCode = Build.VERSION.SDK_INT >= 28 ? packageInfo.getLongVersionCode() : packageInfo.versionCode;
-                jSONObject2.put(dVar.f40504a, str);
-                jSONObject3.put(dVar.f40504a, String.valueOf(longVersionCode));
+                jSONObject2.put(dVar.f26813a, str);
+                jSONObject3.put(dVar.f26813a, String.valueOf(longVersionCode));
             } catch (Throwable th) {
             }
         }
         for (com.tramini.plugin.a.c.d dVar2 : set2) {
             try {
-                jSONObject.put(dVar2.f40504a, 2);
+                jSONObject.put(dVar2.f26813a, 2);
             } catch (JSONException e2) {
             }
         }
@@ -122,7 +123,7 @@ public class d {
                 d.a(d.this, set, set2);
             }
         });
-        com.tramini.plugin.a.f.a.a().a(a2, aVar.b(), com.tramini.plugin.a.g.d.f40545a, jSONObject, jSONObject2, jSONObject3);
+        com.tramini.plugin.a.f.a.a().a(a2, aVar.b(), com.tramini.plugin.a.g.d.f26854a, jSONObject, jSONObject2, jSONObject3);
     }
 
     private void a(Set<com.tramini.plugin.a.c.d> set) {
@@ -130,8 +131,8 @@ public class d {
             return;
         }
         for (com.tramini.plugin.a.c.d dVar : set) {
-            dVar.f40505c = System.currentTimeMillis();
-            com.tramini.plugin.a.b.c.a(com.tramini.plugin.a.b.d.a(this.f40507c)).a(dVar);
+            dVar.f26814c = System.currentTimeMillis();
+            com.tramini.plugin.a.b.c.a(com.tramini.plugin.a.b.d.a(this.f26816c)).a(dVar);
             this.f.add(dVar);
         }
     }
@@ -139,20 +140,20 @@ public class d {
     private void a(Set<com.tramini.plugin.a.c.d> set, Set<com.tramini.plugin.a.c.d> set2, Set<com.tramini.plugin.a.c.d> set3, Set<String> set4) {
         for (com.tramini.plugin.a.c.d dVar : set) {
             if (a(com.tramini.plugin.a.g.c.a(dVar.b))) {
-                if (!set4.contains(dVar.f40504a)) {
+                if (!set4.contains(dVar.f26813a)) {
                     set2.add(dVar);
-                    set4.add(dVar.f40504a);
+                    set4.add(dVar.f26813a);
                 }
-            } else if (set4.contains(dVar.f40504a)) {
+            } else if (set4.contains(dVar.f26813a)) {
                 set3.add(dVar);
-                set4.remove(dVar.f40504a);
+                set4.remove(dVar.f26813a);
             }
         }
     }
 
     private boolean a(String str) {
         if (this.g == null) {
-            this.g = this.f40507c.getPackageManager();
+            this.g = this.f26816c.getPackageManager();
         }
         try {
             this.g.getApplicationInfo(str, 8192);
@@ -166,12 +167,12 @@ public class d {
         int c2 = com.tramini.plugin.a.a.c.a().c() + 1;
         com.tramini.plugin.a.a.c.a().a(c2);
         String format = new SimpleDateFormat("yyyyMMdd").format(new Date());
-        Context context = this.f40507c;
-        i.a(context, "tramini", "P_IL_O", format + "-" + c2);
+        Context context = this.f26816c;
+        i.a(context, "tramini", "P_IL_O", format + Constants.ACCEPT_TIME_SEPARATOR_SERVER + c2);
     }
 
     public final void a(com.tramini.plugin.b.a aVar, Set<com.tramini.plugin.a.c.d> set) {
-        if (this.f40507c == null || com.tramini.plugin.a.g.d.f40545a == null) {
+        if (this.f26816c == null || com.tramini.plugin.a.g.d.f26854a == null) {
             return;
         }
         String k = aVar.k();
@@ -179,7 +180,7 @@ public class d {
             return;
         }
         String[] split = k.split(":");
-        if (split.length >= 2 && i.a(this.f40507c, split[0], split[1]) != 1) {
+        if (split.length >= 2 && i.a(this.f26816c, split[0], split[1]) != 1) {
             if (this.e == null) {
                 this.e = new HashMap();
             }
@@ -199,7 +200,7 @@ public class d {
     }
 
     public final void a(boolean z) {
-        Context context = this.f40507c;
+        Context context = this.f26816c;
         if (context == null) {
             return;
         }
@@ -207,9 +208,9 @@ public class d {
             this.e = com.tramini.plugin.a.b.e.b(com.tramini.plugin.a.b.d.a(context)).e();
         }
         if (z || this.f != null) {
-            com.tramini.plugin.a.b.c.a(com.tramini.plugin.a.b.d.a(this.f40507c)).d();
+            com.tramini.plugin.a.b.c.a(com.tramini.plugin.a.b.d.a(this.f26816c)).d();
         } else {
-            this.f = com.tramini.plugin.a.b.c.a(com.tramini.plugin.a.b.d.a(this.f40507c)).c();
+            this.f = com.tramini.plugin.a.b.c.a(com.tramini.plugin.a.b.d.a(this.f26816c)).c();
         }
     }
 }

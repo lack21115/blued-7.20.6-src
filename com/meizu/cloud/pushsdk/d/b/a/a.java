@@ -21,10 +21,10 @@ public class a extends com.meizu.cloud.pushsdk.d.b.a {
     private d i;
     private int j;
 
-    public a(a.C0608a c0608a) {
-        super(c0608a);
+    public a(a.C0438a c0438a) {
+        super(c0438a);
         this.h = a.class.getSimpleName();
-        com.meizu.cloud.pushsdk.d.d.a aVar = new com.meizu.cloud.pushsdk.d.d.a(this.f24083a, this.e);
+        com.meizu.cloud.pushsdk.d.d.a aVar = new com.meizu.cloud.pushsdk.d.d.a(this.f10468a, this.e);
         this.i = aVar;
         if (aVar.a()) {
             return;
@@ -126,7 +126,7 @@ public class a extends com.meizu.cloud.pushsdk.d.b.a {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void c() {
-        if (com.meizu.cloud.pushsdk.d.f.e.a(this.f24083a)) {
+        if (com.meizu.cloud.pushsdk.d.f.e.a(this.f10468a)) {
             if (this.i.c() > 0) {
                 this.j = 0;
                 LinkedList<g> a2 = a(a(this.i.d()));
@@ -157,7 +157,7 @@ public class a extends com.meizu.cloud.pushsdk.d.b.a {
                     }
                 }
                 if (i2 > 0 && i == 0) {
-                    if (com.meizu.cloud.pushsdk.d.f.e.a(this.f24083a)) {
+                    if (com.meizu.cloud.pushsdk.d.f.e.a(this.f10468a)) {
                         com.meizu.cloud.pushsdk.d.f.c.a(this.h, "Ensure collector path is valid: %s", b());
                     }
                     com.meizu.cloud.pushsdk.d.f.c.a(this.h, "Emitter loop stopping: failures.", new Object[0]);
@@ -174,7 +174,7 @@ public class a extends com.meizu.cloud.pushsdk.d.b.a {
                 this.j++;
                 com.meizu.cloud.pushsdk.d.f.c.a(this.h, "Emitter database empty: " + this.j, new Object[0]);
                 try {
-                    this.f.sleep(this.f24084c);
+                    this.f.sleep(this.f10469c);
                 } catch (InterruptedException e) {
                     com.meizu.cloud.pushsdk.d.f.c.a(this.h, "Emitter thread sleep interrupted: " + e.toString(), new Object[0]);
                 }

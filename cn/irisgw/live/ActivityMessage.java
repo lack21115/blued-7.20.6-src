@@ -43,8 +43,8 @@ public final class ActivityMessage extends GeneratedMessageV3 implements Activit
     private volatile Object url_;
     private static final ActivityMessage DEFAULT_INSTANCE = new ActivityMessage();
     private static final Parser<ActivityMessage> PARSER = new AbstractParser<ActivityMessage>() { // from class: cn.irisgw.live.ActivityMessage.1
-        @Override // com.google.protobuf.Parser
-        public ActivityMessage parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        /* renamed from: parsePartialFrom */
+        public ActivityMessage m149parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             return new ActivityMessage(codedInputStream, extensionRegistryLite);
         }
     };
@@ -115,7 +115,7 @@ public final class ActivityMessage extends GeneratedMessageV3 implements Activit
                 return this;
             }
             ensureDisplayUrlsIsMutable();
-            AbstractMessageLite.Builder.addAll((Iterable) iterable, (List) this.displayUrls_);
+            AbstractMessageLite.Builder.addAll(iterable, this.displayUrls_);
             onChanged();
             return this;
         }
@@ -123,11 +123,11 @@ public final class ActivityMessage extends GeneratedMessageV3 implements Activit
         public Builder addDisplayUrls(int i, DisplayUrl.Builder builder) {
             RepeatedFieldBuilderV3<DisplayUrl, DisplayUrl.Builder, DisplayUrlOrBuilder> repeatedFieldBuilderV3 = this.displayUrlsBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.addMessage(i, builder.build());
+                repeatedFieldBuilderV3.addMessage(i, builder.m200build());
                 return this;
             }
             ensureDisplayUrlsIsMutable();
-            this.displayUrls_.add(i, builder.build());
+            this.displayUrls_.add(i, builder.m200build());
             onChanged();
             return this;
         }
@@ -150,11 +150,11 @@ public final class ActivityMessage extends GeneratedMessageV3 implements Activit
         public Builder addDisplayUrls(DisplayUrl.Builder builder) {
             RepeatedFieldBuilderV3<DisplayUrl, DisplayUrl.Builder, DisplayUrlOrBuilder> repeatedFieldBuilderV3 = this.displayUrlsBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.addMessage(builder.build());
+                repeatedFieldBuilderV3.addMessage(builder.m200build());
                 return this;
             }
             ensureDisplayUrlsIsMutable();
-            this.displayUrls_.add(builder.build());
+            this.displayUrls_.add(builder.m200build());
             onChanged();
             return this;
         }
@@ -182,22 +182,22 @@ public final class ActivityMessage extends GeneratedMessageV3 implements Activit
             return getDisplayUrlsFieldBuilder().addBuilder(i, DisplayUrl.getDefaultInstance());
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: addRepeatedField */
+        public Builder m151addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.addRepeatedField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public ActivityMessage build() {
-            ActivityMessage buildPartial = buildPartial();
-            if (buildPartial.isInitialized()) {
-                return buildPartial;
+        /* renamed from: build */
+        public ActivityMessage m153build() {
+            ActivityMessage m155buildPartial = m155buildPartial();
+            if (m155buildPartial.isInitialized()) {
+                return m155buildPartial;
             }
-            throw newUninitializedMessageException((Message) buildPartial);
+            throw newUninitializedMessageException(m155buildPartial);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public ActivityMessage buildPartial() {
+        /* renamed from: buildPartial */
+        public ActivityMessage m155buildPartial() {
             ActivityMessage activityMessage = new ActivityMessage(this);
             activityMessage.id_ = this.id_;
             activityMessage.sort_ = this.sort_;
@@ -219,11 +219,11 @@ public final class ActivityMessage extends GeneratedMessageV3 implements Activit
             return activityMessage;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public Builder clear() {
+        /* renamed from: clear */
+        public Builder m159clear() {
             super.clear();
-            this.id_ = 0L;
-            this.sort_ = 0L;
+            this.id_ = ActivityMessage.serialVersionUID;
+            this.sort_ = ActivityMessage.serialVersionUID;
             this.icon_ = "";
             this.url_ = "";
             this.page_ = 0;
@@ -250,8 +250,8 @@ public final class ActivityMessage extends GeneratedMessageV3 implements Activit
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+        /* renamed from: clearField */
+        public Builder m161clearField(Descriptors.FieldDescriptor fieldDescriptor) {
             return (Builder) super.clearField(fieldDescriptor);
         }
 
@@ -262,13 +262,13 @@ public final class ActivityMessage extends GeneratedMessageV3 implements Activit
         }
 
         public Builder clearId() {
-            this.id_ = 0L;
+            this.id_ = ActivityMessage.serialVersionUID;
             onChanged();
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+        /* renamed from: clearOneof */
+        public Builder m164clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
             return (Builder) super.clearOneof(oneofDescriptor);
         }
 
@@ -279,7 +279,7 @@ public final class ActivityMessage extends GeneratedMessageV3 implements Activit
         }
 
         public Builder clearSort() {
-            this.sort_ = 0L;
+            this.sort_ = ActivityMessage.serialVersionUID;
             onChanged();
             return this;
         }
@@ -296,18 +296,16 @@ public final class ActivityMessage extends GeneratedMessageV3 implements Activit
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder m170clone() {
+            return (Builder) super.clone();
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public ActivityMessage getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public ActivityMessage m172getDefaultInstanceForType() {
             return ActivityMessage.getDefaultInstance();
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
         public Descriptors.Descriptor getDescriptorForType() {
             return LiveConstants.internal_static_cn_irisgw_live_ActivityMessage_descriptor;
         }
@@ -341,7 +339,7 @@ public final class ActivityMessage extends GeneratedMessageV3 implements Activit
         @Override // cn.irisgw.live.ActivityMessageOrBuilder
         public DisplayUrlOrBuilder getDisplayUrlsOrBuilder(int i) {
             RepeatedFieldBuilderV3<DisplayUrl, DisplayUrl.Builder, DisplayUrlOrBuilder> repeatedFieldBuilderV3 = this.displayUrlsBuilder_;
-            return repeatedFieldBuilderV3 == null ? this.displayUrls_.get(i) : repeatedFieldBuilderV3.getMessageOrBuilder(i);
+            return repeatedFieldBuilderV3 == null ? this.displayUrls_.get(i) : (DisplayUrlOrBuilder) repeatedFieldBuilderV3.getMessageOrBuilder(i);
         }
 
         @Override // cn.irisgw.live.ActivityMessageOrBuilder
@@ -424,12 +422,10 @@ public final class ActivityMessage extends GeneratedMessageV3 implements Activit
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_ActivityMessage_fieldAccessorTable.ensureFieldAccessorsInitialized(ActivityMessage.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             return true;
         }
@@ -438,10 +434,10 @@ public final class ActivityMessage extends GeneratedMessageV3 implements Activit
             if (activityMessage == ActivityMessage.getDefaultInstance()) {
                 return this;
             }
-            if (activityMessage.getId() != 0) {
+            if (activityMessage.getId() != ActivityMessage.serialVersionUID) {
                 setId(activityMessage.getId());
             }
-            if (activityMessage.getSort() != 0) {
+            if (activityMessage.getSort() != ActivityMessage.serialVersionUID) {
                 setSort(activityMessage.getSort());
             }
             if (!activityMessage.getIcon().isEmpty()) {
@@ -484,18 +480,18 @@ public final class ActivityMessage extends GeneratedMessageV3 implements Activit
             if (activityMessage.getStatus() != 0) {
                 setStatus(activityMessage.getStatus());
             }
-            mergeUnknownFields(activityMessage.unknownFields);
+            m181mergeUnknownFields(activityMessage.unknownFields);
             onChanged();
             return this;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+        /* renamed from: mergeFrom */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
         */
-        public cn.irisgw.live.ActivityMessage.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+        public cn.irisgw.live.ActivityMessage.Builder m178mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
             /*
                 r4 = this;
                 r0 = 0
@@ -540,11 +536,11 @@ public final class ActivityMessage extends GeneratedMessageV3 implements Activit
                 r0 = r6
                 throw r0
             */
-            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.ActivityMessage.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.ActivityMessage$Builder");
+            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.ActivityMessage.Builder.m178mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.ActivityMessage$Builder");
         }
 
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder mergeFrom(Message message) {
+        /* renamed from: mergeFrom */
+        public Builder m177mergeFrom(Message message) {
             if (message instanceof ActivityMessage) {
                 return mergeFrom((ActivityMessage) message);
             }
@@ -552,8 +548,8 @@ public final class ActivityMessage extends GeneratedMessageV3 implements Activit
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: mergeUnknownFields */
+        public final Builder m181mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.mergeUnknownFields(unknownFieldSet);
         }
 
@@ -572,11 +568,11 @@ public final class ActivityMessage extends GeneratedMessageV3 implements Activit
         public Builder setDisplayUrls(int i, DisplayUrl.Builder builder) {
             RepeatedFieldBuilderV3<DisplayUrl, DisplayUrl.Builder, DisplayUrlOrBuilder> repeatedFieldBuilderV3 = this.displayUrlsBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.setMessage(i, builder.build());
+                repeatedFieldBuilderV3.setMessage(i, builder.m200build());
                 return this;
             }
             ensureDisplayUrlsIsMutable();
-            this.displayUrls_.set(i, builder.build());
+            this.displayUrls_.set(i, builder.m200build());
             onChanged();
             return this;
         }
@@ -596,8 +592,8 @@ public final class ActivityMessage extends GeneratedMessageV3 implements Activit
             }
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: setField */
+        public Builder m183setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.setField(fieldDescriptor, obj);
         }
 
@@ -641,8 +637,8 @@ public final class ActivityMessage extends GeneratedMessageV3 implements Activit
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+        /* renamed from: setRepeatedField */
+        public Builder m185setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
             return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
         }
 
@@ -658,8 +654,8 @@ public final class ActivityMessage extends GeneratedMessageV3 implements Activit
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: setUnknownFields */
+        public final Builder m187setUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.setUnknownFields(unknownFieldSet);
         }
 
@@ -688,8 +684,8 @@ public final class ActivityMessage extends GeneratedMessageV3 implements Activit
         public static final int DATA_FIELD_NUMBER = 2;
         private static final DisplayUrl DEFAULT_INSTANCE = new DisplayUrl();
         private static final Parser<DisplayUrl> PARSER = new AbstractParser<DisplayUrl>() { // from class: cn.irisgw.live.ActivityMessage.DisplayUrl.1
-            @Override // com.google.protobuf.Parser
-            public DisplayUrl parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+            /* renamed from: parsePartialFrom */
+            public DisplayUrl m196parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
                 return new DisplayUrl(codedInputStream, extensionRegistryLite);
             }
         };
@@ -725,22 +721,22 @@ public final class ActivityMessage extends GeneratedMessageV3 implements Activit
                 boolean unused = DisplayUrl.alwaysUseFieldBuilders;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: addRepeatedField */
+            public Builder m198addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.addRepeatedField(fieldDescriptor, obj);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public DisplayUrl build() {
-                DisplayUrl buildPartial = buildPartial();
-                if (buildPartial.isInitialized()) {
-                    return buildPartial;
+            /* renamed from: build */
+            public DisplayUrl m200build() {
+                DisplayUrl m202buildPartial = m202buildPartial();
+                if (m202buildPartial.isInitialized()) {
+                    return m202buildPartial;
                 }
-                throw newUninitializedMessageException((Message) buildPartial);
+                throw newUninitializedMessageException(m202buildPartial);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public DisplayUrl buildPartial() {
+            /* renamed from: buildPartial */
+            public DisplayUrl m202buildPartial() {
                 DisplayUrl displayUrl = new DisplayUrl(this);
                 displayUrl.url_ = this.url_;
                 displayUrl.data_ = this.data_;
@@ -748,8 +744,8 @@ public final class ActivityMessage extends GeneratedMessageV3 implements Activit
                 return displayUrl;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public Builder clear() {
+            /* renamed from: clear */
+            public Builder m206clear() {
                 super.clear();
                 this.url_ = "";
                 this.data_ = "";
@@ -762,13 +758,13 @@ public final class ActivityMessage extends GeneratedMessageV3 implements Activit
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+            /* renamed from: clearField */
+            public Builder m208clearField(Descriptors.FieldDescriptor fieldDescriptor) {
                 return (Builder) super.clearField(fieldDescriptor);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+            /* renamed from: clearOneof */
+            public Builder m211clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
                 return (Builder) super.clearOneof(oneofDescriptor);
             }
 
@@ -778,10 +774,9 @@ public final class ActivityMessage extends GeneratedMessageV3 implements Activit
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder m217clone() {
+                return (Builder) super.clone();
             }
 
             @Override // cn.irisgw.live.ActivityMessage.DisplayUrlOrBuilder
@@ -806,12 +801,11 @@ public final class ActivityMessage extends GeneratedMessageV3 implements Activit
                 return (ByteString) obj;
             }
 
-            @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-            public DisplayUrl getDefaultInstanceForType() {
+            /* renamed from: getDefaultInstanceForType */
+            public DisplayUrl m219getDefaultInstanceForType() {
                 return DisplayUrl.getDefaultInstance();
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
             public Descriptors.Descriptor getDescriptorForType() {
                 return LiveConstants.internal_static_cn_irisgw_live_ActivityMessage_DisplayUrl_descriptor;
             }
@@ -838,12 +832,10 @@ public final class ActivityMessage extends GeneratedMessageV3 implements Activit
                 return (ByteString) obj;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder
             public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
                 return LiveConstants.internal_static_cn_irisgw_live_ActivityMessage_DisplayUrl_fieldAccessorTable.ensureFieldAccessorsInitialized(DisplayUrl.class, Builder.class);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
             public final boolean isInitialized() {
                 return true;
             }
@@ -860,18 +852,18 @@ public final class ActivityMessage extends GeneratedMessageV3 implements Activit
                     this.data_ = displayUrl.data_;
                     onChanged();
                 }
-                mergeUnknownFields(displayUrl.unknownFields);
+                m228mergeUnknownFields(displayUrl.unknownFields);
                 onChanged();
                 return this;
             }
 
             /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+            /* renamed from: mergeFrom */
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
                 To view partially-correct code enable 'Show inconsistent code' option in preferences
             */
-            public cn.irisgw.live.ActivityMessage.DisplayUrl.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+            public cn.irisgw.live.ActivityMessage.DisplayUrl.Builder m225mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
                 /*
                     r4 = this;
                     r0 = 0
@@ -916,11 +908,11 @@ public final class ActivityMessage extends GeneratedMessageV3 implements Activit
                     r0 = r6
                     throw r0
                 */
-                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.ActivityMessage.DisplayUrl.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.ActivityMessage$DisplayUrl$Builder");
+                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.ActivityMessage.DisplayUrl.Builder.m225mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.ActivityMessage$DisplayUrl$Builder");
             }
 
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder mergeFrom(Message message) {
+            /* renamed from: mergeFrom */
+            public Builder m224mergeFrom(Message message) {
                 if (message instanceof DisplayUrl) {
                     return mergeFrom((DisplayUrl) message);
                 }
@@ -928,8 +920,8 @@ public final class ActivityMessage extends GeneratedMessageV3 implements Activit
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: mergeUnknownFields */
+            public final Builder m228mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.mergeUnknownFields(unknownFieldSet);
             }
 
@@ -952,18 +944,18 @@ public final class ActivityMessage extends GeneratedMessageV3 implements Activit
                 throw null;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: setField */
+            public Builder m230setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.setField(fieldDescriptor, obj);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+            /* renamed from: setRepeatedField */
+            public Builder m232setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
                 return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: setUnknownFields */
+            public final Builder m234setUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.setUnknownFields(unknownFieldSet);
             }
 
@@ -1041,66 +1033,65 @@ public final class ActivityMessage extends GeneratedMessageV3 implements Activit
         }
 
         public static Builder newBuilder() {
-            return DEFAULT_INSTANCE.toBuilder();
+            return DEFAULT_INSTANCE.m195toBuilder();
         }
 
         public static Builder newBuilder(DisplayUrl displayUrl) {
-            return DEFAULT_INSTANCE.toBuilder().mergeFrom(displayUrl);
+            return DEFAULT_INSTANCE.m195toBuilder().mergeFrom(displayUrl);
         }
 
         public static DisplayUrl parseDelimitedFrom(InputStream inputStream) throws IOException {
-            return (DisplayUrl) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
         }
 
         public static DisplayUrl parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (DisplayUrl) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static DisplayUrl parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString);
+            return (DisplayUrl) PARSER.parseFrom(byteString);
         }
 
         public static DisplayUrl parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString, extensionRegistryLite);
+            return (DisplayUrl) PARSER.parseFrom(byteString, extensionRegistryLite);
         }
 
         public static DisplayUrl parseFrom(CodedInputStream codedInputStream) throws IOException {
-            return (DisplayUrl) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
         }
 
         public static DisplayUrl parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (DisplayUrl) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
         }
 
         public static DisplayUrl parseFrom(InputStream inputStream) throws IOException {
-            return (DisplayUrl) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
         }
 
         public static DisplayUrl parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (DisplayUrl) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static DisplayUrl parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer);
+            return (DisplayUrl) PARSER.parseFrom(byteBuffer);
         }
 
         public static DisplayUrl parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+            return (DisplayUrl) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
         }
 
         public static DisplayUrl parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr);
+            return (DisplayUrl) PARSER.parseFrom(bArr);
         }
 
         public static DisplayUrl parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr, extensionRegistryLite);
+            return (DisplayUrl) PARSER.parseFrom(bArr, extensionRegistryLite);
         }
 
         public static Parser<DisplayUrl> parser() {
             return PARSER;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public boolean equals(Object obj) {
             if (obj == this) {
                 return true;
@@ -1134,17 +1125,15 @@ public final class ActivityMessage extends GeneratedMessageV3 implements Activit
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public DisplayUrl getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public DisplayUrl m190getDefaultInstanceForType() {
             return DEFAULT_INSTANCE;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
         public Parser<DisplayUrl> getParserForType() {
             return PARSER;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public int getSerializedSize() {
             int i = this.memoizedSize;
             if (i != -1) {
@@ -1163,7 +1152,6 @@ public final class ActivityMessage extends GeneratedMessageV3 implements Activit
             return serializedSize;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
         public final UnknownFieldSet getUnknownFields() {
             return this.unknownFields;
         }
@@ -1190,7 +1178,6 @@ public final class ActivityMessage extends GeneratedMessageV3 implements Activit
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public int hashCode() {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
@@ -1200,12 +1187,10 @@ public final class ActivityMessage extends GeneratedMessageV3 implements Activit
             return hashCode;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_ActivityMessage_DisplayUrl_fieldAccessorTable.ensureFieldAccessorsInitialized(DisplayUrl.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte b = this.memoizedIsInitialized;
             if (b == 1) {
@@ -1218,28 +1203,26 @@ public final class ActivityMessage extends GeneratedMessageV3 implements Activit
             return true;
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder newBuilderForType() {
+        /* renamed from: newBuilderForType */
+        public Builder m193newBuilderForType() {
             return newBuilder();
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.google.protobuf.GeneratedMessageV3
-        public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+        /* renamed from: newBuilderForType */
+        public Builder m192newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
             return new Builder(builderParent);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
             return new DisplayUrl();
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder toBuilder() {
+        /* renamed from: toBuilder */
+        public Builder m195toBuilder() {
             return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
             if (!getUrlBytes().isEmpty()) {
                 GeneratedMessageV3.writeString(codedOutputStream, 1, this.url_);
@@ -1272,9 +1255,8 @@ public final class ActivityMessage extends GeneratedMessageV3 implements Activit
         public static final int Half_VALUE = 1;
         private final int value;
         private static final Internal.EnumLiteMap<Page> internalValueMap = new Internal.EnumLiteMap<Page>() { // from class: cn.irisgw.live.ActivityMessage.Page.1
-            /* JADX WARN: Can't rename method to resolve collision */
-            @Override // com.google.protobuf.Internal.EnumLiteMap
-            public Page findValueByNumber(int i) {
+            /* renamed from: findValueByNumber */
+            public Page m236findValueByNumber(int i) {
                 return Page.forNumber(i);
             }
         };
@@ -1295,7 +1277,7 @@ public final class ActivityMessage extends GeneratedMessageV3 implements Activit
         }
 
         public static final Descriptors.EnumDescriptor getDescriptor() {
-            return ActivityMessage.getDescriptor().getEnumTypes().get(0);
+            return (Descriptors.EnumDescriptor) ActivityMessage.getDescriptor().getEnumTypes().get(0);
         }
 
         public static Internal.EnumLiteMap<Page> internalGetValueMap() {
@@ -1314,12 +1296,10 @@ public final class ActivityMessage extends GeneratedMessageV3 implements Activit
             throw new IllegalArgumentException("EnumValueDescriptor is not for this type.");
         }
 
-        @Override // com.google.protobuf.ProtocolMessageEnum
         public final Descriptors.EnumDescriptor getDescriptorForType() {
             return getDescriptor();
         }
 
-        @Override // com.google.protobuf.ProtocolMessageEnum, com.google.protobuf.Internal.EnumLite
         public final int getNumber() {
             if (this != UNRECOGNIZED) {
                 return this.value;
@@ -1327,10 +1307,9 @@ public final class ActivityMessage extends GeneratedMessageV3 implements Activit
             throw new IllegalArgumentException("Can't get the number of an unknown enum value.");
         }
 
-        @Override // com.google.protobuf.ProtocolMessageEnum
         public final Descriptors.EnumValueDescriptor getValueDescriptor() {
             if (this != UNRECOGNIZED) {
-                return getDescriptor().getValues().get(ordinal());
+                return (Descriptors.EnumValueDescriptor) getDescriptor().getValues().get(ordinal());
             }
             throw new IllegalStateException("Can't get the descriptor of an unrecognized enum value.");
         }
@@ -1417,66 +1396,65 @@ public final class ActivityMessage extends GeneratedMessageV3 implements Activit
     }
 
     public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
+        return DEFAULT_INSTANCE.m148toBuilder();
     }
 
     public static Builder newBuilder(ActivityMessage activityMessage) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(activityMessage);
+        return DEFAULT_INSTANCE.m148toBuilder().mergeFrom(activityMessage);
     }
 
     public static ActivityMessage parseDelimitedFrom(InputStream inputStream) throws IOException {
-        return (ActivityMessage) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
     }
 
     public static ActivityMessage parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (ActivityMessage) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static ActivityMessage parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString);
+        return (ActivityMessage) PARSER.parseFrom(byteString);
     }
 
     public static ActivityMessage parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString, extensionRegistryLite);
+        return (ActivityMessage) PARSER.parseFrom(byteString, extensionRegistryLite);
     }
 
     public static ActivityMessage parseFrom(CodedInputStream codedInputStream) throws IOException {
-        return (ActivityMessage) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
     }
 
     public static ActivityMessage parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (ActivityMessage) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
     }
 
     public static ActivityMessage parseFrom(InputStream inputStream) throws IOException {
-        return (ActivityMessage) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
     }
 
     public static ActivityMessage parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (ActivityMessage) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static ActivityMessage parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer);
+        return (ActivityMessage) PARSER.parseFrom(byteBuffer);
     }
 
     public static ActivityMessage parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+        return (ActivityMessage) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
     }
 
     public static ActivityMessage parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr);
+        return (ActivityMessage) PARSER.parseFrom(bArr);
     }
 
     public static ActivityMessage parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr, extensionRegistryLite);
+        return (ActivityMessage) PARSER.parseFrom(bArr, extensionRegistryLite);
     }
 
     public static Parser<ActivityMessage> parser() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
@@ -1488,8 +1466,8 @@ public final class ActivityMessage extends GeneratedMessageV3 implements Activit
         return super.equals(obj);
     }
 
-    @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-    public ActivityMessage getDefaultInstanceForType() {
+    /* renamed from: getDefaultInstanceForType */
+    public ActivityMessage m143getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
     }
 
@@ -1560,22 +1538,20 @@ public final class ActivityMessage extends GeneratedMessageV3 implements Activit
         return this.page_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
     public Parser<ActivityMessage> getParserForType() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public int getSerializedSize() {
         int i = this.memoizedSize;
         if (i != -1) {
             return i;
         }
         long j = this.id_;
-        int computeInt64Size = j != 0 ? CodedOutputStream.computeInt64Size(1, j) + 0 : 0;
+        int computeInt64Size = j != serialVersionUID ? CodedOutputStream.computeInt64Size(1, j) + 0 : 0;
         long j2 = this.sort_;
         int i2 = computeInt64Size;
-        if (j2 != 0) {
+        if (j2 != serialVersionUID) {
             i2 = computeInt64Size + CodedOutputStream.computeInt64Size(2, j2);
         }
         int i3 = i2;
@@ -1616,7 +1592,6 @@ public final class ActivityMessage extends GeneratedMessageV3 implements Activit
         return this.status_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
     public final UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
     }
@@ -1643,7 +1618,6 @@ public final class ActivityMessage extends GeneratedMessageV3 implements Activit
         return (ByteString) obj;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public int hashCode() {
         if (this.memoizedHashCode != 0) {
             return this.memoizedHashCode;
@@ -1658,12 +1632,10 @@ public final class ActivityMessage extends GeneratedMessageV3 implements Activit
         return status;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
         return LiveConstants.internal_static_cn_irisgw_live_ActivityMessage_fieldAccessorTable.ensureFieldAccessorsInitialized(ActivityMessage.class, Builder.class);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
     public final boolean isInitialized() {
         byte b = this.memoizedIsInitialized;
         if (b == 1) {
@@ -1676,35 +1648,33 @@ public final class ActivityMessage extends GeneratedMessageV3 implements Activit
         return true;
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder newBuilderForType() {
+    /* renamed from: newBuilderForType */
+    public Builder m146newBuilderForType() {
         return newBuilder();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.protobuf.GeneratedMessageV3
-    public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+    /* renamed from: newBuilderForType */
+    public Builder m145newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
         return new Builder(builderParent);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
         return new ActivityMessage();
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder toBuilder() {
+    /* renamed from: toBuilder */
+    public Builder m148toBuilder() {
         return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
         long j = this.id_;
-        if (j != 0) {
+        if (j != serialVersionUID) {
             codedOutputStream.writeInt64(1, j);
         }
         long j2 = this.sort_;
-        if (j2 != 0) {
+        if (j2 != serialVersionUID) {
             codedOutputStream.writeInt64(2, j2);
         }
         if (!getIconBytes().isEmpty()) {

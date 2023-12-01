@@ -16,11 +16,11 @@ import com.opos.mobad.n.a;
 public class w extends RelativeLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    private v f26932a;
+    private v f13244a;
     private LinearLayout b;
 
     /* renamed from: c  reason: collision with root package name */
-    private TextView f26933c;
+    private TextView f13245c;
     private TextView d;
 
     public w(Context context) {
@@ -52,12 +52,12 @@ public class w extends RelativeLayout {
         layoutParams2.addRule(11);
         layoutParams2.addRule(15);
         TextView textView = new TextView(getContext());
-        this.f26933c = textView;
+        this.f13245c = textView;
         textView.setTextColor(getResources().getColor(R.color.opos_mobad_title_color));
-        this.f26933c.setTextSize(1, 14.0f);
-        this.f26933c.setEllipsize(TextUtils.TruncateAt.valueOf("END"));
-        this.f26933c.setSingleLine(true);
-        TextPaint paint = this.f26933c.getPaint();
+        this.f13245c.setTextSize(1, 14.0f);
+        this.f13245c.setEllipsize(TextUtils.TruncateAt.valueOf("END"));
+        this.f13245c.setSingleLine(true);
+        TextPaint paint = this.f13245c.getPaint();
         paint.setStrokeWidth(1.0f);
         paint.setStyle(Paint.Style.FILL_AND_STROKE);
         RelativeLayout.LayoutParams layoutParams3 = new RelativeLayout.LayoutParams(-2, -2);
@@ -73,7 +73,7 @@ public class w extends RelativeLayout {
         LinearLayout.LayoutParams layoutParams4 = new LinearLayout.LayoutParams(-1, -2);
         layoutParams4.topMargin = com.opos.cmn.an.h.f.a.a(getContext(), 4.0f);
         relativeLayout.addView(lVar, layoutParams2);
-        relativeLayout.addView(this.f26933c, layoutParams3);
+        relativeLayout.addView(this.f13245c, layoutParams3);
         this.b.addView(relativeLayout, layoutParams);
         this.b.addView(this.d, layoutParams4);
     }
@@ -81,7 +81,7 @@ public class w extends RelativeLayout {
     private void b(Context context) {
         setLayoutParams(new ViewGroup.LayoutParams(-1, com.opos.cmn.an.h.f.a.a(getContext(), 74.0f)));
         v a2 = v.a(context, "");
-        this.f26932a = a2;
+        this.f13244a = a2;
         a2.setId(View.generateViewId());
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(-2, -2);
         layoutParams.addRule(15);
@@ -92,22 +92,22 @@ public class w extends RelativeLayout {
         layoutParams2.addRule(15);
         layoutParams2.leftMargin = com.opos.cmn.an.h.f.a.a(getContext(), 10.0f);
         layoutParams2.rightMargin = com.opos.cmn.an.h.f.a.a(getContext(), 8.0f);
-        layoutParams2.addRule(0, this.f26932a.getId());
-        addView(this.f26932a, layoutParams);
+        layoutParams2.addRule(0, this.f13244a.getId());
+        addView(this.f13244a, layoutParams);
         addView(this.b, layoutParams2);
     }
 
-    public void a(a.InterfaceC0708a interfaceC0708a) {
-        com.opos.cmn.an.f.a.b("BlockFusionRightAreaView", "setListener " + interfaceC0708a);
-        this.f26932a.a(interfaceC0708a);
+    public void a(a.InterfaceC0538a interfaceC0538a) {
+        com.opos.cmn.an.f.a.b("BlockFusionRightAreaView", "setListener " + interfaceC0538a);
+        this.f13244a.a(interfaceC0538a);
     }
 
     public void a(String str, String str2, String str3) {
         if (!TextUtils.isEmpty(str)) {
-            this.f26932a.setText(str);
+            this.f13244a.setText(str);
         }
         if (!TextUtils.isEmpty(str2)) {
-            this.f26933c.setText(str2);
+            this.f13245c.setText(str2);
         }
         if (TextUtils.isEmpty(str3)) {
             return;

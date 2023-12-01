@@ -5,15 +5,13 @@ public enum ProtocolEnum {
     HTTP("http://"),
     HTTPSECURE("https://");
     
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f43752c;
+    private String c;
 
     ProtocolEnum(String str) {
-        this.f43752c = str;
+        this.c = str;
     }
 
     public final String a() {
-        return this.f43752c;
+        return this.c;
     }
 }

@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemPayResultDialogBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final FrameLayout f29276a;
+    private final FrameLayout f15586a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f29276a;
+        return this.f15586a;
     }
 }

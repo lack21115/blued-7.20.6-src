@@ -13,13 +13,9 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/DialogLiveMedalWallBinding.class */
 public final class DialogLiveMedalWallBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final View f11788a;
+    public final View a;
     public final FrameLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f11789c;
+    public final ImageView c;
     public final ImageView d;
     public final ImageView e;
     public final LinearLayout f;
@@ -31,9 +27,9 @@ public final class DialogLiveMedalWallBinding implements ViewBinding {
 
     private DialogLiveMedalWallBinding(FrameLayout frameLayout, View view, FrameLayout frameLayout2, ImageView imageView, ImageView imageView2, ImageView imageView3, LinearLayout linearLayout, RecyclerView recyclerView, TextView textView, TextView textView2, TextView textView3) {
         this.k = frameLayout;
-        this.f11788a = view;
+        this.a = view;
         this.b = frameLayout2;
-        this.f11789c = imageView;
+        this.c = imageView;
         this.d = imageView2;
         this.e = imageView3;
         this.f = linearLayout;
@@ -69,15 +65,15 @@ public final class DialogLiveMedalWallBinding implements ViewBinding {
                         if (imageView3 != null) {
                             LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.ll_empty_view);
                             if (linearLayout != null) {
-                                RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rv_medal_wall);
-                                if (recyclerView != null) {
+                                RecyclerView findViewById2 = view.findViewById(R.id.rv_medal_wall);
+                                if (findViewById2 != null) {
                                     TextView textView = (TextView) view.findViewById(R.id.tv_left_tab);
                                     if (textView != null) {
                                         TextView textView2 = (TextView) view.findViewById(R.id.tv_right_tab);
                                         if (textView2 != null) {
                                             TextView textView3 = (TextView) view.findViewById(R.id.tv_user_nick);
                                             if (textView3 != null) {
-                                                return new DialogLiveMedalWallBinding((FrameLayout) view, findViewById, frameLayout, imageView, imageView2, imageView3, linearLayout, recyclerView, textView, textView2, textView3);
+                                                return new DialogLiveMedalWallBinding((FrameLayout) view, findViewById, frameLayout, imageView, imageView2, imageView3, linearLayout, findViewById2, textView, textView2, textView3);
                                             }
                                             str = "tvUserNick";
                                         } else {
@@ -110,7 +106,6 @@ public final class DialogLiveMedalWallBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.k;

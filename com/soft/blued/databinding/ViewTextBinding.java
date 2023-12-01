@@ -7,11 +7,11 @@ import com.blued.android.framework.view.shape.ShapeTextView;
 public final class ViewTextBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ShapeTextView f29633a;
+    private final ShapeTextView f15943a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ShapeTextView getRoot() {
-        return this.f29633a;
+        return this.f15943a;
     }
 }

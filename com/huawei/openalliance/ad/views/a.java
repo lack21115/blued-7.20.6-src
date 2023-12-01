@@ -11,9 +11,9 @@ import java.util.Locale;
 
 /* loaded from: source-7994992-dex2jar.jar:com/huawei/openalliance/ad/views/a.class */
 public class a {
-    protected C0442a V = new C0442a();
-    protected C0442a I = new C0442a();
-    protected C0442a Z = new C0442a();
+    protected C0272a V = new C0272a();
+    protected C0272a I = new C0272a();
+    protected C0272a Z = new C0272a();
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.huawei.openalliance.ad.views.a$1  reason: invalid class name */
@@ -58,7 +58,7 @@ public class a {
 
     /* renamed from: com.huawei.openalliance.ad.views.a$a  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/huawei/openalliance/ad/views/a$a.class */
-    public static class C0442a {
+    public static class C0272a {
         protected Drawable Code;
         protected int I = 12;
         protected int V;
@@ -99,16 +99,16 @@ public class a {
         return drawable;
     }
 
-    public C0442a Code() {
+    public C0272a Code() {
         return this.V;
     }
 
-    public C0442a Code(Context context, k kVar) {
+    public C0272a Code(Context context, k kVar) {
         int i = AnonymousClass1.Code[kVar.ordinal()];
         return (i == 1 || i == 2) ? this.I : i != 3 ? Code() : this.Z;
     }
 
-    public C0442a V() {
+    public C0272a V() {
         return this.I;
     }
 }

@@ -22,13 +22,9 @@ import com.blued.android.module.live_china.observer.PkDaredObserver;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/pkdared/PkDaredPropItemView.class */
 public class PkDaredPropItemView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private ImageView f15409a;
+    private ImageView a;
     private PkDaredPropProgressView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private CountDownTimer f15410c;
+    private CountDownTimer c;
     private PropModule d;
 
     public PkDaredPropItemView(Context context) {
@@ -74,16 +70,16 @@ public class PkDaredPropItemView extends FrameLayout {
     }
 
     public void a() {
-        CountDownTimer countDownTimer = this.f15410c;
+        CountDownTimer countDownTimer = this.c;
         if (countDownTimer != null) {
             countDownTimer.cancel();
-            this.f15410c = null;
+            this.c = null;
         }
     }
 
     protected void a(Context context) {
         LayoutInflater.from(getContext()).inflate(R.layout.live_pk_dared_prop_item, this);
-        this.f15409a = (ImageView) findViewById(R.id.iv_prop_icon);
+        this.a = (ImageView) findViewById(R.id.iv_prop_icon);
         this.b = (PkDaredPropProgressView) findViewById(R.id.pdpp_prop_time);
     }
 
@@ -91,13 +87,13 @@ public class PkDaredPropItemView extends FrameLayout {
     public void b(RelativeLayout relativeLayout) {
         int i;
         int height = relativeLayout.getHeight();
-        int a2 = a(relativeLayout, this.d.isOur ? -height : relativeLayout.getWidth());
+        int a = a(relativeLayout, this.d.isOur ? -height : relativeLayout.getWidth());
         if (this.d.isOur) {
-            i = a2 + height;
+            i = a + height;
         } else {
-            i = a2;
+            i = a;
             if (!this.d.isOur) {
-                i = a2 - height;
+                i = a - height;
             }
         }
         relativeLayout.addView(this);
@@ -117,7 +113,7 @@ public class PkDaredPropItemView extends FrameLayout {
         setColor(ContextCompat.getColor(getContext(), propModule.isOur ? R.color.syc_dark_81B5FF : R.color.syc_dark_FB54AD));
         setProgressMax(propModule.totalTime);
         setProgress(propModule.countDown);
-        ImageLoader.a(iRequestHost, propModule.propIcon).a(this.f15409a);
+        ImageLoader.a(iRequestHost, propModule.propIcon).a(this.a);
         relativeLayout.post(new Runnable() { // from class: com.blued.android.module.live_china.view.pkdared.-$$Lambda$PkDaredPropItemView$TghVQCb7Wk1RF_rRVCSdJoRpliM
             @Override // java.lang.Runnable
             public final void run() {
@@ -162,14 +158,15 @@ public class PkDaredPropItemView extends FrameLayout {
         this.b.setColor(i);
     }
 
+    /* JADX WARN: Type inference failed for: r1v3, types: [com.blued.android.module.live_china.view.pkdared.PkDaredPropItemView$1] */
     public void setProgress(float f) {
         this.b.setProgress(((int) f) * 10);
-        CountDownTimer countDownTimer = this.f15410c;
+        CountDownTimer countDownTimer = this.c;
         if (countDownTimer != null) {
             countDownTimer.cancel();
-            this.f15410c = null;
+            this.c = null;
         }
-        this.f15410c = new CountDownTimer(1000 * f, 1000L) { // from class: com.blued.android.module.live_china.view.pkdared.PkDaredPropItemView.1
+        this.c = new CountDownTimer(1000 * f, 1000L) { // from class: com.blued.android.module.live_china.view.pkdared.PkDaredPropItemView.1
             @Override // android.os.CountDownTimer
             public void onFinish() {
                 PkDaredPropItemView.this.a();

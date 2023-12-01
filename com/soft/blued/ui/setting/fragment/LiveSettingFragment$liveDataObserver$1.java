@@ -1,6 +1,7 @@
 package com.soft.blued.ui.setting.fragment;
 
 import com.blued.android.module.live_china.model.LiveSettingModel;
+import com.kuaishou.weapon.p0.bp;
 import java.util.List;
 import kotlin.Metadata;
 import kotlin.Unit;
@@ -16,14 +17,13 @@ final /* synthetic */ class LiveSettingFragment$liveDataObserver$1 extends Funct
         super(1, obj, LiveSettingFragment.class, "setLiveSettingData", "setLiveSettingData(Ljava/util/List;)V", 0);
     }
 
-    public final void a(List<? extends LiveSettingModel> p0) {
-        Intrinsics.e(p0, "p0");
-        ((LiveSettingFragment) this.receiver).a(p0);
+    public final void a(List<? extends LiveSettingModel> list) {
+        Intrinsics.e(list, bp.g);
+        ((LiveSettingFragment) this.receiver).a(list);
     }
 
-    @Override // kotlin.jvm.functions.Function1
-    public /* synthetic */ Unit invoke(List<? extends LiveSettingModel> list) {
-        a(list);
-        return Unit.f42314a;
+    public /* synthetic */ Object invoke(Object obj) {
+        a((List) obj);
+        return Unit.a;
     }
 }

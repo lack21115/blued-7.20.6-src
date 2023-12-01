@@ -9,7 +9,7 @@ import java.lang.Thread;
 public final class b implements Thread.UncaughtExceptionHandler {
 
     /* renamed from: a  reason: collision with root package name */
-    private Thread.UncaughtExceptionHandler f24319a;
+    private Thread.UncaughtExceptionHandler f10632a;
     private com.oplus.log.f.d b;
 
     public b(com.oplus.log.f.d dVar) {
@@ -17,7 +17,7 @@ public final class b implements Thread.UncaughtExceptionHandler {
     }
 
     public final void a(Context context) {
-        this.f24319a = Thread.getDefaultUncaughtExceptionHandler();
+        this.f10632a = Thread.getDefaultUncaughtExceptionHandler();
         Thread.setDefaultUncaughtExceptionHandler(this);
     }
 
@@ -31,7 +31,7 @@ public final class b implements Thread.UncaughtExceptionHandler {
         th.printStackTrace(printWriter);
         printWriter.close();
         this.b.b(new com.oplus.log.b.b("crash_info", stringWriter.toString(), (byte) 5, thread.getName(), null));
-        Thread.UncaughtExceptionHandler uncaughtExceptionHandler = this.f24319a;
+        Thread.UncaughtExceptionHandler uncaughtExceptionHandler = this.f10632a;
         if (uncaughtExceptionHandler != null) {
             uncaughtExceptionHandler.uncaughtException(thread, th);
         }

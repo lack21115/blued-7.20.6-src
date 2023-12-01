@@ -18,28 +18,28 @@ import java.lang.ref.SoftReference;
 public class MediaUtils implements SoundPool.OnLoadCompleteListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private static MediaUtils f32261a;
+    private static MediaUtils f18571a;
     private SoundPool d;
     private final Handler e = new MyHandler(this);
     private Vibrator b = (Vibrator) AppInfo.d().getSystemService(Context.VIBRATOR_SERVICE);
 
     /* renamed from: c  reason: collision with root package name */
-    private MediaPlayer f32262c = new MediaPlayer();
+    private MediaPlayer f18572c = new MediaPlayer();
 
     /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/msg/controller/tools/MediaUtils$MyHandler.class */
     static class MyHandler extends Handler {
 
         /* renamed from: a  reason: collision with root package name */
-        private SoftReference<MediaUtils> f32264a;
+        private SoftReference<MediaUtils> f18574a;
 
         public MyHandler(MediaUtils mediaUtils) {
-            this.f32264a = new SoftReference<>(mediaUtils);
+            this.f18574a = new SoftReference<>(mediaUtils);
         }
 
         @Override // android.os.Handler
         public void handleMessage(Message message) {
             MediaUtils mediaUtils;
-            if (message.what != 10 || (mediaUtils = this.f32264a.get()) == null || mediaUtils.d == null) {
+            if (message.what != 10 || (mediaUtils = this.f18574a.get()) == null || mediaUtils.d == null) {
                 return;
             }
             mediaUtils.d.play(message.arg1, 1.0f, 1.0f, 0, 0, 1.0f);
@@ -53,10 +53,10 @@ public class MediaUtils implements SoundPool.OnLoadCompleteListener {
     }
 
     public static MediaUtils a() {
-        if (f32261a == null) {
-            f32261a = new MediaUtils();
+        if (f18571a == null) {
+            f18571a = new MediaUtils();
         }
-        return f32261a;
+        return f18571a;
     }
 
     public static String a(Context context, Uri uri, String str, String[] strArr) {
@@ -132,15 +132,15 @@ public class MediaUtils implements SoundPool.OnLoadCompleteListener {
 
     public void b() {
         try {
-            this.f32262c.reset();
-            this.f32262c.setLooping(false);
-            this.f32262c.setDataSource(a(Settings.System.getString(AppInfo.d().getContentResolver(), Settings.System.NOTIFICATION_SOUND)));
-            this.f32262c.setAudioStreamType(2);
-            this.f32262c.prepare();
-            this.f32262c.setOnPreparedListener(new MediaPlayer.OnPreparedListener() { // from class: com.soft.blued.ui.msg.controller.tools.MediaUtils.1
+            this.f18572c.reset();
+            this.f18572c.setLooping(false);
+            this.f18572c.setDataSource(a(Settings.System.getString(AppInfo.d().getContentResolver(), Settings.System.NOTIFICATION_SOUND)));
+            this.f18572c.setAudioStreamType(2);
+            this.f18572c.prepare();
+            this.f18572c.setOnPreparedListener(new MediaPlayer.OnPreparedListener() { // from class: com.soft.blued.ui.msg.controller.tools.MediaUtils.1
                 @Override // android.media.MediaPlayer.OnPreparedListener
                 public void onPrepared(MediaPlayer mediaPlayer) {
-                    MediaUtils.this.f32262c.start();
+                    MediaUtils.this.f18572c.start();
                 }
             });
         } catch (Exception e) {

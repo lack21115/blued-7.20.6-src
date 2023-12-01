@@ -88,7 +88,7 @@ public final class Code93Reader extends OneDReader {
                 } else {
                     i += iArr[0] + iArr[1];
                     int i3 = i2 - 1;
-                    System.arraycopy((Object) iArr, 2, (Object) iArr, 0, i3);
+                    System.arraycopy(iArr, 2, iArr, 0, i3);
                     iArr[i3] = 0;
                     iArr[i2] = 0;
                     i2--;

@@ -11,10 +11,10 @@ import java.nio.ByteBuffer;
 public class PLAACEncoder {
 
     /* renamed from: c  reason: collision with root package name */
-    public static final boolean f27837c = SharedLibraryNameHelper.getInstance().a();
+    public static final boolean f14149c = SharedLibraryNameHelper.getInstance().a();
 
     /* renamed from: a  reason: collision with root package name */
-    public a f27838a = new a(2);
+    public a f14150a = new a(2);
     public a.a.a.a.a.a.g.a b;
 
     /* loaded from: source-8303388-dex2jar.jar:com/qiniu/pili/droid/streaming/av/encoder/PLAACEncoder$Parameters.class */
@@ -79,7 +79,7 @@ public class PLAACEncoder {
     }
 
     private PLAVFrame getOutputFrame(int i) {
-        PLAVFrame a2 = this.f27838a.a(i);
+        PLAVFrame a2 = this.f14150a.a(i);
         e eVar = e.i;
         eVar.a("PLAACEncoder", "getOutputFrame reqSize:" + i + ",mBuffer:" + a2.mBuffer);
         a2.mBuffer.clear();
@@ -93,7 +93,7 @@ public class PLAACEncoder {
     public void a(PLAVFrame pLAVFrame) {
         pLAVFrame.mBuffer.limit(0);
         pLAVFrame.mBuffer.clear();
-        this.f27838a.a(pLAVFrame);
+        this.f14150a.a(pLAVFrame);
     }
 
     public void b(PLAVFrame pLAVFrame) {

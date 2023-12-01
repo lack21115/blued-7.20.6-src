@@ -13,16 +13,16 @@ import java.util.List;
 public class BluedBroadcastReceiver extends BroadcastReceiver {
 
     /* renamed from: a  reason: collision with root package name */
-    String f29694a;
+    String f16004a;
 
     /* renamed from: c  reason: collision with root package name */
-    Context f29695c;
+    Context f16005c;
     boolean b = false;
     private final List<BroadcastReceiverListener> d = new ArrayList();
 
     public BluedBroadcastReceiver(Context context, String str) {
-        this.f29694a = str;
-        this.f29695c = context.getApplicationContext();
+        this.f16004a = str;
+        this.f16005c = context.getApplicationContext();
     }
 
     public void a(BroadcastReceiverListener broadcastReceiverListener) {
@@ -30,17 +30,17 @@ public class BluedBroadcastReceiver extends BroadcastReceiver {
             this.d.add(broadcastReceiverListener);
         }
         if (!this.b) {
-            this.f29695c.registerReceiver(this, new IntentFilter(this.f29694a));
+            this.f16005c.registerReceiver(this, new IntentFilter(this.f16004a));
             this.b = true;
         }
-        Logger.b("registerReceiver " + this.f29694a + ", actionCount:" + this.d.size(), new Object[0]);
+        Logger.b("registerReceiver " + this.f16004a + ", actionCount:" + this.d.size(), new Object[0]);
     }
 
     @Override // android.content.BroadcastReceiver
     public void onReceive(Context context, Intent intent) {
         Logger.b("BluedBroadcastReceiver.onReceive(), intent:" + intent.getAction(), new Object[0]);
-        if (this.f29695c == null) {
-            this.f29695c = context.getApplicationContext();
+        if (this.f16005c == null) {
+            this.f16005c = context.getApplicationContext();
         }
         if (!InitTaskManager.b()) {
             Logger.b("InitHelper is not init, return", new Object[0]);
@@ -48,7 +48,7 @@ public class BluedBroadcastReceiver extends BroadcastReceiver {
         }
         for (BroadcastReceiverListener broadcastReceiverListener : this.d) {
             if (broadcastReceiverListener != null) {
-                broadcastReceiverListener.a(this.f29694a, intent);
+                broadcastReceiverListener.a(this.f16004a, intent);
             }
         }
     }

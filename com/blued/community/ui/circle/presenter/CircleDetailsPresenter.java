@@ -68,9 +68,7 @@ public class CircleDetailsPresenter extends MvpPresenter implements FeedRefreshO
         }
         if (y().hasMore || y().page == 1) {
             CircleHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<CircleDetailsModel>>(g()) { // from class: com.blued.community.ui.circle.presenter.CircleDetailsPresenter.5
-
-                /* renamed from: a  reason: collision with root package name */
-                int f19335a;
+                int a;
 
                 /* JADX INFO: Access modifiers changed from: protected */
                 @Override // com.blued.android.framework.http.BluedUIHttpResponse
@@ -110,7 +108,7 @@ public class CircleDetailsPresenter extends MvpPresenter implements FeedRefreshO
 
                 @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public boolean onUIFailure(int i, String str) {
-                    this.f19335a = i;
+                    this.a = i;
                     if (CircleDetailsPresenter.this.y().page != 1) {
                         CircleDetailsPresenter.this.y().page--;
                     }
@@ -125,7 +123,7 @@ public class CircleDetailsPresenter extends MvpPresenter implements FeedRefreshO
                     if (z2) {
                         CircleDetailsPresenter.this.B();
                     }
-                    if (this.f19335a == 40370003) {
+                    if (this.a == 40370003) {
                         CircleDetailsPresenter.this.i();
                     }
                 }
@@ -330,14 +328,12 @@ public class CircleDetailsPresenter extends MvpPresenter implements FeedRefreshO
             }
         });
         LiveEventBus.get("circle_delete_feed", String.class).observe(lifecycleOwner, new Observer<String>() { // from class: com.blued.community.ui.circle.presenter.CircleDetailsPresenter.2
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(String str) {
                 CircleDetailsPresenter.this.a("circle_delete_feed", str, false);
             }
         });
         LiveEventBus.get("circle_join_state", CircleJoinState.class).observe(lifecycleOwner, new Observer<CircleJoinState>() { // from class: com.blued.community.ui.circle.presenter.CircleDetailsPresenter.3
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(CircleJoinState circleJoinState) {
                 if (TextUtils.isEmpty(CircleDetailsPresenter.this.r()) || !CircleDetailsPresenter.this.r().equals(circleJoinState.circle_id)) {
@@ -348,7 +344,6 @@ public class CircleDetailsPresenter extends MvpPresenter implements FeedRefreshO
             }
         });
         LiveEventBus.get("circle_info_modify", MyCircleModel.class).observe(lifecycleOwner, new Observer<MyCircleModel>() { // from class: com.blued.community.ui.circle.presenter.CircleDetailsPresenter.4
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(MyCircleModel myCircleModel) {
                 if (myCircleModel == null || !CircleDetailsPresenter.this.r().equals(myCircleModel.circle_id)) {

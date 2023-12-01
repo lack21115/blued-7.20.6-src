@@ -15,9 +15,7 @@ import kotlinx.coroutines.DelayKt;
 @DebugMetadata(b = "Migration.kt", c = {423}, d = "invokeSuspend", e = "kotlinx.coroutines.flow.FlowKt__MigrationKt$delayEach$1")
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt__MigrationKt$delayEach$1.class */
 final class FlowKt__MigrationKt$delayEach$1<T> extends SuspendLambda implements Function2<T, Continuation<? super Unit>, Object> {
-
-    /* renamed from: a  reason: collision with root package name */
-    int f43234a;
+    int a;
     final /* synthetic */ long b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -29,7 +27,7 @@ final class FlowKt__MigrationKt$delayEach$1<T> extends SuspendLambda implements 
     @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(T t, Continuation<? super Unit> continuation) {
-        return ((FlowKt__MigrationKt$delayEach$1) create(t, continuation)).invokeSuspend(Unit.f42314a);
+        return ((FlowKt__MigrationKt$delayEach$1) create(t, continuation)).invokeSuspend(Unit.a);
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -39,19 +37,19 @@ final class FlowKt__MigrationKt$delayEach$1<T> extends SuspendLambda implements 
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        Object a2 = IntrinsicsKt.a();
-        int i = this.f43234a;
+        Object a = IntrinsicsKt.a();
+        int i = this.a;
         if (i == 0) {
             ResultKt.a(obj);
-            this.f43234a = 1;
-            if (DelayKt.a(this.b, this) == a2) {
-                return a2;
+            this.a = 1;
+            if (DelayKt.a(this.b, this) == a) {
+                return a;
             }
         } else if (i != 1) {
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         } else {
             ResultKt.a(obj);
         }
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

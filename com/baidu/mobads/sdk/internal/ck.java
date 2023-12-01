@@ -12,11 +12,11 @@ import java.util.List;
 public class ck implements Thread.UncaughtExceptionHandler {
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f9384a = "";
+    public static String f6544a = "";
     private static final String b = "remote";
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f9385c = "proxy";
+    private static final String f6545c = "proxy";
     private static final String d = "third-mtj";
     private static final String e = "third-novel";
     private static Thread.UncaughtExceptionHandler f;
@@ -27,8 +27,9 @@ public class ck implements Thread.UncaughtExceptionHandler {
     private Context h;
     private a i;
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8756600-dex2jar.jar:com/baidu/mobads/sdk/internal/ck$a.class */
-    interface a {
+    public interface a {
         void a(String str);
     }
 
@@ -77,7 +78,7 @@ public class ck implements Thread.UncaughtExceptionHandler {
                     str = b;
                     if (!className.startsWith(w.aq)) {
                         str = b;
-                        if (className.startsWith(w.f9444ar)) {
+                        if (className.startsWith(w.f6604ar)) {
                             break;
                         } else if (className.startsWith(w.as)) {
                             return b;
@@ -162,7 +163,7 @@ public class ck implements Thread.UncaughtExceptionHandler {
         SharedPreferences.Editor f2 = f();
         f2.putString(j, str);
         f2.putString(k, ("crashtime:" + System.currentTimeMillis() + " ") + str2);
-        f2.putString(l, f9384a);
+        f2.putString(l, f6544a);
         f2.commit();
     }
 

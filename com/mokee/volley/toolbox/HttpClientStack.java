@@ -23,17 +23,13 @@ import org.apache.http.params.HttpParams;
 
 /* loaded from: source-4181928-dex2jar.jar:com/mokee/volley/toolbox/HttpClientStack.class */
 public class HttpClientStack implements HttpStack {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final String[] f24256a = null;
+    private static final String[] a = null;
     protected final HttpClient mClient;
 
     /* loaded from: source-4181928-dex2jar.jar:com/mokee/volley/toolbox/HttpClientStack$HttpPatch.class */
     public static final class HttpPatch extends HttpEntityEnclosingRequestBase {
         public static final String METHOD_NAME;
-
-        /* renamed from: a  reason: collision with root package name */
-        private static final String f24257a;
+        private static final String a;
 
         /* JADX WARN: Removed duplicated region for block: B:12:0x005c A[LOOP:1: B:7:0x001b->B:12:0x005c, LOOP_END] */
         /* JADX WARN: Removed duplicated region for block: B:16:0x007c  */
@@ -49,7 +45,7 @@ public class HttpClientStack implements HttpStack {
                 Method dump skipped, instructions count: 214
                 To view this dump change 'Code comments level' option to 'DEBUG'
             */
-            throw new UnsupportedOperationException("Method not decompiled: com.mokee.volley.toolbox.HttpClientStack.HttpPatch.m8069clinit():void");
+            throw new UnsupportedOperationException("Method not decompiled: com.mokee.volley.toolbox.HttpClientStack.HttpPatch.m11292clinit():void");
         }
 
         public HttpPatch() {
@@ -64,7 +60,7 @@ public class HttpClientStack implements HttpStack {
         }
 
         public String getMethod() {
-            return f24257a;
+            return a;
         }
     }
 
@@ -83,7 +79,7 @@ public class HttpClientStack implements HttpStack {
                 byte[] postBody = request.getPostBody();
                 if (postBody != null) {
                     HttpPost httpPost = new HttpPost(request.getUrl());
-                    httpPost.addHeader(f24256a[0], request.getPostBodyContentType());
+                    httpPost.addHeader(a[0], request.getPostBodyContentType());
                     httpPost.setEntity(new ByteArrayEntity(postBody));
                     return httpPost;
                 }
@@ -92,12 +88,12 @@ public class HttpClientStack implements HttpStack {
                 return new HttpGet(request.getUrl());
             case 1:
                 HttpPost httpPost2 = new HttpPost(request.getUrl());
-                httpPost2.addHeader(f24256a[2], request.getBodyContentType());
+                httpPost2.addHeader(a[2], request.getBodyContentType());
                 a((HttpEntityEnclosingRequestBase) httpPost2, request);
                 return httpPost2;
             case 2:
                 HttpPut httpPut = new HttpPut(request.getUrl());
-                httpPut.addHeader(f24256a[3], request.getBodyContentType());
+                httpPut.addHeader(a[3], request.getBodyContentType());
                 a((HttpEntityEnclosingRequestBase) httpPut, request);
                 return httpPut;
             case 3:
@@ -110,11 +106,11 @@ public class HttpClientStack implements HttpStack {
                 return new HttpTrace(request.getUrl());
             case 7:
                 HttpPatch httpPatch = new HttpPatch(request.getUrl());
-                httpPatch.addHeader(f24256a[1], request.getBodyContentType());
+                httpPatch.addHeader(a[1], request.getBodyContentType());
                 a(httpPatch, request);
                 return httpPatch;
             default:
-                throw new IllegalStateException(f24256a[4]);
+                throw new IllegalStateException(a[4]);
         }
     }
 

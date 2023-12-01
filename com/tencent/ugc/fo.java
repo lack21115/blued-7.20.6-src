@@ -8,10 +8,10 @@ import android.os.Message;
 public final /* synthetic */ class fo implements Handler.Callback {
 
     /* renamed from: a  reason: collision with root package name */
-    private final UGCVideoProcessor f40390a;
+    private final UGCVideoProcessor f26699a;
 
     private fo(UGCVideoProcessor uGCVideoProcessor) {
-        this.f40390a = uGCVideoProcessor;
+        this.f26699a = uGCVideoProcessor;
     }
 
     public static Handler.Callback a(UGCVideoProcessor uGCVideoProcessor) {
@@ -21,7 +21,7 @@ public final /* synthetic */ class fo implements Handler.Callback {
     @Override // android.os.Handler.Callback
     public final boolean handleMessage(Message message) {
         boolean handleMessage;
-        handleMessage = this.f40390a.handleMessage(message);
+        handleMessage = this.f26699a.handleMessage(message);
         return handleMessage;
     }
 }

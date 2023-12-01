@@ -3,8 +3,9 @@ package android.speech.tts;
 import android.speech.tts.TextToSpeechService;
 import android.util.Log;
 
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-9557208-dex2jar.jar:android/speech/tts/PlaybackSynthesisCallback.class */
-class PlaybackSynthesisCallback extends AbstractSynthesisCallback {
+public class PlaybackSynthesisCallback extends AbstractSynthesisCallback {
     private static final boolean DBG = false;
     private static final int MIN_AUDIO_BUFFER_SIZE = 8192;
     private static final String TAG = "PlaybackSynthesisRequest";

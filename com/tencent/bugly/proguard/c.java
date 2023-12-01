@@ -80,12 +80,12 @@ public class c extends a {
                 }
             }
             return null;
-        } else if (this.f35356a.containsKey(str)) {
+        } else if (this.f21665a.containsKey(str)) {
             if (this.e.containsKey(str)) {
                 return (T) this.e.get(str);
             }
             byte[] bArr = new byte[0];
-            Iterator<Map.Entry<String, byte[]>> it = this.f35356a.get(str).entrySet().iterator();
+            Iterator<Map.Entry<String, byte[]>> it = this.f21665a.get(str).entrySet().iterator();
             if (it.hasNext()) {
                 Map.Entry<String, byte[]> next = it.next();
                 next.getKey();

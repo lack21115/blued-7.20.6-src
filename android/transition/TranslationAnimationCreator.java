@@ -6,7 +6,6 @@ import android.animation.ObjectAnimator;
 import android.animation.TimeInterpolator;
 import android.graphics.Path;
 import android.view.View;
-import com.android.internal.R;
 
 /* loaded from: source-9557208-dex2jar.jar:android/transition/TranslationAnimationCreator.class */
 class TranslationAnimationCreator {
@@ -30,9 +29,9 @@ class TranslationAnimationCreator {
             this.mStartY = i2 - Math.round(this.mMovingView.getTranslationY());
             this.mTerminalX = f;
             this.mTerminalY = f2;
-            this.mTransitionPosition = (int[]) this.mViewInHierarchy.getTag(R.id.transitionPosition);
+            this.mTransitionPosition = (int[]) this.mViewInHierarchy.getTag(16908357);
             if (this.mTransitionPosition != null) {
-                this.mViewInHierarchy.setTagInternal(R.id.transitionPosition, null);
+                this.mViewInHierarchy.setTagInternal(16908357, null);
             }
         }
 
@@ -43,7 +42,7 @@ class TranslationAnimationCreator {
             }
             this.mTransitionPosition[0] = Math.round(this.mStartX + this.mMovingView.getTranslationX());
             this.mTransitionPosition[1] = Math.round(this.mStartY + this.mMovingView.getTranslationY());
-            this.mViewInHierarchy.setTagInternal(R.id.transitionPosition, this.mTransitionPosition);
+            this.mViewInHierarchy.setTagInternal(16908357, this.mTransitionPosition);
         }
 
         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
@@ -74,7 +73,7 @@ class TranslationAnimationCreator {
     public static Animator createAnimation(View view, TransitionValues transitionValues, int i, int i2, float f, float f2, float f3, float f4, TimeInterpolator timeInterpolator) {
         float translationX = view.getTranslationX();
         float translationY = view.getTranslationY();
-        int[] iArr = (int[]) transitionValues.view.getTag(R.id.transitionPosition);
+        int[] iArr = (int[]) transitionValues.view.getTag(16908357);
         if (iArr != null) {
             f = (iArr[0] - i) + translationX;
             f2 = (iArr[1] - i2) + translationY;

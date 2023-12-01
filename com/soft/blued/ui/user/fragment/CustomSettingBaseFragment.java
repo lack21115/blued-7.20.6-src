@@ -39,11 +39,11 @@ import java.util.List;
 public abstract class CustomSettingBaseFragment extends BaseFragment implements View.OnClickListener {
 
     /* renamed from: a  reason: collision with root package name */
-    public Context f33846a;
+    public Context f20155a;
     public View b;
 
     /* renamed from: c  reason: collision with root package name */
-    public Dialog f33847c;
+    public Dialog f20156c;
     public PullToRefreshRecyclerView d;
     public RecyclerView e;
     public NoDataAndLoadFailView f;
@@ -80,7 +80,6 @@ public abstract class CustomSettingBaseFragment extends BaseFragment implements 
     private void c(final int i) {
         BluedUIHttpResponse<BluedEntityA<DynamicSkinModel>> bluedUIHttpResponse = new BluedUIHttpResponse<BluedEntityA<DynamicSkinModel>>(getFragmentActive()) { // from class: com.soft.blued.ui.user.fragment.CustomSettingBaseFragment.2
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<DynamicSkinModel> bluedEntityA) {
                 CustomSettingBaseFragment.this.b(i);
@@ -93,15 +92,13 @@ public abstract class CustomSettingBaseFragment extends BaseFragment implements 
                 CustomSettingBaseFragment.this.g.notifyDataSetChanged();
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
-                CustomSettingBaseFragment.this.f33847c.dismiss();
+                CustomSettingBaseFragment.this.f20156c.dismiss();
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 super.onUIStart();
-                CustomSettingBaseFragment.this.f33847c.show();
+                CustomSettingBaseFragment.this.f20156c.show();
             }
         };
         MineHttpUtils.a(bluedUIHttpResponse, i + "", b());
@@ -119,32 +116,32 @@ public abstract class CustomSettingBaseFragment extends BaseFragment implements 
     }
 
     private void l() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.b.findViewById(2131370749);
-        commonTopTitleNoTrans.setCenterText(c());
-        commonTopTitleNoTrans.setLeftClickListener(this);
-        commonTopTitleNoTrans.setLeftImg(2131233903);
-        commonTopTitleNoTrans.setCenterTextColor(2131101780);
-        commonTopTitleNoTrans.f();
-        commonTopTitleNoTrans.a();
+        CommonTopTitleNoTrans findViewById = this.b.findViewById(R.id.top_title);
+        findViewById.setCenterText(c());
+        findViewById.setLeftClickListener(this);
+        findViewById.setLeftImg(2131233903);
+        findViewById.setCenterTextColor(2131101780);
+        findViewById.f();
+        findViewById.a();
     }
 
     private void m() {
-        this.f33847c = DialogUtils.a(this.f33846a);
-        NoDataAndLoadFailView noDataAndLoadFailView = new NoDataAndLoadFailView(this.f33846a);
+        this.f20156c = DialogUtils.a(this.f20155a);
+        NoDataAndLoadFailView noDataAndLoadFailView = new NoDataAndLoadFailView(this.f20155a);
         this.f = noDataAndLoadFailView;
         noDataAndLoadFailView.d();
         this.f.setImageScale(0.7f);
         this.f.setNoDataImg(2131233627);
-        PullToRefreshRecyclerView pullToRefreshRecyclerView = (PullToRefreshRecyclerView) this.b.findViewById(2131373425);
-        this.d = pullToRefreshRecyclerView;
-        pullToRefreshRecyclerView.setRefreshEnabled(false);
-        this.e = this.d.getRefreshableView();
-        this.e.setLayoutManager(new GridLayoutManager(this.f33846a, 3));
-        VIPCustomSettingAdapter vIPCustomSettingAdapter = new VIPCustomSettingAdapter(this.f33846a, this.i, this.j, e(), a(), g());
+        PullToRefreshRecyclerView findViewById = this.b.findViewById(R.id.wrapper);
+        this.d = findViewById;
+        findViewById.setRefreshEnabled(false);
+        this.e = (RecyclerView) this.d.getRefreshableView();
+        this.e.setLayoutManager(new GridLayoutManager(this.f20155a, 3));
+        VIPCustomSettingAdapter vIPCustomSettingAdapter = new VIPCustomSettingAdapter(this.f20155a, this.i, this.j, e(), a(), g());
         this.g = vIPCustomSettingAdapter;
-        vIPCustomSettingAdapter.setEmptyView(this.f);
-        View view = new View(this.f33846a);
-        view.setLayoutParams(new ViewGroup.LayoutParams(0, DensityUtils.a(this.f33846a, 75.0f)));
+        vIPCustomSettingAdapter.setEmptyView((View) this.f);
+        View view = new View(this.f20155a);
+        view.setLayoutParams(new ViewGroup.LayoutParams(0, DensityUtils.a(this.f20155a, 75.0f)));
         this.g.addFooterView(view);
         this.e.setAdapter(this.g);
         this.g.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$CustomSettingBaseFragment$EB-xRAIXMykymfyqLcJGZjQVxW8
@@ -158,28 +155,27 @@ public abstract class CustomSettingBaseFragment extends BaseFragment implements 
     private void n() {
         MineHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<VIPCustomSettingBase>>(getFragmentActive()) { // from class: com.soft.blued.ui.user.fragment.CustomSettingBaseFragment.1
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<VIPCustomSettingBase> bluedEntityA) {
                 Log.v("drb", "getBluedTheme onUIUpdate");
                 boolean z = true;
                 DynamicSkinModel dynamicSkinModel = new DynamicSkinModel(true, 1, true);
-                dynamicSkinModel.name = CustomSettingBaseFragment.this.f33846a.getResources().getString(R.string.default_theme);
+                dynamicSkinModel.name = CustomSettingBaseFragment.this.f20155a.getResources().getString(R.string.default_theme);
                 CustomSettingBaseFragment.this.g.addData((VIPCustomSettingAdapter) dynamicSkinModel);
                 if (bluedEntityA.hasData()) {
-                    Iterator<VIPCustomSettingBase> it = bluedEntityA.data.iterator();
+                    Iterator it = bluedEntityA.data.iterator();
                     while (true) {
                         if (!it.hasNext()) {
                             z = false;
                             break;
                         }
-                        VIPCustomSettingBase next = it.next();
-                        if (next.selected == 1) {
-                            next.lastSelected = true;
-                            CustomSettingBaseFragment.this.h = next.id;
+                        VIPCustomSettingBase vIPCustomSettingBase = (VIPCustomSettingBase) it.next();
+                        if (vIPCustomSettingBase.selected == 1) {
+                            vIPCustomSettingBase.lastSelected = true;
+                            CustomSettingBaseFragment.this.h = vIPCustomSettingBase.id;
                             dynamicSkinModel.selected = 0;
                             dynamicSkinModel.lastSelected = false;
-                            CustomSettingBaseFragment.this.b(next);
+                            CustomSettingBaseFragment.this.b(vIPCustomSettingBase);
                             break;
                         }
                     }
@@ -190,7 +186,6 @@ public abstract class CustomSettingBaseFragment extends BaseFragment implements 
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str) {
                 Log.v("drb", "getBluedTheme onUIFailure");
                 if (CustomSettingBaseFragment.this.g.getData().size() == 0) {
@@ -199,15 +194,13 @@ public abstract class CustomSettingBaseFragment extends BaseFragment implements 
                 return super.onUIFailure(i, str);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
-                CustomSettingBaseFragment.this.f33847c.dismiss();
+                CustomSettingBaseFragment.this.f20156c.dismiss();
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 super.onUIStart();
-                CustomSettingBaseFragment.this.f33847c.show();
+                CustomSettingBaseFragment.this.f20156c.show();
             }
         }, b());
     }
@@ -239,7 +232,7 @@ public abstract class CustomSettingBaseFragment extends BaseFragment implements 
     }
 
     public void i() {
-        PayUtils.a(this.f33846a, this.i, this.j, d(), this.k);
+        PayUtils.a(this.f20155a, this.i, this.j, d(), this.k);
     }
 
     public void j() {
@@ -249,15 +242,15 @@ public abstract class CustomSettingBaseFragment extends BaseFragment implements 
                     c(vIPCustomSettingBase);
                     return;
                 }
-                String string = this.f33846a.getResources().getString(R.string.limit_good_dialog_content);
+                String string = this.f20155a.getResources().getString(R.string.limit_good_dialog_content);
                 String format = String.format(string, TimeAndDateUtils.b(vIPCustomSettingBase.stop_time + ""));
-                Context context = this.f33846a;
+                Context context = this.f20155a;
                 CommonAlertDialog.a(context, "", format, context.getResources().getString(2131886739), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$CustomSettingBaseFragment$UhAVCHKpDJkqmkXja3HevLiLZGk
                     @Override // android.content.DialogInterface.OnClickListener
                     public final void onClick(DialogInterface dialogInterface, int i) {
                         CustomSettingBaseFragment.this.a(vIPCustomSettingBase, dialogInterface, i);
                     }
-                }, this.f33846a.getResources().getString(2131886718), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
+                }, this.f20155a.getResources().getString(2131886718), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
                 return;
             }
         }
@@ -275,9 +268,8 @@ public abstract class CustomSettingBaseFragment extends BaseFragment implements 
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.f33846a = getActivity();
+        this.f20155a = getActivity();
         View view = this.b;
         if (view == null) {
             this.b = layoutInflater.inflate(f(), viewGroup, false);

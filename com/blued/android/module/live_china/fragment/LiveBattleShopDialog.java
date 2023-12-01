@@ -4,7 +4,6 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.PointF;
-import android.os.BatteryManager;
 import android.os.Bundle;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
@@ -71,8 +70,6 @@ import com.blued.android.module.svgaplayer.SVGAImageView;
 import com.blued.android.module.svgaplayer.SVGAParser;
 import com.blued.android.module.svgaplayer.SVGAVideoEntity;
 import com.blued.das.live.LiveProtos;
-import com.igexin.push.config.c;
-import com.ss.android.socialbase.downloader.constants.DBDefinition;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
@@ -90,13 +87,9 @@ import kotlin.jvm.internal.Ref;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveBattleShopDialog.class */
 public final class LiveBattleShopDialog extends BaseFullScreenDialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f12741a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f12742c;
+    private int c;
     private int d;
     private int e;
     private int f;
@@ -203,7 +196,7 @@ public final class LiveBattleShopDialog extends BaseFullScreenDialog {
         }
     });
     private int r = 4;
-    private long s = c.j;
+    private long s = 1500;
     private Runnable w = new Runnable() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveBattleShopDialog$LRMrYtYQNE0uDYKuCBjfImKduxw
         @Override // java.lang.Runnable
         public final void run() {
@@ -216,20 +209,16 @@ public final class LiveBattleShopDialog extends BaseFullScreenDialog {
     @Metadata
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveBattleShopDialog$BannerPagerAdapter.class */
     public final class BannerPagerAdapter extends PagerAdapter {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ LiveBattleShopDialog f12743a;
+        final /* synthetic */ LiveBattleShopDialog a;
         private Context b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private List<View> f12744c;
+        private List<View> c;
         private List<List<LiveBattleGiftModel>> d;
         private IRequestHost e;
 
         public BannerPagerAdapter(LiveBattleShopDialog this$0) {
             Intrinsics.e(this$0, "this$0");
-            this.f12743a = this$0;
-            this.f12744c = new ArrayList();
+            this.a = this$0;
+            this.c = new ArrayList();
             this.d = new ArrayList();
         }
 
@@ -267,7 +256,6 @@ public final class LiveBattleShopDialog extends BaseFullScreenDialog {
             notifyDataSetChanged();
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public void destroyItem(ViewGroup container, int i, Object object) {
             Intrinsics.e(container, "container");
             Intrinsics.e(object, "object");
@@ -278,7 +266,6 @@ public final class LiveBattleShopDialog extends BaseFullScreenDialog {
             return this.b;
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public int getCount() {
             List<List<LiveBattleGiftModel>> list = this.d;
             if (list != null) {
@@ -287,36 +274,34 @@ public final class LiveBattleShopDialog extends BaseFullScreenDialog {
             return 0;
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public int getItemPosition(Object object) {
             Intrinsics.e(object, "object");
             return -2;
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public Object instantiateItem(ViewGroup container, int i) {
             Intrinsics.e(container, "container");
             List<LiveBattleGiftModel> list = this.d.get(i);
-            while (this.f12744c.size() < this.d.size()) {
+            while (this.c.size() < this.d.size()) {
                 View inflate = LayoutInflater.from(AppInfo.d()).inflate(R.layout.live_battle_view_pager_item_view, container, false);
                 Intrinsics.c(inflate, "from(AppInfo.getAppConte…m_view, container, false)");
-                this.f12744c.add(inflate);
+                this.c.add(inflate);
             }
-            View view = this.f12744c.get(i);
+            View view = this.c.get(i);
             if (view == null) {
                 return view;
             }
-            RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rv_list);
-            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.b);
+            RecyclerView findViewById = view.findViewById(R.id.rv_list);
+            RecyclerView.LayoutManager linearLayoutManager = new LinearLayoutManager(this.b);
             linearLayoutManager.setOrientation(0);
-            recyclerView.setLayoutManager(linearLayoutManager);
-            ViewGroup.LayoutParams layoutParams = recyclerView.getLayoutParams();
+            findViewById.setLayoutManager(linearLayoutManager);
+            ViewGroup.LayoutParams layoutParams = findViewById.getLayoutParams();
             layoutParams.width = DensityUtils.a(this.b, list.size() * 57.0f);
             layoutParams.height = -1;
-            recyclerView.setLayoutParams(layoutParams);
-            LiveBattleGiftItemAdapter liveBattleGiftItemAdapter = new LiveBattleGiftItemAdapter(this.f12743a);
+            findViewById.setLayoutParams(layoutParams);
+            LiveBattleGiftItemAdapter liveBattleGiftItemAdapter = new LiveBattleGiftItemAdapter(this.a);
             liveBattleGiftItemAdapter.a(list, 2);
-            recyclerView.setAdapter(liveBattleGiftItemAdapter);
+            findViewById.setAdapter(liveBattleGiftItemAdapter);
             if (view.getParent() != null) {
                 ((ViewGroup) view).removeView(view);
             }
@@ -324,7 +309,6 @@ public final class LiveBattleShopDialog extends BaseFullScreenDialog {
             return view;
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public boolean isViewFromObject(View view, Object object) {
             Intrinsics.e(view, "view");
             Intrinsics.e(object, "object");
@@ -358,7 +342,7 @@ public final class LiveBattleShopDialog extends BaseFullScreenDialog {
             LiveBattleShopDialog liveBattleShopDialog = new LiveBattleShopDialog();
             Bundle bundle = new Bundle();
             bundle.putInt("flag", 4);
-            bundle.putInt(DBDefinition.TASK_ID, i);
+            bundle.putInt("taskId", i);
             liveBattleShopDialog.setArguments(bundle);
             FragmentManager childFragmentManager = fragment.getChildFragmentManager();
             Intrinsics.c(childFragmentManager, "fragment.getChildFragmentManager()");
@@ -371,7 +355,7 @@ public final class LiveBattleShopDialog extends BaseFullScreenDialog {
             Bundle bundle = new Bundle();
             bundle.putInt("flag", 2);
             bundle.putInt("step", i);
-            bundle.putInt(BatteryManager.EXTRA_LEVEL, i2);
+            bundle.putInt("level", i2);
             liveBattleShopDialog.setArguments(bundle);
             FragmentManager childFragmentManager = fragment.getChildFragmentManager();
             Intrinsics.c(childFragmentManager, "fragment.getChildFragmentManager()");
@@ -419,19 +403,15 @@ public final class LiveBattleShopDialog extends BaseFullScreenDialog {
     @Metadata
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveBattleShopDialog$LiveBattleGiftItemAdapter.class */
     public final class LiveBattleGiftItemAdapter extends CommonRecycleAdapter<LiveBattleGiftModel> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ LiveBattleShopDialog f12745a;
+        final /* synthetic */ LiveBattleShopDialog a;
         private int b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private boolean f12746c;
+        private boolean c;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public LiveBattleGiftItemAdapter(LiveBattleShopDialog this$0) {
             super(this$0.getContext());
             Intrinsics.e(this$0, "this$0");
-            this.f12745a = this$0;
+            this.a = this$0;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -545,10 +525,10 @@ public final class LiveBattleShopDialog extends BaseFullScreenDialog {
                 r3 = r9
                 r1.<init>(r2, r3)
                 r1 = r7
-                T r1 = r1.f42545a
+                T r1 = r1.a
                 android.view.View r1 = (android.view.View) r1
                 r2 = r8
-                T r2 = r2.f42545a
+                T r2 = r2.a
                 java.lang.String r2 = (java.lang.String) r2
                 r0.a(r1, r2)
             Ld9:
@@ -571,13 +551,13 @@ public final class LiveBattleShopDialog extends BaseFullScreenDialog {
             }
             ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) layoutParams;
             final Ref.ObjectRef objectRef = new Ref.ObjectRef();
-            objectRef.f42545a = "";
+            objectRef.a = "";
             int i2 = this.b;
             if (i2 == 0) {
-                objectRef.f42545a = this.f12746c ? "extra" : "top_pop";
-                marginLayoutParams.width = DensityUtils.a(this.f12745a.getContext(), 54.0f);
-                marginLayoutParams.height = DensityUtils.a(this.f12745a.getContext(), 54.0f);
-                marginLayoutParams.rightMargin = DensityUtils.a(this.f12745a.getContext(), 0.0f);
+                objectRef.a = this.c ? "extra" : "top_pop";
+                marginLayoutParams.width = DensityUtils.a(this.a.getContext(), 54.0f);
+                marginLayoutParams.height = DensityUtils.a(this.a.getContext(), 54.0f);
+                marginLayoutParams.rightMargin = DensityUtils.a(this.a.getContext(), 0.0f);
                 helper.a(R.id.fl_main).setBackgroundResource(R.drawable.live_battle_gift_item_bg);
                 helper.a(R.id.iv_lock).setVisibility(8);
                 ViewGroup.LayoutParams layoutParams2 = helper.a(R.id.ll_root).getLayoutParams();
@@ -585,20 +565,20 @@ public final class LiveBattleShopDialog extends BaseFullScreenDialog {
                     throw new NullPointerException("null cannot be cast to non-null type android.view.ViewGroup.MarginLayoutParams");
                 }
                 ViewGroup.MarginLayoutParams marginLayoutParams2 = (ViewGroup.MarginLayoutParams) layoutParams2;
-                marginLayoutParams2.width = DensityUtils.a(this.f12745a.getContext(), 63.0f);
-                marginLayoutParams2.height = DensityUtils.a(this.f12745a.getContext(), 63.0f);
+                marginLayoutParams2.width = DensityUtils.a(this.a.getContext(), 63.0f);
+                marginLayoutParams2.height = DensityUtils.a(this.a.getContext(), 63.0f);
                 helper.a(R.id.ll_root).setLayoutParams(marginLayoutParams2);
             } else if (i2 == 1) {
-                objectRef.f42545a = "basic_pop_done";
-                marginLayoutParams.width = DensityUtils.a(this.f12745a.getContext(), 54.0f);
-                marginLayoutParams.height = DensityUtils.a(this.f12745a.getContext(), 54.0f);
-                marginLayoutParams.rightMargin = DensityUtils.a(this.f12745a.getContext(), 0.0f);
+                objectRef.a = "basic_pop_done";
+                marginLayoutParams.width = DensityUtils.a(this.a.getContext(), 54.0f);
+                marginLayoutParams.height = DensityUtils.a(this.a.getContext(), 54.0f);
+                marginLayoutParams.rightMargin = DensityUtils.a(this.a.getContext(), 0.0f);
                 helper.a(R.id.fl_main).setBackgroundResource(R.drawable.live_battle_gift_item_blue_bg);
                 helper.a(R.id.iv_lock).setVisibility(8);
             } else if (i2 == 2) {
-                objectRef.f42545a = "basic_pop_top";
-                marginLayoutParams.width = DensityUtils.a(this.f12745a.getContext(), 48.0f);
-                marginLayoutParams.height = DensityUtils.a(this.f12745a.getContext(), 48.0f);
+                objectRef.a = "basic_pop_top";
+                marginLayoutParams.width = DensityUtils.a(this.a.getContext(), 48.0f);
+                marginLayoutParams.height = DensityUtils.a(this.a.getContext(), 48.0f);
                 helper.a(R.id.fl_main).setBackgroundResource(R.drawable.live_battle_gift_item_advance_bg);
                 helper.a(R.id.iv_lock).setVisibility(0);
                 ViewGroup.LayoutParams layoutParams3 = helper.a(R.id.ll_root).getLayoutParams();
@@ -606,28 +586,28 @@ public final class LiveBattleShopDialog extends BaseFullScreenDialog {
                     throw new NullPointerException("null cannot be cast to non-null type android.view.ViewGroup.MarginLayoutParams");
                 }
                 ViewGroup.MarginLayoutParams marginLayoutParams3 = (ViewGroup.MarginLayoutParams) layoutParams3;
-                marginLayoutParams3.width = marginLayoutParams.width + DensityUtils.a(this.f12745a.getContext(), 9.0f);
+                marginLayoutParams3.width = marginLayoutParams.width + DensityUtils.a(this.a.getContext(), 9.0f);
                 marginLayoutParams3.height = marginLayoutParams.height;
                 helper.a(R.id.ll_root).setLayoutParams(marginLayoutParams3);
             } else if (i2 == 3) {
-                objectRef.f42545a = "top_done";
-                marginLayoutParams.width = DensityUtils.a(this.f12745a.getContext(), 54.0f);
-                marginLayoutParams.height = DensityUtils.a(this.f12745a.getContext(), 54.0f);
-                marginLayoutParams.rightMargin = DensityUtils.a(this.f12745a.getContext(), 0.0f);
+                objectRef.a = "top_done";
+                marginLayoutParams.width = DensityUtils.a(this.a.getContext(), 54.0f);
+                marginLayoutParams.height = DensityUtils.a(this.a.getContext(), 54.0f);
+                marginLayoutParams.rightMargin = DensityUtils.a(this.a.getContext(), 0.0f);
                 helper.a(R.id.fl_main).setBackgroundResource(R.drawable.live_battle_gift_item_yellow_bg);
                 helper.a(R.id.iv_lock).setVisibility(8);
             } else if (i2 == 4) {
-                objectRef.f42545a = "top_todo";
-                marginLayoutParams.width = DensityUtils.a(this.f12745a.getContext(), 48.0f);
-                marginLayoutParams.height = DensityUtils.a(this.f12745a.getContext(), 48.0f);
-                marginLayoutParams.rightMargin = DensityUtils.a(this.f12745a.getContext(), 0.0f);
+                objectRef.a = "top_todo";
+                marginLayoutParams.width = DensityUtils.a(this.a.getContext(), 48.0f);
+                marginLayoutParams.height = DensityUtils.a(this.a.getContext(), 48.0f);
+                marginLayoutParams.rightMargin = DensityUtils.a(this.a.getContext(), 0.0f);
                 helper.a(R.id.fl_main).setBackgroundResource(R.drawable.live_battle_gift_item_advance_bg);
                 helper.a(R.id.iv_lock).setVisibility(0);
             } else if (i2 == 5) {
-                objectRef.f42545a = "top_todo";
-                marginLayoutParams.width = DensityUtils.a(this.f12745a.getContext(), 48.0f);
-                marginLayoutParams.height = DensityUtils.a(this.f12745a.getContext(), 48.0f);
-                marginLayoutParams.rightMargin = DensityUtils.a(this.f12745a.getContext(), 0.0f);
+                objectRef.a = "top_todo";
+                marginLayoutParams.width = DensityUtils.a(this.a.getContext(), 48.0f);
+                marginLayoutParams.height = DensityUtils.a(this.a.getContext(), 48.0f);
+                marginLayoutParams.rightMargin = DensityUtils.a(this.a.getContext(), 0.0f);
                 helper.a(R.id.fl_main).setBackgroundResource(R.drawable.live_battle_gift_item_yellow_bg);
                 helper.a(R.id.iv_lock).setVisibility(8);
             }
@@ -639,10 +619,10 @@ public final class LiveBattleShopDialog extends BaseFullScreenDialog {
             helper.a(R.id.fl_main).setLayoutParams(marginLayoutParams);
             ImageView imageView = (ImageView) helper.a(R.id.iv_pic);
             ViewGroup.LayoutParams layoutParams4 = imageView.getLayoutParams();
-            layoutParams4.width = marginLayoutParams.width - DensityUtils.a(this.f12745a.getContext(), 4.0f);
-            layoutParams4.height = marginLayoutParams.height - DensityUtils.a(this.f12745a.getContext(), 4.0f);
+            layoutParams4.width = marginLayoutParams.width - DensityUtils.a(this.a.getContext(), 4.0f);
+            layoutParams4.height = marginLayoutParams.height - DensityUtils.a(this.a.getContext(), 4.0f);
             imageView.setLayoutParams(layoutParams4);
-            ImageLoader.a(this.f12745a.a(), item.getIcon()).a((ImageView) helper.a(R.id.iv_pic));
+            ImageLoader.a(this.a.a(), item.getIcon()).a((ImageView) helper.a(R.id.iv_pic));
             String label = item.getLabel();
             boolean z = true;
             if (label != null) {
@@ -652,22 +632,22 @@ public final class LiveBattleShopDialog extends BaseFullScreenDialog {
                 TextView textView = (TextView) helper.a(R.id.tv_num);
                 Intrinsics.c(textView, "helper?.getView<TextView>(R.id.tv_num)");
                 BluedViewExKt.a(textView);
-                View a2 = helper.a(R.id.iv_num_background);
-                Intrinsics.c(a2, "helper?.getView<View>(R.id.iv_num_background)");
-                BluedViewExKt.a(a2);
+                View a = helper.a(R.id.iv_num_background);
+                Intrinsics.c(a, "helper?.getView<View>(R.id.iv_num_background)");
+                BluedViewExKt.a(a);
             } else {
                 TextView textView2 = (TextView) helper.a(R.id.tv_num);
                 Intrinsics.c(textView2, "helper?.getView<TextView>(R.id.tv_num)");
                 BluedViewExKt.b(textView2);
                 ((TextView) helper.a(R.id.tv_num)).setText(item.getLabel());
-                View a3 = helper.a(R.id.iv_num_background);
-                Intrinsics.c(a3, "helper?.getView<View>(R.id.iv_num_background)");
-                BluedViewExKt.b(a3);
+                View a2 = helper.a(R.id.iv_num_background);
+                Intrinsics.c(a2, "helper?.getView<View>(R.id.iv_num_background)");
+                BluedViewExKt.b(a2);
             }
             final Ref.ObjectRef objectRef2 = new Ref.ObjectRef();
-            objectRef2.f42545a = helper.a(R.id.ll_root);
-            final LiveBattleShopDialog liveBattleShopDialog = this.f12745a;
-            ((View) objectRef2.f42545a).setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveBattleShopDialog$LiveBattleGiftItemAdapter$ZuHJksI4A6SbXpnP2qkbjx0qXTg
+            objectRef2.a = helper.a(R.id.ll_root);
+            final LiveBattleShopDialog liveBattleShopDialog = this.a;
+            ((View) objectRef2.a).setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveBattleShopDialog$LiveBattleGiftItemAdapter$ZuHJksI4A6SbXpnP2qkbjx0qXTg
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     LiveBattleShopDialog.LiveBattleGiftItemAdapter.a(LiveBattleGiftModel.this, liveBattleShopDialog, objectRef2, objectRef, view);
@@ -682,7 +662,7 @@ public final class LiveBattleShopDialog extends BaseFullScreenDialog {
         }
 
         public final void a(boolean z) {
-            this.f12746c = z;
+            this.c = z;
         }
 
         @Override // com.blued.android.module.common.adapter.CommonRecycleAdapter
@@ -725,7 +705,7 @@ public final class LiveBattleShopDialog extends BaseFullScreenDialog {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(LiveBattleShopDialog this$0, View view) {
         Intrinsics.e(this$0, "this$0");
-        this$0.a(String.valueOf(this$0.f12742c));
+        this$0.a(String.valueOf(this$0.c));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -735,8 +715,8 @@ public final class LiveBattleShopDialog extends BaseFullScreenDialog {
         LiveBattleReceiveBinding s = this$0.s();
         int currentItem = (s == null ? null : s.h).getCurrentItem() + 1;
         int i = currentItem;
-        if (currentItem > ((BannerPagerAdapter) bannerPagerAdapter.f42545a).getCount() - 1) {
-            i = ((BannerPagerAdapter) bannerPagerAdapter.f42545a).getCount() - 1;
+        if (currentItem > ((BannerPagerAdapter) bannerPagerAdapter.a).getCount() - 1) {
+            i = ((BannerPagerAdapter) bannerPagerAdapter.a).getCount() - 1;
         }
         LiveBattleReceiveBinding s2 = this$0.s();
         (s2 == null ? null : s2.h).setCurrentItem(i);
@@ -747,7 +727,7 @@ public final class LiveBattleShopDialog extends BaseFullScreenDialog {
         Intrinsics.e(type, "$type");
         Intrinsics.e(isHasExtraAward, "$isHasExtraAward");
         Intrinsics.e(this$0, "this$0");
-        EventTrackLive.a(LiveProtos.Event.LIVE_BATTLE_PASS_TOP_POP_YES_CLICK, LiveRoomManager.a().e(), LiveRoomManager.a().g(), (String) type.f42545a, i == 1, isHasExtraAward.f42538a);
+        EventTrackLive.a(LiveProtos.Event.LIVE_BATTLE_PASS_TOP_POP_YES_CLICK, LiveRoomManager.a().e(), LiveRoomManager.a().g(), (String) type.a, i == 1, isHasExtraAward.a);
         this$0.i();
     }
 
@@ -755,7 +735,7 @@ public final class LiveBattleShopDialog extends BaseFullScreenDialog {
     public static final void a(Ref.ObjectRef type, LiveBattleShopDialog this$0, View view) {
         Intrinsics.e(type, "$type");
         Intrinsics.e(this$0, "this$0");
-        EventTrackLive.c(LiveProtos.Event.LIVE_BATTLE_PASS_BASIC_POP_YES_CLICK, LiveRoomManager.a().e(), LiveRoomManager.a().g(), (String) type.f42545a);
+        EventTrackLive.c(LiveProtos.Event.LIVE_BATTLE_PASS_BASIC_POP_YES_CLICK, LiveRoomManager.a().e(), LiveRoomManager.a().g(), (String) type.a);
         this$0.i();
     }
 
@@ -775,7 +755,7 @@ public final class LiveBattleShopDialog extends BaseFullScreenDialog {
     public static final void b(Ref.ObjectRef type, LiveBattleShopDialog this$0, View view) {
         Intrinsics.e(type, "$type");
         Intrinsics.e(this$0, "this$0");
-        EventTrackLive.c(LiveProtos.Event.LIVE_BATTLE_PASS_BASIC_POP_BUY_CLICK, LiveRoomManager.a().e(), LiveRoomManager.a().g(), (String) type.f42545a);
+        EventTrackLive.c(LiveProtos.Event.LIVE_BATTLE_PASS_BASIC_POP_BUY_CLICK, LiveRoomManager.a().e(), LiveRoomManager.a().g(), (String) type.a);
         this$0.c(false);
         this$0.b = 3;
         this$0.j();
@@ -821,7 +801,7 @@ public final class LiveBattleShopDialog extends BaseFullScreenDialog {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void h(final LiveBattleShopDialog this$0) {
         Intrinsics.e(this$0, "this$0");
-        SVGAParser.a(SVGAParser.f15958a.b(), "live_battle_backlight.svga", new SVGAParser.ParseCompletion() { // from class: com.blued.android.module.live_china.fragment.LiveBattleShopDialog$setTag2Data$4$1
+        SVGAParser.a(SVGAParser.a.b(), "live_battle_backlight.svga", new SVGAParser.ParseCompletion() { // from class: com.blued.android.module.live_china.fragment.LiveBattleShopDialog$setTag2Data$4$1
             @Override // com.blued.android.module.svgaplayer.SVGAParser.ParseCompletion
             public void onComplete(SVGAVideoEntity videoItem) {
                 LiveBattleBuyReceiveBinding r;
@@ -861,7 +841,7 @@ public final class LiveBattleShopDialog extends BaseFullScreenDialog {
     public static final void j(final LiveBattleShopDialog this$0) {
         Intrinsics.e(this$0, "this$0");
         final Ref.IntRef intRef = new Ref.IntRef();
-        intRef.f42543a = this$0.v().b.getWidth();
+        intRef.a = this$0.v().b.getWidth();
         final ImageSize imageSize = new ImageSize();
         ImageFileLoader.a(this$0.a()).a(this$0.i).a(imageSize).a(new ImageFileLoader.OnLoadFileListener() { // from class: com.blued.android.module.live_china.fragment.LiveBattleShopDialog$setTag7Data$2$1
             @Override // com.blued.android.core.image.ImageFileLoader.OnLoadFileListener
@@ -875,10 +855,10 @@ public final class LiveBattleShopDialog extends BaseFullScreenDialog {
                 v.b.setZoomEnabled(false);
                 float a2 = imageSize.a();
                 float f = 1.0f;
-                if (intRef.f42543a > 0) {
+                if (intRef.a > 0) {
                     f = 1.0f;
                     if (a2 > 0.0f) {
-                        f = (intRef.f42543a * 1.0f) / a2;
+                        f = (intRef.a * 1.0f) / a2;
                     }
                 }
                 v2 = LiveBattleShopDialog.this.v();
@@ -890,7 +870,7 @@ public final class LiveBattleShopDialog extends BaseFullScreenDialog {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void k(LiveBattleShopDialog this$0) {
         Intrinsics.e(this$0, "this$0");
-        this$0.p().f11918a.setVisibility(0);
+        this$0.p().a.setVisibility(0);
     }
 
     private final void o() {
@@ -948,11 +928,11 @@ public final class LiveBattleShopDialog extends BaseFullScreenDialog {
             return;
         }
         this.b = arguments.getInt("flag", 0);
-        this.f12742c = arguments.getInt("type", 0);
+        this.c = arguments.getInt("type", 0);
         this.e = arguments.getInt("step", 0);
-        this.d = arguments.getInt(BatteryManager.EXTRA_LEVEL, 0);
+        this.d = arguments.getInt("level", 0);
         this.f = arguments.getInt(ReqAckPackage.REQ_RESPONSE_KEY.BEANS, 0);
-        this.g = arguments.getInt(DBDefinition.TASK_ID, 0);
+        this.g = arguments.getInt("taskId", 0);
         String string = arguments.getString("picUrl", "");
         Intrinsics.c(string, "it.getString(\"picUrl\", \"\")");
         this.i = string;
@@ -965,7 +945,7 @@ public final class LiveBattleShopDialog extends BaseFullScreenDialog {
 
     private final void x() {
         boolean z = true;
-        if (this.f12742c != 1) {
+        if (this.c != 1) {
             z = false;
         }
         final ActivityFragmentActive a2 = a();
@@ -1055,7 +1035,7 @@ public final class LiveBattleShopDialog extends BaseFullScreenDialog {
             @Override // kotlin.jvm.functions.Function1
             public /* synthetic */ Unit invoke(FrameLayout frameLayout2) {
                 a(frameLayout2);
-                return Unit.f42314a;
+                return Unit.a;
             }
         });
         r().f.setVisibility(8);
@@ -1174,7 +1154,7 @@ public final class LiveBattleShopDialog extends BaseFullScreenDialog {
                 Intrinsics.e(toAddView, "$this$toAddView");
                 LiveBattleShopDialog liveBattleShopDialog = LiveBattleShopDialog.this;
                 q = liveBattleShopDialog.q();
-                FrameLayout frameLayout2 = q.f12134c;
+                FrameLayout frameLayout2 = q.c;
                 Intrinsics.c(frameLayout2, "tag1VB.root");
                 toAddView.addView(liveBattleShopDialog.a(frameLayout2), -2, -2);
             }
@@ -1182,7 +1162,7 @@ public final class LiveBattleShopDialog extends BaseFullScreenDialog {
             @Override // kotlin.jvm.functions.Function1
             public /* synthetic */ Unit invoke(FrameLayout frameLayout2) {
                 a(frameLayout2);
-                return Unit.f42314a;
+                return Unit.a;
             }
         });
         String string = AppInfo.d().getString(R.string.live_battle_unlock_beans_1);
@@ -1194,7 +1174,7 @@ public final class LiveBattleShopDialog extends BaseFullScreenDialog {
         String string4 = AppInfo.d().getString(R.string.live_battle_unlock_beans_4);
         Intrinsics.c(string4, "getAppContext().getStrin…ve_battle_unlock_beans_4)");
         String valueOf = String.valueOf(this.f);
-        if (this.f12742c == 1) {
+        if (this.c == 1) {
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(string + valueOf + string2 + string3);
             spannableStringBuilder.setSpan(new ForegroundColorSpan(AppInfo.d().getResources().getColor(R.color.syc_dark_ffef5f)), string.length(), string.length() + valueOf.length() + string2.length(), 33);
             q().e.setText(spannableStringBuilder);
@@ -1213,7 +1193,7 @@ public final class LiveBattleShopDialog extends BaseFullScreenDialog {
                 LiveBattleShopDialog.a(LiveBattleShopDialog.this, view);
             }
         });
-        q().f12133a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveBattleShopDialog$0a0qdrmfhuRMFygyFwop_JeBn0k
+        q().a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveBattleShopDialog$0a0qdrmfhuRMFygyFwop_JeBn0k
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 LiveBattleShopDialog.b(LiveBattleShopDialog.this, view);
@@ -1230,10 +1210,10 @@ public final class LiveBattleShopDialog extends BaseFullScreenDialog {
         Intrinsics.c(textView, "tag1VB.tvGiftTitle");
         BluedViewExKt.b(textView);
         q().f.getPaint().setFakeBoldText(true);
-        RecyclerView recyclerView = q().d;
-        Intrinsics.c(recyclerView, "tag1VB.rvList");
-        BluedViewExKt.b(recyclerView);
-        if (this.f12742c == 1) {
+        View view = q().d;
+        Intrinsics.c(view, "tag1VB.rvList");
+        BluedViewExKt.b(view);
+        if (this.c == 1) {
             q().f.setText("解锁下一等级可得奖励");
         }
         if (list.size() > 8) {
@@ -1241,11 +1221,10 @@ public final class LiveBattleShopDialog extends BaseFullScreenDialog {
         }
         final ArrayList arrayList = new ArrayList();
         for (LiveBattleGiftModel liveBattleGiftModel : list) {
-            arrayList.add(new FitemBattlePassAward(liveBattleGiftModel, this.f12742c == 1));
+            arrayList.add(new FitemBattlePassAward(liveBattleGiftModel, this.c == 1));
         }
-        final GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), list.size() < 4 ? list.size() : 4);
+        final RecyclerView.LayoutManager gridLayoutManager = new GridLayoutManager(getContext(), list.size() < 4 ? list.size() : 4);
         gridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() { // from class: com.blued.android.module.live_china.fragment.LiveBattleShopDialog$setTag1$5
-            @Override // androidx.recyclerview.widget.GridLayoutManager.SpanSizeLookup
             public int getSpanSize(int i) {
                 return arrayList.get(i).a(gridLayoutManager.getSpanCount());
             }
@@ -1258,11 +1237,11 @@ public final class LiveBattleShopDialog extends BaseFullScreenDialog {
         WindowManager windowManager;
         Display defaultDisplay;
         final Ref.ObjectRef objectRef = new Ref.ObjectRef();
-        objectRef.f42545a = "";
+        objectRef.a = "";
         if (this.u) {
-            objectRef.f42545a = "all";
+            objectRef.a = "all";
         } else {
-            objectRef.f42545a = "one";
+            objectRef.a = "one";
         }
         ArrayList arrayList = list;
         if (list == null) {
@@ -1271,10 +1250,10 @@ public final class LiveBattleShopDialog extends BaseFullScreenDialog {
         final Ref.BooleanRef booleanRef = new Ref.BooleanRef();
         for (LiveBattleGiftModel liveBattleGiftModel : arrayList) {
             if (liveBattleGiftModel.getBonus() == 1) {
-                booleanRef.f42538a = true;
+                booleanRef.a = true;
             }
         }
-        EventTrackLive.a(LiveProtos.Event.LIVE_BATTLE_PASS_TOP_POP_SHOW, LiveRoomManager.a().e(), LiveRoomManager.a().g(), (String) objectRef.f42545a, i == 1, booleanRef.f42538a);
+        EventTrackLive.a(LiveProtos.Event.LIVE_BATTLE_PASS_TOP_POP_SHOW, LiveRoomManager.a().e(), LiveRoomManager.a().g(), (String) objectRef.a, i == 1, booleanRef.a);
         FrameLayout frameLayout = p().b;
         Intrinsics.c(frameLayout, "vb.contentView");
         LiveFrameLayoutExKt.a(frameLayout, new Function1<FrameLayout, Unit>() { // from class: com.blued.android.module.live_china.fragment.LiveBattleShopDialog$setTag2Data$2
@@ -1296,11 +1275,11 @@ public final class LiveBattleShopDialog extends BaseFullScreenDialog {
             @Override // kotlin.jvm.functions.Function1
             public /* synthetic */ Unit invoke(FrameLayout frameLayout2) {
                 a(frameLayout2);
-                return Unit.f42314a;
+                return Unit.a;
             }
         });
         LiveBattleGiftItemAdapter liveBattleGiftItemAdapter = new LiveBattleGiftItemAdapter(this);
-        liveBattleGiftItemAdapter.a(booleanRef.f42538a);
+        liveBattleGiftItemAdapter.a(booleanRef.a);
         r().f.setAdapter(liveBattleGiftItemAdapter);
         RecyclerView recyclerView = r().f;
         Intrinsics.c(recyclerView, "tag2VB.rvList");
@@ -1312,9 +1291,9 @@ public final class LiveBattleShopDialog extends BaseFullScreenDialog {
                 LiveBattleShopDialog.a(Ref.ObjectRef.this, i, booleanRef, this, view);
             }
         });
-        if (booleanRef.f42538a) {
-            r().f12135a.setBackgroundResource(0);
-            r().f12136c.setImageResource(R.drawable.live_battle_congrats_title);
+        if (booleanRef.a) {
+            r().a.setBackgroundResource(0);
+            r().c.setImageResource(R.drawable.live_battle_congrats_title);
             SVGAImageView sVGAImageView = r().g;
             Intrinsics.c(sVGAImageView, "tag2VB.svgBacklight");
             BluedViewExKt.b(sVGAImageView);
@@ -1374,7 +1353,7 @@ public final class LiveBattleShopDialog extends BaseFullScreenDialog {
             @Override // kotlin.jvm.functions.Function1
             public /* synthetic */ Unit invoke(FrameLayout frameLayout2) {
                 a(frameLayout2);
-                return Unit.f42314a;
+                return Unit.a;
             }
         });
         RecyclerView recyclerView = u().e;
@@ -1384,10 +1363,10 @@ public final class LiveBattleShopDialog extends BaseFullScreenDialog {
         u().e.setAdapter(liveBattleGiftItemAdapter);
         if (z) {
             liveBattleGiftItemAdapter.a(arrayList, 4);
-            u().f12131c.setImageResource(R.drawable.live_battle_advance_to_get);
+            u().c.setImageResource(R.drawable.live_battle_advance_to_get);
         } else {
             liveBattleGiftItemAdapter.a(arrayList, 5);
-            u().f12131c.setImageResource(R.drawable.live_battle_advance_get);
+            u().c.setImageResource(R.drawable.live_battle_advance_get);
         }
         u().h.setText(title);
         u().g.setText(desc);
@@ -1402,7 +1381,7 @@ public final class LiveBattleShopDialog extends BaseFullScreenDialog {
                 LiveBattleShopDialog.f(LiveBattleShopDialog.this, view);
             }
         });
-        u().f12130a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveBattleShopDialog$mSA-RQKO1_5hOTbo2WdkI8ET3Xs
+        u().a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveBattleShopDialog$mSA-RQKO1_5hOTbo2WdkI8ET3Xs
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 LiveBattleShopDialog.g(LiveBattleShopDialog.this, view);
@@ -1413,13 +1392,13 @@ public final class LiveBattleShopDialog extends BaseFullScreenDialog {
     /* JADX WARN: Type inference failed for: r1v15, types: [T, com.blued.android.module.live_china.fragment.LiveBattleShopDialog$BannerPagerAdapter] */
     public final void a(List<LiveBattleGiftModel> list, List<LiveBattleGiftModel> list2) {
         final Ref.ObjectRef objectRef = new Ref.ObjectRef();
-        objectRef.f42545a = "";
+        objectRef.a = "";
         if (this.u) {
-            objectRef.f42545a = "all";
+            objectRef.a = "all";
         } else {
-            objectRef.f42545a = "one";
+            objectRef.a = "one";
         }
-        EventTrackLive.c(LiveProtos.Event.LIVE_BATTLE_PASS_BASIC_POP_SHOW, LiveRoomManager.a().e(), LiveRoomManager.a().g(), (String) objectRef.f42545a);
+        EventTrackLive.c(LiveProtos.Event.LIVE_BATTLE_PASS_BASIC_POP_SHOW, LiveRoomManager.a().e(), LiveRoomManager.a().g(), (String) objectRef.a);
         ArrayList arrayList = list;
         if (list == null) {
             arrayList = new ArrayList();
@@ -1449,7 +1428,7 @@ public final class LiveBattleShopDialog extends BaseFullScreenDialog {
             @Override // kotlin.jvm.functions.Function1
             public /* synthetic */ Unit invoke(FrameLayout frameLayout2) {
                 a(frameLayout2);
-                return Unit.f42314a;
+                return Unit.a;
             }
         });
         LiveBattleGiftItemAdapter liveBattleGiftItemAdapter = new LiveBattleGiftItemAdapter(this);
@@ -1459,13 +1438,13 @@ public final class LiveBattleShopDialog extends BaseFullScreenDialog {
         a(recyclerView, 54.0f, 9.0f, arrayList.size(), 8, DensityUtils.a(AppInfo.d(), 146.0f));
         liveBattleGiftItemAdapter.a(arrayList, 1);
         final Ref.ObjectRef objectRef2 = new Ref.ObjectRef();
-        objectRef2.f42545a = new BannerPagerAdapter(this);
+        objectRef2.a = new BannerPagerAdapter(this);
         LiveBattleReceiveBinding s = s();
-        (s == null ? null : s.h).setAdapter((PagerAdapter) objectRef2.f42545a);
-        ((BannerPagerAdapter) objectRef2.f42545a).a(getContext(), a(), arrayList2);
+        (s == null ? null : s.h).setAdapter((PagerAdapter) objectRef2.a);
+        ((BannerPagerAdapter) objectRef2.a).a(getContext(), a(), arrayList2);
         ImageLoader.c(a(), "live_battle_box.png").g().g(-1).a(s().b);
         LiveBattleReceiveBinding s2 = s();
-        (s2 == null ? null : s2.f12146c).setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveBattleShopDialog$9hUJvmI2WJKGa5_8WTYSm_oBOwg
+        (s2 == null ? null : s2.c).setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveBattleShopDialog$9hUJvmI2WJKGa5_8WTYSm_oBOwg
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 LiveBattleShopDialog.c(LiveBattleShopDialog.this, view);
@@ -1484,7 +1463,7 @@ public final class LiveBattleShopDialog extends BaseFullScreenDialog {
                 LiveBattleShopDialog.a(Ref.ObjectRef.this, this, view);
             }
         });
-        s().f12145a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveBattleShopDialog$COh1zYQGu1mrFF2VNMs6kMhcC_s
+        s().a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveBattleShopDialog$COh1zYQGu1mrFF2VNMs6kMhcC_s
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 LiveBattleShopDialog.b(Ref.ObjectRef.this, this, view);
@@ -1524,10 +1503,10 @@ public final class LiveBattleShopDialog extends BaseFullScreenDialog {
             @Override // kotlin.jvm.functions.Function1
             public /* synthetic */ Unit invoke(FrameLayout frameLayout2) {
                 a(frameLayout2);
-                return Unit.f42314a;
+                return Unit.a;
             }
         });
-        ViewGroup.LayoutParams layoutParams = t().f12127c.getLayoutParams();
+        ViewGroup.LayoutParams layoutParams = t().c.getLayoutParams();
         ViewGroup.LayoutParams layoutParams2 = t().b.getLayoutParams();
         ViewGroup.LayoutParams layoutParams3 = t().k.getLayoutParams();
         ViewGroup.LayoutParams layoutParams4 = t().e.getLayoutParams();
@@ -1565,7 +1544,7 @@ public final class LiveBattleShopDialog extends BaseFullScreenDialog {
                 ((ViewGroup.MarginLayoutParams) layoutParams5).topMargin = DensityUtils.a(getContext(), 10.0f);
             }
         }
-        t().f12127c.setLayoutParams(layoutParams);
+        t().c.setLayoutParams(layoutParams);
         t().b.setLayoutParams(layoutParams2);
         t().k.setLayoutParams(layoutParams3);
         t().e.setLayoutParams(layoutParams4);
@@ -1595,7 +1574,7 @@ public final class LiveBattleShopDialog extends BaseFullScreenDialog {
                 LiveBattleShopDialog.d(LiveBattleShopDialog.this, view);
             }
         });
-        t().f12126a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveBattleShopDialog$m6WwNcypCYBDVIx6IDy-xHEcCBI
+        t().a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveBattleShopDialog$m6WwNcypCYBDVIx6IDy-xHEcCBI
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 LiveBattleShopDialog.e(LiveBattleShopDialog.this, view);
@@ -1699,7 +1678,7 @@ public final class LiveBattleShopDialog extends BaseFullScreenDialog {
                 Intrinsics.e(toAddView, "$this$toAddView");
                 LiveBattleShopDialog liveBattleShopDialog = LiveBattleShopDialog.this;
                 v = liveBattleShopDialog.v();
-                FrameLayout frameLayout2 = v.f12138c;
+                FrameLayout frameLayout2 = v.c;
                 Intrinsics.c(frameLayout2, "tag6VB.root");
                 toAddView.addView(liveBattleShopDialog.a(frameLayout2), -2, -2);
             }
@@ -1707,7 +1686,7 @@ public final class LiveBattleShopDialog extends BaseFullScreenDialog {
             @Override // kotlin.jvm.functions.Function1
             public /* synthetic */ Unit invoke(FrameLayout frameLayout2) {
                 a(frameLayout2);
-                return Unit.f42314a;
+                return Unit.a;
             }
         });
         v().b.post(new Runnable() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveBattleShopDialog$pR7qdrP4tVpzI5R7xL2QvkRNKHc
@@ -1716,7 +1695,7 @@ public final class LiveBattleShopDialog extends BaseFullScreenDialog {
                 LiveBattleShopDialog.j(LiveBattleShopDialog.this);
             }
         });
-        v().f12137a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveBattleShopDialog$JhB7Mrj6_cqo2vITpauepKdmYSs
+        v().a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveBattleShopDialog$JhB7Mrj6_cqo2vITpauepKdmYSs
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 LiveBattleShopDialog.i(LiveBattleShopDialog.this, view);
@@ -1887,7 +1866,7 @@ public final class LiveBattleShopDialog extends BaseFullScreenDialog {
     }
 
     public final void n() {
-        p().f11918a.setVisibility(8);
+        p().a.setVisibility(8);
         AppInfo.n().removeCallbacks(this.w);
     }
 
@@ -1897,18 +1876,18 @@ public final class LiveBattleShopDialog extends BaseFullScreenDialog {
         return true;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
-        if (p().f11919c.getParent() != null) {
-            ViewParent parent = p().f11919c.getParent();
+        if (p().c.getParent() != null) {
+            ViewParent parent = p().c.getParent();
             if (parent == null) {
                 throw new NullPointerException("null cannot be cast to non-null type android.view.ViewGroup");
             }
-            ((ViewGroup) parent).removeView(p().f11919c);
+            ((ViewGroup) parent).removeView(p().c);
         }
         w();
         o();
-        return p().f11919c;
+        return p().c;
     }
 }

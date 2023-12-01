@@ -1,6 +1,6 @@
 package com.tencent.cloud.huiyansdkface.okhttp3;
 
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
+import com.blued.das.live.LiveProtos;
 import com.tencent.cloud.huiyansdkface.okhttp3.internal.Util;
 import com.tencent.cloud.huiyansdkface.okio.Buffer;
 import java.net.MalformedURLException;
@@ -19,11 +19,11 @@ public final class HttpUrl {
     private static final char[] d = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
 
     /* renamed from: a  reason: collision with root package name */
-    final String f35859a;
+    final String f22168a;
     final String b;
 
     /* renamed from: c  reason: collision with root package name */
-    final int f35860c;
+    final int f22169c;
     private final String e;
     private final String f;
     private final List<String> g;
@@ -35,7 +35,7 @@ public final class HttpUrl {
     public static final class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        String f35861a;
+        String f22170a;
         String d;
         final List<String> f;
         List<String> g;
@@ -43,7 +43,7 @@ public final class HttpUrl {
         String b = "";
 
         /* renamed from: c  reason: collision with root package name */
-        String f35862c = "";
+        String f22171c = "";
         int e = -1;
 
         public Builder() {
@@ -377,7 +377,7 @@ public final class HttpUrl {
 
         int a() {
             int i = this.e;
-            return i != -1 ? i : HttpUrl.defaultPort(this.f35861a);
+            return i != -1 ? i : HttpUrl.defaultPort(this.f22170a);
         }
 
         /* JADX WARN: Code restructure failed: missing block: B:25:0x00ff, code lost:
@@ -484,7 +484,7 @@ public final class HttpUrl {
         }
 
         public HttpUrl build() {
-            if (this.f35861a != null) {
+            if (this.f22170a != null) {
                 if (this.d != null) {
                     return new HttpUrl(this);
                 }
@@ -500,7 +500,7 @@ public final class HttpUrl {
 
         public Builder encodedPassword(String str) {
             if (str != null) {
-                this.f35862c = HttpUrl.a(str, " \"':;<=>@[]^`{}|/\\?#", true, false, false, true);
+                this.f22171c = HttpUrl.a(str, " \"':;<=>@[]^`{}|/\\?#", true, false, false, true);
                 return this;
             }
             throw new NullPointerException("encodedPassword == null");
@@ -508,7 +508,7 @@ public final class HttpUrl {
 
         public Builder encodedPath(String str) {
             if (str != null) {
-                if (str.startsWith(BridgeUtil.SPLIT_MARK)) {
+                if (str.startsWith("/")) {
                     a(str, 0, str.length());
                     return this;
                 }
@@ -549,7 +549,7 @@ public final class HttpUrl {
 
         public Builder password(String str) {
             if (str != null) {
-                this.f35862c = HttpUrl.a(str, " \"':;<=>@[]^`{}|/\\?#", false, false, false, true);
+                this.f22171c = HttpUrl.a(str, " \"':;<=>@[]^`{}|/\\?#", false, false, false, true);
                 return this;
             }
             throw new NullPointerException("password == null");
@@ -608,7 +608,7 @@ public final class HttpUrl {
                 } else {
                     str2 = "https";
                 }
-                this.f35861a = str2;
+                this.f22170a = str2;
                 return this;
             }
             throw new NullPointerException("scheme == null");
@@ -653,7 +653,7 @@ public final class HttpUrl {
         public String toString() {
             String str;
             StringBuilder sb = new StringBuilder();
-            String str2 = this.f35861a;
+            String str2 = this.f22170a;
             if (str2 != null) {
                 sb.append(str2);
                 str = "://";
@@ -661,11 +661,11 @@ public final class HttpUrl {
                 str = "//";
             }
             sb.append(str);
-            if (!this.b.isEmpty() || !this.f35862c.isEmpty()) {
+            if (!this.b.isEmpty() || !this.f22171c.isEmpty()) {
                 sb.append(this.b);
-                if (!this.f35862c.isEmpty()) {
+                if (!this.f22171c.isEmpty()) {
                     sb.append(':');
-                    sb.append(this.f35862c);
+                    sb.append(this.f22171c);
                 }
                 sb.append('@');
             }
@@ -679,9 +679,9 @@ public final class HttpUrl {
                     sb.append(this.d);
                 }
             }
-            if (this.e != -1 || this.f35861a != null) {
+            if (this.e != -1 || this.f22170a != null) {
                 int a2 = a();
-                String str4 = this.f35861a;
+                String str4 = this.f22170a;
                 if (str4 == null || a2 != HttpUrl.defaultPort(str4)) {
                     sb.append(':');
                     sb.append(a2);
@@ -709,11 +709,11 @@ public final class HttpUrl {
     }
 
     HttpUrl(Builder builder) {
-        this.f35859a = builder.f35861a;
+        this.f22168a = builder.f22170a;
         this.e = a(builder.b, false);
-        this.f = a(builder.f35862c, false);
+        this.f = a(builder.f22171c, false);
         this.b = builder.d;
-        this.f35860c = builder.a();
+        this.f22169c = builder.a();
         this.g = a(builder.f, false);
         this.h = builder.g != null ? a(builder.g, true) : null;
         this.i = builder.h != null ? a(builder.h, false) : null;
@@ -987,7 +987,10 @@ public final class HttpUrl {
         if (str.equals("http")) {
             return 80;
         }
-        return str.equals("https") ? 443 : -1;
+        if (str.equals("https")) {
+            return LiveProtos.Event.LIVE_CHALLENGE_PK_EXPLAIN_CLICK_VALUE;
+        }
+        return -1;
     }
 
     public static HttpUrl get(String str) {
@@ -1022,18 +1025,18 @@ public final class HttpUrl {
         if (this.f.isEmpty()) {
             return "";
         }
-        int indexOf = this.j.indexOf(58, this.f35859a.length() + 3);
+        int indexOf = this.j.indexOf(58, this.f22168a.length() + 3);
         return this.j.substring(indexOf + 1, this.j.indexOf(64));
     }
 
     public String encodedPath() {
-        int indexOf = this.j.indexOf(47, this.f35859a.length() + 3);
+        int indexOf = this.j.indexOf(47, this.f22168a.length() + 3);
         String str = this.j;
         return this.j.substring(indexOf, Util.delimiterOffset(str, indexOf, str.length(), "?#"));
     }
 
     public List<String> encodedPathSegments() {
-        int indexOf = this.j.indexOf(47, this.f35859a.length() + 3);
+        int indexOf = this.j.indexOf(47, this.f22168a.length() + 3);
         String str = this.j;
         int delimiterOffset = Util.delimiterOffset(str, indexOf, str.length(), "?#");
         ArrayList arrayList = new ArrayList();
@@ -1058,7 +1061,7 @@ public final class HttpUrl {
         if (this.e.isEmpty()) {
             return "";
         }
-        int length = this.f35859a.length() + 3;
+        int length = this.f22168a.length() + 3;
         String str = this.j;
         return this.j.substring(length, Util.delimiterOffset(str, length, str.length(), ":@"));
     }
@@ -1080,16 +1083,16 @@ public final class HttpUrl {
     }
 
     public boolean isHttps() {
-        return this.f35859a.equals("https");
+        return this.f22168a.equals("https");
     }
 
     public Builder newBuilder() {
         Builder builder = new Builder();
-        builder.f35861a = this.f35859a;
+        builder.f22170a = this.f22168a;
         builder.b = encodedUsername();
-        builder.f35862c = encodedPassword();
+        builder.f22171c = encodedPassword();
         builder.d = this.b;
-        builder.e = this.f35860c != defaultPort(this.f35859a) ? this.f35860c : -1;
+        builder.e = this.f22169c != defaultPort(this.f22168a) ? this.f22169c : -1;
         builder.f.clear();
         builder.f.addAll(encodedPathSegments());
         builder.encodedQuery(encodedQuery());
@@ -1118,7 +1121,7 @@ public final class HttpUrl {
     }
 
     public int port() {
-        return this.f35860c;
+        return this.f22169c;
     }
 
     public String query() {
@@ -1207,7 +1210,7 @@ public final class HttpUrl {
     }
 
     public String scheme() {
-        return this.f35859a;
+        return this.f22168a;
     }
 
     public String toString() {

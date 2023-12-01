@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class RegisterNpHWTwoBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f20534a;
+    private final LinearLayout f6928a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f20534a;
+        return this.f6928a;
     }
 }

@@ -28,7 +28,6 @@ public class ResultReceiver implements Parcelable {
         MyResultReceiver() {
         }
 
-        @Override // com.android.internal.os.IResultReceiver
         public void send(int i, Bundle bundle) {
             if (ResultReceiver.this.mHandler != null) {
                 ResultReceiver.this.mHandler.post(new MyRunnable(i, bundle));
@@ -38,8 +37,9 @@ public class ResultReceiver implements Parcelable {
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-9557208-dex2jar.jar:android/os/ResultReceiver$MyRunnable.class */
-    class MyRunnable implements Runnable {
+    public class MyRunnable implements Runnable {
         final int mResultCode;
         final Bundle mResultData;
 

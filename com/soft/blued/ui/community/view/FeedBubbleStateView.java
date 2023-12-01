@@ -24,11 +24,11 @@ import kotlin.jvm.internal.Intrinsics;
 public final class FeedBubbleStateView extends FrameLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    private FrameLayout f29799a;
+    private FrameLayout f16109a;
     private ShapeLinearLayout b;
 
     /* renamed from: c  reason: collision with root package name */
-    private ImageView f29800c;
+    private ImageView f16110c;
     private TextView d;
     private FeedPostSignStateItem e;
     private int f;
@@ -56,12 +56,12 @@ public final class FeedBubbleStateView extends FrameLayout {
 
     private final void a() {
         FrameLayout frameLayout = (FrameLayout) LayoutInflater.from(getContext()).inflate(R.layout.feed_bubble_state_view_layout, (ViewGroup) null);
-        this.f29799a = frameLayout;
+        this.f16109a = frameLayout;
         if (frameLayout == null) {
             return;
         }
-        this.b = (ShapeLinearLayout) frameLayout.findViewById(R.id.feed_bubble_state_content);
-        this.f29800c = (ImageView) frameLayout.findViewById(R.id.feed_bubble_state_iv);
+        this.b = frameLayout.findViewById(R.id.feed_bubble_state_content);
+        this.f16110c = (ImageView) frameLayout.findViewById(R.id.feed_bubble_state_iv);
         this.d = (TextView) frameLayout.findViewById(R.id.feed_bubble_state_tv);
         b();
         addView(frameLayout);
@@ -79,7 +79,7 @@ public final class FeedBubbleStateView extends FrameLayout {
         if (shapeModel == null) {
             shapeModel2 = new ShapeModel();
         }
-        CommunityManager.f19086a.a().s();
+        CommunityManager.a.a().s();
         shapeModel2.k = Color.parseColor("#E5E5E5");
         ShapeLinearLayout shapeLinearLayout2 = this.b;
         if (shapeLinearLayout2 != null) {
@@ -94,19 +94,19 @@ public final class FeedBubbleStateView extends FrameLayout {
                 z = false;
             }
             if (z) {
-                str4 = CommunityManager.f19086a.a().s() ? "#2C2C2C" : "#E5E5E5";
-                String str6 = CommunityManager.f19086a.a().s() ? "#2C2C2C" : "#E5E5E5";
-                ImageView imageView = this.f29800c;
+                str4 = CommunityManager.a.a().s() ? "#2C2C2C" : "#E5E5E5";
+                String str6 = CommunityManager.a.a().s() ? "#2C2C2C" : "#E5E5E5";
+                ImageView imageView = this.f16110c;
                 if (imageView != null) {
                     imageView.setAlpha(0.7f);
                 }
                 str3 = str6;
                 str2 = "#999999";
             } else {
-                str5 = CommunityManager.f19086a.a().s() ? "#237056FF" : "#327056FF";
-                str3 = CommunityManager.f19086a.a().s() ? "#233071FE" : "#323071FE";
-                str = CommunityManager.f19086a.a().s() ? "#998EBA" : "#766A9F";
-                ImageView imageView2 = this.f29800c;
+                str5 = CommunityManager.a.a().s() ? "#237056FF" : "#327056FF";
+                str3 = CommunityManager.a.a().s() ? "#233071FE" : "#323071FE";
+                str = CommunityManager.a.a().s() ? "#998EBA" : "#766A9F";
+                ImageView imageView2 = this.f16110c;
                 if (imageView2 != null) {
                     imageView2.setAlpha(1.0f);
                 }
@@ -115,9 +115,9 @@ public final class FeedBubbleStateView extends FrameLayout {
                 str2 = str7;
             }
         } else if (i == 1) {
-            str5 = CommunityManager.f19086a.a().s() ? "#237056FF" : "#327056FF";
-            str3 = CommunityManager.f19086a.a().s() ? "#233071FE" : "#323071FE";
-            if (!CommunityManager.f19086a.a().s()) {
+            str5 = CommunityManager.a.a().s() ? "#237056FF" : "#327056FF";
+            str3 = CommunityManager.a.a().s() ? "#233071FE" : "#323071FE";
+            if (!CommunityManager.a.a().s()) {
                 str = "#766A9F";
             }
             String str72 = str;
@@ -148,7 +148,7 @@ public final class FeedBubbleStateView extends FrameLayout {
             return;
         }
         if (feedPostSignStateItem != null) {
-            ImageLoader.a((IRequestHost) null, feedPostSignStateItem.getIcon()).c().a(this.f29800c);
+            ImageLoader.a((IRequestHost) null, feedPostSignStateItem.getIcon()).c().a(this.f16110c);
             TextView textView = this.d;
             if (textView != null) {
                 textView.setText(feedPostSignStateItem.getName());

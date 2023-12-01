@@ -21,6 +21,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.Observer;
 import com.anythink.core.api.ATAdInfo;
+import com.anythink.expressad.foundation.h.s;
 import com.anythink.splashad.api.ATSplashAd;
 import com.anythink.splashad.api.ATSplashAdExtraInfo;
 import com.anythink.splashad.api.ATSplashAdListener;
@@ -157,7 +158,7 @@ public class SerialSplashFragment extends TimeoutFragment {
     public class AnonymousClass24 implements ImageFileLoader.OnLoadFileListener {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ SplashAdListener f34569a;
+        final /* synthetic */ SplashAdListener f20878a;
         final /* synthetic */ SplashEntity.ShowEntity b;
 
         /* JADX INFO: Access modifiers changed from: package-private */
@@ -177,9 +178,8 @@ public class SerialSplashFragment extends TimeoutFragment {
             @Override // java.lang.Runnable
             public void run() {
                 ImageLoader.a(SerialSplashFragment.this.getFragmentActive(), AnonymousClass24.this.b.ads_pics).a(new ImageLoadResult(SerialSplashFragment.this.getFragmentActive()) { // from class: com.soft.blued.ui.welcome.SerialSplashFragment.24.1.1
-                    @Override // com.blued.android.core.image.ImageLoadResult
                     public void a() {
-                        AnonymousClass24.this.f34569a.a(AnonymousClass24.this.b.show_url, AnonymousClass24.this.b.show_post_url);
+                        AnonymousClass24.this.f20878a.a(AnonymousClass24.this.b.show_url, AnonymousClass24.this.b.show_post_url);
                         SerialSplashFragment.this.C = true;
                         SerialSplashFragment.this.q();
                         BluedPreferences.I(true);
@@ -196,16 +196,15 @@ public class SerialSplashFragment extends TimeoutFragment {
                         Log.v("drb", "图片广告类型  adms_type=" + AnonymousClass24.this.b.adms_type);
                     }
 
-                    @Override // com.blued.android.core.image.ImageLoadResult
                     public void a(int i, Exception exc) {
-                        SplashAdListener splashAdListener = AnonymousClass24.this.f34569a;
+                        SplashAdListener splashAdListener = AnonymousClass24.this.f20878a;
                         splashAdListener.a(i + "", exc.toString());
                     }
                 }).a(SerialSplashFragment.this.B);
                 SerialSplashFragment.this.u.setVisibility(0);
                 ImageView imageView = SerialSplashFragment.this.B;
                 final SplashEntity.ShowEntity showEntity = AnonymousClass24.this.b;
-                final SplashAdListener splashAdListener = AnonymousClass24.this.f34569a;
+                final SplashAdListener splashAdListener = AnonymousClass24.this.f20878a;
                 imageView.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.welcome.-$$Lambda$SerialSplashFragment$24$1$rYcUuLLXtdct5hhS_8x1zOu4t3w
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
@@ -230,7 +229,7 @@ public class SerialSplashFragment extends TimeoutFragment {
                             aDClickCoordinate4.up_x = motionEvent.getX() + "";
                             ADClickCoordinate aDClickCoordinate5 = aDClickCoordinate;
                             aDClickCoordinate5.up_y = motionEvent.getY() + "";
-                            SerialSplashFragment.this.a(AnonymousClass24.this.b, AnonymousClass24.this.f34569a, aDClickCoordinate);
+                            SerialSplashFragment.this.a(AnonymousClass24.this.b, AnonymousClass24.this.f20878a, aDClickCoordinate);
                             SerialSplashFragment.this.D = true;
                             return true;
                         }
@@ -245,7 +244,7 @@ public class SerialSplashFragment extends TimeoutFragment {
                         while (true) {
                             int i2 = i;
                             if (i2 >= AnonymousClass24.this.b.hidden_url.length) {
-                                AnonymousClass24.this.f34569a.b(AnonymousClass24.this.b.hidden_url);
+                                AnonymousClass24.this.f20878a.b(AnonymousClass24.this.b.hidden_url);
                                 return;
                             } else {
                                 FindHttpUtils.a(AnonymousClass24.this.b.hidden_url[i2]);
@@ -258,13 +257,12 @@ public class SerialSplashFragment extends TimeoutFragment {
         }
 
         AnonymousClass24(SplashAdListener splashAdListener, SplashEntity.ShowEntity showEntity) {
-            this.f34569a = splashAdListener;
+            this.f20878a = splashAdListener;
             this.b = showEntity;
         }
 
-        @Override // com.blued.android.core.image.ImageFileLoader.OnLoadFileListener
         public void onUIFinish(File file, Exception exc) {
-            this.f34569a.a();
+            this.f20878a.a();
             if (file == null || !file.exists()) {
                 Log.v("drb", "广告失败：showEntity.adms_type = " + this.b.adms_type);
                 if ("9".equalsIgnoreCase(this.b.adms_type)) {
@@ -282,13 +280,13 @@ public class SerialSplashFragment extends TimeoutFragment {
                 } else {
                     Log.v("drb", "直客广告失败：文件不存在");
                 }
-                this.f34569a.a("", "API广告失败：文件不存在");
+                this.f20878a.a("", "API广告失败：文件不存在");
                 return;
             }
             try {
                 AppInfo.n().post(new AnonymousClass1());
             } catch (Exception e) {
-                this.f34569a.a("", e.toString());
+                this.f20878a.a("", e.toString());
                 if ("9".equalsIgnoreCase(this.b.adms_type)) {
                     Log.v("drb", "百威广告失败：" + e.toString());
                 } else if ("2".equalsIgnoreCase(this.b.adms_type)) {
@@ -314,11 +312,11 @@ public class SerialSplashFragment extends TimeoutFragment {
     public class AnonymousClass25 implements VideoLoadController.IVideoController {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ SplashAdListener f34575a;
+        final /* synthetic */ SplashAdListener f20884a;
         final /* synthetic */ SplashEntity.ShowEntity b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ SerialSplashFragment f34576c;
+        final /* synthetic */ SerialSplashFragment f20885c;
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: com.soft.blued.ui.welcome.SerialSplashFragment$25$1  reason: invalid class name */
@@ -331,22 +329,22 @@ public class SerialSplashFragment extends TimeoutFragment {
             public /* synthetic */ void a(SplashEntity.ShowEntity showEntity, SplashAdListener splashAdListener, View view) {
                 Tracker.onClick(view);
                 Log.v("drb", IAdInterListener.AdCommandType.AD_CLICK);
-                AnonymousClass25.this.f34576c.a(showEntity, splashAdListener, AnonymousClass25.this.f34576c.N);
-                AnonymousClass25.this.f34576c.D = true;
+                AnonymousClass25.this.f20885c.a(showEntity, splashAdListener, AnonymousClass25.this.f20885c.N);
+                AnonymousClass25.this.f20885c.D = true;
             }
 
             @Override // java.lang.Runnable
             public void run() {
-                PLVideoPageView pLVideoPageView = AnonymousClass25.this.f34576c.K;
+                PLVideoPageView pLVideoPageView = AnonymousClass25.this.f20885c.K;
                 final SplashEntity.ShowEntity showEntity = AnonymousClass25.this.b;
-                final SplashAdListener splashAdListener = AnonymousClass25.this.f34575a;
+                final SplashAdListener splashAdListener = AnonymousClass25.this.f20884a;
                 pLVideoPageView.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.welcome.-$$Lambda$SerialSplashFragment$25$1$P1en70CEjO8j1xw1QLyRIISpFHc
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
                         SerialSplashFragment.AnonymousClass25.AnonymousClass1.this.a(showEntity, splashAdListener, view);
                     }
                 });
-                AnonymousClass25.this.f34576c.u.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.welcome.SerialSplashFragment.25.1.1
+                AnonymousClass25.this.f20885c.u.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.welcome.SerialSplashFragment.25.1.1
                     @Override // android.view.View.OnClickListener
                     public void onClick(View view) {
                         Tracker.onClick(view);
@@ -355,7 +353,7 @@ public class SerialSplashFragment extends TimeoutFragment {
                         while (true) {
                             int i2 = i;
                             if (i2 >= AnonymousClass25.this.b.hidden_url.length) {
-                                AnonymousClass25.this.f34575a.b(AnonymousClass25.this.b.hidden_url);
+                                AnonymousClass25.this.f20884a.b(AnonymousClass25.this.b.hidden_url);
                                 return;
                             } else {
                                 FindHttpUtils.a(AnonymousClass25.this.b.hidden_url[i2]);
@@ -370,7 +368,7 @@ public class SerialSplashFragment extends TimeoutFragment {
         @Override // com.soft.blued.utils.VideoLoadController.IVideoController
         public void a(String str) {
             Log.v("drb", "视频下载失败 videoUrl:" + str);
-            this.f34575a.a("", "");
+            this.f20884a.a("", "");
         }
 
         @Override // com.soft.blued.utils.VideoLoadController.IVideoController
@@ -381,20 +379,20 @@ public class SerialSplashFragment extends TimeoutFragment {
         @Override // com.soft.blued.utils.VideoLoadController.IVideoController
         public void a(String str, String str2) {
             Log.v("drb", "视频下载成功 filePath:" + str2);
-            if (this.f34576c.Q) {
+            if (this.f20885c.Q) {
                 return;
             }
-            this.f34575a.a();
+            this.f20884a.a();
             VideoPlayConfig videoPlayConfig = new VideoPlayConfig();
             videoPlayConfig.b = str2;
             videoPlayConfig.j = false;
             videoPlayConfig.s = false;
             videoPlayConfig.l = true;
             videoPlayConfig.w = false;
-            this.f34576c.K.b(videoPlayConfig);
-            this.f34576c.K.setVisibility(4);
-            this.f34576c.K.c();
-            this.f34576c.postSafeRunOnUiThread(new AnonymousClass1());
+            this.f20885c.K.b(videoPlayConfig);
+            this.f20885c.K.setVisibility(4);
+            this.f20885c.K.c();
+            this.f20885c.postSafeRunOnUiThread(new AnonymousClass1());
         }
     }
 
@@ -403,44 +401,38 @@ public class SerialSplashFragment extends TimeoutFragment {
     class AnonymousClass26 implements PLVideoPageView.OnPLVideoListener {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ SplashAdListener f34579a;
+        final /* synthetic */ SplashAdListener f20888a;
         final /* synthetic */ SplashEntity.ShowEntity b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ SerialSplashFragment f34580c;
+        final /* synthetic */ SerialSplashFragment f20889c;
 
-        @Override // com.blued.android.module.player.media.view.PLVideoPageView.OnPLVideoListener
         public void a() {
         }
 
-        @Override // com.blued.android.module.player.media.view.PLVideoPageView.OnPLVideoListener
         public void a(int i) {
             Log.v("drb", "onRender");
-            if (this.f34580c.Q) {
+            if (this.f20889c.Q) {
                 return;
             }
-            AnimationUtils.b(this.f34580c.K, 200L);
-            this.f34579a.a(this.b.show_url, this.b.show_post_url);
-            this.f34580c.d(this.b.is_show_adm_icon, this.b.adms_type);
-            this.f34580c.u.setVisibility(0);
-            this.f34580c.b(1000L);
+            AnimationUtils.b(this.f20889c.K, 200L);
+            this.f20888a.a(this.b.show_url, this.b.show_post_url);
+            this.f20889c.d(this.b.is_show_adm_icon, this.b.adms_type);
+            this.f20889c.u.setVisibility(0);
+            this.f20889c.b(1000L);
         }
 
-        @Override // com.blued.android.module.player.media.view.PLVideoPageView.OnPLVideoListener
         public void a(long j, long j2) {
         }
 
-        @Override // com.blued.android.module.player.media.view.PLVideoPageView.OnPLVideoListener
         public void b() {
             Log.v("drb", "onLoadingDismiss");
         }
 
-        @Override // com.blued.android.module.player.media.view.PLVideoPageView.OnPLVideoListener
         public void c() {
             Log.v("drb", "onStart");
         }
 
-        @Override // com.blued.android.module.player.media.view.PLVideoPageView.OnPLVideoListener
         public void d() {
         }
     }
@@ -451,11 +443,11 @@ public class SerialSplashFragment extends TimeoutFragment {
     public class AnonymousClass27 implements VideoLoadController.IVideoController {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ int f34581a;
+        final /* synthetic */ int f20890a;
         final /* synthetic */ int b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ SplashEntity.ShowEntity f34582c;
+        final /* synthetic */ SplashEntity.ShowEntity f20891c;
         final /* synthetic */ SplashAdListener d;
 
         /* JADX INFO: Access modifiers changed from: package-private */
@@ -476,7 +468,7 @@ public class SerialSplashFragment extends TimeoutFragment {
             @Override // java.lang.Runnable
             public void run() {
                 PLVideoPageView pLVideoPageView = SerialSplashFragment.this.K;
-                final SplashEntity.ShowEntity showEntity = AnonymousClass27.this.f34582c;
+                final SplashEntity.ShowEntity showEntity = AnonymousClass27.this.f20891c;
                 final SplashAdListener splashAdListener = AnonymousClass27.this.d;
                 pLVideoPageView.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.welcome.-$$Lambda$SerialSplashFragment$27$1$HRCZ16VJd6hztLts7JKnx80ymIA
                     @Override // android.view.View.OnClickListener
@@ -502,7 +494,7 @@ public class SerialSplashFragment extends TimeoutFragment {
                             aDClickCoordinate4.up_x = motionEvent.getX() + "";
                             ADClickCoordinate aDClickCoordinate5 = aDClickCoordinate;
                             aDClickCoordinate5.up_y = motionEvent.getY() + "";
-                            SerialSplashFragment.this.a(AnonymousClass27.this.f34582c, AnonymousClass27.this.d, aDClickCoordinate);
+                            SerialSplashFragment.this.a(AnonymousClass27.this.f20891c, AnonymousClass27.this.d, aDClickCoordinate);
                             SerialSplashFragment.this.D = true;
                             return true;
                         }
@@ -525,7 +517,7 @@ public class SerialSplashFragment extends TimeoutFragment {
                             aDClickCoordinate4.up_x = motionEvent.getX() + "";
                             ADClickCoordinate aDClickCoordinate5 = aDClickCoordinate;
                             aDClickCoordinate5.up_y = motionEvent.getY() + "";
-                            SerialSplashFragment.this.a(AnonymousClass27.this.f34582c, AnonymousClass27.this.d, aDClickCoordinate);
+                            SerialSplashFragment.this.a(AnonymousClass27.this.f20891c, AnonymousClass27.this.d, aDClickCoordinate);
                             SerialSplashFragment.this.D = true;
                             return true;
                         }
@@ -539,11 +531,11 @@ public class SerialSplashFragment extends TimeoutFragment {
                         int i = 0;
                         while (true) {
                             int i2 = i;
-                            if (i2 >= AnonymousClass27.this.f34582c.hidden_url.length) {
-                                AnonymousClass27.this.d.b(AnonymousClass27.this.f34582c.hidden_url);
+                            if (i2 >= AnonymousClass27.this.f20891c.hidden_url.length) {
+                                AnonymousClass27.this.d.b(AnonymousClass27.this.f20891c.hidden_url);
                                 return;
                             } else {
-                                FindHttpUtils.a(AnonymousClass27.this.f34582c.hidden_url[i2]);
+                                FindHttpUtils.a(AnonymousClass27.this.f20891c.hidden_url[i2]);
                                 i = i2 + 1;
                             }
                         }
@@ -553,9 +545,9 @@ public class SerialSplashFragment extends TimeoutFragment {
         }
 
         AnonymousClass27(int i, int i2, SplashEntity.ShowEntity showEntity, SplashAdListener splashAdListener) {
-            this.f34581a = i;
+            this.f20890a = i;
             this.b = i2;
-            this.f34582c = showEntity;
+            this.f20891c = showEntity;
             this.d = splashAdListener;
         }
 
@@ -579,13 +571,13 @@ public class SerialSplashFragment extends TimeoutFragment {
             if (SerialSplashFragment.this.getFragmentActive() == null || SerialSplashFragment.this.getFragmentActive().isActive()) {
                 VideoPlayConfig videoPlayConfig = new VideoPlayConfig();
                 videoPlayConfig.b = str2;
-                videoPlayConfig.e = this.f34581a;
+                videoPlayConfig.e = this.f20890a;
                 videoPlayConfig.f = this.b;
                 videoPlayConfig.j = false;
                 videoPlayConfig.s = false;
                 videoPlayConfig.l = true;
                 videoPlayConfig.w = false;
-                if (TextUtils.equals("16", this.f34582c.adms_type) || TextUtils.equals("17", this.f34582c.adms_type) || TextUtils.equals("18", this.f34582c.adms_type) || TextUtils.equals("19", this.f34582c.adms_type) || TextUtils.equals(BaseWrapper.ENTER_ID_SYSTEM_HELPER, this.f34582c.adms_type) || TextUtils.equals("21", this.f34582c.adms_type) || TextUtils.equals("22", this.f34582c.adms_type) || TextUtils.equals("23", this.f34582c.adms_type) || TextUtils.equals("25", this.f34582c.adms_type) || TextUtils.equals("26", this.f34582c.adms_type)) {
+                if (TextUtils.equals("16", this.f20891c.adms_type) || TextUtils.equals("17", this.f20891c.adms_type) || TextUtils.equals("18", this.f20891c.adms_type) || TextUtils.equals("19", this.f20891c.adms_type) || TextUtils.equals(BaseWrapper.ENTER_ID_SYSTEM_HELPER, this.f20891c.adms_type) || TextUtils.equals("21", this.f20891c.adms_type) || TextUtils.equals("22", this.f20891c.adms_type) || TextUtils.equals("23", this.f20891c.adms_type) || TextUtils.equals("25", this.f20891c.adms_type) || TextUtils.equals("26", this.f20891c.adms_type)) {
                     SerialSplashFragment.this.x.setVisibility(0);
                 } else {
                     SerialSplashFragment.this.x.setVisibility(8);
@@ -604,20 +596,20 @@ public class SerialSplashFragment extends TimeoutFragment {
     public class AnonymousClass29 implements TTADUtils.TTGetSplashAdListener {
 
         /* renamed from: a  reason: collision with root package name */
-        boolean f34589a = false;
+        boolean f20898a = false;
         final /* synthetic */ SplashAdListener b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ SplashEntity.ShowEntity f34590c;
+        final /* synthetic */ SplashEntity.ShowEntity f20899c;
 
         AnonymousClass29(SplashAdListener splashAdListener, SplashEntity.ShowEntity showEntity) {
             this.b = splashAdListener;
-            this.f34590c = showEntity;
+            this.f20899c = showEntity;
         }
 
         @Override // com.soft.blued.utils.third.TTADUtils.TTGetSplashAdListener
         public void a() {
-            if (this.f34589a) {
+            if (this.f20898a) {
                 return;
             }
             this.b.a("", "onNoAD");
@@ -625,7 +617,7 @@ public class SerialSplashFragment extends TimeoutFragment {
 
         @Override // com.soft.blued.utils.third.TTADUtils.TTGetSplashAdListener
         public void a(int i, String str) {
-            if (this.f34589a) {
+            if (this.f20898a) {
                 return;
             }
             SplashAdListener splashAdListener = this.b;
@@ -634,7 +626,7 @@ public class SerialSplashFragment extends TimeoutFragment {
 
         @Override // com.soft.blued.utils.third.TTADUtils.TTGetSplashAdListener
         public void a(TTSplashAd tTSplashAd) {
-            this.f34589a = true;
+            this.f20898a = true;
             this.b.a();
             View splashView = tTSplashAd.getSplashView();
             FragmentActivity activity = SerialSplashFragment.this.getActivity();
@@ -645,22 +637,22 @@ public class SerialSplashFragment extends TimeoutFragment {
             tTSplashAd.setSplashInteractionListener(new TTSplashAd.AdInteractionListener() { // from class: com.soft.blued.ui.welcome.SerialSplashFragment.29.1
                 @Override // com.bytedance.sdk.openadsdk.TTSplashAd.AdInteractionListener
                 public void onAdClicked(View view, int i) {
-                    AnonymousClass29.this.b.a(AnonymousClass29.this.f34590c.click_url);
+                    AnonymousClass29.this.b.a(AnonymousClass29.this.f20899c.click_url);
                 }
 
                 @Override // com.bytedance.sdk.openadsdk.TTSplashAd.AdInteractionListener
                 public void onAdShow(View view, int i) {
-                    AnonymousClass29.this.b.a(AnonymousClass29.this.f34590c.show_url, AnonymousClass29.this.f34590c.show_post_url);
+                    AnonymousClass29.this.b.a(AnonymousClass29.this.f20899c.show_url, AnonymousClass29.this.f20899c.show_post_url);
                 }
 
                 @Override // com.bytedance.sdk.openadsdk.TTSplashAd.AdInteractionListener
                 public void onAdSkip() {
-                    AnonymousClass29.this.b.b(AnonymousClass29.this.f34590c.hidden_url);
+                    AnonymousClass29.this.b.b(AnonymousClass29.this.f20899c.hidden_url);
                 }
 
                 @Override // com.bytedance.sdk.openadsdk.TTSplashAd.AdInteractionListener
                 public void onAdTimeOver() {
-                    if (AnonymousClass29.this.f34589a) {
+                    if (AnonymousClass29.this.f20898a) {
                         return;
                     }
                     AnonymousClass29.this.b.a("", "onAdTimeOver");
@@ -752,7 +744,6 @@ public class SerialSplashFragment extends TimeoutFragment {
             str = "ceshi0712";
         }
         LoginRegisterHttpUtils.a(new StringHttpResponseHandler() { // from class: com.soft.blued.ui.welcome.SerialSplashFragment.23
-            @Override // com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
             /* renamed from: a */
             public void onSuccess(String str2) {
                 try {
@@ -1026,11 +1017,9 @@ public class SerialSplashFragment extends TimeoutFragment {
                 VideoLoadController.a(this.L);
                 AnonymousClass27 anonymousClass27 = new AnonymousClass27(i, i2, showEntity, splashAdListener);
                 this.K.setOnPLVideoListener(new PLVideoPageView.OnPLVideoListener() { // from class: com.soft.blued.ui.welcome.SerialSplashFragment.28
-                    @Override // com.blued.android.module.player.media.view.PLVideoPageView.OnPLVideoListener
                     public void a() {
                     }
 
-                    @Override // com.blued.android.module.player.media.view.PLVideoPageView.OnPLVideoListener
                     public void a(int i4) {
                         Log.v("drb", "onRender");
                         if (SerialSplashFragment.this.Q) {
@@ -1045,22 +1034,18 @@ public class SerialSplashFragment extends TimeoutFragment {
                         SerialSplashFragment.this.b(1000L);
                     }
 
-                    @Override // com.blued.android.module.player.media.view.PLVideoPageView.OnPLVideoListener
                     public void a(long j, long j2) {
                     }
 
-                    @Override // com.blued.android.module.player.media.view.PLVideoPageView.OnPLVideoListener
                     public void b() {
                         Log.v("drb", "onLoadingDismiss");
                     }
 
-                    @Override // com.blued.android.module.player.media.view.PLVideoPageView.OnPLVideoListener
                     public void c() {
                         Log.v("drb", "onStart");
                         FindHttpUtils.b(showEntity.video_start);
                     }
 
-                    @Override // com.blued.android.module.player.media.view.PLVideoPageView.OnPLVideoListener
                     public void d() {
                     }
                 });
@@ -1075,11 +1060,9 @@ public class SerialSplashFragment extends TimeoutFragment {
             VideoLoadController.a(this.L);
             AnonymousClass27 anonymousClass272 = new AnonymousClass27(i, i2, showEntity, splashAdListener);
             this.K.setOnPLVideoListener(new PLVideoPageView.OnPLVideoListener() { // from class: com.soft.blued.ui.welcome.SerialSplashFragment.28
-                @Override // com.blued.android.module.player.media.view.PLVideoPageView.OnPLVideoListener
                 public void a() {
                 }
 
-                @Override // com.blued.android.module.player.media.view.PLVideoPageView.OnPLVideoListener
                 public void a(int i4) {
                     Log.v("drb", "onRender");
                     if (SerialSplashFragment.this.Q) {
@@ -1094,22 +1077,18 @@ public class SerialSplashFragment extends TimeoutFragment {
                     SerialSplashFragment.this.b(1000L);
                 }
 
-                @Override // com.blued.android.module.player.media.view.PLVideoPageView.OnPLVideoListener
                 public void a(long j, long j2) {
                 }
 
-                @Override // com.blued.android.module.player.media.view.PLVideoPageView.OnPLVideoListener
                 public void b() {
                     Log.v("drb", "onLoadingDismiss");
                 }
 
-                @Override // com.blued.android.module.player.media.view.PLVideoPageView.OnPLVideoListener
                 public void c() {
                     Log.v("drb", "onStart");
                     FindHttpUtils.b(showEntity.video_start);
                 }
 
-                @Override // com.blued.android.module.player.media.view.PLVideoPageView.OnPLVideoListener
                 public void d() {
                 }
             });
@@ -1320,6 +1299,7 @@ public class SerialSplashFragment extends TimeoutFragment {
         splashView.load(showEntity.third_id, 1, build, splashAdLoadListener);
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private void m() {
         LiveEventBus.get(EventBusConstant.KEY_EVENT_SPLASH_AD_SKIP_TO_HOME, Boolean.class).observe(this, new Observer<Boolean>() { // from class: com.soft.blued.ui.welcome.SerialSplashFragment.1
             @Override // androidx.lifecycle.Observer
@@ -1353,7 +1333,7 @@ public class SerialSplashFragment extends TimeoutFragment {
     }
 
     private void o() {
-        a(AppInfo.f9486a, this.P);
+        a(AppInfo.a, this.P);
     }
 
     private Intent p() {
@@ -1415,7 +1395,6 @@ public class SerialSplashFragment extends TimeoutFragment {
         }
     }
 
-    @Override // com.blued.android.ui.TimeoutFragment
     public void a(ADClickCoordinate aDClickCoordinate) {
         if (this.j == null || !k()) {
             return;
@@ -1452,7 +1431,7 @@ public class SerialSplashFragment extends TimeoutFragment {
                 Log.v("drb", "showEntity.click_url:" + str);
                 String str2 = str;
                 if (str.startsWith(BluedHttpUrl.q())) {
-                    Map<String, String> a2 = BluedHttpTools.a();
+                    Map a2 = BluedHttpTools.a();
                     if (this.D) {
                         a2.put("is_valid", "0");
                     } else {
@@ -1468,7 +1447,7 @@ public class SerialSplashFragment extends TimeoutFragment {
         FindHttpUtils.a(showEntity.click_post_url);
         if (showEntity.download != null) {
             Log.v("drb", "开机图点击：当前是下载类型广告：" + showEntity.download);
-            AdDownLoadAppDialogFragment.f34505a.a(getChildFragmentManager(), this.m, showEntity.download);
+            AdDownLoadAppDialogFragment.f20814a.a(getChildFragmentManager(), this.m, showEntity.download);
             return;
         }
         if (showEntity.wx != null) {
@@ -1502,7 +1481,7 @@ public class SerialSplashFragment extends TimeoutFragment {
         this.m.startActivity(intent);
         FindHttpUtils.a(showEntity.dp_post_url);
         FindHttpUtils.b(showEntity.dp_url);
-        if (showEntity.deep_link_url.contains("market://")) {
+        if (showEntity.deep_link_url.contains(s.a.f)) {
             AppInfo.n().removeCallbacks(this.I);
             d();
             this.O = true;
@@ -1512,7 +1491,6 @@ public class SerialSplashFragment extends TimeoutFragment {
         Log.v("drb", "开机图点击：deep_link可以跳转第三方app");
     }
 
-    @Override // com.blued.android.ui.TimeoutFragment
     public void b() {
         if (this.j == null || !k()) {
             return;
@@ -1530,7 +1508,6 @@ public class SerialSplashFragment extends TimeoutFragment {
         EventTrackLoginAndRegister.d(LoginAndRegisterProtos.Event.OPEN_AD_UP_SLIDE, this.j);
     }
 
-    @Override // com.blued.android.ui.TimeoutFragment
     public void c() {
         if (this.j != null) {
             if ((this.j.hot_dynamic == 5 || this.j.hot_dynamic == 6) && k()) {
@@ -1549,33 +1526,30 @@ public class SerialSplashFragment extends TimeoutFragment {
         }
     }
 
-    @Override // com.blued.android.ui.TimeoutFragment
     public void g() {
         Log.v("drb", "串联广告请求超时，关闭页面");
         l();
     }
 
-    @Override // com.blued.android.ui.TimeoutFragment
     public View h() {
         return this.n;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment
     public boolean isActivitySwipeBackEnable() {
         return false;
     }
 
     public void j() {
-        getActivity().getWindow().getDecorView().setBackground(BluedSkinUtils.b(this.m, R.drawable.app_loading_bg));
+        getActivity().getWindow().getDecorView().setBackground(BluedSkinUtils.b(this.m, (int) R.drawable.app_loading_bg));
         this.t = (FrameLayout) this.n.findViewById(R.id.fl_ad_content);
         this.u = this.n.findViewById(R.id.ll_click_skip);
         this.B = (ImageView) this.n.findViewById(R.id.iv_pictrue);
         this.v = this.n.findViewById(R.id.view_btm_bar);
         this.w = this.n.findViewById(R.id.iv_btm_bar);
         this.x = this.n.findViewById(R.id.iv_video_ad_btm_bar);
-        this.y = (ImageView) this.n.findViewById(2131364417);
+        this.y = (ImageView) this.n.findViewById(R.id.img_ad_icon);
         this.z = (ImageView) this.n.findViewById(R.id.img_ad_left_icon);
-        this.K = (PLVideoPageView) this.n.findViewById(2131373091);
+        this.K = this.n.findViewById(2131373091);
         this.v.setVisibility(0);
         this.v.setBackgroundColor(this.m.getResources().getColor(2131102388));
         a(this.s * 1000);
@@ -1592,7 +1566,6 @@ public class SerialSplashFragment extends TimeoutFragment {
         r();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         getActivity().getWindow().setFlags(1024, 1024);
         this.m = getActivity();
@@ -1618,7 +1591,6 @@ public class SerialSplashFragment extends TimeoutFragment {
         return this.n;
     }
 
-    @Override // com.blued.android.ui.TimeoutFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
         AppInfo.n().removeCallbacks(this.I);
@@ -1630,7 +1602,6 @@ public class SerialSplashFragment extends TimeoutFragment {
         Log.v("drb", "开机图页面销毁，重置IF_AD_SHOW");
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnKeyListener
     public boolean onKeyDown(int i, KeyEvent keyEvent) {
         if (i == 4 || i == 3) {
             return true;
@@ -1638,7 +1609,6 @@ public class SerialSplashFragment extends TimeoutFragment {
         return super.onKeyDown(i, keyEvent);
     }
 
-    @Override // com.blued.android.ui.TimeoutFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onResume() {
         super.onResume();
         if (this.O) {
@@ -1649,7 +1619,6 @@ public class SerialSplashFragment extends TimeoutFragment {
         this.Q = false;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onStart() {
         super.onStart();
         BluedPreferences.N(true);
@@ -1660,7 +1629,6 @@ public class SerialSplashFragment extends TimeoutFragment {
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onStop() {
         super.onStop();
         Log.v("drb", "广告页面onStop");

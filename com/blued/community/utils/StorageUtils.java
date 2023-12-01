@@ -19,7 +19,7 @@ import java.io.IOException;
 public class StorageUtils {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f20474a;
+    private static String f6868a;
     private static String b;
 
     public static Uri a(File file) {
@@ -72,19 +72,19 @@ public class StorageUtils {
     }
 
     public static String c() {
-        if (TextUtils.isEmpty(f20474a)) {
+        if (TextUtils.isEmpty(f6868a)) {
             try {
-                f20474a = AppInfo.d().getExternalCacheDir().getParentFile().getAbsolutePath();
+                f6868a = AppInfo.d().getExternalCacheDir().getParentFile().getAbsolutePath();
             } catch (NullPointerException e) {
                 e.printStackTrace();
             } catch (Exception e2) {
                 e2.printStackTrace();
             }
         }
-        if (f20474a == null) {
-            f20474a = "";
+        if (f6868a == null) {
+            f6868a = "";
         }
-        return f20474a;
+        return f6868a;
     }
 
     public static byte[] c(String str) {

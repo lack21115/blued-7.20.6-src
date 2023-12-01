@@ -5,13 +5,13 @@ import android.os.Parcelable;
 import android.os.SystemClock;
 import android.util.SparseBooleanArray;
 import com.android.internal.util.ArrayUtils;
+import com.huawei.hms.framework.network.grs.GrsBaseInfo;
 import java.io.CharArrayWriter;
 import java.io.PrintWriter;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Objects;
 import libcore.util.EmptyArray;
-import org.apache.commons.codec.language.bm.Rule;
 
 /* loaded from: source-9557208-dex2jar.jar:android/net/NetworkStats.class */
 public class NetworkStats implements Parcelable {
@@ -243,13 +243,13 @@ public class NetworkStats implements Parcelable {
     public static String setToString(int i) {
         switch (i) {
             case -1:
-                return Rule.ALL;
+                return "ALL";
             case 0:
                 return "DEFAULT";
             case 1:
                 return "FOREGROUND";
             default:
-                return "UNKNOWN";
+                return GrsBaseInfo.CountryCodeSource.UNKNOWN;
         }
     }
 
@@ -352,7 +352,7 @@ public class NetworkStats implements Parcelable {
     }
 
     /* renamed from: clone */
-    public NetworkStats m555clone() {
+    public NetworkStats m552clone() {
         NetworkStats networkStats = new NetworkStats(this.elapsedRealtime, this.size);
         Entry entry = null;
         int i = 0;

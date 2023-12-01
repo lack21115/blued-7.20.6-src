@@ -1,5 +1,6 @@
 package android.app;
 
+import android.R;
 import android.content.ComponentName;
 import android.content.ContentResolver;
 import android.content.Intent;
@@ -32,6 +33,7 @@ import android.content.pm.UserInfo;
 import android.content.pm.VerificationParams;
 import android.content.pm.VerifierDeviceIdentity;
 import android.content.res.Resources;
+import android.content.res.ThemeConfig;
 import android.content.res.XmlResourceParser;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -45,8 +47,6 @@ import android.os.UserHandle;
 import android.os.UserManager;
 import android.util.ArrayMap;
 import android.util.Log;
-import com.alipay.sdk.util.i;
-import com.android.internal.R;
 import com.android.internal.annotations.GuardedBy;
 import com.android.internal.util.Preconditions;
 import com.android.internal.util.UserIcons;
@@ -116,7 +116,7 @@ public final class ApplicationPackageManager extends PackageManager {
         }
 
         public String toString() {
-            return "{ResourceName " + this.packageName + " / " + this.iconId + i.d;
+            return "{ResourceName " + this.packageName + " / " + this.iconId + "}";
         }
     }
 
@@ -136,10 +136,7 @@ public final class ApplicationPackageManager extends PackageManager {
 
     private int getBadgeResIdForUser(int i) {
         UserInfo userIfProfile = getUserIfProfile(i);
-        if (userIfProfile == null || !userIfProfile.isManagedProfile()) {
-            return 0;
-        }
-        return R.drawable.ic_corp_icon_badge;
+        return (userIfProfile == null || !userIfProfile.isManagedProfile()) ? 0 : 17302350;
     }
 
     private Drawable getBadgedDrawable(Drawable drawable, Drawable drawable2, Rect rect, boolean z) {
@@ -608,7 +605,7 @@ public final class ApplicationPackageManager extends PackageManager {
 
     @Override // android.content.pm.PackageManager
     public Drawable getDefaultActivityIcon() {
-        return Resources.getSystem().getDrawable(17301651);
+        return Resources.getSystem().getDrawable(R.drawable.sym_def_app_icon);
     }
 
     @Override // android.content.pm.PackageManager
@@ -979,7 +976,7 @@ public final class ApplicationPackageManager extends PackageManager {
     @Override // android.content.pm.PackageManager
     public Resources getResourcesForApplication(ApplicationInfo applicationInfo) throws PackageManager.NameNotFoundException {
         Resources resources;
-        if (applicationInfo.packageName.equals("system")) {
+        if (applicationInfo.packageName.equals(ThemeConfig.SYSTEM_DEFAULT)) {
             resources = this.mContext.mMainThread.getSystemContext().getResources();
         } else {
             boolean z = applicationInfo.uid == Process.myUid();
@@ -1002,7 +999,7 @@ public final class ApplicationPackageManager extends PackageManager {
         if (i < 0) {
             throw new IllegalArgumentException("Call does not support special user #" + i);
         }
-        if ("system".equals(str)) {
+        if (ThemeConfig.SYSTEM_DEFAULT.equals(str)) {
             return this.mContext.mMainThread.getSystemContext().getResources();
         }
         try {
@@ -1088,7 +1085,7 @@ public final class ApplicationPackageManager extends PackageManager {
     @Override // android.content.pm.PackageManager
     public Resources getThemedResourcesForApplication(ApplicationInfo applicationInfo, String str) throws PackageManager.NameNotFoundException {
         Resources resources;
-        if (applicationInfo.packageName.equals("system")) {
+        if (applicationInfo.packageName.equals(ThemeConfig.SYSTEM_DEFAULT)) {
             resources = this.mContext.mMainThread.getSystemContext().getResources();
         } else {
             Resources topLevelThemedResources = this.mContext.mMainThread.getTopLevelThemedResources(applicationInfo.uid == Process.myUid() ? applicationInfo.sourceDir : applicationInfo.publicSourceDir, 0, null, this.mContext.mPackageInfo, applicationInfo.packageName, str);
@@ -1144,7 +1141,7 @@ public final class ApplicationPackageManager extends PackageManager {
         if (i <= 0) {
             i2 = this.mContext.getResources().getDisplayMetrics().densityDpi;
         }
-        return Resources.getSystem().getDrawableForDensity(R.drawable.ic_corp_badge, i2);
+        return Resources.getSystem().getDrawableForDensity(17302348, i2);
     }
 
     @Override // android.content.pm.PackageManager
@@ -1156,7 +1153,7 @@ public final class ApplicationPackageManager extends PackageManager {
     @Override // android.content.pm.PackageManager
     public Drawable getUserBadgedIcon(Drawable drawable, UserHandle userHandle) {
         int badgeResIdForUser = getBadgeResIdForUser(userHandle.getIdentifier());
-        return badgeResIdForUser == 0 ? drawable : getBadgedDrawable(drawable, getDrawable("system", badgeResIdForUser, null), null, true);
+        return badgeResIdForUser == 0 ? drawable : getBadgedDrawable(drawable, getDrawable(ThemeConfig.SYSTEM_DEFAULT, badgeResIdForUser, null), null, true);
     }
 
     @Override // android.content.pm.PackageManager
@@ -1166,7 +1163,7 @@ public final class ApplicationPackageManager extends PackageManager {
         if (userIfProfile != null) {
             str = charSequence;
             if (userIfProfile.isManagedProfile()) {
-                str = Resources.getSystem().getString(R.string.managed_profile_label_badge, charSequence);
+                str = Resources.getSystem().getString(17041240, charSequence);
             }
         }
         return str;

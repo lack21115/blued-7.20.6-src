@@ -7,6 +7,7 @@ import android.util.Log;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import com.bytedance.applog.tracker.Tracker;
+import com.bytedance.applog.util.WebViewJsUtil;
 import com.tencent.bugly.idasc.BuglyStrategy;
 import com.tencent.bugly.idasc.CrashModule;
 import com.tencent.bugly.idasc.crashreport.common.strategy.StrategyBean;
@@ -41,7 +42,7 @@ import java.util.Set;
 public class CrashReport {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Context f35189a;
+    private static Context f21498a;
 
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/bugly/idasc/crashreport/CrashReport$CrashHandleCallback.class */
     public static class CrashHandleCallback extends BuglyStrategy.a {
@@ -51,7 +52,7 @@ public class CrashReport {
     public static class UserStrategy extends BuglyStrategy {
 
         /* renamed from: c  reason: collision with root package name */
-        CrashHandleCallback f35191c;
+        CrashHandleCallback f21500c;
 
         public UserStrategy(Context context) {
         }
@@ -60,7 +61,7 @@ public class CrashReport {
         public int getCallBackType() {
             int i;
             synchronized (this) {
-                i = this.f35185a;
+                i = this.f21494a;
             }
             return i;
         }
@@ -78,7 +79,7 @@ public class CrashReport {
         public CrashHandleCallback getCrashHandleCallback() {
             CrashHandleCallback crashHandleCallback;
             synchronized (this) {
-                crashHandleCallback = this.f35191c;
+                crashHandleCallback = this.f21500c;
             }
             return crashHandleCallback;
         }
@@ -86,7 +87,7 @@ public class CrashReport {
         @Override // com.tencent.bugly.idasc.BuglyStrategy
         public void setCallBackType(int i) {
             synchronized (this) {
-                this.f35185a = i;
+                this.f21494a = i;
             }
         }
 
@@ -99,7 +100,7 @@ public class CrashReport {
 
         public void setCrashHandleCallback(CrashHandleCallback crashHandleCallback) {
             synchronized (this) {
-                this.f35191c = crashHandleCallback;
+                this.f21500c = crashHandleCallback;
             }
         }
     }
@@ -120,19 +121,19 @@ public class CrashReport {
     public static void closeBugly() {
         String str;
         String str2;
-        if (!p.f35327a) {
+        if (!p.f21636a) {
             str = al.b;
             str2 = "Can not close bugly because bugly is disable.";
         } else if (CrashModule.getInstance().hasInitialized()) {
-            if (f35189a == null) {
+            if (f21498a == null) {
                 return;
             }
             aq a2 = aq.a();
             if (a2 != null) {
-                a2.b(f35189a);
+                a2.b(f21498a);
             }
             closeCrashReport();
-            s.a(f35189a);
+            s.a(f21498a);
             ak a3 = ak.a();
             if (a3 != null) {
                 a3.b();
@@ -147,7 +148,7 @@ public class CrashReport {
     }
 
     public static void closeCrashReport() {
-        if (!p.f35327a) {
+        if (!p.f21636a) {
             Log.w(al.b, "Can not close crash report because bugly is disable.");
         } else if (CrashModule.getInstance().hasInitialized()) {
             at.a().c();
@@ -157,7 +158,7 @@ public class CrashReport {
     }
 
     public static void closeNativeReport() {
-        if (!p.f35327a) {
+        if (!p.f21636a) {
             Log.w(al.b, "Can not close native report because bugly is disable.");
         } else if (CrashModule.getInstance().hasInitialized()) {
             at.a().d();
@@ -167,7 +168,7 @@ public class CrashReport {
     }
 
     public static void enableBugly(boolean z) {
-        p.f35327a = z;
+        p.f21636a = z;
     }
 
     public static void enableObtainId(Context context, boolean z) {
@@ -175,7 +176,7 @@ public class CrashReport {
     }
 
     public static Set<String> getAllUserDataKeys(Context context) {
-        if (!p.f35327a) {
+        if (!p.f21636a) {
             Log.w(al.b, "Can not get all keys of user data because bugly is disable.");
             return new HashSet();
         } else if (context == null) {
@@ -187,11 +188,11 @@ public class CrashReport {
     }
 
     public static String getAppChannel() {
-        if (!p.f35327a) {
+        if (!p.f21636a) {
             Log.w(al.b, "Can not get App channel because bugly is disable.");
             return "unknown";
         } else if (CrashModule.getInstance().hasInitialized()) {
-            return aa.a(f35189a).s;
+            return aa.a(f21498a).s;
         } else {
             Log.e(al.b, "CrashReport has not been initialed! pls to call method 'initCrashReport' first!");
             return "unknown";
@@ -199,11 +200,11 @@ public class CrashReport {
     }
 
     public static String getAppID() {
-        if (!p.f35327a) {
+        if (!p.f21636a) {
             Log.w(al.b, "Can not get App ID because bugly is disable.");
             return "unknown";
         } else if (CrashModule.getInstance().hasInitialized()) {
-            return aa.a(f35189a).e();
+            return aa.a(f21498a).e();
         } else {
             Log.e(al.b, "CrashReport has not been initialed! pls to call method 'initCrashReport' first!");
             return "unknown";
@@ -211,11 +212,11 @@ public class CrashReport {
     }
 
     public static String getAppVer() {
-        if (!p.f35327a) {
+        if (!p.f21636a) {
             Log.w(al.b, "Can not get app version because bugly is disable.");
             return "unknown";
         } else if (CrashModule.getInstance().hasInitialized()) {
-            return aa.a(f35189a).o;
+            return aa.a(f21498a).o;
         } else {
             Log.e(al.b, "CrashReport has not been initialed! pls to call method 'initCrashReport' first!");
             return "unknown";
@@ -231,7 +232,7 @@ public class CrashReport {
     }
 
     public static Context getContext() {
-        return f35189a;
+        return f21498a;
     }
 
     public static String getDeviceID(Context context) {
@@ -239,15 +240,15 @@ public class CrashReport {
     }
 
     public static Proxy getHttpProxy() {
-        return an.f35241a;
+        return an.f21550a;
     }
 
     public static Map<String, String> getSdkExtraData() {
-        if (!p.f35327a) {
+        if (!p.f21636a) {
             Log.w(al.b, "Can not get SDK extra data because bugly is disable.");
             return new HashMap();
         } else if (CrashModule.getInstance().hasInitialized()) {
-            return aa.a(f35189a).K;
+            return aa.a(f21498a).K;
         } else {
             Log.e(al.b, "CrashReport has not been initialed! pls to call method 'initCrashReport' first!");
             return null;
@@ -255,7 +256,7 @@ public class CrashReport {
     }
 
     public static Map<String, String> getSdkExtraData(Context context) {
-        if (!p.f35327a) {
+        if (!p.f21636a) {
             Log.w(al.b, "Can not get SDK extra data because bugly is disable.");
             return new HashMap();
         } else if (context == null) {
@@ -267,7 +268,7 @@ public class CrashReport {
     }
 
     public static String getUserData(Context context, String str) {
-        if (!p.f35327a) {
+        if (!p.f21636a) {
             Log.w(al.b, "Can not get user data because bugly is disable.");
             return "unknown";
         } else if (context == null) {
@@ -281,7 +282,7 @@ public class CrashReport {
     }
 
     public static int getUserDatasSize(Context context) {
-        if (!p.f35327a) {
+        if (!p.f21636a) {
             Log.w(al.b, "Can not get size of user data because bugly is disable.");
             return -1;
         } else if (context == null) {
@@ -293,11 +294,11 @@ public class CrashReport {
     }
 
     public static String getUserId() {
-        if (!p.f35327a) {
+        if (!p.f21636a) {
             Log.w(al.b, "Can not get user ID because bugly is disable.");
             return "unknown";
         } else if (CrashModule.getInstance().hasInitialized()) {
-            return aa.a(f35189a).f();
+            return aa.a(f21498a).f();
         } else {
             Log.e(al.b, "CrashReport has not been initialed! pls to call method 'initCrashReport' first!");
             return "unknown";
@@ -305,7 +306,7 @@ public class CrashReport {
     }
 
     public static int getUserSceneTagId(Context context) {
-        if (!p.f35327a) {
+        if (!p.f21636a) {
             Log.w(al.b, "Can not get user scene tag because bugly is disable.");
             return -1;
         } else if (context == null) {
@@ -320,7 +321,7 @@ public class CrashReport {
         if (context == null) {
             return;
         }
-        f35189a = context;
+        f21498a = context;
         p.a(CrashModule.getInstance());
         p.a(context);
     }
@@ -329,7 +330,7 @@ public class CrashReport {
         if (context == null) {
             return;
         }
-        f35189a = context;
+        f21498a = context;
         p.a(CrashModule.getInstance());
         p.a(context, userStrategy);
     }
@@ -342,13 +343,13 @@ public class CrashReport {
         if (context == null) {
             return;
         }
-        f35189a = context;
+        f21498a = context;
         p.a(CrashModule.getInstance());
         p.a(context, str, z, userStrategy);
     }
 
     public static boolean isLastSessionCrash() {
-        if (!p.f35327a) {
+        if (!p.f21636a) {
             Log.w(al.b, "The info 'isLastSessionCrash' is not accurate because bugly is disable.");
             return false;
         } else if (!CrashModule.getInstance().hasInitialized()) {
@@ -368,7 +369,7 @@ public class CrashReport {
                 return false;
             }
             for (y yVar : a3) {
-                if (str.equals(yVar.f35354c)) {
+                if (str.equals(yVar.f21663c)) {
                     a2.A = Boolean.TRUE;
                     arrayList.add(yVar);
                 }
@@ -390,7 +391,7 @@ public class CrashReport {
     }
 
     public static void postCatchedException(final Throwable th, Thread thread, final boolean z) {
-        if (!p.f35327a) {
+        if (!p.f21636a) {
             Log.w(al.b, "Can not post crash caught because bugly is disable.");
         } else if (!CrashModule.getInstance().hasInitialized()) {
             Log.e(al.b, "CrashReport has not been initialed! pls to call method 'initCrashReport' first!");
@@ -406,7 +407,7 @@ public class CrashReport {
             a2.w.a(new Runnable() { // from class: com.tencent.bugly.idasc.proguard.at.3
 
                 /* renamed from: a  reason: collision with root package name */
-                final /* synthetic */ boolean f35265a = false;
+                final /* synthetic */ boolean f21574a = false;
                 final /* synthetic */ String d = null;
                 final /* synthetic */ byte[] e = null;
                 final /* synthetic */ boolean f = true;
@@ -414,11 +415,11 @@ public class CrashReport {
                 @Override // java.lang.Runnable
                 public final void run() {
                     try {
-                        al.c("post a throwable %b", Boolean.valueOf(this.f35265a));
+                        al.c("post a throwable %b", Boolean.valueOf(this.f21574a));
                         at.this.t.a(thread3, th, false, this.d, this.e, this.f);
                         if (z) {
                             al.a("clear user datas", new Object[0]);
-                            aa.a(at.this.f35262c).u();
+                            aa.a(at.this.f21571c).u();
                         }
                     } catch (Throwable th2) {
                         if (!al.b(th2)) {
@@ -436,7 +437,7 @@ public class CrashReport {
     }
 
     public static void postException(Thread thread, int i, String str, String str2, String str3, Map<String, String> map) {
-        if (!p.f35327a) {
+        if (!p.f21636a) {
             Log.w(al.b, "Can not post crash caught because bugly is disable.");
         } else if (CrashModule.getInstance().hasInitialized()) {
             au.a(thread, i, str, str2, str3, map);
@@ -465,7 +466,7 @@ public class CrashReport {
     }
 
     public static void putUserData(Context context, String str, String str2) {
-        if (!p.f35327a) {
+        if (!p.f21636a) {
             Log.w(al.b, "Can not put user data because bugly is disable.");
         } else if (context == null) {
             Log.w(al.b, "putUserData args context should not be null");
@@ -508,7 +509,7 @@ public class CrashReport {
     }
 
     public static String removeUserData(Context context, String str) {
-        if (!p.f35327a) {
+        if (!p.f21636a) {
             Log.w(al.b, "Can not remove user data because bugly is disable.");
             return "unknown";
         } else if (context == null) {
@@ -531,7 +532,7 @@ public class CrashReport {
     public static void setAppChannel(Context context, String str) {
         String str2;
         String str3;
-        if (!p.f35327a) {
+        if (!p.f21636a) {
             str2 = al.b;
             str3 = "Can not set App channel because Bugly is disable.";
         } else if (context == null) {
@@ -555,14 +556,14 @@ public class CrashReport {
     public static void setAppPackage(Context context, String str) {
         String str2;
         String str3;
-        if (!p.f35327a) {
+        if (!p.f21636a) {
             str2 = al.b;
             str3 = "Can not set App package because bugly is disable.";
         } else if (context == null) {
             str2 = al.b;
             str3 = "setAppPackage args context should not be null";
         } else if (str != null) {
-            aa.a(context).f35213c = str;
+            aa.a(context).f21522c = str;
             NativeCrashHandler nativeCrashHandler = NativeCrashHandler.getInstance();
             if (nativeCrashHandler != null) {
                 nativeCrashHandler.setNativeAppPackage(str);
@@ -579,7 +580,7 @@ public class CrashReport {
     public static void setAppVersion(Context context, String str) {
         String str2;
         String str3;
-        if (!p.f35327a) {
+        if (!p.f21636a) {
             str2 = al.b;
             str3 = "Can not set App version because bugly is disable.";
         } else if (context == null) {
@@ -601,16 +602,16 @@ public class CrashReport {
     }
 
     public static void setBuglyDbName(String str) {
-        if (!p.f35327a) {
+        if (!p.f21636a) {
             Log.w(al.b, "Can not set DB name because bugly is disable.");
             return;
         }
         Log.i(al.b, "Set Bugly DB name: ".concat(String.valueOf(str)));
-        x.f35351a = str;
+        x.f21660a = str;
     }
 
     public static void setCollectPrivacyInfo(Context context, boolean z) {
-        if (!p.f35327a) {
+        if (!p.f21636a) {
             Log.w(al.b, "Can not set collect privacy info enable because bugly is disable.");
         } else if (context == null) {
             Log.w(al.b, "setCollectPrivacyInfo args context should not be null");
@@ -621,11 +622,11 @@ public class CrashReport {
     }
 
     public static void setContext(Context context) {
-        f35189a = context;
+        f21498a = context;
     }
 
     public static void setCrashFilter(String str) {
-        if (!p.f35327a) {
+        if (!p.f21636a) {
             Log.w(al.b, "Can not set App package because bugly is disable.");
             return;
         }
@@ -634,7 +635,7 @@ public class CrashReport {
     }
 
     public static void setCrashRegularFilter(String str) {
-        if (!p.f35327a) {
+        if (!p.f21636a) {
             Log.w(al.b, "Can not set App package because bugly is disable.");
             return;
         }
@@ -657,7 +658,7 @@ public class CrashReport {
     }
 
     public static void setDumpFilePath(Context context, String str) {
-        if (!p.f35327a) {
+        if (!p.f21636a) {
             Log.w(al.b, "Can not set App version because bugly is disable.");
         } else if (context == null) {
             Log.w(al.b, "setTombPath args context should not be null");
@@ -673,7 +674,7 @@ public class CrashReport {
     }
 
     public static void setHandleNativeCrashInJava(boolean z) {
-        if (!p.f35327a) {
+        if (!p.f21636a) {
             Log.w(al.b, "Can not set App package because bugly is disable.");
             return;
         }
@@ -683,17 +684,17 @@ public class CrashReport {
 
     public static void setHttpProxy(String str, int i) {
         if (TextUtils.isEmpty(str)) {
-            an.f35241a = null;
+            an.f21550a = null;
         } else {
-            an.f35241a = new Proxy(Proxy.Type.HTTP, new InetSocketAddress(str, i));
+            an.f21550a = new Proxy(Proxy.Type.HTTP, new InetSocketAddress(str, i));
         }
     }
 
     public static void setHttpProxy(InetAddress inetAddress, int i) {
         if (inetAddress == null) {
-            an.f35241a = null;
+            an.f21550a = null;
         } else {
-            an.f35241a = new Proxy(Proxy.Type.HTTP, new InetSocketAddress(inetAddress, i));
+            an.f21550a = new Proxy(Proxy.Type.HTTP, new InetSocketAddress(inetAddress, i));
         }
     }
 
@@ -703,7 +704,7 @@ public class CrashReport {
     }
 
     public static void setIsDevelopmentDevice(Context context, boolean z) {
-        if (!p.f35327a) {
+        if (!p.f21636a) {
             Log.w(al.b, "Can not set 'isDevelopmentDevice' because bugly is disable.");
         } else if (context == null) {
             al.d("Context should not be null.", new Object[0]);
@@ -732,22 +733,22 @@ public class CrashReport {
         return setJavascriptMonitor(new a() { // from class: com.tencent.bugly.idasc.crashreport.CrashReport.1
             @Override // com.tencent.bugly.idasc.crashreport.CrashReport.a
             public final String a() {
-                return WebView.this.getUrl();
+                return webView.getUrl();
             }
 
             @Override // com.tencent.bugly.idasc.crashreport.CrashReport.a
             public final void a(H5JavaScriptInterface h5JavaScriptInterface, String str) {
-                WebView.this.addJavascriptInterface(h5JavaScriptInterface, str);
+                webView.addJavascriptInterface(h5JavaScriptInterface, str);
             }
 
             @Override // com.tencent.bugly.idasc.crashreport.CrashReport.a
             public final void a(String str) {
-                Tracker.loadUrl(WebView.this, str);
+                Tracker.loadUrl(webView, str);
             }
 
             @Override // com.tencent.bugly.idasc.crashreport.CrashReport.a
             public final void b() {
-                WebSettings settings = WebView.this.getSettings();
+                WebSettings settings = webView.getSettings();
                 if (settings.getJavaScriptEnabled()) {
                     return;
                 }
@@ -756,7 +757,7 @@ public class CrashReport {
 
             @Override // com.tencent.bugly.idasc.crashreport.CrashReport.a
             public final CharSequence c() {
-                return WebView.this.getContentDescription();
+                return webView.getContentDescription();
             }
         }, z, z2);
     }
@@ -774,7 +775,7 @@ public class CrashReport {
             return false;
         } else {
             al.a("Set Javascript exception monitor of webview.", new Object[0]);
-            if (!p.f35327a) {
+            if (!p.f21636a) {
                 Log.w(al.b, "Can not set JavaScript monitor because bugly is disable.");
                 return false;
             }
@@ -797,7 +798,7 @@ public class CrashReport {
                     al.e("Failed to inject Bugly.js.", bc.b());
                     return false;
                 }
-                aVar.a("javascript:".concat(String.valueOf(a2)));
+                aVar.a(WebViewJsUtil.JS_URL_PREFIX.concat(String.valueOf(a2)));
                 return true;
             }
             return true;
@@ -805,7 +806,7 @@ public class CrashReport {
     }
 
     public static void setSdkExtraData(Context context, String str, String str2) {
-        if (!p.f35327a) {
+        if (!p.f21636a) {
             Log.w(al.b, "Can not put SDK extra data because bugly is disable.");
         } else if (context == null || ap.b(str) || ap.b(str2)) {
         } else {
@@ -825,12 +826,12 @@ public class CrashReport {
             return;
         }
         ac.a(str);
-        StrategyBean.f35196a = str;
+        StrategyBean.f21505a = str;
         StrategyBean.b = str;
     }
 
     public static void setSessionIntervalMills(long j) {
-        if (p.f35327a) {
+        if (p.f21636a) {
             s.a(j);
         } else {
             Log.w(al.b, "Can not set 'SessionIntervalMills' because bugly is disable.");
@@ -838,7 +839,7 @@ public class CrashReport {
     }
 
     public static void setUserId(Context context, String str) {
-        if (!p.f35327a) {
+        if (!p.f21636a) {
             Log.w(al.b, "Can not set user ID because bugly is disable.");
         } else if (context == null) {
             Log.e(al.b, "Context should not be null when bugly has not been initialed!");
@@ -869,17 +870,17 @@ public class CrashReport {
     }
 
     public static void setUserId(String str) {
-        if (!p.f35327a) {
+        if (!p.f21636a) {
             Log.w(al.b, "Can not set user ID because bugly is disable.");
         } else if (CrashModule.getInstance().hasInitialized()) {
-            setUserId(f35189a, str);
+            setUserId(f21498a, str);
         } else {
             Log.e(al.b, "CrashReport has not been initialed! pls to call method 'initCrashReport' first!");
         }
     }
 
     public static void setUserSceneTag(Context context, int i) {
-        if (!p.f35327a) {
+        if (!p.f21636a) {
             Log.w(al.b, "Can not set tag caught because bugly is disable.");
         } else if (context == null) {
             Log.e(al.b, "setTag args context should not be null");
@@ -900,7 +901,7 @@ public class CrashReport {
     }
 
     public static void startCrashReport() {
-        if (!p.f35327a) {
+        if (!p.f21636a) {
             Log.w(al.b, "Can not start crash report because bugly is disable.");
         } else if (CrashModule.getInstance().hasInitialized()) {
             at.a().b();
@@ -910,7 +911,7 @@ public class CrashReport {
     }
 
     public static void testANRCrash() {
-        if (!p.f35327a) {
+        if (!p.f21636a) {
             Log.w(al.b, "Can not test ANR crash because bugly is disable.");
         } else if (!CrashModule.getInstance().hasInitialized()) {
             Log.e(al.b, "CrashReport has not been initialed! pls to call method 'initCrashReport' first!");
@@ -922,7 +923,7 @@ public class CrashReport {
 
     public static void testJavaCrash() {
         int i;
-        if (!p.f35327a) {
+        if (!p.f21636a) {
             Log.w(al.b, "Can not test Java crash because bugly is disable.");
         } else if (!CrashModule.getInstance().hasInitialized()) {
             Log.e(al.b, "CrashReport has not been initialed! pls to call method 'initCrashReport' first!");
@@ -941,7 +942,7 @@ public class CrashReport {
     }
 
     public static void testNativeCrash(boolean z, boolean z2, boolean z3) {
-        if (!p.f35327a) {
+        if (!p.f21636a) {
             Log.w(al.b, "Can not test native crash because bugly is disable.");
         } else if (!CrashModule.getInstance().hasInitialized()) {
             Log.e(al.b, "CrashReport has not been initialed! pls to call method 'initCrashReport' first!");
@@ -952,7 +953,7 @@ public class CrashReport {
     }
 
     public static void uploadUserInfo() {
-        if (!p.f35327a) {
+        if (!p.f21636a) {
             Log.w(al.b, "Can not upload user info because bugly is disable.");
         } else if (s.b == null) {
             Log.w(al.b, "Can not upload user info because bugly is not init.");

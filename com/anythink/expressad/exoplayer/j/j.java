@@ -6,17 +6,17 @@ import java.io.InputStream;
 public final class j extends InputStream {
 
     /* renamed from: a  reason: collision with root package name */
-    private final h f7581a;
+    private final h f4742a;
     private final k b;
     private long f;
     private boolean d = false;
     private boolean e = false;
 
     /* renamed from: c  reason: collision with root package name */
-    private final byte[] f7582c = new byte[1];
+    private final byte[] f4743c = new byte[1];
 
     public j(h hVar, k kVar) {
-        this.f7581a = hVar;
+        this.f4742a = hVar;
         this.b = kVar;
     }
 
@@ -24,7 +24,7 @@ public final class j extends InputStream {
         if (this.d) {
             return;
         }
-        this.f7581a.a(this.b);
+        this.f4742a.a(this.b);
         this.d = true;
     }
 
@@ -41,16 +41,16 @@ public final class j extends InputStream {
         if (this.e) {
             return;
         }
-        this.f7581a.b();
+        this.f4742a.b();
         this.e = true;
     }
 
     @Override // java.io.InputStream
     public final int read() {
-        if (read(this.f7582c) == -1) {
+        if (read(this.f4743c) == -1) {
             return -1;
         }
-        return this.f7582c[0] & 255;
+        return this.f4743c[0] & 255;
     }
 
     @Override // java.io.InputStream
@@ -62,7 +62,7 @@ public final class j extends InputStream {
     public final int read(byte[] bArr, int i, int i2) {
         com.anythink.expressad.exoplayer.k.a.b(!this.e);
         c();
-        int a2 = this.f7581a.a(bArr, i, i2);
+        int a2 = this.f4742a.a(bArr, i, i2);
         if (a2 == -1) {
             return -1;
         }

@@ -17,7 +17,6 @@ import android.view.ViewGroup;
 import android.view.accessibility.CaptioningManager;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import com.android.internal.R;
 
 /* loaded from: source-9557208-dex2jar.jar:android/media/ClosedCaptionWidget.class */
 class ClosedCaptionWidget extends ViewGroup implements SubtitleTrack.RenderingWidget, CCParser.DisplayListener {
@@ -55,9 +54,8 @@ class ClosedCaptionWidget extends ViewGroup implements SubtitleTrack.RenderingWi
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // android.widget.LinearLayout, android.view.ViewGroup, android.view.View
-        public void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
             int i5;
             int i6;
             int i7 = i3 - i;
@@ -84,9 +82,8 @@ class ClosedCaptionWidget extends ViewGroup implements SubtitleTrack.RenderingWi
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // android.widget.LinearLayout, android.view.View
-        public void onMeasure(int i, int i2) {
+        protected void onMeasure(int i, int i2) {
             super.onMeasure(i, i2);
             int measuredWidth = getMeasuredWidth();
             int measuredHeight = getMeasuredHeight();
@@ -164,9 +161,9 @@ class ClosedCaptionWidget extends ViewGroup implements SubtitleTrack.RenderingWi
             setTypeface(Typeface.MONOSPACE);
             setVisibility(4);
             Resources resources = getContext().getResources();
-            this.mOutlineWidth = resources.getDimensionPixelSize(R.dimen.subtitle_outline_width);
-            this.mShadowRadius = resources.getDimensionPixelSize(R.dimen.subtitle_shadow_radius);
-            this.mShadowOffset = resources.getDimensionPixelSize(R.dimen.subtitle_shadow_offset);
+            this.mOutlineWidth = resources.getDimensionPixelSize(17105023);
+            this.mShadowRadius = resources.getDimensionPixelSize(17105021);
+            this.mShadowOffset = resources.getDimensionPixelSize(17105022);
         }
 
         private void drawEdgeOutline(Canvas canvas) {
@@ -226,9 +223,8 @@ class ClosedCaptionWidget extends ViewGroup implements SubtitleTrack.RenderingWi
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // android.widget.TextView, android.view.View
-        public void onDraw(Canvas canvas) {
+        protected void onDraw(Canvas canvas) {
             if (this.mEdgeType == -1 || this.mEdgeType == 0 || this.mEdgeType == 2) {
                 super.onDraw(canvas);
             } else if (this.mEdgeType == 1) {
@@ -238,9 +234,8 @@ class ClosedCaptionWidget extends ViewGroup implements SubtitleTrack.RenderingWi
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // android.widget.TextView, android.view.View
-        public void onMeasure(int i, int i2) {
+        protected void onMeasure(int i, int i2) {
             float size = View.MeasureSpec.getSize(i2) * 0.75f;
             setTextSize(0, size);
             this.mOutlineWidth = (0.1f * size) + 1.0f;
@@ -310,13 +305,13 @@ class ClosedCaptionWidget extends ViewGroup implements SubtitleTrack.RenderingWi
         return this.mCaptionStyle;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
+    @Override // android.view.ViewGroup, android.view.View, android.media.SubtitleTrack.RenderingWidget
     public void onAttachedToWindow() {
         super.onAttachedToWindow();
         manageChangeListener();
     }
 
-    @Override // android.view.ViewGroup, android.view.View
+    @Override // android.view.ViewGroup, android.view.View, android.media.SubtitleTrack.RenderingWidget
     public void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         manageChangeListener();
@@ -330,15 +325,13 @@ class ClosedCaptionWidget extends ViewGroup implements SubtitleTrack.RenderingWi
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z, int i, int i2, int i3, int i4) {
+    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         this.mClosedCaptionLayout.layout(i, i2, i3, i4);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         super.onMeasure(i, i2);
         this.mClosedCaptionLayout.measure(i, i2);
     }

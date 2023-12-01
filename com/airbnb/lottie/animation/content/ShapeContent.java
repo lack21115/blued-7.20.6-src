@@ -12,24 +12,20 @@ import java.util.List;
 /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/animation/content/ShapeContent.class */
 public class ShapeContent implements PathContent, BaseKeyframeAnimation.AnimationListener {
     private final String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final boolean f4292c;
+    private final boolean c;
     private final LottieDrawable d;
     private final BaseKeyframeAnimation<?, Path> e;
     private boolean f;
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Path f4291a = new Path();
+    private final Path a = new Path();
     private CompoundTrimPathContent g = new CompoundTrimPathContent();
 
     public ShapeContent(LottieDrawable lottieDrawable, BaseLayer baseLayer, ShapePath shapePath) {
         this.b = shapePath.a();
-        this.f4292c = shapePath.c();
+        this.c = shapePath.c();
         this.d = lottieDrawable;
-        BaseKeyframeAnimation<ShapeData, Path> a2 = shapePath.b().a();
-        this.e = a2;
-        baseLayer.a(a2);
+        BaseKeyframeAnimation<ShapeData, Path> a = shapePath.b().a();
+        this.e = a;
+        baseLayer.a(a);
         this.e.a(this);
     }
 
@@ -71,17 +67,17 @@ public class ShapeContent implements PathContent, BaseKeyframeAnimation.Animatio
     @Override // com.airbnb.lottie.animation.content.PathContent
     public Path e() {
         if (this.f) {
-            return this.f4291a;
+            return this.a;
         }
-        this.f4291a.reset();
-        if (this.f4292c) {
+        this.a.reset();
+        if (this.c) {
             this.f = true;
-            return this.f4291a;
+            return this.a;
         }
-        this.f4291a.set(this.e.g());
-        this.f4291a.setFillType(Path.FillType.EVEN_ODD);
-        this.g.a(this.f4291a);
+        this.a.set(this.e.g());
+        this.a.setFillType(Path.FillType.EVEN_ODD);
+        this.g.a(this.a);
         this.f = true;
-        return this.f4291a;
+        return this.a;
     }
 }

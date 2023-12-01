@@ -2,7 +2,6 @@ package android.os;
 
 import android.text.TextUtils;
 import android.util.Slog;
-import com.android.internal.telephony.TelephonyProperties;
 import com.tencent.thumbplayer.core.common.TPSystemInfo;
 import dalvik.system.VMRuntime;
 import java.util.Objects;
@@ -32,7 +31,7 @@ public class Build {
     public static final String MODEL = getString(TPSystemInfo.KEY_PROPERTY_MODEL);
     public static final String BOOTLOADER = getString("ro.bootloader");
     @Deprecated
-    public static final String RADIO = getString(TelephonyProperties.PROPERTY_BASEBAND_VERSION);
+    public static final String RADIO = getString("gsm.version.baseband");
     public static final String HARDWARE = getString("ro.hardware");
     public static final String SERIAL = getString("ro.serialno");
     public static final String[] SUPPORTED_ABIS = getStringList("ro.product.cpu.abilist", ",");
@@ -136,7 +135,7 @@ public class Build {
     }
 
     public static String getRadioVersion() {
-        return SystemProperties.get(TelephonyProperties.PROPERTY_BASEBAND_VERSION, null);
+        return SystemProperties.get("gsm.version.baseband", null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

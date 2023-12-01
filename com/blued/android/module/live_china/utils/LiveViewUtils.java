@@ -17,9 +17,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/utils/LiveViewUtils.class */
 public final class LiveViewUtils {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f14195a = new Companion(null);
+    public static final Companion a = new Companion(null);
 
     @Metadata
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/utils/LiveViewUtils$Companion.class */
@@ -39,7 +37,7 @@ public final class LiveViewUtils {
                 imageView.setVisibility(8);
                 return;
             }
-            int a2 = AppMethods.a(15);
+            int a = AppMethods.a(15);
             LiveNobleModel N = (liveChattingModel.nobleModel == null || TextUtils.isEmpty(liveChattingModel.nobleModel.getNameplate_img())) ? (liveChattingModel.fromId == 0 || !TextUtils.equals(String.valueOf(liveChattingModel.fromId), LiveRoomInfo.a().f())) ? null : LiveRoomManager.a().N() : liveChattingModel.nobleModel;
             if (N != null) {
                 Integer nameplate_img_width = N.getNameplate_img_width();
@@ -54,11 +52,11 @@ public final class LiveViewUtils {
                         int intValue = nameplate_img_width2.intValue();
                         Integer nameplate_img_height2 = N.getNameplate_img_height();
                         Intrinsics.a(nameplate_img_height2);
-                        int intValue2 = (intValue * a2) / nameplate_img_height2.intValue();
+                        int intValue2 = (intValue * a) / nameplate_img_height2.intValue();
                         ViewGroup.LayoutParams layoutParams = imageView.getLayoutParams();
                         Intrinsics.c(layoutParams, "view.getLayoutParams()");
                         layoutParams.width = intValue2;
-                        layoutParams.height = a2;
+                        layoutParams.height = a;
                         imageView.setLayoutParams(layoutParams);
                         String nameplate_img = N.getNameplate_img();
                         Intrinsics.a((Object) nameplate_img);

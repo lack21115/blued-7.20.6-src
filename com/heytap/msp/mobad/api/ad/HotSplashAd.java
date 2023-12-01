@@ -28,16 +28,16 @@ public class HotSplashAd implements IBidding {
     class a implements c {
 
         /* renamed from: c  reason: collision with root package name */
-        private IHotSplashListener f22231c;
+        private IHotSplashListener f8623c;
 
         public a(IHotSplashListener iHotSplashListener) {
-            this.f22231c = iHotSplashListener;
+            this.f8623c = iHotSplashListener;
         }
 
         @Override // com.opos.mobad.ad.b.a
         public void a() {
             HotSplashAd.this.mIsReady = true;
-            IHotSplashListener iHotSplashListener = this.f22231c;
+            IHotSplashListener iHotSplashListener = this.f8623c;
             if (iHotSplashListener != null) {
                 iHotSplashListener.onAdReady();
             }
@@ -45,7 +45,7 @@ public class HotSplashAd implements IBidding {
 
         @Override // com.opos.mobad.ad.b.a
         public void a(int i, String str) {
-            IHotSplashListener iHotSplashListener = this.f22231c;
+            IHotSplashListener iHotSplashListener = this.f8623c;
             if (iHotSplashListener != null) {
                 iHotSplashListener.onAdFailed(i, str);
             }
@@ -53,7 +53,7 @@ public class HotSplashAd implements IBidding {
 
         @Override // com.opos.mobad.ad.i.b
         public void a(long j) {
-            IHotSplashListener iHotSplashListener = this.f22231c;
+            IHotSplashListener iHotSplashListener = this.f8623c;
             if (iHotSplashListener != null) {
                 iHotSplashListener.onAdClick();
             }
@@ -62,7 +62,7 @@ public class HotSplashAd implements IBidding {
         @Override // com.opos.mobad.ad.i.b
         public void a(String str) {
             HotSplashAd.this.mHadShowed = true;
-            IHotSplashListener iHotSplashListener = this.f22231c;
+            IHotSplashListener iHotSplashListener = this.f8623c;
             if (iHotSplashListener != null) {
                 iHotSplashListener.onAdShow(str);
             }
@@ -70,7 +70,7 @@ public class HotSplashAd implements IBidding {
 
         @Override // com.opos.mobad.ad.b.a
         public void b() {
-            IHotSplashListener iHotSplashListener = this.f22231c;
+            IHotSplashListener iHotSplashListener = this.f8623c;
             if (iHotSplashListener != null) {
                 iHotSplashListener.onAdDismissed();
             }

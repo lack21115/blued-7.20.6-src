@@ -58,7 +58,7 @@ public class ReflectionUtils {
             AccessController.doPrivileged(new PrivilegedAction() { // from class: com.huawei.hms.framework.common.ReflectionUtils.2
                 @Override // java.security.PrivilegedAction
                 public Object run() {
-                    Field.this.setAccessible(true);
+                    declaredField.setAccessible(true);
                     return null;
                 }
             });
@@ -84,7 +84,7 @@ public class ReflectionUtils {
             AccessController.doPrivileged(new PrivilegedAction() { // from class: com.huawei.hms.framework.common.ReflectionUtils.1
                 @Override // java.security.PrivilegedAction
                 public Object run() {
-                    Field.this.setAccessible(true);
+                    declaredField.setAccessible(true);
                     return null;
                 }
             });
@@ -130,7 +130,7 @@ public class ReflectionUtils {
             AccessController.doPrivileged(new PrivilegedAction() { // from class: com.huawei.hms.framework.common.ReflectionUtils.3
                 @Override // java.security.PrivilegedAction
                 public Object run() {
-                    Field.this.setAccessible(true);
+                    declaredField.setAccessible(true);
                     return null;
                 }
             });

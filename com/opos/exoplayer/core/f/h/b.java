@@ -10,11 +10,11 @@ import java.util.List;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f25393a;
+    private String f11705a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private List<String> f25394c;
+    private List<String> f11706c;
     private String d;
     private String e;
     private int f;
@@ -49,18 +49,18 @@ public final class b {
 
     public int a(String str, String str2, String[] strArr, String str3) {
         int i;
-        if (this.f25393a.isEmpty() && this.b.isEmpty() && this.f25394c.isEmpty() && this.d.isEmpty()) {
+        if (this.f11705a.isEmpty() && this.b.isEmpty() && this.f11706c.isEmpty() && this.d.isEmpty()) {
             i = 0;
             if (str2.isEmpty()) {
                 return 1;
             }
         } else {
-            int a2 = a(a(a(0, this.f25393a, str, 1073741824), this.b, str2, 2), this.d, str3, 4);
+            int a2 = a(a(a(0, this.f11705a, str, 1073741824), this.b, str2, 2), this.d, str3, 4);
             i = 0;
             if (a2 != -1) {
                 i = 0;
-                if (Arrays.asList(strArr).containsAll(this.f25394c)) {
-                    i = (this.f25394c.size() * 4) + a2;
+                if (Arrays.asList(strArr).containsAll(this.f11706c)) {
+                    i = (this.f11706c.size() * 4) + a2;
                 }
             }
         }
@@ -79,9 +79,9 @@ public final class b {
     }
 
     public void a() {
-        this.f25393a = "";
+        this.f11705a = "";
         this.b = "";
-        this.f25394c = Collections.emptyList();
+        this.f11706c = Collections.emptyList();
         this.d = "";
         this.e = null;
         this.g = false;
@@ -95,11 +95,11 @@ public final class b {
     }
 
     public void a(String str) {
-        this.f25393a = str;
+        this.f11705a = str;
     }
 
     public void a(String[] strArr) {
-        this.f25394c = Arrays.asList(strArr);
+        this.f11706c = Arrays.asList(strArr);
     }
 
     public int b() {

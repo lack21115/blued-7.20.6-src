@@ -58,7 +58,7 @@ public class h implements u, je.mb {
     private DownloadEventConfig lc = null;
 
     /* renamed from: io  reason: collision with root package name */
-    private DownloadController f34887io = null;
+    private DownloadController f21196io = null;
     private ko b = new ko(this);
     private hj hj = new hj(this.ox);
     private final boolean m = DownloadSetting.obtainGlobal().optBugFix("ttdownloader_callback_twice");
@@ -295,10 +295,10 @@ public class h implements u, je.mb {
     }
 
     private DownloadController nk() {
-        if (this.f34887io == null) {
-            this.f34887io = new com.ss.android.download.api.download.ox();
+        if (this.f21196io == null) {
+            this.f21196io = new com.ss.android.download.api.download.ox();
         }
-        return this.f34887io;
+        return this.f21196io;
     }
 
     private void o() {
@@ -501,7 +501,7 @@ public class h implements u, je.mb {
     /* renamed from: mb */
     public h ox(DownloadController downloadController) {
         JSONObject extra;
-        this.f34887io = downloadController;
+        this.f21196io = downloadController;
         if (com.ss.android.downloadlib.utils.hj.ox(this.o).optInt("force_auto_open") == 1) {
             nk().setLinkMode(1);
         }

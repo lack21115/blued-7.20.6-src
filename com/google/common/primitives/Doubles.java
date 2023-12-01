@@ -36,12 +36,12 @@ public final class Doubles extends DoublesMethodsForWeb {
             this.end = i2;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
         public boolean contains(Object obj) {
             return (obj instanceof Double) && Doubles.indexOf(this.array, ((Double) obj).doubleValue(), this.start, this.end) != -1;
         }
 
-        @Override // java.util.AbstractList, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractList, java.util.Collection, java.util.List
         public boolean equals(@NullableDecl Object obj) {
             if (obj == this) {
                 return true;
@@ -73,7 +73,7 @@ public final class Doubles extends DoublesMethodsForWeb {
             return Double.valueOf(this.array[this.start + i]);
         }
 
-        @Override // java.util.AbstractList, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractList, java.util.Collection, java.util.List
         public int hashCode() {
             int i = 1;
             for (int i2 = this.start; i2 < this.end; i2++) {
@@ -91,7 +91,7 @@ public final class Doubles extends DoublesMethodsForWeb {
             return indexOf - this.start;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
         public boolean isEmpty() {
             return false;
         }
@@ -228,7 +228,7 @@ public final class Doubles extends DoublesMethodsForWeb {
         double[] dArr3 = new double[i];
         int i2 = 0;
         for (double[] dArr4 : dArr) {
-            System.arraycopy((Object) dArr4, 0, (Object) dArr3, i2, dArr4.length);
+            System.arraycopy(dArr4, 0, dArr3, i2, dArr4.length);
             i2 += dArr4.length;
         }
         return dArr3;

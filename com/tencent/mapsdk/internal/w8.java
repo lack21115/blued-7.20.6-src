@@ -30,15 +30,15 @@ public class w8 extends z8 {
             this.j = 1;
             long j3 = this.d;
             if (j3 < 0) {
-                this.f38147c = j;
+                this.f24456c = j;
             } else {
-                this.f38147c = j - j3;
+                this.f24456c = j - j3;
                 this.d = -1L;
             }
         }
         a aVar = this.M;
         if (aVar != null) {
-            long j4 = this.f38147c;
+            long j4 = this.f24456c;
             long j5 = this.N;
             if (j5 >= 0) {
                 j2 = j - j5;

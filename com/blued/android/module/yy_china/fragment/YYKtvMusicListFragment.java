@@ -40,7 +40,6 @@ import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshFooter;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnRefreshLoadMoreListener;
-import java.util.Collection;
 import java.util.List;
 import kotlin.Metadata;
 import kotlin.Pair;
@@ -49,13 +48,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYKtvMusicListFragment.class */
 public final class YYKtvMusicListFragment extends BaseFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f17307a;
+    private String a;
     private FragmentYyKtvMusicListBinding b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private YYRoomModel f17308c;
+    private YYRoomModel c;
     private KtvMusicAdapter d;
     private String e;
     private OnCLickSingNumListener f;
@@ -66,33 +61,31 @@ public final class YYKtvMusicListFragment extends BaseFragment {
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYKtvMusicListFragment$KtvMusicAdapter.class */
     public final class KtvMusicAdapter extends BaseMultiItemQuickAdapter<YYKtvMusicModel, BaseViewHolder> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ YYKtvMusicListFragment f17309a;
+        final /* synthetic */ YYKtvMusicListFragment a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public KtvMusicAdapter(YYKtvMusicListFragment this$0) {
-            super(null);
+            super((List) null);
             Intrinsics.e(this$0, "this$0");
-            this.f17309a = this$0;
+            this.a = this$0;
             addItemType(0, R.layout.item_yy_ktv_music_info);
             addItemType(1, R.layout.live_music_item_no_more_view);
         }
 
         private final void a(YYKtvMusicModel yYKtvMusicModel) {
             Boolean normalKtv;
-            final YYKtvMusicListFragment yYKtvMusicListFragment = this.f17309a;
-            YYRoomModel yYRoomModel = yYKtvMusicListFragment.f17308c;
+            final YYKtvMusicListFragment yYKtvMusicListFragment = this.a;
+            YYRoomModel yYRoomModel = yYKtvMusicListFragment.c;
             if (yYRoomModel != null && (normalKtv = yYRoomModel.getNormalKtv()) != null) {
                 boolean booleanValue = normalKtv.booleanValue();
                 ChatRoomProtos.Event event = ChatRoomProtos.Event.CHAT_ROOM_KTV_SONG_QUEUE_CLICK;
-                YYRoomModel yYRoomModel2 = yYKtvMusicListFragment.f17308c;
+                YYRoomModel yYRoomModel2 = yYKtvMusicListFragment.c;
                 String str = yYRoomModel2 == null ? null : yYRoomModel2.room_id;
-                YYRoomModel yYRoomModel3 = yYKtvMusicListFragment.f17308c;
+                YYRoomModel yYRoomModel3 = yYKtvMusicListFragment.c;
                 EventTrackYY.b(event, str, yYRoomModel3 == null ? null : yYRoomModel3.uid, yYKtvMusicModel.musicId, !booleanValue);
             }
             String str2 = yYKtvMusicModel.bigCoverUrl == null ? yYKtvMusicModel.coverUrl : yYKtvMusicModel.bigCoverUrl;
-            YYRoomModel yYRoomModel4 = yYKtvMusicListFragment.f17308c;
+            YYRoomModel yYRoomModel4 = yYKtvMusicListFragment.c;
             String str3 = yYRoomModel4 == null ? null : yYRoomModel4.room_id;
             long j = yYKtvMusicModel.duration;
             final ActivityFragmentActive fragmentActive = yYKtvMusicListFragment.getFragmentActive();
@@ -117,8 +110,8 @@ public final class YYKtvMusicListFragment extends BaseFragment {
         public static final void a(YYKtvMusicListFragment this$0, KtvMusicAdapter this$1, YYKtvMusicModel yYKtvMusicModel, View view) {
             Intrinsics.e(this$0, "this$0");
             Intrinsics.e(this$1, "this$1");
-            OnCLickSingNumListener a2 = this$0.a();
-            if (a2 != null && a2.Z_()) {
+            OnCLickSingNumListener a = this$0.a();
+            if (a != null && a.Z_()) {
                 this$1.a(yYKtvMusicModel);
             }
         }
@@ -137,7 +130,7 @@ public final class YYKtvMusicListFragment extends BaseFragment {
                 return;
             }
             LiveEventBus.get("EVENT_KTV_GUIDE_APPL_UP_MIC").post("");
-            YYRoomModel yYRoomModel = this$0.f17308c;
+            YYRoomModel yYRoomModel = this$0.c;
             if (yYRoomModel == null) {
                 return;
             }
@@ -153,7 +146,7 @@ public final class YYKtvMusicListFragment extends BaseFragment {
             if (yYKtvMusicModel == null) {
                 return;
             }
-            final YYKtvMusicListFragment yYKtvMusicListFragment = this.f17309a;
+            final YYKtvMusicListFragment yYKtvMusicListFragment = this.a;
             ImageLoader.a(yYKtvMusicListFragment.getFragmentActive(), yYKtvMusicModel.coverUrl).a(imageView);
             if (textView != null) {
                 textView.setText(yYKtvMusicModel.musicName);
@@ -176,7 +169,6 @@ public final class YYKtvMusicListFragment extends BaseFragment {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.chad.library.adapter.base.BaseQuickAdapter
         /* renamed from: a */
         public void convert(BaseViewHolder baseViewHolder, YYKtvMusicModel yYKtvMusicModel) {
             if (baseViewHolder != null && baseViewHolder.getItemViewType() == 0) {
@@ -187,7 +179,7 @@ public final class YYKtvMusicListFragment extends BaseFragment {
 
     public YYKtvMusicListFragment(String PlaylistId) {
         Intrinsics.e(PlaylistId, "PlaylistId");
-        this.f17307a = PlaylistId;
+        this.a = PlaylistId;
         this.e = "";
     }
 
@@ -202,22 +194,22 @@ public final class YYKtvMusicListFragment extends BaseFragment {
             ktvMusicAdapter2.setNewData(list);
         } else if (list == null || (ktvMusicAdapter = this.d) == null) {
         } else {
-            ktvMusicAdapter.addData((Collection) list);
+            ktvMusicAdapter.addData(list);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void a(boolean z) {
         SmartRefreshLayout smartRefreshLayout;
-        Collection data;
+        List data;
         SmartRefreshLayout smartRefreshLayout2;
         SmartRefreshLayout smartRefreshLayout3;
         SmartRefreshLayout smartRefreshLayout4;
         boolean z2 = true;
         if (z) {
             FragmentYyKtvMusicListBinding fragmentYyKtvMusicListBinding = this.b;
-            if (fragmentYyKtvMusicListBinding != null && (smartRefreshLayout4 = fragmentYyKtvMusicListBinding.f16519a) != null) {
-                smartRefreshLayout4.l(true);
+            if (fragmentYyKtvMusicListBinding != null && (smartRefreshLayout4 = fragmentYyKtvMusicListBinding.a) != null) {
+                smartRefreshLayout4.b(true);
             }
             View view = this.h;
             if (view != null) {
@@ -225,8 +217,8 @@ public final class YYKtvMusicListFragment extends BaseFragment {
             }
         } else {
             FragmentYyKtvMusicListBinding fragmentYyKtvMusicListBinding2 = this.b;
-            if (fragmentYyKtvMusicListBinding2 != null && (smartRefreshLayout = fragmentYyKtvMusicListBinding2.f16519a) != null) {
-                smartRefreshLayout.l(false);
+            if (fragmentYyKtvMusicListBinding2 != null && (smartRefreshLayout = fragmentYyKtvMusicListBinding2.a) != null) {
+                smartRefreshLayout.b(false);
             }
             View view2 = this.h;
             if (view2 != null) {
@@ -234,12 +226,12 @@ public final class YYKtvMusicListFragment extends BaseFragment {
             }
         }
         FragmentYyKtvMusicListBinding fragmentYyKtvMusicListBinding3 = this.b;
-        if (fragmentYyKtvMusicListBinding3 != null && (smartRefreshLayout3 = fragmentYyKtvMusicListBinding3.f16519a) != null) {
+        if (fragmentYyKtvMusicListBinding3 != null && (smartRefreshLayout3 = fragmentYyKtvMusicListBinding3.a) != null) {
             smartRefreshLayout3.h();
         }
         FragmentYyKtvMusicListBinding fragmentYyKtvMusicListBinding4 = this.b;
-        if (fragmentYyKtvMusicListBinding4 != null && (smartRefreshLayout2 = fragmentYyKtvMusicListBinding4.f16519a) != null) {
-            smartRefreshLayout2.j();
+        if (fragmentYyKtvMusicListBinding4 != null && (smartRefreshLayout2 = fragmentYyKtvMusicListBinding4.a) != null) {
+            smartRefreshLayout2.g();
         }
         KtvMusicAdapter ktvMusicAdapter = this.d;
         if (ktvMusicAdapter == null || (data = ktvMusicAdapter.getData()) == null || data.size() != 0) {
@@ -267,7 +259,7 @@ public final class YYKtvMusicListFragment extends BaseFragment {
         FrameLayout frameLayout;
         SmartRefreshLayout smartRefreshLayout2;
         SmartRefreshLayout smartRefreshLayout3;
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        RecyclerView.LayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setOrientation(1);
         this.d = new KtvMusicAdapter(this);
         FragmentYyKtvMusicListBinding fragmentYyKtvMusicListBinding = this.b;
@@ -310,15 +302,13 @@ public final class YYKtvMusicListFragment extends BaseFragment {
             ktvMusicAdapter.setEmptyView(this.g);
         }
         FragmentYyKtvMusicListBinding fragmentYyKtvMusicListBinding3 = this.b;
-        if (fragmentYyKtvMusicListBinding3 != null && (smartRefreshLayout3 = fragmentYyKtvMusicListBinding3.f16519a) != null) {
+        if (fragmentYyKtvMusicListBinding3 != null && (smartRefreshLayout3 = fragmentYyKtvMusicListBinding3.a) != null) {
             smartRefreshLayout3.a(new OnRefreshLoadMoreListener() { // from class: com.blued.android.module.yy_china.fragment.YYKtvMusicListFragment$initView$1
-                @Override // com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
                 public void onLoadMore(RefreshLayout refreshLayout) {
                     Intrinsics.e(refreshLayout, "refreshLayout");
                     YYKtvMusicListFragment.this.c();
                 }
 
-                @Override // com.scwang.smartrefresh.layout.listener.OnRefreshListener
                 public void onRefresh(RefreshLayout refreshLayout) {
                     Intrinsics.e(refreshLayout, "refreshLayout");
                     YYKtvMusicListFragment.this.e = "";
@@ -329,11 +319,11 @@ public final class YYKtvMusicListFragment extends BaseFragment {
         BluedLoadMoreView bluedLoadMoreView = new BluedLoadMoreView(getContext());
         bluedLoadMoreView.setBackgroundColorRes(R.color.transparent);
         FragmentYyKtvMusicListBinding fragmentYyKtvMusicListBinding4 = this.b;
-        if (fragmentYyKtvMusicListBinding4 != null && (smartRefreshLayout2 = fragmentYyKtvMusicListBinding4.f16519a) != null) {
+        if (fragmentYyKtvMusicListBinding4 != null && (smartRefreshLayout2 = fragmentYyKtvMusicListBinding4.a) != null) {
             smartRefreshLayout2.a(bluedLoadMoreView);
         }
         FragmentYyKtvMusicListBinding fragmentYyKtvMusicListBinding5 = this.b;
-        if (fragmentYyKtvMusicListBinding5 != null && (smartRefreshLayout = fragmentYyKtvMusicListBinding5.f16519a) != null && (refreshFooter = smartRefreshLayout.getRefreshFooter()) != null && (view = refreshFooter.getView()) != null && (frameLayout = (FrameLayout) view.findViewById(R.id.layout_load_more_view)) != null) {
+        if (fragmentYyKtvMusicListBinding5 != null && (smartRefreshLayout = fragmentYyKtvMusicListBinding5.a) != null && (refreshFooter = smartRefreshLayout.getRefreshFooter()) != null && (view = refreshFooter.getView()) != null && (frameLayout = (FrameLayout) view.findViewById(R.id.layout_load_more_view)) != null) {
             frameLayout.setBackgroundResource(R.color.transparent);
         }
         View inflate = View.inflate(getContext(), R.layout.layout_load_end_footer, null);
@@ -354,9 +344,9 @@ public final class YYKtvMusicListFragment extends BaseFragment {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void c() {
-        String str = this.f17307a;
+        String str = this.a;
         String str2 = this.e;
-        YYRoomModel yYRoomModel = this.f17308c;
+        YYRoomModel yYRoomModel = this.c;
         String str3 = yYRoomModel == null ? null : yYRoomModel.room_id;
         final ActivityFragmentActive fragmentActive = getFragmentActive();
         YYRoomHttpUtils.b(str, str2, str3, "1", (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntity<YYKtvMusicModel, YYKtvMusicExtra>>(fragmentActive) { // from class: com.blued.android.module.yy_china.fragment.YYKtvMusicListFragment$loadData$1
@@ -394,13 +384,13 @@ public final class YYKtvMusicListFragment extends BaseFragment {
         this.f = onCLickSingNumListener;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        this.f17308c = YYRoomInfoManager.e().b();
+        this.c = YYRoomInfoManager.e().b();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
         View inflate = getLayoutInflater().inflate(R.layout.fragment_yy_ktv_music_list, (ViewGroup) null);
@@ -409,29 +399,29 @@ public final class YYKtvMusicListFragment extends BaseFragment {
         return inflate;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onResume() {
         SmartRefreshLayout smartRefreshLayout;
         super.onResume();
         FragmentYyKtvMusicListBinding fragmentYyKtvMusicListBinding = this.b;
-        if (fragmentYyKtvMusicListBinding == null || (smartRefreshLayout = fragmentYyKtvMusicListBinding.f16519a) == null) {
+        if (fragmentYyKtvMusicListBinding == null || (smartRefreshLayout = fragmentYyKtvMusicListBinding.a) == null) {
             return;
         }
         smartRefreshLayout.i();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onViewCreated(View view, Bundle bundle) {
         Intrinsics.e(view, "view");
         super.onViewCreated(view, bundle);
         ChatRoomProtos.Event event = ChatRoomProtos.Event.CHAT_ROOM_KTV_SONG_TAB_SHOW;
-        YYRoomModel yYRoomModel = this.f17308c;
+        YYRoomModel yYRoomModel = this.c;
         String str = null;
         String str2 = yYRoomModel == null ? null : yYRoomModel.room_id;
-        YYRoomModel yYRoomModel2 = this.f17308c;
+        YYRoomModel yYRoomModel2 = this.c;
         if (yYRoomModel2 != null) {
             str = yYRoomModel2.uid;
         }
-        EventTrackYY.b(event, str2, str, this.f17307a);
+        EventTrackYY.b(event, str2, str, this.a);
     }
 }

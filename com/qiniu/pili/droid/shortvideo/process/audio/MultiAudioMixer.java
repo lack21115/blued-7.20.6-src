@@ -12,11 +12,11 @@ import java.util.List;
 public class MultiAudioMixer implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final boolean f27786a = h.a().c();
+    private static final boolean f14098a = h.a().c();
     private ArrayList<PLMixAudioFile> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private a f27787c;
+    private a f14099c;
     private volatile long g;
     private long mMixerId = 0;
     private volatile boolean d = false;
@@ -58,7 +58,7 @@ public class MultiAudioMixer implements Runnable {
     private void a(ByteBuffer[] byteBufferArr, float[] fArr, long j) {
         byte[] mix = mix(byteBufferArr, fArr);
         if (mix != null) {
-            a(this.f27787c, mix, j);
+            a(this.f14099c, mix, j);
         }
     }
 
@@ -69,7 +69,7 @@ public class MultiAudioMixer implements Runnable {
         ArrayList<PLMixAudioFile> c2 = c(j);
         if (j >= this.g * 1000) {
             this.f = true;
-            a(this.f27787c);
+            a(this.f14099c);
             return;
         }
         if (c2.isEmpty()) {
@@ -153,7 +153,7 @@ public class MultiAudioMixer implements Runnable {
         ArrayList<PLMixAudioFile> c2 = c(d);
         if (this.b.get(0).b().c() || c2.isEmpty() || !c2.contains(this.b.get(0))) {
             this.f = true;
-            a(this.f27787c);
+            a(this.f14099c);
             return;
         }
         ByteBuffer[] byteBufferArr = new ByteBuffer[c2.size()];
@@ -183,7 +183,7 @@ public class MultiAudioMixer implements Runnable {
     }
 
     public void a(List<PLMixAudioFile> list, a aVar) {
-        if (!f27786a) {
+        if (!f14098a) {
             e.r.c("can't found pldroid_amix.so !");
             a(aVar, 12);
             return;
@@ -197,7 +197,7 @@ public class MultiAudioMixer implements Runnable {
             a(aVar, 10);
         } else {
             this.b = new ArrayList<>(list);
-            this.f27787c = aVar;
+            this.f14099c = aVar;
             this.e = false;
             this.f = false;
             new Thread(this).start();
@@ -217,7 +217,7 @@ public class MultiAudioMixer implements Runnable {
         }
         d();
         if (this.e) {
-            a(this.f27787c);
+            a(this.f14099c);
         }
         this.d = false;
         this.e = false;

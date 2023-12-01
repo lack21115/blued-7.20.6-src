@@ -27,7 +27,6 @@ public final class RemoteConnectionService {
     private static final RemoteConnection NULL_CONNECTION = new RemoteConnection(WifiEnterpriseConfig.EMPTY_VALUE, (IConnectionService) null, (ConnectionRequest) null);
     private static final RemoteConference NULL_CONFERENCE = new RemoteConference(WifiEnterpriseConfig.EMPTY_VALUE, null);
     private final IConnectionServiceAdapter mServantDelegate = new IConnectionServiceAdapter() { // from class: android.telecom.RemoteConnectionService.1
-        @Override // com.android.internal.telecom.IConnectionServiceAdapter
         public void addConferenceCall(final String str, ParcelableConference parcelableConference) {
             RemoteConference remoteConference = new RemoteConference(str, RemoteConnectionService.this.mOutgoingConnectionServiceRpc);
             for (String str2 : parcelableConference.getConnectionIds()) {
@@ -52,17 +51,14 @@ public final class RemoteConnectionService {
             RemoteConnectionService.this.mOurConnectionServiceImpl.addRemoteConference(remoteConference);
         }
 
-        @Override // com.android.internal.telecom.IConnectionServiceAdapter
         public void addExistingConnection(String str, ParcelableConnection parcelableConnection) {
             RemoteConnectionService.this.mOurConnectionServiceImpl.addRemoteExistingConnection(new RemoteConnection(str, RemoteConnectionService.this.mOutgoingConnectionServiceRpc, parcelableConnection));
         }
 
-        @Override // android.os.IInterface
         public IBinder asBinder() {
             throw new UnsupportedOperationException();
         }
 
-        @Override // com.android.internal.telecom.IConnectionServiceAdapter
         public void handleCreateConnectionComplete(String str, ConnectionRequest connectionRequest, ParcelableConnection parcelableConnection) {
             RemoteConnection findConnectionForAction = RemoteConnectionService.this.findConnectionForAction(str, "handleCreateConnectionSuccessful");
             if (findConnectionForAction == RemoteConnectionService.NULL_CONNECTION || !RemoteConnectionService.this.mPendingConnections.contains(findConnectionForAction)) {
@@ -92,21 +88,17 @@ public final class RemoteConnectionService {
             }
         }
 
-        @Override // com.android.internal.telecom.IConnectionServiceAdapter
         public void onPostDialChar(String str, char c2) {
             RemoteConnectionService.this.findConnectionForAction(str, "onPostDialChar").onPostDialChar(c2);
         }
 
-        @Override // com.android.internal.telecom.IConnectionServiceAdapter
         public void onPostDialWait(String str, String str2) {
             RemoteConnectionService.this.findConnectionForAction(str, "onPostDialWait").setPostDialWait(str2);
         }
 
-        @Override // com.android.internal.telecom.IConnectionServiceAdapter
         public void queryRemoteConnectionServices(RemoteServiceCallback remoteServiceCallback) {
         }
 
-        @Override // com.android.internal.telecom.IConnectionServiceAdapter
         public void removeCall(String str) {
             if (RemoteConnectionService.this.mConnectionById.containsKey(str)) {
                 RemoteConnectionService.this.findConnectionForAction(str, "removeCall").setDestroyed();
@@ -115,7 +107,6 @@ public final class RemoteConnectionService {
             }
         }
 
-        @Override // com.android.internal.telecom.IConnectionServiceAdapter
         public void setActive(String str) {
             if (RemoteConnectionService.this.mConnectionById.containsKey(str)) {
                 RemoteConnectionService.this.findConnectionForAction(str, "setActive").setState(4);
@@ -124,12 +115,10 @@ public final class RemoteConnectionService {
             }
         }
 
-        @Override // com.android.internal.telecom.IConnectionServiceAdapter
         public void setAddress(String str, Uri uri, int i) {
             RemoteConnectionService.this.findConnectionForAction(str, "setAddress").setAddress(uri, i);
         }
 
-        @Override // com.android.internal.telecom.IConnectionServiceAdapter
         public void setCallProperties(String str, int i) {
             if (RemoteConnectionService.this.mConnectionById.containsKey(str)) {
                 RemoteConnectionService.this.findConnectionForAction(str, "setCallProperties").setCallProperties(i);
@@ -138,17 +127,14 @@ public final class RemoteConnectionService {
             }
         }
 
-        @Override // com.android.internal.telecom.IConnectionServiceAdapter
         public void setCallSubstate(String str, int i) {
             RemoteConnectionService.this.findConnectionForAction(str, "callSubstate").setCallSubstate(i);
         }
 
-        @Override // com.android.internal.telecom.IConnectionServiceAdapter
         public void setCallerDisplayName(String str, String str2, int i) {
             RemoteConnectionService.this.findConnectionForAction(str, "setCallerDisplayName").setCallerDisplayName(str2, i);
         }
 
-        @Override // com.android.internal.telecom.IConnectionServiceAdapter
         public final void setConferenceableConnections(String str, List<String> list) {
             ArrayList arrayList = new ArrayList();
             for (String str2 : list) {
@@ -163,7 +149,6 @@ public final class RemoteConnectionService {
             }
         }
 
-        @Override // com.android.internal.telecom.IConnectionServiceAdapter
         public void setConnectionCapabilities(String str, int i) {
             if (RemoteConnectionService.this.mConnectionById.containsKey(str)) {
                 RemoteConnectionService.this.findConnectionForAction(str, "setConnectionCapabilities").setConnectionCapabilities(i);
@@ -172,12 +157,10 @@ public final class RemoteConnectionService {
             }
         }
 
-        @Override // com.android.internal.telecom.IConnectionServiceAdapter
         public void setDialing(String str) {
             RemoteConnectionService.this.findConnectionForAction(str, "setDialing").setState(3);
         }
 
-        @Override // com.android.internal.telecom.IConnectionServiceAdapter
         public void setDisconnected(String str, DisconnectCause disconnectCause) {
             if (RemoteConnectionService.this.mConnectionById.containsKey(str)) {
                 RemoteConnectionService.this.findConnectionForAction(str, "setDisconnected").setDisconnected(disconnectCause);
@@ -186,11 +169,9 @@ public final class RemoteConnectionService {
             }
         }
 
-        @Override // com.android.internal.telecom.IConnectionServiceAdapter
         public void setExtras(String str, Bundle bundle) {
         }
 
-        @Override // com.android.internal.telecom.IConnectionServiceAdapter
         public void setIsConferenced(String str, String str2) {
             RemoteConnection findConnectionForAction = RemoteConnectionService.this.findConnectionForAction(str, "setIsConferenced");
             if (findConnectionForAction != RemoteConnectionService.NULL_CONNECTION) {
@@ -208,12 +189,10 @@ public final class RemoteConnectionService {
             }
         }
 
-        @Override // com.android.internal.telecom.IConnectionServiceAdapter
         public void setIsVoipAudioMode(String str, boolean z) {
             RemoteConnectionService.this.findConnectionForAction(str, "setIsVoipAudioMode").setIsVoipAudioMode(z);
         }
 
-        @Override // com.android.internal.telecom.IConnectionServiceAdapter
         public void setOnHold(String str) {
             if (RemoteConnectionService.this.mConnectionById.containsKey(str)) {
                 RemoteConnectionService.this.findConnectionForAction(str, "setOnHold").setState(5);
@@ -222,32 +201,26 @@ public final class RemoteConnectionService {
             }
         }
 
-        @Override // com.android.internal.telecom.IConnectionServiceAdapter
         public void setPhoneAccountHandle(String str, PhoneAccountHandle phoneAccountHandle) {
             RemoteConnectionService.this.findConnectionForAction(str, "setPhoneAccountHandle").setPhoneAccountHandle(phoneAccountHandle);
         }
 
-        @Override // com.android.internal.telecom.IConnectionServiceAdapter
         public void setRingbackRequested(String str, boolean z) {
             RemoteConnectionService.this.findConnectionForAction(str, "setRingbackRequested").setRingbackRequested(z);
         }
 
-        @Override // com.android.internal.telecom.IConnectionServiceAdapter
         public void setRinging(String str) {
             RemoteConnectionService.this.findConnectionForAction(str, "setRinging").setState(2);
         }
 
-        @Override // com.android.internal.telecom.IConnectionServiceAdapter
         public void setStatusHints(String str, StatusHints statusHints) {
             RemoteConnectionService.this.findConnectionForAction(str, "setStatusHints").setStatusHints(statusHints);
         }
 
-        @Override // com.android.internal.telecom.IConnectionServiceAdapter
         public void setVideoProvider(String str, IVideoProvider iVideoProvider) {
             RemoteConnectionService.this.findConnectionForAction(str, "setVideoProvider").setVideoProvider(new RemoteConnection.VideoProvider(iVideoProvider));
         }
 
-        @Override // com.android.internal.telecom.IConnectionServiceAdapter
         public void setVideoState(String str, int i) {
             RemoteConnectionService.this.findConnectionForAction(str, "setVideoState").setVideoState(i);
         }

@@ -8,9 +8,7 @@ import org.apache.http.Header;
 /* loaded from: source-6737240-dex2jar.jar:com/alipay/android/phone/mrpc/core/o.class */
 public final class o extends t {
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private byte[] f4533c;
+    private byte[] c;
     private boolean g;
     private ArrayList<Header> e = new ArrayList<>();
     private Map<String, String> f = new HashMap();
@@ -44,7 +42,7 @@ public final class o extends t {
     }
 
     public final void a(byte[] bArr) {
-        this.f4533c = bArr;
+        this.c = bArr;
     }
 
     public final String b(String str) {
@@ -56,7 +54,7 @@ public final class o extends t {
     }
 
     public final byte[] b() {
-        return this.f4533c;
+        return this.c;
     }
 
     public final String c() {
@@ -77,12 +75,12 @@ public final class o extends t {
         }
         if (obj != null && getClass() == obj.getClass()) {
             o oVar = (o) obj;
-            byte[] bArr = this.f4533c;
+            byte[] bArr = this.c;
             if (bArr == null) {
-                if (oVar.f4533c != null) {
+                if (oVar.c != null) {
                     return false;
                 }
-            } else if (!bArr.equals(oVar.f4533c)) {
+            } else if (!bArr.equals(oVar.c)) {
                 return false;
             }
             String str = this.b;

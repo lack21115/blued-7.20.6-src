@@ -21,12 +21,8 @@ public class b {
     private Context h;
     private File i;
     private AtomicInteger j;
-
-    /* renamed from: a  reason: collision with root package name */
-    private final String f6766a = "Agent";
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f6767c = 5;
+    private final String a = "Agent";
+    private int c = 5;
     private int d = 10;
     private long e = 1800000;
     private String f = "";
@@ -182,7 +178,7 @@ public class b {
             if (this.h == null) {
                 return;
             }
-            if (this.k || (!z && (this.j == null || this.j.get() < this.f6767c))) {
+            if (this.k || (!z && (this.j == null || this.j.get() < this.c))) {
                 return;
             }
             this.k = true;

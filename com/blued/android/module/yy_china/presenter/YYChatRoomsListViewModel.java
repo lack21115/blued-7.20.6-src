@@ -27,7 +27,6 @@ import com.blued.android.module.yy_china.model.YYRoomModel;
 import com.blued.android.module.yy_china.utils.YYRoomHttpUtils;
 import com.blued.android.module.yy_china.utils.log.EventTrackYY;
 import com.blued.das.client.chatroom.ChatRoomProtos;
-import com.bytedance.sdk.openadsdk.live.TTLiveConstants;
 import java.util.ArrayList;
 import java.util.List;
 import kotlin.Metadata;
@@ -37,13 +36,9 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/presenter/YYChatRoomsListViewModel.class */
 public final class YYChatRoomsListViewModel extends BaseViewModel {
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f17747c;
+    private String c;
     private List<? extends HomeTopicModel> o;
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f17746a = "0";
+    private String a = "0";
     private final MutableLiveData<List<HomeTopicModel>> d = new MutableLiveData<>();
     private final MutableLiveData<Boolean> e = new MutableLiveData<>();
     private final MutableLiveData<Boolean> f = new MutableLiveData<>();
@@ -130,7 +125,7 @@ public final class YYChatRoomsListViewModel extends BaseViewModel {
         Intrinsics.c(string, "it.getString(\"type_id\", \"0\")");
         a(string);
         b(bundle.getString("from_source", ""));
-        c(bundle.getString(TTLiveConstants.ROOMID_KEY, ""));
+        c(bundle.getString("room_id", ""));
     }
 
     public final void a(ActivityFragmentActive fragmentActive) {
@@ -144,9 +139,7 @@ public final class YYChatRoomsListViewModel extends BaseViewModel {
         Intrinsics.e(active, "active");
         YYRoomHttpUtils.a(str, str2, str5, str3, z, i, new BluedUIHttpResponse<BluedEntity<YYRoomModel, YYExRoomModel>>(this, active, str4, str) { // from class: com.blued.android.module.yy_china.presenter.YYChatRoomsListViewModel$createYYRoom$1
             final /* synthetic */ YYChatRoomsListViewModel b;
-
-            /* renamed from: c  reason: collision with root package name */
-            final /* synthetic */ Activity f17749c;
+            final /* synthetic */ Activity c;
             final /* synthetic */ String d;
             final /* synthetic */ String e;
 
@@ -155,7 +148,7 @@ public final class YYChatRoomsListViewModel extends BaseViewModel {
             {
                 super(ActivityFragmentActive.this);
                 this.b = this;
-                this.f17749c = active;
+                this.c = active;
                 this.d = str4;
                 this.e = str;
             }
@@ -190,7 +183,7 @@ public final class YYChatRoomsListViewModel extends BaseViewModel {
                 if (singleData == null) {
                     return;
                 }
-                Activity activity = this.f17749c;
+                Activity activity = this.c;
                 String str6 = this.d;
                 ActivityFragmentActive activityFragmentActive = ActivityFragmentActive.this;
                 YYExRoomModel yYExRoomModel = response.extra;
@@ -221,7 +214,7 @@ public final class YYChatRoomsListViewModel extends BaseViewModel {
 
     public final void a(String str) {
         Intrinsics.e(str, "<set-?>");
-        this.f17746a = str;
+        this.a = str;
     }
 
     public final void a(List<? extends HomeTopicModel> list) {
@@ -290,11 +283,11 @@ public final class YYChatRoomsListViewModel extends BaseViewModel {
     }
 
     public final void c(String str) {
-        this.f17747c = str;
+        this.c = str;
     }
 
     public final String d() {
-        return this.f17746a;
+        return this.a;
     }
 
     public final void d(final ActivityFragmentActive fragmentActive) {

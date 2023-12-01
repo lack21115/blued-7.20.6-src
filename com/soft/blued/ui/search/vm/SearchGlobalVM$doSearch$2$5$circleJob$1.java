@@ -18,36 +18,33 @@ import kotlinx.coroutines.CoroutineScope;
 final class SearchGlobalVM$doSearch$2$5$circleJob$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super BluedEntityA<BluedTopic>>, Object> {
 
     /* renamed from: a  reason: collision with root package name */
-    int f33202a;
+    int f19511a;
     final /* synthetic */ SearchGlobalVM b;
 
     /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ String f33203c;
+    final /* synthetic */ String f19512c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public SearchGlobalVM$doSearch$2$5$circleJob$1(SearchGlobalVM searchGlobalVM, String str, Continuation<? super SearchGlobalVM$doSearch$2$5$circleJob$1> continuation) {
         super(2, continuation);
         this.b = searchGlobalVM;
-        this.f33203c = str;
+        this.f19512c = str;
     }
 
-    @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super BluedEntityA<BluedTopic>> continuation) {
-        return ((SearchGlobalVM$doSearch$2$5$circleJob$1) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+        return create(coroutineScope, continuation).invokeSuspend(Unit.a);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        return new SearchGlobalVM$doSearch$2$5$circleJob$1(this.b, this.f33203c, continuation);
+        return new SearchGlobalVM$doSearch$2$5$circleJob$1(this.b, this.f19512c, continuation);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         Object b;
         Object a2 = IntrinsicsKt.a();
-        int i = this.f33202a;
+        int i = this.f19511a;
         if (i != 0) {
             if (i == 1) {
                 ResultKt.a(obj);
@@ -56,8 +53,8 @@ final class SearchGlobalVM$doSearch$2$5$circleJob$1 extends SuspendLambda implem
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         }
         ResultKt.a(obj);
-        this.f33202a = 1;
-        b = this.b.b(this.f33203c, this);
+        this.f19511a = 1;
+        b = this.b.b(this.f19512c, (Continuation) this);
         return b == a2 ? a2 : b;
     }
 }

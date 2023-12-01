@@ -16,6 +16,7 @@ import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.net.IRequestHost;
 import com.blued.android.framework.utils.UiUtils;
 import com.bumptech.glide.request.target.CustomTarget;
+import com.bumptech.glide.request.target.Target;
 import com.bumptech.glide.request.transition.Transition;
 import io.noties.markwon.AbstractMarkwonPlugin;
 import io.noties.markwon.MarkwonConfiguration;
@@ -42,9 +43,7 @@ import org.commonmark.node.Text;
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/ui/markdown/image/MarkdownGlideImagesPlugin.class */
 public class MarkdownGlideImagesPlugin extends AbstractMarkwonPlugin {
     private static final Pattern b = Pattern.compile("^[\\s\\S]*\\D+(\\d+)x(\\d+)\\s*$");
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final Pattern f9909c = Pattern.compile("^\\s*(\\d+)x(\\d+)\\s*$");
+    private static final Pattern c = Pattern.compile("^\\s*(\\d+)x(\\d+)\\s*$");
     private IRequestHost g;
     private int h;
     private int i;
@@ -54,9 +53,7 @@ public class MarkdownGlideImagesPlugin extends AbstractMarkwonPlugin {
     private String m;
     private OnClickImageListener n;
     private int o = 0;
-
-    /* renamed from: a  reason: collision with root package name */
-    List<DrawableTargetModel> f9910a = new ArrayList();
+    List<DrawableTargetModel> a = new ArrayList();
     private GlideAsyncDrawableLoader f = new GlideAsyncDrawableLoader();
     private HashMap<ClickableSpan, Integer> d = new HashMap<>();
     private ArrayList<String> e = new ArrayList<>();
@@ -64,13 +61,11 @@ public class MarkdownGlideImagesPlugin extends AbstractMarkwonPlugin {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/ui/markdown/image/MarkdownGlideImagesPlugin$DrawableTargetModel.class */
     public class DrawableTargetModel {
-
-        /* renamed from: a  reason: collision with root package name */
-        public AsyncDrawable f9914a;
+        public AsyncDrawable a;
         public GlideAsyncDrawableLoader.AsyncDrawableTarget b;
 
         DrawableTargetModel(AsyncDrawable asyncDrawable) {
-            this.f9914a = asyncDrawable;
+            this.a = asyncDrawable;
         }
     }
 
@@ -87,16 +82,15 @@ public class MarkdownGlideImagesPlugin extends AbstractMarkwonPlugin {
                 this.b = asyncDrawable;
             }
 
-            @Override // com.bumptech.glide.request.target.Target
             /* renamed from: a */
             public void onResourceReady(Drawable drawable, Transition<? super Drawable> transition) {
-                synchronized (MarkdownGlideImagesPlugin.this.f9910a) {
+                synchronized (MarkdownGlideImagesPlugin.this.a) {
                     int i = 0;
                     while (true) {
                         int i2 = i;
-                        if (i2 >= MarkdownGlideImagesPlugin.this.f9910a.size()) {
+                        if (i2 >= MarkdownGlideImagesPlugin.this.a.size()) {
                             break;
-                        } else if (MarkdownGlideImagesPlugin.this.f9910a.get(i2).f9914a != this.b) {
+                        } else if (MarkdownGlideImagesPlugin.this.a.get(i2).a != this.b) {
                             i = i2 + 1;
                         } else if (this.b.isAttached()) {
                             DrawableUtils.applyIntrinsicBoundsIfEmpty(drawable);
@@ -109,7 +103,6 @@ public class MarkdownGlideImagesPlugin extends AbstractMarkwonPlugin {
                 }
             }
 
-            @Override // com.bumptech.glide.request.target.Target
             public void onLoadCleared(Drawable drawable) {
                 if (this.b.isAttached()) {
                     if (AppInfo.m()) {
@@ -119,18 +112,17 @@ public class MarkdownGlideImagesPlugin extends AbstractMarkwonPlugin {
                 }
             }
 
-            @Override // com.bumptech.glide.request.target.CustomTarget, com.bumptech.glide.request.target.Target
             public void onLoadFailed(Drawable drawable) {
                 if (AppInfo.m()) {
                     Log.i("Markdown", "onLoadFailed: " + this.b.getDestination());
                 }
-                synchronized (MarkdownGlideImagesPlugin.this.f9910a) {
+                synchronized (MarkdownGlideImagesPlugin.this.a) {
                     int i = 0;
                     while (true) {
                         int i2 = i;
-                        if (i2 >= MarkdownGlideImagesPlugin.this.f9910a.size()) {
+                        if (i2 >= MarkdownGlideImagesPlugin.this.a.size()) {
                             break;
-                        } else if (MarkdownGlideImagesPlugin.this.f9910a.get(i2).f9914a != this.b) {
+                        } else if (MarkdownGlideImagesPlugin.this.a.get(i2).a != this.b) {
                             i = i2 + 1;
                         } else if (drawable != null) {
                             this.b.isAttached();
@@ -139,7 +131,6 @@ public class MarkdownGlideImagesPlugin extends AbstractMarkwonPlugin {
                 }
             }
 
-            @Override // com.bumptech.glide.request.target.CustomTarget, com.bumptech.glide.request.target.Target
             public void onLoadStarted(Drawable drawable) {
                 if (AppInfo.m()) {
                     Log.i("Markdown", "onLoadStarted: " + this.b.getDestination());
@@ -156,17 +147,17 @@ public class MarkdownGlideImagesPlugin extends AbstractMarkwonPlugin {
         /* JADX INFO: Access modifiers changed from: private */
         public void a() {
             if (MarkdownGlideImagesPlugin.this.g == null || MarkdownGlideImagesPlugin.this.g.isActive()) {
-                synchronized (MarkdownGlideImagesPlugin.this.f9910a) {
+                synchronized (MarkdownGlideImagesPlugin.this.a) {
                     int i = 0;
                     while (true) {
                         int i2 = i;
-                        if (i2 >= MarkdownGlideImagesPlugin.this.f9910a.size()) {
+                        if (i2 >= MarkdownGlideImagesPlugin.this.a.size()) {
                             break;
-                        } else if (MarkdownGlideImagesPlugin.this.f9910a.get(i2).f9914a == null || MarkdownGlideImagesPlugin.this.f9910a.get(i2).b != null) {
+                        } else if (MarkdownGlideImagesPlugin.this.a.get(i2).a == null || MarkdownGlideImagesPlugin.this.a.get(i2).b != null) {
                             i = i2 + 1;
                         } else {
-                            MarkdownGlideImagesPlugin.this.f9910a.get(i2).b = new AsyncDrawableTarget(MarkdownGlideImagesPlugin.this.f9910a.get(i2).f9914a);
-                            final String str = MarkdownGlideImagesPlugin.this.f9910a.get(i2).f9914a.getDestination() + MarkdownGlideImagesPlugin.this.m;
+                            MarkdownGlideImagesPlugin.this.a.get(i2).b = new AsyncDrawableTarget(MarkdownGlideImagesPlugin.this.a.get(i2).a);
+                            final String str = MarkdownGlideImagesPlugin.this.a.get(i2).a.getDestination() + MarkdownGlideImagesPlugin.this.m;
                             if (MarkdownGlideImagesPlugin.this.g != null && !MarkdownGlideImagesPlugin.this.g.isActive()) {
                                 return;
                             }
@@ -182,7 +173,7 @@ public class MarkdownGlideImagesPlugin extends AbstractMarkwonPlugin {
                                     }
                                     GlideAsyncDrawableLoader.this.a();
                                 }
-                            }).a(MarkdownGlideImagesPlugin.this.f9910a.get(i2).b);
+                            }).a((Target<Drawable>) MarkdownGlideImagesPlugin.this.a.get(i2).b);
                         }
                     }
                 }
@@ -194,19 +185,19 @@ public class MarkdownGlideImagesPlugin extends AbstractMarkwonPlugin {
             if (AppInfo.m()) {
                 Log.i("Markdown", "cancel drawable=" + asyncDrawable.getDestination());
             }
-            synchronized (MarkdownGlideImagesPlugin.this.f9910a) {
+            synchronized (MarkdownGlideImagesPlugin.this.a) {
                 int i = 0;
                 while (true) {
                     int i2 = i;
-                    if (i2 >= MarkdownGlideImagesPlugin.this.f9910a.size()) {
+                    if (i2 >= MarkdownGlideImagesPlugin.this.a.size()) {
                         break;
-                    } else if (MarkdownGlideImagesPlugin.this.f9910a.get(i2).f9914a == asyncDrawable) {
-                        AsyncDrawableTarget asyncDrawableTarget = MarkdownGlideImagesPlugin.this.f9910a.get(i2).b;
+                    } else if (MarkdownGlideImagesPlugin.this.a.get(i2).a == asyncDrawable) {
+                        AsyncDrawableTarget asyncDrawableTarget = MarkdownGlideImagesPlugin.this.a.get(i2).b;
                         if (asyncDrawableTarget != null) {
                             if (AppInfo.m()) {
                                 Log.i("Markdown", "cancel target=" + asyncDrawable);
                             }
-                            ImageLoader.a(MarkdownGlideImagesPlugin.this.g, asyncDrawableTarget);
+                            ImageLoader.a(MarkdownGlideImagesPlugin.this.g, (Target<Drawable>) asyncDrawableTarget);
                         }
                     } else {
                         i = i2 + 1;
@@ -218,9 +209,9 @@ public class MarkdownGlideImagesPlugin extends AbstractMarkwonPlugin {
         @Override // io.noties.markwon.image.AsyncDrawableLoader
         public void load(AsyncDrawable asyncDrawable) {
             if (asyncDrawable != null) {
-                synchronized (MarkdownGlideImagesPlugin.this.f9910a) {
-                    MarkdownGlideImagesPlugin.this.f9910a.add(0, new DrawableTargetModel(asyncDrawable));
-                    int size = MarkdownGlideImagesPlugin.this.f9910a.size();
+                synchronized (MarkdownGlideImagesPlugin.this.a) {
+                    MarkdownGlideImagesPlugin.this.a.add(0, new DrawableTargetModel(asyncDrawable));
+                    int size = MarkdownGlideImagesPlugin.this.a.size();
                     if (AppInfo.m()) {
                         Log.i("Markdown", "GlideAsyncDrawableLoader.load " + asyncDrawable.getDestination() + ",  listSize:" + size + ", imageArraySize:" + MarkdownGlideImagesPlugin.this.o);
                     }
@@ -311,14 +302,14 @@ public class MarkdownGlideImagesPlugin extends AbstractMarkwonPlugin {
                     Text text = (Text) image.j();
                     imageSize2 = null;
                     if (text != null) {
-                        String a2 = text.a();
+                        String a = text.a();
                         imageSize2 = null;
-                        if (!TextUtils.isEmpty(a2)) {
-                            ImageSize a3 = a(b, a2);
-                            imageSize2 = a3;
-                            if (a3 == null) {
-                                imageSize = a3;
-                                imageSize2 = a(f9909c, a2);
+                        if (!TextUtils.isEmpty(a)) {
+                            ImageSize a2 = a(b, a);
+                            imageSize2 = a2;
+                            if (a2 == null) {
+                                imageSize = a2;
+                                imageSize2 = a(c, a);
                             }
                         }
                     }
@@ -344,12 +335,12 @@ public class MarkdownGlideImagesPlugin extends AbstractMarkwonPlugin {
         }
         MarkwonConfiguration configuration = markwonVisitor.configuration();
         boolean z = image.b() instanceof Link;
-        ImageSize a2 = a(image);
+        ImageSize a = a(image);
         String process = configuration.imageDestinationProcessor().process(image.a());
         RenderProps renderProps = markwonVisitor.renderProps();
         ImageProps.DESTINATION.set(renderProps, process);
         ImageProps.REPLACEMENT_TEXT_IS_LINK.set(renderProps, Boolean.valueOf(z));
-        ImageProps.IMAGE_SIZE.set(renderProps, a2);
+        ImageProps.IMAGE_SIZE.set(renderProps, a);
         markwonVisitor.setSpans(length, spanFactory.getSpans(configuration, renderProps));
         ClickableSpan clickableSpan = new ClickableSpan() { // from class: com.blued.android.framework.ui.markdown.image.MarkdownGlideImagesPlugin.3
             @Override // android.text.style.ClickableSpan
@@ -379,21 +370,21 @@ public class MarkdownGlideImagesPlugin extends AbstractMarkwonPlugin {
     }
 
     public void a() {
-        List<DrawableTargetModel> list = this.f9910a;
+        List<DrawableTargetModel> list = this.a;
         if (list == null || list.size() == 0) {
             return;
         }
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f9910a.size()) {
+            if (i2 >= this.a.size()) {
                 return;
             }
-            if (this.f9910a.get(i2).b != null) {
-                ImageLoader.a(this.g, this.f9910a.get(i2).b);
+            if (this.a.get(i2).b != null) {
+                ImageLoader.a(this.g, (Target<Drawable>) this.a.get(i2).b);
             }
-            if (this.f9910a.get(i2).f9914a != null) {
-                this.f9910a.get(i2).f9914a.clearResult();
+            if (this.a.get(i2).a != null) {
+                this.a.get(i2).a.clearResult();
             }
             i = i2 + 1;
         }
@@ -467,7 +458,7 @@ public class MarkdownGlideImagesPlugin extends AbstractMarkwonPlugin {
     public String processMarkdown(String str) {
         this.d = new HashMap<>();
         this.e = new ArrayList<>();
-        this.f9910a.clear();
+        this.a.clear();
         return str;
     }
 }

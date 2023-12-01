@@ -12,11 +12,11 @@ import android.widget.RelativeLayout;
 public class k {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile k f27076a;
+    private static volatile k f13388a;
     private RelativeLayout.LayoutParams b;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f27077c = false;
+    private boolean f13389c = false;
     private Handler d = new Handler(Looper.getMainLooper());
     private Runnable e = new Runnable() { // from class: com.opos.mobad.o.b.k.1
         @Override // java.lang.Runnable
@@ -38,10 +38,10 @@ public class k {
         private boolean b = true;
 
         /* renamed from: c  reason: collision with root package name */
-        private f f27081c;
+        private f f13393c;
 
         public a(f fVar) {
-            this.f27081c = fVar;
+            this.f13393c = fVar;
         }
 
         public void a() {
@@ -53,19 +53,19 @@ public class k {
             if (this.b) {
                 k.this.f = false;
             }
-            f fVar = this.f27081c;
+            f fVar = this.f13393c;
             if (fVar != null) {
                 fVar.a(i, str);
             }
         }
 
         public void a(f fVar) {
-            this.f27081c = fVar;
+            this.f13393c = fVar;
         }
 
         @Override // com.opos.mobad.o.b.f
         public void a(String str, long j) {
-            f fVar = this.f27081c;
+            f fVar = this.f13393c;
             if (fVar != null) {
                 fVar.a(str, j);
             }
@@ -77,11 +77,11 @@ public class k {
                 k.this.f = true;
             }
             k.this.d.post(k.this.e);
-            f fVar = this.f27081c;
+            f fVar = this.f13393c;
             if (fVar != null) {
                 fVar.c();
             }
-            k.this.f27077c = false;
+            k.this.f13389c = false;
             com.opos.cmn.an.f.a.b("VideoPlayer", "onPrepare url:" + k.this.g);
         }
 
@@ -90,19 +90,19 @@ public class k {
             if (this.b) {
                 k.this.f = true;
             }
-            f fVar = this.f27081c;
+            f fVar = this.f13393c;
             if (fVar != null) {
                 fVar.d();
             }
-            if (k.this.f27077c) {
+            if (k.this.f13389c) {
                 k.this.d.post(new Runnable() { // from class: com.opos.mobad.o.b.k.a.1
                     @Override // java.lang.Runnable
                     public void run() {
-                        if (k.this.h != null && k.this.f27077c) {
+                        if (k.this.h != null && k.this.f13389c) {
                             com.opos.cmn.an.f.a.b("VideoPlayer", "onStart but pauseVideo");
                             k.this.h.f();
                         }
-                        k.this.f27077c = false;
+                        k.this.f13389c = false;
                     }
                 });
             }
@@ -115,7 +115,7 @@ public class k {
                 k.this.c();
             }
             k.this.d.removeCallbacks(k.this.e);
-            f fVar = this.f27081c;
+            f fVar = this.f13393c;
             if (fVar != null) {
                 fVar.e();
             }
@@ -127,7 +127,7 @@ public class k {
                 k.this.f = true;
             }
             k.this.d.post(k.this.e);
-            f fVar = this.f27081c;
+            f fVar = this.f13393c;
             if (fVar != null) {
                 fVar.f();
             }
@@ -139,7 +139,7 @@ public class k {
                 k.this.f = false;
             }
             k.this.d.removeCallbacks(k.this.e);
-            f fVar = this.f27081c;
+            f fVar = this.f13393c;
             if (fVar != null) {
                 fVar.g();
             }
@@ -147,7 +147,7 @@ public class k {
 
         @Override // com.opos.mobad.c.c.b
         public void h() {
-            f fVar = this.f27081c;
+            f fVar = this.f13393c;
             if (fVar != null) {
                 fVar.h();
             }
@@ -155,7 +155,7 @@ public class k {
 
         @Override // com.opos.mobad.c.c.b
         public void i() {
-            f fVar = this.f27081c;
+            f fVar = this.f13393c;
             if (fVar != null) {
                 fVar.i();
             }
@@ -174,15 +174,15 @@ public class k {
 
     public static k a() {
         k kVar;
-        k kVar2 = f27076a;
+        k kVar2 = f13388a;
         if (kVar2 == null) {
             synchronized (k.class) {
                 try {
-                    k kVar3 = f27076a;
+                    k kVar3 = f13388a;
                     kVar = kVar3;
                     if (kVar3 == null) {
                         kVar = new k();
-                        f27076a = kVar;
+                        f13388a = kVar;
                     }
                 } catch (Throwable th) {
                     throw th;
@@ -328,7 +328,7 @@ public class k {
         }
         com.opos.cmn.an.f.a.b("VideoPlayer", "mExoVideoPlayer.getState()=" + this.h.i());
         if (this.h.i() == 1) {
-            this.f27077c = true;
+            this.f13389c = true;
         } else {
             this.h.f();
         }

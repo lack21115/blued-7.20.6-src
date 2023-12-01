@@ -18,14 +18,13 @@ import com.google.protobuf.UnknownFieldSet;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
-import java.util.List;
 
 /* loaded from: source-6737240-dex2jar.jar:cn/irisgw/live/TaskProcess.class */
 public final class TaskProcess extends GeneratedMessageV3 implements TaskProcessOrBuilder {
     private static final TaskProcess DEFAULT_INSTANCE = new TaskProcess();
     private static final Parser<TaskProcess> PARSER = new AbstractParser<TaskProcess>() { // from class: cn.irisgw.live.TaskProcess.1
-        @Override // com.google.protobuf.Parser
-        public TaskProcess parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        /* renamed from: parsePartialFrom */
+        public TaskProcess m7595parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             return new TaskProcess(codedInputStream, extensionRegistryLite);
         }
     };
@@ -67,20 +66,20 @@ public final class TaskProcess extends GeneratedMessageV3 implements TaskProcess
 
         public Builder addAllTaskList(Iterable<String> iterable) {
             ensureTaskListIsMutable();
-            AbstractMessageLite.Builder.addAll((Iterable) iterable, (List) this.taskList_);
+            AbstractMessageLite.Builder.addAll(iterable, this.taskList_);
             onChanged();
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: addRepeatedField */
+        public Builder m7597addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.addRepeatedField(fieldDescriptor, obj);
         }
 
         public Builder addTaskList(String str) {
             if (str != null) {
                 ensureTaskListIsMutable();
-                this.taskList_.add((LazyStringList) str);
+                this.taskList_.add(str);
                 onChanged();
                 return this;
             }
@@ -98,17 +97,17 @@ public final class TaskProcess extends GeneratedMessageV3 implements TaskProcess
             throw null;
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public TaskProcess build() {
-            TaskProcess buildPartial = buildPartial();
-            if (buildPartial.isInitialized()) {
-                return buildPartial;
+        /* renamed from: build */
+        public TaskProcess m7599build() {
+            TaskProcess m7601buildPartial = m7601buildPartial();
+            if (m7601buildPartial.isInitialized()) {
+                return m7601buildPartial;
             }
-            throw newUninitializedMessageException((Message) buildPartial);
+            throw newUninitializedMessageException(m7601buildPartial);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public TaskProcess buildPartial() {
+        /* renamed from: buildPartial */
+        public TaskProcess m7601buildPartial() {
             TaskProcess taskProcess = new TaskProcess(this);
             if ((this.bitField0_ & 1) != 0) {
                 this.taskList_ = this.taskList_.getUnmodifiableView();
@@ -119,21 +118,21 @@ public final class TaskProcess extends GeneratedMessageV3 implements TaskProcess
             return taskProcess;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public Builder clear() {
+        /* renamed from: clear */
+        public Builder m7605clear() {
             super.clear();
             this.taskList_ = LazyStringArrayList.EMPTY;
             this.bitField0_ &= -2;
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+        /* renamed from: clearField */
+        public Builder m7607clearField(Descriptors.FieldDescriptor fieldDescriptor) {
             return (Builder) super.clearField(fieldDescriptor);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+        /* renamed from: clearOneof */
+        public Builder m7610clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
             return (Builder) super.clearOneof(oneofDescriptor);
         }
 
@@ -144,25 +143,23 @@ public final class TaskProcess extends GeneratedMessageV3 implements TaskProcess
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder m7616clone() {
+            return (Builder) super.clone();
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public TaskProcess getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public TaskProcess m7618getDefaultInstanceForType() {
             return TaskProcess.getDefaultInstance();
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
         public Descriptors.Descriptor getDescriptorForType() {
             return LiveConstants.internal_static_cn_irisgw_live_TaskProcess_descriptor;
         }
 
         @Override // cn.irisgw.live.TaskProcessOrBuilder
         public String getTaskList(int i) {
-            return this.taskList_.get(i);
+            return (String) this.taskList_.get(i);
         }
 
         @Override // cn.irisgw.live.TaskProcessOrBuilder
@@ -176,16 +173,15 @@ public final class TaskProcess extends GeneratedMessageV3 implements TaskProcess
         }
 
         @Override // cn.irisgw.live.TaskProcessOrBuilder
-        public ProtocolStringList getTaskListList() {
+        /* renamed from: getTaskListList */
+        public ProtocolStringList mo7589getTaskListList() {
             return this.taskList_.getUnmodifiableView();
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_TaskProcess_fieldAccessorTable.ensureFieldAccessorsInitialized(TaskProcess.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             return true;
         }
@@ -204,18 +200,18 @@ public final class TaskProcess extends GeneratedMessageV3 implements TaskProcess
                 }
                 onChanged();
             }
-            mergeUnknownFields(taskProcess.unknownFields);
+            m7627mergeUnknownFields(taskProcess.unknownFields);
             onChanged();
             return this;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+        /* renamed from: mergeFrom */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
         */
-        public cn.irisgw.live.TaskProcess.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+        public cn.irisgw.live.TaskProcess.Builder m7624mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
             /*
                 r4 = this;
                 r0 = 0
@@ -260,11 +256,11 @@ public final class TaskProcess extends GeneratedMessageV3 implements TaskProcess
                 r0 = r6
                 throw r0
             */
-            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.TaskProcess.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.TaskProcess$Builder");
+            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.TaskProcess.Builder.m7624mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.TaskProcess$Builder");
         }
 
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder mergeFrom(Message message) {
+        /* renamed from: mergeFrom */
+        public Builder m7623mergeFrom(Message message) {
             if (message instanceof TaskProcess) {
                 return mergeFrom((TaskProcess) message);
             }
@@ -272,33 +268,33 @@ public final class TaskProcess extends GeneratedMessageV3 implements TaskProcess
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: mergeUnknownFields */
+        public final Builder m7627mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.mergeUnknownFields(unknownFieldSet);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: setField */
+        public Builder m7629setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.setField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+        /* renamed from: setRepeatedField */
+        public Builder m7631setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
             return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
         }
 
         public Builder setTaskList(int i, String str) {
             if (str != null) {
                 ensureTaskListIsMutable();
-                this.taskList_.set(i, (int) str);
+                this.taskList_.set(i, str);
                 onChanged();
                 return this;
             }
             throw null;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: setUnknownFields */
+        public final Builder m7633setUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.setUnknownFields(unknownFieldSet);
         }
     }
@@ -329,7 +325,7 @@ public final class TaskProcess extends GeneratedMessageV3 implements TaskProcess
                                 this.taskList_ = new LazyStringArrayList();
                                 z4 = z2 | true;
                             }
-                            this.taskList_.add((LazyStringList) readStringRequireUtf8);
+                            this.taskList_.add(readStringRequireUtf8);
                             z2 = z4;
                         } else if (!parseUnknownField(codedInputStream, newBuilder, extensionRegistryLite, readTag)) {
                         }
@@ -370,88 +366,85 @@ public final class TaskProcess extends GeneratedMessageV3 implements TaskProcess
     }
 
     public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
+        return DEFAULT_INSTANCE.m7594toBuilder();
     }
 
     public static Builder newBuilder(TaskProcess taskProcess) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(taskProcess);
+        return DEFAULT_INSTANCE.m7594toBuilder().mergeFrom(taskProcess);
     }
 
     public static TaskProcess parseDelimitedFrom(InputStream inputStream) throws IOException {
-        return (TaskProcess) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
     }
 
     public static TaskProcess parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (TaskProcess) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static TaskProcess parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString);
+        return (TaskProcess) PARSER.parseFrom(byteString);
     }
 
     public static TaskProcess parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString, extensionRegistryLite);
+        return (TaskProcess) PARSER.parseFrom(byteString, extensionRegistryLite);
     }
 
     public static TaskProcess parseFrom(CodedInputStream codedInputStream) throws IOException {
-        return (TaskProcess) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
     }
 
     public static TaskProcess parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (TaskProcess) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
     }
 
     public static TaskProcess parseFrom(InputStream inputStream) throws IOException {
-        return (TaskProcess) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
     }
 
     public static TaskProcess parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (TaskProcess) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static TaskProcess parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer);
+        return (TaskProcess) PARSER.parseFrom(byteBuffer);
     }
 
     public static TaskProcess parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+        return (TaskProcess) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
     }
 
     public static TaskProcess parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr);
+        return (TaskProcess) PARSER.parseFrom(bArr);
     }
 
     public static TaskProcess parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr, extensionRegistryLite);
+        return (TaskProcess) PARSER.parseFrom(bArr, extensionRegistryLite);
     }
 
     public static Parser<TaskProcess> parser() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
         }
         if (obj instanceof TaskProcess) {
             TaskProcess taskProcess = (TaskProcess) obj;
-            return getTaskListList().equals(taskProcess.getTaskListList()) && this.unknownFields.equals(taskProcess.unknownFields);
+            return mo7589getTaskListList().equals(taskProcess.mo7589getTaskListList()) && this.unknownFields.equals(taskProcess.unknownFields);
         }
         return super.equals(obj);
     }
 
-    @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-    public TaskProcess getDefaultInstanceForType() {
+    /* renamed from: getDefaultInstanceForType */
+    public TaskProcess m7588getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
     public Parser<TaskProcess> getParserForType() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public int getSerializedSize() {
         int i = this.memoizedSize;
         if (i != -1) {
@@ -461,14 +454,14 @@ public final class TaskProcess extends GeneratedMessageV3 implements TaskProcess
         for (int i3 = 0; i3 < this.taskList_.size(); i3++) {
             i2 += computeStringSizeNoTag(this.taskList_.getRaw(i3));
         }
-        int size = 0 + i2 + (getTaskListList().size() * 1) + this.unknownFields.getSerializedSize();
+        int size = 0 + i2 + (mo7589getTaskListList().size() * 1) + this.unknownFields.getSerializedSize();
         this.memoizedSize = size;
         return size;
     }
 
     @Override // cn.irisgw.live.TaskProcessOrBuilder
     public String getTaskList(int i) {
-        return this.taskList_.get(i);
+        return (String) this.taskList_.get(i);
     }
 
     @Override // cn.irisgw.live.TaskProcessOrBuilder
@@ -482,16 +475,15 @@ public final class TaskProcess extends GeneratedMessageV3 implements TaskProcess
     }
 
     @Override // cn.irisgw.live.TaskProcessOrBuilder
-    public ProtocolStringList getTaskListList() {
+    /* renamed from: getTaskListList */
+    public ProtocolStringList mo7589getTaskListList() {
         return this.taskList_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
     public final UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public int hashCode() {
         if (this.memoizedHashCode != 0) {
             return this.memoizedHashCode;
@@ -499,19 +491,17 @@ public final class TaskProcess extends GeneratedMessageV3 implements TaskProcess
         int hashCode = 779 + getDescriptor().hashCode();
         int i = hashCode;
         if (getTaskListCount() > 0) {
-            i = (((hashCode * 37) + 1) * 53) + getTaskListList().hashCode();
+            i = (((hashCode * 37) + 1) * 53) + mo7589getTaskListList().hashCode();
         }
         int hashCode2 = (i * 29) + this.unknownFields.hashCode();
         this.memoizedHashCode = hashCode2;
         return hashCode2;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
         return LiveConstants.internal_static_cn_irisgw_live_TaskProcess_fieldAccessorTable.ensureFieldAccessorsInitialized(TaskProcess.class, Builder.class);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
     public final boolean isInitialized() {
         byte b = this.memoizedIsInitialized;
         if (b == 1) {
@@ -524,28 +514,26 @@ public final class TaskProcess extends GeneratedMessageV3 implements TaskProcess
         return true;
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder newBuilderForType() {
+    /* renamed from: newBuilderForType */
+    public Builder m7592newBuilderForType() {
         return newBuilder();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.protobuf.GeneratedMessageV3
-    public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+    /* renamed from: newBuilderForType */
+    public Builder m7591newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
         return new Builder(builderParent);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
         return new TaskProcess();
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder toBuilder() {
+    /* renamed from: toBuilder */
+    public Builder m7594toBuilder() {
         return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
         int i = 0;
         while (true) {

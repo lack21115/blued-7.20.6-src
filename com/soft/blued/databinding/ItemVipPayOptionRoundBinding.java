@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemVipPayOptionRoundBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ConstraintLayout f29362a;
+    private final ConstraintLayout f15672a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f29362a;
+        return this.f15672a;
     }
 }

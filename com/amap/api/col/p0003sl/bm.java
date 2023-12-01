@@ -1,38 +1,35 @@
 package com.amap.api.col.p0003sl;
 
 import android.content.Context;
+import com.alipay.sdk.util.i;
 import java.util.ArrayList;
 import java.util.List;
 
 /* renamed from: com.amap.api.col.3sl.bm  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/bm.class */
 public class bm {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static volatile bm f4784a;
+    private static volatile bm a;
     private static ja b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private Context f4785c;
+    private Context c;
 
     private bm(Context context) {
-        this.f4785c = context;
+        this.c = context;
         b = b(context);
     }
 
     public static bm a(Context context) {
-        if (f4784a == null) {
+        if (a == null) {
             synchronized (bm.class) {
                 try {
-                    if (f4784a == null) {
-                        f4784a = new bm(context);
+                    if (a == null) {
+                        a = new bm(context);
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f4784a;
+        return a;
     }
 
     private static List<String> a(List<bj> list) {
@@ -61,7 +58,7 @@ public class bm {
         if (b.b(a2, bj.class).size() > 0) {
             b.a(a2, bj.class);
         }
-        String[] split = str2.split(";");
+        String[] split = str2.split(i.b);
         ArrayList arrayList = new ArrayList();
         int length = split.length;
         int i = 0;
@@ -89,7 +86,7 @@ public class bm {
 
     private boolean b() {
         if (b == null) {
-            b = b(this.f4785c);
+            b = b(this.c);
         }
         return b != null;
     }

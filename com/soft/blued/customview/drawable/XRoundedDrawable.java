@@ -25,7 +25,7 @@ import java.util.Set;
 public class XRoundedDrawable extends Drawable implements IRecyclingDrawable {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f28576a;
+    private String f14886a;
     private Set<RecyclingBitmapDrawable> b;
     private float e;
     private float f;
@@ -40,7 +40,7 @@ public class XRoundedDrawable extends Drawable implements IRecyclingDrawable {
     private int q;
 
     /* renamed from: c  reason: collision with root package name */
-    private final RectF f28577c = new RectF();
+    private final RectF f14887c = new RectF();
     private final RectF d = new RectF();
     private final RectF i = new RectF();
     private final RectF n = new RectF();
@@ -53,7 +53,7 @@ public class XRoundedDrawable extends Drawable implements IRecyclingDrawable {
     public static /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f28578a;
+        static final /* synthetic */ int[] f14888a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:17:0x0059 -> B:33:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:19:0x005d -> B:43:0x001f). Please submit an issue!!! */
@@ -63,33 +63,33 @@ public class XRoundedDrawable extends Drawable implements IRecyclingDrawable {
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:27:0x006d -> B:41:0x004c). Please submit an issue!!! */
         static {
             int[] iArr = new int[ImageView.ScaleType.values().length];
-            f28578a = iArr;
+            f14888a = iArr;
             try {
                 iArr[ImageView.ScaleType.CENTER.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f28578a[ImageView.ScaleType.CENTER_CROP.ordinal()] = 2;
+                f14888a[ImageView.ScaleType.CENTER_CROP.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f28578a[ImageView.ScaleType.CENTER_INSIDE.ordinal()] = 3;
+                f14888a[ImageView.ScaleType.CENTER_INSIDE.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f28578a[ImageView.ScaleType.FIT_CENTER.ordinal()] = 4;
+                f14888a[ImageView.ScaleType.FIT_CENTER.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f28578a[ImageView.ScaleType.FIT_END.ordinal()] = 5;
+                f14888a[ImageView.ScaleType.FIT_END.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
             try {
-                f28578a[ImageView.ScaleType.FIT_START.ordinal()] = 6;
+                f14888a[ImageView.ScaleType.FIT_START.ordinal()] = 6;
             } catch (NoSuchFieldError e6) {
             }
             try {
-                f28578a[ImageView.ScaleType.FIT_XY.ordinal()] = 7;
+                f14888a[ImageView.ScaleType.FIT_XY.ordinal()] = 7;
             } catch (NoSuchFieldError e7) {
             }
         }
@@ -151,17 +151,17 @@ public class XRoundedDrawable extends Drawable implements IRecyclingDrawable {
                 int numberOfLayers = transitionDrawable.getNumberOfLayers();
                 Drawable[] drawableArr = new Drawable[numberOfLayers];
                 for (int i3 = 0; i3 < numberOfLayers; i3++) {
-                    Drawable drawable2 = transitionDrawable.getDrawable(i3);
+                    RecyclingBitmapDrawable drawable2 = transitionDrawable.getDrawable(i3);
                     if (drawable2 instanceof ColorDrawable) {
                         drawableArr[i3] = drawable2;
                     } else if (drawable2 instanceof XRoundedDrawable) {
                         drawableArr[i3] = drawable2;
                     } else {
-                        Bitmap a2 = a(drawable2);
+                        Bitmap a2 = a((Drawable) drawable2);
                         if (a2 != null) {
                             drawableArr[i3] = new XRoundedDrawable(a2, i, i2, f, f2, f3, f4);
                             if (drawable2 instanceof RecyclingBitmapDrawable) {
-                                ((XRoundedDrawable) drawableArr[i3]).a((RecyclingBitmapDrawable) drawable2);
+                                ((XRoundedDrawable) drawableArr[i3]).a(drawable2);
                             }
                             if (scaleType != null) {
                                 ((XRoundedDrawable) drawableArr[i3]).a(scaleType);
@@ -217,13 +217,13 @@ public class XRoundedDrawable extends Drawable implements IRecyclingDrawable {
     private void g() {
         float width;
         float height;
-        this.n.set(this.f28577c);
+        this.n.set(this.f14887c);
         RectF rectF = this.d;
         int i = this.p;
         rectF.set(i + 0, i + 0, this.n.width() - this.p, this.n.height() - this.p);
-        switch (AnonymousClass1.f28578a[this.r.ordinal()]) {
+        switch (AnonymousClass1.f14888a[this.r.ordinal()]) {
             case 1:
-                this.n.set(this.f28577c);
+                this.n.set(this.f14887c);
                 RectF rectF2 = this.d;
                 int i2 = this.p;
                 rectF2.set(i2 + 0, i2 + 0, this.n.width() - this.p, this.n.height() - this.p);
@@ -231,7 +231,7 @@ public class XRoundedDrawable extends Drawable implements IRecyclingDrawable {
                 this.s.setTranslate((int) (((this.d.width() - this.l) * 0.5f) + 0.5f), (int) (((this.d.height() - this.m) * 0.5f) + 0.5f));
                 break;
             case 2:
-                this.n.set(this.f28577c);
+                this.n.set(this.f14887c);
                 RectF rectF3 = this.d;
                 int i3 = this.p;
                 rectF3.set(i3 + 0, i3 + 0, this.n.width() - this.p, this.n.height() - this.p);
@@ -251,9 +251,9 @@ public class XRoundedDrawable extends Drawable implements IRecyclingDrawable {
                 break;
             case 3:
                 this.s.set(null);
-                float min = (((float) this.l) > this.f28577c.width() || ((float) this.m) > this.f28577c.height()) ? Math.min(this.f28577c.width() / this.l, this.f28577c.height() / this.m) : 1.0f;
-                float width2 = (int) (((this.f28577c.width() - (this.l * min)) * 0.5f) + 0.5f);
-                float height2 = (int) (((this.f28577c.height() - (this.m * min)) * 0.5f) + 0.5f);
+                float min = (((float) this.l) > this.f14887c.width() || ((float) this.m) > this.f14887c.height()) ? Math.min(this.f14887c.width() / this.l, this.f14887c.height() / this.m) : 1.0f;
+                float width2 = (int) (((this.f14887c.width() - (this.l * min)) * 0.5f) + 0.5f);
+                float height2 = (int) (((this.f14887c.height() - (this.m * min)) * 0.5f) + 0.5f);
                 this.s.setScale(min, min);
                 this.s.postTranslate(width2, height2);
                 this.n.set(this.i);
@@ -263,27 +263,27 @@ public class XRoundedDrawable extends Drawable implements IRecyclingDrawable {
                 break;
             case 4:
                 this.n.set(this.i);
-                this.s.setRectToRect(this.i, this.f28577c, Matrix.ScaleToFit.CENTER);
+                this.s.setRectToRect(this.i, this.f14887c, Matrix.ScaleToFit.CENTER);
                 this.s.mapRect(this.n);
                 this.d.set(this.n.left + this.p, this.n.top + this.p, this.n.right - this.p, this.n.bottom - this.p);
                 this.s.setRectToRect(this.i, this.d, Matrix.ScaleToFit.FILL);
                 break;
             case 5:
                 this.n.set(this.i);
-                this.s.setRectToRect(this.i, this.f28577c, Matrix.ScaleToFit.END);
+                this.s.setRectToRect(this.i, this.f14887c, Matrix.ScaleToFit.END);
                 this.s.mapRect(this.n);
                 this.d.set(this.n.left + this.p, this.n.top + this.p, this.n.right - this.p, this.n.bottom - this.p);
                 this.s.setRectToRect(this.i, this.d, Matrix.ScaleToFit.FILL);
                 break;
             case 6:
                 this.n.set(this.i);
-                this.s.setRectToRect(this.i, this.f28577c, Matrix.ScaleToFit.START);
+                this.s.setRectToRect(this.i, this.f14887c, Matrix.ScaleToFit.START);
                 this.s.mapRect(this.n);
                 this.d.set(this.n.left + this.p, this.n.top + this.p, this.n.right - this.p, this.n.bottom - this.p);
                 this.s.setRectToRect(this.i, this.d, Matrix.ScaleToFit.FILL);
                 break;
             default:
-                this.n.set(this.f28577c);
+                this.n.set(this.f14887c);
                 RectF rectF4 = this.d;
                 int i5 = this.p;
                 rectF4.set(i5 + 0, i5 + 0, this.n.width() - this.p, this.n.height() - this.p);
@@ -320,12 +320,10 @@ public class XRoundedDrawable extends Drawable implements IRecyclingDrawable {
         this.b.add(recyclingBitmapDrawable);
     }
 
-    @Override // com.blued.android.core.imagecache.drawable.IRecyclingDrawable
     public void a(String str) {
-        this.f28576a = str;
+        this.f14886a = str;
     }
 
-    @Override // com.blued.android.core.imagecache.drawable.IRecyclingDrawable
     public void a(boolean z) {
         Set<RecyclingBitmapDrawable> set = this.b;
         if (set != null) {
@@ -335,14 +333,12 @@ public class XRoundedDrawable extends Drawable implements IRecyclingDrawable {
         }
     }
 
-    @Override // com.blued.android.core.imagecache.drawable.IRecyclingDrawable
     public boolean a() {
         return true;
     }
 
-    @Override // com.blued.android.core.imagecache.drawable.IRecyclingDrawable
     public String b() {
-        return this.f28576a;
+        return this.f14886a;
     }
 
     public void b(int i) {
@@ -350,7 +346,6 @@ public class XRoundedDrawable extends Drawable implements IRecyclingDrawable {
         this.o.setColor(i);
     }
 
-    @Override // com.blued.android.core.imagecache.drawable.IRecyclingDrawable
     public void b(boolean z) {
         Set<RecyclingBitmapDrawable> set = this.b;
         if (set != null) {
@@ -368,7 +363,6 @@ public class XRoundedDrawable extends Drawable implements IRecyclingDrawable {
         this.e = f;
     }
 
-    @Override // com.blued.android.core.imagecache.drawable.IRecyclingDrawable
     public boolean c() {
         Set<RecyclingBitmapDrawable> set = this.b;
         if (set != null) {
@@ -382,7 +376,6 @@ public class XRoundedDrawable extends Drawable implements IRecyclingDrawable {
         return true;
     }
 
-    @Override // com.blued.android.core.imagecache.drawable.IRecyclingDrawable
     public void d() {
         Set<RecyclingBitmapDrawable> set = this.b;
         if (set != null) {
@@ -407,7 +400,6 @@ public class XRoundedDrawable extends Drawable implements IRecyclingDrawable {
         a(canvas, this.d, this.k, this.p);
     }
 
-    @Override // com.blued.android.core.imagecache.drawable.IRecyclingDrawable
     public int e() {
         return 1;
     }
@@ -447,7 +439,7 @@ public class XRoundedDrawable extends Drawable implements IRecyclingDrawable {
     @Override // android.graphics.drawable.Drawable
     public void onBoundsChange(Rect rect) {
         super.onBoundsChange(rect);
-        this.f28577c.set(rect);
+        this.f14887c.set(rect);
         g();
     }
 

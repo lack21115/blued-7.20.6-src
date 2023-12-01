@@ -7,7 +7,7 @@ import org.json.JSONObject;
 public final class c extends a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23401a = "BlockClientAction";
+    private static final String f9793a = "BlockClientAction";
 
     @Override // com.igexin.push.core.a.b.a
     public final boolean a(Object obj, JSONObject jSONObject) {

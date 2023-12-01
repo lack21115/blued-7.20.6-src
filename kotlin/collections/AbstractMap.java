@@ -14,9 +14,7 @@ import kotlin.jvm.internal.markers.KMappedMarker;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/collections/AbstractMap.class */
 public abstract class AbstractMap<K, V> implements Map<K, V>, KMappedMarker {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f42327a = new Companion(null);
+    public static final Companion a = new Companion(null);
 
     @Metadata
     /* loaded from: source-3503164-dex2jar.jar:kotlin/collections/AbstractMap$Companion.class */
@@ -151,16 +149,14 @@ public abstract class AbstractMap<K, V> implements Map<K, V>, KMappedMarker {
 
     public String toString() {
         return CollectionsKt.a(entrySet(), ", ", "{", i.d, 0, null, new Function1<Map.Entry<? extends K, ? extends V>, CharSequence>(this) { // from class: kotlin.collections.AbstractMap$toString$1
-
-            /* renamed from: a  reason: collision with root package name */
-            final /* synthetic */ AbstractMap<K, V> f42330a;
+            final /* synthetic */ AbstractMap<K, V> a;
 
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             /* JADX WARN: Multi-variable type inference failed */
             {
                 super(1);
-                this.f42330a = this;
+                this.a = this;
             }
 
             @Override // kotlin.jvm.functions.Function1
@@ -168,7 +164,7 @@ public abstract class AbstractMap<K, V> implements Map<K, V>, KMappedMarker {
             public final CharSequence invoke(Map.Entry<? extends K, ? extends V> it) {
                 String b;
                 Intrinsics.e(it, "it");
-                b = this.f42330a.b((Map.Entry) it);
+                b = this.a.b((Map.Entry) it);
                 return b;
             }
         }, 24, null);

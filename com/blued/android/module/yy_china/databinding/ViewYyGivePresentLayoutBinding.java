@@ -11,21 +11,17 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ViewYyGivePresentLayoutBinding.class */
 public final class ViewYyGivePresentLayoutBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final TextView f16918a;
+    public final TextView a;
     public final TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ShapeTextView f16919c;
+    public final ShapeTextView c;
     public final TextView d;
     private final ShapeRelativeLayout e;
 
     private ViewYyGivePresentLayoutBinding(ShapeRelativeLayout shapeRelativeLayout, TextView textView, TextView textView2, ShapeTextView shapeTextView, TextView textView3) {
         this.e = shapeRelativeLayout;
-        this.f16918a = textView;
+        this.a = textView;
         this.b = textView2;
-        this.f16919c = shapeTextView;
+        this.c = shapeTextView;
         this.d = textView3;
     }
 
@@ -62,7 +58,6 @@ public final class ViewYyGivePresentLayoutBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ShapeRelativeLayout getRoot() {
         return this.e;

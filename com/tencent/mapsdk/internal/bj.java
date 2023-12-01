@@ -4,17 +4,17 @@ package com.tencent.mapsdk.internal;
 public class bj implements yd {
 
     /* renamed from: a  reason: collision with root package name */
-    private de f37332a;
+    private de f23641a;
     private gj b;
 
     /* renamed from: c  reason: collision with root package name */
-    private zd f37333c;
+    private zd f23642c;
     private boolean d;
 
     public bj(yi yiVar, String str) {
         this.b = yiVar;
-        this.f37332a = new ej(yiVar.getContext(), str);
-        this.f37333c = new cj(yiVar.getContext(), str);
+        this.f23641a = new ej(yiVar.getContext(), str);
+        this.f23642c = new cj(yiVar.getContext(), str);
     }
 
     @Override // com.tencent.mapsdk.internal.yd
@@ -29,7 +29,7 @@ public class bj implements yd {
 
     @Override // com.tencent.mapsdk.internal.yd
     public zd b() {
-        return this.f37333c;
+        return this.f23642c;
     }
 
     @Override // com.tencent.mapsdk.internal.yd
@@ -39,6 +39,6 @@ public class bj implements yd {
 
     @Override // com.tencent.mapsdk.internal.yd
     public de d() {
-        return this.f37332a;
+        return this.f23641a;
     }
 }

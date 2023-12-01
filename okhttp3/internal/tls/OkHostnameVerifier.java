@@ -15,9 +15,7 @@ import okhttp3.internal.Util;
 
 /* loaded from: source-3503164-dex2jar.jar:okhttp3/internal/tls/OkHostnameVerifier.class */
 public final class OkHostnameVerifier implements HostnameVerifier {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final OkHostnameVerifier f43983a = new OkHostnameVerifier();
+    public static final OkHostnameVerifier a = new OkHostnameVerifier();
 
     private OkHostnameVerifier() {
     }

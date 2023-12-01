@@ -7,20 +7,18 @@ import java.util.Map;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alipay/a/a/f.class */
 public final class f {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static List<j> f4506a;
+    private static List<j> a;
 
     static {
         ArrayList arrayList = new ArrayList();
-        f4506a = arrayList;
+        a = arrayList;
         arrayList.add(new l());
-        f4506a.add(new d());
-        f4506a.add(new c());
-        f4506a.add(new h());
-        f4506a.add(new b());
-        f4506a.add(new a());
-        f4506a.add(new g());
+        a.add(new d());
+        a.add(new c());
+        a.add(new h());
+        a.add(new b());
+        a.add(new a());
+        a.add(new g());
     }
 
     public static String a(Object obj) {
@@ -45,7 +43,7 @@ public final class f {
         if (obj == null) {
             return null;
         }
-        for (j jVar : f4506a) {
+        for (j jVar : a) {
             if (jVar.a(obj.getClass()) && (a2 = jVar.a(obj)) != null) {
                 return a2;
             }

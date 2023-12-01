@@ -13,11 +13,11 @@ import java.io.RandomAccessFile;
 final class Relay {
 
     /* renamed from: a  reason: collision with root package name */
-    static final ByteString f35928a = ByteString.encodeUtf8("OkHttp cache v1\n");
+    static final ByteString f22237a = ByteString.encodeUtf8("OkHttp cache v1\n");
     static final ByteString b = ByteString.encodeUtf8("OkHttp DIRTY :(\n");
 
     /* renamed from: c  reason: collision with root package name */
-    RandomAccessFile f35929c;
+    RandomAccessFile f22238c;
     Thread d;
     Source e;
     long g;
@@ -33,25 +33,25 @@ final class Relay {
         private final Timeout b = new Timeout();
 
         /* renamed from: c  reason: collision with root package name */
-        private FileOperator f35931c;
+        private FileOperator f22240c;
         private long d;
 
         RelaySource() {
-            this.f35931c = new FileOperator(Relay.this.f35929c.getChannel());
+            this.f22240c = new FileOperator(Relay.this.f22238c.getChannel());
         }
 
         @Override // com.tencent.cloud.huiyansdkface.okio.Source, java.io.Closeable, java.lang.AutoCloseable
         public void close() throws IOException {
-            if (this.f35931c == null) {
+            if (this.f22240c == null) {
                 return;
             }
             RandomAccessFile randomAccessFile = null;
-            this.f35931c = null;
+            this.f22240c = null;
             synchronized (Relay.this) {
                 Relay.this.k--;
                 if (Relay.this.k == 0) {
-                    randomAccessFile = Relay.this.f35929c;
-                    Relay.this.f35929c = null;
+                    randomAccessFile = Relay.this.f22238c;
+                    Relay.this.f22238c = null;
                 }
             }
             if (randomAccessFile != null) {
@@ -63,7 +63,7 @@ final class Relay {
         public long read(Buffer buffer, long j) throws IOException {
             long j2;
             boolean z;
-            if (this.f35931c != null) {
+            if (this.f22240c != null) {
                 synchronized (Relay.this) {
                     while (true) {
                         long j3 = this.d;
@@ -90,7 +90,7 @@ final class Relay {
                     }
                     if (z) {
                         long min2 = Math.min(j, j2 - this.d);
-                        this.f35931c.read(this.d + 32, buffer, min2);
+                        this.f22240c.read(this.d + 32, buffer, min2);
                         this.d += min2;
                         return min2;
                     }
@@ -107,7 +107,7 @@ final class Relay {
                         long min3 = Math.min(read, j);
                         Relay.this.f.copyTo(buffer, 0L, min3);
                         this.d += min3;
-                        this.f35931c.write(j2 + 32, Relay.this.f.m10133clone(), read);
+                        this.f22240c.write(j2 + 32, Relay.this.f.m7090clone(), read);
                         synchronized (Relay.this) {
                             Relay.this.i.write(Relay.this.f, read);
                             if (Relay.this.i.size() > Relay.this.j) {
@@ -139,7 +139,7 @@ final class Relay {
     }
 
     private Relay(RandomAccessFile randomAccessFile, Source source, long j, ByteString byteString, long j2) {
-        this.f35929c = randomAccessFile;
+        this.f22238c = randomAccessFile;
         this.e = source;
         this.h = source == null;
         this.g = j;
@@ -155,13 +155,13 @@ final class Relay {
         if (buffer.size() != 32) {
             throw new IllegalArgumentException();
         }
-        new FileOperator(this.f35929c.getChannel()).write(0L, buffer, 32L);
+        new FileOperator(this.f22238c.getChannel()).write(0L, buffer, 32L);
     }
 
     private void b(long j) throws IOException {
         Buffer buffer = new Buffer();
         buffer.write(this.l);
-        new FileOperator(this.f35929c.getChannel()).write(32 + j, buffer, this.l.size());
+        new FileOperator(this.f22238c.getChannel()).write(32 + j, buffer, this.l.size());
     }
 
     public static Relay edit(File file, Source source, ByteString byteString, long j) throws IOException {
@@ -177,7 +177,7 @@ final class Relay {
         FileOperator fileOperator = new FileOperator(randomAccessFile.getChannel());
         Buffer buffer = new Buffer();
         fileOperator.read(0L, buffer, 32L);
-        if (buffer.readByteString(f35928a.size()).equals(f35928a)) {
+        if (buffer.readByteString(f22237a.size()).equals(f22237a)) {
             long readLong = buffer.readLong();
             long readLong2 = buffer.readLong();
             Buffer buffer2 = new Buffer();
@@ -189,9 +189,9 @@ final class Relay {
 
     void a(long j) throws IOException {
         b(j);
-        this.f35929c.getChannel().force(false);
-        a(f35928a, j, this.l.size());
-        this.f35929c.getChannel().force(false);
+        this.f22238c.getChannel().force(false);
+        a(f22237a, j, this.l.size());
+        this.f22238c.getChannel().force(false);
         synchronized (this) {
             this.h = true;
         }
@@ -205,7 +205,7 @@ final class Relay {
 
     public Source newSource() {
         synchronized (this) {
-            if (this.f35929c == null) {
+            if (this.f22238c == null) {
                 return null;
             }
             this.k++;

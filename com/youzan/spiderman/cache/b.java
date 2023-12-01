@@ -28,11 +28,11 @@ import okhttp3.RequestBody;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private Set<String> f41799a;
+    private Set<String> f28108a;
     private Set<String> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Set<String> f41800c;
+    private Set<String> f28109c;
     private Set<String> d;
     private Set<String> e;
     private Set<String> f;
@@ -41,21 +41,21 @@ public class b {
     static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        static b f41801a = new b((byte) 0);
+        static b f28110a = new b((byte) 0);
     }
 
     private b() {
         List<String> a2;
         List<String> c2;
-        this.f41799a = null;
+        this.f28108a = null;
         this.b = null;
-        this.f41800c = null;
+        this.f28109c = null;
         this.d = null;
         this.e = null;
         this.f = null;
-        this.f41799a = new HashSet(Arrays.asList(Stone.SUPPORTED_HOST));
+        this.f28108a = new HashSet(Arrays.asList(Stone.SUPPORTED_HOST));
         this.b = new HashSet(Arrays.asList(Stone.SUPPORTED_SCHEME));
-        this.f41800c = new HashSet(Arrays.asList(Stone.SUPPORTED_EXTEND));
+        this.f28109c = new HashSet(Arrays.asList(Stone.SUPPORTED_EXTEND));
         this.f = new HashSet(Arrays.asList(Stone.SUPPORTED_HTML_HOST));
         if (this.d == null) {
             this.d = new HashSet();
@@ -79,7 +79,7 @@ public class b {
     }
 
     public static b a() {
-        return a.f41801a;
+        return a.f28110a;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:14:0x0036 A[RETURN] */
@@ -271,8 +271,8 @@ public class b {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ void a(Context context, String str, String str2, d dVar) {
-        AutoCloseable autoCloseable = null;
-        AutoCloseable autoCloseable2 = null;
+        InputStream inputStream = null;
+        InputStream inputStream2 = null;
         try {
             try {
                 InputStream open = context.getAssets().open(str);
@@ -300,7 +300,7 @@ public class b {
                 Logger.e("CacheMerger", e2);
                 if (0 != 0) {
                     try {
-                        autoCloseable.close();
+                        inputStream.close();
                     } catch (IOException e3) {
                         e3.printStackTrace();
                     }
@@ -309,7 +309,7 @@ public class b {
         } catch (Throwable th) {
             if (0 != 0) {
                 try {
-                    autoCloseable2.close();
+                    inputStream2.close();
                 } catch (IOException e4) {
                     e4.printStackTrace();
                 }
@@ -417,7 +417,7 @@ public class b {
     public final boolean a(CacheUrl cacheUrl) {
         String extend = cacheUrl.getExtend();
         Uri uri = cacheUrl.getUri();
-        if (!TextUtils.isEmpty(extend) && this.f41800c.contains(extend) && this.f41799a.contains(uri.getHost()) && this.b.contains(uri.getScheme())) {
+        if (!TextUtils.isEmpty(extend) && this.f28109c.contains(extend) && this.f28108a.contains(uri.getHost()) && this.b.contains(uri.getScheme())) {
             return !this.d.contains(extend) && !this.e.contains(uri.getPath());
         }
         return false;

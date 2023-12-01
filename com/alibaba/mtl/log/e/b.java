@@ -5,6 +5,7 @@ import android.content.Context;
 import android.os.PowerManager;
 import android.os.Process;
 import android.text.TextUtils;
+import com.android.internal.util.cm.PowerMenuConstants;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alibaba/mtl/log/e/b.class */
 public class b {
@@ -30,7 +31,7 @@ public class b {
         }
         try {
             ActivityManager activityManager = (ActivityManager) context.getSystemService("activity");
-            PowerManager powerManager = (PowerManager) context.getSystemService("power");
+            PowerManager powerManager = (PowerManager) context.getSystemService(PowerMenuConstants.GLOBAL_ACTION_KEY_POWER);
             String packageName = context.getPackageName();
             for (ActivityManager.RunningAppProcessInfo runningAppProcessInfo : activityManager.getRunningAppProcesses()) {
                 if (runningAppProcessInfo.processName.equals(packageName)) {

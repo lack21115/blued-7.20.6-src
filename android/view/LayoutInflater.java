@@ -77,26 +77,23 @@ public abstract class LayoutInflater {
             this.mHandler.sendMessageDelayed(this.mHandler.obtainMessage(66), 500L);
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // android.view.ViewGroup, android.view.View
-        public void dispatchDraw(Canvas canvas) {
+        protected void dispatchDraw(Canvas canvas) {
             if (this.mBlinkState) {
                 super.dispatchDraw(canvas);
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // android.view.ViewGroup, android.view.View
-        public void onAttachedToWindow() {
+        protected void onAttachedToWindow() {
             super.onAttachedToWindow();
             this.mBlink = true;
             this.mBlinkState = true;
             makeBlink();
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // android.view.ViewGroup, android.view.View
-        public void onDetachedFromWindow() {
+        protected void onDetachedFromWindow() {
             super.onDetachedFromWindow();
             this.mBlink = false;
             this.mBlinkState = true;

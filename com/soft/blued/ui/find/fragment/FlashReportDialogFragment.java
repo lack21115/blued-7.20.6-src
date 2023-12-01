@@ -1,6 +1,5 @@
 package com.soft.blued.ui.find.fragment;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -27,11 +26,11 @@ import com.soft.blued.http.ChatHttpUtils;
 public class FlashReportDialogFragment extends DialogFragment {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f30311a;
+    private Context f16621a;
     private View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private LinearLayout f30312c;
+    private LinearLayout f16622c;
     private LinearLayout d;
     private LinearLayout e;
     private LinearLayout f;
@@ -66,8 +65,8 @@ public class FlashReportDialogFragment extends DialogFragment {
         this.o = (ImageView) this.b.findViewById(R.id.layout_sex).findViewById(2131364411);
         this.p = (ImageView) this.b.findViewById(R.id.layout_drug).findViewById(2131364411);
         this.q = (ImageView) this.b.findViewById(R.id.layout_other).findViewById(2131364411);
-        LinearLayout linearLayout = (LinearLayout) this.b.findViewById(R.id.layout_ad).findViewById(2131367604);
-        this.f30312c = linearLayout;
+        LinearLayout linearLayout = (LinearLayout) this.b.findViewById(R.id.layout_ad).findViewById(R.id.ll);
+        this.f16622c = linearLayout;
         linearLayout.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.fragment.FlashReportDialogFragment.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
@@ -83,7 +82,7 @@ public class FlashReportDialogFragment extends DialogFragment {
                 FlashReportDialogFragment.this.b();
             }
         });
-        LinearLayout linearLayout2 = (LinearLayout) this.b.findViewById(R.id.layout_poli).findViewById(2131367604);
+        LinearLayout linearLayout2 = (LinearLayout) this.b.findViewById(R.id.layout_poli).findViewById(R.id.ll);
         this.d = linearLayout2;
         linearLayout2.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.fragment.FlashReportDialogFragment.2
             @Override // android.view.View.OnClickListener
@@ -100,7 +99,7 @@ public class FlashReportDialogFragment extends DialogFragment {
                 FlashReportDialogFragment.this.b();
             }
         });
-        LinearLayout linearLayout3 = (LinearLayout) this.b.findViewById(R.id.layout_sex).findViewById(2131367604);
+        LinearLayout linearLayout3 = (LinearLayout) this.b.findViewById(R.id.layout_sex).findViewById(R.id.ll);
         this.e = linearLayout3;
         linearLayout3.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.fragment.FlashReportDialogFragment.3
             @Override // android.view.View.OnClickListener
@@ -117,7 +116,7 @@ public class FlashReportDialogFragment extends DialogFragment {
                 FlashReportDialogFragment.this.b();
             }
         });
-        LinearLayout linearLayout4 = (LinearLayout) this.b.findViewById(R.id.layout_drug).findViewById(2131367604);
+        LinearLayout linearLayout4 = (LinearLayout) this.b.findViewById(R.id.layout_drug).findViewById(R.id.ll);
         this.f = linearLayout4;
         linearLayout4.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.fragment.FlashReportDialogFragment.4
             @Override // android.view.View.OnClickListener
@@ -134,7 +133,7 @@ public class FlashReportDialogFragment extends DialogFragment {
                 FlashReportDialogFragment.this.b();
             }
         });
-        LinearLayout linearLayout5 = (LinearLayout) this.b.findViewById(R.id.layout_other).findViewById(2131367604);
+        LinearLayout linearLayout5 = (LinearLayout) this.b.findViewById(R.id.layout_other).findViewById(R.id.ll);
         this.g = linearLayout5;
         linearLayout5.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.fragment.FlashReportDialogFragment.5
             @Override // android.view.View.OnClickListener
@@ -153,19 +152,19 @@ public class FlashReportDialogFragment extends DialogFragment {
         });
         TextView textView = (TextView) this.b.findViewById(R.id.layout_ad).findViewById(2131370786);
         this.h = textView;
-        textView.setText(getResources().getString(2131886298));
+        textView.setText(getResources().getString(R.string.ad_report));
         TextView textView2 = (TextView) this.b.findViewById(R.id.layout_poli).findViewById(2131370786);
         this.i = textView2;
-        textView2.setText(getResources().getString(2131891288));
+        textView2.setText(getResources().getString(R.string.political_report));
         TextView textView3 = (TextView) this.b.findViewById(R.id.layout_sex).findViewById(2131370786);
         this.j = textView3;
-        textView3.setText(getResources().getString(2131891289));
+        textView3.setText(getResources().getString(R.string.porn_repot));
         TextView textView4 = (TextView) this.b.findViewById(R.id.layout_drug).findViewById(2131370786);
         this.k = textView4;
-        textView4.setText(getResources().getString(2131887538));
+        textView4.setText(getResources().getString(R.string.drug_report));
         TextView textView5 = (TextView) this.b.findViewById(R.id.layout_other).findViewById(2131370786);
         this.l = textView5;
-        textView5.setText(getResources().getString(2131891208));
+        textView5.setText(getResources().getString(R.string.other_dialog_report));
         TextView textView6 = (TextView) this.b.findViewById(R.id.tv_submit);
         this.r = textView6;
         textView6.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.fragment.FlashReportDialogFragment.6
@@ -193,7 +192,7 @@ public class FlashReportDialogFragment extends DialogFragment {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void a(int i) {
-        AppMethods.a((CharSequence) this.f30311a.getResources().getString(i));
+        AppMethods.a(this.f16621a.getResources().getString(i));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -247,9 +246,8 @@ public class FlashReportDialogFragment extends DialogFragment {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void c() {
-        ChatHttpUtils.a(this.f30311a, new BluedUIHttpResponse<BluedEntityA<Object>>() { // from class: com.soft.blued.ui.find.fragment.FlashReportDialogFragment.10
+        ChatHttpUtils.a(this.f16621a, new BluedUIHttpResponse<BluedEntityA<Object>>() { // from class: com.soft.blued.ui.find.fragment.FlashReportDialogFragment.10
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<Object> bluedEntityA) {
                 FlashReportDialogFragment.this.a((int) R.string.biao_report_ok);
@@ -264,7 +262,7 @@ public class FlashReportDialogFragment extends DialogFragment {
 
     @Override // androidx.fragment.app.DialogFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
-        this.f30311a = getActivity();
+        this.f16621a = getActivity();
         Bundle arguments = getArguments();
         if (arguments != null) {
             this.s = arguments.getString("uid");
@@ -273,7 +271,7 @@ public class FlashReportDialogFragment extends DialogFragment {
         }
         setStyle(0, R.style.Theme_trans);
         if (AppInfo.p()) {
-            StatusBarHelper.a((Activity) getActivity(), false);
+            StatusBarHelper.a(getActivity(), false);
         }
         super.onCreate(bundle);
     }

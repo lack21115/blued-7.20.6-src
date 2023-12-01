@@ -5,6 +5,7 @@ import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
+import android.view.View;
 import android.widget.ImageView;
 import com.blued.android.core.imagecache.drawable.IRecyclingDrawable;
 import com.blued.android.core.imagecache.drawable.RoundedDrawable;
@@ -26,9 +27,7 @@ public class RoundedImageView extends AutoAttachRecyclingImageView {
     /* renamed from: com.blued.android.core.imagecache.view.RoundedImageView$1  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/imagecache/view/RoundedImageView$1.class */
     public static /* synthetic */ class AnonymousClass1 {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f9659a;
+        static final /* synthetic */ int[] a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:17:0x0059 -> B:33:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:19:0x005d -> B:43:0x001f). Please submit an issue!!! */
@@ -38,33 +37,33 @@ public class RoundedImageView extends AutoAttachRecyclingImageView {
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:27:0x006d -> B:41:0x004c). Please submit an issue!!! */
         static {
             int[] iArr = new int[ImageView.ScaleType.values().length];
-            f9659a = iArr;
+            a = iArr;
             try {
                 iArr[ImageView.ScaleType.CENTER.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f9659a[ImageView.ScaleType.CENTER_CROP.ordinal()] = 2;
+                a[ImageView.ScaleType.CENTER_CROP.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f9659a[ImageView.ScaleType.CENTER_INSIDE.ordinal()] = 3;
+                a[ImageView.ScaleType.CENTER_INSIDE.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f9659a[ImageView.ScaleType.FIT_CENTER.ordinal()] = 4;
+                a[ImageView.ScaleType.FIT_CENTER.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f9659a[ImageView.ScaleType.FIT_START.ordinal()] = 5;
+                a[ImageView.ScaleType.FIT_START.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
             try {
-                f9659a[ImageView.ScaleType.FIT_END.ordinal()] = 6;
+                a[ImageView.ScaleType.FIT_END.ordinal()] = 6;
             } catch (NoSuchFieldError e6) {
             }
             try {
-                f9659a[ImageView.ScaleType.FIT_XY.ordinal()] = 7;
+                a[ImageView.ScaleType.FIT_XY.ordinal()] = 7;
             } catch (NoSuchFieldError e7) {
             }
         }
@@ -90,7 +89,7 @@ public class RoundedImageView extends AutoAttachRecyclingImageView {
         if (this.i < 0) {
             this.i = 0;
         }
-        this.j = obtainStyledAttributes.getColor(R.styleable.RoundedImageView_border_color, -16777216);
+        this.j = obtainStyledAttributes.getColor(R.styleable.RoundedImageView_border_color, View.MEASURED_STATE_MASK);
         this.k = obtainStyledAttributes.getBoolean(R.styleable.RoundedImageView_round_background, false);
         obtainStyledAttributes.recycle();
     }
@@ -196,10 +195,10 @@ public class RoundedImageView extends AutoAttachRecyclingImageView {
     @Override // com.blued.android.core.imagecache.view.RecyclingImageView, android.widget.ImageView
     public void setImageDrawable(Drawable drawable) {
         if (drawable != null) {
-            Drawable a2 = RoundedDrawable.a(drawable, this.n, this.h, this.i, this.j);
-            this.l = a2;
-            if ((drawable instanceof IRecyclingDrawable) && (a2 instanceof IRecyclingDrawable) && drawable != a2) {
-                ((IRecyclingDrawable) a2).a(((IRecyclingDrawable) drawable).b());
+            Drawable a = RoundedDrawable.a(drawable, this.n, this.h, this.i, this.j);
+            this.l = a;
+            if ((drawable instanceof IRecyclingDrawable) && (a instanceof IRecyclingDrawable) && drawable != a) {
+                ((IRecyclingDrawable) a).a(((IRecyclingDrawable) drawable).b());
             }
         } else {
             this.l = null;
@@ -239,7 +238,7 @@ public class RoundedImageView extends AutoAttachRecyclingImageView {
         }
         if (this.n != scaleType) {
             this.n = scaleType;
-            switch (AnonymousClass1.f9659a[scaleType.ordinal()]) {
+            switch (AnonymousClass1.a[scaleType.ordinal()]) {
                 case 1:
                 case 2:
                 case 3:

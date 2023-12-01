@@ -9,11 +9,11 @@ import java.util.UUID;
 public final class aj implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    protected int f35233a;
+    protected int f21542a;
     protected long b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected long f35234c;
+    protected long f21543c;
     private int d;
     private int e;
     private final Context f;
@@ -35,25 +35,25 @@ public final class aj implements Runnable {
         this.d = 2;
         this.e = 30000;
         this.p = null;
-        this.f35233a = 0;
+        this.f21542a = 0;
         this.b = 0L;
-        this.f35234c = 0L;
+        this.f21543c = 0L;
         this.s = false;
         this.f = context;
         this.i = aa.a(context);
         this.h = bArr;
         this.j = ac.a();
-        if (af.f35219a == null) {
-            af.f35219a = new af(context);
+        if (af.f21528a == null) {
+            af.f21528a = new af(context);
         }
-        this.k = af.f35219a;
+        this.k = af.f21528a;
         ai a2 = ai.a();
         this.l = a2;
         this.m = i;
         this.p = str;
         this.q = str2;
         this.n = ahVar;
-        this.o = a2.f35228a;
+        this.o = a2.f21537a;
         this.g = i2;
         if (i3 > 0) {
             this.d = i3;
@@ -129,13 +129,13 @@ public final class aj implements Runnable {
         if (brVar == null) {
             al.d("resp == null!", new Object[0]);
             return false;
-        } else if (brVar.f35308a != 0) {
-            al.e("resp result error %d", Byte.valueOf(brVar.f35308a));
+        } else if (brVar.f21617a != 0) {
+            al.e("resp result error %d", Byte.valueOf(brVar.f21617a));
             return false;
         } else {
             try {
                 if (!ap.b(brVar.g) && !aa.b().i().equals(brVar.g)) {
-                    w.a().a(ac.f35216a, "device", brVar.g.getBytes("UTF-8"), true);
+                    w.a().a(ac.f21525a, "device", brVar.g.getBytes("UTF-8"), true);
                     aaVar.d(brVar.g);
                 }
             } catch (Throwable th) {
@@ -143,11 +143,11 @@ public final class aj implements Runnable {
             }
             aaVar.m = brVar.e;
             if (brVar.b == 510) {
-                if (brVar.f35309c == null) {
+                if (brVar.f21618c == null) {
                     al.e("[Upload] Strategy data is null. Response cmd: %d", Integer.valueOf(brVar.b));
                     return false;
                 }
-                bt btVar = (bt) ae.a(brVar.f35309c, bt.class);
+                bt btVar = (bt) ae.a(brVar.f21618c, bt.class);
                 if (btVar == null) {
                     al.e("[Upload] Failed to decode strategy from server. Response cmd: %d", Integer.valueOf(brVar.b));
                     return false;
@@ -172,12 +172,12 @@ public final class aj implements Runnable {
     }
 
     public final void a(long j) {
-        this.f35233a++;
+        this.f21542a++;
         this.b += j;
     }
 
     public final void b(long j) {
-        this.f35234c += j;
+        this.f21543c += j;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:91:0x0361 A[LOOP:0: B:38:0x0156->B:91:0x0361, LOOP_END] */

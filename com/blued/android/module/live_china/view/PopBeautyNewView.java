@@ -11,7 +11,6 @@ import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.SeekBar;
 import android.widget.TextView;
-import androidx.exifinterface.media.ExifInterface;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.PagerAdapter;
@@ -34,20 +33,14 @@ import com.blued.das.live.LiveProtos;
 import com.bytedance.applog.tracker.Tracker;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.tencent.cloud.huiyansdkface.facelight.api.WbCloudFaceContant;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/PopBeautyNewView.class */
 public class PopBeautyNewView {
-
-    /* renamed from: a  reason: collision with root package name */
-    private LayoutInflater f15007a;
+    private LayoutInflater a;
     private Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private View f15008c;
+    private View c;
     private View d;
     private MyPopupWindow e;
     private TextView f;
@@ -70,15 +63,12 @@ public class PopBeautyNewView {
     private List<BeautyModel> w = new ArrayList();
     private List<BeautyModel> x = new ArrayList();
     private ViewPager.OnPageChangeListener y = new ViewPager.OnPageChangeListener() { // from class: com.blued.android.module.live_china.view.PopBeautyNewView.7
-        @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
         public void onPageScrollStateChanged(int i) {
         }
 
-        @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
         public void onPageScrolled(int i, float f, int i2) {
         }
 
-        @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
         public void onPageSelected(int i) {
             PopBeautyNewView.this.j.setToolBtnSelect(i);
             PopBeautyNewView popBeautyNewView = PopBeautyNewView.this;
@@ -102,21 +92,18 @@ public class PopBeautyNewView {
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/PopBeautyNewView$BeautyAdapter.class */
     public class BeautyAdapter extends BaseQuickAdapter<BeautyModel, BaseViewHolder> {
         private ImageView b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private ImageView f15017c;
+        private ImageView c;
 
         public BeautyAdapter() {
-            super(R.layout.beauty_view_item_new, null);
+            super(R.layout.beauty_view_item_new, (List) null);
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.chad.library.adapter.base.BaseQuickAdapter
         /* renamed from: a */
         public void convert(BaseViewHolder baseViewHolder, final BeautyModel beautyModel) {
             if (baseViewHolder != null) {
                 this.b = (ImageView) baseViewHolder.getView(R.id.beauty_image_bg);
-                this.f15017c = (ImageView) baseViewHolder.getView(R.id.beauty_image);
+                this.c = (ImageView) baseViewHolder.getView(R.id.beauty_image);
                 this.b = (ImageView) baseViewHolder.getView(R.id.beauty_image_bg);
                 baseViewHolder.setImageResource(R.id.beauty_image, beautyModel.resource);
                 baseViewHolder.setText(R.id.beauty_text, beautyModel.customName);
@@ -169,22 +156,18 @@ public class PopBeautyNewView {
         BeautyPagerAdapter() {
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public void destroyItem(ViewGroup viewGroup, int i, Object obj) {
             viewGroup.removeView((View) obj);
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public int getCount() {
             return PopBeautyNewView.this.t.size();
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public int getItemPosition(Object obj) {
             return -2;
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public Object instantiateItem(ViewGroup viewGroup, int i) {
             while (PopBeautyNewView.this.s.size() < PopBeautyNewView.this.t.size()) {
                 PopBeautyNewView.this.s.add(LayoutInflater.from(PopBeautyNewView.this.b).inflate(R.layout.live_beauty_pager, viewGroup, false));
@@ -197,22 +180,22 @@ public class PopBeautyNewView {
             if (i == 0) {
                 PopBeautyNewView popBeautyNewView = PopBeautyNewView.this;
                 popBeautyNewView.o = new BeautyAdapter();
-                PopBeautyNewView.this.o.addData((Collection) PopBeautyNewView.this.u);
+                PopBeautyNewView.this.o.addData(PopBeautyNewView.this.u);
                 refreshableView.setAdapter(PopBeautyNewView.this.o);
             } else if (i == 1) {
                 PopBeautyNewView popBeautyNewView2 = PopBeautyNewView.this;
                 popBeautyNewView2.p = new BeautyAdapter();
-                PopBeautyNewView.this.p.addData((Collection) PopBeautyNewView.this.v);
+                PopBeautyNewView.this.p.addData(PopBeautyNewView.this.v);
                 refreshableView.setAdapter(PopBeautyNewView.this.p);
             } else if (i == 2) {
                 PopBeautyNewView popBeautyNewView3 = PopBeautyNewView.this;
                 popBeautyNewView3.q = new BeautyAdapter();
-                PopBeautyNewView.this.q.addData((Collection) PopBeautyNewView.this.w);
+                PopBeautyNewView.this.q.addData(PopBeautyNewView.this.w);
                 refreshableView.setAdapter(PopBeautyNewView.this.q);
             } else if (i == 3) {
                 PopBeautyNewView popBeautyNewView4 = PopBeautyNewView.this;
                 popBeautyNewView4.r = new BeautyAdapter();
-                PopBeautyNewView.this.r.addData((Collection) PopBeautyNewView.this.x);
+                PopBeautyNewView.this.r.addData(PopBeautyNewView.this.x);
                 refreshableView.setAdapter(PopBeautyNewView.this.r);
             }
             if (view.getParent() != null) {
@@ -222,7 +205,6 @@ public class PopBeautyNewView {
             return view;
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public boolean isViewFromObject(View view, Object obj) {
             return view == obj;
         }
@@ -266,7 +248,7 @@ public class PopBeautyNewView {
     public void b(int i) {
         BeautyModel beautyModel = this.n;
         if (beautyModel != null) {
-            if (TextUtils.equals(beautyModel.id, WbCloudFaceContant.WHITE)) {
+            if (TextUtils.equals(beautyModel.id, "white")) {
                 LiveRoomPreferences.a(this.n.id, i);
             } else if (TextUtils.equals(this.n.id, "ruddy")) {
                 LiveRoomPreferences.b(this.n.id, i);
@@ -366,10 +348,10 @@ public class PopBeautyNewView {
 
     private void f() {
         LayoutInflater from = LayoutInflater.from(this.b);
-        this.f15007a = from;
+        this.a = from;
         View inflate = from.inflate(R.layout.pop_window_beauty_new, (ViewGroup) null);
         View findViewById = inflate.findViewById(R.id.tv_bg);
-        this.f15008c = findViewById;
+        this.c = findViewById;
         findViewById.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.PopBeautyNewView.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
@@ -434,7 +416,7 @@ public class PopBeautyNewView {
         }
         this.h.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.PopBeautyNewView.5
             /* JADX WARN: Code restructure failed: missing block: B:23:0x00b2, code lost:
-                if (android.text.TextUtils.equals(r7.f15013a.n.id, "face_3") != false) goto L26;
+                if (android.text.TextUtils.equals(r7.a.n.id, "face_3") != false) goto L26;
              */
             @Override // android.view.View.OnClickListener
             /*
@@ -451,7 +433,7 @@ public class PopBeautyNewView {
         });
         MyPopupWindow myPopupWindow = new MyPopupWindow(inflate, -1, -1, true);
         this.e = myPopupWindow;
-        myPopupWindow.setBackgroundDrawable(this.b.getResources().getDrawable(17170445));
+        myPopupWindow.setBackgroundDrawable(this.b.getResources().getDrawable(com.android.internal.R.color.transparent));
         this.e.setTouchable(true);
         this.e.setOutsideTouchable(true);
         this.e.setFocusable(true);
@@ -477,7 +459,7 @@ public class PopBeautyNewView {
         if (recordingOnliveFragment != null) {
             recordingOnliveFragment.O();
         }
-        this.f15008c.clearAnimation();
+        this.c.clearAnimation();
         this.d.clearAnimation();
         if (this.e.isShowing()) {
             this.e.a();
@@ -561,9 +543,9 @@ public class PopBeautyNewView {
             boolean z = i10 == 0;
             if (i10 == 0) {
                 key5 = BluedBeautifyKey.KEY.ST_BEAUTIFY_WHITEN_STRENGTH;
-                str9 = WbCloudFaceContant.WHITE;
+                str9 = "white";
                 i6 = R.drawable.live_beauty_white;
-                e = LiveRoomPreferences.e(WbCloudFaceContant.WHITE);
+                e = LiveRoomPreferences.e("white");
                 str10 = "Skin";
             } else if (i10 == 1) {
                 key5 = BluedBeautifyKey.KEY.ST_BEAUTIFY_REDDEN_STRENGTH;
@@ -820,7 +802,7 @@ public class PopBeautyNewView {
                                 str = "contrast";
                                 i = R.drawable.live_beauty_contrast;
                                 q = LiveRoomPreferences.q("contrast");
-                                str2 = ExifInterface.TAG_CONTRAST;
+                                str2 = "Contrast";
                             } else if (i18 != 1) {
                                 key = null;
                                 str2 = "";
@@ -832,7 +814,7 @@ public class PopBeautyNewView {
                                 str = "saturation";
                                 i = R.drawable.live_beauty_saturation;
                                 q = LiveRoomPreferences.r("saturation");
-                                str2 = ExifInterface.TAG_SATURATION;
+                                str2 = "Saturation";
                             }
                             BeautyModel beautyModel6 = new BeautyModel(key, str, stringArray5[i18], 0, z3, q);
                             beautyModel6.resource = i;

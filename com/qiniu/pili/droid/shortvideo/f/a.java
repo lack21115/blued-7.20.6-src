@@ -6,19 +6,19 @@ import android.os.Build;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String[] f27661a = {"GT-I9260"};
+    public static final String[] f13973a = {"GT-I9260"};
     public static final String[] b = {"GT-I9260"};
 
     /* renamed from: c  reason: collision with root package name */
-    private b f27662c;
+    private b f13974c;
     private b d;
 
     /* renamed from: com.qiniu.pili.droid.shortvideo.f.a$a  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/qiniu/pili/droid/shortvideo/f/a$a.class */
-    static class C0747a {
+    static class C0577a {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final a f27663a = new a();
+        public static final a f13975a = new a();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -30,18 +30,18 @@ public class a {
     }
 
     private a() {
-        this.f27662c = b.UNKNOWN;
+        this.f13974c = b.UNKNOWN;
         this.d = b.UNKNOWN;
-        e eVar = e.f27672a;
+        e eVar = e.f13984a;
         eVar.c("CompatibleManager", "Build.MODEL:" + Build.MODEL);
     }
 
     public static a a() {
-        return C0747a.f27663a;
+        return C0577a.f13975a;
     }
 
     private b d() {
-        String[] strArr = f27661a;
+        String[] strArr = f13973a;
         int length = strArr.length;
         int i = 0;
         while (true) {
@@ -73,10 +73,10 @@ public class a {
     }
 
     public boolean b() {
-        if (this.f27662c == b.UNKNOWN) {
-            this.f27662c = d();
+        if (this.f13974c == b.UNKNOWN) {
+            this.f13974c = d();
         }
-        return this.f27662c == b.YES;
+        return this.f13974c == b.YES;
     }
 
     public boolean c() {

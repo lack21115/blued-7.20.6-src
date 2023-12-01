@@ -35,13 +35,9 @@ import kotlin.jvm.internal.Ref;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/adapter/LiveFinishDetailAdapter.class */
 public final class LiveFinishDetailAdapter extends BaseQuickAdapter<LiveFinishData, BaseViewHolder> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f11626a;
+    private Context a;
     private IRequestHost b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private LiveHostFinishDetailViewModel.ApiState f11627c;
+    private LiveHostFinishDetailViewModel.ApiState c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public LiveFinishDetailAdapter(Context context, IRequestHost fragmentActive, LiveHostFinishDetailViewModel.ApiState state) {
@@ -49,9 +45,9 @@ public final class LiveFinishDetailAdapter extends BaseQuickAdapter<LiveFinishDa
         Intrinsics.e(context, "context");
         Intrinsics.e(fragmentActive, "fragmentActive");
         Intrinsics.e(state, "state");
-        this.f11626a = context;
+        this.a = context;
         this.b = fragmentActive;
-        this.f11627c = state;
+        this.c = state;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -106,107 +102,106 @@ public final class LiveFinishDetailAdapter extends BaseQuickAdapter<LiveFinishDa
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(BaseViewHolder helper, LiveFinishData liveFinishData) {
         Intrinsics.e(helper, "helper");
         if (liveFinishData == null) {
             return;
         }
-        LiveHostFinishDetailItemBinding a2 = LiveHostFinishDetailItemBinding.a(helper.itemView);
-        Intrinsics.c(a2, "bind(helper.itemView)");
-        a2.o.setText(String.valueOf(helper.getLayoutPosition() + 1));
-        if (Intrinsics.a(b(), LiveHostFinishDetailViewModel.ApiState.ApiNewFollowers.f15470a) || Intrinsics.a(b(), LiveHostFinishDetailViewModel.ApiState.ApiNewFans.f15469a)) {
+        LiveHostFinishDetailItemBinding a = LiveHostFinishDetailItemBinding.a(helper.itemView);
+        Intrinsics.c(a, "bind(helper.itemView)");
+        a.o.setText(String.valueOf(helper.getLayoutPosition() + 1));
+        if (Intrinsics.a(b(), LiveHostFinishDetailViewModel.ApiState.ApiNewFollowers.a) || Intrinsics.a(b(), LiveHostFinishDetailViewModel.ApiState.ApiNewFans.a)) {
             String relationship = liveFinishData.getRelationship();
             if (relationship == null || relationship.length() == 0) {
-                a(liveFinishData.getUid(), liveFinishData, a2);
+                a(liveFinishData.getUid(), liveFinishData, a);
             } else {
-                b(liveFinishData.getRelationship(), liveFinishData, a2);
+                b(liveFinishData.getRelationship(), liveFinishData, a);
             }
-            LinearLayout linearLayout = a2.j;
+            LinearLayout linearLayout = a.j;
             Intrinsics.c(linearLayout, "itemBinding.llDes");
             BluedViewExKt.a(linearLayout);
         } else {
-            ShapeTextView shapeTextView = a2.m;
+            ShapeTextView shapeTextView = a.m;
             Intrinsics.c(shapeTextView, "itemBinding.tvAttend");
-            BluedViewExKt.a(shapeTextView);
-            ShapeTextView shapeTextView2 = a2.l;
+            BluedViewExKt.a((View) shapeTextView);
+            ShapeTextView shapeTextView2 = a.l;
             Intrinsics.c(shapeTextView2, "itemBinding.tvAtten");
-            BluedViewExKt.a(shapeTextView2);
+            BluedViewExKt.a((View) shapeTextView2);
             String text = liveFinishData.getText();
             if (text == null || text.length() == 0) {
-                LinearLayout linearLayout2 = a2.j;
+                LinearLayout linearLayout2 = a.j;
                 Intrinsics.c(linearLayout2, "itemBinding.llDes");
                 BluedViewExKt.a(linearLayout2);
             } else {
-                LinearLayout linearLayout3 = a2.j;
+                LinearLayout linearLayout3 = a.j;
                 Intrinsics.c(linearLayout3, "itemBinding.llDes");
                 BluedViewExKt.b(linearLayout3);
-                a2.n.setText(liveFinishData.getText());
+                a.n.setText(liveFinishData.getText());
             }
-            if (Intrinsics.a(b(), LiveHostFinishDetailViewModel.ApiState.ApiContributors.f15466a)) {
-                ImageView imageView = a2.f12244c;
+            if (Intrinsics.a(b(), LiveHostFinishDetailViewModel.ApiState.ApiContributors.a)) {
+                ImageView imageView = a.c;
                 Intrinsics.c(imageView, "itemBinding.ivBeans");
                 BluedViewExKt.b(imageView);
             } else {
-                ImageView imageView2 = a2.f12244c;
+                ImageView imageView2 = a.c;
                 Intrinsics.c(imageView2, "itemBinding.ivBeans");
                 BluedViewExKt.a(imageView2);
             }
         }
-        a2.p.setText(liveFinishData.getName());
-        ImageLoader.a((IRequestHost) null, liveFinishData.getAvatar()).c().b(R.drawable.user_bg_round).a(a2.b);
+        a.p.setText(liveFinishData.getName());
+        ImageLoader.a((IRequestHost) null, liveFinishData.getAvatar()).c().b(R.drawable.user_bg_round).a(a.b);
         String vip_frame = liveFinishData.getVip_frame();
         if (vip_frame == null || vip_frame.length() == 0) {
-            ImageView imageView3 = a2.i;
+            ImageView imageView3 = a.i;
             Intrinsics.c(imageView3, "itemBinding.ivVip");
             BluedViewExKt.a(imageView3);
         } else {
-            ImageView imageView4 = a2.i;
+            ImageView imageView4 = a.i;
             Intrinsics.c(imageView4, "itemBinding.ivVip");
             BluedViewExKt.b(imageView4);
             String vip_frame2 = liveFinishData.getVip_frame();
             Intrinsics.a((Object) vip_frame2);
-            ImageLoader.a((IRequestHost) null, vip_frame2).g().g(-1).a(a2.i);
+            ImageLoader.a((IRequestHost) null, vip_frame2).g().g(-1).a(a.i);
         }
         if (liveFinishData.getRich_level() != 0) {
-            ImageView imageView5 = a2.h;
+            ImageView imageView5 = a.h;
             Intrinsics.c(imageView5, "itemBinding.ivRichLevel");
             BluedViewExKt.b(imageView5);
-            a2.h.setImageDrawable(LiveBitmapUtils.a(AppInfo.d(), liveFinishData.getRich_level()));
+            a.h.setImageDrawable(LiveBitmapUtils.a(AppInfo.d(), liveFinishData.getRich_level()));
         } else {
-            ImageView imageView6 = a2.h;
+            ImageView imageView6 = a.h;
             Intrinsics.c(imageView6, "itemBinding.ivRichLevel");
             BluedViewExKt.a(imageView6);
         }
-        int a3 = AppMethods.a(15);
-        ViewGroup.LayoutParams layoutParams = a2.f.getLayoutParams();
+        int a2 = AppMethods.a(15);
+        ViewGroup.LayoutParams layoutParams = a.f.getLayoutParams();
         if (layoutParams == null) {
             throw new NullPointerException("null cannot be cast to non-null type android.widget.LinearLayout.LayoutParams");
         }
         LinearLayout.LayoutParams layoutParams2 = (LinearLayout.LayoutParams) layoutParams;
         String nameplate_img = liveFinishData.getNameplate_img();
         if (nameplate_img == null || nameplate_img.length() == 0) {
-            ImageView imageView7 = a2.f;
+            ImageView imageView7 = a.f;
             Intrinsics.c(imageView7, "itemBinding.ivNoble");
             BluedViewExKt.a(imageView7);
             layoutParams2.width = 0;
             layoutParams2.height = 0;
         } else {
-            ImageView imageView8 = a2.f;
+            ImageView imageView8 = a.f;
             Intrinsics.c(imageView8, "itemBinding.ivNoble");
             BluedViewExKt.b(imageView8);
-            int nameplate_img_width = (liveFinishData.getNameplate_img_width() * a3) / liveFinishData.getNameplate_img_height();
-            ImageLoader.a((IRequestHost) null, liveFinishData.getNameplate_img()).a(nameplate_img_width, a3).g().g(-1).a(a2.f);
+            int nameplate_img_width = (liveFinishData.getNameplate_img_width() * a2) / liveFinishData.getNameplate_img_height();
+            ImageLoader.a((IRequestHost) null, liveFinishData.getNameplate_img()).a(nameplate_img_width, a2).g().g(-1).a(a.f);
             layoutParams2.width = nameplate_img_width;
-            layoutParams2.height = a3;
+            layoutParams2.height = a2;
         }
-        a2.f.setLayoutParams(layoutParams2);
+        a.f.setLayoutParams(layoutParams2);
         if (liveFinishData.getFans_status() == 0) {
-            LiveFansLevelView liveFansLevelView = a2.d;
+            LiveFansLevelView liveFansLevelView = a.d;
             Intrinsics.c(liveFansLevelView, "itemBinding.ivFansLevel");
             BluedViewExKt.a(liveFansLevelView);
-            LiveFansLevelView liveFansLevelView2 = a2.e;
+            LiveFansLevelView liveFansLevelView2 = a.e;
             Intrinsics.c(liveFansLevelView2, "itemBinding.ivFansLevel1");
             BluedViewExKt.a(liveFansLevelView2);
             return;
@@ -216,21 +211,21 @@ public final class LiveFinishDetailAdapter extends BaseQuickAdapter<LiveFinishDa
         liveFansLevelModel.fans_status = liveFinishData.getFans_status();
         liveFansLevelModel.fan_club_name = liveFinishData.getFan_club_name();
         liveFansLevelModel.in_fan_club = 1;
-        if (a2.i.getVisibility() == 0 && a2.h.getVisibility() == 0 && a2.f.getVisibility() == 0) {
-            a2.e.setFansLevel(liveFansLevelModel);
-            LiveFansLevelView liveFansLevelView3 = a2.e;
+        if (a.i.getVisibility() == 0 && a.h.getVisibility() == 0 && a.f.getVisibility() == 0) {
+            a.e.setFansLevel(liveFansLevelModel);
+            LiveFansLevelView liveFansLevelView3 = a.e;
             Intrinsics.c(liveFansLevelView3, "itemBinding.ivFansLevel1");
             BluedViewExKt.b(liveFansLevelView3);
-            LiveFansLevelView liveFansLevelView4 = a2.d;
+            LiveFansLevelView liveFansLevelView4 = a.d;
             Intrinsics.c(liveFansLevelView4, "itemBinding.ivFansLevel");
             BluedViewExKt.a(liveFansLevelView4);
             return;
         }
-        a2.d.setFansLevel(liveFansLevelModel);
-        LiveFansLevelView liveFansLevelView5 = a2.d;
+        a.d.setFansLevel(liveFansLevelModel);
+        LiveFansLevelView liveFansLevelView5 = a.d;
         Intrinsics.c(liveFansLevelView5, "itemBinding.ivFansLevel");
         BluedViewExKt.b(liveFansLevelView5);
-        LiveFansLevelView liveFansLevelView6 = a2.e;
+        LiveFansLevelView liveFansLevelView6 = a.e;
         Intrinsics.c(liveFansLevelView6, "itemBinding.ivFansLevel1");
         BluedViewExKt.a(liveFansLevelView6);
     }
@@ -255,7 +250,7 @@ public final class LiveFinishDetailAdapter extends BaseQuickAdapter<LiveFinishDa
     }
 
     public final LiveHostFinishDetailViewModel.ApiState b() {
-        return this.f11627c;
+        return this.c;
     }
 
     public final void b(String str, final LiveFinishData liveFinishData, final LiveHostFinishDetailItemBinding viewBinding) {
@@ -267,17 +262,17 @@ public final class LiveFinishDetailAdapter extends BaseQuickAdapter<LiveFinishDa
         if (TextUtils.equals("1", str2) || TextUtils.equals("3", str2)) {
             ShapeTextView shapeTextView = viewBinding.l;
             Intrinsics.c(shapeTextView, "viewBinding.tvAtten");
-            BluedViewExKt.a(shapeTextView);
+            BluedViewExKt.a((View) shapeTextView);
             ShapeTextView shapeTextView2 = viewBinding.m;
             Intrinsics.c(shapeTextView2, "viewBinding.tvAttend");
-            BluedViewExKt.b(shapeTextView2);
+            BluedViewExKt.b((View) shapeTextView2);
         } else {
             ShapeTextView shapeTextView3 = viewBinding.l;
             Intrinsics.c(shapeTextView3, "viewBinding.tvAtten");
-            BluedViewExKt.b(shapeTextView3);
+            BluedViewExKt.b((View) shapeTextView3);
             ShapeTextView shapeTextView4 = viewBinding.m;
             Intrinsics.c(shapeTextView4, "viewBinding.tvAttend");
-            BluedViewExKt.a(shapeTextView4);
+            BluedViewExKt.a((View) shapeTextView4);
         }
         viewBinding.l.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.adapter.-$$Lambda$LiveFinishDetailAdapter$hWLRDkbz7eHVd4WoeNG53dl1eNQ
             @Override // android.view.View.OnClickListener
@@ -302,9 +297,9 @@ public final class LiveFinishDetailAdapter extends BaseQuickAdapter<LiveFinishDa
         final Ref.IntRef intRef2 = new Ref.IntRef();
         for (final LiveFinishData liveFinishData : data) {
             if (!TextUtils.equals("1", liveFinishData.getRelationship()) && !TextUtils.equals("3", liveFinishData.getRelationship())) {
-                intRef.f42543a++;
-                final IRequestHost a2 = a();
-                LiveRoomHttpUtils.d(new BluedUIHttpResponse<BluedEntityA<LiveRelationModel>>(a2) { // from class: com.blued.android.module.live_china.adapter.LiveFinishDetailAdapter$allAttention$1$1
+                intRef.a++;
+                final IRequestHost a = a();
+                LiveRoomHttpUtils.d(new BluedUIHttpResponse<BluedEntityA<LiveRelationModel>>(a) { // from class: com.blued.android.module.live_china.adapter.LiveFinishDetailAdapter$allAttention$1$1
                     /* JADX INFO: Access modifiers changed from: protected */
                     @Override // com.blued.android.framework.http.BluedUIHttpResponse
                     /* renamed from: a */
@@ -324,8 +319,8 @@ public final class LiveFinishDetailAdapter extends BaseQuickAdapter<LiveFinishDa
 
                     @Override // com.blued.android.framework.http.BluedUIHttpResponse
                     public void onUIFinish() {
-                        intRef2.f42543a++;
-                        if (intRef.f42543a == intRef2.f42543a) {
+                        intRef2.a++;
+                        if (intRef.a == intRef2.a) {
                             this.notifyDataSetChanged();
                         }
                     }
@@ -335,6 +330,6 @@ public final class LiveFinishDetailAdapter extends BaseQuickAdapter<LiveFinishDa
     }
 
     public final Context getContext() {
-        return this.f11626a;
+        return this.a;
     }
 }

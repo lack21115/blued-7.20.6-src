@@ -7,20 +7,20 @@ import android.text.TextUtils;
 public class c extends com.vivo.push.o {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f41037a;
+    private String f27346a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private long f41038c;
+    private long f27347c;
     private int d;
     private int e;
     private String f;
 
     public c(int i, String str) {
         super(i);
-        this.f41038c = -1L;
+        this.f27347c = -1L;
         this.d = -1;
-        this.f41037a = null;
+        this.f27346a = null;
         this.b = str;
     }
 
@@ -49,12 +49,12 @@ public class c extends com.vivo.push.o {
     }
 
     public final void b(String str) {
-        this.f41037a = str;
+        this.f27346a = str;
     }
 
     @Override // com.vivo.push.o
     public void c(com.vivo.push.a aVar) {
-        aVar.a("req_id", this.f41037a);
+        aVar.a("req_id", this.f27346a);
         aVar.a("package_name", this.b);
         aVar.a("sdk_version", 323L);
         aVar.a("PUSH_APP_STATUS", this.d);
@@ -66,9 +66,9 @@ public class c extends com.vivo.push.o {
 
     @Override // com.vivo.push.o
     public void d(com.vivo.push.a aVar) {
-        this.f41037a = aVar.a("req_id");
+        this.f27346a = aVar.a("req_id");
         this.b = aVar.a("package_name");
-        this.f41038c = aVar.b("sdk_version", 0L);
+        this.f27347c = aVar.b("sdk_version", 0L);
         this.d = aVar.b("PUSH_APP_STATUS", 0);
         this.f = aVar.a("BaseAppCommand.EXTRA__HYBRIDVERSION");
     }
@@ -82,7 +82,7 @@ public class c extends com.vivo.push.o {
     }
 
     public final String h() {
-        return this.f41037a;
+        return this.f27346a;
     }
 
     @Override // com.vivo.push.o

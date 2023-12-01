@@ -16,11 +16,11 @@ import java.util.concurrent.TimeUnit;
 public class c extends FrameLayout implements b {
 
     /* renamed from: a  reason: collision with root package name */
-    a f35487a;
+    a f21796a;
     View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private CountDownLatch f35488c;
+    private CountDownLatch f21797c;
     private SurfaceView d;
     private volatile SurfaceHolder e;
     private boolean f;
@@ -36,7 +36,7 @@ public class c extends FrameLayout implements b {
     public static /* synthetic */ class AnonymousClass4 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f35492a;
+        static final /* synthetic */ int[] f21801a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:15:0x004d -> B:37:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:17:0x0051 -> B:33:0x001f). Please submit an issue!!! */
@@ -45,29 +45,29 @@ public class c extends FrameLayout implements b {
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:23:0x005d -> B:35:0x0040). Please submit an issue!!! */
         static {
             int[] iArr = new int[com.tencent.cloud.huiyansdkface.a.a.a.c.values().length];
-            f35492a = iArr;
+            f21801a = iArr;
             try {
                 iArr[com.tencent.cloud.huiyansdkface.a.a.a.c.CROP_CENTER.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f35492a[com.tencent.cloud.huiyansdkface.a.a.a.c.CROP_START.ordinal()] = 2;
+                f21801a[com.tencent.cloud.huiyansdkface.a.a.a.c.CROP_START.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f35492a[com.tencent.cloud.huiyansdkface.a.a.a.c.CROP_END.ordinal()] = 3;
+                f21801a[com.tencent.cloud.huiyansdkface.a.a.a.c.CROP_END.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f35492a[com.tencent.cloud.huiyansdkface.a.a.a.c.FIT_START.ordinal()] = 4;
+                f21801a[com.tencent.cloud.huiyansdkface.a.a.a.c.FIT_START.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f35492a[com.tencent.cloud.huiyansdkface.a.a.a.c.FIT_END.ordinal()] = 5;
+                f21801a[com.tencent.cloud.huiyansdkface.a.a.a.c.FIT_END.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
             try {
-                f35492a[com.tencent.cloud.huiyansdkface.a.a.a.c.FIT_CENTER.ordinal()] = 6;
+                f21801a[com.tencent.cloud.huiyansdkface.a.a.a.c.FIT_CENTER.ordinal()] = 6;
             } catch (NoSuchFieldError e6) {
             }
         }
@@ -75,7 +75,7 @@ public class c extends FrameLayout implements b {
 
     public c(Context context) {
         super(context);
-        this.f35488c = new CountDownLatch(1);
+        this.f21797c = new CountDownLatch(1);
         this.f = false;
         this.k = false;
         b(context);
@@ -102,7 +102,7 @@ public class c extends FrameLayout implements b {
         d b = this.h.b();
         d dVar2 = b;
         if (b()) {
-            dVar2 = new d(b.b, b.f35431a);
+            dVar2 = new d(b.b, b.f21740a);
         }
         d a2 = this.g.name().startsWith("FIT") ? com.tencent.cloud.huiyansdkface.a.f.b.a(dVar2, dVar) : com.tencent.cloud.huiyansdkface.a.f.b.b(dVar2, dVar);
         com.tencent.cloud.huiyansdkface.a.d.a.a("CameraSurfaceView", "container layout size:width=" + width + ",height=" + height, new Object[0]);
@@ -110,9 +110,9 @@ public class c extends FrameLayout implements b {
         sb.append("preview size scale result:");
         sb.append(a2);
         com.tencent.cloud.huiyansdkface.a.d.a.a("CameraSurfaceView", sb.toString(), new Object[0]);
-        int i4 = (a2.f35431a - width) / 2;
+        int i4 = (a2.f21740a - width) / 2;
         int i5 = (a2.b - height) / 2;
-        switch (AnonymousClass4.f35492a[this.g.ordinal()]) {
+        switch (AnonymousClass4.f21801a[this.g.ordinal()]) {
             case 1:
             case 6:
                 i = -i4;
@@ -145,13 +145,13 @@ public class c extends FrameLayout implements b {
     }
 
     private boolean e() {
-        if (this.f35488c.getCount() == 0 && this.e == null) {
+        if (this.f21797c.getCount() == 0 && this.e == null) {
             com.tencent.cloud.huiyansdkface.a.d.a.c("CameraSurfaceView", "surfaceHolder==null and countDownLatch==0", new Object[0]);
             return true;
         }
         try {
             com.tencent.cloud.huiyansdkface.a.d.a.a("CameraSurfaceView", "attachCameraView:wait for surface create", new Object[0]);
-            this.f35488c.await(1L, TimeUnit.SECONDS);
+            this.f21797c.await(1L, TimeUnit.SECONDS);
             return false;
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -184,17 +184,17 @@ public class c extends FrameLayout implements b {
 
     public void a(a aVar) {
         if (aVar != null) {
-            this.f35487a = aVar;
+            this.f21796a = aVar;
             this.b = aVar.a(getContext());
-            this.f35487a.a(new a.InterfaceC0905a() { // from class: com.tencent.cloud.huiyansdkface.a.g.c.1
-                @Override // com.tencent.cloud.huiyansdkface.a.g.a.InterfaceC0905a
+            this.f21796a.a(new a.InterfaceC0735a() { // from class: com.tencent.cloud.huiyansdkface.a.g.c.1
+                @Override // com.tencent.cloud.huiyansdkface.a.g.a.InterfaceC0735a
                 public void a() {
                     com.tencent.cloud.huiyansdkface.a.d.a.a("CameraSurfaceView", "onPreviewCreated", new Object[0]);
                     c.this.f = true;
-                    c.this.f35488c.countDown();
+                    c.this.f21797c.countDown();
                 }
 
-                @Override // com.tencent.cloud.huiyansdkface.a.g.a.InterfaceC0905a
+                @Override // com.tencent.cloud.huiyansdkface.a.g.a.InterfaceC0735a
                 public void b() {
                     com.tencent.cloud.huiyansdkface.a.d.a.a("CameraSurfaceView", "onPreviewDestroy", new Object[0]);
                     c.this.g = null;
@@ -241,7 +241,7 @@ public class c extends FrameLayout implements b {
                     return;
                 }
                 c.this.e = surfaceHolder;
-                c.this.f35488c.countDown();
+                c.this.f21797c.countDown();
             }
 
             @Override // android.view.SurfaceHolder.Callback
@@ -261,19 +261,19 @@ public class c extends FrameLayout implements b {
     public boolean a(com.tencent.cloud.huiyansdkface.a.c cVar, com.tencent.cloud.huiyansdkface.a.c.a.a aVar, boolean z) {
         a aVar2;
         if (z) {
-            SurfaceView surfaceView = this.f35487a;
+            SurfaceView surfaceView = this.f21796a;
             if (surfaceView == null) {
                 surfaceView = this.d;
             }
             a(cVar, surfaceView);
             return true;
         }
-        a aVar3 = this.f35487a;
+        a aVar3 = this.f21796a;
         if (aVar3 != null) {
             if (aVar3.b() && !this.f && e()) {
                 return false;
             }
-            aVar2 = this.f35487a;
+            aVar2 = this.f21796a;
         } else if (this.e == null && e()) {
             return false;
         } else {
@@ -311,18 +311,16 @@ public class c extends FrameLayout implements b {
         return this.h;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        if (this.f35488c.getCount() > 0) {
-            this.f35488c.countDown();
+        if (this.f21797c.getCount() > 0) {
+            this.f21797c.countDown();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z, int i, int i2, int i3, int i4) {
+    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         com.tencent.cloud.huiyansdkface.a.d.a.a("CameraSurfaceView", "onLayout:changed=" + z, new Object[0]);
         super.onLayout(z, i, i2, i3, i4);
         if (this.h == null || this.g == null || !z) {

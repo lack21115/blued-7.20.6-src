@@ -1,7 +1,8 @@
 package org.commonmark.renderer.html;
 
-import com.cdo.oaps.ad.OapsKey;
-import com.meizu.cloud.pushsdk.notification.model.AppIconSetting;
+import com.amap.api.col.p0003sl.iu;
+import com.anythink.core.common.b.g;
+import com.anythink.core.common.g.c;
 import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -33,38 +34,34 @@ import org.commonmark.renderer.NodeRenderer;
 
 /* loaded from: source-3503164-dex2jar.jar:org/commonmark/renderer/html/CoreHtmlNodeRenderer.class */
 public class CoreHtmlNodeRenderer extends AbstractVisitor implements NodeRenderer {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected final HtmlNodeRendererContext f44074a;
+    protected final HtmlNodeRendererContext a;
     private final HtmlWriter b;
 
     /* loaded from: source-3503164-dex2jar.jar:org/commonmark/renderer/html/CoreHtmlNodeRenderer$AltTextVisitor.class */
     static class AltTextVisitor extends AbstractVisitor {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final StringBuilder f44075a;
+        private final StringBuilder a;
 
         private AltTextVisitor() {
-            this.f44075a = new StringBuilder();
+            this.a = new StringBuilder();
         }
 
         String a() {
-            return this.f44075a.toString();
+            return this.a.toString();
         }
 
         @Override // org.commonmark.node.AbstractVisitor, org.commonmark.node.Visitor
         public void visit(HardLineBreak hardLineBreak) {
-            this.f44075a.append('\n');
+            this.a.append('\n');
         }
 
         @Override // org.commonmark.node.AbstractVisitor, org.commonmark.node.Visitor
         public void visit(SoftLineBreak softLineBreak) {
-            this.f44075a.append('\n');
+            this.a.append('\n');
         }
 
         @Override // org.commonmark.node.AbstractVisitor, org.commonmark.node.Visitor
         public void visit(Text text) {
-            this.f44075a.append(text.a());
+            this.a.append(text.a());
         }
     }
 
@@ -73,13 +70,13 @@ public class CoreHtmlNodeRenderer extends AbstractVisitor implements NodeRendere
     }
 
     private Map<String, String> a(Node node, String str, Map<String, String> map) {
-        return this.f44074a.a(node, str, map);
+        return this.a.a(node, str, map);
     }
 
     private void a(String str, Node node, Map<String, String> map) {
         this.b.a();
         this.b.a("pre", a(node, "pre"));
-        this.b.a("code", a(node, "code", map));
+        this.b.a(g.c.b, a(node, g.c.b, map));
         this.b.b(str);
         this.b.c("/code");
         this.b.c("/pre");
@@ -99,8 +96,8 @@ public class CoreHtmlNodeRenderer extends AbstractVisitor implements NodeRendere
 
     private boolean a(Paragraph paragraph) {
         Node b;
-        Block a2 = paragraph.b();
-        if (a2 == null || (b = a2.b()) == null || !(b instanceof ListBlock)) {
+        Block a = paragraph.b();
+        if (a == null || (b = a.b()) == null || !(b instanceof ListBlock)) {
             return false;
         }
         return ((ListBlock) b).e();
@@ -115,7 +112,7 @@ public class CoreHtmlNodeRenderer extends AbstractVisitor implements NodeRendere
                 return;
             }
             Node h = node2.h();
-            this.f44074a.a(node2);
+            this.a.a(node2);
             j = h;
         }
     }
@@ -143,7 +140,7 @@ public class CoreHtmlNodeRenderer extends AbstractVisitor implements NodeRendere
 
     @Override // org.commonmark.node.AbstractVisitor, org.commonmark.node.Visitor
     public void visit(Code code) {
-        this.b.a("code", a(code, "code"));
+        this.b.a(g.c.b, a(code, g.c.b));
         this.b.b(code.a());
         this.b.c("/code");
     }
@@ -183,7 +180,7 @@ public class CoreHtmlNodeRenderer extends AbstractVisitor implements NodeRendere
 
     @Override // org.commonmark.node.AbstractVisitor, org.commonmark.node.Visitor
     public void visit(Heading heading) {
-        String str = "h" + heading.c();
+        String str = iu.g + heading.c();
         this.b.a();
         this.b.a(str, a(heading, str));
         a(heading);
@@ -194,8 +191,8 @@ public class CoreHtmlNodeRenderer extends AbstractVisitor implements NodeRendere
     @Override // org.commonmark.node.AbstractVisitor, org.commonmark.node.Visitor
     public void visit(HtmlBlock htmlBlock) {
         this.b.a();
-        if (this.f44074a.b()) {
-            this.b.a("p", a(htmlBlock, "p"));
+        if (this.a.b()) {
+            this.b.a(c.W, a(htmlBlock, c.W));
             this.b.b(htmlBlock.c());
             this.b.c("/p");
         } else {
@@ -206,7 +203,7 @@ public class CoreHtmlNodeRenderer extends AbstractVisitor implements NodeRendere
 
     @Override // org.commonmark.node.AbstractVisitor, org.commonmark.node.Visitor
     public void visit(HtmlInline htmlInline) {
-        if (this.f44074a.b()) {
+        if (this.a.b()) {
             this.b.b(htmlInline.a());
         } else {
             this.b.a(htmlInline.a());
@@ -215,13 +212,13 @@ public class CoreHtmlNodeRenderer extends AbstractVisitor implements NodeRendere
 
     @Override // org.commonmark.node.AbstractVisitor, org.commonmark.node.Visitor
     public void visit(Image image) {
-        String a2 = this.f44074a.a(image.a());
+        String a = this.a.a(image.a());
         AltTextVisitor altTextVisitor = new AltTextVisitor();
         image.a(altTextVisitor);
-        String a3 = altTextVisitor.a();
+        String a2 = altTextVisitor.a();
         LinkedHashMap linkedHashMap = new LinkedHashMap();
-        linkedHashMap.put(OapsKey.KEY_SRC, a2);
-        linkedHashMap.put("alt", a3);
+        linkedHashMap.put("src", a);
+        linkedHashMap.put("alt", a2);
         if (image.c() != null) {
             linkedHashMap.put("title", image.c());
         }
@@ -236,7 +233,7 @@ public class CoreHtmlNodeRenderer extends AbstractVisitor implements NodeRendere
     @Override // org.commonmark.node.AbstractVisitor, org.commonmark.node.Visitor
     public void visit(Link link) {
         LinkedHashMap linkedHashMap = new LinkedHashMap();
-        linkedHashMap.put("href", this.f44074a.a(link.a()));
+        linkedHashMap.put("href", this.a.a(link.a()));
         if (link.c() != null) {
             linkedHashMap.put("title", link.c());
         }
@@ -247,7 +244,7 @@ public class CoreHtmlNodeRenderer extends AbstractVisitor implements NodeRendere
 
     @Override // org.commonmark.node.AbstractVisitor, org.commonmark.node.Visitor
     public void visit(ListItem listItem) {
-        this.b.a(AppIconSetting.LARGE_ICON_URL, a(listItem, AppIconSetting.LARGE_ICON_URL));
+        this.b.a("li", a(listItem, "li"));
         a(listItem);
         this.b.c("/li");
         this.b.a();
@@ -255,23 +252,23 @@ public class CoreHtmlNodeRenderer extends AbstractVisitor implements NodeRendere
 
     @Override // org.commonmark.node.AbstractVisitor, org.commonmark.node.Visitor
     public void visit(OrderedList orderedList) {
-        int c2 = orderedList.c();
+        int c = orderedList.c();
         LinkedHashMap linkedHashMap = new LinkedHashMap();
-        if (c2 != 1) {
-            linkedHashMap.put("start", String.valueOf(c2));
+        if (c != 1) {
+            linkedHashMap.put("start", String.valueOf(c));
         }
         a((ListBlock) orderedList, "ol", a((Node) orderedList, "ol", (Map<String, String>) linkedHashMap));
     }
 
     @Override // org.commonmark.node.AbstractVisitor, org.commonmark.node.Visitor
     public void visit(Paragraph paragraph) {
-        boolean a2 = a(paragraph);
-        if (!a2) {
+        boolean a = a(paragraph);
+        if (!a) {
             this.b.a();
-            this.b.a("p", a(paragraph, "p"));
+            this.b.a(c.W, a(paragraph, c.W));
         }
         a((Node) paragraph);
-        if (a2) {
+        if (a) {
             return;
         }
         this.b.c("/p");
@@ -280,7 +277,7 @@ public class CoreHtmlNodeRenderer extends AbstractVisitor implements NodeRendere
 
     @Override // org.commonmark.node.AbstractVisitor, org.commonmark.node.Visitor
     public void visit(SoftLineBreak softLineBreak) {
-        this.b.a(this.f44074a.a());
+        this.b.a(this.a.a());
     }
 
     @Override // org.commonmark.node.AbstractVisitor, org.commonmark.node.Visitor

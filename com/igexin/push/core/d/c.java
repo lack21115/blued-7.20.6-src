@@ -2,6 +2,7 @@ package com.igexin.push.core.d;
 
 import android.text.TextUtils;
 import com.getui.gtc.base.util.io.IOUtils;
+import com.huawei.hms.ads.fw;
 import com.igexin.push.f.j;
 import java.io.Closeable;
 import java.io.File;
@@ -15,11 +16,11 @@ import java.util.Map;
 public final class c {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f23478a = "guard.me";
+    public static final String f9870a = "guard.me";
     public static final String b = "guard.others";
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f23479c = "GuardConfig";
+    private static final String f9871c = "GuardConfig";
     private static final c d = new c();
     private long e;
     private final Map<String, String> f = new HashMap();
@@ -185,7 +186,7 @@ public final class c {
         if (str == null) {
             return null;
         }
-        if (str.equalsIgnoreCase("true")) {
+        if (str.equalsIgnoreCase(fw.Code)) {
             return Boolean.TRUE;
         }
         if (str.equalsIgnoreCase("false")) {

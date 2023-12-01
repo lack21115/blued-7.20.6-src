@@ -13,21 +13,21 @@ import java.io.OutputStream;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f7635a = "AtomicFile";
+    private static final String f4796a = "AtomicFile";
     private final File b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final File f7636c;
+    private final File f4797c;
 
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/exoplayer/k/b$a.class */
     static final class a extends OutputStream {
 
         /* renamed from: a  reason: collision with root package name */
-        private final FileOutputStream f7639a;
+        private final FileOutputStream f4800a;
         private boolean b = false;
 
         public a(File file) {
-            this.f7639a = new FileOutputStream(file);
+            this.f4800a = new FileOutputStream(file);
         }
 
         @Override // java.io.OutputStream, java.io.Closeable, java.lang.AutoCloseable
@@ -38,62 +38,62 @@ public final class b {
             this.b = true;
             flush();
             try {
-                this.f7639a.getFD().sync();
+                this.f4800a.getFD().sync();
             } catch (IOException e) {
-                Log.w(b.f7635a, "Failed to sync file descriptor:", e);
+                Log.w(b.f4796a, "Failed to sync file descriptor:", e);
             }
-            this.f7639a.close();
+            this.f4800a.close();
         }
 
         @Override // java.io.OutputStream, java.io.Flushable
         public final void flush() {
-            this.f7639a.flush();
+            this.f4800a.flush();
         }
 
         @Override // java.io.OutputStream
         public final void write(int i) {
-            this.f7639a.write(i);
+            this.f4800a.write(i);
         }
 
         @Override // java.io.OutputStream
         public final void write(byte[] bArr) {
-            this.f7639a.write(bArr);
+            this.f4800a.write(bArr);
         }
 
         @Override // java.io.OutputStream
         public final void write(byte[] bArr, int i, int i2) {
-            this.f7639a.write(bArr, i, i2);
+            this.f4800a.write(bArr, i, i2);
         }
     }
 
     public b(File file) {
         this.b = file;
-        this.f7636c = new File(file.getPath() + ".bak");
+        this.f4797c = new File(file.getPath() + ".bak");
     }
 
     private void d() {
-        if (this.f7636c.exists()) {
+        if (this.f4797c.exists()) {
             this.b.delete();
-            this.f7636c.renameTo(this.b);
+            this.f4797c.renameTo(this.b);
         }
     }
 
     public final void a() {
         this.b.delete();
-        this.f7636c.delete();
+        this.f4797c.delete();
     }
 
     public final void a(OutputStream outputStream) {
         outputStream.close();
-        this.f7636c.delete();
+        this.f4797c.delete();
     }
 
     public final OutputStream b() {
         if (this.b.exists()) {
-            if (this.f7636c.exists()) {
+            if (this.f4797c.exists()) {
                 this.b.delete();
-            } else if (!this.b.renameTo(this.f7636c)) {
-                Log.w(f7635a, "Couldn't rename file " + this.b + " to backup file " + this.f7636c);
+            } else if (!this.b.renameTo(this.f4797c)) {
+                Log.w(f4796a, "Couldn't rename file " + this.b + " to backup file " + this.f4797c);
             }
         }
         try {
@@ -111,9 +111,9 @@ public final class b {
     }
 
     public final InputStream c() {
-        if (this.f7636c.exists()) {
+        if (this.f4797c.exists()) {
             this.b.delete();
-            this.f7636c.renameTo(this.b);
+            this.f4797c.renameTo(this.b);
         }
         return new FileInputStream(this.b);
     }

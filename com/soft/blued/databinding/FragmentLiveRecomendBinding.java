@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentLiveRecomendBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final FrameLayout f28874a;
+    private final FrameLayout f15184a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f28874a;
+        return this.f15184a;
     }
 }

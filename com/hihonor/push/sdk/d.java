@@ -10,11 +10,11 @@ public class d {
     public static final d e = new d();
 
     /* renamed from: a  reason: collision with root package name */
-    public WeakReference<Context> f22284a;
+    public WeakReference<Context> f8676a;
     public volatile boolean b = false;
 
     /* renamed from: c  reason: collision with root package name */
-    public volatile boolean f22285c = false;
+    public volatile boolean f8677c = false;
     public e d;
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -28,10 +28,10 @@ public class d {
             return;
         }
         this.b = true;
-        this.f22284a = new WeakReference<>(fVar.f22290a);
-        this.f22285c = fVar.b;
-        this.d = new e(fVar.f22290a);
-        if (this.f22285c) {
+        this.f8676a = new WeakReference<>(fVar.f8682a);
+        this.f8677c = fVar.b;
+        this.d = new e(fVar.f8682a);
+        if (this.f8677c) {
             a((HonorPushCallback<String>) null, true);
         }
     }
@@ -72,7 +72,7 @@ public class d {
     }
 
     public Context a() {
-        return this.f22284a.get();
+        return this.f8676a.get();
     }
 
     public void a(final HonorPushCallback<Void> honorPushCallback) {

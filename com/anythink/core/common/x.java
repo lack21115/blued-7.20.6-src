@@ -8,13 +8,9 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/x.class */
 public class x {
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final String f6939c = x.class.getSimpleName();
+    private static final String c = x.class.getSimpleName();
     private static volatile x d;
-
-    /* renamed from: a  reason: collision with root package name */
-    Map<String, al> f6940a;
+    Map<String, al> a;
     Context b;
 
     private x(Context context) {
@@ -38,16 +34,16 @@ public class x {
     }
 
     private void a() {
-        if (this.f6940a == null) {
-            this.f6940a = new ConcurrentHashMap(5);
+        if (this.a == null) {
+            this.a = new ConcurrentHashMap(5);
             try {
-                Map<String, ?> a2 = com.anythink.core.common.k.p.a(this.b, com.anythink.core.common.b.g.B);
-                if (a2 != null) {
-                    for (Map.Entry<String, ?> entry : a2.entrySet()) {
+                Map<String, ?> a = com.anythink.core.common.k.p.a(this.b, com.anythink.core.common.b.g.B);
+                if (a != null) {
+                    for (Map.Entry<String, ?> entry : a.entrySet()) {
                         String key = entry.getKey();
                         Object value = entry.getValue();
                         if (value instanceof String) {
-                            this.f6940a.put(key, al.a((String) value));
+                            this.a.put(key, al.a((String) value));
                         }
                     }
                 }
@@ -57,7 +53,7 @@ public class x {
     }
 
     private al b(String str) {
-        Map<String, al> map = this.f6940a;
+        Map<String, al> map = this.a;
         if (map != null) {
             return map.remove(str);
         }
@@ -68,7 +64,7 @@ public class x {
     }
 
     public final void a(String str) {
-        Map<String, al> map = this.f6940a;
+        Map<String, al> map = this.a;
         if (map == null) {
             return;
         }
@@ -83,7 +79,7 @@ public class x {
     }
 
     public final void a(String str, String str2, al.a aVar, al.a aVar2) {
-        Map<String, al> map = this.f6940a;
+        Map<String, al> map = this.a;
         if (map == null) {
             return;
         }
@@ -91,12 +87,12 @@ public class x {
         al alVar2 = alVar;
         if (alVar == null) {
             synchronized (this) {
-                al alVar3 = this.f6940a.get(str);
+                al alVar3 = this.a.get(str);
                 alVar2 = alVar3;
                 if (alVar3 == null) {
                     alVar2 = new al();
                     alVar2.b(str2);
-                    this.f6940a.put(str, alVar2);
+                    this.a.put(str, alVar2);
                 }
             }
         }

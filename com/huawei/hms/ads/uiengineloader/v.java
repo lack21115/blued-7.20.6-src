@@ -15,7 +15,7 @@ import java.util.Map;
 public final class v {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f22575a = "ApkUtil";
+    private static final String f8967a = "ApkUtil";
     private static final Map<String, List<String>> b;
 
     static {
@@ -77,10 +77,10 @@ public final class v {
                     } catch (Throwable th) {
                         th = th;
                         try {
-                            aa.d(f22575a, "getPackageSignatureBytes Exception:" + th.getClass().getSimpleName());
+                            aa.d(f8967a, "getPackageSignatureBytes Exception:" + th.getClass().getSimpleName());
                             byteArrayInputStream2 = byteArrayInputStream;
                             ae.a(byteArrayInputStream2);
-                            aa.b(f22575a, "Failed to get application signature certificate fingerprint.");
+                            aa.b(f8967a, "Failed to get application signature certificate fingerprint.");
                             return new byte[0];
                         } catch (Throwable th2) {
                             ae.a(byteArrayInputStream);
@@ -94,7 +94,7 @@ public final class v {
             }
         }
         ae.a(byteArrayInputStream2);
-        aa.b(f22575a, "Failed to get application signature certificate fingerprint.");
+        aa.b(f8967a, "Failed to get application signature certificate fingerprint.");
         return new byte[0];
     }
 
@@ -109,7 +109,7 @@ public final class v {
                 return a(packageManager.getPackageArchiveInfo(str, 64));
             }
         } catch (Throwable th) {
-            aa.d(f22575a, "getPackageSignatureBytesByPath RuntimeException:" + th.getClass().getSimpleName());
+            aa.d(f8967a, "getPackageSignatureBytesByPath RuntimeException:" + th.getClass().getSimpleName());
         }
         return new byte[0];
     }
@@ -129,7 +129,7 @@ public final class v {
             }
             return null;
         } catch (Throwable th) {
-            aa.c(f22575a, "getPackageInfo Exception");
+            aa.c(f8967a, "getPackageInfo Exception");
             return null;
         }
     }
@@ -149,7 +149,7 @@ public final class v {
                 return a(packageManager.getPackageInfo(str, 64));
             }
         } catch (Throwable th) {
-            aa.d(f22575a, "getPackageSignatureBytes RuntimeException:" + th.getClass().getSimpleName());
+            aa.d(f8967a, "getPackageSignatureBytes RuntimeException:" + th.getClass().getSimpleName());
         }
         return new byte[0];
     }

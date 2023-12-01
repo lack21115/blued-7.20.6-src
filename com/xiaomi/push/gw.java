@@ -1,5 +1,6 @@
 package com.xiaomi.push;
 
+import com.huawei.hms.framework.common.ContainerUtils;
 import com.j256.ormlite.stmt.query.SimpleComparison;
 import java.util.Random;
 
@@ -7,16 +8,16 @@ import java.util.Random;
 public class gw {
 
     /* renamed from: a  reason: collision with other field name */
-    private static final char[] f529a = "&quot;".toCharArray();
+    private static final char[] f482a = "&quot;".toCharArray();
     private static final char[] b = "&apos;".toCharArray();
 
     /* renamed from: c  reason: collision with root package name */
-    private static final char[] f41458c = "&amp;".toCharArray();
+    private static final char[] f27767c = "&amp;".toCharArray();
     private static final char[] d = "&lt;".toCharArray();
     private static final char[] e = "&gt;".toCharArray();
 
     /* renamed from: a  reason: collision with root package name */
-    private static Random f41457a = new Random();
+    private static Random f27766a = new Random();
     private static char[] f = "0123456789abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
 
     public static String a(int i) {
@@ -30,7 +31,7 @@ public class gw {
             if (i3 >= i) {
                 return new String(cArr);
             }
-            cArr[i3] = f[f41457a.nextInt(71)];
+            cArr[i3] = f[f27766a.nextInt(71)];
             i2 = i3 + 1;
         }
     }
@@ -76,13 +77,13 @@ public class gw {
                         }
                     }
                     i4 = i2 + 1;
-                    sb.append(f41458c);
+                    sb.append(f27767c);
                 } else if (c2 == '\"') {
                     if (i2 > i) {
                         sb.append(charArray, i, i2 - i);
                     }
                     i4 = i2 + 1;
-                    sb.append(f529a);
+                    sb.append(f482a);
                 } else {
                     i4 = i;
                     if (c2 == '\'') {
@@ -142,6 +143,6 @@ public class gw {
     }
 
     public static final String b(String str) {
-        return a(a(a(a(a(str, "&lt;", SimpleComparison.LESS_THAN_OPERATION), "&gt;", SimpleComparison.GREATER_THAN_OPERATION), "&quot;", "\""), "&apos;", "'"), "&amp;", "&");
+        return a(a(a(a(a(str, "&lt;", SimpleComparison.LESS_THAN_OPERATION), "&gt;", SimpleComparison.GREATER_THAN_OPERATION), "&quot;", "\""), "&apos;", "'"), "&amp;", ContainerUtils.FIELD_DELIMITER);
     }
 }

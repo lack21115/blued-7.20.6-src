@@ -12,12 +12,12 @@ import java.util.concurrent.ScheduledFuture;
 public class UTMCAppStatusMonitor implements Application.ActivityLifecycleCallbacks {
 
     /* renamed from: a  reason: collision with root package name */
-    private static UTMCAppStatusMonitor f41023a;
+    private static UTMCAppStatusMonitor f27332a;
     private int J = 0;
     private boolean P = false;
 
     /* renamed from: a  reason: collision with other field name */
-    private ScheduledFuture<?> f79a = null;
+    private ScheduledFuture<?> f32a = null;
     private Object d = new Object();
     private List<UTMCAppStatusCallbacks> m = new LinkedList();
     private Object e = new Object();
@@ -51,10 +51,10 @@ public class UTMCAppStatusMonitor implements Application.ActivityLifecycleCallba
         UTMCAppStatusMonitor uTMCAppStatusMonitor;
         synchronized (UTMCAppStatusMonitor.class) {
             try {
-                if (f41023a == null) {
-                    f41023a = new UTMCAppStatusMonitor();
+                if (f27332a == null) {
+                    f27332a = new UTMCAppStatusMonitor();
                 }
-                uTMCAppStatusMonitor = f41023a;
+                uTMCAppStatusMonitor = f27332a;
             } catch (Throwable th) {
                 throw th;
             }

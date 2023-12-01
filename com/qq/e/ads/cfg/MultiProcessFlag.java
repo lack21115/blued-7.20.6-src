@@ -6,11 +6,11 @@ import com.qq.e.comm.util.GDTLogger;
 public class MultiProcessFlag {
 
     /* renamed from: a  reason: collision with root package name */
-    private static boolean f27862a;
+    private static boolean f14174a;
     private static boolean b;
 
     public static boolean isMultiProcess() {
-        return f27862a;
+        return f14174a;
     }
 
     public static void setMultiProcess(boolean z) {
@@ -19,6 +19,6 @@ public class MultiProcessFlag {
             return;
         }
         b = true;
-        f27862a = z;
+        f14174a = z;
     }
 }

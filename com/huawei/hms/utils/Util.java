@@ -13,16 +13,17 @@ import com.huawei.hms.android.SystemUtils;
 import com.huawei.hms.common.PackageConstants;
 import com.huawei.hms.common.util.AGCUtils;
 import com.huawei.hms.support.log.HMSLog;
+import com.xiaomi.mipush.sdk.Constants;
 
 /* loaded from: source-7994992-dex2jar.jar:com/huawei/hms/utils/Util.class */
 public class Util {
 
     /* renamed from: a  reason: collision with root package name */
-    private static boolean f22928a = false;
+    private static boolean f9320a = false;
     private static boolean b = false;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final Object f22929c = new Object();
+    private static final Object f9321c = new Object();
     private static String d;
 
     public static int compareHmsVersion(String str, String str2) {
@@ -133,7 +134,7 @@ public class Util {
         String systemProperties = getSystemProperties("ro.product.locale.region", "");
         if (TextUtils.isEmpty(systemProperties)) {
             String systemProperties2 = getSystemProperties("ro.product.locale", "");
-            if (TextUtils.isEmpty(systemProperties2) || (lastIndexOf = systemProperties2.lastIndexOf("-")) == -1) {
+            if (TextUtils.isEmpty(systemProperties2) || (lastIndexOf = systemProperties2.lastIndexOf(Constants.ACCEPT_TIME_SEPARATOR_SERVER)) == -1) {
                 String localCountry = SystemUtils.getLocalCountry();
                 return TextUtils.isEmpty(localCountry) ? "" : localCountry;
             }
@@ -199,8 +200,8 @@ public class Util {
 
     public static boolean isAvailableLibExist(Context context) {
         boolean z;
-        synchronized (f22929c) {
-            if (!f22928a) {
+        synchronized (f9321c) {
+            if (!f9320a) {
                 PackageManager packageManager = context.getPackageManager();
                 if (packageManager == null) {
                     HMSLog.e("Util", "In isAvailableLibExist, Failed to get 'PackageManager' instance.");
@@ -212,7 +213,7 @@ public class Util {
                         z = false;
                     }
                     b = z;
-                    f22928a = true;
+                    f9320a = true;
                 } else {
                     try {
                         try {
@@ -241,7 +242,7 @@ public class Util {
                         z = false;
                     }
                     b = z;
-                    f22928a = true;
+                    f9320a = true;
                 }
             }
         }

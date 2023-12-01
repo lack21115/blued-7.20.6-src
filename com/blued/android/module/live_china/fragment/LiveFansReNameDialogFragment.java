@@ -33,13 +33,9 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveFansReNameDialogFragment.class */
 public class LiveFansReNameDialogFragment extends BaseDialogFragment implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    public Context f12860a;
+    public Context a;
     public String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public long f12861c;
+    public long c;
     public ILiveFansEditDialog d;
     private EditText e;
     private TextView f;
@@ -50,19 +46,17 @@ public class LiveFansReNameDialogFragment extends BaseDialogFragment implements 
     private boolean k = false;
     private TextWatcher l = new TextWatcher() { // from class: com.blued.android.module.live_china.fragment.LiveFansReNameDialogFragment.3
         private int b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private int f12865c;
+        private int c;
 
         @Override // android.text.TextWatcher
         public void afterTextChanged(Editable editable) {
             this.b = LiveFansReNameDialogFragment.this.e.getSelectionStart();
-            this.f12865c = LiveFansReNameDialogFragment.this.e.getSelectionEnd();
+            this.c = LiveFansReNameDialogFragment.this.e.getSelectionEnd();
             LiveFansReNameDialogFragment.this.e.removeTextChangedListener(LiveFansReNameDialogFragment.this.l);
             while (editable.length() > 3) {
-                editable.delete(this.b - 1, this.f12865c);
+                editable.delete(this.b - 1, this.c);
                 this.b--;
-                this.f12865c--;
+                this.c--;
             }
             LiveFansReNameDialogFragment.this.e.setSelection(this.b);
             StringBuffer stringBuffer = new StringBuffer();
@@ -94,7 +88,7 @@ public class LiveFansReNameDialogFragment extends BaseDialogFragment implements 
     private void e() {
         if (getArguments() != null) {
             this.b = getArguments().getString("name");
-            this.f12861c = getArguments().getLong("lid");
+            this.c = getArguments().getLong("lid");
         }
     }
 
@@ -140,9 +134,8 @@ public class LiveFansReNameDialogFragment extends BaseDialogFragment implements 
         view.getId();
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
-        this.f12860a = getActivity();
+        this.a = getActivity();
         e();
         View inflate = getActivity().getLayoutInflater().inflate(R.layout.dialog_live_fans_edit, (ViewGroup) null);
         DensityUtils.a(getActivity(), 300.0f);
@@ -160,7 +153,7 @@ public class LiveFansReNameDialogFragment extends BaseDialogFragment implements 
         return dialog;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(0));
         View inflate = layoutInflater.inflate(R.layout.dialog_live_fans_edit, viewGroup);
@@ -173,7 +166,7 @@ public class LiveFansReNameDialogFragment extends BaseDialogFragment implements 
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
-                EventTrackLive.b(LiveProtos.Event.FANS_CLUB_PAGE_EDIT_NAME_CONFIRM_CLICK, String.valueOf(LiveFansReNameDialogFragment.this.f12861c));
+                EventTrackLive.b(LiveProtos.Event.FANS_CLUB_PAGE_EDIT_NAME_CONFIRM_CLICK, String.valueOf(LiveFansReNameDialogFragment.this.c));
                 if (TextUtils.isEmpty(LiveFansReNameDialogFragment.this.e.getText().toString())) {
                     AppMethods.d(R.string.live_fans_name_empty);
                 } else {
@@ -197,7 +190,7 @@ public class LiveFansReNameDialogFragment extends BaseDialogFragment implements 
         return inflate;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onDestroy() {
         super.onDestroy();
         this.j = false;
@@ -207,7 +200,7 @@ public class LiveFansReNameDialogFragment extends BaseDialogFragment implements 
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void show(FragmentManager fragmentManager, String str) {
         try {
             ReflectionUtils.a(this, "mDismissed", false);

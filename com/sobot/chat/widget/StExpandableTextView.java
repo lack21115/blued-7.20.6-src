@@ -64,9 +64,8 @@ public class StExpandableTextView extends LinearLayout implements View.OnClickLi
             setDuration(StExpandableTextView.this.mAnimationDuration);
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // android.view.animation.Animation
-        public void applyTransformation(float f, Transformation transformation) {
+        protected void applyTransformation(float f, Transformation transformation) {
             int i = this.mEndHeight;
             int i2 = this.mStartHeight;
             int i3 = (int) (((i - i2) * f) + i2);
@@ -249,9 +248,8 @@ public class StExpandableTextView extends LinearLayout implements View.OnClickLi
         startAnimation(expandCollapseAnimation);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onFinishInflate() {
+    protected void onFinishInflate() {
         super.onFinishInflate();
         findViews();
     }
@@ -261,9 +259,8 @@ public class StExpandableTextView extends LinearLayout implements View.OnClickLi
         return this.mAnimating;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.LinearLayout, android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         if (getVisibility() == 8) {
             super.onMeasure(i, i2);
             return;

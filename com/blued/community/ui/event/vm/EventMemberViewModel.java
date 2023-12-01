@@ -10,13 +10,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/event/vm/EventMemberViewModel.class */
 public final class EventMemberViewModel extends BaseViewModel {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final List<String> f19590a = new ArrayList();
+    private final List<String> a = new ArrayList();
     private String b = "";
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f19591c = "";
+    private String c = "";
     private int d;
     private boolean e;
 
@@ -47,7 +43,7 @@ public final class EventMemberViewModel extends BaseViewModel {
 
     public final void b(String str) {
         Intrinsics.e(str, "<set-?>");
-        this.f19591c = str;
+        this.c = str;
     }
 
     public final void c(boolean z) {

@@ -4,6 +4,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import com.anythink.expressad.video.module.a.a.m;
 import com.google.common.net.HttpHeaders;
+import com.huawei.openalliance.ad.utils.ay;
 import com.kwad.sdk.core.network.f;
 import com.kwad.sdk.core.network.q;
 import com.kwad.sdk.export.proxy.AdHttpBodyBuilder;
@@ -71,15 +72,15 @@ public final class c {
         try {
             InputStream byteStream = response.body().byteStream();
             try {
-                List<String> headers = response.headers("Content-Encoding");
+                List headers = response.headers("Content-Encoding");
                 boolean z = false;
                 if (headers != null) {
-                    Iterator<String> it = headers.iterator();
+                    Iterator it = headers.iterator();
                     while (true) {
                         z = false;
                         if (!it.hasNext()) {
                             break;
-                        } else if ("gzip".equalsIgnoreCase(it.next())) {
+                        } else if ("gzip".equalsIgnoreCase((String) it.next())) {
                             z = true;
                             break;
                         }
@@ -222,9 +223,9 @@ public final class c {
     }
 
     private static void b(Request.Builder builder, Map<String, String> map) {
-        FormBody formBody;
+        RequestBody requestBody;
         if (map == null || map.isEmpty()) {
-            formBody = null;
+            requestBody = null;
         } else {
             FormBody.Builder builder2 = new FormBody.Builder();
             for (Map.Entry<String, String> entry : map.entrySet()) {
@@ -235,12 +236,12 @@ public final class c {
                     }
                 }
             }
-            formBody = builder2.build();
+            requestBody = builder2.build();
         }
-        if (builder == null || formBody == null) {
+        if (builder == null || requestBody == null) {
             return;
         }
-        builder.post(formBody);
+        builder.post(requestBody);
     }
 
     public static com.kwad.sdk.core.network.c doGet(String str, Map<String, String> map) {
@@ -255,12 +256,12 @@ public final class c {
                 adHttpBodyBuilder.buildFormData(new AdHttpFormDataBuilder() { // from class: com.kwad.sdk.core.network.kwai.c.1
                     @Override // com.kwad.sdk.export.proxy.AdHttpFormDataBuilder
                     public final void addFormDataPart(String str2, String str3) {
-                        MultipartBody.Builder.this.addFormDataPart(str2, str3);
+                        type.addFormDataPart(str2, str3);
                     }
 
                     @Override // com.kwad.sdk.export.proxy.AdHttpFormDataBuilder
                     public final void addFormDataPart(String str2, String str3, String str4, byte[] bArr) {
-                        MultipartBody.Builder.this.addFormDataPart(str2, str3, RequestBody.create(MediaType.parse(str4), bArr));
+                        type.addFormDataPart(str2, str3, RequestBody.create(MediaType.parse(str4), bArr));
                     }
                 });
             }
@@ -317,7 +318,7 @@ public final class c {
         com.kwad.sdk.core.network.c cVar = new com.kwad.sdk.core.network.c();
         Request.Builder url = new Request.Builder().url(str);
         HashMap hashMap = new HashMap();
-        hashMap.put(HttpHeaders.ACCEPT_LANGUAGE, "zh-CN");
+        hashMap.put(HttpHeaders.ACCEPT_LANGUAGE, ay.Code);
         hashMap.put("Connection", "keep-alive");
         hashMap.put("Charset", "UTF-8");
         a(url);
@@ -353,7 +354,7 @@ public final class c {
 
     private static OkHttpClient wl() {
         if (ahj == null) {
-            OkHttpClient.Builder connectionSpecs = new OkHttpClient.Builder().connectTimeout(m.ag, TimeUnit.MILLISECONDS).readTimeout(6000L, TimeUnit.MILLISECONDS).connectionSpecs(Arrays.asList(ConnectionSpec.MODERN_TLS, ConnectionSpec.COMPATIBLE_TLS, ConnectionSpec.CLEARTEXT));
+            OkHttpClient.Builder connectionSpecs = new OkHttpClient.Builder().connectTimeout((long) m.ag, TimeUnit.MILLISECONDS).readTimeout(6000L, TimeUnit.MILLISECONDS).connectionSpecs(Arrays.asList(ConnectionSpec.MODERN_TLS, ConnectionSpec.COMPATIBLE_TLS, ConnectionSpec.CLEARTEXT));
             try {
                 connectionSpecs.dns(new d());
             } catch (Throwable th) {

@@ -57,9 +57,8 @@ public interface ITelecomService extends IInterface {
         static final int TRANSACTION_switchToOtherActiveSub = 38;
         static final int TRANSACTION_unregisterPhoneAccount = 16;
 
-        /* JADX INFO: Access modifiers changed from: private */
         /* loaded from: source-4181928-dex2jar.jar:com/android/internal/telecom/ITelecomService$Stub$Proxy.class */
-        public static class Proxy implements ITelecomService {
+        private static class Proxy implements ITelecomService {
             private IBinder mRemote;
 
             Proxy(IBinder iBinder) {
@@ -217,10 +216,10 @@ public interface ITelecomService extends IInterface {
                     }
                     this.mRemote.transact(32, obtain, obtain2, 0);
                     obtain2.readException();
-                    Uri createFromParcel = obtain2.readInt() != 0 ? Uri.CREATOR.createFromParcel(obtain2) : null;
+                    Uri uri = obtain2.readInt() != 0 ? (Uri) Uri.CREATOR.createFromParcel(obtain2) : null;
                     obtain2.recycle();
                     obtain.recycle();
-                    return createFromParcel;
+                    return uri;
                 } catch (Throwable th) {
                     obtain2.recycle();
                     obtain.recycle();
@@ -327,10 +326,10 @@ public interface ITelecomService extends IInterface {
                     obtain.writeString(str);
                     this.mRemote.transact(2, obtain, obtain2, 0);
                     obtain2.readException();
-                    PhoneAccountHandle createFromParcel = obtain2.readInt() != 0 ? PhoneAccountHandle.CREATOR.createFromParcel(obtain2) : null;
+                    PhoneAccountHandle phoneAccountHandle = obtain2.readInt() != 0 ? (PhoneAccountHandle) PhoneAccountHandle.CREATOR.createFromParcel(obtain2) : null;
                     obtain2.recycle();
                     obtain.recycle();
-                    return createFromParcel;
+                    return phoneAccountHandle;
                 } catch (Throwable th) {
                     obtain2.recycle();
                     obtain.recycle();
@@ -346,10 +345,10 @@ public interface ITelecomService extends IInterface {
                     obtain.writeInterfaceToken(Stub.DESCRIPTOR);
                     this.mRemote.transact(22, obtain, obtain2, 0);
                     obtain2.readException();
-                    ComponentName createFromParcel = obtain2.readInt() != 0 ? ComponentName.CREATOR.createFromParcel(obtain2) : null;
+                    ComponentName componentName = obtain2.readInt() != 0 ? (ComponentName) ComponentName.CREATOR.createFromParcel(obtain2) : null;
                     obtain2.recycle();
                     obtain.recycle();
-                    return createFromParcel;
+                    return componentName;
                 } catch (Throwable th) {
                     obtain2.recycle();
                     obtain.recycle();
@@ -396,10 +395,10 @@ public interface ITelecomService extends IInterface {
                     }
                     this.mRemote.transact(8, obtain, obtain2, 0);
                     obtain2.readException();
-                    PhoneAccount createFromParcel = obtain2.readInt() != 0 ? PhoneAccount.CREATOR.createFromParcel(obtain2) : null;
+                    PhoneAccount phoneAccount = obtain2.readInt() != 0 ? (PhoneAccount) PhoneAccount.CREATOR.createFromParcel(obtain2) : null;
                     obtain2.recycle();
                     obtain.recycle();
-                    return createFromParcel;
+                    return phoneAccount;
                 } catch (Throwable th) {
                     obtain2.recycle();
                     obtain.recycle();
@@ -447,10 +446,10 @@ public interface ITelecomService extends IInterface {
                     obtain.writeInterfaceToken(Stub.DESCRIPTOR);
                     this.mRemote.transact(12, obtain, obtain2, 0);
                     obtain2.readException();
-                    PhoneAccountHandle createFromParcel = obtain2.readInt() != 0 ? PhoneAccountHandle.CREATOR.createFromParcel(obtain2) : null;
+                    PhoneAccountHandle phoneAccountHandle = obtain2.readInt() != 0 ? (PhoneAccountHandle) PhoneAccountHandle.CREATOR.createFromParcel(obtain2) : null;
                     obtain2.recycle();
                     obtain.recycle();
-                    return createFromParcel;
+                    return phoneAccountHandle;
                 } catch (Throwable th) {
                     obtain2.recycle();
                     obtain.recycle();
@@ -481,10 +480,10 @@ public interface ITelecomService extends IInterface {
                     obtain.writeInterfaceToken(Stub.DESCRIPTOR);
                     this.mRemote.transact(3, obtain, obtain2, 0);
                     obtain2.readException();
-                    PhoneAccountHandle createFromParcel = obtain2.readInt() != 0 ? PhoneAccountHandle.CREATOR.createFromParcel(obtain2) : null;
+                    PhoneAccountHandle phoneAccountHandle = obtain2.readInt() != 0 ? (PhoneAccountHandle) PhoneAccountHandle.CREATOR.createFromParcel(obtain2) : null;
                     obtain2.recycle();
                     obtain.recycle();
-                    return createFromParcel;
+                    return phoneAccountHandle;
                 } catch (Throwable th) {
                     obtain2.recycle();
                     obtain.recycle();
@@ -866,7 +865,7 @@ public interface ITelecomService extends IInterface {
                     return true;
                 case 4:
                     parcel.enforceInterface(DESCRIPTOR);
-                    setUserSelectedOutgoingPhoneAccount(parcel.readInt() != 0 ? PhoneAccountHandle.CREATOR.createFromParcel(parcel) : null);
+                    setUserSelectedOutgoingPhoneAccount(parcel.readInt() != 0 ? (PhoneAccountHandle) PhoneAccountHandle.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     return true;
                 case 5:
@@ -889,7 +888,7 @@ public interface ITelecomService extends IInterface {
                     return true;
                 case 8:
                     parcel.enforceInterface(DESCRIPTOR);
-                    PhoneAccount phoneAccount = getPhoneAccount(parcel.readInt() != 0 ? PhoneAccountHandle.CREATOR.createFromParcel(parcel) : null);
+                    PhoneAccount phoneAccount = getPhoneAccount(parcel.readInt() != 0 ? (PhoneAccountHandle) PhoneAccountHandle.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     if (phoneAccount == null) {
                         parcel2.writeInt(0);
@@ -929,7 +928,7 @@ public interface ITelecomService extends IInterface {
                     return true;
                 case 13:
                     parcel.enforceInterface(DESCRIPTOR);
-                    setSimCallManager(parcel.readInt() != 0 ? PhoneAccountHandle.CREATOR.createFromParcel(parcel) : null);
+                    setSimCallManager(parcel.readInt() != 0 ? (PhoneAccountHandle) PhoneAccountHandle.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     return true;
                 case 14:
@@ -940,12 +939,12 @@ public interface ITelecomService extends IInterface {
                     return true;
                 case 15:
                     parcel.enforceInterface(DESCRIPTOR);
-                    registerPhoneAccount(parcel.readInt() != 0 ? PhoneAccount.CREATOR.createFromParcel(parcel) : null);
+                    registerPhoneAccount(parcel.readInt() != 0 ? (PhoneAccount) PhoneAccount.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     return true;
                 case 16:
                     parcel.enforceInterface(DESCRIPTOR);
-                    unregisterPhoneAccount(parcel.readInt() != 0 ? PhoneAccountHandle.CREATOR.createFromParcel(parcel) : null);
+                    unregisterPhoneAccount(parcel.readInt() != 0 ? (PhoneAccountHandle) PhoneAccountHandle.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     return true;
                 case 17:
@@ -955,7 +954,7 @@ public interface ITelecomService extends IInterface {
                     return true;
                 case 18:
                     parcel.enforceInterface(DESCRIPTOR);
-                    boolean isVoiceMailNumber = isVoiceMailNumber(parcel.readInt() != 0 ? PhoneAccountHandle.CREATOR.createFromParcel(parcel) : null, parcel.readString());
+                    boolean isVoiceMailNumber = isVoiceMailNumber(parcel.readInt() != 0 ? (PhoneAccountHandle) PhoneAccountHandle.CREATOR.createFromParcel(parcel) : null, parcel.readString());
                     parcel2.writeNoException();
                     int i3 = 0;
                     if (isVoiceMailNumber) {
@@ -965,13 +964,13 @@ public interface ITelecomService extends IInterface {
                     return true;
                 case 19:
                     parcel.enforceInterface(DESCRIPTOR);
-                    String line1Number = getLine1Number(parcel.readInt() != 0 ? PhoneAccountHandle.CREATOR.createFromParcel(parcel) : null);
+                    String line1Number = getLine1Number(parcel.readInt() != 0 ? (PhoneAccountHandle) PhoneAccountHandle.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     parcel2.writeString(line1Number);
                     return true;
                 case 20:
                     parcel.enforceInterface(DESCRIPTOR);
-                    boolean hasVoiceMailNumber = hasVoiceMailNumber(parcel.readInt() != 0 ? PhoneAccountHandle.CREATOR.createFromParcel(parcel) : null);
+                    boolean hasVoiceMailNumber = hasVoiceMailNumber(parcel.readInt() != 0 ? (PhoneAccountHandle) PhoneAccountHandle.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     int i4 = 0;
                     if (hasVoiceMailNumber) {
@@ -981,7 +980,7 @@ public interface ITelecomService extends IInterface {
                     return true;
                 case 21:
                     parcel.enforceInterface(DESCRIPTOR);
-                    String voiceMailNumber = getVoiceMailNumber(parcel.readInt() != 0 ? PhoneAccountHandle.CREATOR.createFromParcel(parcel) : null);
+                    String voiceMailNumber = getVoiceMailNumber(parcel.readInt() != 0 ? (PhoneAccountHandle) PhoneAccountHandle.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     parcel2.writeString(voiceMailNumber);
                     return true;
@@ -1059,7 +1058,7 @@ public interface ITelecomService extends IInterface {
                     return true;
                 case 31:
                     parcel.enforceInterface(DESCRIPTOR);
-                    boolean handlePinMmiForPhoneAccount = handlePinMmiForPhoneAccount(parcel.readInt() != 0 ? PhoneAccountHandle.CREATOR.createFromParcel(parcel) : null, parcel.readString());
+                    boolean handlePinMmiForPhoneAccount = handlePinMmiForPhoneAccount(parcel.readInt() != 0 ? (PhoneAccountHandle) PhoneAccountHandle.CREATOR.createFromParcel(parcel) : null, parcel.readString());
                     parcel2.writeNoException();
                     int i9 = 0;
                     if (handlePinMmiForPhoneAccount) {
@@ -1069,7 +1068,7 @@ public interface ITelecomService extends IInterface {
                     return true;
                 case 32:
                     parcel.enforceInterface(DESCRIPTOR);
-                    Uri adnUriForPhoneAccount = getAdnUriForPhoneAccount(parcel.readInt() != 0 ? PhoneAccountHandle.CREATOR.createFromParcel(parcel) : null);
+                    Uri adnUriForPhoneAccount = getAdnUriForPhoneAccount(parcel.readInt() != 0 ? (PhoneAccountHandle) PhoneAccountHandle.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     if (adnUriForPhoneAccount == null) {
                         parcel2.writeInt(0);
@@ -1096,12 +1095,12 @@ public interface ITelecomService extends IInterface {
                     return true;
                 case 35:
                     parcel.enforceInterface(DESCRIPTOR);
-                    addNewIncomingCall(parcel.readInt() != 0 ? PhoneAccountHandle.CREATOR.createFromParcel(parcel) : null, parcel.readInt() != 0 ? Bundle.CREATOR.createFromParcel(parcel) : null);
+                    addNewIncomingCall(parcel.readInt() != 0 ? (PhoneAccountHandle) PhoneAccountHandle.CREATOR.createFromParcel(parcel) : null, parcel.readInt() != 0 ? (Bundle) Bundle.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     return true;
                 case 36:
                     parcel.enforceInterface(DESCRIPTOR);
-                    addNewUnknownCall(parcel.readInt() != 0 ? PhoneAccountHandle.CREATOR.createFromParcel(parcel) : null, parcel.readInt() != 0 ? Bundle.CREATOR.createFromParcel(parcel) : null);
+                    addNewUnknownCall(parcel.readInt() != 0 ? (PhoneAccountHandle) PhoneAccountHandle.CREATOR.createFromParcel(parcel) : null, parcel.readInt() != 0 ? (Bundle) Bundle.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     return true;
                 case 37:
@@ -1115,7 +1114,7 @@ public interface ITelecomService extends IInterface {
                     switchToOtherActiveSub(parcel.readInt());
                     parcel2.writeNoException();
                     return true;
-                case IBinder.INTERFACE_TRANSACTION /* 1598968902 */:
+                case 1598968902:
                     parcel2.writeString(DESCRIPTOR);
                     return true;
                 default:

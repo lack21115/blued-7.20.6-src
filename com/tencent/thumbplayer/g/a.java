@@ -18,14 +18,14 @@ import java.util.HashMap;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final a f39314a = new a();
+    private static final a f25623a = new a();
     private static boolean e = false;
     private static boolean f = true;
     private boolean d;
     private com.tencent.thumbplayer.g.f.b b = com.tencent.thumbplayer.g.f.b.e;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f39315c = true;
+    private boolean f25624c = true;
     private final HashMap<b, c> g = new HashMap<>();
     private final com.tencent.thumbplayer.g.e.a h = new com.tencent.thumbplayer.g.e.a();
     private final com.tencent.thumbplayer.g.d.a i = new com.tencent.thumbplayer.g.d.a();
@@ -33,22 +33,22 @@ public final class a {
     private boolean k = true;
 
     public static a a() {
-        return f39314a;
+        return f25623a;
     }
 
     private c a(MediaFormat mediaFormat, b bVar) {
         if (com.tencent.thumbplayer.g.h.b.a()) {
             com.tencent.thumbplayer.g.h.b.b("TCodecManager", "createDirectCodecWrapper mediaFormat:" + mediaFormat + " createBy:" + bVar.a() + " nameOrType:" + bVar.l());
         }
-        return bVar.a() == b.EnumC1023b.CreateByName ? new d(MediaCodec.createByCodecName(bVar.l())) : new d(MediaCodec.createDecoderByType(bVar.l()));
+        return bVar.a() == b.EnumC0853b.CreateByName ? new d(MediaCodec.createByCodecName(bVar.l())) : new d(MediaCodec.createDecoderByType(bVar.l()));
     }
 
     private c a(MediaFormat mediaFormat, b bVar, Surface surface) {
         boolean b = bVar.b();
         if (com.tencent.thumbplayer.g.h.b.a()) {
-            com.tencent.thumbplayer.g.h.b.b("TCodecManager", "getCodec isVideo:" + b + " codecFinalReuseEnable:" + bVar.f39316a);
+            com.tencent.thumbplayer.g.h.b.b("TCodecManager", "getCodec isVideo:" + b + " codecFinalReuseEnable:" + bVar.f25625a);
         }
-        if (Build.VERSION.SDK_INT < 23 || !bVar.f39316a) {
+        if (Build.VERSION.SDK_INT < 23 || !bVar.f25625a) {
             bVar.b = false;
             if (com.tencent.thumbplayer.g.h.b.a()) {
                 com.tencent.thumbplayer.g.h.b.b("TCodecManager", "getCodec return DirectCodecWrapper for mediaFormat:" + mediaFormat + " codecFinalReuseEnable:false surface:" + surface);
@@ -57,7 +57,7 @@ public final class a {
         }
         e a2 = e.a(mediaFormat);
         c a3 = a(b, a2);
-        e.a(a2.f39326a);
+        e.a(a2.f25635a);
         if (a3 != null) {
             a.b b2 = a3.b(a2);
             if (b2 == a.b.KEEP_CODEC_RESULT_YES_WITHOUT_RECONFIGURATION || b2 == a.b.KEEP_CODEC_RESULT_YES_WITH_RECONFIGURATION) {
@@ -93,7 +93,7 @@ public final class a {
         String string = mediaFormat.getString(MediaFormat.KEY_MIME);
         e a2 = e.a(mediaFormat);
         com.tencent.thumbplayer.g.f.a.a(a2, mediaFormat);
-        return f.a(bVar.a() == b.EnumC1023b.CreateByName ? MediaCodec.createByCodecName(bVar.l()) : MediaCodec.createDecoderByType(string), string, a2);
+        return f.a(bVar.a() == b.EnumC0853b.CreateByName ? MediaCodec.createByCodecName(bVar.l()) : MediaCodec.createDecoderByType(string), string, a2);
     }
 
     public static void b() {
@@ -174,7 +174,7 @@ public final class a {
     }
 
     public final boolean e() {
-        return this.f39315c;
+        return this.f25624c;
     }
 
     public final boolean f() {

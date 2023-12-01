@@ -13,13 +13,9 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/maps/offlinemap/OfflineMapActivity.class */
 public class OfflineMapActivity extends AMapPermissionActivity implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static int f5553a;
+    private static int a;
     private a b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private es f5554c;
+    private es c;
     private es[] d = new es[32];
     private int e = -1;
     private et f;
@@ -30,11 +26,11 @@ public class OfflineMapActivity extends AMapPermissionActivity implements View.O
                 this.b.c();
                 this.b = null;
             }
-            a c2 = c(esVar);
-            this.b = c2;
-            if (c2 != null) {
-                this.f5554c = esVar;
-                c2.a(this);
+            a c = c(esVar);
+            this.b = c;
+            if (c != null) {
+                this.c = esVar;
+                c.a(this);
                 this.b.e();
                 this.b.a();
             }
@@ -45,8 +41,8 @@ public class OfflineMapActivity extends AMapPermissionActivity implements View.O
 
     private boolean a(Bundle bundle) {
         try {
-            if ((f5553a != 1 || this.b == null) && f5553a > 1) {
-                f5553a--;
+            if ((a != 1 || this.b == null) && a > 1) {
+                a--;
                 int i = ((this.e - 1) + 32) % 32;
                 this.e = i;
                 es esVar = this.d[i];
@@ -63,7 +59,7 @@ public class OfflineMapActivity extends AMapPermissionActivity implements View.O
 
     private void b(es esVar) {
         try {
-            f5553a++;
+            a++;
             a(esVar);
             int i = (this.e + 1) % 32;
             this.e = i;
@@ -75,7 +71,7 @@ public class OfflineMapActivity extends AMapPermissionActivity implements View.O
 
     private a c(es esVar) {
         try {
-            if (esVar.f4938a != 1) {
+            if (esVar.a != 1) {
                 return null;
             }
             if (this.f == null) {
@@ -137,9 +133,8 @@ public class OfflineMapActivity extends AMapPermissionActivity implements View.O
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.app.Activity
-    public void onCreate(Bundle bundle) {
+    protected void onCreate(Bundle bundle) {
         try {
             super.onCreate(bundle);
             getWindow().setSoftInputMode(32);
@@ -147,23 +142,22 @@ public class OfflineMapActivity extends AMapPermissionActivity implements View.O
             requestWindowFeature(1);
             ev.a(getApplicationContext());
             this.e = -1;
-            f5553a = 0;
+            a = 0;
             b(new es());
         } catch (Throwable th) {
             th.printStackTrace();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.app.Activity
-    public void onDestroy() {
+    protected void onDestroy() {
         try {
             super.onDestroy();
             if (this.b != null) {
                 this.b.c();
                 this.b = null;
             }
-            this.f5554c = null;
+            this.c = null;
             this.d = null;
             if (this.f != null) {
                 this.f.c();
@@ -185,14 +179,14 @@ public class OfflineMapActivity extends AMapPermissionActivity implements View.O
                     return false;
                 }
                 if (keyEvent == null) {
-                    if (f5553a == 1) {
+                    if (a == 1) {
                         finish();
                         return false;
                     }
                     return false;
                 }
                 this.e = -1;
-                f5553a = 0;
+                a = 0;
             } catch (Throwable th) {
                 th.printStackTrace();
             }
@@ -200,9 +194,8 @@ public class OfflineMapActivity extends AMapPermissionActivity implements View.O
         return super.onKeyDown(i, keyEvent);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.app.Activity
-    public void onPause() {
+    protected void onPause() {
         try {
             super.onPause();
         } catch (Throwable th) {
@@ -219,9 +212,8 @@ public class OfflineMapActivity extends AMapPermissionActivity implements View.O
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.app.Activity
-    public void onStart() {
+    protected void onStart() {
         try {
             super.onStart();
         } catch (Throwable th) {
@@ -229,9 +221,8 @@ public class OfflineMapActivity extends AMapPermissionActivity implements View.O
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.app.Activity
-    public void onStop() {
+    protected void onStop() {
         try {
             super.onStop();
         } catch (Throwable th) {

@@ -3,19 +3,16 @@ package com.amap.api.location;
 import android.content.Context;
 import android.os.Handler;
 import com.amap.api.col.p0003sl.hs;
+import com.android.internal.widget.LockPatternUtils;
 import com.autonavi.aps.amapapi.utils.b;
 
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/location/UmidtokenInfo.class */
 public class UmidtokenInfo {
     private static AMapLocationClient d;
-
-    /* renamed from: a  reason: collision with root package name */
-    static Handler f5491a = new Handler();
+    static Handler a = new Handler();
     static String b = null;
-    private static long e = 30000;
-
-    /* renamed from: c  reason: collision with root package name */
-    static boolean f5492c = true;
+    private static long e = LockPatternUtils.FAILED_ATTEMPT_TIMEOUT_MS;
+    static boolean c = true;
 
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/location/UmidtokenInfo$a.class */
     static final class a implements AMapLocationListener {
@@ -26,7 +23,7 @@ public class UmidtokenInfo {
         public final void onLocationChanged(AMapLocation aMapLocation) {
             try {
                 if (UmidtokenInfo.d != null) {
-                    UmidtokenInfo.f5491a.removeCallbacksAndMessages(null);
+                    UmidtokenInfo.a.removeCallbacksAndMessages(null);
                     UmidtokenInfo.d.onDestroy();
                 }
             } catch (Throwable th) {
@@ -40,7 +37,7 @@ public class UmidtokenInfo {
     }
 
     public static void setLocAble(boolean z) {
-        f5492c = z;
+        c = z;
     }
 
     public static void setUmidtoken(Context context, String str) {
@@ -48,7 +45,7 @@ public class UmidtokenInfo {
             try {
                 b = str;
                 hs.a(str);
-                if (d == null && f5492c) {
+                if (d == null && c) {
                     a aVar = new a();
                     d = new AMapLocationClient(context);
                     AMapLocationClientOption aMapLocationClientOption = new AMapLocationClientOption();
@@ -57,7 +54,7 @@ public class UmidtokenInfo {
                     d.setLocationOption(aMapLocationClientOption);
                     d.setLocationListener(aVar);
                     d.startLocation();
-                    f5491a.postDelayed(new Runnable() { // from class: com.amap.api.location.UmidtokenInfo.1
+                    a.postDelayed(new Runnable() { // from class: com.amap.api.location.UmidtokenInfo.1
                         @Override // java.lang.Runnable
                         public final void run() {
                             try {
@@ -68,7 +65,7 @@ public class UmidtokenInfo {
                                 b.a(th, "UmidListener", "postDelayed");
                             }
                         }
-                    }, 30000L);
+                    }, LockPatternUtils.FAILED_ATTEMPT_TIMEOUT_MS);
                 }
             } catch (Throwable th) {
                 try {

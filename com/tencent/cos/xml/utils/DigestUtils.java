@@ -2,10 +2,10 @@ package com.tencent.cos.xml.utils;
 
 import android.text.TextUtils;
 import android.util.Base64;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.google.common.primitives.Longs;
 import com.tencent.cos.xml.common.ClientErrorCode;
 import com.tencent.cos.xml.exception.CosXmlClientException;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -287,7 +287,7 @@ public class DigestUtils {
 
     public static String getSecurityBase64(String str) throws CosXmlClientException {
         String base64 = getBase64(str);
-        return TextUtils.isEmpty(base64) ? base64 : base64.replace("+", "-").replace(BridgeUtil.SPLIT_MARK, BridgeUtil.UNDERLINE_STR);
+        return TextUtils.isEmpty(base64) ? base64 : base64.replace("+", Constants.ACCEPT_TIME_SEPARATOR_SERVER).replace("/", "_");
     }
 
     public static String getSha1(String str) throws CosXmlClientException {

@@ -55,7 +55,6 @@ public class FeedComment extends UserBasicModel implements MultiItemEntity, Seri
     public boolean isHasMoreHotComment = false;
     public int itemViewType = 0;
 
-    @Override // com.chad.library.adapter.base.entity.MultiItemEntity
     public int getItemType() {
         return this.itemViewType;
     }

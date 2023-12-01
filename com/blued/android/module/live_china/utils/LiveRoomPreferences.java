@@ -10,13 +10,9 @@ public class LiveRoomPreferences {
     public static String A = "live_planet_dispatch_dialog";
     public static String B = "live_planet_gift_dialog";
     public static String C = "live_planet_show_guide";
-
-    /* renamed from: a  reason: collision with root package name */
-    public static BluedSharedPreferences f14190a;
+    public static BluedSharedPreferences a;
     public static BluedSharedPreferences b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public static BluedSharedPreferences f14191c;
+    public static BluedSharedPreferences c;
     public static String d = "recommend_live";
     public static String e = "SHOWED_LIVE_TIPS_REMIND";
     public static String f = "SHOWED_LIVE_TIPS_REMIND";
@@ -159,10 +155,10 @@ public class LiveRoomPreferences {
     }
 
     public static BluedSharedPreferences a() {
-        if (f14190a == null) {
-            f14190a = BluedSharedPreferences.a();
+        if (a == null) {
+            a = BluedSharedPreferences.a();
         }
-        return f14190a;
+        return a;
     }
 
     public static void a(int i2) {
@@ -217,10 +213,10 @@ public class LiveRoomPreferences {
     }
 
     public static BluedSharedPreferences c() {
-        if (f14191c == null) {
-            f14191c = BluedSharedPreferences.a("blued_sf_setting", 0);
+        if (c == null) {
+            c = BluedSharedPreferences.a("blued_sf_setting", 0);
         }
-        return f14191c;
+        return c;
     }
 
     public static void c(int i2) {

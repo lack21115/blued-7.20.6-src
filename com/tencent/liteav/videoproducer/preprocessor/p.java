@@ -8,16 +8,16 @@ import com.tencent.liteav.videoproducer.preprocessor.h;
 public final /* synthetic */ class p implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final h f37082a;
+    private final h f23391a;
     private final GLConstants.GLScaleType b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final boolean f37083c;
+    private final boolean f23392c;
 
     private p(h hVar, GLConstants.GLScaleType gLScaleType, boolean z) {
-        this.f37082a = hVar;
+        this.f23391a = hVar;
         this.b = gLScaleType;
-        this.f37083c = z;
+        this.f23392c = z;
     }
 
     public static Runnable a(h hVar, GLConstants.GLScaleType gLScaleType, boolean z) {
@@ -26,12 +26,12 @@ public final /* synthetic */ class p implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        h hVar = this.f37082a;
+        h hVar = this.f23391a;
         GLConstants.GLScaleType gLScaleType = this.b;
-        boolean z = this.f37083c;
+        boolean z = this.f23392c;
         com.tencent.liteav.beauty.b.h hVar2 = (com.tencent.liteav.beauty.b.h) hVar.b(h.b.d);
         if (hVar2 != null) {
-            hVar2.f36383a = gLScaleType;
+            hVar2.f22692a = gLScaleType;
             hVar2.b = z;
         }
     }

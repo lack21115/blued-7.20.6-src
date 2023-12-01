@@ -14,6 +14,7 @@ import android.view.animation.OvershootInterpolator;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import com.blued.android.core.image.ImageLoader;
@@ -36,9 +37,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveBattleNextLevelRandomAwardDialog.class */
 public final class LiveBattleNextLevelRandomAwardDialog extends BaseDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f12725a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private final Lazy b = LazyKt.a(new Function0<LiveBattleNextLevelRandomAwardDialogBinding>() { // from class: com.blued.android.module.live_china.fragment.LiveBattleNextLevelRandomAwardDialog$vb$2
         /* JADX INFO: Access modifiers changed from: package-private */
         {
@@ -84,7 +83,7 @@ public final class LiveBattleNextLevelRandomAwardDialog extends BaseDialogFragme
     public static final void c(LiveBattleNextLevelRandomAwardDialog this$0, View view) {
         Intrinsics.e(this$0, "this$0");
         EventTrackLive.a(LiveProtos.Event.LIVE_BATTLE_PASS_NOTICE_TOP_BUY_CLICK, LiveRoomManager.a().e(), LiveRoomManager.a().g());
-        LiveBattleShopDialog.f12741a.b(this$0);
+        LiveBattleShopDialog.a.b((Fragment) this$0);
         this$0.dismissAllowingStateLoss();
     }
 
@@ -100,7 +99,7 @@ public final class LiveBattleNextLevelRandomAwardDialog extends BaseDialogFragme
     }
 
     private final void e() {
-        SVGAParser.a(SVGAParser.f15958a.b(), "live_battle_fly_gift.svga", new SVGAParser.ParseCompletion() { // from class: com.blued.android.module.live_china.fragment.LiveBattleNextLevelRandomAwardDialog$initView$1
+        SVGAParser.a(SVGAParser.a.b(), "live_battle_fly_gift.svga", new SVGAParser.ParseCompletion() { // from class: com.blued.android.module.live_china.fragment.LiveBattleNextLevelRandomAwardDialog$initView$1
             @Override // com.blued.android.module.svgaplayer.SVGAParser.ParseCompletion
             public void onComplete(SVGAVideoEntity videoItem) {
                 LiveBattleNextLevelRandomAwardDialogBinding d;
@@ -116,7 +115,7 @@ public final class LiveBattleNextLevelRandomAwardDialog extends BaseDialogFragme
             public void onError() {
             }
         }, (SVGAParser.PlayCallback) null, 4, (Object) null);
-        if (LiveBattlePassDialogFragment.f12728a.a()) {
+        if (LiveBattlePassDialogFragment.a.a()) {
             EventTrackLive.a(LiveProtos.Event.LIVE_BATTLE_PASS_NOTICE_TOP_SHOW, LiveRoomManager.a().e(), LiveRoomManager.a().g());
             d().k.setText("解锁下一战令有机会获得额外奖励");
             TextView textView = d().i;
@@ -126,10 +125,10 @@ public final class LiveBattleNextLevelRandomAwardDialog extends BaseDialogFragme
             LinearLayout linearLayout = d().e;
             Intrinsics.c(linearLayout, "vb.llBtnRoot");
             BluedViewExKt.a(linearLayout);
-            ImageView imageView = d().f12141c;
+            ImageView imageView = d().c;
             Intrinsics.c(imageView, "vb.btnGetAllBig");
             BluedViewExKt.b(imageView);
-            d().f12141c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveBattleNextLevelRandomAwardDialog$Sp_mVnLmUtJzcUbmrtslaOQBrbY
+            d().c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveBattleNextLevelRandomAwardDialog$Sp_mVnLmUtJzcUbmrtslaOQBrbY
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     LiveBattleNextLevelRandomAwardDialog.a(LiveBattleNextLevelRandomAwardDialog.this, view);
@@ -146,7 +145,7 @@ public final class LiveBattleNextLevelRandomAwardDialog extends BaseDialogFragme
             LinearLayout linearLayout2 = d().e;
             Intrinsics.c(linearLayout2, "vb.llBtnRoot");
             BluedViewExKt.b(linearLayout2);
-            ImageView imageView2 = d().f12141c;
+            ImageView imageView2 = d().c;
             Intrinsics.c(imageView2, "vb.btnGetAllBig");
             BluedViewExKt.a(imageView2);
             ImageLoader.c(a(), "live_battle_box.png").g().g(-1).a(d().d);
@@ -156,7 +155,7 @@ public final class LiveBattleNextLevelRandomAwardDialog extends BaseDialogFragme
                     LiveBattleNextLevelRandomAwardDialog.b(LiveBattleNextLevelRandomAwardDialog.this, view);
                 }
             });
-            d().f12140a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveBattleNextLevelRandomAwardDialog$-kbbkzVAo5FG9nn6fQu9m8pL34g
+            d().a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveBattleNextLevelRandomAwardDialog$-kbbkzVAo5FG9nn6fQu9m8pL34g
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     LiveBattleNextLevelRandomAwardDialog.c(LiveBattleNextLevelRandomAwardDialog.this, view);
@@ -172,7 +171,6 @@ public final class LiveBattleNextLevelRandomAwardDialog extends BaseDialogFragme
         d().g.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(450L).setInterpolator(new OvershootInterpolator()).start();
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
         WindowManager windowManager;
         Display defaultDisplay;

@@ -71,7 +71,7 @@ public class BufferedInputStream extends FilterInputStream {
         int i2;
         int available;
         synchronized (this) {
-            InputStream inputStream = this.f42254in;
+            InputStream inputStream = this.in;
             if (this.buf == null || inputStream == null) {
                 throw streamClosed();
             }
@@ -85,8 +85,8 @@ public class BufferedInputStream extends FilterInputStream {
     @Override // java.io.FilterInputStream, java.io.InputStream, java.io.Closeable, java.lang.AutoCloseable
     public void close() throws IOException {
         this.buf = null;
-        InputStream inputStream = this.f42254in;
-        this.f42254in = null;
+        InputStream inputStream = this.in;
+        this.in = null;
         if (inputStream != null) {
             inputStream.close();
         }
@@ -110,7 +110,7 @@ public class BufferedInputStream extends FilterInputStream {
         int i = -1;
         synchronized (this) {
             byte[] bArr = this.buf;
-            InputStream inputStream = this.f42254in;
+            InputStream inputStream = this.in;
             if (bArr == null || inputStream == null) {
                 throw streamClosed();
             }
@@ -165,7 +165,7 @@ public class BufferedInputStream extends FilterInputStream {
     public long skip(long j) throws IOException {
         synchronized (this) {
             byte[] bArr = this.buf;
-            InputStream inputStream = this.f42254in;
+            InputStream inputStream = this.in;
             if (bArr == null) {
                 throw streamClosed();
             }

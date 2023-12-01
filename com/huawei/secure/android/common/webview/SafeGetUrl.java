@@ -10,28 +10,28 @@ import java.util.concurrent.CountDownLatch;
 public class SafeGetUrl {
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f23162c = "SafeGetUrl";
+    private static final String f9554c = "SafeGetUrl";
     private static final long d = 200;
 
     /* renamed from: a  reason: collision with root package name */
-    private String f23163a;
+    private String f9555a;
     private WebView b;
 
     /* loaded from: source-7994992-dex2jar.jar:com/huawei/secure/android/common/webview/SafeGetUrl$a.class */
     class a implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ CountDownLatch f23164a;
+        final /* synthetic */ CountDownLatch f9556a;
 
         a(CountDownLatch countDownLatch) {
-            this.f23164a = countDownLatch;
+            this.f9556a = countDownLatch;
         }
 
         @Override // java.lang.Runnable
         public void run() {
             SafeGetUrl safeGetUrl = SafeGetUrl.this;
             safeGetUrl.setUrl(safeGetUrl.b.getUrl());
-            this.f23164a.countDown();
+            this.f9556a.countDown();
         }
     }
 
@@ -54,9 +54,9 @@ public class SafeGetUrl {
         try {
             countDownLatch.await();
         } catch (InterruptedException e) {
-            Log.e(f23162c, "getUrlMethod: InterruptedException " + e.getMessage(), e);
+            Log.e(f9554c, "getUrlMethod: InterruptedException " + e.getMessage(), e);
         }
-        return this.f23163a;
+        return this.f9555a;
     }
 
     public WebView getWebView() {
@@ -64,7 +64,7 @@ public class SafeGetUrl {
     }
 
     public void setUrl(String str) {
-        this.f23163a = str;
+        this.f9555a = str;
     }
 
     public void setWebView(WebView webView) {

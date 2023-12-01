@@ -1,5 +1,6 @@
 package android.preference;
 
+import android.R;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
@@ -7,7 +8,6 @@ import android.view.View;
 import android.widget.Checkable;
 import android.widget.CompoundButton;
 import android.widget.Switch;
-import com.android.internal.R;
 
 /* loaded from: source-9557208-dex2jar.jar:android/preference/SwitchPreference.class */
 public class SwitchPreference extends TwoStatePreference {
@@ -35,7 +35,7 @@ public class SwitchPreference extends TwoStatePreference {
     }
 
     public SwitchPreference(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, 16843629);
+        this(context, attributeSet, R.attr.switchPreferenceStyle);
     }
 
     public SwitchPreference(Context context, AttributeSet attributeSet, int i) {
@@ -45,7 +45,7 @@ public class SwitchPreference extends TwoStatePreference {
     public SwitchPreference(Context context, AttributeSet attributeSet, int i, int i2) {
         super(context, attributeSet, i, i2);
         this.mListener = new Listener();
-        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.SwitchPreference, i, i2);
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, com.android.internal.R.styleable.SwitchPreference, i, i2);
         setSummaryOn(obtainStyledAttributes.getString(0));
         setSummaryOff(obtainStyledAttributes.getString(1));
         setSwitchTextOn(obtainStyledAttributes.getString(3));
@@ -66,7 +66,7 @@ public class SwitchPreference extends TwoStatePreference {
     @Override // android.preference.Preference
     public void onBindView(View view) {
         super.onBindView(view);
-        View findViewById = view.findViewById(R.id.switchWidget);
+        View findViewById = view.findViewById(16909157);
         if (findViewById != null && (findViewById instanceof Checkable)) {
             if (findViewById instanceof Switch) {
                 ((Switch) findViewById).setOnCheckedChangeListener(null);

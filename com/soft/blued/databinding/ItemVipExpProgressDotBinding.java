@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemVipExpProgressDotBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ConstraintLayout f29356a;
+    private final ConstraintLayout f15666a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f29356a;
+        return this.f15666a;
     }
 }

@@ -38,11 +38,11 @@ import java.util.List;
 public class SendPositionSearchFragment extends BaseFragment implements View.OnClickListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f31902a;
+    private Context f18212a;
     private View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private RenrenPullToRefreshListView f31903c;
+    private RenrenPullToRefreshListView f18213c;
     private ListView d;
     private List<PoiItem> e;
     private POISearchAdapter f;
@@ -57,18 +57,18 @@ public class SendPositionSearchFragment extends BaseFragment implements View.OnC
         private Context b;
 
         /* renamed from: c  reason: collision with root package name */
-        private LayoutInflater f31907c;
+        private LayoutInflater f18217c;
         private List<PositionPOIModel> d = new ArrayList();
 
         /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/msg/SendPositionSearchFragment$POISearchAdapter$ViewHolder.class */
         class ViewHolder {
 
             /* renamed from: a  reason: collision with root package name */
-            public LinearLayout f31908a;
+            public LinearLayout f18218a;
             public TextView b;
 
             /* renamed from: c  reason: collision with root package name */
-            public TextView f31909c;
+            public TextView f18219c;
             public ImageView d;
 
             private ViewHolder() {
@@ -77,7 +77,7 @@ public class SendPositionSearchFragment extends BaseFragment implements View.OnC
 
         public POISearchAdapter(Context context) {
             this.b = context;
-            this.f31907c = LayoutInflater.from(context);
+            this.f18217c = LayoutInflater.from(context);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -137,10 +137,10 @@ public class SendPositionSearchFragment extends BaseFragment implements View.OnC
             ViewHolder viewHolder;
             if (view == null) {
                 viewHolder = new ViewHolder();
-                view2 = this.f31907c.inflate(R.layout.item_send_postion_poi, viewGroup, false);
-                viewHolder.f31908a = (LinearLayout) view2.findViewById(R.id.ll_item);
+                view2 = this.f18217c.inflate(R.layout.item_send_postion_poi, viewGroup, false);
+                viewHolder.f18218a = (LinearLayout) view2.findViewById(R.id.ll_item);
                 viewHolder.b = (TextView) view2.findViewById(R.id.tv_poi_shortname);
-                viewHolder.f31909c = (TextView) view2.findViewById(R.id.tv_poi_address);
+                viewHolder.f18219c = (TextView) view2.findViewById(R.id.tv_poi_address);
                 viewHolder.d = (ImageView) view2.findViewById(R.id.img_choosen_mark);
                 view2.setTag(viewHolder);
             } else {
@@ -149,9 +149,9 @@ public class SendPositionSearchFragment extends BaseFragment implements View.OnC
             }
             final PositionPOIModel positionPOIModel = this.d.get(i);
             viewHolder.b.setText(positionPOIModel.name);
-            viewHolder.f31909c.setText(positionPOIModel.address);
+            viewHolder.f18219c.setText(positionPOIModel.address);
             viewHolder.d.setVisibility(8);
-            viewHolder.f31908a.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.-$$Lambda$SendPositionSearchFragment$POISearchAdapter$Sz9hHsx1HMgeHzdlnTfMrcQ4W1g
+            viewHolder.f18218a.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.-$$Lambda$SendPositionSearchFragment$POISearchAdapter$Sz9hHsx1HMgeHzdlnTfMrcQ4W1g
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view3) {
                     SendPositionSearchFragment.POISearchAdapter.this.a(positionPOIModel, view3);
@@ -170,12 +170,12 @@ public class SendPositionSearchFragment extends BaseFragment implements View.OnC
                 this.f.b(list);
             }
             if (z) {
-                this.f31903c.o();
+                this.f18213c.o();
             } else {
-                this.f31903c.p();
+                this.f18213c.p();
             }
         }
-        this.f31903c.q();
+        this.f18213c.q();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -192,8 +192,8 @@ public class SendPositionSearchFragment extends BaseFragment implements View.OnC
             return;
         }
         this.g = i - 1;
-        AppMethods.a((CharSequence) this.f31902a.getResources().getString(2131887275));
-        this.f31903c.q();
+        AppMethods.a(this.f18212a.getResources().getString(2131887275));
+        this.f18213c.q();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -269,7 +269,6 @@ public class SendPositionSearchFragment extends BaseFragment implements View.OnC
 
     public void a(int i) {
         GaoDeUtils.b(getViewLifecycleOwner(), i, this.j.getText().toString(), new OnPOIListener() { // from class: com.soft.blued.ui.msg.-$$Lambda$SendPositionSearchFragment$j0l6QaGKP2NQvWM6TRfoDcHhAag
-            @Override // com.blued.android.module.common.utils.gaode.OnPOIListener
             public final void onComplete(int i2, List list, boolean z) {
                 SendPositionSearchFragment.this.a(i2, list, z);
             }
@@ -280,10 +279,10 @@ public class SendPositionSearchFragment extends BaseFragment implements View.OnC
         ArrayList arrayList = new ArrayList();
         this.e = arrayList;
         arrayList.clear();
-        RenrenPullToRefreshListView renrenPullToRefreshListView = (RenrenPullToRefreshListView) this.b.findViewById(2131366898);
-        this.f31903c = renrenPullToRefreshListView;
-        renrenPullToRefreshListView.setRefreshEnabled(false);
-        ListView listView = (ListView) this.f31903c.getRefreshableView();
+        RenrenPullToRefreshListView findViewById = this.b.findViewById(R.id.list_view);
+        this.f18213c = findViewById;
+        findViewById.setRefreshEnabled(false);
+        ListView listView = (ListView) this.f18213c.getRefreshableView();
         this.d = listView;
         listView.setClipToPadding(false);
         this.d.setScrollBarStyle(33554432);
@@ -293,14 +292,12 @@ public class SendPositionSearchFragment extends BaseFragment implements View.OnC
         POISearchAdapter pOISearchAdapter = new POISearchAdapter(getActivity());
         this.f = pOISearchAdapter;
         this.d.setAdapter((ListAdapter) pOISearchAdapter);
-        this.f31903c.setOnPullDownListener(new RenrenPullToRefreshListView.OnPullDownListener() { // from class: com.soft.blued.ui.msg.SendPositionSearchFragment.2
-            @Override // com.blued.android.framework.view.pulltorefresh.RenrenPullToRefreshListView.OnPullDownListener
+        this.f18213c.setOnPullDownListener(new RenrenPullToRefreshListView.OnPullDownListener() { // from class: com.soft.blued.ui.msg.SendPositionSearchFragment.2
             public void a() {
                 SendPositionSearchFragment.this.g = 0;
                 SendPositionSearchFragment.this.a(false);
             }
 
-            @Override // com.blued.android.framework.view.pulltorefresh.RenrenPullToRefreshListView.OnPullDownListener
             public void b() {
                 SendPositionSearchFragment.c(SendPositionSearchFragment.this);
                 PrintStream printStream = System.out;
@@ -332,9 +329,8 @@ public class SendPositionSearchFragment extends BaseFragment implements View.OnC
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.f31902a = getActivity();
+        this.f18212a = getActivity();
         View view = this.b;
         if (view == null) {
             this.b = layoutInflater.inflate(R.layout.fragment_send_position_search, viewGroup, false);

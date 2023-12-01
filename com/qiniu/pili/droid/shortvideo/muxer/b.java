@@ -9,11 +9,11 @@ import java.nio.ByteBuffer;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private c f27732a = new FFMP4Muxer();
+    private c f14044a = new FFMP4Muxer();
 
     public void a(int i, ByteBuffer byteBuffer, MediaCodec.BufferInfo bufferInfo) {
         synchronized (this) {
-            this.f27732a.a(i, byteBuffer, bufferInfo);
+            this.f14044a.a(i, byteBuffer, bufferInfo);
         }
     }
 
@@ -24,7 +24,7 @@ public class b {
     public boolean a() {
         boolean a2;
         synchronized (this) {
-            a2 = this.f27732a.a();
+            a2 = this.f14044a.a();
         }
         return a2;
     }
@@ -39,20 +39,20 @@ public class b {
 
     public boolean a(String str, MediaFormat mediaFormat, MediaFormat mediaFormat2, int i) {
         synchronized (this) {
-            boolean a2 = this.f27732a.a(str, mediaFormat, mediaFormat2, i);
+            boolean a2 = this.f14044a.a(str, mediaFormat, mediaFormat2, i);
             if (a2) {
                 return a2;
             }
             e.n.d("MP4Muxer", "MP4Muxer start failed, will switch to System Muxer");
-            this.f27732a.a();
+            this.f14044a.a();
             a aVar = new a();
-            this.f27732a = aVar;
+            this.f14044a = aVar;
             return aVar.a(str, mediaFormat, mediaFormat2, i);
         }
     }
 
     public int b() {
-        return this.f27732a.b();
+        return this.f14044a.b();
     }
 
     public void b(ByteBuffer byteBuffer, MediaCodec.BufferInfo bufferInfo) {
@@ -60,6 +60,6 @@ public class b {
     }
 
     public int c() {
-        return this.f27732a.c();
+        return this.f14044a.c();
     }
 }

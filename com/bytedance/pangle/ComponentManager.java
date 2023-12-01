@@ -166,7 +166,7 @@ public class ComponentManager {
         Intent registerReceiver = context.registerReceiver(aVar, intentFilter, str, handler, i);
         a2.b.put(pluginBroadcastReceiver, aVar);
         if (handler != null) {
-            a2.f21466c.add(Integer.valueOf(aVar.hashCode()));
+            a2.f7860c.add(Integer.valueOf(aVar.hashCode()));
         }
         a2.a(intentFilter, pluginBroadcastReceiver);
         return registerReceiver;
@@ -185,7 +185,7 @@ public class ComponentManager {
         Intent registerReceiver = context.registerReceiver(aVar, intentFilter, str, handler);
         a2.b.put(pluginBroadcastReceiver, aVar);
         if (handler != null) {
-            a2.f21466c.add(Integer.valueOf(aVar.hashCode()));
+            a2.f7860c.add(Integer.valueOf(aVar.hashCode()));
         }
         a2.a(intentFilter, pluginBroadcastReceiver);
         return registerReceiver;
@@ -239,21 +239,21 @@ public class ComponentManager {
         boolean remove;
         if (pluginBroadcastReceiver != null) {
             com.bytedance.pangle.receiver.c a2 = com.bytedance.pangle.receiver.c.a();
-            for (Map.Entry<String, c.a> entry : a2.f21465a.entrySet()) {
+            for (Map.Entry<String, c.a> entry : a2.f7859a.entrySet()) {
                 c.a value = entry.getValue();
                 if (value != null && pluginBroadcastReceiver != null) {
                     try {
                         if (value.b.size() > 0 && (remove = value.b.remove(pluginBroadcastReceiver))) {
-                            ZeusLogger.d(ZeusLogger.TAG_RECEIVER, "unregisterReceiver->[移除Action]:" + value.f21467a + ",receiver.hashCode()=" + pluginBroadcastReceiver.hashCode() + ",是否成功，success:" + remove);
+                            ZeusLogger.d(ZeusLogger.TAG_RECEIVER, "unregisterReceiver->[移除Action]:" + value.f7861a + ",receiver.hashCode()=" + pluginBroadcastReceiver.hashCode() + ",是否成功，success:" + remove);
                         }
                     } catch (Throwable th) {
-                        ZeusLogger.w(ZeusLogger.TAG_RECEIVER, "unregisterReceiver-plugin-receiver->action:" + value.f21467a + "[exception]:", th);
+                        ZeusLogger.w(ZeusLogger.TAG_RECEIVER, "unregisterReceiver-plugin-receiver->action:" + value.f7861a + "[exception]:", th);
                     }
                 }
                 BroadcastReceiver broadcastReceiver = a2.b.get(pluginBroadcastReceiver);
                 if (broadcastReceiver != null) {
                     try {
-                        a2.f21466c.remove(Integer.valueOf(broadcastReceiver.hashCode()));
+                        a2.f7860c.remove(Integer.valueOf(broadcastReceiver.hashCode()));
                         a2.b.remove(pluginBroadcastReceiver);
                         context.unregisterReceiver(broadcastReceiver);
                     } catch (Throwable th2) {

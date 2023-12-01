@@ -52,7 +52,7 @@ public final class d {
                             return null;
                         }
                     } while (b != 2);
-                    int length = aVar2.f21396a != 2 ? -1 : aVar2.f21397c.length / 5;
+                    int length = aVar2.f7790a != 2 ? -1 : aVar2.f7791c.length / 5;
                     String str2 = null;
                     String str3 = null;
                     int i2 = 0;

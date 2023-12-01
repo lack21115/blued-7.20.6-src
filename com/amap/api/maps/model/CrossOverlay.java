@@ -7,9 +7,7 @@ import com.autonavi.amap.mapcore.interfaces.ICrossVectorOverlay;
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/maps/model/CrossOverlay.class */
 public class CrossOverlay {
     public static final int UPDATE_TYPE_DATA = 0;
-
-    /* renamed from: a  reason: collision with root package name */
-    ICrossVectorOverlay f5523a;
+    ICrossVectorOverlay a;
 
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/maps/model/CrossOverlay$GenerateCrossImageListener.class */
     public interface GenerateCrossImageListener {
@@ -27,12 +25,12 @@ public class CrossOverlay {
     }
 
     public CrossOverlay(CrossOverlayOptions crossOverlayOptions, ICrossVectorOverlay iCrossVectorOverlay) {
-        this.f5523a = null;
-        this.f5523a = iCrossVectorOverlay;
+        this.a = null;
+        this.a = iCrossVectorOverlay;
     }
 
     public void remove() {
-        ICrossVectorOverlay iCrossVectorOverlay = this.f5523a;
+        ICrossVectorOverlay iCrossVectorOverlay = this.a;
         if (iCrossVectorOverlay != null) {
             try {
                 iCrossVectorOverlay.remove();
@@ -44,7 +42,7 @@ public class CrossOverlay {
 
     public void setAttribute(AVectorCrossAttr aVectorCrossAttr) {
         try {
-            this.f5523a.setAttribute(aVectorCrossAttr);
+            this.a.setAttribute(aVectorCrossAttr);
         } catch (Throwable th) {
             th.printStackTrace();
         }
@@ -52,7 +50,7 @@ public class CrossOverlay {
 
     public int setData(byte[] bArr) {
         ICrossVectorOverlay iCrossVectorOverlay;
-        if (bArr == null || (iCrossVectorOverlay = this.f5523a) == null) {
+        if (bArr == null || (iCrossVectorOverlay = this.a) == null) {
             return 0;
         }
         try {
@@ -65,7 +63,7 @@ public class CrossOverlay {
     }
 
     public void setGenerateCrossImageListener(GenerateCrossImageListener generateCrossImageListener) {
-        ICrossVectorOverlay iCrossVectorOverlay = this.f5523a;
+        ICrossVectorOverlay iCrossVectorOverlay = this.a;
         if (iCrossVectorOverlay != null) {
             try {
                 iCrossVectorOverlay.setGenerateCrossImageListener(generateCrossImageListener);
@@ -76,7 +74,7 @@ public class CrossOverlay {
     }
 
     public void setImageMode(boolean z) {
-        ICrossVectorOverlay iCrossVectorOverlay = this.f5523a;
+        ICrossVectorOverlay iCrossVectorOverlay = this.a;
         if (iCrossVectorOverlay != null) {
             try {
                 iCrossVectorOverlay.setImageMode(z);
@@ -87,7 +85,7 @@ public class CrossOverlay {
     }
 
     public void setOnCrossVectorUpdateListener(OnCrossVectorUpdateListener onCrossVectorUpdateListener) {
-        ICrossVectorOverlay iCrossVectorOverlay = this.f5523a;
+        ICrossVectorOverlay iCrossVectorOverlay = this.a;
         if (iCrossVectorOverlay != null) {
             try {
                 iCrossVectorOverlay.setOnCrossVectorUpdateListener(onCrossVectorUpdateListener);
@@ -98,7 +96,7 @@ public class CrossOverlay {
     }
 
     public void setVisible(boolean z) {
-        ICrossVectorOverlay iCrossVectorOverlay = this.f5523a;
+        ICrossVectorOverlay iCrossVectorOverlay = this.a;
         if (iCrossVectorOverlay != null) {
             try {
                 iCrossVectorOverlay.setVisible(z);

@@ -20,9 +20,7 @@ import java.util.List;
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/manager/RecordingMakeLoverManager.class */
 public class RecordingMakeLoverManager extends MakeLoverBaseManager {
     public static int b = 0;
-
-    /* renamed from: c  reason: collision with root package name */
-    public static int f13755c = 0;
+    public static int c = 0;
     public static double d = 1.0d;
     View.OnLayoutChangeListener e = new AnonymousClass3();
     private Context f;
@@ -91,7 +89,7 @@ public class RecordingMakeLoverManager extends MakeLoverBaseManager {
         int i = AppInfo.l / 3;
         this.h = i;
         b = (int) (i * d);
-        f13755c = DensityUtils.a(this.f, 148);
+        c = DensityUtils.a(this.f, 148);
     }
 
     private NewFuncPopwindow a(View view, int i) {
@@ -102,9 +100,9 @@ public class RecordingMakeLoverManager extends MakeLoverBaseManager {
         view.getLocationInWindow(iArr);
         Logger.d("RecordingMakeLoverManager", "x:" + iArr[0] + " ; y:" + iArr[1]);
         HoleRelativeLayout.RoundRect roundRect = new HoleRelativeLayout.RoundRect();
-        roundRect.f14305a = (float) iArr[0];
+        roundRect.a = (float) iArr[0];
         roundRect.b = (float) iArr[1];
-        roundRect.f14306c = (float) view.getWidth();
+        roundRect.c = (float) view.getWidth();
         roundRect.d = (float) view.getHeight();
         roundRect.i = false;
         newFuncPopwindow.a(roundRect);
@@ -147,7 +145,7 @@ public class RecordingMakeLoverManager extends MakeLoverBaseManager {
         this.g.cb.setVisibility(8);
         this.g.ac.d();
         FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-1, -1);
-        layoutParams.setMargins(0, f13755c, 0, 0);
+        layoutParams.setMargins(0, c, 0, 0);
         this.g.bC.setLayoutParams(layoutParams);
         LinearLayout.LayoutParams layoutParams2 = (LinearLayout.LayoutParams) this.g.bD.getLayoutParams();
         layoutParams2.width = -1;
@@ -161,7 +159,7 @@ public class RecordingMakeLoverManager extends MakeLoverBaseManager {
         FrameLayout.LayoutParams layoutParams4 = new FrameLayout.LayoutParams(this.h, b);
         layoutParams4.leftMargin = this.h * 2;
         this.g.bR.setLayoutParams(layoutParams4);
-        this.g.bk.f14583c.setLayoutParams(layoutParams4);
+        this.g.bk.c.setLayoutParams(layoutParams4);
         FrameLayout.LayoutParams layoutParams5 = new FrameLayout.LayoutParams(this.h, b);
         layoutParams5.topMargin = b;
         this.g.bS.setLayoutParams(layoutParams5);
@@ -188,7 +186,7 @@ public class RecordingMakeLoverManager extends MakeLoverBaseManager {
         this.g.bS.setVisibility(0);
         this.g.bT.setVisibility(0);
         this.g.bU.setVisibility(0);
-        this.g.bk.f14582a.setVisibility(0);
+        this.g.bk.a.setVisibility(0);
         this.g.bk.g.setVisibility(0);
         this.g.bk.h.setVisibility(0);
         this.g.bk.i.setVisibility(0);
@@ -227,14 +225,14 @@ public class RecordingMakeLoverManager extends MakeLoverBaseManager {
     }
 
     public void h() {
-        if (this.f13675a != null) {
+        if (this.a != null) {
             int i = 0;
             while (true) {
                 int i2 = i;
-                if (i2 >= this.f13675a.size()) {
+                if (i2 >= this.a.size()) {
                     break;
                 }
-                LiveMakeLoverFansModel liveMakeLoverFansModel = this.f13675a.get(i2);
+                LiveMakeLoverFansModel liveMakeLoverFansModel = this.a.get(i2);
                 if (i2 == 0) {
                     if (liveMakeLoverFansModel.isEmpty()) {
                         this.g.bk.F.setVisibility(8);

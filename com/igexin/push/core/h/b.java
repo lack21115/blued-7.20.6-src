@@ -12,11 +12,11 @@ import java.io.FileOutputStream;
 public final class b extends com.igexin.push.e.a.d {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f23554a = 2;
+    public static final int f9946a = 2;
     public static final int b = 8;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final int f23555c = 65557;
+    public static final int f9947c = 65557;
     private static final String d = "EXT-DownloadImgPlugin";
     private String n;
     private BaseActionBean o;
@@ -103,6 +103,6 @@ public final class b extends com.igexin.push.e.a.d {
 
     @Override // com.igexin.c.a.d.a.e
     public final int c() {
-        return f23555c;
+        return f9947c;
     }
 }

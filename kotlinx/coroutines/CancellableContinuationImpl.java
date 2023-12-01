@@ -25,9 +25,7 @@ public class CancellableContinuationImpl<T> extends DispatchedTask<T> implements
     private volatile /* synthetic */ int _decision;
     private volatile /* synthetic */ Object _state;
     private final Continuation<T> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final CoroutineContext f42785c;
+    private final CoroutineContext c;
     private DisposableHandle h;
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -39,9 +37,9 @@ public class CancellableContinuationImpl<T> extends DispatchedTask<T> implements
                 throw new AssertionError();
             }
         }
-        this.f42785c = this.b.getContext();
+        this.c = this.b.getContext();
         this._decision = 0;
-        this._state = Active.f42775a;
+        this._state = Active.a;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:40:0x0079, code lost:
@@ -173,7 +171,7 @@ public class CancellableContinuationImpl<T> extends DispatchedTask<T> implements
                         if (function1 == null) {
                             return;
                         }
-                        a(function1, cancelledContinuation.f42791a);
+                        a(function1, cancelledContinuation.a);
                         return;
                     }
                 }
@@ -212,8 +210,8 @@ public class CancellableContinuationImpl<T> extends DispatchedTask<T> implements
                     if (obj2 != null) {
                         CompletedContinuation completedContinuation = (CompletedContinuation) obj3;
                         if (completedContinuation.d == obj2) {
-                            if (!DebugKt.a() || Intrinsics.a(completedContinuation.f42789a, obj)) {
-                                return CancellableContinuationImplKt.f42786a;
+                            if (!DebugKt.a() || Intrinsics.a(completedContinuation.a, obj)) {
+                                return CancellableContinuationImplKt.a;
                             }
                             throw new AssertionError();
                         }
@@ -222,9 +220,9 @@ public class CancellableContinuationImpl<T> extends DispatchedTask<T> implements
                 }
                 return null;
             }
-        } while (!e.compareAndSet(this, obj3, a((NotCompleted) obj3, obj, this.f42808a, function1, obj2)));
+        } while (!e.compareAndSet(this, obj3, a((NotCompleted) obj3, obj, this.a, function1, obj2)));
         q();
-        return CancellableContinuationImplKt.f42786a;
+        return CancellableContinuationImplKt.a;
     }
 
     private final void b(Function1<? super Throwable, Unit> function1, Throwable th) {
@@ -240,15 +238,15 @@ public class CancellableContinuationImpl<T> extends DispatchedTask<T> implements
     }
 
     private final boolean d(Throwable th) {
-        if (DispatchedTaskKt.b(this.f42808a) && l()) {
+        if (DispatchedTaskKt.b(this.a) && l()) {
             return ((DispatchedContinuation) this.b).a(th);
         }
         return false;
     }
 
     private final String k() {
-        Object c2 = c();
-        return c2 instanceof NotCompleted ? "Active" : c2 instanceof CancelledContinuation ? "Cancelled" : "Completed";
+        Object c = c();
+        return c instanceof NotCompleted ? "Active" : c instanceof CancelledContinuation ? "Cancelled" : "Completed";
     }
 
     private final boolean l() {
@@ -287,20 +285,20 @@ public class CancellableContinuationImpl<T> extends DispatchedTask<T> implements
         if (job == null) {
             return null;
         }
-        DisposableHandle a2 = Job.DefaultImpls.a(job, true, false, new ChildContinuation(this), 2, null);
-        this.h = a2;
-        return a2;
+        DisposableHandle a = Job.DefaultImpls.a(job, true, false, new ChildContinuation(this), 2, null);
+        this.h = a;
+        return a;
     }
 
     private final void p() {
         Continuation<T> continuation = this.b;
         DispatchedContinuation dispatchedContinuation = continuation instanceof DispatchedContinuation ? (DispatchedContinuation) continuation : null;
-        Throwable a2 = dispatchedContinuation == null ? null : dispatchedContinuation.a(this);
-        if (a2 == null) {
+        Throwable a = dispatchedContinuation == null ? null : dispatchedContinuation.a(this);
+        if (a == null) {
             return;
         }
         i();
-        b(a2);
+        b(a);
     }
 
     private final void q() {
@@ -332,11 +330,11 @@ public class CancellableContinuationImpl<T> extends DispatchedTask<T> implements
     @Override // kotlinx.coroutines.CancellableContinuation
     public void a(Object obj) {
         if (DebugKt.a()) {
-            if (!(obj == CancellableContinuationImplKt.f42786a)) {
+            if (!(obj == CancellableContinuationImplKt.a)) {
                 throw new AssertionError();
             }
         }
-        a(this.f42808a);
+        a(this.a);
     }
 
     @Override // kotlinx.coroutines.DispatchedTask
@@ -366,7 +364,7 @@ public class CancellableContinuationImpl<T> extends DispatchedTask<T> implements
 
     @Override // kotlinx.coroutines.CancellableContinuation
     public void a(T t, Function1<? super Throwable, Unit> function1) {
-        a(t, this.f42808a, function1);
+        a(t, this.a, function1);
     }
 
     @Override // kotlinx.coroutines.CancellableContinuation
@@ -391,7 +389,7 @@ public class CancellableContinuationImpl<T> extends DispatchedTask<T> implements
                         if (!z) {
                             completedExceptionally = null;
                         }
-                        b(function1, completedExceptionally == null ? null : completedExceptionally.f42791a);
+                        b(function1, completedExceptionally == null ? null : completedExceptionally.a);
                         return;
                     }
                     return;
@@ -442,7 +440,7 @@ public class CancellableContinuationImpl<T> extends DispatchedTask<T> implements
     public void a(CoroutineDispatcher coroutineDispatcher, T t) {
         Continuation<T> continuation = this.b;
         DispatchedContinuation dispatchedContinuation = continuation instanceof DispatchedContinuation ? (DispatchedContinuation) continuation : null;
-        a(this, t, (dispatchedContinuation == null ? null : dispatchedContinuation.b) == coroutineDispatcher ? 4 : this.f42808a, null, 4, null);
+        a(this, t, (dispatchedContinuation == null ? null : dispatchedContinuation.b) == coroutineDispatcher ? 4 : this.a, null, 4, null);
     }
 
     @Override // kotlinx.coroutines.CancellableContinuation
@@ -454,7 +452,7 @@ public class CancellableContinuationImpl<T> extends DispatchedTask<T> implements
     public <T> T b(Object obj) {
         Object obj2 = obj;
         if (obj instanceof CompletedContinuation) {
-            obj2 = ((CompletedContinuation) obj).f42789a;
+            obj2 = ((CompletedContinuation) obj).a;
         }
         return (T) obj2;
     }
@@ -479,7 +477,7 @@ public class CancellableContinuationImpl<T> extends DispatchedTask<T> implements
             a(cancelHandler, th);
         }
         q();
-        a(this.f42808a);
+        a(this.a);
         return true;
     }
 
@@ -489,17 +487,17 @@ public class CancellableContinuationImpl<T> extends DispatchedTask<T> implements
 
     @Override // kotlinx.coroutines.DispatchedTask
     public Throwable c(Object obj) {
-        Throwable c2 = super.c(obj);
-        if (c2 == null) {
+        Throwable c = super.c(obj);
+        if (c == null) {
             return null;
         }
         Continuation<T> b = b();
-        Throwable th = c2;
+        Throwable th = c;
         if (DebugKt.c()) {
             if (!(b instanceof CoroutineStackFrame)) {
-                return c2;
+                return c;
             }
-            th = StackTraceRecoveryKt.a(c2, (CoroutineStackFrame) b);
+            th = StackTraceRecoveryKt.a(c, (CoroutineStackFrame) b);
         }
         return th;
     }
@@ -520,18 +518,18 @@ public class CancellableContinuationImpl<T> extends DispatchedTask<T> implements
         DisposableHandle o = o();
         if (o != null && d()) {
             o.dispose();
-            this.h = NonDisposableHandle.f42847a;
+            this.h = NonDisposableHandle.a;
         }
     }
 
     public final boolean f() {
         if (DebugKt.a()) {
-            if (!(this.f42808a == 2)) {
+            if (!(this.a == 2)) {
                 throw new AssertionError();
             }
         }
         if (DebugKt.a()) {
-            if (!(this.h != NonDisposableHandle.f42847a)) {
+            if (!(this.h != NonDisposableHandle.a)) {
                 throw new AssertionError();
             }
         }
@@ -542,7 +540,7 @@ public class CancellableContinuationImpl<T> extends DispatchedTask<T> implements
                 return false;
             }
             this._decision = 0;
-            this._state = Active.f42775a;
+            this._state = Active.a;
             return true;
         }
         throw new AssertionError();
@@ -564,7 +562,7 @@ public class CancellableContinuationImpl<T> extends DispatchedTask<T> implements
 
     @Override // kotlin.coroutines.Continuation
     public CoroutineContext getContext() {
-        return this.f42785c;
+        return this.c;
     }
 
     @Override // kotlin.coroutines.jvm.internal.CoroutineStackFrame
@@ -589,20 +587,20 @@ public class CancellableContinuationImpl<T> extends DispatchedTask<T> implements
         if (l) {
             p();
         }
-        Object c2 = c();
-        if (c2 instanceof CompletedExceptionally) {
-            Throwable th = ((CompletedExceptionally) c2).f42791a;
+        Object c = c();
+        if (c instanceof CompletedExceptionally) {
+            Throwable th = ((CompletedExceptionally) c).a;
             Throwable th2 = th;
             if (DebugKt.c()) {
                 CancellableContinuationImpl<T> cancellableContinuationImpl = this;
                 th2 = !(cancellableContinuationImpl instanceof CoroutineStackFrame) ? th : StackTraceRecoveryKt.a(th, cancellableContinuationImpl);
             }
             throw th2;
-        } else if (!DispatchedTaskKt.a(this.f42808a) || (job = (Job) getContext().get(Job.C_)) == null || job.a()) {
-            return b(c2);
+        } else if (!DispatchedTaskKt.a(this.a) || (job = (Job) getContext().get(Job.C_)) == null || job.a()) {
+            return b(c);
         } else {
             CancellationException i = job.i();
-            a(c2, (Throwable) i);
+            a(c, (Throwable) i);
             CancellationException cancellationException = i;
             if (DebugKt.c()) {
                 CancellableContinuationImpl<T> cancellableContinuationImpl2 = this;
@@ -618,7 +616,7 @@ public class CancellableContinuationImpl<T> extends DispatchedTask<T> implements
             return;
         }
         disposableHandle.dispose();
-        this.h = NonDisposableHandle.f42847a;
+        this.h = NonDisposableHandle.a;
     }
 
     protected String j() {
@@ -627,7 +625,7 @@ public class CancellableContinuationImpl<T> extends DispatchedTask<T> implements
 
     @Override // kotlin.coroutines.Continuation
     public void resumeWith(Object obj) {
-        a(this, CompletionStateKt.a(obj, (CancellableContinuation<?>) this), this.f42808a, null, 4, null);
+        a(this, CompletionStateKt.a(obj, (CancellableContinuation<?>) this), this.a, null, 4, null);
     }
 
     public String toString() {

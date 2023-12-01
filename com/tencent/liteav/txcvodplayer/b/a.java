@@ -13,10 +13,10 @@ public final class a {
 
     /* renamed from: com.tencent.liteav.txcvodplayer.b.a$a  reason: collision with other inner class name */
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/liteav/txcvodplayer/b/a$a.class */
-    public static final class C0931a {
+    public static final class C0761a {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final a f36516a = new a((byte) 0);
+        public static final a f22825a = new a((byte) 0);
     }
 
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/liteav/txcvodplayer/b/a$b.class */

@@ -11,9 +11,7 @@ import java.util.List;
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fitem/FitemAnnounceFansGroup.class */
 public class FitemAnnounceFansGroup extends FreedomItem {
     public LiveAnnounceFansModel b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public View f12521c;
+    public View c;
 
     public FitemAnnounceFansGroup(LiveAnnounceFansModel liveAnnounceFansModel) {
         this.b = liveAnnounceFansModel;
@@ -37,22 +35,22 @@ public class FitemAnnounceFansGroup extends FreedomItem {
                 FitemAnnounceFansGroup.this.a(view);
             }
         });
-        View a2 = baseViewHolder.a(R.id.iv_check_select);
-        this.f12521c = a2;
-        if (a2.animate() != null) {
-            this.f12521c.animate().cancel();
+        View a = baseViewHolder.a(R.id.iv_check_select);
+        this.c = a;
+        if (a.animate() != null) {
+            this.c.animate().cancel();
         }
         if (this.b.remind == 1) {
-            this.f12521c.setAlpha(1.0f);
-            this.f12521c.setRotation(0.0f);
-            this.f12521c.setScaleX(1.0f);
-            this.f12521c.setScaleY(1.0f);
+            this.c.setAlpha(1.0f);
+            this.c.setRotation(0.0f);
+            this.c.setScaleX(1.0f);
+            this.c.setScaleY(1.0f);
             return;
         }
-        this.f12521c.setAlpha(0.0f);
-        this.f12521c.setRotation(-180.0f);
-        this.f12521c.setScaleX(0.6f);
-        this.f12521c.setScaleY(0.6f);
+        this.c.setAlpha(0.0f);
+        this.c.setRotation(-180.0f);
+        this.c.setScaleX(0.6f);
+        this.c.setScaleY(0.6f);
     }
 
     /* JADX WARN: Type inference failed for: r0v0, types: [java.lang.Throwable, java.lang.Runtime] */

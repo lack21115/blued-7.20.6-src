@@ -1,5 +1,6 @@
 package com.tencent.open.yyb;
 
+import android.R;
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
@@ -32,7 +33,7 @@ public class MoreFloatingDialog extends Dialog {
     private Rect ninePatchRect;
 
     public MoreFloatingDialog(Context context) {
-        super(context, 16973840);
+        super(context, R.style.Theme_Translucent_NoTitleBar);
         this.mShareItems = new HashMap<>(4);
         this.ninePatchRect = new Rect(0, dip2px(NINE_PATCH_TOP), 0, 0);
         WindowManager windowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);

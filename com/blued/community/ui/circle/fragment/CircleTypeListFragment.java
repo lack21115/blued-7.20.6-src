@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.FragmentActivity;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.blued.android.core.ui.ActivityFragmentActive;
@@ -30,6 +31,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import kotlin.Metadata;
@@ -44,17 +46,13 @@ import kotlin.reflect.KProperty;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/circle/fragment/CircleTypeListFragment.class */
 public final class CircleTypeListFragment extends MVVMBaseFragment<CircleTypeListViewModel> {
-
-    /* renamed from: c  reason: collision with root package name */
-    private final ViewBindingProperty f19308c;
+    private final ViewBindingProperty c;
     private NoDataAndLoadFailView d;
     private CircleNewListAdapter e;
     private CircleTypeListAdapter f;
     private List<? extends CircleTypeModel.DataBean> g;
     static final /* synthetic */ KProperty<Object>[] b = {Reflection.a(new PropertyReference1Impl(CircleTypeListFragment.class, "viewBinding", "getViewBinding()Lcom/blued/community/databinding/FragmentCircleTypeListBinding;", 0))};
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f19307a = new Companion(null);
+    public static final Companion a = new Companion(null);
 
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/circle/fragment/CircleTypeListFragment$Companion.class */
@@ -71,7 +69,7 @@ public final class CircleTypeListFragment extends MVVMBaseFragment<CircleTypeLis
             Intrinsics.e(circleFromPage, "circleFromPage");
             Bundle bundle = new Bundle();
             bundle.putSerializable("circle_list_type", Integer.valueOf(i));
-            bundle.putSerializable("circle_new_list_from_page", circleFromPage);
+            bundle.putSerializable("circle_new_list_from_page", (Serializable) circleFromPage);
             TerminalActivity.d(context, CircleTypeListFragment.class, bundle);
         }
 
@@ -84,7 +82,7 @@ public final class CircleTypeListFragment extends MVVMBaseFragment<CircleTypeLis
 
     public CircleTypeListFragment() {
         super(R.layout.fragment_circle_type_list);
-        this.f19308c = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<CircleTypeListFragment, FragmentCircleTypeListBinding>() { // from class: com.blued.community.ui.circle.fragment.CircleTypeListFragment$special$$inlined$viewBindingFragment$default$1
+        this.c = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<CircleTypeListFragment, FragmentCircleTypeListBinding>() { // from class: com.blued.community.ui.circle.fragment.CircleTypeListFragment$special$$inlined$viewBindingFragment$default$1
             @Override // kotlin.jvm.functions.Function1
             /* renamed from: a */
             public final FragmentCircleTypeListBinding invoke(CircleTypeListFragment fragment) {
@@ -169,7 +167,7 @@ public final class CircleTypeListFragment extends MVVMBaseFragment<CircleTypeLis
             }
             circleNewListAdapter2.setNewData(null);
             FragmentCircleTypeListBinding p = this$0.p();
-            if (p != null && (smartRefreshLayout = p.f18842c) != null) {
+            if (p != null && (smartRefreshLayout = p.c) != null) {
                 smartRefreshLayout.i();
             }
         }
@@ -299,25 +297,25 @@ public final class CircleTypeListFragment extends MVVMBaseFragment<CircleTypeLis
     }
 
     private final FragmentCircleTypeListBinding p() {
-        return (FragmentCircleTypeListBinding) this.f19308c.b(this, b[0]);
+        return (FragmentCircleTypeListBinding) this.c.b(this, b[0]);
     }
 
     private final void q() {
         FragmentCircleTypeListBinding p = p();
-        j().p().setRvLocation(ViewUtils.a(p == null ? null : p.f18841a));
+        j().p().setRvLocation(ViewUtils.a(p == null ? null : p.a));
     }
 
     private final void r() {
         FragmentCircleTypeListBinding p = p();
-        ViewUtils.a(p == null ? null : p.f18841a, j().p().getRvLocation());
+        ViewUtils.a(p == null ? null : p.a, j().p().getRvLocation());
     }
 
     @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
     public void a(boolean z) {
         SmartRefreshLayout smartRefreshLayout;
         FragmentCircleTypeListBinding p = p();
-        if (p != null && (smartRefreshLayout = p.f18842c) != null) {
-            smartRefreshLayout.j();
+        if (p != null && (smartRefreshLayout = p.c) != null) {
+            smartRefreshLayout.g();
         }
         CircleNewListAdapter circleNewListAdapter = this.e;
         CircleNewListAdapter circleNewListAdapter2 = circleNewListAdapter;
@@ -418,9 +416,8 @@ public final class CircleTypeListFragment extends MVVMBaseFragment<CircleTypeLis
                 noDataAndLoadFailView12 = null;
             }
             circleNewListAdapter2.setEmptyView(noDataAndLoadFailView12);
-            p.f18842c.l(false);
-            p.f18842c.a(new OnRefreshListener() { // from class: com.blued.community.ui.circle.fragment.-$$Lambda$CircleTypeListFragment$pSWZ8gRdIXJpw58hrAV56G2am1I
-                @Override // com.scwang.smartrefresh.layout.listener.OnRefreshListener
+            p.c.b(false);
+            p.c.a(new OnRefreshListener() { // from class: com.blued.community.ui.circle.fragment.-$$Lambda$CircleTypeListFragment$pSWZ8gRdIXJpw58hrAV56G2am1I
                 public final void onRefresh(RefreshLayout refreshLayout) {
                     CircleTypeListFragment.a(CircleTypeListFragment.this, refreshLayout);
                 }
@@ -432,22 +429,21 @@ public final class CircleTypeListFragment extends MVVMBaseFragment<CircleTypeLis
                 circleNewListAdapter4 = null;
             }
             circleNewListAdapter4.setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() { // from class: com.blued.community.ui.circle.fragment.-$$Lambda$CircleTypeListFragment$9gc7hgsIIaxnXdTFQpuB3Lri-78
-                @Override // com.chad.library.adapter.base.BaseQuickAdapter.RequestLoadMoreListener
                 public final void onLoadMoreRequested() {
                     CircleTypeListFragment.a(CircleTypeListFragment.this);
                 }
-            }, p.f18841a);
-            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+            }, p.a);
+            RecyclerView.LayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
             linearLayoutManager.setOrientation(1);
-            RecyclerView recyclerView = p.f18841a;
-            CircleNewListAdapter circleNewListAdapter5 = this.e;
-            CircleNewListAdapter circleNewListAdapter6 = circleNewListAdapter5;
-            if (circleNewListAdapter5 == null) {
+            RecyclerView recyclerView = p.a;
+            RecyclerView.Adapter adapter = this.e;
+            CircleNewListAdapter circleNewListAdapter5 = adapter;
+            if (adapter == null) {
                 Intrinsics.c("circleListAdapter");
-                circleNewListAdapter6 = null;
+                circleNewListAdapter5 = null;
             }
-            recyclerView.setAdapter(circleNewListAdapter6);
-            p.f18841a.setLayoutManager(linearLayoutManager);
+            recyclerView.setAdapter(circleNewListAdapter5);
+            p.a.setLayoutManager(linearLayoutManager);
             Context context3 = getContext();
             Intrinsics.a(context3);
             Intrinsics.c(context3, "context!!");
@@ -465,22 +461,21 @@ public final class CircleTypeListFragment extends MVVMBaseFragment<CircleTypeLis
             });
             p.b.d();
             RecyclerView recyclerView2 = p.e;
-            CircleTypeListAdapter circleTypeListAdapter = this.f;
-            CircleTypeListAdapter circleTypeListAdapter2 = circleTypeListAdapter;
-            if (circleTypeListAdapter == null) {
+            RecyclerView.Adapter adapter2 = this.f;
+            CircleTypeListAdapter circleTypeListAdapter = adapter2;
+            if (adapter2 == null) {
                 Intrinsics.c("circleTypeListAdapter");
-                circleTypeListAdapter2 = null;
+                circleTypeListAdapter = null;
             }
-            recyclerView2.setAdapter(circleTypeListAdapter2);
+            recyclerView2.setAdapter(circleTypeListAdapter);
             p.e.setLayoutManager(new LinearLayoutManager(getContext()));
         }
-        CircleTypeListAdapter circleTypeListAdapter3 = this.f;
-        if (circleTypeListAdapter3 == null) {
+        CircleTypeListAdapter circleTypeListAdapter2 = this.f;
+        if (circleTypeListAdapter2 == null) {
             Intrinsics.c("circleTypeListAdapter");
-            circleTypeListAdapter3 = null;
+            circleTypeListAdapter2 = null;
         }
-        circleTypeListAdapter3.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() { // from class: com.blued.community.ui.circle.fragment.-$$Lambda$CircleTypeListFragment$cJr5AkhkEbbgRUJgl2VZplpEtXs
-            @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemClickListener
+        circleTypeListAdapter2.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() { // from class: com.blued.community.ui.circle.fragment.-$$Lambda$CircleTypeListFragment$cJr5AkhkEbbgRUJgl2VZplpEtXs
             public final void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
                 CircleTypeListFragment.a(CircleTypeListFragment.this, baseQuickAdapter, view, i);
             }
@@ -493,10 +488,10 @@ public final class CircleTypeListFragment extends MVVMBaseFragment<CircleTypeLis
 
     @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
     public void l() {
-        CircleTypeListFragment circleTypeListFragment = this;
-        LifecycleExtKt.a(circleTypeListFragment, j().f(), new CircleTypeListFragment$liveDataObserver$1(this));
-        LifecycleExtKt.a(circleTypeListFragment, j().g(), new CircleTypeListFragment$liveDataObserver$2(this));
-        LifecycleExtKt.a(circleTypeListFragment, j().h(), new CircleTypeListFragment$liveDataObserver$3(this));
+        LifecycleOwner lifecycleOwner = (LifecycleOwner) this;
+        LifecycleExtKt.a(lifecycleOwner, j().f(), new CircleTypeListFragment$liveDataObserver$1(this));
+        LifecycleExtKt.a(lifecycleOwner, j().g(), new CircleTypeListFragment$liveDataObserver$2(this));
+        LifecycleExtKt.a(lifecycleOwner, j().h(), new CircleTypeListFragment$liveDataObserver$3(this));
     }
 
     @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment

@@ -5,9 +5,7 @@ import java.io.IOException;
 
 /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/parser/FloatParser.class */
 public class FloatParser implements ValueParser<Float> {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final FloatParser f4400a = new FloatParser();
+    public static final FloatParser a = new FloatParser();
 
     private FloatParser() {
     }

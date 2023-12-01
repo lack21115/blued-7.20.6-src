@@ -16,7 +16,7 @@ import org.json.JSONObject;
 public class ox implements mb {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f34885a;
+    private int f21194a;
     private String al;
     public final AtomicBoolean b;
     private boolean bv;
@@ -35,7 +35,7 @@ public class ox implements mb {
     private int i;
 
     /* renamed from: io  reason: collision with root package name */
-    private int f34886io;
+    private int f21195io;
     private String jb;
     private String je;
     private int jq;
@@ -82,7 +82,7 @@ public class ox implements mb {
         this.gm = true;
         this.on = false;
         this.jq = 0;
-        this.f34885a = 0;
+        this.f21194a = 0;
         this.sw = false;
         this.q = false;
         this.bv = true;
@@ -105,7 +105,7 @@ public class ox implements mb {
         this.gm = true;
         this.on = false;
         this.jq = 0;
-        this.f34885a = 0;
+        this.f21194a = 0;
         this.sw = false;
         this.q = false;
         this.bv = true;
@@ -123,7 +123,7 @@ public class ox implements mb {
         this.lz = downloadModel.getPackageName();
         this.df = downloadModel.getExtra();
         this.gm = downloadModel.isAd();
-        this.f34886io = downloadModel.getVersionCode();
+        this.f21195io = downloadModel.getVersionCode();
         this.e = downloadModel.getVersionName();
         this.x = downloadModel.getDownloadUrl();
         if (downloadModel.getDeepLink() != null) {
@@ -214,7 +214,7 @@ public class ox implements mb {
     }
 
     public int a() {
-        return this.f34885a;
+        return this.f21194a;
     }
 
     public boolean al() {
@@ -325,7 +325,7 @@ public class ox implements mb {
     }
 
     public AdDownloadModel he() {
-        return new AdDownloadModel.Builder().setAdId(this.h).setExtraValue(this.u).setLogExtra(this.ko).setPackageName(this.lz).setExtra(this.df).setIsAd(this.gm).setVersionCode(this.f34886io).setVersionName(this.e).setDownloadUrl(this.x).setModelType(this.nk).setMimeType(this.wn).setAppName(this.l).setAppIcon(this.m).setDeepLink(new DeepLink(this.jb, this.je, null)).build();
+        return new AdDownloadModel.Builder().setAdId(this.h).setExtraValue(this.u).setLogExtra(this.ko).setPackageName(this.lz).setExtra(this.df).setIsAd(this.gm).setVersionCode(this.f21195io).setVersionName(this.e).setDownloadUrl(this.x).setModelType(this.nk).setMimeType(this.wn).setAppName(this.l).setAppIcon(this.m).setDeepLink(new DeepLink(this.jb, this.je, null)).build();
     }
 
     @Override // com.ss.android.downloadad.api.mb.mb
@@ -425,7 +425,7 @@ public class ox implements mb {
             jSONObject.put("mIsAd", this.gm);
             jSONObject.put("mTimeStamp", this.g);
             jSONObject.put("mExtras", this.df);
-            jSONObject.put("mVersionCode", this.f34886io);
+            jSONObject.put("mVersionCode", this.f21195io);
             jSONObject.put("mVersionName", this.e);
             jSONObject.put("mDownloadId", this.r);
             jSONObject.put("mIsV3Event", this.pa);
@@ -446,7 +446,7 @@ public class ox implements mb {
             jSONObject.put("mAppIcon", this.m);
             jSONObject.put("mDownloadFailedTimes", this.jq);
             jSONObject.put("mRecentDownloadResumeTime", this.ng == 0 ? this.g : this.ng);
-            jSONObject.put("mClickPauseTimes", this.f34885a);
+            jSONObject.put("mClickPauseTimes", this.f21194a);
             jSONObject.put("mJumpInstallTime", this.ge);
             jSONObject.put("mCancelInstallTime", this.xa);
             jSONObject.put("mLastFailedResumeCount", this.nf);
@@ -576,7 +576,7 @@ public class ox implements mb {
 
     public void ng() {
         synchronized (this) {
-            this.f34885a++;
+            this.f21194a++;
         }
     }
 
@@ -620,7 +620,7 @@ public class ox implements mb {
     }
 
     public void ox(int i) {
-        this.f34885a = i;
+        this.f21194a = i;
     }
 
     public void ox(long j) {
@@ -640,7 +640,7 @@ public class ox implements mb {
     }
 
     public int q() {
-        return this.f34886io;
+        return this.f21195io;
     }
 
     public boolean qa() {
@@ -678,7 +678,7 @@ public class ox implements mb {
     }
 
     public void u(int i) {
-        this.f34886io = i;
+        this.f21195io = i;
     }
 
     public void u(long j) {

@@ -1,5 +1,6 @@
 package android.app;
 
+import android.R;
 import android.app.Activity;
 import android.app.IActivityManager;
 import android.app.backup.BackupAgent;
@@ -74,7 +75,6 @@ import android.view.ViewRootImpl;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.WindowManagerGlobal;
-import com.alipay.sdk.util.i;
 import com.android.internal.app.IVoiceInteractor;
 import com.android.internal.content.ReferrerIntent;
 import com.android.internal.os.BinderInternal;
@@ -83,10 +83,10 @@ import com.android.internal.os.SamplingProfilerIntegration;
 import com.android.internal.util.FastPrintWriter;
 import com.android.org.conscrypt.OpenSSLSocketImpl;
 import com.android.org.conscrypt.TrustedCertificateStore;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.cdo.oaps.ad.OapsKey;
 import com.google.android.collect.Lists;
 import com.huawei.hms.support.api.entity.core.JosStatusCodes;
+import com.huawei.openalliance.ad.constant.t;
 import dalvik.system.CloseGuard;
 import dalvik.system.VMDebug;
 import dalvik.system.VMRuntime;
@@ -146,7 +146,7 @@ public final class ActivityThread {
     Profiler mProfiler;
     private ContextImpl mSystemContext;
     private static final Bitmap.Config THUMBNAIL_FORMAT = Bitmap.Config.RGB_565;
-    private static final Pattern PATTERN_SEMICOLON = Pattern.compile(";");
+    private static final Pattern PATTERN_SEMICOLON = Pattern.compile(t.aE);
     private static final ThreadLocal<Intent> sCurrentBroadcastIntent = new ThreadLocal<>();
     final ApplicationThread mAppThread = new ApplicationThread();
     final Looper mLooper = Looper.myLooper();
@@ -240,7 +240,7 @@ public final class ActivityThread {
 
         public String toString() {
             ComponentName component = this.intent != null ? this.intent.getComponent() : null;
-            return "ActivityRecord{" + Integer.toHexString(System.identityHashCode(this)) + " token=" + this.token + " " + (component == null ? "no component name" : component.toShortString()) + i.d;
+            return "ActivityRecord{" + Integer.toHexString(System.identityHashCode(this)) + " token=" + this.token + " " + (component == null ? "no component name" : component.toShortString()) + "}";
         }
     }
 
@@ -267,7 +267,7 @@ public final class ActivityThread {
         }
 
         public String toString() {
-            return "AppBindData{appInfo=" + this.appInfo + i.d;
+            return "AppBindData{appInfo=" + this.appInfo + "}";
         }
     }
 
@@ -855,13 +855,12 @@ public final class ActivityThread {
         }
 
         public String toString() {
-            return "BindServiceData{token=" + this.token + " intent=" + this.intent + i.d;
+            return "BindServiceData{token=" + this.token + " intent=" + this.intent + "}";
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-9557208-dex2jar.jar:android/app/ActivityThread$ContextCleanupInfo.class */
-    public static final class ContextCleanupInfo {
+    static final class ContextCleanupInfo {
         ContextImpl context;
         String what;
         String who;
@@ -881,7 +880,7 @@ public final class ActivityThread {
         }
 
         public String toString() {
-            return "CreateBackupAgentData{appInfo=" + this.appInfo + " backupAgent=" + this.appInfo.backupAgentName + " mode=" + this.backupMode + i.d;
+            return "CreateBackupAgentData{appInfo=" + this.appInfo + " backupAgent=" + this.appInfo.backupAgentName + " mode=" + this.backupMode + "}";
         }
     }
 
@@ -897,7 +896,7 @@ public final class ActivityThread {
         }
 
         public String toString() {
-            return "CreateServiceData{token=" + this.token + " className=" + this.info.name + " packageName=" + this.info.packageName + " intent=" + this.intent + i.d;
+            return "CreateServiceData{token=" + this.token + " className=" + this.info.name + " packageName=" + this.info.packageName + " intent=" + this.intent + "}";
         }
     }
 
@@ -910,12 +909,10 @@ public final class ActivityThread {
             this.dropBox = (DropBoxManager) ActivityThread.this.getSystemContext().getSystemService(Context.DROPBOX_SERVICE);
         }
 
-        @Override // libcore.io.DropBox.Reporter
         public void addData(String str, byte[] bArr, int i) {
             this.dropBox.addData(str, bArr, i);
         }
 
-        @Override // libcore.io.DropBox.Reporter
         public void addText(String str, String str2) {
             this.dropBox.addText(str, str2);
         }
@@ -948,7 +945,6 @@ public final class ActivityThread {
         private EventLoggingReporter() {
         }
 
-        @Override // libcore.io.EventLogger.Reporter
         public void report(int i, Object... objArr) {
             EventLog.writeEvent(i, objArr);
         }
@@ -1395,7 +1391,7 @@ public final class ActivityThread {
         }
 
         public String toString() {
-            return "NewIntentData{intents=" + this.intents + " token=" + this.token + i.d;
+            return "NewIntentData{intents=" + this.intents + " token=" + this.token + "}";
         }
     }
 
@@ -1554,7 +1550,7 @@ public final class ActivityThread {
         }
 
         public String toString() {
-            return "ReceiverData{intent=" + this.intent + " packageName=" + this.info.packageName + " resultCode=" + getResultCode() + " resultData=" + getResultData() + " resultExtras=" + getResultExtras(false) + i.d;
+            return "ReceiverData{intent=" + this.intent + " packageName=" + this.info.packageName + " resultCode=" + getResultCode() + " resultData=" + getResultData() + " resultExtras=" + getResultExtras(false) + "}";
         }
     }
 
@@ -1579,7 +1575,7 @@ public final class ActivityThread {
         }
 
         public String toString() {
-            return "ResultData{token=" + this.token + " results" + this.results + i.d;
+            return "ResultData{token=" + this.token + " results" + this.results + "}";
         }
     }
 
@@ -1596,7 +1592,7 @@ public final class ActivityThread {
         }
 
         public String toString() {
-            return "ServiceArgsData{token=" + this.token + " startId=" + this.startId + " args=" + this.args + i.d;
+            return "ServiceArgsData{token=" + this.token + " startId=" + this.startId + " args=" + this.args + "}";
         }
     }
 
@@ -1774,9 +1770,9 @@ public final class ActivityThread {
                 int i2 = this.mThumbnailWidth;
                 if (i2 < 0) {
                     Resources resources = activityClientRecord.activity.getResources();
-                    i2 = resources.getDimensionPixelSize(17104898);
+                    i2 = resources.getDimensionPixelSize(R.dimen.thumbnail_width);
                     this.mThumbnailWidth = i2;
-                    i = resources.getDimensionPixelSize(17104897);
+                    i = resources.getDimensionPixelSize(R.dimen.thumbnail_height);
                     this.mThumbnailHeight = i;
                 } else {
                     i = this.mThumbnailHeight;
@@ -2437,7 +2433,7 @@ public final class ActivityThread {
         try {
             ActivityClientRecord activityClientRecord = this.mActivities.get(dumpComponentInfo.token);
             if (activityClientRecord != null && activityClientRecord.activity != null) {
-                FastPrintWriter fastPrintWriter = new FastPrintWriter(new FileOutputStream(dumpComponentInfo.fd.getFileDescriptor()));
+                PrintWriter fastPrintWriter = new FastPrintWriter(new FileOutputStream(dumpComponentInfo.fd.getFileDescriptor()));
                 activityClientRecord.activity.dump(dumpComponentInfo.prefix, dumpComponentInfo.fd.getFileDescriptor(), fastPrintWriter, dumpComponentInfo.args);
                 fastPrintWriter.flush();
             }
@@ -2478,7 +2474,7 @@ public final class ActivityThread {
         try {
             ProviderClientRecord providerClientRecord = this.mLocalProviders.get(dumpComponentInfo.token);
             if (providerClientRecord != null && providerClientRecord.mLocalProvider != null) {
-                FastPrintWriter fastPrintWriter = new FastPrintWriter(new FileOutputStream(dumpComponentInfo.fd.getFileDescriptor()));
+                PrintWriter fastPrintWriter = new FastPrintWriter(new FileOutputStream(dumpComponentInfo.fd.getFileDescriptor()));
                 providerClientRecord.mLocalProvider.dump(dumpComponentInfo.fd.getFileDescriptor(), fastPrintWriter, dumpComponentInfo.args);
                 fastPrintWriter.flush();
             }
@@ -3632,7 +3628,7 @@ public final class ActivityThread {
             LoadedApk loadedApk = weakReference != null ? weakReference.get() : null;
             if (loadedApk != null && (loadedApk.mResources == null || loadedApk.mResources.getAssets().isUpToDate())) {
                 if (loadedApk.isSecurityViolation() && (i & 2) == 0) {
-                    throw new SecurityException("Requesting code from " + str + " to be run in process " + this.mBoundApplication.processName + BridgeUtil.SPLIT_MARK + this.mBoundApplication.appInfo.uid);
+                    throw new SecurityException("Requesting code from " + str + " to be run in process " + this.mBoundApplication.processName + "/" + this.mBoundApplication.appInfo.uid);
                 }
                 return loadedApk;
             }
@@ -3794,7 +3790,7 @@ public final class ActivityThread {
     public void handleInstallProvider(ProviderInfo providerInfo) {
         StrictMode.ThreadPolicy allowThreadDiskWrites = StrictMode.allowThreadDiskWrites();
         try {
-            installContentProviders(this.mInitialApplication, Lists.newArrayList(providerInfo));
+            installContentProviders(this.mInitialApplication, Lists.newArrayList(new ProviderInfo[]{providerInfo}));
         } finally {
             StrictMode.setThreadPolicy(allowThreadDiskWrites);
         }

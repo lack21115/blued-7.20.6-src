@@ -11,8 +11,9 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8829756-dex2jar.jar:com/tencent/mm/opensdk/openapi/MMSharedPreferences.class */
-class MMSharedPreferences implements SharedPreferences {
+public class MMSharedPreferences implements SharedPreferences {
     private static final String TAG = "MicroMsg.SDK.SharedPreferences";
     private final ContentResolver cr;
     private final String[] columns = {"_id", "key", "type", "value"};

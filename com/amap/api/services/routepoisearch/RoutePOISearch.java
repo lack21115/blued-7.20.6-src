@@ -16,9 +16,7 @@ public class RoutePOISearch {
     public static final int DrivingSaveMoney = 1;
     public static final int DrivingSaveMoneyAvoidCongestion = 8;
     public static final int DrivingShortDistance = 2;
-
-    /* renamed from: a  reason: collision with root package name */
-    private IRoutePOISearch f5785a;
+    private IRoutePOISearch a;
 
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/services/routepoisearch/RoutePOISearch$OnRoutePOISearchListener.class */
     public interface OnRoutePOISearchListener {
@@ -39,9 +37,9 @@ public class RoutePOISearch {
     }
 
     public RoutePOISearch(Context context, RoutePOISearchQuery routePOISearchQuery) throws AMapException {
-        if (this.f5785a == null) {
+        if (this.a == null) {
             try {
-                this.f5785a = new ha(context, routePOISearchQuery);
+                this.a = new ha(context, routePOISearchQuery);
             } catch (Exception e) {
                 e.printStackTrace();
                 if (e instanceof AMapException) {
@@ -52,7 +50,7 @@ public class RoutePOISearch {
     }
 
     public RoutePOISearchResult searchRoutePOI() throws AMapException {
-        IRoutePOISearch iRoutePOISearch = this.f5785a;
+        IRoutePOISearch iRoutePOISearch = this.a;
         if (iRoutePOISearch != null) {
             return iRoutePOISearch.searchRoutePOI();
         }
@@ -60,21 +58,21 @@ public class RoutePOISearch {
     }
 
     public void searchRoutePOIAsyn() {
-        IRoutePOISearch iRoutePOISearch = this.f5785a;
+        IRoutePOISearch iRoutePOISearch = this.a;
         if (iRoutePOISearch != null) {
             iRoutePOISearch.searchRoutePOIAsyn();
         }
     }
 
     public void setPoiSearchListener(OnRoutePOISearchListener onRoutePOISearchListener) {
-        IRoutePOISearch iRoutePOISearch = this.f5785a;
+        IRoutePOISearch iRoutePOISearch = this.a;
         if (iRoutePOISearch != null) {
             iRoutePOISearch.setRoutePOISearchListener(onRoutePOISearchListener);
         }
     }
 
     public void setQuery(RoutePOISearchQuery routePOISearchQuery) {
-        IRoutePOISearch iRoutePOISearch = this.f5785a;
+        IRoutePOISearch iRoutePOISearch = this.a;
         if (iRoutePOISearch != null) {
             iRoutePOISearch.setQuery(routePOISearchQuery);
         }

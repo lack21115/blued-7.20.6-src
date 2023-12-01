@@ -27,9 +27,7 @@ import kotlin.reflect.KProperty;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/community/ui/feed/dialog/GuessLikeFeedPopWindow.class */
 public final class GuessLikeFeedPopWindow extends CenterPopupView {
-
-    /* renamed from: c  reason: collision with root package name */
-    static final /* synthetic */ KProperty<Object>[] f19735c = {Reflection.a(new PropertyReference1Impl(GuessLikeFeedPopWindow.class, "viewBinding", "getViewBinding()Lcom/blued/community/databinding/FeedGuessLikeDialogBinding;", 0))};
+    static final /* synthetic */ KProperty<Object>[] c = {Reflection.a(new PropertyReference1Impl(GuessLikeFeedPopWindow.class, "viewBinding", "getViewBinding()Lcom/blued/community/databinding/FeedGuessLikeDialogBinding;", 0))};
     public GuessLikeDialogConfirmAndCancelListener d;
     private final Context e;
     private final IRequestHost f;
@@ -122,7 +120,7 @@ public final class GuessLikeFeedPopWindow extends CenterPopupView {
     }
 
     private final FeedGuessLikeDialogBinding getViewBinding() {
-        return (FeedGuessLikeDialogBinding) this.g.b(this, f19735c[0]);
+        return (FeedGuessLikeDialogBinding) this.g.b(this, c[0]);
     }
 
     @Override // com.blued.android.framework.ui.xpop.core.CenterPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
@@ -180,8 +178,8 @@ public final class GuessLikeFeedPopWindow extends CenterPopupView {
                 ImageLoader.a(getFragmentActive(), feed.feed_pics[0]).a(6.0f).a(viewBinding.b);
             }
             viewBinding.d.setText(feed.user_name);
-            ImageLoader.a(getFragmentActive(), feed.user_avatar).c().a(viewBinding.f18819a);
-            viewBinding.f18820c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.feed.dialog.-$$Lambda$GuessLikeFeedPopWindow$wkbmx9yeb_RnVGBkkdFf1egpa9M
+            ImageLoader.a(getFragmentActive(), feed.user_avatar).c().a(viewBinding.a);
+            viewBinding.c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.feed.dialog.-$$Lambda$GuessLikeFeedPopWindow$wkbmx9yeb_RnVGBkkdFf1egpa9M
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     GuessLikeFeedPopWindow.a(GuessLikeFeedPopWindow.this, feed, view);

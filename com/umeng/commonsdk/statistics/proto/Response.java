@@ -63,7 +63,7 @@ public class Response implements bq<Response, e>, Serializable, Cloneable {
                 if (l.b == 0) {
                     break;
                 }
-                short s = l.f40700c;
+                short s = l.f27009c;
                 if (s != 1) {
                     if (s != 2) {
                         if (s != 3) {
@@ -199,7 +199,7 @@ public class Response implements bq<Response, e>, Serializable, Cloneable {
         private final String f;
 
         static {
-            Iterator<E> it = EnumSet.allOf(e.class).iterator();
+            Iterator it = EnumSet.allOf(e.class).iterator();
             while (it.hasNext()) {
                 e eVar = (e) it.next();
                 d.put(eVar.b(), eVar);

@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemOperatePeopleListBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final CardView f29273a;
+    private final CardView f15583a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public CardView getRoot() {
-        return this.f29273a;
+        return this.f15583a;
     }
 }

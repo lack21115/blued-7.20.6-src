@@ -13,6 +13,7 @@ import android.graphics.Shader;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
+import android.view.View;
 import android.widget.ImageView;
 import com.blued.android.module.live_china.same.Logger;
 import java.util.HashSet;
@@ -24,13 +25,9 @@ public class RoundedDrawable extends Drawable {
     private final int f;
     private final int g;
     private final Paint i;
-
-    /* renamed from: a  reason: collision with root package name */
-    private final RectF f15446a = new RectF();
+    private final RectF a = new RectF();
     private final RectF b = new RectF();
-
-    /* renamed from: c  reason: collision with root package name */
-    private final RectF f15447c = new RectF();
+    private final RectF c = new RectF();
     private final RectF h = new RectF();
     private final Matrix j = new Matrix();
     private final RectF k = new RectF();
@@ -41,16 +38,14 @@ public class RoundedDrawable extends Drawable {
     private final boolean[] p = {true, true, true, true};
     private boolean q = false;
     private float r = 0.0f;
-    private ColorStateList s = ColorStateList.valueOf(-16777216);
+    private ColorStateList s = ColorStateList.valueOf(View.MEASURED_STATE_MASK);
     private ImageView.ScaleType t = ImageView.ScaleType.FIT_CENTER;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.blued.android.module.live_china.view.roundimage.RoundedDrawable$1  reason: invalid class name */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/roundimage/RoundedDrawable$1.class */
     public static /* synthetic */ class AnonymousClass1 {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f15448a;
+        static final /* synthetic */ int[] a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:17:0x0059 -> B:33:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:19:0x005d -> B:43:0x001f). Please submit an issue!!! */
@@ -60,33 +55,33 @@ public class RoundedDrawable extends Drawable {
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:27:0x006d -> B:41:0x004c). Please submit an issue!!! */
         static {
             int[] iArr = new int[ImageView.ScaleType.values().length];
-            f15448a = iArr;
+            a = iArr;
             try {
                 iArr[ImageView.ScaleType.CENTER.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f15448a[ImageView.ScaleType.CENTER_CROP.ordinal()] = 2;
+                a[ImageView.ScaleType.CENTER_CROP.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f15448a[ImageView.ScaleType.CENTER_INSIDE.ordinal()] = 3;
+                a[ImageView.ScaleType.CENTER_INSIDE.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f15448a[ImageView.ScaleType.FIT_CENTER.ordinal()] = 4;
+                a[ImageView.ScaleType.FIT_CENTER.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f15448a[ImageView.ScaleType.FIT_END.ordinal()] = 5;
+                a[ImageView.ScaleType.FIT_END.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
             try {
-                f15448a[ImageView.ScaleType.FIT_START.ordinal()] = 6;
+                a[ImageView.ScaleType.FIT_START.ordinal()] = 6;
             } catch (NoSuchFieldError e6) {
             }
             try {
-                f15448a[ImageView.ScaleType.FIT_XY.ordinal()] = 7;
+                a[ImageView.ScaleType.FIT_XY.ordinal()] = 7;
             } catch (NoSuchFieldError e7) {
             }
         }
@@ -97,7 +92,7 @@ public class RoundedDrawable extends Drawable {
         this.f = bitmap.getWidth();
         int height = bitmap.getHeight();
         this.g = height;
-        this.f15447c.set(0.0f, 0.0f, this.f, height);
+        this.c.set(0.0f, 0.0f, this.f, height);
         Paint paint = new Paint();
         this.e = paint;
         paint.setStyle(Paint.Style.FILL);
@@ -106,7 +101,7 @@ public class RoundedDrawable extends Drawable {
         this.i = paint2;
         paint2.setStyle(Paint.Style.STROKE);
         this.i.setAntiAlias(true);
-        this.i.setColor(this.s.getColorForState(getState(), -16777216));
+        this.i.setColor(this.s.getColorForState(getState(), View.MEASURED_STATE_MASK));
         this.i.setStrokeWidth(this.r);
     }
 
@@ -149,16 +144,16 @@ public class RoundedDrawable extends Drawable {
     private void a() {
         float width;
         float height;
-        int i = AnonymousClass1.f15448a[this.t.ordinal()];
+        int i = AnonymousClass1.a[this.t.ordinal()];
         if (i == 1) {
-            this.h.set(this.f15446a);
+            this.h.set(this.a);
             RectF rectF = this.h;
             float f = this.r;
             rectF.inset(f / 2.0f, f / 2.0f);
             this.j.reset();
             this.j.setTranslate((int) (((this.h.width() - this.f) * 0.5f) + 0.5f), (int) (((this.h.height() - this.g) * 0.5f) + 0.5f));
         } else if (i == 2) {
-            this.h.set(this.f15446a);
+            this.h.set(this.a);
             RectF rectF2 = this.h;
             float f2 = this.r;
             rectF2.inset(f2 / 2.0f, f2 / 2.0f);
@@ -177,48 +172,48 @@ public class RoundedDrawable extends Drawable {
             this.j.postTranslate(((int) (f3 + 0.5f)) + (f4 / 2.0f), ((int) (height + 0.5f)) + (f4 / 2.0f));
         } else if (i == 3) {
             this.j.reset();
-            float min = (((float) this.f) > this.f15446a.width() || ((float) this.g) > this.f15446a.height()) ? Math.min(this.f15446a.width() / this.f, this.f15446a.height() / this.g) : 1.0f;
-            float width2 = (int) (((this.f15446a.width() - (this.f * min)) * 0.5f) + 0.5f);
-            float height2 = (int) (((this.f15446a.height() - (this.g * min)) * 0.5f) + 0.5f);
+            float min = (((float) this.f) > this.a.width() || ((float) this.g) > this.a.height()) ? Math.min(this.a.width() / this.f, this.a.height() / this.g) : 1.0f;
+            float width2 = (int) (((this.a.width() - (this.f * min)) * 0.5f) + 0.5f);
+            float height2 = (int) (((this.a.height() - (this.g * min)) * 0.5f) + 0.5f);
             this.j.setScale(min, min);
             this.j.postTranslate(width2, height2);
-            this.h.set(this.f15447c);
+            this.h.set(this.c);
             this.j.mapRect(this.h);
             RectF rectF3 = this.h;
             float f5 = this.r;
             rectF3.inset(f5 / 2.0f, f5 / 2.0f);
-            this.j.setRectToRect(this.f15447c, this.h, Matrix.ScaleToFit.FILL);
+            this.j.setRectToRect(this.c, this.h, Matrix.ScaleToFit.FILL);
         } else if (i == 5) {
-            this.h.set(this.f15447c);
-            this.j.setRectToRect(this.f15447c, this.f15446a, Matrix.ScaleToFit.END);
+            this.h.set(this.c);
+            this.j.setRectToRect(this.c, this.a, Matrix.ScaleToFit.END);
             this.j.mapRect(this.h);
             RectF rectF4 = this.h;
             float f6 = this.r;
             rectF4.inset(f6 / 2.0f, f6 / 2.0f);
-            this.j.setRectToRect(this.f15447c, this.h, Matrix.ScaleToFit.FILL);
+            this.j.setRectToRect(this.c, this.h, Matrix.ScaleToFit.FILL);
         } else if (i == 6) {
-            this.h.set(this.f15447c);
-            this.j.setRectToRect(this.f15447c, this.f15446a, Matrix.ScaleToFit.START);
+            this.h.set(this.c);
+            this.j.setRectToRect(this.c, this.a, Matrix.ScaleToFit.START);
             this.j.mapRect(this.h);
             RectF rectF5 = this.h;
             float f7 = this.r;
             rectF5.inset(f7 / 2.0f, f7 / 2.0f);
-            this.j.setRectToRect(this.f15447c, this.h, Matrix.ScaleToFit.FILL);
+            this.j.setRectToRect(this.c, this.h, Matrix.ScaleToFit.FILL);
         } else if (i != 7) {
-            this.h.set(this.f15447c);
-            this.j.setRectToRect(this.f15447c, this.f15446a, Matrix.ScaleToFit.CENTER);
+            this.h.set(this.c);
+            this.j.setRectToRect(this.c, this.a, Matrix.ScaleToFit.CENTER);
             this.j.mapRect(this.h);
             RectF rectF6 = this.h;
             float f8 = this.r;
             rectF6.inset(f8 / 2.0f, f8 / 2.0f);
-            this.j.setRectToRect(this.f15447c, this.h, Matrix.ScaleToFit.FILL);
+            this.j.setRectToRect(this.c, this.h, Matrix.ScaleToFit.FILL);
         } else {
-            this.h.set(this.f15446a);
+            this.h.set(this.a);
             RectF rectF7 = this.h;
             float f9 = this.r;
             rectF7.inset(f9 / 2.0f, f9 / 2.0f);
             this.j.reset();
-            this.j.setRectToRect(this.f15447c, this.h, Matrix.ScaleToFit.FILL);
+            this.j.setRectToRect(this.c, this.h, Matrix.ScaleToFit.FILL);
         }
         this.b.set(this.h);
     }
@@ -364,7 +359,7 @@ public class RoundedDrawable extends Drawable {
             colorStateList = ColorStateList.valueOf(0);
         }
         this.s = colorStateList;
-        this.i.setColor(colorStateList.getColorForState(getState(), -16777216));
+        this.i.setColor(colorStateList.getColorForState(getState(), View.MEASURED_STATE_MASK));
         return this;
     }
 
@@ -469,17 +464,15 @@ public class RoundedDrawable extends Drawable {
         return this.s.isStateful();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.graphics.drawable.Drawable
-    public void onBoundsChange(Rect rect) {
+    protected void onBoundsChange(Rect rect) {
         super.onBoundsChange(rect);
-        this.f15446a.set(rect);
+        this.a.set(rect);
         a();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.graphics.drawable.Drawable
-    public boolean onStateChange(int[] iArr) {
+    protected boolean onStateChange(int[] iArr) {
         int colorForState = this.s.getColorForState(iArr, 0);
         if (this.i.getColor() != colorForState) {
             this.i.setColor(colorForState);

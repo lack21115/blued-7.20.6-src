@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.net.NetworkInfo;
 import android.os.Build;
 import android.text.TextUtils;
+import com.huawei.hms.framework.network.grs.GrsBaseInfo;
 import com.tencent.lbssearch.object.param.Geo2AddressParam;
 import com.xiaomi.push.he;
 import com.xiaomi.push.hk;
@@ -18,41 +19,41 @@ import org.json.JSONObject;
 public class o {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile o f41686a;
+    private static volatile o f27995a;
 
     /* renamed from: a  reason: collision with other field name */
-    private long f1058a;
+    private long f1011a;
 
     /* renamed from: a  reason: collision with other field name */
-    private final Context f1059a;
+    private final Context f1012a;
 
     /* renamed from: a  reason: collision with other field name */
-    private final SharedPreferences f1060a;
+    private final SharedPreferences f1013a;
 
     /* renamed from: b  reason: collision with other field name */
-    private final boolean f1065b;
+    private final boolean f1018b;
 
     /* renamed from: c  reason: collision with other field name */
-    private final boolean f1066c;
+    private final boolean f1019c;
 
     /* renamed from: a  reason: collision with other field name */
-    private final AtomicInteger f1062a = new AtomicInteger(0);
+    private final AtomicInteger f1015a = new AtomicInteger(0);
 
     /* renamed from: a  reason: collision with other field name */
-    private String f1061a = null;
+    private String f1014a = null;
 
     /* renamed from: a  reason: collision with other field name */
-    private volatile boolean f1063a = false;
+    private volatile boolean f1016a = false;
     private String b = null;
 
     /* renamed from: b  reason: collision with other field name */
-    private final AtomicInteger f1064b = new AtomicInteger(0);
+    private final AtomicInteger f1017b = new AtomicInteger(0);
 
     /* renamed from: c  reason: collision with root package name */
-    private final AtomicInteger f41687c = new AtomicInteger(0);
+    private final AtomicInteger f27996c = new AtomicInteger(0);
 
     /* renamed from: a  reason: collision with other field name */
-    private int f1057a = -1;
+    private int f1010a = -1;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8829756-dex2jar.jar:com/xiaomi/push/service/o$a.class */
@@ -107,27 +108,27 @@ public class o {
     }
 
     private o(Context context) {
-        this.f1059a = context;
-        this.f1066c = com.xiaomi.push.j.m12048a(context);
-        this.f1065b = ba.a(this.f1059a).a(hl.IntelligentHeartbeatSwitchBoolean.a(), true);
-        this.f1060a = this.f1059a.getSharedPreferences("hb_record", 0);
+        this.f1012a = context;
+        this.f1019c = com.xiaomi.push.j.m8998a(context);
+        this.f1018b = ba.a(this.f1012a).a(hl.IntelligentHeartbeatSwitchBoolean.a(), true);
+        this.f1013a = this.f1012a.getSharedPreferences("hb_record", 0);
         long currentTimeMillis = System.currentTimeMillis();
-        if (this.f1060a.getLong(a.c(), -1L) == -1) {
-            this.f1060a.edit().putLong(a.c(), currentTimeMillis).apply();
+        if (this.f1013a.getLong(a.c(), -1L) == -1) {
+            this.f1013a.edit().putLong(a.c(), currentTimeMillis).apply();
         }
-        long j = this.f1060a.getLong(a.i(), -1L);
-        this.f1058a = j;
+        long j = this.f1013a.getLong(a.i(), -1L);
+        this.f1011a = j;
         if (j == -1) {
-            this.f1058a = currentTimeMillis;
-            this.f1060a.edit().putLong(a.i(), currentTimeMillis).apply();
+            this.f1011a = currentTimeMillis;
+            this.f1013a.edit().putLong(a.i(), currentTimeMillis).apply();
         }
     }
 
     private int a() {
         int i = -1;
-        if (!TextUtils.isEmpty(this.f1061a)) {
+        if (!TextUtils.isEmpty(this.f1014a)) {
             try {
-                i = this.f1060a.getInt(a.a(this.f1061a), -1);
+                i = this.f1013a.getInt(a.a(this.f1014a), -1);
             } catch (Throwable th) {
                 return -1;
             }
@@ -136,18 +137,18 @@ public class o {
     }
 
     public static o a(Context context) {
-        if (f41686a == null) {
+        if (f27995a == null) {
             synchronized (o.class) {
                 try {
-                    if (f41686a == null) {
-                        f41686a = new o(context);
+                    if (f27995a == null) {
+                        f27995a = new o(context);
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f41686a;
+        return f27995a;
     }
 
     private void a(String str, String str2, Map<String, String> map) {
@@ -159,18 +160,18 @@ public class o {
         hkVar.b(str2);
         hkVar.a(false);
         hkVar.b(System.currentTimeMillis());
-        hkVar.g(this.f1059a.getPackageName());
+        hkVar.g(this.f1012a.getPackageName());
         hkVar.e("com.xiaomi.xmsf");
         HashMap hashMap = map;
         if (map == null) {
             hashMap = new HashMap();
         }
-        t m12210a = u.m12210a(this.f1059a);
+        t m9160a = u.m9160a(this.f1012a);
         String str3 = null;
-        if (m12210a != null) {
+        if (m9160a != null) {
             str3 = null;
-            if (!TextUtils.isEmpty(m12210a.f1080a)) {
-                String[] split = m12210a.f1080a.split("@");
+            if (!TextUtils.isEmpty(m9160a.f1033a)) {
+                String[] split = m9160a.f1033a.split("@");
                 str3 = null;
                 if (split.length > 0) {
                     str3 = split[0];
@@ -179,38 +180,38 @@ public class o {
         }
         hashMap.put("uuid", str3);
         hashMap.put("model", Build.MODEL);
-        Context context = this.f1059a;
+        Context context = this.f1012a;
         hashMap.put("avc", String.valueOf(com.xiaomi.push.g.a(context, context.getPackageName())));
         hashMap.put("pvc", "50010");
         hashMap.put("cvc", com.huawei.openalliance.ad.beans.inner.a.Code);
         hkVar.a(hashMap);
-        he a2 = he.a(this.f1059a);
+        he a2 = he.a(this.f1012a);
         if (a2 != null) {
-            a2.a(hkVar, this.f1059a.getPackageName());
+            a2.a(hkVar, this.f1012a.getPackageName());
         }
     }
 
     private void a(boolean z) {
-        if (m12188c()) {
-            int incrementAndGet = (z ? this.f1064b : this.f41687c).incrementAndGet();
+        if (m9138c()) {
+            int incrementAndGet = (z ? this.f1017b : this.f27996c).incrementAndGet();
             com.xiaomi.channel.commonutils.logger.b.b(String.format("[HB] %s ping interval count: %s", z ? Geo2AddressParam.PoiOptions.ADDRESS_FORMAT_SHORT : "long", Integer.valueOf(incrementAndGet)));
             if (incrementAndGet >= 5) {
                 String d = z ? a.d() : a.e();
-                int i = this.f1060a.getInt(d, 0) + incrementAndGet;
-                this.f1060a.edit().putInt(d, i).apply();
-                com.xiaomi.channel.commonutils.logger.b.m11394a(String.format("[HB] accumulate %s hb count(%s) and write to file. ", z ? Geo2AddressParam.PoiOptions.ADDRESS_FORMAT_SHORT : "long", Integer.valueOf(i)));
+                int i = this.f1013a.getInt(d, 0) + incrementAndGet;
+                this.f1013a.edit().putInt(d, i).apply();
+                com.xiaomi.channel.commonutils.logger.b.m8344a(String.format("[HB] accumulate %s hb count(%s) and write to file. ", z ? Geo2AddressParam.PoiOptions.ADDRESS_FORMAT_SHORT : "long", Integer.valueOf(i)));
                 if (z) {
-                    this.f1064b.set(0);
+                    this.f1017b.set(0);
                 } else {
-                    this.f41687c.set(0);
+                    this.f27996c.set(0);
                 }
             }
         }
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    private boolean m12186a() {
-        return this.f1062a.get() >= Math.max(ba.a(this.f1059a).a(hl.IntelligentHeartbeatNATCountInt.a(), 5), 3);
+    private boolean m9136a() {
+        return this.f1015a.get() >= Math.max(ba.a(this.f1012a).a(hl.IntelligentHeartbeatNATCountInt.a(), 5), 3);
     }
 
     private boolean a(String str) {
@@ -221,7 +222,7 @@ public class o {
     }
 
     private long b() {
-        return this.f1060a.getLong(a.j(), -1L);
+        return this.f1013a.getLong(a.j(), -1L);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:12:0x0059  */
@@ -238,30 +239,30 @@ public class o {
     }
 
     /* renamed from: b  reason: collision with other method in class */
-    private boolean m12187b() {
-        return (TextUtils.isEmpty(this.f1061a) || !this.f1061a.startsWith("M-") || ba.a(this.f1059a).a(hl.IntelligentHeartbeatUseInMobileNetworkBoolean.a(), false)) ? false : true;
+    private boolean m9137b() {
+        return (TextUtils.isEmpty(this.f1014a) || !this.f1014a.startsWith("M-") || ba.a(this.f1012a).a(hl.IntelligentHeartbeatUseInMobileNetworkBoolean.a(), false)) ? false : true;
     }
 
     private long c() {
-        return ba.a(this.f1059a).a(hl.ShortHeartbeatEffectivePeriodMsLong.a(), 777600000L);
+        return ba.a(this.f1012a).a(hl.ShortHeartbeatEffectivePeriodMsLong.a(), 777600000L);
     }
 
     private void c(String str) {
         if (a(str)) {
-            this.f1060a.edit().putInt(a.a(str), 235000).apply();
-            this.f1060a.edit().putLong(a.b(this.f1061a), System.currentTimeMillis() + c()).apply();
+            this.f1013a.edit().putInt(a.a(str), 235000).apply();
+            this.f1013a.edit().putLong(a.b(this.f1014a), System.currentTimeMillis() + c()).apply();
         }
     }
 
     /* renamed from: c  reason: collision with other method in class */
-    private boolean m12188c() {
-        return d() && ba.a(this.f1059a).a(hl.IntelligentHeartbeatDataCollectSwitchBoolean.a(), true) && com.xiaomi.push.m.China.name().equals(com.xiaomi.push.service.a.a(this.f1059a).a());
+    private boolean m9138c() {
+        return d() && ba.a(this.f1012a).a(hl.IntelligentHeartbeatDataCollectSwitchBoolean.a(), true) && com.xiaomi.push.m.China.name().equals(com.xiaomi.push.service.a.a(this.f1012a).a());
     }
 
     private void d(String str) {
         String str2;
         String str3;
-        if (m12188c() && !TextUtils.isEmpty(str)) {
+        if (m9138c() && !TextUtils.isEmpty(str)) {
             if (str.startsWith("W-")) {
                 str2 = "W";
             } else if (!str.startsWith("M-")) {
@@ -278,34 +279,34 @@ public class o {
             sb.append("235000");
             sb.append(":::");
             sb.append(String.valueOf(currentTimeMillis));
-            String string = this.f1060a.getString(a.f(), null);
+            String string = this.f1013a.getString(a.f(), null);
             if (TextUtils.isEmpty(string)) {
                 str3 = sb.toString();
             } else {
                 str3 = string + "###" + sb.toString();
             }
-            this.f1060a.edit().putString(a.f(), str3).apply();
+            this.f1013a.edit().putString(a.f(), str3).apply();
         }
     }
 
     private boolean d() {
         boolean z = b() >= System.currentTimeMillis();
-        if (this.f1066c) {
-            return this.f1065b || z;
+        if (this.f1019c) {
+            return this.f1018b || z;
         }
         return false;
     }
 
     private void e() {
-        if (this.f1060a.getBoolean(a.a(), false)) {
+        if (this.f1013a.getBoolean(a.a(), false)) {
             return;
         }
-        this.f1060a.edit().putBoolean(a.a(), true).apply();
+        this.f1013a.edit().putBoolean(a.a(), true).apply();
     }
 
     /* renamed from: e  reason: collision with other method in class */
-    private boolean m12189e() {
-        long j = this.f1060a.getLong(a.c(), -1L);
+    private boolean m9139e() {
+        long j = this.f1013a.getLong(a.c(), -1L);
         if (j == -1) {
             return false;
         }
@@ -314,25 +315,25 @@ public class o {
     }
 
     private void f() {
-        int i = this.f1057a;
+        int i = this.f1010a;
         String h = i != 0 ? i != 1 ? null : a.h() : a.g();
         if (TextUtils.isEmpty(h)) {
             return;
         }
-        if (this.f1060a.getLong(a.i(), -1L) == -1) {
-            this.f1058a = System.currentTimeMillis();
-            this.f1060a.edit().putLong(a.i(), this.f1058a).apply();
+        if (this.f1013a.getLong(a.i(), -1L) == -1) {
+            this.f1011a = System.currentTimeMillis();
+            this.f1013a.edit().putLong(a.i(), this.f1011a).apply();
         }
-        this.f1060a.edit().putInt(h, this.f1060a.getInt(h, 0) + 1).apply();
+        this.f1013a.edit().putInt(h, this.f1013a.getInt(h, 0) + 1).apply();
     }
 
     /* renamed from: f  reason: collision with other method in class */
-    private boolean m12190f() {
-        if (this.f1058a == -1) {
+    private boolean m9140f() {
+        if (this.f1011a == -1) {
             return false;
         }
         long currentTimeMillis = System.currentTimeMillis();
-        long j = this.f1058a;
+        long j = this.f1011a;
         return j > currentTimeMillis || currentTimeMillis - j >= 259200000;
     }
 
@@ -340,8 +341,8 @@ public class o {
     private void g() {
         String[] split;
         String[] split2;
-        if (m12188c()) {
-            String string = this.f1060a.getString(a.f(), null);
+        if (m9138c()) {
+            String string = this.f1013a.getString(a.f(), null);
             if (!TextUtils.isEmpty(string) && (split = string.split("###")) != null) {
                 int i = 0;
                 while (true) {
@@ -362,26 +363,26 @@ public class o {
                         hashMap.put(com.umeng.analytics.pro.bh.aX, str3);
                         hashMap.put("timestamp", str4);
                         a("category_hb_change", null, hashMap);
-                        com.xiaomi.channel.commonutils.logger.b.m11394a("[HB] report hb changed events.");
+                        com.xiaomi.channel.commonutils.logger.b.m8344a("[HB] report hb changed events.");
                     }
                     i = i2 + 1;
                 }
-                this.f1060a.edit().remove(a.f()).apply();
+                this.f1013a.edit().remove(a.f()).apply();
             }
-            if (this.f1060a.getBoolean(a.a(), false) && !this.f1060a.getBoolean(a.b(), false)) {
+            if (this.f1013a.getBoolean(a.a(), false) && !this.f1013a.getBoolean(a.b(), false)) {
                 HashMap hashMap2 = new HashMap();
                 hashMap2.put("event", "support");
                 hashMap2.put("model", Build.MODEL);
                 hashMap2.put("timestamp", String.valueOf(System.currentTimeMillis() / 1000));
                 a("category_hb_change", null, hashMap2);
-                com.xiaomi.channel.commonutils.logger.b.m11394a("[HB] report support wifi digest events.");
-                this.f1060a.edit().putBoolean(a.b(), true).apply();
+                com.xiaomi.channel.commonutils.logger.b.m8344a("[HB] report support wifi digest events.");
+                this.f1013a.edit().putBoolean(a.b(), true).apply();
             }
-            if (m12189e()) {
-                int i3 = this.f1060a.getInt(a.d(), 0);
-                int i4 = this.f1060a.getInt(a.e(), 0);
+            if (m9139e()) {
+                int i3 = this.f1013a.getInt(a.d(), 0);
+                int i4 = this.f1013a.getInt(a.e(), 0);
                 if (i3 > 0 || i4 > 0) {
-                    long j = this.f1060a.getLong(a.c(), -1L);
+                    long j = this.f1013a.getLong(a.c(), -1L);
                     long currentTimeMillis = System.currentTimeMillis();
                     try {
                         JSONObject jSONObject = new JSONObject();
@@ -395,16 +396,16 @@ public class o {
                         HashMap hashMap3 = new HashMap();
                         hashMap3.put("event", "long_and_short_hb_count");
                         a("category_hb_count", jSONObject2, hashMap3);
-                        com.xiaomi.channel.commonutils.logger.b.m11394a("[HB] report short/long hb count events.");
+                        com.xiaomi.channel.commonutils.logger.b.m8344a("[HB] report short/long hb count events.");
                     } catch (Throwable th) {
                     }
                 }
-                this.f1060a.edit().putInt(a.d(), 0).putInt(a.e(), 0).putLong(a.c(), System.currentTimeMillis()).apply();
+                this.f1013a.edit().putInt(a.d(), 0).putInt(a.e(), 0).putLong(a.c(), System.currentTimeMillis()).apply();
             }
-            if (m12190f()) {
-                String valueOf = String.valueOf(this.f1058a);
+            if (m9140f()) {
+                String valueOf = String.valueOf(this.f1011a);
                 String valueOf2 = String.valueOf(System.currentTimeMillis());
-                int i5 = this.f1060a.getInt(a.g(), 0);
+                int i5 = this.f1013a.getInt(a.g(), 0);
                 if (i5 > 0) {
                     try {
                         JSONObject jSONObject3 = new JSONObject();
@@ -416,13 +417,13 @@ public class o {
                         HashMap hashMap4 = new HashMap();
                         hashMap4.put("event", "ptc_event");
                         a("category_lc_ptc", jSONObject4, hashMap4);
-                        com.xiaomi.channel.commonutils.logger.b.m11394a("[HB] report ping timeout count events of mobile network.");
-                        this.f1060a.edit().putInt(a.g(), 0).apply();
+                        com.xiaomi.channel.commonutils.logger.b.m8344a("[HB] report ping timeout count events of mobile network.");
+                        this.f1013a.edit().putInt(a.g(), 0).apply();
                     } catch (Throwable th2) {
-                        this.f1060a.edit().putInt(a.g(), 0).apply();
+                        this.f1013a.edit().putInt(a.g(), 0).apply();
                     }
                 }
-                int i6 = this.f1060a.getInt(a.h(), 0);
+                int i6 = this.f1013a.getInt(a.h(), 0);
                 if (i6 > 0) {
                     try {
                         JSONObject jSONObject5 = new JSONObject();
@@ -434,13 +435,13 @@ public class o {
                         HashMap hashMap5 = new HashMap();
                         hashMap5.put("event", "ptc_event");
                         a("category_lc_ptc", jSONObject6, hashMap5);
-                        com.xiaomi.channel.commonutils.logger.b.m11394a("[HB] report ping timeout count events of wifi network.");
+                        com.xiaomi.channel.commonutils.logger.b.m8344a("[HB] report ping timeout count events of wifi network.");
                     } catch (Throwable th3) {
                     }
-                    this.f1060a.edit().putInt(a.h(), 0).apply();
+                    this.f1013a.edit().putInt(a.h(), 0).apply();
                 }
-                this.f1058a = System.currentTimeMillis();
-                this.f1060a.edit().putLong(a.i(), this.f1058a).apply();
+                this.f1011a = System.currentTimeMillis();
+                this.f1013a.edit().putLong(a.i(), this.f1011a).apply();
             }
         }
     }
@@ -453,14 +454,14 @@ public class o {
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences
     */
-    public long m12191a() {
+    public long m9141a() {
         /*
             r5 = this;
             int r0 = com.xiaomi.push.ga.b()
             long r0 = (long) r0
             r9 = r0
             r0 = r5
-            boolean r0 = r0.f1066c
+            boolean r0 = r0.f1019c
             r12 = r0
             r0 = 1
             r11 = r0
@@ -471,10 +472,10 @@ public class o {
             r0 = r9
             r7 = r0
             r0 = r5
-            boolean r0 = r0.m12187b()
+            boolean r0 = r0.m9137b()
             if (r0 != 0) goto L53
             r0 = r5
-            android.content.Context r0 = r0.f1059a
+            android.content.Context r0 = r0.f1012a
             com.xiaomi.push.service.ba r0 = com.xiaomi.push.service.ba.a(r0)
             com.xiaomi.push.hl r1 = com.xiaomi.push.hl.IntelligentHeartbeatSwitchBoolean
             int r1 = r1.a()
@@ -502,16 +503,16 @@ public class o {
             r7 = r0
         L53:
             r0 = r5
-            java.lang.String r0 = r0.f1061a
+            java.lang.String r0 = r0.f1014a
             boolean r0 = android.text.TextUtils.isEmpty(r0)
             if (r0 != 0) goto L86
             java.lang.String r0 = "WIFI-ID-UNKNOWN"
             r1 = r5
-            java.lang.String r1 = r1.f1061a
+            java.lang.String r1 = r1.f1014a
             boolean r0 = r0.equals(r1)
             if (r0 != 0) goto L86
             r0 = r5
-            int r0 = r0.f1057a
+            int r0 = r0.f1010a
             r1 = 1
             if (r0 != r1) goto L86
             r0 = r7
@@ -531,19 +532,19 @@ public class o {
             r1 = r7
             java.lang.String r1 = java.lang.String.valueOf(r1)
             java.lang.String r0 = r0.concat(r1)
-            com.xiaomi.channel.commonutils.logger.b.m11394a(r0)
+            com.xiaomi.channel.commonutils.logger.b.m8344a(r0)
             r0 = r7
             return r0
         */
-        throw new UnsupportedOperationException("Method not decompiled: com.xiaomi.push.service.o.m12191a():long");
+        throw new UnsupportedOperationException("Method not decompiled: com.xiaomi.push.service.o.m9141a():long");
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public void m12192a() {
+    public void m9142a() {
     }
 
     public void a(int i) {
-        this.f1060a.edit().putLong(a.j(), System.currentTimeMillis() + (i * 1000)).apply();
+        this.f1013a.edit().putLong(a.j(), System.currentTimeMillis() + (i * 1000)).apply();
     }
 
     public void a(NetworkInfo networkInfo) {
@@ -553,33 +554,33 @@ public class o {
                     if (networkInfo.getType() != 0) {
                         if (networkInfo.getType() != 1 && networkInfo.getType() != 6) {
                             b(null);
-                            this.f1057a = -1;
+                            this.f1010a = -1;
                             return;
                         }
                         b("WIFI-ID-UNKNOWN");
-                        this.f1057a = 1;
+                        this.f1010a = 1;
                         return;
                     }
                     String subtypeName = networkInfo.getSubtypeName();
                     String str = null;
                     if (!TextUtils.isEmpty(subtypeName)) {
                         str = null;
-                        if (!"UNKNOWN".equalsIgnoreCase(subtypeName)) {
+                        if (!GrsBaseInfo.CountryCodeSource.UNKNOWN.equalsIgnoreCase(subtypeName)) {
                             str = "M-".concat(String.valueOf(subtypeName));
                         }
                     }
                     b(str);
-                    this.f1057a = 0;
+                    this.f1010a = 0;
                     return;
                 }
                 b(null);
-                this.f1057a = -1;
+                this.f1010a = -1;
             }
         }
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public void m12193a(String str) {
+    public void m9143a(String str) {
         synchronized (this) {
             if (!TextUtils.isEmpty(str)) {
                 e();
@@ -591,36 +592,36 @@ public class o {
     }
 
     /* renamed from: b  reason: collision with other method in class */
-    public void m12194b() {
+    public void m9144b() {
         if (d()) {
             f();
-            if (this.f1063a && !TextUtils.isEmpty(this.f1061a) && this.f1061a.equals(this.b)) {
-                this.f1062a.getAndIncrement();
-                com.xiaomi.channel.commonutils.logger.b.m11394a("[HB] ping timeout count:" + this.f1062a);
-                if (m12186a()) {
-                    com.xiaomi.channel.commonutils.logger.b.m11394a("[HB] change hb interval for net:" + this.f1061a);
-                    c(this.f1061a);
-                    this.f1063a = false;
-                    this.f1062a.getAndSet(0);
-                    d(this.f1061a);
+            if (this.f1016a && !TextUtils.isEmpty(this.f1014a) && this.f1014a.equals(this.b)) {
+                this.f1015a.getAndIncrement();
+                com.xiaomi.channel.commonutils.logger.b.m8344a("[HB] ping timeout count:" + this.f1015a);
+                if (m9136a()) {
+                    com.xiaomi.channel.commonutils.logger.b.m8344a("[HB] change hb interval for net:" + this.f1014a);
+                    c(this.f1014a);
+                    this.f1016a = false;
+                    this.f1015a.getAndSet(0);
+                    d(this.f1014a);
                 }
             }
         }
     }
 
     /* renamed from: c  reason: collision with other method in class */
-    public void m12195c() {
+    public void m9145c() {
         if (d()) {
-            this.b = this.f1061a;
+            this.b = this.f1014a;
         }
     }
 
     /* renamed from: d  reason: collision with other method in class */
-    public void m12196d() {
+    public void m9146d() {
         if (d()) {
             g();
-            if (this.f1063a) {
-                this.f1062a.getAndSet(0);
+            if (this.f1016a) {
+                this.f1015a.getAndSet(0);
             }
         }
     }

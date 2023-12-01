@@ -4,21 +4,21 @@ package com.tencent.cloud.huiyansdkface.wehttp2;
 public class LogTag {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f36090a;
+    private String f22399a;
 
     public LogTag(String str) {
-        this.f36090a = str;
+        this.f22399a = str;
     }
 
     public String getTag() {
-        return this.f36090a;
+        return this.f22399a;
     }
 
     public void setTag(String str) {
-        this.f36090a = str;
+        this.f22399a = str;
     }
 
     public String toString() {
-        return this.f36090a;
+        return this.f22399a;
     }
 }

@@ -91,7 +91,7 @@ public class ThirdPartyFullScreenAdView extends BaseScreenAdView {
 
     private void L() {
         ArrayList arrayList = new ArrayList();
-        int x = this.f6049c.m.x();
+        int x = this.c.m.x();
         if (x == 0) {
             arrayList.addAll(this.y.getClickViews());
             arrayList.add(this.y);
@@ -207,11 +207,11 @@ public class ThirdPartyFullScreenAdView extends BaseScreenAdView {
                         }
                     }
                 }
-                int a2 = h.a(getContext(), 300.0f);
-                this.z.setLayoutParams(new RelativeLayout.LayoutParams(this.C - a2, -1));
+                int a = h.a(getContext(), 300.0f);
+                this.z.setLayoutParams(new RelativeLayout.LayoutParams(this.C - a, -1));
                 RelativeLayout.LayoutParams layoutParams2 = (RelativeLayout.LayoutParams) this.y.getLayoutParams();
                 if (layoutParams2 != null) {
-                    layoutParams2.width = a2;
+                    layoutParams2.width = a;
                     layoutParams2.height = -1;
                     this.y.setLayoutParams(layoutParams2);
                     this.y.removeAllViews();
@@ -220,13 +220,13 @@ public class ThirdPartyFullScreenAdView extends BaseScreenAdView {
             } else {
                 this.w.setBackgroundColor(-1);
                 int i3 = (int) (this.D * 0.5f);
-                int a3 = TextUtils.isEmpty(this.d.t()) ? this.D - i3 : (this.D - i3) + h.a(getContext(), 50.0f);
+                int a2 = TextUtils.isEmpty(this.d.t()) ? this.D - i3 : (this.D - i3) + h.a(getContext(), 50.0f);
                 this.z.setLayoutParams(new RelativeLayout.LayoutParams(-1, i3));
                 this.z.setNeedArc(true);
                 RelativeLayout.LayoutParams layoutParams3 = (RelativeLayout.LayoutParams) this.y.getLayoutParams();
                 if (layoutParams3 != null) {
                     layoutParams3.width = this.C;
-                    layoutParams3.height = a3;
+                    layoutParams3.height = a2;
                     this.y.setLayoutParams(layoutParams3);
                     this.y.removeAllViews();
                     this.y.setLayoutType(this.Q);
@@ -355,7 +355,7 @@ public class ThirdPartyFullScreenAdView extends BaseScreenAdView {
             }
         });
         if (!this.u) {
-            if (1 == this.f6062a || 3 != this.f6062a) {
+            if (1 == this.a || 3 != this.a) {
                 return;
             }
             if (TextUtils.equals(this.ag.getAdType(), "1") && this.ae != null) {
@@ -389,10 +389,10 @@ public class ThirdPartyFullScreenAdView extends BaseScreenAdView {
             return;
         }
         com.anythink.basead.a.f.a();
-        int[] a2 = com.anythink.core.common.k.b.a(com.anythink.basead.a.f.a(2, u));
-        if (a2 != null) {
-            this.ac = a2[0];
-            this.ad = a2[1];
+        int[] a = com.anythink.core.common.k.b.a(com.anythink.basead.a.f.a(2, u));
+        if (a != null) {
+            this.ac = a[0];
+            this.ad = a[1];
         }
     }
 
@@ -400,7 +400,7 @@ public class ThirdPartyFullScreenAdView extends BaseScreenAdView {
     protected final void v() {
         if (this.y != null) {
             this.y.setVisibility(4);
-            this.y.init(this.d, this.f6049c, this.t, false, new PanelView.a() { // from class: com.anythink.basead.ui.ThirdPartyFullScreenAdView.3
+            this.y.init(this.d, this.c, this.t, false, new PanelView.a() { // from class: com.anythink.basead.ui.ThirdPartyFullScreenAdView.3
                 {
                     ThirdPartyFullScreenAdView.this = this;
                 }
@@ -427,7 +427,7 @@ public class ThirdPartyFullScreenAdView extends BaseScreenAdView {
                 this.Q = 8;
             }
             this.y.setLayoutType(this.Q);
-            if (this.Q == 8 && this.f6049c.m.x() == 0) {
+            if (this.Q == 8 && this.c.m.x() == 0) {
                 this.y.getCTAButton().setVisibility(8);
             }
             this.y.setVisibility(0);

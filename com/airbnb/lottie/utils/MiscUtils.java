@@ -10,9 +10,7 @@ import java.util.List;
 
 /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/utils/MiscUtils.class */
 public class MiscUtils {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static PointF f4415a = new PointF();
+    private static PointF a = new PointF();
 
     public static double a(double d, double d2, double d3) {
         return d + (d3 * (d2 - d));
@@ -53,7 +51,7 @@ public class MiscUtils {
         path.reset();
         PointF a2 = shapeData.a();
         path.moveTo(a2.x, a2.y);
-        f4415a.set(a2.x, a2.y);
+        a.set(a2.x, a2.y);
         int i = 0;
         while (true) {
             int i2 = i;
@@ -63,13 +61,13 @@ public class MiscUtils {
             CubicCurveData cubicCurveData = shapeData.c().get(i2);
             PointF a3 = cubicCurveData.a();
             PointF b = cubicCurveData.b();
-            PointF c2 = cubicCurveData.c();
-            if (a3.equals(f4415a) && b.equals(c2)) {
-                path.lineTo(c2.x, c2.y);
+            PointF c = cubicCurveData.c();
+            if (a3.equals(a) && b.equals(c)) {
+                path.lineTo(c.x, c.y);
             } else {
-                path.cubicTo(a3.x, a3.y, b.x, b.y, c2.x, c2.y);
+                path.cubicTo(a3.x, a3.y, b.x, b.y, c.x, c.y);
             }
-            f4415a.set(c2.x, c2.y);
+            a.set(c.x, c.y);
             i = i2 + 1;
         }
         if (shapeData.b()) {

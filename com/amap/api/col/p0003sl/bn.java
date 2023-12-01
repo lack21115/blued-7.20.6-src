@@ -7,9 +7,7 @@ import java.io.RandomAccessFile;
 /* renamed from: com.amap.api.col.3sl.bn  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/bn.class */
 final class bn {
-
-    /* renamed from: a  reason: collision with root package name */
-    RandomAccessFile f4786a;
+    RandomAccessFile a;
 
     public bn() throws IOException {
         this("", 0L);
@@ -31,28 +29,28 @@ final class bn {
             }
         }
         RandomAccessFile randomAccessFile = new RandomAccessFile(str, "rw");
-        this.f4786a = randomAccessFile;
+        this.a = randomAccessFile;
         randomAccessFile.seek(j);
     }
 
     public final int a(byte[] bArr) throws IOException {
         int length;
         synchronized (this) {
-            this.f4786a.write(bArr);
+            this.a.write(bArr);
             length = bArr.length;
         }
         return length;
     }
 
     public final void a() {
-        RandomAccessFile randomAccessFile = this.f4786a;
+        RandomAccessFile randomAccessFile = this.a;
         if (randomAccessFile != null) {
             try {
                 randomAccessFile.close();
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            this.f4786a = null;
+            this.a = null;
         }
     }
 }

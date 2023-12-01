@@ -13,8 +13,7 @@ public final class AccessibilityIterators {
         private final int[] mSegment = new int[2];
         protected String mText;
 
-        /* JADX INFO: Access modifiers changed from: protected */
-        public int[] getRange(int i, int i2) {
+        protected int[] getRange(int i, int i2) {
             if (i < 0 || i2 < 0 || i == i2) {
                 return null;
             }
@@ -28,9 +27,8 @@ public final class AccessibilityIterators {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-9557208-dex2jar.jar:android/view/AccessibilityIterators$CharacterTextSegmentIterator.class */
-    public static class CharacterTextSegmentIterator extends AbstractTextSegmentIterator implements ComponentCallbacks {
+    static class CharacterTextSegmentIterator extends AbstractTextSegmentIterator implements ComponentCallbacks {
         private static CharacterTextSegmentIterator sInstance;
         protected BreakIterator mImpl;
         private Locale mLocale;
@@ -121,9 +119,8 @@ public final class AccessibilityIterators {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-9557208-dex2jar.jar:android/view/AccessibilityIterators$ParagraphTextSegmentIterator.class */
-    public static class ParagraphTextSegmentIterator extends AbstractTextSegmentIterator {
+    static class ParagraphTextSegmentIterator extends AbstractTextSegmentIterator {
         private static ParagraphTextSegmentIterator sInstance;
 
         ParagraphTextSegmentIterator() {
@@ -214,9 +211,8 @@ public final class AccessibilityIterators {
         int[] preceding(int i);
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-9557208-dex2jar.jar:android/view/AccessibilityIterators$WordTextSegmentIterator.class */
-    public static class WordTextSegmentIterator extends CharacterTextSegmentIterator {
+    static class WordTextSegmentIterator extends CharacterTextSegmentIterator {
         private static WordTextSegmentIterator sInstance;
 
         private WordTextSegmentIterator(Locale locale) {

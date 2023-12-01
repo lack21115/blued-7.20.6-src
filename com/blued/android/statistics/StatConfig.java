@@ -1,40 +1,37 @@
 package com.blued.android.statistics;
 
 import android.content.Context;
+import com.android.internal.content.NativeLibraryHelper;
 import com.blued.android.statistics.util.Logger;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/statistics/StatConfig.class */
 public class StatConfig {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static Context f18679a;
+    private static Context a;
     private static int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private static int f18680c;
+    private static int c;
     private static Logger d = new Logger("blued-statistics");
 
     public static Context a() {
-        return f18679a;
+        return a;
     }
 
     public static String a(String str) {
         if (str == null || str.trim().length() <= 0) {
             return "blued-statistics";
         }
-        return "blued-statistics-" + str;
+        return "blued-statistics" + NativeLibraryHelper.CLEAR_ABI_OVERRIDE + str;
     }
 
     private static void a(int i, boolean z) {
         if (z) {
-            f18680c = i | f18680c;
+            c = i | c;
         } else {
-            f18680c = i & f18680c;
+            c = i & c;
         }
     }
 
     public static void a(Context context) {
-        f18679a = context;
+        a = context;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -55,11 +52,11 @@ public class StatConfig {
     }
 
     protected static void b(boolean z) {
-        f18680c = z ? 63 : 0;
+        c = z ? 63 : 0;
     }
 
     private static boolean b(int i) {
-        return (f18680c & i) == i;
+        return (c & i) == i;
     }
 
     public static void c(boolean z) {
@@ -67,7 +64,7 @@ public class StatConfig {
     }
 
     public static boolean c() {
-        return f18680c != 0;
+        return c != 0;
     }
 
     public static boolean d() {

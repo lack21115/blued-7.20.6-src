@@ -7,11 +7,11 @@ import com.tencent.ugc.UGCVideoProcessor;
 final /* synthetic */ class gg implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final UGCVideoProcessor.AnonymousClass2 f40416a;
+    private final UGCVideoProcessor.AnonymousClass2 f26725a;
     private final PixelFrame b;
 
     private gg(UGCVideoProcessor.AnonymousClass2 anonymousClass2, PixelFrame pixelFrame) {
-        this.f40416a = anonymousClass2;
+        this.f26725a = anonymousClass2;
         this.b = pixelFrame;
     }
 
@@ -21,7 +21,7 @@ final /* synthetic */ class gg implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        UGCVideoProcessor.AnonymousClass2 anonymousClass2 = this.f40416a;
+        UGCVideoProcessor.AnonymousClass2 anonymousClass2 = this.f26725a;
         PixelFrame pixelFrame = this.b;
         if (UGCVideoProcessor.this.mVideoProcessManager != null) {
             UGCVideoProcessor.this.mVideoProcessManager.processByVideoEffect(pixelFrame);

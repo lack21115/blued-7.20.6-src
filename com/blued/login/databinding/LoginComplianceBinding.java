@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class LoginComplianceBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f20526a;
+    private final LinearLayout f6920a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f20526a;
+        return this.f6920a;
     }
 }

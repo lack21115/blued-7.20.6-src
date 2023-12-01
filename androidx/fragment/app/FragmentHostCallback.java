@@ -18,18 +18,18 @@ import java.io.PrintWriter;
 public abstract class FragmentHostCallback<E> extends FragmentContainer {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Activity f2960a;
+    private final Activity f2912a;
     final FragmentManager b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final Context f2961c;
+    private final Context f2913c;
     private final Handler d;
     private final int e;
 
     FragmentHostCallback(Activity activity, Context context, Handler handler, int i) {
         this.b = new FragmentManagerImpl();
-        this.f2960a = activity;
-        this.f2961c = (Context) Preconditions.checkNotNull(context, "context == null");
+        this.f2912a = activity;
+        this.f2913c = (Context) Preconditions.checkNotNull(context, "context == null");
         this.d = (Handler) Preconditions.checkNotNull(handler, "handler == null");
         this.e = i;
     }
@@ -50,12 +50,12 @@ public abstract class FragmentHostCallback<E> extends FragmentContainer {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public Activity getActivity() {
-        return this.f2960a;
+        return this.f2912a;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public Context getContext() {
-        return this.f2961c;
+        return this.f2913c;
     }
 
     public void onDump(String str, FileDescriptor fileDescriptor, PrintWriter printWriter, String[] strArr) {
@@ -69,7 +69,7 @@ public abstract class FragmentHostCallback<E> extends FragmentContainer {
     public abstract E onGetHost();
 
     public LayoutInflater onGetLayoutInflater() {
-        return LayoutInflater.from(this.f2961c);
+        return LayoutInflater.from(this.f2913c);
     }
 
     public int onGetWindowAnimations() {
@@ -105,7 +105,7 @@ public abstract class FragmentHostCallback<E> extends FragmentContainer {
         if (i != -1) {
             throw new IllegalStateException("Starting activity with a requestCode requires a FragmentActivity host");
         }
-        ContextCompat.startActivity(this.f2961c, intent, bundle);
+        ContextCompat.startActivity(this.f2913c, intent, bundle);
     }
 
     @Deprecated
@@ -113,7 +113,7 @@ public abstract class FragmentHostCallback<E> extends FragmentContainer {
         if (i != -1) {
             throw new IllegalStateException("Starting intent sender with a requestCode requires a FragmentActivity host");
         }
-        ActivityCompat.startIntentSenderForResult(this.f2960a, intentSender, i, intent, i2, i3, i4, bundle);
+        ActivityCompat.startIntentSenderForResult(this.f2912a, intentSender, i, intent, i2, i3, i4, bundle);
     }
 
     public void onSupportInvalidateOptionsMenu() {

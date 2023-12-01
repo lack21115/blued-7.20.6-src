@@ -19,7 +19,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class VirtualImagePayUtils {
 
     /* renamed from: a  reason: collision with root package name */
-    private DialogWith6PW f34336a;
+    private DialogWith6PW f20645a;
 
     @Metadata
     /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/user/utils/VirtualImagePayUtils$PayResult.class */
@@ -34,25 +34,25 @@ public final class VirtualImagePayUtils {
     }
 
     public final DialogWith6PW a() {
-        return this.f34336a;
+        return this.f20645a;
     }
 
-    public final void a(Context context, IRequestHost requestHost, String str, String str2, int i, List<VirtualImageModel.PayGoodsInfo> goodsList, PayResult payResult) {
+    public final void a(Context context, IRequestHost iRequestHost, String str, String str2, int i, List<VirtualImageModel.PayGoodsInfo> list, PayResult payResult) {
         Intrinsics.e(context, "context");
-        Intrinsics.e(requestHost, "requestHost");
-        Intrinsics.e(goodsList, "goodsList");
+        Intrinsics.e(iRequestHost, "requestHost");
+        Intrinsics.e(list, "goodsList");
         Intrinsics.e(payResult, "payResult");
-        String a2 = Intrinsics.a(BluedHttpUrl.q(), (Object) "/users/face/pay/goods");
-        Map<String, Object> params = BluedHttpTools.b();
-        Intrinsics.c(params, "params");
-        params.put("pay_code", str2);
-        params.put("rememberMe", Integer.valueOf(i));
-        params.put("pay_token", str);
-        params.put("goodsInfo", goodsList);
-        HttpManager.b(a2, a(context, requestHost, goodsList, payResult), requestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(params)).h();
+        String a2 = Intrinsics.a(BluedHttpUrl.q(), "/users/face/pay/goods");
+        Map b = BluedHttpTools.b();
+        Intrinsics.c(b, "params");
+        b.put("pay_code", str2);
+        b.put("rememberMe", Integer.valueOf(i));
+        b.put("pay_token", str);
+        b.put("goodsInfo", list);
+        HttpManager.b(a2, a(context, iRequestHost, list, payResult), iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(b)).h();
     }
 
     public final void a(DialogWith6PW dialogWith6PW) {
-        this.f34336a = dialogWith6PW;
+        this.f20645a = dialogWith6PW;
     }
 }

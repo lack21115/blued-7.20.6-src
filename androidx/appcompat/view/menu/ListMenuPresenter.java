@@ -22,11 +22,11 @@ public class ListMenuPresenter implements AdapterView.OnItemClickListener, MenuP
     public static final String VIEWS_TAG = "android:menu:list";
 
     /* renamed from: a  reason: collision with root package name */
-    Context f1672a;
+    Context f1624a;
     LayoutInflater b;
 
     /* renamed from: c  reason: collision with root package name */
-    MenuBuilder f1673c;
+    MenuBuilder f1625c;
     ExpandedMenuView d;
     int e;
     int f;
@@ -45,9 +45,9 @@ public class ListMenuPresenter implements AdapterView.OnItemClickListener, MenuP
         }
 
         void a() {
-            MenuItemImpl expandedItem = ListMenuPresenter.this.f1673c.getExpandedItem();
+            MenuItemImpl expandedItem = ListMenuPresenter.this.f1625c.getExpandedItem();
             if (expandedItem != null) {
-                ArrayList<MenuItemImpl> nonActionItems = ListMenuPresenter.this.f1673c.getNonActionItems();
+                ArrayList<MenuItemImpl> nonActionItems = ListMenuPresenter.this.f1625c.getNonActionItems();
                 int size = nonActionItems.size();
                 int i = 0;
                 while (true) {
@@ -67,13 +67,13 @@ public class ListMenuPresenter implements AdapterView.OnItemClickListener, MenuP
 
         @Override // android.widget.Adapter
         public int getCount() {
-            int size = ListMenuPresenter.this.f1673c.getNonActionItems().size() - ListMenuPresenter.this.e;
+            int size = ListMenuPresenter.this.f1625c.getNonActionItems().size() - ListMenuPresenter.this.e;
             return this.b < 0 ? size : size - 1;
         }
 
         @Override // android.widget.Adapter
         public MenuItemImpl getItem(int i) {
-            ArrayList<MenuItemImpl> nonActionItems = ListMenuPresenter.this.f1673c.getNonActionItems();
+            ArrayList<MenuItemImpl> nonActionItems = ListMenuPresenter.this.f1625c.getNonActionItems();
             int i2 = i + ListMenuPresenter.this.e;
             int i3 = this.b;
             int i4 = i2;
@@ -115,7 +115,7 @@ public class ListMenuPresenter implements AdapterView.OnItemClickListener, MenuP
 
     public ListMenuPresenter(Context context, int i) {
         this(i, 0);
-        this.f1672a = context;
+        this.f1624a = context;
         this.b = LayoutInflater.from(context);
     }
 
@@ -163,15 +163,15 @@ public class ListMenuPresenter implements AdapterView.OnItemClickListener, MenuP
     public void initForMenu(Context context, MenuBuilder menuBuilder) {
         if (this.f != 0) {
             ContextThemeWrapper contextThemeWrapper = new ContextThemeWrapper(context, this.f);
-            this.f1672a = contextThemeWrapper;
+            this.f1624a = contextThemeWrapper;
             this.b = LayoutInflater.from(contextThemeWrapper);
-        } else if (this.f1672a != null) {
-            this.f1672a = context;
+        } else if (this.f1624a != null) {
+            this.f1624a = context;
             if (this.b == null) {
                 this.b = LayoutInflater.from(context);
             }
         }
-        this.f1673c = menuBuilder;
+        this.f1625c = menuBuilder;
         MenuAdapter menuAdapter = this.h;
         if (menuAdapter != null) {
             menuAdapter.notifyDataSetChanged();
@@ -189,7 +189,7 @@ public class ListMenuPresenter implements AdapterView.OnItemClickListener, MenuP
     @Override // android.widget.AdapterView.OnItemClickListener
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long j) {
         Tracker.onItemClick(adapterView, view, i, j);
-        this.f1673c.performItemAction(this.h.getItem(i), this, 0);
+        this.f1625c.performItemAction(this.h.getItem(i), this, 0);
     }
 
     @Override // androidx.appcompat.view.menu.MenuPresenter
@@ -222,7 +222,7 @@ public class ListMenuPresenter implements AdapterView.OnItemClickListener, MenuP
     }
 
     public void restoreHierarchyState(Bundle bundle) {
-        SparseArray<Parcelable> sparseParcelableArray = bundle.getSparseParcelableArray("android:menu:list");
+        SparseArray<Parcelable> sparseParcelableArray = bundle.getSparseParcelableArray(VIEWS_TAG);
         if (sparseParcelableArray != null) {
             this.d.restoreHierarchyState(sparseParcelableArray);
         }
@@ -234,7 +234,7 @@ public class ListMenuPresenter implements AdapterView.OnItemClickListener, MenuP
         if (expandedMenuView != null) {
             expandedMenuView.saveHierarchyState(sparseArray);
         }
-        bundle.putSparseParcelableArray("android:menu:list", sparseArray);
+        bundle.putSparseParcelableArray(VIEWS_TAG, sparseArray);
     }
 
     @Override // androidx.appcompat.view.menu.MenuPresenter

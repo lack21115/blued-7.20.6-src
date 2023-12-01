@@ -16,8 +16,7 @@ import android.text.TextUtils;
 import android.text.format.DateFormat;
 import android.text.format.Time;
 import android.view.View;
-import com.blued.android.module.common.web.LoaderConstants;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
+import com.huawei.hms.ads.fw;
 import com.ss.android.socialbase.downloader.constants.MonitorConstants;
 import java.io.File;
 import java.io.FileFilter;
@@ -39,11 +38,11 @@ public class c {
     private static final byte[] F = "6^)(9-p35@%3#4S!4S0)$Y%%^&5(j.&^&o(*0)$Y%!#O@*GpG@=+@j.&6^)(0-=+".getBytes(Charset.defaultCharset());
 
     /* renamed from: a  reason: collision with root package name */
-    public static int f41930a;
+    public static int f28239a;
     public static int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public static float f41931c;
+    public static float f28240c;
     public static float d;
     public boolean A;
     public boolean B;
@@ -123,8 +122,8 @@ public class c {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.zk_oaction.adengine.lk_sdk.c$c  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/zk_oaction/adengine/lk_sdk/c$c.class */
-    public class C1105c implements com.zk_oaction.adengine.lk_sdk.interfaces.c<XmlPullParser, Void> {
-        C1105c() {
+    public class C0935c implements com.zk_oaction.adengine.lk_sdk.interfaces.c<XmlPullParser, Void> {
+        C0935c() {
         }
 
         @Override // com.zk_oaction.adengine.lk_sdk.interfaces.c
@@ -327,17 +326,17 @@ public class c {
     class r implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ String f41948a;
+        final /* synthetic */ String f28257a;
         final /* synthetic */ String b;
 
         r(String str, String str2) {
-            this.f41948a = str;
+            this.f28257a = str;
             this.b = str2;
         }
 
         @Override // java.lang.Runnable
         public void run() {
-            c.this.n.a(this.f41948a, this.b);
+            c.this.n.a(this.f28257a, this.b);
         }
     }
 
@@ -357,17 +356,17 @@ public class c {
     class t extends Thread {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ Runnable f41951a;
+        final /* synthetic */ Runnable f28260a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         t(c cVar, String str, Runnable runnable) {
             super(str);
-            this.f41951a = runnable;
+            this.f28260a = runnable;
         }
 
         @Override // java.lang.Thread, java.lang.Runnable
         public void run() {
-            this.f41951a.run();
+            this.f28260a.run();
         }
     }
 
@@ -427,7 +426,7 @@ public class c {
         this.j = context;
         this.k = aVar;
         i();
-        if (f41930a / b >= 0.562f) {
+        if (f28239a / b >= 0.562f) {
             this.C = true;
         }
         this.n = new com.zk_oaction.adengine.lk_variable.g(this);
@@ -508,7 +507,7 @@ public class c {
     public void a(XmlPullParser xmlPullParser) {
         String attributeValue = xmlPullParser.getAttributeValue(null, "screenWidth");
         int parseInt = attributeValue != null ? Integer.parseInt(attributeValue) : 720;
-        int i2 = f41930a;
+        int i2 = f28239a;
         int i3 = b;
         int i4 = i2;
         int i5 = i3;
@@ -522,10 +521,10 @@ public class c {
         float f2 = i4;
         float f3 = f2 / parseInt;
         this.t = f3;
-        f41931c = f2 / f3;
+        f28240c = f2 / f3;
         float f4 = i5;
         d = f4 / f3;
-        this.n.a("screen_width", "" + f41931c);
+        this.n.a("screen_width", "" + f28240c);
         this.n.a("screen_height", "" + d);
         float f5 = this.t;
         this.D = (int) (f2 / f5);
@@ -543,7 +542,7 @@ public class c {
             this.u = 1000 / Integer.parseInt(attributeValue4);
         }
         xmlPullParser.getAttributeValue(null, "id");
-        String attributeValue5 = xmlPullParser.getAttributeValue(null, LoaderConstants.VIBRATE);
+        String attributeValue5 = xmlPullParser.getAttributeValue(null, "vibrate");
         this.O = attributeValue5 != null ? Boolean.parseBoolean(attributeValue5) : true;
         String attributeValue6 = xmlPullParser.getAttributeValue(null, "pressure");
         if (attributeValue6 != null) {
@@ -672,7 +671,7 @@ public class c {
         if (listFiles == null || listFiles.length <= 0) {
             return null;
         }
-        float f3 = b / f41930a;
+        float f3 = b / f28239a;
         float abs = Math.abs(f3 - 1.7777778f);
         int length = listFiles.length;
         String str4 = str2;
@@ -681,7 +680,7 @@ public class c {
             File file = listFiles[i2];
             try {
                 String name = file.getName();
-                String[] split = name.substring(0, name.indexOf("manifest") - 1).split(BridgeUtil.UNDERLINE_STR);
+                String[] split = name.substring(0, name.indexOf("manifest") - 1).split("_");
                 float abs2 = Math.abs(f3 - (Float.parseFloat(split[0]) / Float.parseFloat(split[1])));
                 if (abs2 < abs) {
                     try {
@@ -975,7 +974,7 @@ public class c {
         this.X.put("ExternalCommands", new x());
         this.X.put("VarArray", new a());
         this.X.put("Group", new b());
-        this.X.put("Image", new C1105c());
+        this.X.put("Image", new C0935c());
         this.X.put("Frame", new d());
         this.X.put("ImageNumber", new e());
         this.X.put("Text", new f());
@@ -1008,7 +1007,7 @@ public class c {
         InputStream inputStream = null;
         try {
             XmlPullParserFactory newInstance = XmlPullParserFactory.newInstance();
-            newInstance.setFeature(XmlPullParser.FEATURE_PROCESS_DOCDECL, false);
+            newInstance.setFeature("http://xmlpull.org/v1/doc/features.html#process-docdecl", false);
             XmlPullParser newPullParser = newInstance.newPullParser();
             StringBuilder sb = new StringBuilder();
             sb.append(this.l);
@@ -1087,10 +1086,10 @@ public class c {
             this.e = true;
             this.k.b();
         }
-        if (this.l.endsWith(BridgeUtil.SPLIT_MARK)) {
+        if (this.l.endsWith("/")) {
             return;
         }
-        this.l += BridgeUtil.SPLIT_MARK;
+        this.l += "/";
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1259,7 +1258,7 @@ public class c {
         FileInputStream fileInputStream;
         File file = new File(str + "strings");
         if (file.exists() && file.isDirectory()) {
-            File file2 = new File(str + "strings" + BridgeUtil.SPLIT_MARK + a(file, a(context)));
+            File file2 = new File(str + "strings/" + a(file, a(context)));
             if (file2.exists()) {
                 try {
                     XmlPullParser newPullParser = XmlPullParserFactory.newInstance().newPullParser();
@@ -1297,11 +1296,11 @@ public class c {
     public void a(com.zk_oaction.adengine.lk_unlock.b bVar) {
         if (!bVar.b()) {
             for (int i2 = 0; i2 < this.s.size(); i2++) {
-                this.s.get(i2).a("true");
+                this.s.get(i2).a(fw.Code);
             }
             return;
         }
-        bVar.a("true");
+        bVar.a(fw.Code);
         int i3 = 0;
         while (true) {
             int i4 = i3;
@@ -1547,6 +1546,6 @@ public class c {
     }
 
     public float h() {
-        return f41931c;
+        return f28240c;
     }
 }

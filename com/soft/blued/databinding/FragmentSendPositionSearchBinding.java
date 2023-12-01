@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentSendPositionSearchBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f28967a;
+    private final LinearLayout f15277a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f28967a;
+        return this.f15277a;
     }
 }

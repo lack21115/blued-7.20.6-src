@@ -20,13 +20,9 @@ import org.json.JSONObject;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/framework/init/InitTaskManager.class */
 public class InitTaskManager {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static InitTaskManager f9808a;
+    private static InitTaskManager a;
     private static Status b = Status.NULL;
-
-    /* renamed from: c  reason: collision with root package name */
-    private ArrayList<OnResultListener> f9809c = new ArrayList<>();
+    private ArrayList<OnResultListener> c = new ArrayList<>();
     private HandlerThread d = null;
     private Handler e = null;
     private OnTaskListBuilder f = null;
@@ -150,21 +146,21 @@ public class InitTaskManager {
     }
 
     public static InitTaskManager a() {
-        if (f9808a == null) {
+        if (a == null) {
             synchronized (InitTaskManager.class) {
                 try {
-                    if (f9808a == null) {
+                    if (a == null) {
                         if (AppInfo.m()) {
                             Log.i("InitTaskManager", " >>> new InitTaskManager <<< ");
                         }
-                        f9808a = new InitTaskManager();
+                        a = new InitTaskManager();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f9808a;
+        return a;
     }
 
     private void a(Application application) {
@@ -299,9 +295,9 @@ public class InitTaskManager {
 
     private void e() {
         a("notifyFinished");
-        ArrayList<OnResultListener> arrayList = this.f9809c;
+        ArrayList<OnResultListener> arrayList = this.c;
         if (arrayList != null && !arrayList.isEmpty()) {
-            Iterator<OnResultListener> it = this.f9809c.iterator();
+            Iterator<OnResultListener> it = this.c.iterator();
             while (it.hasNext()) {
                 it.next().a();
             }
@@ -329,10 +325,10 @@ public class InitTaskManager {
     }
 
     private void g() {
-        ArrayList<OnResultListener> arrayList = this.f9809c;
+        ArrayList<OnResultListener> arrayList = this.c;
         if (arrayList != null) {
             arrayList.clear();
-            this.f9809c = null;
+            this.c = null;
         }
         HandlerThread handlerThread = this.d;
         if (handlerThread != null) {
@@ -350,7 +346,7 @@ public class InitTaskManager {
             concurrentHashMap.clear();
             this.o = null;
         }
-        f9808a = null;
+        a = null;
     }
 
     public void a(Application application, OnResultListener onResultListener) {
@@ -358,8 +354,8 @@ public class InitTaskManager {
             throw new IllegalStateException("InitTaskManager.getInstance().mayInt need invoke in main thread!");
         }
         a("mayInit Entry state: " + b.name());
-        if (onResultListener != null && !this.f9809c.contains(onResultListener)) {
-            this.f9809c.add(onResultListener);
+        if (onResultListener != null && !this.c.contains(onResultListener)) {
+            this.c.add(onResultListener);
         }
         if (this.f == null || b()) {
             e();

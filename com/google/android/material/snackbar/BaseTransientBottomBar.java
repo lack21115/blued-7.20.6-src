@@ -335,9 +335,8 @@ public abstract class BaseTransientBottomBar<B extends BaseTransientBottomBar<B>
             return this.maxWidth;
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // android.view.ViewGroup, android.view.View
-        public void onAttachedToWindow() {
+        protected void onAttachedToWindow() {
             super.onAttachedToWindow();
             OnAttachStateChangeListener onAttachStateChangeListener = this.onAttachStateChangeListener;
             if (onAttachStateChangeListener != null) {
@@ -346,9 +345,8 @@ public abstract class BaseTransientBottomBar<B extends BaseTransientBottomBar<B>
             ViewCompat.requestApplyInsets(this);
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // android.view.ViewGroup, android.view.View
-        public void onDetachedFromWindow() {
+        protected void onDetachedFromWindow() {
             super.onDetachedFromWindow();
             OnAttachStateChangeListener onAttachStateChangeListener = this.onAttachStateChangeListener;
             if (onAttachStateChangeListener != null) {
@@ -356,9 +354,8 @@ public abstract class BaseTransientBottomBar<B extends BaseTransientBottomBar<B>
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-        public void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
             super.onLayout(z, i, i2, i3, i4);
             OnLayoutChangeListener onLayoutChangeListener = this.onLayoutChangeListener;
             if (onLayoutChangeListener != null) {

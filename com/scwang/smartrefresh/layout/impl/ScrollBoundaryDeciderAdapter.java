@@ -9,21 +9,21 @@ import com.scwang.smartrefresh.layout.util.ScrollBoundaryUtil;
 public class ScrollBoundaryDeciderAdapter implements ScrollBoundaryDecider {
 
     /* renamed from: a  reason: collision with root package name */
-    public PointF f27992a;
+    public PointF f14304a;
     public ScrollBoundaryDecider b;
 
     /* renamed from: c  reason: collision with root package name */
-    public boolean f27993c = true;
+    public boolean f14305c = true;
 
     @Override // com.scwang.smartrefresh.layout.api.ScrollBoundaryDecider
     public boolean a(View view) {
         ScrollBoundaryDecider scrollBoundaryDecider = this.b;
-        return scrollBoundaryDecider != null ? scrollBoundaryDecider.a(view) : ScrollBoundaryUtil.a(view, this.f27992a);
+        return scrollBoundaryDecider != null ? scrollBoundaryDecider.a(view) : ScrollBoundaryUtil.a(view, this.f14304a);
     }
 
     @Override // com.scwang.smartrefresh.layout.api.ScrollBoundaryDecider
     public boolean b(View view) {
         ScrollBoundaryDecider scrollBoundaryDecider = this.b;
-        return scrollBoundaryDecider != null ? scrollBoundaryDecider.b(view) : ScrollBoundaryUtil.a(view, this.f27992a, this.f27993c);
+        return scrollBoundaryDecider != null ? scrollBoundaryDecider.b(view) : ScrollBoundaryUtil.a(view, this.f14304a, this.f14305c);
     }
 }

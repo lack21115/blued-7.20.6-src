@@ -24,13 +24,13 @@ import java.util.Set;
 public class YouZanSDKX5Adapter extends YouzanSDKAdapter {
 
     /* renamed from: ˊ  reason: contains not printable characters */
-    private static final String f1150 = ";";
+    private static final String f1103 = ";";
 
     /* renamed from: ˋ  reason: contains not printable characters */
-    private static final String f1151 = "Sat, 31 Dec 2016 23:59:59 GMT";
+    private static final String f1104 = "Sat, 31 Dec 2016 23:59:59 GMT";
 
     /* renamed from: ˊ  reason: contains not printable characters */
-    private static Set<String> m12253(String str) {
+    private static Set<String> m9203(String str) {
         HashSet hashSet;
         if (!TextUtils.isEmpty(str)) {
             String[] split = str.split(";");
@@ -61,10 +61,10 @@ public class YouZanSDKX5Adapter extends YouzanSDKAdapter {
             CookieSyncManager.createInstance(context);
             CookieManager cookieManager = CookieManager.getInstance();
             String str2 = "https://." + str;
-            Set<String> m12253 = m12253(cookieManager.getCookie(str2));
-            if (m12253 != null) {
-                for (String str3 : m12253) {
-                    cookieManager.setCookie(str2, str3 + "=; Expires=" + f1151);
+            Set<String> m9203 = m9203(cookieManager.getCookie(str2));
+            if (m9203 != null) {
+                for (String str3 : m9203) {
+                    cookieManager.setCookie(str2, str3 + "=; Expires=" + f1104);
                 }
             }
             if (Build.VERSION.SDK_INT >= 21) {

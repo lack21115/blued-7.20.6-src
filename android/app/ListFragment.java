@@ -1,5 +1,6 @@
 package android.app;
 
+import android.R;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
@@ -10,7 +11,6 @@ import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-import com.android.internal.R;
 
 /* loaded from: source-9557208-dex2jar.jar:android/app/ListFragment.class */
 public class ListFragment extends Fragment {
@@ -47,15 +47,15 @@ public class ListFragment extends Fragment {
         if (view instanceof ListView) {
             this.mList = (ListView) view;
         } else {
-            this.mStandardEmptyView = (TextView) view.findViewById(R.id.internalEmpty);
+            this.mStandardEmptyView = (TextView) view.findViewById(16909087);
             if (this.mStandardEmptyView == null) {
-                this.mEmptyView = view.findViewById(16908292);
+                this.mEmptyView = view.findViewById(R.id.empty);
             } else {
                 this.mStandardEmptyView.setVisibility(8);
             }
-            this.mProgressContainer = view.findViewById(R.id.progressContainer);
-            this.mListContainer = view.findViewById(R.id.listContainer);
-            View findViewById = view.findViewById(16908298);
+            this.mProgressContainer = view.findViewById(16909085);
+            this.mListContainer = view.findViewById(16909086);
+            View findViewById = view.findViewById(R.id.list);
             if (!(findViewById instanceof ListView)) {
                 throw new RuntimeException("Content has view with id attribute 'android.R.id.list' that is not a ListView class");
             }
@@ -93,8 +93,8 @@ public class ListFragment extends Fragment {
         this.mListShown = z;
         if (z) {
             if (z2) {
-                this.mProgressContainer.startAnimation(AnimationUtils.loadAnimation(getActivity(), 17432577));
-                this.mListContainer.startAnimation(AnimationUtils.loadAnimation(getActivity(), 17432576));
+                this.mProgressContainer.startAnimation(AnimationUtils.loadAnimation(getActivity(), R.anim.fade_out));
+                this.mListContainer.startAnimation(AnimationUtils.loadAnimation(getActivity(), R.anim.fade_in));
             } else {
                 this.mProgressContainer.clearAnimation();
                 this.mListContainer.clearAnimation();
@@ -104,8 +104,8 @@ public class ListFragment extends Fragment {
             return;
         }
         if (z2) {
-            this.mProgressContainer.startAnimation(AnimationUtils.loadAnimation(getActivity(), 17432576));
-            this.mListContainer.startAnimation(AnimationUtils.loadAnimation(getActivity(), 17432577));
+            this.mProgressContainer.startAnimation(AnimationUtils.loadAnimation(getActivity(), R.anim.fade_in));
+            this.mListContainer.startAnimation(AnimationUtils.loadAnimation(getActivity(), R.anim.fade_out));
         } else {
             this.mProgressContainer.clearAnimation();
             this.mListContainer.clearAnimation();
@@ -135,7 +135,7 @@ public class ListFragment extends Fragment {
 
     @Override // android.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        return layoutInflater.inflate(17367060, viewGroup, false);
+        return layoutInflater.inflate(R.layout.list_content, viewGroup, false);
     }
 
     @Override // android.app.Fragment

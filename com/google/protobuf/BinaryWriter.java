@@ -206,19 +206,19 @@ public abstract class BinaryWriter extends ByteOutput implements Writer {
         private void writeVarint64EightBytes(long j) {
             int i = this.pos - 8;
             this.pos = i;
-            this.buffer.putLong(i + 1, (j & 127) | 128 | ((71494644084506624L & j) << 7) | (((558551906910208L & j) | STMobileHumanActionNative.ST_MOBILE_BODY_KEYPOINTS_3D) << 6) | (((4363686772736L & j) | STMobileHumanActionNative.ST_MOBILE_DETECT_HAND_SKELETON_KEYPOINTS_3D) << 5) | (((34091302912L & j) | 34359738368L) << 4) | (((266338304 & j) | 268435456) << 3) | (((2080768 & j) | 2097152) << 2) | (((16256 & j) | 16384) << 1));
+            this.buffer.putLong(i + 1, (j & 127) | 128 | ((71494644084506624L & j) << 7) | (((558551906910208L & j) | STMobileHumanActionNative.ST_MOBILE_BODY_KEYPOINTS_3D) << 6) | (((4363686772736L & j) | STMobileHumanActionNative.ST_MOBILE_DETECT_HAND_SKELETON_KEYPOINTS_3D) << 5) | (((34091302912L & j) | 34359738368L) << 4) | (((266338304 & j) | STMobileHumanActionNative.ST_MOBILE_BODY_CONTOUR) << 3) | (((2080768 & j) | 2097152) << 2) | (((16256 & j) | 16384) << 1));
         }
 
         private void writeVarint64EightBytesWithSign(long j) {
             int i = this.pos - 8;
             this.pos = i;
-            this.buffer.putLong(i + 1, (j & 127) | 128 | (((71494644084506624L & j) | STMobileHumanActionNative.ST_MOBILE_DETECT_HAIR_COLOR) << 7) | (((558551906910208L & j) | STMobileHumanActionNative.ST_MOBILE_BODY_KEYPOINTS_3D) << 6) | (((4363686772736L & j) | STMobileHumanActionNative.ST_MOBILE_DETECT_HAND_SKELETON_KEYPOINTS_3D) << 5) | (((34091302912L & j) | 34359738368L) << 4) | (((266338304 & j) | 268435456) << 3) | (((2080768 & j) | 2097152) << 2) | (((16256 & j) | 16384) << 1));
+            this.buffer.putLong(i + 1, (j & 127) | 128 | (((71494644084506624L & j) | STMobileHumanActionNative.ST_MOBILE_DETECT_HAIR_COLOR) << 7) | (((558551906910208L & j) | STMobileHumanActionNative.ST_MOBILE_BODY_KEYPOINTS_3D) << 6) | (((4363686772736L & j) | STMobileHumanActionNative.ST_MOBILE_DETECT_HAND_SKELETON_KEYPOINTS_3D) << 5) | (((34091302912L & j) | 34359738368L) << 4) | (((266338304 & j) | STMobileHumanActionNative.ST_MOBILE_BODY_CONTOUR) << 3) | (((2080768 & j) | 2097152) << 2) | (((16256 & j) | 16384) << 1));
         }
 
         private void writeVarint64FiveBytes(long j) {
             int i = this.pos - 5;
             this.pos = i;
-            this.buffer.putLong(i - 2, (((j & 127) | 128) << 24) | ((34091302912L & j) << 28) | (((266338304 & j) | 268435456) << 27) | (((2080768 & j) | 2097152) << 26) | (((16256 & j) | 16384) << 25));
+            this.buffer.putLong(i - 2, (((j & 127) | 128) << 24) | ((34091302912L & j) << 28) | (((266338304 & j) | STMobileHumanActionNative.ST_MOBILE_BODY_CONTOUR) << 27) | (((2080768 & j) | 2097152) << 26) | (((16256 & j) | 16384) << 25));
         }
 
         private void writeVarint64FourBytes(long j) {
@@ -240,13 +240,13 @@ public abstract class BinaryWriter extends ByteOutput implements Writer {
         private void writeVarint64SevenBytes(long j) {
             int i = this.pos - 7;
             this.pos = i;
-            this.buffer.putLong(i, (((j & 127) | 128) << 8) | ((558551906910208L & j) << 14) | (((4363686772736L & j) | STMobileHumanActionNative.ST_MOBILE_DETECT_HAND_SKELETON_KEYPOINTS_3D) << 13) | (((34091302912L & j) | 34359738368L) << 12) | (((266338304 & j) | 268435456) << 11) | (((2080768 & j) | 2097152) << 10) | (((16256 & j) | 16384) << 9));
+            this.buffer.putLong(i, (((j & 127) | 128) << 8) | ((558551906910208L & j) << 14) | (((4363686772736L & j) | STMobileHumanActionNative.ST_MOBILE_DETECT_HAND_SKELETON_KEYPOINTS_3D) << 13) | (((34091302912L & j) | 34359738368L) << 12) | (((266338304 & j) | STMobileHumanActionNative.ST_MOBILE_BODY_CONTOUR) << 11) | (((2080768 & j) | 2097152) << 10) | (((16256 & j) | 16384) << 9));
         }
 
         private void writeVarint64SixBytes(long j) {
             int i = this.pos - 6;
             this.pos = i;
-            this.buffer.putLong(i - 1, (((j & 127) | 128) << 16) | ((4363686772736L & j) << 21) | (((34091302912L & j) | 34359738368L) << 20) | (((266338304 & j) | 268435456) << 19) | (((2080768 & j) | 2097152) << 18) | (((16256 & j) | 16384) << 17));
+            this.buffer.putLong(i - 1, (((j & 127) | 128) << 16) | ((4363686772736L & j) << 21) | (((34091302912L & j) | 34359738368L) << 20) | (((266338304 & j) | STMobileHumanActionNative.ST_MOBILE_BODY_CONTOUR) << 19) | (((2080768 & j) | 2097152) << 18) | (((16256 & j) | 16384) << 17));
         }
 
         private void writeVarint64TenBytes(long j) {
@@ -1018,7 +1018,7 @@ public abstract class BinaryWriter extends ByteOutput implements Writer {
             }
             int i3 = this.pos - i2;
             this.pos = i3;
-            System.arraycopy((Object) bArr, i, (Object) this.buffer, i3 + 1, i2);
+            System.arraycopy(bArr, i, this.buffer, i3 + 1, i2);
         }
 
         @Override // com.google.protobuf.Writer
@@ -1163,7 +1163,7 @@ public abstract class BinaryWriter extends ByteOutput implements Writer {
             }
             int i3 = this.pos - i2;
             this.pos = i3;
-            System.arraycopy((Object) bArr, i, (Object) this.buffer, i3 + 1, i2);
+            System.arraycopy(bArr, i, this.buffer, i3 + 1, i2);
         }
 
         @Override // com.google.protobuf.Writer
@@ -2524,7 +2524,7 @@ public abstract class BinaryWriter extends ByteOutput implements Writer {
             }
             requireSpace(i2);
             this.pos -= i2;
-            System.arraycopy((Object) bArr, i, (Object) this.buffer, arrayPos() + 1, i2);
+            System.arraycopy(bArr, i, this.buffer, arrayPos() + 1, i2);
         }
 
         @Override // com.google.protobuf.Writer
@@ -2675,7 +2675,7 @@ public abstract class BinaryWriter extends ByteOutput implements Writer {
             }
             if (spaceLeft() >= i2) {
                 this.pos -= i2;
-                System.arraycopy((Object) bArr, i, (Object) this.buffer, arrayPos() + 1, i2);
+                System.arraycopy(bArr, i, this.buffer, arrayPos() + 1, i2);
                 return;
             }
             this.totalDoneBytes += i2;

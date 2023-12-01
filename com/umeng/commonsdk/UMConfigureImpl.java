@@ -18,18 +18,18 @@ public class UMConfigureImpl {
     private static Context g;
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f40834a = at.b().b(at.o);
+    private static String f27143a = at.b().b(at.o);
     private static CopyOnWriteArrayList<onMessageSendListener> b = new CopyOnWriteArrayList<>();
 
     /* renamed from: c  reason: collision with root package name */
-    private static int f40835c = 0;
+    private static int f27144c = 0;
     private static boolean d = false;
     private static int h = 0;
     private static Runnable i = new Runnable() { // from class: com.umeng.commonsdk.UMConfigureImpl.1
         @Override // java.lang.Runnable
         public void run() {
             try {
-                if (UMConfigureImpl.f40835c == 0 || UMConfigureImpl.h >= 10) {
+                if (UMConfigureImpl.f27144c == 0 || UMConfigureImpl.h >= 10) {
                     if (!UMConfigureImpl.d) {
                         boolean unused = UMConfigureImpl.d = true;
                         UMConfigureImpl.b(UMConfigureImpl.g);
@@ -65,12 +65,12 @@ public class UMConfigureImpl {
 
     private static void c(Context context) {
         try {
-            SharedPreferences sharedPreferences = context.getSharedPreferences(f40834a, 0);
+            SharedPreferences sharedPreferences = context.getSharedPreferences(f27143a, 0);
             if (sharedPreferences == null || sharedPreferences == null) {
                 return;
             }
             SharedPreferences.Editor edit = sharedPreferences.edit();
-            edit.putBoolean(f40834a, true);
+            edit.putBoolean(f27143a, true);
             edit.commit();
         } catch (Throwable th) {
         }
@@ -78,12 +78,12 @@ public class UMConfigureImpl {
 
     private static boolean d(Context context) {
         try {
-            SharedPreferences sharedPreferences = context.getSharedPreferences(f40834a, 0);
+            SharedPreferences sharedPreferences = context.getSharedPreferences(f27143a, 0);
             boolean z = false;
             if (sharedPreferences != null) {
                 z = false;
                 if (sharedPreferences != null) {
-                    z = sharedPreferences.getBoolean(f40834a, false);
+                    z = sharedPreferences.getBoolean(f27143a, false);
                 }
             }
             return z;
@@ -104,7 +104,7 @@ public class UMConfigureImpl {
         }
         g = context;
         try {
-            if (f40835c < 1) {
+            if (f27144c < 1) {
                 UMEnvelopeBuild.setTransmissionSendFlag(true);
             } else if (d(context)) {
                 UMEnvelopeBuild.setTransmissionSendFlag(true);
@@ -124,7 +124,7 @@ public class UMConfigureImpl {
     public static void registerInterruptFlag() {
         synchronized (UMConfigureImpl.class) {
             try {
-                f40835c++;
+                f27144c++;
             } catch (Exception e2) {
             } catch (Throwable th) {
                 throw th;
@@ -154,7 +154,7 @@ public class UMConfigureImpl {
     public static void removeInterruptFlag() {
         synchronized (UMConfigureImpl.class) {
             try {
-                f40835c--;
+                f27144c--;
             } catch (Exception e2) {
             } catch (Throwable th) {
                 throw th;

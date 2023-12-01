@@ -3,6 +3,7 @@ package com.alibaba.fastjson.serializer;
 import com.alibaba.fastjson.parser.DefaultJSONParser;
 import com.alibaba.fastjson.parser.deserializer.ObjectDeserializer;
 import com.alibaba.fastjson.util.TypeUtils;
+import com.android.dex.DexFormat;
 import java.io.IOException;
 import java.lang.reflect.Type;
 
@@ -31,7 +32,7 @@ public class CharacterCodec implements ObjectDeserializer, ObjectSerializer {
         if (ch == null) {
             serializeWriter.writeString("");
         } else if (ch.charValue() == 0) {
-            serializeWriter.writeString("��");
+            serializeWriter.writeString(DexFormat.MAGIC_SUFFIX);
         } else {
             serializeWriter.writeString(ch.toString());
         }

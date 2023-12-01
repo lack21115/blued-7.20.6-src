@@ -1,12 +1,12 @@
 package com.amap.api.col.p0003sl;
 
-import android.app.backup.FullBackup;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.SystemClock;
 import android.text.TextUtils;
 import com.android.internal.telephony.PhoneConstants;
+import com.android.internal.util.cm.NavigationRingConstants;
 import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.net.URL;
 import java.util.ArrayList;
@@ -18,19 +18,16 @@ import java.util.Map;
 import java.util.Random;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
+import javax.xml.transform.OutputKeys;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 /* renamed from: com.amap.api.col.3sl.jx  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/jx.class */
 public final class jx {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static volatile ConcurrentHashMap<String, c> f5235a = new ConcurrentHashMap<>(8);
+    public static volatile ConcurrentHashMap<String, c> a = new ConcurrentHashMap<>(8);
     public static volatile List<String> b = Collections.synchronizedList(new ArrayList(8));
-
-    /* renamed from: c  reason: collision with root package name */
-    private static volatile ConcurrentHashMap<String, b> f5236c = new ConcurrentHashMap<>(8);
+    private static volatile ConcurrentHashMap<String, b> c = new ConcurrentHashMap<>(8);
     private static Random d = new Random();
     private static ConcurrentHashMap<String, String> e = new ConcurrentHashMap<>(8);
     private static List<kj> f = Collections.synchronizedList(new ArrayList(16));
@@ -39,13 +36,9 @@ public final class jx {
     /* renamed from: com.amap.api.col.3sl.jx$a */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/jx$a.class */
     public static final class a {
-
-        /* renamed from: a  reason: collision with root package name */
-        String f5237a;
+        String a;
         int b;
-
-        /* renamed from: c  reason: collision with root package name */
-        double f5238c;
+        double c;
 
         private a() {
         }
@@ -59,9 +52,7 @@ public final class jx {
     /* renamed from: com.amap.api.col.3sl.jx$b */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/jx$b.class */
     public static final class b {
-
-        /* renamed from: a  reason: collision with root package name */
-        kc f5239a;
+        kc a;
         long b;
 
         private b() {
@@ -76,13 +67,11 @@ public final class jx {
     /* renamed from: com.amap.api.col.3sl.jx$c */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/jx$c.class */
     public static final class c {
-
-        /* renamed from: a  reason: collision with root package name */
-        Map<String, List<a>> f5240a;
+        Map<String, List<a>> a;
         Map<String, String> b;
 
         private c() {
-            this.f5240a = new HashMap(8);
+            this.a = new HashMap(8);
             this.b = new HashMap(8);
         }
 
@@ -98,11 +87,11 @@ public final class jx {
                 return false;
             }
             c cVar = (c) obj;
-            return this.f5240a.equals(cVar.f5240a) && this.b.equals(cVar.b);
+            return this.a.equals(cVar.a) && this.b.equals(cVar.b);
         }
 
         public final int hashCode() {
-            Map<String, List<a>> map = this.f5240a;
+            Map<String, List<a>> map = this.a;
             int i = 0;
             int hashCode = map != null ? map.hashCode() : 0;
             Map<String, String> map2 = this.b;
@@ -119,7 +108,7 @@ public final class jx {
                 try {
                     System.currentTimeMillis();
                     if (!TextUtils.isEmpty(str2) && !TextUtils.isEmpty(str)) {
-                        Context context = hp.f5081c;
+                        Context context = hp.c;
                         if (b == null) {
                             b = Collections.synchronizedList(new ArrayList(8));
                         }
@@ -130,9 +119,9 @@ public final class jx {
                                 a(str2, new JSONObject(a2));
                             }
                         }
-                        if (f5235a != null && f5235a.size() > 0) {
-                            if (f5235a.containsKey(str2)) {
-                                c cVar = f5235a.get(str2);
+                        if (a != null && a.size() > 0) {
+                            if (a.containsKey(str2)) {
+                                c cVar = a.get(str2);
                                 if (cVar == null) {
                                     return str;
                                 }
@@ -164,7 +153,7 @@ public final class jx {
 
     public static void a() {
         try {
-            Context context = hp.f5081c;
+            Context context = hp.c;
             if (context == null) {
                 return;
             }
@@ -190,7 +179,7 @@ public final class jx {
                     a(a2);
                     return;
                 }
-                jj.a(hp.f5081c, "Yb3Blbl9odHRwX2NvbnRyb2w", a2, jSONObject.toString());
+                jj.a(hp.c, "Yb3Blbl9odHRwX2NvbnRyb2w", a2, jSONObject.toString());
                 a(a2, jSONObject);
             } catch (Throwable th) {
                 try {
@@ -212,7 +201,7 @@ public final class jx {
             while (true) {
                 int i2 = i;
                 if (i2 >= optJSONArray.length()) {
-                    cVar.f5240a = hashMap;
+                    cVar.a = hashMap;
                     return;
                 }
                 JSONObject optJSONObject = optJSONArray.optJSONObject(i2);
@@ -239,9 +228,9 @@ public final class jx {
                                 JSONObject optJSONObject2 = optJSONArray2.optJSONObject(i4);
                                 if (optJSONObject2 != null) {
                                     a aVar = new a((byte) 0);
-                                    aVar.f5237a = optJSONObject2.optString("begin");
+                                    aVar.a = optJSONObject2.optString("begin");
                                     aVar.b = optJSONObject2.optInt("duration");
-                                    aVar.f5238c = optJSONObject2.optDouble("percent");
+                                    aVar.c = optJSONObject2.optDouble("percent");
                                     arrayList.add(aVar);
                                 }
                                 i3 = i4 + 1;
@@ -260,10 +249,10 @@ public final class jx {
     private static void a(String str) {
         synchronized (jx.class) {
             try {
-                if (f5235a.containsKey(str)) {
-                    f5235a.remove(str);
+                if (a.containsKey(str)) {
+                    a.remove(str);
                 }
-                SharedPreferences.Editor a2 = jj.a(hp.f5081c, "Yb3Blbl9odHRwX2NvbnRyb2w");
+                SharedPreferences.Editor a2 = jj.a(hp.c, "Yb3Blbl9odHRwX2NvbnRyb2w");
                 jj.a(a2, str);
                 jj.a(a2);
             } catch (Throwable th) {
@@ -278,10 +267,10 @@ public final class jx {
 
     private static void a(String str, c cVar) {
         try {
-            if (f5235a == null) {
-                f5235a = new ConcurrentHashMap<>(8);
+            if (a == null) {
+                a = new ConcurrentHashMap<>(8);
             }
-            f5235a.put(str, cVar);
+            a.put(str, cVar);
         } catch (Throwable th) {
             it.a(th, "hlUtil", "ucr");
         }
@@ -289,7 +278,7 @@ public final class jx {
 
     private static void a(String str, String str2, String str3) {
         try {
-            Context context = hp.f5081c;
+            Context context = hp.c;
             if (context == null || TextUtils.isEmpty(str)) {
                 return;
             }
@@ -302,10 +291,10 @@ public final class jx {
                 }
                 e.put(str2, str3);
                 JSONObject jSONObject = new JSONObject();
-                jSONObject.put("timestamp", System.currentTimeMillis());
+                jSONObject.put(com.alipay.sdk.tid.b.f, System.currentTimeMillis());
                 jSONObject.put("type", ip.j);
                 jSONObject.put("name", str);
-                jSONObject.put("version", ip.a(str));
+                jSONObject.put(OutputKeys.VERSION, ip.a(str));
                 jSONObject.put("hostname", str2 + "#" + str3);
                 String jSONObject2 = jSONObject.toString();
                 if (TextUtils.isEmpty(jSONObject2)) {
@@ -324,7 +313,7 @@ public final class jx {
             c cVar = new c((byte) 0);
             a(cVar, jSONObject);
             b(cVar, jSONObject);
-            if (cVar.b == null && cVar.f5240a == null) {
+            if (cVar.b == null && cVar.a == null) {
                 a(str);
             } else {
                 a(str, cVar);
@@ -336,10 +325,10 @@ public final class jx {
     public static void a(URL url, kc kcVar) {
         List<String> list;
         try {
-            if (f5236c == null) {
-                f5236c = new ConcurrentHashMap<>(8);
+            if (c == null) {
+                c = new ConcurrentHashMap<>(8);
             }
-            if (kcVar.b == null || !kcVar.b.containsKey(FullBackup.NO_BACKUP_TREE_TOKEN) || (list = kcVar.b.get(FullBackup.NO_BACKUP_TREE_TOKEN)) == null || list.size() <= 0) {
+            if (kcVar.b == null || !kcVar.b.containsKey("nb") || (list = kcVar.b.get("nb")) == null || list.size() <= 0) {
                 return;
             }
             String[] split = list.get(0).split("#");
@@ -349,17 +338,17 @@ public final class jx {
             int parseInt = Integer.parseInt(split[0]);
             long parseInt2 = Integer.parseInt(split[1]);
             b bVar = new b((byte) 0);
-            bVar.f5239a = kcVar;
+            bVar.a = kcVar;
             long j = parseInt2;
             if (parseInt2 <= 0) {
                 j = 30;
             }
             bVar.b = SystemClock.elapsedRealtime() + (j * 1000);
             if (parseInt == 1) {
-                f5236c.put("app", bVar);
+                c.put(NavigationRingConstants.ACTION_APP, bVar);
             } else if (parseInt != 2 || url == null) {
             } else {
-                f5236c.put(url.getPath(), bVar);
+                c.put(url.getPath(), bVar);
             }
         } catch (Throwable th) {
         }
@@ -367,19 +356,19 @@ public final class jx {
 
     public static void a(boolean z, String str) {
         try {
-            Context context = hp.f5081c;
+            Context context = hp.c;
             if (context == null || TextUtils.isEmpty(str)) {
                 return;
             }
             JSONObject jSONObject = new JSONObject();
-            jSONObject.put("timestamp", Long.valueOf(System.currentTimeMillis()));
+            jSONObject.put(com.alipay.sdk.tid.b.f, Long.valueOf(System.currentTimeMillis()));
             if (z) {
                 jSONObject.put("type", ip.g);
             } else {
                 jSONObject.put("type", ip.f);
             }
             jSONObject.put("name", str);
-            jSONObject.put("version", ip.a(str));
+            jSONObject.put(OutputKeys.VERSION, ip.a(str));
             String jSONObject2 = jSONObject.toString();
             kj kjVar = new kj(context, "core", "2.0", "O005");
             kjVar.a(jSONObject2);
@@ -390,12 +379,12 @@ public final class jx {
 
     private static void a(boolean z, String str, String str2, int i) {
         try {
-            Context context = hp.f5081c;
+            Context context = hp.c;
             if (context == null || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
                 return;
             }
             JSONObject jSONObject = new JSONObject();
-            jSONObject.put("timestamp", System.currentTimeMillis());
+            jSONObject.put(com.alipay.sdk.tid.b.f, System.currentTimeMillis());
             String a2 = ip.a(str);
             if (z) {
                 jSONObject.put("type", ip.i);
@@ -403,7 +392,7 @@ public final class jx {
                 jSONObject.put("type", ip.h);
             }
             jSONObject.put("name", str);
-            jSONObject.put("version", a2);
+            jSONObject.put(OutputKeys.VERSION, a2);
             jSONObject.put("uri", Uri.parse(str2).getPath());
             jSONObject.put("blockLevel", i);
             String jSONObject2 = jSONObject.toString();
@@ -426,30 +415,30 @@ public final class jx {
     }
 
     private static boolean a(a aVar) {
-        if (aVar == null || aVar.f5238c == 1.0d) {
+        if (aVar == null || aVar.c == 1.0d) {
             return false;
         }
         long currentTimeMillis = System.currentTimeMillis();
-        if (TextUtils.isEmpty(aVar.f5237a) || aVar.b <= 0) {
+        if (TextUtils.isEmpty(aVar.a) || aVar.b <= 0) {
             return false;
         }
-        long timeInMillis = currentTimeMillis - ib.a(aVar.f5237a, "HH:mm:ss").getTimeInMillis();
+        long timeInMillis = currentTimeMillis - ib.a(aVar.a, "HH:mm:ss").getTimeInMillis();
         if (timeInMillis <= 0 || timeInMillis >= aVar.b * 1000) {
             return false;
         }
-        if (aVar.f5238c == 0.0d) {
+        if (aVar.c == 0.0d) {
             return true;
         }
         if (d == null) {
             d = new Random();
         }
         d.setSeed(UUID.randomUUID().hashCode() + currentTimeMillis);
-        return d.nextDouble() > aVar.f5238c;
+        return d.nextDouble() > aVar.c;
     }
 
     private static boolean a(String str, c cVar, String str2) {
         try {
-            Map<String, List<a>> map = cVar.f5240a;
+            Map<String, List<a>> map = cVar.a;
             if (map == null || map.size() <= 0) {
                 return false;
             }
@@ -490,16 +479,16 @@ public final class jx {
     public static kc b(String str, String str2) {
         Uri parse;
         try {
-            if (f5236c == null) {
+            if (c == null) {
                 return null;
             }
-            if (f5236c.containsKey("app")) {
-                b bVar = f5236c.get("app");
+            if (c.containsKey(NavigationRingConstants.ACTION_APP)) {
+                b bVar = c.get(NavigationRingConstants.ACTION_APP);
                 if (SystemClock.elapsedRealtime() > bVar.b) {
-                    f5236c.remove("app");
+                    c.remove(NavigationRingConstants.ACTION_APP);
                     return null;
                 }
-                kc kcVar = bVar.f5239a;
+                kc kcVar = bVar.a;
                 if (kcVar != null) {
                     kcVar.e = false;
                 }
@@ -509,13 +498,13 @@ public final class jx {
                 return null;
             } else {
                 String path = parse.getPath();
-                if (f5236c.containsKey(path)) {
-                    b bVar2 = f5236c.get(path);
+                if (c.containsKey(path)) {
+                    b bVar2 = c.get(path);
                     if (SystemClock.elapsedRealtime() > bVar2.b) {
-                        f5236c.remove(path);
+                        c.remove(path);
                         return null;
                     }
-                    kc kcVar2 = bVar2.f5239a;
+                    kc kcVar2 = bVar2.a;
                     if (kcVar2 != null) {
                         kcVar2.e = false;
                     }

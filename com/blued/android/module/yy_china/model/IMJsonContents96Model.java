@@ -1,5 +1,6 @@
 package com.blued.android.module.yy_china.model;
 
+import $r8;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
@@ -159,7 +160,7 @@ public final class IMJsonContents96Model {
     }
 
     public int hashCode() {
-        return (((((((((((((((this.link.hashCode() * 31) + this.icon.hashCode()) * 31) + this.num) * 31) + this.total) * 31) + this.font_color.hashCode()) * 31) + this.progress_bg_color.hashCode()) * 31) + this.progress_start_color.hashCode()) * 31) + this.progress_end_color.hashCode()) * 31) + C$r8$backportedMethods$utility$Long$1$hashCode.hashCode(this.delay);
+        return (((((((((((((((this.link.hashCode() * 31) + this.icon.hashCode()) * 31) + this.num) * 31) + this.total) * 31) + this.font_color.hashCode()) * 31) + this.progress_bg_color.hashCode()) * 31) + this.progress_start_color.hashCode()) * 31) + this.progress_end_color.hashCode()) * 31) + $r8.backportedMethods.utility.Long.1.hashCode.hashCode(this.delay);
     }
 
     public String toString() {

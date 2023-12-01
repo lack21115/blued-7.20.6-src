@@ -106,10 +106,10 @@ public class StringUtils {
         return center(str, i, ' ');
     }
 
-    public static String center(String str, int i, char c2) {
+    public static String center(String str, int i, char c) {
         int length;
         int length2;
-        return (str == null || i <= 0 || (length2 = i - (length = str.length())) <= 0) ? str : rightPad(leftPad(str, (length2 / 2) + length, c2), i, c2);
+        return (str == null || i <= 0 || (length2 = i - (length = str.length())) <= 0) ? str : rightPad(leftPad(str, (length2 / 2) + length, c), i, c);
     }
 
     public static String center(String str, int i, String str2) {
@@ -1083,11 +1083,11 @@ public class StringUtils {
         }
     }
 
-    public static String join(Iterable<?> iterable, char c2) {
+    public static String join(Iterable<?> iterable, char c) {
         if (iterable == null) {
             return null;
         }
-        return join(iterable.iterator(), c2);
+        return join(iterable.iterator(), c);
     }
 
     public static String join(Iterable<?> iterable, String str) {
@@ -1097,7 +1097,7 @@ public class StringUtils {
         return join(iterable.iterator(), str);
     }
 
-    public static String join(Iterator<?> it, char c2) {
+    public static String join(Iterator<?> it, char c) {
         if (it == null) {
             return null;
         }
@@ -1109,7 +1109,7 @@ public class StringUtils {
                     sb.append(next);
                 }
                 while (it.hasNext()) {
-                    sb.append(c2);
+                    sb.append(c);
                     Object next2 = it.next();
                     if (next2 != null) {
                         sb.append(next2);
@@ -1153,14 +1153,14 @@ public class StringUtils {
         return join(tArr, (String) null);
     }
 
-    public static String join(Object[] objArr, char c2) {
+    public static String join(Object[] objArr, char c) {
         if (objArr == null) {
             return null;
         }
-        return join(objArr, c2, 0, objArr.length);
+        return join(objArr, c, 0, objArr.length);
     }
 
-    public static String join(Object[] objArr, char c2, int i, int i2) {
+    public static String join(Object[] objArr, char c, int i, int i2) {
         if (objArr == null) {
             return null;
         }
@@ -1176,7 +1176,7 @@ public class StringUtils {
                 return sb.toString();
             }
             if (i5 > i) {
-                sb.append(c2);
+                sb.append(c);
             }
             if (objArr[i5] != null) {
                 sb.append(objArr[i5]);
@@ -1341,7 +1341,7 @@ public class StringUtils {
         return leftPad(str, i, ' ');
     }
 
-    public static String leftPad(String str, int i, char c2) {
+    public static String leftPad(String str, int i, char c) {
         String str2;
         if (str == null) {
             str2 = null;
@@ -1349,7 +1349,7 @@ public class StringUtils {
             int length = i - str.length();
             str2 = str;
             if (length > 0) {
-                return length > 8192 ? leftPad(str, i, String.valueOf(c2)) : repeat(c2, length).concat(str);
+                return length > 8192 ? leftPad(str, i, String.valueOf(c)) : repeat(c, length).concat(str);
             }
         }
         return str2;
@@ -1507,8 +1507,8 @@ public class StringUtils {
         return new StringBuilder(((length + i7) - i8) + str3.length() + 1).append(str.substring(0, i7)).append(str3).append(str.substring(i8)).toString();
     }
 
-    public static String remove(String str, char c2) {
-        if (isEmpty(str) || str.indexOf(c2) == -1) {
+    public static String remove(String str, char c) {
+        if (isEmpty(str) || str.indexOf(c) == -1) {
             return str;
         }
         char[] charArray = str.toCharArray();
@@ -1516,7 +1516,7 @@ public class StringUtils {
         int i2 = 0;
         while (i2 < charArray.length) {
             int i3 = i;
-            if (charArray[i2] != c2) {
+            if (charArray[i2] != c) {
                 charArray[i] = charArray[i2];
                 i3 = i + 1;
             }
@@ -1560,14 +1560,14 @@ public class StringUtils {
         return (isEmpty(str) || isEmpty(str2) || !startsWithIgnoreCase(str, str2)) ? str : str.substring(str2.length());
     }
 
-    public static String repeat(char c2, int i) {
+    public static String repeat(char c, int i) {
         char[] cArr = new char[i];
         while (true) {
             i--;
             if (i < 0) {
                 return new String(cArr);
             }
-            cArr[i] = c2;
+            cArr[i] = c;
         }
     }
 
@@ -1675,11 +1675,11 @@ public class StringUtils {
         return str;
     }
 
-    public static String replaceChars(String str, char c2, char c3) {
+    public static String replaceChars(String str, char c, char c2) {
         if (str == null) {
             return null;
         }
-        return str.replace(c2, c3);
+        return str.replace(c, c2);
     }
 
     public static String replaceChars(String str, String str2, String str3) {
@@ -1876,13 +1876,13 @@ public class StringUtils {
         return new StringBuilder(str).reverse().toString();
     }
 
-    public static String reverseDelimited(String str, char c2) {
+    public static String reverseDelimited(String str, char c) {
         if (str == null) {
             return null;
         }
-        String[] split = split(str, c2);
+        String[] split = split(str, c);
         ArrayUtils.reverse(split);
-        return join(split, c2);
+        return join(split, c);
     }
 
     public static String right(String str, int i) {
@@ -1904,7 +1904,7 @@ public class StringUtils {
         return rightPad(str, i, ' ');
     }
 
-    public static String rightPad(String str, int i, char c2) {
+    public static String rightPad(String str, int i, char c) {
         String str2;
         if (str == null) {
             str2 = null;
@@ -1912,7 +1912,7 @@ public class StringUtils {
             int length = i - str.length();
             str2 = str;
             if (length > 0) {
-                return length > 8192 ? rightPad(str, i, String.valueOf(c2)) : str.concat(repeat(c2, length));
+                return length > 8192 ? rightPad(str, i, String.valueOf(c)) : str.concat(repeat(c, length));
             }
         }
         return str2;
@@ -1960,8 +1960,8 @@ public class StringUtils {
         return split(str, null, -1);
     }
 
-    public static String[] split(String str, char c2) {
-        return splitWorker(str, c2, false);
+    public static String[] split(String str, char c) {
+        return splitWorker(str, c, false);
     }
 
     public static String[] split(String str, String str2) {
@@ -2094,8 +2094,8 @@ public class StringUtils {
         return splitWorker(str, null, -1, true);
     }
 
-    public static String[] splitPreserveAllTokens(String str, char c2) {
-        return splitWorker(str, c2, true);
+    public static String[] splitPreserveAllTokens(String str, char c) {
+        return splitWorker(str, c, true);
     }
 
     public static String[] splitPreserveAllTokens(String str, String str2) {
@@ -2106,7 +2106,7 @@ public class StringUtils {
         return splitWorker(str, str2, i, true);
     }
 
-    private static String[] splitWorker(String str, char c2, boolean z) {
+    private static String[] splitWorker(String str, char c, boolean z) {
         if (str == null) {
             return null;
         }
@@ -2120,7 +2120,7 @@ public class StringUtils {
         boolean z2 = false;
         boolean z3 = false;
         while (i < length) {
-            if (str.charAt(i) == c2) {
+            if (str.charAt(i) == c) {
                 if (z2 || z) {
                     arrayList.add(str.substring(i2, i));
                     z2 = false;
@@ -2592,13 +2592,13 @@ public class StringUtils {
             if (i2 >= charArray.length) {
                 return new String(charArray);
             }
-            char c2 = charArray[i2];
-            if (Character.isUpperCase(c2)) {
-                charArray[i2] = Character.toLowerCase(c2);
-            } else if (Character.isTitleCase(c2)) {
-                charArray[i2] = Character.toLowerCase(c2);
-            } else if (Character.isLowerCase(c2)) {
-                charArray[i2] = Character.toUpperCase(c2);
+            char c = charArray[i2];
+            if (Character.isUpperCase(c)) {
+                charArray[i2] = Character.toLowerCase(c);
+            } else if (Character.isTitleCase(c)) {
+                charArray[i2] = Character.toLowerCase(c);
+            } else if (Character.isLowerCase(c)) {
+                charArray[i2] = Character.toUpperCase(c);
             }
             i = i2 + 1;
         }

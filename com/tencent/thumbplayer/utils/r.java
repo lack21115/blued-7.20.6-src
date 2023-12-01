@@ -1,6 +1,5 @@
 package com.tencent.thumbplayer.utils;
 
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
@@ -9,17 +8,17 @@ import java.util.Map;
 public class r {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Map<String, Integer> f39452a;
+    private static Map<String, Integer> f25761a;
 
     static {
         HashMap hashMap = new HashMap();
-        f39452a = hashMap;
+        f25761a = hashMap;
         hashMap.put("http://", 0);
-        f39452a.put("https://", 1);
-        f39452a.put("rtmp://", 2);
-        f39452a.put("webrtc://", 3);
-        f39452a.put("file://", 4);
-        f39452a.put(BridgeUtil.SPLIT_MARK, 4);
+        f25761a.put("https://", 1);
+        f25761a.put("rtmp://", 2);
+        f25761a.put("webrtc://", 3);
+        f25761a.put("file://", 4);
+        f25761a.put("/", 4);
     }
 
     public static int a(String str) {
@@ -27,7 +26,7 @@ public class r {
             return -1;
         }
         String lowerCase = str.toLowerCase();
-        for (Map.Entry<String, Integer> entry : f39452a.entrySet()) {
+        for (Map.Entry<String, Integer> entry : f25761a.entrySet()) {
             if (lowerCase.startsWith(entry.getKey())) {
                 return entry.getValue().intValue();
             }

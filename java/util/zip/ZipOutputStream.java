@@ -92,7 +92,7 @@ public class ZipOutputStream extends DeflaterOutputStream implements ZipConstant
         this.curOffset = 30;
         if (this.currentEntry.getMethod() != 0) {
             this.curOffset += 16;
-            writeLong(this.out, 134695760L);
+            writeLong(this.out, ZipConstants.EXTSIG);
             OutputStream outputStream = this.out;
             ZipEntry zipEntry = this.currentEntry;
             long value = this.crc.getValue();
@@ -110,7 +110,7 @@ public class ZipOutputStream extends DeflaterOutputStream implements ZipConstant
             writeLong(outputStream3, totalIn);
         }
         int i = this.currentEntry.getMethod() == 0 ? 0 : 8;
-        writeLong(this.cDir, 33639248L);
+        writeLong(this.cDir, ZipConstants.CENSIG);
         writeShort(this.cDir, 20);
         writeShort(this.cDir, 20);
         writeShort(this.cDir, i | 2048);
@@ -167,7 +167,7 @@ public class ZipOutputStream extends DeflaterOutputStream implements ZipConstant
             closeEntry();
         }
         int size = this.cDir.size();
-        writeLong(this.cDir, 101010256L);
+        writeLong(this.cDir, ZipConstants.ENDSIG);
         writeShort(this.cDir, 0);
         writeShort(this.cDir, 0);
         writeShort(this.cDir, this.entries.size());
@@ -226,7 +226,7 @@ public class ZipOutputStream extends DeflaterOutputStream implements ZipConstant
         this.currentEntry = zipEntry;
         this.entries.add(this.currentEntry.name);
         int i2 = i == 0 ? 0 : 8;
-        writeLong(this.out, 67324752L);
+        writeLong(this.out, ZipConstants.LOCSIG);
         writeShort(this.out, 20);
         writeShort(this.out, i2 | 2048);
         writeShort(this.out, i);

@@ -16,11 +16,11 @@ public final class e implements Thread.UncaughtExceptionHandler {
     private static final Object i = new Object();
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f35172a;
+    private Context f21481a;
     private b b;
 
     /* renamed from: c  reason: collision with root package name */
-    private com.tencent.bugly.crashreport.common.strategy.a f35173c;
+    private com.tencent.bugly.crashreport.common.strategy.a f21482c;
     private com.tencent.bugly.crashreport.common.info.a d;
     private Thread.UncaughtExceptionHandler e;
     private Thread.UncaughtExceptionHandler f;
@@ -28,9 +28,9 @@ public final class e implements Thread.UncaughtExceptionHandler {
     private int j;
 
     public e(Context context, b bVar, com.tencent.bugly.crashreport.common.strategy.a aVar, com.tencent.bugly.crashreport.common.info.a aVar2) {
-        this.f35172a = context;
+        this.f21481a = context;
         this.b = bVar;
-        this.f35173c = aVar;
+        this.f21482c = aVar;
         this.d = aVar2;
     }
 
@@ -117,7 +117,7 @@ public final class e implements Thread.UncaughtExceptionHandler {
         crashDetailBean.F = this.d.k();
         crashDetailBean.G = this.d.j();
         crashDetailBean.H = this.d.l();
-        crashDetailBean.w = z.a(this.f35172a, c.e, (String) null);
+        crashDetailBean.w = z.a(this.f21481a, c.e, (String) null);
         crashDetailBean.y = y.a();
         x.a("user log size:%d", Integer.valueOf(crashDetailBean.y == null ? 0 : crashDetailBean.y.length));
         crashDetailBean.b = z ? 0 : 2;
@@ -185,7 +185,7 @@ public final class e implements Thread.UncaughtExceptionHandler {
             crashDetailBean.I = this.d.s();
             crashDetailBean.h = this.d.p();
             crashDetailBean.i = this.d.B();
-            crashDetailBean.M = this.d.f35129a;
+            crashDetailBean.M = this.d.f21438a;
             crashDetailBean.N = this.d.a();
             if (z) {
                 this.b.d(crashDetailBean);
@@ -306,10 +306,10 @@ public final class e implements Thread.UncaughtExceptionHandler {
                 }
                 return;
             }
-            if (!this.f35173c.b()) {
+            if (!this.f21482c.b()) {
                 x.d("no remote but still store!", new Object[0]);
             }
-            if (!this.f35173c.c().e && this.f35173c.b()) {
+            if (!this.f21482c.c().e && this.f21482c.b()) {
                 x.e("crash report was closed by remote , will not upload to Bugly , print local for helpful!", new Object[0]);
                 b.a(z ? "JAVA_CRASH" : "JAVA_CATCH", z.a(), this.d.d, thread.getName(), z.a(th), null);
                 if (z) {

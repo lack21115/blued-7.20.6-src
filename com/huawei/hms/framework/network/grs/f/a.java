@@ -2,7 +2,6 @@ package com.huawei.hms.framework.network.grs.f;
 
 import android.content.Context;
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.huawei.hms.framework.common.Logger;
 import com.huawei.hms.framework.common.StringUtils;
 import com.huawei.hms.framework.network.grs.GrsApp;
@@ -23,11 +22,11 @@ import org.json.JSONObject;
 public abstract class a {
 
     /* renamed from: a  reason: collision with root package name */
-    protected com.huawei.hms.framework.network.grs.local.model.a f22690a;
+    protected com.huawei.hms.framework.network.grs.local.model.a f9082a;
     protected List<com.huawei.hms.framework.network.grs.local.model.b> b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected Map<String, String> f22691c = new ConcurrentHashMap(16);
+    protected Map<String, String> f9083c = new ConcurrentHashMap(16);
     protected boolean d = false;
     protected boolean e = false;
     protected boolean f = false;
@@ -88,7 +87,7 @@ public abstract class a {
     /* JADX INFO: Access modifiers changed from: package-private */
     public int a(String str, Context context) {
         StringBuilder sb = new StringBuilder();
-        sb.append(GrsApp.getInstance().getBrand(BridgeUtil.SPLIT_MARK));
+        sb.append(GrsApp.getInstance().getBrand("/"));
         sb.append(str);
         return b(sb.toString(), context) != 0 ? -1 : 0;
     }
@@ -152,7 +151,7 @@ public abstract class a {
     }
 
     public Map<String, String> a(Context context, com.huawei.hms.framework.network.grs.e.a aVar, GrsBaseInfo grsBaseInfo, String str, boolean z) {
-        com.huawei.hms.framework.network.grs.local.model.a aVar2 = this.f22690a;
+        com.huawei.hms.framework.network.grs.local.model.a aVar2 = this.f9082a;
         if (aVar2 == null) {
             Logger.w("AbstractLocalManager", "application data is null.");
             return null;
@@ -168,7 +167,7 @@ public abstract class a {
             return null;
         }
         List<com.huawei.hms.framework.network.grs.local.model.b> a3 = a2.a();
-        com.huawei.hms.framework.network.grs.local.model.d a4 = a2.a(((a3 == null || a3.size() == 0) ? this.f22691c : a(a3, grsBaseInfo, b)).get(b));
+        com.huawei.hms.framework.network.grs.local.model.d a4 = a2.a(((a3 == null || a3.size() == 0) ? this.f9083c : a(a3, grsBaseInfo, b)).get(b));
         if (a4 == null) {
             return null;
         }
@@ -176,7 +175,7 @@ public abstract class a {
     }
 
     public void a() {
-        com.huawei.hms.framework.network.grs.local.model.a aVar = this.f22690a;
+        com.huawei.hms.framework.network.grs.local.model.a aVar = this.f9082a;
         if (aVar != null) {
             aVar.a();
             this.f = true;
@@ -189,7 +188,7 @@ public abstract class a {
         }
         for (String str : list) {
             if (Pattern.matches("^grs_sdk_global_route_config_[a-zA-Z]+\\.json$", str)) {
-                if (g(com.huawei.hms.framework.network.grs.h.c.a(GrsApp.getInstance().getBrand(BridgeUtil.SPLIT_MARK) + str, context)) == 0) {
+                if (g(com.huawei.hms.framework.network.grs.h.c.a(GrsApp.getInstance().getBrand("/") + str, context)) == 0) {
                     Logger.i("AbstractLocalManager", "load SDK_CONFIG_FILE: %s, sucess.", str);
                 } else {
                     Logger.i("AbstractLocalManager", "load SDK_CONFIG_FILE: %s, failure.", str);
@@ -199,20 +198,20 @@ public abstract class a {
     }
 
     public void a(GrsBaseInfo grsBaseInfo) {
-        this.f22691c.put("no_route_country", "no-country");
+        this.f9083c.put("no_route_country", "no-country");
         List<com.huawei.hms.framework.network.grs.local.model.b> list = this.b;
         if (list == null || list.isEmpty()) {
             return;
         }
         for (com.huawei.hms.framework.network.grs.local.model.b bVar : this.b) {
             if (bVar.a().contains(grsBaseInfo.getIssueCountry())) {
-                this.f22691c.put(grsBaseInfo.getIssueCountry(), bVar.b());
+                this.f9083c.put(grsBaseInfo.getIssueCountry(), bVar.b());
             }
             if (bVar.a().contains(grsBaseInfo.getRegCountry())) {
-                this.f22691c.put(grsBaseInfo.getRegCountry(), bVar.b());
+                this.f9083c.put(grsBaseInfo.getRegCountry(), bVar.b());
             }
             if (bVar.a().contains(grsBaseInfo.getSerCountry())) {
-                this.f22691c.put(grsBaseInfo.getSerCountry(), bVar.b());
+                this.f9083c.put(grsBaseInfo.getSerCountry(), bVar.b());
             }
         }
         this.b = null;
@@ -221,7 +220,7 @@ public abstract class a {
     public abstract int b(String str);
 
     public com.huawei.hms.framework.network.grs.local.model.a b() {
-        return this.f22690a;
+        return this.f9082a;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

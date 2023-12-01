@@ -10,16 +10,14 @@ import kotlin.jvm.internal.markers.KMappedMarker;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/sequences/IndexingSequence$iterator$1.class */
 public final class IndexingSequence$iterator$1<T> implements Iterator<IndexedValue<? extends T>>, KMappedMarker {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Iterator<T> f42636a;
+    private final Iterator<T> a;
     private int b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public IndexingSequence$iterator$1(IndexingSequence<T> indexingSequence) {
         Sequence sequence;
-        sequence = ((IndexingSequence) indexingSequence).f42635a;
-        this.f42636a = sequence.iterator();
+        sequence = ((IndexingSequence) indexingSequence).a;
+        this.a = sequence.iterator();
     }
 
     @Override // java.util.Iterator
@@ -30,12 +28,12 @@ public final class IndexingSequence$iterator$1<T> implements Iterator<IndexedVal
         if (i < 0) {
             CollectionsKt.c();
         }
-        return new IndexedValue<>(i, this.f42636a.next());
+        return new IndexedValue<>(i, this.a.next());
     }
 
     @Override // java.util.Iterator
     public boolean hasNext() {
-        return this.f42636a.hasNext();
+        return this.a.hasNext();
     }
 
     @Override // java.util.Iterator

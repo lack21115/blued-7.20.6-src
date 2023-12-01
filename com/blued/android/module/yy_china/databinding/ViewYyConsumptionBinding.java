@@ -11,20 +11,16 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ViewYyConsumptionBinding.class */
 public final class ViewYyConsumptionBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final TextView f16895a;
+    public final TextView a;
     public final ShapeTextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final TextView f16896c;
+    public final TextView c;
     private final LinearLayout d;
 
     private ViewYyConsumptionBinding(LinearLayout linearLayout, TextView textView, ShapeTextView shapeTextView, TextView textView2) {
         this.d = linearLayout;
-        this.f16895a = textView;
+        this.a = textView;
         this.b = shapeTextView;
-        this.f16896c = textView2;
+        this.c = textView2;
     }
 
     public static ViewYyConsumptionBinding a(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
@@ -55,7 +51,6 @@ public final class ViewYyConsumptionBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
         return this.d;

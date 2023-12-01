@@ -43,7 +43,7 @@ public class LimitedLengthInputStream extends FilterInputStream {
         return read;
     }
 
-    @Override // java.io.InputStream
+    @Override // java.io.FilterInputStream, java.io.InputStream
     public int read(byte[] bArr) throws IOException {
         return read(bArr, 0, bArr.length);
     }

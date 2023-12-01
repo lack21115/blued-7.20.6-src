@@ -19,6 +19,7 @@ import com.bytedance.applog.tracker.Tracker;
 import com.soft.blued.R;
 import com.soft.blued.ui.find.model.FilterInfo;
 import com.soft.blued.utils.StringUtils;
+import com.xiaomi.mipush.sdk.Constants;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,11 +27,11 @@ import java.util.List;
 public class MultiSelectFragment extends BaseFragment {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f30358a;
+    private Context f16668a;
     private View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private CommonTopTitleNoTrans f30359c;
+    private CommonTopTitleNoTrans f16669c;
     private ListView f;
     private String[] g;
     private String h;
@@ -50,11 +51,11 @@ public class MultiSelectFragment extends BaseFragment {
         final class ViewHolder {
 
             /* renamed from: a  reason: collision with root package name */
-            TextView f30365a;
+            TextView f16675a;
             View b;
 
             /* renamed from: c  reason: collision with root package name */
-            RelativeLayout f30366c;
+            RelativeLayout f16676c;
 
             private ViewHolder() {
             }
@@ -86,15 +87,15 @@ public class MultiSelectFragment extends BaseFragment {
                 view = LayoutInflater.from(this.b).inflate(R.layout.race_list_item, viewGroup, false);
                 viewHolder = new ViewHolder();
                 view.setTag(viewHolder);
-                viewHolder.f30365a = (TextView) view.findViewById(R.id.textView);
+                viewHolder.f16675a = (TextView) view.findViewById(R.id.textView);
                 viewHolder.b = view.findViewById(R.id.switch_view);
-                viewHolder.f30366c = (RelativeLayout) view.findViewById(R.id.rl_item);
+                viewHolder.f16676c = (RelativeLayout) view.findViewById(R.id.rl_item);
             } else {
                 viewHolder = (ViewHolder) view.getTag();
             }
             final FilterInfo filterInfo = (FilterInfo) MultiSelectFragment.this.d.get(i);
             filterInfo.position = i;
-            viewHolder.f30365a.setText(filterInfo.mName);
+            viewHolder.f16675a.setText(filterInfo.mName);
             if (filterInfo.mSelected) {
                 viewHolder.b.setVisibility(0);
             } else {
@@ -138,13 +139,13 @@ public class MultiSelectFragment extends BaseFragment {
         ArrayList arrayList = new ArrayList();
         String[] strArr = this.g;
         if (strArr == null || strArr.length == 0) {
-            this.g = this.f30358a.getResources().getStringArray(R.array.race_array_key);
+            this.g = this.f16668a.getResources().getStringArray(R.array.race_array_key);
         }
         if (StringUtils.d(this.h)) {
             this.h = "-1";
         }
-        this.k = this.f30358a.getResources().getString(R.string.unlimited);
-        if (!"-1".equals(this.h) && !this.h.contains("-")) {
+        this.k = this.f16668a.getResources().getString(R.string.unlimited);
+        if (!"-1".equals(this.h) && !this.h.contains(Constants.ACCEPT_TIME_SEPARATOR_SERVER)) {
             StringBuffer stringBuffer = new StringBuffer();
             String[] split = this.h.split(",");
             int i = 0;
@@ -234,29 +235,29 @@ public class MultiSelectFragment extends BaseFragment {
     }
 
     private void b() {
-        this.j = new RaceAdapter(this.f30358a);
+        this.j = new RaceAdapter(this.f16668a);
         ListView listView = (ListView) this.b.findViewById(R.id.race_list);
         this.f = listView;
         listView.setAdapter((ListAdapter) this.j);
     }
 
     private void c() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.b.findViewById(2131370749);
-        this.f30359c = commonTopTitleNoTrans;
-        commonTopTitleNoTrans.setRightText(getString(R.string.apply));
+        CommonTopTitleNoTrans findViewById = this.b.findViewById(R.id.top_title);
+        this.f16669c = findViewById;
+        findViewById.setRightText(getString(R.string.apply));
         if (StringUtils.d(this.l)) {
-            this.f30359c.setCenterText(getString(R.string.filter_race));
+            this.f16669c.setCenterText(getString(R.string.filter_race));
         } else {
-            this.f30359c.setCenterText(this.l);
+            this.f16669c.setCenterText(this.l);
         }
-        this.f30359c.setLeftClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.fragment.MultiSelectFragment.1
+        this.f16669c.setLeftClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.fragment.MultiSelectFragment.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
                 MultiSelectFragment.this.getActivity().finish();
             }
         });
-        this.f30359c.setRightClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.fragment.MultiSelectFragment.2
+        this.f16669c.setRightClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.fragment.MultiSelectFragment.2
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
@@ -298,9 +299,8 @@ public class MultiSelectFragment extends BaseFragment {
         });
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.f30358a = getActivity();
+        this.f16668a = getActivity();
         View view = this.b;
         if (view == null) {
             this.b = layoutInflater.inflate(R.layout.filter_menu_race, viewGroup, false);

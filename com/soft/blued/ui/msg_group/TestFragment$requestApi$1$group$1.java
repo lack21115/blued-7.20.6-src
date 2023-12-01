@@ -23,28 +23,25 @@ import kotlinx.coroutines.CoroutineScope;
 final class TestFragment$requestApi$1$group$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super BluedEntityA<MyGroupModel>>, Object> {
 
     /* renamed from: a  reason: collision with root package name */
-    int f32627a;
+    int f18936a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public TestFragment$requestApi$1$group$1(Continuation<? super TestFragment$requestApi$1$group$1> continuation) {
         super(2, continuation);
     }
 
-    @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super BluedEntityA<MyGroupModel>> continuation) {
-        return ((TestFragment$requestApi$1$group$1) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+        return create(coroutineScope, continuation).invokeSuspend(Unit.a);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
         return new TestFragment$requestApi$1$group$1(continuation);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         Object a2 = IntrinsicsKt.a();
-        int i = this.f32627a;
+        int i = this.f18936a;
         if (i != 0) {
             if (i == 1) {
                 ResultKt.a(obj);
@@ -55,8 +52,8 @@ final class TestFragment$requestApi$1$group$1 extends SuspendLambda implements F
         ResultKt.a(obj);
         BluedApiService a3 = BluedApiProxy.b().a(TestService.class);
         Intrinsics.c(a3, "getInstance().create(TestService::class.java)");
-        this.f32627a = 1;
-        Object a4 = TestService.DefaultImpls.a((TestService) a3, (Map) null, this, 1, (Object) null);
+        this.f18936a = 1;
+        Object a4 = TestService.DefaultImpls.a((TestService) a3, (Map) null, (Continuation) this, 1, (Object) null);
         return a4 == a2 ? a2 : a4;
     }
 }

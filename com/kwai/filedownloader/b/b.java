@@ -15,11 +15,11 @@ public interface b extends IInterface {
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: com.kwai.filedownloader.b.b$a$a  reason: collision with other inner class name */
         /* loaded from: source-7994992-dex2jar.jar:com/kwai/filedownloader/b/b$a$a.class */
-        public static final class C0588a implements b {
+        public static final class C0418a implements b {
             public static b aIo;
             private IBinder mRemote;
 
-            C0588a(IBinder iBinder) {
+            C0418a(IBinder iBinder) {
                 this.mRemote = iBinder;
             }
 
@@ -347,7 +347,7 @@ public interface b extends IInterface {
         }
 
         public static b Im() {
-            return C0588a.aIo;
+            return C0418a.aIo;
         }
 
         public static b a(IBinder iBinder) {
@@ -355,7 +355,7 @@ public interface b extends IInterface {
                 return null;
             }
             IInterface queryLocalInterface = iBinder.queryLocalInterface("com.kwai.filedownloader.i.IFileDownloadIPCService");
-            return (queryLocalInterface == null || !(queryLocalInterface instanceof b)) ? new C0588a(iBinder) : (b) queryLocalInterface;
+            return (queryLocalInterface == null || !(queryLocalInterface instanceof b)) ? new C0418a(iBinder) : (b) queryLocalInterface;
         }
 
         @Override // android.os.IInterface

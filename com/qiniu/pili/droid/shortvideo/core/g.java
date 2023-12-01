@@ -28,11 +28,11 @@ import org.json.JSONObject;
 public final class g implements PLAudioFrameListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private MediaProjectionManager f27548a;
+    private MediaProjectionManager f13860a;
     private com.qiniu.pili.droid.shortvideo.encode.e b;
 
     /* renamed from: c  reason: collision with root package name */
-    private com.qiniu.pili.droid.shortvideo.a.c.a f27549c;
+    private com.qiniu.pili.droid.shortvideo.a.c.a f13861c;
     private long d;
     private com.qiniu.pili.droid.shortvideo.a.b.a f;
     private com.qiniu.pili.droid.shortvideo.encode.c g;
@@ -52,8 +52,8 @@ public final class g implements PLAudioFrameListener {
     private int e = -1;
     private int h = -1;
     private AtomicBoolean t = new AtomicBoolean(false);
-    private a.InterfaceC0745a w = new a.InterfaceC0745a() { // from class: com.qiniu.pili.droid.shortvideo.core.g.1
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+    private a.InterfaceC0575a w = new a.InterfaceC0575a() { // from class: com.qiniu.pili.droid.shortvideo.core.g.1
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(MediaFormat mediaFormat) {
             com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.n;
             eVar.c("ScreenRecorderCore", "got video format:" + mediaFormat.toString());
@@ -62,12 +62,12 @@ public final class g implements PLAudioFrameListener {
             g.this.j();
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(Surface surface) {
-            g.this.f27549c.a(surface);
+            g.this.f13861c.a(surface);
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(ByteBuffer byteBuffer, MediaCodec.BufferInfo bufferInfo) {
             if (!g.this.l || g.this.e < 0 || g.this.t.get()) {
                 return;
@@ -80,7 +80,7 @@ public final class g implements PLAudioFrameListener {
             g.this.i.a(g.this.e, byteBuffer, bufferInfo);
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(boolean z) {
             com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.h;
             eVar.c("ScreenRecorderCore", "video encoder started: " + z);
@@ -93,7 +93,7 @@ public final class g implements PLAudioFrameListener {
             QosManager.a().a(6);
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void b(boolean z) {
             com.qiniu.pili.droid.shortvideo.f.e.h.c("ScreenRecorderCore", "video encoder stopped.");
             g.this.p = false;
@@ -101,8 +101,8 @@ public final class g implements PLAudioFrameListener {
             g.this.k();
         }
     };
-    private a.InterfaceC0745a x = new a.InterfaceC0745a() { // from class: com.qiniu.pili.droid.shortvideo.core.g.2
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+    private a.InterfaceC0575a x = new a.InterfaceC0575a() { // from class: com.qiniu.pili.droid.shortvideo.core.g.2
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(MediaFormat mediaFormat) {
             com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.n;
             eVar.c("ScreenRecorderCore", "got audio format:" + mediaFormat.toString());
@@ -111,11 +111,11 @@ public final class g implements PLAudioFrameListener {
             g.this.j();
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(Surface surface) {
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(ByteBuffer byteBuffer, MediaCodec.BufferInfo bufferInfo) {
             if (!g.this.l || g.this.h < 0 || g.this.t.get()) {
                 return;
@@ -125,7 +125,7 @@ public final class g implements PLAudioFrameListener {
             g.this.i.a(g.this.h, byteBuffer, bufferInfo);
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(boolean z) {
             com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.h;
             eVar.c("ScreenRecorderCore", "audio encoder started: " + z);
@@ -138,7 +138,7 @@ public final class g implements PLAudioFrameListener {
             QosManager.a().a(7);
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void b(boolean z) {
             com.qiniu.pili.droid.shortvideo.f.e.h.c("ScreenRecorderCore", "audio encoder stopped.");
             g.this.q = false;
@@ -156,14 +156,14 @@ public final class g implements PLAudioFrameListener {
 
     private boolean a(String str) {
         if (str == null || !str.endsWith(".mp4")) {
-            com.qiniu.pili.droid.shortvideo.f.e.f27673c.e("ScreenRecorderCore", "set mp4 file failed!");
+            com.qiniu.pili.droid.shortvideo.f.e.f13985c.e("ScreenRecorderCore", "set mp4 file failed!");
             return false;
         }
         File parentFile = new File(str).getParentFile();
         if (parentFile.exists() || parentFile.mkdir()) {
             return true;
         }
-        com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.f27673c;
+        com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.f13985c;
         eVar.e("ScreenRecorderCore", "failed to mkdir: " + parentFile.getAbsolutePath());
         return false;
     }
@@ -175,7 +175,7 @@ public final class g implements PLAudioFrameListener {
                 pLScreenRecordStateListener.onError(9);
                 QosManager.a().a(9);
             }
-            com.qiniu.pili.droid.shortvideo.f.e.f27673c.e("ScreenRecorderCore", "failed to requestScreenRecord, Android version < LOLLIPOP !");
+            com.qiniu.pili.droid.shortvideo.f.e.f13985c.e("ScreenRecorderCore", "failed to requestScreenRecord, Android version < LOLLIPOP !");
             return false;
         }
         if (!this.u || this.v == null) {
@@ -184,7 +184,7 @@ public final class g implements PLAudioFrameListener {
                 pLScreenRecordStateListener2.onError(1);
                 QosManager.a().a(1);
             }
-            com.qiniu.pili.droid.shortvideo.f.e.f27673c.e("ScreenRecorderCore", "please invoke prepare() first!");
+            com.qiniu.pili.droid.shortvideo.f.e.f13985c.e("ScreenRecorderCore", "please invoke prepare() first!");
         }
         boolean z = false;
         if (this.u) {
@@ -220,9 +220,9 @@ public final class g implements PLAudioFrameListener {
     }
 
     private void i() {
-        if (this.f27549c != null) {
+        if (this.f13861c != null) {
             com.qiniu.pili.droid.shortvideo.f.e.f.c("ScreenRecorderCore", "stop screen record +");
-            this.f27549c.a();
+            this.f13861c.a();
         }
         if (this.f != null) {
             com.qiniu.pili.droid.shortvideo.f.e.f.c("ScreenRecorderCore", "stop audio record +");
@@ -276,14 +276,14 @@ public final class g implements PLAudioFrameListener {
     }
 
     public void a() {
-        com.qiniu.pili.droid.shortvideo.f.e.f27673c.c("ScreenRecorderCore", "requestScreenRecord +");
+        com.qiniu.pili.droid.shortvideo.f.e.f13985c.c("ScreenRecorderCore", "requestScreenRecord +");
         if (f()) {
             MediaProjectionManager mediaProjectionManager = (MediaProjectionManager) this.v.getSystemService(Context.MEDIA_PROJECTION_SERVICE);
-            this.f27548a = mediaProjectionManager;
+            this.f13860a = mediaProjectionManager;
             this.v.startActivityForResult(mediaProjectionManager.createScreenCaptureIntent(), 2008);
             com.qiniu.pili.droid.shortvideo.a.b.a aVar = this.f;
             if (aVar == null || aVar.a()) {
-                com.qiniu.pili.droid.shortvideo.f.e.f27673c.c("ScreenRecorderCore", "requestScreenRecord -");
+                com.qiniu.pili.droid.shortvideo.f.e.f13985c.c("ScreenRecorderCore", "requestScreenRecord -");
                 return;
             }
             PLScreenRecordStateListener pLScreenRecordStateListener = this.n;
@@ -310,13 +310,13 @@ public final class g implements PLAudioFrameListener {
     }
 
     public boolean a(int i, int i2, Intent intent) {
-        com.qiniu.pili.droid.shortvideo.f.e.f27673c.c("ScreenRecorderCore", "onActivityResult +");
+        com.qiniu.pili.droid.shortvideo.f.e.f13985c.c("ScreenRecorderCore", "onActivityResult +");
         if (f()) {
             if (i != 2008 || intent == null) {
                 com.qiniu.pili.droid.shortvideo.f.e.f.e("ScreenRecorderCore", "param error, screen recorder init failed!");
                 return false;
             }
-            MediaProjection mediaProjection = this.f27548a.getMediaProjection(i2, intent);
+            MediaProjection mediaProjection = this.f13860a.getMediaProjection(i2, intent);
             if (mediaProjection == null) {
                 com.qiniu.pili.droid.shortvideo.f.e.f.e("ScreenRecorderCore", "something is wrong, screen recorder init failed!");
                 return false;
@@ -326,25 +326,25 @@ public final class g implements PLAudioFrameListener {
                 com.qiniu.pili.droid.shortvideo.f.e.f.e("ScreenRecorderCore", "please invoke prepare interface first!");
                 return false;
             }
-            this.f27549c = new com.qiniu.pili.droid.shortvideo.a.c.a(pLScreenRecorderSetting.getWidth(), this.m.getHeight(), this.m.getDpi(), mediaProjection);
+            this.f13861c = new com.qiniu.pili.droid.shortvideo.a.c.a(pLScreenRecorderSetting.getWidth(), this.m.getHeight(), this.m.getDpi(), mediaProjection);
             PLScreenRecordStateListener pLScreenRecordStateListener = this.n;
             if (pLScreenRecordStateListener != null) {
                 pLScreenRecordStateListener.onReady();
             }
-            com.qiniu.pili.droid.shortvideo.f.e.f27673c.c("ScreenRecorderCore", "onActivityResult -");
+            com.qiniu.pili.droid.shortvideo.f.e.f13985c.c("ScreenRecorderCore", "onActivityResult -");
             return true;
         }
         return false;
     }
 
     public boolean a(PLScreenRecorderSetting pLScreenRecorderSetting, PLMicrophoneSetting pLMicrophoneSetting) {
-        com.qiniu.pili.droid.shortvideo.f.e.f27673c.c("ScreenRecorderCore", "prepare +");
+        com.qiniu.pili.droid.shortvideo.f.e.f13985c.c("ScreenRecorderCore", "prepare +");
         if (pLScreenRecorderSetting == null || !a(pLScreenRecorderSetting.getRecordFile())) {
-            com.qiniu.pili.droid.shortvideo.f.e.f27673c.e("ScreenRecorderCore", "Error: something is null!");
+            com.qiniu.pili.droid.shortvideo.f.e.f13985c.e("ScreenRecorderCore", "Error: something is null!");
             return false;
         }
         this.m = pLScreenRecorderSetting;
-        com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.f27673c;
+        com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.f13985c;
         eVar.c("ScreenRecorderCore", "prepare, screenSetting = " + pLScreenRecorderSetting);
         PLVideoEncodeSetting pLVideoEncodeSetting = new PLVideoEncodeSetting(this.v.getApplicationContext());
         pLVideoEncodeSetting.setEncodingBitrate(pLScreenRecorderSetting.getEncodingBitrate());
@@ -367,12 +367,12 @@ public final class g implements PLAudioFrameListener {
             }
         }
         this.u = true;
-        com.qiniu.pili.droid.shortvideo.f.e.f27673c.c("ScreenRecorderCore", "prepare -");
+        com.qiniu.pili.droid.shortvideo.f.e.f13985c.c("ScreenRecorderCore", "prepare -");
         return true;
     }
 
     public void b() {
-        com.qiniu.pili.droid.shortvideo.f.e.f27673c.c("ScreenRecorderCore", "start +");
+        com.qiniu.pili.droid.shortvideo.f.e.f13985c.c("ScreenRecorderCore", "start +");
         if (!u.a().a(b.a.record_screen)) {
             QosManager.a().a(8);
             PLScreenRecordStateListener pLScreenRecordStateListener = this.n;
@@ -384,12 +384,12 @@ public final class g implements PLAudioFrameListener {
             this.d = 0L;
             g();
             this.i = new com.qiniu.pili.droid.shortvideo.muxer.b();
-            com.qiniu.pili.droid.shortvideo.f.e.f27673c.c("ScreenRecorderCore", "start -");
+            com.qiniu.pili.droid.shortvideo.f.e.f13985c.c("ScreenRecorderCore", "start -");
         }
     }
 
     public void c() {
-        com.qiniu.pili.droid.shortvideo.f.e.f27673c.c("ScreenRecorderCore", "stop +");
+        com.qiniu.pili.droid.shortvideo.f.e.f13985c.c("ScreenRecorderCore", "stop +");
         this.t.set(true);
         this.p = false;
         this.q = false;
@@ -397,7 +397,7 @@ public final class g implements PLAudioFrameListener {
         this.s = false;
         i();
         h();
-        com.qiniu.pili.droid.shortvideo.f.e.f27673c.c("ScreenRecorderCore", "stop -");
+        com.qiniu.pili.droid.shortvideo.f.e.f13985c.c("ScreenRecorderCore", "stop -");
     }
 
     public boolean d() {

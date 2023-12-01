@@ -25,7 +25,6 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import androidx.cardview.widget.CardView;
-import com.anythink.expressad.video.module.a.a.m;
 import com.blued.android.chat.data.EntranceData;
 import com.blued.android.chat.data.JoinLiveResult;
 import com.blued.android.chat.data.LiveChatStatistics;
@@ -42,6 +41,7 @@ import com.blued.android.framework.http.BluedUIHttpResponse;
 import com.blued.android.framework.http.parser.BluedEntityA;
 import com.blued.android.framework.utils.AesCrypto;
 import com.blued.android.framework.utils.DensityUtils;
+import com.blued.android.module.common.web.LoaderConstants;
 import com.blued.android.module.live.base.manager.LiveDataManager;
 import com.blued.android.module.live_china.R;
 import com.blued.android.module.live_china.activity.LiveFloatDialogActivity;
@@ -84,9 +84,7 @@ public class LiveFloatManager implements LiveChatInfoListener, AudioManagerUtils
     private float W;
     private float X;
     private float Y;
-
-    /* renamed from: a  reason: collision with root package name */
-    public SurfaceView f13617a;
+    public SurfaceView a;
     private int ab;
     private int ac;
     private int ad;
@@ -106,9 +104,7 @@ public class LiveFloatManager implements LiveChatInfoListener, AudioManagerUtils
     private int au;
     private boolean ay;
     public BlLiveView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public CardView f13619c;
+    public CardView c;
     public CardView d;
     PlayingOnliveFragment f;
     public LiveRoomCloseReason g;
@@ -140,24 +136,20 @@ public class LiveFloatManager implements LiveChatInfoListener, AudioManagerUtils
     private float aa = 0.0f;
     private boolean ao = true;
     public boolean e = false;
-
-    /* renamed from: ar  reason: collision with root package name */
-    private int f13618ar = 105;
+    private int ar = 105;
     private int as = 187;
     private int av = -1;
     Handler h = new Handler(Looper.getMainLooper());
     private OnMediaPlayerListener aw = new AnonymousClass1();
     private SurfaceHolder.Callback ax = new SurfaceHolder.Callback() { // from class: com.blued.android.module.live_china.manager.LiveFloatManager.2
-
-        /* renamed from: a  reason: collision with root package name */
-        int f13626a;
+        int a;
         int b;
 
         @Override // android.view.SurfaceHolder.Callback
         public void surfaceChanged(SurfaceHolder surfaceHolder, int i2, int i3, int i4) {
-            if (this.b != i4 || this.f13626a != i3) {
+            if (this.b != i4 || this.a != i3) {
                 this.b = i4;
-                this.f13626a = i3;
+                this.a = i3;
                 LiveFloatManager.this.j.j();
             }
             Log.v("ddrb", "surfaceChanged");
@@ -168,7 +160,7 @@ public class LiveFloatManager implements LiveChatInfoListener, AudioManagerUtils
             Logger.b("ddrb", "surfaceCreated");
             if (surfaceHolder != null) {
                 this.b = LiveFloatManager.this.aj;
-                this.f13626a = LiveFloatManager.this.ai;
+                this.a = LiveFloatManager.this.ai;
                 LiveFloatManager.this.b();
             }
         }
@@ -197,10 +189,10 @@ public class LiveFloatManager implements LiveChatInfoListener, AudioManagerUtils
                     viewGroup.removeView(LiveFloatManager.this.b);
                     viewGroup.addView(LiveFloatManager.this.b);
                 }
-                if (LiveFloatManager.this.f13617a == null || LiveFloatManager.this.f13617a.getHolder() == null) {
+                if (LiveFloatManager.this.a == null || LiveFloatManager.this.a.getHolder() == null) {
                     LiveFloatManager.this.b();
                 } else {
-                    LiveFloatManager.this.f13617a.getHolder().addCallback(LiveFloatManager.this.ax);
+                    LiveFloatManager.this.a.getHolder().addCallback(LiveFloatManager.this.ax);
                 }
             }
         }
@@ -306,9 +298,9 @@ public class LiveFloatManager implements LiveChatInfoListener, AudioManagerUtils
             Context d = AppInfo.d();
             boolean z = LiveFloatManager.this.z == 1;
             LiveFloatManager liveFloatManager = LiveFloatManager.this;
-            liveFloatManager.ak = DensityUtils.a(d, z ? liveFloatManager.as : liveFloatManager.f13618ar);
+            liveFloatManager.ak = DensityUtils.a(d, z ? liveFloatManager.as : liveFloatManager.ar);
             LiveFloatManager liveFloatManager2 = LiveFloatManager.this;
-            liveFloatManager2.al = DensityUtils.a(d, z ? liveFloatManager2.f13618ar : liveFloatManager2.as);
+            liveFloatManager2.al = DensityUtils.a(d, z ? liveFloatManager2.ar : liveFloatManager2.as);
             LiveFloatManager.this.am = (int) d.getResources().getDimension(z ? R.dimen.live_window_land_distance_bottom : R.dimen.live_window_distance_bottom);
             LiveFloatManager.this.an = (int) d.getResources().getDimension(z ? R.dimen.live_window_land_edge : R.dimen.live_window_edge);
             LiveFloatManager liveFloatManager3 = LiveFloatManager.this;
@@ -318,9 +310,9 @@ public class LiveFloatManager implements LiveChatInfoListener, AudioManagerUtils
             LiveFloatManager.this.L();
             LiveFloatManager.this.G = (FrameLayout) LayoutInflater.from(d).inflate(z ? R.layout.live_float_land_window : R.layout.live_float_window, (ViewGroup) null);
             LiveFloatManager liveFloatManager5 = LiveFloatManager.this;
-            liveFloatManager5.d = (CardView) liveFloatManager5.G.findViewById(R.id.lay_container_parent);
+            liveFloatManager5.d = liveFloatManager5.G.findViewById(R.id.lay_container_parent);
             LiveFloatManager liveFloatManager6 = LiveFloatManager.this;
-            liveFloatManager6.f13619c = (CardView) liveFloatManager6.G.findViewById(R.id.lay_container);
+            liveFloatManager6.c = liveFloatManager6.G.findViewById(R.id.lay_container);
             LiveFloatManager liveFloatManager7 = LiveFloatManager.this;
             liveFloatManager7.H = liveFloatManager7.G.findViewById(R.id.tv_live_loading);
             LiveFloatManager liveFloatManager8 = LiveFloatManager.this;
@@ -350,9 +342,9 @@ public class LiveFloatManager implements LiveChatInfoListener, AudioManagerUtils
             LiveFloatManager.this.G.setOnTouchListener(new View.OnTouchListener() { // from class: com.blued.android.module.live_china.manager.-$$Lambda$LiveFloatManager$5$dompYSg7HIxM5YqMewTMmVpEEcc
                 @Override // android.view.View.OnTouchListener
                 public final boolean onTouch(View view, MotionEvent motionEvent) {
-                    boolean a2;
-                    a2 = LiveFloatManager.AnonymousClass5.this.a(view, motionEvent);
-                    return a2;
+                    boolean a;
+                    a = LiveFloatManager.AnonymousClass5.this.a(view, motionEvent);
+                    return a;
                 }
             });
             LiveFloatManager.this.at = true;
@@ -450,14 +442,14 @@ public class LiveFloatManager implements LiveChatInfoListener, AudioManagerUtils
             b();
             return;
         }
-        if (this.f13617a == null && (this.b.getChildAt(0) instanceof SurfaceView)) {
-            this.f13617a = (SurfaceView) this.b.getChildAt(0);
+        if (this.a == null && (this.b.getChildAt(0) instanceof SurfaceView)) {
+            this.a = (SurfaceView) this.b.getChildAt(0);
         }
-        SurfaceView surfaceView = this.f13617a;
+        SurfaceView surfaceView = this.a;
         if (surfaceView == null || surfaceView.getHolder() == null) {
             return;
         }
-        this.f13617a.getHolder().addCallback(this.ax);
+        this.a.getHolder().addCallback(this.ax);
     }
 
     private void Y() {
@@ -504,7 +496,7 @@ public class LiveFloatManager implements LiveChatInfoListener, AudioManagerUtils
             Logger.d("xpf", "Below API 19 cannot invoke!");
             return false;
         }
-        AppOpsManager appOpsManager = (AppOpsManager) context.getSystemService(Context.APP_OPS_SERVICE);
+        AppOpsManager appOpsManager = (AppOpsManager) context.getSystemService("appops");
         try {
             Class.forName(appOpsManager.getClass().getName());
             int intValue = ((Integer) appOpsManager.getClass().getDeclaredMethod("checkOp", Integer.TYPE, Integer.TYPE, String.class).invoke(appOpsManager, Integer.valueOf(i2), Integer.valueOf(Binder.getCallingUid()), context.getPackageName())).intValue();
@@ -541,7 +533,7 @@ public class LiveFloatManager implements LiveChatInfoListener, AudioManagerUtils
         try {
             if (LiveRoomInfo.a().b(AppInfo.d())) {
                 Point point = new Point();
-                ((WindowManager) AppInfo.d().getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getSize(point);
+                ((WindowManager) AppInfo.d().getSystemService("window")).getDefaultDisplay().getSize(point);
                 this.ac = point.x;
                 int i2 = point.y;
                 this.ad = i2;
@@ -608,7 +600,7 @@ public class LiveFloatManager implements LiveChatInfoListener, AudioManagerUtils
                 return;
             }
             this.E = new WindowManager.LayoutParams();
-            this.F = (WindowManager) d.getSystemService(Context.WINDOW_SERVICE);
+            this.F = (WindowManager) d.getSystemService("window");
             Logger.b("ddrb", "sdk api version:", Integer.valueOf(Build.VERSION.SDK_INT));
             if (Build.VERSION.SDK_INT >= 26) {
                 this.E.type = 2038;
@@ -629,10 +621,10 @@ public class LiveFloatManager implements LiveChatInfoListener, AudioManagerUtils
             this.b = blLiveView;
             blLiveView.a();
             if (this.b.getChildAt(0) != null && (this.b.getChildAt(0) instanceof SurfaceView)) {
-                this.f13617a = (SurfaceView) this.b.getChildAt(0);
+                this.a = (SurfaceView) this.b.getChildAt(0);
             }
-            if (this.f13617a != null) {
-                this.f13617a.getHolder().addCallback(this.ax);
+            if (this.a != null) {
+                this.a.getHolder().addCallback(this.ax);
             } else {
                 b();
             }
@@ -740,8 +732,8 @@ public class LiveFloatManager implements LiveChatInfoListener, AudioManagerUtils
                             LiveFloatManager.this.E.y = (int) (LiveFloatManager.this.aa - LiveFloatManager.this.ab);
                         }
                         LiveFloatManager.this.d.setCardBackgroundColor(LiveRoomInfo.a().h() ? -16777216 : -1);
-                        LiveFloatManager.this.f13619c.addView(LiveFloatManager.this.P(), -1);
-                        LiveFloatManager.this.f13619c.getParent().requestLayout();
+                        LiveFloatManager.this.c.addView(LiveFloatManager.this.P(), -1);
+                        LiveFloatManager.this.c.getParent().requestLayout();
                         if (LiveFloatManager.this.R && LiveFloatManager.this.O) {
                             try {
                                 LiveFloatManager.this.F.updateViewLayout(LiveFloatManager.this.G, LiveFloatManager.this.E);
@@ -1210,7 +1202,7 @@ public class LiveFloatManager implements LiveChatInfoListener, AudioManagerUtils
 
     public void d(boolean z) {
         this.A = z;
-        BLVideoView.f15633a = z;
+        BLVideoView.a = z;
         if (LiveDataManager.a().f() != z) {
             LiveDataManager.a().a(z);
             LiveEventBus.get("screen_orientation_changed").post(true);
@@ -1219,7 +1211,7 @@ public class LiveFloatManager implements LiveChatInfoListener, AudioManagerUtils
 
     public void e() {
         this.h.removeCallbacks(this.r);
-        this.h.postDelayed(this.r, m.ag);
+        this.h.postDelayed(this.r, 3000L);
     }
 
     public void e(boolean z) {
@@ -1243,10 +1235,10 @@ public class LiveFloatManager implements LiveChatInfoListener, AudioManagerUtils
                         viewGroup.removeView(LiveFloatManager.this.b);
                         viewGroup.addView(LiveFloatManager.this.b);
                     }
-                    if (LiveFloatManager.this.f13617a == null || LiveFloatManager.this.f13617a.getHolder() == null) {
+                    if (LiveFloatManager.this.a == null || LiveFloatManager.this.a.getHolder() == null) {
                         LiveFloatManager.this.b.a();
                     } else {
-                        LiveFloatManager.this.f13617a.getHolder().addCallback(LiveFloatManager.this.ax);
+                        LiveFloatManager.this.a.getHolder().addCallback(LiveFloatManager.this.ax);
                     }
                 }
             }, 500L);
@@ -1313,7 +1305,7 @@ public class LiveFloatManager implements LiveChatInfoListener, AudioManagerUtils
 
     public void n() {
         synchronized (this) {
-            Logger.a("ddrb", "close");
+            Logger.a("ddrb", LoaderConstants.CLOSE);
             p();
             AudioManagerUtils.a().a((AudioManagerUtils.AudioFocusCallback) null);
             AudioManagerUtils.a().a(false);
@@ -1405,7 +1397,7 @@ public class LiveFloatManager implements LiveChatInfoListener, AudioManagerUtils
             Logger.b("ddrb", "live miss reason:", this.g);
             if (!this.v && LiveRoomCloseReason.isCloseByNormal(this.g)) {
                 this.h.removeCallbacks(this.s);
-                this.h.postDelayed(this.s, m.ag);
+                this.h.postDelayed(this.s, 3000L);
                 return;
             }
             W();

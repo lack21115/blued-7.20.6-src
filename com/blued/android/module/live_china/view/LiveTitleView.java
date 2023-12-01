@@ -1,5 +1,6 @@
 package com.blued.android.module.live_china.view;
 
+import android.app.Activity;
 import android.content.Context;
 import android.text.Editable;
 import android.text.TextUtils;
@@ -27,13 +28,9 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveTitleView.class */
 public class LiveTitleView extends FrameLayout implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    public View f14935a;
+    public View a;
     private Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private LayoutInflater f14936c;
+    private LayoutInflater c;
     private View d;
     private View e;
     private EditText f;
@@ -55,15 +52,13 @@ public class LiveTitleView extends FrameLayout implements View.OnClickListener {
         super(context, attributeSet, i);
         this.k = new TextWatcher() { // from class: com.blued.android.module.live_china.view.LiveTitleView.4
             private int b;
-
-            /* renamed from: c  reason: collision with root package name */
-            private int f14941c;
+            private int c;
 
             @Override // android.text.TextWatcher
             public void afterTextChanged(Editable editable) {
                 int i2;
                 this.b = LiveTitleView.this.f.getSelectionStart();
-                this.f14941c = LiveTitleView.this.f.getSelectionEnd();
+                this.c = LiveTitleView.this.f.getSelectionEnd();
                 LiveTitleView.this.f.removeTextChangedListener(LiveTitleView.this.k);
                 String trim = LiveTitleView.this.f.getText().toString().trim();
                 if (editable.length() > 0) {
@@ -88,9 +83,9 @@ public class LiveTitleView extends FrameLayout implements View.OnClickListener {
                 }
                 Logger.a("drb", "mTextMaxLength - ", Integer.valueOf(i3));
                 while (editable.length() > i3) {
-                    editable.delete(this.b - 1, this.f14941c);
+                    editable.delete(this.b - 1, this.c);
                     this.b--;
-                    this.f14941c--;
+                    this.c--;
                 }
                 LiveTitleView.this.f.setSelection(this.b);
                 LiveTitleView.this.f.addTextChangedListener(LiveTitleView.this.k);
@@ -127,11 +122,11 @@ public class LiveTitleView extends FrameLayout implements View.OnClickListener {
     public void a(boolean z, RecordingOnliveFragment recordingOnliveFragment) {
         this.h = recordingOnliveFragment;
         LayoutInflater from = LayoutInflater.from(this.b);
-        this.f14936c = from;
+        this.c = from;
         View inflate = from.inflate(z ? R.layout.live_title_view_land : R.layout.live_title_view, this);
         this.d = inflate.findViewById(R.id.ll_content);
         this.e = inflate.findViewById(R.id.live_title_layer);
-        this.f14935a = inflate.findViewById(R.id.ll_loading);
+        this.a = inflate.findViewById(R.id.ll_loading);
         this.f = (EditText) inflate.findViewById(R.id.live_title_edit);
         this.g = (TextView) inflate.findViewById(R.id.live_title_save);
         this.i = inflate.findViewById(R.id.live_title_edit_del);
@@ -179,7 +174,7 @@ public class LiveTitleView extends FrameLayout implements View.OnClickListener {
             public void onAnimationEnd(Animation animation) {
                 LiveTitleView.this.setVisibility(8);
                 if (LiveTitleView.this.j) {
-                    KeyboardUtils.a(LiveTitleView.this.h.getActivity());
+                    KeyboardUtils.a((Activity) LiveTitleView.this.h.getActivity());
                 }
             }
 
@@ -201,13 +196,13 @@ public class LiveTitleView extends FrameLayout implements View.OnClickListener {
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 super.onUIFinish();
-                LiveTitleView.this.f14935a.setVisibility(8);
+                LiveTitleView.this.a.setVisibility(8);
             }
 
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 super.onUIStart();
-                LiveTitleView.this.f14935a.setVisibility(0);
+                LiveTitleView.this.a.setVisibility(0);
             }
 
             @Override // com.blued.android.framework.http.BluedUIHttpResponse

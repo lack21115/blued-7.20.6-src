@@ -16,11 +16,11 @@ public class a extends a.a.a.a.a.a.a implements a.a.a.a.a.a.g.a {
         this.b = dVar;
         dVar.d();
         this.b.a(this);
-        this.f1213c = 0;
+        this.f1165c = 0;
     }
 
     @Override // a.a.a.a.a.a.g.a
     public void a(PLAVFrame pLAVFrame, PLBufferInfo pLBufferInfo) {
-        this.b.a(this.f1212a, pLAVFrame, pLBufferInfo, false);
+        this.b.a(this.f1164a, pLAVFrame, pLBufferInfo, false);
     }
 }

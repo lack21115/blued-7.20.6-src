@@ -26,7 +26,7 @@ public class PM {
     private static final Map<Class<?>, String> b = new b();
 
     /* renamed from: c  reason: collision with root package name */
-    private final Context f27916c;
+    private final Context f14228c;
     private String d;
     private File e;
     private volatile int f;
@@ -42,7 +42,7 @@ public class PM {
     private String q;
 
     /* renamed from: a  reason: collision with root package name */
-    final ExecutorService f27915a = Executors.newSingleThreadExecutor();
+    final ExecutorService f14227a = Executors.newSingleThreadExecutor();
     private boolean o = false;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -74,7 +74,7 @@ public class PM {
     }
 
     public PM(Context context, f fVar) {
-        this.f27916c = context.getApplicationContext();
+        this.f14228c = context.getApplicationContext();
         this.k = fVar;
         com.qq.e.comm.managers.plugin.b.a(context);
         if (SDKStatus.isNoPlugin) {
@@ -85,21 +85,21 @@ public class PM {
 
     private void a() {
         this.o = false;
-        SharedPreferences sharedPreferences = this.f27916c.getSharedPreferences("start_crash", 0);
+        SharedPreferences sharedPreferences = this.f14228c.getSharedPreferences("start_crash", 0);
         if (sharedPreferences.getInt("crash_count", 0) >= 2) {
             this.p = true;
             sharedPreferences.edit().remove("crash_count").commit();
             GDTLogger.e("加载本地插件");
         }
-        this.n = this.f27915a.submit(new a());
+        this.n = this.f14227a.submit(new a());
     }
 
     private boolean b() {
         if (this.j) {
             try {
-                com.qq.e.comm.managers.plugin.b.a(this.f27916c, h.b(this.f27916c), h.d(this.f27916c));
+                com.qq.e.comm.managers.plugin.b.a(this.f14228c, h.b(this.f14228c), h.d(this.f14228c));
                 this.d = Sig.ASSET_PLUGIN_SIG;
-                this.e = h.b(this.f27916c);
+                this.e = h.b(this.f14228c);
                 this.f = SDKStatus.getBuildInPluginVersion();
                 return true;
             } catch (Throwable th) {
@@ -224,7 +224,7 @@ public class PM {
             return;
         }
         try {
-            pm.g = new DexClassLoader(pm.e.getAbsolutePath(), h.a(pm.f27916c).getAbsolutePath(), null, pm.getClass().getClassLoader());
+            pm.g = new DexClassLoader(pm.e.getAbsolutePath(), h.a(pm.f14228c).getAbsolutePath(), null, pm.getClass().getClassLoader());
             f fVar = pm.k;
             if (fVar != null) {
                 fVar.a();
@@ -244,18 +244,18 @@ public class PM {
             return false;
         }
         if (this.j) {
-            g gVar = new g(h.c(this.f27916c), h.e(this.f27916c));
+            g gVar = new g(h.c(this.f14228c), h.e(this.f14228c));
             if (gVar.a()) {
-                boolean a2 = gVar.a(h.b(this.f27916c), h.d(this.f27916c));
+                boolean a2 = gVar.a(h.b(this.f14228c), h.d(this.f14228c));
                 GDTLogger.d("NextExist,Updated=" + a2);
             }
         }
-        g gVar2 = new g(h.b(this.f27916c), h.d(this.f27916c));
+        g gVar2 = new g(h.b(this.f14228c), h.d(this.f14228c));
         if (gVar2.a()) {
             if (gVar2.b() >= SDKStatus.getBuildInPluginVersion()) {
                 this.d = gVar2.c();
                 this.f = gVar2.b();
-                this.e = h.b(this.f27916c);
+                this.e = h.b(this.f14228c);
                 this.q = gVar2.d();
                 this.o = true;
                 return true;
@@ -276,7 +276,7 @@ public class PM {
             jSONObject.put("pv", pluginVersion);
             jSONObject.put("sig", this.d);
             jSONObject.put("appId", com.qq.e.comm.managers.b.b().a());
-            jSONObject.put("pn", com.qq.e.comm.managers.plugin.b.a(this.f27916c));
+            jSONObject.put("pn", com.qq.e.comm.managers.plugin.b.a(this.f14228c));
             jSONObject.put("ict", this.m);
             jSONObject.put("mup", this.j);
             return jSONObject;
@@ -308,7 +308,7 @@ public class PM {
                 throw new e("factory  implemention name is not specified for interface:" + cls.getName());
             }
             Class<?> loadClass = classLoader.loadClass(str);
-            T cast = cls.cast(loadClass.getDeclaredMethod("getInstance", Context.class, JSONObject.class).invoke(loadClass, this.f27916c, d()));
+            T cast = cls.cast(loadClass.getDeclaredMethod("getInstance", Context.class, JSONObject.class).invoke(loadClass, this.f14228c, d()));
             GDTLogger.d("ServiceDelegateFactory =" + cast);
             return cast;
         } catch (Throwable th) {
@@ -354,7 +354,7 @@ public class PM {
     public boolean tryLockUpdate() {
         boolean z = false;
         try {
-            File f = h.f(this.f27916c);
+            File f = h.f(this.f14228c);
             if (!f.exists()) {
                 f.createNewFile();
                 h.a("lock", f);

@@ -25,11 +25,11 @@ public class DynamicModule {
     public static final int MODULE_NORMAL = 0;
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f22447a = "DynamicModule";
+    private static final String f8839a = "DynamicModule";
     private static final int b = 256;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final int f22448c = -100;
+    private static final int f8840c = -100;
     private static final ThreadLocal<HashMap<String, Boolean>> d = new ThreadLocal<>();
     private static final ThreadLocal<HashMap<String, String>> e = new ThreadLocal<>();
     private static final ThreadLocal<HashMap<String, IDynamicLoader>> f = new ThreadLocal<>();
@@ -39,14 +39,14 @@ public class DynamicModule {
     public static class DynamicLoaderClassLoader {
 
         /* renamed from: a  reason: collision with root package name */
-        private static HashMap<String, ClassLoader> f22452a = new HashMap<>();
+        private static HashMap<String, ClassLoader> f8844a = new HashMap<>();
 
         public static ClassLoader getsClassLoader(String str) {
-            return f22452a.get(str);
+            return f8844a.get(str);
         }
 
         public static void setsClassLoader(String str, ClassLoader classLoader) {
-            f22452a.put(str, classLoader);
+            f8844a.put(str, classLoader);
         }
     }
 
@@ -54,7 +54,7 @@ public class DynamicModule {
     public static class LoadingException extends Exception {
 
         /* renamed from: a  reason: collision with root package name */
-        private Bundle f22453a;
+        private Bundle f8845a;
 
         public LoadingException(String str) {
             super(str);
@@ -62,11 +62,11 @@ public class DynamicModule {
 
         public LoadingException(String str, Bundle bundle) {
             super(str);
-            this.f22453a = bundle;
+            this.f8845a = bundle;
         }
 
         public Bundle getBundle() {
-            return this.f22453a;
+            return this.f8845a;
         }
     }
 
@@ -91,22 +91,22 @@ public class DynamicModule {
             IObjectWrapper load = iDynamicLoader.load(ObjectWrapper.wrap(context), str, bundle.getInt("module_version"), ObjectWrapper.wrap(bundle));
             Object unwrap = ObjectWrapper.unwrap(load);
             if (unwrap == null) {
-                aa.c(f22447a, "Get remote context is null, module:".concat(String.valueOf(str)));
+                aa.c(f8839a, "Get remote context is null, module:".concat(String.valueOf(str)));
                 return null;
             } else if (unwrap instanceof Context) {
-                aa.b(f22447a, "Get context for module:" + str + " success.");
+                aa.b(f8839a, "Get context for module:" + str + " success.");
                 return (Context) unwrap;
             } else if (unwrap.getClass().getName().equals(LoadingException.class.getName())) {
-                aa.c(f22447a, "Successfully get the bundle in exception.");
+                aa.c(f8839a, "Successfully get the bundle in exception.");
                 throw new LoadingException("Failed to load, please check the bundle in exception.", (Bundle) ObjectWrapper.unwrap(load).getClass().getDeclaredMethod("getBundle", new Class[0]).invoke(ObjectWrapper.unwrap(load), new Object[0]));
             } else {
-                aa.c(f22447a, "Get remote context is null, module:".concat(String.valueOf(str)));
+                aa.c(f8839a, "Get remote context is null, module:".concat(String.valueOf(str)));
                 return null;
             }
         } catch (LoadingException e2) {
             throw e2;
         } catch (Exception e3) {
-            aa.c(f22447a, "Failed to get module context for:" + str + " " + e3.getClass().getSimpleName());
+            aa.c(f8839a, "Failed to get module context for:" + str + " " + e3.getClass().getSimpleName());
             return null;
         }
     }
@@ -122,11 +122,11 @@ public class DynamicModule {
                 declaredMethod = a2.getDeclaredMethod("setsClassLoader", String.class, ClassLoader.class);
                 classLoader = (ClassLoader) declaredMethod2.invoke(null, str);
             } catch (Exception e2) {
-                aa.c(f22447a, "failed to load." + e2.getClass().getSimpleName());
+                aa.c(f8839a, "failed to load." + e2.getClass().getSimpleName());
             }
             if (classLoader == null) {
                 try {
-                    aa.b(f22447a, "No available cached loader, query remote.");
+                    aa.b(f8839a, "No available cached loader, query remote.");
                     Bundle b2 = b(context, str);
                     synchronized (DynamicModule.class) {
                         try {
@@ -135,7 +135,7 @@ public class DynamicModule {
                                 return b2;
                             }
                             if (Build.VERSION.SDK_INT < 21) {
-                                aa.b(f22447a, "The android version is below android 5.");
+                                aa.b(f8839a, "The android version is below android 5.");
                                 d dVar = new d(str2, context.getFilesDir().getAbsolutePath(), ClassLoader.getSystemClassLoader());
                                 a(str, dVar);
                                 declaredMethod.invoke(null, str, dVar);
@@ -146,7 +146,7 @@ public class DynamicModule {
                             }
                             d.set(new HashMap<String, Boolean>() { // from class: com.huawei.hms.ads.dynamic.DynamicModule.1
                                 {
-                                    put(String.this, Boolean.TRUE);
+                                    put(str, Boolean.TRUE);
                                 }
                             });
                             return b2;
@@ -157,11 +157,11 @@ public class DynamicModule {
                 } catch (a e3) {
                 }
             } else if (classLoader != ClassLoader.getSystemClassLoader()) {
-                aa.b(f22447a, "Cached loader is available, ready to use it.");
+                aa.b(f8839a, "Cached loader is available, ready to use it.");
                 try {
                     a(str, classLoader);
                 } catch (LoadingException e4) {
-                    aa.c(f22447a, "Get loader interface failed." + e4.getClass().getSimpleName());
+                    aa.c(f8839a, "Get loader interface failed." + e4.getClass().getSimpleName());
                 }
                 HashMap<String, Boolean> hashMap = new HashMap<>();
                 hashMap.put(str, Boolean.valueOf(z));
@@ -195,7 +195,7 @@ public class DynamicModule {
 
     private static DynamicModule a(Context context, String str, Bundle bundle) throws LoadingException {
         g gVar = new g();
-        aa.b(f22447a, "new DynamicLoader.");
+        aa.b(f8839a, "new DynamicLoader.");
         if (context.getApplicationContext() != null) {
             context = context.getApplicationContext();
         }
@@ -212,7 +212,7 @@ public class DynamicModule {
         bundle.putInt(com.huawei.hms.ads.dynamic.a.m, intValue);
         try {
             g gVar = new g();
-            aa.b(f22447a, "new DynamicLoader.");
+            aa.b(f8839a, "new DynamicLoader.");
             Context a2 = a(context.getApplicationContext() == null ? context : context.getApplicationContext(), str, bundle, gVar);
             if (a2 != null) {
                 return new DynamicModule(a2);
@@ -221,7 +221,7 @@ public class DynamicModule {
         } catch (LoadingException e2) {
             throw e2;
         } catch (Exception e3) {
-            aa.d(f22447a, "Other exception," + e3.getClass().getSimpleName());
+            aa.d(f8839a, "Other exception," + e3.getClass().getSimpleName());
             if (context.getApplicationContext() != null) {
                 context = context.getApplicationContext();
             }
@@ -237,7 +237,7 @@ public class DynamicModule {
             }
             cls = context.getClassLoader().loadClass(DynamicLoaderClassLoader.class.getName());
         } catch (ClassNotFoundException e2) {
-            aa.c(f22447a, "ClassLoader class not found when use client context.");
+            aa.c(f8839a, "ClassLoader class not found when use client context.");
             cls = null;
         }
         if (cls == null) {
@@ -259,7 +259,7 @@ public class DynamicModule {
             final IBinder iBinder = (IBinder) classLoader.loadClass(com.huawei.hms.ads.dynamic.a.b).getConstructor(new Class[0]).newInstance(new Object[0]);
             f.set(new HashMap<String, IDynamicLoader>() { // from class: com.huawei.hms.ads.dynamic.DynamicModule.3
                 {
-                    put(String.this, IDynamicLoader.Stub.asInterface(iBinder));
+                    put(str, IDynamicLoader.Stub.asInterface(iBinder));
                 }
             });
         } catch (ClassNotFoundException | IllegalAccessException | InstantiationException | NoSuchMethodException | InvocationTargetException e2) {
@@ -274,13 +274,13 @@ public class DynamicModule {
             if (!TextUtils.isEmpty(string) && new File(string).exists()) {
                 e.set(new HashMap<String, String>() { // from class: com.huawei.hms.ads.dynamic.DynamicModule.2
                     {
-                        put(String.this, string);
+                        put(str, string);
                     }
                 });
-                aa.b(f22447a, "Query remote version by module name:" + str + " success.");
+                aa.b(f8839a, "Query remote version by module name:" + str + " success.");
                 return queryHMSModuleBundle;
             }
-            aa.c(f22447a, "The loader_path:" + string + " in query bundle is not available,change the module version to:-100");
+            aa.c(f8839a, "The loader_path:" + string + " in query bundle is not available,change the module version to:-100");
             queryHMSModuleBundle.putInt("module_version", -100);
             return queryHMSModuleBundle;
         } catch (LoadingException e2) {
@@ -301,7 +301,7 @@ public class DynamicModule {
     public static int getLocalVersion(Context context, String str) {
         String str2;
         if (context == null || str.length() == 0 || str.length() > 256) {
-            aa.d(f22447a, "Invalid context or moduleName.");
+            aa.d(f8839a, "Invalid context or moduleName.");
             return 0;
         }
         try {
@@ -312,11 +312,11 @@ public class DynamicModule {
             return context.getClassLoader().loadClass(str3).getDeclaredField("MODULE_VERSION").getInt(null);
         } catch (ClassNotFoundException e2) {
             str2 = "Cannot find the class of module descriptor for ".concat(String.valueOf(str));
-            aa.c(f22447a, str2);
+            aa.c(f8839a, str2);
             return 0;
         } catch (Exception e3) {
             str2 = "Get local module info failed." + e3.getClass().getSimpleName();
-            aa.c(f22447a, str2);
+            aa.c(f8839a, str2);
             return 0;
         }
     }
@@ -326,7 +326,7 @@ public class DynamicModule {
         } catch (LoadingException e2) {
             throw e2;
         } catch (Exception e3) {
-            aa.c(f22447a, "Get remote module info for " + str + " failed." + e3.getClass().getSimpleName());
+            aa.c(f8839a, "Get remote module info for " + str + " failed." + e3.getClass().getSimpleName());
         }
         synchronized (DynamicModule.class) {
             try {
@@ -340,7 +340,7 @@ public class DynamicModule {
                     try {
                         return b(context, str);
                     } catch (a e4) {
-                        aa.c(f22447a, "Query remote module info in HMS failed." + e4.getClass().getSimpleName());
+                        aa.c(f8839a, "Query remote module info in HMS failed." + e4.getClass().getSimpleName());
                     }
                 }
                 return new Bundle();
@@ -353,12 +353,12 @@ public class DynamicModule {
         try {
             Bundle b2 = b(context, str);
             if (b2 == null || b2.isEmpty()) {
-                aa.c(f22447a, "Query remote module:" + str + " info failed.");
+                aa.c(f8839a, "Query remote module:" + str + " info failed.");
                 throw new LoadingException("Query remote module info failed: null or empty.");
             }
             return b2.getInt("module_version");
         } catch (a e2) {
-            aa.c(f22447a, "Query remote module:" + str + " exception:" + e2);
+            aa.c(f8839a, "Query remote module:" + str + " exception:" + e2);
             return 0;
         }
     }
@@ -376,18 +376,18 @@ public class DynamicModule {
             try {
                 ContentResolver contentResolver = context.getContentResolver();
                 if (contentResolver != null) {
-                    Bundle call = contentResolver.call(Uri.parse(com.huawei.hms.ads.dynamic.a.f22459a), str, null, null);
+                    Bundle call = contentResolver.call(Uri.parse(com.huawei.hms.ads.dynamic.a.f8851a), str, null, null);
                     if (call == null) {
-                        aa.c(f22447a, "Failed to get bundle info:null.");
+                        aa.c(f8839a, "Failed to get bundle info:null.");
                         throw new a("Query remote version failed: null bundle info.", (byte) 0);
                     }
                     int i = call.getInt("errcode");
                     String string = call.getString("loader_path");
-                    aa.b(f22447a, "bundle info: errorCode:" + i + ", moduleVersion:" + call.getInt("module_version") + ", modulePath:" + call.getString("module_path") + ", loader_version:" + call.getInt("loader_version") + ", loaderPath:" + string + ", armeabiType:" + call.getInt("armeabiType"));
+                    aa.b(f8839a, "bundle info: errorCode:" + i + ", moduleVersion:" + call.getInt("module_version") + ", modulePath:" + call.getString("module_path") + ", loader_version:" + call.getInt("loader_version") + ", loaderPath:" + string + ", armeabiType:" + call.getInt("armeabiType"));
                     if (i == 0) {
                         return call;
                     }
-                    aa.c(f22447a, "Failed to get " + str + " bundle info, errcode:" + i);
+                    aa.c(f8839a, "Failed to get " + str + " bundle info, errcode:" + i);
                     throw new LoadingException("Query " + str + " unavailable, errorCode:" + i, call);
                 }
                 throw new a("Query remote version failed: null contentResolver.", (byte) 0);

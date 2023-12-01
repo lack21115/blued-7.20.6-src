@@ -22,13 +22,9 @@ import javax.annotation.OverridingMethodsMustInvokeSuper;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/mine/backpack/BaseGiftBagRootFragment.class */
 public abstract class BaseGiftBagRootFragment<T extends CommonGiftPackageModel> extends BaseViewPagerParentFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected CommonGiftTabView f13890a;
+    protected CommonGiftTabView a;
     protected final List<T> b = new ArrayList();
-
-    /* renamed from: c  reason: collision with root package name */
-    protected int f13891c = 0;
+    protected int c = 0;
     protected boolean d = false;
     protected String e = null;
 
@@ -86,10 +82,10 @@ public abstract class BaseGiftBagRootFragment<T extends CommonGiftPackageModel> 
             bundle.putString("package_index", t.index);
             bundle.putInt("package_tab_index", t.tabIndex);
         }
-        BaseFragment a2 = a(t, bundle);
-        a2.setArguments(bundle);
+        BaseFragment a = a(t, bundle);
+        a.setArguments(bundle);
         LogUtils.c("instanceFragment: " + i);
-        return a2;
+        return a;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -123,42 +119,37 @@ public abstract class BaseGiftBagRootFragment<T extends CommonGiftPackageModel> 
     @Override // com.blued.android.module.common.fragment.BaseViewPagerParentFragment
     public void e() {
         super.e();
-        this.f13890a.setData(this.b);
+        this.a.setData(this.b);
     }
 
-    @Override // com.blued.android.framework.ui.SimpleFragment
     @OverridingMethodsMustInvokeSuper
     public void onInitListener() {
         super.onInitListener();
         this.h.addOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: com.blued.android.module.live_china.mine.backpack.BaseGiftBagRootFragment.1
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageScrollStateChanged(int i) {
                 if (i == 1) {
                     BaseGiftBagRootFragment.this.d = true;
                 }
             }
 
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageScrolled(int i, float f, int i2) {
             }
 
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageSelected(int i) {
-                BaseGiftBagRootFragment.this.f13890a.setToolBtnSelect(i);
+                BaseGiftBagRootFragment.this.a.setToolBtnSelect(i);
                 BaseGiftBagRootFragment.this.a(i);
                 if (BaseGiftBagRootFragment.this.d && BaseGiftBagRootFragment.this.j.size() > i && BaseGiftBagRootFragment.this.j.get(i) != null && ((BaseFragment) BaseGiftBagRootFragment.this.j.get(i)).isAdded() && (BaseGiftBagRootFragment.this.j.get(i) instanceof BaseGiftParentFragment)) {
-                    if (BaseGiftBagRootFragment.this.f13891c < i) {
+                    if (BaseGiftBagRootFragment.this.c < i) {
                         ((BaseGiftParentFragment) BaseGiftBagRootFragment.this.j.get(i)).a(false);
                     } else {
                         ((BaseGiftParentFragment) BaseGiftBagRootFragment.this.j.get(i)).b(false);
                     }
                 }
                 BaseGiftBagRootFragment.this.d = false;
-                BaseGiftBagRootFragment.this.f13891c = i;
+                BaseGiftBagRootFragment.this.c = i;
             }
         });
         LiveEventBus.get("gift_package_selected", String.class).observe(this, new Observer<String>() { // from class: com.blued.android.module.live_china.mine.backpack.BaseGiftBagRootFragment.2
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(String str) {
                 int i;
@@ -178,20 +169,19 @@ public abstract class BaseGiftBagRootFragment<T extends CommonGiftPackageModel> 
                         i2 = i + 1;
                     }
                 }
-                BaseGiftBagRootFragment.this.f13890a.setToolBtnSelect(i);
+                BaseGiftBagRootFragment.this.a.setToolBtnSelect(i);
                 BaseGiftBagRootFragment.this.a(i);
                 BaseGiftBagRootFragment.this.b.get(i).hasNew = false;
             }
         });
     }
 
-    @Override // com.blued.android.module.common.fragment.BaseViewPagerParentFragment, com.blued.android.framework.ui.SimpleFragment
+    @Override // com.blued.android.module.common.fragment.BaseViewPagerParentFragment
     public void onInitView() {
         super.onInitView();
-        this.f13890a = (CommonGiftTabView) this.rootView.findViewById(R.id.base_gift_toolbar_view);
+        this.a = (CommonGiftTabView) this.rootView.findViewById(R.id.base_gift_toolbar_view);
     }
 
-    @Override // com.blued.android.framework.ui.SimpleFragment
     public int onSetRootViewId() {
         return R.layout.fragment_base_gift;
     }

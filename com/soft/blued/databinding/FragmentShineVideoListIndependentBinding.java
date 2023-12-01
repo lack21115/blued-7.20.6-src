@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentShineVideoListIndependentBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f28975a;
+    private final LinearLayout f15285a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f28975a;
+        return this.f15285a;
     }
 }

@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemChatReceivedShareLinkBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29116a;
+    private final LinearLayout f15426a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29116a;
+        return this.f15426a;
     }
 }

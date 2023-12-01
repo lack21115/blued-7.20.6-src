@@ -13,8 +13,8 @@ import io.github.inflationx.viewpump.ViewPumpContextWrapper;
 public class CorePageCallback extends UIPageCallback {
     @Override // com.blued.android.core.ui.UIPageCallback
     public Context a(Context context) {
-        ContextWrapper a2 = BluedContextWrapper.a(context);
-        return AppInfo.o() ? ViewPumpContextWrapper.wrap(a2) : super.a(a2);
+        ContextWrapper a = BluedContextWrapper.a(context);
+        return AppInfo.o() ? ViewPumpContextWrapper.wrap(a) : super.a(a);
     }
 
     @Override // com.blued.android.core.ui.UIPageCallback

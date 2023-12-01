@@ -3,7 +3,6 @@ package com.tencent.map.geolocation;
 import android.os.Bundle;
 import android.text.TextUtils;
 import c.t.m.g.h5;
-import com.alipay.sdk.util.i;
 
 /* loaded from: source-8829756-dex2jar.jar:com/tencent/map/geolocation/TencentLocationRequest.class */
 public final class TencentLocationRequest {
@@ -19,11 +18,11 @@ public final class TencentLocationRequest {
     public static final int REQUEST_LEVEL_POI = 4;
 
     /* renamed from: a  reason: collision with root package name */
-    public long f37256a;
+    public long f23565a;
     public int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public boolean f37257c;
+    public boolean f23566c;
     public boolean d;
     public boolean e;
     public boolean f;
@@ -41,13 +40,13 @@ public final class TencentLocationRequest {
     }
 
     public TencentLocationRequest(TencentLocationRequest tencentLocationRequest) {
-        this.f37256a = tencentLocationRequest.f37256a;
+        this.f23565a = tencentLocationRequest.f23565a;
         this.b = tencentLocationRequest.b;
         this.d = tencentLocationRequest.d;
         this.e = tencentLocationRequest.e;
         this.g = tencentLocationRequest.g;
         this.h = tencentLocationRequest.h;
-        this.f37257c = tencentLocationRequest.f37257c;
+        this.f23566c = tencentLocationRequest.f23566c;
         this.i = tencentLocationRequest.i;
         this.f = tencentLocationRequest.f;
         this.k = tencentLocationRequest.k;
@@ -61,7 +60,7 @@ public final class TencentLocationRequest {
     }
 
     public static void copy(TencentLocationRequest tencentLocationRequest, TencentLocationRequest tencentLocationRequest2) {
-        tencentLocationRequest.f37256a = tencentLocationRequest2.f37256a;
+        tencentLocationRequest.f23565a = tencentLocationRequest2.f23565a;
         tencentLocationRequest.b = tencentLocationRequest2.b;
         tencentLocationRequest.d = tencentLocationRequest2.d;
         tencentLocationRequest.e = tencentLocationRequest2.e;
@@ -69,7 +68,7 @@ public final class TencentLocationRequest {
         tencentLocationRequest.i = tencentLocationRequest2.i;
         tencentLocationRequest.h = tencentLocationRequest2.h;
         tencentLocationRequest.f = tencentLocationRequest2.f;
-        tencentLocationRequest.f37257c = tencentLocationRequest2.f37257c;
+        tencentLocationRequest.f23566c = tencentLocationRequest2.f23566c;
         tencentLocationRequest.k = tencentLocationRequest2.k;
         tencentLocationRequest.j = tencentLocationRequest2.j;
         tencentLocationRequest.l.clear();
@@ -81,7 +80,7 @@ public final class TencentLocationRequest {
 
     public static TencentLocationRequest create() {
         TencentLocationRequest tencentLocationRequest = new TencentLocationRequest();
-        tencentLocationRequest.f37256a = 5000L;
+        tencentLocationRequest.f23565a = 5000L;
         tencentLocationRequest.b = 3;
         tencentLocationRequest.d = true;
         tencentLocationRequest.e = false;
@@ -89,7 +88,7 @@ public final class TencentLocationRequest {
         tencentLocationRequest.f = false;
         tencentLocationRequest.g = Long.MAX_VALUE;
         tencentLocationRequest.h = Integer.MAX_VALUE;
-        tencentLocationRequest.f37257c = true;
+        tencentLocationRequest.f23566c = true;
         tencentLocationRequest.k = "";
         tencentLocationRequest.j = "";
         tencentLocationRequest.l = new Bundle();
@@ -112,7 +111,7 @@ public final class TencentLocationRequest {
     }
 
     public long getInterval() {
-        return this.f37256a;
+        return this.f23565a;
     }
 
     public int getLocMode() {
@@ -149,7 +148,7 @@ public final class TencentLocationRequest {
     }
 
     public boolean isAllowGPS() {
-        return this.f37257c;
+        return this.f23566c;
     }
 
     public boolean isGpsFirst() {
@@ -172,7 +171,7 @@ public final class TencentLocationRequest {
 
     public TencentLocationRequest setAllowGPS(boolean z) {
         if (this.b == 10) {
-            this.f37257c = z;
+            this.f23566c = z;
         }
         return this;
     }
@@ -187,7 +186,7 @@ public final class TencentLocationRequest {
 
     public TencentLocationRequest setGpsFirst(boolean z) {
         this.n = z;
-        this.f37257c = z || this.f37257c;
+        this.f23566c = z || this.f23566c;
         return this;
     }
 
@@ -210,7 +209,7 @@ public final class TencentLocationRequest {
 
     public TencentLocationRequest setInterval(long j) {
         if (j >= 0) {
-            this.f37256a = j;
+            this.f23565a = j;
             return this;
         }
         throw new IllegalArgumentException("interval should >= 0");
@@ -222,11 +221,11 @@ public final class TencentLocationRequest {
         }
         this.m = i;
         if (i == 11) {
-            this.f37257c = false;
+            this.f23566c = false;
             return this;
         }
         if (i == 12) {
-            this.f37257c = true;
+            this.f23566c = true;
         }
         return this;
     }
@@ -261,6 +260,6 @@ public final class TencentLocationRequest {
     }
 
     public String toString() {
-        return "TencentLocationRequest {interval = " + this.f37256a + "ms , level = " + this.b + ", LocMode = " + this.m + ", allowGps = " + this.f37257c + ", isGPsFirst = " + this.n + ", GpsFirstTimeOut = " + this.o + ", allowDirection = " + this.e + ", isIndoorMode = " + this.f + ", QQ = " + this.k + i.d;
+        return "TencentLocationRequest {interval = " + this.f23565a + "ms , level = " + this.b + ", LocMode = " + this.m + ", allowGps = " + this.f23566c + ", isGPsFirst = " + this.n + ", GpsFirstTimeOut = " + this.o + ", allowDirection = " + this.e + ", isIndoorMode = " + this.f + ", QQ = " + this.k + "}";
     }
 }

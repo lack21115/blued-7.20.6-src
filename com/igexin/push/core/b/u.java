@@ -6,13 +6,13 @@ import com.igexin.push.extension.mod.BaseActionBean;
 public final class u extends BaseActionBean {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f23463a;
+    private String f9855a;
 
     private String a() {
-        return this.f23463a;
+        return this.f9855a;
     }
 
     private void a(String str) {
-        this.f23463a = str;
+        this.f9855a = str;
     }
 }

@@ -19,13 +19,9 @@ import java.util.Map;
 public class c {
     public static <T> void a(final e.a aVar, final String str, final Map<String, String> map, final Map<String, String> map2, final Type type, final ModelCallback<T> modelCallback) {
         new AsyncTask() { // from class: com.blued.android.sdk.a.c.1
-
-            /* renamed from: a  reason: collision with root package name */
-            int f18653a = -1;
+            int a = -1;
             String b = "";
-
-            /* renamed from: c  reason: collision with root package name */
-            T f18654c = null;
+            T c = null;
 
             /* JADX WARN: Type inference failed for: r1v18, types: [T, com.blued.android.sdk.model.EmptyModel] */
             /* JADX WARN: Type inference failed for: r1v21, types: [T, java.lang.Object] */
@@ -39,18 +35,18 @@ public class c {
                         String str2 = BluedSDK.TAG;
                         Log.v(str2, "start get link:" + url);
                     }
-                    HttpURLConnection a2 = e.a(aVar, url, map, map2);
-                    int responseCode = a2.getResponseCode();
-                    this.f18653a = responseCode;
-                    String a3 = e.a(a2);
+                    HttpURLConnection a = e.a(aVar, url, map, map2);
+                    int responseCode = a.getResponseCode();
+                    this.a = responseCode;
+                    String a2 = e.a(a);
                     if (BluedSDK.DEBUG) {
                         String str3 = BluedSDK.TAG;
-                        Log.v(str3, "response get link:" + url + ", status:" + this.f18653a + ", response:" + a3);
+                        Log.v(str3, "response get link:" + url + ", status:" + this.a + ", response:" + a2);
                     }
-                    if (TextUtils.isEmpty(a3) || (bluedEntity = (BluedEntity) new Gson().fromJson(a3, type)) == null) {
+                    if (TextUtils.isEmpty(a2) || (bluedEntity = (BluedEntity) new Gson().fromJson(a2, type)) == null) {
                         return null;
                     }
-                    this.f18653a = bluedEntity.code;
+                    this.a = bluedEntity.code;
                     this.b = bluedEntity.message;
                     if (modelCallback == null || responseCode < 200 || responseCode >= 300) {
                         return null;
@@ -62,13 +58,13 @@ public class c {
                     }
                     if (bluedEntity.data != null) {
                         if (obj.contains("java.util.List")) {
-                            this.f18654c = bluedEntity.data;
+                            this.c = bluedEntity.data;
                             return null;
                         } else if (bluedEntity.data.size() > 0) {
-                            this.f18654c = bluedEntity.data.get(0);
+                            this.c = bluedEntity.data.get(0);
                             return null;
                         } else if (obj.contains(EmptyModel.class.getSimpleName())) {
-                            this.f18654c = new EmptyModel();
+                            this.c = new EmptyModel();
                             return null;
                         } else {
                             return null;
@@ -82,17 +78,16 @@ public class c {
                 }
             }
 
-            /* JADX INFO: Access modifiers changed from: protected */
             @Override // android.os.AsyncTask
-            public void onPostExecute(Object obj) {
+            protected void onPostExecute(Object obj) {
                 super.onPostExecute(obj);
                 ModelCallback modelCallback2 = modelCallback;
                 if (modelCallback2 != null) {
-                    T t = this.f18654c;
+                    T t = this.c;
                     if (t != 0) {
                         modelCallback2.onModel(t);
                     } else {
-                        modelCallback2.onFailed(this.f18653a, this.b);
+                        modelCallback2.onFailed(this.a, this.b);
                     }
                 }
             }

@@ -9,23 +9,23 @@ public final class i {
     public static Map<String, m> b = new HashMap();
 
     /* renamed from: c  reason: collision with root package name */
-    public static i f22747c;
+    public static i f9139c;
 
     /* renamed from: a  reason: collision with root package name */
-    public l f22748a = new l();
+    public l f9140a = new l();
 
     public static i c() {
-        if (f22747c == null) {
+        if (f9139c == null) {
             d();
         }
-        return f22747c;
+        return f9139c;
     }
 
     public static void d() {
         synchronized (i.class) {
             try {
-                if (f22747c == null) {
-                    f22747c = new i();
+                if (f9139c == null) {
+                    f9139c = new i();
                 }
             } catch (Throwable th) {
                 throw th;
@@ -46,6 +46,6 @@ public final class i {
     }
 
     public l b() {
-        return this.f22748a;
+        return this.f9140a;
     }
 }

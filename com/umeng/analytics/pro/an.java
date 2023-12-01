@@ -7,24 +7,24 @@ import org.json.JSONObject;
 public class an implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f40624a = "https://aspect-upush.umeng.com/occa/v1/event/report";
+    public static final String f26933a = "https://aspect-upush.umeng.com/occa/v1/event/report";
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f40625c;
+    private String f26934c;
 
     public an(String str, JSONObject jSONObject) {
         this.b = str;
-        this.f40625c = jSONObject.toString();
+        this.f26934c = jSONObject.toString();
     }
 
     @Override // java.lang.Runnable
     public void run() {
         try {
-            if (TextUtils.isEmpty(this.f40625c)) {
+            if (TextUtils.isEmpty(this.f26934c)) {
                 return;
             }
-            am.b(this.b, this.f40625c.getBytes());
+            am.b(this.b, this.f26934c.getBytes());
         } catch (Throwable th) {
         }
     }

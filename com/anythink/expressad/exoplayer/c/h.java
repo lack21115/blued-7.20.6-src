@@ -7,7 +7,7 @@ import java.nio.ByteOrder;
 public final class h extends f {
 
     /* renamed from: c  reason: collision with root package name */
-    public ByteBuffer f7232c;
+    public ByteBuffer f4393c;
     private final g<?, h, ?> d;
 
     private h(g<?, h, ?> gVar) {
@@ -15,20 +15,20 @@ public final class h extends f {
     }
 
     private ByteBuffer a(long j, int i) {
-        this.f7228a = j;
-        ByteBuffer byteBuffer = this.f7232c;
+        this.f4389a = j;
+        ByteBuffer byteBuffer = this.f4393c;
         if (byteBuffer == null || byteBuffer.capacity() < i) {
-            this.f7232c = ByteBuffer.allocateDirect(i).order(ByteOrder.nativeOrder());
+            this.f4393c = ByteBuffer.allocateDirect(i).order(ByteOrder.nativeOrder());
         }
-        this.f7232c.position(0);
-        this.f7232c.limit(i);
-        return this.f7232c;
+        this.f4393c.position(0);
+        this.f4393c.limit(i);
+        return this.f4393c;
     }
 
     @Override // com.anythink.expressad.exoplayer.c.a
     public final void a() {
         super.a();
-        ByteBuffer byteBuffer = this.f7232c;
+        ByteBuffer byteBuffer = this.f4393c;
         if (byteBuffer != null) {
             byteBuffer.clear();
         }

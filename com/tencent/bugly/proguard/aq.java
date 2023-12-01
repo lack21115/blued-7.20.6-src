@@ -8,11 +8,11 @@ public final class aq extends k {
     private static Map<String, String> i;
 
     /* renamed from: a  reason: collision with root package name */
-    public long f35378a = 0;
+    public long f21687a = 0;
     public byte b = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f35379c = "";
+    public String f21688c = "";
     public String d = "";
     public String e = "";
     public Map<String, String> f = null;
@@ -27,9 +27,9 @@ public final class aq extends k {
 
     @Override // com.tencent.bugly.proguard.k
     public final void a(i iVar) {
-        this.f35378a = iVar.a(this.f35378a, 0, true);
+        this.f21687a = iVar.a(this.f21687a, 0, true);
         this.b = iVar.a(this.b, 1, true);
-        this.f35379c = iVar.b(2, false);
+        this.f21688c = iVar.b(2, false);
         this.d = iVar.b(3, false);
         this.e = iVar.b(4, false);
         this.f = (Map) iVar.a((i) i, 5, false);
@@ -39,9 +39,9 @@ public final class aq extends k {
 
     @Override // com.tencent.bugly.proguard.k
     public final void a(j jVar) {
-        jVar.a(this.f35378a, 0);
+        jVar.a(this.f21687a, 0);
         jVar.a(this.b, 1);
-        String str = this.f35379c;
+        String str = this.f21688c;
         if (str != null) {
             jVar.a(str, 2);
         }

@@ -8,15 +8,15 @@ import org.json.JSONObject;
 public class e extends com.igexin.push.e.a.d {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f23557a = "UploadBiLogPlugin";
+    public static final String f9949a = "UploadBiLogPlugin";
     public boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f23558c;
+    private int f9950c;
 
     public e(String str, byte[] bArr, int i) {
         super(str);
-        this.f23558c = i;
+        this.f9950c = i;
         a(bArr, i);
     }
 
@@ -43,7 +43,7 @@ public class e extends com.igexin.push.e.a.d {
         JSONObject jSONObject = new JSONObject(new String(bArr));
         if (jSONObject.has("result") && com.igexin.push.core.b.x.equals(jSONObject.getString("result"))) {
             this.b = true;
-            if (this.f23558c == 10) {
+            if (this.f9950c == 10) {
                 com.igexin.c.a.c.a.b("UploadBITask", "upload type 10 success ####");
             }
         }

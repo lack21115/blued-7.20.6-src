@@ -12,7 +12,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import com.android.internal.R;
 import java.io.IOException;
 
 /* loaded from: source-9557208-dex2jar.jar:android/accounts/GrantCredentialsPermissionActivity.class */
@@ -47,8 +46,8 @@ public class GrantCredentialsPermissionActivity extends Activity implements View
     }
 
     private View newPackageView(String str) {
-        View inflate = this.mInflater.inflate(R.layout.permissions_package_list_item, (ViewGroup) null);
-        ((TextView) inflate.findViewById(R.id.package_label)).setText(str);
+        View inflate = this.mInflater.inflate(17367179, (ViewGroup) null);
+        ((TextView) inflate.findViewById(16909142)).setText(str);
         return inflate;
     }
 
@@ -68,11 +67,11 @@ public class GrantCredentialsPermissionActivity extends Activity implements View
     @Override // android.view.View.OnClickListener
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.deny_button /* 16909060 */:
+            case 16909060:
                 AccountManager.get(this).updateAppPermission(this.mAccount, this.mAuthTokenType, this.mUid, false);
                 setResult(0);
                 break;
-            case R.id.allow_button /* 16909061 */:
+            case 16909061:
                 AccountManager.get(this).updateAppPermission(this.mAccount, this.mAuthTokenType, this.mUid, true);
                 Intent intent = new Intent();
                 intent.putExtra("retry", true);
@@ -87,8 +86,8 @@ public class GrantCredentialsPermissionActivity extends Activity implements View
     @Override // android.app.Activity
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView(R.layout.grant_credentials_permission);
-        setTitle(R.string.grant_permissions_header_text);
+        setContentView(17367126);
+        setTitle(17040919);
         this.mInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         Bundle extras = getIntent().getExtras();
         if (extras == null) {
@@ -108,7 +107,7 @@ public class GrantCredentialsPermissionActivity extends Activity implements View
         }
         try {
             String accountLabel = getAccountLabel(this.mAccount);
-            final TextView textView = (TextView) findViewById(R.id.authtoken_type);
+            final TextView textView = (TextView) findViewById(16909057);
             textView.setVisibility(8);
             AccountManager.get(this).getAuthTokenLabel(this.mAccount.type, this.mAuthTokenType, new AccountManagerCallback<String>() { // from class: android.accounts.GrantCredentialsPermissionActivity.1
                 @Override // android.accounts.AccountManagerCallback
@@ -134,16 +133,16 @@ public class GrantCredentialsPermissionActivity extends Activity implements View
                     }
                 }
             }, null);
-            findViewById(R.id.allow_button).setOnClickListener(this);
-            findViewById(R.id.deny_button).setOnClickListener(this);
-            LinearLayout linearLayout = (LinearLayout) findViewById(R.id.packages_list);
+            findViewById(16909061).setOnClickListener(this);
+            findViewById(16909060).setOnClickListener(this);
+            LinearLayout linearLayout = (LinearLayout) findViewById(16909053);
             int length = packagesForUid.length;
             int i = 0;
             while (true) {
                 int i2 = i;
                 if (i2 >= length) {
-                    ((TextView) findViewById(R.id.account_name)).setText(this.mAccount.name);
-                    ((TextView) findViewById(R.id.account_type)).setText(accountLabel);
+                    ((TextView) findViewById(16909056)).setText(this.mAccount.name);
+                    ((TextView) findViewById(16909055)).setText(accountLabel);
                     return;
                 }
                 String str = packagesForUid[i2];

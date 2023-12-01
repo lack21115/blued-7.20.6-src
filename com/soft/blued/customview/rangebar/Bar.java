@@ -9,11 +9,11 @@ import android.util.TypedValue;
 class Bar {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Paint f28618a;
+    private final Paint f14928a;
     private final float b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final float f28619c;
+    private final float f14929c;
     private final float d;
     private int e;
     private float f;
@@ -24,7 +24,7 @@ class Bar {
     /* JADX INFO: Access modifiers changed from: package-private */
     public Bar(Context context, float f, float f2, float f3, int i, float f4, float f5, int i2) {
         this.b = f;
-        this.f28619c = f + f3;
+        this.f14929c = f + f3;
         this.d = f2;
         int i3 = i - 1;
         this.e = i3;
@@ -35,10 +35,10 @@ class Bar {
         this.h = f6 - (applyDimension / 2.0f);
         this.i = f6 + (applyDimension / 2.0f);
         Paint paint = new Paint();
-        this.f28618a = paint;
+        this.f14928a = paint;
         paint.setColor(i2);
-        this.f28618a.setStrokeWidth(f5);
-        this.f28618a.setAntiAlias(true);
+        this.f14928a.setStrokeWidth(f5);
+        this.f14928a.setAntiAlias(true);
     }
 
     private void b(Canvas canvas) {
@@ -46,12 +46,12 @@ class Bar {
         while (true) {
             int i2 = i;
             if (i2 >= this.e) {
-                float f = this.f28619c;
-                canvas.drawLine(f, this.h, f, this.i, this.f28618a);
+                float f = this.f14929c;
+                canvas.drawLine(f, this.h, f, this.i, this.f14928a);
                 return;
             }
             float f2 = (i2 * this.f) + this.b;
-            canvas.drawLine(f2, this.h, f2, this.i, this.f28618a);
+            canvas.drawLine(f2, this.h, f2, this.i, this.f14928a);
             i = i2 + 1;
         }
     }
@@ -78,13 +78,13 @@ class Bar {
     public void a(Canvas canvas) {
         float f = this.b;
         float f2 = this.d;
-        canvas.drawLine(f, f2, this.f28619c, f2, this.f28618a);
+        canvas.drawLine(f, f2, this.f14929c, f2, this.f14928a);
         b(canvas);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public float b() {
-        return this.f28619c;
+        return this.f14929c;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

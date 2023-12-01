@@ -41,13 +41,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/rank/PopRankingUnionCardView.class */
 public final class PopRankingUnionCardView extends RelativeLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f14091a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private final Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final AttributeSet f14092c;
+    private final AttributeSet c;
     private final int d;
     private FragmentManager e;
     private IRequestHost f;
@@ -73,45 +69,38 @@ public final class PopRankingUnionCardView extends RelativeLayout {
     @Metadata
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/rank/PopRankingUnionCardView$HourPagerAdapter.class */
     public static final class HourPagerAdapter extends PagerAdapter {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final Context f14093a;
+        private final Context a;
         private final IRequestHost b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private String f14094c;
+        private String c;
         private int d;
         private final Map<String, View> e;
 
         public HourPagerAdapter(Context mContext, IRequestHost requestHost, String str, int i) {
             Intrinsics.e(mContext, "mContext");
             Intrinsics.e(requestHost, "requestHost");
-            this.f14093a = mContext;
+            this.a = mContext;
             this.b = requestHost;
-            this.f14094c = str;
+            this.c = str;
             this.d = i;
             this.e = new HashMap();
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public void destroyItem(ViewGroup container, int i, Object object) {
             Intrinsics.e(container, "container");
             Intrinsics.e(object, "object");
             container.removeView((View) object);
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public int getCount() {
             return this.d;
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public Object instantiateItem(ViewGroup container, int i) {
             Intrinsics.e(container, "container");
             View view = this.e.get(String.valueOf(i));
             PopRankingHostTopView popRankingHostTopView = view;
             if (view == null) {
-                popRankingHostTopView = new PopRankingHostTopView(this.f14093a, i, this.b, this.f14094c);
+                popRankingHostTopView = new PopRankingHostTopView(this.a, i, this.b, this.c);
                 this.e.put(String.valueOf(i), popRankingHostTopView);
             }
             if (popRankingHostTopView.getParent() != null) {
@@ -125,7 +114,6 @@ public final class PopRankingUnionCardView extends RelativeLayout {
             return popRankingHostTopView;
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public boolean isViewFromObject(View view, Object object) {
             Intrinsics.e(view, "view");
             Intrinsics.e(object, "object");
@@ -150,7 +138,7 @@ public final class PopRankingUnionCardView extends RelativeLayout {
         super(mContext, attributeSet, i);
         Intrinsics.e(mContext, "mContext");
         this.b = mContext;
-        this.f14092c = attributeSet;
+        this.c = attributeSet;
         this.d = i;
         this.g = 2;
         this.k = new HashMap<>();
@@ -169,7 +157,6 @@ public final class PopRankingUnionCardView extends RelativeLayout {
             }
         });
         this.m = new Observer() { // from class: com.blued.android.module.live_china.rank.-$$Lambda$PopRankingUnionCardView$c1EN-YLcLIPxNJTv4AG08RPZgYU
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 PopRankingUnionCardView.a(PopRankingUnionCardView.this, (Pair) obj);
             }
@@ -183,7 +170,7 @@ public final class PopRankingUnionCardView extends RelativeLayout {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(PopRankingUnionCardView this$0, int i) {
         Intrinsics.e(this$0, "this$0");
-        CustomViewPager customViewPager = this$0.getVb().f12505c;
+        CustomViewPager customViewPager = this$0.getVb().c;
         int i2 = i;
         if (i >= this$0.g) {
             i2 = 0;
@@ -195,28 +182,28 @@ public final class PopRankingUnionCardView extends RelativeLayout {
     public static final void a(PopRankingUnionCardView this$0, Pair pair) {
         Intrinsics.e(this$0, "this$0");
         HashMap<String, String> hashMap = this$0.k;
-        F f = pair.first;
-        if (f == 0) {
+        Object obj = pair.first;
+        if (obj == null) {
             throw new NullPointerException("null cannot be cast to non-null type kotlin.String");
         }
-        String str = (String) f;
-        S s = pair.second;
-        if (s == 0) {
+        String str = (String) obj;
+        Object obj2 = pair.second;
+        if (obj2 == null) {
             throw new NullPointerException("null cannot be cast to non-null type kotlin.String");
         }
-        hashMap.put(str, (String) s);
+        hashMap.put(str, (String) obj2);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(PopRankingUnionCardView this$0, View view) {
         Intrinsics.e(this$0, "this$0");
-        this$0.getVb().f12505c.setCurrentItem(0);
+        this$0.getVb().c.setCurrentItem(0);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void b(PopRankingUnionCardView this$0, View view) {
         Intrinsics.e(this$0, "this$0");
-        this$0.getVb().f12505c.setCurrentItem(1);
+        this$0.getVb().c.setCurrentItem(1);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -226,7 +213,7 @@ public final class PopRankingUnionCardView extends RelativeLayout {
         if (this$0.e == null || (str = this$0.k.get(this$0.j)) == null) {
             return;
         }
-        LiveRankTipsDialogFragment.Companion companion = LiveRankTipsDialogFragment.f14073a;
+        LiveRankTipsDialogFragment.Companion companion = LiveRankTipsDialogFragment.a;
         FragmentManager fragmentManager = this$0.e;
         Intrinsics.a(fragmentManager);
         companion.a(fragmentManager, str);
@@ -256,17 +243,14 @@ public final class PopRankingUnionCardView extends RelativeLayout {
         getVb().e.setTextColor(color);
         getVb().e.getPaint().setFakeBoldText(true);
         this.h = new HourPagerAdapter(this.b, requestHost, str, this.g);
-        getVb().f12505c.setAdapter(this.h);
-        getVb().f12505c.addOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: com.blued.android.module.live_china.rank.PopRankingUnionCardView$setInfo$1
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
+        getVb().c.setAdapter(this.h);
+        getVb().c.addOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: com.blued.android.module.live_china.rank.PopRankingUnionCardView$setInfo$1
             public void onPageScrollStateChanged(int i2) {
             }
 
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageScrolled(int i2, float f, int i3) {
             }
 
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageSelected(int i2) {
                 TextView textView;
                 PopWindowRankingUnionCardBinding vb;
@@ -332,7 +316,7 @@ public final class PopRankingUnionCardView extends RelativeLayout {
     }
 
     public final AttributeSet getAttrs() {
-        return this.f14092c;
+        return this.c;
     }
 
     public final int getDefStyleAttr() {

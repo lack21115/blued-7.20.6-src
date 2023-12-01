@@ -26,8 +26,8 @@ import java.util.List;
 public final class CollectionPopText extends GeneratedMessageV3 implements CollectionPopTextOrBuilder {
     private static final CollectionPopText DEFAULT_INSTANCE = new CollectionPopText();
     private static final Parser<CollectionPopText> PARSER = new AbstractParser<CollectionPopText>() { // from class: cn.irisgw.live.CollectionPopText.1
-        @Override // com.google.protobuf.Parser
-        public CollectionPopText parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        /* renamed from: parsePartialFrom */
+        public CollectionPopText m1528parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             return new CollectionPopText(codedInputStream, extensionRegistryLite);
         }
     };
@@ -90,7 +90,7 @@ public final class CollectionPopText extends GeneratedMessageV3 implements Colle
                 return this;
             }
             ensurePopTextIsMutable();
-            AbstractMessageLite.Builder.addAll((Iterable) iterable, (List) this.popText_);
+            AbstractMessageLite.Builder.addAll(iterable, this.popText_);
             onChanged();
             return this;
         }
@@ -98,11 +98,11 @@ public final class CollectionPopText extends GeneratedMessageV3 implements Colle
         public Builder addPopText(int i, text.Builder builder) {
             RepeatedFieldBuilderV3<text, text.Builder, textOrBuilder> repeatedFieldBuilderV3 = this.popTextBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.addMessage(i, builder.build());
+                repeatedFieldBuilderV3.addMessage(i, builder.m1579build());
                 return this;
             }
             ensurePopTextIsMutable();
-            this.popText_.add(i, builder.build());
+            this.popText_.add(i, builder.m1579build());
             onChanged();
             return this;
         }
@@ -125,11 +125,11 @@ public final class CollectionPopText extends GeneratedMessageV3 implements Colle
         public Builder addPopText(text.Builder builder) {
             RepeatedFieldBuilderV3<text, text.Builder, textOrBuilder> repeatedFieldBuilderV3 = this.popTextBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.addMessage(builder.build());
+                repeatedFieldBuilderV3.addMessage(builder.m1579build());
                 return this;
             }
             ensurePopTextIsMutable();
-            this.popText_.add(builder.build());
+            this.popText_.add(builder.m1579build());
             onChanged();
             return this;
         }
@@ -157,22 +157,22 @@ public final class CollectionPopText extends GeneratedMessageV3 implements Colle
             return getPopTextFieldBuilder().addBuilder(i, text.getDefaultInstance());
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: addRepeatedField */
+        public Builder m1530addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.addRepeatedField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public CollectionPopText build() {
-            CollectionPopText buildPartial = buildPartial();
-            if (buildPartial.isInitialized()) {
-                return buildPartial;
+        /* renamed from: build */
+        public CollectionPopText m1532build() {
+            CollectionPopText m1534buildPartial = m1534buildPartial();
+            if (m1534buildPartial.isInitialized()) {
+                return m1534buildPartial;
             }
-            throw newUninitializedMessageException((Message) buildPartial);
+            throw newUninitializedMessageException(m1534buildPartial);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public CollectionPopText buildPartial() {
+        /* renamed from: buildPartial */
+        public CollectionPopText m1534buildPartial() {
             CollectionPopText collectionPopText = new CollectionPopText(this);
             int i = this.bitField0_;
             RepeatedFieldBuilderV3<text, text.Builder, textOrBuilder> repeatedFieldBuilderV3 = this.popTextBuilder_;
@@ -189,8 +189,8 @@ public final class CollectionPopText extends GeneratedMessageV3 implements Colle
             return collectionPopText;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public Builder clear() {
+        /* renamed from: clear */
+        public Builder m1538clear() {
             super.clear();
             RepeatedFieldBuilderV3<text, text.Builder, textOrBuilder> repeatedFieldBuilderV3 = this.popTextBuilder_;
             if (repeatedFieldBuilderV3 != null) {
@@ -202,13 +202,13 @@ public final class CollectionPopText extends GeneratedMessageV3 implements Colle
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+        /* renamed from: clearField */
+        public Builder m1540clearField(Descriptors.FieldDescriptor fieldDescriptor) {
             return (Builder) super.clearField(fieldDescriptor);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+        /* renamed from: clearOneof */
+        public Builder m1543clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
             return (Builder) super.clearOneof(oneofDescriptor);
         }
 
@@ -224,18 +224,16 @@ public final class CollectionPopText extends GeneratedMessageV3 implements Colle
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder m1549clone() {
+            return (Builder) super.clone();
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public CollectionPopText getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public CollectionPopText m1551getDefaultInstanceForType() {
             return CollectionPopText.getDefaultInstance();
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
         public Descriptors.Descriptor getDescriptorForType() {
             return LiveConstants.internal_static_cn_irisgw_live_CollectionPopText_descriptor;
         }
@@ -269,7 +267,7 @@ public final class CollectionPopText extends GeneratedMessageV3 implements Colle
         @Override // cn.irisgw.live.CollectionPopTextOrBuilder
         public textOrBuilder getPopTextOrBuilder(int i) {
             RepeatedFieldBuilderV3<text, text.Builder, textOrBuilder> repeatedFieldBuilderV3 = this.popTextBuilder_;
-            return repeatedFieldBuilderV3 == null ? this.popText_.get(i) : repeatedFieldBuilderV3.getMessageOrBuilder(i);
+            return repeatedFieldBuilderV3 == null ? this.popText_.get(i) : (textOrBuilder) repeatedFieldBuilderV3.getMessageOrBuilder(i);
         }
 
         @Override // cn.irisgw.live.CollectionPopTextOrBuilder
@@ -278,12 +276,10 @@ public final class CollectionPopText extends GeneratedMessageV3 implements Colle
             return repeatedFieldBuilderV3 != null ? repeatedFieldBuilderV3.getMessageOrBuilderList() : Collections.unmodifiableList(this.popText_);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_CollectionPopText_fieldAccessorTable.ensureFieldAccessorsInitialized(CollectionPopText.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             return true;
         }
@@ -318,18 +314,18 @@ public final class CollectionPopText extends GeneratedMessageV3 implements Colle
                     this.popTextBuilder_.addAllMessages(collectionPopText.popText_);
                 }
             }
-            mergeUnknownFields(collectionPopText.unknownFields);
+            m1560mergeUnknownFields(collectionPopText.unknownFields);
             onChanged();
             return this;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+        /* renamed from: mergeFrom */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
         */
-        public cn.irisgw.live.CollectionPopText.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+        public cn.irisgw.live.CollectionPopText.Builder m1557mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
             /*
                 r4 = this;
                 r0 = 0
@@ -374,11 +370,11 @@ public final class CollectionPopText extends GeneratedMessageV3 implements Colle
                 r0 = r6
                 throw r0
             */
-            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.CollectionPopText.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.CollectionPopText$Builder");
+            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.CollectionPopText.Builder.m1557mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.CollectionPopText$Builder");
         }
 
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder mergeFrom(Message message) {
+        /* renamed from: mergeFrom */
+        public Builder m1556mergeFrom(Message message) {
             if (message instanceof CollectionPopText) {
                 return mergeFrom((CollectionPopText) message);
             }
@@ -386,8 +382,8 @@ public final class CollectionPopText extends GeneratedMessageV3 implements Colle
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: mergeUnknownFields */
+        public final Builder m1560mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.mergeUnknownFields(unknownFieldSet);
         }
 
@@ -403,19 +399,19 @@ public final class CollectionPopText extends GeneratedMessageV3 implements Colle
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: setField */
+        public Builder m1562setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.setField(fieldDescriptor, obj);
         }
 
         public Builder setPopText(int i, text.Builder builder) {
             RepeatedFieldBuilderV3<text, text.Builder, textOrBuilder> repeatedFieldBuilderV3 = this.popTextBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.setMessage(i, builder.build());
+                repeatedFieldBuilderV3.setMessage(i, builder.m1579build());
                 return this;
             }
             ensurePopTextIsMutable();
-            this.popText_.set(i, builder.build());
+            this.popText_.set(i, builder.m1579build());
             onChanged();
             return this;
         }
@@ -435,13 +431,13 @@ public final class CollectionPopText extends GeneratedMessageV3 implements Colle
             }
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+        /* renamed from: setRepeatedField */
+        public Builder m1564setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
             return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: setUnknownFields */
+        public final Builder m1566setUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.setUnknownFields(unknownFieldSet);
         }
     }
@@ -464,8 +460,8 @@ public final class CollectionPopText extends GeneratedMessageV3 implements Colle
         private int type_;
         private static final text DEFAULT_INSTANCE = new text();
         private static final Parser<text> PARSER = new AbstractParser<text>() { // from class: cn.irisgw.live.CollectionPopText.text.1
-            @Override // com.google.protobuf.Parser
-            public text parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+            /* renamed from: parsePartialFrom */
+            public text m1575parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
                 return new text(codedInputStream, extensionRegistryLite);
             }
         };
@@ -500,22 +496,22 @@ public final class CollectionPopText extends GeneratedMessageV3 implements Colle
                 boolean unused = text.alwaysUseFieldBuilders;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: addRepeatedField */
+            public Builder m1577addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.addRepeatedField(fieldDescriptor, obj);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public text build() {
-                text buildPartial = buildPartial();
-                if (buildPartial.isInitialized()) {
-                    return buildPartial;
+            /* renamed from: build */
+            public text m1579build() {
+                text m1581buildPartial = m1581buildPartial();
+                if (m1581buildPartial.isInitialized()) {
+                    return m1581buildPartial;
                 }
-                throw newUninitializedMessageException((Message) buildPartial);
+                throw newUninitializedMessageException(m1581buildPartial);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public text buildPartial() {
+            /* renamed from: buildPartial */
+            public text m1581buildPartial() {
                 text textVar = new text(this);
                 textVar.type_ = this.type_;
                 textVar.text_ = this.text_;
@@ -527,20 +523,20 @@ public final class CollectionPopText extends GeneratedMessageV3 implements Colle
                 return textVar;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public Builder clear() {
+            /* renamed from: clear */
+            public Builder m1585clear() {
                 super.clear();
                 this.type_ = 0;
                 this.text_ = "";
-                this.time_ = 0L;
+                this.time_ = text.serialVersionUID;
                 this.linkType_ = 0;
                 this.order_ = 0;
                 this.link_ = "";
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+            /* renamed from: clearField */
+            public Builder m1587clearField(Descriptors.FieldDescriptor fieldDescriptor) {
                 return (Builder) super.clearField(fieldDescriptor);
             }
 
@@ -556,8 +552,8 @@ public final class CollectionPopText extends GeneratedMessageV3 implements Colle
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+            /* renamed from: clearOneof */
+            public Builder m1590clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
                 return (Builder) super.clearOneof(oneofDescriptor);
             }
 
@@ -574,7 +570,7 @@ public final class CollectionPopText extends GeneratedMessageV3 implements Colle
             }
 
             public Builder clearTime() {
-                this.time_ = 0L;
+                this.time_ = text.serialVersionUID;
                 onChanged();
                 return this;
             }
@@ -585,18 +581,16 @@ public final class CollectionPopText extends GeneratedMessageV3 implements Colle
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder m1596clone() {
+                return (Builder) super.clone();
             }
 
-            @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-            public text getDefaultInstanceForType() {
+            /* renamed from: getDefaultInstanceForType */
+            public text m1598getDefaultInstanceForType() {
                 return text.getDefaultInstance();
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
             public Descriptors.Descriptor getDescriptorForType() {
                 return LiveConstants.internal_static_cn_irisgw_live_CollectionPopText_text_descriptor;
             }
@@ -665,12 +659,10 @@ public final class CollectionPopText extends GeneratedMessageV3 implements Colle
                 return this.type_;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder
             public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
                 return LiveConstants.internal_static_cn_irisgw_live_CollectionPopText_text_fieldAccessorTable.ensureFieldAccessorsInitialized(text.class, Builder.class);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
             public final boolean isInitialized() {
                 return true;
             }
@@ -686,7 +678,7 @@ public final class CollectionPopText extends GeneratedMessageV3 implements Colle
                     this.text_ = textVar.text_;
                     onChanged();
                 }
-                if (textVar.getTime() != 0) {
+                if (textVar.getTime() != text.serialVersionUID) {
                     setTime(textVar.getTime());
                 }
                 if (textVar.getLinkType() != 0) {
@@ -699,18 +691,18 @@ public final class CollectionPopText extends GeneratedMessageV3 implements Colle
                     this.link_ = textVar.link_;
                     onChanged();
                 }
-                mergeUnknownFields(textVar.unknownFields);
+                m1607mergeUnknownFields(textVar.unknownFields);
                 onChanged();
                 return this;
             }
 
             /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+            /* renamed from: mergeFrom */
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
                 To view partially-correct code enable 'Show inconsistent code' option in preferences
             */
-            public cn.irisgw.live.CollectionPopText.text.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+            public cn.irisgw.live.CollectionPopText.text.Builder m1604mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
                 /*
                     r4 = this;
                     r0 = 0
@@ -755,11 +747,11 @@ public final class CollectionPopText extends GeneratedMessageV3 implements Colle
                     r0 = r6
                     throw r0
                 */
-                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.CollectionPopText.text.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.CollectionPopText$text$Builder");
+                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.CollectionPopText.text.Builder.m1604mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.CollectionPopText$text$Builder");
             }
 
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder mergeFrom(Message message) {
+            /* renamed from: mergeFrom */
+            public Builder m1603mergeFrom(Message message) {
                 if (message instanceof text) {
                     return mergeFrom((text) message);
                 }
@@ -767,13 +759,13 @@ public final class CollectionPopText extends GeneratedMessageV3 implements Colle
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: mergeUnknownFields */
+            public final Builder m1607mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.mergeUnknownFields(unknownFieldSet);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: setField */
+            public Builder m1609setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.setField(fieldDescriptor, obj);
             }
 
@@ -808,8 +800,8 @@ public final class CollectionPopText extends GeneratedMessageV3 implements Colle
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+            /* renamed from: setRepeatedField */
+            public Builder m1611setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
                 return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
             }
 
@@ -844,8 +836,8 @@ public final class CollectionPopText extends GeneratedMessageV3 implements Colle
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: setUnknownFields */
+            public final Builder m1613setUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.setUnknownFields(unknownFieldSet);
             }
         }
@@ -910,66 +902,65 @@ public final class CollectionPopText extends GeneratedMessageV3 implements Colle
         }
 
         public static Builder newBuilder() {
-            return DEFAULT_INSTANCE.toBuilder();
+            return DEFAULT_INSTANCE.m1574toBuilder();
         }
 
         public static Builder newBuilder(text textVar) {
-            return DEFAULT_INSTANCE.toBuilder().mergeFrom(textVar);
+            return DEFAULT_INSTANCE.m1574toBuilder().mergeFrom(textVar);
         }
 
         public static text parseDelimitedFrom(InputStream inputStream) throws IOException {
-            return (text) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
         }
 
         public static text parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (text) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static text parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString);
+            return (text) PARSER.parseFrom(byteString);
         }
 
         public static text parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString, extensionRegistryLite);
+            return (text) PARSER.parseFrom(byteString, extensionRegistryLite);
         }
 
         public static text parseFrom(CodedInputStream codedInputStream) throws IOException {
-            return (text) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
         }
 
         public static text parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (text) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
         }
 
         public static text parseFrom(InputStream inputStream) throws IOException {
-            return (text) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
         }
 
         public static text parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (text) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static text parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer);
+            return (text) PARSER.parseFrom(byteBuffer);
         }
 
         public static text parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+            return (text) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
         }
 
         public static text parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr);
+            return (text) PARSER.parseFrom(bArr);
         }
 
         public static text parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr, extensionRegistryLite);
+            return (text) PARSER.parseFrom(bArr, extensionRegistryLite);
         }
 
         public static Parser<text> parser() {
             return PARSER;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public boolean equals(Object obj) {
             if (obj == this) {
                 return true;
@@ -981,8 +972,8 @@ public final class CollectionPopText extends GeneratedMessageV3 implements Colle
             return super.equals(obj);
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public text getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public text m1569getDefaultInstanceForType() {
             return DEFAULT_INSTANCE;
         }
 
@@ -1018,12 +1009,10 @@ public final class CollectionPopText extends GeneratedMessageV3 implements Colle
             return this.order_;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
         public Parser<text> getParserForType() {
             return PARSER;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public int getSerializedSize() {
             int i = this.memoizedSize;
             if (i != -1) {
@@ -1040,7 +1029,7 @@ public final class CollectionPopText extends GeneratedMessageV3 implements Colle
             }
             long j = this.time_;
             int i5 = i4;
-            if (j != 0) {
+            if (j != serialVersionUID) {
                 i5 = i4 + CodedOutputStream.computeUInt64Size(3, j);
             }
             int i6 = this.linkType_;
@@ -1094,12 +1083,10 @@ public final class CollectionPopText extends GeneratedMessageV3 implements Colle
             return this.type_;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
         public final UnknownFieldSet getUnknownFields() {
             return this.unknownFields;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public int hashCode() {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
@@ -1109,12 +1096,10 @@ public final class CollectionPopText extends GeneratedMessageV3 implements Colle
             return hashCode;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_CollectionPopText_text_fieldAccessorTable.ensureFieldAccessorsInitialized(text.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte b = this.memoizedIsInitialized;
             if (b == 1) {
@@ -1127,28 +1112,26 @@ public final class CollectionPopText extends GeneratedMessageV3 implements Colle
             return true;
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder newBuilderForType() {
+        /* renamed from: newBuilderForType */
+        public Builder m1572newBuilderForType() {
             return newBuilder();
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.google.protobuf.GeneratedMessageV3
-        public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+        /* renamed from: newBuilderForType */
+        public Builder m1571newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
             return new Builder(builderParent);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
             return new text();
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder toBuilder() {
+        /* renamed from: toBuilder */
+        public Builder m1574toBuilder() {
             return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
             int i = this.type_;
             if (i != 0) {
@@ -1158,7 +1141,7 @@ public final class CollectionPopText extends GeneratedMessageV3 implements Colle
                 GeneratedMessageV3.writeString(codedOutputStream, 2, this.text_);
             }
             long j = this.time_;
-            if (j != 0) {
+            if (j != serialVersionUID) {
                 codedOutputStream.writeUInt64(3, j);
             }
             int i2 = this.linkType_;
@@ -1261,66 +1244,65 @@ public final class CollectionPopText extends GeneratedMessageV3 implements Colle
     }
 
     public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
+        return DEFAULT_INSTANCE.m1527toBuilder();
     }
 
     public static Builder newBuilder(CollectionPopText collectionPopText) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(collectionPopText);
+        return DEFAULT_INSTANCE.m1527toBuilder().mergeFrom(collectionPopText);
     }
 
     public static CollectionPopText parseDelimitedFrom(InputStream inputStream) throws IOException {
-        return (CollectionPopText) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
     }
 
     public static CollectionPopText parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (CollectionPopText) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static CollectionPopText parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString);
+        return (CollectionPopText) PARSER.parseFrom(byteString);
     }
 
     public static CollectionPopText parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString, extensionRegistryLite);
+        return (CollectionPopText) PARSER.parseFrom(byteString, extensionRegistryLite);
     }
 
     public static CollectionPopText parseFrom(CodedInputStream codedInputStream) throws IOException {
-        return (CollectionPopText) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
     }
 
     public static CollectionPopText parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (CollectionPopText) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
     }
 
     public static CollectionPopText parseFrom(InputStream inputStream) throws IOException {
-        return (CollectionPopText) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
     }
 
     public static CollectionPopText parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (CollectionPopText) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static CollectionPopText parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer);
+        return (CollectionPopText) PARSER.parseFrom(byteBuffer);
     }
 
     public static CollectionPopText parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+        return (CollectionPopText) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
     }
 
     public static CollectionPopText parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr);
+        return (CollectionPopText) PARSER.parseFrom(bArr);
     }
 
     public static CollectionPopText parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr, extensionRegistryLite);
+        return (CollectionPopText) PARSER.parseFrom(bArr, extensionRegistryLite);
     }
 
     public static Parser<CollectionPopText> parser() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
@@ -1332,12 +1314,11 @@ public final class CollectionPopText extends GeneratedMessageV3 implements Colle
         return super.equals(obj);
     }
 
-    @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-    public CollectionPopText getDefaultInstanceForType() {
+    /* renamed from: getDefaultInstanceForType */
+    public CollectionPopText m1522getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
     public Parser<CollectionPopText> getParserForType() {
         return PARSER;
     }
@@ -1367,7 +1348,6 @@ public final class CollectionPopText extends GeneratedMessageV3 implements Colle
         return this.popText_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public int getSerializedSize() {
         int i = this.memoizedSize;
         if (i != -1) {
@@ -1382,12 +1362,10 @@ public final class CollectionPopText extends GeneratedMessageV3 implements Colle
         return serializedSize;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
     public final UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public int hashCode() {
         if (this.memoizedHashCode != 0) {
             return this.memoizedHashCode;
@@ -1402,12 +1380,10 @@ public final class CollectionPopText extends GeneratedMessageV3 implements Colle
         return hashCode2;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
         return LiveConstants.internal_static_cn_irisgw_live_CollectionPopText_fieldAccessorTable.ensureFieldAccessorsInitialized(CollectionPopText.class, Builder.class);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
     public final boolean isInitialized() {
         byte b = this.memoizedIsInitialized;
         if (b == 1) {
@@ -1420,28 +1396,26 @@ public final class CollectionPopText extends GeneratedMessageV3 implements Colle
         return true;
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder newBuilderForType() {
+    /* renamed from: newBuilderForType */
+    public Builder m1525newBuilderForType() {
         return newBuilder();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.protobuf.GeneratedMessageV3
-    public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+    /* renamed from: newBuilderForType */
+    public Builder m1524newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
         return new Builder(builderParent);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
         return new CollectionPopText();
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder toBuilder() {
+    /* renamed from: toBuilder */
+    public Builder m1527toBuilder() {
         return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
         int i = 0;
         while (true) {

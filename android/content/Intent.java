@@ -19,10 +19,8 @@ import android.provider.MediaStore;
 import android.util.ArraySet;
 import android.util.AttributeSet;
 import android.util.Log;
-import com.alipay.sdk.util.i;
 import com.android.internal.R;
 import com.android.internal.util.XmlUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.io.IOException;
 import java.io.Serializable;
 import java.net.URISyntaxException;
@@ -1075,7 +1073,7 @@ public class Intent implements Parcelable, Cloneable {
             }
         }
         if (this.mType != null) {
-            sb.append("type=").append(Uri.encode(this.mType, BridgeUtil.SPLIT_MARK)).append(';');
+            sb.append("type=").append(Uri.encode(this.mType, "/")).append(';');
         }
         if (this.mFlags != 0) {
             sb.append("launchFlags=0x").append(Integer.toHexString(this.mFlags)).append(';');
@@ -1084,7 +1082,7 @@ public class Intent implements Parcelable, Cloneable {
             sb.append("package=").append(Uri.encode(this.mPackage)).append(';');
         }
         if (this.mComponent != null) {
-            sb.append("component=").append(Uri.encode(this.mComponent.flattenToShortString(), BridgeUtil.SPLIT_MARK)).append(';');
+            sb.append("component=").append(Uri.encode(this.mComponent.flattenToShortString(), "/")).append(';');
         }
         if (this.mSourceBounds != null) {
             sb.append("sourceBounds=").append(Uri.encode(this.mSourceBounds.flattenToString())).append(';');
@@ -2334,7 +2332,7 @@ public class Intent implements Parcelable, Cloneable {
         if (this.mSelector != null) {
             sb.append(" sel=");
             this.mSelector.toShortString(sb, z, z2, z3, z4);
-            sb.append(i.d);
+            sb.append("}");
         }
     }
 

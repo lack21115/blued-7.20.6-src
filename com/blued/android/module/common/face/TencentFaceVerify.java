@@ -18,13 +18,13 @@ import com.blued.android.module.common.user.model.UserInfo;
 import com.blued.android.module.common.utils.DialogUtils;
 import com.blued.das.profile.PersonalProfileProtos;
 import com.blued.track.trackUtils.EventTrackUtils;
-import com.tencent.cloud.huiyansdkface.facelight.api.WbCloudFaceContant;
 import com.tencent.cloud.huiyansdkface.facelight.api.WbCloudFaceVerifySdk;
 import com.tencent.cloud.huiyansdkface.facelight.api.listeners.WbCloudFaceVerifyLoginListener;
 import com.tencent.cloud.huiyansdkface.facelight.api.listeners.WbCloudFaceVerifyResultListener;
 import com.tencent.cloud.huiyansdkface.facelight.api.result.WbFaceError;
 import com.tencent.cloud.huiyansdkface.facelight.api.result.WbFaceVerifyResult;
 import com.tencent.cloud.huiyansdkface.facelight.process.FaceVerifyStatus;
+import java.io.Serializable;
 import java.util.Map;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
@@ -32,13 +32,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/face/TencentFaceVerify.class */
 public final class TencentFaceVerify {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final TencentFaceVerify f10798a = new TencentFaceVerify();
+    public static final TencentFaceVerify a = new TencentFaceVerify();
     private static Dialog b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private static boolean f10799c;
+    private static boolean c;
     private static OnGetFaceVerifyChannelFinish d;
 
     @Metadata
@@ -55,27 +51,25 @@ public final class TencentFaceVerify {
     /* JADX INFO: Access modifiers changed from: private */
     public final void a(final Activity activity, final TencentFaceConfigModel tencentFaceConfigModel) {
         Bundle bundle = new Bundle();
-        bundle.putSerializable(WbCloudFaceContant.INPUT_DATA, new WbCloudFaceVerifySdk.InputData(tencentFaceConfigModel.getFace_id(), tencentFaceConfigModel.getOrder_no(), tencentFaceConfigModel.getApp_id(), tencentFaceConfigModel.getApi_version(), tencentFaceConfigModel.getNonce(), EncryptTool.b(UserInfo.getInstance().getLoginUserInfo().uid), tencentFaceConfigModel.getNonce_sign(), FaceVerifyStatus.Mode.GRADE, tencentFaceConfigModel.getLicense()));
-        bundle.putString(WbCloudFaceContant.LANGUAGE, e());
-        bundle.putString(WbCloudFaceContant.COLOR_MODE, BluedSkinUtils.c() ? WbCloudFaceContant.WHITE : WbCloudFaceContant.BLACK);
+        bundle.putSerializable("inputData", (Serializable) new WbCloudFaceVerifySdk.InputData(tencentFaceConfigModel.getFace_id(), tencentFaceConfigModel.getOrder_no(), tencentFaceConfigModel.getApp_id(), tencentFaceConfigModel.getApi_version(), tencentFaceConfigModel.getNonce(), EncryptTool.b(UserInfo.getInstance().getLoginUserInfo().uid), tencentFaceConfigModel.getNonce_sign(), FaceVerifyStatus.Mode.GRADE, tencentFaceConfigModel.getLicense()));
+        bundle.putString("WBFaceVerifyLanguage", e());
+        bundle.putString("colorMode", BluedSkinUtils.c() ? "white" : "black");
         WbCloudFaceVerifySdk.getInstance().initSdk(activity, bundle, new WbCloudFaceVerifyLoginListener() { // from class: com.blued.android.module.common.face.TencentFaceVerify$initFaceVerifySdk$1
-            @Override // com.tencent.cloud.huiyansdkface.facelight.api.listeners.WbCloudFaceVerifyLoginListener
             public void onLoginFailed(WbFaceError wbFaceError) {
                 Log.e("TencentFaceVerify", "sdk初始化失败！");
-                TencentFaceVerify tencentFaceVerify = TencentFaceVerify.f10798a;
-                TencentFaceVerify.f10799c = false;
+                TencentFaceVerify tencentFaceVerify = TencentFaceVerify.a;
+                TencentFaceVerify.c = false;
                 if (wbFaceError != null) {
                     Log.e("TencentFaceVerify", "登录失败！domain=" + ((Object) wbFaceError.getDomain()) + ", code=" + ((Object) wbFaceError.getCode()) + ", desc=" + ((Object) wbFaceError.getDesc()) + ", reason=" + ((Object) wbFaceError.getReason()));
                 } else {
                     Log.e("TencentFaceVerify", "sdk返回error为空！");
                 }
-                TencentFaceVerify.f10798a.c();
+                TencentFaceVerify.a.c();
             }
 
-            @Override // com.tencent.cloud.huiyansdkface.facelight.api.listeners.WbCloudFaceVerifyLoginListener
             public void onLoginSuccess() {
                 Log.e("TencentFaceVerify", Intrinsics.a("sdk初始化成功！", (Object) Thread.currentThread().getName()));
-                TencentFaceVerify.f10798a.b(Activity.this, tencentFaceConfigModel);
+                TencentFaceVerify.a.b(activity, tencentFaceConfigModel);
             }
         });
     }
@@ -113,7 +107,7 @@ public final class TencentFaceVerify {
         if (onGetFaceVerifyChannelFinish != null) {
             onGetFaceVerifyChannelFinish.b();
         }
-        f10799c = false;
+        c = false;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -134,15 +128,15 @@ public final class TencentFaceVerify {
             public void onUIUpdate(BluedEntityA<TencentFaceConfigModel> bluedEntityA) {
                 TencentFaceConfigModel singleData;
                 if (bluedEntityA == null || (singleData = bluedEntityA.getSingleData()) == null) {
-                    TencentFaceVerify.f10798a.c();
+                    TencentFaceVerify.a.c();
                 } else {
-                    TencentFaceVerify.f10798a.a(this.b, singleData);
+                    TencentFaceVerify.a.a(this.b, singleData);
                 }
             }
 
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str) {
-                TencentFaceVerify.f10798a.c();
+                TencentFaceVerify.a.c();
                 return true;
             }
         }, iRequestHost);
@@ -151,7 +145,6 @@ public final class TencentFaceVerify {
     /* JADX INFO: Access modifiers changed from: private */
     public final void b(Activity activity, final TencentFaceConfigModel tencentFaceConfigModel) {
         WbCloudFaceVerifySdk.getInstance().startWbFaceVerifySdk(activity, new WbCloudFaceVerifyResultListener() { // from class: com.blued.android.module.common.face.-$$Lambda$TencentFaceVerify$Rn9g2LswwfhomBP6o5h3Xy-BUbg
-            @Override // com.tencent.cloud.huiyansdkface.facelight.api.listeners.WbCloudFaceVerifyResultListener
             public final void onFinish(WbFaceVerifyResult wbFaceVerifyResult) {
                 TencentFaceVerify.a(TencentFaceConfigModel.this, wbFaceVerifyResult);
             }
@@ -169,7 +162,7 @@ public final class TencentFaceVerify {
         if (onGetFaceVerifyChannelFinish != null) {
             onGetFaceVerifyChannelFinish.a();
         }
-        f10799c = false;
+        c = false;
     }
 
     private final void d() {
@@ -182,7 +175,7 @@ public final class TencentFaceVerify {
 
     private final String e() {
         String b2 = LocaleUtils.b();
-        return Intrinsics.a((Object) b2, (Object) "zh-tw") ? WbCloudFaceContant.LANGUAGE_ZH_HK : Intrinsics.a((Object) b2, (Object) "en-us") ? WbCloudFaceContant.LANGUAGE_EN : WbCloudFaceContant.LANGUAGE_ZH_CN;
+        return Intrinsics.a((Object) b2, (Object) "zh-tw") ? "WBFaceVerifyLanguage_zh_hk" : Intrinsics.a((Object) b2, (Object) "en-us") ? "WBFaceVerifyLanguage_en" : "WBFaceVerifyLanguage_zh_cn";
     }
 
     public final void a(final Activity activity, final IRequestHost iRequestHost, OnGetFaceVerifyChannelFinish onGetFaceVerifyChannelFinish) {
@@ -192,7 +185,7 @@ public final class TencentFaceVerify {
         a2.show();
         b = a2;
         d = onGetFaceVerifyChannelFinish;
-        f10799c = true;
+        c = true;
         a(new BluedUIHttpResponse<BluedEntityA<ChannelModel>>(activity) { // from class: com.blued.android.module.common.face.TencentFaceVerify$checkFaceVerifyChannel$2
             final /* synthetic */ Activity b;
 
@@ -215,17 +208,17 @@ public final class TencentFaceVerify {
                 Activity activity2 = this.b;
                 IRequestHost iRequestHost2 = IRequestHost.this;
                 if (singleData.is_tencent() != 1) {
-                    TencentFaceVerify.f10798a.c();
+                    TencentFaceVerify.a.c();
                     return;
                 }
-                TencentFaceVerify tencentFaceVerify = TencentFaceVerify.f10798a;
+                TencentFaceVerify tencentFaceVerify = TencentFaceVerify.a;
                 onGetFaceVerifyChannelFinish2 = TencentFaceVerify.d;
                 tencentFaceVerify.b(activity2, iRequestHost2, onGetFaceVerifyChannelFinish2);
             }
 
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str) {
-                TencentFaceVerify.f10798a.c();
+                TencentFaceVerify.a.c();
                 return true;
             }
         }, iRequestHost);

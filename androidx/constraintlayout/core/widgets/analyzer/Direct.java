@@ -13,11 +13,11 @@ import java.util.Iterator;
 public class Direct {
 
     /* renamed from: a  reason: collision with root package name */
-    private static BasicMeasure.Measure f2138a = new BasicMeasure.Measure();
+    private static BasicMeasure.Measure f2090a = new BasicMeasure.Measure();
     private static int b = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    private static int f2139c = 0;
+    private static int f2091c = 0;
 
     private static void a(int i, Barrier barrier, BasicMeasure.Measurer measurer, int i2, boolean z) {
         if (barrier.allSolved()) {
@@ -33,7 +33,7 @@ public class Direct {
         if (constraintWidget.isVerticalSolvingPassDone()) {
             return;
         }
-        f2139c++;
+        f2091c++;
         if (!(constraintWidget instanceof ConstraintWidgetContainer) && constraintWidget.isMeasureRequested()) {
             int i2 = i + 1;
             if (a(i2, constraintWidget)) {
@@ -397,7 +397,7 @@ public class Direct {
         ConstraintWidget.DimensionBehaviour horizontalDimensionBehaviour = constraintWidgetContainer.getHorizontalDimensionBehaviour();
         ConstraintWidget.DimensionBehaviour verticalDimensionBehaviour = constraintWidgetContainer.getVerticalDimensionBehaviour();
         b = 0;
-        f2139c = 0;
+        f2091c = 0;
         constraintWidgetContainer.resetFinalResolution();
         ArrayList<ConstraintWidget> children = constraintWidgetContainer.getChildren();
         int size = children.size();
@@ -579,7 +579,7 @@ public class Direct {
             }
             ConstraintWidget constraintWidget7 = children.get(i14);
             if (constraintWidget7.isMeasureRequested() && a(0, constraintWidget7)) {
-                ConstraintWidgetContainer.measure(0, constraintWidget7, measurer, f2138a, BasicMeasure.Measure.SELF_DIMENSIONS);
+                ConstraintWidgetContainer.measure(0, constraintWidget7, measurer, f2090a, BasicMeasure.Measure.SELF_DIMENSIONS);
                 if (!(constraintWidget7 instanceof Guideline)) {
                     a(0, constraintWidget7, measurer, isRtl);
                     a(0, constraintWidget7, measurer);

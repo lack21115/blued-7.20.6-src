@@ -71,36 +71,29 @@ public abstract class InCallService extends Service {
         private InCallServiceBinder() {
         }
 
-        @Override // com.android.internal.telecom.IInCallService
         public void addCall(ParcelableCall parcelableCall) {
             InCallService.this.mHandler.obtainMessage(2, parcelableCall).sendToTarget();
         }
 
-        @Override // com.android.internal.telecom.IInCallService
         public void bringToForeground(boolean z) {
             InCallService.this.mHandler.obtainMessage(6, z ? 1 : 0, 0).sendToTarget();
         }
 
-        @Override // com.android.internal.telecom.IInCallService
         public void onAudioStateChanged(AudioState audioState) {
             InCallService.this.mHandler.obtainMessage(5, audioState).sendToTarget();
         }
 
-        @Override // com.android.internal.telecom.IInCallService
         public void onCanAddCallChanged(boolean z) {
             InCallService.this.mHandler.obtainMessage(7, z ? 1 : 0, 0).sendToTarget();
         }
 
-        @Override // com.android.internal.telecom.IInCallService
         public void setInCallAdapter(IInCallAdapter iInCallAdapter) {
             InCallService.this.mHandler.obtainMessage(1, iInCallAdapter).sendToTarget();
         }
 
-        @Override // com.android.internal.telecom.IInCallService
         public void setPostDial(String str, String str2) {
         }
 
-        @Override // com.android.internal.telecom.IInCallService
         public void setPostDialWait(String str, String str2) {
             SomeArgs obtain = SomeArgs.obtain();
             obtain.arg1 = str;
@@ -108,7 +101,6 @@ public abstract class InCallService extends Service {
             InCallService.this.mHandler.obtainMessage(4, obtain).sendToTarget();
         }
 
-        @Override // com.android.internal.telecom.IInCallService
         public void updateCall(ParcelableCall parcelableCall) {
             InCallService.this.mHandler.obtainMessage(3, parcelableCall).sendToTarget();
         }

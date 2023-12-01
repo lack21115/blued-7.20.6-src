@@ -26,7 +26,6 @@ import com.anythink.core.common.e.aa;
 import com.anythink.core.common.e.ac;
 import com.anythink.core.common.e.k;
 import com.anythink.core.common.k.h;
-import com.anythink.expressad.video.module.a.a.m;
 import com.bytedance.applog.tracker.Tracker;
 import java.util.Map;
 import java.util.Random;
@@ -43,7 +42,7 @@ public abstract class BaseScreenAdView extends BaseAdView {
     int B;
     protected int C;
     protected int D;
-    protected b.InterfaceC0079b E;
+    protected b.InterfaceC0039b E;
     protected boolean F;
     protected int G;
     protected CountDownView H;
@@ -62,9 +61,7 @@ public abstract class BaseScreenAdView extends BaseAdView {
     final long U;
     Runnable V;
     ConcurrentHashMap<Integer, Boolean> W;
-
-    /* renamed from: a  reason: collision with root package name */
-    protected int f6062a;
+    protected int a;
     protected int aa;
     protected int ab;
     protected int ac;
@@ -138,7 +135,7 @@ public abstract class BaseScreenAdView extends BaseAdView {
         super(context);
         this.G = 0;
         this.al = false;
-        this.T = m.ag;
+        this.T = 3000L;
         this.U = 500L;
         this.am = false;
         this.an = false;
@@ -164,7 +161,7 @@ public abstract class BaseScreenAdView extends BaseAdView {
     }
 
     private void K() {
-        if (n() && !this.f6049c.m.V() && this.z == null) {
+        if (n() && !this.c.m.V() && this.z == null) {
             this.z = b(true);
         }
     }
@@ -185,8 +182,8 @@ public abstract class BaseScreenAdView extends BaseAdView {
     private void N() {
         int q = q();
         this.Q = q;
-        final boolean c2 = c(q);
-        EndCardView endCardView = new EndCardView(getContext(), this.d, this.f6049c);
+        final boolean c = c(q);
+        EndCardView endCardView = new EndCardView(getContext(), this.d, this.c);
         endCardView.setSize(this.C, this.D);
         endCardView.init(false, false, new EndCardView.a() { // from class: com.anythink.basead.ui.BaseScreenAdView.16
             @Override // com.anythink.basead.ui.EndCardView.a
@@ -198,7 +195,7 @@ public abstract class BaseScreenAdView extends BaseAdView {
             @Override // com.anythink.basead.ui.EndCardView.a
             public final void b() {
                 BaseScreenAdView.this.I();
-                if (c2) {
+                if (c) {
                     BaseScreenAdView.this.E();
                 }
             }
@@ -221,7 +218,7 @@ public abstract class BaseScreenAdView extends BaseAdView {
         if (this.ak == null) {
             this.ak = new c();
         }
-        this.ak.a(getContext(), this.d, this.f6049c, new AnonymousClass2());
+        this.ak.a(getContext(), this.d, this.c, new AnonymousClass2());
     }
 
     private void P() {
@@ -248,9 +245,9 @@ public abstract class BaseScreenAdView extends BaseAdView {
 
     private void S() {
         com.anythink.basead.a.b.a(1, this.d, i());
-        b.InterfaceC0079b interfaceC0079b = this.E;
-        if (interfaceC0079b != null) {
-            interfaceC0079b.b();
+        b.InterfaceC0039b interfaceC0039b = this.E;
+        if (interfaceC0039b != null) {
+            interfaceC0039b.b();
         }
     }
 
@@ -264,7 +261,7 @@ public abstract class BaseScreenAdView extends BaseAdView {
     private void U() {
         CloseImageView closeImageView = this.I;
         if (closeImageView != null) {
-            this.N = a(closeImageView, this.f6049c.m.h());
+            this.N = a(closeImageView, this.c.m.h());
             this.I.setVisibility(8);
             this.I.setOnClickListener(new AnonymousClass7());
         }
@@ -334,11 +331,11 @@ public abstract class BaseScreenAdView extends BaseAdView {
     }
 
     private BaseEndCardView b(boolean z) {
-        MraidEndCardView mraidEndCardView = new MraidEndCardView(getContext(), this.d, this.f6049c);
+        MraidEndCardView mraidEndCardView = new MraidEndCardView(getContext(), this.d, this.c);
         mraidEndCardView.setEndCardListener(new MraidEndCardView.a() { // from class: com.anythink.basead.ui.BaseScreenAdView.15
             @Override // com.anythink.basead.ui.MraidEndCardView.a
             public final void a() {
-                if (3 == BaseScreenAdView.this.f6062a) {
+                if (3 == BaseScreenAdView.this.a) {
                     if (BaseScreenAdView.this.d.C() == 1 && BaseScreenAdView.this.d.E()) {
                         return;
                     }
@@ -364,9 +361,9 @@ public abstract class BaseScreenAdView extends BaseAdView {
 
     static /* synthetic */ void b(BaseScreenAdView baseScreenAdView) {
         com.anythink.basead.a.b.a(1, baseScreenAdView.d, baseScreenAdView.i());
-        b.InterfaceC0079b interfaceC0079b = baseScreenAdView.E;
-        if (interfaceC0079b != null) {
-            interfaceC0079b.b();
+        b.InterfaceC0039b interfaceC0039b = baseScreenAdView.E;
+        if (interfaceC0039b != null) {
+            interfaceC0039b.b();
         }
     }
 
@@ -452,7 +449,7 @@ public abstract class BaseScreenAdView extends BaseAdView {
         if (baseScreenAdView.ak == null) {
             baseScreenAdView.ak = new c();
         }
-        baseScreenAdView.ak.a(baseScreenAdView.getContext(), baseScreenAdView.d, baseScreenAdView.f6049c, new AnonymousClass2());
+        baseScreenAdView.ak.a(baseScreenAdView.getContext(), baseScreenAdView.d, baseScreenAdView.c, new AnonymousClass2());
     }
 
     private void g(int i) {
@@ -489,9 +486,9 @@ public abstract class BaseScreenAdView extends BaseAdView {
         i i = i();
         i.g = j();
         com.anythink.basead.a.b.a(7, this.d, i);
-        b.InterfaceC0079b interfaceC0079b = this.E;
-        if (interfaceC0079b != null) {
-            interfaceC0079b.e();
+        b.InterfaceC0039b interfaceC0039b = this.E;
+        if (interfaceC0039b != null) {
+            interfaceC0039b.e();
         }
     }
 
@@ -547,17 +544,17 @@ public abstract class BaseScreenAdView extends BaseAdView {
 
     @Override // com.anythink.basead.ui.BaseAdView
     protected final void a(int i) {
-        b.InterfaceC0079b interfaceC0079b = this.E;
-        if (interfaceC0079b != null) {
-            interfaceC0079b.a(i);
+        b.InterfaceC0039b interfaceC0039b = this.E;
+        if (interfaceC0039b != null) {
+            interfaceC0039b.a(i);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     public final void a(e eVar) {
-        b.InterfaceC0079b interfaceC0079b = this.E;
-        if (interfaceC0079b != null) {
-            interfaceC0079b.a(eVar);
+        b.InterfaceC0039b interfaceC0039b = this.E;
+        if (interfaceC0039b != null) {
+            interfaceC0039b.a(eVar);
         }
         k();
     }
@@ -617,14 +614,14 @@ public abstract class BaseScreenAdView extends BaseAdView {
                     baseShakeView2.setVisibility(0);
                 }
             }
-        }, m.ag);
+        }, 3000L);
     }
 
     @Override // com.anythink.basead.ui.BaseAdView
     protected final void a(boolean z) {
-        b.InterfaceC0079b interfaceC0079b = this.E;
-        if (interfaceC0079b != null) {
-            interfaceC0079b.a(z);
+        b.InterfaceC0039b interfaceC0039b = this.E;
+        if (interfaceC0039b != null) {
+            interfaceC0039b.a(z);
         }
     }
 
@@ -644,7 +641,7 @@ public abstract class BaseScreenAdView extends BaseAdView {
         z();
         CloseImageView closeImageView = this.I;
         if (closeImageView != null) {
-            this.N = a(closeImageView, this.f6049c.m.h());
+            this.N = a(closeImageView, this.c.m.h());
             this.I.setVisibility(8);
             this.I.setOnClickListener(new AnonymousClass7());
         }
@@ -660,7 +657,7 @@ public abstract class BaseScreenAdView extends BaseAdView {
     @Override // com.anythink.basead.ui.BaseAdView
     public void b(int i) {
         this.an = true;
-        this.N = a(this.I, this.f6049c.m.g());
+        this.N = a(this.I, this.c.m.g());
         if (this.af || this.d == null) {
             return;
         }
@@ -689,7 +686,7 @@ public abstract class BaseScreenAdView extends BaseAdView {
                 if (BaseScreenAdView.this.L >= 0 && i >= BaseScreenAdView.this.L) {
                     BaseScreenAdView.this.G();
                 }
-                if (i < BaseScreenAdView.this.f6049c.m.e() || BaseScreenAdView.this.v) {
+                if (i < BaseScreenAdView.this.c.m.e() || BaseScreenAdView.this.v) {
                     return;
                 }
                 BaseScreenAdView.this.G();
@@ -706,7 +703,7 @@ public abstract class BaseScreenAdView extends BaseAdView {
                 i.h = BaseScreenAdView.this.fillVideoEndRecord(false);
                 com.anythink.basead.a.b.a(17, BaseScreenAdView.this.d, i);
                 BaseScreenAdView.this.a(eVar);
-                if (!BaseScreenAdView.this.v && BaseScreenAdView.this.f6049c.m.f() == 1 && f.C.equals(eVar.b())) {
+                if (!BaseScreenAdView.this.v && BaseScreenAdView.this.c.m.f() == 1 && f.C.equals(eVar.b())) {
                     BaseScreenAdView.this.v = true;
                     if (BaseScreenAdView.this.E != null) {
                         BaseScreenAdView.this.E.d();
@@ -750,7 +747,7 @@ public abstract class BaseScreenAdView extends BaseAdView {
                         BaseScreenAdView.this.E.d();
                     }
                 }
-                if (BaseScreenAdView.this.f6049c.m.J() == 1) {
+                if (BaseScreenAdView.this.c.m.J() == 1) {
                     BaseScreenAdView.this.p();
                     BaseScreenAdView.this.l();
                     return;
@@ -776,7 +773,7 @@ public abstract class BaseScreenAdView extends BaseAdView {
                 i i = BaseScreenAdView.this.i();
                 i.g = BaseScreenAdView.this.j();
                 com.anythink.basead.a.b.a(14, BaseScreenAdView.this.d, i);
-                if (BaseScreenAdView.this.f6049c.m == null || BaseScreenAdView.this.f6049c.m.u() != 1) {
+                if (BaseScreenAdView.this.c.m == null || BaseScreenAdView.this.c.m.u() != 1) {
                     return;
                 }
                 BaseScreenAdView.this.b(1);
@@ -800,7 +797,7 @@ public abstract class BaseScreenAdView extends BaseAdView {
 
             @Override // com.anythink.basead.ui.PlayerView.a
             public final void g() {
-                new com.anythink.basead.a.b.f(BaseScreenAdView.this.f6049c.b, BaseScreenAdView.this.d, BaseScreenAdView.this.f6049c.m).b();
+                new com.anythink.basead.a.b.f(BaseScreenAdView.this.c.b, BaseScreenAdView.this.d, BaseScreenAdView.this.c.m).b();
             }
         });
         this.x.initMuteStatus(this.M);
@@ -842,9 +839,9 @@ public abstract class BaseScreenAdView extends BaseAdView {
     @Override // com.anythink.basead.ui.BaseAdView
     protected final void e() {
         com.anythink.basead.a.b.a(8, this.d, i());
-        b.InterfaceC0079b interfaceC0079b = this.E;
-        if (interfaceC0079b != null) {
-            interfaceC0079b.a();
+        b.InterfaceC0039b interfaceC0039b = this.E;
+        if (interfaceC0039b != null) {
+            interfaceC0039b.a();
         }
     }
 
@@ -862,10 +859,10 @@ public abstract class BaseScreenAdView extends BaseAdView {
         jVar.l = this.t == 2 ? 4 : 1;
         jVar.r = 1;
         PlayerView playerView = this.x;
-        jVar.f5908a = playerView != null ? playerView.getVideoLength() / 1000 : 0;
+        jVar.a = playerView != null ? playerView.getVideoLength() / 1000 : 0;
         jVar.b = this.B / 1000;
         PlayerView playerView2 = this.x;
-        jVar.f5909c = playerView2 != null ? playerView2.getCurrentPosition() / 1000 : 0;
+        jVar.c = playerView2 != null ? playerView2.getCurrentPosition() / 1000 : 0;
         jVar.d = this.B == 0 ? 1 : 0;
         jVar.o = this.B == 0 ? 1 : 2;
         PlayerView playerView3 = this.x;
@@ -918,8 +915,8 @@ public abstract class BaseScreenAdView extends BaseAdView {
     @Override // com.anythink.basead.ui.BaseAdView
     public final void h() {
         synchronized (this) {
-            if (this.f6049c.m.R() > 0) {
-                n.a().a(this.V, this.f6049c.m.R());
+            if (this.c.m.R() > 0) {
+                n.a().a(this.V, this.c.m.R());
             } else {
                 super.h();
             }
@@ -933,7 +930,7 @@ public abstract class BaseScreenAdView extends BaseAdView {
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.anythink.basead.ui.BaseAdView
     public final i i() {
-        i iVar = new i(this.f6049c.d, this.q);
+        i iVar = new i(this.c.d, this.q);
         iVar.e = getWidth();
         iVar.f = getHeight();
         PlayerView playerView = this.x;
@@ -951,7 +948,7 @@ public abstract class BaseScreenAdView extends BaseAdView {
             p();
             return;
         }
-        int i = this.f6062a;
+        int i = this.a;
         if (1 == i) {
             if (this.d.E()) {
                 J();
@@ -960,9 +957,9 @@ public abstract class BaseScreenAdView extends BaseAdView {
                 return;
             }
             a(f.a(f.k, f.D));
-            b.InterfaceC0079b interfaceC0079b = this.E;
-            if (interfaceC0079b != null) {
-                interfaceC0079b.e();
+            b.InterfaceC0039b interfaceC0039b = this.E;
+            if (interfaceC0039b != null) {
+                interfaceC0039b.e();
             }
         } else if (3 == i) {
             if (this.d.C() == 1 && this.d.E()) {
@@ -1012,7 +1009,7 @@ public abstract class BaseScreenAdView extends BaseAdView {
                     }
                     return false;
                 }
-            }, this.f6049c.m);
+            }, this.c.m);
         }
         BaseShakeView baseShakeView2 = this.S;
         if (baseShakeView2 != null) {
@@ -1032,7 +1029,7 @@ public abstract class BaseScreenAdView extends BaseAdView {
                     }
                     return false;
                 }
-            }, this.f6049c.m);
+            }, this.c.m);
         }
     }
 
@@ -1051,7 +1048,7 @@ public abstract class BaseScreenAdView extends BaseAdView {
                 public final void run() {
                     BaseScreenAdView.this.G();
                 }
-            }, a(this.f6049c.m));
+            }, a(this.c.m));
         }
         com.anythink.basead.a.b.a(6, this.d, i());
     }
@@ -1118,8 +1115,8 @@ public abstract class BaseScreenAdView extends BaseAdView {
         this.u = z;
     }
 
-    public void setListener(b.InterfaceC0079b interfaceC0079b) {
-        this.E = interfaceC0079b;
+    public void setListener(b.InterfaceC0039b interfaceC0039b) {
+        this.E = interfaceC0039b;
     }
 
     public void setShowBannerTime(long j) {
@@ -1140,19 +1137,19 @@ public abstract class BaseScreenAdView extends BaseAdView {
         String u = this.d.u();
         if (!TextUtils.isEmpty(u)) {
             com.anythink.basead.a.f.a();
-            int[] a2 = com.anythink.core.common.k.b.a(com.anythink.basead.a.f.a(1, u));
-            if (a2 != null) {
-                this.ac = a2[0];
-                this.ad = a2[1];
+            int[] a = com.anythink.core.common.k.b.a(com.anythink.basead.a.f.a(1, u));
+            if (a != null) {
+                this.ac = a[0];
+                this.ad = a[1];
             }
         }
         String x = this.d.x();
         if (!TextUtils.isEmpty(x)) {
             com.anythink.basead.a.f.a();
-            g.a a3 = g.a(com.anythink.basead.a.f.a(4, x));
-            if (a3 != null) {
-                this.aa = a3.f5851a;
-                this.ab = a3.b;
+            g.a a2 = g.a(com.anythink.basead.a.f.a(4, x));
+            if (a2 != null) {
+                this.aa = a2.a;
+                this.ab = a2.b;
             }
         } else if (!TextUtils.isEmpty(u)) {
             this.aa = this.ac;
@@ -1168,7 +1165,7 @@ public abstract class BaseScreenAdView extends BaseAdView {
         PanelView panelView = this.y;
         if (panelView != null) {
             panelView.setVisibility(4);
-            this.y.init(this.d, this.f6049c, this.t, m(), new PanelView.a() { // from class: com.anythink.basead.ui.BaseScreenAdView.5
+            this.y.init(this.d, this.c, this.t, m(), new PanelView.a() { // from class: com.anythink.basead.ui.BaseScreenAdView.5
                 @Override // com.anythink.basead.ui.PanelView.a
                 public final void a() {
                     BaseScreenAdView.this.b(1);

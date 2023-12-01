@@ -4,11 +4,11 @@ package com.umeng.analytics.pro;
 public class cq extends bw {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f40708a = 0;
+    public static final int f27017a = 0;
     public static final int b = 1;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final int f40709c = 2;
+    public static final int f27018c = 2;
     public static final int d = 3;
     public static final int e = 4;
     public static final int f = 5;

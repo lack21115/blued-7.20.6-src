@@ -32,11 +32,11 @@ public class g {
     private static g m;
 
     /* renamed from: a  reason: collision with root package name */
-    private ConcurrentHashMap<Integer, Integer> f39712a = new ConcurrentHashMap<>();
+    private ConcurrentHashMap<Integer, Integer> f26021a = new ConcurrentHashMap<>();
     private CopyOnWriteArrayList<c> b = new CopyOnWriteArrayList<>();
 
     /* renamed from: c  reason: collision with root package name */
-    private SharedPreferences f39713c;
+    private SharedPreferences f26022c;
     private long d;
     private int e;
 
@@ -73,12 +73,12 @@ public class g {
     private g() {
         AtomicInteger atomCbTimeout;
         Context context;
-        this.f39713c = null;
+        this.f26022c = null;
         atomCbTimeout = oj.getAtomCbTimeout();
         this.d = atomCbTimeout.get();
         this.e = 0;
         context = oj.getContext();
-        this.f39713c = context.getSharedPreferences(com.tencent.tmsqmsp.sdk.c.b.f39705a + a(i), 0);
+        this.f26022c = context.getSharedPreferences(com.tencent.tmsqmsp.sdk.c.b.f26014a + a(i), 0);
         b();
     }
 
@@ -185,7 +185,7 @@ public class g {
             com.tencent.tmsqmsp.sdk.a.f.a(gVar.toString(), 1);
         } catch (Exception e) {
             e.printStackTrace();
-            com.tencent.tmsqmsp.sdk.f.g.b(com.tencent.tmsqmsp.sdk.f.g.f39757a, 0, "onReport error!");
+            com.tencent.tmsqmsp.sdk.f.g.b(com.tencent.tmsqmsp.sdk.f.g.f26066a, 0, "onReport error!");
         }
     }
 
@@ -212,11 +212,11 @@ public class g {
                 Pair<Integer, Integer> a2 = a(keys.next(), jSONObject2);
                 if (a2 != null) {
                     a(a2);
-                    Integer num = this.f39712a.get(a2.first);
+                    Integer num = this.f26021a.get(a2.first);
                     if (num == null || num.byteValue() != a2.second.intValue()) {
                         linkedList.add(a2);
                     }
-                    this.f39712a.put(a2.first, a2.second);
+                    this.f26021a.put(a2.first, a2.second);
                 }
             }
         }
@@ -287,7 +287,7 @@ public class g {
                     int readInt = dataInputStream.readInt();
                     int readInt2 = dataInputStream.readInt();
                     a(readInt, readInt2);
-                    this.f39712a.put(Integer.valueOf(readInt), Integer.valueOf(readInt2));
+                    this.f26021a.put(Integer.valueOf(readInt), Integer.valueOf(readInt2));
                 }
             } catch (IOException e2) {
                 e = e2;
@@ -323,7 +323,7 @@ public class g {
 
     private JSONObject c() {
         try {
-            SharedPreferences.Editor edit = this.f39713c.edit();
+            SharedPreferences.Editor edit = this.f26022c.edit();
             edit.putLong(a(j), System.currentTimeMillis());
             edit.commit();
             JSONObject jSONObject = new JSONObject();
@@ -369,7 +369,7 @@ public class g {
             atomCbTimeout = oj.getAtomCbTimeout();
             this.d = atomCbTimeout.get();
             long j2 = 0;
-            long currentTimeMillis = System.currentTimeMillis() - this.f39713c.getLong(a(j), 0L);
+            long currentTimeMillis = System.currentTimeMillis() - this.f26022c.getLong(a(j), 0L);
             if (currentTimeMillis >= 0) {
                 j2 = currentTimeMillis;
             }
@@ -394,12 +394,12 @@ public class g {
 
     /* JADX WARN: Not initialized variable reg: 7, insn: 0x0102: MOVE  (r0 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = (r7 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]), block:B:55:0x0102 */
     private byte[] h() {
-        AutoCloseable autoCloseable;
-        ByteArrayOutputStream byteArrayOutputStream;
         DataOutputStream dataOutputStream;
+        ByteArrayOutputStream byteArrayOutputStream;
+        DataOutputStream dataOutputStream2;
         ByteArrayOutputStream byteArrayOutputStream2;
         ByteArrayOutputStream byteArrayOutputStream3;
-        DataOutputStream dataOutputStream2;
+        DataOutputStream dataOutputStream3;
         ByteArrayOutputStream byteArrayOutputStream4 = null;
         try {
             try {
@@ -407,21 +407,21 @@ public class g {
             } catch (IOException e) {
                 e = e;
                 byteArrayOutputStream = null;
-                dataOutputStream = null;
+                dataOutputStream2 = null;
             } catch (Throwable th) {
                 th = th;
-                autoCloseable = null;
+                dataOutputStream = null;
             }
             try {
-                dataOutputStream2 = new DataOutputStream(byteArrayOutputStream3);
+                dataOutputStream3 = new DataOutputStream(byteArrayOutputStream3);
             } catch (IOException e2) {
                 e = e2;
                 byteArrayOutputStream = byteArrayOutputStream3;
-                dataOutputStream = null;
+                dataOutputStream2 = null;
             } catch (Throwable th2) {
                 byteArrayOutputStream4 = byteArrayOutputStream3;
                 th = th2;
-                autoCloseable = null;
+                dataOutputStream = null;
                 if (byteArrayOutputStream4 != null) {
                     try {
                         byteArrayOutputStream4.close();
@@ -429,9 +429,9 @@ public class g {
                         e3.printStackTrace();
                     }
                 }
-                if (autoCloseable != null) {
+                if (dataOutputStream != null) {
                     try {
-                        autoCloseable.close();
+                        dataOutputStream.close();
                     } catch (IOException e4) {
                         e4.printStackTrace();
                     }
@@ -439,9 +439,9 @@ public class g {
                 throw th;
             }
             try {
-                for (Map.Entry<Integer, Integer> entry : this.f39712a.entrySet()) {
-                    dataOutputStream2.writeInt(entry.getKey().intValue());
-                    dataOutputStream2.writeInt(entry.getValue().intValue());
+                for (Map.Entry<Integer, Integer> entry : this.f26021a.entrySet()) {
+                    dataOutputStream3.writeInt(entry.getKey().intValue());
+                    dataOutputStream3.writeInt(entry.getValue().intValue());
                 }
                 byte[] byteArray = byteArrayOutputStream3.toByteArray();
                 try {
@@ -450,7 +450,7 @@ public class g {
                     e5.printStackTrace();
                 }
                 try {
-                    dataOutputStream2.close();
+                    dataOutputStream3.close();
                     return byteArray;
                 } catch (IOException e6) {
                     e6.printStackTrace();
@@ -458,7 +458,7 @@ public class g {
                 }
             } catch (IOException e7) {
                 byteArrayOutputStream = byteArrayOutputStream3;
-                dataOutputStream = dataOutputStream2;
+                dataOutputStream2 = dataOutputStream3;
                 e = e7;
                 e.printStackTrace();
                 if (byteArrayOutputStream != null) {
@@ -468,9 +468,9 @@ public class g {
                         e8.printStackTrace();
                     }
                 }
-                if (dataOutputStream != null) {
+                if (dataOutputStream2 != null) {
                     try {
-                        dataOutputStream.close();
+                        dataOutputStream2.close();
                         return null;
                     } catch (IOException e9) {
                         e9.printStackTrace();
@@ -481,7 +481,7 @@ public class g {
             }
         } catch (Throwable th3) {
             th = th3;
-            autoCloseable = null;
+            dataOutputStream = null;
             byteArrayOutputStream4 = byteArrayOutputStream2;
         }
     }
@@ -505,7 +505,7 @@ public class g {
     }
 
     public int a(int i2) {
-        Integer num = this.f39712a.get(Integer.valueOf(i2));
+        Integer num = this.f26021a.get(Integer.valueOf(i2));
         if (num != null) {
             return num.intValue();
         }

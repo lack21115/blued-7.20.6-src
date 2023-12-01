@@ -14,11 +14,11 @@ import java.util.Map;
 public class a extends ContentObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Handler f24291a;
+    private static Handler f10604a;
     private static HandlerThread b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final Object f24292c = new Object();
+    private static final Object f10605c = new Object();
     private Context d;
     private Map<String, Object> e;
     private Callback f;
@@ -34,15 +34,15 @@ public class a extends ContentObserver {
 
     protected static Handler a() {
         Handler handler;
-        synchronized (f24292c) {
+        synchronized (f10605c) {
             if (b == null || !b.isAlive()) {
                 HandlerThread handlerThread = new HandlerThread("instant_callback");
                 b = handlerThread;
                 handlerThread.start();
                 Looper looper = b.getLooper();
-                f24291a = looper != null ? new Handler(looper) : new Handler();
+                f10604a = looper != null ? new Handler(looper) : new Handler();
             }
-            handler = f24291a;
+            handler = f10604a;
         }
         return handler;
     }

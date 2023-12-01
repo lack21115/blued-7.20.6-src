@@ -1,5 +1,6 @@
 package mtopsdk.mtop.transform.converter;
 
+import com.anythink.core.common.g.c;
 import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
@@ -8,7 +9,6 @@ import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.Map;
 import mtopsdk.a.b.b;
-import mtopsdk.a.b.c;
 import mtopsdk.a.b.d;
 import mtopsdk.common.util.TBSdkLog;
 import mtopsdk.mtop.MtopProxy;
@@ -44,7 +44,7 @@ public class Api4NetworkConverter extends AbstractNetworkConverter {
             i = i2 + 1;
         }
         String str2 = (String) map.remove("lng");
-        String str3 = (String) map.remove("lat");
+        String str3 = (String) map.remove(c.B);
         if (str2 != null && str3 != null) {
             StringBuilder sb = new StringBuilder();
             sb.append(str2);
@@ -62,32 +62,32 @@ public class Api4NetworkConverter extends AbstractNetworkConverter {
 
     @Override // mtopsdk.mtop.transform.converter.INetworkConverter
     public b a(MtopProxy mtopProxy, Map map) {
-        URL a2;
+        URL a;
         if (mtopProxy.h == null) {
             mtopProxy.h = new MtopStatistics();
         }
         MtopNetworkProp e = mtopProxy.e();
         String g = mtopProxy.h.g();
-        c cVar = new c();
+        mtopsdk.a.b.c cVar = new mtopsdk.a.b.c();
         cVar.b(g);
         cVar.a(e.l);
         cVar.b(e.m);
         cVar.c(e.d);
         MethodEnum methodEnum = e.b;
-        Map a3 = a(map, e.e);
+        Map a2 = a(map, e.e);
         try {
             String str = (String) map.remove("api");
             String str2 = (String) map.remove("v");
-            String a4 = a(str, str2, mtopProxy);
+            String a3 = a(str, str2, mtopProxy);
             StringBuilder sb = new StringBuilder(64);
-            sb.append(mtopProxy.c(a4));
+            sb.append(mtopProxy.c(a3));
             sb.append(BridgeUtil.SPLIT_MARK);
             sb.append(str);
             sb.append(BridgeUtil.SPLIT_MARK);
             sb.append(str2);
             sb.append(BridgeUtil.SPLIT_MARK);
             if (MethodEnum.POST.a().equals(methodEnum.a())) {
-                final byte[] a5 = a(map, "utf-8");
+                final byte[] a4 = a(map, "utf-8");
                 cVar.a(methodEnum.a(), new d() { // from class: mtopsdk.mtop.transform.converter.Api4NetworkConverter.1
                     @Override // mtopsdk.a.b.d
                     public String a() {
@@ -97,22 +97,22 @@ public class Api4NetworkConverter extends AbstractNetworkConverter {
                     @Override // mtopsdk.a.b.d
                     public void a(OutputStream outputStream) {
                         byte[] bArr;
-                        if (outputStream == null || (bArr = a5) == null) {
+                        if (outputStream == null || (bArr = a4) == null) {
                             return;
                         }
                         outputStream.write(bArr);
                     }
                 });
-                a2 = NetworkConverterUtils.a(sb.toString(), (Map) null);
+                a = NetworkConverterUtils.a(sb.toString(), (Map) null);
             } else {
-                a(a3, mtopProxy);
-                a2 = NetworkConverterUtils.a(sb.toString(), map);
+                a(a2, mtopProxy);
+                a = NetworkConverterUtils.a(sb.toString(), map);
             }
-            if (a2 != null) {
-                mtopProxy.h.g = a2.getHost();
+            if (a != null) {
+                mtopProxy.h.g = a.getHost();
             }
-            cVar.a(a2.toString());
-            cVar.a(a3);
+            cVar.a(a.toString());
+            cVar.a(a2);
             return cVar.a();
         } catch (Throwable th) {
             TBSdkLog.b("mtopsdk.Api4NetworkConverter", g, "[Api4NetworkConverter] convert Request failed!", th);

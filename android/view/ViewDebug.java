@@ -13,7 +13,6 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.ViewGroup;
-import com.igexin.push.core.b;
 import java.io.BufferedOutputStream;
 import java.io.BufferedWriter;
 import java.io.ByteArrayOutputStream;
@@ -288,7 +287,7 @@ public class ViewDebug {
 
     private static String capturedViewExportFields(Object obj, Class<?> cls, String str) {
         if (obj == null) {
-            return b.l;
+            return "null";
         }
         StringBuilder sb = new StringBuilder();
         Field[] capturedViewGetPropertyFields = capturedViewGetPropertyFields(cls);
@@ -308,7 +307,7 @@ public class ViewDebug {
                 if (obj2 != null) {
                     sb.append(obj2.toString().replace("\n", "\\n"));
                 } else {
-                    sb.append(b.l);
+                    sb.append("null");
                 }
                 sb.append(' ');
             } catch (IllegalAccessException e) {
@@ -319,7 +318,7 @@ public class ViewDebug {
 
     private static String capturedViewExportMethods(Object obj, Class<?> cls, String str) {
         if (obj == null) {
-            return b.l;
+            return "null";
         }
         StringBuilder sb = new StringBuilder();
         Method[] capturedViewGetPropertyMethods = capturedViewGetPropertyMethods(cls);
@@ -343,7 +342,7 @@ public class ViewDebug {
                     if (invoke != null) {
                         sb.append(invoke.toString().replace("\n", "\\n"));
                     } else {
-                        sb.append(b.l);
+                        sb.append("null");
                     }
                     sb.append("; ");
                 }
@@ -704,7 +703,7 @@ public class ViewDebug {
                             int i4 = i3;
                             if (i4 < strArr.length) {
                                 if (strArr[i4] != null) {
-                                    writeEntry(bufferedWriter, str2 + str, strArr[i4], "", strArr[i4 + 1] == null ? b.l : strArr[i4 + 1]);
+                                    writeEntry(bufferedWriter, str2 + str, strArr[i4], "", strArr[i4 + 1] == null ? "null" : strArr[i4 + 1]);
                                 }
                                 i3 = i4 + 2;
                             }
@@ -807,7 +806,7 @@ public class ViewDebug {
                             int i4 = i3;
                             if (i4 < strArr.length) {
                                 if (strArr[i4] != null) {
-                                    writeEntry(bufferedWriter, str2 + str, strArr[i4], "()", strArr[i4 + 1] == null ? b.l : strArr[i4 + 1]);
+                                    writeEntry(bufferedWriter, str2 + str, strArr[i4], "()", strArr[i4 + 1] == null ? "null" : strArr[i4 + 1]);
                                 }
                                 i3 = i4 + 2;
                             }
@@ -1108,7 +1107,7 @@ public class ViewDebug {
                     int i7 = i;
                     str = typedValue.coerceToString().toString();
                 } else {
-                    str = b.l;
+                    str = "null";
                 }
                 strArr[i + 1] = str;
                 int i8 = i + 2;

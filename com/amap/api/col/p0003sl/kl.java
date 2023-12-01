@@ -104,10 +104,10 @@ public final class kl {
     }
 
     public static void a(Context context, ke keVar, String str, int i, int i2, String str2) {
-        keVar.f5266a = iu.c(context, str);
+        keVar.a = iu.c(context, str);
         keVar.d = i;
         keVar.b = i2;
-        keVar.f5267c = str2;
+        keVar.c = str2;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -116,11 +116,11 @@ public final class kl {
         InputStream inputStream;
         byte[] bArr = new byte[0];
         try {
-            jr.b a2 = jrVar.a(str);
-            if (a2 == null) {
-                if (a2 != null) {
+            jr.b a = jrVar.a(str);
+            if (a == null) {
+                if (a != null) {
                     try {
-                        a2.close();
+                        a.close();
                         return bArr;
                     } catch (Throwable th) {
                         th.printStackTrace();
@@ -131,18 +131,18 @@ public final class kl {
             byte[] bArr2 = bArr;
             inputStream = null;
             try {
-                InputStream a3 = a2.a();
-                if (a3 == null) {
-                    if (a3 != null) {
+                InputStream a2 = a.a();
+                if (a2 == null) {
+                    if (a2 != null) {
                         try {
-                            a3.close();
+                            a2.close();
                         } catch (Throwable th2) {
                             th2.printStackTrace();
                         }
                     }
-                    if (a2 != null) {
+                    if (a != null) {
                         try {
-                            a2.close();
+                            a.close();
                             return bArr;
                         } catch (Throwable th3) {
                             th3.printStackTrace();
@@ -150,20 +150,20 @@ public final class kl {
                     }
                     return bArr;
                 }
-                byte[] bArr3 = new byte[a3.available()];
+                byte[] bArr3 = new byte[a2.available()];
                 bArr2 = bArr3;
-                inputStream = a3;
-                a3.read(bArr3);
-                if (a3 != null) {
+                inputStream = a2;
+                a2.read(bArr3);
+                if (a2 != null) {
                     try {
-                        a3.close();
+                        a2.close();
                     } catch (Throwable th4) {
                         th4.printStackTrace();
                     }
                 }
-                if (a2 != null) {
+                if (a != null) {
                     try {
-                        a2.close();
+                        a.close();
                         return bArr3;
                     } catch (Throwable th5) {
                         th5.printStackTrace();
@@ -172,7 +172,7 @@ public final class kl {
                 return bArr3;
             } catch (Throwable th6) {
                 bArr = bArr2;
-                bVar = a2;
+                bVar = a;
                 th = th6;
                 try {
                     iw.c(th, "sui", "rdS");

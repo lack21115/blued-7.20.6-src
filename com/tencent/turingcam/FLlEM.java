@@ -7,17 +7,17 @@ import java.util.Map;
 public class FLlEM {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Map<String, s7Dnc> f39814a;
+    private static final Map<String, s7Dnc> f26123a;
 
     static {
         HashMap hashMap = new HashMap();
-        f39814a = hashMap;
+        f26123a = hashMap;
         hashMap.put("4", new nyvKz());
         hashMap.put("3", new ucT3w());
         hashMap.put("5", new yiZAu());
     }
 
     public static s7Dnc a(String str) {
-        return f39814a.get(str);
+        return f26123a.get(str);
     }
 }

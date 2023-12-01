@@ -6,6 +6,7 @@ import com.anythink.core.api.AdError;
 import com.anythink.core.common.b.n;
 import com.anythink.core.common.e.o;
 import com.anythink.core.common.u;
+import com.efs.sdk.base.Constants;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.HashMap;
@@ -16,20 +17,16 @@ import org.json.JSONObject;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/g/b.class */
 public final class b extends a {
-
-    /* renamed from: a  reason: collision with root package name */
-    Context f6719a;
+    Context a;
     int b;
     List<String> e;
     int f;
     boolean g = false;
-
-    /* renamed from: c  reason: collision with root package name */
-    String f6720c = n.a().p();
+    String c = n.a().p();
     String d = n.a().q();
 
     public b(Context context, int i, List<String> list) {
-        this.f6719a = context;
+        this.a = context;
         this.e = list;
         this.b = list.size();
         this.f = i;
@@ -66,11 +63,11 @@ public final class b extends a {
     protected final void a(AdError adError) {
         if (this.g) {
             JSONObject jSONObject = new JSONObject();
-            Map<String, String> c2 = c();
-            if (c2 != null) {
+            Map<String, String> c = c();
+            if (c != null) {
                 try {
-                    for (String str : c2.keySet()) {
-                        jSONObject.put(str, c2.get(str));
+                    for (String str : c.keySet()) {
+                        jSONObject.put(str, c.get(str));
                     }
                 } catch (Exception e) {
                 }
@@ -99,7 +96,7 @@ public final class b extends a {
     @Override // com.anythink.core.common.g.a
     protected final Map<String, String> c() {
         HashMap hashMap = new HashMap();
-        hashMap.put("Content-Encoding", "gzip");
+        hashMap.put("Content-Encoding", Constants.CP_GZIP);
         hashMap.put("Content-Type", "application/json;charset=utf-8");
         return hashMap;
     }
@@ -116,7 +113,7 @@ public final class b extends a {
         JSONObject e = super.e();
         if (e != null) {
             try {
-                e.put("app_id", this.f6720c);
+                e.put("app_id", this.c);
                 e.put("nw_ver", com.anythink.core.common.k.d.h());
                 Map<String, Object> m = n.a().m();
                 if (m != null) {
@@ -166,12 +163,12 @@ public final class b extends a {
 
     @Override // com.anythink.core.common.g.a
     protected final String h() {
-        return this.f6720c;
+        return this.c;
     }
 
     @Override // com.anythink.core.common.g.a
     protected final Context i() {
-        return this.f6719a;
+        return this.a;
     }
 
     @Override // com.anythink.core.common.g.a

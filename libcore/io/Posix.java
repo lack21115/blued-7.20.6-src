@@ -16,6 +16,7 @@ import android.system.StructUcred;
 import android.system.StructUtsname;
 import android.util.MutableInt;
 import android.util.MutableLong;
+import dalvik.bytecode.Opcodes;
 import java.io.FileDescriptor;
 import java.io.InterruptedIOException;
 import java.net.InetAddress;
@@ -405,7 +406,7 @@ public final class Posix implements Os {
 
     @Override // libcore.io.Os
     public int umask(int i) {
-        if ((i & 511) != i) {
+        if ((i & Opcodes.OP_CHECK_CAST_JUMBO) != i) {
             throw new IllegalArgumentException("Invalid umask: " + i);
         }
         return umaskImpl(i);

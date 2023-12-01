@@ -5,11 +5,11 @@ import android.util.Base64;
 import android.util.Log;
 import android.webkit.WebSettings;
 import androidx.collection.ArrayMap;
+import com.alibaba.fastjson.support.spring.FastJsonJsonView;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.net.HttpManager;
 import com.blued.android.framework.provider.ProviderHolder;
 import com.blued.android.framework.utils.LocaleUtils;
-import com.google.common.net.HttpHeaders;
 import java.security.InvalidKeyException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -56,14 +56,14 @@ public class BluedHttpTools {
     }
 
     public static Map<String, String> a(String str) {
-        Map<String, String> a2 = a(false);
-        a2.put("Authorization", "Blued " + str);
-        return a2;
+        Map<String, String> a = a(false);
+        a.put("Authorization", "Blued " + str);
+        return a;
     }
 
     public static Map<String, String> a(String str, String str2, String str3, String str4) {
         String str5;
-        Map<String, String> a2 = a(false);
+        Map<String, String> a = a(false);
         try {
             String str6 = str3 + new StringBuilder(str4).reverse().toString();
             SecretKeySpec secretKeySpec = new SecretKeySpec(str2.getBytes(), "HmacSHA1");
@@ -73,35 +73,35 @@ public class BluedHttpTools {
         } catch (InvalidKeyException e) {
             e.printStackTrace();
             str5 = "";
-            a2.put("Authorization", "Blued " + str5);
+            a.put("Authorization", "Blued " + str5);
             Log.v("tempTest", "sign:" + str5 + ", t:" + str4);
-            return a2;
+            return a;
         } catch (NoSuchAlgorithmException e2) {
             e2.printStackTrace();
             str5 = "";
-            a2.put("Authorization", "Blued " + str5);
+            a.put("Authorization", "Blued " + str5);
             Log.v("tempTest", "sign:" + str5 + ", t:" + str4);
-            return a2;
+            return a;
         } catch (Throwable th) {
             th.printStackTrace();
             str5 = "";
-            a2.put("Authorization", "Blued " + str5);
+            a.put("Authorization", "Blued " + str5);
             Log.v("tempTest", "sign:" + str5 + ", t:" + str4);
-            return a2;
+            return a;
         }
-        a2.put("Authorization", "Blued " + str5);
+        a.put("Authorization", "Blued " + str5);
         Log.v("tempTest", "sign:" + str5 + ", t:" + str4);
-        return a2;
+        return a;
     }
 
     public static Map<String, String> a(boolean z) {
         ArrayMap arrayMap = new ArrayMap();
-        arrayMap.put(HttpHeaders.ACCEPT, "*/*");
+        arrayMap.put("Accept", "*/*");
         arrayMap.put("Connection", "keep-alive");
-        arrayMap.put("Content-Type", "application/json");
-        arrayMap.put(HttpHeaders.ACCEPT_LANGUAGE, LocaleUtils.b());
+        arrayMap.put("Content-Type", FastJsonJsonView.DEFAULT_CONTENT_TYPE);
+        arrayMap.put("Accept-Language", LocaleUtils.b());
         arrayMap.put("User-Agent", AppInfo.b);
-        arrayMap.put("channel", AppInfo.f9487c);
+        arrayMap.put("channel", AppInfo.c);
         arrayMap.put("ua", WebSettings.getDefaultUserAgent(AppInfo.d()));
         String b = ProviderHolder.a().e().b();
         if (!TextUtils.isEmpty(b)) {
@@ -128,9 +128,9 @@ public class BluedHttpTools {
 
     public static Map<String, String> b(boolean z) {
         ArrayMap arrayMap = new ArrayMap();
-        arrayMap.put(HttpHeaders.ACCEPT, "*/*");
+        arrayMap.put("Accept", "*/*");
         arrayMap.put("Connection", "keep-alive");
-        arrayMap.put(HttpHeaders.ACCEPT_LANGUAGE, LocaleUtils.b());
+        arrayMap.put("Accept-Language", LocaleUtils.b());
         arrayMap.put("User-Agent", AppInfo.b);
         if (z) {
             arrayMap.put("Authorization", "Basic " + d());
@@ -144,9 +144,9 @@ public class BluedHttpTools {
 
     public static Map<String, String> c(boolean z) {
         ArrayMap arrayMap = new ArrayMap();
-        arrayMap.put(HttpHeaders.ACCEPT, "*/*");
+        arrayMap.put("Accept", "*/*");
         arrayMap.put("Connection", "keep-alive");
-        arrayMap.put(HttpHeaders.ACCEPT_LANGUAGE, LocaleUtils.b());
+        arrayMap.put("Accept-Language", LocaleUtils.b());
         arrayMap.put("User-Agent", AppInfo.b);
         if (z) {
             arrayMap.put("Authorization", "Basic " + d());
@@ -155,14 +155,14 @@ public class BluedHttpTools {
     }
 
     public static String d() {
-        String a2 = ProviderHolder.a().b().a();
+        String a = ProviderHolder.a().b().a();
         String b = ProviderHolder.a().b().b();
         String str = b;
         try {
             if (TextUtils.isEmpty(b)) {
                 str = "0";
             }
-            return Base64.encodeToString((a2 + ":" + str).getBytes(), 2);
+            return Base64.encodeToString((a + ":" + str).getBytes(), 2);
         } catch (Exception e) {
             e.printStackTrace();
             return "";

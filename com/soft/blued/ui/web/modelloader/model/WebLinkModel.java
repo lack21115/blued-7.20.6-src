@@ -16,11 +16,11 @@ public final class WebLinkModel {
         this(null, null, 3, null);
     }
 
-    public WebLinkModel(List<String> black_list, List<String> white_list) {
-        Intrinsics.e(black_list, "black_list");
-        Intrinsics.e(white_list, "white_list");
-        this.black_list = black_list;
-        this.white_list = white_list;
+    public WebLinkModel(List<String> list, List<String> list2) {
+        Intrinsics.e(list, "black_list");
+        Intrinsics.e(list2, "white_list");
+        this.black_list = list;
+        this.white_list = list2;
     }
 
     public /* synthetic */ WebLinkModel(List list, List list2, int i, DefaultConstructorMarker defaultConstructorMarker) {
@@ -45,10 +45,10 @@ public final class WebLinkModel {
         return this.white_list;
     }
 
-    public final WebLinkModel copy(List<String> black_list, List<String> white_list) {
-        Intrinsics.e(black_list, "black_list");
-        Intrinsics.e(white_list, "white_list");
-        return new WebLinkModel(black_list, white_list);
+    public final WebLinkModel copy(List<String> list, List<String> list2) {
+        Intrinsics.e(list, "black_list");
+        Intrinsics.e(list2, "white_list");
+        return new WebLinkModel(list, list2);
     }
 
     public boolean equals(Object obj) {

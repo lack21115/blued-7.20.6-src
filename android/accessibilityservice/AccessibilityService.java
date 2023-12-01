@@ -89,7 +89,6 @@ public abstract class AccessibilityService extends Service {
             this.mCaller.sendMessage(this.mCaller.obtainMessage(5));
         }
 
-        @Override // com.android.internal.os.HandlerCaller.Callback
         public void executeMessage(Message message) {
             switch (message.what) {
                 case 1:

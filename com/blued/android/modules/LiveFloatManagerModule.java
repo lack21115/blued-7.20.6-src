@@ -8,9 +8,7 @@ import com.soft.blued.ui.msg.DialogSkipFragment;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/modules/LiveFloatManagerModule.class */
 public class LiveFloatManagerModule {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected static ILiveFloatManager f18629a = new ILiveFloatManager() { // from class: com.blued.android.modules.LiveFloatManagerModule.1
+    protected static ILiveFloatManager a = new ILiveFloatManager() { // from class: com.blued.android.modules.LiveFloatManagerModule.1
         @Override // com.blued.android.module.base.live.ILiveFloatManager
         public boolean a(Context context) {
             if (LiveFloatManager.a().H()) {
@@ -22,6 +20,6 @@ public class LiveFloatManagerModule {
     };
 
     public static void a() {
-        LiveFloatManagerProxy.a().a((LiveFloatManagerProxy) f18629a);
+        LiveFloatManagerProxy.a().a((LiveFloatManagerProxy) a);
     }
 }

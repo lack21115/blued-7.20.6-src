@@ -23,11 +23,11 @@ public class g implements ITPExtendReportController, com.tencent.thumbplayer.d.a
     private Context g;
 
     /* renamed from: a  reason: collision with root package name */
-    private ITPReportInfoGetter f39390a = null;
+    private ITPReportInfoGetter f25699a = null;
     private HandlerThread b = null;
 
     /* renamed from: c  reason: collision with root package name */
-    private a f39391c = null;
+    private a f25700c = null;
     private com.tencent.thumbplayer.tplayer.a.a d = null;
     private l e = new l();
     private com.tencent.thumbplayer.tplayer.a.a.a h = null;
@@ -95,7 +95,7 @@ public class g implements ITPExtendReportController, com.tencent.thumbplayer.d.a
             this.d = a2;
             if (a2 != null) {
                 a2.a(this.g, this.e);
-                this.d.a(this.f39390a);
+                this.d.a(this.f25699a);
                 this.d.a(this.h);
                 Iterator<WeakReference<ITPReportChannelListener>> it = this.f.iterator();
                 while (it.hasNext()) {
@@ -153,7 +153,7 @@ public class g implements ITPExtendReportController, com.tencent.thumbplayer.d.a
         this.i.a(2);
         if (aVar instanceof b.p) {
             b.p pVar = (b.p) aVar;
-            this.e.f39397c = pVar.b();
+            this.e.f25706c = pVar.b();
             this.e.d = pVar.c();
             this.e.i = pVar.d();
         }
@@ -198,9 +198,9 @@ public class g implements ITPExtendReportController, com.tencent.thumbplayer.d.a
         TPLogUtil.i("TPReportController", "onControllerRelease");
         synchronized (this.j) {
             if (this.b != null) {
-                o.a().a(this.b, this.f39391c);
+                o.a().a(this.b, this.f25700c);
                 this.b = null;
-                this.f39391c = null;
+                this.f25700c = null;
             }
             this.f.clear();
             this.j.notifyAll();
@@ -210,13 +210,13 @@ public class g implements ITPExtendReportController, com.tencent.thumbplayer.d.a
 
     public void a() {
         this.b = o.a().a("TPReportController_Thread");
-        this.f39391c = new a(this.b.getLooper());
+        this.f25700c = new a(this.b.getLooper());
     }
 
     @Override // com.tencent.thumbplayer.d.a
     public void a(b.a aVar) {
         if (k.containsKey(Integer.valueOf(aVar.a()))) {
-            this.f39391c.obtainMessage(k.get(Integer.valueOf(aVar.a())).intValue(), aVar).sendToTarget();
+            this.f25700c.obtainMessage(k.get(Integer.valueOf(aVar.a())).intValue(), aVar).sendToTarget();
             return;
         }
         TPLogUtil.w("TPReportController", "EventId:" + aVar.a() + " is not need process");
@@ -246,8 +246,8 @@ public class g implements ITPExtendReportController, com.tencent.thumbplayer.d.a
     public void b() {
         TPLogUtil.i("TPReportController", "release");
         synchronized (this.j) {
-            if (this.f39391c != null) {
-                this.f39391c.sendEmptyMessage(1000);
+            if (this.f25700c != null) {
+                this.f25700c.sendEmptyMessage(1000);
             }
             try {
                 this.j.wait(500L);
@@ -259,6 +259,6 @@ public class g implements ITPExtendReportController, com.tencent.thumbplayer.d.a
 
     @Override // com.tencent.thumbplayer.api.reportv2.ITPExtendReportController
     public void setReportInfoGetter(ITPReportInfoGetter iTPReportInfoGetter) {
-        this.f39390a = iTPReportInfoGetter;
+        this.f25699a = iTPReportInfoGetter;
     }
 }

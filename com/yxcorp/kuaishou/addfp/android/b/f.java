@@ -7,11 +7,11 @@ import java.lang.reflect.Method;
 public class f {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Object f41860a;
+    private static Object f28169a;
     private static Method b;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final /* synthetic */ int f41861c = 0;
+    public static final /* synthetic */ int f28170c = 0;
 
     static {
         if (Build.VERSION.SDK_INT >= 28) {
@@ -21,7 +21,7 @@ public class f {
                 Class cls = (Class) declaredMethod.invoke(null, "dalvik.system.VMRuntime");
                 Method method = (Method) declaredMethod2.invoke(cls, "getRuntime", null);
                 b = (Method) declaredMethod2.invoke(cls, "setHiddenApiExemptions", new Class[]{String[].class});
-                f41860a = method.invoke(null, new Object[0]);
+                f28169a = method.invoke(null, new Object[0]);
             } catch (Throwable th) {
             }
         }
@@ -29,7 +29,7 @@ public class f {
 
     public static boolean a() {
         Method method;
-        Object obj = f41860a;
+        Object obj = f28169a;
         if (obj == null || (method = b) == null) {
             return false;
         }

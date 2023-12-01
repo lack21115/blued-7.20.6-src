@@ -1,6 +1,5 @@
 package com.kwai.adclient.kscommerciallogger.snapshot;
 
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Objects;
@@ -55,7 +54,7 @@ public class c {
             }
             StringBuilder sb = new StringBuilder();
             sb.append(str);
-            sb.append(BridgeUtil.UNDERLINE_STR);
+            sb.append("_");
             int i = this.aEJ;
             this.aEJ = i + 1;
             sb.append(i);

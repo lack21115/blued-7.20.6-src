@@ -1,5 +1,6 @@
 package okio;
 
+import com.anythink.core.common.k.f;
 import java.io.EOFException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -64,21 +65,21 @@ public class ByteString implements Serializable, Comparable<ByteString> {
 
         @Deprecated
         /* renamed from: -deprecated_decodeBase64  reason: not valid java name */
-        public final ByteString m13280deprecated_decodeBase64(String string) {
+        public final ByteString m12189deprecated_decodeBase64(String string) {
             Intrinsics.e(string, "string");
             return decodeBase64(string);
         }
 
         @Deprecated
         /* renamed from: -deprecated_decodeHex  reason: not valid java name */
-        public final ByteString m13281deprecated_decodeHex(String string) {
+        public final ByteString m12190deprecated_decodeHex(String string) {
             Intrinsics.e(string, "string");
             return decodeHex(string);
         }
 
         @Deprecated
         /* renamed from: -deprecated_encodeString  reason: not valid java name */
-        public final ByteString m13282deprecated_encodeString(String string, Charset charset) {
+        public final ByteString m12191deprecated_encodeString(String string, Charset charset) {
             Intrinsics.e(string, "string");
             Intrinsics.e(charset, "charset");
             return encodeString(string, charset);
@@ -86,28 +87,28 @@ public class ByteString implements Serializable, Comparable<ByteString> {
 
         @Deprecated
         /* renamed from: -deprecated_encodeUtf8  reason: not valid java name */
-        public final ByteString m13283deprecated_encodeUtf8(String string) {
+        public final ByteString m12192deprecated_encodeUtf8(String string) {
             Intrinsics.e(string, "string");
             return encodeUtf8(string);
         }
 
         @Deprecated
         /* renamed from: -deprecated_of  reason: not valid java name */
-        public final ByteString m13284deprecated_of(ByteBuffer buffer) {
+        public final ByteString m12193deprecated_of(ByteBuffer buffer) {
             Intrinsics.e(buffer, "buffer");
             return of(buffer);
         }
 
         @Deprecated
         /* renamed from: -deprecated_of  reason: not valid java name */
-        public final ByteString m13285deprecated_of(byte[] array, int i, int i2) {
+        public final ByteString m12194deprecated_of(byte[] array, int i, int i2) {
             Intrinsics.e(array, "array");
             return of(array, i, i2);
         }
 
         @Deprecated
         /* renamed from: -deprecated_read  reason: not valid java name */
-        public final ByteString m13286deprecated_read(InputStream inputstream, int i) {
+        public final ByteString m12195deprecated_read(InputStream inputstream, int i) {
             Intrinsics.e(inputstream, "inputstream");
             return read(inputstream, i);
         }
@@ -333,13 +334,13 @@ public class ByteString implements Serializable, Comparable<ByteString> {
 
     @Deprecated
     /* renamed from: -deprecated_getByte  reason: not valid java name */
-    public final byte m13278deprecated_getByte(int i) {
+    public final byte m12187deprecated_getByte(int i) {
         return getByte(i);
     }
 
     @Deprecated
     /* renamed from: -deprecated_size  reason: not valid java name */
-    public final int m13279deprecated_size() {
+    public final int m12188deprecated_size() {
         return size();
     }
 
@@ -565,7 +566,7 @@ public class ByteString implements Serializable, Comparable<ByteString> {
     }
 
     public final ByteString md5() {
-        return digest$okio("MD5");
+        return digest$okio(f.a);
     }
 
     public boolean rangeEquals(int i, ByteString other, int i2, int i3) {
@@ -723,11 +724,11 @@ public class ByteString implements Serializable, Comparable<ByteString> {
                 if (utf8 != null) {
                     String substring = utf8.substring(0, access$codePointIndexToCharIndex);
                     Intrinsics.c(substring, "(this as java.lang.Strin…ing(startIndex, endIndex)");
-                    String a2 = StringsKt.a(StringsKt.a(StringsKt.a(substring, "\\", "\\\\", false, 4, (Object) null), "\n", "\\n", false, 4, (Object) null), "\r", "\\r", false, 4, (Object) null);
+                    String a = StringsKt.a(StringsKt.a(StringsKt.a(substring, "\\", "\\\\", false, 4, (Object) null), "\n", "\\n", false, 4, (Object) null), "\r", "\\r", false, 4, (Object) null);
                     if (access$codePointIndexToCharIndex >= utf8.length()) {
-                        return "[text=" + a2 + ']';
+                        return "[text=" + a + ']';
                     }
-                    return "[size=" + getData$okio().length + " text=" + a2 + "…]";
+                    return "[size=" + getData$okio().length + " text=" + a + "…]";
                 }
                 throw new NullPointerException("null cannot be cast to non-null type java.lang.String");
             } else if (getData$okio().length > 64) {

@@ -78,14 +78,14 @@ import java.util.List;
 public class MineFragment extends MvpFragment<MinePresenter> {
 
     /* renamed from: a  reason: collision with root package name */
-    private List<MineEntryInfo.VipBroadcast> f31596a;
+    private List<MineEntryInfo.VipBroadcast> f17906a;
     @BindView
     BluedADConstraintLayout adViewLayout;
     @BindView
     ImageView avatarWidget;
 
     /* renamed from: c  reason: collision with root package name */
-    private MineFourEntryAdapter f31597c;
+    private MineFourEntryAdapter f17907c;
     @BindView
     CardView cvAd;
     @BindView
@@ -191,11 +191,11 @@ public class MineFragment extends MvpFragment<MinePresenter> {
     class AnonymousClass7 implements MineSettingDialogFragment.OnMineSettingListener {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ MineFragment f31605a;
+        final /* synthetic */ MineFragment f17915a;
 
         @Override // com.soft.blued.ui.mine.fragment.MineSettingDialogFragment.OnMineSettingListener
         public void a(boolean z, boolean z2) {
-            this.f31605a.j().a(z, z2);
+            ((MinePresenter) this.f17915a.j()).a(z, z2);
         }
     }
 
@@ -218,7 +218,7 @@ public class MineFragment extends MvpFragment<MinePresenter> {
         public BannerViewHolder_ViewBinding(BannerViewHolder bannerViewHolder, View view) {
             this.b = bannerViewHolder;
             bannerViewHolder.title = (TextView) Utils.a(view, R.id.tv_ad_title, "field 'title'", TextView.class);
-            bannerViewHolder.content = (TextView) Utils.a(view, 2131370825, "field 'content'", TextView.class);
+            bannerViewHolder.content = (TextView) Utils.a(view, R.id.tv_ad_content, "field 'content'", TextView.class);
         }
 
         @Override // butterknife.Unbinder
@@ -296,7 +296,7 @@ public class MineFragment extends MvpFragment<MinePresenter> {
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
-                EventTrackSettings.a(SettingsProtos.Event.MINE_BTN_CLICK, imgBanner.link, null, BluedConfig.a().g().is_chat_shadow == 1);
+                EventTrackSettings.a(SettingsProtos.Event.MINE_BTN_CLICK, imgBanner.link, (String) null, BluedConfig.a().g().is_chat_shadow == 1);
                 if (imgBanner.adm_type == 2) {
                     BaseADVideoFragment.a(MineFragment.this.q, imgBanner, 1);
                 } else if (TextUtils.isEmpty(imgBanner.deep_link_url)) {
@@ -325,7 +325,7 @@ public class MineFragment extends MvpFragment<MinePresenter> {
             this.d.addAll(list);
             this.cvAnchors.setVisibility(0);
         }
-        this.f31597c.setNewData(this.d);
+        this.f17907c.setNewData(this.d);
     }
 
     private void a(List<MineEntryInfo.ColumnsItem> list, final List<MineEntryInfo.TvBanner> list2) {
@@ -437,7 +437,7 @@ public class MineFragment extends MvpFragment<MinePresenter> {
     }
 
     private void a(final List<MineEntryInfo.VipBroadcast> list, boolean z) {
-        this.f31596a = list;
+        this.f17906a = list;
         this.vfVipAd.removeAllViews();
         this.vfVipAd.getCurrentView();
         if (list == null || list.size() <= 0) {
@@ -486,9 +486,9 @@ public class MineFragment extends MvpFragment<MinePresenter> {
                     @Override // android.view.View.OnClickListener
                     public void onClick(View view) {
                         Tracker.onClick(view);
-                        EventTrackSettings.a(SettingsProtos.Event.MINE_VIP_BANNER_COPYWRITING_CLICK, ((MineEntryInfo.VipBroadcast) MineFragment.this.f31596a.get(i2)).url, i2);
+                        EventTrackSettings.a(SettingsProtos.Event.MINE_VIP_BANNER_COPYWRITING_CLICK, ((MineEntryInfo.VipBroadcast) MineFragment.this.f17906a.get(i2)).url, i2);
                         InstantLog.a("mine_vip_banner_right_click");
-                        WebViewShowInfoFragment.show(MineFragment.this.q, ((MineEntryInfo.VipBroadcast) MineFragment.this.f31596a.get(i2)).url, 0);
+                        WebViewShowInfoFragment.show(MineFragment.this.q, ((MineEntryInfo.VipBroadcast) MineFragment.this.f17906a.get(i2)).url, 0);
                     }
                 }));
                 this.vfVipAd.addView(inflate);
@@ -498,8 +498,8 @@ public class MineFragment extends MvpFragment<MinePresenter> {
         this.vfVipAd.getInAnimation().setAnimationListener(new Animation.AnimationListener() { // from class: com.soft.blued.ui.mine.fragment.MineFragment.3
             @Override // android.view.animation.Animation.AnimationListener
             public void onAnimationEnd(Animation animation) {
-                if (MineFragment.this.vfVipAd.getGlobalVisibleRect(new Rect()) && MineFragment.this.f31596a != null && MineFragment.this.f31596a.size() > MineFragment.this.vfVipAd.getDisplayedChild()) {
-                    EventTrackSettings.a(SettingsProtos.Event.MINE_VIP_BANNER_COPYWRITING_SHOW, ((MineEntryInfo.VipBroadcast) MineFragment.this.f31596a.get(MineFragment.this.vfVipAd.getDisplayedChild())).url, MineFragment.this.vfVipAd.getDisplayedChild());
+                if (MineFragment.this.vfVipAd.getGlobalVisibleRect(new Rect()) && MineFragment.this.f17906a != null && MineFragment.this.f17906a.size() > MineFragment.this.vfVipAd.getDisplayedChild()) {
+                    EventTrackSettings.a(SettingsProtos.Event.MINE_VIP_BANNER_COPYWRITING_SHOW, ((MineEntryInfo.VipBroadcast) MineFragment.this.f17906a.get(MineFragment.this.vfVipAd.getDisplayedChild())).url, MineFragment.this.vfVipAd.getDisplayedChild());
                 }
                 if (list.size() <= 1) {
                     MineFragment.this.vfVipAd.stopFlipping();
@@ -518,7 +518,7 @@ public class MineFragment extends MvpFragment<MinePresenter> {
             this.vfVipAd.startFlipping();
         } else {
             this.vfVipAd.stopFlipping();
-            EventTrackSettings.a(SettingsProtos.Event.MINE_VIP_BANNER_COPYWRITING_SHOW, this.f31596a.get(0).url, 0);
+            EventTrackSettings.a(SettingsProtos.Event.MINE_VIP_BANNER_COPYWRITING_SHOW, this.f17906a.get(0).url, 0);
         }
         this.vfVipAd.setVisibility(0);
     }
@@ -548,6 +548,7 @@ public class MineFragment extends MvpFragment<MinePresenter> {
         this.n.setNewData(this.o);
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private void d() {
         LiveEventBus.get(EventBusConstant.KEY_EVENT_ZHI_CHI_MSG).observe(this, new Observer<Object>() { // from class: com.soft.blued.ui.mine.fragment.MineFragment.1
             @Override // androidx.lifecycle.Observer
@@ -567,11 +568,11 @@ public class MineFragment extends MvpFragment<MinePresenter> {
         }
         ImageOptions imageOptions = new ImageOptions();
         if (UserInfo.getInstance().getLoginUserInfo().vip_grade == 0) {
-            imageOptions.f9508c = 2131237313;
-            imageOptions.f9507a = 2131237313;
+            imageOptions.c = R.drawable.user_bg_round_border_white;
+            imageOptions.a = R.drawable.user_bg_round_border_white;
         } else {
-            imageOptions.f9508c = R.drawable.user_bg_round_border_vip;
-            imageOptions.f9507a = R.drawable.user_bg_round_border_vip;
+            imageOptions.c = R.drawable.user_bg_round_border_vip;
+            imageOptions.a = R.drawable.user_bg_round_border_vip;
         }
         int i = this.q.getResources().getDisplayMetrics().widthPixels;
         this.tvAttentionsCount.setText(UserInfo.getInstance().getLoginUserInfo().getFollowedCount());
@@ -580,7 +581,7 @@ public class MineFragment extends MvpFragment<MinePresenter> {
         String groupsCount = UserInfo.getInstance().getLoginUserInfo().getGroupsCount();
         if (StringUtils.d(groupsCount) || "0".equals(groupsCount)) {
             this.ll_my_group.setVisibility(8);
-        } else if (BluedConstant.f28239a) {
+        } else if (BluedConstant.f14549a) {
             this.ll_my_group.setVisibility(8);
         } else {
             this.ll_my_group.setVisibility(0);
@@ -599,13 +600,13 @@ public class MineFragment extends MvpFragment<MinePresenter> {
     private void v() {
         if (StatusBarHelper.a()) {
             ViewGroup.LayoutParams layoutParams = this.top.getLayoutParams();
-            layoutParams.height = StatusBarHelper.a((Context) getActivity());
+            layoutParams.height = StatusBarHelper.a(getActivity());
             this.top.setLayoutParams(layoutParams);
         }
     }
 
     private void w() {
-        if (BluedConstant.f28239a) {
+        if (BluedConstant.f14549a) {
             return;
         }
         this.ll_my_group.setVisibility(0);
@@ -614,7 +615,7 @@ public class MineFragment extends MvpFragment<MinePresenter> {
     private void x() {
         this.rvAnchorsEntry.setLayoutManager(new GridLayoutManager(this.q, 2));
         MineFourEntryAdapter mineFourEntryAdapter = new MineFourEntryAdapter(this.q, getFragmentActive());
-        this.f31597c = mineFourEntryAdapter;
+        this.f17907c = mineFourEntryAdapter;
         this.rvAnchorsEntry.setAdapter(mineFourEntryAdapter);
         this.rvServiceEntry.setLayoutManager(new GridLayoutManager(this.q, 3));
         MineNineEntryAdapter mineNineEntryAdapter = new MineNineEntryAdapter(this.q, getFragmentActive());
@@ -653,7 +654,6 @@ public class MineFragment extends MvpFragment<MinePresenter> {
         this.rvOthersEntry.addItemDecoration(dividerGridItemDecoration4);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public void a(Bundle bundle) {
         super.a(bundle);
         this.q = getContext();
@@ -695,7 +695,7 @@ public class MineFragment extends MvpFragment<MinePresenter> {
                 } else {
                     int i = mineEntryInfo.broadcast.vip_grade;
                     if (i == 1) {
-                        this.ivVipBg.setImageDrawable(BluedSkinUtils.b(this.q, R.drawable.shape_mine_vip_bg));
+                        this.ivVipBg.setImageDrawable(BluedSkinUtils.b(this.q, (int) R.drawable.shape_mine_vip_bg));
                         this.ivVipBg.setImageAlpha(33);
                         this.ivBgIcon.setImageResource(R.drawable.mine_vip_watermark);
                         this.tvVipBtn.setTextColor(BluedSkinUtils.a(this.q, 2131099662));
@@ -706,7 +706,7 @@ public class MineFragment extends MvpFragment<MinePresenter> {
                         this.tvVipBtn.setTextColor(BluedSkinUtils.a(this.q, 2131102254));
                         this.ivVipBtn.setImageResource(R.drawable.mine_icon_no_vip_btn);
                     } else {
-                        this.ivVipBg.setImageDrawable(BluedSkinUtils.b(this.q, R.drawable.shape_mine_bluedx_bg));
+                        this.ivVipBg.setImageDrawable(BluedSkinUtils.b(this.q, (int) R.drawable.shape_mine_bluedx_bg));
                         this.ivVipBg.setImageAlpha(33);
                         this.ivBgIcon.setImageResource(R.drawable.mine_bluedx_watermark);
                         this.tvVipBtn.setTextColor(BluedSkinUtils.a(this.q, 2131099660));
@@ -744,7 +744,6 @@ public class MineFragment extends MvpFragment<MinePresenter> {
         ImageLoader.a(getFragmentActive(), AvatarWidgetManager.a().a(num.intValue())).a(this.avatarWidget);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void a(String str, boolean z) {
         super.a(str, z);
         if (this.o == null) {
@@ -753,7 +752,7 @@ public class MineFragment extends MvpFragment<MinePresenter> {
         if (this.o.size() == 0) {
             MineEntryInfo.ColumnsItem columnsItem = new MineEntryInfo.ColumnsItem();
             columnsItem.icon = "http://www.bldimg.com/img/mine_setting.png";
-            columnsItem.title = this.q.getResources().getString(2131891641);
+            columnsItem.title = this.q.getResources().getString(R.string.setting);
             columnsItem.url = "http://native.blued.cn?action=setting";
             this.o.add(columnsItem);
             this.n.setNewData(this.o);
@@ -761,7 +760,6 @@ public class MineFragment extends MvpFragment<MinePresenter> {
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public void af_() {
         super.af_();
         List<Unbinder> list = this.p;
@@ -794,16 +792,14 @@ public class MineFragment extends MvpFragment<MinePresenter> {
     public void c() {
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public int g() {
         return R.layout.fragment_mine;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onResume() {
         super.onResume();
         if (this.r) {
-            j().d();
+            ((MinePresenter) j()).d();
         }
         this.r = true;
         A();
@@ -813,7 +809,7 @@ public class MineFragment extends MvpFragment<MinePresenter> {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case 2131364232:
-            case 2131365652:
+            case R.id.iv_more /* 2131365652 */:
             case R.id.layout_header_name /* 2131366788 */:
             case R.id.tv_my_name /* 2131372038 */:
                 InstantLog.b("my_model", 1);
@@ -826,7 +822,7 @@ public class MineFragment extends MvpFragment<MinePresenter> {
                 return;
             case R.id.iv_edit /* 2131365277 */:
                 if (YYRoomInfoManager.e().y()) {
-                    AppMethods.a(this.q.getResources().getText(2131893032));
+                    AppMethods.a(this.q.getResources().getText(R.string.yy_in_use_owners));
                     return;
                 } else if (PopMenuUtils.a(this.q)) {
                     return;
@@ -838,8 +834,8 @@ public class MineFragment extends MvpFragment<MinePresenter> {
                 }
             case R.id.layout_vip /* 2131366837 */:
             case R.id.layout_vip_btn /* 2131366838 */:
-                EventTrackSettings.a(SettingsProtos.Event.MINE_VIP_BANNER_CENTER_CLICK, EventTrackSettings.a(j().n().vip_expire_state, j().n().expire_type));
-                String m = j().m();
+                EventTrackSettings.a(SettingsProtos.Event.MINE_VIP_BANNER_CENTER_CLICK, EventTrackSettings.a(((MinePresenter) j()).n().vip_expire_state, ((MinePresenter) j()).n().expire_type));
+                String m = ((MinePresenter) j()).m();
                 String str = m;
                 if (StringUtils.d(m)) {
                     str = BluedHttpUrl.g();
@@ -865,19 +861,17 @@ public class MineFragment extends MvpFragment<MinePresenter> {
                 UserInfoFragmentFeed.a(this.q);
                 return;
             case R.id.ll_my_group /* 2131368056 */:
-                MyGroupFragmentNew.f32768a.a(getContext(), null);
+                MyGroupFragmentNew.f19077a.a(getContext(), null);
                 return;
             default:
                 return;
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onViewCreated(View view, Bundle bundle) {
         super.onViewCreated(view, bundle);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public boolean q() {
         return true;
     }

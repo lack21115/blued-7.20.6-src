@@ -3,7 +3,6 @@ package android.media.projection;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.UserHandle;
-import com.alipay.sdk.util.i;
 import java.util.Objects;
 
 /* loaded from: source-9557208-dex2jar.jar:android/media/projection/MediaProjectionInfo.class */
@@ -67,7 +66,7 @@ public final class MediaProjectionInfo implements Parcelable {
     }
 
     public String toString() {
-        return "MediaProjectionInfo{mPackageName=" + this.mPackageName + ", mUserHandle=" + this.mUserHandle + i.d;
+        return "MediaProjectionInfo{mPackageName=" + this.mPackageName + ", mUserHandle=" + this.mUserHandle + "}";
     }
 
     @Override // android.os.Parcelable

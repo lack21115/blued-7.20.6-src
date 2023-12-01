@@ -19,14 +19,14 @@ public final class g {
     private static void a(Context context, com.kwai.sodler.lib.c.b bVar, final a aVar) {
         com.kwai.sodler.kwai.a.a(context, bVar, new b.c() { // from class: com.kwad.sdk.crash.g.1
             /* JADX INFO: Access modifiers changed from: private */
-            @Override // com.kwai.sodler.lib.ext.b.C0595b, com.kwai.sodler.lib.ext.b
+            @Override // com.kwai.sodler.lib.ext.b.C0425b, com.kwai.sodler.lib.ext.b
             public void a(com.kwai.sodler.lib.b.c cVar) {
                 super.a((AnonymousClass1) cVar);
                 com.kwad.sdk.core.d.b.d("ExceptionSoLoadHelper", "onCanceled thread=" + Thread.currentThread().getName());
             }
 
             /* JADX INFO: Access modifiers changed from: private */
-            @Override // com.kwai.sodler.lib.ext.b.C0595b, com.kwai.sodler.lib.ext.b
+            @Override // com.kwai.sodler.lib.ext.b.C0425b, com.kwai.sodler.lib.ext.b
             /* renamed from: c */
             public void b(com.kwai.sodler.lib.b.c cVar) {
                 super.b(cVar);
@@ -45,12 +45,12 @@ public final class g {
                 com.kwad.sdk.core.d.b.d("ExceptionSoLoadHelper", "onFail thread=" + Thread.currentThread().getName());
             }
 
-            @Override // com.kwai.sodler.lib.ext.b.C0595b, com.kwai.sodler.lib.ext.b
+            @Override // com.kwai.sodler.lib.ext.b.C0425b, com.kwai.sodler.lib.ext.b
             public final /* synthetic */ void a(com.kwai.sodler.lib.a.f fVar, com.kwai.sodler.lib.a.a aVar2) {
                 rN();
             }
 
-            @Override // com.kwai.sodler.lib.ext.b.C0595b, com.kwai.sodler.lib.ext.b
+            @Override // com.kwai.sodler.lib.ext.b.C0425b, com.kwai.sodler.lib.ext.b
             public final /* synthetic */ void a(com.kwai.sodler.lib.a.f fVar, PluginError pluginError) {
                 zH();
             }

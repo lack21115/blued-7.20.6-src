@@ -2,6 +2,8 @@ package com.soft.blued.ui.user.fragment;
 
 import android.os.Bundle;
 import android.view.View;
+import androidx.fragment.app.Fragment;
+import com.anythink.expressad.a;
 import com.blued.android.core.AppInfo;
 import com.blued.android.module.common.base.dialog.CommonDialogFragment;
 import com.soft.blued.R;
@@ -13,7 +15,6 @@ import kotlin.jvm.internal.Intrinsics;
 public class VIPInvisibleToUserDialogFragment extends CommonDialogFragment {
     private String b = "";
 
-    @Override // com.blued.android.module.common.base.dialog.CommonDialogFragment
     public void a(View view) {
     }
 
@@ -22,12 +23,10 @@ public class VIPInvisibleToUserDialogFragment extends CommonDialogFragment {
         this.b = str;
     }
 
-    @Override // com.blued.android.module.common.base.dialog.CommonDialogFragment
     public int d() {
         return R.layout.dialog_fragment_filter;
     }
 
-    @Override // com.blued.android.module.common.base.dialog.CommonDialogFragment
     public int f() {
         return (int) ((AppInfo.m / 6.0f) * 5);
     }
@@ -36,15 +35,14 @@ public class VIPInvisibleToUserDialogFragment extends CommonDialogFragment {
         return this.b;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
     public void onViewCreated(View view, Bundle bundle) {
-        Intrinsics.e(view, "view");
+        Intrinsics.e(view, a.B);
         super.onViewCreated(view, bundle);
         VipInvisibleToUserFragment vipInvisibleToUserFragment = new VipInvisibleToUserFragment();
         vipInvisibleToUserFragment.a(this);
         Bundle bundle2 = new Bundle();
         bundle2.putString("KEY_VIP_DETAIL", this.b);
         vipInvisibleToUserFragment.setArguments(bundle2);
-        getChildFragmentManager().beginTransaction().replace(R.id.fm_content, vipInvisibleToUserFragment).commitAllowingStateLoss();
+        getChildFragmentManager().beginTransaction().replace(R.id.fm_content, (Fragment) vipInvisibleToUserFragment).commitAllowingStateLoss();
     }
 }

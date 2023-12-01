@@ -13,7 +13,7 @@ import org.json.JSONObject;
 public class i implements PushMessageInterface {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23422a = i.class.getName();
+    private static final String f9814a = i.class.getName();
 
     private static void a(Context context, String str) {
         try {
@@ -55,7 +55,7 @@ public class i implements PushMessageInterface {
             nVar.setActionId(jSONObject.getString("actionid"));
             nVar.setDoActionId(jSONObject.getString(com.anythink.expressad.foundation.d.d.s));
             if (jSONObject.has("appstartupid")) {
-                nVar.f23452a = jSONObject.getJSONObject("appstartupid").getString("android");
+                nVar.f9844a = jSONObject.getJSONObject("appstartupid").getString("android");
             }
             if (jSONObject.has("is_autostart")) {
                 nVar.d = jSONObject.getString("is_autostart");
@@ -64,7 +64,7 @@ public class i implements PushMessageInterface {
                 nVar.b = jSONObject.getString("appid");
             }
             if (jSONObject.has("noinstall_action")) {
-                nVar.f23453c = jSONObject.getString("noinstall_action");
+                nVar.f9845c = jSONObject.getString("noinstall_action");
             }
             return nVar;
         } catch (JSONException e) {

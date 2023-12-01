@@ -18,10 +18,10 @@ public class H5ConfigMananger {
     private final String TAG = "H5ConfigMananger";
 
     /* renamed from: a  reason: collision with root package name */
-    private final int f21799a = 0;
+    private final int f8192a = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f21800c = 0;
+    private int f8193c = 0;
     private boolean d = false;
 
     public H5ConfigMananger(Context context, EfsReporter efsReporter) {
@@ -33,8 +33,8 @@ public class H5ConfigMananger {
                 try {
                     Object obj = map.get("apm_native_h5perf_sampling_rate");
                     if (obj != null) {
-                        H5ConfigMananger.this.f21800c = Integer.parseInt(obj.toString());
-                        H5ConfigMananger.this.d = H5ConfigMananger.a(H5ConfigMananger.this.f21800c);
+                        H5ConfigMananger.this.f8193c = Integer.parseInt(obj.toString());
+                        H5ConfigMananger.this.d = H5ConfigMananger.a(H5ConfigMananger.this.f8193c);
                     }
                 } catch (Throwable th) {
                     th.printStackTrace();
@@ -60,7 +60,7 @@ public class H5ConfigMananger {
         }
         JSONObject jSONObject = new JSONObject();
         try {
-            jSONObject.put("sample", this.f21800c);
+            jSONObject.put("sample", this.f8193c);
             if (this.d) {
                 jSONObject.put("sampleResult", "Y");
             } else {

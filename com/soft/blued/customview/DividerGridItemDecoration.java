@@ -1,5 +1,6 @@
 package com.soft.blued.customview;
 
+import android.R;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -16,11 +17,11 @@ import com.blued.android.core.utils.skin.listener.BluedSkinSupportable;
 public class DividerGridItemDecoration extends RecyclerView.ItemDecoration implements BluedSkinSupportable {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final int[] f28407a = {16843284};
+    private static final int[] f14717a = {R.attr.listDivider};
     private RecyclerView b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Drawable f28408c;
+    private Drawable f14718c;
     private Paint d;
     private Context e;
     private int f;
@@ -91,10 +92,10 @@ public class DividerGridItemDecoration extends RecyclerView.ItemDecoration imple
             int right = childAt.getRight() + layoutParams.rightMargin + this.f;
             int bottom = childAt.getBottom() + layoutParams.bottomMargin;
             int i3 = this.f + bottom;
-            Drawable drawable = this.f28408c;
+            Drawable drawable = this.f14718c;
             if (drawable != null) {
                 drawable.setBounds(left, bottom, right, i3);
-                this.f28408c.draw(canvas);
+                this.f14718c.draw(canvas);
             }
             Paint paint = this.d;
             if (paint != null) {
@@ -104,7 +105,6 @@ public class DividerGridItemDecoration extends RecyclerView.ItemDecoration imple
         }
     }
 
-    @Override // skin.support.widget.SkinCompatSupportable
     public void applySkin() {
         Paint paint = this.d;
         if (paint == null || this.b == null) {
@@ -128,10 +128,10 @@ public class DividerGridItemDecoration extends RecyclerView.ItemDecoration imple
             int bottom = childAt.getBottom() + layoutParams.bottomMargin;
             int right = childAt.getRight() + layoutParams.rightMargin;
             int i3 = this.f + right;
-            Drawable drawable = this.f28408c;
+            Drawable drawable = this.f14718c;
             if (drawable != null) {
                 drawable.setBounds(right, top, i3, bottom);
-                this.f28408c.draw(canvas);
+                this.f14718c.draw(canvas);
             }
             Paint paint = this.d;
             if (paint != null) {

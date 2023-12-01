@@ -5,6 +5,7 @@ import android.os.Environment;
 import android.os.StatFs;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.BufferedReader;
 import java.io.DataInputStream;
 import java.io.IOException;
@@ -84,8 +85,8 @@ public class bl {
                             }
                         } else if (!TextUtils.isEmpty(readLine)) {
                             String a2 = bn.a(readLine);
-                            if (a2.contains("-") && a2.contains(";")) {
-                                String[] split = a2.replace(";;;", ";").split(";");
+                            if (a2.contains(Constants.ACCEPT_TIME_SEPARATOR_SERVER) && a2.contains(com.huawei.openalliance.ad.constant.t.aE)) {
+                                String[] split = a2.replace(";;;", com.huawei.openalliance.ad.constant.t.aE).split(com.huawei.openalliance.ad.constant.t.aE);
                                 if (split.length > 1) {
                                     jSONObject.put(split[0], split[1]);
                                 }

@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemChatGroupAnnouncementBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final FrameLayout f29088a;
+    private final FrameLayout f15398a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f29088a;
+        return this.f15398a;
     }
 }

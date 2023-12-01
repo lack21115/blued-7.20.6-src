@@ -8,11 +8,11 @@ import org.json.JSONObject;
 public class o5 implements TencentPoi {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f3910a;
+    public String f3862a;
     public String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f3911c;
+    public String f3863c;
     public double d;
     public String e;
     public double f;
@@ -20,9 +20,9 @@ public class o5 implements TencentPoi {
     public String h;
 
     public o5(TencentPoi tencentPoi) {
-        this.f3910a = tencentPoi.getName();
+        this.f3862a = tencentPoi.getName();
         this.b = tencentPoi.getAddress();
-        this.f3911c = tencentPoi.getCatalog();
+        this.f3863c = tencentPoi.getCatalog();
         this.d = tencentPoi.getDistance();
         this.e = tencentPoi.getUid();
         this.f = tencentPoi.getLatitude();
@@ -45,9 +45,9 @@ public class o5 implements TencentPoi {
     }
 
     public final void b(JSONObject jSONObject) throws JSONException {
-        this.f3910a = jSONObject.optString("name");
+        this.f3862a = jSONObject.optString("name");
         this.b = jSONObject.optString("addr");
-        this.f3911c = jSONObject.optString("catalog");
+        this.f3863c = jSONObject.optString("catalog");
         this.d = jSONObject.optDouble("dist");
         this.e = jSONObject.optString("uid");
         this.f = jSONObject.optDouble("latitude");
@@ -62,7 +62,7 @@ public class o5 implements TencentPoi {
 
     @Override // com.tencent.map.geolocation.TencentPoi
     public String getCatalog() {
-        return this.f3911c;
+        return this.f3863c;
     }
 
     @Override // com.tencent.map.geolocation.TencentPoi
@@ -87,7 +87,7 @@ public class o5 implements TencentPoi {
 
     @Override // com.tencent.map.geolocation.TencentPoi
     public String getName() {
-        return this.f3910a;
+        return this.f3862a;
     }
 
     @Override // com.tencent.map.geolocation.TencentPoi
@@ -96,6 +96,6 @@ public class o5 implements TencentPoi {
     }
 
     public String toString() {
-        return "PoiData{name=" + this.f3910a + ",addr=" + this.b + ",catalog=" + this.f3911c + ",dist=" + this.d + ",latitude=" + this.f + ",longitude=" + this.g + ",direction=" + this.h + "," + com.alipay.sdk.util.i.d;
+        return "PoiData{name=" + this.f3862a + ",addr=" + this.b + ",catalog=" + this.f3863c + ",dist=" + this.d + ",latitude=" + this.f + ",longitude=" + this.g + ",direction=" + this.h + ",}";
     }
 }

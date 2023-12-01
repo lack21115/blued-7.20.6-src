@@ -2,9 +2,7 @@ package com.alipay.android.phone.mrpc.core;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alipay/android/phone/mrpc/core/p.class */
 public final class p extends u {
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f4534c;
+    private int c;
     private String d;
     private long e;
     private long f;
@@ -13,9 +11,9 @@ public final class p extends u {
 
     public p(HttpUrlHeader httpUrlHeader, int i, String str, byte[] bArr) {
         this.h = httpUrlHeader;
-        this.f4534c = i;
+        this.c = i;
         this.d = str;
-        this.f4539a = bArr;
+        this.a = bArr;
     }
 
     public final HttpUrlHeader a() {

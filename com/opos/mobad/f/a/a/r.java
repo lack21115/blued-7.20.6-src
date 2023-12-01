@@ -10,27 +10,27 @@ import java.util.List;
 public class r<T extends com.opos.mobad.ad.b, P extends com.opos.mobad.ad.g> extends i<T> implements o<T, P> {
 
     /* renamed from: a  reason: collision with root package name */
-    final HashMap<Integer, List<P>> f26050a;
+    final HashMap<Integer, List<P>> f12362a;
     final s d;
 
     public r(String str, int i, com.opos.mobad.f.a.c.a aVar, List<e.a> list, e.a aVar2, long j, int i2, com.opos.mobad.f.a.b.a<T> aVar3, b.a aVar4) {
         super(str, i, aVar, list, aVar2, j, i2, aVar3, aVar4);
-        this.f26050a = new HashMap<>();
+        this.f12362a = new HashMap<>();
         this.d = new s(list);
     }
 
     @Override // com.opos.mobad.f.a.a.i
     protected boolean f(int i) {
-        return this.f26050a.containsKey(Integer.valueOf(i));
+        return this.f12362a.containsKey(Integer.valueOf(i));
     }
 
     @Override // com.opos.mobad.f.a.a.o
     public List<P> h() {
-        return this.f26050a.remove(Integer.valueOf(j()));
+        return this.f12362a.remove(Integer.valueOf(j()));
     }
 
     @Override // com.opos.mobad.f.a.a.i
     protected e.a m() {
-        return this.d.a(this.f26050a);
+        return this.d.a(this.f12362a);
     }
 }

@@ -13,7 +13,7 @@ import org.json.JSONObject;
 public class o {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f27408a;
+    private Context f13720a;
     private m b = new m(1, 1, 80, 0.0d, new m.a() { // from class: com.opos.mobad.service.j.o.1
         @Override // com.opos.mobad.service.j.m.a
         public void a(m mVar) {
@@ -22,7 +22,7 @@ public class o {
     });
 
     /* renamed from: c  reason: collision with root package name */
-    private m f27409c = new m(1, 1, 30, 0.0d, new m.a() { // from class: com.opos.mobad.service.j.o.2
+    private m f13721c = new m(1, 1, 30, 0.0d, new m.a() { // from class: com.opos.mobad.service.j.o.2
         @Override // com.opos.mobad.service.j.m.a
         public void a(m mVar) {
             o.this.d.a();
@@ -30,16 +30,16 @@ public class o {
     });
     private com.opos.cmn.i.a d = new com.opos.cmn.i.a(new a.b() { // from class: com.opos.mobad.service.j.o.3
         @Override // com.opos.cmn.i.a.b
-        public void a(a.InterfaceC0645a interfaceC0645a) {
+        public void a(a.InterfaceC0475a interfaceC0475a) {
             o.this.c();
-            interfaceC0645a.a();
+            interfaceC0475a.a();
         }
     }, 0, 180000);
     private com.opos.cmn.i.a e = new com.opos.cmn.i.a(new a.b() { // from class: com.opos.mobad.service.j.o.4
         @Override // com.opos.cmn.i.a.b
-        public void a(a.InterfaceC0645a interfaceC0645a) {
+        public void a(a.InterfaceC0475a interfaceC0475a) {
             o.this.d();
-            interfaceC0645a.a();
+            interfaceC0475a.a();
         }
     });
     private com.opos.mobad.provider.record.a f;
@@ -51,16 +51,16 @@ public class o {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public o(Context context) {
-        this.f27408a = context.getApplicationContext();
+        this.f13720a = context.getApplicationContext();
         this.f = new com.opos.mobad.provider.record.a(context);
         com.opos.cmn.an.j.b.b(new Runnable() { // from class: com.opos.mobad.service.j.o.5
             @Override // java.lang.Runnable
             public void run() {
                 try {
                     CacheEntity a2 = o.this.f.a();
-                    o.this.b.a(a2.f27123a, a2.b);
+                    o.this.b.a(a2.f13435a, a2.b);
                     CacheEntity b = o.this.f.b();
-                    o.this.f27409c.a(b.f27123a, b.b);
+                    o.this.f13721c.a(b.f13435a, b.b);
                 } catch (Exception e) {
                     com.opos.cmn.an.f.a.b("", "", e);
                 }
@@ -118,7 +118,7 @@ public class o {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void c() {
-        com.opos.mobad.service.i.d.a().c().a(this.b.c(), this.b.d(), this.f27409c.c(), this.f27409c.d());
+        com.opos.mobad.service.i.d.a().c().a(this.b.c(), this.b.d(), this.f13721c.c(), this.f13721c.d());
         b();
     }
 
@@ -138,25 +138,25 @@ public class o {
     /* JADX INFO: Access modifiers changed from: private */
     public void d() {
         if (this.h != null) {
-            com.opos.mobad.service.i.d.a().c().b(this.h.f27397a, this.h.b);
+            com.opos.mobad.service.i.d.a().c().b(this.h.f13709a, this.h.b);
             this.h = null;
         } else if (this.g != null) {
-            com.opos.mobad.service.i.d.a().c().a(this.g.f27398a, this.g.b);
+            com.opos.mobad.service.i.d.a().c().a(this.g.f13710a, this.g.b);
             this.g = null;
         } else {
             j jVar = this.i;
             if (jVar != null) {
-                com.opos.mobad.service.i.d.a().c().a(jVar.f27396a);
+                com.opos.mobad.service.i.d.a().c().a(jVar.f13708a);
                 this.i = null;
             }
             j jVar2 = this.j;
             if (jVar2 != null) {
-                com.opos.mobad.service.i.d.a().c().b(jVar2.f27396a);
+                com.opos.mobad.service.i.d.a().c().b(jVar2.f13708a);
                 this.j = null;
             }
             j jVar3 = this.k;
             if (jVar3 != null) {
-                com.opos.mobad.service.i.d.a().c().c(jVar3.f27396a);
+                com.opos.mobad.service.i.d.a().c().c(jVar3.f13708a);
                 this.k = null;
             }
         }
@@ -189,15 +189,15 @@ public class o {
         try {
             StringWriter stringWriter = new StringWriter();
             th.printStackTrace(new PrintWriter(stringWriter));
-            this.f.a(stringWriter.toString(), com.opos.mobad.p.a.a(this.f27408a));
+            this.f.a(stringWriter.toString(), com.opos.mobad.p.a.a(this.f13720a));
         } catch (Throwable th2) {
             com.opos.cmn.an.f.a.b("watch", "add cr fail", th2);
         }
     }
 
     public void b(int i, int i2) {
-        d(this.f27409c.c() + i, this.f27409c.d() + i2);
-        this.f27409c.a(i, i2);
+        d(this.f13721c.c() + i, this.f13721c.d() + i2);
+        this.f13721c.a(i, i2);
     }
 
     public void b(String str) {

@@ -19,7 +19,7 @@ public class OppoAppPushService extends DataMessageCallbackService {
             Log.d(TAG, "processMessage receive app meaasge ...");
             Log.d(TAG, "processMessage receive app meaasge:".concat(String.valueOf(dataMessage)));
             if (context != null && dataMessage != null) {
-                MessageBean messageBean = new MessageBean(context, "payload", dataMessage.getContent());
+                MessageBean messageBean = new MessageBean(context, AssistPushConsts.MSG_TYPE_PAYLOAD, dataMessage.getContent());
                 messageBean.setMessageSource(AssistPushConsts.OPPO_PREFIX);
                 MessageManger.getInstance().addMessage(messageBean);
             }

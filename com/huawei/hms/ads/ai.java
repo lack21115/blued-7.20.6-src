@@ -14,11 +14,11 @@ public interface ai {
     public static final String Z = "pps.interstitial.request";
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f22436a = "pps.download.cancel";
+    public static final String f8828a = "pps.download.cancel";
     public static final String b = "pps.download.progress";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f22437c = "pps.download.status";
+    public static final String f8829c = "pps.download.status";
     public static final String d = "pps.listener.appstatus";
     public static final String e = "pps.listener.appreservestatus";
     public static final String f = "pps.listener.appopen";

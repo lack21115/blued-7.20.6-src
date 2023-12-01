@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class LayoutNoticeHeaderBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29419a;
+    private final LinearLayout f15729a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29419a;
+        return this.f15729a;
     }
 }

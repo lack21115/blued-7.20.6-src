@@ -37,9 +37,7 @@ public enum CharCategory {
     INITIAL_QUOTE_PUNCTUATION(29, "Pi"),
     FINAL_QUOTE_PUNCTUATION(30, "Pf");
     
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f42713a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private final int F;
     private final String G;
 

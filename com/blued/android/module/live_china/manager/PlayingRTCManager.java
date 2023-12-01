@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import com.amap.api.maps.utils.SpatialRelationUtil;
 import com.blued.android.chat.ChatManager;
 import com.blued.android.chat.data.JoinLiveResult;
 import com.blued.android.core.AppInfo;
@@ -63,9 +64,7 @@ import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/manager/PlayingRTCManager.class */
 public class PlayingRTCManager {
-
-    /* renamed from: c  reason: collision with root package name */
-    public long f13727c;
+    public long c;
     public long d;
     public long e;
     private TextureView f;
@@ -73,9 +72,7 @@ public class PlayingRTCManager {
     private View h;
     private PlayingOnliveFragment i;
     private boolean k;
-
-    /* renamed from: a  reason: collision with root package name */
-    public boolean f13726a = true;
+    public boolean a = true;
     private boolean j = false;
     private List<String> l = new ArrayList();
     private boolean m = false;
@@ -88,9 +85,7 @@ public class PlayingRTCManager {
     /* renamed from: com.blued.android.module.live_china.manager.PlayingRTCManager$14  reason: invalid class name */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/manager/PlayingRTCManager$14.class */
     public static /* synthetic */ class AnonymousClass14 {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f13735a;
+        static final /* synthetic */ int[] a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:13:0x0041 -> B:27:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:15:0x0045 -> B:25:0x001f). Please submit an issue!!! */
@@ -98,25 +93,25 @@ public class PlayingRTCManager {
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:19:0x004d -> B:29:0x0035). Please submit an issue!!! */
         static {
             int[] iArr = new int[JoinLiveResult.values().length];
-            f13735a = iArr;
+            a = iArr;
             try {
                 iArr[JoinLiveResult.SUCCESS.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f13735a[JoinLiveResult.FAILED_UNKNOWN.ordinal()] = 2;
+                a[JoinLiveResult.FAILED_UNKNOWN.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f13735a[JoinLiveResult.FAILED_JOINLIVE_CLOSE.ordinal()] = 3;
+                a[JoinLiveResult.FAILED_JOINLIVE_CLOSE.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f13735a[JoinLiveResult.FAILED_JOINLIVE_FULL.ordinal()] = 4;
+                a[JoinLiveResult.FAILED_JOINLIVE_FULL.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f13735a[JoinLiveResult.FAILED_JOINLIVE_INVITE_OVERDUE.ordinal()] = 5;
+                a[JoinLiveResult.FAILED_JOINLIVE_INVITE_OVERDUE.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
         }
@@ -212,8 +207,8 @@ public class PlayingRTCManager {
             c();
         }
         Log.v("==record", "startZegoPublish");
-        LiveMsgSendManager a2 = LiveMsgSendManager.a();
-        a2.d("开始推流：" + str);
+        LiveMsgSendManager a = LiveMsgSendManager.a();
+        a.d("开始推流：" + str);
         this.f.setVisibility(0);
         ZegoCommonHelper.b().c().setPreviewView(this.f);
         ZegoCommonHelper.b().c().setPreviewViewMode(1);
@@ -233,8 +228,7 @@ public class PlayingRTCManager {
         }
         s();
         ZegoCommonHelper.b().d();
-        ZegoCommonHelper.b().a(846434966L, GetAppIDConfig.f11724a, !LiveRoomInfo.a().j(), this.i.M_(), new IZegoInitSDKCompletionCallback() { // from class: com.blued.android.module.live_china.manager.PlayingRTCManager.1
-            @Override // com.zego.zegoliveroom.callback.IZegoInitSDKCompletionCallback
+        ZegoCommonHelper.b().a(846434966L, GetAppIDConfig.a, !LiveRoomInfo.a().j(), this.i.M_(), new IZegoInitSDKCompletionCallback() { // from class: com.blued.android.module.live_china.manager.PlayingRTCManager.1
             public void onInitSDK(int i) {
                 Log.i("==record", "onInitSDK:" + i);
                 if (i != 0) {
@@ -251,7 +245,6 @@ public class PlayingRTCManager {
 
     private void p() {
         ZegoCommonHelper.b().c().setZegoRoomCallback(new IZegoRoomCallback() { // from class: com.blued.android.module.live_china.manager.PlayingRTCManager.5
-            @Override // com.zego.zegoliveroom.callback.IZegoRoomCallback
             public void onDisconnect(int i, String str) {
                 Log.v("==record", "onDisconnect");
                 if (PlayingRTCManager.this.i.az()) {
@@ -267,33 +260,26 @@ public class PlayingRTCManager {
                 }
             }
 
-            @Override // com.zego.zegoliveroom.callback.IZegoRoomCallback
             public void onKickOut(int i, String str, String str2) {
                 Log.v("==record", "onKickOut");
             }
 
-            @Override // com.zego.zegoliveroom.callback.IZegoRoomCallback
             public void onNetworkQuality(String str, int i, int i2) {
             }
 
-            @Override // com.zego.zegoliveroom.callback.IZegoRoomCallback
             public void onReconnect(int i, String str) {
                 Log.v("==record", "onReconnect");
             }
 
-            @Override // com.zego.zegoliveroom.callback.IZegoRoomCallback
             public void onRecvCustomCommand(String str, String str2, String str3, String str4) {
             }
 
-            @Override // com.zego.zegoliveroom.callback.IZegoRoomCallback
             public void onRoomInfoUpdated(ZegoRoomInfo zegoRoomInfo, String str) {
             }
 
-            @Override // com.zego.zegoliveroom.callback.IZegoRoomCallback
             public void onStreamExtraInfoUpdated(ZegoStreamInfo[] zegoStreamInfoArr, String str) {
             }
 
-            @Override // com.zego.zegoliveroom.callback.IZegoRoomCallback
             public void onStreamUpdated(int i, ZegoStreamInfo[] zegoStreamInfoArr, String str) {
                 int length = zegoStreamInfoArr.length;
                 int i2 = 0;
@@ -330,17 +316,14 @@ public class PlayingRTCManager {
                 }
             }
 
-            @Override // com.zego.zegoliveroom.callback.IZegoRoomCallback
             public void onTempBroken(int i, String str) {
                 Log.v("==record", "onTempBroken");
             }
 
-            @Override // com.zego.zegoliveroom.callback.IZegoRoomCallback
             public void onTokenWillExpired(String str, int i) {
             }
         });
         ZegoCommonHelper.b().c().setZegoLiveEventCallback(new IZegoLiveEventCallback() { // from class: com.blued.android.module.live_china.manager.PlayingRTCManager.6
-            @Override // com.zego.zegoliveroom.callback.IZegoLiveEventCallback
             public void onLiveEvent(int i, HashMap<String, String> hashMap) {
                 if (i == 2) {
                     PlayingRTCManager.this.i.a(8, false);
@@ -350,35 +333,28 @@ public class PlayingRTCManager {
                 }
             }
 
-            @Override // com.zego.zegoliveroom.callback.IZegoLiveEventCallback
             public void onStreamEvent(int i, String str, HashMap<String, String> hashMap) {
             }
         });
         ZegoCommonHelper.b().c().setZegoLivePublisherCallback(new IZegoLivePublisherCallback() { // from class: com.blued.android.module.live_china.manager.PlayingRTCManager.7
-            @Override // com.zego.zegoliveroom.callback.IZegoLivePublisherCallback
             public void onCaptureAudioFirstFrame() {
             }
 
-            @Override // com.zego.zegoliveroom.callback.IZegoLivePublisherCallback
             public void onCaptureVideoFirstFrame() {
             }
 
-            @Override // com.zego.zegoliveroom.callback.IZegoLivePublisherCallback
             public void onCaptureVideoSizeChangedTo(int i, int i2) {
             }
 
-            @Override // com.zego.zegoliveroom.callback.IZegoLivePublisherCallback
             public void onJoinLiveRequest(int i, String str, String str2, String str3) {
             }
 
-            @Override // com.zego.zegoliveroom.callback.IZegoLivePublisherCallback
             public void onPublishQualityUpdate(String str, ZegoPublishStreamQuality zegoPublishStreamQuality) {
                 if (zegoPublishStreamQuality != null) {
                     Log.i("==record", "onPublishQualityUpdate:" + zegoPublishStreamQuality.width + " : " + zegoPublishStreamQuality.height + " : " + zegoPublishStreamQuality.vkbps + "  : " + zegoPublishStreamQuality.vcapFps);
                 }
             }
 
-            @Override // com.zego.zegoliveroom.callback.IZegoLivePublisherCallback
             public void onPublishStateUpdate(int i, String str, HashMap<String, Object> hashMap) {
                 if (i != 0) {
                     AppMethods.a((CharSequence) ("推流失败，err:" + i));
@@ -392,19 +368,16 @@ public class PlayingRTCManager {
             }
         });
         ZegoCommonHelper.b().c().setZegoLivePlayerCallback(new IZegoLivePlayerCallback() { // from class: com.blued.android.module.live_china.manager.PlayingRTCManager.8
-            @Override // com.zego.zegoliveroom.callback.IZegoLivePlayerCallback
             public void onInviteJoinLiveRequest(int i, String str, String str2, String str3) {
             }
 
-            @Override // com.zego.zegoliveroom.callback.IZegoLivePlayerCallback
             public void onPlayQualityUpdate(String str, ZegoPlayStreamQuality zegoPlayStreamQuality) {
             }
 
-            @Override // com.zego.zegoliveroom.callback.IZegoLivePlayerCallback
             public void onPlayStateUpdate(int i, String str) {
                 if (i != 0) {
-                    LiveMsgSendManager a2 = LiveMsgSendManager.a();
-                    a2.d("拉流失败，err:" + i);
+                    LiveMsgSendManager a = LiveMsgSendManager.a();
+                    a.d("拉流失败，err:" + i);
                     return;
                 }
                 PlayingRTCManager.this.m = true;
@@ -423,17 +396,14 @@ public class PlayingRTCManager {
                 }
             }
 
-            @Override // com.zego.zegoliveroom.callback.IZegoLivePlayerCallback
             public void onRecvEndJoinLiveCommand(String str, String str2, String str3) {
             }
 
-            @Override // com.zego.zegoliveroom.callback.IZegoLivePlayerCallback
             public void onVideoSizeChangedTo(String str, int i, int i2) {
             }
         });
         ZegoSoundLevelMonitor.getInstance().setCycle(300);
         ZegoSoundLevelMonitor.getInstance().setCallback(new IZegoSoundLevelCallback() { // from class: com.blued.android.module.live_china.manager.PlayingRTCManager.9
-            @Override // com.zego.zegoavkit2.soundlevel.IZegoSoundLevelCallback
             public void onCaptureSoundLevelUpdate(ZegoSoundLevelInfo zegoSoundLevelInfo) {
                 if (PlayingRTCManager.this.i == null || zegoSoundLevelInfo == null) {
                     return;
@@ -453,7 +423,6 @@ public class PlayingRTCManager {
                 }
             }
 
-            @Override // com.zego.zegoavkit2.soundlevel.IZegoSoundLevelCallback
             public void onSoundLevelUpdate(ZegoSoundLevelInfo[] zegoSoundLevelInfoArr) {
             }
         });
@@ -514,7 +483,7 @@ public class PlayingRTCManager {
 
     public void a(JoinLiveResult joinLiveResult, final String str, final String str2, final String str3, final int i) {
         Logger.a("==record", "onJoinLive result = ", joinLiveResult.toString(), "--", "joinLiveId = ", str);
-        int i2 = AnonymousClass14.f13735a[joinLiveResult.ordinal()];
+        int i2 = AnonymousClass14.a[joinLiveResult.ordinal()];
         if (i2 != 1) {
             if (i2 == 4) {
                 AppMethods.d(R.string.no_extra_quota);
@@ -563,8 +532,8 @@ public class PlayingRTCManager {
         }
         f(str);
         n();
-        LiveMsgSendManager a2 = LiveMsgSendManager.a();
-        a2.d("开始拉流 playId：" + str + " -- index:" + i);
+        LiveMsgSendManager a = LiveMsgSendManager.a();
+        a.d("开始拉流 playId：" + str + " -- index:" + i);
         Log.v("==record", "使用zego拉流 playId:" + str + " -- index:" + i);
         if (i == 1) {
             if ((this.i.aw.getTag(R.id.zego_texture_id) instanceof String) && !TextUtils.equals((String) this.i.aw.getTag(R.id.zego_texture_id), str)) {
@@ -637,7 +606,6 @@ public class PlayingRTCManager {
         o();
         ZegoCommonHelper.b().c().setVideoMirrorMode(0, 0);
         ZegoCommonHelper.b().c().loginRoom(str, 1, new IZegoLoginCompletionCallback() { // from class: com.blued.android.module.live_china.manager.PlayingRTCManager.4
-            @Override // com.zego.zegoliveroom.callback.IZegoLoginCompletionCallback
             public void onLoginCompletion(int i2, ZegoStreamInfo[] zegoStreamInfoArr) {
                 Log.v("==record", "onLoginCompletion err:" + i2);
                 if (i2 != 0) {
@@ -745,7 +713,7 @@ public class PlayingRTCManager {
     public void c(String str) {
         Log.i("==record", "markMakeLoverAvatar:" + str);
         ImageView imageView = (ImageView) this.g.findViewById(R.id.iv_avatar);
-        Bitmap decodeResource = TextUtils.isEmpty(str) ? BitmapFactory.decodeResource(AppInfo.d().getResources(), R.drawable.user_bg_round) : LiveBitmapUtils.a(str, 360);
+        Bitmap decodeResource = TextUtils.isEmpty(str) ? BitmapFactory.decodeResource(AppInfo.d().getResources(), R.drawable.user_bg_round) : LiveBitmapUtils.a(str, (int) SpatialRelationUtil.A_CIRCLE_DEGREE);
         if (decodeResource == null) {
             Log.i("==record==", "bitmap is null");
             imageView.setVisibility(8);
@@ -806,7 +774,7 @@ public class PlayingRTCManager {
         Log.i("==record", "markMakeFriendAvatar:" + str);
         ImageView imageView = (ImageView) this.h.findViewById(R.id.iv_avatar);
         imageView.setVisibility(0);
-        Bitmap decodeResource = TextUtils.isEmpty(str) ? BitmapFactory.decodeResource(AppInfo.d().getResources(), R.drawable.user_bg_round) : LiveBitmapUtils.a(str, 360);
+        Bitmap decodeResource = TextUtils.isEmpty(str) ? BitmapFactory.decodeResource(AppInfo.d().getResources(), R.drawable.user_bg_round) : LiveBitmapUtils.a(str, (int) SpatialRelationUtil.A_CIRCLE_DEGREE);
         if (decodeResource != null) {
             imageView.setImageBitmap(decodeResource);
         }
@@ -934,23 +902,23 @@ public class PlayingRTCManager {
     }
 
     public void n() {
-        Log.i("==iop", "reportZegoRtcTime0 mPlayStreamIDList size:" + this.l.size() + "  uid:" + ZegoMixStreamHelper.a().d() + " lid:" + ZegoMixStreamHelper.a().e() + "  startTime:" + this.f13727c + " endTime:" + this.d);
-        if (this.p > 0 && this.f13727c != 0) {
+        Log.i("==iop", "reportZegoRtcTime0 mPlayStreamIDList size:" + this.l.size() + "  uid:" + ZegoMixStreamHelper.a().d() + " lid:" + ZegoMixStreamHelper.a().e() + "  startTime:" + this.c + " endTime:" + this.d);
+        if (this.p > 0 && this.c != 0) {
             long currentTimeMillis = System.currentTimeMillis() / 1000;
             this.d = currentTimeMillis;
-            long j = currentTimeMillis - this.f13727c;
+            long j = currentTimeMillis - this.c;
             int i = this.p + 1;
             this.e = ((i - 1) * j) + (i * j);
-            Log.i("==iop", "reportZegoRtcTime1 value:" + j + " size:" + i + " duration:" + this.e + "  uid:" + ZegoMixStreamHelper.a().d() + " lid:" + ZegoMixStreamHelper.a().e() + "  startTime:" + this.f13727c + " endTime:" + this.d);
+            Log.i("==iop", "reportZegoRtcTime1 value:" + j + " size:" + i + " duration:" + this.e + "  uid:" + ZegoMixStreamHelper.a().d() + " lid:" + ZegoMixStreamHelper.a().e() + "  startTime:" + this.c + " endTime:" + this.d);
             if (this.e > 2) {
-                EventTrackLive.a(LiveProtos.Event.LIVE_PK_CALL_END, ZegoMixStreamHelper.a().d(), ZegoMixStreamHelper.a().e(), this.f13727c, this.d, this.e);
+                EventTrackLive.a(LiveProtos.Event.LIVE_PK_CALL_END, ZegoMixStreamHelper.a().d(), ZegoMixStreamHelper.a().e(), this.c, this.d, this.e);
             }
         }
         if (this.l.size() > 0) {
-            this.f13727c = System.currentTimeMillis() / 1000;
+            this.c = System.currentTimeMillis() / 1000;
             ZegoMixStreamHelper.a().f();
         } else {
-            this.f13727c = 0L;
+            this.c = 0L;
             ZegoMixStreamHelper.a().g();
         }
         this.p = this.l.size();

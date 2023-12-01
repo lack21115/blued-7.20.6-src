@@ -50,9 +50,7 @@ public class CirclePostDetailsPresenter extends MvpPresenter {
 
     private void c(final IFetchDataListener iFetchDataListener) {
         CircleHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<BluedIngSelfFeed>>(g()) { // from class: com.blued.community.ui.circle.presenter.CirclePostDetailsPresenter.6
-
-            /* renamed from: a  reason: collision with root package name */
-            boolean f19364a;
+            boolean a;
 
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
@@ -89,7 +87,7 @@ public class CirclePostDetailsPresenter extends MvpPresenter {
                                     }
                                 }
                             }
-                            this.f19364a = z;
+                            this.a = z;
                         }
                     } else {
                         iFetchDataListener.a("data_comment_list", bluedEntityA.getSingleData().comments);
@@ -122,7 +120,7 @@ public class CirclePostDetailsPresenter extends MvpPresenter {
                 }
                 if (CirclePostDetailsPresenter.this.u) {
                     if (!TextUtils.isEmpty(CirclePostDetailsPresenter.this.m)) {
-                        CirclePostDetailsPresenter.this.a("data_scroll_to_mark_comment", (String) Boolean.valueOf(this.f19364a), false);
+                        CirclePostDetailsPresenter.this.a("data_scroll_to_mark_comment", (String) Boolean.valueOf(this.a), false);
                     }
                     CirclePostDetailsPresenter.this.u = false;
                 }
@@ -169,9 +167,9 @@ public class CirclePostDetailsPresenter extends MvpPresenter {
             if (circleListToDetailParams == null) {
                 this.k = new CircleListToDetailParams();
             }
-            FeedProtos.NoteSource noteSource = (FeedProtos.NoteSource) bundle.getSerializable("circle_from_page");
-            this.n = noteSource;
-            if (noteSource == null) {
+            FeedProtos.NoteSource serializable = bundle.getSerializable("circle_from_page");
+            this.n = serializable;
+            if (serializable == null) {
                 this.n = FeedProtos.NoteSource.UNKNOWN_NOTE_SOURCE;
             }
             boolean z = bundle.getBoolean("show_circle_entry");
@@ -194,7 +192,6 @@ public class CirclePostDetailsPresenter extends MvpPresenter {
         super.a(lifecycleOwner);
         this.o.e();
         lifecycleOwner.getLifecycle().addObserver(new LifecycleEventObserver() { // from class: com.blued.community.ui.circle.presenter.CirclePostDetailsPresenter.1
-            @Override // androidx.lifecycle.LifecycleEventObserver
             public void onStateChanged(LifecycleOwner lifecycleOwner2, Lifecycle.Event event) {
                 if (event == Lifecycle.Event.ON_DESTROY) {
                     CirclePostDetailsPresenter.this.o.f();
@@ -203,7 +200,6 @@ public class CirclePostDetailsPresenter extends MvpPresenter {
             }
         });
         LiveEventBus.get("circle_delete_feed", String.class).observe(lifecycleOwner, new Observer<String>() { // from class: com.blued.community.ui.circle.presenter.CirclePostDetailsPresenter.2
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(String str) {
                 if (TextUtils.isEmpty(str) || !str.equals(CirclePostDetailsPresenter.this.n().feed_id)) {
@@ -213,7 +209,6 @@ public class CirclePostDetailsPresenter extends MvpPresenter {
             }
         });
         LiveEventBus.get("circle_join_state", CircleJoinState.class).observe(lifecycleOwner, new Observer<CircleJoinState>() { // from class: com.blued.community.ui.circle.presenter.CirclePostDetailsPresenter.3
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(CircleJoinState circleJoinState) {
                 if (TextUtils.isEmpty(CirclePostDetailsPresenter.this.o()) || !CirclePostDetailsPresenter.this.o().equals(circleJoinState.circle_id)) {
@@ -225,14 +220,12 @@ public class CirclePostDetailsPresenter extends MvpPresenter {
             }
         });
         LiveEventBus.get("comment_meanwhile", FeedComment.class).observe(lifecycleOwner, new Observer<FeedComment>() { // from class: com.blued.community.ui.circle.presenter.CirclePostDetailsPresenter.4
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(FeedComment feedComment) {
                 CirclePostDetailsPresenter.this.a("data_add_comment", (String) feedComment);
             }
         });
         LiveEventBus.get("circle_info_modify", MyCircleModel.class).observe(lifecycleOwner, new Observer<MyCircleModel>() { // from class: com.blued.community.ui.circle.presenter.CirclePostDetailsPresenter.5
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(MyCircleModel myCircleModel) {
                 if (myCircleModel == null || !CirclePostDetailsPresenter.this.o().equals(myCircleModel.circle_id)) {

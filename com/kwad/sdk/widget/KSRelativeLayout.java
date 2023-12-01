@@ -77,9 +77,8 @@ public class KSRelativeLayout extends RelativeLayout implements i {
         onViewDetached();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void dispatchDraw(Canvas canvas) {
+    protected void dispatchDraw(Canvas canvas) {
         this.mViewRCHelper.beforeDispatchDraw(canvas);
         super.dispatchDraw(canvas);
         this.mViewRCHelper.afterDispatchDraw(canvas);
@@ -112,18 +111,16 @@ public class KSRelativeLayout extends RelativeLayout implements i {
         return this.mViewPvHelper.getVisiblePercent();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
     @Deprecated
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         viewAttached();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
     @Deprecated
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         viewDetached();
     }
@@ -142,18 +139,16 @@ public class KSRelativeLayout extends RelativeLayout implements i {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.RelativeLayout, android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         if (this.mRatio != 0.0f) {
             i2 = View.MeasureSpec.makeMeasureSpec((int) (View.MeasureSpec.getSize(i) * this.mRatio), 1073741824);
         }
         super.onMeasure(i, i2);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onSizeChanged(int i, int i2, int i3, int i4) {
+    protected void onSizeChanged(int i, int i2, int i3, int i4) {
         this.mViewPvHelper.b(i, i2, i3, i4);
         super.onSizeChanged(i, i2, i3, i4);
         this.mViewPvHelper.FB();

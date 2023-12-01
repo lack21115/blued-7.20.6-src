@@ -20,7 +20,7 @@ public class STYuvImage {
         this.height = i2;
         this.width = i;
         int[] iArr = {i, i, i};
-        System.arraycopy((Object) bArr, 0, (Object) bArr2, 0, i3);
-        System.arraycopy((Object) bArr, i3, (Object) this.planes1, 0, i4);
+        System.arraycopy(bArr, 0, bArr2, 0, i3);
+        System.arraycopy(bArr, i3, this.planes1, 0, i4);
     }
 }

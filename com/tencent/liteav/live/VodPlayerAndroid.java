@@ -4,7 +4,6 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.liteav.base.ContextUtils;
 import com.tencent.liteav.base.annotations.JNINamespace;
 import com.tencent.liteav.base.util.LiteavLog;
@@ -75,7 +74,7 @@ public class VodPlayerAndroid implements ITXLivePlayListener, TXLivePlayer.ITXSn
                     TXVodPlayConfig tXVodPlayConfig = new TXVodPlayConfig();
                     tXVodPlayConfig.setMediaType(2);
                     VodPlayerAndroid.this.mImpl.a(tXVodPlayConfig);
-                    VodPlayerAndroid.this.mImpl.f36212a = VodPlayerAndroid.this;
+                    VodPlayerAndroid.this.mImpl.f22521a = VodPlayerAndroid.this;
                 }
             }
         });
@@ -106,7 +105,7 @@ public class VodPlayerAndroid implements ITXLivePlayListener, TXLivePlayer.ITXSn
         this.mMainHandler.a(new Runnable() { // from class: com.tencent.liteav.live.VodPlayerAndroid.4
             @Override // java.lang.Runnable
             public final void run() {
-                VodPlayerAndroid.this.mImpl.f36212a = null;
+                VodPlayerAndroid.this.mImpl.f22521a = null;
                 VodPlayerAndroid.this.mImpl = null;
                 VodPlayerAndroid.this.mNativeVodPlayerAndroid = -1L;
             }
@@ -153,9 +152,9 @@ public class VodPlayerAndroid implements ITXLivePlayListener, TXLivePlayer.ITXSn
         if (string2 != null) {
             try {
                 String substring = string2.substring(0, string2.length() - 1);
-                parseInt = Integer.parseInt(substring.split(BridgeUtil.SPLIT_MARK)[0]);
+                parseInt = Integer.parseInt(substring.split("/")[0]);
                 try {
-                    parseInt2 = Integer.parseInt(substring.split(BridgeUtil.SPLIT_MARK)[1]);
+                    parseInt2 = Integer.parseInt(substring.split("/")[1]);
                 } catch (Exception e) {
                     e = e;
                     i = parseInt;

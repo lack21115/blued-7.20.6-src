@@ -1,7 +1,6 @@
 package com.ss.android.downloadlib.utils;
 
 import android.text.TextUtils;
-import com.anythink.core.common.e.o;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -15,7 +14,7 @@ public class b {
                 jSONObject.put("notification_jump_url", str2);
             }
             jSONObject.put("show_toast", z);
-            jSONObject.put(o.h, str3);
+            jSONObject.put("business_type", str3);
         } catch (JSONException e) {
             e.printStackTrace();
         }

@@ -1,7 +1,5 @@
 package android.os;
 
-import com.alipay.sdk.util.i;
-
 /* loaded from: source-9557208-dex2jar.jar:android/os/Broadcaster.class */
 public class Broadcaster {
     private Registration mReg;
@@ -129,9 +127,9 @@ public class Broadcaster {
                     registration = registration3.next;
                     registration3 = registration;
                 } while (registration != registration2);
-                System.out.println(i.d);
+                System.out.println("}");
             } else {
-                System.out.println(i.d);
+                System.out.println("}");
             }
         }
     }

@@ -8,13 +8,13 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class r {
 
     /* renamed from: a  reason: collision with root package name */
-    private final i f27460a;
+    private final i f13772a;
     private final com.opos.videocache.a b;
     private volatile Thread f;
     private volatile boolean g;
 
     /* renamed from: c  reason: collision with root package name */
-    private final Object f27461c = new Object();
+    private final Object f13773c = new Object();
     private final Object d = new Object();
     private volatile int h = -1;
     private final AtomicInteger e = new AtomicInteger();
@@ -32,7 +32,7 @@ public class r {
     }
 
     public r(i iVar, com.opos.videocache.a aVar) {
-        this.f27460a = (i) f.a(iVar);
+        this.f13772a = (i) f.a(iVar);
         this.b = (com.opos.videocache.a) f.a(aVar);
     }
 
@@ -47,8 +47,8 @@ public class r {
 
     private void b(long j, long j2) {
         a(j, j2);
-        synchronized (this.f27461c) {
-            this.f27461c.notifyAll();
+        synchronized (this.f13773c) {
+            this.f13773c.notifyAll();
         }
     }
 
@@ -57,16 +57,16 @@ public class r {
             boolean z = (this.f == null || this.f.getState() == Thread.State.TERMINATED) ? false : true;
             if (!this.g && !this.b.d() && !z) {
                 a aVar = new a();
-                this.f = new Thread(aVar, "Source reader for " + this.f27460a);
+                this.f = new Thread(aVar, "Source reader for " + this.f13772a);
                 this.f.start();
             }
         }
     }
 
     private void d() {
-        synchronized (this.f27461c) {
+        synchronized (this.f13773c) {
             try {
-                this.f27461c.wait(1000L);
+                this.f13773c.wait(1000L);
             } catch (InterruptedException e) {
                 throw new g("Waiting source data is interrupted!", e);
             }
@@ -96,7 +96,7 @@ public class r {
 
     private void g() {
         synchronized (this.d) {
-            if (!h() && this.b.a() == this.f27460a.a()) {
+            if (!h() && this.b.a() == this.f13772a.a()) {
                 this.b.c();
             }
         }
@@ -108,9 +108,9 @@ public class r {
 
     private void i() {
         try {
-            this.f27460a.b();
+            this.f13772a.b();
         } catch (g e) {
-            a(new g("Error closing source " + this.f27460a, e));
+            a(new g("Error closing source " + this.f13772a, e));
         }
     }
 
@@ -131,7 +131,7 @@ public class r {
 
     public void a() {
         synchronized (this.d) {
-            com.opos.cmn.an.f.a.b("ProxyCache", "Shutdown proxy for " + this.f27460a);
+            com.opos.cmn.an.f.a.b("ProxyCache", "Shutdown proxy for " + this.f13772a);
             try {
                 this.g = true;
                 if (this.f != null) {

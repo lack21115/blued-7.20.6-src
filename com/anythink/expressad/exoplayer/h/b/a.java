@@ -7,13 +7,13 @@ import com.anythink.expressad.exoplayer.m;
 public abstract class a extends i {
 
     /* renamed from: a  reason: collision with root package name */
-    public final long f7422a;
+    public final long f4583a;
     private b k;
     private int[] l;
 
     public a(com.anythink.expressad.exoplayer.j.h hVar, k kVar, m mVar, int i, Object obj, long j, long j2, long j3, long j4) {
         super(hVar, kVar, mVar, i, obj, j, j2, j4);
-        this.f7422a = j3;
+        this.f4583a = j3;
     }
 
     public final int a(int i) {

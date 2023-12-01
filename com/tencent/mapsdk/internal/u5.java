@@ -6,11 +6,11 @@ import com.tencent.map.lib.models.GeoPoint;
 public class u5 {
 
     /* renamed from: a  reason: collision with root package name */
-    private GeoPoint f38039a;
+    private GeoPoint f24348a;
     private String b;
 
     public u5(String str, GeoPoint geoPoint) {
-        this.f38039a = geoPoint;
+        this.f24348a = geoPoint;
         this.b = str;
     }
 
@@ -19,6 +19,6 @@ public class u5 {
     }
 
     public GeoPoint b() {
-        return this.f38039a;
+        return this.f24348a;
     }
 }

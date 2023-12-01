@@ -1,7 +1,6 @@
 package com.blued.android.framework.view.SuperToast;
 
 import android.animation.Animator;
-import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
@@ -14,9 +13,7 @@ import java.util.PriorityQueue;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/view/SuperToast/Toaster.class */
 public class Toaster extends Handler {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static Toaster f10196a;
+    private static Toaster a;
     private final PriorityQueue<SuperToast> b = new PriorityQueue<>(10, new SuperToastComparator());
 
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/view/SuperToast/Toaster$Messages.class */
@@ -47,11 +44,11 @@ public class Toaster extends Handler {
     public static Toaster a() {
         synchronized (Toaster.class) {
             try {
-                if (f10196a != null) {
-                    return f10196a;
+                if (a != null) {
+                    return a;
                 }
                 Toaster toaster = new Toaster();
-                f10196a = toaster;
+                a = toaster;
                 return toaster;
             } catch (Throwable th) {
                 throw th;
@@ -70,7 +67,7 @@ public class Toaster extends Handler {
             return;
         }
         if (!(superToast instanceof SuperActivityToast)) {
-            WindowManager windowManager = (WindowManager) superToast.getContext().getApplicationContext().getSystemService(Context.WINDOW_SERVICE);
+            WindowManager windowManager = (WindowManager) superToast.getContext().getApplicationContext().getSystemService("window");
             if (windowManager != null) {
                 windowManager.addView(superToast.k(), superToast.m());
             }
@@ -125,7 +122,7 @@ public class Toaster extends Handler {
         while (it.hasNext()) {
             SuperToast next = it.next();
             if (!(next instanceof SuperActivityToast)) {
-                WindowManager windowManager = (WindowManager) next.getContext().getApplicationContext().getSystemService(Context.WINDOW_SERVICE);
+                WindowManager windowManager = (WindowManager) next.getContext().getApplicationContext().getSystemService("window");
                 if (next.l()) {
                     try {
                         windowManager.removeView(next.k());
@@ -148,7 +145,7 @@ public class Toaster extends Handler {
     /* JADX INFO: Access modifiers changed from: package-private */
     public void b(final SuperToast superToast) {
         if (!(superToast instanceof SuperActivityToast)) {
-            WindowManager windowManager = (WindowManager) superToast.getContext().getSystemService(Context.WINDOW_SERVICE);
+            WindowManager windowManager = (WindowManager) superToast.getContext().getSystemService("window");
             if (windowManager == null) {
                 throw new IllegalStateException("The SuperToast's WindowManager was null when trying to remove the SuperToast.");
             }

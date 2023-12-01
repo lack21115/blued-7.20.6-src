@@ -12,9 +12,7 @@ import java.util.List;
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fitem/FitemDesireSelectGift.class */
 public class FitemDesireSelectGift extends FreedomItem {
     public LiveDesireSelectGiftModel b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public boolean f12531c = false;
+    public boolean c = false;
     public View d;
 
     public FitemDesireSelectGift(LiveDesireSelectGiftModel liveDesireSelectGiftModel) {
@@ -29,24 +27,24 @@ public class FitemDesireSelectGift extends FreedomItem {
     @Override // com.blued.android.module.common.utils.freedom.FreedomItem
     public void a(Context context, BaseViewHolder baseViewHolder, List<FreedomItem> list, int i) {
         baseViewHolder.a(R.id.live_gift, this.b.images_static).a(R.id.tv_gift_name, (CharSequence) this.b.name).a(R.id.tv_price, (CharSequence) new DecimalFormat("#,###").format(Float.parseFloat(String.valueOf(this.b.beans))));
-        View a2 = baseViewHolder.a(R.id.view_border);
-        if (a2.animate() != null) {
-            a2.animate().cancel();
+        View a = baseViewHolder.a(R.id.view_border);
+        if (a.animate() != null) {
+            a.animate().cancel();
         }
-        if (this.f12531c) {
-            a2.setScaleX(1.0f);
-            a2.setScaleY(1.0f);
-            a2.setAlpha(1.0f);
+        if (this.c) {
+            a.setScaleX(1.0f);
+            a.setScaleY(1.0f);
+            a.setAlpha(1.0f);
         } else {
-            a2.setScaleX(0.8f);
-            a2.setScaleY(0.8f);
-            a2.setAlpha(0.0f);
+            a.setScaleX(0.8f);
+            a.setScaleY(0.8f);
+            a.setAlpha(0.0f);
         }
-        this.d = a2;
+        this.d = a;
     }
 
     public void a(boolean z) {
-        this.f12531c = z;
+        this.c = z;
         View view = this.d;
         if (view == null) {
             return;

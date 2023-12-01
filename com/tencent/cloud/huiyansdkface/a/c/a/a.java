@@ -6,17 +6,17 @@ import android.hardware.Camera;
 public class a implements com.tencent.cloud.huiyansdkface.a.c.d {
 
     /* renamed from: a  reason: collision with root package name */
-    private Camera f35448a;
+    private Camera f21757a;
     private com.tencent.cloud.huiyansdkface.a.a.a.a b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f35449c;
+    private int f21758c;
     private int d;
     private Camera.CameraInfo e;
     private com.tencent.cloud.huiyansdkface.a.a.d f;
 
     public a a(int i) {
-        this.f35449c = i;
+        this.f21758c = i;
         return this;
     }
 
@@ -26,7 +26,7 @@ public class a implements com.tencent.cloud.huiyansdkface.a.c.d {
     }
 
     public a a(Camera camera) {
-        this.f35448a = camera;
+        this.f21757a = camera;
         return this;
     }
 
@@ -53,7 +53,7 @@ public class a implements com.tencent.cloud.huiyansdkface.a.c.d {
     @Override // com.tencent.cloud.huiyansdkface.a.c.d
     /* renamed from: c */
     public Camera a() {
-        return this.f35448a;
+        return this.f21757a;
     }
 
     public com.tencent.cloud.huiyansdkface.a.a.a.a d() {
@@ -61,7 +61,7 @@ public class a implements com.tencent.cloud.huiyansdkface.a.c.d {
     }
 
     public int e() {
-        return this.f35449c;
+        return this.f21758c;
     }
 
     public int f() {
@@ -69,6 +69,6 @@ public class a implements com.tencent.cloud.huiyansdkface.a.c.d {
     }
 
     public String toString() {
-        return "CameraV1{mCameraFacing=" + this.b + ", mOrientation=" + this.f35449c + ", mCameraId=" + this.d + '}';
+        return "CameraV1{mCameraFacing=" + this.b + ", mOrientation=" + this.f21758c + ", mCameraId=" + this.d + '}';
     }
 }

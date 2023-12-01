@@ -7,13 +7,13 @@ public enum Level {
     
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f21172a;
+    public final int f7566a;
 
     Level(int i) {
-        this.f21172a = i;
+        this.f7566a = i;
     }
 
     public int value() {
-        return this.f21172a;
+        return this.f7566a;
     }
 }

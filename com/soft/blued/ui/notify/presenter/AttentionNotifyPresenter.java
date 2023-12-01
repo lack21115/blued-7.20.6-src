@@ -21,34 +21,29 @@ public class AttentionNotifyPresenter extends MvpPresenter {
 
     public void a(long j) {
         FindHttpUtils.a(new BluedUIHttpResponse(g()) { // from class: com.soft.blued.ui.notify.presenter.AttentionNotifyPresenter.2
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity bluedEntity) {
                 AttentionNotifyPresenter.this.a("ATTENTION_NOTICE_CLEAR", false);
             }
         }, g(), "followers", String.valueOf(j));
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void a(IFetchDataListener iFetchDataListener) {
         this.h = 1;
         c(iFetchDataListener);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void b(IFetchDataListener iFetchDataListener) {
         c(iFetchDataListener);
     }
 
     public void c(final IFetchDataListener iFetchDataListener) {
         FindHttpUtils.a(new BluedUIHttpResponse<BluedEntity<FeedNotice, BluedEntityBaseExtra>>(g()) { // from class: com.soft.blued.ui.notify.presenter.AttentionNotifyPresenter.1
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str) {
                 AttentionNotifyPresenter.this.j = false;
                 AttentionNotifyPresenter.this.k = false;
                 return super.onUIFailure(i, str);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish(boolean z) {
                 super.onUIFinish(z);
                 iFetchDataListener.a(z);
@@ -58,12 +53,10 @@ public class AttentionNotifyPresenter extends MvpPresenter {
                 AttentionNotifyPresenter.this.a("SHOW_LOAD_ERROR", false);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 super.onUIStart();
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity<FeedNotice, BluedEntityBaseExtra> bluedEntity) {
                 if (bluedEntity == null || bluedEntity.data == null || bluedEntity.data.isEmpty()) {
                     AttentionNotifyPresenter.this.j = false;

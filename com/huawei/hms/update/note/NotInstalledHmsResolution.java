@@ -15,38 +15,38 @@ import com.huawei.hms.update.ui.NotInstalledHmsDialogHelper;
 public class NotInstalledHmsResolution implements IBridgeActivityDelegate {
 
     /* renamed from: a  reason: collision with root package name */
-    public Dialog f22905a;
+    public Dialog f9297a;
     public Activity b;
 
     /* loaded from: source-7994992-dex2jar.jar:com/huawei/hms/update/note/NotInstalledHmsResolution$a.class */
     public static class a implements DialogInterface.OnClickListener {
 
         /* renamed from: a  reason: collision with root package name */
-        public final Activity f22906a;
+        public final Activity f9298a;
 
         public a(Activity activity) {
-            this.f22906a = activity;
+            this.f9298a = activity;
         }
 
         @Override // android.content.DialogInterface.OnClickListener
         public void onClick(DialogInterface dialogInterface, int i) {
             Tracker.onClick(dialogInterface, i);
             HMSLog.i("NotInstalledHmsResolution", "<Dialog onClick>");
-            this.f22906a.finish();
+            this.f9298a.finish();
         }
     }
 
     public final void a() {
-        Dialog dialog = this.f22905a;
+        Dialog dialog = this.f9297a;
         if (dialog == null || !dialog.isShowing()) {
             return;
         }
-        this.f22905a.cancel();
+        this.f9297a.cancel();
     }
 
     public final void a(Activity activity) {
         a();
-        this.f22905a = NotInstalledHmsDialogHelper.getDialogBuilder(activity).setPositiveButton(NotInstalledHmsDialogHelper.getConfirmResId(activity), new a(activity)).show();
+        this.f9297a = NotInstalledHmsDialogHelper.getDialogBuilder(activity).setPositiveButton(NotInstalledHmsDialogHelper.getConfirmResId(activity), new a(activity)).show();
     }
 
     @Override // com.huawei.hms.activity.IBridgeActivityDelegate

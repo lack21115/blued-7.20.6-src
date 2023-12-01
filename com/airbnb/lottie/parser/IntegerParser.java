@@ -5,9 +5,7 @@ import java.io.IOException;
 
 /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/parser/IntegerParser.class */
 public class IntegerParser implements ValueParser<Integer> {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final IntegerParser f4402a = new IntegerParser();
+    public static final IntegerParser a = new IntegerParser();
 
     private IntegerParser() {
     }

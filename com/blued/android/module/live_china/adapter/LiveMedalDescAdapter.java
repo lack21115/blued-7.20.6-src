@@ -14,7 +14,6 @@ public final class LiveMedalDescAdapter extends BaseQuickAdapter<String, BaseVie
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(BaseViewHolder baseViewHolder, String str) {
         if (baseViewHolder == null) {

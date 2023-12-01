@@ -10,9 +10,7 @@ import kotlinx.coroutines.scheduling.DefaultScheduler;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/CoroutineContextKt.class */
 public final class CoroutineContextKt {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final boolean f42793a;
+    private static final boolean a;
 
     /* JADX WARN: Code restructure failed: missing block: B:14:0x0034, code lost:
         if (r0.equals("on") != false) goto L21;
@@ -84,17 +82,17 @@ public final class CoroutineContextKt {
             r5 = r0
         L76:
             r0 = r5
-            kotlinx.coroutines.CoroutineContextKt.f42793a = r0
+            kotlinx.coroutines.CoroutineContextKt.a = r0
             return
         */
-        throw new UnsupportedOperationException("Method not decompiled: kotlinx.coroutines.CoroutineContextKt.m13020clinit():void");
+        throw new UnsupportedOperationException("Method not decompiled: kotlinx.coroutines.CoroutineContextKt.m11929clinit():void");
     }
 
     public static final String a(CoroutineContext coroutineContext) {
         CoroutineId coroutineId;
         String a2;
-        if (DebugKt.b() && (coroutineId = (CoroutineId) coroutineContext.get(CoroutineId.f42798a)) != null) {
-            CoroutineName coroutineName = (CoroutineName) coroutineContext.get(CoroutineName.f42799a);
+        if (DebugKt.b() && (coroutineId = (CoroutineId) coroutineContext.get(CoroutineId.a)) != null) {
+            CoroutineName coroutineName = (CoroutineName) coroutineContext.get(CoroutineName.a);
             String str = "coroutine";
             if (coroutineName != null && (a2 = coroutineName.a()) != null) {
                 str = a2;
@@ -107,12 +105,12 @@ public final class CoroutineContextKt {
     public static final CoroutineContext a(CoroutineScope coroutineScope, CoroutineContext coroutineContext) {
         CoroutineContext plus = coroutineScope.getCoroutineContext().plus(coroutineContext);
         CoroutineContext plus2 = DebugKt.b() ? plus.plus(new CoroutineId(DebugKt.d().incrementAndGet())) : plus;
-        Dispatchers dispatchers = Dispatchers.f42810a;
+        Dispatchers dispatchers = Dispatchers.a;
         CoroutineContext coroutineContext2 = plus2;
         if (plus != Dispatchers.a()) {
             coroutineContext2 = plus2;
-            if (plus.get(ContinuationInterceptor.f42453a) == null) {
-                Dispatchers dispatchers2 = Dispatchers.f42810a;
+            if (plus.get(ContinuationInterceptor.a) == null) {
+                Dispatchers dispatchers2 = Dispatchers.a;
                 coroutineContext2 = plus2.plus(Dispatchers.a());
             }
         }
@@ -120,12 +118,12 @@ public final class CoroutineContextKt {
     }
 
     public static final CoroutineDispatcher a() {
-        return (CoroutineDispatcher) (f42793a ? DefaultScheduler.b : CommonPool.b);
+        return (CoroutineDispatcher) (a ? DefaultScheduler.b : CommonPool.b);
     }
 
     public static final UndispatchedCoroutine<?> a(Continuation<?> continuation, CoroutineContext coroutineContext, Object obj) {
         if (continuation instanceof CoroutineStackFrame) {
-            if (coroutineContext.get(UndispatchedMarker.f42861a) != null) {
+            if (coroutineContext.get(UndispatchedMarker.a) != null) {
                 UndispatchedCoroutine<?> a2 = a((CoroutineStackFrame) continuation);
                 if (a2 == null) {
                     return a2;

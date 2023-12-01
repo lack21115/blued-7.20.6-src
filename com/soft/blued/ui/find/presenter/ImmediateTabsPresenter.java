@@ -12,33 +12,30 @@ import java.util.List;
 public class ImmediateTabsPresenter implements ImmediateTabsContract.IPresenter {
 
     /* renamed from: a  reason: collision with root package name */
-    private ImmediateTabsContract.IView f30637a;
+    private ImmediateTabsContract.IView f16947a;
     private IRequestHost b;
 
     /* renamed from: com.soft.blued.ui.find.presenter.ImmediateTabsPresenter$2  reason: invalid class name */
     /* loaded from: source-8303388-dex2jar.jar:com/soft/blued/ui/find/presenter/ImmediateTabsPresenter$2.class */
     class AnonymousClass2 extends BluedUIHttpResponse<BluedEntityA<Object>> {
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public void onUIUpdate(BluedEntityA<Object> bluedEntityA) {
         }
     }
 
-    @Override // com.blued.android.framework.mvp_similarity.BasePresenter
     public void ar_() {
         b();
     }
 
     public void b() {
         NearbyHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<ImmediateTabModel>>(this.b) { // from class: com.soft.blued.ui.find.presenter.ImmediateTabsPresenter.1
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<ImmediateTabModel> bluedEntityA) {
                 List<ImmediateTabModel.Tab> list;
-                if (bluedEntityA == null || !bluedEntityA.hasData() || bluedEntityA.data.get(0) == null || (list = bluedEntityA.data.get(0).conf) == null || list.size() <= 0) {
+                if (bluedEntityA == null || !bluedEntityA.hasData() || bluedEntityA.data.get(0) == null || (list = ((ImmediateTabModel) bluedEntityA.data.get(0)).conf) == null || list.size() <= 0) {
                     return;
                 }
-                ImmediateTabsPresenter.this.f30637a.a(bluedEntityA.data.get(0).conf);
+                ImmediateTabsPresenter.this.f16947a.a(((ImmediateTabModel) bluedEntityA.data.get(0)).conf);
             }
         }, this.b, "main");
     }

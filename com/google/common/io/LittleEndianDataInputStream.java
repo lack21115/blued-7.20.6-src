@@ -17,7 +17,7 @@ public final class LittleEndianDataInputStream extends FilterInputStream impleme
     }
 
     private byte readAndCheckByte() throws IOException, EOFException {
-        int read = this.f42254in.read();
+        int read = this.in.read();
         if (-1 != read) {
             return (byte) read;
         }
@@ -89,12 +89,12 @@ public final class LittleEndianDataInputStream extends FilterInputStream impleme
 
     @Override // java.io.DataInput
     public String readUTF() throws IOException {
-        return new DataInputStream(this.f42254in).readUTF();
+        return new DataInputStream(this.in).readUTF();
     }
 
     @Override // java.io.DataInput
     public int readUnsignedByte() throws IOException {
-        int read = this.f42254in.read();
+        int read = this.in.read();
         if (read >= 0) {
             return read;
         }
@@ -108,6 +108,6 @@ public final class LittleEndianDataInputStream extends FilterInputStream impleme
 
     @Override // java.io.DataInput
     public int skipBytes(int i) throws IOException {
-        return (int) this.f42254in.skip(i);
+        return (int) this.in.skip(i);
     }
 }

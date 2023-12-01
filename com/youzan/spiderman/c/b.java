@@ -10,17 +10,17 @@ import java.util.Map;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f41742a;
+    private static String f28051a;
     private static String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static String f41743c;
+    private static String f28052c;
 
     public static Map<String, String> a() {
         HashMap hashMap = new HashMap();
-        hashMap.put("package_name", f41742a);
+        hashMap.put("package_name", f28051a);
         hashMap.put("app_version", b);
-        hashMap.put("cache_version", f41743c);
+        hashMap.put("cache_version", f28052c);
         hashMap.put("platform", "android");
         return hashMap;
     }
@@ -28,11 +28,11 @@ public final class b {
     public static void a(Context context) {
         PackageInfo packageInfo;
         if (context != null) {
-            f41743c = "2.3.6";
-            f41742a = context.getPackageName();
+            f28052c = "2.3.6";
+            f28051a = context.getPackageName();
             try {
                 PackageManager packageManager = context.getPackageManager();
-                if (packageManager == null || (packageInfo = packageManager.getPackageInfo(f41742a, 128)) == null) {
+                if (packageManager == null || (packageInfo = packageManager.getPackageInfo(f28051a, 128)) == null) {
                     return;
                 }
                 b = packageInfo.versionName;

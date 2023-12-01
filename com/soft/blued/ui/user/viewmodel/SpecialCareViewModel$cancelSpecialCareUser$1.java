@@ -31,7 +31,7 @@ import kotlinx.coroutines.CoroutineScope;
 final class SpecialCareViewModel$cancelSpecialCareUser$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
 
     /* renamed from: a  reason: collision with root package name */
-    int f34349a;
+    int f20658a;
     final /* synthetic */ SpecialCareAction.cancelSpecialCareUser b;
 
     @Metadata
@@ -40,10 +40,10 @@ final class SpecialCareViewModel$cancelSpecialCareUser$1 extends SuspendLambda i
     public static final class AnonymousClass2 extends BluedUIHttpResponse<BluedEntityA<Object>> {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ SpecialCareAction.cancelSpecialCareUser f34350a;
+        final /* synthetic */ SpecialCareAction.cancelSpecialCareUser f20659a;
 
         AnonymousClass2(SpecialCareAction.cancelSpecialCareUser cancelspecialcareuser) {
-            this.f34350a = cancelspecialcareuser;
+            this.f20659a = cancelspecialcareuser;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -57,7 +57,6 @@ final class SpecialCareViewModel$cancelSpecialCareUser$1 extends SuspendLambda i
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public void onUIUpdate(BluedEntityA<Object> bluedEntityA) {
             boolean z = false;
@@ -68,9 +67,8 @@ final class SpecialCareViewModel$cancelSpecialCareUser$1 extends SuspendLambda i
                 AppMethods.d((int) R.string.msg_special_care_pay_vip_to_set);
                 return;
             }
-            for (String str : this.f34350a.a()) {
+            for (String str : this.f20659a.a()) {
                 ChatManager.getInstance().getSessionSettingModel((short) 2, Long.parseLong(str), new FetchDataListener() { // from class: com.soft.blued.ui.user.viewmodel.-$$Lambda$SpecialCareViewModel$cancelSpecialCareUser$1$2$FMnKsWH7L_buRa-ytRZY8AzueY8
-                    @Override // com.blued.android.chat.listener.FetchDataListener
                     public final void onFetchData(Object obj) {
                         SpecialCareViewModel$cancelSpecialCareUser$1.AnonymousClass2.a((SessionSettingBaseModel) obj);
                     }
@@ -86,36 +84,33 @@ final class SpecialCareViewModel$cancelSpecialCareUser$1 extends SuspendLambda i
         this.b = cancelspecialcareuser;
     }
 
-    @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-        return ((SpecialCareViewModel$cancelSpecialCareUser$1) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+        return create(coroutineScope, continuation).invokeSuspend(Unit.a);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
         return new SpecialCareViewModel$cancelSpecialCareUser$1(this.b, continuation);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         IntrinsicsKt.a();
-        if (this.f34349a == 0) {
+        if (this.f20658a == 0) {
             ResultKt.a(obj);
             List<String> a2 = this.b.a();
             SpecialCareAction.cancelSpecialCareUser cancelspecialcareuser = this.b;
             int i = 0;
             String str = "";
-            for (String str2 : a2) {
+            for (Object obj2 : a2) {
                 if (i < 0) {
                     CollectionsKt.c();
                 }
-                String str3 = str2;
-                str = i != cancelspecialcareuser.a().size() ? str + str3 + ',' : Intrinsics.a(str, (Object) str3);
+                String str2 = (String) obj2;
+                str = i != cancelspecialcareuser.a().size() ? str + str2 + ',' : Intrinsics.a(str, str2);
                 i++;
             }
             UserHttpUtils.c(str, new AnonymousClass2(this.b), (IRequestHost) null);
-            return Unit.f42314a;
+            return Unit.a;
         }
         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
     }

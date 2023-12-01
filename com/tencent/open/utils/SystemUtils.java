@@ -11,7 +11,6 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Build;
 import android.view.MotionEvent;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.connect.common.Constants;
 import com.tencent.open.a.f;
 import java.io.File;
@@ -198,9 +197,9 @@ public class SystemUtils {
             f.a("openSDK_LOG.SystemUtils", sb.toString());
             StringBuilder sb2 = new StringBuilder();
             sb2.append(packageName);
-            sb2.append(BridgeUtil.UNDERLINE_STR);
+            sb2.append("_");
             sb2.append(hexString);
-            sb2.append(BridgeUtil.UNDERLINE_STR);
+            sb2.append("_");
             sb2.append(str);
             sb2.append("");
             messageDigest.update(Util.getBytesUTF8(sb2.toString()));
@@ -238,7 +237,28 @@ public class SystemUtils {
     }
 
     public static int getRequestCodeFromCallback(String str) {
-        return QQ_SHARE_CALLBACK_ACTION.equals(str) ? Constants.REQUEST_QQ_SHARE : QZONE_SHARE_CALLBACK_ACTION.equals(str) ? Constants.REQUEST_QZONE_SHARE : QQFAVORITES_CALLBACK_ACTION.equals(str) ? Constants.REQUEST_QQ_FAVORITES : QQDATALINE_CALLBACK_ACTION.equals(str) ? Constants.REQUEST_SEND_TO_MY_COMPUTER : TROOPBAR_CALLBACK_ACTION.equals(str) ? Constants.REQUEST_SHARE_TO_TROOP_BAR : ACTION_LOGIN.equals(str) ? Constants.REQUEST_LOGIN : ACTION_REQUEST_API.equals(str) ? 10100 : -1;
+        if (QQ_SHARE_CALLBACK_ACTION.equals(str)) {
+            return Constants.REQUEST_QQ_SHARE;
+        }
+        if (QZONE_SHARE_CALLBACK_ACTION.equals(str)) {
+            return Constants.REQUEST_QZONE_SHARE;
+        }
+        if (QQFAVORITES_CALLBACK_ACTION.equals(str)) {
+            return Constants.REQUEST_QQ_FAVORITES;
+        }
+        if (QQDATALINE_CALLBACK_ACTION.equals(str)) {
+            return Constants.REQUEST_SEND_TO_MY_COMPUTER;
+        }
+        if (TROOPBAR_CALLBACK_ACTION.equals(str)) {
+            return Constants.REQUEST_SHARE_TO_TROOP_BAR;
+        }
+        if (ACTION_LOGIN.equals(str)) {
+            return Constants.REQUEST_LOGIN;
+        }
+        if (ACTION_REQUEST_API.equals(str)) {
+            return Constants.REQUEST_API;
+        }
+        return -1;
     }
 
     public static boolean isActivityExist(Context context, Intent intent) {

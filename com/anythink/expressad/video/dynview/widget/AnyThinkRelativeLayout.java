@@ -10,11 +10,11 @@ import android.widget.RelativeLayout;
 public class AnyThinkRelativeLayout extends RelativeLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    private boolean f8422a;
+    private boolean f5582a;
     private AnimatorSet b;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f8423c;
+    private boolean f5583c;
 
     public AnyThinkRelativeLayout(Context context) {
         super(context);
@@ -28,9 +28,8 @@ public class AnyThinkRelativeLayout extends RelativeLayout {
         super(context, attributeSet, i);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         AnimatorSet animatorSet = this.b;
         if (animatorSet != null) {
@@ -42,12 +41,11 @@ public class AnyThinkRelativeLayout extends RelativeLayout {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        if (!this.f8422a) {
-            this.f8422a = true;
+        if (!this.f5582a) {
+            this.f5582a = true;
         }
         AnimatorSet animatorSet = this.b;
         if (animatorSet != null) {
@@ -59,9 +57,8 @@ public class AnyThinkRelativeLayout extends RelativeLayout {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onVisibilityChanged(View view, int i) {
+    protected void onVisibilityChanged(View view, int i) {
         super.onVisibilityChanged(view, i);
     }
 

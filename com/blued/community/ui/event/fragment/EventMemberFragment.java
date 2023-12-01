@@ -4,10 +4,11 @@ import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import com.blued.android.core.ui.BaseFragment;
 import com.blued.android.core.ui.TerminalActivity;
-import com.blued.android.module.common.base.mvi.MVIBaseFragment;
+import com.blued.android.module.common.base.mvi.BaseListFragment;
 import com.blued.android.module.common.extensions.DialogFragmentViewBindingProperty;
 import com.blued.android.module.common.extensions.FragmentViewBindingProperty;
 import com.blued.android.module.common.extensions.ViewBindingProperty;
@@ -26,17 +27,13 @@ import kotlin.reflect.KProperty;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/event/fragment/EventMemberFragment.class */
 public final class EventMemberFragment extends BaseViewPagerParentFragment {
-
-    /* renamed from: c  reason: collision with root package name */
-    private final ViewBindingProperty f19552c;
+    private final ViewBindingProperty c;
     private boolean d;
     private String e;
     private String f;
     private boolean g;
     static final /* synthetic */ KProperty<Object>[] b = {Reflection.a(new PropertyReference1Impl(EventMemberFragment.class, "viewBinding", "getViewBinding()Lcom/blued/community/databinding/FragmentEventMemberBinding;", 0))};
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f19551a = new Companion(null);
+    public static final Companion a = new Companion(null);
 
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/event/fragment/EventMemberFragment$Companion.class */
@@ -62,7 +59,7 @@ public final class EventMemberFragment extends BaseViewPagerParentFragment {
     }
 
     public EventMemberFragment() {
-        this.f19552c = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<EventMemberFragment, FragmentEventMemberBinding>() { // from class: com.blued.community.ui.event.fragment.EventMemberFragment$special$$inlined$viewBindingFragment$default$1
+        this.c = ((Fragment) this) instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<EventMemberFragment, FragmentEventMemberBinding>() { // from class: com.blued.community.ui.event.fragment.EventMemberFragment$special$$inlined$viewBindingFragment$default$1
             @Override // kotlin.jvm.functions.Function1
             /* renamed from: a */
             public final FragmentEventMemberBinding invoke(EventMemberFragment fragment) {
@@ -92,7 +89,7 @@ public final class EventMemberFragment extends BaseViewPagerParentFragment {
     }
 
     private final FragmentEventMemberBinding b() {
-        return (FragmentEventMemberBinding) this.f19552c.b(this, b[0]);
+        return (FragmentEventMemberBinding) this.c.b(this, b[0]);
     }
 
     @Override // com.blued.android.module.common.fragment.BaseViewPagerParentFragment
@@ -116,8 +113,8 @@ public final class EventMemberFragment extends BaseViewPagerParentFragment {
 
     @Override // com.blued.android.module.common.fragment.BaseViewPagerParentFragment
     public BaseFragment b(int i) {
-        MVIBaseFragment eventMembersListFragment;
-        MVIBaseFragment eventMemberVerifyFragment;
+        BaseListFragment eventMembersListFragment;
+        BaseListFragment eventMemberVerifyFragment;
         Bundle bundle = new Bundle();
         bundle.putAll(this.args);
         if (this.d) {
@@ -146,7 +143,7 @@ public final class EventMemberFragment extends BaseViewPagerParentFragment {
         this.k.add(getString(R.string.event_verified_tab));
     }
 
-    @Override // com.blued.android.module.common.fragment.BaseViewPagerParentFragment, com.blued.android.framework.ui.SimpleFragment
+    @Override // com.blued.android.module.common.fragment.BaseViewPagerParentFragment
     public void onInitView() {
         super.onInitView();
         FragmentEventMemberBinding b2 = b();
@@ -163,7 +160,7 @@ public final class EventMemberFragment extends BaseViewPagerParentFragment {
         b2.d.setupWithViewPager(this.h);
     }
 
-    @Override // com.blued.android.module.common.fragment.BaseViewPagerParentFragment, com.blued.android.framework.ui.SimpleFragment
+    @Override // com.blued.android.module.common.fragment.BaseViewPagerParentFragment
     public void onInitViewFinished() {
         super.onInitViewFinished();
         FragmentEventMemberBinding b2 = b();
@@ -177,7 +174,6 @@ public final class EventMemberFragment extends BaseViewPagerParentFragment {
         }
     }
 
-    @Override // com.blued.android.framework.ui.SimpleFragment
     public void onParseArguments() {
         super.onParseArguments();
         String string = this.args.getString("event_id", "");
@@ -186,11 +182,10 @@ public final class EventMemberFragment extends BaseViewPagerParentFragment {
         String string2 = this.args.getString("event_uid", "");
         Intrinsics.c(string2, "args.getString(EventCons…ts.DataKey.EVENT_UID, \"\")");
         this.f = string2;
-        this.d = CommunityManager.f19086a.a().c(this.f);
+        this.d = CommunityManager.a.a().c(this.f);
         this.g = this.args.getBoolean("event_is_free", false);
     }
 
-    @Override // com.blued.android.framework.ui.SimpleFragment
     public int onSetRootViewId() {
         return R.layout.fragment_event_member;
     }

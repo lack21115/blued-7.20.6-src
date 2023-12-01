@@ -12,11 +12,11 @@ import com.soft.blued.R;
 public final class PrivilegeUserNotificationLayoutBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final FrameLayout f29572a;
+    public final FrameLayout f15882a;
     public final FrameLayout b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final ImageView f29573c;
+    public final ImageView f15883c;
     public final ImageView d;
     public final ImageView e;
     public final ImageView f;
@@ -26,9 +26,9 @@ public final class PrivilegeUserNotificationLayoutBinding implements ViewBinding
 
     private PrivilegeUserNotificationLayoutBinding(ShapeConstraintLayout shapeConstraintLayout, FrameLayout frameLayout, FrameLayout frameLayout2, ImageView imageView, ImageView imageView2, ImageView imageView3, ImageView imageView4, TextView textView, TextView textView2) {
         this.i = shapeConstraintLayout;
-        this.f29572a = frameLayout;
+        this.f15882a = frameLayout;
         this.b = frameLayout2;
-        this.f29573c = imageView;
+        this.f15883c = imageView;
         this.d = imageView2;
         this.e = imageView3;
         this.f = imageView4;
@@ -48,7 +48,7 @@ public final class PrivilegeUserNotificationLayoutBinding implements ViewBinding
                     if (imageView2 != null) {
                         ImageView imageView3 = (ImageView) view.findViewById(R.id.img_notification_bg);
                         if (imageView3 != null) {
-                            ImageView imageView4 = (ImageView) view.findViewById(2131364720);
+                            ImageView imageView4 = (ImageView) view.findViewById(R.id.img_verify);
                             if (imageView4 != null) {
                                 TextView textView = (TextView) view.findViewById(R.id.tv_notification_content);
                                 if (textView != null) {

@@ -1,5 +1,8 @@
 package com.tencent.liteav.videobase.videobase;
 
+import com.huawei.openalliance.ad.constant.ab;
+import com.tencent.thumbplayer.api.TPErrorCode;
+
 /* loaded from: source-8457232-dex2jar.jar:com/tencent/liteav/videobase/videobase/i.class */
 public enum i {
     STATUS_VIDEO_NONE(0),
@@ -28,7 +31,7 @@ public enum i {
     STATUS_VIDEO_CONSUMER_RECEIVE_FPS(700),
     STATUS_VIDEO_DECODER_STREAM_CODEC_TYPE(802),
     STATUS_VIDEO_DECODER_PENDING_FRAME_COUNT(803),
-    STATUS_VIDEO_DECODER_FRAMERATE(804),
+    STATUS_VIDEO_DECODER_FRAMERATE(ab.Y),
     STATUS_VIDEO_DECODER_ERROR(805),
     STATUS_VIDEO_CAPTURE_FRAME(1000),
     STATUS_VIDEO_INCOME_FRAME(1001),
@@ -39,7 +42,7 @@ public enum i {
     STATUS_VIDEO_ENCODER_COST(3004),
     STATUS_VIDEO_ENCODER_CODEC(3005),
     STATUS_VIDEO_ENCODER_ABILITY(3006),
-    STATUS_VIDEO_DECODER_TYPE(4000),
+    STATUS_VIDEO_DECODER_TYPE(TPErrorCode.TP_ERROR_TYPE_DOWNLOAD_PROXY),
     STATUS_VIDEO_DECODER_FRAME(4001),
     STATUS_VIDEO_DECODER_WIDTH(4002),
     STATUS_VIDEO_DECODER_HEIGHT(4003),

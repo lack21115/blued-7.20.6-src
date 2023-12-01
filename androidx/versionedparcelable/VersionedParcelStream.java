@@ -6,6 +6,7 @@ import android.os.IInterface;
 import android.os.Parcelable;
 import androidx.collection.ArrayMap;
 import androidx.versionedparcelable.VersionedParcel;
+import com.anythink.expressad.exoplayer.b;
 import java.io.ByteArrayOutputStream;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -19,7 +20,7 @@ import java.util.Set;
 
 /* loaded from: source-8756600-dex2jar.jar:androidx/versionedparcelable/VersionedParcelStream.class */
 class VersionedParcelStream extends VersionedParcel {
-    private static final Charset f = Charset.forName("UTF-16");
+    private static final Charset f = Charset.forName(b.k);
     int d;
     int e;
     private final DataInputStream g;
@@ -35,26 +36,26 @@ class VersionedParcelStream extends VersionedParcel {
     public static class FieldBuffer {
 
         /* renamed from: a  reason: collision with root package name */
-        final ByteArrayOutputStream f3548a = new ByteArrayOutputStream();
-        final DataOutputStream b = new DataOutputStream(this.f3548a);
+        final ByteArrayOutputStream f3500a = new ByteArrayOutputStream();
+        final DataOutputStream b = new DataOutputStream(this.f3500a);
 
         /* renamed from: c  reason: collision with root package name */
-        private final int f3549c;
+        private final int f3501c;
         private final DataOutputStream d;
 
         FieldBuffer(int i, DataOutputStream dataOutputStream) {
-            this.f3549c = i;
+            this.f3501c = i;
             this.d = dataOutputStream;
         }
 
         void a() throws IOException {
             this.b.flush();
-            int size = this.f3548a.size();
-            this.d.writeInt((this.f3549c << 16) | (size >= 65535 ? 65535 : size));
+            int size = this.f3500a.size();
+            this.d.writeInt((this.f3501c << 16) | (size >= 65535 ? 65535 : size));
             if (size >= 65535) {
                 this.d.writeInt(size);
             }
-            this.f3548a.writeTo(this.d);
+            this.f3500a.writeTo(this.d);
         }
     }
 
@@ -209,7 +210,7 @@ class VersionedParcelStream extends VersionedParcel {
 
     @Override // androidx.versionedparcelable.VersionedParcel
     protected VersionedParcel a() {
-        return new VersionedParcelStream(this.i, this.j, this.f3544a, this.b, this.f3545c);
+        return new VersionedParcelStream(this.i, this.j, this.f3496a, this.b, this.f3497c);
     }
 
     @Override // androidx.versionedparcelable.VersionedParcel
@@ -229,7 +230,7 @@ class VersionedParcelStream extends VersionedParcel {
         FieldBuffer fieldBuffer = this.k;
         if (fieldBuffer != null) {
             try {
-                if (fieldBuffer.f3548a.size() != 0) {
+                if (fieldBuffer.f3500a.size() != 0) {
                     this.k.a();
                 }
                 this.k = null;

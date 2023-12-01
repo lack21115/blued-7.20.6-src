@@ -1,5 +1,6 @@
 package c.t.m.g;
 
+import android.app.backup.FullBackup;
 import android.content.Context;
 import android.location.GnssMeasurementsEvent;
 import android.location.GnssStatus;
@@ -37,10 +38,10 @@ public final class o4 implements LocationListener, TxGposListener {
     public h4 D;
 
     /* renamed from: a  reason: collision with root package name */
-    public final t3 f3905a;
+    public final t3 f3857a;
 
     /* renamed from: c  reason: collision with root package name */
-    public volatile GpsStatus f3906c;
+    public volatile GpsStatus f3858c;
     public volatile Object d;
     public volatile Location e;
     public boolean n;
@@ -73,29 +74,29 @@ public final class o4 implements LocationListener, TxGposListener {
     public static class a implements Serializable {
 
         /* renamed from: a  reason: collision with root package name */
-        public double f3907a;
+        public double f3859a;
         public double b;
 
         /* renamed from: c  reason: collision with root package name */
-        public float f3908c;
+        public float f3860c;
         public long d;
 
         public a(Location location) {
             if (location == null) {
                 return;
             }
-            this.f3907a = location.getLatitude();
+            this.f3859a = location.getLatitude();
             this.b = location.getLongitude();
-            this.f3908c = location.getAccuracy();
+            this.f3860c = location.getAccuracy();
             this.d = location.getTime();
         }
 
         public float a() {
-            return this.f3908c;
+            return this.f3860c;
         }
 
         public double b() {
-            return this.f3907a;
+            return this.f3859a;
         }
 
         public double c() {
@@ -107,7 +108,7 @@ public final class o4 implements LocationListener, TxGposListener {
         }
 
         public String toString() {
-            return "BasicGpsInfo{latitude=" + this.f3907a + ", longitude=" + this.b + ", accuracy=" + this.f3908c + ", timeStamp=" + this.d + '}';
+            return "BasicGpsInfo{latitude=" + this.f3859a + ", longitude=" + this.b + ", accuracy=" + this.f3860c + ", timeStamp=" + this.d + '}';
         }
     }
 
@@ -128,7 +129,7 @@ public final class o4 implements LocationListener, TxGposListener {
                     }
                     boolean c2 = o4.this.c(location);
                     o4 o4Var = o4.this;
-                    int a2 = o4Var.a(o4Var.f3905a.f3992a, location);
+                    int a2 = o4Var.a(o4Var.f3857a.f3944a, location);
                     if (!c2 || a2 == 1 || a2 == 3) {
                         s3.a("G", "gl inRegular");
                         if (a2 == 1 || a2 == 3) {
@@ -144,10 +145,10 @@ public final class o4 implements LocationListener, TxGposListener {
                     if (a3) {
                         location.getLatitude();
                         location.getLongitude();
-                        s3.a("G", String.format(Locale.ENGLISH, "l,%.6f,%.6f,%.1f,%.1f,%.1f,%.1f,%s", Double.valueOf(location.getLatitude()), Double.valueOf(location.getLongitude()), Double.valueOf(location.getAltitude()), Float.valueOf(location.getAccuracy()), Float.valueOf(location.getBearing()), Float.valueOf(location.getSpeed()), "f"));
+                        s3.a("G", String.format(Locale.ENGLISH, "l,%.6f,%.6f,%.1f,%.1f,%.1f,%.1f,%s", Double.valueOf(location.getLatitude()), Double.valueOf(location.getLongitude()), Double.valueOf(location.getAltitude()), Float.valueOf(location.getAccuracy()), Float.valueOf(location.getBearing()), Float.valueOf(location.getSpeed()), FullBackup.DATA_TREE_TOKEN));
                         return;
                     } else if (!o4.this.d(location)) {
-                        String.format(Locale.ENGLISH, "l,%.6f,%.6f,%.1f,%.1f,%.1f,%.1f,%s", Double.valueOf(location.getLatitude()), Double.valueOf(location.getLongitude()), Double.valueOf(location.getAltitude()), Float.valueOf(location.getAccuracy()), Float.valueOf(location.getBearing()), Float.valueOf(location.getSpeed()), "f");
+                        String.format(Locale.ENGLISH, "l,%.6f,%.6f,%.1f,%.1f,%.1f,%.1f,%s", Double.valueOf(location.getLatitude()), Double.valueOf(location.getLongitude()), Double.valueOf(location.getAltitude()), Float.valueOf(location.getAccuracy()), Float.valueOf(location.getBearing()), Float.valueOf(location.getSpeed()), FullBackup.DATA_TREE_TOKEN);
                         s3.a("G", String.format(Locale.ENGLISH, "l,%.6f,%.6f,%.1f,%.1f,%.1f,%.1f,%s", Double.valueOf(location.getLatitude()), Double.valueOf(location.getLongitude()), Double.valueOf(location.getAltitude()), Float.valueOf(location.getAccuracy()), Float.valueOf(location.getBearing()), Float.valueOf(location.getSpeed()), "nf"));
                         return;
                     } else {
@@ -166,7 +167,7 @@ public final class o4 implements LocationListener, TxGposListener {
                     o4.this.n();
                     s3.a("G", "vf:" + o4.this.l.get() + "," + o4.this.m.get());
                     o4.this.i();
-                    if (o4.this.f3906c != null && o4.this.o != null && o4.this.o.size() > 0) {
+                    if (o4.this.f3858c != null && o4.this.o != null && o4.this.o.size() > 0) {
                         try {
                             o4.this.q = o4.this.w.a(o4.this.o, o4.this.l.get());
                         } catch (Throwable th) {
@@ -322,10 +323,10 @@ public final class o4 implements LocationListener, TxGposListener {
     }
 
     public o4(t3 t3Var, boolean z) {
-        this.f3905a = t3Var;
-        this.z = this.f3905a.b();
+        this.f3857a = t3Var;
+        this.z = this.f3857a.b();
         if (z) {
-            this.D = new h4(t3Var.f3992a);
+            this.D = new h4(t3Var.f3944a);
         }
     }
 
@@ -348,7 +349,7 @@ public final class o4 implements LocationListener, TxGposListener {
         } catch (Throwable th) {
             th.toString();
         }
-        if (this.f3905a.b().isProviderEnabled("gps")) {
+        if (this.f3857a.b().isProviderEnabled("gps")) {
             if (Build.VERSION.SDK_INT >= 18) {
                 if (location.isFromMockProvider()) {
                     return 1;
@@ -467,8 +468,8 @@ public final class o4 implements LocationListener, TxGposListener {
         } else {
             if (Build.VERSION.SDK_INT < 24) {
                 try {
-                    this.f3906c = this.f3905a.b().getGpsStatus(this.f3906c);
-                    GpsStatus gpsStatus = this.f3906c;
+                    this.f3858c = this.f3857a.b().getGpsStatus(this.f3858c);
+                    GpsStatus gpsStatus = this.f3858c;
                 } catch (Throwable th) {
                 }
             } else {
@@ -524,11 +525,11 @@ public final class o4 implements LocationListener, TxGposListener {
             a(location, location.getLatitude(), location.getLongitude(), i2, i);
         }
         this.g = System.currentTimeMillis();
-        this.f3905a.a(new b5(location, c(), e(), d(), b(), b5.a.GPS));
+        this.f3857a.a(new b5(location, c(), e(), d(), b(), b5.a.GPS));
     }
 
     public void a(Location location, String str) {
-        if (z5.f4076a) {
+        if (z5.f4028a) {
             double[] dArr = new double[2];
             f6.a(location, dArr);
             String.format(Locale.getDefault(), ": %f,%f,%f,%f,%f,%f,%d", Double.valueOf(dArr[0]), Double.valueOf(dArr[1]), Double.valueOf(location.getAltitude()), Float.valueOf(location.getAccuracy()), Float.valueOf(location.getBearing()), Float.valueOf(location.getSpeed()), Long.valueOf(location.getTime()));
@@ -622,7 +623,7 @@ public final class o4 implements LocationListener, TxGposListener {
         message.what = 12999;
         message.arg1 = 12004;
         message.arg2 = i;
-        this.f3905a.a(message);
+        this.f3857a.a(message);
     }
 
     public final boolean a(double d) {
@@ -707,7 +708,7 @@ public final class o4 implements LocationListener, TxGposListener {
 
     public boolean g() {
         try {
-            return this.f3905a.b().isProviderEnabled("gps");
+            return this.f3857a.b().isProviderEnabled("gps");
         } catch (Throwable th) {
             return false;
         }
@@ -738,7 +739,7 @@ public final class o4 implements LocationListener, TxGposListener {
         message.what = 12999;
         message.arg1 = 12002;
         message.arg2 = i;
-        this.f3905a.a(message);
+        this.f3857a.a(message);
     }
 
     public final void k() {
@@ -751,7 +752,7 @@ public final class o4 implements LocationListener, TxGposListener {
                 s3.a("G", "request in thread[" + Thread.currentThread().getName() + "]");
             }
         } catch (Throwable th) {
-            v5.f4028a = true;
+            v5.f3980a = true;
             s3.a("G", "request failed.");
         }
         try {
@@ -795,7 +796,7 @@ public final class o4 implements LocationListener, TxGposListener {
 
     public final void m() {
         try {
-            this.f3905a.b().removeUpdates(this.r);
+            this.f3857a.b().removeUpdates(this.r);
         } catch (Exception e) {
         }
     }
@@ -859,7 +860,7 @@ public final class o4 implements LocationListener, TxGposListener {
                         i2 = i6;
                     }
                 } else {
-                    GpsStatus gpsStatus = this.f3906c;
+                    GpsStatus gpsStatus = this.f3858c;
                     Iterator<GpsSatellite> it = gpsStatus == null ? null : gpsStatus.getSatellites().iterator();
                     int i12 = 0;
                     int i13 = 0;

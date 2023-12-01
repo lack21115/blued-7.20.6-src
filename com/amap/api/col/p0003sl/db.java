@@ -6,12 +6,10 @@ import android.content.Context;
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/db.class */
 public final class db {
     static db b;
-
-    /* renamed from: a  reason: collision with root package name */
-    Context f4844a;
+    Context a;
 
     private db(Context context) {
-        this.f4844a = context;
+        this.a = context;
     }
 
     public static void a(Context context) {

@@ -14,28 +14,28 @@ public class r {
     public static String e = "com.mdid.msa";
 
     /* renamed from: a  reason: collision with root package name */
-    public s f39660a;
+    public s f25969a;
     public ServiceConnection b;
 
     /* renamed from: c  reason: collision with root package name */
-    public Context f39661c;
+    public Context f25970c;
     public q d;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/tmsqmsp/oaid2/r$a.class */
     public class a implements ServiceConnection {
 
         /* renamed from: a  reason: collision with root package name */
-        public s f39662a;
+        public s f25971a;
 
         public a(r rVar, s sVar) {
-            this.f39662a = sVar;
+            this.f25971a = sVar;
         }
 
         @Override // android.content.ServiceConnection
         public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
             synchronized (this) {
                 r.this.d = q.a.a(iBinder);
-                new t(r.this.d, this.f39662a).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, new Void[0]);
+                new t(r.this.d, this.f25971a).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, new Void[0]);
             }
         }
 
@@ -50,8 +50,8 @@ public class r {
         if (context == null) {
             throw new NullPointerException("Context can not be null.");
         }
-        this.f39661c = context;
-        this.f39660a = sVar;
+        this.f25970c = context;
+        this.f25969a = sVar;
         this.b = new a(this, sVar);
     }
 
@@ -92,7 +92,7 @@ public class r {
         intent.setClassName("com.mdid.msa", "com.mdid.msa.service.MsaIdService");
         intent.setAction("com.bun.msa.action.bindto.service");
         intent.putExtra("com.bun.msa.param.pkgname", str);
-        if (this.f39661c.bindService(intent, this.b, 1) || (sVar = this.f39660a) == null) {
+        if (this.f25970c.bindService(intent, this.b, 1) || (sVar = this.f25969a) == null) {
             return;
         }
         sVar.b();
@@ -127,7 +127,7 @@ public class r {
                 qVar.f();
                 ServiceConnection serviceConnection = this.b;
                 if (serviceConnection != null) {
-                    this.f39661c.unbindService(serviceConnection);
+                    this.f25970c.unbindService(serviceConnection);
                 }
             } catch (Exception e2) {
             }

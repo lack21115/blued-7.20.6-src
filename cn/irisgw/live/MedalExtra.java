@@ -26,8 +26,8 @@ public final class MedalExtra extends GeneratedMessageV3 implements MedalExtraOr
     public static final int BADGES_FIELD_NUMBER = 1;
     private static final MedalExtra DEFAULT_INSTANCE = new MedalExtra();
     private static final Parser<MedalExtra> PARSER = new AbstractParser<MedalExtra>() { // from class: cn.irisgw.live.MedalExtra.1
-        @Override // com.google.protobuf.Parser
-        public MedalExtra parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        /* renamed from: parsePartialFrom */
+        public MedalExtra m5753parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             return new MedalExtra(codedInputStream, extensionRegistryLite);
         }
     };
@@ -45,8 +45,8 @@ public final class MedalExtra extends GeneratedMessageV3 implements MedalExtraOr
         private volatile Object url_;
         private static final Badge DEFAULT_INSTANCE = new Badge();
         private static final Parser<Badge> PARSER = new AbstractParser<Badge>() { // from class: cn.irisgw.live.MedalExtra.Badge.1
-            @Override // com.google.protobuf.Parser
-            public Badge parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+            /* renamed from: parsePartialFrom */
+            public Badge m5762parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
                 return new Badge(codedInputStream, extensionRegistryLite);
             }
         };
@@ -77,22 +77,22 @@ public final class MedalExtra extends GeneratedMessageV3 implements MedalExtraOr
                 boolean unused = Badge.alwaysUseFieldBuilders;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: addRepeatedField */
+            public Builder m5764addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.addRepeatedField(fieldDescriptor, obj);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public Badge build() {
-                Badge buildPartial = buildPartial();
-                if (buildPartial.isInitialized()) {
-                    return buildPartial;
+            /* renamed from: build */
+            public Badge m5766build() {
+                Badge m5768buildPartial = m5768buildPartial();
+                if (m5768buildPartial.isInitialized()) {
+                    return m5768buildPartial;
                 }
-                throw newUninitializedMessageException((Message) buildPartial);
+                throw newUninitializedMessageException(m5768buildPartial);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public Badge buildPartial() {
+            /* renamed from: buildPartial */
+            public Badge m5768buildPartial() {
                 Badge badge = new Badge(this);
                 badge.id_ = this.id_;
                 badge.url_ = this.url_;
@@ -100,16 +100,16 @@ public final class MedalExtra extends GeneratedMessageV3 implements MedalExtraOr
                 return badge;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public Builder clear() {
+            /* renamed from: clear */
+            public Builder m5772clear() {
                 super.clear();
                 this.id_ = "";
                 this.url_ = "";
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+            /* renamed from: clearField */
+            public Builder m5774clearField(Descriptors.FieldDescriptor fieldDescriptor) {
                 return (Builder) super.clearField(fieldDescriptor);
             }
 
@@ -119,8 +119,8 @@ public final class MedalExtra extends GeneratedMessageV3 implements MedalExtraOr
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+            /* renamed from: clearOneof */
+            public Builder m5777clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
                 return (Builder) super.clearOneof(oneofDescriptor);
             }
 
@@ -130,18 +130,16 @@ public final class MedalExtra extends GeneratedMessageV3 implements MedalExtraOr
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder m5783clone() {
+                return (Builder) super.clone();
             }
 
-            @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-            public Badge getDefaultInstanceForType() {
+            /* renamed from: getDefaultInstanceForType */
+            public Badge m5785getDefaultInstanceForType() {
                 return Badge.getDefaultInstance();
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
             public Descriptors.Descriptor getDescriptorForType() {
                 return LiveConstants.internal_static_cn_irisgw_live_MedalExtra_Badge_descriptor;
             }
@@ -190,12 +188,10 @@ public final class MedalExtra extends GeneratedMessageV3 implements MedalExtraOr
                 return (ByteString) obj;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder
             public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
                 return LiveConstants.internal_static_cn_irisgw_live_MedalExtra_Badge_fieldAccessorTable.ensureFieldAccessorsInitialized(Badge.class, Builder.class);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
             public final boolean isInitialized() {
                 return true;
             }
@@ -212,18 +208,18 @@ public final class MedalExtra extends GeneratedMessageV3 implements MedalExtraOr
                     this.url_ = badge.url_;
                     onChanged();
                 }
-                mergeUnknownFields(badge.unknownFields);
+                m5794mergeUnknownFields(badge.unknownFields);
                 onChanged();
                 return this;
             }
 
             /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+            /* renamed from: mergeFrom */
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
                 To view partially-correct code enable 'Show inconsistent code' option in preferences
             */
-            public cn.irisgw.live.MedalExtra.Badge.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+            public cn.irisgw.live.MedalExtra.Badge.Builder m5791mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
                 /*
                     r4 = this;
                     r0 = 0
@@ -268,11 +264,11 @@ public final class MedalExtra extends GeneratedMessageV3 implements MedalExtraOr
                     r0 = r6
                     throw r0
                 */
-                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.MedalExtra.Badge.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.MedalExtra$Badge$Builder");
+                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.MedalExtra.Badge.Builder.m5791mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.MedalExtra$Badge$Builder");
             }
 
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder mergeFrom(Message message) {
+            /* renamed from: mergeFrom */
+            public Builder m5790mergeFrom(Message message) {
                 if (message instanceof Badge) {
                     return mergeFrom((Badge) message);
                 }
@@ -280,13 +276,13 @@ public final class MedalExtra extends GeneratedMessageV3 implements MedalExtraOr
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: mergeUnknownFields */
+            public final Builder m5794mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.mergeUnknownFields(unknownFieldSet);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: setField */
+            public Builder m5796setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.setField(fieldDescriptor, obj);
             }
 
@@ -309,13 +305,13 @@ public final class MedalExtra extends GeneratedMessageV3 implements MedalExtraOr
                 throw null;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+            /* renamed from: setRepeatedField */
+            public Builder m5798setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
                 return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: setUnknownFields */
+            public final Builder m5800setUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.setUnknownFields(unknownFieldSet);
             }
 
@@ -393,66 +389,65 @@ public final class MedalExtra extends GeneratedMessageV3 implements MedalExtraOr
         }
 
         public static Builder newBuilder() {
-            return DEFAULT_INSTANCE.toBuilder();
+            return DEFAULT_INSTANCE.m5761toBuilder();
         }
 
         public static Builder newBuilder(Badge badge) {
-            return DEFAULT_INSTANCE.toBuilder().mergeFrom(badge);
+            return DEFAULT_INSTANCE.m5761toBuilder().mergeFrom(badge);
         }
 
         public static Badge parseDelimitedFrom(InputStream inputStream) throws IOException {
-            return (Badge) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
         }
 
         public static Badge parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (Badge) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static Badge parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString);
+            return (Badge) PARSER.parseFrom(byteString);
         }
 
         public static Badge parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString, extensionRegistryLite);
+            return (Badge) PARSER.parseFrom(byteString, extensionRegistryLite);
         }
 
         public static Badge parseFrom(CodedInputStream codedInputStream) throws IOException {
-            return (Badge) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
         }
 
         public static Badge parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (Badge) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
         }
 
         public static Badge parseFrom(InputStream inputStream) throws IOException {
-            return (Badge) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
         }
 
         public static Badge parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (Badge) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static Badge parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer);
+            return (Badge) PARSER.parseFrom(byteBuffer);
         }
 
         public static Badge parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+            return (Badge) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
         }
 
         public static Badge parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr);
+            return (Badge) PARSER.parseFrom(bArr);
         }
 
         public static Badge parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr, extensionRegistryLite);
+            return (Badge) PARSER.parseFrom(bArr, extensionRegistryLite);
         }
 
         public static Parser<Badge> parser() {
             return PARSER;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public boolean equals(Object obj) {
             if (obj == this) {
                 return true;
@@ -464,8 +459,8 @@ public final class MedalExtra extends GeneratedMessageV3 implements MedalExtraOr
             return super.equals(obj);
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public Badge getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public Badge m5756getDefaultInstanceForType() {
             return DEFAULT_INSTANCE;
         }
 
@@ -491,12 +486,10 @@ public final class MedalExtra extends GeneratedMessageV3 implements MedalExtraOr
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
         public Parser<Badge> getParserForType() {
             return PARSER;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public int getSerializedSize() {
             int i = this.memoizedSize;
             if (i != -1) {
@@ -515,7 +508,6 @@ public final class MedalExtra extends GeneratedMessageV3 implements MedalExtraOr
             return serializedSize;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
         public final UnknownFieldSet getUnknownFields() {
             return this.unknownFields;
         }
@@ -542,7 +534,6 @@ public final class MedalExtra extends GeneratedMessageV3 implements MedalExtraOr
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public int hashCode() {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
@@ -552,12 +543,10 @@ public final class MedalExtra extends GeneratedMessageV3 implements MedalExtraOr
             return hashCode;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_MedalExtra_Badge_fieldAccessorTable.ensureFieldAccessorsInitialized(Badge.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte b = this.memoizedIsInitialized;
             if (b == 1) {
@@ -570,28 +559,26 @@ public final class MedalExtra extends GeneratedMessageV3 implements MedalExtraOr
             return true;
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder newBuilderForType() {
+        /* renamed from: newBuilderForType */
+        public Builder m5759newBuilderForType() {
             return newBuilder();
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.google.protobuf.GeneratedMessageV3
-        public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+        /* renamed from: newBuilderForType */
+        public Builder m5758newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
             return new Builder(builderParent);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
             return new Badge();
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder toBuilder() {
+        /* renamed from: toBuilder */
+        public Builder m5761toBuilder() {
             return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
             if (!getIdBytes().isEmpty()) {
                 GeneratedMessageV3.writeString(codedOutputStream, 1, this.id_);
@@ -668,7 +655,7 @@ public final class MedalExtra extends GeneratedMessageV3 implements MedalExtraOr
                 return this;
             }
             ensureBadgesIsMutable();
-            AbstractMessageLite.Builder.addAll((Iterable) iterable, (List) this.badges_);
+            AbstractMessageLite.Builder.addAll(iterable, this.badges_);
             onChanged();
             return this;
         }
@@ -676,11 +663,11 @@ public final class MedalExtra extends GeneratedMessageV3 implements MedalExtraOr
         public Builder addBadges(int i, Badge.Builder builder) {
             RepeatedFieldBuilderV3<Badge, Badge.Builder, BadgeOrBuilder> repeatedFieldBuilderV3 = this.badgesBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.addMessage(i, builder.build());
+                repeatedFieldBuilderV3.addMessage(i, builder.m5766build());
                 return this;
             }
             ensureBadgesIsMutable();
-            this.badges_.add(i, builder.build());
+            this.badges_.add(i, builder.m5766build());
             onChanged();
             return this;
         }
@@ -703,11 +690,11 @@ public final class MedalExtra extends GeneratedMessageV3 implements MedalExtraOr
         public Builder addBadges(Badge.Builder builder) {
             RepeatedFieldBuilderV3<Badge, Badge.Builder, BadgeOrBuilder> repeatedFieldBuilderV3 = this.badgesBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.addMessage(builder.build());
+                repeatedFieldBuilderV3.addMessage(builder.m5766build());
                 return this;
             }
             ensureBadgesIsMutable();
-            this.badges_.add(builder.build());
+            this.badges_.add(builder.m5766build());
             onChanged();
             return this;
         }
@@ -735,22 +722,22 @@ public final class MedalExtra extends GeneratedMessageV3 implements MedalExtraOr
             return getBadgesFieldBuilder().addBuilder(i, Badge.getDefaultInstance());
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: addRepeatedField */
+        public Builder m5802addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.addRepeatedField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public MedalExtra build() {
-            MedalExtra buildPartial = buildPartial();
-            if (buildPartial.isInitialized()) {
-                return buildPartial;
+        /* renamed from: build */
+        public MedalExtra m5804build() {
+            MedalExtra m5806buildPartial = m5806buildPartial();
+            if (m5806buildPartial.isInitialized()) {
+                return m5806buildPartial;
             }
-            throw newUninitializedMessageException((Message) buildPartial);
+            throw newUninitializedMessageException(m5806buildPartial);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public MedalExtra buildPartial() {
+        /* renamed from: buildPartial */
+        public MedalExtra m5806buildPartial() {
             MedalExtra medalExtra = new MedalExtra(this);
             int i = this.bitField0_;
             RepeatedFieldBuilderV3<Badge, Badge.Builder, BadgeOrBuilder> repeatedFieldBuilderV3 = this.badgesBuilder_;
@@ -767,8 +754,8 @@ public final class MedalExtra extends GeneratedMessageV3 implements MedalExtraOr
             return medalExtra;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public Builder clear() {
+        /* renamed from: clear */
+        public Builder m5810clear() {
             super.clear();
             RepeatedFieldBuilderV3<Badge, Badge.Builder, BadgeOrBuilder> repeatedFieldBuilderV3 = this.badgesBuilder_;
             if (repeatedFieldBuilderV3 != null) {
@@ -792,20 +779,19 @@ public final class MedalExtra extends GeneratedMessageV3 implements MedalExtraOr
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+        /* renamed from: clearField */
+        public Builder m5812clearField(Descriptors.FieldDescriptor fieldDescriptor) {
             return (Builder) super.clearField(fieldDescriptor);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+        /* renamed from: clearOneof */
+        public Builder m5815clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
             return (Builder) super.clearOneof(oneofDescriptor);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder m5821clone() {
+            return (Builder) super.clone();
         }
 
         @Override // cn.irisgw.live.MedalExtraOrBuilder
@@ -837,7 +823,7 @@ public final class MedalExtra extends GeneratedMessageV3 implements MedalExtraOr
         @Override // cn.irisgw.live.MedalExtraOrBuilder
         public BadgeOrBuilder getBadgesOrBuilder(int i) {
             RepeatedFieldBuilderV3<Badge, Badge.Builder, BadgeOrBuilder> repeatedFieldBuilderV3 = this.badgesBuilder_;
-            return repeatedFieldBuilderV3 == null ? this.badges_.get(i) : repeatedFieldBuilderV3.getMessageOrBuilder(i);
+            return repeatedFieldBuilderV3 == null ? this.badges_.get(i) : (BadgeOrBuilder) repeatedFieldBuilderV3.getMessageOrBuilder(i);
         }
 
         @Override // cn.irisgw.live.MedalExtraOrBuilder
@@ -846,22 +832,19 @@ public final class MedalExtra extends GeneratedMessageV3 implements MedalExtraOr
             return repeatedFieldBuilderV3 != null ? repeatedFieldBuilderV3.getMessageOrBuilderList() : Collections.unmodifiableList(this.badges_);
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public MedalExtra getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public MedalExtra m5823getDefaultInstanceForType() {
             return MedalExtra.getDefaultInstance();
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
         public Descriptors.Descriptor getDescriptorForType() {
             return LiveConstants.internal_static_cn_irisgw_live_MedalExtra_descriptor;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_MedalExtra_fieldAccessorTable.ensureFieldAccessorsInitialized(MedalExtra.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             return true;
         }
@@ -896,18 +879,18 @@ public final class MedalExtra extends GeneratedMessageV3 implements MedalExtraOr
                     this.badgesBuilder_.addAllMessages(medalExtra.badges_);
                 }
             }
-            mergeUnknownFields(medalExtra.unknownFields);
+            m5832mergeUnknownFields(medalExtra.unknownFields);
             onChanged();
             return this;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+        /* renamed from: mergeFrom */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
         */
-        public cn.irisgw.live.MedalExtra.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+        public cn.irisgw.live.MedalExtra.Builder m5829mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
             /*
                 r4 = this;
                 r0 = 0
@@ -952,11 +935,11 @@ public final class MedalExtra extends GeneratedMessageV3 implements MedalExtraOr
                 r0 = r6
                 throw r0
             */
-            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.MedalExtra.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.MedalExtra$Builder");
+            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.MedalExtra.Builder.m5829mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.MedalExtra$Builder");
         }
 
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder mergeFrom(Message message) {
+        /* renamed from: mergeFrom */
+        public Builder m5828mergeFrom(Message message) {
             if (message instanceof MedalExtra) {
                 return mergeFrom((MedalExtra) message);
             }
@@ -964,8 +947,8 @@ public final class MedalExtra extends GeneratedMessageV3 implements MedalExtraOr
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: mergeUnknownFields */
+        public final Builder m5832mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.mergeUnknownFields(unknownFieldSet);
         }
 
@@ -984,11 +967,11 @@ public final class MedalExtra extends GeneratedMessageV3 implements MedalExtraOr
         public Builder setBadges(int i, Badge.Builder builder) {
             RepeatedFieldBuilderV3<Badge, Badge.Builder, BadgeOrBuilder> repeatedFieldBuilderV3 = this.badgesBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.setMessage(i, builder.build());
+                repeatedFieldBuilderV3.setMessage(i, builder.m5766build());
                 return this;
             }
             ensureBadgesIsMutable();
-            this.badges_.set(i, builder.build());
+            this.badges_.set(i, builder.m5766build());
             onChanged();
             return this;
         }
@@ -1008,18 +991,18 @@ public final class MedalExtra extends GeneratedMessageV3 implements MedalExtraOr
             }
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: setField */
+        public Builder m5834setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.setField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+        /* renamed from: setRepeatedField */
+        public Builder m5836setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
             return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: setUnknownFields */
+        public final Builder m5838setUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.setUnknownFields(unknownFieldSet);
         }
     }
@@ -1090,66 +1073,65 @@ public final class MedalExtra extends GeneratedMessageV3 implements MedalExtraOr
     }
 
     public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
+        return DEFAULT_INSTANCE.m5752toBuilder();
     }
 
     public static Builder newBuilder(MedalExtra medalExtra) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(medalExtra);
+        return DEFAULT_INSTANCE.m5752toBuilder().mergeFrom(medalExtra);
     }
 
     public static MedalExtra parseDelimitedFrom(InputStream inputStream) throws IOException {
-        return (MedalExtra) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
     }
 
     public static MedalExtra parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (MedalExtra) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static MedalExtra parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString);
+        return (MedalExtra) PARSER.parseFrom(byteString);
     }
 
     public static MedalExtra parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString, extensionRegistryLite);
+        return (MedalExtra) PARSER.parseFrom(byteString, extensionRegistryLite);
     }
 
     public static MedalExtra parseFrom(CodedInputStream codedInputStream) throws IOException {
-        return (MedalExtra) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
     }
 
     public static MedalExtra parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (MedalExtra) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
     }
 
     public static MedalExtra parseFrom(InputStream inputStream) throws IOException {
-        return (MedalExtra) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
     }
 
     public static MedalExtra parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (MedalExtra) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static MedalExtra parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer);
+        return (MedalExtra) PARSER.parseFrom(byteBuffer);
     }
 
     public static MedalExtra parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+        return (MedalExtra) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
     }
 
     public static MedalExtra parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr);
+        return (MedalExtra) PARSER.parseFrom(bArr);
     }
 
     public static MedalExtra parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr, extensionRegistryLite);
+        return (MedalExtra) PARSER.parseFrom(bArr, extensionRegistryLite);
     }
 
     public static Parser<MedalExtra> parser() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
@@ -1186,17 +1168,15 @@ public final class MedalExtra extends GeneratedMessageV3 implements MedalExtraOr
         return this.badges_;
     }
 
-    @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-    public MedalExtra getDefaultInstanceForType() {
+    /* renamed from: getDefaultInstanceForType */
+    public MedalExtra m5747getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
     public Parser<MedalExtra> getParserForType() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public int getSerializedSize() {
         int i = this.memoizedSize;
         if (i != -1) {
@@ -1211,12 +1191,10 @@ public final class MedalExtra extends GeneratedMessageV3 implements MedalExtraOr
         return serializedSize;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
     public final UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public int hashCode() {
         if (this.memoizedHashCode != 0) {
             return this.memoizedHashCode;
@@ -1231,12 +1209,10 @@ public final class MedalExtra extends GeneratedMessageV3 implements MedalExtraOr
         return hashCode2;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
         return LiveConstants.internal_static_cn_irisgw_live_MedalExtra_fieldAccessorTable.ensureFieldAccessorsInitialized(MedalExtra.class, Builder.class);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
     public final boolean isInitialized() {
         byte b = this.memoizedIsInitialized;
         if (b == 1) {
@@ -1249,28 +1225,26 @@ public final class MedalExtra extends GeneratedMessageV3 implements MedalExtraOr
         return true;
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder newBuilderForType() {
+    /* renamed from: newBuilderForType */
+    public Builder m5750newBuilderForType() {
         return newBuilder();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.protobuf.GeneratedMessageV3
-    public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+    /* renamed from: newBuilderForType */
+    public Builder m5749newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
         return new Builder(builderParent);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
         return new MedalExtra();
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder toBuilder() {
+    /* renamed from: toBuilder */
+    public Builder m5752toBuilder() {
         return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
         int i = 0;
         while (true) {

@@ -6,15 +6,15 @@ import java.util.ArrayList;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String[] f41093a = {"com.vivo.pushservice", "com.vivo.pushdemo.test", "com.vivo.sdk.test", "com.vivo.hybrid"};
+    private static String[] f27402a = {"com.vivo.pushservice", "com.vivo.pushdemo.test", "com.vivo.sdk.test", "com.vivo.hybrid"};
     private ArrayList<String> b;
 
     /* renamed from: com.vivo.push.e.a$a  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/vivo/push/e/a$a.class */
-    static final class C1092a {
+    static final class C0922a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static a f41096a = new a((byte) 0);
+        private static a f27405a = new a((byte) 0);
     }
 
     private a() {
@@ -27,7 +27,7 @@ public final class a {
     }
 
     public static a a() {
-        return C1092a.f41096a;
+        return C0922a.f27405a;
     }
 
     public final ArrayList<String> b() {

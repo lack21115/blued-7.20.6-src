@@ -10,7 +10,7 @@ public abstract class MainCoroutineDispatcher extends CoroutineDispatcher {
     /* JADX INFO: Access modifiers changed from: protected */
     public final String b() {
         MainCoroutineDispatcher mainCoroutineDispatcher;
-        Dispatchers dispatchers = Dispatchers.f42810a;
+        Dispatchers dispatchers = Dispatchers.a;
         MainCoroutineDispatcher b = Dispatchers.b();
         if (this == b) {
             return "Dispatchers.Main";

@@ -23,7 +23,7 @@ import java.util.List;
 public class SearchMessageFragment extends MvpFragment<SearchAllPresenter> {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f33149a;
+    private String f19458a;
     private SearchAllAdapter b;
     @BindView
     LinearLayout llSearchEmpty;
@@ -61,10 +61,9 @@ public class SearchMessageFragment extends MvpFragment<SearchAllPresenter> {
         this.b.setEnableLoadMore(false);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public void a(Bundle bundle) {
         super.a(bundle);
-        this.f33149a = getArguments().getString(UserDictionary.Words.WORD);
+        this.f19458a = getArguments().getString(UserDictionary.Words.WORD);
         v();
         e();
     }
@@ -72,7 +71,7 @@ public class SearchMessageFragment extends MvpFragment<SearchAllPresenter> {
     public void a(List<SearchSessionModel> list) {
         this.llSearchEmpty.setVisibility(8);
         this.userList.setVisibility(0);
-        this.b.b(list, this.f33149a);
+        this.b.b(list, this.f19458a);
     }
 
     public void b() {
@@ -83,32 +82,28 @@ public class SearchMessageFragment extends MvpFragment<SearchAllPresenter> {
 
     public void c() {
         this.b.loadMoreComplete();
-        j().m();
+        ((SearchAllPresenter) j()).m();
     }
 
     public void d() {
         this.b.loadMoreComplete();
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public int g() {
         return R.layout.fragment_search_list;
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public String h() {
         return "SearchMessageFragment";
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, androidx.fragment.app.Fragment
     public void onActivityCreated(Bundle bundle) {
         super.onActivityCreated(bundle);
-        j().a(this.f33149a, 0, -1, true);
+        ((SearchAllPresenter) j()).a(this.f19458a, 0, -1, true);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
-        j().m();
+        ((SearchAllPresenter) j()).m();
     }
 }

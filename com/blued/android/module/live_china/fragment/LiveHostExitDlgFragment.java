@@ -1,5 +1,6 @@
 package com.blued.android.module.live_china.fragment;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -33,7 +34,7 @@ public class LiveHostExitDlgFragment extends com.blued.android.module.common.fra
 
     private void k() {
         if (getTargetFragment() != null) {
-            getTargetFragment().onActivityResult(getTargetRequestCode(), -1, null);
+            getTargetFragment().onActivityResult(getTargetRequestCode(), -1, (Intent) null);
         }
         dismissAllowingStateLoss();
     }

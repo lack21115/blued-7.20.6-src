@@ -20,7 +20,7 @@ import java.util.List;
 public class PieChart extends PieRadarChartBase<PieData> {
 
     /* renamed from: a  reason: collision with root package name */
-    protected float f22076a;
+    protected float f8469a;
     protected float b;
     private RectF e;
     private boolean f;
@@ -50,7 +50,7 @@ public class PieChart extends PieRadarChartBase<PieData> {
         this.m = "";
         this.n = MPPointF.a(0.0f, 0.0f);
         this.o = 50.0f;
-        this.f22076a = 55.0f;
+        this.f8469a = 55.0f;
         this.p = true;
         this.q = 100.0f;
         this.b = 360.0f;
@@ -70,7 +70,7 @@ public class PieChart extends PieRadarChartBase<PieData> {
         this.m = "";
         this.n = MPPointF.a(0.0f, 0.0f);
         this.o = 50.0f;
-        this.f22076a = 55.0f;
+        this.f8469a = 55.0f;
         this.p = true;
         this.q = 100.0f;
         this.b = 360.0f;
@@ -228,7 +228,7 @@ public class PieChart extends PieRadarChartBase<PieData> {
         float rotationAngle = getRotationAngle();
         float f2 = this.g[(int) highlight.a()] / 2.0f;
         double d = radius - f;
-        float cos = (float) ((Math.cos(Math.toRadians(((this.h[a2] + rotationAngle) - f2) * this.R.a())) * d) + centerCircleBox.f22204a);
+        float cos = (float) ((Math.cos(Math.toRadians(((this.h[a2] + rotationAngle) - f2) * this.R.a())) * d) + centerCircleBox.f8597a);
         float sin = (float) ((d * Math.sin(Math.toRadians(((rotationAngle + this.h[a2]) - f2) * this.R.a()))) + centerCircleBox.b);
         MPPointF.b(centerCircleBox);
         return new float[]{cos, sin};
@@ -273,7 +273,7 @@ public class PieChart extends PieRadarChartBase<PieData> {
     }
 
     public MPPointF getCenterTextOffset() {
-        return MPPointF.a(this.n.f22204a, this.n.b);
+        return MPPointF.a(this.n.f8597a, this.n.b);
     }
 
     public float getCenterTextRadiusPercent() {
@@ -320,7 +320,7 @@ public class PieChart extends PieRadarChartBase<PieData> {
     }
 
     public float getTransparentCircleRadius() {
-        return this.f22076a;
+        return this.f8469a;
     }
 
     @Override // com.github.mikephil.charting.charts.Chart
@@ -342,7 +342,7 @@ public class PieChart extends PieRadarChartBase<PieData> {
         float diameter = getDiameter() / 2.0f;
         MPPointF centerOffsets = getCenterOffsets();
         float c2 = ((PieData) this.C).a().c();
-        this.e.set((centerOffsets.f22204a - diameter) + c2, (centerOffsets.b - diameter) + c2, (centerOffsets.f22204a + diameter) - c2, (centerOffsets.b + diameter) - c2);
+        this.e.set((centerOffsets.f8597a - diameter) + c2, (centerOffsets.b - diameter) + c2, (centerOffsets.f8597a + diameter) - c2, (centerOffsets.b + diameter) - c2);
         MPPointF.b(centerOffsets);
     }
 
@@ -484,7 +484,7 @@ public class PieChart extends PieRadarChartBase<PieData> {
     }
 
     public void setTransparentCircleRadius(float f) {
-        this.f22076a = f;
+        this.f8469a = f;
     }
 
     public void setUsePercentValues(boolean z) {

@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.LinearInterpolator;
 import androidx.core.content.ContextCompat;
+import com.amap.api.maps.utils.SpatialRelationUtil;
 import com.blued.android.framework.view.badgeview.DisplayUtil;
 import com.blued.android.module.common.R;
 import kotlin.Metadata;
@@ -20,13 +21,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/view/SlopeLoadingView.class */
 public final class SlopeLoadingView extends View {
-
-    /* renamed from: a  reason: collision with root package name */
-    private int f11051a;
+    private int a;
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private ValueAnimator f11052c;
+    private ValueAnimator c;
     private int d;
     private int e;
     private float f;
@@ -77,7 +74,7 @@ public final class SlopeLoadingView extends View {
 
     private final void a(AttributeSet attributeSet) {
         if (attributeSet == null) {
-            this.f11051a = 0;
+            this.a = 0;
             this.f = DisplayUtil.a(getContext(), 45.0f);
             this.g = DisplayUtil.a(getContext(), 6.0f);
             this.e = ContextCompat.getColor(getContext(), R.color.syc_dark_a);
@@ -122,20 +119,20 @@ public final class SlopeLoadingView extends View {
                 return;
             }
         }
-        ValueAnimator ofInt = ValueAnimator.ofInt(0, 360);
-        this.f11052c = ofInt;
+        ValueAnimator ofInt = ValueAnimator.ofInt(0, SpatialRelationUtil.A_CIRCLE_DEGREE);
+        this.c = ofInt;
         Intrinsics.a(ofInt);
         ofInt.setDuration(780L);
-        ValueAnimator valueAnimator = this.f11052c;
+        ValueAnimator valueAnimator = this.c;
         Intrinsics.a(valueAnimator);
         valueAnimator.setRepeatCount(-1);
-        ValueAnimator valueAnimator2 = this.f11052c;
+        ValueAnimator valueAnimator2 = this.c;
         Intrinsics.a(valueAnimator2);
         valueAnimator2.setRepeatMode(1);
-        ValueAnimator valueAnimator3 = this.f11052c;
+        ValueAnimator valueAnimator3 = this.c;
         Intrinsics.a(valueAnimator3);
         valueAnimator3.setInterpolator(new LinearInterpolator());
-        ValueAnimator valueAnimator4 = this.f11052c;
+        ValueAnimator valueAnimator4 = this.c;
         Intrinsics.a(valueAnimator4);
         valueAnimator4.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.blued.android.module.common.view.-$$Lambda$SlopeLoadingView$dFJQOupSg5dJMPJCqO5YfEhOUPE
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
@@ -143,7 +140,7 @@ public final class SlopeLoadingView extends View {
                 SlopeLoadingView.a(SlopeLoadingView.this, valueAnimator5);
             }
         });
-        ValueAnimator valueAnimator5 = this.f11052c;
+        ValueAnimator valueAnimator5 = this.c;
         Intrinsics.a(valueAnimator5);
         valueAnimator5.start();
         ObjectAnimator ofInt2 = ObjectAnimator.ofInt(this, "progress", 90, 1);
@@ -173,22 +170,22 @@ public final class SlopeLoadingView extends View {
             return;
         }
         setVisibility(8);
-        ValueAnimator valueAnimator = this.f11052c;
+        ValueAnimator valueAnimator = this.c;
         if (valueAnimator != null) {
             valueAnimator.cancel();
         }
-        ValueAnimator valueAnimator2 = this.f11052c;
+        ValueAnimator valueAnimator2 = this.c;
         if (valueAnimator2 != null) {
-            valueAnimator2.mo53clone();
+            valueAnimator2.clone();
         }
-        this.f11052c = null;
+        this.c = null;
         ObjectAnimator objectAnimator = this.i;
         if (objectAnimator != null) {
             objectAnimator.cancel();
         }
         ObjectAnimator objectAnimator2 = this.i;
         if (objectAnimator2 != null) {
-            objectAnimator2.mo53clone();
+            objectAnimator2.clone();
         }
         this.i = null;
     }
@@ -214,11 +211,11 @@ public final class SlopeLoadingView extends View {
     }
 
     public final int getProgress() {
-        return this.f11051a;
+        return this.a;
     }
 
     public final ValueAnimator getRotationAnim() {
-        return this.f11052c;
+        return this.c;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -244,19 +241,20 @@ public final class SlopeLoadingView extends View {
             Intrinsics.a(paint5);
             paint5.setStrokeWidth(this.g);
         }
-        float f = this.f11051a / this.b;
+        float f = this.a / this.b;
         float f2 = this.d;
-        float f3 = 2;
-        float measuredWidth = (getMeasuredWidth() - this.f) / f3;
-        float measuredHeight = (getMeasuredHeight() - this.f) / f3;
-        float f4 = this.f;
-        RectF rectF = new RectF(measuredWidth, measuredHeight, measuredWidth + f4, f4 + measuredHeight);
+        float f3 = (float) SpatialRelationUtil.A_CIRCLE_DEGREE;
+        float f4 = 2;
+        float measuredWidth = (getMeasuredWidth() - this.f) / f4;
+        float measuredHeight = (getMeasuredHeight() - this.f) / f4;
+        float f5 = this.f;
+        RectF rectF = new RectF(measuredWidth, measuredHeight, measuredWidth + f5, f5 + measuredHeight);
         Paint paint6 = this.h;
         Intrinsics.a(paint6);
         paint6.setColor(this.e);
         Paint paint7 = this.h;
         Intrinsics.a(paint7);
-        canvas.drawArc(rectF, ((-90) - (180 * f)) + f2, f * 360, false, paint7);
+        canvas.drawArc(rectF, ((-90) - (180 * f)) + f2, f * f3, false, paint7);
     }
 
     public final void setCurrentRotation(int i) {
@@ -281,7 +279,7 @@ public final class SlopeLoadingView extends View {
         if (i2 > i3) {
             i4 = i3;
         }
-        this.f11051a = i4;
+        this.a = i4;
         invalidate();
     }
 
@@ -292,6 +290,6 @@ public final class SlopeLoadingView extends View {
     }
 
     public final void setRotationAnim(ValueAnimator valueAnimator) {
-        this.f11052c = valueAnimator;
+        this.c = valueAnimator;
     }
 }

@@ -16,20 +16,17 @@ import java.util.ArrayList;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/adapter/YYTeamMemberAdapter.class */
 public class YYTeamMemberAdapter extends BaseQuickAdapter<YYSeatMemberModel, BaseViewHolder> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private IMemberClickListener f16278a;
+    private IMemberClickListener a;
 
     public YYTeamMemberAdapter() {
         super(R.layout.item_team_member_layout, new ArrayList());
     }
 
     public void a(IMemberClickListener iMemberClickListener) {
-        this.f16278a = iMemberClickListener;
+        this.a = iMemberClickListener;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(final BaseViewHolder baseViewHolder, YYSeatMemberModel yYSeatMemberModel) {
         ImageView imageView = (ImageView) baseViewHolder.getView(R.id.iv_member_img);
@@ -41,8 +38,8 @@ public class YYTeamMemberAdapter extends BaseQuickAdapter<YYSeatMemberModel, Bas
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
-                if (YYTeamMemberAdapter.this.f16278a != null) {
-                    YYTeamMemberAdapter.this.f16278a.a(baseViewHolder.getAdapterPosition());
+                if (YYTeamMemberAdapter.this.a != null) {
+                    YYTeamMemberAdapter.this.a.a(baseViewHolder.getAdapterPosition());
                 }
             }
         });

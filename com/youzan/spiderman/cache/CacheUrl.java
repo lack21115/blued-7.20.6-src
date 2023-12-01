@@ -1,7 +1,6 @@
 package com.youzan.spiderman.cache;
 
 import android.net.Uri;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.youzan.spiderman.utils.MD5Utils;
 import com.youzan.spiderman.utils.Stone;
 import com.youzan.spiderman.utils.UriUtil;
@@ -10,14 +9,14 @@ import com.youzan.spiderman.utils.UriUtil;
 public class CacheUrl {
 
     /* renamed from: a  reason: collision with root package name */
-    private Uri f41789a;
+    private Uri f28098a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f41790c;
+    private String f28099c;
 
     public CacheUrl(Uri uri) {
-        this.f41789a = uri;
+        this.f28098a = uri;
         this.b = UriUtil.getUriExtend(uri);
         Uri.Builder builder = new Uri.Builder();
         builder.path(uri.getPath());
@@ -28,11 +27,11 @@ public class CacheUrl {
         if (!z) {
             builder.query(uri.getQuery()).fragment(uri.getFragment());
         }
-        this.f41790c = MD5Utils.getStringMd5(builder.toString());
+        this.f28099c = MD5Utils.getStringMd5(builder.toString());
     }
 
     private static boolean a(String str, int i) {
-        String[] split = str.split(BridgeUtil.UNDERLINE_STR);
+        String[] split = str.split("_");
         return split[split.length - 1].length() == i;
     }
 
@@ -41,11 +40,11 @@ public class CacheUrl {
     }
 
     public String getMd5() {
-        return this.f41790c;
+        return this.f28099c;
     }
 
     public Uri getUri() {
-        return this.f41789a;
+        return this.f28098a;
     }
 
     public boolean isImg() {

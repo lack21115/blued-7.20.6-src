@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemEmotionLayoutBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29172a;
+    private final LinearLayout f15482a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29172a;
+        return this.f15482a;
     }
 }

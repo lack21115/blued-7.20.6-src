@@ -7,7 +7,7 @@ import java.util.List;
 public class ViewpointSelectedTabObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    private static ViewpointSelectedTabObserver f30631a = new ViewpointSelectedTabObserver();
+    private static ViewpointSelectedTabObserver f16941a = new ViewpointSelectedTabObserver();
     private List<IViewpointSelectedTabObserver> b = new ArrayList();
 
     /* loaded from: source-8303388-dex2jar.jar:com/soft/blued/ui/find/observer/ViewpointSelectedTabObserver$IViewpointSelectedTabObserver.class */

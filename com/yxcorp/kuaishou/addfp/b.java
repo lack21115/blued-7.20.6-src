@@ -4,9 +4,9 @@ package com.yxcorp.kuaishou.addfp;
 public class b {
 
     /* renamed from: a */
-    private static final KWEGIDDFP f41863a = new KWEGIDDFP(null);
+    private static final KWEGIDDFP f28172a = new KWEGIDDFP(null);
 
     public static /* synthetic */ KWEGIDDFP a() {
-        return f41863a;
+        return f28172a;
     }
 }

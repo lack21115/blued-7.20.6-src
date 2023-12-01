@@ -9,19 +9,15 @@ import kotlin.jvm.internal.markers.KMappedMarker;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/sequences/SubSequence$iterator$1.class */
 public final class SubSequence$iterator$1<T> implements Iterator<T>, KMappedMarker {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ SubSequence<T> f42697a;
+    final /* synthetic */ SubSequence<T> a;
     private final Iterator<T> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f42698c;
+    private int c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public SubSequence$iterator$1(SubSequence<T> subSequence) {
         Sequence sequence;
-        this.f42697a = subSequence;
-        sequence = ((SubSequence) subSequence).f42695a;
+        this.a = subSequence;
+        sequence = ((SubSequence) subSequence).a;
         this.b = sequence.iterator();
     }
 
@@ -35,9 +31,9 @@ public final class SubSequence$iterator$1<T> implements Iterator<T>, KMappedMark
             r4 = this;
         L0:
             r0 = r4
-            int r0 = r0.f42698c
+            int r0 = r0.c
             r1 = r4
-            kotlin.sequences.SubSequence<T> r1 = r1.f42697a
+            kotlin.sequences.SubSequence<T> r1 = r1.a
             int r1 = kotlin.sequences.SubSequence.b(r1)
             if (r0 >= r1) goto L31
             r0 = r4
@@ -49,10 +45,10 @@ public final class SubSequence$iterator$1<T> implements Iterator<T>, KMappedMark
             java.lang.Object r0 = r0.next()
             r0 = r4
             r1 = r4
-            int r1 = r1.f42698c
+            int r1 = r1.c
             r2 = 1
             int r1 = r1 + r2
-            r0.f42698c = r1
+            r0.c = r1
             goto L0
         L31:
             return
@@ -64,8 +60,8 @@ public final class SubSequence$iterator$1<T> implements Iterator<T>, KMappedMark
     public boolean hasNext() {
         int i;
         a();
-        int i2 = this.f42698c;
-        i = ((SubSequence) this.f42697a).f42696c;
+        int i2 = this.c;
+        i = ((SubSequence) this.a).c;
         return i2 < i && this.b.hasNext();
     }
 
@@ -73,10 +69,10 @@ public final class SubSequence$iterator$1<T> implements Iterator<T>, KMappedMark
     public T next() {
         int i;
         a();
-        int i2 = this.f42698c;
-        i = ((SubSequence) this.f42697a).f42696c;
+        int i2 = this.c;
+        i = ((SubSequence) this.a).c;
         if (i2 < i) {
-            this.f42698c++;
+            this.c++;
             return this.b.next();
         }
         throw new NoSuchElementException();

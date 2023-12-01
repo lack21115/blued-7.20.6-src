@@ -12,7 +12,6 @@ import android.net.Uri;
 import android.provider.BrowserContract;
 import android.util.Log;
 import android.webkit.WebIconDatabase;
-import com.android.internal.R;
 
 /* loaded from: source-9557208-dex2jar.jar:android/provider/Browser.class */
 public class Browser {
@@ -270,7 +269,7 @@ public class Browser {
     }
 
     public static final void sendString(Context context, String str) {
-        sendString(context, str, context.getString(R.string.sendText));
+        sendString(context, str, context.getString(17040764));
     }
 
     public static final void sendString(Context context, String str, String str2) {

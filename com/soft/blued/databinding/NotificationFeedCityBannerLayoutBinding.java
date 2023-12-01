@@ -12,11 +12,11 @@ import com.soft.blued.R;
 public final class NotificationFeedCityBannerLayoutBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ImageView f29496a;
+    public final ImageView f15806a;
     public final ImageView b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final ShapeTextView f29497c;
+    public final ShapeTextView f15807c;
     public final FrameLayout d;
     public final TextView e;
     public final FrameLayout f;
@@ -25,9 +25,9 @@ public final class NotificationFeedCityBannerLayoutBinding implements ViewBindin
 
     private NotificationFeedCityBannerLayoutBinding(FrameLayout frameLayout, ImageView imageView, ImageView imageView2, ShapeTextView shapeTextView, FrameLayout frameLayout2, TextView textView, FrameLayout frameLayout3, TextView textView2) {
         this.h = frameLayout;
-        this.f29496a = imageView;
+        this.f15806a = imageView;
         this.b = imageView2;
-        this.f29497c = shapeTextView;
+        this.f15807c = shapeTextView;
         this.d = frameLayout2;
         this.e = textView;
         this.f = frameLayout3;
@@ -40,8 +40,8 @@ public final class NotificationFeedCityBannerLayoutBinding implements ViewBindin
         if (imageView != null) {
             ImageView imageView2 = (ImageView) view.findViewById(R.id.avatar_two);
             if (imageView2 != null) {
-                ShapeTextView shapeTextView = (ShapeTextView) view.findViewById(2131362525);
-                if (shapeTextView != null) {
+                ShapeTextView findViewById = view.findViewById(R.id.btn);
+                if (findViewById != null) {
                     FrameLayout frameLayout = (FrameLayout) view.findViewById(R.id.click_layout);
                     if (frameLayout != null) {
                         TextView textView = (TextView) view.findViewById(R.id.des);
@@ -50,7 +50,7 @@ public final class NotificationFeedCityBannerLayoutBinding implements ViewBindin
                             if (frameLayout2 != null) {
                                 TextView textView2 = (TextView) view.findViewById(2131370694);
                                 if (textView2 != null) {
-                                    return new NotificationFeedCityBannerLayoutBinding((FrameLayout) view, imageView, imageView2, shapeTextView, frameLayout, textView, frameLayout2, textView2);
+                                    return new NotificationFeedCityBannerLayoutBinding((FrameLayout) view, imageView, imageView2, findViewById, frameLayout, textView, frameLayout2, textView2);
                                 }
                                 str = "title";
                             } else {

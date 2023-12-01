@@ -12,11 +12,11 @@ import java.util.concurrent.Executors;
 public class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f35552a = d.class.getName();
+    private static final String f21861a = d.class.getName();
     private Handler b = new Handler(Looper.getMainLooper());
 
     /* renamed from: c  reason: collision with root package name */
-    private ExecutorService f35553c = Executors.newFixedThreadPool(1, new WbThreadFactory("wbcfSub"));
+    private ExecutorService f21862c = Executors.newFixedThreadPool(1, new WbThreadFactory("wbcfSub"));
 
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/cloud/huiyansdkface/facelight/c/b/d$a.class */
     public interface a<T> {
@@ -24,10 +24,10 @@ public class d {
     }
 
     public <T> void a(final Callable<T> callable, final a<T> aVar) {
-        if (this.f35553c.isShutdown()) {
-            WLogger.w(f35552a, "already shutDown!");
+        if (this.f21862c.isShutdown()) {
+            WLogger.w(f21861a, "already shutDown!");
         } else {
-            this.f35553c.submit(new Runnable() { // from class: com.tencent.cloud.huiyansdkface.facelight.c.b.d.1
+            this.f21862c.submit(new Runnable() { // from class: com.tencent.cloud.huiyansdkface.facelight.c.b.d.1
                 @Override // java.lang.Runnable
                 public void run() {
                     Object obj;

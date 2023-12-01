@@ -6,11 +6,11 @@ import com.opos.mobad.m.a.s;
 public class f {
 
     /* renamed from: a  reason: collision with root package name */
-    public final s f27307a;
+    public final s f13619a;
     public final long b;
 
     public f(long j, s sVar) {
         this.b = j;
-        this.f27307a = sVar;
+        this.f13619a = sVar;
     }
 }

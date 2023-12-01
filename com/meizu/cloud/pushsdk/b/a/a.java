@@ -13,14 +13,14 @@ import com.meizu.cloud.pushinternal.DebugLogger;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private AlarmManager f23959a;
+    private AlarmManager f10348a;
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Runnable f23960c;
+    private Runnable f10349c;
     private long d;
     private int e;
-    private C0604a f;
+    private C0434a f;
     private PendingIntent g;
     private String h;
     private boolean i;
@@ -28,8 +28,8 @@ public class a {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.meizu.cloud.pushsdk.b.a.a$a  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/meizu/cloud/pushsdk/b/a/a$a.class */
-    public class C0604a extends BroadcastReceiver {
-        private C0604a() {
+    public class C0434a extends BroadcastReceiver {
+        private C0434a() {
         }
 
         @Override // android.content.BroadcastReceiver
@@ -40,7 +40,7 @@ public class a {
             DebugLogger.i("AlarmUtils", "on receive delayed task, keyword: " + a.this.h);
             a.this.i = true;
             a.this.c();
-            a.this.f23960c.run();
+            a.this.f10349c.run();
         }
     }
 
@@ -51,10 +51,10 @@ public class a {
     public a(Context context, Runnable runnable, long j, boolean z) {
         Context applicationContext = context.getApplicationContext();
         this.b = applicationContext;
-        this.f23960c = runnable;
+        this.f10349c = runnable;
         this.d = j;
         this.e = !z ? 1 : 0;
-        this.f23959a = (AlarmManager) applicationContext.getSystemService("alarm");
+        this.f10348a = (AlarmManager) applicationContext.getSystemService("alarm");
         this.i = true;
     }
 
@@ -76,26 +76,26 @@ public class a {
             return false;
         }
         this.i = false;
-        C0604a c0604a = new C0604a();
-        this.f = c0604a;
-        this.b.registerReceiver(c0604a, new IntentFilter("alarm.util"));
+        C0434a c0434a = new C0434a();
+        this.f = c0434a;
+        this.b.registerReceiver(c0434a, new IntentFilter("alarm.util"));
         this.h = String.valueOf(System.currentTimeMillis());
         this.g = PendingIntent.getBroadcast(this.b, 0, new Intent("alarm.util"), 1073741824);
         if (Build.VERSION.SDK_INT >= 23) {
-            this.f23959a.setExactAndAllowWhileIdle(this.e, System.currentTimeMillis() + this.d, this.g);
+            this.f10348a.setExactAndAllowWhileIdle(this.e, System.currentTimeMillis() + this.d, this.g);
         } else if (Build.VERSION.SDK_INT >= 19) {
-            this.f23959a.setExact(this.e, System.currentTimeMillis() + this.d, this.g);
+            this.f10348a.setExact(this.e, System.currentTimeMillis() + this.d, this.g);
         } else {
-            this.f23959a.set(this.e, System.currentTimeMillis() + this.d, this.g);
+            this.f10348a.set(this.e, System.currentTimeMillis() + this.d, this.g);
         }
         DebugLogger.i("AlarmUtils", "start delayed task, keyword: " + this.h);
         return true;
     }
 
     public void b() {
-        if (this.f23959a != null && this.g != null && !this.i) {
+        if (this.f10348a != null && this.g != null && !this.i) {
             DebugLogger.i("AlarmUtils", "cancel  delayed task, keyword: " + this.h);
-            this.f23959a.cancel(this.g);
+            this.f10348a.cancel(this.g);
         }
         c();
     }

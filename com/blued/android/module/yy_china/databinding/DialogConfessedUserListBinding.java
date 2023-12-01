@@ -13,13 +13,9 @@ import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/DialogConfessedUserListBinding.class */
 public final class DialogConfessedUserListBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ShapeConstraintLayout f16315a;
+    public final ShapeConstraintLayout a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f16316c;
+    public final ImageView c;
     public final ImageView d;
     public final SquareImageView e;
     public final ImageView f;
@@ -30,9 +26,9 @@ public final class DialogConfessedUserListBinding implements ViewBinding {
 
     private DialogConfessedUserListBinding(ConstraintLayout constraintLayout, ShapeConstraintLayout shapeConstraintLayout, ImageView imageView, ImageView imageView2, ImageView imageView3, SquareImageView squareImageView, ImageView imageView4, LinearLayout linearLayout, RecyclerView recyclerView, SmartRefreshLayout smartRefreshLayout) {
         this.j = constraintLayout;
-        this.f16315a = shapeConstraintLayout;
+        this.a = shapeConstraintLayout;
         this.b = imageView;
-        this.f16316c = imageView2;
+        this.c = imageView2;
         this.d = imageView3;
         this.e = squareImageView;
         this.f = imageView4;
@@ -57,11 +53,11 @@ public final class DialogConfessedUserListBinding implements ViewBinding {
                             if (imageView4 != null) {
                                 LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.ll_null);
                                 if (linearLayout != null) {
-                                    RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
-                                    if (recyclerView != null) {
-                                        SmartRefreshLayout smartRefreshLayout = (SmartRefreshLayout) view.findViewById(R.id.refresh_layout);
-                                        if (smartRefreshLayout != null) {
-                                            return new DialogConfessedUserListBinding((ConstraintLayout) view, shapeConstraintLayout, imageView, imageView2, imageView3, squareImageView, imageView4, linearLayout, recyclerView, smartRefreshLayout);
+                                    RecyclerView findViewById = view.findViewById(R.id.recycler_view);
+                                    if (findViewById != null) {
+                                        SmartRefreshLayout findViewById2 = view.findViewById(R.id.refresh_layout);
+                                        if (findViewById2 != null) {
+                                            return new DialogConfessedUserListBinding((ConstraintLayout) view, shapeConstraintLayout, imageView, imageView2, imageView3, squareImageView, imageView4, linearLayout, findViewById, findViewById2);
                                         }
                                         str = "refreshLayout";
                                     } else {
@@ -91,7 +87,6 @@ public final class DialogConfessedUserListBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.j;

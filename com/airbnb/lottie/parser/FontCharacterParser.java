@@ -4,8 +4,7 @@ import android.util.JsonReader;
 import com.airbnb.lottie.LottieComposition;
 import com.airbnb.lottie.model.FontCharacter;
 import com.airbnb.lottie.model.content.ShapeGroup;
-import com.baidu.mobads.sdk.api.IAdInterListener;
-import com.cdo.oaps.ad.wrapper.download.RedirectReqWrapper;
+import com.anythink.core.api.ATAdConst;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -24,7 +23,7 @@ class FontCharacterParser {
         String str2 = null;
         double d = 0.0d;
         double d2 = 0.0d;
-        char c2 = 0;
+        char c = 0;
         while (jsonReader.hasNext()) {
             String nextName = jsonReader.nextName();
             switch (nextName.hashCode()) {
@@ -36,14 +35,14 @@ class FontCharacterParser {
                     z = true;
                     break;
                 case 119:
-                    if (nextName.equals(IAdInterListener.AdReqParam.WIDTH)) {
+                    if (nextName.equals("w")) {
                         z = true;
                         break;
                     }
                     z = true;
                     break;
                 case 3173:
-                    if (nextName.equals(RedirectReqWrapper.KEY_CHANNEL)) {
+                    if (nextName.equals("ch")) {
                         z = false;
                         break;
                     }
@@ -57,7 +56,7 @@ class FontCharacterParser {
                     z = true;
                     break;
                 case 3530753:
-                    if (nextName.equals("size")) {
+                    if (nextName.equals(ATAdConst.NETWORK_REQUEST_PARAMS_KEY.BANNER_SIZE)) {
                         z = true;
                         break;
                     }
@@ -75,7 +74,7 @@ class FontCharacterParser {
                     break;
             }
             if (!z) {
-                c2 = jsonReader.nextString().charAt(0);
+                c = jsonReader.nextString().charAt(0);
             } else if (z) {
                 d = jsonReader.nextDouble();
             } else if (z) {
@@ -103,6 +102,6 @@ class FontCharacterParser {
             }
         }
         jsonReader.endObject();
-        return new FontCharacter(arrayList, c2, d, d2, str, str2);
+        return new FontCharacter(arrayList, c, d, d2, str, str2);
     }
 }

@@ -18,18 +18,18 @@ import java.io.InputStream;
 public final class s {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f22569a = "ads_ModuleCopy";
+    private static final String f8961a = "ads_ModuleCopy";
     private static final int b = 2048;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final int f22570c = 0;
+    private static final int f8962c = 0;
     private static final String d = "file://";
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static int a(String[] strArr) {
         int i = 0;
         if (strArr == null || strArr.length == 0) {
-            aa.b(f22569a, "No version dirs in module path, need mkdir.");
+            aa.b(f8961a, "No version dirs in module path, need mkdir.");
             return 0;
         }
         int length = strArr.length;
@@ -55,11 +55,11 @@ public final class s {
         String string = bundle.getString("module_name");
         String valueOf = String.valueOf(bundle.getInt("module_version"));
         String str2 = bundle.getString("module_name") + ".apk";
-        String str3 = y.a(context) + File.separator + com.huawei.hms.ads.dynamicloader.b.f22466a + File.separator + string;
+        String str3 = y.a(context) + File.separator + com.huawei.hms.ads.dynamicloader.b.f8858a + File.separator + string;
         String str4 = str3 + File.separator + valueOf;
         String str5 = str4 + File.separator + str2;
         if (new File(str3).exists() && (a2 = a((list = new File(str3).list()))) >= Integer.parseInt(valueOf)) {
-            r.a(a2, str3, list, f22569a);
+            r.a(a2, str3, list, f8961a);
             return str3 + File.separator + a2 + File.separator + str2;
         }
         return a(context, str4, str, str5);
@@ -80,7 +80,7 @@ public final class s {
         } else {
             str4 = "makeDirectory return false";
         }
-        aa.d(f22569a, str4);
+        aa.d(f8961a, str4);
         return null;
     }
 
@@ -89,25 +89,25 @@ public final class s {
         int a2;
         String str;
         if (context == null || bundle == null) {
-            aa.d(f22569a, "The context or module info bundle is null.");
+            aa.d(f8961a, "The context or module info bundle is null.");
             return;
         }
         String string = bundle.getString("module_path");
-        aa.b(f22569a, "path:".concat(String.valueOf(string)));
+        aa.b(f8961a, "path:".concat(String.valueOf(string)));
         String string2 = bundle.getString("module_name");
         String valueOf = String.valueOf(bundle.getInt("module_version"));
         String str2 = bundle.getString("module_name") + ".apk";
-        String str3 = y.a(context) + File.separator + com.huawei.hms.ads.dynamicloader.b.f22466a + File.separator + string2;
+        String str3 = y.a(context) + File.separator + com.huawei.hms.ads.dynamicloader.b.f8858a + File.separator + string2;
         String str4 = str3 + File.separator + valueOf;
         String str5 = str4 + File.separator + str2;
         if (new File(str3).exists() && (a2 = a((list = new File(str3).list()))) >= Integer.parseInt(valueOf)) {
-            r.a(a2, str3, list, f22569a);
+            r.a(a2, str3, list, f8961a);
             str = str3 + File.separator + a2 + File.separator + str2;
         } else {
             str = a(context, str4, string, str5);
         }
         if (TextUtils.isEmpty(str)) {
-            aa.c(f22569a, "checkModulePath failed: null.");
+            aa.c(f8961a, "checkModulePath failed: null.");
         } else {
             bundle.putString("module_path", str);
         }
@@ -163,7 +163,7 @@ public final class s {
                         bufferedInputStream3 = bufferedInputStream2;
                         str = bufferedInputStream3;
                         str2 = str6;
-                        aa.d(f22569a, sb);
+                        aa.d(f8961a, sb);
                         ae.a(bufferedInputStream3);
                         ae.a(str6);
                         return false;
@@ -180,7 +180,7 @@ public final class s {
                         str6 = str4;
                         str = bufferedInputStream3;
                         str2 = str6;
-                        aa.d(f22569a, sb);
+                        aa.d(f8961a, sb);
                         ae.a(bufferedInputStream3);
                         ae.a(str6);
                         return false;
@@ -226,21 +226,21 @@ public final class s {
         int a2;
         String str;
         String string = bundle.getString("module_path");
-        aa.b(f22569a, "path:".concat(String.valueOf(string)));
+        aa.b(f8961a, "path:".concat(String.valueOf(string)));
         String string2 = bundle.getString("module_name");
         String valueOf = String.valueOf(bundle.getInt("module_version"));
         String str2 = bundle.getString("module_name") + ".apk";
-        String str3 = y.a(context) + File.separator + com.huawei.hms.ads.dynamicloader.b.f22466a + File.separator + string2;
+        String str3 = y.a(context) + File.separator + com.huawei.hms.ads.dynamicloader.b.f8858a + File.separator + string2;
         String str4 = str3 + File.separator + valueOf;
         String str5 = str4 + File.separator + str2;
         if (new File(str3).exists() && (a2 = a((list = new File(str3).list()))) >= Integer.parseInt(valueOf)) {
-            r.a(a2, str3, list, f22569a);
+            r.a(a2, str3, list, f8961a);
             str = str3 + File.separator + a2 + File.separator + str2;
         } else {
             str = a(context, str4, string, str5);
         }
         if (TextUtils.isEmpty(str)) {
-            aa.c(f22569a, "checkModulePath failed: null.");
+            aa.c(f8961a, "checkModulePath failed: null.");
         } else {
             bundle.putString("module_path", str);
         }
@@ -269,7 +269,7 @@ public final class s {
                 inputStream = context.getContentResolver().openInputStream(Uri.parse(inputStream2));
                 try {
                     if (inputStream == null) {
-                        aa.c(f22569a, "Get input stream failed: null.");
+                        aa.c(f8961a, "Get input stream failed: null.");
                         ae.a(inputStream);
                         ae.a(null);
                         return;
@@ -293,7 +293,7 @@ public final class s {
                         InputStream inputStream3 = inputStream;
                         sb.append(e.getMessage());
                         InputStream inputStream4 = inputStream;
-                        aa.d(f22569a, sb.toString());
+                        aa.d(f8961a, sb.toString());
                         ae.a(inputStream);
                         ae.a(closeable2);
                     } catch (IOException e3) {
@@ -303,7 +303,7 @@ public final class s {
                         InputStream inputStream5 = inputStream;
                         sb2.append(e.getMessage());
                         InputStream inputStream6 = inputStream;
-                        aa.d(f22569a, sb2.toString());
+                        aa.d(f8961a, sb2.toString());
                         ae.a(inputStream);
                         ae.a(closeable);
                     } catch (Throwable th) {

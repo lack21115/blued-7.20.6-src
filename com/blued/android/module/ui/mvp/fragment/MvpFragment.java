@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.viewbinding.ViewBinding;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.ui.BaseFragment;
@@ -37,12 +38,8 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/ui/mvp/fragment/MvpFragment.class */
 public abstract class MvpFragment<T extends MvpPresenter, VB extends ViewBinding> extends BaseFragment implements IntMvpView {
-
-    /* renamed from: a  reason: collision with root package name */
-    public VB f16037a;
-
-    /* renamed from: c  reason: collision with root package name */
-    private boolean f16038c;
+    public VB a;
+    private boolean c;
     private boolean d;
     private boolean e;
     private boolean f;
@@ -57,19 +54,17 @@ public abstract class MvpFragment<T extends MvpPresenter, VB extends ViewBinding
     @Metadata
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/ui/mvp/fragment/MvpFragment$ViewTask.class */
     public final class ViewTask implements Runnable {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ MvpFragment<T, VB> f16039a;
+        final /* synthetic */ MvpFragment<T, VB> a;
         private final Runnable b;
 
         @Override // java.lang.Runnable
         public void run() {
-            HashSet<MvpFragment<T, VB>.ViewTask> h = this.f16039a.h();
-            MvpFragment<T, VB> mvpFragment = this.f16039a;
+            HashSet<MvpFragment<T, VB>.ViewTask> h = this.a.h();
+            MvpFragment<T, VB> mvpFragment = this.a;
             synchronized (h) {
                 mvpFragment.h().remove(this);
             }
-            if (((MvpFragment) this.f16039a).g) {
+            if (((MvpFragment) this.a).g) {
                 this.b.run();
             }
         }
@@ -109,7 +104,7 @@ public abstract class MvpFragment<T extends MvpPresenter, VB extends ViewBinding
             r2 = r5
             java.lang.String r1 = kotlin.jvm.internal.Intrinsics.a(r1, r2)
             int r0 = android.util.Log.v(r0, r1)
-            com.blued.android.module.ui.mvp.manager.MvpPresenterManager$Companion r0 = com.blued.android.module.ui.mvp.manager.MvpPresenterManager.f16049a
+            com.blued.android.module.ui.mvp.manager.MvpPresenterManager$Companion r0 = com.blued.android.module.ui.mvp.manager.MvpPresenterManager.a
             com.blued.android.module.ui.mvp.manager.MvpPresenterManager r0 = r0.a()
             r1 = r5
             com.blued.android.module.ui.mvp.presenter.MvpPresenter r0 = r0.a(r1)
@@ -163,7 +158,7 @@ public abstract class MvpFragment<T extends MvpPresenter, VB extends ViewBinding
             r8 = r0
             r0 = r6
             if (r0 == 0) goto L7b
-            com.blued.android.module.ui.mvp.manager.MvpPresenterManager$Companion r0 = com.blued.android.module.ui.mvp.manager.MvpPresenterManager.f16049a
+            com.blued.android.module.ui.mvp.manager.MvpPresenterManager$Companion r0 = com.blued.android.module.ui.mvp.manager.MvpPresenterManager.a
             com.blued.android.module.ui.mvp.manager.MvpPresenterManager r0 = r0.a()
             r1 = r6
             r2 = r4
@@ -182,7 +177,7 @@ public abstract class MvpFragment<T extends MvpPresenter, VB extends ViewBinding
         Fragment parentFragment = getParentFragment();
         if (parentFragment instanceof MvpFragment) {
             MvpFragment mvpFragment = (MvpFragment) parentFragment;
-            return !mvpFragment.q() || mvpFragment.f16038c;
+            return !mvpFragment.q() || mvpFragment.c;
         }
         return true;
     }
@@ -198,7 +193,7 @@ public abstract class MvpFragment<T extends MvpPresenter, VB extends ViewBinding
         for (Fragment fragment : fragments) {
             if (fragment instanceof MvpFragment) {
                 MvpFragment mvpFragment = (MvpFragment) fragment;
-                if (mvpFragment.q() && mvpFragment.f16038c) {
+                if (mvpFragment.q() && mvpFragment.c) {
                     mvpFragment.s();
                 }
             }
@@ -223,7 +218,7 @@ public abstract class MvpFragment<T extends MvpPresenter, VB extends ViewBinding
                 AppInfo.n().removeCallbacks(it.next());
             }
             h().clear();
-            Unit unit = Unit.f42314a;
+            Unit unit = Unit.a;
         }
     }
 
@@ -288,13 +283,13 @@ public abstract class MvpFragment<T extends MvpPresenter, VB extends ViewBinding
                 for (Pair<String, List<?>> pair : i) {
                     String str = this.b;
                     Intrinsics.a(pair);
-                    Log.v(str, Intrinsics.a("showDataToUI(), type:", (Object) pair.first));
-                    String str2 = pair.first;
-                    Intrinsics.a((Object) str2);
-                    String str3 = str2;
-                    List<?> list = pair.second;
-                    Intrinsics.a(list);
-                    a(str3, list);
+                    Log.v(str, Intrinsics.a("showDataToUI(), type:", pair.first));
+                    Object obj = pair.first;
+                    Intrinsics.a(obj);
+                    String str2 = (String) obj;
+                    Object obj2 = pair.second;
+                    Intrinsics.a(obj2);
+                    a(str2, (List) obj2);
                 }
                 T t2 = this.i;
                 if (t2 != null) {
@@ -367,7 +362,7 @@ public abstract class MvpFragment<T extends MvpPresenter, VB extends ViewBinding
             dialog.dismiss();
         }
         this.j = null;
-        this.f16037a = null;
+        this.a = null;
     }
 
     protected String k() {
@@ -407,7 +402,6 @@ public abstract class MvpFragment<T extends MvpPresenter, VB extends ViewBinding
         dialog.dismiss();
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityCreated(Bundle bundle) {
         super.onActivityCreated(bundle);
         Log.v(this.b, " onActivityCreated()");
@@ -415,18 +409,18 @@ public abstract class MvpFragment<T extends MvpPresenter, VB extends ViewBinding
         s();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         Log.v(this.b, " onCreate()");
         i();
         v();
-        T a2 = a();
-        this.i = a2;
-        if (a2 != null) {
+        T a = a();
+        this.i = a;
+        if (a != null) {
             FragmentActivity requireActivity = requireActivity();
             Intrinsics.c(requireActivity, "requireActivity()");
-            a2.a(requireActivity, l());
+            a.a(requireActivity, l());
         }
         T t = this.i;
         if (t == null) {
@@ -437,20 +431,20 @@ public abstract class MvpFragment<T extends MvpPresenter, VB extends ViewBinding
         t.a(requireActivity2, getArguments(), bundle);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         View root;
         ViewParent parent;
         Intrinsics.e(inflater, "inflater");
         Log.v(this.b, " onCreateView()");
-        VB vb = this.f16037a;
+        VB vb = this.a;
         if (vb == null) {
-            VB a2 = a(inflater, viewGroup);
-            VB vb2 = a2;
-            if (a2 == null) {
+            VB a = a(inflater, viewGroup);
+            VB vb2 = a;
+            if (a == null) {
                 vb2 = x();
             }
-            this.f16037a = vb2;
+            this.a = vb2;
         } else if (vb != null && (root = vb.getRoot()) != null && (parent = root.getParent()) != null) {
             ((ViewGroup) parent).removeView(root);
         }
@@ -461,14 +455,14 @@ public abstract class MvpFragment<T extends MvpPresenter, VB extends ViewBinding
             Intrinsics.c(activity, "this.activity!!");
             t.a(activity, l(), this);
         }
-        VB vb3 = this.f16037a;
+        VB vb3 = this.a;
         if (vb3 == null) {
             return null;
         }
         return vb3.getRoot();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onDestroy() {
         super.onDestroy();
         Log.v(this.b, " onDestroy()");
@@ -477,7 +471,7 @@ public abstract class MvpFragment<T extends MvpPresenter, VB extends ViewBinding
         this.k = null;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onDestroyView() {
         super.onDestroyView();
         Log.v(this.b, " onDestroyView()");
@@ -491,7 +485,7 @@ public abstract class MvpFragment<T extends MvpPresenter, VB extends ViewBinding
         j();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onSaveInstanceState(Bundle outState) {
         Intrinsics.e(outState, "outState");
         super.onSaveInstanceState(outState);
@@ -502,19 +496,19 @@ public abstract class MvpFragment<T extends MvpPresenter, VB extends ViewBinding
         t.a(outState);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onStart() {
         super.onStart();
         s();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onStop() {
         super.onStop();
         this.f = false;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onViewCreated(View view, Bundle bundle) {
         Intrinsics.e(view, "view");
         super.onViewCreated(view, bundle);
@@ -534,7 +528,7 @@ public abstract class MvpFragment<T extends MvpPresenter, VB extends ViewBinding
         FragmentActivity activity = getActivity();
         Intrinsics.a(activity);
         Intrinsics.c(activity, "this.activity!!");
-        t.a(activity);
+        t.a((LifecycleOwner) activity);
     }
 
     protected boolean p() {
@@ -568,7 +562,7 @@ public abstract class MvpFragment<T extends MvpPresenter, VB extends ViewBinding
             if (!q()) {
                 a(false);
             } else if (t()) {
-                a(!this.f16038c);
+                a(!this.c);
                 u();
             }
         }
@@ -590,11 +584,11 @@ public abstract class MvpFragment<T extends MvpPresenter, VB extends ViewBinding
         activity.setResult(i, intent);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void setUserVisibleHint(boolean z) {
         super.setUserVisibleHint(z);
         Log.v(this.b, Intrinsics.a(" setUserVisibleHint() ", (Object) Boolean.valueOf(z)));
-        this.f16038c = z;
+        this.c = z;
         s();
     }
 }

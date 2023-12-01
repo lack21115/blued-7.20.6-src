@@ -2,7 +2,6 @@ package android.hardware.display;
 
 import android.view.Display;
 import android.view.Surface;
-import com.alipay.sdk.util.i;
 
 /* loaded from: source-9557208-dex2jar.jar:android/hardware/display/VirtualDisplay.class */
 public final class VirtualDisplay {
@@ -58,6 +57,6 @@ public final class VirtualDisplay {
     }
 
     public String toString() {
-        return "VirtualDisplay{display=" + this.mDisplay + ", token=" + this.mToken + ", surface=" + this.mSurface + i.d;
+        return "VirtualDisplay{display=" + this.mDisplay + ", token=" + this.mToken + ", surface=" + this.mSurface + "}";
     }
 }

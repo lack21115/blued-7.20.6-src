@@ -38,7 +38,7 @@ public class SecretlyFollowedFragment extends BaseFragment implements View.OnCli
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private View f33962c;
+    private View f20271c;
     private NoDataAndLoadFailView d;
     private RenrenPullToRefreshListView e;
     private ListView f;
@@ -56,8 +56,7 @@ public class SecretlyFollowedFragment extends BaseFragment implements View.OnCli
     private boolean l = false;
 
     /* renamed from: a  reason: collision with root package name */
-    BluedUIHttpResponse f33961a = new BluedUIHttpResponse<BluedEntity<BluedRecommendUsers, SecretlyFollowedExtra>>() { // from class: com.soft.blued.ui.user.fragment.SecretlyFollowedFragment.2
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse, com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
+    BluedUIHttpResponse f20270a = new BluedUIHttpResponse<BluedEntity<BluedRecommendUsers, SecretlyFollowedExtra>>() { // from class: com.soft.blued.ui.user.fragment.SecretlyFollowedFragment.2
         public void onFailure(Throwable th, int i, String str) {
             super.onFailure(th, i, str);
             SecretlyFollowedFragment.this.l = true;
@@ -66,7 +65,6 @@ public class SecretlyFollowedFragment extends BaseFragment implements View.OnCli
             }
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIFinish() {
             SecretlyFollowedFragment.this.e.j();
             SecretlyFollowedFragment.this.e.q();
@@ -94,13 +92,12 @@ public class SecretlyFollowedFragment extends BaseFragment implements View.OnCli
                 SecretlyFollowedFragment.this.q.setVisibility(8);
                 SecretlyFollowedFragment.this.p.setVisibility(8);
             } else {
-                ImageLoader.a(SecretlyFollowedFragment.this.getFragmentActive(), ImgURLMap.f10885a.a("cover_follow_secret")).a(SecretlyFollowedFragment.this.r);
+                ImageLoader.a(SecretlyFollowedFragment.this.getFragmentActive(), ImgURLMap.a.a("cover_follow_secret")).a(SecretlyFollowedFragment.this.r);
                 SecretlyFollowedFragment.this.q.setVisibility(0);
                 SecretlyFollowedFragment.this.p.setVisibility(8);
             }
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIUpdate(BluedEntity<BluedRecommendUsers, SecretlyFollowedExtra> bluedEntity) {
             if (bluedEntity != null) {
                 if (bluedEntity.data == null || !bluedEntity.hasData()) {
@@ -111,7 +108,7 @@ public class SecretlyFollowedFragment extends BaseFragment implements View.OnCli
                         SecretlyFollowedFragment.e(SecretlyFollowedFragment.this);
                         SecretlyFollowedFragment.this.k = false;
                         SecretlyFollowedFragment.this.e.p();
-                        AppMethods.a((CharSequence) SecretlyFollowedFragment.this.b.getResources().getString(2131887275));
+                        AppMethods.a(SecretlyFollowedFragment.this.b.getResources().getString(2131887275));
                     }
                 } else {
                     if (bluedEntity.hasMore()) {
@@ -128,8 +125,8 @@ public class SecretlyFollowedFragment extends BaseFragment implements View.OnCli
                     }
                 }
                 if (bluedEntity.extra != null) {
-                    SecretlyFollowedFragment.this.h.a(bluedEntity.extra);
-                    SecretlyFollowedObserver.a().a(bluedEntity.extra.secretly_count, bluedEntity.extra.secretly_followed_limit);
+                    SecretlyFollowedFragment.this.h.a((SecretlyFollowedExtra) bluedEntity.extra);
+                    SecretlyFollowedObserver.a().a(((SecretlyFollowedExtra) bluedEntity.extra).secretly_count, ((SecretlyFollowedExtra) bluedEntity.extra).secretly_followed_limit);
                 }
             }
         }
@@ -146,18 +143,18 @@ public class SecretlyFollowedFragment extends BaseFragment implements View.OnCli
             this.m = getArguments().getString("uid");
         }
         this.g = LayoutInflater.from(this.b);
-        TextView textView = (TextView) this.f33962c.findViewById(R.id.tv_buy_btn_1);
+        TextView textView = (TextView) this.f20271c.findViewById(R.id.tv_buy_btn_1);
         this.n = textView;
         textView.setOnClickListener(this);
-        TextView textView2 = (TextView) this.f33962c.findViewById(R.id.tv_buy_btn_2);
+        TextView textView2 = (TextView) this.f20271c.findViewById(R.id.tv_buy_btn_2);
         this.o = textView2;
         textView2.setOnClickListener(this);
-        this.p = (LinearLayout) this.f33962c.findViewById(R.id.ll_buy_area_with_data);
-        this.q = (ConstraintLayout) this.f33962c.findViewById(R.id.ll_buy_area_no_data);
-        this.r = (ImageView) this.f33962c.findViewById(R.id.iv_cover_follow_secret);
-        RenrenPullToRefreshListView renrenPullToRefreshListView = (RenrenPullToRefreshListView) this.f33962c.findViewById(2131366898);
-        this.e = renrenPullToRefreshListView;
-        renrenPullToRefreshListView.setRefreshEnabled(true);
+        this.p = (LinearLayout) this.f20271c.findViewById(R.id.ll_buy_area_with_data);
+        this.q = (ConstraintLayout) this.f20271c.findViewById(R.id.ll_buy_area_no_data);
+        this.r = (ImageView) this.f20271c.findViewById(R.id.iv_cover_follow_secret);
+        RenrenPullToRefreshListView findViewById = this.f20271c.findViewById(R.id.list_view);
+        this.e = findViewById;
+        findViewById.setRefreshEnabled(true);
         ListView listView = (ListView) this.e.getRefreshableView();
         this.f = listView;
         listView.setClipToPadding(false);
@@ -170,13 +167,11 @@ public class SecretlyFollowedFragment extends BaseFragment implements View.OnCli
         this.h = recommendListAdapter;
         this.f.setAdapter((ListAdapter) recommendListAdapter);
         this.e.setOnPullDownListener(new RenrenPullToRefreshListView.OnPullDownListener() { // from class: com.soft.blued.ui.user.fragment.SecretlyFollowedFragment.1
-            @Override // com.blued.android.framework.view.pulltorefresh.RenrenPullToRefreshListView.OnPullDownListener
             public void a() {
                 SecretlyFollowedFragment.this.i = 1;
                 SecretlyFollowedFragment.this.a(false);
             }
 
-            @Override // com.blued.android.framework.view.pulltorefresh.RenrenPullToRefreshListView.OnPullDownListener
             public void b() {
                 SecretlyFollowedFragment.a(SecretlyFollowedFragment.this);
                 SecretlyFollowedFragment.this.a(false);
@@ -195,12 +190,12 @@ public class SecretlyFollowedFragment extends BaseFragment implements View.OnCli
         }
         if (!this.k && (i = this.i) != 1) {
             this.i = i - 1;
-            AppMethods.a((CharSequence) this.b.getResources().getString(2131887275));
+            AppMethods.a(this.b.getResources().getString(2131887275));
             this.e.j();
             this.e.q();
             return;
         }
-        MineHttpUtils.f(this.b, this.f33961a, this.m, this.i + "", this.j + "", getFragmentActive());
+        MineHttpUtils.f(this.b, this.f20270a, this.m, this.i + "", this.j + "", getFragmentActive());
     }
 
     private boolean b() {
@@ -234,32 +229,29 @@ public class SecretlyFollowedFragment extends BaseFragment implements View.OnCli
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.b = getActivity();
         this.g = layoutInflater;
-        View view = this.f33962c;
+        View view = this.f20271c;
         if (view == null) {
-            this.f33962c = layoutInflater.inflate(R.layout.fragment_secretly_followed_list, viewGroup, false);
+            this.f20271c = layoutInflater.inflate(R.layout.fragment_secretly_followed_list, viewGroup, false);
             NoDataAndLoadFailView noDataAndLoadFailView = new NoDataAndLoadFailView(this.b);
             this.d = noDataAndLoadFailView;
             noDataAndLoadFailView.setNoDataImg(2131233641);
-            this.d.setNoDataStr(R.string.no_secretly_follow_yet);
+            this.d.setNoDataStr((int) R.string.no_secretly_follow_yet);
             this.d.d();
             a();
             VIPBuyResultObserver.a().a(this, getLifecycle());
         } else if (view.getParent() != null) {
-            ((ViewGroup) this.f33962c.getParent()).removeView(this.f33962c);
+            ((ViewGroup) this.f20271c.getParent()).removeView(this.f20271c);
         }
-        return this.f33962c;
+        return this.f20271c;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onViewCreated(View view, Bundle bundle) {
         super.onViewCreated(view, bundle);
     }

@@ -22,13 +22,9 @@ import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveFansGroupRecordingFrahment.class */
 public class LiveFansGroupRecordingFrahment extends MvpFragment<LiveFansGroupRecordingPresent> {
-
-    /* renamed from: a  reason: collision with root package name */
-    View f12845a;
+    View a;
     TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    View f12846c;
+    View c;
     RecyclerView d;
     private FreedomAdapter e;
     private List<FitemFansGroupRecording> f;
@@ -69,17 +65,17 @@ public class LiveFansGroupRecordingFrahment extends MvpFragment<LiveFansGroupRec
     @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public void a(Bundle bundle) {
         super.a(bundle);
-        this.f12845a = this.i.findViewById(R.id.rl_not_data);
+        this.a = this.i.findViewById(R.id.rl_not_data);
         this.b = (TextView) this.i.findViewById(R.id.tv_not_data);
-        this.f12846c = this.i.findViewById(R.id.tv_create);
-        this.d = (RecyclerView) this.i.findViewById(R.id.recycler_view);
-        this.f12846c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveFansGroupRecordingFrahment$Amm5I1qWJPYLgC2ZLaKI7O-UVkg
+        this.c = this.i.findViewById(R.id.tv_create);
+        this.d = this.i.findViewById(R.id.recycler_view);
+        this.c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveFansGroupRecordingFrahment$Amm5I1qWJPYLgC2ZLaKI7O-UVkg
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 LiveFansGroupRecordingFrahment.this.b(view);
             }
         });
-        this.f12845a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveFansGroupRecordingFrahment$lA2lZcQhfrTkAzwance_zw8eWB4
+        this.a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveFansGroupRecordingFrahment$lA2lZcQhfrTkAzwance_zw8eWB4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 LiveFansGroupRecordingFrahment.this.a(view);
@@ -102,23 +98,23 @@ public class LiveFansGroupRecordingFrahment extends MvpFragment<LiveFansGroupRec
         for (LiveFansGroupModel liveFansGroupModel : list) {
             this.f.add(new FitemFansGroupRecording(liveFansGroupModel, j()));
         }
-        this.f12845a.setVisibility(8);
-        this.f12846c.setVisibility(8);
+        this.a.setVisibility(8);
+        this.c.setVisibility(8);
         this.d.setVisibility(0);
         b();
     }
 
     public void c(String str) {
         this.b.setText(getString(R.string.live_fans_group_not_create));
-        this.f12845a.setVisibility(0);
-        this.f12846c.setVisibility(0);
+        this.a.setVisibility(0);
+        this.c.setVisibility(0);
         this.d.setVisibility(8);
     }
 
     public void d(String str) {
         this.b.setText(getString(R.string.live_window_load_fail));
-        this.f12845a.setVisibility(0);
-        this.f12846c.setVisibility(8);
+        this.a.setVisibility(0);
+        this.c.setVisibility(8);
         this.d.setVisibility(8);
     }
 
@@ -136,7 +132,7 @@ public class LiveFansGroupRecordingFrahment extends MvpFragment<LiveFansGroupRec
         return R.layout.live_fans_group_recording;
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
     }

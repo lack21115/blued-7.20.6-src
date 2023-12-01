@@ -11,7 +11,7 @@ import java.util.Map;
 public class SessionModelComparator implements Comparator<SessionModel> {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f32267a = SessionModelComparator.class.getSimpleName();
+    public static final String f18577a = SessionModelComparator.class.getSimpleName();
     private Map<SessionModel, Long> b = new HashMap();
 
     @Override // java.util.Comparator
@@ -26,11 +26,11 @@ public class SessionModelComparator implements Comparator<SessionModel> {
             return 1;
         }
         if (sessionModel.expireTime != 0) {
-            String str = f32267a;
+            String str = f18577a;
             Logger.e(str, "arg0=" + sessionModel.lastMsgFromNickname + "===" + (System.currentTimeMillis() - sessionModel.expireTime));
         }
         if (sessionModel2.expireTime != 0) {
-            String str2 = f32267a;
+            String str2 = f18577a;
             Logger.e(str2, "arg1=" + sessionModel2.lastMsgFromNickname + "===" + (System.currentTimeMillis() - sessionModel2.expireTime));
         }
         if (sessionModel.expireTime != 0 && sessionModel.expireTime < System.currentTimeMillis()) {

@@ -6,11 +6,11 @@ import com.tencent.liteav.videobase.videobase.DisplayTarget;
 public final /* synthetic */ class f implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final c f36569a;
+    private final c f22878a;
     private final DisplayTarget b;
 
     private f(c cVar, DisplayTarget displayTarget) {
-        this.f36569a = cVar;
+        this.f22878a = cVar;
         this.b = displayTarget;
     }
 
@@ -20,6 +20,6 @@ public final /* synthetic */ class f implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        c.a(this.f36569a, this.b);
+        c.a(this.f22878a, this.b);
     }
 }

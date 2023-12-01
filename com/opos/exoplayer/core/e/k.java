@@ -7,7 +7,7 @@ public final class k extends y {
     private static final Object b = new Object();
 
     /* renamed from: c  reason: collision with root package name */
-    private final long f25308c;
+    private final long f11620c;
     private final long d;
     private final long e;
     private final long f;
@@ -17,7 +17,7 @@ public final class k extends y {
     private final boolean j;
 
     public k(long j, long j2, long j3, long j4, long j5, long j6, boolean z, boolean z2) {
-        this.f25308c = j;
+        this.f11620c = j;
         this.d = j2;
         this.e = j3;
         this.f = j4;
@@ -112,7 +112,7 @@ public final class k extends y {
             r0 = r19
             r1 = r29
             r2 = r17
-            long r2 = r2.f25308c
+            long r2 = r2.f11620c
             r3 = r17
             long r3 = r3.d
             r4 = r17

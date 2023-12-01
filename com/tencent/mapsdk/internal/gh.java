@@ -1,6 +1,5 @@
 package com.tencent.mapsdk.internal;
 
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.mapsdk.core.components.protocol.jce.trafficevent.Basic;
 import com.tencent.mapsdk.core.components.protocol.jce.trafficevent.Detail;
 import java.util.List;
@@ -11,18 +10,18 @@ import java.util.concurrent.ConcurrentHashMap;
 public class gh {
 
     /* renamed from: a  reason: collision with root package name */
-    private Map<String, a> f37492a = new ConcurrentHashMap();
+    private Map<String, a> f23801a = new ConcurrentHashMap();
     private final j1 b;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/mapsdk/internal/gh$a.class */
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public final pd f37493a;
+        public final pd f23802a;
         public final Detail b;
 
         public a(pd pdVar, Detail detail) {
-            this.f37493a = pdVar;
+            this.f23802a = pdVar;
             this.b = detail;
         }
     }
@@ -32,17 +31,17 @@ public class gh {
     }
 
     public void a() {
-        Map<String, a> map = this.f37492a;
+        Map<String, a> map = this.f23801a;
         if (map == null) {
             return;
         }
         for (String str : map.keySet()) {
-            a aVar = this.f37492a.get(str);
+            a aVar = this.f23801a.get(str);
             if (aVar != null) {
-                aVar.f37493a.remove();
+                aVar.f23802a.remove();
             }
         }
-        this.f37492a.clear();
+        this.f23801a.clear();
     }
 
     public void a(List<Detail> list) {
@@ -50,17 +49,17 @@ public class gh {
             return;
         }
         for (Detail detail : list) {
-            a aVar = this.f37492a.get(detail.basic.eventid);
+            a aVar = this.f23801a.get(detail.basic.eventid);
             if (aVar != null) {
-                aVar.f37493a.remove();
-                this.f37492a.remove(detail.basic.eventid);
+                aVar.f23802a.remove();
+                this.f23801a.remove(detail.basic.eventid);
             }
         }
     }
 
     public void b() {
         a();
-        this.f37492a = null;
+        this.f23801a = null;
     }
 
     public void b(List<Detail> list) {
@@ -70,11 +69,11 @@ public class gh {
         }
         for (Detail detail : list) {
             String str = detail.basic.icon_normal;
-            int lastIndexOf = str.lastIndexOf(BridgeUtil.SPLIT_MARK);
+            int lastIndexOf = str.lastIndexOf("/");
             if (lastIndexOf != -1 && (i = lastIndexOf + 1) <= str.length()) {
                 String substring = str.substring(i);
                 na.f(ma.m, "type:" + detail.basic.type + ", coord:" + detail.basic.coord_lat + ", " + detail.basic.coord_lon + ", minScale:" + detail.basic.min_scale + ", maxScale:" + detail.basic.max_scale);
-                a aVar = this.f37492a.get(detail.basic.eventid);
+                a aVar = this.f23801a.get(detail.basic.eventid);
                 if (aVar == null) {
                     Basic basic = detail.basic;
                     rd rdVar = new rd(basic.coord_lat, basic.coord_lon, substring);
@@ -84,9 +83,9 @@ public class gh {
                     rdVar.maxScaleLevel(detail.basic.max_scale);
                     rdVar.avoidAnnotation(true);
                     rdVar.avoidOtherMarker(true);
-                    this.f37492a.put(detail.basic.eventid, new a((pd) this.b.a((j1) rdVar), detail));
+                    this.f23801a.put(detail.basic.eventid, new a((pd) this.b.a((j1) rdVar), detail));
                 } else {
-                    rd f = aVar.f37493a.f();
+                    rd f = aVar.f23802a.f();
                     Basic basic3 = detail.basic;
                     f.position(basic3.coord_lat, basic3.coord_lon);
                     f.iconName(substring);
@@ -94,13 +93,13 @@ public class gh {
                     f.anchor(basic4.anchor_x, basic4.anchor_y);
                     f.minScaleLevel(detail.basic.min_scale);
                     f.maxScaleLevel(detail.basic.max_scale);
-                    aVar.f37493a.a((pd) f);
+                    aVar.f23802a.a((pd) f);
                 }
             }
         }
     }
 
     public Map<String, a> c() {
-        return this.f37492a;
+        return this.f23801a;
     }
 }

@@ -1,10 +1,6 @@
 package libcore.reflect;
 
-import androidx.constraintlayout.core.motion.utils.TypedValues;
-import androidx.exifinterface.media.ExifInterface;
-import com.baidu.mobads.sdk.api.IAdInterListener;
-import com.huawei.hms.ads.ContentClassification;
-import com.tencent.lbssearch.object.param.Geo2AddressParam;
+import com.alipay.sdk.util.i;
 import java.lang.reflect.GenericArrayType;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
@@ -20,12 +16,12 @@ public final class Types {
     static {
         PRIMITIVE_TO_SIGNATURE.put(Byte.TYPE, "B");
         PRIMITIVE_TO_SIGNATURE.put(Character.TYPE, "C");
-        PRIMITIVE_TO_SIGNATURE.put(Short.TYPE, ExifInterface.LATITUDE_SOUTH);
+        PRIMITIVE_TO_SIGNATURE.put(Short.TYPE, "S");
         PRIMITIVE_TO_SIGNATURE.put(Integer.TYPE, "I");
-        PRIMITIVE_TO_SIGNATURE.put(Long.TYPE, ContentClassification.AD_CONTENT_CLASSIFICATION_J);
+        PRIMITIVE_TO_SIGNATURE.put(Long.TYPE, "J");
         PRIMITIVE_TO_SIGNATURE.put(Float.TYPE, "F");
         PRIMITIVE_TO_SIGNATURE.put(Double.TYPE, "D");
-        PRIMITIVE_TO_SIGNATURE.put(Void.TYPE, ExifInterface.GPS_MEASUREMENT_INTERRUPTED);
+        PRIMITIVE_TO_SIGNATURE.put(Void.TYPE, "V");
         PRIMITIVE_TO_SIGNATURE.put(Boolean.TYPE, "Z");
     }
 
@@ -71,21 +67,21 @@ public final class Types {
             } else {
                 char charAt = split[length].charAt(0);
                 if (charAt == 'I') {
-                    sb.append(IAdInterListener.AdProdType.PRODUCT_INTERSTITIAL);
+                    sb.append("int");
                 } else if (charAt == 'B') {
                     sb.append("byte");
                 } else if (charAt == 'J') {
                     sb.append("long");
                 } else if (charAt == 'F') {
-                    sb.append(TypedValues.Custom.S_FLOAT);
+                    sb.append("float");
                 } else if (charAt == 'D') {
                     sb.append("double");
                 } else if (charAt == 'S') {
-                    sb.append(Geo2AddressParam.PoiOptions.ADDRESS_FORMAT_SHORT);
+                    sb.append("short");
                 } else if (charAt == 'C') {
                     sb.append("char");
                 } else if (charAt == 'Z') {
-                    sb.append(TypedValues.Custom.S_BOOLEAN);
+                    sb.append("boolean");
                 } else if (charAt == 'V') {
                     sb.append("void");
                 }
@@ -127,7 +123,7 @@ public final class Types {
 
     public static String getSignature(Class<?> cls) {
         String str = PRIMITIVE_TO_SIGNATURE.get(cls);
-        return str != null ? str : cls.isArray() ? "[" + getSignature(cls.getComponentType()) : "L" + cls.getName() + ";";
+        return str != null ? str : cls.isArray() ? "[" + getSignature(cls.getComponentType()) : "L" + cls.getName() + i.b;
     }
 
     public static Type getType(Type type) {

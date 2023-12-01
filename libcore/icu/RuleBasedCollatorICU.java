@@ -49,11 +49,11 @@ public final class RuleBasedCollatorICU implements Cloneable {
         StringBuilder sb = new StringBuilder();
         char current = characterIterator.current();
         while (true) {
-            char c2 = current;
-            if (c2 == 65535) {
+            char c = current;
+            if (c == 65535) {
                 return sb.toString();
             }
-            sb.append(c2);
+            sb.append(c);
             current = characterIterator.next();
         }
     }

@@ -14,11 +14,11 @@ import java.util.Map;
 public class b implements SensorEventListener {
 
     /* renamed from: a  reason: collision with root package name */
-    protected HashMap<String, d> f41974a = new HashMap<>();
+    protected HashMap<String, d> f28283a = new HashMap<>();
     private com.zk_oaction.adengine.lk_sdk.b b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f41975c;
+    private Context f28284c;
     private HashMap<String, Integer> d;
     private SensorManager e;
 
@@ -26,32 +26,32 @@ public class b implements SensorEventListener {
     class a extends Thread {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ String f41976a;
+        final /* synthetic */ String f28285a;
         final /* synthetic */ String[] b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ boolean f41977c;
+        final /* synthetic */ boolean f28286c;
 
         a(String str, String[] strArr, boolean z) {
-            this.f41976a = str;
+            this.f28285a = str;
             this.b = strArr;
-            this.f41977c = z;
+            this.f28286c = z;
         }
 
         @Override // java.lang.Thread, java.lang.Runnable
         public void run() {
             try {
-                synchronized (b.this.f41974a) {
-                    int a2 = b.this.a(this.f41976a);
+                synchronized (b.this.f28283a) {
+                    int a2 = b.this.a(this.f28285a);
                     Sensor defaultSensor = b.this.e.getDefaultSensor(a2);
-                    c cVar = this.f41976a.equals("gyroscope") ? new c(b.this.b, this.f41976a, a2, defaultSensor, this.b, b.this.e) : this.f41976a.equals("accelerometer") ? new com.zk_oaction.adengine.lk_sensor.a(b.this.b, this.f41976a, a2, defaultSensor, this.b) : new d(b.this.b, this.f41976a, a2, defaultSensor, this.b);
+                    c cVar = this.f28285a.equals("gyroscope") ? new c(b.this.b, this.f28285a, a2, defaultSensor, this.b, b.this.e) : this.f28285a.equals("accelerometer") ? new com.zk_oaction.adengine.lk_sensor.a(b.this.b, this.f28285a, a2, defaultSensor, this.b) : new d(b.this.b, this.f28285a, a2, defaultSensor, this.b);
                     if (b.this.e != null && cVar.f != null && !cVar.h) {
-                        if (this.f41977c) {
+                        if (this.f28286c) {
                             cVar.h = true;
                             cVar.a();
                             b.this.e.registerListener(b.this, cVar.f, 2);
                         }
-                        b.this.f41974a.put(this.f41976a, cVar);
+                        b.this.f28283a.put(this.f28285a, cVar);
                     }
                 }
             } catch (Throwable th) {
@@ -62,7 +62,7 @@ public class b implements SensorEventListener {
 
     public b(Context context, com.zk_oaction.adengine.lk_sdk.b bVar) {
         this.b = bVar;
-        this.f41975c = context;
+        this.f28284c = context;
         this.e = (SensorManager) context.getSystemService("sensor");
     }
 
@@ -104,11 +104,11 @@ public class b implements SensorEventListener {
 
     public void a() {
         try {
-            HashMap<String, d> hashMap = this.f41974a;
+            HashMap<String, d> hashMap = this.f28283a;
             if (hashMap == null || hashMap.size() <= 0) {
                 return;
             }
-            for (Map.Entry<String, d> entry : this.f41974a.entrySet()) {
+            for (Map.Entry<String, d> entry : this.f28283a.entrySet()) {
                 d value = entry.getValue();
                 if (this.e != null && value != null && value.f != null && !value.h) {
                     value.h = true;
@@ -124,7 +124,7 @@ public class b implements SensorEventListener {
         try {
             d();
             if (this.e == null) {
-                this.e = (SensorManager) this.f41975c.getSystemService("sensor");
+                this.e = (SensorManager) this.f28284c.getSystemService("sensor");
             }
             if (this.e == null) {
                 return;
@@ -138,11 +138,11 @@ public class b implements SensorEventListener {
     public void b() {
         Sensor sensor;
         try {
-            HashMap<String, d> hashMap = this.f41974a;
+            HashMap<String, d> hashMap = this.f28283a;
             if (hashMap == null || hashMap.size() <= 0) {
                 return;
             }
-            for (Map.Entry<String, d> entry : this.f41974a.entrySet()) {
+            for (Map.Entry<String, d> entry : this.f28283a.entrySet()) {
                 d value = entry.getValue();
                 SensorManager sensorManager = this.e;
                 if (sensorManager != null && value != null && (sensor = value.f) != null && value.h) {
@@ -156,12 +156,12 @@ public class b implements SensorEventListener {
 
     public void c() {
         try {
-            HashMap<String, d> hashMap = this.f41974a;
+            HashMap<String, d> hashMap = this.f28283a;
             if (hashMap == null || hashMap.size() <= 0) {
                 return;
             }
-            this.f41974a.clear();
-            this.f41974a = null;
+            this.f28283a.clear();
+            this.f28283a = null;
         } catch (Throwable th) {
         }
     }
@@ -176,11 +176,11 @@ public class b implements SensorEventListener {
             return;
         }
         try {
-            HashMap<String, d> hashMap = this.f41974a;
+            HashMap<String, d> hashMap = this.f28283a;
             if (hashMap == null || hashMap.size() <= 0) {
                 return;
             }
-            for (Map.Entry<String, d> entry : this.f41974a.entrySet()) {
+            for (Map.Entry<String, d> entry : this.f28283a.entrySet()) {
                 d value = entry.getValue();
                 if (value != null && sensorEvent.sensor.getType() == value.e) {
                     value.a(sensorEvent);

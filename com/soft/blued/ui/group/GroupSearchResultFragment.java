@@ -60,7 +60,6 @@ public class GroupSearchResultFragment extends PreloadFragment implements View.O
     private boolean u = true;
     public BluedUIHttpResponse l = new BluedUIHttpResponse<BluedEntityA<BluedGroupLists>>() { // from class: com.soft.blued.ui.group.GroupSearchResultFragment.2
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public void onUIUpdate(BluedEntityA<BluedGroupLists> bluedEntityA) {
             try {
@@ -90,14 +89,13 @@ public class GroupSearchResultFragment extends PreloadFragment implements View.O
                 GroupSearchResultFragment.this.v.notifyDataSetChanged();
             } catch (Exception e) {
                 e.printStackTrace();
-                AppMethods.a((CharSequence) GroupSearchResultFragment.this.x.getResources().getString(2131887272));
+                AppMethods.a(GroupSearchResultFragment.this.x.getResources().getString(2131887272));
                 if (GroupSearchResultFragment.this.s != 1) {
                     GroupSearchResultFragment.g(GroupSearchResultFragment.this);
                 }
             }
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIFinish() {
             super.onUIFinish();
             GroupSearchResultFragment.this.o.j();
@@ -111,18 +109,17 @@ public class GroupSearchResultFragment extends PreloadFragment implements View.O
     };
     public BluedUIHttpResponse m = new BluedUIHttpResponse<BluedEntityA<BluedGroupCheck>>() { // from class: com.soft.blued.ui.group.GroupSearchResultFragment.3
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public void onUIUpdate(BluedEntityA<BluedGroupCheck> bluedEntityA) {
             try {
                 if (bluedEntityA.hasData()) {
                     GroupSearchResultFragment.this.A.clear();
                     GroupSearchResultFragment.this.A.addAll(bluedEntityA.data);
-                    if (StringUtils.d(bluedEntityA.data.get(0).toString())) {
+                    if (StringUtils.d(((BluedGroupCheck) bluedEntityA.data.get(0)).toString())) {
                         return;
                     }
                     if ("1".equals(((BluedGroupCheck) GroupSearchResultFragment.this.A.get(0)).getAble())) {
-                        TerminalActivity.d(GroupSearchResultFragment.this.getActivity(), GroupCreateFragment.class, null);
+                        TerminalActivity.d(GroupSearchResultFragment.this.getActivity(), GroupCreateFragment.class, (Bundle) null);
                     } else if ("0".equals(((BluedGroupCheck) GroupSearchResultFragment.this.A.get(0)).getAble())) {
                         GroupSearchResultFragment.this.k = ((BluedGroupCheck) GroupSearchResultFragment.this.A.get(0)).getReason();
                         GroupSearchResultFragment.this.B = GroupSearchResultFragment.this.k.getDays().getAble();
@@ -131,7 +128,7 @@ public class GroupSearchResultFragment extends PreloadFragment implements View.O
                         GroupSearchResultFragment.this.E = GroupSearchResultFragment.this.k.getNum().getReason().get(0);
                         GroupSearchResultFragment.this.F = GroupSearchResultFragment.this.k.getNum().getReason().get(1);
                         Bundle bundle = new Bundle();
-                        bundle.putString(GroupCreateFragment.f30760c, GroupSearchResultFragment.this.D);
+                        bundle.putString(GroupCreateFragment.f17070c, GroupSearchResultFragment.this.D);
                         bundle.putString(GroupCreateFragment.d, GroupSearchResultFragment.this.E);
                         bundle.putString(GroupCreateFragment.e, GroupSearchResultFragment.this.F);
                         bundle.putString(GroupCreateFragment.f, GroupSearchResultFragment.this.B);
@@ -141,17 +138,15 @@ public class GroupSearchResultFragment extends PreloadFragment implements View.O
                 }
             } catch (Exception e) {
                 e.printStackTrace();
-                AppMethods.a((CharSequence) GroupSearchResultFragment.this.getResources().getString(2131887272));
+                AppMethods.a(GroupSearchResultFragment.this.getResources().getString(2131887272));
             }
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIFinish() {
             super.onUIFinish();
             DialogUtils.b(GroupSearchResultFragment.this.G);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIStart() {
             super.onUIStart();
             DialogUtils.a(GroupSearchResultFragment.this.G);
@@ -185,13 +180,11 @@ public class GroupSearchResultFragment extends PreloadFragment implements View.O
         private MyPullDownListener() {
         }
 
-        @Override // com.blued.android.framework.view.pulltorefresh.RenrenPullToRefreshListView.OnPullDownListener
         public void a() {
             GroupSearchResultFragment.this.s = 1;
             GroupSearchResultFragment.this.a(false);
         }
 
-        @Override // com.blued.android.framework.view.pulltorefresh.RenrenPullToRefreshListView.OnPullDownListener
         public void b() {
             GroupSearchResultFragment.q(GroupSearchResultFragment.this);
             GroupSearchResultFragment.this.a(false);
@@ -218,9 +211,9 @@ public class GroupSearchResultFragment extends PreloadFragment implements View.O
         }
         if (!this.u && (i = this.s) != 1) {
             this.s = i - 1;
-            AppMethods.a((CharSequence) getResources().getString(2131887275));
+            AppMethods.a(getResources().getString(2131887275));
         } else if (StringUtils.d(this.z)) {
-            AppMethods.a((CharSequence) getResources().getString(R.string.group_search_prompt));
+            AppMethods.a(getResources().getString(R.string.group_search_prompt));
         } else if (this.y == 0) {
             GroupHttpUtils.a(getActivity(), this.l, this.z, UserFindResult.USER_SORT_BY.NEARBY, this.s + "", this.t + "", getFragmentActive());
         } else {
@@ -250,9 +243,9 @@ public class GroupSearchResultFragment extends PreloadFragment implements View.O
         Button button = (Button) this.w.findViewById(R.id.btn_group_create);
         this.q = button;
         button.setOnClickListener(this);
-        RenrenPullToRefreshListView renrenPullToRefreshListView = (RenrenPullToRefreshListView) this.w.findViewById(R.id.my_grouplist_pullrefresh);
-        this.o = renrenPullToRefreshListView;
-        ListView listView = (ListView) renrenPullToRefreshListView.getRefreshableView();
+        RenrenPullToRefreshListView findViewById = this.w.findViewById(R.id.my_grouplist_pullrefresh);
+        this.o = findViewById;
+        ListView listView = (ListView) findViewById.getRefreshableView();
         this.j = listView;
         listView.setDivider(null);
         this.j.setSelector(new ColorDrawable(0));
@@ -276,12 +269,10 @@ public class GroupSearchResultFragment extends PreloadFragment implements View.O
         return i;
     }
 
-    @Override // com.blued.android.module.common.observer.CommonTitleDoubleClickObserver.ITitleClickObserver
     public void a() {
         this.j.smoothScrollToPosition(0);
     }
 
-    @Override // com.blued.android.framework.activity.PreloadFragment
     public void a(View view) {
         FragmentActivity activity = getActivity();
         this.x = activity;
@@ -301,12 +292,10 @@ public class GroupSearchResultFragment extends PreloadFragment implements View.O
         GroupHttpUtils.b(this.x, this.m, UserInfo.getInstance().getLoginUserInfo().getUid(), getFragmentActive());
     }
 
-    @Override // com.blued.android.framework.activity.PreloadFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         return super.onCreateView(layoutInflater, viewGroup, bundle);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDetach() {
         CommonTitleDoubleClickObserver.a().b(this);
         super.onDetach();

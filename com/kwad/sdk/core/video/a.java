@@ -21,7 +21,6 @@ public final class a extends TextureView {
         requestLayout();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     /* JADX WARN: Code restructure failed: missing block: B:5:0x0016, code lost:
         if (r0 == 270.0f) goto L48;
      */
@@ -30,7 +29,7 @@ public final class a extends TextureView {
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences
     */
-    public final void onMeasure(int r5, int r6) {
+    protected final void onMeasure(int r5, int r6) {
         /*
             Method dump skipped, instructions count: 383
             To view this dump change 'Code comments level' option to 'DEBUG'

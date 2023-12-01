@@ -28,22 +28,18 @@ import java.util.Set;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/circle/adapter/CircleTalkAdapter.class */
 public class CircleTalkAdapter extends BaseQuickAdapter<BluedIngSelfFeed, BaseViewHolder> {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected Context f19128a;
+    protected Context a;
     protected IRequestHost b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public boolean f19129c;
+    public boolean c;
     public Set<String> d;
     private HashSet<String> e;
 
     public CircleTalkAdapter(Context context, IRequestHost iRequestHost) {
         super(R.layout.item_circle_talk);
         this.e = new HashSet<>();
-        this.f19129c = true;
+        this.c = true;
         this.d = new HashSet();
-        this.f19128a = context;
+        this.a = context;
         this.b = iRequestHost;
     }
 
@@ -81,29 +77,29 @@ public class CircleTalkAdapter extends BaseQuickAdapter<BluedIngSelfFeed, BaseVi
             }
             if (!TextUtils.isEmpty(bluedIngSelfFeed.feed_content)) {
                 TextView textView = (TextView) baseViewHolder.getView(R.id.new_base_content);
-                CharSequence a2 = MarkDownLinkHelper.a(this.f19128a, StringUtils.a(bluedIngSelfFeed.feed_content.replaceAll("\r|\n", ""), (int) textView.getTextSize(), 1));
+                CharSequence a = MarkDownLinkHelper.a(this.a, StringUtils.a(bluedIngSelfFeed.feed_content.replaceAll("\r|\n", ""), (int) textView.getTextSize(), 1));
                 textView.setLineSpacing(12.0f, 1.0f);
                 if (bluedIngSelfFeed.is_posts_vote == 1) {
-                    textView.setText(CircleMethods.b(bluedIngSelfFeed, CircleMethods.a(bluedIngSelfFeed, a2)));
-                } else if (this.f19129c) {
-                    textView.setText(CircleMethods.b(bluedIngSelfFeed, CircleMethods.a(bluedIngSelfFeed, a2, false)));
+                    textView.setText(CircleMethods.b(bluedIngSelfFeed, CircleMethods.a(bluedIngSelfFeed, a)));
+                } else if (this.c) {
+                    textView.setText(CircleMethods.b(bluedIngSelfFeed, CircleMethods.a(bluedIngSelfFeed, a, false)));
                 } else {
-                    textView.setText(CircleMethods.b(bluedIngSelfFeed, CircleMethods.a(bluedIngSelfFeed, a2)));
+                    textView.setText(CircleMethods.b(bluedIngSelfFeed, CircleMethods.a(bluedIngSelfFeed, a)));
                 }
-            } else if (this.f19129c) {
-                baseViewHolder.setText(R.id.new_base_content, CircleMethods.a(bluedIngSelfFeed, (CharSequence) this.f19128a.getResources().getString(R.string.circle_picture_talk), false));
+            } else if (this.c) {
+                baseViewHolder.setText(R.id.new_base_content, CircleMethods.a(bluedIngSelfFeed, (CharSequence) this.a.getResources().getString(R.string.circle_picture_talk), false));
             } else {
                 baseViewHolder.setText(R.id.new_base_content, R.string.circle_picture_talk);
             }
             if (this.d.contains(bluedIngSelfFeed.feed_id)) {
-                baseViewHolder.setTextColor(R.id.new_base_content, BluedSkinUtils.a(this.f19128a, R.color.syc_j));
+                baseViewHolder.setTextColor(R.id.new_base_content, BluedSkinUtils.a(this.a, R.color.syc_j));
             } else {
-                baseViewHolder.setTextColor(R.id.new_base_content, BluedSkinUtils.a(this.f19128a, R.color.syc_h));
+                baseViewHolder.setTextColor(R.id.new_base_content, BluedSkinUtils.a(this.a, R.color.syc_h));
             }
             ImageLoader.a(this.b, bluedIngSelfFeed.cover).b(R.drawable.circle_header_default).a((ImageView) baseViewHolder.getView(R.id.new_base_header));
             baseViewHolder.setText(R.id.new_base_name, bluedIngSelfFeed.circle_title);
             int i = R.id.new_base_time;
-            baseViewHolder.setText(i, TimeAndDateUtils.c(this.f19128a, TimeAndDateUtils.c(bluedIngSelfFeed.last_comment_time)) + this.f19128a.getString(R.string.circle_update));
+            baseViewHolder.setText(i, TimeAndDateUtils.c(this.a, TimeAndDateUtils.c(bluedIngSelfFeed.last_comment_time)) + this.a.getString(R.string.circle_update));
             ImageView imageView = (ImageView) baseViewHolder.getView(R.id.new_base_image);
             if (bluedIngSelfFeed.is_video_posts != 1 || bluedIngSelfFeed.feed_videos == null || bluedIngSelfFeed.feed_videos.length <= 0) {
                 baseViewHolder.setGone(R.id.iv_play, false);
@@ -129,18 +125,17 @@ public class CircleTalkAdapter extends BaseQuickAdapter<BluedIngSelfFeed, BaseVi
     }
 
     public void a(boolean z) {
-        this.f19129c = z;
+        this.c = z;
     }
 
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     public void addData(Collection<? extends BluedIngSelfFeed> collection) {
-        super.addData((Collection) a(collection));
+        super.addData(a(collection));
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     public void b(BaseViewHolder baseViewHolder) {
         final LinearLayout linearLayout = (LinearLayout) baseViewHolder.getView(R.id.new_base_layout);
-        final CardView cardView = (CardView) baseViewHolder.getView(R.id.card_header);
+        final CardView view = baseViewHolder.getView(R.id.card_header);
         final TextView textView = (TextView) baseViewHolder.getView(R.id.new_base_name);
         final ImageView imageView = (ImageView) baseViewHolder.getView(R.id.iv_anonymous);
         final TextView textView2 = (TextView) baseViewHolder.getView(R.id.new_base_time);
@@ -154,7 +149,7 @@ public class CircleTalkAdapter extends BaseQuickAdapter<BluedIngSelfFeed, BaseVi
             public void run() {
                 TextView textView3 = textView;
                 if (textView3 != null) {
-                    textView3.setMaxWidth((((linearLayout.getWidth() - cardView.getWidth()) - imageView.getWidth()) - textView2.getWidth()) - DensityUtils.a(CircleTalkAdapter.this.f19128a, 25.0f));
+                    textView3.setMaxWidth((((linearLayout.getWidth() - view.getWidth()) - imageView.getWidth()) - textView2.getWidth()) - DensityUtils.a(CircleTalkAdapter.this.a, 25.0f));
                     textView.setText(charSequence);
                 }
             }
@@ -162,7 +157,6 @@ public class CircleTalkAdapter extends BaseQuickAdapter<BluedIngSelfFeed, BaseVi
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: b */
     public void convert(BaseViewHolder baseViewHolder, BluedIngSelfFeed bluedIngSelfFeed) {
         if (baseViewHolder != null) {
@@ -183,13 +177,12 @@ public class CircleTalkAdapter extends BaseQuickAdapter<BluedIngSelfFeed, BaseVi
         }
     }
 
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     public void setNewData(List<BluedIngSelfFeed> list) {
         this.e.clear();
         if (list != null) {
             super.setNewData(a(list));
         } else {
-            super.setNewData(null);
+            super.setNewData((List) null);
         }
     }
 }

@@ -15,7 +15,6 @@ import com.anythink.expressad.foundation.h.o;
 import com.anythink.expressad.foundation.h.v;
 import com.anythink.expressad.foundation.h.w;
 import com.anythink.expressad.video.bt.module.b.h;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -37,7 +36,7 @@ public class a implements g {
     private static final int I = 1001002;
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f8155a = 1;
+    public static final int f5315a = 1;
     public static String b;
     private static final String i = "RewardVideoController";
     private static final int j = 8;
@@ -65,7 +64,7 @@ public class a implements g {
     private static Map<String, Integer> T = new HashMap();
 
     /* renamed from: c  reason: collision with root package name */
-    public static Map<String, d> f8156c = new HashMap();
+    public static Map<String, d> f5316c = new HashMap();
     private static ConcurrentHashMap<String, String> U = new ConcurrentHashMap<>();
     private int w = 0;
     private int y = 2;
@@ -127,7 +126,7 @@ public class a implements g {
                     }
                     a.this.p.b();
                 } catch (Exception e) {
-                    if (com.anythink.expressad.a.f6941a) {
+                    if (com.anythink.expressad.a.f4103a) {
                         e.printStackTrace();
                     }
                 }
@@ -149,7 +148,7 @@ public class a implements g {
                             a.this.p.a(obj3);
                             return;
                         } catch (Exception e2) {
-                            if (com.anythink.expressad.a.f6941a) {
+                            if (com.anythink.expressad.a.f4103a) {
                                 e2.printStackTrace();
                                 return;
                             }
@@ -171,7 +170,7 @@ public class a implements g {
                             a.this.p.a();
                             return;
                         } catch (Exception e3) {
-                            if (com.anythink.expressad.a.f6941a) {
+                            if (com.anythink.expressad.a.f4103a) {
                                 e3.printStackTrace();
                                 return;
                             }
@@ -267,20 +266,20 @@ public class a implements g {
 
     /* renamed from: com.anythink.expressad.reward.b.a$a  reason: collision with other inner class name */
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/reward/b/a$a.class */
-    public final class RunnableC0155a implements Runnable {
+    public final class RunnableC0084a implements Runnable {
         private com.anythink.expressad.reward.a.a b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f8159c = 1;
+        private int f5319c = 1;
         private boolean d = true;
 
-        public RunnableC0155a(com.anythink.expressad.reward.a.a aVar) {
+        public RunnableC0084a(com.anythink.expressad.reward.a.a aVar) {
             this.b = aVar;
         }
 
         @Override // java.lang.Runnable
         public final void run() {
-            o.d(a.i, "adSource=" + this.f8159c + " CommonCancelTimeTask mIsDevCall：" + this.d);
+            o.d(a.i, "adSource=" + this.f5319c + " CommonCancelTimeTask mIsDevCall：" + this.d);
             a.this.b("v3 is timeout");
         }
     }
@@ -290,7 +289,7 @@ public class a implements g {
         private com.anythink.expressad.reward.a.a b;
 
         /* renamed from: c  reason: collision with root package name */
-        private boolean f8161c = true;
+        private boolean f5321c = true;
         private Runnable d;
 
         public b(com.anythink.expressad.reward.a.a aVar) {
@@ -351,7 +350,7 @@ public class a implements g {
         private static final int g = 3;
 
         /* renamed from: c  reason: collision with root package name */
-        private WeakReference<com.anythink.expressad.videocommon.d.a> f8163c;
+        private WeakReference<com.anythink.expressad.videocommon.d.a> f5323c;
         private volatile AtomicInteger h;
         private Handler i;
         private String j;
@@ -359,7 +358,7 @@ public class a implements g {
         private boolean l;
 
         private c(com.anythink.expressad.videocommon.d.a aVar, Handler handler, String str) {
-            this.f8163c = new WeakReference<>(aVar);
+            this.f5323c = new WeakReference<>(aVar);
             this.h = new AtomicInteger(0);
             this.i = handler;
             this.j = str;
@@ -383,7 +382,7 @@ public class a implements g {
 
         private void a(com.anythink.expressad.foundation.d.c cVar) {
             com.anythink.expressad.videocommon.d.a aVar;
-            WeakReference<com.anythink.expressad.videocommon.d.a> weakReference = this.f8163c;
+            WeakReference<com.anythink.expressad.videocommon.d.a> weakReference = this.f5323c;
             if (weakReference == null || (aVar = weakReference.get()) == null) {
                 return;
             }
@@ -396,7 +395,7 @@ public class a implements g {
                 handler.removeMessages(a.I);
             }
             o.a(b, "收到 onVideoLoadFail，当前状态： " + cVar.h.get() + " hasCalledVideoLoadFail: " + a.this.ac + " " + str);
-            WeakReference<com.anythink.expressad.videocommon.d.a> weakReference = cVar.f8163c;
+            WeakReference<com.anythink.expressad.videocommon.d.a> weakReference = cVar.f5323c;
             if (weakReference == null || weakReference.get() == null) {
                 return;
             }
@@ -427,7 +426,7 @@ public class a implements g {
                 handler.removeMessages(a.I);
             }
             o.a(b, "收到 onVideoLoadSuccess，当前状态： " + cVar.h.get() + " hasCalledVideoLoadSuccess: " + a.this.ab);
-            WeakReference<com.anythink.expressad.videocommon.d.a> weakReference = cVar.f8163c;
+            WeakReference<com.anythink.expressad.videocommon.d.a> weakReference = cVar.f5323c;
             if (weakReference == null || weakReference.get() == null) {
                 return;
             }
@@ -456,7 +455,7 @@ public class a implements g {
                 handler.removeMessages(a.I);
             }
             o.a(b, "收到 onVideoLoadFail，当前状态： " + this.h.get() + " hasCalledVideoLoadFail: " + a.this.ac + " " + str);
-            WeakReference<com.anythink.expressad.videocommon.d.a> weakReference = this.f8163c;
+            WeakReference<com.anythink.expressad.videocommon.d.a> weakReference = this.f5323c;
             if (weakReference == null || weakReference.get() == null) {
                 return;
             }
@@ -483,7 +482,7 @@ public class a implements g {
 
         private void a(String str, String str2) {
             o.a(b, "收到 onCampaignLoadSuccess，当前状态： " + this.h.get() + " hasCalledCampaignLoadSuccess: " + a.this.aa);
-            WeakReference<com.anythink.expressad.videocommon.d.a> weakReference = this.f8163c;
+            WeakReference<com.anythink.expressad.videocommon.d.a> weakReference = this.f5323c;
             if (weakReference == null || weakReference.get() == null) {
                 return;
             }
@@ -515,7 +514,7 @@ public class a implements g {
 
         private void a(boolean z, String str, float f2) {
             com.anythink.expressad.videocommon.d.a aVar;
-            WeakReference<com.anythink.expressad.videocommon.d.a> weakReference = this.f8163c;
+            WeakReference<com.anythink.expressad.videocommon.d.a> weakReference = this.f5323c;
             if (weakReference == null || (aVar = weakReference.get()) == null) {
                 return;
             }
@@ -529,7 +528,7 @@ public class a implements g {
         private void b() {
             com.anythink.expressad.videocommon.d.a aVar;
             a.l(a.this);
-            WeakReference<com.anythink.expressad.videocommon.d.a> weakReference = this.f8163c;
+            WeakReference<com.anythink.expressad.videocommon.d.a> weakReference = this.f5323c;
             if (weakReference == null || (aVar = weakReference.get()) == null) {
                 return;
             }
@@ -556,7 +555,7 @@ public class a implements g {
                 handler.removeMessages(a.I);
             }
             o.a(b, "收到 onVideoLoadSuccessForCache，当前状态： " + cVar.h.get() + " hasCalledVideoLoadSuccess: " + a.this.ab);
-            WeakReference<com.anythink.expressad.videocommon.d.a> weakReference = cVar.f8163c;
+            WeakReference<com.anythink.expressad.videocommon.d.a> weakReference = cVar.f5323c;
             if (weakReference == null || weakReference.get() == null) {
                 return;
             }
@@ -596,7 +595,7 @@ public class a implements g {
 
         private void b(String str, String str2) {
             o.a(b, "收到 onCampaignLoadSuccessForCache，当前状态： " + this.h.get() + " hasCalledCampaignLoadSuccess: " + a.this.aa);
-            WeakReference<com.anythink.expressad.videocommon.d.a> weakReference = this.f8163c;
+            WeakReference<com.anythink.expressad.videocommon.d.a> weakReference = this.f5323c;
             if (weakReference == null || weakReference.get() == null || this.i == null) {
                 return;
             }
@@ -618,7 +617,7 @@ public class a implements g {
 
         private void c() {
             com.anythink.expressad.videocommon.d.a aVar;
-            WeakReference<com.anythink.expressad.videocommon.d.a> weakReference = this.f8163c;
+            WeakReference<com.anythink.expressad.videocommon.d.a> weakReference = this.f5323c;
             if (weakReference == null || (aVar = weakReference.get()) == null) {
                 return;
             }
@@ -627,7 +626,7 @@ public class a implements g {
 
         static /* synthetic */ void c(c cVar, String str, String str2) {
             o.a(b, "收到 onCampaignLoadSuccess，当前状态： " + cVar.h.get() + " hasCalledCampaignLoadSuccess: " + a.this.aa);
-            WeakReference<com.anythink.expressad.videocommon.d.a> weakReference = cVar.f8163c;
+            WeakReference<com.anythink.expressad.videocommon.d.a> weakReference = cVar.f5323c;
             if (weakReference == null || weakReference.get() == null) {
                 return;
             }
@@ -664,7 +663,7 @@ public class a implements g {
                 handler.removeMessages(a.I);
             }
             o.a(b, "收到 onVideoLoadSuccess，当前状态： " + this.h.get() + " hasCalledVideoLoadSuccess: " + a.this.ab);
-            WeakReference<com.anythink.expressad.videocommon.d.a> weakReference = this.f8163c;
+            WeakReference<com.anythink.expressad.videocommon.d.a> weakReference = this.f5323c;
             if (weakReference == null || weakReference.get() == null) {
                 return;
             }
@@ -689,7 +688,7 @@ public class a implements g {
 
         private void d() {
             com.anythink.expressad.videocommon.d.a aVar;
-            WeakReference<com.anythink.expressad.videocommon.d.a> weakReference = this.f8163c;
+            WeakReference<com.anythink.expressad.videocommon.d.a> weakReference = this.f5323c;
             if (weakReference == null || (aVar = weakReference.get()) == null) {
                 return;
             }
@@ -698,7 +697,7 @@ public class a implements g {
 
         private void d(String str) {
             o.a(b, "收到 onVideoLoadFailForCache，当前状态： " + this.h.get() + " hasCalledVideoLoadFailedForCache: " + a.this.ad + " " + str);
-            WeakReference<com.anythink.expressad.videocommon.d.a> weakReference = this.f8163c;
+            WeakReference<com.anythink.expressad.videocommon.d.a> weakReference = this.f5323c;
             if (weakReference == null || weakReference.get() == null) {
                 return;
             }
@@ -726,7 +725,7 @@ public class a implements g {
                 handler.removeMessages(a.I);
             }
             o.a(b, "收到 onVideoLoadSuccessForCache，当前状态： " + this.h.get() + " hasCalledVideoLoadSuccess: " + a.this.ab);
-            WeakReference<com.anythink.expressad.videocommon.d.a> weakReference = this.f8163c;
+            WeakReference<com.anythink.expressad.videocommon.d.a> weakReference = this.f5323c;
             if (weakReference == null || weakReference.get() == null) {
                 return;
             }
@@ -757,7 +756,7 @@ public class a implements g {
         private void e(String str) {
             com.anythink.expressad.videocommon.d.a aVar;
             a.l(a.this);
-            WeakReference<com.anythink.expressad.videocommon.d.a> weakReference = this.f8163c;
+            WeakReference<com.anythink.expressad.videocommon.d.a> weakReference = this.f5323c;
             if (weakReference == null || (aVar = weakReference.get()) == null) {
                 return;
             }
@@ -771,7 +770,7 @@ public class a implements g {
         private a b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f8165c;
+        private int f5325c;
         private Handler d;
         private int e;
 
@@ -782,7 +781,7 @@ public class a implements g {
         private d(a aVar, Handler handler, byte b) {
             this.e = 0;
             this.b = aVar;
-            this.f8165c = 1;
+            this.f5325c = 1;
             this.d = handler;
         }
 
@@ -810,7 +809,7 @@ public class a implements g {
                     }
                 }
             } catch (Throwable th) {
-                if (com.anythink.expressad.a.f6941a) {
+                if (com.anythink.expressad.a.f4103a) {
                     th.printStackTrace();
                 }
             }
@@ -829,12 +828,12 @@ public class a implements g {
                     }
                     this.b.p.a(cVar);
                 } catch (Exception e) {
-                    if (com.anythink.expressad.a.f6941a) {
+                    if (com.anythink.expressad.a.f4103a) {
                         e.printStackTrace();
                     }
                 }
             } catch (Exception e2) {
-                if (com.anythink.expressad.a.f6941a) {
+                if (com.anythink.expressad.a.f4103a) {
                     e2.printStackTrace();
                 }
             }
@@ -860,7 +859,7 @@ public class a implements g {
                         try {
                             this.b.p.b(str);
                         } catch (Exception e2) {
-                            if (com.anythink.expressad.a.f6941a) {
+                            if (com.anythink.expressad.a.f4103a) {
                                 e2.printStackTrace();
                             }
                         }
@@ -869,7 +868,7 @@ public class a implements g {
                 }
             } catch (Exception e3) {
                 this.e = 0;
-                if (com.anythink.expressad.a.f6941a) {
+                if (com.anythink.expressad.a.f4103a) {
                     e3.printStackTrace();
                 }
             }
@@ -887,13 +886,13 @@ public class a implements g {
                 try {
                     com.anythink.expressad.videocommon.d.a unused = this.b.p;
                 } catch (Exception e) {
-                    if (com.anythink.expressad.a.f6941a) {
+                    if (com.anythink.expressad.a.f4103a) {
                         e.printStackTrace();
                     }
                 }
                 o.a(a.i, "onAdCloseWithIVReward callback");
             } catch (Exception e2) {
-                if (com.anythink.expressad.a.f6941a) {
+                if (com.anythink.expressad.a.f4103a) {
                     e2.printStackTrace();
                 }
             }
@@ -921,7 +920,7 @@ public class a implements g {
                 a.this.P.clear();
                 this.b = null;
             } catch (Exception e) {
-                if (com.anythink.expressad.a.f6941a) {
+                if (com.anythink.expressad.a.f4103a) {
                     e.printStackTrace();
                 }
             }
@@ -938,14 +937,14 @@ public class a implements g {
                 try {
                     this.b.p.d();
                 } catch (Exception e) {
-                    if (com.anythink.expressad.a.f6941a) {
+                    if (com.anythink.expressad.a.f4103a) {
                         e.printStackTrace();
                     }
                 }
                 this.e = 5;
                 o.a(a.i, "onEndcardShow callback");
             } catch (Exception e2) {
-                if (com.anythink.expressad.a.f6941a) {
+                if (com.anythink.expressad.a.f4103a) {
                     e2.printStackTrace();
                 }
             }
@@ -963,14 +962,14 @@ public class a implements g {
                     this.b.p.f();
                     com.anythink.expressad.foundation.f.b.a().b("_2", 2);
                 } catch (Exception e) {
-                    if (com.anythink.expressad.a.f6941a) {
+                    if (com.anythink.expressad.a.f4103a) {
                         e.printStackTrace();
                     }
                 }
                 this.e = 6;
                 o.a(a.i, "onEndcardShow callback");
             } catch (Exception e2) {
-                if (com.anythink.expressad.a.f6941a) {
+                if (com.anythink.expressad.a.f4103a) {
                     e2.printStackTrace();
                 }
             }
@@ -1049,7 +1048,7 @@ public class a implements g {
                     }
                     o.b(i, "invoke adapter show isReady");
                     d dVar = new d(this, this, this.x);
-                    f8156c.put(this.s, dVar);
+                    f5316c.put(this.s, dVar);
                     this.m.a(activity, dVar, str, this.r, this.y, this.u, jVar);
                     return;
                 }
@@ -1059,20 +1058,20 @@ public class a implements g {
                 try {
                     this.p.b("can't show because load is failed");
                 } catch (Exception e) {
-                    if (com.anythink.expressad.a.f6941a) {
+                    if (com.anythink.expressad.a.f4103a) {
                         e.printStackTrace();
                     }
                 }
             }
         } catch (Exception e2) {
-            if (com.anythink.expressad.a.f6941a) {
+            if (com.anythink.expressad.a.f4103a) {
                 o.d(i, e2.getLocalizedMessage());
             }
             if (this.p != null) {
                 try {
                     this.p.b("show exception");
                 } catch (Exception e3) {
-                    if (com.anythink.expressad.a.f6941a) {
+                    if (com.anythink.expressad.a.f4103a) {
                         e2.printStackTrace();
                     }
                 }
@@ -1114,8 +1113,8 @@ public class a implements g {
 
     private static void a(boolean z2, boolean z3) {
         try {
-            if (f8156c != null) {
-                f8156c.clear();
+            if (f5316c != null) {
+                f5316c.clear();
             }
             if (z2) {
                 if (z3) {
@@ -1137,8 +1136,8 @@ public class a implements g {
 
     private static void a(boolean z2, boolean z3, String str) {
         try {
-            if (f8156c != null) {
-                f8156c.clear();
+            if (f5316c != null) {
+                f5316c.clear();
             }
             if (z2) {
                 if (z3) {
@@ -1191,7 +1190,7 @@ public class a implements g {
                 b("load mv api error:" + e.getMessage());
             } catch (Exception e2) {
                 b(com.anythink.expressad.foundation.g.b.b.b);
-                if (com.anythink.expressad.a.f6941a) {
+                if (com.anythink.expressad.a.f4103a) {
                     e2.printStackTrace();
                 }
             }
@@ -1235,9 +1234,9 @@ public class a implements g {
             }
             this.m.a(this.y);
             this.m.a(this.n);
-            RunnableC0155a runnableC0155a = new RunnableC0155a(this.m);
+            RunnableC0084a runnableC0084a = new RunnableC0084a(this.m);
             b bVar = new b(this.m);
-            bVar.a(runnableC0155a);
+            bVar.a(runnableC0084a);
             this.m.a(bVar);
             this.m.a(dVar);
         } catch (Exception e) {
@@ -1272,7 +1271,7 @@ public class a implements g {
                 }
                 com.anythink.expressad.videocommon.c.b bVar = I2.get(i3);
                 Context context = this.k;
-                v.a(context, this.t + BridgeUtil.UNDERLINE_STR + bVar.a(), 0);
+                v.a(context, this.t + "_" + bVar.a(), 0);
                 i2 = i3 + 1;
             }
         } catch (Exception e) {
@@ -1307,7 +1306,7 @@ public class a implements g {
                 } else {
                     i2 = 0;
                 }
-                Object b2 = v.b(this.k, this.t + BridgeUtil.UNDERLINE_STR + bVar.a(), 0);
+                Object b2 = v.b(this.k, this.t + "_" + bVar.a(), 0);
                 if ((b2 != null ? ((Integer) b2).intValue() : 0) < i2) {
                     return false;
                 }
@@ -1442,7 +1441,7 @@ public class a implements g {
                     f();
                 }
             } catch (Exception e) {
-                if (com.anythink.expressad.a.f6941a) {
+                if (com.anythink.expressad.a.f4103a) {
                     e.printStackTrace();
                 }
             }
@@ -1453,7 +1452,7 @@ public class a implements g {
                     b("load mv api error:" + e2.getMessage());
                 } catch (Exception e3) {
                     b(com.anythink.expressad.foundation.g.b.b.b);
-                    if (com.anythink.expressad.a.f6941a) {
+                    if (com.anythink.expressad.a.f4103a) {
                         e3.printStackTrace();
                     }
                 }
@@ -1462,7 +1461,7 @@ public class a implements g {
             if (this.q != null) {
                 c.a(this.q, "load exception");
             }
-            if (com.anythink.expressad.a.f6941a) {
+            if (com.anythink.expressad.a.f4103a) {
                 e4.printStackTrace();
             }
         }
@@ -1495,7 +1494,6 @@ public class a implements g {
         this.J = z2;
     }
 
-    @Override // com.anythink.core.common.a.g
     public boolean isReady() {
         try {
             j();
@@ -1510,7 +1508,7 @@ public class a implements g {
             }
             return false;
         } catch (Throwable th) {
-            if (com.anythink.expressad.a.f6941a) {
+            if (com.anythink.expressad.a.f4103a) {
                 th.printStackTrace();
                 return false;
             }

@@ -1,6 +1,5 @@
 package com.tencent.cos.xml.model.tag;
 
-import com.alipay.sdk.util.i;
 import java.util.List;
 
 /* loaded from: source-8457232-dex2jar.jar:com/tencent/cos/xml/model/tag/DeleteResult.class */
@@ -16,7 +15,7 @@ public class DeleteResult {
         public String versionId;
 
         public String toString() {
-            return "{Deleted:\nKey:" + this.key + "\nVersionId:" + this.versionId + "\nDeleteMarker:" + this.deleteMarker + "\nDeleteMarkerVersionId:" + this.deleteMarkerVersionId + "\n" + i.d;
+            return "{Deleted:\nKey:" + this.key + "\nVersionId:" + this.versionId + "\nDeleteMarker:" + this.deleteMarker + "\nDeleteMarkerVersionId:" + this.deleteMarkerVersionId + "\n}";
         }
     }
 
@@ -28,7 +27,7 @@ public class DeleteResult {
         public String versionId;
 
         public String toString() {
-            return "{CosError:\nKey:" + this.key + "\nCode:" + this.code + "\nMessage:" + this.message + "\nVersionId:" + this.versionId + "\n" + i.d;
+            return "{CosError:\nKey:" + this.key + "\nCode:" + this.code + "\nMessage:" + this.message + "\nVersionId:" + this.versionId + "\n}";
         }
     }
 
@@ -52,7 +51,7 @@ public class DeleteResult {
                 }
             }
         }
-        sb.append(i.d);
+        sb.append("}");
         return sb.toString();
     }
 }

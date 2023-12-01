@@ -1,5 +1,6 @@
 package okio;
 
+import com.anythink.core.common.b.g;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -159,7 +160,7 @@ public class JvmSystemFileSystem extends FileSystem {
     @Override // okio.FileSystem
     public FileHandle openReadOnly(Path file) {
         Intrinsics.e(file, "file");
-        return new JvmFileHandle(false, new RandomAccessFile(file.toFile(), "r"));
+        return new JvmFileHandle(false, new RandomAccessFile(file.toFile(), g.o.o));
     }
 
     @Override // okio.FileSystem

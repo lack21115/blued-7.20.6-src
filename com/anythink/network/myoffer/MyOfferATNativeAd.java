@@ -13,17 +13,16 @@ import java.util.List;
 public class MyOfferATNativeAd extends CustomNativeAd {
 
     /* renamed from: a  reason: collision with root package name */
-    e f9032a;
+    e f6192a;
     Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    View f9033c;
+    View f6193c;
 
     public MyOfferATNativeAd(Context context, e eVar) {
         this.b = context.getApplicationContext();
-        this.f9032a = eVar;
+        this.f6192a = eVar;
         eVar.a(new a() { // from class: com.anythink.network.myoffer.MyOfferATNativeAd.1
-            @Override // com.anythink.basead.e.a
             public final void onAdClick(int i) {
                 com.anythink.core.common.e.e detail = MyOfferATNativeAd.this.getDetail();
                 if (detail != null) {
@@ -32,65 +31,61 @@ public class MyOfferATNativeAd extends CustomNativeAd {
                 MyOfferATNativeAd.this.notifyAdClicked();
             }
 
-            @Override // com.anythink.basead.e.a
             public final void onAdClosed() {
             }
 
-            @Override // com.anythink.basead.e.a
             public final void onAdShow() {
                 MyOfferATNativeAd.this.notifyAdImpression();
             }
 
-            @Override // com.anythink.basead.e.a
             public final void onDeeplinkCallback(boolean z) {
             }
 
-            @Override // com.anythink.basead.e.a
             public final void onShowFailed(com.anythink.basead.c.e eVar2) {
             }
         });
-        setNetworkInfoMap(b.a(this.f9032a.e()));
-        setAdChoiceIconUrl(this.f9032a.j());
-        setTitle(this.f9032a.b());
-        setDescriptionText(this.f9032a.f());
-        setIconImageUrl(this.f9032a.h());
-        setMainImageUrl(this.f9032a.i());
-        setCallToActionText(this.f9032a.g());
+        setNetworkInfoMap(b.a(this.f6192a.e()));
+        setAdChoiceIconUrl(this.f6192a.j());
+        setTitle(this.f6192a.b());
+        setDescriptionText(this.f6192a.f());
+        setIconImageUrl(this.f6192a.h());
+        setMainImageUrl(this.f6192a.i());
+        setCallToActionText(this.f6192a.g());
     }
 
     @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd, com.anythink.nativead.unitgroup.a
     public void clear(View view) {
-        e eVar = this.f9032a;
+        e eVar = this.f6192a;
         if (eVar != null) {
             eVar.l();
         }
     }
 
-    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd, com.anythink.core.api.BaseAd
+    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd
     public void destroy() {
-        e eVar = this.f9032a;
+        e eVar = this.f6192a;
         if (eVar != null) {
             eVar.a((a) null);
-            this.f9032a.m();
+            this.f6192a.m();
         }
     }
 
-    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd, com.anythink.nativead.unitgroup.a, com.anythink.core.api.IATThirdPartyMaterial
+    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd, com.anythink.nativead.unitgroup.a
     public View getAdMediaView(Object... objArr) {
-        if (this.f9033c == null) {
-            this.f9033c = e.k();
+        if (this.f6193c == null) {
+            this.f6193c = e.k();
         }
-        return this.f9033c;
+        return this.f6193c;
     }
 
     @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd, com.anythink.nativead.unitgroup.a
     public void prepare(View view, ATNativePrepareInfo aTNativePrepareInfo) {
-        if (this.f9032a != null) {
+        if (this.f6192a != null) {
             List<View> clickViewList = aTNativePrepareInfo.getClickViewList();
             if (clickViewList == null || clickViewList.size() <= 0) {
-                this.f9032a.a(view);
+                this.f6192a.a(view);
             } else {
-                this.f9032a.a(view, clickViewList);
+                this.f6192a.a(view, clickViewList);
             }
         }
     }

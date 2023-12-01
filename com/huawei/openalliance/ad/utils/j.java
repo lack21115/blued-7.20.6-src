@@ -6,6 +6,7 @@ import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import com.huawei.hms.ads.dt;
 import com.huawei.hms.ads.ge;
+import com.xiaomi.mipush.sdk.Constants;
 import java.util.Locale;
 
 /* loaded from: source-7994992-dex2jar.jar:com/huawei/openalliance/ad/utils/j.class */
@@ -22,11 +23,11 @@ public class j {
     private static final String Z = "CountryCodeBean";
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f22996a = "gb";
+    private static final String f9388a = "gb";
     private static final String b = "cn";
 
     /* renamed from: c  reason: collision with root package name */
-    private static final int f22997c = 2;
+    private static final int f9389c = 2;
     private String d;
 
     public j(Context context) {
@@ -41,7 +42,7 @@ public class j {
         this.d = Code2;
         if (TextUtils.isEmpty(Code2)) {
             String Code3 = ay.Code(C);
-            if (!TextUtils.isEmpty(Code3) && (lastIndexOf = Code3.lastIndexOf("-")) != -1) {
+            if (!TextUtils.isEmpty(Code3) && (lastIndexOf = Code3.lastIndexOf(Constants.ACCEPT_TIME_SEPARATOR_SERVER)) != -1) {
                 this.d = Code3.substring(lastIndexOf + 1);
             }
         }

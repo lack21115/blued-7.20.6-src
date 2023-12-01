@@ -1,8 +1,7 @@
 package android.util;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-9557208-dex2jar.jar:android/util/ContainerHelpers.class */
-public class ContainerHelpers {
+class ContainerHelpers {
     ContainerHelpers() {
     }
 

@@ -638,7 +638,7 @@ public final class FieldSet<T extends FieldDescriptorLite<T>> {
         if (obj instanceof byte[]) {
             byte[] bArr = (byte[]) obj;
             byte[] bArr2 = new byte[bArr.length];
-            System.arraycopy((Object) bArr, 0, (Object) bArr2, 0, bArr.length);
+            System.arraycopy(bArr, 0, bArr2, 0, bArr.length);
             return bArr2;
         }
         return obj;
@@ -1018,7 +1018,7 @@ public final class FieldSet<T extends FieldDescriptorLite<T>> {
     }
 
     /* renamed from: clone */
-    public FieldSet<T> m6682clone() {
+    public FieldSet<T> m3675clone() {
         FieldSet<T> newFieldSet = newFieldSet();
         int i = 0;
         while (true) {

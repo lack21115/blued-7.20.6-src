@@ -4,11 +4,11 @@ package com.sdk.tencent.d;
 public class e<E> {
 
     /* renamed from: a  reason: collision with root package name */
-    public final b f28039a;
+    public final b f14351a;
     public final E b;
 
     public e(b bVar, E e) {
-        this.f28039a = bVar == null ? b.DEFAULT : bVar;
+        this.f14351a = bVar == null ? b.DEFAULT : bVar;
         this.b = e;
     }
 }

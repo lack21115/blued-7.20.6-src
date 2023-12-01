@@ -24,11 +24,11 @@ import java.lang.ref.WeakReference;
 public class SuperVideoView extends LinearLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    public static WeakReference<SuperVideoView> f34436a;
+    public static WeakReference<SuperVideoView> f20745a;
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private LayoutInflater f34437c;
+    private LayoutInflater f20746c;
     private View d;
     private ImageView e;
     private TextureVideoView f;
@@ -44,30 +44,30 @@ public class SuperVideoView extends LinearLayout {
     class AnonymousClass1 implements VideoLoadController.IVideoController {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ SuperVideoView f34438a;
+        final /* synthetic */ SuperVideoView f20747a;
 
         @Override // com.soft.blued.utils.VideoLoadController.IVideoController
         public void a(String str) {
-            this.f34438a.g.setImageResource(R.drawable.video_failed_icon);
-            this.f34438a.g.setVisibility(0);
-            this.f34438a.e.setVisibility(0);
-            this.f34438a.i.setVisibility(8);
+            this.f20747a.g.setImageResource(R.drawable.video_failed_icon);
+            this.f20747a.g.setVisibility(0);
+            this.f20747a.e.setVisibility(0);
+            this.f20747a.i.setVisibility(8);
             Logger.a("ddrb", "onDownloadFailed");
         }
 
         @Override // com.soft.blued.utils.VideoLoadController.IVideoController
         public void a(String str, int i) {
-            this.f34438a.i.setVisibility(0);
-            this.f34438a.g.setImageResource(2131233691);
-            this.f34438a.g.setVisibility(8);
-            this.f34438a.i.c();
-            this.f34438a.i.a(i, 100L);
+            this.f20747a.i.setVisibility(0);
+            this.f20747a.g.setImageResource(2131233691);
+            this.f20747a.g.setVisibility(8);
+            this.f20747a.i.c();
+            this.f20747a.i.a(i, 100L);
         }
 
         @Override // com.soft.blued.utils.VideoLoadController.IVideoController
         public void a(String str, String str2) {
-            this.f34438a.f.a(str2);
-            this.f34438a.i.d();
+            this.f20747a.f.a(str2);
+            this.f20747a.i.d();
             Logger.a("ddrb", "onDownloadFinish end");
         }
     }
@@ -77,7 +77,7 @@ public class SuperVideoView extends LinearLayout {
     class AnonymousClass2 implements TextureVideoView.OnStateChangeListener {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ String[] f34439a;
+        final /* synthetic */ String[] f20748a;
         final /* synthetic */ SuperVideoView b;
 
         @Override // com.soft.blued.ui.video.TextureVideoView.OnStateChangeListener
@@ -137,7 +137,7 @@ public class SuperVideoView extends LinearLayout {
             this.b.g.setVisibility(0);
             this.b.e.setVisibility(0);
             this.b.i.setVisibility(8);
-            VideoLoadController.b(this.f34439a[1]);
+            VideoLoadController.b(this.f20748a[1]);
         }
     }
 
@@ -146,35 +146,35 @@ public class SuperVideoView extends LinearLayout {
     class AnonymousClass3 implements View.OnClickListener {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ String[] f34441a;
+        final /* synthetic */ String[] f20750a;
         final /* synthetic */ VideoLoadController.IVideoController b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ SuperVideoView f34442c;
+        final /* synthetic */ SuperVideoView f20751c;
 
         @Override // android.view.View.OnClickListener
         public void onClick(View view) {
             Tracker.onClick(view);
             Logger.a("ddrb", "android.os.Build.VERSION.SDK_INT = ", Integer.valueOf(Build.VERSION.SDK_INT));
-            if (SuperVideoView.f34436a == null) {
-                SuperVideoView.f34436a = new WeakReference<>(this.f34442c);
+            if (SuperVideoView.f20745a == null) {
+                SuperVideoView.f20745a = new WeakReference<>(this.f20751c);
             } else {
-                SuperVideoView superVideoView = SuperVideoView.f34436a.get();
-                if (superVideoView != null && !this.f34442c.equals(superVideoView)) {
+                SuperVideoView superVideoView = SuperVideoView.f20745a.get();
+                if (superVideoView != null && !this.f20751c.equals(superVideoView)) {
                     superVideoView.a();
                     superVideoView.b();
                 }
-                SuperVideoView.f34436a = new WeakReference<>(this.f34442c);
+                SuperVideoView.f20745a = new WeakReference<>(this.f20751c);
             }
-            this.f34442c.i.setVisibility(0);
-            this.f34442c.g.setImageResource(2131233691);
-            this.f34442c.g.setVisibility(8);
-            VideoLoadController.a(this.f34441a[1], this.b);
-            VideoLoadController.a(this.f34441a[1]);
-            Logger.a("ddrb", "loadVideo urls[0] = ", this.f34441a[0]);
-            Logger.a("ddrb", "loadVideo urls[1] = ", this.f34441a[1]);
-            this.f34442c.k = this.f34441a[1];
-            this.f34442c.l = this.b;
+            this.f20751c.i.setVisibility(0);
+            this.f20751c.g.setImageResource(2131233691);
+            this.f20751c.g.setVisibility(8);
+            VideoLoadController.a(this.f20750a[1], this.b);
+            VideoLoadController.a(this.f20750a[1]);
+            Logger.a("ddrb", "loadVideo urls[0] = ", this.f20750a[0]);
+            Logger.a("ddrb", "loadVideo urls[1] = ", this.f20750a[1]);
+            this.f20751c.k = this.f20750a[1];
+            this.f20751c.l = this.b;
         }
     }
 
@@ -183,11 +183,11 @@ public class SuperVideoView extends LinearLayout {
     class AnonymousClass4 implements View.OnClickListener {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ String[] f34443a;
+        final /* synthetic */ String[] f20752a;
         final /* synthetic */ String b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ int f34444c;
+        final /* synthetic */ int f20753c;
         final /* synthetic */ int d;
         final /* synthetic */ int e;
         final /* synthetic */ SuperVideoView f;
@@ -196,8 +196,8 @@ public class SuperVideoView extends LinearLayout {
         public void onClick(View view) {
             Tracker.onClick(view);
             Context context = this.f.b;
-            String[] strArr = this.f34443a;
-            BasePhotoFragment.a(context, strArr[0], strArr[1], this.b, this.f34444c, this.d, this.e, 0L);
+            String[] strArr = this.f20752a;
+            BasePhotoFragment.a(context, strArr[0], strArr[1], this.b, this.f20753c, this.d, this.e, 0L);
         }
     }
 
@@ -232,26 +232,24 @@ public class SuperVideoView extends LinearLayout {
         this.g.setVisibility(0);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         VideoLoadController.b(this.k, this.l);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onFinishInflate() {
+    protected void onFinishInflate() {
         super.onFinishInflate();
         LayoutInflater from = LayoutInflater.from(this.b);
-        this.f34437c = from;
+        this.f20746c = from;
         View inflate = from.inflate(R.layout.video_view, (ViewGroup) null);
         this.d = inflate;
         this.e = (ImageView) inflate.findViewById(2131368940);
         this.f = (TextureVideoView) this.d.findViewById(R.id.textureview);
         this.g = (ImageView) this.d.findViewById(2131373089);
         this.h = (TextView) this.d.findViewById(R.id.video_state_text);
-        this.i = (CircleProgressView) this.d.findViewById(R.id.progressbar);
+        this.i = this.d.findViewById(R.id.progressbar);
         addView(this.d);
     }
 }

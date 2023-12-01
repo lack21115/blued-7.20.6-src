@@ -9,11 +9,11 @@ import com.cdo.oaps.ad.Launcher;
 public class af {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f21516a = 5100;
+    public static final int f7910a = 5100;
     public static final int b = 4600;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final int f21517c = 4550;
+    public static final int f7911c = 4550;
     public static final int d = 390;
     public static final String e = "com.heytap.market";
     public static final String[] f = {"/dt", Launcher.Path.DETAIL_DOWN, "/search", Launcher.Path.SEARCH_DOWN, "/home"};

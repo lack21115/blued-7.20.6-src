@@ -30,16 +30,14 @@ public final class g extends FrameLayout {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public final void onConfigurationChanged(Configuration configuration) {
+    protected final void onConfigurationChanged(Configuration configuration) {
         super.onConfigurationChanged(configuration);
         eH();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public final void onWindowVisibilityChanged(int i) {
+    protected final void onWindowVisibilityChanged(int i) {
         super.onWindowVisibilityChanged(i);
         this.my = i == 0;
         eH();

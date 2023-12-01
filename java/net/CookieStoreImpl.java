@@ -7,9 +7,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-2895416-dex2jar.jar:java/net/CookieStoreImpl.class */
-public final class CookieStoreImpl implements CookieStore {
+final class CookieStoreImpl implements CookieStore {
     private final Map<URI, List<HttpCookie>> map = new HashMap();
 
     private URI cookiesUri(URI uri) {

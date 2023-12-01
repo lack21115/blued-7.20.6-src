@@ -10,11 +10,11 @@ import java.util.Map;
 public final class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f24950a = "localId";
+    private static String f11262a = "localId";
     private static volatile String b = "";
 
     /* renamed from: c  reason: collision with root package name */
-    private static volatile boolean f24951c = false;
+    private static volatile boolean f11263c = false;
     private static final byte[] d = new byte[0];
 
     /* JADX WARN: Removed duplicated region for block: B:12:0x0038  */
@@ -175,14 +175,14 @@ public final class c {
                         synchronized (d) {
                             if (TextUtils.isEmpty(b)) {
                                 b = i.f(applicationContext);
-                                if (!f24951c) {
-                                    f24951c = true;
+                                if (!f11263c) {
+                                    f11263c = true;
                                     new Thread(new Runnable() { // from class: com.opos.cmn.g.a.c.1
                                         @Override // java.lang.Runnable
                                         public void run() {
                                             Map<String, String> buildIdMap = ClientIdUtils.INSTANCE.buildIdMap(Context.this);
                                             if (buildIdMap != null) {
-                                                String unused = c.b = buildIdMap.get(c.f24950a);
+                                                String unused = c.b = buildIdMap.get(c.f11262a);
                                                 i.e(Context.this, c.b);
                                             }
                                         }

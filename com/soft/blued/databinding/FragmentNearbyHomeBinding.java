@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentNearbyHomeBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final FrameLayout f28916a;
+    private final FrameLayout f15226a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f28916a;
+        return this.f15226a;
     }
 }

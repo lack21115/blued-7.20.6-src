@@ -1,7 +1,7 @@
 package com.blued.community.track;
 
 import android.text.TextUtils;
-import com.anythink.expressad.d.a.b;
+import com.anythink.core.api.ATAdConst;
 import com.app.share.model.ShareEntity;
 import com.blued.android.module.common.db.model.NewFeedModel;
 import com.blued.android.module.common.utils.CommonStringUtils;
@@ -20,7 +20,6 @@ import com.blued.das.guy.GuyProtos;
 import com.blued.das.profile.PersonalProfileProtos;
 import com.blued.track.bytedance.ByteDanceLogUtils;
 import com.blued.track.trackUtils.EventTrackUtils;
-import com.soft.blued.ui.find.model.UserFindResult;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -31,9 +30,7 @@ public class EventTrackFeed {
     /* renamed from: com.blued.community.track.EventTrackFeed$1  reason: invalid class name */
     /* loaded from: source-5382004-dex2jar.jar:com/blued/community/track/EventTrackFeed$1.class */
     public static /* synthetic */ class AnonymousClass1 {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f19112a;
+        static final /* synthetic */ int[] a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:39:0x00dd -> B:109:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:41:0x00e1 -> B:103:0x001f). Please submit an issue!!! */
@@ -54,77 +51,77 @@ public class EventTrackFeed {
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:71:0x011d -> B:105:0x00d0). Please submit an issue!!! */
         static {
             int[] iArr = new int[CircleConstants.CIRCLE_FROM_PAGE.values().length];
-            f19112a = iArr;
+            a = iArr;
             try {
                 iArr[CircleConstants.CIRCLE_FROM_PAGE.CIRCLE_NOTIFY.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f19112a[CircleConstants.CIRCLE_FROM_PAGE.FEED_LIST_ADAPTER.ordinal()] = 2;
+                a[CircleConstants.CIRCLE_FROM_PAGE.FEED_LIST_ADAPTER.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f19112a[CircleConstants.CIRCLE_FROM_PAGE.LINK.ordinal()] = 3;
+                a[CircleConstants.CIRCLE_FROM_PAGE.LINK.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f19112a[CircleConstants.CIRCLE_FROM_PAGE.RECOMMEND_CIRCLE.ordinal()] = 4;
+                a[CircleConstants.CIRCLE_FROM_PAGE.RECOMMEND_CIRCLE.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f19112a[CircleConstants.CIRCLE_FROM_PAGE.EXPLORE_MORE.ordinal()] = 5;
+                a[CircleConstants.CIRCLE_FROM_PAGE.EXPLORE_MORE.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
             try {
-                f19112a[CircleConstants.CIRCLE_FROM_PAGE.FIND_CIRCLE_MINE.ordinal()] = 6;
+                a[CircleConstants.CIRCLE_FROM_PAGE.FIND_CIRCLE_MINE.ordinal()] = 6;
             } catch (NoSuchFieldError e6) {
             }
             try {
-                f19112a[CircleConstants.CIRCLE_FROM_PAGE.JOINED_CIRCLE.ordinal()] = 7;
+                a[CircleConstants.CIRCLE_FROM_PAGE.JOINED_CIRCLE.ordinal()] = 7;
             } catch (NoSuchFieldError e7) {
             }
             try {
-                f19112a[CircleConstants.CIRCLE_FROM_PAGE.FIND_CIRCLE_DISCUSS_LIST.ordinal()] = 8;
+                a[CircleConstants.CIRCLE_FROM_PAGE.FIND_CIRCLE_DISCUSS_LIST.ordinal()] = 8;
             } catch (NoSuchFieldError e8) {
             }
             try {
-                f19112a[CircleConstants.CIRCLE_FROM_PAGE.CIRCLE_POST_DETAILS.ordinal()] = 9;
+                a[CircleConstants.CIRCLE_FROM_PAGE.CIRCLE_POST_DETAILS.ordinal()] = 9;
             } catch (NoSuchFieldError e9) {
             }
             try {
-                f19112a[CircleConstants.CIRCLE_FROM_PAGE.HOME_RECOMMEND_CIRCLE.ordinal()] = 10;
+                a[CircleConstants.CIRCLE_FROM_PAGE.HOME_RECOMMEND_CIRCLE.ordinal()] = 10;
             } catch (NoSuchFieldError e10) {
             }
             try {
-                f19112a[CircleConstants.CIRCLE_FROM_PAGE.CITY_JOIN_CIRCLE_FEED.ordinal()] = 11;
+                a[CircleConstants.CIRCLE_FROM_PAGE.CITY_JOIN_CIRCLE_FEED.ordinal()] = 11;
             } catch (NoSuchFieldError e11) {
             }
             try {
-                f19112a[CircleConstants.CIRCLE_FROM_PAGE.RECOMMEND_JOIN_CIRCLE_FEED.ordinal()] = 12;
+                a[CircleConstants.CIRCLE_FROM_PAGE.RECOMMEND_JOIN_CIRCLE_FEED.ordinal()] = 12;
             } catch (NoSuchFieldError e12) {
             }
             try {
-                f19112a[CircleConstants.CIRCLE_FROM_PAGE.USER_INFO_JOIN_CIRCLE_FEED.ordinal()] = 13;
+                a[CircleConstants.CIRCLE_FROM_PAGE.USER_INFO_JOIN_CIRCLE_FEED.ordinal()] = 13;
             } catch (NoSuchFieldError e13) {
             }
             try {
-                f19112a[CircleConstants.CIRCLE_FROM_PAGE.FEED_DETAIL_JOIN_CIRCLE_FEED.ordinal()] = 14;
+                a[CircleConstants.CIRCLE_FROM_PAGE.FEED_DETAIL_JOIN_CIRCLE_FEED.ordinal()] = 14;
             } catch (NoSuchFieldError e14) {
             }
             try {
-                f19112a[CircleConstants.CIRCLE_FROM_PAGE.CIRCLE_MORE_LIST.ordinal()] = 15;
+                a[CircleConstants.CIRCLE_FROM_PAGE.CIRCLE_MORE_LIST.ordinal()] = 15;
             } catch (NoSuchFieldError e15) {
             }
             try {
-                f19112a[CircleConstants.CIRCLE_FROM_PAGE.NOTE_TOP_JOIN.ordinal()] = 16;
+                a[CircleConstants.CIRCLE_FROM_PAGE.NOTE_TOP_JOIN.ordinal()] = 16;
             } catch (NoSuchFieldError e16) {
             }
             try {
-                f19112a[CircleConstants.CIRCLE_FROM_PAGE.NOTE_FIXED_JOIN.ordinal()] = 17;
+                a[CircleConstants.CIRCLE_FROM_PAGE.NOTE_FIXED_JOIN.ordinal()] = 17;
             } catch (NoSuchFieldError e17) {
             }
             try {
-                f19112a[CircleConstants.CIRCLE_FROM_PAGE.NOTE_DOWN_JOIN.ordinal()] = 18;
+                a[CircleConstants.CIRCLE_FROM_PAGE.NOTE_DOWN_JOIN.ordinal()] = 18;
             } catch (NoSuchFieldError e18) {
             }
         }
@@ -139,7 +136,7 @@ public class EventTrackFeed {
         if (circle_from_page == null) {
             return circleSource;
         }
-        int i = AnonymousClass1.f19112a[circle_from_page.ordinal()];
+        int i = AnonymousClass1.a[circle_from_page.ordinal()];
         if (i != 1) {
             switch (i) {
                 case 4:
@@ -184,7 +181,7 @@ public class EventTrackFeed {
         if (circle_from_page == null) {
             return circleSource;
         }
-        int i4 = AnonymousClass1.f19112a[circle_from_page.ordinal()];
+        int i4 = AnonymousClass1.a[circle_from_page.ordinal()];
         if (i4 != 1) {
             return i4 != 2 ? i4 != 3 ? a(circle_from_page) : m(i3) : k(i2);
         }
@@ -254,12 +251,12 @@ public class EventTrackFeed {
     }
 
     public static FeedProtos.FeedProto.Builder a(FeedProtos.Event event, BluedIngSelfFeed bluedIngSelfFeed, FeedProtos.NoteSource noteSource) {
-        FeedProtos.FeedProto.Builder a2 = a(event, bluedIngSelfFeed);
+        FeedProtos.FeedProto.Builder a = a(event, bluedIngSelfFeed);
         if (noteSource != null) {
-            a2.setNoteSource(noteSource);
+            a.setNoteSource(noteSource);
             ByteDanceEvent.a(event.name(), noteSource);
         }
-        return a2;
+        return a;
     }
 
     public static FeedProtos.FeedProto.Builder a(FeedProtos.Event event, BluedIngSelfFeed bluedIngSelfFeed, FeedProtos.NoteSource noteSource, boolean z, String str) {
@@ -267,11 +264,11 @@ public class EventTrackFeed {
     }
 
     public static FeedProtos.FeedProto.Builder a(FeedProtos.Event event, BluedIngSelfFeed bluedIngSelfFeed, FeedProtos.SourcePage sourcePage) {
-        FeedProtos.FeedProto.Builder a2 = a(event, bluedIngSelfFeed, 0);
-        if (a2 != null) {
-            a2.setSourcePage(sourcePage);
+        FeedProtos.FeedProto.Builder a = a(event, bluedIngSelfFeed, 0);
+        if (a != null) {
+            a.setSourcePage(sourcePage);
         }
-        return a2;
+        return a;
     }
 
     public static FeedProtos.FeedProto.Builder a(FeedProtos.Event event, FeedProtos.CircleSource circleSource, MyCircleModel myCircleModel) {
@@ -351,7 +348,7 @@ public class EventTrackFeed {
     }
 
     public static String a() {
-        return CommunityManager.f19086a.a().t();
+        return CommunityManager.a.a().t();
     }
 
     public static String a(String str) {
@@ -365,11 +362,11 @@ public class EventTrackFeed {
     }
 
     public static void a(BluedIngSelfFeed bluedIngSelfFeed, int i, String str) {
-        FeedProtos.FeedProto.Builder a2 = a(FeedProtos.Event.FEED_COMMENT_SEND_BTN_CLICK, bluedIngSelfFeed, i);
-        if (a2 != null) {
-            a2.setTopicId(a(str)).setMode(a());
+        FeedProtos.FeedProto.Builder a = a(FeedProtos.Event.FEED_COMMENT_SEND_BTN_CLICK, bluedIngSelfFeed, i);
+        if (a != null) {
+            a.setTopicId(a(str)).setMode(a());
         }
-        a(a2);
+        a(a);
         FeedProtos.SourcePage f = f(i);
         if (f == null || bluedIngSelfFeed == null) {
             return;
@@ -390,11 +387,11 @@ public class EventTrackFeed {
     }
 
     public static void a(BluedIngSelfFeed bluedIngSelfFeed, FeedProtos.SourcePage sourcePage, boolean z) {
-        FeedProtos.FeedProto.Builder a2 = a(FeedProtos.Event.FEED_LIKE_BTN_CLICK, bluedIngSelfFeed, sourcePage);
-        if (a2 != null) {
-            a2.setIsGuide(z);
+        FeedProtos.FeedProto.Builder a = a(FeedProtos.Event.FEED_LIKE_BTN_CLICK, bluedIngSelfFeed, sourcePage);
+        if (a != null) {
+            a.setIsGuide(z);
         }
-        a(a2);
+        a(a);
         if (sourcePage != null) {
             JSONObject jSONObject = new JSONObject();
             try {
@@ -421,16 +418,16 @@ public class EventTrackFeed {
 
     public static void a(FeedProtos.Event event, int i) {
         String str = "punch";
-        if (i != 1102 || CommunityManager.f19086a.a().a() == null) {
+        if (i != 1102 || CommunityManager.a.a().a() == null) {
             if (i != 1101) {
                 str = i == 6 ? "shape" : "update";
             }
-        } else if (CommunityManager.f19086a.a().a().extra_bubble_type == 2) {
+        } else if (CommunityManager.a.a().a().extra_bubble_type == 2) {
             str = "new_activity";
-        } else if (CommunityManager.f19086a.a().a().extra_bubble_type == 1) {
+        } else if (CommunityManager.a.a().a().extra_bubble_type == 1) {
             str = "predestined";
-        } else if (CommunityManager.f19086a.a().a().extra_bubble_type != 3) {
-            str = CommunityManager.f19086a.a().a().extra_bubble_type == 4 ? "lost" : CommunityManager.f19086a.a().a().extra_bubble_type == 5 ? "location_newface" : CommunityManager.f19086a.a().a().extra_bubble_type == 6 ? UserFindResult.USER_SORT_BY.ONLINE : null;
+        } else if (CommunityManager.a.a().a().extra_bubble_type != 3) {
+            str = CommunityManager.a.a().a().extra_bubble_type == 4 ? "lost" : CommunityManager.a.a().a().extra_bubble_type == 5 ? "location_newface" : CommunityManager.a.a().a().extra_bubble_type == 6 ? "online" : null;
         }
         if (event != null) {
             EventTrackUtils.a(FeedProtos.FeedProto.newBuilder().setEvent(event).setMode(a(a())).setType(a(str)).build());
@@ -452,9 +449,9 @@ public class EventTrackFeed {
             } else if (i == 5) {
                 str2 = "5";
             } else if (i == 6) {
-                str2 = "6";
+                str2 = ATAdConst.ATDevFrameworkType.FLUTTER;
             } else if (i == 7) {
-                str2 = "7";
+                str2 = ATAdConst.ATDevFrameworkType.ADOBIE_AIR;
             } else if (i == 8) {
                 str2 = "8";
             } else if (i == 9) {
@@ -500,9 +497,9 @@ public class EventTrackFeed {
                 z8 = MarkDownLinkHelper.a(bluedIngSelfFeed.share_s_t_des);
                 str4 = bluedIngSelfFeed.share_s_t_did;
             } else if (!bluedIngSelfFeed.isRepost() || bluedIngSelfFeed.repost.share_s_t_des == null) {
-                boolean a2 = (!bluedIngSelfFeed.isRepost() || bluedIngSelfFeed.repost == null || bluedIngSelfFeed.repost.feed_content == null) ? false : MarkDownLinkHelper.a(bluedIngSelfFeed.repost.feed_content);
-                boolean z9 = a2;
-                if (!a2) {
+                boolean a = (!bluedIngSelfFeed.isRepost() || bluedIngSelfFeed.repost == null || bluedIngSelfFeed.repost.feed_content == null) ? false : MarkDownLinkHelper.a(bluedIngSelfFeed.repost.feed_content);
+                boolean z9 = a;
+                if (!a) {
                     z9 = MarkDownLinkHelper.a(bluedIngSelfFeed.feed_content);
                 }
                 str4 = "";
@@ -522,13 +519,13 @@ public class EventTrackFeed {
     }
 
     public static void a(FeedProtos.Event event, BluedIngSelfFeed bluedIngSelfFeed, int i, int i2, boolean z, long j, int i3) {
-        FeedProtos.FeedProto.Builder a2 = a(event, bluedIngSelfFeed, i, i2, z, j);
+        FeedProtos.FeedProto.Builder a = a(event, bluedIngSelfFeed, i, i2, z, j);
         if (bluedIngSelfFeed.is_third_ads == 1) {
-            a2.setId(String.valueOf(bluedIngSelfFeed.ads_id));
+            a.setId(String.valueOf(bluedIngSelfFeed.ads_id));
         } else {
-            a2.setId(a(bluedIngSelfFeed.feed_id));
+            a.setId(a(bluedIngSelfFeed.feed_id));
         }
-        a(a2);
+        a(a);
         ByteDanceEvent.a(event.name(), i2, i3);
     }
 
@@ -593,11 +590,11 @@ public class EventTrackFeed {
             eventLogData2 = new EventLogData();
         }
         if (event != null) {
-            String a2 = a(eventLogData2.getUid());
+            String a = a(eventLogData2.getUid());
             if (event == FeedProtos.Event.ACTIVITY_DETAIL_PAGE_SHOW) {
-                a2 = a(eventLogData2.getEventId());
+                a = a(eventLogData2.getEventId());
             }
-            EventTrackUtils.a(FeedProtos.FeedProto.newBuilder().setEvent(event).setActivityId(a(eventLogData2.getEventId())).setTargetUid(a(eventLogData2.getEventManagerUid())).setId(a2).setMode(a(eventLogData2.mode)).setSourcePage(eventLogData2.getSourcePage() != null ? eventLogData2.getSourcePage() : FeedProtos.SourcePage.UNKNOWN_SOURCE_PAGE).build());
+            EventTrackUtils.a(FeedProtos.FeedProto.newBuilder().setEvent(event).setActivityId(a(eventLogData2.getEventId())).setTargetUid(a(eventLogData2.getEventManagerUid())).setId(a).setMode(a(eventLogData2.mode)).setSourcePage(eventLogData2.getSourcePage() != null ? eventLogData2.getSourcePage() : FeedProtos.SourcePage.UNKNOWN_SOURCE_PAGE).build());
         }
     }
 
@@ -690,7 +687,7 @@ public class EventTrackFeed {
         if (event == null || sourcePage == null) {
             return;
         }
-        EventTrackUtils.a(FeedProtos.FeedProto.newBuilder().setEvent(event).setSourcePage(sourcePage).setMode(CommunityManager.f19086a.a().t()).build());
+        EventTrackUtils.a(FeedProtos.FeedProto.newBuilder().setEvent(event).setSourcePage(sourcePage).setMode(CommunityManager.a.a().t()).build());
     }
 
     public static void a(FeedProtos.Event event, FeedProtos.SourcePage sourcePage, int i) {
@@ -704,7 +701,7 @@ public class EventTrackFeed {
         if (event == null || sourcePage == null) {
             return;
         }
-        EventTrackUtils.a(FeedProtos.FeedProto.newBuilder().setEvent(event).setSourcePage(sourcePage).setId(a(str)).setMode(CommunityManager.f19086a.a().t()).build());
+        EventTrackUtils.a(FeedProtos.FeedProto.newBuilder().setEvent(event).setSourcePage(sourcePage).setId(a(str)).setMode(CommunityManager.a.a().t()).build());
     }
 
     public static void a(FeedProtos.Event event, FeedProtos.SourcePage sourcePage, String str, String str2, String str3) {
@@ -1102,7 +1099,7 @@ public class EventTrackFeed {
     }
 
     public static void b(FeedProtos.Event event, BluedIngSelfFeed bluedIngSelfFeed, FeedProtos.NoteSource noteSource) {
-        a(event, bluedIngSelfFeed, noteSource, CommunityManager.f19086a.a().e(), -1, 0L);
+        a(event, bluedIngSelfFeed, noteSource, CommunityManager.a.a().e(), -1, 0L);
     }
 
     public static void b(FeedProtos.Event event, BluedIngSelfFeed bluedIngSelfFeed, FeedProtos.SourcePage sourcePage) {
@@ -1213,7 +1210,7 @@ public class EventTrackFeed {
     }
 
     public static void c(FeedProtos.Event event, String str, int i) {
-        String str2 = i == 4 ? "me" : i == 3 ? "fans" : i == 2 ? "follow" : i == 1 ? "follow_fans" : i == 0 ? "all" : b.dO;
+        String str2 = i == 4 ? "me" : i == 3 ? "fans" : i == 2 ? "follow" : i == 1 ? "follow_fans" : i == 0 ? "all" : "cancel";
         if (event != null) {
             EventTrackUtils.a(FeedProtos.FeedProto.newBuilder().setEvent(event).setFeedId(a(str)).setId(a(str2)).build());
         }

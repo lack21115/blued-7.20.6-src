@@ -32,7 +32,7 @@ public class MiuiPushReceiver extends PushMessageReceiver {
             Log.d("Assist_XM", "onNotificationMessageClicked receive message ...");
             Log.d("Assist_XM", "onNotificationMessageClicked receive message:".concat(String.valueOf(miPushMessage)));
             if (context != null && miPushMessage != null) {
-                MessageBean messageBean = new MessageBean(context, "payload", miPushMessage.getContent());
+                MessageBean messageBean = new MessageBean(context, AssistPushConsts.MSG_TYPE_PAYLOAD, miPushMessage.getContent());
                 messageBean.setMessageSource(AssistPushConsts.XM_PREFIX);
                 MessageManger.getInstance().addMessage(messageBean);
             }
@@ -48,7 +48,7 @@ public class MiuiPushReceiver extends PushMessageReceiver {
             Log.d("Assist_XM", "onReceivePassThroughMessage receive meaasge ...");
             Log.d("Assist_XM", "onReceivePassThroughMessage receive meaasge:".concat(String.valueOf(miPushMessage)));
             if (context != null && miPushMessage != null) {
-                MessageBean messageBean = new MessageBean(context, "payload", miPushMessage.getContent());
+                MessageBean messageBean = new MessageBean(context, AssistPushConsts.MSG_TYPE_PAYLOAD, miPushMessage.getContent());
                 messageBean.setMessageSource(AssistPushConsts.XM_PREFIX);
                 MessageManger.getInstance().addMessage(messageBean);
             }

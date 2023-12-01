@@ -3,6 +3,8 @@ package com.anythink.china.common.a;
 import android.os.SystemClock;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.Window;
+import com.android.internal.content.NativeLibraryHelper;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -26,13 +28,9 @@ public abstract class a {
     public static final int k = 3;
     public static final int l = 4;
     private static final String u = a.class.getSimpleName();
-
-    /* renamed from: a  reason: collision with root package name */
-    protected String f6292a;
+    protected String a;
     protected String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    protected boolean f6293c;
+    protected boolean c;
     protected boolean d;
     public int m = 0;
     protected long n;
@@ -42,7 +40,7 @@ public abstract class a {
     protected long r;
     protected long s;
     protected long t;
-    private InterfaceC0088a v;
+    private InterfaceC0048a v;
     private e w;
     private String x;
 
@@ -81,7 +79,7 @@ public abstract class a {
                             sb.append(a.this.n);
                             sb.append("  ,  endPos -> ");
                             sb.append(a.this.s);
-                            httpURLConnection8.setRequestProperty("Range", "bytes=" + a.this.n + "-");
+                            httpURLConnection8.setRequestProperty("Range", "bytes=" + a.this.n + NativeLibraryHelper.CLEAR_ABI_OVERRIDE);
                         } else {
                             a.this.s = httpURLConnection8.getContentLength();
                         }
@@ -91,7 +89,7 @@ public abstract class a {
                             if (httpURLConnection8 != null) {
                                 httpURLConnection8.disconnect();
                             }
-                        } else if (a.this.f6293c) {
+                        } else if (a.this.c) {
                             if (a.this.w != null) {
                                 a.this.w.j();
                             }
@@ -114,7 +112,7 @@ public abstract class a {
                                 if (httpURLConnection8 != null) {
                                     httpURLConnection8.disconnect();
                                 }
-                            } else if (a.this.f6293c) {
+                            } else if (a.this.c) {
                                 if (a.this.w != null) {
                                     a.this.w.j();
                                 }
@@ -132,23 +130,23 @@ public abstract class a {
                                 if (a.this.v != null) {
                                     a.this.v.a(a.this.w, a.this.n, a.this.s);
                                 }
-                                int a2 = a.this.a(a.this.b, inputStream);
-                                a.this.m = a2;
+                                int a = a.this.a(a.this.b, inputStream);
+                                a.this.m = a;
                                 if (inputStream != null) {
                                     inputStream.close();
                                 }
                                 a.this.q = System.currentTimeMillis();
                                 a.this.r = SystemClock.elapsedRealtime();
                                 a.this.w.i = a.this.r - a.this.p;
-                                if (a2 == 1) {
+                                if (a == 1) {
                                     String unused5 = a.u;
-                                    new StringBuilder("download success --> ").append(a.this.f6292a);
+                                    new StringBuilder("download success --> ").append(a.this.a);
                                     a.this.e();
-                                } else if (a2 == 2 || a2 == 3) {
+                                } else if (a == 2 || a == 3) {
                                     a.this.d();
                                 } else {
                                     String unused6 = a.u;
-                                    new StringBuilder("download fail --> ").append(a.this.f6292a);
+                                    new StringBuilder("download fail --> ").append(a.this.a);
                                     a.this.b(c.a("10000", "Save fail!(" + a.this.x + ")"));
                                 }
                                 if (httpURLConnection8 != null) {
@@ -291,7 +289,7 @@ public abstract class a {
 
     /* renamed from: com.anythink.china.common.a.a$a  reason: collision with other inner class name */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/china/common/a/a$a.class */
-    public interface InterfaceC0088a {
+    public interface InterfaceC0048a {
         void a(e eVar, long j);
 
         void a(e eVar, long j, long j2);
@@ -305,7 +303,7 @@ public abstract class a {
 
     public a(e eVar) {
         this.w = eVar;
-        this.f6292a = eVar.b;
+        this.a = eVar.b;
         this.b = eVar.n;
     }
 
@@ -314,12 +312,12 @@ public abstract class a {
         RandomAccessFile randomAccessFile;
         RandomAccessFile randomAccessFile2;
         Throwable th;
-        String a2 = com.anythink.china.common.c.b.a(str);
-        if (TextUtils.isEmpty(a2)) {
+        String a = com.anythink.china.common.c.b.a(str);
+        if (TextUtils.isEmpty(a)) {
             return 4;
         }
-        File file = new File(a2 + e);
-        File file2 = new File(a2 + f);
+        File file = new File(a + e);
+        File file2 = new File(a + f);
         try {
             if (!file.exists()) {
                 boolean createNewFile = file.createNewFile();
@@ -333,10 +331,10 @@ public abstract class a {
                 RandomAccessFile randomAccessFile4 = new RandomAccessFile(file2, "rws");
                 try {
                     if (this.n > 0) {
-                        Log.i(u, "(" + this.w.f6303c + ")  seek to -> " + this.n);
+                        Log.i(u, "(" + this.w.c + ")  seek to -> " + this.n);
                         randomAccessFile3.seek(this.n);
                     } else {
-                        Log.i(u, "(" + this.w.f6303c + ")  set temp file size -> " + this.s);
+                        Log.i(u, "(" + this.w.c + ")  set temp file size -> " + this.s);
                         randomAccessFile3.setLength(this.s);
                     }
                     byte[] bArr = new byte[1048576];
@@ -344,7 +342,7 @@ public abstract class a {
                     while (true) {
                         int read = inputStream.read(bArr);
                         if (-1 == read) {
-                            file.renameTo(new File(a2 + ".apk"));
+                            file.renameTo(new File(a + g));
                             if (file2.exists()) {
                                 file2.delete();
                             }
@@ -379,7 +377,7 @@ public abstract class a {
                                 e5.printStackTrace();
                                 return 2;
                             }
-                        } else if (this.f6293c) {
+                        } else if (this.c) {
                             if (this.w != null) {
                                 this.w.j();
                             }
@@ -712,21 +710,21 @@ public abstract class a {
     }
 
     private static int j() {
-        return 20000;
+        return Window.PROGRESS_SECONDARY_START;
     }
 
     public final void a() {
-        this.f6293c = true;
+        this.c = true;
     }
 
-    public final void a(InterfaceC0088a interfaceC0088a) {
-        this.v = interfaceC0088a;
-        this.f6293c = false;
+    public final void a(InterfaceC0048a interfaceC0048a) {
+        this.v = interfaceC0048a;
+        this.c = false;
         com.anythink.china.common.a.a.a.a().a((com.anythink.core.common.k.b.b) new AnonymousClass1());
     }
 
     protected final void a(b bVar) {
-        new StringBuilder("url: ").append(this.f6292a);
+        new StringBuilder("url: ").append(this.a);
         b(bVar);
     }
 
@@ -740,14 +738,14 @@ public abstract class a {
 
     protected final void b(b bVar) {
         StringBuilder sb = new StringBuilder("download failed --> ");
-        sb.append(this.f6292a);
+        sb.append(this.a);
         sb.append("(");
         sb.append(bVar.a());
         sb.append(")");
         this.w.n();
-        InterfaceC0088a interfaceC0088a = this.v;
-        if (interfaceC0088a != null) {
-            interfaceC0088a.a(this.w, bVar.b());
+        InterfaceC0048a interfaceC0048a = this.v;
+        if (interfaceC0048a != null) {
+            interfaceC0048a.a(this.w, bVar.b());
         }
     }
 
@@ -756,19 +754,19 @@ public abstract class a {
     }
 
     protected final void d() {
-        new StringBuilder("url: ").append(this.f6292a);
-        InterfaceC0088a interfaceC0088a = this.v;
-        if (interfaceC0088a != null) {
-            interfaceC0088a.a(this.w, this.t, this.s, this.m);
+        new StringBuilder("url: ").append(this.a);
+        InterfaceC0048a interfaceC0048a = this.v;
+        if (interfaceC0048a != null) {
+            interfaceC0048a.a(this.w, this.t, this.s, this.m);
         }
     }
 
     protected final void e() {
-        new StringBuilder("url: ").append(this.f6292a);
-        InterfaceC0088a interfaceC0088a = this.v;
-        if (interfaceC0088a != null) {
+        new StringBuilder("url: ").append(this.a);
+        InterfaceC0048a interfaceC0048a = this.v;
+        if (interfaceC0048a != null) {
             e eVar = this.w;
-            interfaceC0088a.a(eVar, eVar.i);
+            interfaceC0048a.a(eVar, eVar.i);
         }
     }
 }

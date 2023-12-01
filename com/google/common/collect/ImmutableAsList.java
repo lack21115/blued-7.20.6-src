@@ -32,7 +32,7 @@ abstract class ImmutableAsList<E> extends ImmutableList<E> {
 
     abstract ImmutableCollection<E> delegateCollection();
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public boolean isEmpty() {
         return delegateCollection().isEmpty();
     }

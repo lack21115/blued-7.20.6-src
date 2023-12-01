@@ -7,11 +7,11 @@ import java.util.Locale;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    public static boolean f39527a = true;
+    public static boolean f25836a = true;
     private static BeaconLogger b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static boolean f39528c = false;
+    private static boolean f25837c = false;
 
     private c() {
     }
@@ -84,7 +84,7 @@ public class c {
         synchronized (c.class) {
             try {
                 Log.i("beacon", "beacon logAble: " + z);
-                f39528c = z;
+                f25837c = z;
             } catch (Throwable th) {
                 throw th;
             }
@@ -95,7 +95,7 @@ public class c {
         boolean z;
         synchronized (c.class) {
             try {
-                z = f39528c;
+                z = f25837c;
             } catch (Throwable th) {
                 throw th;
             }
@@ -117,7 +117,7 @@ public class c {
     public static void b(boolean z) {
         synchronized (c.class) {
             try {
-                f39527a = z;
+                f25836a = z;
             } catch (Throwable th) {
                 throw th;
             }
@@ -128,7 +128,7 @@ public class c {
         boolean z;
         synchronized (c.class) {
             try {
-                z = f39527a;
+                z = f25836a;
             } catch (Throwable th) {
                 throw th;
             }

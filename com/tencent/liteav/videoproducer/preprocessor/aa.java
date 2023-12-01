@@ -7,20 +7,20 @@ import com.tencent.liteav.videobase.base.GLConstants;
 public final /* synthetic */ class aa implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final VideoPreprocessor f37048a;
+    private final VideoPreprocessor f23357a;
     private final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final com.tencent.liteav.videobase.videobase.a f37049c;
+    private final com.tencent.liteav.videobase.videobase.a f23358c;
     private final GLConstants.PixelBufferType d;
     private final GLConstants.PixelFormatType e;
     private final boolean f;
     private final ag g;
 
     private aa(VideoPreprocessor videoPreprocessor, int i, com.tencent.liteav.videobase.videobase.a aVar, GLConstants.PixelBufferType pixelBufferType, GLConstants.PixelFormatType pixelFormatType, boolean z, ag agVar) {
-        this.f37048a = videoPreprocessor;
+        this.f23357a = videoPreprocessor;
         this.b = i;
-        this.f37049c = aVar;
+        this.f23358c = aVar;
         this.d = pixelBufferType;
         this.e = pixelFormatType;
         this.f = z;
@@ -33,6 +33,6 @@ public final /* synthetic */ class aa implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        VideoPreprocessor.lambda$registerVideoProcessedListener$3(this.f37048a, this.b, this.f37049c, this.d, this.e, this.f, this.g);
+        VideoPreprocessor.lambda$registerVideoProcessedListener$3(this.f23357a, this.b, this.f23358c, this.d, this.e, this.f, this.g);
     }
 }

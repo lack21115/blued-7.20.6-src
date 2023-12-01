@@ -7,14 +7,14 @@ public class b {
     private static b b;
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f40860a;
+    private Context f27169a;
 
     /* renamed from: c  reason: collision with root package name */
-    private c f40861c;
+    private c f27170c;
 
     private b(Context context) {
-        this.f40860a = context;
-        this.f40861c = new c(context);
+        this.f27169a = context;
+        this.f27170c = new c(context);
     }
 
     public static b a(Context context) {
@@ -33,6 +33,6 @@ public class b {
     }
 
     public c a() {
-        return this.f40861c;
+        return this.f27170c;
     }
 }

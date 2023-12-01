@@ -1,7 +1,6 @@
 package com.blued.android.module.external_sense_library.display;
 
 import android.opengl.GLES20;
-import android.provider.BrowserContract;
 import android.util.Log;
 import com.blued.android.module.external_sense_library.glutils.OpenGLUtils;
 import com.blued.android.module.external_sense_library.glutils.TextureRotationUtil;
@@ -10,6 +9,7 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
 import java.util.LinkedList;
+import javax.microedition.khronos.opengles.GL10;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/external_sense_library/display/ImageInputRender.class */
 public class ImageInputRender {
@@ -32,7 +32,7 @@ public class ImageInputRender {
     private final float[] texturePoint = {0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f};
     private final LinkedList<Runnable> mRunOnDraw = new LinkedList<>();
     private final String mVertexShader = NO_FILTER_VERTEX_SHADER;
-    private final String mFragmentShader = "varying highp vec2 textureCoordinate;\n \nuniform sampler2D inputImageTexture;\n \nvoid main()\n{\n     gl_FragColor = texture2D(inputImageTexture, textureCoordinate);\n}";
+    private final String mFragmentShader = NO_FILTER_FRAGMENT_SHADER;
 
     public ImageInputRender() {
         FloatBuffer asFloatBuffer = ByteBuffer.allocateDirect(TextureRotationUtil.f.length * 4).order(ByteOrder.nativeOrder()).asFloatBuffer();
@@ -63,20 +63,20 @@ public class ImageInputRender {
         runPendingOnDrawTasks();
         if (this.mIsInitialized) {
             this.mGLCubeBuffer.position(0);
-            GLES20.glVertexAttribPointer(this.mGLAttribPosition, 2, 5126, false, 0, (Buffer) this.mGLCubeBuffer);
+            GLES20.glVertexAttribPointer(this.mGLAttribPosition, 2, (int) GL10.GL_FLOAT, false, 0, (Buffer) this.mGLCubeBuffer);
             GLES20.glEnableVertexAttribArray(this.mGLAttribPosition);
             this.mGLTextureBuffer.position(0);
-            GLES20.glVertexAttribPointer(this.mGLAttribTextureCoordinate, 2, 5126, false, 0, (Buffer) this.mGLTextureBuffer);
+            GLES20.glVertexAttribPointer(this.mGLAttribTextureCoordinate, 2, (int) GL10.GL_FLOAT, false, 0, (Buffer) this.mGLTextureBuffer);
             GLES20.glEnableVertexAttribArray(this.mGLAttribTextureCoordinate);
             if (i != -1) {
-                GLES20.glActiveTexture(33984);
-                GLES20.glBindTexture(3553, i);
+                GLES20.glActiveTexture(GL10.GL_TEXTURE0);
+                GLES20.glBindTexture(GL10.GL_TEXTURE_2D, i);
                 GLES20.glUniform1i(this.mGLUniformTexture, 0);
             }
             GLES20.glDrawArrays(5, 0, 4);
             GLES20.glDisableVertexAttribArray(this.mGLAttribPosition);
             GLES20.glDisableVertexAttribArray(this.mGLAttribTextureCoordinate);
-            GLES20.glBindTexture(3553, 0);
+            GLES20.glBindTexture(GL10.GL_TEXTURE_2D, 0);
             return 1;
         }
         return -1;
@@ -87,21 +87,21 @@ public class ImageInputRender {
         runPendingOnDrawTasks();
         if (this.mIsInitialized) {
             floatBuffer.position(0);
-            GLES20.glVertexAttribPointer(this.mGLAttribPosition, 2, 5126, false, 0, (Buffer) floatBuffer);
+            GLES20.glVertexAttribPointer(this.mGLAttribPosition, 2, (int) GL10.GL_FLOAT, false, 0, (Buffer) floatBuffer);
             GLES20.glEnableVertexAttribArray(this.mGLAttribPosition);
             floatBuffer2.position(0);
-            GLES20.glVertexAttribPointer(this.mGLAttribTextureCoordinate, 2, 5126, false, 0, (Buffer) floatBuffer2);
+            GLES20.glVertexAttribPointer(this.mGLAttribTextureCoordinate, 2, (int) GL10.GL_FLOAT, false, 0, (Buffer) floatBuffer2);
             GLES20.glEnableVertexAttribArray(this.mGLAttribTextureCoordinate);
             if (i != -1) {
-                GLES20.glActiveTexture(33984);
-                GLES20.glBindTexture(3553, i);
+                GLES20.glActiveTexture(GL10.GL_TEXTURE0);
+                GLES20.glBindTexture(GL10.GL_TEXTURE_2D, i);
                 GLES20.glUniform1i(this.mGLUniformTexture, 0);
             }
             GLES20.glDrawArrays(5, 0, 4);
             GLES20.glDisableVertexAttribArray(this.mGLAttribPosition);
             GLES20.glDisableVertexAttribArray(this.mGLAttribTextureCoordinate);
-            GLES20.glActiveTexture(33984);
-            GLES20.glBindTexture(3553, 0);
+            GLES20.glActiveTexture(GL10.GL_TEXTURE0);
+            GLES20.glBindTexture(GL10.GL_TEXTURE_2D, 0);
             return 1;
         }
         return -1;
@@ -110,7 +110,7 @@ public class ImageInputRender {
     protected void onInit() {
         this.mGLProgId = OpenGLUtils.a(this.mVertexShader, this.mFragmentShader);
         Log.d("fenghx", "The program ID for image is " + this.mGLProgId);
-        this.mGLAttribPosition = GLES20.glGetAttribLocation(this.mGLProgId, BrowserContract.Bookmarks.POSITION);
+        this.mGLAttribPosition = GLES20.glGetAttribLocation(this.mGLProgId, "position");
         this.mGLUniformTexture = GLES20.glGetUniformLocation(this.mGLProgId, "inputImageTexture");
         this.mGLAttribTextureCoordinate = GLES20.glGetAttribLocation(this.mGLProgId, "inputTextureCoordinate");
     }

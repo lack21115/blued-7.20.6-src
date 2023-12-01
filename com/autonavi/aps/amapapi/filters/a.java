@@ -8,11 +8,11 @@ import com.autonavi.aps.amapapi.utils.i;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    com.autonavi.aps.amapapi.model.a f9236a = null;
+    com.autonavi.aps.amapapi.model.a f6396a = null;
     long b = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    long f9237c = 0;
+    long f6397c = 0;
     private boolean h = true;
     int d = 0;
     long e = 0;
@@ -67,32 +67,32 @@ public final class a {
 
     public final com.autonavi.aps.amapapi.model.a a(com.autonavi.aps.amapapi.model.a aVar) {
         if (i.b() - this.e > 30000) {
-            this.f9236a = aVar;
+            this.f6396a = aVar;
             this.e = i.b();
-            return this.f9236a;
+            return this.f6396a;
         }
         this.e = i.b();
-        if (!i.a(this.f9236a) || !i.a(aVar)) {
+        if (!i.a(this.f6396a) || !i.a(aVar)) {
             this.b = i.b();
-            this.f9236a = aVar;
+            this.f6396a = aVar;
             return aVar;
-        } else if (aVar.getTime() != this.f9236a.getTime() || aVar.getAccuracy() >= 300.0f) {
+        } else if (aVar.getTime() != this.f6396a.getTime() || aVar.getAccuracy() >= 300.0f) {
             if ("gps".equals(aVar.getProvider())) {
                 this.b = i.b();
-                this.f9236a = aVar;
+                this.f6396a = aVar;
                 return aVar;
-            } else if (aVar.c() != this.f9236a.c()) {
+            } else if (aVar.c() != this.f6396a.c()) {
                 this.b = i.b();
-                this.f9236a = aVar;
+                this.f6396a = aVar;
                 return aVar;
-            } else if (aVar.getBuildingId() != null && !aVar.getBuildingId().equals(this.f9236a.getBuildingId()) && !TextUtils.isEmpty(aVar.getBuildingId())) {
+            } else if (aVar.getBuildingId() != null && !aVar.getBuildingId().equals(this.f6396a.getBuildingId()) && !TextUtils.isEmpty(aVar.getBuildingId())) {
                 this.b = i.b();
-                this.f9236a = aVar;
+                this.f6396a = aVar;
                 return aVar;
             } else {
                 this.d = aVar.getLocationType();
-                float a2 = i.a(aVar, this.f9236a);
-                float accuracy = this.f9236a.getAccuracy();
+                float a2 = i.a(aVar, this.f6396a);
+                float accuracy = this.f6396a.getAccuracy();
                 float accuracy2 = aVar.getAccuracy();
                 float f = accuracy2 - accuracy;
                 long b = i.b();
@@ -104,52 +104,52 @@ public final class a {
                     z = false;
                 }
                 if (z2 || z) {
-                    long j2 = this.f9237c;
+                    long j2 = this.f6397c;
                     if (j2 == 0) {
-                        this.f9237c = b;
+                        this.f6397c = b;
                     } else if (b - j2 > 30000) {
                         this.b = b;
-                        this.f9236a = aVar;
-                        this.f9237c = 0L;
+                        this.f6396a = aVar;
+                        this.f6397c = 0L;
                         return aVar;
                     }
-                    com.autonavi.aps.amapapi.model.a b2 = b(this.f9236a);
-                    this.f9236a = b2;
+                    com.autonavi.aps.amapapi.model.a b2 = b(this.f6396a);
+                    this.f6396a = b2;
                     return b2;
                 } else if (accuracy2 < 100.0f && i > 0) {
                     this.b = b;
-                    this.f9236a = aVar;
-                    this.f9237c = 0L;
+                    this.f6396a = aVar;
+                    this.f6397c = 0L;
                     return aVar;
                 } else {
                     if (accuracy2 <= 299.0f) {
-                        this.f9237c = 0L;
+                        this.f6397c = 0L;
                     }
                     if (a2 >= 10.0f || a2 <= 0.1d || accuracy2 <= 5.0f) {
                         if (f < 300.0f) {
                             this.b = i.b();
-                            this.f9236a = aVar;
+                            this.f6396a = aVar;
                             return aVar;
                         } else if (b - j >= 30000) {
                             this.b = i.b();
-                            this.f9236a = aVar;
+                            this.f6396a = aVar;
                             return aVar;
                         } else {
-                            com.autonavi.aps.amapapi.model.a b3 = b(this.f9236a);
-                            this.f9236a = b3;
+                            com.autonavi.aps.amapapi.model.a b3 = b(this.f6396a);
+                            this.f6396a = b3;
                             return b3;
                         }
                     } else if (f >= -300.0f) {
-                        com.autonavi.aps.amapapi.model.a b4 = b(this.f9236a);
-                        this.f9236a = b4;
+                        com.autonavi.aps.amapapi.model.a b4 = b(this.f6396a);
+                        this.f6396a = b4;
                         return b4;
                     } else if (accuracy / accuracy2 >= 2.0f) {
                         this.b = b;
-                        this.f9236a = aVar;
+                        this.f6396a = aVar;
                         return aVar;
                     } else {
-                        com.autonavi.aps.amapapi.model.a b5 = b(this.f9236a);
-                        this.f9236a = b5;
+                        com.autonavi.aps.amapapi.model.a b5 = b(this.f6396a);
+                        this.f6396a = b5;
                         return b5;
                     }
                 }
@@ -160,9 +160,9 @@ public final class a {
     }
 
     public final void a() {
-        this.f9236a = null;
+        this.f6396a = null;
         this.b = 0L;
-        this.f9237c = 0L;
+        this.f6397c = 0L;
         this.f = null;
         this.g = 0L;
     }

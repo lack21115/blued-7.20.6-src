@@ -3,8 +3,10 @@ package com.amap.api.maps.model;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.view.View;
 import com.amap.api.col.p0003sl.dw;
 import com.amap.api.maps.model.BaseOptions;
+import com.anythink.core.common.g.c;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -12,13 +14,11 @@ import java.util.List;
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/maps/model/CircleOptions.class */
 public final class CircleOptions extends BaseOptions implements Parcelable, Cloneable {
     public static final CircleOptionsCreator CREATOR = new CircleOptionsCreator();
-
-    /* renamed from: a  reason: collision with root package name */
-    String f5522a;
+    String a;
     private LatLng point = null;
     private double radius = 0.0d;
     private float strokeWidth = 10.0f;
-    private int strokeColor = -16777216;
+    private int strokeColor = View.MEASURED_STATE_MASK;
     private int fillColor = 0;
     private float zIndex = 0.0f;
     private boolean isVisible = true;
@@ -116,14 +116,14 @@ public final class CircleOptions extends BaseOptions implements Parcelable, Clon
     }
 
     /* renamed from: clone */
-    public final CircleOptions m2401clone() {
+    public final CircleOptions m8844clone() {
         try {
             super.clone();
         } catch (CloneNotSupportedException e) {
             e.printStackTrace();
         }
         CircleOptions circleOptions = new CircleOptions();
-        circleOptions.f5522a = this.f5522a;
+        circleOptions.a = this.a;
         circleOptions.point = this.point;
         circleOptions.radius = this.radius;
         circleOptions.strokeWidth = this.strokeWidth;
@@ -236,7 +236,7 @@ public final class CircleOptions extends BaseOptions implements Parcelable, Clon
         Bundle bundle = new Bundle();
         LatLng latLng = this.point;
         if (latLng != null) {
-            bundle.putDouble("lat", latLng.latitude);
+            bundle.putDouble(c.B, latLng.latitude);
             bundle.putDouble("lng", this.point.longitude);
         }
         parcel.writeBundle(bundle);
@@ -246,7 +246,7 @@ public final class CircleOptions extends BaseOptions implements Parcelable, Clon
         parcel.writeInt(this.fillColor);
         parcel.writeFloat(this.zIndex);
         parcel.writeByte(this.isVisible ? (byte) 1 : (byte) 0);
-        parcel.writeString(this.f5522a);
+        parcel.writeString(this.a);
         parcel.writeList(this.holeOptions);
         parcel.writeInt(this.dottedLineType);
         parcel.writeByte(this.isUsePolylineStroke ? (byte) 1 : (byte) 0);

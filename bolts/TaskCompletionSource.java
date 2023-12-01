@@ -4,18 +4,18 @@ package bolts;
 public class TaskCompletionSource<TResult> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Task<TResult> f3718a = new Task<>();
+    private final Task<TResult> f3670a = new Task<>();
 
     public Task<TResult> a() {
-        return this.f3718a;
+        return this.f3670a;
     }
 
     public boolean a(Exception exc) {
-        return this.f3718a.b(exc);
+        return this.f3670a.b(exc);
     }
 
     public boolean a(TResult tresult) {
-        return this.f3718a.b((Task<TResult>) tresult);
+        return this.f3670a.b((Task<TResult>) tresult);
     }
 
     public void b(Exception exc) {
@@ -25,7 +25,7 @@ public class TaskCompletionSource<TResult> {
     }
 
     public boolean b() {
-        return this.f3718a.i();
+        return this.f3670a.i();
     }
 
     public void c() {

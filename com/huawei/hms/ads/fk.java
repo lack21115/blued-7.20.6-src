@@ -45,7 +45,7 @@ public class fk {
     private static final String Z = "location_refresh_interval_time";
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f22483a = "smart_screen_slogan_time";
+    private static final String f8875a = "smart_screen_slogan_time";
     private static final String aA = "shield_other_splash_fashion";
     private static final String aB = "splashInteractCloseEffectiveTime";
     private static final int aC = 85;
@@ -76,7 +76,7 @@ public class fk {
     private static final String b = "clct_ctx_time";
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f22484c = "slogan_real_min_show_time";
+    private static final String f8876c = "slogan_real_min_show_time";
     private static final String d = "splash_app_day_impfc";
     private static final String e = "today_show_times";
     private static final String f = "today_date";
@@ -103,7 +103,7 @@ public class fk {
     private final SharedPreferences aq;
 
     /* renamed from: ar  reason: collision with root package name */
-    private SharedPreferences f22485ar;
+    private SharedPreferences f8877ar;
     private Map<String, String> at;
     private final byte[] av = new byte[0];
     private String aw;
@@ -115,9 +115,9 @@ public class fk {
         this.ax = L2;
         this.aq = L2.getSharedPreferences(V, 0);
         try {
-            this.f22485ar = context.getSharedPreferences(V, 0);
+            this.f8877ar = context.getSharedPreferences(V, 0);
         } catch (Throwable th) {
-            this.f22485ar = null;
+            this.f8877ar = null;
             ge.I(Code, "create sp error.");
         }
         al();
@@ -225,14 +225,14 @@ public class fk {
             return;
         }
         try {
-            if (this.f22485ar == null) {
+            if (this.f8877ar == null) {
                 if (ge.Code()) {
                     ge.Code(Code, "there is no old config file");
                     return;
                 }
                 return;
             }
-            Map<String, ?> all = this.f22485ar.getAll();
+            Map<String, ?> all = this.f8877ar.getAll();
             if (all != null && !all.isEmpty()) {
                 Set<Map.Entry<String, ?>> entrySet = all.entrySet();
                 if (entrySet != null && !entrySet.isEmpty()) {
@@ -374,7 +374,7 @@ public class fk {
             } else {
                 Code(edit, D, appConfigRsp.B(), 2000);
             }
-            edit.putLong(f22484c, appConfigRsp.Z());
+            edit.putLong(f8876c, appConfigRsp.Z());
             edit.putInt(d, appConfigRsp.I());
             Code(edit, g, appConfigRsp.D());
             edit.putLong(h, System.currentTimeMillis());
@@ -567,7 +567,7 @@ public class fk {
     public int L() {
         int i2;
         synchronized (this.av) {
-            i2 = this.aq.getInt(f22483a, 2000);
+            i2 = this.aq.getInt(f8875a, 2000);
         }
         return i2;
     }
@@ -711,7 +711,7 @@ public class fk {
 
     public void V(int i2) {
         synchronized (this.av) {
-            this.aq.edit().putInt(f22483a, i2).commit();
+            this.aq.edit().putInt(f8875a, i2).commit();
         }
     }
 
@@ -924,7 +924,7 @@ public class fk {
     public long b() {
         long j2;
         synchronized (this.av) {
-            j2 = this.aq.getLong(f22484c, 300L);
+            j2 = this.aq.getLong(f8876c, 300L);
         }
         return j2;
     }

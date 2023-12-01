@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import com.anythink.core.api.ATAdConst;
 import com.huawei.hms.aaid.constant.ErrorEnum;
 import com.huawei.hms.aaid.plugin.ProxyCenter;
 import com.huawei.hms.aaid.utils.PushPreferences;
@@ -45,19 +44,19 @@ public class PluginUtil {
     }
 
     private static void a(Context context, String str) {
-        j.a(context, str, null, ATAdConst.BIDDING_TYPE.BIDDING_LOSS_WITH_LOW_PRICE_IN_HB);
+        j.a(context, str, null, "102");
     }
 
     private static void a(Context context, String str, String str2, String str3) {
         HMSLog.i("PluginUtil", "onNotification");
         if (!g.a(context)) {
             HMSLog.i("PluginUtil", context.getPackageName() + " disable display notification.");
-            j.a(context, str, null, ATAdConst.BIDDING_TYPE.BIDDING_LOSS_WITH_LOW_PRICE_IN_NORMAL);
+            j.a(context, str, null, "103");
             return;
         }
         Intent intent = new Intent();
         intent.setAction("com.huawei.push.msg.NOTIFY_MSG");
-        Charset charset = k.f22848a;
+        Charset charset = k.f9240a;
         intent.putExtra("selfshow_info", str3.getBytes(charset));
         intent.putExtra("selfshow_token", str2.getBytes(charset));
         intent.setPackage(context.getPackageName());
@@ -125,7 +124,7 @@ public class PluginUtil {
         intent.setPackage(context.getPackageName());
         Bundle bundle = new Bundle();
         bundle.putString("message_id", str);
-        bundle.putByteArray(RemoteMessageConst.MSGBODY, str2.getBytes(k.f22848a));
+        bundle.putByteArray(RemoteMessageConst.MSGBODY, str2.getBytes(k.f9240a));
         bundle.putString("message_type", "received_message");
         return new p().a(context, bundle, intent);
     }

@@ -11,12 +11,8 @@ public abstract class BaseKeyframeAnimation<K, A> {
     private final List<? extends Keyframe<K>> d;
     private Keyframe<K> f;
     private Keyframe<K> g;
-
-    /* renamed from: a  reason: collision with root package name */
-    final List<AnimationListener> f4296a = new ArrayList(1);
-
-    /* renamed from: c  reason: collision with root package name */
-    private boolean f4297c = false;
+    final List<AnimationListener> a = new ArrayList(1);
+    private boolean c = false;
     private float e = 0.0f;
     private float h = -1.0f;
     private A i = null;
@@ -43,7 +39,7 @@ public abstract class BaseKeyframeAnimation<K, A> {
     abstract A a(Keyframe<K> keyframe, float f);
 
     public void a() {
-        this.f4297c = true;
+        this.c = true;
     }
 
     public void a(float f) {
@@ -51,7 +47,7 @@ public abstract class BaseKeyframeAnimation<K, A> {
         if (this.d.isEmpty()) {
             return;
         }
-        Keyframe<K> c2 = c();
+        Keyframe<K> c = c();
         if (f < i()) {
             f2 = i();
         } else {
@@ -64,15 +60,15 @@ public abstract class BaseKeyframeAnimation<K, A> {
             return;
         }
         this.e = f2;
-        Keyframe<K> c3 = c();
-        if (c2 == c3 && c3.e()) {
+        Keyframe<K> c2 = c();
+        if (c == c2 && c2.e()) {
             return;
         }
         b();
     }
 
     public void a(AnimationListener animationListener) {
-        this.f4296a.add(animationListener);
+        this.a.add(animationListener);
     }
 
     public void a(LottieValueCallback<A> lottieValueCallback) {
@@ -90,10 +86,10 @@ public abstract class BaseKeyframeAnimation<K, A> {
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f4296a.size()) {
+            if (i2 >= this.a.size()) {
                 return;
             }
-            this.f4296a.get(i2).a();
+            this.a.get(i2).a();
             i = i2 + 1;
         }
     }
@@ -122,23 +118,23 @@ public abstract class BaseKeyframeAnimation<K, A> {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public float d() {
-        if (this.f4297c) {
+        if (this.c) {
             return 0.0f;
         }
-        Keyframe<K> c2 = c();
-        if (c2.e()) {
+        Keyframe<K> c = c();
+        if (c.e()) {
             return 0.0f;
         }
-        return (this.e - c2.c()) / (c2.d() - c2.c());
+        return (this.e - c.c()) / (c.d() - c.c());
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     public float e() {
-        Keyframe<K> c2 = c();
-        if (c2.e()) {
+        Keyframe<K> c = c();
+        if (c.e()) {
             return 0.0f;
         }
-        return c2.f4419c.getInterpolation(d());
+        return c.c.getInterpolation(d());
     }
 
     float f() {
@@ -156,16 +152,16 @@ public abstract class BaseKeyframeAnimation<K, A> {
     }
 
     public A g() {
-        Keyframe<K> c2 = c();
+        Keyframe<K> c = c();
         float e = e();
-        if (this.b == null && c2 == this.g && this.h == e) {
+        if (this.b == null && c == this.g && this.h == e) {
             return this.i;
         }
-        this.g = c2;
+        this.g = c;
         this.h = e;
-        A a2 = a(c2, e);
-        this.i = a2;
-        return a2;
+        A a = a(c, e);
+        this.i = a;
+        return a;
     }
 
     public float h() {

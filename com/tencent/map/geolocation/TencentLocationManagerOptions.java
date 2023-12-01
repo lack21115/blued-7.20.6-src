@@ -7,14 +7,14 @@ import c.t.m.g.z5;
 public class TencentLocationManagerOptions {
 
     /* renamed from: a  reason: collision with root package name */
-    public static boolean f37254a = true;
+    public static boolean f23563a = true;
     public static String b = "";
 
     /* renamed from: c  reason: collision with root package name */
-    public static String f37255c = "";
+    public static String f23564c = "";
 
     public static String getExtraKey() {
-        return f37255c;
+        return f23564c;
     }
 
     public static String getKey() {
@@ -22,18 +22,18 @@ public class TencentLocationManagerOptions {
     }
 
     public static boolean isLoadLibraryEnabled() {
-        return f37254a;
+        return f23563a;
     }
 
     public static void setDebuggable(boolean z) {
-        z5.f4076a = z;
+        z5.f4028a = z;
     }
 
     public static boolean setExtraKey(String str) {
         if (TextUtils.isEmpty(str)) {
             return false;
         }
-        f37255c = str;
+        f23564c = str;
         return true;
     }
 
@@ -46,6 +46,6 @@ public class TencentLocationManagerOptions {
     }
 
     public static void setLoadLibraryEnabled(boolean z) {
-        f37254a = z;
+        f23563a = z;
     }
 }

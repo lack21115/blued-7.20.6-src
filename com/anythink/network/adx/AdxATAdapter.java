@@ -6,10 +6,8 @@ import com.anythink.basead.d.b;
 import com.anythink.basead.d.e;
 import com.anythink.basead.d.h;
 import com.anythink.basead.e.d;
-import com.anythink.core.api.ATAdConst;
 import com.anythink.core.api.ATBidRequestInfoListener;
 import com.anythink.core.api.ATInitMediation;
-import com.anythink.core.common.b.g;
 import com.anythink.core.common.e.j;
 import com.anythink.nativead.unitgroup.api.CustomNativeAdapter;
 import java.util.Map;
@@ -18,30 +16,28 @@ import java.util.Map;
 public class AdxATAdapter extends CustomNativeAdapter {
 
     /* renamed from: a  reason: collision with root package name */
-    e f8827a;
+    e f5987a;
     j b;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f8828c;
+    private boolean f5988c;
 
     private void a(Context context, Map<String, Object> map) {
-        this.b = (j) map.get(g.k.f6515a);
-        this.f8827a = new e(context, b.a.ADX_OFFER_REQUEST_TYPE, this.b);
+        this.b = (j) map.get("basead_params");
+        this.f5987a = new e(context, b.a.a, this.b);
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public void destory() {
-        if (this.f8827a != null) {
-            this.f8827a = null;
+        if (this.f5987a != null) {
+            this.f5987a = null;
         }
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public void getBidRequestInfo(Context context, Map<String, Object> map, Map<String, Object> map2, ATBidRequestInfoListener aTBidRequestInfoListener) {
-        j jVar = (j) map.get(g.k.f6515a);
+        j jVar = (j) map.get("basead_params");
         AdxBidRequestInfo adxBidRequestInfo = new AdxBidRequestInfo(context, jVar != null ? jVar.b : "");
         boolean equals = TextUtils.equals("1", ATInitMediation.getStringFromMap(map, "layout_type"));
-        this.f8828c = equals;
+        this.f5988c = equals;
         if (equals) {
             adxBidRequestInfo.fillAdAcceptType();
         }
@@ -50,35 +46,31 @@ public class AdxATAdapter extends CustomNativeAdapter {
         }
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public String getNetworkName() {
         return AdxATInitManager.getInstance().getNetworkName();
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public String getNetworkPlacementId() {
         j jVar = this.b;
         return jVar != null ? jVar.b : "";
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public String getNetworkSDKVersion() {
         return "";
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public void loadCustomNetworkAd(Context context, Map<String, Object> map, Map<String, Object> map2) {
         int i;
-        this.b = (j) map.get(g.k.f6515a);
-        this.f8827a = new e(context, b.a.ADX_OFFER_REQUEST_TYPE, this.b);
-        this.f8828c = TextUtils.equals("1", ATInitMediation.getStringFromMap(map, "layout_type"));
+        this.b = (j) map.get("basead_params");
+        this.f5987a = new e(context, b.a.a, this.b);
+        this.f5988c = TextUtils.equals("1", ATInitMediation.getStringFromMap(map, "layout_type"));
         final boolean equals = TextUtils.equals("0", ATInitMediation.getStringFromMap(map, "close_button", "0"));
         final boolean equals2 = TextUtils.equals("0", ATInitMediation.getStringFromMap(map, "v_m", "0"));
         final String stringFromMap = ATInitMediation.getStringFromMap(map, "video_autoplay", "1");
         int i2 = -1;
         if (map2 != null) {
-            i2 = ATInitMediation.getIntFromMap(map2, ATAdConst.KEY.AD_WIDTH);
-            i = ATInitMediation.getIntFromMap(map2, ATAdConst.KEY.AD_HEIGHT);
+            i2 = ATInitMediation.getIntFromMap(map2, "key_width");
+            i = ATInitMediation.getIntFromMap(map2, "key_height");
         } else {
             i = -1;
         }
@@ -99,15 +91,13 @@ public class AdxATAdapter extends CustomNativeAdapter {
         final Context applicationContext = context.getApplicationContext();
         final int i8 = i7;
         final int i9 = i6;
-        this.f8827a.a(new d() { // from class: com.anythink.network.adx.AdxATAdapter.1
-            @Override // com.anythink.basead.e.d
+        this.f5987a.a(new d() { // from class: com.anythink.network.adx.AdxATAdapter.1
             public final void onNativeAdLoadError(com.anythink.basead.c.e eVar) {
                 if (AdxATAdapter.this.mLoadListener != null) {
                     AdxATAdapter.this.mLoadListener.onAdLoadError(eVar.a(), eVar.b());
                 }
             }
 
-            @Override // com.anythink.basead.e.d
             public final void onNativeAdLoaded(h... hVarArr) {
                 AdxATNativeAd[] adxATNativeAdArr = new AdxATNativeAd[hVarArr.length];
                 int i10 = 0;
@@ -120,7 +110,7 @@ public class AdxATAdapter extends CustomNativeAdapter {
                     hVar.a(i8, i9);
                     hVar.a(equals2);
                     hVar.a(stringFromMap);
-                    adxATNativeAdArr[i11] = new AdxATNativeAd(applicationContext, hVar, AdxATAdapter.this.f8828c, equals);
+                    adxATNativeAdArr[i11] = new AdxATNativeAd(applicationContext, hVar, AdxATAdapter.this.f5988c, equals);
                     i10 = i11 + 1;
                 }
                 if (AdxATAdapter.this.mLoadListener != null) {

@@ -13,13 +13,9 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/DialogLiveConstellationAwardBinding.class */
 public final class DialogLiveConstellationAwardBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final FrameLayout f11751a;
+    public final FrameLayout a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f11752c;
+    public final ImageView c;
     public final TextView d;
     public final TextView e;
     public final LinearLayout f;
@@ -30,9 +26,9 @@ public final class DialogLiveConstellationAwardBinding implements ViewBinding {
 
     private DialogLiveConstellationAwardBinding(FrameLayout frameLayout, FrameLayout frameLayout2, ImageView imageView, ImageView imageView2, TextView textView, TextView textView2, LinearLayout linearLayout, RecyclerView recyclerView, RecyclerView recyclerView2, TextView textView3) {
         this.j = frameLayout;
-        this.f11751a = frameLayout2;
+        this.a = frameLayout2;
         this.b = imageView;
-        this.f11752c = imageView2;
+        this.c = imageView2;
         this.d = textView;
         this.e = textView2;
         this.f = linearLayout;
@@ -67,13 +63,13 @@ public final class DialogLiveConstellationAwardBinding implements ViewBinding {
                         if (textView2 != null) {
                             LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.ll_default);
                             if (linearLayout != null) {
-                                RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recycler_king);
-                                if (recyclerView != null) {
-                                    RecyclerView recyclerView2 = (RecyclerView) view.findViewById(R.id.recycler_spoken);
-                                    if (recyclerView2 != null) {
+                                RecyclerView findViewById = view.findViewById(R.id.recycler_king);
+                                if (findViewById != null) {
+                                    RecyclerView findViewById2 = view.findViewById(R.id.recycler_spoken);
+                                    if (findViewById2 != null) {
                                         TextView textView3 = (TextView) view.findViewById(R.id.tv_award_detail);
                                         if (textView3 != null) {
-                                            return new DialogLiveConstellationAwardBinding((FrameLayout) view, frameLayout, imageView, imageView2, textView, textView2, linearLayout, recyclerView, recyclerView2, textView3);
+                                            return new DialogLiveConstellationAwardBinding((FrameLayout) view, frameLayout, imageView, imageView2, textView, textView2, linearLayout, findViewById, findViewById2, textView3);
                                         }
                                         str = "tvAwardDetail";
                                     } else {
@@ -103,7 +99,6 @@ public final class DialogLiveConstellationAwardBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.j;

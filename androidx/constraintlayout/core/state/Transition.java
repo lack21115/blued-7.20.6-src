@@ -21,10 +21,10 @@ public class Transition implements TypedValues {
     public static final int START = 0;
 
     /* renamed from: a  reason: collision with root package name */
-    HashMap<Integer, HashMap<String, KeyPosition>> f2101a = new HashMap<>();
+    HashMap<Integer, HashMap<String, KeyPosition>> f2053a = new HashMap<>();
 
     /* renamed from: c  reason: collision with root package name */
-    private HashMap<String, WidgetState> f2102c = new HashMap<>();
+    private HashMap<String, WidgetState> f2054c = new HashMap<>();
     TypedBundle b = new TypedBundle();
     private int d = 0;
     private String e = null;
@@ -38,18 +38,18 @@ public class Transition implements TypedValues {
     public static class KeyPosition {
 
         /* renamed from: a  reason: collision with root package name */
-        int f2103a;
+        int f2055a;
         String b;
 
         /* renamed from: c  reason: collision with root package name */
-        int f2104c;
+        int f2056c;
         float d;
         float e;
 
         public KeyPosition(String str, int i, int i2, float f, float f2) {
             this.b = str;
-            this.f2103a = i;
-            this.f2104c = i2;
+            this.f2055a = i;
+            this.f2056c = i2;
             this.d = f;
             this.e = f2;
         }
@@ -64,14 +64,14 @@ public class Transition implements TypedValues {
         int j = -1;
 
         /* renamed from: a  reason: collision with root package name */
-        WidgetFrame f2105a = new WidgetFrame();
+        WidgetFrame f2057a = new WidgetFrame();
         WidgetFrame b = new WidgetFrame();
 
         /* renamed from: c  reason: collision with root package name */
-        WidgetFrame f2106c = new WidgetFrame();
-        MotionWidget e = new MotionWidget(this.f2105a);
+        WidgetFrame f2058c = new WidgetFrame();
+        MotionWidget e = new MotionWidget(this.f2057a);
         MotionWidget f = new MotionWidget(this.b);
-        MotionWidget g = new MotionWidget(this.f2106c);
+        MotionWidget g = new MotionWidget(this.f2058c);
 
         public WidgetState() {
             Motion motion = new Motion(this.e);
@@ -81,15 +81,15 @@ public class Transition implements TypedValues {
         }
 
         public WidgetFrame getFrame(int i) {
-            return i == 0 ? this.f2105a : i == 1 ? this.b : this.f2106c;
+            return i == 0 ? this.f2057a : i == 1 ? this.b : this.f2058c;
         }
 
         public void interpolate(int i, int i2, float f, Transition transition) {
             this.i = i2;
             this.j = i;
             this.d.setup(i, i2, 1.0f, System.nanoTime());
-            WidgetFrame.interpolate(i, i2, this.f2106c, this.f2105a, this.b, transition, f);
-            this.f2106c.interpolatedPos = f;
+            WidgetFrame.interpolate(i, i2, this.f2058c, this.f2057a, this.b, transition, f);
+            this.f2058c.interpolatedPos = f;
             this.d.interpolate(this.g, f, System.nanoTime(), this.h);
         }
 
@@ -113,7 +113,7 @@ public class Transition implements TypedValues {
 
         public void update(ConstraintWidget constraintWidget, int i) {
             if (i == 0) {
-                this.f2105a.update(constraintWidget);
+                this.f2057a.update(constraintWidget);
                 this.d.setStart(this.e);
             } else if (i == 1) {
                 this.b.update(constraintWidget);
@@ -134,12 +134,12 @@ public class Transition implements TypedValues {
     }
 
     private WidgetState a(String str, ConstraintWidget constraintWidget, int i) {
-        WidgetState widgetState = this.f2102c.get(str);
+        WidgetState widgetState = this.f2054c.get(str);
         WidgetState widgetState2 = widgetState;
         if (widgetState == null) {
             WidgetState widgetState3 = new WidgetState();
             this.b.applyDelta(widgetState3.d);
-            this.f2102c.put(str, widgetState3);
+            this.f2054c.put(str, widgetState3);
             widgetState2 = widgetState3;
             if (constraintWidget != null) {
                 widgetState3.update(constraintWidget, i);
@@ -186,7 +186,7 @@ public class Transition implements TypedValues {
                     @Override // androidx.constraintlayout.core.state.Interpolator
                     public final float getInterpolation(float f) {
                         float a2;
-                        a2 = Transition.a(String.this, f);
+                        a2 = Transition.a(str, f);
                         return a2;
                     }
                 };
@@ -282,11 +282,11 @@ public class Transition implements TypedValues {
         typedBundle.add(507, f2);
         a(str, null, 0).setKeyPosition(typedBundle);
         KeyPosition keyPosition = new KeyPosition(str, i, i2, f, f2);
-        HashMap<String, KeyPosition> hashMap = this.f2101a.get(Integer.valueOf(i));
+        HashMap<String, KeyPosition> hashMap = this.f2053a.get(Integer.valueOf(i));
         HashMap<String, KeyPosition> hashMap2 = hashMap;
         if (hashMap == null) {
             hashMap2 = new HashMap<>();
-            this.f2101a.put(Integer.valueOf(i), hashMap2);
+            this.f2053a.put(Integer.valueOf(i), hashMap2);
         }
         hashMap2.put(str, keyPosition);
     }
@@ -296,11 +296,11 @@ public class Transition implements TypedValues {
     }
 
     public void clear() {
-        this.f2102c.clear();
+        this.f2054c.clear();
     }
 
     public boolean contains(String str) {
-        return this.f2102c.containsKey(str);
+        return this.f2054c.containsKey(str);
     }
 
     public void fillKeyPositions(WidgetFrame widgetFrame, float[] fArr, float[] fArr2, float[] fArr3) {
@@ -311,7 +311,7 @@ public class Transition implements TypedValues {
             if (i > 100) {
                 return;
             }
-            HashMap<String, KeyPosition> hashMap = this.f2101a.get(Integer.valueOf(i));
+            HashMap<String, KeyPosition> hashMap = this.f2053a.get(Integer.valueOf(i));
             int i4 = i3;
             if (hashMap != null) {
                 KeyPosition keyPosition = hashMap.get(widgetFrame.widget.stringId);
@@ -319,7 +319,7 @@ public class Transition implements TypedValues {
                 if (keyPosition != null) {
                     fArr[i3] = keyPosition.d;
                     fArr2[i3] = keyPosition.e;
-                    fArr3[i3] = keyPosition.f2103a;
+                    fArr3[i3] = keyPosition.f2055a;
                     i4 = i3 + 1;
                 }
             }
@@ -331,7 +331,7 @@ public class Transition implements TypedValues {
     public KeyPosition findNextPosition(String str, int i) {
         KeyPosition keyPosition;
         while (i <= 100) {
-            HashMap<String, KeyPosition> hashMap = this.f2101a.get(Integer.valueOf(i));
+            HashMap<String, KeyPosition> hashMap = this.f2053a.get(Integer.valueOf(i));
             if (hashMap != null && (keyPosition = hashMap.get(str)) != null) {
                 return keyPosition;
             }
@@ -343,7 +343,7 @@ public class Transition implements TypedValues {
     public KeyPosition findPreviousPosition(String str, int i) {
         KeyPosition keyPosition;
         while (i >= 0) {
-            HashMap<String, KeyPosition> hashMap = this.f2101a.get(Integer.valueOf(i));
+            HashMap<String, KeyPosition> hashMap = this.f2053a.get(Integer.valueOf(i));
             if (hashMap != null && (keyPosition = hashMap.get(str)) != null) {
                 return keyPosition;
             }
@@ -361,7 +361,7 @@ public class Transition implements TypedValues {
     }
 
     public WidgetFrame getEnd(String str) {
-        WidgetState widgetState = this.f2102c.get(str);
+        WidgetState widgetState = this.f2054c.get(str);
         if (widgetState == null) {
             return null;
         }
@@ -374,15 +374,15 @@ public class Transition implements TypedValues {
     }
 
     public WidgetFrame getInterpolated(ConstraintWidget constraintWidget) {
-        return a(constraintWidget.stringId, null, 2).f2106c;
+        return a(constraintWidget.stringId, null, 2).f2058c;
     }
 
     public WidgetFrame getInterpolated(String str) {
-        WidgetState widgetState = this.f2102c.get(str);
+        WidgetState widgetState = this.f2054c.get(str);
         if (widgetState == null) {
             return null;
         }
-        return widgetState.f2106c;
+        return widgetState.f2058c;
     }
 
     public Interpolator getInterpolator() {
@@ -390,7 +390,7 @@ public class Transition implements TypedValues {
     }
 
     public int getKeyFrames(String str, float[] fArr, int[] iArr, int[] iArr2) {
-        return this.f2102c.get(str).d.buildKeyFrames(fArr, iArr, iArr2);
+        return this.f2054c.get(str).d.buildKeyFrames(fArr, iArr, iArr2);
     }
 
     public Motion getMotion(String str) {
@@ -405,7 +405,7 @@ public class Transition implements TypedValues {
             if (i > 100) {
                 return i3;
             }
-            HashMap<String, KeyPosition> hashMap = this.f2101a.get(Integer.valueOf(i));
+            HashMap<String, KeyPosition> hashMap = this.f2053a.get(Integer.valueOf(i));
             int i4 = i3;
             if (hashMap != null) {
                 i4 = i3;
@@ -420,24 +420,24 @@ public class Transition implements TypedValues {
 
     public float[] getPath(String str) {
         float[] fArr = new float[124];
-        this.f2102c.get(str).d.buildPath(fArr, 62);
+        this.f2054c.get(str).d.buildPath(fArr, 62);
         return fArr;
     }
 
     public WidgetFrame getStart(ConstraintWidget constraintWidget) {
-        return a(constraintWidget.stringId, null, 0).f2105a;
+        return a(constraintWidget.stringId, null, 0).f2057a;
     }
 
     public WidgetFrame getStart(String str) {
-        WidgetState widgetState = this.f2102c.get(str);
+        WidgetState widgetState = this.f2054c.get(str);
         if (widgetState == null) {
             return null;
         }
-        return widgetState.f2105a;
+        return widgetState.f2057a;
     }
 
     public boolean hasPositionKeyframes() {
-        return this.f2101a.size() > 0;
+        return this.f2053a.size() > 0;
     }
 
     public void interpolate(int i, int i2, float f) {
@@ -446,13 +446,13 @@ public class Transition implements TypedValues {
         if (easing != null) {
             f2 = (float) easing.get(f);
         }
-        for (String str : this.f2102c.keySet()) {
-            this.f2102c.get(str).interpolate(i, i2, f2, this);
+        for (String str : this.f2054c.keySet()) {
+            this.f2054c.get(str).interpolate(i, i2, f2, this);
         }
     }
 
     public boolean isEmpty() {
-        return this.f2102c.isEmpty();
+        return this.f2054c.isEmpty();
     }
 
     public void setTransitionProperties(TypedBundle typedBundle) {

@@ -9,15 +9,15 @@ public interface MainThreadSupport {
     public static class AndroidHandlerMainThreadSupport implements MainThreadSupport {
 
         /* renamed from: a  reason: collision with root package name */
-        private final Looper f28301a;
+        private final Looper f14611a;
 
         public AndroidHandlerMainThreadSupport(Looper looper) {
-            this.f28301a = looper;
+            this.f14611a = looper;
         }
 
         @Override // com.soft.blued.bluedBus.MainThreadSupport
         public Poster a(BluedBus bluedBus) {
-            return new HandlerPoster(bluedBus, this.f28301a, 10);
+            return new HandlerPoster(bluedBus, this.f14611a, 10);
         }
     }
 

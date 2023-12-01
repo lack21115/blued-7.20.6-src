@@ -15,7 +15,7 @@ import java.util.Map;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Map<String, String> f21947a = new HashMap<String, String>() { // from class: com.getui.gtc.dim.c.b.1
+    private static final Map<String, String> f8340a = new HashMap<String, String>() { // from class: com.getui.gtc.dim.c.b.1
         {
             put("dim-2-1-18-4", "dim-2-1-18-1");
             put("dim-2-1-18-3", "dim-2-1-18-4");
@@ -25,7 +25,7 @@ public final class b {
     };
 
     private static Object a(DimRequest dimRequest) {
-        String str = f21947a.get(dimRequest.getKey());
+        String str = f8340a.get(dimRequest.getKey());
         if (TextUtils.isEmpty(str)) {
             return null;
         }

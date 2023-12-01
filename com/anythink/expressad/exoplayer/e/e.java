@@ -4,11 +4,11 @@ package com.anythink.expressad.exoplayer.e;
 public interface e {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f7316a = 0;
+    public static final int f4477a = 0;
     public static final int b = 1;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final int f7317c = -1;
+    public static final int f4478c = -1;
 
     int a(f fVar, j jVar);
 

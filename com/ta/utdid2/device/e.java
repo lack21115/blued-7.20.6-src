@@ -10,7 +10,7 @@ public class e {
 
     public String e(String str) {
         String b = com.ta.utdid2.a.a.a.b(str);
-        if (g.m9885a(b)) {
+        if (g.m6840a(b)) {
             return null;
         }
         try {

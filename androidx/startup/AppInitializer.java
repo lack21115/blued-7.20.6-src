@@ -17,14 +17,14 @@ public final class AppInitializer {
     private static final Object e = new Object();
 
     /* renamed from: c  reason: collision with root package name */
-    final Context f3382c;
+    final Context f3334c;
     final Set<Class<? extends Initializer<?>>> b = new HashSet();
 
     /* renamed from: a  reason: collision with root package name */
-    final Map<Class<?>, Object> f3381a = new HashMap();
+    final Map<Class<?>, Object> f3333a = new HashMap();
 
     AppInitializer(Context context) {
-        this.f3382c = context.getApplicationContext();
+        this.f3334c = context.getApplicationContext();
     }
 
     public static AppInitializer getInstance(Context context) {
@@ -47,22 +47,22 @@ public final class AppInitializer {
             if (set.contains(cls)) {
                 throw new IllegalStateException(String.format("Cannot initialize %s. Cycle detected.", cls.getName()));
             }
-            if (this.f3381a.containsKey(cls)) {
-                obj = this.f3381a.get(cls);
+            if (this.f3333a.containsKey(cls)) {
+                obj = this.f3333a.get(cls);
             } else {
                 set.add(cls);
                 Initializer<?> newInstance = cls.getDeclaredConstructor(new Class[0]).newInstance(new Object[0]);
                 List<Class<? extends Initializer<?>>> dependencies = newInstance.dependencies();
                 if (!dependencies.isEmpty()) {
                     for (Class<? extends Initializer<?>> cls2 : dependencies) {
-                        if (!this.f3381a.containsKey(cls2)) {
+                        if (!this.f3333a.containsKey(cls2)) {
                             a(cls2, set);
                         }
                     }
                 }
-                Object create = newInstance.create(this.f3382c);
+                Object create = newInstance.create(this.f3334c);
                 set.remove(cls);
-                this.f3381a.put(cls, create);
+                this.f3333a.put(cls, create);
                 obj = create;
             }
             Trace.endSection();
@@ -76,8 +76,8 @@ public final class AppInitializer {
         try {
             try {
                 Trace.beginSection("Startup");
-                Bundle bundle = this.f3382c.getPackageManager().getProviderInfo(new ComponentName(this.f3382c.getPackageName(), InitializationProvider.class.getName()), 128).metaData;
-                String string = this.f3382c.getString(R.string.androidx_startup);
+                Bundle bundle = this.f3334c.getPackageManager().getProviderInfo(new ComponentName(this.f3334c.getPackageName(), InitializationProvider.class.getName()), 128).metaData;
+                String string = this.f3334c.getString(R.string.androidx_startup);
                 if (bundle != null) {
                     HashSet hashSet = new HashSet();
                     for (String str : bundle.keySet()) {

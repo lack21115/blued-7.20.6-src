@@ -45,12 +45,10 @@ public class OkHttpUtil {
     public static void downloadFile(Context context, String str, final StreamCallback streamCallback) {
         if (NetWorkUtil.hasNetworkPermission(context)) {
             withOkHttpClient().newCall(new Request.Builder().url(str).build()).enqueue(new Callback() { // from class: com.youzan.spiderman.utils.OkHttpUtil.2
-                @Override // okhttp3.Callback
                 public final void onFailure(Call call, IOException iOException) {
                     StreamCallback.this.fail();
                 }
 
-                @Override // okhttp3.Callback
                 public final void onResponse(Call call, Response response) throws IOException {
                     if (response.isSuccessful()) {
                         StreamCallback.this.success(response.body().byteStream());
@@ -66,14 +64,12 @@ public class OkHttpUtil {
     public static void downloadFile(Context context, String str, final File file, final FileCallback fileCallback) {
         if (NetWorkUtil.hasNetworkPermission(context)) {
             withOkHttpClient().newCall(new Request.Builder().url(str).build()).enqueue(new Callback() { // from class: com.youzan.spiderman.utils.OkHttpUtil.1
-                @Override // okhttp3.Callback
                 public final void onFailure(Call call, IOException iOException) {
                     fileCallback.fail(-1, iOException);
                 }
 
                 /* JADX WARN: Removed duplicated region for block: B:54:0x00f8 A[Catch: IOException -> 0x0124, TRY_ENTER, TRY_LEAVE, TryCatch #5 {IOException -> 0x0124, blocks: (B:51:0x00ec, B:54:0x00f8), top: B:66:0x00ec }] */
                 /* JADX WARN: Removed duplicated region for block: B:66:0x00ec A[EXC_TOP_SPLITTER, SYNTHETIC] */
-                @Override // okhttp3.Callback
                 /*
                     Code decompiled incorrectly, please refer to instructions dump.
                     To view partially-correct code enable 'Show inconsistent code' option in preferences

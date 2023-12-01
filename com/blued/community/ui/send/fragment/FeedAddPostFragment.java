@@ -22,6 +22,8 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import com.alipay.sdk.sys.a;
+import com.alipay.sdk.util.i;
 import com.app.share.model.ShareEntity;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.AppMethods;
@@ -64,6 +66,7 @@ import com.blued.community.ui.send.dialog.AlbumSelectDialogFragment;
 import com.blued.community.ui.send.dialog.SelectTopicDialogFragment;
 import com.blued.community.ui.send.fragment.FeedAddPostFragment;
 import com.blued.community.ui.send.manager.SelectPhotoManager;
+import com.blued.community.ui.send.model.ChildImageInfo;
 import com.blued.community.ui.send.model.FeedIntroduceExtra;
 import com.blued.community.ui.send.model.FeedIntroduceModel;
 import com.blued.community.ui.send.model.FeedTemplateExtra;
@@ -170,7 +173,6 @@ public class FeedAddPostFragment extends FeedAddPostBaseFragment {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.blued.community.view.CommonMultiItemAdapter
         /* renamed from: a */
         public void onConvert(CommonViewHolder commonViewHolder, final FeedTemplateModel feedTemplateModel, int i) {
             commonViewHolder.setImageUrl(R.id.item_feed_add_template_img, feedTemplateModel.getBackground_img(), 6.0f);
@@ -188,7 +190,6 @@ public class FeedAddPostFragment extends FeedAddPostBaseFragment {
             feedTemplateModel.setShowed(true);
         }
 
-        @Override // com.blued.community.view.CommonMultiItemAdapter
         public void onAddItemType() {
             addItemType(0, R.layout.item_feed_add_template_layout);
         }
@@ -206,7 +207,7 @@ public class FeedAddPostFragment extends FeedAddPostBaseFragment {
         this.aP = (ImageView) this.j.findViewById(R.id.iv_super_topic);
         this.aQ = (TextView) this.j.findViewById(R.id.tv_super_topic);
         if (CommunityServiceManager.a().D() == 1) {
-            if (CommunityManager.f19086a.a().s()) {
+            if (CommunityManager.a.a().s()) {
                 this.aP.setImageResource(R.drawable.feed_post_subject_icon);
             } else {
                 this.aP.setImageResource(R.drawable.feed_post_subject_icon_dark);
@@ -228,13 +229,12 @@ public class FeedAddPostFragment extends FeedAddPostBaseFragment {
                 FeedAddPostFragment.this.f(view);
             }
         }));
-        RecyclerView recyclerView = (RecyclerView) this.j.findViewById(R.id.rv_topic);
-        this.aR = recyclerView;
-        recyclerView.setLayoutManager(new LinearLayoutManager(this.f19992c, 0, false));
+        RecyclerView findViewById = this.j.findViewById(R.id.rv_topic);
+        this.aR = findViewById;
+        findViewById.setLayoutManager(new LinearLayoutManager(this.c, 0, false));
         FeedPostTopicAdapter feedPostTopicAdapter = new FeedPostTopicAdapter(this.aL);
         this.aS = feedPostTopicAdapter;
         feedPostTopicAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() { // from class: com.blued.community.ui.send.fragment.-$$Lambda$FeedAddPostFragment$6pA9sH_r7lpvNquPWDxafD0aWdw
-            @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemChildClickListener
             public final void onItemChildClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
                 FeedAddPostFragment.this.a(baseQuickAdapter, view, i);
             }
@@ -257,17 +257,17 @@ public class FeedAddPostFragment extends FeedAddPostBaseFragment {
             }
         }));
         this.br = (TextView) this.j.findViewById(R.id.feed_add_post_template_title_tv);
-        CardView cardView = (CardView) this.j.findViewById(R.id.feed_add_post_template_change);
-        this.bs = cardView;
-        cardView.setOnClickListener(new SingleClickProxy(new View.OnClickListener() { // from class: com.blued.community.ui.send.fragment.-$$Lambda$FeedAddPostFragment$ysS3au2oG2mcZxJJbJ9QO0mTW94
+        CardView findViewById = this.j.findViewById(R.id.feed_add_post_template_change);
+        this.bs = findViewById;
+        findViewById.setOnClickListener(new SingleClickProxy(new View.OnClickListener() { // from class: com.blued.community.ui.send.fragment.-$$Lambda$FeedAddPostFragment$ysS3au2oG2mcZxJJbJ9QO0mTW94
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 FeedAddPostFragment.this.d(view);
             }
         }));
-        RecyclerView recyclerView = (RecyclerView) this.j.findViewById(R.id.feed_add_post_template_rv);
-        this.bt = recyclerView;
-        recyclerView.setLayoutManager(new LinearLayoutManager(this.f19992c, 0, false));
+        RecyclerView findViewById2 = this.j.findViewById(R.id.feed_add_post_template_rv);
+        this.bt = findViewById2;
+        findViewById2.setLayoutManager(new LinearLayoutManager(this.c, 0, false));
         AnonymousClass1 anonymousClass1 = new AnonymousClass1();
         this.bu = anonymousClass1;
         this.bt.setAdapter(anonymousClass1);
@@ -391,11 +391,11 @@ public class FeedAddPostFragment extends FeedAddPostBaseFragment {
                 au();
                 return;
             }
-            SelectPhotoManager.a().b(this.ac.getData().get(i3));
-            AlbumSelectInfo value = this.az.f().getValue();
-            if (value != null) {
-                value.a(this.ac.getData().get(i3).mImagePath);
-                this.az.h().setValue(this.ac.getData().get(i3).mImagePath);
+            SelectPhotoManager.a().b((ChildImageInfo) this.ac.getData().get(i3));
+            AlbumSelectInfo albumSelectInfo = (AlbumSelectInfo) this.az.f().getValue();
+            if (albumSelectInfo != null) {
+                albumSelectInfo.a(((ChildImageInfo) this.ac.getData().get(i3)).mImagePath);
+                this.az.h().setValue(((ChildImageInfo) this.ac.getData().get(i3)).mImagePath);
             }
             i2 = i3 + 1;
         }
@@ -418,22 +418,22 @@ public class FeedAddPostFragment extends FeedAddPostBaseFragment {
         if (attentionFeedPostGuideModel == null) {
             return;
         }
-        FeedTemplateTitleModel a2 = FeedMethods.a(attentionFeedPostGuideModel.getQuestionnaire_data(), "个人主页进入发布引导");
+        FeedTemplateTitleModel a = FeedMethods.a(attentionFeedPostGuideModel.getQuestionnaire_data(), "个人主页进入发布引导");
         BluedTopic bluedTopic = null;
-        if (a2 == null) {
+        if (a == null) {
             BluedTopic b = FeedMethods.b(attentionFeedPostGuideModel.getAdmin_topic_data(), "个人主页进入发布引导");
             bluedTopic = b;
-            if (a2 != null) {
+            if (a != null) {
                 EventTrackFeed.a(FeedProtos.Event.FEED_PUBLISH_TOPIC_SHOW, b.super_did, this.aL);
                 bluedTopic = b;
             }
         }
         if (this.bE != 0 && this.bd.getVisibility() != 0) {
             LogUtils.c("个人主页进入发布引导--> templateFeedType: " + this.bE);
-        } else if (a2 != null) {
+        } else if (a != null) {
             au();
-            this.bB = a2;
-            this.br.setText(a2.getText());
+            this.bB = a;
+            this.br.setText(a.getText());
             CommunityPreferences.a("FeedAddPostUserPageGuideShow", TimeAndDateUtils.b());
         }
         if (bluedTopic == null || aU.size() >= 3) {
@@ -446,7 +446,7 @@ public class FeedAddPostFragment extends FeedAddPostBaseFragment {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void a(BaseQuickAdapter baseQuickAdapter, View view, int i) {
         if (view.getId() == R.id.root_layout) {
-            BluedTopic bluedTopic = this.aS.getData().get(i);
+            BluedTopic bluedTopic = (BluedTopic) this.aS.getData().get(i);
             d(bluedTopic);
             this.aS.notifyDataSetChanged();
             EventTrackFeed.f(FeedProtos.Event.FEED_PUBLISH_TOPIC_CLICK, bluedTopic.super_did);
@@ -486,7 +486,7 @@ public class FeedAddPostFragment extends FeedAddPostBaseFragment {
             if (iArr[1] > AppInfo.m - FeedMethods.c(100)) {
                 return;
             }
-            FeedGuidePop feedGuidePop = new FeedGuidePop(this.f19992c, getString(R.string.feed_post_introduce_guide_text), NinePatchUtils.GuideArrowPosition.RIGHT, false, 0, null, 0, 0, 0);
+            FeedGuidePop feedGuidePop = new FeedGuidePop(this.c, getString(R.string.feed_post_introduce_guide_text), NinePatchUtils.GuideArrowPosition.RIGHT, false, 0, (String) null, 0, 0, 0);
             this.bJ = feedGuidePop;
             feedGuidePop.setTopPadding(FeedMethods.a(9.5f));
             this.bJ.setBottomPadding(FeedMethods.a(8.5f));
@@ -550,7 +550,7 @@ public class FeedAddPostFragment extends FeedAddPostBaseFragment {
 
     private void aj() {
         if (CommunityServiceManager.a().D() == 1) {
-            if (CommunityManager.f19086a.a().s()) {
+            if (CommunityManager.a.a().s()) {
                 this.aP.setImageResource(R.drawable.feed_post_subject_icon);
             } else {
                 this.aP.setImageResource(R.drawable.feed_post_subject_icon_dark);
@@ -562,12 +562,10 @@ public class FeedAddPostFragment extends FeedAddPostBaseFragment {
         }
         ShapeHelper.b(this.aO, R.color.syc_x);
         this.ad = false;
-        ViewUtils.a(this.f19992c, aU, this.aT, false, new ViewUtils.ITopicListener() { // from class: com.blued.community.ui.send.fragment.FeedAddPostFragment.2
-            @Override // com.blued.community.utils.ViewUtils.ITopicListener
+        ViewUtils.a(this.c, aU, this.aT, false, new ViewUtils.ITopicListener() { // from class: com.blued.community.ui.send.fragment.FeedAddPostFragment.2
             public void a(View view) {
             }
 
-            @Override // com.blued.community.utils.ViewUtils.ITopicListener
             public void a(BluedTopic bluedTopic) {
                 FeedAddPostFragment.this.a(bluedTopic.super_did, bluedTopic.name);
             }
@@ -583,17 +581,17 @@ public class FeedAddPostFragment extends FeedAddPostBaseFragment {
             }
             i = i2 + 1;
         }
-        List<BluedTopic> data = this.aS.getData();
+        List data = this.aS.getData();
         int i3 = 0;
         while (true) {
             int i4 = i3;
             if (i4 >= data.size()) {
                 break;
             }
-            if (a(data.get(i4)) >= 0) {
-                data.get(i4).is_chosen = true;
+            if (a((BluedTopic) data.get(i4)) >= 0) {
+                ((BluedTopic) data.get(i4)).is_chosen = true;
             } else {
-                data.get(i4).is_chosen = false;
+                ((BluedTopic) data.get(i4)).is_chosen = false;
             }
             i3 = i4 + 1;
         }
@@ -643,14 +641,14 @@ public class FeedAddPostFragment extends FeedAddPostBaseFragment {
         this.W.setVisibility(8);
         EventTrackFeed.a(FeedProtos.Event.SUPER_TOPIC_SEARCH_SHOW);
         EventTrackFeed.a(FeedProtos.Event.FEED_PUBLISH_ADD_TOPIC_CLICK);
-        SelectTopicDialogFragment a2 = SelectTopicDialogFragment.f19940a.a(getFragmentManager(), this.bd.getVisibility() == 0, this.bE);
-        a2.a(new DialogInterface.OnDismissListener() { // from class: com.blued.community.ui.send.fragment.-$$Lambda$FeedAddPostFragment$k-lbMKynBnI2LdKCvDDW41ZREnA
+        SelectTopicDialogFragment a = SelectTopicDialogFragment.a.a(getFragmentManager(), this.bd.getVisibility() == 0, this.bE);
+        a.a(new DialogInterface.OnDismissListener() { // from class: com.blued.community.ui.send.fragment.-$$Lambda$FeedAddPostFragment$k-lbMKynBnI2LdKCvDDW41ZREnA
             @Override // android.content.DialogInterface.OnDismissListener
             public final void onDismiss(DialogInterface dialogInterface) {
                 FeedAddPostFragment.this.a(z, dialogInterface);
             }
         });
-        a2.a(new SelectTopicDialogFragment.OnTopicListener() { // from class: com.blued.community.ui.send.fragment.-$$Lambda$FeedAddPostFragment$w9kRqdBTpHIPU8_drKnnajbZOnE
+        a.a(new SelectTopicDialogFragment.OnTopicListener() { // from class: com.blued.community.ui.send.fragment.-$$Lambda$FeedAddPostFragment$w9kRqdBTpHIPU8_drKnnajbZOnE
             @Override // com.blued.community.ui.send.dialog.SelectTopicDialogFragment.OnTopicListener
             public final boolean chooseTopic(BluedTopic bluedTopic) {
                 boolean d;
@@ -664,7 +662,7 @@ public class FeedAddPostFragment extends FeedAddPostBaseFragment {
         int i = 8;
         if (this.ad) {
             this.Y.setVisibility(8);
-            this.T.setImageDrawable(BluedSkinUtils.b(this.f19992c, R.drawable.feed_post_not_at));
+            this.T.setImageDrawable(BluedSkinUtils.b(this.c, R.drawable.feed_post_not_at));
             this.T.setOnClickListener(new SingleClickProxy(new View.OnClickListener() { // from class: com.blued.community.ui.send.fragment.FeedAddPostFragment.3
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view) {
@@ -678,7 +676,7 @@ public class FeedAddPostFragment extends FeedAddPostBaseFragment {
                 i = 0;
             }
             checkBox.setVisibility(i);
-            if (CommunityManager.f19086a.a().s()) {
+            if (CommunityManager.a.a().s()) {
                 this.T.setImageResource(R.drawable.feed_post_tools_at_dark);
             } else {
                 this.T.setImageResource(R.drawable.feed_post_tools_at);
@@ -702,22 +700,22 @@ public class FeedAddPostFragment extends FeedAddPostBaseFragment {
         if (getString(R.string.feed_post_self_introduce_change).equalsIgnoreCase(this.bm.getText().toString())) {
             this.bE = 2;
             if (ao()) {
-                CommonAlertDialog.a(this.f19992c, getString(R.string.feed_post_introduce_change_title), getString(R.string.feed_post_introduce_change_des), getString(R.string.common_change), getResources().getColor(R.color.syc_g), new DialogInterface.OnClickListener() { // from class: com.blued.community.ui.send.fragment.-$$Lambda$FeedAddPostFragment$yS4kGppB40cE_FDHJJ9_poKNvwc
+                CommonAlertDialog.a(this.c, getString(R.string.feed_post_introduce_change_title), getString(R.string.feed_post_introduce_change_des), getString(R.string.common_change), getResources().getColor(R.color.syc_g), new DialogInterface.OnClickListener() { // from class: com.blued.community.ui.send.fragment.-$$Lambda$FeedAddPostFragment$yS4kGppB40cE_FDHJJ9_poKNvwc
                     @Override // android.content.DialogInterface.OnClickListener
                     public final void onClick(DialogInterface dialogInterface, int i) {
                         FeedAddPostFragment.this.c(dialogInterface, i);
                     }
-                }, getString(R.string.common_cancel), BluedSkinUtils.a(this.f19992c, R.color.syc_h), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
+                }, getString(R.string.common_cancel), BluedSkinUtils.a(this.c, R.color.syc_h), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
             } else {
                 ar();
             }
         } else if (!TextUtils.isEmpty(this.o.getText().toString()) || this.bd.getVisibility() == 0 || this.bE == 1) {
-            CommonAlertDialog.a(this.f19992c, (String) null, getString(R.string.feed_post_template_confirm_tips), getString(R.string.common_drop), getResources().getColor(R.color.syc_g), new DialogInterface.OnClickListener() { // from class: com.blued.community.ui.send.fragment.-$$Lambda$FeedAddPostFragment$MtUafxWkx4XtCR6cWY0yyKxYC4c
+            CommonAlertDialog.a(this.c, (String) null, getString(R.string.feed_post_template_confirm_tips), getString(R.string.common_drop), getResources().getColor(R.color.syc_g), new DialogInterface.OnClickListener() { // from class: com.blued.community.ui.send.fragment.-$$Lambda$FeedAddPostFragment$MtUafxWkx4XtCR6cWY0yyKxYC4c
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i) {
                     FeedAddPostFragment.this.b(dialogInterface, i);
                 }
-            }, getString(R.string.common_cancel), BluedSkinUtils.a(this.f19992c, R.color.syc_h), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
+            }, getString(R.string.common_cancel), BluedSkinUtils.a(this.c, R.color.syc_h), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
         } else {
             ar();
         }
@@ -830,11 +828,11 @@ public class FeedAddPostFragment extends FeedAddPostBaseFragment {
                 if (this.bE == 2) {
                     if (!ao()) {
                         for (int i = 0; i < this.ac.getData().size(); i++) {
-                            SelectPhotoManager.a().b(this.ac.getData().get(i));
-                            AlbumSelectInfo value = this.az.f().getValue();
-                            if (value != null) {
-                                value.a(this.ac.getData().get(i).mImagePath);
-                                this.az.h().setValue(this.ac.getData().get(i).mImagePath);
+                            SelectPhotoManager.a().b((ChildImageInfo) this.ac.getData().get(i));
+                            AlbumSelectInfo albumSelectInfo = (AlbumSelectInfo) this.az.f().getValue();
+                            if (albumSelectInfo != null) {
+                                albumSelectInfo.a(((ChildImageInfo) this.ac.getData().get(i)).mImagePath);
+                                this.az.h().setValue(((ChildImageInfo) this.ac.getData().get(i)).mImagePath);
                             }
                         }
                         this.ac.a();
@@ -848,12 +846,12 @@ public class FeedAddPostFragment extends FeedAddPostBaseFragment {
                     str = getString(R.string.feed_post_introduce_drop_title);
                     string = getString(R.string.feed_post_introduce_drop_des);
                 }
-                CommonAlertDialog.a(this.f19992c, str, string, getString(R.string.common_drop), getResources().getColor(R.color.syc_g), new DialogInterface.OnClickListener() { // from class: com.blued.community.ui.send.fragment.-$$Lambda$FeedAddPostFragment$EuyW4cBoBMDfjvNdMpKuzVsGaCw
+                CommonAlertDialog.a(this.c, str, string, getString(R.string.common_drop), getResources().getColor(R.color.syc_g), new DialogInterface.OnClickListener() { // from class: com.blued.community.ui.send.fragment.-$$Lambda$FeedAddPostFragment$EuyW4cBoBMDfjvNdMpKuzVsGaCw
                     @Override // android.content.DialogInterface.OnClickListener
                     public final void onClick(DialogInterface dialogInterface, int i2) {
                         FeedAddPostFragment.this.a(dialogInterface, i2);
                     }
-                }, getString(R.string.common_cancel), BluedSkinUtils.a(this.f19992c, R.color.syc_h), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
+                }, getString(R.string.common_cancel), BluedSkinUtils.a(this.c, R.color.syc_h), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
                 return;
             }
             this.bE = 1;
@@ -928,8 +926,8 @@ public class FeedAddPostFragment extends FeedAddPostBaseFragment {
         this.o.setText("");
         this.o.setPadding(0, FeedMethods.c(10), 0, 0);
         this.o.setHint(R.string.feed_post_hint);
-        this.o.setHintTextColor(BluedSkinUtils.a(this.f19992c, R.color.syc_i));
-        this.o.setTextColor(BluedSkinUtils.a(this.f19992c, R.color.syc_h));
+        this.o.setHintTextColor(BluedSkinUtils.a(this.c, R.color.syc_i));
+        this.o.setTextColor(BluedSkinUtils.a(this.c, R.color.syc_h));
         this.o.setMaxLines(Integer.MAX_VALUE);
         this.ab.setVisibility(0);
         this.aV.setOrientation(1);
@@ -994,7 +992,7 @@ public class FeedAddPostFragment extends FeedAddPostBaseFragment {
     }
 
     private void az() {
-        if (CommunityManager.f19086a.a().s()) {
+        if (CommunityManager.a.a().s()) {
             this.be.setImageResource(R.drawable.feed_post_tools_func_icon_dark);
         } else {
             this.be.setImageResource(R.drawable.feed_post_tools_func_icon);
@@ -1117,9 +1115,9 @@ public class FeedAddPostFragment extends FeedAddPostBaseFragment {
 
     public void A() {
         SelectPhotoManager.a().d();
-        AlbumSelectInfo value = this.az.f().getValue();
-        if (value != null) {
-            value.a();
+        AlbumSelectInfo albumSelectInfo = (AlbumSelectInfo) this.az.f().getValue();
+        if (albumSelectInfo != null) {
+            albumSelectInfo.a();
         }
         this.o.setCursorVisible(true);
         this.o.setFocusableInTouchMode(true);
@@ -1158,27 +1156,27 @@ public class FeedAddPostFragment extends FeedAddPostBaseFragment {
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity<BluedTopic, BluedTopicOuterExtra> bluedEntity) {
                 if (bluedEntity != null && bluedEntity.getSingleData() != null) {
-                    List<BluedTopic> a2 = TopicMethods.a(bluedEntity.data, FeedAddPostFragment.this.bx.e());
+                    List<BluedTopic> a = TopicMethods.a(bluedEntity.data, FeedAddPostFragment.this.bx.e());
                     int i = 0;
                     while (true) {
                         int i2 = i;
-                        if (i2 >= a2.size()) {
+                        if (i2 >= a.size()) {
                             break;
                         }
                         int i3 = 0;
                         while (true) {
                             int i4 = i3;
                             if (i4 < FeedAddPostFragment.aU.size()) {
-                                if (a2.get(i2).name.equals(FeedAddPostFragment.aU.get(i4).name)) {
-                                    a2.get(i2).is_chosen = true;
-                                    FeedAddPostFragment.aU.set(i4, a2.get(i2));
+                                if (a.get(i2).name.equals(FeedAddPostFragment.aU.get(i4).name)) {
+                                    a.get(i2).is_chosen = true;
+                                    FeedAddPostFragment.aU.set(i4, a.get(i2));
                                 }
                                 i3 = i4 + 1;
                             }
                         }
                         i = i2 + 1;
                     }
-                    FeedAddPostFragment.this.aS.setNewData(a2);
+                    FeedAddPostFragment.this.aS.setNewData(a);
                 }
                 if (bluedEntity.extra != null) {
                     FeedAddPostFragment.this.bw = bluedEntity.extra.getBack_topics_id();
@@ -1350,7 +1348,6 @@ public class FeedAddPostFragment extends FeedAddPostBaseFragment {
         super.K();
         this.bx = (SelectTopicViewModel) new ViewModelProvider(getActivity().getViewModelStore(), new ViewModelProvider.AndroidViewModelFactory(getActivity().getApplication())).get(SelectTopicViewModel.class);
         LiveEventBus.get("never_show_audit_guide", Boolean.class).observe(this, new Observer() { // from class: com.blued.community.ui.send.fragment.-$$Lambda$FeedAddPostFragment$CslUVNHhlr03hv9dnIUsgS8hoEg
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 FeedAddPostFragment.this.a((Boolean) obj);
             }
@@ -1360,7 +1357,7 @@ public class FeedAddPostFragment extends FeedAddPostBaseFragment {
     @Override // com.blued.community.ui.send.fragment.FeedAddPostBaseFragment
     protected void L() {
         super.L();
-        if (this.f19991ar) {
+        if (this.ar) {
             this.aR.setVisibility(8);
         } else {
             this.aR.setVisibility(0);
@@ -1383,7 +1380,7 @@ public class FeedAddPostFragment extends FeedAddPostBaseFragment {
         if (TextUtils.isEmpty(pics)) {
             return;
         }
-        String[] split = pics.split(";");
+        String[] split = pics.split(i.b);
         if (this.ah.is_vote == 1) {
             this.bd.setVisibility(0);
             if (split.length > 0) {
@@ -1502,11 +1499,11 @@ public class FeedAddPostFragment extends FeedAddPostBaseFragment {
 
     @Override // com.blued.community.ui.send.fragment.FeedAddPostBaseFragment
     protected View a(MotionEvent motionEvent) {
-        View a2 = super.a(motionEvent);
-        if (a2 != null && a2.getId() == this.aO.getId()) {
-            a2.setTag(102);
+        View a = super.a(motionEvent);
+        if (a != null && a.getId() == this.aO.getId()) {
+            a.setTag(102);
         }
-        return a2;
+        return a;
     }
 
     @Override // com.blued.community.ui.send.fragment.FeedAddPostBaseFragment
@@ -1550,13 +1547,13 @@ public class FeedAddPostFragment extends FeedAddPostBaseFragment {
             this.o.setSelection(substring.length());
             return;
         }
-        StaticLayout a2 = FeedMethods.a(editable.toString(), this.o.getPaint(), AppInfo.l - FeedMethods.c(78), 1.0f, 1.1f);
-        if (this.bE != 1 || a2.getLineCount() <= 7) {
+        StaticLayout a = FeedMethods.a(editable.toString(), this.o.getPaint(), AppInfo.l - FeedMethods.c(78), 1.0f, 1.1f);
+        if (this.bE != 1 || a.getLineCount() <= 7) {
             super.a(editable);
             return;
         }
         ToastUtils.a(R.string.feed_post_template_max_7_lines);
-        int lineEnd = a2.getLineEnd(6) - 1;
+        int lineEnd = a.getLineEnd(6) - 1;
         if (lineEnd > 0) {
             String substring2 = editable.toString().substring(0, lineEnd);
             this.o.setText(substring2);
@@ -1604,9 +1601,9 @@ public class FeedAddPostFragment extends FeedAddPostBaseFragment {
             return;
         }
         SelectPhotoManager.a().a(str);
-        AlbumSelectInfo value = this.az.f().getValue();
-        if (value != null) {
-            value.a(str);
+        AlbumSelectInfo albumSelectInfo = (AlbumSelectInfo) this.az.f().getValue();
+        if (albumSelectInfo != null) {
+            albumSelectInfo.a(str);
         }
     }
 
@@ -1662,7 +1659,7 @@ public class FeedAddPostFragment extends FeedAddPostBaseFragment {
     @Override // com.blued.community.ui.send.fragment.FeedAddPostBaseFragment
     protected void ab_() {
         super.ab_();
-        if (CommunityManager.f19086a.a().s()) {
+        if (CommunityManager.a.a().s()) {
             this.V.setImageResource(R.drawable.feed_post_tools_vote_dark);
         } else {
             this.V.setImageResource(R.drawable.feed_post_tools_vote);
@@ -1729,9 +1726,9 @@ public class FeedAddPostFragment extends FeedAddPostBaseFragment {
             this.bf.setVisibility(8);
             return;
         }
-        this.be.setImageDrawable(BluedSkinUtils.b(this.f19992c, R.drawable.feed_post_keyboard));
+        this.be.setImageDrawable(BluedSkinUtils.b(this.c, R.drawable.feed_post_keyboard));
         this.bf.setVisibility(0);
-        if (CommunityManager.f19086a.a().s()) {
+        if (CommunityManager.a.a().s()) {
             this.bh.setImageResource(R.drawable.feed_post_tools_template_icon_dark);
             this.bj.setImageResource(R.drawable.feed_post_tools_vote_icon_dark);
             this.bl.setImageResource(R.drawable.feed_post_tools_introduce_icon_dark);
@@ -1779,12 +1776,12 @@ public class FeedAddPostFragment extends FeedAddPostBaseFragment {
         } else {
             if (this.ag == null || this.ag.repost == null || this.ag.repost.is_vote != 1) {
                 if (this.bE == 2 && ao()) {
-                    CommonAlertDialog.a(this.f19992c, getString(R.string.feed_post_introduce_drop_title), getString(R.string.feed_post_introduce_drop_des), getString(R.string.common_drop), getResources().getColor(R.color.syc_g), new DialogInterface.OnClickListener() { // from class: com.blued.community.ui.send.fragment.-$$Lambda$FeedAddPostFragment$ass3tpoCzH_ysHtGOJ0QWgD4InI
+                    CommonAlertDialog.a(this.c, getString(R.string.feed_post_introduce_drop_title), getString(R.string.feed_post_introduce_drop_des), getString(R.string.common_drop), getResources().getColor(R.color.syc_g), new DialogInterface.OnClickListener() { // from class: com.blued.community.ui.send.fragment.-$$Lambda$FeedAddPostFragment$ass3tpoCzH_ysHtGOJ0QWgD4InI
                         @Override // android.content.DialogInterface.OnClickListener
                         public final void onClick(DialogInterface dialogInterface, int i) {
                             FeedAddPostFragment.this.d(dialogInterface, i);
                         }
-                    }, getString(R.string.common_cancel), BluedSkinUtils.a(this.f19992c, R.color.syc_h), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
+                    }, getString(R.string.common_cancel), BluedSkinUtils.a(this.c, R.color.syc_h), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
                     return;
                 }
                 aq();
@@ -1796,7 +1793,7 @@ public class FeedAddPostFragment extends FeedAddPostBaseFragment {
 
     public void k() {
         this.W.setVisibility(8);
-        this.aa = AlbumSelectDialogFragment.f19909a.a(getActivity(), 4, 1, 2, 109, false);
+        this.aa = AlbumSelectDialogFragment.a.a(getActivity(), 4, 1, 2, 109, false);
         this.Z = false;
         this.aa.a((DialogInterface.OnDismissListener) null);
     }
@@ -1831,7 +1828,7 @@ public class FeedAddPostFragment extends FeedAddPostBaseFragment {
                             bluedTopic.super_did = TextUtils.isEmpty(bluedTopic.super_did) ? "0" : bluedTopic.super_did;
                             sb.append(bluedTopic.super_did);
                             if (bluedTopic.is_anonym == 1) {
-                                sb.append("&");
+                                sb.append(a.b);
                             }
                             sb.append(",");
                             sb2.append(bluedTopic.name);
@@ -1845,33 +1842,33 @@ public class FeedAddPostFragment extends FeedAddPostBaseFragment {
             l.super_topics_name = sb2.toString();
         }
         if (!com.blued.community.utils.StringUtils.d(l.super_did)) {
-            l.super_did = l.super_did.replace("&", "");
+            l.super_did = l.super_did.replace(a.b, "");
         }
         return l;
     }
 
     @Override // com.blued.community.ui.send.fragment.FeedAddPostBaseFragment
     protected boolean o() {
-        if ((TextUtils.isEmpty(this.o.getText().toString().trim()) && !this.ac.d() && ((!this.av || this.aw == null) && (!an() || !this.bd.b()))) || this.ao || this.ap || this.f19991ar || this.as || this.au || this.at || this.ag != null) {
+        if ((TextUtils.isEmpty(this.o.getText().toString().trim()) && !this.ac.d() && ((!this.av || this.aw == null) && (!an() || !this.bd.b()))) || this.ao || this.ap || this.ar || this.as || this.au || this.at || this.ag != null) {
             return false;
         }
         return (this.ah == null || this.ah.is_draft == 1) && this.ai == null && this.aj == null && this.al == null;
     }
 
-    @Override // com.blued.community.ui.send.fragment.FeedAddPostBaseFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.community.ui.send.fragment.FeedAddPostBaseFragment, com.blued.android.core.ui.BaseFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.bD = CommunityServiceManager.a().A();
         aU.clear();
         return super.onCreateView(layoutInflater, viewGroup, bundle);
     }
 
-    @Override // com.blued.community.ui.send.fragment.FeedAddPostBaseFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.community.ui.send.fragment.FeedAddPostBaseFragment, com.blued.android.core.ui.BaseFragment
     public void onDestroy() {
         super.onDestroy();
         aU.clear();
     }
 
-    @Override // com.blued.community.ui.send.fragment.FeedAddPostBaseFragment, com.blued.android.framework.activity.HomeTabFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.community.ui.send.fragment.FeedAddPostBaseFragment, com.blued.android.framework.activity.HomeTabFragment, com.blued.android.core.ui.BaseFragment
     public void onViewCreated(View view, Bundle bundle) {
         super.onViewCreated(view, bundle);
         postDelaySafeRunOnUiThread(new Runnable() { // from class: com.blued.community.ui.send.fragment.-$$Lambda$FeedAddPostFragment$0rxC43g51kuBG7BHiiI4Yl40Aic
@@ -1881,15 +1878,15 @@ public class FeedAddPostFragment extends FeedAddPostBaseFragment {
             }
         }, 400L);
         if (this.aL == 11) {
-            long a2 = TimeAndDateUtils.a();
+            long a = TimeAndDateUtils.a();
             long b = TimeAndDateUtils.b();
             long u = CommunityPreferences.u("FeedAddPostUserPageGuideEnterDate");
             long t = CommunityPreferences.t("FeedAddPostUserPageGuideEnterWeek");
             LogUtils.c("个人主页进入发布引导 --> lastEnterDate=" + u);
             LogUtils.c("个人主页进入发布引导 --> lastEnterWeek=" + t);
-            CommunityPreferences.b("FeedAddPostUserPageGuideEnterDate", a2);
+            CommunityPreferences.b("FeedAddPostUserPageGuideEnterDate", a);
             CommunityPreferences.a("FeedAddPostUserPageGuideEnterWeek", b);
-            if (a2 > u) {
+            if (a > u) {
                 CommunityPreferences.a("FeedAddPostUserPageGuideEnterCountDay", 0);
             }
             int v = CommunityPreferences.v("FeedAddPostUserPageGuideEnterCountDay") + 1;

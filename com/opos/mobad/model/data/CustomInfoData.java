@@ -27,17 +27,17 @@ public class CustomInfoData implements Parcelable {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    private String f26470a;
+    private String f12782a;
     private JSONObject b;
 
     public CustomInfoData(String str) {
         String str2 = str == null ? "" : str;
-        this.f26470a = str2;
+        this.f12782a = str2;
         try {
             if (TextUtils.isEmpty(str2)) {
                 return;
             }
-            this.b = new JSONObject(this.f26470a);
+            this.b = new JSONObject(this.f12782a);
         } catch (JSONException e) {
             com.opos.cmn.an.f.a.a("", e);
         }
@@ -112,11 +112,11 @@ public class CustomInfoData implements Parcelable {
     }
 
     public String toString() {
-        return "CustomInfoData{mInfoString='" + this.f26470a + "'}";
+        return "CustomInfoData{mInfoString='" + this.f12782a + "'}";
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.f26470a);
+        parcel.writeString(this.f12782a);
     }
 }

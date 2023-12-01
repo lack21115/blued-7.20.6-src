@@ -130,7 +130,7 @@ public final class SubscriberRegistry {
                 }
             }
         }
-        return ImmutableList.copyOf((Collection) newHashMap.values());
+        return ImmutableList.copyOf(newHashMap.values());
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

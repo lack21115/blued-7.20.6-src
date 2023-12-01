@@ -15,7 +15,7 @@ import com.tencent.liteav.videoconsumer.renderer.VideoRenderListener;
 public final class a extends VideoRenderInterface implements e.a {
 
     /* renamed from: a  reason: collision with root package name */
-    private final com.tencent.liteav.base.util.b f36689a;
+    private final com.tencent.liteav.base.util.b f22998a;
     private com.tencent.liteav.videobase.videobase.e g;
     private VideoRenderListener h;
     private com.tencent.liteav.videobase.frame.j i;
@@ -24,7 +24,7 @@ public final class a extends VideoRenderInterface implements e.a {
     private com.tencent.liteav.videobase.b.e b = null;
 
     /* renamed from: c  reason: collision with root package name */
-    private volatile boolean f36690c = false;
+    private volatile boolean f22999c = false;
     private boolean d = false;
     private GLConstants.PixelFormatType e = GLConstants.PixelFormatType.RGBA;
     private GLConstants.PixelBufferType f = GLConstants.PixelBufferType.TEXTURE_2D;
@@ -35,7 +35,7 @@ public final class a extends VideoRenderInterface implements e.a {
     private boolean p = false;
 
     public a(Looper looper) {
-        this.f36689a = new com.tencent.liteav.base.util.b(looper);
+        this.f22998a = new com.tencent.liteav.base.util.b(looper);
     }
 
     private void a() {
@@ -72,11 +72,11 @@ public final class a extends VideoRenderInterface implements e.a {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ void a(a aVar) {
-        if (!aVar.f36690c) {
+        if (!aVar.f22999c) {
             LiteavLog.w("CustomRenderProcess", "renderer is not started!");
             return;
         }
-        aVar.f36690c = false;
+        aVar.f22999c = false;
         aVar.a();
     }
 
@@ -98,12 +98,12 @@ public final class a extends VideoRenderInterface implements e.a {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ void a(a aVar, VideoRenderListener videoRenderListener) {
-        if (aVar.f36690c) {
+        if (aVar.f22999c) {
             LiteavLog.w("CustomRenderProcess", "renderer is started!");
             return;
         }
         aVar.h = videoRenderListener;
-        aVar.f36690c = true;
+        aVar.f22999c = true;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -115,11 +115,11 @@ public final class a extends VideoRenderInterface implements e.a {
     }
 
     private boolean a(Runnable runnable) {
-        if (Looper.myLooper() == this.f36689a.getLooper()) {
+        if (Looper.myLooper() == this.f22998a.getLooper()) {
             runnable.run();
             return true;
-        } else if (this.f36689a.getLooper().getThread().isAlive()) {
-            return this.f36689a.post(runnable);
+        } else if (this.f22998a.getLooper().getThread().isAlive()) {
+            return this.f22998a.post(runnable);
         } else {
             LiteavLog.w("CustomRenderProcess", "runOnRenderThread: thread is dead!");
             return false;

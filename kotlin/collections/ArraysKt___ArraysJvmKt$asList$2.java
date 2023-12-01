@@ -6,29 +6,27 @@ import kotlin.Metadata;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/collections/ArraysKt___ArraysJvmKt$asList$2.class */
 public final class ArraysKt___ArraysJvmKt$asList$2 extends AbstractList<Short> implements RandomAccess {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ short[] f42337a;
+    final /* synthetic */ short[] a;
 
     @Override // kotlin.collections.AbstractList, java.util.List
     /* renamed from: a */
     public Short get(int i) {
-        return Short.valueOf(this.f42337a[i]);
+        return Short.valueOf(this.a[i]);
     }
 
     public boolean a(short s) {
-        return ArraysKt.a(this.f42337a, s);
+        return ArraysKt.a(this.a, s);
     }
 
     public int b(short s) {
-        return ArraysKt.b(this.f42337a, s);
+        return ArraysKt.b(this.a, s);
     }
 
     public int c(short s) {
-        return ArraysKt.c(this.f42337a, s);
+        return ArraysKt.c(this.a, s);
     }
 
-    @Override // kotlin.collections.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // kotlin.collections.AbstractCollection, java.util.Collection
     public final boolean contains(Object obj) {
         if (obj instanceof Short) {
             return a(((Number) obj).shortValue());
@@ -38,7 +36,7 @@ public final class ArraysKt___ArraysJvmKt$asList$2 extends AbstractList<Short> i
 
     @Override // kotlin.collections.AbstractList, kotlin.collections.AbstractCollection
     public int getSize() {
-        return this.f42337a.length;
+        return this.a.length;
     }
 
     @Override // kotlin.collections.AbstractList, java.util.List
@@ -49,9 +47,9 @@ public final class ArraysKt___ArraysJvmKt$asList$2 extends AbstractList<Short> i
         return -1;
     }
 
-    @Override // kotlin.collections.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // kotlin.collections.AbstractCollection, java.util.Collection
     public boolean isEmpty() {
-        return this.f42337a.length == 0;
+        return this.a.length == 0;
     }
 
     @Override // kotlin.collections.AbstractList, java.util.List

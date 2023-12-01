@@ -13,7 +13,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public final class b {
     private com.kwad.sdk.core.f.d ef;
     private int mA;
-    private CopyOnWriteArrayList<C0470b> mz = new CopyOnWriteArrayList<>();
+    private CopyOnWriteArrayList<C0300b> mz = new CopyOnWriteArrayList<>();
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/components/ad/e/b$a.class */
@@ -23,11 +23,11 @@ public final class b {
 
     /* renamed from: com.kwad.components.ad.e.b$b  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/components/ad/e/b$b.class */
-    public static final class C0470b {
+    public static final class C0300b {
         private final c mE;
         private final WeakReference<View> mF;
 
-        public C0470b(c cVar, View view) {
+        public C0300b(c cVar, View view) {
             this.mF = new WeakReference<>(view);
             this.mE = cVar;
         }
@@ -66,17 +66,17 @@ public final class b {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void e(double d) {
-        CopyOnWriteArrayList<C0470b> copyOnWriteArrayList = this.mz;
+        CopyOnWriteArrayList<C0300b> copyOnWriteArrayList = this.mz;
         int uF = (int) (com.kwad.sdk.core.config.d.uF() * 100.0f);
         if (copyOnWriteArrayList.isEmpty()) {
             return;
         }
         int i = Integer.MAX_VALUE;
-        Iterator<C0470b> it = copyOnWriteArrayList.iterator();
-        C0470b c0470b = null;
-        C0470b c0470b2 = null;
+        Iterator<C0300b> it = copyOnWriteArrayList.iterator();
+        C0300b c0300b = null;
+        C0300b c0300b2 = null;
         while (it.hasNext()) {
-            C0470b next = it.next();
+            C0300b next = it.next();
             WeakReference weakReference = next.mF;
             if (weakReference != null) {
                 Rect rect = new Rect();
@@ -84,27 +84,27 @@ public final class b {
                     int i2 = this.mA / 2;
                     int min = Math.min(Math.abs(rect.top - i2), Math.abs(rect.bottom - i2));
                     if (min < i) {
-                        c0470b = next;
+                        c0300b = next;
                         i = min;
                     } else if (min == i) {
-                        c0470b2 = next;
+                        c0300b2 = next;
                     }
                 }
             }
         }
-        if (c0470b != null) {
-            C0470b c0470b3 = c0470b;
-            if (c0470b2 != null) {
+        if (c0300b != null) {
+            C0300b c0300b3 = c0300b;
+            if (c0300b2 != null) {
                 Rect rect2 = new Rect();
-                ((View) c0470b.mF.get()).getGlobalVisibleRect(rect2);
+                ((View) c0300b.mF.get()).getGlobalVisibleRect(rect2);
                 Rect rect3 = new Rect();
-                ((View) c0470b2.mF.get()).getGlobalVisibleRect(rect2);
-                c0470b3 = c0470b;
+                ((View) c0300b2.mF.get()).getGlobalVisibleRect(rect2);
+                c0300b3 = c0300b;
                 if (rect2.top < rect3.top) {
-                    c0470b3 = c0470b2;
+                    c0300b3 = c0300b2;
                 }
             }
-            c0470b3.mE.f(d);
+            c0300b3.mE.f(d);
         }
     }
 
@@ -120,13 +120,13 @@ public final class b {
             this.mA = com.kwad.sdk.c.kwai.a.aw(view.getContext());
             a(f, view.getContext());
         }
-        this.mz.add(new C0470b(cVar, view));
+        this.mz.add(new C0300b(cVar, view));
     }
 
     public final void a(c cVar) {
-        Iterator<C0470b> it = this.mz.iterator();
+        Iterator<C0300b> it = this.mz.iterator();
         while (it.hasNext()) {
-            C0470b next = it.next();
+            C0300b next = it.next();
             if (next.mE == cVar) {
                 this.mz.remove(next);
             }

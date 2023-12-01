@@ -11,11 +11,11 @@ import kotlin.jvm.internal.Intrinsics;
 public final class ConstraintUtil {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ConstraintLayout f20583a;
+    private final ConstraintLayout f6977a;
     private ConstraintModify b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final ConstraintSet f20584c;
+    private final ConstraintSet f6978c;
     private final ConstraintSet d;
 
     @Metadata
@@ -23,51 +23,51 @@ public final class ConstraintUtil {
     public static final class ConstraintModify {
 
         /* renamed from: a  reason: collision with root package name */
-        private final ConstraintSet f20585a;
+        private final ConstraintSet f6979a;
         private final ConstraintLayout b;
 
-        public ConstraintModify(ConstraintSet applyConstraintSet, ConstraintLayout constraintLayout) {
-            Intrinsics.e(applyConstraintSet, "applyConstraintSet");
+        public ConstraintModify(ConstraintSet constraintSet, ConstraintLayout constraintLayout) {
+            Intrinsics.e(constraintSet, "applyConstraintSet");
             Intrinsics.e(constraintLayout, "constraintLayout");
-            this.f20585a = applyConstraintSet;
+            this.f6979a = constraintSet;
             this.b = constraintLayout;
         }
 
         public final ConstraintModify a(int i, int i2) {
-            this.f20585a.setMargin(i, 3, i2);
+            this.f6979a.setMargin(i, 3, i2);
             return this;
         }
 
         public final void a() {
-            this.f20585a.applyTo(this.b);
+            this.f6979a.applyTo(this.b);
         }
     }
 
     public ConstraintUtil(ConstraintLayout constraintLayout) {
         Intrinsics.e(constraintLayout, "constraintLayout");
-        this.f20583a = constraintLayout;
-        this.f20584c = new ConstraintSet();
+        this.f6977a = constraintLayout;
+        this.f6978c = new ConstraintSet();
         ConstraintSet constraintSet = new ConstraintSet();
         this.d = constraintSet;
-        constraintSet.clone(this.f20583a);
+        constraintSet.clone(this.f6977a);
     }
 
     public final ConstraintLayout a() {
-        return this.f20583a;
+        return this.f6977a;
     }
 
     public final ConstraintModify b() {
         synchronized (ConstraintModify.class) {
             try {
                 if (this.b == null) {
-                    this.b = new ConstraintModify(this.f20584c, a());
+                    this.b = new ConstraintModify(this.f6978c, a());
                 }
-                Unit unit = Unit.f42314a;
+                Unit unit = Unit.a;
             } catch (Throwable th) {
                 throw th;
             }
         }
-        this.f20584c.clone(this.f20583a);
+        this.f6978c.clone(this.f6977a);
         return this.b;
     }
 }

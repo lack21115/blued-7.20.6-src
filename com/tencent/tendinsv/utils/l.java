@@ -6,7 +6,7 @@ import android.util.Log;
 public class l {
 
     /* renamed from: a  reason: collision with root package name */
-    private static boolean f39104a = com.tencent.tendinsv.b.D;
+    private static boolean f25413a = com.tencent.tendinsv.b.D;
 
     private static String a(Object... objArr) {
         StringBuilder sb = new StringBuilder();
@@ -31,7 +31,7 @@ public class l {
     }
 
     public static void a(String str, Object... objArr) {
-        if (f39104a) {
+        if (f25413a) {
             Log.d(str, a(objArr));
         }
     }
@@ -43,19 +43,19 @@ public class l {
     }
 
     public static void c(String str, Object... objArr) {
-        if (f39104a) {
+        if (f25413a) {
             Log.i(str, a(objArr));
         }
     }
 
     public static void d(String str, Object... objArr) {
-        if (f39104a) {
+        if (f25413a) {
             Log.w(str, a(objArr));
         }
     }
 
     public static void e(String str, Object... objArr) {
-        if (f39104a) {
+        if (f25413a) {
             Log.e(str, a(objArr));
         }
     }

@@ -54,12 +54,8 @@ public class LiveFansRecordDialogFragment extends BaseDialogFragment implements 
     private RecyclerView M;
     private LiveFansPrivilegeAdapater N;
     private boolean O;
-
-    /* renamed from: a  reason: collision with root package name */
-    public Context f12867a;
-
-    /* renamed from: c  reason: collision with root package name */
-    public View f12868c;
+    public Context a;
+    public View c;
     public LiveFansReNameDialogFragment e;
     public LiveFansWebDialogFragment f;
     private ViewPager g;
@@ -84,15 +80,12 @@ public class LiveFansRecordDialogFragment extends BaseDialogFragment implements 
     private TextView z;
     public int b = 4;
     private ViewPager.OnPageChangeListener P = new ViewPager.OnPageChangeListener() { // from class: com.blued.android.module.live_china.fragment.LiveFansRecordDialogFragment.1
-        @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
         public void onPageScrollStateChanged(int i) {
         }
 
-        @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
         public void onPageScrolled(int i, float f, int i2) {
         }
 
-        @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
         public void onPageSelected(int i) {
             LiveFansRecordDialogFragment.this.i = i;
             LiveFansRecordDialogFragment liveFansRecordDialogFragment = LiveFansRecordDialogFragment.this;
@@ -109,26 +102,21 @@ public class LiveFansRecordDialogFragment extends BaseDialogFragment implements 
 
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveFansRecordDialogFragment$MyAdapter.class */
     public class MyAdapter extends FragmentPagerAdapter {
-
-        /* renamed from: a  reason: collision with root package name */
-        FragmentManager f12871a;
+        FragmentManager a;
 
         public MyAdapter(FragmentManager fragmentManager) {
             super(fragmentManager);
-            this.f12871a = fragmentManager;
+            this.a = fragmentManager;
         }
 
-        @Override // androidx.fragment.app.FragmentPagerAdapter, androidx.viewpager.widget.PagerAdapter
         public void destroyItem(ViewGroup viewGroup, int i, Object obj) {
             super.destroyItem(viewGroup, i, obj);
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public int getCount() {
             return LiveFansRecordDialogFragment.this.b;
         }
 
-        @Override // androidx.fragment.app.FragmentPagerAdapter
         public Fragment getItem(int i) {
             if (i == 0) {
                 Bundle bundle = new Bundle();
@@ -191,43 +179,43 @@ public class LiveFansRecordDialogFragment extends BaseDialogFragment implements 
     }
 
     private void g() {
-        ImageView imageView = (ImageView) this.f12868c.findViewById(R.id.iv_fans_member);
+        ImageView imageView = (ImageView) this.c.findViewById(R.id.iv_fans_member);
         this.o = imageView;
         imageView.setVisibility(8);
-        this.p = (TextView) this.f12868c.findViewById(R.id.tv_fans_title);
-        View findViewById = this.f12868c.findViewById(R.id.iv_fans_edit);
+        this.p = (TextView) this.c.findViewById(R.id.tv_fans_title);
+        View findViewById = this.c.findViewById(R.id.iv_fans_edit);
         this.I = findViewById;
         findViewById.setVisibility(0);
-        View findViewById2 = this.f12868c.findViewById(R.id.iv_fans_qa);
+        View findViewById2 = this.c.findViewById(R.id.iv_fans_qa);
         this.q = findViewById2;
         findViewById2.setVisibility(0);
     }
 
     private void h() {
-        View findViewById = this.f12868c.findViewById(R.id.ll_fans_error);
+        View findViewById = this.c.findViewById(R.id.ll_fans_error);
         this.L = findViewById;
         findViewById.setVisibility(8);
-        View findViewById2 = this.f12868c.findViewById(R.id.ll_main_view);
+        View findViewById2 = this.c.findViewById(R.id.ll_main_view);
         this.m = findViewById2;
         findViewById2.setVisibility(8);
-        this.g = (ViewPager) this.f12868c.findViewById(R.id.dialog_rank_viewpager);
+        this.g = this.c.findViewById(R.id.dialog_rank_viewpager);
         this.h = new MyAdapter(getChildFragmentManager());
-        this.r = this.f12868c.findViewById(R.id.ll_active);
-        this.s = this.f12868c.findViewById(R.id.ll_today);
-        this.t = this.f12868c.findViewById(R.id.ll_all);
-        this.u = this.f12868c.findViewById(R.id.ll_fans_group);
-        this.v = (TextView) this.f12868c.findViewById(R.id.tv_active_title);
-        this.w = (TextView) this.f12868c.findViewById(R.id.tv_today_title);
-        this.x = (TextView) this.f12868c.findViewById(R.id.tv_all_title);
-        this.y = (TextView) this.f12868c.findViewById(R.id.tv_fans_group_title);
-        this.z = (TextView) this.f12868c.findViewById(R.id.tv_active_num);
-        this.A = (TextView) this.f12868c.findViewById(R.id.tv_today_num);
-        this.B = (TextView) this.f12868c.findViewById(R.id.tv_all_num);
-        this.C = (TextView) this.f12868c.findViewById(R.id.tv_fans_group_subtitle);
-        this.D = this.f12868c.findViewById(R.id.ll_active_line);
-        this.E = this.f12868c.findViewById(R.id.ll_today_line);
-        this.F = this.f12868c.findViewById(R.id.ll_all_line);
-        this.G = this.f12868c.findViewById(R.id.ll_fans_group_line);
+        this.r = this.c.findViewById(R.id.ll_active);
+        this.s = this.c.findViewById(R.id.ll_today);
+        this.t = this.c.findViewById(R.id.ll_all);
+        this.u = this.c.findViewById(R.id.ll_fans_group);
+        this.v = (TextView) this.c.findViewById(R.id.tv_active_title);
+        this.w = (TextView) this.c.findViewById(R.id.tv_today_title);
+        this.x = (TextView) this.c.findViewById(R.id.tv_all_title);
+        this.y = (TextView) this.c.findViewById(R.id.tv_fans_group_title);
+        this.z = (TextView) this.c.findViewById(R.id.tv_active_num);
+        this.A = (TextView) this.c.findViewById(R.id.tv_today_num);
+        this.B = (TextView) this.c.findViewById(R.id.tv_all_num);
+        this.C = (TextView) this.c.findViewById(R.id.tv_fans_group_subtitle);
+        this.D = this.c.findViewById(R.id.ll_active_line);
+        this.E = this.c.findViewById(R.id.ll_today_line);
+        this.F = this.c.findViewById(R.id.ll_all_line);
+        this.G = this.c.findViewById(R.id.ll_fans_group_line);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -243,18 +231,18 @@ public class LiveFansRecordDialogFragment extends BaseDialogFragment implements 
     }
 
     private void k() {
-        View findViewById = this.f12868c.findViewById(R.id.ll_privilege);
+        View findViewById = this.c.findViewById(R.id.ll_privilege);
         this.n = findViewById;
         findViewById.setVisibility(8);
-        View findViewById2 = this.f12868c.findViewById(R.id.view_height_9);
+        View findViewById2 = this.c.findViewById(R.id.view_height_9);
         this.J = findViewById2;
         findViewById2.setVisibility(8);
-        View findViewById3 = this.f12868c.findViewById(R.id.view_height_25);
+        View findViewById3 = this.c.findViewById(R.id.view_height_25);
         this.K = findViewById3;
         findViewById3.setVisibility(0);
-        this.M = (RecyclerView) this.f12868c.findViewById(R.id.rv_privilege);
-        this.M.setLayoutManager(new GridLayoutManager(this.f12867a, 3));
-        this.N = new LiveFansPrivilegeAdapater(this.f12867a, 0);
+        this.M = this.c.findViewById(R.id.rv_privilege);
+        this.M.setLayoutManager(new GridLayoutManager(this.a, 3));
+        this.N = new LiveFansPrivilegeAdapater(this.a, 0);
     }
 
     public void a(int i) {
@@ -399,37 +387,36 @@ public class LiveFansRecordDialogFragment extends BaseDialogFragment implements 
             bundle.putLong("lid", this.j);
             bundle.putString("name", LiveRoomManager.a().q() != null ? LiveRoomManager.a().q().name : "");
             this.e.setArguments(bundle);
-            this.e.a((LiveFansReNameDialogFragment.ILiveFansEditDialog) this);
+            this.e.a(this);
             this.e.show(getFragmentManager(), "liveFansEditDialog");
         }
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
-        this.f12867a = getActivity();
+        this.a = getActivity();
         View inflate = getActivity().getLayoutInflater().inflate(R.layout.dialog_live_fans_record, (ViewGroup) null);
-        int a2 = DensityUtils.a(getActivity(), 471.0f);
+        int a = DensityUtils.a(getActivity(), 471.0f);
         Dialog dialog = new Dialog(getActivity(), R.style.transparentFrameWindowStyleLive);
         dialog.requestWindowFeature(1);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
-        dialog.setContentView(inflate, new ViewGroup.LayoutParams(-1, a2));
+        dialog.setContentView(inflate, new ViewGroup.LayoutParams(-1, a));
         Window window = dialog.getWindow();
         window.setWindowAnimations(R.style.main_menu_animstyle);
         WindowManager.LayoutParams attributes = window.getAttributes();
         attributes.width = -1;
-        attributes.height = a2;
+        attributes.height = a;
         attributes.x = 0;
-        attributes.y = getActivity().getWindowManager().getDefaultDisplay().getHeight() - a2;
+        attributes.y = getActivity().getWindowManager().getDefaultDisplay().getHeight() - a;
         dialog.onWindowAttributesChanged(attributes);
         f();
         return dialog;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(0));
         View inflate = layoutInflater.inflate(R.layout.dialog_live_fans_record, viewGroup);
-        this.f12868c = inflate;
+        this.c = inflate;
         ProgressBar progressBar = (ProgressBar) inflate.findViewById(R.id.loading_view);
         this.H = progressBar;
         progressBar.setVisibility(0);
@@ -448,10 +435,10 @@ public class LiveFansRecordDialogFragment extends BaseDialogFragment implements 
             iLiveFansRecordDialog.z_();
         }
         this.O = true;
-        return this.f12868c;
+        return this.c;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onDestroy() {
         super.onDestroy();
         ILiveFansRecordDialog iLiveFansRecordDialog = this.l;
@@ -460,13 +447,13 @@ public class LiveFansRecordDialogFragment extends BaseDialogFragment implements 
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onDestroyView() {
         this.O = false;
         super.onDestroyView();
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onPause() {
         Dialog dialog;
         Dialog dialog2;
@@ -486,7 +473,7 @@ public class LiveFansRecordDialogFragment extends BaseDialogFragment implements 
     public void q_() {
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void show(FragmentManager fragmentManager, String str) {
         try {
             ReflectionUtils.a(this, "mDismissed", false);

@@ -1,5 +1,6 @@
 package com.soft.blued.customview;
 
+import android.R;
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -31,14 +32,12 @@ import com.blued.android.framework.view.shape.ShapeHelper;
 import com.blued.android.framework.view.shape.ShapeTextView;
 import com.bytedance.applog.tracker.Tracker;
 import com.google.android.material.badge.BadgeDrawable;
-import com.soft.blued.R;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 /* loaded from: source-8303388-dex2jar.jar:com/soft/blued/customview/TabPageIndicatorWithDot.class */
 public class TabPageIndicatorWithDot extends android.widget.HorizontalScrollView implements BluedSkinSupportable {
-    private static final int[] G = {16842901, 16842904};
+    private static final int[] G = {R.attr.textSize, R.attr.textColor};
     public int A;
     public int B;
     protected List<TextView> C;
@@ -63,7 +62,7 @@ public class TabPageIndicatorWithDot extends android.widget.HorizontalScrollView
     private int W;
 
     /* renamed from: a  reason: collision with root package name */
-    public Context f28520a;
+    public Context f14830a;
     private int aa;
     private int ab;
     private int ac;
@@ -73,7 +72,7 @@ public class TabPageIndicatorWithDot extends android.widget.HorizontalScrollView
     public RelativeLayout.LayoutParams b;
 
     /* renamed from: c  reason: collision with root package name */
-    public LinearLayout.LayoutParams f28521c;
+    public LinearLayout.LayoutParams f14831c;
     public LinearLayout d;
     protected ViewPager e;
     public int f;
@@ -161,21 +160,21 @@ public class TabPageIndicatorWithDot extends android.widget.HorizontalScrollView
         };
 
         /* renamed from: a  reason: collision with root package name */
-        int f28524a;
+        int f14834a;
 
         private SavedState(Parcel parcel) {
             super(parcel);
-            this.f28524a = parcel.readInt();
+            this.f14834a = parcel.readInt();
         }
 
         public SavedState(Parcelable parcelable) {
             super(parcelable);
         }
 
-        @Override // android.view.AbsSavedState, android.os.Parcelable
+        @Override // android.view.View.BaseSavedState, android.view.AbsSavedState, android.os.Parcelable
         public void writeToParcel(Parcel parcel, int i) {
             super.writeToParcel(parcel, i);
-            parcel.writeInt(this.f28524a);
+            parcel.writeInt(this.f14834a);
         }
     }
 
@@ -183,11 +182,11 @@ public class TabPageIndicatorWithDot extends android.widget.HorizontalScrollView
     public class TabData {
 
         /* renamed from: a  reason: collision with root package name */
-        public float f28525a;
+        public float f14835a;
         public float b;
 
         /* renamed from: c  reason: collision with root package name */
-        public float f28526c;
+        public float f14836c;
 
         public TabData() {
         }
@@ -240,7 +239,7 @@ public class TabPageIndicatorWithDot extends android.widget.HorizontalScrollView
         this.aa = 0;
         this.ae = -1;
         this.af = 0;
-        this.f28520a = context;
+        this.f14830a = context;
         if (isInEditMode()) {
             return;
         }
@@ -269,7 +268,7 @@ public class TabPageIndicatorWithDot extends android.widget.HorizontalScrollView
         this.w = obtainStyledAttributes.getDimensionPixelSize(0, this.w);
         this.ad = DensityUtils.a(getContext(), 8.0f);
         obtainStyledAttributes.recycle();
-        TypedArray obtainStyledAttributes2 = context.obtainStyledAttributes(attributeSet, R.styleable.PagerSlidingTabStrip);
+        TypedArray obtainStyledAttributes2 = context.obtainStyledAttributes(attributeSet, com.soft.blued.R.styleable.PagerSlidingTabStrip);
         a();
         if (obtainStyledAttributes2.hasValue(7)) {
             this.aa = obtainStyledAttributes2.getResourceId(7, this.aa);
@@ -289,7 +288,7 @@ public class TabPageIndicatorWithDot extends android.widget.HorizontalScrollView
         this.L = paint2;
         paint2.setAntiAlias(true);
         this.L.setStrokeWidth(this.R);
-        this.f28521c = new LinearLayout.LayoutParams(-2, -1);
+        this.f14831c = new LinearLayout.LayoutParams(-2, -1);
         this.b = new RelativeLayout.LayoutParams(-2, DensityUtils.a(context, 44.0f));
         this.H = new LinearLayout.LayoutParams(0, DensityUtils.a(context, 44.0f), 1.0f);
         this.S = DensityUtils.a(context, 30.0f);
@@ -311,7 +310,7 @@ public class TabPageIndicatorWithDot extends android.widget.HorizontalScrollView
             return;
         }
         for (QBadgeContainer qBadgeContainer : this.E) {
-            qBadgeContainer.a(BluedSkinUtils.a(this.f28520a, this.ae), this.af, true);
+            qBadgeContainer.a(BluedSkinUtils.a(this.f14830a, this.ae), this.af, true);
         }
     }
 
@@ -370,24 +369,24 @@ public class TabPageIndicatorWithDot extends android.widget.HorizontalScrollView
 
     public TabData a(View view) {
         TabData tabData = new TabData();
-        tabData.f28525a = (view.getRight() - this.ad) - view.getLeft();
+        tabData.f14835a = (view.getRight() - this.ad) - view.getLeft();
         tabData.b = view.getLeft();
-        tabData.f28526c = view.getRight() - this.ad;
-        if (tabData.f28525a > 0.0f && this.t > 0.0f) {
-            tabData.b = (view.getLeft() + (tabData.f28525a / 2.0f)) - (this.t / 2.0f);
-            tabData.f28526c = view.getLeft() + (tabData.f28525a / 2.0f) + (this.t / 2.0f);
+        tabData.f14836c = view.getRight() - this.ad;
+        if (tabData.f14835a > 0.0f && this.t > 0.0f) {
+            tabData.b = (view.getLeft() + (tabData.f14835a / 2.0f)) - (this.t / 2.0f);
+            tabData.f14836c = view.getLeft() + (tabData.f14835a / 2.0f) + (this.t / 2.0f);
         }
         return tabData;
     }
 
     public void a() {
-        this.t = DensityUtils.a(this.f28520a, 18.0f);
-        this.s = DensityUtils.a(this.f28520a, 2.5f);
-        this.y = BluedSkinUtils.a(this.f28520a, 2131102254);
+        this.t = DensityUtils.a(this.f14830a, 18.0f);
+        this.s = DensityUtils.a(this.f14830a, 2.5f);
+        this.y = BluedSkinUtils.a(this.f14830a, 2131102254);
         this.z = 2131102254;
-        this.l = BluedSkinUtils.a(this.f28520a, 2131102254);
+        this.l = BluedSkinUtils.a(this.f14830a, 2131102254);
         this.k = 2131102254;
-        this.A = BluedSkinUtils.a(this.f28520a, 2131102263);
+        this.A = BluedSkinUtils.a(this.f14830a, 2131102263);
         this.B = 2131102263;
     }
 
@@ -435,21 +434,21 @@ public class TabPageIndicatorWithDot extends android.widget.HorizontalScrollView
         textView.setFocusable(true);
         textView.setGravity(17);
         textView.setSingleLine();
-        textView.setPadding(0, 0, 0, DensityUtils.a(this.f28520a, this.T));
+        textView.setPadding(0, 0, 0, DensityUtils.a(this.f14830a, this.T));
         List<TextView> list = this.C;
         if (list != null) {
             list.add(textView);
         }
         LinearLayout linearLayout = new LinearLayout(getContext());
         linearLayout.setTag(str + i);
-        linearLayout.setLayoutParams(this.f28521c);
+        linearLayout.setLayoutParams(this.f14831c);
         linearLayout.setGravity(17);
         ImageView imageView = new ImageView(getContext());
         imageView.setVisibility(8);
         imageView.setLayoutParams(new LinearLayout.LayoutParams(-2, -1));
         ((ViewGroup.MarginLayoutParams) imageView.getLayoutParams()).rightMargin = 6;
-        ShapeTextView shapeTextView = new ShapeTextView(getContext());
-        ShapeHelper.a(shapeTextView, DensityUtils.a(this.f28520a, 1.0f), 0.0f, 0.0f);
+        View shapeTextView = new ShapeTextView(getContext());
+        ShapeHelper.a(shapeTextView, DensityUtils.a(this.f14830a, 1.0f), 0.0f, 0.0f);
         ShapeHelper.d(shapeTextView, 2131101780);
         ShapeHelper.b(shapeTextView, 2131102251);
         ShapeHelper.a(shapeTextView, this.ad);
@@ -472,21 +471,21 @@ public class TabPageIndicatorWithDot extends android.widget.HorizontalScrollView
         linearLayout.addView(imageView);
         linearLayout.addView(textView);
         linearLayout.addView(shapeTextView);
-        QBadgeContainer qBadgeContainer = new QBadgeContainer(this.f28520a);
+        View qBadgeContainer = new QBadgeContainer(this.f14830a);
         qBadgeContainer.setGravity(17);
         qBadgeContainer.setLayoutParams(this.b);
         qBadgeContainer.addView(linearLayout);
         qBadgeContainer.a(linearLayout);
-        qBadgeContainer.d(BadgeDrawable.TOP_END);
+        qBadgeContainer.d((int) BadgeDrawable.TOP_END);
         qBadgeContainer.b(5.0f, true);
         qBadgeContainer.a(10.0f, true);
         qBadgeContainer.a(3.0f, 0.0f, true);
         qBadgeContainer.a("");
-        qBadgeContainer.a(BluedSkinUtils.a(this.f28520a, 2131101780), 1.0f, true);
-        qBadgeContainer.b(BluedSkinUtils.a(this.f28520a, 2131101201));
-        Collection collection = this.E;
-        if (collection != null) {
-            collection.add(qBadgeContainer);
+        qBadgeContainer.a(BluedSkinUtils.a(this.f14830a, 2131101780), 1.0f, true);
+        qBadgeContainer.b(BluedSkinUtils.a(this.f14830a, 2131101201));
+        List<QBadgeContainer> list3 = this.E;
+        if (list3 != null) {
+            list3.add(qBadgeContainer);
         }
         linearLayout.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.customview.-$$Lambda$TabPageIndicatorWithDot$QncBFgjyFwpj6Hp9Qh5YvAooRxM
             @Override // android.view.View.OnClickListener
@@ -512,11 +511,10 @@ public class TabPageIndicatorWithDot extends android.widget.HorizontalScrollView
         canvas.drawRoundRect(rectF, f, f, this.j);
     }
 
-    @Override // skin.support.widget.SkinCompatSupportable
     public void applySkin() {
-        this.l = BluedSkinUtils.a(this.f28520a, this.k);
-        this.y = BluedSkinUtils.a(this.f28520a, this.z);
-        this.A = BluedSkinUtils.a(this.f28520a, this.B);
+        this.l = BluedSkinUtils.a(this.f14830a, this.k);
+        this.y = BluedSkinUtils.a(this.f14830a, this.z);
+        this.A = BluedSkinUtils.a(this.f14830a, this.B);
         d();
         a(this.g);
     }
@@ -592,8 +590,8 @@ public class TabPageIndicatorWithDot extends android.widget.HorizontalScrollView
             if (i2 >= this.f) {
                 return;
             }
-            QBadgeContainer qBadgeContainer = (QBadgeContainer) this.d.getChildAt(i2);
-            LinearLayout linearLayout = (LinearLayout) qBadgeContainer.findViewWithTag(this.e.getAdapter().getPageTitle(i2).toString() + i2);
+            QBadgeContainer childAt = this.d.getChildAt(i2);
+            LinearLayout linearLayout = (LinearLayout) childAt.findViewWithTag(this.e.getAdapter().getPageTitle(i2).toString() + i2);
             if (linearLayout == null) {
                 return;
             }
@@ -684,9 +682,8 @@ public class TabPageIndicatorWithDot extends android.widget.HorizontalScrollView
         return this.P;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         int i;
         super.onDraw(canvas);
         if (isInEditMode() || this.f == 0) {
@@ -700,7 +697,7 @@ public class TabPageIndicatorWithDot extends android.widget.HorizontalScrollView
             TabData a3 = a(this.d.getChildAt(i + 1));
             if (this.h < 0.5d) {
                 a2.b += this.h * this.S;
-                a2.f28526c = (a2.f28526c + ((this.h * 2.0f) * (a3.f28526c - a2.f28526c))) - (this.h * this.S);
+                a2.f14836c = (a2.f14836c + ((this.h * 2.0f) * (a3.f14836c - a2.f14836c))) - (this.h * this.S);
             } else {
                 float f = a2.b;
                 float f2 = this.h;
@@ -708,12 +705,12 @@ public class TabPageIndicatorWithDot extends android.widget.HorizontalScrollView
                 float f4 = a2.b;
                 int i4 = this.S;
                 a2.b = f + ((f2 - 0.5f) * 2.0f * ((f3 - f4) - (i4 / 2))) + (i4 / 2);
-                a2.f28526c = a3.f28526c - ((1.0f - this.h) * this.S);
+                a2.f14836c = a3.f14836c - ((1.0f - this.h) * this.S);
             }
         }
-        this.j.setShader(new LinearGradient(((a2.f28526c - a2.b) / 2.0f) + a2.b, 0.0f, a2.f28526c, this.s, new int[]{this.r, this.q}, (float[]) null, Shader.TileMode.CLAMP));
+        this.j.setShader(new LinearGradient(((a2.f14836c - a2.b) / 2.0f) + a2.b, 0.0f, a2.f14836c, this.s, new int[]{this.r, this.q}, (float[]) null, Shader.TileMode.CLAMP));
         if (this.f > 1 && this.K) {
-            a(canvas, (int) a2.b, (int) a2.f28526c);
+            a(canvas, (int) a2.b, (int) a2.f14836c);
         }
         canvas.drawRect(0.0f, height - this.P, this.d.getWidth(), height, this.j);
     }
@@ -750,20 +747,20 @@ public class TabPageIndicatorWithDot extends android.widget.HorizontalScrollView
     public void onRestoreInstanceState(Parcelable parcelable) {
         SavedState savedState = (SavedState) parcelable;
         super.onRestoreInstanceState(savedState.getSuperState());
-        this.g = savedState.f28524a;
+        this.g = savedState.f14834a;
         requestLayout();
     }
 
     @Override // android.widget.HorizontalScrollView, android.view.View
     public Parcelable onSaveInstanceState() {
         SavedState savedState = new SavedState(super.onSaveInstanceState());
-        savedState.f28524a = this.g;
+        savedState.f14834a = this.g;
         return savedState;
     }
 
     public void setDividerColor(int i) {
         this.o = i;
-        this.p = BluedSkinUtils.a(this.f28520a, i);
+        this.p = BluedSkinUtils.a(this.f14830a, i);
         invalidate();
     }
 
@@ -784,7 +781,7 @@ public class TabPageIndicatorWithDot extends android.widget.HorizontalScrollView
 
     public void setIndicatorColor(int i) {
         this.k = i;
-        this.l = BluedSkinUtils.a(this.f28520a, i);
+        this.l = BluedSkinUtils.a(this.f14830a, i);
         invalidate();
     }
 
@@ -822,13 +819,13 @@ public class TabPageIndicatorWithDot extends android.widget.HorizontalScrollView
 
     public void setTabTextColorUnfocused(int i) {
         this.B = i;
-        this.A = BluedSkinUtils.a(this.f28520a, i);
+        this.A = BluedSkinUtils.a(this.f14830a, i);
         c();
     }
 
     public void setTextColor(int i) {
         this.z = i;
-        this.y = BluedSkinUtils.a(this.f28520a, i);
+        this.y = BluedSkinUtils.a(this.f14830a, i);
         c();
     }
 
@@ -839,7 +836,7 @@ public class TabPageIndicatorWithDot extends android.widget.HorizontalScrollView
 
     public void setUnderlineColor(int i) {
         this.m = i;
-        this.n = BluedSkinUtils.a(this.f28520a, i);
+        this.n = BluedSkinUtils.a(this.f14830a, i);
         invalidate();
     }
 

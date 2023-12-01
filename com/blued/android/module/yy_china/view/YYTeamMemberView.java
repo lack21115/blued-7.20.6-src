@@ -27,13 +27,9 @@ import java.util.List;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYTeamMemberView.class */
 public class YYTeamMemberView extends LinearLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private TextView f18510a;
+    private TextView a;
     private RecyclerView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private TextView f18511c;
+    private TextView c;
     private YYTeamMemberAdapter d;
     private BaseYYStudioFragment e;
     private YYRoomModel f;
@@ -59,10 +55,10 @@ public class YYTeamMemberView extends LinearLayout {
 
     private void a() {
         LayoutInflater.from(getContext()).inflate(R.layout.view_yy_team_member_layout, (ViewGroup) this, true);
-        this.f18510a = (TextView) findViewById(R.id.tv_window_title);
-        this.b = (RecyclerView) findViewById(R.id.rv_member_list);
+        this.a = (TextView) findViewById(R.id.tv_window_title);
+        this.b = findViewById(R.id.rv_member_list);
         TextView textView = (TextView) findViewById(R.id.no_data_view);
-        this.f18511c = textView;
+        this.c = textView;
         textView.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.YYTeamMemberView.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
@@ -102,7 +98,7 @@ public class YYTeamMemberView extends LinearLayout {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void a(List<YYSeatMemberModel> list) {
-        this.f18511c.setVisibility(8);
+        this.c.setVisibility(8);
         this.b.setVisibility(0);
         if (list.size() < 4) {
             LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
@@ -125,7 +121,7 @@ public class YYTeamMemberView extends LinearLayout {
             @Override // com.blued.android.module.yy_china.listener.IMemberClickListener
             public void a(int i) {
                 YYSeatMemberModel yYSeatMemberModel;
-                if (YYTeamMemberView.this.e == null || (yYSeatMemberModel = YYTeamMemberView.this.d.getData().get(i)) == null) {
+                if (YYTeamMemberView.this.e == null || (yYSeatMemberModel = (YYSeatMemberModel) YYTeamMemberView.this.d.getData().get(i)) == null) {
                     return;
                 }
                 int i2 = YYTeamMemberView.this.g;
@@ -184,7 +180,7 @@ public class YYTeamMemberView extends LinearLayout {
                     YYTeamMemberView.this.a(bluedEntityA.data);
                     return;
                 }
-                YYTeamMemberView.this.f18511c.setVisibility(0);
+                YYTeamMemberView.this.c.setVisibility(0);
                 YYTeamMemberView.this.b.setVisibility(8);
             }
 
@@ -195,7 +191,7 @@ public class YYTeamMemberView extends LinearLayout {
                     @Override // java.lang.Runnable
                     public void run() {
                         YYTeamMemberView.this.b.setVisibility(8);
-                        YYTeamMemberView.this.f18511c.setVisibility(0);
+                        YYTeamMemberView.this.c.setVisibility(0);
                     }
                 });
             }
@@ -223,7 +219,7 @@ public class YYTeamMemberView extends LinearLayout {
 
     public void a(BaseYYStudioFragment baseYYStudioFragment, String str, int i) {
         this.e = baseYYStudioFragment;
-        TextView textView = this.f18510a;
+        TextView textView = this.a;
         if (textView != null) {
             textView.setText(str);
         }

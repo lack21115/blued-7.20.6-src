@@ -3,6 +3,7 @@ package com.blued.android.module.live_china.mine;
 import android.animation.LayoutTransition;
 import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -35,6 +36,7 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import com.anythink.core.common.l;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.AppMethods;
 import com.blued.android.core.image.ImageLoader;
@@ -129,7 +131,6 @@ import com.bytedance.applog.tracker.Tracker;
 import com.google.gson.JsonSyntaxException;
 import com.google.gson.reflect.TypeToken;
 import com.jeremyliao.liveeventbus.LiveEventBus;
-import com.soft.blued.constant.EventBusConstant;
 import java.lang.ref.WeakReference;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -199,9 +200,7 @@ public class LiveGiftFragment extends LiveGiftBaseFragment implements View.OnCli
     private View ao;
     private View ap;
     private ImageView aq;
-
-    /* renamed from: ar  reason: collision with root package name */
-    private ImageView f13829ar;
+    private ImageView ar;
     private View as;
     private View at;
     private TextView au;
@@ -236,14 +235,12 @@ public class LiveGiftFragment extends LiveGiftBaseFragment implements View.OnCli
     private boolean aT = true;
     private Boolean aV = false;
     private Observer<LiveGiftSetBuyModel> bo = new Observer<LiveGiftSetBuyModel>() { // from class: com.blued.android.module.live_china.mine.LiveGiftFragment.3
-        @Override // androidx.lifecycle.Observer
         /* renamed from: a */
         public void onChanged(LiveGiftSetBuyModel liveGiftSetBuyModel) {
             LiveGiftFragment.this.a(liveGiftSetBuyModel);
         }
     };
     private Observer<Integer> bp = new Observer<Integer>() { // from class: com.blued.android.module.live_china.mine.LiveGiftFragment.4
-        @Override // androidx.lifecycle.Observer
         /* renamed from: a */
         public void onChanged(Integer num) {
             LiveGiftFragment.this.d(num.intValue());
@@ -351,12 +348,12 @@ public class LiveGiftFragment extends LiveGiftBaseFragment implements View.OnCli
 
     private void C() {
         this.aA = this.rootView.findViewById(R.id.live_gift_defined_rank_layout);
-        RecyclerView recyclerView = (RecyclerView) this.rootView.findViewById(R.id.live_gift_defined_rank_rv);
-        this.aB = recyclerView;
-        if (recyclerView == null) {
+        RecyclerView findViewById = this.rootView.findViewById(R.id.live_gift_defined_rank_rv);
+        this.aB = findViewById;
+        if (findViewById == null) {
             return;
         }
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), 0, false));
+        findViewById.setLayoutManager(new LinearLayoutManager(getContext(), 0, false));
         AnonymousClass2 anonymousClass2 = new AnonymousClass2(this.aB.getContext());
         this.aC = anonymousClass2;
         this.aB.setAdapter(anonymousClass2);
@@ -417,7 +414,7 @@ public class LiveGiftFragment extends LiveGiftBaseFragment implements View.OnCli
         if (liveGiftModel == null || liveGiftModel.effectModel == null) {
             return;
         }
-        CommonAlertDialog.a(getActivity(), "", String.format(getString(R.string.verify_purchase_mounts), String.valueOf(this.aH.effectModel.expire), this.aH.name), getString(R.string.verify_purchase), new DialogInterface.OnClickListener() { // from class: com.blued.android.module.live_china.mine.LiveGiftFragment.5
+        CommonAlertDialog.a((Context) getActivity(), "", String.format(getString(R.string.verify_purchase_mounts), String.valueOf(this.aH.effectModel.expire), this.aH.name), getString(R.string.verify_purchase), new DialogInterface.OnClickListener() { // from class: com.blued.android.module.live_china.mine.LiveGiftFragment.5
             @Override // android.content.DialogInterface.OnClickListener
             public void onClick(DialogInterface dialogInterface, int i) {
                 Tracker.onClick(dialogInterface, i);
@@ -432,8 +429,8 @@ public class LiveGiftFragment extends LiveGiftBaseFragment implements View.OnCli
         boolean z;
         boolean z2;
         boolean z3;
-        LogUtils.c("selectedItemIndex: " + this.f10812c);
-        if (TextUtils.isEmpty(this.f10812c) || (liveGiftModel = (LiveGiftModel) a(this.f10812c)) == null || liveGiftModel.sendGiftStatus == 1) {
+        LogUtils.c("selectedItemIndex: " + this.c);
+        if (TextUtils.isEmpty(this.c) || (liveGiftModel = (LiveGiftModel) a(this.c)) == null || liveGiftModel.sendGiftStatus == 1) {
             return;
         }
         liveGiftModel.sendGiftStatus = 1;
@@ -465,7 +462,7 @@ public class LiveGiftFragment extends LiveGiftBaseFragment implements View.OnCli
         }
         EventTrackLive.a(LiveProtos.Event.USER_LIVE_GIFT_BTN_CLICK, LiveRoomManager.a().e(), LiveRoomManager.a().g(), this.aH.goods_id, k());
         if (this.aH.is_join_ticket == 1 && LiveRoomManager.a().q() != null && LiveRoomManager.a().q().fans_status == 0) {
-            CommonAlertDialog.a(getActivity(), "", String.format(getResources().getString(R.string.live_fans_name_join_tip), String.valueOf(this.aH.beans)), getResources().getString(R.string.sure), new DialogInterface.OnClickListener() { // from class: com.blued.android.module.live_china.mine.-$$Lambda$LiveGiftFragment$OgSK8IfQAAOdn27F-vIOAkCeHR0
+            CommonAlertDialog.a((Context) getActivity(), "", String.format(getResources().getString(R.string.live_fans_name_join_tip), String.valueOf(this.aH.beans)), getResources().getString(R.string.sure), new DialogInterface.OnClickListener() { // from class: com.blued.android.module.live_china.mine.-$$Lambda$LiveGiftFragment$OgSK8IfQAAOdn27F-vIOAkCeHR0
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i) {
                     LiveGiftFragment.this.a(dialogInterface, i);
@@ -483,8 +480,8 @@ public class LiveGiftFragment extends LiveGiftBaseFragment implements View.OnCli
         boolean z2;
         boolean z3;
         View view;
-        LogUtils.c("selectedItemIndex: " + this.f10812c);
-        if (TextUtils.isEmpty(this.f10812c) || (liveGiftModel = (LiveGiftModel) a(this.f10812c)) == null || liveGiftModel.ops == 5 || liveGiftModel.ops == 1101) {
+        LogUtils.c("selectedItemIndex: " + this.c);
+        if (TextUtils.isEmpty(this.c) || (liveGiftModel = (LiveGiftModel) a(this.c)) == null || liveGiftModel.ops == 5 || liveGiftModel.ops == 1101) {
             return;
         }
         LogUtils.c("selectedModel: " + liveGiftModel.toString());
@@ -605,7 +602,7 @@ public class LiveGiftFragment extends LiveGiftBaseFragment implements View.OnCli
         } else {
             U();
         }
-        c(this.f10812c);
+        c(this.c);
     }
 
     private void N() {
@@ -706,6 +703,7 @@ public class LiveGiftFragment extends LiveGiftBaseFragment implements View.OnCli
         });
     }
 
+    /* JADX WARN: Type inference failed for: r1v0, types: [com.blued.android.module.live_china.mine.LiveGiftFragment$20] */
     private void T() {
         this.aI = new CountDownTimer(5000L, 1000L) { // from class: com.blued.android.module.live_china.mine.LiveGiftFragment.20
             @Override // android.os.CountDownTimer
@@ -724,7 +722,7 @@ public class LiveGiftFragment extends LiveGiftBaseFragment implements View.OnCli
         this.aV = false;
         V();
         r();
-        this.f10812c = this.aM;
+        this.c = this.aM;
         b(this.aJ);
         this.ad.setVisibility(0);
     }
@@ -745,11 +743,11 @@ public class LiveGiftFragment extends LiveGiftBaseFragment implements View.OnCli
             this.ap.getAnimation().cancel();
         }
         this.ap.clearAnimation();
-        if (this.f13829ar.getAnimation() != null) {
-            this.f13829ar.getAnimation().reset();
-            this.f13829ar.getAnimation().cancel();
+        if (this.ar.getAnimation() != null) {
+            this.ar.getAnimation().reset();
+            this.ar.getAnimation().cancel();
         }
-        this.f13829ar.clearAnimation();
+        this.ar.clearAnimation();
         this.ap.setScaleX(1.0f);
         this.ap.setScaleY(1.0f);
         this.ap.animate().scaleX(0.7f).scaleY(0.7f).setDuration(120L).withEndAction(new Runnable() { // from class: com.blued.android.module.live_china.mine.-$$Lambda$LiveGiftFragment$_H9ikM4PDoXbDojRZtkUTDgGkEI
@@ -773,7 +771,7 @@ public class LiveGiftFragment extends LiveGiftBaseFragment implements View.OnCli
         rotateAnimation.setDuration(1200L);
         rotateAnimation.setRepeatCount(-1);
         rotateAnimation.setInterpolator(new LinearInterpolator());
-        this.f13829ar.startAnimation(rotateAnimation);
+        this.ar.startAnimation(rotateAnimation);
     }
 
     private void Y() {
@@ -1125,9 +1123,9 @@ public class LiveGiftFragment extends LiveGiftBaseFragment implements View.OnCli
                 bundle.putSerializable("selected_model", liveGiftModel);
                 bundle.putInt("gift_count", i);
                 bundle.putString("title", getString(R.string.Live_SendPresent_resetPayPassword));
-                bundle.putString("content", getString(R.string.live_set_6_num));
+                bundle.putString(l.y, getString(R.string.live_set_6_num));
                 bundle.putString("http_host", LiveRoomInfo.a().m());
-                LiveRouteUtil.a(this, bundle, i2);
+                LiveRouteUtil.a((Fragment) this, bundle, i2);
                 return;
             case 4221003:
             case 4221006:
@@ -1149,8 +1147,8 @@ public class LiveGiftFragment extends LiveGiftBaseFragment implements View.OnCli
                 } else {
                     bundle2.putString("title", str);
                 }
-                bundle2.putString("content", getString(R.string.Live_SendPresent_verifyPasswordText));
-                LiveRouteUtil.a(this, bundle2, i2);
+                bundle2.putString(l.y, getString(R.string.Live_SendPresent_verifyPasswordText));
+                LiveRouteUtil.a((Fragment) this, bundle2, i2);
                 return;
             case 4221008:
                 a(liveGiftModel);
@@ -1214,9 +1212,9 @@ public class LiveGiftFragment extends LiveGiftBaseFragment implements View.OnCli
         }
         if (liveGiftSetInfoModel.is_finish() == 1) {
             Z();
-            LiveGiftSetComboView.f14486a.c(liveGiftSetInfoModel.getId());
+            LiveGiftSetComboView.a.c(liveGiftSetInfoModel.getId());
         }
-        LiveGiftSetComboView.f14486a.a(liveGiftSetInfoModel.getId(), liveGiftSetInfoModel.getExpire_time());
+        LiveGiftSetComboView.a.a(liveGiftSetInfoModel.getId(), liveGiftSetInfoModel.getExpire_time());
         LiveGiftModel liveGiftModel2 = this.aH;
         if (liveGiftModel2 == null || !liveGiftModel2.isGiftSet() || liveGiftSetInfoModel == null || this.aH.goods_set_info.getId() != liveGiftSetInfoModel.getId()) {
             return;
@@ -1230,7 +1228,7 @@ public class LiveGiftFragment extends LiveGiftBaseFragment implements View.OnCli
             if (view != null) {
                 this.aY.setGiftWindowHeight(view.getHeight());
             }
-            this.aY.a(this.aH.goods_set_info, getFragmentActive(), this);
+            this.aY.a(this.aH.goods_set_info, (IRequestHost) getFragmentActive(), (Fragment) this);
         }
     }
 
@@ -1473,7 +1471,7 @@ public class LiveGiftFragment extends LiveGiftBaseFragment implements View.OnCli
                 if (LiveRoomManager.a().q() != null) {
                     LiveRoomManager.a().q().fans_status = 1;
                 }
-                LiveEventBus.get(EventBusConstant.KEY_EVENT_LIVE_REFRESH_GIFT_LIST).post(true);
+                LiveEventBus.get("live_refresh_gift_list").post(true);
             }
         }
         if (liveGiftModel.is_join_ticket == 1) {
@@ -1489,7 +1487,7 @@ public class LiveGiftFragment extends LiveGiftBaseFragment implements View.OnCli
     private void aa() {
         this.bt = false;
         this.bs.clear();
-        this.f13829ar.clearAnimation();
+        this.ar.clearAnimation();
         this.ap.clearAnimation();
         this.an.setVisibility(8);
         LiveGiftSetComboView liveGiftSetComboView = this.aX;
@@ -1508,7 +1506,7 @@ public class LiveGiftFragment extends LiveGiftBaseFragment implements View.OnCli
         }
         this.bu = true;
         this.bs.clear();
-        this.f13829ar.clearAnimation();
+        this.ar.clearAnimation();
         this.ap.clearAnimation();
         this.aw.a();
         this.aw.setVisibility(8);
@@ -1698,7 +1696,7 @@ public class LiveGiftFragment extends LiveGiftBaseFragment implements View.OnCli
         liveGiftModel.bg_img = liveZanExtraModel.bg_img;
         liveGiftModel.avatar_frame_url = liveZanExtraModel.avatar_frame_url;
         a((BasePayRemaining) payRemaining);
-        boolean a2 = a(liveGiftModel, payRemaining, liveZanExtraModel, i);
+        boolean a = a(liveGiftModel, payRemaining, liveZanExtraModel, i);
         if (!TextUtils.isEmpty(liveGiftModel.contents) || liveGiftModel.effect != null) {
             LogUtils.a("弹幕消息， 或者代送礼 不模拟发消息");
         } else if ((liveGiftModel.ops == 13 || liveGiftModel.ops == 19) && liveZanExtraModel != null && liveZanExtraModel.goods != null && liveZanExtraModel.goods.size() >= 2) {
@@ -1805,7 +1803,7 @@ public class LiveGiftFragment extends LiveGiftBaseFragment implements View.OnCli
             }
         }
         u();
-        if (this.aL && a2) {
+        if (this.aL && a) {
             this.y = null;
             a((LiveDefaultGiftModel) null);
         } else {
@@ -1834,17 +1832,17 @@ public class LiveGiftFragment extends LiveGiftBaseFragment implements View.OnCli
     private void b(List<CommonGiftPackageModel> list, boolean z) {
         int i;
         int i2;
-        int a2 = DisplayUtil.a(AppInfo.d(), 25.0f);
+        int a = DisplayUtil.a(AppInfo.d(), 25.0f);
         TextPaint textPaint = new TextPaint();
         textPaint.setTextSize(DisplayUtil.a(AppInfo.d(), 9.0f));
-        int a3 = DisplayUtil.a(AppInfo.d(), 14.0f);
-        int a4 = DisplayUtil.a(AppInfo.d(), 3.0f);
+        int a2 = DisplayUtil.a(AppInfo.d(), 14.0f);
+        int a3 = DisplayUtil.a(AppInfo.d(), 3.0f);
         for (CommonGiftPackageModel commonGiftPackageModel : list) {
             if (!z && (commonGiftPackageModel.packageType == 1 || commonGiftPackageModel.packageType == -1 || commonGiftPackageModel.packageType == 0)) {
-                int a5 = ((AppInfo.l - DisplayUtil.a(AppInfo.d(), 4.0f)) / commonGiftPackageModel.getColumn()) - DisplayUtil.a(AppInfo.d(), 14.0f);
-                LogUtils.c("maxTagWidth: " + a5);
-                int i3 = a5;
-                if (a5 <= 100) {
+                int a4 = ((AppInfo.l - DisplayUtil.a(AppInfo.d(), 4.0f)) / commonGiftPackageModel.getColumn()) - DisplayUtil.a(AppInfo.d(), 14.0f);
+                LogUtils.c("maxTagWidth: " + a4);
+                int i3 = a4;
+                if (a4 <= 100) {
                     i3 = DisplayUtil.a(AppInfo.d(), 83.0f);
                 }
                 for (LiveGiftModel liveGiftModel : commonGiftPackageModel.goods) {
@@ -1856,7 +1854,7 @@ public class LiveGiftFragment extends LiveGiftBaseFragment implements View.OnCli
                         if (liveGiftModel.is_battle_goods == 1 || liveGiftModel.is_fans_goods == 1 || liveGiftModel.exclusive_icon == 1 || liveGiftModel.event_type == 1) {
                             LiveGiftOperateIconModel liveGiftOperateIconModel = new LiveGiftOperateIconModel();
                             liveGiftOperateIconModel.type = 1001;
-                            liveGiftOperateIconModel.width = a2;
+                            liveGiftOperateIconModel.width = a;
                             if (liveGiftModel.is_battle_goods == 1) {
                                 liveGiftOperateIconModel.imgResId = R.drawable.live_pk_icon;
                             } else if (liveGiftModel.is_fans_goods == 1) {
@@ -1878,16 +1876,16 @@ public class LiveGiftFragment extends LiveGiftBaseFragment implements View.OnCli
                                     if (liveGiftOperateIconModel2.length > 0) {
                                         i2 = 0;
                                         if (liveGiftOperateIconModel2.height > 0) {
-                                            i2 = (int) ((liveGiftOperateIconModel2.length * a3) / liveGiftOperateIconModel2.height);
+                                            i2 = (int) ((liveGiftOperateIconModel2.length * a2) / liveGiftOperateIconModel2.height);
                                         }
                                     }
                                 } else {
-                                    i2 = ((int) textPaint.measureText(liveGiftOperateIconModel2.content)) + (a4 * 2);
+                                    i2 = ((int) textPaint.measureText(liveGiftOperateIconModel2.content)) + (a3 * 2);
                                 }
                                 if (i2 > 0 && liveGiftModel.realOperateIcons.size() < 3 && i - i2 > 0) {
                                     int i4 = i;
                                     if (liveGiftModel.realOperateIcons.size() > 0) {
-                                        i4 = i - a4;
+                                        i4 = i - a3;
                                     }
                                     i = i4 - i2;
                                     liveGiftOperateIconModel2.width = i2;
@@ -2553,7 +2551,7 @@ public class LiveGiftFragment extends LiveGiftBaseFragment implements View.OnCli
 
     public void a(LiveGiftModel liveGiftModel) {
         LiveGiftPayTools.b();
-        if (LiveGiftPayTools.f14162a || s() == null || s().getFragmentActive() == null || !s().getFragmentActive().isActive()) {
+        if (LiveGiftPayTools.a || s() == null || s().getFragmentActive() == null || !s().getFragmentActive().isActive()) {
             return;
         }
         String string = getString(R.string.Live_SendPresent_notEnoughWandou);
@@ -2564,7 +2562,7 @@ public class LiveGiftFragment extends LiveGiftBaseFragment implements View.OnCli
                 str = getString(R.string.Live_effect_not_enough);
             }
         }
-        LiveGiftPayTools.f14162a = true;
+        LiveGiftPayTools.a = true;
         CommonAlertDialog.a((Context) getActivity(), (View) null, "", str, getString(R.string.cancel), getString(R.string.Live_SendPresent_recharge), new DialogInterface.OnClickListener() { // from class: com.blued.android.module.live_china.mine.LiveGiftFragment.10
             @Override // android.content.DialogInterface.OnClickListener
             public void onClick(DialogInterface dialogInterface, int i) {
@@ -2573,22 +2571,22 @@ public class LiveGiftFragment extends LiveGiftBaseFragment implements View.OnCli
                     if (LiveGiftFragment.this.s() != null) {
                         LiveGiftFragment.this.s().b(true);
                     }
-                    LiveRoomInfo.a().a(LiveGiftFragment.this.getActivity(), 2);
+                    LiveRoomInfo.a().a((Context) LiveGiftFragment.this.getActivity(), 2);
                 } else {
-                    LiveRoomInfo.a().a(LiveGiftFragment.this.getActivity(), LiveGiftFragment.this.getFragmentManager(), 2);
+                    LiveRoomInfo.a().a((Context) LiveGiftFragment.this.getActivity(), LiveGiftFragment.this.getFragmentManager(), 2);
                 }
-                LiveGiftPayTools.f14162a = false;
+                LiveGiftPayTools.a = false;
             }
         }, new DialogInterface.OnClickListener() { // from class: com.blued.android.module.live_china.mine.LiveGiftFragment.11
             @Override // android.content.DialogInterface.OnClickListener
             public void onClick(DialogInterface dialogInterface, int i) {
                 Tracker.onClick(dialogInterface, i);
-                LiveGiftPayTools.f14162a = false;
+                LiveGiftPayTools.a = false;
             }
         }, new DialogInterface.OnCancelListener() { // from class: com.blued.android.module.live_china.mine.LiveGiftFragment.12
             @Override // android.content.DialogInterface.OnCancelListener
             public void onCancel(DialogInterface dialogInterface) {
-                LiveGiftPayTools.f14162a = false;
+                LiveGiftPayTools.a = false;
             }
         }, true);
     }
@@ -2606,7 +2604,7 @@ public class LiveGiftFragment extends LiveGiftBaseFragment implements View.OnCli
                 @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public boolean onUIFailure(int i2, String str2) {
                     if (LiveGiftFragment.this.j()) {
-                        KeyboardUtils.a(LiveGiftFragment.this.getActivity());
+                        KeyboardUtils.a((Activity) LiveGiftFragment.this.getActivity());
                         LiveGiftFragment.this.a(liveGiftModel, i, i2, str2);
                         return true;
                     }
@@ -2616,7 +2614,7 @@ public class LiveGiftFragment extends LiveGiftBaseFragment implements View.OnCli
                 @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public void onUIUpdate(BluedEntity<PayRemaining, LiveZanExtraModel> bluedEntity) {
                     if (LiveGiftFragment.this.j()) {
-                        KeyboardUtils.a(LiveGiftFragment.this.getActivity());
+                        KeyboardUtils.a((Activity) LiveGiftFragment.this.getActivity());
                         if (bluedEntity == null || bluedEntity.getSingleData() == null) {
                             LiveGiftFragment.this.a(liveGiftModel, i, 0, (String) null);
                             return;
@@ -2999,7 +2997,7 @@ public class LiveGiftFragment extends LiveGiftBaseFragment implements View.OnCli
                 if (view2 != null) {
                     this.aY.setGiftWindowHeight(view2.getHeight());
                 }
-                this.aY.a(liveGiftModel.goods_set_info, getFragmentActive(), this);
+                this.aY.a(liveGiftModel.goods_set_info, (IRequestHost) getFragmentActive(), (Fragment) this);
             }
             if (s() != null) {
                 s().i("gift_info_show");
@@ -3205,7 +3203,7 @@ public class LiveGiftFragment extends LiveGiftBaseFragment implements View.OnCli
             }
             if (liveGiftPackageModel.hasNew) {
                 liveGiftPackageModel.hasNew = false;
-                this.f10811a.setData(this.b);
+                this.a.setData(this.b);
                 LiveRoomHttpUtils.c();
             }
             if (!this.aL) {
@@ -3257,7 +3255,7 @@ public class LiveGiftFragment extends LiveGiftBaseFragment implements View.OnCli
         }
         if (liveGiftModel == null || !liveGiftModel.isGiftSet()) {
             Z();
-        } else if (!LiveGiftSetComboView.f14486a.a(liveGiftModel.goods_set_info.getId())) {
+        } else if (!LiveGiftSetComboView.a.a(liveGiftModel.goods_set_info.getId())) {
             Z();
         } else {
             this.C.setVisibility(8);
@@ -3314,7 +3312,7 @@ public class LiveGiftFragment extends LiveGiftBaseFragment implements View.OnCli
             LiveGiftSetBannerView liveGiftSetBannerView = this.aY;
             if (liveGiftSetBannerView != null) {
                 liveGiftSetBannerView.setVisibility(0);
-                this.aY.a(this.aH.goods_set_info, getFragmentActive(), this);
+                this.aY.a(this.aH.goods_set_info, (IRequestHost) getFragmentActive(), (Fragment) this);
             }
         }
     }
@@ -3345,6 +3343,7 @@ public class LiveGiftFragment extends LiveGiftBaseFragment implements View.OnCli
         F();
     }
 
+    /* JADX WARN: Type inference failed for: r2v0, types: [com.blued.android.module.live_china.mine.LiveGiftFragment$9] */
     public void e(String str) {
         LogUtils.c("checkSavePayToken: " + str);
         if (TextUtils.isEmpty(str)) {
@@ -3374,24 +3373,24 @@ public class LiveGiftFragment extends LiveGiftBaseFragment implements View.OnCli
         if (split.length < 2) {
             return;
         }
-        int a2 = CommonStringUtils.a(split[0]);
-        int a3 = CommonStringUtils.a(split[1]);
-        if (a2 >= this.b.size() || (liveGiftPackageModel = (LiveGiftPackageModel) this.b.get(a2)) == null) {
+        int a = CommonStringUtils.a(split[0]);
+        int a2 = CommonStringUtils.a(split[1]);
+        if (a >= this.b.size() || (liveGiftPackageModel = (LiveGiftPackageModel) this.b.get(a)) == null) {
             return;
         }
         if (liveGiftPackageModel.packageType == 3) {
             this.ay.setImageResource(R.drawable.live_gift_avatar_qa_tips);
-            this.ax.setPadding(a3 - DisplayUtil.a(this.ay.getContext(), 53.0f), 0, 0, 0);
+            this.ax.setPadding(a2 - DisplayUtil.a(this.ay.getContext(), 53.0f), 0, 0, 0);
             this.ax.setVisibility(0);
         } else if (liveGiftPackageModel.packageType == 4) {
             this.ay.setImageResource(R.drawable.live_gift_bubble_qa_tips);
-            this.ax.setPadding(a3 - DisplayUtil.a(this.ay.getContext(), 98.0f), 0, 0, 0);
+            this.ax.setPadding(a2 - DisplayUtil.a(this.ay.getContext(), 98.0f), 0, 0, 0);
             this.ax.setVisibility(0);
         } else if (liveGiftPackageModel.packageType != 5) {
             this.ax.setVisibility(8);
         } else {
             this.ay.setImageResource(R.drawable.live_gift_coupon_qa_tips);
-            this.ax.setPadding(a3 - DisplayUtil.a(this.ay.getContext(), 96.0f), 0, 0, 0);
+            this.ax.setPadding(a2 - DisplayUtil.a(this.ay.getContext(), 96.0f), 0, 0, 0);
             this.ax.setVisibility(0);
         }
     }
@@ -3448,7 +3447,6 @@ public class LiveGiftFragment extends LiveGiftBaseFragment implements View.OnCli
         }
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         super.onActivityResult(i, i2, intent);
         if (i2 == -1) {
@@ -3471,7 +3469,7 @@ public class LiveGiftFragment extends LiveGiftBaseFragment implements View.OnCli
         }
     }
 
-    @Override // com.blued.android.module.live.base.fragment.LiveGiftBaseFragment, com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener
+    @Override // com.blued.android.module.live.base.fragment.LiveGiftBaseFragment
     public boolean onBackPressed() {
         if (this.aU.getVisibility() == 0) {
             A();
@@ -3531,7 +3529,7 @@ public class LiveGiftFragment extends LiveGiftBaseFragment implements View.OnCli
         } else if (view.getId() == R.id.live_pk_tips_btn) {
             b(true);
         } else if (view.getId() == R.id.gift_progress_layout) {
-            LiveRoomInfo.a().a(getActivity(), LiveRoomInfo.a().z());
+            LiveRoomInfo.a().a((Context) getActivity(), LiveRoomInfo.a().z());
             EventTrackLive.b(LiveProtos.Event.LIVE_GIFT_LEVEL_BAR_CLICK, LiveRoomManager.a().e());
         } else if (view.getId() == R.id.live_gift_banner || view.getId() == R.id.ll_gift_info_look) {
             d(this.aH);
@@ -3540,7 +3538,6 @@ public class LiveGiftFragment extends LiveGiftBaseFragment implements View.OnCli
         }
     }
 
-    @Override // com.blued.android.framework.ui.SimpleFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
         this.F = null;
@@ -3554,7 +3551,6 @@ public class LiveGiftFragment extends LiveGiftBaseFragment implements View.OnCli
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroyView() {
         super.onDestroyView();
         LiveGiftSetComboView liveGiftSetComboView = this.aX;
@@ -3565,13 +3561,13 @@ public class LiveGiftFragment extends LiveGiftBaseFragment implements View.OnCli
         LiveEventBus.get("live_gift_set_buy_count_end", Integer.class).removeObserver(this.bp);
     }
 
-    @Override // com.blued.android.module.live.base.fragment.LiveGiftBaseFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.live.base.fragment.LiveGiftBaseFragment
     public void onHiddenChanged(boolean z) {
         super.onHiddenChanged(z);
         LogUtils.c("onHiddenChanged:" + z);
         if (z) {
             this.u = 0L;
-            a((CommonLiveGiftModel) a(this.f10812c), 0);
+            a((CommonLiveGiftModel) a(this.c), 0);
             if (!LiveDataManager.a().f()) {
                 b(false);
             }
@@ -3611,7 +3607,7 @@ public class LiveGiftFragment extends LiveGiftBaseFragment implements View.OnCli
         c(this.aH);
     }
 
-    @Override // com.blued.android.module.live.base.fragment.LiveGiftBaseFragment, com.blued.android.module.common.fragment.BaseGiftRootFragment, com.blued.android.framework.ui.SimpleFragment
+    @Override // com.blued.android.module.live.base.fragment.LiveGiftBaseFragment, com.blued.android.module.common.fragment.BaseGiftRootFragment
     public void onInitListener() {
         ViewGroup viewGroup;
         super.onInitListener();
@@ -3665,73 +3661,61 @@ public class LiveGiftFragment extends LiveGiftBaseFragment implements View.OnCli
             });
         }
         LiveEventBus.get("live_fans_guide_pop", Boolean.class).observe(this, new Observer() { // from class: com.blued.android.module.live_china.mine.-$$Lambda$LiveGiftFragment$ilzdHeMbgiXN42-qhBGoBSPpXfI
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 LiveGiftFragment.this.d((Boolean) obj);
             }
         });
-        LiveEventBus.get(EventBusConstant.KEY_EVENT_LIVE_REFRESH_GIFT_LIST, Boolean.class).observe(this, new Observer() { // from class: com.blued.android.module.live_china.mine.-$$Lambda$LiveGiftFragment$1uq85oWJoW2KZodjMjwZvL8l9tM
-            @Override // androidx.lifecycle.Observer
+        LiveEventBus.get("live_refresh_gift_list", Boolean.class).observe(this, new Observer() { // from class: com.blued.android.module.live_china.mine.-$$Lambda$LiveGiftFragment$1uq85oWJoW2KZodjMjwZvL8l9tM
             public final void onChanged(Object obj) {
                 LiveGiftFragment.this.c((Boolean) obj);
             }
         });
         LiveEventBus.get("live_equip_effect_gift", LiveGiftModel.class).observe(this, new Observer() { // from class: com.blued.android.module.live_china.mine.-$$Lambda$LiveGiftFragment$eUc7xGJiR78R3H4eZPs8hK5ah5w
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 LiveGiftFragment.this.f((LiveGiftModel) obj);
             }
         });
         LiveEventBus.get("live_update_item_gift", LiveGiftModel.class).observe(this, new Observer() { // from class: com.blued.android.module.live_china.mine.-$$Lambda$LiveGiftFragment$D68bTWQ3pJ94-XTXDwTMkpOudaE
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 LiveGiftFragment.this.e((LiveGiftModel) obj);
             }
         });
         LiveEventBus.get("screen_orientation_changed", Boolean.class).observe(this, new Observer() { // from class: com.blued.android.module.live_china.mine.-$$Lambda$LiveGiftFragment$FyiNLf3Wu6N_IzSBx5srXQB9Duc
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 LiveGiftFragment.this.b((Boolean) obj);
             }
         });
         LiveEventBus.get(LiveEventBusUtil.d, PayResultEvent.class).observe(this, new Observer() { // from class: com.blued.android.module.live_china.mine.-$$Lambda$LiveGiftFragment$O-AMuXxI-5krZEouUQyEvUCqMIU
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 LiveGiftFragment.this.a((PayResultEvent) obj);
             }
         });
         LiveEventBus.get(LiveEventBusUtil.r, String.class).observe(this, new Observer() { // from class: com.blued.android.module.live_china.mine.-$$Lambda$U2WJ1VpAyKAzxjOnXWo6aJ_QYII
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 LiveGiftFragment.this.f((String) obj);
             }
         });
         LiveEventBus.get(LiveEventBusUtil.u, LiveGiftSkinItemModel.class).observe(this, new Observer() { // from class: com.blued.android.module.live_china.mine.-$$Lambda$uPhdNd4bQ_pGQJK6pryKyTzfGuQ
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 LiveGiftFragment.this.a((LiveGiftSkinItemModel) obj);
             }
         });
         LiveEventBus.get(LiveEventBusUtil.j, Integer.class).observe(this, new Observer() { // from class: com.blued.android.module.live_china.mine.-$$Lambda$LiveGiftFragment$ESp5jber8NGP3o_0KIid0Ge993w
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 LiveGiftFragment.this.c((Integer) obj);
             }
         });
         LiveEventBus.get(LiveEventBusUtil.w, Integer.class).observe(this, new Observer() { // from class: com.blued.android.module.live_china.mine.-$$Lambda$LiveGiftFragment$UbTdbCU5SDZT80l2w46kYaQcn-M
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 LiveGiftFragment.this.b((Integer) obj);
             }
         });
         LiveEventBus.get("live_show_gift_bag_red_dot", Boolean.class).observe(this, new Observer() { // from class: com.blued.android.module.live_china.mine.-$$Lambda$LiveGiftFragment$_JGdH-Btp8FIYp30FXEbrhBRDDY
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 LiveGiftFragment.this.a((Boolean) obj);
             }
         });
         LiveEventBus.get("live_hide_gift_behalf_view", Long.class).observe(this, new Observer() { // from class: com.blued.android.module.live_china.mine.-$$Lambda$LiveGiftFragment$3vaCIGTYFFz_wRoloZ2msJPXBQ4
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 LiveGiftFragment.this.a((Long) obj);
             }
@@ -3739,26 +3723,23 @@ public class LiveGiftFragment extends LiveGiftBaseFragment implements View.OnCli
         LiveEventBus.get("live_gift_set_buy_success", LiveGiftSetBuyModel.class).observe(this, this.bo);
         LiveEventBus.get("live_gift_set_buy_count_end", Integer.class).observe(this, this.bp);
         LiveEventBus.get("live_pay_remain_update", BasePayRemaining.class).observe(this, new Observer() { // from class: com.blued.android.module.live_china.mine.-$$Lambda$LiveGiftFragment$X0Pd0xzkZ5KMZQSaoJpo063hzF8
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 LiveGiftFragment.this.d((BasePayRemaining) obj);
             }
         });
         LiveEventBus.get(LiveEventBusUtil.U, Integer.class).observe(this, new Observer() { // from class: com.blued.android.module.live_china.mine.-$$Lambda$LiveGiftFragment$WO7ZIJZE7ndAmHufle9eS2oNgE8
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 LiveGiftFragment.this.a((Integer) obj);
             }
         });
         LiveEventBus.get(LiveEventBusUtil.V, GiftConstellationBuyInfoModel.class).observe(this, new Observer() { // from class: com.blued.android.module.live_china.mine.-$$Lambda$LiveGiftFragment$ZyIVPN5pj-Rgx7oqq8ZURTITIdQ
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 LiveGiftFragment.this.a((GiftConstellationBuyInfoModel) obj);
             }
         });
     }
 
-    @Override // com.blued.android.module.live.base.fragment.LiveGiftBaseFragment, com.blued.android.module.common.fragment.BaseGiftRootFragment, com.blued.android.module.common.fragment.BaseViewPagerParentFragment, com.blued.android.framework.ui.SimpleFragment
+    @Override // com.blued.android.module.live.base.fragment.LiveGiftBaseFragment, com.blued.android.module.common.fragment.BaseGiftRootFragment, com.blued.android.module.common.fragment.BaseViewPagerParentFragment
     public void onInitView() {
         LinearLayout linearLayout;
         super.onInitView();
@@ -3823,7 +3804,7 @@ public class LiveGiftFragment extends LiveGiftBaseFragment implements View.OnCli
         this.ao = this.rootView.findViewById(R.id.live_gift_combo_line);
         this.ap = this.rootView.findViewById(R.id.live_gift_combo_btn_layout);
         this.aq = (ImageView) this.rootView.findViewById(R.id.live_gift_combo_btn_click_bg);
-        this.f13829ar = (ImageView) this.rootView.findViewById(R.id.live_gift_combo_btn_mid);
+        this.ar = (ImageView) this.rootView.findViewById(R.id.live_gift_combo_btn_mid);
         this.as = this.rootView.findViewById(R.id.live_gift_combo_count_parent);
         this.at = this.rootView.findViewById(R.id.live_gift_combo_count_layout);
         this.au = (TextView) this.rootView.findViewById(R.id.live_gift_combo_count_tv);
@@ -3847,12 +3828,12 @@ public class LiveGiftFragment extends LiveGiftBaseFragment implements View.OnCli
         this.aE = getResources().getString(R.string.cancel_equipment);
         this.x = true;
         this.aO = DisplayUtil.a(AppInfo.d(), 5.0f);
-        this.aP = DialogUtils.a(getActivity());
+        this.aP = DialogUtils.a((Context) getActivity());
         if (this.J != null) {
             LayoutTransition layoutTransition = new LayoutTransition();
-            float a2 = DensityUtils.a(getContext(), 10.0f);
-            layoutTransition.setAnimator(2, ObjectAnimator.ofPropertyValuesHolder(this, PropertyValuesHolder.ofFloat("translationY", a2, 0.0f), PropertyValuesHolder.ofFloat("alpha", 0.0f, 1.0f)));
-            layoutTransition.setAnimator(3, ObjectAnimator.ofPropertyValuesHolder(this, PropertyValuesHolder.ofFloat("translationY", 0.0f, a2), PropertyValuesHolder.ofFloat("alpha", 1.0f, 0.0f)));
+            float a = DensityUtils.a(getContext(), 10.0f);
+            layoutTransition.setAnimator(2, ObjectAnimator.ofPropertyValuesHolder(this, PropertyValuesHolder.ofFloat("translationY", a, 0.0f), PropertyValuesHolder.ofFloat("alpha", 0.0f, 1.0f)));
+            layoutTransition.setAnimator(3, ObjectAnimator.ofPropertyValuesHolder(this, PropertyValuesHolder.ofFloat("translationY", 0.0f, a), PropertyValuesHolder.ofFloat("alpha", 1.0f, 0.0f)));
             layoutTransition.setDuration(200L);
             this.J.setLayoutTransition(layoutTransition);
         }
@@ -3867,7 +3848,7 @@ public class LiveGiftFragment extends LiveGiftBaseFragment implements View.OnCli
         });
     }
 
-    @Override // com.blued.android.module.live.base.fragment.LiveGiftBaseFragment, com.blued.android.module.common.fragment.BaseViewPagerParentFragment, com.blued.android.framework.ui.SimpleFragment
+    @Override // com.blued.android.module.live.base.fragment.LiveGiftBaseFragment, com.blued.android.module.common.fragment.BaseViewPagerParentFragment
     public void onInitViewFinished() {
         super.onInitViewFinished();
         if (this.aj != null) {
@@ -3878,7 +3859,7 @@ public class LiveGiftFragment extends LiveGiftBaseFragment implements View.OnCli
         ImageLoader.c(getFragmentActive(), "live_noble_gift_icon.png").g(-1).e(this.af.hashCode()).a(this.af);
     }
 
-    @Override // com.blued.android.module.live.base.fragment.LiveGiftBaseFragment, com.blued.android.framework.ui.SimpleFragment
+    @Override // com.blued.android.module.live.base.fragment.LiveGiftBaseFragment
     public void onLoadData() {
         super.onLoadData();
         if (!this.aL && !TypeUtils.a((List<?>) LiveDataManager.a().b(h()))) {
@@ -3891,7 +3872,7 @@ public class LiveGiftFragment extends LiveGiftBaseFragment implements View.OnCli
         u();
     }
 
-    @Override // com.blued.android.module.common.fragment.BaseGiftRootFragment, com.blued.android.framework.ui.SimpleFragment
+    @Override // com.blued.android.module.common.fragment.BaseGiftRootFragment
     public int onSetRootViewId() {
         return LiveDataManager.a().f() ? R.layout.fragment_live_gift_land : R.layout.fragment_live_gift;
     }
@@ -3946,8 +3927,8 @@ public class LiveGiftFragment extends LiveGiftBaseFragment implements View.OnCli
                 }
                 LiveGiftBagModel singleData = bluedEntityA.getSingleData();
                 LogUtils.a("liveGiftBagModel = " + singleData.toString());
-                LiveMsgSendManager a2 = LiveMsgSendManager.a();
-                a2.d("首冲礼包 上架状态：" + singleData.is_shelves_new + " -- 充值购买状态：" + singleData.buy_state);
+                LiveMsgSendManager a = LiveMsgSendManager.a();
+                a.d("首冲礼包 上架状态：" + singleData.is_shelves_new + " -- 充值购买状态：" + singleData.buy_state);
                 if (singleData.is_shelves_new == 1) {
                     if (singleData.buy_state == 0) {
                         EventTrackLive.a(LiveProtos.Event.LIVE_VIEWERS_FIRST_PAY_BTN_SHOW);
@@ -3973,6 +3954,7 @@ public class LiveGiftFragment extends LiveGiftBaseFragment implements View.OnCli
         }
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     public void z() {
         View view = this.R;
         if (view != null) {
@@ -3983,7 +3965,7 @@ public class LiveGiftFragment extends LiveGiftBaseFragment implements View.OnCli
             S();
         }
         LiveGiftModel liveGiftModel = this.aH;
-        LiveRouteUtil.a(this, liveGiftModel != null ? liveGiftModel.goods_id : null);
+        LiveRouteUtil.a((BaseFragment) this, liveGiftModel != null ? liveGiftModel.goods_id : null);
         EventTrackLive.a(LiveProtos.Event.LIVE_GIFT_SKIN_INTRODUCE_CLICK, LiveRoomManager.a().e(), LiveRoomManager.a().g());
     }
 }

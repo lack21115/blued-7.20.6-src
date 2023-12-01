@@ -10,7 +10,7 @@ import java.util.List;
 public final class bf implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    final Handler f35292a;
+    final Handler f21601a;
     long d;
     private final String e;
     private final List<ba> f = new LinkedList();
@@ -18,20 +18,20 @@ public final class bf implements Runnable {
     private final long g = 5000;
 
     /* renamed from: c  reason: collision with root package name */
-    boolean f35293c = true;
+    boolean f21602c = true;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public bf(Handler handler, String str) {
-        this.f35292a = handler;
+        this.f21601a = handler;
         this.e = str;
     }
 
     private Thread e() {
-        return this.f35292a.getLooper().getThread();
+        return this.f21601a.getLooper().getThread();
     }
 
     public final boolean a() {
-        return !this.f35293c && SystemClock.uptimeMillis() >= this.d + this.b;
+        return !this.f21602c && SystemClock.uptimeMillis() >= this.d + this.b;
     }
 
     public final long b() {
@@ -92,7 +92,7 @@ public final class bf implements Runnable {
         if (name == null) {
             name = "";
         }
-        baVar.f35284a = name;
+        baVar.f21593a = name;
         synchronized (this.f) {
             while (this.f.size() >= 32) {
                 this.f.remove(0);
@@ -103,7 +103,7 @@ public final class bf implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        this.f35293c = true;
+        this.f21602c = true;
         this.b = this.g;
     }
 }

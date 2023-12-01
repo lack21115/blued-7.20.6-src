@@ -17,11 +17,11 @@ import com.soft.blued.R;
 public class UserLabelToolBarView extends FrameLayout implements View.OnClickListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f33267a;
+    private Context f19576a;
     private LayoutInflater b;
 
     /* renamed from: c  reason: collision with root package name */
-    private LinearLayout f33268c;
+    private LinearLayout f19577c;
     private FrameLayout d;
     private TextView e;
     private View f;
@@ -55,27 +55,27 @@ public class UserLabelToolBarView extends FrameLayout implements View.OnClickLis
 
     public UserLabelToolBarView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f33267a = context;
+        this.f19576a = context;
         LayoutInflater from = LayoutInflater.from(context);
         this.b = from;
         from.inflate(R.layout.user_label_tool_bar_view, this);
-        this.f33268c = (LinearLayout) findViewById(2131369470);
-        this.d = (FrameLayout) findViewById(2131366743);
+        this.f19577c = (LinearLayout) findViewById(2131369470);
+        this.d = (FrameLayout) findViewById(R.id.layout1);
         this.e = (TextView) findViewById(2131370607);
         this.f = findViewById(2131373095);
-        this.g = (ImageView) findViewById(2131368911);
-        this.h = (FrameLayout) findViewById(2131366744);
+        this.g = (ImageView) findViewById(R.id.point1);
+        this.h = (FrameLayout) findViewById(R.id.layout2);
         this.i = (TextView) findViewById(2131370608);
-        this.j = findViewById(2131373096);
-        this.k = (ImageView) findViewById(2131368912);
-        this.l = (FrameLayout) findViewById(2131366745);
-        this.m = (TextView) findViewById(2131370609);
-        this.n = findViewById(2131373097);
-        this.o = (ImageView) findViewById(2131368913);
-        this.p = (FrameLayout) findViewById(2131366746);
-        this.q = (TextView) findViewById(2131370610);
-        this.r = findViewById(2131373098);
-        this.s = (ImageView) findViewById(2131368914);
+        this.j = findViewById(R.id.view2);
+        this.k = (ImageView) findViewById(R.id.point2);
+        this.l = (FrameLayout) findViewById(R.id.layout3);
+        this.m = (TextView) findViewById(R.id.text3);
+        this.n = findViewById(R.id.view3);
+        this.o = (ImageView) findViewById(R.id.point3);
+        this.p = (FrameLayout) findViewById(R.id.layout4);
+        this.q = (TextView) findViewById(R.id.text4);
+        this.r = findViewById(R.id.view4);
+        this.s = (ImageView) findViewById(R.id.point4);
         setToolBtnSelect(0);
         this.d.setOnClickListener(this);
         this.h.setOnClickListener(this);
@@ -85,11 +85,11 @@ public class UserLabelToolBarView extends FrameLayout implements View.OnClickLis
     }
 
     private int a(int i) {
-        return BluedSkinUtils.a(this.f33267a, i);
+        return BluedSkinUtils.a(this.f19576a, i);
     }
 
     public void a() {
-        String[] stringArray = this.f33267a.getResources().getStringArray(R.array.user_label_title);
+        String[] stringArray = this.f19576a.getResources().getStringArray(R.array.user_label_title);
         int i = 0;
         while (true) {
             int i2 = i;
@@ -113,10 +113,10 @@ public class UserLabelToolBarView extends FrameLayout implements View.OnClickLis
     public void onClick(View view) {
         Tracker.onClick(view);
         switch (view.getId()) {
-            case 2131366743:
-            case 2131366744:
-            case 2131366745:
-            case 2131366746:
+            case R.id.layout1 /* 2131366743 */:
+            case R.id.layout2 /* 2131366744 */:
+            case R.id.layout3 /* 2131366745 */:
+            case R.id.layout4 /* 2131366746 */:
                 if (this.t != null) {
                     int i = 0;
                     if (view.getId() != 2131366743) {

@@ -14,11 +14,11 @@ import java.util.List;
 public class ChartHighlighter<T extends BarLineScatterCandleBubbleDataProvider> implements IHighlighter {
 
     /* renamed from: a  reason: collision with root package name */
-    protected T f22148a;
+    protected T f8541a;
     protected List<Highlight> b = new ArrayList();
 
     public ChartHighlighter(T t) {
-        this.f22148a = t;
+        this.f8541a = t;
     }
 
     protected float a(float f, float f2, float f3, float f4) {
@@ -49,14 +49,14 @@ public class ChartHighlighter<T extends BarLineScatterCandleBubbleDataProvider> 
     }
 
     protected BarLineScatterCandleBubbleData a() {
-        return this.f22148a.getData();
+        return this.f8541a.getData();
     }
 
     @Override // com.github.mikephil.charting.highlight.IHighlighter
     public Highlight a(float f, float f2) {
         MPPointD b = b(f, f2);
         MPPointD.a(b);
-        return a((float) b.f22202a, f, f2);
+        return a((float) b.f8595a, f, f2);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -65,7 +65,7 @@ public class ChartHighlighter<T extends BarLineScatterCandleBubbleDataProvider> 
         if (b.isEmpty()) {
             return null;
         }
-        return a(b, f2, f3, a(b, f3, YAxis.AxisDependency.LEFT) < a(b, f3, YAxis.AxisDependency.RIGHT) ? YAxis.AxisDependency.LEFT : YAxis.AxisDependency.RIGHT, this.f22148a.getMaxHighlightDistance());
+        return a(b, f2, f3, a(b, f3, YAxis.AxisDependency.LEFT) < a(b, f3, YAxis.AxisDependency.RIGHT) ? YAxis.AxisDependency.LEFT : YAxis.AxisDependency.RIGHT, this.f8541a.getMaxHighlightDistance());
     }
 
     public Highlight a(List<Highlight> list, float f, float f2, YAxis.AxisDependency axisDependency, float f3) {
@@ -114,15 +114,15 @@ public class ChartHighlighter<T extends BarLineScatterCandleBubbleDataProvider> 
             return arrayList;
         }
         for (Entry entry : list) {
-            MPPointD b2 = this.f22148a.a(iDataSet.C()).b(entry.i(), entry.b());
-            arrayList.add(new Highlight(entry.i(), entry.b(), (float) b2.f22202a, (float) b2.b, i, iDataSet.C()));
+            MPPointD b2 = this.f8541a.a(iDataSet.C()).b(entry.i(), entry.b());
+            arrayList.add(new Highlight(entry.i(), entry.b(), (float) b2.f8595a, (float) b2.b, i, iDataSet.C()));
         }
         return arrayList;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     public MPPointD b(float f, float f2) {
-        return this.f22148a.a(YAxis.AxisDependency.LEFT).a(f, f2);
+        return this.f8541a.a(YAxis.AxisDependency.LEFT).a(f, f2);
     }
 
     /* JADX WARN: Type inference failed for: r0v12, types: [com.github.mikephil.charting.interfaces.datasets.IDataSet] */

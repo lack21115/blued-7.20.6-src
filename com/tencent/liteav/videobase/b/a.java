@@ -1,5 +1,6 @@
 package com.tencent.liteav.videobase.b;
 
+import android.opengl.EGL14;
 import android.opengl.GLES20;
 import android.view.Surface;
 import com.tencent.liteav.base.system.LiteavSystemInfo;
@@ -12,12 +13,12 @@ import javax.microedition.khronos.egl.EGLSurface;
 
 /* loaded from: source-8457232-dex2jar.jar:com/tencent/liteav/videobase/b/a.class */
 public final class a implements h<EGLContext> {
-    private static final int[] i = {12339, 1, 12324, 8, 12323, 8, 12322, 8, 12321, 8, 12325, 0, 12326, 0, 12352, 4, 12344};
-    private static final int[] j = {12339, 4, 12324, 8, 12323, 8, 12322, 8, 12321, 8, 12325, 0, 12326, 0, 12352, 4, 12610, 1, 12344};
+    private static final int[] i = {EGL14.EGL_SURFACE_TYPE, 1, EGL14.EGL_RED_SIZE, 8, EGL14.EGL_GREEN_SIZE, 8, EGL14.EGL_BLUE_SIZE, 8, EGL14.EGL_ALPHA_SIZE, 8, EGL14.EGL_DEPTH_SIZE, 0, EGL14.EGL_STENCIL_SIZE, 0, EGL14.EGL_RENDERABLE_TYPE, 4, EGL14.EGL_NONE};
+    private static final int[] j = {EGL14.EGL_SURFACE_TYPE, 4, EGL14.EGL_RED_SIZE, 8, EGL14.EGL_GREEN_SIZE, 8, EGL14.EGL_BLUE_SIZE, 8, EGL14.EGL_ALPHA_SIZE, 8, EGL14.EGL_DEPTH_SIZE, 0, EGL14.EGL_STENCIL_SIZE, 0, EGL14.EGL_RENDERABLE_TYPE, 4, 12610, 1, EGL14.EGL_NONE};
     private final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final int f36588c;
+    private final int f22897c;
     private EGL10 g;
     private EGLConfig h;
     private EGLDisplay d = EGL10.EGL_NO_DISPLAY;
@@ -25,11 +26,11 @@ public final class a implements h<EGLContext> {
     private EGLSurface f = EGL10.EGL_NO_SURFACE;
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f36587a = "EGL10Helper@" + hashCode();
+    private final String f22896a = "EGL10Helper@" + hashCode();
 
     private a(int i2, int i3) {
         this.b = i2;
-        this.f36588c = i3;
+        this.f22897c = i3;
     }
 
     public static a a(EGLContext eGLContext, Surface surface, int i2, int i3) throws g {
@@ -48,7 +49,7 @@ public final class a implements h<EGLContext> {
                 try {
                     aVar.e = aVar.a(aVar.d, aVar.h, 2, eGLContext);
                 } catch (g e) {
-                    LiteavLog.i(aVar.f36587a, "failed to create EGLContext of OpenGL ES 2.0, try 3.0");
+                    LiteavLog.i(aVar.f22896a, "failed to create EGLContext of OpenGL ES 2.0, try 3.0");
                     aVar.e = aVar.a(aVar.d, aVar.h, 3, eGLContext);
                     i4 = 3;
                 }
@@ -56,9 +57,9 @@ public final class a implements h<EGLContext> {
                 aVar.e = aVar.a(aVar.d, aVar.h, 2, eGLContext);
             }
             i4 = 2;
-            LiteavLog.i(aVar.f36587a, "create eglContext " + aVar.e + " sharedContext: " + eGLContext + " version:" + i4);
+            LiteavLog.i(aVar.f22896a, "create eglContext " + aVar.e + " sharedContext: " + eGLContext + " version:" + i4);
             if (surface == null) {
-                aVar.f = aVar.g.eglCreatePbufferSurface(aVar.d, aVar.h, new int[]{12375, aVar.b, 12374, aVar.f36588c, 12344});
+                aVar.f = aVar.g.eglCreatePbufferSurface(aVar.d, aVar.h, new int[]{EGL14.EGL_WIDTH, aVar.b, EGL14.EGL_HEIGHT, aVar.f22897c, EGL14.EGL_NONE});
             } else {
                 try {
                     aVar.f = aVar.g.eglCreateWindowSurface(aVar.d, aVar.h, surface, null);
@@ -85,7 +86,7 @@ public final class a implements h<EGLContext> {
         if (eGLContext == null) {
             eGLContext2 = EGL10.EGL_NO_CONTEXT;
         }
-        EGLContext eglCreateContext = this.g.eglCreateContext(eGLDisplay, eGLConfig, eGLContext2, new int[]{12440, i2, 12344});
+        EGLContext eglCreateContext = this.g.eglCreateContext(eGLDisplay, eGLConfig, eGLContext2, new int[]{12440, i2, EGL14.EGL_NONE});
         g();
         return eglCreateContext;
     }
@@ -133,7 +134,7 @@ public final class a implements h<EGLContext> {
             d();
             f();
             if (this.e != EGL10.EGL_NO_CONTEXT) {
-                String str = this.f36587a;
+                String str = this.f22896a;
                 LiteavLog.i(str, "destroy eglContext " + this.e);
                 this.g.eglDestroyContext(this.d, this.e);
                 this.e = EGL10.EGL_NO_CONTEXT;

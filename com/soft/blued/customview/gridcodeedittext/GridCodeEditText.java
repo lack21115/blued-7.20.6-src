@@ -32,11 +32,11 @@ import com.soft.blued.customview.gridcodeedittext.imebugfixer.BugFixedEditText;
 public class GridCodeEditText extends LinearLayout implements PasswordView {
 
     /* renamed from: a  reason: collision with root package name */
-    private ColorStateList f28593a;
+    private ColorStateList f14903a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f28594c;
+    private int f14904c;
     private int d;
     private int e;
     private Drawable f;
@@ -61,23 +61,23 @@ public class GridCodeEditText extends LinearLayout implements PasswordView {
     static /* synthetic */ class AnonymousClass5 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f28599a;
+        static final /* synthetic */ int[] f14909a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x002f -> B:19:0x001f). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:9:0x002b -> B:15:0x0014). Please submit an issue!!! */
         static {
             int[] iArr = new int[PasswordType.values().length];
-            f28599a = iArr;
+            f14909a = iArr;
             try {
                 iArr[PasswordType.TEXT.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f28599a[PasswordType.TEXTVISIBLE.ordinal()] = 2;
+                f14909a[PasswordType.TEXTVISIBLE.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f28599a[PasswordType.TEXTWEB.ordinal()] = 3;
+                f14909a[PasswordType.TEXTWEB.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
         }
@@ -449,7 +449,7 @@ public class GridCodeEditText extends LinearLayout implements PasswordView {
     private GradientDrawable b() {
         GradientDrawable gradientDrawable = new GradientDrawable();
         gradientDrawable.setColor(this.e);
-        gradientDrawable.setStroke(this.f28594c, this.d);
+        gradientDrawable.setStroke(this.f14904c, this.d);
         return gradientDrawable;
     }
 
@@ -473,10 +473,10 @@ public class GridCodeEditText extends LinearLayout implements PasswordView {
                 return;
             }
             addView(from.inflate(R.layout.view_gcet_divider, (ViewGroup) this, false));
-            TextView textView = (ShapeTextView) from.inflate(R.layout.view_text, (ViewGroup) this, false);
-            setCustomAttr(textView);
-            addView(textView, new LinearLayout.LayoutParams(this.k, -1));
-            this.m[i2] = textView;
+            ShapeTextView inflate2 = from.inflate(R.layout.view_text, (ViewGroup) this, false);
+            setCustomAttr(inflate2);
+            addView((View) inflate2, new LinearLayout.LayoutParams(this.k, -1));
+            this.m[i2] = inflate2;
             i = i2 + 1;
         }
     }
@@ -484,12 +484,12 @@ public class GridCodeEditText extends LinearLayout implements PasswordView {
     private void b(Context context, AttributeSet attributeSet, int i) {
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.GridCodeEditText, i, 0);
         if (obtainStyledAttributes.hasValue(6)) {
-            this.f28593a = ColorStateList.valueOf(BluedSkinUtils.a(context, obtainStyledAttributes.getResourceId(6, 2131102254)));
+            this.f14903a = ColorStateList.valueOf(BluedSkinUtils.a(context, obtainStyledAttributes.getResourceId(6, 2131102254)));
         } else {
-            this.f28593a = obtainStyledAttributes.getColorStateList(6);
+            this.f14903a = obtainStyledAttributes.getColorStateList(6);
         }
-        if (this.f28593a == null) {
-            this.f28593a = ColorStateList.valueOf(getResources().getColor(17170435));
+        if (this.f14903a == null) {
+            this.f14903a = ColorStateList.valueOf(getResources().getColor(android.R.color.primary_text_light));
         }
         int dimensionPixelSize = obtainStyledAttributes.getDimensionPixelSize(7, -1);
         if (dimensionPixelSize != -1) {
@@ -507,7 +507,7 @@ public class GridCodeEditText extends LinearLayout implements PasswordView {
             }
             i2 = i3 + 1;
         }
-        this.f28594c = (int) obtainStyledAttributes.getDimension(2, DensityUtils.a(getContext(), 1.0f));
+        this.f14904c = (int) obtainStyledAttributes.getDimension(2, DensityUtils.a(getContext(), 1.0f));
         this.d = obtainStyledAttributes.getColor(1, -1433892728);
         this.e = obtainStyledAttributes.getColor(0, -1);
         Drawable drawable = obtainStyledAttributes.getDrawable(1);
@@ -558,7 +558,7 @@ public class GridCodeEditText extends LinearLayout implements PasswordView {
     }
 
     private void setCustomAttr(TextView textView) {
-        ColorStateList colorStateList = this.f28593a;
+        ColorStateList colorStateList = this.f14903a;
         if (colorStateList != null) {
             textView.setTextColor(colorStateList);
         }
@@ -610,9 +610,8 @@ public class GridCodeEditText extends LinearLayout implements PasswordView {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onRestoreInstanceState(Parcelable parcelable) {
+    protected void onRestoreInstanceState(Parcelable parcelable) {
         Parcelable parcelable2 = parcelable;
         if (parcelable instanceof Bundle) {
             Bundle bundle = (Bundle) parcelable;
@@ -625,9 +624,8 @@ public class GridCodeEditText extends LinearLayout implements PasswordView {
         super.onRestoreInstanceState(parcelable2);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public Parcelable onSaveInstanceState() {
+    protected Parcelable onSaveInstanceState() {
         Bundle bundle = new Bundle();
         bundle.putParcelable("instanceState", super.onSaveInstanceState());
         bundle.putStringArray("passwordArr", this.l);
@@ -677,7 +675,7 @@ public class GridCodeEditText extends LinearLayout implements PasswordView {
 
     public void setPasswordType(PasswordType passwordType) {
         boolean passWordVisibility = getPassWordVisibility();
-        int i = AnonymousClass5.f28599a[passwordType.ordinal()];
+        int i = AnonymousClass5.f14909a[passwordType.ordinal()];
         int i2 = i != 1 ? i != 2 ? i != 3 ? 18 : 225 : 145 : 129;
         TextView[] textViewArr = this.m;
         int length = textViewArr.length;

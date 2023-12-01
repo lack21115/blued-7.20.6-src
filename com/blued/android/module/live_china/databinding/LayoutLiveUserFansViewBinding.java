@@ -12,13 +12,9 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/LayoutLiveUserFansViewBinding.class */
 public final class LayoutLiveUserFansViewBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final FrameLayout f12104a;
+    public final FrameLayout a;
     public final ShapeFrameLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f12105c;
+    public final ImageView c;
     public final ImageView d;
     public final ImageView e;
     public final ShapeTextView f;
@@ -28,9 +24,9 @@ public final class LayoutLiveUserFansViewBinding implements ViewBinding {
 
     private LayoutLiveUserFansViewBinding(FrameLayout frameLayout, FrameLayout frameLayout2, ShapeFrameLayout shapeFrameLayout, ImageView imageView, ImageView imageView2, ImageView imageView3, ShapeTextView shapeTextView, ImageView imageView4, ShapeTextView shapeTextView2) {
         this.i = frameLayout;
-        this.f12104a = frameLayout2;
+        this.a = frameLayout2;
         this.b = shapeFrameLayout;
-        this.f12105c = imageView;
+        this.c = imageView;
         this.d = imageView2;
         this.e = imageView3;
         this.f = shapeTextView;
@@ -91,7 +87,6 @@ public final class LayoutLiveUserFansViewBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.i;

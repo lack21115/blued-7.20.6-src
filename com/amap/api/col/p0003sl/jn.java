@@ -12,9 +12,7 @@ import javax.crypto.NoSuchPaddingException;
 /* renamed from: com.amap.api.col.3sl.jn  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/jn.class */
 public abstract class jn {
-
-    /* renamed from: a  reason: collision with root package name */
-    jn f5213a;
+    jn a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public jn() {
@@ -22,13 +20,13 @@ public abstract class jn {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public jn(jn jnVar) {
-        this.f5213a = jnVar;
+        this.a = jnVar;
     }
 
     protected abstract byte[] a(byte[] bArr) throws CertificateException, NoSuchAlgorithmException, IOException, BadPaddingException, IllegalBlockSizeException, NoSuchPaddingException, InvalidKeyException, InvalidKeySpecException;
 
     public final byte[] b(byte[] bArr) throws CertificateException, NoSuchAlgorithmException, IOException, BadPaddingException, IllegalBlockSizeException, NoSuchPaddingException, InvalidKeyException, InvalidKeySpecException {
-        jn jnVar = this.f5213a;
+        jn jnVar = this.a;
         byte[] bArr2 = bArr;
         if (jnVar != null) {
             bArr2 = jnVar.b(bArr);

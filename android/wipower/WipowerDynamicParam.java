@@ -44,7 +44,7 @@ public class WipowerDynamicParam {
 
     public byte[] getValue() {
         print();
-        byte[] bArr = {this.mOptValidity, (byte) (this.mRectVoltage & 255), (byte) ((this.mRectVoltage & 65280) >> 8), (byte) (this.mRectCurrent & 255), (byte) ((this.mRectCurrent & 65280) >> 8), (byte) (this.mOutputVoltage & 255), (byte) ((this.mOutputVoltage & 65280) >> 8), (byte) (this.mOutputCurrent & 255), (byte) ((this.mOutputCurrent & 65280) >> 8), this.mTemperature, (byte) (this.mMinRectVoltageDyn & 255), (byte) ((this.mMinRectVoltageDyn & 65280) >> 8), (byte) (this.mSetRectVoltageDyn & 255), (byte) ((this.mSetRectVoltageDyn & 65280) >> 8), (byte) (this.mMaxRectVoltageDyn & 255), (byte) ((this.mMaxRectVoltageDyn & 65280) >> 8), this.mAlert};
+        byte[] bArr = {this.mOptValidity, (byte) (this.mRectVoltage & 255), (byte) ((this.mRectVoltage & MSB_MASK) >> 8), (byte) (this.mRectCurrent & 255), (byte) ((this.mRectCurrent & MSB_MASK) >> 8), (byte) (this.mOutputVoltage & 255), (byte) ((this.mOutputVoltage & MSB_MASK) >> 8), (byte) (this.mOutputCurrent & 255), (byte) ((this.mOutputCurrent & MSB_MASK) >> 8), this.mTemperature, (byte) (this.mMinRectVoltageDyn & 255), (byte) ((this.mMinRectVoltageDyn & MSB_MASK) >> 8), (byte) (this.mSetRectVoltageDyn & 255), (byte) ((this.mSetRectVoltageDyn & MSB_MASK) >> 8), (byte) (this.mMaxRectVoltageDyn & 255), (byte) ((this.mMaxRectVoltageDyn & MSB_MASK) >> 8), this.mAlert};
         if ((bArr[16] & Byte.MIN_VALUE) == -128 && this.mRectVoltage < OVP_THRESHHOLD_VAL) {
             bArr[16] = (byte) (bArr[16] & Byte.MAX_VALUE);
         }

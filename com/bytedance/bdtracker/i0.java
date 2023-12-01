@@ -6,22 +6,22 @@ import org.json.JSONObject;
 public abstract class i0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f21229a;
+    public boolean f7623a;
     public boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    public boolean f21230c;
+    public boolean f7624c;
     public boolean d;
 
     public i0(boolean z, boolean z2) {
         this.b = z;
-        this.f21230c = z2;
+        this.f7624c = z2;
         this.d = false;
     }
 
     public i0(boolean z, boolean z2, boolean z3) {
         this.b = z;
-        this.f21230c = z2;
+        this.f7624c = z2;
         this.d = z3;
     }
 

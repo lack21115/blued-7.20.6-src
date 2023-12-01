@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
 import com.google.common.util.concurrent.UncheckedExecutionException;
 import java.util.LinkedHashMap;
+import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
 /* loaded from: source-8110460-dex2jar.jar:com/google/common/cache/AbstractLoadingCache.class */
@@ -24,7 +25,7 @@ public abstract class AbstractLoadingCache<K, V> extends AbstractCache<K, V> imp
                 newLinkedHashMap.put(k, get(k));
             }
         }
-        return ImmutableMap.copyOf(newLinkedHashMap);
+        return ImmutableMap.copyOf((Map) newLinkedHashMap);
     }
 
     @Override // com.google.common.cache.LoadingCache

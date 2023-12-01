@@ -9,10 +9,10 @@ import java.util.List;
 final class ha extends al.b {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ Context f41464a;
+    final /* synthetic */ Context f27773a;
 
     ha(Context context) {
-        this.f41464a = context;
+        this.f27773a = context;
     }
 
     @Override // com.xiaomi.push.al.b
@@ -21,13 +21,13 @@ final class ha extends al.b {
         ArrayList arrayList;
         List list;
         List list2;
-        obj = gz.f533a;
+        obj = gz.f486a;
         synchronized (obj) {
-            list = gz.f535a;
+            list = gz.f488a;
             arrayList = new ArrayList(list);
-            list2 = gz.f535a;
+            list2 = gz.f488a;
             list2.clear();
         }
-        gz.b(this.f41464a, arrayList);
+        gz.b(this.f27773a, arrayList);
     }
 }

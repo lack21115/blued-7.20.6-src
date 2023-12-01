@@ -172,7 +172,7 @@ public abstract class Animation implements Cloneable {
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // 
     /* renamed from: clone */
-    public Animation mo1105clone() throws CloneNotSupportedException {
+    public Animation mo39clone() throws CloneNotSupportedException {
         Animation animation = (Animation) super.clone();
         animation.mPreviousRegion = new RectF();
         animation.mRegion = new RectF();

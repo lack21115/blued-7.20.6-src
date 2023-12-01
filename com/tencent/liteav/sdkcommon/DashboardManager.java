@@ -178,11 +178,11 @@ public class DashboardManager {
         g gVar = this.mDashboardManagerView;
         if (z != gVar.m) {
             if (!z) {
-                gVar.f36436c.removeView(gVar.f);
-                gVar.f36436c.removeView(gVar.g);
-            } else if (gVar.f36436c != null && gVar.f != null) {
-                gVar.f36436c.addView(gVar.f, gVar.d);
-                gVar.f36436c.addView(gVar.g, gVar.e);
+                gVar.f22745c.removeView(gVar.f);
+                gVar.f22745c.removeView(gVar.g);
+            } else if (gVar.f22745c != null && gVar.f != null) {
+                gVar.f22745c.addView(gVar.f, gVar.d);
+                gVar.f22745c.addView(gVar.g, gVar.e);
             }
             gVar.m = z;
         }

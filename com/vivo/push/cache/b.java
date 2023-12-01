@@ -8,7 +8,7 @@ import java.lang.reflect.Method;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile b f41066a;
+    private static volatile b f27375a;
     private d b;
 
     private b() {
@@ -18,10 +18,10 @@ public final class b {
         b bVar;
         synchronized (b.class) {
             try {
-                if (f41066a == null) {
-                    f41066a = new b();
+                if (f27375a == null) {
+                    f27375a = new b();
                 }
-                bVar = f41066a;
+                bVar = f27375a;
             } catch (Throwable th) {
                 throw th;
             }

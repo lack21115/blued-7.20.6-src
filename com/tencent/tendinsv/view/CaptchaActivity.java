@@ -27,11 +27,11 @@ import com.tencent.tendinsv.utils.l;
 public class CaptchaActivity extends Activity {
 
     /* renamed from: a  reason: collision with root package name */
-    private WebView f39119a;
+    private WebView f25428a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f39120c;
+    private String f25429c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/tendinsv/view/CaptchaActivity$a.class */
@@ -64,14 +64,15 @@ public class CaptchaActivity extends Activity {
         @Override // android.webkit.WebViewClient
         public void onPageFinished(WebView webView, String str) {
             super.onPageFinished(webView, str);
-            WebView webView2 = CaptchaActivity.this.f39119a;
-            Tracker.loadUrl(webView2, "javascript:startTencentCaptcha(" + CaptchaActivity.this.b + ",'" + CaptchaActivity.this.f39120c + "')");
+            WebView webView2 = CaptchaActivity.this.f25428a;
+            Tracker.loadUrl(webView2, "javascript:startTencentCaptcha(" + CaptchaActivity.this.b + ",'" + CaptchaActivity.this.f25429c + "')");
         }
 
+        @Override // android.webkit.WebViewClient
         public void onReceivedError(WebView webView, WebResourceRequest webResourceRequest, WebResourceError webResourceError) {
             super.onReceivedError(webView, webResourceRequest, webResourceError);
             CaptchaActivity.this.finish();
-            e.a().a(1014, d.a("2", "", CaptchaActivity.this.b, CaptchaActivity.this.f39120c, "onReceivedError"));
+            e.a().a(1014, d.a("2", "", CaptchaActivity.this.b, CaptchaActivity.this.f25429c, "onReceivedError"));
         }
 
         @Override // android.webkit.WebViewClient
@@ -114,7 +115,7 @@ public class CaptchaActivity extends Activity {
     private void a() {
         Intent intent = getIntent();
         this.b = intent.getStringExtra("captchaId");
-        this.f39120c = intent.getStringExtra("customContent");
+        this.f25429c = intent.getStringExtra("customContent");
     }
 
     private static void a(Window window) {
@@ -142,7 +143,7 @@ public class CaptchaActivity extends Activity {
     private void b() {
         a(getWindow());
         WebView webView = (WebView) findViewById(R.id.captcha_web);
-        this.f39119a = webView;
+        this.f25428a = webView;
         WebSettings settings = webView.getSettings();
         settings.setJavaScriptEnabled(true);
         settings.setAllowFileAccess(true);
@@ -154,10 +155,10 @@ public class CaptchaActivity extends Activity {
         settings.setJavaScriptCanOpenWindowsAutomatically(true);
         settings.setDomStorageEnabled(true);
         settings.setPluginState(WebSettings.PluginState.ON);
-        this.f39119a.setBackgroundColor(0);
-        this.f39119a.setWebViewClient(new b());
-        this.f39119a.addJavascriptInterface(new a(), "JsBridge");
-        Tracker.loadUrl(this.f39119a, "file:///android_asset/web/captcha.html");
+        this.f25428a.setBackgroundColor(0);
+        this.f25428a.setWebViewClient(new b());
+        this.f25428a.addJavascriptInterface(new a(), "JsBridge");
+        Tracker.loadUrl(this.f25428a, "file:///android_asset/web/captcha.html");
     }
 
     @Override // android.app.Activity, android.view.Window.Callback
@@ -176,7 +177,7 @@ public class CaptchaActivity extends Activity {
             a();
         } catch (Exception e) {
             e.printStackTrace();
-            e.a().a(1014, d.a("2", "", this.b, this.f39120c, "onCreate"));
+            e.a().a(1014, d.a("2", "", this.b, this.f25429c, "onCreate"));
         }
     }
 
@@ -186,12 +187,12 @@ public class CaptchaActivity extends Activity {
             try {
                 if (keyEvent.getRepeatCount() == 0) {
                     finish();
-                    e.a().a(1001, d.a("2", "", this.b, this.f39120c, "onKeyDown"));
+                    e.a().a(1001, d.a("2", "", this.b, this.f25429c, "onKeyDown"));
                     return true;
                 }
             } catch (Exception e) {
                 e.printStackTrace();
-                e.a().a(1014, d.a("2", "", this.b, this.f39120c, "onKeyDown"));
+                e.a().a(1014, d.a("2", "", this.b, this.f25429c, "onKeyDown"));
             }
         }
         return super.onKeyDown(i, keyEvent);

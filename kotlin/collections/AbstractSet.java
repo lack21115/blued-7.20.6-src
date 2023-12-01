@@ -23,9 +23,9 @@ public abstract class AbstractSet<E> extends AbstractCollection<E> implements Se
             this();
         }
 
-        public final int a(Collection<?> c2) {
-            Intrinsics.e(c2, "c");
-            Iterator<?> it = c2.iterator();
+        public final int a(Collection<?> c) {
+            Intrinsics.e(c, "c");
+            Iterator<?> it = c.iterator();
             int i = 0;
             while (true) {
                 int i2 = i;
@@ -37,20 +37,20 @@ public abstract class AbstractSet<E> extends AbstractCollection<E> implements Se
             }
         }
 
-        public final boolean a(Set<?> c2, Set<?> other) {
-            Intrinsics.e(c2, "c");
+        public final boolean a(Set<?> c, Set<?> other) {
+            Intrinsics.e(c, "c");
             Intrinsics.e(other, "other");
-            if (c2.size() != other.size()) {
+            if (c.size() != other.size()) {
                 return false;
             }
-            return c2.containsAll(other);
+            return c.containsAll(other);
         }
     }
 
     protected AbstractSet() {
     }
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
@@ -61,7 +61,7 @@ public abstract class AbstractSet<E> extends AbstractCollection<E> implements Se
         return false;
     }
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     public int hashCode() {
         return b.a(this);
     }

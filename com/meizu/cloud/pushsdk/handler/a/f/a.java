@@ -18,14 +18,14 @@ import java.util.List;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f24161a;
+    private Context f10546a;
     private List<Intent> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private BroadcastReceiver f24162c;
+    private BroadcastReceiver f10547c;
 
     public a(Context context) {
-        this.f24161a = context.getApplicationContext();
+        this.f10546a = context.getApplicationContext();
         b();
     }
 
@@ -56,7 +56,7 @@ public class a {
                 try {
                     Thread.sleep(1000L);
                     DebugLogger.d("BrightNotification", "start bright notification service " + intent);
-                    a.this.f24161a.startService(intent);
+                    a.this.f10546a.startService(intent);
                 } catch (Exception e) {
                     DebugLogger.e("BrightNotification", "send bright notification error " + e.getMessage());
                 }
@@ -67,8 +67,8 @@ public class a {
     private void b() {
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction("android.intent.action.USER_PRESENT");
-        if (this.f24162c == null) {
-            this.f24162c = new BroadcastReceiver() { // from class: com.meizu.cloud.pushsdk.handler.a.f.a.2
+        if (this.f10547c == null) {
+            this.f10547c = new BroadcastReceiver() { // from class: com.meizu.cloud.pushsdk.handler.a.f.a.2
                 @Override // android.content.BroadcastReceiver
                 public void onReceive(Context context, Intent intent) {
                     if ("android.intent.action.USER_PRESENT".equalsIgnoreCase(intent.getAction())) {
@@ -77,7 +77,7 @@ public class a {
                 }
             };
         }
-        this.f24161a.registerReceiver(this.f24162c, intentFilter);
+        this.f10546a.registerReceiver(this.f10547c, intentFilter);
     }
 
     private void b(Intent intent) {

@@ -10,13 +10,9 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 @DebugMetadata(b = "Timeout.kt", c = {101}, d = "withTimeoutOrNull", e = "kotlinx.coroutines.TimeoutKt")
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/TimeoutKt$withTimeoutOrNull$1.class */
 public final class TimeoutKt$withTimeoutOrNull$1<T> extends ContinuationImpl {
-
-    /* renamed from: a  reason: collision with root package name */
-    long f42859a;
+    long a;
     Object b;
-
-    /* renamed from: c  reason: collision with root package name */
-    Object f42860c;
+    Object c;
     /* synthetic */ Object d;
     int e;
 

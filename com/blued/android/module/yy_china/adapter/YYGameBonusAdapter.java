@@ -15,9 +15,7 @@ import java.util.ArrayList;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/adapter/YYGameBonusAdapter.class */
 public class YYGameBonusAdapter extends BaseQuickAdapter<YYGiftModel, BaseViewHolder> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private IMemberClickListener f16176a;
+    private IMemberClickListener a;
     private IRequestHost b;
 
     public YYGameBonusAdapter(IRequestHost iRequestHost) {
@@ -26,11 +24,10 @@ public class YYGameBonusAdapter extends BaseQuickAdapter<YYGiftModel, BaseViewHo
     }
 
     public void a(IMemberClickListener iMemberClickListener) {
-        this.f16176a = iMemberClickListener;
+        this.a = iMemberClickListener;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(final BaseViewHolder baseViewHolder, YYGiftModel yYGiftModel) {
         ImageView imageView = (ImageView) baseViewHolder.getView(R.id.iv_gift);
@@ -46,8 +43,8 @@ public class YYGameBonusAdapter extends BaseQuickAdapter<YYGiftModel, BaseViewHo
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
-                if (YYGameBonusAdapter.this.f16176a != null) {
-                    YYGameBonusAdapter.this.f16176a.a(baseViewHolder.getAdapterPosition());
+                if (YYGameBonusAdapter.this.a != null) {
+                    YYGameBonusAdapter.this.a.a(baseViewHolder.getAdapterPosition());
                 }
             }
         });

@@ -6,7 +6,6 @@ import android.content.res.XmlResourceParser;
 import android.util.Log;
 import android.util.SparseArray;
 import android.util.Xml;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.io.IOException;
 import java.util.ArrayList;
 import org.xmlpull.v1.XmlPullParser;
@@ -17,12 +16,12 @@ public class ConstraintLayoutStates {
     public static final String TAG = "ConstraintLayoutStates";
 
     /* renamed from: a  reason: collision with root package name */
-    ConstraintSet f2259a;
+    ConstraintSet f2211a;
     private final ConstraintLayout d;
     int b = -1;
 
     /* renamed from: c  reason: collision with root package name */
-    int f2260c = -1;
+    int f2212c = -1;
     private SparseArray<State> e = new SparseArray<>();
     private SparseArray<ConstraintSet> f = new SparseArray<>();
     private ConstraintsChangedListener g = null;
@@ -32,15 +31,15 @@ public class ConstraintLayoutStates {
     public static class State {
 
         /* renamed from: a  reason: collision with root package name */
-        int f2261a;
+        int f2213a;
         ArrayList<Variant> b = new ArrayList<>();
 
         /* renamed from: c  reason: collision with root package name */
-        int f2262c;
+        int f2214c;
         ConstraintSet d;
 
         public State(Context context, XmlPullParser xmlPullParser) {
-            this.f2262c = -1;
+            this.f2214c = -1;
             TypedArray obtainStyledAttributes = context.obtainStyledAttributes(Xml.asAttributeSet(xmlPullParser), R.styleable.State);
             int indexCount = obtainStyledAttributes.getIndexCount();
             int i = 0;
@@ -52,15 +51,15 @@ public class ConstraintLayoutStates {
                 }
                 int index = obtainStyledAttributes.getIndex(i2);
                 if (index == R.styleable.State_android_id) {
-                    this.f2261a = obtainStyledAttributes.getResourceId(index, this.f2261a);
+                    this.f2213a = obtainStyledAttributes.getResourceId(index, this.f2213a);
                 } else if (index == R.styleable.State_constraints) {
-                    this.f2262c = obtainStyledAttributes.getResourceId(index, this.f2262c);
-                    String resourceTypeName = context.getResources().getResourceTypeName(this.f2262c);
-                    context.getResources().getResourceName(this.f2262c);
+                    this.f2214c = obtainStyledAttributes.getResourceId(index, this.f2214c);
+                    String resourceTypeName = context.getResources().getResourceTypeName(this.f2214c);
+                    context.getResources().getResourceName(this.f2214c);
                     if ("layout".equals(resourceTypeName)) {
                         ConstraintSet constraintSet = new ConstraintSet();
                         this.d = constraintSet;
-                        constraintSet.clone(context, this.f2262c);
+                        constraintSet.clone(context, this.f2214c);
                     }
                 }
                 i = i2 + 1;
@@ -91,19 +90,19 @@ public class ConstraintLayoutStates {
     public static class Variant {
 
         /* renamed from: a  reason: collision with root package name */
-        float f2263a;
+        float f2215a;
         float b;
 
         /* renamed from: c  reason: collision with root package name */
-        float f2264c;
+        float f2216c;
         float d;
         int e;
         ConstraintSet f;
 
         public Variant(Context context, XmlPullParser xmlPullParser) {
-            this.f2263a = Float.NaN;
+            this.f2215a = Float.NaN;
             this.b = Float.NaN;
-            this.f2264c = Float.NaN;
+            this.f2216c = Float.NaN;
             this.d = Float.NaN;
             this.e = -1;
             TypedArray obtainStyledAttributes = context.obtainStyledAttributes(Xml.asAttributeSet(xmlPullParser), R.styleable.Variant);
@@ -130,9 +129,9 @@ public class ConstraintLayoutStates {
                 } else if (index == R.styleable.Variant_region_heightMoreThan) {
                     this.b = obtainStyledAttributes.getDimension(index, this.b);
                 } else if (index == R.styleable.Variant_region_widthLessThan) {
-                    this.f2264c = obtainStyledAttributes.getDimension(index, this.f2264c);
+                    this.f2216c = obtainStyledAttributes.getDimension(index, this.f2216c);
                 } else if (index == R.styleable.Variant_region_widthMoreThan) {
-                    this.f2263a = obtainStyledAttributes.getDimension(index, this.f2263a);
+                    this.f2215a = obtainStyledAttributes.getDimension(index, this.f2215a);
                 } else {
                     Log.v("ConstraintLayoutStates", "Unknown tag");
                 }
@@ -141,9 +140,9 @@ public class ConstraintLayoutStates {
         }
 
         boolean a(float f, float f2) {
-            if (Float.isNaN(this.f2263a) || f >= this.f2263a) {
+            if (Float.isNaN(this.f2215a) || f >= this.f2215a) {
                 if (Float.isNaN(this.b) || f2 >= this.b) {
-                    if (Float.isNaN(this.f2264c) || f <= this.f2264c) {
+                    if (Float.isNaN(this.f2216c) || f <= this.f2216c) {
                         return Float.isNaN(this.d) || f2 <= this.d;
                     }
                     return false;
@@ -218,7 +217,7 @@ public class ConstraintLayoutStates {
                     }
                     if (z) {
                         state = new State(context, xml);
-                        this.e.put(state.f2261a, state);
+                        this.e.put(state.f2213a, state);
                     } else if (z) {
                         Variant variant = new Variant(context, xml);
                         state = state2;
@@ -256,7 +255,7 @@ public class ConstraintLayoutStates {
             String attributeName = xmlPullParser.getAttributeName(i3);
             String attributeValue = xmlPullParser.getAttributeValue(i3);
             if (attributeName != null && attributeValue != null && "id".equals(attributeName)) {
-                if (attributeValue.contains(BridgeUtil.SPLIT_MARK)) {
+                if (attributeValue.contains("/")) {
                     i = context.getResources().getIdentifier(attributeValue.substring(attributeValue.indexOf(47) + 1), "id", context.getPackageName());
                 } else {
                     i = -1;
@@ -284,7 +283,7 @@ public class ConstraintLayoutStates {
             return true;
         }
         State valueAt = i == -1 ? this.e.valueAt(0) : this.e.get(i2);
-        return (this.f2260c == -1 || !valueAt.b.get(this.f2260c).a(f, f2)) && this.f2260c != valueAt.findMatch(f, f2);
+        return (this.f2212c == -1 || !valueAt.b.get(this.f2212c).a(f, f2)) && this.f2212c != valueAt.findMatch(f, f2);
     }
 
     public void setOnConstraintsChanged(ConstraintsChangedListener constraintsChangedListener) {
@@ -296,13 +295,13 @@ public class ConstraintLayoutStates {
         int i2 = this.b;
         if (i2 == i) {
             State valueAt = i == -1 ? this.e.valueAt(0) : this.e.get(i2);
-            if ((this.f2260c == -1 || !valueAt.b.get(this.f2260c).a(f, f2)) && this.f2260c != (findMatch = valueAt.findMatch(f, f2))) {
-                ConstraintSet constraintSet = findMatch == -1 ? this.f2259a : valueAt.b.get(findMatch).f;
-                int i3 = findMatch == -1 ? valueAt.f2262c : valueAt.b.get(findMatch).e;
+            if ((this.f2212c == -1 || !valueAt.b.get(this.f2212c).a(f, f2)) && this.f2212c != (findMatch = valueAt.findMatch(f, f2))) {
+                ConstraintSet constraintSet = findMatch == -1 ? this.f2211a : valueAt.b.get(findMatch).f;
+                int i3 = findMatch == -1 ? valueAt.f2214c : valueAt.b.get(findMatch).e;
                 if (constraintSet == null) {
                     return;
                 }
-                this.f2260c = findMatch;
+                this.f2212c = findMatch;
                 ConstraintsChangedListener constraintsChangedListener = this.g;
                 if (constraintsChangedListener != null) {
                     constraintsChangedListener.preLayoutChange(-1, i3);
@@ -321,12 +320,12 @@ public class ConstraintLayoutStates {
         State state = this.e.get(i);
         int findMatch2 = state.findMatch(f, f2);
         ConstraintSet constraintSet2 = findMatch2 == -1 ? state.d : state.b.get(findMatch2).f;
-        int i4 = findMatch2 == -1 ? state.f2262c : state.b.get(findMatch2).e;
+        int i4 = findMatch2 == -1 ? state.f2214c : state.b.get(findMatch2).e;
         if (constraintSet2 == null) {
             Log.v("ConstraintLayoutStates", "NO Constraint set found ! id=" + i + ", dim =" + f + ", " + f2);
             return;
         }
-        this.f2260c = findMatch2;
+        this.f2212c = findMatch2;
         ConstraintsChangedListener constraintsChangedListener3 = this.g;
         if (constraintsChangedListener3 != null) {
             constraintsChangedListener3.preLayoutChange(i, i4);

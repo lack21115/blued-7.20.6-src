@@ -11,13 +11,9 @@ import com.blued.android.module.live.base.R;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/live/base/view/GiftHitLoadingView.class */
 public class GiftHitLoadingView extends LinearLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected ImageView f11474a;
+    protected ImageView a;
     protected ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    protected ImageView f11475c;
+    protected ImageView c;
     protected int d;
     private Context e;
     private LayoutInflater f;
@@ -40,9 +36,9 @@ public class GiftHitLoadingView extends LinearLayout {
         LayoutInflater from = LayoutInflater.from(this.e);
         this.f = from;
         View inflate = from.inflate(R.layout.gift_hit_loading_layout, (ViewGroup) this, true);
-        this.f11474a = (ImageView) inflate.findViewById(R.id.gift_loading_floor);
+        this.a = (ImageView) inflate.findViewById(R.id.gift_loading_floor);
         this.b = (ImageView) inflate.findViewById(R.id.gift_loading_progress);
-        this.f11475c = (ImageView) inflate.findViewById(R.id.gift_text_floor);
+        this.c = (ImageView) inflate.findViewById(R.id.gift_text_floor);
     }
 
     public void a(int i) {
@@ -59,7 +55,7 @@ public class GiftHitLoadingView extends LinearLayout {
     }
 
     public void setLoadFloorVisibility(int i) {
-        this.f11474a.setVisibility(i);
+        this.a.setVisibility(i);
     }
 
     protected void setResources(int i) {

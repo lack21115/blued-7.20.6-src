@@ -4,19 +4,19 @@ package com.opos.mobad.service.j;
 public class e implements c<Integer> {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f27391a = 0;
+    private int f13703a = 0;
 
     @Override // com.opos.mobad.service.j.c
     public void a() {
-        this.f27391a = 0;
+        this.f13703a = 0;
     }
 
     @Override // com.opos.mobad.service.j.c
     public void a(Integer num) {
-        this.f27391a += num.intValue();
+        this.f13703a += num.intValue();
     }
 
     public int b() {
-        return this.f27391a;
+        return this.f13703a;
     }
 }

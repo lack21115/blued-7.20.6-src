@@ -1,10 +1,6 @@
 package java.text;
 
-import android.provider.UserDictionary;
-import androidx.constraintlayout.core.motion.utils.TypedValues;
-import com.cdo.oaps.ad.OapsKey;
-import com.igexin.push.core.b;
-import com.tencent.lbssearch.object.param.Geo2AddressParam;
+import com.anythink.core.common.c.g;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -21,7 +17,7 @@ import libcore.util.EmptyArray;
 
 /* loaded from: source-2895416-dex2jar.jar:java/text/MessageFormat.class */
 public class MessageFormat extends Format {
-    private static final ObjectStreamField[] serialPersistentFields = {new ObjectStreamField("argumentNumbers", int[].class), new ObjectStreamField("formats", Format[].class), new ObjectStreamField(UserDictionary.Words.LOCALE, Locale.class), new ObjectStreamField("maxOffset", Integer.TYPE), new ObjectStreamField("offsets", int[].class), new ObjectStreamField("pattern", String.class)};
+    private static final ObjectStreamField[] serialPersistentFields = {new ObjectStreamField("argumentNumbers", int[].class), new ObjectStreamField("formats", Format[].class), new ObjectStreamField("locale", Locale.class), new ObjectStreamField("maxOffset", Integer.TYPE), new ObjectStreamField("offsets", int[].class), new ObjectStreamField("pattern", String.class)};
     private static final long serialVersionUID = 6479157306784022952L;
     private int[] argumentNumbers;
     private Format[] formats;
@@ -145,7 +141,7 @@ public class MessageFormat extends Format {
                     break;
                 }
                 if (objArr[i2] == null) {
-                    objArr[i2] = b.l;
+                    objArr[i2] = "null";
                 }
                 i = i2 + 1;
             }
@@ -282,7 +278,7 @@ public class MessageFormat extends Format {
         if (charAt == '}') {
             return null;
         }
-        int match = match(str, parsePosition, false, new String[]{"time", "date", "number", "choice"});
+        int match = match(str, parsePosition, false, new String[]{g.a.g, "date", "number", "choice"});
         if (match == -1) {
             throw new IllegalArgumentException("Unknown element format");
         }
@@ -294,7 +290,7 @@ public class MessageFormat extends Format {
                 if (charAt2 == '}') {
                     return match == 1 ? DateFormat.getDateInstance(2, this.locale) : DateFormat.getTimeInstance(2, this.locale);
                 }
-                int match2 = match(str, parsePosition, true, new String[]{com.anythink.expressad.d.a.b.ax, "long", "medium", Geo2AddressParam.PoiOptions.ADDRESS_FORMAT_SHORT});
+                int match2 = match(str, parsePosition, true, new String[]{"full", "long", "medium", "short"});
                 if (match2 == -1) {
                     Format.upToWithQuotes(str, parsePosition, stringBuffer, '}', '{');
                     return new SimpleDateFormat(stringBuffer.toString(), this.locale);
@@ -318,7 +314,7 @@ public class MessageFormat extends Format {
                 if (charAt2 == '}') {
                     return NumberFormat.getInstance(this.locale);
                 }
-                int match3 = match(str, parsePosition, true, new String[]{OapsKey.KEY_CURRENCY_CODE, "percent", TypedValues.Custom.S_INT});
+                int match3 = match(str, parsePosition, true, new String[]{"currency", "percent", "integer"});
                 if (match3 == -1) {
                     Format.upToWithQuotes(str, parsePosition, stringBuffer, '}', '{');
                     return new DecimalFormat(stringBuffer.toString(), new DecimalFormatSymbols(this.locale));
@@ -346,7 +342,7 @@ public class MessageFormat extends Format {
         ObjectInputStream.GetField readFields = objectInputStream.readFields();
         this.argumentNumbers = (int[]) readFields.get("argumentNumbers", (Object) null);
         this.formats = (Format[]) readFields.get("formats", (Object) null);
-        this.locale = (Locale) readFields.get(UserDictionary.Words.LOCALE, (Object) null);
+        this.locale = (Locale) readFields.get("locale", (Object) null);
         this.maxOffset = readFields.get("maxOffset", 0);
         int[] iArr = (int[]) readFields.get("offsets", (Object) null);
         String str = (String) readFields.get("pattern", (Object) null);
@@ -380,7 +376,7 @@ public class MessageFormat extends Format {
         ObjectOutputStream.PutField putFields = objectOutputStream.putFields();
         putFields.put("argumentNumbers", this.argumentNumbers);
         putFields.put("formats", this.formats);
-        putFields.put(UserDictionary.Words.LOCALE, this.locale);
+        putFields.put("locale", this.locale);
         putFields.put("maxOffset", this.maxOffset);
         int i = 0;
         int[] iArr = new int[this.maxOffset + 1];
@@ -751,27 +747,27 @@ public class MessageFormat extends Format {
                     if (charAt == '\'') {
                         z2 = !z;
                     }
-                    char c2 = charAt;
+                    char c = charAt;
                     int i5 = i3;
                     if (!z2) {
                         int i6 = i3;
                         if (charAt == '{') {
                             i6 = i3 + 1;
                         }
-                        c2 = charAt;
+                        c = charAt;
                         i5 = i6;
                         if (charAt == '}') {
                             if (i6 > 0) {
                                 i5 = i6 - 1;
-                                c2 = charAt;
+                                c = charAt;
                             } else {
                                 stringBuffer.append("'}");
-                                c2 = '\'';
+                                c = '\'';
                                 i5 = i6;
                             }
                         }
                     }
-                    stringBuffer.append(c2);
+                    stringBuffer.append(c);
                     i4++;
                     i3 = i5;
                     z = z2;

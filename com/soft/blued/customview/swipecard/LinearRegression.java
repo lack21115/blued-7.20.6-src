@@ -4,14 +4,14 @@ package com.soft.blued.customview.swipecard;
 public class LinearRegression {
 
     /* renamed from: a  reason: collision with root package name */
-    private final double f28661a;
+    private final double f14971a;
     private final double b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final double f28662c;
+    private final double f14972c;
 
     public double a() {
-        return this.f28661a;
+        return this.f14971a;
     }
 
     public double b() {
@@ -19,7 +19,7 @@ public class LinearRegression {
     }
 
     public double c() {
-        return this.f28662c;
+        return this.f14972c;
     }
 
     public String toString() {

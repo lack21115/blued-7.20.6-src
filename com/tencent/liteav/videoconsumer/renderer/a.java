@@ -14,19 +14,19 @@ import com.tencent.liteav.videobase.videobase.DisplayTarget;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    final InterfaceC0939a f36813a;
+    final InterfaceC0769a f23122a;
     DisplayTarget e;
     Surface b = null;
 
     /* renamed from: c  reason: collision with root package name */
-    SurfaceTexture f36814c = null;
+    SurfaceTexture f23123c = null;
     final com.tencent.liteav.base.util.n d = new com.tencent.liteav.base.util.n();
     private final b f = new b(this, (byte) 0);
     private final com.tencent.liteav.base.util.b g = new com.tencent.liteav.base.util.b(Looper.getMainLooper());
 
     /* renamed from: com.tencent.liteav.videoconsumer.renderer.a$a  reason: collision with other inner class name */
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/liteav/videoconsumer/renderer/a$a.class */
-    public interface InterfaceC0939a {
+    public interface InterfaceC0769a {
         void a();
 
         void a(Surface surface, int i, int i2, boolean z);
@@ -47,7 +47,7 @@ public final class a {
             LiteavLog.i("VideoRenderer.DisplayViewWrapper", "onSurfaceTextureAvailable");
             a aVar = a.this;
             SurfaceTexture surfaceTexture2 = surfaceTexture;
-            if (aVar.f36814c != null) {
+            if (aVar.f23123c != null) {
                 if (aVar.e == null) {
                     surfaceTexture2 = surfaceTexture;
                 } else {
@@ -55,10 +55,10 @@ public final class a {
                     surfaceTexture2 = surfaceTexture;
                     if (videoView != null) {
                         surfaceTexture2 = surfaceTexture;
-                        if (surfaceTexture != aVar.f36814c) {
-                            videoView.setSurfaceTexture(aVar.f36814c);
-                            surfaceTexture2 = aVar.f36814c;
-                            aVar.f36814c = null;
+                        if (surfaceTexture != aVar.f23123c) {
+                            videoView.setSurfaceTexture(aVar.f23123c);
+                            surfaceTexture2 = aVar.f23123c;
+                            aVar.f23123c = null;
                         }
                     }
                 }
@@ -81,11 +81,11 @@ public final class a {
                 com.tencent.liteav.base.util.LiteavLog.i(r0, r1)
                 r0 = r3
                 com.tencent.liteav.videoconsumer.renderer.a r0 = com.tencent.liteav.videoconsumer.renderer.a.this
-                com.tencent.liteav.videoconsumer.renderer.a$a r0 = r0.f36813a
+                com.tencent.liteav.videoconsumer.renderer.a$a r0 = r0.f23122a
                 if (r0 == 0) goto L1d
                 r0 = r3
                 com.tencent.liteav.videoconsumer.renderer.a r0 = com.tencent.liteav.videoconsumer.renderer.a.this
-                com.tencent.liteav.videoconsumer.renderer.a$a r0 = r0.f36813a
+                com.tencent.liteav.videoconsumer.renderer.a$a r0 = r0.f23122a
                 r0.a()
             L1d:
                 r0 = r3
@@ -96,7 +96,7 @@ public final class a {
                 com.tencent.liteav.videoconsumer.renderer.a r0 = com.tencent.liteav.videoconsumer.renderer.a.this
                 com.tencent.liteav.base.util.n r0 = r0.d
                 r1 = 0
-                r0.f36340a = r1
+                r0.f22649a = r1
                 r0 = r3
                 com.tencent.liteav.videoconsumer.renderer.a r0 = com.tencent.liteav.videoconsumer.renderer.a.this
                 com.tencent.liteav.base.util.n r0 = r0.d
@@ -155,7 +155,7 @@ public final class a {
                 r0 = r3
                 com.tencent.liteav.videoconsumer.renderer.a r0 = com.tencent.liteav.videoconsumer.renderer.a.this
                 r1 = r4
-                r0.f36814c = r1
+                r0.f23123c = r1
                 r0 = 0
                 return r0
             La5:
@@ -197,25 +197,25 @@ public final class a {
             LiteavLog.i("VideoRenderer.DisplayViewWrapper", "surfaceDestroyed");
             a.this.b = null;
             com.tencent.liteav.base.util.n nVar = a.this.d;
-            a.this.d.f36340a = 0;
+            a.this.d.f22649a = 0;
             nVar.b = 0;
-            if (a.this.f36813a != null) {
-                a.this.f36813a.a();
+            if (a.this.f23122a != null) {
+                a.this.f23122a.a();
             }
         }
     }
 
-    public a(InterfaceC0939a interfaceC0939a) {
-        this.f36813a = interfaceC0939a;
+    public a(InterfaceC0769a interfaceC0769a) {
+        this.f23122a = interfaceC0769a;
     }
 
     static /* synthetic */ void a(a aVar, SurfaceTexture surfaceTexture, int i, int i2) {
         aVar.b = new Surface(surfaceTexture);
-        aVar.d.f36340a = i;
+        aVar.d.f22649a = i;
         aVar.d.b = i2;
-        InterfaceC0939a interfaceC0939a = aVar.f36813a;
-        if (interfaceC0939a != null) {
-            interfaceC0939a.a(aVar.b, aVar.d.f36340a, aVar.d.b, true);
+        InterfaceC0769a interfaceC0769a = aVar.f23122a;
+        if (interfaceC0769a != null) {
+            interfaceC0769a.a(aVar.b, aVar.d.f22649a, aVar.d.b, true);
         }
     }
 
@@ -229,15 +229,15 @@ public final class a {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final void a(SurfaceView surfaceView) {
-        InterfaceC0939a interfaceC0939a;
+        InterfaceC0769a interfaceC0769a;
         DisplayTarget displayTarget = this.e;
         if (displayTarget != null && surfaceView == displayTarget.getSurfaceView() && this.e.getType() == DisplayTarget.a.SURFACEVIEW) {
             LiteavLog.i("VideoRenderer.DisplayViewWrapper", "setDisplayView set same surfaceview!" + this.e);
             return;
         }
         if (a()) {
-            if (surfaceView == null && (interfaceC0939a = this.f36813a) != null) {
-                interfaceC0939a.a();
+            if (surfaceView == null && (interfaceC0769a = this.f23122a) != null) {
+                interfaceC0769a.a();
             }
             b();
             c();
@@ -247,15 +247,15 @@ public final class a {
         }
         SurfaceHolder holder = surfaceView.getHolder();
         this.d.b = surfaceView.getHeight();
-        this.d.f36340a = surfaceView.getWidth();
+        this.d.f22649a = surfaceView.getWidth();
         if (holder.getSurface().isValid()) {
             Surface surface = surfaceView.getHolder().getSurface();
             Rect surfaceFrame = surfaceView.getHolder().getSurfaceFrame();
             LiteavLog.i("VideoRenderer.DisplayViewWrapper", "setDisplayView %d %d*%d when construct", Integer.valueOf(surface != null ? surface.hashCode() : 0), Integer.valueOf(surfaceFrame.width()), Integer.valueOf(surfaceFrame.height()));
             this.b = surface;
-            InterfaceC0939a interfaceC0939a2 = this.f36813a;
-            if (interfaceC0939a2 != null) {
-                interfaceC0939a2.a(surface, surfaceFrame.width(), surfaceFrame.height(), false);
+            InterfaceC0769a interfaceC0769a2 = this.f23122a;
+            if (interfaceC0769a2 != null) {
+                interfaceC0769a2.a(surface, surfaceFrame.width(), surfaceFrame.height(), false);
             }
         } else {
             LiteavLog.i("VideoRenderer.DisplayViewWrapper", "setDisplayView, SurfaceView not valid");
@@ -265,15 +265,15 @@ public final class a {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final void a(TextureView textureView) {
-        InterfaceC0939a interfaceC0939a;
+        InterfaceC0769a interfaceC0769a;
         DisplayTarget displayTarget = this.e;
         if (displayTarget != null && textureView == displayTarget.getTextureView() && this.e.getType() == DisplayTarget.a.TEXTUREVIEW) {
             LiteavLog.i("VideoRenderer.DisplayViewWrapper", "setDisplayView set same textureview!" + this.e);
             return;
         }
         if (a()) {
-            if (textureView == null && (interfaceC0939a = this.f36813a) != null) {
-                interfaceC0939a.a();
+            if (textureView == null && (interfaceC0769a = this.f23122a) != null) {
+                interfaceC0769a.a();
             }
             b();
             c();
@@ -282,15 +282,15 @@ public final class a {
             return;
         }
         this.d.b = textureView.getHeight();
-        this.d.f36340a = textureView.getWidth();
-        LiteavLog.d("VideoRenderer.DisplayViewWrapper", "mSurfaceSize.height = " + this.d.b + " mSurfaceSize.width= " + this.d.f36340a);
+        this.d.f22649a = textureView.getWidth();
+        LiteavLog.d("VideoRenderer.DisplayViewWrapper", "mSurfaceSize.height = " + this.d.b + " mSurfaceSize.width= " + this.d.f22649a);
         if (textureView.isAvailable()) {
             LiteavLog.i("VideoRenderer.DisplayViewWrapper", "setDisplayView TextureView " + textureView + " " + textureView.getWidth() + " " + textureView.getHeight());
             Surface surface = new Surface(textureView.getSurfaceTexture());
             this.b = surface;
-            InterfaceC0939a interfaceC0939a2 = this.f36813a;
-            if (interfaceC0939a2 != null) {
-                interfaceC0939a2.a(surface, textureView.getWidth(), textureView.getHeight(), true);
+            InterfaceC0769a interfaceC0769a2 = this.f23122a;
+            if (interfaceC0769a2 != null) {
+                interfaceC0769a2.a(surface, textureView.getWidth(), textureView.getHeight(), true);
             }
         } else {
             LiteavLog.i("VideoRenderer.DisplayViewWrapper", "setDisplayView, TextureView not Available");
@@ -325,10 +325,10 @@ public final class a {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final void c() {
-        SurfaceTexture surfaceTexture = this.f36814c;
+        SurfaceTexture surfaceTexture = this.f23123c;
         if (surfaceTexture != null) {
             surfaceTexture.release();
-            this.f36814c = null;
+            this.f23123c = null;
         }
     }
 }

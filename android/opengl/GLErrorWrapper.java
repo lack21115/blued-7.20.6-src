@@ -6,9 +6,8 @@ import java.nio.IntBuffer;
 import java.nio.ShortBuffer;
 import javax.microedition.khronos.opengles.GL;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-9557208-dex2jar.jar:android/opengl/GLErrorWrapper.class */
-public class GLErrorWrapper extends GLWrapperBase {
+class GLErrorWrapper extends GLWrapperBase {
     boolean mCheckError;
     boolean mCheckThread;
     Thread mOurThread;

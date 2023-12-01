@@ -10,9 +10,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/sequences/SequencesKt___SequencesKt$flatMap$1.class */
 final /* synthetic */ class SequencesKt___SequencesKt$flatMap$1<R> extends FunctionReferenceImpl implements Function1<Iterable<? extends R>, Iterator<? extends R>> {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final SequencesKt___SequencesKt$flatMap$1 f42666a = new SequencesKt___SequencesKt$flatMap$1();
+    public static final SequencesKt___SequencesKt$flatMap$1 a = new SequencesKt___SequencesKt$flatMap$1();
 
     SequencesKt___SequencesKt$flatMap$1() {
         super(1, Iterable.class, "iterator", "iterator()Ljava/util/Iterator;", 0);

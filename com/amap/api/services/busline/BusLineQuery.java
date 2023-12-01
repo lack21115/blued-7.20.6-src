@@ -2,14 +2,10 @@ package com.amap.api.services.busline;
 
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/services/busline/BusLineQuery.class */
 public class BusLineQuery implements Cloneable {
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f5582a;
+    private String a;
     private String b;
     private SearchType e;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f5583c = 20;
+    private int c = 20;
     private int d = 1;
     private String f = "base";
 
@@ -20,16 +16,16 @@ public class BusLineQuery implements Cloneable {
     }
 
     public BusLineQuery(String str, SearchType searchType, String str2) {
-        this.f5582a = str;
+        this.a = str;
         this.e = searchType;
         this.b = str2;
     }
 
     /* renamed from: clone */
-    public BusLineQuery m2441clone() {
-        BusLineQuery busLineQuery = new BusLineQuery(this.f5582a, this.e, this.b);
+    public BusLineQuery m8884clone() {
+        BusLineQuery busLineQuery = new BusLineQuery(this.a, this.e, this.b);
         busLineQuery.setPageNumber(this.d);
-        busLineQuery.setPageSize(this.f5583c);
+        busLineQuery.setPageSize(this.c);
         busLineQuery.setExtensions(this.f);
         return busLineQuery;
     }
@@ -51,13 +47,13 @@ public class BusLineQuery implements Cloneable {
             } else if (!str.equals(busLineQuery.b)) {
                 return false;
             }
-            if (this.d == busLineQuery.d && this.f5583c == busLineQuery.f5583c) {
-                String str2 = this.f5582a;
+            if (this.d == busLineQuery.d && this.c == busLineQuery.c) {
+                String str2 = this.a;
                 if (str2 == null) {
-                    if (busLineQuery.f5582a != null) {
+                    if (busLineQuery.a != null) {
                         return false;
                     }
-                } else if (!str2.equals(busLineQuery.f5582a)) {
+                } else if (!str2.equals(busLineQuery.a)) {
                     return false;
                 }
                 String str3 = this.f;
@@ -85,11 +81,11 @@ public class BusLineQuery implements Cloneable {
     }
 
     public int getPageSize() {
-        return this.f5583c;
+        return this.c;
     }
 
     public String getQueryString() {
-        return this.f5582a;
+        return this.a;
     }
 
     public int hashCode() {
@@ -99,8 +95,8 @@ public class BusLineQuery implements Cloneable {
         String str = this.b;
         int hashCode2 = str == null ? 0 : str.hashCode();
         int i2 = this.d;
-        int i3 = this.f5583c;
-        String str2 = this.f5582a;
+        int i3 = this.c;
+        String str2 = this.a;
         int hashCode3 = str2 == null ? 0 : str2.hashCode();
         String str3 = this.f;
         if (str3 != null) {
@@ -130,11 +126,11 @@ public class BusLineQuery implements Cloneable {
     }
 
     public void setPageSize(int i) {
-        this.f5583c = i;
+        this.c = i;
     }
 
     public void setQueryString(String str) {
-        this.f5582a = str;
+        this.a = str;
     }
 
     public boolean weakEquals(BusLineQuery busLineQuery) {
@@ -144,11 +140,11 @@ public class BusLineQuery implements Cloneable {
         if (busLineQuery == null) {
             return false;
         }
-        if (this.f5582a == null) {
+        if (this.a == null) {
             if (busLineQuery.getQueryString() != null) {
                 return false;
             }
-        } else if (!busLineQuery.getQueryString().equals(this.f5582a)) {
+        } else if (!busLineQuery.getQueryString().equals(this.a)) {
             return false;
         }
         if (this.b == null) {
@@ -158,6 +154,6 @@ public class BusLineQuery implements Cloneable {
         } else if (!busLineQuery.getCity().equals(this.b)) {
             return false;
         }
-        return this.f5583c == busLineQuery.getPageSize() && busLineQuery.getCategory().compareTo(this.e) == 0;
+        return this.c == busLineQuery.getPageSize() && busLineQuery.getCategory().compareTo(this.e) == 0;
     }
 }

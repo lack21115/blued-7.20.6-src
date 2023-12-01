@@ -5,7 +5,6 @@ import com.android.dex.Code;
 import com.android.dex.util.ByteInput;
 import com.android.dex.util.ByteOutput;
 import com.android.dex.util.FileUtils;
-import com.tencent.tinker.loader.shareutil.ShareConstants;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -59,12 +58,10 @@ public final class Dex {
     /* loaded from: source-2895416-dex2jar.jar:com/android/dex/Dex$ClassDefIterator.class */
     private final class ClassDefIterator implements Iterator<ClassDef> {
         private int count;
-
-        /* renamed from: in  reason: collision with root package name */
-        private final Section f5812in;
+        private final Section in;
 
         private ClassDefIterator() {
-            this.f5812in = Dex.this.open(Dex.this.tableOfContents.classDefs.off);
+            this.in = Dex.this.open(Dex.this.tableOfContents.classDefs.off);
             this.count = 0;
         }
 
@@ -78,7 +75,7 @@ public final class Dex {
         public ClassDef next() {
             if (hasNext()) {
                 this.count++;
-                return this.f5812in.readClassDef();
+                return this.in.readClassDef();
             }
             throw new NoSuchElementException();
         }
@@ -101,7 +98,7 @@ public final class Dex {
             return Dex.this.open(Dex.this.tableOfContents.fieldIds.off + (i * 8)).readFieldId();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection
         public int size() {
             return Dex.this.tableOfContents.fieldIds.size;
         }
@@ -119,7 +116,7 @@ public final class Dex {
             return Dex.this.open(Dex.this.tableOfContents.methodIds.off + (i * 8)).readMethodId();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection
         public int size() {
             return Dex.this.tableOfContents.methodIds.size;
         }
@@ -137,7 +134,7 @@ public final class Dex {
             return Dex.this.open(Dex.this.tableOfContents.protoIds.off + (i * 12)).readProtoId();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection
         public int size() {
             return Dex.this.tableOfContents.protoIds.size;
         }
@@ -528,7 +525,7 @@ public final class Dex {
             return Dex.this.open(Dex.this.tableOfContents.stringIds.off + (i * 4)).readString();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection
         public int size() {
             return Dex.this.tableOfContents.stringIds.size;
         }
@@ -545,7 +542,7 @@ public final class Dex {
             return Integer.valueOf(Dex.this.descriptorIndexFromTypeIndex(i));
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection
         public int size() {
             return Dex.this.tableOfContents.typeIds.size;
         }
@@ -562,7 +559,7 @@ public final class Dex {
             return Dex.this.strings.get(Dex.this.descriptorIndexFromTypeIndex(i));
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection
         public int size() {
             return Dex.this.tableOfContents.typeIds.size;
         }
@@ -591,14 +588,14 @@ public final class Dex {
         this.fieldIds = new FieldIdTable();
         this.methodIds = new MethodIdTable();
         if (!FileUtils.hasArchiveSuffix(file.getName())) {
-            if (!file.getName().endsWith(ShareConstants.DEX_SUFFIX)) {
+            if (!file.getName().endsWith(".dex")) {
                 throw new DexException("unknown output extension: " + file);
             }
             loadFrom(new FileInputStream(file));
             return;
         }
         ZipFile zipFile = new ZipFile(file);
-        ZipEntry entry = zipFile.getEntry("classes.dex");
+        ZipEntry entry = zipFile.getEntry(DexFormat.DEX_IN_JAR_NAME);
         if (entry == null) {
             throw new DexException("Expected classes.dex in " + file);
         }

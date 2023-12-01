@@ -10,11 +10,11 @@ import java.util.Set;
 public class CvowV {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final spXPg f39865a = new spXPg();
+    public static final spXPg f26174a = new spXPg();
     public BfUKf b;
 
     /* renamed from: c  reason: collision with root package name */
-    public n6fHX f39866c;
+    public n6fHX f26175c;
     public ITuringDeviceInfoProvider d;
     public Context e;
     public int f = 0;

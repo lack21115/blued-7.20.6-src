@@ -17,19 +17,19 @@ import java.util.List;
 public class SafeCommonContentListAdapter extends RecyclerView.Adapter {
 
     /* renamed from: a  reason: collision with root package name */
-    private List<MsgExtraForTextTypeEntity.SecureNotify.SecureContent> f32180a;
+    private List<MsgExtraForTextTypeEntity.SecureNotify.SecureContent> f18490a;
 
     /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/msg/adapter/SafeCommonContentListAdapter$SafeContentViewHolder.class */
     public class SafeContentViewHolder extends RecyclerView.ViewHolder {
         private TextView b;
 
         /* renamed from: c  reason: collision with root package name */
-        private TextView f32182c;
+        private TextView f18492c;
 
         public SafeContentViewHolder(View view) {
             super(view);
             this.b = (TextView) view.findViewById(R.id.safe_content_title);
-            this.f32182c = (TextView) view.findViewById(R.id.safe_content_tv);
+            this.f18492c = (TextView) view.findViewById(R.id.safe_content_tv);
         }
 
         public void a(final MsgExtraForTextTypeEntity.SecureNotify.SecureContent secureContent) {
@@ -41,7 +41,7 @@ public class SafeCommonContentListAdapter extends RecyclerView.Adapter {
                     this.b.setText(secureContent.title);
                 }
                 if (!TextUtils.isEmpty(secureContent.body)) {
-                    this.f32182c.setText(StringUtils.a(secureContent.body, secureContent.link_title));
+                    this.f18492c.setText(StringUtils.a(secureContent.body, secureContent.link_title));
                 }
                 this.itemView.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.adapter.SafeCommonContentListAdapter.SafeContentViewHolder.1
                     @Override // android.view.View.OnClickListener
@@ -59,7 +59,7 @@ public class SafeCommonContentListAdapter extends RecyclerView.Adapter {
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     public int getItemCount() {
-        List<MsgExtraForTextTypeEntity.SecureNotify.SecureContent> list = this.f32180a;
+        List<MsgExtraForTextTypeEntity.SecureNotify.SecureContent> list = this.f18490a;
         if (list == null) {
             return 0;
         }
@@ -68,7 +68,7 @@ public class SafeCommonContentListAdapter extends RecyclerView.Adapter {
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int i) {
-        MsgExtraForTextTypeEntity.SecureNotify.SecureContent secureContent = this.f32180a.get(i);
+        MsgExtraForTextTypeEntity.SecureNotify.SecureContent secureContent = this.f18490a.get(i);
         SafeContentViewHolder safeContentViewHolder = (SafeContentViewHolder) viewHolder;
         if (safeContentViewHolder != null) {
             safeContentViewHolder.a(secureContent);

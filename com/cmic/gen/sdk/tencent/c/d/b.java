@@ -8,20 +8,20 @@ import java.util.Map;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f21649a;
+    private int f8043a;
     private Map<String, List<String>> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f21650c;
+    private String f8044c;
 
     public b(int i, Map<String, List<String>> map, String str) {
-        this.f21649a = i;
+        this.f8043a = i;
         this.b = map;
-        this.f21650c = str;
+        this.f8044c = str;
     }
 
     public int a() {
-        return this.f21649a;
+        return this.f8043a;
     }
 
     public Map<String, List<String>> b() {
@@ -34,7 +34,7 @@ public class b {
     }
 
     public String c() {
-        String str = this.f21650c;
+        String str = this.f8044c;
         String str2 = str;
         if (str == null) {
             str2 = "";
@@ -43,7 +43,7 @@ public class b {
     }
 
     public boolean d() {
-        int i = this.f21649a;
+        int i = this.f8043a;
         return i == 302 || i == 301;
     }
 }

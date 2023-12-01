@@ -5,13 +5,9 @@ import com.anythink.core.common.b.n;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/d.class */
 public final class d {
-
-    /* renamed from: a  reason: collision with root package name */
-    long f5910a;
+    long a;
     long b;
-
-    /* renamed from: c  reason: collision with root package name */
-    Runnable f5911c;
+    Runnable c;
     boolean d = false;
     private final com.anythink.core.common.i.a f = com.anythink.core.common.i.c.a();
     com.anythink.core.common.i.b e = new com.anythink.core.common.i.b() { // from class: com.anythink.basead.d.1
@@ -19,20 +15,20 @@ public final class d {
         public final void run() {
             d.this.d = false;
             d.this.b = -1L;
-            n.a().a(d.this.f5911c);
+            n.a().a(d.this.c);
         }
     };
 
     public d(long j, Runnable runnable) {
         this.b = j;
-        this.f5911c = runnable;
+        this.c = runnable;
     }
 
     public final void a() {
         synchronized (this) {
             if (this.b >= 0 && !this.d) {
                 this.d = true;
-                this.f5910a = SystemClock.elapsedRealtime();
+                this.a = SystemClock.elapsedRealtime();
                 this.f.a(this.e, this.b);
             }
         }
@@ -42,7 +38,7 @@ public final class d {
         synchronized (this) {
             if (this.d) {
                 this.d = false;
-                this.b -= SystemClock.elapsedRealtime() - this.f5910a;
+                this.b -= SystemClock.elapsedRealtime() - this.a;
                 this.f.a(this.e);
             }
         }

@@ -10,13 +10,9 @@ import com.blued.community.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/databinding/PopupWindowPayVipBinding.class */
 public final class PopupWindowPayVipBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ShapeLinearLayout f19063a;
+    public final ShapeLinearLayout a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f19064c;
+    public final ImageView c;
     public final TextView d;
     public final ShapeTextView e;
     public final TextView f;
@@ -25,9 +21,9 @@ public final class PopupWindowPayVipBinding implements ViewBinding {
 
     private PopupWindowPayVipBinding(ShapeLinearLayout shapeLinearLayout, ShapeLinearLayout shapeLinearLayout2, ImageView imageView, ImageView imageView2, TextView textView, ShapeTextView shapeTextView, TextView textView2, TextView textView3) {
         this.h = shapeLinearLayout;
-        this.f19063a = shapeLinearLayout2;
+        this.a = shapeLinearLayout2;
         this.b = imageView;
-        this.f19064c = imageView2;
+        this.c = imageView2;
         this.d = textView;
         this.e = shapeTextView;
         this.f = textView2;
@@ -74,7 +70,6 @@ public final class PopupWindowPayVipBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ShapeLinearLayout getRoot() {
         return this.h;

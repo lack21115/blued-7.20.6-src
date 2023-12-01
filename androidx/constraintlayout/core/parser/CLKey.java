@@ -41,17 +41,17 @@ public class CLKey extends CLContainer {
     }
 
     public CLElement getValue() {
-        if (this.f2071a.size() > 0) {
-            return this.f2071a.get(0);
+        if (this.f2023a.size() > 0) {
+            return this.f2023a.get(0);
         }
         return null;
     }
 
     public void set(CLElement cLElement) {
-        if (this.f2071a.size() > 0) {
-            this.f2071a.set(0, cLElement);
+        if (this.f2023a.size() > 0) {
+            this.f2023a.set(0, cLElement);
         } else {
-            this.f2071a.add(cLElement);
+            this.f2023a.add(cLElement);
         }
     }
 
@@ -61,7 +61,7 @@ public class CLKey extends CLContainer {
         StringBuilder sb = new StringBuilder(b());
         a(sb, i);
         String content = content();
-        if (this.f2071a.size() <= 0) {
+        if (this.f2023a.size() <= 0) {
             return content + ": <> ";
         }
         sb.append(content);
@@ -70,13 +70,13 @@ public class CLKey extends CLContainer {
             i2 = 3;
         }
         if (i2 > 0) {
-            sb.append(this.f2071a.get(0).toFormattedJSON(i, i2 - 1));
+            sb.append(this.f2023a.get(0).toFormattedJSON(i, i2 - 1));
         } else {
-            String json = this.f2071a.get(0).toJSON();
+            String json = this.f2023a.get(0).toJSON();
             if (json.length() + i < e) {
                 sb.append(json);
             } else {
-                sb.append(this.f2071a.get(0).toFormattedJSON(i, i2 - 1));
+                sb.append(this.f2023a.get(0).toFormattedJSON(i, i2 - 1));
             }
         }
         return sb.toString();
@@ -85,9 +85,9 @@ public class CLKey extends CLContainer {
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // androidx.constraintlayout.core.parser.CLElement
     public String toJSON() {
-        if (this.f2071a.size() <= 0) {
+        if (this.f2023a.size() <= 0) {
             return b() + content() + ": <> ";
         }
-        return b() + content() + ": " + this.f2071a.get(0).toJSON();
+        return b() + content() + ": " + this.f2023a.get(0).toJSON();
     }
 }

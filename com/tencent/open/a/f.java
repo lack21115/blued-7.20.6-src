@@ -11,22 +11,22 @@ import java.io.File;
 public class f {
 
     /* renamed from: a  reason: collision with root package name */
-    public static f f38236a;
+    public static f f24545a;
 
     /* renamed from: c  reason: collision with root package name */
-    protected static final b f38237c = new b(c(), c.m, c.g, c.h, c.f38232c, c.i, 10, c.e, c.n);
+    protected static final b f24546c = new b(c(), c.m, c.g, c.h, c.f24541c, c.i, 10, c.e, c.n);
     private static boolean d = false;
-    protected a b = new a(f38237c);
+    protected a b = new a(f24546c);
 
     private f() {
     }
 
     public static f a() {
-        if (f38236a == null) {
+        if (f24545a == null) {
             synchronized (f.class) {
                 try {
-                    if (f38236a == null) {
-                        f38236a = new f();
+                    if (f24545a == null) {
+                        f24545a = new f();
                         d = true;
                     }
                 } catch (Throwable th) {
@@ -34,7 +34,7 @@ public class f {
                 }
             }
         }
-        return f38236a;
+        return f24545a;
     }
 
     public static final void a(String str, String str2) {
@@ -49,8 +49,8 @@ public class f {
         synchronized (f.class) {
             try {
                 a().d();
-                if (f38236a != null) {
-                    f38236a = null;
+                if (f24545a != null) {
+                    f24545a = null;
                 }
             } finally {
             }
@@ -92,12 +92,12 @@ public class f {
                 if (this.b == null) {
                     return;
                 }
-                e.f38235a.b(32, Thread.currentThread(), System.currentTimeMillis(), "openSDK_LOG", str3, null);
+                e.f24544a.b(32, Thread.currentThread(), System.currentTimeMillis(), "openSDK_LOG", str3, null);
                 this.b.b(32, Thread.currentThread(), System.currentTimeMillis(), "openSDK_LOG", str3, null);
                 d = false;
             }
         }
-        e.f38235a.b(i, Thread.currentThread(), System.currentTimeMillis(), str, str2, th);
+        e.f24544a.b(i, Thread.currentThread(), System.currentTimeMillis(), str, str2, th);
         if (!d.a.a(c.b, i) || (aVar = this.b) == null) {
             return;
         }

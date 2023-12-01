@@ -4,9 +4,9 @@ package com.huawei.hms.hatool;
 public abstract class n implements s {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f22773a = "";
+    public String f9165a = "";
 
     public void a(String str) {
-        this.f22773a = str;
+        this.f9165a = str;
     }
 }

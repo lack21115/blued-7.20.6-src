@@ -5,13 +5,12 @@ import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Locale;
-import org.apache.commons.codec.CharEncoding;
 
 /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/foundation/h/p.class */
 public final class p implements com.anythink.expressad.e.b {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f7967a = "MD5";
+    public static final String f5127a = "MD5";
 
     public static String a(String str) {
         if (TextUtils.isEmpty(str)) {
@@ -54,9 +53,9 @@ public final class p implements com.anythink.expressad.e.b {
             if (i2 >= length) {
                 byte[] bArr3 = new byte[bArr.length + 1];
                 bArr3[0] = 0;
-                System.arraycopy((Object) bArr, 0, (Object) bArr3, 1, bArr.length);
+                System.arraycopy(bArr, 0, bArr3, 1, bArr.length);
                 byte[] bytes = new BigInteger(bArr3).toString(16).getBytes();
-                System.arraycopy((Object) bytes, 0, (Object) bArr2, length - bytes.length, bytes.length);
+                System.arraycopy(bytes, 0, bArr2, length - bytes.length, bytes.length);
                 return new String(bArr2);
             }
             bArr2[i2] = 48;
@@ -109,8 +108,8 @@ public final class p implements com.anythink.expressad.e.b {
     private static String c(String str) {
         try {
             int length = str.length();
-            byte[] bytes = str.getBytes(CharEncoding.UTF_16LE);
-            o.b(com.anythink.expressad.exoplayer.g.b.i.f7358a, "b = " + a(bytes));
+            byte[] bytes = str.getBytes("UTF-16LE");
+            o.b(com.anythink.expressad.exoplayer.g.b.i.f4519a, "b = " + a(bytes));
             byte[] bArr = new byte[length];
             int i = 0;
             int i2 = 0;
@@ -135,7 +134,7 @@ public final class p implements com.anythink.expressad.e.b {
                 i += 2;
                 i2 = i4;
             }
-            o.b(com.anythink.expressad.exoplayer.g.b.i.f7358a, "source = " + a(bArr));
+            o.b(com.anythink.expressad.exoplayer.g.b.i.f4519a, "source = " + a(bArr));
             char[] cArr = new char[16];
             cArr[0] = '0';
             cArr[1] = '1';
@@ -196,8 +195,8 @@ public final class p implements com.anythink.expressad.e.b {
 
     private static byte[] d(String str) {
         int length = str.length();
-        byte[] bytes = str.getBytes(CharEncoding.UTF_16LE);
-        o.b(com.anythink.expressad.exoplayer.g.b.i.f7358a, "b = " + a(bytes));
+        byte[] bytes = str.getBytes("UTF-16LE");
+        o.b(com.anythink.expressad.exoplayer.g.b.i.f4519a, "b = " + a(bytes));
         byte[] bArr = new byte[length];
         int i = 0;
         int i2 = 0;
@@ -222,7 +221,7 @@ public final class p implements com.anythink.expressad.e.b {
             i += 2;
             i2 = i4;
         }
-        o.b(com.anythink.expressad.exoplayer.g.b.i.f7358a, "source = " + a(bArr));
+        o.b(com.anythink.expressad.exoplayer.g.b.i.f4519a, "source = " + a(bArr));
         return bArr;
     }
 }

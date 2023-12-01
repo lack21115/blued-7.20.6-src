@@ -7,17 +7,17 @@ import java.util.List;
 public class h {
 
     /* renamed from: a  reason: collision with root package name */
-    private com.tencent.cloud.huiyansdkface.a.a.a f35457a;
+    private com.tencent.cloud.huiyansdkface.a.a.a f21766a;
     private com.tencent.cloud.huiyansdkface.a.a.c b;
 
     public h(com.tencent.cloud.huiyansdkface.a.a.a aVar, com.tencent.cloud.huiyansdkface.a.a.c cVar) {
-        this.f35457a = aVar;
+        this.f21766a = aVar;
         this.b = cVar;
     }
 
     public void a(a aVar) {
         j jVar = new j();
-        final com.tencent.cloud.huiyansdkface.a.a.a aVar2 = this.f35457a;
+        final com.tencent.cloud.huiyansdkface.a.a.a aVar2 = this.f21766a;
         jVar.a(new i() { // from class: com.tencent.cloud.huiyansdkface.a.c.a.h.1
             @Override // com.tencent.cloud.huiyansdkface.a.c.a.i
             public void a(Camera.Parameters parameters, a aVar3) {

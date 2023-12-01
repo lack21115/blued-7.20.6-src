@@ -10,22 +10,18 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/DialogBeansClearBinding.class */
 public final class DialogBeansClearBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ShapeTextView f16300a;
+    public final ShapeTextView a;
     public final ShapeTextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final View f16301c;
+    public final View c;
     public final ImageView d;
     public final TextView e;
     private final ConstraintLayout f;
 
     private DialogBeansClearBinding(ConstraintLayout constraintLayout, ShapeTextView shapeTextView, ShapeTextView shapeTextView2, View view, ImageView imageView, TextView textView) {
         this.f = constraintLayout;
-        this.f16300a = shapeTextView;
+        this.a = shapeTextView;
         this.b = shapeTextView2;
-        this.f16301c = view;
+        this.c = view;
         this.d = imageView;
         this.e = textView;
     }
@@ -60,7 +56,6 @@ public final class DialogBeansClearBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.f;

@@ -6,5 +6,5 @@ import java.util.concurrent.CountDownLatch;
 public class l0<TResult> implements v, w<TResult> {
 
     /* renamed from: a  reason: collision with root package name */
-    public final CountDownLatch f22311a = new CountDownLatch(1);
+    public final CountDownLatch f8703a = new CountDownLatch(1);
 }

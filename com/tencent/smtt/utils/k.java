@@ -13,7 +13,7 @@ import java.util.HashMap;
 public class k implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f38965a = "TBSFileLock";
+    public static String f25274a = "TBSFileLock";
     private static Object f = new Object();
     private static Object g = new Object();
     private static HashMap<k, Object> h = null;
@@ -21,7 +21,7 @@ public class k implements Runnable {
     File b;
 
     /* renamed from: c  reason: collision with root package name */
-    RandomAccessFile f38966c = null;
+    RandomAccessFile f25275c = null;
     FileLock d = null;
     long e = 0;
 
@@ -49,7 +49,7 @@ public class k implements Runnable {
 
     public void a(boolean z) {
         synchronized (this) {
-            String str = f38965a;
+            String str = f25274a;
             Log.d(str, ">>> release lock: " + this.b.getName());
             if (this.d != null) {
                 try {
@@ -59,13 +59,13 @@ public class k implements Runnable {
                 }
                 this.d = null;
             }
-            if (this.f38966c != null) {
+            if (this.f25275c != null) {
                 try {
-                    this.f38966c.close();
+                    this.f25275c.close();
                 } catch (Exception e2) {
                     e2.printStackTrace();
                 }
-                this.f38966c = null;
+                this.f25275c = null;
             }
             if (i != null && this.e > 0) {
                 i.removeCallbacks(this);
@@ -81,11 +81,11 @@ public class k implements Runnable {
         FileLock fileLock;
         synchronized (this) {
             try {
-                this.f38966c = new RandomAccessFile(this.b, "rw");
+                this.f25275c = new RandomAccessFile(this.b, "rw");
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            if (this.f38966c != null && (channel = this.f38966c.getChannel()) != null) {
+            if (this.f25275c != null && (channel = this.f25275c.getChannel()) != null) {
                 if (this.e > 0) {
                     a().postDelayed(this, this.e);
                 }
@@ -101,7 +101,7 @@ public class k implements Runnable {
                         }
                     } catch (Exception e2) {
                         e2.printStackTrace();
-                        Log.d(f38965a, ">>> lock failed, sleep...");
+                        Log.d(f25274a, ">>> lock failed, sleep...");
                         fileLock = fileLock2;
                     }
                     try {
@@ -111,12 +111,12 @@ public class k implements Runnable {
                     }
                     fileLock2 = fileLock;
                     if (Math.abs(System.currentTimeMillis() - currentTimeMillis) >= 1000) {
-                        Log.d(f38965a, ">>> lock timeout, quit...");
+                        Log.d(f25274a, ">>> lock timeout, quit...");
                         break;
                     }
                 }
                 this.d = fileLock;
-                Log.d(f38965a, ">>> lock [" + this.b.getName() + "] cost: " + (System.currentTimeMillis() - currentTimeMillis));
+                Log.d(f25274a, ">>> lock [" + this.b.getName() + "] cost: " + (System.currentTimeMillis() - currentTimeMillis));
             }
             if (this.d != null) {
                 c();
@@ -148,7 +148,7 @@ public class k implements Runnable {
 
     @Override // java.lang.Runnable
     public void run() {
-        Log.d(f38965a, ">>> releaseLock on TimeOut");
+        Log.d(f25274a, ">>> releaseLock on TimeOut");
         e();
     }
 }

@@ -14,30 +14,30 @@ import java.net.URL;
 public class xh extends OverSeaTileProvider {
 
     /* renamed from: a  reason: collision with root package name */
-    private ei f38115a;
+    private ei f24424a;
     private w6 b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Language f38116c;
+    private Language f24425c;
     private OverSeaSource d;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/mapsdk/internal/xh$a.class */
     public static /* synthetic */ class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final /* synthetic */ int[] f38117a;
+        public static final /* synthetic */ int[] f24426a;
 
         static {
             OverSeaSource.values();
             int[] iArr = new int[2];
-            f38117a = iArr;
+            f24426a = iArr;
             try {
                 OverSeaSource overSeaSource = OverSeaSource.DEFAULT;
                 iArr[0] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                int[] iArr2 = f38117a;
+                int[] iArr2 = f24426a;
                 OverSeaSource overSeaSource2 = OverSeaSource.SPARE;
                 iArr2[1] = 2;
             } catch (NoSuchFieldError e2) {
@@ -47,10 +47,10 @@ public class xh extends OverSeaTileProvider {
 
     public xh(ei eiVar, OverSeaSource overSeaSource, w6 w6Var) {
         super(eiVar.a(), eiVar.f());
-        this.f38116c = Language.zh;
+        this.f24425c = Language.zh;
         this.b = w6Var;
         this.d = overSeaSource;
-        this.f38115a = eiVar;
+        this.f24424a = eiVar;
     }
 
     @Override // com.tencent.tencentmap.mapsdk.maps.model.OverSeaTileProvider
@@ -60,7 +60,7 @@ public class xh extends OverSeaTileProvider {
 
     @Override // com.tencent.tencentmap.mapsdk.maps.model.UrlTileProvider
     public URL getTileUrl(int i, int i2, int i3) {
-        String a2 = this.f38115a.a(i, i2, i3, this.f38116c.name());
+        String a2 = this.f24424a.a(i, i2, i3, this.f24425c.name());
         if (a2 != null) {
             na.c(ma.h, "请求海外图瓦片：" + a2);
             try {
@@ -75,7 +75,7 @@ public class xh extends OverSeaTileProvider {
 
     @Override // com.tencent.tencentmap.mapsdk.maps.model.OverSeaTileProvider
     public boolean onLanguageChange(Language language) {
-        this.f38116c = language;
+        this.f24425c = language;
         return false;
     }
 

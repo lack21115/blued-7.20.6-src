@@ -20,6 +20,7 @@ import android.util.AndroidRuntimeException;
 import android.util.Log;
 import android.webkit.IWebViewUpdateService;
 import com.android.internal.R;
+import com.android.internal.telephony.RILConstants;
 import com.android.server.LocalServices;
 import dalvik.system.VMRuntime;
 import java.io.File;
@@ -124,7 +125,7 @@ public final class WebViewFactory {
             if (strArr == null || strArr[0] == null || strArr[1] == null) {
                 throw new IllegalArgumentException("Native library paths to the WebView RelRo process must not be null!");
             }
-            if (((ActivityManagerInternal) LocalServices.getService(ActivityManagerInternal.class)).startIsolatedProcess(RelroFileCreator.class.getName(), strArr, "WebViewLoader-" + str, str, 1037, runnable) <= 0) {
+            if (((ActivityManagerInternal) LocalServices.getService(ActivityManagerInternal.class)).startIsolatedProcess(RelroFileCreator.class.getName(), strArr, "WebViewLoader-" + str, str, (int) RILConstants.RIL_UNSOL_RESPONSE_IMS_NETWORK_STATE_CHANGED, runnable) <= 0) {
                 throw new Exception("Failed to start the relro file creator process");
             }
         } catch (Throwable th) {
@@ -346,7 +347,7 @@ public final class WebViewFactory {
     public static void prepareWebViewInZygote() {
         try {
             System.loadLibrary("webviewchromium_loader");
-            long j = SystemProperties.getLong(CHROMIUM_WEBVIEW_VMSIZE_SIZE_PROPERTY, CHROMIUM_WEBVIEW_DEFAULT_VMSIZE_BYTES);
+            long j = SystemProperties.getLong(CHROMIUM_WEBVIEW_VMSIZE_SIZE_PROPERTY, (long) CHROMIUM_WEBVIEW_DEFAULT_VMSIZE_BYTES);
             sAddressSpaceReserved = nativeReserveAddressSpace(j);
             if (sAddressSpaceReserved) {
                 return;

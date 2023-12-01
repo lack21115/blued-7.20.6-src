@@ -9,24 +9,24 @@ import android.net.NetworkInfo;
 public class cm {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile cm f9386a;
+    private static volatile cm f6546a;
 
     private cm() {
     }
 
     public static cm a() {
-        if (f9386a == null) {
+        if (f6546a == null) {
             synchronized (cm.class) {
                 try {
-                    if (f9386a == null) {
-                        f9386a = new cm();
+                    if (f6546a == null) {
+                        f6546a = new cm();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f9386a;
+        return f6546a;
     }
 
     private NetworkCapabilities c(Context context) {

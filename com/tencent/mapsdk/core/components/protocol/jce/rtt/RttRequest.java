@@ -16,10 +16,10 @@ public final class RttRequest extends MapJceStruct implements Cloneable {
     public static final /* synthetic */ boolean d = !RttRequest.class.desiredAssertionStatus();
 
     /* renamed from: c  reason: collision with root package name */
-    public static ArrayList<Integer> f37267c = new ArrayList<>();
+    public static ArrayList<Integer> f23576c = new ArrayList<>();
 
     static {
-        f37267c.add(0);
+        f23576c.add(0);
     }
 
     public RttRequest() {
@@ -110,7 +110,7 @@ public final class RttRequest extends MapJceStruct implements Cloneable {
 
     @Override // com.tencent.mapsdk.internal.p
     public void readFrom(m mVar) {
-        this.bounds = (ArrayList) mVar.a((m) f37267c, 0, true);
+        this.bounds = (ArrayList) mVar.a((m) f23576c, 0, true);
         this.zoom = mVar.a(this.zoom, 1, true);
         this.zip = mVar.a(this.zip, 2, true);
     }

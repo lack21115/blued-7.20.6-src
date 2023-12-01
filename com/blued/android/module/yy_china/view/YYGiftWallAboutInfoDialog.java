@@ -17,9 +17,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYGiftWallAboutInfoDialog.class */
 public final class YYGiftWallAboutInfoDialog extends BaseFullScreenDialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    private DialogGiftwallAboutInfoBinding f18201a;
+    private DialogGiftwallAboutInfoBinding a;
     private GiftWallInfoAboutModel b;
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -39,7 +37,7 @@ public final class YYGiftWallAboutInfoDialog extends BaseFullScreenDialog {
     }
 
     private final DialogGiftwallAboutInfoBinding g() {
-        DialogGiftwallAboutInfoBinding dialogGiftwallAboutInfoBinding = this.f18201a;
+        DialogGiftwallAboutInfoBinding dialogGiftwallAboutInfoBinding = this.a;
         Intrinsics.a(dialogGiftwallAboutInfoBinding);
         return dialogGiftwallAboutInfoBinding;
     }
@@ -61,7 +59,7 @@ public final class YYGiftWallAboutInfoDialog extends BaseFullScreenDialog {
                 YYGiftWallAboutInfoDialog.a(view);
             }
         });
-        g().f16347c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYGiftWallAboutInfoDialog$3Xre7QC0Wzm23s4H5ASpXGoRa8o
+        g().c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYGiftWallAboutInfoDialog$3Xre7QC0Wzm23s4H5ASpXGoRa8o
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 YYGiftWallAboutInfoDialog.a(YYGiftWallAboutInfoDialog.this, view);
@@ -80,7 +78,7 @@ public final class YYGiftWallAboutInfoDialog extends BaseFullScreenDialog {
             if (giftWallInfoAboutModel3 == null || (allDa3 = giftWallInfoAboutModel3.getAllDa()) == null || (badge = allDa3.getBadge()) == null) {
                 return;
             }
-            ImageLoader.a(a(), badge.getImage()).a(g().f16346a);
+            ImageLoader.a(a(), badge.getImage()).a(g().a);
             g().f.setText(badge.getName());
             TextView textView = g().g;
             GiftWallInfoAboutModel f = f();
@@ -97,7 +95,7 @@ public final class YYGiftWallAboutInfoDialog extends BaseFullScreenDialog {
             if (giftWallInfoAboutModel4 == null || (allDa2 = giftWallInfoAboutModel4.getAllDa()) == null || (skin2 = allDa2.getSkin()) == null) {
                 return;
             }
-            ImageLoader.a(a(), skin2.getIntroduce()).a(g().f16346a);
+            ImageLoader.a(a(), skin2.getIntroduce()).a(g().a);
             g().f.setText(skin2.getName());
             TextView textView2 = g().g;
             GiftWallInfoAboutModel f2 = f();
@@ -111,7 +109,7 @@ public final class YYGiftWallAboutInfoDialog extends BaseFullScreenDialog {
             g().e.setText("解锁后，该用户的礼物墙会佩戴上该皮肤");
         } else if (valueOf == null || valueOf.intValue() != 2 || (giftWallInfoAboutModel = this.b) == null || (allDa = giftWallInfoAboutModel.getAllDa()) == null || (goods = allDa.getGoods()) == null) {
         } else {
-            ImageLoader.a(a(), goods.getImage_static()).a(g().f16346a);
+            ImageLoader.a(a(), goods.getImage_static()).a(g().a);
             g().f.setText(goods.getName());
             TextView textView3 = g().g;
             GiftWallInfoAboutModel f3 = f();
@@ -134,10 +132,10 @@ public final class YYGiftWallAboutInfoDialog extends BaseFullScreenDialog {
         return this.b;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
-        this.f18201a = DialogGiftwallAboutInfoBinding.a(inflater.inflate(R.layout.dialog_giftwall_about_info, viewGroup, true));
+        this.a = DialogGiftwallAboutInfoBinding.a(inflater.inflate(R.layout.dialog_giftwall_about_info, viewGroup, true));
         h();
         return g().getRoot();
     }

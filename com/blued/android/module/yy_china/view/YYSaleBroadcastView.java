@@ -8,9 +8,7 @@ import com.blued.android.module.yy_china.databinding.DialogSaleBroadcastLayoutBi
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYSaleBroadcastView.class */
 public class YYSaleBroadcastView extends RelativeLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private DialogSaleBroadcastLayoutBinding f18466a;
+    private DialogSaleBroadcastLayoutBinding a;
 
     public YYSaleBroadcastView(Context context) {
         this(context, null);
@@ -22,8 +20,8 @@ public class YYSaleBroadcastView extends RelativeLayout {
 
     public YYSaleBroadcastView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        DialogSaleBroadcastLayoutBinding a2 = DialogSaleBroadcastLayoutBinding.a(LayoutInflater.from(context), this, true);
-        this.f18466a = a2;
-        a2.f16406a.setText("设置关系&底价礼物-->竞拍争夺关系-->竞拍成功-->关系升级");
+        DialogSaleBroadcastLayoutBinding a = DialogSaleBroadcastLayoutBinding.a(LayoutInflater.from(context), this, true);
+        this.a = a;
+        a.a.setText("设置关系&底价礼物-->竞拍争夺关系-->竞拍成功-->关系升级");
     }
 }

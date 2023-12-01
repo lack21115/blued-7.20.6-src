@@ -10,17 +10,17 @@ import java.net.InetAddress;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f4124a = c.class.getSimpleName();
+    private static final String f4076a = c.class.getSimpleName();
     private static String b = null;
 
     /* renamed from: c  reason: collision with root package name */
-    private static long f4125c = 0;
+    private static long f4077c = 0;
     private static long d = 1800000;
 
     public static String a() {
         synchronized (c.class) {
             try {
-                if (System.currentTimeMillis() >= f4125c || !cn.com.chinatelecom.account.api.e.d.a(b)) {
+                if (System.currentTimeMillis() >= f4077c || !cn.com.chinatelecom.account.api.e.d.a(b)) {
                     return null;
                 }
                 return b;
@@ -51,7 +51,7 @@ public class c {
                                 a3 = cn.com.chinatelecom.account.api.a.d.a(j.q);
                             } else {
                                 String unused = c.b = str;
-                                long unused2 = c.f4125c = System.currentTimeMillis() + c.d;
+                                long unused2 = c.f4077c = System.currentTimeMillis() + c.d;
                                 a2 = cn.com.chinatelecom.account.api.e.f.a(a4).a(0);
                                 a3 = bw.o;
                             }

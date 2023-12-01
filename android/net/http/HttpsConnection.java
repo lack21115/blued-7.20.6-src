@@ -10,8 +10,10 @@ import java.io.File;
 import java.io.IOException;
 import java.net.Socket;
 import java.security.KeyManagementException;
+import java.security.SecureRandom;
 import java.security.cert.X509Certificate;
 import java.util.Locale;
+import javax.net.ssl.KeyManager;
 import javax.net.ssl.SSLSocket;
 import javax.net.ssl.SSLSocketFactory;
 import javax.net.ssl.TrustManager;
@@ -72,7 +74,7 @@ public class HttpsConnection extends Connection {
             }
         }
         OpenSSLContextImpl openSSLContextImpl = new OpenSSLContextImpl();
-        openSSLContextImpl.engineInit(null, new TrustManager[]{new X509TrustManager() { // from class: android.net.http.HttpsConnection.1
+        openSSLContextImpl.engineInit((KeyManager[]) null, new TrustManager[]{new X509TrustManager() { // from class: android.net.http.HttpsConnection.1
             @Override // javax.net.ssl.X509TrustManager
             public void checkClientTrusted(X509Certificate[] x509CertificateArr, String str) {
             }
@@ -85,7 +87,7 @@ public class HttpsConnection extends Connection {
             public X509Certificate[] getAcceptedIssuers() {
                 return null;
             }
-        }}, null);
+        }}, (SecureRandom) null);
         openSSLContextImpl.engineGetClientSessionContext().setPersistentCache(sSLClientSessionCache);
         synchronized (HttpsConnection.class) {
             mSslSocketFactory = openSSLContextImpl.engineGetSocketFactory();

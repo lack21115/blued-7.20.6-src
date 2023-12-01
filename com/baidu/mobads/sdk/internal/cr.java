@@ -8,17 +8,17 @@ import com.baidu.mobads.sdk.api.IOAdEventListener;
 public class cr implements IOAdEventListener {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ cq f9399a;
+    final /* synthetic */ cq f6559a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public cr(cq cqVar) {
-        this.f9399a = cqVar;
+        this.f6559a = cqVar;
     }
 
     @Override // com.baidu.mobads.sdk.api.IOAdEventListener
     public void run(IOAdEvent iOAdEvent) {
         if (iOAdEvent != null) {
-            this.f9399a.c(iOAdEvent.getData());
+            this.f6559a.c(iOAdEvent.getData());
         }
     }
 }

@@ -21,64 +21,64 @@ import kotlin.text.StringsKt;
 public final class NearbyGuideDlgFragment$initRecycleView$2 extends CommonMultiItemAdapter<FeedPostSignStateItem> {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ NearbyGuideDlgFragment f29805a;
+    final /* synthetic */ NearbyGuideDlgFragment f16115a;
     private int d = FeedMethods.c(66);
     private int b = FeedMethods.a(12.0f);
 
     /* renamed from: c  reason: collision with root package name */
-    private int f29806c = ((AppInfo.l - FeedMethods.c(24)) - this.d) / 2;
+    private int f16116c = ((AppInfo.l - FeedMethods.c(24)) - this.d) / 2;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public NearbyGuideDlgFragment$initRecycleView$2(NearbyGuideDlgFragment nearbyGuideDlgFragment) {
-        this.f29805a = nearbyGuideDlgFragment;
-        LogUtils.c("commonPadding:" + this.b + ", firstLeftPadding:" + this.f29806c);
+        this.f16115a = nearbyGuideDlgFragment;
+        LogUtils.c("commonPadding:" + this.b + ", firstLeftPadding:" + this.f16116c);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(NearbyGuideDlgFragment this$0, int i, FeedPostSignStateItem model, View view) {
+    public static final void a(NearbyGuideDlgFragment nearbyGuideDlgFragment, int i, FeedPostSignStateItem feedPostSignStateItem, View view) {
         RecyclerView recyclerView;
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        Intrinsics.e(model, "$model");
-        recyclerView = this$0.k;
+        Intrinsics.e(nearbyGuideDlgFragment, "this$0");
+        Intrinsics.e(feedPostSignStateItem, "$model");
+        recyclerView = nearbyGuideDlgFragment.k;
         if (recyclerView != null) {
             recyclerView.smoothScrollToPosition(i);
         }
-        this$0.a(model);
+        nearbyGuideDlgFragment.a(feedPostSignStateItem);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.blued.community.view.CommonMultiItemAdapter
     /* renamed from: a */
-    public void onConvert(CommonViewHolder holder, final FeedPostSignStateItem model, final int i) {
-        FeedPostSignStateItem feedPostSignStateItem;
+    public void onConvert(CommonViewHolder commonViewHolder, final FeedPostSignStateItem feedPostSignStateItem, final int i) {
+        FeedPostSignStateItem feedPostSignStateItem2;
         boolean z;
-        Intrinsics.e(holder, "holder");
-        Intrinsics.e(model, "model");
-        View view = holder.getView(R.id.item_feed_post_sign_state_content_layout);
+        Intrinsics.e(commonViewHolder, "holder");
+        Intrinsics.e(feedPostSignStateItem, "model");
+        View view = commonViewHolder.getView(R.id.item_feed_post_sign_state_content_layout);
         ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
         if (layoutParams == null) {
             throw new NullPointerException("null cannot be cast to non-null type android.view.ViewGroup.MarginLayoutParams");
         }
         ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) layoutParams;
         int i2 = this.b;
-        int i3 = i == 0 ? this.f29806c : i2;
+        int i3 = i == 0 ? this.f16116c : i2;
         if (i == getItemCount() - 1) {
-            i2 = this.f29806c;
+            i2 = this.f16116c;
         }
         marginLayoutParams.width = this.d + i3 + i2;
         view.setLayoutParams(marginLayoutParams);
         view.setPadding(i3, 0, i2, 0);
-        String bubble_state_id = model.getBubble_state_id();
-        feedPostSignStateItem = this.f29805a.D;
-        CommonViewHolder colorText = holder.setImageUrl(2131364821, model.getIcon(), 33.0f, 2131232687).setColorText(2131364823, BluedSkinUtils.a(this.f29805a.getContext(), StringsKt.a((CharSequence) bubble_state_id, (CharSequence) (feedPostSignStateItem == null ? null : feedPostSignStateItem.getBubble_state_id())) ? 2131102254 : 2131102264), model.getName());
-        z = this.f29805a.E;
-        View view2 = colorText.setBackgroundRes(2131364822, z ? 2131234339 : 2131234338).convertView;
-        final NearbyGuideDlgFragment nearbyGuideDlgFragment = this.f29805a;
+        String bubble_state_id = feedPostSignStateItem.getBubble_state_id();
+        feedPostSignStateItem2 = this.f16115a.D;
+        CommonViewHolder colorText = commonViewHolder.setImageUrl(R.id.item_feed_post_sign_state_iv, feedPostSignStateItem.getIcon(), 33.0f, R.drawable.feed_photo_default).setColorText(R.id.item_feed_post_sign_state_tv, BluedSkinUtils.a(this.f16115a.getContext(), StringsKt.a(bubble_state_id, feedPostSignStateItem2 == null ? null : feedPostSignStateItem2.getBubble_state_id()) ? 2131102254 : 2131102264), feedPostSignStateItem.getName());
+        z = this.f16115a.E;
+        View view2 = colorText.setBackgroundRes(R.id.item_feed_post_sign_state_iv_layout, z ? 2131234339 : 2131234338).convertView;
+        final NearbyGuideDlgFragment nearbyGuideDlgFragment = this.f16115a;
         view2.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.community.view.-$$Lambda$NearbyGuideDlgFragment$initRecycleView$2$uD_u9NvfvfMDyuT85ZY5tTuO9Uw
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
-                NearbyGuideDlgFragment$initRecycleView$2.a(NearbyGuideDlgFragment.this, i, model, view3);
+                NearbyGuideDlgFragment$initRecycleView$2.a(NearbyGuideDlgFragment.this, i, feedPostSignStateItem, view3);
             }
         });
     }

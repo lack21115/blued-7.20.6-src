@@ -4,9 +4,9 @@ package com.tencent.tmsqmsp.sdk.c;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f39705a = "TMS";
+    public static String f26014a = "TMS";
     public static boolean b = false;
 
     /* renamed from: c  reason: collision with root package name */
-    public static String f39706c = "1.1.1";
+    public static String f26015c = "1.1.1";
 }

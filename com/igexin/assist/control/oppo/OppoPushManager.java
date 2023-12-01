@@ -7,7 +7,6 @@ import android.os.Build;
 import android.os.Parcelable;
 import android.text.TextUtils;
 import android.util.Log;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.heytap.msp.push.HeytapPushManager;
 import com.heytap.msp.push.callback.ICallBackResultService;
 import com.igexin.assist.MessageBean;
@@ -123,7 +122,7 @@ public class OppoPushManager implements ICallBackResultService, AbstractPushMana
                 return;
             }
             String str2 = "";
-            String[] split = str.split(BridgeUtil.UNDERLINE_STR);
+            String[] split = str.split("_");
             if (split.length != 1) {
                 if (split.length == 2) {
                     if (split[0].equalsIgnoreCase("CN")) {

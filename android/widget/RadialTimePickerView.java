@@ -26,10 +26,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
+import com.amap.api.maps.utils.SpatialRelationUtil;
+import com.android.ims.ImsReasonInfo;
 import com.android.internal.R;
 import com.android.internal.widget.ExploreByTouchHelper;
-import com.anythink.expressad.exoplayer.b;
-import com.google.android.material.timepicker.TimeModel;
+import com.anythink.core.common.c.d;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -55,7 +56,6 @@ public class RadialTimePickerView extends View implements View.OnTouchListener {
     private static final int SELECTOR_CIRCLE = 0;
     private static final int SELECTOR_DOT = 1;
     private static final int SELECTOR_LINE = 2;
-    private static final float SINE_30_DEGREES = 0.5f;
     private static final String TAG = "ClockView";
     private final IntHolder[] mAlpha;
     private final IntHolder[][] mAlphaSelector;
@@ -109,11 +109,12 @@ public class RadialTimePickerView extends View implements View.OnTouchListener {
     private final Typeface mTypeface;
     private int mXCenter;
     private int mYCenter;
-    private static final float COSINE_30_DEGREES = ((float) Math.sqrt(3.0d)) * 0.5f;
+    private static final float SINE_30_DEGREES = 0.5f;
+    private static final float COSINE_30_DEGREES = ((float) Math.sqrt(3.0d)) * SINE_30_DEGREES;
     private static final int[] HOURS_NUMBERS = {12, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11};
     private static final int[] HOURS_NUMBERS_24 = {0, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23};
     private static final int[] MINUTES_NUMBERS = {0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55};
-    private static int[] sSnapPrefer30sMap = new int[361];
+    private static int[] sSnapPrefer30sMap = new int[ImsReasonInfo.CODE_SIP_USER_REJECTED];
 
     /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: source-4181928-dex2jar.jar:android/widget/RadialTimePickerView$IntHolder.class */
@@ -314,7 +315,7 @@ public class RadialTimePickerView extends View implements View.OnTouchListener {
             boolean z2 = RadialTimePickerView.this.mIsOnInnerCircle;
             RadialTimePickerView.this.mIsOnInnerCircle = z;
             if (degreesFromXY != -1) {
-                int snapOnly30s = RadialTimePickerView.snapOnly30s(degreesFromXY, 0) % 360;
+                int snapOnly30s = RadialTimePickerView.snapOnly30s(degreesFromXY, 0) % SpatialRelationUtil.A_CIRCLE_DEGREE;
                 if (RadialTimePickerView.this.mShowHours) {
                     int hourForDegrees = RadialTimePickerView.this.getHourForDegrees(snapOnly30s, z2);
                     if (!RadialTimePickerView.this.mIs24HourMode) {
@@ -434,7 +435,7 @@ public class RadialTimePickerView extends View implements View.OnTouchListener {
     }
 
     public RadialTimePickerView(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, 16843933);
+        this(context, attributeSet, R.attr.timePickerStyle);
     }
 
     public RadialTimePickerView(Context context, AttributeSet attributeSet, int i) {
@@ -475,11 +476,11 @@ public class RadialTimePickerView extends View implements View.OnTouchListener {
         this.mInputEnabled = true;
         this.mChangedDuringTouch = false;
         TypedValue typedValue = new TypedValue();
-        context.getTheme().resolveAttribute(16842803, typedValue, true);
-        this.mDisabledAlpha = (int) ((typedValue.getFloat() * 255.0f) + 0.5f);
+        context.getTheme().resolveAttribute(R.attr.disabledAlpha, typedValue, true);
+        this.mDisabledAlpha = (int) ((typedValue.getFloat() * 255.0f) + SINE_30_DEGREES);
         Resources resources = getResources();
         TypedArray obtainStyledAttributes = this.mContext.obtainStyledAttributes(attributeSet, R.styleable.TimePicker, i, i2);
-        this.mTypeface = Typeface.create(b.m, 0);
+        this.mTypeface = Typeface.create("sans-serif", 0);
         int i3 = 0;
         while (true) {
             int i4 = i3;
@@ -567,7 +568,7 @@ public class RadialTimePickerView extends View implements View.OnTouchListener {
 
     private static void calculateGridSizes(Paint paint, float f, float f2, float f3, float f4, float[] fArr, float[] fArr2) {
         float f5 = f * COSINE_30_DEGREES;
-        float f6 = f * 0.5f;
+        float f6 = f * SINE_30_DEGREES;
         paint.setTextSize(f4);
         float descent = f3 - ((paint.descent() + paint.ascent()) / 2.0f);
         fArr[0] = descent - f;
@@ -714,8 +715,8 @@ public class RadialTimePickerView extends View implements View.OnTouchListener {
             return -1;
         }
         if (!this.mIs24HourMode || !this.mShowHours) {
-            char c2 = this.mShowHours ? (char) 0 : (char) 1;
-            if (((int) Math.abs(sqrt - (this.mCircleRadius[c2] * this.mNumbersRadiusMultiplier[c2]))) > ((int) (this.mCircleRadius[c2] * (1.0f - this.mNumbersRadiusMultiplier[c2])))) {
+            char c = this.mShowHours ? (char) 0 : (char) 1;
+            if (((int) Math.abs(sqrt - (this.mCircleRadius[c] * this.mNumbersRadiusMultiplier[c]))) > ((int) (this.mCircleRadius[c] * (1.0f - this.mNumbersRadiusMultiplier[c])))) {
                 return -1;
             }
         } else if (sqrt >= this.mMinHypotenuseForInnerNumber && sqrt <= this.mHalfwayHypotenusePoint) {
@@ -733,13 +734,13 @@ public class RadialTimePickerView extends View implements View.OnTouchListener {
 
     private static ObjectAnimator getFadeInAnimator(IntHolder intHolder, int i, int i2, InvalidateUpdateListener invalidateUpdateListener) {
         int i3 = (int) (500 * (1.0f + 0.25f));
-        ObjectAnimator duration = ObjectAnimator.ofPropertyValuesHolder(intHolder, PropertyValuesHolder.ofKeyframe("value", Keyframe.ofInt(0.0f, i), Keyframe.ofInt((500 * 0.25f) / i3, i), Keyframe.ofInt(1.0f, i2))).setDuration(i3);
+        ObjectAnimator duration = ObjectAnimator.ofPropertyValuesHolder(intHolder, PropertyValuesHolder.ofKeyframe(d.a.d, Keyframe.ofInt(0.0f, i), Keyframe.ofInt((500 * 0.25f) / i3, i), Keyframe.ofInt(1.0f, i2))).setDuration(i3);
         duration.addUpdateListener(invalidateUpdateListener);
         return duration;
     }
 
     private static ObjectAnimator getFadeOutAnimator(IntHolder intHolder, int i, int i2, InvalidateUpdateListener invalidateUpdateListener) {
-        ObjectAnimator ofInt = ObjectAnimator.ofInt(intHolder, "value", i, i2);
+        ObjectAnimator ofInt = ObjectAnimator.ofInt(intHolder, d.a.d, i, i2);
         ofInt.setDuration(500);
         ofInt.addUpdateListener(invalidateUpdateListener);
         return ofInt;
@@ -802,14 +803,14 @@ public class RadialTimePickerView extends View implements View.OnTouchListener {
         }
         int[] iArr = this.mSelectionDegrees;
         if (this.mShowHours) {
-            int snapOnly30s = snapOnly30s(degreesFromXY, 0) % 360;
+            int snapOnly30s = snapOnly30s(degreesFromXY, 0) % SpatialRelationUtil.A_CIRCLE_DEGREE;
             z3 = (iArr[0] == snapOnly30s && iArr[2] == snapOnly30s && z4 == this.mIsOnInnerCircle) ? false : true;
             iArr[0] = snapOnly30s;
             iArr[2] = snapOnly30s;
             i = 0;
             currentMinute = getCurrentHour();
         } else {
-            int snapPrefer30s = snapPrefer30s(degreesFromXY) % 360;
+            int snapPrefer30s = snapPrefer30s(degreesFromXY) % SpatialRelationUtil.A_CIRCLE_DEGREE;
             z3 = iArr[1] != snapPrefer30s;
             iArr[1] = snapPrefer30s;
             i = 1;
@@ -879,10 +880,10 @@ public class RadialTimePickerView extends View implements View.OnTouchListener {
             if (i2 >= 12) {
                 return;
             }
-            this.mHours12Texts[i2] = String.format(TimeModel.NUMBER_FORMAT, Integer.valueOf(HOURS_NUMBERS[i2]));
-            this.mOuterHours24Texts[i2] = String.format(TimeModel.ZERO_LEADING_NUMBER_FORMAT, Integer.valueOf(HOURS_NUMBERS_24[i2]));
-            this.mInnerHours24Texts[i2] = String.format(TimeModel.NUMBER_FORMAT, Integer.valueOf(HOURS_NUMBERS[i2]));
-            this.mMinutesTexts[i2] = String.format(TimeModel.ZERO_LEADING_NUMBER_FORMAT, Integer.valueOf(MINUTES_NUMBERS[i2]));
+            this.mHours12Texts[i2] = String.format("%d", Integer.valueOf(HOURS_NUMBERS[i2]));
+            this.mOuterHours24Texts[i2] = String.format("%02d", Integer.valueOf(HOURS_NUMBERS_24[i2]));
+            this.mInnerHours24Texts[i2] = String.format("%d", Integer.valueOf(HOURS_NUMBERS[i2]));
+            this.mMinutesTexts[i2] = String.format("%02d", Integer.valueOf(MINUTES_NUMBERS[i2]));
             i = i2 + 1;
         }
     }

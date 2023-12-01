@@ -9,7 +9,7 @@ import java.util.List;
 public final class FactoryPools {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Resetter<Object> f21112a = new Resetter<Object>() { // from class: com.bumptech.glide.util.pool.FactoryPools.1
+    private static final Resetter<Object> f7506a = new Resetter<Object>() { // from class: com.bumptech.glide.util.pool.FactoryPools.1
         @Override // com.bumptech.glide.util.pool.FactoryPools.Resetter
         public void a(Object obj) {
         }
@@ -25,24 +25,24 @@ public final class FactoryPools {
     public static final class FactoryPool<T> implements Pools.Pool<T> {
 
         /* renamed from: a  reason: collision with root package name */
-        private final Factory<T> f21113a;
+        private final Factory<T> f7507a;
         private final Resetter<T> b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final Pools.Pool<T> f21114c;
+        private final Pools.Pool<T> f7508c;
 
         FactoryPool(Pools.Pool<T> pool, Factory<T> factory, Resetter<T> resetter) {
-            this.f21114c = pool;
-            this.f21113a = factory;
+            this.f7508c = pool;
+            this.f7507a = factory;
             this.b = resetter;
         }
 
         @Override // androidx.core.util.Pools.Pool
         public T acquire() {
-            T acquire = this.f21114c.acquire();
+            T acquire = this.f7508c.acquire();
             T t = acquire;
             if (acquire == null) {
-                T b = this.f21113a.b();
+                T b = this.f7507a.b();
                 t = b;
                 if (Log.isLoggable("FactoryPools", 2)) {
                     Log.v("FactoryPools", "Created new " + b.getClass());
@@ -61,7 +61,7 @@ public final class FactoryPools {
                 ((Poolable) t).d().a(true);
             }
             this.b.a(t);
-            return this.f21114c.release(t);
+            return this.f7508c.release(t);
         }
     }
 
@@ -114,6 +114,6 @@ public final class FactoryPools {
     }
 
     private static <T> Resetter<T> b() {
-        return (Resetter<T>) f21112a;
+        return (Resetter<T>) f7506a;
     }
 }

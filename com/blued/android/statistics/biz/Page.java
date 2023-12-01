@@ -10,9 +10,7 @@ public class Page {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/statistics/biz/Page$InstanceHolder.class */
     public static class InstanceHolder {
-
-        /* renamed from: a  reason: collision with root package name */
-        private static final Page f18690a = new Page();
+        private static final Page a = new Page();
 
         private InstanceHolder() {
         }
@@ -22,7 +20,7 @@ public class Page {
     }
 
     public static Page a() {
-        return InstanceHolder.f18690a;
+        return InstanceHolder.a;
     }
 
     private void a(PageDurationProtos.Request.Builder builder) {

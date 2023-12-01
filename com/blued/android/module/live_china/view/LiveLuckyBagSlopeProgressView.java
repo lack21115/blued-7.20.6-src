@@ -16,6 +16,7 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
+import com.amap.api.maps.utils.SpatialRelationUtil;
 import com.blued.android.module.live_china.R;
 import com.blued.android.module.live_china.utils.ColorUtil;
 import kotlin.Metadata;
@@ -24,13 +25,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveLuckyBagSlopeProgressView.class */
 public final class LiveLuckyBagSlopeProgressView extends View {
-
-    /* renamed from: a  reason: collision with root package name */
-    private int f14500a;
+    private int a;
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f14501c;
+    private int c;
     private float d;
     private int e;
     private int f;
@@ -51,7 +48,7 @@ public final class LiveLuckyBagSlopeProgressView extends View {
     public LiveLuckyBagSlopeProgressView(Context context) {
         super(context);
         Intrinsics.e(context, "context");
-        this.f14501c = 1000;
+        this.c = 1000;
         this.k = 100.0f;
         this.n = new DecelerateInterpolator(1.5f);
         this.o = new AccelerateInterpolator(0.5f);
@@ -75,7 +72,7 @@ public final class LiveLuckyBagSlopeProgressView extends View {
     public LiveLuckyBagSlopeProgressView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         Intrinsics.e(context, "context");
-        this.f14501c = 1000;
+        this.c = 1000;
         this.k = 100.0f;
         this.n = new DecelerateInterpolator(1.5f);
         this.o = new AccelerateInterpolator(0.5f);
@@ -99,7 +96,7 @@ public final class LiveLuckyBagSlopeProgressView extends View {
     public LiveLuckyBagSlopeProgressView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         Intrinsics.e(context, "context");
-        this.f14501c = 1000;
+        this.c = 1000;
         this.k = 100.0f;
         this.n = new DecelerateInterpolator(1.5f);
         this.o = new AccelerateInterpolator(0.5f);
@@ -123,7 +120,7 @@ public final class LiveLuckyBagSlopeProgressView extends View {
     public LiveLuckyBagSlopeProgressView(Context context, AttributeSet attributeSet, int i, int i2) {
         super(context, attributeSet, i, i2);
         Intrinsics.e(context, "context");
-        this.f14501c = 1000;
+        this.c = 1000;
         this.k = 100.0f;
         this.n = new DecelerateInterpolator(1.5f);
         this.o = new AccelerateInterpolator(0.5f);
@@ -179,7 +176,7 @@ public final class LiveLuckyBagSlopeProgressView extends View {
             }
         });
         ofFloat.start();
-        ObjectAnimator ofInt = ObjectAnimator.ofInt(this, "progress", this.b, (int) (this.f14501c * min));
+        ObjectAnimator ofInt = ObjectAnimator.ofInt(this, "progress", this.b, (int) (this.c * min));
         ofInt.setDuration(500L);
         ofInt.setInterpolator(this.n);
         ofInt.start();
@@ -194,7 +191,7 @@ public final class LiveLuckyBagSlopeProgressView extends View {
     }
 
     public final int getMaxProgress() {
-        return this.f14501c;
+        return this.c;
     }
 
     public final int getProgress() {
@@ -209,7 +206,7 @@ public final class LiveLuckyBagSlopeProgressView extends View {
         Bitmap bitmap = this.r;
         if (bitmap != null) {
             Rect rect = new Rect(0, 0, bitmap.getWidth(), bitmap.getHeight());
-            int i = this.f14500a;
+            int i = this.a;
             canvas.drawBitmap(bitmap, rect, new Rect(0, 0, i, i), (Paint) null);
         }
         if (this.m == null) {
@@ -230,8 +227,8 @@ public final class LiveLuckyBagSlopeProgressView extends View {
             Intrinsics.a(paint5);
             paint5.setStrokeWidth(this.l);
         }
-        float f = this.b / this.f14501c;
-        float f2 = 360;
+        float f = this.b / this.c;
+        float f2 = (float) SpatialRelationUtil.A_CIRCLE_DEGREE;
         float f3 = this.j;
         float f4 = this.l;
         float f5 = 2;
@@ -240,8 +237,8 @@ public final class LiveLuckyBagSlopeProgressView extends View {
         float f8 = this.k;
         RectF rectF = new RectF(f6, f7, f6 + f8, f8 + f7);
         int i2 = this.e;
-        int a2 = ColorUtil.a(this.f, this.g, this.d);
-        int a3 = ColorUtil.a(this.h, this.i, this.d);
+        int a = ColorUtil.a(this.f, this.g, this.d);
+        int a2 = ColorUtil.a(this.h, this.i, this.d);
         float f9 = -97.0f;
         float f10 = 0.9f;
         if (f > 0.9d) {
@@ -252,10 +249,10 @@ public final class LiveLuckyBagSlopeProgressView extends View {
         }
         float min = Math.min(f, f10);
         float f12 = min / f5;
-        int i3 = this.f14500a;
-        SweepGradient sweepGradient = new SweepGradient(i3 / 2.0f, i3 / 2.0f, new int[]{i2, a2, a3, a3, i2}, new float[]{0.0f, f12, min, f10, 1.0f});
+        int i3 = this.a;
+        SweepGradient sweepGradient = new SweepGradient(i3 / 2.0f, i3 / 2.0f, new int[]{i2, a, a2, a2, i2}, new float[]{0.0f, f12, min, f10, 1.0f});
         Matrix matrix = new Matrix();
-        int i4 = this.f14500a;
+        int i4 = this.a;
         matrix.setRotate(f9, i4 / 2.0f, i4 / 2.0f);
         sweepGradient.setLocalMatrix(matrix);
         Paint paint6 = this.m;
@@ -269,7 +266,7 @@ public final class LiveLuckyBagSlopeProgressView extends View {
             return;
         }
         Rect rect2 = new Rect(0, 0, bitmap2.getWidth(), bitmap2.getHeight());
-        int i5 = this.f14500a;
+        int i5 = this.a;
         canvas.drawBitmap(bitmap2, rect2, new Rect(0, 0, i5, i5), (Paint) null);
     }
 
@@ -278,7 +275,7 @@ public final class LiveLuckyBagSlopeProgressView extends View {
     public void onMeasure(int i, int i2) {
         super.onMeasure(i, i2);
         int min = Math.min(getMeasuredWidth(), getMeasuredHeight());
-        this.f14500a = min;
+        this.a = min;
         float f = min * 0.0546875f;
         this.j = f;
         float f2 = min;
@@ -297,16 +294,16 @@ public final class LiveLuckyBagSlopeProgressView extends View {
     }
 
     public final void setMaxProgress(int i) {
-        this.f14501c = i;
+        this.c = i;
     }
 
     public final void setProgress(float f) {
-        setProgress((int) (f * this.f14501c));
+        setProgress((int) (f * this.c));
         invalidate();
     }
 
     public final void setProgress(int i) {
-        this.b = Math.min(Math.max(0, i), this.f14501c);
+        this.b = Math.min(Math.max(0, i), this.c);
         invalidate();
     }
 }

@@ -11,6 +11,7 @@ import android.os.Parcel;
 import android.os.RemoteException;
 import android.os.SystemClock;
 import com.anythink.expressad.video.module.a.a.m;
+import com.huawei.hms.framework.common.ContainerUtils;
 import com.igexin.assist.util.AssistUtils;
 import com.tencent.tinker.loader.shareutil.ShareFileLockHelper;
 import com.tencent.tinker.loader.shareutil.SharePatchFileUtil;
@@ -100,7 +101,7 @@ public final class TinkerDexOptimizer {
                     arrayList.add("--runtime-arg");
                     arrayList.add("-classpath");
                     arrayList.add("--runtime-arg");
-                    arrayList.add("&");
+                    arrayList.add(ContainerUtils.FIELD_DELIMITER);
                 }
                 StringBuilder sb = new StringBuilder();
                 sb.append("--dex-file=");
@@ -369,7 +370,7 @@ public final class TinkerDexOptimizer {
             STREAM_CONSUMER.execute(new Runnable() { // from class: com.tencent.tinker.loader.TinkerDexOptimizer.StreamConsumer.1
                 @Override // java.lang.Runnable
                 public void run() {
-                    if (InputStream.this == null) {
+                    if (inputStream == null) {
                         return;
                     }
                     do {
@@ -377,14 +378,14 @@ public final class TinkerDexOptimizer {
                         } catch (IOException e) {
                         } catch (Throwable th) {
                             try {
-                                InputStream.this.close();
+                                inputStream.close();
                             } catch (Exception e2) {
                             }
                             throw th;
                         }
-                    } while (InputStream.this.read(new byte[256]) > 0);
+                    } while (inputStream.read(new byte[256]) > 0);
                     try {
-                        InputStream.this.close();
+                        inputStream.close();
                     } catch (Exception e3) {
                     }
                 }

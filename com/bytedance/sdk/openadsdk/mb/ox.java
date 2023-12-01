@@ -38,13 +38,13 @@ public final class ox implements Bridge, TTAdBridge {
     }
 
     private void mb(final EventListener eventListener) {
-        this.ox.mb(new mb.InterfaceC0326mb() { // from class: com.bytedance.sdk.openadsdk.mb.ox.2
-            @Override // com.bytedance.sdk.openadsdk.mb.mb.InterfaceC0326mb
+        this.ox.mb(new mb.InterfaceC0156mb() { // from class: com.bytedance.sdk.openadsdk.mb.ox.2
+            @Override // com.bytedance.sdk.openadsdk.mb.mb.InterfaceC0156mb
             public void mb() {
                 eventListener.onEvent(0, null);
             }
 
-            @Override // com.bytedance.sdk.openadsdk.mb.mb.InterfaceC0326mb
+            @Override // com.bytedance.sdk.openadsdk.mb.mb.InterfaceC0156mb
             public void ox() {
                 eventListener.onEvent(1, null);
             }
@@ -149,13 +149,13 @@ public final class ox implements Bridge, TTAdBridge {
 
     @Override // com.bytedance.sdk.openadsdk.TTAdBridge
     public void subscribe(final TTAdEvent tTAdEvent) {
-        this.ox.mb(new mb.InterfaceC0326mb() { // from class: com.bytedance.sdk.openadsdk.mb.ox.1
-            @Override // com.bytedance.sdk.openadsdk.mb.mb.InterfaceC0326mb
+        this.ox.mb(new mb.InterfaceC0156mb() { // from class: com.bytedance.sdk.openadsdk.mb.ox.1
+            @Override // com.bytedance.sdk.openadsdk.mb.mb.InterfaceC0156mb
             public void mb() {
                 tTAdEvent.onEvent(0, null);
             }
 
-            @Override // com.bytedance.sdk.openadsdk.mb.mb.InterfaceC0326mb
+            @Override // com.bytedance.sdk.openadsdk.mb.mb.InterfaceC0156mb
             public void ox() {
                 tTAdEvent.onEvent(1, null);
             }

@@ -28,11 +28,11 @@ public class Legend extends ComponentBase {
     private float u = 0.95f;
 
     /* renamed from: a  reason: collision with root package name */
-    public float f22089a = 0.0f;
+    public float f8482a = 0.0f;
     public float b = 0.0f;
 
     /* renamed from: c  reason: collision with root package name */
-    public float f22090c = 0.0f;
+    public float f8483c = 0.0f;
     public float d = 0.0f;
     private boolean v = false;
     private List<FSize> C = new ArrayList(16);
@@ -44,18 +44,18 @@ public class Legend extends ComponentBase {
     static /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f22091a;
+        static final /* synthetic */ int[] f8484a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:7:0x0020 -> B:11:0x0014). Please submit an issue!!! */
         static {
             int[] iArr = new int[LegendOrientation.values().length];
-            f22091a = iArr;
+            f8484a = iArr;
             try {
                 iArr[LegendOrientation.VERTICAL.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f22091a[LegendOrientation.HORIZONTAL.ordinal()] = 2;
+                f8484a[LegendOrientation.HORIZONTAL.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
         }
@@ -113,12 +113,12 @@ public class Legend extends ComponentBase {
         int i = 0;
         while (i < length) {
             LegendEntry legendEntry = legendEntryArr[i];
-            float a3 = Utils.a(Float.isNaN(legendEntry.f22103c) ? this.n : legendEntry.f22103c);
+            float a3 = Utils.a(Float.isNaN(legendEntry.f8496c) ? this.n : legendEntry.f8496c);
             float f4 = f3;
             if (a3 > f3) {
                 f4 = a3;
             }
-            String str = legendEntry.f22102a;
+            String str = legendEntry.f8495a;
             if (str == null) {
                 f = f2;
             } else {
@@ -166,7 +166,7 @@ public class Legend extends ComponentBase {
         float f2 = 0.0f;
         int i = 0;
         while (i < length) {
-            String str = legendEntryArr[i].f22102a;
+            String str = legendEntryArr[i].f8495a;
             if (str == null) {
                 f = f2;
             } else {

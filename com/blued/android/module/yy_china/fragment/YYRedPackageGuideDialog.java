@@ -13,14 +13,12 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYRedPackageGuideDialog.class */
 public final class YYRedPackageGuideDialog extends BaseFullScreenDialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f17422a;
+    private String a;
 
     public YYRedPackageGuideDialog(String delayTime) {
         Intrinsics.e(delayTime, "delayTime");
-        this.f17422a = "";
-        this.f17422a = delayTime;
+        this.a = "";
+        this.a = delayTime;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -35,7 +33,7 @@ public final class YYRedPackageGuideDialog extends BaseFullScreenDialog {
         this$0.dismissAllowingStateLoss();
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
         View inflate = inflater.inflate(R.layout.dialog_red_package_guide, viewGroup, true);
@@ -52,7 +50,7 @@ public final class YYRedPackageGuideDialog extends BaseFullScreenDialog {
             }
         });
         TextView textView = (TextView) inflate.findViewById(R.id.tv_content_3);
-        textView.setText("3. 红包倒计时为" + this.f17422a + "s，本聊天室内的所有用户以及通过红包入口吸引进来的用户均可参与抢红包；");
+        textView.setText("3. 红包倒计时为" + this.a + "s，本聊天室内的所有用户以及通过红包入口吸引进来的用户均可参与抢红包；");
         return inflate;
     }
 }

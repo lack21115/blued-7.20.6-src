@@ -11,9 +11,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
+import androidx.viewbinding.ViewBinding;
 import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
+import com.anythink.expressad.a;
 import com.anythink.expressad.video.module.a.a.m;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.net.IRequestHost;
@@ -38,6 +43,7 @@ import com.soft.blued.log.track.EventTrackVIP;
 import com.soft.blued.ui.user.model.VIPBuyTipsModel;
 import com.soft.blued.ui.user.model.VIPPrivilegeModel;
 import com.soft.blued.ui.web.WebViewShowInfoFragment;
+import com.ss.android.download.api.constant.BaseConstants;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -54,14 +60,14 @@ import kotlin.reflect.KProperty;
 public final class PopVipCancelBuyTipsDialogFragment extends MVVMBaseFragment<EmptyViewModel> {
 
     /* renamed from: c  reason: collision with root package name */
-    private final ViewBindingProperty f34379c;
+    private final ViewBindingProperty f20688c;
     private CountDownTimer d;
     private VIPBuyTipsModel e;
     private int f;
-    static final /* synthetic */ KProperty<Object>[] b = {Reflection.a(new PropertyReference1Impl(PopVipCancelBuyTipsDialogFragment.class, "viewBinding", "getViewBinding()Lcom/soft/blued/databinding/PopVipBuyCancelTipsBinding;", 0))};
+    static final /* synthetic */ KProperty<Object>[] b = {(KProperty) Reflection.a(new PropertyReference1Impl(PopVipCancelBuyTipsDialogFragment.class, "viewBinding", "getViewBinding()Lcom/soft/blued/databinding/PopVipBuyCancelTipsBinding;", 0))};
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Companion f34378a = new Companion(null);
+    public static final Companion f20687a = new Companion(null);
 
     @Metadata
     /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/user/views/PopVipCancelBuyTipsDialogFragment$Companion.class */
@@ -72,16 +78,16 @@ public final class PopVipCancelBuyTipsDialogFragment extends MVVMBaseFragment<Em
         public static final class UserType {
 
             /* renamed from: a  reason: collision with root package name */
-            public static final C0856Companion f34380a = new C0856Companion(null);
+            public static final C0686Companion f20689a = new C0686Companion(null);
 
             @Metadata
             /* renamed from: com.soft.blued.ui.user.views.PopVipCancelBuyTipsDialogFragment$Companion$UserType$Companion  reason: collision with other inner class name */
             /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/user/views/PopVipCancelBuyTipsDialogFragment$Companion$UserType$Companion.class */
-            public static final class C0856Companion {
-                private C0856Companion() {
+            public static final class C0686Companion {
+                private C0686Companion() {
                 }
 
-                public /* synthetic */ C0856Companion(DefaultConstructorMarker defaultConstructorMarker) {
+                public /* synthetic */ C0686Companion(DefaultConstructorMarker defaultConstructorMarker) {
                     this();
                 }
             }
@@ -94,16 +100,16 @@ public final class PopVipCancelBuyTipsDialogFragment extends MVVMBaseFragment<Em
             this();
         }
 
-        public final PopVipCancelBuyTipsDialogFragment a(Context context, BaseFragmentActivity baseFragmentActivity, VIPBuyTipsModel popModel, int i) {
+        public final PopVipCancelBuyTipsDialogFragment a(Context context, BaseFragmentActivity baseFragmentActivity, VIPBuyTipsModel vIPBuyTipsModel, int i) {
             Intrinsics.e(context, "context");
-            Intrinsics.e(popModel, "popModel");
+            Intrinsics.e(vIPBuyTipsModel, "popModel");
             Bundle bundle = new Bundle();
-            bundle.putSerializable("pop_model", popModel);
+            bundle.putSerializable("pop_model", vIPBuyTipsModel);
             bundle.putInt("page_index_key", i);
             TransparentActivity.a(bundle);
             TransparentActivity.b(context, PopVipCancelBuyTipsDialogFragment.class, bundle);
             if (baseFragmentActivity instanceof Activity) {
-                ActivityChangeAnimationUtils.i(baseFragmentActivity);
+                ActivityChangeAnimationUtils.i((Activity) baseFragmentActivity);
             }
             return new PopVipCancelBuyTipsDialogFragment();
         }
@@ -114,26 +120,26 @@ public final class PopVipCancelBuyTipsDialogFragment extends MVVMBaseFragment<Em
     public static final class MyPagerAdapter extends PagerAdapter {
 
         /* renamed from: a  reason: collision with root package name */
-        private final Context f34381a;
+        private final Context f20690a;
         private final List<View> b;
 
         /* JADX WARN: Multi-variable type inference failed */
-        public MyPagerAdapter(Context context, List<? extends View> privileges) {
+        public MyPagerAdapter(Context context, List<? extends View> list) {
             Intrinsics.e(context, "context");
-            Intrinsics.e(privileges, "privileges");
-            this.f34381a = context;
-            this.b = privileges;
+            Intrinsics.e(list, "privileges");
+            this.f20690a = context;
+            this.b = list;
         }
 
         @Override // androidx.viewpager.widget.PagerAdapter
-        public void destroyItem(ViewGroup container, int i, Object object) {
-            Intrinsics.e(container, "container");
-            Intrinsics.e(object, "object");
-            container.removeView((View) object);
+        public void destroyItem(ViewGroup viewGroup, int i, Object obj) {
+            Intrinsics.e(viewGroup, "container");
+            Intrinsics.e(obj, "object");
+            viewGroup.removeView((View) obj);
         }
 
         public final Context getContext() {
-            return this.f34381a;
+            return this.f20690a;
         }
 
         @Override // androidx.viewpager.widget.PagerAdapter
@@ -142,33 +148,33 @@ public final class PopVipCancelBuyTipsDialogFragment extends MVVMBaseFragment<Em
         }
 
         @Override // androidx.viewpager.widget.PagerAdapter
-        public Object instantiateItem(ViewGroup container, int i) {
-            Intrinsics.e(container, "container");
-            container.addView(this.b.get(i));
+        public Object instantiateItem(ViewGroup viewGroup, int i) {
+            Intrinsics.e(viewGroup, "container");
+            viewGroup.addView(this.b.get(i));
             return this.b.get(i);
         }
 
         @Override // androidx.viewpager.widget.PagerAdapter
-        public boolean isViewFromObject(View view, Object object) {
-            Intrinsics.e(view, "view");
-            Intrinsics.e(object, "object");
-            return Intrinsics.a(view, object);
+        public boolean isViewFromObject(View view, Object obj) {
+            Intrinsics.e(view, a.B);
+            Intrinsics.e(obj, "object");
+            return Intrinsics.a(view, obj);
         }
     }
 
     public PopVipCancelBuyTipsDialogFragment() {
-        super(R.layout.pop_vip_buy_cancel_tips);
-        this.f34379c = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<PopVipCancelBuyTipsDialogFragment, PopVipBuyCancelTipsBinding>() { // from class: com.soft.blued.ui.user.views.PopVipCancelBuyTipsDialogFragment$special$$inlined$viewBindingFragment$default$1
-            @Override // kotlin.jvm.functions.Function1
+        super((int) R.layout.pop_vip_buy_cancel_tips);
+        this.f20688c = ((Fragment) this) instanceof DialogFragment ? (ViewBindingProperty) new DialogFragmentViewBindingProperty(new Function1<PopVipCancelBuyTipsDialogFragment, PopVipBuyCancelTipsBinding>() { // from class: com.soft.blued.ui.user.views.PopVipCancelBuyTipsDialogFragment$special$$inlined$viewBindingFragment$default$1
+            /* JADX WARN: Incorrect types in method signature: (Lcom/soft/blued/ui/user/views/PopVipCancelBuyTipsDialogFragment;)Lcom/soft/blued/databinding/PopVipBuyCancelTipsBinding; */
             /* renamed from: a */
-            public final PopVipBuyCancelTipsBinding invoke(PopVipCancelBuyTipsDialogFragment fragment) {
+            public final ViewBinding invoke(Fragment fragment) {
                 Intrinsics.e(fragment, "fragment");
                 return PopVipBuyCancelTipsBinding.a(fragment.requireView());
             }
         }) : new FragmentViewBindingProperty(new Function1<PopVipCancelBuyTipsDialogFragment, PopVipBuyCancelTipsBinding>() { // from class: com.soft.blued.ui.user.views.PopVipCancelBuyTipsDialogFragment$special$$inlined$viewBindingFragment$default$2
-            @Override // kotlin.jvm.functions.Function1
+            /* JADX WARN: Incorrect types in method signature: (Lcom/soft/blued/ui/user/views/PopVipCancelBuyTipsDialogFragment;)Lcom/soft/blued/databinding/PopVipBuyCancelTipsBinding; */
             /* renamed from: a */
-            public final PopVipBuyCancelTipsBinding invoke(PopVipCancelBuyTipsDialogFragment fragment) {
+            public final ViewBinding invoke(Fragment fragment) {
                 Intrinsics.e(fragment, "fragment");
                 return PopVipBuyCancelTipsBinding.a(fragment.requireView());
             }
@@ -180,41 +186,41 @@ public final class PopVipCancelBuyTipsDialogFragment extends MVVMBaseFragment<Em
         if (j >= 10) {
             return j + "";
         }
-        return Intrinsics.a("0", (Object) Long.valueOf(j));
+        return Intrinsics.a("0", Long.valueOf(j));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(VIPBuyTipsModel popModel, Context mContext, PopVipCancelBuyTipsDialogFragment this$0, View view) {
+    public static final void a(VIPBuyTipsModel vIPBuyTipsModel, Context context, PopVipCancelBuyTipsDialogFragment popVipCancelBuyTipsDialogFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(popModel, "$popModel");
-        Intrinsics.e(mContext, "$mContext");
-        Intrinsics.e(this$0, "this$0");
-        if (TextUtils.isEmpty(popModel.welfare_link)) {
-            EventTrackVIP.a(VipProtos.Event.VIP_BUY_PAGE_CANCEL_POP_BUY_CLICK, this$0.r(), this$0.getType());
+        Intrinsics.e(vIPBuyTipsModel, "$popModel");
+        Intrinsics.e(context, "$mContext");
+        Intrinsics.e(popVipCancelBuyTipsDialogFragment, "this$0");
+        if (TextUtils.isEmpty(vIPBuyTipsModel.welfare_link)) {
+            EventTrackVIP.a(VipProtos.Event.VIP_BUY_PAGE_CANCEL_POP_BUY_CLICK, popVipCancelBuyTipsDialogFragment.r(), popVipCancelBuyTipsDialogFragment.getType());
         } else {
-            WebViewShowInfoFragment.show(mContext, popModel.welfare_link);
-            EventTrackVIP.a(VipProtos.Event.VIP_BUY_PAGE_CANCEL_POP_NOW_CLICK, this$0.r(), this$0.getType());
+            WebViewShowInfoFragment.show(context, vIPBuyTipsModel.welfare_link);
+            EventTrackVIP.a(VipProtos.Event.VIP_BUY_PAGE_CANCEL_POP_NOW_CLICK, popVipCancelBuyTipsDialogFragment.r(), popVipCancelBuyTipsDialogFragment.getType());
         }
-        this$0.b(false);
+        popVipCancelBuyTipsDialogFragment.b(false);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(PopVipCancelBuyTipsDialogFragment this$0, View view) {
+    public static final void a(PopVipCancelBuyTipsDialogFragment popVipCancelBuyTipsDialogFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        EventTrackVIP.a(VipProtos.Event.VIP_BUY_PAGE_CANCEL_POP_CANCEL_CLICK, this$0.r(), this$0.getType());
-        this$0.b(true);
+        Intrinsics.e(popVipCancelBuyTipsDialogFragment, "this$0");
+        EventTrackVIP.a(VipProtos.Event.VIP_BUY_PAGE_CANCEL_POP_CANCEL_CLICK, popVipCancelBuyTipsDialogFragment.r(), popVipCancelBuyTipsDialogFragment.getType());
+        popVipCancelBuyTipsDialogFragment.b(true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(PopVipCancelBuyTipsDialogFragment this$0, Void r4) {
-        Intrinsics.e(this$0, "this$0");
-        this$0.b(false);
+    public static final void a(PopVipCancelBuyTipsDialogFragment popVipCancelBuyTipsDialogFragment, Void r4) {
+        Intrinsics.e(popVipCancelBuyTipsDialogFragment, "this$0");
+        popVipCancelBuyTipsDialogFragment.b(false);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final PopVipBuyCancelTipsBinding s() {
-        return (PopVipBuyCancelTipsBinding) this.f34379c.b(this, b[0]);
+        return (PopVipBuyCancelTipsBinding) this.f20688c.b(this, b[0]);
     }
 
     private final void t() {
@@ -233,10 +239,10 @@ public final class PopVipCancelBuyTipsDialogFragment extends MVVMBaseFragment<Em
                     String a2;
                     String a3;
                     String a4;
-                    long j3 = 86400000;
+                    long j3 = (long) BaseConstants.Time.DAY;
                     long j4 = j2 / j3;
                     long j5 = j2 - (j3 * j4);
-                    long j6 = 3600000;
+                    long j6 = (long) BaseConstants.Time.HOUR;
                     long j7 = j5 / j6;
                     long j8 = j5 - (j6 * j7);
                     long j9 = 60000;
@@ -289,12 +295,11 @@ public final class PopVipCancelBuyTipsDialogFragment extends MVVMBaseFragment<Em
         ActivityChangeAnimationUtils.j(activity);
     }
 
-    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
     public void f() {
         final Context context;
         final VIPBuyTipsModel p;
         String string;
-        StatusBarHelper.a((Activity) getActivity(), false);
+        StatusBarHelper.a(getActivity(), false);
         PopVipBuyCancelTipsBinding s = s();
         if (s != null && (context = getContext()) != null && (p = p()) != null) {
             Drawable drawable = context.getResources().getDrawable(R.drawable.icon_svip_cancel_buy_pop_top_bg);
@@ -321,24 +326,23 @@ public final class PopVipCancelBuyTipsDialogFragment extends MVVMBaseFragment<Em
                 if (q() == 1) {
                     list = p.privilege.vip;
                 }
-                List<VIPPrivilegeModel> privileges = list;
-                Intrinsics.c(privileges, "privileges");
+                Intrinsics.c(list, "privileges");
                 for (VIPPrivilegeModel vIPPrivilegeModel : list) {
                     if (vIPPrivilegeModel != null && !TextUtils.isEmpty(vIPPrivilegeModel.icon) && !TextUtils.isEmpty(vIPPrivilegeModel.name) && !TextUtils.isEmpty(vIPPrivilegeModel.content)) {
                         View inflate = LayoutInflater.from(getContext()).inflate(R.layout.item_vip_cancel_buy_pop_privilege_item, (ViewGroup) null);
                         ItemVipCancelBuyPopPrivilegeItemBinding a2 = ItemVipCancelBuyPopPrivilegeItemBinding.a(inflate);
                         Intrinsics.c(a2, "bind(layout)");
-                        ImageLoader.a((IRequestHost) null, vIPPrivilegeModel.icon).a(a2.f29349a);
-                        a2.f29350c.setText(vIPPrivilegeModel.name);
+                        ImageLoader.a((IRequestHost) null, vIPPrivilegeModel.icon).a(a2.f15659a);
+                        a2.f15660c.setText(vIPPrivilegeModel.name);
                         a2.b.setText(vIPPrivilegeModel.content);
                         arrayList.add(inflate);
                     }
                 }
                 s.m.setAdapter(new MyPagerAdapter(context, arrayList));
                 s.m.a(1500);
-                s.m.setInterval(m.ag);
-                s.f29565c.setDotCount(3);
-                s.f29565c.a(s.m);
+                s.m.setInterval((long) m.ag);
+                s.f15875c.setDotCount(3);
+                s.f15875c.a((ViewPager) s.m);
                 s.q.setText(context.getString(R.string.vip_cancel_buy_pop_to_see_btn));
             } else {
                 s.j.setVisibility(8);
@@ -375,14 +379,14 @@ public final class PopVipCancelBuyTipsDialogFragment extends MVVMBaseFragment<Em
                     s.f.setVisibility(0);
                     s.k.setVisibility(8);
                     if (q() == 0) {
-                        s.o.setText(Intrinsics.a("258", (Object) context.getString(R.string.vip_cancel_buy_pop_rmb)));
-                        s.u.setText(Intrinsics.a(BaseWrapper.ENTER_ID_OAPS_DEMO, (Object) context.getString(R.string.vip_cancel_buy_pop_rmb)));
+                        s.o.setText(Intrinsics.a("258", context.getString(R.string.vip_cancel_buy_pop_rmb)));
+                        s.u.setText(Intrinsics.a(BaseWrapper.ENTER_ID_OAPS_DEMO, context.getString(R.string.vip_cancel_buy_pop_rmb)));
                     } else {
-                        s.o.setText(Intrinsics.a("188", (Object) context.getString(R.string.vip_cancel_buy_pop_rmb)));
-                        s.u.setText(Intrinsics.a("21", (Object) context.getString(R.string.vip_cancel_buy_pop_rmb)));
+                        s.o.setText(Intrinsics.a("188", context.getString(R.string.vip_cancel_buy_pop_rmb)));
+                        s.u.setText(Intrinsics.a("21", context.getString(R.string.vip_cancel_buy_pop_rmb)));
                     }
-                    s.n.setText(Intrinsics.a(context.getString(R.string.vip_cancel_buy_pop_discount), (Object) "40%"));
-                    s.t.setText(Intrinsics.a(context.getString(R.string.vip_cancel_buy_pop_discount), (Object) "22%"));
+                    s.n.setText(Intrinsics.a(context.getString(R.string.vip_cancel_buy_pop_discount), "40%"));
+                    s.t.setText(Intrinsics.a(context.getString(R.string.vip_cancel_buy_pop_discount), "22%"));
                 } else if (i != 6) {
                     string = "";
                 } else {
@@ -392,7 +396,7 @@ public final class PopVipCancelBuyTipsDialogFragment extends MVVMBaseFragment<Em
                     Intrinsics.c(string, "mContext.getString(R.str…pop_top_title_regression)");
                     s.f.setVisibility(8);
                     s.k.setVisibility(0);
-                    s.w.setText(Intrinsics.a(BaseWrapper.ENTER_ID_OAPS_PHONEMANAGER, (Object) context.getString(R.string.vip_cancel_buy_pop_first_buy_month)));
+                    s.w.setText(Intrinsics.a(BaseWrapper.ENTER_ID_OAPS_PHONEMANAGER, context.getString(R.string.vip_cancel_buy_pop_first_buy_month)));
                     s.w.setPaintFlags(s.w.getPaintFlags() | 16);
                     s.x.setText("9.9");
                 }
@@ -407,7 +411,7 @@ public final class PopVipCancelBuyTipsDialogFragment extends MVVMBaseFragment<Em
                 }
             }
             s.B.setText(string);
-            s.f29564a.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.views.-$$Lambda$PopVipCancelBuyTipsDialogFragment$bYX0BPStmG3zcYhcKFYwmnNVpSU
+            s.f15874a.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.views.-$$Lambda$PopVipCancelBuyTipsDialogFragment$bYX0BPStmG3zcYhcKFYwmnNVpSU
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     PopVipCancelBuyTipsDialogFragment.a(PopVipCancelBuyTipsDialogFragment.this, view);
@@ -429,9 +433,8 @@ public final class PopVipCancelBuyTipsDialogFragment extends MVVMBaseFragment<Em
         return (valueOf != null && valueOf.intValue() == 2) ? "new" : (valueOf != null && valueOf.intValue() == 3) ? "in" : (valueOf != null && valueOf.intValue() == 4) ? "out_60" : (valueOf != null && valueOf.intValue() == 5) ? "out_180" : (valueOf != null && valueOf.intValue() == 6) ? "out_181" : "";
     }
 
-    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
     public void l() {
-        LiveEventBus.get(LiveEventBusConstant.b, Void.class).observe(this, new Observer() { // from class: com.soft.blued.ui.user.views.-$$Lambda$PopVipCancelBuyTipsDialogFragment$5JSXL4arRhTvv_qaSeP1I92gaJk
+        LiveEventBus.get(LiveEventBusConstant.b, Void.class).observe((LifecycleOwner) this, new Observer() { // from class: com.soft.blued.ui.user.views.-$$Lambda$PopVipCancelBuyTipsDialogFragment$5JSXL4arRhTvv_qaSeP1I92gaJk
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 PopVipCancelBuyTipsDialogFragment.a(PopVipCancelBuyTipsDialogFragment.this, (Void) obj);
@@ -439,13 +442,11 @@ public final class PopVipCancelBuyTipsDialogFragment extends MVVMBaseFragment<Em
         });
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener
     public boolean onBackPressed() {
         b(false);
         return true;
     }
 
-    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         Bundle arguments = getArguments();

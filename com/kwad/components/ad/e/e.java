@@ -475,7 +475,7 @@ public final class e extends KSRelativeLayout implements com.kwad.sdk.core.g.c {
                 if (aVar.TD != null && !TextUtils.isEmpty(aVar.TD.Ts)) {
                     bVar.Ts = aVar.TD.Ts;
                 }
-                com.kwad.components.core.d.b.a.a(new a.C0519a(e.this.getContext()).I(e.this.mAdTemplate).b(e.this.mApkDownloadHelper).ao(false).ap(i).au(aVar.II).as(aU).q(e.this.eV == null ? 0L : e.this.eV.getPlayDuration()).a(bVar).aq(true).a(new a.b() { // from class: com.kwad.components.ad.e.e.11.1
+                com.kwad.components.core.d.b.a.a(new a.C0349a(e.this.getContext()).I(e.this.mAdTemplate).b(e.this.mApkDownloadHelper).ao(false).ap(i).au(aVar.II).as(aU).q(e.this.eV == null ? 0L : e.this.eV.getPlayDuration()).a(bVar).aq(true).a(new a.b() { // from class: com.kwad.components.ad.e.e.11.1
                     @Override // com.kwad.components.core.d.b.a.b
                     public final void onAdClicked() {
                         if (e.this.mR != null) {
@@ -510,7 +510,7 @@ public final class e extends KSRelativeLayout implements com.kwad.sdk.core.g.c {
         return new ag.a() { // from class: com.kwad.components.ad.e.e.9
             @Override // com.kwad.components.core.webview.jshandler.ag.a
             public final void a(com.kwad.components.core.webview.kwai.b bVar) {
-                AdWebViewActivityProxy.launch(e.this.mContext, new AdWebViewActivityProxy.a.C0529a().au(bVar.title).av(bVar.url).L(e.this.mAdTemplate).oc());
+                AdWebViewActivityProxy.launch(e.this.mContext, new AdWebViewActivityProxy.a.C0359a().au(bVar.title).av(bVar.url).L(e.this.mAdTemplate).oc());
             }
         };
     }

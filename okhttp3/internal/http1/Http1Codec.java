@@ -1,7 +1,6 @@
 package okhttp3.internal.http1;
 
-import com.ss.android.socialbase.downloader.utils.DownloadUtils;
-import com.tencent.qcloud.core.util.IOUtils;
+import com.alipay.sdk.util.i;
 import java.io.EOFException;
 import java.io.IOException;
 import java.net.ProtocolException;
@@ -32,13 +31,9 @@ import okio.Timeout;
 
 /* loaded from: source-3503164-dex2jar.jar:okhttp3/internal/http1/Http1Codec.class */
 public final class Http1Codec implements HttpCodec {
-
-    /* renamed from: a  reason: collision with root package name */
-    final OkHttpClient f43896a;
+    final OkHttpClient a;
     final StreamAllocation b;
-
-    /* renamed from: c  reason: collision with root package name */
-    final BufferedSource f43897c;
+    final BufferedSource c;
     final BufferedSink d;
     int e = 0;
     private long f = 262144;
@@ -46,17 +41,13 @@ public final class Http1Codec implements HttpCodec {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-3503164-dex2jar.jar:okhttp3/internal/http1/Http1Codec$AbstractSource.class */
     public abstract class AbstractSource implements Source {
-
-        /* renamed from: a  reason: collision with root package name */
-        protected final ForwardingTimeout f43898a;
+        protected final ForwardingTimeout a;
         protected boolean b;
-
-        /* renamed from: c  reason: collision with root package name */
-        protected long f43899c;
+        protected long c;
 
         private AbstractSource() {
-            this.f43898a = new ForwardingTimeout(Http1Codec.this.f43897c.timeout());
-            this.f43899c = 0L;
+            this.a = new ForwardingTimeout(Http1Codec.this.c.timeout());
+            this.c = 0L;
         }
 
         protected final void a(boolean z, IOException iOException) throws IOException {
@@ -66,19 +57,19 @@ public final class Http1Codec implements HttpCodec {
             if (Http1Codec.this.e != 5) {
                 throw new IllegalStateException("state: " + Http1Codec.this.e);
             }
-            Http1Codec.this.a(this.f43898a);
+            Http1Codec.this.a(this.a);
             Http1Codec.this.e = 6;
             if (Http1Codec.this.b != null) {
-                Http1Codec.this.b.a(!z, Http1Codec.this, this.f43899c, iOException);
+                Http1Codec.this.b.a(!z, Http1Codec.this, this.c, iOException);
             }
         }
 
         @Override // okio.Source
         public long read(Buffer buffer, long j) throws IOException {
             try {
-                long read = Http1Codec.this.f43897c.read(buffer, j);
+                long read = Http1Codec.this.c.read(buffer, j);
                 if (read > 0) {
-                    this.f43899c += read;
+                    this.c += read;
                 }
                 return read;
             } catch (IOException e) {
@@ -89,7 +80,7 @@ public final class Http1Codec implements HttpCodec {
 
         @Override // okio.Source
         public Timeout timeout() {
-            return this.f43898a;
+            return this.a;
         }
     }
 
@@ -97,9 +88,7 @@ public final class Http1Codec implements HttpCodec {
     /* loaded from: source-3503164-dex2jar.jar:okhttp3/internal/http1/Http1Codec$ChunkedSink.class */
     public final class ChunkedSink implements Sink {
         private final ForwardingTimeout b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private boolean f43901c;
+        private boolean c;
 
         ChunkedSink() {
             this.b = new ForwardingTimeout(Http1Codec.this.d.timeout());
@@ -108,10 +97,10 @@ public final class Http1Codec implements HttpCodec {
         @Override // okio.Sink, java.io.Closeable, java.lang.AutoCloseable
         public void close() throws IOException {
             synchronized (this) {
-                if (this.f43901c) {
+                if (this.c) {
                     return;
                 }
-                this.f43901c = true;
+                this.c = true;
                 Http1Codec.this.d.writeUtf8("0\r\n\r\n");
                 Http1Codec.this.a(this.b);
                 Http1Codec.this.e = 3;
@@ -121,7 +110,7 @@ public final class Http1Codec implements HttpCodec {
         @Override // okio.Sink, java.io.Flushable
         public void flush() throws IOException {
             synchronized (this) {
-                if (this.f43901c) {
+                if (this.c) {
                     return;
                 }
                 Http1Codec.this.d.flush();
@@ -135,16 +124,16 @@ public final class Http1Codec implements HttpCodec {
 
         @Override // okio.Sink
         public void write(Buffer buffer, long j) throws IOException {
-            if (this.f43901c) {
+            if (this.c) {
                 throw new IllegalStateException("closed");
             }
             if (j == 0) {
                 return;
             }
             Http1Codec.this.d.writeHexadecimalUnsignedLong(j);
-            Http1Codec.this.d.writeUtf8(IOUtils.LINE_SEPARATOR_WINDOWS);
+            Http1Codec.this.d.writeUtf8("\r\n");
             Http1Codec.this.d.write(buffer, j);
-            Http1Codec.this.d.writeUtf8(IOUtils.LINE_SEPARATOR_WINDOWS);
+            Http1Codec.this.d.writeUtf8("\r\n");
         }
     }
 
@@ -164,16 +153,16 @@ public final class Http1Codec implements HttpCodec {
 
         private void a() throws IOException {
             if (this.g != -1) {
-                Http1Codec.this.f43897c.readUtf8LineStrict();
+                Http1Codec.this.c.readUtf8LineStrict();
             }
             try {
-                this.g = Http1Codec.this.f43897c.readHexadecimalUnsignedLong();
-                String trim = Http1Codec.this.f43897c.readUtf8LineStrict().trim();
-                if (this.g < 0 || !(trim.isEmpty() || trim.startsWith(";"))) {
+                this.g = Http1Codec.this.c.readHexadecimalUnsignedLong();
+                String trim = Http1Codec.this.c.readUtf8LineStrict().trim();
+                if (this.g < 0 || !(trim.isEmpty() || trim.startsWith(i.b))) {
                     throw new ProtocolException("expected chunk size and optional extensions but was \"" + this.g + trim + "\"");
                 } else if (this.g == 0) {
                     this.h = false;
-                    HttpHeaders.a(Http1Codec.this.f43896a.cookieJar(), this.f, Http1Codec.this.d());
+                    HttpHeaders.a(Http1Codec.this.a.cookieJar(), this.f, Http1Codec.this.d());
                     a(true, null);
                 }
             } catch (NumberFormatException e) {
@@ -225,9 +214,7 @@ public final class Http1Codec implements HttpCodec {
     /* loaded from: source-3503164-dex2jar.jar:okhttp3/internal/http1/Http1Codec$FixedLengthSink.class */
     public final class FixedLengthSink implements Sink {
         private final ForwardingTimeout b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private boolean f43903c;
+        private boolean c;
         private long d;
 
         FixedLengthSink(long j) {
@@ -237,10 +224,10 @@ public final class Http1Codec implements HttpCodec {
 
         @Override // okio.Sink, java.io.Closeable, java.lang.AutoCloseable
         public void close() throws IOException {
-            if (this.f43903c) {
+            if (this.c) {
                 return;
             }
-            this.f43903c = true;
+            this.c = true;
             if (this.d > 0) {
                 throw new ProtocolException("unexpected end of stream");
             }
@@ -250,7 +237,7 @@ public final class Http1Codec implements HttpCodec {
 
         @Override // okio.Sink, java.io.Flushable
         public void flush() throws IOException {
-            if (this.f43903c) {
+            if (this.c) {
                 return;
             }
             Http1Codec.this.d.flush();
@@ -263,7 +250,7 @@ public final class Http1Codec implements HttpCodec {
 
         @Override // okio.Sink
         public void write(Buffer buffer, long j) throws IOException {
-            if (this.f43903c) {
+            if (this.c) {
                 throw new IllegalStateException("closed");
             }
             Util.a(buffer.size(), 0L, j);
@@ -369,14 +356,14 @@ public final class Http1Codec implements HttpCodec {
     }
 
     public Http1Codec(OkHttpClient okHttpClient, StreamAllocation streamAllocation, BufferedSource bufferedSource, BufferedSink bufferedSink) {
-        this.f43896a = okHttpClient;
+        this.a = okHttpClient;
         this.b = streamAllocation;
-        this.f43897c = bufferedSource;
+        this.c = bufferedSource;
         this.d = bufferedSink;
     }
 
     private String g() throws IOException {
-        String readUtf8LineStrict = this.f43897c.readUtf8LineStrict(this.f);
+        String readUtf8LineStrict = this.c.readUtf8LineStrict(this.f);
         this.f -= readUtf8LineStrict.length();
         return readUtf8LineStrict;
     }
@@ -388,12 +375,12 @@ public final class Http1Codec implements HttpCodec {
             throw new IllegalStateException("state: " + this.e);
         }
         try {
-            StatusLine a2 = StatusLine.a(g());
-            Response.Builder headers = new Response.Builder().protocol(a2.f43894a).code(a2.b).message(a2.f43895c).headers(d());
-            if (z && a2.b == 100) {
+            StatusLine a = StatusLine.a(g());
+            Response.Builder headers = new Response.Builder().protocol(a.a).code(a.b).message(a.c).headers(d());
+            if (z && a.b == 100) {
                 return null;
             }
-            if (a2.b == 100) {
+            if (a.b == 100) {
                 this.e = 3;
                 return headers;
             }
@@ -408,14 +395,14 @@ public final class Http1Codec implements HttpCodec {
 
     @Override // okhttp3.internal.http.HttpCodec
     public ResponseBody a(Response response) throws IOException {
-        this.b.f43880c.responseBodyStart(this.b.b);
+        this.b.c.responseBodyStart(this.b.b);
         String header = response.header("Content-Type");
         if (HttpHeaders.d(response)) {
-            if (DownloadUtils.VALUE_CHUNKED.equalsIgnoreCase(response.header("Transfer-Encoding"))) {
+            if ("chunked".equalsIgnoreCase(response.header("Transfer-Encoding"))) {
                 return new RealResponseBody(header, -1L, Okio.buffer(a(response.request().url())));
             }
-            long a2 = HttpHeaders.a(response);
-            return a2 != -1 ? new RealResponseBody(header, a2, Okio.buffer(b(a2))) : new RealResponseBody(header, -1L, Okio.buffer(f()));
+            long a = HttpHeaders.a(response);
+            return a != -1 ? new RealResponseBody(header, a, Okio.buffer(b(a))) : new RealResponseBody(header, -1L, Okio.buffer(f()));
         }
         return new RealResponseBody(header, 0L, Okio.buffer(b(0L)));
     }
@@ -430,7 +417,7 @@ public final class Http1Codec implements HttpCodec {
 
     @Override // okhttp3.internal.http.HttpCodec
     public Sink a(Request request, long j) {
-        if (DownloadUtils.VALUE_CHUNKED.equalsIgnoreCase(request.header("Transfer-Encoding"))) {
+        if ("chunked".equalsIgnoreCase(request.header("Transfer-Encoding"))) {
             return e();
         }
         if (j != -1) {
@@ -456,12 +443,12 @@ public final class Http1Codec implements HttpCodec {
         if (this.e != 0) {
             throw new IllegalStateException("state: " + this.e);
         }
-        this.d.writeUtf8(str).writeUtf8(IOUtils.LINE_SEPARATOR_WINDOWS);
+        this.d.writeUtf8(str).writeUtf8("\r\n");
         int size = headers.size();
         for (int i = 0; i < size; i++) {
-            this.d.writeUtf8(headers.name(i)).writeUtf8(": ").writeUtf8(headers.value(i)).writeUtf8(IOUtils.LINE_SEPARATOR_WINDOWS);
+            this.d.writeUtf8(headers.name(i)).writeUtf8(": ").writeUtf8(headers.value(i)).writeUtf8("\r\n");
         }
-        this.d.writeUtf8(IOUtils.LINE_SEPARATOR_WINDOWS);
+        this.d.writeUtf8("\r\n");
         this.e = 1;
     }
 
@@ -492,9 +479,9 @@ public final class Http1Codec implements HttpCodec {
 
     @Override // okhttp3.internal.http.HttpCodec
     public void c() {
-        RealConnection c2 = this.b.c();
-        if (c2 != null) {
-            c2.a();
+        RealConnection c = this.b.c();
+        if (c != null) {
+            c.a();
         }
     }
 

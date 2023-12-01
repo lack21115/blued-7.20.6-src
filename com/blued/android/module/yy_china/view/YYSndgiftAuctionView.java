@@ -19,13 +19,9 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYSndgiftAuctionView.class */
 public class YYSndgiftAuctionView extends RelativeLayout implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    private DialogSendgiftAuctionBinding f18496a;
+    private DialogSendgiftAuctionBinding a;
     private BaseYYStudioFragment b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private YYRelationDetailMode f18497c;
+    private YYRelationDetailMode c;
     private String d;
 
     public YYSndgiftAuctionView(Context context) {
@@ -38,7 +34,7 @@ public class YYSndgiftAuctionView extends RelativeLayout implements View.OnClick
 
     public YYSndgiftAuctionView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f18496a = DialogSendgiftAuctionBinding.a(LayoutInflater.from(context), this, true);
+        this.a = DialogSendgiftAuctionBinding.a(LayoutInflater.from(context), this, true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -46,15 +42,15 @@ public class YYSndgiftAuctionView extends RelativeLayout implements View.OnClick
         if (yYRelationDetailMode == null || yYRelationDetailMode.getRelation() == null || yYRelationDetailMode.getGoods() == null) {
             return;
         }
-        this.f18497c = yYRelationDetailMode;
-        ImageLoader.a(this.b.getFragmentActive(), yYRelationDetailMode.getRelation().getRelation_image()).a(this.f18496a.f16409a);
-        this.f18496a.f16410c.setText(yYRelationDetailMode.getRelation().getContent());
-        this.f18496a.e.setText(String.format(getContext().getString(R.string.yy_day), yYRelationDetailMode.getRelation().getDuration()));
-        ImageLoader.a(this.b.getFragmentActive(), yYRelationDetailMode.getGoods().getImages_static()).a(this.f18496a.b);
-        this.f18496a.d.setText(yYRelationDetailMode.getGoods().getName());
-        TextView textView = this.f18496a.f;
+        this.c = yYRelationDetailMode;
+        ImageLoader.a(this.b.getFragmentActive(), yYRelationDetailMode.getRelation().getRelation_image()).a(this.a.a);
+        this.a.c.setText(yYRelationDetailMode.getRelation().getContent());
+        this.a.e.setText(String.format(getContext().getString(R.string.yy_day), yYRelationDetailMode.getRelation().getDuration()));
+        ImageLoader.a(this.b.getFragmentActive(), yYRelationDetailMode.getGoods().getImages_static()).a(this.a.b);
+        this.a.d.setText(yYRelationDetailMode.getGoods().getName());
+        TextView textView = this.a.f;
         textView.setText(yYRelationDetailMode.getGoods().getBeans() + getResources().getString(R.string.yy_gift_beans));
-        this.f18496a.g.setOnClickListener(this);
+        this.a.g.setOnClickListener(this);
     }
 
     public void a(BaseYYStudioFragment baseYYStudioFragment, String str, String str2) {
@@ -77,10 +73,10 @@ public class YYSndgiftAuctionView extends RelativeLayout implements View.OnClick
     public void onClick(View view) {
         YYRelationDetailMode yYRelationDetailMode;
         Tracker.onClick(view);
-        if (view.getId() != R.id.tv_ok || (yYRelationDetailMode = this.f18497c) == null || yYRelationDetailMode.getGoods() == null || TextUtils.isEmpty(this.d)) {
+        if (view.getId() != R.id.tv_ok || (yYRelationDetailMode = this.c) == null || yYRelationDetailMode.getGoods() == null || TextUtils.isEmpty(this.d)) {
             return;
         }
         this.b.y();
-        this.b.a(true, "", this.f18497c.getGoods().getGoods_id(), this.d);
+        this.b.a(true, "", this.c.getGoods().getGoods_id(), this.d);
     }
 }

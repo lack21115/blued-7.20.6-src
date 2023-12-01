@@ -14,35 +14,27 @@ import com.blued.android.framework.R;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/view/ExpandLongTextView.class */
 public class ExpandLongTextView extends TextView {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f10170a;
+    private Context a;
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f10171c;
+    private int c;
     private boolean d;
     private SpannableString e;
 
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/view/ExpandLongTextView$ButtonSpan.class */
     public class ButtonSpan extends ClickableSpan {
-
-        /* renamed from: a  reason: collision with root package name */
-        View.OnClickListener f10172a;
-
-        /* renamed from: c  reason: collision with root package name */
-        private Context f10173c;
+        View.OnClickListener a;
+        private Context c;
         private int d;
 
         public ButtonSpan(Context context, View.OnClickListener onClickListener, int i) {
-            this.f10172a = onClickListener;
-            this.f10173c = context;
+            this.a = onClickListener;
+            this.c = context;
             this.d = i;
         }
 
         @Override // android.text.style.ClickableSpan
         public void onClick(View view) {
-            View.OnClickListener onClickListener = this.f10172a;
+            View.OnClickListener onClickListener = this.a;
             if (onClickListener != null) {
                 onClickListener.onClick(view);
             }
@@ -50,14 +42,14 @@ public class ExpandLongTextView extends TextView {
 
         @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
         public void updateDrawState(TextPaint textPaint) {
-            textPaint.setColor(this.f10173c.getResources().getColor(this.d));
+            textPaint.setColor(this.c.getResources().getColor(this.d));
             textPaint.setUnderlineText(false);
         }
     }
 
     public ExpandLongTextView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f10171c = 6;
+        this.c = 6;
         this.d = false;
         this.e = null;
         a(context);
@@ -65,7 +57,7 @@ public class ExpandLongTextView extends TextView {
 
     public ExpandLongTextView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f10171c = 6;
+        this.c = 6;
         this.d = false;
         this.e = null;
         a(context);
@@ -76,7 +68,7 @@ public class ExpandLongTextView extends TextView {
     }
 
     private void a(Context context) {
-        this.f10170a = context;
+        this.a = context;
         String string = context.getResources().getString(R.string.read_more);
         this.e = new SpannableString(string);
         this.e.setSpan(new ButtonSpan(getContext(), null, R.color.expand_text_color), 0, string.length(), 17);
@@ -102,7 +94,7 @@ public class ExpandLongTextView extends TextView {
 
     @Override // android.widget.TextView
     public void setMaxLines(int i) {
-        this.f10171c = i;
+        this.c = i;
         super.setMaxLines(i);
     }
 }

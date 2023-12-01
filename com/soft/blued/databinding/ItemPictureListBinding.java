@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemPictureListBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ConstraintLayout f29283a;
+    private final ConstraintLayout f15593a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f29283a;
+        return this.f15593a;
     }
 }

@@ -51,34 +51,27 @@ final class SubchannelChannel extends Channel {
         this.configSelector = (AtomicReference) Preconditions.checkNotNull(atomicReference, "configSelector");
     }
 
-    @Override // io.grpc.Channel
     public String authority() {
         return this.subchannel.getAuthority();
     }
 
-    @Override // io.grpc.Channel
     public <RequestT, ResponseT> ClientCall<RequestT, ResponseT> newCall(MethodDescriptor<RequestT, ResponseT> methodDescriptor, CallOptions callOptions) {
         Executor executor = callOptions.getExecutor() == null ? this.executor : callOptions.getExecutor();
         if (callOptions.isWaitForReady()) {
             final Executor executor2 = executor;
             return new ClientCall<RequestT, ResponseT>() { // from class: io.grpc.internal.SubchannelChannel.2
-                @Override // io.grpc.ClientCall
                 public void cancel(String str, Throwable th) {
                 }
 
-                @Override // io.grpc.ClientCall
                 public void halfClose() {
                 }
 
-                @Override // io.grpc.ClientCall
                 public void request(int i) {
                 }
 
-                @Override // io.grpc.ClientCall
                 public void sendMessage(RequestT requestt) {
                 }
 
-                @Override // io.grpc.ClientCall
                 public void start(final ClientCall.Listener<ResponseT> listener, Metadata metadata) {
                     executor2.execute(new Runnable() { // from class: io.grpc.internal.SubchannelChannel.2.1
                         @Override // java.lang.Runnable

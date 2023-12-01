@@ -19,11 +19,11 @@ import androidx.core.internal.view.SupportMenuItem;
 public class ActionMenuItem implements SupportMenuItem {
 
     /* renamed from: a  reason: collision with root package name */
-    private final int f1652a;
+    private final int f1604a;
     private final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final int f1653c;
+    private final int f1605c;
     private CharSequence d;
     private CharSequence e;
     private Intent f;
@@ -44,9 +44,9 @@ public class ActionMenuItem implements SupportMenuItem {
 
     public ActionMenuItem(Context context, int i, int i2, int i3, int i4, CharSequence charSequence) {
         this.l = context;
-        this.f1652a = i2;
+        this.f1604a = i2;
         this.b = i;
-        this.f1653c = i4;
+        this.f1605c = i4;
         this.d = charSequence;
     }
 
@@ -129,7 +129,7 @@ public class ActionMenuItem implements SupportMenuItem {
 
     @Override // android.view.MenuItem
     public int getItemId() {
-        return this.f1652a;
+        return this.f1604a;
     }
 
     @Override // android.view.MenuItem
@@ -149,7 +149,7 @@ public class ActionMenuItem implements SupportMenuItem {
 
     @Override // android.view.MenuItem
     public int getOrder() {
-        return this.f1653c;
+        return this.f1605c;
     }
 
     @Override // android.view.MenuItem

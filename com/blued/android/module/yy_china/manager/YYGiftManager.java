@@ -25,16 +25,14 @@ import java.util.Set;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/manager/YYGiftManager.class */
 public class YYGiftManager {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static YYGiftManager f17541a = new YYGiftManager();
+    private static YYGiftManager a = new YYGiftManager();
     private Set<String> b = new HashSet();
 
     private YYGiftManager() {
     }
 
     public static YYGiftManager a() {
-        return f17541a;
+        return a;
     }
 
     private void b(final String str) {

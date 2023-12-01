@@ -25,7 +25,7 @@ public class NativeExpressAD extends NativeAbstractAD<NEADI> implements IReward 
     private volatile int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private volatile int f27880c;
+    private volatile int f14192c;
     private List<Integer> d = Collections.synchronizedList(new ArrayList());
     private VideoOption e;
     private ADSize f;
@@ -38,15 +38,15 @@ public class NativeExpressAD extends NativeAbstractAD<NEADI> implements IReward 
     public static class ADListenerAdapter implements ADListener {
 
         /* renamed from: a  reason: collision with root package name */
-        private NativeExpressADListener f27881a;
+        private NativeExpressADListener f14193a;
         private NativeExpressMediaListener b;
 
         /* renamed from: c  reason: collision with root package name */
-        private NegativeFeedbackListener f27882c;
+        private NegativeFeedbackListener f14194c;
         private ADRewardListener d;
 
         public ADListenerAdapter(NativeExpressADListener nativeExpressADListener) {
-            this.f27881a = nativeExpressADListener;
+            this.f14193a = nativeExpressADListener;
         }
 
         public ADListenerAdapter(NativeExpressMediaListener nativeExpressMediaListener) {
@@ -55,7 +55,7 @@ public class NativeExpressAD extends NativeAbstractAD<NEADI> implements IReward 
 
         @Override // com.qq.e.comm.adevent.ADListener
         public void onADEvent(ADEvent aDEvent) {
-            if (NativeExpressAD.a(this.f27881a, aDEvent) || NativeExpressAD.a(this.b, aDEvent) || NativeExpressAD.a(this.f27882c, aDEvent)) {
+            if (NativeExpressAD.a(this.f14193a, aDEvent) || NativeExpressAD.a(this.b, aDEvent) || NativeExpressAD.a(this.f14194c, aDEvent)) {
                 return;
             }
             NativeExpressAD.a(this.d, aDEvent);
@@ -70,7 +70,7 @@ public class NativeExpressAD extends NativeAbstractAD<NEADI> implements IReward 
         }
 
         public void setNegativeFeedbackListener(NegativeFeedbackListener negativeFeedbackListener) {
-            this.f27882c = negativeFeedbackListener;
+            this.f14194c = negativeFeedbackListener;
         }
     }
 
@@ -270,8 +270,8 @@ public class NativeExpressAD extends NativeAbstractAD<NEADI> implements IReward 
     public void a(NEADI neadi) {
         super.a((NativeExpressAD) neadi);
         neadi.setMinVideoDuration(this.b);
-        neadi.setMaxVideoDuration(this.f27880c);
-        ((NEADI) this.f27851a).setServerSideVerificationOptions(this.j);
+        neadi.setMaxVideoDuration(this.f14192c);
+        ((NEADI) this.f14163a).setServerSideVerificationOptions(this.j);
         VideoOption videoOption = this.e;
         if (videoOption != null) {
             setVideoOption(videoOption);
@@ -279,11 +279,11 @@ public class NativeExpressAD extends NativeAbstractAD<NEADI> implements IReward 
         synchronized (this.d) {
             Iterator<Integer> it = this.d.iterator();
             while (it.hasNext()) {
-                if (this.f27851a != 0) {
+                if (this.f14163a != 0) {
                     if (this.i != null) {
-                        ((NEADI) this.f27851a).loadAd(it.next().intValue(), this.i);
+                        ((NEADI) this.f14163a).loadAd(it.next().intValue(), this.i);
                     } else {
-                        ((NEADI) this.f27851a).loadAd(it.next().intValue());
+                        ((NEADI) this.f14163a).loadAd(it.next().intValue());
                     }
                 }
             }
@@ -299,7 +299,7 @@ public class NativeExpressAD extends NativeAbstractAD<NEADI> implements IReward 
     }
 
     public String getAdNetWorkName() {
-        T t = this.f27851a;
+        T t = this.f14163a;
         if (t != 0) {
             return ((NEADI) t).getAdNetWorkName();
         }
@@ -322,7 +322,7 @@ public class NativeExpressAD extends NativeAbstractAD<NEADI> implements IReward 
                 }
                 return;
             }
-            T t = this.f27851a;
+            T t = this.f14163a;
             if (t == 0) {
                 a("loadAD");
                 return;
@@ -342,22 +342,22 @@ public class NativeExpressAD extends NativeAbstractAD<NEADI> implements IReward 
     }
 
     public void setMaxVideoDuration(int i) {
-        this.f27880c = i;
-        if (this.f27880c > 0 && this.b > this.f27880c) {
+        this.f14192c = i;
+        if (this.f14192c > 0 && this.b > this.f14192c) {
             GDTLogger.e("maxVideoDuration 设置值非法，不得小于minVideoDuration");
         }
-        T t = this.f27851a;
+        T t = this.f14163a;
         if (t != 0) {
-            ((NEADI) t).setMaxVideoDuration(this.f27880c);
+            ((NEADI) t).setMaxVideoDuration(this.f14192c);
         }
     }
 
     public void setMinVideoDuration(int i) {
         this.b = i;
-        if (this.f27880c > 0 && this.b > this.f27880c) {
+        if (this.f14192c > 0 && this.b > this.f14192c) {
             GDTLogger.e("minVideoDuration 设置值非法，不得大于maxVideoDuration");
         }
-        T t = this.f27851a;
+        T t = this.f14163a;
         if (t != 0) {
             ((NEADI) t).setMinVideoDuration(this.b);
         }
@@ -371,7 +371,7 @@ public class NativeExpressAD extends NativeAbstractAD<NEADI> implements IReward 
     @Override // com.qq.e.comm.pi.IReward
     public void setServerSideVerificationOptions(ServerSideVerificationOptions serverSideVerificationOptions) {
         this.j = serverSideVerificationOptions;
-        T t = this.f27851a;
+        T t = this.f14163a;
         if (t != 0) {
             ((NEADI) t).setServerSideVerificationOptions(serverSideVerificationOptions);
         }
@@ -379,7 +379,7 @@ public class NativeExpressAD extends NativeAbstractAD<NEADI> implements IReward 
 
     public void setVideoOption(VideoOption videoOption) {
         this.e = videoOption;
-        T t = this.f27851a;
+        T t = this.f14163a;
         if (t == 0 || videoOption == null) {
             return;
         }

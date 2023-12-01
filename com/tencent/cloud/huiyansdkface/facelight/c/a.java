@@ -10,14 +10,14 @@ import com.tencent.tendinsv.utils.r;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f35538a = "";
+    private static String f21847a = "";
     private static String b = "";
 
     public static String a(String str) {
-        if (TextUtils.isEmpty(f35538a)) {
+        if (TextUtils.isEmpty(f21847a)) {
             d(str);
         }
-        return f35538a + b;
+        return f21847a + b;
     }
 
     private static boolean a() {
@@ -114,27 +114,27 @@ public class a {
             switch (z) {
                 case false:
                     if (!a()) {
-                        f35538a = r.b;
+                        f21847a = r.b;
                         str2 = c("ro.build.version.emui");
                         break;
                     } else {
                         b = c("hw_sc.build.platform.version");
-                        f35538a = "HarmonyOS";
+                        f21847a = "HarmonyOS";
                         return;
                     }
                 case true:
                     if (!a()) {
                         if (!TextUtils.isEmpty(c("ro.build.version.magic"))) {
-                            f35538a = "MagicUI";
+                            f21847a = "MagicUI";
                             str2 = c("ro.build.version.magic");
                             break;
                         } else {
-                            f35538a = r.b;
+                            f21847a = r.b;
                             str2 = c("ro.build.version.emui");
                             break;
                         }
                     } else {
-                        f35538a = "HarmonyOS";
+                        f21847a = "HarmonyOS";
                         if (!TextUtils.isEmpty(c("hw_sc.build.platform.version"))) {
                             str2 = c("hw_sc.build.platform.version");
                             break;
@@ -145,32 +145,32 @@ public class a {
                     }
                 case true:
                 case true:
-                    f35538a = r.f39112a;
+                    f21847a = r.f25421a;
                     str2 = c(XmSystemUtils.KEY_VERSION_MIUI) + " " + c("ro.build.version.incremental");
                     break;
                 case true:
                 case true:
-                    f35538a = "ColorOS";
+                    f21847a = "ColorOS";
                     str2 = c("ro.build.version.opporom");
                     break;
                 case true:
-                    f35538a = "Funtouch";
+                    f21847a = "Funtouch";
                     str2 = c("ro.vivo.os.version");
                     break;
                 case true:
-                    f35538a = "HydrogenOS";
+                    f21847a = "HydrogenOS";
                     str2 = c("ro.rom.version");
                     break;
                 case true:
-                    f35538a = "Flyme";
+                    f21847a = "Flyme";
                     str2 = c("ro.build.display.id");
                     break;
                 case true:
-                    f35538a = c("ro.build.nubia.rom.name");
+                    f21847a = c("ro.build.nubia.rom.name");
                     str2 = c("ro.build.nubia.rom.code");
                     break;
                 default:
-                    f35538a = "Android";
+                    f21847a = "Android";
                     str2 = Build.VERSION.RELEASE;
                     break;
             }

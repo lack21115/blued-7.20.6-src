@@ -4,7 +4,6 @@ import android.content.Context;
 import android.util.Log;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import com.alipay.sdk.util.i;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestManager;
 import com.bytedance.applog.tracker.Tracker;
@@ -16,11 +15,11 @@ import java.util.Set;
 public class SupportRequestManagerFragment extends Fragment {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ActivityFragmentLifecycle f21023a;
+    private final ActivityFragmentLifecycle f7417a;
     private final RequestManagerTreeNode b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final Set<SupportRequestManagerFragment> f21024c;
+    private final Set<SupportRequestManagerFragment> f7418c;
     private SupportRequestManagerFragment d;
     private RequestManager e;
     private Fragment f;
@@ -43,7 +42,7 @@ public class SupportRequestManagerFragment extends Fragment {
         }
 
         public String toString() {
-            return super.toString() + "{fragment=" + SupportRequestManagerFragment.this + i.d;
+            return super.toString() + "{fragment=" + SupportRequestManagerFragment.this + "}";
         }
     }
 
@@ -53,8 +52,8 @@ public class SupportRequestManagerFragment extends Fragment {
 
     public SupportRequestManagerFragment(ActivityFragmentLifecycle activityFragmentLifecycle) {
         this.b = new SupportFragmentRequestManagerTreeNode();
-        this.f21024c = new HashSet();
-        this.f21023a = activityFragmentLifecycle;
+        this.f7418c = new HashSet();
+        this.f7417a = activityFragmentLifecycle;
     }
 
     private void a(Context context, FragmentManager fragmentManager) {
@@ -68,7 +67,7 @@ public class SupportRequestManagerFragment extends Fragment {
     }
 
     private void a(SupportRequestManagerFragment supportRequestManagerFragment) {
-        this.f21024c.add(supportRequestManagerFragment);
+        this.f7418c.add(supportRequestManagerFragment);
     }
 
     private static FragmentManager b(Fragment fragment) {
@@ -79,7 +78,7 @@ public class SupportRequestManagerFragment extends Fragment {
     }
 
     private void b(SupportRequestManagerFragment supportRequestManagerFragment) {
-        this.f21024c.remove(supportRequestManagerFragment);
+        this.f7418c.remove(supportRequestManagerFragment);
     }
 
     private boolean c(Fragment fragment) {
@@ -111,7 +110,7 @@ public class SupportRequestManagerFragment extends Fragment {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public ActivityFragmentLifecycle a() {
-        return this.f21023a;
+        return this.f7417a;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -142,7 +141,7 @@ public class SupportRequestManagerFragment extends Fragment {
             return Collections.emptySet();
         }
         if (equals(supportRequestManagerFragment)) {
-            return Collections.unmodifiableSet(this.f21024c);
+            return Collections.unmodifiableSet(this.f7418c);
         }
         HashSet hashSet = new HashSet();
         for (SupportRequestManagerFragment supportRequestManagerFragment2 : this.d.d()) {
@@ -176,7 +175,7 @@ public class SupportRequestManagerFragment extends Fragment {
     @Override // androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
-        this.f21023a.c();
+        this.f7417a.c();
         f();
     }
 
@@ -208,13 +207,13 @@ public class SupportRequestManagerFragment extends Fragment {
     @Override // androidx.fragment.app.Fragment
     public void onStart() {
         super.onStart();
-        this.f21023a.a();
+        this.f7417a.a();
     }
 
     @Override // androidx.fragment.app.Fragment
     public void onStop() {
         super.onStop();
-        this.f21023a.b();
+        this.f7417a.b();
     }
 
     @Override // androidx.fragment.app.Fragment
@@ -225,6 +224,6 @@ public class SupportRequestManagerFragment extends Fragment {
 
     @Override // androidx.fragment.app.Fragment
     public String toString() {
-        return super.toString() + "{parent=" + e() + i.d;
+        return super.toString() + "{parent=" + e() + "}";
     }
 }

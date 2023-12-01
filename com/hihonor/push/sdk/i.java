@@ -7,16 +7,16 @@ import com.hihonor.push.sdk.j;
 public class i implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ int f22298a;
+    public final /* synthetic */ int f8690a;
     public final /* synthetic */ j.a b;
 
     public i(j.a aVar, int i) {
         this.b = aVar;
-        this.f22298a = i;
+        this.f8690a = i;
     }
 
     @Override // java.lang.Runnable
     public void run() {
-        this.b.a(HonorPushErrorEnum.fromCode(this.f22298a));
+        this.b.a(HonorPushErrorEnum.fromCode(this.f8690a));
     }
 }

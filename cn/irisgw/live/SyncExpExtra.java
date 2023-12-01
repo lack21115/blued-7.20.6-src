@@ -31,8 +31,8 @@ public final class SyncExpExtra extends GeneratedMessageV3 implements SyncExpExt
     private float percent_;
     private static final SyncExpExtra DEFAULT_INSTANCE = new SyncExpExtra();
     private static final Parser<SyncExpExtra> PARSER = new AbstractParser<SyncExpExtra>() { // from class: cn.irisgw.live.SyncExpExtra.1
-        @Override // com.google.protobuf.Parser
-        public SyncExpExtra parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        /* renamed from: parsePartialFrom */
+        public SyncExpExtra m7359parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             return new SyncExpExtra(codedInputStream, extensionRegistryLite);
         }
     };
@@ -62,22 +62,22 @@ public final class SyncExpExtra extends GeneratedMessageV3 implements SyncExpExt
             boolean unused = SyncExpExtra.alwaysUseFieldBuilders;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: addRepeatedField */
+        public Builder m7361addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.addRepeatedField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public SyncExpExtra build() {
-            SyncExpExtra buildPartial = buildPartial();
-            if (buildPartial.isInitialized()) {
-                return buildPartial;
+        /* renamed from: build */
+        public SyncExpExtra m7363build() {
+            SyncExpExtra m7365buildPartial = m7365buildPartial();
+            if (m7365buildPartial.isInitialized()) {
+                return m7365buildPartial;
             }
-            throw newUninitializedMessageException((Message) buildPartial);
+            throw newUninitializedMessageException(m7365buildPartial);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public SyncExpExtra buildPartial() {
+        /* renamed from: buildPartial */
+        public SyncExpExtra m7365buildPartial() {
             SyncExpExtra syncExpExtra = new SyncExpExtra(this);
             syncExpExtra.level_ = this.level_;
             syncExpExtra.exp_ = this.exp_;
@@ -88,8 +88,8 @@ public final class SyncExpExtra extends GeneratedMessageV3 implements SyncExpExt
             return syncExpExtra;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public Builder clear() {
+        /* renamed from: clear */
+        public Builder m7369clear() {
             super.clear();
             this.level_ = 0;
             this.exp_ = 0.0f;
@@ -105,8 +105,8 @@ public final class SyncExpExtra extends GeneratedMessageV3 implements SyncExpExt
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+        /* renamed from: clearField */
+        public Builder m7371clearField(Descriptors.FieldDescriptor fieldDescriptor) {
             return (Builder) super.clearField(fieldDescriptor);
         }
 
@@ -128,8 +128,8 @@ public final class SyncExpExtra extends GeneratedMessageV3 implements SyncExpExt
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+        /* renamed from: clearOneof */
+        public Builder m7374clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
             return (Builder) super.clearOneof(oneofDescriptor);
         }
 
@@ -139,18 +139,16 @@ public final class SyncExpExtra extends GeneratedMessageV3 implements SyncExpExt
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder m7380clone() {
+            return (Builder) super.clone();
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public SyncExpExtra getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public SyncExpExtra m7382getDefaultInstanceForType() {
             return SyncExpExtra.getDefaultInstance();
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
         public Descriptors.Descriptor getDescriptorForType() {
             return LiveConstants.internal_static_cn_irisgw_live_SyncExpExtra_descriptor;
         }
@@ -180,12 +178,10 @@ public final class SyncExpExtra extends GeneratedMessageV3 implements SyncExpExt
             return this.percent_;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_SyncExpExtra_fieldAccessorTable.ensureFieldAccessorsInitialized(SyncExpExtra.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             return true;
         }
@@ -209,18 +205,18 @@ public final class SyncExpExtra extends GeneratedMessageV3 implements SyncExpExt
             if (syncExpExtra.getNextLevel() != 0) {
                 setNextLevel(syncExpExtra.getNextLevel());
             }
-            mergeUnknownFields(syncExpExtra.unknownFields);
+            m7391mergeUnknownFields(syncExpExtra.unknownFields);
             onChanged();
             return this;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+        /* renamed from: mergeFrom */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
         */
-        public cn.irisgw.live.SyncExpExtra.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+        public cn.irisgw.live.SyncExpExtra.Builder m7388mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
             /*
                 r4 = this;
                 r0 = 0
@@ -265,11 +261,11 @@ public final class SyncExpExtra extends GeneratedMessageV3 implements SyncExpExt
                 r0 = r6
                 throw r0
             */
-            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.SyncExpExtra.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.SyncExpExtra$Builder");
+            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.SyncExpExtra.Builder.m7388mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.SyncExpExtra$Builder");
         }
 
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder mergeFrom(Message message) {
+        /* renamed from: mergeFrom */
+        public Builder m7387mergeFrom(Message message) {
             if (message instanceof SyncExpExtra) {
                 return mergeFrom((SyncExpExtra) message);
             }
@@ -277,8 +273,8 @@ public final class SyncExpExtra extends GeneratedMessageV3 implements SyncExpExt
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: mergeUnknownFields */
+        public final Builder m7391mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.mergeUnknownFields(unknownFieldSet);
         }
 
@@ -288,8 +284,8 @@ public final class SyncExpExtra extends GeneratedMessageV3 implements SyncExpExt
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: setField */
+        public Builder m7393setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.setField(fieldDescriptor, obj);
         }
 
@@ -317,13 +313,13 @@ public final class SyncExpExtra extends GeneratedMessageV3 implements SyncExpExt
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+        /* renamed from: setRepeatedField */
+        public Builder m7395setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
             return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: setUnknownFields */
+        public final Builder m7397setUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.setUnknownFields(unknownFieldSet);
         }
     }
@@ -358,10 +354,10 @@ public final class SyncExpExtra extends GeneratedMessageV3 implements SyncExpExt
                         }
                     }
                     z = true;
-                } catch (InvalidProtocolBufferException e) {
-                    throw e.setUnfinishedMessage(this);
-                } catch (IOException e2) {
-                    throw new InvalidProtocolBufferException(e2).setUnfinishedMessage(this);
+                } catch (IOException e) {
+                    throw new InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+                } catch (InvalidProtocolBufferException e2) {
+                    throw e2.setUnfinishedMessage(this);
                 }
             } finally {
                 this.unknownFields = newBuilder.build();
@@ -384,66 +380,65 @@ public final class SyncExpExtra extends GeneratedMessageV3 implements SyncExpExt
     }
 
     public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
+        return DEFAULT_INSTANCE.m7358toBuilder();
     }
 
     public static Builder newBuilder(SyncExpExtra syncExpExtra) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(syncExpExtra);
+        return DEFAULT_INSTANCE.m7358toBuilder().mergeFrom(syncExpExtra);
     }
 
     public static SyncExpExtra parseDelimitedFrom(InputStream inputStream) throws IOException {
-        return (SyncExpExtra) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
     }
 
     public static SyncExpExtra parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (SyncExpExtra) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static SyncExpExtra parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString);
+        return (SyncExpExtra) PARSER.parseFrom(byteString);
     }
 
     public static SyncExpExtra parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString, extensionRegistryLite);
+        return (SyncExpExtra) PARSER.parseFrom(byteString, extensionRegistryLite);
     }
 
     public static SyncExpExtra parseFrom(CodedInputStream codedInputStream) throws IOException {
-        return (SyncExpExtra) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
     }
 
     public static SyncExpExtra parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (SyncExpExtra) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
     }
 
     public static SyncExpExtra parseFrom(InputStream inputStream) throws IOException {
-        return (SyncExpExtra) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
     }
 
     public static SyncExpExtra parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (SyncExpExtra) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static SyncExpExtra parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer);
+        return (SyncExpExtra) PARSER.parseFrom(byteBuffer);
     }
 
     public static SyncExpExtra parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+        return (SyncExpExtra) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
     }
 
     public static SyncExpExtra parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr);
+        return (SyncExpExtra) PARSER.parseFrom(bArr);
     }
 
     public static SyncExpExtra parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr, extensionRegistryLite);
+        return (SyncExpExtra) PARSER.parseFrom(bArr, extensionRegistryLite);
     }
 
     public static Parser<SyncExpExtra> parser() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
@@ -455,8 +450,8 @@ public final class SyncExpExtra extends GeneratedMessageV3 implements SyncExpExt
         return super.equals(obj);
     }
 
-    @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-    public SyncExpExtra getDefaultInstanceForType() {
+    /* renamed from: getDefaultInstanceForType */
+    public SyncExpExtra m7353getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
     }
 
@@ -480,7 +475,6 @@ public final class SyncExpExtra extends GeneratedMessageV3 implements SyncExpExt
         return this.nextLevel_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
     public Parser<SyncExpExtra> getParserForType() {
         return PARSER;
     }
@@ -490,7 +484,6 @@ public final class SyncExpExtra extends GeneratedMessageV3 implements SyncExpExt
         return this.percent_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public int getSerializedSize() {
         int i = this.memoizedSize;
         if (i != -1) {
@@ -526,12 +519,10 @@ public final class SyncExpExtra extends GeneratedMessageV3 implements SyncExpExt
         return serializedSize;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
     public final UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public int hashCode() {
         if (this.memoizedHashCode != 0) {
             return this.memoizedHashCode;
@@ -541,12 +532,10 @@ public final class SyncExpExtra extends GeneratedMessageV3 implements SyncExpExt
         return hashCode;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
         return LiveConstants.internal_static_cn_irisgw_live_SyncExpExtra_fieldAccessorTable.ensureFieldAccessorsInitialized(SyncExpExtra.class, Builder.class);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
     public final boolean isInitialized() {
         byte b = this.memoizedIsInitialized;
         if (b == 1) {
@@ -559,28 +548,26 @@ public final class SyncExpExtra extends GeneratedMessageV3 implements SyncExpExt
         return true;
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder newBuilderForType() {
+    /* renamed from: newBuilderForType */
+    public Builder m7356newBuilderForType() {
         return newBuilder();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.protobuf.GeneratedMessageV3
-    public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+    /* renamed from: newBuilderForType */
+    public Builder m7355newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
         return new Builder(builderParent);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
         return new SyncExpExtra();
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder toBuilder() {
+    /* renamed from: toBuilder */
+    public Builder m7358toBuilder() {
         return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
         int i = this.level_;
         if (i != 0) {

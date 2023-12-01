@@ -8,30 +8,26 @@ import org.json.JSONObject;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/u.class */
 public class u {
-
-    /* renamed from: c  reason: collision with root package name */
-    private static volatile u f6923c;
+    private static volatile u c;
     private String b = u.class.getSimpleName();
-
-    /* renamed from: a  reason: collision with root package name */
-    AtomicInteger f6924a = new AtomicInteger(0);
+    AtomicInteger a = new AtomicInteger(0);
 
     private u() {
     }
 
     public static u a() {
-        if (f6923c == null) {
+        if (c == null) {
             synchronized (u.class) {
                 try {
-                    if (f6923c == null) {
-                        f6923c = new u();
+                    if (c == null) {
+                        c = new u();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f6923c;
+        return c;
     }
 
     public final void a(final int i, final String str, final String str2, final String str3, final String str4) {
@@ -41,14 +37,14 @@ public class u {
                 com.anythink.core.common.e.o oVar = new com.anythink.core.common.e.o();
                 oVar.b = i;
                 oVar.d = str;
-                oVar.f6672c = str2;
+                oVar.c = str2;
                 oVar.e = str3;
                 oVar.f = System.currentTimeMillis();
                 StringBuilder sb = new StringBuilder();
                 sb.append(str);
                 sb.append(oVar.f);
                 sb.append(str3);
-                oVar.f6671a = com.anythink.core.common.k.f.a(sb.toString() != null ? str3 : "");
+                oVar.a = com.anythink.core.common.k.f.a(sb.toString() != null ? str3 : "");
                 oVar.g = str4;
                 String unused = u.this.b;
                 new StringBuilder("save request:").append(oVar.a());
@@ -60,12 +56,12 @@ public class u {
     public final void b() {
         List<com.anythink.core.common.e.o> c2;
         synchronized (this) {
-            if (this.f6924a.get() <= 0 && (c2 = com.anythink.core.common.c.g.a(com.anythink.core.common.c.c.a(com.anythink.core.common.b.n.a().g())).c()) != null && c2.size() > 0) {
-                this.f6924a.set(c2.size());
-                new StringBuilder("need to send request count: ").append(this.f6924a.get());
+            if (this.a.get() <= 0 && (c2 = com.anythink.core.common.c.g.a(com.anythink.core.common.c.c.a(com.anythink.core.common.b.n.a().g())).c()) != null && c2.size() > 0) {
+                this.a.set(c2.size());
+                new StringBuilder("need to send request count: ").append(this.a.get());
                 for (final com.anythink.core.common.e.o oVar : c2) {
                     if (System.currentTimeMillis() - oVar.f >= 604800000) {
-                        this.f6924a.decrementAndGet();
+                        this.a.decrementAndGet();
                         com.anythink.core.common.c.g.a(com.anythink.core.common.c.c.a(com.anythink.core.common.b.n.a().g())).b(oVar);
                     } else {
                         int i = 1000;
@@ -80,7 +76,7 @@ public class u {
                                     String unused = u.this.b;
                                     new StringBuilder("re-send success.... ").append(oVar.a());
                                     com.anythink.core.common.c.g.a(com.anythink.core.common.c.c.a(com.anythink.core.common.b.n.a().g())).b(oVar);
-                                    u.this.f6924a.decrementAndGet();
+                                    u.this.a.decrementAndGet();
                                 }
 
                                 @Override // com.anythink.core.common.g.a.c.a
@@ -90,7 +86,7 @@ public class u {
                                     sb.append(oVar.a());
                                     sb.append("--error: ");
                                     sb.append(th2.getMessage());
-                                    u.this.f6924a.decrementAndGet();
+                                    u.this.a.decrementAndGet();
                                 }
                             });
                         } else {
@@ -101,7 +97,7 @@ public class u {
                             lVar.a(0, new com.anythink.core.common.g.i() { // from class: com.anythink.core.common.u.3
                                 @Override // com.anythink.core.common.g.i
                                 public final void onLoadCanceled(int i2) {
-                                    u.this.f6924a.decrementAndGet();
+                                    u.this.a.decrementAndGet();
                                 }
 
                                 @Override // com.anythink.core.common.g.i
@@ -114,7 +110,7 @@ public class u {
                                         str = "";
                                     }
                                     sb.append(str);
-                                    u.this.f6924a.decrementAndGet();
+                                    u.this.a.decrementAndGet();
                                 }
 
                                 @Override // com.anythink.core.common.g.i
@@ -122,7 +118,7 @@ public class u {
                                     String unused = u.this.b;
                                     new StringBuilder("re-send success.... ").append(oVar.a());
                                     com.anythink.core.common.c.g.a(com.anythink.core.common.c.c.a(com.anythink.core.common.b.n.a().g())).b(lVar.q());
-                                    u.this.f6924a.decrementAndGet();
+                                    u.this.a.decrementAndGet();
                                 }
 
                                 @Override // com.anythink.core.common.g.i

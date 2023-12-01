@@ -23,20 +23,20 @@ import java.util.List;
 public class PKLiveRecyclerAdapter extends BaseQuickAdapter<BluedLiveListData, BaseViewHolder> {
 
     /* renamed from: a  reason: collision with root package name */
-    public Context f31103a;
+    public Context f17413a;
     public List<BluedLiveListData> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private IRequestHost f31104c;
+    private IRequestHost f17414c;
 
     public PKLiveRecyclerAdapter(Context context) {
         super(R.layout.item_pk_live_recycler_view, new ArrayList());
         this.b = new ArrayList();
-        this.f31103a = context;
+        this.f17413a = context;
     }
 
     public void a(IRequestHost iRequestHost, List<BluedLiveListData> list) {
-        this.f31104c = iRequestHost;
+        this.f17414c = iRequestHost;
         this.b.clear();
         this.b.addAll(list);
     }
@@ -46,24 +46,24 @@ public class PKLiveRecyclerAdapter extends BaseQuickAdapter<BluedLiveListData, B
     /* renamed from: a */
     public void convert(BaseViewHolder baseViewHolder, final BluedLiveListData bluedLiveListData) {
         if (baseViewHolder != null) {
-            FrameLayout frameLayout = (FrameLayout) baseViewHolder.getView(2131363859);
+            FrameLayout frameLayout = (FrameLayout) baseViewHolder.getView(R.id.fl_main);
             RecyclerView.LayoutParams layoutParams = (RecyclerView.LayoutParams) frameLayout.getLayoutParams();
             if (baseViewHolder.getAdapterPosition() == 0) {
-                layoutParams.leftMargin = DensityUtils.a(this.f31103a, 5.0f);
+                layoutParams.leftMargin = DensityUtils.a(this.f17413a, 5.0f);
                 frameLayout.setLayoutParams(layoutParams);
             } else {
-                layoutParams.leftMargin = DensityUtils.a(this.f31103a, 0.0f);
+                layoutParams.leftMargin = DensityUtils.a(this.f17413a, 0.0f);
                 frameLayout.setLayoutParams(layoutParams);
             }
             if (bluedLiveListData.anchor != null) {
                 ImageView imageView = (ImageView) baseViewHolder.getView(R.id.img_head);
-                ImageLoader.a(this.f31104c, bluedLiveListData.anchor.avatar).b(2131237310).c().a(imageView);
+                ImageLoader.a(this.f17414c, bluedLiveListData.anchor.avatar).b(2131237310).c().a(imageView);
                 imageView.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.live.adapter.PKLiveRecyclerAdapter.1
                     @Override // android.view.View.OnClickListener
                     public void onClick(View view) {
                         Tracker.onClick(view);
                         int i = bluedLiveListData.link_type;
-                        UserRelationshipUtils.a(PKLiveRecyclerAdapter.this.f31103a, bluedLiveListData.anchor, StringUtils.a(bluedLiveListData.lid, 0L), "live_list_pk", LiveListDataUtils.a(PKLiveRecyclerAdapter.this.b));
+                        UserRelationshipUtils.a(PKLiveRecyclerAdapter.this.f17413a, bluedLiveListData.anchor, StringUtils.a(bluedLiveListData.lid, 0L), "live_list_pk", LiveListDataUtils.a(PKLiveRecyclerAdapter.this.b));
                     }
                 });
             }

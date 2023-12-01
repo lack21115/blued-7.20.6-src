@@ -12,11 +12,11 @@ import java.util.List;
 public class NotificationChannelGroupCompat {
 
     /* renamed from: a  reason: collision with root package name */
-    final String f2344a;
+    final String f2296a;
     CharSequence b;
 
     /* renamed from: c  reason: collision with root package name */
-    String f2345c;
+    String f2297c;
     private boolean d;
     private List<NotificationChannelCompat> e;
 
@@ -24,23 +24,23 @@ public class NotificationChannelGroupCompat {
     public static class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        final NotificationChannelGroupCompat f2346a;
+        final NotificationChannelGroupCompat f2298a;
 
         public Builder(String str) {
-            this.f2346a = new NotificationChannelGroupCompat(str);
+            this.f2298a = new NotificationChannelGroupCompat(str);
         }
 
         public NotificationChannelGroupCompat build() {
-            return this.f2346a;
+            return this.f2298a;
         }
 
         public Builder setDescription(String str) {
-            this.f2346a.f2345c = str;
+            this.f2298a.f2297c = str;
             return this;
         }
 
         public Builder setName(CharSequence charSequence) {
-            this.f2346a.b = charSequence;
+            this.f2298a.b = charSequence;
             return this;
         }
     }
@@ -55,7 +55,7 @@ public class NotificationChannelGroupCompat {
         this(notificationChannelGroup.getId());
         this.b = notificationChannelGroup.getName();
         if (Build.VERSION.SDK_INT >= 28) {
-            this.f2345c = notificationChannelGroup.getDescription();
+            this.f2297c = notificationChannelGroup.getDescription();
         }
         if (Build.VERSION.SDK_INT < 28) {
             this.e = a(list);
@@ -67,13 +67,13 @@ public class NotificationChannelGroupCompat {
 
     NotificationChannelGroupCompat(String str) {
         this.e = Collections.emptyList();
-        this.f2344a = (String) Preconditions.checkNotNull(str);
+        this.f2296a = (String) Preconditions.checkNotNull(str);
     }
 
     private List<NotificationChannelCompat> a(List<NotificationChannel> list) {
         ArrayList arrayList = new ArrayList();
         for (NotificationChannel notificationChannel : list) {
-            if (this.f2344a.equals(notificationChannel.getGroup())) {
+            if (this.f2296a.equals(notificationChannel.getGroup())) {
                 arrayList.add(new NotificationChannelCompat(notificationChannel));
             }
         }
@@ -85,9 +85,9 @@ public class NotificationChannelGroupCompat {
         if (Build.VERSION.SDK_INT < 26) {
             return null;
         }
-        NotificationChannelGroup notificationChannelGroup = new NotificationChannelGroup(this.f2344a, this.b);
+        NotificationChannelGroup notificationChannelGroup = new NotificationChannelGroup(this.f2296a, this.b);
         if (Build.VERSION.SDK_INT >= 28) {
-            notificationChannelGroup.setDescription(this.f2345c);
+            notificationChannelGroup.setDescription(this.f2297c);
         }
         return notificationChannelGroup;
     }
@@ -97,11 +97,11 @@ public class NotificationChannelGroupCompat {
     }
 
     public String getDescription() {
-        return this.f2345c;
+        return this.f2297c;
     }
 
     public String getId() {
-        return this.f2344a;
+        return this.f2296a;
     }
 
     public CharSequence getName() {
@@ -113,6 +113,6 @@ public class NotificationChannelGroupCompat {
     }
 
     public Builder toBuilder() {
-        return new Builder(this.f2344a).setName(this.b).setDescription(this.f2345c);
+        return new Builder(this.f2296a).setName(this.b).setDescription(this.f2297c);
     }
 }

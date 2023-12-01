@@ -9,16 +9,16 @@ public class cc implements Serializable {
     private static Map<Class<? extends bq>, Map<? extends bx, cc>> d = new HashMap();
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f40681a;
+    public final String f26990a;
     public final byte b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final cd f40682c;
+    public final cd f26991c;
 
     public cc(String str, byte b, cd cdVar) {
-        this.f40681a = str;
+        this.f26990a = str;
         this.b = b;
-        this.f40682c = cdVar;
+        this.f26991c = cdVar;
     }
 
     public static Map<? extends bx, cc> a(Class<? extends bq> cls) {

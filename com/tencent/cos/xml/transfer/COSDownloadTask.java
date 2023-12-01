@@ -186,7 +186,7 @@ public class COSDownloadTask extends COSTransferTask {
             }
             Context appContext = ContextHolder.getAppContext();
             if (appContext == null) {
-                throw CosXmlClientException.internalException(b.f7836a);
+                throw CosXmlClientException.internalException(b.f4996a);
             }
             this.sharedPreferences = appContext.getSharedPreferences(COSDownloadTask.TAG, 0);
             this.headObjectRequest = new HeadObjectRequest(this.bucket, this.key);

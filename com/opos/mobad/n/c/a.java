@@ -19,11 +19,11 @@ import java.util.List;
 public class a extends FrameLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    private n f26591a;
+    private n f12903a;
     private o b;
 
     /* renamed from: c  reason: collision with root package name */
-    private TextView[] f26592c;
+    private TextView[] f12904c;
     private ImageView[] d;
     private com.opos.mobad.c.b.c e;
     private boolean f;
@@ -34,19 +34,19 @@ public class a extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.opos.mobad.n.c.a$a  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/opos/mobad/n/c/a$a.class */
-    public static class C0709a extends PagerAdapter {
+    public static class C0539a extends PagerAdapter {
 
         /* renamed from: a  reason: collision with root package name */
-        private ImageView[] f26596a;
+        private ImageView[] f12908a;
 
-        public C0709a(ImageView[] imageViewArr) {
-            this.f26596a = imageViewArr;
+        public C0539a(ImageView[] imageViewArr) {
+            this.f12908a = imageViewArr;
         }
 
         @Override // androidx.viewpager.widget.PagerAdapter
         public void destroyItem(ViewGroup viewGroup, int i, Object obj) {
             if (i >= 0) {
-                ImageView[] imageViewArr = this.f26596a;
+                ImageView[] imageViewArr = this.f12908a;
                 if (i < imageViewArr.length) {
                     viewGroup.removeView(imageViewArr[i]);
                 }
@@ -55,13 +55,13 @@ public class a extends FrameLayout {
 
         @Override // androidx.viewpager.widget.PagerAdapter
         public int getCount() {
-            return this.f26596a.length;
+            return this.f12908a.length;
         }
 
         @Override // androidx.viewpager.widget.PagerAdapter
         public Object instantiateItem(ViewGroup viewGroup, int i) {
             if (i >= 0) {
-                ImageView[] imageViewArr = this.f26596a;
+                ImageView[] imageViewArr = this.f12908a;
                 if (i < imageViewArr.length) {
                     ImageView imageView = imageViewArr[i];
                     viewGroup.addView(imageView);
@@ -89,7 +89,7 @@ public class a extends FrameLayout {
             @Override // java.lang.Runnable
             public void run() {
                 if (!a.this.f) {
-                    a.this.f26591a.setCurrentItem(a.this.f26591a.getCurrentItem() + 1);
+                    a.this.f12903a.setCurrentItem(a.this.f12903a.getCurrentItem() + 1);
                     if (a.this.b != null && a.this.h > 0) {
                         a.this.b.a(a.this.h);
                     }
@@ -97,7 +97,7 @@ public class a extends FrameLayout {
                 a.this.e.a(a.this.g + a.this.h);
             }
         });
-        this.f26592c = new TextView[i];
+        this.f12904c = new TextView[i];
         this.d = new ImageView[this.i + 2];
         a(i, z);
     }
@@ -110,9 +110,9 @@ public class a extends FrameLayout {
         try {
             Field declaredField = ViewPager.class.getDeclaredField("mScroller");
             declaredField.setAccessible(true);
-            o oVar = new o(this.f26591a.getContext(), new AccelerateInterpolator());
+            o oVar = new o(this.f12903a.getContext(), new AccelerateInterpolator());
             this.b = oVar;
-            declaredField.set(this.f26591a, oVar);
+            declaredField.set(this.f12903a, oVar);
             this.b.a(this.h);
         } catch (Exception e) {
             this.b = null;
@@ -120,11 +120,11 @@ public class a extends FrameLayout {
     }
 
     private void a(int i, final boolean z) {
-        this.f26591a = new n(getContext());
+        this.f12903a = new n(getContext());
         if (this.h > 0) {
             a();
         }
-        addView(this.f26591a, new FrameLayout.LayoutParams(-1, -1));
+        addView(this.f12903a, new FrameLayout.LayoutParams(-1, -1));
         int i2 = 0;
         while (true) {
             int i3 = i2;
@@ -138,22 +138,22 @@ public class a extends FrameLayout {
         if (z) {
             b(i);
         }
-        this.f26591a.setAdapter(new C0709a(this.d));
-        this.f26591a.setCurrentItem(1, false);
-        this.f26591a.addOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: com.opos.mobad.n.c.a.2
+        this.f12903a.setAdapter(new C0539a(this.d));
+        this.f12903a.setCurrentItem(1, false);
+        this.f12903a.addOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: com.opos.mobad.n.c.a.2
 
             /* renamed from: a  reason: collision with root package name */
-            int f26594a = 0;
+            int f12906a = 0;
 
             private void a(int i4) {
                 int i5 = 0;
                 while (true) {
                     int i6 = i5;
-                    if (i6 >= a.this.f26592c.length) {
+                    if (i6 >= a.this.f12904c.length) {
                         return;
                     }
-                    if (a.this.f26592c[i6] != null) {
-                        a.this.f26592c[i6].setSelected(i6 == i4);
+                    if (a.this.f12904c[i6] != null) {
+                        a.this.f12904c[i6].setSelected(i6 == i4);
                     }
                     i5 = i6 + 1;
                 }
@@ -167,15 +167,15 @@ public class a extends FrameLayout {
                 if (i4 == 1 || i4 == 2) {
                     a.this.f = true;
                 } else if (i4 == 0) {
-                    int i6 = this.f26594a;
+                    int i6 = this.f12906a;
                     if (i6 != 0) {
                         if (i6 == a.this.i + 1) {
-                            nVar = a.this.f26591a;
+                            nVar = a.this.f12903a;
                             i5 = 1;
                         }
                         a.this.f = false;
                     }
-                    nVar = a.this.f26591a;
+                    nVar = a.this.f12903a;
                     i5 = a.this.i;
                     nVar.setCurrentItem(i5, false);
                     a.this.f = false;
@@ -187,7 +187,7 @@ public class a extends FrameLayout {
             }
 
             /* JADX WARN: Code restructure failed: missing block: B:13:0x004e, code lost:
-                if (r5 == (r4.f26595c.i + 1)) goto L16;
+                if (r5 == (r4.f12907c.i + 1)) goto L16;
              */
             @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             /*
@@ -199,7 +199,7 @@ public class a extends FrameLayout {
                     r4 = this;
                     r0 = r4
                     r1 = r5
-                    r0.f26594a = r1
+                    r0.f12906a = r1
                     java.lang.StringBuilder r0 = new java.lang.StringBuilder
                     r1 = r0
                     r1.<init>()
@@ -285,16 +285,16 @@ public class a extends FrameLayout {
                 return;
             }
             LinearLayout.LayoutParams layoutParams2 = new LinearLayout.LayoutParams(a3, a3);
-            this.f26592c[i3] = new TextView(getContext());
-            this.f26592c[i3].setBackground(getResources().getDrawable(R.drawable.opos_mobad_drawable_view_pager_selector));
-            this.f26592c[i3].setSelected(true);
+            this.f12904c[i3] = new TextView(getContext());
+            this.f12904c[i3].setBackground(getResources().getDrawable(R.drawable.opos_mobad_drawable_view_pager_selector));
+            this.f12904c[i3].setSelected(true);
             if (i3 == 0) {
-                this.f26592c[i3].setSelected(true);
+                this.f12904c[i3].setSelected(true);
             } else {
                 layoutParams2.topMargin = a2;
-                this.f26592c[i3].setSelected(false);
+                this.f12904c[i3].setSelected(false);
             }
-            linearLayout.addView(this.f26592c[i3], layoutParams2);
+            linearLayout.addView(this.f12904c[i3], layoutParams2);
             i2 = i3 + 1;
         }
     }
@@ -356,9 +356,8 @@ public class a extends FrameLayout {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.e.a();
     }

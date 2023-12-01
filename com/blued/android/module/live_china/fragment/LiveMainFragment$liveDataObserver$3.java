@@ -23,6 +23,6 @@ final /* synthetic */ class LiveMainFragment$liveDataObserver$3 extends Function
     @Override // kotlin.jvm.functions.Function1
     public /* synthetic */ Unit invoke(MultiDialogModel multiDialogModel) {
         a(multiDialogModel);
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

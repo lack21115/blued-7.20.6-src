@@ -22,9 +22,7 @@ import java.util.ArrayList;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/adapter/YYWishAdapter.class */
 public class YYWishAdapter extends BaseQuickAdapter<YYWishGoodsModel, BaseViewHolder> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private OnAddOrDeleteGiftListener f16280a;
+    private OnAddOrDeleteGiftListener a;
     private int b;
 
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/adapter/YYWishAdapter$OnAddOrDeleteGiftListener.class */
@@ -42,36 +40,35 @@ public class YYWishAdapter extends BaseQuickAdapter<YYWishGoodsModel, BaseViewHo
     }
 
     public void a(OnAddOrDeleteGiftListener onAddOrDeleteGiftListener) {
-        this.f16280a = onAddOrDeleteGiftListener;
+        this.a = onAddOrDeleteGiftListener;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(final BaseViewHolder baseViewHolder, YYWishGoodsModel yYWishGoodsModel) {
-        ConstraintLayout constraintLayout = (ConstraintLayout) baseViewHolder.getView(R.id.ll_wish_item);
+        ConstraintLayout view = baseViewHolder.getView(R.id.ll_wish_item);
         ProgressBar progressBar = (ProgressBar) baseViewHolder.getView(R.id.wish_progress_bar);
         ImageView imageView = (ImageView) baseViewHolder.getView(R.id.iv_wish_icon);
         ShapeTextView shapeTextView = (ShapeTextView) baseViewHolder.getView(R.id.tv_fix_count);
-        ConstraintLayout constraintLayout2 = (ConstraintLayout) baseViewHolder.getView(R.id.rl_wish_view);
-        ConstraintLayout constraintLayout3 = (ConstraintLayout) baseViewHolder.getView(R.id.ll_add_view);
+        ConstraintLayout view2 = baseViewHolder.getView(R.id.rl_wish_view);
+        ConstraintLayout view3 = baseViewHolder.getView(R.id.ll_add_view);
         TextView textView = (TextView) baseViewHolder.getView(R.id.tv_wish_name);
         TextView textView2 = (TextView) baseViewHolder.getView(R.id.tv_wish_count);
         TextView textView3 = (TextView) baseViewHolder.getView(R.id.tv_total_count);
         ImageView imageView2 = (ImageView) baseViewHolder.getView(R.id.iv_delete_wish);
         if (this.b > 0) {
-            constraintLayout.getLayoutParams().width = this.b;
+            view.getLayoutParams().width = this.b;
         }
         int i = 8;
         if (TextUtils.isEmpty(yYWishGoodsModel.goods_id)) {
-            constraintLayout3.setVisibility(0);
-            constraintLayout2.setVisibility(8);
-            constraintLayout3.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.adapter.YYWishAdapter.1
+            view3.setVisibility(0);
+            view2.setVisibility(8);
+            view3.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.adapter.YYWishAdapter.1
                 @Override // android.view.View.OnClickListener
-                public void onClick(View view) {
-                    Tracker.onClick(view);
-                    if (YYWishAdapter.this.f16280a != null) {
-                        YYWishAdapter.this.f16280a.a(baseViewHolder.getAdapterPosition());
+                public void onClick(View view4) {
+                    Tracker.onClick(view4);
+                    if (YYWishAdapter.this.a != null) {
+                        YYWishAdapter.this.a.a(baseViewHolder.getAdapterPosition());
                     }
                 }
             });
@@ -81,8 +78,8 @@ public class YYWishAdapter extends BaseQuickAdapter<YYWishGoodsModel, BaseViewHo
             ShapeHelper.a((ShapeHelper.ShapeView) shapeTextView, R.color.syc_dark_j);
             return;
         }
-        constraintLayout3.setVisibility(8);
-        constraintLayout2.setVisibility(0);
+        view3.setVisibility(8);
+        view2.setVisibility(0);
         ShapeHelper.a((ShapeHelper.ShapeView) shapeTextView, R.color.syc_dark_b);
         shapeTextView.setEnabled(true);
         shapeTextView.setAlpha(1.0f);
@@ -99,19 +96,19 @@ public class YYWishAdapter extends BaseQuickAdapter<YYWishGoodsModel, BaseViewHo
         progressBar.setProgress(StringUtils.a(yYWishGoodsModel.wish_current, 0));
         shapeTextView.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.adapter.YYWishAdapter.2
             @Override // android.view.View.OnClickListener
-            public void onClick(View view) {
-                Tracker.onClick(view);
-                if (YYWishAdapter.this.f16280a != null) {
-                    YYWishAdapter.this.f16280a.c(baseViewHolder.getAdapterPosition());
+            public void onClick(View view4) {
+                Tracker.onClick(view4);
+                if (YYWishAdapter.this.a != null) {
+                    YYWishAdapter.this.a.c(baseViewHolder.getAdapterPosition());
                 }
             }
         });
         imageView2.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.adapter.YYWishAdapter.3
             @Override // android.view.View.OnClickListener
-            public void onClick(View view) {
-                Tracker.onClick(view);
-                if (YYWishAdapter.this.f16280a != null) {
-                    YYWishAdapter.this.f16280a.b(baseViewHolder.getAdapterPosition());
+            public void onClick(View view4) {
+                Tracker.onClick(view4);
+                if (YYWishAdapter.this.a != null) {
+                    YYWishAdapter.this.a.b(baseViewHolder.getAdapterPosition());
                 }
             }
         });

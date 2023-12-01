@@ -19,13 +19,13 @@ import org.json.JSONObject;
 public class v {
 
     /* renamed from: c  reason: collision with root package name */
-    private static final int f40784c = 5;
+    private static final int f27093c = 5;
     private static JSONArray d = new JSONArray();
     private static Object e = new Object();
     private final Map<String, Long> f = new HashMap();
 
     /* renamed from: a  reason: collision with root package name */
-    Stack<String> f40785a = new Stack<>();
+    Stack<String> f27094a = new Stack<>();
     com.umeng.analytics.vshelper.a b = PageNameMonitor.getInstance();
 
     public static void a(Context context) {
@@ -56,14 +56,14 @@ public class v {
         if (TextUtils.isEmpty(str)) {
             return;
         }
-        if (UMConfigure.isDebugLog() && this.f40785a.size() != 0) {
-            UMLog.aq(j.F, 0, "\\|", new String[]{"@"}, new String[]{this.f40785a.peek()}, null, null);
+        if (UMConfigure.isDebugLog() && this.f27094a.size() != 0) {
+            UMLog.aq(j.F, 0, "\\|", new String[]{"@"}, new String[]{this.f27094a.peek()}, null, null);
         }
         this.b.customPageBegin(str);
         synchronized (this.f) {
             this.f.put(str, Long.valueOf(System.currentTimeMillis()));
             if (UMConfigure.isDebugLog()) {
-                this.f40785a.push(str);
+                this.f27094a.push(str);
             }
         }
     }
@@ -92,7 +92,7 @@ public class v {
             return;
         }
         if (!this.f.containsKey(str)) {
-            if (UMConfigure.isDebugLog() && this.f40785a.size() == 0) {
+            if (UMConfigure.isDebugLog() && this.f27094a.size() == 0) {
                 UMLog.aq(j.G, 0, "\\|", new String[]{"@"}, new String[]{str}, null, null);
                 return;
             }
@@ -105,8 +105,8 @@ public class v {
         if (l == null) {
             return;
         }
-        if (UMConfigure.isDebugLog() && this.f40785a.size() > 0 && str.equals(this.f40785a.peek())) {
-            this.f40785a.pop();
+        if (UMConfigure.isDebugLog() && this.f27094a.size() > 0 && str.equals(this.f27094a.peek())) {
+            this.f27094a.pop();
         }
         long currentTimeMillis = System.currentTimeMillis();
         long longValue = l.longValue();
@@ -124,7 +124,7 @@ public class v {
             } catch (Throwable th) {
             }
         }
-        if (!UMConfigure.isDebugLog() || this.f40785a.size() == 0) {
+        if (!UMConfigure.isDebugLog() || this.f27094a.size() == 0) {
             return;
         }
         UMLog.aq(j.E, 0, "\\|", new String[]{"@"}, new String[]{str}, null, null);

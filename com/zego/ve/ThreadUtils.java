@@ -45,7 +45,7 @@ public class ThreadUtils {
         executeUninterruptibly(new BlockingOperation() { // from class: com.zego.ve.ThreadUtils.2
             @Override // com.zego.ve.ThreadUtils.BlockingOperation
             public void run() throws InterruptedException {
-                CountDownLatch.this.await();
+                countDownLatch.await();
             }
         });
     }
@@ -118,7 +118,7 @@ public class ThreadUtils {
         handler.post(new Runnable() { // from class: com.zego.ve.ThreadUtils.4
             @Override // java.lang.Runnable
             public void run() {
-                Runnable.this.run();
+                runnable.run();
                 countDownLatch.countDown();
             }
         });
@@ -129,7 +129,7 @@ public class ThreadUtils {
         executeUninterruptibly(new BlockingOperation() { // from class: com.zego.ve.ThreadUtils.1
             @Override // com.zego.ve.ThreadUtils.BlockingOperation
             public void run() throws InterruptedException {
-                Thread.this.join();
+                thread.join();
             }
         });
     }

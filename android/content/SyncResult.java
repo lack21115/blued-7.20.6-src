@@ -2,7 +2,6 @@ package android.content;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.amap.api.col.p0003sl.iu;
 
 /* loaded from: source-9557208-dex2jar.jar:android/content/SyncResult.class */
 public final class SyncResult implements Parcelable {
@@ -104,7 +103,7 @@ public final class SyncResult implements Parcelable {
             stringBuffer.append("X1");
         }
         if (this.stats.numParseExceptions > 0) {
-            stringBuffer.append(iu.h).append(this.stats.numParseExceptions);
+            stringBuffer.append("e").append(this.stats.numParseExceptions);
         }
         if (this.stats.numConflictDetectedExceptions > 0) {
             stringBuffer.append("c").append(this.stats.numConflictDetectedExceptions);

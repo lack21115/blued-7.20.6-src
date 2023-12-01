@@ -81,7 +81,7 @@ public class TopVideoFragment extends BaseADVideoFragment {
             public void onRewardedVideoAdLoaded() {
                 Log.i("drb", "onRewardedVideoAdLoaded");
                 TopVideoFragment.this.i.show(TopVideoFragment.this.getActivity());
-                DialogUtils.b(TopVideoFragment.this.f34513a);
+                DialogUtils.b(TopVideoFragment.this.f20822a);
                 TopVideoFragment.this.i();
             }
 
@@ -109,7 +109,6 @@ public class TopVideoFragment extends BaseADVideoFragment {
         });
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.g = getActivity();
         getActivity().overridePendingTransition(R.anim.activity_switch_none, R.anim.activity_switch_none);
@@ -117,7 +116,7 @@ public class TopVideoFragment extends BaseADVideoFragment {
         if (view == null) {
             this.h = layoutInflater.inflate(R.layout.fragment_ad_video, viewGroup, false);
             k();
-            DialogUtils.a(this.f34513a);
+            DialogUtils.a(this.f20822a);
         } else if (view.getParent() != null) {
             ((ViewGroup) this.h.getParent()).removeView(this.h);
         }

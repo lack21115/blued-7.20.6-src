@@ -1,16 +1,14 @@
 package android.text.format;
 
 import android.content.res.Resources;
-import com.android.internal.R;
 import com.google.android.material.timepicker.TimeModel;
 import java.nio.CharBuffer;
 import java.util.Locale;
 import libcore.icu.LocaleData;
 import libcore.util.ZoneInfo;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-9557208-dex2jar.jar:android/text/format/TimeFormatter.class */
-public class TimeFormatter {
+class TimeFormatter {
     private static final int DAYSPERLYEAR = 366;
     private static final int DAYSPERNYEAR = 365;
     private static final int DAYSPERWEEK = 7;
@@ -39,9 +37,9 @@ public class TimeFormatter {
                     sLocale = locale;
                     sLocaleData = LocaleData.get(locale);
                     Resources system = Resources.getSystem();
-                    sTimeOnlyFormat = system.getString(R.string.time_of_day);
-                    sDateOnlyFormat = system.getString(R.string.month_day_year);
-                    sDateTimeFormat = system.getString(R.string.date_and_time);
+                    sTimeOnlyFormat = system.getString(17039659);
+                    sDateOnlyFormat = system.getString(17039658);
+                    sDateTimeFormat = system.getString(17039660);
                 }
                 this.dateTimeFormat = sDateTimeFormat;
                 this.timeOnlyFormat = sTimeOnlyFormat;

@@ -4,8 +4,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Handler;
 import android.text.TextUtils;
-import com.anythink.core.api.ATAdConst;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.turingface.sdk.mfa.vneRm;
 import java.util.HashMap;
 import java.util.Map;
@@ -14,33 +12,33 @@ import java.util.Map;
 public final class fenkF {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f39952a;
+    public static final String f26261a;
     public final Handler b;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/turingface/sdk/mfa/fenkF$spXPg.class */
     public final class spXPg implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ Context f39953a;
+        public final /* synthetic */ Context f26262a;
         public final /* synthetic */ Map b;
 
         public spXPg(Context context, Map map) {
-            this.f39953a = context;
+            this.f26262a = context;
             this.b = map;
         }
 
         @Override // java.lang.Runnable
         public final void run() {
-            fenkF.a(this.f39953a, this.b);
+            fenkF.a(this.f26262a, this.b);
         }
     }
 
     static {
         StringBuilder b = com.tencent.turingcam.oqKCa.b("turingfd_conf_");
-        b.append(com.tencent.turingcam.oqKCa.f39831a);
-        b.append(BridgeUtil.UNDERLINE_STR);
+        b.append(com.tencent.turingcam.oqKCa.f26140a);
+        b.append("_");
         b.append("mfa");
-        f39952a = b.toString();
+        f26261a = b.toString();
     }
 
     public fenkF(Handler handler) {
@@ -51,7 +49,7 @@ public final class fenkF {
         SharedPreferences sharedPreferences;
         SharedPreferences.Editor edit;
         try {
-            sharedPreferences = context.getSharedPreferences(f39952a, 0);
+            sharedPreferences = context.getSharedPreferences(f26261a, 0);
         } catch (Throwable th) {
             sharedPreferences = null;
         }
@@ -73,7 +71,7 @@ public final class fenkF {
     public static String b(Context context, String str) {
         SharedPreferences sharedPreferences;
         try {
-            sharedPreferences = context.getSharedPreferences(f39952a, 0);
+            sharedPreferences = context.getSharedPreferences(f26261a, 0);
         } catch (Throwable th) {
             sharedPreferences = null;
         }
@@ -114,7 +112,7 @@ public final class fenkF {
             }
             long j = 0;
             try {
-                j = Long.valueOf(b(context, ATAdConst.BIDDING_TYPE.BIDDING_LOSS_WITH_LOW_PRICE_IN_HB)).longValue();
+                j = Long.valueOf(b(context, "102")).longValue();
             } catch (Throwable th) {
             }
             String b2 = b(context, "104");
@@ -123,8 +121,8 @@ public final class fenkF {
             String b5 = b(context, "110");
             vneRm.spXPg spxpg = new vneRm.spXPg();
             spxpg.b = j;
-            spxpg.f40004a = b;
-            spxpg.f40005c = b2;
+            spxpg.f26313a = b;
+            spxpg.f26314c = b2;
             spxpg.d = b3;
             spxpg.e = b4;
             spxpg.f = b5;
@@ -165,7 +163,7 @@ public final class fenkF {
     public final WOMZP b(Context context) {
         System.currentTimeMillis();
         WOMZP womzp = new WOMZP(30);
-        String[] split = b(context, "402").split(BridgeUtil.UNDERLINE_STR);
+        String[] split = b(context, "402").split("_");
         int length = split.length;
         int i = 0;
         while (true) {

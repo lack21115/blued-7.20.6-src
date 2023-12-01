@@ -5,5 +5,5 @@ package com.yxcorp.kuaishou.addfp.android.a;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final c f41850a = new c();
+    public static final c f28159a = new c();
 }

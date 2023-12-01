@@ -7,7 +7,7 @@ public final class ViewingConditions {
     private final float aw;
 
     /* renamed from: c  reason: collision with root package name */
-    private final float f22213c;
+    private final float f8606c;
     private final float fl;
     private final float flRoot;
     private final float n;
@@ -22,7 +22,7 @@ public final class ViewingConditions {
         this.aw = f2;
         this.nbb = f3;
         this.ncb = f4;
-        this.f22213c = f5;
+        this.f8606c = f5;
         this.nc = f6;
         this.rgbD = fArr;
         this.fl = f7;
@@ -64,7 +64,7 @@ public final class ViewingConditions {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public float getC() {
-        return this.f22213c;
+        return this.f8606c;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

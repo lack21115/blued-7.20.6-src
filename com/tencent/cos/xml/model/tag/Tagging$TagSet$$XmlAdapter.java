@@ -19,6 +19,7 @@ public class Tagging$TagSet$$XmlAdapter implements IXmlAdapter<Tagging.TagSet> {
         HashMap<String, ChildElementBinder<Tagging.TagSet>> hashMap = new HashMap<>();
         this.childElementBinders = hashMap;
         hashMap.put("Tags", new ChildElementBinder<Tagging.TagSet>() { // from class: com.tencent.cos.xml.model.tag.Tagging$TagSet$$XmlAdapter.1
+            /* JADX WARN: Multi-variable type inference failed */
             @Override // com.tencent.qcloud.qcloudxml.core.ChildElementBinder
             public void fromXml(XmlPullParser xmlPullParser, Tagging.TagSet tagSet, String str) throws IOException, XmlPullParserException {
                 if (tagSet.tags == null) {

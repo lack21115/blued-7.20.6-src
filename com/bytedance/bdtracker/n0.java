@@ -6,6 +6,7 @@ import android.text.TextUtils;
 import com.bytedance.bdtracker.z2;
 import com.cdo.oaps.ad.OapsKey;
 import com.huawei.hms.push.constant.RemoteMessageConst;
+import com.tencent.cloud.huiyansdkface.facelight.api.WbCloudFaceContant;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -20,11 +21,11 @@ public class n0 {
     public static final String[] l = {"channel", "package", "app_version"};
 
     /* renamed from: a  reason: collision with root package name */
-    public volatile boolean f21264a;
+    public volatile boolean f7658a;
     public final Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final m0 f21265c;
+    public final m0 f7659c;
     public final SharedPreferences f;
     public final r2 g;
     public final c h;
@@ -38,9 +39,9 @@ public class n0 {
         this.k = false;
         this.h = cVar;
         this.b = context;
-        this.f21265c = m0Var;
+        this.f7659c = m0Var;
         this.f = m0Var.e;
-        this.g = cVar.d.a(this.b, this.f21265c);
+        this.g = cVar.d.a(this.b, this.f7659c);
         this.k = this.f.getBoolean("forbid_report_phone_detail_info", false);
     }
 
@@ -62,7 +63,7 @@ public class n0 {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ String q() {
         StringBuilder a2 = a.a("loadHeader, ");
-        a2.append(this.f21264a);
+        a2.append(this.f7658a);
         a2.append(", ");
         a2.append(this.i);
         a2.append(", ");
@@ -75,7 +76,7 @@ public class n0 {
     }
 
     public String a() {
-        return this.f21265c.b.getAid();
+        return this.f7659c.b.getAid();
     }
 
     public final String a(Set<String> set) {
@@ -112,12 +113,12 @@ public class n0 {
                 }
             }
             e(str);
-            a(str, this.f21265c.e());
+            a(str, this.f7659c.e());
         }
     }
 
     public final void a(String str, String str2) {
-        if (this.f21265c.e.getBoolean("bav_ab_config", false) && this.f21265c.b.isAbEnable()) {
+        if (this.f7659c.e.getBoolean("bav_ab_config", false) && this.f7659c.b.isAbEnable()) {
             Set<String> c2 = c(str);
             c2.removeAll(c(str2));
             d0 d0Var = this.h.w;
@@ -158,13 +159,13 @@ public class n0 {
     }
 
     public final void a(JSONObject jSONObject) {
-        if (a("custom", jSONObject)) {
-            this.f21265c.f21257c.edit().putString("header_custom_info", jSONObject != null ? jSONObject.toString() : "").apply();
+        if (a(WbCloudFaceContant.CUSTOM, jSONObject)) {
+            this.f7659c.f7651c.edit().putString("header_custom_info", jSONObject != null ? jSONObject.toString() : "").apply();
         }
     }
 
     public final boolean a(final i0 i0Var) {
-        boolean z = !this.f21265c.i() && i0Var.d;
+        boolean z = !this.f7659c.i() && i0Var.d;
         final boolean z2 = z;
         z2.a(new z2.a() { // from class: com.bytedance.bdtracker.-$$Lambda$w5emHRzZakhW4pLFQbOEXD1lT4s
             @Override // com.bytedance.bdtracker.z2.a
@@ -203,7 +204,7 @@ public class n0 {
         z2.a(new z2.a() { // from class: com.bytedance.bdtracker.-$$Lambda$RQDJq2PxighBvtUJatr2zHmTgKo
             @Override // com.bytedance.bdtracker.z2.a
             public final String a() {
-                return n0.a(String.this, str2, str3, str4, str5, jSONObject);
+                return n0.a(str, str2, str3, str4, str5, jSONObject);
             }
         });
         this.j = jSONObject.optInt("new_user", 0) > 0;
@@ -275,7 +276,7 @@ public class n0 {
             }
             String optString4 = this.d.optString("ssid", "");
             if (a6 && a("ssid", (Object) str3)) {
-                edit.putString(this.f21265c.h(), str3);
+                edit.putString(this.f7659c.h(), str3);
                 z3 = true;
             }
             if (this.h.w != null) {
@@ -304,7 +305,7 @@ public class n0 {
         if (r2Var instanceof n2) {
             ((n2) r2Var).a(this.b, str);
         }
-        this.f21265c.e.edit().remove(RemoteMessageConst.DEVICE_TOKEN).commit();
+        this.f7659c.e.edit().remove(RemoteMessageConst.DEVICE_TOKEN).commit();
     }
 
     public final void b(JSONObject jSONObject) {
@@ -332,7 +333,7 @@ public class n0 {
                         }
                     }
                 }
-                String e2 = this.f21265c.e();
+                String e2 = this.f7659c.e();
                 hashSet.addAll(c(e2));
                 c2.retainAll(hashSet);
                 String a2 = a(c2);
@@ -367,13 +368,13 @@ public class n0 {
 
     public final JSONObject c() {
         JSONObject jSONObject = null;
-        if (this.f21264a) {
-            return this.d.optJSONObject("custom");
+        if (this.f7658a) {
+            return this.d.optJSONObject(WbCloudFaceContant.CUSTOM);
         }
-        m0 m0Var = this.f21265c;
+        m0 m0Var = this.f7659c;
         if (m0Var != null) {
             try {
-                jSONObject = new JSONObject(m0Var.f21257c.getString("header_custom_info", null));
+                jSONObject = new JSONObject(m0Var.f7651c.getString("header_custom_info", null));
             } catch (Exception e) {
                 return null;
             }
@@ -382,7 +383,7 @@ public class n0 {
     }
 
     public JSONObject d() {
-        if (this.f21264a) {
+        if (this.f7658a) {
             return this.d;
         }
         return null;
@@ -405,7 +406,7 @@ public class n0 {
 
     public void e(String str) {
         if (a("ab_sdk_version", (Object) str)) {
-            a.a(this.f21265c.f21257c, "ab_sdk_version", str);
+            a.a(this.f7659c.f7651c, "ab_sdk_version", str);
         }
     }
 
@@ -415,11 +416,11 @@ public class n0 {
 
     public void f(String str) {
         synchronized (this) {
-            Set<String> c2 = c(this.f21265c.e());
+            Set<String> c2 = c(this.f7659c.e());
             Set<String> c3 = c(this.d.optString("ab_sdk_version"));
             c3.removeAll(c2);
             c3.addAll(c(str));
-            this.f21265c.a(str);
+            this.f7659c.a(str);
             e(a(c3));
         }
     }
@@ -430,7 +431,7 @@ public class n0 {
 
     public boolean g(String str) {
         if (a("user_unique_id", (Object) str)) {
-            a.a(this.f21265c.f21257c, "user_unique_id", str);
+            a.a(this.f7659c.f7651c, "user_unique_id", str);
             return true;
         }
         return false;
@@ -455,15 +456,15 @@ public class n0 {
     }
 
     public String k() {
-        if (this.f21264a) {
+        if (this.f7658a) {
             return this.d.optString("user_unique_id", "");
         }
-        m0 m0Var = this.f21265c;
-        return m0Var != null ? m0Var.f21257c.getString("user_unique_id", null) : "";
+        m0 m0Var = this.f7659c;
+        return m0Var != null ? m0Var.f7651c.getString("user_unique_id", null) : "";
     }
 
     public int l() {
-        int optInt = this.f21264a ? this.d.optInt("version_code", -1) : -1;
+        int optInt = this.f7658a ? this.d.optInt("version_code", -1) : -1;
         int i = 0;
         while (true) {
             int i2 = i;
@@ -471,14 +472,14 @@ public class n0 {
                 break;
             }
             o();
-            optInt = this.f21264a ? this.d.optInt("version_code", -1) : -1;
+            optInt = this.f7658a ? this.d.optInt("version_code", -1) : -1;
             i = i2 + 1;
         }
         return optInt;
     }
 
     public String m() {
-        String optString = this.f21264a ? this.d.optString("app_version", null) : null;
+        String optString = this.f7658a ? this.d.optString("app_version", null) : null;
         int i = 0;
         while (true) {
             int i2 = i;
@@ -486,7 +487,7 @@ public class n0 {
                 break;
             }
             o();
-            optString = this.f21264a ? this.d.optString("app_version", null) : null;
+            optString = this.f7658a ? this.d.optString("app_version", null) : null;
             i = i2 + 1;
         }
         return optString;

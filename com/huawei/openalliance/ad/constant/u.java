@@ -14,11 +14,11 @@ public interface u {
     public static final int Z = 4;
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f22961a = 103;
+    public static final int f9353a = 103;
     public static final int b = 106;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final int f22962c = 107;
+    public static final int f9354c = 107;
     public static final int d = 108;
     public static final int e = 102;
     public static final int f = 101;

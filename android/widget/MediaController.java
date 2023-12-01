@@ -21,6 +21,7 @@ import android.widget.SeekBar;
 import com.android.internal.R;
 import com.android.internal.policy.PolicyManager;
 import java.util.Formatter;
+import java.util.Grego;
 import java.util.Locale;
 
 /* loaded from: source-4181928-dex2jar.jar:android/widget/MediaController.class */
@@ -155,7 +156,7 @@ public class MediaController extends FrameLayout {
 
             @Override // android.widget.SeekBar.OnSeekBarChangeListener
             public void onStartTrackingTouch(SeekBar seekBar) {
-                MediaController.this.show(3600000);
+                MediaController.this.show(Grego.MILLIS_PER_HOUR);
                 MediaController.this.mDragging = true;
                 MediaController.this.mHandler.removeMessages(2);
             }
@@ -255,7 +256,7 @@ public class MediaController extends FrameLayout {
 
             @Override // android.widget.SeekBar.OnSeekBarChangeListener
             public void onStartTrackingTouch(SeekBar seekBar) {
-                MediaController.this.show(3600000);
+                MediaController.this.show(Grego.MILLIS_PER_HOUR);
                 MediaController.this.mDragging = true;
                 MediaController.this.mHandler.removeMessages(2);
             }
@@ -371,14 +372,14 @@ public class MediaController extends FrameLayout {
     }
 
     private void initFloatingWindow() {
-        this.mWindowManager = (WindowManager) this.mContext.getSystemService(Context.WINDOW_SERVICE);
+        this.mWindowManager = (WindowManager) this.mContext.getSystemService("window");
         this.mWindow = PolicyManager.makeNewWindow(this.mContext);
         this.mWindow.setWindowManager(this.mWindowManager, null, null);
         this.mWindow.requestFeature(1);
         this.mDecor = this.mWindow.getDecorView();
         this.mDecor.setOnTouchListener(this.mTouchListener);
         this.mWindow.setContentView(this);
-        this.mWindow.setBackgroundDrawableResource(17170445);
+        this.mWindow.setBackgroundDrawableResource(R.color.transparent);
         this.mWindow.setVolumeControlStream(3);
         setFocusable(true);
         setFocusableInTouchMode(true);
@@ -471,11 +472,11 @@ public class MediaController extends FrameLayout {
             return;
         }
         if (this.mPlayer.isPlaying()) {
-            this.mPauseButton.setImageResource(17301539);
+            this.mPauseButton.setImageResource(R.drawable.ic_media_pause);
             this.mPauseButton.setContentDescription(this.mPauseDescription);
             return;
         }
-        this.mPauseButton.setImageResource(17301540);
+        this.mPauseButton.setImageResource(R.drawable.ic_media_play);
         this.mPauseButton.setContentDescription(this.mPlayDescription);
     }
 
@@ -542,7 +543,7 @@ public class MediaController extends FrameLayout {
     }
 
     protected View makeControllerView() {
-        this.mRoot = ((LayoutInflater) this.mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.media_controller, (ViewGroup) null);
+        this.mRoot = ((LayoutInflater) this.mContext.getSystemService("layout_inflater")).inflate(R.layout.media_controller, (ViewGroup) null);
         initControllerView(this.mRoot);
         return this.mRoot;
     }

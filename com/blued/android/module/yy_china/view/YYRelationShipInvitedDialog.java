@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.ui.ActivityFragmentActive;
 import com.blued.android.framework.http.BluedUIHttpResponse;
@@ -24,13 +25,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYRelationShipInvitedDialog.class */
 public final class YYRelationShipInvitedDialog extends BaseFullScreenDialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    private DialogRelationshipInvitedBinding f18399a;
+    private DialogRelationshipInvitedBinding a;
     private YYRelationShipRoomImMode b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final RelationShipInvitedHandler f18400c = new RelationShipInvitedHandler(this);
+    private final RelationShipInvitedHandler c = new RelationShipInvitedHandler(this);
     private int d = 15;
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -73,8 +70,8 @@ public final class YYRelationShipInvitedDialog extends BaseFullScreenDialog {
         String uid = yYRelationShipRoomImMode == null ? null : yYRelationShipRoomImMode.getUid();
         YYRelationShipRoomImMode yYRelationShipRoomImMode2 = this$0.b;
         String relation_id = yYRelationShipRoomImMode2 == null ? null : yYRelationShipRoomImMode2.getRelation_id();
-        final ActivityFragmentActive a2 = this$0.a();
-        YYRoomHttpUtils.s(uid, relation_id, new BluedUIHttpResponse<BluedEntityA<Object>>(a2) { // from class: com.blued.android.module.yy_china.view.YYRelationShipInvitedDialog$initView$4$1
+        final ActivityFragmentActive a = this$0.a();
+        YYRoomHttpUtils.s(uid, relation_id, new BluedUIHttpResponse<BluedEntityA<Object>>(a) { // from class: com.blued.android.module.yy_china.view.YYRelationShipInvitedDialog$initView$4$1
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
@@ -104,7 +101,7 @@ public final class YYRelationShipInvitedDialog extends BaseFullScreenDialog {
     }
 
     private final DialogRelationshipInvitedBinding h() {
-        DialogRelationshipInvitedBinding dialogRelationshipInvitedBinding = this.f18399a;
+        DialogRelationshipInvitedBinding dialogRelationshipInvitedBinding = this.a;
         Intrinsics.a(dialogRelationshipInvitedBinding);
         return dialogRelationshipInvitedBinding;
     }
@@ -114,19 +111,19 @@ public final class YYRelationShipInvitedDialog extends BaseFullScreenDialog {
         YYRelationShipRoomImMode yYRelationShipRoomImMode = this.b;
         if (yYRelationShipRoomImMode != null) {
             h().h.setText("邀请配对");
-            YYRoomInfoManager.e().a(a(), h().e, yYRelationShipRoomImMode.getUid(), yYRelationShipRoomImMode.getUid_avatar());
-            YYRoomInfoManager.e().a(a(), h().f, yYRelationShipRoomImMode.getTarget_uid(), yYRelationShipRoomImMode.getTarget_uid_avatar());
+            YYRoomInfoManager.e().a(a(), (ImageView) h().e, yYRelationShipRoomImMode.getUid(), yYRelationShipRoomImMode.getUid_avatar());
+            YYRoomInfoManager.e().a(a(), (ImageView) h().f, yYRelationShipRoomImMode.getTarget_uid(), yYRelationShipRoomImMode.getTarget_uid_avatar());
             ImageLoader.a(a(), yYRelationShipRoomImMode.getGoods_img()).a(h().d);
             h().g.setText(String.valueOf(yYRelationShipRoomImMode.getBeans()));
             h().i.setText(yYRelationShipRoomImMode.getUid_name() + "邀请你成为他的" + yYRelationShipRoomImMode.getDay() + "天「" + yYRelationShipRoomImMode.getRelation_name() + "」，你是否接受？接受则可收到价值" + yYRelationShipRoomImMode.getBeans() + "弯豆的该礼物");
         }
-        h().f16390a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYRelationShipInvitedDialog$8j0OyKxnUNq4Zm_qdHRvfJ3zJEU
+        h().a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYRelationShipInvitedDialog$8j0OyKxnUNq4Zm_qdHRvfJ3zJEU
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 YYRelationShipInvitedDialog.a(YYRelationShipInvitedDialog.this, view);
             }
         });
-        h().f16391c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYRelationShipInvitedDialog$JMrKDcvUZngc7S7hqqHIQRuiTwE
+        h().c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYRelationShipInvitedDialog$JMrKDcvUZngc7S7hqqHIQRuiTwE
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 YYRelationShipInvitedDialog.a(view);
@@ -138,7 +135,7 @@ public final class YYRelationShipInvitedDialog extends BaseFullScreenDialog {
                 YYRelationShipInvitedDialog.b(YYRelationShipInvitedDialog.this, view);
             }
         });
-        this.f18400c.sendEmptyMessageDelayed(1, 1000L);
+        this.c.sendEmptyMessageDelayed(1, 1000L);
         YYRoomModel b = YYRoomInfoManager.e().b();
         if (b == null) {
             return;
@@ -181,18 +178,18 @@ public final class YYRelationShipInvitedDialog extends BaseFullScreenDialog {
         return false;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
-        this.f18399a = DialogRelationshipInvitedBinding.a(inflater.inflate(R.layout.dialog_relationship_invited, viewGroup, true));
+        this.a = DialogRelationshipInvitedBinding.a(inflater.inflate(R.layout.dialog_relationship_invited, viewGroup, true));
         i();
         return h().getRoot();
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onDestroy() {
         super.onDestroy();
-        RelationShipInvitedHandler relationShipInvitedHandler = this.f18400c;
+        RelationShipInvitedHandler relationShipInvitedHandler = this.c;
         if (relationShipInvitedHandler == null) {
             return;
         }

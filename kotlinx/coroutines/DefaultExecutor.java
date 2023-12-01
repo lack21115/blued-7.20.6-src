@@ -11,9 +11,7 @@ import kotlin.ranges.RangesKt;
 public final class DefaultExecutor extends EventLoopImplBase implements Runnable {
     private static volatile Thread _thread;
     public static final DefaultExecutor b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final long f42805c;
+    private static final long c;
     private static volatile int debugStatus;
 
     static {
@@ -27,7 +25,7 @@ public final class DefaultExecutor extends EventLoopImplBase implements Runnable
         } catch (SecurityException e) {
             l = 1000L;
         }
-        f42805c = timeUnit.toNanos(l.longValue());
+        c = timeUnit.toNanos(l.longValue());
     }
 
     private DefaultExecutor() {
@@ -94,10 +92,10 @@ public final class DefaultExecutor extends EventLoopImplBase implements Runnable
         long j;
         long j2;
         boolean c2;
-        ThreadLocalEventLoop.f42855a.a(this);
-        AbstractTimeSource a2 = AbstractTimeSourceKt.a();
-        if (a2 != null) {
-            a2.d();
+        ThreadLocalEventLoop.a.a(this);
+        AbstractTimeSource a = AbstractTimeSourceKt.a();
+        if (a != null) {
+            a.d();
         }
         try {
             if (!m()) {
@@ -111,19 +109,19 @@ public final class DefaultExecutor extends EventLoopImplBase implements Runnable
                 Thread.interrupted();
                 long b2 = b();
                 if (b2 == Long.MAX_VALUE) {
-                    AbstractTimeSource a3 = AbstractTimeSourceKt.a();
-                    long nanoTime = a3 == null ? System.nanoTime() : a3.a();
+                    AbstractTimeSource a2 = AbstractTimeSourceKt.a();
+                    long nanoTime = a2 == null ? System.nanoTime() : a2.a();
                     j = j3;
                     if (j3 == Long.MAX_VALUE) {
-                        j = f42805c + nanoTime;
+                        j = c + nanoTime;
                     }
                     long j4 = j - nanoTime;
                     if (j4 <= 0) {
                         _thread = null;
                         n();
-                        AbstractTimeSource a4 = AbstractTimeSourceKt.a();
-                        if (a4 != null) {
-                            a4.e();
+                        AbstractTimeSource a3 = AbstractTimeSourceKt.a();
+                        if (a3 != null) {
+                            a3.e();
                         }
                         if (c()) {
                             return;
@@ -141,9 +139,9 @@ public final class DefaultExecutor extends EventLoopImplBase implements Runnable
                     if (k()) {
                         _thread = null;
                         n();
-                        AbstractTimeSource a5 = AbstractTimeSourceKt.a();
-                        if (a5 != null) {
-                            a5.e();
+                        AbstractTimeSource a4 = AbstractTimeSourceKt.a();
+                        if (a4 != null) {
+                            a4.e();
                         }
                         if (c()) {
                             return;
@@ -151,12 +149,12 @@ public final class DefaultExecutor extends EventLoopImplBase implements Runnable
                         a();
                         return;
                     }
-                    AbstractTimeSource a6 = AbstractTimeSourceKt.a();
-                    if (a6 == null) {
+                    AbstractTimeSource a5 = AbstractTimeSourceKt.a();
+                    if (a5 == null) {
                         LockSupport.parkNanos(this, j2);
                         j3 = j;
                     } else {
-                        a6.a(this, j2);
+                        a5.a(this, j2);
                         j3 = j;
                     }
                 }
@@ -164,9 +162,9 @@ public final class DefaultExecutor extends EventLoopImplBase implements Runnable
         } finally {
             _thread = null;
             n();
-            AbstractTimeSource a7 = AbstractTimeSourceKt.a();
-            if (a7 != null) {
-                a7.e();
+            AbstractTimeSource a6 = AbstractTimeSourceKt.a();
+            if (a6 != null) {
+                a6.e();
             }
             if (!c()) {
                 a();

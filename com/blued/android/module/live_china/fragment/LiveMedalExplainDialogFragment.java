@@ -25,13 +25,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveMedalExplainDialogFragment.class */
 public final class LiveMedalExplainDialogFragment extends LiveCurBaseDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f13056a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private boolean b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final ArrayList<String> f13057c;
+    private final ArrayList<String> c;
     private String d;
     private final Lazy e;
     private final Lazy f;
@@ -56,7 +52,7 @@ public final class LiveMedalExplainDialogFragment extends LiveCurBaseDialogFragm
     }
 
     public LiveMedalExplainDialogFragment() {
-        this.f13057c = new ArrayList<>();
+        this.c = new ArrayList<>();
         this.e = LazyKt.a(LazyThreadSafetyMode.NONE, new Function0<DialogLiveMedalExplainBinding>() { // from class: com.blued.android.module.live_china.fragment.LiveMedalExplainDialogFragment$viewBinding$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
@@ -84,11 +80,11 @@ public final class LiveMedalExplainDialogFragment extends LiveCurBaseDialogFragm
         Intrinsics.e(uid, "uid");
         this.d = uid;
         this.b = LiveFloatManager.a().C();
-        this.f13057c.clear();
+        this.c.clear();
         if (arrayList == null) {
             return;
         }
-        this.f13057c.addAll(arrayList);
+        this.c.addAll(arrayList);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -135,13 +131,13 @@ public final class LiveMedalExplainDialogFragment extends LiveCurBaseDialogFragm
                 LiveMedalExplainDialogFragment.a(LiveMedalExplainDialogFragment.this, view);
             }
         });
-        j.f11786a.setLayoutManager(new LinearLayoutManager(requireContext()));
-        j.f11786a.setHasFixedSize(true);
-        k().setNewData(this.f13057c);
-        j.f11786a.setAdapter(k());
+        j.a.setLayoutManager(new LinearLayoutManager(requireContext()));
+        j.a.setHasFixedSize(true);
+        k().setNewData(this.c);
+        j.a.setAdapter(k());
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         EventTrackLive.u(LiveProtos.Event.LIVE_MEDAL_WALL_EXPLAIN_PAGE_SHOW, LiveRoomManager.a().e(), LiveRoomManager.a().g(), this.d);

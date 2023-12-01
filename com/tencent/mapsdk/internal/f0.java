@@ -4,21 +4,21 @@ package com.tencent.mapsdk.internal;
 public class f0 {
 
     /* renamed from: a  reason: collision with root package name */
-    private m0 f37424a;
+    private m0 f23733a;
 
     public f0(m0 m0Var) {
-        this.f37424a = null;
-        this.f37424a = m0Var;
+        this.f23733a = null;
+        this.f23733a = m0Var;
     }
 
     public void a() {
-        if (this.f37424a != null) {
-            this.f37424a = null;
+        if (this.f23733a != null) {
+            this.f23733a = null;
         }
     }
 
     public x1 b() {
-        m0 m0Var = this.f37424a;
+        m0 m0Var = this.f23733a;
         if (m0Var == null) {
             return null;
         }

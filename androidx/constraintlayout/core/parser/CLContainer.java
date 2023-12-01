@@ -9,11 +9,11 @@ import java.util.Iterator;
 public class CLContainer extends CLElement {
 
     /* renamed from: a  reason: collision with root package name */
-    ArrayList<CLElement> f2071a;
+    ArrayList<CLElement> f2023a;
 
     public CLContainer(char[] cArr) {
         super(cArr);
-        this.f2071a = new ArrayList<>();
+        this.f2023a = new ArrayList<>();
     }
 
     public static CLElement allocate(char[] cArr) {
@@ -21,22 +21,22 @@ public class CLContainer extends CLElement {
     }
 
     public void add(CLElement cLElement) {
-        this.f2071a.add(cLElement);
-        if (CLParser.f2077a) {
+        this.f2023a.add(cLElement);
+        if (CLParser.f2029a) {
             PrintStream printStream = System.out;
             printStream.println("added element " + cLElement + " to " + this);
         }
     }
 
     public CLElement get(int i) throws CLParsingException {
-        if (i < 0 || i >= this.f2071a.size()) {
+        if (i < 0 || i >= this.f2023a.size()) {
             throw new CLParsingException("no element at index " + i, this);
         }
-        return this.f2071a.get(i);
+        return this.f2023a.get(i);
     }
 
     public CLElement get(String str) throws CLParsingException {
-        Iterator<CLElement> it = this.f2071a.iterator();
+        Iterator<CLElement> it = this.f2023a.iterator();
         while (it.hasNext()) {
             CLKey cLKey = (CLKey) it.next();
             if (cLKey.content().equals(str)) {
@@ -151,14 +151,14 @@ public class CLContainer extends CLElement {
     }
 
     public CLElement getOrNull(int i) {
-        if (i < 0 || i >= this.f2071a.size()) {
+        if (i < 0 || i >= this.f2023a.size()) {
             return null;
         }
-        return this.f2071a.get(i);
+        return this.f2023a.get(i);
     }
 
     public CLElement getOrNull(String str) {
-        Iterator<CLElement> it = this.f2071a.iterator();
+        Iterator<CLElement> it = this.f2023a.iterator();
         while (it.hasNext()) {
             CLKey cLKey = (CLKey) it.next();
             if (cLKey.content().equals(str)) {
@@ -205,7 +205,7 @@ public class CLContainer extends CLElement {
     }
 
     public boolean has(String str) {
-        Iterator<CLElement> it = this.f2071a.iterator();
+        Iterator<CLElement> it = this.f2023a.iterator();
         while (it.hasNext()) {
             CLElement next = it.next();
             if ((next instanceof CLKey) && ((CLKey) next).content().equals(str)) {
@@ -217,7 +217,7 @@ public class CLContainer extends CLElement {
 
     public ArrayList<String> names() {
         ArrayList<String> arrayList = new ArrayList<>();
-        Iterator<CLElement> it = this.f2071a.iterator();
+        Iterator<CLElement> it = this.f2023a.iterator();
         while (it.hasNext()) {
             CLElement next = it.next();
             if (next instanceof CLKey) {
@@ -228,7 +228,7 @@ public class CLContainer extends CLElement {
     }
 
     public void put(String str, CLElement cLElement) {
-        Iterator<CLElement> it = this.f2071a.iterator();
+        Iterator<CLElement> it = this.f2023a.iterator();
         while (it.hasNext()) {
             CLKey cLKey = (CLKey) it.next();
             if (cLKey.content().equals(str)) {
@@ -236,7 +236,7 @@ public class CLContainer extends CLElement {
                 return;
             }
         }
-        this.f2071a.add((CLKey) CLKey.allocate(str, cLElement));
+        this.f2023a.add((CLKey) CLKey.allocate(str, cLElement));
     }
 
     public void putNumber(String str, float f) {
@@ -245,7 +245,7 @@ public class CLContainer extends CLElement {
 
     public void remove(String str) {
         ArrayList arrayList = new ArrayList();
-        Iterator<CLElement> it = this.f2071a.iterator();
+        Iterator<CLElement> it = this.f2023a.iterator();
         while (it.hasNext()) {
             CLElement next = it.next();
             if (((CLKey) next).content().equals(str)) {
@@ -254,18 +254,18 @@ public class CLContainer extends CLElement {
         }
         Iterator it2 = arrayList.iterator();
         while (it2.hasNext()) {
-            this.f2071a.remove((CLElement) it2.next());
+            this.f2023a.remove((CLElement) it2.next());
         }
     }
 
     public int size() {
-        return this.f2071a.size();
+        return this.f2023a.size();
     }
 
     @Override // androidx.constraintlayout.core.parser.CLElement
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        Iterator<CLElement> it = this.f2071a.iterator();
+        Iterator<CLElement> it = this.f2023a.iterator();
         while (it.hasNext()) {
             CLElement next = it.next();
             if (sb.length() > 0) {

@@ -11,11 +11,11 @@ import java.util.List;
 public final class e extends BroadcastReceiver implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final List<a> f34975a = new ArrayList();
+    private static final List<a> f21284a = new ArrayList();
     private static volatile boolean b = false;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f34976c = true;
+    private boolean f21285c = true;
     private volatile boolean d = false;
 
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/beacon/base/net/b/e$a.class */
@@ -26,8 +26,8 @@ public final class e extends BroadcastReceiver implements Runnable {
     }
 
     private void a() {
-        synchronized (f34975a) {
-            for (a aVar : f34975a) {
+        synchronized (f21284a) {
+            for (a aVar : f21284a) {
                 aVar.a();
             }
         }
@@ -38,9 +38,9 @@ public final class e extends BroadcastReceiver implements Runnable {
             com.tencent.beacon.base.util.c.b("[net] context == null!", new Object[0]);
             return;
         }
-        synchronized (f34975a) {
-            if (!f34975a.contains(aVar)) {
-                f34975a.add(aVar);
+        synchronized (f21284a) {
+            if (!f21284a.contains(aVar)) {
+                f21284a.add(aVar);
             }
         }
         if (b) {
@@ -51,8 +51,8 @@ public final class e extends BroadcastReceiver implements Runnable {
     }
 
     private void b() {
-        synchronized (f34975a) {
-            for (a aVar : f34975a) {
+        synchronized (f21284a) {
+            for (a aVar : f21284a) {
                 aVar.b();
             }
         }
@@ -60,8 +60,8 @@ public final class e extends BroadcastReceiver implements Runnable {
 
     @Override // android.content.BroadcastReceiver
     public void onReceive(Context context, Intent intent) {
-        if (this.f34976c) {
-            this.f34976c = false;
+        if (this.f21285c) {
+            this.f21285c = false;
         } else if (this.d) {
         } else {
             com.tencent.beacon.a.b.a.a().a(this);

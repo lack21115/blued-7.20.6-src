@@ -12,11 +12,11 @@ import java.util.Arrays;
 public final class f extends com.opos.exoplayer.core.a implements Handler.Callback {
 
     /* renamed from: a  reason: collision with root package name */
-    private final c f25522a;
+    private final c f11834a;
     private final e b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final Handler f25523c;
+    private final Handler f11835c;
     private final l d;
     private final d e;
     private final Metadata[] f;
@@ -27,14 +27,14 @@ public final class f extends com.opos.exoplayer.core.a implements Handler.Callba
     private boolean k;
 
     public f(e eVar, Looper looper) {
-        this(eVar, looper, c.f25519a);
+        this(eVar, looper, c.f11831a);
     }
 
     public f(e eVar, Looper looper, c cVar) {
         super(4);
         this.b = (e) com.opos.exoplayer.core.i.a.a(eVar);
-        this.f25523c = looper == null ? null : new Handler(looper, this);
-        this.f25522a = (c) com.opos.exoplayer.core.i.a.a(cVar);
+        this.f11835c = looper == null ? null : new Handler(looper, this);
+        this.f11834a = (c) com.opos.exoplayer.core.i.a.a(cVar);
         this.d = new l();
         this.e = new d();
         this.f = new Metadata[5];
@@ -42,7 +42,7 @@ public final class f extends com.opos.exoplayer.core.a implements Handler.Callba
     }
 
     private void a(Metadata metadata) {
-        Handler handler = this.f25523c;
+        Handler handler = this.f11835c;
         if (handler != null) {
             handler.obtainMessage(0, metadata).sendToTarget();
         } else {
@@ -62,7 +62,7 @@ public final class f extends com.opos.exoplayer.core.a implements Handler.Callba
 
     @Override // com.opos.exoplayer.core.t
     public int a(Format format) {
-        if (this.f25522a.a(format)) {
+        if (this.f11834a.a(format)) {
             return a((com.opos.exoplayer.core.drm.b<?>) null, format.i) ? 4 : 2;
         }
         return 0;
@@ -76,12 +76,12 @@ public final class f extends com.opos.exoplayer.core.a implements Handler.Callba
                 if (this.e.c()) {
                     this.k = true;
                 } else if (!this.e.d_()) {
-                    this.e.d = this.d.f25515a.w;
+                    this.e.d = this.d.f11827a.w;
                     this.e.h();
                     try {
                         int i = (this.h + this.i) % 5;
                         this.f[i] = this.j.a(this.e);
-                        this.g[i] = this.e.f25074c;
+                        this.g[i] = this.e.f11386c;
                         this.i++;
                     } catch (b e) {
                         throw h.a(e, r());
@@ -111,7 +111,7 @@ public final class f extends com.opos.exoplayer.core.a implements Handler.Callba
 
     @Override // com.opos.exoplayer.core.a
     public void a(Format[] formatArr, long j) {
-        this.j = this.f25522a.b(formatArr[0]);
+        this.j = this.f11834a.b(formatArr[0]);
     }
 
     @Override // android.os.Handler.Callback

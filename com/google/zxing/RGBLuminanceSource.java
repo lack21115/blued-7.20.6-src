@@ -59,11 +59,11 @@ public final class RGBLuminanceSource extends LuminanceSource {
         int i4 = (i2 * i3) + this.left;
         int i5 = i4;
         if (width == i3) {
-            System.arraycopy((Object) this.luminances, i4, (Object) bArr, 0, i);
+            System.arraycopy(this.luminances, i4, bArr, 0, i);
             return bArr;
         }
         for (int i6 = 0; i6 < height; i6++) {
-            System.arraycopy((Object) this.luminances, i5, (Object) bArr, i6 * width, width);
+            System.arraycopy(this.luminances, i5, bArr, i6 * width, width);
             i5 += this.dataWidth;
         }
         return bArr;

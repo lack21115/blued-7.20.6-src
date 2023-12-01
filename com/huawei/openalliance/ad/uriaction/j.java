@@ -49,29 +49,29 @@ public class j extends q {
         String str;
         String str2;
         String str3;
-        Object obj;
         String str4;
+        String str5;
         ge.Code(V, "buildLinkedAdConfig");
         if (map == null || map.isEmpty()) {
             return;
         }
         if (Build.VERSION.SDK_INT >= 24) {
-            str = (String) map.getOrDefault(at.n, String.valueOf(0));
-            str2 = (String) map.getOrDefault(at.m, String.valueOf(0));
-            String str5 = (String) map.getOrDefault(at.q, "false");
-            str3 = (String) map.getOrDefault(at.o, null);
-            Object orDefault = map.getOrDefault(at.p, "n");
-            str4 = str5;
-            obj = orDefault;
+            str = map.getOrDefault(at.n, String.valueOf(0));
+            str2 = map.getOrDefault(at.m, String.valueOf(0));
+            String orDefault = map.getOrDefault(at.q, "false");
+            str3 = map.getOrDefault(at.o, null);
+            String orDefault2 = map.getOrDefault(at.p, "n");
+            str5 = orDefault;
+            str4 = orDefault2;
         } else {
             str = map.get(at.n);
             str2 = map.get(at.m);
             String str6 = map.get(at.q);
             str3 = map.get(at.o);
-            obj = map.get(at.p);
-            str4 = str6;
+            str4 = map.get(at.p);
+            str5 = str6;
         }
-        String str7 = (String) obj;
+        String str7 = str4;
         Integer F = au.F(str);
         if (F != null) {
             this.Code.V(F.intValue());
@@ -87,7 +87,7 @@ public class j extends q {
             this.Code.Code(0);
         }
         this.Code.Code(str7);
-        this.Code.Code("true".equals(str4));
+        this.Code.Code(fw.Code.equals(str5));
     }
 
     public void Code(boolean z) {

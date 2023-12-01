@@ -18,7 +18,7 @@ public class c {
     private static c b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f40479c;
+    private Context f26788c;
     private BroadcastReceiver e;
     private BroadcastReceiver f;
     private boolean h;
@@ -26,7 +26,7 @@ public class c {
     private int g = -1;
 
     /* renamed from: a  reason: collision with root package name */
-    boolean f40478a = false;
+    boolean f26787a = false;
     private Handler d = new Handler(Looper.getMainLooper());
 
     public static c a() {
@@ -50,7 +50,7 @@ public class c {
     static /* synthetic */ void a(com.tramini.plugin.a.a.c r5, android.content.Context r6) {
         /*
             r0 = r5
-            android.content.Context r0 = r0.f40479c
+            android.content.Context r0 = r0.f26788c
             java.lang.String r1 = "tramini"
             java.lang.String r2 = "P_IL_O"
             java.lang.String r3 = ""
@@ -114,7 +114,7 @@ public class c {
             r0 = r7
             if (r0 == 0) goto La7
             r0 = r5
-            android.content.Context r0 = r0.f40479c
+            android.content.Context r0 = r0.f26788c
             r9 = r0
             java.lang.StringBuilder r0 = new java.lang.StringBuilder
             r1 = r0
@@ -165,13 +165,13 @@ public class c {
             public final void run() {
                 int size;
                 try {
-                    if (c.this.f40479c == null) {
+                    if (c.this.f26788c == null) {
                         return;
                     }
                     List<String> list = null;
                     try {
                         if (c.this.e != null) {
-                            b.a(c.this.f40479c).a(c.this.e);
+                            b.a(c.this.f26788c).a(c.this.e);
                             c.this.e = null;
                         }
                     } catch (Throwable th) {
@@ -192,7 +192,7 @@ public class c {
                             i = i2 + 1;
                         }
                     }
-                    b.a(c.this.f40479c).a(c.this.e, intentFilter);
+                    b.a(c.this.f26788c).a(c.this.e, intentFilter);
                 } catch (Throwable th2) {
                 }
             }
@@ -217,13 +217,13 @@ public class c {
             return;
         }
         try {
-            this.f40479c = context.getApplicationContext();
+            this.f26788c = context.getApplicationContext();
             if (h.a(context)) {
                 return;
             }
             try {
                 if (this.f != null) {
-                    b.a(this.f40479c).a(this.f);
+                    b.a(this.f26788c).a(this.f);
                     this.f = null;
                 }
             } catch (Throwable th) {
@@ -231,9 +231,9 @@ public class c {
             try {
                 this.f = new com.tramini.plugin.a.c();
                 IntentFilter intentFilter = new IntentFilter();
-                String packageName = this.f40479c.getPackageName();
+                String packageName = this.f26788c.getPackageName();
                 intentFilter.addAction(f.a(packageName + packageName));
-                b.a(this.f40479c).a(this.f, intentFilter);
+                b.a(this.f26788c).a(this.f, intentFilter);
             } catch (Throwable th2) {
             }
             com.tramini.plugin.a.g.b.a.a().a(new Runnable() { // from class: com.tramini.plugin.a.a.c.1
@@ -248,11 +248,11 @@ public class c {
 
     public final void a(final com.tramini.plugin.b.a aVar) {
         synchronized (this) {
-            if (this.f40478a) {
+            if (this.f26787a) {
                 return;
             }
             if (aVar != null) {
-                this.f40478a = true;
+                this.f26787a = true;
                 com.tramini.plugin.a.g.b.a().a(aVar);
                 a().a(new Runnable() { // from class: com.tramini.plugin.a.a.c.2
                     @Override // java.lang.Runnable
@@ -292,7 +292,7 @@ public class c {
     }
 
     public final Context b() {
-        return this.f40479c;
+        return this.f26788c;
     }
 
     public final void b(final Context context) {
@@ -304,8 +304,8 @@ public class c {
                         @Override // com.tramini.plugin.a.d.c
                         public final void a(com.tramini.plugin.b.a aVar) {
                             c.this.b(aVar);
-                            d.a(c.this.f40479c).a();
-                            d.a(c.this.f40479c).a(aVar, aVar.o());
+                            d.a(c.this.f26788c).a();
+                            d.a(c.this.f26788c).a(aVar, aVar.o());
                         }
                     });
                 }
@@ -317,10 +317,10 @@ public class c {
         com.tramini.plugin.a.g.b.a.a().a(new Runnable() { // from class: com.tramini.plugin.a.a.c.5
             @Override // java.lang.Runnable
             public final void run() {
-                i.a(c.this.f40479c, "tramini", "P_CE_PE", "");
+                i.a(c.this.f26788c, "tramini", "P_CE_PE", "");
                 com.tramini.plugin.a.g.c.c(str);
                 c cVar = c.this;
-                c.b(cVar, cVar.f40479c);
+                c.b(cVar, cVar.f26788c);
             }
         });
     }
@@ -334,7 +334,7 @@ public class c {
             @Override // java.lang.Runnable
             public final void run() {
                 try {
-                    com.tramini.plugin.a.g.d.f40545a = new JSONObject(str);
+                    com.tramini.plugin.a.g.d.f26854a = new JSONObject(str);
                 } catch (Throwable th) {
                     th.printStackTrace();
                 }

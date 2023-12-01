@@ -18,11 +18,11 @@ import org.xmlpull.v1.XmlPullParser;
 public class ConstraintAttribute {
 
     /* renamed from: a  reason: collision with root package name */
-    String f2249a;
+    String f2201a;
     boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f2250c;
+    private boolean f2202c;
     private AttributeType d;
     private int e;
     private float f;
@@ -35,7 +35,7 @@ public class ConstraintAttribute {
     public static /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f2251a;
+        static final /* synthetic */ int[] f2203a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:19:0x0065 -> B:41:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:21:0x0069 -> B:37:0x001f). Please submit an issue!!! */
@@ -46,37 +46,37 @@ public class ConstraintAttribute {
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:31:0x007d -> B:47:0x0058). Please submit an issue!!! */
         static {
             int[] iArr = new int[AttributeType.values().length];
-            f2251a = iArr;
+            f2203a = iArr;
             try {
                 iArr[AttributeType.REFERENCE_TYPE.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f2251a[AttributeType.BOOLEAN_TYPE.ordinal()] = 2;
+                f2203a[AttributeType.BOOLEAN_TYPE.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f2251a[AttributeType.STRING_TYPE.ordinal()] = 3;
+                f2203a[AttributeType.STRING_TYPE.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f2251a[AttributeType.COLOR_TYPE.ordinal()] = 4;
+                f2203a[AttributeType.COLOR_TYPE.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f2251a[AttributeType.COLOR_DRAWABLE_TYPE.ordinal()] = 5;
+                f2203a[AttributeType.COLOR_DRAWABLE_TYPE.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
             try {
-                f2251a[AttributeType.INT_TYPE.ordinal()] = 6;
+                f2203a[AttributeType.INT_TYPE.ordinal()] = 6;
             } catch (NoSuchFieldError e6) {
             }
             try {
-                f2251a[AttributeType.FLOAT_TYPE.ordinal()] = 7;
+                f2203a[AttributeType.FLOAT_TYPE.ordinal()] = 7;
             } catch (NoSuchFieldError e7) {
             }
             try {
-                f2251a[AttributeType.DIMENSION_TYPE.ordinal()] = 8;
+                f2203a[AttributeType.DIMENSION_TYPE.ordinal()] = 8;
             } catch (NoSuchFieldError e8) {
             }
         }
@@ -95,23 +95,23 @@ public class ConstraintAttribute {
     }
 
     public ConstraintAttribute(ConstraintAttribute constraintAttribute, Object obj) {
-        this.f2250c = false;
-        this.f2249a = constraintAttribute.f2249a;
+        this.f2202c = false;
+        this.f2201a = constraintAttribute.f2201a;
         this.d = constraintAttribute.d;
         setValue(obj);
     }
 
     public ConstraintAttribute(String str, AttributeType attributeType) {
-        this.f2250c = false;
-        this.f2249a = str;
+        this.f2202c = false;
+        this.f2201a = str;
         this.d = attributeType;
     }
 
     public ConstraintAttribute(String str, AttributeType attributeType, Object obj, boolean z) {
-        this.f2250c = false;
-        this.f2249a = str;
+        this.f2202c = false;
+        this.f2201a = str;
         this.d = attributeType;
-        this.f2250c = z;
+        this.f2202c = z;
         setValue(obj);
     }
 
@@ -247,9 +247,9 @@ public class ConstraintAttribute {
         Class<?> cls = view.getClass();
         for (String str : hashMap.keySet()) {
             ConstraintAttribute constraintAttribute = hashMap.get(str);
-            String str2 = constraintAttribute.f2250c ? str : "set" + str;
+            String str2 = constraintAttribute.f2202c ? str : "set" + str;
             try {
-                switch (AnonymousClass1.f2251a[constraintAttribute.d.ordinal()]) {
+                switch (AnonymousClass1.f2203a[constraintAttribute.d.ordinal()]) {
                     case 1:
                         cls.getMethod(str2, Integer.TYPE).invoke(view, Integer.valueOf(constraintAttribute.e));
                         break;
@@ -299,14 +299,14 @@ public class ConstraintAttribute {
     public void applyCustom(View view) {
         String str;
         Class<?> cls = view.getClass();
-        String str2 = this.f2249a;
-        if (this.f2250c) {
+        String str2 = this.f2201a;
+        if (this.f2202c) {
             str = str2;
         } else {
             str = "set" + str2;
         }
         try {
-            switch (AnonymousClass1.f2251a[this.d.ordinal()]) {
+            switch (AnonymousClass1.f2203a[this.d.ordinal()]) {
                 case 1:
                 case 6:
                     cls.getMethod(str, Integer.TYPE).invoke(view, Integer.valueOf(this.e));
@@ -358,7 +358,7 @@ public class ConstraintAttribute {
             if (this.d != constraintAttribute.d) {
                 return false;
             }
-            switch (AnonymousClass1.f2251a[this.d.ordinal()]) {
+            switch (AnonymousClass1.f2203a[this.d.ordinal()]) {
                 case 1:
                 case 6:
                     z = false;
@@ -418,7 +418,7 @@ public class ConstraintAttribute {
     }
 
     public String getName() {
-        return this.f2249a;
+        return this.f2201a;
     }
 
     public String getStringValue() {
@@ -430,7 +430,7 @@ public class ConstraintAttribute {
     }
 
     public float getValueToInterpolate() {
-        switch (AnonymousClass1.f2251a[this.d.ordinal()]) {
+        switch (AnonymousClass1.f2203a[this.d.ordinal()]) {
             case 2:
                 return this.b ? 1.0f : 0.0f;
             case 3:
@@ -450,7 +450,7 @@ public class ConstraintAttribute {
     }
 
     public void getValuesToInterpolate(float[] fArr) {
-        switch (AnonymousClass1.f2251a[this.d.ordinal()]) {
+        switch (AnonymousClass1.f2203a[this.d.ordinal()]) {
             case 2:
                 fArr[0] = this.b ? 1.0f : 0.0f;
                 return;
@@ -485,16 +485,16 @@ public class ConstraintAttribute {
     }
 
     public boolean isContinuous() {
-        int i = AnonymousClass1.f2251a[this.d.ordinal()];
+        int i = AnonymousClass1.f2203a[this.d.ordinal()];
         return (i == 1 || i == 2 || i == 3) ? false : true;
     }
 
     public boolean isMethod() {
-        return this.f2250c;
+        return this.f2202c;
     }
 
     public int numberOfInterpolatedValues() {
-        int i = AnonymousClass1.f2251a[this.d.ordinal()];
+        int i = AnonymousClass1.f2203a[this.d.ordinal()];
         return (i == 4 || i == 5) ? 4 : 1;
     }
 
@@ -515,7 +515,7 @@ public class ConstraintAttribute {
     }
 
     public void setValue(Object obj) {
-        switch (AnonymousClass1.f2251a[this.d.ordinal()]) {
+        switch (AnonymousClass1.f2203a[this.d.ordinal()]) {
             case 1:
             case 6:
                 this.e = ((Integer) obj).intValue();
@@ -543,7 +543,7 @@ public class ConstraintAttribute {
 
     public void setValue(float[] fArr) {
         boolean z = false;
-        switch (AnonymousClass1.f2251a[this.d.ordinal()]) {
+        switch (AnonymousClass1.f2203a[this.d.ordinal()]) {
             case 1:
             case 6:
                 this.e = (int) fArr[0];

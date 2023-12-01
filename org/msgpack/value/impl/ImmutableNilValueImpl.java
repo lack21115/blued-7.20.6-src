@@ -1,6 +1,5 @@
 package org.msgpack.value.impl;
 
-import com.igexin.push.core.b;
 import java.io.IOException;
 import org.msgpack.core.MessagePacker;
 import org.msgpack.value.ImmutableArrayValue;
@@ -165,7 +164,7 @@ public class ImmutableNilValueImpl extends AbstractImmutableValue implements Imm
 
     @Override // org.msgpack.value.Value
     public String toJson() {
-        return b.l;
+        return "null";
     }
 
     public String toString() {

@@ -1,5 +1,6 @@
 package com.qiniu.android.utils;
 
+import com.huawei.hms.framework.common.ContainerUtils;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.HashMap;
@@ -36,7 +37,7 @@ public final class StringMap {
             @Override // com.qiniu.android.utils.StringMap.Consumer
             public void accept(String str, Object obj) {
                 if (this.notStart) {
-                    sb.append("&");
+                    sb.append(ContainerUtils.FIELD_DELIMITER);
                 }
                 try {
                     StringBuilder sb2 = sb;

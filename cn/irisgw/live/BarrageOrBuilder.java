@@ -22,7 +22,8 @@ public interface BarrageOrBuilder extends MessageOrBuilder {
 
     int getChatFrameBorderColorCount();
 
-    List<String> getChatFrameBorderColorList();
+    /* renamed from: getChatFrameBorderColorList */
+    List<String> mo473getChatFrameBorderColorList();
 
     ByteString getChatFrameBytes();
 
@@ -34,7 +35,8 @@ public interface BarrageOrBuilder extends MessageOrBuilder {
 
     int getChatFrameFrameColorCount();
 
-    List<String> getChatFrameFrameColorList();
+    /* renamed from: getChatFrameFrameColorList */
+    List<String> mo474getChatFrameFrameColorList();
 
     int getChatFrameGradientType();
 

@@ -17,7 +17,7 @@ public final class usfPi implements Xjpd8 {
         Bundle call;
         Bundle call2;
         Uri parse = Uri.parse(kC0XR.a(kC0XR.x0));
-        String a2 = kC0XR.a(kC0XR.f39962a);
+        String a2 = kC0XR.a(kC0XR.f26271a);
         int i = Build.VERSION.SDK_INT;
         if (i >= 17) {
             ContentProviderClient acquireContentProviderClient = context.getContentResolver().acquireContentProviderClient(parse);

@@ -12,21 +12,21 @@ import java.util.concurrent.TimeUnit;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    static final int f22355a;
+    static final int f8747a;
     static final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final a f22356c = new a();
+    private static final a f8748c = new a();
     private static final int e;
-    private final Executor d = new ExecutorC0386a((byte) 0);
+    private final Executor d = new ExecutorC0216a((byte) 0);
 
     /* renamed from: com.huawei.hmf.tasks.a.a$a  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/huawei/hmf/tasks/a/a$a.class */
-    static final class ExecutorC0386a implements Executor {
-        private ExecutorC0386a() {
+    static final class ExecutorC0216a implements Executor {
+        private ExecutorC0216a() {
         }
 
-        /* synthetic */ ExecutorC0386a(byte b) {
+        /* synthetic */ ExecutorC0216a(byte b) {
             this();
         }
 
@@ -39,17 +39,17 @@ public final class a {
     static {
         int availableProcessors = Runtime.getRuntime().availableProcessors();
         e = availableProcessors;
-        f22355a = availableProcessors + 1;
+        f8747a = availableProcessors + 1;
         b = (availableProcessors * 2) + 1;
     }
 
     public static ExecutorService a() {
-        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(f22355a, b, 1L, TimeUnit.SECONDS, new LinkedBlockingQueue());
+        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(f8747a, b, 1L, TimeUnit.SECONDS, new LinkedBlockingQueue());
         threadPoolExecutor.allowCoreThreadTimeOut(true);
         return threadPoolExecutor;
     }
 
     public static Executor b() {
-        return f22356c.d;
+        return f8748c.d;
     }
 }

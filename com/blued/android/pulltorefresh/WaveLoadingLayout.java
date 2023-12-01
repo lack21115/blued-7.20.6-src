@@ -13,7 +13,6 @@ import com.blued.android.core.utils.skin.BluedSkinUtils;
 import com.blued.android.framework.view.pulltorefresh.LoadingLayout;
 import com.blued.android.framework.view.pulltorefresh.PullToRefreshBase;
 import com.blued.android.framework.view.pulltorefresh.PullToRefreshHelper;
-import com.soft.blued.R;
 import com.soft.blued.utils.Logger;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/pulltorefresh/WaveLoadingLayout.class */
@@ -27,10 +26,10 @@ public class WaveLoadingLayout extends LoadingLayout {
         super(context, mode, orientation, typedArray);
         this.TAG = WaveLoadingLayout.class.getSimpleName();
         this.mContext = context;
-        View inflate = LayoutInflater.from(context).inflate(R.layout.layout_refresh_wave, (ViewGroup) null);
+        View inflate = LayoutInflater.from(context).inflate(2131560428, (ViewGroup) null);
         ((LinearLayout) this.mInnerLayout.findViewById(2131368177)).setVisibility(8);
         inflate.setBackgroundColor(BluedSkinUtils.a(this.mContext, 2131102388));
-        this.mLavLoadingWave = (LottieAnimationView) inflate.findViewById(R.id.lav_loading_wave);
+        this.mLavLoadingWave = (LottieAnimationView) inflate.findViewById(2131366704);
         this.mTvRefresh = (TextView) inflate.findViewById(2131372398);
         this.mInnerLayout.addView(inflate);
         this.mInnerLayout.setBackgroundColor(BluedSkinUtils.a(this.mContext, 2131102388));
@@ -57,12 +56,12 @@ public class WaveLoadingLayout extends LoadingLayout {
 
     @Override // com.blued.android.framework.view.pulltorefresh.LoadingLayout
     public void onPullImpl(float f) {
-        Logger.a(this.TAG, "onPullImpl");
+        Logger.a(this.TAG, new Object[]{"onPullImpl"});
     }
 
     @Override // com.blued.android.framework.view.pulltorefresh.LoadingLayout
     public void pullToRefreshImpl() {
-        Logger.a(this.TAG, "pullToRefreshImpl");
+        Logger.a(this.TAG, new Object[]{"pullToRefreshImpl"});
         LottieAnimationView lottieAnimationView = this.mLavLoadingWave;
         if (lottieAnimationView != null) {
             lottieAnimationView.d();
@@ -72,7 +71,7 @@ public class WaveLoadingLayout extends LoadingLayout {
 
     @Override // com.blued.android.framework.view.pulltorefresh.LoadingLayout
     public void refreshingImpl() {
-        Logger.a(this.TAG, "refreshingImpl");
+        Logger.a(this.TAG, new Object[]{"refreshingImpl"});
         LottieAnimationView lottieAnimationView = this.mLavLoadingWave;
         if (lottieAnimationView != null) {
             lottieAnimationView.a();
@@ -82,13 +81,13 @@ public class WaveLoadingLayout extends LoadingLayout {
 
     @Override // com.blued.android.framework.view.pulltorefresh.LoadingLayout
     public void releaseToRefreshImpl() {
-        Logger.a(this.TAG, "releaseToRefreshImpl");
+        Logger.a(this.TAG, new Object[]{"releaseToRefreshImpl"});
         this.mTvRefresh.setText(PullToRefreshHelper.b());
     }
 
     @Override // com.blued.android.framework.view.pulltorefresh.LoadingLayout
     public void resetImpl() {
-        Logger.a(this.TAG, "resetImpl");
+        Logger.a(this.TAG, new Object[]{"resetImpl"});
         LottieAnimationView lottieAnimationView = this.mLavLoadingWave;
         if (lottieAnimationView != null) {
             lottieAnimationView.d();

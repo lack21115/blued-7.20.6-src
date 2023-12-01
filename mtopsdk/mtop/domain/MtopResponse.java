@@ -14,9 +14,7 @@ import org.json.JSONObject;
 public class MtopResponse implements Serializable, IMTOPDataObject {
     private static final long serialVersionUID = 1566423746968673499L;
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f43748c;
+    private String c;
     private String d;
     private String e;
     private String[] f;
@@ -25,9 +23,7 @@ public class MtopResponse implements Serializable, IMTOPDataObject {
     private Map i;
     private int j;
     private MtopStatistics k;
-
-    /* renamed from: a  reason: collision with root package name */
-    private volatile boolean f43747a = false;
+    private volatile boolean a = false;
     private ResponseSource l = ResponseSource.NETWORK_REQUEST;
 
     /* loaded from: source-3503164-dex2jar.jar:mtopsdk/mtop/domain/MtopResponse$ResponseSource.class */
@@ -42,14 +38,14 @@ public class MtopResponse implements Serializable, IMTOPDataObject {
 
     public MtopResponse(String str, String str2) {
         this.b = str;
-        this.f43748c = str2;
+        this.c = str2;
     }
 
     public MtopResponse(String str, String str2, String str3, String str4) {
         this.d = str;
         this.e = str2;
         this.b = str3;
-        this.f43748c = str4;
+        this.c = str4;
     }
 
     private void a(String[] strArr) {
@@ -62,7 +58,7 @@ public class MtopResponse implements Serializable, IMTOPDataObject {
             return;
         }
         this.b = split[0];
-        this.f43748c = split[1];
+        this.c = split[1];
     }
 
     public String a() {
@@ -90,18 +86,18 @@ public class MtopResponse implements Serializable, IMTOPDataObject {
     }
 
     public String b() {
-        if (this.d == null && !this.f43747a) {
+        if (this.d == null && !this.a) {
             h();
         }
         return this.d;
     }
 
     public void b(String str) {
-        this.f43748c = str;
+        this.c = str;
     }
 
     public String c() {
-        if (this.e == null && !this.f43747a) {
+        if (this.e == null && !this.a) {
             h();
         }
         return this.e;
@@ -132,11 +128,11 @@ public class MtopResponse implements Serializable, IMTOPDataObject {
     }
 
     public void h() {
-        if (this.f43747a) {
+        if (this.a) {
             return;
         }
         synchronized (this) {
-            if (this.f43747a) {
+            if (this.a) {
                 return;
             }
             if (this.h == null || this.h.length == 0) {
@@ -144,8 +140,8 @@ public class MtopResponse implements Serializable, IMTOPDataObject {
                     TBSdkLog.c("mtopsdk.MtopResponse", "[parseJsonByte]bytedata is blank ---api=" + this.d + ",v=" + this.e);
                 }
                 this.b = "ANDROID_SYS_JSONDATA_BLANK";
-                this.f43748c = "返回JSONDATA为空";
-                this.f43747a = true;
+                this.c = "返回JSONDATA为空";
+                this.a = true;
                 return;
             }
             String str = new String(this.h);
@@ -168,7 +164,7 @@ public class MtopResponse implements Serializable, IMTOPDataObject {
                 if (i2 >= length) {
                     a(this.f);
                     this.g = jSONObject.optJSONObject("data");
-                    this.f43747a = true;
+                    this.a = true;
                     return;
                 }
                 this.f[i2] = jSONArray.getString(i2);
@@ -227,7 +223,7 @@ public class MtopResponse implements Serializable, IMTOPDataObject {
             sb.append(",retCode=");
             sb.append(this.b);
             sb.append(",retMsg=");
-            sb.append(this.f43748c);
+            sb.append(this.c);
             sb.append(",ret=");
             sb.append(Arrays.toString(this.f));
             sb.append(",data=");

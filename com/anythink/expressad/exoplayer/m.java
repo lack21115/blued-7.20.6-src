@@ -32,14 +32,14 @@ public final class m implements Parcelable {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f7719a = -1;
+    public static final int f4880a = -1;
     public static final long b = Long.MAX_VALUE;
     public final String A;
     public final int B;
     private int C;
 
     /* renamed from: c  reason: collision with root package name */
-    public final String f7720c;
+    public final String f4881c;
     public final int d;
     public final String e;
     public final com.anythink.expressad.exoplayer.g.a f;
@@ -65,7 +65,7 @@ public final class m implements Parcelable {
     public final int z;
 
     m(Parcel parcel) {
-        this.f7720c = parcel.readString();
+        this.f4881c = parcel.readString();
         this.g = parcel.readString();
         this.h = parcel.readString();
         this.e = parcel.readString();
@@ -104,7 +104,7 @@ public final class m implements Parcelable {
     }
 
     private m(String str, String str2, String str3, String str4, int i, int i2, int i3, int i4, float f, int i5, float f2, byte[] bArr, int i6, com.anythink.expressad.exoplayer.l.b bVar, int i7, int i8, int i9, int i10, int i11, int i12, String str5, int i13, long j, List<byte[]> list, com.anythink.expressad.exoplayer.d.e eVar, com.anythink.expressad.exoplayer.g.a aVar) {
-        this.f7720c = str;
+        this.f4881c = str;
         this.g = str2;
         this.h = str3;
         this.e = str4;
@@ -201,7 +201,7 @@ public final class m implements Parcelable {
     }
 
     private m b(int i) {
-        return new m(this.f7720c, this.g, this.h, this.e, this.d, this.i, this.m, this.n, this.o, i, this.q, this.s, this.r, this.t, this.u, this.v, this.w, this.x, this.y, this.z, this.A, this.B, this.l, this.j, this.k, this.f);
+        return new m(this.f4881c, this.g, this.h, this.e, this.d, this.i, this.m, this.n, this.o, i, this.q, this.s, this.r, this.t, this.u, this.v, this.w, this.x, this.y, this.z, this.A, this.B, this.l, this.j, this.k, this.f);
     }
 
     private static m b(String str, String str2, String str3, int i, int i2, int i3, int i4, float f, List<byte[]> list, com.anythink.expressad.exoplayer.d.e eVar) {
@@ -222,7 +222,7 @@ public final class m implements Parcelable {
         }
         StringBuilder sb = new StringBuilder();
         sb.append("id=");
-        sb.append(mVar.f7720c);
+        sb.append(mVar.f4881c);
         sb.append(", mimeType=");
         sb.append(mVar.h);
         if (mVar.d != -1) {
@@ -264,30 +264,30 @@ public final class m implements Parcelable {
     }
 
     public final m a(int i) {
-        return new m(this.f7720c, this.g, this.h, this.e, this.d, i, this.m, this.n, this.o, this.p, this.q, this.s, this.r, this.t, this.u, this.v, this.w, this.x, this.y, this.z, this.A, this.B, this.l, this.j, this.k, this.f);
+        return new m(this.f4881c, this.g, this.h, this.e, this.d, i, this.m, this.n, this.o, this.p, this.q, this.s, this.r, this.t, this.u, this.v, this.w, this.x, this.y, this.z, this.A, this.B, this.l, this.j, this.k, this.f);
     }
 
     public final m a(int i, int i2) {
-        return new m(this.f7720c, this.g, this.h, this.e, this.d, this.i, this.m, this.n, this.o, this.p, this.q, this.s, this.r, this.t, this.u, this.v, this.w, i, i2, this.z, this.A, this.B, this.l, this.j, this.k, this.f);
+        return new m(this.f4881c, this.g, this.h, this.e, this.d, this.i, this.m, this.n, this.o, this.p, this.q, this.s, this.r, this.t, this.u, this.v, this.w, i, i2, this.z, this.A, this.B, this.l, this.j, this.k, this.f);
     }
 
     public final m a(long j) {
-        return new m(this.f7720c, this.g, this.h, this.e, this.d, this.i, this.m, this.n, this.o, this.p, this.q, this.s, this.r, this.t, this.u, this.v, this.w, this.x, this.y, this.z, this.A, this.B, j, this.j, this.k, this.f);
+        return new m(this.f4881c, this.g, this.h, this.e, this.d, this.i, this.m, this.n, this.o, this.p, this.q, this.s, this.r, this.t, this.u, this.v, this.w, this.x, this.y, this.z, this.A, this.B, j, this.j, this.k, this.f);
     }
 
     public final m a(com.anythink.expressad.exoplayer.d.e eVar) {
-        return new m(this.f7720c, this.g, this.h, this.e, this.d, this.i, this.m, this.n, this.o, this.p, this.q, this.s, this.r, this.t, this.u, this.v, this.w, this.x, this.y, this.z, this.A, this.B, this.l, this.j, eVar, this.f);
+        return new m(this.f4881c, this.g, this.h, this.e, this.d, this.i, this.m, this.n, this.o, this.p, this.q, this.s, this.r, this.t, this.u, this.v, this.w, this.x, this.y, this.z, this.A, this.B, this.l, this.j, eVar, this.f);
     }
 
     public final m a(com.anythink.expressad.exoplayer.g.a aVar) {
-        return new m(this.f7720c, this.g, this.h, this.e, this.d, this.i, this.m, this.n, this.o, this.p, this.q, this.s, this.r, this.t, this.u, this.v, this.w, this.x, this.y, this.z, this.A, this.B, this.l, this.j, this.k, aVar);
+        return new m(this.f4881c, this.g, this.h, this.e, this.d, this.i, this.m, this.n, this.o, this.p, this.q, this.s, this.r, this.t, this.u, this.v, this.w, this.x, this.y, this.z, this.A, this.B, this.l, this.j, this.k, aVar);
     }
 
     public final m a(m mVar) {
         if (this == mVar) {
             return this;
         }
-        String str = mVar.f7720c;
+        String str = mVar.f4881c;
         String str2 = this.e;
         String str3 = str2;
         if (str2 == null) {
@@ -343,12 +343,12 @@ public final class m implements Parcelable {
             return false;
         }
         m mVar = (m) obj;
-        return this.d == mVar.d && this.i == mVar.i && this.m == mVar.m && this.n == mVar.n && this.o == mVar.o && this.p == mVar.p && this.q == mVar.q && this.r == mVar.r && this.u == mVar.u && this.v == mVar.v && this.w == mVar.w && this.x == mVar.x && this.y == mVar.y && this.l == mVar.l && this.z == mVar.z && af.a((Object) this.f7720c, (Object) mVar.f7720c) && af.a((Object) this.A, (Object) mVar.A) && this.B == mVar.B && af.a((Object) this.g, (Object) mVar.g) && af.a((Object) this.h, (Object) mVar.h) && af.a((Object) this.e, (Object) mVar.e) && af.a(this.k, mVar.k) && af.a(this.f, mVar.f) && af.a(this.t, mVar.t) && Arrays.equals(this.s, mVar.s) && b(mVar);
+        return this.d == mVar.d && this.i == mVar.i && this.m == mVar.m && this.n == mVar.n && this.o == mVar.o && this.p == mVar.p && this.q == mVar.q && this.r == mVar.r && this.u == mVar.u && this.v == mVar.v && this.w == mVar.w && this.x == mVar.x && this.y == mVar.y && this.l == mVar.l && this.z == mVar.z && af.a((Object) this.f4881c, (Object) mVar.f4881c) && af.a((Object) this.A, (Object) mVar.A) && this.B == mVar.B && af.a((Object) this.g, (Object) mVar.g) && af.a((Object) this.h, (Object) mVar.h) && af.a((Object) this.e, (Object) mVar.e) && af.a(this.k, mVar.k) && af.a(this.f, mVar.f) && af.a(this.t, mVar.t) && Arrays.equals(this.s, mVar.s) && b(mVar);
     }
 
     public final int hashCode() {
         if (this.C == 0) {
-            String str = this.f7720c;
+            String str = this.f4881c;
             int i = 0;
             int hashCode = str == null ? 0 : str.hashCode();
             String str2 = this.g;
@@ -377,12 +377,12 @@ public final class m implements Parcelable {
     }
 
     public final String toString() {
-        return "Format(" + this.f7720c + ", " + this.g + ", " + this.h + ", " + this.d + ", " + this.A + ", [" + this.m + ", " + this.n + ", " + this.o + "], [" + this.u + ", " + this.v + "])";
+        return "Format(" + this.f4881c + ", " + this.g + ", " + this.h + ", " + this.d + ", " + this.A + ", [" + this.m + ", " + this.n + ", " + this.o + "], [" + this.u + ", " + this.v + "])";
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.f7720c);
+        parcel.writeString(this.f4881c);
         parcel.writeString(this.g);
         parcel.writeString(this.h);
         parcel.writeString(this.e);

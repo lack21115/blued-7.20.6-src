@@ -20,11 +20,11 @@ public class UserInfoBean implements Parcelable {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    public long f35192a;
+    public long f21501a;
     public int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f35193c;
+    public String f21502c;
     public String d;
     public long e;
     public long f;
@@ -62,7 +62,7 @@ public class UserInfoBean implements Parcelable {
         this.r = null;
         this.s = null;
         this.b = parcel.readInt();
-        this.f35193c = parcel.readString();
+        this.f21502c = parcel.readString();
         this.d = parcel.readString();
         this.e = parcel.readLong();
         this.f = parcel.readLong();
@@ -89,7 +89,7 @@ public class UserInfoBean implements Parcelable {
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeInt(this.b);
-        parcel.writeString(this.f35193c);
+        parcel.writeString(this.f21502c);
         parcel.writeString(this.d);
         parcel.writeLong(this.e);
         parcel.writeLong(this.f);

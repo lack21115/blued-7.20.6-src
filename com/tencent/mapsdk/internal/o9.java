@@ -11,7 +11,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public final class o9 {
 
     /* renamed from: a  reason: collision with root package name */
-    private cb f37676a = new cb();
+    private cb f23985a = new cb();
     private ConcurrentHashMap<String, Map<String, m9>> b = new ConcurrentHashMap<>();
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/mapsdk/internal/o9$a.class */
@@ -109,6 +109,6 @@ public final class o9 {
     }
 
     public String a(String str) {
-        return this.f37676a.a(str);
+        return this.f23985a.a(str);
     }
 }

@@ -17,13 +17,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LivePlanetTimeView.class */
 public final class LivePlanetTimeView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Context f14867a;
+    private final Context a;
     private final LivePlanetTimeBinding b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private CountDownTimer f14868c;
+    private CountDownTimer c;
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
     public LivePlanetTimeView(Context mContext) {
@@ -41,16 +37,16 @@ public final class LivePlanetTimeView extends FrameLayout {
     public LivePlanetTimeView(Context mContext, AttributeSet attributeSet, int i) {
         super(mContext, attributeSet, i);
         Intrinsics.e(mContext, "mContext");
-        this.f14867a = mContext;
-        LivePlanetTimeBinding a2 = LivePlanetTimeBinding.a(LayoutInflater.from(mContext).inflate(R.layout.live_planet_time, this));
-        Intrinsics.c(a2, "bind(\n        LayoutInfl…_planet_time, this)\n    )");
-        this.b = a2;
-        a2.g.getPaint().setFakeBoldText(true);
-        FrameLayout frameLayout = this.b.f12375a;
+        this.a = mContext;
+        LivePlanetTimeBinding a = LivePlanetTimeBinding.a(LayoutInflater.from(mContext).inflate(R.layout.live_planet_time, this));
+        Intrinsics.c(a, "bind(\n        LayoutInfl…_planet_time, this)\n    )");
+        this.b = a;
+        a.g.getPaint().setFakeBoldText(true);
+        FrameLayout frameLayout = this.b.a;
         Intrinsics.c(frameLayout, "vb.flTimeRoot");
         BluedViewExKt.a(frameLayout);
         this.b.b.setImageResource(R.drawable.live_planet_num_0);
-        this.b.f12376c.setImageResource(R.drawable.live_planet_num_0);
+        this.b.c.setImageResource(R.drawable.live_planet_num_0);
         this.b.d.setImageResource(R.drawable.live_planet_num_0);
         this.b.e.setImageResource(R.drawable.live_planet_num_0);
     }
@@ -66,7 +62,7 @@ public final class LivePlanetTimeView extends FrameLayout {
 
     private final void b(int i) {
         a();
-        this.f14868c = new LivePlanetTimeView$startTime$1(this, i * 1000).start();
+        this.c = new LivePlanetTimeView$startTime$1(this, i * 1000).start();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -74,7 +70,7 @@ public final class LivePlanetTimeView extends FrameLayout {
         int i2 = (int) (i / 60.0f);
         float f = i2;
         this.b.b.setImageResource(d((int) (f / 10.0f)));
-        this.b.f12376c.setImageResource(d((int) (f % 10.0f)));
+        this.b.c.setImageResource(d((int) (f % 10.0f)));
         float f2 = i - (i2 * 60);
         this.b.d.setImageResource(d((int) (f2 / 10.0f)));
         this.b.e.setImageResource(d((int) (f2 % 10.0f)));
@@ -108,17 +104,18 @@ public final class LivePlanetTimeView extends FrameLayout {
     }
 
     public final void a() {
-        CountDownTimer countDownTimer = this.f14868c;
+        CountDownTimer countDownTimer = this.c;
         if (countDownTimer != null) {
             countDownTimer.cancel();
         }
-        this.f14868c = null;
+        this.c = null;
     }
 
+    /* JADX WARN: Type inference failed for: r1v0, types: [com.blued.android.module.live_china.view.LivePlanetTimeView$startUpdateDataTime$1] */
     public final void a(int i) {
         a();
         final long j = i * 1000;
-        this.f14868c = new CountDownTimer(j) { // from class: com.blued.android.module.live_china.view.LivePlanetTimeView$startUpdateDataTime$1
+        this.c = new CountDownTimer(j) { // from class: com.blued.android.module.live_china.view.LivePlanetTimeView$startUpdateDataTime$1
             @Override // android.os.CountDownTimer
             public void onFinish() {
                 if (LivePlanetTimeView.this.getContext() == null) {
@@ -135,7 +132,7 @@ public final class LivePlanetTimeView extends FrameLayout {
     }
 
     public final Context getMContext() {
-        return this.f14867a;
+        return this.a;
     }
 
     public final void setData(int i) {
@@ -144,7 +141,7 @@ public final class LivePlanetTimeView extends FrameLayout {
             TextView textView = this.b.g;
             Intrinsics.c(textView, "vb.tvProbeIng");
             BluedViewExKt.b(textView);
-            FrameLayout frameLayout = this.b.f12375a;
+            FrameLayout frameLayout = this.b.a;
             Intrinsics.c(frameLayout, "vb.flTimeRoot");
             BluedViewExKt.a(frameLayout);
         } else if (i == 0) {
@@ -157,10 +154,10 @@ public final class LivePlanetTimeView extends FrameLayout {
             }, 1000L);
         } else {
             this.b.b.setImageResource(R.drawable.live_planet_num_0);
-            this.b.f12376c.setImageResource(R.drawable.live_planet_num_0);
+            this.b.c.setImageResource(R.drawable.live_planet_num_0);
             this.b.d.setImageResource(R.drawable.live_planet_num_0);
             this.b.e.setImageResource(R.drawable.live_planet_num_0);
-            FrameLayout frameLayout2 = this.b.f12375a;
+            FrameLayout frameLayout2 = this.b.a;
             Intrinsics.c(frameLayout2, "vb.flTimeRoot");
             BluedViewExKt.b(frameLayout2);
             TextView textView2 = this.b.g;

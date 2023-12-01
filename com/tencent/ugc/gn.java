@@ -6,11 +6,11 @@ import java.util.concurrent.Callable;
 final /* synthetic */ class gn implements Callable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final VideoDemuxerFFmpeg f40424a;
+    private final VideoDemuxerFFmpeg f26733a;
     private final long b;
 
     private gn(VideoDemuxerFFmpeg videoDemuxerFFmpeg, long j) {
-        this.f40424a = videoDemuxerFFmpeg;
+        this.f26733a = videoDemuxerFFmpeg;
         this.b = j;
     }
 
@@ -20,6 +20,6 @@ final /* synthetic */ class gn implements Callable {
 
     @Override // java.util.concurrent.Callable
     public final Object call() {
-        return VideoDemuxerFFmpeg.lambda$seek$2(this.f40424a, this.b);
+        return VideoDemuxerFFmpeg.lambda$seek$2(this.f26733a, this.b);
     }
 }

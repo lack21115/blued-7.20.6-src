@@ -6,27 +6,27 @@ import android.content.Context;
 public final class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile String f24606a = "";
+    private static volatile String f10919a = "";
 
     public static String a(Context context) {
         String str;
-        if (com.opos.cmn.an.c.a.a(f24606a)) {
+        if (com.opos.cmn.an.c.a.a(f10919a)) {
             if (context != null) {
-                f24606a = f.b(context);
+                f10919a = f.b(context);
             }
-            if (com.opos.cmn.an.c.a.a(f24606a)) {
-                f24606a = com.opos.cmn.an.b.d.c();
-                com.opos.cmn.an.f.a.b("RegionTool", "get region by os:" + f24606a);
-                if (com.opos.cmn.an.c.a.a(f24606a)) {
-                    f24606a = "CN";
+            if (com.opos.cmn.an.c.a.a(f10919a)) {
+                f10919a = com.opos.cmn.an.b.d.c();
+                com.opos.cmn.an.f.a.b("RegionTool", "get region by os:" + f10919a);
+                if (com.opos.cmn.an.c.a.a(f10919a)) {
+                    f10919a = "CN";
                     str = "set default region";
                 }
             }
-            return f24606a;
+            return f10919a;
         }
-        str = "get Region result =" + f24606a;
+        str = "get Region result =" + f10919a;
         com.opos.cmn.an.f.a.b("RegionTool", str);
-        return f24606a;
+        return f10919a;
     }
 
     public static void a(Context context, String str) {
@@ -37,14 +37,14 @@ public final class d {
                 } else {
                     try {
                         String upperCase = str.toUpperCase();
-                        if (!com.opos.cmn.an.c.a.a(upperCase) && !upperCase.contentEquals(f24606a)) {
-                            f24606a = upperCase;
+                        if (!com.opos.cmn.an.c.a.a(upperCase) && !upperCase.contentEquals(f10919a)) {
+                            f10919a = upperCase;
                             if (context != null) {
                                 final Context applicationContext = context.getApplicationContext();
                                 new Thread(new Runnable() { // from class: com.opos.cmn.biz.a.d.1
                                     @Override // java.lang.Runnable
                                     public void run() {
-                                        f.b(Context.this, d.f24606a);
+                                        f.b(Context.this, d.f10919a);
                                     }
                                 }).start();
                             }

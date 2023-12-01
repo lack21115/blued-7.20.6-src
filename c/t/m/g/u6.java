@@ -12,11 +12,11 @@ import java.util.Iterator;
 public class u6 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static boolean f4014a = false;
+    public static boolean f3966a = false;
     public static Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    public static v6 f4015c;
+    public static v6 f3967c;
 
     public static String a(Context context) {
         ActivityManager.RunningAppProcessInfo next;
@@ -37,21 +37,21 @@ public class u6 {
 
     public static void a(Context context, File file) {
         b = context;
-        if (f4014a) {
+        if (f3966a) {
             t6.a(context, file);
         }
     }
 
     public static void a(v6 v6Var) {
-        f4015c = v6Var;
+        f3967c = v6Var;
     }
 
     public static void a(String str, int i, String str2) {
-        if (f4014a) {
+        if (f3966a) {
             String str3 = System.currentTimeMillis() + ",p:" + a(b) + ",t:" + Thread.currentThread().getName() + "," + str2;
-            if (f4015c != null) {
+            if (f3967c != null) {
                 new SimpleDateFormat("HH:mm:ss").format(new Date());
-                f4015c.a(str, str2);
+                f3967c.a(str, str2);
             }
             t6 a2 = t6.a();
             if (a2 != null) {

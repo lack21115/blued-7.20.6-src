@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.os.SystemClock;
 import android.text.TextUtils;
 import android.util.Base64;
+import com.huawei.openalliance.ad.constant.t;
 import com.tencent.connect.auth.QQToken;
 import com.tencent.connect.common.BaseApi;
 import com.tencent.connect.common.Constants;
@@ -44,20 +45,20 @@ public class QzoneShare extends BaseApi {
     public static final int SHARE_TO_QZONE_TYPE_NO_TYPE = 0;
 
     /* renamed from: a  reason: collision with root package name */
-    private boolean f36200a;
+    private boolean f22509a;
     private boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f36201c;
+    private boolean f22510c;
     private boolean d;
     public String mViaShareQzoneType;
 
     public QzoneShare(Context context, QQToken qQToken) {
         super(qQToken);
         this.mViaShareQzoneType = "";
-        this.f36200a = true;
+        this.f22509a = true;
         this.b = false;
-        this.f36201c = false;
+        this.f22510c = false;
         this.d = false;
     }
 
@@ -83,7 +84,7 @@ public class QzoneShare extends BaseApi {
             for (int i3 = 0; i3 < size; i3++) {
                 stringBuffer2.append(URLEncoder.encode(stringArrayList.get(i3)));
                 if (i3 != size - 1) {
-                    stringBuffer2.append(";");
+                    stringBuffer2.append(t.aE);
                 }
             }
             stringBuffer.append("&image_url=" + Base64.encodeToString(Util.getBytesUTF8(stringBuffer2.toString()), 2));
@@ -181,9 +182,9 @@ public class QzoneShare extends BaseApi {
             this.mViaShareQzoneType = "4";
         }
         if (i == 1) {
-            this.f36200a = true;
+            this.f22509a = true;
             this.b = false;
-            this.f36201c = true;
+            this.f22510c = true;
             this.d = false;
         } else if (i == 5) {
             iUiListener.onError(new UiError(-5, Constants.MSG_SHARE_TYPE_ERROR, null));
@@ -192,15 +193,15 @@ public class QzoneShare extends BaseApi {
             return;
         } else if (i != 6) {
             if (!Util.isEmpty(string) || !Util.isEmpty(string2)) {
-                this.f36200a = true;
+                this.f22509a = true;
             } else if (stringArrayList == null || stringArrayList.size() == 0) {
                 string = "来自" + str + "的分享";
-                this.f36200a = true;
+                this.f22509a = true;
             } else {
-                this.f36200a = false;
+                this.f22509a = false;
             }
             this.b = false;
-            this.f36201c = true;
+            this.f22510c = true;
             this.d = false;
         } else if (SystemUtils.compareQQVersion(activity, SystemUtils.QQ_VERSION_NAME_5_0_0) < 0) {
             iUiListener.onError(new UiError(-15, Constants.MSG_PARAM_APPSHARE_TOO_LOW, null));
@@ -217,7 +218,7 @@ public class QzoneShare extends BaseApi {
             d.a().a(1, "SHARE_CHECK_SDK", Constants.DEFAULT_UIN, this.mToken.getAppId(), String.valueOf(4), Long.valueOf(SystemClock.elapsedRealtime()), 0, 1, Constants.MSG_SHARE_NOSD_ERROR);
             return;
         }
-        if (this.f36200a) {
+        if (this.f22509a) {
             if (TextUtils.isEmpty(string3)) {
                 iUiListener.onError(new UiError(-5, Constants.MSG_PARAM_TARGETURL_NULL_ERROR, null));
                 f.e("openSDK_LOG.QzoneShare", "shareToQzone() targetUrl null error--end");
@@ -233,7 +234,7 @@ public class QzoneShare extends BaseApi {
         if (this.b) {
             bundle.putString("title", "");
             bundle.putString("summary", "");
-        } else if (this.f36201c && Util.isEmpty(string)) {
+        } else if (this.f22510c && Util.isEmpty(string)) {
             iUiListener.onError(new UiError(-6, Constants.MSG_PARAM_TITLE_NULL_ERROR, null));
             f.e("openSDK_LOG.QzoneShare", "shareToQzone() title is null--end");
             d.a().a(1, "SHARE_CHECK_SDK", Constants.DEFAULT_UIN, this.mToken.getAppId(), String.valueOf(4), Long.valueOf(SystemClock.elapsedRealtime()), 0, 1, "shareToQzone() title is null");

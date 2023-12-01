@@ -20,7 +20,7 @@ import java.util.regex.Pattern;
 public final class be {
 
     /* renamed from: a  reason: collision with root package name */
-    private static List<File> f35291a = new ArrayList();
+    private static List<File> f21600a = new ArrayList();
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r0v15, types: [java.io.BufferedInputStream] */
@@ -231,7 +231,7 @@ public final class be {
             return null;
         }
         al.a("Read system log from native record file(length: %s bytes): %s", Long.valueOf(file.length()), file.getAbsolutePath());
-        f35291a.add(file);
+        f21600a.add(file);
         al.c("Add this record file to list for cleaning lastly.", new Object[0]);
         if (str2 == null) {
             return ap.a(new File(str), i, z);
@@ -337,19 +337,19 @@ public final class be {
 
     public static void a(boolean z, String str) {
         if (str != null) {
-            f35291a.add(new File(str, "rqd_record.eup"));
-            f35291a.add(new File(str, "reg_record.txt"));
-            f35291a.add(new File(str, "map_record.txt"));
-            f35291a.add(new File(str, "backup_record.txt"));
+            f21600a.add(new File(str, "rqd_record.eup"));
+            f21600a.add(new File(str, "reg_record.txt"));
+            f21600a.add(new File(str, "map_record.txt"));
+            f21600a.add(new File(str, "backup_record.txt"));
             if (z) {
                 c(str);
             }
         }
-        List<File> list = f35291a;
+        List<File> list = f21600a;
         if (list == null || list.size() <= 0) {
             return;
         }
-        for (File file : f35291a) {
+        for (File file : f21600a) {
             if (file.exists() && file.canWrite()) {
                 file.delete();
                 al.c("Delete record file %s", file.getAbsoluteFile());

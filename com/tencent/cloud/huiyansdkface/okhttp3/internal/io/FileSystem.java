@@ -11,7 +11,7 @@ import java.io.IOException;
 public interface FileSystem {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final FileSystem f36018a = new FileSystem() { // from class: com.tencent.cloud.huiyansdkface.okhttp3.internal.io.FileSystem.1
+    public static final FileSystem f22327a = new FileSystem() { // from class: com.tencent.cloud.huiyansdkface.okhttp3.internal.io.FileSystem.1
         @Override // com.tencent.cloud.huiyansdkface.okhttp3.internal.io.FileSystem
         public Sink appendingSink(File file) throws FileNotFoundException {
             try {

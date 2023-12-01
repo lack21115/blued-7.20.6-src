@@ -40,7 +40,7 @@ public class GroupUpdateCountFragment extends BaseFragment implements View.OnCli
     private static String k;
 
     /* renamed from: c  reason: collision with root package name */
-    private View f30861c;
+    private View f17171c;
     private Context d;
     private TextView e;
     private LinearLayout f;
@@ -57,9 +57,8 @@ public class GroupUpdateCountFragment extends BaseFragment implements View.OnCli
     private String b = GroupUpdateCountFragment.class.getSimpleName();
 
     /* renamed from: a  reason: collision with root package name */
-    public BluedUIHttpResponse f30860a = new BluedUIHttpResponse<BluedEntityA<BluedGroupAdminLists>>() { // from class: com.soft.blued.ui.group.GroupUpdateCountFragment.4
+    public BluedUIHttpResponse f17170a = new BluedUIHttpResponse<BluedEntityA<BluedGroupAdminLists>>() { // from class: com.soft.blued.ui.group.GroupUpdateCountFragment.4
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public void onUIUpdate(BluedEntityA<BluedGroupAdminLists> bluedEntityA) {
             AppMethods.d((int) R.string.done);
@@ -67,13 +66,11 @@ public class GroupUpdateCountFragment extends BaseFragment implements View.OnCli
             GroupUpdateCountFragment.this.q.setVisibility(0);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIFinish() {
             super.onUIFinish();
             DialogUtils.b(GroupUpdateCountFragment.this.i);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIStart() {
             super.onUIStart();
             DialogUtils.a(GroupUpdateCountFragment.this.i);
@@ -81,27 +78,27 @@ public class GroupUpdateCountFragment extends BaseFragment implements View.OnCli
     };
 
     private void c() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.f30861c.findViewById(2131370749);
-        commonTopTitleNoTrans.a();
-        commonTopTitleNoTrans.setCenterText(getString(R.string.up_group));
-        commonTopTitleNoTrans.setLeftClickListener(this);
+        CommonTopTitleNoTrans findViewById = this.f17171c.findViewById(R.id.top_title);
+        findViewById.a();
+        findViewById.setCenterText(getString(R.string.up_group));
+        findViewById.setLeftClickListener(this);
     }
 
     private void d() {
         this.i = DialogUtils.a(this.d);
-        this.h = (LinearLayout) this.f30861c.findViewById(R.id.ll_already_upgraded);
-        this.m = (TextView) this.f30861c.findViewById(R.id.up_verify_title);
-        TextView textView = (TextView) this.f30861c.findViewById(R.id.up_group_verify);
+        this.h = (LinearLayout) this.f17171c.findViewById(R.id.ll_already_upgraded);
+        this.m = (TextView) this.f17171c.findViewById(R.id.up_verify_title);
+        TextView textView = (TextView) this.f17171c.findViewById(R.id.up_group_verify);
         this.n = textView;
         textView.setOnClickListener(this);
-        this.e = (TextView) this.f30861c.findViewById(R.id.no_update);
-        this.f = (LinearLayout) this.f30861c.findViewById(R.id.liner_update);
-        this.g = (LinearLayout) this.f30861c.findViewById(R.id.up_verify_title_liner);
-        TextView textView2 = (TextView) this.f30861c.findViewById(R.id.up_vip_group_verify);
+        this.e = (TextView) this.f17171c.findViewById(R.id.no_update);
+        this.f = (LinearLayout) this.f17171c.findViewById(R.id.liner_update);
+        this.g = (LinearLayout) this.f17171c.findViewById(R.id.up_verify_title_liner);
+        TextView textView2 = (TextView) this.f17171c.findViewById(R.id.up_vip_group_verify);
         this.p = textView2;
         textView2.setOnClickListener(this);
-        this.q = (LinearLayout) this.f30861c.findViewById(R.id.ll_vip_already_upgraded);
-        ImageView imageView = (ImageView) this.f30861c.findViewById(R.id.iv_vip_icon);
+        this.q = (LinearLayout) this.f17171c.findViewById(R.id.ll_vip_already_upgraded);
+        ImageView imageView = (ImageView) this.f17171c.findViewById(R.id.iv_vip_icon);
         this.r = imageView;
         if (this.l == 2) {
             imageView.setImageResource(2131233998);
@@ -145,8 +142,7 @@ public class GroupUpdateCountFragment extends BaseFragment implements View.OnCli
                 this.m.setText(R.string.up_condition_need_icon_verify);
             }
         }
-        ((TerminalActivity) getActivity()).a(new TerminalActivity.IRestartListener() { // from class: com.soft.blued.ui.group.GroupUpdateCountFragment.1
-            @Override // com.blued.android.core.ui.TerminalActivity.IRestartListener
+        getActivity().a(new TerminalActivity.IRestartListener() { // from class: com.soft.blued.ui.group.GroupUpdateCountFragment.1
             public void a() {
                 GroupUpdateCountFragment.this.e();
             }
@@ -156,14 +152,13 @@ public class GroupUpdateCountFragment extends BaseFragment implements View.OnCli
     /* JADX INFO: Access modifiers changed from: private */
     public void e() {
         GroupHttpUtils.k(null, new BluedUIHttpResponse<BluedEntityA<VerifyStatus>>() { // from class: com.soft.blued.ui.group.GroupUpdateCountFragment.2
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<VerifyStatus> bluedEntityA) {
                 if (bluedEntityA != null) {
                     try {
                         if (bluedEntityA.hasData()) {
-                            UserInfo.getInstance().getLoginUserInfo().setVerify(new VerifyStatus[]{bluedEntityA.data.get(0)});
-                            if ("1".equals(bluedEntityA.data.get(0).has_audited)) {
+                            UserInfo.getInstance().getLoginUserInfo().setVerify(new VerifyStatus[]{(VerifyStatus) bluedEntityA.data.get(0)});
+                            if ("1".equals(((VerifyStatus) bluedEntityA.data.get(0)).has_audited)) {
                                 GroupUpdateCountFragment.this.n.setVisibility(8);
                                 GroupUpdateCountFragment.this.g.setVisibility(8);
                                 GroupUpdateCountFragment.this.h.setVisibility(0);
@@ -207,10 +202,9 @@ public class GroupUpdateCountFragment extends BaseFragment implements View.OnCli
     }
 
     public void b() {
-        GroupHttpUtils.c(this.d, this.f30860a, this.o, "0", "1", getFragmentActive());
+        GroupHttpUtils.c(this.d, this.f17170a, this.o, "0", "1", getFragmentActive());
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener
     public boolean onBackPressed() {
         getActivity().setResult(-1);
         getActivity().finish();
@@ -236,24 +230,22 @@ public class GroupUpdateCountFragment extends BaseFragment implements View.OnCli
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.d = getActivity();
-        View view = this.f30861c;
+        View view = this.f17171c;
         if (view == null) {
-            this.f30861c = layoutInflater.inflate(R.layout.fragment_group_upcount_set, viewGroup, false);
+            this.f17171c = layoutInflater.inflate(R.layout.fragment_group_upcount_set, viewGroup, false);
             a();
             c();
             d();
             e();
         } else if (view.getParent() != null) {
-            ((ViewGroup) this.f30861c.getParent()).removeView(this.f30861c);
+            ((ViewGroup) this.f17171c.getParent()).removeView(this.f17171c);
         }
-        return this.f30861c;
+        return this.f17171c;
     }
 }

@@ -11,7 +11,7 @@ final class GrowingArrayUtils {
         int[] iArr2 = iArr;
         if (i + 1 > iArr.length) {
             iArr2 = new int[growSize(i)];
-            System.arraycopy((Object) iArr, 0, (Object) iArr2, 0, i);
+            System.arraycopy(iArr, 0, iArr2, 0, i);
         }
         iArr2[i] = i2;
         return iArr2;
@@ -21,7 +21,7 @@ final class GrowingArrayUtils {
         long[] jArr2 = jArr;
         if (i + 1 > jArr.length) {
             jArr2 = new long[growSize(i)];
-            System.arraycopy((Object) jArr, 0, (Object) jArr2, 0, i);
+            System.arraycopy(jArr, 0, jArr2, 0, i);
         }
         jArr2[i] = j;
         return jArr2;
@@ -43,7 +43,7 @@ final class GrowingArrayUtils {
         boolean[] zArr2 = zArr;
         if (i + 1 > zArr.length) {
             zArr2 = new boolean[growSize(i)];
-            System.arraycopy((Object) zArr, 0, (Object) zArr2, 0, i);
+            System.arraycopy(zArr, 0, zArr2, 0, i);
         }
         zArr2[i] = z;
         return zArr2;
@@ -58,27 +58,27 @@ final class GrowingArrayUtils {
 
     public static int[] insert(int[] iArr, int i, int i2, int i3) {
         if (i + 1 <= iArr.length) {
-            System.arraycopy((Object) iArr, i2, (Object) iArr, i2 + 1, i - i2);
+            System.arraycopy(iArr, i2, iArr, i2 + 1, i - i2);
             iArr[i2] = i3;
             return iArr;
         }
         int[] iArr2 = new int[growSize(i)];
-        System.arraycopy((Object) iArr, 0, (Object) iArr2, 0, i2);
+        System.arraycopy(iArr, 0, iArr2, 0, i2);
         iArr2[i2] = i3;
-        System.arraycopy((Object) iArr, i2, (Object) iArr2, i2 + 1, iArr.length - i2);
+        System.arraycopy(iArr, i2, iArr2, i2 + 1, iArr.length - i2);
         return iArr2;
     }
 
     public static long[] insert(long[] jArr, int i, int i2, long j) {
         if (i + 1 <= jArr.length) {
-            System.arraycopy((Object) jArr, i2, (Object) jArr, i2 + 1, i - i2);
+            System.arraycopy(jArr, i2, jArr, i2 + 1, i - i2);
             jArr[i2] = j;
             return jArr;
         }
         long[] jArr2 = new long[growSize(i)];
-        System.arraycopy((Object) jArr, 0, (Object) jArr2, 0, i2);
+        System.arraycopy(jArr, 0, jArr2, 0, i2);
         jArr2[i2] = j;
-        System.arraycopy((Object) jArr, i2, (Object) jArr2, i2 + 1, jArr.length - i2);
+        System.arraycopy(jArr, i2, jArr2, i2 + 1, jArr.length - i2);
         return jArr2;
     }
 
@@ -97,14 +97,14 @@ final class GrowingArrayUtils {
 
     public static boolean[] insert(boolean[] zArr, int i, int i2, boolean z) {
         if (i + 1 <= zArr.length) {
-            System.arraycopy((Object) zArr, i2, (Object) zArr, i2 + 1, i - i2);
+            System.arraycopy(zArr, i2, zArr, i2 + 1, i - i2);
             zArr[i2] = z;
             return zArr;
         }
         boolean[] zArr2 = new boolean[growSize(i)];
-        System.arraycopy((Object) zArr, 0, (Object) zArr2, 0, i2);
+        System.arraycopy(zArr, 0, zArr2, 0, i2);
         zArr2[i2] = z;
-        System.arraycopy((Object) zArr, i2, (Object) zArr2, i2 + 1, zArr.length - i2);
+        System.arraycopy(zArr, i2, zArr2, i2 + 1, zArr.length - i2);
         return zArr2;
     }
 }

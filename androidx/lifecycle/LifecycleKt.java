@@ -3,6 +3,7 @@ package androidx.lifecycle;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.Dispatchers;
+import kotlinx.coroutines.Job;
 import kotlinx.coroutines.SupervisorKt;
 
 @Metadata
@@ -16,7 +17,7 @@ public final class LifecycleKt {
             if (lifecycleCoroutineScopeImpl2 != null) {
                 return lifecycleCoroutineScopeImpl2;
             }
-            lifecycleCoroutineScopeImpl = new LifecycleCoroutineScopeImpl(lifecycle, SupervisorKt.a(null, 1, null).plus(Dispatchers.b().a()));
+            lifecycleCoroutineScopeImpl = new LifecycleCoroutineScopeImpl(lifecycle, SupervisorKt.a((Job) null, 1, (Object) null).plus(Dispatchers.b().a()));
         } while (!lifecycle.mInternalScopeRef.compareAndSet(null, lifecycleCoroutineScopeImpl));
         lifecycleCoroutineScopeImpl.register();
         return lifecycleCoroutineScopeImpl;

@@ -38,11 +38,11 @@ public class p {
     private a Z = a.IDLE;
 
     /* renamed from: a  reason: collision with root package name */
-    private Set<String> f22985a;
+    private Set<String> f9377a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private long f22986c;
+    private long f9378c;
     private long d;
     private long e;
     private App f;
@@ -89,7 +89,7 @@ public class p {
                 if (oVar != null) {
                     oVar.Code(map);
                 }
-                eh.Code(p.this.V, 200, p.this.b, 7, map, p.this.f22986c, p.this.d, p.this.e);
+                eh.Code(p.this.V, 200, p.this.b, 7, map, p.this.f9378c, p.this.d, p.this.e);
             }
         });
     }
@@ -108,7 +108,7 @@ public class p {
                 if (oVar != null) {
                     oVar.Code(i);
                 }
-                eh.Code(p.this.V, i, p.this.b, 7, null, p.this.f22986c, p.this.d, p.this.e);
+                eh.Code(p.this.V, i, p.this.b, 7, null, p.this.f9378c, p.this.d, p.this.e);
             }
         });
     }
@@ -118,7 +118,7 @@ public class p {
     }
 
     public void Code(int i, boolean z) {
-        this.f22986c = v.Code();
+        this.f9378c = v.Code();
         ge.V("RewardAdLoader", "loadAds");
         if (!v.Code(this.V)) {
             V(1001);
@@ -137,13 +137,13 @@ public class p {
                 ac.Code(this.V, this.C);
                 this.Z = a.LOADING;
                 AdSlotParam.a aVar = new AdSlotParam.a();
-                aVar.Code(Arrays.asList(this.I)).V(i).Code(1).I(com.huawei.openalliance.ad.utils.c.Z(this.V)).Z(com.huawei.openalliance.ad.utils.c.B(this.V)).Code(this.S).Code(this.C).Code(z).S(this.F).V(this.D).Code(this.f22985a).Code(this.f).I(this.L).C(this.h);
+                aVar.Code(Arrays.asList(this.I)).V(i).Code(1).I(com.huawei.openalliance.ad.utils.c.Z(this.V)).Z(com.huawei.openalliance.ad.utils.c.B(this.V)).Code(this.S).Code(this.C).Code(z).S(this.F).V(this.D).Code(this.f9377a).Code(this.f).I(this.L).C(this.h);
                 Integer num = this.g;
                 if (num != null) {
                     aVar.S(num);
                 }
                 BaseAdReqParam baseAdReqParam = new BaseAdReqParam();
-                baseAdReqParam.Code(this.f22986c);
+                baseAdReqParam.Code(this.f9378c);
                 kk.Code(this.V, "reqRewardAd", aVar.S(), z.V(baseAdReqParam), new RemoteCallResultCallback<String>() { // from class: com.huawei.openalliance.ad.inter.p.1
                     @Override // com.huawei.openalliance.ad.ipc.RemoteCallResultCallback
                     public void onRemoteCallResult(String str, CallResult<String> callResult) {
@@ -212,7 +212,7 @@ public class p {
     }
 
     public void Code(Set<String> set) {
-        this.f22985a = set;
+        this.f9377a = set;
     }
 
     public void I(String str) {

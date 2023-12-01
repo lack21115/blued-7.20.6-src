@@ -7,15 +7,15 @@ import android.util.Log;
 public final class o {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Object f36341a = new Object();
+    private static final Object f22650a = new Object();
     private static boolean b = false;
 
     /* renamed from: c  reason: collision with root package name */
-    private static String f36342c = "";
+    private static String f22651c = "";
 
     public static boolean a() {
         boolean z;
-        synchronized (f36341a) {
+        synchronized (f22650a) {
             if (!b) {
                 Log.w("SoLoader", "load library txsoundtouch ".concat(String.valueOf(a("txsoundtouch"))));
                 Log.w("SoLoader", "load library txffmpeg ".concat(String.valueOf(a("txffmpeg"))));
@@ -37,10 +37,10 @@ public final class o {
             return true;
         } catch (Error e) {
             Log.w("SoLoader", "load library : " + e.toString());
-            return a(f36342c, str);
+            return a(f22651c, str);
         } catch (Exception e2) {
             Log.w("SoLoader", "load library : " + e2.toString());
-            return a(f36342c, str);
+            return a(f22651c, str);
         }
     }
 
@@ -62,11 +62,11 @@ public final class o {
     }
 
     public static String b() {
-        return f36342c;
+        return f22651c;
     }
 
     public static void b(String str) {
         Log.w("SoLoader", "setLibraryPath ".concat(String.valueOf(str)));
-        f36342c = str;
+        f22651c = str;
     }
 }

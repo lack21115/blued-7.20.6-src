@@ -12,22 +12,18 @@ import com.blued.community.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/databinding/FragmentInteractFeedBinding.class */
 public final class FragmentInteractFeedBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final FrameLayout f18892a;
+    public final FrameLayout a;
     public final ShapeTextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final PageTabLayout f18893c;
+    public final PageTabLayout c;
     public final CommonTopTitleNoTrans d;
     public final CustomViewPager e;
     private final LinearLayout f;
 
     private FragmentInteractFeedBinding(LinearLayout linearLayout, FrameLayout frameLayout, ShapeTextView shapeTextView, PageTabLayout pageTabLayout, CommonTopTitleNoTrans commonTopTitleNoTrans, CustomViewPager customViewPager) {
         this.f = linearLayout;
-        this.f18892a = frameLayout;
+        this.a = frameLayout;
         this.b = shapeTextView;
-        this.f18893c = pageTabLayout;
+        this.c = pageTabLayout;
         this.d = commonTopTitleNoTrans;
         this.e = customViewPager;
     }
@@ -62,7 +58,6 @@ public final class FragmentInteractFeedBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
         return this.f;

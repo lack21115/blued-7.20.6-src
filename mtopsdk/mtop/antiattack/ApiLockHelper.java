@@ -7,18 +7,16 @@ import mtopsdk.mtop.global.SwitchConfig;
 
 /* loaded from: source-3503164-dex2jar.jar:mtopsdk/mtop/antiattack/ApiLockHelper.class */
 public class ApiLockHelper {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static ConcurrentHashMap f43699a = new ConcurrentHashMap();
+    private static ConcurrentHashMap a = new ConcurrentHashMap();
 
     private static long a(String str) {
         long a2 = SwitchConfig.a().a(str);
         if (a2 > 0) {
             return a2;
         }
-        long c2 = SwitchConfig.a().c();
-        if (c2 > 0) {
-            return c2;
+        long c = SwitchConfig.a().c();
+        if (c > 0) {
+            return c;
         }
         return 10L;
     }
@@ -37,12 +35,12 @@ public class ApiLockHelper {
         if (StringUtils.b(str)) {
             return false;
         }
-        LockedEntity lockedEntity = (LockedEntity) f43699a.get(str);
+        LockedEntity lockedEntity = (LockedEntity) a.get(str);
         if (lockedEntity != null) {
-            if (Math.abs(j - lockedEntity.b) < lockedEntity.f43705c) {
+            if (Math.abs(j - lockedEntity.b) < lockedEntity.c) {
                 z = true;
             } else {
-                f43699a.remove(str);
+                a.remove(str);
                 z = false;
                 if (TBSdkLog.a(TBSdkLog.LogEnable.WarnEnable)) {
                     TBSdkLog.c("mtopsdk.ApiLockHelper", "[unLock]apiKey=" + str);
@@ -62,14 +60,14 @@ public class ApiLockHelper {
         if (StringUtils.b(str)) {
             return;
         }
-        LockedEntity lockedEntity = (LockedEntity) f43699a.get(str);
+        LockedEntity lockedEntity = (LockedEntity) a.get(str);
         if (lockedEntity == null) {
             lockedEntity = new LockedEntity(str, j, a(str));
         } else {
             lockedEntity.b = j;
-            lockedEntity.f43705c = a(str);
+            lockedEntity.c = a(str);
         }
-        f43699a.put(str, lockedEntity);
+        a.put(str, lockedEntity);
         if (TBSdkLog.a(TBSdkLog.LogEnable.WarnEnable)) {
             TBSdkLog.c("mtopsdk.ApiLockHelper", "[lock]" + a(j, lockedEntity));
         }

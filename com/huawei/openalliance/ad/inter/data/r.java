@@ -17,11 +17,11 @@ public class r implements Serializable {
     private long Z;
 
     /* renamed from: a  reason: collision with root package name */
-    private int f22975a;
+    private int f9367a;
     private long b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f22976c;
+    private String f9368c;
 
     public r() {
         this.B = 0;
@@ -43,7 +43,7 @@ public class r implements Serializable {
         this.B = mediaFile.V();
         this.C = mediaFile.I();
         this.S = mediaFile.C();
-        this.f22975a = mediaFile.D();
+        this.f9367a = mediaFile.D();
         this.b = j;
     }
 
@@ -58,7 +58,7 @@ public class r implements Serializable {
     public boolean I() {
         String str = this.I;
         if (str == null || !str.startsWith(bm.CONTENT.toString())) {
-            String str2 = this.f22976c;
+            String str2 = this.f9368c;
             return str2 != null && str2.startsWith(bm.CONTENT.toString());
         }
         return true;
@@ -73,7 +73,7 @@ public class r implements Serializable {
     }
 
     public void V(String str) {
-        this.f22976c = str;
+        this.f9368c = str;
     }
 
     public boolean V() {
@@ -89,7 +89,7 @@ public class r implements Serializable {
     }
 
     public int c() {
-        return this.f22975a;
+        return this.f9367a;
     }
 
     public long d() {
@@ -98,7 +98,7 @@ public class r implements Serializable {
 
     public String e() {
         String str = this.I;
-        return (str == null || !str.startsWith(bm.CONTENT.toString())) ? this.f22976c : this.I;
+        return (str == null || !str.startsWith(bm.CONTENT.toString())) ? this.f9368c : this.I;
     }
 
     public Float f() {

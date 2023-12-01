@@ -55,6 +55,6 @@ public abstract class b extends a {
 
     public m c() {
         com.opos.mobad.ad.c.f fVar = this.i;
-        return (fVar == null || !(fVar instanceof m)) ? m.f25671c : (m) fVar;
+        return (fVar == null || !(fVar instanceof m)) ? m.f11983c : (m) fVar;
     }
 }

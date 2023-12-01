@@ -22,7 +22,7 @@ public abstract class he implements ViewTreeObserver.OnGlobalLayoutListener, Vie
     private View Z;
 
     /* renamed from: a  reason: collision with root package name */
-    private BroadcastReceiver f22492a;
+    private BroadcastReceiver f8884a;
     private String I = Code;
     private Rect F = new Rect();
     private boolean D = true;
@@ -58,9 +58,9 @@ public abstract class he implements ViewTreeObserver.OnGlobalLayoutListener, Vie
             viewTreeObserver.removeOnScrollChangedListener(this);
         }
         this.Z.setOnSystemUiVisibilityChangeListener(null);
-        if (this.f22492a != null) {
-            HiAd.Code(this.Z.getContext()).Code(this.f22492a);
-            this.f22492a = null;
+        if (this.f8884a != null) {
+            HiAd.Code(this.Z.getContext()).Code(this.f8884a);
+            this.f8884a = null;
         }
         V.remove(this.Z);
     }
@@ -107,8 +107,8 @@ public abstract class he implements ViewTreeObserver.OnGlobalLayoutListener, Vie
         intentFilter.addAction(Intent.ACTION_SCREEN_ON);
         intentFilter.addAction(Intent.ACTION_SCREEN_OFF);
         intentFilter.addAction("android.intent.action.USER_PRESENT");
-        this.f22492a = this.L;
-        HiAd.Code(this.Z.getContext()).Code(this.f22492a, intentFilter);
+        this.f8884a = this.L;
+        HiAd.Code(this.Z.getContext()).Code(this.f8884a, intentFilter);
         this.D = true;
     }
 

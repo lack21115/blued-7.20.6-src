@@ -22,25 +22,25 @@ public final class ColorInfo implements Parcelable {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f25559a;
+    public final int f11871a;
     public final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final int f25560c;
+    public final int f11872c;
     public final byte[] d;
     private int e;
 
     public ColorInfo(int i, int i2, int i3, byte[] bArr) {
-        this.f25559a = i;
+        this.f11871a = i;
         this.b = i2;
-        this.f25560c = i3;
+        this.f11872c = i3;
         this.d = bArr;
     }
 
     ColorInfo(Parcel parcel) {
-        this.f25559a = parcel.readInt();
+        this.f11871a = parcel.readInt();
         this.b = parcel.readInt();
-        this.f25560c = parcel.readInt();
+        this.f11872c = parcel.readInt();
         this.d = parcel.readInt() != 0 ? parcel.createByteArray() : null;
     }
 
@@ -59,11 +59,11 @@ public final class ColorInfo implements Parcelable {
                 }
                 ColorInfo colorInfo = (ColorInfo) obj;
                 z = false;
-                if (this.f25559a == colorInfo.f25559a) {
+                if (this.f11871a == colorInfo.f11871a) {
                     z = false;
                     if (this.b == colorInfo.b) {
                         z = false;
-                        if (this.f25560c == colorInfo.f25560c) {
+                        if (this.f11872c == colorInfo.f11872c) {
                             if (!Arrays.equals(this.d, colorInfo.d)) {
                                 return false;
                             }
@@ -79,7 +79,7 @@ public final class ColorInfo implements Parcelable {
 
     public int hashCode() {
         if (this.e == 0) {
-            this.e = ((((((this.f25559a + LiveProtos.Event.LIVE_END_PAGE_CLOSE_CLICK_VALUE) * 31) + this.b) * 31) + this.f25560c) * 31) + Arrays.hashCode(this.d);
+            this.e = ((((((this.f11871a + LiveProtos.Event.LIVE_END_PAGE_CLOSE_CLICK_VALUE) * 31) + this.b) * 31) + this.f11872c) * 31) + Arrays.hashCode(this.d);
         }
         return this.e;
     }
@@ -87,11 +87,11 @@ public final class ColorInfo implements Parcelable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("ColorInfo(");
-        sb.append(this.f25559a);
+        sb.append(this.f11871a);
         sb.append(", ");
         sb.append(this.b);
         sb.append(", ");
-        sb.append(this.f25560c);
+        sb.append(this.f11872c);
         sb.append(", ");
         sb.append(this.d != null);
         sb.append(")");
@@ -100,9 +100,9 @@ public final class ColorInfo implements Parcelable {
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeInt(this.f25559a);
+        parcel.writeInt(this.f11871a);
         parcel.writeInt(this.b);
-        parcel.writeInt(this.f25560c);
+        parcel.writeInt(this.f11872c);
         parcel.writeInt(this.d != null ? 1 : 0);
         byte[] bArr = this.d;
         if (bArr != null) {

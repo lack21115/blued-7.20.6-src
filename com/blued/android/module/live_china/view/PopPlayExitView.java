@@ -16,26 +16,20 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/PopPlayExitView.class */
 public class PopPlayExitView {
-
-    /* renamed from: a  reason: collision with root package name */
-    public View f15119a;
+    public View a;
     public View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public Context f15120c;
+    public Context c;
     private MyPopupWindow d;
 
     /* renamed from: com.blued.android.module.live_china.view.PopPlayExitView$1  reason: invalid class name */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/PopPlayExitView$1.class */
     class AnonymousClass1 implements View.OnClickListener {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ PopPlayExitView f15121a;
+        final /* synthetic */ PopPlayExitView a;
 
         @Override // android.view.View.OnClickListener
         public void onClick(View view) {
             Tracker.onClick(view);
-            this.f15121a.a();
+            this.a.a();
         }
     }
 
@@ -51,14 +45,12 @@ public class PopPlayExitView {
     /* renamed from: com.blued.android.module.live_china.view.PopPlayExitView$3  reason: invalid class name */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/PopPlayExitView$3.class */
     class AnonymousClass3 implements View.OnClickListener {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ PopPlayExitView f15122a;
+        final /* synthetic */ PopPlayExitView a;
 
         @Override // android.view.View.OnClickListener
         public void onClick(View view) {
             Tracker.onClick(view);
-            this.f15122a.a();
+            this.a.a();
             LiveSetDataObserver.a().l();
             LiveRefreshUIObserver.a().s();
             EventTrackLive.a(LiveProtos.Event.LIVE_EXIT_GUIDE_FOLLOWED_EXIT_BTN_CLICK);
@@ -68,14 +60,12 @@ public class PopPlayExitView {
     /* renamed from: com.blued.android.module.live_china.view.PopPlayExitView$4  reason: invalid class name */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/PopPlayExitView$4.class */
     class AnonymousClass4 implements View.OnClickListener {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ PopPlayExitView f15123a;
+        final /* synthetic */ PopPlayExitView a;
 
         @Override // android.view.View.OnClickListener
         public void onClick(View view) {
             Tracker.onClick(view);
-            this.f15123a.a();
+            this.a.a();
             LiveRefreshUIObserver.a().s();
             EventTrackLive.a(LiveProtos.Event.LIVE_EXIT_GUIDE_EXIT_BTN_CLICK);
         }
@@ -99,9 +89,7 @@ public class PopPlayExitView {
 
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/PopPlayExitView$MyPopupWindow.class */
     class MyPopupWindow extends PopupWindow {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ PopPlayExitView f15125a;
+        final /* synthetic */ PopPlayExitView a;
 
         public void a() {
             super.dismiss();
@@ -110,7 +98,7 @@ public class PopPlayExitView {
         @Override // android.widget.PopupWindow
         public void dismiss() {
             try {
-                this.f15125a.a();
+                this.a.a();
             } catch (Exception e) {
                 a();
             }
@@ -121,8 +109,8 @@ public class PopPlayExitView {
         AlphaAnimation alphaAnimation = new AlphaAnimation(0.5f, 0.0f);
         alphaAnimation.setDuration(300L);
         alphaAnimation.setFillAfter(true);
-        this.f15119a.startAnimation(alphaAnimation);
-        this.b.startAnimation(AnimationUtils.loadAnimation(this.f15120c, R.anim.push_center_out));
+        this.a.startAnimation(alphaAnimation);
+        this.b.startAnimation(AnimationUtils.loadAnimation(this.c, R.anim.push_center_out));
     }
 
     public void a() {

@@ -27,9 +27,9 @@ public final class LongSparseArrayKt {
         return longSparseArray.indexOfValue(t) >= 0;
     }
 
-    public static final <T> void forEach(LongSparseArray<T> longSparseArray, Function2<? super Long, ? super T, Unit> action) {
+    public static final <T> void forEach(LongSparseArray<T> longSparseArray, Function2<? super Long, ? super T, Unit> function2) {
         Intrinsics.e(longSparseArray, "<this>");
-        Intrinsics.e(action, "action");
+        Intrinsics.e(function2, "action");
         int size = longSparseArray.size();
         if (size <= 0) {
             return;
@@ -38,7 +38,7 @@ public final class LongSparseArrayKt {
         while (true) {
             int i2 = i;
             int i3 = i2 + 1;
-            action.invoke(Long.valueOf(longSparseArray.keyAt(i2)), longSparseArray.valueAt(i2));
+            function2.invoke(Long.valueOf(longSparseArray.keyAt(i2)), longSparseArray.valueAt(i2));
             if (i3 >= size) {
                 return;
             }
@@ -52,13 +52,14 @@ public final class LongSparseArrayKt {
         return t2 == null ? t : t2;
     }
 
-    public static final <T> T getOrElse(LongSparseArray<T> longSparseArray, long j, Function0<? extends T> defaultValue) {
+    /* JADX WARN: Multi-variable type inference failed */
+    public static final <T> T getOrElse(LongSparseArray<T> longSparseArray, long j, Function0<? extends T> function0) {
         Intrinsics.e(longSparseArray, "<this>");
-        Intrinsics.e(defaultValue, "defaultValue");
+        Intrinsics.e(function0, "defaultValue");
         T t = longSparseArray.get(j);
         T t2 = t;
         if (t == null) {
-            t2 = defaultValue.invoke();
+            t2 = function0.invoke();
         }
         return t2;
     }
@@ -87,12 +88,10 @@ public final class LongSparseArrayKt {
                 return this.b;
             }
 
-            @Override // java.util.Iterator
             public boolean hasNext() {
                 return this.b < longSparseArray.size();
             }
 
-            @Override // kotlin.collections.LongIterator
             public long nextLong() {
                 LongSparseArray<T> longSparseArray2 = longSparseArray;
                 int i = this.b;
@@ -106,19 +105,19 @@ public final class LongSparseArrayKt {
         };
     }
 
-    public static final <T> LongSparseArray<T> plus(LongSparseArray<T> longSparseArray, LongSparseArray<T> other) {
+    public static final <T> LongSparseArray<T> plus(LongSparseArray<T> longSparseArray, LongSparseArray<T> longSparseArray2) {
         Intrinsics.e(longSparseArray, "<this>");
-        Intrinsics.e(other, "other");
-        LongSparseArray<T> longSparseArray2 = new LongSparseArray<>(longSparseArray.size() + other.size());
-        putAll(longSparseArray2, longSparseArray);
-        putAll(longSparseArray2, other);
-        return longSparseArray2;
+        Intrinsics.e(longSparseArray2, "other");
+        LongSparseArray<T> longSparseArray3 = new LongSparseArray<>(longSparseArray.size() + longSparseArray2.size());
+        putAll(longSparseArray3, longSparseArray);
+        putAll(longSparseArray3, longSparseArray2);
+        return longSparseArray3;
     }
 
-    public static final <T> void putAll(LongSparseArray<T> longSparseArray, LongSparseArray<T> other) {
+    public static final <T> void putAll(LongSparseArray<T> longSparseArray, LongSparseArray<T> longSparseArray2) {
         Intrinsics.e(longSparseArray, "<this>");
-        Intrinsics.e(other, "other");
-        int size = other.size();
+        Intrinsics.e(longSparseArray2, "other");
+        int size = longSparseArray2.size();
         if (size <= 0) {
             return;
         }
@@ -126,7 +125,7 @@ public final class LongSparseArrayKt {
         while (true) {
             int i2 = i;
             int i3 = i2 + 1;
-            longSparseArray.put(other.keyAt(i2), other.valueAt(i2));
+            longSparseArray.put(longSparseArray2.keyAt(i2), longSparseArray2.valueAt(i2));
             if (i3 >= size) {
                 return;
             }

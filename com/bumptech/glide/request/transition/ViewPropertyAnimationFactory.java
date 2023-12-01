@@ -7,7 +7,7 @@ import com.bumptech.glide.request.transition.ViewPropertyTransition;
 public class ViewPropertyAnimationFactory<R> implements TransitionFactory<R> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ViewPropertyTransition.Animator f21087a;
+    private final ViewPropertyTransition.Animator f7481a;
     private ViewPropertyTransition<R> b;
 
     @Override // com.bumptech.glide.request.transition.TransitionFactory
@@ -16,7 +16,7 @@ public class ViewPropertyAnimationFactory<R> implements TransitionFactory<R> {
             return NoTransition.b();
         }
         if (this.b == null) {
-            this.b = new ViewPropertyTransition<>(this.f21087a);
+            this.b = new ViewPropertyTransition<>(this.f7481a);
         }
         return this.b;
     }

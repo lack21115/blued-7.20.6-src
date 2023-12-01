@@ -4,7 +4,6 @@ import android.util.Log;
 import com.anythink.expressad.exoplayer.g.a;
 import com.anythink.expressad.exoplayer.k.af;
 import com.anythink.expressad.exoplayer.k.s;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.google.common.net.HttpHeaders;
 import com.huawei.openalliance.ad.constant.ax;
 
@@ -13,11 +12,11 @@ final class f {
     private static final String F = "und";
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f7296a = "MetadataUtil";
+    private static final String f4457a = "MetadataUtil";
     private static final int b = af.f("nam");
 
     /* renamed from: c  reason: collision with root package name */
-    private static final int f7297c = af.f("trk");
+    private static final int f4458c = af.f("trk");
     private static final int d = af.f("cmt");
     private static final int e = af.f("day");
     private static final int f = af.f("ART");
@@ -44,13 +43,13 @@ final class f {
     private static final int A = af.f("pgap");
     private static final int B = af.f("sosn");
     private static final int C = af.f("tvsh");
-    private static final int D = af.f(com.anythink.expressad.exoplayer.g.b.i.f7358a);
+    private static final int D = af.f(com.anythink.expressad.exoplayer.g.b.i.f4519a);
     private static final String[] E = {"Blues", "Classic Rock", "Country", "Dance", "Disco", "Funk", "Grunge", "Hip-Hop", "Jazz", "Metal", "New Age", "Oldies", "Other", "Pop", "R&B", "Rap", "Reggae", "Rock", "Techno", "Industrial", "Alternative", "Ska", "Death Metal", "Pranks", "Soundtrack", "Euro-Techno", "Ambient", "Trip-Hop", "Vocal", "Jazz+Funk", "Fusion", "Trance", "Classical", "Instrumental", "Acid", "House", "Game", "Sound Clip", "Gospel", "Noise", "AlternRock", "Bass", "Soul", "Punk", "Space", "Meditative", "Instrumental Pop", "Instrumental Rock", "Ethnic", "Gothic", "Darkwave", "Techno-Industrial", "Electronic", "Pop-Folk", "Eurodance", "Dream", "Southern Rock", "Comedy", "Cult", "Gangsta", "Top 40", "Christian Rap", "Pop/Funk", "Jungle", "Native American", "Cabaret", "New Wave", "Psychadelic", "Rave", "Showtunes", HttpHeaders.TRAILER, "Lo-Fi", "Tribal", "Acid Punk", "Acid Jazz", "Polka", "Retro", "Musical", "Rock & Roll", "Hard Rock", "Folk", "Folk-Rock", "National Folk", "Swing", "Fast Fusion", "Bebob", "Latin", "Revival", "Celtic", "Bluegrass", "Avantgarde", "Gothic Rock", "Progressive Rock", "Psychedelic Rock", "Symphonic Rock", "Slow Rock", "Big Band", "Chorus", "Easy Listening", "Acoustic", "Humour", "Speech", "Chanson", "Opera", "Chamber Music", "Sonata", "Symphony", "Booty Bass", "Primus", "Porn Groove", "Satire", "Slow Jam", "Club", "Tango", "Samba", "Folklore", "Ballad", "Power Ballad", "Rhythmic Soul", "Freestyle", "Duet", "Punk Rock", "Drum Solo", "A capella", "Euro-House", "Dance Hall", "Goa", "Drum & Bass", "Club-House", "Hardcore", "Terror", "Indie", "BritPop", "Negerpunk", "Polsk Punk", "Beat", "Christian Gangsta Rap", "Heavy Metal", "Black Metal", "Crossover", "Contemporary Christian", "Christian Rock", "Merengue", "Salsa", "Thrash Metal", "Anime", "Jpop", "Synthpop"};
 
     private f() {
     }
 
-    public static a.InterfaceC0129a a(s sVar) {
+    public static a.InterfaceC0058a a(s sVar) {
         com.anythink.expressad.exoplayer.g.b.a aVar;
         com.anythink.expressad.exoplayer.g.b.k kVar;
         int c2 = sVar.c() + sVar.i();
@@ -67,12 +66,12 @@ final class f {
                         String e2 = sVar.e(i5 - 16);
                         eVar = new com.anythink.expressad.exoplayer.g.b.e("und", e2, e2);
                     } else {
-                        Log.w(f7296a, "Failed to parse comment attribute: " + a.c(i2));
+                        Log.w(f4457a, "Failed to parse comment attribute: " + a.c(i2));
                     }
                     sVar.c(c2);
                     return eVar;
                 }
-                if (i4 != b && i4 != f7297c) {
+                if (i4 != b && i4 != f4458c) {
                     if (i4 != i && i4 != j) {
                         if (i4 == e) {
                             return a(i2, "TDRC", sVar);
@@ -105,7 +104,7 @@ final class f {
                 if (str != null) {
                     kVar = new com.anythink.expressad.exoplayer.g.b.k("TCON", null, str);
                 } else {
-                    Log.w(f7296a, "Failed to parse standard genre code");
+                    Log.w(f4457a, "Failed to parse standard genre code");
                     kVar = null;
                 }
                 sVar.c(c2);
@@ -128,7 +127,7 @@ final class f {
                         int b2 = a.b(sVar.i());
                         String str2 = b2 == 13 ? ax.V : b2 == 14 ? ax.Z : null;
                         if (str2 == null) {
-                            Log.w(f7296a, "Unrecognized cover art flags: ".concat(String.valueOf(b2)));
+                            Log.w(f4457a, "Unrecognized cover art flags: ".concat(String.valueOf(b2)));
                             aVar = null;
                         } else {
                             sVar.d(4);
@@ -138,7 +137,7 @@ final class f {
                             aVar = new com.anythink.expressad.exoplayer.g.b.a(str2, null, 3, bArr);
                         }
                     } else {
-                        Log.w(f7296a, "Failed to parse cover art attribute");
+                        Log.w(f4457a, "Failed to parse cover art attribute");
                         aVar = null;
                     }
                     sVar.c(c2);
@@ -178,7 +177,7 @@ final class f {
                     }
                 }
             }
-            Log.d(f7296a, "Skipped unknown metadata entry: " + a.c(i2));
+            Log.d(f4457a, "Skipped unknown metadata entry: " + a.c(i2));
             sVar.c(c2);
             return null;
         } finally {
@@ -193,7 +192,7 @@ final class f {
             String e2 = sVar.e(i3 - 16);
             return new com.anythink.expressad.exoplayer.g.b.e("und", e2, e2);
         }
-        Log.w(f7296a, "Failed to parse comment attribute: " + a.c(i2));
+        Log.w(f4457a, "Failed to parse comment attribute: " + a.c(i2));
         return null;
     }
 
@@ -206,7 +205,7 @@ final class f {
         if (i3 >= 0) {
             return z2 ? new com.anythink.expressad.exoplayer.g.b.k(str, null, Integer.toString(i3)) : new com.anythink.expressad.exoplayer.g.b.e("und", str, Integer.toString(i3));
         }
-        Log.w(f7296a, "Failed to parse uint8 attribute: " + a.c(i2));
+        Log.w(f4457a, "Failed to parse uint8 attribute: " + a.c(i2));
         return null;
     }
 
@@ -246,7 +245,7 @@ final class f {
             sVar.d(8);
             return new com.anythink.expressad.exoplayer.g.b.k(str, null, sVar.e(i3 - 16));
         }
-        Log.w(f7296a, "Failed to parse text attribute: " + a.c(i2));
+        Log.w(f4457a, "Failed to parse text attribute: " + a.c(i2));
         return null;
     }
 
@@ -260,12 +259,12 @@ final class f {
                 int e3 = sVar.e();
                 String str2 = valueOf;
                 if (e3 > 0) {
-                    str2 = valueOf + BridgeUtil.SPLIT_MARK + e3;
+                    str2 = valueOf + "/" + e3;
                 }
                 return new com.anythink.expressad.exoplayer.g.b.k(str, null, str2);
             }
         }
-        Log.w(f7296a, "Failed to parse index/count attribute: " + a.c(i2));
+        Log.w(f4457a, "Failed to parse index/count attribute: " + a.c(i2));
         return null;
     }
 
@@ -321,13 +320,13 @@ final class f {
     private static com.anythink.expressad.exoplayer.g.b.a c(s sVar) {
         int i2 = sVar.i();
         if (sVar.i() != a.aK) {
-            Log.w(f7296a, "Failed to parse cover art attribute");
+            Log.w(f4457a, "Failed to parse cover art attribute");
             return null;
         }
         int b2 = a.b(sVar.i());
         String str = b2 == 13 ? ax.V : b2 == 14 ? ax.Z : null;
         if (str == null) {
-            Log.w(f7296a, "Unrecognized cover art flags: ".concat(String.valueOf(b2)));
+            Log.w(f4457a, "Unrecognized cover art flags: ".concat(String.valueOf(b2)));
             return null;
         }
         sVar.d(4);
@@ -343,7 +342,7 @@ final class f {
             sVar.d(8);
             return sVar.d();
         }
-        Log.w(f7296a, "Failed to parse uint8 attribute value");
+        Log.w(f4457a, "Failed to parse uint8 attribute value");
         return -1;
     }
 }

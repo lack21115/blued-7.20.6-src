@@ -20,11 +20,11 @@ public class StrategyBean implements Parcelable {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f35133a = "https://android.bugly.qq.com/rqd/async";
+    public static String f21442a = "https://android.bugly.qq.com/rqd/async";
     public static String b = "https://android.bugly.qq.com/rqd/async";
 
     /* renamed from: c  reason: collision with root package name */
-    public long f35134c;
+    public long f21443c;
     public long d;
     public boolean e;
     public boolean f;
@@ -46,7 +46,7 @@ public class StrategyBean implements Parcelable {
     public long v;
 
     public StrategyBean() {
-        this.f35134c = -1L;
+        this.f21443c = -1L;
         this.d = -1L;
         this.e = true;
         this.f = true;
@@ -58,7 +58,7 @@ public class StrategyBean implements Parcelable {
         this.l = true;
         this.m = true;
         this.o = 30000L;
-        this.p = f35133a;
+        this.p = f21442a;
         this.q = b;
         this.t = 10;
         this.u = 300000L;
@@ -75,7 +75,7 @@ public class StrategyBean implements Parcelable {
     }
 
     public StrategyBean(Parcel parcel) {
-        this.f35134c = -1L;
+        this.f21443c = -1L;
         this.d = -1L;
         this.e = true;
         this.f = true;
@@ -87,7 +87,7 @@ public class StrategyBean implements Parcelable {
         this.l = true;
         this.m = true;
         this.o = 30000L;
-        this.p = f35133a;
+        this.p = f21442a;
         this.q = b;
         this.t = 10;
         this.u = 300000L;

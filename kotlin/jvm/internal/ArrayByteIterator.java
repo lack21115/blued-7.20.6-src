@@ -7,20 +7,18 @@ import kotlin.collections.ByteIterator;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/jvm/internal/ArrayByteIterator.class */
 final class ArrayByteIterator extends ByteIterator {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final byte[] f42516a;
+    private final byte[] a;
     private int b;
 
     public ArrayByteIterator(byte[] array) {
         Intrinsics.e(array, "array");
-        this.f42516a = array;
+        this.a = array;
     }
 
     @Override // kotlin.collections.ByteIterator
     public byte a() {
         try {
-            byte[] bArr = this.f42516a;
+            byte[] bArr = this.a;
             int i = this.b;
             this.b = i + 1;
             return bArr[i];
@@ -32,6 +30,6 @@ final class ArrayByteIterator extends ByteIterator {
 
     @Override // java.util.Iterator
     public boolean hasNext() {
-        return this.b < this.f42516a.length;
+        return this.b < this.a.length;
     }
 }

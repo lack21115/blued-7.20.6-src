@@ -1,5 +1,6 @@
 package com.uc.crashsdk.a;
 
+import com.huawei.hms.ads.fw;
 import com.huawei.openalliance.ad.constant.ao;
 import com.umeng.analytics.pro.bh;
 import com.umeng.commonsdk.framework.UMModuleRegister;
@@ -9,11 +10,11 @@ import com.umeng.umcrash.UMCrashContent;
 public class d {
 
     /* renamed from: a  reason: collision with root package name */
-    static final /* synthetic */ boolean f40562a = !d.class.desiredAssertionStatus();
+    static final /* synthetic */ boolean f26871a = !d.class.desiredAssertionStatus();
     private static boolean b = true;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final Object f40563c = new Object();
+    private static final Object f26872c = new Object();
     private static boolean d = false;
     private static String e = "hsdk";
     private static String f = "alid ";
@@ -37,12 +38,12 @@ public class d {
 
     public static void a(int i2) {
         if (i2 != 500) {
-            if (!f40562a) {
+            if (!f26871a) {
                 throw new AssertionError();
             }
             return;
         }
-        synchronized (f40563c) {
+        synchronized (f26872c) {
             g = null;
             a(!com.uc.crashsdk.b.F());
             if (g.b(g)) {
@@ -118,12 +119,12 @@ public class d {
         byte[] bArr2;
         StringBuilder sb = new StringBuilder();
         a(sb, "platform", com.uc.crashsdk.g.e());
-        a(sb, ao.y, com.uc.crashsdk.a.f40557a);
+        a(sb, ao.y, com.uc.crashsdk.a.f26866a);
         a(sb, UMModuleRegister.PROCESS, com.uc.crashsdk.e.h());
         a(sb, "version", com.uc.crashsdk.a.a());
         a(sb, "cver", "3.3.2.2");
         a(sb, "ctag", "release");
-        a(sb, "inter", com.uc.crashsdk.g.R() ? "true" : "false");
+        a(sb, "inter", com.uc.crashsdk.g.R() ? fw.Code : "false");
         a(sb, bh.x, "android");
         String sb2 = sb.toString();
         byte[] bArr3 = new byte[16];

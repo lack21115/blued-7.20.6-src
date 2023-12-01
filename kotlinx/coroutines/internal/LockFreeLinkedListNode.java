@@ -13,9 +13,7 @@ public class LockFreeLinkedListNode {
     private volatile /* synthetic */ Object _removedRef = null;
     static final /* synthetic */ AtomicReferenceFieldUpdater e = AtomicReferenceFieldUpdater.newUpdater(LockFreeLinkedListNode.class, Object.class, "_next");
     static final /* synthetic */ AtomicReferenceFieldUpdater f = AtomicReferenceFieldUpdater.newUpdater(LockFreeLinkedListNode.class, Object.class, "_prev");
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final /* synthetic */ AtomicReferenceFieldUpdater f43538a = AtomicReferenceFieldUpdater.newUpdater(LockFreeLinkedListNode.class, Object.class, "_removedRef");
+    private static final /* synthetic */ AtomicReferenceFieldUpdater a = AtomicReferenceFieldUpdater.newUpdater(LockFreeLinkedListNode.class, Object.class, "_removedRef");
 
     @Metadata
     /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/internal/LockFreeLinkedListNode$AbstractAtomicDesc.class */
@@ -45,15 +43,15 @@ public class LockFreeLinkedListNode {
                 }
                 return;
             }
-            LockFreeLinkedListNode c2 = c();
-            if (c2 == null) {
+            LockFreeLinkedListNode c = c();
+            if (c == null) {
                 if (DebugKt.a() && !(!z)) {
                     throw new AssertionError();
                 }
                 return;
             }
-            if (LockFreeLinkedListNode.e.compareAndSet(b, atomicOp, z ? b(b, c2) : c2) && z) {
-                a(b, c2);
+            if (LockFreeLinkedListNode.e.compareAndSet(b, atomicOp, z ? b(b, c) : c) && z) {
+                a(b, c);
             }
         }
 
@@ -117,20 +115,16 @@ public class LockFreeLinkedListNode {
     public static class AddLastDesc<T extends LockFreeLinkedListNode> extends AbstractAtomicDesc {
         private static final /* synthetic */ AtomicReferenceFieldUpdater d = AtomicReferenceFieldUpdater.newUpdater(AddLastDesc.class, Object.class, "_affectedNode");
         private volatile /* synthetic */ Object _affectedNode;
-
-        /* renamed from: a  reason: collision with root package name */
-        public final LockFreeLinkedListNode f43539a;
-
-        /* renamed from: c  reason: collision with root package name */
-        public final T f43540c;
+        public final LockFreeLinkedListNode a;
+        public final T c;
 
         public AddLastDesc(LockFreeLinkedListNode lockFreeLinkedListNode, T t) {
-            this.f43539a = lockFreeLinkedListNode;
-            this.f43540c = t;
+            this.a = lockFreeLinkedListNode;
+            this.c = t;
             if (DebugKt.a()) {
-                Object obj = this.f43540c._next;
-                T t2 = this.f43540c;
-                if (!(obj == t2 && t2._prev == this.f43540c)) {
+                Object obj = this.c._next;
+                T t2 = this.c;
+                if (!(obj == t2 && t2._prev == this.c)) {
                     throw new AssertionError();
                 }
             }
@@ -139,24 +133,24 @@ public class LockFreeLinkedListNode {
 
         @Override // kotlinx.coroutines.internal.LockFreeLinkedListNode.AbstractAtomicDesc
         protected final LockFreeLinkedListNode a(OpDescriptor opDescriptor) {
-            return this.f43539a.a(opDescriptor);
+            return this.a.a(opDescriptor);
         }
 
         @Override // kotlinx.coroutines.internal.LockFreeLinkedListNode.AbstractAtomicDesc
         protected void a(LockFreeLinkedListNode lockFreeLinkedListNode, LockFreeLinkedListNode lockFreeLinkedListNode2) {
-            this.f43540c.e(this.f43539a);
+            this.c.e(this.a);
         }
 
         @Override // kotlinx.coroutines.internal.LockFreeLinkedListNode.AbstractAtomicDesc
         protected boolean a(LockFreeLinkedListNode lockFreeLinkedListNode, Object obj) {
-            return obj != this.f43539a;
+            return obj != this.a;
         }
 
         @Override // kotlinx.coroutines.internal.LockFreeLinkedListNode.AbstractAtomicDesc
         public Object b(LockFreeLinkedListNode lockFreeLinkedListNode, LockFreeLinkedListNode lockFreeLinkedListNode2) {
-            LockFreeLinkedListNode.f.compareAndSet(this.f43540c, this.f43540c, lockFreeLinkedListNode);
-            LockFreeLinkedListNode.e.compareAndSet(this.f43540c, this.f43540c, this.f43539a);
-            return this.f43540c;
+            LockFreeLinkedListNode.f.compareAndSet(this.c, this.c, lockFreeLinkedListNode);
+            LockFreeLinkedListNode.e.compareAndSet(this.c, this.c, this.a);
+            return this.c;
         }
 
         @Override // kotlinx.coroutines.internal.LockFreeLinkedListNode.AbstractAtomicDesc
@@ -166,12 +160,12 @@ public class LockFreeLinkedListNode {
 
         @Override // kotlinx.coroutines.internal.LockFreeLinkedListNode.AbstractAtomicDesc
         public void b(PrepareOp prepareOp) {
-            d.compareAndSet(this, null, prepareOp.f43541a);
+            d.compareAndSet(this, null, prepareOp.a);
         }
 
         @Override // kotlinx.coroutines.internal.LockFreeLinkedListNode.AbstractAtomicDesc
         protected final LockFreeLinkedListNode c() {
-            return this.f43539a;
+            return this.a;
         }
     }
 
@@ -201,22 +195,18 @@ public class LockFreeLinkedListNode {
     @Metadata
     /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/internal/LockFreeLinkedListNode$PrepareOp.class */
     public static final class PrepareOp extends OpDescriptor {
-
-        /* renamed from: a  reason: collision with root package name */
-        public final LockFreeLinkedListNode f43541a;
+        public final LockFreeLinkedListNode a;
         public final LockFreeLinkedListNode b;
-
-        /* renamed from: c  reason: collision with root package name */
-        public final AbstractAtomicDesc f43542c;
+        public final AbstractAtomicDesc c;
 
         public PrepareOp(LockFreeLinkedListNode lockFreeLinkedListNode, LockFreeLinkedListNode lockFreeLinkedListNode2, AbstractAtomicDesc abstractAtomicDesc) {
-            this.f43541a = lockFreeLinkedListNode;
+            this.a = lockFreeLinkedListNode;
             this.b = lockFreeLinkedListNode2;
-            this.f43542c = abstractAtomicDesc;
+            this.c = abstractAtomicDesc;
         }
 
         public final void a() {
-            this.f43542c.b(this);
+            this.c.b(this);
         }
 
         /* JADX WARN: Multi-variable type inference failed */
@@ -224,31 +214,31 @@ public class LockFreeLinkedListNode {
         @Override // kotlinx.coroutines.internal.OpDescriptor
         public Object c(Object obj) {
             if (DebugKt.a()) {
-                if (!(obj == this.f43541a)) {
+                if (!(obj == this.a)) {
                     throw new AssertionError();
                 }
             }
             if (obj != null) {
                 LockFreeLinkedListNode lockFreeLinkedListNode = (LockFreeLinkedListNode) obj;
-                Object a2 = this.f43542c.a(this);
-                if (a2 != LockFreeLinkedList_commonKt.f43546a) {
-                    Object b = a2 != null ? d().b(a2) : d().a();
-                    LockFreeLinkedListNode.e.compareAndSet(lockFreeLinkedListNode, this, b == AtomicKt.f43517a ? d() : b == null ? this.f43542c.b(lockFreeLinkedListNode, this.b) : this.b);
+                Object a = this.c.a(this);
+                if (a != LockFreeLinkedList_commonKt.a) {
+                    Object b = a != null ? d().b(a) : d().a();
+                    LockFreeLinkedListNode.e.compareAndSet(lockFreeLinkedListNode, this, b == AtomicKt.a ? d() : b == null ? this.c.b(lockFreeLinkedListNode, this.b) : this.b);
                     return null;
                 }
                 LockFreeLinkedListNode lockFreeLinkedListNode2 = this.b;
                 if (LockFreeLinkedListNode.e.compareAndSet(lockFreeLinkedListNode, this, lockFreeLinkedListNode2.c())) {
-                    this.f43542c.b(lockFreeLinkedListNode);
+                    this.c.b(lockFreeLinkedListNode);
                     lockFreeLinkedListNode2.a((OpDescriptor) null);
                 }
-                return LockFreeLinkedList_commonKt.f43546a;
+                return LockFreeLinkedList_commonKt.a;
             }
             throw new NullPointerException("null cannot be cast to non-null type kotlinx.coroutines.internal.LockFreeLinkedListNode{ kotlinx.coroutines.internal.LockFreeLinkedListKt.Node }");
         }
 
         @Override // kotlinx.coroutines.internal.OpDescriptor
         public AtomicOp<?> d() {
-            return this.f43542c.a();
+            return this.c.a();
         }
 
         @Override // kotlinx.coroutines.internal.OpDescriptor
@@ -260,23 +250,19 @@ public class LockFreeLinkedListNode {
     @Metadata
     /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/internal/LockFreeLinkedListNode$RemoveFirstDesc.class */
     public static class RemoveFirstDesc<T> extends AbstractAtomicDesc {
-
-        /* renamed from: a  reason: collision with root package name */
-        private static final /* synthetic */ AtomicReferenceFieldUpdater f43543a = AtomicReferenceFieldUpdater.newUpdater(RemoveFirstDesc.class, Object.class, "_affectedNode");
+        private static final /* synthetic */ AtomicReferenceFieldUpdater a = AtomicReferenceFieldUpdater.newUpdater(RemoveFirstDesc.class, Object.class, "_affectedNode");
         private static final /* synthetic */ AtomicReferenceFieldUpdater d = AtomicReferenceFieldUpdater.newUpdater(RemoveFirstDesc.class, Object.class, "_originalNext");
         private volatile /* synthetic */ Object _affectedNode = null;
         private volatile /* synthetic */ Object _originalNext = null;
-
-        /* renamed from: c  reason: collision with root package name */
-        public final LockFreeLinkedListNode f43544c;
+        public final LockFreeLinkedListNode c;
 
         public RemoveFirstDesc(LockFreeLinkedListNode lockFreeLinkedListNode) {
-            this.f43544c = lockFreeLinkedListNode;
+            this.c = lockFreeLinkedListNode;
         }
 
         @Override // kotlinx.coroutines.internal.LockFreeLinkedListNode.AbstractAtomicDesc
         protected Object a(LockFreeLinkedListNode lockFreeLinkedListNode) {
-            if (lockFreeLinkedListNode == this.f43544c) {
+            if (lockFreeLinkedListNode == this.c) {
                 return LockFreeLinkedListKt.b();
             }
             return null;
@@ -284,7 +270,7 @@ public class LockFreeLinkedListNode {
 
         @Override // kotlinx.coroutines.internal.LockFreeLinkedListNode.AbstractAtomicDesc
         protected final LockFreeLinkedListNode a(OpDescriptor opDescriptor) {
-            LockFreeLinkedListNode lockFreeLinkedListNode = this.f43544c;
+            LockFreeLinkedListNode lockFreeLinkedListNode = this.c;
             while (true) {
                 Object obj = lockFreeLinkedListNode._next;
                 if (!(obj instanceof OpDescriptor)) {
@@ -294,7 +280,7 @@ public class LockFreeLinkedListNode {
                 if (opDescriptor.a(opDescriptor2)) {
                     return null;
                 }
-                opDescriptor2.c(this.f43544c);
+                opDescriptor2.c(this.c);
             }
         }
 
@@ -306,7 +292,7 @@ public class LockFreeLinkedListNode {
         @Override // kotlinx.coroutines.internal.LockFreeLinkedListNode.AbstractAtomicDesc
         protected final boolean a(LockFreeLinkedListNode lockFreeLinkedListNode, Object obj) {
             if (obj instanceof Removed) {
-                ((Removed) obj).f43558a.n();
+                ((Removed) obj).a.n();
                 return true;
             }
             return false;
@@ -324,7 +310,7 @@ public class LockFreeLinkedListNode {
 
         @Override // kotlinx.coroutines.internal.LockFreeLinkedListNode.AbstractAtomicDesc
         public void b(PrepareOp prepareOp) {
-            f43543a.compareAndSet(this, null, prepareOp.f43541a);
+            a.compareAndSet(this, null, prepareOp.a);
             d.compareAndSet(this, null, prepareOp.b);
         }
 
@@ -342,7 +328,7 @@ public class LockFreeLinkedListNode {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Code restructure failed: missing block: B:37:0x0088, code lost:
-        if (kotlinx.coroutines.internal.LockFreeLinkedListNode.e.compareAndSet(r8, r7, ((kotlinx.coroutines.internal.Removed) r0).f43558a) != false) goto L25;
+        if (kotlinx.coroutines.internal.LockFreeLinkedListNode.e.compareAndSet(r8, r7, ((kotlinx.coroutines.internal.Removed) r0).a) != false) goto L25;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -426,7 +412,7 @@ public class LockFreeLinkedListNode {
             r2 = r7
             r3 = r10
             kotlinx.coroutines.internal.Removed r3 = (kotlinx.coroutines.internal.Removed) r3
-            kotlinx.coroutines.internal.LockFreeLinkedListNode r3 = r3.f43558a
+            kotlinx.coroutines.internal.LockFreeLinkedListNode r3 = r3.a
             boolean r0 = r0.compareAndSet(r1, r2, r3)
             if (r0 != 0) goto L8e
             goto L0
@@ -459,7 +445,7 @@ public class LockFreeLinkedListNode {
         Removed removed2 = removed;
         if (removed == null) {
             removed2 = new Removed(this);
-            f43538a.lazySet(this, removed2);
+            a.lazySet(this, removed2);
         }
         return removed2;
     }
@@ -559,7 +545,7 @@ public class LockFreeLinkedListNode {
         do {
             i = i();
             if (i instanceof Removed) {
-                return ((Removed) i).f43558a;
+                return ((Removed) i).a;
             }
             if (i == this) {
                 return (LockFreeLinkedListNode) i;
@@ -571,7 +557,7 @@ public class LockFreeLinkedListNode {
     }
 
     public final void m() {
-        ((Removed) i()).f43558a.a((OpDescriptor) null);
+        ((Removed) i()).a.a((OpDescriptor) null);
     }
 
     public final void n() {
@@ -583,7 +569,7 @@ public class LockFreeLinkedListNode {
                 lockFreeLinkedListNode2.a((OpDescriptor) null);
                 return;
             }
-            lockFreeLinkedListNode = ((Removed) i).f43558a;
+            lockFreeLinkedListNode = ((Removed) i).a;
         }
     }
 

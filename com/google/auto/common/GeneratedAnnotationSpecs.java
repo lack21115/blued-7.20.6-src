@@ -25,7 +25,7 @@ public final class GeneratedAnnotationSpecs {
             @Override // java.util.function.Function
             public final Object apply(Object obj) {
                 AnnotationSpec build;
-                build = ((AnnotationSpec.Builder) obj).addMember(ContactsContract.StreamItemsColumns.COMMENTS, "$S", new Object[]{String.this}).build();
+                build = ((AnnotationSpec.Builder) obj).addMember(ContactsContract.StreamItemsColumns.COMMENTS, "$S", new Object[]{str}).build();
                 return build;
             }
         });
@@ -40,7 +40,7 @@ public final class GeneratedAnnotationSpecs {
             @Override // java.util.function.Function
             public final Object apply(Object obj) {
                 AnnotationSpec build;
-                build = ((AnnotationSpec.Builder) obj).addMember(ContactsContract.StreamItemsColumns.COMMENTS, "$S", new Object[]{String.this}).build();
+                build = ((AnnotationSpec.Builder) obj).addMember(ContactsContract.StreamItemsColumns.COMMENTS, "$S", new Object[]{str}).build();
                 return build;
             }
         });
@@ -51,7 +51,7 @@ public final class GeneratedAnnotationSpecs {
             @Override // java.util.function.Function
             public final Object apply(Object obj) {
                 AnnotationSpec.Builder addMember;
-                addMember = AnnotationSpec.builder(ClassName.get((TypeElement) obj)).addMember("value", "$S", new Object[]{Class.this.getCanonicalName()});
+                addMember = AnnotationSpec.builder(ClassName.get((TypeElement) obj)).addMember("value", "$S", new Object[]{cls.getCanonicalName()});
                 return addMember;
             }
         });
@@ -62,7 +62,7 @@ public final class GeneratedAnnotationSpecs {
             @Override // java.util.function.Function
             public final Object apply(Object obj) {
                 AnnotationSpec.Builder addMember;
-                addMember = AnnotationSpec.builder(ClassName.get((TypeElement) obj)).addMember("value", "$S", new Object[]{Class.this.getCanonicalName()});
+                addMember = AnnotationSpec.builder(ClassName.get((TypeElement) obj)).addMember("value", "$S", new Object[]{cls.getCanonicalName()});
                 return addMember;
             }
         });

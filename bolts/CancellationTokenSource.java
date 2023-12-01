@@ -11,11 +11,11 @@ import java.util.concurrent.ScheduledFuture;
 public class CancellationTokenSource implements Closeable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Object f3689a = new Object();
+    private final Object f3641a = new Object();
     private final List<CancellationTokenRegistration> b = new ArrayList();
 
     /* renamed from: c  reason: collision with root package name */
-    private final ScheduledExecutorService f3690c = BoltsExecutors.b();
+    private final ScheduledExecutorService f3642c = BoltsExecutors.b();
     private ScheduledFuture<?> d;
     private boolean e;
     private boolean f;
@@ -25,14 +25,14 @@ public class CancellationTokenSource implements Closeable {
     class AnonymousClass1 implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ CancellationTokenSource f3691a;
+        final /* synthetic */ CancellationTokenSource f3643a;
 
         @Override // java.lang.Runnable
         public void run() {
-            synchronized (this.f3691a.f3689a) {
-                this.f3691a.d = null;
+            synchronized (this.f3643a.f3641a) {
+                this.f3643a.d = null;
             }
-            this.f3691a.c();
+            this.f3643a.c();
         }
     }
 
@@ -58,7 +58,7 @@ public class CancellationTokenSource implements Closeable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a(CancellationTokenRegistration cancellationTokenRegistration) {
-        synchronized (this.f3689a) {
+        synchronized (this.f3641a) {
             d();
             this.b.remove(cancellationTokenRegistration);
         }
@@ -66,7 +66,7 @@ public class CancellationTokenSource implements Closeable {
 
     public boolean a() {
         boolean z;
-        synchronized (this.f3689a) {
+        synchronized (this.f3641a) {
             d();
             z = this.e;
         }
@@ -75,7 +75,7 @@ public class CancellationTokenSource implements Closeable {
 
     public CancellationToken b() {
         CancellationToken cancellationToken;
-        synchronized (this.f3689a) {
+        synchronized (this.f3641a) {
             d();
             cancellationToken = new CancellationToken(this);
         }
@@ -83,7 +83,7 @@ public class CancellationTokenSource implements Closeable {
     }
 
     public void c() {
-        synchronized (this.f3689a) {
+        synchronized (this.f3641a) {
             d();
             if (this.e) {
                 return;
@@ -96,7 +96,7 @@ public class CancellationTokenSource implements Closeable {
 
     @Override // java.io.Closeable, java.lang.AutoCloseable
     public void close() {
-        synchronized (this.f3689a) {
+        synchronized (this.f3641a) {
             if (this.f) {
                 return;
             }

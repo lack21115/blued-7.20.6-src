@@ -28,7 +28,6 @@ import com.anythink.expressad.video.signal.b;
 import com.anythink.expressad.video.signal.container.AbstractJSContainer;
 import com.anythink.expressad.videocommon.a;
 import com.anythink.expressad.widget.FeedBackButton;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.huawei.hms.ads.jsb.constant.Constant;
 import com.huawei.openalliance.ad.constant.ao;
 import java.util.HashMap;
@@ -64,7 +63,7 @@ public class AnythinkBTContainer extends AbstractJSContainer implements b {
     private d T;
 
     /* renamed from: a  reason: collision with root package name */
-    c f8314a;
+    c f5474a;
     private int e;
     private int f;
     private FrameLayout g;
@@ -239,7 +238,7 @@ public class AnythinkBTContainer extends AbstractJSContainer implements b {
     }
 
     private WindVaneWebView b(String str) {
-        a.C0164a a2 = com.anythink.expressad.videocommon.a.a(str);
+        a.C0093a a2 = com.anythink.expressad.videocommon.a.a(str);
         if (a2 != null) {
             this.E = a2.b();
             String str2 = d;
@@ -279,7 +278,7 @@ public class AnythinkBTContainer extends AbstractJSContainer implements b {
 
                 @Override // com.anythink.expressad.video.bt.module.a.b
                 public final void a(String str, com.anythink.expressad.foundation.d.c cVar) {
-                    AnythinkBTContainer.this.f8314a = cVar;
+                    AnythinkBTContainer.this.f5474a = cVar;
                     if (AnythinkBTContainer.this.i != null) {
                         JSONObject jSONObject = new JSONObject();
                         try {
@@ -473,10 +472,10 @@ public class AnythinkBTContainer extends AbstractJSContainer implements b {
             FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-1, -1);
             if (jSONObject != null) {
                 Context g = n.a().g();
-                int optInt = jSONObject.optInt("left", com.anythink.expressad.video.bt.a.c.f8290a);
-                int optInt2 = jSONObject.optInt(Constant.MAP_KEY_TOP, com.anythink.expressad.video.bt.a.c.f8290a);
-                int optInt3 = jSONObject.optInt("right", com.anythink.expressad.video.bt.a.c.f8290a);
-                int optInt4 = jSONObject.optInt("bottom", com.anythink.expressad.video.bt.a.c.f8290a);
+                int optInt = jSONObject.optInt("left", com.anythink.expressad.video.bt.a.c.f5450a);
+                int optInt2 = jSONObject.optInt(Constant.MAP_KEY_TOP, com.anythink.expressad.video.bt.a.c.f5450a);
+                int optInt3 = jSONObject.optInt("right", com.anythink.expressad.video.bt.a.c.f5450a);
+                int optInt4 = jSONObject.optInt("bottom", com.anythink.expressad.video.bt.a.c.f5450a);
                 if (optInt != -999 && g != null) {
                     layoutParams.leftMargin = t.b(g, optInt);
                 }
@@ -651,7 +650,7 @@ public class AnythinkBTContainer extends AbstractJSContainer implements b {
                 str = cVar2.ar();
                 this.N = cVar2.Z();
             }
-            a.C0164a a2 = com.anythink.expressad.videocommon.a.a(this.m + BridgeUtil.UNDERLINE_STR + this.N + BridgeUtil.UNDERLINE_STR + str);
+            a.C0093a a2 = com.anythink.expressad.videocommon.a.a(this.m + "_" + this.N + "_" + str);
             if (a2 != null) {
                 this.E = a2.b();
                 o.a(d, "get BT wraper.getTag = " + this.E);
@@ -661,7 +660,7 @@ public class AnythinkBTContainer extends AbstractJSContainer implements b {
                 windVaneWebView = null;
             }
             this.i = windVaneWebView;
-            com.anythink.expressad.videocommon.a.b(this.m + BridgeUtil.UNDERLINE_STR + this.N + BridgeUtil.UNDERLINE_STR + str);
+            com.anythink.expressad.videocommon.a.b(this.m + "_" + this.N + "_" + str);
             if (this.i == null) {
                 if (this.G == null || this.G.size() <= 0 || (cVar = this.G.get(0)) == null || !cVar.j()) {
                     a("big template webview is null");
@@ -738,7 +737,7 @@ public class AnythinkBTContainer extends AbstractJSContainer implements b {
                         }
                         String encodeToString = Base64.encodeToString(str2.getBytes(), 2);
                         com.anythink.expressad.atsignalcommon.windvane.j.a();
-                        com.anythink.expressad.atsignalcommon.windvane.j.a((WebView) AnythinkBTContainer.this.i, AbsFeedBackForH5.f7096a, encodeToString);
+                        com.anythink.expressad.atsignalcommon.windvane.j.a((WebView) AnythinkBTContainer.this.i, AbsFeedBackForH5.f4258a, encodeToString);
                     }
 
                     @Override // com.anythink.expressad.foundation.f.a
@@ -756,7 +755,7 @@ public class AnythinkBTContainer extends AbstractJSContainer implements b {
                         }
                         String encodeToString = Base64.encodeToString(str2.getBytes(), 2);
                         com.anythink.expressad.atsignalcommon.windvane.j.a();
-                        com.anythink.expressad.atsignalcommon.windvane.j.a((WebView) AnythinkBTContainer.this.i, AbsFeedBackForH5.f7096a, encodeToString);
+                        com.anythink.expressad.atsignalcommon.windvane.j.a((WebView) AnythinkBTContainer.this.i, AbsFeedBackForH5.f4258a, encodeToString);
                     }
 
                     @Override // com.anythink.expressad.foundation.f.a
@@ -774,7 +773,7 @@ public class AnythinkBTContainer extends AbstractJSContainer implements b {
                         }
                         String encodeToString = Base64.encodeToString(str2.getBytes(), 2);
                         com.anythink.expressad.atsignalcommon.windvane.j.a();
-                        com.anythink.expressad.atsignalcommon.windvane.j.a((WebView) AnythinkBTContainer.this.i, AbsFeedBackForH5.f7096a, encodeToString);
+                        com.anythink.expressad.atsignalcommon.windvane.j.a((WebView) AnythinkBTContainer.this.i, AbsFeedBackForH5.f4258a, encodeToString);
                     }
                 });
                 com.anythink.expressad.foundation.f.b.a().c(this.m + "_2");
@@ -788,7 +787,7 @@ public class AnythinkBTContainer extends AbstractJSContainer implements b {
                     }
                     RelativeLayout.LayoutParams layoutParams2 = layoutParams;
                     if (layoutParams == null) {
-                        layoutParams2 = new RelativeLayout.LayoutParams(com.anythink.expressad.foundation.f.b.f7817a, com.anythink.expressad.foundation.f.b.b);
+                        layoutParams2 = new RelativeLayout.LayoutParams(com.anythink.expressad.foundation.f.b.f4977a, com.anythink.expressad.foundation.f.b.b);
                     }
                     layoutParams2.topMargin = t.b(n.a().g(), 10.0f);
                     layoutParams2.leftMargin = t.b(n.a().g(), 10.0f);
@@ -824,7 +823,7 @@ public class AnythinkBTContainer extends AbstractJSContainer implements b {
             com.anythink.expressad.video.bt.a.c.a();
             com.anythink.expressad.video.bt.a.c.a(this.M, this.N);
             com.anythink.expressad.video.bt.a.c.a();
-            com.anythink.expressad.video.bt.a.c.a(this.m + BridgeUtil.UNDERLINE_STR + this.N, this.l);
+            com.anythink.expressad.video.bt.a.c.a(this.m + "_" + this.N, this.l);
             if (this.G == null || this.G.size() <= 0) {
                 return;
             }
@@ -842,7 +841,7 @@ public class AnythinkBTContainer extends AbstractJSContainer implements b {
         this.F = true;
         super.onDestroy();
         com.anythink.expressad.video.bt.a.c.a();
-        com.anythink.expressad.video.bt.a.c.d(this.m + BridgeUtil.UNDERLINE_STR + this.N);
+        com.anythink.expressad.video.bt.a.c.d(this.m + "_" + this.N);
         try {
             if (this.i != null) {
                 ViewGroup viewGroup = (ViewGroup) this.i.getParent();
@@ -864,7 +863,7 @@ public class AnythinkBTContainer extends AbstractJSContainer implements b {
             if (this.G != null && this.G.size() > 0) {
                 for (com.anythink.expressad.foundation.d.c cVar : this.G) {
                     if (cVar != null && cVar.M() != null) {
-                        com.anythink.expressad.videocommon.a.b(this.m + BridgeUtil.UNDERLINE_STR + cVar.Z() + BridgeUtil.UNDERLINE_STR + cVar.M().e());
+                        com.anythink.expressad.videocommon.a.b(this.m + "_" + cVar.Z() + "_" + cVar.M().e());
                     }
                 }
             }
@@ -880,9 +879,8 @@ public class AnythinkBTContainer extends AbstractJSContainer implements b {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
     }
 
@@ -916,11 +914,11 @@ public class AnythinkBTContainer extends AbstractJSContainer implements b {
         List<com.anythink.expressad.foundation.d.c> list = this.G;
         if (list != null && list.size() > 0 && (cVar = this.G.get(0)) != null && cVar.j()) {
             com.anythink.expressad.video.dynview.b.a a2 = com.anythink.expressad.video.dynview.b.a.a();
-            if (a2.f8352a != null) {
-                a2.f8352a.a();
+            if (a2.f5512a != null) {
+                a2.f5512a.a();
             }
         }
-        if (com.anythink.expressad.foundation.f.b.f7818c) {
+        if (com.anythink.expressad.foundation.f.b.f4978c) {
             return;
         }
         try {
@@ -945,8 +943,8 @@ public class AnythinkBTContainer extends AbstractJSContainer implements b {
         List<com.anythink.expressad.foundation.d.c> list = this.G;
         if (list != null && list.size() > 0 && (cVar = this.G.get(0)) != null && cVar.j()) {
             com.anythink.expressad.video.dynview.b.a a2 = com.anythink.expressad.video.dynview.b.a.a();
-            if (a2.f8352a != null) {
-                a2.f8352a.c();
+            if (a2.f5512a != null) {
+                a2.f5512a.c();
             }
         }
         try {
@@ -1015,8 +1013,8 @@ public class AnythinkBTContainer extends AbstractJSContainer implements b {
                 case 5:
                     com.anythink.expressad.video.bt.module.a.a aVar = this.I;
                     com.anythink.expressad.foundation.d.c cVar2 = cVar;
-                    if (this.f8314a != null) {
-                        cVar2 = this.f8314a;
+                    if (this.f5474a != null) {
+                        cVar2 = this.f5474a;
                     }
                     aVar.a(cVar2);
                     break;

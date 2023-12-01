@@ -14,6 +14,7 @@ import android.view.ViewTreeObserver;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.FrameLayout;
+import com.android.internal.R;
 
 /* loaded from: source-4181928-dex2jar.jar:com/android/internal/widget/SwipeDismissLayout.class */
 public class SwipeDismissLayout extends FrameLayout {
@@ -100,7 +101,7 @@ public class SwipeDismissLayout extends FrameLayout {
         this.mSlop = viewConfiguration.getScaledTouchSlop();
         this.mMinFlingVelocity = viewConfiguration.getScaledMinimumFlingVelocity();
         this.mMaxFlingVelocity = viewConfiguration.getScaledMaximumFlingVelocity();
-        this.mAnimationTime = getContext().getResources().getInteger(17694720);
+        this.mAnimationTime = getContext().getResources().getInteger(R.integer.config_shortAnimTime);
         this.mCancelInterpolator = new DecelerateInterpolator(1.5f);
         this.mDismissInterpolator = new AccelerateInterpolator(1.5f);
     }

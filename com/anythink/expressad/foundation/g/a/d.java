@@ -9,11 +9,11 @@ import org.json.JSONObject;
 public final class d implements e<String, JSONObject> {
 
     /* renamed from: c  reason: collision with root package name */
-    private int f7831c;
+    private int f4991c;
     private final int b = 1000;
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinkedHashMap<String, JSONObject> f7830a = new LinkedHashMap<>(0, 0.75f, true);
+    private final LinkedHashMap<String, JSONObject> f4990a = new LinkedHashMap<>(0, 0.75f, true);
 
     /* JADX WARN: Code restructure failed: missing block: B:31:0x009d, code lost:
         throw new java.lang.IllegalStateException(getClass().getName() + ".sizeOf() is reporting inconsistent results!");
@@ -29,28 +29,28 @@ public final class d implements e<String, JSONObject> {
             r0 = r4
             monitor-enter(r0)
             r0 = r4
-            int r0 = r0.f7831c     // Catch: java.lang.Throwable -> L9e
+            int r0 = r0.f4991c     // Catch: java.lang.Throwable -> L9e
             if (r0 < 0) goto L77
             r0 = r4
-            java.util.LinkedHashMap<java.lang.String, org.json.JSONObject> r0 = r0.f7830a     // Catch: java.lang.Throwable -> L9e
+            java.util.LinkedHashMap<java.lang.String, org.json.JSONObject> r0 = r0.f4990a     // Catch: java.lang.Throwable -> L9e
             boolean r0 = r0.isEmpty()     // Catch: java.lang.Throwable -> L9e
             if (r0 == 0) goto L1a
             r0 = r4
-            int r0 = r0.f7831c     // Catch: java.lang.Throwable -> L9e
+            int r0 = r0.f4991c     // Catch: java.lang.Throwable -> L9e
             if (r0 != 0) goto L77
         L1a:
             r0 = r4
-            int r0 = r0.f7831c     // Catch: java.lang.Throwable -> L9e
+            int r0 = r0.f4991c     // Catch: java.lang.Throwable -> L9e
             r1 = r5
             if (r0 <= r1) goto L74
             r0 = r4
-            java.util.LinkedHashMap<java.lang.String, org.json.JSONObject> r0 = r0.f7830a     // Catch: java.lang.Throwable -> L9e
+            java.util.LinkedHashMap<java.lang.String, org.json.JSONObject> r0 = r0.f4990a     // Catch: java.lang.Throwable -> L9e
             boolean r0 = r0.isEmpty()     // Catch: java.lang.Throwable -> L9e
             if (r0 == 0) goto L2f
             goto L74
         L2f:
             r0 = r4
-            java.util.LinkedHashMap<java.lang.String, org.json.JSONObject> r0 = r0.f7830a     // Catch: java.lang.Throwable -> L9e
+            java.util.LinkedHashMap<java.lang.String, org.json.JSONObject> r0 = r0.f4990a     // Catch: java.lang.Throwable -> L9e
             java.util.Set r0 = r0.entrySet()     // Catch: java.lang.Throwable -> L9e
             java.util.Iterator r0 = r0.iterator()     // Catch: java.lang.Throwable -> L9e
             java.lang.Object r0 = r0.next()     // Catch: java.lang.Throwable -> L9e
@@ -69,15 +69,15 @@ public final class d implements e<String, JSONObject> {
             r0 = r6
             java.lang.Object r0 = r0.getValue()     // Catch: java.lang.Throwable -> L9e
             r0 = r4
-            java.util.LinkedHashMap<java.lang.String, org.json.JSONObject> r0 = r0.f7830a     // Catch: java.lang.Throwable -> La3
+            java.util.LinkedHashMap<java.lang.String, org.json.JSONObject> r0 = r0.f4990a     // Catch: java.lang.Throwable -> La3
             r1 = r7
             java.lang.Object r0 = r0.remove(r1)     // Catch: java.lang.Throwable -> La3
             r0 = r4
             r1 = r4
-            int r1 = r1.f7831c     // Catch: java.lang.Throwable -> La3
+            int r1 = r1.f4991c     // Catch: java.lang.Throwable -> La3
             r2 = 1
             int r1 = r1 - r2
-            r0.f7831c = r1     // Catch: java.lang.Throwable -> La3
+            r0.f4991c = r1     // Catch: java.lang.Throwable -> La3
         L6f:
             r0 = r4
             monitor-exit(r0)     // Catch: java.lang.Throwable -> L9e
@@ -124,8 +124,8 @@ public final class d implements e<String, JSONObject> {
             throw new NullPointerException("key == null");
         }
         synchronized (this) {
-            if (this.f7830a.remove(str) != null) {
-                this.f7831c--;
+            if (this.f4990a.remove(str) != null) {
+                this.f4991c--;
             }
         }
     }
@@ -138,7 +138,7 @@ public final class d implements e<String, JSONObject> {
     public final Collection<String> a() {
         HashSet hashSet;
         synchronized (this) {
-            hashSet = new HashSet(this.f7830a.keySet());
+            hashSet = new HashSet(this.f4990a.keySet());
         }
         return hashSet;
     }
@@ -149,7 +149,7 @@ public final class d implements e<String, JSONObject> {
         JSONObject jSONObject;
         if (str != null) {
             synchronized (this) {
-                jSONObject = this.f7830a.get(str);
+                jSONObject = this.f4990a.get(str);
             }
             return jSONObject;
         }
@@ -163,8 +163,8 @@ public final class d implements e<String, JSONObject> {
             throw new NullPointerException("key == null");
         }
         synchronized (this) {
-            if (this.f7830a.remove(str2) != null) {
-                this.f7831c--;
+            if (this.f4990a.remove(str2) != null) {
+                this.f4991c--;
             }
         }
     }
@@ -175,9 +175,9 @@ public final class d implements e<String, JSONObject> {
             throw new NullPointerException("key == null || value == null");
         }
         synchronized (this) {
-            this.f7831c++;
-            if (this.f7830a.put(str, jSONObject) != null) {
-                this.f7831c--;
+            this.f4991c++;
+            if (this.f4990a.put(str, jSONObject) != null) {
+                this.f4991c--;
             }
         }
         a(this.b);

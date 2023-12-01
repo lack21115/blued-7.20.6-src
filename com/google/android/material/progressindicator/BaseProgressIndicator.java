@@ -171,6 +171,7 @@ public abstract class BaseProgressIndicator<S extends BaseProgressIndicatorSpec>
 
     abstract S createSpec(Context context, AttributeSet attributeSet);
 
+    @Override // android.widget.ProgressBar
     public Drawable getCurrentDrawable() {
         return isIndeterminate() ? getIndeterminateDrawable() : getProgressDrawable();
     }
@@ -253,9 +254,8 @@ public abstract class BaseProgressIndicator<S extends BaseProgressIndicatorSpec>
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.ProgressBar, android.view.View
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         registerAnimationCallbacks();
         if (visibleToUser()) {
@@ -263,9 +263,8 @@ public abstract class BaseProgressIndicator<S extends BaseProgressIndicatorSpec>
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.ProgressBar, android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         removeCallbacks(this.delayedHide);
         removeCallbacks(this.delayedShow);
         ((DrawableWithAnimatedVisibilityChange) getCurrentDrawable()).hideNow();
@@ -273,9 +272,8 @@ public abstract class BaseProgressIndicator<S extends BaseProgressIndicatorSpec>
         super.onDetachedFromWindow();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.ProgressBar, android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         synchronized (this) {
             int save = canvas.save();
             if (getPaddingLeft() != 0 || getPaddingTop() != 0) {
@@ -289,9 +287,8 @@ public abstract class BaseProgressIndicator<S extends BaseProgressIndicatorSpec>
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.ProgressBar, android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         synchronized (this) {
             super.onMeasure(i, i2);
             DrawingDelegate<S> currentDrawingDelegate = getCurrentDrawingDelegate();
@@ -304,16 +301,14 @@ public abstract class BaseProgressIndicator<S extends BaseProgressIndicatorSpec>
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // android.widget.ProgressBar, android.view.View
-    public void onVisibilityChanged(View view, int i) {
+    @Override // android.view.View
+    protected void onVisibilityChanged(View view, int i) {
         super.onVisibilityChanged(view, i);
         applyNewVisibility(i == 0);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onWindowVisibilityChanged(int i) {
+    protected void onWindowVisibilityChanged(int i) {
         super.onWindowVisibilityChanged(i);
         applyNewVisibility(false);
     }

@@ -1,5 +1,6 @@
 package com.soft.blued.ui.setting.vm;
 
+import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelKt;
 import com.blued.android.core.AppInfo;
 import com.blued.android.module.common.base.mvi.MviEvent;
@@ -22,9 +23,11 @@ import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
+import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import kotlinx.coroutines.BuildersKt__Builders_commonKt;
+import kotlinx.coroutines.BuildersKt;
 import kotlinx.coroutines.CoroutineScope;
+import kotlinx.coroutines.CoroutineStart;
 import kotlinx.coroutines.Dispatchers;
 
 /* JADX INFO: Access modifiers changed from: package-private */
@@ -34,7 +37,7 @@ import kotlinx.coroutines.Dispatchers;
 public final class MsgBackupVM$downAndRestore$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
 
     /* renamed from: a  reason: collision with root package name */
-    int f33662a;
+    int f19971a;
     final /* synthetic */ MsgBackupVM b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -45,7 +48,7 @@ public final class MsgBackupVM$downAndRestore$1 extends SuspendLambda implements
     public static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
 
         /* renamed from: a  reason: collision with root package name */
-        int f33663a;
+        int f19972a;
         final /* synthetic */ MsgBackupVM b;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -54,25 +57,22 @@ public final class MsgBackupVM$downAndRestore$1 extends SuspendLambda implements
             this.b = msgBackupVM;
         }
 
-        @Override // kotlin.jvm.functions.Function2
         /* renamed from: a */
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-            return ((AnonymousClass1) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+            return create(coroutineScope, continuation).invokeSuspend(Unit.a);
         }
 
-        @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
             return new AnonymousClass1(this.b, continuation);
         }
 
-        @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Object invokeSuspend(Object obj) {
             MsgBackInfo msgBackInfo;
             String str;
             String str2;
             String tag;
             IntrinsicsKt.a();
-            if (this.f33663a == 0) {
+            if (this.f19972a == 0) {
                 ResultKt.a(obj);
                 try {
                     StringBuilder sb = new StringBuilder();
@@ -82,7 +82,7 @@ public final class MsgBackupVM$downAndRestore$1 extends SuspendLambda implements
                     sb.append((Object) UserInfo.getInstance().getLoginUserInfo().uid);
                     String sb2 = sb.toString();
                     StringBuilder sb3 = new StringBuilder();
-                    str = this.b.f33655c;
+                    str = this.b.f19964c;
                     sb3.append((Object) str);
                     sb3.append((Object) File.separator);
                     sb3.append(sb2);
@@ -91,24 +91,24 @@ public final class MsgBackupVM$downAndRestore$1 extends SuspendLambda implements
                     if (file.exists()) {
                         file.delete();
                     }
-                    CosXmlService b = TxCloud.f10836a.b();
-                    CredentialsInfo a2 = TxCloud.f10836a.a();
-                    String a3 = Intrinsics.a(a2 == null ? null : a2.getPath(), (Object) sb2);
-                    CredentialsInfo a4 = TxCloud.f10836a.a();
+                    CosXmlService b = TxCloud.a.b();
+                    CredentialsInfo a2 = TxCloud.a.a();
+                    String a3 = Intrinsics.a(a2 == null ? null : a2.getPath(), sb2);
+                    CredentialsInfo a4 = TxCloud.a.a();
                     String bucket = a4 == null ? null : a4.getBucket();
-                    str2 = this.b.f33655c;
+                    str2 = this.b.f19964c;
                     GetObjectResult object = b == null ? null : b.getObject(new GetObjectRequest(bucket, a3, str2));
                     tag = this.b.getTAG();
-                    Logger.c(tag, Intrinsics.a("download DB: ", (Object) (object == null ? null : object.printResult())));
+                    Logger.c(tag, Intrinsics.a("download DB: ", object == null ? null : object.printResult()));
                     this.b.b(sb4);
                 } catch (Throwable th) {
                     MsgBackupVM msgBackupVM = this.b;
                     String string = AppInfo.d().getString(R.string.msg_restore_failed);
                     Intrinsics.c(string, "getAppContext().getStrin…tring.msg_restore_failed)");
                     msgBackupVM.showToast(string);
-                    BluedStructureExtKt.a(this.b, new MviEvent.LoadFinished(false, false, 3, null));
+                    BluedStructureExtKt.a(this.b, new MviEvent.LoadFinished(false, false, 3, (DefaultConstructorMarker) null));
                 }
-                return Unit.f42314a;
+                return Unit.a;
             }
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         }
@@ -121,26 +121,23 @@ public final class MsgBackupVM$downAndRestore$1 extends SuspendLambda implements
         this.b = msgBackupVM;
     }
 
-    @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-        return ((MsgBackupVM$downAndRestore$1) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+        return create(coroutineScope, continuation).invokeSuspend(Unit.a);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
         return new MsgBackupVM$downAndRestore$1(this.b, continuation);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         Object a2;
         Object a3 = IntrinsicsKt.a();
-        int i = this.f33662a;
+        int i = this.f19971a;
         if (i == 0) {
             ResultKt.a(obj);
-            this.f33662a = 1;
-            a2 = this.b.a(this);
+            this.f19971a = 1;
+            a2 = this.b.a((Continuation) this);
             if (a2 == a3) {
                 return a3;
             }
@@ -149,7 +146,7 @@ public final class MsgBackupVM$downAndRestore$1 extends SuspendLambda implements
         } else {
             ResultKt.a(obj);
         }
-        BuildersKt__Builders_commonKt.a(ViewModelKt.getViewModelScope(this.b), Dispatchers.c(), null, new AnonymousClass1(this.b, null), 2, null);
-        return Unit.f42314a;
+        BuildersKt.a(ViewModelKt.getViewModelScope((ViewModel) this.b), Dispatchers.c(), (CoroutineStart) null, new AnonymousClass1(this.b, null), 2, (Object) null);
+        return Unit.a;
     }
 }

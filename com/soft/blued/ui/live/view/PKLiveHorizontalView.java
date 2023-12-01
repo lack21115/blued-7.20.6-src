@@ -24,11 +24,11 @@ import java.util.List;
 public class PKLiveHorizontalView extends LinearLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    public Context f31314a;
+    public Context f17624a;
     public View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private TextView f31315c;
+    private TextView f17625c;
     private RecyclerView d;
     private PKLiveRecyclerAdapter e;
     private TextView f;
@@ -60,25 +60,25 @@ public class PKLiveHorizontalView extends LinearLayout {
     }
 
     public void a(Context context) {
-        this.f31314a = context;
+        this.f17624a = context;
         View inflate = LayoutInflater.from(context).inflate(R.layout.layout_pk_live, this);
         this.b = inflate;
-        this.f31315c = (TextView) inflate.findViewById(R.id.tv_live_title);
+        this.f17625c = (TextView) inflate.findViewById(R.id.tv_live_title);
         this.f = (TextView) this.b.findViewById(R.id.tv_live_more);
         this.g = (ImageView) this.b.findViewById(R.id.iv_live_more);
-        this.d = (RecyclerView) this.b.findViewById(2131369529);
-        CustomLinearLayoutManager customLinearLayoutManager = new CustomLinearLayoutManager(this.f31314a);
+        this.d = (RecyclerView) this.b.findViewById(R.id.rv_list);
+        CustomLinearLayoutManager customLinearLayoutManager = new CustomLinearLayoutManager(this.f17624a);
         customLinearLayoutManager.setStackFromEnd(true);
         customLinearLayoutManager.setOrientation(0);
         customLinearLayoutManager.scrollToPosition(0);
         this.d.setLayoutManager(customLinearLayoutManager);
-        this.e = new PKLiveRecyclerAdapter(this.f31314a);
+        this.e = new PKLiveRecyclerAdapter(this.f17624a);
         setVisibility(8);
         this.f.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.live.view.PKLiveHorizontalView.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
-                WebViewShowInfoFragment.a(AppInfo.d(), H5Url.a(5), PKLiveHorizontalView.this.f31314a.getString(2131889950), 0);
+                WebViewShowInfoFragment.a(AppInfo.d(), H5Url.a(5), PKLiveHorizontalView.this.f17624a.getString(R.string.live_pk_hot), 0);
             }
         });
     }
@@ -107,9 +107,8 @@ public class PKLiveHorizontalView extends LinearLayout {
         return this.d;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.LinearLayout, android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         super.onMeasure(i, i2);
     }
 }

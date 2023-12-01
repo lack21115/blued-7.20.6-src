@@ -46,13 +46,13 @@ public class ChatBgSelectFragment extends MVPBaseFragment<IChatBgSelectIView, Ch
 
     @Override // com.soft.blued.base.mvp.MVPBaseFragment
     public void b(Bundle bundle) {
-        this.f.setCenterText(R.string.biao_v4_chat_setting_select_bg);
+        this.f.setCenterText((int) R.string.biao_v4_chat_setting_select_bg);
         this.f.a();
-        PullToRefreshRecyclerView pullToRefreshRecyclerView = (PullToRefreshRecyclerView) this.f28294c.findViewById(R.id.msg_chatting_bg_select_view);
-        this.j = pullToRefreshRecyclerView;
-        RecyclerView refreshableView = pullToRefreshRecyclerView.getRefreshableView();
-        this.k = refreshableView;
-        refreshableView.setLayoutManager(new GridLayoutManager(getContext(), 3));
+        PullToRefreshRecyclerView findViewById = this.f14604c.findViewById(R.id.msg_chatting_bg_select_view);
+        this.j = findViewById;
+        RecyclerView recyclerView = (RecyclerView) findViewById.getRefreshableView();
+        this.k = recyclerView;
+        recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 3));
         SpacesItemDecoration spacesItemDecoration = new SpacesItemDecoration(DensityUtils.a(getContext(), 1.5f));
         spacesItemDecoration.a(5);
         spacesItemDecoration.a(true, true, true, true);
@@ -60,10 +60,9 @@ public class ChatBgSelectFragment extends MVPBaseFragment<IChatBgSelectIView, Ch
         this.k.addItemDecoration(spacesItemDecoration);
         this.j.setRefreshEnabled(false);
         this.j.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener<RecyclerView>() { // from class: com.soft.blued.ui.msg.ChatBgSelectFragment.1
-            @Override // com.blued.android.framework.view.pulltorefresh.PullToRefreshBase.OnRefreshListener
             public void onRefresh(PullToRefreshBase<RecyclerView> pullToRefreshBase) {
-                if (ChatBgSelectFragment.this.f28293a != null) {
-                    ((ChatBgSelectPresent) ChatBgSelectFragment.this.f28293a).d();
+                if (ChatBgSelectFragment.this.f14603a != null) {
+                    ((ChatBgSelectPresent) ChatBgSelectFragment.this.f14603a).d();
                 }
             }
         });
@@ -71,8 +70,8 @@ public class ChatBgSelectFragment extends MVPBaseFragment<IChatBgSelectIView, Ch
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
-                if (ChatBgSelectFragment.this.f28293a != null) {
-                    ((ChatBgSelectPresent) ChatBgSelectFragment.this.f28293a).d();
+                if (ChatBgSelectFragment.this.f14603a != null) {
+                    ((ChatBgSelectPresent) ChatBgSelectFragment.this.f14603a).d();
                 }
             }
         });
@@ -97,7 +96,6 @@ public class ChatBgSelectFragment extends MVPBaseFragment<IChatBgSelectIView, Ch
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         return super.a(R.layout.fragment_chat_bg_select, layoutInflater, viewGroup, bundle);
     }

@@ -42,11 +42,11 @@ import java.util.List;
 public class MsgPhotoSelectedPagerFragment extends BaseFragment implements EventCallBackListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f29949a;
+    private Context f16259a;
     private View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private HackyViewPager f29950c;
+    private HackyViewPager f16260c;
     private LayoutInflater d;
     private ImagePagerAdapter e;
     private View f;
@@ -114,21 +114,21 @@ public class MsgPhotoSelectedPagerFragment extends BaseFragment implements Event
     }
 
     private void f() {
-        this.d = LayoutInflater.from(this.f29949a);
-        this.f29950c = (HackyViewPager) this.b.findViewById(2131368810);
+        this.d = LayoutInflater.from(this.f16259a);
+        this.f16260c = (HackyViewPager) this.b.findViewById(2131368810);
         ImagePagerAdapter imagePagerAdapter = new ImagePagerAdapter(getChildFragmentManager());
         this.e = imagePagerAdapter;
-        this.f29950c.setAdapter(imagePagerAdapter);
+        this.f16260c.setAdapter(imagePagerAdapter);
         this.p = this.b.findViewById(2131363095);
         View findViewById = this.b.findViewById(2131370694);
         this.j = findViewById;
         this.l = (ImageView) findViewById.findViewById(2131363120);
         this.k = (TextView) this.j.findViewById(2131363108);
         this.m = (ImageView) this.j.findViewById(2131363126);
-        View findViewById2 = this.b.findViewById(2131362490);
+        View findViewById2 = this.b.findViewById(R.id.bottom_view);
         this.f = findViewById2;
         findViewById2.setBackgroundColor(getResources().getColor(2131101202));
-        TextView textView = (TextView) this.b.findViewById(2131372554);
+        TextView textView = (TextView) this.b.findViewById(R.id.tv_send);
         this.g = textView;
         textView.setTextColor(getResources().getColor(2131101191));
         this.g.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.feed.fragment.MsgPhotoSelectedPagerFragment.1
@@ -145,20 +145,20 @@ public class MsgPhotoSelectedPagerFragment extends BaseFragment implements Event
         this.h = textView2;
         textView2.setTextColor(getResources().getColor(2131101191));
         TextView textView3 = this.h;
-        textView3.setText(this.f29949a.getString(2131887473) + FlashPhotoManager.a().b().flash_prompt);
+        textView3.setText(this.f16259a.getString(R.string.delete_automatically) + FlashPhotoManager.a().b().flash_prompt);
         this.h.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.feed.fragment.MsgPhotoSelectedPagerFragment.2
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
-                if (ComplianceUtils.f10878a.a(MsgPhotoSelectedPagerFragment.this.getContext())) {
+                if (ComplianceUtils.a.a(MsgPhotoSelectedPagerFragment.this.getContext())) {
                     return;
                 }
                 if (FlashPhotoManager.a().b().flash_left_times <= 0 || FlashPhotoManager.a().b().flash_left_times < SelectPhotoManager.a().b()) {
-                    PayVIPPopupWindow.f19924c.a(MsgPhotoSelectedPagerFragment.this.f29949a, SelectPhotoManager.a().b(), new DialogInterface.OnDismissListener() { // from class: com.soft.blued.ui.feed.fragment.MsgPhotoSelectedPagerFragment.2.1
+                    PayVIPPopupWindow.c.a(MsgPhotoSelectedPagerFragment.this.f16259a, SelectPhotoManager.a().b(), new DialogInterface.OnDismissListener() { // from class: com.soft.blued.ui.feed.fragment.MsgPhotoSelectedPagerFragment.2.1
                         @Override // android.content.DialogInterface.OnDismissListener
                         public void onDismiss(DialogInterface dialogInterface) {
                             TextView textView4 = MsgPhotoSelectedPagerFragment.this.h;
-                            textView4.setText(MsgPhotoSelectedPagerFragment.this.f29949a.getString(2131887473) + FlashPhotoManager.a().b().flash_prompt);
+                            textView4.setText(MsgPhotoSelectedPagerFragment.this.f16259a.getString(R.string.delete_automatically) + FlashPhotoManager.a().b().flash_prompt);
                         }
                     });
                 } else {
@@ -177,14 +177,14 @@ public class MsgPhotoSelectedPagerFragment extends BaseFragment implements Event
             @Override // android.widget.CompoundButton.OnCheckedChangeListener
             public void onCheckedChanged(CompoundButton compoundButton, boolean z) {
                 Tracker.onCheckedChanged(compoundButton, z);
-                if (z && ComplianceUtils.f10878a.a(MsgPhotoSelectedPagerFragment.this.getContext())) {
+                if (z && ComplianceUtils.a.a(MsgPhotoSelectedPagerFragment.this.getContext())) {
                     MsgPhotoSelectedPagerFragment.this.i.setChecked(false);
                 } else if (FlashPhotoManager.a().b().flash_left_times <= 0 || FlashPhotoManager.a().b().flash_left_times < SelectPhotoManager.a().b()) {
-                    PayVIPPopupWindow.f19924c.a(MsgPhotoSelectedPagerFragment.this.f29949a, SelectPhotoManager.a().b(), new DialogInterface.OnDismissListener() { // from class: com.soft.blued.ui.feed.fragment.MsgPhotoSelectedPagerFragment.3.1
+                    PayVIPPopupWindow.c.a(MsgPhotoSelectedPagerFragment.this.f16259a, SelectPhotoManager.a().b(), new DialogInterface.OnDismissListener() { // from class: com.soft.blued.ui.feed.fragment.MsgPhotoSelectedPagerFragment.3.1
                         @Override // android.content.DialogInterface.OnDismissListener
                         public void onDismiss(DialogInterface dialogInterface) {
                             TextView textView4 = MsgPhotoSelectedPagerFragment.this.h;
-                            textView4.setText(MsgPhotoSelectedPagerFragment.this.f29949a.getString(2131887473) + FlashPhotoManager.a().b().flash_prompt);
+                            textView4.setText(MsgPhotoSelectedPagerFragment.this.f16259a.getString(R.string.delete_automatically) + FlashPhotoManager.a().b().flash_prompt);
                         }
                     });
                     MsgPhotoSelectedPagerFragment.this.i.setChecked(false);
@@ -211,14 +211,14 @@ public class MsgPhotoSelectedPagerFragment extends BaseFragment implements Event
                     MsgPhotoSelectedPagerFragment.this.g();
                     MsgPhotoSelectedPagerFragment.this.o.b(childImageInfo);
                     MsgPhotoSelectedPagerFragment.this.e.notifyDataSetChanged();
-                } else if (SelectPhotoManager.a().b() >= PhotoConstants.CONFIG.f10707a) {
-                    AppMethods.a((CharSequence) String.format(MsgPhotoSelectedPagerFragment.this.getResources().getString(2131890590), Integer.valueOf(PhotoConstants.CONFIG.f10707a)));
+                } else if (SelectPhotoManager.a().b() >= PhotoConstants.CONFIG.a) {
+                    AppMethods.a(String.format(MsgPhotoSelectedPagerFragment.this.getResources().getString(R.string.max_select_num), Integer.valueOf(PhotoConstants.CONFIG.a)));
                 } else if (MsgPhotoSelectedPagerFragment.this.i.isChecked() && MsgPhotoSelectedPagerFragment.this.o.getItemCount() + 1 > FlashPhotoManager.a().b().flash_left_times) {
-                    PayVIPPopupWindow.f19924c.a(MsgPhotoSelectedPagerFragment.this.f29949a, SelectPhotoManager.a().b(), new DialogInterface.OnDismissListener() { // from class: com.soft.blued.ui.feed.fragment.MsgPhotoSelectedPagerFragment.4.1
+                    PayVIPPopupWindow.c.a(MsgPhotoSelectedPagerFragment.this.f16259a, SelectPhotoManager.a().b(), new DialogInterface.OnDismissListener() { // from class: com.soft.blued.ui.feed.fragment.MsgPhotoSelectedPagerFragment.4.1
                         @Override // android.content.DialogInterface.OnDismissListener
                         public void onDismiss(DialogInterface dialogInterface) {
                             TextView textView4 = MsgPhotoSelectedPagerFragment.this.h;
-                            textView4.setText(MsgPhotoSelectedPagerFragment.this.f29949a.getString(2131887473) + FlashPhotoManager.a().b().flash_prompt);
+                            textView4.setText(MsgPhotoSelectedPagerFragment.this.f16259a.getString(R.string.delete_automatically) + FlashPhotoManager.a().b().flash_prompt);
                         }
                     });
                 } else {
@@ -237,7 +237,7 @@ public class MsgPhotoSelectedPagerFragment extends BaseFragment implements Event
                 MsgPhotoSelectedPagerFragment.this.h();
             }
         });
-        this.f29950c.setOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: com.soft.blued.ui.feed.fragment.MsgPhotoSelectedPagerFragment.6
+        this.f16260c.setOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: com.soft.blued.ui.feed.fragment.MsgPhotoSelectedPagerFragment.6
             @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageScrollStateChanged(int i) {
             }
@@ -254,7 +254,7 @@ public class MsgPhotoSelectedPagerFragment extends BaseFragment implements Event
             }
         });
         b(this.q);
-        this.f29950c.setCurrentItem(this.q);
+        this.f16260c.setCurrentItem(this.q);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -295,7 +295,7 @@ public class MsgPhotoSelectedPagerFragment extends BaseFragment implements Event
                     }
                     if (TextUtils.equals(((ChildImageInfo) MsgPhotoSelectedPagerFragment.this.u.get(i2)).mImagePath, childImageInfo.mImagePath)) {
                         MsgPhotoSelectedPagerFragment.this.q = i2;
-                        MsgPhotoSelectedPagerFragment.this.f29950c.setCurrentItem(MsgPhotoSelectedPagerFragment.this.q, false);
+                        MsgPhotoSelectedPagerFragment.this.f16260c.setCurrentItem(MsgPhotoSelectedPagerFragment.this.q, false);
                         return;
                     }
                     i = i2 + 1;
@@ -304,15 +304,12 @@ public class MsgPhotoSelectedPagerFragment extends BaseFragment implements Event
         });
     }
 
-    @Override // com.blued.android.module.player.media.observer.EventCallBackListener
     public void a(float f, float f2, float f3) {
     }
 
-    @Override // com.blued.android.module.player.media.observer.EventCallBackListener
     public void a(int i) {
     }
 
-    @Override // com.blued.android.module.player.media.observer.EventCallBackListener
     public void a(View view) {
         View view2 = this.p;
         if (view2 == null) {
@@ -325,44 +322,35 @@ public class MsgPhotoSelectedPagerFragment extends BaseFragment implements Event
         }
     }
 
-    @Override // com.blued.android.module.player.media.observer.EventCallBackListener
     public void a(Object... objArr) {
     }
 
-    @Override // com.blued.android.module.player.media.observer.EventCallBackListener
     public void ak_() {
     }
 
-    @Override // com.blued.android.module.player.media.observer.EventCallBackListener
     public void al_() {
     }
 
-    @Override // com.blued.android.module.player.media.observer.EventCallBackListener
     public void am_() {
         h();
     }
 
-    @Override // com.blued.android.module.player.media.observer.EventCallBackListener
     public void b(View view) {
     }
 
-    @Override // com.blued.android.module.player.media.observer.EventCallBackListener
     public void b(Object... objArr) {
     }
 
-    @Override // com.blued.android.module.player.media.observer.EventCallBackListener
     public void d() {
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         EventCallbackObserver.a().a(this);
         super.onCreate(bundle);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.f29949a = getActivity();
+        this.f16259a = getActivity();
         View view = this.b;
         if (view == null) {
             this.b = layoutInflater.inflate(R.layout.fragment_msg_photo_pager, viewGroup, false);
@@ -376,7 +364,6 @@ public class MsgPhotoSelectedPagerFragment extends BaseFragment implements Event
         return this.b;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         EventCallbackObserver.a().b(this);
         super.onDestroy();

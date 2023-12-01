@@ -1,5 +1,6 @@
 package com.bytedance.android.openliveplugin.net;
 
+import com.huawei.openalliance.ad.constant.t;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -21,9 +22,8 @@ public class NetApi {
     private static final String PROTOCOL_CHARSET = "utf-8";
     private static final int TIMEOUT = 5000;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-7206380-dex2jar.jar:com/bytedance/android/openliveplugin/net/NetApi$Holder.class */
-    public static final class Holder {
+    static final class Holder {
         private static final NetApi INSTANCE = new NetApi();
 
         private Holder() {
@@ -72,7 +72,7 @@ public class NetApi {
 
     private static String parseCharset(String str, String str2) {
         if (str != null) {
-            String[] split = str.split(";", 0);
+            String[] split = str.split(t.aE, 0);
             int i = 1;
             while (true) {
                 int i2 = i;

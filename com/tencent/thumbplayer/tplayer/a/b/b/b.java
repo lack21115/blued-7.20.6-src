@@ -4,55 +4,55 @@ import com.tencent.thumbplayer.tplayer.a.b.a;
 
 /* loaded from: source-8829756-dex2jar.jar:com/tencent/thumbplayer/tplayer/a/b/b/b.class */
 public class b extends com.tencent.thumbplayer.tplayer.a.b.a {
-    @a.InterfaceC1025a(a = "drmtype")
+    @a.InterfaceC0855a(a = "drmtype")
 
     /* renamed from: a  reason: collision with root package name */
-    private int f39378a = -1;
-    @a.InterfaceC1025a(a = "securelevel")
+    private int f25687a = -1;
+    @a.InterfaceC0855a(a = "securelevel")
     private int b = -1;
-    @a.InterfaceC1025a(a = "preparestimems")
+    @a.InterfaceC0855a(a = "preparestimems")
 
     /* renamed from: c  reason: collision with root package name */
-    private long f39379c = 0;
-    @a.InterfaceC1025a(a = "prepareetimems")
+    private long f25688c = 0;
+    @a.InterfaceC0855a(a = "prepareetimems")
     private long d = 0;
-    @a.InterfaceC1025a(a = "supportsecuredecoder")
+    @a.InterfaceC0855a(a = "supportsecuredecoder")
     private int e = -1;
-    @a.InterfaceC1025a(a = "supportsecuredecrypt")
+    @a.InterfaceC0855a(a = "supportsecuredecrypt")
     private int f = -1;
-    @a.InterfaceC1025a(a = "componentname")
+    @a.InterfaceC0855a(a = "componentname")
     private String g = "";
-    @a.InterfaceC1025a(a = "opensessionstimems")
+    @a.InterfaceC0855a(a = "opensessionstimems")
     private long h;
-    @a.InterfaceC1025a(a = "opensessionetimems")
+    @a.InterfaceC0855a(a = "opensessionetimems")
     private long i;
-    @a.InterfaceC1025a(a = "getprovisionreqstimems")
+    @a.InterfaceC0855a(a = "getprovisionreqstimems")
     private long j;
-    @a.InterfaceC1025a(a = "getprovisionreqetimems")
+    @a.InterfaceC0855a(a = "getprovisionreqetimems")
     private long k;
-    @a.InterfaceC1025a(a = "sendprovisionreqtimems")
+    @a.InterfaceC0855a(a = "sendprovisionreqtimems")
     private long l;
-    @a.InterfaceC1025a(a = "recvprovisionresptimems")
+    @a.InterfaceC0855a(a = "recvprovisionresptimems")
     private long m;
-    @a.InterfaceC1025a(a = "provideprovisionrespstimems")
+    @a.InterfaceC0855a(a = "provideprovisionrespstimems")
     private long n;
-    @a.InterfaceC1025a(a = "provideprovisionrespetimems")
+    @a.InterfaceC0855a(a = "provideprovisionrespetimems")
     private long o;
-    @a.InterfaceC1025a(a = "getkeyreqstimems")
+    @a.InterfaceC0855a(a = "getkeyreqstimems")
     private long p;
-    @a.InterfaceC1025a(a = "getkeyreqetimems")
+    @a.InterfaceC0855a(a = "getkeyreqetimems")
     private long q;
-    @a.InterfaceC1025a(a = "sendkeyreqtimems")
+    @a.InterfaceC0855a(a = "sendkeyreqtimems")
     private long r;
-    @a.InterfaceC1025a(a = "recvkeyresptimems")
+    @a.InterfaceC0855a(a = "recvkeyresptimems")
     private long s;
-    @a.InterfaceC1025a(a = "providekeyrespstimems")
+    @a.InterfaceC0855a(a = "providekeyrespstimems")
     private long t;
-    @a.InterfaceC1025a(a = "providekeyrespetimems")
+    @a.InterfaceC0855a(a = "providekeyrespetimems")
     private long u;
 
     public void c(long j) {
-        this.f39379c = j;
+        this.f25688c = j;
     }
 
     public void d(long j) {
@@ -100,7 +100,7 @@ public class b extends com.tencent.thumbplayer.tplayer.a.b.a {
     }
 
     public void o(int i) {
-        this.f39378a = i;
+        this.f25687a = i;
     }
 
     public void o(long j) {

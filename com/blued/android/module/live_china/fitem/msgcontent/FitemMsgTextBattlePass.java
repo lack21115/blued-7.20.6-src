@@ -1,7 +1,6 @@
 package com.blued.android.module.live_china.fitem.msgcontent;
 
 import android.content.Context;
-import android.os.BatteryManager;
 import android.view.View;
 import android.widget.TextView;
 import com.blued.android.module.common.utils.freedom.BaseViewHolder;
@@ -37,7 +36,7 @@ public final class FitemMsgTextBattlePass extends FitemMsgAboutUser {
             return;
         }
         if (e().msgMapExtra == null) {
-            View view = this.f10935a.itemView;
+            View view = this.a.itemView;
             Intrinsics.c(view, "viewHolder.itemView");
             BluedViewExKt.a(view);
             return;
@@ -83,14 +82,14 @@ public final class FitemMsgTextBattlePass extends FitemMsgAboutUser {
             return;
         }
         if (e().msgMapExtra == null) {
-            View view = this.f10935a.itemView;
+            View view = this.a.itemView;
             Intrinsics.c(view, "viewHolder.itemView");
             BluedViewExKt.a(view);
             return;
         }
         Map<String, Object> map = e().msgMapExtra;
         Integer num = null;
-        Integer valueOf = (map == null || (obj = map.get(BatteryManager.EXTRA_LEVEL)) == null || (obj2 = obj.toString()) == null) ? null : Integer.valueOf(Integer.parseInt(obj2));
+        Integer valueOf = (map == null || (obj = map.get("level")) == null || (obj2 = obj.toString()) == null) ? null : Integer.valueOf(Integer.parseInt(obj2));
         Map<String, Object> map2 = e().msgMapExtra;
         String obj7 = (map2 == null || (obj3 = map2.get("goods_name")) == null) ? null : obj3.toString();
         Map<String, Object> map3 = e().msgMapExtra;

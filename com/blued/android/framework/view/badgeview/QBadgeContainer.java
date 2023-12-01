@@ -11,17 +11,12 @@ import android.view.View;
 import android.widget.RelativeLayout;
 import com.blued.android.framework.R;
 import com.blued.android.framework.view.badgeview.Badge;
-import com.google.android.material.badge.BadgeDrawable;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/view/badgeview/QBadgeContainer.class */
 public class QBadgeContainer extends RelativeLayout implements Badge {
-
-    /* renamed from: a  reason: collision with root package name */
-    public QBadgeView f10205a;
+    public QBadgeView a;
     private Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f10206c;
+    private int c;
     private float d;
     private float e;
     private float f;
@@ -41,12 +36,12 @@ public class QBadgeContainer extends RelativeLayout implements Badge {
 
     public QBadgeContainer(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f10206c = 0;
+        this.c = 0;
         this.b = context;
         a();
         Resources resources = getResources();
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.Badge);
-        this.f10206c = obtainStyledAttributes.getInt(R.styleable.Badge_badge_num, 0);
+        this.c = obtainStyledAttributes.getInt(R.styleable.Badge_badge_num, 0);
         this.g = obtainStyledAttributes.getColor(R.styleable.Badge_badge_backgroundColor, -65536);
         this.h = obtainStyledAttributes.getColor(R.styleable.Badge_badge_textColor, -1);
         float dimension = resources.getDimension(R.dimen.default_off_x);
@@ -60,7 +55,7 @@ public class QBadgeContainer extends RelativeLayout implements Badge {
     }
 
     private void a() {
-        this.f10205a = new QBadgeView(getContext());
+        this.a = new QBadgeView(getContext());
     }
 
     private void b() {
@@ -72,11 +67,11 @@ public class QBadgeContainer extends RelativeLayout implements Badge {
         a(this.j, false);
         int i = this.k;
         if (i == 0) {
-            d(BadgeDrawable.TOP_START);
+            d(8388659);
         } else if (2 == i) {
-            d(BadgeDrawable.BOTTOM_START);
+            d(8388691);
         } else if (3 == i) {
-            d(BadgeDrawable.BOTTOM_END);
+            d(8388693);
         } else if (4 == i) {
             d(49);
         } else if (5 == i) {
@@ -86,101 +81,101 @@ public class QBadgeContainer extends RelativeLayout implements Badge {
         } else if (7 == i) {
             d(8388629);
         } else {
-            d(BadgeDrawable.TOP_END);
+            d(8388661);
         }
     }
 
     public Badge a(float f, float f2, boolean z) {
-        return this.f10205a.a(f, f2, z);
+        return this.a.a(f, f2, z);
     }
 
     public Badge a(float f, boolean z) {
-        return this.f10205a.a(f, z);
+        return this.a.a(f, z);
     }
 
     public Badge a(int i) {
-        return this.f10205a.a(i);
+        return this.a.a(i);
     }
 
     public Badge a(int i, float f, boolean z) {
-        return this.f10205a.a(i, f, z);
+        return this.a.a(i, f, z);
     }
 
     public Badge a(Badge.OnDragStateChangedListener onDragStateChangedListener) {
-        return this.f10205a.a(onDragStateChangedListener);
+        return this.a.a(onDragStateChangedListener);
     }
 
     public Badge a(String str) {
-        return this.f10205a.a(str);
+        return this.a.a(str);
     }
 
     public Badge a(boolean z) {
-        return this.f10205a.c(z);
+        return this.a.c(z);
     }
 
     public void a(View view) {
-        this.f10205a.a(view);
+        this.a.a(view);
         b();
     }
 
     public Badge b(float f, boolean z) {
-        return this.f10205a.b(f, z);
+        return this.a.b(f, z);
     }
 
     public Badge b(int i) {
-        return this.f10205a.b(i);
+        return this.a.b(i);
     }
 
     public void b(boolean z) {
-        this.f10205a.b(z);
+        this.a.b(z);
     }
 
     public Badge c(int i) {
-        return this.f10205a.c(i);
+        return this.a.c(i);
     }
 
     public Badge d(int i) {
-        return this.f10205a.d(i);
+        return this.a.d(i);
     }
 
     public Drawable getBadgeBackground() {
-        return this.f10205a.getBadgeBackground();
+        return this.a.getBadgeBackground();
     }
 
     public int getBadgeBackgroundColor() {
-        return this.f10205a.getBadgeBackgroundColor();
+        return this.a.getBadgeBackgroundColor();
     }
 
     public int getBadgeGravity() {
-        return this.f10205a.getBadgeGravity();
+        return this.a.getBadgeGravity();
     }
 
     public int getBadgeNumber() {
-        return this.f10205a.getBadgeNumber();
+        return this.a.getBadgeNumber();
     }
 
     public String getBadgeText() {
-        return this.f10205a.getBadgeText();
+        return this.a.getBadgeText();
     }
 
     public int getBadgeTextColor() {
-        return this.f10205a.getBadgeTextColor();
+        return this.a.getBadgeTextColor();
     }
 
     public View getBadgeView() {
-        return this.f10205a;
+        return this.a;
     }
 
     public int getBageVisible() {
-        return this.f10205a.getVisibility();
+        return this.a.getVisibility();
     }
 
     public PointF getDragCenter() {
-        return this.f10205a.getDragCenter();
+        return this.a.getDragCenter();
     }
 
     public View getTargetView() {
-        return this.f10205a.getTargetView();
+        return this.a.getTargetView();
     }
 
     @Override // android.view.View
@@ -189,6 +184,6 @@ public class QBadgeContainer extends RelativeLayout implements Badge {
     }
 
     public void setBageVisible(int i) {
-        this.f10205a.setVisibility(i);
+        this.a.setVisibility(i);
     }
 }

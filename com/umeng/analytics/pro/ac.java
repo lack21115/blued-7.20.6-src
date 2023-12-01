@@ -4,11 +4,11 @@ package com.umeng.analytics.pro;
 public class ac implements aa {
 
     /* renamed from: a  reason: collision with root package name */
-    private long f40613a;
+    private long f26922a;
 
     public ac(long j) {
-        this.f40613a = 0L;
-        this.f40613a = j;
+        this.f26922a = 0L;
+        this.f26922a = j;
     }
 
     @Override // com.umeng.analytics.pro.aa
@@ -23,6 +23,6 @@ public class ac implements aa {
 
     @Override // com.umeng.analytics.pro.aa
     public long c() {
-        return this.f40613a;
+        return this.f26922a;
     }
 }

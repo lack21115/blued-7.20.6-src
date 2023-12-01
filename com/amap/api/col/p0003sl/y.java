@@ -23,13 +23,9 @@ import com.autonavi.base.amap.mapcore.message.ScaleGestureMapMessage;
 /* renamed from: com.amap.api.col.3sl.y  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/y.class */
 public final class y {
-
-    /* renamed from: a  reason: collision with root package name */
-    IAMapDelegate f5453a;
+    IAMapDelegate a;
     Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    GestureDetector f5454c;
+    GestureDetector c;
     public AMapGestureListener d;
     private ar e;
     private ap f;
@@ -51,16 +47,14 @@ public final class y {
     /* renamed from: com.amap.api.col.3sl.y$a */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/y$a.class */
     final class a implements GestureDetector.OnDoubleTapListener, GestureDetector.OnGestureListener {
-
-        /* renamed from: a  reason: collision with root package name */
-        float f5455a;
+        float a;
         long b;
         private int d;
         private EAMapPlatformGestureInfo e;
 
         private a() {
             this.d = 0;
-            this.f5455a = 0.0f;
+            this.a = 0.0f;
             this.e = new EAMapPlatformGestureInfo();
             this.b = 0L;
         }
@@ -71,7 +65,7 @@ public final class y {
 
         @Override // android.view.GestureDetector.OnDoubleTapListener
         public final boolean onDoubleTap(MotionEvent motionEvent) {
-            y.this.f5454c.setIsLongpressEnabled(false);
+            y.this.c.setIsLongpressEnabled(false);
             this.d = motionEvent.getPointerCount();
             if (y.this.d != null) {
                 y.this.d.onDoubleTap(motionEvent.getX(), motionEvent.getY());
@@ -89,7 +83,7 @@ public final class y {
             boolean z = true;
             if (this.d == 1) {
                 try {
-                    if (!y.this.f5453a.getUiSettings().isZoomGesturesEnabled()) {
+                    if (!y.this.a.getUiSettings().isZoomGesturesEnabled()) {
                         return false;
                     }
                 } catch (Throwable th) {
@@ -100,39 +94,39 @@ public final class y {
                     this.e.mGestureState = 1;
                     this.e.mGestureType = 9;
                     this.e.mLocation = new float[]{motionEvent.getX(), motionEvent.getY()};
-                    int engineIDWithGestureInfo = y.this.f5453a.getEngineIDWithGestureInfo(this.e);
-                    this.f5455a = motionEvent.getY();
-                    y.this.f5453a.addGestureMapMessage(engineIDWithGestureInfo, ScaleGestureMapMessage.obtain(100, 1.0f, 0, 0));
+                    int engineIDWithGestureInfo = y.this.a.getEngineIDWithGestureInfo(this.e);
+                    this.a = motionEvent.getY();
+                    y.this.a.addGestureMapMessage(engineIDWithGestureInfo, ScaleGestureMapMessage.obtain(100, 1.0f, 0, 0));
                     this.b = SystemClock.uptimeMillis();
                     return true;
                 } else if (action != 2) {
                     this.e.mGestureState = 3;
                     this.e.mGestureType = 9;
                     this.e.mLocation = new float[]{motionEvent.getX(), motionEvent.getY()};
-                    int engineIDWithGestureInfo2 = y.this.f5453a.getEngineIDWithGestureInfo(this.e);
-                    y.this.f5454c.setIsLongpressEnabled(true);
-                    y.this.f5453a.addGestureMapMessage(engineIDWithGestureInfo2, ScaleGestureMapMessage.obtain(102, 1.0f, 0, 0));
+                    int engineIDWithGestureInfo2 = y.this.a.getEngineIDWithGestureInfo(this.e);
+                    y.this.c.setIsLongpressEnabled(true);
+                    y.this.a.addGestureMapMessage(engineIDWithGestureInfo2, ScaleGestureMapMessage.obtain(102, 1.0f, 0, 0));
                     if (action != 1) {
                         y.this.o = false;
                         return true;
                     }
-                    y.this.f5453a.setGestureStatus(engineIDWithGestureInfo2, 3);
+                    y.this.a.setGestureStatus(engineIDWithGestureInfo2, 3);
                     long uptimeMillis = SystemClock.uptimeMillis();
                     long j = this.b;
                     if (!y.this.o || uptimeMillis - j < 200) {
-                        return y.this.f5453a.onDoubleTap(engineIDWithGestureInfo2, motionEvent);
+                        return y.this.a.onDoubleTap(engineIDWithGestureInfo2, motionEvent);
                     }
                     y.this.o = false;
                     return true;
                 } else {
                     y.this.o = true;
-                    float y = this.f5455a - motionEvent.getY();
+                    float y = this.a - motionEvent.getY();
                     if (Math.abs(y) >= 20.0f) {
                         this.e.mGestureState = 2;
                         this.e.mGestureType = 9;
                         this.e.mLocation = new float[]{motionEvent.getX(), motionEvent.getY()};
-                        y.this.f5453a.addGestureMapMessage(y.this.f5453a.getEngineIDWithGestureInfo(this.e), ScaleGestureMapMessage.obtain(101, (y * 4.0f) / y.this.f5453a.getMapHeight(), 0, 0));
-                        this.f5455a = motionEvent.getY();
+                        y.this.a.addGestureMapMessage(y.this.a.getEngineIDWithGestureInfo(this.e), ScaleGestureMapMessage.obtain(101, (y * 4.0f) / y.this.a.getMapHeight(), 0, 0));
+                        this.a = motionEvent.getY();
                         return true;
                     }
                 }
@@ -154,13 +148,13 @@ public final class y {
                 y.this.d.onFling(f, f2);
             }
             try {
-                if (y.this.f5453a.getUiSettings().isScrollGesturesEnabled() && y.this.m <= 0 && y.this.k <= 0 && y.this.l == 0 && !y.this.q) {
+                if (y.this.a.getUiSettings().isScrollGesturesEnabled() && y.this.m <= 0 && y.this.k <= 0 && y.this.l == 0 && !y.this.q) {
                     this.e.mGestureState = 3;
                     this.e.mGestureType = 3;
                     this.e.mLocation = new float[]{motionEvent2.getX(), motionEvent2.getY()};
-                    int engineIDWithGestureInfo = y.this.f5453a.getEngineIDWithGestureInfo(this.e);
-                    y.this.f5453a.onFling();
-                    y.this.f5453a.getGLMapEngine().startMapSlidAnim(engineIDWithGestureInfo, new Point((int) motionEvent2.getX(), (int) motionEvent2.getY()), f, f2);
+                    int engineIDWithGestureInfo = y.this.a.getEngineIDWithGestureInfo(this.e);
+                    y.this.a.onFling();
+                    y.this.a.getGLMapEngine().startMapSlidAnim(engineIDWithGestureInfo, new Point((int) motionEvent2.getX(), (int) motionEvent2.getY()), f, f2);
                     return true;
                 }
                 return true;
@@ -177,7 +171,7 @@ public final class y {
                 this.e.mGestureState = 3;
                 this.e.mGestureType = 7;
                 this.e.mLocation = new float[]{motionEvent.getX(), motionEvent.getY()};
-                y.this.f5453a.onLongPress(y.this.f5453a.getEngineIDWithGestureInfo(this.e), motionEvent);
+                y.this.a.onLongPress(y.this.a.getEngineIDWithGestureInfo(this.e), motionEvent);
                 if (y.this.d != null) {
                     y.this.d.onLongPress(motionEvent.getX(), motionEvent.getY());
                 }
@@ -199,7 +193,7 @@ public final class y {
                 this.e.mGestureState = 3;
                 this.e.mGestureType = 7;
                 this.e.mLocation = new float[]{motionEvent.getX(), motionEvent.getY()};
-                y.this.f5453a.getGLMapEngine().clearAnimations(y.this.f5453a.getEngineIDWithGestureInfo(this.e), false);
+                y.this.a.getGLMapEngine().clearAnimations(y.this.a.getEngineIDWithGestureInfo(this.e), false);
             } catch (Throwable th) {
                 th.printStackTrace();
             }
@@ -211,7 +205,7 @@ public final class y {
                 this.e.mGestureState = 3;
                 this.e.mGestureType = 8;
                 this.e.mLocation = new float[]{motionEvent.getX(), motionEvent.getY()};
-                int engineIDWithGestureInfo = y.this.f5453a.getEngineIDWithGestureInfo(this.e);
+                int engineIDWithGestureInfo = y.this.a.getEngineIDWithGestureInfo(this.e);
                 if (y.this.d != null) {
                     try {
                         y.this.d.onSingleTap(motionEvent.getX(), motionEvent.getY());
@@ -219,7 +213,7 @@ public final class y {
                         th.printStackTrace();
                     }
                 }
-                return y.this.f5453a.onSingleTapConfirmed(engineIDWithGestureInfo, motionEvent);
+                return y.this.a.onSingleTapConfirmed(engineIDWithGestureInfo, motionEvent);
             }
             return false;
         }
@@ -265,12 +259,12 @@ public final class y {
             this.b.mGestureType = 6;
             this.b.mLocation = new float[]{aoVar.c().getX(), aoVar.c().getY()};
             try {
-                if (y.this.f5453a.getUiSettings().isTiltGesturesEnabled()) {
-                    int engineIDWithGestureInfo = y.this.f5453a.getEngineIDWithGestureInfo(this.b);
-                    if (y.this.f5453a.isLockMapCameraDegree(engineIDWithGestureInfo)) {
+                if (y.this.a.getUiSettings().isTiltGesturesEnabled()) {
+                    int engineIDWithGestureInfo = y.this.a.getEngineIDWithGestureInfo(this.b);
+                    if (y.this.a.isLockMapCameraDegree(engineIDWithGestureInfo)) {
                         return false;
                     }
-                    y.this.f5453a.addGestureMapMessage(engineIDWithGestureInfo, HoverGestureMapMessage.obtain(100, y.this.f5453a.getCameraDegree(engineIDWithGestureInfo)));
+                    y.this.a.addGestureMapMessage(engineIDWithGestureInfo, HoverGestureMapMessage.obtain(100, y.this.a.getCameraDegree(engineIDWithGestureInfo)));
                     return true;
                 }
                 return true;
@@ -287,16 +281,16 @@ public final class y {
             this.b.mGestureType = 6;
             this.b.mLocation = new float[]{aoVar.c().getX(), aoVar.c().getY()};
             try {
-                if (y.this.f5453a.getUiSettings().isTiltGesturesEnabled()) {
-                    int engineIDWithGestureInfo = y.this.f5453a.getEngineIDWithGestureInfo(this.b);
-                    if (y.this.f5453a.isLockMapCameraDegree(engineIDWithGestureInfo)) {
+                if (y.this.a.getUiSettings().isTiltGesturesEnabled()) {
+                    int engineIDWithGestureInfo = y.this.a.getEngineIDWithGestureInfo(this.b);
+                    if (y.this.a.isLockMapCameraDegree(engineIDWithGestureInfo)) {
                         return;
                     }
-                    if (y.this.f5453a.getCameraDegree(engineIDWithGestureInfo) >= 0.0f && y.this.m > 0) {
-                        y.this.f5453a.setGestureStatus(engineIDWithGestureInfo, 7);
+                    if (y.this.a.getCameraDegree(engineIDWithGestureInfo) >= 0.0f && y.this.m > 0) {
+                        y.this.a.setGestureStatus(engineIDWithGestureInfo, 7);
                     }
                     y.this.i = false;
-                    y.this.f5453a.addGestureMapMessage(engineIDWithGestureInfo, HoverGestureMapMessage.obtain(102, y.this.f5453a.getCameraDegree(engineIDWithGestureInfo)));
+                    y.this.a.addGestureMapMessage(engineIDWithGestureInfo, HoverGestureMapMessage.obtain(102, y.this.a.getCameraDegree(engineIDWithGestureInfo)));
                 }
             } catch (Throwable th) {
                 iw.c(th, "GLMapGestrureDetector", "onHoveEnd");
@@ -324,14 +318,14 @@ public final class y {
                 return true;
             }
             try {
-                if (y.this.f5453a.getUiSettings().isScrollGesturesEnabled()) {
+                if (y.this.a.getUiSettings().isScrollGesturesEnabled()) {
                     if (y.this.p) {
                         return true;
                     }
                     this.b.mGestureState = 2;
                     this.b.mGestureType = 3;
                     this.b.mLocation = new float[]{apVar.c().getX(), apVar.c().getY()};
-                    int engineIDWithGestureInfo = y.this.f5453a.getEngineIDWithGestureInfo(this.b);
+                    int engineIDWithGestureInfo = y.this.a.getEngineIDWithGestureInfo(this.b);
                     PointF d = apVar.d();
                     float f = 1.0f;
                     if (y.this.j == 0) {
@@ -339,9 +333,9 @@ public final class y {
                     }
                     if (Math.abs(d.x) > f || Math.abs(d.y) > f) {
                         if (y.this.j == 0) {
-                            y.this.f5453a.getGLMapEngine().clearAnimations(engineIDWithGestureInfo, false);
+                            y.this.a.getGLMapEngine().clearAnimations(engineIDWithGestureInfo, false);
                         }
-                        y.this.f5453a.addGestureMapMessage(engineIDWithGestureInfo, MoveGestureMapMessage.obtain(101, d.x, d.y, apVar.c().getX(), apVar.c().getY()));
+                        y.this.a.addGestureMapMessage(engineIDWithGestureInfo, MoveGestureMapMessage.obtain(101, d.x, d.y, apVar.c().getX(), apVar.c().getY()));
                         y.l(y.this);
                         return true;
                     }
@@ -358,11 +352,11 @@ public final class y {
         @Override // com.amap.api.col.p0003sl.ap.a
         public final boolean b(ap apVar) {
             try {
-                if (y.this.f5453a.getUiSettings().isScrollGesturesEnabled()) {
+                if (y.this.a.getUiSettings().isScrollGesturesEnabled()) {
                     this.b.mGestureState = 1;
                     this.b.mGestureType = 3;
                     this.b.mLocation = new float[]{apVar.c().getX(), apVar.c().getY()};
-                    y.this.f5453a.addGestureMapMessage(y.this.f5453a.getEngineIDWithGestureInfo(this.b), MoveGestureMapMessage.obtain(100, 0.0f, 0.0f, apVar.c().getX(), apVar.c().getY()));
+                    y.this.a.addGestureMapMessage(y.this.a.getEngineIDWithGestureInfo(this.b), MoveGestureMapMessage.obtain(100, 0.0f, 0.0f, apVar.c().getX(), apVar.c().getY()));
                     return true;
                 }
                 return true;
@@ -376,15 +370,15 @@ public final class y {
         @Override // com.amap.api.col.p0003sl.ap.a
         public final void c(ap apVar) {
             try {
-                if (y.this.f5453a.getUiSettings().isScrollGesturesEnabled()) {
+                if (y.this.a.getUiSettings().isScrollGesturesEnabled()) {
                     this.b.mGestureState = 3;
                     this.b.mGestureType = 3;
                     this.b.mLocation = new float[]{apVar.c().getX(), apVar.c().getY()};
-                    int engineIDWithGestureInfo = y.this.f5453a.getEngineIDWithGestureInfo(this.b);
+                    int engineIDWithGestureInfo = y.this.a.getEngineIDWithGestureInfo(this.b);
                     if (y.this.j > 0) {
-                        y.this.f5453a.setGestureStatus(engineIDWithGestureInfo, 5);
+                        y.this.a.setGestureStatus(engineIDWithGestureInfo, 5);
                     }
-                    y.this.f5453a.addGestureMapMessage(engineIDWithGestureInfo, MoveGestureMapMessage.obtain(102, 0.0f, 0.0f, apVar.c().getX(), apVar.c().getY()));
+                    y.this.a.addGestureMapMessage(engineIDWithGestureInfo, MoveGestureMapMessage.obtain(102, 0.0f, 0.0f, apVar.c().getX(), apVar.c().getY()));
                 }
             } catch (Throwable th) {
                 iw.c(th, "GLMapGestrureDetector", "onMoveEnd");
@@ -397,9 +391,7 @@ public final class y {
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/y$d.class */
     final class d extends ar.a {
         private boolean b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private boolean f5460c;
+        private boolean c;
         private boolean d;
         private Point e;
         private float[] f;
@@ -410,7 +402,7 @@ public final class y {
 
         private d() {
             this.b = false;
-            this.f5460c = false;
+            this.c = false;
             this.d = false;
             this.e = new Point();
             this.f = new float[10];
@@ -446,20 +438,20 @@ public final class y {
             this.j.mGestureState = 1;
             this.j.mGestureType = 4;
             this.j.mLocation = new float[]{arVar.a().getX(), arVar.a().getY()};
-            int engineIDWithGestureInfo = y.this.f5453a.getEngineIDWithGestureInfo(this.j);
+            int engineIDWithGestureInfo = y.this.a.getEngineIDWithGestureInfo(this.j);
             int b = (int) arVar.b();
-            int c2 = (int) arVar.c();
+            int c = (int) arVar.c();
             this.d = false;
             this.e.x = b;
-            this.e.y = c2;
+            this.e.y = c;
             this.b = false;
-            this.f5460c = false;
-            y.this.f5453a.addGestureMapMessage(engineIDWithGestureInfo, ScaleGestureMapMessage.obtain(100, 1.0f, b, c2));
+            this.c = false;
+            y.this.a.addGestureMapMessage(engineIDWithGestureInfo, ScaleGestureMapMessage.obtain(100, 1.0f, b, c));
             try {
-                if (!y.this.f5453a.getUiSettings().isRotateGesturesEnabled() || y.this.f5453a.isLockMapAngle(engineIDWithGestureInfo)) {
+                if (!y.this.a.getUiSettings().isRotateGesturesEnabled() || y.this.a.isLockMapAngle(engineIDWithGestureInfo)) {
                     return true;
                 }
-                y.this.f5453a.addGestureMapMessage(engineIDWithGestureInfo, RotateGestureMapMessage.obtain(100, y.this.f5453a.getMapAngle(engineIDWithGestureInfo), b, c2));
+                y.this.a.addGestureMapMessage(engineIDWithGestureInfo, RotateGestureMapMessage.obtain(100, y.this.a.getMapAngle(engineIDWithGestureInfo), b, c));
                 return true;
             } catch (Throwable th) {
                 iw.c(th, "GLMapGestrureDetector", "onScaleRotateBegin");
@@ -488,12 +480,10 @@ public final class y {
     /* renamed from: com.amap.api.col.3sl.y$e */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/y$e.class */
     final class e extends as.b {
-
-        /* renamed from: a  reason: collision with root package name */
-        EAMapPlatformGestureInfo f5461a;
+        EAMapPlatformGestureInfo a;
 
         private e() {
-            this.f5461a = new EAMapPlatformGestureInfo();
+            this.a = new EAMapPlatformGestureInfo();
         }
 
         /* synthetic */ e(y yVar, byte b) {
@@ -503,14 +493,14 @@ public final class y {
         @Override // com.amap.api.col.p0003sl.as.b, com.amap.api.col.p0003sl.as.a
         public final void a(as asVar) {
             try {
-                if (y.this.f5453a.getUiSettings().isZoomGesturesEnabled() && Math.abs(asVar.d()) <= 10.0f && Math.abs(asVar.e()) <= 10.0f && asVar.b() < 200) {
+                if (y.this.a.getUiSettings().isZoomGesturesEnabled() && Math.abs(asVar.d()) <= 10.0f && Math.abs(asVar.e()) <= 10.0f && asVar.b() < 200) {
                     y.n(y.this);
-                    this.f5461a.mGestureState = 2;
-                    this.f5461a.mGestureType = 2;
-                    this.f5461a.mLocation = new float[]{asVar.c().getX(), asVar.c().getY()};
-                    int engineIDWithGestureInfo = y.this.f5453a.getEngineIDWithGestureInfo(this.f5461a);
-                    y.this.f5453a.setGestureStatus(engineIDWithGestureInfo, 4);
-                    y.this.f5453a.zoomOut(engineIDWithGestureInfo);
+                    this.a.mGestureState = 2;
+                    this.a.mGestureType = 2;
+                    this.a.mLocation = new float[]{asVar.c().getX(), asVar.c().getY()};
+                    int engineIDWithGestureInfo = y.this.a.getEngineIDWithGestureInfo(this.a);
+                    y.this.a.setGestureStatus(engineIDWithGestureInfo, 4);
+                    y.this.a.zoomOut(engineIDWithGestureInfo);
                 }
             } catch (Throwable th) {
                 iw.c(th, "GLMapGestrureDetector", "onZoomOut");
@@ -521,10 +511,10 @@ public final class y {
 
     public y(IAMapDelegate iAMapDelegate) {
         this.b = iAMapDelegate.getContext();
-        this.f5453a = iAMapDelegate;
+        this.a = iAMapDelegate;
         a aVar = new a(this, (byte) 0);
         GestureDetector gestureDetector = new GestureDetector(this.b, aVar, this.t);
-        this.f5454c = gestureDetector;
+        this.c = gestureDetector;
         gestureDetector.setOnDoubleTapListener(aVar);
         this.e = new ar(this.b, new d(this, (byte) 0));
         this.f = new ap(this.b, new c(this, (byte) 0));
@@ -612,8 +602,8 @@ public final class y {
             int[] iArr = new int[2];
             iArr[0] = 0;
             iArr[1] = 0;
-            if (this.f5453a != null && this.f5453a.getGLMapView() != null) {
-                this.f5453a.getGLMapView().getLocationOnScreen(iArr);
+            if (this.a != null && this.a.getGLMapView() != null) {
+                this.a.getGLMapView().getLocationOnScreen(iArr);
             }
             if (this.d != null) {
                 if (motionEvent.getAction() == 0) {
@@ -622,7 +612,7 @@ public final class y {
                     this.d.onUp(motionEvent.getX(), motionEvent.getY());
                 }
             }
-            this.f5454c.onTouchEvent(motionEvent);
+            this.c.onTouchEvent(motionEvent);
             this.g.b(motionEvent, iArr[0], iArr[1]);
             if (!this.i || this.m <= 0) {
                 this.h.b(motionEvent, iArr[0], iArr[1]);

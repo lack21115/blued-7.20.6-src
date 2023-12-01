@@ -6,11 +6,11 @@ import com.anythink.expressad.exoplayer.k.af;
 final class m {
 
     /* renamed from: a  reason: collision with root package name */
-    public final j f7310a;
+    public final j f4471a;
     public final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final long[] f7311c;
+    public final long[] f4472c;
     public final int[] d;
     public final int e;
     public final long[] f;
@@ -21,8 +21,8 @@ final class m {
         com.anythink.expressad.exoplayer.k.a.a(iArr.length == jArr2.length);
         com.anythink.expressad.exoplayer.k.a.a(jArr.length == jArr2.length);
         com.anythink.expressad.exoplayer.k.a.a(iArr2.length == jArr2.length);
-        this.f7310a = jVar;
-        this.f7311c = jArr;
+        this.f4471a = jVar;
+        this.f4472c = jArr;
         this.d = iArr;
         this.e = i;
         this.f = jArr2;

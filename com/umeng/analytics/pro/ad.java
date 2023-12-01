@@ -9,20 +9,20 @@ import java.util.Set;
 public class ad implements aa {
 
     /* renamed from: a  reason: collision with root package name */
-    private Set<Integer> f40614a;
+    private Set<Integer> f26923a;
 
     public ad(Set<Integer> set) {
-        this.f40614a = null;
-        this.f40614a = new HashSet(set);
+        this.f26923a = null;
+        this.f26923a = new HashSet(set);
     }
 
     @Override // com.umeng.analytics.pro.aa
     public boolean a() {
         try {
             int i = Calendar.getInstance().get(11);
-            if (this.f40614a == null || !this.f40614a.contains(Integer.valueOf(i))) {
+            if (this.f26923a == null || !this.f26923a.contains(Integer.valueOf(i))) {
                 String str = "";
-                for (Integer num : this.f40614a) {
+                for (Integer num : this.f26923a) {
                     str = str + num + ",";
                 }
                 UMRTLog.i(UMRTLog.RTLOG_TAG, "HourOn skipped. hour of day: " + i + "; config: " + str);

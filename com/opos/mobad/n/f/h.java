@@ -22,11 +22,11 @@ public class h extends RelativeLayout implements com.opos.mobad.n.f.a {
     private static int o = 488;
 
     /* renamed from: a  reason: collision with root package name */
-    private com.opos.mobad.n.a.b f26719a;
+    private com.opos.mobad.n.a.b f13031a;
     private com.opos.mobad.n.c.h b;
 
     /* renamed from: c  reason: collision with root package name */
-    private View f26720c;
+    private View f13032c;
     private View d;
     private TextView e;
     private i f;
@@ -34,7 +34,7 @@ public class h extends RelativeLayout implements com.opos.mobad.n.f.a {
     private com.opos.mobad.n.c.h h;
     private TextView i;
     private boolean j;
-    private a.InterfaceC0708a k;
+    private a.InterfaceC0538a k;
     private RelativeLayout l;
     private RelativeLayout m;
     private com.opos.mobad.n.d.d p;
@@ -113,14 +113,14 @@ public class h extends RelativeLayout implements com.opos.mobad.n.f.a {
         if (aVar == null) {
             str = "app info is null";
         } else if (this.p == null) {
-            if (indexOfChild(this.f26719a) < 0) {
+            if (indexOfChild(this.f13031a) < 0) {
                 RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(-2, -2);
                 layoutParams.addRule(12);
                 layoutParams.addRule(14);
                 layoutParams.bottomMargin = com.opos.cmn.an.h.f.a.a(getContext(), 4.0f);
-                addView(this.f26719a, layoutParams);
+                addView(this.f13031a, layoutParams);
             }
-            this.f26719a.a(0, aVar.f26626a, aVar.b);
+            this.f13031a.a(0, aVar.f12938a, aVar.b);
             return;
         } else {
             str = "app info has render";
@@ -202,7 +202,7 @@ public class h extends RelativeLayout implements com.opos.mobad.n.f.a {
         RelativeLayout.LayoutParams layoutParams2 = new RelativeLayout.LayoutParams(-2, -2);
         layoutParams2.addRule(13);
         addView(this.l, layoutParams2);
-        this.f26719a = new com.opos.mobad.n.a.b(getContext());
+        this.f13031a = new com.opos.mobad.n.a.b(getContext());
         if (this.j) {
             this.f = new i(getContext());
         } else {
@@ -261,7 +261,7 @@ public class h extends RelativeLayout implements com.opos.mobad.n.f.a {
         if (view == null) {
             return;
         }
-        this.f26720c = view;
+        this.f13032c = view;
         if (this.b.indexOfChild(view) < 0) {
             this.b.removeAllViews();
             this.b.addView(view, new RelativeLayout.LayoutParams(-1, -1));
@@ -269,18 +269,18 @@ public class h extends RelativeLayout implements com.opos.mobad.n.f.a {
     }
 
     @Override // com.opos.mobad.n.f.a
-    public void a(a.InterfaceC0708a interfaceC0708a) {
-        this.k = interfaceC0708a;
-        this.f26719a.a(interfaceC0708a);
+    public void a(a.InterfaceC0538a interfaceC0538a) {
+        this.k = interfaceC0538a;
+        this.f13031a.a(interfaceC0538a);
     }
 
     @Override // com.opos.mobad.n.f.a
     public void a(com.opos.mobad.n.d.h hVar) {
-        a.InterfaceC0708a interfaceC0708a;
+        a.InterfaceC0538a interfaceC0538a;
         if (hVar == null) {
             com.opos.cmn.an.f.a.d("", "render builder with data null");
-            interfaceC0708a = this.k;
-            if (interfaceC0708a == null) {
+            interfaceC0538a = this.k;
+            if (interfaceC0538a == null) {
                 return;
             }
         } else {
@@ -295,12 +295,12 @@ public class h extends RelativeLayout implements com.opos.mobad.n.f.a {
                 return;
             }
             com.opos.cmn.an.f.a.d("InterstitialViewFrame", "render with data null");
-            interfaceC0708a = this.k;
-            if (interfaceC0708a == null) {
+            interfaceC0538a = this.k;
+            if (interfaceC0538a == null) {
                 return;
             }
         }
-        interfaceC0708a.b(1);
+        interfaceC0538a.b(1);
     }
 
     @Override // com.opos.mobad.n.f.a
@@ -318,15 +318,15 @@ public class h extends RelativeLayout implements com.opos.mobad.n.f.a {
         ObjectAnimator ofFloat4 = ObjectAnimator.ofFloat(this.j ? this.f : this.g, "alpha", 1.0f, 0.0f);
         ofFloat4.setInterpolator(create);
         ofFloat4.setDuration(133L);
-        ObjectAnimator ofFloat5 = ObjectAnimator.ofFloat(this.f26719a, "alpha", 1.0f, 0.0f);
+        ObjectAnimator ofFloat5 = ObjectAnimator.ofFloat(this.f13031a, "alpha", 1.0f, 0.0f);
         ofFloat5.setInterpolator(create);
         ofFloat5.setDuration(133L);
         Interpolator create2 = PathInterpolatorCompat.create(0.3f, 0.0f, 0.1f, 1.0f);
-        ObjectAnimator ofFloat6 = ObjectAnimator.ofFloat(this.f26720c, "scaleX", 1.0f, 1.266f);
+        ObjectAnimator ofFloat6 = ObjectAnimator.ofFloat(this.f13032c, "scaleX", 1.0f, 1.266f);
         ofFloat6.setInterpolator(create2);
-        ObjectAnimator ofFloat7 = ObjectAnimator.ofFloat(this.f26720c, "scaleY", 1.0f, 1.266f);
+        ObjectAnimator ofFloat7 = ObjectAnimator.ofFloat(this.f13032c, "scaleY", 1.0f, 1.266f);
         ofFloat7.setInterpolator(create2);
-        ObjectAnimator ofFloat8 = ObjectAnimator.ofFloat(this.f26720c, "alpha", 1.0f, 0.0f);
+        ObjectAnimator ofFloat8 = ObjectAnimator.ofFloat(this.f13032c, "alpha", 1.0f, 0.0f);
         ofFloat8.setInterpolator(create);
         ofFloat5.setDuration(133L);
         AnimatorSet animatorSet = new AnimatorSet();
@@ -350,7 +350,7 @@ public class h extends RelativeLayout implements com.opos.mobad.n.f.a {
                 if (h.this.g != null) {
                     h.this.g.setVisibility(8);
                 }
-                h.this.f26719a.setVisibility(8);
+                h.this.f13031a.setVisibility(8);
                 com.opos.mobad.c.b.b.a(new Runnable() { // from class: com.opos.mobad.n.f.h.2.1
                     @Override // java.lang.Runnable
                     public void run() {

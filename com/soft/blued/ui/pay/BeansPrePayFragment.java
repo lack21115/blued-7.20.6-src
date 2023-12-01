@@ -1,6 +1,5 @@
 package com.soft.blued.ui.pay;
 
-import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -8,9 +7,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ListAdapter;
 import android.widget.TextView;
-import com.blued.android.chat.core.pack.ReqAckPackage;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.ui.StatusBarHelper;
@@ -53,11 +50,11 @@ import java.util.List;
 public class BeansPrePayFragment extends SimpleFragment implements VIPBuyResultObserver.IVIPBuyResultObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    private LinearLayout f32966a;
+    private LinearLayout f19275a;
     private View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private View f32967c;
+    private View f19276c;
     private View d;
     private TextView e;
     private ImageView f;
@@ -105,7 +102,6 @@ public class BeansPrePayFragment extends SimpleFragment implements VIPBuyResultO
 
     private void d() {
         this.j = new CommonAdapter<PayOption._pay_list>(R.layout.item_pay_options) { // from class: com.soft.blued.ui.pay.BeansPrePayFragment.2
-            @Override // com.blued.android.module.common.adapter.CommonAdapter
             public void a(CommonAdapter.ViewHolder viewHolder, final PayOption._pay_list _pay_listVar, final int i) {
                 String a2;
                 if (DeviceUtils.f()) {
@@ -113,14 +109,14 @@ public class BeansPrePayFragment extends SimpleFragment implements VIPBuyResultO
                 } else {
                     a2 = StringUtils.a(((int) _pay_listVar.money) + "");
                 }
-                CommonAdapter.ViewHolder a3 = viewHolder.a(R.id.tv_rmb, a2 + BeansPrePayFragment.this.getString(2131886086));
-                a3.a(2131372944, StringUtils.a(((int) (_pay_listVar.money * _pay_listVar.ratio)) + ""));
+                CommonAdapter.ViewHolder a3 = viewHolder.a((int) R.id.tv_rmb, a2 + BeansPrePayFragment.this.getString(R.string.Live_SendPresent_RMB));
+                a3.a((int) R.id.tv_wandou, StringUtils.a(((int) (_pay_listVar.money * _pay_listVar.ratio)) + ""));
                 if (_pay_listVar.bonus > 0.0f) {
-                    CommonAdapter.ViewHolder b = viewHolder.b(2131371388, 0);
+                    CommonAdapter.ViewHolder b = viewHolder.b((int) R.id.tv_extra, 0);
                     String string = BeansPrePayFragment.this.getString(R.string.present_free_beans);
-                    b.a(2131371388, String.format(string, StringUtils.a(((int) _pay_listVar.bonus) + "")));
+                    b.a((int) R.id.tv_extra, String.format(string, StringUtils.a(((int) _pay_listVar.bonus) + "")));
                 } else {
-                    viewHolder.b(2131371388, 8);
+                    viewHolder.b((int) R.id.tv_extra, 8);
                 }
                 viewHolder.a().setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.pay.BeansPrePayFragment.2.1
                     @Override // android.view.View.OnClickListener
@@ -157,17 +153,17 @@ public class BeansPrePayFragment extends SimpleFragment implements VIPBuyResultO
     }
 
     private void e() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.rootView.findViewById(2131370749);
-        commonTopTitleNoTrans.setTitleBackgroundDrawable(2131102388);
-        commonTopTitleNoTrans.setRightText(2131886222);
-        commonTopTitleNoTrans.setRightTextColor(2131102254);
-        commonTopTitleNoTrans.setLeftClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.pay.-$$Lambda$BeansPrePayFragment$K35ApsyLMfNiA9ixb0lFa-GU3d4
+        CommonTopTitleNoTrans findViewById = this.rootView.findViewById(R.id.top_title);
+        findViewById.setTitleBackgroundDrawable(2131102388);
+        findViewById.setRightText((int) R.string.Live_setting_rechargeAndCost);
+        findViewById.setRightTextColor(2131102254);
+        findViewById.setLeftClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.pay.-$$Lambda$BeansPrePayFragment$K35ApsyLMfNiA9ixb0lFa-GU3d4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 BeansPrePayFragment.this.c(view);
             }
         });
-        commonTopTitleNoTrans.setRightClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.pay.-$$Lambda$BeansPrePayFragment$uLo9s73U9N3JtFULTCdp3RmFajQ
+        findViewById.setRightClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.pay.-$$Lambda$BeansPrePayFragment$uLo9s73U9N3JtFULTCdp3RmFajQ
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 BeansPrePayFragment.this.b(view);
@@ -177,7 +173,6 @@ public class BeansPrePayFragment extends SimpleFragment implements VIPBuyResultO
 
     private void f() {
         LiveRoomHttpUtils.i(new BluedUIHttpResponse<BluedEntity<CountModel, LiveCouponCountExtra>>(getFragmentActive()) { // from class: com.soft.blued.ui.pay.BeansPrePayFragment.6
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity<CountModel, LiveCouponCountExtra> bluedEntity) {
                 if (bluedEntity == null || bluedEntity.extra == null) {
                     return;
@@ -197,21 +192,19 @@ public class BeansPrePayFragment extends SimpleFragment implements VIPBuyResultO
     public void a() {
         PayHttpUtils.a((BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<PayOption>>(getFragmentActive()) { // from class: com.soft.blued.ui.pay.BeansPrePayFragment.4
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<PayOption> bluedEntityA) {
-                if (bluedEntityA == null || bluedEntityA.getSingleData() == null || bluedEntityA.getSingleData().pay_list == null || bluedEntityA.getSingleData().pay_list.size() <= 0) {
+                if (bluedEntityA == null || bluedEntityA.getSingleData() == null || ((PayOption) bluedEntityA.getSingleData()).pay_list == null || ((PayOption) bluedEntityA.getSingleData()).pay_list.size() <= 0) {
                     BeansPrePayFragment.this.a(false);
                     return;
                 }
                 BeansPrePayFragment.this.h.clear();
-                BeansPrePayFragment.this.h.addAll(bluedEntityA.data.get(0).pay_list);
+                BeansPrePayFragment.this.h.addAll(((PayOption) bluedEntityA.data.get(0)).pay_list);
                 BeansPrePayFragment.this.a(true);
-                bluedEntityA.data.get(0);
+                PayOption payOption = (PayOption) bluedEntityA.data.get(0);
                 BeansPrePayFragment.this.j.a(BeansPrePayFragment.this.h);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish(boolean z) {
                 super.onUIFinish(z);
                 if (!z) {
@@ -220,7 +213,6 @@ public class BeansPrePayFragment extends SimpleFragment implements VIPBuyResultO
                 DialogUtils.b(BeansPrePayFragment.this.mLoadingDialog);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 super.onUIStart();
                 if (BeansPrePayFragment.this.mLoadingDialog.isShowing()) {
@@ -228,7 +220,7 @@ public class BeansPrePayFragment extends SimpleFragment implements VIPBuyResultO
                 }
                 DialogUtils.a(BeansPrePayFragment.this.mLoadingDialog);
             }
-        }, (IRequestHost) getFragmentActive(), ReqAckPackage.REQ_RESPONSE_KEY.BEANS);
+        }, (IRequestHost) getFragmentActive(), "beans");
     }
 
     @Override // com.soft.blued.ui.user.observer.VIPBuyResultObserver.IVIPBuyResultObserver
@@ -253,19 +245,18 @@ public class BeansPrePayFragment extends SimpleFragment implements VIPBuyResultO
 
     public void a(boolean z) {
         if (z) {
-            this.f32966a.setVisibility(0);
+            this.f19275a.setVisibility(0);
         } else {
-            this.f32966a.setVisibility(8);
+            this.f19275a.setVisibility(8);
         }
     }
 
     public void b() {
-        MineHttpUtils.d(new BluedUIHttpResponse<BluedEntityA<PayRemaining>>(getFragmentActive()) { // from class: com.soft.blued.ui.pay.BeansPrePayFragment.5
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
+        MineHttpUtils.d((BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<PayRemaining>>(getFragmentActive()) { // from class: com.soft.blued.ui.pay.BeansPrePayFragment.5
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<PayRemaining> bluedEntityA) {
                 final PayRemaining payRemaining;
-                if (bluedEntityA == null || bluedEntityA.data == null || bluedEntityA.data.size() <= 0 || (payRemaining = bluedEntityA.data.get(0)) == null) {
+                if (bluedEntityA == null || bluedEntityA.data == null || bluedEntityA.data.size() <= 0 || (payRemaining = (PayRemaining) bluedEntityA.data.get(0)) == null) {
                     return;
                 }
                 if (payRemaining.text == null || StringUtils.d(payRemaining.text.exchange)) {
@@ -296,26 +287,24 @@ public class BeansPrePayFragment extends SimpleFragment implements VIPBuyResultO
                 });
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 DialogUtils.b(BeansPrePayFragment.this.mLoadingDialog);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 if (BeansPrePayFragment.this.mLoadingDialog.isShowing()) {
                     return;
                 }
                 DialogUtils.a(BeansPrePayFragment.this.mLoadingDialog);
             }
-        }, getFragmentActive());
+        }, (IRequestHost) getFragmentActive());
     }
 
     public boolean c() {
         return true;
     }
 
-    @Override // com.blued.android.framework.ui.SimpleFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.framework.ui.SimpleFragment
     public void onDestroy() {
         super.onDestroy();
         VIPBuyResultObserver.a().b(this);
@@ -334,17 +323,17 @@ public class BeansPrePayFragment extends SimpleFragment implements VIPBuyResultO
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.b.getLayoutParams();
         layoutParams.topMargin = i;
         this.b.setLayoutParams(layoutParams);
-        this.f32967c = this.rootView.findViewById(R.id.beans_pre_pay_bean_bg_iv);
+        this.f19276c = this.rootView.findViewById(R.id.beans_pre_pay_bean_bg_iv);
         this.f = (ImageView) this.rootView.findViewById(R.id.beans_pre_pay_coupon_arrow_iv);
         if (BluedPreferences.cK()) {
-            this.f32967c.setBackgroundResource(R.drawable.beans_pre_pay_bean_bg_dark);
+            this.f19276c.setBackgroundResource(R.drawable.beans_pre_pay_bean_bg_dark);
             this.f.setImageResource(R.drawable.beans_pre_pay_right_arrow_dark);
         } else {
-            this.f32967c.setBackgroundResource(R.drawable.beans_pre_pay_bean_bg);
+            this.f19276c.setBackgroundResource(R.drawable.beans_pre_pay_bean_bg);
             this.f.setImageResource(R.drawable.beans_pre_pay_right_arrow);
         }
         this.g = this.rootView.findViewById(R.id.beans_pre_pay_coupon_notice);
-        this.i = (ListViewForScroll) this.rootView.findViewById(R.id.pre_pay_lv);
+        this.i = this.rootView.findViewById(R.id.pre_pay_lv);
         this.l = (TextView) this.rootView.findViewById(R.id.tv_account);
         this.k = (TextView) this.rootView.findViewById(R.id.tv_remaining);
         this.m = (TextView) this.rootView.findViewById(R.id.tv_extra_contained);
@@ -382,9 +371,9 @@ public class BeansPrePayFragment extends SimpleFragment implements VIPBuyResultO
         } else if (!TextUtils.isEmpty(UserInfo.getInstance().getLoginUserInfo().getName())) {
             this.l.setText(UserInfo.getInstance().getLoginUserInfo().getName());
         }
-        this.f32966a = (LinearLayout) this.rootView.findViewById(R.id.ll_pay_main);
+        this.f19275a = (LinearLayout) this.rootView.findViewById(R.id.ll_pay_main);
         d();
-        this.i.setAdapter((ListAdapter) this.j);
+        this.i.setAdapter(this.j);
         VIPBuyResultObserver.a().a(this);
     }
 
@@ -393,7 +382,6 @@ public class BeansPrePayFragment extends SimpleFragment implements VIPBuyResultO
         super.onLoadData();
         a();
         LiveRoomHttpUtils.h(new BluedUIHttpResponse<BluedEntity<CountModel, LiveCouponNoticeExtra>>(getFragmentActive()) { // from class: com.soft.blued.ui.pay.BeansPrePayFragment.3
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity<CountModel, LiveCouponNoticeExtra> bluedEntity) {
                 if (bluedEntity == null || bluedEntity.extra == null) {
                     return;
@@ -446,7 +434,6 @@ public class BeansPrePayFragment extends SimpleFragment implements VIPBuyResultO
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onResume() {
         super.onResume();
         b();
@@ -455,7 +442,7 @@ public class BeansPrePayFragment extends SimpleFragment implements VIPBuyResultO
 
     @Override // com.blued.android.framework.ui.SimpleFragment
     public int onSetRootViewId() {
-        StatusBarHelper.a((Activity) getActivity(), false);
+        StatusBarHelper.a(getActivity(), false);
         return R.layout.fragment_pre_pay;
     }
 }

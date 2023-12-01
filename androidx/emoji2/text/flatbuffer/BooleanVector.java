@@ -10,6 +10,6 @@ public final class BooleanVector extends BaseVector {
     }
 
     public boolean get(int i) {
-        return this.f2849a.get(a(i)) != 0;
+        return this.f2801a.get(a(i)) != 0;
     }
 }

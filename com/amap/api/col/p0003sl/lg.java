@@ -21,11 +21,11 @@ public final class lg extends lf {
         while (true) {
             int i2 = i;
             if (i2 >= size) {
-                return mb.a(this.f5361a, mb.a(this.f5361a, iArr));
+                return mb.a(this.a, mb.a(this.a, iArr));
             }
             mq mqVar = list.get(i2);
-            int a2 = this.f5361a.a(mqVar.b);
-            iArr[i2] = mc.a(this.f5361a, mqVar.f5387a == j && mqVar.f5387a != -1, mqVar.f5387a, (short) mqVar.f5388c, a2, mqVar.g, (short) mqVar.d);
+            int a = this.a.a(mqVar.b);
+            iArr[i2] = mc.a(this.a, mqVar.a == j && mqVar.a != -1, mqVar.a, (short) mqVar.c, a, mqVar.g, (short) mqVar.d);
             i = i2 + 1;
         }
     }
@@ -47,7 +47,7 @@ public final class lg extends lf {
 
     private int a(mp mpVar) {
         long j = mpVar.k;
-        return lv.a(this.f5361a, mpVar.f5386c, j, (int) (mpVar.e * 1000000.0d), (int) (mpVar.d * 1000000.0d), (int) mpVar.f, (int) mpVar.i, (int) mpVar.g, (short) mpVar.h, mpVar.l);
+        return lv.a(this.a, mpVar.c, j, (int) (mpVar.e * 1000000.0d), (int) (mpVar.d * 1000000.0d), (int) mpVar.f, (int) mpVar.i, (int) mpVar.g, (short) mpVar.h, mpVar.l);
     }
 
     private static void a(List<mj> list) {
@@ -73,15 +73,15 @@ public final class lg extends lf {
 
     private static void b(List<mq> list) {
         for (mq mqVar : list) {
-            mqVar.g = mf.b(mqVar.f5387a);
+            mqVar.g = mf.b(mqVar.a);
         }
     }
 
     public final byte[] a(mp mpVar, lj.a aVar, long j, List<mq> list) {
         super.a();
         try {
-            int a2 = a(mpVar);
-            int a3 = (aVar == null || aVar.f == null || aVar.f.size() <= 0) ? -1 : a(aVar);
+            int a = a(mpVar);
+            int a2 = (aVar == null || aVar.f == null || aVar.f.size() <= 0) ? -1 : a(aVar);
             int i = -1;
             if (list != null) {
                 i = -1;
@@ -89,16 +89,16 @@ public final class lg extends lf {
                     i = a(j, list);
                 }
             }
-            lo.a(this.f5361a);
-            lo.a(this.f5361a, a2);
-            if (a3 > 0) {
-                lo.c(this.f5361a, a3);
+            lo.a(this.a);
+            lo.a(this.a, a);
+            if (a2 > 0) {
+                lo.c(this.a, a2);
             }
             if (i > 0) {
-                lo.b(this.f5361a, i);
+                lo.b(this.a, i);
             }
-            this.f5361a.c(lo.b(this.f5361a));
-            return this.f5361a.c();
+            this.a.c(lo.b(this.a));
+            return this.a.c();
         } catch (Throwable th) {
             mt.a(th);
             return null;

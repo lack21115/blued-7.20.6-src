@@ -28,7 +28,7 @@ public final class fu implements com.kwad.sdk.core.d<com.kwad.sdk.core.network.k
         kVar.agR = jSONObject.optLong("waiting_response_cost");
         kVar.agS = jSONObject.optLong("total_cost");
         kVar.agT = jSONObject.optInt("proxy_used");
-        kVar.agU = jSONObject.optString("request_id");
+        kVar.agU = jSONObject.optString(com.huawei.openalliance.ad.constant.at.g);
         if (kVar.agU == JSONObject.NULL) {
             kVar.agU = "";
         }
@@ -106,7 +106,7 @@ public final class fu implements com.kwad.sdk.core.d<com.kwad.sdk.core.network.k
             com.kwad.sdk.utils.t.putValue(jSONObject2, "proxy_used", kVar.agT);
         }
         if (kVar.agU != null && !kVar.agU.equals("")) {
-            com.kwad.sdk.utils.t.putValue(jSONObject2, "request_id", kVar.agU);
+            com.kwad.sdk.utils.t.putValue(jSONObject2, com.huawei.openalliance.ad.constant.at.g, kVar.agU);
         }
         if (kVar.agV != 0) {
             com.kwad.sdk.utils.t.putValue(jSONObject2, "has_data_v2", kVar.agV);

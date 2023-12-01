@@ -21,13 +21,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYGivePresentView.class */
 public final class YYGivePresentView extends LinearLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private ViewYyGivePresentLayoutBinding f18214a;
+    private ViewYyGivePresentLayoutBinding a;
     private BaseYYStudioFragment b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private YYGiftModel f18215c;
+    private YYGiftModel c;
     private YYRoomModel d;
     private int e;
 
@@ -41,11 +37,11 @@ public final class YYGivePresentView extends LinearLayout {
     public YYGivePresentView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         Intrinsics.e(context, "context");
-        ViewYyGivePresentLayoutBinding a2 = ViewYyGivePresentLayoutBinding.a(LayoutInflater.from(getContext()), this, true);
-        Intrinsics.c(a2, "inflate(LayoutInflater.from(context), this, true)");
-        this.f18214a = a2;
+        ViewYyGivePresentLayoutBinding a = ViewYyGivePresentLayoutBinding.a(LayoutInflater.from(getContext()), this, true);
+        Intrinsics.c(a, "inflate(LayoutInflater.from(context), this, true)");
+        this.a = a;
         this.e = 1;
-        a2.f16919c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYGivePresentView$ncpuuM6ccxxMQdwAW8xbrnaGsL8
+        a.c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYGivePresentView$ncpuuM6ccxxMQdwAW8xbrnaGsL8
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 YYGivePresentView.a(YYGivePresentView.this, view);
@@ -83,7 +79,7 @@ public final class YYGivePresentView extends LinearLayout {
             }
             EventTrackYY.d(event, str2, str);
         }
-        this$0.a(this$0.f18215c, this$0.e, "", false);
+        this$0.a(this$0.c, this$0.e, "", false);
         BaseYYStudioFragment baseYYStudioFragment = this$0.b;
         if (baseYYStudioFragment == null) {
             return;
@@ -93,7 +89,7 @@ public final class YYGivePresentView extends LinearLayout {
 
     public final void a(YYGiftModel yYGiftModel, int i, String payCode, boolean z) {
         Intrinsics.e(payCode, "payCode");
-        YYUserInfo yYUserInfo = YYRoomInfoManager.e().f17578a;
+        YYUserInfo yYUserInfo = YYRoomInfoManager.e().a;
         if (this.d == null || yYUserInfo == null || yYGiftModel == null || yYUserInfo.isSendGift || this.b == null) {
             return;
         }
@@ -120,7 +116,7 @@ public final class YYGivePresentView extends LinearLayout {
     }
 
     public final ViewYyGivePresentLayoutBinding getBinding() {
-        return this.f18214a;
+        return this.a;
     }
 
     public final BaseYYStudioFragment getFragment() {
@@ -128,7 +124,7 @@ public final class YYGivePresentView extends LinearLayout {
     }
 
     public final YYGiftModel getGoods() {
-        return this.f18215c;
+        return this.c;
     }
 
     public final int getGoodsCount() {
@@ -148,7 +144,7 @@ public final class YYGivePresentView extends LinearLayout {
 
     public final void setBinding(ViewYyGivePresentLayoutBinding viewYyGivePresentLayoutBinding) {
         Intrinsics.e(viewYyGivePresentLayoutBinding, "<set-?>");
-        this.f18214a = viewYyGivePresentLayoutBinding;
+        this.a = viewYyGivePresentLayoutBinding;
     }
 
     public final void setFragment(BaseYYStudioFragment baseYYStudioFragment) {
@@ -156,7 +152,7 @@ public final class YYGivePresentView extends LinearLayout {
     }
 
     public final void setGoods(YYGiftModel yYGiftModel) {
-        this.f18215c = yYGiftModel;
+        this.c = yYGiftModel;
     }
 
     public final void setGoodsCount(int i) {

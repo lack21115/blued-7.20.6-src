@@ -9,7 +9,7 @@ public final class a {
 
     /* renamed from: com.kwad.components.core.h.a$a  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/components/core/h/a$a.class */
-    static final class C0524a {
+    static final class C0354a {
         private static final a JN = new a();
     }
 
@@ -36,7 +36,7 @@ public final class a {
     }
 
     public static a nC() {
-        return C0524a.JN;
+        return C0354a.JN;
     }
 
     public final void a(b bVar) {

@@ -25,9 +25,8 @@ public interface IBluetoothHealth extends IInterface {
         static final int TRANSACTION_registerAppConfiguration = 1;
         static final int TRANSACTION_unregisterAppConfiguration = 2;
 
-        /* JADX INFO: Access modifiers changed from: private */
         /* loaded from: source-9557208-dex2jar.jar:android/bluetooth/IBluetoothHealth$Stub$Proxy.class */
-        public static class Proxy implements IBluetoothHealth {
+        private static class Proxy implements IBluetoothHealth {
             private IBinder mRemote;
 
             Proxy(IBinder iBinder) {

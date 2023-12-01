@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentVisitHistoryBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29033a;
+    private final LinearLayout f15343a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29033a;
+        return this.f15343a;
     }
 }

@@ -4,11 +4,11 @@ package com.opos.exoplayer.core;
 final class ab {
 
     /* renamed from: a  reason: collision with root package name */
-    public final com.opos.exoplayer.core.e.d f25057a;
+    public final com.opos.exoplayer.core.e.d f11369a;
     public final Object b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final com.opos.exoplayer.core.e.i[] f25058c;
+    public final com.opos.exoplayer.core.e.i[] f11370c;
     public final boolean[] d;
     public long e;
     public boolean f;
@@ -28,16 +28,16 @@ final class ab {
         this.m = eVar;
         this.b = com.opos.exoplayer.core.i.a.a(obj);
         this.h = acVar;
-        this.f25058c = new com.opos.exoplayer.core.e.i[tVarArr.length];
+        this.f11370c = new com.opos.exoplayer.core.e.i[tVarArr.length];
         this.d = new boolean[tVarArr.length];
-        com.opos.exoplayer.core.e.d a2 = eVar.a(acVar.f25059a, bVar);
+        com.opos.exoplayer.core.e.d a2 = eVar.a(acVar.f11371a, bVar);
         com.opos.exoplayer.core.e.a aVar = a2;
-        if (acVar.f25060c != Long.MIN_VALUE) {
+        if (acVar.f11372c != Long.MIN_VALUE) {
             com.opos.exoplayer.core.e.a aVar2 = new com.opos.exoplayer.core.e.a(a2, true);
-            aVar2.a(0L, acVar.f25060c);
+            aVar2.a(0L, acVar.f11372c);
             aVar = aVar2;
         }
-        this.f25057a = aVar;
+        this.f11369a = aVar;
     }
 
     private void a(com.opos.exoplayer.core.g.i iVar) {
@@ -74,7 +74,7 @@ final class ab {
                 return;
             }
             boolean z = iVar.b[i2];
-            com.opos.exoplayer.core.g.f a2 = iVar.f25439c.a(i2);
+            com.opos.exoplayer.core.g.f a2 = iVar.f11751c.a(i2);
             if (z && a2 != null) {
                 a2.a();
             }
@@ -105,7 +105,7 @@ final class ab {
                 return;
             }
             boolean z = iVar.b[i2];
-            com.opos.exoplayer.core.g.f a2 = iVar.f25439c.a(i2);
+            com.opos.exoplayer.core.g.f a2 = iVar.f11751c.a(i2);
             if (z && a2 != null) {
                 a2.c();
             }
@@ -126,12 +126,12 @@ final class ab {
     }
 
     public long a(long j, boolean z, boolean[] zArr) {
-        com.opos.exoplayer.core.g.g gVar = this.j.f25439c;
+        com.opos.exoplayer.core.g.g gVar = this.j.f11751c;
         int i = 0;
         while (true) {
             int i2 = i;
             boolean z2 = true;
-            if (i2 >= gVar.f25435a) {
+            if (i2 >= gVar.f11747a) {
                 break;
             }
             boolean[] zArr2 = this.d;
@@ -141,15 +141,15 @@ final class ab {
             zArr2[i2] = z2;
             i = i2 + 1;
         }
-        a(this.f25058c);
+        a(this.f11370c);
         a(this.j);
-        long a2 = this.f25057a.a(gVar.a(), this.d, this.f25058c, zArr, j);
-        b(this.f25058c);
+        long a2 = this.f11369a.a(gVar.a(), this.d, this.f11370c, zArr, j);
+        b(this.f11370c);
         this.g = false;
         int i3 = 0;
         while (true) {
             int i4 = i3;
-            com.opos.exoplayer.core.e.i[] iVarArr = this.f25058c;
+            com.opos.exoplayer.core.e.i[] iVarArr = this.f11370c;
             if (i4 >= iVarArr.length) {
                 return a2;
             }
@@ -167,7 +167,7 @@ final class ab {
 
     public long a(boolean z) {
         if (this.f) {
-            long d = this.f25057a.d();
+            long d = this.f11369a.d();
             long j = d;
             if (d == Long.MIN_VALUE) {
                 j = d;
@@ -195,19 +195,19 @@ final class ab {
 
     public boolean b() {
         if (this.f) {
-            return !this.g || this.f25057a.d() == Long.MIN_VALUE;
+            return !this.g || this.f11369a.d() == Long.MIN_VALUE;
         }
         return false;
     }
 
     public boolean b(float f) {
         com.opos.exoplayer.core.g.f[] a2;
-        com.opos.exoplayer.core.g.i a3 = this.l.a(this.k, this.f25057a.b());
+        com.opos.exoplayer.core.g.i a3 = this.l.a(this.k, this.f11369a.b());
         if (a3.a(this.n)) {
             return false;
         }
         this.j = a3;
-        for (com.opos.exoplayer.core.g.f fVar : a3.f25439c.a()) {
+        for (com.opos.exoplayer.core.g.f fVar : a3.f11751c.a()) {
             if (fVar != null) {
                 fVar.a(f);
             }
@@ -217,14 +217,14 @@ final class ab {
 
     public long c() {
         if (this.f) {
-            return this.f25057a.e();
+            return this.f11369a.e();
         }
         return 0L;
     }
 
     public void c(long j) {
         if (this.f) {
-            this.f25057a.a(b(j));
+            this.f11369a.a(b(j));
         }
     }
 
@@ -233,12 +233,12 @@ final class ab {
         com.opos.exoplayer.core.e.d dVar;
         a((com.opos.exoplayer.core.g.i) null);
         try {
-            if (this.h.f25060c != Long.MIN_VALUE) {
+            if (this.h.f11372c != Long.MIN_VALUE) {
                 eVar = this.m;
-                dVar = ((com.opos.exoplayer.core.e.a) this.f25057a).f25274a;
+                dVar = ((com.opos.exoplayer.core.e.a) this.f11369a).f11586a;
             } else {
                 eVar = this.m;
-                dVar = this.f25057a;
+                dVar = this.f11369a;
             }
             eVar.a(dVar);
         } catch (RuntimeException e) {
@@ -247,6 +247,6 @@ final class ab {
     }
 
     public void d(long j) {
-        this.f25057a.c(b(j));
+        this.f11369a.c(b(j));
     }
 }

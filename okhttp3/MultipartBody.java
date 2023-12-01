@@ -1,6 +1,5 @@
 package okhttp3;
 
-import com.tencent.qcloud.core.http.HttpConstants;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +22,7 @@ public final class MultipartBody extends RequestBody {
     public static final MediaType ALTERNATIVE = MediaType.get("multipart/alternative");
     public static final MediaType DIGEST = MediaType.get("multipart/digest");
     public static final MediaType PARALLEL = MediaType.get("multipart/parallel");
-    public static final MediaType FORM = MediaType.get(HttpConstants.ContentType.MULTIPART_FORM_DATA);
+    public static final MediaType FORM = MediaType.get("multipart/form-data");
     private static final byte[] COLONSPACE = {58, 32};
     private static final byte[] CRLF = {13, 10};
     private static final byte[] DASHDASH = {45, 45};

@@ -8,24 +8,24 @@ import java.util.Arrays;
 public class z1 implements Serializable, Cloneable {
 
     /* renamed from: a  reason: collision with root package name */
-    public double[][] f4071a;
+    public double[][] f4023a;
     public int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public int f4072c;
+    public int f4024c;
 
     public z1(int i, int i2) {
         this.b = i;
-        this.f4072c = i2;
-        this.f4071a = (double[][]) Array.newInstance(Double.TYPE, i, i2);
+        this.f4024c = i2;
+        this.f4023a = (double[][]) Array.newInstance(Double.TYPE, i, i2);
     }
 
     public double a(int i, int i2) {
-        return this.f4071a[i][i2];
+        return this.f4023a[i][i2];
     }
 
     public z1 a() {
-        z1 z1Var = new z1(this.b, this.f4072c);
+        z1 z1Var = new z1(this.b, this.f4024c);
         double[][] b = z1Var.b();
         int i = 0;
         while (true) {
@@ -36,8 +36,8 @@ public class z1 implements Serializable, Cloneable {
             int i3 = 0;
             while (true) {
                 int i4 = i3;
-                if (i4 < this.f4072c) {
-                    b[i2][i4] = this.f4071a[i2][i4];
+                if (i4 < this.f4024c) {
+                    b[i2][i4] = this.f4023a[i2][i4];
                     i3 = i4 + 1;
                 }
             }
@@ -49,7 +49,7 @@ public class z1 implements Serializable, Cloneable {
         int i = 0;
         while (true) {
             int i2 = i;
-            double[][] dArr = this.f4071a;
+            double[][] dArr = this.f4023a;
             if (i2 >= dArr.length) {
                 return;
             }
@@ -59,7 +59,7 @@ public class z1 implements Serializable, Cloneable {
     }
 
     public void a(int i, int i2, double d) {
-        this.f4071a[i][i2] = d;
+        this.f4023a[i][i2] = d;
     }
 
     public z1 b(double d) {
@@ -72,8 +72,8 @@ public class z1 implements Serializable, Cloneable {
             int i3 = 0;
             while (true) {
                 int i4 = i3;
-                if (i4 < this.f4072c) {
-                    double[][] dArr = this.f4071a;
+                if (i4 < this.f4024c) {
+                    double[][] dArr = this.f4023a;
                     dArr[i2][i4] = dArr[i2][i4] * d;
                     i3 = i4 + 1;
                 }
@@ -83,11 +83,11 @@ public class z1 implements Serializable, Cloneable {
     }
 
     public double[][] b() {
-        return this.f4071a;
+        return this.f4023a;
     }
 
     public int c() {
-        return this.f4072c;
+        return this.f4024c;
     }
 
     public Object clone() {

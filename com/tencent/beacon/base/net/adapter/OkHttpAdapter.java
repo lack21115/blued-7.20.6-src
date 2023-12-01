@@ -34,7 +34,7 @@ public class OkHttpAdapter extends AbstractNetAdapter {
 
     private RequestBody buildBody(com.tencent.beacon.base.net.call.e eVar) {
         BodyType a2 = eVar.a();
-        int i = e.f34968a[a2.ordinal()];
+        int i = e.f21277a[a2.ordinal()];
         if (i != 1) {
             if (i != 2) {
                 if (i != 3) {

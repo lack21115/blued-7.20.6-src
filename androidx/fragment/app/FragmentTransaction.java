@@ -19,7 +19,7 @@ public abstract class FragmentTransaction {
     public static final int TRANSIT_UNSET = -1;
 
     /* renamed from: a  reason: collision with root package name */
-    private final FragmentFactory f3011a;
+    private final FragmentFactory f2963a;
     private final ClassLoader b;
     ArrayList<Op> d;
     int e;
@@ -44,11 +44,11 @@ public abstract class FragmentTransaction {
     public static final class Op {
 
         /* renamed from: a  reason: collision with root package name */
-        int f3012a;
+        int f2964a;
         Fragment b;
 
         /* renamed from: c  reason: collision with root package name */
-        int f3013c;
+        int f2965c;
         int d;
         int e;
         int f;
@@ -61,14 +61,14 @@ public abstract class FragmentTransaction {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         public Op(int i, Fragment fragment) {
-            this.f3012a = i;
+            this.f2964a = i;
             this.b = fragment;
             this.g = Lifecycle.State.RESUMED;
             this.h = Lifecycle.State.RESUMED;
         }
 
         Op(int i, Fragment fragment, Lifecycle.State state) {
-            this.f3012a = i;
+            this.f2964a = i;
             this.b = fragment;
             this.g = fragment.mMaxState;
             this.h = state;
@@ -80,7 +80,7 @@ public abstract class FragmentTransaction {
         this.d = new ArrayList<>();
         this.k = true;
         this.s = false;
-        this.f3011a = null;
+        this.f2963a = null;
         this.b = null;
     }
 
@@ -89,12 +89,12 @@ public abstract class FragmentTransaction {
         this.d = new ArrayList<>();
         this.k = true;
         this.s = false;
-        this.f3011a = fragmentFactory;
+        this.f2963a = fragmentFactory;
         this.b = classLoader;
     }
 
     private Fragment a(Class<? extends Fragment> cls, Bundle bundle) {
-        FragmentFactory fragmentFactory = this.f3011a;
+        FragmentFactory fragmentFactory = this.f2963a;
         if (fragmentFactory != null) {
             ClassLoader classLoader = this.b;
             if (classLoader != null) {
@@ -144,7 +144,7 @@ public abstract class FragmentTransaction {
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a(Op op) {
         this.d.add(op);
-        op.f3013c = this.e;
+        op.f2965c = this.e;
         op.d = this.f;
         op.e = this.g;
         op.f = this.h;

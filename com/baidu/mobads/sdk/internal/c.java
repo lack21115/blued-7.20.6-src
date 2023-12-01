@@ -4,13 +4,13 @@ package com.baidu.mobads.sdk.internal;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile c f9368a;
+    private static volatile c f6528a;
 
     /* loaded from: source-8756600-dex2jar.jar:com/baidu/mobads/sdk/internal/c$a.class */
     public interface a {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final String f9369a = "remote_adserv";
+        public static final String f6529a = "remote_adserv";
         public static final String b = "remote_novel";
     }
 
@@ -18,18 +18,18 @@ public class c {
     }
 
     public static c a() {
-        if (f9368a == null) {
+        if (f6528a == null) {
             synchronized (c.class) {
                 try {
-                    if (f9368a == null) {
-                        f9368a = new c();
+                    if (f6528a == null) {
+                        f6528a = new c();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f9368a;
+        return f6528a;
     }
 
     public ao a(String str) {

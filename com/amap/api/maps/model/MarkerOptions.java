@@ -9,9 +9,7 @@ import java.util.List;
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/maps/model/MarkerOptions.class */
 public final class MarkerOptions extends BaseOptions implements Parcelable, Cloneable {
     public static final MarkerOptionsCreator CREATOR = new MarkerOptionsCreator();
-
-    /* renamed from: a  reason: collision with root package name */
-    String f5534a;
+    String a;
     private LatLng gpsLatLng;
     private boolean isBelowMaskLayer;
     private LatLng latLng;
@@ -78,8 +76,8 @@ public final class MarkerOptions extends BaseOptions implements Parcelable, Clon
             if (!this.isGps || this.latLng == null) {
                 return;
             }
-            double[] a2 = com.autonavi.util.a.a(this.latLng.longitude, this.latLng.latitude);
-            this.gpsLatLng = new LatLng(a2[1], a2[0]);
+            double[] a = com.autonavi.util.a.a(this.latLng.longitude, this.latLng.latitude);
+            this.gpsLatLng = new LatLng(a[1], a[0]);
             this.updateFlags.gpsLatLngUpdate = true;
         } catch (Throwable th) {
             th.printStackTrace();
@@ -113,7 +111,7 @@ public final class MarkerOptions extends BaseOptions implements Parcelable, Clon
     }
 
     /* renamed from: clone */
-    public final MarkerOptions m2412clone() {
+    public final MarkerOptions m8855clone() {
         try {
             super.clone();
         } catch (CloneNotSupportedException e) {
@@ -129,7 +127,7 @@ public final class MarkerOptions extends BaseOptions implements Parcelable, Clon
         markerOptions.zIndex = this.zIndex;
         markerOptions.isDraggable = this.isDraggable;
         markerOptions.isVisible = this.isVisible;
-        markerOptions.f5534a = this.f5534a;
+        markerOptions.a = this.a;
         markerOptions.perspective = this.perspective;
         markerOptions.offsetX = this.offsetX;
         markerOptions.offsetY = this.offsetY;
@@ -416,7 +414,7 @@ public final class MarkerOptions extends BaseOptions implements Parcelable, Clon
         parcel.writeInt(this.offsetX);
         parcel.writeInt(this.offsetY);
         parcel.writeBooleanArray(new boolean[]{this.isVisible, this.isDraggable, this.isGps, this.isFlat, this.autoOverturn, this.infoWindowEnabled, this.isBelowMaskLayer, this.isRotatingMode});
-        parcel.writeString(this.f5534a);
+        parcel.writeString(this.a);
         parcel.writeInt(this.period);
         parcel.writeList(this.bitmapDescriptors);
         parcel.writeFloat(this.zIndex);

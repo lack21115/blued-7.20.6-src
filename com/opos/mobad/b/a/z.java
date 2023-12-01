@@ -9,7 +9,7 @@ import okio.ByteString;
 public final class z extends com.heytap.nearx.a.a.b<z, a> {
 
     /* renamed from: c  reason: collision with root package name */
-    public static final com.heytap.nearx.a.a.e<z> f25800c = new c();
+    public static final com.heytap.nearx.a.a.e<z> f12112c = new c();
     public static final b d = b.UNKNOWN;
     public static final ad e = ad.UNKNOWN;
     public static final Integer f = -1;
@@ -24,7 +24,7 @@ public final class z extends com.heytap.nearx.a.a.b<z, a> {
     public static final class a extends b.a<z, a> {
 
         /* renamed from: c  reason: collision with root package name */
-        public String f25801c;
+        public String f12113c;
         public b d;
         public aa e;
         public ad f;
@@ -51,12 +51,12 @@ public final class z extends com.heytap.nearx.a.a.b<z, a> {
         }
 
         public a a(String str) {
-            this.f25801c = str;
+            this.f12113c = str;
             return this;
         }
 
         public z b() {
-            return new z(this.f25801c, this.d, this.e, this.f, this.g, super.a());
+            return new z(this.f12113c, this.d, this.e, this.f, this.g, super.a());
         }
     }
 
@@ -115,7 +115,7 @@ public final class z extends com.heytap.nearx.a.a.b<z, a> {
             int i = 0;
             int a2 = zVar.g != null ? com.heytap.nearx.a.a.e.p.a(1, (int) zVar.g) : 0;
             int a3 = zVar.h != null ? b.g.a(2, (int) zVar.h) : 0;
-            int a4 = zVar.i != null ? aa.f25690c.a(3, (int) zVar.i) : 0;
+            int a4 = zVar.i != null ? aa.f12002c.a(3, (int) zVar.i) : 0;
             int a5 = zVar.j != null ? ad.d.a(4, (int) zVar.j) : 0;
             if (zVar.k != null) {
                 i = com.heytap.nearx.a.a.e.d.a(5, (int) zVar.k);
@@ -132,7 +132,7 @@ public final class z extends com.heytap.nearx.a.a.b<z, a> {
                 b.g.a(gVar, 2, zVar.h);
             }
             if (zVar.i != null) {
-                aa.f25690c.a(gVar, 3, zVar.i);
+                aa.f12002c.a(gVar, 3, zVar.i);
             }
             if (zVar.j != null) {
                 ad.d.a(gVar, 4, zVar.j);
@@ -158,12 +158,12 @@ public final class z extends com.heytap.nearx.a.a.b<z, a> {
                 } else if (b == 2) {
                     aVar.a(b.g.a(fVar));
                 } else if (b == 3) {
-                    aVar.a(aa.f25690c.a(fVar));
+                    aVar.a(aa.f12002c.a(fVar));
                 } else if (b == 4) {
                     try {
                         aVar.a(ad.d.a(fVar));
                     } catch (e.a e) {
-                        aVar.a(b, com.heytap.nearx.a.a.a.VARINT, Long.valueOf(e.f22263a));
+                        aVar.a(b, com.heytap.nearx.a.a.a.VARINT, Long.valueOf(e.f8655a));
                     }
                 } else if (b != 5) {
                     com.heytap.nearx.a.a.a c2 = fVar.c();
@@ -176,7 +176,7 @@ public final class z extends com.heytap.nearx.a.a.b<z, a> {
     }
 
     public z(String str, b bVar, aa aaVar, ad adVar, Integer num, ByteString byteString) {
-        super(f25800c, byteString);
+        super(f12112c, byteString);
         this.g = str;
         this.h = bVar;
         this.i = aaVar;

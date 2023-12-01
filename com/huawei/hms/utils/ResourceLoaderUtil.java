@@ -8,55 +8,55 @@ import com.anythink.expressad.foundation.h.i;
 public abstract class ResourceLoaderUtil {
 
     /* renamed from: a  reason: collision with root package name */
-    public static Context f22927a;
+    public static Context f9319a;
     public static String b;
 
     public static int getAnimId(String str) {
-        return f22927a.getResources().getIdentifier(str, i.f, b);
+        return f9319a.getResources().getIdentifier(str, i.f, b);
     }
 
     public static int getColorId(String str) {
-        return f22927a.getResources().getIdentifier(str, "color", b);
+        return f9319a.getResources().getIdentifier(str, "color", b);
     }
 
     public static Drawable getDrawable(String str) {
-        return f22927a.getResources().getDrawable(getDrawableId(str));
+        return f9319a.getResources().getDrawable(getDrawableId(str));
     }
 
     public static int getDrawableId(String str) {
-        return f22927a.getResources().getIdentifier(str, i.f7952c, b);
+        return f9319a.getResources().getIdentifier(str, i.f5112c, b);
     }
 
     public static int getIdId(String str) {
-        return f22927a.getResources().getIdentifier(str, "id", b);
+        return f9319a.getResources().getIdentifier(str, "id", b);
     }
 
     public static int getLayoutId(String str) {
-        return f22927a.getResources().getIdentifier(str, "layout", b);
+        return f9319a.getResources().getIdentifier(str, "layout", b);
     }
 
     public static String getString(String str) {
-        return f22927a.getResources().getString(getStringId(str));
+        return f9319a.getResources().getString(getStringId(str));
     }
 
     public static String getString(String str, Object... objArr) {
-        return f22927a.getResources().getString(getStringId(str), objArr);
+        return f9319a.getResources().getString(getStringId(str), objArr);
     }
 
     public static int getStringId(String str) {
-        return f22927a.getResources().getIdentifier(str, "string", b);
+        return f9319a.getResources().getIdentifier(str, "string", b);
     }
 
     public static int getStyleId(String str) {
-        return f22927a.getResources().getIdentifier(str, "style", b);
+        return f9319a.getResources().getIdentifier(str, "style", b);
     }
 
     public static Context getmContext() {
-        return f22927a;
+        return f9319a;
     }
 
     public static void setmContext(Context context) {
-        f22927a = context;
+        f9319a = context;
         b = context.getPackageName();
     }
 }

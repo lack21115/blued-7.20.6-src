@@ -13,11 +13,11 @@ public class CookieManager {
     private static CookieManager d;
 
     /* renamed from: a  reason: collision with root package name */
-    CopyOnWriteArrayList<b> f38692a;
+    CopyOnWriteArrayList<b> f25001a;
     String b;
 
     /* renamed from: c  reason: collision with root package name */
-    a f38693c = a.MODE_NONE;
+    a f25002c = a.MODE_NONE;
     private boolean e = false;
     private boolean f = false;
 
@@ -33,11 +33,11 @@ public class CookieManager {
     public class b {
 
         /* renamed from: a  reason: collision with root package name */
-        int f38696a;
+        int f25005a;
         String b;
 
         /* renamed from: c  reason: collision with root package name */
-        String f38697c;
+        String f25006c;
         ValueCallback<Boolean> d;
 
         b() {
@@ -76,34 +76,34 @@ public class CookieManager {
     public void a() {
         synchronized (this) {
             this.f = true;
-            if (this.f38692a != null && this.f38692a.size() != 0) {
+            if (this.f25001a != null && this.f25001a.size() != 0) {
                 w a2 = w.a();
                 if (a2 == null || !a2.b()) {
-                    Iterator<b> it = this.f38692a.iterator();
+                    Iterator<b> it = this.f25001a.iterator();
                     while (it.hasNext()) {
                         b next = it.next();
-                        int i = next.f38696a;
+                        int i = next.f25005a;
                         if (i != 1) {
                             if (i == 2) {
-                                android.webkit.CookieManager.getInstance().setCookie(next.b, next.f38697c);
+                                android.webkit.CookieManager.getInstance().setCookie(next.b, next.f25006c);
                             }
                         } else if (Build.VERSION.SDK_INT >= 21) {
-                            com.tencent.smtt.utils.i.a(android.webkit.CookieManager.getInstance(), "setCookie", new Class[]{String.class, String.class, android.webkit.ValueCallback.class}, next.b, next.f38697c, next.d);
+                            com.tencent.smtt.utils.i.a(android.webkit.CookieManager.getInstance(), "setCookie", new Class[]{String.class, String.class, android.webkit.ValueCallback.class}, next.b, next.f25006c, next.d);
                         }
                     }
                 } else {
-                    Iterator<b> it2 = this.f38692a.iterator();
+                    Iterator<b> it2 = this.f25001a.iterator();
                     while (it2.hasNext()) {
                         b next2 = it2.next();
-                        int i2 = next2.f38696a;
+                        int i2 = next2.f25005a;
                         if (i2 == 1) {
-                            setCookie(next2.b, next2.f38697c, next2.d);
+                            setCookie(next2.b, next2.f25006c, next2.d);
                         } else if (i2 == 2) {
-                            setCookie(next2.b, next2.f38697c);
+                            setCookie(next2.b, next2.f25006c);
                         }
                     }
                 }
-                this.f38692a.clear();
+                this.f25001a.clear();
             }
         }
     }
@@ -179,7 +179,7 @@ public class CookieManager {
 
     @Deprecated
     public void removeAllCookie() {
-        CopyOnWriteArrayList<b> copyOnWriteArrayList = this.f38692a;
+        CopyOnWriteArrayList<b> copyOnWriteArrayList = this.f25001a;
         if (copyOnWriteArrayList != null) {
             copyOnWriteArrayList.clear();
         }
@@ -192,7 +192,7 @@ public class CookieManager {
     }
 
     public void removeAllCookies(ValueCallback<Boolean> valueCallback) {
-        CopyOnWriteArrayList<b> copyOnWriteArrayList = this.f38692a;
+        CopyOnWriteArrayList<b> copyOnWriteArrayList = this.f25001a;
         if (copyOnWriteArrayList != null) {
             copyOnWriteArrayList.clear();
         }
@@ -270,14 +270,14 @@ public class CookieManager {
             if (a2 == null || !a2.b()) {
                 if (!w.a().d()) {
                     b bVar = new b();
-                    bVar.f38696a = 1;
+                    bVar.f25005a = 1;
                     bVar.b = str;
-                    bVar.f38697c = str2;
+                    bVar.f25006c = str2;
                     bVar.d = valueCallback;
-                    if (this.f38692a == null) {
-                        this.f38692a = new CopyOnWriteArrayList<>();
+                    if (this.f25001a == null) {
+                        this.f25001a = new CopyOnWriteArrayList<>();
                     }
-                    this.f38692a.add(bVar);
+                    this.f25001a.add(bVar);
                 }
                 if (this.f) {
                     if (Build.VERSION.SDK_INT < 21) {
@@ -300,14 +300,14 @@ public class CookieManager {
                 }
                 if (!w.a().d()) {
                     b bVar = new b();
-                    bVar.f38696a = 2;
+                    bVar.f25005a = 2;
                     bVar.b = str;
-                    bVar.f38697c = str2;
+                    bVar.f25006c = str2;
                     bVar.d = null;
-                    if (this.f38692a == null) {
-                        this.f38692a = new CopyOnWriteArrayList<>();
+                    if (this.f25001a == null) {
+                        this.f25001a = new CopyOnWriteArrayList<>();
                     }
-                    this.f38692a.add(bVar);
+                    this.f25001a.add(bVar);
                 }
             } else {
                 a2.c().b().invokeStaticMethod("com.tencent.tbs.tbsshell.WebCoreProxy", "cookieManager_setCookie", new Class[]{String.class, String.class}, str, str2);
@@ -320,11 +320,11 @@ public class CookieManager {
         if (context == null || !TbsExtensionFunctionManager.getInstance().canUseFunction(context, TbsExtensionFunctionManager.COOKIE_SWITCH_FILE_NAME)) {
             return false;
         }
-        this.f38693c = aVar;
+        this.f25002c = aVar;
         if (str != null) {
             this.b = str;
         }
-        if (this.f38693c == a.MODE_NONE || !z || w.a().d()) {
+        if (this.f25002c == a.MODE_NONE || !z || w.a().d()) {
             return true;
         }
         w.a().a(context);

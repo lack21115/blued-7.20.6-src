@@ -2,6 +2,7 @@ package com.sdk.tencent.b;
 
 import android.content.Context;
 import com.sdk.tencent.base.module.manager.SDKManager;
+import com.xiaomi.mipush.sdk.Constants;
 import java.net.Inet4Address;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
@@ -12,12 +13,12 @@ import java.util.Enumeration;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f28016a = "a";
+    public static final String f14328a = "a";
     public static Boolean b = Boolean.valueOf(com.sdk.tencent.f.c.b);
 
     public static String a(int i, String str) {
         String str2;
-        String str3 = com.sdk.tencent.l.a.f28060a;
+        String str3 = com.sdk.tencent.l.a.f14372a;
         try {
             Enumeration<NetworkInterface> networkInterfaces = NetworkInterface.getNetworkInterfaces();
             loop0: while (networkInterfaces.hasMoreElements()) {
@@ -54,7 +55,7 @@ public class a {
     }
 
     public static String a(String str) {
-        return str.split("-")[0];
+        return str.split(Constants.ACCEPT_TIME_SEPARATOR_SERVER)[0];
     }
 
     public static void a(Context context, int i, String str, String str2) {
@@ -67,6 +68,6 @@ public class a {
     }
 
     public static String b(String str) {
-        return str.split("-")[1];
+        return str.split(Constants.ACCEPT_TIME_SEPARATOR_SERVER)[1];
     }
 }

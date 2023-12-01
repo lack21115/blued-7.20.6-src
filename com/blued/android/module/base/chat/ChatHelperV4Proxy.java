@@ -26,15 +26,15 @@ public class ChatHelperV4Proxy extends BaseProxy<IChatHelperV4> implements IChat
 
     @Override // com.blued.android.module.base.chat.IChatHelperV4
     public void b() {
-        if (this.f10426a != 0) {
-            ((IChatHelperV4) this.f10426a).b();
+        if (this.a != 0) {
+            ((IChatHelperV4) this.a).b();
         }
     }
 
     @Override // com.blued.android.module.base.chat.IChatHelperV4
     public void c() {
-        if (this.f10426a != 0) {
-            ((IChatHelperV4) this.f10426a).c();
+        if (this.a != 0) {
+            ((IChatHelperV4) this.a).c();
         }
     }
 }

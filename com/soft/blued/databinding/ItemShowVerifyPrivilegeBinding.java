@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemShowVerifyPrivilegeBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29322a;
+    private final LinearLayout f15632a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29322a;
+        return this.f15632a;
     }
 }

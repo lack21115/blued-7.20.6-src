@@ -18,16 +18,12 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/square/vm/HotFeedViewModel.class */
 public final class HotFeedViewModel extends BaseViewModel {
     private int b;
-
-    /* renamed from: a  reason: collision with root package name */
-    private final MutableLiveData<List<BluedIngSelfFeed>> f20213a = new MutableLiveData<>();
-
-    /* renamed from: c  reason: collision with root package name */
-    private final int f20214c = 12;
+    private final MutableLiveData<List<BluedIngSelfFeed>> a = new MutableLiveData<>();
+    private final int c = 12;
     private boolean d = true;
 
     private final void d(ActivityFragmentActive activityFragmentActive) {
-        FeedHttpUtils.a(e(activityFragmentActive), String.valueOf(this.b), String.valueOf(this.f20214c), activityFragmentActive);
+        FeedHttpUtils.a(e(activityFragmentActive), String.valueOf(this.b), String.valueOf(this.c), activityFragmentActive);
     }
 
     private final BluedUIHttpResponse<?> e(final ActivityFragmentActive activityFragmentActive) {
@@ -125,7 +121,7 @@ public final class HotFeedViewModel extends BaseViewModel {
     }
 
     public final MutableLiveData<List<BluedIngSelfFeed>> d() {
-        return this.f20213a;
+        return this.a;
     }
 
     public final int e() {

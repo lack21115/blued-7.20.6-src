@@ -1,6 +1,7 @@
 package com.danlan.android.cognition;
 
 import android.util.Log;
+import com.tencent.thumbplayer.api.TPErrorCode;
 
 /* loaded from: source-7206380-dex2jar.jar:com/danlan/android/cognition/Logger.class */
 public class Logger {
@@ -37,8 +38,8 @@ public class Logger {
                 return;
             }
             int length = trim.length();
-            int i3 = i2 + 4000;
-            Log.d(PREFIX, (length <= i3 ? trim.substring(i2) : trim.substring(i2, 4000)).trim());
+            int i3 = i2 + TPErrorCode.TP_ERROR_TYPE_DOWNLOAD_PROXY;
+            Log.d(PREFIX, (length <= i3 ? trim.substring(i2) : trim.substring(i2, TPErrorCode.TP_ERROR_TYPE_DOWNLOAD_PROXY)).trim());
             i = i3;
         }
     }

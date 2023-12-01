@@ -8,13 +8,9 @@ import java.util.List;
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/widget/emoji/manager/Emoji.class */
 public final class Emoji implements Serializable {
     private static final long serialVersionUID = 3;
-
-    /* renamed from: a  reason: collision with root package name */
-    private final String f11137a;
+    private final String a;
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private List<Emoji> f11138c;
+    private List<Emoji> c;
     private Emoji d;
 
     public Emoji(int i, int i2) {
@@ -30,9 +26,9 @@ public final class Emoji implements Serializable {
     }
 
     public Emoji(int[] iArr, int i, Emoji... emojiArr) {
-        this.f11137a = new String(iArr, 0, iArr.length);
+        this.a = new String(iArr, 0, iArr.length);
         this.b = i;
-        this.f11138c = Arrays.asList(emojiArr);
+        this.c = Arrays.asList(emojiArr);
         int length = emojiArr.length;
         int i2 = 0;
         while (true) {
@@ -46,7 +42,7 @@ public final class Emoji implements Serializable {
     }
 
     public String a() {
-        return this.f11137a;
+        return this.a;
     }
 
     public int b() {
@@ -54,11 +50,11 @@ public final class Emoji implements Serializable {
     }
 
     public List<Emoji> c() {
-        return new ArrayList(this.f11138c);
+        return new ArrayList(this.c);
     }
 
     public int d() {
-        return this.f11137a.length();
+        return this.a.length();
     }
 
     public boolean equals(Object obj) {
@@ -69,10 +65,10 @@ public final class Emoji implements Serializable {
             return false;
         }
         Emoji emoji = (Emoji) obj;
-        return this.b == emoji.b && this.f11137a.equals(emoji.f11137a) && this.f11138c.equals(emoji.f11138c);
+        return this.b == emoji.b && this.a.equals(emoji.a) && this.c.equals(emoji.c);
     }
 
     public int hashCode() {
-        return (((this.f11137a.hashCode() * 31) + this.b) * 31) + this.f11138c.hashCode();
+        return (((this.a.hashCode() * 31) + this.b) * 31) + this.c.hashCode();
     }
 }

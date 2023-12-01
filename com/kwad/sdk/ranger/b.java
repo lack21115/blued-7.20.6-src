@@ -2,6 +2,7 @@ package com.kwad.sdk.ranger;
 
 import android.text.TextUtils;
 import android.util.Log;
+import com.huawei.hms.ads.fw;
 import com.kwad.sdk.utils.aw;
 import com.kwad.sdk.utils.g;
 import com.kwad.sdk.utils.s;
@@ -14,9 +15,8 @@ public class b {
     public static final String TAG = "Ranger_" + b.class.getSimpleName();
     private String value;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/sdk/ranger/b$a.class */
-    public static final class a {
+    static final class a {
         private static final b axP = new b((byte) 0);
     }
 
@@ -73,7 +73,7 @@ public class b {
         } else {
             String str = TAG;
             com.kwad.sdk.core.d.b.d(str, "node.nodeClassName:" + aVar.ayo);
-            this.value = s.ez(aVar.ayo) ? "true" : "false";
+            this.value = s.ez(aVar.ayo) ? fw.Code : "false";
         }
     }
 

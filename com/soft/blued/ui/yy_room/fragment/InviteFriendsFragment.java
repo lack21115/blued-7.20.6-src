@@ -18,8 +18,8 @@ import com.blued.android.chat.utils.ChatHelper;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.AppMethods;
 import com.blued.android.core.image.ImageLoader;
+import com.blued.android.core.net.IRequestHost;
 import com.blued.android.framework.activity.PreloadFragment;
-import com.blued.android.framework.activity.keyboardpage.KeyboardListenLinearLayout;
 import com.blued.android.framework.http.BluedUIHttpResponse;
 import com.blued.android.framework.http.parser.BluedEntityA;
 import com.blued.android.framework.view.pulltorefresh.PullToRefreshBase;
@@ -76,7 +76,7 @@ public class InviteFriendsFragment extends PreloadFragment {
         private TextView b;
 
         /* renamed from: c  reason: collision with root package name */
-        private ImageView f34689c;
+        private ImageView f20998c;
         private ShapeTextView d;
 
         private FriendListAdapter() {
@@ -85,26 +85,25 @@ public class InviteFriendsFragment extends PreloadFragment {
 
         /* JADX INFO: Access modifiers changed from: private */
         public void a(final BluedBlackList bluedBlackList, final int i) {
-            LiveHttpUtils.b(InviteFriendsFragment.this.v.sessionId + "", new BluedUIHttpResponse<BluedEntityA<LiveMsgShareEntity>>(InviteFriendsFragment.this.getFragmentActive()) { // from class: com.soft.blued.ui.yy_room.fragment.InviteFriendsFragment.FriendListAdapter.2
+            LiveHttpUtils.b(InviteFriendsFragment.this.v.sessionId + "", (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<LiveMsgShareEntity>>(InviteFriendsFragment.this.getFragmentActive()) { // from class: com.soft.blued.ui.yy_room.fragment.InviteFriendsFragment.FriendListAdapter.2
                 /* JADX INFO: Access modifiers changed from: protected */
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 /* renamed from: a */
                 public void onUIUpdate(BluedEntityA<LiveMsgShareEntity> bluedEntityA) {
                     if (bluedEntityA == null || !bluedEntityA.hasData()) {
                         return;
                     }
-                    LiveMsgShareEntity singleData = bluedEntityA.getSingleData();
+                    LiveMsgShareEntity liveMsgShareEntity = (LiveMsgShareEntity) bluedEntityA.getSingleData();
                     Gson f = AppInfo.f();
-                    singleData.copywriting = InviteFriendsFragment.this.v.title;
-                    singleData.room_type = StringUtils.a(InviteFriendsFragment.this.x, 1);
-                    singleData.description = InviteFriendsFragment.this.w;
-                    String json = f.toJson(singleData);
+                    liveMsgShareEntity.copywriting = InviteFriendsFragment.this.v.title;
+                    liveMsgShareEntity.room_type = StringUtils.a(InviteFriendsFragment.this.x, 1);
+                    liveMsgShareEntity.description = InviteFriendsFragment.this.w;
+                    String json = f.toJson(liveMsgShareEntity);
                     Logger.e("invite", "invite friends extra: " + json);
                     ChatHelperV4.a().a(InviteFriendsFragment.this.a(StringUtils.a(bluedBlackList.uid, 0L), (short) 2, (short) 210, FriendListAdapter.this.mContext.getResources().getString(R.string.yy_share_to_chat), json), false);
                     YYRoomInfoManager.e().b().addInvited(bluedBlackList.uid);
                     InviteFriendsFragment.this.o.notifyItemChanged(i);
                 }
-            }, InviteFriendsFragment.this.getFragmentActive());
+            }, (IRequestHost) InviteFriendsFragment.this.getFragmentActive());
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
@@ -115,21 +114,21 @@ public class InviteFriendsFragment extends PreloadFragment {
                 return;
             }
             this.b = (TextView) baseViewHolder.getView(2131372046);
-            this.f34689c = (ImageView) baseViewHolder.getView(R.id.riv_avatar);
-            this.d = (ShapeTextView) baseViewHolder.getView(R.id.invite_to);
+            this.f20998c = (ImageView) baseViewHolder.getView(R.id.riv_avatar);
+            this.d = baseViewHolder.getView(R.id.invite_to);
             if (YYRoomInfoManager.e().b().isInvited(bluedBlackList.uid)) {
                 this.d.setEnabled(false);
                 this.d.setText("已邀请");
-                ShapeHelper.a((ShapeHelper.ShapeView) this.d, 2131101615);
+                ShapeHelper.a(this.d, 2131101615);
                 ShapeHelper.a(this.d, 2131101874, 2131101874);
             } else {
                 this.d.setEnabled(true);
                 this.d.setText("邀请");
-                ShapeHelper.a((ShapeHelper.ShapeView) this.d, 2131102478);
+                ShapeHelper.a(this.d, 2131102478);
                 ShapeHelper.a(this.d, 2131101446, 2131101533);
             }
             this.b.setText(InviteFriendsFragment.this.a(bluedBlackList));
-            ImageLoader.a(InviteFriendsFragment.this.getFragmentActive(), bluedBlackList.avatar).b(2131237310).c().a(this.f34689c);
+            ImageLoader.a(InviteFriendsFragment.this.getFragmentActive(), bluedBlackList.avatar).b(2131237310).c().a(this.f20998c);
             this.d.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.yy_room.fragment.InviteFriendsFragment.FriendListAdapter.1
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view) {
@@ -188,7 +187,7 @@ public class InviteFriendsFragment extends PreloadFragment {
         if (this.k == 1 || this.o.getData().size() <= 0) {
             return;
         }
-        AppMethods.a((CharSequence) this.n.getResources().getString(2131887275));
+        AppMethods.a(this.n.getResources().getString(2131887275));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -228,21 +227,19 @@ public class InviteFriendsFragment extends PreloadFragment {
         BluedUIHttpResponse<BluedEntityA<BluedBlackList>> bluedUIHttpResponse = new BluedUIHttpResponse<BluedEntityA<BluedBlackList>>(getFragmentActive()) { // from class: com.soft.blued.ui.yy_room.fragment.InviteFriendsFragment.4
 
             /* renamed from: a  reason: collision with root package name */
-            boolean f34687a = false;
+            boolean f20996a = false;
 
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<BluedBlackList> bluedEntityA) {
-                this.f34687a = false;
+                this.f20996a = false;
                 InviteFriendsFragment.this.a(bluedEntityA);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str) {
                 if (InviteFriendsFragment.this.k == 1 && InviteFriendsFragment.this.o.getData().size() == 0) {
                     InviteFriendsFragment.this.p.b();
-                    InviteFriendsFragment.this.o.setEmptyView(InviteFriendsFragment.this.p);
+                    InviteFriendsFragment.this.o.setEmptyView((View) InviteFriendsFragment.this.p);
                     InviteFriendsFragment.this.o.setNewData(null);
                 } else if (InviteFriendsFragment.this.k != 1) {
                     InviteFriendsFragment.this.o.loadMoreFail();
@@ -253,24 +250,23 @@ public class InviteFriendsFragment extends PreloadFragment {
                 return super.onUIFailure(i, str);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 super.onUIFinish();
                 InviteFriendsFragment.this.r.setVisibility(8);
                 InviteFriendsFragment.this.t.j();
-                if (!InviteFriendsFragment.this.l && !this.f34687a) {
+                if (!InviteFriendsFragment.this.l && !this.f20996a) {
                     if (InviteFriendsFragment.this.m) {
                         InviteFriendsFragment.this.o.loadMoreComplete();
                     } else {
                         InviteFriendsFragment.this.o.loadMoreEnd();
                     }
                 }
-                if (InviteFriendsFragment.this.l && !this.f34687a) {
+                if (InviteFriendsFragment.this.l && !this.f20996a) {
                     if (InviteFriendsFragment.this.k != 1) {
                         InviteFriendsFragment.f(InviteFriendsFragment.this);
                     } else {
                         InviteFriendsFragment.this.p.a();
-                        InviteFriendsFragment.this.o.setEmptyView(InviteFriendsFragment.this.p);
+                        InviteFriendsFragment.this.o.setEmptyView((View) InviteFriendsFragment.this.p);
                         InviteFriendsFragment.this.o.setNewData(null);
                     }
                     InviteFriendsFragment.this.o.loadMoreEnd();
@@ -279,7 +275,6 @@ public class InviteFriendsFragment extends PreloadFragment {
                 inviteFriendsFragment.a(inviteFriendsFragment.o.getData());
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 super.onUIStart();
                 InviteFriendsFragment.this.l = false;
@@ -293,7 +288,6 @@ public class InviteFriendsFragment extends PreloadFragment {
         return ChatHelper.getChattingModelForSendmsg(j, s2, str, ILiveMsgSender.e(), str2, s);
     }
 
-    @Override // com.blued.android.framework.activity.PreloadFragment
     public void a(View view) {
         this.u = new FriendsModel();
         View inflate = LayoutInflater.from(this.n).inflate(R.layout.fragment_share_to_single, (ViewGroup) view, true);
@@ -301,10 +295,10 @@ public class InviteFriendsFragment extends PreloadFragment {
         this.q = frameLayout;
         frameLayout.setBackgroundResource(2131101478);
         this.r = (ProgressBar) inflate.findViewById(2131368973);
-        PullToRefreshRecyclerView pullToRefreshRecyclerView = (PullToRefreshRecyclerView) inflate.findViewById(R.id.ptrrv_list);
-        this.t = pullToRefreshRecyclerView;
-        pullToRefreshRecyclerView.setRefreshEnabled(true);
-        this.s = this.t.getRefreshableView();
+        PullToRefreshRecyclerView findViewById = inflate.findViewById(R.id.ptrrv_list);
+        this.t = findViewById;
+        findViewById.setRefreshEnabled(true);
+        this.s = (RecyclerView) this.t.getRefreshableView();
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.n);
         this.o = new FriendListAdapter();
         this.s.setLayoutManager(linearLayoutManager);
@@ -320,7 +314,7 @@ public class InviteFriendsFragment extends PreloadFragment {
         this.p.setNoDataStr(2131892287);
         this.p.setNoDataImg(2131233641);
         this.p.d();
-        this.d = (KeyboardListenLinearLayout) inflate.findViewById(2131366092);
+        this.d = inflate.findViewById(R.id.keyboard_layout);
         super.a(this.d);
         this.o.setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() { // from class: com.soft.blued.ui.yy_room.fragment.InviteFriendsFragment.1
             @Override // com.chad.library.adapter.base.BaseQuickAdapter.RequestLoadMoreListener
@@ -330,7 +324,6 @@ public class InviteFriendsFragment extends PreloadFragment {
             }
         }, this.s);
         this.t.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener<RecyclerView>() { // from class: com.soft.blued.ui.yy_room.fragment.InviteFriendsFragment.2
-            @Override // com.blued.android.framework.view.pulltorefresh.PullToRefreshBase.OnRefreshListener
             public void onRefresh(PullToRefreshBase<RecyclerView> pullToRefreshBase) {
                 InviteFriendsFragment.this.k = 1;
                 InviteFriendsFragment.this.h();
@@ -339,7 +332,7 @@ public class InviteFriendsFragment extends PreloadFragment {
         h();
     }
 
-    @Override // androidx.fragment.app.Fragment
+    /* JADX WARN: Multi-variable type inference failed */
     public void onActivityCreated(Bundle bundle) {
         super.onActivityCreated(bundle);
         LiveEventBus.get("share_to_private_chat", String.class).observe(this, new Observer<String>() { // from class: com.soft.blued.ui.yy_room.fragment.InviteFriendsFragment.3
@@ -368,7 +361,6 @@ public class InviteFriendsFragment extends PreloadFragment {
         });
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onAttach(Context context) {
         super.onAttach(context);
         this.n = context;

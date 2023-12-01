@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemVipCenterExpLvlRightBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ConstraintLayout f29353a;
+    private final ConstraintLayout f15663a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f29353a;
+        return this.f15663a;
     }
 }

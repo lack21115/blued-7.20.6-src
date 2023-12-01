@@ -30,9 +30,7 @@ public class ShapeModel {
     public int X;
     public int Y;
     public int Z;
-
-    /* renamed from: a  reason: collision with root package name */
-    public boolean f10292a;
+    public boolean a;
     public int aa;
     public int ab;
     public int ac;
@@ -44,9 +42,7 @@ public class ShapeModel {
     public int ai;
     boolean aj;
     public int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public int f10293c;
+    public int c;
     public int d;
     public int e;
     public int f;

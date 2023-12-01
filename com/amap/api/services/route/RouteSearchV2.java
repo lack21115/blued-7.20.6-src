@@ -3,12 +3,13 @@ package com.amap.api.services.route;
 import android.content.Context;
 import android.os.Parcel;
 import android.os.Parcelable;
+import com.alipay.sdk.util.i;
 import com.amap.api.col.p0003sl.fe;
 import com.amap.api.col.p0003sl.hc;
 import com.amap.api.services.core.AMapException;
 import com.amap.api.services.core.LatLonPoint;
 import com.amap.api.services.interfaces.IRouteSearchV2;
-import com.umeng.analytics.pro.bh;
+import com.anythink.core.common.c.d;
 import java.util.ArrayList;
 import java.util.List;
 import org.json.JSONArray;
@@ -17,19 +18,15 @@ import org.json.JSONObject;
 
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/services/route/RouteSearchV2.class */
 public class RouteSearchV2 {
-
-    /* renamed from: a  reason: collision with root package name */
-    private IRouteSearchV2 f5748a;
+    private IRouteSearchV2 a;
 
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/services/route/RouteSearchV2$CurveCost.class */
     public static class CurveCost {
-
-        /* renamed from: a  reason: collision with root package name */
-        private float f5749a;
+        private float a;
         private float b;
 
         public float getAccess() {
-            return this.f5749a;
+            return this.a;
         }
 
         public float getValue() {
@@ -37,7 +34,7 @@ public class RouteSearchV2 {
         }
 
         public void setAccess(float f) {
-            this.f5749a = f;
+            this.a = f;
         }
 
         public void setValue(float f) {
@@ -47,13 +44,9 @@ public class RouteSearchV2 {
 
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/services/route/RouteSearchV2$CustomCostMode.class */
     public static class CustomCostMode {
-
-        /* renamed from: a  reason: collision with root package name */
-        private List<SpeedCost> f5750a;
+        private List<SpeedCost> a;
         private CurveCost b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private SlopeCost f5751c;
+        private SlopeCost c;
         private float d;
         private TransCost e;
         private float f;
@@ -76,11 +69,11 @@ public class RouteSearchV2 {
         }
 
         public SlopeCost getSlopeCost() {
-            return this.f5751c;
+            return this.c;
         }
 
         public List<SpeedCost> getSpeedCosts() {
-            return this.f5750a;
+            return this.a;
         }
 
         public TransCost getTransCost() {
@@ -104,11 +97,11 @@ public class RouteSearchV2 {
         }
 
         public void setSlopeCost(SlopeCost slopeCost) {
-            this.f5751c = slopeCost;
+            this.c = slopeCost;
         }
 
         public void setSpeedCosts(List<SpeedCost> list) {
-            this.f5750a = list;
+            this.a = list;
         }
 
         public void setTransCost(TransCost transCost) {
@@ -119,31 +112,31 @@ public class RouteSearchV2 {
             try {
                 JSONObject jSONObject = new JSONObject();
                 JSONArray jSONArray = new JSONArray();
-                if (this.f5750a != null) {
-                    for (SpeedCost speedCost : this.f5750a) {
+                if (this.a != null) {
+                    for (SpeedCost speedCost : this.a) {
                         JSONObject jSONObject2 = new JSONObject();
                         jSONObject2.put("speed", speedCost.getSpeed());
-                        jSONObject2.put("value", speedCost.getValue());
+                        jSONObject2.put(d.a.d, speedCost.getValue());
                         jSONArray.put(jSONObject2);
                     }
                     jSONObject.put("speed_cost", jSONArray);
                 }
                 if (this.b != null) {
                     JSONObject jSONObject3 = new JSONObject();
-                    jSONObject3.put(bh.Q, this.b.getAccess());
-                    jSONObject3.put("value", this.b.getValue());
+                    jSONObject3.put("access", this.b.getAccess());
+                    jSONObject3.put(d.a.d, this.b.getValue());
                     jSONObject.put("curve_cost", jSONObject3);
                 }
-                if (this.f5751c != null) {
+                if (this.c != null) {
                     JSONObject jSONObject4 = new JSONObject();
-                    jSONObject4.put("up", this.f5751c.getUp());
-                    jSONObject4.put("down", this.f5751c.getDown());
+                    jSONObject4.put("up", this.c.getUp());
+                    jSONObject4.put("down", this.c.getDown());
                     jSONObject.put("slope_cost", jSONObject4);
                 }
                 jSONObject.put("aux_cost", this.d);
                 if (this.e != null) {
                     JSONObject jSONObject5 = new JSONObject();
-                    jSONObject5.put(bh.Q, this.e.getAccess());
+                    jSONObject5.put("access", this.e.getAccess());
                     jSONObject5.put("decess", this.e.getDecess());
                     jSONObject.put("trans_cost", jSONObject5);
                 }
@@ -152,10 +145,10 @@ public class RouteSearchV2 {
                     JSONArray jSONArray2 = new JSONArray();
                     JSONObject jSONObject6 = new JSONObject();
                     jSONObject6.put("powerdemand", this.g.getPowerDemand());
-                    jSONObject6.put("value", this.g.getPowerDemandValue());
+                    jSONObject6.put(d.a.d, this.g.getPowerDemandValue());
                     JSONObject jSONObject7 = new JSONObject();
                     jSONObject7.put("speed", this.g.getSpeed());
-                    jSONObject7.put("value", this.g.getSpeedValue());
+                    jSONObject7.put(d.a.d, this.g.getSpeedValue());
                     jSONArray2.put(jSONObject6);
                     jSONArray2.put(jSONObject7);
                     jSONObject.put("powertrain_loss", jSONArray2);
@@ -189,13 +182,9 @@ public class RouteSearchV2 {
                 return a(i);
             }
         };
-
-        /* renamed from: a  reason: collision with root package name */
-        private FromAndTo f5752a;
+        private FromAndTo a;
         private NewEnergy b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private int f5753c;
+        private int c;
         private List<LatLonPoint> d;
         private List<List<LatLonPoint>> e;
         private String f;
@@ -205,7 +194,7 @@ public class RouteSearchV2 {
         private int j;
 
         public DriveRouteQuery() {
-            this.f5753c = DrivingStrategy.DEFAULT.getValue();
+            this.c = DrivingStrategy.DEFAULT.getValue();
             this.g = true;
             this.h = 0;
             this.i = null;
@@ -213,14 +202,14 @@ public class RouteSearchV2 {
         }
 
         public DriveRouteQuery(Parcel parcel) {
-            this.f5753c = DrivingStrategy.DEFAULT.getValue();
+            this.c = DrivingStrategy.DEFAULT.getValue();
             boolean z = true;
             this.g = true;
             this.h = 0;
             this.i = null;
             this.j = 1;
-            this.f5752a = (FromAndTo) parcel.readParcelable(FromAndTo.class.getClassLoader());
-            this.f5753c = parcel.readInt();
+            this.a = (FromAndTo) parcel.readParcelable(FromAndTo.class.getClassLoader());
+            this.c = parcel.readInt();
             this.d = parcel.createTypedArrayList(LatLonPoint.CREATOR);
             int readInt = parcel.readInt();
             if (readInt == 0) {
@@ -245,26 +234,26 @@ public class RouteSearchV2 {
         }
 
         public DriveRouteQuery(FromAndTo fromAndTo, DrivingStrategy drivingStrategy, List<LatLonPoint> list, List<List<LatLonPoint>> list2, String str) {
-            this.f5753c = DrivingStrategy.DEFAULT.getValue();
+            this.c = DrivingStrategy.DEFAULT.getValue();
             this.g = true;
             this.h = 0;
             this.i = null;
             this.j = 1;
-            this.f5752a = fromAndTo;
-            this.f5753c = drivingStrategy.getValue();
+            this.a = fromAndTo;
+            this.c = drivingStrategy.getValue();
             this.d = list;
             this.e = list2;
             this.f = str;
         }
 
         /* renamed from: clone */
-        public DriveRouteQuery m2519clone() {
+        public DriveRouteQuery m8962clone() {
             try {
                 super.clone();
             } catch (CloneNotSupportedException e) {
                 fe.a(e, "RouteSearchV2", "DriveRouteQueryclone");
             }
-            DriveRouteQuery driveRouteQuery = new DriveRouteQuery(this.f5752a, DrivingStrategy.fromValue(this.f5753c), this.d, this.e, this.f);
+            DriveRouteQuery driveRouteQuery = new DriveRouteQuery(this.a, DrivingStrategy.fromValue(this.c), this.d, this.e, this.f);
             driveRouteQuery.setUseFerry(this.g);
             driveRouteQuery.setCarType(this.h);
             driveRouteQuery.setExclude(this.i);
@@ -300,15 +289,15 @@ public class RouteSearchV2 {
                 } else if (!list.equals(driveRouteQuery.e)) {
                     return false;
                 }
-                FromAndTo fromAndTo = this.f5752a;
+                FromAndTo fromAndTo = this.a;
                 if (fromAndTo == null) {
-                    if (driveRouteQuery.f5752a != null) {
+                    if (driveRouteQuery.a != null) {
                         return false;
                     }
-                } else if (!fromAndTo.equals(driveRouteQuery.f5752a)) {
+                } else if (!fromAndTo.equals(driveRouteQuery.a)) {
                     return false;
                 }
-                if (this.f5753c != driveRouteQuery.f5753c) {
+                if (this.c != driveRouteQuery.c) {
                     return false;
                 }
                 List<LatLonPoint> list2 = this.d;
@@ -349,7 +338,7 @@ public class RouteSearchV2 {
                     stringBuffer.append(",");
                     stringBuffer.append(latLonPoint.getLatitude());
                     if (i4 < list2.size() - 1) {
-                        stringBuffer.append(";");
+                        stringBuffer.append(i.b);
                     }
                     i3 = i4 + 1;
                 }
@@ -369,11 +358,11 @@ public class RouteSearchV2 {
         }
 
         public FromAndTo getFromAndTo() {
-            return this.f5752a;
+            return this.a;
         }
 
         public DrivingStrategy getMode() {
-            return DrivingStrategy.fromValue(this.f5753c);
+            return DrivingStrategy.fromValue(this.c);
         }
 
         public NewEnergy getNewEnergy() {
@@ -401,7 +390,7 @@ public class RouteSearchV2 {
                 stringBuffer.append(",");
                 stringBuffer.append(latLonPoint.getLatitude());
                 if (i2 < this.d.size() - 1) {
-                    stringBuffer.append(";");
+                    stringBuffer.append(i.b);
                 }
                 i = i2 + 1;
             }
@@ -429,9 +418,9 @@ public class RouteSearchV2 {
             int hashCode = str == null ? 0 : str.hashCode();
             List<List<LatLonPoint>> list = this.e;
             int hashCode2 = list == null ? 0 : list.hashCode();
-            FromAndTo fromAndTo = this.f5752a;
+            FromAndTo fromAndTo = this.a;
             int hashCode3 = fromAndTo == null ? 0 : fromAndTo.hashCode();
-            int i2 = this.f5753c;
+            int i2 = this.c;
             List<LatLonPoint> list2 = this.d;
             if (list2 != null) {
                 i = list2.hashCode();
@@ -487,12 +476,10 @@ public class RouteSearchV2 {
         AVOID_CONGESTION_ROAD_PRIORITY(44),
         AVOID_CONGESTION_SPEED_PRIORITY(45);
         
-
-        /* renamed from: a  reason: collision with root package name */
-        int f5754a;
+        int a;
 
         DrivingStrategy(int i) {
-            this.f5754a = i;
+            this.a = i;
         }
 
         public static DrivingStrategy fromValue(int i) {
@@ -500,7 +487,7 @@ public class RouteSearchV2 {
         }
 
         public final int getValue() {
-            return this.f5754a;
+            return this.a;
         }
     }
 
@@ -525,13 +512,9 @@ public class RouteSearchV2 {
                 return a(i);
             }
         };
-
-        /* renamed from: a  reason: collision with root package name */
-        private LatLonPoint f5755a;
+        private LatLonPoint a;
         private LatLonPoint b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private String f5756c;
+        private String c;
         private String d;
         private String e;
         private String f;
@@ -541,28 +524,28 @@ public class RouteSearchV2 {
         }
 
         public FromAndTo(Parcel parcel) {
-            this.f5755a = (LatLonPoint) parcel.readParcelable(LatLonPoint.class.getClassLoader());
+            this.a = (LatLonPoint) parcel.readParcelable(LatLonPoint.class.getClassLoader());
             this.b = (LatLonPoint) parcel.readParcelable(LatLonPoint.class.getClassLoader());
-            this.f5756c = parcel.readString();
+            this.c = parcel.readString();
             this.d = parcel.readString();
             this.e = parcel.readString();
             this.f = parcel.readString();
         }
 
         public FromAndTo(LatLonPoint latLonPoint, LatLonPoint latLonPoint2) {
-            this.f5755a = latLonPoint;
+            this.a = latLonPoint;
             this.b = latLonPoint2;
         }
 
         /* renamed from: clone */
-        public FromAndTo m2522clone() {
+        public FromAndTo m8965clone() {
             try {
                 super.clone();
             } catch (CloneNotSupportedException e) {
                 fe.a(e, "RouteSearchV2", "FromAndToclone");
             }
-            FromAndTo fromAndTo = new FromAndTo(this.f5755a, this.b);
-            fromAndTo.setStartPoiID(this.f5756c);
+            FromAndTo fromAndTo = new FromAndTo(this.a, this.b);
+            fromAndTo.setStartPoiID(this.c);
             fromAndTo.setDestinationPoiID(this.d);
             fromAndTo.setOriginType(this.e);
             fromAndTo.setDestinationType(this.f);
@@ -588,20 +571,20 @@ public class RouteSearchV2 {
                 } else if (!str.equals(fromAndTo.d)) {
                     return false;
                 }
-                LatLonPoint latLonPoint = this.f5755a;
+                LatLonPoint latLonPoint = this.a;
                 if (latLonPoint == null) {
-                    if (fromAndTo.f5755a != null) {
+                    if (fromAndTo.a != null) {
                         return false;
                     }
-                } else if (!latLonPoint.equals(fromAndTo.f5755a)) {
+                } else if (!latLonPoint.equals(fromAndTo.a)) {
                     return false;
                 }
-                String str2 = this.f5756c;
+                String str2 = this.c;
                 if (str2 == null) {
-                    if (fromAndTo.f5756c != null) {
+                    if (fromAndTo.c != null) {
                         return false;
                     }
-                } else if (!str2.equals(fromAndTo.f5756c)) {
+                } else if (!str2.equals(fromAndTo.c)) {
                     return false;
                 }
                 LatLonPoint latLonPoint2 = this.b;
@@ -635,7 +618,7 @@ public class RouteSearchV2 {
         }
 
         public LatLonPoint getFrom() {
-            return this.f5755a;
+            return this.a;
         }
 
         public String getOriginType() {
@@ -647,7 +630,7 @@ public class RouteSearchV2 {
         }
 
         public String getStartPoiID() {
-            return this.f5756c;
+            return this.c;
         }
 
         public LatLonPoint getTo() {
@@ -658,9 +641,9 @@ public class RouteSearchV2 {
             String str = this.d;
             int i = 0;
             int hashCode = str == null ? 0 : str.hashCode();
-            LatLonPoint latLonPoint = this.f5755a;
+            LatLonPoint latLonPoint = this.a;
             int hashCode2 = latLonPoint == null ? 0 : latLonPoint.hashCode();
-            String str2 = this.f5756c;
+            String str2 = this.c;
             int hashCode3 = str2 == null ? 0 : str2.hashCode();
             LatLonPoint latLonPoint2 = this.b;
             int hashCode4 = latLonPoint2 == null ? 0 : latLonPoint2.hashCode();
@@ -690,14 +673,14 @@ public class RouteSearchV2 {
         }
 
         public void setStartPoiID(String str) {
-            this.f5756c = str;
+            this.c = str;
         }
 
         @Override // android.os.Parcelable
         public void writeToParcel(Parcel parcel, int i) {
-            parcel.writeParcelable(this.f5755a, i);
+            parcel.writeParcelable(this.a, i);
             parcel.writeParcelable(this.b, i);
-            parcel.writeString(this.f5756c);
+            parcel.writeString(this.c);
             parcel.writeString(this.d);
             parcel.writeString(this.e);
             parcel.writeString(this.f);
@@ -706,13 +689,9 @@ public class RouteSearchV2 {
 
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/services/route/RouteSearchV2$NewEnergy.class */
     public static class NewEnergy {
-
-        /* renamed from: a  reason: collision with root package name */
-        private String f5757a;
+        private String a;
         private CustomCostMode b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private float f5758c = -1.0f;
+        private float c = -1.0f;
         private float d = -1.0f;
         private float e = 1.5f;
         private float f = 100.0f;
@@ -720,17 +699,17 @@ public class RouteSearchV2 {
 
         public String buildParam() {
             StringBuilder sb = new StringBuilder();
-            if (this.f5757a != null) {
+            if (this.a != null) {
                 sb.append("&key=");
-                sb.append(this.f5757a);
+                sb.append(this.a);
             }
             if (this.b != null) {
                 sb.append("&custom_cost_mode=");
                 sb.append(this.b.toJson());
             }
-            if (this.f5758c > 0.0f) {
+            if (this.c > 0.0f) {
                 sb.append("&max_vehicle_charge=");
-                sb.append(this.f5758c);
+                sb.append(this.c);
             }
             if (this.d > 0.0f) {
                 sb.append("&vehicle_charge=");
@@ -754,7 +733,7 @@ public class RouteSearchV2 {
         }
 
         public String getKey() {
-            return this.f5757a;
+            return this.a;
         }
 
         public float getLeavingPercent() {
@@ -766,7 +745,7 @@ public class RouteSearchV2 {
         }
 
         public float getMaxVehicleCharge() {
-            return this.f5758c;
+            return this.c;
         }
 
         public float getVehicleCharge() {
@@ -782,7 +761,7 @@ public class RouteSearchV2 {
         }
 
         public void setKey(String str) {
-            this.f5757a = str;
+            this.a = str;
         }
 
         public void setLeavingPercent(float f) {
@@ -794,7 +773,7 @@ public class RouteSearchV2 {
         }
 
         public void setMaxVehicleCharge(float f) {
-            this.f5758c = f;
+            this.c = f;
         }
 
         public void setVehicleCharge(float f) {
@@ -819,17 +798,13 @@ public class RouteSearchV2 {
 
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/services/route/RouteSearchV2$PowerTrainLoss.class */
     public static class PowerTrainLoss {
-
-        /* renamed from: a  reason: collision with root package name */
-        private int f5759a;
+        private int a;
         private float b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private int f5760c;
+        private int c;
         private int d;
 
         public int getPowerDemand() {
-            return this.f5759a;
+            return this.a;
         }
 
         public float getPowerDemandValue() {
@@ -837,7 +812,7 @@ public class RouteSearchV2 {
         }
 
         public int getSpeed() {
-            return this.f5760c;
+            return this.c;
         }
 
         public int getSpeedValue() {
@@ -845,7 +820,7 @@ public class RouteSearchV2 {
         }
 
         public void setPowerDemand(int i) {
-            this.f5759a = i;
+            this.a = i;
         }
 
         public void setPowerDemandValue(float f) {
@@ -853,7 +828,7 @@ public class RouteSearchV2 {
         }
 
         public void setSpeed(int i) {
-            this.f5760c = i;
+            this.c = i;
         }
 
         public void setSpeedValue(int i) {
@@ -875,9 +850,7 @@ public class RouteSearchV2 {
 
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/services/route/RouteSearchV2$SlopeCost.class */
     public static class SlopeCost {
-
-        /* renamed from: a  reason: collision with root package name */
-        private float f5761a;
+        private float a;
         private float b;
 
         public float getDown() {
@@ -885,7 +858,7 @@ public class RouteSearchV2 {
         }
 
         public float getUp() {
-            return this.f5761a;
+            return this.a;
         }
 
         public void setDown(float f) {
@@ -893,19 +866,17 @@ public class RouteSearchV2 {
         }
 
         public void setUp(float f) {
-            this.f5761a = f;
+            this.a = f;
         }
     }
 
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/services/route/RouteSearchV2$SpeedCost.class */
     public static class SpeedCost {
-
-        /* renamed from: a  reason: collision with root package name */
-        private int f5762a;
+        private int a;
         private float b;
 
         public int getSpeed() {
-            return this.f5762a;
+            return this.a;
         }
 
         public float getValue() {
@@ -913,7 +884,7 @@ public class RouteSearchV2 {
         }
 
         public void setSpeed(int i) {
-            this.f5762a = i;
+            this.a = i;
         }
 
         public void setValue(float f) {
@@ -923,13 +894,11 @@ public class RouteSearchV2 {
 
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/services/route/RouteSearchV2$TransCost.class */
     public static class TransCost {
-
-        /* renamed from: a  reason: collision with root package name */
-        private float f5763a;
+        private float a;
         private float b;
 
         public float getAccess() {
-            return this.f5763a;
+            return this.a;
         }
 
         public float getDecess() {
@@ -937,7 +906,7 @@ public class RouteSearchV2 {
         }
 
         public void setAccess(float f) {
-            this.f5763a = f;
+            this.a = f;
         }
 
         public void setDecess(float f) {
@@ -946,9 +915,9 @@ public class RouteSearchV2 {
     }
 
     public RouteSearchV2(Context context) throws AMapException {
-        if (this.f5748a == null) {
+        if (this.a == null) {
             try {
-                this.f5748a = new hc(context);
+                this.a = new hc(context);
             } catch (Exception e) {
                 e.printStackTrace();
                 if (e instanceof AMapException) {
@@ -959,7 +928,7 @@ public class RouteSearchV2 {
     }
 
     public DriveRouteResultV2 calculateDriveRoute(DriveRouteQuery driveRouteQuery) throws AMapException {
-        IRouteSearchV2 iRouteSearchV2 = this.f5748a;
+        IRouteSearchV2 iRouteSearchV2 = this.a;
         if (iRouteSearchV2 != null) {
             return iRouteSearchV2.calculateDriveRoute(driveRouteQuery);
         }
@@ -967,14 +936,14 @@ public class RouteSearchV2 {
     }
 
     public void calculateDriveRouteAsyn(DriveRouteQuery driveRouteQuery) {
-        IRouteSearchV2 iRouteSearchV2 = this.f5748a;
+        IRouteSearchV2 iRouteSearchV2 = this.a;
         if (iRouteSearchV2 != null) {
             iRouteSearchV2.calculateDriveRouteAsyn(driveRouteQuery);
         }
     }
 
     public void setRouteSearchListener(OnRouteSearchListener onRouteSearchListener) {
-        IRouteSearchV2 iRouteSearchV2 = this.f5748a;
+        IRouteSearchV2 iRouteSearchV2 = this.a;
         if (iRouteSearchV2 != null) {
             iRouteSearchV2.setRouteSearchListener(onRouteSearchListener);
         }

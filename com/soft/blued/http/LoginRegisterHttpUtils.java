@@ -6,11 +6,11 @@ import android.net.wifi.WifiEnterpriseConfig;
 import android.os.Build;
 import android.provider.ContactsContract;
 import android.provider.MediaStore;
+import android.provider.SearchIndexablesContract;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Log;
 import androidx.collection.ArrayMap;
-import com.anythink.core.common.g.c;
 import com.anythink.pd.ExHandler;
 import com.baidu.mobads.sdk.api.IAdInterListener;
 import com.blued.android.core.AppInfo;
@@ -23,16 +23,15 @@ import com.blued.android.framework.http.BluedUIHttpResponse;
 import com.blued.android.framework.utils.AesCrypto;
 import com.blued.android.framework.utils.AesCrypto2;
 import com.blued.android.framework.utils.EncryptTool;
-import com.blued.android.module.common.db.model.UserAccountsModel;
 import com.blued.android.module.common.login.model.BannerADRequest;
 import com.blued.android.module.common.login.model.BluedADExtra;
 import com.blued.android.module.common.url.BluedHttpUrl;
 import com.blued.android.module.common.user.model.UserInfo;
 import com.blued.android.module.common.utils.CommonPreferences;
 import com.blued.android.module.common.utils.NetworkUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.blued.android.module.device_identity.library.BluedDeviceIdentity;
 import com.blued.track.bytedance.ByteDanceLogUtils;
+import com.cdo.oaps.ad.OapsKey;
 import com.google.gson.Gson;
 import com.huawei.hms.framework.common.hianalytics.CrashHianalyticsData;
 import com.huawei.hms.push.constant.RemoteMessageConst;
@@ -64,35 +63,35 @@ import java.util.Map;
 public class LoginRegisterHttpUtils {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f29660a = LoginRegisterHttpUtils.class.getSimpleName();
+    private static final String f15970a = LoginRegisterHttpUtils.class.getSimpleName();
 
     /* renamed from: com.soft.blued.http.LoginRegisterHttpUtils$1  reason: invalid class name */
     /* loaded from: source-8303388-dex2jar.jar:com/soft/blued/http/LoginRegisterHttpUtils$1.class */
     static /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f29661a;
+        static final /* synthetic */ int[] f15971a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x0036 -> B:21:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:13:0x003a -> B:19:0x001f). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:15:0x003e -> B:25:0x002a). Please submit an issue!!! */
         static {
             int[] iArr = new int[PHONE_CODE_LOGIN_STAGE.values().length];
-            f29661a = iArr;
+            f15971a = iArr;
             try {
                 iArr[PHONE_CODE_LOGIN_STAGE.IDENTIFY.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f29661a[PHONE_CODE_LOGIN_STAGE.VERIFY.ordinal()] = 2;
+                f15971a[PHONE_CODE_LOGIN_STAGE.VERIFY.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f29661a[PHONE_CODE_LOGIN_STAGE.IDENTIFY_UP.ordinal()] = 3;
+                f15971a[PHONE_CODE_LOGIN_STAGE.IDENTIFY_UP.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f29661a[PHONE_CODE_LOGIN_STAGE.VERIFY_UP.ordinal()] = 4;
+                f15971a[PHONE_CODE_LOGIN_STAGE.VERIFY_UP.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
         }
@@ -126,9 +125,9 @@ public class LoginRegisterHttpUtils {
     }
 
     public static void a(int i, Context context, BluedUIHttpResponse bluedUIHttpResponse, String str, String str2, String str3, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put(WBPageConstants.ParamKey.PAGE, str2);
-        a2.put("size", str3);
+        a2.put(OapsKey.KEY_SIZE, str3);
         if (i == 0) {
             a2.put("type", "recommend");
         }
@@ -165,7 +164,7 @@ public class LoginRegisterHttpUtils {
             }
         }
         String str5 = str3 + "&conn_type=" + str4 + "&longitude=" + CommonPreferences.u() + "&latitude=" + CommonPreferences.v();
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         String update = !Build.MANUFACTURER.toLowerCase().equals(AssistUtils.BRAND_HW) ? YuvUtil.getUpdate() : "";
         a2.put(ExHandler.JSON_REQUEST_BOOT_MARK, "");
         a2.put(ExHandler.JSON_REQUEST_UPDATE_MARK, update);
@@ -228,7 +227,7 @@ public class LoginRegisterHttpUtils {
         String b = EncryptTool.b(UserInfo.getInstance().getLoginUserInfo().uid);
         String str2 = UserInfo.getInstance().getLoginUserInfo().avatar;
         String str3 = UserInfo.getInstance().getLoginUserInfo().name;
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("openUserId", b);
         a2.put(ContactsContract.Contacts.AggregationSuggestions.PARAMETER_MATCH_NICKNAME, str3);
         a2.put("headurl", str2);
@@ -251,7 +250,7 @@ public class LoginRegisterHttpUtils {
         arrayMap.put("dev_dna_label", BluedDeviceIdentity.a().e());
         arrayMap.put(WifiEnterpriseConfig.IDENTITY_KEY, str);
         arrayMap.put("type", "mobile");
-        int i = AnonymousClass1.f29661a[phone_code_login_stage.ordinal()];
+        int i = AnonymousClass1.f15971a[phone_code_login_stage.ordinal()];
         arrayMap.put("stage", i != 2 ? i != 3 ? i != 4 ? "identify" : "verify-up" : "identify-up" : "verify");
         arrayMap.put("captcha", str2);
         if (!TextUtils.isEmpty(str4)) {
@@ -260,10 +259,10 @@ public class LoginRegisterHttpUtils {
         if (phone_code_login_stage == PHONE_CODE_LOGIN_STAGE.VERIFY) {
             arrayMap.put("authcode", str3);
         }
-        arrayMap.put("channel", AppInfo.f9487c);
-        Map<String, String> a2 = BluedHttpTools.a();
+        arrayMap.put("channel", AppInfo.c);
+        Map a2 = BluedHttpTools.a();
         try {
-            a2.put(BridgeUtil.UNDERLINE_STR, AesCrypto2.b(AppInfo.f().toJson(arrayMap)));
+            a2.put("_", AesCrypto2.b(AppInfo.f().toJson(arrayMap)));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -287,7 +286,7 @@ public class LoginRegisterHttpUtils {
     }
 
     public static void a(BluedUIHttpResponse bluedUIHttpResponse) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         ArrayMap arrayMap = new ArrayMap();
         arrayMap.put(MediaStore.Video.Thumbnails.VIDEO_ID, System.currentTimeMillis() + "");
         try {
@@ -319,7 +318,7 @@ public class LoginRegisterHttpUtils {
     }
 
     public static void a(BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost, String str) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("images", str);
         a2.put("uid", UserInfo.getInstance().getLoginUserInfo().uid);
         HttpManager.b(BluedHttpUrl.q() + "/blued/faceplus/ocidcard", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
@@ -335,7 +334,7 @@ public class LoginRegisterHttpUtils {
     }
 
     public static void a(BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost, int... iArr) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         ArrayMap arrayMap = new ArrayMap();
         String g = DeviceUtils.g();
         if (!TextUtils.isEmpty(g)) {
@@ -350,7 +349,7 @@ public class LoginRegisterHttpUtils {
             arrayMap.put(RemoteMessageConst.DEVICE_TOKEN, BluedPreferences.bh());
         }
         try {
-            a2.put(BridgeUtil.UNDERLINE_STR, AesCrypto2.b(AppInfo.f().toJson(arrayMap)));
+            a2.put("_", AesCrypto2.b(AppInfo.f().toJson(arrayMap)));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -362,7 +361,7 @@ public class LoginRegisterHttpUtils {
     }
 
     public static void a(BluedUIHttpResponse bluedUIHttpResponse, BluedADExtra bluedADExtra) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         Gson f = AppInfo.f();
         long j = bluedADExtra.ads_id;
         try {
@@ -374,7 +373,7 @@ public class LoginRegisterHttpUtils {
     }
 
     public static void a(BluedUIHttpResponse bluedUIHttpResponse, String str, int i, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         ArrayMap arrayMap = new ArrayMap();
         arrayMap.put("code", str);
         if (i == 0) {
@@ -387,7 +386,7 @@ public class LoginRegisterHttpUtils {
             arrayMap.put("stage", "pre_verify-up");
         }
         try {
-            a2.put(BridgeUtil.UNDERLINE_STR, AesCrypto2.b(AppInfo.f().toJson(arrayMap)));
+            a2.put("_", AesCrypto2.b(AppInfo.f().toJson(arrayMap)));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -395,14 +394,14 @@ public class LoginRegisterHttpUtils {
     }
 
     public static void a(BluedUIHttpResponse bluedUIHttpResponse, String str, int i, String str2, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         ArrayMap arrayMap = new ArrayMap();
         arrayMap.put("stage", "send");
         arrayMap.put("captcha", str);
         arrayMap.put("confirm_identity", Integer.valueOf(i));
         arrayMap.put("email", str2);
         try {
-            a2.put(BridgeUtil.UNDERLINE_STR, AesCrypto2.b(AppInfo.f().toJson(arrayMap)));
+            a2.put("_", AesCrypto2.b(AppInfo.f().toJson(arrayMap)));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -410,7 +409,7 @@ public class LoginRegisterHttpUtils {
     }
 
     public static void a(BluedUIHttpResponse bluedUIHttpResponse, String str, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         ArrayMap arrayMap = new ArrayMap();
         arrayMap.put("type", str);
         arrayMap.put("stage", "token_sm");
@@ -424,7 +423,7 @@ public class LoginRegisterHttpUtils {
         arrayMap.put("boxid", BluedDeviceIdentity.a().g());
         arrayMap.put("oaid", BluedDeviceIdentity.a().h());
         try {
-            a2.put(BridgeUtil.UNDERLINE_STR, AesCrypto2.b(AppInfo.f().toJson(arrayMap)));
+            a2.put("_", AesCrypto2.b(AppInfo.f().toJson(arrayMap)));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -448,13 +447,13 @@ public class LoginRegisterHttpUtils {
     }
 
     public static void a(BluedUIHttpResponse bluedUIHttpResponse, String str, String str2, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         ArrayMap arrayMap = new ArrayMap();
         arrayMap.put("stage", "change_send");
         arrayMap.put("type", str);
         arrayMap.put(WifiEnterpriseConfig.IDENTITY_KEY, str2);
         try {
-            a2.put(BridgeUtil.UNDERLINE_STR, AesCrypto2.b(AppInfo.f().toJson(arrayMap)));
+            a2.put("_", AesCrypto2.b(AppInfo.f().toJson(arrayMap)));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -462,8 +461,8 @@ public class LoginRegisterHttpUtils {
     }
 
     public static void a(BluedUIHttpResponse bluedUIHttpResponse, String str, String str2, String str3) {
-        Logger.c(f29660a, "UserRenew: type: " + str, " access_token: " + str2 + " uid : " + str3 + " ua : " + UserInfo.getInstance().getLoginUserInfo());
-        Map<String, String> a2 = BluedHttpTools.a();
+        Logger.c(f15970a, "UserRenew: type: " + str, " access_token: " + str2 + " uid : " + str3 + " ua : " + UserInfo.getInstance().getLoginUserInfo());
+        Map a2 = BluedHttpTools.a();
         ArrayMap arrayMap = new ArrayMap();
         arrayMap.put("type", str);
         arrayMap.put("access_token", str2);
@@ -480,25 +479,25 @@ public class LoginRegisterHttpUtils {
             arrayMap.put(RemoteMessageConst.DEVICE_TOKEN, BluedPreferences.bh());
         }
         arrayMap.put("lat", CommonPreferences.v());
-        arrayMap.put(c.C, CommonPreferences.u());
+        arrayMap.put("lon", CommonPreferences.u());
         arrayMap.put("mac", AppInfo.e);
-        arrayMap.put("imei", AppInfo.d);
-        arrayMap.put("channel", AppInfo.f9487c);
+        arrayMap.put(ExHandler.JSON_REQUEST_IMEI, AppInfo.d);
+        arrayMap.put("channel", AppInfo.c);
         arrayMap.put("dev_dna", BluedDeviceIdentity.a().d());
         arrayMap.put("dev_dna_label", BluedDeviceIdentity.a().e());
         arrayMap.put("smid", BluedDeviceIdentity.a().f());
         arrayMap.put("boxid", BluedDeviceIdentity.a().g());
         arrayMap.put("oaid", BluedDeviceIdentity.a().h());
         try {
-            a2.put(BridgeUtil.UNDERLINE_STR, AesCrypto2.b(AppInfo.f().toJson(arrayMap)));
+            a2.put("_", AesCrypto2.b(AppInfo.f().toJson(arrayMap)));
         } catch (Exception e) {
             e.printStackTrace();
         }
-        HttpManager.b(BluedHttpUrl.q() + "/passport/renew", bluedUIHttpResponse, null).b(BluedHttpTools.a(false)).a(BluedHttpTools.a(a2)).a(false).h();
+        HttpManager.b(BluedHttpUrl.q() + "/passport/renew", bluedUIHttpResponse, (IRequestHost) null).b(BluedHttpTools.a(false)).a(BluedHttpTools.a(a2)).a(false).h();
     }
 
     public static void a(BluedUIHttpResponse bluedUIHttpResponse, String str, String str2, String str3, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("stage", str);
         a2.put("code", str2);
         a2.put("id", str3);
@@ -512,7 +511,7 @@ public class LoginRegisterHttpUtils {
     }
 
     public static void a(BluedUIHttpResponse bluedUIHttpResponse, String str, String str2, String str3, IRequestHost iRequestHost, String str4, String str5, String str6, boolean z) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         ArrayMap arrayMap = new ArrayMap();
         arrayMap.put("type", str);
         arrayMap.put(WifiEnterpriseConfig.IDENTITY_KEY, str2);
@@ -530,15 +529,15 @@ public class LoginRegisterHttpUtils {
             arrayMap.put(RemoteMessageConst.DEVICE_TOKEN, BluedPreferences.bh());
         }
         arrayMap.put("lat", CommonPreferences.v());
-        arrayMap.put(c.C, CommonPreferences.u());
+        arrayMap.put("lon", CommonPreferences.u());
         arrayMap.put("token", str4);
         arrayMap.put("captcha", str5);
         if (!TextUtils.isEmpty(str6)) {
             arrayMap.put("rid", str6);
         }
         arrayMap.put("mac", AppInfo.e);
-        arrayMap.put("imei", AppInfo.d);
-        arrayMap.put("channel", AppInfo.f9487c);
+        arrayMap.put(ExHandler.JSON_REQUEST_IMEI, AppInfo.d);
+        arrayMap.put("channel", AppInfo.c);
         arrayMap.put("dev_dna", BluedDeviceIdentity.a().d());
         arrayMap.put("dev_dna_label", BluedDeviceIdentity.a().e());
         arrayMap.put("smid", BluedDeviceIdentity.a().f());
@@ -550,7 +549,7 @@ public class LoginRegisterHttpUtils {
             arrayMap.put("from", Camera.Parameters.FOCUS_MODE_MANUAL_POSITION);
         }
         try {
-            a2.put(BridgeUtil.UNDERLINE_STR, AesCrypto2.b(AppInfo.f().toJson(arrayMap)));
+            a2.put("_", AesCrypto2.b(AppInfo.f().toJson(arrayMap)));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -558,7 +557,7 @@ public class LoginRegisterHttpUtils {
     }
 
     public static void a(BluedUIHttpResponse bluedUIHttpResponse, String str, String str2, String str3, String str4, int i, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         ArrayMap arrayMap = new ArrayMap();
         arrayMap.put(WifiEnterpriseConfig.IDENTITY_KEY, str);
         arrayMap.put("type", str2);
@@ -578,7 +577,7 @@ public class LoginRegisterHttpUtils {
             e.printStackTrace();
         }
         try {
-            a2.put(BridgeUtil.UNDERLINE_STR, AesCrypto2.b(AppInfo.f().toJson(arrayMap)));
+            a2.put("_", AesCrypto2.b(AppInfo.f().toJson(arrayMap)));
         } catch (Exception e2) {
             e2.printStackTrace();
         }
@@ -586,14 +585,14 @@ public class LoginRegisterHttpUtils {
     }
 
     public static void a(BluedUIHttpResponse bluedUIHttpResponse, String str, String str2, String str3, String str4, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         ArrayMap arrayMap = new ArrayMap();
         arrayMap.put("token", str);
         arrayMap.put("stage", str2);
         arrayMap.put("authcode", str3);
         arrayMap.put("type", str4);
         try {
-            a2.put(BridgeUtil.UNDERLINE_STR, AesCrypto2.b(AppInfo.f().toJson(arrayMap)));
+            a2.put("_", AesCrypto2.b(AppInfo.f().toJson(arrayMap)));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -601,7 +600,7 @@ public class LoginRegisterHttpUtils {
     }
 
     public static void a(BluedUIHttpResponse bluedUIHttpResponse, String str, String str2, String str3, String str4, String str5, String str6, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         ArrayMap arrayMap = new ArrayMap();
         arrayMap.put(WifiEnterpriseConfig.IDENTITY_KEY, str);
         arrayMap.put("token", str2);
@@ -620,7 +619,7 @@ public class LoginRegisterHttpUtils {
         arrayMap.put("boxid", BluedDeviceIdentity.a().g());
         arrayMap.put("oaid", BluedDeviceIdentity.a().h());
         try {
-            a2.put(BridgeUtil.UNDERLINE_STR, AesCrypto2.b(AppInfo.f().toJson(arrayMap)));
+            a2.put("_", AesCrypto2.b(AppInfo.f().toJson(arrayMap)));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -628,7 +627,7 @@ public class LoginRegisterHttpUtils {
     }
 
     public static void a(BluedUIHttpResponse bluedUIHttpResponse, String str, String str2, String str3, String str4, String str5, String str6, String str7, String str8, int i, String str9, String str10, String str11, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         ArrayMap arrayMap = new ArrayMap();
         arrayMap.put("token", str);
         arrayMap.put("password", str3);
@@ -647,14 +646,14 @@ public class LoginRegisterHttpUtils {
         arrayMap.put("city_settled", BluedPreferences.o());
         arrayMap.put("ethnicity", str8);
         arrayMap.put("lat", CommonPreferences.v());
-        arrayMap.put(c.C, CommonPreferences.u());
+        arrayMap.put("lon", CommonPreferences.u());
         arrayMap.put("no_height_weight", i + "");
         arrayMap.put("health_test_result", str9);
         arrayMap.put("health_test_time", str10);
         arrayMap.put("health_prpe_use_situation", str11);
         arrayMap.put("mac", AppInfo.e);
-        arrayMap.put("imei", AppInfo.d);
-        arrayMap.put("channel", AppInfo.f9487c);
+        arrayMap.put(ExHandler.JSON_REQUEST_IMEI, AppInfo.d);
+        arrayMap.put("channel", AppInfo.c);
         arrayMap.put("dev_dna", BluedDeviceIdentity.a().d());
         arrayMap.put("dev_dna_label", BluedDeviceIdentity.a().e());
         arrayMap.put("smid", BluedDeviceIdentity.a().f());
@@ -662,9 +661,9 @@ public class LoginRegisterHttpUtils {
         arrayMap.put("oaid", BluedDeviceIdentity.a().h());
         arrayMap.put("android_id", Settings.System.getString(AppInfo.d().getContentResolver(), "android_id"));
         arrayMap.put("bddid", ByteDanceLogUtils.a());
-        Logger.b(f29660a, "mac,imei,channel==", AppInfo.e, ",", AppInfo.d, ",", AppInfo.f9487c);
+        Logger.b(f15970a, "mac,imei,channel==", AppInfo.e, ",", AppInfo.d, ",", AppInfo.c);
         try {
-            a2.put(BridgeUtil.UNDERLINE_STR, AesCrypto2.b(AppInfo.f().toJson(arrayMap)));
+            a2.put("_", AesCrypto2.b(AppInfo.f().toJson(arrayMap)));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -673,12 +672,12 @@ public class LoginRegisterHttpUtils {
 
     public static void a(BluedUIHttpResponse bluedUIHttpResponse, String str, String str2, String str3, String str4, boolean z) {
         String str5;
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         ArrayMap arrayMap = new ArrayMap();
-        if (TextUtils.equals(str4, UserAccountsModel.ACCOUNT_THREE_WEIXIN)) {
+        if (TextUtils.equals(str4, "weixin")) {
             if (TextUtils.isEmpty(str3)) {
                 arrayMap.put("access_token", str);
-                arrayMap.put("user_id", str2);
+                arrayMap.put(SearchIndexablesContract.RawData.COLUMN_USER_ID, str2);
             } else {
                 arrayMap.put("code", str3);
             }
@@ -694,8 +693,8 @@ public class LoginRegisterHttpUtils {
             arrayMap.put(RemoteMessageConst.DEVICE_TOKEN, BluedPreferences.bh());
         }
         arrayMap.put("mac", AppInfo.e);
-        arrayMap.put("imei", AppInfo.d);
-        arrayMap.put("channel", AppInfo.f9487c);
+        arrayMap.put(ExHandler.JSON_REQUEST_IMEI, AppInfo.d);
+        arrayMap.put("channel", AppInfo.c);
         arrayMap.put("dev_dna", BluedDeviceIdentity.a().d());
         arrayMap.put("dev_dna_label", BluedDeviceIdentity.a().e());
         arrayMap.put("smid", BluedDeviceIdentity.a().f());
@@ -707,7 +706,7 @@ public class LoginRegisterHttpUtils {
             arrayMap.put("from", Camera.Parameters.FOCUS_MODE_MANUAL_POSITION);
         }
         try {
-            a2.put(BridgeUtil.UNDERLINE_STR, AesCrypto2.b(AppInfo.f().toJson(arrayMap)));
+            a2.put("_", AesCrypto2.b(AppInfo.f().toJson(arrayMap)));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -727,12 +726,12 @@ public class LoginRegisterHttpUtils {
         arrayMap.put("token", oneLoginResult.token);
         arrayMap.put(CrashHianalyticsData.PROCESS_ID, oneLoginResult.process_id);
         arrayMap.put("authcode", oneLoginResult.authcode);
-        arrayMap.put("channel", AppInfo.f9487c);
+        arrayMap.put("channel", AppInfo.c);
         arrayMap.put("phone", oneLoginResult.security_phone);
-        arrayMap.put("channel", AppInfo.f9487c);
-        Map<String, String> a2 = BluedHttpTools.a();
+        arrayMap.put("channel", AppInfo.c);
+        Map a2 = BluedHttpTools.a();
         try {
-            a2.put(BridgeUtil.UNDERLINE_STR, AesCrypto2.b(AppInfo.f().toJson(arrayMap)));
+            a2.put("_", AesCrypto2.b(AppInfo.f().toJson(arrayMap)));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -751,11 +750,11 @@ public class LoginRegisterHttpUtils {
         arrayMap.put("dev_dna_label", BluedDeviceIdentity.a().e());
         arrayMap.put("token", tXOneLoginResult.getToken());
         arrayMap.put("app_id", BluedApplicationLike.TX_LOGIN_APPKEY);
-        arrayMap.put("channel", AppInfo.f9487c);
+        arrayMap.put("channel", AppInfo.c);
         arrayMap.put("phone", tXOneLoginResult.getNumber());
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         try {
-            a2.put(BridgeUtil.UNDERLINE_STR, AesCrypto2.b(AppInfo.f().toJson(arrayMap)));
+            a2.put("_", AesCrypto2.b(AppInfo.f().toJson(arrayMap)));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -767,7 +766,7 @@ public class LoginRegisterHttpUtils {
     }
 
     public static void a(String str, String str2) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("openUserId", str);
         HttpManager.b("https://dopen.weimob.com/api/1_0/janus/core/logout?accesstoken=" + str2).a(BluedHttpTools.a(a2)).h();
     }
@@ -798,14 +797,14 @@ public class LoginRegisterHttpUtils {
     public static void b() {
         ArrayMap arrayMap = new ArrayMap();
         arrayMap.put("oaid", BluedDeviceIdentity.a().h());
-        arrayMap.put("imei", AppInfo.d);
-        arrayMap.put("channel", AppInfo.f9487c);
+        arrayMap.put(ExHandler.JSON_REQUEST_IMEI, AppInfo.d);
+        arrayMap.put("channel", AppInfo.c);
         HttpManager.b(BluedHttpUrl.q() + "/blued/device/upload").b(BluedHttpTools.a(true)).a(BluedHttpTools.a(arrayMap)).h();
     }
 
     public static void b(HttpResponseHandler<?> httpResponseHandler, String str) {
         String b = EncryptTool.b(UserInfo.getInstance().getLoginUserInfo().uid);
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("source", "10");
         a2.put("sourceAppid", "D3C7E07F9568346DD574079B635386B7");
         a2.put("sourceOpenid", b);
@@ -813,11 +812,11 @@ public class LoginRegisterHttpUtils {
     }
 
     public static void b(BluedUIHttpResponse bluedUIHttpResponse) {
-        HttpManager.a(BluedHttpUrl.q() + "/passport/logout", bluedUIHttpResponse, null).b(BluedHttpTools.a(true)).h();
+        HttpManager.a(BluedHttpUrl.q() + "/passport/logout", bluedUIHttpResponse, (IRequestHost) null).b(BluedHttpTools.a(true)).h();
     }
 
     public static void b(BluedUIHttpResponse bluedUIHttpResponse, int i, String str, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         ArrayMap arrayMap = new ArrayMap();
         if (i == 1) {
             arrayMap.put("stage", "change_verify");
@@ -826,7 +825,7 @@ public class LoginRegisterHttpUtils {
         }
         arrayMap.put("code", str);
         try {
-            a2.put(BridgeUtil.UNDERLINE_STR, AesCrypto2.b(AppInfo.f().toJson(arrayMap)));
+            a2.put("_", AesCrypto2.b(AppInfo.f().toJson(arrayMap)));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -838,7 +837,7 @@ public class LoginRegisterHttpUtils {
     }
 
     public static void b(BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost, String str) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("images", str);
         a2.put("uid", UserInfo.getInstance().getLoginUserInfo().uid);
         HttpManager.b(BluedHttpUrl.q() + "/blued/faceplus/baidu", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
@@ -849,12 +848,12 @@ public class LoginRegisterHttpUtils {
     }
 
     public static void b(BluedUIHttpResponse bluedUIHttpResponse, String str, String str2, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         ArrayMap arrayMap = new ArrayMap();
         arrayMap.put("token", str);
         arrayMap.put("name", str2);
         try {
-            a2.put(BridgeUtil.UNDERLINE_STR, AesCrypto2.b(AppInfo.f().toJson(arrayMap)));
+            a2.put("_", AesCrypto2.b(AppInfo.f().toJson(arrayMap)));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -862,7 +861,7 @@ public class LoginRegisterHttpUtils {
     }
 
     public static void b(BluedUIHttpResponse bluedUIHttpResponse, String str, String str2, String str3, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         ArrayMap arrayMap = new ArrayMap();
         arrayMap.put("token", str);
         arrayMap.put("type", str2);
@@ -885,7 +884,7 @@ public class LoginRegisterHttpUtils {
         arrayMap.put("boxid", BluedDeviceIdentity.a().g());
         arrayMap.put("oaid", BluedDeviceIdentity.a().h());
         try {
-            a2.put(BridgeUtil.UNDERLINE_STR, AesCrypto2.b(AppInfo.f().toJson(arrayMap)));
+            a2.put("_", AesCrypto2.b(AppInfo.f().toJson(arrayMap)));
         } catch (Exception e2) {
             e2.printStackTrace();
         }
@@ -893,7 +892,7 @@ public class LoginRegisterHttpUtils {
     }
 
     public static void b(BluedUIHttpResponse bluedUIHttpResponse, String str, String str2, String str3, String str4, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         ArrayMap arrayMap = new ArrayMap();
         arrayMap.put("token", str);
         arrayMap.put("code", str2);
@@ -910,7 +909,7 @@ public class LoginRegisterHttpUtils {
         arrayMap.put("boxid", BluedDeviceIdentity.a().g());
         arrayMap.put("oaid", BluedDeviceIdentity.a().h());
         try {
-            a2.put(BridgeUtil.UNDERLINE_STR, AesCrypto2.b(AppInfo.f().toJson(arrayMap)));
+            a2.put("_", AesCrypto2.b(AppInfo.f().toJson(arrayMap)));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -918,7 +917,7 @@ public class LoginRegisterHttpUtils {
     }
 
     public static void b(String str, String str2) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         ArrayMap arrayMap = new ArrayMap();
         String g = DeviceUtils.g();
         if (!TextUtils.isEmpty(g)) {
@@ -928,18 +927,18 @@ public class LoginRegisterHttpUtils {
             arrayMap.put(RemoteMessageConst.DEVICE_TOKEN, BluedPreferences.bh());
         }
         arrayMap.put("mac", AppInfo.e);
-        arrayMap.put("imei", AppInfo.d);
-        arrayMap.put("channel", AppInfo.f9487c);
+        arrayMap.put(ExHandler.JSON_REQUEST_IMEI, AppInfo.d);
+        arrayMap.put("channel", AppInfo.c);
         arrayMap.put("dev_dna", BluedDeviceIdentity.a().d());
         arrayMap.put("dev_dna_label", BluedDeviceIdentity.a().e());
         arrayMap.put("event", str);
         arrayMap.put("type", str2);
         try {
-            a2.put(BridgeUtil.UNDERLINE_STR, AesCrypto.b(AppInfo.f().toJson(arrayMap)));
+            a2.put("_", AesCrypto.b(AppInfo.f().toJson(arrayMap)));
         } catch (Exception e) {
             e.printStackTrace();
         }
-        HttpManager.b(BluedHttpUrl.q() + "/biotrack/e", null).b(BluedHttpTools.a(false)).a(BluedHttpTools.a(a2)).h();
+        HttpManager.b(BluedHttpUrl.q() + "/biotrack/e", (HttpResponseHandler) null).b(BluedHttpTools.a(false)).a(BluedHttpTools.a(a2)).h();
     }
 
     public static void c(BluedUIHttpResponse bluedUIHttpResponse) {
@@ -947,11 +946,11 @@ public class LoginRegisterHttpUtils {
     }
 
     public static void c(BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         ArrayMap arrayMap = new ArrayMap();
         arrayMap.put("stage", "transfer");
         try {
-            a2.put(BridgeUtil.UNDERLINE_STR, AesCrypto2.b(AppInfo.f().toJson(arrayMap)));
+            a2.put("_", AesCrypto2.b(AppInfo.f().toJson(arrayMap)));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -963,11 +962,11 @@ public class LoginRegisterHttpUtils {
     }
 
     public static void d(BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         ArrayMap arrayMap = new ArrayMap();
         arrayMap.put("stage", "captcha");
         try {
-            a2.put(BridgeUtil.UNDERLINE_STR, AesCrypto2.b(AppInfo.f().toJson(arrayMap)));
+            a2.put("_", AesCrypto2.b(AppInfo.f().toJson(arrayMap)));
         } catch (Exception e) {
             e.printStackTrace();
         }

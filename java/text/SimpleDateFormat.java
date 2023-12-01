@@ -62,11 +62,11 @@ public class SimpleDateFormat extends DateFormat {
         this.defaultCenturyStart = this.calendar.getTime();
     }
 
-    private void append(StringBuffer stringBuffer, FieldPosition fieldPosition, List<FieldPosition> list, char c2, int i) {
+    private void append(StringBuffer stringBuffer, FieldPosition fieldPosition, List<FieldPosition> list, char c, int i) {
         int i2;
-        int indexOf = PATTERN_CHARS.indexOf(c2);
+        int indexOf = PATTERN_CHARS.indexOf(c);
         if (indexOf == -1) {
-            throw new IllegalArgumentException("Unknown pattern character '" + c2 + "'");
+            throw new IllegalArgumentException("Unknown pattern character '" + c + "'");
         }
         int length = stringBuffer.length();
         DateFormat.Field field = null;
@@ -363,9 +363,9 @@ public class SimpleDateFormat extends DateFormat {
     }
 
     private StringBuffer formatImpl(Date date, StringBuffer stringBuffer, FieldPosition fieldPosition, List<FieldPosition> list) {
-        char c2;
+        char c;
         boolean z = false;
-        char c3 = 65535;
+        char c2 = 65535;
         int i = 0;
         this.calendar.setTime(date);
         if (fieldPosition != null) {
@@ -379,14 +379,14 @@ public class SimpleDateFormat extends DateFormat {
             if (charAt == '\'') {
                 int i3 = i;
                 if (i > 0) {
-                    append(stringBuffer, fieldPosition, list, c3, i);
+                    append(stringBuffer, fieldPosition, list, c2, i);
                     i3 = 0;
                 }
-                if (c3 == charAt) {
+                if (c2 == charAt) {
                     stringBuffer.append('\'');
-                    c2 = 65535;
+                    c = 65535;
                 } else {
-                    c2 = charAt;
+                    c = charAt;
                 }
                 if (z) {
                     z = false;
@@ -395,30 +395,30 @@ public class SimpleDateFormat extends DateFormat {
                     z = true;
                     i = i3;
                 }
-            } else if (z || (c3 != charAt && ((charAt < 'a' || charAt > 'z') && (charAt < 'A' || charAt > 'Z')))) {
+            } else if (z || (c2 != charAt && ((charAt < 'a' || charAt > 'z') && (charAt < 'A' || charAt > 'Z')))) {
                 int i4 = i;
                 if (i > 0) {
-                    append(stringBuffer, fieldPosition, list, c3, i);
+                    append(stringBuffer, fieldPosition, list, c2, i);
                     i4 = 0;
                 }
                 stringBuffer.append(charAt);
                 i = i4;
-                c2 = 65535;
-            } else if (c3 == charAt) {
+                c = 65535;
+            } else if (c2 == charAt) {
                 i++;
-                c2 = c3;
+                c = c2;
             } else {
                 if (i > 0) {
-                    append(stringBuffer, fieldPosition, list, c3, i);
+                    append(stringBuffer, fieldPosition, list, c2, i);
                 }
-                c2 = charAt;
+                c = charAt;
                 i = 1;
             }
             i2++;
-            c3 = c2;
+            c2 = c;
         }
         if (i > 0) {
-            append(stringBuffer, fieldPosition, list, c3, i);
+            append(stringBuffer, fieldPosition, list, c2, i);
         }
         return stringBuffer;
     }
@@ -437,11 +437,11 @@ public class SimpleDateFormat extends DateFormat {
         return attributedString.getIterator();
     }
 
-    private int parse(String str, int i, char c2, int i2) {
+    private int parse(String str, int i, char c, int i2) {
         int i3;
-        int indexOf = PATTERN_CHARS.indexOf(c2);
+        int indexOf = PATTERN_CHARS.indexOf(c);
         if (indexOf == -1) {
-            throw new IllegalArgumentException("Unknown pattern character '" + c2 + "'");
+            throw new IllegalArgumentException("Unknown pattern character '" + c + "'");
         }
         int i4 = 0;
         int i5 = i2;
@@ -709,7 +709,7 @@ public class SimpleDateFormat extends DateFormat {
 
     private void validatePattern(String str) {
         boolean z = false;
-        char c2 = 65535;
+        char c = 65535;
         int i = 0;
         int length = str.length();
         int i2 = 0;
@@ -718,10 +718,10 @@ public class SimpleDateFormat extends DateFormat {
             if (charAt == '\'') {
                 int i3 = i;
                 if (i > 0) {
-                    validatePatternCharacter(c2);
+                    validatePatternCharacter(c);
                     i3 = 0;
                 }
-                if (c2 == charAt) {
+                if (c == charAt) {
                     charAt = 65535;
                 }
                 if (z) {
@@ -731,37 +731,37 @@ public class SimpleDateFormat extends DateFormat {
                     z = true;
                     i = i3;
                 }
-            } else if (z || (c2 != charAt && ((charAt < 'a' || charAt > 'z') && (charAt < 'A' || charAt > 'Z')))) {
+            } else if (z || (c != charAt && ((charAt < 'a' || charAt > 'z') && (charAt < 'A' || charAt > 'Z')))) {
                 int i4 = i;
                 if (i > 0) {
-                    validatePatternCharacter(c2);
+                    validatePatternCharacter(c);
                     i4 = 0;
                 }
                 i = i4;
                 charAt = 65535;
-            } else if (c2 == charAt) {
+            } else if (c == charAt) {
                 i++;
-                charAt = c2;
+                charAt = c;
             } else {
                 if (i > 0) {
-                    validatePatternCharacter(c2);
+                    validatePatternCharacter(c);
                 }
                 i = 1;
             }
             i2++;
-            c2 = charAt;
+            c = charAt;
         }
         if (i > 0) {
-            validatePatternCharacter(c2);
+            validatePatternCharacter(c);
         }
         if (z) {
             throw new IllegalArgumentException("Unterminated quote");
         }
     }
 
-    private void validatePatternCharacter(char c2) {
-        if (PATTERN_CHARS.indexOf(c2) == -1) {
-            throw new IllegalArgumentException("Unknown pattern character '" + c2 + "'");
+    private void validatePatternCharacter(char c) {
+        if (PATTERN_CHARS.indexOf(c) == -1) {
+            throw new IllegalArgumentException("Unknown pattern character '" + c + "'");
         }
     }
 
@@ -837,10 +837,10 @@ public class SimpleDateFormat extends DateFormat {
 
     @Override // java.text.DateFormat
     public Date parse(String str, ParsePosition parsePosition) {
+        char c;
         char c2;
-        char c3;
         boolean z = false;
-        char c4 = 65535;
+        char c3 = 65535;
         int i = 0;
         int index = parsePosition.getIndex();
         int length = str.length();
@@ -854,35 +854,35 @@ public class SimpleDateFormat extends DateFormat {
                 int i3 = i;
                 int i4 = index;
                 if (i > 0) {
-                    i4 = parse(str, index, c4, i);
+                    i4 = parse(str, index, c3, i);
                     if (i4 < 0) {
                         return error(parsePosition, (-i4) - 1, timeZone);
                     }
                     i3 = 0;
                 }
-                if (c4 != charAt) {
-                    c3 = charAt;
+                if (c3 != charAt) {
+                    c2 = charAt;
                     index = i4;
                 } else if (i4 >= length || str.charAt(i4) != '\'') {
                     return error(parsePosition, i4, timeZone);
                 } else {
                     index = i4 + 1;
-                    c3 = 65535;
+                    c2 = 65535;
                 }
                 if (z) {
                     z = false;
                     i = i3;
-                    c2 = c3;
+                    c = c2;
                 } else {
                     z = true;
-                    c2 = c3;
+                    c = c2;
                     i = i3;
                 }
-            } else if (z || (c4 != charAt && ((charAt < 'a' || charAt > 'z') && (charAt < 'A' || charAt > 'Z')))) {
+            } else if (z || (c3 != charAt && ((charAt < 'a' || charAt > 'z') && (charAt < 'A' || charAt > 'Z')))) {
                 int i5 = i;
                 int i6 = index;
                 if (i > 0) {
-                    i6 = parse(str, index, c4, i);
+                    i6 = parse(str, index, c3, i);
                     if (i6 < 0) {
                         return error(parsePosition, (-i6) - 1, timeZone);
                     }
@@ -892,30 +892,30 @@ public class SimpleDateFormat extends DateFormat {
                     return error(parsePosition, i6, timeZone);
                 }
                 i = i5;
-                c2 = 65535;
+                c = 65535;
                 index = i6 + 1;
-            } else if (c4 == charAt) {
+            } else if (c3 == charAt) {
                 i++;
-                c2 = c4;
+                c = c3;
             } else {
                 int i7 = index;
                 if (i > 0) {
-                    int parse = parse(str, index, c4, -i);
+                    int parse = parse(str, index, c3, -i);
                     i7 = parse;
                     if (parse < 0) {
                         return error(parsePosition, (-parse) - 1, timeZone);
                     }
                 }
-                c2 = charAt;
+                c = charAt;
                 i = 1;
                 index = i7;
             }
             i2++;
-            c4 = c2;
+            c3 = c;
         }
         int i8 = index;
         if (i > 0) {
-            int parse2 = parse(str, index, c4, i);
+            int parse2 = parse(str, index, c3, i);
             i8 = parse2;
             if (parse2 < 0) {
                 return error(parsePosition, (-parse2) - 1, timeZone);

@@ -48,7 +48,7 @@ class VersionedParcelParcel extends VersionedParcel {
         if (i == this.f) {
             i2 = this.g;
         }
-        return new VersionedParcelParcel(parcel, dataPosition, i2, this.h + "  ", this.f3544a, this.b, this.f3545c);
+        return new VersionedParcelParcel(parcel, dataPosition, i2, this.h + "  ", this.f3496a, this.b, this.f3497c);
     }
 
     @Override // androidx.versionedparcelable.VersionedParcel

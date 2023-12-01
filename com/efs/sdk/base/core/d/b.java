@@ -8,15 +8,15 @@ import java.io.File;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    public a f21764a;
+    public a f8158a;
     public c b = new c();
 
     /* renamed from: c  reason: collision with root package name */
-    public byte[] f21765c;
+    public byte[] f8159c;
     public File d;
 
     public b(String str, byte b) {
-        this.f21764a = new a(str, b);
+        this.f8158a = new a(str, b);
     }
 
     public static b a(ILogProtocol iLogProtocol) {
@@ -52,41 +52,41 @@ public final class b {
 
     private void d() {
         byte[] bArr;
-        if (this.f21764a.f21763c == 0 && (bArr = this.f21765c) != null) {
-            this.f21764a.f = bArr.length;
-        } else if (this.f21764a.f21763c == 1 && this.d.exists()) {
-            this.f21764a.f = this.d.length();
+        if (this.f8158a.f8157c == 0 && (bArr = this.f8159c) != null) {
+            this.f8158a.f = bArr.length;
+        } else if (this.f8158a.f8157c == 1 && this.d.exists()) {
+            this.f8158a.f = this.d.length();
         }
     }
 
     public final long a() {
         d();
-        return this.f21764a.f;
+        return this.f8158a.f;
     }
 
     public final void a(int i) {
-        this.f21764a.e = i;
+        this.f8158a.e = i;
         d();
     }
 
     public final void a(String str) {
-        this.f21764a.d = str;
+        this.f8158a.d = str;
     }
 
     public final void a(byte[] bArr) {
-        this.f21765c = bArr;
+        this.f8159c = bArr;
         d();
     }
 
     public final void b(int i) {
-        this.f21764a.f21763c = i;
+        this.f8158a.f8157c = i;
     }
 
     public final boolean b() {
-        return !"none".equals(this.f21764a.d);
+        return !"none".equals(this.f8158a.d);
     }
 
     public final void c() {
-        this.b.f21766a = true;
+        this.b.f8160a = true;
     }
 }

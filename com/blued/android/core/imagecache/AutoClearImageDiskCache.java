@@ -11,20 +11,16 @@ import java.util.Date;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/imagecache/AutoClearImageDiskCache.class */
 public class AutoClearImageDiskCache {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static AutoClearImageDiskCache f9570a;
+    private static AutoClearImageDiskCache a;
     private ClearTask b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/imagecache/AutoClearImageDiskCache$ClearTask.class */
     public static class ClearTask extends AsyncTask<Void, Void, Boolean> {
-
-        /* renamed from: a  reason: collision with root package name */
-        private String f9571a;
+        private String a;
 
         public ClearTask(String str) {
-            this.f9571a = str;
+            this.a = str;
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
@@ -33,8 +29,8 @@ public class AutoClearImageDiskCache {
         public Boolean doInBackground(Void... voidArr) {
             try {
                 try {
-                    if (!TextUtils.isEmpty(this.f9571a)) {
-                        File file = new File(this.f9571a);
+                    if (!TextUtils.isEmpty(this.a)) {
+                        File file = new File(this.a);
                         if (file.exists() && file.isDirectory()) {
                             File[] listFiles = file.listFiles();
                             if (listFiles != null && listFiles.length > 100) {
@@ -81,9 +77,7 @@ public class AutoClearImageDiskCache {
 
     /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/imagecache/AutoClearImageDiskCache$CountCheckTask.class */
     static class CountCheckTask extends AsyncTask<Void, Void, Boolean> {
-
-        /* renamed from: a  reason: collision with root package name */
-        private String f9572a;
+        private String a;
 
         /* JADX INFO: Access modifiers changed from: protected */
         @Override // android.os.AsyncTask
@@ -91,8 +85,8 @@ public class AutoClearImageDiskCache {
         public Boolean doInBackground(Void... voidArr) {
             String[] list;
             try {
-                if (!TextUtils.isEmpty(this.f9572a)) {
-                    File file = new File(this.f9572a);
+                if (!TextUtils.isEmpty(this.a)) {
+                    File file = new File(this.a);
                     if (file.exists() && file.isDirectory() && (list = file.list()) != null) {
                         Log.a("AutoClearImageDiskCache", "image count:" + list.length);
                         if (list.length >= 5000) {
@@ -140,10 +134,10 @@ public class AutoClearImageDiskCache {
         AutoClearImageDiskCache autoClearImageDiskCache;
         synchronized (AutoClearImageDiskCache.class) {
             try {
-                if (f9570a == null) {
-                    f9570a = new AutoClearImageDiskCache();
+                if (a == null) {
+                    a = new AutoClearImageDiskCache();
                 }
-                autoClearImageDiskCache = f9570a;
+                autoClearImageDiskCache = a;
             } catch (Throwable th) {
                 throw th;
             }

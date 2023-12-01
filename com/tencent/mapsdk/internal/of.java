@@ -9,11 +9,11 @@ import java.lang.ref.WeakReference;
 public class of extends AsyncTask<Object, Void, Boolean> {
 
     /* renamed from: a  reason: collision with root package name */
-    private WeakReference<Context> f37677a;
+    private WeakReference<Context> f23986a;
     private WeakReference<a> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private vh f37678c;
+    private vh f23987c;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/mapsdk/internal/of$a.class */
     public interface a {
@@ -21,8 +21,8 @@ public class of extends AsyncTask<Object, Void, Boolean> {
     }
 
     public of(h1 h1Var, a aVar) {
-        this.f37677a = new WeakReference<>(h1Var.j());
-        this.f37678c = h1Var.l().u();
+        this.f23986a = new WeakReference<>(h1Var.j());
+        this.f23987c = h1Var.l().u();
         this.b = new WeakReference<>(aVar);
     }
 
@@ -30,18 +30,18 @@ public class of extends AsyncTask<Object, Void, Boolean> {
         if (str == null || str.length() == 0) {
             return false;
         }
-        return this.f37678c.b(context, str);
+        return this.f23987c.b(context, str);
     }
 
     @Override // android.os.AsyncTask
     /* renamed from: a */
     public Boolean doInBackground(Object... objArr) {
-        if (this.f37677a.get() == null) {
+        if (this.f23986a.get() == null) {
             return Boolean.FALSE;
         }
-        Context context = this.f37677a.get();
+        Context context = this.f23986a.get();
         try {
-            NetResponse checkAuth = ((a3) ((o3) n2.a(o3.class)).d()).checkAuth(c7.t(), c7.F(), this.f37678c.j(), c7.A(), this.f37678c.a(), 3, this.f37678c.e());
+            NetResponse checkAuth = ((a3) ((o3) n2.a(o3.class)).d()).checkAuth(c7.t(), c7.F(), this.f23987c.j(), c7.A(), this.f23987c.a(), 3, this.f23987c.e());
             if (checkAuth != null && checkAuth.available()) {
                 return Boolean.valueOf(a(context, checkAuth.toString()));
             }
@@ -60,6 +60,6 @@ public class of extends AsyncTask<Object, Void, Boolean> {
         if (weakReference == null || weakReference.get() == null) {
             return;
         }
-        this.b.get().a(bool.booleanValue(), this.f37678c);
+        this.b.get().a(bool.booleanValue(), this.f23987c);
     }
 }

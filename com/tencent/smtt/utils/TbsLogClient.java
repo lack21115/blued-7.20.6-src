@@ -13,10 +13,10 @@ import java.util.Locale;
 public class TbsLogClient {
 
     /* renamed from: a  reason: collision with root package name */
-    static TbsLogClient f38929a;
+    static TbsLogClient f25238a;
 
     /* renamed from: c  reason: collision with root package name */
-    static File f38930c;
+    static File f25239c;
     static String d;
     static byte[] e;
     private static boolean i = true;
@@ -25,23 +25,22 @@ public class TbsLogClient {
     private Context g;
     private StringBuffer h = new StringBuffer();
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/smtt/utils/TbsLogClient$a.class */
-    public class a implements Runnable {
+    class a implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        String f38931a;
+        String f25240a;
 
         a(String str) {
-            this.f38931a = null;
-            this.f38931a = str;
+            this.f25240a = null;
+            this.f25240a = str;
         }
 
         @Override // java.lang.Runnable
         public void run() {
             if (TbsLogClient.this.b != null) {
                 TextView textView = TbsLogClient.this.b;
-                textView.append(this.f38931a + "\n");
+                textView.append(this.f25240a + "\n");
             }
         }
     }
@@ -60,14 +59,14 @@ public class TbsLogClient {
     private void a() {
         String a2;
         try {
-            if (f38930c == null) {
+            if (f25239c == null) {
                 if (!Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED) || (a2 = FileUtil.a(this.g, 6)) == null) {
-                    f38930c = null;
+                    f25239c = null;
                     return;
                 }
-                f38930c = new File(a2, "tbslog.txt");
+                f25239c = new File(a2, "tbslog.txt");
                 d = LogFileUtils.createKey();
-                e = LogFileUtils.createHeaderText(f38930c.getName(), d);
+                e = LogFileUtils.createHeaderText(f25239c.getName(), d);
             }
         } catch (NullPointerException e2) {
             e2.printStackTrace();
@@ -131,8 +130,8 @@ public class TbsLogClient {
     public void writeLogToDisk() {
         try {
             a();
-            if (f38930c != null) {
-                LogFileUtils.writeDataToStorage(f38930c, d, e, this.h.toString(), true);
+            if (f25239c != null) {
+                LogFileUtils.writeDataToStorage(f25239c, d, e, this.h.toString(), true);
                 this.h.delete(0, this.h.length());
             }
         } catch (Exception e2) {

@@ -15,41 +15,34 @@ import com.j256.ormlite.misc.TransactionManager;
 import com.j256.ormlite.support.ConnectionSource;
 import com.j256.ormlite.table.DatabaseTableConfig;
 import com.j256.ormlite.table.TableUtils;
-import com.soft.blued.ui.find.model.UserFindResult;
 import java.sql.SQLException;
 import java.util.concurrent.Callable;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/db/BluedBaseDataHelper.class */
 public class BluedBaseDataHelper extends OrmLiteSqliteOpenHelper {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Class[] f10763a = {UserAccountsModel.class, SessionModelDB.class, ChattingModelDB.class, SessionSettingModel.class, NewFeedModel.class};
+    public static final Class[] a = {UserAccountsModel.class, SessionModelDB.class, ChattingModelDB.class, SessionSettingModel.class, NewFeedModel.class};
     public static BluedBaseDataHelper b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f10764c;
+    private String c;
 
     /* renamed from: com.blued.android.module.common.db.BluedBaseDataHelper$4  reason: invalid class name */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/db/BluedBaseDataHelper$4.class */
     class AnonymousClass4 implements Callable<Void> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ BluedBaseDataHelper f10768a;
+        final /* synthetic */ BluedBaseDataHelper a;
 
         @Override // java.util.concurrent.Callable
         public Void call() throws Exception {
-            TableUtils.clearTable(this.f10768a.connectionSource, UserAccountsModel.class);
-            TableUtils.clearTable(this.f10768a.connectionSource, SessionModelDB.class);
-            TableUtils.clearTable(this.f10768a.connectionSource, ChattingModelDB.class);
-            TableUtils.clearTable(this.f10768a.connectionSource, SessionSettingModel.class);
-            TableUtils.clearTable(this.f10768a.connectionSource, NewFeedModel.class);
+            TableUtils.clearTable(this.a.connectionSource, UserAccountsModel.class);
+            TableUtils.clearTable(this.a.connectionSource, SessionModelDB.class);
+            TableUtils.clearTable(this.a.connectionSource, ChattingModelDB.class);
+            TableUtils.clearTable(this.a.connectionSource, SessionSettingModel.class);
+            TableUtils.clearTable(this.a.connectionSource, NewFeedModel.class);
             return null;
         }
     }
 
     public BluedBaseDataHelper(Context context, String str) {
-        super(context, str, null, 40052);
-        this.f10764c = BluedBaseDataHelper.class.getName();
+        super(context, str, (SQLiteDatabase.CursorFactory) null, 40052);
+        this.c = BluedBaseDataHelper.class.getName();
     }
 
     private void A(SQLiteDatabase sQLiteDatabase) {
@@ -249,8 +242,8 @@ public class BluedBaseDataHelper extends OrmLiteSqliteOpenHelper {
             TransactionManager.callInTransaction(this.connectionSource, new Callable<Void>() { // from class: com.blued.android.module.common.db.BluedBaseDataHelper.2
                 @Override // java.util.concurrent.Callable
                 public Void call() throws Exception {
-                    TableUtils.dropTable((ConnectionSource) BluedBaseDataHelper.this.connectionSource, BluedBaseDataHelper.f10763a[i], true);
-                    TableUtils.createTable(BluedBaseDataHelper.this.connectionSource, BluedBaseDataHelper.f10763a[i]);
+                    TableUtils.dropTable(BluedBaseDataHelper.this.connectionSource, BluedBaseDataHelper.a[i], true);
+                    TableUtils.createTable(BluedBaseDataHelper.this.connectionSource, BluedBaseDataHelper.a[i]);
                     return null;
                 }
             });
@@ -260,7 +253,7 @@ public class BluedBaseDataHelper extends OrmLiteSqliteOpenHelper {
     }
 
     private void a(int i, String str, String str2) throws SQLException {
-        a().getDao(f10763a[i]).executeRawNoArgs(String.format("ALTER TABLE %s ADD COLUMN %s %s;", b(i), str, str2));
+        a().getDao(a[i]).executeRawNoArgs(String.format("ALTER TABLE %s ADD COLUMN %s %s;", b(i), str, str2));
     }
 
     private void a(SQLiteDatabase sQLiteDatabase) {
@@ -281,10 +274,10 @@ public class BluedBaseDataHelper extends OrmLiteSqliteOpenHelper {
                     int i = 0;
                     while (true) {
                         int i2 = i;
-                        if (i2 >= BluedBaseDataHelper.f10763a.length) {
+                        if (i2 >= BluedBaseDataHelper.a.length) {
                             return null;
                         }
-                        TableUtils.dropTable(connectionSource, BluedBaseDataHelper.f10763a[i2], true);
+                        TableUtils.dropTable(connectionSource, BluedBaseDataHelper.a[i2], true);
                         i = i2 + 1;
                     }
                 }
@@ -361,7 +354,7 @@ public class BluedBaseDataHelper extends OrmLiteSqliteOpenHelper {
             r0 = r14
             r13 = r0
             r0 = r8
-            java.lang.String r0 = r0.f10764c     // Catch: java.lang.Throwable -> L53
+            java.lang.String r0 = r0.c     // Catch: java.lang.Throwable -> L53
             r1 = 2
             java.lang.Object[] r1 = new java.lang.Object[r1]     // Catch: java.lang.Throwable -> L53
             r2 = r1
@@ -399,7 +392,7 @@ public class BluedBaseDataHelper extends OrmLiteSqliteOpenHelper {
     }
 
     private String b(int i) throws SQLException {
-        return DatabaseTableConfig.fromClass(this.connectionSource, f10763a[i]).getTableName();
+        return DatabaseTableConfig.fromClass(this.connectionSource, a[i]).getTableName();
     }
 
     private void b(SQLiteDatabase sQLiteDatabase) {
@@ -656,8 +649,8 @@ public class BluedBaseDataHelper extends OrmLiteSqliteOpenHelper {
 
     private void p(SQLiteDatabase sQLiteDatabase) {
         try {
-            a(3, UserFindResult.USER_SORT_BY.NEARBY, "INTEGER");
-            a(3, UserFindResult.USER_SORT_BY.ONLINE, "INTEGER");
+            a(3, "nearby", "INTEGER");
+            a(3, "online", "INTEGER");
             a(3, "follower", "INTEGER");
             a(3, "initiator", "INTEGER");
         } catch (Exception e) {
@@ -822,7 +815,6 @@ public class BluedBaseDataHelper extends OrmLiteSqliteOpenHelper {
         return AppInfo.d().getDatabasePath("blued2015.db").getPath();
     }
 
-    @Override // com.j256.ormlite.android.apptools.OrmLiteSqliteOpenHelper
     public void onCreate(SQLiteDatabase sQLiteDatabase, final ConnectionSource connectionSource) {
         try {
             TransactionManager.callInTransaction(connectionSource, new Callable<Void>() { // from class: com.blued.android.module.common.db.BluedBaseDataHelper.1
@@ -831,10 +823,10 @@ public class BluedBaseDataHelper extends OrmLiteSqliteOpenHelper {
                     int i = 0;
                     while (true) {
                         int i2 = i;
-                        if (i2 >= BluedBaseDataHelper.f10763a.length) {
+                        if (i2 >= BluedBaseDataHelper.a.length) {
                             return null;
                         }
-                        TableUtils.createTable(connectionSource, BluedBaseDataHelper.f10763a[i2]);
+                        TableUtils.createTable(connectionSource, BluedBaseDataHelper.a[i2]);
                         i = i2 + 1;
                     }
                 }
@@ -844,9 +836,8 @@ public class BluedBaseDataHelper extends OrmLiteSqliteOpenHelper {
         }
     }
 
-    @Override // com.j256.ormlite.android.apptools.OrmLiteSqliteOpenHelper
     public void onUpgrade(SQLiteDatabase sQLiteDatabase, ConnectionSource connectionSource, int i, int i2) {
-        Logger.b(this.f10764c, "数据库升级: oldVersion==", Integer.valueOf(i), "，newVersion==", Integer.valueOf(i2));
+        Logger.b(this.c, "数据库升级: oldVersion==", Integer.valueOf(i), "，newVersion==", Integer.valueOf(i2));
         switch (i) {
             case 40000:
                 a(sQLiteDatabase);

@@ -11,10 +11,10 @@ import com.opos.process.bridge.provider.c;
 public final class a extends com.opos.process.bridge.provider.a {
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f27116c = MonitorModel.class.getName();
+    private static final String f13428c = MonitorModel.class.getName();
 
     public a(Context context) {
-        this.f27427a = context;
+        this.f13739a = context;
     }
 
     @Override // com.opos.process.bridge.provider.a
@@ -23,6 +23,6 @@ public final class a extends com.opos.process.bridge.provider.a {
     }
 
     public final void a(String str, MonitorEvent monitorEvent) throws c, b {
-        b(this.f27427a, f27116c, this.b, 1, str, monitorEvent);
+        b(this.f13739a, f13428c, this.b, 1, str, monitorEvent);
     }
 }

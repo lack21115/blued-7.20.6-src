@@ -5,6 +5,7 @@ import android.net.wifi.WifiEnterpriseConfig;
 import com.google.common.net.HttpHeaders;
 import com.opos.exoplayer.core.h.q;
 import com.opos.exoplayer.core.i.u;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.EOFException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -24,7 +25,7 @@ public class n implements q {
     private static final Pattern b = Pattern.compile("^bytes (\\d+)-(\\d+)/(\\d+)$");
 
     /* renamed from: c  reason: collision with root package name */
-    private static final AtomicReference<byte[]> f25461c = new AtomicReference<>();
+    private static final AtomicReference<byte[]> f11773c = new AtomicReference<>();
     private final boolean d;
     private final int e;
     private final int f;
@@ -79,7 +80,7 @@ public class n implements q {
             httpURLConnection.setRequestProperty(entry2.getKey(), entry2.getValue());
         }
         if (j != 0 || j2 != -1) {
-            String str = "bytes=" + j + "-";
+            String str = "bytes=" + j + Constants.ACCEPT_TIME_SEPARATOR_SERVER;
             String str2 = str;
             if (j2 != -1) {
                 str2 = str + ((j + j2) - 1);
@@ -120,7 +121,7 @@ public class n implements q {
     }
 
     private static void a(HttpURLConnection httpURLConnection, long j) {
-        if (u.f25510a == 19 || u.f25510a == 20) {
+        if (u.f11822a == 19 || u.f11822a == 20) {
             try {
                 InputStream inputStream = httpURLConnection.getInputStream();
                 if (j == -1) {
@@ -173,7 +174,7 @@ public class n implements q {
 
     private HttpURLConnection b(i iVar) {
         HttpURLConnection a2;
-        URL url = new URL(iVar.f25449a.toString());
+        URL url = new URL(iVar.f11761a.toString());
         byte[] bArr = iVar.b;
         long j = iVar.d;
         long j2 = iVar.e;
@@ -205,7 +206,7 @@ public class n implements q {
         if (this.r == this.p) {
             return;
         }
-        byte[] andSet = f25461c.getAndSet(null);
+        byte[] andSet = f11773c.getAndSet(null);
         byte[] bArr = andSet;
         if (andSet == null) {
             bArr = new byte[4096];
@@ -214,7 +215,7 @@ public class n implements q {
             long j = this.r;
             long j2 = this.p;
             if (j == j2) {
-                f25461c.set(bArr);
+                f11773c.set(bArr);
                 return;
             }
             int read = this.n.read(bArr, 0, (int) Math.min(j2 - j, bArr.length));

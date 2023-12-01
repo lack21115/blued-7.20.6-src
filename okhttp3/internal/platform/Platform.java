@@ -25,9 +25,7 @@ import okio.Buffer;
 
 /* loaded from: source-3503164-dex2jar.jar:okhttp3/internal/platform/Platform.class */
 public class Platform {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final Platform f43978a = a();
+    private static final Platform a = a();
     private static final Logger b = Logger.getLogger(OkHttpClient.class.getName());
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -125,7 +123,7 @@ public class Platform {
     }
 
     public static Platform e() {
-        return f43978a;
+        return a;
     }
 
     public static boolean g() {

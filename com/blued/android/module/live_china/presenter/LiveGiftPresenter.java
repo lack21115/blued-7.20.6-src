@@ -40,9 +40,7 @@ public final class LiveGiftPresenter extends MvpPresenter {
         Intrinsics.e(fragment, "$fragment");
         LiveRoomHttpUtils.q(new BluedUIHttpResponse<BluedEntityA<ReChargeGift>>(i, imageView, fragment) { // from class: com.blued.android.module.live_china.presenter.LiveGiftPresenter$showRechargeGiftBagIcon$2$1
             final /* synthetic */ int b;
-
-            /* renamed from: c  reason: collision with root package name */
-            final /* synthetic */ ImageView f14024c;
+            final /* synthetic */ ImageView c;
             final /* synthetic */ BaseFragment d;
 
             /* JADX INFO: Access modifiers changed from: package-private */
@@ -50,7 +48,7 @@ public final class LiveGiftPresenter extends MvpPresenter {
             {
                 super(ActivityFragmentActive.this);
                 this.b = i;
-                this.f14024c = imageView;
+                this.c = imageView;
                 this.d = fragment;
             }
 
@@ -63,7 +61,7 @@ public final class LiveGiftPresenter extends MvpPresenter {
                 }
                 LiveRoomManager.a().a(bluedEntityA.getSingleData(), false);
                 LiveRoomPreferences.h(this.b);
-                ImageLoader.a(ActivityFragmentActive.this, R.drawable.live_recharge_static).a(this.f14024c);
+                ImageLoader.a(ActivityFragmentActive.this, R.drawable.live_recharge_static).a(this.c);
                 LiveRouteUtil.a(this.d, false);
                 EventTrackLive.d(LiveProtos.Event.LIVE_GIFT_POP_RESOURCE_CLICK, LiveRoomManager.a().e(), LiveRoomManager.a().g(), 2);
             }
@@ -74,7 +72,7 @@ public final class LiveGiftPresenter extends MvpPresenter {
     public static final void a(ActivityFragmentActive fragmentActive, ImageView imageView, BaseFragment fragment, View view) {
         Intrinsics.e(fragmentActive, "$fragmentActive");
         Intrinsics.e(fragment, "$fragment");
-        LiveRechargeGiftBagView.f14899a.d();
+        LiveRechargeGiftBagView.a.d();
         ImageLoader.a(fragmentActive, R.drawable.live_charge_icon_static).a(imageView);
         LiveRouteUtil.a(fragment, fragment.getFragmentActive(), 1, false, 10020);
         EventTrackLive.d(LiveProtos.Event.LIVE_GIFT_POP_RESOURCE_CLICK, LiveRoomManager.a().e(), LiveRoomManager.a().g(), 1);
@@ -105,15 +103,15 @@ public final class LiveGiftPresenter extends MvpPresenter {
             if (imageView != null) {
                 imageView.setLayoutParams(layoutParams);
             }
-            if (LiveRechargeGiftBagView.f14899a.c()) {
+            if (LiveRechargeGiftBagView.a.c()) {
                 ImageLoader.a(fragmentActive, R.drawable.live_charge_icon_static).a(imageView);
             } else {
-                ImageWrapper c2 = ImageLoader.c(fragmentActive, "live_first_gift_pay_anim.png");
+                ImageWrapper c = ImageLoader.c(fragmentActive, "live_first_gift_pay_anim.png");
                 int i2 = 0;
                 if (imageView != null) {
                     i2 = imageView.hashCode();
                 }
-                c2.e(i2).g(-1).a(imageView);
+                c.e(i2).g(-1).a(imageView);
             }
             if (imageView == null) {
                 return;
@@ -146,12 +144,12 @@ public final class LiveGiftPresenter extends MvpPresenter {
             Date date = new Date(System.currentTimeMillis());
             final int year = (date.getYear() * 10000) + ((date.getMonth() + 1) * 100) + date.getDate();
             if (year > LiveRoomPreferences.y()) {
-                ImageWrapper c3 = ImageLoader.c(fragmentActive, "live_recharge_anim.png");
+                ImageWrapper c2 = ImageLoader.c(fragmentActive, "live_recharge_anim.png");
                 int i3 = 0;
                 if (imageView != null) {
                     i3 = imageView.hashCode();
                 }
-                c3.e(i3).g(-1).a(imageView);
+                c2.e(i3).g(-1).a(imageView);
             } else {
                 ImageLoader.a(fragmentActive, R.drawable.live_recharge_static).a(imageView);
             }

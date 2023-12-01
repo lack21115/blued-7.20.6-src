@@ -501,13 +501,12 @@ public class CollapsingToolbarLayout extends FrameLayout {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.FrameLayout, android.view.ViewGroup
-    public boolean checkLayoutParams(ViewGroup.LayoutParams layoutParams) {
+    protected boolean checkLayoutParams(ViewGroup.LayoutParams layoutParams) {
         return layoutParams instanceof LayoutParams;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
+    @Override // android.view.View
     public void draw(Canvas canvas) {
         Drawable drawable;
         super.draw(canvas);
@@ -538,9 +537,8 @@ public class CollapsingToolbarLayout extends FrameLayout {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup
-    public boolean drawChild(Canvas canvas, View view, long j) {
+    protected boolean drawChild(Canvas canvas, View view, long j) {
         boolean z;
         boolean z2 = true;
         if (this.contentScrim == null || this.scrimAlpha <= 0 || !isToolbarChild(view)) {
@@ -560,9 +558,8 @@ public class CollapsingToolbarLayout extends FrameLayout {
         return z2;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public void drawableStateChanged() {
+    @Override // android.view.ViewGroup, android.view.View
+    protected void drawableStateChanged() {
         super.drawableStateChanged();
         int[] drawableState = getDrawableState();
         Drawable drawable = this.statusBarScrim;
@@ -722,9 +719,8 @@ public class CollapsingToolbarLayout extends FrameLayout {
         return this.collapsingTitleEnabled;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         ViewParent parent = getParent();
         if (parent instanceof AppBarLayout) {
@@ -739,9 +735,8 @@ public class CollapsingToolbarLayout extends FrameLayout {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         ViewParent parent = getParent();
         AppBarLayout.OnOffsetChangedListener onOffsetChangedListener = this.onOffsetChangedListener;
         if (onOffsetChangedListener != null && (parent instanceof AppBarLayout)) {
@@ -750,9 +745,8 @@ public class CollapsingToolbarLayout extends FrameLayout {
         super.onDetachedFromWindow();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z, int i, int i2, int i3, int i4) {
+    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         super.onLayout(z, i, i2, i3, i4);
         WindowInsetsCompat windowInsetsCompat = this.lastInsets;
         if (windowInsetsCompat != null) {
@@ -796,9 +790,8 @@ public class CollapsingToolbarLayout extends FrameLayout {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         ensureToolbar();
         super.onMeasure(i, i2);
         int mode = View.MeasureSpec.getMode(i2);
@@ -827,9 +820,8 @@ public class CollapsingToolbarLayout extends FrameLayout {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // android.widget.FrameLayout, android.view.View
-    public void onSizeChanged(int i, int i2, int i3, int i4) {
+    @Override // android.view.View
+    protected void onSizeChanged(int i, int i2, int i3, int i4) {
         super.onSizeChanged(i, i2, i3, i4);
         Drawable drawable = this.contentScrim;
         if (drawable != null) {
@@ -1077,7 +1069,7 @@ public class CollapsingToolbarLayout extends FrameLayout {
         this.collapsingTextHelper.setPositionInterpolator(timeInterpolator);
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
+    @Override // android.view.View
     public void setVisibility(int i) {
         super.setVisibility(i);
         boolean z = i == 0;
@@ -1099,9 +1091,8 @@ public class CollapsingToolbarLayout extends FrameLayout {
         setScrimsShown(getHeight() + this.currentOffset < getScrimVisibleHeightTrigger());
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // android.widget.FrameLayout, android.view.View
-    public boolean verifyDrawable(Drawable drawable) {
+    @Override // android.view.View
+    protected boolean verifyDrawable(Drawable drawable) {
         return super.verifyDrawable(drawable) || drawable == this.contentScrim || drawable == this.statusBarScrim;
     }
 }

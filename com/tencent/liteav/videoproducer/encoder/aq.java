@@ -7,10 +7,10 @@ import java.util.concurrent.Callable;
 public final /* synthetic */ class aq implements Callable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ai f36990a;
+    private final ai f23299a;
 
     private aq(ai aiVar) {
-        this.f36990a = aiVar;
+        this.f23299a = aiVar;
     }
 
     public static Callable a(ai aiVar) {
@@ -19,6 +19,6 @@ public final /* synthetic */ class aq implements Callable {
 
     @Override // java.util.concurrent.Callable
     public final Object call() {
-        return ai.b(this.f36990a);
+        return ai.b(this.f23299a);
     }
 }

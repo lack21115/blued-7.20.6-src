@@ -1,6 +1,7 @@
 package dalvik.system;
 
 import android.system.ErrnoException;
+import com.blued.android.module.common.web.LoaderConstants;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -49,7 +50,7 @@ public final class DexFile {
         this.guard = CloseGuard.get();
         this.mCookie = openDexFile(str, null, 0);
         this.mFileName = str;
-        this.guard.open("close");
+        this.guard.open(LoaderConstants.CLOSE);
     }
 
     private DexFile(String str, String str2, int i) throws IOException {
@@ -65,7 +66,7 @@ public final class DexFile {
         }
         this.mCookie = openDexFile(str, str2, i);
         this.mFileName = str;
-        this.guard.open("close");
+        this.guard.open(LoaderConstants.CLOSE);
     }
 
     private static native void closeDexFile(long j);

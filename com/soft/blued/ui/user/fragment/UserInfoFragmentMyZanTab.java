@@ -10,6 +10,7 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.baidu.mobads.sdk.api.IAdInterListener;
+import com.blued.android.core.net.IRequestHost;
 import com.blued.android.framework.activity.PreloadFragment;
 import com.blued.android.framework.http.BluedUIHttpResponse;
 import com.blued.android.framework.http.parser.BluedEntity;
@@ -25,7 +26,6 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.soft.blued.R;
 import com.soft.blued.http.MineHttpUtils;
 import com.soft.blued.ui.home.HomeArgumentHelper;
-import java.util.Collection;
 
 /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/user/fragment/UserInfoFragmentMyZanTab.class */
 public class UserInfoFragmentMyZanTab extends PreloadFragment implements View.OnClickListener {
@@ -40,7 +40,7 @@ public class UserInfoFragmentMyZanTab extends PreloadFragment implements View.On
     BluedUIHttpResponse n = new BluedUIHttpResponse<BluedEntity<BluedIngSelfFeed, BluedEntityBaseExtra>>(getFragmentActive()) { // from class: com.soft.blued.ui.user.fragment.UserInfoFragmentMyZanTab.4
 
         /* renamed from: a  reason: collision with root package name */
-        boolean f34015a = false;
+        boolean f20324a = false;
 
         private void a(BluedEntity<BluedIngSelfFeed, BluedEntityBaseExtra> bluedEntity, boolean z) {
             if (bluedEntity == null || bluedEntity.data == null || bluedEntity.data.size() <= 0) {
@@ -56,53 +56,47 @@ public class UserInfoFragmentMyZanTab extends PreloadFragment implements View.On
             if (UserInfoFragmentMyZanTab.this.p == 1) {
                 UserInfoFragmentMyZanTab.this.m.setNewData(bluedEntity.data);
             } else {
-                UserInfoFragmentMyZanTab.this.m.addData((Collection<? extends BluedIngSelfFeed>) bluedEntity.data);
+                UserInfoFragmentMyZanTab.this.m.addData(bluedEntity.data);
             }
             UserInfoFragmentMyZanTab.this.m.notifyDataSetChanged();
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUICache(BluedEntity<BluedIngSelfFeed, BluedEntityBaseExtra> bluedEntity) {
             a(bluedEntity, true);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public boolean onUIFailure(int i, String str) {
-            this.f34015a = true;
+            this.f20324a = true;
             if (UserInfoFragmentMyZanTab.this.p != 1) {
                 UserInfoFragmentMyZanTab.b(UserInfoFragmentMyZanTab.this);
             }
             return super.onUIFailure(i, str);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIFinish() {
             if (UserInfoFragmentMyZanTab.this.m.getItemCount() != 1) {
                 UserInfoFragmentMyZanTab.this.o.d();
-            } else if (this.f34015a) {
+            } else if (this.f20324a) {
                 UserInfoFragmentMyZanTab.this.o.b();
                 Log.v("drb", "showFail");
             } else {
                 UserInfoFragmentMyZanTab.this.o.a();
                 Log.v("drb", "showNodata");
             }
-            this.f34015a = false;
+            this.f20324a = false;
             UserInfoFragmentMyZanTab.this.m.notifyDataSetChanged();
             UserInfoFragmentMyZanTab.this.m.loadMoreComplete();
             UserInfoFragmentMyZanTab.this.k.j();
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIStart() {
             super.onUIStart();
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIUpdate(BluedEntity<BluedIngSelfFeed, BluedEntityBaseExtra> bluedEntity) {
             a(bluedEntity, false);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public BluedEntity<BluedIngSelfFeed, BluedEntityBaseExtra> parseData(String str) {
             BluedEntity<BluedIngSelfFeed, BluedEntityBaseExtra> parseData = super.parseData(str);
             if (parseData != null) {
@@ -129,8 +123,8 @@ public class UserInfoFragmentMyZanTab extends PreloadFragment implements View.On
         noDataAndLoadFailView.d();
         this.o.setImageScale(0.7f);
         this.o.setNoDataImg(2131233633);
-        this.o.setNoDataStr(R.string.my_zan_nodata);
-        this.o.setBtnStr(R.string.my_zan_to_square);
+        this.o.setNoDataStr((int) R.string.my_zan_nodata);
+        this.o.setBtnStr((int) R.string.my_zan_to_square);
         this.o.setNoDataBtnVisibility(0);
         this.o.setNoDataBtnListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.UserInfoFragmentMyZanTab.1
             @Override // android.view.View.OnClickListener
@@ -140,12 +134,12 @@ public class UserInfoFragmentMyZanTab extends PreloadFragment implements View.On
                 HomeArgumentHelper.a(UserInfoFragmentMyZanTab.this.j, IAdInterListener.AdProdType.PRODUCT_FEEDS, (Bundle) null);
             }
         });
-        PullToRefreshRecyclerView pullToRefreshRecyclerView = (PullToRefreshRecyclerView) this.b.findViewById(2131373425);
-        this.k = pullToRefreshRecyclerView;
-        pullToRefreshRecyclerView.setRefreshEnabled(true);
-        RecyclerView refreshableView = this.k.getRefreshableView();
-        this.l = refreshableView;
-        FeedListAdapterForRecyclerView feedListAdapterForRecyclerView = new FeedListAdapterForRecyclerView(this.j, this, refreshableView, 12);
+        PullToRefreshRecyclerView findViewById = this.b.findViewById(R.id.wrapper);
+        this.k = findViewById;
+        findViewById.setRefreshEnabled(true);
+        RecyclerView recyclerView = (RecyclerView) this.k.getRefreshableView();
+        this.l = recyclerView;
+        RecyclerView.Adapter feedListAdapterForRecyclerView = new FeedListAdapterForRecyclerView(this.j, this, recyclerView, 12);
         this.m = feedListAdapterForRecyclerView;
         this.l.setAdapter(feedListAdapterForRecyclerView);
         this.m.setEmptyView(this.o);
@@ -158,7 +152,6 @@ public class UserInfoFragmentMyZanTab extends PreloadFragment implements View.On
             }
         });
         this.k.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener<RecyclerView>() { // from class: com.soft.blued.ui.user.fragment.UserInfoFragmentMyZanTab.3
-            @Override // com.blued.android.framework.view.pulltorefresh.PullToRefreshBase.OnRefreshListener
             public void onRefresh(PullToRefreshBase<RecyclerView> pullToRefreshBase) {
                 UserInfoFragmentMyZanTab.this.a(true);
             }
@@ -166,11 +159,10 @@ public class UserInfoFragmentMyZanTab extends PreloadFragment implements View.On
         this.k.k();
     }
 
-    @Override // com.blued.android.framework.activity.PreloadFragment
     public void a(View view) {
         FragmentActivity activity = getActivity();
         this.j = activity;
-        this.b = LayoutInflater.from(activity).inflate(2131559000, (ViewGroup) view, true);
+        this.b = LayoutInflater.from(activity).inflate(R.layout.fragment_circle_pubish_respond, (ViewGroup) view, true);
         h();
     }
 
@@ -185,7 +177,7 @@ public class UserInfoFragmentMyZanTab extends PreloadFragment implements View.On
             this.p = i - 1;
             return;
         }
-        MineHttpUtils.a(this.j, this.n, this.p + "", this.q + "", getFragmentActive());
+        MineHttpUtils.a(this.j, this.n, this.p + "", this.q + "", (IRequestHost) getFragmentActive());
     }
 
     @Override // android.view.View.OnClickListener
@@ -197,14 +189,13 @@ public class UserInfoFragmentMyZanTab extends PreloadFragment implements View.On
         getActivity().finish();
     }
 
-    @Override // com.blued.android.framework.activity.PreloadFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void setUserVisibleHint(boolean z) {
         PullToRefreshRecyclerView pullToRefreshRecyclerView;
         super.setUserVisibleHint(z);
-        if (!z || this.f9777c || (pullToRefreshRecyclerView = this.k) == null) {
+        if (!z || this.c || (pullToRefreshRecyclerView = this.k) == null) {
             return;
         }
         pullToRefreshRecyclerView.k();
-        this.f9777c = true;
+        this.c = true;
     }
 }

@@ -10,7 +10,6 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import com.anythink.core.api.ErrorCode;
 import com.bytedance.applog.tracker.Tracker;
 import com.sina.weibo.sdk.auth.WeiboAuthListener;
 import com.sina.weibo.sdk.cmd.WbAppActivator;
@@ -29,8 +28,8 @@ public class CommentComponentView extends FrameLayout {
 
     /* loaded from: source-8303388-dex2jar.jar:com/sina/weibo/sdk/component/view/CommentComponentView$Category.class */
     public enum Category {
-        MOVIE(ErrorCode.networkError),
-        TRAVEL(ErrorCode.serverError);
+        MOVIE("1001"),
+        TRAVEL("1002");
         
         private String mVal;
 

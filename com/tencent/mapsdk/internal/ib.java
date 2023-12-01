@@ -6,14 +6,14 @@ import java.io.InputStream;
 public abstract class ib {
 
     /* renamed from: a  reason: collision with root package name */
-    private boolean f37552a;
+    private boolean f23861a;
 
     public void a() {
     }
 
     public void a(boolean z) {
         synchronized (this) {
-            this.f37552a = z;
+            this.f23861a = z;
         }
     }
 
@@ -24,7 +24,7 @@ public abstract class ib {
     public boolean b() {
         boolean z;
         synchronized (this) {
-            z = this.f37552a;
+            z = this.f23861a;
         }
         return z;
     }

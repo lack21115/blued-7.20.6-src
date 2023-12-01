@@ -18,11 +18,11 @@ import java.util.List;
 public class VisitorGetVipAdapter extends BaseAdapter {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f30151a;
+    private Context f16461a;
     private IRequestHost b;
 
     /* renamed from: c  reason: collision with root package name */
-    private LoadOptions f30152c;
+    private LoadOptions f16462c;
     private List<BluedMyVisitorList> d;
     private LayoutInflater e;
     private List<Integer> f;
@@ -31,17 +31,17 @@ public class VisitorGetVipAdapter extends BaseAdapter {
     public class VisitorGetVipViewHolder extends VisitorViewHolder {
 
         /* renamed from: a  reason: collision with root package name */
-        ImageView f30153a;
+        ImageView f16463a;
 
         public VisitorGetVipViewHolder(Context context, View view, LoadOptions loadOptions) {
             super(context, VisitorGetVipAdapter.this.b, view, loadOptions, 1);
-            this.f30153a = (ImageView) view.findViewById(R.id.img_areo_cover);
+            this.f16463a = (ImageView) view.findViewById(R.id.img_areo_cover);
         }
 
         @Override // com.soft.blued.ui.find.viewholder.VisitorViewHolder
         public void a(int i) {
             if (i < VisitorGetVipAdapter.this.f.size()) {
-                this.f30153a.setImageResource(((Integer) VisitorGetVipAdapter.this.f.get(i)).intValue());
+                this.f16463a.setImageResource(((Integer) VisitorGetVipAdapter.this.f.get(i)).intValue());
             }
         }
 
@@ -72,7 +72,7 @@ public class VisitorGetVipAdapter extends BaseAdapter {
         BluedMyVisitorList bluedMyVisitorList = this.d.get(i);
         if (view == null) {
             view2 = this.e.inflate(R.layout.item_visitor_my_visitor_get_vip, (ViewGroup) null);
-            visitorGetVipViewHolder = new VisitorGetVipViewHolder(this.f30151a, view2, this.f30152c);
+            visitorGetVipViewHolder = new VisitorGetVipViewHolder(this.f16461a, view2, this.f16462c);
             view2.setTag(visitorGetVipViewHolder);
         } else {
             view2 = view;

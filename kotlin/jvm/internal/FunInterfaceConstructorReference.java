@@ -5,9 +5,7 @@ import kotlin.reflect.KFunction;
 
 /* loaded from: source-3503164-dex2jar.jar:kotlin/jvm/internal/FunInterfaceConstructorReference.class */
 public class FunInterfaceConstructorReference extends FunctionReference implements Serializable {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Class f42534a;
+    private final Class a;
 
     @Override // kotlin.jvm.internal.FunctionReference
     public boolean equals(Object obj) {
@@ -15,7 +13,7 @@ public class FunInterfaceConstructorReference extends FunctionReference implemen
             return true;
         }
         if (obj instanceof FunInterfaceConstructorReference) {
-            return this.f42534a.equals(((FunInterfaceConstructorReference) obj).f42534a);
+            return this.a.equals(((FunInterfaceConstructorReference) obj).a);
         }
         return false;
     }
@@ -28,11 +26,11 @@ public class FunInterfaceConstructorReference extends FunctionReference implemen
 
     @Override // kotlin.jvm.internal.FunctionReference
     public int hashCode() {
-        return this.f42534a.hashCode();
+        return this.a.hashCode();
     }
 
     @Override // kotlin.jvm.internal.FunctionReference
     public String toString() {
-        return "fun interface " + this.f42534a.getName();
+        return "fun interface " + this.a.getName();
     }
 }

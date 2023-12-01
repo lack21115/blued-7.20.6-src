@@ -4,7 +4,6 @@ import android.content.Context;
 import android.net.Uri;
 import android.text.TextUtils;
 import com.baidu.mobads.sdk.api.IXAdContainerFactory;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.ss.android.socialbase.downloader.constants.MonitorConstants;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -17,11 +16,11 @@ public class ch {
     public static final String b = "404";
 
     /* renamed from: c  reason: collision with root package name */
-    protected final bq f9379c = bq.a();
+    protected final bq f6539c = bq.a();
     private Context g;
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f9378a = w.b;
+    public static final String f6538a = w.b;
     private static ch f = new ch();
     public static volatile String d = "";
     public static volatile String e = "";
@@ -51,7 +50,7 @@ public class ch {
             String str3 = (String) cls.getDeclaredMethod(MonitorConstants.CONNECT_TYPE_GET, String.class).invoke(cls, str);
             return TextUtils.isEmpty(str3) ? str2 : str3;
         } catch (Throwable th) {
-            this.f9379c.a(th);
+            this.f6539c.a(th);
             return str2;
         }
     }
@@ -69,7 +68,7 @@ public class ch {
     private void a(String str, String str2, HashMap<String, String> hashMap) {
         Uri.Builder builder = new Uri.Builder();
         try {
-            builder.appendQueryParameter("type", str2).appendQueryParameter(com.umeng.analytics.pro.bh.bg, "9.26").appendQueryParameter("appsid", a("appsid", new Object[0])).appendQueryParameter("v", "android_" + d() + BridgeUtil.UNDERLINE_STR + ci.f).appendQueryParameter("pack", this.g != null ? this.g.getPackageName() : "").appendQueryParameter("sn", a("encodedSn", this.g)).appendQueryParameter("cuid", a("encodedCUID", this.g)).appendQueryParameter(com.umeng.analytics.pro.bh.x, "android").appendQueryParameter("osv", bj.a(this.g).c()).appendQueryParameter("romn", b()).appendQueryParameter("romv", c()).appendQueryParameter("bdr", "" + bj.a(this.g).a()).appendQueryParameter("brd", "" + a(bj.a(this.g).e()));
+            builder.appendQueryParameter("type", str2).appendQueryParameter(com.umeng.analytics.pro.bh.bg, "9.26").appendQueryParameter("appsid", a("appsid", new Object[0])).appendQueryParameter("v", "android_" + d() + "_" + ci.f).appendQueryParameter("pack", this.g != null ? this.g.getPackageName() : "").appendQueryParameter("sn", a("encodedSn", this.g)).appendQueryParameter("cuid", a("encodedCUID", this.g)).appendQueryParameter(com.umeng.analytics.pro.bh.x, "android").appendQueryParameter("osv", bj.a(this.g).c()).appendQueryParameter("romn", b()).appendQueryParameter("romv", c()).appendQueryParameter("bdr", "" + bj.a(this.g).a()).appendQueryParameter("brd", "" + a(bj.a(this.g).e()));
             String str3 = str;
             if (str != null) {
                 str3 = str;
@@ -88,9 +87,9 @@ public class ch {
                 }
             }
         } catch (Throwable th) {
-            this.f9379c.a(th);
+            this.f6539c.a(th);
         }
-        am amVar = new am(f9378a, "POST");
+        am amVar = new am(f6538a, "POST");
         amVar.a(builder);
         amVar.b();
     }
@@ -104,7 +103,7 @@ public class ch {
                     return String.valueOf(b2);
                 }
             } catch (Throwable th) {
-                this.f9379c.a(th);
+                this.f6539c.a(th);
             }
         }
         return str;
@@ -123,7 +122,7 @@ public class ch {
             hashMap.put("stacktrace", str2);
             a(str, b, hashMap);
         } catch (Exception e2) {
-            this.f9379c.a(e2);
+            this.f6539c.a(e2);
         }
     }
 
@@ -138,7 +137,7 @@ public class ch {
             }
             return i;
         } catch (Throwable th) {
-            this.f9379c.a(th);
+            this.f6539c.a(th);
             return i;
         }
     }
@@ -163,7 +162,7 @@ public class ch {
             }
             return k;
         } catch (Throwable th) {
-            this.f9379c.a(th);
+            this.f6539c.a(th);
             return k;
         }
     }

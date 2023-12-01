@@ -4,10 +4,10 @@ package com.tencent.liteav.videoproducer.capture;
 final /* synthetic */ class t implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final s f36945a;
+    private final s f23254a;
 
     private t(s sVar) {
-        this.f36945a = sVar;
+        this.f23254a = sVar;
     }
 
     public static Runnable a(s sVar) {
@@ -16,7 +16,7 @@ final /* synthetic */ class t implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        s sVar = this.f36945a;
+        s sVar = this.f23254a;
         if (sVar.d) {
             sVar.d = false;
             if (!sVar.e) {
@@ -25,7 +25,7 @@ final /* synthetic */ class t implements Runnable {
             }
             sVar.e = false;
             CameraCaptureSingleton.getInstance().updateParams(sVar.f);
-            sVar.f.f36842a = null;
+            sVar.f.f23151a = null;
         }
     }
 }

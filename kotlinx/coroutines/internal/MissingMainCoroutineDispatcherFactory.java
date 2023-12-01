@@ -8,9 +8,7 @@ import kotlinx.coroutines.internal.MainDispatcherFactory;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/internal/MissingMainCoroutineDispatcherFactory.class */
 public final class MissingMainCoroutineDispatcherFactory implements MainDispatcherFactory {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final MissingMainCoroutineDispatcherFactory f43555a = new MissingMainCoroutineDispatcherFactory();
+    public static final MissingMainCoroutineDispatcherFactory a = new MissingMainCoroutineDispatcherFactory();
 
     private MissingMainCoroutineDispatcherFactory() {
     }

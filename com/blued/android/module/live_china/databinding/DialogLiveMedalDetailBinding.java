@@ -12,22 +12,18 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/DialogLiveMedalDetailBinding.class */
 public final class DialogLiveMedalDetailBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final LinePageIndicator f11784a;
+    public final LinePageIndicator a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f11785c;
+    public final ImageView c;
     public final ImageView d;
     public final ViewPager e;
     private final FrameLayout f;
 
     private DialogLiveMedalDetailBinding(FrameLayout frameLayout, LinePageIndicator linePageIndicator, ImageView imageView, ImageView imageView2, ImageView imageView3, ViewPager viewPager) {
         this.f = frameLayout;
-        this.f11784a = linePageIndicator;
+        this.a = linePageIndicator;
         this.b = imageView;
-        this.f11785c = imageView2;
+        this.c = imageView2;
         this.d = imageView3;
         this.e = viewPager;
     }
@@ -54,9 +50,9 @@ public final class DialogLiveMedalDetailBinding implements ViewBinding {
                 if (imageView2 != null) {
                     ImageView imageView3 = (ImageView) view.findViewById(R.id.iv_right_slip);
                     if (imageView3 != null) {
-                        ViewPager viewPager = (ViewPager) view.findViewById(R.id.vp_medal_detail);
-                        if (viewPager != null) {
-                            return new DialogLiveMedalDetailBinding((FrameLayout) view, linePageIndicator, imageView, imageView2, imageView3, viewPager);
+                        ViewPager findViewById = view.findViewById(R.id.vp_medal_detail);
+                        if (findViewById != null) {
+                            return new DialogLiveMedalDetailBinding((FrameLayout) view, linePageIndicator, imageView, imageView2, imageView3, findViewById);
                         }
                         str = "vpMedalDetail";
                     } else {
@@ -74,7 +70,6 @@ public final class DialogLiveMedalDetailBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.f;

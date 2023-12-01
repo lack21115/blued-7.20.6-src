@@ -18,22 +18,18 @@ import java.util.List;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/adapter/HomeRotationPageAdapter.class */
 public class HomeRotationPageAdapter extends PagerAdapter {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static int f16134a = 500;
+    public static int a = 500;
     public List<YyHomeChatItemDataInfoMode> b = new ArrayList();
-
-    /* renamed from: c  reason: collision with root package name */
-    public YYHomeChatsFragment f16135c;
+    public YYHomeChatsFragment c;
 
     public HomeRotationPageAdapter(List<YyHomeChatItemDataInfoMode> list, YYHomeChatsFragment yYHomeChatsFragment) {
         if (list == null || list.size() != 1) {
-            f16134a = 500;
+            a = 500;
         } else {
-            f16134a = 1;
+            a = 1;
         }
         this.b.addAll(list);
-        this.f16135c = yYHomeChatsFragment;
+        this.c = yYHomeChatsFragment;
     }
 
     private int a() {
@@ -47,11 +43,11 @@ public class HomeRotationPageAdapter extends PagerAdapter {
     private void a(ImageView imageView, int i) {
         YyHomeChatItemDataInfoMode yyHomeChatItemDataInfoMode = this.b.get(i);
         if (yyHomeChatItemDataInfoMode != null) {
-            if (this.f16135c != null) {
+            if (this.c != null) {
                 if (StringUtils.b(yyHomeChatItemDataInfoMode.getCover())) {
-                    ImageLoader.a(this.f16135c.getFragmentActive(), yyHomeChatItemDataInfoMode.getUser_avatar()).b(R.drawable.user_bg_round).c().a(imageView);
+                    ImageLoader.a(this.c.getFragmentActive(), yyHomeChatItemDataInfoMode.getUser_avatar()).b(R.drawable.user_bg_round).c().a(imageView);
                 } else {
-                    ImageLoader.a(this.f16135c.getFragmentActive(), yyHomeChatItemDataInfoMode.getCover()).b(R.drawable.user_bg_round).c().a(imageView);
+                    ImageLoader.a(this.c.getFragmentActive(), yyHomeChatItemDataInfoMode.getCover()).b(R.drawable.user_bg_round).c().a(imageView);
                 }
             }
             if (yyHomeChatItemDataInfoMode.isDraw()) {
@@ -63,17 +59,14 @@ public class HomeRotationPageAdapter extends PagerAdapter {
         }
     }
 
-    @Override // androidx.viewpager.widget.PagerAdapter
     public void destroyItem(ViewGroup viewGroup, int i, Object obj) {
         viewGroup.removeView((View) obj);
     }
 
-    @Override // androidx.viewpager.widget.PagerAdapter
     public int getCount() {
-        return a() * f16134a;
+        return a() * a;
     }
 
-    @Override // androidx.viewpager.widget.PagerAdapter
     public Object instantiateItem(ViewGroup viewGroup, int i) {
         int a2 = i % a();
         View inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_home_rotetion_page, viewGroup, false);
@@ -85,8 +78,8 @@ public class HomeRotationPageAdapter extends PagerAdapter {
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view) {
                     Tracker.onClick(view);
-                    if (HomeRotationPageAdapter.this.f16135c != null) {
-                        HomeRotationPageAdapter.this.f16135c.a(yyHomeChatItemDataInfoMode.getRoom_id(), "hall_fast_room");
+                    if (HomeRotationPageAdapter.this.c != null) {
+                        HomeRotationPageAdapter.this.c.a(yyHomeChatItemDataInfoMode.getRoom_id(), "hall_fast_room");
                     }
                     EventTrackYY.a(ChatRoomProtos.Event.CHAT_ROOM_TAB_PAGE_ROOM_CLICK, yyHomeChatItemDataInfoMode.getRoom_id(), yyHomeChatItemDataInfoMode.getUid(), "0", yyHomeChatItemDataInfoMode.getRoom_type_id(), !StringUtils.b(yyHomeChatItemDataInfoMode.getThe_same_city()), "theme_room", "fast_room", yyHomeChatItemDataInfoMode.getLabel_link());
                     EventTrackYY.d(ChatRoomProtos.Event.YY_HALL_TOP_FAST_ROOM_CLICK, yyHomeChatItemDataInfoMode.getRoom_id(), yyHomeChatItemDataInfoMode.getUid());
@@ -96,7 +89,6 @@ public class HomeRotationPageAdapter extends PagerAdapter {
         return inflate;
     }
 
-    @Override // androidx.viewpager.widget.PagerAdapter
     public boolean isViewFromObject(View view, Object obj) {
         return view == obj;
     }

@@ -22,41 +22,41 @@ import androidx.core.widget.TintableCheckedTextView;
 public class AppCompatCheckedTextView extends CheckedTextView implements EmojiCompatConfigurationView, TintableBackgroundView, TintableCheckedTextView {
 
     /* renamed from: a  reason: collision with root package name */
-    private final AppCompatCheckedTextViewHelper f1745a;
+    private final AppCompatCheckedTextViewHelper f1697a;
     private final AppCompatBackgroundHelper b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final AppCompatTextHelper f1746c;
+    private final AppCompatTextHelper f1698c;
     private AppCompatEmojiTextHelper d;
 
     /* loaded from: source-8756600-dex2jar.jar:androidx/appcompat/widget/AppCompatCheckedTextView$InspectionCompanion.class */
     public final class InspectionCompanion implements android.view.inspector.InspectionCompanion<AppCompatCheckedTextView> {
 
         /* renamed from: a  reason: collision with root package name */
-        private boolean f1747a = false;
+        private boolean f1699a = false;
         private int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f1748c;
+        private int f1700c;
         private int d;
         private int e;
 
         @Override // android.view.inspector.InspectionCompanion
         public void mapProperties(PropertyMapper propertyMapper) {
             this.b = propertyMapper.mapObject("backgroundTint", R.attr.backgroundTint);
-            this.f1748c = propertyMapper.mapObject("backgroundTintMode", R.attr.backgroundTintMode);
+            this.f1700c = propertyMapper.mapObject("backgroundTintMode", R.attr.backgroundTintMode);
             this.d = propertyMapper.mapObject("checkMarkTint", R.attr.checkMarkTint);
             this.e = propertyMapper.mapObject("checkMarkTintMode", R.attr.checkMarkTintMode);
-            this.f1747a = true;
+            this.f1699a = true;
         }
 
         @Override // android.view.inspector.InspectionCompanion
         public void readProperties(AppCompatCheckedTextView appCompatCheckedTextView, PropertyReader propertyReader) {
-            if (!this.f1747a) {
+            if (!this.f1699a) {
                 throw new InspectionCompanion.UninitializedPropertyMapException();
             }
             propertyReader.readObject(this.b, appCompatCheckedTextView.getBackgroundTintList());
-            propertyReader.readObject(this.f1748c, appCompatCheckedTextView.getBackgroundTintMode());
+            propertyReader.readObject(this.f1700c, appCompatCheckedTextView.getBackgroundTintMode());
             propertyReader.readObject(this.d, appCompatCheckedTextView.getCheckMarkTintList());
             propertyReader.readObject(this.e, appCompatCheckedTextView.getCheckMarkTintMode());
         }
@@ -74,14 +74,14 @@ public class AppCompatCheckedTextView extends CheckedTextView implements EmojiCo
         super(TintContextWrapper.wrap(context), attributeSet, i);
         ThemeUtils.checkAppCompatTheme(this, getContext());
         AppCompatTextHelper appCompatTextHelper = new AppCompatTextHelper(this);
-        this.f1746c = appCompatTextHelper;
+        this.f1698c = appCompatTextHelper;
         appCompatTextHelper.a(attributeSet, i);
-        this.f1746c.b();
+        this.f1698c.b();
         AppCompatBackgroundHelper appCompatBackgroundHelper = new AppCompatBackgroundHelper(this);
         this.b = appCompatBackgroundHelper;
         appCompatBackgroundHelper.a(attributeSet, i);
         AppCompatCheckedTextViewHelper appCompatCheckedTextViewHelper = new AppCompatCheckedTextViewHelper(this);
-        this.f1745a = appCompatCheckedTextViewHelper;
+        this.f1697a = appCompatCheckedTextViewHelper;
         appCompatCheckedTextViewHelper.a(attributeSet, i);
         getEmojiTextViewHelper().a(attributeSet, i);
     }
@@ -93,11 +93,10 @@ public class AppCompatCheckedTextView extends CheckedTextView implements EmojiCo
         return this.d;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.CheckedTextView, android.widget.TextView, android.view.View
-    public void drawableStateChanged() {
+    protected void drawableStateChanged() {
         super.drawableStateChanged();
-        AppCompatTextHelper appCompatTextHelper = this.f1746c;
+        AppCompatTextHelper appCompatTextHelper = this.f1698c;
         if (appCompatTextHelper != null) {
             appCompatTextHelper.b();
         }
@@ -105,7 +104,7 @@ public class AppCompatCheckedTextView extends CheckedTextView implements EmojiCo
         if (appCompatBackgroundHelper != null) {
             appCompatBackgroundHelper.c();
         }
-        AppCompatCheckedTextViewHelper appCompatCheckedTextViewHelper = this.f1745a;
+        AppCompatCheckedTextViewHelper appCompatCheckedTextViewHelper = this.f1697a;
         if (appCompatCheckedTextViewHelper != null) {
             appCompatCheckedTextViewHelper.d();
         }
@@ -136,7 +135,7 @@ public class AppCompatCheckedTextView extends CheckedTextView implements EmojiCo
 
     @Override // androidx.core.widget.TintableCheckedTextView
     public ColorStateList getSupportCheckMarkTintList() {
-        AppCompatCheckedTextViewHelper appCompatCheckedTextViewHelper = this.f1745a;
+        AppCompatCheckedTextViewHelper appCompatCheckedTextViewHelper = this.f1697a;
         if (appCompatCheckedTextViewHelper != null) {
             return appCompatCheckedTextViewHelper.a();
         }
@@ -145,7 +144,7 @@ public class AppCompatCheckedTextView extends CheckedTextView implements EmojiCo
 
     @Override // androidx.core.widget.TintableCheckedTextView
     public PorterDuff.Mode getSupportCheckMarkTintMode() {
-        AppCompatCheckedTextViewHelper appCompatCheckedTextViewHelper = this.f1745a;
+        AppCompatCheckedTextViewHelper appCompatCheckedTextViewHelper = this.f1697a;
         if (appCompatCheckedTextViewHelper != null) {
             return appCompatCheckedTextViewHelper.b();
         }
@@ -194,7 +193,7 @@ public class AppCompatCheckedTextView extends CheckedTextView implements EmojiCo
     @Override // android.widget.CheckedTextView
     public void setCheckMarkDrawable(Drawable drawable) {
         super.setCheckMarkDrawable(drawable);
-        AppCompatCheckedTextViewHelper appCompatCheckedTextViewHelper = this.f1745a;
+        AppCompatCheckedTextViewHelper appCompatCheckedTextViewHelper = this.f1697a;
         if (appCompatCheckedTextViewHelper != null) {
             appCompatCheckedTextViewHelper.c();
         }
@@ -228,7 +227,7 @@ public class AppCompatCheckedTextView extends CheckedTextView implements EmojiCo
 
     @Override // androidx.core.widget.TintableCheckedTextView
     public void setSupportCheckMarkTintList(ColorStateList colorStateList) {
-        AppCompatCheckedTextViewHelper appCompatCheckedTextViewHelper = this.f1745a;
+        AppCompatCheckedTextViewHelper appCompatCheckedTextViewHelper = this.f1697a;
         if (appCompatCheckedTextViewHelper != null) {
             appCompatCheckedTextViewHelper.a(colorStateList);
         }
@@ -236,7 +235,7 @@ public class AppCompatCheckedTextView extends CheckedTextView implements EmojiCo
 
     @Override // androidx.core.widget.TintableCheckedTextView
     public void setSupportCheckMarkTintMode(PorterDuff.Mode mode) {
-        AppCompatCheckedTextViewHelper appCompatCheckedTextViewHelper = this.f1745a;
+        AppCompatCheckedTextViewHelper appCompatCheckedTextViewHelper = this.f1697a;
         if (appCompatCheckedTextViewHelper != null) {
             appCompatCheckedTextViewHelper.a(mode);
         }
@@ -245,7 +244,7 @@ public class AppCompatCheckedTextView extends CheckedTextView implements EmojiCo
     @Override // android.widget.TextView
     public void setTextAppearance(Context context, int i) {
         super.setTextAppearance(context, i);
-        AppCompatTextHelper appCompatTextHelper = this.f1746c;
+        AppCompatTextHelper appCompatTextHelper = this.f1698c;
         if (appCompatTextHelper != null) {
             appCompatTextHelper.a(context, i);
         }

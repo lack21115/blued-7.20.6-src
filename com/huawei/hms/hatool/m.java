@@ -4,18 +4,18 @@ package com.huawei.hms.hatool;
 public class m {
 
     /* renamed from: a  reason: collision with root package name */
-    public k f22768a;
+    public k f9160a;
     public k b;
 
     /* renamed from: c  reason: collision with root package name */
-    public k f22769c;
+    public k f9161c;
     public k d;
 
     public m(String str) {
     }
 
     public k a() {
-        return this.f22769c;
+        return this.f9161c;
     }
 
     public k a(String str) {
@@ -36,11 +36,11 @@ public class m {
     }
 
     public void a(k kVar) {
-        this.f22768a = kVar;
+        this.f9160a = kVar;
     }
 
     public k b() {
-        return this.f22768a;
+        return this.f9160a;
     }
 
     public void b(k kVar) {

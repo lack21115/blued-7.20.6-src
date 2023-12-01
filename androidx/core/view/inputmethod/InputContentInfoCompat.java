@@ -9,50 +9,50 @@ import android.view.inputmethod.InputContentInfo;
 public final class InputContentInfoCompat {
 
     /* renamed from: a  reason: collision with root package name */
-    private final InputContentInfoCompatImpl f2738a;
+    private final InputContentInfoCompatImpl f2690a;
 
     /* loaded from: source-8756600-dex2jar.jar:androidx/core/view/inputmethod/InputContentInfoCompat$InputContentInfoCompatApi25Impl.class */
     static final class InputContentInfoCompatApi25Impl implements InputContentInfoCompatImpl {
 
         /* renamed from: a  reason: collision with root package name */
-        final InputContentInfo f2739a;
+        final InputContentInfo f2691a;
 
         InputContentInfoCompatApi25Impl(Uri uri, ClipDescription clipDescription, Uri uri2) {
-            this.f2739a = new InputContentInfo(uri, clipDescription, uri2);
+            this.f2691a = new InputContentInfo(uri, clipDescription, uri2);
         }
 
         InputContentInfoCompatApi25Impl(Object obj) {
-            this.f2739a = (InputContentInfo) obj;
+            this.f2691a = (InputContentInfo) obj;
         }
 
         @Override // androidx.core.view.inputmethod.InputContentInfoCompat.InputContentInfoCompatImpl
         public Uri getContentUri() {
-            return this.f2739a.getContentUri();
+            return this.f2691a.getContentUri();
         }
 
         @Override // androidx.core.view.inputmethod.InputContentInfoCompat.InputContentInfoCompatImpl
         public ClipDescription getDescription() {
-            return this.f2739a.getDescription();
+            return this.f2691a.getDescription();
         }
 
         @Override // androidx.core.view.inputmethod.InputContentInfoCompat.InputContentInfoCompatImpl
         public Object getInputContentInfo() {
-            return this.f2739a;
+            return this.f2691a;
         }
 
         @Override // androidx.core.view.inputmethod.InputContentInfoCompat.InputContentInfoCompatImpl
         public Uri getLinkUri() {
-            return this.f2739a.getLinkUri();
+            return this.f2691a.getLinkUri();
         }
 
         @Override // androidx.core.view.inputmethod.InputContentInfoCompat.InputContentInfoCompatImpl
         public void releasePermission() {
-            this.f2739a.releasePermission();
+            this.f2691a.releasePermission();
         }
 
         @Override // androidx.core.view.inputmethod.InputContentInfoCompat.InputContentInfoCompatImpl
         public void requestPermission() {
-            this.f2739a.requestPermission();
+            this.f2691a.requestPermission();
         }
     }
 
@@ -60,21 +60,21 @@ public final class InputContentInfoCompat {
     static final class InputContentInfoCompatBaseImpl implements InputContentInfoCompatImpl {
 
         /* renamed from: a  reason: collision with root package name */
-        private final Uri f2740a;
+        private final Uri f2692a;
         private final ClipDescription b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final Uri f2741c;
+        private final Uri f2693c;
 
         InputContentInfoCompatBaseImpl(Uri uri, ClipDescription clipDescription, Uri uri2) {
-            this.f2740a = uri;
+            this.f2692a = uri;
             this.b = clipDescription;
-            this.f2741c = uri2;
+            this.f2693c = uri2;
         }
 
         @Override // androidx.core.view.inputmethod.InputContentInfoCompat.InputContentInfoCompatImpl
         public Uri getContentUri() {
-            return this.f2740a;
+            return this.f2692a;
         }
 
         @Override // androidx.core.view.inputmethod.InputContentInfoCompat.InputContentInfoCompatImpl
@@ -89,7 +89,7 @@ public final class InputContentInfoCompat {
 
         @Override // androidx.core.view.inputmethod.InputContentInfoCompat.InputContentInfoCompatImpl
         public Uri getLinkUri() {
-            return this.f2741c;
+            return this.f2693c;
         }
 
         @Override // androidx.core.view.inputmethod.InputContentInfoCompat.InputContentInfoCompatImpl
@@ -118,14 +118,14 @@ public final class InputContentInfoCompat {
 
     public InputContentInfoCompat(Uri uri, ClipDescription clipDescription, Uri uri2) {
         if (Build.VERSION.SDK_INT >= 25) {
-            this.f2738a = new InputContentInfoCompatApi25Impl(uri, clipDescription, uri2);
+            this.f2690a = new InputContentInfoCompatApi25Impl(uri, clipDescription, uri2);
         } else {
-            this.f2738a = new InputContentInfoCompatBaseImpl(uri, clipDescription, uri2);
+            this.f2690a = new InputContentInfoCompatBaseImpl(uri, clipDescription, uri2);
         }
     }
 
     private InputContentInfoCompat(InputContentInfoCompatImpl inputContentInfoCompatImpl) {
-        this.f2738a = inputContentInfoCompatImpl;
+        this.f2690a = inputContentInfoCompatImpl;
     }
 
     public static InputContentInfoCompat wrap(Object obj) {
@@ -136,26 +136,26 @@ public final class InputContentInfoCompat {
     }
 
     public Uri getContentUri() {
-        return this.f2738a.getContentUri();
+        return this.f2690a.getContentUri();
     }
 
     public ClipDescription getDescription() {
-        return this.f2738a.getDescription();
+        return this.f2690a.getDescription();
     }
 
     public Uri getLinkUri() {
-        return this.f2738a.getLinkUri();
+        return this.f2690a.getLinkUri();
     }
 
     public void releasePermission() {
-        this.f2738a.releasePermission();
+        this.f2690a.releasePermission();
     }
 
     public void requestPermission() {
-        this.f2738a.requestPermission();
+        this.f2690a.requestPermission();
     }
 
     public Object unwrap() {
-        return this.f2738a.getInputContentInfo();
+        return this.f2690a.getInputContentInfo();
     }
 }

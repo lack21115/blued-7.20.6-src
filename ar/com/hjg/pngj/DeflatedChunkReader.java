@@ -56,7 +56,7 @@ public class DeflatedChunkReader extends ChunkReader {
         if (i5 > 0) {
             this.d.a(bArr, i4, i5);
             if (this.e) {
-                System.arraycopy((Object) bArr, i4, (Object) a().d, this.b, i5);
+                System.arraycopy(bArr, i4, a().d, this.b, i5);
             }
         }
     }
@@ -65,7 +65,7 @@ public class DeflatedChunkReader extends ChunkReader {
     @Override // ar.com.hjg.pngj.ChunkReader
     public void c() {
         int c2;
-        if (!this.f || !a().f3660c.equals("fdAT") || this.h < 0 || (c2 = PngHelperInternal.c(this.g, 0)) == this.h) {
+        if (!this.f || !a().f3612c.equals("fdAT") || this.h < 0 || (c2 = PngHelperInternal.c(this.g, 0)) == this.h) {
             return;
         }
         throw new PngjInputException("bad chunk sequence for fDAT chunk " + c2 + " expected " + this.h);

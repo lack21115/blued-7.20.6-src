@@ -7,16 +7,16 @@ import java.io.Serializable;
 public class a extends d implements ITPMediaTrackClip, Serializable {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f39217a;
+    private int f25526a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private long f39218c = 0;
+    private long f25527c = 0;
     private long d = 0;
     private long e;
 
     public a(int i) {
-        this.f39217a = i;
+        this.f25526a = i;
         this.b = f.a(i);
     }
 
@@ -25,7 +25,7 @@ public class a extends d implements ITPMediaTrackClip, Serializable {
         if (i == 3 || i == 2 || i == 1) {
             a aVar = new a(i);
             aVar.b = f.a(i);
-            aVar.f39218c = this.f39218c;
+            aVar.f25527c = this.f25527c;
             aVar.d = this.d;
             return aVar;
         }
@@ -35,7 +35,7 @@ public class a extends d implements ITPMediaTrackClip, Serializable {
     public boolean equals(Object obj) {
         if (obj != null && (obj instanceof a)) {
             a aVar = (a) obj;
-            return this.b == aVar.getClipId() && this.f39217a == aVar.getMediaType();
+            return this.b == aVar.getClipId() && this.f25526a == aVar.getMediaType();
         }
         return false;
     }
@@ -57,12 +57,12 @@ public class a extends d implements ITPMediaTrackClip, Serializable {
 
     @Override // com.tencent.thumbplayer.b.d, com.tencent.thumbplayer.api.composition.ITPMediaAsset
     public int getMediaType() {
-        return this.f39217a;
+        return this.f25526a;
     }
 
     @Override // com.tencent.thumbplayer.api.composition.ITPMediaTrackClip
     public long getOriginalDurationMs() {
-        return this.d - this.f39218c;
+        return this.d - this.f25527c;
     }
 
     @Override // com.tencent.thumbplayer.api.composition.ITPMediaTrackClip
@@ -72,7 +72,7 @@ public class a extends d implements ITPMediaTrackClip, Serializable {
 
     @Override // com.tencent.thumbplayer.api.composition.ITPMediaTrackClip
     public long getStartTimeMs() {
-        return this.f39218c;
+        return this.f25527c;
     }
 
     @Override // com.tencent.thumbplayer.b.d, com.tencent.thumbplayer.api.composition.ITPMediaAsset
@@ -89,7 +89,7 @@ public class a extends d implements ITPMediaTrackClip, Serializable {
         if (j3 >= j2) {
             throw new IllegalArgumentException("setCutTimeRange: Start time is greater than end time");
         }
-        this.f39218c = j3;
+        this.f25527c = j3;
         this.d = j2;
     }
 

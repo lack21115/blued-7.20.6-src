@@ -7,11 +7,11 @@ import java.util.ArrayList;
 public class ChainHead {
 
     /* renamed from: a  reason: collision with root package name */
-    protected ConstraintWidget f2113a;
+    protected ConstraintWidget f2065a;
     protected ConstraintWidget b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected ConstraintWidget f2114c;
+    protected ConstraintWidget f2066c;
     protected ConstraintWidget d;
     protected ConstraintWidget e;
     protected ConstraintWidget f;
@@ -34,14 +34,14 @@ public class ChainHead {
 
     public ChainHead(ConstraintWidget constraintWidget, int i, boolean z) {
         this.u = false;
-        this.f2113a = constraintWidget;
+        this.f2065a = constraintWidget;
         this.t = i;
         this.u = z;
     }
 
     private void a() {
         int i = this.t * 2;
-        ConstraintWidget constraintWidget = this.f2113a;
+        ConstraintWidget constraintWidget = this.f2065a;
         boolean z = true;
         this.o = true;
         ConstraintWidget constraintWidget2 = constraintWidget;
@@ -138,11 +138,11 @@ public class ChainHead {
         if (constraintWidget8 != null) {
             this.m -= constraintWidget8.mListAnchors[i + 1].getMargin();
         }
-        this.f2114c = constraintWidget;
+        this.f2066c = constraintWidget;
         if (this.t == 0 && this.u) {
             this.e = constraintWidget;
         } else {
-            this.e = this.f2113a;
+            this.e = this.f2065a;
         }
         if (!this.q || !this.p) {
             z = false;
@@ -165,7 +165,7 @@ public class ChainHead {
     }
 
     public ConstraintWidget getFirst() {
-        return this.f2113a;
+        return this.f2065a;
     }
 
     public ConstraintWidget getFirstMatchConstraintWidget() {
@@ -181,7 +181,7 @@ public class ChainHead {
     }
 
     public ConstraintWidget getLast() {
-        return this.f2114c;
+        return this.f2066c;
     }
 
     public ConstraintWidget getLastMatchConstraintWidget() {

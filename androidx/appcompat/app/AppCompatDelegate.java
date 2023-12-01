@@ -37,11 +37,11 @@ public abstract class AppCompatDelegate {
     public static final int MODE_NIGHT_YES = 2;
 
     /* renamed from: a  reason: collision with root package name */
-    private static int f1560a = -100;
+    private static int f1512a = -100;
     private static final ArraySet<WeakReference<AppCompatDelegate>> b = new ArraySet<>();
 
     /* renamed from: c  reason: collision with root package name */
-    private static final Object f1561c = new Object();
+    private static final Object f1513c = new Object();
 
     @Retention(RetentionPolicy.SOURCE)
     /* loaded from: source-8756600-dex2jar.jar:androidx/appcompat/app/AppCompatDelegate$NightMode.class */
@@ -49,7 +49,7 @@ public abstract class AppCompatDelegate {
     }
 
     private static void a() {
-        synchronized (f1561c) {
+        synchronized (f1513c) {
             Iterator<WeakReference<AppCompatDelegate>> it = b.iterator();
             while (it.hasNext()) {
                 AppCompatDelegate appCompatDelegate = it.next().get();
@@ -62,7 +62,7 @@ public abstract class AppCompatDelegate {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static void a(AppCompatDelegate appCompatDelegate) {
-        synchronized (f1561c) {
+        synchronized (f1513c) {
             c(appCompatDelegate);
             b.add(new WeakReference<>(appCompatDelegate));
         }
@@ -70,13 +70,13 @@ public abstract class AppCompatDelegate {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static void b(AppCompatDelegate appCompatDelegate) {
-        synchronized (f1561c) {
+        synchronized (f1513c) {
             c(appCompatDelegate);
         }
     }
 
     private static void c(AppCompatDelegate appCompatDelegate) {
-        synchronized (f1561c) {
+        synchronized (f1513c) {
             Iterator<WeakReference<AppCompatDelegate>> it = b.iterator();
             while (it.hasNext()) {
                 AppCompatDelegate appCompatDelegate2 = it.next().get();
@@ -104,7 +104,7 @@ public abstract class AppCompatDelegate {
     }
 
     public static int getDefaultNightMode() {
-        return f1560a;
+        return f1512a;
     }
 
     public static boolean isCompatVectorFromResourcesEnabled() {
@@ -118,8 +118,8 @@ public abstract class AppCompatDelegate {
     public static void setDefaultNightMode(int i) {
         if (i != -1 && i != 0 && i != 1 && i != 2 && i != 3) {
             Log.d("AppCompatDelegate", "setDefaultNightMode() called with an unknown mode");
-        } else if (f1560a != i) {
-            f1560a = i;
+        } else if (f1512a != i) {
+            f1512a = i;
             a();
         }
     }

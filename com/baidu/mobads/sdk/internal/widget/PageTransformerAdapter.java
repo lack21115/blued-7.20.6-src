@@ -9,12 +9,12 @@ import java.util.Locale;
 final class PageTransformerAdapter extends ViewPager2.OnPageChangeCallback {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayoutManager f9451a;
+    private final LinearLayoutManager f6611a;
     private ViewPager2.PageTransformer b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public PageTransformerAdapter(LinearLayoutManager linearLayoutManager) {
-        this.f9451a = linearLayoutManager;
+        this.f6611a = linearLayoutManager;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -40,14 +40,14 @@ final class PageTransformerAdapter extends ViewPager2.OnPageChangeCallback {
         int i3 = 0;
         while (true) {
             int i4 = i3;
-            if (i4 >= this.f9451a.getChildCount()) {
+            if (i4 >= this.f6611a.getChildCount()) {
                 return;
             }
-            View childAt = this.f9451a.getChildAt(i4);
+            View childAt = this.f6611a.getChildAt(i4);
             if (childAt == null) {
-                throw new IllegalStateException(String.format(Locale.US, "LayoutManager returned a null child at pos %d/%d while transforming pages", Integer.valueOf(i4), Integer.valueOf(this.f9451a.getChildCount())));
+                throw new IllegalStateException(String.format(Locale.US, "LayoutManager returned a null child at pos %d/%d while transforming pages", Integer.valueOf(i4), Integer.valueOf(this.f6611a.getChildCount())));
             }
-            this.b.transformPage(childAt, (this.f9451a.getPosition(childAt) - i) + f2);
+            this.b.transformPage(childAt, (this.f6611a.getPosition(childAt) - i) + f2);
             i3 = i4 + 1;
         }
     }

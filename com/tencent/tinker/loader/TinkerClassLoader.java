@@ -78,9 +78,8 @@ public final class TinkerClassLoader extends PathClassLoader {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // dalvik.system.BaseDexClassLoader, java.lang.ClassLoader
-    public Class<?> findClass(String str) throws ClassNotFoundException {
+    protected Class<?> findClass(String str) throws ClassNotFoundException {
         Class<?> cls;
         try {
             cls = super.findClass(str);

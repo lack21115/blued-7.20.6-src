@@ -6,7 +6,7 @@ import java.util.List;
 public interface o extends a<p> {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final o f25672a = new o() { // from class: com.opos.mobad.ad.c.o.1
+    public static final o f11984a = new o() { // from class: com.opos.mobad.ad.c.o.1
         @Override // com.opos.mobad.ad.c.a
         public void a(int i, String str) {
             com.opos.cmn.an.f.a.b("INativeTempletAdListener", "onAdFailed ret=" + i + ",msg=" + str);

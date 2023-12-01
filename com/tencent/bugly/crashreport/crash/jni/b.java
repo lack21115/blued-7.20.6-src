@@ -2,6 +2,7 @@ package com.tencent.bugly.crashreport.crash.jni;
 
 import android.content.Context;
 import android.text.TextUtils;
+import com.huawei.hms.ads.fw;
 import com.huawei.hms.push.AttributionReporter;
 import com.huawei.openalliance.ad.constant.ao;
 import com.tencent.bugly.crashreport.crash.CrashDetailBean;
@@ -25,7 +26,7 @@ import java.util.regex.Pattern;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static List<File> f35184a = new ArrayList();
+    private static List<File> f21493a = new ArrayList();
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r0v15, types: [java.io.BufferedInputStream] */
@@ -261,7 +262,7 @@ public final class b {
                 String str27 = map.get("isAppForeground");
                 if (str27 != null) {
                     x.c("[Native record info] isAppForeground: %s", str27);
-                    packageCrashDatas.N = str27.equalsIgnoreCase("true");
+                    packageCrashDatas.N = str27.equalsIgnoreCase(fw.Code);
                 }
                 String str28 = map.get("launchTime");
                 if (str28 != null) {
@@ -370,7 +371,7 @@ public final class b {
             return null;
         }
         x.a("Read system log from native record file(length: %s bytes): %s", Long.valueOf(file.length()), file.getAbsolutePath());
-        f35184a.add(file);
+        f21493a.add(file);
         x.c("Add this record file to list for cleaning lastly.", new Object[0]);
         if (str2 == null) {
             return z.a(new File(str), i, z);
@@ -454,19 +455,19 @@ public final class b {
 
     public static void a(boolean z, String str) {
         if (str != null) {
-            f35184a.add(new File(str, "rqd_record.eup"));
-            f35184a.add(new File(str, "reg_record.txt"));
-            f35184a.add(new File(str, "map_record.txt"));
-            f35184a.add(new File(str, "backup_record.txt"));
+            f21493a.add(new File(str, "rqd_record.eup"));
+            f21493a.add(new File(str, "reg_record.txt"));
+            f21493a.add(new File(str, "map_record.txt"));
+            f21493a.add(new File(str, "backup_record.txt"));
             if (z) {
                 c(str);
             }
         }
-        List<File> list = f35184a;
+        List<File> list = f21493a;
         if (list == null || list.size() <= 0) {
             return;
         }
-        for (File file : f35184a) {
+        for (File file : f21493a) {
             if (file.exists() && file.canWrite()) {
                 file.delete();
                 x.c("Delete record file %s", file.getAbsoluteFile());

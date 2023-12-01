@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FriendsGridVipSingleItemBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final CardView f29051a;
+    private final CardView f15361a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public CardView getRoot() {
-        return this.f29051a;
+        return this.f15361a;
     }
 }

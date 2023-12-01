@@ -8,18 +8,18 @@ import java.util.concurrent.LinkedBlockingQueue;
 
 /* loaded from: source-7994992-dex2jar.jar:com/kwai/filedownloader/k.class */
 final class k implements t {
-    private a.InterfaceC0583a aFR;
+    private a.InterfaceC0413a aFR;
     private a.c aFS;
     private Queue<MessageSnapshot> aFT;
     private boolean aFU = false;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public k(a.InterfaceC0583a interfaceC0583a, a.c cVar) {
-        a(interfaceC0583a, cVar);
+    public k(a.InterfaceC0413a interfaceC0413a, a.c cVar) {
+        a(interfaceC0413a, cVar);
     }
 
-    private void a(a.InterfaceC0583a interfaceC0583a, a.c cVar) {
-        this.aFR = interfaceC0583a;
+    private void a(a.InterfaceC0413a interfaceC0413a, a.c cVar) {
+        this.aFR = interfaceC0413a;
         this.aFS = cVar;
         this.aFT = new LinkedBlockingQueue();
     }
@@ -43,12 +43,12 @@ final class k implements t {
     }
 
     private void p(MessageSnapshot messageSnapshot) {
-        a.InterfaceC0583a interfaceC0583a = this.aFR;
-        if (interfaceC0583a == null) {
+        a.InterfaceC0413a interfaceC0413a = this.aFR;
+        if (interfaceC0413a == null) {
             if (com.kwai.filedownloader.e.d.aJq) {
                 com.kwai.filedownloader.e.d.g(this, "occur this case, it would be the host task of this messenger has been over(paused/warn/completed/error) on the other thread before receiving the snapshot(id[%d], status[%d])", Integer.valueOf(messageSnapshot.getId()), Byte.valueOf(messageSnapshot.Gq()));
             }
-        } else if (!this.aFU && interfaceC0583a.Gy().Gn() != null) {
+        } else if (!this.aFU && interfaceC0413a.Gy().Gn() != null) {
             this.aFT.offer(messageSnapshot);
             j.GY().a(this);
         } else {
@@ -79,13 +79,13 @@ final class k implements t {
         }
         MessageSnapshot poll = this.aFT.poll();
         byte Gq = poll.Gq();
-        a.InterfaceC0583a interfaceC0583a = this.aFR;
-        if (interfaceC0583a == null) {
+        a.InterfaceC0413a interfaceC0413a = this.aFR;
+        if (interfaceC0413a == null) {
             return;
         }
-        a Gy = interfaceC0583a.Gy();
+        a Gy = interfaceC0413a.Gy();
         i Gn = Gy.Gn();
-        x.a Gz = interfaceC0583a.Gz();
+        x.a Gz = interfaceC0413a.Gz();
         cA(Gq);
         if (Gn == null) {
             return;
@@ -170,11 +170,11 @@ final class k implements t {
     }
 
     @Override // com.kwai.filedownloader.t
-    public final void b(a.InterfaceC0583a interfaceC0583a, a.c cVar) {
+    public final void b(a.InterfaceC0413a interfaceC0413a, a.c cVar) {
         if (this.aFR != null) {
-            throw new IllegalStateException(com.kwai.filedownloader.e.f.j("the messenger is working, can't re-appointment for %s", interfaceC0583a));
+            throw new IllegalStateException(com.kwai.filedownloader.e.f.j("the messenger is working, can't re-appointment for %s", interfaceC0413a));
         }
-        a(interfaceC0583a, cVar);
+        a(interfaceC0413a, cVar);
     }
 
     @Override // com.kwai.filedownloader.t
@@ -243,8 +243,8 @@ final class k implements t {
     @Override // com.kwai.filedownloader.t
     public final void m(MessageSnapshot messageSnapshot) {
         if (com.kwai.filedownloader.e.d.aJq) {
-            a.InterfaceC0583a interfaceC0583a = this.aFR;
-            com.kwai.filedownloader.e.d.g(this, "notify error %s %s", interfaceC0583a, interfaceC0583a.Gy().Gs());
+            a.InterfaceC0413a interfaceC0413a = this.aFR;
+            com.kwai.filedownloader.e.d.g(this, "notify error %s %s", interfaceC0413a, interfaceC0413a.Gy().Gs());
         }
         this.aFS.GH();
         p(messageSnapshot);
@@ -260,7 +260,7 @@ final class k implements t {
     }
 
     public final String toString() {
-        a.InterfaceC0583a interfaceC0583a = this.aFR;
-        return com.kwai.filedownloader.e.f.j("%d:%s", Integer.valueOf(interfaceC0583a == null ? -1 : interfaceC0583a.Gy().getId()), super.toString());
+        a.InterfaceC0413a interfaceC0413a = this.aFR;
+        return com.kwai.filedownloader.e.f.j("%d:%s", Integer.valueOf(interfaceC0413a == null ? -1 : interfaceC0413a.Gy().getId()), super.toString());
     }
 }

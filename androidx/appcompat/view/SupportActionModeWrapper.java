@@ -18,23 +18,23 @@ import java.util.ArrayList;
 public class SupportActionModeWrapper extends android.view.ActionMode {
 
     /* renamed from: a  reason: collision with root package name */
-    final Context f1639a;
+    final Context f1591a;
     final ActionMode b;
 
     /* loaded from: source-8756600-dex2jar.jar:androidx/appcompat/view/SupportActionModeWrapper$CallbackWrapper.class */
     public static class CallbackWrapper implements ActionMode.Callback {
 
         /* renamed from: a  reason: collision with root package name */
-        final ActionMode.Callback f1640a;
+        final ActionMode.Callback f1592a;
         final Context b;
 
         /* renamed from: c  reason: collision with root package name */
-        final ArrayList<SupportActionModeWrapper> f1641c = new ArrayList<>();
+        final ArrayList<SupportActionModeWrapper> f1593c = new ArrayList<>();
         final SimpleArrayMap<Menu, Menu> d = new SimpleArrayMap<>();
 
         public CallbackWrapper(Context context, ActionMode.Callback callback) {
             this.b = context;
-            this.f1640a = callback;
+            this.f1592a = callback;
         }
 
         private Menu a(Menu menu) {
@@ -48,16 +48,16 @@ public class SupportActionModeWrapper extends android.view.ActionMode {
         }
 
         public android.view.ActionMode getActionModeWrapper(ActionMode actionMode) {
-            int size = this.f1641c.size();
+            int size = this.f1593c.size();
             int i = 0;
             while (true) {
                 int i2 = i;
                 if (i2 >= size) {
                     SupportActionModeWrapper supportActionModeWrapper = new SupportActionModeWrapper(this.b, actionMode);
-                    this.f1641c.add(supportActionModeWrapper);
+                    this.f1593c.add(supportActionModeWrapper);
                     return supportActionModeWrapper;
                 }
-                SupportActionModeWrapper supportActionModeWrapper2 = this.f1641c.get(i2);
+                SupportActionModeWrapper supportActionModeWrapper2 = this.f1593c.get(i2);
                 if (supportActionModeWrapper2 != null && supportActionModeWrapper2.b == actionMode) {
                     return supportActionModeWrapper2;
                 }
@@ -67,27 +67,27 @@ public class SupportActionModeWrapper extends android.view.ActionMode {
 
         @Override // androidx.appcompat.view.ActionMode.Callback
         public boolean onActionItemClicked(ActionMode actionMode, MenuItem menuItem) {
-            return this.f1640a.onActionItemClicked(getActionModeWrapper(actionMode), new MenuItemWrapperICS(this.b, (SupportMenuItem) menuItem));
+            return this.f1592a.onActionItemClicked(getActionModeWrapper(actionMode), new MenuItemWrapperICS(this.b, (SupportMenuItem) menuItem));
         }
 
         @Override // androidx.appcompat.view.ActionMode.Callback
         public boolean onCreateActionMode(ActionMode actionMode, Menu menu) {
-            return this.f1640a.onCreateActionMode(getActionModeWrapper(actionMode), a(menu));
+            return this.f1592a.onCreateActionMode(getActionModeWrapper(actionMode), a(menu));
         }
 
         @Override // androidx.appcompat.view.ActionMode.Callback
         public void onDestroyActionMode(ActionMode actionMode) {
-            this.f1640a.onDestroyActionMode(getActionModeWrapper(actionMode));
+            this.f1592a.onDestroyActionMode(getActionModeWrapper(actionMode));
         }
 
         @Override // androidx.appcompat.view.ActionMode.Callback
         public boolean onPrepareActionMode(ActionMode actionMode, Menu menu) {
-            return this.f1640a.onPrepareActionMode(getActionModeWrapper(actionMode), a(menu));
+            return this.f1592a.onPrepareActionMode(getActionModeWrapper(actionMode), a(menu));
         }
     }
 
     public SupportActionModeWrapper(Context context, ActionMode actionMode) {
-        this.f1639a = context;
+        this.f1591a = context;
         this.b = actionMode;
     }
 
@@ -103,7 +103,7 @@ public class SupportActionModeWrapper extends android.view.ActionMode {
 
     @Override // android.view.ActionMode
     public Menu getMenu() {
-        return new MenuWrapperICS(this.f1639a, (SupportMenu) this.b.getMenu());
+        return new MenuWrapperICS(this.f1591a, (SupportMenu) this.b.getMenu());
     }
 
     @Override // android.view.ActionMode

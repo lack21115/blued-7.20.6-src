@@ -12,11 +12,11 @@ import java.util.Map;
 public abstract class e {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Map<String, String> f34928a = new LinkedHashMap();
+    private static final Map<String, String> f21237a = new LinkedHashMap();
     private boolean b = false;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f34929c = false;
+    private boolean f21238c = false;
 
     /* JADX INFO: Access modifiers changed from: private */
     public void b(String str, String str2, Throwable th) {
@@ -30,20 +30,20 @@ public abstract class e {
             if (this.b) {
                 return;
             }
-            f34928a.put("attaid", b());
-            f34928a.put("token", c());
-            f34928a.put("error_code", "");
-            f34928a.put("platform", "Android");
-            f34928a.put("uin", com.tencent.beacon.a.c.e.l().d());
-            Map<String, String> map = f34928a;
+            f21237a.put("attaid", b());
+            f21237a.put("token", c());
+            f21237a.put("error_code", "");
+            f21237a.put("platform", "Android");
+            f21237a.put("uin", com.tencent.beacon.a.c.e.l().d());
+            Map<String, String> map = f21237a;
             map.put("model", Build.BOARD + " " + com.tencent.beacon.a.c.f.e().h());
-            f34928a.put(bh.x, com.tencent.beacon.a.c.e.l().s());
-            f34928a.put("error_msg", "");
-            f34928a.put("error_stack_full", "");
-            f34928a.put("app_version", com.tencent.beacon.a.c.b.a());
-            f34928a.put("sdk_version", com.tencent.beacon.a.c.c.d().j());
-            f34928a.put("product_id", com.tencent.beacon.a.c.c.d().f());
-            f34928a.put("_dc", "");
+            f21237a.put(bh.x, com.tencent.beacon.a.c.e.l().s());
+            f21237a.put("error_msg", "");
+            f21237a.put("error_stack_full", "");
+            f21237a.put("app_version", com.tencent.beacon.a.c.b.a());
+            f21237a.put("sdk_version", com.tencent.beacon.a.c.c.d().j());
+            f21237a.put("product_id", com.tencent.beacon.a.c.c.d().f());
+            f21237a.put("_dc", "");
             this.b = true;
         }
     }
@@ -76,7 +76,7 @@ public abstract class e {
     }
 
     public void a(boolean z) {
-        this.f34929c = z;
+        this.f21238c = z;
     }
 
     abstract String b();
@@ -84,7 +84,7 @@ public abstract class e {
     abstract String c();
 
     public boolean d() {
-        if (this.f34929c) {
+        if (this.f21238c) {
             return true;
         }
         if (com.tencent.beacon.base.util.c.b()) {

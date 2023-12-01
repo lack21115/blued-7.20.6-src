@@ -6,29 +6,23 @@ import mtopsdk.mtop.domain.IMTOPDataObject;
 /* loaded from: source-3503164-dex2jar.jar:mtopsdk/mtop/unit/UserUnit.class */
 public class UserUnit implements Serializable, IMTOPDataObject {
     private static final long serialVersionUID = 2326301535071107548L;
-
-    /* renamed from: a  reason: collision with root package name */
-    public String f43777a;
+    public String a;
     public UnitType b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public String f43778c;
+    public String c;
 
     /* loaded from: source-3503164-dex2jar.jar:mtopsdk/mtop/unit/UserUnit$UnitType.class */
     public enum UnitType {
         CENTER("center"),
         UNIT("unit");
         
-
-        /* renamed from: c  reason: collision with root package name */
-        private String f43780c;
+        private String c;
 
         UnitType(String str) {
-            this.f43780c = str;
+            this.c = str;
         }
 
         public final String a() {
-            return this.f43780c;
+            return this.c;
         }
     }
 
@@ -38,11 +32,11 @@ public class UserUnit implements Serializable, IMTOPDataObject {
 
     public UserUnit(String str, UnitType unitType, String str2) {
         this.b = UnitType.CENTER;
-        this.f43777a = str;
+        this.a = str;
         if (unitType != null) {
             this.b = unitType;
         }
-        this.f43778c = str2;
+        this.c = str2;
     }
 
     public boolean equals(Object obj) {
@@ -51,31 +45,31 @@ public class UserUnit implements Serializable, IMTOPDataObject {
         }
         if (obj != null && getClass() == obj.getClass()) {
             UserUnit userUnit = (UserUnit) obj;
-            String str = this.f43778c;
+            String str = this.c;
             if (str == null) {
-                if (userUnit.f43778c != null) {
+                if (userUnit.c != null) {
                     return false;
                 }
-            } else if (!str.equals(userUnit.f43778c)) {
+            } else if (!str.equals(userUnit.c)) {
                 return false;
             }
             if (this.b != userUnit.b) {
                 return false;
             }
-            String str2 = this.f43777a;
-            String str3 = userUnit.f43777a;
+            String str2 = this.a;
+            String str3 = userUnit.a;
             return str2 == null ? str3 == null : str2.equals(str3);
         }
         return false;
     }
 
     public int hashCode() {
-        String str = this.f43778c;
+        String str = this.c;
         int i = 0;
         int hashCode = str == null ? 0 : str.hashCode();
         UnitType unitType = this.b;
         int hashCode2 = unitType == null ? 0 : unitType.hashCode();
-        String str2 = this.f43777a;
+        String str2 = this.a;
         if (str2 != null) {
             i = str2.hashCode();
         }
@@ -85,11 +79,11 @@ public class UserUnit implements Serializable, IMTOPDataObject {
     public String toString() {
         StringBuilder sb = new StringBuilder(48);
         sb.append("UserUnit [userId=");
-        sb.append(this.f43777a);
+        sb.append(this.a);
         sb.append(",unitType=");
         sb.append(this.b);
         sb.append(",unitPrefix=");
-        sb.append(this.f43778c);
+        sb.append(this.c);
         sb.append("]");
         return sb.toString();
     }

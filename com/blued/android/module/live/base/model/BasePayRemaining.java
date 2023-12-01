@@ -2,7 +2,6 @@ package com.blued.android.module.live.base.model;
 
 import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.google.gson.annotations.SerializedName;
-import com.igexin.push.core.b;
 import java.io.Serializable;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/live/base/model/BasePayRemaining.class */
@@ -50,7 +49,7 @@ public class BasePayRemaining implements Serializable {
         sb.append(this.sendGiftStatus);
         sb.append(", text:");
         PayRemainingText payRemainingText = this.text;
-        sb.append(payRemainingText != null ? payRemainingText.toString() : b.l);
+        sb.append(payRemainingText != null ? payRemainingText.toString() : "null");
         sb.append("]");
         return sb.toString();
     }

@@ -12,18 +12,18 @@ import com.soft.blued.R;
 public final class ResourcePromotionViewBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final CardView f29578a;
+    public final CardView f15888a;
     public final ImageView b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final SVGAImageView f29579c;
+    public final SVGAImageView f15889c;
     private final FrameLayout d;
 
     private ResourcePromotionViewBinding(FrameLayout frameLayout, CardView cardView, ImageView imageView, SVGAImageView sVGAImageView) {
         this.d = frameLayout;
-        this.f29578a = cardView;
+        this.f15888a = cardView;
         this.b = imageView;
-        this.f29579c = sVGAImageView;
+        this.f15889c = sVGAImageView;
     }
 
     public static ResourcePromotionViewBinding a(View view) {
@@ -32,9 +32,9 @@ public final class ResourcePromotionViewBinding implements ViewBinding {
         if (cardView != null) {
             ImageView imageView = (ImageView) view.findViewById(R.id.iv_resource_promotion_close);
             if (imageView != null) {
-                SVGAImageView sVGAImageView = (SVGAImageView) view.findViewById(R.id.siv_resource_promotion);
-                if (sVGAImageView != null) {
-                    return new ResourcePromotionViewBinding((FrameLayout) view, cardView, imageView, sVGAImageView);
+                SVGAImageView findViewById = view.findViewById(R.id.siv_resource_promotion);
+                if (findViewById != null) {
+                    return new ResourcePromotionViewBinding((FrameLayout) view, cardView, imageView, findViewById);
                 }
                 str = "sivResourcePromotion";
             } else {

@@ -33,11 +33,11 @@ import java.util.Map;
 public class RemindSettingFragment extends BaseFragment implements CompoundButton.OnCheckedChangeListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f33579a = RemindSettingFragment.class.getSimpleName();
+    private String f19888a = RemindSettingFragment.class.getSimpleName();
     private View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f33580c;
+    private Context f19889c;
     private LinearLayout d;
     private TextView e;
     private ToggleButton f;
@@ -67,23 +67,22 @@ public class RemindSettingFragment extends BaseFragment implements CompoundButto
     class AnonymousClass4 implements FetchDataListener<SessionSettingBaseModel> {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ RemindSettingFragment f33584a;
+        final /* synthetic */ RemindSettingFragment f19893a;
 
-        @Override // com.blued.android.chat.listener.FetchDataListener
         /* renamed from: a */
         public void onFetchData(SessionSettingBaseModel sessionSettingBaseModel) {
-            this.f33584a.z = (SessionSettingModel) sessionSettingBaseModel;
-            if (this.f33584a.z == null) {
-                this.f33584a.z = new SessionSettingModel();
-                this.f33584a.z.setLoadName(Long.valueOf(UserInfo.getInstance().getLoginUserInfo().getUid()).longValue());
-                this.f33584a.z.setSessionId(2L);
-                this.f33584a.z.setSessionType((short) 1);
+            this.f19893a.z = (SessionSettingModel) sessionSettingBaseModel;
+            if (this.f19893a.z == null) {
+                this.f19893a.z = new SessionSettingModel();
+                this.f19893a.z.setLoadName(Long.valueOf(UserInfo.getInstance().getLoginUserInfo().getUid()).longValue());
+                this.f19893a.z.setSessionId(2L);
+                this.f19893a.z.setSessionType((short) 1);
             }
-            this.f33584a.postSafeRunOnUiThread(new Runnable() { // from class: com.soft.blued.ui.setting.fragment.RemindSettingFragment.4.1
+            this.f19893a.postSafeRunOnUiThread(new Runnable() { // from class: com.soft.blued.ui.setting.fragment.RemindSettingFragment.4.1
                 @Override // java.lang.Runnable
                 public void run() {
-                    AnonymousClass4.this.f33584a.n.setChecked(AnonymousClass4.this.f33584a.z.getRemindAudio() == 0);
-                    AnonymousClass4.this.f33584a.n.setOnCheckedChangeListener(AnonymousClass4.this.f33584a);
+                    AnonymousClass4.this.f19893a.n.setChecked(AnonymousClass4.this.f19893a.z.getRemindAudio() == 0);
+                    AnonymousClass4.this.f19893a.n.setOnCheckedChangeListener(AnonymousClass4.this.f19893a);
                 }
             });
         }
@@ -94,7 +93,6 @@ public class RemindSettingFragment extends BaseFragment implements CompoundButto
             return;
         }
         MineHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<Object>>() { // from class: com.soft.blued.ui.setting.fragment.RemindSettingFragment.3
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<Object> bluedEntityA) {
             }
@@ -112,11 +110,11 @@ public class RemindSettingFragment extends BaseFragment implements CompoundButto
     }
 
     public void a() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.b.findViewById(2131370749);
-        commonTopTitleNoTrans.a();
-        commonTopTitleNoTrans.f();
-        commonTopTitleNoTrans.setCenterText(getString(R.string.remind_setting));
-        commonTopTitleNoTrans.setLeftClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.setting.fragment.RemindSettingFragment.1
+        CommonTopTitleNoTrans findViewById = this.b.findViewById(R.id.top_title);
+        findViewById.a();
+        findViewById.f();
+        findViewById.setCenterText(getString(R.string.remind_setting));
+        findViewById.setLeftClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.setting.fragment.RemindSettingFragment.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
@@ -127,7 +125,7 @@ public class RemindSettingFragment extends BaseFragment implements CompoundButto
 
     public void b() {
         this.u = (LinearLayout) this.b.findViewById(R.id.ll_group_remind_setting);
-        if (BluedConstant.f28239a) {
+        if (BluedConstant.f14549a) {
             this.u.setVisibility(8);
         } else {
             this.u.setVisibility(0);
@@ -294,9 +292,8 @@ public class RemindSettingFragment extends BaseFragment implements CompoundButto
         a(a2);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.f33580c = getActivity();
+        this.f19889c = getActivity();
         View view = this.b;
         if (view == null) {
             this.b = layoutInflater.inflate(R.layout.fragment_remind_setting, viewGroup, false);

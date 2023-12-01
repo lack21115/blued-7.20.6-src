@@ -7,9 +7,7 @@ import kotlinx.coroutines.internal.ArrayQueue;
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/EventLoop.class */
 public abstract class EventLoop extends CoroutineDispatcher {
     private long b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private boolean f42816c;
+    private boolean c;
     private ArrayQueue<DispatchedTask<?>> d;
 
     public static /* synthetic */ void a(EventLoop eventLoop, boolean z, int i, Object obj) {
@@ -41,7 +39,7 @@ public abstract class EventLoop extends CoroutineDispatcher {
         if (z) {
             return;
         }
-        this.f42816c = true;
+        this.c = true;
     }
 
     public long b() {
@@ -49,9 +47,9 @@ public abstract class EventLoop extends CoroutineDispatcher {
     }
 
     public final void b(boolean z) {
-        long c2 = this.b - c(z);
-        this.b = c2;
-        if (c2 > 0) {
+        long c = this.b - c(z);
+        this.b = c;
+        if (c > 0) {
             return;
         }
         if (DebugKt.a()) {
@@ -59,7 +57,7 @@ public abstract class EventLoop extends CoroutineDispatcher {
                 throw new AssertionError();
             }
         }
-        if (this.f42816c) {
+        if (this.c) {
             h();
         }
     }

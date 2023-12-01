@@ -8,9 +8,7 @@ import android.widget.TextView;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/ui/ScanningAnimTextView.class */
 public class ScanningAnimTextView extends TextView {
-
-    /* renamed from: a  reason: collision with root package name */
-    ValueAnimator f6170a;
+    ValueAnimator a;
 
     public ScanningAnimTextView(Context context) {
         super(context);
@@ -60,11 +58,11 @@ public class ScanningAnimTextView extends TextView {
     }
 
     public void startAnimation() {
-        if (this.f6170a == null) {
+        if (this.a == null) {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(1.0f, 0.95f);
-            this.f6170a = ofFloat;
+            this.a = ofFloat;
             ofFloat.setDuration(500L);
-            this.f6170a.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.anythink.basead.ui.ScanningAnimTextView.1
+            this.a.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.anythink.basead.ui.ScanningAnimTextView.1
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
                     float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
@@ -72,17 +70,17 @@ public class ScanningAnimTextView extends TextView {
                     ScanningAnimTextView.this.setScaleY(floatValue);
                 }
             });
-            this.f6170a.setRepeatMode(2);
-            this.f6170a.setRepeatCount(-1);
+            this.a.setRepeatMode(2);
+            this.a.setRepeatCount(-1);
         }
-        if (this.f6170a.isStarted()) {
+        if (this.a.isStarted()) {
             return;
         }
-        this.f6170a.start();
+        this.a.start();
     }
 
     public void stopAnimation() {
-        ValueAnimator valueAnimator = this.f6170a;
+        ValueAnimator valueAnimator = this.a;
         if (valueAnimator != null) {
             valueAnimator.cancel();
         }

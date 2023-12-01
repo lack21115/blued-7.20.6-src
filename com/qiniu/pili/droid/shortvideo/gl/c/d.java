@@ -10,11 +10,11 @@ import java.nio.ByteOrder;
 public class d extends g {
 
     /* renamed from: a  reason: collision with root package name */
-    protected float f27713a;
+    protected float f14025a;
     protected float b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected float f27714c;
+    protected float f14026c;
     protected float d;
     protected int e;
     protected int f;
@@ -64,17 +64,17 @@ public class d extends g {
     }
 
     private void u() {
-        if (this.f27714c == 0.0f) {
-            this.f27714c = this.f27713a + ((this.e * 1.0f) / this.i);
+        if (this.f14026c == 0.0f) {
+            this.f14026c = this.f14025a + ((this.e * 1.0f) / this.i);
         }
         if (this.d == 0.0f) {
             this.d = this.b + ((this.f * 1.0f) / this.j);
         }
         if (this.t) {
-            float f = this.f27714c;
+            float f = this.f14026c;
             if (f > 1.0f) {
-                this.f27713a = 1.0f - (f - this.f27713a);
-                this.f27714c = 1.0f;
+                this.f14025a = 1.0f - (f - this.f14025a);
+                this.f14026c = 1.0f;
             }
             float f2 = this.d;
             if (f2 > 1.0f) {
@@ -84,33 +84,33 @@ public class d extends g {
         }
         float f3 = this.i / this.j;
         float f4 = f3 * 2.0f;
-        float f5 = this.f27713a * f4;
-        this.f27713a = f5;
+        float f5 = this.f14025a * f4;
+        this.f14025a = f5;
         float f6 = this.b * 2.0f;
         this.b = f6;
-        float f7 = this.f27714c * f4;
-        this.f27714c = f7;
+        float f7 = this.f14026c * f4;
+        this.f14026c = f7;
         float f8 = this.d * 2.0f;
         this.d = f8;
-        this.f27713a = f5 - f3;
+        this.f14025a = f5 - f3;
         float f9 = f6 - 1.0f;
         this.b = f9;
-        this.f27714c = f7 - f3;
+        this.f14026c = f7 - f3;
         float f10 = f8 - 1.0f;
         this.d = f10;
         this.b = f9 * (-1.0f);
         this.d = f10 * (-1.0f);
         this.m = new float[16];
-        float f11 = this.f27714c;
-        float f12 = this.f27713a;
+        float f11 = this.f14026c;
+        float f12 = this.f14025a;
         float f13 = this.d;
         float f14 = this.b;
         Matrix.orthoM(this.m, 0, -f3, f3, -1.0f, 1.0f, -1.0f, 1.0f);
         float f15 = (f11 - f12) / 2.0f;
         float f16 = (f13 - f14) / 2.0f;
-        Matrix.translateM(this.m, 0, this.f27713a + f15, this.b + f16, 0.0f);
+        Matrix.translateM(this.m, 0, this.f14025a + f15, this.b + f16, 0.0f);
         Matrix.rotateM(this.m, 0, this.k, 0.0f, 0.0f, -1.0f);
-        Matrix.translateM(this.m, 0, -(this.f27713a + f15), -(this.b + f16), 0.0f);
+        Matrix.translateM(this.m, 0, -(this.f14025a + f15), -(this.b + f16), 0.0f);
     }
 
     public int a(int i) {
@@ -129,7 +129,7 @@ public class d extends g {
     }
 
     public void a(float f, float f2) {
-        this.f27714c = this.f27713a + f;
+        this.f14026c = this.f14025a + f;
         this.d = this.b + f2;
     }
 
@@ -148,7 +148,7 @@ public class d extends g {
     }
 
     public void b(float f, float f2) {
-        this.f27713a = f;
+        this.f14025a = f;
         this.b = f2;
     }
 
@@ -193,9 +193,9 @@ public class d extends g {
             this.v.f();
             this.v = null;
         }
-        this.f27713a = 0.0f;
+        this.f14025a = 0.0f;
         this.b = 0.0f;
-        this.f27714c = 0.0f;
+        this.f14026c = 0.0f;
         this.d = 0.0f;
         this.e = 0;
         this.f = 0;
@@ -252,10 +252,10 @@ public class d extends g {
 
     @Override // com.qiniu.pili.droid.shortvideo.gl.c.g
     protected float[] i() {
-        float f = this.f27713a;
+        float f = this.f14025a;
         float f2 = this.d;
         float f3 = this.b;
-        float f4 = this.f27714c;
+        float f4 = this.f14026c;
         return new float[]{f, f2, f, f3, f4, f2, f4, f3};
     }
 

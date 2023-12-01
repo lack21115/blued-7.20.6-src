@@ -7,13 +7,13 @@ import android.telephony.TelephonyManager;
 public class y5 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static y5 f4066a;
+    public static y5 f4018a;
 
     public static y5 a() {
-        if (f4066a == null) {
-            f4066a = new y5();
+        if (f4018a == null) {
+            f4018a = new y5();
         }
-        return f4066a;
+        return f4018a;
     }
 
     /* JADX WARN: Can't wrap try/catch for region: R(23:5|6|7|(24:9|10|11|12|(2:14|(19:16|17|18|19|(19:56|57|59|60|(1:62)(1:65)|63|64|23|(1:25)|26|(1:28)|29|(1:31)|32|(1:34)|35|(1:37)|38|(2:40|(2:42|(2:44|(2:46|47)(2:48|49))(2:50|51))(2:52|53))(2:54|55))|21|22|23|(0)|26|(0)|29|(0)|32|(0)|35|(0)|38|(0)(0)))|73|17|18|19|(0)|21|22|23|(0)|26|(0)|29|(0)|32|(0)|35|(0)|38|(0)(0))|77|76|18|19|(0)|21|22|23|(0)|26|(0)|29|(0)|32|(0)|35|(0)|38|(0)(0)) */

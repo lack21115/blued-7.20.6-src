@@ -1,6 +1,5 @@
 package com.soft.blued.ui.mine.fragment;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Color;
@@ -16,8 +15,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
 import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.LifecycleOwner;
+import androidx.viewbinding.ViewBinding;
+import com.anythink.expressad.a;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.ui.StatusBarHelper;
@@ -65,7 +67,7 @@ public final class TouristFragment extends MVIBaseFragment<TouristVM> implements
     private final ViewBindingProperty d;
 
     /* renamed from: c  reason: collision with root package name */
-    static final /* synthetic */ KProperty<Object>[] f31630c = {Reflection.a(new PropertyReference1Impl(TouristFragment.class, "viewBinding", "getViewBinding()Lcom/soft/blued/databinding/FragmentTouristBinding;", 0))};
+    static final /* synthetic */ KProperty<Object>[] f17940c = {(KProperty) Reflection.a(new PropertyReference1Impl(TouristFragment.class, "viewBinding", "getViewBinding()Lcom/soft/blued/databinding/FragmentTouristBinding;", 0))};
     public static final Companion b = new Companion(null);
 
     @Metadata
@@ -80,18 +82,18 @@ public final class TouristFragment extends MVIBaseFragment<TouristVM> implements
     }
 
     public TouristFragment() {
-        super(R.layout.fragment_tourist);
-        this.d = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<TouristFragment, FragmentTouristBinding>() { // from class: com.soft.blued.ui.mine.fragment.TouristFragment$special$$inlined$viewBindingFragment$default$1
-            @Override // kotlin.jvm.functions.Function1
+        super((int) R.layout.fragment_tourist);
+        this.d = ((Fragment) this) instanceof DialogFragment ? (ViewBindingProperty) new DialogFragmentViewBindingProperty(new Function1<TouristFragment, FragmentTouristBinding>() { // from class: com.soft.blued.ui.mine.fragment.TouristFragment$special$$inlined$viewBindingFragment$default$1
+            /* JADX WARN: Incorrect types in method signature: (Lcom/soft/blued/ui/mine/fragment/TouristFragment;)Lcom/soft/blued/databinding/FragmentTouristBinding; */
             /* renamed from: a */
-            public final FragmentTouristBinding invoke(TouristFragment fragment) {
+            public final ViewBinding invoke(Fragment fragment) {
                 Intrinsics.e(fragment, "fragment");
                 return FragmentTouristBinding.a(fragment.requireView());
             }
         }) : new FragmentViewBindingProperty(new Function1<TouristFragment, FragmentTouristBinding>() { // from class: com.soft.blued.ui.mine.fragment.TouristFragment$special$$inlined$viewBindingFragment$default$2
-            @Override // kotlin.jvm.functions.Function1
+            /* JADX WARN: Incorrect types in method signature: (Lcom/soft/blued/ui/mine/fragment/TouristFragment;)Lcom/soft/blued/databinding/FragmentTouristBinding; */
             /* renamed from: a */
-            public final FragmentTouristBinding invoke(TouristFragment fragment) {
+            public final ViewBinding invoke(Fragment fragment) {
                 Intrinsics.e(fragment, "fragment");
                 return FragmentTouristBinding.a(fragment.requireView());
             }
@@ -100,7 +102,7 @@ public final class TouristFragment extends MVIBaseFragment<TouristVM> implements
 
     /* JADX INFO: Access modifiers changed from: private */
     public final FragmentTouristBinding a() {
-        return (FragmentTouristBinding) this.d.b(this, f31630c[0]);
+        return (FragmentTouristBinding) this.d.b(this, f17940c[0]);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -120,23 +122,23 @@ public final class TouristFragment extends MVIBaseFragment<TouristVM> implements
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(TouristFragment this$0, View view) {
+    public static final void a(TouristFragment touristFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.c();
+        Intrinsics.e(touristFragment, "this$0");
+        touristFragment.c();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(TouristFragment this$0, ObservableScrollView observableScrollView, int i, int i2, int i3, int i4) {
-        Intrinsics.e(this$0, "this$0");
-        int a2 = DensityUtils.a(this$0.getContext(), 72.0f);
+    public static final void a(TouristFragment touristFragment, ObservableScrollView observableScrollView, int i, int i2, int i3, int i4) {
+        Intrinsics.e(touristFragment, "this$0");
+        int a2 = DensityUtils.a(touristFragment.getContext(), 72.0f);
         if (i2 >= a2) {
-            FragmentTouristBinding a3 = this$0.a();
+            FragmentTouristBinding a3 = touristFragment.a();
             FrameLayout frameLayout = a3 == null ? null : a3.W;
             if (frameLayout != null) {
                 frameLayout.setAlpha(1.0f);
             }
-            FragmentTouristBinding a4 = this$0.a();
+            FragmentTouristBinding a4 = touristFragment.a();
             LinearLayout linearLayout = a4 == null ? null : a4.R;
             if (linearLayout == null) {
                 return;
@@ -145,12 +147,12 @@ public final class TouristFragment extends MVIBaseFragment<TouristVM> implements
             return;
         }
         float f = i2 / a2;
-        FragmentTouristBinding a5 = this$0.a();
+        FragmentTouristBinding a5 = touristFragment.a();
         FrameLayout frameLayout2 = a5 == null ? null : a5.W;
         if (frameLayout2 != null) {
             frameLayout2.setAlpha(f);
         }
-        FragmentTouristBinding a6 = this$0.a();
+        FragmentTouristBinding a6 = touristFragment.a();
         LinearLayout linearLayout2 = a6 == null ? null : a6.R;
         if (linearLayout2 == null) {
             return;
@@ -159,19 +161,19 @@ public final class TouristFragment extends MVIBaseFragment<TouristVM> implements
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(TouristFragment this$0, MinePageModel.ColumnsItem columnsItem, View view) {
+    public static final void a(TouristFragment touristFragment, MinePageModel.ColumnsItem columnsItem, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.a(columnsItem.url);
+        Intrinsics.e(touristFragment, "this$0");
+        touristFragment.a(columnsItem.url);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(TouristFragment this$0, MinePageModel.ColumnsItem columnsItem, ItemMineZhealthEntryBinding zhealthyItemVB, View view) {
+    public static final void a(TouristFragment touristFragment, MinePageModel.ColumnsItem columnsItem, ItemMineZhealthEntryBinding itemMineZhealthEntryBinding, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        Intrinsics.e(zhealthyItemVB, "$zhealthyItemVB");
-        this$0.a(columnsItem.item.get(0).url);
-        zhealthyItemVB.b.setVisibility(8);
+        Intrinsics.e(touristFragment, "this$0");
+        Intrinsics.e(itemMineZhealthEntryBinding, "$zhealthyItemVB");
+        touristFragment.a(columnsItem.item.get(0).url);
+        itemMineZhealthEntryBinding.b.setVisibility(8);
         BluedPreferences.Q(columnsItem.item.get(0).item_key);
     }
 
@@ -206,8 +208,8 @@ public final class TouristFragment extends MVIBaseFragment<TouristVM> implements
         ItemMineNewHealthEntryBinding a5 = ItemMineNewHealthEntryBinding.a(inflate);
         Intrinsics.c(a5, "bind(rootView)");
         a5.d.setText(columnsItem.title);
-        a5.f29234c.setVisibility(8);
-        a5.f29233a.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.mine.fragment.-$$Lambda$TouristFragment$oSE3oztf7lnjpis4X-g01CGmsZo
+        a5.f15544c.setVisibility(8);
+        a5.f15543a.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.mine.fragment.-$$Lambda$TouristFragment$oSE3oztf7lnjpis4X-g01CGmsZo
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 TouristFragment.e(TouristFragment.this, view);
@@ -237,7 +239,7 @@ public final class TouristFragment extends MVIBaseFragment<TouristVM> implements
             } else {
                 a6.f.setTextColor(BluedSkinUtils.a(getContext(), 2131101625));
             }
-            ImageLoader.a(getFragmentActive(), columnsItem.item.get(i2).icon1).a(a6.f29224c);
+            ImageLoader.a(getFragmentActive(), columnsItem.item.get(i2).icon1).a(a6.f15534c);
             a5.b.addView(inflate2);
             a6.b.setVisibility(8);
             TextView textView = a6.g;
@@ -246,7 +248,7 @@ public final class TouristFragment extends MVIBaseFragment<TouristVM> implements
             TextView textView2 = a6.f;
             Intrinsics.c(textView2, "healthyItemVB.tvDes");
             a(textView2, columnsItem.item.get(i2).content_color);
-            a6.f29223a.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.mine.fragment.-$$Lambda$TouristFragment$-HFPGMpikCW7DPARQRnvC1j4A-A
+            a6.f15533a.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.mine.fragment.-$$Lambda$TouristFragment$-HFPGMpikCW7DPARQRnvC1j4A-A
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     TouristFragment.f(TouristFragment.this, view);
@@ -266,8 +268,8 @@ public final class TouristFragment extends MVIBaseFragment<TouristVM> implements
         ItemMineNewHealthEntryBinding a8 = ItemMineNewHealthEntryBinding.a(inflate3);
         Intrinsics.c(a8, "bind(zhealthView)");
         a8.d.setText(columnsItem2.title);
-        a8.f29234c.setVisibility(0);
-        a8.f29233a.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.mine.fragment.-$$Lambda$TouristFragment$cwE5AHBxChT5WTef6523FeoCLes
+        a8.f15544c.setVisibility(0);
+        a8.f15543a.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.mine.fragment.-$$Lambda$TouristFragment$cwE5AHBxChT5WTef6523FeoCLes
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 TouristFragment.a(TouristFragment.this, columnsItem2, view);
@@ -287,7 +289,7 @@ public final class TouristFragment extends MVIBaseFragment<TouristVM> implements
         } else {
             a9.f.setTextColor(BluedSkinUtils.a(getContext(), 2131101625));
         }
-        ImageLoader.a(getFragmentActive(), columnsItem2.item.get(0).icon1).a(a9.f29246c);
+        ImageLoader.a(getFragmentActive(), columnsItem2.item.get(0).icon1).a(a9.f15556c);
         ImageLoader.a(getFragmentActive(), columnsItem2.item.get(0).icon2).a(a9.d);
         a8.b.addView(inflate4);
         if (BluedPreferences.P(columnsItem2.item.get(0).item_key)) {
@@ -301,7 +303,7 @@ public final class TouristFragment extends MVIBaseFragment<TouristVM> implements
         TextView textView4 = a9.f;
         Intrinsics.c(textView4, "zhealthyItemVB.tvDes");
         a(textView4, columnsItem2.item.get(0).content_color);
-        a9.f29245a.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.mine.fragment.-$$Lambda$TouristFragment$F4mF_0iYNbZimDfZwobayLiyBF4
+        a9.f15555a.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.mine.fragment.-$$Lambda$TouristFragment$F4mF_0iYNbZimDfZwobayLiyBF4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 TouristFragment.a(TouristFragment.this, columnsItem2, a9, view);
@@ -352,10 +354,10 @@ public final class TouristFragment extends MVIBaseFragment<TouristVM> implements
                 View inflate = getLayoutInflater().inflate(R.layout.item_mine_healthy_banner, (ViewGroup) null);
                 ItemMineHealthyBannerBinding a5 = ItemMineHealthyBannerBinding.a(inflate);
                 Intrinsics.c(a5, "bind(bannerView)");
-                a5.f29232c.setText(columnsItem.title);
+                a5.f15542c.setText(columnsItem.title);
                 a5.b.setText(columnsItem.content);
-                ImageLoader.a(getFragmentActive(), columnsItem.icon).a(a5.f29231a);
-                TextView textView = a5.f29232c;
+                ImageLoader.a(getFragmentActive(), columnsItem.icon).a(a5.f15541a);
+                TextView textView = a5.f15542c;
                 Intrinsics.c(textView, "bannerVB.tvTitle");
                 a(textView, columnsItem.title_color);
                 TextView textView2 = a5.b;
@@ -506,7 +508,6 @@ public final class TouristFragment extends MVIBaseFragment<TouristVM> implements
             return;
         }
         observableScrollView.setScrollViewListener(new ObservableScrollView.ScrollViewListener() { // from class: com.soft.blued.ui.mine.fragment.-$$Lambda$TouristFragment$5iOsytlrFoTjteonUIhcq8S9uYI
-            @Override // com.blued.android.module.common.view.ObservableScrollView.ScrollViewListener
             public final void onScrollChanged(ObservableScrollView observableScrollView2, int i, int i2, int i3, int i4) {
                 TouristFragment.a(TouristFragment.this, observableScrollView2, i, i2, i3, i4);
             }
@@ -514,14 +515,14 @@ public final class TouristFragment extends MVIBaseFragment<TouristVM> implements
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(TouristFragment this$0, View view) {
+    public static final void b(TouristFragment touristFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.c();
+        Intrinsics.e(touristFragment, "this$0");
+        touristFragment.c();
     }
 
     private final void c() {
-        TerminalActivity.d(getContext(), LoginMainFragment.class, null);
+        TerminalActivity.d(getContext(), LoginMainFragment.class, (Bundle) null);
         FragmentActivity activity = getActivity();
         if (activity == null) {
             return;
@@ -530,71 +531,69 @@ public final class TouristFragment extends MVIBaseFragment<TouristVM> implements
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void c(TouristFragment this$0, View view) {
+    public static final void c(TouristFragment touristFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        WebViewShowInfoFragment.show(this$0.getContext(), "https://activity.blued.cn/activity-blued/work/hnaaydgt", 0);
+        Intrinsics.e(touristFragment, "this$0");
+        WebViewShowInfoFragment.show(touristFragment.getContext(), "https://activity.blued.cn/activity-blued/work/hnaaydgt", 0);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void d(TouristFragment this$0, View view) {
+    public static final void d(TouristFragment touristFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.c();
+        Intrinsics.e(touristFragment, "this$0");
+        touristFragment.c();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void e(TouristFragment this$0, View view) {
+    public static final void e(TouristFragment touristFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.c();
+        Intrinsics.e(touristFragment, "this$0");
+        touristFragment.c();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void f(TouristFragment this$0, View view) {
+    public static final void f(TouristFragment touristFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.c();
+        Intrinsics.e(touristFragment, "this$0");
+        touristFragment.c();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void g(TouristFragment this$0, View view) {
+    public static final void g(TouristFragment touristFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.c();
+        Intrinsics.e(touristFragment, "this$0");
+        touristFragment.c();
     }
 
-    @Override // skin.support.observe.SkinObserver
     public void a(SkinObservable skinObservable, Object obj) {
-        StatusBarHelper.a((Activity) getActivity());
+        StatusBarHelper.a(getActivity());
         StatusBarHelper.a(getActivity(), BluedSkinUtils.a(getContext(), AppInfo.k()));
     }
 
-    @Override // com.blued.android.module.common.base.mvi.MVIBaseFragment
     public void m() {
         ImageView imageView;
         Resources resources;
         b();
-        BluedStructureExtKt.a(this, TouristAction.GetData.f31642a);
+        BluedStructureExtKt.a(this, TouristAction.GetData.f17952a);
         FragmentTouristBinding a2 = a();
         if (a2 == null) {
             return;
         }
         a2.g.setBackgroundColor(BluedSkinUtils.a(getContext(), 2131101780));
         a2.g.b(5.0f, true);
-        a2.g.f10205a.a(BluedSkinUtils.a(getContext(), 2131101780), 1.0f, true);
+        a2.g.a.a(BluedSkinUtils.a(getContext(), 2131101780), 1.0f, true);
         a2.u.setBackgroundColor(BluedSkinUtils.a(getContext(), 2131101780));
         a2.u.b(5.0f, true);
-        a2.u.f10205a.a(BluedSkinUtils.a(getContext(), 2131101780), 1.0f, true);
+        a2.u.a.a(BluedSkinUtils.a(getContext(), 2131101780), 1.0f, true);
         a2.f.setBackgroundColor(BluedSkinUtils.a(getContext(), 2131101780));
         a2.f.b(5.0f, true);
-        a2.f.f10205a.a(BluedSkinUtils.a(getContext(), 2131101780), 1.0f, true);
+        a2.f.a.a(BluedSkinUtils.a(getContext(), 2131101780), 1.0f, true);
         a2.O.setBackgroundColor(BluedSkinUtils.a(getContext(), 2131101780));
         a2.O.b(5.0f, true);
-        a2.O.f10205a.a(BluedSkinUtils.a(getContext(), 2131101780), 1.0f, true);
+        a2.O.a.a(BluedSkinUtils.a(getContext(), 2131101780), 1.0f, true);
         a2.P.setBackgroundColor(BluedSkinUtils.a(getContext(), 2131101780));
         a2.P.b(5.0f, true);
-        a2.P.f10205a.a(BluedSkinUtils.a(getContext(), 2131101780), 1.0f, true);
+        a2.P.a.a(BluedSkinUtils.a(getContext(), 2131101780), 1.0f, true);
         FragmentTouristBinding a3 = a();
         if (a3 != null && (imageView = a3.s) != null) {
             Context context = getContext();
@@ -625,12 +624,10 @@ public final class TouristFragment extends MVIBaseFragment<TouristVM> implements
         a2.h.setOnClickListener(touristFragment);
     }
 
-    @Override // com.blued.android.module.common.base.mvi.MVIBaseFragment
     public void o() {
         LifecycleOwner viewLifecycleOwner = getViewLifecycleOwner();
         Intrinsics.c(viewLifecycleOwner, "viewLifecycleOwner");
         BluedStructureExtKt.a(this, viewLifecycleOwner, new PropertyReference1Impl() { // from class: com.soft.blued.ui.mine.fragment.TouristFragment$liveDataObserver$1
-            @Override // kotlin.jvm.internal.PropertyReference1Impl, kotlin.reflect.KProperty1
             public Object a(Object obj) {
                 return ((TouristState) obj).getData();
             }
@@ -640,30 +637,28 @@ public final class TouristFragment extends MVIBaseFragment<TouristVM> implements
                 super(1);
             }
 
-            public final void a(MinePageModel it) {
-                Intrinsics.e(it, "it");
-                TouristFragment.this.a(it.healthy_banner);
-                TouristFragment.this.a(it.healthy);
+            public final void a(MinePageModel minePageModel) {
+                Intrinsics.e(minePageModel, "it");
+                TouristFragment.this.a(minePageModel.healthy_banner);
+                TouristFragment.this.a(minePageModel.healthy);
             }
 
-            @Override // kotlin.jvm.functions.Function1
-            public /* synthetic */ Unit invoke(MinePageModel minePageModel) {
-                a(minePageModel);
-                return Unit.f42314a;
+            public /* synthetic */ Object invoke(Object obj) {
+                a((MinePageModel) obj);
+                return Unit.a;
             }
         });
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener
     public boolean onBackPressed() {
         return true;
     }
 
     @Override // android.view.View.OnClickListener
-    public void onClick(View v) {
-        Tracker.onClick(v);
-        Intrinsics.e(v, "v");
-        switch (v.getId()) {
+    public void onClick(View view) {
+        Tracker.onClick(view);
+        Intrinsics.e(view, "v");
+        switch (view.getId()) {
             case 2131364232:
             case R.id.iv_feed /* 2131365314 */:
             case R.id.iv_interact /* 2131365526 */:
@@ -680,7 +675,7 @@ public final class TouristFragment extends MVIBaseFragment<TouristVM> implements
             case R.id.tv_feed /* 2131371418 */:
             case R.id.tv_interact /* 2131371725 */:
             case R.id.tv_login_register /* 2131371878 */:
-            case 2131372933:
+            case R.id.tv_visit /* 2131372933 */:
                 c();
                 return;
             default:
@@ -688,17 +683,16 @@ public final class TouristFragment extends MVIBaseFragment<TouristVM> implements
         }
     }
 
-    @Override // com.blued.android.module.common.base.mvi.MVIBaseFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onViewCreated(View view, Bundle bundle) {
-        Intrinsics.e(view, "view");
+        Intrinsics.e(view, a.B);
         super.onViewCreated(view, bundle);
         FragmentActivity activity = getActivity();
-        if (activity != null && StatusBarHelper.a((Activity) activity)) {
-            activity.findViewById(16908290).setFitsSystemWindows(true);
+        if (activity != null && StatusBarHelper.a(activity)) {
+            activity.findViewById(android.R.id.content).setFitsSystemWindows(true);
             FragmentActivity fragmentActivity = activity;
             activity.getWindow().setBackgroundDrawable(StatusBarHelper.a(fragmentActivity, AppInfo.k(), AppInfo.l(), AppInfo.j(), true));
             if (SkinCompatManager.a() != null) {
-                activity.findViewById(16908290).setBackgroundColor(BluedSkinUtils.a(fragmentActivity, 2131101796));
+                activity.findViewById(android.R.id.content).setBackgroundColor(BluedSkinUtils.a(fragmentActivity, 2131101796));
             }
         }
     }

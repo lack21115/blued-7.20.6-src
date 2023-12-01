@@ -13,7 +13,6 @@ import android.os.Looper;
 import android.os.Message;
 import android.text.TextUtils;
 import android.view.ViewTreeObserver;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.zk_oaction.adengine.lk_expression.c;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -44,7 +43,7 @@ public class g extends com.zk_oaction.adengine.lk_view.b implements c.b, com.zk_
     private float aq;
 
     /* renamed from: ar  reason: collision with root package name */
-    private float f42066ar;
+    private float f28375ar;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8829756-dex2jar.jar:com/zk_oaction/adengine/lk_view/g$a.class */
@@ -124,7 +123,7 @@ public class g extends com.zk_oaction.adengine.lk_view.b implements c.b, com.zk_
 
     private void a(Canvas canvas, Bitmap bitmap) {
         if (bitmap != null) {
-            int saveLayer = canvas.saveLayer(0.0f, 0.0f, com.zk_oaction.adengine.lk_sdk.c.f41930a, com.zk_oaction.adengine.lk_sdk.c.b, this.aa, 31);
+            int saveLayer = canvas.saveLayer(0.0f, 0.0f, com.zk_oaction.adengine.lk_sdk.c.f28239a, com.zk_oaction.adengine.lk_sdk.c.b, this.aa, 31);
             f fVar = this.e;
             if (fVar != null && fVar.s().size() > 0) {
                 Iterator<g> it = this.e.s().iterator();
@@ -195,7 +194,7 @@ public class g extends com.zk_oaction.adengine.lk_view.b implements c.b, com.zk_
         this.am = aVar;
         this.an = new Path();
         this.aq = this.v.a();
-        this.f42066ar = this.w.a();
+        this.f28375ar = this.w.a();
         this.t.q.add(this);
     }
 
@@ -209,7 +208,7 @@ public class g extends com.zk_oaction.adengine.lk_view.b implements c.b, com.zk_
             return;
         }
         int lastIndexOf = this.T.lastIndexOf(46);
-        this.U = this.T.substring(0, lastIndexOf) + BridgeUtil.UNDERLINE_STR + ((int) f) + this.T.substring(lastIndexOf);
+        this.U = this.T.substring(0, lastIndexOf) + "_" + ((int) f) + this.T.substring(lastIndexOf);
         m();
     }
 
@@ -231,7 +230,7 @@ public class g extends com.zk_oaction.adengine.lk_view.b implements c.b, com.zk_
         }
         this.ao = f;
         this.ap = f2;
-        this.an.moveTo(f - this.aq, f2 - this.f42066ar);
+        this.an.moveTo(f - this.aq, f2 - this.f28375ar);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:42:0x014e, code lost:
@@ -257,7 +256,7 @@ public class g extends com.zk_oaction.adengine.lk_view.b implements c.b, com.zk_
         float abs = Math.abs(f - this.ao);
         float abs2 = Math.abs(f2 - this.ap);
         if (abs > 3.0f || abs2 > 3.0f) {
-            this.an.lineTo(f - this.aq, f2 - this.f42066ar);
+            this.an.lineTo(f - this.aq, f2 - this.f28375ar);
         }
         this.ao = f;
         this.ap = f2;
@@ -281,7 +280,7 @@ public class g extends com.zk_oaction.adengine.lk_view.b implements c.b, com.zk_
         this.am.e();
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
+    @Override // android.view.View
     public void draw(Canvas canvas) {
         com.zk_oaction.adengine.lk_view.a aVar;
         try {

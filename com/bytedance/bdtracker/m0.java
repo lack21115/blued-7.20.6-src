@@ -22,11 +22,11 @@ import org.json.JSONObject;
 public class m0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f21256a;
+    public final Context f7650a;
     public final InitConfig b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final SharedPreferences f21257c;
+    public final SharedPreferences f7651c;
     public final SharedPreferences d;
     public final SharedPreferences e;
     public volatile JSONObject f;
@@ -43,11 +43,11 @@ public class m0 {
     public final HashSet<String> j = new HashSet<>();
 
     public m0(IAppLogInstance iAppLogInstance, Context context, InitConfig initConfig) {
-        this.f21256a = context;
+        this.f7650a = context;
         this.b = initConfig;
         this.e = e2.a(context, initConfig.getSpName(), 0);
-        this.f21257c = e2.a(this.f21256a, b.a(iAppLogInstance, "header_custom"), 0);
-        this.d = e2.a(this.f21256a, b.a(iAppLogInstance, "last_sp_session"), 0);
+        this.f7651c = e2.a(this.f7650a, b.a(iAppLogInstance, "header_custom"), 0);
+        this.d = e2.a(this.f7650a, b.a(iAppLogInstance, "last_sp_session"), 0);
     }
 
     public static /* synthetic */ String d(JSONObject jSONObject) {
@@ -114,7 +114,7 @@ public class m0 {
         if (jSONObject2 == null) {
             synchronized (this) {
                 try {
-                    jSONObject2 = new JSONObject(this.f21257c.getString("ab_configure", ""));
+                    jSONObject2 = new JSONObject(this.f7651c.getString("ab_configure", ""));
                 } catch (JSONException e) {
                 }
                 jSONObject = jSONObject2;
@@ -130,14 +130,14 @@ public class m0 {
 
     public void a(String str) {
         z2.a("setExternalAbVersion: " + str);
-        a.a(this.f21257c, "external_ab_version", str);
+        a.a(this.f7651c, "external_ab_version", str);
         this.g = null;
     }
 
     public void a(JSONObject jSONObject) {
         String jSONObject2 = jSONObject == null ? "" : jSONObject.toString();
         z2.a("setAbConfig, " + jSONObject2);
-        a.a(this.f21257c, "ab_configure", jSONObject2);
+        a.a(this.f7651c, "ab_configure", jSONObject2);
         this.f = null;
     }
 
@@ -169,7 +169,7 @@ public class m0 {
     }
 
     public String b() {
-        return this.f21257c.getString("ab_sdk_version", "");
+        return this.f7651c.getString("ab_sdk_version", "");
     }
 
     /* JADX WARN: Type inference failed for: r0v0, types: [java.lang.Throwable, java.lang.Runtime] */
@@ -185,7 +185,7 @@ public class m0 {
         }
         if (TextUtils.isEmpty(str)) {
             try {
-                return this.f21256a.getPackageManager().getApplicationInfo(this.f21256a.getPackageName(), 128).metaData.getString("UMENG_CHANNEL");
+                return this.f7650a.getPackageManager().getApplicationInfo(this.f7650a.getPackageName(), 128).metaData.getString("UMENG_CHANNEL");
             } catch (Throwable th) {
                 z2.a("getChannel", th);
             }
@@ -236,7 +236,7 @@ public class m0 {
         String str = this.g;
         if (TextUtils.isEmpty(str)) {
             synchronized (this) {
-                string = this.f21257c.getString("external_ab_version", "");
+                string = this.f7651c.getString("external_ab_version", "");
                 this.g = string;
             }
             return string;
@@ -262,7 +262,7 @@ public class m0 {
         BufferedReader bufferedReader;
         boolean z = false;
         if (this.b.getProcess() == 0) {
-            String str = j1.f21237a;
+            String str = j1.f7631a;
             if (TextUtils.isEmpty(str)) {
                 String str2 = null;
                 try {
@@ -283,11 +283,11 @@ public class m0 {
                     bufferedReader = null;
                 }
                 j1.a((Closeable) bufferedReader);
-                j1.f21237a = str2;
+                j1.f7631a = str2;
                 StringBuilder a2 = a.a("getProcessName: ");
-                a2.append(j1.f21237a);
+                a2.append(j1.f7631a);
                 z2.a(a2.toString());
-                str = j1.f21237a;
+                str = j1.f7631a;
             }
             if (TextUtils.isEmpty(str)) {
                 this.b.setProcess(0);

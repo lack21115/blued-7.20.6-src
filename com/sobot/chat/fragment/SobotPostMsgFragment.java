@@ -24,6 +24,7 @@ import androidx.core.content.ContextCompat;
 import com.anythink.expressad.foundation.h.i;
 import com.bytedance.applog.tracker.Tracker;
 import com.bytedance.sdk.openadsdk.live.TTLiveConstants;
+import com.huawei.openalliance.ad.constant.t;
 import com.sobot.chat.activity.SobotPhotoActivity;
 import com.sobot.chat.activity.SobotPostCascadeActivity;
 import com.sobot.chat.activity.SobotPostCategoryActivity;
@@ -435,7 +436,7 @@ public class SobotPostMsgFragment extends SobotBaseFragment implements View.OnCl
             if (i2 >= this.adapter.getPicList().size()) {
                 return str;
             }
-            str = str + picList.get(i2).getFileUrl() + ";";
+            str = str + picList.get(i2).getFileUrl() + t.aE;
             i = i2 + 1;
         }
     }

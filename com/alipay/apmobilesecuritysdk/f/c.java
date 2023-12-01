@@ -6,13 +6,11 @@ import java.util.LinkedList;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-6737240-dex2jar.jar:com/alipay/apmobilesecuritysdk/f/c.class */
 public final class c implements Runnable {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ b f4560a;
+    final /* synthetic */ b a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public c(b bVar) {
-        this.f4560a = bVar;
+        this.a = bVar;
     }
 
     @Override // java.lang.Runnable
@@ -23,13 +21,13 @@ public final class c implements Runnable {
         try {
             Process.setThreadPriority(0);
             while (true) {
-                linkedList = this.f4560a.f4559c;
+                linkedList = this.a.c;
                 if (linkedList.isEmpty()) {
                     break;
                 }
-                linkedList2 = this.f4560a.f4559c;
+                linkedList2 = this.a.c;
                 Runnable runnable = (Runnable) linkedList2.get(0);
-                linkedList3 = this.f4560a.f4559c;
+                linkedList3 = this.a.c;
                 linkedList3.remove(0);
                 if (runnable != null) {
                     runnable.run();
@@ -37,9 +35,9 @@ public final class c implements Runnable {
             }
         } catch (Exception e) {
         } catch (Throwable th) {
-            b.b(this.f4560a);
+            b.b(this.a);
             throw th;
         }
-        b.b(this.f4560a);
+        b.b(this.a);
     }
 }

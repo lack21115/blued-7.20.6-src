@@ -33,8 +33,8 @@ public final class AnchorJoinFriendModeExtra extends GeneratedMessageV3 implemen
     private volatile Object stream_;
     private static final AnchorJoinFriendModeExtra DEFAULT_INSTANCE = new AnchorJoinFriendModeExtra();
     private static final Parser<AnchorJoinFriendModeExtra> PARSER = new AbstractParser<AnchorJoinFriendModeExtra>() { // from class: cn.irisgw.live.AnchorJoinFriendModeExtra.1
-        @Override // com.google.protobuf.Parser
-        public AnchorJoinFriendModeExtra parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        /* renamed from: parsePartialFrom */
+        public AnchorJoinFriendModeExtra m245parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             return new AnchorJoinFriendModeExtra(codedInputStream, extensionRegistryLite);
         }
     };
@@ -97,7 +97,7 @@ public final class AnchorJoinFriendModeExtra extends GeneratedMessageV3 implemen
                 return this;
             }
             ensureFansIsMutable();
-            AbstractMessageLite.Builder.addAll((Iterable) iterable, (List) this.fans_);
+            AbstractMessageLite.Builder.addAll(iterable, this.fans_);
             onChanged();
             return this;
         }
@@ -105,11 +105,11 @@ public final class AnchorJoinFriendModeExtra extends GeneratedMessageV3 implemen
         public Builder addFans(int i, Fan.Builder builder) {
             RepeatedFieldBuilderV3<Fan, Fan.Builder, FanOrBuilder> repeatedFieldBuilderV3 = this.fansBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.addMessage(i, builder.build());
+                repeatedFieldBuilderV3.addMessage(i, builder.m296build());
                 return this;
             }
             ensureFansIsMutable();
-            this.fans_.add(i, builder.build());
+            this.fans_.add(i, builder.m296build());
             onChanged();
             return this;
         }
@@ -132,11 +132,11 @@ public final class AnchorJoinFriendModeExtra extends GeneratedMessageV3 implemen
         public Builder addFans(Fan.Builder builder) {
             RepeatedFieldBuilderV3<Fan, Fan.Builder, FanOrBuilder> repeatedFieldBuilderV3 = this.fansBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.addMessage(builder.build());
+                repeatedFieldBuilderV3.addMessage(builder.m296build());
                 return this;
             }
             ensureFansIsMutable();
-            this.fans_.add(builder.build());
+            this.fans_.add(builder.m296build());
             onChanged();
             return this;
         }
@@ -164,22 +164,22 @@ public final class AnchorJoinFriendModeExtra extends GeneratedMessageV3 implemen
             return getFansFieldBuilder().addBuilder(i, Fan.getDefaultInstance());
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: addRepeatedField */
+        public Builder m247addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.addRepeatedField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public AnchorJoinFriendModeExtra build() {
-            AnchorJoinFriendModeExtra buildPartial = buildPartial();
-            if (buildPartial.isInitialized()) {
-                return buildPartial;
+        /* renamed from: build */
+        public AnchorJoinFriendModeExtra m249build() {
+            AnchorJoinFriendModeExtra m251buildPartial = m251buildPartial();
+            if (m251buildPartial.isInitialized()) {
+                return m251buildPartial;
             }
-            throw newUninitializedMessageException((Message) buildPartial);
+            throw newUninitializedMessageException(m251buildPartial);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public AnchorJoinFriendModeExtra buildPartial() {
+        /* renamed from: buildPartial */
+        public AnchorJoinFriendModeExtra m251buildPartial() {
             AnchorJoinFriendModeExtra anchorJoinFriendModeExtra = new AnchorJoinFriendModeExtra(this);
             anchorJoinFriendModeExtra.count_ = this.count_;
             anchorJoinFriendModeExtra.stream_ = this.stream_;
@@ -197,8 +197,8 @@ public final class AnchorJoinFriendModeExtra extends GeneratedMessageV3 implemen
             return anchorJoinFriendModeExtra;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public Builder clear() {
+        /* renamed from: clear */
+        public Builder m255clear() {
             super.clear();
             this.count_ = 0;
             this.stream_ = "";
@@ -230,13 +230,13 @@ public final class AnchorJoinFriendModeExtra extends GeneratedMessageV3 implemen
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+        /* renamed from: clearField */
+        public Builder m257clearField(Descriptors.FieldDescriptor fieldDescriptor) {
             return (Builder) super.clearField(fieldDescriptor);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+        /* renamed from: clearOneof */
+        public Builder m260clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
             return (Builder) super.clearOneof(oneofDescriptor);
         }
 
@@ -246,10 +246,9 @@ public final class AnchorJoinFriendModeExtra extends GeneratedMessageV3 implemen
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder m266clone() {
+            return (Builder) super.clone();
         }
 
         @Override // cn.irisgw.live.AnchorJoinFriendModeExtraOrBuilder
@@ -257,12 +256,11 @@ public final class AnchorJoinFriendModeExtra extends GeneratedMessageV3 implemen
             return this.count_;
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public AnchorJoinFriendModeExtra getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public AnchorJoinFriendModeExtra m268getDefaultInstanceForType() {
             return AnchorJoinFriendModeExtra.getDefaultInstance();
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
         public Descriptors.Descriptor getDescriptorForType() {
             return LiveConstants.internal_static_cn_irisgw_live_AnchorJoinFriendModeExtra_descriptor;
         }
@@ -296,7 +294,7 @@ public final class AnchorJoinFriendModeExtra extends GeneratedMessageV3 implemen
         @Override // cn.irisgw.live.AnchorJoinFriendModeExtraOrBuilder
         public FanOrBuilder getFansOrBuilder(int i) {
             RepeatedFieldBuilderV3<Fan, Fan.Builder, FanOrBuilder> repeatedFieldBuilderV3 = this.fansBuilder_;
-            return repeatedFieldBuilderV3 == null ? this.fans_.get(i) : repeatedFieldBuilderV3.getMessageOrBuilder(i);
+            return repeatedFieldBuilderV3 == null ? this.fans_.get(i) : (FanOrBuilder) repeatedFieldBuilderV3.getMessageOrBuilder(i);
         }
 
         @Override // cn.irisgw.live.AnchorJoinFriendModeExtraOrBuilder
@@ -327,12 +325,10 @@ public final class AnchorJoinFriendModeExtra extends GeneratedMessageV3 implemen
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_AnchorJoinFriendModeExtra_fieldAccessorTable.ensureFieldAccessorsInitialized(AnchorJoinFriendModeExtra.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             return true;
         }
@@ -374,18 +370,18 @@ public final class AnchorJoinFriendModeExtra extends GeneratedMessageV3 implemen
                     this.fansBuilder_.addAllMessages(anchorJoinFriendModeExtra.fans_);
                 }
             }
-            mergeUnknownFields(anchorJoinFriendModeExtra.unknownFields);
+            m277mergeUnknownFields(anchorJoinFriendModeExtra.unknownFields);
             onChanged();
             return this;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+        /* renamed from: mergeFrom */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
         */
-        public cn.irisgw.live.AnchorJoinFriendModeExtra.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+        public cn.irisgw.live.AnchorJoinFriendModeExtra.Builder m274mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
             /*
                 r4 = this;
                 r0 = 0
@@ -430,11 +426,11 @@ public final class AnchorJoinFriendModeExtra extends GeneratedMessageV3 implemen
                 r0 = r6
                 throw r0
             */
-            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.AnchorJoinFriendModeExtra.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.AnchorJoinFriendModeExtra$Builder");
+            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.AnchorJoinFriendModeExtra.Builder.m274mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.AnchorJoinFriendModeExtra$Builder");
         }
 
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder mergeFrom(Message message) {
+        /* renamed from: mergeFrom */
+        public Builder m273mergeFrom(Message message) {
             if (message instanceof AnchorJoinFriendModeExtra) {
                 return mergeFrom((AnchorJoinFriendModeExtra) message);
             }
@@ -442,8 +438,8 @@ public final class AnchorJoinFriendModeExtra extends GeneratedMessageV3 implemen
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: mergeUnknownFields */
+        public final Builder m277mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.mergeUnknownFields(unknownFieldSet);
         }
 
@@ -468,11 +464,11 @@ public final class AnchorJoinFriendModeExtra extends GeneratedMessageV3 implemen
         public Builder setFans(int i, Fan.Builder builder) {
             RepeatedFieldBuilderV3<Fan, Fan.Builder, FanOrBuilder> repeatedFieldBuilderV3 = this.fansBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.setMessage(i, builder.build());
+                repeatedFieldBuilderV3.setMessage(i, builder.m296build());
                 return this;
             }
             ensureFansIsMutable();
-            this.fans_.set(i, builder.build());
+            this.fans_.set(i, builder.m296build());
             onChanged();
             return this;
         }
@@ -492,13 +488,13 @@ public final class AnchorJoinFriendModeExtra extends GeneratedMessageV3 implemen
             }
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: setField */
+        public Builder m279setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.setField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+        /* renamed from: setRepeatedField */
+        public Builder m281setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
             return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
         }
 
@@ -521,8 +517,8 @@ public final class AnchorJoinFriendModeExtra extends GeneratedMessageV3 implemen
             throw null;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: setUnknownFields */
+        public final Builder m283setUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.setUnknownFields(unknownFieldSet);
         }
     }
@@ -543,8 +539,8 @@ public final class AnchorJoinFriendModeExtra extends GeneratedMessageV3 implemen
         private int voice_;
         private static final Fan DEFAULT_INSTANCE = new Fan();
         private static final Parser<Fan> PARSER = new AbstractParser<Fan>() { // from class: cn.irisgw.live.AnchorJoinFriendModeExtra.Fan.1
-            @Override // com.google.protobuf.Parser
-            public Fan parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+            /* renamed from: parsePartialFrom */
+            public Fan m292parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
                 return new Fan(codedInputStream, extensionRegistryLite);
             }
         };
@@ -580,22 +576,22 @@ public final class AnchorJoinFriendModeExtra extends GeneratedMessageV3 implemen
                 boolean unused = Fan.alwaysUseFieldBuilders;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: addRepeatedField */
+            public Builder m294addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.addRepeatedField(fieldDescriptor, obj);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public Fan build() {
-                Fan buildPartial = buildPartial();
-                if (buildPartial.isInitialized()) {
-                    return buildPartial;
+            /* renamed from: build */
+            public Fan m296build() {
+                Fan m298buildPartial = m298buildPartial();
+                if (m298buildPartial.isInitialized()) {
+                    return m298buildPartial;
                 }
-                throw newUninitializedMessageException((Message) buildPartial);
+                throw newUninitializedMessageException(m298buildPartial);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public Fan buildPartial() {
+            /* renamed from: buildPartial */
+            public Fan m298buildPartial() {
                 Fan fan = new Fan(this);
                 fan.name_ = this.name_;
                 fan.avatar_ = this.avatar_;
@@ -606,8 +602,8 @@ public final class AnchorJoinFriendModeExtra extends GeneratedMessageV3 implemen
                 return fan;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public Builder clear() {
+            /* renamed from: clear */
+            public Builder m302clear() {
                 super.clear();
                 this.name_ = "";
                 this.avatar_ = "";
@@ -623,8 +619,8 @@ public final class AnchorJoinFriendModeExtra extends GeneratedMessageV3 implemen
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+            /* renamed from: clearField */
+            public Builder m304clearField(Descriptors.FieldDescriptor fieldDescriptor) {
                 return (Builder) super.clearField(fieldDescriptor);
             }
 
@@ -634,8 +630,8 @@ public final class AnchorJoinFriendModeExtra extends GeneratedMessageV3 implemen
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+            /* renamed from: clearOneof */
+            public Builder m307clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
                 return (Builder) super.clearOneof(oneofDescriptor);
             }
 
@@ -657,10 +653,9 @@ public final class AnchorJoinFriendModeExtra extends GeneratedMessageV3 implemen
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder m313clone() {
+                return (Builder) super.clone();
             }
 
             @Override // cn.irisgw.live.AnchorJoinFriendModeExtra.FanOrBuilder
@@ -685,12 +680,11 @@ public final class AnchorJoinFriendModeExtra extends GeneratedMessageV3 implemen
                 return (ByteString) obj;
             }
 
-            @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-            public Fan getDefaultInstanceForType() {
+            /* renamed from: getDefaultInstanceForType */
+            public Fan m315getDefaultInstanceForType() {
                 return Fan.getDefaultInstance();
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
             public Descriptors.Descriptor getDescriptorForType() {
                 return LiveConstants.internal_static_cn_irisgw_live_AnchorJoinFriendModeExtra_Fan_descriptor;
             }
@@ -749,12 +743,10 @@ public final class AnchorJoinFriendModeExtra extends GeneratedMessageV3 implemen
                 return this.voice_;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder
             public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
                 return LiveConstants.internal_static_cn_irisgw_live_AnchorJoinFriendModeExtra_Fan_fieldAccessorTable.ensureFieldAccessorsInitialized(Fan.class, Builder.class);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
             public final boolean isInitialized() {
                 return true;
             }
@@ -781,18 +773,18 @@ public final class AnchorJoinFriendModeExtra extends GeneratedMessageV3 implemen
                     this.stream_ = fan.stream_;
                     onChanged();
                 }
-                mergeUnknownFields(fan.unknownFields);
+                m324mergeUnknownFields(fan.unknownFields);
                 onChanged();
                 return this;
             }
 
             /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+            /* renamed from: mergeFrom */
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
                 To view partially-correct code enable 'Show inconsistent code' option in preferences
             */
-            public cn.irisgw.live.AnchorJoinFriendModeExtra.Fan.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+            public cn.irisgw.live.AnchorJoinFriendModeExtra.Fan.Builder m321mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
                 /*
                     r4 = this;
                     r0 = 0
@@ -837,11 +829,11 @@ public final class AnchorJoinFriendModeExtra extends GeneratedMessageV3 implemen
                     r0 = r6
                     throw r0
                 */
-                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.AnchorJoinFriendModeExtra.Fan.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.AnchorJoinFriendModeExtra$Fan$Builder");
+                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.AnchorJoinFriendModeExtra.Fan.Builder.m321mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.AnchorJoinFriendModeExtra$Fan$Builder");
             }
 
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder mergeFrom(Message message) {
+            /* renamed from: mergeFrom */
+            public Builder m320mergeFrom(Message message) {
                 if (message instanceof Fan) {
                     return mergeFrom((Fan) message);
                 }
@@ -849,8 +841,8 @@ public final class AnchorJoinFriendModeExtra extends GeneratedMessageV3 implemen
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: mergeUnknownFields */
+            public final Builder m324mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.mergeUnknownFields(unknownFieldSet);
             }
 
@@ -873,8 +865,8 @@ public final class AnchorJoinFriendModeExtra extends GeneratedMessageV3 implemen
                 throw null;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: setField */
+            public Builder m326setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.setField(fieldDescriptor, obj);
             }
 
@@ -897,8 +889,8 @@ public final class AnchorJoinFriendModeExtra extends GeneratedMessageV3 implemen
                 throw null;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+            /* renamed from: setRepeatedField */
+            public Builder m328setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
                 return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
             }
 
@@ -927,8 +919,8 @@ public final class AnchorJoinFriendModeExtra extends GeneratedMessageV3 implemen
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: setUnknownFields */
+            public final Builder m330setUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.setUnknownFields(unknownFieldSet);
             }
 
@@ -972,10 +964,10 @@ public final class AnchorJoinFriendModeExtra extends GeneratedMessageV3 implemen
                             }
                         }
                         z = true;
-                    } catch (InvalidProtocolBufferException e) {
-                        throw e.setUnfinishedMessage(this);
-                    } catch (IOException e2) {
-                        throw new InvalidProtocolBufferException(e2).setUnfinishedMessage(this);
+                    } catch (IOException e) {
+                        throw new InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+                    } catch (InvalidProtocolBufferException e2) {
+                        throw e2.setUnfinishedMessage(this);
                     }
                 } finally {
                     this.unknownFields = newBuilder.build();
@@ -998,66 +990,65 @@ public final class AnchorJoinFriendModeExtra extends GeneratedMessageV3 implemen
         }
 
         public static Builder newBuilder() {
-            return DEFAULT_INSTANCE.toBuilder();
+            return DEFAULT_INSTANCE.m291toBuilder();
         }
 
         public static Builder newBuilder(Fan fan) {
-            return DEFAULT_INSTANCE.toBuilder().mergeFrom(fan);
+            return DEFAULT_INSTANCE.m291toBuilder().mergeFrom(fan);
         }
 
         public static Fan parseDelimitedFrom(InputStream inputStream) throws IOException {
-            return (Fan) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
         }
 
         public static Fan parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (Fan) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static Fan parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString);
+            return (Fan) PARSER.parseFrom(byteString);
         }
 
         public static Fan parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString, extensionRegistryLite);
+            return (Fan) PARSER.parseFrom(byteString, extensionRegistryLite);
         }
 
         public static Fan parseFrom(CodedInputStream codedInputStream) throws IOException {
-            return (Fan) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
         }
 
         public static Fan parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (Fan) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
         }
 
         public static Fan parseFrom(InputStream inputStream) throws IOException {
-            return (Fan) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
         }
 
         public static Fan parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (Fan) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static Fan parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer);
+            return (Fan) PARSER.parseFrom(byteBuffer);
         }
 
         public static Fan parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+            return (Fan) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
         }
 
         public static Fan parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr);
+            return (Fan) PARSER.parseFrom(bArr);
         }
 
         public static Fan parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr, extensionRegistryLite);
+            return (Fan) PARSER.parseFrom(bArr, extensionRegistryLite);
         }
 
         public static Parser<Fan> parser() {
             return PARSER;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public boolean equals(Object obj) {
             if (obj == this) {
                 return true;
@@ -1091,8 +1082,8 @@ public final class AnchorJoinFriendModeExtra extends GeneratedMessageV3 implemen
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public Fan getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public Fan m286getDefaultInstanceForType() {
             return DEFAULT_INSTANCE;
         }
 
@@ -1118,12 +1109,10 @@ public final class AnchorJoinFriendModeExtra extends GeneratedMessageV3 implemen
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
         public Parser<Fan> getParserForType() {
             return PARSER;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public int getSerializedSize() {
             int i = this.memoizedSize;
             if (i != -1) {
@@ -1183,7 +1172,6 @@ public final class AnchorJoinFriendModeExtra extends GeneratedMessageV3 implemen
             return this.uid_;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
         public final UnknownFieldSet getUnknownFields() {
             return this.unknownFields;
         }
@@ -1193,7 +1181,6 @@ public final class AnchorJoinFriendModeExtra extends GeneratedMessageV3 implemen
             return this.voice_;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public int hashCode() {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
@@ -1203,12 +1190,10 @@ public final class AnchorJoinFriendModeExtra extends GeneratedMessageV3 implemen
             return hashCode;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_AnchorJoinFriendModeExtra_Fan_fieldAccessorTable.ensureFieldAccessorsInitialized(Fan.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte b = this.memoizedIsInitialized;
             if (b == 1) {
@@ -1221,28 +1206,26 @@ public final class AnchorJoinFriendModeExtra extends GeneratedMessageV3 implemen
             return true;
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder newBuilderForType() {
+        /* renamed from: newBuilderForType */
+        public Builder m289newBuilderForType() {
             return newBuilder();
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.google.protobuf.GeneratedMessageV3
-        public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+        /* renamed from: newBuilderForType */
+        public Builder m288newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
             return new Builder(builderParent);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
             return new Fan();
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder toBuilder() {
+        /* renamed from: toBuilder */
+        public Builder m291toBuilder() {
             return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
             if (!getNameBytes().isEmpty()) {
                 GeneratedMessageV3.writeString(codedOutputStream, 1, this.name_);
@@ -1355,66 +1338,65 @@ public final class AnchorJoinFriendModeExtra extends GeneratedMessageV3 implemen
     }
 
     public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
+        return DEFAULT_INSTANCE.m244toBuilder();
     }
 
     public static Builder newBuilder(AnchorJoinFriendModeExtra anchorJoinFriendModeExtra) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(anchorJoinFriendModeExtra);
+        return DEFAULT_INSTANCE.m244toBuilder().mergeFrom(anchorJoinFriendModeExtra);
     }
 
     public static AnchorJoinFriendModeExtra parseDelimitedFrom(InputStream inputStream) throws IOException {
-        return (AnchorJoinFriendModeExtra) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
     }
 
     public static AnchorJoinFriendModeExtra parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (AnchorJoinFriendModeExtra) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static AnchorJoinFriendModeExtra parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString);
+        return (AnchorJoinFriendModeExtra) PARSER.parseFrom(byteString);
     }
 
     public static AnchorJoinFriendModeExtra parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString, extensionRegistryLite);
+        return (AnchorJoinFriendModeExtra) PARSER.parseFrom(byteString, extensionRegistryLite);
     }
 
     public static AnchorJoinFriendModeExtra parseFrom(CodedInputStream codedInputStream) throws IOException {
-        return (AnchorJoinFriendModeExtra) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
     }
 
     public static AnchorJoinFriendModeExtra parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (AnchorJoinFriendModeExtra) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
     }
 
     public static AnchorJoinFriendModeExtra parseFrom(InputStream inputStream) throws IOException {
-        return (AnchorJoinFriendModeExtra) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
     }
 
     public static AnchorJoinFriendModeExtra parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (AnchorJoinFriendModeExtra) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static AnchorJoinFriendModeExtra parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer);
+        return (AnchorJoinFriendModeExtra) PARSER.parseFrom(byteBuffer);
     }
 
     public static AnchorJoinFriendModeExtra parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+        return (AnchorJoinFriendModeExtra) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
     }
 
     public static AnchorJoinFriendModeExtra parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr);
+        return (AnchorJoinFriendModeExtra) PARSER.parseFrom(bArr);
     }
 
     public static AnchorJoinFriendModeExtra parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr, extensionRegistryLite);
+        return (AnchorJoinFriendModeExtra) PARSER.parseFrom(bArr, extensionRegistryLite);
     }
 
     public static Parser<AnchorJoinFriendModeExtra> parser() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
@@ -1431,8 +1413,8 @@ public final class AnchorJoinFriendModeExtra extends GeneratedMessageV3 implemen
         return this.count_;
     }
 
-    @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-    public AnchorJoinFriendModeExtra getDefaultInstanceForType() {
+    /* renamed from: getDefaultInstanceForType */
+    public AnchorJoinFriendModeExtra m239getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
     }
 
@@ -1461,12 +1443,10 @@ public final class AnchorJoinFriendModeExtra extends GeneratedMessageV3 implemen
         return this.fans_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
     public Parser<AnchorJoinFriendModeExtra> getParserForType() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public int getSerializedSize() {
         int i = this.memoizedSize;
         if (i != -1) {
@@ -1511,12 +1491,10 @@ public final class AnchorJoinFriendModeExtra extends GeneratedMessageV3 implemen
         return (ByteString) obj;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
     public final UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public int hashCode() {
         if (this.memoizedHashCode != 0) {
             return this.memoizedHashCode;
@@ -1531,12 +1509,10 @@ public final class AnchorJoinFriendModeExtra extends GeneratedMessageV3 implemen
         return hashCode2;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
         return LiveConstants.internal_static_cn_irisgw_live_AnchorJoinFriendModeExtra_fieldAccessorTable.ensureFieldAccessorsInitialized(AnchorJoinFriendModeExtra.class, Builder.class);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
     public final boolean isInitialized() {
         byte b = this.memoizedIsInitialized;
         if (b == 1) {
@@ -1549,28 +1525,26 @@ public final class AnchorJoinFriendModeExtra extends GeneratedMessageV3 implemen
         return true;
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder newBuilderForType() {
+    /* renamed from: newBuilderForType */
+    public Builder m242newBuilderForType() {
         return newBuilder();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.protobuf.GeneratedMessageV3
-    public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+    /* renamed from: newBuilderForType */
+    public Builder m241newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
         return new Builder(builderParent);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
         return new AnchorJoinFriendModeExtra();
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder toBuilder() {
+    /* renamed from: toBuilder */
+    public Builder m244toBuilder() {
         return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
         int i = this.count_;
         if (i != 0) {

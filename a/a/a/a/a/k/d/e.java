@@ -18,11 +18,11 @@ import org.json.JSONObject;
 public final class e {
 
     /* renamed from: a  reason: collision with root package name */
-    public static boolean f1415a = false;
+    public static boolean f1367a = false;
     public static int b = 120000;
 
     /* renamed from: c  reason: collision with root package name */
-    public static int f1416c = 60000;
+    public static int f1368c = 60000;
     public static int d = 30000;
     public Handler f;
     public HandlerThread g;
@@ -99,9 +99,9 @@ public final class e {
             if (i != b) {
                 b = i;
             }
-        } else if (!str.equals("http://stream-pili-qos-report.qiniuapi.com/raw/log/stream-v5") || i == f1416c) {
+        } else if (!str.equals("http://stream-pili-qos-report.qiniuapi.com/raw/log/stream-v5") || i == f1368c) {
         } else {
-            f1416c = i;
+            f1368c = i;
             d = i2;
         }
     }
@@ -120,8 +120,8 @@ public final class e {
 
     public final boolean a(String str, String str2) {
         int contentLength;
-        if (f1415a) {
-            a.a.a.a.a.e.e.f1361c.b("QosReporter", "url: \n" + str + "\ncontent: \n" + str2);
+        if (f1367a) {
+            a.a.a.a.a.e.e.f1313c.b("QosReporter", "url: \n" + str + "\ncontent: \n" + str2);
         }
         try {
             HttpURLConnection httpURLConnection = (HttpURLConnection) new URL(str).openConnection();
@@ -129,14 +129,14 @@ public final class e {
             httpURLConnection.setReadTimeout(10000);
             try {
                 httpURLConnection.setRequestMethod("POST");
-                httpURLConnection.setRequestProperty("Content-Type", f1415a ? "application/octet-stream" : "application/x-gzip");
+                httpURLConnection.setRequestProperty("Content-Type", f1367a ? "application/octet-stream" : "application/x-gzip");
                 httpURLConnection.setRequestProperty("Accept-Encoding", "gzip");
                 try {
                     byte[] bytes = str2.getBytes();
                     if (bytes == null) {
                         return false;
                     }
-                    if (f1415a) {
+                    if (f1367a) {
                         httpURLConnection.getOutputStream().write(bytes);
                     } else {
                         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
@@ -148,8 +148,8 @@ public final class e {
                     httpURLConnection.getOutputStream().flush();
                     try {
                         int responseCode = httpURLConnection.getResponseCode();
-                        if (f1415a) {
-                            a.a.a.a.a.e.e.f1361c.b("QosReporter", "response code = " + responseCode);
+                        if (f1367a) {
+                            a.a.a.a.a.e.e.f1313c.b("QosReporter", "response code = " + responseCode);
                         }
                         if (responseCode == 200 && (contentLength = httpURLConnection.getContentLength()) != 0) {
                             int i = contentLength;
@@ -168,8 +168,8 @@ public final class e {
                                                 return false;
                                             }
                                             String trim = new String(bArr).trim();
-                                            if (f1415a) {
-                                                a.a.a.a.a.e.e.f1361c.b("QosReporter", trim);
+                                            if (f1367a) {
+                                                a.a.a.a.a.e.e.f1313c.b("QosReporter", trim);
                                             }
                                             try {
                                                 JSONObject jSONObject = new JSONObject(trim);
@@ -180,21 +180,21 @@ public final class e {
                                                 return true;
                                             }
                                         } catch (IOException e2) {
-                                            if (f1415a) {
+                                            if (f1367a) {
                                                 e2.printStackTrace();
                                                 return false;
                                             }
                                             return false;
                                         }
                                     } catch (IOException e3) {
-                                        if (f1415a) {
+                                        if (f1367a) {
                                             e3.printStackTrace();
                                         }
                                         try {
                                             inputStream.close();
                                             return false;
                                         } catch (IOException e4) {
-                                            if (f1415a) {
+                                            if (f1367a) {
                                                 e4.printStackTrace();
                                                 return false;
                                             }
@@ -206,7 +206,7 @@ public final class e {
                                         inputStream.close();
                                         throw th;
                                     } catch (IOException e5) {
-                                        if (f1415a) {
+                                        if (f1367a) {
                                             e5.printStackTrace();
                                             return false;
                                         }
@@ -214,13 +214,13 @@ public final class e {
                                     }
                                 }
                             } catch (IOException e6) {
-                                if (f1415a) {
+                                if (f1367a) {
                                     e6.printStackTrace();
                                     return false;
                                 }
                                 return false;
                             } catch (Exception e7) {
-                                if (f1415a) {
+                                if (f1367a) {
                                     e7.printStackTrace();
                                     return false;
                                 }
@@ -229,14 +229,14 @@ public final class e {
                         }
                         return false;
                     } catch (IOException e8) {
-                        if (f1415a) {
+                        if (f1367a) {
                             e8.printStackTrace();
                             return false;
                         }
                         return false;
                     }
                 } catch (IOException e9) {
-                    if (f1415a) {
+                    if (f1367a) {
                         e9.printStackTrace();
                         return false;
                     }
@@ -245,20 +245,20 @@ public final class e {
                     return false;
                 }
             } catch (ProtocolException e11) {
-                if (f1415a) {
+                if (f1367a) {
                     e11.printStackTrace();
                     return false;
                 }
                 return false;
             }
         } catch (IOException e12) {
-            if (f1415a) {
+            if (f1367a) {
                 e12.printStackTrace();
                 return false;
             }
             return false;
         } catch (Exception e13) {
-            if (f1415a) {
+            if (f1367a) {
                 e13.printStackTrace();
                 return false;
             }
@@ -287,7 +287,7 @@ public final class e {
             return;
         }
         c();
-        this.f.sendEmptyMessageDelayed(5, f1416c);
+        this.f.sendEmptyMessageDelayed(5, f1368c);
     }
 
     public final void c() {
@@ -323,6 +323,6 @@ public final class e {
             return;
         }
         this.e = true;
-        handler.sendEmptyMessageDelayed(5, f1416c);
+        handler.sendEmptyMessageDelayed(5, f1368c);
     }
 }

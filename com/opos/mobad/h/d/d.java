@@ -19,8 +19,8 @@ public class d extends a {
     private com.opos.cmn.e.a.a.c t;
     private Bitmap u;
 
-    public d(Context context, a.InterfaceC0708a interfaceC0708a) {
-        super(context, interfaceC0708a, 1.0650887f);
+    public d(Context context, a.InterfaceC0538a interfaceC0538a) {
+        super(context, interfaceC0538a, 1.0650887f);
         this.u = null;
     }
 
@@ -38,7 +38,7 @@ public class d extends a {
     }
 
     private void o() {
-        this.n = new TextView(this.f25896a);
+        this.n = new TextView(this.f12208a);
         this.n.setId(2);
         this.n.setTextColor(Color.parseColor("#333333"));
         this.n.setTextSize(1, m() * 16.0f);
@@ -52,7 +52,7 @@ public class d extends a {
     }
 
     private void p() {
-        com.opos.cmn.e.a.a.c cVar = new com.opos.cmn.e.a.a.c(this.f25896a, 6.66f);
+        com.opos.cmn.e.a.a.c cVar = new com.opos.cmn.e.a.a.c(this.f12208a, 6.66f);
         this.t = cVar;
         cVar.setScaleType(ImageView.ScaleType.FIT_XY);
         this.t.setId(3);

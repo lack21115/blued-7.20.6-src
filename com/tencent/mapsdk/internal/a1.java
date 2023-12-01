@@ -19,7 +19,7 @@ import com.tencent.tencentmap.mapsdk.maps.model.TencentMapGestureListener;
 public interface a1 extends MapDelegate<rc, VectorMap, x1>, hj.n, me, v4, TencentMap.OnIndoorStateChangeListener {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f37284a = 0;
+    public static final int f23593a = 0;
     public static final int b = 1;
 
     rc A();

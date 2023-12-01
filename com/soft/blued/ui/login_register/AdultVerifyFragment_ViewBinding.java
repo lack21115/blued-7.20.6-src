@@ -17,8 +17,8 @@ public class AdultVerifyFragment_ViewBinding implements Unbinder {
     public AdultVerifyFragment_ViewBinding(AdultVerifyFragment adultVerifyFragment, View view) {
         this.b = adultVerifyFragment;
         adultVerifyFragment.title = (CommonTopTitleNoTrans) Utils.a(view, 2131370694, "field 'title'", CommonTopTitleNoTrans.class);
-        adultVerifyFragment.flCover = (FrameLayout) Utils.a(view, 2131363788, "field 'flCover'", FrameLayout.class);
-        adultVerifyFragment.imgCover = (ImageView) Utils.a(view, 2131364496, "field 'imgCover'", ImageView.class);
+        adultVerifyFragment.flCover = (FrameLayout) Utils.a(view, R.id.fl_cover, "field 'flCover'", FrameLayout.class);
+        adultVerifyFragment.imgCover = (ImageView) Utils.a(view, R.id.img_cover, "field 'imgCover'", ImageView.class);
         adultVerifyFragment.imgBtmIcon = (ImageView) Utils.a(view, R.id.img_btm_icon, "field 'imgBtmIcon'", ImageView.class);
         adultVerifyFragment.tvUpIdFront = (TextView) Utils.a(view, R.id.tv_up_id_front, "field 'tvUpIdFront'", TextView.class);
         adultVerifyFragment.tvTitle = (TextView) Utils.a(view, 2131372754, "field 'tvTitle'", TextView.class);

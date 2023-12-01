@@ -1,7 +1,6 @@
 package io.grpc.okhttp;
 
-import android.provider.ContactsContract;
-import android.provider.Downloads;
+import com.alipay.sdk.cons.b;
 import com.google.common.base.Preconditions;
 import io.grpc.InternalMetadata;
 import io.grpc.Metadata;
@@ -14,9 +13,9 @@ import okio.ByteString;
 
 /* loaded from: source-3503164-dex2jar.jar:io/grpc/okhttp/Headers.class */
 class Headers {
-    public static final Header HTTPS_SCHEME_HEADER = new Header(Header.TARGET_SCHEME, "https");
+    public static final Header HTTPS_SCHEME_HEADER = new Header(Header.TARGET_SCHEME, b.a);
     public static final Header HTTP_SCHEME_HEADER = new Header(Header.TARGET_SCHEME, "http");
-    public static final Header METHOD_HEADER = new Header(Header.TARGET_METHOD, "POST");
+    public static final Header METHOD_HEADER = new Header(Header.TARGET_METHOD, GrpcUtil.HTTP_METHOD);
     public static final Header METHOD_GET_HEADER = new Header(Header.TARGET_METHOD, "GET");
     public static final Header CONTENT_TYPE_HEADER = new Header(GrpcUtil.CONTENT_TYPE_KEY.name(), GrpcUtil.CONTENT_TYPE_GRPC);
     public static final Header TE_HEADER = new Header("te", GrpcUtil.TE_TRAILERS);
@@ -25,9 +24,9 @@ class Headers {
     }
 
     public static List<Header> createRequestHeaders(Metadata metadata, String str, String str2, String str3, boolean z, boolean z2) {
-        Preconditions.checkNotNull(metadata, Downloads.Impl.RequestHeaders.URI_SEGMENT);
+        Preconditions.checkNotNull(metadata, "headers");
         Preconditions.checkNotNull(str, "defaultPath");
-        Preconditions.checkNotNull(str2, ContactsContract.Directory.DIRECTORY_AUTHORITY);
+        Preconditions.checkNotNull(str2, "authority");
         metadata.discardAll(GrpcUtil.CONTENT_TYPE_KEY);
         metadata.discardAll(GrpcUtil.TE_HEADER);
         metadata.discardAll(GrpcUtil.USER_AGENT_KEY);

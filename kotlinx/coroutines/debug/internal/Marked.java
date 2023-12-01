@@ -6,11 +6,9 @@ import kotlin.Metadata;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/debug/internal/Marked.class */
 public final class Marked {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final Object f43041a;
+    public final Object a;
 
     public Marked(Object obj) {
-        this.f43041a = obj;
+        this.a = obj;
     }
 }

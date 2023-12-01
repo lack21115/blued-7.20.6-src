@@ -2,7 +2,6 @@ package com.tencent.turingface.sdk.mfa;
 
 import android.os.Process;
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -14,15 +13,15 @@ import java.util.Set;
 public final class wmqhz {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Set<String> f40009a;
+    public static final Set<String> f26318a;
     public static final String[] b;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final Set<String> f40010c;
+    public static final Set<String> f26319c;
 
     static {
         HashSet hashSet = new HashSet();
-        f40009a = hashSet;
+        f26318a = hashSet;
         b = new String[0];
         hashSet.add(kC0XR.a(kC0XR.M));
         hashSet.add(kC0XR.a(kC0XR.N));
@@ -37,7 +36,7 @@ public final class wmqhz {
         hashSet.add(kC0XR.a(kC0XR.W));
         hashSet.add(kC0XR.a(kC0XR.X));
         HashSet hashSet2 = new HashSet();
-        f40010c = hashSet2;
+        f26319c = hashSet2;
         hashSet2.add(kC0XR.a(kC0XR.L));
     }
 
@@ -56,6 +55,9 @@ public final class wmqhz {
         throw new UnsupportedOperationException("Method not decompiled: com.tencent.turingface.sdk.mfa.wmqhz.a(java.lang.String, java.lang.String, java.lang.String):java.lang.String");
     }
 
+    /* JADX WARN: Type inference failed for: r0v101, types: [java.util.HashSet, java.util.Set<java.lang.String>] */
+    /* JADX WARN: Type inference failed for: r0v139, types: [java.util.HashSet, java.util.Set<java.lang.String>] */
+    /* JADX WARN: Type inference failed for: r0v95, types: [java.util.HashSet, java.util.Set<java.lang.String>] */
     public static List<Bwfl9> a() {
         boolean z;
         boolean z2;
@@ -90,7 +92,7 @@ public final class wmqhz {
         int i3 = 0;
         while (it.hasNext()) {
             bUA8L bua8l = (bUA8L) it.next();
-            if (myPid == bua8l.f39939a) {
+            if (myPid == bua8l.f26248a) {
                 i3 = bua8l.e;
             }
         }
@@ -99,13 +101,13 @@ public final class wmqhz {
             String str2 = "";
             while (it2.hasNext()) {
                 bUA8L bua8l2 = (bUA8L) it2.next();
-                if (i3 == bua8l2.f39939a) {
+                if (i3 == bua8l2.f26248a) {
                     str2 = bua8l2.d;
                 }
             }
             if (!TextUtils.isEmpty(str2)) {
                 Bwfl9 bwfl9 = new Bwfl9();
-                bwfl9.f39862a = uAnWx.f40000a + uAnWx.e;
+                bwfl9.f26171a = uAnWx.f26309a + uAnWx.e;
                 bwfl9.b = str2;
                 arrayList3.add(bwfl9);
             }
@@ -116,18 +118,18 @@ public final class wmqhz {
         Iterator it3 = arrayList2.iterator();
         while (it3.hasNext()) {
             bUA8L bua8l3 = (bUA8L) it3.next();
-            Iterator<String> it4 = f40009a.iterator();
+            Iterator it4 = f26318a.iterator();
             while (it4.hasNext()) {
-                if (bua8l3.d.contains(it4.next())) {
+                if (bua8l3.d.contains((String) it4.next())) {
                     sb.append(bua8l3.d);
-                    sb.append(BridgeUtil.UNDERLINE_STR);
+                    sb.append("_");
                 }
             }
         }
         String sb2 = sb.toString();
         if (!TextUtils.isEmpty(sb2)) {
             Bwfl9 bwfl92 = new Bwfl9();
-            bwfl92.f39862a = uAnWx.f40000a + uAnWx.f40001c;
+            bwfl92.f26171a = uAnWx.f26309a + uAnWx.f26310c;
             bwfl92.b = sb2.substring(0, sb2.length() - 1);
             arrayList4.add(bwfl92);
         }
@@ -139,13 +141,13 @@ public final class wmqhz {
         int i4 = 0;
         while (it5.hasNext()) {
             bUA8L bua8l4 = (bUA8L) it5.next();
-            if (bua8l4.f39940c == 0 && bua8l4.d.startsWith(BridgeUtil.SPLIT_MARK) && !bua8l4.d.startsWith("/system") && !bua8l4.d.startsWith("/dev") && !bua8l4.d.startsWith("/sbin") && !bua8l4.d.startsWith("/init") && !bua8l4.d.startsWith("/vendor") && !bua8l4.d.startsWith("/bin") && !bua8l4.d.startsWith("/usr") && !bua8l4.d.contains("kinguser") && !bua8l4.d.endsWith("so")) {
-                Iterator<String> it6 = f40009a.iterator();
+            if (bua8l4.f26249c == 0 && bua8l4.d.startsWith("/") && !bua8l4.d.startsWith("/system") && !bua8l4.d.startsWith("/dev") && !bua8l4.d.startsWith("/sbin") && !bua8l4.d.startsWith("/init") && !bua8l4.d.startsWith("/vendor") && !bua8l4.d.startsWith("/bin") && !bua8l4.d.startsWith("/usr") && !bua8l4.d.contains("kinguser") && !bua8l4.d.endsWith("so")) {
+                Iterator it6 = f26318a.iterator();
                 while (true) {
                     if (!it6.hasNext()) {
                         z = false;
                         break;
-                    } else if (bua8l4.d.contains(it6.next())) {
+                    } else if (bua8l4.d.contains((String) it6.next())) {
                         z = true;
                         break;
                     }
@@ -153,12 +155,12 @@ public final class wmqhz {
                 if (z) {
                     continue;
                 } else {
-                    Iterator<String> it7 = f40010c.iterator();
+                    Iterator it7 = f26319c.iterator();
                     while (true) {
                         if (!it7.hasNext()) {
                             z2 = false;
                             break;
-                        } else if (bua8l4.d.contains(it7.next())) {
+                        } else if (bua8l4.d.contains((String) it7.next())) {
                             z2 = true;
                             break;
                         }
@@ -183,7 +185,7 @@ public final class wmqhz {
             }
             String sb4 = sb3.toString();
             Bwfl9 bwfl93 = new Bwfl9();
-            bwfl93.f39862a = uAnWx.f40000a + uAnWx.d;
+            bwfl93.f26171a = uAnWx.f26309a + uAnWx.d;
             bwfl93.b = sb4.substring(0, sb4.length() - 1);
             arrayList5.add(bwfl93);
         }
@@ -200,7 +202,7 @@ public final class wmqhz {
         String a3 = a(kC0XR.a(kC0XR.p0), "(.{32}:.{3,4})\\s(.{32}:.{3,4})\\s(.{2})\\s.{8}:.{8}\\s.{2}:.{8}\\s.{8}\\s+(.{4,5})", "v6");
         if (!TextUtils.isEmpty(a3)) {
             if (!TextUtils.isEmpty(a2)) {
-                stringBuffer.append(BridgeUtil.UNDERLINE_STR);
+                stringBuffer.append("_");
             }
             stringBuffer.append(a3);
         }

@@ -24,7 +24,7 @@ import java.util.ArrayList;
 public final class c {
 
     /* renamed from: c  reason: collision with root package name */
-    private static String f8194c = "SplashLoadManager";
+    private static String f5354c = "SplashLoadManager";
     private static final int l = 1;
     private static final int m = 2;
     private static final int n = 3;
@@ -95,7 +95,7 @@ public final class c {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    boolean f8195a = false;
+    boolean f5355a = false;
     private Context i = n.a().g();
 
     /* renamed from: com.anythink.expressad.splash.c.c$4  reason: invalid class name */
@@ -103,11 +103,11 @@ public final class c {
     final class AnonymousClass4 implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ com.anythink.expressad.foundation.d.c f8200a;
+        final /* synthetic */ com.anythink.expressad.foundation.d.c f5360a;
         final /* synthetic */ int b;
 
         AnonymousClass4(com.anythink.expressad.foundation.d.c cVar, int i) {
-            this.f8200a = cVar;
+            this.f5360a = cVar;
             this.b = i;
         }
 
@@ -121,12 +121,12 @@ public final class c {
             try {
                 try {
                     try {
-                        File file3 = new File(this.f8200a.d());
+                        File file3 = new File(this.f5360a.d());
                         File file4 = file3;
                         try {
                             if (!file3.exists()) {
                                 String b = com.anythink.expressad.foundation.g.c.d.b(com.anythink.expressad.foundation.g.c.a.ANYTHINK_700_HTML);
-                                String a2 = p.a(x.a(this.f8200a.d()));
+                                String a2 = p.a(x.a(this.f5360a.d()));
                                 String str = a2;
                                 if (TextUtils.isEmpty(a2)) {
                                     str = String.valueOf(System.currentTimeMillis());
@@ -142,7 +142,7 @@ public final class c {
                                             com.anythink.expressad.d.b.a.a();
                                             sb.append(com.anythink.expressad.d.b.a.b());
                                             sb.append("</script>");
-                                            sb.append(this.f8200a.d());
+                                            sb.append(this.f5360a.d());
                                             fileOutputStream4.write(sb.toString().getBytes());
                                             fileOutputStream4.flush();
                                         } catch (Exception e) {
@@ -150,7 +150,7 @@ public final class c {
                                             e = e;
                                             e.printStackTrace();
                                             FileOutputStream fileOutputStream5 = fileOutputStream;
-                                            this.f8200a.j("");
+                                            this.f5360a.j("");
                                             if (fileOutputStream != null) {
                                                 fileOutputStream.close();
                                             }
@@ -192,13 +192,13 @@ public final class c {
                         fileOutputStream = null;
                     }
                     if (!file2.exists() && file2.isFile() && file2.canRead()) {
-                        this.f8200a.b(file2.getAbsolutePath());
+                        this.f5360a.b(file2.getAbsolutePath());
                         final File file5 = file2;
                         n.a().a(new Runnable() { // from class: com.anythink.expressad.splash.c.c.4.1
                             @Override // java.lang.Runnable
                             public final void run() {
                                 c cVar2 = c.this;
-                                c.a(cVar2, "file:////" + file5.getAbsolutePath(), AnonymousClass4.this.f8200a, AnonymousClass4.this.b);
+                                c.a(cVar2, "file:////" + file5.getAbsolutePath(), AnonymousClass4.this.f5360a, AnonymousClass4.this.b);
                             }
                         });
                         return;
@@ -223,11 +223,11 @@ public final class c {
     final class AnonymousClass5 implements i.d {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ com.anythink.expressad.foundation.d.c f8203a;
+        final /* synthetic */ com.anythink.expressad.foundation.d.c f5363a;
         final /* synthetic */ int b;
 
         AnonymousClass5(com.anythink.expressad.foundation.d.c cVar, int i) {
-            this.f8203a = cVar;
+            this.f5363a = cVar;
             this.b = i;
         }
 
@@ -235,7 +235,7 @@ public final class c {
         public final void a(String str) {
             Message obtain = Message.obtain();
             obtain.what = 1;
-            obtain.obj = this.f8203a;
+            obtain.obj = this.f5363a;
             obtain.arg1 = this.b;
             c.this.C.sendMessage(obtain);
         }
@@ -258,11 +258,11 @@ public final class c {
     public final class AnonymousClass6 implements com.anythink.expressad.splash.b.a {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ com.anythink.expressad.foundation.d.c f8205a;
+        final /* synthetic */ com.anythink.expressad.foundation.d.c f5365a;
         final /* synthetic */ int b;
 
         AnonymousClass6(com.anythink.expressad.foundation.d.c cVar, int i) {
-            this.f8205a = cVar;
+            this.f5365a = cVar;
             this.b = i;
         }
 
@@ -271,7 +271,7 @@ public final class c {
             if (c.this.j != null) {
                 c.this.j.setDynamicView(true);
                 c.this.j.setSplashNativeView(view);
-                c.this.b(this.f8205a, this.b);
+                c.this.b(this.f5365a, this.b);
             }
         }
 
@@ -289,26 +289,26 @@ public final class c {
     public final class AnonymousClass7 implements e.b {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ com.anythink.expressad.foundation.d.c f8207a;
+        final /* synthetic */ com.anythink.expressad.foundation.d.c f5367a;
         final /* synthetic */ int b;
 
         AnonymousClass7(com.anythink.expressad.foundation.d.c cVar, int i) {
-            this.f8207a = cVar;
+            this.f5367a = cVar;
             this.b = i;
         }
 
         @Override // com.anythink.expressad.splash.c.e.b
         public final void a() {
-            if (this.f8207a.s()) {
+            if (this.f5367a.s()) {
                 return;
             }
-            c.c(c.this, this.f8207a, this.b);
+            c.c(c.this, this.f5367a, this.b);
         }
 
         @Override // com.anythink.expressad.splash.c.e.b
         public final void a(int i) {
             if (i == 1) {
-                c.c(c.this, this.f8207a, this.b);
+                c.c(c.this, this.f5367a, this.b);
             } else {
                 c.this.a("readyState 2");
             }
@@ -325,18 +325,18 @@ public final class c {
     final class AnonymousClass8 implements com.anythink.expressad.videocommon.d.b {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ com.anythink.expressad.foundation.d.c f8209a;
+        final /* synthetic */ com.anythink.expressad.foundation.d.c f5369a;
 
         AnonymousClass8(com.anythink.expressad.foundation.d.c cVar) {
-            this.f8209a = cVar;
+            this.f5369a = cVar;
         }
 
         @Override // com.anythink.expressad.videocommon.d.b
         public final void a(String str) {
             c.this.j.setVideoReady(true);
-            o.a(c.f8194c, "========VIDEO SUC");
+            o.a(c.f5354c, "========VIDEO SUC");
             Message obtain = Message.obtain();
-            obtain.obj = this.f8209a;
+            obtain.obj = this.f5369a;
             obtain.what = 3;
             c.this.C.sendMessage(obtain);
         }
@@ -344,7 +344,7 @@ public final class c {
         @Override // com.anythink.expressad.videocommon.d.b
         public final void a(String str, String str2) {
             c.this.j.setVideoReady(false);
-            o.a(c.f8194c, "========VIDEO FAI");
+            o.a(c.f5354c, "========VIDEO FAI");
             Message obtain = Message.obtain();
             obtain.obj = str;
             obtain.what = 2;
@@ -426,7 +426,7 @@ public final class c {
         cVar3.a(str);
         cVar3.b(cVar.o);
         cVar3.a(cVar.p);
-        cVar3.a(cVar.f8195a);
+        cVar3.a(cVar.f5355a);
         e.a.a().a(cVar.j, cVar3, new AnonymousClass7(cVar2, i));
     }
 
@@ -447,7 +447,7 @@ public final class c {
         cVar2.a(str);
         cVar2.b(this.o);
         cVar2.a(this.p);
-        cVar2.a(this.f8195a);
+        cVar2.a(this.f5355a);
         e.a.a().a(this.j, cVar2, new AnonymousClass7(cVar, i));
     }
 
@@ -610,9 +610,9 @@ public final class c {
                     }
                 }
             } catch (Throwable th) {
-                o.d(f8194c, th.getMessage());
+                o.d(f5354c, th.getMessage());
             }
-            a.C0156a.a();
+            a.C0085a.a();
             a.a(cVar.j, new com.anythink.expressad.splash.a.b(aVar), new AnonymousClass6(cVar2, i));
         }
     }
@@ -622,7 +622,7 @@ public final class c {
             return;
         }
         l();
-        o.d(f8194c, "real failed ");
+        o.d(f5354c, "real failed ");
         this.v = true;
         com.anythink.expressad.splash.b.c cVar = this.h;
         if (cVar != null) {
@@ -721,10 +721,10 @@ public final class c {
             int i = this.z + 1;
             this.z = i;
             if (this.k == null || i > this.k.t()) {
-                o.b(f8194c, "onload 重置offset为0");
+                o.b(f5354c, "onload 重置offset为0");
                 this.z = 0;
             }
-            String str = f8194c;
+            String str = f5354c;
             o.b(str, "onload 算出 下次的offset是:" + this.z);
         } catch (Exception e) {
             e.printStackTrace();
@@ -768,9 +768,9 @@ public final class c {
                     }
                 }
             } catch (Throwable th) {
-                o.d(f8194c, th.getMessage());
+                o.d(f5354c, th.getMessage());
             }
-            a.C0156a.a();
+            a.C0085a.a();
             a.a(this.j, new com.anythink.expressad.splash.a.b(aVar), new AnonymousClass6(cVar, i));
         }
     }
@@ -854,7 +854,7 @@ public final class c {
     }
 
     public final void a(boolean z) {
-        this.f8195a = z;
+        this.f5355a = z;
     }
 
     public final void b() {

@@ -10,7 +10,7 @@ public class DataBuffer implements Parcelable {
     public String URI;
 
     /* renamed from: a  reason: collision with root package name */
-    private int f22671a;
+    private int f9063a;
     private Bundle b;
     public Bundle header;
 
@@ -34,13 +34,13 @@ public class DataBuffer implements Parcelable {
 
     public DataBuffer() {
         this.header = null;
-        this.f22671a = 1;
+        this.f9063a = 1;
         this.b = null;
     }
 
     private DataBuffer(Parcel parcel) {
         this.header = null;
-        this.f22671a = 1;
+        this.f9063a = 1;
         this.b = null;
         a(parcel);
     }
@@ -51,17 +51,17 @@ public class DataBuffer implements Parcelable {
 
     public DataBuffer(String str) {
         this.header = null;
-        this.f22671a = 1;
+        this.f9063a = 1;
         this.b = null;
         this.URI = str;
     }
 
     public DataBuffer(String str, int i) {
         this.header = null;
-        this.f22671a = 1;
+        this.f9063a = 1;
         this.b = null;
         this.URI = str;
-        this.f22671a = i;
+        this.f9063a = i;
     }
 
     private static ClassLoader a(Class cls) {
@@ -69,7 +69,7 @@ public class DataBuffer implements Parcelable {
     }
 
     private void a(Parcel parcel) {
-        this.f22671a = parcel.readInt();
+        this.f9063a = parcel.readInt();
         this.URI = parcel.readString();
         this.header = parcel.readBundle(a(Bundle.class));
         this.b = parcel.readBundle(a(Bundle.class));
@@ -94,12 +94,12 @@ public class DataBuffer implements Parcelable {
     }
 
     public int getProtocol() {
-        return this.f22671a;
+        return this.f9063a;
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeInt(this.f22671a);
+        parcel.writeInt(this.f9063a);
         parcel.writeString(this.URI);
         parcel.writeBundle(this.header);
         parcel.writeBundle(this.b);

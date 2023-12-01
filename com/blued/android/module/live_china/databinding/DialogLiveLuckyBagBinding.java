@@ -16,13 +16,9 @@ import com.google.android.material.appbar.CollapsingToolbarLayout;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/DialogLiveLuckyBagBinding.class */
 public final class DialogLiveLuckyBagBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final AppBarLayout f11779a;
+    public final AppBarLayout a;
     public final ConstraintLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ConstraintLayout f11780c;
+    public final ConstraintLayout c;
     public final ConstraintLayout d;
     public final CollapsingToolbarLayout e;
     public final ImageView f;
@@ -43,9 +39,9 @@ public final class DialogLiveLuckyBagBinding implements ViewBinding {
 
     private DialogLiveLuckyBagBinding(ConstraintLayout constraintLayout, AppBarLayout appBarLayout, ConstraintLayout constraintLayout2, ConstraintLayout constraintLayout3, ConstraintLayout constraintLayout4, CollapsingToolbarLayout collapsingToolbarLayout, ImageView imageView, ImageView imageView2, ImageView imageView3, ImageView imageView4, ImageView imageView5, ImageView imageView6, SlopeLoadingView slopeLoadingView, RecyclerView recyclerView, TextView textView, TextView textView2, TextView textView3, TextView textView4, TextView textView5, ViewPager viewPager) {
         this.t = constraintLayout;
-        this.f11779a = appBarLayout;
+        this.a = appBarLayout;
         this.b = constraintLayout2;
-        this.f11780c = constraintLayout3;
+        this.c = constraintLayout3;
         this.d = constraintLayout4;
         this.e = collapsingToolbarLayout;
         this.f = imageView;
@@ -78,16 +74,16 @@ public final class DialogLiveLuckyBagBinding implements ViewBinding {
 
     public static DialogLiveLuckyBagBinding a(View view) {
         String str;
-        AppBarLayout appBarLayout = (AppBarLayout) view.findViewById(R.id.abl);
-        if (appBarLayout != null) {
-            ConstraintLayout constraintLayout = (ConstraintLayout) view.findViewById(R.id.cl_head_root);
-            if (constraintLayout != null) {
-                ConstraintLayout constraintLayout2 = (ConstraintLayout) view.findViewById(R.id.cl_send);
-                if (constraintLayout2 != null) {
-                    ConstraintLayout constraintLayout3 = (ConstraintLayout) view.findViewById(R.id.cl_send_root);
-                    if (constraintLayout3 != null) {
-                        CollapsingToolbarLayout collapsingToolbarLayout = (CollapsingToolbarLayout) view.findViewById(R.id.ctl);
-                        if (collapsingToolbarLayout != null) {
+        AppBarLayout findViewById = view.findViewById(R.id.abl);
+        if (findViewById != null) {
+            ConstraintLayout findViewById2 = view.findViewById(R.id.cl_head_root);
+            if (findViewById2 != null) {
+                ConstraintLayout findViewById3 = view.findViewById(R.id.cl_send);
+                if (findViewById3 != null) {
+                    ConstraintLayout findViewById4 = view.findViewById(R.id.cl_send_root);
+                    if (findViewById4 != null) {
+                        CollapsingToolbarLayout findViewById5 = view.findViewById(R.id.ctl);
+                        if (findViewById5 != null) {
                             ImageView imageView = (ImageView) view.findViewById(R.id.iv_beans);
                             if (imageView != null) {
                                 ImageView imageView2 = (ImageView) view.findViewById(R.id.iv_cursor);
@@ -102,8 +98,8 @@ public final class DialogLiveLuckyBagBinding implements ViewBinding {
                                                 if (imageView6 != null) {
                                                     SlopeLoadingView slopeLoadingView = (SlopeLoadingView) view.findViewById(R.id.loading);
                                                     if (slopeLoadingView != null) {
-                                                        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rv_tab_list);
-                                                        if (recyclerView != null) {
+                                                        RecyclerView findViewById6 = view.findViewById(R.id.rv_tab_list);
+                                                        if (findViewById6 != null) {
                                                             TextView textView = (TextView) view.findViewById(R.id.tv_gift_name);
                                                             if (textView != null) {
                                                                 TextView textView2 = (TextView) view.findViewById(R.id.tv_gift_price);
@@ -114,9 +110,9 @@ public final class DialogLiveLuckyBagBinding implements ViewBinding {
                                                                         if (textView4 != null) {
                                                                             TextView textView5 = (TextView) view.findViewById(R.id.tv_lucky_come_tag);
                                                                             if (textView5 != null) {
-                                                                                ViewPager viewPager = (ViewPager) view.findViewById(R.id.vp_lucky_bag);
-                                                                                if (viewPager != null) {
-                                                                                    return new DialogLiveLuckyBagBinding((ConstraintLayout) view, appBarLayout, constraintLayout, constraintLayout2, constraintLayout3, collapsingToolbarLayout, imageView, imageView2, imageView3, imageView4, imageView5, imageView6, slopeLoadingView, recyclerView, textView, textView2, textView3, textView4, textView5, viewPager);
+                                                                                ViewPager findViewById7 = view.findViewById(R.id.vp_lucky_bag);
+                                                                                if (findViewById7 != null) {
+                                                                                    return new DialogLiveLuckyBagBinding((ConstraintLayout) view, findViewById, findViewById2, findViewById3, findViewById4, findViewById5, imageView, imageView2, imageView3, imageView4, imageView5, imageView6, slopeLoadingView, findViewById6, textView, textView2, textView3, textView4, textView5, findViewById7);
                                                                                 }
                                                                                 str = "vpLuckyBag";
                                                                             } else {
@@ -176,7 +172,6 @@ public final class DialogLiveLuckyBagBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.t;

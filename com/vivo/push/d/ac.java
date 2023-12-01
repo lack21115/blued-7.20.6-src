@@ -8,20 +8,20 @@ import java.util.List;
 final class ac implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ int f41072a;
+    final /* synthetic */ int f27381a;
     final /* synthetic */ List b;
 
     /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ List f41073c;
+    final /* synthetic */ List f27382c;
     final /* synthetic */ String d;
     final /* synthetic */ aa e;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public ac(aa aaVar, int i, List list, List list2, String str) {
         this.e = aaVar;
-        this.f41072a = i;
+        this.f27381a = i;
         this.b = list;
-        this.f41073c = list2;
+        this.f27382c = list2;
         this.d = str;
     }
 
@@ -29,7 +29,7 @@ final class ac implements Runnable {
     public final void run() {
         Context context;
         PushMessageCallback pushMessageCallback = this.e.b;
-        context = this.e.f41105a;
-        pushMessageCallback.onSetAlias(context, this.f41072a, this.b, this.f41073c, this.d);
+        context = this.e.f27414a;
+        pushMessageCallback.onSetAlias(context, this.f27381a, this.b, this.f27382c, this.d);
     }
 }

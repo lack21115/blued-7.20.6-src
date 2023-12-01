@@ -127,11 +127,11 @@ public final class FitemRankHourHistory extends FreedomItem {
             return;
         }
         ImageLoader.c(baseViewHolder.b, imageView3.getId() == R.id.iv_left_bounce ? "live_rank_hour_bounce_white.png" : "live_rank_hour_bounce.png").g().g(-1).a(imageView3);
-        View.OnClickListener a2 = a((BaseFragment) baseViewHolder.f10931a.a("BaseFragment", (String) null), rankHourDataModel);
-        if (a2 == null) {
+        View.OnClickListener a = a((BaseFragment) baseViewHolder.a.a("BaseFragment", (String) null), rankHourDataModel);
+        if (a == null) {
             return;
         }
-        baseViewHolder.a(view, a2).a((View) imageView3, true);
+        baseViewHolder.a(view, a).a((View) imageView3, true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -158,34 +158,34 @@ public final class FitemRankHourHistory extends FreedomItem {
         Intrinsics.e(vh, "vh");
         a(context, vh);
         RankHourDataModel top = this.b.getTop();
-        View a2 = vh.a(R.id.rl_left_root);
-        Intrinsics.c(a2, "vh.getView(R.id.rl_left_root)");
-        View a3 = vh.a(R.id.iv_left_avatar);
-        Intrinsics.c(a3, "vh.getView(R.id.iv_left_avatar)");
-        ImageView imageView = (ImageView) a3;
-        View a4 = vh.a(R.id.iv_left_avatar_frame);
-        Intrinsics.c(a4, "vh.getView(R.id.iv_left_avatar_frame)");
-        ImageView imageView2 = (ImageView) a4;
-        View a5 = vh.a(R.id.tv_left_name);
-        Intrinsics.c(a5, "vh.getView(R.id.tv_left_name)");
-        TextView textView = (TextView) a5;
-        View a6 = vh.a(R.id.iv_left_bounce);
-        Intrinsics.c(a6, "vh.getView(R.id.iv_left_bounce)");
-        a(context, top, vh, a2, imageView, imageView2, textView, (ImageView) a6);
+        View a = vh.a(R.id.rl_left_root);
+        Intrinsics.c(a, "vh.getView(R.id.rl_left_root)");
+        View a2 = vh.a(R.id.iv_left_avatar);
+        Intrinsics.c(a2, "vh.getView(R.id.iv_left_avatar)");
+        ImageView imageView = (ImageView) a2;
+        View a3 = vh.a(R.id.iv_left_avatar_frame);
+        Intrinsics.c(a3, "vh.getView(R.id.iv_left_avatar_frame)");
+        ImageView imageView2 = (ImageView) a3;
+        View a4 = vh.a(R.id.tv_left_name);
+        Intrinsics.c(a4, "vh.getView(R.id.tv_left_name)");
+        TextView textView = (TextView) a4;
+        View a5 = vh.a(R.id.iv_left_bounce);
+        Intrinsics.c(a5, "vh.getView(R.id.iv_left_bounce)");
+        a(context, top, vh, a, imageView, imageView2, textView, (ImageView) a5);
         RankHourDataModel potential = this.b.getPotential();
-        View a7 = vh.a(R.id.rl_right_root);
-        Intrinsics.c(a7, "vh.getView(R.id.rl_right_root)");
-        View a8 = vh.a(R.id.iv_right_avatar);
-        Intrinsics.c(a8, "vh.getView(R.id.iv_right_avatar)");
-        ImageView imageView3 = (ImageView) a8;
-        View a9 = vh.a(R.id.iv_right_avatar_frame);
-        Intrinsics.c(a9, "vh.getView(R.id.iv_right_avatar_frame)");
-        ImageView imageView4 = (ImageView) a9;
-        View a10 = vh.a(R.id.tv_right_name);
-        Intrinsics.c(a10, "vh.getView(R.id.tv_right_name)");
-        TextView textView2 = (TextView) a10;
-        View a11 = vh.a(R.id.iv_right_bounce);
-        Intrinsics.c(a11, "vh.getView(R.id.iv_right_bounce)");
-        a(context, potential, vh, a7, imageView3, imageView4, textView2, (ImageView) a11);
+        View a6 = vh.a(R.id.rl_right_root);
+        Intrinsics.c(a6, "vh.getView(R.id.rl_right_root)");
+        View a7 = vh.a(R.id.iv_right_avatar);
+        Intrinsics.c(a7, "vh.getView(R.id.iv_right_avatar)");
+        ImageView imageView3 = (ImageView) a7;
+        View a8 = vh.a(R.id.iv_right_avatar_frame);
+        Intrinsics.c(a8, "vh.getView(R.id.iv_right_avatar_frame)");
+        ImageView imageView4 = (ImageView) a8;
+        View a9 = vh.a(R.id.tv_right_name);
+        Intrinsics.c(a9, "vh.getView(R.id.tv_right_name)");
+        TextView textView2 = (TextView) a9;
+        View a10 = vh.a(R.id.iv_right_bounce);
+        Intrinsics.c(a10, "vh.getView(R.id.iv_right_bounce)");
+        a(context, potential, vh, a6, imageView3, imageView4, textView2, (ImageView) a10);
     }
 }

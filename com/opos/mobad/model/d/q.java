@@ -11,14 +11,14 @@ import java.util.concurrent.ConcurrentHashMap;
 public class q {
 
     /* renamed from: a  reason: collision with root package name */
-    private p f26443a = new p();
+    private p f12755a = new p();
     private Map<String, r> b = new ConcurrentHashMap();
 
     private q a(int i, y yVar) {
         if (yVar == null) {
             return this;
         }
-        this.f26443a.a(yVar.aU, String.valueOf(i));
+        this.f12755a.a(yVar.aU, String.valueOf(i));
         return this;
     }
 
@@ -76,17 +76,17 @@ public class q {
         for (String str : this.b.keySet()) {
             String a2 = this.b.get(str).a();
             if (TextUtils.isEmpty(a2)) {
-                this.f26443a.a(str, String.valueOf(0));
+                this.f12755a.a(str, String.valueOf(0));
             } else {
                 try {
                     valueOf = URLEncoder.encode("0-" + a2);
                 } catch (Exception e) {
                     valueOf = String.valueOf(0);
                 }
-                this.f26443a.a(str, valueOf);
+                this.f12755a.a(str, valueOf);
             }
         }
-        String a3 = this.f26443a.a();
+        String a3 = this.f12755a.a();
         String str2 = a3;
         if (!TextUtils.isEmpty(a3)) {
             try {

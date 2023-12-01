@@ -12,7 +12,7 @@ import java.util.concurrent.locks.ReentrantLock;
 final class DiskCacheWriteLocker {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Map<String, WriteLock> f20821a = new HashMap();
+    private final Map<String, WriteLock> f7215a = new HashMap();
     private final WriteLockPool b = new WriteLockPool();
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -20,7 +20,7 @@ final class DiskCacheWriteLocker {
     public static class WriteLock {
 
         /* renamed from: a  reason: collision with root package name */
-        final Lock f20822a = new ReentrantLock();
+        final Lock f7216a = new ReentrantLock();
         int b;
 
         WriteLock() {
@@ -31,15 +31,15 @@ final class DiskCacheWriteLocker {
     static class WriteLockPool {
 
         /* renamed from: a  reason: collision with root package name */
-        private final Queue<WriteLock> f20823a = new ArrayDeque();
+        private final Queue<WriteLock> f7217a = new ArrayDeque();
 
         WriteLockPool() {
         }
 
         WriteLock a() {
             WriteLock poll;
-            synchronized (this.f20823a) {
-                poll = this.f20823a.poll();
+            synchronized (this.f7217a) {
+                poll = this.f7217a.poll();
             }
             WriteLock writeLock = poll;
             if (poll == null) {
@@ -49,9 +49,9 @@ final class DiskCacheWriteLocker {
         }
 
         void a(WriteLock writeLock) {
-            synchronized (this.f20823a) {
-                if (this.f20823a.size() < 10) {
-                    this.f20823a.offer(writeLock);
+            synchronized (this.f7217a) {
+                if (this.f7217a.size() < 10) {
+                    this.f7217a.offer(writeLock);
                 }
             }
         }
@@ -61,34 +61,34 @@ final class DiskCacheWriteLocker {
     public void a(String str) {
         WriteLock writeLock;
         synchronized (this) {
-            WriteLock writeLock2 = this.f20821a.get(str);
+            WriteLock writeLock2 = this.f7215a.get(str);
             writeLock = writeLock2;
             if (writeLock2 == null) {
                 writeLock = this.b.a();
-                this.f20821a.put(str, writeLock);
+                this.f7215a.put(str, writeLock);
             }
             writeLock.b++;
         }
-        writeLock.f20822a.lock();
+        writeLock.f7216a.lock();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void b(String str) {
         WriteLock writeLock;
         synchronized (this) {
-            writeLock = (WriteLock) Preconditions.a(this.f20821a.get(str));
+            writeLock = (WriteLock) Preconditions.a(this.f7215a.get(str));
             if (writeLock.b < 1) {
                 throw new IllegalStateException("Cannot release a lock that is not held, safeKey: " + str + ", interestedThreads: " + writeLock.b);
             }
             writeLock.b--;
             if (writeLock.b == 0) {
-                WriteLock remove = this.f20821a.remove(str);
+                WriteLock remove = this.f7215a.remove(str);
                 if (!remove.equals(writeLock)) {
                     throw new IllegalStateException("Removed the wrong lock, expected to remove: " + writeLock + ", but actually removed: " + remove + ", safeKey: " + str);
                 }
                 this.b.a(remove);
             }
         }
-        writeLock.f20822a.unlock();
+        writeLock.f7216a.unlock();
     }
 }

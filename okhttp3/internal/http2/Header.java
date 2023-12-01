@@ -1,19 +1,14 @@
 package okhttp3.internal.http2;
 
-import com.blued.das.live.LiveProtos;
 import okhttp3.Headers;
 import okhttp3.internal.Util;
 import okio.ByteString;
 
 /* loaded from: source-3503164-dex2jar.jar:okhttp3/internal/http2/Header.class */
 public final class Header {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final ByteString f43906a = ByteString.encodeUtf8(":");
+    public static final ByteString a = ByteString.encodeUtf8(":");
     public static final ByteString b = ByteString.encodeUtf8(":status");
-
-    /* renamed from: c  reason: collision with root package name */
-    public static final ByteString f43907c = ByteString.encodeUtf8(":method");
+    public static final ByteString c = ByteString.encodeUtf8(":method");
     public static final ByteString d = ByteString.encodeUtf8(":path");
     public static final ByteString e = ByteString.encodeUtf8(":scheme");
     public static final ByteString f = ByteString.encodeUtf8(":authority");
@@ -57,7 +52,7 @@ public final class Header {
     }
 
     public int hashCode() {
-        return ((LiveProtos.Event.LIVE_END_PAGE_CLOSE_CLICK_VALUE + this.g.hashCode()) * 31) + this.h.hashCode();
+        return ((527 + this.g.hashCode()) * 31) + this.h.hashCode();
     }
 
     public String toString() {

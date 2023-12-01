@@ -25,10 +25,10 @@ public enum d {
     
 
     /* renamed from: a  reason: collision with root package name */
-    public String f39622a;
+    public String f25931a;
 
     d(int i, String str) {
-        this.f39622a = str;
+        this.f25931a = str;
     }
 
     public static d a(String str) {
@@ -43,7 +43,7 @@ public enum d {
                 return UNSUPPORT;
             }
             d dVar = values[i2];
-            if (dVar.f39622a.equalsIgnoreCase(str)) {
+            if (dVar.f25931a.equalsIgnoreCase(str)) {
                 return dVar;
             }
             i = i2 + 1;

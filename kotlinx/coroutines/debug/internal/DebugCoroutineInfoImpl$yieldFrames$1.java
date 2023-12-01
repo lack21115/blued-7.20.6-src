@@ -10,13 +10,9 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 @DebugMetadata(b = "DebugCoroutineInfoImpl.kt", c = {80}, d = "yieldFrames", e = "kotlinx.coroutines.debug.internal.DebugCoroutineInfoImpl")
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/debug/internal/DebugCoroutineInfoImpl$yieldFrames$1.class */
 public final class DebugCoroutineInfoImpl$yieldFrames$1 extends ContinuationImpl {
-
-    /* renamed from: a  reason: collision with root package name */
-    Object f43032a;
+    Object a;
     Object b;
-
-    /* renamed from: c  reason: collision with root package name */
-    Object f43033c;
+    Object c;
     /* synthetic */ Object d;
     final /* synthetic */ DebugCoroutineInfoImpl e;
     int f;
@@ -30,10 +26,10 @@ public final class DebugCoroutineInfoImpl$yieldFrames$1 extends ContinuationImpl
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        Object a2;
+        Object a;
         this.d = obj;
         this.f |= Integer.MIN_VALUE;
-        a2 = this.e.a(null, null, this);
-        return a2;
+        a = this.e.a(null, null, this);
+        return a;
     }
 }

@@ -6,11 +6,11 @@ import androidx.constraintlayout.core.motion.utils.TypedValues;
 public class CustomVariable {
 
     /* renamed from: a  reason: collision with root package name */
-    String f2006a;
+    String f1958a;
     boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f2007c;
+    private int f1959c;
     private int d;
     private float e;
     private String f;
@@ -19,8 +19,8 @@ public class CustomVariable {
         this.d = Integer.MIN_VALUE;
         this.e = Float.NaN;
         this.f = null;
-        this.f2006a = customVariable.f2006a;
-        this.f2007c = customVariable.f2007c;
+        this.f1958a = customVariable.f1958a;
+        this.f1959c = customVariable.f1959c;
         this.d = customVariable.d;
         this.e = customVariable.e;
         this.f = customVariable.f;
@@ -31,8 +31,8 @@ public class CustomVariable {
         this.d = Integer.MIN_VALUE;
         this.e = Float.NaN;
         this.f = null;
-        this.f2006a = customVariable.f2006a;
-        this.f2007c = customVariable.f2007c;
+        this.f1958a = customVariable.f1958a;
+        this.f1959c = customVariable.f1959c;
         setValue(obj);
     }
 
@@ -40,16 +40,16 @@ public class CustomVariable {
         this.d = Integer.MIN_VALUE;
         this.e = Float.NaN;
         this.f = null;
-        this.f2006a = str;
-        this.f2007c = i;
+        this.f1958a = str;
+        this.f1959c = i;
     }
 
     public CustomVariable(String str, int i, float f) {
         this.d = Integer.MIN_VALUE;
         this.e = Float.NaN;
         this.f = null;
-        this.f2006a = str;
-        this.f2007c = i;
+        this.f1958a = str;
+        this.f1959c = i;
         this.e = f;
     }
 
@@ -57,8 +57,8 @@ public class CustomVariable {
         this.d = Integer.MIN_VALUE;
         this.e = Float.NaN;
         this.f = null;
-        this.f2006a = str;
-        this.f2007c = i;
+        this.f1958a = str;
+        this.f1959c = i;
         if (i == 901) {
             this.e = i2;
         } else {
@@ -70,8 +70,8 @@ public class CustomVariable {
         this.d = Integer.MIN_VALUE;
         this.e = Float.NaN;
         this.f = null;
-        this.f2006a = str;
-        this.f2007c = i;
+        this.f1958a = str;
+        this.f1959c = i;
         setValue(obj);
     }
 
@@ -79,8 +79,8 @@ public class CustomVariable {
         this.d = Integer.MIN_VALUE;
         this.e = Float.NaN;
         this.f = null;
-        this.f2006a = str;
-        this.f2007c = i;
+        this.f1958a = str;
+        this.f1959c = i;
         this.f = str2;
     }
 
@@ -88,8 +88,8 @@ public class CustomVariable {
         this.d = Integer.MIN_VALUE;
         this.e = Float.NaN;
         this.f = null;
-        this.f2006a = str;
-        this.f2007c = i;
+        this.f1958a = str;
+        this.f1959c = i;
         this.b = z;
     }
 
@@ -140,22 +140,22 @@ public class CustomVariable {
     }
 
     public void applyToWidget(MotionWidget motionWidget) {
-        int i = this.f2007c;
+        int i = this.f1959c;
         switch (i) {
             case 900:
             case 902:
             case TypedValues.Custom.TYPE_REFERENCE /* 906 */:
-                motionWidget.setCustomAttribute(this.f2006a, i, this.d);
+                motionWidget.setCustomAttribute(this.f1958a, i, this.d);
                 return;
             case 901:
             case 905:
-                motionWidget.setCustomAttribute(this.f2006a, i, this.e);
+                motionWidget.setCustomAttribute(this.f1958a, i, this.e);
                 return;
             case 903:
-                motionWidget.setCustomAttribute(this.f2006a, i, this.f);
+                motionWidget.setCustomAttribute(this.f1958a, i, this.f);
                 return;
             case 904:
-                motionWidget.setCustomAttribute(this.f2006a, i, this.b);
+                motionWidget.setCustomAttribute(this.f1958a, i, this.b);
                 return;
             default:
                 return;
@@ -169,8 +169,8 @@ public class CustomVariable {
     public boolean diff(CustomVariable customVariable) {
         boolean z = false;
         if (customVariable != null) {
-            int i = this.f2007c;
-            if (i != customVariable.f2007c) {
+            int i = this.f1959c;
+            if (i != customVariable.f1959c) {
                 return false;
             }
             switch (i) {
@@ -242,7 +242,7 @@ public class CustomVariable {
     }
 
     public String getName() {
-        return this.f2006a;
+        return this.f1958a;
     }
 
     public String getStringValue() {
@@ -250,11 +250,11 @@ public class CustomVariable {
     }
 
     public int getType() {
-        return this.f2007c;
+        return this.f1959c;
     }
 
     public float getValueToInterpolate() {
-        switch (this.f2007c) {
+        switch (this.f1959c) {
             case 900:
                 return this.d;
             case 901:
@@ -273,7 +273,7 @@ public class CustomVariable {
     }
 
     public void getValuesToInterpolate(float[] fArr) {
-        switch (this.f2007c) {
+        switch (this.f1959c) {
             case 900:
                 fArr[0] = this.d;
                 return;
@@ -303,12 +303,12 @@ public class CustomVariable {
     }
 
     public boolean isContinuous() {
-        int i = this.f2007c;
+        int i = this.f1959c;
         return (i == 903 || i == 904 || i == 906) ? false : true;
     }
 
     public int numberOfInterpolatedValues() {
-        return this.f2007c != 902 ? 1 : 4;
+        return this.f1959c != 902 ? 1 : 4;
     }
 
     public void setBooleanValue(boolean z) {
@@ -324,24 +324,24 @@ public class CustomVariable {
     }
 
     public void setInterpolatedValue(MotionWidget motionWidget, float[] fArr) {
-        int i = this.f2007c;
+        int i = this.f1959c;
         boolean z = true;
         switch (i) {
             case 900:
-                motionWidget.setCustomAttribute(this.f2006a, i, (int) fArr[0]);
+                motionWidget.setCustomAttribute(this.f1958a, i, (int) fArr[0]);
                 return;
             case 901:
             case 905:
-                motionWidget.setCustomAttribute(this.f2006a, i, fArr[0]);
+                motionWidget.setCustomAttribute(this.f1958a, i, fArr[0]);
                 return;
             case 902:
-                motionWidget.setCustomAttribute(this.f2006a, this.f2007c, (a((int) (fArr[3] * 255.0f)) << 24) | (a((int) (((float) Math.pow(fArr[0], 0.45454545454545453d)) * 255.0f)) << 16) | (a((int) (((float) Math.pow(fArr[1], 0.45454545454545453d)) * 255.0f)) << 8) | a((int) (((float) Math.pow(fArr[2], 0.45454545454545453d)) * 255.0f)));
+                motionWidget.setCustomAttribute(this.f1958a, this.f1959c, (a((int) (fArr[3] * 255.0f)) << 24) | (a((int) (((float) Math.pow(fArr[0], 0.45454545454545453d)) * 255.0f)) << 16) | (a((int) (((float) Math.pow(fArr[1], 0.45454545454545453d)) * 255.0f)) << 8) | a((int) (((float) Math.pow(fArr[2], 0.45454545454545453d)) * 255.0f)));
                 return;
             case 903:
             case TypedValues.Custom.TYPE_REFERENCE /* 906 */:
-                throw new RuntimeException("unable to interpolate " + this.f2006a);
+                throw new RuntimeException("unable to interpolate " + this.f1958a);
             case 904:
-                String str = this.f2006a;
+                String str = this.f1958a;
                 if (fArr[0] <= 0.5f) {
                     z = false;
                 }
@@ -357,7 +357,7 @@ public class CustomVariable {
     }
 
     public void setValue(Object obj) {
-        switch (this.f2007c) {
+        switch (this.f1959c) {
             case 900:
             case TypedValues.Custom.TYPE_REFERENCE /* 906 */:
                 this.d = ((Integer) obj).intValue();
@@ -384,7 +384,7 @@ public class CustomVariable {
 
     public void setValue(float[] fArr) {
         boolean z = true;
-        switch (this.f2007c) {
+        switch (this.f1959c) {
             case 900:
             case TypedValues.Custom.TYPE_REFERENCE /* 906 */:
                 this.d = (int) fArr[0];
@@ -410,8 +410,8 @@ public class CustomVariable {
     }
 
     public String toString() {
-        String str = this.f2006a + ':';
-        switch (this.f2007c) {
+        String str = this.f1958a + ':';
+        switch (this.f1959c) {
             case 900:
                 return str + this.d;
             case 901:

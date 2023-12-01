@@ -6,7 +6,7 @@ import java.util.Set;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f22728a;
+    private String f9120a;
     private Set<String> b;
 
     public Set<String> a() {
@@ -21,11 +21,11 @@ public class b {
     }
 
     public String b() {
-        return this.f22728a;
+        return this.f9120a;
     }
 
     public void b(String str) {
-        this.f22728a = str;
+        this.f9120a = str;
     }
 
     public void c(String str) {

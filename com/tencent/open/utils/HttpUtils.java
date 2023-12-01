@@ -8,7 +8,8 @@ import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import com.anythink.expressad.foundation.g.f.g.c;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
+import com.blued.das.live.LiveProtos;
+import com.huawei.hms.framework.common.ContainerUtils;
 import com.tencent.connect.a.a;
 import com.tencent.connect.auth.QQToken;
 import com.tencent.open.a.f;
@@ -98,28 +99,28 @@ public class HttpUtils {
     public static class CustomSSLSocketFactory extends SSLSocketFactory {
 
         /* renamed from: a  reason: collision with root package name */
-        private final SSLContext f38277a;
+        private final SSLContext f24586a;
 
         public CustomSSLSocketFactory(KeyStore keyStore) throws NoSuchAlgorithmException, KeyManagementException, KeyStoreException, UnrecoverableKeyException {
             super(keyStore);
             MyX509TrustManager myX509TrustManager;
-            this.f38277a = SSLContext.getInstance("TLS");
+            this.f24586a = SSLContext.getInstance("TLS");
             try {
                 myX509TrustManager = new MyX509TrustManager();
             } catch (Exception e) {
                 myX509TrustManager = null;
             }
-            this.f38277a.init(null, new TrustManager[]{myX509TrustManager}, null);
+            this.f24586a.init(null, new TrustManager[]{myX509TrustManager}, null);
         }
 
         @Override // org.apache.http.conn.ssl.SSLSocketFactory, org.apache.http.conn.scheme.SocketFactory
         public Socket createSocket() throws IOException {
-            return this.f38277a.getSocketFactory().createSocket();
+            return this.f24586a.getSocketFactory().createSocket();
         }
 
         @Override // org.apache.http.conn.ssl.SSLSocketFactory, org.apache.http.conn.scheme.LayeredSocketFactory
         public Socket createSocket(Socket socket, String str, int i, boolean z) throws IOException, UnknownHostException {
-            return this.f38277a.getSocketFactory().createSocket(socket, str, i, z);
+            return this.f24586a.getSocketFactory().createSocket(socket, str, i, z);
         }
     }
 
@@ -136,7 +137,7 @@ public class HttpUtils {
     public static class MyX509TrustManager implements X509TrustManager {
 
         /* renamed from: a  reason: collision with root package name */
-        X509TrustManager f38278a;
+        X509TrustManager f24587a;
 
         MyX509TrustManager() throws Exception {
             KeyStore keyStore;
@@ -179,7 +180,7 @@ public class HttpUtils {
                     throw new Exception("Couldn't initialize");
                 }
                 if (trustManagers[i2] instanceof X509TrustManager) {
-                    this.f38278a = (X509TrustManager) trustManagers[i2];
+                    this.f24587a = (X509TrustManager) trustManagers[i2];
                     return;
                 }
                 i = i2 + 1;
@@ -188,17 +189,17 @@ public class HttpUtils {
 
         @Override // javax.net.ssl.X509TrustManager
         public void checkClientTrusted(X509Certificate[] x509CertificateArr, String str) throws CertificateException {
-            this.f38278a.checkClientTrusted(x509CertificateArr, str);
+            this.f24587a.checkClientTrusted(x509CertificateArr, str);
         }
 
         @Override // javax.net.ssl.X509TrustManager
         public void checkServerTrusted(X509Certificate[] x509CertificateArr, String str) throws CertificateException {
-            this.f38278a.checkServerTrusted(x509CertificateArr, str);
+            this.f24587a.checkServerTrusted(x509CertificateArr, str);
         }
 
         @Override // javax.net.ssl.X509TrustManager
         public X509Certificate[] getAcceptedIssuers() {
-            return this.f38278a.getAcceptedIssuers();
+            return this.f24587a.getAcceptedIssuers();
         }
     }
 
@@ -332,7 +333,7 @@ public class HttpUtils {
                     if (z2) {
                         z = false;
                     } else {
-                        sb.append("&");
+                        sb.append(ContainerUtils.FIELD_DELIMITER);
                         z = z2;
                     }
                     sb.append(URLEncoder.encode(str) + "=");
@@ -356,7 +357,7 @@ public class HttpUtils {
                     if (z2) {
                         z2 = false;
                     } else {
-                        sb.append("&");
+                        sb.append(ContainerUtils.FIELD_DELIMITER);
                     }
                     sb.append(URLEncoder.encode(str) + "=" + URLEncoder.encode(bundle.getString(str)));
                 }
@@ -491,12 +492,12 @@ public class HttpUtils {
                 keyStore.load(null, null);
                 CustomSSLSocketFactory customSSLSocketFactory = new CustomSSLSocketFactory(keyStore);
                 customSSLSocketFactory.setHostnameVerifier(SSLSocketFactory.STRICT_HOSTNAME_VERIFIER);
-                schemeRegistry.register(new Scheme("https", customSSLSocketFactory, 443));
+                schemeRegistry.register(new Scheme("https", customSSLSocketFactory, (int) LiveProtos.Event.LIVE_CHALLENGE_PK_EXPLAIN_CLICK_VALUE));
             } catch (Exception e) {
-                schemeRegistry.register(new Scheme("https", SSLSocketFactory.getSocketFactory(), 443));
+                schemeRegistry.register(new Scheme("https", SSLSocketFactory.getSocketFactory(), (int) LiveProtos.Event.LIVE_CHALLENGE_PK_EXPLAIN_CLICK_VALUE));
             }
         } else {
-            schemeRegistry.register(new Scheme("https", SSLSocketFactory.getSocketFactory(), 443));
+            schemeRegistry.register(new Scheme("https", SSLSocketFactory.getSocketFactory(), (int) LiveProtos.Event.LIVE_CHALLENGE_PK_EXPLAIN_CLICK_VALUE));
         }
         BasicHttpParams basicHttpParams = new BasicHttpParams();
         if (context != null) {
@@ -521,7 +522,7 @@ public class HttpUtils {
         HttpConnectionParams.setSoTimeout(basicHttpParams, i4);
         HttpProtocolParams.setVersion(basicHttpParams, HttpVersion.HTTP_1_1);
         HttpProtocolParams.setContentCharset(basicHttpParams, "UTF-8");
-        HttpProtocolParams.setUserAgent(basicHttpParams, "AndroidSDK_" + Build.VERSION.SDK + BridgeUtil.UNDERLINE_STR + Build.DEVICE + BridgeUtil.UNDERLINE_STR + Build.VERSION.RELEASE);
+        HttpProtocolParams.setUserAgent(basicHttpParams, "AndroidSDK_" + Build.VERSION.SDK + "_" + Build.DEVICE + "_" + Build.VERSION.RELEASE);
         DefaultHttpClient defaultHttpClient = new DefaultHttpClient(new ThreadSafeClientConnManager(basicHttpParams, schemeRegistry), basicHttpParams);
         NetworkProxy proxy = getProxy(context);
         if (proxy != null) {
@@ -558,7 +559,7 @@ public class HttpUtils {
                 String encodeUrl = encodeUrl(bundle2);
                 i = 0 + encodeUrl.length();
                 f.a("openSDK_LOG.HttpUtils", "-->openUrl2 before url =" + str);
-                String str3 = str.indexOf("?") == -1 ? str + "?" : str + "&";
+                String str3 = str.indexOf("?") == -1 ? str + "?" : str + ContainerUtils.FIELD_DELIMITER;
                 f.a("openSDK_LOG.HttpUtils", "-->openUrl2 encodedParam =" + encodeUrl + " -- url = " + str3);
                 StringBuilder sb = new StringBuilder();
                 sb.append(str3);
@@ -579,7 +580,7 @@ public class HttpUtils {
                     bundle2.putString("method", str2);
                 }
                 httpPost.setHeader("Content-Type", "multipart/form-data; boundary=3i2ndDfv2rTHiSisAbouNdArYfORhtTPEefj3q2f");
-                httpPost.setHeader("Connection", c.f7906c);
+                httpPost.setHeader("Connection", c.f5066c);
                 ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
                 byteArrayOutputStream.write(Util.getBytesUTF8("--3i2ndDfv2rTHiSisAbouNdArYfORhtTPEefj3q2f\r\n"));
                 byteArrayOutputStream.write(Util.getBytesUTF8(encodePostBody(bundle2, "3i2ndDfv2rTHiSisAbouNdArYfORhtTPEefj3q2f")));
@@ -631,6 +632,7 @@ public class HttpUtils {
         throw new UnsupportedOperationException("Method not decompiled: com.tencent.open.utils.HttpUtils.request(com.tencent.connect.auth.QQToken, android.content.Context, java.lang.String, android.os.Bundle, java.lang.String):org.json.JSONObject");
     }
 
+    /* JADX WARN: Type inference failed for: r0v1, types: [com.tencent.open.utils.HttpUtils$1] */
     public static void requestAsync(final QQToken qQToken, final Context context, final String str, final Bundle bundle, final String str2, final IRequestListener iRequestListener) {
         f.a("openSDK_LOG.HttpUtils", "OpenApi requestAsync");
         new Thread() { // from class: com.tencent.open.utils.HttpUtils.1

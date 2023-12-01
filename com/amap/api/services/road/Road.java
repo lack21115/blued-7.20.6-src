@@ -21,13 +21,9 @@ public class Road implements Parcelable {
             return null;
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f5674a;
+    private String a;
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f5675c;
+    private String c;
     private float d;
     private String e;
     private LatLonPoint f;
@@ -37,16 +33,16 @@ public class Road implements Parcelable {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public Road(Parcel parcel) {
-        this.f5674a = parcel.readString();
+        this.a = parcel.readString();
         this.b = parcel.readString();
-        this.f5675c = parcel.readString();
+        this.c = parcel.readString();
         this.d = parcel.readFloat();
         this.e = parcel.readString();
         this.f = (LatLonPoint) parcel.readValue(LatLonPoint.class.getClassLoader());
     }
 
     public Road(String str, String str2) {
-        this.f5674a = str;
+        this.a = str;
         this.b = str2;
     }
 
@@ -60,11 +56,11 @@ public class Road implements Parcelable {
     }
 
     public String getCityCode() {
-        return this.f5675c;
+        return this.c;
     }
 
     public String getId() {
-        return this.f5674a;
+        return this.a;
     }
 
     public String getName() {
@@ -84,11 +80,11 @@ public class Road implements Parcelable {
     }
 
     public void setCityCode(String str) {
-        this.f5675c = str;
+        this.c = str;
     }
 
     public void setId(String str) {
-        this.f5674a = str;
+        this.a = str;
     }
 
     public void setName(String str) {
@@ -105,9 +101,9 @@ public class Road implements Parcelable {
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.f5674a);
+        parcel.writeString(this.a);
         parcel.writeString(this.b);
-        parcel.writeString(this.f5675c);
+        parcel.writeString(this.c);
         parcel.writeFloat(this.d);
         parcel.writeString(this.e);
         parcel.writeValue(this.f);

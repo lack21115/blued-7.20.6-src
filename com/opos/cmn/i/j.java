@@ -15,7 +15,7 @@ import java.util.List;
 public class j {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f24978a = j.class.getSimpleName();
+    private static final String f11290a = j.class.getSimpleName();
 
     private static final RectF a(View view) {
         RectF rectF;
@@ -26,10 +26,10 @@ public class j {
             view.getLocationOnScreen(iArr);
             rectF = new RectF(iArr[0], iArr[1], iArr[0] + view.getWidth(), iArr[1] + view.getHeight());
         } catch (Exception e) {
-            com.opos.cmn.an.f.a.a(f24978a, "", (Throwable) e);
+            com.opos.cmn.an.f.a.a(f11290a, "", (Throwable) e);
             rectF = null;
         }
-        String str = f24978a;
+        String str = f11290a;
         StringBuilder sb = new StringBuilder();
         sb.append("getViewScreenLocation=");
         sb.append(rectF != null ? rectF.toString() : com.igexin.push.core.b.l);
@@ -41,17 +41,17 @@ public class j {
         boolean z = true;
         if (context != null) {
             try {
-                PowerManager powerManager = (PowerManager) context.getSystemService("power");
+                PowerManager powerManager = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
                 z = true;
                 if (powerManager != null) {
                     z = Build.VERSION.SDK_INT >= 20 ? powerManager.isInteractive() : powerManager.isScreenOn();
                 }
             } catch (Exception e) {
-                com.opos.cmn.an.f.a.a(f24978a, "", (Throwable) e);
+                com.opos.cmn.an.f.a.a(f11290a, "", (Throwable) e);
                 z = true;
             }
         }
-        com.opos.cmn.an.f.a.b(f24978a, "is screenOn = " + z);
+        com.opos.cmn.an.f.a.b(f11290a, "is screenOn = " + z);
         return z;
     }
 
@@ -64,7 +64,7 @@ public class j {
                     return false;
                 }
                 if (!view.isShown()) {
-                    com.opos.cmn.an.f.a.b(f24978a, "view not shown");
+                    com.opos.cmn.an.f.a.b(f11290a, "view not shown");
                     return false;
                 } else if (Build.VERSION.SDK_INT >= 28) {
                     return b(view);
@@ -90,18 +90,18 @@ public class j {
             try {
                 a2 = a(view);
             } catch (Exception e) {
-                com.opos.cmn.an.f.a.a(f24978a, "", (Throwable) e);
+                com.opos.cmn.an.f.a.a(f11290a, "", (Throwable) e);
             }
             if (a2 != null) {
                 if (RectF.intersects(rectF, a2)) {
                     z = true;
-                    com.opos.cmn.an.f.a.b(f24978a, "isCoodinateInRect rect=" + rectF + ",view =" + view);
+                    com.opos.cmn.an.f.a.b(f11290a, "isCoodinateInRect rect=" + rectF + ",view =" + view);
                     return z;
                 }
             }
         }
         z = false;
-        com.opos.cmn.an.f.a.b(f24978a, "isCoodinateInRect rect=" + rectF + ",view =" + view);
+        com.opos.cmn.an.f.a.b(f11290a, "isCoodinateInRect rect=" + rectF + ",view =" + view);
         return z;
     }
 

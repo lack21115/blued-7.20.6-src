@@ -1,6 +1,5 @@
 package com.amap.api.col.p0003sl;
 
-import android.content.Context;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -22,7 +21,6 @@ import com.amap.api.maps.offlinemap.OfflineMapManager;
 import com.amap.api.maps.offlinemap.OfflineMapProvince;
 import com.amap.api.offlineservice.a;
 import com.bytedance.applog.tracker.Tracker;
-import com.soft.blued.R;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -32,9 +30,7 @@ import java.util.List;
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/et.class */
 public final class et extends a implements TextWatcher, View.OnTouchListener, AbsListView.OnScrollListener, OfflineMapManager.OfflineLoadedListener, OfflineMapManager.OfflineMapDownloadListener {
     private ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private RelativeLayout f4939c;
+    private RelativeLayout c;
     private DownLoadExpandListView d;
     private ListView e;
     private ExpandableListView f;
@@ -71,13 +67,13 @@ public final class et extends a implements TextWatcher, View.OnTouchListener, Ab
 
     private void g() {
         i();
-        eo eoVar = new eo(this.q, this.f5579a);
+        eo eoVar = new eo(this.q, this.a);
         this.s = eoVar;
         this.e.setAdapter((ListAdapter) eoVar);
     }
 
     private void h() {
-        em emVar = new em(this.f5579a, this, this.q, this.o);
+        em emVar = new em(this.a, this, this.q, this.o);
         this.r = emVar;
         this.d.setAdapter(emVar);
         this.r.notifyDataSetChanged();
@@ -132,7 +128,7 @@ public final class et extends a implements TextWatcher, View.OnTouchListener, Ab
             return;
         }
         this.i.clearFocus();
-        InputMethodManager inputMethodManager = (InputMethodManager) this.f5579a.getSystemService(Context.INPUT_METHOD_SERVICE);
+        InputMethodManager inputMethodManager = (InputMethodManager) this.a.getSystemService("input_method");
         boolean z = false;
         if (inputMethodManager != null) {
             z = inputMethodManager.isActive();
@@ -144,22 +140,22 @@ public final class et extends a implements TextWatcher, View.OnTouchListener, Ab
 
     @Override // com.amap.api.offlineservice.a
     public final void a() {
-        View a2 = ev.a(this.f5579a, (int) R.array.age_array_key_all);
-        DownLoadExpandListView downLoadExpandListView = (DownLoadExpandListView) a2.findViewById(2131165187);
+        View a = ev.a(this.a, 2130903040);
+        DownLoadExpandListView downLoadExpandListView = (DownLoadExpandListView) a.findViewById(2131165187);
         this.d = downLoadExpandListView;
         downLoadExpandListView.setOnTouchListener(this);
-        this.j = (RelativeLayout) a2.findViewById(2131165184);
-        this.g = (ImageView) a2.findViewById(2131165186);
-        this.j.setOnClickListener(this.f5579a);
-        this.k = (RelativeLayout) a2.findViewById(2131165189);
-        this.h = (ImageView) a2.findViewById(2131165190);
-        this.k.setOnClickListener(this.f5579a);
-        this.n = (RelativeLayout) a2.findViewById(2131165188);
-        ImageView imageView = (ImageView) this.f4939c.findViewById(2131165205);
+        this.j = (RelativeLayout) a.findViewById(2131165184);
+        this.g = (ImageView) a.findViewById(2131165186);
+        this.j.setOnClickListener(this.a);
+        this.k = (RelativeLayout) a.findViewById(2131165189);
+        this.h = (ImageView) a.findViewById(2131165190);
+        this.k.setOnClickListener(this.a);
+        this.n = (RelativeLayout) a.findViewById(2131165188);
+        ImageView imageView = (ImageView) this.c.findViewById(2131165205);
         this.b = imageView;
-        imageView.setOnClickListener(this.f5579a);
-        this.m = (ImageView) this.f4939c.findViewById(2131165207);
-        ImageView imageView2 = (ImageView) this.f4939c.findViewById(2131165209);
+        imageView.setOnClickListener(this.a);
+        this.m = (ImageView) this.c.findViewById(2131165207);
+        ImageView imageView2 = (ImageView) this.c.findViewById(2131165209);
         this.l = imageView2;
         imageView2.setOnClickListener(new View.OnClickListener() { // from class: com.amap.api.col.3sl.et.1
             @Override // android.view.View.OnClickListener
@@ -178,26 +174,26 @@ public final class et extends a implements TextWatcher, View.OnTouchListener, Ab
                 }
             }
         });
-        this.f4939c.findViewById(2131165210).setOnTouchListener(this);
-        AutoCompleteTextView autoCompleteTextView = (AutoCompleteTextView) this.f4939c.findViewById(2131165208);
+        this.c.findViewById(2131165210).setOnTouchListener(this);
+        AutoCompleteTextView autoCompleteTextView = (AutoCompleteTextView) this.c.findViewById(2131165208);
         this.i = autoCompleteTextView;
         autoCompleteTextView.addTextChangedListener(this);
         this.i.setOnTouchListener(this);
-        this.e = (ListView) this.f4939c.findViewById(2131165212);
-        ExpandableListView expandableListView = (ExpandableListView) this.f4939c.findViewById(2131165211);
+        this.e = (ListView) this.c.findViewById(2131165212);
+        ExpandableListView expandableListView = (ExpandableListView) this.c.findViewById(2131165211);
         this.f = expandableListView;
-        expandableListView.addHeaderView(a2);
+        expandableListView.addHeaderView(a);
         this.f.setOnTouchListener(this);
         this.f.setOnScrollListener(this);
         try {
-            OfflineMapManager offlineMapManager = new OfflineMapManager(this.f5579a, this);
+            OfflineMapManager offlineMapManager = new OfflineMapManager(this.a, this);
             this.q = offlineMapManager;
             offlineMapManager.setOnOfflineLoadedListener(this);
         } catch (Exception e) {
             Log.e("OfflineMapPage", "e=".concat(String.valueOf(e)));
         }
         i();
-        en enVar = new en(this.o, this.q, this.f5579a);
+        en enVar = new en(this.o, this.q, this.a);
         this.p = enVar;
         this.f.setAdapter(enVar);
         this.f.setOnGroupCollapseListener(this.p);
@@ -224,7 +220,7 @@ public final class et extends a implements TextWatcher, View.OnTouchListener, Ab
         try {
             int id = view.getId();
             if (id == 2131165205) {
-                this.f5579a.closeScr();
+                this.a.closeScr();
             } else if (id == 2131165184) {
                 if (this.u) {
                     this.d.setVisibility(8);
@@ -254,7 +250,7 @@ public final class et extends a implements TextWatcher, View.OnTouchListener, Ab
     public final void a(OfflineMapCity offlineMapCity) {
         try {
             if (this.x == null) {
-                this.x = new ep(this.f5579a, this.q);
+                this.x = new ep(this.a, this.q);
             }
             this.x.a(offlineMapCity.getState(), offlineMapCity.getCity());
             this.x.show();
@@ -287,10 +283,10 @@ public final class et extends a implements TextWatcher, View.OnTouchListener, Ab
 
     @Override // com.amap.api.offlineservice.a
     public final RelativeLayout b() {
-        if (this.f4939c == null) {
-            this.f4939c = (RelativeLayout) ev.a(this.f5579a, (int) R.array.animal_key);
+        if (this.c == null) {
+            this.c = (RelativeLayout) ev.a(this.a, 2130903044);
         }
-        return this.f4939c;
+        return this.c;
     }
 
     @Override // android.text.TextWatcher
@@ -325,7 +321,7 @@ public final class et extends a implements TextWatcher, View.OnTouchListener, Ab
     public final void onDownload(int i, int i2, String str) {
         if (i == 101) {
             try {
-                Toast.makeText(this.f5579a, "网络异常", 0).show();
+                Toast.makeText(this.a, "网络异常", 0).show();
                 this.q.pause();
             } catch (Exception e) {
                 e.printStackTrace();
@@ -407,7 +403,7 @@ public final class et extends a implements TextWatcher, View.OnTouchListener, Ab
             }
         }
         if (arrayList.size() <= 0) {
-            Toast.makeText(this.f5579a, "未找到相关城市", 0).show();
+            Toast.makeText(this.a, "未找到相关城市", 0).show();
             return;
         }
         a(true);

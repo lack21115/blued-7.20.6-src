@@ -11,17 +11,17 @@ import com.opos.cmn.biz.a.c;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f24608a = a.class.getSimpleName();
+    private static final String f10921a = a.class.getSimpleName();
 
     public static final boolean a(Context context, String str) {
         String str2;
         String str3;
         if (context == null) {
-            str2 = f24608a;
+            str2 = f10921a;
             str3 = "executeBrowser with null context";
         } else if (!TextUtils.isEmpty(str)) {
             String b = c.b(context);
-            String str4 = f24608a;
+            String str4 = f10921a;
             com.opos.cmn.an.f.a.b(str4, "getBrowserName=" + b);
             if (TextUtils.isEmpty(b)) {
                 return false;
@@ -35,11 +35,11 @@ public class a {
                 context.startActivity(intent);
                 return true;
             } catch (Exception e) {
-                Log.e(f24608a, "executeBrowserWeb fail", e);
+                Log.e(f10921a, "executeBrowserWeb fail", e);
                 return false;
             }
         } else {
-            str2 = f24608a;
+            str2 = f10921a;
             str3 = "executeBrowserWeb with null url";
         }
         com.opos.cmn.an.f.a.b(str2, str3);

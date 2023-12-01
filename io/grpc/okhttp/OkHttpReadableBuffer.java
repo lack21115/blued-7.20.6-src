@@ -8,8 +8,9 @@ import java.io.OutputStream;
 import java.nio.ByteBuffer;
 import okio.Buffer;
 
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-3503164-dex2jar.jar:io/grpc/okhttp/OkHttpReadableBuffer.class */
-class OkHttpReadableBuffer extends AbstractReadableBuffer {
+public class OkHttpReadableBuffer extends AbstractReadableBuffer {
     private final Buffer buffer;
 
     /* JADX INFO: Access modifiers changed from: package-private */

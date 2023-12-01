@@ -6,11 +6,11 @@ import java.nio.ByteBuffer;
 public class BaseVector {
 
     /* renamed from: a  reason: collision with root package name */
-    protected ByteBuffer f2849a;
+    protected ByteBuffer f2801a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f2850c;
+    private int f2802c;
     private int d;
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -20,20 +20,20 @@ public class BaseVector {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public void a(int i, int i2, ByteBuffer byteBuffer) {
-        this.f2849a = byteBuffer;
+        this.f2801a = byteBuffer;
         if (byteBuffer != null) {
             this.b = i;
-            this.f2850c = byteBuffer.getInt(i - 4);
+            this.f2802c = byteBuffer.getInt(i - 4);
             this.d = i2;
             return;
         }
         this.b = 0;
-        this.f2850c = 0;
+        this.f2802c = 0;
         this.d = 0;
     }
 
     public int length() {
-        return this.f2850c;
+        return this.f2802c;
     }
 
     public void reset() {

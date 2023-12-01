@@ -1,5 +1,7 @@
 package com.blued.android.chat.core.worker.chat;
 
+import com.alipay.sdk.util.l;
+import com.android.internal.util.cm.SpamFilter;
 import com.blued.android.chat.core.pack.BasePackage;
 import com.blued.android.chat.core.pack.PushMsgPackage;
 import com.blued.android.chat.core.pack.ReqAckPackage;
@@ -16,7 +18,6 @@ import com.blued.android.chat.data.ProfileData;
 import com.blued.android.chat.listener.ConnectListener;
 import com.blued.android.chat.utils.ChatHelper;
 import com.blued.android.chat.utils.MsgPackHelper;
-import com.bytedance.sdk.openadsdk.live.TTLiveConstants;
 import java.util.List;
 import java.util.Map;
 
@@ -173,7 +174,7 @@ public class WawajiChat implements ConnectListener {
     }
 
     private void recvGameResultUpdateMessage(PushMsgPackage pushMsgPackage) {
-        int intValue = MsgPackHelper.getIntValue(pushMsgPackage.msgMapExtra, "result");
+        int intValue = MsgPackHelper.getIntValue(pushMsgPackage.msgMapExtra, l.c);
         ProfileData parseProfile = ProfileData.parseProfile(pushMsgPackage.msgMapExtra, "player");
         String stringValue = MsgPackHelper.getStringValue(pushMsgPackage.msgMapExtra, "tips_player");
         String stringValue2 = MsgPackHelper.getStringValue(pushMsgPackage.msgMapExtra, "tips_viewer");
@@ -191,7 +192,7 @@ public class WawajiChat implements ConnectListener {
     }
 
     private void recvPlayQueueCountUpdateMessage(PushMsgPackage pushMsgPackage) {
-        int intValue = MsgPackHelper.getIntValue(pushMsgPackage.msgMapExtra, "count");
+        int intValue = MsgPackHelper.getIntValue(pushMsgPackage.msgMapExtra, SpamFilter.SpamContract.NotificationTable.COUNT);
         IWawajiChatCallback iWawajiChatCallback = this.wawajiChatCallback;
         if (iWawajiChatCallback != null) {
             iWawajiChatCallback.onQueueCountUpdate(pushMsgPackage.sessionId, intValue);
@@ -199,7 +200,7 @@ public class WawajiChat implements ConnectListener {
     }
 
     private void recvPlayQueueRankUpdateMessage(PushMsgPackage pushMsgPackage) {
-        int intValue = MsgPackHelper.getIntValue(pushMsgPackage.msgMapExtra, "rank", -1);
+        int intValue = MsgPackHelper.getIntValue(pushMsgPackage.msgMapExtra, ReqAckPackage.REQ_RESPONSE_KEY.RANK, -1);
         IWawajiChatCallback iWawajiChatCallback = this.wawajiChatCallback;
         if (iWawajiChatCallback != null) {
             iWawajiChatCallback.onQueueRankUpdate(pushMsgPackage.sessionId, intValue);
@@ -215,7 +216,7 @@ public class WawajiChat implements ConnectListener {
     }
 
     private void recvViewerUpdateMessage(PushMsgPackage pushMsgPackage) {
-        int intValue = MsgPackHelper.getIntValue(pushMsgPackage.msgMapExtra, "count");
+        int intValue = MsgPackHelper.getIntValue(pushMsgPackage.msgMapExtra, SpamFilter.SpamContract.NotificationTable.COUNT);
         List<ProfileData> parseProfileList = ProfileData.parseProfileList(MsgPackHelper.getListValue(pushMsgPackage.msgMapExtra, "members"));
         IWawajiChatCallback iWawajiChatCallback = this.wawajiChatCallback;
         if (iWawajiChatCallback != null) {
@@ -297,7 +298,7 @@ public class WawajiChat implements ConnectListener {
                         wawajiChat.notifyEnterRoomFailed(j2, "ack错误, 错误码:" + reqAckPackage.error);
                         return;
                     }
-                    WawajiChat.this.notifyEnterRoomSuccess(j, MsgPackHelper.getIntValue(reqAckPackage.reqResponse, "price_android"), MsgPackHelper.getIntValue(reqAckPackage.reqResponse, "goods_id_android"), MsgPackHelper.getIntValue(reqAckPackage.reqResponse, "lifetime"), MsgPackHelper.getIntValue(reqAckPackage.reqResponse, "rank", -1), MsgPackHelper.getIntValue(reqAckPackage.reqResponse, "queue_count"), MsgPackHelper.getIntValue(reqAckPackage.reqResponse, "beans_android"), MsgPackHelper.getStringValue(reqAckPackage.reqResponse, TTLiveConstants.ROOMID_KEY), MsgPackHelper.getStringValue(reqAckPackage.reqResponse, "stream_id_1"), MsgPackHelper.getStringValue(reqAckPackage.reqResponse, "stream_id_2"), MsgPackHelper.getMapValue(reqAckPackage.reqResponse, "extra"));
+                    WawajiChat.this.notifyEnterRoomSuccess(j, MsgPackHelper.getIntValue(reqAckPackage.reqResponse, "price_android"), MsgPackHelper.getIntValue(reqAckPackage.reqResponse, "goods_id_android"), MsgPackHelper.getIntValue(reqAckPackage.reqResponse, "lifetime"), MsgPackHelper.getIntValue(reqAckPackage.reqResponse, ReqAckPackage.REQ_RESPONSE_KEY.RANK, -1), MsgPackHelper.getIntValue(reqAckPackage.reqResponse, "queue_count"), MsgPackHelper.getIntValue(reqAckPackage.reqResponse, "beans_android"), MsgPackHelper.getStringValue(reqAckPackage.reqResponse, "room_id"), MsgPackHelper.getStringValue(reqAckPackage.reqResponse, "stream_id_1"), MsgPackHelper.getStringValue(reqAckPackage.reqResponse, "stream_id_2"), MsgPackHelper.getMapValue(reqAckPackage.reqResponse, "extra"));
                 }
             }
 
@@ -372,10 +373,10 @@ public class WawajiChat implements ConnectListener {
             recvGameResultUpdateMessage(pushMsgPackage);
             return true;
         } else if (pushMsgPackage.msgType == 82) {
-            notifyViewerIn(pushMsgPackage.sessionId, ProfileData.parseProfile(pushMsgPackage.msgMapExtra, "viewer"), MsgPackHelper.getIntValue(pushMsgPackage.msgMapExtra, "count"));
+            notifyViewerIn(pushMsgPackage.sessionId, ProfileData.parseProfile(pushMsgPackage.msgMapExtra, "viewer"), MsgPackHelper.getIntValue(pushMsgPackage.msgMapExtra, SpamFilter.SpamContract.NotificationTable.COUNT));
             return true;
         } else if (pushMsgPackage.msgType == 83) {
-            notifyViewerOut(pushMsgPackage.sessionId, ProfileData.parseProfile(pushMsgPackage.msgMapExtra, "viewer"), MsgPackHelper.getIntValue(pushMsgPackage.msgMapExtra, "count"));
+            notifyViewerOut(pushMsgPackage.sessionId, ProfileData.parseProfile(pushMsgPackage.msgMapExtra, "viewer"), MsgPackHelper.getIntValue(pushMsgPackage.msgMapExtra, SpamFilter.SpamContract.NotificationTable.COUNT));
             return true;
         } else {
             return false;
@@ -447,7 +448,7 @@ public class WawajiChat implements ConnectListener {
                 if (basePackage2 instanceof ReqAckPackage) {
                     ReqAckPackage reqAckPackage = (ReqAckPackage) basePackage2;
                     if (reqAckPackage.error == 0) {
-                        WawajiChat.this.notifyQueueUpSuccess(j, MsgPackHelper.getIntValue(reqAckPackage.reqResponse, "rank", -1));
+                        WawajiChat.this.notifyQueueUpSuccess(j, MsgPackHelper.getIntValue(reqAckPackage.reqResponse, ReqAckPackage.REQ_RESPONSE_KEY.RANK, -1));
                         return;
                     }
                     WawajiChat wawajiChat = WawajiChat.this;

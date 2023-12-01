@@ -12,9 +12,7 @@ public class JDK7PlatformImplementations extends PlatformImplementations {
     @Metadata
     /* loaded from: source-3503164-dex2jar.jar:kotlin/internal/jdk7/JDK7PlatformImplementations$ReflectSdkVersion.class */
     public static final class ReflectSdkVersion {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static final ReflectSdkVersion f42481a = new ReflectSdkVersion();
+        public static final ReflectSdkVersion a = new ReflectSdkVersion();
         public static final Integer b;
 
         static {

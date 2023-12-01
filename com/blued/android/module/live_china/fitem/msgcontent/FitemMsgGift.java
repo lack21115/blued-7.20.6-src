@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
+import com.android.internal.util.cm.SpamFilter;
 import com.blued.android.chat.utils.MsgPackHelper;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.image.ImageLoader;
@@ -34,9 +35,7 @@ public final class FitemMsgGift extends FitemMsgAboutUser {
     private static final int f = DisplayUtil.a(AppInfo.d(), 3.0f);
     private static final int g = DisplayUtil.a(AppInfo.d(), 15.0f);
     private static final int h = DisplayUtil.a(AppInfo.d(), 20.0f);
-
-    /* renamed from: c  reason: collision with root package name */
-    private final LiveChattingModel f12556c;
+    private final LiveChattingModel c;
     private int d;
 
     @Metadata
@@ -84,7 +83,7 @@ public final class FitemMsgGift extends FitemMsgAboutUser {
     public FitemMsgGift(LiveChattingModel msg) {
         super(msg);
         Intrinsics.e(msg, "msg");
-        this.f12556c = msg;
+        this.c = msg;
     }
 
     private final void a(final Context context, TextView textView) {
@@ -108,7 +107,7 @@ public final class FitemMsgGift extends FitemMsgAboutUser {
                     @Override // kotlin.jvm.functions.Function1
                     public /* synthetic */ Unit invoke(DslSpanBuilder dslSpanBuilder) {
                         a(dslSpanBuilder);
-                        return Unit.f42314a;
+                        return Unit.a;
                     }
                 });
             }
@@ -116,7 +115,7 @@ public final class FitemMsgGift extends FitemMsgAboutUser {
             @Override // kotlin.jvm.functions.Function1
             public /* synthetic */ Unit invoke(DslSpannableStringBuilder dslSpannableStringBuilder) {
                 a(dslSpannableStringBuilder);
-                return Unit.f42314a;
+                return Unit.a;
             }
         });
     }
@@ -132,7 +131,7 @@ public final class FitemMsgGift extends FitemMsgAboutUser {
     }
 
     private final void b(Context context, TextView textView) {
-        int intValue = MsgPackHelper.getIntValue(e().msgMapExtra, "count");
+        int intValue = MsgPackHelper.getIntValue(e().msgMapExtra, SpamFilter.SpamContract.NotificationTable.COUNT);
         String stringValue = MsgPackHelper.getStringValue(e().msgMapExtra, "image");
         e().fromNickName = MsgPackHelper.getStringValue(e().msgMapExtra, "name");
         e().fromId = MsgPackHelper.getIntValue(e().msgMapExtra, "uid");
@@ -166,19 +165,19 @@ public final class FitemMsgGift extends FitemMsgAboutUser {
         }
         short s = e().msgType;
         if (s == 33) {
-            LiveGiftModel a2 = LiveUtils.a(e());
-            if (a2 != null) {
-                if (a2.is_luck_bag) {
-                    c(context, a2, textView);
+            LiveGiftModel a = LiveUtils.a(e());
+            if (a != null) {
+                if (a.is_luck_bag) {
+                    c(context, a, textView);
                 } else {
-                    String str = a2.random_name;
+                    String str = a.random_name;
                     if (str == null || str.length() == 0) {
                         z = true;
                     }
                     if (z) {
-                        a(context, a2, textView);
+                        a(context, a, textView);
                     } else {
-                        b(context, a2, textView);
+                        b(context, a, textView);
                     }
                 }
             }
@@ -196,22 +195,22 @@ public final class FitemMsgGift extends FitemMsgAboutUser {
     }
 
     public final boolean a(LiveChattingModel newMsg) {
+        LiveGiftModel a;
         LiveGiftModel a2;
-        LiveGiftModel a3;
         Intrinsics.e(newMsg, "newMsg");
-        if (e().msgType == 33 && (a2 = LiveUtils.a(e())) != null && (a3 = LiveUtils.a(newMsg)) != null && a2.giftId == a3.giftId && Intrinsics.a((Object) a2.name, (Object) a3.name) && a2.userId == a3.userId && a2.bonus <= 0.0d && !a2.is_luck_bag && !a2.isReward && !a2.is_help_wish_list) {
-            String str = a2.random_name;
+        if (e().msgType == 33 && (a = LiveUtils.a(e())) != null && (a2 = LiveUtils.a(newMsg)) != null && a.giftId == a2.giftId && Intrinsics.a((Object) a.name, (Object) a2.name) && a.userId == a2.userId && a.bonus <= 0.0d && !a.is_luck_bag && !a.isReward && !a.is_help_wish_list) {
+            String str = a.random_name;
             if (str == null || str.length() == 0) {
-                this.d += a3.getDisplayCount();
+                this.d += a2.getDisplayCount();
                 i();
                 h();
-                TextView textView = (TextView) this.f10935a.a(R.id.live_msg_content_text);
+                TextView textView = (TextView) this.a.a(R.id.live_msg_content_text);
                 if (textView == null) {
                     return true;
                 }
-                Context context = this.f10935a.f10931a.b;
+                Context context = this.a.a.b;
                 Intrinsics.c(context, "viewHolder.adapter.mContext");
-                a(context, a2, textView);
+                a(context, a, textView);
                 return true;
             }
             return false;
@@ -221,6 +220,6 @@ public final class FitemMsgGift extends FitemMsgAboutUser {
 
     @Override // com.blued.android.module.live_china.fitem.msgcontent.FitemMsgAboutUser, com.blued.android.module.live_china.fitem.msgcontent.FitemMsgBase
     public LiveChattingModel e() {
-        return this.f12556c;
+        return this.c;
     }
 }

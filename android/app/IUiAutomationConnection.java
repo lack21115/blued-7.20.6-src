@@ -143,10 +143,10 @@ public interface IUiAutomationConnection extends IInterface {
                     obtain.writeInterfaceToken(Stub.DESCRIPTOR);
                     this.mRemote.transact(10, obtain, obtain2, 0);
                     obtain2.readException();
-                    WindowAnimationFrameStats createFromParcel = obtain2.readInt() != 0 ? WindowAnimationFrameStats.CREATOR.createFromParcel(obtain2) : null;
+                    WindowAnimationFrameStats windowAnimationFrameStats = obtain2.readInt() != 0 ? (WindowAnimationFrameStats) WindowAnimationFrameStats.CREATOR.createFromParcel(obtain2) : null;
                     obtain2.recycle();
                     obtain.recycle();
-                    return createFromParcel;
+                    return windowAnimationFrameStats;
                 } catch (Throwable th) {
                     obtain2.recycle();
                     obtain.recycle();
@@ -163,10 +163,10 @@ public interface IUiAutomationConnection extends IInterface {
                     obtain.writeInt(i);
                     this.mRemote.transact(8, obtain, obtain2, 0);
                     obtain2.readException();
-                    WindowContentFrameStats createFromParcel = obtain2.readInt() != 0 ? WindowContentFrameStats.CREATOR.createFromParcel(obtain2) : null;
+                    WindowContentFrameStats windowContentFrameStats = obtain2.readInt() != 0 ? (WindowContentFrameStats) WindowContentFrameStats.CREATOR.createFromParcel(obtain2) : null;
                     obtain2.recycle();
                     obtain.recycle();
-                    return createFromParcel;
+                    return windowContentFrameStats;
                 } catch (Throwable th) {
                     obtain2.recycle();
                     obtain.recycle();

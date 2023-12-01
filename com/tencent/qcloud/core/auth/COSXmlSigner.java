@@ -1,5 +1,6 @@
 package com.tencent.qcloud.core.auth;
 
+import com.huawei.hms.framework.common.ContainerUtils;
 import com.tencent.qcloud.core.common.QCloudAuthenticationException;
 import com.tencent.qcloud.core.common.QCloudClientException;
 import com.tencent.qcloud.core.http.QCloudHttpRequest;
@@ -34,7 +35,7 @@ public class COSXmlSigner implements QCloudSigner {
             concat = url2.concat("?").concat(str2);
         } else {
             int length = indexOf + query.length() + 1;
-            concat = url2.substring(0, length).concat("&").concat(str2).concat(url2.substring(length));
+            concat = url2.substring(0, length).concat(ContainerUtils.FIELD_DELIMITER).concat(str2).concat(url2.substring(length));
         }
         qCloudHttpRequest.setUrl(concat);
     }
@@ -69,27 +70,27 @@ public class COSXmlSigner implements QCloudSigner {
         sb.append(AuthConstants.Q_SIGN_ALGORITHM);
         sb.append("=");
         sb.append(AuthConstants.SHA1);
-        sb.append("&");
+        sb.append(ContainerUtils.FIELD_DELIMITER);
         sb.append(AuthConstants.Q_AK);
         sb.append("=");
         sb.append(qCloudCredentials.getSecretId());
-        sb.append("&");
+        sb.append(ContainerUtils.FIELD_DELIMITER);
         sb.append(AuthConstants.Q_SIGN_TIME);
         sb.append("=");
         sb.append(str);
-        sb.append("&");
+        sb.append(ContainerUtils.FIELD_DELIMITER);
         sb.append(AuthConstants.Q_KEY_TIME);
         sb.append("=");
         sb.append(qCloudLifecycleCredentials.getKeyTime());
-        sb.append("&");
+        sb.append(ContainerUtils.FIELD_DELIMITER);
         sb.append(AuthConstants.Q_HEADER_LIST);
         sb.append("=");
         sb.append(cOSXmlSignSourceProvider.getRealHeaderList().toLowerCase(Locale.ROOT));
-        sb.append("&");
+        sb.append(ContainerUtils.FIELD_DELIMITER);
         sb.append(AuthConstants.Q_URL_PARAM_LIST);
         sb.append("=");
         sb.append(cOSXmlSignSourceProvider.getRealParameterList().toLowerCase(Locale.ROOT));
-        sb.append("&");
+        sb.append(ContainerUtils.FIELD_DELIMITER);
         sb.append(AuthConstants.Q_SIGNATURE);
         sb.append("=");
         sb.append(signature);

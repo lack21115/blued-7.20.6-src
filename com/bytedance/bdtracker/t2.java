@@ -17,18 +17,18 @@ import org.json.JSONObject;
 public class t2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final List<String> f21310a = Collections.singletonList("android.app.Activity");
+    public static final List<String> f7704a = Collections.singletonList("android.app.Activity");
     public static final List<String> b = Arrays.asList("android.app.Fragment", "androidx.fragment.app.Fragment", "androidx.fragment.app.Fragment");
 
     /* renamed from: c  reason: collision with root package name */
-    public static final List<Class<?>> f21311c = new ArrayList();
+    public static final List<Class<?>> f7705c = new ArrayList();
     public static final List<Class<?>> d = new ArrayList();
 
     static {
-        for (String str : f21310a) {
+        for (String str : f7704a) {
             Class<?> b2 = j1.b(str);
             if (b2 != null) {
-                f21311c.add(b2);
+                f7705c.add(b2);
             }
         }
         for (String str2 : b) {

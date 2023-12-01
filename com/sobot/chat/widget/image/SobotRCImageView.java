@@ -54,9 +54,8 @@ public class SobotRCImageView extends ImageView implements Checkable, RCAttrs {
         canvas.restore();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.ImageView, android.view.View
-    public void drawableStateChanged() {
+    protected void drawableStateChanged() {
         super.drawableStateChanged();
         this.mRCHelper.drawableStateChanged(this);
     }
@@ -115,18 +114,16 @@ public class SobotRCImageView extends ImageView implements Checkable, RCAttrs {
         return this.mRCHelper.mRoundAsCircle;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.ImageView, android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         canvas.saveLayer(this.mRCHelper.mLayer, null, 31);
         super.onDraw(canvas);
         this.mRCHelper.onClipDraw(canvas);
         canvas.restore();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onSizeChanged(int i, int i2, int i3, int i4) {
+    protected void onSizeChanged(int i, int i2, int i3, int i4) {
         super.onSizeChanged(i, i2, i3, i4);
         this.mRCHelper.onSizeChanged(this, i, i2);
     }

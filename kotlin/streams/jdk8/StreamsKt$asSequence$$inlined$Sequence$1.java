@@ -10,13 +10,11 @@ import kotlin.sequences.Sequence;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/streams/jdk8/StreamsKt$asSequence$$inlined$Sequence$1.class */
 public final class StreamsKt$asSequence$$inlined$Sequence$1<T> implements Sequence<T> {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ Stream f42709a;
+    final /* synthetic */ Stream a;
 
     @Override // kotlin.sequences.Sequence
     public Iterator<T> iterator() {
-        Iterator<T> it = this.f42709a.iterator();
+        Iterator<T> it = this.a.iterator();
         Intrinsics.c(it, "iterator()");
         return it;
     }

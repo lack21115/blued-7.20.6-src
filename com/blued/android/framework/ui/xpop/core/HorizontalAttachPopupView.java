@@ -17,7 +17,7 @@ public class HorizontalAttachPopupView extends AttachPopupView {
     @Override // com.blued.android.framework.ui.xpop.core.AttachPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
     public void b() {
         super.b();
-        this.f9958a = this.l.y;
+        this.a = this.l.y;
         this.b = this.l.x == 0 ? XPopupUtils.a(getContext(), 4.0f) : this.l.x;
     }
 
@@ -26,7 +26,7 @@ public class HorizontalAttachPopupView extends AttachPopupView {
         int i;
         float f;
         float height;
-        boolean c2 = XPopupUtils.c(getContext());
+        boolean c = XPopupUtils.c(getContext());
         int measuredWidth = getPopupContentView().getMeasuredWidth();
         int measuredHeight = getPopupContentView().getMeasuredHeight();
         boolean z = true;
@@ -35,24 +35,24 @@ public class HorizontalAttachPopupView extends AttachPopupView {
                 z = false;
             }
             this.e = z;
-            if (c2) {
+            if (c) {
                 f = -(this.e ? (XPopupUtils.a(getContext()) - this.l.k.x) + this.b : ((XPopupUtils.a(getContext()) - this.l.k.x) - getPopupContentView().getMeasuredWidth()) - this.b);
             } else {
                 f = z() ? (this.l.k.x - measuredWidth) - this.b : this.l.k.x + this.b;
             }
-            height = (this.l.k.y - (measuredHeight * 0.5f)) + this.f9958a;
+            height = (this.l.k.y - (measuredHeight * 0.5f)) + this.a;
         } else {
             int[] iArr = new int[2];
             this.l.a().getLocationOnScreen(iArr);
             Rect rect = new Rect(iArr[0], iArr[1], iArr[0] + this.l.a().getMeasuredWidth(), iArr[1] + this.l.a().getMeasuredHeight());
             this.e = (rect.left + rect.right) / 2 > XPopupUtils.a(getContext()) / 2;
-            if (c2) {
+            if (c) {
                 i = -(this.e ? (XPopupUtils.a(getContext()) - rect.left) + this.b : ((XPopupUtils.a(getContext()) - rect.right) - getPopupContentView().getMeasuredWidth()) - this.b);
             } else {
                 i = z() ? (rect.left - measuredWidth) - this.b : rect.right + this.b;
             }
             f = i;
-            height = rect.top + ((rect.height() - measuredHeight) / 2) + this.f9958a;
+            height = rect.top + ((rect.height() - measuredHeight) / 2) + this.a;
         }
         getPopupContentView().setTranslationX(f);
         getPopupContentView().setTranslationY(height);
@@ -61,7 +61,7 @@ public class HorizontalAttachPopupView extends AttachPopupView {
     @Override // com.blued.android.framework.ui.xpop.core.AttachPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
     protected PopupAnimator getPopupAnimator() {
         ScrollScaleAnimator scrollScaleAnimator = z() ? new ScrollScaleAnimator(getPopupContentView(), PopupAnimation.ScrollAlphaFromRight) : new ScrollScaleAnimator(getPopupContentView(), PopupAnimation.ScrollAlphaFromLeft);
-        scrollScaleAnimator.f9945a = true;
+        scrollScaleAnimator.a = true;
         return scrollScaleAnimator;
     }
 }

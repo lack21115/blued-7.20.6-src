@@ -15,7 +15,6 @@ import java.nio.ByteBuffer;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/image/ImageLoaderLibrarySetting.class */
 public class ImageLoaderLibrarySetting extends LibraryGlideModule {
-    @Override // com.bumptech.glide.module.LibraryGlideModule, com.bumptech.glide.module.RegistersComponents
     public void a(Context context, Glide glide, Registry registry) {
         if (ImageLoader.a()) {
             Log.e("IMAGE", "registerComponents ");

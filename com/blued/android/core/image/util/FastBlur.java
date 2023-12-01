@@ -1,7 +1,7 @@
 package com.blued.android.core.image.util;
 
 import android.graphics.Bitmap;
-import android.text.Spanned;
+import android.view.View;
 import java.lang.reflect.Array;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/image/util/FastBlur.class */
@@ -53,7 +53,7 @@ public class FastBlur {
             for (int i24 = -i; i24 <= i; i24++) {
                 int i25 = iArr[i12 + Math.min(i3, Math.max(i24, 0))];
                 int[] iArr8 = iArr7[i24 + i];
-                iArr8[0] = (i25 & Spanned.SPAN_PRIORITY) >> 16;
+                iArr8[0] = (i25 & 16711680) >> 16;
                 iArr8[1] = (i25 & 65280) >> 8;
                 iArr8[2] = i25 & 255;
                 int abs = i11 - Math.abs(i24);
@@ -92,7 +92,7 @@ public class FastBlur {
                         iArr5[i34] = Math.min(i34 + i + 1, i3);
                     }
                     int i38 = iArr[i13 + iArr5[i34]];
-                    iArr9[0] = (i38 & Spanned.SPAN_PRIORITY) >> 16;
+                    iArr9[0] = (i38 & 16711680) >> 16;
                     iArr9[1] = (i38 & 65280) >> 8;
                     iArr9[2] = i38 & 255;
                     int i39 = i29 + iArr9[0];
@@ -173,7 +173,7 @@ public class FastBlur {
             while (true) {
                 int i67 = i66;
                 if (i67 < height) {
-                    iArr[i60] = (iArr[i60] & (-16777216)) | (iArr6[i65] << 16) | (iArr6[i64] << 8) | iArr6[i45];
+                    iArr[i60] = (iArr[i60] & View.MEASURED_STATE_MASK) | (iArr6[i65] << 16) | (iArr6[i64] << 8) | iArr6[i45];
                     int[] iArr12 = iArr7[((i59 - i) + i5) % i5];
                     int i68 = iArr12[0];
                     int i69 = iArr12[1];

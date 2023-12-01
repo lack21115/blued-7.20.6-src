@@ -1,6 +1,5 @@
 package java.lang;
 
-import com.baidu.mobads.sdk.internal.ci;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Collections;
@@ -57,7 +56,7 @@ public class BootClassLoader extends ClassLoader {
             Package r0 = super.getPackage(str);
             r12 = r0;
             if (r0 == null) {
-                r12 = definePackage(str, "Unknown", ci.d, "Unknown", "Unknown", ci.d, "Unknown", null);
+                r12 = definePackage(str, "Unknown", "0.0", "Unknown", "Unknown", "0.0", "Unknown", null);
             }
         }
         return r12;
@@ -73,9 +72,8 @@ public class BootClassLoader extends ClassLoader {
         return findResources(str);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // java.lang.ClassLoader
-    public Class<?> loadClass(String str, boolean z) throws ClassNotFoundException {
+    protected Class<?> loadClass(String str, boolean z) throws ClassNotFoundException {
         Class<?> findLoadedClass = findLoadedClass(str);
         Class<?> cls = findLoadedClass;
         if (findLoadedClass == null) {

@@ -7,34 +7,33 @@ import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.LayerDrawable;
 import android.os.Build;
 import android.os.Environment;
-import android.provider.Settings;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import androidx.core.content.ContextCompat;
+import com.blued.android.chat.grpc.backup.MsgBackupManager;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.AppMethods;
 import com.blued.android.core.utils.Log;
 import com.blued.android.core.utils.skin.BluedSkinUtils;
-import com.igexin.assist.control.xiaomi.XmSystemUtils;
-import com.igexin.assist.util.AssistUtils;
 import java.io.File;
 import java.io.FileInputStream;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.Properties;
+import javax.microedition.khronos.opengles.GL10;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/ui/StatusBarHelper.class */
 public class StatusBarHelper {
     public static int a(Context context) {
-        int a2 = AppMethods.a(25);
-        int identifier = context.getResources().getIdentifier("status_bar_height", "dimen", "android");
+        int a = AppMethods.a(25);
+        int identifier = context.getResources().getIdentifier("status_bar_height", "dimen", MsgBackupManager.PLATFORM_ANDROID);
         if (identifier > 0) {
-            a2 = context.getResources().getDimensionPixelSize(identifier);
+            a = context.getResources().getDimensionPixelSize(identifier);
         }
-        return a2;
+        return a;
     }
 
     public static int a(String str, String str2) throws Exception {
@@ -136,7 +135,7 @@ public class StatusBarHelper {
             }
             Window window = activity.getWindow();
             window.clearFlags(67108864);
-            window.getDecorView().setSystemUiVisibility(1280);
+            window.getDecorView().setSystemUiVisibility(GL10.GL_INVALID_ENUM);
             window.addFlags(Integer.MIN_VALUE);
             window.setStatusBarColor(0);
             b(activity, z, z2);
@@ -155,7 +154,7 @@ public class StatusBarHelper {
                 return false;
             }
             window.clearFlags(67108864);
-            window.getDecorView().setSystemUiVisibility(1280);
+            window.getDecorView().setSystemUiVisibility(GL10.GL_INVALID_ENUM);
             window.addFlags(Integer.MIN_VALUE);
             window.setStatusBarColor(0);
             return true;
@@ -164,8 +163,8 @@ public class StatusBarHelper {
     }
 
     public static int b(Activity activity) {
-        if (c(activity) && activity.getResources().getIdentifier("config_showNavigationBar", "bool", "android") != 0) {
-            return activity.getResources().getDimensionPixelSize(activity.getResources().getIdentifier(Settings.System.NAVIGATION_BAR_HEIGHT, "dimen", "android"));
+        if (c(activity) && activity.getResources().getIdentifier("config_showNavigationBar", "bool", MsgBackupManager.PLATFORM_ANDROID) != 0) {
+            return activity.getResources().getDimensionPixelSize(activity.getResources().getIdentifier("navigation_bar_height", "dimen", MsgBackupManager.PLATFORM_ANDROID));
         }
         return 0;
     }
@@ -226,14 +225,14 @@ public class StatusBarHelper {
     }
 
     public static boolean b() {
-        if (Build.MANUFACTURER.equalsIgnoreCase(AssistUtils.BRAND_XIAOMI)) {
+        if (Build.MANUFACTURER.equalsIgnoreCase("xiaomi")) {
             try {
                 File file = new File(Environment.getRootDirectory(), "build.prop");
                 if (file.exists()) {
                     FileInputStream fileInputStream = new FileInputStream(file);
                     Properties properties = new Properties();
                     properties.load(fileInputStream);
-                    String property = properties.getProperty(XmSystemUtils.KEY_VERSION_CODE);
+                    String property = properties.getProperty("ro.miui.ui.version.code");
                     fileInputStream.close();
                     if (!TextUtils.isEmpty(property)) {
                         int parseInt = Integer.parseInt(property);

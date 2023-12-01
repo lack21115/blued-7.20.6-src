@@ -442,17 +442,17 @@ public class WifiManager {
             switch (message.what) {
                 case 69632:
                     if (message.arg1 == 0) {
-                        WifiManager.sAsyncChannel.sendMessage(AsyncChannel.CMD_CHANNEL_FULL_CONNECTION);
+                        WifiManager.sAsyncChannel.sendMessage(69633);
                     } else {
                         Log.e(WifiManager.TAG, "Failed to set up channel connection");
                         AsyncChannel unused = WifiManager.sAsyncChannel = null;
                     }
                     WifiManager.sConnected.countDown();
                     return;
-                case AsyncChannel.CMD_CHANNEL_FULLY_CONNECTED /* 69634 */:
+                case 69634:
                 default:
                     return;
-                case AsyncChannel.CMD_CHANNEL_DISCONNECTED /* 69636 */:
+                case 69636:
                     Log.e(WifiManager.TAG, "Channel connection lost");
                     AsyncChannel unused2 = WifiManager.sAsyncChannel = null;
                     getLooper().quit();
@@ -909,7 +909,7 @@ public class WifiManager {
         if (i <= -100) {
             return 0;
         }
-        if (i >= -55) {
+        if (i >= MAX_RSSI) {
             return i2 - 1;
         }
         return (int) (((i + 100) * (i2 - 1)) / 45.0f);
@@ -1008,7 +1008,7 @@ public class WifiManager {
 
     public void cancelWps(WpsCallback wpsCallback) {
         validateChannel();
-        sAsyncChannel.sendMessage(CANCEL_WPS, 0, putListener(wpsCallback));
+        sAsyncChannel.sendMessage((int) CANCEL_WPS, 0, putListener(wpsCallback));
     }
 
     public boolean clearBlacklist() {
@@ -1025,7 +1025,7 @@ public class WifiManager {
             throw new IllegalArgumentException("Network id cannot be negative");
         }
         validateChannel();
-        sAsyncChannel.sendMessage(CONNECT_NETWORK, i, putListener(actionListener));
+        sAsyncChannel.sendMessage((int) CONNECT_NETWORK, i, putListener(actionListener));
     }
 
     public void connect(WifiConfiguration wifiConfiguration, ActionListener actionListener) {
@@ -1033,7 +1033,7 @@ public class WifiManager {
             throw new IllegalArgumentException("config cannot be null");
         }
         validateChannel();
-        sAsyncChannel.sendMessage(CONNECT_NETWORK, -1, putListener(actionListener), wifiConfiguration);
+        sAsyncChannel.sendMessage((int) CONNECT_NETWORK, -1, putListener(actionListener), wifiConfiguration);
     }
 
     public MulticastLock createMulticastLock(String str) {
@@ -1053,7 +1053,7 @@ public class WifiManager {
             throw new IllegalArgumentException("Network id cannot be negative");
         }
         validateChannel();
-        sAsyncChannel.sendMessage(DISABLE_NETWORK, i, putListener(actionListener));
+        sAsyncChannel.sendMessage((int) DISABLE_NETWORK, i, putListener(actionListener));
     }
 
     public void disableEphemeralNetwork(String str) {
@@ -1125,7 +1125,7 @@ public class WifiManager {
             throw new IllegalArgumentException("Network id cannot be negative");
         }
         validateChannel();
-        sAsyncChannel.sendMessage(FORGET_NETWORK, i, putListener(actionListener));
+        sAsyncChannel.sendMessage((int) FORGET_NETWORK, i, putListener(actionListener));
     }
 
     public int getAggressiveHandover() {
@@ -1263,7 +1263,7 @@ public class WifiManager {
 
     public void getTxPacketCount(TxPacketCountListener txPacketCountListener) {
         validateChannel();
-        sAsyncChannel.sendMessage(RSSI_PKTCNT_FETCH, 0, putListener(txPacketCountListener));
+        sAsyncChannel.sendMessage((int) RSSI_PKTCNT_FETCH, 0, putListener(txPacketCountListener));
     }
 
     public int getVerboseLoggingLevel() {
@@ -1490,7 +1490,7 @@ public class WifiManager {
             throw new IllegalArgumentException("config cannot be null");
         }
         validateChannel();
-        sAsyncChannel.sendMessage(SAVE_NETWORK, 0, putListener(actionListener), wifiConfiguration);
+        sAsyncChannel.sendMessage((int) SAVE_NETWORK, 0, putListener(actionListener), wifiConfiguration);
     }
 
     public boolean saveConfiguration() {
@@ -1624,7 +1624,7 @@ public class WifiManager {
             throw new IllegalArgumentException("config cannot be null");
         }
         validateChannel();
-        sAsyncChannel.sendMessage(START_WPS, 0, putListener(wpsCallback), wpsInfo);
+        sAsyncChannel.sendMessage((int) START_WPS, 0, putListener(wpsCallback), wpsInfo);
     }
 
     public void stopBatchedScan(BatchedScanSettings batchedScanSettings) {

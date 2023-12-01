@@ -10,7 +10,7 @@ import java.util.concurrent.ExecutorService;
 public final class h extends Thread {
 
     /* renamed from: a  reason: collision with root package name */
-    i f24342a;
+    i f10655a;
     private boolean f;
     private File g;
     private boolean h;
@@ -30,7 +30,7 @@ public final class h extends Thread {
     private final Object b = new Object();
 
     /* renamed from: c  reason: collision with root package name */
-    private final Object f24343c = new Object();
+    private final Object f10656c = new Object();
     private volatile boolean e = true;
     private ConcurrentLinkedQueue<e> u = new ConcurrentLinkedQueue<>();
     private final a d = new a();
@@ -119,7 +119,7 @@ public final class h extends Thread {
     }
 
     public final void b() {
-        if (b.f24329a) {
+        if (b.f10642a) {
             Log.d("LoganThread", "Logan flush start");
         }
         f fVar = this.j;

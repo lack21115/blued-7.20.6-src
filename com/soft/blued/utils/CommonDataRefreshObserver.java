@@ -7,7 +7,7 @@ import java.util.Iterator;
 public class CommonDataRefreshObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    private static CommonDataRefreshObserver f34733a = new CommonDataRefreshObserver();
+    private static CommonDataRefreshObserver f21042a = new CommonDataRefreshObserver();
     private ArrayList<IDataRefreshObserver> b = new ArrayList<>();
 
     /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/utils/CommonDataRefreshObserver$IDataRefreshObserver.class */
@@ -19,7 +19,7 @@ public class CommonDataRefreshObserver {
     }
 
     public static CommonDataRefreshObserver a() {
-        return f34733a;
+        return f21042a;
     }
 
     public void a(IDataRefreshObserver iDataRefreshObserver) {

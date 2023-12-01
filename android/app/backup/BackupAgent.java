@@ -285,10 +285,10 @@ public abstract class BackupAgent extends ContextWrapper {
             if ("r".equals(str2)) {
                 fullBackupFileTree(packageName, "r", canonicalPath, hashSet, pattern, fullBackupDataOutput);
             }
-            if ("f".equals(str2)) {
+            if (FullBackup.DATA_TREE_TOKEN.equals(str2)) {
                 hashSet.add(canonicalPath);
                 hashSet.remove(canonicalPath2);
-                fullBackupFileTree(packageName, "f", canonicalPath2, hashSet, pattern, fullBackupDataOutput);
+                fullBackupFileTree(packageName, FullBackup.DATA_TREE_TOKEN, canonicalPath2, hashSet, pattern, fullBackupDataOutput);
             }
             if (FullBackup.DATABASE_TREE_TOKEN.equals(str2)) {
                 hashSet.add(canonicalPath2);
@@ -353,7 +353,7 @@ public abstract class BackupAgent extends ContextWrapper {
                 str = FullBackup.SHAREDPREFS_TREE_TOKEN;
                 str2 = canonicalPath5;
             } else if (canonicalPath8.startsWith(canonicalPath2)) {
-                str = "f";
+                str = FullBackup.DATA_TREE_TOKEN;
                 str2 = canonicalPath2;
             } else if (canonicalPath8.startsWith(canonicalPath)) {
                 str = "r";
@@ -452,7 +452,7 @@ public abstract class BackupAgent extends ContextWrapper {
         fullBackupFileTree(packageName, "r", canonicalPath, hashSet, fullBackupDataOutput);
         hashSet.add(canonicalPath);
         hashSet.remove(canonicalPath2);
-        fullBackupFileTree(packageName, "f", canonicalPath2, hashSet, fullBackupDataOutput);
+        fullBackupFileTree(packageName, FullBackup.DATA_TREE_TOKEN, canonicalPath2, hashSet, fullBackupDataOutput);
         hashSet.add(canonicalPath2);
         hashSet.remove(canonicalPath3);
         fullBackupFileTree(packageName, FullBackup.DATABASE_TREE_TOKEN, canonicalPath3, hashSet, fullBackupDataOutput);
@@ -470,7 +470,7 @@ public abstract class BackupAgent extends ContextWrapper {
     protected void onRestoreFile(ParcelFileDescriptor parcelFileDescriptor, long j, int i, String str, String str2, long j2, long j3) throws IOException {
         String str3;
         long j4;
-        if (str.equals("f")) {
+        if (str.equals(FullBackup.DATA_TREE_TOKEN)) {
             str3 = getFilesDir().getCanonicalPath();
             j4 = j2;
         } else if (str.equals(FullBackup.DATABASE_TREE_TOKEN)) {

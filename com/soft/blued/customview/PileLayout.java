@@ -10,7 +10,7 @@ import com.blued.android.framework.utils.DensityUtils;
 public class PileLayout extends ViewGroup {
 
     /* renamed from: a  reason: collision with root package name */
-    protected float f28467a;
+    protected float f14777a;
     protected float b;
 
     public PileLayout(Context context) {
@@ -23,13 +23,12 @@ public class PileLayout extends ViewGroup {
 
     public PileLayout(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f28467a = DensityUtils.a(context, 4.0f);
+        this.f14777a = DensityUtils.a(context, 4.0f);
         this.b = DensityUtils.a(context, 10.0f);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup
-    public ViewGroup.LayoutParams generateDefaultLayoutParams() {
+    protected ViewGroup.LayoutParams generateDefaultLayoutParams() {
         return new ViewGroup.MarginLayoutParams(-2, -2);
     }
 
@@ -38,15 +37,13 @@ public class PileLayout extends ViewGroup {
         return new ViewGroup.MarginLayoutParams(getContext(), attributeSet);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup
-    public ViewGroup.LayoutParams generateLayoutParams(ViewGroup.LayoutParams layoutParams) {
+    protected ViewGroup.LayoutParams generateLayoutParams(ViewGroup.LayoutParams layoutParams) {
         return new ViewGroup.MarginLayoutParams(layoutParams);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z, int i, int i2, int i3, int i4) {
+    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         int i5;
         int max;
         int paddingLeft = getPaddingLeft();
@@ -68,7 +65,7 @@ public class PileLayout extends ViewGroup {
                 int i10 = i7;
                 if (paddingLeft + measuredWidth + getPaddingRight() > i3 - i) {
                     i9 = getPaddingLeft();
-                    i5 = (int) (paddingTop + i7 + this.f28467a);
+                    i5 = (int) (paddingTop + i7 + this.f14777a);
                     i10 = 0;
                     i8 = 0;
                 }
@@ -91,9 +88,8 @@ public class PileLayout extends ViewGroup {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         int i3;
         int i4;
         int i5;
@@ -132,7 +128,7 @@ public class PileLayout extends ViewGroup {
                 float f = i16;
                 if (f - (i15 > 0 ? this.b : 0.0f) > (size - getPaddingLeft()) - getPaddingRight()) {
                     i5 = Math.max(i13, i14);
-                    i6 = (int) (i11 + i10 + this.f28467a);
+                    i6 = (int) (i11 + i10 + this.f14777a);
                     i4 = measuredWidth;
                     i7 = measuredHeight;
                     i3 = 0;

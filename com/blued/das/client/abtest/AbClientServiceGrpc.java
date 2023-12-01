@@ -33,12 +33,10 @@ public final class AbClientServiceGrpc {
         AbClientServiceBaseDescriptorSupplier() {
         }
 
-        @Override // io.grpc.protobuf.ProtoFileDescriptorSupplier
         public Descriptors.FileDescriptor getFileDescriptor() {
             return AbClientProtos.getDescriptor();
         }
 
-        @Override // io.grpc.protobuf.ProtoServiceDescriptorSupplier
         public Descriptors.ServiceDescriptor getServiceDescriptor() {
             return getFileDescriptor().findServiceByName("AbClientService");
         }
@@ -51,8 +49,8 @@ public final class AbClientServiceGrpc {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // io.grpc.stub.AbstractStub
-        public AbClientServiceBlockingStub build(Channel channel, CallOptions callOptions) {
+        /* renamed from: build */
+        public AbClientServiceBlockingStub m2120build(Channel channel, CallOptions callOptions) {
             return new AbClientServiceBlockingStub(channel, callOptions);
         }
 
@@ -75,8 +73,8 @@ public final class AbClientServiceGrpc {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // io.grpc.stub.AbstractStub
-        public AbClientServiceFutureStub build(Channel channel, CallOptions callOptions) {
+        /* renamed from: build */
+        public AbClientServiceFutureStub m2121build(Channel channel, CallOptions callOptions) {
             return new AbClientServiceFutureStub(channel, callOptions);
         }
 
@@ -106,7 +104,6 @@ public final class AbClientServiceGrpc {
             this.methodName = str;
         }
 
-        @Override // io.grpc.protobuf.ProtoMethodDescriptorSupplier
         public Descriptors.MethodDescriptor getMethodDescriptor() {
             return getServiceDescriptor().findMethodByName(this.methodName);
         }
@@ -119,8 +116,8 @@ public final class AbClientServiceGrpc {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // io.grpc.stub.AbstractStub
-        public AbClientServiceStub build(Channel channel, CallOptions callOptions) {
+        /* renamed from: build */
+        public AbClientServiceStub m2122build(Channel channel, CallOptions callOptions) {
             return new AbClientServiceStub(channel, callOptions);
         }
 
@@ -139,12 +136,10 @@ public final class AbClientServiceGrpc {
             this.methodId = i;
         }
 
-        @Override // io.grpc.stub.ServerCalls.BidiStreamingMethod, io.grpc.stub.ServerCalls.StreamingRequestMethod, io.grpc.stub.ServerCalls.ClientStreamingMethod
         public StreamObserver<Req> invoke(StreamObserver<Resp> streamObserver) {
             throw new AssertionError();
         }
 
-        @Override // io.grpc.stub.ServerCalls.ServerStreamingMethod, io.grpc.stub.ServerCalls.UnaryRequestMethod, io.grpc.stub.ServerCalls.UnaryMethod
         public void invoke(Req req, StreamObserver<Resp> streamObserver) {
             if (this.methodId != 0) {
                 throw new AssertionError();
@@ -199,30 +194,27 @@ public final class AbClientServiceGrpc {
     }
 
     public static AbClientServiceBlockingStub newBlockingStub(Channel channel) {
-        return (AbClientServiceBlockingStub) AbClientServiceBlockingStub.newStub(new AbstractStub.StubFactory<AbClientServiceBlockingStub>() { // from class: com.blued.das.client.abtest.AbClientServiceGrpc.2
-            /* JADX WARN: Can't rename method to resolve collision */
-            @Override // io.grpc.stub.AbstractStub.StubFactory
-            public AbClientServiceBlockingStub newStub(Channel channel2, CallOptions callOptions) {
+        return AbClientServiceBlockingStub.newStub(new AbstractStub.StubFactory<AbClientServiceBlockingStub>() { // from class: com.blued.das.client.abtest.AbClientServiceGrpc.2
+            /* renamed from: newStub */
+            public AbClientServiceBlockingStub m2118newStub(Channel channel2, CallOptions callOptions) {
                 return new AbClientServiceBlockingStub(channel2, callOptions);
             }
         }, channel);
     }
 
     public static AbClientServiceFutureStub newFutureStub(Channel channel) {
-        return (AbClientServiceFutureStub) AbClientServiceFutureStub.newStub(new AbstractStub.StubFactory<AbClientServiceFutureStub>() { // from class: com.blued.das.client.abtest.AbClientServiceGrpc.3
-            /* JADX WARN: Can't rename method to resolve collision */
-            @Override // io.grpc.stub.AbstractStub.StubFactory
-            public AbClientServiceFutureStub newStub(Channel channel2, CallOptions callOptions) {
+        return AbClientServiceFutureStub.newStub(new AbstractStub.StubFactory<AbClientServiceFutureStub>() { // from class: com.blued.das.client.abtest.AbClientServiceGrpc.3
+            /* renamed from: newStub */
+            public AbClientServiceFutureStub m2119newStub(Channel channel2, CallOptions callOptions) {
                 return new AbClientServiceFutureStub(channel2, callOptions);
             }
         }, channel);
     }
 
     public static AbClientServiceStub newStub(Channel channel) {
-        return (AbClientServiceStub) AbClientServiceStub.newStub(new AbstractStub.StubFactory<AbClientServiceStub>() { // from class: com.blued.das.client.abtest.AbClientServiceGrpc.1
-            /* JADX WARN: Can't rename method to resolve collision */
-            @Override // io.grpc.stub.AbstractStub.StubFactory
-            public AbClientServiceStub newStub(Channel channel2, CallOptions callOptions) {
+        return AbClientServiceStub.newStub(new AbstractStub.StubFactory<AbClientServiceStub>() { // from class: com.blued.das.client.abtest.AbClientServiceGrpc.1
+            /* renamed from: newStub */
+            public AbClientServiceStub m2117newStub(Channel channel2, CallOptions callOptions) {
                 return new AbClientServiceStub(channel2, callOptions);
             }
         }, channel);

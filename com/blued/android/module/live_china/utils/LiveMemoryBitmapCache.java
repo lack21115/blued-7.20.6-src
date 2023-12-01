@@ -8,6 +8,7 @@ import android.os.Build;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.LruCache;
+import com.anythink.core.common.k.f;
 import com.blued.android.core.image.ImageFileLoader;
 import com.blued.android.core.net.IRequestHost;
 import com.blued.android.framework.utils.DensityUtils;
@@ -20,13 +21,9 @@ import java.security.NoSuchAlgorithmException;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/utils/LiveMemoryBitmapCache.class */
 public class LiveMemoryBitmapCache {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final String f14180a = LiveMemoryBitmapCache.class.getSimpleName();
+    public static final String a = LiveMemoryBitmapCache.class.getSimpleName();
     private static volatile LiveMemoryBitmapCache b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private LruCache<String, BitmapWrapper> f14181c;
+    private LruCache<String, BitmapWrapper> c;
 
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/utils/LiveMemoryBitmapCache$BitmapCallback.class */
     public interface BitmapCallback {
@@ -35,17 +32,15 @@ public class LiveMemoryBitmapCache {
 
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/utils/LiveMemoryBitmapCache$BitmapWrapper.class */
     public static class BitmapWrapper {
-
-        /* renamed from: a  reason: collision with root package name */
-        public Bitmap f14185a;
+        public Bitmap a;
         public int b;
     }
 
     private LiveMemoryBitmapCache() {
         int maxMemory = ((int) Runtime.getRuntime().maxMemory()) / 20;
-        String str = f14180a;
+        String str = a;
         Log.i(str, "cacheSize：" + maxMemory);
-        this.f14181c = new LruCache<String, BitmapWrapper>(maxMemory) { // from class: com.blued.android.module.live_china.utils.LiveMemoryBitmapCache.1
+        this.c = new LruCache<String, BitmapWrapper>(maxMemory) { // from class: com.blued.android.module.live_china.utils.LiveMemoryBitmapCache.1
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // android.util.LruCache
             /* renamed from: a */
@@ -145,7 +140,7 @@ public class LiveMemoryBitmapCache {
 
     private String b(String str) {
         try {
-            MessageDigest messageDigest = MessageDigest.getInstance("MD5");
+            MessageDigest messageDigest = MessageDigest.getInstance(f.a);
             messageDigest.update(str.getBytes());
             return a(messageDigest.digest());
         } catch (NoSuchAlgorithmException e) {
@@ -154,11 +149,11 @@ public class LiveMemoryBitmapCache {
     }
 
     public Bitmap a(String str) {
-        BitmapWrapper bitmapWrapper = this.f14181c.get(b(str));
+        BitmapWrapper bitmapWrapper = this.c.get(b(str));
         if (bitmapWrapper == null) {
             return null;
         }
-        return bitmapWrapper.f14185a;
+        return bitmapWrapper.a;
     }
 
     public void a(Context context, final String str, int i, int i2, final BitmapCallback bitmapCallback) {
@@ -210,15 +205,15 @@ public class LiveMemoryBitmapCache {
     }
 
     public void a(String str, Bitmap bitmap) {
-        String str2 = f14180a;
+        String str2 = a;
         Logger.c(str2, "put : " + str);
         if (a(str) == null) {
             BitmapWrapper bitmapWrapper = new BitmapWrapper();
             bitmapWrapper.b = a(bitmap);
-            bitmapWrapper.f14185a = bitmap;
-            this.f14181c.put(b(str), bitmapWrapper);
+            bitmapWrapper.a = bitmap;
+            this.c.put(b(str), bitmapWrapper);
         }
-        String str3 = f14180a;
-        Logger.c(str3, "currentSize : " + this.f14181c.size() + "   maxSize : " + this.f14181c.maxSize());
+        String str3 = a;
+        Logger.c(str3, "currentSize : " + this.c.size() + "   maxSize : " + this.c.maxSize());
     }
 }

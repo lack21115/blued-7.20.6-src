@@ -49,7 +49,6 @@ public abstract class SpellCheckerService extends Service {
             return this.mLocale;
         }
 
-        @Override // com.android.internal.textservice.ISpellCheckerSession
         public void onCancel() {
             int threadPriority = Process.getThreadPriority(Process.myTid());
             try {
@@ -60,7 +59,6 @@ public abstract class SpellCheckerService extends Service {
             }
         }
 
-        @Override // com.android.internal.textservice.ISpellCheckerSession
         public void onClose() {
             int threadPriority = Process.getThreadPriority(Process.myTid());
             try {
@@ -72,7 +70,6 @@ public abstract class SpellCheckerService extends Service {
             }
         }
 
-        @Override // com.android.internal.textservice.ISpellCheckerSession
         public void onGetSentenceSuggestionsMultiple(TextInfo[] textInfoArr, int i) {
             try {
                 this.mListener.onGetSentenceSuggestions(this.mSession.onGetSentenceSuggestionsMultiple(textInfoArr, i));
@@ -80,7 +77,6 @@ public abstract class SpellCheckerService extends Service {
             }
         }
 
-        @Override // com.android.internal.textservice.ISpellCheckerSession
         public void onGetSuggestionsMultiple(TextInfo[] textInfoArr, int i, boolean z) {
             int threadPriority = Process.getThreadPriority(Process.myTid());
             try {
@@ -299,7 +295,6 @@ public abstract class SpellCheckerService extends Service {
             this.mInternalServiceRef = new WeakReference<>(spellCheckerService);
         }
 
-        @Override // com.android.internal.textservice.ISpellCheckerService
         public ISpellCheckerSession getISpellCheckerSession(String str, ISpellCheckerSessionListener iSpellCheckerSessionListener, Bundle bundle) {
             SpellCheckerService spellCheckerService = this.mInternalServiceRef.get();
             if (spellCheckerService == null) {

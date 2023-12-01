@@ -20,11 +20,11 @@ import java.util.TimerTask;
 public class RoteProgressBar extends TextView {
 
     /* renamed from: a  reason: collision with root package name */
-    private Paint f28507a;
+    private Paint f14817a;
     private Paint b;
 
     /* renamed from: c  reason: collision with root package name */
-    private RectF f28508c;
+    private RectF f14818c;
     private int d;
     private int e;
     private int f;
@@ -51,11 +51,11 @@ public class RoteProgressBar extends TextView {
     class MyTimerTask extends TimerTask {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ RoteProgressBar f28510a;
+        final /* synthetic */ RoteProgressBar f14820a;
 
         @Override // java.util.TimerTask, java.lang.Runnable
         public void run() {
-            this.f28510a.q.obtainMessage(256).sendToTarget();
+            this.f14820a.q.obtainMessage(256).sendToTarget();
         }
     }
 
@@ -102,10 +102,10 @@ public class RoteProgressBar extends TextView {
 
     private void a() {
         Paint paint = new Paint();
-        this.f28507a = paint;
+        this.f14817a = paint;
         paint.setAntiAlias(true);
-        this.f28507a.setStyle(Paint.Style.STROKE);
-        this.f28507a.setStrokeWidth(0.0f);
+        this.f14817a.setStyle(Paint.Style.STROKE);
+        this.f14817a.setStrokeWidth(0.0f);
         this.d = 0;
         this.e = -13312;
         Paint paint2 = new Paint();
@@ -137,7 +137,7 @@ public class RoteProgressBar extends TextView {
         this.p = true;
         this.l = 0;
         this.n = 0;
-        this.f28508c = new RectF(0.0f, 0.0f, 0.0f, 0.0f);
+        this.f14818c = new RectF(0.0f, 0.0f, 0.0f, 0.0f);
         this.v = 25;
         this.w = 0.0f;
         this.x = 0.0f;
@@ -193,20 +193,19 @@ public class RoteProgressBar extends TextView {
     public void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         if (this.p) {
-            canvas.drawArc(this.f28508c, 0.0f, 360.0f, this.k, this.o);
+            canvas.drawArc(this.f14818c, 0.0f, 360.0f, this.k, this.o);
         }
-        canvas.drawArc(this.f28508c, this.h, (this.n / this.j) * 360.0f, this.k, this.m);
-        canvas.drawArc(this.f28508c, this.h, (this.i / this.j) * 360.0f, this.k, this.b);
+        canvas.drawArc(this.f14818c, this.h, (this.n / this.j) * 360.0f, this.k, this.m);
+        canvas.drawArc(this.f14818c, this.h, (this.i / this.j) * 360.0f, this.k, this.b);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onSizeChanged(int i, int i2, int i3, int i4) {
+    protected void onSizeChanged(int i, int i2, int i3, int i4) {
         super.onSizeChanged(i, i2, i3, i4);
         Logger.b("", "W = ", Integer.valueOf(i), ", H = ", Integer.valueOf(i2));
         int i5 = this.l;
         if (i5 != 0) {
-            RectF rectF = this.f28508c;
+            RectF rectF = this.f14818c;
             int i6 = this.d;
             rectF.set((i6 / 2) + i5, (i6 / 2) + i5, (i - (i6 / 2)) - i5, (i2 - (i6 / 2)) - i5);
             return;
@@ -215,7 +214,7 @@ public class RoteProgressBar extends TextView {
         int paddingRight = getPaddingRight();
         int paddingTop = getPaddingTop();
         int paddingBottom = getPaddingBottom();
-        RectF rectF2 = this.f28508c;
+        RectF rectF2 = this.f14818c;
         int i7 = this.d;
         rectF2.set(paddingLeft + (i7 / 2), paddingTop + (i7 / 2), (i - paddingRight) - (i7 / 2), (i2 - paddingBottom) - (i7 / 2));
     }

@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class LivePrePayGuideBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final RelativeLayout f29456a;
+    private final RelativeLayout f15766a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
-        return this.f29456a;
+        return this.f15766a;
     }
 }

@@ -22,13 +22,9 @@ public class DrivePathV2 extends Path implements Parcelable {
             return null;
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f5696a;
+    private String a;
     private List<DriveStepV2> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f5697c;
+    private int c;
     private Cost d;
     private ElecConsumeInfo e;
     private List<ChargeStationInfo> f;
@@ -42,7 +38,7 @@ public class DrivePathV2 extends Path implements Parcelable {
         super(parcel);
         this.b = new ArrayList();
         this.f = new ArrayList();
-        this.f5696a = parcel.readString();
+        this.a = parcel.readString();
         this.b = parcel.createTypedArrayList(DriveStepV2.CREATOR);
     }
 
@@ -64,7 +60,7 @@ public class DrivePathV2 extends Path implements Parcelable {
     }
 
     public int getRestriction() {
-        return this.f5697c;
+        return this.c;
     }
 
     public List<DriveStepV2> getSteps() {
@@ -72,7 +68,7 @@ public class DrivePathV2 extends Path implements Parcelable {
     }
 
     public String getStrategy() {
-        return this.f5696a;
+        return this.a;
     }
 
     public void setChargeStationInfo(List<ChargeStationInfo> list) {
@@ -88,7 +84,7 @@ public class DrivePathV2 extends Path implements Parcelable {
     }
 
     public void setRestriction(int i) {
-        this.f5697c = i;
+        this.c = i;
     }
 
     public void setSteps(List<DriveStepV2> list) {
@@ -96,7 +92,7 @@ public class DrivePathV2 extends Path implements Parcelable {
     }
 
     public void setStrategy(String str) {
-        this.f5696a = str;
+        this.a = str;
     }
 
     @Override // com.amap.api.services.route.Path, android.os.Parcelable

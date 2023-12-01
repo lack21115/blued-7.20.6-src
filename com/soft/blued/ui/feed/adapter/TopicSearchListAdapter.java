@@ -23,11 +23,11 @@ import java.util.List;
 public class TopicSearchListAdapter extends BaseAdapter {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f29873a;
+    private Context f16183a;
     private LayoutInflater b;
 
     /* renamed from: c  reason: collision with root package name */
-    private List<BluedTopic> f29874c;
+    private List<BluedTopic> f16184c;
     private IRequestHost d;
     private String e;
 
@@ -35,11 +35,11 @@ public class TopicSearchListAdapter extends BaseAdapter {
     class ViewHolder {
 
         /* renamed from: a  reason: collision with root package name */
-        public ImageView f29875a;
+        public ImageView f16185a;
         public TextView b;
 
         /* renamed from: c  reason: collision with root package name */
-        public ImageView f29876c;
+        public ImageView f16186c;
         public TextView d;
 
         private ViewHolder() {
@@ -48,12 +48,12 @@ public class TopicSearchListAdapter extends BaseAdapter {
 
     @Override // android.widget.Adapter
     public int getCount() {
-        return this.f29874c.size();
+        return this.f16184c.size();
     }
 
     @Override // android.widget.Adapter
     public Object getItem(int i) {
-        return this.f29874c.get(i);
+        return this.f16184c.get(i);
     }
 
     @Override // android.widget.Adapter
@@ -68,16 +68,16 @@ public class TopicSearchListAdapter extends BaseAdapter {
         if (view == null) {
             viewHolder = new ViewHolder();
             view = this.b.inflate(R.layout.item_topic_search, (ViewGroup) null);
-            viewHolder.f29875a = (ImageView) view.findViewById(R.id.iv_topic_pic);
-            viewHolder.b = (TextView) view.findViewById(2131372819);
-            viewHolder.f29876c = (ImageView) view.findViewById(R.id.iv_topic_join_icon);
+            viewHolder.f16185a = (ImageView) view.findViewById(R.id.iv_topic_pic);
+            viewHolder.b = (TextView) view.findViewById(R.id.tv_topic_name);
+            viewHolder.f16186c = (ImageView) view.findViewById(R.id.iv_topic_join_icon);
             viewHolder.d = (TextView) view.findViewById(R.id.tv_topic_join_count);
             view.setTag(viewHolder);
         } else {
             viewHolder = (ViewHolder) view.getTag();
         }
-        BluedTopic bluedTopic = this.f29874c.get(i);
-        ImageLoader.a(this.d, AvatarUtils.a(0, bluedTopic.avatar)).b(2131237269).c().a(viewHolder.f29875a);
+        BluedTopic bluedTopic = this.f16184c.get(i);
+        ImageLoader.a(this.d, AvatarUtils.a(0, bluedTopic.avatar)).b((int) R.drawable.topic_default_header).c().a(viewHolder.f16185a);
         if (TextUtils.isEmpty(bluedTopic.name)) {
             viewHolder.b.setText("");
         } else {
@@ -94,7 +94,7 @@ public class TopicSearchListAdapter extends BaseAdapter {
                 if (i3 >= str.length() || (indexOf = str.indexOf(this.e, i3)) < 0) {
                     break;
                 }
-                spannableStringBuilder.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this.f29873a, 2131101190)), indexOf, this.e.length() + indexOf, 33);
+                spannableStringBuilder.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this.f16183a, 2131101190)), indexOf, this.e.length() + indexOf, 33);
                 i2 = Math.max(i3 + 1, indexOf);
             }
             viewHolder.b.setText(spannableStringBuilder);
@@ -105,7 +105,7 @@ public class TopicSearchListAdapter extends BaseAdapter {
         if (!TextUtils.isEmpty(bluedTopic.join_total)) {
             j = StringUtils.a(bluedTopic.join_total, 0);
         }
-        viewHolder.d.setText(j + " " + this.f29873a.getResources().getString(2131890302));
+        viewHolder.d.setText(j + " " + this.f16183a.getResources().getString(R.string.live_share_viewersCount));
         return view;
     }
 }

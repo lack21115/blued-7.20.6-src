@@ -148,7 +148,7 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
             BoundedEntrySet() {
             }
 
-            @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+            @Override // java.util.AbstractCollection, java.util.Collection
             public boolean contains(Object obj) {
                 if (obj instanceof Map.Entry) {
                     Map.Entry<?, ?> entry = (Map.Entry) obj;
@@ -157,7 +157,7 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
                 return false;
             }
 
-            @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+            @Override // java.util.AbstractCollection, java.util.Collection
             public boolean isEmpty() {
                 return BoundedMap.this.isEmpty();
             }
@@ -176,7 +176,7 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
                 };
             }
 
-            @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+            @Override // java.util.AbstractCollection, java.util.Collection
             public boolean remove(Object obj) {
                 if (obj instanceof Map.Entry) {
                     Map.Entry entry = (Map.Entry) obj;
@@ -185,7 +185,7 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
                 return false;
             }
 
-            @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+            @Override // java.util.AbstractCollection, java.util.Collection
             public int size() {
                 return BoundedMap.this.size();
             }
@@ -233,7 +233,7 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
                 return BoundedMap.this.comparator();
             }
 
-            @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+            @Override // java.util.AbstractCollection, java.util.Collection
             public boolean contains(Object obj) {
                 return BoundedMap.this.isInBounds(obj) && TreeMap.this.findByObject(obj) != null;
             }
@@ -272,7 +272,7 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
                 return BoundedMap.this.headMap(k, z).navigableKeySet();
             }
 
-            @Override // java.util.NavigableSet
+            @Override // java.util.NavigableSet, java.util.SortedSet
             public SortedSet<K> headSet(K k) {
                 return BoundedMap.this.headMap((BoundedMap) k).navigableKeySet();
             }
@@ -282,7 +282,7 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
                 return (K) BoundedMap.this.higherKey(k);
             }
 
-            @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+            @Override // java.util.AbstractCollection, java.util.Collection
             public boolean isEmpty() {
                 return BoundedMap.this.isEmpty();
             }
@@ -329,12 +329,12 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
                 return null;
             }
 
-            @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+            @Override // java.util.AbstractCollection, java.util.Collection
             public boolean remove(Object obj) {
                 return BoundedMap.this.isInBounds(obj) && TreeMap.this.removeInternalByKey(obj) != null;
             }
 
-            @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+            @Override // java.util.AbstractCollection, java.util.Collection
             public int size() {
                 return BoundedMap.this.size();
             }
@@ -344,7 +344,7 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
                 return BoundedMap.this.subMap((boolean) k, z, (boolean) k2, z2).navigableKeySet();
             }
 
-            @Override // java.util.NavigableSet
+            @Override // java.util.NavigableSet, java.util.SortedSet
             public SortedSet<K> subSet(K k, K k2) {
                 return BoundedMap.this.subMap((Object) k, (Object) k2).navigableKeySet();
             }
@@ -354,7 +354,7 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
                 return BoundedMap.this.tailMap(k, z).navigableKeySet();
             }
 
-            @Override // java.util.NavigableSet
+            @Override // java.util.NavigableSet, java.util.SortedSet
             public SortedSet<K> tailSet(K k) {
                 return BoundedMap.this.tailMap((BoundedMap) k).navigableKeySet();
             }
@@ -585,7 +585,7 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
             return null;
         }
 
-        @Override // java.util.NavigableMap
+        @Override // java.util.NavigableMap, java.util.SortedMap
         public NavigableMap<K, V> headMap(K k) {
             return subMap((Bound) null, Bound.NO_BOUND, (Bound) k, Bound.EXCLUSIVE);
         }
@@ -595,7 +595,7 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
             return subMap((Bound) null, Bound.NO_BOUND, (Bound) k, z ? Bound.INCLUSIVE : Bound.EXCLUSIVE);
         }
 
-        @Override // java.util.NavigableMap
+        @Override // java.util.NavigableMap, java.util.SortedMap
         public /* bridge */ /* synthetic */ SortedMap headMap(Object obj) {
             return headMap((BoundedMap) obj);
         }
@@ -702,7 +702,7 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
             return TreeMap.count(entrySet().iterator());
         }
 
-        @Override // java.util.NavigableMap
+        @Override // java.util.NavigableMap, java.util.SortedMap
         public NavigableMap<K, V> subMap(K k, K k2) {
             return subMap((Bound) k, Bound.INCLUSIVE, (Bound) k2, Bound.EXCLUSIVE);
         }
@@ -712,7 +712,7 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
             return subMap((Bound) k, z ? Bound.INCLUSIVE : Bound.EXCLUSIVE, (Bound) k2, z2 ? Bound.INCLUSIVE : Bound.EXCLUSIVE);
         }
 
-        @Override // java.util.NavigableMap
+        @Override // java.util.NavigableMap, java.util.SortedMap
         public NavigableMap<K, V> tailMap(K k) {
             return subMap((Bound) k, Bound.INCLUSIVE, (Bound) null, Bound.NO_BOUND);
         }
@@ -722,7 +722,7 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
             return subMap((Bound) k, z ? Bound.INCLUSIVE : Bound.EXCLUSIVE, (Bound) null, Bound.NO_BOUND);
         }
 
-        @Override // java.util.NavigableMap
+        @Override // java.util.NavigableMap, java.util.SortedMap
         public /* bridge */ /* synthetic */ SortedMap tailMap(Object obj) {
             return tailMap((BoundedMap) obj);
         }
@@ -748,12 +748,12 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
         EntrySet() {
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public void clear() {
             TreeMap.this.clear();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean contains(Object obj) {
             return (obj instanceof Map.Entry) && TreeMap.this.findByEntry((Map.Entry) obj) != null;
         }
@@ -772,7 +772,7 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
             };
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean remove(Object obj) {
             Node<K, V> findByEntry;
             if ((obj instanceof Map.Entry) && (findByEntry = TreeMap.this.findByEntry((Map.Entry) obj)) != null) {
@@ -782,7 +782,7 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
             return false;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection
         public int size() {
             return TreeMap.this.size;
         }
@@ -798,7 +798,7 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
             return (K) TreeMap.this.ceilingKey(k);
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public void clear() {
             TreeMap.this.clear();
         }
@@ -808,7 +808,7 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
             return TreeMap.this.comparator();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean contains(Object obj) {
             return TreeMap.this.containsKey(obj);
         }
@@ -847,7 +847,7 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
             return TreeMap.this.headMap(k, z).navigableKeySet();
         }
 
-        @Override // java.util.NavigableSet
+        @Override // java.util.NavigableSet, java.util.SortedSet
         public SortedSet<K> headSet(K k) {
             return TreeMap.this.headMap(k, false).navigableKeySet();
         }
@@ -899,12 +899,12 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
             return null;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean remove(Object obj) {
             return TreeMap.this.removeInternalByKey(obj) != null;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection
         public int size() {
             return TreeMap.this.size;
         }
@@ -914,7 +914,7 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
             return TreeMap.this.subMap(k, z, k2, z2).navigableKeySet();
         }
 
-        @Override // java.util.NavigableSet
+        @Override // java.util.NavigableSet, java.util.SortedSet
         public SortedSet<K> subSet(K k, K k2) {
             return TreeMap.this.subMap(k, true, k2, false).navigableKeySet();
         }
@@ -924,7 +924,7 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
             return TreeMap.this.tailMap(k, z).navigableKeySet();
         }
 
-        @Override // java.util.NavigableSet
+        @Override // java.util.NavigableSet, java.util.SortedSet
         public SortedSet<K> tailSet(K k) {
             return TreeMap.this.tailMap(k, true).navigableKeySet();
         }
@@ -1700,7 +1700,7 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
         return new BoundedMap(true, null, Bound.NO_BOUND, k, z ? Bound.INCLUSIVE : Bound.EXCLUSIVE);
     }
 
-    @Override // java.util.SortedMap, java.util.NavigableMap
+    @Override // java.util.SortedMap
     public SortedMap<K, V> headMap(K k) {
         return new BoundedMap(true, null, Bound.NO_BOUND, k, Bound.EXCLUSIVE);
     }
@@ -1863,7 +1863,7 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
         return new BoundedMap(true, k, z ? Bound.INCLUSIVE : Bound.EXCLUSIVE, k2, z2 ? Bound.INCLUSIVE : Bound.EXCLUSIVE);
     }
 
-    @Override // java.util.SortedMap, java.util.NavigableMap
+    @Override // java.util.SortedMap
     public SortedMap<K, V> subMap(K k, K k2) {
         return new BoundedMap(true, k, Bound.INCLUSIVE, k2, Bound.EXCLUSIVE);
     }
@@ -1873,7 +1873,7 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
         return new BoundedMap(true, k, z ? Bound.INCLUSIVE : Bound.EXCLUSIVE, null, Bound.NO_BOUND);
     }
 
-    @Override // java.util.SortedMap, java.util.NavigableMap
+    @Override // java.util.SortedMap
     public SortedMap<K, V> tailMap(K k) {
         return new BoundedMap(true, k, Bound.INCLUSIVE, null, Bound.NO_BOUND);
     }

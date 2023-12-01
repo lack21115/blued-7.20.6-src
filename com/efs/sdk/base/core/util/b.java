@@ -1,6 +1,5 @@
 package com.efs.sdk.base.core.util;
 
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.io.Closeable;
 import java.io.File;
 import java.io.FileInputStream;
@@ -14,22 +13,22 @@ import java.util.Random;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Random f21792a = new Random();
+    private static final Random f8186a = new Random();
 
     public static String a(com.efs.sdk.base.core.d.b bVar) {
         StringBuilder sb = new StringBuilder();
-        sb.append(bVar.f21764a.f21762a);
-        sb.append(BridgeUtil.UNDERLINE_STR);
-        sb.append(bVar.f21764a.d);
-        sb.append(BridgeUtil.UNDERLINE_STR);
-        sb.append(bVar.f21764a.e);
-        sb.append(BridgeUtil.UNDERLINE_STR);
-        sb.append((int) bVar.f21764a.b);
-        sb.append(BridgeUtil.UNDERLINE_STR);
+        sb.append(bVar.f8158a.f8156a);
+        sb.append("_");
+        sb.append(bVar.f8158a.d);
+        sb.append("_");
+        sb.append(bVar.f8158a.e);
+        sb.append("_");
+        sb.append((int) bVar.f8158a.b);
+        sb.append("_");
         sb.append(ProcessUtil.myPid());
-        sb.append(BridgeUtil.UNDERLINE_STR);
-        sb.append(f21792a.nextInt(10000));
-        sb.append(BridgeUtil.UNDERLINE_STR);
+        sb.append("_");
+        sb.append(f8186a.nextInt(10000));
+        sb.append("_");
         com.efs.sdk.base.core.a.a.a();
         sb.append(com.efs.sdk.base.core.a.a.b());
         return sb.toString();
@@ -182,7 +181,7 @@ public final class b {
     }
 
     public static com.efs.sdk.base.core.d.b b(String str) {
-        String[] split = str.split(BridgeUtil.UNDERLINE_STR);
+        String[] split = str.split("_");
         if (split.length != 7) {
             Log.w("efs.util.file", "File name error, name is ".concat(String.valueOf(str)));
             return null;

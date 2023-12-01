@@ -27,7 +27,7 @@ public class WelcomeADManager {
     private static final String b = WelcomeADManager.class.getSimpleName();
 
     /* renamed from: c  reason: collision with root package name */
-    private static WelcomeADManager f31044c;
+    private static WelcomeADManager f17354c;
     private SplashEntity d;
     private SplashExtraEntity e;
     private String j;
@@ -37,17 +37,15 @@ public class WelcomeADManager {
     private boolean i = false;
 
     /* renamed from: a  reason: collision with root package name */
-    public SplashEntity.Sensitive f31045a = new SplashEntity.Sensitive();
+    public SplashEntity.Sensitive f17355a = new SplashEntity.Sensitive();
     private BluedUIHttpResponse k = new BluedUIHttpResponse<BluedEntity<SplashEntity, SplashExtraEntity>>() { // from class: com.soft.blued.ui.home.manager.WelcomeADManager.1
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse, com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
         public void onSuccess(String str) {
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public boolean onUIFailure(int i, String str) {
             InstantLogBody instantLogBody = new InstantLogBody();
             instantLogBody.service = "AD_REQUEST_FAIL";
-            Map<String, String> a2 = BluedHttpTools.a();
+            Map a2 = BluedHttpTools.a();
             a2.put("code", i + "");
             a2.put("req_id", WelcomeADManager.this.j);
             InstantLog.a(instantLogBody, a2);
@@ -57,7 +55,6 @@ public class WelcomeADManager {
             return true;
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIUpdate(BluedEntity<SplashEntity, SplashExtraEntity> bluedEntity) {
             String str;
             Log.v("drb", "========开机广告请求成功");
@@ -65,34 +62,34 @@ public class WelcomeADManager {
                 try {
                     if (bluedEntity.data != null && bluedEntity.data.size() > 0) {
                         Collections.sort(bluedEntity.data);
-                        WelcomeADManager.this.d = bluedEntity.data.get(0);
+                        WelcomeADManager.this.d = (SplashEntity) bluedEntity.data.get(0);
                         InstantLogBody instantLogBody = new InstantLogBody();
                         instantLogBody.service = "AD_API_REQUEST_SUCCESS";
-                        Map<String, String> a2 = BluedHttpTools.a();
+                        Map a2 = BluedHttpTools.a();
                         a2.put("req_id", WelcomeADManager.this.j);
                         InstantLog.a(instantLogBody, a2);
                         EventTrackLoginAndRegister.b(LoginAndRegisterProtos.Event.AD_API_REQUEST_SUCCESS, WelcomeADManager.this.j);
-                        Iterator<SplashEntity> it = bluedEntity.data.iterator();
+                        Iterator it = bluedEntity.data.iterator();
                         while (true) {
                             str = "";
                             if (!it.hasNext()) {
                                 break;
                             }
-                            SplashEntity next = it.next();
-                            if (next.today != null) {
-                                Log.v("drb", "广告通用埋点_api广告请求 广告id:" + next.id + " 类型：" + next.today.adms_type + " 广告位id:" + next.position_code + " requestId：" + bluedEntity.request_id);
+                            SplashEntity splashEntity = (SplashEntity) it.next();
+                            if (splashEntity.today != null) {
+                                Log.v("drb", "广告通用埋点_api广告请求 广告id:" + splashEntity.id + " 类型：" + splashEntity.today.adms_type + " 广告位id:" + splashEntity.position_code + " requestId：" + bluedEntity.request_id);
                                 LoginAndRegisterProtos.Event event = LoginAndRegisterProtos.Event.AD_API_REQUEST;
                                 StringBuilder sb = new StringBuilder();
-                                sb.append(next.id);
+                                sb.append(splashEntity.id);
                                 sb.append("");
                                 String sb2 = sb.toString();
-                                String str2 = next.today.adms_type;
-                                EventTrackLoginAndRegister.a(event, sb2, str2, next.position_code + "", WelcomeADManager.this.j);
+                                String str2 = splashEntity.today.adms_type;
+                                EventTrackLoginAndRegister.a(event, sb2, str2, splashEntity.position_code + "", WelcomeADManager.this.j);
                             }
                         }
                         SplashEntity.ShowEntity showEntity = WelcomeADManager.this.d.today;
                         SplashEntity.ShowEntity showEntity2 = WelcomeADManager.this.d.tomorrow;
-                        WelcomeADManager.this.e = bluedEntity.extra;
+                        WelcomeADManager.this.e = (SplashExtraEntity) bluedEntity.extra;
                         String str3 = WelcomeADManager.this.e.IMGURL;
                         BluedPreferences.D(WelcomeADManager.this.e.ID);
                         if (WelcomeADManager.this.e != null && WelcomeADManager.this.e.splash_config != null) {
@@ -109,43 +106,43 @@ public class WelcomeADManager {
                         if (showEntity != null) {
                             WelcomeADManager.this.d.today.splashResultList = bluedEntity.data;
                             if (WelcomeADManager.this.d.today.splashResultList != null) {
-                                for (SplashEntity splashEntity : WelcomeADManager.this.d.today.splashResultList) {
-                                    splashEntity.today.third_id = splashEntity.third_id;
-                                    splashEntity.today.position_code = splashEntity.position_code;
-                                    splashEntity.today.ads_id = splashEntity.id;
-                                    splashEntity.today.download_type = splashEntity.download_type;
-                                    splashEntity.today.material_type = splashEntity.material_type;
-                                    if (splashEntity.extra_json != null) {
-                                        if (splashEntity.extra_json.splash != null) {
-                                            splashEntity.today.hot_area_limit_type = splashEntity.extra_json.splash.hot_area_limit_type;
-                                            splashEntity.today.request_time_out = splashEntity.extra_json.splash.request_time_out;
-                                            splashEntity.today.show_time_limit = splashEntity.extra_json.splash.show_time_limit;
-                                            splashEntity.today.transparency = splashEntity.extra_json.splash.transparency;
-                                            splashEntity.today.hot_dynamic = splashEntity.extra_json.splash.hot_dynamic;
-                                            splashEntity.today.text_click_button = splashEntity.extra_json.splash.text_click_button;
-                                            splashEntity.today.text_wipe_up = splashEntity.extra_json.splash.text_wipe_up;
-                                            splashEntity.today.text_shake_it = splashEntity.extra_json.splash.text_shake_it;
-                                            if (splashEntity.extra_json.splash.is_accurate == 2) {
-                                                splashEntity.today.ads_pics = splashEntity.today.image;
+                                for (SplashEntity splashEntity2 : WelcomeADManager.this.d.today.splashResultList) {
+                                    splashEntity2.today.third_id = splashEntity2.third_id;
+                                    splashEntity2.today.position_code = splashEntity2.position_code;
+                                    splashEntity2.today.ads_id = splashEntity2.id;
+                                    splashEntity2.today.download_type = splashEntity2.download_type;
+                                    splashEntity2.today.material_type = splashEntity2.material_type;
+                                    if (splashEntity2.extra_json != null) {
+                                        if (splashEntity2.extra_json.splash != null) {
+                                            splashEntity2.today.hot_area_limit_type = splashEntity2.extra_json.splash.hot_area_limit_type;
+                                            splashEntity2.today.request_time_out = splashEntity2.extra_json.splash.request_time_out;
+                                            splashEntity2.today.show_time_limit = splashEntity2.extra_json.splash.show_time_limit;
+                                            splashEntity2.today.transparency = splashEntity2.extra_json.splash.transparency;
+                                            splashEntity2.today.hot_dynamic = splashEntity2.extra_json.splash.hot_dynamic;
+                                            splashEntity2.today.text_click_button = splashEntity2.extra_json.splash.text_click_button;
+                                            splashEntity2.today.text_wipe_up = splashEntity2.extra_json.splash.text_wipe_up;
+                                            splashEntity2.today.text_shake_it = splashEntity2.extra_json.splash.text_shake_it;
+                                            if (splashEntity2.extra_json.splash.is_accurate == 2) {
+                                                splashEntity2.today.ads_pics = splashEntity2.today.image;
                                             } else {
-                                                splashEntity.today.ads_pics = WelcomeADManager.this.a(str3, splashEntity.today);
+                                                splashEntity2.today.ads_pics = WelcomeADManager.this.a(str3, splashEntity2.today);
                                             }
                                         }
-                                        if (splashEntity.extra_json.sensitive != null) {
-                                            splashEntity.today.operating_time = splashEntity.extra_json.sensitive.operating_time;
-                                            splashEntity.today.turn_angle = splashEntity.extra_json.sensitive.turn_angle;
-                                            splashEntity.today.speed = splashEntity.extra_json.sensitive.speed;
+                                        if (splashEntity2.extra_json.sensitive != null) {
+                                            splashEntity2.today.operating_time = splashEntity2.extra_json.sensitive.operating_time;
+                                            splashEntity2.today.turn_angle = splashEntity2.extra_json.sensitive.turn_angle;
+                                            splashEntity2.today.speed = splashEntity2.extra_json.sensitive.speed;
                                         }
                                     }
                                     if (WelcomeADManager.this.e != null && WelcomeADManager.this.e.splash_config != null) {
-                                        splashEntity.today.interval = WelcomeADManager.this.e.splash_config.interval;
-                                        splashEntity.today.timeout = WelcomeADManager.this.e.splash_config.timeout;
-                                        splashEntity.today.security = WelcomeADManager.this.e.splash_config.security;
+                                        splashEntity2.today.interval = WelcomeADManager.this.e.splash_config.interval;
+                                        splashEntity2.today.timeout = WelcomeADManager.this.e.splash_config.timeout;
+                                        splashEntity2.today.security = WelcomeADManager.this.e.splash_config.security;
                                     }
-                                    splashEntity.today.request_id = bluedEntity.request_id;
+                                    splashEntity2.today.request_id = bluedEntity.request_id;
                                 }
-                                for (SplashEntity splashEntity2 : WelcomeADManager.this.d.today.splashResultList) {
-                                    Log.v("drb", "splashEntity:" + splashEntity2.id + " -- " + splashEntity2.ranking + " -- " + splashEntity2.today.image + " -- " + splashEntity2.today.adms_type + " -- material_type:" + splashEntity2.today.material_type + " -- video_width:" + splashEntity2.today.material_width + " -- video_height:" + splashEntity2.today.material_height);
+                                for (SplashEntity splashEntity3 : WelcomeADManager.this.d.today.splashResultList) {
+                                    Log.v("drb", "splashEntity:" + splashEntity3.id + " -- " + splashEntity3.ranking + " -- " + splashEntity3.today.image + " -- " + splashEntity3.today.adms_type + " -- material_type:" + splashEntity3.today.material_type + " -- video_width:" + splashEntity3.today.material_width + " -- video_height:" + splashEntity3.today.material_height);
                                 }
                             }
                             WelcomeADManager.this.f = 1;
@@ -178,7 +175,7 @@ public class WelcomeADManager {
                     ADDownloadObserver.a().b();
                     InstantLogBody instantLogBody2 = new InstantLogBody();
                     instantLogBody2.service = "AD_REQUEST_FAIL";
-                    Map<String, String> a3 = BluedHttpTools.a();
+                    Map a3 = BluedHttpTools.a();
                     a3.put("code", "接口请求成功，客户端异常：" + e);
                     a3.put("req_id", WelcomeADManager.this.j);
                     InstantLog.a(instantLogBody2, a3);
@@ -192,7 +189,7 @@ public class WelcomeADManager {
             ADDownloadObserver.a().b();
             InstantLogBody instantLogBody3 = new InstantLogBody();
             instantLogBody3.service = "AD_REQUEST_FAIL";
-            Map<String, String> a4 = BluedHttpTools.a();
+            Map a4 = BluedHttpTools.a();
             a4.put("code", "接口请求成功，但是未返回数据");
             a4.put("req_id", WelcomeADManager.this.j);
             InstantLog.a(instantLogBody3, a4);
@@ -208,10 +205,10 @@ public class WelcomeADManager {
     }
 
     public static WelcomeADManager a() {
-        if (f31044c == null) {
-            f31044c = new WelcomeADManager();
+        if (f17354c == null) {
+            f17354c = new WelcomeADManager();
         }
-        return f31044c;
+        return f17354c;
     }
 
     /* JADX INFO: Access modifiers changed from: private */

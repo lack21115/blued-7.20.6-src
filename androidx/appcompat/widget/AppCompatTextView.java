@@ -41,11 +41,11 @@ public class AppCompatTextView extends TextView implements EmojiCompatConfigurat
     public final class InspectionCompanion implements android.view.inspector.InspectionCompanion<AppCompatTextView> {
 
         /* renamed from: a  reason: collision with root package name */
-        private boolean f1801a = false;
+        private boolean f1753a = false;
         private int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f1802c;
+        private int f1754c;
         private int d;
         private int e;
         private int f;
@@ -56,7 +56,7 @@ public class AppCompatTextView extends TextView implements EmojiCompatConfigurat
         @Override // android.view.inspector.InspectionCompanion
         public void mapProperties(PropertyMapper propertyMapper) {
             this.b = propertyMapper.mapInt("autoSizeMaxTextSize", R.attr.autoSizeMaxTextSize);
-            this.f1802c = propertyMapper.mapInt("autoSizeMinTextSize", R.attr.autoSizeMinTextSize);
+            this.f1754c = propertyMapper.mapInt("autoSizeMinTextSize", R.attr.autoSizeMinTextSize);
             this.d = propertyMapper.mapInt("autoSizeStepGranularity", R.attr.autoSizeStepGranularity);
             this.e = propertyMapper.mapIntEnum("autoSizeTextType", R.attr.autoSizeTextType, new IntFunction<String>() { // from class: androidx.appcompat.widget.AppCompatTextView.InspectionCompanion.1
                 @Override // java.util.function.IntFunction
@@ -68,16 +68,16 @@ public class AppCompatTextView extends TextView implements EmojiCompatConfigurat
             this.g = propertyMapper.mapObject("backgroundTintMode", R.attr.backgroundTintMode);
             this.h = propertyMapper.mapObject("drawableTint", R.attr.drawableTint);
             this.i = propertyMapper.mapObject("drawableTintMode", R.attr.drawableTintMode);
-            this.f1801a = true;
+            this.f1753a = true;
         }
 
         @Override // android.view.inspector.InspectionCompanion
         public void readProperties(AppCompatTextView appCompatTextView, PropertyReader propertyReader) {
-            if (!this.f1801a) {
+            if (!this.f1753a) {
                 throw new InspectionCompanion.UninitializedPropertyMapException();
             }
             propertyReader.readInt(this.b, appCompatTextView.getAutoSizeMaxTextSize());
-            propertyReader.readInt(this.f1802c, appCompatTextView.getAutoSizeMinTextSize());
+            propertyReader.readInt(this.f1754c, appCompatTextView.getAutoSizeMinTextSize());
             propertyReader.readInt(this.d, appCompatTextView.getAutoSizeStepGranularity());
             propertyReader.readIntEnum(this.e, appCompatTextView.getAutoSizeTextType());
             propertyReader.readObject(this.f, appCompatTextView.getBackgroundTintList());
@@ -92,7 +92,7 @@ public class AppCompatTextView extends TextView implements EmojiCompatConfigurat
     }
 
     public AppCompatTextView(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, 16842884);
+        this(context, attributeSet, android.R.attr.textViewStyle);
     }
 
     public AppCompatTextView(Context context, AttributeSet attributeSet, int i) {
@@ -128,9 +128,8 @@ public class AppCompatTextView extends TextView implements EmojiCompatConfigurat
         return this.mEmojiTextViewHelper;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.TextView, android.view.View
-    public void drawableStateChanged() {
+    protected void drawableStateChanged() {
         super.drawableStateChanged();
         AppCompatBackgroundHelper appCompatBackgroundHelper = this.mBackgroundTintHelper;
         if (appCompatBackgroundHelper != null) {
@@ -142,7 +141,7 @@ public class AppCompatTextView extends TextView implements EmojiCompatConfigurat
         }
     }
 
-    @Override // androidx.core.widget.AutoSizeableTextView
+    @Override // android.widget.TextView, androidx.core.widget.AutoSizeableTextView
     public int getAutoSizeMaxTextSize() {
         if (PLATFORM_SUPPORTS_AUTOSIZE) {
             return super.getAutoSizeMaxTextSize();
@@ -154,7 +153,7 @@ public class AppCompatTextView extends TextView implements EmojiCompatConfigurat
         return -1;
     }
 
-    @Override // androidx.core.widget.AutoSizeableTextView
+    @Override // android.widget.TextView, androidx.core.widget.AutoSizeableTextView
     public int getAutoSizeMinTextSize() {
         if (PLATFORM_SUPPORTS_AUTOSIZE) {
             return super.getAutoSizeMinTextSize();
@@ -166,7 +165,7 @@ public class AppCompatTextView extends TextView implements EmojiCompatConfigurat
         return -1;
     }
 
-    @Override // androidx.core.widget.AutoSizeableTextView
+    @Override // android.widget.TextView, androidx.core.widget.AutoSizeableTextView
     public int getAutoSizeStepGranularity() {
         if (PLATFORM_SUPPORTS_AUTOSIZE) {
             return super.getAutoSizeStepGranularity();
@@ -178,7 +177,7 @@ public class AppCompatTextView extends TextView implements EmojiCompatConfigurat
         return -1;
     }
 
-    @Override // androidx.core.widget.AutoSizeableTextView
+    @Override // android.widget.TextView, androidx.core.widget.AutoSizeableTextView
     public int[] getAutoSizeTextAvailableSizes() {
         if (PLATFORM_SUPPORTS_AUTOSIZE) {
             return super.getAutoSizeTextAvailableSizes();
@@ -187,7 +186,7 @@ public class AppCompatTextView extends TextView implements EmojiCompatConfigurat
         return appCompatTextHelper != null ? appCompatTextHelper.i() : new int[0];
     }
 
-    @Override // androidx.core.widget.AutoSizeableTextView
+    @Override // android.widget.TextView, androidx.core.widget.AutoSizeableTextView
     public int getAutoSizeTextType() {
         int i = 0;
         if (PLATFORM_SUPPORTS_AUTOSIZE) {
@@ -208,10 +207,12 @@ public class AppCompatTextView extends TextView implements EmojiCompatConfigurat
         return TextViewCompat.unwrapCustomSelectionActionModeCallback(super.getCustomSelectionActionModeCallback());
     }
 
+    @Override // android.widget.TextView
     public int getFirstBaselineToTopHeight() {
         return TextViewCompat.getFirstBaselineToTopHeight(this);
     }
 
+    @Override // android.widget.TextView
     public int getLastBaselineToBottomHeight() {
         return TextViewCompat.getLastBaselineToBottomHeight(this);
     }
@@ -250,6 +251,7 @@ public class AppCompatTextView extends TextView implements EmojiCompatConfigurat
         return super.getText();
     }
 
+    @Override // android.widget.TextView
     public TextClassifier getTextClassifier() {
         AppCompatTextClassifierHelper appCompatTextClassifierHelper;
         return (Build.VERSION.SDK_INT >= 28 || (appCompatTextClassifierHelper = this.mTextClassifierHelper) == null) ? super.getTextClassifier() : appCompatTextClassifierHelper.getTextClassifier();
@@ -286,9 +288,8 @@ public class AppCompatTextView extends TextView implements EmojiCompatConfigurat
         super.onMeasure(i, i2);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.TextView
-    public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+    protected void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
         super.onTextChanged(charSequence, i, i2, i3);
         if (this.mTextHelper == null || PLATFORM_SUPPORTS_AUTOSIZE || !this.mTextHelper.d()) {
             return;
@@ -302,7 +303,7 @@ public class AppCompatTextView extends TextView implements EmojiCompatConfigurat
         getEmojiTextViewHelper().b(z);
     }
 
-    @Override // androidx.core.widget.AutoSizeableTextView
+    @Override // android.widget.TextView, androidx.core.widget.AutoSizeableTextView
     public void setAutoSizeTextTypeUniformWithConfiguration(int i, int i2, int i3, int i4) throws IllegalArgumentException {
         if (PLATFORM_SUPPORTS_AUTOSIZE) {
             super.setAutoSizeTextTypeUniformWithConfiguration(i, i2, i3, i4);
@@ -314,7 +315,7 @@ public class AppCompatTextView extends TextView implements EmojiCompatConfigurat
         }
     }
 
-    @Override // androidx.core.widget.AutoSizeableTextView
+    @Override // android.widget.TextView, androidx.core.widget.AutoSizeableTextView
     public void setAutoSizeTextTypeUniformWithPresetSizes(int[] iArr, int i) throws IllegalArgumentException {
         if (PLATFORM_SUPPORTS_AUTOSIZE) {
             super.setAutoSizeTextTypeUniformWithPresetSizes(iArr, i);
@@ -326,7 +327,7 @@ public class AppCompatTextView extends TextView implements EmojiCompatConfigurat
         }
     }
 
-    @Override // androidx.core.widget.AutoSizeableTextView
+    @Override // android.widget.TextView, androidx.core.widget.AutoSizeableTextView
     public void setAutoSizeTextTypeWithDefaults(int i) {
         if (PLATFORM_SUPPORTS_AUTOSIZE) {
             super.setAutoSizeTextTypeWithDefaults(i);
@@ -441,6 +442,7 @@ public class AppCompatTextView extends TextView implements EmojiCompatConfigurat
         super.setFilters(getEmojiTextViewHelper().a(inputFilterArr));
     }
 
+    @Override // android.widget.TextView
     public void setFirstBaselineToTopHeight(int i) {
         if (Build.VERSION.SDK_INT >= 28) {
             super.setFirstBaselineToTopHeight(i);
@@ -449,6 +451,7 @@ public class AppCompatTextView extends TextView implements EmojiCompatConfigurat
         }
     }
 
+    @Override // android.widget.TextView
     public void setLastBaselineToBottomHeight(int i) {
         if (Build.VERSION.SDK_INT >= 28) {
             super.setLastBaselineToBottomHeight(i);
@@ -457,6 +460,7 @@ public class AppCompatTextView extends TextView implements EmojiCompatConfigurat
         }
     }
 
+    @Override // android.widget.TextView
     public void setLineHeight(int i) {
         TextViewCompat.setLineHeight(this, i);
     }
@@ -502,6 +506,7 @@ public class AppCompatTextView extends TextView implements EmojiCompatConfigurat
         }
     }
 
+    @Override // android.widget.TextView
     public void setTextClassifier(TextClassifier textClassifier) {
         AppCompatTextClassifierHelper appCompatTextClassifierHelper;
         if (Build.VERSION.SDK_INT >= 28 || (appCompatTextClassifierHelper = this.mTextClassifierHelper) == null) {

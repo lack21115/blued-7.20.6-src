@@ -24,11 +24,11 @@ public class CusWhyThisAdView extends RelativeLayout {
     private RelativeLayout V;
 
     /* renamed from: a  reason: collision with root package name */
-    private HorizontalScrollView f22583a;
+    private HorizontalScrollView f8975a;
     private ScrollView b;
 
     /* renamed from: c  reason: collision with root package name */
-    private LinearLayout f22584c;
+    private LinearLayout f8976c;
     private LinearLayout d;
     private c e;
     private TextView f;
@@ -63,9 +63,9 @@ public class CusWhyThisAdView extends RelativeLayout {
         RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.hiad_whythisad_wrapper);
         this.I = relativeLayout;
         relativeLayout.setVisibility(8);
-        this.f22583a = (HorizontalScrollView) findViewById(R.id.hiad_whythisad_horizontal_List);
-        this.f22584c = (LinearLayout) findViewById(R.id.hiad_whythisad_horizional_ll_wrapper);
-        this.f22583a.setVisibility(8);
+        this.f8975a = (HorizontalScrollView) findViewById(R.id.hiad_whythisad_horizontal_List);
+        this.f8976c = (LinearLayout) findViewById(R.id.hiad_whythisad_horizional_ll_wrapper);
+        this.f8975a.setVisibility(8);
         this.b = (ScrollView) findViewById(R.id.hiad_whythisad_vertical_feedback_List);
         this.d = (LinearLayout) findViewById(R.id.hiad_whythisad_vertical_ll_wrapper);
         this.b.setVisibility(8);
@@ -89,7 +89,7 @@ public class CusWhyThisAdView extends RelativeLayout {
 
     public void Code() {
         this.I.setVisibility(8);
-        this.f22583a.setVisibility(8);
+        this.f8975a.setVisibility(8);
         this.b.setVisibility(8);
         this.B.setVisibility(8);
         this.C.setVisibility(8);
@@ -106,7 +106,7 @@ public class CusWhyThisAdView extends RelativeLayout {
         if (scrollView != null) {
             scrollView.setVisibility(8);
         }
-        HorizontalScrollView horizontalScrollView2 = this.f22583a;
+        HorizontalScrollView horizontalScrollView2 = this.f8975a;
         if (horizontalScrollView2 != null) {
             horizontalScrollView2.setVisibility(8);
         }
@@ -146,13 +146,13 @@ public class CusWhyThisAdView extends RelativeLayout {
         arrayList.add(dVar);
         arrayList.add(dVar2);
         if (this.V.getWidth() > this.V.getHeight()) {
-            this.e = new c(getContext(), this, this.f22584c);
-            this.f22583a.setVisibility(0);
+            this.e = new c(getContext(), this, this.f8976c);
+            this.f8975a.setVisibility(0);
             this.b.setVisibility(8);
             z = true;
         } else {
             this.e = new c(getContext(), this, this.d);
-            this.f22583a.setVisibility(8);
+            this.f8975a.setVisibility(8);
             this.b.setVisibility(0);
         }
         this.e.Code(arrayList, z);

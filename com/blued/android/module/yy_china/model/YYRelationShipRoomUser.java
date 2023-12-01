@@ -144,7 +144,6 @@ public final class YYRelationShipRoomUser implements MultiItemEntity {
         return this.honor_level;
     }
 
-    @Override // com.chad.library.adapter.base.entity.MultiItemEntity
     public int getItemType() {
         return this.itemTypes;
     }

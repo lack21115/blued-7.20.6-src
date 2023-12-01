@@ -15,7 +15,7 @@ public final class s2 implements Serializable {
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f37990c;
+    private String f24299c;
     public static final /* synthetic */ boolean u = !s2.class.desiredAssertionStatus();
     private static s2[] d = new s2[8];
     public static final s2 f = new s2(0, 0, "RST_SUCC");
@@ -28,8 +28,8 @@ public final class s2 implements Serializable {
     public static final s2 t = new s2(7, 7, "RST_PACKAGE_ERR");
 
     private s2(int i2, int i3, String str) {
-        this.f37990c = new String();
-        this.f37990c = str;
+        this.f24299c = new String();
+        this.f24299c = str;
         this.b = i3;
         d[i2] = this;
     }
@@ -75,6 +75,6 @@ public final class s2 implements Serializable {
     }
 
     public String toString() {
-        return this.f37990c;
+        return this.f24299c;
     }
 }

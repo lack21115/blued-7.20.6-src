@@ -10,9 +10,7 @@ final class PlatformRandom extends AbstractPlatformRandom implements Serializabl
     private static final Companion b = new Companion(null);
     @Deprecated
     private static final long serialVersionUID = 0;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final java.util.Random f42564c;
+    private final java.util.Random c;
 
     @Metadata
     /* loaded from: source-3503164-dex2jar.jar:kotlin/random/PlatformRandom$Companion.class */
@@ -27,6 +25,6 @@ final class PlatformRandom extends AbstractPlatformRandom implements Serializabl
 
     @Override // kotlin.random.AbstractPlatformRandom
     public java.util.Random a() {
-        return this.f42564c;
+        return this.c;
     }
 }

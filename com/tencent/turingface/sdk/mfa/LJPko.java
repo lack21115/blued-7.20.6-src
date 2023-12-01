@@ -6,12 +6,9 @@ import android.os.Handler;
 import android.os.HandlerThread;
 import android.text.TextUtils;
 import android.util.SparseArray;
-import com.anythink.core.api.ErrorCode;
 import com.anythink.expressad.video.bt.a.c;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -19,20 +16,20 @@ import java.util.concurrent.atomic.AtomicReference;
 public final class LJPko {
 
     /* renamed from: a  reason: collision with root package name */
-    public static CvowV f39893a;
+    public static CvowV f26202a;
     public static final AtomicReference<YaDRx> b = new AtomicReference<>(null);
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/turingface/sdk/mfa/LJPko$spXPg.class */
     public static final class spXPg implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final Handler f39894a;
+        public static final Handler f26203a;
         public static final AtomicReference<AtomicReference<YaDRx>> b = new AtomicReference<>(null);
 
         static {
             HandlerThread handlerThread = new HandlerThread("TuringRiskThread", 0);
             handlerThread.start();
-            f39894a = new Handler(handlerThread.getLooper());
+            f26203a = new Handler(handlerThread.getLooper());
         }
 
         @Override // java.lang.Runnable
@@ -41,19 +38,19 @@ public final class LJPko {
             YaDRx yaDRx;
             synchronized (i3cNc.class) {
                 try {
-                    context = i3cNc.f39958a;
+                    context = i3cNc.f26267a;
                 } catch (Throwable th) {
                     throw th;
                 }
             }
             ZIDl7 zIDl7 = new ZIDl7();
             try {
-                DO0IX.f39867a.a(context);
+                DO0IX.f26176a.a(context);
                 zIDl7.b = 1;
                 zIDl7.e = System.currentTimeMillis();
                 byte[] a2 = LJPko.a(context, zIDl7, true);
                 zIDl7.f = System.currentTimeMillis();
-                zIDl7.f39934c = a2.length;
+                zIDl7.f26243c = a2.length;
                 yaDRx = LJPko.a(context, a2, zIDl7);
             } catch (Throwable th2) {
                 yaDRx = null;
@@ -89,15 +86,15 @@ public final class LJPko {
         if (bArr.length == 0) {
             return new YaDRx(-1000);
         }
-        tmnyR a2 = A48DB.f39857a.a(bArr);
+        tmnyR a2 = A48DB.f26166a.a(bArr);
         int i = a2.b;
         if (i != 0) {
             return new YaDRx(i);
         }
-        byte[] bArr2 = a2.f39999c;
+        byte[] bArr2 = a2.f26308c;
         try {
             sWkeo swkeo = new sWkeo();
-            swkeo.f39990a = c.f8290a;
+            swkeo.f26299a = c.f5450a;
             if (zIDl7.b == 1) {
                 swkeo = (sWkeo) com.tencent.turingcam.oqKCa.a(swkeo, bArr2);
             } else {
@@ -106,40 +103,41 @@ public final class LJPko {
             if (swkeo == null) {
                 return new YaDRx(-1002);
             }
-            int i2 = swkeo.f39990a;
+            int i2 = swkeo.f26299a;
             if (i2 == 0) {
                 if (TextUtils.isEmpty(swkeo.b)) {
                     return new YaDRx(-1001);
                 }
                 int seconds = (int) TimeUnit.MINUTES.toSeconds(10L);
-                if (swkeo.f39991c < seconds) {
-                    swkeo.f39991c = seconds;
+                if (swkeo.f26300c < seconds) {
+                    swkeo.f26300c = seconds;
                 }
-                return new YaDRx(0, swkeo.b, System.currentTimeMillis(), swkeo.f39991c * 1000, swkeo.d);
+                return new YaDRx(0, swkeo.b, System.currentTimeMillis(), swkeo.f26300c * 1000, swkeo.d);
             }
             return new YaDRx(DrmManagerClient.ERROR_UNKNOWN - i2);
         } catch (Throwable th) {
-            return new YaDRx(c.f8290a);
+            return new YaDRx(c.f5450a);
         }
     }
 
+    /* JADX WARN: Type inference failed for: r0v14, types: [java.util.Collection, java.util.List<java.lang.String>, java.util.ArrayList] */
     public static String a(Context context, int i) {
-        List<String> list;
+        ?? r0;
         HashMap hashMap = new HashMap();
         hashMap.put("3", "" + i);
         if (i == 17 || i == 40) {
-            f39893a.getClass();
+            f26202a.getClass();
             synchronized (BijG2.class) {
                 try {
-                    list = BijG2.f39861a;
-                    list.isEmpty();
+                    r0 = BijG2.f26170a;
+                    r0.isEmpty();
                 } catch (Throwable th) {
                     throw th;
                 }
             }
             HashSet hashSet = new HashSet();
-            if (!list.isEmpty()) {
-                hashSet.addAll(list);
+            if (!r0.isEmpty()) {
+                hashSet.addAll(r0);
             }
             if (hashSet.size() > 0) {
                 hashMap.put("277", BijG2.a(hashSet));
@@ -180,17 +178,17 @@ public final class LJPko {
     public static void a(Context context, YaDRx yaDRx) {
         AtomicReference<YaDRx> atomicReference = b;
         synchronized (atomicReference) {
-            if (yaDRx.f39930a != 0) {
+            if (yaDRx.f26239a != 0) {
                 return;
             }
             atomicReference.set(yaDRx);
-            String str = fenkF.f39952a;
+            String str = fenkF.f26261a;
             if (TextUtils.isEmpty(yaDRx.b)) {
                 return;
             }
             HashMap hashMap = new HashMap();
-            hashMap.put(ErrorCode.networkError, yaDRx.b);
-            hashMap.put(ErrorCode.serverError, String.valueOf(yaDRx.f39931c));
+            hashMap.put("1001", yaDRx.b);
+            hashMap.put("1002", String.valueOf(yaDRx.f26240c));
             hashMap.put("1003", String.valueOf(yaDRx.d));
             hashMap.put("1004", String.valueOf(yaDRx.e));
             fenkF.a(context, hashMap);
@@ -201,13 +199,13 @@ public final class LJPko {
         long j;
         StringBuilder b2 = com.tencent.turingcam.oqKCa.b("5_");
         b2.append(zIDl7.b);
-        b2.append(BridgeUtil.UNDERLINE_STR);
+        b2.append("_");
         b2.append(zIDl7.d);
-        b2.append(BridgeUtil.UNDERLINE_STR);
-        b2.append(System.currentTimeMillis() - zIDl7.f39933a);
-        b2.append(BridgeUtil.UNDERLINE_STR);
-        b2.append(zIDl7.f39934c);
-        b2.append(BridgeUtil.UNDERLINE_STR);
+        b2.append("_");
+        b2.append(System.currentTimeMillis() - zIDl7.f26242a);
+        b2.append("_");
+        b2.append(zIDl7.f26243c);
+        b2.append("_");
         long j2 = zIDl7.e;
         if (j2 >= 0) {
             long j3 = zIDl7.f;
@@ -215,7 +213,7 @@ public final class LJPko {
                 j = j3 - j2;
                 b2.append(j);
                 String sb = b2.toString();
-                String str = fenkF.f39952a;
+                String str = fenkF.f26261a;
                 HashMap hashMap = new HashMap();
                 hashMap.put("703", sb);
                 fenkF.a(context, hashMap);
@@ -224,7 +222,7 @@ public final class LJPko {
         j = -1;
         b2.append(j);
         String sb2 = b2.toString();
-        String str2 = fenkF.f39952a;
+        String str2 = fenkF.f26261a;
         HashMap hashMap2 = new HashMap();
         hashMap2.put("703", sb2);
         fenkF.a(context, hashMap2);

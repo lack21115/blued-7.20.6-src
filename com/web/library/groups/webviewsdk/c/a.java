@@ -1,5 +1,6 @@
 package com.web.library.groups.webviewsdk.c;
 
+import com.huawei.hms.framework.common.ContainerUtils;
 import java.net.URI;
 import java.net.URLDecoder;
 import java.util.HashMap;
@@ -13,7 +14,7 @@ public class a {
             for (String str : map.keySet()) {
                 if (!d.a(str)) {
                     String str2 = map.get(str);
-                    stringBuffer.append(str + "=" + str2 + "&");
+                    stringBuffer.append(str + "=" + str2 + ContainerUtils.FIELD_DELIMITER);
                 }
             }
             if (stringBuffer.length() > 0) {
@@ -38,7 +39,7 @@ public class a {
         try {
             URI uri = new URI(str);
             String query = z ? uri.getQuery() : uri.getRawQuery();
-            if (query != null && !"".equals(query) && (split = query.split("&")) != null && split.length != 0) {
+            if (query != null && !"".equals(query) && (split = query.split(ContainerUtils.FIELD_DELIMITER)) != null && split.length != 0) {
                 int length = split.length;
                 int i = 0;
                 while (true) {

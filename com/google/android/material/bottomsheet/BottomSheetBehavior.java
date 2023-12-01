@@ -605,7 +605,7 @@ public class BottomSheetBehavior<V extends View> extends CoordinatorLayout.Behav
                 return;
             }
             TypedValue typedValue = new TypedValue();
-            context.getTheme().resolveAttribute(16842801, typedValue, true);
+            context.getTheme().resolveAttribute(android.R.attr.colorBackground, typedValue, true);
             this.materialShapeDrawable.setTint(typedValue.data);
         }
     }

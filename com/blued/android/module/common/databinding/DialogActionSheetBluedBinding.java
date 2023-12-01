@@ -11,20 +11,16 @@ import com.blued.android.module.common.R;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/databinding/DialogActionSheetBluedBinding.class */
 public final class DialogActionSheetBluedBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final View f10712a;
+    public final View a;
     public final RecyclerView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ShapeTextView f10713c;
+    public final ShapeTextView c;
     private final ConstraintLayout d;
 
     private DialogActionSheetBluedBinding(ConstraintLayout constraintLayout, View view, RecyclerView recyclerView, ShapeTextView shapeTextView) {
         this.d = constraintLayout;
-        this.f10712a = view;
+        this.a = view;
         this.b = recyclerView;
-        this.f10713c = shapeTextView;
+        this.c = shapeTextView;
     }
 
     public static DialogActionSheetBluedBinding a(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
@@ -39,11 +35,11 @@ public final class DialogActionSheetBluedBinding implements ViewBinding {
         String str;
         View findViewById = view.findViewById(R.id.line);
         if (findViewById != null) {
-            RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rcv_sheet);
-            if (recyclerView != null) {
+            RecyclerView findViewById2 = view.findViewById(R.id.rcv_sheet);
+            if (findViewById2 != null) {
                 ShapeTextView shapeTextView = (ShapeTextView) view.findViewById(R.id.tv_cancel);
                 if (shapeTextView != null) {
-                    return new DialogActionSheetBluedBinding((ConstraintLayout) view, findViewById, recyclerView, shapeTextView);
+                    return new DialogActionSheetBluedBinding((ConstraintLayout) view, findViewById, findViewById2, shapeTextView);
                 }
                 str = "tvCancel";
             } else {
@@ -55,7 +51,6 @@ public final class DialogActionSheetBluedBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.d;

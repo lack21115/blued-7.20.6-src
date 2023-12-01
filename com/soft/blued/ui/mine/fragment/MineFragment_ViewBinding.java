@@ -21,7 +21,7 @@ public class MineFragment_ViewBinding implements Unbinder {
     private MineFragment b;
 
     /* renamed from: c  reason: collision with root package name */
-    private View f31608c;
+    private View f17918c;
     private View d;
     private View e;
     private View f;
@@ -39,7 +39,7 @@ public class MineFragment_ViewBinding implements Unbinder {
         mineFragment.scrollPage = (ScrollView) Utils.a(view, R.id.scroll_page, "field 'scrollPage'", ScrollView.class);
         View a2 = Utils.a(view, R.id.iv_edit, "field 'ivEdit' and method 'onViewClicked'");
         mineFragment.ivEdit = (ImageView) Utils.b(a2, R.id.iv_edit, "field 'ivEdit'", ImageView.class);
-        this.f31608c = a2;
+        this.f17918c = a2;
         a2.setOnClickListener(new DebouncingOnClickListener() { // from class: com.soft.blued.ui.mine.fragment.MineFragment_ViewBinding.1
             @Override // butterknife.internal.DebouncingOnClickListener
             public void a(View view2) {
@@ -64,7 +64,7 @@ public class MineFragment_ViewBinding implements Unbinder {
                 mineFragment.onViewClicked(view2);
             }
         });
-        mineFragment.ivVerify = (ImageView) Utils.a(view, 2131366029, "field 'ivVerify'", ImageView.class);
+        mineFragment.ivVerify = (ImageView) Utils.a(view, R.id.iv_verify, "field 'ivVerify'", ImageView.class);
         View a5 = Utils.a(view, R.id.tv_my_name, "field 'tvMyName' and method 'onViewClicked'");
         mineFragment.tvMyName = (TextView) Utils.b(a5, R.id.tv_my_name, "field 'tvMyName'", TextView.class);
         this.f = a5;
@@ -75,8 +75,8 @@ public class MineFragment_ViewBinding implements Unbinder {
             }
         });
         mineFragment.layoutName = (LinearLayout) Utils.a(view, R.id.layout_name, "field 'layoutName'", LinearLayout.class);
-        View a6 = Utils.a(view, 2131365652, "field 'ivMore' and method 'onViewClicked'");
-        mineFragment.ivMore = (ImageView) Utils.b(a6, 2131365652, "field 'ivMore'", ImageView.class);
+        View a6 = Utils.a(view, R.id.iv_more, "field 'ivMore' and method 'onViewClicked'");
+        mineFragment.ivMore = (ImageView) Utils.b(a6, R.id.iv_more, "field 'ivMore'", ImageView.class);
         this.g = a6;
         a6.setOnClickListener(new DebouncingOnClickListener() { // from class: com.soft.blued.ui.mine.fragment.MineFragment_ViewBinding.5
             @Override // butterknife.internal.DebouncingOnClickListener
@@ -115,7 +115,7 @@ public class MineFragment_ViewBinding implements Unbinder {
                 mineFragment.onViewClicked(view2);
             }
         });
-        mineFragment.linearLayout = (LinearLayout) Utils.a(view, 2131366879, "field 'linearLayout'", LinearLayout.class);
+        mineFragment.linearLayout = (LinearLayout) Utils.a(view, R.id.linearLayout, "field 'linearLayout'", LinearLayout.class);
         mineFragment.tvVipTitle = (TextView) Utils.a(view, R.id.tv_vip_title, "field 'tvVipTitle'", TextView.class);
         mineFragment.ivVipIcon = (ImageView) Utils.a(view, R.id.iv_vip_icon, "field 'ivVipIcon'", ImageView.class);
         mineFragment.vfVipAd = (ViewFlipper) Utils.a(view, R.id.vf_vip_ad, "field 'vfVipAd'", ViewFlipper.class);
@@ -139,16 +139,16 @@ public class MineFragment_ViewBinding implements Unbinder {
                 mineFragment.onViewClicked(view2);
             }
         });
-        mineFragment.ivVipBg = (ImageView) Utils.a(view, 2131366044, "field 'ivVipBg'", ImageView.class);
+        mineFragment.ivVipBg = (ImageView) Utils.a(view, R.id.iv_vip_bg, "field 'ivVipBg'", ImageView.class);
         mineFragment.ivBgIcon = (ImageView) Utils.a(view, R.id.iv_bg_icon, "field 'ivBgIcon'", ImageView.class);
         mineFragment.llHealthFlipper = (LinearLayout) Utils.a(view, R.id.ll_health_flipper, "field 'llHealthFlipper'", LinearLayout.class);
         mineFragment.tvAvatarAuditing = (TextView) Utils.a(view, R.id.tv_avatar_auditing, "field 'tvAvatarAuditing'", TextView.class);
-        mineFragment.avatarWidget = (ImageView) Utils.a(view, 2131365108, "field 'avatarWidget'", ImageView.class);
+        mineFragment.avatarWidget = (ImageView) Utils.a(view, R.id.iv_avatar_widget, "field 'avatarWidget'", ImageView.class);
         mineFragment.rvAnchorsEntry = (RecyclerView) Utils.a(view, R.id.rv_anchors_entry, "field 'rvAnchorsEntry'", RecyclerView.class);
         mineFragment.cvAnchors = (CardView) Utils.a(view, R.id.cv_anchors, "field 'cvAnchors'", CardView.class);
         mineFragment.rvServiceEntry = (RecyclerView) Utils.a(view, R.id.rv_service_entry, "field 'rvServiceEntry'", RecyclerView.class);
         mineFragment.cvService = (CardView) Utils.a(view, R.id.cv_service, "field 'cvService'", CardView.class);
-        mineFragment.imgAd = (ImageView) Utils.a(view, 2131364414, "field 'imgAd'", ImageView.class);
+        mineFragment.imgAd = (ImageView) Utils.a(view, R.id.img_ad, "field 'imgAd'", ImageView.class);
         mineFragment.cvAd = (CardView) Utils.a(view, R.id.cv_ad, "field 'cvAd'", CardView.class);
         mineFragment.adViewLayout = (BluedADConstraintLayout) Utils.a(view, R.id.ad_view_layout, "field 'adViewLayout'", BluedADConstraintLayout.class);
         mineFragment.rvHealthEntry = (RecyclerView) Utils.a(view, R.id.rv_health_entry, "field 'rvHealthEntry'", RecyclerView.class);
@@ -218,8 +218,8 @@ public class MineFragment_ViewBinding implements Unbinder {
         mineFragment.cvOther = null;
         mineFragment.ll_my_group = null;
         mineFragment.tv_my_group_cnt = null;
-        this.f31608c.setOnClickListener(null);
-        this.f31608c = null;
+        this.f17918c.setOnClickListener(null);
+        this.f17918c = null;
         this.d.setOnClickListener(null);
         this.d = null;
         this.e.setOnClickListener(null);

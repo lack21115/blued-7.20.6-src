@@ -12,15 +12,15 @@ import java.util.concurrent.atomic.AtomicLong;
 public class c implements d {
 
     /* renamed from: a  reason: collision with root package name */
-    private final int f24112a;
+    private final int f10497a;
     private final AtomicLong b = new AtomicLong(0);
 
     /* renamed from: c  reason: collision with root package name */
-    private final Map<Long, byte[]> f24113c = new ConcurrentHashMap();
+    private final Map<Long, byte[]> f10498c = new ConcurrentHashMap();
     private final List<Long> d = new CopyOnWriteArrayList();
 
     public c(int i) {
-        this.f24112a = i;
+        this.f10497a = i;
     }
 
     @Override // com.meizu.cloud.pushsdk.d.d.d
@@ -35,14 +35,14 @@ public class c implements d {
 
     @Override // com.meizu.cloud.pushsdk.d.d.d
     public boolean a(long j) {
-        return this.d.remove(Long.valueOf(j)) && this.f24113c.remove(Long.valueOf(j)) != null;
+        return this.d.remove(Long.valueOf(j)) && this.f10498c.remove(Long.valueOf(j)) != null;
     }
 
     public long b(com.meizu.cloud.pushsdk.d.a.a aVar) {
         byte[] a2 = a.a(aVar.a());
         long andIncrement = this.b.getAndIncrement();
         this.d.add(Long.valueOf(andIncrement));
-        this.f24113c.put(Long.valueOf(andIncrement), a2);
+        this.f10498c.put(Long.valueOf(andIncrement), a2);
         return andIncrement;
     }
 
@@ -56,7 +56,7 @@ public class c implements d {
         LinkedList linkedList = new LinkedList();
         ArrayList arrayList = new ArrayList();
         int c2 = (int) c();
-        int i = this.f24112a;
+        int i = this.f10497a;
         int i2 = c2;
         if (c2 > i) {
             i2 = i;
@@ -70,7 +70,7 @@ public class c implements d {
             Long l = this.d.get(i4);
             if (l != null) {
                 com.meizu.cloud.pushsdk.d.a.c cVar = new com.meizu.cloud.pushsdk.d.a.c();
-                cVar.a(a.a(this.f24113c.get(l)));
+                cVar.a(a.a(this.f10498c.get(l)));
                 com.meizu.cloud.pushsdk.d.f.c.c("MemoryStore", " current key " + l + " payload " + cVar, new Object[0]);
                 linkedList.add(l);
                 arrayList.add(cVar);

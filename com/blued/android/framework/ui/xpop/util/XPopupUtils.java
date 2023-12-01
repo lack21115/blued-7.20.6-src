@@ -13,7 +13,6 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
 import android.os.Handler;
-import android.provider.Settings;
 import android.renderscript.Allocation;
 import android.renderscript.Element;
 import android.renderscript.RenderScript;
@@ -26,6 +25,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.Toast;
+import com.blued.android.chat.grpc.backup.MsgBackupManager;
 import com.blued.android.framework.ui.xpop.core.AttachPopupView;
 import com.blued.android.framework.ui.xpop.core.BasePopupView;
 import com.blued.android.framework.ui.xpop.core.PositionPopupView;
@@ -43,27 +43,21 @@ import java.util.ArrayList;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/ui/xpop/util/XPopupUtils.class */
 public class XPopupUtils {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static int f10018a;
+    private static int a;
     private static Context b;
 
     /* renamed from: com.blued.android.framework.ui.xpop.util.XPopupUtils$2  reason: invalid class name */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/ui/xpop/util/XPopupUtils$2.class */
     class AnonymousClass2 implements Runnable {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ XPopupImageLoader f10021a;
+        final /* synthetic */ XPopupImageLoader a;
         final /* synthetic */ Object b;
-
-        /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ Handler f10022c;
+        final /* synthetic */ Handler c;
 
         @Override // java.lang.Runnable
         public void run() {
-            File a2 = this.f10021a.a(XPopupUtils.b, this.b);
-            if (a2 == null) {
-                this.f10022c.post(new Runnable() { // from class: com.blued.android.framework.ui.xpop.util.XPopupUtils.2.1
+            File a = this.a.a(XPopupUtils.b, this.b);
+            if (a == null) {
+                this.c.post(new Runnable() { // from class: com.blued.android.framework.ui.xpop.util.XPopupUtils.2.1
                     @Override // java.lang.Runnable
                     public void run() {
                         Toast.makeText(XPopupUtils.b, "图片不存在！", 0).show();
@@ -78,17 +72,17 @@ public class XPopupUtils {
                 file.mkdirs();
             }
             try {
-                String b = XPopupUtils.b(ImageHeaderParser.a(new FileInputStream(a2)));
+                String b = XPopupUtils.b(ImageHeaderParser.a(new FileInputStream(a)));
                 File file2 = new File(str, System.currentTimeMillis() + "." + b);
                 if (file2.exists()) {
                     file2.delete();
                 }
                 file2.createNewFile();
-                XPopupUtils.b(file2, new FileInputStream(a2));
+                XPopupUtils.b(file2, new FileInputStream(a));
                 MediaScannerConnection.scanFile(XPopupUtils.b, new String[]{file2.getAbsolutePath()}, new String[]{"image/" + b}, new MediaScannerConnection.OnScanCompletedListener() { // from class: com.blued.android.framework.ui.xpop.util.XPopupUtils.2.2
                     @Override // android.media.MediaScannerConnection.OnScanCompletedListener
                     public void onScanCompleted(String str2, Uri uri) {
-                        AnonymousClass2.this.f10022c.post(new Runnable() { // from class: com.blued.android.framework.ui.xpop.util.XPopupUtils.2.2.1
+                        AnonymousClass2.this.c.post(new Runnable() { // from class: com.blued.android.framework.ui.xpop.util.XPopupUtils.2.2.1
                             @Override // java.lang.Runnable
                             public void run() {
                                 if (XPopupUtils.b != null) {
@@ -101,7 +95,7 @@ public class XPopupUtils {
                 });
             } catch (IOException e) {
                 e.printStackTrace();
-                this.f10022c.post(new Runnable() { // from class: com.blued.android.framework.ui.xpop.util.XPopupUtils.2.3
+                this.c.post(new Runnable() { // from class: com.blued.android.framework.ui.xpop.util.XPopupUtils.2.3
                     @Override // java.lang.Runnable
                     public void run() {
                         Toast.makeText(XPopupUtils.b, "没有保存权限，保存功能无法使用！", 0).show();
@@ -116,9 +110,7 @@ public class XPopupUtils {
     /* renamed from: com.blued.android.framework.ui.xpop.util.XPopupUtils$3  reason: invalid class name */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/ui/xpop/util/XPopupUtils$3.class */
     public static /* synthetic */ class AnonymousClass3 {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f10027a;
+        static final /* synthetic */ int[] a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:15:0x004d -> B:37:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:17:0x0051 -> B:33:0x001f). Please submit an issue!!! */
@@ -127,29 +119,29 @@ public class XPopupUtils {
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:23:0x005d -> B:35:0x0040). Please submit an issue!!! */
         static {
             int[] iArr = new int[ImageType.values().length];
-            f10027a = iArr;
+            a = iArr;
             try {
                 iArr[ImageType.GIF.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f10027a[ImageType.PNG.ordinal()] = 2;
+                a[ImageType.PNG.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f10027a[ImageType.PNG_A.ordinal()] = 3;
+                a[ImageType.PNG_A.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f10027a[ImageType.WEBP.ordinal()] = 4;
+                a[ImageType.WEBP.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f10027a[ImageType.WEBP_A.ordinal()] = 5;
+                a[ImageType.WEBP_A.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
             try {
-                f10027a[ImageType.JPEG.ordinal()] = 6;
+                a[ImageType.JPEG.ordinal()] = 6;
             } catch (NoSuchFieldError e6) {
             }
         }
@@ -157,11 +149,11 @@ public class XPopupUtils {
 
     public static int a() {
         Resources system = Resources.getSystem();
-        return system.getDimensionPixelSize(system.getIdentifier("status_bar_height", "dimen", "android"));
+        return system.getDimensionPixelSize(system.getIdentifier("status_bar_height", "dimen", MsgBackupManager.PLATFORM_ANDROID));
     }
 
     public static int a(Context context) {
-        return ((WindowManager) context.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getWidth();
+        return ((WindowManager) context.getSystemService("window")).getDefaultDisplay().getWidth();
     }
 
     public static int a(Context context, float f) {
@@ -174,10 +166,10 @@ public class XPopupUtils {
         decorView.getWindowVisibleDisplayFrame(rect);
         int abs = Math.abs(decorView.getBottom() - rect.bottom);
         if (abs <= b()) {
-            f10018a = abs;
+            a = abs;
             return 0;
         }
-        return abs - f10018a;
+        return abs - a;
     }
 
     public static Bitmap a(Context context, Bitmap bitmap, float f, boolean z) {
@@ -360,7 +352,7 @@ public class XPopupUtils {
 
     public static int b() {
         Resources system = Resources.getSystem();
-        int identifier = system.getIdentifier(Settings.System.NAVIGATION_BAR_HEIGHT, "dimen", "android");
+        int identifier = system.getIdentifier("navigation_bar_height", "dimen", MsgBackupManager.PLATFORM_ANDROID);
         if (identifier != 0) {
             return system.getDimensionPixelSize(identifier);
         }
@@ -369,7 +361,7 @@ public class XPopupUtils {
 
     public static int b(Context context) {
         DisplayMetrics displayMetrics = new DisplayMetrics();
-        ((WindowManager) context.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getRealMetrics(displayMetrics);
+        ((WindowManager) context.getSystemService("window")).getDefaultDisplay().getRealMetrics(displayMetrics);
         return displayMetrics.heightPixels;
     }
 
@@ -389,7 +381,7 @@ public class XPopupUtils {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static String b(ImageType imageType) {
-        int i = AnonymousClass3.f10027a[imageType.ordinal()];
+        int i = AnonymousClass3.a[imageType.ordinal()];
         return i != 1 ? (i == 2 || i == 3) ? "png" : (i == 4 || i == 5) ? "webp" : "jpeg" : "gif";
     }
 

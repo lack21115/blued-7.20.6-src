@@ -23,14 +23,14 @@ public class a {
 
     /* renamed from: com.tencent.open.yyb.a$a  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/open/yyb/a$a.class */
-    public static class C0975a {
+    public static class C0805a {
 
         /* renamed from: a  reason: collision with root package name */
-        public String f38308a;
+        public String f24617a;
         public String b;
 
         /* renamed from: c  reason: collision with root package name */
-        public long f38309c;
+        public long f24618c;
     }
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/open/yyb/a$b.class */
@@ -127,7 +127,7 @@ public class a {
         NinePatchDrawable createFromStream;
         Context applicationContext = context.getApplicationContext();
         AssetManager assets = applicationContext.getAssets();
-        AutoCloseable autoCloseable = null;
+        InputStream inputStream2 = null;
         try {
             try {
                 try {
@@ -142,7 +142,7 @@ public class a {
                     th = th;
                     if (0 != 0) {
                         try {
-                            autoCloseable.close();
+                            inputStream2.close();
                         } catch (IOException e3) {
                             e3.printStackTrace();
                             f.b("openSDK_LOG.AppbarUtil", "-->(AppbarUtil)getDrawable : IOException", e3);
@@ -191,7 +191,7 @@ public class a {
                 } catch (IOException e6) {
                     e = e6;
                     e.printStackTrace();
-                    InputStream inputStream2 = inputStream;
+                    InputStream inputStream3 = inputStream;
                     f.b("openSDK_LOG.AppbarUtil", "-->(AppbarUtil)getDrawable : IOException", e);
                     drawable = null;
                     if (inputStream != null) {
@@ -202,7 +202,7 @@ public class a {
                 } catch (OutOfMemoryError e7) {
                     e = e7;
                     e.printStackTrace();
-                    InputStream inputStream3 = inputStream;
+                    InputStream inputStream4 = inputStream;
                     f.b("openSDK_LOG.AppbarUtil", "-->(AppbarUtil)getDrawable : OutOfMemoryError", e);
                     drawable = null;
                     if (inputStream != null) {

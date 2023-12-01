@@ -6,7 +6,7 @@ import com.tencent.beacon.event.open.EventType;
 /* synthetic */ class c {
 
     /* renamed from: a  reason: collision with root package name */
-    static final /* synthetic */ int[] f35044a;
+    static final /* synthetic */ int[] f21353a;
 
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:15:0x004d -> B:37:0x0014). Please submit an issue!!! */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:17:0x0051 -> B:33:0x001f). Please submit an issue!!! */
@@ -15,29 +15,29 @@ import com.tencent.beacon.event.open.EventType;
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:23:0x005d -> B:35:0x0040). Please submit an issue!!! */
     static {
         int[] iArr = new int[EventType.values().length];
-        f35044a = iArr;
+        f21353a = iArr;
         try {
             iArr[EventType.NORMAL.ordinal()] = 1;
         } catch (NoSuchFieldError e) {
         }
         try {
-            f35044a[EventType.DT_NORMAL.ordinal()] = 2;
+            f21353a[EventType.DT_NORMAL.ordinal()] = 2;
         } catch (NoSuchFieldError e2) {
         }
         try {
-            f35044a[EventType.REALTIME.ordinal()] = 3;
+            f21353a[EventType.REALTIME.ordinal()] = 3;
         } catch (NoSuchFieldError e3) {
         }
         try {
-            f35044a[EventType.DT_REALTIME.ordinal()] = 4;
+            f21353a[EventType.DT_REALTIME.ordinal()] = 4;
         } catch (NoSuchFieldError e4) {
         }
         try {
-            f35044a[EventType.IMMEDIATE_WNS.ordinal()] = 5;
+            f21353a[EventType.IMMEDIATE_WNS.ordinal()] = 5;
         } catch (NoSuchFieldError e5) {
         }
         try {
-            f35044a[EventType.IMMEDIATE_MSF.ordinal()] = 6;
+            f21353a[EventType.IMMEDIATE_MSF.ordinal()] = 6;
         } catch (NoSuchFieldError e6) {
         }
     }

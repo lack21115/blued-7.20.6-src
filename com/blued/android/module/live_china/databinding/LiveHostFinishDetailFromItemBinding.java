@@ -9,13 +9,9 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/LiveHostFinishDetailFromItemBinding.class */
 public final class LiveHostFinishDetailFromItemBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final View f12241a;
+    public final View a;
     public final View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ShapeConstraintLayout f12242c;
+    public final ShapeConstraintLayout c;
     public final TextView d;
     public final TextView e;
     public final TextView f;
@@ -23,9 +19,9 @@ public final class LiveHostFinishDetailFromItemBinding implements ViewBinding {
 
     private LiveHostFinishDetailFromItemBinding(FrameLayout frameLayout, View view, View view2, ShapeConstraintLayout shapeConstraintLayout, TextView textView, TextView textView2, TextView textView3) {
         this.g = frameLayout;
-        this.f12241a = view;
+        this.a = view;
         this.b = view2;
-        this.f12242c = shapeConstraintLayout;
+        this.c = shapeConstraintLayout;
         this.d = textView;
         this.e = textView2;
         this.f = textView3;
@@ -66,7 +62,6 @@ public final class LiveHostFinishDetailFromItemBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.g;

@@ -22,19 +22,15 @@ public abstract class CommonRecycleAdapter<T> extends RecyclerView.Adapter<Commo
 
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/adapter/CommonRecycleAdapter$CommonAdapterHolder.class */
     public static class CommonAdapterHolder extends RecyclerView.ViewHolder {
-
-        /* renamed from: a  reason: collision with root package name */
-        private SparseArray<View> f10441a;
+        private SparseArray<View> a;
         private View b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private IRequestHost f10442c;
+        private IRequestHost c;
 
         public CommonAdapterHolder(View view, IRequestHost iRequestHost) {
             super(view);
             this.b = view;
-            this.f10441a = new SparseArray<>();
-            this.f10442c = iRequestHost;
+            this.a = new SparseArray<>();
+            this.c = iRequestHost;
         }
 
         public View a() {
@@ -43,11 +39,11 @@ public abstract class CommonRecycleAdapter<T> extends RecyclerView.Adapter<Commo
 
         /* JADX WARN: Incorrect return type in method signature: <T:Landroid/view/View;>(I)TT; */
         public View a(int i) {
-            View view = this.f10441a.get(i);
+            View view = this.a.get(i);
             View view2 = view;
             if (view == null) {
                 view2 = this.b.findViewById(i);
-                this.f10441a.put(i, view2);
+                this.a.put(i, view2);
             }
             return view2;
         }
@@ -70,9 +66,9 @@ public abstract class CommonRecycleAdapter<T> extends RecyclerView.Adapter<Commo
         }
 
         public CommonAdapterHolder a(int i, View.OnClickListener onClickListener) {
-            View a2 = a(i);
-            if (a2 != null) {
-                a2.setOnClickListener(onClickListener);
+            View a = a(i);
+            if (a != null) {
+                a.setOnClickListener(onClickListener);
             }
             return this;
         }
@@ -89,10 +85,10 @@ public abstract class CommonRecycleAdapter<T> extends RecyclerView.Adapter<Commo
             ImageView imageView = (ImageView) a(i);
             if (imageView != null) {
                 if (f <= 0.0f) {
-                    ImageLoader.a(this.f10442c, str).b(i2).a(imageView);
+                    ImageLoader.a(this.c, str).b(i2).a(imageView);
                     return this;
                 }
-                ImageLoader.a(this.f10442c, str).b(i2).a(f).a(imageView);
+                ImageLoader.a(this.c, str).b(i2).a(f).a(imageView);
             }
             return this;
         }
@@ -102,9 +98,9 @@ public abstract class CommonRecycleAdapter<T> extends RecyclerView.Adapter<Commo
         }
 
         public CommonAdapterHolder b(int i, int i2) {
-            View a2 = a(i);
-            if (a2 != null) {
-                a2.setVisibility(i2);
+            View a = a(i);
+            if (a != null) {
+                a.setVisibility(i2);
             }
             return this;
         }
@@ -114,9 +110,9 @@ public abstract class CommonRecycleAdapter<T> extends RecyclerView.Adapter<Commo
         }
 
         public CommonAdapterHolder c(int i, int i2) {
-            View a2 = a(i);
-            if (a2 != null) {
-                a2.setBackgroundResource(i2);
+            View a = a(i);
+            if (a != null) {
+                a.setBackgroundResource(i2);
             }
             return this;
         }
@@ -124,7 +120,7 @@ public abstract class CommonRecycleAdapter<T> extends RecyclerView.Adapter<Commo
         public CommonAdapterHolder c(int i, String str) {
             ImageView imageView = (ImageView) a(i);
             if (imageView != null) {
-                ImageLoader.a(this.f10442c, str).f(imageView.hashCode()).g(-1).a(imageView);
+                ImageLoader.a(this.c, str).f(imageView.hashCode()).g(-1).a(imageView);
             }
             return this;
         }
@@ -160,19 +156,16 @@ public abstract class CommonRecycleAdapter<T> extends RecyclerView.Adapter<Commo
         return this.dataList;
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     public int getItemCount() {
         return this.dataList.size();
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     public int getItemViewType(int i) {
         return super.getItemViewType(i);
     }
 
     protected abstract int getLayoutId(int i);
 
-    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     public void onBindViewHolder(CommonAdapterHolder commonAdapterHolder, int i) {
         if (this.dataList.size() < i) {
             return;
@@ -182,7 +175,6 @@ public abstract class CommonRecycleAdapter<T> extends RecyclerView.Adapter<Commo
 
     protected abstract void onBindViewHolderData(T t, int i, CommonAdapterHolder commonAdapterHolder);
 
-    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     public CommonAdapterHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         return new CommonAdapterHolder(this.layoutInflater.inflate(getLayoutId(i), viewGroup, false), this.requestHost);
     }

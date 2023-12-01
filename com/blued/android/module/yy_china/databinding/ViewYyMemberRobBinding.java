@@ -12,20 +12,16 @@ import com.blued.android.module.yy_china.view.YYBaseUserHeadView;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ViewYyMemberRobBinding.class */
 public final class ViewYyMemberRobBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final YYBaseUserHeadView f16934a;
+    public final YYBaseUserHeadView a;
     public final SVGAImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final TextView f16935c;
+    public final TextView c;
     private final ConstraintLayout d;
 
     private ViewYyMemberRobBinding(ConstraintLayout constraintLayout, YYBaseUserHeadView yYBaseUserHeadView, SVGAImageView sVGAImageView, TextView textView) {
         this.d = constraintLayout;
-        this.f16934a = yYBaseUserHeadView;
+        this.a = yYBaseUserHeadView;
         this.b = sVGAImageView;
-        this.f16935c = textView;
+        this.c = textView;
     }
 
     public static ViewYyMemberRobBinding a(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
@@ -56,7 +52,6 @@ public final class ViewYyMemberRobBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.d;

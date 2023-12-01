@@ -8,11 +8,11 @@ import java.util.List;
 public class AlbumViewDataManager {
 
     /* renamed from: a  reason: collision with root package name */
-    private static AlbumViewDataManager f33115a = new AlbumViewDataManager();
+    private static AlbumViewDataManager f19424a = new AlbumViewDataManager();
     private IAlbumDataListener b;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f33116c;
+    private boolean f19425c;
 
     /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/photo/manager/AlbumViewDataManager$IAlbumDataListener.class */
     public interface IAlbumDataListener {
@@ -25,7 +25,7 @@ public class AlbumViewDataManager {
     }
 
     public static AlbumViewDataManager a() {
-        return f33115a;
+        return f19424a;
     }
 
     public void a(IAlbumDataListener iAlbumDataListener) {
@@ -33,11 +33,11 @@ public class AlbumViewDataManager {
     }
 
     public void a(boolean z) {
-        this.f33116c = z;
+        this.f19425c = z;
     }
 
     public void a(boolean z, List<AlbumFlow> list) {
-        this.f33116c = z;
+        this.f19425c = z;
         IAlbumDataListener iAlbumDataListener = this.b;
         if (iAlbumDataListener != null) {
             iAlbumDataListener.a(z, list);
@@ -56,7 +56,7 @@ public class AlbumViewDataManager {
     }
 
     public boolean d() {
-        return this.f33116c;
+        return this.f19425c;
     }
 
     public void e() {

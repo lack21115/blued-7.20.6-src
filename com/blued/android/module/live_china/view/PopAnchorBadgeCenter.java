@@ -22,7 +22,7 @@ public class PopAnchorBadgeCenter extends PopAnchorBadge {
 
     @Override // com.blued.android.module.live_china.view.PopAnchorBadge
     public void a() {
-        this.f14995a = this.e.inflate(R.layout.anchor_badge_center, (ViewGroup) null);
+        this.a = this.e.inflate(R.layout.anchor_badge_center, (ViewGroup) null);
     }
 
     @Override // com.blued.android.module.live_china.view.PopAnchorBadge
@@ -32,7 +32,7 @@ public class PopAnchorBadgeCenter extends PopAnchorBadge {
 
     @Override // com.blued.android.module.live_china.view.PopAnchorBadge
     public void c() {
-        this.f14996c.startAnimation(AnimationUtils.loadAnimation(this.d, R.anim.push_center_in));
+        this.c.startAnimation(AnimationUtils.loadAnimation(this.d, R.anim.push_center_in));
         AlphaAnimation alphaAnimation = new AlphaAnimation(0.0f, 0.5f);
         alphaAnimation.setDuration(300L);
         alphaAnimation.setFillAfter(true);
@@ -59,6 +59,6 @@ public class PopAnchorBadgeCenter extends PopAnchorBadge {
         alphaAnimation.setDuration(300L);
         alphaAnimation.setFillAfter(true);
         this.b.startAnimation(alphaAnimation);
-        this.f14996c.startAnimation(AnimationUtils.loadAnimation(this.d, R.anim.push_center_out));
+        this.c.startAnimation(AnimationUtils.loadAnimation(this.d, R.anim.push_center_out));
     }
 }

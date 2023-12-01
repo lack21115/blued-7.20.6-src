@@ -8,13 +8,13 @@ import java.util.Map;
 class c implements IOAdEventListener {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ a f9295a;
+    final /* synthetic */ a f6455a;
     final /* synthetic */ b b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public c(b bVar, a aVar) {
         this.b = bVar;
-        this.f9295a = aVar;
+        this.f6455a = aVar;
     }
 
     @Override // com.baidu.mobads.sdk.api.IOAdEventListener
@@ -31,7 +31,7 @@ class c implements IOAdEventListener {
             if (obj3 instanceof Object[]) {
                 objArr = (Object[]) obj3;
             }
-            data.put("e_r", this.f9295a.handleEvent((String) obj, (String) obj2, objArr));
+            data.put("e_r", this.f6455a.handleEvent((String) obj, (String) obj2, objArr));
         }
     }
 }

@@ -77,9 +77,9 @@ public class a {
         if (TextUtils.isEmpty(this.W)) {
             this.W = String.valueOf(System.currentTimeMillis());
         }
-        String a2 = h.a(this.u, this.T, this.v, this.w, this.x, this.k, this.X, this.W);
-        i.a("UTLog", this, a2);
-        j(a2);
+        String a = h.a(this.u, this.T, this.v, this.w, this.x, this.k, this.X, this.W);
+        i.a("UTLog", this, a);
+        j(a);
     }
 
     public String toString() {

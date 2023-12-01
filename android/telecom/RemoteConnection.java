@@ -103,54 +103,46 @@ public final class RemoteConnection {
     public static class VideoProvider {
         private final IVideoProvider mVideoProviderBinder;
         private final IVideoCallback mVideoCallbackDelegate = new IVideoCallback() { // from class: android.telecom.RemoteConnection.VideoProvider.1
-            @Override // android.os.IInterface
             public IBinder asBinder() {
                 return null;
             }
 
-            @Override // com.android.internal.telecom.IVideoCallback
             public void changeCallDataUsage(int i) {
                 for (Listener listener : VideoProvider.this.mListeners) {
                     listener.onCallDataUsageChanged(VideoProvider.this, i);
                 }
             }
 
-            @Override // com.android.internal.telecom.IVideoCallback
             public void changeCameraCapabilities(CameraCapabilities cameraCapabilities) {
                 for (Listener listener : VideoProvider.this.mListeners) {
                     listener.onCameraCapabilitiesChanged(VideoProvider.this, cameraCapabilities);
                 }
             }
 
-            @Override // com.android.internal.telecom.IVideoCallback
             public void changePeerDimensions(int i, int i2) {
                 for (Listener listener : VideoProvider.this.mListeners) {
                     listener.onPeerDimensionsChanged(VideoProvider.this, i, i2);
                 }
             }
 
-            @Override // com.android.internal.telecom.IVideoCallback
             public void changeVideoQuality(int i) {
                 for (Listener listener : VideoProvider.this.mListeners) {
                     listener.onVideoQualityChanged(VideoProvider.this, i);
                 }
             }
 
-            @Override // com.android.internal.telecom.IVideoCallback
             public void handleCallSessionEvent(int i) {
                 for (Listener listener : VideoProvider.this.mListeners) {
                     listener.onHandleCallSessionEvent(VideoProvider.this, i);
                 }
             }
 
-            @Override // com.android.internal.telecom.IVideoCallback
             public void receiveSessionModifyRequest(VideoProfile videoProfile) {
                 for (Listener listener : VideoProvider.this.mListeners) {
                     listener.onReceiveSessionModifyRequest(VideoProvider.this, videoProfile);
                 }
             }
 
-            @Override // com.android.internal.telecom.IVideoCallback
             public void receiveSessionModifyResponse(int i, VideoProfile videoProfile, VideoProfile videoProfile2) {
                 for (Listener listener : VideoProvider.this.mListeners) {
                     listener.onReceiveSessionModifyResponse(VideoProvider.this, i, videoProfile, videoProfile2);

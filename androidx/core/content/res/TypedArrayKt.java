@@ -125,11 +125,11 @@ public final class TypedArrayKt {
         throw new IllegalStateException("Attribute value could not be coerced to CharSequence.".toString());
     }
 
-    public static final <R> R use(TypedArray typedArray, Function1<? super TypedArray, ? extends R> block) {
+    public static final <R> R use(TypedArray typedArray, Function1<? super TypedArray, ? extends R> function1) {
         Intrinsics.e(typedArray, "<this>");
-        Intrinsics.e(block, "block");
-        R invoke = block.invoke(typedArray);
+        Intrinsics.e(function1, "block");
+        R r = (R) function1.invoke(typedArray);
         typedArray.recycle();
-        return invoke;
+        return r;
     }
 }

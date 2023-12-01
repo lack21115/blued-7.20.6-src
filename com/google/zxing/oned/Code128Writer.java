@@ -237,7 +237,7 @@ public final class Code128Writer extends OneDimensionalCodeWriter {
                     }
                 }
                 boolean[] zArr = new boolean[i12];
-                Iterator<E> it = arrayList.iterator();
+                Iterator it = arrayList.iterator();
                 int i15 = 0;
                 while (true) {
                     int i16 = i15;

@@ -17,27 +17,21 @@ import java.lang.ref.WeakReference;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/shortvideo/view/TimeDownView.class */
 public class TimeDownView extends AppCompatTextView implements EventObserver {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Handler f15917a;
+    private Handler a;
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private ShinePresenter f15918c;
+    private ShinePresenter c;
 
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/shortvideo/view/TimeDownView$MsgHandler.class */
     public static class MsgHandler extends Handler {
-
-        /* renamed from: a  reason: collision with root package name */
-        private WeakReference<TimeDownView> f15919a;
+        private WeakReference<TimeDownView> a;
 
         public MsgHandler(TimeDownView timeDownView) {
-            this.f15919a = new WeakReference<>(timeDownView);
+            this.a = new WeakReference<>(timeDownView);
         }
 
         @Override // android.os.Handler
         public void handleMessage(Message message) {
-            TimeDownView timeDownView = this.f15919a.get();
+            TimeDownView timeDownView = this.a.get();
             if (timeDownView != null) {
                 timeDownView.a(message);
             }
@@ -46,19 +40,19 @@ public class TimeDownView extends AppCompatTextView implements EventObserver {
 
     public TimeDownView(Context context) {
         super(context);
-        this.f15917a = new MsgHandler(this);
+        this.a = new MsgHandler(this);
         this.b = 3;
     }
 
     public TimeDownView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f15917a = new MsgHandler(this);
+        this.a = new MsgHandler(this);
         this.b = 3;
     }
 
     public TimeDownView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f15917a = new MsgHandler(this);
+        this.a = new MsgHandler(this);
         this.b = 3;
     }
 
@@ -72,7 +66,7 @@ public class TimeDownView extends AppCompatTextView implements EventObserver {
     }
 
     public void a() {
-        ShinePresenter shinePresenter = this.f15918c;
+        ShinePresenter shinePresenter = this.c;
         if (shinePresenter != null) {
             shinePresenter.a(5);
         }
@@ -89,7 +83,7 @@ public class TimeDownView extends AppCompatTextView implements EventObserver {
         }
         setText("" + this.b);
         g();
-        this.f15917a.sendEmptyMessageDelayed(0, 1000L);
+        this.a.sendEmptyMessageDelayed(0, 1000L);
         this.b = this.b - 1;
     }
 
@@ -97,12 +91,12 @@ public class TimeDownView extends AppCompatTextView implements EventObserver {
     public void a(EventType.VALUE value) {
         if (value == EventType.VALUE.START_TIMEDOWN) {
             a();
-            this.f15917a.sendEmptyMessage(0);
+            this.a.sendEmptyMessage(0);
         }
     }
 
     public void a(ShinePresenter shinePresenter) {
-        this.f15918c = shinePresenter;
+        this.c = shinePresenter;
         setTextColor(getResources().getColor(R.color.nafio_b));
         setShadowLayer(1.0f, 0.0f, 1.0f, getResources().getColor(R.color.stv_tv_shadow_color));
         setTextSize(DensityUtils.c(getContext(), 200.0f));
@@ -110,9 +104,9 @@ public class TimeDownView extends AppCompatTextView implements EventObserver {
     }
 
     public void b() {
-        this.f15917a.removeMessages(0);
+        this.a.removeMessages(0);
         this.b = 3;
-        ShinePresenter shinePresenter = this.f15918c;
+        ShinePresenter shinePresenter = this.c;
         if (shinePresenter != null) {
             shinePresenter.a(0);
         }
@@ -135,6 +129,6 @@ public class TimeDownView extends AppCompatTextView implements EventObserver {
     }
 
     public void f() {
-        this.f15917a.removeMessages(0);
+        this.a.removeMessages(0);
     }
 }

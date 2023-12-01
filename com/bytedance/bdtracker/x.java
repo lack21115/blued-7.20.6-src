@@ -13,7 +13,7 @@ public class x extends t {
     public x(v vVar) {
         super(vVar);
         long optLong = vVar.h.d.optLong("register_time", 0L);
-        this.f21307c = optLong;
+        this.f7701c = optLong;
         this.g = null;
     }
 

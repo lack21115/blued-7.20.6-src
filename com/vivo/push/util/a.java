@@ -11,36 +11,36 @@ import javax.crypto.spec.SecretKeySpec;
 public class a {
 
     /* renamed from: c  reason: collision with root package name */
-    private static volatile a f41129c;
+    private static volatile a f27438c;
 
     /* renamed from: a  reason: collision with root package name */
-    private byte[] f41130a;
+    private byte[] f27439a;
     private byte[] b;
 
     private a(Context context) {
         w.b().a(ContextDelegate.getContext(context));
         w b = w.b();
-        this.f41130a = b.c();
+        this.f27439a = b.c();
         this.b = b.d();
     }
 
     public static a a(Context context) {
-        if (f41129c == null) {
+        if (f27438c == null) {
             synchronized (a.class) {
                 try {
-                    if (f41129c == null) {
-                        f41129c = new a(context.getApplicationContext());
+                    if (f27438c == null) {
+                        f27438c = new a(context.getApplicationContext());
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f41129c;
+        return f27438c;
     }
 
     private byte[] a() {
-        byte[] bArr = this.f41130a;
+        byte[] bArr = this.f27439a;
         return (bArr == null || bArr.length <= 0) ? w.b().c() : bArr;
     }
 

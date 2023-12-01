@@ -4,7 +4,7 @@ package com.tencent.cloud.huiyansdkface.record;
 public class WeWrapMp4Jni {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f36058a = WeWrapMp4Jni.class.getSimpleName();
+    private static final String f22367a = WeWrapMp4Jni.class.getSimpleName();
     private int b = 0;
 
     static {

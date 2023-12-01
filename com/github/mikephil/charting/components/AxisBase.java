@@ -12,7 +12,7 @@ import java.util.List;
 public abstract class AxisBase extends ComponentBase {
 
     /* renamed from: a  reason: collision with root package name */
-    protected ValueFormatter f22085a;
+    protected ValueFormatter f8478a;
     public int d;
     public int e;
     protected List<LimitLine> m;
@@ -23,7 +23,7 @@ public abstract class AxisBase extends ComponentBase {
     public float[] b = new float[0];
 
     /* renamed from: c  reason: collision with root package name */
-    public float[] f22086c = new float[0];
+    public float[] f8479c = new float[0];
     private int G = 6;
     protected float f = 1.0f;
     protected boolean g = false;
@@ -182,11 +182,11 @@ public abstract class AxisBase extends ComponentBase {
     }
 
     public ValueFormatter q() {
-        ValueFormatter valueFormatter = this.f22085a;
+        ValueFormatter valueFormatter = this.f8478a;
         if (valueFormatter == null || ((valueFormatter instanceof DefaultAxisValueFormatter) && ((DefaultAxisValueFormatter) valueFormatter).a() != this.e)) {
-            this.f22085a = new DefaultAxisValueFormatter(this.e);
+            this.f8478a = new DefaultAxisValueFormatter(this.e);
         }
-        return this.f22085a;
+        return this.f8478a;
     }
 
     public DashPathEffect r() {

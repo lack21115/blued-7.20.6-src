@@ -1,7 +1,6 @@
 package com.efs.sdk.base.protocol.file;
 
 import android.text.TextUtils;
-import com.efs.sdk.base.Constants;
 import com.efs.sdk.base.core.config.a;
 import com.efs.sdk.base.core.controller.ControllerCenter;
 import com.efs.sdk.base.core.util.Log;
@@ -55,11 +54,11 @@ public class EfsTextFile extends AbsFileLog {
             for (AbsSection absSection : this.sectionList) {
                 if (absSection instanceof KVSection) {
                     Map<String, Object> dataMap = ((KVSection) absSection).getDataMap();
-                    if (TextUtils.isEmpty(this.mLinkID) && dataMap.containsKey(Constants.LOG_KEY_LINK_ID)) {
-                        this.mLinkID = String.valueOf(dataMap.get(Constants.LOG_KEY_LINK_ID));
+                    if (TextUtils.isEmpty(this.mLinkID) && dataMap.containsKey("w_frmid")) {
+                        this.mLinkID = String.valueOf(dataMap.get("w_frmid"));
                     }
-                    if (TextUtils.isEmpty(this.mLinkKey) && dataMap.containsKey(Constants.LOG_KEY_LINK_KEY)) {
-                        this.mLinkKey = String.valueOf(dataMap.get(Constants.LOG_KEY_LINK_KEY));
+                    if (TextUtils.isEmpty(this.mLinkKey) && dataMap.containsKey("w_linkKey")) {
+                        this.mLinkKey = String.valueOf(dataMap.get("w_linkKey"));
                     }
                 }
             }
@@ -93,7 +92,6 @@ public class EfsTextFile extends AbsFileLog {
         return textSection;
     }
 
-    @Override // com.efs.sdk.base.protocol.ILogProtocol
     public byte[] generate() {
         String changeToStr = changeToStr();
         if (ControllerCenter.getGlobalEnvStruct().isPrintLogDetail()) {
@@ -102,24 +100,20 @@ public class EfsTextFile extends AbsFileLog {
         return changeToStr.getBytes();
     }
 
-    @Override // com.efs.sdk.base.protocol.ILogProtocol
     public String generateString() {
         return changeToStr();
     }
 
-    @Override // com.efs.sdk.base.protocol.ILogProtocol
     public String getLinkId() {
         initLinkInfo();
         return this.mLinkID;
     }
 
-    @Override // com.efs.sdk.base.protocol.ILogProtocol
     public String getLinkKey() {
         initLinkInfo();
         return this.mLinkKey;
     }
 
-    @Override // com.efs.sdk.base.protocol.ILogProtocol
     public void insertGlobal(a aVar) {
         insertCustomInfoSection();
         this.sectionList.addAll(0, aVar.a(getLogType()));

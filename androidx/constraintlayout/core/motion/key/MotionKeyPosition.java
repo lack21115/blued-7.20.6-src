@@ -25,7 +25,7 @@ public class MotionKeyPosition extends MotionKey {
     public int mPositionType = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    private float f2020c = Float.NaN;
+    private float f1972c = Float.NaN;
     private float d = Float.NaN;
 
     public MotionKeyPosition() {
@@ -38,14 +38,14 @@ public class MotionKeyPosition extends MotionKey {
         float f7 = -f6;
         float f8 = this.mPercentX;
         float f9 = this.mPercentY;
-        this.f2020c = f + (f5 * f8) + (f7 * f9);
+        this.f1972c = f + (f5 * f8) + (f7 * f9);
         this.d = f2 + (f6 * f8) + (f5 * f9);
     }
 
     private void a(int i, int i2) {
         float f = this.mPercentX;
         float f2 = 0;
-        this.f2020c = ((i - 0) * f) + f2;
+        this.f1972c = ((i - 0) * f) + f2;
         this.d = ((i2 - 0) * f) + f2;
     }
 
@@ -59,7 +59,7 @@ public class MotionKeyPosition extends MotionKey {
         if (!Float.isNaN(this.mAltPercentX)) {
             f7 = this.mAltPercentX;
         }
-        this.f2020c = (int) (f + (f8 * f5) + (f7 * f6));
+        this.f1972c = (int) (f + (f8 * f5) + (f7 * f6));
         this.d = (int) (f2 + (f5 * f9) + (f6 * f10));
     }
 
@@ -153,7 +153,7 @@ public class MotionKeyPosition extends MotionKey {
 
     @Override // androidx.constraintlayout.core.motion.key.MotionKey
     /* renamed from: clone */
-    public MotionKey mo1293clone() {
+    public MotionKey mo1156clone() {
         return new MotionKeyPosition().copy(this);
     }
 
@@ -170,7 +170,7 @@ public class MotionKeyPosition extends MotionKey {
         this.mPercentY = motionKeyPosition.mPercentY;
         this.mAltPercentX = motionKeyPosition.mAltPercentX;
         this.mAltPercentY = motionKeyPosition.mAltPercentY;
-        this.f2020c = motionKeyPosition.f2020c;
+        this.f1972c = motionKeyPosition.f1972c;
         this.d = motionKeyPosition.d;
         return this;
     }
@@ -186,7 +186,7 @@ public class MotionKeyPosition extends MotionKey {
 
     public boolean intersects(int i, int i2, FloatRect floatRect, FloatRect floatRect2, float f, float f2) {
         a(i, i2, floatRect.centerX(), floatRect.centerY(), floatRect2.centerX(), floatRect2.centerY());
-        return Math.abs(f - this.f2020c) < 20.0f && Math.abs(f2 - this.d) < 20.0f;
+        return Math.abs(f - this.f1972c) < 20.0f && Math.abs(f2 - this.d) < 20.0f;
     }
 
     public void positionAttributes(MotionWidget motionWidget, FloatRect floatRect, FloatRect floatRect2, float f, float f2, String[] strArr, float[] fArr) {

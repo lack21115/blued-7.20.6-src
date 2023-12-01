@@ -1,6 +1,5 @@
 package external.org.apache.commons.lang3;
 
-import com.igexin.push.core.b;
 import java.util.Collection;
 import java.util.Map;
 import java.util.regex.Pattern;
@@ -54,7 +53,7 @@ public class Validate {
         if (cls.isAssignableFrom(cls2)) {
             return;
         }
-        throw new IllegalArgumentException(String.format(DEFAULT_IS_ASSIGNABLE_EX_MESSAGE, cls2 == null ? b.l : cls2.getName(), cls.getName()));
+        throw new IllegalArgumentException(String.format(DEFAULT_IS_ASSIGNABLE_EX_MESSAGE, cls2 == null ? "null" : cls2.getName(), cls.getName()));
     }
 
     public static void isAssignableFrom(Class<?> cls, Class<?> cls2, String str, Object... objArr) {
@@ -67,7 +66,7 @@ public class Validate {
         if (cls.isInstance(obj)) {
             return;
         }
-        throw new IllegalArgumentException(String.format(DEFAULT_IS_INSTANCE_OF_EX_MESSAGE, cls.getName(), obj == null ? b.l : obj.getClass().getName()));
+        throw new IllegalArgumentException(String.format(DEFAULT_IS_INSTANCE_OF_EX_MESSAGE, cls.getName(), obj == null ? "null" : obj.getClass().getName()));
     }
 
     public static void isInstanceOf(Class<?> cls, Object obj, String str, Object... objArr) {

@@ -14,8 +14,8 @@ public class LiveListHotFragment_ViewBinding implements Unbinder {
 
     public LiveListHotFragment_ViewBinding(LiveListHotFragment liveListHotFragment, View view) {
         this.b = liveListHotFragment;
-        liveListHotFragment.grid_view = (RecyclerView) Utils.a(view, 2131364131, "field 'grid_view'", RecyclerView.class);
-        liveListHotFragment.refresh_view = (SmartRefreshLayout) Utils.a(view, 2131369121, "field 'refresh_view'", SmartRefreshLayout.class);
+        liveListHotFragment.grid_view = (RecyclerView) Utils.a(view, R.id.grid_view, "field 'grid_view'", RecyclerView.class);
+        liveListHotFragment.refresh_view = (SmartRefreshLayout) Utils.a(view, R.id.refresh_view, "field 'refresh_view'", SmartRefreshLayout.class);
         liveListHotFragment.ll_default_empty = (LinearLayout) Utils.a(view, R.id.ll_default_empty, "field 'll_default_empty'", LinearLayout.class);
     }
 

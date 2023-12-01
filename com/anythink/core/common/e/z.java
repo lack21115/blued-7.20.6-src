@@ -5,16 +5,14 @@ public final class z extends aa {
     public static final int R = 2;
     public static final int b = 1;
     int S;
-
-    /* renamed from: a  reason: collision with root package name */
-    int f6685a;
+    int a;
 
     public final int a() {
-        return this.f6685a;
+        return this.a;
     }
 
     public final void a(int i) {
-        this.f6685a = i;
+        this.a = i;
     }
 
     public final int b() {

@@ -15,18 +15,19 @@ import com.huawei.hms.support.log.HMSLog;
 public class p {
 
     /* renamed from: a  reason: collision with root package name */
-    private ServiceConnection f22854a;
+    private ServiceConnection f9246a;
     private Messenger b = null;
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-7994992-dex2jar.jar:com/huawei/hms/push/p$a.class */
-    class a implements ServiceConnection {
+    public class a implements ServiceConnection {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ Bundle f22855a;
+        final /* synthetic */ Bundle f9247a;
         final /* synthetic */ Context b;
 
         a(Bundle bundle, Context context) {
-            this.f22855a = bundle;
+            this.f9247a = bundle;
             this.b = context;
         }
 
@@ -35,14 +36,14 @@ public class p {
             HMSLog.i("RemoteService", "remote service onConnected");
             p.this.b = new Messenger(iBinder);
             Message obtain = Message.obtain();
-            obtain.setData(this.f22855a);
+            obtain.setData(this.f9247a);
             try {
                 p.this.b.send(obtain);
             } catch (RemoteException e) {
                 HMSLog.i("RemoteService", "remote service message send failed");
             }
             HMSLog.i("RemoteService", "remote service unbindservice");
-            this.b.unbindService(p.this.f22854a);
+            this.b.unbindService(p.this.f9246a);
         }
 
         @Override // android.content.ServiceConnection
@@ -54,8 +55,8 @@ public class p {
 
     public boolean a(Context context, Bundle bundle, Intent intent) {
         Context applicationContext = context.getApplicationContext();
-        this.f22854a = new a(bundle, applicationContext);
+        this.f9246a = new a(bundle, applicationContext);
         HMSLog.i("RemoteService", "remote service bind service start");
-        return applicationContext.bindService(intent, this.f22854a, 1);
+        return applicationContext.bindService(intent, this.f9246a, 1);
     }
 }

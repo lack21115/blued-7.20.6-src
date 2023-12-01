@@ -21,23 +21,23 @@ public class n2 implements r2 {
     public static String l;
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f21270a;
+    public final Context f7664a;
     public u1 b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final s1 f21271c;
+    public final s1 f7665c;
     public final String d;
     public final m0 e;
 
     public n2(Context context, m0 m0Var, s1 s1Var) {
         this.e = m0Var;
         this.d = m0Var.b.getLocalTest() ? "_local" : "";
-        this.f21270a = context.getApplicationContext();
+        this.f7664a = context.getApplicationContext();
         m2 m2Var = new m2();
-        this.f21271c = s1Var;
-        e2 e2Var = new e2(this.f21270a, "snssdk_openudid", m0Var.b.getSpName());
+        this.f7665c = s1Var;
+        e2 e2Var = new e2(this.f7664a, "snssdk_openudid", m0Var.b.getSpName());
         this.b = e2Var;
-        e2Var.f21314a = this.f21271c;
+        e2Var.f7708a = this.f7665c;
         if (!m0Var.b.getAnonymous()) {
             new Thread(new l2(m2Var)).start();
         }
@@ -57,10 +57,10 @@ public class n2 implements r2 {
     public String a() {
         if (TextUtils.isEmpty(g)) {
             try {
-                SharedPreferences a2 = e2.a(this.f21270a, "snssdk_openudid", 0);
+                SharedPreferences a2 = e2.a(this.f7664a, "snssdk_openudid", 0);
                 String string = a2.getString("clientudid", null);
                 if (j1.c(string)) {
-                    this.f21271c.b(string, null);
+                    this.f7665c.b(string, null);
                 } else {
                     string = UUID.randomUUID().toString();
                     SharedPreferences.Editor edit = a2.edit();
@@ -82,7 +82,7 @@ public class n2 implements r2 {
     }
 
     public void a(Account account) {
-        s1 s1Var = this.f21271c;
+        s1 s1Var = this.f7665c;
         if (s1Var != null) {
             s1Var.a(account);
         }
@@ -174,7 +174,7 @@ public class n2 implements r2 {
     public String d() {
         if (TextUtils.isEmpty(l)) {
             try {
-                String e = this.b.e(null, SensitiveUtils.getSerialNumber(this.f21270a));
+                String e = this.b.e(null, SensitiveUtils.getSerialNumber(this.f7664a));
                 String str = e;
                 if (!TextUtils.isEmpty(e)) {
                     str = e + this.d;
@@ -193,7 +193,7 @@ public class n2 implements r2 {
         String[] strArr = k;
         if (strArr == null || strArr.length <= 0) {
             try {
-                String[] a2 = this.b.a((String[]) null, SensitiveUtils.getSimSerialNumbers(this.f21270a));
+                String[] a2 = this.b.a((String[]) null, SensitiveUtils.getSimSerialNumbers(this.f7664a));
                 String[] strArr2 = a2;
                 int i2 = 0;
                 if (a2 == null) {
@@ -217,7 +217,7 @@ public class n2 implements r2 {
     public String f() {
         if (TextUtils.isEmpty(h)) {
             try {
-                String f2 = this.b.f(null, this.e.b.isImeiEnable() ? SensitiveUtils.getDeviceId(this.f21270a) : this.e.b.getAppImei());
+                String f2 = this.b.f(null, this.e.b.isImeiEnable() ? SensitiveUtils.getDeviceId(this.f7664a) : this.e.b.getAppImei());
                 String str = f2;
                 if (!TextUtils.isEmpty(f2)) {
                     str = f2 + this.d;
@@ -239,10 +239,10 @@ public class n2 implements r2 {
         }
         try {
             if (this.e.b.isImeiEnable()) {
-                JSONArray multiImeiFromSystem = SensitiveUtils.getMultiImeiFromSystem(this.f21270a);
+                JSONArray multiImeiFromSystem = SensitiveUtils.getMultiImeiFromSystem(this.f7664a);
                 JSONArray jSONArray2 = multiImeiFromSystem;
                 if (multiImeiFromSystem == null) {
-                    jSONArray2 = SensitiveUtils.getMultiImeiFallback(this.f21270a);
+                    jSONArray2 = SensitiveUtils.getMultiImeiFallback(this.f7664a);
                 }
                 JSONArray jSONArray3 = new JSONArray(this.b.g(null, jSONArray2.toString()));
                 if (!TextUtils.isEmpty(this.d)) {

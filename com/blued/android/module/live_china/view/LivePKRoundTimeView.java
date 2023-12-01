@@ -19,13 +19,9 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LivePKRoundTimeView.class */
 public class LivePKRoundTimeView extends FrameLayout implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    private ImageView f14828a;
+    private ImageView a;
     private ScanningImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f14829c;
+    private int c;
     private boolean d;
 
     public LivePKRoundTimeView(Context context) {
@@ -34,7 +30,7 @@ public class LivePKRoundTimeView extends FrameLayout implements View.OnClickList
 
     public LivePKRoundTimeView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f14829c = 0;
+        this.c = 0;
         this.d = false;
         c();
     }
@@ -64,7 +60,7 @@ public class LivePKRoundTimeView extends FrameLayout implements View.OnClickList
 
     private void c() {
         LayoutInflater.from(getContext()).inflate(R.layout.live_pk_round_num_view, this);
-        this.f14828a = (ImageView) findViewById(R.id.iv_round_time);
+        this.a = (ImageView) findViewById(R.id.iv_round_time);
         ScanningImageView scanningImageView = (ScanningImageView) findViewById(R.id.scanning_image_view);
         this.b = scanningImageView;
         scanningImageView.setAnimatorListener(new ScanningImageView.OnEventCallBack() { // from class: com.blued.android.module.live_china.view.LivePKRoundTimeView.1
@@ -127,15 +123,15 @@ public class LivePKRoundTimeView extends FrameLayout implements View.OnClickList
 
     /* JADX INFO: Access modifiers changed from: private */
     public void e() {
-        int i = this.f14829c;
+        int i = this.c;
         if (i == 1) {
-            this.f14828a.setImageResource(R.drawable.live_pk_round_time1);
+            this.a.setImageResource(R.drawable.live_pk_round_time1);
         } else if (i == 2) {
-            this.f14828a.setImageResource(R.drawable.live_pk_round_time2);
+            this.a.setImageResource(R.drawable.live_pk_round_time2);
         } else if (i == 3) {
-            this.f14828a.setImageResource(R.drawable.live_pk_round_time3);
+            this.a.setImageResource(R.drawable.live_pk_round_time3);
         } else if (i == 4) {
-            this.f14828a.setImageResource(R.drawable.live_pk_round_time_end);
+            this.a.setImageResource(R.drawable.live_pk_round_time_end);
         }
     }
 
@@ -143,7 +139,7 @@ public class LivePKRoundTimeView extends FrameLayout implements View.OnClickList
         if (this.d) {
             return;
         }
-        this.f14829c = 4;
+        this.c = 4;
         d();
     }
 
@@ -151,17 +147,17 @@ public class LivePKRoundTimeView extends FrameLayout implements View.OnClickList
         if (this.d) {
             return;
         }
-        if (this.f14829c == i) {
+        if (this.c == i) {
             e();
             return;
         }
-        this.f14829c = i;
+        this.c = i;
         d();
     }
 
     public void b() {
         this.d = false;
-        this.f14829c = 0;
+        this.c = 0;
         setVisibility(8);
     }
 

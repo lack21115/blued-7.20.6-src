@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentRegisterV1ForemailStep2Binding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f28944a;
+    private final LinearLayout f15254a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f28944a;
+        return this.f15254a;
     }
 }

@@ -151,15 +151,15 @@ public class SurfaceTextureRenderer {
         }
         EGLConfig[] eGLConfigArr = new EGLConfig[1];
         int[] iArr2 = new int[1];
-        EGL14.eglChooseConfig(this.mEGLDisplay, new int[]{12324, 8, 12323, 8, 12322, 8, 12352, 4, EGL_RECORDABLE_ANDROID, 1, 12339, 5, 12344}, 0, eGLConfigArr, 0, eGLConfigArr.length, iArr2, 0);
+        EGL14.eglChooseConfig(this.mEGLDisplay, new int[]{EGL14.EGL_RED_SIZE, 8, EGL14.EGL_GREEN_SIZE, 8, EGL14.EGL_BLUE_SIZE, 8, EGL14.EGL_RENDERABLE_TYPE, 4, EGL_RECORDABLE_ANDROID, 1, EGL14.EGL_SURFACE_TYPE, 5, EGL14.EGL_NONE}, 0, eGLConfigArr, 0, eGLConfigArr.length, iArr2, 0);
         checkEglError("eglCreateContext RGB888+recordable ES2");
         if (iArr2[0] == 0) {
             Log.w(TAG, "eglChooseConfig returned no configs, retrying without EGL_RECORDABLE_ANDROID");
-            EGL14.eglChooseConfig(this.mEGLDisplay, new int[]{12324, 8, 12323, 8, 12322, 8, 12352, 4, 12339, 5, 12344}, 0, eGLConfigArr, 0, eGLConfigArr.length, iArr2, 0);
+            EGL14.eglChooseConfig(this.mEGLDisplay, new int[]{EGL14.EGL_RED_SIZE, 8, EGL14.EGL_GREEN_SIZE, 8, EGL14.EGL_BLUE_SIZE, 8, EGL14.EGL_RENDERABLE_TYPE, 4, EGL14.EGL_SURFACE_TYPE, 5, EGL14.EGL_NONE}, 0, eGLConfigArr, 0, eGLConfigArr.length, iArr2, 0);
             checkEglError("eglCreateContext RGB888 ES2");
         }
         this.mConfigs = eGLConfigArr[0];
-        this.mEGLContext = EGL14.eglCreateContext(this.mEGLDisplay, eGLConfigArr[0], EGL14.EGL_NO_CONTEXT, new int[]{12440, 2, 12344}, 0);
+        this.mEGLContext = EGL14.eglCreateContext(this.mEGLDisplay, eGLConfigArr[0], EGL14.EGL_NO_CONTEXT, new int[]{12440, 2, EGL14.EGL_NONE}, 0);
         checkEglError("eglCreateContext");
         if (this.mEGLContext == EGL14.EGL_NO_CONTEXT) {
             throw new IllegalStateException("No EGLContext could be made");
@@ -171,7 +171,7 @@ public class SurfaceTextureRenderer {
             throw new IllegalStateException("No Surfaces were provided to draw to");
         }
         for (EGLSurfaceHolder eGLSurfaceHolder : collection) {
-            eGLSurfaceHolder.eglSurface = EGL14.eglCreateWindowSurface(this.mEGLDisplay, this.mConfigs, eGLSurfaceHolder.surface, new int[]{12344}, 0);
+            eGLSurfaceHolder.eglSurface = EGL14.eglCreateWindowSurface(this.mEGLDisplay, this.mConfigs, eGLSurfaceHolder.surface, new int[]{EGL14.EGL_NONE}, 0);
             checkEglError("eglCreateWindowSurface");
         }
     }
@@ -187,7 +187,7 @@ public class SurfaceTextureRenderer {
             if (i2 > i) {
                 i3 = i2;
             }
-            eGLSurfaceHolder.eglSurface = EGL14.eglCreatePbufferSurface(this.mEGLDisplay, this.mConfigs, new int[]{12375, eGLSurfaceHolder.width, 12374, eGLSurfaceHolder.height, 12344}, 0);
+            eGLSurfaceHolder.eglSurface = EGL14.eglCreatePbufferSurface(this.mEGLDisplay, this.mConfigs, new int[]{EGL14.EGL_WIDTH, eGLSurfaceHolder.width, EGL14.EGL_HEIGHT, eGLSurfaceHolder.height, EGL14.EGL_NONE}, 0);
             checkEglError("eglCreatePbufferSurface");
             i = i3;
         }

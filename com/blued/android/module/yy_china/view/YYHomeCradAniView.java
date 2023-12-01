@@ -15,13 +15,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYHomeCradAniView.class */
 public final class YYHomeCradAniView extends View {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Bitmap f18226a;
+    private final Bitmap a;
     private final Paint b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f18227c;
+    private int c;
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
     public YYHomeCradAniView(Context context) {
@@ -41,34 +37,34 @@ public final class YYHomeCradAniView extends View {
         Intrinsics.e(context, "context");
         Bitmap decodeResource = BitmapFactory.decodeResource(getContext().getResources(), R.drawable.icon_yy_home_ani);
         Intrinsics.c(decodeResource, "decodeResource(context.r…rawable.icon_yy_home_ani)");
-        this.f18226a = decodeResource;
+        this.a = decodeResource;
         this.b = new Paint();
-        this.f18227c = -1;
+        this.c = -1;
     }
 
     public final int getMWidth() {
-        return this.f18227c;
+        return this.c;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
     public void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        if (this.f18227c > getMeasuredWidth() + 10 || this.f18227c < 0) {
+        if (this.c > getMeasuredWidth() + 10 || this.c < 0) {
             return;
         }
         if (canvas != null) {
-            Bitmap bitmap = this.f18226a;
-            Rect rect = new Rect(0, 20, this.f18226a.getWidth(), this.f18226a.getHeight() - 20);
-            int i = this.f18227c;
-            canvas.drawBitmap(bitmap, rect, new Rect(i, 0, this.f18226a.getWidth() + i, getMeasuredHeight()), this.b);
+            Bitmap bitmap = this.a;
+            Rect rect = new Rect(0, 20, this.a.getWidth(), this.a.getHeight() - 20);
+            int i = this.c;
+            canvas.drawBitmap(bitmap, rect, new Rect(i, 0, this.a.getWidth() + i, getMeasuredHeight()), this.b);
         }
-        setMWidth(this.f18227c + 8);
+        setMWidth(this.c + 8);
         invalidate();
     }
 
     public final void setMWidth(int i) {
-        this.f18227c = i;
+        this.c = i;
         invalidate();
     }
 }

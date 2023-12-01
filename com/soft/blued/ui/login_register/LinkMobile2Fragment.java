@@ -15,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.AppMethods;
+import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.ui.BaseFragment;
 import com.blued.android.core.ui.TerminalActivity;
 import com.blued.android.framework.http.BluedUIHttpResponse;
@@ -38,6 +39,7 @@ import com.soft.blued.log.track.EventTrackLoginAndRegister;
 import com.soft.blued.ui.setting.fragment.PayPasswordSettingFragment;
 import com.soft.blued.ui.setting.model.LoginProtectionModel;
 import com.soft.blued.utils.StringUtils;
+import com.xiaomi.mipush.sdk.Constants;
 
 /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/login_register/LinkMobile2Fragment.class */
 public class LinkMobile2Fragment extends BaseFragment implements View.OnClickListener {
@@ -58,11 +60,11 @@ public class LinkMobile2Fragment extends BaseFragment implements View.OnClickLis
     private Dialog s;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f31375c = LinkMobile2Fragment.class.getSimpleName();
+    private String f17685c = LinkMobile2Fragment.class.getSimpleName();
     private boolean r = true;
 
     /* renamed from: a  reason: collision with root package name */
-    Runnable f31374a = new Runnable() { // from class: com.soft.blued.ui.login_register.LinkMobile2Fragment.3
+    Runnable f17684a = new Runnable() { // from class: com.soft.blued.ui.login_register.LinkMobile2Fragment.3
         @Override // java.lang.Runnable
         public void run() {
             if (LinkMobile2Fragment.this.p == 0) {
@@ -85,7 +87,6 @@ public class LinkMobile2Fragment extends BaseFragment implements View.OnClickLis
         }
     };
     public BluedUIHttpResponse b = new BluedUIHttpResponse(getFragmentActive()) { // from class: com.soft.blued.ui.login_register.LinkMobile2Fragment.13
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public boolean onUIFailure(int i, String str) {
             if (i == 4036210) {
                 LinkMobile2Fragment.this.getActivity().finish();
@@ -93,28 +94,25 @@ public class LinkMobile2Fragment extends BaseFragment implements View.OnClickLis
             return super.onUIFailure(i, str);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIFinish() {
             DialogUtils.b(LinkMobile2Fragment.this.f);
             super.onUIFinish();
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIStart() {
             DialogUtils.a(LinkMobile2Fragment.this.f);
             super.onUIStart();
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIUpdate(BluedEntity bluedEntity) {
             LinkMobile2Fragment.this.c(-1);
         }
     };
 
     private void a() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.d.findViewById(2131370749);
-        this.g = commonTopTitleNoTrans;
-        commonTopTitleNoTrans.a();
+        CommonTopTitleNoTrans findViewById = this.d.findViewById(R.id.top_title);
+        this.g = findViewById;
+        findViewById.a();
         this.g.f();
         this.g.setTitleBackgroundDrawable(2131101780);
         this.g.setLeftClickListener(this);
@@ -149,7 +147,7 @@ public class LinkMobile2Fragment extends BaseFragment implements View.OnClickLis
     }
 
     private void b() {
-        this.o = (TextView) this.d.findViewById(2131371262);
+        this.o = (TextView) this.d.findViewById(R.id.tv_desc);
         this.f = DialogUtils.a(this.e);
         TextView textView = (TextView) this.d.findViewById(2131371164);
         this.h = textView;
@@ -211,7 +209,7 @@ public class LinkMobile2Fragment extends BaseFragment implements View.OnClickLis
     /* JADX INFO: Access modifiers changed from: private */
     public void c(int i) {
         if (!StringUtils.d(this.m) && this.m.equals(LoginRegisterTools.l)) {
-            TerminalActivity.d(getActivity(), LinkMobileFragment.class, null);
+            TerminalActivity.d(getActivity(), LinkMobileFragment.class, (Bundle) null);
             getActivity().finish();
             return;
         }
@@ -260,7 +258,7 @@ public class LinkMobile2Fragment extends BaseFragment implements View.OnClickLis
 
     private void d() {
         this.p = 60;
-        postSafeRunOnUiThread(this.f31374a);
+        postSafeRunOnUiThread(this.f17684a);
         if (StringUtils.d(this.m) || !this.m.equals(LoginRegisterTools.n)) {
             return;
         }
@@ -273,7 +271,7 @@ public class LinkMobile2Fragment extends BaseFragment implements View.OnClickLis
             public void run() {
                 if (LinkMobile2Fragment.this.r) {
                     BluedUIHttpResponse b = LinkMobile2Fragment.this.b(2);
-                    LoginRegisterHttpUtils.a(b, LinkMobile2Fragment.this.j + "-" + LinkMobile2Fragment.this.i, "mobile", "", "", 2, LinkMobile2Fragment.this.getFragmentActive());
+                    LoginRegisterHttpUtils.a(b, LinkMobile2Fragment.this.j + Constants.ACCEPT_TIME_SEPARATOR_SERVER + LinkMobile2Fragment.this.i, "mobile", "", "", 2, (IRequestHost) LinkMobile2Fragment.this.getFragmentActive());
                 }
             }
         }, 45000L);
@@ -281,9 +279,9 @@ public class LinkMobile2Fragment extends BaseFragment implements View.OnClickLis
 
     private void f() {
         if (StringUtils.d(this.m) || !(this.m.equals(LoginRegisterTools.l) || this.m.equals(LoginRegisterTools.n))) {
-            LoginRegisterHttpUtils.a(a(1), this.k.getPassWord(), 0, getFragmentActive());
+            LoginRegisterHttpUtils.a(a(1), this.k.getPassWord(), 0, (IRequestHost) getFragmentActive());
         } else {
-            LoginRegisterHttpUtils.a(a(1), this.k.getPassWord(), 1, getFragmentActive());
+            LoginRegisterHttpUtils.a(a(1), this.k.getPassWord(), 1, (IRequestHost) getFragmentActive());
         }
     }
 
@@ -296,11 +294,11 @@ public class LinkMobile2Fragment extends BaseFragment implements View.OnClickLis
     private void g() {
         if (StringUtils.d(this.m) || !(this.m.equals(LoginRegisterTools.l) || this.m.equals(LoginRegisterTools.n))) {
             BluedUIHttpResponse b = b(0);
-            LoginRegisterHttpUtils.a(b, this.j + "-" + this.i, "mobile", "", this.n, 0, getFragmentActive());
+            LoginRegisterHttpUtils.a(b, this.j + Constants.ACCEPT_TIME_SEPARATOR_SERVER + this.i, "mobile", "", this.n, 0, (IRequestHost) getFragmentActive());
             return;
         }
         BluedUIHttpResponse b2 = b(1);
-        LoginRegisterHttpUtils.a(b2, this.j + "-" + this.i, "mobile", "", this.n, 1, getFragmentActive());
+        LoginRegisterHttpUtils.a(b2, this.j + Constants.ACCEPT_TIME_SEPARATOR_SERVER + this.i, "mobile", "", this.n, 1, (IRequestHost) getFragmentActive());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -315,14 +313,13 @@ public class LinkMobile2Fragment extends BaseFragment implements View.OnClickLis
     }
 
     private void j() {
-        LoginRegisterHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<LoginProtectionModel>>(getFragmentActive()) { // from class: com.soft.blued.ui.login_register.LinkMobile2Fragment.9
+        LoginRegisterHttpUtils.a((BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<LoginProtectionModel>>(getFragmentActive()) { // from class: com.soft.blued.ui.login_register.LinkMobile2Fragment.9
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<LoginProtectionModel> bluedEntityA) {
                 LinkMobile2Fragment.this.getActivity().finish();
             }
-        }, "set", "", "", getFragmentActive());
+        }, "set", "", "", (IRequestHost) getFragmentActive());
     }
 
     private void k() {
@@ -339,13 +336,11 @@ public class LinkMobile2Fragment extends BaseFragment implements View.OnClickLis
     public BluedUIHttpResponse a(final int i) {
         return new BluedUIHttpResponse<BluedEntityA<Object>>() { // from class: com.soft.blued.ui.login_register.LinkMobile2Fragment.4
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<Object> bluedEntityA) {
                 LinkMobile2Fragment.this.c(i);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i2, String str) {
                 if (i2 == 4036014) {
                     if (TextUtils.isEmpty(str)) {
@@ -357,7 +352,7 @@ public class LinkMobile2Fragment extends BaseFragment implements View.OnClickLis
                 switch (i2) {
                     case 4036207:
                     case 4036210:
-                        AppMethods.a((CharSequence) AppInfo.d().getResources().getString(R.string.e4036207));
+                        AppMethods.a(AppInfo.d().getResources().getString(R.string.e4036207));
                         if (LinkMobile2Fragment.this.getActivity() != null) {
                             LinkMobile2Fragment.this.getActivity().finish();
                             return true;
@@ -374,13 +369,11 @@ public class LinkMobile2Fragment extends BaseFragment implements View.OnClickLis
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 DialogUtils.b(LinkMobile2Fragment.this.f);
                 super.onUIFinish();
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 super.onUIStart();
                 DialogUtils.a(LinkMobile2Fragment.this.f);
@@ -391,12 +384,12 @@ public class LinkMobile2Fragment extends BaseFragment implements View.OnClickLis
     public void a(final String str, final String str2) {
         View inflate = LayoutInflater.from(this.e).inflate(R.layout.send_sms_dialog_custom, (ViewGroup) null);
         TextView textView = (TextView) inflate.findViewById(2131371186);
-        ShapeTextView shapeTextView = (ShapeTextView) inflate.findViewById(R.id.tv_to_send);
-        ShapeTextView shapeTextView2 = (ShapeTextView) inflate.findViewById(R.id.tv_sended);
+        ShapeTextView findViewById = inflate.findViewById(R.id.tv_to_send);
+        ShapeTextView findViewById2 = inflate.findViewById(R.id.tv_sended);
         ImageView imageView = (ImageView) inflate.findViewById(2131365207);
         this.s = new Dialog(this.e);
         textView.setText(this.e.getString(2131890478) + this.i + this.e.getString(2131890483) + str + this.e.getString(2131890482) + str2 + this.e.getString(2131890485));
-        shapeTextView.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.login_register.LinkMobile2Fragment.6
+        findViewById.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.login_register.LinkMobile2Fragment.6
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
@@ -406,12 +399,12 @@ public class LinkMobile2Fragment extends BaseFragment implements View.OnClickLis
                 LinkMobile2Fragment.this.getActivity().startActivity(intent);
             }
         });
-        shapeTextView2.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.login_register.LinkMobile2Fragment.7
+        findViewById2.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.login_register.LinkMobile2Fragment.7
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
                 EventTrackLoginAndRegister.a(LoginAndRegisterProtos.Event.USER_VERIFY_POP_DONE_CLICK);
-                LoginRegisterHttpUtils.a(LinkMobile2Fragment.this.a(3), str, 3, LinkMobile2Fragment.this.getFragmentActive());
+                LoginRegisterHttpUtils.a(LinkMobile2Fragment.this.a(3), str, 3, (IRequestHost) LinkMobile2Fragment.this.getFragmentActive());
             }
         });
         imageView.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.login_register.LinkMobile2Fragment.8
@@ -431,18 +424,17 @@ public class LinkMobile2Fragment extends BaseFragment implements View.OnClickLis
     public BluedUIHttpResponse b(final int i) {
         return new BluedUIHttpResponse<BluedEntityA<BluedLoginResult>>(getFragmentActive()) { // from class: com.soft.blued.ui.login_register.LinkMobile2Fragment.5
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<BluedLoginResult> bluedEntityA) {
                 int i2 = i;
                 if (i2 == 0 || i2 == 1) {
-                    AppMethods.a((CharSequence) LinkMobile2Fragment.this.e.getResources().getString(2131886716));
+                    AppMethods.a(LinkMobile2Fragment.this.e.getResources().getString(2131886716));
                     LinkMobile2Fragment.this.h();
                 }
                 if (bluedEntityA == null || !bluedEntityA.hasData() || bluedEntityA.data.get(0) == null) {
                     return;
                 }
-                String encrypted = bluedEntityA.data.get(0).getEncrypted();
+                String encrypted = ((BluedLoginResult) bluedEntityA.data.get(0)).getEncrypted();
                 String str = null;
                 try {
                     str = AesCrypto2.a(encrypted);
@@ -458,7 +450,6 @@ public class LinkMobile2Fragment extends BaseFragment implements View.OnClickLis
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i2, String str) {
                 if (i2 == 4036204) {
                     LinkMobile2Fragment.this.i();
@@ -468,13 +459,11 @@ public class LinkMobile2Fragment extends BaseFragment implements View.OnClickLis
                 return super.onUIFailure(i2, str);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 DialogUtils.b(LinkMobile2Fragment.this.f);
                 super.onUIFinish();
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 super.onUIStart();
                 DialogUtils.a(LinkMobile2Fragment.this.f);
@@ -502,7 +491,6 @@ public class LinkMobile2Fragment extends BaseFragment implements View.OnClickLis
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.e = getActivity();
         View view = this.d;

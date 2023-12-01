@@ -10,11 +10,11 @@ import java.util.Map;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    protected WeakReference<Map<String, Object>> f24431a;
+    protected WeakReference<Map<String, Object>> f10744a;
 
     /* JADX INFO: Access modifiers changed from: protected */
     public c(Map<String, Object> map) {
-        this.f24431a = new WeakReference<>(map);
+        this.f10744a = new WeakReference<>(map);
     }
 
     public static c b(Map<String, Object> map) {
@@ -23,7 +23,7 @@ public class c {
 
     public final c a(String str, Object obj) {
         Map<String, Object> map;
-        WeakReference<Map<String, Object>> weakReference = this.f24431a;
+        WeakReference<Map<String, Object>> weakReference = this.f10744a;
         if (weakReference != null && (map = weakReference.get()) != null) {
             map.put(str, obj);
         }
@@ -41,7 +41,7 @@ public class c {
 
     public final Object a(String str) throws NotContainsKeyException {
         Map<String, Object> map;
-        WeakReference<Map<String, Object>> weakReference = this.f24431a;
+        WeakReference<Map<String, Object>> weakReference = this.f10744a;
         if (weakReference == null || (map = weakReference.get()) == null) {
             return null;
         }
@@ -55,7 +55,7 @@ public class c {
     public final Map<String, Object> a() {
         Map<String, Object> map;
         HashMap hashMap = new HashMap();
-        WeakReference<Map<String, Object>> weakReference = this.f24431a;
+        WeakReference<Map<String, Object>> weakReference = this.f10744a;
         if (weakReference != null && (map = weakReference.get()) != null) {
             for (Map.Entry<String, Object> entry : map.entrySet()) {
                 if (!entry.getKey().equals("scheme") && !entry.getKey().equals("host") && !entry.getKey().equals(OapsWrapper.KEY_PATH)) {
@@ -69,7 +69,7 @@ public class c {
     public String toString() {
         Map<String, Object> map;
         StringBuilder sb = new StringBuilder();
-        WeakReference<Map<String, Object>> weakReference = this.f24431a;
+        WeakReference<Map<String, Object>> weakReference = this.f10744a;
         if (weakReference != null && (map = weakReference.get()) != null) {
             for (Map.Entry<String, Object> entry : map.entrySet()) {
                 sb.append("[");

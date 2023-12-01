@@ -10,11 +10,11 @@ import android.widget.RelativeLayout;
 public class m extends RelativeLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    private RelativeLayout f26995a;
+    private RelativeLayout f13307a;
     private View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f26996c;
+    private int f13308c;
     private View d;
     private com.opos.mobad.c.c.a e;
     private boolean f;
@@ -109,22 +109,22 @@ public class m extends RelativeLayout {
 
     private void a(Context context) {
         setLayoutParams(new ViewGroup.LayoutParams(-1, -1));
-        this.f26996c = View.generateViewId();
+        this.f13308c = View.generateViewId();
         RelativeLayout relativeLayout = new RelativeLayout(context);
-        this.f26995a = relativeLayout;
-        relativeLayout.setId(this.f26996c);
-        addView(this.f26995a, new RelativeLayout.LayoutParams(-1, -1));
+        this.f13307a = relativeLayout;
+        relativeLayout.setId(this.f13308c);
+        addView(this.f13307a, new RelativeLayout.LayoutParams(-1, -1));
         this.b = this.e.b();
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(-1, -2);
         layoutParams.addRule(13);
-        this.f26995a.addView(this.b, layoutParams);
+        this.f13307a.addView(this.b, layoutParams);
         View view = new View(context);
         RelativeLayout.LayoutParams layoutParams2 = new RelativeLayout.LayoutParams(-2, -2);
-        layoutParams2.addRule(7, this.f26996c);
-        layoutParams2.addRule(5, this.f26996c);
-        layoutParams2.addRule(6, this.f26996c);
-        layoutParams2.addRule(8, this.f26996c);
-        this.f26995a.addView(view, layoutParams2);
+        layoutParams2.addRule(7, this.f13308c);
+        layoutParams2.addRule(5, this.f13308c);
+        layoutParams2.addRule(6, this.f13308c);
+        layoutParams2.addRule(8, this.f13308c);
+        this.f13307a.addView(view, layoutParams2);
         com.opos.mobad.n.c.g gVar = new com.opos.mobad.n.c.g() { // from class: com.opos.mobad.n.h.m.1
             @Override // com.opos.mobad.n.c.g
             public void a(View view2, int[] iArr) {
@@ -139,7 +139,7 @@ public class m extends RelativeLayout {
         RelativeLayout.LayoutParams layoutParams3 = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(context, 20.0f), com.opos.cmn.an.h.f.a.a(context, 29.0f));
         layoutParams3.addRule(13);
         this.d.setVisibility(0);
-        this.f26995a.addView(this.d, layoutParams3);
+        this.f13307a.addView(this.d, layoutParams3);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -180,7 +180,7 @@ public class m extends RelativeLayout {
             com.opos.cmn.an.f.a.b("RewardVideoView", "mPlayer is null");
             return;
         }
-        aVar.a(eVar.f26630a.f26633a, false);
+        aVar.a(eVar.f12942a.f12945a, false);
         a(eVar.B);
     }
 

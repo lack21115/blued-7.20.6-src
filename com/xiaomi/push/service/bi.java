@@ -7,27 +7,27 @@ import com.xiaomi.push.service.bg;
 class bi extends XMPushService.j {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ bg.b.c f41639a;
+    final /* synthetic */ bg.b.c f27948a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public bi(bg.b.c cVar, int i) {
         super(i);
-        this.f41639a = cVar;
+        this.f27948a = cVar;
     }
 
     @Override // com.xiaomi.push.service.XMPushService.j
     /* renamed from: a */
-    public String mo12102a() {
+    public String mo9052a() {
         return "clear peer job";
     }
 
     @Override // com.xiaomi.push.service.XMPushService.j
     /* renamed from: a */
-    public void mo11743a() {
-        if (this.f41639a.f41635a == this.f41639a.f1017a.f1004a) {
-            com.xiaomi.channel.commonutils.logger.b.b("clean peer, chid = " + this.f41639a.f1017a.g);
-            this.f41639a.f1017a.f1004a = null;
+    public void mo8693a() {
+        if (this.f27948a.f27944a == this.f27948a.f970a.f957a) {
+            com.xiaomi.channel.commonutils.logger.b.b("clean peer, chid = " + this.f27948a.f970a.g);
+            this.f27948a.f970a.f957a = null;
         }
     }
 }

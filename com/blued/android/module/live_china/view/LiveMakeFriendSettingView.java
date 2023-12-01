@@ -31,13 +31,9 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveMakeFriendSettingView.class */
 public class LiveMakeFriendSettingView implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    public View f14527a;
+    public View a;
     public View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public View f14528c;
+    public View c;
     public Context d;
     public LayoutInflater e;
     private MyPopupWindow f;
@@ -81,12 +77,12 @@ public class LiveMakeFriendSettingView implements View.OnClickListener {
     private void h() {
         this.e = LayoutInflater.from(this.d);
         d();
-        this.b = this.f14527a.findViewById(R.id.live_make_friend_setting_layer);
-        this.f14528c = (FrameLayout) this.f14527a.findViewById(R.id.content_layout);
-        this.g = (LinearLayout) this.f14527a.findViewById(R.id.ll_loading);
-        this.h = (ImageView) this.f14527a.findViewById(R.id.live_make_friend_setting_header);
-        this.i = (TextView) this.f14527a.findViewById(R.id.live_make_friend_setting_btn);
-        TextView textView = (TextView) this.f14527a.findViewById(R.id.live_make_friend_camera_btn);
+        this.b = this.a.findViewById(R.id.live_make_friend_setting_layer);
+        this.c = (FrameLayout) this.a.findViewById(R.id.content_layout);
+        this.g = (LinearLayout) this.a.findViewById(R.id.ll_loading);
+        this.h = (ImageView) this.a.findViewById(R.id.live_make_friend_setting_header);
+        this.i = (TextView) this.a.findViewById(R.id.live_make_friend_setting_btn);
+        TextView textView = (TextView) this.a.findViewById(R.id.live_make_friend_camera_btn);
         this.j = textView;
         if (this.n) {
             textView.setText(R.string.live_make_friend_close_camera);
@@ -104,16 +100,16 @@ public class LiveMakeFriendSettingView implements View.OnClickListener {
                 LiveMakeFriendSettingView.this.f();
             }
         });
-        this.f14528c.setVisibility(8);
-        this.f14528c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.LiveMakeFriendSettingView.2
+        this.c.setVisibility(8);
+        this.c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.LiveMakeFriendSettingView.2
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
             }
         });
-        MyPopupWindow myPopupWindow = new MyPopupWindow(this.f14527a, -1, -1, true);
+        MyPopupWindow myPopupWindow = new MyPopupWindow(this.a, -1, -1, true);
         this.f = myPopupWindow;
-        myPopupWindow.setBackgroundDrawable(this.d.getResources().getDrawable(17170445));
+        myPopupWindow.setBackgroundDrawable(this.d.getResources().getDrawable(com.android.internal.R.color.transparent));
         this.f.setTouchable(true);
         this.f.setOutsideTouchable(true);
         this.f.setFocusable(true);
@@ -121,7 +117,7 @@ public class LiveMakeFriendSettingView implements View.OnClickListener {
     }
 
     private void i() {
-        this.f14528c.startAnimation(AnimationUtils.loadAnimation(this.d, R.anim.push_bottom_in));
+        this.c.startAnimation(AnimationUtils.loadAnimation(this.d, R.anim.push_bottom_in));
         AlphaAnimation alphaAnimation = new AlphaAnimation(0.0f, 0.5f);
         alphaAnimation.setDuration(300L);
         alphaAnimation.setFillAfter(true);
@@ -146,7 +142,7 @@ public class LiveMakeFriendSettingView implements View.OnClickListener {
         alphaAnimation.setDuration(300L);
         alphaAnimation.setFillAfter(true);
         this.b.startAnimation(alphaAnimation);
-        this.f14528c.startAnimation(AnimationUtils.loadAnimation(this.d, R.anim.push_bottom_out));
+        this.c.startAnimation(AnimationUtils.loadAnimation(this.d, R.anim.push_bottom_out));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -190,7 +186,7 @@ public class LiveMakeFriendSettingView implements View.OnClickListener {
     }
 
     public void a(final ILiveConnectionAnimListener iLiveConnectionAnimListener) {
-        if (this.f14528c.getVisibility() == 8) {
+        if (this.c.getVisibility() == 8) {
             return;
         }
         AppInfo.n().postDelayed(new Runnable() { // from class: com.blued.android.module.live_china.view.LiveMakeFriendSettingView.4
@@ -204,7 +200,7 @@ public class LiveMakeFriendSettingView implements View.OnClickListener {
             }
         }, 320L);
         j();
-        this.f14528c.setVisibility(8);
+        this.c.setVisibility(8);
     }
 
     public boolean a() {
@@ -225,17 +221,17 @@ public class LiveMakeFriendSettingView implements View.OnClickListener {
     }
 
     public void d() {
-        this.f14527a = this.e.inflate(R.layout.live_make_friend_setting, (ViewGroup) null);
+        this.a = this.e.inflate(R.layout.live_make_friend_setting, (ViewGroup) null);
     }
 
     public void e() {
         this.b.clearAnimation();
-        this.f14528c.clearAnimation();
+        this.c.clearAnimation();
         if (this.f.isShowing()) {
             this.f.a();
         }
-        this.f.showAtLocation(this.f14528c, 81, 0, 0);
-        this.f14528c.setVisibility(0);
+        this.f.showAtLocation(this.c, 81, 0, 0);
+        this.c.setVisibility(0);
         i();
     }
 

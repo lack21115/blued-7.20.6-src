@@ -21,11 +21,11 @@ public abstract class f {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public final a.a.a.a.a.a.i.c f1271a;
+        public final a.a.a.a.a.a.i.c f1223a;
         public final int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final int f1272c;
+        public final int f1224c;
         public final int d;
         public final int e;
         public final int f;
@@ -43,9 +43,9 @@ public abstract class f {
             this.g = z2;
             this.l = i3;
             this.f = i5;
-            this.f1271a = cVar;
+            this.f1223a = cVar;
             this.b = i;
-            this.f1272c = i2;
+            this.f1224c = i2;
             this.d = ((i * i2) * 3) / 2;
             a.a.a.a.a.e.e eVar = a.a.a.a.a.e.e.f;
             eVar.c("VideoTransfer", "srcWidth:" + i + ",srcHeight:" + i2 + ",srcSize:" + this.d);
@@ -57,13 +57,13 @@ public abstract class f {
         }
 
         public a(a.a.a.a.a.a.i.c cVar, int i, int i2, int i3, boolean z, int i4, int i5, Object obj, WatermarkSetting watermarkSetting, boolean z2) {
-            this.f1271a = cVar;
+            this.f1223a = cVar;
             this.i = obj;
             this.l = i3;
             this.g = z2;
             this.f = i5;
             this.b = i;
-            this.f1272c = i2;
+            this.f1224c = i2;
             this.j = true;
             a.a.a.a.a.e.f a2 = cVar.d().a();
             if (i5 == PLFourCC.FOURCC_ABGR) {

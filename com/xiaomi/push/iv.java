@@ -6,10 +6,10 @@ import com.xiaomi.push.iy;
 public class iv {
 
     /* renamed from: a  reason: collision with root package name */
-    private final jc f41538a;
+    private final jc f27847a;
 
     /* renamed from: a  reason: collision with other field name */
-    private final jl f877a;
+    private final jl f830a;
 
     public iv() {
         this(new iy.a());
@@ -17,16 +17,16 @@ public class iv {
 
     public iv(je jeVar) {
         jl jlVar = new jl();
-        this.f877a = jlVar;
-        this.f41538a = jeVar.a(jlVar);
+        this.f830a = jlVar;
+        this.f27847a = jeVar.a(jlVar);
     }
 
     public void a(ir irVar, byte[] bArr) {
         try {
-            this.f877a.a(bArr);
-            irVar.a(this.f41538a);
+            this.f830a.a(bArr);
+            irVar.a(this.f27847a);
         } finally {
-            this.f41538a.k();
+            this.f27847a.k();
         }
     }
 }

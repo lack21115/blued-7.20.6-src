@@ -6,20 +6,20 @@ import android.os.Build;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f3767a;
+    public String f3719a;
     public String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f3768c;
+    public String f3720c;
 
     public c(String str, String str2, String str3) {
-        this.f3767a = str2;
+        this.f3719a = str2;
         this.b = str;
-        this.f3768c = str3;
+        this.f3720c = str3;
     }
 
     public String a() {
-        return a(this.f3768c);
+        return a(this.f3720c);
     }
 
     public final String a(String str) {
@@ -35,7 +35,7 @@ public class c {
     }
 
     public String c() {
-        return a(this.f3767a);
+        return a(this.f3719a);
     }
 
     public String d() {

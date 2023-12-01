@@ -9,11 +9,11 @@ import com.tencent.cloud.huiyansdkface.okio.ByteString;
 public final class Header {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final ByteString f35970a = ByteString.encodeUtf8(":");
+    public static final ByteString f22279a = ByteString.encodeUtf8(":");
     public static final ByteString b = ByteString.encodeUtf8(":status");
 
     /* renamed from: c  reason: collision with root package name */
-    public static final ByteString f35971c = ByteString.encodeUtf8(":method");
+    public static final ByteString f22280c = ByteString.encodeUtf8(":method");
     public static final ByteString d = ByteString.encodeUtf8(":path");
     public static final ByteString e = ByteString.encodeUtf8(":scheme");
     public static final ByteString f = ByteString.encodeUtf8(":authority");

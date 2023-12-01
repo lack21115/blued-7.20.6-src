@@ -13,17 +13,17 @@ import java.io.InputStream;
 public class StreamEncoder implements Encoder<InputStream> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ArrayPool f20907a;
+    private final ArrayPool f7301a;
 
     public StreamEncoder(ArrayPool arrayPool) {
-        this.f20907a = arrayPool;
+        this.f7301a = arrayPool;
     }
 
     @Override // com.bumptech.glide.load.Encoder
     public boolean a(InputStream inputStream, File file, Options options) {
         boolean z;
         FileOutputStream fileOutputStream;
-        byte[] bArr = (byte[]) this.f20907a.a(65536, byte[].class);
+        byte[] bArr = (byte[]) this.f7301a.a(65536, byte[].class);
         FileOutputStream fileOutputStream2 = null;
         try {
             try {
@@ -48,7 +48,7 @@ public class StreamEncoder implements Encoder<InputStream> {
                                 fileOutputStream.close();
                                 z = false;
                             }
-                            this.f20907a.a((ArrayPool) bArr);
+                            this.f7301a.a((ArrayPool) bArr);
                             return z;
                         } catch (Throwable th) {
                             th = th;
@@ -59,7 +59,7 @@ public class StreamEncoder implements Encoder<InputStream> {
                                 } catch (IOException e2) {
                                 }
                             }
-                            this.f20907a.a((ArrayPool) bArr);
+                            this.f7301a.a((ArrayPool) bArr);
                             throw th;
                         }
                     }
@@ -75,7 +75,7 @@ public class StreamEncoder implements Encoder<InputStream> {
             }
         } catch (IOException e4) {
         }
-        this.f20907a.a((ArrayPool) bArr);
+        this.f7301a.a((ArrayPool) bArr);
         return z;
     }
 }

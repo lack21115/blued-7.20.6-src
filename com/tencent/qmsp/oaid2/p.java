@@ -12,11 +12,11 @@ public class p {
     public static String e = "LXOP";
 
     /* renamed from: a  reason: collision with root package name */
-    public Context f38497a;
+    public Context f24806a;
     public n b;
 
     /* renamed from: c  reason: collision with root package name */
-    public ServiceConnection f38498c;
+    public ServiceConnection f24807c;
     public b d;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/qmsp/oaid2/p$a.class */
@@ -49,17 +49,17 @@ public class p {
     }
 
     public p(Context context, b bVar) {
-        this.f38497a = null;
+        this.f24806a = null;
         this.d = null;
         if (context == null) {
             throw new NullPointerException("Context can not be null.");
         }
-        this.f38497a = context;
+        this.f24806a = context;
         this.d = bVar;
-        this.f38498c = new a();
+        this.f24807c = new a();
         Intent intent = new Intent();
         intent.setClassName("com.zui.deviceidservice", "com.zui.deviceidservice.DeviceidService");
-        if (this.f38497a.bindService(intent, this.f38498c, 1)) {
+        if (this.f24806a.bindService(intent, this.f24807c, 1)) {
             b("bindService Successful!");
             return;
         }
@@ -71,7 +71,7 @@ public class p {
     }
 
     public String a() {
-        if (this.f38497a == null) {
+        if (this.f24806a == null) {
             a("Context is null.");
             throw new IllegalArgumentException("Context is null, must be new OpenDeviceId first");
         }
@@ -109,7 +109,7 @@ public class p {
     }
 
     public String c() {
-        Context context = this.f38497a;
+        Context context = this.f24806a;
         if (context == null) {
             b("Context is null.");
             throw new IllegalArgumentException("Context is null, must be new OpenDeviceId first");
@@ -133,7 +133,7 @@ public class p {
 
     public void d() {
         try {
-            this.f38497a.unbindService(this.f38498c);
+            this.f24806a.unbindService(this.f24807c);
             b("unBind Service successful");
         } catch (IllegalArgumentException e2) {
             a("unBind Service exception");

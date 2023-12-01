@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentRegisterV1ForphoneStep21Binding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f28946a;
+    private final LinearLayout f15256a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f28946a;
+        return this.f15256a;
     }
 }

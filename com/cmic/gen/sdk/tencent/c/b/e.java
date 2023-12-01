@@ -8,18 +8,18 @@ import org.json.JSONObject;
 public class e extends g {
 
     /* renamed from: a  reason: collision with root package name */
-    private a f21636a;
+    private a f8030a;
     private byte[] b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f21637c;
+    private String f8031c;
     private byte[] d;
     private String e;
     private boolean f = false;
 
     @Override // com.cmic.gen.sdk.tencent.c.b.g
     public String a() {
-        return this.f21636a.a();
+        return this.f8030a.a();
     }
 
     @Override // com.cmic.gen.sdk.tencent.c.b.g
@@ -28,7 +28,7 @@ public class e extends g {
     }
 
     public void a(a aVar) {
-        this.f21636a = aVar;
+        this.f8030a = aVar;
     }
 
     public void a(boolean z) {
@@ -44,9 +44,9 @@ public class e extends g {
         JSONObject jSONObject = new JSONObject();
         if (this.f) {
             try {
-                jSONObject.put("encrypted", this.f21637c);
+                jSONObject.put("encrypted", this.f8031c);
                 jSONObject.put("encryptedIV", Base64.encodeToString(this.d, 0));
-                jSONObject.put("reqdata", com.cmic.gen.sdk.tencent.e.a.a(this.b, this.f21636a.toString(), this.d));
+                jSONObject.put("reqdata", com.cmic.gen.sdk.tencent.e.a.a(this.b, this.f8030a.toString(), this.d));
                 jSONObject.put("securityreinforce", this.e);
                 return jSONObject;
             } catch (JSONException e) {
@@ -65,10 +65,10 @@ public class e extends g {
     }
 
     public a c() {
-        return this.f21636a;
+        return this.f8030a;
     }
 
     public void c(String str) {
-        this.f21637c = str;
+        this.f8031c = str;
     }
 }

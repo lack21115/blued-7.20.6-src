@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class DialogServiceMenuBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final RelativeLayout f28722a;
+    private final RelativeLayout f15032a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
-        return this.f28722a;
+        return this.f15032a;
     }
 }

@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.blued.android.core.AppMethods;
+import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.ui.BaseFragment;
 import com.blued.android.core.ui.TerminalActivity;
 import com.blued.android.module.common.utils.DialogUtils;
@@ -31,7 +32,7 @@ public class BindingSecureEmailFragment extends BaseFragment implements View.OnC
     private BindingSecureEmailContract.IPresenter b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f33325c;
+    private Context f19634c;
     private ImageView d;
     private CommonEdittextView e;
     private CommonEdittextView f;
@@ -43,7 +44,7 @@ public class BindingSecureEmailFragment extends BaseFragment implements View.OnC
     private TextWatcher l;
 
     /* renamed from: a  reason: collision with root package name */
-    private String f33324a = BindingSecureEmailFragment.class.getSimpleName();
+    private String f19633a = BindingSecureEmailFragment.class.getSimpleName();
     private String m = "";
 
     private void g() {
@@ -53,25 +54,25 @@ public class BindingSecureEmailFragment extends BaseFragment implements View.OnC
     }
 
     private void h() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.k.findViewById(2131370749);
-        commonTopTitleNoTrans.a();
-        commonTopTitleNoTrans.f();
-        commonTopTitleNoTrans.setTitleBackgroundDrawable(2131101191);
-        commonTopTitleNoTrans.setCenterText("");
-        commonTopTitleNoTrans.setLeftClickListener(this);
+        CommonTopTitleNoTrans findViewById = this.k.findViewById(R.id.top_title);
+        findViewById.a();
+        findViewById.f();
+        findViewById.setTitleBackgroundDrawable(2131101191);
+        findViewById.setCenterText("");
+        findViewById.setLeftClickListener(this);
         if ("add".equals(this.m)) {
-            commonTopTitleNoTrans.setCenterText(this.f33325c.getString(2131892292));
+            findViewById.setCenterText(this.f19634c.getString(2131892292));
         } else {
-            commonTopTitleNoTrans.setCenterText(this.f33325c.getString(2131886921));
+            findViewById.setCenterText(this.f19634c.getString(R.string.change_secure_email));
         }
         this.d = (ImageView) this.k.findViewById(2131361892);
-        CommonEdittextView commonEdittextView = (CommonEdittextView) this.k.findViewById(2131362783);
-        this.f = commonEdittextView;
-        this.h = commonEdittextView.getEditText();
-        CommonEdittextView commonEdittextView2 = (CommonEdittextView) this.k.findViewById(R.id.cev_email);
-        this.e = commonEdittextView2;
-        this.i = commonEdittextView2.getEditText();
-        this.g = DialogUtils.a(this.f33325c);
+        CommonEdittextView findViewById2 = this.k.findViewById(2131362783);
+        this.f = findViewById2;
+        this.h = findViewById2.getEditText();
+        CommonEdittextView findViewById3 = this.k.findViewById(R.id.cev_email);
+        this.e = findViewById3;
+        this.i = findViewById3.getEditText();
+        this.g = DialogUtils.a(this.f19634c);
         this.j = (TextView) this.k.findViewById(R.id.tv_next_step);
     }
 
@@ -104,13 +105,13 @@ public class BindingSecureEmailFragment extends BaseFragment implements View.OnC
 
     @Override // com.soft.blued.ui.setting.Contract.BindingSecureEmailContract.IView
     public void a(Bundle bundle) {
-        TerminalActivity.d(this.f33325c, RegisterV1ForEmail2Fragment.class, bundle);
+        TerminalActivity.d(this.f19634c, RegisterV1ForEmail2Fragment.class, bundle);
         getActivity().finish();
     }
 
     @Override // com.soft.blued.ui.setting.Contract.BindingSecureEmailContract.IView
     public void a(String str) {
-        LoginRegisterTools.a(getFragmentActive(), this.d, str);
+        LoginRegisterTools.a((IRequestHost) getFragmentActive(), this.d, str);
     }
 
     @Override // com.soft.blued.ui.setting.Contract.BindingSecureEmailContract.IView
@@ -166,13 +167,12 @@ public class BindingSecureEmailFragment extends BaseFragment implements View.OnC
             }
         } catch (Exception e) {
             e.printStackTrace();
-            AppMethods.a((CharSequence) this.f33325c.getString(R.string.operate_fail));
+            AppMethods.a(this.f19634c.getString(R.string.operate_fail));
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.f33325c = getActivity();
+        this.f19634c = getActivity();
         View view = this.k;
         if (view == null) {
             this.k = layoutInflater.inflate(R.layout.fragment_binding_secure_email_step1, viewGroup, false);
@@ -184,17 +184,15 @@ public class BindingSecureEmailFragment extends BaseFragment implements View.OnC
         return this.k;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onStart() {
         super.onStart();
         f();
         this.b.ar_();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onViewCreated(View view, Bundle bundle) {
         super.onViewCreated(view, bundle);
         i();
-        this.b = new BindingSecureEmailPresenter(this.f33325c, this);
+        this.b = new BindingSecureEmailPresenter(this.f19634c, this);
     }
 }

@@ -6,11 +6,11 @@ import android.content.Context;
 public class ej implements de {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f37422a;
+    private Context f23731a;
     private final mc b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f37423c;
+    private String f23732c;
 
     public ej(Context context, String str) {
         if (context == null) {
@@ -18,9 +18,9 @@ public class ej implements de {
             return;
         }
         Context applicationContext = context.getApplicationContext();
-        this.f37422a = applicationContext;
+        this.f23731a = applicationContext;
         this.b = mc.b(applicationContext);
-        this.f37423c = str;
+        this.f23732c = str;
     }
 
     @Override // com.tencent.mapsdk.internal.de
@@ -56,7 +56,7 @@ public class ej implements de {
     public String f() {
         mc mcVar = this.b;
         if (mcVar != null) {
-            return mcVar.a(this.f37423c);
+            return mcVar.a(this.f23732c);
         }
         return null;
     }
@@ -83,7 +83,7 @@ public class ej implements de {
     public String i() {
         mc mcVar = this.b;
         if (mcVar != null) {
-            return mcVar.d(this.f37423c);
+            return mcVar.d(this.f23732c);
         }
         return null;
     }
@@ -92,7 +92,7 @@ public class ej implements de {
     public String j() {
         mc mcVar = this.b;
         if (mcVar != null) {
-            return mcVar.c(this.f37423c);
+            return mcVar.c(this.f23732c);
         }
         return null;
     }

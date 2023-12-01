@@ -1,7 +1,7 @@
 package okhttp3;
 
+import com.alipay.sdk.cons.b;
 import com.alipay.sdk.util.i;
-import com.blued.das.live.LiveProtos;
 import java.net.Proxy;
 import java.net.ProxySelector;
 import java.util.List;
@@ -31,7 +31,7 @@ public final class Address {
     final HttpUrl url;
 
     public Address(String str, int i, Dns dns, SocketFactory socketFactory, @Nullable SSLSocketFactory sSLSocketFactory, @Nullable HostnameVerifier hostnameVerifier, @Nullable CertificatePinner certificatePinner, Authenticator authenticator, @Nullable Proxy proxy, List<Protocol> list, List<ConnectionSpec> list2, ProxySelector proxySelector) {
-        this.url = new HttpUrl.Builder().scheme(sSLSocketFactory != null ? "https" : "http").host(str).port(i).build();
+        this.url = new HttpUrl.Builder().scheme(sSLSocketFactory != null ? b.a : "http").host(str).port(i).build();
         if (dns == null) {
             throw new NullPointerException("dns == null");
         }
@@ -106,7 +106,7 @@ public final class Address {
         if (certificatePinner != null) {
             i = certificatePinner.hashCode();
         }
-        return ((((((((((((((((((LiveProtos.Event.LIVE_END_PAGE_CLOSE_CLICK_VALUE + hashCode) * 31) + hashCode2) * 31) + hashCode3) * 31) + hashCode4) * 31) + hashCode5) * 31) + hashCode6) * 31) + hashCode7) * 31) + hashCode8) * 31) + hashCode9) * 31) + i;
+        return ((((((((((((((((((527 + hashCode) * 31) + hashCode2) * 31) + hashCode3) * 31) + hashCode4) * 31) + hashCode5) * 31) + hashCode6) * 31) + hashCode7) * 31) + hashCode8) * 31) + hashCode9) * 31) + i;
     }
 
     @Nullable

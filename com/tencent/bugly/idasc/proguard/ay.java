@@ -5,7 +5,6 @@ import android.content.Context;
 import android.os.Build;
 import android.os.FileObserver;
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.bugly.idasc.crashreport.crash.CrashDetailBean;
 import com.tencent.bugly.idasc.crashreport.crash.anr.TraceFileHelper;
 import com.tencent.bugly.idasc.crashreport.crash.jni.NativeCrashHandler;
@@ -20,7 +19,7 @@ public final class ay {
     public final ActivityManager b;
 
     /* renamed from: c  reason: collision with root package name */
-    final aa f35278c;
+    final aa f21587c;
     final ak d;
     String e;
     private final Context g;
@@ -31,7 +30,7 @@ public final class ay {
     private int n;
 
     /* renamed from: a  reason: collision with root package name */
-    public final AtomicBoolean f35277a = new AtomicBoolean(false);
+    public final AtomicBoolean f21586a = new AtomicBoolean(false);
     private final Object j = new Object();
     private boolean l = true;
     private long o = 0;
@@ -41,7 +40,7 @@ public final class ay {
         this.g = a2;
         this.b = (ActivityManager) a2.getSystemService("activity");
         this.e = ap.b(NativeCrashHandler.getDumpFilePath()) ? context.getDir("bugly", 0).getAbsolutePath() : NativeCrashHandler.getDumpFilePath();
-        this.f35278c = aaVar;
+        this.f21587c = aaVar;
         this.d = akVar;
         this.h = acVar;
         this.i = asVar;
@@ -53,17 +52,17 @@ public final class ay {
             crashDetailBean.C = ab.j();
             crashDetailBean.D = ab.f();
             crashDetailBean.E = ab.l();
-            crashDetailBean.F = this.f35278c.k();
-            crashDetailBean.G = this.f35278c.j();
-            crashDetailBean.H = this.f35278c.l();
+            crashDetailBean.F = this.f21587c.k();
+            crashDetailBean.G = this.f21587c.j();
+            crashDetailBean.H = this.f21587c.l();
             crashDetailBean.I = ab.b(this.g);
             crashDetailBean.J = ab.g();
             crashDetailBean.K = ab.h();
             crashDetailBean.b = 3;
-            crashDetailBean.e = this.f35278c.g();
-            crashDetailBean.f = this.f35278c.o;
-            crashDetailBean.g = this.f35278c.q();
-            crashDetailBean.m = this.f35278c.f();
+            crashDetailBean.e = this.f21587c.g();
+            crashDetailBean.f = this.f21587c.o;
+            crashDetailBean.g = this.f21587c.q();
+            crashDetailBean.m = this.f21587c.f();
             crashDetailBean.n = "ANR_EXCEPTION";
             crashDetailBean.o = axVar.f;
             crashDetailBean.q = axVar.g;
@@ -74,24 +73,24 @@ public final class ay {
                 i = crashDetailBean.q.indexOf("\n");
             }
             crashDetailBean.p = i > 0 ? crashDetailBean.q.substring(0, i) : "GET_FAIL";
-            crashDetailBean.r = axVar.f35276c;
+            crashDetailBean.r = axVar.f21585c;
             if (crashDetailBean.q != null) {
                 crashDetailBean.u = ap.c(crashDetailBean.q.getBytes());
             }
             crashDetailBean.z = axVar.b;
-            crashDetailBean.A = axVar.f35275a;
+            crashDetailBean.A = axVar.f21584a;
             crashDetailBean.B = "main(1)";
-            crashDetailBean.L = this.f35278c.s();
-            crashDetailBean.h = this.f35278c.p();
-            crashDetailBean.i = this.f35278c.A();
+            crashDetailBean.L = this.f21587c.s();
+            crashDetailBean.h = this.f21587c.p();
+            crashDetailBean.i = this.f21587c.A();
             crashDetailBean.v = axVar.d;
-            crashDetailBean.P = this.f35278c.u;
-            crashDetailBean.Q = this.f35278c.f35211a;
-            crashDetailBean.R = this.f35278c.a();
-            crashDetailBean.U = this.f35278c.z();
-            crashDetailBean.V = this.f35278c.x;
-            crashDetailBean.W = this.f35278c.t();
-            crashDetailBean.X = this.f35278c.y();
+            crashDetailBean.P = this.f21587c.u;
+            crashDetailBean.Q = this.f21587c.f21520a;
+            crashDetailBean.R = this.f21587c.a();
+            crashDetailBean.U = this.f21587c.z();
+            crashDetailBean.V = this.f21587c.x;
+            crashDetailBean.W = this.f21587c.t();
+            crashDetailBean.X = this.f21587c.y();
             crashDetailBean.y = ao.a();
             return crashDetailBean;
         } catch (Throwable th) {
@@ -129,7 +128,7 @@ public final class ay {
             }
             ba baVar = list.get(i2);
             sb.append("Thread name:");
-            sb.append(baVar.f35284a);
+            sb.append(baVar.f21593a);
             sb.append("\n");
             long j2 = baVar.b - j;
             String str = j2 <= 0 ? "before " : "after ";
@@ -138,7 +137,7 @@ public final class ay {
             sb.append("anr:");
             sb.append(Math.abs(j2));
             sb.append("ms\n");
-            sb.append(baVar.f35285c);
+            sb.append(baVar.f21594c);
             sb.append("\n");
             if (sb.length() * 2 >= 101376) {
                 break;
@@ -214,7 +213,7 @@ public final class ay {
                                     try {
                                         al.c("read trace first dump for create time!", new Object[0]);
                                         TraceFileHelper.a readFirstDumpInfo = TraceFileHelper.readFirstDumpInfo(str2, false);
-                                        long j = readFirstDumpInfo != null ? readFirstDumpInfo.f35204c : -1L;
+                                        long j = readFirstDumpInfo != null ? readFirstDumpInfo.f21513c : -1L;
                                         long j2 = j;
                                         if (j == -1) {
                                             al.d("trace dump fail could not get time!", new Object[0]);
@@ -313,7 +312,7 @@ public final class ay {
                     if (this.m == null || !this.m.isAlive()) {
                         bg bgVar = new bg();
                         this.m = bgVar;
-                        boolean z = this.f35278c.S;
+                        boolean z = this.f21587c.S;
                         bgVar.b = z;
                         al.c("set record stack trace enable:".concat(String.valueOf(z)), new Object[0]);
                         bg bgVar2 = this.m;
@@ -338,18 +337,18 @@ public final class ay {
                         }
                         if (!z2) {
                             al.c("not manual trace file, ignore.", new Object[0]);
-                        } else if (!ay.this.f35277a.get()) {
+                        } else if (!ay.this.f21586a.get()) {
                             al.c("proc is not in anr, just ignore", new Object[0]);
-                        } else if (ay.this.f35278c.a()) {
+                        } else if (ay.this.f21587c.a()) {
                             al.c("Found foreground anr, resend sigquit immediately.", new Object[0]);
                             NativeCrashHandler.getInstance().resendSigquit();
                             long a2 = am.a(str, "manual_bugly_trace_", ".txt");
-                            ay.this.a(a2, ay.this.e + BridgeUtil.SPLIT_MARK + str);
+                            ay.this.a(a2, ay.this.e + "/" + str);
                             al.c("Finish handling one anr.", new Object[0]);
                         } else {
                             al.c("Found background anr, resend sigquit later.", new Object[0]);
                             long a3 = am.a(str, "manual_bugly_trace_", ".txt");
-                            ay.this.a(a3, ay.this.e + BridgeUtil.SPLIT_MARK + str);
+                            ay.this.a(a3, ay.this.e + "/" + str);
                             al.c("Finish handling one anr, now resend sigquit.", new Object[0]);
                             NativeCrashHandler.getInstance().resendSigquit();
                         }
@@ -419,7 +418,7 @@ public final class ay {
     }
 
     public final boolean a(boolean z) {
-        boolean compareAndSet = this.f35277a.compareAndSet(!z, z);
+        boolean compareAndSet = this.f21586a.compareAndSet(!z, z);
         al.c("tryChangeAnrState to %s, success:%s", Boolean.valueOf(z), Boolean.valueOf(compareAndSet));
         return compareAndSet;
     }

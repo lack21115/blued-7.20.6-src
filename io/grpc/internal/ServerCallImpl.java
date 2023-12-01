@@ -41,9 +41,8 @@ public final class ServerCallImpl<ReqT, RespT> extends ServerCall<ReqT, RespT> {
     private final ServerStream stream;
     private final Tag tag;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-3503164-dex2jar.jar:io/grpc/internal/ServerCallImpl$ServerStreamListenerImpl.class */
-    public static final class ServerStreamListenerImpl<ReqT> implements ServerStreamListener {
+    static final class ServerStreamListenerImpl<ReqT> implements ServerStreamListener {
         private final ServerCallImpl<ReqT, ?> call;
         private final Context.CancellableContext context;
         private final ServerCall.Listener<ReqT> listener;
@@ -54,7 +53,6 @@ public final class ServerCallImpl<ReqT, RespT> extends ServerCall<ReqT, RespT> {
             Context.CancellableContext cancellableContext2 = (Context.CancellableContext) Preconditions.checkNotNull(cancellableContext, "context");
             this.context = cancellableContext2;
             cancellableContext2.addListener(new Context.CancellationListener() { // from class: io.grpc.internal.ServerCallImpl.ServerStreamListenerImpl.1
-                @Override // io.grpc.Context.CancellationListener
                 public void cancelled(Context context) {
                     ServerStreamListenerImpl.this.call.cancelled = true;
                 }
@@ -70,11 +68,10 @@ public final class ServerCallImpl<ReqT, RespT> extends ServerCall<ReqT, RespT> {
                     this.listener.onCancel();
                 }
             } finally {
-                this.context.cancel(null);
+                this.context.cancel((Throwable) null);
             }
         }
 
-        /* JADX WARN: Multi-variable type inference failed */
         private void messagesAvailableInternal(StreamListener.MessageProducer messageProducer) {
             if (((ServerCallImpl) this.call).cancelled) {
                 GrpcUtil.closeQuietly(messageProducer);
@@ -223,7 +220,6 @@ public final class ServerCallImpl<ReqT, RespT> extends ServerCall<ReqT, RespT> {
         }
     }
 
-    @Override // io.grpc.ServerCall
     public void close(Status status, Metadata metadata) {
         PerfMark.startTask("ServerCall.close", this.tag);
         try {
@@ -235,27 +231,22 @@ public final class ServerCallImpl<ReqT, RespT> extends ServerCall<ReqT, RespT> {
         }
     }
 
-    @Override // io.grpc.ServerCall
     public Attributes getAttributes() {
         return this.stream.getAttributes();
     }
 
-    @Override // io.grpc.ServerCall
     public String getAuthority() {
         return this.stream.getAuthority();
     }
 
-    @Override // io.grpc.ServerCall
     public MethodDescriptor<ReqT, RespT> getMethodDescriptor() {
         return this.method;
     }
 
-    @Override // io.grpc.ServerCall
     public boolean isCancelled() {
         return this.cancelled;
     }
 
-    @Override // io.grpc.ServerCall
     public boolean isReady() {
         return this.stream.isReady();
     }
@@ -265,7 +256,6 @@ public final class ServerCallImpl<ReqT, RespT> extends ServerCall<ReqT, RespT> {
         return new ServerStreamListenerImpl(this, listener, this.context);
     }
 
-    @Override // io.grpc.ServerCall
     public void request(int i) {
         PerfMark.startTask("ServerCall.request", this.tag);
         try {
@@ -277,7 +267,6 @@ public final class ServerCallImpl<ReqT, RespT> extends ServerCall<ReqT, RespT> {
         }
     }
 
-    @Override // io.grpc.ServerCall
     public void sendHeaders(Metadata metadata) {
         PerfMark.startTask("ServerCall.sendHeaders", this.tag);
         try {
@@ -289,7 +278,6 @@ public final class ServerCallImpl<ReqT, RespT> extends ServerCall<ReqT, RespT> {
         }
     }
 
-    @Override // io.grpc.ServerCall
     public void sendMessage(RespT respt) {
         PerfMark.startTask("ServerCall.sendMessage", this.tag);
         try {
@@ -301,7 +289,6 @@ public final class ServerCallImpl<ReqT, RespT> extends ServerCall<ReqT, RespT> {
         }
     }
 
-    @Override // io.grpc.ServerCall
     public void setCompression(String str) {
         boolean z = true;
         Preconditions.checkState(!this.sendHeadersCalled, "sendHeaders has been called");
@@ -313,7 +300,6 @@ public final class ServerCallImpl<ReqT, RespT> extends ServerCall<ReqT, RespT> {
         Preconditions.checkArgument(z, "Unable to find compressor by name %s", str);
     }
 
-    @Override // io.grpc.ServerCall
     public void setMessageCompression(boolean z) {
         this.stream.setMessageCompression(z);
     }

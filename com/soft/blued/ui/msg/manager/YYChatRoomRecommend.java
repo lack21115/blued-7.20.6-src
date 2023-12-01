@@ -1,6 +1,7 @@
 package com.soft.blued.ui.msg.manager;
 
 import com.blued.android.chat.model.SessionModel;
+import com.blued.android.chat.model.SessionSettingBaseModel;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.net.IRequestHost;
 import com.blued.android.framework.http.BluedUIHttpResponse;
@@ -14,6 +15,7 @@ import com.soft.blued.ui.msg.model.ChatroomRecommendModel;
 import com.soft.blued.ui.msg.model.ChatroomRecommendUserModel;
 import com.soft.blued.user.BluedConfig;
 import com.soft.blued.utils.BluedPreferences;
+import com.umeng.analytics.pro.d;
 import java.util.ArrayList;
 import java.util.List;
 import kotlin.Metadata;
@@ -25,11 +27,11 @@ public final class YYChatRoomRecommend {
     private static OnFinishListener b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static boolean f32454c;
+    private static boolean f18764c;
     private static long e;
 
     /* renamed from: a  reason: collision with root package name */
-    public static final YYChatRoomRecommend f32453a = new YYChatRoomRecommend();
+    public static final YYChatRoomRecommend f18763a = new YYChatRoomRecommend();
     private static AppConfigModel.AiRecommendImChatRoom d = new AppConfigModel.AiRecommendImChatRoom();
     private static List<String> f = new ArrayList();
     private static int g = 1;
@@ -54,8 +56,8 @@ public final class YYChatRoomRecommend {
             sessionModel.lastMsgFromAvatar = chatroomRecommendModel.getAvatar();
             sessionModel.lastMsgFromNickname = chatroomRecommendModel.getRoom_name();
             sessionModel.lastMsgContent = chatroomRecommendModel.getText_content();
-            sessionModel.lastMsgExtra = Intrinsics.a("", (Object) Long.valueOf(chatroomRecommendModel.getRoom_id()));
-            SessionSettingModel sessionSettingModel = new SessionSettingModel();
+            sessionModel.lastMsgExtra = Intrinsics.a("", Long.valueOf(chatroomRecommendModel.getRoom_id()));
+            SessionSettingBaseModel sessionSettingModel = new SessionSettingModel();
             sessionSettingModel.setRemindAudio(0);
             sessionModel.sessionSettingModel = sessionSettingModel;
             return sessionModel;
@@ -65,15 +67,20 @@ public final class YYChatRoomRecommend {
     }
 
     private final void a(final IRequestHost iRequestHost) {
-        ChatHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<ChatroomRecommendModel>>() { // from class: com.soft.blued.ui.msg.manager.YYChatRoomRecommend$updateFromNetwork$1
+        ChatHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<ChatroomRecommendModel>>(iRequestHost) { // from class: com.soft.blued.ui.msg.manager.YYChatRoomRecommend$updateFromNetwork$1
+
+            /* renamed from: a  reason: collision with root package name */
+            final /* synthetic */ IRequestHost f18765a;
+
             /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
-                super(IRequestHost.this);
+                super(iRequestHost);
+                this.f18765a = iRequestHost;
             }
 
             /* JADX INFO: Access modifiers changed from: protected */
             /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:46:0x0129 -> B:22:0x007a). Please submit an issue!!! */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<ChatroomRecommendModel> bluedEntityA) {
                 YYChatRoomRecommend.OnFinishListener onFinishListener;
@@ -81,42 +88,42 @@ public final class YYChatRoomRecommend {
                 YYChatRoomRecommend.OnFinishListener onFinishListener2;
                 SessionModel a2;
                 if (bluedEntityA != null) {
-                    List<ChatroomRecommendModel> data = bluedEntityA.data;
-                    Intrinsics.c(data, "data");
-                    if ((!data.isEmpty()) && (chatroomRecommendModel = bluedEntityA.data.get(0)) != null && chatroomRecommendModel.getRoom_id() != 0) {
+                    List list = bluedEntityA.data;
+                    Intrinsics.c(list, "data");
+                    if ((!list.isEmpty()) && (chatroomRecommendModel = (ChatroomRecommendModel) bluedEntityA.data.get(0)) != null && chatroomRecommendModel.getRoom_id() != 0) {
                         String text_content = chatroomRecommendModel.getText_content();
                         if (!(text_content == null || text_content.length() == 0)) {
                             try {
-                                String content = AppInfo.f().toJson(chatroomRecommendModel);
-                                YYChatRoomRecommend yYChatRoomRecommend = YYChatRoomRecommend.f32453a;
-                                Intrinsics.c(content, "content");
-                                yYChatRoomRecommend.a(content);
+                                String json = AppInfo.f().toJson(chatroomRecommendModel);
+                                YYChatRoomRecommend yYChatRoomRecommend = YYChatRoomRecommend.f18763a;
+                                Intrinsics.c(json, "content");
+                                yYChatRoomRecommend.a(json);
                             } catch (Exception e2) {
                             }
-                            YYChatRoomRecommend yYChatRoomRecommend2 = YYChatRoomRecommend.f32453a;
-                            YYChatRoomRecommend.f32454c = true;
-                            YYChatRoomRecommend.f32453a.b(true);
-                            YYChatRoomRecommend yYChatRoomRecommend3 = YYChatRoomRecommend.f32453a;
+                            YYChatRoomRecommend yYChatRoomRecommend2 = YYChatRoomRecommend.f18763a;
+                            YYChatRoomRecommend.f18764c = true;
+                            YYChatRoomRecommend.f18763a.b(true);
+                            YYChatRoomRecommend yYChatRoomRecommend3 = YYChatRoomRecommend.f18763a;
                             YYChatRoomRecommend.g = chatroomRecommendModel.getExperiment();
-                            YYChatRoomRecommend yYChatRoomRecommend4 = YYChatRoomRecommend.f32453a;
+                            YYChatRoomRecommend yYChatRoomRecommend4 = YYChatRoomRecommend.f18763a;
                             YYChatRoomRecommend.e = chatroomRecommendModel.getRoom_id();
                             for (ChatroomRecommendUserModel chatroomRecommendUserModel : chatroomRecommendModel.getCurrent_users()) {
                                 String avatar = chatroomRecommendUserModel.getAvatar();
                                 if (!(avatar == null || avatar.length() == 0)) {
-                                    YYChatRoomRecommend.f32453a.a().add(0, chatroomRecommendUserModel.getAvatar());
+                                    YYChatRoomRecommend.f18763a.a().add(0, chatroomRecommendUserModel.getAvatar());
                                 }
                             }
                             onFinishListener2 = YYChatRoomRecommend.b;
                             if (onFinishListener2 == null) {
                                 return;
                             }
-                            a2 = YYChatRoomRecommend.f32453a.a(chatroomRecommendModel);
+                            a2 = YYChatRoomRecommend.f18763a.a(chatroomRecommendModel);
                             onFinishListener2.onFinish(a2);
                             return;
                         }
                     }
                 }
-                YYChatRoomRecommend.f32453a.c();
+                YYChatRoomRecommend.f18763a.c();
                 onFinishListener = YYChatRoomRecommend.b;
                 if (onFinishListener == null) {
                     return;
@@ -124,7 +131,6 @@ public final class YYChatRoomRecommend {
                 onFinishListener.onFinish(null);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str) {
                 return true;
             }
@@ -150,7 +156,7 @@ public final class YYChatRoomRecommend {
         if (h == null) {
             return null;
         }
-        return f32453a.a(h);
+        return f18763a.a(h);
     }
 
     private final ChatroomRecommendModel h() {
@@ -193,15 +199,15 @@ public final class YYChatRoomRecommend {
     }
 
     private final String m() {
-        return Intrinsics.a("yy_chatroom_recommend_red_dot_click_", (Object) p());
+        return Intrinsics.a("yy_chatroom_recommend_red_dot_click_", p());
     }
 
     private final String n() {
-        return Intrinsics.a("yy_chatroom_recommend_last_update_ms_", (Object) p());
+        return Intrinsics.a("yy_chatroom_recommend_last_update_ms_", p());
     }
 
     private final String o() {
-        return Intrinsics.a("yy_chatroom_recommend_content_", (Object) p());
+        return Intrinsics.a("yy_chatroom_recommend_content_", p());
     }
 
     private final String p() {
@@ -211,7 +217,7 @@ public final class YYChatRoomRecommend {
     public final SessionModel a(OnFinishListener onFinishListener, IRequestHost iRequestHost) {
         b = onFinishListener;
         try {
-            f32454c = l();
+            f18764c = l();
             int i = i().update_time;
             long k = k();
             long currentTimeMillis = System.currentTimeMillis();
@@ -230,9 +236,9 @@ public final class YYChatRoomRecommend {
         return f;
     }
 
-    public final boolean a(SessionModel session) {
-        Intrinsics.e(session, "session");
-        return session.sessionType == 6668 && session.sessionId == 3;
+    public final boolean a(SessionModel sessionModel) {
+        Intrinsics.e(sessionModel, d.aw);
+        return sessionModel.sessionType == 6668 && sessionModel.sessionId == 3;
     }
 
     public final int b() {
@@ -245,12 +251,12 @@ public final class YYChatRoomRecommend {
     }
 
     public final boolean d() {
-        return f32454c;
+        return f18764c;
     }
 
     public final void e() {
-        if (f32454c) {
-            f32454c = false;
+        if (f18764c) {
+            f18764c = false;
             b(false);
         }
     }

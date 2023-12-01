@@ -6,17 +6,17 @@ import com.huawei.hmf.tasks.TaskCompletionSource;
 public class TaskApiCallWrapper<TResult> extends BaseContentWrapper {
 
     /* renamed from: a  reason: collision with root package name */
-    private final TaskApiCall<? extends AnyClient, TResult> f22666a;
+    private final TaskApiCall<? extends AnyClient, TResult> f9058a;
     private final TaskCompletionSource<TResult> b;
 
     public TaskApiCallWrapper(TaskApiCall<? extends AnyClient, TResult> taskApiCall, TaskCompletionSource<TResult> taskCompletionSource) {
         super(1);
-        this.f22666a = taskApiCall;
+        this.f9058a = taskApiCall;
         this.b = taskCompletionSource;
     }
 
     public TaskApiCall<? extends AnyClient, TResult> getTaskApiCall() {
-        return this.f22666a;
+        return this.f9058a;
     }
 
     public TaskCompletionSource<TResult> getTaskCompletionSource() {

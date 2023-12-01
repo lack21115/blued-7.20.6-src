@@ -11,22 +11,18 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ViewHeartBoyLayoutBinding.class */
 public final class ViewHeartBoyLayoutBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f16854a;
+    public final ImageView a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ConstraintLayout f16855c;
+    public final ConstraintLayout c;
     public final TextView d;
     public final TextView e;
     private final ConstraintLayout f;
 
     private ViewHeartBoyLayoutBinding(ConstraintLayout constraintLayout, ImageView imageView, ImageView imageView2, ConstraintLayout constraintLayout2, TextView textView, TextView textView2) {
         this.f = constraintLayout;
-        this.f16854a = imageView;
+        this.a = imageView;
         this.b = imageView2;
-        this.f16855c = constraintLayout2;
+        this.c = constraintLayout2;
         this.d = textView;
         this.e = textView2;
     }
@@ -45,13 +41,13 @@ public final class ViewHeartBoyLayoutBinding implements ViewBinding {
         if (imageView != null) {
             ImageView imageView2 = (ImageView) view.findViewById(R.id.img_light);
             if (imageView2 != null) {
-                ConstraintLayout constraintLayout = (ConstraintLayout) view.findViewById(R.id.root_view);
-                if (constraintLayout != null) {
+                ConstraintLayout findViewById = view.findViewById(R.id.root_view);
+                if (findViewById != null) {
                     TextView textView = (TextView) view.findViewById(R.id.tv_light_text);
                     if (textView != null) {
                         TextView textView2 = (TextView) view.findViewById(R.id.tv_light_timer);
                         if (textView2 != null) {
-                            return new ViewHeartBoyLayoutBinding((ConstraintLayout) view, imageView, imageView2, constraintLayout, textView, textView2);
+                            return new ViewHeartBoyLayoutBinding((ConstraintLayout) view, imageView, imageView2, findViewById, textView, textView2);
                         }
                         str = "tvLightTimer";
                     } else {
@@ -69,7 +65,6 @@ public final class ViewHeartBoyLayoutBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.f;

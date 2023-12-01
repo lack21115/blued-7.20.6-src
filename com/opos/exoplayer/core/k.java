@@ -6,7 +6,7 @@ import java.util.HashSet;
 public final class k {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final HashSet<String> f25514a = new HashSet<>();
+    private static final HashSet<String> f11826a = new HashSet<>();
     private static String b = "goog.exo.core";
 
     public static String a() {
@@ -24,7 +24,7 @@ public final class k {
     public static void a(String str) {
         synchronized (k.class) {
             try {
-                if (f25514a.add(str)) {
+                if (f11826a.add(str)) {
                     b += ", " + str;
                 }
             } catch (Throwable th) {

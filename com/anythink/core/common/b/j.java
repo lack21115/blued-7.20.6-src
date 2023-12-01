@@ -1,6 +1,7 @@
 package com.anythink.core.common.b;
 
 import android.text.TextUtils;
+import com.amap.api.services.district.DistrictSearchQuery;
 import com.anythink.core.api.ATAdInfo;
 import com.anythink.core.api.ATBaseAdAdapter;
 import com.anythink.core.api.ATCustomRuleKeys;
@@ -9,7 +10,6 @@ import com.anythink.core.api.BaseAd;
 import com.anythink.core.c.d;
 import com.anythink.core.common.b.g;
 import com.anythink.core.common.c.k;
-import com.cdo.oaps.ad.OapsKey;
 import java.util.HashMap;
 import java.util.Map;
 import org.json.JSONObject;
@@ -17,14 +17,10 @@ import org.json.JSONObject;
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/b/j.class */
 public final class j extends ATAdInfo {
     private Map<String, Object> C;
-
-    /* renamed from: a  reason: collision with root package name */
-    private ATBaseAdAdapter f6530a;
+    private ATBaseAdAdapter a;
     private Map<String, Object> x;
     private int b = -1;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f6531c = "";
+    private String c = "";
     private int d = -1;
     private double e = 0.0d;
     private int f = 0;
@@ -52,9 +48,9 @@ public final class j extends ATAdInfo {
 
     public static j a(BaseAd baseAd) {
         if (baseAd != null) {
-            j a2 = a(baseAd.getDetail());
-            a2.x = baseAd.getNetworkInfoMap();
-            return a2;
+            j a = a(baseAd.getDetail());
+            a.x = baseAd.getNetworkInfoMap();
+            return a;
         }
         return new j();
     }
@@ -66,7 +62,7 @@ public final class j extends ATAdInfo {
     private static j a(j jVar, d dVar) {
         if (dVar != null && (dVar instanceof ATBaseAdAdapter)) {
             ATBaseAdAdapter aTBaseAdAdapter = (ATBaseAdAdapter) dVar;
-            jVar.f6530a = aTBaseAdAdapter;
+            jVar.a = aTBaseAdAdapter;
             jVar.x = aTBaseAdAdapter.getNetworkInfoMap();
         }
         return jVar;
@@ -76,7 +72,7 @@ public final class j extends ATAdInfo {
         ATRewardInfo r;
         ATRewardInfo aTRewardInfo;
         jVar.b = eVar.H();
-        jVar.f6531c = eVar.x();
+        jVar.c = eVar.x();
         jVar.d = eVar.A();
         jVar.f = eVar.v();
         jVar.e = eVar.f();
@@ -98,7 +94,7 @@ public final class j extends ATAdInfo {
         jVar.p = eVar.m();
         jVar.q = eVar.I();
         jVar.r = eVar.C;
-        if (TextUtils.equals(g.C0100g.b, jVar.l)) {
+        if (TextUtils.equals(g.C0060g.b, jVar.l)) {
             Map<String, ATRewardInfo> q = eVar.q();
             if (q != null && q.containsKey(jVar.r) && (aTRewardInfo = q.get(jVar.r)) != null) {
                 jVar.s = aTRewardInfo.rewardName;
@@ -116,9 +112,9 @@ public final class j extends ATAdInfo {
         jVar.z = eVar.M();
         jVar.A = eVar.P();
         jVar.B = eVar.U();
-        Map<String, Object> a2 = eVar.a();
-        if (a2 != null) {
-            jVar.C = new HashMap(a2);
+        Map<String, Object> a = eVar.a();
+        if (a != null) {
+            jVar.C = new HashMap(a);
         }
         return jVar;
     }
@@ -144,7 +140,7 @@ public final class j extends ATAdInfo {
 
     @Override // com.anythink.core.api.ATAdInfo
     public final String getAdsourceId() {
-        return this.f6531c;
+        return this.c;
     }
 
     @Override // com.anythink.core.api.ATAdInfo
@@ -219,7 +215,7 @@ public final class j extends ATAdInfo {
 
     @Override // com.anythink.core.api.ATAdInfo
     public final String getRewardUserCustomData() {
-        ATBaseAdAdapter aTBaseAdAdapter = this.f6530a;
+        ATBaseAdAdapter aTBaseAdAdapter = this.a;
         return aTBaseAdAdapter != null ? aTBaseAdAdapter.getUserCustomData() : "";
     }
 
@@ -278,8 +274,8 @@ public final class j extends ATAdInfo {
         try {
             jSONObject.put("id", this.g);
             jSONObject.put("publisher_revenue", this.h);
-            jSONObject.put(OapsKey.KEY_CURRENCY_CODE, this.i);
-            jSONObject.put("country", this.j);
+            jSONObject.put("currency", this.i);
+            jSONObject.put(DistrictSearchQuery.KEYWORDS_COUNTRY, this.j);
             jSONObject.put("adunit_id", this.k);
             jSONObject.put("adunit_format", this.l);
             jSONObject.put(com.anythink.core.common.l.P, this.m);
@@ -304,15 +300,15 @@ public final class j extends ATAdInfo {
                 jSONObject.put("custom_rule", new JSONObject(this.w));
             }
             jSONObject.put(k.a.d, this.b);
-            jSONObject.put("adsource_id", this.f6531c);
+            jSONObject.put("adsource_id", this.c);
             jSONObject.put("adsource_index", this.d);
             jSONObject.put("adsource_price", this.e);
             jSONObject.put("adsource_isheaderbidding", this.f);
             if (this.x != null && this.x.size() > 0) {
                 jSONObject.put("ext_info", new JSONObject(this.x));
             }
-            if (this.f6530a != null) {
-                jSONObject.put("reward_custom_data", this.f6530a.getUserCustomData());
+            if (this.a != null) {
+                jSONObject.put("reward_custom_data", this.a.getUserCustomData());
             }
             if (!TextUtils.isEmpty(this.y)) {
                 jSONObject.put("tp_bid_id", this.y);

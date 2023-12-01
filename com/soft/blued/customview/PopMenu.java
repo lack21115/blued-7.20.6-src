@@ -1,5 +1,6 @@
 package com.soft.blued.customview;
 
+import android.R;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
@@ -14,26 +15,24 @@ import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.ui.StatusBarHelper;
-import com.blued.android.module_share_china.R;
 import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-8303388-dex2jar.jar:com/soft/blued/customview/PopMenu.class */
 public class PopMenu {
 
     /* renamed from: a  reason: collision with root package name */
-    public ViewGroup f28468a;
+    public ViewGroup f14778a;
     public View b;
 
     /* renamed from: c  reason: collision with root package name */
-    public View f28469c;
+    public View f14779c;
     public Context d;
     public MyPopupWindow e;
     public ViewGroup f;
     public onShowListener g;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8303388-dex2jar.jar:com/soft/blued/customview/PopMenu$MyPopupWindow.class */
-    public class MyPopupWindow extends PopupWindow {
+    class MyPopupWindow extends PopupWindow {
         public MyPopupWindow(View view, int i, int i2, boolean z) {
             super(view, i, i2, z);
         }
@@ -59,7 +58,7 @@ public class PopMenu {
 
     public PopMenu(Context context, View view) {
         this.d = context;
-        this.f28468a = new RelativeLayout(context);
+        this.f14778a = new RelativeLayout(context);
         this.f = new RelativeLayout(context);
         View view2 = new View(context);
         this.b = view2;
@@ -71,16 +70,16 @@ public class PopMenu {
                 PopMenu.this.d();
             }
         });
-        this.f28469c = view;
+        this.f14779c = view;
         if (c() > 0) {
-            this.f28469c.setBackgroundColor(c());
+            this.f14779c.setBackgroundColor(c());
         }
-        this.f28468a.addView(this.b, -1, -1);
-        this.f.addView(this.f28469c, b());
-        this.f28468a.addView(this.f, b());
-        MyPopupWindow myPopupWindow = new MyPopupWindow(this.f28468a, -1, -1, true);
+        this.f14778a.addView(this.b, -1, -1);
+        this.f.addView(this.f14779c, b());
+        this.f14778a.addView(this.f, b());
+        MyPopupWindow myPopupWindow = new MyPopupWindow(this.f14778a, -1, -1, true);
         this.e = myPopupWindow;
-        myPopupWindow.setBackgroundDrawable(this.d.getResources().getDrawable(17170445));
+        myPopupWindow.setBackgroundDrawable(this.d.getResources().getDrawable(R.color.transparent));
         this.e.setTouchable(true);
         this.e.setFocusable(true);
         this.e.setOutsideTouchable(true);
@@ -136,7 +135,7 @@ public class PopMenu {
                 alphaAnimation.setFillAfter(true);
                 PopMenu.this.b.startAnimation(alphaAnimation);
                 PopMenu.this.b.setVisibility(0);
-                PopMenu.this.f.startAnimation(AnimationUtils.loadAnimation(PopMenu.this.d, R.anim.push_top_in2));
+                PopMenu.this.f.startAnimation(AnimationUtils.loadAnimation(PopMenu.this.d, com.blued.android.module_share_china.R.anim.push_top_in2));
                 PopMenu.this.f.setVisibility(0);
                 if (PopMenu.this.g != null) {
                     PopMenu.this.g.a();
@@ -162,7 +161,7 @@ public class PopMenu {
     }
 
     public int c() {
-        return this.d.getResources().getColor(R.color.window_bg_color);
+        return this.d.getResources().getColor(com.blued.android.module_share_china.R.color.window_bg_color);
     }
 
     public void d() {
@@ -171,7 +170,7 @@ public class PopMenu {
         alphaAnimation.setFillAfter(true);
         this.b.startAnimation(alphaAnimation);
         this.f.setVisibility(8);
-        this.f.startAnimation(AnimationUtils.loadAnimation(this.d, R.anim.push_top_out2));
+        this.f.startAnimation(AnimationUtils.loadAnimation(this.d, com.blued.android.module_share_china.R.anim.push_top_out2));
         AppInfo.n().postDelayed(new Runnable() { // from class: com.soft.blued.customview.PopMenu.3
             @Override // java.lang.Runnable
             public void run() {

@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import com.blued.android.core.ui.BaseDialogFragment;
@@ -19,13 +20,9 @@ import com.blued.android.module.live_china.view.PopLiveActivityWebView;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveFansWebDialogFragment.class */
 public class LiveFansWebDialogFragment extends BaseDialogFragment implements PopLiveActivityWebView.PopLiveWebEvent {
-
-    /* renamed from: a  reason: collision with root package name */
-    public Context f12879a;
+    public Context a;
     public PopLiveActivityWebView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public String f12880c;
+    public String c;
     public int d;
     private ILiveWebDialog e;
 
@@ -38,7 +35,7 @@ public class LiveFansWebDialogFragment extends BaseDialogFragment implements Pop
 
     private void e() {
         if (getArguments() != null) {
-            this.f12880c = getArguments().getString("url");
+            this.c = getArguments().getString("url");
             this.d = getArguments().getInt("type");
         }
     }
@@ -48,11 +45,10 @@ public class LiveFansWebDialogFragment extends BaseDialogFragment implements Pop
         dismiss();
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
-        this.f12879a = getActivity();
+        this.a = getActivity();
         View inflate = getActivity().getLayoutInflater().inflate(R.layout.dialog_live_web, (ViewGroup) null);
-        int height = (getActivity().getWindowManager().getDefaultDisplay().getHeight() - DensityUtils.a(getActivity())) - DensityUtils.a(this.f12879a, 0.0f);
+        int height = (getActivity().getWindowManager().getDefaultDisplay().getHeight() - DensityUtils.a(getActivity())) - DensityUtils.a(this.a, 0.0f);
         Dialog dialog = new Dialog(getActivity(), R.style.transparentFrameWindowStyleLive);
         dialog.requestWindowFeature(1);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
@@ -69,15 +65,15 @@ public class LiveFansWebDialogFragment extends BaseDialogFragment implements Pop
         return dialog;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(0));
         View inflate = layoutInflater.inflate(R.layout.dialog_live_web, viewGroup);
         PopLiveActivityWebView popLiveActivityWebView = (PopLiveActivityWebView) inflate.findViewById(R.id.live_activity_web_view);
         this.b = popLiveActivityWebView;
-        popLiveActivityWebView.a(this);
+        popLiveActivityWebView.a((Fragment) this);
         this.b.setPopLiveWebEvent(this);
-        this.b.b(this.f12880c, this.d);
+        this.b.b(this.c, this.d);
         ILiveWebDialog iLiveWebDialog = this.e;
         if (iLiveWebDialog != null) {
             iLiveWebDialog.a();
@@ -85,7 +81,7 @@ public class LiveFansWebDialogFragment extends BaseDialogFragment implements Pop
         return inflate;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onDestroy() {
         super.onDestroy();
         ILiveWebDialog iLiveWebDialog = this.e;
@@ -94,7 +90,7 @@ public class LiveFansWebDialogFragment extends BaseDialogFragment implements Pop
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void show(FragmentManager fragmentManager, String str) {
         try {
             ReflectionUtils.a(this, "mDismissed", false);

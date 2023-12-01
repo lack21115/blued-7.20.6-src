@@ -18,18 +18,18 @@ public class SystemNoticeFragment_ViewBinding implements Unbinder {
     private SystemNoticeFragment b;
 
     /* renamed from: c  reason: collision with root package name */
-    private View f32931c;
+    private View f19240c;
     private View d;
     private View e;
     private View f;
 
     public SystemNoticeFragment_ViewBinding(final SystemNoticeFragment systemNoticeFragment, View view) {
         this.b = systemNoticeFragment;
-        systemNoticeFragment.ivAttention = (ImageView) Utils.a(view, 2131365076, "field 'ivAttention'", ImageView.class);
-        systemNoticeFragment.llAttention = (LinearLayout) Utils.a(view, 2131367640, "field 'llAttention'", LinearLayout.class);
+        systemNoticeFragment.ivAttention = (ImageView) Utils.a(view, R.id.iv_attention, "field 'ivAttention'", ImageView.class);
+        systemNoticeFragment.llAttention = (LinearLayout) Utils.a(view, R.id.ll_attention, "field 'llAttention'", LinearLayout.class);
         View a2 = Utils.a(view, R.id.tv_attention_count, "field 'tvAttentionCount' and method 'onViewClicked'");
         systemNoticeFragment.tvAttentionCount = (QBadgeContainer) Utils.b(a2, R.id.tv_attention_count, "field 'tvAttentionCount'", QBadgeContainer.class);
-        this.f32931c = a2;
+        this.f19240c = a2;
         a2.setOnClickListener(new DebouncingOnClickListener() { // from class: com.soft.blued.ui.notify.fragment.SystemNoticeFragment_ViewBinding.1
             @Override // butterknife.internal.DebouncingOnClickListener
             public void a(View view2) {
@@ -37,9 +37,9 @@ public class SystemNoticeFragment_ViewBinding implements Unbinder {
             }
         });
         systemNoticeFragment.ivLike = (ImageView) Utils.a(view, R.id.iv_like, "field 'ivLike'", ImageView.class);
-        systemNoticeFragment.llLike = (LinearLayout) Utils.a(view, 2131367963, "field 'llLike'", LinearLayout.class);
-        View a3 = Utils.a(view, 2131371808, "field 'tvLikeCount' and method 'onViewClicked'");
-        systemNoticeFragment.tvLikeCount = (QBadgeContainer) Utils.b(a3, 2131371808, "field 'tvLikeCount'", QBadgeContainer.class);
+        systemNoticeFragment.llLike = (LinearLayout) Utils.a(view, R.id.ll_like, "field 'llLike'", LinearLayout.class);
+        View a3 = Utils.a(view, R.id.tv_like_count, "field 'tvLikeCount' and method 'onViewClicked'");
+        systemNoticeFragment.tvLikeCount = (QBadgeContainer) Utils.b(a3, R.id.tv_like_count, "field 'tvLikeCount'", QBadgeContainer.class);
         this.d = a3;
         a3.setOnClickListener(new DebouncingOnClickListener() { // from class: com.soft.blued.ui.notify.fragment.SystemNoticeFragment_ViewBinding.2
             @Override // butterknife.internal.DebouncingOnClickListener
@@ -69,9 +69,9 @@ public class SystemNoticeFragment_ViewBinding implements Unbinder {
                 systemNoticeFragment.onViewClicked(view2);
             }
         });
-        systemNoticeFragment.llMenu = (LinearLayout) Utils.a(view, 2131368022, "field 'llMenu'", LinearLayout.class);
-        systemNoticeFragment.appbar = (AppBarLayout) Utils.a(view, 2131362292, "field 'appbar'", AppBarLayout.class);
-        systemNoticeFragment.recycleView = (RecyclerView) Utils.a(view, 2131369093, "field 'recycleView'", RecyclerView.class);
+        systemNoticeFragment.llMenu = (LinearLayout) Utils.a(view, R.id.ll_menu, "field 'llMenu'", LinearLayout.class);
+        systemNoticeFragment.appbar = (AppBarLayout) Utils.a(view, R.id.appbar, "field 'appbar'", AppBarLayout.class);
+        systemNoticeFragment.recycleView = (RecyclerView) Utils.a(view, R.id.recycle_view, "field 'recycleView'", RecyclerView.class);
         systemNoticeFragment.coordinator = (CoordinatorLayout) Utils.a(view, 2131363084, "field 'coordinator'", CoordinatorLayout.class);
         systemNoticeFragment.srlList = (SmartRefreshLayout) Utils.a(view, R.id.srl_list, "field 'srlList'", SmartRefreshLayout.class);
     }
@@ -100,8 +100,8 @@ public class SystemNoticeFragment_ViewBinding implements Unbinder {
         systemNoticeFragment.recycleView = null;
         systemNoticeFragment.coordinator = null;
         systemNoticeFragment.srlList = null;
-        this.f32931c.setOnClickListener(null);
-        this.f32931c = null;
+        this.f19240c.setOnClickListener(null);
+        this.f19240c = null;
         this.d.setOnClickListener(null);
         this.d = null;
         this.e.setOnClickListener(null);

@@ -164,9 +164,8 @@ public final class ObjectAnimator extends ValueAnimator {
         return objectAnimator;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     @Override // android.animation.ValueAnimator
-    public void animateValue(float f) {
+    void animateValue(float f) {
         Object target = getTarget();
         if (this.mTarget != null && target == null) {
             cancel();
@@ -230,9 +229,8 @@ public final class ObjectAnimator extends ValueAnimator {
         return this.mTarget.get();
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     @Override // android.animation.ValueAnimator
-    public void initAnimation() {
+    void initAnimation() {
         if (this.mInitialized) {
             return;
         }

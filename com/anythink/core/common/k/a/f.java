@@ -16,13 +16,9 @@ import java.util.WeakHashMap;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/k/a/f.class */
 public final class f {
-
-    /* renamed from: a  reason: collision with root package name */
-    final int f6787a;
+    final int a;
     final ViewTreeObserver.OnPreDrawListener b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f6788c;
+    private int c;
     private final ArrayList<View> d;
     private long e;
     private final Map<View, a> f;
@@ -35,13 +31,9 @@ public final class f {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/k/a/f$a.class */
     public static final class a {
-
-        /* renamed from: a  reason: collision with root package name */
-        int f6790a;
+        int a;
         int b;
-
-        /* renamed from: c  reason: collision with root package name */
-        long f6791c;
+        long c;
         View d;
         Integer e;
 
@@ -51,17 +43,15 @@ public final class f {
 
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/k/a/f$b.class */
     public static class b {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final Rect f6792a = new Rect();
+        private final Rect a = new Rect();
 
         private static boolean a(long j, int i) {
             return SystemClock.uptimeMillis() - j >= ((long) i);
         }
 
         public final boolean a(View view, View view2, int i, Integer num) {
-            if (view2 != null && view2.isShown() && view.getParent() != null && view2.getWindowVisibility() == 0 && view2.getGlobalVisibleRect(this.f6792a)) {
-                long height = this.f6792a.height() * this.f6792a.width();
+            if (view2 != null && view2.isShown() && view.getParent() != null && view2.getWindowVisibility() == 0 && view2.getGlobalVisibleRect(this.a)) {
+                long height = this.a.height() * this.a.width();
                 long height2 = view2.getHeight() * view2.getWidth();
                 if (height2 <= 0) {
                     return false;
@@ -75,9 +65,7 @@ public final class f {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/k/a/f$c.class */
     public final class c implements Runnable {
-
-        /* renamed from: c  reason: collision with root package name */
-        private final ArrayList<View> f6794c = new ArrayList<>();
+        private final ArrayList<View> c = new ArrayList<>();
         private final ArrayList<View> b = new ArrayList<>();
 
         c() {
@@ -87,7 +75,7 @@ public final class f {
         public final void run() {
             for (Map.Entry entry : f.this.f.entrySet()) {
                 View view = (View) entry.getKey();
-                int i = ((a) entry.getValue()).f6790a;
+                int i = ((a) entry.getValue()).a;
                 int i2 = ((a) entry.getValue()).b;
                 Integer num = ((a) entry.getValue()).e;
                 View view2 = ((a) entry.getValue()).d;
@@ -98,14 +86,14 @@ public final class f {
                     } catch (Throwable th) {
                     }
                 } else if (!f.this.g.a(view2, view, i2, null)) {
-                    this.f6794c.add(view);
+                    this.c.add(view);
                 }
             }
             if (f.this.h != null) {
                 f.this.h.a(this.b);
             }
             this.b.clear();
-            this.f6794c.clear();
+            this.c.clear();
             f.d(f.this);
         }
     }
@@ -122,12 +110,12 @@ public final class f {
 
     public f(int i) {
         this(new WeakHashMap(10), new b(), new Handler(Looper.getMainLooper()));
-        this.f6788c = i;
+        this.c = i;
     }
 
     private f(Map<View, a> map, b bVar, Handler handler) {
-        this.f6788c = 100;
-        this.f6787a = 50;
+        this.c = 100;
+        this.a = 50;
         this.e = 0L;
         this.f = map;
         this.g = bVar;
@@ -145,7 +133,7 @@ public final class f {
 
     private void a(long j) {
         for (Map.Entry<View, a> entry : this.f.entrySet()) {
-            if (entry.getValue().f6791c < j) {
+            if (entry.getValue().c < j) {
                 this.d.add(entry.getKey());
             }
         }
@@ -216,9 +204,9 @@ public final class f {
                 }
                 int min = Math.min(i2, i);
                 aVar2.d = view;
-                aVar2.f6790a = i;
+                aVar2.a = i;
                 aVar2.b = min;
-                aVar2.f6791c = this.e;
+                aVar2.c = this.e;
                 aVar2.e = num;
                 view2.getViewTreeObserver().addOnPreDrawListener(this.b);
                 long j = this.e + 1;
@@ -247,6 +235,6 @@ public final class f {
             return;
         }
         this.k = true;
-        this.j.postDelayed(this.i, this.f6788c);
+        this.j.postDelayed(this.i, this.c);
     }
 }

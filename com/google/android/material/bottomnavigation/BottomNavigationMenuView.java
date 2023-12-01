@@ -41,9 +41,8 @@ public class BottomNavigationMenuView extends NavigationBarMenuView {
         return this.itemHorizontalTranslationEnabled;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z, int i, int i2, int i3, int i4) {
+    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         int childCount = getChildCount();
         int i5 = i4 - i2;
         int i6 = 0;
@@ -61,9 +60,8 @@ public class BottomNavigationMenuView extends NavigationBarMenuView {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         int i3;
         int i4;
         MenuBuilder menu = getMenu();

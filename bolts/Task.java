@@ -23,10 +23,10 @@ public class Task<TResult> {
     private UnobservedErrorNotifier k;
 
     /* renamed from: a  reason: collision with root package name */
-    public static final ExecutorService f3693a = BoltsExecutors.a();
+    public static final ExecutorService f3645a = BoltsExecutors.a();
 
     /* renamed from: c  reason: collision with root package name */
-    private static final Executor f3694c = BoltsExecutors.c();
+    private static final Executor f3646c = BoltsExecutors.c();
     public static final Executor b = AndroidExecutors.b();
     private static Task<?> m = new Task<>((Object) null);
     private static Task<Boolean> n = new Task<>(true);
@@ -40,11 +40,11 @@ public class Task<TResult> {
     static final class AnonymousClass1 implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ bolts.TaskCompletionSource f3695a;
+        final /* synthetic */ bolts.TaskCompletionSource f3647a;
 
         @Override // java.lang.Runnable
         public void run() {
-            this.f3695a.a((bolts.TaskCompletionSource) null);
+            this.f3647a.a((bolts.TaskCompletionSource) null);
         }
     }
 
@@ -54,13 +54,13 @@ public class Task<TResult> {
     class AnonymousClass12<TContinuationResult> implements Continuation<TResult, Task<TContinuationResult>> {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ CancellationToken f3700a;
+        final /* synthetic */ CancellationToken f3652a;
         final /* synthetic */ Continuation b;
 
         @Override // bolts.Continuation
         /* renamed from: a */
         public Task<TContinuationResult> then(Task<TResult> task) {
-            CancellationToken cancellationToken = this.f3700a;
+            CancellationToken cancellationToken = this.f3652a;
             return (cancellationToken == null || !cancellationToken.a()) ? task.d() ? Task.a(task.f()) : task.c() ? Task.h() : task.a((Continuation) this.b) : Task.h();
         }
     }
@@ -70,12 +70,12 @@ public class Task<TResult> {
     static final class AnonymousClass2 implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ ScheduledFuture f3708a;
+        final /* synthetic */ ScheduledFuture f3660a;
         final /* synthetic */ bolts.TaskCompletionSource b;
 
         @Override // java.lang.Runnable
         public void run() {
-            this.f3708a.cancel(true);
+            this.f3660a.cancel(true);
             this.b.b();
         }
     }
@@ -95,13 +95,13 @@ public class Task<TResult> {
     static final class AnonymousClass5 implements Continuation<TResult, Void> {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ AtomicBoolean f3711a;
+        final /* synthetic */ AtomicBoolean f3663a;
         final /* synthetic */ bolts.TaskCompletionSource b;
 
         @Override // bolts.Continuation
         /* renamed from: a */
         public Void then(Task<TResult> task) {
-            if (this.f3711a.compareAndSet(false, true)) {
+            if (this.f3663a.compareAndSet(false, true)) {
                 this.b.setResult(task);
                 return null;
             }
@@ -115,13 +115,13 @@ public class Task<TResult> {
     static final class AnonymousClass6 implements Continuation<Object, Void> {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ AtomicBoolean f3712a;
+        final /* synthetic */ AtomicBoolean f3664a;
         final /* synthetic */ bolts.TaskCompletionSource b;
 
         @Override // bolts.Continuation
         /* renamed from: a */
         public Void then(Task<Object> task) {
-            if (this.f3712a.compareAndSet(false, true)) {
+            if (this.f3664a.compareAndSet(false, true)) {
                 this.b.setResult(task);
                 return null;
             }
@@ -135,16 +135,16 @@ public class Task<TResult> {
     static final class AnonymousClass7 implements Continuation<Void, List<TResult>> {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ Collection f3713a;
+        final /* synthetic */ Collection f3665a;
 
         @Override // bolts.Continuation
         /* renamed from: a */
         public List<TResult> then(Task<Void> task) throws Exception {
-            if (this.f3713a.size() == 0) {
+            if (this.f3665a.size() == 0) {
                 return Collections.emptyList();
             }
             ArrayList arrayList = new ArrayList();
-            for (Task task2 : this.f3713a) {
+            for (Task task2 : this.f3665a) {
                 arrayList.add(task2.e());
             }
             return arrayList;
@@ -156,11 +156,11 @@ public class Task<TResult> {
     static final class AnonymousClass8 implements Continuation<Object, Void> {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ Object f3714a;
+        final /* synthetic */ Object f3666a;
         final /* synthetic */ ArrayList b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ AtomicBoolean f3715c;
+        final /* synthetic */ AtomicBoolean f3667c;
         final /* synthetic */ AtomicInteger d;
         final /* synthetic */ bolts.TaskCompletionSource e;
 
@@ -168,12 +168,12 @@ public class Task<TResult> {
         /* renamed from: a */
         public Void then(Task<Object> task) {
             if (task.d()) {
-                synchronized (this.f3714a) {
+                synchronized (this.f3666a) {
                     this.b.add(task.f());
                 }
             }
             if (task.c()) {
-                this.f3715c.set(true);
+                this.f3667c.set(true);
             }
             if (this.d.decrementAndGet() == 0) {
                 if (this.b.size() != 0) {
@@ -183,7 +183,7 @@ public class Task<TResult> {
                     }
                     this.e.b(new AggregateException(String.format("There were %d exceptions.", Integer.valueOf(this.b.size())), this.b));
                     return null;
-                } else if (this.f3715c.get()) {
+                } else if (this.f3667c.get()) {
                     this.e.c();
                     return null;
                 } else {
@@ -200,19 +200,19 @@ public class Task<TResult> {
     class AnonymousClass9 implements Continuation<Void, Task<Void>> {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ CancellationToken f3716a;
+        final /* synthetic */ CancellationToken f3668a;
         final /* synthetic */ Callable b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ Continuation f3717c;
+        final /* synthetic */ Continuation f3669c;
         final /* synthetic */ Executor d;
         final /* synthetic */ Capture e;
 
         @Override // bolts.Continuation
         /* renamed from: a */
         public Task<Void> then(Task<Void> task) throws Exception {
-            CancellationToken cancellationToken = this.f3716a;
-            return (cancellationToken == null || !cancellationToken.a()) ? ((Boolean) this.b.call()).booleanValue() ? Task.a((Object) null).b(this.f3717c, this.d).b((Continuation) this.e.a(), this.d) : Task.a((Object) null) : Task.h();
+            CancellationToken cancellationToken = this.f3668a;
+            return (cancellationToken == null || !cancellationToken.a()) ? ((Boolean) this.b.call()).booleanValue() ? Task.a((Object) null).b(this.f3669c, this.d).b((Continuation) this.e.a(), this.d) : Task.a((Object) null) : Task.h();
         }
     }
 
@@ -290,11 +290,11 @@ public class Task<TResult> {
     }
 
     public static <TResult> Task<TResult> call(Callable<TResult> callable) {
-        return call(callable, f3694c, null);
+        return call(callable, f3646c, null);
     }
 
     public static <TResult> Task<TResult> call(Callable<TResult> callable, CancellationToken cancellationToken) {
-        return call(callable, f3694c, cancellationToken);
+        return call(callable, f3646c, cancellationToken);
     }
 
     public static <TResult> Task<TResult> call(Callable<TResult> callable, Executor executor) {
@@ -396,7 +396,7 @@ public class Task<TResult> {
     }
 
     public <TContinuationResult> Task<TContinuationResult> a(Continuation<TResult, TContinuationResult> continuation) {
-        return a(continuation, f3694c, null);
+        return a(continuation, f3646c, null);
     }
 
     public <TContinuationResult> Task<TContinuationResult> a(Continuation<TResult, Task<TContinuationResult>> continuation, Executor executor) {
@@ -426,7 +426,7 @@ public class Task<TResult> {
     }
 
     public <TContinuationResult> Task<TContinuationResult> b(Continuation<TResult, Task<TContinuationResult>> continuation) {
-        return b(continuation, f3694c, null);
+        return b(continuation, f3646c, null);
     }
 
     public <TContinuationResult> Task<TContinuationResult> b(Continuation<TResult, Task<TContinuationResult>> continuation, Executor executor) {

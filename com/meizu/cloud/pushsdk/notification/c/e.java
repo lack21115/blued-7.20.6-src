@@ -12,18 +12,18 @@ import java.io.OutputStream;
 public class e {
 
     /* renamed from: a  reason: collision with root package name */
-    private final File f24172a;
+    private final File f10557a;
     private final File b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final String f24173c;
+    private final String f10558c;
 
     public e(String str, String str2) {
-        this.f24172a = new File(str);
+        this.f10557a = new File(str);
         File file = new File(str2);
         this.b = file;
-        this.f24173c = file.getAbsolutePath();
-        DebugLogger.i("ZipExtractTask", "Extract mInput file = " + this.f24172a.toString());
+        this.f10558c = file.getAbsolutePath();
+        DebugLogger.i("ZipExtractTask", "Extract mInput file = " + this.f10557a.toString());
         DebugLogger.i("ZipExtractTask", "Extract mOutput file = " + this.b.toString());
     }
 
@@ -99,11 +99,11 @@ public class e {
     private void b() {
         StringBuilder sb;
         String str;
-        File file = this.f24172a;
+        File file = this.f10557a;
         if (file == null || !file.exists()) {
             return;
         }
-        if (this.f24172a.delete()) {
+        if (this.f10557a.delete()) {
             sb = new StringBuilder();
             str = "Delete file:";
         } else {
@@ -111,7 +111,7 @@ public class e {
             str = "Can't delete file:";
         }
         sb.append(str);
-        sb.append(this.f24172a.toString());
+        sb.append(this.f10557a.toString());
         sb.append(" after extracted.");
         DebugLogger.i("ZipExtractTask", sb.toString());
     }

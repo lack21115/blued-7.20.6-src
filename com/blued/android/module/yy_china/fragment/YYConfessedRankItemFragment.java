@@ -26,6 +26,7 @@ import com.blued.android.module.yy_china.utils.log.EventTrackYY;
 import com.blued.android.module.yy_china.view.YyConfessedGiftDialog;
 import com.blued.das.client.chatroom.ChatRoomProtos;
 import com.bumptech.glide.request.target.SimpleTarget;
+import com.bumptech.glide.request.target.Target;
 import com.bumptech.glide.request.transition.Transition;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
@@ -37,28 +38,22 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYConfessedRankItemFragment.class */
 public final class YYConfessedRankItemFragment extends MvpFragment<MvpPresenter> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private FragmentConfessedRankItemBinding f17166a;
-
-    /* renamed from: c  reason: collision with root package name */
-    private boolean f17167c;
+    private FragmentConfessedRankItemBinding a;
+    private boolean c;
     private String b = "2";
     private final YYConfessedRankItemAdapter d = new YYConfessedRankItemAdapter(this);
 
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYConfessedRankItemFragment$YYConfessedRankItemAdapter.class */
     public final class YYConfessedRankItemAdapter extends BaseQuickAdapter<ConfessedMode, BaseViewHolder> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ YYConfessedRankItemFragment f17168a;
+        final /* synthetic */ YYConfessedRankItemFragment a;
         private final ArrayList<Integer> b;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public YYConfessedRankItemAdapter(YYConfessedRankItemFragment this$0) {
             super(R.layout.item_confessed_rank_item);
             Intrinsics.e(this$0, "this$0");
-            this.f17168a = this$0;
+            this.a = this$0;
             this.b = CollectionsKt.d(Integer.valueOf(R.drawable.icon_yy_confessed_top_1), Integer.valueOf(R.drawable.icon_yy_confessed_top_2), Integer.valueOf(R.drawable.icon_yy_confessed_top_3));
         }
 
@@ -80,7 +75,6 @@ public final class YYConfessedRankItemFragment extends MvpFragment<MvpPresenter>
         /* JADX WARN: Code restructure failed: missing block: B:10:0x00c7, code lost:
             if (r0 == null) goto L6;
          */
-        @Override // com.chad.library.adapter.base.BaseQuickAdapter
         /* renamed from: a */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -120,7 +114,7 @@ public final class YYConfessedRankItemFragment extends MvpFragment<MvpPresenter>
 
     /* JADX INFO: Access modifiers changed from: private */
     public final FragmentConfessedRankItemBinding d() {
-        FragmentConfessedRankItemBinding fragmentConfessedRankItemBinding = this.f17166a;
+        FragmentConfessedRankItemBinding fragmentConfessedRankItemBinding = this.a;
         Intrinsics.a(fragmentConfessedRankItemBinding);
         return fragmentConfessedRankItemBinding;
     }
@@ -136,11 +130,11 @@ public final class YYConfessedRankItemFragment extends MvpFragment<MvpPresenter>
                 YYConfessedRankItemFragment.this.c().setNewData(bluedEntityA == null ? null : bluedEntityA.data);
                 if (bluedEntityA == null || !bluedEntityA.hasData()) {
                     d = YYConfessedRankItemFragment.this.d();
-                    d.f16473c.setVisibility(0);
+                    d.c.setVisibility(0);
                 }
             }
         };
-        if (this.f17167c) {
+        if (this.c) {
             if (StringUtils.a(this.b, "2")) {
                 d().e.setText("注：根据自然周内占据尊享告白位的时长（单位为秒）降序排列，只显示前50名，每周日23:59:59清空");
             } else {
@@ -160,27 +154,26 @@ public final class YYConfessedRankItemFragment extends MvpFragment<MvpPresenter>
     @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public void a(Bundle bundle) {
         super.a(bundle);
-        this.f17166a = FragmentConfessedRankItemBinding.a(this.i);
-        ImageLoader.a(getFragmentActive(), ImgURLMap.f10885a.a("yy_confessed_rank_item_btn_data_null")).a(d().b);
-        ImageLoader.a(getFragmentActive(), ImgURLMap.f10885a.a("yy_confessed_rank_item_btn_big_null")).a(new SimpleTarget<Drawable>() { // from class: com.blued.android.module.yy_china.fragment.YYConfessedRankItemFragment$onInitView$1
-            @Override // com.bumptech.glide.request.target.Target
+        this.a = FragmentConfessedRankItemBinding.a(this.i);
+        ImageLoader.a(getFragmentActive(), ImgURLMap.a.a("yy_confessed_rank_item_btn_data_null")).a(d().b);
+        ImageLoader.a(getFragmentActive(), ImgURLMap.a.a("yy_confessed_rank_item_btn_big_null")).a((Target) new SimpleTarget<Drawable>() { // from class: com.blued.android.module.yy_china.fragment.YYConfessedRankItemFragment$onInitView$1
             /* renamed from: a */
             public void onResourceReady(Drawable resource, Transition<? super Drawable> transition) {
                 FragmentConfessedRankItemBinding d;
                 Intrinsics.e(resource, "resource");
                 d = YYConfessedRankItemFragment.this.d();
-                d.f16472a.setBackground(resource);
+                d.a.setBackground(resource);
             }
         });
         d().d.setLayoutManager(new LinearLayoutManager(getContext()));
         d().d.setAdapter(this.d);
-        d().f16472a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYConfessedRankItemFragment$O_cZStCFFw4mVagRu6hOkB3g5xE
+        d().a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYConfessedRankItemFragment$O_cZStCFFw4mVagRu6hOkB3g5xE
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 YYConfessedRankItemFragment.a(YYConfessedRankItemFragment.this, view);
             }
         });
-        d().f16472a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYConfessedRankItemFragment$BxFP74IJjEX4hj0W9v73qgZ8IDo
+        d().a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYConfessedRankItemFragment$BxFP74IJjEX4hj0W9v73qgZ8IDo
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 YYConfessedRankItemFragment.b(YYConfessedRankItemFragment.this, view);
@@ -190,11 +183,11 @@ public final class YYConfessedRankItemFragment extends MvpFragment<MvpPresenter>
     }
 
     public final void b(boolean z) {
-        this.f17167c = z;
+        this.c = z;
     }
 
     public final boolean b() {
-        return this.f17167c;
+        return this.c;
     }
 
     public final YYConfessedRankItemAdapter c() {

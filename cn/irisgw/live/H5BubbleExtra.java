@@ -27,8 +27,8 @@ public final class H5BubbleExtra extends GeneratedMessageV3 implements H5BubbleE
     private volatile Object url_;
     private static final H5BubbleExtra DEFAULT_INSTANCE = new H5BubbleExtra();
     private static final Parser<H5BubbleExtra> PARSER = new AbstractParser<H5BubbleExtra>() { // from class: cn.irisgw.live.H5BubbleExtra.1
-        @Override // com.google.protobuf.Parser
-        public H5BubbleExtra parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        /* renamed from: parsePartialFrom */
+        public H5BubbleExtra m3143parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             return new H5BubbleExtra(codedInputStream, extensionRegistryLite);
         }
     };
@@ -60,22 +60,22 @@ public final class H5BubbleExtra extends GeneratedMessageV3 implements H5BubbleE
             boolean unused = H5BubbleExtra.alwaysUseFieldBuilders;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: addRepeatedField */
+        public Builder m3145addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.addRepeatedField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public H5BubbleExtra build() {
-            H5BubbleExtra buildPartial = buildPartial();
-            if (buildPartial.isInitialized()) {
-                return buildPartial;
+        /* renamed from: build */
+        public H5BubbleExtra m3147build() {
+            H5BubbleExtra m3149buildPartial = m3149buildPartial();
+            if (m3149buildPartial.isInitialized()) {
+                return m3149buildPartial;
             }
-            throw newUninitializedMessageException((Message) buildPartial);
+            throw newUninitializedMessageException(m3149buildPartial);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public H5BubbleExtra buildPartial() {
+        /* renamed from: buildPartial */
+        public H5BubbleExtra m3149buildPartial() {
             H5BubbleExtra h5BubbleExtra = new H5BubbleExtra(this);
             h5BubbleExtra.type_ = this.type_;
             h5BubbleExtra.icon_ = this.icon_;
@@ -84,8 +84,8 @@ public final class H5BubbleExtra extends GeneratedMessageV3 implements H5BubbleE
             return h5BubbleExtra;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public Builder clear() {
+        /* renamed from: clear */
+        public Builder m3153clear() {
             super.clear();
             this.type_ = 0;
             this.icon_ = "";
@@ -93,8 +93,8 @@ public final class H5BubbleExtra extends GeneratedMessageV3 implements H5BubbleE
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+        /* renamed from: clearField */
+        public Builder m3155clearField(Descriptors.FieldDescriptor fieldDescriptor) {
             return (Builder) super.clearField(fieldDescriptor);
         }
 
@@ -104,8 +104,8 @@ public final class H5BubbleExtra extends GeneratedMessageV3 implements H5BubbleE
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+        /* renamed from: clearOneof */
+        public Builder m3158clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
             return (Builder) super.clearOneof(oneofDescriptor);
         }
 
@@ -121,18 +121,16 @@ public final class H5BubbleExtra extends GeneratedMessageV3 implements H5BubbleE
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder m3164clone() {
+            return (Builder) super.clone();
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public H5BubbleExtra getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public H5BubbleExtra m3166getDefaultInstanceForType() {
             return H5BubbleExtra.getDefaultInstance();
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
         public Descriptors.Descriptor getDescriptorForType() {
             return LiveConstants.internal_static_cn_irisgw_live_H5BubbleExtra_descriptor;
         }
@@ -186,12 +184,10 @@ public final class H5BubbleExtra extends GeneratedMessageV3 implements H5BubbleE
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_H5BubbleExtra_fieldAccessorTable.ensureFieldAccessorsInitialized(H5BubbleExtra.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             return true;
         }
@@ -211,18 +207,18 @@ public final class H5BubbleExtra extends GeneratedMessageV3 implements H5BubbleE
                 this.url_ = h5BubbleExtra.url_;
                 onChanged();
             }
-            mergeUnknownFields(h5BubbleExtra.unknownFields);
+            m3175mergeUnknownFields(h5BubbleExtra.unknownFields);
             onChanged();
             return this;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+        /* renamed from: mergeFrom */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
         */
-        public cn.irisgw.live.H5BubbleExtra.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+        public cn.irisgw.live.H5BubbleExtra.Builder m3172mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
             /*
                 r4 = this;
                 r0 = 0
@@ -267,11 +263,11 @@ public final class H5BubbleExtra extends GeneratedMessageV3 implements H5BubbleE
                 r0 = r6
                 throw r0
             */
-            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.H5BubbleExtra.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.H5BubbleExtra$Builder");
+            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.H5BubbleExtra.Builder.m3172mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.H5BubbleExtra$Builder");
         }
 
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder mergeFrom(Message message) {
+        /* renamed from: mergeFrom */
+        public Builder m3171mergeFrom(Message message) {
             if (message instanceof H5BubbleExtra) {
                 return mergeFrom((H5BubbleExtra) message);
             }
@@ -279,13 +275,13 @@ public final class H5BubbleExtra extends GeneratedMessageV3 implements H5BubbleE
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: mergeUnknownFields */
+        public final Builder m3175mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.mergeUnknownFields(unknownFieldSet);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: setField */
+        public Builder m3177setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.setField(fieldDescriptor, obj);
         }
 
@@ -308,8 +304,8 @@ public final class H5BubbleExtra extends GeneratedMessageV3 implements H5BubbleE
             throw null;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+        /* renamed from: setRepeatedField */
+        public Builder m3179setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
             return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
         }
 
@@ -319,8 +315,8 @@ public final class H5BubbleExtra extends GeneratedMessageV3 implements H5BubbleE
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: setUnknownFields */
+        public final Builder m3181setUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.setUnknownFields(unknownFieldSet);
         }
 
@@ -400,66 +396,65 @@ public final class H5BubbleExtra extends GeneratedMessageV3 implements H5BubbleE
     }
 
     public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
+        return DEFAULT_INSTANCE.m3142toBuilder();
     }
 
     public static Builder newBuilder(H5BubbleExtra h5BubbleExtra) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(h5BubbleExtra);
+        return DEFAULT_INSTANCE.m3142toBuilder().mergeFrom(h5BubbleExtra);
     }
 
     public static H5BubbleExtra parseDelimitedFrom(InputStream inputStream) throws IOException {
-        return (H5BubbleExtra) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
     }
 
     public static H5BubbleExtra parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (H5BubbleExtra) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static H5BubbleExtra parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString);
+        return (H5BubbleExtra) PARSER.parseFrom(byteString);
     }
 
     public static H5BubbleExtra parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString, extensionRegistryLite);
+        return (H5BubbleExtra) PARSER.parseFrom(byteString, extensionRegistryLite);
     }
 
     public static H5BubbleExtra parseFrom(CodedInputStream codedInputStream) throws IOException {
-        return (H5BubbleExtra) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
     }
 
     public static H5BubbleExtra parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (H5BubbleExtra) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
     }
 
     public static H5BubbleExtra parseFrom(InputStream inputStream) throws IOException {
-        return (H5BubbleExtra) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
     }
 
     public static H5BubbleExtra parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (H5BubbleExtra) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static H5BubbleExtra parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer);
+        return (H5BubbleExtra) PARSER.parseFrom(byteBuffer);
     }
 
     public static H5BubbleExtra parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+        return (H5BubbleExtra) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
     }
 
     public static H5BubbleExtra parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr);
+        return (H5BubbleExtra) PARSER.parseFrom(bArr);
     }
 
     public static H5BubbleExtra parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr, extensionRegistryLite);
+        return (H5BubbleExtra) PARSER.parseFrom(bArr, extensionRegistryLite);
     }
 
     public static Parser<H5BubbleExtra> parser() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
@@ -471,8 +466,8 @@ public final class H5BubbleExtra extends GeneratedMessageV3 implements H5BubbleE
         return super.equals(obj);
     }
 
-    @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-    public H5BubbleExtra getDefaultInstanceForType() {
+    /* renamed from: getDefaultInstanceForType */
+    public H5BubbleExtra m3137getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
     }
 
@@ -498,12 +493,10 @@ public final class H5BubbleExtra extends GeneratedMessageV3 implements H5BubbleE
         return (ByteString) obj;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
     public Parser<H5BubbleExtra> getParserForType() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public int getSerializedSize() {
         int i = this.memoizedSize;
         if (i != -1) {
@@ -532,7 +525,6 @@ public final class H5BubbleExtra extends GeneratedMessageV3 implements H5BubbleE
         return this.type_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
     public final UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
     }
@@ -559,7 +551,6 @@ public final class H5BubbleExtra extends GeneratedMessageV3 implements H5BubbleE
         return (ByteString) obj;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public int hashCode() {
         if (this.memoizedHashCode != 0) {
             return this.memoizedHashCode;
@@ -569,12 +560,10 @@ public final class H5BubbleExtra extends GeneratedMessageV3 implements H5BubbleE
         return hashCode;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
         return LiveConstants.internal_static_cn_irisgw_live_H5BubbleExtra_fieldAccessorTable.ensureFieldAccessorsInitialized(H5BubbleExtra.class, Builder.class);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
     public final boolean isInitialized() {
         byte b = this.memoizedIsInitialized;
         if (b == 1) {
@@ -587,28 +576,26 @@ public final class H5BubbleExtra extends GeneratedMessageV3 implements H5BubbleE
         return true;
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder newBuilderForType() {
+    /* renamed from: newBuilderForType */
+    public Builder m3140newBuilderForType() {
         return newBuilder();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.protobuf.GeneratedMessageV3
-    public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+    /* renamed from: newBuilderForType */
+    public Builder m3139newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
         return new Builder(builderParent);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
         return new H5BubbleExtra();
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder toBuilder() {
+    /* renamed from: toBuilder */
+    public Builder m3142toBuilder() {
         return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
         int i = this.type_;
         if (i != 0) {

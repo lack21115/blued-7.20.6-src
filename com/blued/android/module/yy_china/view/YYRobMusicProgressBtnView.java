@@ -19,9 +19,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYRobMusicProgressBtnView.class */
 public final class YYRobMusicProgressBtnView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private SVGAImageView f18438a;
+    private SVGAImageView a;
     private RobMusicProgressBtn b;
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
@@ -43,38 +41,38 @@ public final class YYRobMusicProgressBtnView extends FrameLayout {
         Context context2 = getContext();
         Intrinsics.c(context2, "context");
         SVGAImageView sVGAImageView = new SVGAImageView(context2, null, 0, 6, null);
-        this.f18438a = sVGAImageView;
+        this.a = sVGAImageView;
         if (sVGAImageView != null) {
             sVGAImageView.setLoops(1);
         }
-        SVGAImageView sVGAImageView2 = this.f18438a;
+        SVGAImageView sVGAImageView2 = this.a;
         if (sVGAImageView2 != null) {
             sVGAImageView2.setFillMode(SVGAImageView.FillMode.Forward);
         }
         Context context3 = getContext();
         Intrinsics.c(context3, "context");
         this.b = new RobMusicProgressBtn(context3);
-        addView(this.f18438a, -1, -1);
+        addView(this.a, -1, -1);
         addView(this.b, -1, -1);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void c(final YYRobMusicProgressBtnView this$0) {
         Intrinsics.e(this$0, "this$0");
-        if (YYRoomInfoManager.e().f17579c != 1) {
+        if (YYRoomInfoManager.e().c != 1) {
             return;
         }
-        SVGAParser.a(SVGAParser.f15958a.b(), "bor_music_123.svga", new SVGAParser.ParseCompletion() { // from class: com.blued.android.module.yy_china.view.YYRobMusicProgressBtnView$play$2$1
+        SVGAParser.a(SVGAParser.a.b(), "bor_music_123.svga", new SVGAParser.ParseCompletion() { // from class: com.blued.android.module.yy_china.view.YYRobMusicProgressBtnView$play$2$1
             @Override // com.blued.android.module.svgaplayer.SVGAParser.ParseCompletion
             public void onComplete(SVGAVideoEntity svgaVideoEntity) {
                 SVGAImageView sVGAImageView;
                 SVGAImageView sVGAImageView2;
                 Intrinsics.e(svgaVideoEntity, "svgaVideoEntity");
-                sVGAImageView = YYRobMusicProgressBtnView.this.f18438a;
+                sVGAImageView = YYRobMusicProgressBtnView.this.a;
                 if (sVGAImageView != null) {
                     sVGAImageView.setImageDrawable(new SVGADrawable(svgaVideoEntity));
                 }
-                sVGAImageView2 = YYRobMusicProgressBtnView.this.f18438a;
+                sVGAImageView2 = YYRobMusicProgressBtnView.this.a;
                 if (sVGAImageView2 == null) {
                     return;
                 }
@@ -88,11 +86,11 @@ public final class YYRobMusicProgressBtnView extends FrameLayout {
     }
 
     public final void a() {
-        SVGAImageView sVGAImageView = this.f18438a;
+        SVGAImageView sVGAImageView = this.a;
         if (sVGAImageView != null) {
             sVGAImageView.setCallback(null);
         }
-        SVGAImageView sVGAImageView2 = this.f18438a;
+        SVGAImageView sVGAImageView2 = this.a;
         if (sVGAImageView2 != null) {
             sVGAImageView2.a(true);
         }
@@ -118,11 +116,11 @@ public final class YYRobMusicProgressBtnView extends FrameLayout {
         if (robMusicProgressBtn3 != null) {
             robMusicProgressBtn3.setAniStopLi(aniStopLi);
         }
-        SVGAImageView sVGAImageView = this.f18438a;
+        SVGAImageView sVGAImageView = this.a;
         if (sVGAImageView != null) {
             sVGAImageView.setFillMode(SVGAImageView.FillMode.Clear);
         }
-        SVGAImageView sVGAImageView2 = this.f18438a;
+        SVGAImageView sVGAImageView2 = this.a;
         if (sVGAImageView2 != null) {
             sVGAImageView2.setCallback(new SVGACallback() { // from class: com.blued.android.module.yy_china.view.YYRobMusicProgressBtnView$play$1
                 @Override // com.blued.android.module.svgaplayer.SVGACallback

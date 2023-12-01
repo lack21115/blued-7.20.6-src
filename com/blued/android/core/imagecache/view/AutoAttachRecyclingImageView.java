@@ -13,13 +13,9 @@ import com.blued.blued_core.R;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/imagecache/view/AutoAttachRecyclingImageView.class */
 public class AutoAttachRecyclingImageView extends RecyclingImageView {
-
-    /* renamed from: a  reason: collision with root package name */
-    boolean f9657a;
+    boolean a;
     String[] b;
-
-    /* renamed from: c  reason: collision with root package name */
-    String f9658c;
+    String c;
     LoadOptions d;
     ImageLoadingListener e;
     LoadJob f;
@@ -27,7 +23,7 @@ public class AutoAttachRecyclingImageView extends RecyclingImageView {
 
     public AutoAttachRecyclingImageView(Context context) {
         super(context);
-        this.f9657a = false;
+        this.a = false;
         this.g = 0;
     }
 
@@ -37,7 +33,7 @@ public class AutoAttachRecyclingImageView extends RecyclingImageView {
 
     public AutoAttachRecyclingImageView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f9657a = false;
+        this.a = false;
         this.g = 0;
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.AutoRecyclingImageView, i, 0);
         int resourceId = obtainStyledAttributes.getResourceId(R.styleable.AutoRecyclingImageView_recycling_src, 0);
@@ -52,16 +48,16 @@ public class AutoAttachRecyclingImageView extends RecyclingImageView {
     }
 
     private void b(String[] strArr, LoadOptions loadOptions, ImageLoadingListener imageLoadingListener) {
-        this.f9657a = false;
-        this.f9658c = null;
+        this.a = false;
+        this.c = null;
         this.b = strArr;
         this.d = loadOptions;
         this.e = imageLoadingListener;
     }
 
     private void c(String str, LoadOptions loadOptions, ImageLoadingListener imageLoadingListener) {
-        this.f9657a = false;
-        this.f9658c = str;
+        this.a = false;
+        this.c = str;
         this.b = null;
         this.d = loadOptions;
         this.e = imageLoadingListener;
@@ -85,14 +81,14 @@ public class AutoAttachRecyclingImageView extends RecyclingImageView {
             loadJob.a();
             this.f = null;
         }
-        if (!TextUtils.isEmpty(this.f9658c)) {
-            this.f = b(this.f9658c, this.d, this.e);
+        if (!TextUtils.isEmpty(this.c)) {
+            this.f = b(this.c, this.d, this.e);
             return;
         }
         String[] strArr = this.b;
         if (strArr != null) {
             this.f = a(strArr, this.d, this.e);
-        } else if (!LoadOptions.f9592a || (i = this.g) <= 0) {
+        } else if (!LoadOptions.a || (i = this.g) <= 0) {
         } else {
             setImageResource(i);
         }
@@ -105,18 +101,18 @@ public class AutoAttachRecyclingImageView extends RecyclingImageView {
             loadJob.a();
             this.f = null;
         }
-        LoadJob a2 = RecyclingImageLoader.a(this, str, loadOptions, imageLoadingListener);
-        this.f = a2;
-        return a2;
+        LoadJob a = RecyclingImageLoader.a(this, str, loadOptions, imageLoadingListener);
+        this.f = a;
+        return a;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.ImageView, android.view.View
     public void onAttachedToWindow() {
         super.onAttachedToWindow();
-        if (this.f9657a) {
+        if (this.a) {
             a();
-            this.f9657a = false;
+            this.a = false;
         }
     }
 
@@ -124,7 +120,7 @@ public class AutoAttachRecyclingImageView extends RecyclingImageView {
     @Override // com.blued.android.core.imagecache.view.RecyclingImageView, android.widget.ImageView, android.view.View
     public void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        this.f9657a = true;
+        this.a = true;
         LoadJob loadJob = this.f;
         if (loadJob != null) {
             loadJob.a();

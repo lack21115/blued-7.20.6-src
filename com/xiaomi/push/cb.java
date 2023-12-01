@@ -11,18 +11,18 @@ public class cb extends cd {
 
     public static cb a(Context context, String str, int i) {
         com.xiaomi.channel.commonutils.logger.b.b("delete  messages when db size is too bigger");
-        String m11581a = ch.a(context).m11581a(str);
-        if (TextUtils.isEmpty(m11581a)) {
+        String m8531a = ch.a(context).m8531a(str);
+        if (TextUtils.isEmpty(m8531a)) {
             return null;
         }
-        return new cb(str, "rowDataId in (select " + "rowDataId from ".concat(String.valueOf(m11581a)) + " order by createTimeStamp asc limit ?)", new String[]{String.valueOf(i)}, "a job build to delete history message");
+        return new cb(str, "rowDataId in (select " + "rowDataId from ".concat(String.valueOf(m8531a)) + " order by createTimeStamp asc limit ?)", new String[]{String.valueOf(i)}, "a job build to delete history message");
     }
 
     private void a(long j) {
-        if (this.f253a == null || this.f253a.length <= 0) {
+        if (this.f206a == null || this.f206a.length <= 0) {
             return;
         }
-        this.f253a[0] = String.valueOf(j);
+        this.f206a[0] = String.valueOf(j);
     }
 
     @Override // com.xiaomi.push.ch.a
@@ -30,7 +30,7 @@ public class cb extends cd {
         if (obj instanceof Long) {
             long longValue = ((Long) obj).longValue();
             long a2 = cn.a(a());
-            long j = bz.f234a;
+            long j = bz.f187a;
             if (a2 <= j) {
                 com.xiaomi.channel.commonutils.logger.b.b("db size is suitable");
                 return;

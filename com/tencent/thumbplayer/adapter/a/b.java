@@ -39,7 +39,7 @@ public interface b {
 
     void a(c.b bVar);
 
-    void a(c.InterfaceC1013c interfaceC1013c);
+    void a(c.InterfaceC0843c interfaceC0843c);
 
     void a(c.d dVar);
 

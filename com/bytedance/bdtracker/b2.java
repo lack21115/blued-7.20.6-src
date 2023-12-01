@@ -58,7 +58,7 @@ public class b2 extends t1 {
 
     @Override // com.bytedance.bdtracker.t1
     public int a(Cursor cursor) {
-        this.f21308a = cursor.getLong(0);
+        this.f7702a = cursor.getLong(0);
         this.b = cursor.getLong(1);
         this.p = cursor.getBlob(2);
         this.q = cursor.getInt(3);
@@ -114,7 +114,7 @@ public class b2 extends t1 {
 
     @Override // com.bytedance.bdtracker.t1
     public String c() {
-        return String.valueOf(this.f21308a);
+        return String.valueOf(this.f7702a);
     }
 
     @Override // com.bytedance.bdtracker.t1
@@ -242,7 +242,7 @@ public class b2 extends t1 {
         a3.append(length5);
         a3.append(", imp:");
         a3.append(i3);
-        a3.append(com.alipay.sdk.util.i.d);
+        a3.append("}");
         z2.a(a3.toString());
         return jSONObject;
     }
@@ -251,7 +251,7 @@ public class b2 extends t1 {
         this.p = null;
         if (b.c(this.k)) {
             try {
-                this.p = ((c) Objects.requireNonNull(b.a(this.k))).j.f21291c.b(h().toString());
+                this.p = ((c) Objects.requireNonNull(b.a(this.k))).j.f7685c.b(h().toString());
             } catch (OutOfMemoryError e) {
                 throw new RuntimeException("to bytes error", e);
             }

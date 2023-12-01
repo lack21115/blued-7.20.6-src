@@ -6,11 +6,11 @@ import android.os.CountDownTimer;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final long f7746a = 1000;
+    private static final long f4907a = 1000;
     private long b = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    private long f7747c;
+    private long f4908c;
     private com.anythink.expressad.f.a.a d;
     private a e;
 
@@ -18,14 +18,14 @@ public final class b {
     static final class a extends CountDownTimer {
 
         /* renamed from: a  reason: collision with root package name */
-        private com.anythink.expressad.f.a.a f7748a;
+        private com.anythink.expressad.f.a.a f4909a;
 
         public a(long j, long j2) {
             super(j, j2);
         }
 
         final void a(com.anythink.expressad.f.a.a aVar) {
-            this.f7748a = aVar;
+            this.f4909a = aVar;
         }
 
         @Override // android.os.CountDownTimer
@@ -42,7 +42,7 @@ public final class b {
         if (j < 0) {
             j2 = 1000;
         }
-        this.f7747c = j2;
+        this.f4908c = j2;
         return this;
     }
 
@@ -57,10 +57,10 @@ public final class b {
             aVar.cancel();
             this.e = null;
         }
-        if (this.f7747c <= 0) {
-            this.f7747c = this.b + 1000;
+        if (this.f4908c <= 0) {
+            this.f4908c = this.b + 1000;
         }
-        a aVar2 = new a(this.b, this.f7747c);
+        a aVar2 = new a(this.b, this.f4908c);
         this.e = aVar2;
         aVar2.a(this.d);
     }
@@ -77,10 +77,10 @@ public final class b {
                 aVar.cancel();
                 this.e = null;
             }
-            if (this.f7747c <= 0) {
-                this.f7747c = this.b + 1000;
+            if (this.f4908c <= 0) {
+                this.f4908c = this.b + 1000;
             }
-            a aVar2 = new a(this.b, this.f7747c);
+            a aVar2 = new a(this.b, this.f4908c);
             this.e = aVar2;
             aVar2.a(this.d);
         }

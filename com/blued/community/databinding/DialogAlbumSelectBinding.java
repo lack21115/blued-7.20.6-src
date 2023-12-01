@@ -11,13 +11,9 @@ import com.blued.community.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/databinding/DialogAlbumSelectBinding.class */
 public final class DialogAlbumSelectBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final FrameLayout f18786a;
+    public final FrameLayout a;
     public final ShapeLinearLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final FrameLayout f18787c;
+    public final FrameLayout c;
     public final View d;
     public final ShapeFrameLayout e;
     public final View f;
@@ -25,9 +21,9 @@ public final class DialogAlbumSelectBinding implements ViewBinding {
 
     private DialogAlbumSelectBinding(FrameLayout frameLayout, FrameLayout frameLayout2, ShapeLinearLayout shapeLinearLayout, FrameLayout frameLayout3, View view, ShapeFrameLayout shapeFrameLayout, View view2) {
         this.g = frameLayout;
-        this.f18786a = frameLayout2;
+        this.a = frameLayout2;
         this.b = shapeLinearLayout;
-        this.f18787c = frameLayout3;
+        this.c = frameLayout3;
         this.d = view;
         this.e = shapeFrameLayout;
         this.f = view2;
@@ -76,7 +72,6 @@ public final class DialogAlbumSelectBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.g;

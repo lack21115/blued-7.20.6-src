@@ -8,15 +8,13 @@ import java.util.Map;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/g/c.class */
 public final class c extends com.anythink.core.common.g.a {
-
-    /* renamed from: a  reason: collision with root package name */
-    String f6007a;
+    String a;
     boolean b;
 
     public c(String str, String str2, boolean z) {
         this.b = false;
         this.b = z;
-        this.f6007a = str.replaceAll("\\{req_id\\}", str2 == null ? "" : str2);
+        this.a = str.replaceAll("\\{req_id\\}", str2 == null ? "" : str2);
     }
 
     @Override // com.anythink.core.common.g.a
@@ -40,7 +38,7 @@ public final class c extends com.anythink.core.common.g.a {
 
     @Override // com.anythink.core.common.g.a
     public final String b() {
-        return this.f6007a;
+        return this.a;
     }
 
     @Override // com.anythink.core.common.g.a

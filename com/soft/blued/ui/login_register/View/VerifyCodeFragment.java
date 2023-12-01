@@ -23,7 +23,7 @@ import com.soft.blued.ui.login_register.presenter.VerifyCodePresenter;
 public class VerifyCodeFragment extends BaseFragment implements View.OnClickListener, VerifyCodeContract.IView {
 
     /* renamed from: a  reason: collision with root package name */
-    Runnable f31539a = new Runnable() { // from class: com.soft.blued.ui.login_register.View.VerifyCodeFragment.2
+    Runnable f17849a = new Runnable() { // from class: com.soft.blued.ui.login_register.View.VerifyCodeFragment.2
         @Override // java.lang.Runnable
         public void run() {
             if (VerifyCodeFragment.this.r == 0) {
@@ -48,7 +48,7 @@ public class VerifyCodeFragment extends BaseFragment implements View.OnClickList
     private View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Dialog f31540c;
+    private Dialog f17850c;
     private Context d;
     private VerifyCodeContract.IPresenter e;
     private TextView f;
@@ -91,13 +91,13 @@ public class VerifyCodeFragment extends BaseFragment implements View.OnClickList
             this.t = arguments.getString("safe_device_number");
             Log.v("drb", "mSafeDeviceType:" + this.s + " -- mSafeDeviceNumber:" + this.t);
         }
-        this.f31540c = DialogUtils.a(this.d);
+        this.f17850c = DialogUtils.a(this.d);
         this.f = (TextView) this.b.findViewById(2131371164);
-        this.g = (TextView) this.b.findViewById(2131371262);
+        this.g = (TextView) this.b.findViewById(R.id.tv_desc);
         this.h = (TextView) this.b.findViewById(R.id.tv_resend);
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.b.findViewById(2131370694);
-        this.j = commonTopTitleNoTrans;
-        commonTopTitleNoTrans.a();
+        CommonTopTitleNoTrans findViewById = this.b.findViewById(2131370694);
+        this.j = findViewById;
+        findViewById.a();
         this.j.f();
         this.j.setCenterText("");
         this.j.setTitleBackgroundDrawable(2131101780);
@@ -141,17 +141,17 @@ public class VerifyCodeFragment extends BaseFragment implements View.OnClickList
 
     private void e() {
         this.r = 60;
-        postSafeRunOnUiThread(this.f31539a);
+        postSafeRunOnUiThread(this.f17849a);
     }
 
     @Override // com.soft.blued.ui.login_register.Contract.VerifyCodeContract.IView
     public void a() {
-        DialogUtils.a(this.f31540c);
+        DialogUtils.a(this.f17850c);
     }
 
     @Override // com.soft.blued.ui.login_register.Contract.VerifyCodeContract.IView
     public void b() {
-        DialogUtils.b(this.f31540c);
+        DialogUtils.b(this.f17850c);
     }
 
     @Override // com.soft.blued.ui.login_register.Contract.VerifyCodeContract.IView
@@ -180,7 +180,6 @@ public class VerifyCodeFragment extends BaseFragment implements View.OnClickList
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.d = getActivity();
         View view = this.b;
@@ -194,7 +193,6 @@ public class VerifyCodeFragment extends BaseFragment implements View.OnClickList
         return this.b;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
         b();

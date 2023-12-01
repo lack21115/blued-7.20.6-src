@@ -24,7 +24,7 @@ public final class a {
 
     /* renamed from: com.kwad.components.core.webview.kwai.a$a  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/components/core/webview/kwai/a$a.class */
-    public static final class C0543a extends com.kwad.sdk.core.response.kwai.a {
+    public static final class C0373a extends com.kwad.sdk.core.response.kwai.a {
         public String packageName;
         public String url;
     }
@@ -44,19 +44,19 @@ public final class a {
     /* JADX INFO: Access modifiers changed from: private */
     public void aI(String str) {
         try {
-            C0543a c0543a = new C0543a();
-            c0543a.parseJson(new JSONObject(str));
-            if (k(c0543a.url, c0543a.packageName)) {
+            C0373a c0373a = new C0373a();
+            c0373a.parseJson(new JSONObject(str));
+            if (k(c0373a.url, c0373a.packageName)) {
                 return;
             }
             if (this.IM == null) {
-                j(c0543a.url, c0543a.packageName);
+                j(c0373a.url, c0373a.packageName);
             }
             if (this.IM.nk()) {
                 return;
             }
             this.IM.d(this.RT);
-            this.IM.m(new a.C0519a(this.cV.Lc.getContext()).ao(true).ap(false).I(this.mAdTemplate).ar(false));
+            this.IM.m(new a.C0349a(this.cV.Lc.getContext()).ao(true).ap(false).I(this.mAdTemplate).ar(false));
         } catch (JSONException e) {
             com.kwad.sdk.core.d.b.printStackTrace(e);
         }

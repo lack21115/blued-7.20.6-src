@@ -22,7 +22,6 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 import androidx.constraintlayout.core.motion.utils.TypedValues;
-import com.android.internal.telephony.PhoneConstants;
 import com.bytedance.bdtracker.e2;
 import com.bytedance.bdtracker.l1;
 import java.io.Closeable;
@@ -42,7 +41,7 @@ import org.json.JSONObject;
 public class j1 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f21237a;
+    public static String f7631a;
 
     public static Class<?> a(String... strArr) {
         if (strArr == null || strArr.length == 0) {
@@ -120,7 +119,7 @@ public class j1 {
                     if (i2 >= h1Var.y.size()) {
                         break;
                     }
-                    h1Var.E.add(PhoneConstants.APN_TYPE_ALL);
+                    h1Var.E.add("*");
                     i = i2 + 1;
                 }
                 jSONObject.put("positions", new JSONArray((Collection) h1Var.y));
@@ -149,7 +148,7 @@ public class j1 {
         try {
             JSONObject jSONObject = new JSONObject();
             jSONObject.put(TypedValues.AttributesType.S_FRAME, bVar.b.a());
-            jSONObject.put("_element_path", bVar.f21251c);
+            jSONObject.put("_element_path", bVar.f7645c);
             jSONObject.put("element_path", bVar.d);
             List<String> list = bVar.e;
             if (list != null && list.size() > 0) {

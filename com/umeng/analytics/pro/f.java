@@ -14,14 +14,14 @@ public class f extends SQLiteOpenHelper {
     private static Context b;
 
     /* renamed from: a  reason: collision with root package name */
-    private String f40745a;
+    private String f27054a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8829756-dex2jar.jar:com/umeng/analytics/pro/f$a.class */
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final f f40746a = new f(f.b, h.b(f.b), e.b, null, 2);
+        private static final f f27055a = new f(f.b, h.b(f.b), e.b, null, 2);
 
         private a() {
         }
@@ -29,7 +29,7 @@ public class f extends SQLiteOpenHelper {
 
     private f(Context context, String str, SQLiteDatabase.CursorFactory cursorFactory, int i) {
         super(context, TextUtils.isEmpty(str) ? e.b : str, cursorFactory, i);
-        this.f40745a = null;
+        this.f27054a = null;
         a();
     }
 
@@ -41,12 +41,12 @@ public class f extends SQLiteOpenHelper {
         if (b == null) {
             b = context.getApplicationContext();
         }
-        return a.f40746a;
+        return a.f27055a;
     }
 
     private void a(SQLiteDatabase sQLiteDatabase) {
         try {
-            this.f40745a = "create table if not exists __er(id INTEGER primary key autoincrement, __i TEXT, __a TEXT, __t INTEGER, __av TEXT, __vc TEXT)";
+            this.f27054a = "create table if not exists __er(id INTEGER primary key autoincrement, __i TEXT, __a TEXT, __t INTEGER, __av TEXT, __vc TEXT)";
             sQLiteDatabase.execSQL("create table if not exists __er(id INTEGER primary key autoincrement, __i TEXT, __a TEXT, __t INTEGER, __av TEXT, __vc TEXT)");
         } catch (SQLException e) {
         }
@@ -61,7 +61,7 @@ public class f extends SQLiteOpenHelper {
 
     private void b(SQLiteDatabase sQLiteDatabase) {
         try {
-            this.f40745a = "create table if not exists __et(id INTEGER primary key autoincrement, __i TEXT, __e TEXT, __s TEXT, __t INTEGER, __av TEXT, __vc TEXT)";
+            this.f27054a = "create table if not exists __et(id INTEGER primary key autoincrement, __i TEXT, __e TEXT, __s TEXT, __t INTEGER, __av TEXT, __vc TEXT)";
             sQLiteDatabase.execSQL("create table if not exists __et(id INTEGER primary key autoincrement, __i TEXT, __e TEXT, __s TEXT, __t INTEGER, __av TEXT, __vc TEXT)");
         } catch (SQLException e) {
         }
@@ -69,7 +69,7 @@ public class f extends SQLiteOpenHelper {
 
     private void c(SQLiteDatabase sQLiteDatabase) {
         try {
-            this.f40745a = "create table if not exists __sd(id INTEGER primary key autoincrement, __ii TEXT unique, __a TEXT, __b TEXT, __c TEXT, __d TEXT, __e TEXT, __f TEXT, __g TEXT, __sp TEXT, __pp TEXT, __av TEXT, __vc TEXT)";
+            this.f27054a = "create table if not exists __sd(id INTEGER primary key autoincrement, __ii TEXT unique, __a TEXT, __b TEXT, __c TEXT, __d TEXT, __e TEXT, __f TEXT, __g TEXT, __sp TEXT, __pp TEXT, __av TEXT, __vc TEXT)";
             sQLiteDatabase.execSQL("create table if not exists __sd(id INTEGER primary key autoincrement, __ii TEXT unique, __a TEXT, __b TEXT, __c TEXT, __d TEXT, __e TEXT, __f TEXT, __g TEXT, __sp TEXT, __pp TEXT, __av TEXT, __vc TEXT)");
         } catch (SQLException e) {
         }
@@ -77,50 +77,50 @@ public class f extends SQLiteOpenHelper {
 
     private void d(SQLiteDatabase sQLiteDatabase) {
         try {
-            this.f40745a = "create table if not exists __is(id INTEGER primary key autoincrement, __ii TEXT unique, __e TEXT, __sp TEXT, __pp TEXT, __av TEXT, __vc TEXT)";
+            this.f27054a = "create table if not exists __is(id INTEGER primary key autoincrement, __ii TEXT unique, __e TEXT, __sp TEXT, __pp TEXT, __av TEXT, __vc TEXT)";
             sQLiteDatabase.execSQL("create table if not exists __is(id INTEGER primary key autoincrement, __ii TEXT unique, __e TEXT, __sp TEXT, __pp TEXT, __av TEXT, __vc TEXT)");
         } catch (SQLException e) {
         }
     }
 
     private void e(SQLiteDatabase sQLiteDatabase) {
-        if (!h.a(sQLiteDatabase, e.d.f40740a, "__av")) {
-            h.a(sQLiteDatabase, e.d.f40740a, "__sp", "TEXT");
-            h.a(sQLiteDatabase, e.d.f40740a, "__pp", "TEXT");
-            h.a(sQLiteDatabase, e.d.f40740a, "__av", "TEXT");
-            h.a(sQLiteDatabase, e.d.f40740a, "__vc", "TEXT");
+        if (!h.a(sQLiteDatabase, e.d.f27049a, "__av")) {
+            h.a(sQLiteDatabase, e.d.f27049a, "__sp", "TEXT");
+            h.a(sQLiteDatabase, e.d.f27049a, "__pp", "TEXT");
+            h.a(sQLiteDatabase, e.d.f27049a, "__av", "TEXT");
+            h.a(sQLiteDatabase, e.d.f27049a, "__vc", "TEXT");
         }
-        if (!h.a(sQLiteDatabase, e.b.f40730a, "__av")) {
-            h.a(sQLiteDatabase, e.b.f40730a, "__av", "TEXT");
-            h.a(sQLiteDatabase, e.b.f40730a, "__vc", "TEXT");
+        if (!h.a(sQLiteDatabase, e.b.f27039a, "__av")) {
+            h.a(sQLiteDatabase, e.b.f27039a, "__av", "TEXT");
+            h.a(sQLiteDatabase, e.b.f27039a, "__vc", "TEXT");
         }
-        if (h.a(sQLiteDatabase, e.a.f40725a, "__av")) {
+        if (h.a(sQLiteDatabase, e.a.f27034a, "__av")) {
             return;
         }
-        h.a(sQLiteDatabase, e.a.f40725a, "__av", "TEXT");
-        h.a(sQLiteDatabase, e.a.f40725a, "__vc", "TEXT");
+        h.a(sQLiteDatabase, e.a.f27034a, "__av", "TEXT");
+        h.a(sQLiteDatabase, e.a.f27034a, "__vc", "TEXT");
     }
 
     private void f(SQLiteDatabase sQLiteDatabase) {
-        a(sQLiteDatabase, e.d.f40740a);
-        a(sQLiteDatabase, e.b.f40730a);
-        a(sQLiteDatabase, e.a.f40725a);
+        a(sQLiteDatabase, e.d.f27049a);
+        a(sQLiteDatabase, e.b.f27039a);
+        a(sQLiteDatabase, e.a.f27034a);
         a();
     }
 
     public void a() {
         try {
             SQLiteDatabase writableDatabase = getWritableDatabase();
-            if (!h.a(e.d.f40740a, writableDatabase)) {
+            if (!h.a(e.d.f27049a, writableDatabase)) {
                 c(writableDatabase);
             }
-            if (!h.a(e.c.f40735a, writableDatabase)) {
+            if (!h.a(e.c.f27044a, writableDatabase)) {
                 d(writableDatabase);
             }
-            if (!h.a(e.b.f40730a, writableDatabase)) {
+            if (!h.a(e.b.f27039a, writableDatabase)) {
                 b(writableDatabase);
             }
-            if (h.a(e.a.f40725a, writableDatabase)) {
+            if (h.a(e.a.f27034a, writableDatabase)) {
                 return;
             }
             a(writableDatabase);

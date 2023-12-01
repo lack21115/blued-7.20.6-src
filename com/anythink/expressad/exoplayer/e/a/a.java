@@ -11,11 +11,11 @@ import java.util.List;
 abstract class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f7273a = 8;
+    public static final int f4434a = 8;
     public static final int b = 12;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final int f7275c = 16;
+    public static final int f4436c = 16;
     public static final int d = 1;
     public static final int e = 0;
     public final int aU;
@@ -85,7 +85,7 @@ abstract class a {
     public static final int aq = af.f("mp4v");
 
     /* renamed from: ar  reason: collision with root package name */
-    public static final int f7274ar = af.f("stts");
+    public static final int f4435ar = af.f("stts");
     public static final int as = af.f("stss");
     public static final int at = af.f("ctts");
     public static final int au = af.f("stsc");
@@ -117,12 +117,12 @@ abstract class a {
 
     /* renamed from: com.anythink.expressad.exoplayer.e.a.a$a  reason: collision with other inner class name */
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/exoplayer/e/a/a$a.class */
-    static final class C0125a extends a {
+    static final class C0054a extends a {
         public final long aV;
         public final List<b> aW;
-        public final List<C0125a> aX;
+        public final List<C0054a> aX;
 
-        public C0125a(int i, long j) {
+        public C0054a(int i, long j) {
             super(i);
             this.aV = j;
             this.aW = new ArrayList();
@@ -160,8 +160,8 @@ abstract class a {
             return i6;
         }
 
-        public final void a(C0125a c0125a) {
-            this.aX.add(c0125a);
+        public final void a(C0054a c0054a) {
+            this.aX.add(c0054a);
         }
 
         public final void a(b bVar) {
@@ -184,7 +184,7 @@ abstract class a {
             }
         }
 
-        public final C0125a e(int i) {
+        public final C0054a e(int i) {
             int size = this.aX.size();
             int i2 = 0;
             while (true) {
@@ -192,9 +192,9 @@ abstract class a {
                 if (i3 >= size) {
                     return null;
                 }
-                C0125a c0125a = this.aX.get(i3);
-                if (c0125a.aU == i) {
-                    return c0125a;
+                C0054a c0054a = this.aX.get(i3);
+                if (c0054a.aU == i) {
+                    return c0054a;
                 }
                 i2 = i3 + 1;
             }

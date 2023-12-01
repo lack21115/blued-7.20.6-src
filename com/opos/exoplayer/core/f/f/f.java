@@ -9,17 +9,17 @@ import java.util.Map;
 final class f implements com.opos.exoplayer.core.f.d {
 
     /* renamed from: a  reason: collision with root package name */
-    private final c f25385a;
+    private final c f11697a;
     private final long[] b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final Map<String, b> f25386c;
+    private final Map<String, b> f11698c;
     private final Map<String, d> d;
 
     public f(c cVar, Map<String, b> map, Map<String, d> map2) {
-        this.f25385a = cVar;
+        this.f11697a = cVar;
         this.d = map2;
-        this.f25386c = map != null ? Collections.unmodifiableMap(map) : Collections.emptyMap();
+        this.f11698c = map != null ? Collections.unmodifiableMap(map) : Collections.emptyMap();
         this.b = cVar.b();
     }
 
@@ -44,6 +44,6 @@ final class f implements com.opos.exoplayer.core.f.d {
 
     @Override // com.opos.exoplayer.core.f.d
     public List<com.opos.exoplayer.core.f.b> b(long j) {
-        return this.f25385a.a(j, this.f25386c, this.d);
+        return this.f11697a.a(j, this.f11698c, this.d);
     }
 }

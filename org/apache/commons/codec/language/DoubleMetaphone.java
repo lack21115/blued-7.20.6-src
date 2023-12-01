@@ -1,9 +1,5 @@
 package org.apache.commons.codec.language;
 
-import androidx.exifinterface.media.ExifInterface;
-import com.opos.acs.st.STManager;
-import com.qq.e.comm.managers.setting.GlobalSetting;
-import com.tencent.mapsdk.internal.ma;
 import java.util.Locale;
 import org.apache.commons.codec.EncoderException;
 import org.apache.commons.codec.StringEncoder;
@@ -13,9 +9,9 @@ public class DoubleMetaphone implements StringEncoder {
     private static final String VOWELS = "AEIOUY";
     private int maxCodeLen = 4;
     private static final String[] SILENT_START = {"GN", "KN", "PN", "WR", "PS"};
-    private static final String[] L_R_N_M_B_H_F_V_W_SPACE = {"L", "R", "N", "M", "B", "H", "F", ExifInterface.GPS_MEASUREMENT_INTERRUPTED, "W", " "};
-    private static final String[] ES_EP_EB_EL_EY_IB_IL_IN_IE_EI_ER = {"ES", "EP", "EB", "EL", "EY", "IB", "IL", STManager.REGION_OF_IN, "IE", "EI", "ER"};
-    private static final String[] L_T_K_S_N_M_B_Z = {"L", ExifInterface.GPS_DIRECTION_TRUE, "K", ExifInterface.LATITUDE_SOUTH, "N", "M", "B", "Z"};
+    private static final String[] L_R_N_M_B_H_F_V_W_SPACE = {"L", "R", "N", "M", "B", "H", "F", "V", "W", " "};
+    private static final String[] ES_EP_EB_EL_EY_IB_IL_IN_IE_EI_ER = {"ES", "EP", "EB", "EL", "EY", "IB", "IL", "IN", "IE", "EI", "ER"};
+    private static final String[] L_T_K_S_N_M_B_Z = {"L", "T", "K", "S", "N", "M", "B", "Z"};
 
     /* loaded from: source-3503164-dex2jar.jar:org/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult.class */
     public class DoubleMetaphoneResult {
@@ -29,14 +25,14 @@ public class DoubleMetaphone implements StringEncoder {
             this.maxLength = i;
         }
 
-        public void append(char c2) {
-            appendPrimary(c2);
-            appendAlternate(c2);
+        public void append(char c) {
+            appendPrimary(c);
+            appendAlternate(c);
         }
 
-        public void append(char c2, char c3) {
-            appendPrimary(c2);
-            appendAlternate(c3);
+        public void append(char c, char c2) {
+            appendPrimary(c);
+            appendAlternate(c2);
         }
 
         public void append(String str) {
@@ -49,9 +45,9 @@ public class DoubleMetaphone implements StringEncoder {
             appendAlternate(str2);
         }
 
-        public void appendAlternate(char c2) {
+        public void appendAlternate(char c) {
             if (this.alternate.length() < this.maxLength) {
-                this.alternate.append(c2);
+                this.alternate.append(c);
             }
         }
 
@@ -64,9 +60,9 @@ public class DoubleMetaphone implements StringEncoder {
             }
         }
 
-        public void appendPrimary(char c2) {
+        public void appendPrimary(char c) {
             if (this.primary.length() < this.maxLength) {
-                this.primary.append(c2);
+                this.primary.append(c);
             }
         }
 
@@ -339,12 +335,12 @@ public class DoubleMetaphone implements StringEncoder {
 
     private int handleCC(String str, DoubleMetaphoneResult doubleMetaphoneResult, int i) {
         int i2 = i + 2;
-        if (!contains(str, i2, 1, "I", ExifInterface.LONGITUDE_EAST, "H") || contains(str, i2, 2, "HU")) {
+        if (!contains(str, i2, 1, "I", "E", "H") || contains(str, i2, 2, "HU")) {
             doubleMetaphoneResult.append('K');
             return i2;
         }
         if ((i == 1 && charAt(str, i - 1) == 'A') || contains(str, i - 1, 5, "UCCEE", "UCCES")) {
-            doubleMetaphoneResult.append(GlobalSetting.KS_SDK_WRAPPER);
+            doubleMetaphoneResult.append("KS");
         } else {
             doubleMetaphoneResult.append('X');
         }
@@ -359,7 +355,7 @@ public class DoubleMetaphone implements StringEncoder {
         } else if (!conditionCH1(str, i)) {
             if (i <= 0) {
                 doubleMetaphoneResult.append('X');
-            } else if (contains(str, 0, 2, ma.q)) {
+            } else if (contains(str, 0, 2, "MC")) {
                 doubleMetaphoneResult.append('K');
             } else {
                 doubleMetaphoneResult.append('X', 'K');
@@ -381,7 +377,7 @@ public class DoubleMetaphone implements StringEncoder {
             return i + 1;
         }
         int i2 = i + 2;
-        if (contains(str, i2, 1, "I", ExifInterface.LONGITUDE_EAST, "Y")) {
+        if (contains(str, i2, 1, "I", "E", "Y")) {
             doubleMetaphoneResult.append('J');
             return i + 3;
         }
@@ -409,11 +405,11 @@ public class DoubleMetaphone implements StringEncoder {
         } else {
             if ((contains(str, i2, 2, "ER") || charAt(str, i2) == 'Y') && !contains(str, 0, 6, "DANGER", "RANGER", "MANGER")) {
                 int i3 = i - 1;
-                if (!contains(str, i3, 1, ExifInterface.LONGITUDE_EAST, "I") && !contains(str, i3, 3, "RGY", "OGY")) {
+                if (!contains(str, i3, 1, "E", "I") && !contains(str, i3, 3, "RGY", "OGY")) {
                     doubleMetaphoneResult.append('K', 'J');
                 }
             }
-            if (!contains(str, i2, 1, ExifInterface.LONGITUDE_EAST, "I", "Y") && !contains(str, i - 1, 4, "AGGI", "OGGI")) {
+            if (!contains(str, i2, 1, "E", "I", "Y") && !contains(str, i - 1, 4, "AGGI", "OGGI")) {
                 if (charAt(str, i2) == 'G') {
                     doubleMetaphoneResult.append('K');
                     return i + 2;
@@ -443,7 +439,7 @@ public class DoubleMetaphone implements StringEncoder {
             doubleMetaphoneResult.append('K');
             return i2;
         } else if ((i <= 1 || !contains(str, i - 2, 1, "B", "H", "D")) && ((i <= 2 || !contains(str, i - 3, 1, "B", "H", "D")) && (i <= 3 || !contains(str, i - 4, 1, "B", "H")))) {
-            if (i > 2 && charAt(str, i - 1) == 'U' && contains(str, i - 3, 1, "C", "G", "L", "R", ExifInterface.GPS_DIRECTION_TRUE)) {
+            if (i > 2 && charAt(str, i - 1) == 'U' && contains(str, i - 3, 1, "C", "G", "L", "R", "T")) {
                 doubleMetaphoneResult.append('F');
             } else if (i > 0 && charAt(str, i - 1) != 'I') {
                 doubleMetaphoneResult.append('K');
@@ -480,7 +476,7 @@ public class DoubleMetaphone implements StringEncoder {
                 }
                 if (i == str.length() - 1) {
                     doubleMetaphoneResult.append('J', ' ');
-                } else if (!contains(str, i + 1, 1, L_T_K_S_N_M_B_Z) && !contains(str, i3, 1, ExifInterface.LATITUDE_SOUTH, "K", "L")) {
+                } else if (!contains(str, i + 1, 1, L_T_K_S_N_M_B_Z) && !contains(str, i3, 1, "S", "K", "L")) {
                     doubleMetaphoneResult.append('J');
                 }
             } else {
@@ -541,7 +537,7 @@ public class DoubleMetaphone implements StringEncoder {
         if (contains(r9, r0, 1, "Z") != false) goto L16;
      */
     /* JADX WARN: Code restructure failed: missing block: B:44:0x0119, code lost:
-        if (contains(r9, r0, 1, androidx.exifinterface.media.ExifInterface.LATITUDE_SOUTH, "Z") != false) goto L16;
+        if (contains(r9, r0, 1, "S", "Z") != false) goto L16;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -570,7 +566,7 @@ public class DoubleMetaphone implements StringEncoder {
             } else {
                 doubleMetaphoneResult.append('X', 'S');
             }
-        } else if (contains(str, i2, 1, "I", ExifInterface.LONGITUDE_EAST, "Y")) {
+        } else if (contains(str, i2, 1, "I", "E", "Y")) {
             doubleMetaphoneResult.append('S');
         } else {
             doubleMetaphoneResult.append("SK");
@@ -582,13 +578,13 @@ public class DoubleMetaphone implements StringEncoder {
         if (contains(str, i, 4, "TION")) {
             doubleMetaphoneResult.append('X');
         } else if (!contains(str, i, 3, "TIA", "TCH")) {
-            if (!contains(str, i, 2, STManager.REGION_OF_TH) && !contains(str, i, 3, "TTH")) {
+            if (!contains(str, i, 2, "TH") && !contains(str, i, 3, "TTH")) {
                 doubleMetaphoneResult.append('T');
                 int i2 = i + 1;
-                return contains(str, i2, 1, ExifInterface.GPS_DIRECTION_TRUE, "D") ? i + 2 : i2;
+                return contains(str, i2, 1, "T", "D") ? i + 2 : i2;
             }
             int i3 = i + 2;
-            if (contains(str, i3, 2, ma.u, "AM") || contains(str, 0, 4, "VAN ", "VON ") || contains(str, 0, 3, "SCH")) {
+            if (contains(str, i3, 2, "OM", "AM") || contains(str, 0, 4, "VAN ", "VON ") || contains(str, 0, 3, "SCH")) {
                 doubleMetaphoneResult.append('T');
                 return i3;
             }
@@ -619,7 +615,7 @@ public class DoubleMetaphone implements StringEncoder {
             } else {
                 i2 = 4;
                 if (contains(str, i, 4, "WICZ", "WITZ")) {
-                    doubleMetaphoneResult.append(ma.g, "FX");
+                    doubleMetaphoneResult.append("TS", "FX");
                 }
             }
             return i + 1;
@@ -634,7 +630,7 @@ public class DoubleMetaphone implements StringEncoder {
             return i + 1;
         }
         if (i != str.length() - 1 || (!contains(str, i - 3, 3, "IAU", "EAU") && !contains(str, i - 2, 2, "AU", "OU"))) {
-            doubleMetaphoneResult.append(GlobalSetting.KS_SDK_WRAPPER);
+            doubleMetaphoneResult.append("KS");
         }
         int i2 = i + 1;
         return contains(str, i2, 1, "C", "X") ? i + 2 : i2;
@@ -647,7 +643,7 @@ public class DoubleMetaphone implements StringEncoder {
             return i + 2;
         }
         if (contains(str, i2, 2, "ZO", "ZI", "ZA") || (z && i > 0 && charAt(str, i - 1) != 'T')) {
-            doubleMetaphoneResult.append(ExifInterface.LATITUDE_SOUTH, ma.g);
+            doubleMetaphoneResult.append("S", "TS");
         } else {
             doubleMetaphoneResult.append('S');
         }
@@ -678,8 +674,8 @@ public class DoubleMetaphone implements StringEncoder {
         return str.indexOf(87) > -1 || str.indexOf(75) > -1 || str.indexOf("CZ") > -1 || str.indexOf("WITZ") > -1;
     }
 
-    private boolean isVowel(char c2) {
-        return VOWELS.indexOf(c2) != -1;
+    private boolean isVowel(char c) {
+        return VOWELS.indexOf(c) != -1;
     }
 
     protected char charAt(String str, int i) {

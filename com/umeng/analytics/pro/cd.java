@@ -6,11 +6,11 @@ import java.io.Serializable;
 public class cd implements Serializable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final boolean f40683a;
+    private final boolean f26992a;
     public final byte b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final String f40684c;
+    private final String f26993c;
     private final boolean d;
 
     public cd(byte b) {
@@ -19,24 +19,24 @@ public class cd implements Serializable {
 
     public cd(byte b, String str) {
         this.b = b;
-        this.f40683a = true;
-        this.f40684c = str;
+        this.f26992a = true;
+        this.f26993c = str;
         this.d = false;
     }
 
     public cd(byte b, boolean z) {
         this.b = b;
-        this.f40683a = false;
-        this.f40684c = null;
+        this.f26992a = false;
+        this.f26993c = null;
         this.d = z;
     }
 
     public boolean a() {
-        return this.f40683a;
+        return this.f26992a;
     }
 
     public String b() {
-        return this.f40684c;
+        return this.f26993c;
     }
 
     public boolean c() {

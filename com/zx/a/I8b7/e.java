@@ -8,11 +8,11 @@ import javax.crypto.SecretKey;
 public abstract class e {
 
     /* renamed from: a  reason: collision with root package name */
-    public static SecretKey f42118a;
+    public static SecretKey f28427a;
     public static byte[] b;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final SecureRandom f42119c = new SecureRandom();
+    public static final SecureRandom f28428c = new SecureRandom();
 
     @Java2C.Method2C
     public static native synchronized String a();

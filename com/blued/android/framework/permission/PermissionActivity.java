@@ -1,11 +1,11 @@
 package com.blued.android.framework.permission;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.text.style.ForegroundColorSpan;
@@ -30,17 +30,16 @@ import java.util.Iterator;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/framework/permission/PermissionActivity.class */
 public class PermissionActivity extends BaseFragmentActivity {
-
-    /* renamed from: c  reason: collision with root package name */
-    private String[] f9821c;
+    private String[] c;
     private ConfirmDialog d;
     private AuxiliaryDialogFragment e;
 
+    /* JADX WARN: Multi-variable type inference failed */
     private void a(ArrayList<String> arrayList) {
         ConfirmDialog confirmDialog = this.d;
         if (confirmDialog == null || !confirmDialog.c()) {
-            String a2 = PermissionManager.a(this, arrayList);
-            String string = getResources().getString(R.string.permission, AppUtils.a(this), a2);
+            String a = PermissionManager.a((Context) this, arrayList);
+            String string = getResources().getString(R.string.permission, AppUtils.a((Context) this), a);
             View inflate = LayoutInflater.from(this).inflate(R.layout.dialog_permission, (ViewGroup) null);
             inflate.setVisibility(8);
             ((TextView) inflate.findViewById(R.id.tv_title)).setText(R.string.permission_title);
@@ -62,19 +61,19 @@ public class PermissionActivity extends BaseFragmentActivity {
                     if (PermissionActivity.this.d != null && PermissionActivity.this.d.c()) {
                         PermissionActivity.this.d.a();
                     }
-                    Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+                    Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
                     intent.setData(Uri.fromParts("package", PermissionActivity.this.getPackageName(), null));
                     PermissionActivity.this.startActivityForResult(intent, 2001);
                 }
             });
             TextView textView3 = (TextView) inflate.findViewById(R.id.tv_des);
-            if (TextUtils.isEmpty(string) || TextUtils.isEmpty(a2)) {
+            if (TextUtils.isEmpty(string) || TextUtils.isEmpty(a)) {
                 textView3.setText(string);
             } else {
-                int indexOf = string.indexOf(a2);
+                int indexOf = string.indexOf(a);
                 if (indexOf >= 0) {
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(string);
-                    spannableStringBuilder.setSpan(new ForegroundColorSpan(Color.parseColor("#2593f4")), indexOf, a2.length() + indexOf, 33);
+                    spannableStringBuilder.setSpan(new ForegroundColorSpan(Color.parseColor("#2593f4")), indexOf, a.length() + indexOf, 33);
                     textView3.setText(spannableStringBuilder);
                 } else {
                     textView3.setText(string);
@@ -132,7 +131,7 @@ public class PermissionActivity extends BaseFragmentActivity {
             Log.v("PermissionActivity", "blued permission Denied.");
         }
         j();
-        PermissionManager.b(this.f9821c);
+        PermissionManager.b(this.c);
     }
 
     private void j() {
@@ -156,13 +155,12 @@ public class PermissionActivity extends BaseFragmentActivity {
         finish();
     }
 
-    @Override // androidx.fragment.app.FragmentActivity, androidx.activity.ComponentActivity, android.app.Activity
     public void onActivityResult(int i, int i2, Intent intent) {
         if (AppInfo.m()) {
             Log.v("PermissionActivity", "onActivityResult requestCode:" + i);
         }
         if (i == 2001) {
-            if (PermissionManager.a(this.f9821c)) {
+            if (PermissionManager.a(this.c)) {
                 h();
             } else {
                 i();
@@ -174,7 +172,8 @@ public class PermissionActivity extends BaseFragmentActivity {
         super.onActivityResult(i, i2, intent);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragmentActivity, androidx.fragment.app.FragmentActivity, androidx.activity.ComponentActivity, androidx.core.app.ComponentActivity, android.app.Activity
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // com.blued.android.core.ui.BaseFragmentActivity
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         overridePendingTransition(0, 0);
@@ -185,7 +184,7 @@ public class PermissionActivity extends BaseFragmentActivity {
             Bundle extras = getIntent().getExtras();
             if (extras != null) {
                 String[] stringArray = extras.getStringArray("com.blued.android.framework.reqeust_permission_code");
-                this.f9821c = stringArray;
+                this.c = stringArray;
                 if (stringArray != null && stringArray.length > 0) {
                     ActivityCompat.requestPermissions(this, stringArray, 2002);
                     if (AppInfo.p()) {
@@ -206,7 +205,7 @@ public class PermissionActivity extends BaseFragmentActivity {
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragmentActivity, androidx.fragment.app.FragmentActivity, androidx.activity.ComponentActivity, androidx.core.app.ActivityCompat.OnRequestPermissionsResultCallback
+    @Override // com.blued.android.core.ui.BaseFragmentActivity
     public void onRequestPermissionsResult(int i, String[] strArr, int[] iArr) {
         if (AppInfo.m()) {
             Log.i("PermissionActivity", "onRequestPermissionsResult:" + i + ", " + Arrays.toString(strArr) + ", " + Arrays.toString(iArr));
@@ -263,7 +262,7 @@ public class PermissionActivity extends BaseFragmentActivity {
                     }
                 }
             }
-            this.f9821c = (String[]) arrayList4.toArray(new String[arrayList4.size()]);
+            this.c = (String[]) arrayList4.toArray(new String[arrayList4.size()]);
             a(arrayList4);
         }
     }

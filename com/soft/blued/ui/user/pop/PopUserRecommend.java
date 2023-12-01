@@ -25,39 +25,38 @@ public final class PopUserRecommend extends BottomPopupView {
     private final String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final List<UserFindResult> f34252c;
+    private final List<UserFindResult> f20561c;
     private boolean d;
     private final LogData e;
     private final IRequestHost f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     /* JADX WARN: Multi-variable type inference failed */
-    public PopUserRecommend(Context context, String uid, List<? extends UserFindResult> dataList, boolean z, LogData logData, IRequestHost requestHost) {
+    public PopUserRecommend(Context context, String str, List<? extends UserFindResult> list, boolean z, LogData logData, IRequestHost iRequestHost) {
         super(context);
         Intrinsics.e(context, "context");
-        Intrinsics.e(uid, "uid");
-        Intrinsics.e(dataList, "dataList");
+        Intrinsics.e(str, "uid");
+        Intrinsics.e(list, "dataList");
         Intrinsics.e(logData, "logData");
-        Intrinsics.e(requestHost, "requestHost");
-        this.b = uid;
-        this.f34252c = dataList;
+        Intrinsics.e(iRequestHost, "requestHost");
+        this.b = str;
+        this.f20561c = list;
         this.d = z;
         this.e = logData;
-        this.f = requestHost;
+        this.f = iRequestHost;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(PopUserRecommend this$0, View view) {
+    public static final void a(PopUserRecommend popUserRecommend, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
+        Intrinsics.e(popUserRecommend, "this$0");
         EventTrackPersonalProfile.d(PersonalProfileProtos.Event.PERSONAL_SAME_POP_MORE_CLICK, "");
         RecommendUserMoreFragment.Companion companion = RecommendUserMoreFragment.b;
-        Context context = this$0.getContext();
+        Context context = popUserRecommend.getContext();
         Intrinsics.c(context, "context");
-        companion.a(context, this$0.b, this$0.e);
+        companion.a(context, popUserRecommend.b, popUserRecommend.e);
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.BottomPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
     public void b() {
         super.b();
         this.e.userFrom = "recommend_same";
@@ -81,14 +80,13 @@ public final class PopUserRecommend extends BottomPopupView {
     }
 
     public final List<UserFindResult> getDataList() {
-        return this.f34252c;
+        return this.f20561c;
     }
 
     public final boolean getHasMore() {
         return this.d;
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.BottomPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
     public int getImplLayoutId() {
         return R.layout.pop_user_recommend;
     }

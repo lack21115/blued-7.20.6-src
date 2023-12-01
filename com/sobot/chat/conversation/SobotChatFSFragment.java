@@ -37,9 +37,9 @@ import androidx.core.content.ContextCompat;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import com.anythink.expressad.foundation.h.i;
 import com.anythink.expressad.video.module.a.a.m;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.bytedance.applog.tracker.Tracker;
 import com.cdo.oaps.ad.wrapper.BaseWrapper;
+import com.huawei.hms.ads.fw;
 import com.igexin.push.core.b;
 import com.sina.weibo.sdk.constant.WBConstants;
 import com.sobot.chat.SobotApi;
@@ -1316,7 +1316,7 @@ public class SobotChatFSFragment extends SobotChatBaseFragment implements View.O
                     SobotChatFSFragment sobotChatFSFragment = SobotChatFSFragment.this;
                     sobotChatFSFragment.type = Integer.parseInt(sobotChatFSFragment.initModel.getType());
                     Context context = SobotChatFSFragment.this.mAppContext;
-                    SharedPreferencesUtil.saveIntData(context, SobotChatFSFragment.this.info.getApp_key() + BridgeUtil.UNDERLINE_STR + ZhiChiConstant.initType, SobotChatFSFragment.this.type);
+                    SharedPreferencesUtil.saveIntData(context, SobotChatFSFragment.this.info.getApp_key() + "_" + ZhiChiConstant.initType, SobotChatFSFragment.this.type);
                     SobotChatFSFragment.this.queryCids();
                     SobotChatFSFragment.this.sobotCustomMenu();
                     SobotChatFSFragment.this.showRobotLayout();
@@ -1330,30 +1330,30 @@ public class SobotChatFSFragment extends SobotChatBaseFragment implements View.O
                     SharedPreferencesUtil.saveBooleanData(SobotChatFSFragment.this.mAppContext, ZhiChiConstant.sobot_leave_msg_flag, SobotChatFSFragment.this.initModel.isMsgToTicketFlag());
                     SharedPreferencesUtil.saveStringData(SobotChatFSFragment.this.mAppContext, "lastCid", SobotChatFSFragment.this.initModel.getCid());
                     Context context2 = SobotChatFSFragment.this.mAppContext;
-                    SharedPreferencesUtil.saveStringData(context2, SobotChatFSFragment.this.info.getApp_key() + BridgeUtil.UNDERLINE_STR + ZhiChiConstant.sobot_last_current_partnerId, SobotChatFSFragment.this.info.getPartnerid());
+                    SharedPreferencesUtil.saveStringData(context2, SobotChatFSFragment.this.info.getApp_key() + "_" + ZhiChiConstant.sobot_last_current_partnerId, SobotChatFSFragment.this.info.getPartnerid());
                     SharedPreferencesUtil.saveOnlyStringData(SobotChatFSFragment.this.mAppContext, ZhiChiConstant.sobot_last_current_appkey, SobotChatFSFragment.this.info.getApp_key());
                     SharedPreferencesUtil.saveObject(SobotChatFSFragment.this.mAppContext, ZhiChiConstant.sobot_last_current_info, SobotChatFSFragment.this.info);
                     SharedPreferencesUtil.saveObject(SobotChatFSFragment.this.mAppContext, ZhiChiConstant.sobot_last_current_initModel, SobotChatFSFragment.this.initModel);
                     Context context3 = SobotChatFSFragment.this.mAppContext;
-                    SharedPreferencesUtil.saveStringData(context3, SobotChatFSFragment.this.info.getApp_key() + BridgeUtil.UNDERLINE_STR + ZhiChiConstant.SOBOT_RECEPTIONISTID, TextUtils.isEmpty(SobotChatFSFragment.this.info.getChoose_adminid()) ? "" : SobotChatFSFragment.this.info.getChoose_adminid());
+                    SharedPreferencesUtil.saveStringData(context3, SobotChatFSFragment.this.info.getApp_key() + "_" + ZhiChiConstant.SOBOT_RECEPTIONISTID, TextUtils.isEmpty(SobotChatFSFragment.this.info.getChoose_adminid()) ? "" : SobotChatFSFragment.this.info.getChoose_adminid());
                     Context context4 = SobotChatFSFragment.this.mAppContext;
-                    SharedPreferencesUtil.saveStringData(context4, SobotChatFSFragment.this.info.getApp_key() + BridgeUtil.UNDERLINE_STR + ZhiChiConstant.SOBOT_ROBOT_CODE, TextUtils.isEmpty(SobotChatFSFragment.this.info.getRobotCode()) ? "" : SobotChatFSFragment.this.info.getRobotCode());
+                    SharedPreferencesUtil.saveStringData(context4, SobotChatFSFragment.this.info.getApp_key() + "_" + ZhiChiConstant.SOBOT_ROBOT_CODE, TextUtils.isEmpty(SobotChatFSFragment.this.info.getRobotCode()) ? "" : SobotChatFSFragment.this.info.getRobotCode());
                     Context context5 = SobotChatFSFragment.this.mAppContext;
-                    SharedPreferencesUtil.saveStringData(context5, SobotChatFSFragment.this.info.getApp_key() + BridgeUtil.UNDERLINE_STR + ZhiChiConstant.sobot_last_current_remark, TextUtils.isEmpty(SobotChatFSFragment.this.info.getRemark()) ? "" : SobotChatFSFragment.this.info.getRemark());
+                    SharedPreferencesUtil.saveStringData(context5, SobotChatFSFragment.this.info.getApp_key() + "_" + ZhiChiConstant.sobot_last_current_remark, TextUtils.isEmpty(SobotChatFSFragment.this.info.getRemark()) ? "" : SobotChatFSFragment.this.info.getRemark());
                     Context context6 = SobotChatFSFragment.this.mAppContext;
-                    SharedPreferencesUtil.saveStringData(context6, SobotChatFSFragment.this.info.getApp_key() + BridgeUtil.UNDERLINE_STR + ZhiChiConstant.sobot_last_current_groupid, TextUtils.isEmpty(SobotChatFSFragment.this.info.getGroupid()) ? "" : SobotChatFSFragment.this.info.getGroupid());
+                    SharedPreferencesUtil.saveStringData(context6, SobotChatFSFragment.this.info.getApp_key() + "_" + ZhiChiConstant.sobot_last_current_groupid, TextUtils.isEmpty(SobotChatFSFragment.this.info.getGroupid()) ? "" : SobotChatFSFragment.this.info.getGroupid());
                     Context context7 = SobotChatFSFragment.this.mAppContext;
-                    SharedPreferencesUtil.saveIntData(context7, SobotChatFSFragment.this.info.getApp_key() + BridgeUtil.UNDERLINE_STR + ZhiChiConstant.sobot_last_current_service_mode, SobotChatFSFragment.this.info.getService_mode());
+                    SharedPreferencesUtil.saveIntData(context7, SobotChatFSFragment.this.info.getApp_key() + "_" + ZhiChiConstant.sobot_last_current_service_mode, SobotChatFSFragment.this.info.getService_mode());
                     Context context8 = SobotChatFSFragment.this.mAppContext;
-                    SharedPreferencesUtil.saveStringData(context8, SobotChatFSFragment.this.info.getApp_key() + BridgeUtil.UNDERLINE_STR + ZhiChiConstant.sobot_last_current_customer_fields, TextUtils.isEmpty(SobotChatFSFragment.this.info.getCustomer_fields()) ? "" : SobotChatFSFragment.this.info.getCustomer_fields());
+                    SharedPreferencesUtil.saveStringData(context8, SobotChatFSFragment.this.info.getApp_key() + "_" + ZhiChiConstant.sobot_last_current_customer_fields, TextUtils.isEmpty(SobotChatFSFragment.this.info.getCustomer_fields()) ? "" : SobotChatFSFragment.this.info.getCustomer_fields());
                     Context context9 = SobotChatFSFragment.this.mAppContext;
-                    SharedPreferencesUtil.saveStringData(context9, SobotChatFSFragment.this.info.getApp_key() + BridgeUtil.UNDERLINE_STR + ZhiChiConstant.sobot_last_current_isvip, TextUtils.isEmpty(SobotChatFSFragment.this.info.getIsVip()) ? "" : SobotChatFSFragment.this.info.getIsVip());
+                    SharedPreferencesUtil.saveStringData(context9, SobotChatFSFragment.this.info.getApp_key() + "_" + ZhiChiConstant.sobot_last_current_isvip, TextUtils.isEmpty(SobotChatFSFragment.this.info.getIsVip()) ? "" : SobotChatFSFragment.this.info.getIsVip());
                     Context context10 = SobotChatFSFragment.this.mAppContext;
-                    SharedPreferencesUtil.saveStringData(context10, SobotChatFSFragment.this.info.getApp_key() + BridgeUtil.UNDERLINE_STR + ZhiChiConstant.sobot_last_current_vip_level, TextUtils.isEmpty(SobotChatFSFragment.this.info.getVip_level()) ? "" : SobotChatFSFragment.this.info.getVip_level());
+                    SharedPreferencesUtil.saveStringData(context10, SobotChatFSFragment.this.info.getApp_key() + "_" + ZhiChiConstant.sobot_last_current_vip_level, TextUtils.isEmpty(SobotChatFSFragment.this.info.getVip_level()) ? "" : SobotChatFSFragment.this.info.getVip_level());
                     Context context11 = SobotChatFSFragment.this.mAppContext;
-                    SharedPreferencesUtil.saveStringData(context11, SobotChatFSFragment.this.info.getApp_key() + BridgeUtil.UNDERLINE_STR + ZhiChiConstant.sobot_last_current_user_label, TextUtils.isEmpty(SobotChatFSFragment.this.info.getUser_label()) ? "" : SobotChatFSFragment.this.info.getUser_label());
+                    SharedPreferencesUtil.saveStringData(context11, SobotChatFSFragment.this.info.getApp_key() + "_" + ZhiChiConstant.sobot_last_current_user_label, TextUtils.isEmpty(SobotChatFSFragment.this.info.getUser_label()) ? "" : SobotChatFSFragment.this.info.getUser_label());
                     Context context12 = SobotChatFSFragment.this.mAppContext;
-                    SharedPreferencesUtil.saveStringData(context12, SobotChatFSFragment.this.info.getApp_key() + BridgeUtil.UNDERLINE_STR + ZhiChiConstant.sobot_last_current_robot_alias, TextUtils.isEmpty(SobotChatFSFragment.this.info.getRobot_alias()) ? "" : SobotChatFSFragment.this.info.getRobot_alias());
+                    SharedPreferencesUtil.saveStringData(context12, SobotChatFSFragment.this.info.getApp_key() + "_" + ZhiChiConstant.sobot_last_current_robot_alias, TextUtils.isEmpty(SobotChatFSFragment.this.info.getRobot_alias()) ? "" : SobotChatFSFragment.this.info.getRobot_alias());
                     if (SobotChatFSFragment.this.initModel.getAnnounceMsgFlag() && !SobotChatFSFragment.this.initModel.isAnnounceTopFlag() && !TextUtils.isEmpty(SobotChatFSFragment.this.initModel.getAnnounceMsg())) {
                         SobotChatFSFragment.this.messageAdapter.justAddData(ChatUtils.getNoticeModel(SobotChatFSFragment.this.getContext(), SobotChatFSFragment.this.initModel));
                         SobotChatFSFragment.this.messageAdapter.notifyDataSetChanged();
@@ -1446,14 +1446,14 @@ public class SobotChatFSFragment extends SobotChatBaseFragment implements View.O
             return;
         }
         Context context = this.mAppContext;
-        int intData = SharedPreferencesUtil.getIntData(context, this.info.getApp_key() + BridgeUtil.UNDERLINE_STR + ZhiChiConstant.initType, -1);
+        int intData = SharedPreferencesUtil.getIntData(context, this.info.getApp_key() + "_" + ZhiChiConstant.initType, -1);
         if (this.info.getService_mode() >= 0 && intData != this.info.getService_mode()) {
             resetUser(i);
         } else if (TextUtils.isEmpty(this.info.getGroupid())) {
             keepSession(messageList);
         } else {
             Context context2 = this.mAppContext;
-            if (SharedPreferencesUtil.getStringData(context2, this.info.getApp_key() + BridgeUtil.UNDERLINE_STR + ZhiChiConstant.sobot_last_login_group_id, "").equals(this.info.getGroupid())) {
+            if (SharedPreferencesUtil.getStringData(context2, this.info.getApp_key() + "_" + ZhiChiConstant.sobot_last_login_group_id, "").equals(this.info.getGroupid())) {
                 keepSession(messageList);
             } else {
                 resetUser(i);
@@ -1539,7 +1539,7 @@ public class SobotChatFSFragment extends SobotChatBaseFragment implements View.O
                         if (i2 >= SobotChatFSFragment.this.list_group.size()) {
                             z = false;
                             break;
-                        } else if ("true".equals(((ZhiChiGroupBase) SobotChatFSFragment.this.list_group.get(i2)).isOnline())) {
+                        } else if (fw.Code.equals(((ZhiChiGroupBase) SobotChatFSFragment.this.list_group.get(i2)).isOnline())) {
                             z = true;
                             break;
                         } else {
@@ -1794,7 +1794,7 @@ public class SobotChatFSFragment extends SobotChatBaseFragment implements View.O
             AnimationUtil.rotate(this.image_reLoading);
             this.lv_message.setPullRefreshEnable(true);
             Context context = this.mAppContext;
-            this.info.setChoose_adminid(SharedPreferencesUtil.getStringData(context, this.info.getApp_key() + BridgeUtil.UNDERLINE_STR + ZhiChiConstant.SOBOT_RECEPTIONISTID, ""));
+            this.info.setChoose_adminid(SharedPreferencesUtil.getStringData(context, this.info.getApp_key() + "_" + ZhiChiConstant.SOBOT_RECEPTIONISTID, ""));
             resetUser(i);
         } else if (ChatUtils.checkConfigChange(this.mAppContext, this.info.getApp_key(), this.info)) {
             resetUser(i);
@@ -1926,7 +1926,7 @@ public class SobotChatFSFragment extends SobotChatBaseFragment implements View.O
             statusFlag = 0;
         }
         Context context = this.mAppContext;
-        SharedPreferencesUtil.saveIntData(context, this.info.getApp_key() + BridgeUtil.UNDERLINE_STR + ZhiChiConstant.initType, this.type);
+        SharedPreferencesUtil.saveIntData(context, this.info.getApp_key() + "_" + ZhiChiConstant.initType, this.type);
         StringBuilder sb = new StringBuilder();
         sb.append("sobot----type---->");
         sb.append(this.type);
@@ -2207,7 +2207,7 @@ public class SobotChatFSFragment extends SobotChatBaseFragment implements View.O
         this.zhiChiApi.disconnChannel();
         clearCache();
         Context context = this.mAppContext;
-        SharedPreferencesUtil.saveStringData(context, this.info.getApp_key() + BridgeUtil.UNDERLINE_STR + ZhiChiConstant.sobot_last_login_group_id, TextUtils.isEmpty(this.info.getGroupid()) ? "" : this.info.getGroupid());
+        SharedPreferencesUtil.saveStringData(context, this.info.getApp_key() + "_" + ZhiChiConstant.sobot_last_login_group_id, TextUtils.isEmpty(this.info.getGroupid()) ? "" : this.info.getGroupid());
         customerInit(i);
     }
 

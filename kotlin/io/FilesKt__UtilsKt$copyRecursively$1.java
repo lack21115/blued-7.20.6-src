@@ -10,9 +10,7 @@ import kotlin.jvm.internal.Lambda;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/io/FilesKt__UtilsKt$copyRecursively$1.class */
 final class FilesKt__UtilsKt$copyRecursively$1 extends Lambda implements Function2 {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final FilesKt__UtilsKt$copyRecursively$1 f42501a = new FilesKt__UtilsKt$copyRecursively$1();
+    public static final FilesKt__UtilsKt$copyRecursively$1 a = new FilesKt__UtilsKt$copyRecursively$1();
 
     FilesKt__UtilsKt$copyRecursively$1() {
         super(2);

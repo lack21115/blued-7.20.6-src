@@ -24,22 +24,22 @@ public class MediaButtonReceiver extends BroadcastReceiver {
     static class MediaButtonConnectionCallback extends MediaBrowserCompat.ConnectionCallback {
 
         /* renamed from: a  reason: collision with root package name */
-        private final Context f3173a;
+        private final Context f3125a;
         private final Intent b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final BroadcastReceiver.PendingResult f3174c;
+        private final BroadcastReceiver.PendingResult f3126c;
         private MediaBrowserCompat d;
 
         MediaButtonConnectionCallback(Context context, Intent intent, BroadcastReceiver.PendingResult pendingResult) {
-            this.f3173a = context;
+            this.f3125a = context;
             this.b = intent;
-            this.f3174c = pendingResult;
+            this.f3126c = pendingResult;
         }
 
         private void a() {
             this.d.disconnect();
-            this.f3174c.finish();
+            this.f3126c.finish();
         }
 
         void a(MediaBrowserCompat mediaBrowserCompat) {
@@ -49,7 +49,7 @@ public class MediaButtonReceiver extends BroadcastReceiver {
         @Override // android.support.v4.media.MediaBrowserCompat.ConnectionCallback
         public void onConnected() {
             try {
-                new MediaControllerCompat(this.f3173a, this.d.getSessionToken()).dispatchMediaButtonEvent((KeyEvent) this.b.getParcelableExtra(Intent.EXTRA_KEY_EVENT));
+                new MediaControllerCompat(this.f3125a, this.d.getSessionToken()).dispatchMediaButtonEvent((KeyEvent) this.b.getParcelableExtra(Intent.EXTRA_KEY_EVENT));
             } catch (RemoteException e) {
                 Log.e("MediaButtonReceiver", "Failed to create a media controller", e);
             }

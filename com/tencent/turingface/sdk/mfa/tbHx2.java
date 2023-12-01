@@ -9,14 +9,14 @@ import java.util.concurrent.LinkedBlockingQueue;
 public final class tbHx2 implements ServiceConnection {
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f39995a = false;
+    public boolean f26304a = false;
     public final LinkedBlockingQueue<IBinder> b = new LinkedBlockingQueue<>(1);
 
     public final IBinder a() throws InterruptedException {
-        if (this.f39995a) {
+        if (this.f26304a) {
             throw new IllegalStateException();
         }
-        this.f39995a = true;
+        this.f26304a = true;
         return this.b.take();
     }
 

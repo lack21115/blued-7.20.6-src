@@ -9,11 +9,11 @@ import com.jungly.gridpasswordview.GridPasswordView;
 public class DialogWith6PW {
 
     /* renamed from: a  reason: collision with root package name */
-    public AlertDialog f34868a;
+    public AlertDialog f21177a;
     public GridPasswordView b;
 
     /* renamed from: c  reason: collision with root package name */
-    public TextView f34869c;
+    public TextView f21178c;
     public TextView d;
     public ScrollView e;
 }

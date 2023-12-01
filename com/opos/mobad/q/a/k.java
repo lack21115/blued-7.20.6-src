@@ -57,7 +57,7 @@ public class k extends c {
         this.k.c().setVisibility(0);
     }
 
-    @Override // com.opos.mobad.q.a.c, com.opos.mobad.q.a.m, com.opos.mobad.n.a.InterfaceC0708a
+    @Override // com.opos.mobad.q.a.c, com.opos.mobad.q.a.m, com.opos.mobad.n.a.InterfaceC0538a
     public void a(long j, long j2) {
         super.a(j, j2);
         h();
@@ -65,8 +65,8 @@ public class k extends c {
 
     @Override // com.opos.mobad.q.a.c
     public void a(Configuration configuration) {
-        if (this.f27149c instanceof com.opos.mobad.q.a.f.c) {
-            ((com.opos.mobad.q.a.f.c) this.f27149c).t();
+        if (this.f13461c instanceof com.opos.mobad.q.a.f.c) {
+            ((com.opos.mobad.q.a.f.c) this.f13461c).t();
         }
     }
 
@@ -74,7 +74,7 @@ public class k extends c {
     public void a(com.opos.mobad.ad.h hVar, Object... objArr) {
         if (this.n.b()) {
             this.f.c(0);
-            this.f27149c.a(this.f);
+            this.f13461c.a(this.f);
         }
         super.a(hVar, objArr);
     }
@@ -106,7 +106,7 @@ public class k extends c {
         }
     }
 
-    @Override // com.opos.mobad.q.a.c, com.opos.mobad.q.a.m, com.opos.mobad.n.a.InterfaceC0708a
+    @Override // com.opos.mobad.q.a.c, com.opos.mobad.q.a.m, com.opos.mobad.n.a.InterfaceC0538a
     public void d(long j, long j2) {
         super.d(j, j2);
         a(j2);

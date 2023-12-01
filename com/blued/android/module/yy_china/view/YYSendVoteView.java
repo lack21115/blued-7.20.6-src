@@ -35,13 +35,9 @@ import java.util.List;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYSendVoteView.class */
 public class YYSendVoteView extends LinearLayout implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    private RecyclerView f18472a;
+    private RecyclerView a;
     private RecyclerView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private ShapeFrameLayout f18473c;
+    private ShapeFrameLayout c;
     private ShapeFrameLayout d;
     private ShapeTextView e;
     private ShapeTextView f;
@@ -61,7 +57,6 @@ public class YYSendVoteView extends LinearLayout implements View.OnClickListener
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.chad.library.adapter.base.BaseQuickAdapter
         /* renamed from: a */
         public void convert(BaseViewHolder baseViewHolder, YYVoteTimeModel yYVoteTimeModel) {
             ShapeFrameLayout shapeFrameLayout = (ShapeFrameLayout) baseViewHolder.getView(R.id.fl_vote_time);
@@ -85,7 +80,6 @@ public class YYSendVoteView extends LinearLayout implements View.OnClickListener
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.chad.library.adapter.base.BaseQuickAdapter
         /* renamed from: a */
         public void convert(BaseViewHolder baseViewHolder, YYSeatMemberModel yYSeatMemberModel) {
             ImageView imageView = (ImageView) baseViewHolder.getView(R.id.iv_vote_header);
@@ -128,9 +122,9 @@ public class YYSendVoteView extends LinearLayout implements View.OnClickListener
 
     private void a() {
         LayoutInflater.from(getContext()).inflate(R.layout.view_yy_send_vote, (ViewGroup) this, true);
-        this.f18472a = (RecyclerView) findViewById(R.id.rv_vote_list);
+        this.a = (RecyclerView) findViewById(R.id.rv_vote_list);
         this.b = (RecyclerView) findViewById(R.id.rv_times_lsit);
-        this.f18473c = (ShapeFrameLayout) findViewById(R.id.fl_all);
+        this.c = (ShapeFrameLayout) findViewById(R.id.fl_all);
         this.d = (ShapeFrameLayout) findViewById(R.id.fl_only_mic);
         this.e = (ShapeTextView) findViewById(R.id.tv_all_vote);
         this.f = (ShapeTextView) findViewById(R.id.tv_mic_vote);
@@ -142,8 +136,8 @@ public class YYSendVoteView extends LinearLayout implements View.OnClickListener
         this.k = new VoteUserAdapter();
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setOrientation(0);
-        this.f18472a.setLayoutManager(linearLayoutManager);
-        this.f18472a.setAdapter(this.k);
+        this.a.setLayoutManager(linearLayoutManager);
+        this.a.setAdapter(this.k);
         YYRoomModel b = YYRoomInfoManager.e().b();
         if (b == null) {
             return;
@@ -154,14 +148,13 @@ public class YYSendVoteView extends LinearLayout implements View.OnClickListener
         }
         this.k.setNewData(arrayList);
         this.k.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() { // from class: com.blued.android.module.yy_china.view.YYSendVoteView.1
-            @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemClickListener
             public void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
-                YYSeatMemberModel item = YYSendVoteView.this.k.getItem(i);
-                item.isVoted = !item.isVoted;
-                if (item.isVoted) {
-                    YYSendVoteView.this.m.add(item.getUid());
+                YYSeatMemberModel yYSeatMemberModel2 = (YYSeatMemberModel) YYSendVoteView.this.k.getItem(i);
+                yYSeatMemberModel2.isVoted = !yYSeatMemberModel2.isVoted;
+                if (yYSeatMemberModel2.isVoted) {
+                    YYSendVoteView.this.m.add(yYSeatMemberModel2.getUid());
                 } else {
-                    YYSendVoteView.this.m.remove(item.getUid());
+                    YYSendVoteView.this.m.remove(yYSeatMemberModel2.getUid());
                 }
                 YYSendVoteView.this.k.notifyItemChanged(i);
                 YYSendVoteView.this.b();
@@ -174,7 +167,6 @@ public class YYSendVoteView extends LinearLayout implements View.OnClickListener
         this.b.setAdapter(voteTimeAdapter);
         voteTimeAdapter.setNewData(getTimeList());
         voteTimeAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() { // from class: com.blued.android.module.yy_china.view.YYSendVoteView.2
-            @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemClickListener
             public void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
                 int i2 = 0;
                 while (true) {
@@ -183,12 +175,12 @@ public class YYSendVoteView extends LinearLayout implements View.OnClickListener
                         voteTimeAdapter.notifyDataSetChanged();
                         return;
                     }
-                    YYVoteTimeModel item = voteTimeAdapter.getItem(i3);
+                    YYVoteTimeModel yYVoteTimeModel = (YYVoteTimeModel) voteTimeAdapter.getItem(i3);
                     if (i3 == i) {
-                        item.isCheck = true;
-                        YYSendVoteView.this.j = item;
+                        yYVoteTimeModel.isCheck = true;
+                        YYSendVoteView.this.j = yYVoteTimeModel;
                     } else {
-                        item.isCheck = false;
+                        yYVoteTimeModel.isCheck = false;
                     }
                     i2 = i3 + 1;
                 }
@@ -199,9 +191,9 @@ public class YYSendVoteView extends LinearLayout implements View.OnClickListener
     private void a(boolean z) {
         this.h = z ? 1 : 2;
         this.i = getResources().getString(z ? R.string.yy_vote_all : R.string.yy_vote_mic);
-        ShapeHelper.a(z ? this.f18473c : this.d, R.color.syc_00E0AB, R.color.syc_3883FD);
+        ShapeHelper.a(z ? this.c : this.d, R.color.syc_00E0AB, R.color.syc_3883FD);
         ShapeHelper.a((ShapeHelper.ShapeView) (z ? this.e : this.f), R.color.white);
-        ShapeHelper.a(z ? this.d : this.f18473c, R.color.syc_dark_28282b, R.color.syc_dark_28282b);
+        ShapeHelper.a(z ? this.d : this.c, R.color.syc_dark_28282b, R.color.syc_dark_28282b);
         ShapeHelper.a((ShapeHelper.ShapeView) (z ? this.f : this.e), R.color.syc_8d8d8e);
     }
 

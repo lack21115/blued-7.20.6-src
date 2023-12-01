@@ -1,6 +1,7 @@
 package com.blued.android.module.common.fragment;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import com.blued.android.framework.http.BluedUIHttpResponse;
@@ -14,20 +15,15 @@ import com.blued.android.module.common.utils.CommonHttpUtils;
 import com.blued.android.module.common.utils.DialogUtils;
 import com.blued.android.module.common.view.CommonTopTitleNoTrans;
 import com.blued.android.module.common.view.NoDataAndLoadFailView;
-import com.sina.weibo.sdk.constant.WBPageConstants;
 import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.Map;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/fragment/BaseListFragment.class */
 public abstract class BaseListFragment<T, S extends BluedEntityBaseExtra> extends SimpleFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected CommonTopTitleNoTrans f10817a;
+    protected CommonTopTitleNoTrans a;
     protected RenrenPullToRefreshListView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    protected ListView f10818c;
+    protected ListView c;
     protected CommonAdapter<T> d;
     protected NoDataAndLoadFailView e;
     private Dialog g;
@@ -36,13 +32,11 @@ public abstract class BaseListFragment<T, S extends BluedEntityBaseExtra> extend
 
     protected BluedUIHttpResponse<BluedEntity<T, S>> a(int i) {
         BluedUIHttpResponse<BluedEntity<T, S>> bluedUIHttpResponse = (BluedUIHttpResponse<BluedEntity<T, S>>) new BluedUIHttpResponse<BluedEntity<T, S>>(getFragmentActive()) { // from class: com.blued.android.module.common.fragment.BaseListFragment.2
-
-            /* renamed from: a  reason: collision with root package name */
-            boolean f10820a = false;
+            boolean a = false;
 
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i2, String str) {
-                this.f10820a = true;
+                this.a = true;
                 return super.onUIFailure(i2, str);
             }
 
@@ -52,7 +46,7 @@ public abstract class BaseListFragment<T, S extends BluedEntityBaseExtra> extend
                 BaseListFragment.this.b.q();
                 if (!BaseListFragment.this.d.isEmpty()) {
                     BaseListFragment.this.e.d();
-                } else if (this.f10820a) {
+                } else if (this.a) {
                     BaseListFragment.this.e.b();
                 } else {
                     BaseListFragment.this.e.a();
@@ -73,7 +67,7 @@ public abstract class BaseListFragment<T, S extends BluedEntityBaseExtra> extend
                     r6 = r0
                     r0 = r4
                     r1 = 0
-                    r0.f10820a = r1
+                    r0.a = r1
                     r0 = r4
                     java.lang.Object r0 = r0.getData()
                     java.lang.Integer r0 = (java.lang.Integer) r0
@@ -201,7 +195,7 @@ public abstract class BaseListFragment<T, S extends BluedEntityBaseExtra> extend
     public Map<String, String> b(int i) {
         HashMap hashMap = new HashMap();
         hashMap.put("page_size", String.valueOf(this.f));
-        hashMap.put(WBPageConstants.ParamKey.PAGE, String.valueOf(i));
+        hashMap.put("page", String.valueOf(i));
         return hashMap;
     }
 
@@ -210,19 +204,17 @@ public abstract class BaseListFragment<T, S extends BluedEntityBaseExtra> extend
 
     public abstract String c();
 
-    @Override // com.blued.android.framework.ui.SimpleFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         DialogUtils.b(this.g);
         super.onDestroy();
     }
 
-    @Override // com.blued.android.framework.ui.SimpleFragment
     public void onInitView() {
         super.onInitView();
-        this.f10817a = (CommonTopTitleNoTrans) this.rootView.findViewById(R.id.base_list_title);
+        this.a = (CommonTopTitleNoTrans) this.rootView.findViewById(R.id.base_list_title);
         RenrenPullToRefreshListView renrenPullToRefreshListView = (RenrenPullToRefreshListView) this.rootView.findViewById(R.id.base_list_prlv);
         this.b = renrenPullToRefreshListView;
-        this.f10818c = (ListView) renrenPullToRefreshListView.getRefreshableView();
+        this.c = (ListView) renrenPullToRefreshListView.getRefreshableView();
         this.b.setOnPullDownListener(new RenrenPullToRefreshListView.OnPullDownListener() { // from class: com.blued.android.module.common.fragment.BaseListFragment.1
             @Override // com.blued.android.framework.view.pulltorefresh.RenrenPullToRefreshListView.OnPullDownListener
             public void a() {
@@ -234,24 +226,22 @@ public abstract class BaseListFragment<T, S extends BluedEntityBaseExtra> extend
                 BaseListFragment.this.a(false);
             }
         });
-        this.f10818c.setClipToPadding(false);
-        this.f10818c.setScrollBarStyle(33554432);
-        this.f10818c.setHeaderDividersEnabled(false);
-        this.f10818c.setDividerHeight(0);
-        CommonAdapter<T> a2 = a();
-        this.d = a2;
-        this.f10818c.setAdapter((ListAdapter) a2);
+        this.c.setClipToPadding(false);
+        this.c.setScrollBarStyle(33554432);
+        this.c.setHeaderDividersEnabled(false);
+        this.c.setDividerHeight(0);
+        CommonAdapter<T> a = a();
+        this.d = a;
+        this.c.setAdapter((ListAdapter) a);
         this.e = (NoDataAndLoadFailView) this.rootView.findViewById(R.id.base_list_no_data);
-        this.g = DialogUtils.a(getActivity());
+        this.g = DialogUtils.a((Context) getActivity());
     }
 
-    @Override // com.blued.android.framework.ui.SimpleFragment
     public void onInitViewFinished() {
         super.onInitViewFinished();
         a(true);
     }
 
-    @Override // com.blued.android.framework.ui.SimpleFragment
     public int onSetRootViewId() {
         return R.layout.fragment_base_list;
     }

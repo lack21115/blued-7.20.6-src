@@ -8,21 +8,17 @@ import com.blued.community.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/databinding/FragmentFeedInteractBinding.class */
 public final class FragmentFeedInteractBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final View f18871a;
+    public final View a;
     public final FrameLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final FrameLayout f18872c;
+    public final FrameLayout c;
     public final RecyclerView d;
     private final FrameLayout e;
 
     private FragmentFeedInteractBinding(FrameLayout frameLayout, View view, FrameLayout frameLayout2, FrameLayout frameLayout3, RecyclerView recyclerView) {
         this.e = frameLayout;
-        this.f18871a = view;
+        this.a = view;
         this.b = frameLayout2;
-        this.f18872c = frameLayout3;
+        this.c = frameLayout3;
         this.d = recyclerView;
     }
 
@@ -34,9 +30,9 @@ public final class FragmentFeedInteractBinding implements ViewBinding {
             if (frameLayout != null) {
                 FrameLayout frameLayout2 = (FrameLayout) view.findViewById(R.id.feed_interact_layout);
                 if (frameLayout2 != null) {
-                    RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.feed_interact_rv);
-                    if (recyclerView != null) {
-                        return new FragmentFeedInteractBinding((FrameLayout) view, findViewById, frameLayout, frameLayout2, recyclerView);
+                    RecyclerView findViewById2 = view.findViewById(R.id.feed_interact_rv);
+                    if (findViewById2 != null) {
+                        return new FragmentFeedInteractBinding((FrameLayout) view, findViewById, frameLayout, frameLayout2, findViewById2);
                     }
                     str = "feedInteractRv";
                 } else {
@@ -51,7 +47,6 @@ public final class FragmentFeedInteractBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.e;

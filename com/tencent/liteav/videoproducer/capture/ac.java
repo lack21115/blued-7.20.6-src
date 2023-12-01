@@ -7,10 +7,10 @@ import com.tencent.liteav.videoproducer.capture.s;
 final /* synthetic */ class ac implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final s.AnonymousClass1 f36858a;
+    private final s.AnonymousClass1 f23167a;
 
     private ac(s.AnonymousClass1 anonymousClass1) {
-        this.f36858a = anonymousClass1;
+        this.f23167a = anonymousClass1;
     }
 
     public static Runnable a(s.AnonymousClass1 anonymousClass1) {
@@ -19,12 +19,12 @@ final /* synthetic */ class ac implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        s.AnonymousClass1 anonymousClass1 = this.f36858a;
-        if (s.this.f36942a != null) {
-            s.this.f36942a.notifyError(h.a.ERR_VIDEO_CAPTURE_CAMERA_INVALID_DEVICE, "create EGLCore failed", new Object[0]);
+        s.AnonymousClass1 anonymousClass1 = this.f23167a;
+        if (s.this.f23251a != null) {
+            s.this.f23251a.notifyError(h.a.ERR_VIDEO_CAPTURE_CAMERA_INVALID_DEVICE, "create EGLCore failed", new Object[0]);
         }
-        if (s.this.f36943c != null) {
-            s.this.f36943c.a();
+        if (s.this.f23252c != null) {
+            s.this.f23252c.a();
         }
     }
 }

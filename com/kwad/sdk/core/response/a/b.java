@@ -579,7 +579,7 @@ public final class b {
     }
 
     /* renamed from: do  reason: not valid java name */
-    public static String m7799do(AdInfo adInfo) {
+    public static String m4792do(AdInfo adInfo) {
         return adInfo.adMatrixInfo.adDataV2.neoVideoInfo.interactionInfo.shakeInfo.title;
     }
 

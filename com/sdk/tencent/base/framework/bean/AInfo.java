@@ -6,14 +6,14 @@ import com.sdk.tencent.k.a;
 public class AInfo {
 
     /* renamed from: c  reason: collision with root package name */
-    private int f28019c;
+    private int f14331c;
     private String md5;
     private String n;
     private String pk;
     private String v;
 
     public int getC() {
-        return this.f28019c;
+        return this.f14331c;
     }
 
     public String getMd5() {
@@ -33,7 +33,7 @@ public class AInfo {
     }
 
     public void setC(int i) {
-        this.f28019c = i;
+        this.f14331c = i;
     }
 
     public void setMd5(String str) {

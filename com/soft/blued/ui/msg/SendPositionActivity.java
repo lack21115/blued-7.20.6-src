@@ -1,6 +1,5 @@
 package com.soft.blued.ui.msg;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -62,7 +61,7 @@ import java.util.List;
 public class SendPositionActivity extends BaseFragmentActivity implements View.OnClickListener, TencentLocationListener, LocationSource {
 
     /* renamed from: c  reason: collision with root package name */
-    List<PositionPOIModel> f31893c;
+    List<PositionPOIModel> f18203c;
     private RenrenPullToRefreshListView d;
     private ListView e;
     private SendPositionPOIAdapter f;
@@ -115,7 +114,7 @@ public class SendPositionActivity extends BaseFragmentActivity implements View.O
         private Context b;
 
         /* renamed from: c  reason: collision with root package name */
-        private LayoutInflater f31899c;
+        private LayoutInflater f18209c;
         private List<PositionPOIModel> d = new ArrayList();
         private int e;
 
@@ -123,11 +122,11 @@ public class SendPositionActivity extends BaseFragmentActivity implements View.O
         class ViewHolder {
 
             /* renamed from: a  reason: collision with root package name */
-            public LinearLayout f31900a;
+            public LinearLayout f18210a;
             public TextView b;
 
             /* renamed from: c  reason: collision with root package name */
-            public TextView f31901c;
+            public TextView f18211c;
             public ImageView d;
 
             private ViewHolder() {
@@ -136,7 +135,7 @@ public class SendPositionActivity extends BaseFragmentActivity implements View.O
 
         public SendPositionPOIAdapter(Context context) {
             this.b = context;
-            this.f31899c = LayoutInflater.from(context);
+            this.f18209c = LayoutInflater.from(context);
             this.e = context.getResources().getDisplayMetrics().widthPixels;
         }
 
@@ -195,10 +194,10 @@ public class SendPositionActivity extends BaseFragmentActivity implements View.O
             ViewHolder viewHolder;
             if (view == null) {
                 viewHolder = new ViewHolder();
-                view2 = this.f31899c.inflate(R.layout.item_send_postion_poi, viewGroup, false);
-                viewHolder.f31900a = (LinearLayout) view2.findViewById(R.id.ll_item);
+                view2 = this.f18209c.inflate(R.layout.item_send_postion_poi, viewGroup, false);
+                viewHolder.f18210a = (LinearLayout) view2.findViewById(R.id.ll_item);
                 viewHolder.b = (TextView) view2.findViewById(R.id.tv_poi_shortname);
-                viewHolder.f31901c = (TextView) view2.findViewById(R.id.tv_poi_address);
+                viewHolder.f18211c = (TextView) view2.findViewById(R.id.tv_poi_address);
                 viewHolder.d = (ImageView) view2.findViewById(R.id.img_choosen_mark);
                 view2.setTag(viewHolder);
             } else {
@@ -207,13 +206,13 @@ public class SendPositionActivity extends BaseFragmentActivity implements View.O
             }
             final PositionPOIModel positionPOIModel = this.d.get(i);
             viewHolder.b.setText(positionPOIModel.name);
-            viewHolder.f31901c.setText(positionPOIModel.address);
+            viewHolder.f18211c.setText(positionPOIModel.address);
             if (positionPOIModel.mark_visible) {
                 viewHolder.d.setVisibility(0);
             } else {
                 viewHolder.d.setVisibility(4);
             }
-            viewHolder.f31900a.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.-$$Lambda$SendPositionActivity$SendPositionPOIAdapter$1fYdJgp1CEEzCd0VdawXOfeKNx8
+            viewHolder.f18210a.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.-$$Lambda$SendPositionActivity$SendPositionPOIAdapter$1fYdJgp1CEEzCd0VdawXOfeKNx8
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view3) {
                     SendPositionActivity.SendPositionPOIAdapter.this.a(positionPOIModel, i, view3);
@@ -223,23 +222,24 @@ public class SendPositionActivity extends BaseFragmentActivity implements View.O
         }
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private void g() {
         ArrayList arrayList = new ArrayList();
-        this.f31893c = arrayList;
+        this.f18203c = arrayList;
         arrayList.clear();
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) findViewById(2131370749);
-        this.q = commonTopTitleNoTrans;
-        commonTopTitleNoTrans.setLeftClickListener(this);
+        CommonTopTitleNoTrans findViewById = findViewById(R.id.top_title);
+        this.q = findViewById;
+        findViewById.setLeftClickListener(this);
         this.q.setCenterText(this.g.getResources().getString(R.string.position));
         this.q.setRightText(this.g.getResources().getString(R.string.send));
         this.q.setRightTextColor(2131102254);
         this.q.setRightClickListener(this);
-        View findViewById = findViewById(R.id.tv_search);
-        this.h = findViewById;
-        findViewById.setOnClickListener(this);
-        RenrenPullToRefreshListView renrenPullToRefreshListView = (RenrenPullToRefreshListView) findViewById(2131366898);
-        this.d = renrenPullToRefreshListView;
-        renrenPullToRefreshListView.setRefreshEnabled(false);
+        View findViewById2 = findViewById(R.id.tv_search);
+        this.h = findViewById2;
+        findViewById2.setOnClickListener(this);
+        RenrenPullToRefreshListView findViewById3 = findViewById(R.id.list_view);
+        this.d = findViewById3;
+        findViewById3.setRefreshEnabled(false);
         this.d.p();
         ListView listView = (ListView) this.d.getRefreshableView();
         this.e = listView;
@@ -253,17 +253,17 @@ public class SendPositionActivity extends BaseFragmentActivity implements View.O
         this.e.setAdapter((ListAdapter) sendPositionPOIAdapter);
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     public void a(double d, double d2) {
         GaoDeUtils.a(this, 0, new LatLonPoint(d, d2), new OnPOIListener() { // from class: com.soft.blued.ui.msg.SendPositionActivity.2
-            @Override // com.blued.android.module.common.utils.gaode.OnPOIListener
             public void onComplete(int i, List<? extends PositionPOIModel> list, boolean z) {
                 if (i == 0) {
                     SendPositionActivity.this.a((List<PositionPOIModel>) list);
                     return;
                 }
                 SendPositionActivity.this.r = i;
-                AppMethods.a((CharSequence) (SendPositionActivity.this.g.getResources().getString(R.string.location_fail_try_again) + "(" + i + ")"));
-                BluedStatistics.c().a("MSG_POI", 0L, i, null);
+                AppMethods.a(SendPositionActivity.this.g.getResources().getString(R.string.location_fail_try_again) + "(" + i + ")");
+                BluedStatistics.c().a("MSG_POI", 0L, i, (String) null);
             }
         });
     }
@@ -302,7 +302,7 @@ public class SendPositionActivity extends BaseFragmentActivity implements View.O
         if (requestLocationUpdates < 1 || requestLocationUpdates > 3) {
             return;
         }
-        AppMethods.a((CharSequence) (this.g.getResources().getString(R.string.location_fail_try_again) + "(" + requestLocationUpdates + ")"));
+        AppMethods.a(this.g.getResources().getString(R.string.location_fail_try_again) + "(" + requestLocationUpdates + ")");
     }
 
     public void b(double d, double d2) {
@@ -325,6 +325,7 @@ public class SendPositionActivity extends BaseFragmentActivity implements View.O
         this.m = null;
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     public void f() {
         TextureMapView textureMapView = (TextureMapView) findViewById(R.id.map);
         this.l = textureMapView;
@@ -353,7 +354,6 @@ public class SendPositionActivity extends BaseFragmentActivity implements View.O
         }
     }
 
-    @Override // androidx.fragment.app.FragmentActivity, androidx.activity.ComponentActivity, android.app.Activity
     public void onActivityResult(int i, int i2, Intent intent) {
         if (intent != null && i2 == -1) {
             Double valueOf = Double.valueOf(intent.getDoubleExtra("lot", this.o));
@@ -364,6 +364,7 @@ public class SendPositionActivity extends BaseFragmentActivity implements View.O
         super.onActivityResult(i, i2, intent);
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     @Override // android.view.View.OnClickListener
     public void onClick(View view) {
         Tracker.onClick(view);
@@ -375,12 +376,10 @@ public class SendPositionActivity extends BaseFragmentActivity implements View.O
                 return;
             }
             PermissionUtils.c(new PermissionCallbacks() { // from class: com.soft.blued.ui.msg.SendPositionActivity.3
-                @Override // com.blued.android.framework.permission.PermissionCallbacks
                 public void U_() {
                     TerminalActivity.a(SendPositionActivity.this, SendPositionSearchFragment.class, (Bundle) null, 0);
                 }
 
-                @Override // com.blued.android.framework.permission.PermissionCallbacks
                 public void a(String[] strArr) {
                 }
             });
@@ -399,24 +398,22 @@ public class SendPositionActivity extends BaseFragmentActivity implements View.O
             } else {
                 intent.putExtra("address", this.p.replace(",", "."));
             }
-            if (CommonTools.a((Activity) this)) {
+            if (CommonTools.a(this)) {
                 setResult(-1, intent);
                 finish();
             }
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragmentActivity, androidx.fragment.app.FragmentActivity, androidx.activity.ComponentActivity, androidx.core.app.ComponentActivity, android.app.Activity
+    /* JADX WARN: Multi-variable type inference failed */
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         TencentMapInitializer.setAgreePrivacy(true);
         TencentLocationManager.setUserAgreePrivacy(true);
         PermissionUtils.c(new PermissionCallbacks() { // from class: com.soft.blued.ui.msg.SendPositionActivity.1
-            @Override // com.blued.android.framework.permission.PermissionCallbacks
             public void U_() {
             }
 
-            @Override // com.blued.android.framework.permission.PermissionCallbacks
             public void a(String[] strArr) {
             }
         });
@@ -426,7 +423,6 @@ public class SendPositionActivity extends BaseFragmentActivity implements View.O
         f();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragmentActivity, androidx.appcompat.app.AppCompatActivity, androidx.fragment.app.FragmentActivity, android.app.Activity
     public void onDestroy() {
         super.onDestroy();
         TextureMapView textureMapView = this.l;
@@ -454,7 +450,7 @@ public class SendPositionActivity extends BaseFragmentActivity implements View.O
         b(location.getLatitude(), location.getLongitude());
     }
 
-    @Override // com.blued.android.core.ui.BaseFragmentActivity, androidx.fragment.app.FragmentActivity, android.app.Activity
+    /* JADX WARN: Multi-variable type inference failed */
     public void onPause() {
         super.onPause();
         MobclickAgent.onPageEnd(SendPositionActivity.class.getSimpleName());
@@ -465,14 +461,12 @@ public class SendPositionActivity extends BaseFragmentActivity implements View.O
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // android.app.Activity
-    public void onRestart() {
+    protected void onRestart() {
         super.onRestart();
         this.l.onRestart();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragmentActivity, androidx.fragment.app.FragmentActivity, android.app.Activity
+    /* JADX WARN: Multi-variable type inference failed */
     public void onResume() {
         super.onResume();
         MobclickAgent.onPageStart(SendPositionActivity.class.getSimpleName());
@@ -483,7 +477,6 @@ public class SendPositionActivity extends BaseFragmentActivity implements View.O
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragmentActivity, androidx.appcompat.app.AppCompatActivity, androidx.fragment.app.FragmentActivity, android.app.Activity
     public void onStart() {
         super.onStart();
         this.l.onStart();
@@ -494,7 +487,6 @@ public class SendPositionActivity extends BaseFragmentActivity implements View.O
         Logger.c("ljx", "腾讯地图状态改变日志：" + str + "===" + str2);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragmentActivity, androidx.appcompat.app.AppCompatActivity, androidx.fragment.app.FragmentActivity, android.app.Activity
     public void onStop() {
         super.onStop();
         this.l.onStop();

@@ -15,11 +15,11 @@ import java.io.BufferedInputStream;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f38893a;
+    private Context f25202a;
     private ResolveInfo b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Drawable f38894c;
+    private Drawable f25203c;
     private String d;
     private String e;
     private String f;
@@ -77,7 +77,7 @@ public class b {
             r0 = r3
             r1 = r4
             android.content.Context r1 = r1.getApplicationContext()
-            r0.f38893a = r1
+            r0.f25202a = r1
             r0 = r3
             r1 = 0
             r0.b = r1
@@ -86,7 +86,7 @@ public class b {
             r0.f = r1
             r0 = r3
             r1 = r9
-            r0.f38894c = r1
+            r0.f25203c = r1
             r0 = r3
             r1 = r7
             r0.d = r1
@@ -111,9 +111,9 @@ public class b {
         this.g = false;
         this.h = false;
         this.i = "";
-        this.f38893a = context.getApplicationContext();
+        this.f25202a = context.getApplicationContext();
         this.b = resolveInfo;
-        this.f38894c = null;
+        this.f25203c = null;
         this.d = null;
         this.f = null;
     }
@@ -125,9 +125,9 @@ public class b {
         this.g = false;
         this.h = false;
         this.i = "";
-        this.f38893a = context.getApplicationContext();
+        this.f25202a = context.getApplicationContext();
         this.b = null;
-        this.f38894c = drawable;
+        this.f25203c = drawable;
         this.d = str;
         this.f = str2;
         this.h = true;
@@ -164,18 +164,18 @@ public class b {
     }
 
     public Drawable a() {
-        Drawable drawable = this.f38894c;
+        Drawable drawable = this.f25203c;
         if (drawable != null) {
             return drawable;
         }
-        Drawable a2 = a(this.f38893a, d());
+        Drawable a2 = a(this.f25202a, d());
         Drawable drawable2 = a2;
         if (a2 == null) {
             ResolveInfo resolveInfo = this.b;
             if (resolveInfo != null) {
-                return resolveInfo.loadIcon(this.f38893a.getPackageManager());
+                return resolveInfo.loadIcon(this.f25202a.getPackageManager());
             }
-            drawable2 = this.f38894c;
+            drawable2 = this.f25203c;
         }
         return drawable2;
     }
@@ -185,7 +185,7 @@ public class b {
     }
 
     public void a(Drawable drawable) {
-        this.f38894c = drawable;
+        this.f25203c = drawable;
     }
 
     public void a(String str) {
@@ -198,7 +198,7 @@ public class b {
 
     public String b() {
         ResolveInfo resolveInfo = this.b;
-        return resolveInfo != null ? resolveInfo.loadLabel(this.f38893a.getPackageManager()).toString() : this.d;
+        return resolveInfo != null ? resolveInfo.loadLabel(this.f25202a.getPackageManager()).toString() : this.d;
     }
 
     public ResolveInfo c() {

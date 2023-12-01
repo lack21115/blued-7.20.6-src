@@ -9,18 +9,18 @@ import java.util.Iterator;
 class b {
 
     /* renamed from: a  reason: collision with root package name */
-    String f41866a;
+    String f28175a;
     float b;
     private Bitmap e;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f41867c = -1;
+    private int f28176c = -1;
     private int d = -1;
     private HashSet<WeakReference<h>> f = new HashSet<>();
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public b(String str, float f) {
-        this.f41866a = str;
+        this.f28175a = str;
         this.b = f;
     }
 
@@ -44,7 +44,7 @@ class b {
 
     public void a(int i, int i2) {
         synchronized (this) {
-            this.f41867c = i;
+            this.f28176c = i;
             this.d = i2;
         }
     }
@@ -53,7 +53,7 @@ class b {
         synchronized (this) {
             this.e = bitmap;
             if (bitmap != null) {
-                this.f41867c = bitmap.getWidth();
+                this.f28176c = bitmap.getWidth();
                 this.d = bitmap.getHeight();
             }
         }
@@ -79,7 +79,7 @@ class b {
             while (it.hasNext()) {
                 h hVar = it.next().get();
                 if (hVar != null) {
-                    hVar.a(this.f41866a, this.b, z);
+                    hVar.a(this.f28175a, this.b, z);
                 }
             }
         }
@@ -98,7 +98,7 @@ class b {
     public int c() {
         int i;
         synchronized (this) {
-            i = this.f41867c;
+            i = this.f28176c;
         }
         return i;
     }
@@ -122,7 +122,7 @@ class b {
     public boolean f() {
         boolean z;
         synchronized (this) {
-            if (this.f41867c != -1) {
+            if (this.f28176c != -1) {
                 if (this.d != -1) {
                     z = true;
                 }

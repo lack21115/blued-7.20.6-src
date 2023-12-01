@@ -15,7 +15,6 @@ public class YYRecommendPkModel implements MultiItemEntity, Serializable {
     public String user_avatar;
     public String user_name;
 
-    @Override // com.chad.library.adapter.base.entity.MultiItemEntity
     public int getItemType() {
         return this.type;
     }

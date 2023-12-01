@@ -9,6 +9,7 @@ import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.net.IRequestHost;
 import com.blued.android.framework.view.shape.ShapeTextView;
 import com.blued.android.module.common.group.GroupMemberModel;
+import com.blued.android.module.common.login.model.UserBasicModel;
 import com.blued.android.module.common.user.UserInfoHelper;
 import com.blued.android.module.common.utils.AvatarUtils;
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -22,29 +23,29 @@ import java.util.List;
 public class GroupManagerDetailAdapter extends BaseQuickAdapter<GroupMemberModel, BaseViewHolder> {
 
     /* renamed from: a  reason: collision with root package name */
-    private IRequestHost f32632a;
+    private IRequestHost f18941a;
 
     public GroupManagerDetailAdapter(List<GroupMemberModel> list, IRequestHost iRequestHost) {
         super(R.layout.item_group_manager_detail, list);
-        this.f32632a = iRequestHost;
+        this.f18941a = iRequestHost;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(BaseViewHolder baseViewHolder, GroupMemberModel groupMemberModel) {
-        baseViewHolder.setVisible(2131365702, groupMemberModel.online_state == 1);
-        TextView textView = (TextView) baseViewHolder.getView(2131369448);
-        TextView textView2 = (TextView) baseViewHolder.getView(2131368652);
-        TextView textView3 = (TextView) baseViewHolder.getView(2131368391);
-        TextView textView4 = (TextView) baseViewHolder.getView(2131362003);
-        TextView textView5 = (TextView) baseViewHolder.getView(2131364242);
-        TextView textView6 = (TextView) baseViewHolder.getView(2131373390);
+        baseViewHolder.setVisible(R.id.iv_online, groupMemberModel.online_state == 1);
+        TextView textView = (TextView) baseViewHolder.getView(R.id.role_view);
+        TextView textView2 = (TextView) baseViewHolder.getView(R.id.name_view);
+        TextView textView3 = (TextView) baseViewHolder.getView(R.id.location_view);
+        TextView textView4 = (TextView) baseViewHolder.getView(R.id.age_view);
+        TextView textView5 = (TextView) baseViewHolder.getView(R.id.height_view);
+        TextView textView6 = (TextView) baseViewHolder.getView(R.id.weight_view);
         LinearLayout linearLayout = (LinearLayout) baseViewHolder.getView(R.id.ll_personal_info);
         LinearLayout linearLayout2 = (LinearLayout) baseViewHolder.getView(R.id.ll_distance);
-        ImageView imageView = (ImageView) baseViewHolder.getView(2131364459);
+        ImageView imageView = (ImageView) baseViewHolder.getView(R.id.img_blued_medal);
         RelativeLayout relativeLayout = (RelativeLayout) baseViewHolder.getView(R.id.cancel_manager);
-        UserRelationshipUtils.a(imageView, groupMemberModel);
+        UserRelationshipUtils.a(imageView, (UserBasicModel) groupMemberModel);
         if (groupMemberModel.is_official != 1) {
             UserInfoHelper.a(this.mContext, textView, groupMemberModel.role);
         }
@@ -55,7 +56,7 @@ public class GroupManagerDetailAdapter extends BaseQuickAdapter<GroupMemberModel
         } else {
             textView2.setText(groupMemberModel.name);
         }
-        UserRelationshipUtils.a(this.mContext, textView2, groupMemberModel);
+        UserRelationshipUtils.a(this.mContext, textView2, (UserBasicModel) groupMemberModel);
         if (groupMemberModel.vbadge == 3 || groupMemberModel.vbadge == 5) {
             linearLayout.setVisibility(8);
         } else {
@@ -86,15 +87,15 @@ public class GroupManagerDetailAdapter extends BaseQuickAdapter<GroupMemberModel
         } else {
             textView3.setText(groupMemberModel.location);
         }
-        ShapeTextView shapeTextView = (ShapeTextView) baseViewHolder.getView(R.id.tv_identity);
+        ShapeTextView view = baseViewHolder.getView(R.id.tv_identity);
         if ("0".equals(groupMemberModel.uid)) {
-            ImageLoader.a(this.f32632a, (int) R.drawable.icon_group_add_manager).c().a((ImageView) baseViewHolder.getView(2131365504));
-            shapeTextView.setVisibility(4);
+            ImageLoader.a(this.f18941a, (int) R.drawable.icon_group_add_manager).c().a((ImageView) baseViewHolder.getView(2131365504));
+            view.setVisibility(4);
             relativeLayout.setVisibility(8);
         } else {
             relativeLayout.setVisibility(0);
-            GroupUtil.a(shapeTextView, groupMemberModel.group_role);
-            ImageLoader.a(this.f32632a, AvatarUtils.a(0, groupMemberModel.avatar)).c().b(2131237310).a((ImageView) baseViewHolder.getView(2131365504));
+            GroupUtil.a((TextView) view, groupMemberModel.group_role);
+            ImageLoader.a(this.f18941a, AvatarUtils.a(0, groupMemberModel.avatar)).c().b(2131237310).a((ImageView) baseViewHolder.getView(2131365504));
         }
         baseViewHolder.addOnClickListener(2131365504);
         baseViewHolder.addOnClickListener(R.id.cancel_manager);

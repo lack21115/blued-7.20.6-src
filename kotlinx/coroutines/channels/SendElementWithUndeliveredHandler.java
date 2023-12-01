@@ -28,6 +28,6 @@ public final class SendElementWithUndeliveredHandler<E> extends SendElement<E> {
 
     @Override // kotlinx.coroutines.channels.Send
     public void c() {
-        OnUndeliveredElementKt.a(this.b, a(), this.f43004a.getContext());
+        OnUndeliveredElementKt.a(this.b, a(), this.a.getContext());
     }
 }

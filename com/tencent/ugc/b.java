@@ -8,10 +8,10 @@ import com.tencent.ugc.TXVideoEditer;
 public final /* synthetic */ class b implements TXVideoEditer.TXThumbnailListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private final TXVideoEditer f40247a;
+    private final TXVideoEditer f26556a;
 
     private b(TXVideoEditer tXVideoEditer) {
-        this.f40247a = tXVideoEditer;
+        this.f26556a = tXVideoEditer;
     }
 
     public static TXVideoEditer.TXThumbnailListener a(TXVideoEditer tXVideoEditer) {
@@ -20,6 +20,6 @@ public final /* synthetic */ class b implements TXVideoEditer.TXThumbnailListene
 
     @Override // com.tencent.ugc.TXVideoEditer.TXThumbnailListener
     public final void onThumbnail(int i, long j, Bitmap bitmap) {
-        TXVideoEditer.lambda$new$1(this.f40247a, i, j, bitmap);
+        TXVideoEditer.lambda$new$1(this.f26556a, i, j, bitmap);
     }
 }

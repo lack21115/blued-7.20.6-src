@@ -11,7 +11,7 @@ public class DataGroupArrayList<T> extends ArrayList<T> {
         this.limit = i;
     }
 
-    @Override // java.util.ArrayList, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.ArrayList, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
     public boolean add(T t) {
         if (size() >= this.limit) {
             remove(0);

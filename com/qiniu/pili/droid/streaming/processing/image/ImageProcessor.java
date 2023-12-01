@@ -10,7 +10,7 @@ public final class ImageProcessor {
     public static final boolean b = SharedLibraryNameHelper.getInstance().d();
 
     /* renamed from: a  reason: collision with root package name */
-    public int f27846a;
+    public int f14158a;
 
     public void a() {
         releaseYUVProcessor();
@@ -18,9 +18,9 @@ public final class ImageProcessor {
     }
 
     public void a(int i) {
-        if (this.f27846a != i) {
+        if (this.f14158a != i) {
             setFilterMode(i);
-            this.f27846a = i;
+            this.f14158a = i;
         }
     }
 

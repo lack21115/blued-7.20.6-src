@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.utils.skin.BluedSkinUtils;
+import com.blued.android.module.common.login.model.UserBasicModel;
 import com.blued.android.module.common.user.UserInfoHelper;
 import com.blued.android.module.common.utils.AvatarUtils;
 import com.blued.android.module.common.utils.TimeAndDateUtils;
@@ -29,11 +30,11 @@ import java.util.List;
 public class MsgAttentionNotifyListAdapter extends BaseAdapter {
 
     /* renamed from: a  reason: collision with root package name */
-    private LayoutInflater f32879a;
+    private LayoutInflater f19188a;
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private List<FeedNotice> f32880c = new ArrayList();
+    private List<FeedNotice> f19189c = new ArrayList();
     private IRequestHost d;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -41,11 +42,11 @@ public class MsgAttentionNotifyListAdapter extends BaseAdapter {
     public class ViewHolder {
 
         /* renamed from: a  reason: collision with root package name */
-        TextView f32883a;
+        TextView f19192a;
         TextView b;
 
         /* renamed from: c  reason: collision with root package name */
-        TextView f32884c;
+        TextView f19193c;
         ImageView d;
         ImageView e;
         ImageView f;
@@ -57,7 +58,7 @@ public class MsgAttentionNotifyListAdapter extends BaseAdapter {
     public MsgAttentionNotifyListAdapter(IRequestHost iRequestHost, Context context) {
         this.b = context;
         this.d = iRequestHost;
-        this.f32879a = LayoutInflater.from(this.b);
+        this.f19188a = LayoutInflater.from(this.b);
     }
 
     private void a(View view, FeedNotice feedNotice) {
@@ -74,18 +75,18 @@ public class MsgAttentionNotifyListAdapter extends BaseAdapter {
         } else if (!TextUtils.isEmpty(feedNotice.name)) {
             textView.setText(feedNotice.name);
         }
-        UserRelationshipUtils.a(this.b, textView, feedNotice);
+        UserRelationshipUtils.a(this.b, textView, (UserBasicModel) feedNotice);
     }
 
     private void a(FeedNotice feedNotice, ViewHolder viewHolder) {
         if (feedNotice == null) {
             return;
         }
-        viewHolder.f32884c.setText(MsgCommonUtils.a(this.b, TimeAndDateUtils.c(feedNotice.timestamp)));
+        viewHolder.f19193c.setText(MsgCommonUtils.a(this.b, TimeAndDateUtils.c(feedNotice.timestamp)));
     }
 
     public List<FeedNotice> a() {
-        return this.f32880c;
+        return this.f19189c;
     }
 
     public void a(List<FeedNotice> list, int i) {
@@ -93,34 +94,34 @@ public class MsgAttentionNotifyListAdapter extends BaseAdapter {
         if (list == null) {
             arrayList = new ArrayList();
         }
-        this.f32880c = arrayList;
+        this.f19189c = arrayList;
         notifyDataSetChanged();
     }
 
     public long b() {
-        List<FeedNotice> list = this.f32880c;
+        List<FeedNotice> list = this.f19189c;
         if (list == null || list.isEmpty()) {
             return 0L;
         }
         ArrayList arrayList = new ArrayList();
-        for (FeedNotice feedNotice : this.f32880c) {
+        for (FeedNotice feedNotice : this.f19189c) {
             arrayList.add(Long.valueOf(StringUtils.a(feedNotice.timestamp, 0L)));
         }
         return ((Long) Collections.max(arrayList)).longValue();
     }
 
     public void c() {
-        List<FeedNotice> list = this.f32880c;
+        List<FeedNotice> list = this.f19189c;
         if (list == null || list.isEmpty()) {
             return;
         }
-        this.f32880c.clear();
+        this.f19189c.clear();
         notifyDataSetChanged();
     }
 
     @Override // android.widget.Adapter
     public int getCount() {
-        List<FeedNotice> list = this.f32880c;
+        List<FeedNotice> list = this.f19189c;
         if (list == null) {
             return 0;
         }
@@ -129,7 +130,7 @@ public class MsgAttentionNotifyListAdapter extends BaseAdapter {
 
     @Override // android.widget.Adapter
     public Object getItem(int i) {
-        return this.f32880c.get(i);
+        return this.f19189c.get(i);
     }
 
     @Override // android.widget.Adapter
@@ -141,23 +142,23 @@ public class MsgAttentionNotifyListAdapter extends BaseAdapter {
     public View getView(int i, View view, ViewGroup viewGroup) {
         ViewHolder viewHolder;
         if (view == null) {
-            view = this.f32879a.inflate(R.layout.item_msg_attention_notify_list, viewGroup, false);
+            view = this.f19188a.inflate(R.layout.item_msg_attention_notify_list, viewGroup, false);
             viewHolder = new ViewHolder();
             viewHolder.d = (ImageView) view.findViewById(R.id.msg_friend_item_avatar);
             viewHolder.e = (ImageView) view.findViewById(R.id.msg_item_avatar_v);
-            viewHolder.f32883a = (TextView) view.findViewById(R.id.msg_friend_item_name);
+            viewHolder.f19192a = (TextView) view.findViewById(R.id.msg_friend_item_name);
             viewHolder.b = (TextView) view.findViewById(R.id.msg_friend_item_content);
-            viewHolder.f32884c = (TextView) view.findViewById(R.id.msg_friend_item_time);
+            viewHolder.f19193c = (TextView) view.findViewById(R.id.msg_friend_item_time);
             viewHolder.f = (ImageView) view.findViewById(2131364726);
             view.setTag(viewHolder);
         } else {
             viewHolder = (ViewHolder) view.getTag();
         }
-        final FeedNotice feedNotice = this.f32880c.get(i);
+        final FeedNotice feedNotice = this.f19189c.get(i);
         ImageLoader.a(this.d, AvatarUtils.a(0, feedNotice.avatar)).b(2131237310).c().a(viewHolder.d);
         UserInfoHelper.a(viewHolder.e, feedNotice.vbadge, 3);
-        UserRelationshipUtils.a(viewHolder.f, feedNotice);
-        a(feedNotice, viewHolder.f32883a);
+        UserRelationshipUtils.a(viewHolder.f, (UserBasicModel) feedNotice);
+        a(feedNotice, viewHolder.f19192a);
         a(feedNotice, viewHolder);
         a(view, feedNotice);
         final ViewHolder viewHolder2 = viewHolder;
@@ -167,7 +168,7 @@ public class MsgAttentionNotifyListAdapter extends BaseAdapter {
                 Tracker.onClick(view2);
                 feedNotice.has_read = 1;
                 MsgAttentionNotifyListAdapter.this.notifyDataSetChanged();
-                UserInfoFragmentNew.a(MsgAttentionNotifyListAdapter.this.b, feedNotice, "attention_notify", viewHolder2.d);
+                UserInfoFragmentNew.a(MsgAttentionNotifyListAdapter.this.b, (UserBasicModel) feedNotice, "attention_notify", (View) viewHolder2.d);
             }
         });
         return view;

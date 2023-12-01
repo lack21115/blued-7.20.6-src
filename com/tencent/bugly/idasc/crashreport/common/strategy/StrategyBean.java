@@ -20,11 +20,11 @@ public class StrategyBean implements Parcelable {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f35196a = "https://android.bugly.qq.com/rqd/async";
+    public static String f21505a = "https://android.bugly.qq.com/rqd/async";
     public static String b = "https://android.bugly.qq.com/rqd/async";
 
     /* renamed from: c  reason: collision with root package name */
-    public static String f35197c;
+    public static String f21506c;
     public long d;
     public long e;
     public boolean f;
@@ -59,7 +59,7 @@ public class StrategyBean implements Parcelable {
         this.m = true;
         this.n = true;
         this.p = 30000L;
-        this.q = f35196a;
+        this.q = f21505a;
         this.r = b;
         this.u = 10;
         this.v = 300000L;
@@ -67,7 +67,7 @@ public class StrategyBean implements Parcelable {
         this.e = System.currentTimeMillis();
         StringBuilder sb = new StringBuilder();
         sb.append("S(@L@L@)");
-        f35197c = sb.toString();
+        f21506c = sb.toString();
         sb.setLength(0);
         sb.append("*^@K#K@!");
         this.s = sb.toString();
@@ -86,13 +86,13 @@ public class StrategyBean implements Parcelable {
         this.m = true;
         this.n = true;
         this.p = 30000L;
-        this.q = f35196a;
+        this.q = f21505a;
         this.r = b;
         this.u = 10;
         this.v = 300000L;
         this.w = -1L;
         try {
-            f35197c = "S(@L@L@)";
+            f21506c = "S(@L@L@)";
             this.e = parcel.readLong();
             this.f = parcel.readByte() == 1;
             this.g = parcel.readByte() == 1;

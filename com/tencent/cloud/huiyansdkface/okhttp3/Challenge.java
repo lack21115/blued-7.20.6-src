@@ -11,7 +11,7 @@ import java.util.Map;
 public final class Challenge {
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f35830a;
+    private final String f22139a;
     private final Map<String, String> b;
 
     public Challenge(String str, String str2) {
@@ -21,7 +21,7 @@ public final class Challenge {
         if (str2 == null) {
             throw new NullPointerException("realm == null");
         }
-        this.f35830a = str;
+        this.f22139a = str;
         this.b = Collections.singletonMap("realm", str2);
     }
 
@@ -32,7 +32,7 @@ public final class Challenge {
         if (map == null) {
             throw new NullPointerException("authParams == null");
         }
-        this.f35830a = str;
+        this.f22139a = str;
         LinkedHashMap linkedHashMap = new LinkedHashMap();
         for (Map.Entry<String, String> entry : map.entrySet()) {
             linkedHashMap.put(entry.getKey() == null ? null : entry.getKey().toLowerCase(Locale.US), entry.getValue());
@@ -58,13 +58,13 @@ public final class Challenge {
     public boolean equals(Object obj) {
         if (obj instanceof Challenge) {
             Challenge challenge = (Challenge) obj;
-            return challenge.f35830a.equals(this.f35830a) && challenge.b.equals(this.b);
+            return challenge.f22139a.equals(this.f22139a) && challenge.b.equals(this.b);
         }
         return false;
     }
 
     public int hashCode() {
-        return ((899 + this.f35830a.hashCode()) * 31) + this.b.hashCode();
+        return ((899 + this.f22139a.hashCode()) * 31) + this.b.hashCode();
     }
 
     public String realm() {
@@ -72,18 +72,18 @@ public final class Challenge {
     }
 
     public String scheme() {
-        return this.f35830a;
+        return this.f22139a;
     }
 
     public String toString() {
-        return this.f35830a + " authParams=" + this.b;
+        return this.f22139a + " authParams=" + this.b;
     }
 
     public Challenge withCharset(Charset charset) {
         if (charset != null) {
             LinkedHashMap linkedHashMap = new LinkedHashMap(this.b);
             linkedHashMap.put("charset", charset.name());
-            return new Challenge(this.f35830a, linkedHashMap);
+            return new Challenge(this.f22139a, linkedHashMap);
         }
         throw new NullPointerException("charset == null");
     }

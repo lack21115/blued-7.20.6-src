@@ -3,6 +3,7 @@ package com.soft.blued.ui.msg_group.adapter;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -34,14 +35,14 @@ import kotlin.jvm.internal.StringCompanionObject;
 public final class RecommendGroupAdapter extends BaseQuickAdapter<GroupInfoModel, BaseViewHolder> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final IRequestHost f32661a;
+    private final IRequestHost f18970a;
     private RecommendGroupFragment.RecommendType b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public RecommendGroupAdapter(IRequestHost requestHost) {
+    public RecommendGroupAdapter(IRequestHost iRequestHost) {
         super((int) R.layout.item_group_recommend);
-        Intrinsics.e(requestHost, "requestHost");
-        this.f32661a = requestHost;
+        Intrinsics.e(iRequestHost, "requestHost");
+        this.f18970a = iRequestHost;
         this.b = RecommendGroupFragment.RecommendType.RECOMMEND;
     }
 
@@ -63,23 +64,23 @@ public final class RecommendGroupAdapter extends BaseQuickAdapter<GroupInfoModel
     private final void a(BaseViewHolder baseViewHolder, FlowLayout flowLayout, GroupInfoModel groupInfoModel) {
         flowLayout.removeAllViews();
         if (groupInfoModel.type > 0) {
-            ShapeTextView a2 = a();
-            GroupUtil.a(a2, groupInfoModel, true);
+            View a2 = a();
+            GroupUtil.a((ShapeTextView) a2, groupInfoModel, true);
             flowLayout.addView(a2);
         }
-        ShapeTextView a3 = a();
-        StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
-        String string = AppInfo.d().getResources().getString(2131889484);
+        View a3 = a();
+        StringCompanionObject stringCompanionObject = StringCompanionObject.a;
+        String string = AppInfo.d().getResources().getString(R.string.live_fans_info_num);
         Intrinsics.c(string, "getAppContext().resource…tring.live_fans_info_num)");
         String format = String.format(string, Arrays.copyOf(new Object[]{Integer.valueOf(groupInfoModel.group_now_population)}, 1));
         Intrinsics.c(format, "format(format, *args)");
         a3.setText(format);
         flowLayout.addView(a3);
         if (groupInfoModel.online > 9) {
-            ShapeTextView a4 = a();
+            View a4 = a();
             Drawable drawable = this.mContext.getResources().getDrawable(R.drawable.icon_group_online);
             drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
-            a4.setCompoundDrawables(drawable, null, null, null);
+            a4.setCompoundDrawables(drawable, (Drawable) null, (Drawable) null, (Drawable) null);
             a4.setCompoundDrawablePadding(DensityUtil.a(2.0f));
             a4.setText(groupInfoModel.online + this.mContext.getString(R.string.group_online_number));
             flowLayout.addView(a4);
@@ -89,44 +90,44 @@ public final class RecommendGroupAdapter extends BaseQuickAdapter<GroupInfoModel
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
-    public void convert(BaseViewHolder helper, GroupInfoModel item) {
-        Intrinsics.e(helper, "helper");
-        Intrinsics.e(item, "item");
-        EventTrackGroup.a(SocialNetWorkProtos.Event.GROUP_DRAW, item.label, this.b == RecommendGroupFragment.RecommendType.RECOMMEND ? SocialNetWorkProtos.SourceType.RECOMMEND : SocialNetWorkProtos.SourceType.NEARBY, String.valueOf(item.group_id));
-        GroupUtil.b(this.f32661a, item.group_cover, (ImageView) helper.getView(2131365477));
-        GroupUtil.a((TextView) helper.getView(R.id.tv_frozen), item.group_role, item.group_status);
-        FlowLayout flowLayout = (FlowLayout) helper.getView(2131363977);
+    public void convert(BaseViewHolder baseViewHolder, GroupInfoModel groupInfoModel) {
+        Intrinsics.e(baseViewHolder, "helper");
+        Intrinsics.e(groupInfoModel, "item");
+        EventTrackGroup.a(SocialNetWorkProtos.Event.GROUP_DRAW, groupInfoModel.label, this.b == RecommendGroupFragment.RecommendType.RECOMMEND ? SocialNetWorkProtos.SourceType.RECOMMEND : SocialNetWorkProtos.SourceType.NEARBY, String.valueOf(groupInfoModel.group_id));
+        GroupUtil.b(this.f18970a, groupInfoModel.group_cover, (ImageView) baseViewHolder.getView(R.id.iv_header));
+        GroupUtil.a((TextView) baseViewHolder.getView(R.id.tv_frozen), groupInfoModel.group_role, groupInfoModel.group_status);
+        FlowLayout flowLayout = (FlowLayout) baseViewHolder.getView(2131363977);
         Intrinsics.c(flowLayout, "flowLayout");
-        a(helper, flowLayout, item);
-        TextView textView = (TextView) helper.getView(2131371262);
+        a(baseViewHolder, flowLayout, groupInfoModel);
+        TextView textView = (TextView) baseViewHolder.getView(R.id.tv_desc);
         if (flowLayout.getHeight() > 50) {
             textView.setMaxLines(1);
         } else {
             textView.setMaxLines(2);
         }
         textView.setEllipsize(TextUtils.TruncateAt.END);
-        if (TextUtils.isEmpty(item.category_zh)) {
-            helper.setText(2131371262, item.group_desc);
+        if (TextUtils.isEmpty(groupInfoModel.category_zh)) {
+            baseViewHolder.setText(R.id.tv_desc, groupInfoModel.group_desc);
         } else {
-            helper.setText(2131371262, item.category_zh + ' ' + ((Object) item.group_desc));
+            baseViewHolder.setText(R.id.tv_desc, groupInfoModel.category_zh + ' ' + ((Object) groupInfoModel.group_desc));
         }
-        GroupUtil.a(item, (TextView) helper.getView(R.id.tv_group_name));
-        if (item.group_role != 0) {
-            BluedQuickAdapterExtKt.b(helper, R.id.tv_add, 2131102264).setText(R.id.tv_add, this.mContext.getString(R.string.group_joined)).setTextColor(R.id.tv_add, ContextCompat.getColor(this.mContext, 2131099790));
-        } else if (item.apply_status == 0) {
-            BluedQuickAdapterExtKt.b(helper, R.id.tv_add, 2131101766).setText(R.id.tv_add, item.allow_join == 2 ? this.mContext.getString(R.string.group_apply) : this.mContext.getString(R.string.group_join)).setTextColor(R.id.tv_add, ContextCompat.getColor(this.mContext, 2131101766));
+        GroupUtil.a(groupInfoModel, (TextView) baseViewHolder.getView(R.id.tv_group_name));
+        if (groupInfoModel.group_role != 0) {
+            BluedQuickAdapterExtKt.b(baseViewHolder, (int) R.id.tv_add, 2131102264).setText(R.id.tv_add, this.mContext.getString(R.string.group_joined)).setTextColor(R.id.tv_add, ContextCompat.getColor(this.mContext, 2131099790));
+        } else if (groupInfoModel.apply_status == 0) {
+            BluedQuickAdapterExtKt.b(baseViewHolder, (int) R.id.tv_add, 2131101766).setText(R.id.tv_add, groupInfoModel.allow_join == 2 ? this.mContext.getString(R.string.group_apply) : this.mContext.getString(R.string.group_join)).setTextColor(R.id.tv_add, ContextCompat.getColor(this.mContext, 2131101766));
         } else {
-            BluedQuickAdapterExtKt.b(helper, R.id.tv_add, 2131102264).setText(R.id.tv_add, item.apply_status == 1 ? this.mContext.getString(R.string.group_apply_sent) : this.mContext.getString(R.string.group_join_reject)).setTextColor(R.id.tv_add, ContextCompat.getColor(this.mContext, 2131102264));
+            BluedQuickAdapterExtKt.b(baseViewHolder, (int) R.id.tv_add, 2131102264).setText(R.id.tv_add, groupInfoModel.apply_status == 1 ? this.mContext.getString(R.string.group_apply_sent) : this.mContext.getString(R.string.group_join_reject)).setTextColor(R.id.tv_add, ContextCompat.getColor(this.mContext, 2131102264));
         }
-        helper.addOnClickListener(R.id.tv_add).addOnClickListener(2131369459);
-        LinearLayout linearLayout = (LinearLayout) helper.getView(2131367955);
-        if (item.label == null || item.label.size() <= 0) {
+        baseViewHolder.addOnClickListener(R.id.tv_add).addOnClickListener(2131369459);
+        LinearLayout linearLayout = (LinearLayout) baseViewHolder.getView(R.id.ll_label);
+        if (groupInfoModel.label == null || groupInfoModel.label.size() <= 0) {
             linearLayout.setVisibility(8);
             return;
         }
         linearLayout.setVisibility(0);
         linearLayout.removeAllViews();
-        int size = item.label.size();
+        int size = groupInfoModel.label.size();
         int i = 0;
         while (true) {
             int i2 = i;
@@ -141,14 +142,14 @@ public final class RecommendGroupAdapter extends BaseQuickAdapter<GroupInfoModel
             shapeTextView.setLayoutParams(layoutParams);
             shapeTextView.setPadding(BluedViewExtKt.a(4), 0, BluedViewExtKt.a(4), 0);
             ShapeModel shapeModel = new ShapeModel();
-            shapeModel.k = Color.parseColor(item.label.get(i2).color);
+            shapeModel.k = Color.parseColor(((GroupInfoModel.Label) groupInfoModel.label.get(i2)).color);
             shapeModel.H = BluedViewExtKt.a(8);
             shapeTextView.setShapeModel(shapeModel);
-            shapeTextView.setText(item.label.get(i2).label);
+            shapeTextView.setText(((GroupInfoModel.Label) groupInfoModel.label.get(i2)).label);
             shapeTextView.setTextSize(10.0f);
             shapeTextView.setTextColor(ContextCompat.getColor(this.mContext, 2131102478));
             shapeTextView.setGravity(17);
-            linearLayout.addView(shapeTextView);
+            linearLayout.addView((View) shapeTextView);
             i = i2 + 1;
         }
     }

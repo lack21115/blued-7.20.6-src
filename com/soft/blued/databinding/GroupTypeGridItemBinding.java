@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class GroupTypeGridItemBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final TextView f29054a;
+    private final TextView f15364a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public TextView getRoot() {
-        return this.f29054a;
+        return this.f15364a;
     }
 }

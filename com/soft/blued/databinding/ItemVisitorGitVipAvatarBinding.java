@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemVisitorGitVipAvatarBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final RelativeLayout f29370a;
+    private final RelativeLayout f15680a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
-        return this.f29370a;
+        return this.f15680a;
     }
 }

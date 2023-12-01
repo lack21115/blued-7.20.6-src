@@ -7,7 +7,7 @@ import com.opos.exoplayer.core.Format;
 public interface c {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final c f25519a = new c() { // from class: com.opos.exoplayer.core.metadata.c.1
+    public static final c f11831a = new c() { // from class: com.opos.exoplayer.core.metadata.c.1
         @Override // com.opos.exoplayer.core.metadata.c
         public boolean a(Format format) {
             String str = format.f;

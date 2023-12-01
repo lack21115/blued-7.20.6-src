@@ -18,13 +18,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/event/vm/EventListViewModel.class */
 public final class EventListViewModel extends BaseViewModel {
-
-    /* renamed from: a  reason: collision with root package name */
-    private int f19582a = 1;
+    private int a = 1;
     private final MutableLiveData<List<EventDetailsModel>> b = new MutableLiveData<>();
-
-    /* renamed from: c  reason: collision with root package name */
-    private List<? extends EventDetailsModel> f19583c = new ArrayList();
+    private List<? extends EventDetailsModel> c = new ArrayList();
     private final MutableLiveData<Boolean> d = new MutableLiveData<>();
 
     @Override // com.blued.android.module.common.base.mvvm.BaseViewModel
@@ -35,28 +31,26 @@ public final class EventListViewModel extends BaseViewModel {
 
     public final void a(List<? extends EventDetailsModel> list) {
         Intrinsics.e(list, "<set-?>");
-        this.f19583c = list;
+        this.c = list;
     }
 
     public final void a(final boolean z, final ActivityFragmentActive activityFragmentActive) {
         if (z) {
-            this.f19582a = 1;
+            this.a = 1;
         } else {
-            this.f19582a++;
+            this.a++;
         }
-        EventHttpUtils eventHttpUtils = EventHttpUtils.f19079a;
+        EventHttpUtils eventHttpUtils = EventHttpUtils.a;
         BluedUIHttpResponse<BluedEntityA<EventDetailsModel>> bluedUIHttpResponse = new BluedUIHttpResponse<BluedEntityA<EventDetailsModel>>(z, this) { // from class: com.blued.community.ui.event.vm.EventListViewModel$getEventListData$1
             final /* synthetic */ boolean b;
-
-            /* renamed from: c  reason: collision with root package name */
-            final /* synthetic */ EventListViewModel f19585c;
+            final /* synthetic */ EventListViewModel c;
 
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
                 super(ActivityFragmentActive.this);
                 this.b = z;
-                this.f19585c = this;
+                this.c = this;
             }
 
             /* JADX INFO: Access modifiers changed from: protected */
@@ -82,7 +76,7 @@ public final class EventListViewModel extends BaseViewModel {
                     boolean r0 = r0.b
                     if (r0 == 0) goto L31
                     r0 = r4
-                    com.blued.community.ui.event.vm.EventListViewModel r0 = r0.f19585c
+                    com.blued.community.ui.event.vm.EventListViewModel r0 = r0.c
                     r9 = r0
                     r0 = r5
                     java.util.List<T> r0 = r0.data
@@ -96,7 +90,7 @@ public final class EventListViewModel extends BaseViewModel {
                     goto L5d
                 L31:
                     r0 = r4
-                    com.blued.community.ui.event.vm.EventListViewModel r0 = r0.f19585c
+                    com.blued.community.ui.event.vm.EventListViewModel r0 = r0.c
                     r9 = r0
                     r0 = r9
                     java.util.List r0 = r0.e()
@@ -116,18 +110,18 @@ public final class EventListViewModel extends BaseViewModel {
                     r0.a(r1)
                 L5d:
                     r0 = r4
-                    com.blued.community.ui.event.vm.EventListViewModel r0 = r0.f19585c
+                    com.blued.community.ui.event.vm.EventListViewModel r0 = r0.c
                     androidx.lifecycle.MutableLiveData r0 = r0.d()
                     r1 = r4
-                    com.blued.community.ui.event.vm.EventListViewModel r1 = r1.f19585c
+                    com.blued.community.ui.event.vm.EventListViewModel r1 = r1.c
                     java.util.List r1 = r1.e()
                     r0.postValue(r1)
                     r0 = r4
-                    com.blued.community.ui.event.vm.EventListViewModel r0 = r0.f19585c
+                    com.blued.community.ui.event.vm.EventListViewModel r0 = r0.c
                     androidx.lifecycle.MutableLiveData r0 = r0.f()
                     r9 = r0
                     r0 = r4
-                    com.blued.community.ui.event.vm.EventListViewModel r0 = r0.f19585c
+                    com.blued.community.ui.event.vm.EventListViewModel r0 = r0.c
                     java.util.List r0 = r0.e()
                     java.util.Collection r0 = (java.util.Collection) r0
                     boolean r0 = r0.isEmpty()
@@ -139,7 +133,7 @@ public final class EventListViewModel extends BaseViewModel {
                     r0 = r0 ^ r1
                     if (r0 == 0) goto Lc9
                     r0 = r4
-                    com.blued.community.ui.event.vm.EventListViewModel r0 = r0.f19585c
+                    com.blued.community.ui.event.vm.EventListViewModel r0 = r0.c
                     java.util.List r0 = r0.e()
                     r1 = 0
                     java.lang.Object r0 = r0.get(r1)
@@ -174,7 +168,7 @@ public final class EventListViewModel extends BaseViewModel {
                     r0.postValue(r1)
                 Ld4:
                     r0 = r4
-                    com.blued.community.ui.event.vm.EventListViewModel r0 = r0.f19585c
+                    com.blued.community.ui.event.vm.EventListViewModel r0 = r0.c
                     r1 = r5
                     boolean r1 = r1.hasMore()
                     com.blued.community.ui.event.vm.EventListViewModel.a(r0, r1)
@@ -186,10 +180,10 @@ public final class EventListViewModel extends BaseViewModel {
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish(boolean z2) {
                 super.onUIFinish(z2);
-                this.f19585c.a(z2);
+                this.c.a(z2);
             }
         };
-        int i = this.f19582a;
+        int i = this.a;
         String latitude = UserInfo.getInstance().getLoginUserInfo().getLatitude();
         Intrinsics.c(latitude, "getInstance().loginUserInfo.latitude");
         String longitude = UserInfo.getInstance().getLoginUserInfo().getLongitude();
@@ -206,7 +200,7 @@ public final class EventListViewModel extends BaseViewModel {
     }
 
     public final List<EventDetailsModel> e() {
-        return this.f19583c;
+        return this.c;
     }
 
     public final MutableLiveData<Boolean> f() {

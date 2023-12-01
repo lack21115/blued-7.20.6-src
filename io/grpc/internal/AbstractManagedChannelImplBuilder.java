@@ -1,6 +1,5 @@
 package io.grpc.internal;
 
-import androidx.constraintlayout.core.motion.utils.TypedValues;
 import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.google.common.base.Preconditions;
 import com.google.common.util.concurrent.MoreExecutors;
@@ -95,24 +94,19 @@ public abstract class AbstractManagedChannelImplBuilder<T extends AbstractManage
             this.authority = str;
         }
 
-        @Override // io.grpc.NameResolver.Factory
         public String getDefaultScheme() {
             return AbstractManagedChannelImplBuilder.DIRECT_ADDRESS_SCHEME;
         }
 
-        @Override // io.grpc.NameResolver.Factory
         public NameResolver newNameResolver(URI uri, NameResolver.Args args) {
             return new NameResolver() { // from class: io.grpc.internal.AbstractManagedChannelImplBuilder.DirectAddressNameResolverFactory.1
-                @Override // io.grpc.NameResolver
                 public String getServiceAuthority() {
                     return DirectAddressNameResolverFactory.this.authority;
                 }
 
-                @Override // io.grpc.NameResolver
                 public void shutdown() {
                 }
 
-                @Override // io.grpc.NameResolver
                 public void start(NameResolver.Listener2 listener2) {
                     listener2.onResult(NameResolver.ResolutionResult.newBuilder().setAddresses(Collections.singletonList(new EquivalentAddressGroup(DirectAddressNameResolverFactory.this.address))).setAttributes(Attributes.EMPTY).build());
                 }
@@ -134,8 +128,8 @@ public abstract class AbstractManagedChannelImplBuilder<T extends AbstractManage
         this.idleTimeoutMillis = IDLE_MODE_DEFAULT_TIMEOUT_MILLIS;
         this.maxRetryAttempts = 5;
         this.maxHedgedAttempts = 5;
-        this.retryBufferSize = 16777216L;
-        this.perRpcBufferLimit = 1048576L;
+        this.retryBufferSize = DEFAULT_RETRY_BUFFER_SIZE_IN_BYTES;
+        this.perRpcBufferLimit = DEFAULT_PER_RPC_BUFFER_LIMIT_IN_BYTES;
         this.retryEnabled = false;
         this.channelz = InternalChannelz.instance();
         this.lookUpServiceConfig = true;
@@ -146,7 +140,7 @@ public abstract class AbstractManagedChannelImplBuilder<T extends AbstractManage
         this.recordFinishedRpcs = true;
         this.recordRealTimeMetrics = false;
         this.tracingEnabled = true;
-        this.target = (String) Preconditions.checkNotNull(str, TypedValues.AttributesType.S_TARGET);
+        this.target = (String) Preconditions.checkNotNull(str, "target");
         this.directServerAddress = null;
     }
 
@@ -164,8 +158,8 @@ public abstract class AbstractManagedChannelImplBuilder<T extends AbstractManage
         this.idleTimeoutMillis = IDLE_MODE_DEFAULT_TIMEOUT_MILLIS;
         this.maxRetryAttempts = 5;
         this.maxHedgedAttempts = 5;
-        this.retryBufferSize = 16777216L;
-        this.perRpcBufferLimit = 1048576L;
+        this.retryBufferSize = DEFAULT_RETRY_BUFFER_SIZE_IN_BYTES;
+        this.perRpcBufferLimit = DEFAULT_PER_RPC_BUFFER_LIMIT_IN_BYTES;
         this.retryEnabled = false;
         this.channelz = InternalChannelz.instance();
         this.lookUpServiceConfig = true;
@@ -252,7 +246,6 @@ public abstract class AbstractManagedChannelImplBuilder<T extends AbstractManage
         return this;
     }
 
-    @Override // io.grpc.ManagedChannelBuilder
     public ManagedChannel build() {
         return new ManagedChannelOrphanWrapper(new ManagedChannelImpl(this, buildTransportFactory(), new ExponentialBackoffPolicy.Provider(), SharedResourcePool.forResource(GrpcUtil.SHARED_CHANNEL_EXECUTOR), GrpcUtil.STOPWATCH_SUPPLIER, getEffectiveInterceptors(), TimeProvider.SYSTEM_TIME_PROVIDER));
     }
@@ -263,7 +256,6 @@ public abstract class AbstractManagedChannelImplBuilder<T extends AbstractManage
         return GrpcUtil.checkAuthority(str);
     }
 
-    @Override // io.grpc.ManagedChannelBuilder
     public final T compressorRegistry(CompressorRegistry compressorRegistry) {
         if (compressorRegistry != null) {
             this.compressorRegistry = compressorRegistry;
@@ -273,7 +265,6 @@ public abstract class AbstractManagedChannelImplBuilder<T extends AbstractManage
         return thisT();
     }
 
-    @Override // io.grpc.ManagedChannelBuilder
     public final T decompressorRegistry(DecompressorRegistry decompressorRegistry) {
         if (decompressorRegistry != null) {
             this.decompressorRegistry = decompressorRegistry;
@@ -283,7 +274,6 @@ public abstract class AbstractManagedChannelImplBuilder<T extends AbstractManage
         return thisT();
     }
 
-    @Override // io.grpc.ManagedChannelBuilder
     public final T defaultLoadBalancingPolicy(String str) {
         Preconditions.checkState(this.directServerAddress == null, "directServerAddress is set (%s), which forbids the use of load-balancing policy", this.directServerAddress);
         Preconditions.checkArgument(str != null, "policy cannot be null");
@@ -291,41 +281,35 @@ public abstract class AbstractManagedChannelImplBuilder<T extends AbstractManage
         return thisT();
     }
 
-    @Override // io.grpc.ManagedChannelBuilder
     public /* bridge */ /* synthetic */ ManagedChannelBuilder defaultServiceConfig(@Nullable Map map) {
-        return defaultServiceConfig((Map<String, ?>) map);
+        return m11356defaultServiceConfig((Map<String, ?>) map);
     }
 
-    @Override // io.grpc.ManagedChannelBuilder
-    public T defaultServiceConfig(@Nullable Map<String, ?> map) {
+    /* renamed from: defaultServiceConfig  reason: collision with other method in class */
+    public T m11356defaultServiceConfig(@Nullable Map<String, ?> map) {
         this.defaultServiceConfig = checkMapEntryTypes(map);
         return thisT();
     }
 
-    @Override // io.grpc.ManagedChannelBuilder
     public final T directExecutor() {
         return executor(MoreExecutors.directExecutor());
     }
 
-    @Override // io.grpc.ManagedChannelBuilder
     public final T disableRetry() {
         this.retryEnabled = false;
         return thisT();
     }
 
-    @Override // io.grpc.ManagedChannelBuilder
     public T disableServiceConfigLookUp() {
         this.lookUpServiceConfig = false;
         return thisT();
     }
 
-    @Override // io.grpc.ManagedChannelBuilder
     public final T enableFullStreamDecompression() {
         this.fullStreamDecompression = true;
         return thisT();
     }
 
-    @Override // io.grpc.ManagedChannelBuilder
     public final T enableRetry() {
         this.retryEnabled = true;
         this.statsEnabled = false;
@@ -333,7 +317,6 @@ public abstract class AbstractManagedChannelImplBuilder<T extends AbstractManage
         return thisT();
     }
 
-    @Override // io.grpc.ManagedChannelBuilder
     public final T executor(Executor executor) {
         if (executor != null) {
             this.executorPool = new FixedObjectPool(executor);
@@ -345,7 +328,7 @@ public abstract class AbstractManagedChannelImplBuilder<T extends AbstractManage
 
     /* JADX INFO: Access modifiers changed from: protected */
     public int getDefaultPort() {
-        return 443;
+        return GrpcUtil.DEFAULT_PORT_SSL;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:17:0x00b8  */
@@ -376,7 +359,6 @@ public abstract class AbstractManagedChannelImplBuilder<T extends AbstractManage
         return this.offloadExecutorPool;
     }
 
-    @Override // io.grpc.ManagedChannelBuilder
     public final T idleTimeout(long j, TimeUnit timeUnit) {
         Preconditions.checkArgument(j > 0, "idle timeout is %s, but must be positive", j);
         if (timeUnit.toDays(j) >= IDLE_MODE_MAX_TIMEOUT_DAYS) {
@@ -387,23 +369,20 @@ public abstract class AbstractManagedChannelImplBuilder<T extends AbstractManage
         return thisT();
     }
 
-    @Override // io.grpc.ManagedChannelBuilder
     public /* bridge */ /* synthetic */ ManagedChannelBuilder intercept(List list) {
-        return intercept((List<ClientInterceptor>) list);
+        return m11364intercept((List<ClientInterceptor>) list);
     }
 
-    @Override // io.grpc.ManagedChannelBuilder
-    public final T intercept(List<ClientInterceptor> list) {
+    /* renamed from: intercept  reason: collision with other method in class */
+    public final T m11364intercept(List<ClientInterceptor> list) {
         this.interceptors.addAll(list);
         return thisT();
     }
 
-    @Override // io.grpc.ManagedChannelBuilder
     public final T intercept(ClientInterceptor... clientInterceptorArr) {
-        return intercept(Arrays.asList(clientInterceptorArr));
+        return m11364intercept(Arrays.asList(clientInterceptorArr));
     }
 
-    @Override // io.grpc.ManagedChannelBuilder
     public final T maxHedgedAttempts(int i) {
         this.maxHedgedAttempts = i;
         return thisT();
@@ -414,27 +393,24 @@ public abstract class AbstractManagedChannelImplBuilder<T extends AbstractManage
         return this.maxInboundMessageSize;
     }
 
-    @Override // io.grpc.ManagedChannelBuilder
+    @Override // 
     public T maxInboundMessageSize(int i) {
         Preconditions.checkArgument(i >= 0, "negative max");
         this.maxInboundMessageSize = i;
         return thisT();
     }
 
-    @Override // io.grpc.ManagedChannelBuilder
     public final T maxRetryAttempts(int i) {
         this.maxRetryAttempts = i;
         return thisT();
     }
 
-    @Override // io.grpc.ManagedChannelBuilder
     public T maxTraceEvents(int i) {
         Preconditions.checkArgument(i >= 0, "maxTraceEvents must be non-negative");
         this.maxTraceEvents = i;
         return thisT();
     }
 
-    @Override // io.grpc.ManagedChannelBuilder
     @Deprecated
     public final T nameResolverFactory(NameResolver.Factory factory) {
         Preconditions.checkState(this.directServerAddress == null, "directServerAddress is set (%s), which forbids the use of NameResolverFactory", this.directServerAddress);
@@ -446,7 +422,6 @@ public abstract class AbstractManagedChannelImplBuilder<T extends AbstractManage
         return thisT();
     }
 
-    @Override // io.grpc.ManagedChannelBuilder
     public final T offloadExecutor(Executor executor) {
         if (executor != null) {
             this.offloadExecutorPool = new FixedObjectPool(executor);
@@ -456,33 +431,28 @@ public abstract class AbstractManagedChannelImplBuilder<T extends AbstractManage
         return thisT();
     }
 
-    @Override // io.grpc.ManagedChannelBuilder
     public final T overrideAuthority(String str) {
         this.authorityOverride = checkAuthority(str);
         return thisT();
     }
 
-    @Override // io.grpc.ManagedChannelBuilder
     public final T perRpcBufferLimit(long j) {
         Preconditions.checkArgument(j > 0, "per RPC buffer limit must be positive");
         this.perRpcBufferLimit = j;
         return thisT();
     }
 
-    @Override // io.grpc.ManagedChannelBuilder
     public T proxyDetector(@Nullable ProxyDetector proxyDetector) {
         this.proxyDetector = proxyDetector;
         return thisT();
     }
 
-    @Override // io.grpc.ManagedChannelBuilder
     public final T retryBufferSize(long j) {
         Preconditions.checkArgument(j > 0, "retry buffer size must be positive");
         this.retryBufferSize = j;
         return thisT();
     }
 
-    @Override // io.grpc.ManagedChannelBuilder
     public final T setBinaryLog(BinaryLog binaryLog) {
         this.binlog = binaryLog;
         return thisT();
@@ -510,7 +480,6 @@ public abstract class AbstractManagedChannelImplBuilder<T extends AbstractManage
         this.tracingEnabled = z;
     }
 
-    @Override // io.grpc.ManagedChannelBuilder
     public final T userAgent(@Nullable String str) {
         this.userAgent = str;
         return thisT();

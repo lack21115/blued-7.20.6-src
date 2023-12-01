@@ -9,9 +9,8 @@ import java.net.URI;
 import java.util.Arrays;
 import java.util.List;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-7994992-dex2jar.jar:com/kwad/sdk/core/videocache/i.class */
-public final class i extends ProxySelector {
+final class i extends ProxySelector {
     private static final List<Proxy> anV = Arrays.asList(Proxy.NO_PROXY);
     private final ProxySelector anW;
     private final String anX;

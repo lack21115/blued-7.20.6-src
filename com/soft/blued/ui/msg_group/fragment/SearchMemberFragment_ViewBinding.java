@@ -16,9 +16,9 @@ public class SearchMemberFragment_ViewBinding implements Unbinder {
 
     public SearchMemberFragment_ViewBinding(SearchMemberFragment searchMemberFragment, View view) {
         this.b = searchMemberFragment;
-        searchMemberFragment.refresh_layout = (SmartRefreshLayout) Utils.a(view, 2131369119, "field 'refresh_layout'", SmartRefreshLayout.class);
+        searchMemberFragment.refresh_layout = (SmartRefreshLayout) Utils.a(view, R.id.refresh_layout, "field 'refresh_layout'", SmartRefreshLayout.class);
         searchMemberFragment.title = (CommonTopTitleNoTrans) Utils.a(view, 2131370694, "field 'title'", CommonTopTitleNoTrans.class);
-        searchMemberFragment.search_view = (SearchView) Utils.a(view, 2131369680, "field 'search_view'", SearchView.class);
+        searchMemberFragment.search_view = (SearchView) Utils.a(view, R.id.search_view, "field 'search_view'", SearchView.class);
         searchMemberFragment.search_list = (RecyclerView) Utils.a(view, R.id.search_list, "field 'search_list'", RecyclerView.class);
         searchMemberFragment.user_list = (RecyclerView) Utils.a(view, R.id.user_list, "field 'user_list'", RecyclerView.class);
         searchMemberFragment.noDataView = (NoDataAndLoadFailView) Utils.a(view, 2131368721, "field 'noDataView'", NoDataAndLoadFailView.class);

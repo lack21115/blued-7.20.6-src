@@ -4,11 +4,11 @@ package com.opos.cmn.func.dl.base.a.b;
 public class b implements a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f24891a = b.class.getSimpleName();
+    private static final String f11203a = b.class.getSimpleName();
     private long b;
 
     /* renamed from: c  reason: collision with root package name */
-    private long f24892c;
+    private long f11204c;
 
     /* JADX WARN: Code restructure failed: missing block: B:5:0x0039, code lost:
         if (((float) (r12 - r5.b)) > java.lang.Math.max(0.0f, java.lang.Math.min(((float) r6) * r14, r16))) goto L8;
@@ -24,7 +24,7 @@ public class b implements a {
             long r0 = android.os.SystemClock.uptimeMillis()
             r17 = r0
             r0 = r5
-            long r0 = r0.f24892c
+            long r0 = r0.f11204c
             r21 = r0
             r0 = r15
             long r0 = (long) r0
@@ -59,7 +59,7 @@ public class b implements a {
             r17 = r0
             long r0 = android.os.SystemClock.uptimeMillis()
             r1 = r5
-            long r1 = r1.f24892c
+            long r1 = r1.f11204c
             long r0 = r0 - r1
             r1 = 50
             int r0 = (r0 > r1 ? 1 : (r0 == r1 ? 0 : -1))
@@ -73,7 +73,7 @@ public class b implements a {
             r0.b = r1
             r0 = r5
             long r1 = android.os.SystemClock.uptimeMillis()
-            r0.f24892c = r1
+            r0.f11204c = r1
             r0 = 0
             r1 = r6
             int r0 = (r0 > r1 ? 1 : (r0 == r1 ? 0 : -1))

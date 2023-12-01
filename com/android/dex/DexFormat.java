@@ -17,16 +17,16 @@ public final class DexFormat {
     }
 
     public static String apiToMagic(int i) {
-        return "dex\n" + (i >= 14 ? "036" : "035") + "��";
+        return MAGIC_PREFIX + (i >= 14 ? VERSION_CURRENT : VERSION_FOR_API_13) + MAGIC_SUFFIX;
     }
 
     public static int magicToApi(byte[] bArr) {
         if (bArr.length == 8 && bArr[0] == 100 && bArr[1] == 101 && bArr[2] == 120 && bArr[3] == 10 && bArr[7] == 0) {
             String str = "" + ((char) bArr[4]) + ((char) bArr[5]) + ((char) bArr[6]);
-            if (str.equals("036")) {
+            if (str.equals(VERSION_CURRENT)) {
                 return 14;
             }
-            return str.equals("035") ? 13 : -1;
+            return str.equals(VERSION_FOR_API_13) ? 13 : -1;
         }
         return -1;
     }

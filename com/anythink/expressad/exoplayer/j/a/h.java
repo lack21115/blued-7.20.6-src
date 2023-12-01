@@ -30,11 +30,11 @@ import javax.crypto.spec.SecretKeySpec;
 public final class h {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f7564a = "cached_content_index.exi";
+    public static final String f4725a = "cached_content_index.exi";
     private static final int b = 2;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final int f7565c = 1;
+    private static final int f4726c = 1;
     private final HashMap<String, g> d;
     private final SparseArray<String> e;
     private final com.anythink.expressad.exoplayer.k.b f;
@@ -69,7 +69,7 @@ public final class h {
         }
         this.d = new HashMap<>();
         this.e = new SparseArray<>();
-        this.f = new com.anythink.expressad.exoplayer.k.b(new File(file, f7564a));
+        this.f = new com.anythink.expressad.exoplayer.k.b(new File(file, f4725a));
     }
 
     private static int a(SparseArray<String> sparseArray) {
@@ -93,7 +93,7 @@ public final class h {
 
     private void a(g gVar) {
         this.d.put(gVar.b, gVar);
-        this.e.put(gVar.f7563a, gVar.b);
+        this.e.put(gVar.f4724a, gVar.b);
     }
 
     private g f(String str) {
@@ -238,7 +238,7 @@ public final class h {
                 } catch (IOException e2) {
                     e = e2;
                     dataOutputStream2 = dataOutputStream3;
-                    throw new a.C0138a(e);
+                    throw new a.C0067a(e);
                 } catch (Throwable th2) {
                     th = th2;
                     af.a(dataOutputStream);
@@ -255,7 +255,7 @@ public final class h {
     }
 
     private static Cipher h() {
-        if (af.f7632a == 18) {
+        if (af.f4793a == 18) {
             try {
                 return Cipher.getInstance("AES/CBC/PKCS5PADDING", "BC");
             } catch (Throwable th) {
@@ -365,7 +365,7 @@ public final class h {
                     this.j = false;
                 } catch (IOException e2) {
                     e = e2;
-                    throw new a.C0138a(e);
+                    throw new a.C0067a(e);
                 } catch (Throwable th2) {
                     th = th2;
                     af.a(dataOutputStream);
@@ -381,7 +381,7 @@ public final class h {
     }
 
     public final int c(String str) {
-        return a(str).f7563a;
+        return a(str).f4724a;
     }
 
     public final Collection<g> c() {
@@ -409,7 +409,7 @@ public final class h {
             return;
         }
         this.d.remove(str);
-        this.e.remove(gVar.f7563a);
+        this.e.remove(gVar.f4724a);
         this.j = true;
     }
 

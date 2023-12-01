@@ -1,5 +1,6 @@
 package com.soft.blued.http;
 
+import com.huawei.hms.framework.common.ContainerUtils;
 import java.util.Iterator;
 import java.util.Map;
 
@@ -18,7 +19,7 @@ public class HttpUtils {
                     }
                     Map.Entry<String, String> next = it.next();
                     if (str.contains("?")) {
-                        str = str + "&" + ((Object) next.getKey()) + "=" + ((Object) next.getValue());
+                        str = str + ContainerUtils.FIELD_DELIMITER + ((Object) next.getKey()) + "=" + ((Object) next.getValue());
                     } else {
                         str = str + "?" + ((Object) next.getKey()) + "=" + ((Object) next.getValue());
                     }

@@ -1,6 +1,5 @@
 package com.blued.android.module.yy_china.fragment;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
@@ -64,7 +63,6 @@ import com.blued.android.module.yy_china.utils.log.EventTrackYY;
 import com.blued.das.client.chatroom.ChatRoomProtos;
 import com.bytedance.applog.tracker.Tracker;
 import com.qiniu.android.storage.Configuration;
-import com.soft.blued.ui.mine.model.MineEntryInfo;
 import java.io.File;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -79,13 +77,9 @@ import kotlin.text.StringsKt;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYCreateRoomFragment.class */
 public final class YYCreateRoomFragment extends MvpFragment<YYCreateRoomPreSenter> implements TextWatcher, View.OnClickListener, OnClickRoomLabelListener, OnClickRoomTypeListener, OnYYCreateRoomSelectPhotoListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f17181a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private FragmentYyCreateRoomBinding b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private CreateRoomTypeAdapter f17182c;
+    private CreateRoomTypeAdapter c;
     private CreateRoomLabelAdapter d;
     private CreateRoomBgAdapter e;
     private YYCreateTypeMode f;
@@ -113,7 +107,7 @@ public final class YYCreateRoomFragment extends MvpFragment<YYCreateRoomPreSente
             Bundle bundle = new Bundle();
             bundle.putString("data", selectTypeId);
             bundle.putBoolean("isShowRight", z);
-            bundle.putInt(MineEntryInfo.ColumnsExtra.TYPE_ANCHOR_LEVEL, i);
+            bundle.putInt("anchor_level", i);
             TerminalActivity.a(bundle);
             TerminalActivity.b(bundle);
             TerminalActivity.a(fragment, YYCreateRoomFragment.class, bundle, 10001);
@@ -123,12 +117,12 @@ public final class YYCreateRoomFragment extends MvpFragment<YYCreateRoomPreSente
     private final void D() {
         EditText editText;
         FragmentYyCreateRoomBinding fragmentYyCreateRoomBinding = this.b;
-        EditText editText2 = fragmentYyCreateRoomBinding == null ? null : fragmentYyCreateRoomBinding.f16495a;
+        EditText editText2 = fragmentYyCreateRoomBinding == null ? null : fragmentYyCreateRoomBinding.a;
         if (editText2 != null) {
             editText2.setFilters(new InputFilter[]{new EnglishCharFilter(32)});
         }
         FragmentYyCreateRoomBinding fragmentYyCreateRoomBinding2 = this.b;
-        if (fragmentYyCreateRoomBinding2 == null || (editText = fragmentYyCreateRoomBinding2.f16495a) == null) {
+        if (fragmentYyCreateRoomBinding2 == null || (editText = fragmentYyCreateRoomBinding2.a) == null) {
             return;
         }
         editText.setOnFocusChangeListener(new View.OnFocusChangeListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYCreateRoomFragment$uScrtBvTTN8d7VzlwMdaQtZnhnI
@@ -237,7 +231,7 @@ public final class YYCreateRoomFragment extends MvpFragment<YYCreateRoomPreSente
                 FragmentYyCreateRoomBinding b = YYCreateRoomFragment.this.b();
                 if (b != null) {
                     YYCreateRoomFragment yYCreateRoomFragment = YYCreateRoomFragment.this;
-                    b.f16495a.addTextChangedListener(yYCreateRoomFragment);
+                    b.a.addTextChangedListener(yYCreateRoomFragment);
                     ShapeTextView shapeTextView = b.w;
                     YYCreateRoomFragment yYCreateRoomFragment2 = yYCreateRoomFragment;
                     shapeTextView.setOnClickListener(yYCreateRoomFragment2);
@@ -245,18 +239,18 @@ public final class YYCreateRoomFragment extends MvpFragment<YYCreateRoomPreSente
                     yYCreateRoomFragment.a(new CreateRoomTypeAdapter(yYCreateRoomFragment, yYCreateRoomFragment));
                     b.r.setLayoutManager(new GridLayoutManager(b.r.getContext(), 3));
                     b.r.setAdapter(yYCreateRoomFragment.c());
-                    EditText editText = b.f16495a;
-                    StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
+                    EditText editText = b.a;
+                    StringCompanionObject stringCompanionObject = StringCompanionObject.a;
                     String string = yYCreateRoomFragment.getResources().getString(R.string.yy_create_room_name);
                     Intrinsics.c(string, "resources.getString(R.string.yy_create_room_name)");
                     String format = String.format(string, Arrays.copyOf(new Object[]{UserInfo.getInstance().getLoginUserInfo().getName()}, 1));
                     Intrinsics.c(format, "format(format, *args)");
                     editText.setText(format);
-                    b.f16495a.setSelection(b.f16495a.getText().length());
+                    b.a.setSelection(b.a.getText().length());
                 }
-                CreateRoomTypeAdapter c2 = YYCreateRoomFragment.this.c();
-                if (c2 != null) {
-                    c2.setNewData(list);
+                CreateRoomTypeAdapter c = YYCreateRoomFragment.this.c();
+                if (c != null) {
+                    c.setNewData(list);
                 }
                 Iterator<YYCreateTypeMode> it = list.iterator();
                 while (true) {
@@ -272,9 +266,9 @@ public final class YYCreateRoomFragment extends MvpFragment<YYCreateRoomPreSente
                 if (YYCreateRoomFragment.this.v() == null) {
                     YYCreateRoomFragment.this.a(list.get(0));
                 }
-                CreateRoomTypeAdapter c3 = YYCreateRoomFragment.this.c();
-                if (c3 != null) {
-                    c3.a(YYCreateRoomFragment.this.v());
+                CreateRoomTypeAdapter c2 = YYCreateRoomFragment.this.c();
+                if (c2 != null) {
+                    c2.a(YYCreateRoomFragment.this.v());
                 }
                 YYCreateRoomFragment yYCreateRoomFragment3 = YYCreateRoomFragment.this;
                 yYCreateRoomFragment3.a(yYCreateRoomFragment3.v(), "");
@@ -434,17 +428,17 @@ public final class YYCreateRoomFragment extends MvpFragment<YYCreateRoomPreSente
             if (yYCreateTypeMode == null) {
                 return;
             }
-            ImageWrapper c2 = ImageLoader.a(getFragmentActive(), yYCreateTypeMode.getBackground_img()).c(500);
+            ImageWrapper c = ImageLoader.a(getFragmentActive(), yYCreateTypeMode.getBackground_img()).c(500);
             FragmentYyCreateRoomBinding b = b();
             if (b != null) {
                 imageView2 = b.h;
             }
-            c2.a(imageView2);
+            c.a(imageView2);
         } else if (bgCollectionMode == null) {
         } else {
-            ImageWrapper c3 = ImageLoader.a(getFragmentActive(), bgCollectionMode.getDefault_pic()).c(500);
+            ImageWrapper c2 = ImageLoader.a(getFragmentActive(), bgCollectionMode.getDefault_pic()).c(500);
             FragmentYyCreateRoomBinding b2 = b();
-            c3.a(b2 == null ? null : b2.h);
+            c2.a(b2 == null ? null : b2.h);
             if (!StringUtils.b(bgCollectionMode.getPic())) {
                 ImageWrapper g = ImageLoader.a(getFragmentActive(), bgCollectionMode.getPic()).g().g(-1);
                 FragmentYyCreateRoomBinding b3 = b();
@@ -550,7 +544,7 @@ public final class YYCreateRoomFragment extends MvpFragment<YYCreateRoomPreSente
                 FragmentYyCreateRoomBinding b = YYCreateRoomFragment.this.b();
                 if (b != null && (textView = b.C) != null) {
                     textView.setText(YYCreateRoomFragment.this.getString(R.string.yy_preview_uploading));
-                    Unit unit = Unit.f42314a;
+                    Unit unit = Unit.a;
                 }
                 FragmentYyCreateRoomBinding b2 = YYCreateRoomFragment.this.b();
                 TextView textView2 = b2 == null ? null : b2.C;
@@ -628,26 +622,26 @@ public final class YYCreateRoomFragment extends MvpFragment<YYCreateRoomPreSente
             imageView.setVisibility(8);
         }
         FragmentYyCreateRoomBinding fragmentYyCreateRoomBinding2 = this$0.b;
-        if (fragmentYyCreateRoomBinding2 != null && (editText2 = fragmentYyCreateRoomBinding2.f16495a) != null) {
+        if (fragmentYyCreateRoomBinding2 != null && (editText2 = fragmentYyCreateRoomBinding2.a) != null) {
             editText2.requestFocus();
         }
         FragmentActivity activity = this$0.getActivity();
-        Object systemService = activity == null ? null : activity.getSystemService(Context.INPUT_METHOD_SERVICE);
+        Object systemService = activity == null ? null : activity.getSystemService("input_method");
         if (systemService == null) {
             throw new NullPointerException("null cannot be cast to non-null type android.view.inputmethod.InputMethodManager");
         }
         InputMethodManager inputMethodManager = (InputMethodManager) systemService;
         FragmentYyCreateRoomBinding fragmentYyCreateRoomBinding3 = this$0.b;
-        inputMethodManager.showSoftInput(fragmentYyCreateRoomBinding3 == null ? null : fragmentYyCreateRoomBinding3.f16495a, 0);
+        inputMethodManager.showSoftInput(fragmentYyCreateRoomBinding3 == null ? null : fragmentYyCreateRoomBinding3.a, 0);
         FragmentYyCreateRoomBinding fragmentYyCreateRoomBinding4 = this$0.b;
-        if (fragmentYyCreateRoomBinding4 == null || (editText = fragmentYyCreateRoomBinding4.f16495a) == null) {
+        if (fragmentYyCreateRoomBinding4 == null || (editText = fragmentYyCreateRoomBinding4.a) == null) {
             return;
         }
         FragmentYyCreateRoomBinding fragmentYyCreateRoomBinding5 = this$0.b;
         if (fragmentYyCreateRoomBinding5 == null) {
             valueOf = null;
         } else {
-            EditText editText3 = fragmentYyCreateRoomBinding5.f16495a;
+            EditText editText3 = fragmentYyCreateRoomBinding5.a;
             if (editText3 == null) {
                 valueOf = null;
             } else {
@@ -732,7 +726,7 @@ public final class YYCreateRoomFragment extends MvpFragment<YYCreateRoomPreSente
     public static final void c(YYCreateRoomFragment this$0, View view) {
         Intrinsics.e(this$0, "this$0");
         FragmentYyCreateRoomBinding fragmentYyCreateRoomBinding = this$0.b;
-        Group group = fragmentYyCreateRoomBinding == null ? null : fragmentYyCreateRoomBinding.f16496c;
+        Group group = fragmentYyCreateRoomBinding == null ? null : fragmentYyCreateRoomBinding.c;
         if (group == null) {
             return;
         }
@@ -757,9 +751,9 @@ public final class YYCreateRoomFragment extends MvpFragment<YYCreateRoomPreSente
         Intrinsics.e(this$0, "this$0");
         FragmentYyCreateRoomBinding fragmentYyCreateRoomBinding = this$0.b;
         int i = 0;
-        boolean z = (fragmentYyCreateRoomBinding == null || (group = fragmentYyCreateRoomBinding.f16496c) == null || group.getVisibility() != 0) ? false : true;
+        boolean z = (fragmentYyCreateRoomBinding == null || (group = fragmentYyCreateRoomBinding.c) == null || group.getVisibility() != 0) ? false : true;
         FragmentYyCreateRoomBinding fragmentYyCreateRoomBinding2 = this$0.b;
-        Group group2 = fragmentYyCreateRoomBinding2 == null ? null : fragmentYyCreateRoomBinding2.f16496c;
+        Group group2 = fragmentYyCreateRoomBinding2 == null ? null : fragmentYyCreateRoomBinding2.c;
         if (group2 == null) {
             return;
         }
@@ -775,9 +769,9 @@ public final class YYCreateRoomFragment extends MvpFragment<YYCreateRoomPreSente
         Intrinsics.e(this$0, "this$0");
         FragmentYyCreateRoomBinding fragmentYyCreateRoomBinding = this$0.b;
         int i = 0;
-        boolean z = (fragmentYyCreateRoomBinding == null || (group = fragmentYyCreateRoomBinding.f16496c) == null || group.getVisibility() != 0) ? false : true;
+        boolean z = (fragmentYyCreateRoomBinding == null || (group = fragmentYyCreateRoomBinding.c) == null || group.getVisibility() != 0) ? false : true;
         FragmentYyCreateRoomBinding fragmentYyCreateRoomBinding2 = this$0.b;
-        Group group2 = fragmentYyCreateRoomBinding2 == null ? null : fragmentYyCreateRoomBinding2.f16496c;
+        Group group2 = fragmentYyCreateRoomBinding2 == null ? null : fragmentYyCreateRoomBinding2.c;
         if (group2 == null) {
             return;
         }
@@ -791,7 +785,7 @@ public final class YYCreateRoomFragment extends MvpFragment<YYCreateRoomPreSente
     public static final void h(YYCreateRoomFragment this$0, View view) {
         Intrinsics.e(this$0, "this$0");
         FragmentYyCreateRoomBinding fragmentYyCreateRoomBinding = this$0.b;
-        Group group = fragmentYyCreateRoomBinding == null ? null : fragmentYyCreateRoomBinding.f16496c;
+        Group group = fragmentYyCreateRoomBinding == null ? null : fragmentYyCreateRoomBinding.c;
         if (group == null) {
             return;
         }
@@ -809,9 +803,9 @@ public final class YYCreateRoomFragment extends MvpFragment<YYCreateRoomPreSente
     public final void C() {
         EditText editText;
         FragmentYyCreateRoomBinding fragmentYyCreateRoomBinding = this.b;
-        KeyboardUtils.b(fragmentYyCreateRoomBinding == null ? null : fragmentYyCreateRoomBinding.f16495a);
+        KeyboardUtils.b(fragmentYyCreateRoomBinding == null ? null : fragmentYyCreateRoomBinding.a);
         FragmentYyCreateRoomBinding fragmentYyCreateRoomBinding2 = this.b;
-        if (fragmentYyCreateRoomBinding2 == null || (editText = fragmentYyCreateRoomBinding2.f16495a) == null) {
+        if (fragmentYyCreateRoomBinding2 == null || (editText = fragmentYyCreateRoomBinding2.a) == null) {
             return;
         }
         editText.clearFocus();
@@ -839,8 +833,8 @@ public final class YYCreateRoomFragment extends MvpFragment<YYCreateRoomPreSente
             if (layoutParams == null) {
                 throw new NullPointerException("null cannot be cast to non-null type androidx.constraintlayout.widget.ConstraintLayout.LayoutParams");
             }
-            ConstraintLayout.LayoutParams layoutParams2 = (ConstraintLayout.LayoutParams) layoutParams;
-            layoutParams2.topMargin = StatusBarHelper.a(getContext());
+            ViewGroup.LayoutParams layoutParams2 = (ConstraintLayout.LayoutParams) layoutParams;
+            ((ConstraintLayout.LayoutParams) layoutParams2).topMargin = StatusBarHelper.a(getContext());
             FragmentYyCreateRoomBinding fragmentYyCreateRoomBinding2 = this.b;
             TextView textView3 = fragmentYyCreateRoomBinding2 == null ? null : fragmentYyCreateRoomBinding2.F;
             if (textView3 != null) {
@@ -921,7 +915,7 @@ public final class YYCreateRoomFragment extends MvpFragment<YYCreateRoomPreSente
     }
 
     public final void a(CreateRoomTypeAdapter createRoomTypeAdapter) {
-        this.f17182c = createRoomTypeAdapter;
+        this.c = createRoomTypeAdapter;
     }
 
     public final void a(YYCreateRoomSelectPhotoDialog yYCreateRoomSelectPhotoDialog) {
@@ -938,7 +932,7 @@ public final class YYCreateRoomFragment extends MvpFragment<YYCreateRoomPreSente
 
     @Override // com.blued.android.module.yy_china.fragment.OnClickRoomLabelListener
     public void a(HomeTopicModel homeTopicModel, String str) {
-        List<HomeTopicModel> data;
+        List data;
         RecyclerView recyclerView;
         this.g = homeTopicModel;
         CreateRoomLabelAdapter createRoomLabelAdapter = this.d;
@@ -1043,7 +1037,7 @@ public final class YYCreateRoomFragment extends MvpFragment<YYCreateRoomPreSente
     }
 
     public final CreateRoomTypeAdapter c() {
-        return this.f17182c;
+        return this.c;
     }
 
     public final void c(String str) {
@@ -1070,7 +1064,6 @@ public final class YYCreateRoomFragment extends MvpFragment<YYCreateRoomPreSente
         return R.layout.fragment_yy_create_room;
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         if (i2 == -1 && i == 22 && intent != null) {
             String stringExtra = intent.getStringExtra("photo_path");
@@ -1101,7 +1094,7 @@ public final class YYCreateRoomFragment extends MvpFragment<YYCreateRoomPreSente
             intent.putExtra("typeId", v == null ? null : v.getType());
             HomeTopicModel w = w();
             intent.putExtra("labelId", String.valueOf(w == null ? null : Integer.valueOf(w.getLabel_id())));
-            intent.putExtra("roomname", StringsKt.b((CharSequence) fragmentYyCreateRoomBinding.f16495a.getText().toString()).toString());
+            intent.putExtra("roomname", StringsKt.b((CharSequence) fragmentYyCreateRoomBinding.a.getText().toString()).toString());
             intent.putExtra("is_veiled", B());
             if (z() != null) {
                 intent.putExtra("imgCover", z());

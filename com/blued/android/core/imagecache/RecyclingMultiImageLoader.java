@@ -9,13 +9,9 @@ import com.blued.android.core.imagecache.view.RecyclingImageView;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/imagecache/RecyclingMultiImageLoader.class */
 public class RecyclingMultiImageLoader {
-
-    /* renamed from: a  reason: collision with root package name */
-    private RecyclingImageView f9601a;
+    private RecyclingImageView a;
     private String[] b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private LoadOptions f9602c;
+    private LoadOptions c;
     private ImageLoadingListener d;
     private String f;
     private FailReason h;
@@ -28,13 +24,13 @@ public class RecyclingMultiImageLoader {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void a() {
-        LoadOptions loadOptions = new LoadOptions(this.f9602c);
+        LoadOptions loadOptions = new LoadOptions(this.c);
         loadOptions.h = false;
         int i = this.e + 1;
         this.e = i;
         String[] strArr = this.b;
         if (i < strArr.length) {
-            RecyclingImageLoader.a(this.f9601a, strArr[i], loadOptions, new ImageLoadingListener() { // from class: com.blued.android.core.imagecache.RecyclingMultiImageLoader.1
+            RecyclingImageLoader.a(this.a, strArr[i], loadOptions, new ImageLoadingListener() { // from class: com.blued.android.core.imagecache.RecyclingMultiImageLoader.1
                 @Override // com.blued.android.core.imagecache.ImageLoadingListener
                 public void a(int i2, int i3) {
                     if (RecyclingMultiImageLoader.this.d != null) {
@@ -87,7 +83,7 @@ public class RecyclingMultiImageLoader {
         }
         ImageLoadingListener imageLoadingListener2 = imageLoadingListener;
         if (imageLoadingListener == null) {
-            imageLoadingListener2 = RecyclingImageLoader.f9596a;
+            imageLoadingListener2 = RecyclingImageLoader.a;
         }
         ImageLoadEngine.a(recyclingImageView, "");
         int length = strArr.length;
@@ -97,9 +93,9 @@ public class RecyclingMultiImageLoader {
             if (i2 >= length) {
                 RecyclingMultiImageLoader recyclingMultiImageLoader = new RecyclingMultiImageLoader();
                 recyclingMultiImageLoader.i = new Handler();
-                recyclingMultiImageLoader.f9601a = recyclingImageView;
+                recyclingMultiImageLoader.a = recyclingImageView;
                 recyclingMultiImageLoader.b = strArr;
-                recyclingMultiImageLoader.f9602c = loadOptions2;
+                recyclingMultiImageLoader.c = loadOptions2;
                 recyclingMultiImageLoader.d = imageLoadingListener2;
                 recyclingMultiImageLoader.a();
                 return;
@@ -107,9 +103,9 @@ public class RecyclingMultiImageLoader {
             String str = strArr[i2];
             if (!TextUtils.isEmpty(str)) {
                 imageLoadingListener2.a(str, recyclingImageView, loadOptions2);
-                Drawable a2 = RecyclingImageLoader.a(RecyclingUtils.a(str, loadOptions2));
-                if (a2 != null) {
-                    imageLoadingListener2.a(str, recyclingImageView, loadOptions2, a2, true);
+                Drawable a = RecyclingImageLoader.a(RecyclingUtils.a(str, loadOptions2));
+                if (a != null) {
+                    imageLoadingListener2.a(str, recyclingImageView, loadOptions2, a, true);
                     return;
                 }
             }
@@ -119,7 +115,7 @@ public class RecyclingMultiImageLoader {
 
     private void b() {
         String str;
-        if (!this.f9602c.h) {
+        if (!this.c.h) {
             this.h = new FailReason(FailReason.FailType.UNKNOWN, null);
             c();
             return;
@@ -135,13 +131,13 @@ public class RecyclingMultiImageLoader {
                 return;
             }
             str = strArr[i2];
-            RecyclingUtils.Scheme a2 = RecyclingUtils.Scheme.a(str);
-            if (a2 == RecyclingUtils.Scheme.HTTP || a2 == RecyclingUtils.Scheme.HTTPS) {
+            RecyclingUtils.Scheme a = RecyclingUtils.Scheme.a(str);
+            if (a == RecyclingUtils.Scheme.HTTP || a == RecyclingUtils.Scheme.HTTPS) {
                 break;
             }
             i = i2 + 1;
         }
-        RecyclingImageLoader.a(this.f9601a, str, this.f9602c, new ImageLoadingListener() { // from class: com.blued.android.core.imagecache.RecyclingMultiImageLoader.2
+        RecyclingImageLoader.a(this.a, str, this.c, new ImageLoadingListener() { // from class: com.blued.android.core.imagecache.RecyclingMultiImageLoader.2
             @Override // com.blued.android.core.imagecache.ImageLoadingListener
             public void a(int i3, int i4) {
                 if (RecyclingMultiImageLoader.this.d != null) {
@@ -185,13 +181,13 @@ public class RecyclingMultiImageLoader {
     public void c() {
         Drawable drawable = this.g;
         if (drawable == null) {
-            this.d.a(null, this.f9601a, this.f9602c, this.h);
+            this.d.a(null, this.a, this.c, this.h);
             return;
         }
         ImageLoadingListener imageLoadingListener = this.d;
         String str = this.f;
-        RecyclingImageView recyclingImageView = this.f9601a;
-        LoadOptions loadOptions = this.f9602c;
+        RecyclingImageView recyclingImageView = this.a;
+        LoadOptions loadOptions = this.c;
         imageLoadingListener.a(str, recyclingImageView, loadOptions, drawable, loadOptions.g);
     }
 }

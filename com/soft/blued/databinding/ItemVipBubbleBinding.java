@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemVipBubbleBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ConstraintLayout f29346a;
+    private final ConstraintLayout f15656a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f29346a;
+        return this.f15656a;
     }
 }

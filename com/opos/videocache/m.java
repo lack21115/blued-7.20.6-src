@@ -13,18 +13,18 @@ class m {
     private static final Pattern e = Pattern.compile("GET /(.*) HTTP");
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f27448a;
+    public final String f13760a;
     public final long b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final boolean f27449c;
+    public final boolean f13761c;
 
     public m(String str) {
         f.a(str);
         long a2 = a(str);
         this.b = Math.max(0L, a2);
-        this.f27449c = a2 >= 0;
-        this.f27448a = b(str);
+        this.f13761c = a2 >= 0;
+        this.f13760a = b(str);
     }
 
     private long a(String str) {
@@ -57,6 +57,6 @@ class m {
     }
 
     public String toString() {
-        return "GetRequest{rangeOffset=" + this.b + ", partial=" + this.f27449c + ", uri='" + this.f27448a + "'}";
+        return "GetRequest{rangeOffset=" + this.b + ", partial=" + this.f13761c + ", uri='" + this.f13760a + "'}";
     }
 }

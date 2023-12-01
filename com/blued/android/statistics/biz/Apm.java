@@ -4,6 +4,7 @@ import com.blued.android.statistics.grpc.connect.ApmManager;
 import com.blued.android.statistics.util.Utils;
 import com.blued.das.apm.ApmProtos;
 import com.google.protobuf.Any;
+import io.grpc.internal.GrpcUtil;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/statistics/biz/Apm.class */
 public final class Apm {
@@ -11,9 +12,7 @@ public final class Apm {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/statistics/biz/Apm$InstanceHolder.class */
     public static class InstanceHolder {
-
-        /* renamed from: a  reason: collision with root package name */
-        private static final Apm f18682a = new Apm();
+        private static final Apm a = new Apm();
 
         private InstanceHolder() {
         }
@@ -23,7 +22,7 @@ public final class Apm {
     }
 
     public static Apm a() {
-        return InstanceHolder.f18682a;
+        return InstanceHolder.a;
     }
 
     private void a(ApmProtos.Request.Builder builder) {
@@ -40,14 +39,14 @@ public final class Apm {
 
     public void a(ApmProtos.GrpcConnectTypeProto.BUSINESS business, int i, long j, Throwable th, String str, String str2) {
         try {
-            a(ApmProtos.Request.newBuilder().setType(ApmProtos.Type.GRPC_CONNECT).setTakes((int) j).setCode(i).setDescription(Utils.a(th)).setExtra(Any.pack(ApmProtos.GrpcConnectTypeProto.newBuilder().setBusiness(business).setHost(Utils.b(str)).setPort(443).setServerIp(Utils.b(str2)).build())));
+            a(ApmProtos.Request.newBuilder().setType(ApmProtos.Type.GRPC_CONNECT).setTakes((int) j).setCode(i).setDescription(Utils.a(th)).setExtra(Any.pack(ApmProtos.GrpcConnectTypeProto.newBuilder().setBusiness(business).setHost(Utils.b(str)).setPort((int) GrpcUtil.DEFAULT_PORT_SSL).setServerIp(Utils.b(str2)).build())));
         } catch (Exception e) {
         }
     }
 
     public void a(ApmProtos.GrpcRequestTypeProto.BUSINESS business, String str, int i, long j, String str2, Throwable th, String str3, String str4) {
         try {
-            a(ApmProtos.Request.newBuilder().setType(ApmProtos.Type.GRPC_REQUEST).setCode(i).setTakes((int) j).setServerRequestId(Utils.b(str2)).setDescription(Utils.a(th)).setExtra(Any.pack(ApmProtos.GrpcRequestTypeProto.newBuilder().setBusiness(business).setName(Utils.b(str)).setHost(Utils.b(str3)).setPort(443).setServerIp(Utils.b(str4)).build())));
+            a(ApmProtos.Request.newBuilder().setType(ApmProtos.Type.GRPC_REQUEST).setCode(i).setTakes((int) j).setServerRequestId(Utils.b(str2)).setDescription(Utils.a(th)).setExtra(Any.pack(ApmProtos.GrpcRequestTypeProto.newBuilder().setBusiness(business).setName(Utils.b(str)).setHost(Utils.b(str3)).setPort((int) GrpcUtil.DEFAULT_PORT_SSL).setServerIp(Utils.b(str4)).build())));
         } catch (Exception e) {
         }
     }

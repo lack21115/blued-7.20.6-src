@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentUserinfoMyFeedBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29005a;
+    private final LinearLayout f15315a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29005a;
+        return this.f15315a;
     }
 }

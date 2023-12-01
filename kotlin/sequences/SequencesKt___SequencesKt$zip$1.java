@@ -10,9 +10,7 @@ import kotlin.jvm.internal.Lambda;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/sequences/SequencesKt___SequencesKt$zip$1.class */
 final class SequencesKt___SequencesKt$zip$1<R, T> extends Lambda implements Function2<T, R, Pair<? extends T, ? extends R>> {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final SequencesKt___SequencesKt$zip$1 f42691a = new SequencesKt___SequencesKt$zip$1();
+    public static final SequencesKt___SequencesKt$zip$1 a = new SequencesKt___SequencesKt$zip$1();
 
     SequencesKt___SequencesKt$zip$1() {
         super(2);

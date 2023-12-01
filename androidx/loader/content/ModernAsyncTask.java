@@ -25,14 +25,14 @@ abstract class ModernAsyncTask<Params, Progress, Result> {
     public static final Executor THREAD_POOL_EXECUTOR;
 
     /* renamed from: a  reason: collision with root package name */
-    private static final ThreadFactory f3086a = new ThreadFactory() { // from class: androidx.loader.content.ModernAsyncTask.1
+    private static final ThreadFactory f3038a = new ThreadFactory() { // from class: androidx.loader.content.ModernAsyncTask.1
 
         /* renamed from: a  reason: collision with root package name */
-        private final AtomicInteger f3088a = new AtomicInteger(1);
+        private final AtomicInteger f3040a = new AtomicInteger(1);
 
         @Override // java.util.concurrent.ThreadFactory
         public Thread newThread(Runnable runnable) {
-            return new Thread(runnable, "ModernAsyncTask #" + this.f3088a.getAndIncrement());
+            return new Thread(runnable, "ModernAsyncTask #" + this.f3040a.getAndIncrement());
         }
     };
     private static final BlockingQueue<Runnable> b = new LinkedBlockingQueue(10);
@@ -41,7 +41,7 @@ abstract class ModernAsyncTask<Params, Progress, Result> {
     private volatile Status i = Status.PENDING;
 
     /* renamed from: c  reason: collision with root package name */
-    final AtomicBoolean f3087c = new AtomicBoolean();
+    final AtomicBoolean f3039c = new AtomicBoolean();
     final AtomicBoolean d = new AtomicBoolean();
     private final WorkerRunnable<Params, Result> g = new WorkerRunnable<Params, Result>() { // from class: androidx.loader.content.ModernAsyncTask.2
         @Override // java.util.concurrent.Callable
@@ -60,9 +60,8 @@ abstract class ModernAsyncTask<Params, Progress, Result> {
         }
     };
     private final FutureTask<Result> h = new FutureTask<Result>(this.g) { // from class: androidx.loader.content.ModernAsyncTask.3
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // java.util.concurrent.FutureTask
-        public void done() {
+        protected void done() {
             try {
                 ModernAsyncTask.this.c(get());
             } catch (InterruptedException e2) {
@@ -83,18 +82,18 @@ abstract class ModernAsyncTask<Params, Progress, Result> {
     public static /* synthetic */ class AnonymousClass4 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f3091a;
+        static final /* synthetic */ int[] f3043a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:7:0x0020 -> B:11:0x0014). Please submit an issue!!! */
         static {
             int[] iArr = new int[Status.values().length];
-            f3091a = iArr;
+            f3043a = iArr;
             try {
                 iArr[Status.RUNNING.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f3091a[Status.FINISHED.ordinal()] = 2;
+                f3043a[Status.FINISHED.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
         }
@@ -105,11 +104,11 @@ abstract class ModernAsyncTask<Params, Progress, Result> {
     public static class AsyncTaskResult<Data> {
 
         /* renamed from: a  reason: collision with root package name */
-        final ModernAsyncTask f3092a;
+        final ModernAsyncTask f3044a;
         final Data[] b;
 
         AsyncTaskResult(ModernAsyncTask modernAsyncTask, Data... dataArr) {
-            this.f3092a = modernAsyncTask;
+            this.f3044a = modernAsyncTask;
             this.b = dataArr;
         }
     }
@@ -127,10 +126,10 @@ abstract class ModernAsyncTask<Params, Progress, Result> {
             AsyncTaskResult asyncTaskResult = (AsyncTaskResult) message.obj;
             int i = message.what;
             if (i == 1) {
-                asyncTaskResult.f3092a.e(asyncTaskResult.b[0]);
+                asyncTaskResult.f3044a.e(asyncTaskResult.b[0]);
             } else if (i != 2) {
             } else {
-                asyncTaskResult.f3092a.b((Object[]) asyncTaskResult.b);
+                asyncTaskResult.f3044a.b((Object[]) asyncTaskResult.b);
             }
         }
     }
@@ -152,7 +151,7 @@ abstract class ModernAsyncTask<Params, Progress, Result> {
     }
 
     static {
-        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(5, 128, 1L, TimeUnit.SECONDS, b, f3086a);
+        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(5, 128, 1L, TimeUnit.SECONDS, b, f3038a);
         THREAD_POOL_EXECUTOR = threadPoolExecutor;
         f = threadPoolExecutor;
     }
@@ -206,7 +205,7 @@ abstract class ModernAsyncTask<Params, Progress, Result> {
     }
 
     public final boolean cancel(boolean z) {
-        this.f3087c.set(true);
+        this.f3039c.set(true);
         return this.h.cancel(z);
     }
 
@@ -236,7 +235,7 @@ abstract class ModernAsyncTask<Params, Progress, Result> {
             executor.execute(this.h);
             return this;
         }
-        int i = AnonymousClass4.f3091a[this.i.ordinal()];
+        int i = AnonymousClass4.f3043a[this.i.ordinal()];
         if (i != 1) {
             if (i != 2) {
                 throw new IllegalStateException("We should never reach this state");
@@ -259,6 +258,6 @@ abstract class ModernAsyncTask<Params, Progress, Result> {
     }
 
     public final boolean isCancelled() {
-        return this.f3087c.get();
+        return this.f3039c.get();
     }
 }

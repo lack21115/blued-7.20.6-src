@@ -5,10 +5,10 @@ package com.tencent.liteav.trtc;
 public final /* synthetic */ class a implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final TrtcCloudJni f36471a;
+    private final TrtcCloudJni f22780a;
 
     private a(TrtcCloudJni trtcCloudJni) {
-        this.f36471a = trtcCloudJni;
+        this.f22780a = trtcCloudJni;
     }
 
     public static Runnable a(TrtcCloudJni trtcCloudJni) {
@@ -17,6 +17,6 @@ public final /* synthetic */ class a implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        TrtcCloudJni.lambda$enterRoom$0(this.f36471a);
+        TrtcCloudJni.lambda$enterRoom$0(this.f22780a);
     }
 }

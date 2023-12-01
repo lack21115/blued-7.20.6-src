@@ -8,11 +8,11 @@ import java.lang.reflect.Method;
 public class d3 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static Object f21207a;
+    public static Object f7601a;
     public static Field b;
 
     /* renamed from: c  reason: collision with root package name */
-    public static Class f21208c;
+    public static Class f7602c;
     public static Class d;
     public static Class<?> e;
     public static Method f;
@@ -25,7 +25,7 @@ public class d3 {
             b();
         }
         Class<?> cls = view.getClass();
-        return cls == f21208c || cls == d;
+        return cls == f7602c || cls == d;
     }
 
     /* JADX WARN: Multi-variable type inference failed */

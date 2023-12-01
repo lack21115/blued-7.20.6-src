@@ -1,5 +1,6 @@
 package com.soft.blued.sdk;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import com.blued.android.core.ui.BaseFragmentActivity;
@@ -9,6 +10,7 @@ import com.soft.blued.utils.Logger;
 
 /* loaded from: source-8303388-dex2jar.jar:com/soft/blued/sdk/SDKAccessActivity.class */
 public class SDKAccessActivity extends BaseFragmentActivity {
+    /* JADX WARN: Multi-variable type inference failed */
     private void a(Intent intent) {
         if (intent == null) {
             finish();
@@ -25,17 +27,15 @@ public class SDKAccessActivity extends BaseFragmentActivity {
             a2.c(this);
             return;
         }
-        FirstActivity.a(this);
+        FirstActivity.a((Context) this);
         finish();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragmentActivity, androidx.fragment.app.FragmentActivity, androidx.activity.ComponentActivity, androidx.core.app.ComponentActivity, android.app.Activity
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         a(getIntent());
     }
 
-    @Override // androidx.fragment.app.FragmentActivity, android.app.Activity
     public void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
         a(intent);

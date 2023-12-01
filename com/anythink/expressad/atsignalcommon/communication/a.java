@@ -13,29 +13,29 @@ import org.json.JSONObject;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f7082a = a.class.getSimpleName();
+    public static final String f4244a = a.class.getSimpleName();
     public static int b = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    public static int f7083c = 1;
+    public static int f4245c = 1;
 
     /* renamed from: com.anythink.expressad.atsignalcommon.communication.a$1  reason: invalid class name */
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/atsignalcommon/communication/a$1.class */
     final class AnonymousClass1 implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ c f7084a;
+        final /* synthetic */ c f4246a;
 
         AnonymousClass1(c cVar) {
-            this.f7084a = cVar;
+            this.f4246a = cVar;
         }
 
         @Override // java.lang.Runnable
         public final void run() {
             try {
-                a.a(this.f7084a.K(), this.f7084a);
+                a.a(this.f4246a.K(), this.f4246a);
             } catch (Throwable th) {
-                o.b(a.f7082a, th.getMessage(), th);
+                o.b(a.f4244a, th.getMessage(), th);
             }
         }
     }
@@ -63,7 +63,7 @@ public class a {
             String jSONObject2 = jSONObject.toString();
             return !TextUtils.isEmpty(jSONObject2) ? Base64.encodeToString(jSONObject2.getBytes(), 2) : "";
         } catch (Throwable th) {
-            o.d(f7082a, "code to string is error");
+            o.d(f4244a, "code to string is error");
             return "";
         }
     }
@@ -75,12 +75,12 @@ public class a {
     private static void a(Object obj, String str) {
         try {
             JSONObject jSONObject = new JSONObject();
-            jSONObject.put("code", f7083c);
+            jSONObject.put("code", f4245c);
             jSONObject.put("message", str);
             jSONObject.put("data", new JSONObject());
             j.a().a(obj, Base64.encodeToString(jSONObject.toString().getBytes(), 2));
         } catch (Exception e) {
-            o.a(f7082a, e.getMessage());
+            o.a(f4244a, e.getMessage());
         }
     }
 
@@ -106,7 +106,7 @@ public class a {
                 j.a().a(obj, Base64.encodeToString(jSONObject2.toString().getBytes(), 2));
             } catch (Exception e) {
                 a(obj, e.getMessage());
-                o.a(f7082a, e.getMessage());
+                o.a(f4244a, e.getMessage());
             }
         } catch (Throwable th) {
             a(obj, th.getMessage());
@@ -130,7 +130,7 @@ public class a {
             j.a().a(obj, Base64.encodeToString(jSONObject.toString().getBytes(), 2));
         } catch (Exception e) {
             a(obj, e.getMessage());
-            o.a(f7082a, e.getMessage());
+            o.a(f4244a, e.getMessage());
         }
     }
 

@@ -9,7 +9,7 @@ public enum b implements a<String> {
     
 
     /* renamed from: c  reason: collision with root package name */
-    public static final com.tencent.qimei.h.a<String> f38326c = new d(new a[0]);
+    public static final com.tencent.qimei.h.a<String> f24635c = new d(new a[0]);
     public final String e;
     public String f;
 
@@ -25,7 +25,7 @@ public enum b implements a<String> {
     public String a(@Deprecated String str) {
         String str2 = this.f;
         if (str2 != null) {
-            return f38326c.a(this, str2);
+            return f24635c.a(this, str2);
         }
         throw new RuntimeException("Please set json first: KEY_CODE.json(json).value()");
     }

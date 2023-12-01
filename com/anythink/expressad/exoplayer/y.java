@@ -8,11 +8,11 @@ import java.lang.annotation.RetentionPolicy;
 public interface y extends x.b {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f7744a = 0;
+    public static final int f4905a = 0;
     public static final int b = 1;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final int f7745c = 2;
+    public static final int f4906c = 2;
 
     @Retention(RetentionPolicy.SOURCE)
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/exoplayer/y$a.class */

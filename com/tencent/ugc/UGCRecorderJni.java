@@ -50,11 +50,11 @@ public class UGCRecorderJni {
     public static class RecordParams {
 
         /* renamed from: a  reason: collision with root package name */
-        public int f40205a = LiveProtos.Event.LIVE_BAG_CHAT_MARK_SHOW_VALUE;
+        public int f26514a = LiveProtos.Event.LIVE_BAG_CHAT_MARK_SHOW_VALUE;
         public int b = 960;
 
         /* renamed from: c  reason: collision with root package name */
-        public int f40206c = 20;
+        public int f26515c = 20;
         public int d = 1800;
         public int e = 3;
         public boolean f = true;
@@ -85,7 +85,7 @@ public class UGCRecorderJni {
         }
 
         public int getVideoFps() {
-            return this.f40206c;
+            return this.f26515c;
         }
 
         public int getVideoGop() {
@@ -101,7 +101,7 @@ public class UGCRecorderJni {
         }
 
         public int getVideoWidth() {
-            return this.f40205a;
+            return this.f26514a;
         }
 
         public boolean isFullIFrame() {
@@ -207,23 +207,23 @@ public class UGCRecorderJni {
     private com.tencent.liteav.base.util.n getVideoSize(int i) {
         com.tencent.liteav.base.util.n nVar = new com.tencent.liteav.base.util.n();
         if (i == 0) {
-            nVar.f36340a = 360;
+            nVar.f22649a = 360;
             nVar.b = 640;
             return nVar;
         } else if (i == 1) {
-            nVar.f36340a = 480;
+            nVar.f22649a = 480;
             nVar.b = 640;
             return nVar;
         } else if (i == 3) {
-            nVar.f36340a = UGCTransitionRules.DEFAULT_IMAGE_WIDTH;
+            nVar.f22649a = UGCTransitionRules.DEFAULT_IMAGE_WIDTH;
             nVar.b = 1280;
             return nVar;
         } else if (i != 4) {
-            nVar.f36340a = LiveProtos.Event.LIVE_BAG_CHAT_MARK_SHOW_VALUE;
+            nVar.f22649a = LiveProtos.Event.LIVE_BAG_CHAT_MARK_SHOW_VALUE;
             nVar.b = 960;
             return nVar;
         } else {
-            nVar.f36340a = 1080;
+            nVar.f22649a = 1080;
             nVar.b = WBConstants.SDK_NEW_PAY_VERSION;
             return nVar;
         }
@@ -247,13 +247,13 @@ public class UGCRecorderJni {
     private void initRecorderParams(TXRecordCommon.TXUGCCustomConfig tXUGCCustomConfig) {
         com.tencent.liteav.base.util.n videoSize = getVideoSize(tXUGCCustomConfig.videoResolution);
         if (tXUGCCustomConfig.enableHighResolutionCapture) {
-            videoSize.f36340a = 1080;
+            videoSize.f22649a = 1080;
             videoSize.b = WBConstants.SDK_NEW_PAY_VERSION;
         }
-        this.mRecorderParams.f40205a = videoSize.f36340a;
+        this.mRecorderParams.f26514a = videoSize.f22649a;
         this.mRecorderParams.b = videoSize.b;
         this.mRecorderParams.d = tXUGCCustomConfig.videoBitrate;
-        this.mRecorderParams.f40206c = tXUGCCustomConfig.videoFps;
+        this.mRecorderParams.f26515c = tXUGCCustomConfig.videoFps;
         this.mRecorderParams.e = tXUGCCustomConfig.videoGop;
         this.mRecorderParams.k = tXUGCCustomConfig.needEdit;
         this.mRecorderParams.f = tXUGCCustomConfig.isFront;
@@ -265,7 +265,7 @@ public class UGCRecorderJni {
         if (tXUGCCustomConfig.needEdit) {
             this.mRecorderParams.e = 1;
             RecordParams recordParams = this.mRecorderParams;
-            recordParams.d = getEditBitrateWithSize(recordParams.f40205a, this.mRecorderParams.b);
+            recordParams.d = getEditBitrateWithSize(recordParams.f26514a, this.mRecorderParams.b);
         }
         int i = tXUGCCustomConfig.videoResolution;
         if (i == 0) {
@@ -286,28 +286,28 @@ public class UGCRecorderJni {
     private void initRecorderParams(TXRecordCommon.TXUGCSimpleConfig tXUGCSimpleConfig) {
         int i = tXUGCSimpleConfig.videoQuality;
         if (i == 0) {
-            this.mRecorderParams.f40205a = 360;
+            this.mRecorderParams.f26514a = 360;
             this.mRecorderParams.b = 640;
             this.mRecorderParams.d = 2000;
             UGCDataReport.reportDAU(1044);
         } else if (i == 1) {
-            this.mRecorderParams.f40205a = 480;
+            this.mRecorderParams.f26514a = 480;
             this.mRecorderParams.b = 640;
             this.mRecorderParams.d = 3200;
             UGCDataReport.reportDAU(1045);
         } else if (i != 3) {
-            this.mRecorderParams.f40205a = LiveProtos.Event.LIVE_BAG_CHAT_MARK_SHOW_VALUE;
+            this.mRecorderParams.f26514a = LiveProtos.Event.LIVE_BAG_CHAT_MARK_SHOW_VALUE;
             this.mRecorderParams.b = 960;
             this.mRecorderParams.d = 5200;
             UGCDataReport.reportDAU(1045);
         } else {
-            this.mRecorderParams.f40205a = UGCTransitionRules.DEFAULT_IMAGE_WIDTH;
+            this.mRecorderParams.f26514a = UGCTransitionRules.DEFAULT_IMAGE_WIDTH;
             this.mRecorderParams.b = 1280;
             this.mRecorderParams.d = com.cdo.oaps.ad.p.j;
             UGCDataReport.reportDAU(1046);
         }
         UGCDataReport.reportDAU(1048, this.mRecorderParams.d, "");
-        this.mRecorderParams.f40206c = 30;
+        this.mRecorderParams.f26515c = 30;
         this.mRecorderParams.k = tXUGCSimpleConfig.needEdit;
         this.mRecorderParams.f = tXUGCSimpleConfig.isFront;
         this.mRecorderParams.g = tXUGCSimpleConfig.touchFocus;
@@ -317,9 +317,9 @@ public class UGCRecorderJni {
         if (tXUGCSimpleConfig.needEdit) {
             this.mRecorderParams.e = 1;
             RecordParams recordParams = this.mRecorderParams;
-            recordParams.d = getEditBitrateWithSize(recordParams.f40205a, this.mRecorderParams.b);
+            recordParams.d = getEditBitrateWithSize(recordParams.f26514a, this.mRecorderParams.b);
         }
-        UGCDataReport.reportDAU(1049, this.mRecorderParams.f40206c, "");
+        UGCDataReport.reportDAU(1049, this.mRecorderParams.f26515c, "");
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -733,7 +733,7 @@ public class UGCRecorderJni {
 
     public void setVideoResolution(int i) {
         com.tencent.liteav.base.util.n videoSize = getVideoSize(i);
-        this.mRecorderParams.f40205a = videoSize.f36340a;
+        this.mRecorderParams.f26514a = videoSize.f22649a;
         this.mRecorderParams.b = videoSize.b;
         nativeSetRecordParams(this.mNativeUGCRecorderJni, this.mRecorderParams);
     }

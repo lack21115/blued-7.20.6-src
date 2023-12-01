@@ -2,7 +2,6 @@ package com.blued.community.ui.comment.adapter;
 
 import android.animation.ObjectAnimator;
 import android.content.ClipData;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Build;
 import android.text.ClipboardManager;
@@ -15,8 +14,6 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import androidx.fragment.app.FragmentActivity;
-import com.anythink.expressad.video.module.a.a.m;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.AppMethods;
 import com.blued.android.core.image.ImageLoader;
@@ -72,13 +69,9 @@ import java.util.List;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/comment/adapter/CircleMainDetailCommentAdapter.class */
 public class CircleMainDetailCommentAdapter extends BaseQuickAdapter<FeedComment, BaseViewHolder> implements CommentListDataObserver.ICommentDataObserver {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final String f19384a = CircleMainDetailCommentAdapter.class.getSimpleName();
+    public static final String a = CircleMainDetailCommentAdapter.class.getSimpleName();
     public String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public IRequestHost f19385c;
+    public IRequestHost c;
     public BluedIngSelfFeed d;
     public String e;
     public String f;
@@ -88,7 +81,7 @@ public class CircleMainDetailCommentAdapter extends BaseQuickAdapter<FeedComment
     private String j;
 
     public CircleMainDetailCommentAdapter(String str) {
-        super(R.layout.item_feed_details_comment_circle, null);
+        super(R.layout.item_feed_details_comment_circle, (List) null);
         this.b = "";
         this.e = "";
         this.f = "";
@@ -125,7 +118,7 @@ public class CircleMainDetailCommentAdapter extends BaseQuickAdapter<FeedComment
                     if ("1".equals(feedComment.comment_allow_delete)) {
                         arrayList.add(CircleMainDetailCommentAdapter.this.mContext.getResources().getString(R.string.delete));
                     }
-                    CommonShowBottomWindow.a((FragmentActivity) CircleMainDetailCommentAdapter.this.mContext, (String[]) arrayList.toArray(new String[arrayList.size()]), new ActionSheet.ActionSheetListener() { // from class: com.blued.community.ui.comment.adapter.CircleMainDetailCommentAdapter.9.1
+                    CommonShowBottomWindow.a(CircleMainDetailCommentAdapter.this.mContext, (String[]) arrayList.toArray(new String[arrayList.size()]), new ActionSheet.ActionSheetListener() { // from class: com.blued.community.ui.comment.adapter.CircleMainDetailCommentAdapter.9.1
                         @Override // com.blued.android.module.common.widget.menu.ActionSheet.ActionSheetListener
                         public void a(ActionSheet actionSheet, int i) {
                             String a2 = actionSheet.a(i);
@@ -137,7 +130,7 @@ public class CircleMainDetailCommentAdapter extends BaseQuickAdapter<FeedComment
                                 CommunityServiceManager.b().a(CircleMainDetailCommentAdapter.this.mContext, CommunityConstants.ReportType.CIRCLE_COMMENT, feedComment.user_name, feedComment.feed_id, feedComment.comment_id);
                             } else {
                                 if (a2.equals(CircleMainDetailCommentAdapter.this.mContext.getResources().getString(feedComment.is_muted == 1 ? R.string.circle_comments_list_cancel_mute : R.string.circle_comments_list_mute))) {
-                                    CircleMainDetailCommentAdapter.this.a(feedComment, CircleMainDetailCommentAdapter.this.f19385c);
+                                    CircleMainDetailCommentAdapter.this.a(feedComment, CircleMainDetailCommentAdapter.this.c);
                                 }
                             }
                         }
@@ -176,7 +169,7 @@ public class CircleMainDetailCommentAdapter extends BaseQuickAdapter<FeedComment
         if (this.d != null) {
             EventTrackFeed.a(this.e, str2, str, i == 1, AtUserHelper.a(feedComment.comment_content), EventTrackFeed.a(feedComment), EventTrackFeed.c(this.d), this.d.is_anonym == 1, feedComment.is_anonym == 1, FeedProtos.NoteSource.NOTE_DETAIL, "");
         }
-        FeedHttpUtils.a(str2, str, i, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<CircleAddPoints>>(this.f19385c) { // from class: com.blued.community.ui.comment.adapter.CircleMainDetailCommentAdapter.8
+        FeedHttpUtils.a(str2, str, i, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<CircleAddPoints>>(this.c) { // from class: com.blued.community.ui.comment.adapter.CircleMainDetailCommentAdapter.8
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
@@ -186,7 +179,7 @@ public class CircleMainDetailCommentAdapter extends BaseQuickAdapter<FeedComment
                 }
                 AppMethods.a((CharSequence) ("点赞成功，积分+" + bluedEntityA.getSingleData().circle_active_liked_posting));
             }
-        }, this.f19385c, false);
+        }, this.c, false);
     }
 
     private void c(final FeedComment feedComment) {
@@ -201,7 +194,7 @@ public class CircleMainDetailCommentAdapter extends BaseQuickAdapter<FeedComment
 
     /* JADX INFO: Access modifiers changed from: private */
     public void d(final FeedComment feedComment) {
-        CircleHttpUtils.a(feedComment.circle_id, new BluedUIHttpResponse(this.f19385c) { // from class: com.blued.community.ui.comment.adapter.CircleMainDetailCommentAdapter.12
+        CircleHttpUtils.a(feedComment.circle_id, new BluedUIHttpResponse(this.c) { // from class: com.blued.community.ui.comment.adapter.CircleMainDetailCommentAdapter.12
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity bluedEntity) {
                 feedComment.is_muted = 1;
@@ -217,7 +210,7 @@ public class CircleMainDetailCommentAdapter extends BaseQuickAdapter<FeedComment
                 CircleMainDetailCommentAdapter.this.notifyDataSetChanged();
                 AppMethods.a((CharSequence) AppUtils.a(R.string.circle_post_detail_menu_mute_success));
             }
-        }, feedComment.comment_uid, feedComment.is_anonym, feedComment.user_name, feedComment.user_avatar, this.f19385c);
+        }, feedComment.comment_uid, feedComment.is_anonym, feedComment.user_name, feedComment.user_avatar, this.c);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -232,10 +225,10 @@ public class CircleMainDetailCommentAdapter extends BaseQuickAdapter<FeedComment
     public void a(FeedComment feedComment) {
         String str = feedComment.comment_content;
         if (Build.VERSION.SDK_INT < 11 || Build.VERSION.SDK_INT == 18) {
-            ((ClipboardManager) this.mContext.getSystemService(Context.CLIPBOARD_SERVICE)).setText(RegExpUtils.a(str));
+            ((ClipboardManager) this.mContext.getSystemService("clipboard")).setText(RegExpUtils.a(str));
         } else {
             try {
-                ((android.content.ClipboardManager) this.mContext.getSystemService(Context.CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("simple text", RegExpUtils.a(str)));
+                ((android.content.ClipboardManager) this.mContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("simple text", RegExpUtils.a(str)));
             } catch (Exception e) {
             }
         }
@@ -272,7 +265,7 @@ public class CircleMainDetailCommentAdapter extends BaseQuickAdapter<FeedComment
                     if (i >= getData().size()) {
                         break;
                     }
-                    FeedComment feedComment2 = getData().get(i);
+                    FeedComment feedComment2 = (FeedComment) getData().get(i);
                     if (str.equals(feedComment2.comment_id)) {
                         if (feedComment2.comments == null) {
                             feedComment2.comments = new ArrayList();
@@ -292,7 +285,6 @@ public class CircleMainDetailCommentAdapter extends BaseQuickAdapter<FeedComment
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(final BaseViewHolder baseViewHolder, final FeedComment feedComment) {
         boolean z;
@@ -340,7 +332,7 @@ public class CircleMainDetailCommentAdapter extends BaseQuickAdapter<FeedComment
             baseViewHolder.setGone(R.id.ll_more_hot_comment, false);
         }
         UserInfoHelper.a((ImageView) baseViewHolder.getView(R.id.img_verify), feedComment.vbadge, 3);
-        ImageLoader.a(this.f19385c, feedComment.user_avatar).b(R.drawable.user_bg_round).c().a((ImageView) baseViewHolder.getView(R.id.header_view));
+        ImageLoader.a(this.c, feedComment.user_avatar).b(R.drawable.user_bg_round).c().a((ImageView) baseViewHolder.getView(R.id.header_view));
         if (TextUtils.isEmpty(feedComment.comment_timestamp)) {
             baseViewHolder.setText(R.id.time_view, "");
         } else {
@@ -498,7 +490,7 @@ public class CircleMainDetailCommentAdapter extends BaseQuickAdapter<FeedComment
                         layoutParams.bottomMargin = DensityUtils.a(this.mContext, 10.0f);
                     }
                     imageView2.setLayoutParams(layoutParams);
-                    ImageLoader.a(this.f19385c, AvatarUtils.a(feedComment.comment_pics[i6], a5[i6])).a(6.0f).a(imageView2);
+                    ImageLoader.a(this.c, AvatarUtils.a(feedComment.comment_pics[i6], a5[i6])).a(6.0f).a(imageView2);
                     linearLayout.addView(inflate);
                     imageView2.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.comment.adapter.CircleMainDetailCommentAdapter.7
                         @Override // android.view.View.OnClickListener
@@ -510,13 +502,13 @@ public class CircleMainDetailCommentAdapter extends BaseQuickAdapter<FeedComment
                             String str2 = feedComment.feed_id;
                             String str3 = CircleMainDetailCommentAdapter.this.e;
                             boolean a6 = AtUserHelper.a(feedComment.comment_content);
-                            FeedProtos.NoteType c2 = EventTrackFeed.c(CircleMainDetailCommentAdapter.this.d);
+                            FeedProtos.NoteType c = EventTrackFeed.c(CircleMainDetailCommentAdapter.this.d);
                             boolean z2 = false;
                             boolean z3 = CircleMainDetailCommentAdapter.this.d.is_anonym == 1;
                             if (feedComment.is_anonym == 1) {
                                 z2 = true;
                             }
-                            EventTrackFeed.a(event, str, noteSource, str2, str3, a6, c2, z3, z2);
+                            EventTrackFeed.a(event, str, noteSource, str2, str3, a6, c, z3, z2);
                             CommunityServiceManager.b().a(CircleMainDetailCommentAdapter.this.mContext, feedComment.comment_pics, i6, 0, loadOptions, feedComment.user_name, baseViewHolder.getView(R.id.rl_comment), feedComment.comment_pics[i6]);
                         }
                     });
@@ -567,9 +559,9 @@ public class CircleMainDetailCommentAdapter extends BaseQuickAdapter<FeedComment
         String str3 = feedComment.circle_id;
         boolean a6 = AtUserHelper.a(feedComment.comment_content);
         FeedProtos.FeedClass a7 = EventTrackFeed.a(feedComment);
-        FeedProtos.NoteType c2 = EventTrackFeed.c(this.d);
+        FeedProtos.NoteType c = EventTrackFeed.c(this.d);
         BluedIngSelfFeed bluedIngSelfFeed = this.d;
-        EventTrackFeed.a(event, str, noteSource, str2, str3, a6, a7, c2, bluedIngSelfFeed != null && bluedIngSelfFeed.is_anonym == 1, feedComment.is_anonym == 1);
+        EventTrackFeed.a(event, str, noteSource, str2, str3, a6, a7, c, bluedIngSelfFeed != null && bluedIngSelfFeed.is_anonym == 1, feedComment.is_anonym == 1);
         feedComment.isShowUrlVisited = true;
     }
 
@@ -584,9 +576,9 @@ public class CircleMainDetailCommentAdapter extends BaseQuickAdapter<FeedComment
         while (true) {
             int i3 = i2;
             if (i3 < getData().size()) {
-                if (str.equals(getData().get(i3).comment_id) && getData().get(i3).isLastHotComment && (i = i3 - 1) >= 0) {
-                    getData().get(i).isLastHotComment = getData().get(i3).isLastHotComment;
-                    getData().get(i).isHasMoreHotComment = getData().get(i3).isHasMoreHotComment;
+                if (str.equals(((FeedComment) getData().get(i3)).comment_id) && ((FeedComment) getData().get(i3)).isLastHotComment && (i = i3 - 1) >= 0) {
+                    ((FeedComment) getData().get(i)).isLastHotComment = ((FeedComment) getData().get(i3)).isLastHotComment;
+                    ((FeedComment) getData().get(i)).isHasMoreHotComment = ((FeedComment) getData().get(i3)).isHasMoreHotComment;
                     break;
                 }
                 i2 = i3 + 1;
@@ -594,9 +586,9 @@ public class CircleMainDetailCommentAdapter extends BaseQuickAdapter<FeedComment
                 break;
             }
         }
-        Iterator<FeedComment> it = getData().iterator();
+        Iterator it = getData().iterator();
         while (it.hasNext()) {
-            if (str.equals(it.next().comment_id)) {
+            if (str.equals(((FeedComment) it.next()).comment_id)) {
                 Log.v("drb", "circle comment iter.remove()");
                 it.remove();
             }
@@ -614,8 +606,8 @@ public class CircleMainDetailCommentAdapter extends BaseQuickAdapter<FeedComment
             view.setVisibility(0);
             this.i.setAlpha(0.1f);
             ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this.i, "alpha", 0.1f, 0.0f);
-            ofFloat.setDuration(m.ag);
-            ofFloat.setStartDelay(m.ag);
+            ofFloat.setDuration(3000L);
+            ofFloat.setStartDelay(3000L);
             ofFloat.start();
         }
     }
@@ -664,7 +656,7 @@ public class CircleMainDetailCommentAdapter extends BaseQuickAdapter<FeedComment
                         AppMethods.a((CharSequence) AppInfo.d().getResources().getString(R.string.common_net_error));
                         super.onFailure(th, i2, str2);
                     }
-                }, false, feedComment.feed_id, feedComment.comment_id, CircleMainDetailCommentAdapter.this.d.is_ads, CircleMainDetailCommentAdapter.this.f19385c);
+                }, false, feedComment.feed_id, feedComment.comment_id, CircleMainDetailCommentAdapter.this.d.is_ads, CircleMainDetailCommentAdapter.this.c);
             }
         }, this.mContext.getResources().getString(R.string.common_cancel), new DialogInterface.OnClickListener() { // from class: com.blued.community.ui.comment.adapter.CircleMainDetailCommentAdapter.14
             @Override // android.content.DialogInterface.OnClickListener
@@ -703,7 +695,6 @@ public class CircleMainDetailCommentAdapter extends BaseQuickAdapter<FeedComment
         CommentListDataObserver.a().b(this);
     }
 
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     public void setNewData(List<FeedComment> list) {
         this.h.clear();
         if (this.mData == null || this.mData.size() <= 0) {

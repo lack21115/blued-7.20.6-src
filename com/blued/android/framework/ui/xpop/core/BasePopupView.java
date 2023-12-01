@@ -38,13 +38,9 @@ import java.util.Stack;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/ui/xpop/core/BasePopupView.class */
 public abstract class BasePopupView extends FrameLayout implements LifecycleObserver, OnNavigationBarListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static Stack<BasePopupView> f9964a = new Stack<>();
+    private static Stack<BasePopupView> a = new Stack<>();
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private Handler f9965c;
+    private Handler c;
     private Runnable d;
     private boolean e;
     private Runnable f;
@@ -66,9 +62,7 @@ public abstract class BasePopupView extends FrameLayout implements LifecycleObse
     /* renamed from: com.blued.android.framework.ui.xpop.core.BasePopupView$7  reason: invalid class name */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/ui/xpop/core/BasePopupView$7.class */
     public static /* synthetic */ class AnonymousClass7 {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f9973a;
+        static final /* synthetic */ int[] a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:47:0x010d -> B:111:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:49:0x0111 -> B:105:0x001f). Please submit an issue!!! */
@@ -93,93 +87,93 @@ public abstract class BasePopupView extends FrameLayout implements LifecycleObse
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:87:0x015d -> B:129:0x0100). Please submit an issue!!! */
         static {
             int[] iArr = new int[PopupAnimation.values().length];
-            f9973a = iArr;
+            a = iArr;
             try {
                 iArr[PopupAnimation.ScaleAlphaFromCenter.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f9973a[PopupAnimation.ScaleAlphaFromLeftTop.ordinal()] = 2;
+                a[PopupAnimation.ScaleAlphaFromLeftTop.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f9973a[PopupAnimation.ScaleAlphaFromRightTop.ordinal()] = 3;
+                a[PopupAnimation.ScaleAlphaFromRightTop.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f9973a[PopupAnimation.ScaleAlphaFromLeftBottom.ordinal()] = 4;
+                a[PopupAnimation.ScaleAlphaFromLeftBottom.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f9973a[PopupAnimation.ScaleAlphaFromRightBottom.ordinal()] = 5;
+                a[PopupAnimation.ScaleAlphaFromRightBottom.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
             try {
-                f9973a[PopupAnimation.TranslateAlphaFromLeft.ordinal()] = 6;
+                a[PopupAnimation.TranslateAlphaFromLeft.ordinal()] = 6;
             } catch (NoSuchFieldError e6) {
             }
             try {
-                f9973a[PopupAnimation.TranslateAlphaFromTop.ordinal()] = 7;
+                a[PopupAnimation.TranslateAlphaFromTop.ordinal()] = 7;
             } catch (NoSuchFieldError e7) {
             }
             try {
-                f9973a[PopupAnimation.TranslateAlphaFromRight.ordinal()] = 8;
+                a[PopupAnimation.TranslateAlphaFromRight.ordinal()] = 8;
             } catch (NoSuchFieldError e8) {
             }
             try {
-                f9973a[PopupAnimation.TranslateAlphaFromBottom.ordinal()] = 9;
+                a[PopupAnimation.TranslateAlphaFromBottom.ordinal()] = 9;
             } catch (NoSuchFieldError e9) {
             }
             try {
-                f9973a[PopupAnimation.TranslateFromLeft.ordinal()] = 10;
+                a[PopupAnimation.TranslateFromLeft.ordinal()] = 10;
             } catch (NoSuchFieldError e10) {
             }
             try {
-                f9973a[PopupAnimation.TranslateFromTop.ordinal()] = 11;
+                a[PopupAnimation.TranslateFromTop.ordinal()] = 11;
             } catch (NoSuchFieldError e11) {
             }
             try {
-                f9973a[PopupAnimation.TranslateFromRight.ordinal()] = 12;
+                a[PopupAnimation.TranslateFromRight.ordinal()] = 12;
             } catch (NoSuchFieldError e12) {
             }
             try {
-                f9973a[PopupAnimation.TranslateFromBottom.ordinal()] = 13;
+                a[PopupAnimation.TranslateFromBottom.ordinal()] = 13;
             } catch (NoSuchFieldError e13) {
             }
             try {
-                f9973a[PopupAnimation.ScrollAlphaFromLeft.ordinal()] = 14;
+                a[PopupAnimation.ScrollAlphaFromLeft.ordinal()] = 14;
             } catch (NoSuchFieldError e14) {
             }
             try {
-                f9973a[PopupAnimation.ScrollAlphaFromLeftTop.ordinal()] = 15;
+                a[PopupAnimation.ScrollAlphaFromLeftTop.ordinal()] = 15;
             } catch (NoSuchFieldError e15) {
             }
             try {
-                f9973a[PopupAnimation.ScrollAlphaFromTop.ordinal()] = 16;
+                a[PopupAnimation.ScrollAlphaFromTop.ordinal()] = 16;
             } catch (NoSuchFieldError e16) {
             }
             try {
-                f9973a[PopupAnimation.ScrollAlphaFromRightTop.ordinal()] = 17;
+                a[PopupAnimation.ScrollAlphaFromRightTop.ordinal()] = 17;
             } catch (NoSuchFieldError e17) {
             }
             try {
-                f9973a[PopupAnimation.ScrollAlphaFromRight.ordinal()] = 18;
+                a[PopupAnimation.ScrollAlphaFromRight.ordinal()] = 18;
             } catch (NoSuchFieldError e18) {
             }
             try {
-                f9973a[PopupAnimation.ScrollAlphaFromRightBottom.ordinal()] = 19;
+                a[PopupAnimation.ScrollAlphaFromRightBottom.ordinal()] = 19;
             } catch (NoSuchFieldError e19) {
             }
             try {
-                f9973a[PopupAnimation.ScrollAlphaFromBottom.ordinal()] = 20;
+                a[PopupAnimation.ScrollAlphaFromBottom.ordinal()] = 20;
             } catch (NoSuchFieldError e20) {
             }
             try {
-                f9973a[PopupAnimation.ScrollAlphaFromLeftBottom.ordinal()] = 21;
+                a[PopupAnimation.ScrollAlphaFromLeftBottom.ordinal()] = 21;
             } catch (NoSuchFieldError e21) {
             }
             try {
-                f9973a[PopupAnimation.NoAnimation.ordinal()] = 22;
+                a[PopupAnimation.NoAnimation.ordinal()] = 22;
             } catch (NoSuchFieldError e22) {
             }
         }
@@ -210,18 +204,16 @@ public abstract class BasePopupView extends FrameLayout implements LifecycleObse
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/ui/xpop/core/BasePopupView$ShowSoftInputTask.class */
     public static class ShowSoftInputTask implements Runnable {
-
-        /* renamed from: a  reason: collision with root package name */
-        View f9975a;
+        View a;
         boolean b = false;
 
         public ShowSoftInputTask(View view) {
-            this.f9975a = view;
+            this.a = view;
         }
 
         @Override // java.lang.Runnable
         public void run() {
-            View view = this.f9975a;
+            View view = this.a;
             if (view == null || this.b) {
                 return;
             }
@@ -234,7 +226,7 @@ public abstract class BasePopupView extends FrameLayout implements LifecycleObse
         super(context);
         this.p = PopupStatus.Dismiss;
         this.q = false;
-        this.f9965c = new Handler(Looper.getMainLooper());
+        this.c = new Handler(Looper.getMainLooper());
         this.d = new Runnable() { // from class: com.blued.android.framework.ui.xpop.core.BasePopupView.1
             @Override // java.lang.Runnable
             public void run() {
@@ -260,7 +252,7 @@ public abstract class BasePopupView extends FrameLayout implements LifecycleObse
                 try {
                     BasePopupView.this.c();
                     if (BasePopupView.this.getContext() instanceof FragmentActivity) {
-                        ((FragmentActivity) BasePopupView.this.getContext()).getLifecycle().addObserver(BasePopupView.this);
+                        BasePopupView.this.getContext().getLifecycle().addObserver(BasePopupView.this);
                     }
                     BasePopupView.this.l.q = (ViewGroup) BasePopupView.this.r.getWindow().getDecorView();
                     KeyboardUtils.a(BasePopupView.this.r.getWindow(), BasePopupView.this, new KeyboardUtils.OnSoftInputChangedListener() { // from class: com.blued.android.framework.ui.xpop.core.BasePopupView.2.1
@@ -323,12 +315,12 @@ public abstract class BasePopupView extends FrameLayout implements LifecycleObse
                     BasePopupView.this.s = null;
                 }
                 BasePopupView.this.p = PopupStatus.Dismiss;
-                if (!BasePopupView.f9964a.isEmpty()) {
-                    BasePopupView.f9964a.pop();
+                if (!BasePopupView.a.isEmpty()) {
+                    BasePopupView.a.pop();
                 }
                 if (BasePopupView.this.l.B) {
-                    if (!BasePopupView.f9964a.isEmpty()) {
-                        ((BasePopupView) BasePopupView.f9964a.get(BasePopupView.f9964a.size() - 1)).j();
+                    if (!BasePopupView.a.isEmpty()) {
+                        ((BasePopupView) BasePopupView.a.get(BasePopupView.a.size() - 1)).j();
                     } else if (BasePopupView.this.l.q != null && (findViewById = BasePopupView.this.l.q.findViewById(16908290)) != null) {
                         findViewById.setFocusable(true);
                         findViewById.setFocusableInTouchMode(true);
@@ -352,7 +344,7 @@ public abstract class BasePopupView extends FrameLayout implements LifecycleObse
             if (this.l.j != null) {
                 PopupAnimator popupAnimator = this.l.j;
                 this.m = popupAnimator;
-                popupAnimator.f9941c = getPopupContentView();
+                popupAnimator.c = getPopupContentView();
             } else {
                 PopupAnimator l = l();
                 this.m = l;
@@ -367,7 +359,7 @@ public abstract class BasePopupView extends FrameLayout implements LifecycleObse
                 BlurAnimator blurAnimator = new BlurAnimator(this);
                 this.o = blurAnimator;
                 blurAnimator.b = this.l.e.booleanValue();
-                this.o.f9940a = XPopupUtils.a(XPopupUtils.b((View) this).getWindow().getDecorView());
+                this.o.a = XPopupUtils.a(XPopupUtils.b((View) this).getWindow().getDecorView());
                 this.o.a();
             }
             PopupAnimator popupAnimator2 = this.m;
@@ -378,7 +370,7 @@ public abstract class BasePopupView extends FrameLayout implements LifecycleObse
             if (this.l.j != null) {
                 PopupAnimator popupAnimator3 = this.l.j;
                 this.m = popupAnimator3;
-                popupAnimator3.f9941c = getPopupContentView();
+                popupAnimator3.c = getPopupContentView();
             } else {
                 PopupAnimator l2 = l();
                 this.m = l2;
@@ -393,7 +385,7 @@ public abstract class BasePopupView extends FrameLayout implements LifecycleObse
                 BlurAnimator blurAnimator2 = new BlurAnimator(this);
                 this.o = blurAnimator2;
                 blurAnimator2.b = this.l.e.booleanValue();
-                this.o.f9940a = XPopupUtils.a(XPopupUtils.b((View) this).getWindow().getDecorView());
+                this.o.a = XPopupUtils.a(XPopupUtils.b((View) this).getWindow().getDecorView());
                 this.o.a();
             }
             PopupAnimator popupAnimator4 = this.m;
@@ -419,7 +411,7 @@ public abstract class BasePopupView extends FrameLayout implements LifecycleObse
         if (j < 0) {
             j2 = 0;
         }
-        this.f9965c.postDelayed(new Runnable() { // from class: com.blued.android.framework.ui.xpop.core.BasePopupView.5
+        this.c.postDelayed(new Runnable() { // from class: com.blued.android.framework.ui.xpop.core.BasePopupView.5
             @Override // java.lang.Runnable
             public void run() {
                 BasePopupView.this.p();
@@ -433,9 +425,9 @@ public abstract class BasePopupView extends FrameLayout implements LifecycleObse
             if (showSoftInputTask == null) {
                 this.h = new ShowSoftInputTask(view);
             } else {
-                this.f9965c.removeCallbacks(showSoftInputTask);
+                this.c.removeCallbacks(showSoftInputTask);
             }
-            this.f9965c.postDelayed(this.h, 10L);
+            this.c.postDelayed(this.h, 10L);
         }
     }
 
@@ -470,7 +462,7 @@ public abstract class BasePopupView extends FrameLayout implements LifecycleObse
                 this.l.p.a(this);
             }
         }
-        this.f9965c.postDelayed(this.d, 50L);
+        this.c.postDelayed(this.d, 50L);
     }
 
     protected void g() {
@@ -533,7 +525,7 @@ public abstract class BasePopupView extends FrameLayout implements LifecycleObse
                 if (fullScreenDialog != null && fullScreenDialog.isShowing()) {
                     return this;
                 }
-                this.f9965c.post(this.f);
+                this.c.post(this.f);
             }
             return this;
         }
@@ -542,8 +534,8 @@ public abstract class BasePopupView extends FrameLayout implements LifecycleObse
 
     /* JADX INFO: Access modifiers changed from: protected */
     public void i() {
-        this.f9965c.removeCallbacks(this.g);
-        this.f9965c.postDelayed(this.g, getAnimationDuration());
+        this.c.removeCallbacks(this.g);
+        this.c.postDelayed(this.g, getAnimationDuration());
     }
 
     public void j() {
@@ -553,8 +545,8 @@ public abstract class BasePopupView extends FrameLayout implements LifecycleObse
         }
         setFocusableInTouchMode(true);
         requestFocus();
-        if (!f9964a.contains(this)) {
-            f9964a.push(this);
+        if (!a.contains(this)) {
+            a.push(this);
         }
         setOnKeyListener(new BackPressListener());
         if (!this.l.C) {
@@ -581,7 +573,7 @@ public abstract class BasePopupView extends FrameLayout implements LifecycleObse
     }
 
     protected void k() {
-        if (KeyboardUtils.f10015a == 0) {
+        if (KeyboardUtils.a == 0) {
             p();
         } else {
             KeyboardUtils.b(this);
@@ -593,7 +585,7 @@ public abstract class BasePopupView extends FrameLayout implements LifecycleObse
         if (popupInfo == null || popupInfo.i == null) {
             return null;
         }
-        switch (AnonymousClass7.f9973a[this.l.i.ordinal()]) {
+        switch (AnonymousClass7.a[this.l.i.ordinal()]) {
             case 1:
             case 2:
             case 3:
@@ -663,8 +655,8 @@ public abstract class BasePopupView extends FrameLayout implements LifecycleObse
     @Override // android.view.ViewGroup, android.view.View
     public void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        f9964a.clear();
-        this.f9965c.removeCallbacksAndMessages(null);
+        a.clear();
+        this.c.removeCallbacksAndMessages(null);
         PopupInfo popupInfo = this.l;
         if (popupInfo != null) {
             if (popupInfo.q != null) {
@@ -681,11 +673,11 @@ public abstract class BasePopupView extends FrameLayout implements LifecycleObse
         this.h = null;
         this.e = false;
         BlurAnimator blurAnimator = this.o;
-        if (blurAnimator == null || blurAnimator.f9940a == null || this.o.f9940a.isRecycled()) {
+        if (blurAnimator == null || blurAnimator.a == null || this.o.a.isRecycled()) {
             return;
         }
-        this.o.f9940a.recycle();
-        this.o.f9940a = null;
+        this.o.a.recycle();
+        this.o.a = null;
     }
 
     @Override // android.view.View
@@ -699,7 +691,7 @@ public abstract class BasePopupView extends FrameLayout implements LifecycleObse
                 this.j = motionEvent.getX();
                 this.k = motionEvent.getY();
             } else if (action == 1) {
-                if (((float) Math.sqrt(Math.pow(motionEvent.getX() - this.j, 2.0d) + Math.pow(motionEvent.getY() - this.k, 2.0d))) < this.b && this.l.f9988c.booleanValue()) {
+                if (((float) Math.sqrt(Math.pow(motionEvent.getX() - this.j, 2.0d) + Math.pow(motionEvent.getY() - this.k, 2.0d))) < this.b && this.l.c.booleanValue()) {
                     p();
                 }
                 this.j = 0.0f;
@@ -714,8 +706,8 @@ public abstract class BasePopupView extends FrameLayout implements LifecycleObse
     }
 
     public void p() {
-        this.f9965c.removeCallbacks(this.f);
-        this.f9965c.removeCallbacks(this.d);
+        this.c.removeCallbacks(this.f);
+        this.c.removeCallbacks(this.d);
         if (this.p == PopupStatus.Dismissing || this.p == PopupStatus.Dismiss) {
             return;
         }
@@ -731,7 +723,7 @@ public abstract class BasePopupView extends FrameLayout implements LifecycleObse
     }
 
     public void q() {
-        this.f9965c.post(new Runnable() { // from class: com.blued.android.framework.ui.xpop.core.BasePopupView.4
+        this.c.post(new Runnable() { // from class: com.blued.android.framework.ui.xpop.core.BasePopupView.4
             @Override // java.lang.Runnable
             public void run() {
                 BasePopupView.this.a(XPopup.b() + 50);
@@ -744,8 +736,8 @@ public abstract class BasePopupView extends FrameLayout implements LifecycleObse
         if (popupInfo != null && popupInfo.o.booleanValue() && !(this instanceof PartShadowPopupView)) {
             KeyboardUtils.b(this);
         }
-        this.f9965c.removeCallbacks(this.i);
-        this.f9965c.postDelayed(this.i, getAnimationDuration());
+        this.c.removeCallbacks(this.i);
+        this.c.postDelayed(this.i, getAnimationDuration());
     }
 
     public boolean s() {

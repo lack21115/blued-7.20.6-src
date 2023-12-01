@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemVipBuyHeadVpBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29347a;
+    private final LinearLayout f15657a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29347a;
+        return this.f15657a;
     }
 }

@@ -1,5 +1,6 @@
 package com.kwad.sdk.core.a.kwai;
 
+import com.igexin.assist.sdk.AssistPushConsts;
 import com.opos.mobad.activity.VideoActivity;
 import org.json.JSONObject;
 
@@ -10,7 +11,7 @@ public final class bp implements com.kwad.sdk.core.d<com.kwad.components.core.we
         if (jSONObject == null) {
             return;
         }
-        gVar.Ts = jSONObject.optString("payload");
+        gVar.Ts = jSONObject.optString(AssistPushConsts.MSG_TYPE_PAYLOAD);
         if (gVar.Ts == JSONObject.NULL) {
             gVar.Ts = "";
         }
@@ -24,7 +25,7 @@ public final class bp implements com.kwad.sdk.core.d<com.kwad.components.core.we
             jSONObject2 = new JSONObject();
         }
         if (gVar.Ts != null && !gVar.Ts.equals("")) {
-            com.kwad.sdk.utils.t.putValue(jSONObject2, "payload", gVar.Ts);
+            com.kwad.sdk.utils.t.putValue(jSONObject2, AssistPushConsts.MSG_TYPE_PAYLOAD, gVar.Ts);
         }
         if (gVar.Tr != 0) {
             com.kwad.sdk.utils.t.putValue(jSONObject2, VideoActivity.EXTRA_KEY_ACTION_TYPE, gVar.Tr);

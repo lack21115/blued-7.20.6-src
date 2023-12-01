@@ -6,11 +6,11 @@ import com.tencent.liteav.videoproducer.producer.VideoProducerDef;
 final /* synthetic */ class p implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final f f37173a;
+    private final f f23482a;
     private final VideoProducerDef.GSensorMode b;
 
     private p(f fVar, VideoProducerDef.GSensorMode gSensorMode) {
-        this.f37173a = fVar;
+        this.f23482a = fVar;
         this.b = gSensorMode;
     }
 
@@ -20,6 +20,6 @@ final /* synthetic */ class p implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        f.a(this.f37173a, this.b);
+        f.a(this.f23482a, this.b);
     }
 }

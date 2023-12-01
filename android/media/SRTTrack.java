@@ -91,7 +91,7 @@ class SRTTrack extends WebVttTrack {
                 }
                 textTrackCue.mLines = new TextTrackCueSpan[arrayList.size()];
                 textTrackCue.mStrings = (String[]) arrayList.toArray(new String[0]);
-                Iterator<E> it = arrayList.iterator();
+                Iterator it = arrayList.iterator();
                 int i = 0;
                 while (true) {
                     int i2 = i;

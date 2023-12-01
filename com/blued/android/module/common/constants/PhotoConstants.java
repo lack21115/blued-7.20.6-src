@@ -5,9 +5,7 @@ public class PhotoConstants {
 
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/constants/PhotoConstants$CONFIG.class */
     public static class CONFIG {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static int f10707a = 9;
+        public static int a = 9;
     }
 
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/constants/PhotoConstants$FEED.class */

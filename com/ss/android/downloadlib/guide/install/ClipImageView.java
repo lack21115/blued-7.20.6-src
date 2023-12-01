@@ -40,9 +40,8 @@ public class ClipImageView extends ImageView {
         this.b = new RectF();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.ImageView, android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         if (this.mb) {
             this.ox.reset();
             this.b.set(0.0f, 0.0f, getWidth(), getHeight());

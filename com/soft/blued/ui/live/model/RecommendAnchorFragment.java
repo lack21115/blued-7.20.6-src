@@ -76,7 +76,7 @@ public class RecommendAnchorFragment extends SimpleFragment {
                 RecommendAnchorFragment.this.lids.add(String.valueOf(recommendAnchorModel.lid));
                 EventTrackLive.a(LiveProtos.Event.RECOMMEND_PAGE_ROOM_SHOW, String.valueOf(recommendAnchorModel.lid), String.valueOf(recommendAnchorModel.type), String.valueOf(recommendAnchorModel.uid));
             }
-            commonAdapterHolder.b(R.id.item_recommend_anchor_avatar, recommendAnchorModel.cover).a(R.id.item_recommend_anchor_name, recommendAnchorModel.name).a(R.id.item_recommend_game_name, recommendAnchorModel.game_name).a(R.id.item_recommend_anchor_count, String.valueOf(recommendAnchorModel.watch_count)).a().setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.live.model.-$$Lambda$RecommendAnchorFragment$1$tJsf7qXjwUDb0Qukli2lepT8R6E
+            commonAdapterHolder.b((int) R.id.item_recommend_anchor_avatar, recommendAnchorModel.cover).a((int) R.id.item_recommend_anchor_name, recommendAnchorModel.name).a((int) R.id.item_recommend_game_name, recommendAnchorModel.game_name).a((int) R.id.item_recommend_anchor_count, String.valueOf(recommendAnchorModel.watch_count)).a().setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.live.model.-$$Lambda$RecommendAnchorFragment$1$tJsf7qXjwUDb0Qukli2lepT8R6E
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     RecommendAnchorFragment.AnonymousClass1.this.lambda$setGameAnchor$0$RecommendAnchorFragment$1(recommendAnchorModel, view);
@@ -85,7 +85,7 @@ public class RecommendAnchorFragment extends SimpleFragment {
         }
 
         private void setModelTitle(final RecommendAnchorModel recommendAnchorModel, int i, CommonRecycleAdapter.CommonAdapterHolder commonAdapterHolder) {
-            commonAdapterHolder.a(R.id.item_recommoned_anchor_title_name, recommendAnchorModel.name).a().setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.live.model.-$$Lambda$RecommendAnchorFragment$1$wWwuos1mBenVGw2jqwo73cyStYs
+            commonAdapterHolder.a((int) R.id.item_recommoned_anchor_title_name, recommendAnchorModel.name).a().setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.live.model.-$$Lambda$RecommendAnchorFragment$1$wWwuos1mBenVGw2jqwo73cyStYs
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     RecommendAnchorFragment.AnonymousClass1.this.lambda$setModelTitle$2$RecommendAnchorFragment$1(recommendAnchorModel, view);
@@ -98,7 +98,7 @@ public class RecommendAnchorFragment extends SimpleFragment {
                 RecommendAnchorFragment.this.lids.add(String.valueOf(recommendAnchorModel.lid));
                 EventTrackLive.a(LiveProtos.Event.RECOMMEND_PAGE_ROOM_SHOW, String.valueOf(recommendAnchorModel.lid), String.valueOf(recommendAnchorModel.type), String.valueOf(recommendAnchorModel.uid));
             }
-            commonAdapterHolder.b(R.id.item_recommend_anchor_avatar, recommendAnchorModel.cover).a(R.id.item_recommend_anchor_name, recommendAnchorModel.name).a(R.id.item_recommend_anchor_count, String.valueOf(recommendAnchorModel.watch_count)).d(R.id.item_recommend_anchor_type_iv, getPlayTypeRes(recommendAnchorModel)).a().setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.live.model.-$$Lambda$RecommendAnchorFragment$1$ZXDp3vmZoNfugIvY5VpdopNTKvc
+            commonAdapterHolder.b((int) R.id.item_recommend_anchor_avatar, recommendAnchorModel.cover).a((int) R.id.item_recommend_anchor_name, recommendAnchorModel.name).a((int) R.id.item_recommend_anchor_count, String.valueOf(recommendAnchorModel.watch_count)).d((int) R.id.item_recommend_anchor_type_iv, getPlayTypeRes(recommendAnchorModel)).a().setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.live.model.-$$Lambda$RecommendAnchorFragment$1$ZXDp3vmZoNfugIvY5VpdopNTKvc
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     RecommendAnchorFragment.AnonymousClass1.this.lambda$setNormalAnchor$1$RecommendAnchorFragment$1(recommendAnchorModel, view);
@@ -106,12 +106,10 @@ public class RecommendAnchorFragment extends SimpleFragment {
             });
         }
 
-        @Override // com.blued.android.module.common.adapter.CommonRecycleAdapter, androidx.recyclerview.widget.RecyclerView.Adapter
         public int getItemViewType(int i) {
             return ((RecommendAnchorModel) this.dataList.get(i)).viewType;
         }
 
-        @Override // com.blued.android.module.common.adapter.CommonRecycleAdapter
         public int getLayoutId(int i) {
             return i == -10087 ? R.layout.item_recommend_anchor_game : i == -10086 ? R.layout.item_recommend_anchor_list : R.layout.item_recommend_anchor_list_title;
         }
@@ -149,7 +147,6 @@ public class RecommendAnchorFragment extends SimpleFragment {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.blued.android.module.common.adapter.CommonRecycleAdapter
         public void onBindViewHolderData(RecommendAnchorModel recommendAnchorModel, int i, CommonRecycleAdapter.CommonAdapterHolder commonAdapterHolder) {
             if (getItemViewType(i) == -10087) {
                 setGameAnchor(recommendAnchorModel, i, commonAdapterHolder);
@@ -164,7 +161,6 @@ public class RecommendAnchorFragment extends SimpleFragment {
     private void getData() {
         LiveHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<RecommendAnchorListModel>>(getFragmentActive()) { // from class: com.soft.blued.ui.live.model.RecommendAnchorFragment.3
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntityA<RecommendAnchorListModel> bluedEntityA) {
                 ArrayList arrayList = new ArrayList();
                 if (bluedEntityA == null || bluedEntityA.data == null) {
@@ -175,7 +171,7 @@ public class RecommendAnchorFragment extends SimpleFragment {
                         recommendAnchorModel.name = recommendAnchorListModel.name;
                         recommendAnchorModel.type = recommendAnchorListModel.type;
                         arrayList.add(recommendAnchorModel);
-                        if (!TypeUtils.a((List<?>) recommendAnchorListModel.list)) {
+                        if (!TypeUtils.a(recommendAnchorListModel.list)) {
                             for (RecommendAnchorModel recommendAnchorModel2 : recommendAnchorListModel.list) {
                                 recommendAnchorModel2.type = recommendAnchorListModel.type;
                                 if (recommendAnchorListModel.type == 9) {
@@ -200,7 +196,7 @@ public class RecommendAnchorFragment extends SimpleFragment {
         RecyclerView recyclerView = (RecyclerView) this.rootView.findViewById(2131369096);
         this.recyclerView = recyclerView;
         recyclerView.setPadding(DisplayUtil.a(AppInfo.d(), 1.5f), 0, DisplayUtil.a(AppInfo.d(), 1.5f), 0);
-        AnonymousClass1 anonymousClass1 = new AnonymousClass1(AppInfo.d());
+        CommonRecycleAdapter anonymousClass1 = new AnonymousClass1(AppInfo.d());
         this.adapter = anonymousClass1;
         this.recyclerView.setAdapter(anonymousClass1);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(AppInfo.d(), 6);
@@ -229,9 +225,9 @@ public class RecommendAnchorFragment extends SimpleFragment {
     }
 
     private void initTitleBar() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.rootView.findViewById(2131370694);
-        this.titleBar = commonTopTitleNoTrans;
-        commonTopTitleNoTrans.setVisibility(0);
+        CommonTopTitleNoTrans findViewById = this.rootView.findViewById(2131370694);
+        this.titleBar = findViewById;
+        findViewById.setVisibility(0);
         this.titleBar.setLeftClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.live.model.-$$Lambda$RecommendAnchorFragment$Mkew2w8HlXl4H22-4nuARfLkn9Y
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -242,7 +238,7 @@ public class RecommendAnchorFragment extends SimpleFragment {
     }
 
     public static void show(Context context) {
-        TerminalActivity.d(context, RecommendAnchorFragment.class, null);
+        TerminalActivity.d(context, RecommendAnchorFragment.class, (Bundle) null);
     }
 
     public /* synthetic */ void lambda$initRecycleView$1$RecommendAnchorFragment(RefreshLayout refreshLayout) {
@@ -259,10 +255,10 @@ public class RecommendAnchorFragment extends SimpleFragment {
         super.onInitView();
         initTitleBar();
         initRecycleView();
-        NoDataAndLoadFailView noDataAndLoadFailView = (NoDataAndLoadFailView) this.rootView.findViewById(2131368721);
-        this.noDataView = noDataAndLoadFailView;
-        noDataAndLoadFailView.setVisibility(8);
-        this.noDataView.setNoDataStr(2131891066);
+        NoDataAndLoadFailView findViewById = this.rootView.findViewById(2131368721);
+        this.noDataView = findViewById;
+        findViewById.setVisibility(8);
+        this.noDataView.setNoDataStr((int) R.string.no_data_foot_print);
         this.imgHeight = (AppInfo.l - DisplayUtil.a(AppInfo.d(), 24.0f)) / 3;
         EventTrackLive.a(LiveProtos.Event.LIVE_FOOTPRINT_PAGE_SHOW);
     }

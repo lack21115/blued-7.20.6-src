@@ -1,7 +1,5 @@
 package com.sensetime.stmobile.model;
 
-import com.anythink.core.api.ATCustomRuleKeys;
-
 /* loaded from: source-8303388-dex2jar.jar:com/sensetime/stmobile/model/STFaceAttribute.class */
 public class STFaceAttribute {
     Attribute[] arrayAttribute;
@@ -51,10 +49,10 @@ public class STFaceAttribute {
             if (attributeArr[i].category.equals("attractive")) {
                 str = sTFaceAttribute.arrayAttribute[i].label;
             }
-            if (sTFaceAttribute.arrayAttribute[i].category.equals(ATCustomRuleKeys.GENDER)) {
+            if (sTFaceAttribute.arrayAttribute[i].category.equals("gender")) {
                 str3 = sTFaceAttribute.arrayAttribute[i].label.equals("male") ? "男" : "女";
             }
-            if (sTFaceAttribute.arrayAttribute[i].category.equals(ATCustomRuleKeys.AGE)) {
+            if (sTFaceAttribute.arrayAttribute[i].category.equals("age")) {
                 str2 = sTFaceAttribute.arrayAttribute[i].label;
             }
             i++;
@@ -69,7 +67,7 @@ public class STFaceAttribute {
             if (i >= attributeArr.length) {
                 return z;
             }
-            if (attributeArr[i].category.equals(ATCustomRuleKeys.GENDER)) {
+            if (attributeArr[i].category.equals("gender")) {
                 z = sTFaceAttribute.arrayAttribute[i].label.equals("male");
             }
             i++;

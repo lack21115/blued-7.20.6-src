@@ -1,6 +1,7 @@
 package com.soft.blued.ui.msg_group.fragment;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 import androidx.fragment.app.FragmentActivity;
@@ -39,15 +40,15 @@ public final class MyGroupAllFragment extends BaseListFragment<MyGroupAllVM, Gro
 
         public final void a(Context context) {
             Intrinsics.e(context, "context");
-            TerminalActivity.d(context, MyGroupAllFragment.class, null);
+            TerminalActivity.d(context, MyGroupAllFragment.class, (Bundle) null);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(MyGroupAllFragment this$0, View view) {
+    public static final void a(MyGroupAllFragment myGroupAllFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        FragmentActivity activity = this$0.getActivity();
+        Intrinsics.e(myGroupAllFragment, "this$0");
+        FragmentActivity activity = myGroupAllFragment.getActivity();
         if (activity == null) {
             return;
         }
@@ -55,8 +56,8 @@ public final class MyGroupAllFragment extends BaseListFragment<MyGroupAllVM, Gro
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(MyGroupAllFragment this$0, BaseQuickAdapter baseQuickAdapter, View view, int i) {
-        Intrinsics.e(this$0, "this$0");
+    public static final void a(MyGroupAllFragment myGroupAllFragment, BaseQuickAdapter baseQuickAdapter, View view, int i) {
+        Intrinsics.e(myGroupAllFragment, "this$0");
         Object obj = baseQuickAdapter.getData().get(i);
         if (obj == null) {
             throw new NullPointerException("null cannot be cast to non-null type com.blued.android.module.common.group.GroupInfoModel");
@@ -64,30 +65,27 @@ public final class MyGroupAllFragment extends BaseListFragment<MyGroupAllVM, Gro
         GroupInfoModel groupInfoModel = (GroupInfoModel) obj;
         if (groupInfoModel.itemType != 0 && groupInfoModel.itemType != 5) {
             if (groupInfoModel.itemType == 4) {
-                WebViewShowInfoFragment.show(this$0.getContext(), Intrinsics.a(GroupConstant.f32663a, (Object) "group_list"));
+                WebViewShowInfoFragment.show(myGroupAllFragment.getContext(), Intrinsics.a(GroupConstant.f18972a, "group_list"));
                 return;
             }
             return;
         }
         EventTrackGroup.a(SocialNetWorkProtos.Event.GROUP_CLICK, groupInfoModel.label, groupInfoModel.group_role == 1 ? SocialNetWorkProtos.SourceType.CREATE : SocialNetWorkProtos.SourceType.JOIN, String.valueOf(groupInfoModel.group_id));
-        Context context = this$0.getContext();
+        Context context = myGroupAllFragment.getContext();
         GroupInfoFragment.a(context, groupInfoModel.group_id + "", groupInfoModel, SocialNetWorkProtos.SourceType.MYGROUP);
     }
 
-    @Override // com.blued.android.module.common.base.mvi.BaseListFragment
     /* renamed from: C */
     public MyGroupAdapter i() {
         return new MyGroupAdapter(getFragmentActive());
     }
 
-    @Override // com.blued.android.module.common.base.mvi.BaseListFragment
     public ListConfig h() {
         ListConfig h = super.h();
         h.c(false);
         return h;
     }
 
-    @Override // com.blued.android.module.common.base.mvi.BaseListFragment, com.blued.android.module.common.base.mvi.MVIBaseFragment
     public void m() {
         super.m();
         CommonTopTitleNoTrans b2 = b();

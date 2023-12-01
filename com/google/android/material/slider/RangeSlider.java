@@ -115,7 +115,7 @@ public class RangeSlider extends BaseSlider<RangeSlider, OnChangeListener, OnSli
         return super.dispatchKeyEvent(keyEvent);
     }
 
-    @Override // com.google.android.material.slider.BaseSlider
+    @Override // com.google.android.material.slider.BaseSlider, android.view.View
     public /* bridge */ /* synthetic */ CharSequence getAccessibilityClassName() {
         return super.getAccessibilityClassName();
     }

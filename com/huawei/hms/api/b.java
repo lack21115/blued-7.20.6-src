@@ -43,22 +43,22 @@ import com.huawei.hms.utils.Util;
 public final class b extends HuaweiApiAvailability {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final b f22604a = new b();
+    private static final b f8996a = new b();
 
     /* loaded from: source-7994992-dex2jar.jar:com/huawei/hms/api/b$a.class */
     class a implements BusResponseCallback {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ TaskCompletionSource[] f22605a;
+        final /* synthetic */ TaskCompletionSource[] f8997a;
 
         a(b bVar, TaskCompletionSource[] taskCompletionSourceArr) {
-            this.f22605a = taskCompletionSourceArr;
+            this.f8997a = taskCompletionSourceArr;
         }
 
         @Override // com.huawei.hms.activity.internal.BusResponseCallback
         public BusResponseResult innerError(Activity activity, int i, String str) {
             HMSLog.e("HuaweiApiAvailabilityImpl", "Test foreground bus error: resultCode " + i + ", errMessage" + str);
-            this.f22605a[0].setException(new AvailabilityException());
+            this.f8997a[0].setException(new AvailabilityException());
             return null;
         }
 
@@ -151,7 +151,7 @@ public final class b extends HuaweiApiAvailability {
     }
 
     public static b getInstance() {
-        return f22604a;
+        return f8996a;
     }
 
     public Intent a(Context context, int i) {

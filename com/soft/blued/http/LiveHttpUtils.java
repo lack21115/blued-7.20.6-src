@@ -5,7 +5,6 @@ import android.text.TextUtils;
 import android.text.style.SuggestionSpan;
 import androidx.collection.ArrayMap;
 import androidx.constraintlayout.core.motion.utils.TypedValues;
-import com.blued.android.chat.core.pack.ReqAckPackage;
 import com.blued.android.core.net.HttpManager;
 import com.blued.android.core.net.IRequestHost;
 import com.blued.android.framework.http.BluedHttpTools;
@@ -33,36 +32,34 @@ public class LiveHttpUtils {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public void onUIUpdate(BluedEntityA<RequestLiveRedNoticeModel> bluedEntityA) {
             if (bluedEntityA == null || bluedEntityA.getSingleData() == null) {
                 return;
             }
-            LiveEventBusUtil.a(bluedEntityA.getSingleData());
+            LiveEventBusUtil.a((RequestLiveRedNoticeModel) bluedEntityA.getSingleData());
         }
     }
 
     public static void a() {
         HttpManager.a(LiveRoomInfo.a().m() + "/live/request/is-start-reward", new BluedUIHttpResponse<BluedEntity<CountModel, RequestLiveRewardConfigModel>>(null) { // from class: com.soft.blued.http.LiveHttpUtils.2
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity<CountModel, RequestLiveRewardConfigModel> bluedEntity) {
                 if (bluedEntity == null || bluedEntity.extra == null) {
                     return;
                 }
                 LiveDataManager.a().b(bluedEntity.extra.is_start_reward);
             }
-        }, null).b(BluedHttpTools.a(true)).h();
+        }, (IRequestHost) null).b(BluedHttpTools.a(true)).h();
     }
 
     public static void a(int i, BluedUIHttpResponse bluedUIHttpResponse) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put(WBPageConstants.ParamKey.PAGE, String.valueOf(i));
-        HttpManager.a(BluedHttpUrl.q() + "/live/bonuses/list", bluedUIHttpResponse, null).b(BluedHttpTools.a(true)).a(a2).h();
+        HttpManager.a(BluedHttpUrl.q() + "/live/bonuses/list", bluedUIHttpResponse, (IRequestHost) null).b(BluedHttpTools.a(true)).a(a2).h();
     }
 
     public static void a(int i, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put(WBPageConstants.ParamKey.PAGE, i + "");
         HttpManager.a(BluedHttpUrl.q() + "/live/anchor-fans/list", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
     }
@@ -72,23 +69,23 @@ public class LiveHttpUtils {
     }
 
     public static void a(Context context, BluedUIHttpResponse bluedUIHttpResponse, String str, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("uid", str);
         HttpManager.a(LiveRoomInfo.a().k() + "/live/chatroom/info", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
     }
 
     public static void a(BluedUIHttpResponse bluedUIHttpResponse) {
-        HttpManager.a(BluedHttpUrl.q() + "/live/recommend/list", bluedUIHttpResponse, null).b(BluedHttpTools.a(true)).h();
+        HttpManager.a(BluedHttpUrl.q() + "/live/recommend/list", bluedUIHttpResponse, (IRequestHost) null).b(BluedHttpTools.a(true)).h();
     }
 
     public static void a(BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("position_code", "1009");
         HttpManager.b(BluedHttpUrl.q() + "/blued/launch/adms", bluedUIHttpResponse, iRequestHost).a(BluedHttpTools.a(a2)).b(BluedHttpTools.a(true)).h();
     }
 
     public static void a(BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost, int i) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put(WBPageConstants.ParamKey.PAGE, i + "");
         a2.put("latitude", CommonPreferences.v());
         a2.put("longitude", CommonPreferences.u());
@@ -106,16 +103,16 @@ public class LiveHttpUtils {
     }
 
     public static void a(BluedUIHttpResponse bluedUIHttpResponse, String str, int i, String str2, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("goods_id", str);
-        a2.put(ReqAckPackage.REQ_RESPONSE_KEY.BEANS, String.valueOf(i));
+        a2.put("beans", String.valueOf(i));
         a2.put("anchor", str2);
         HttpManager.b(BluedHttpUrl.r() + "/live/request/reward", bluedUIHttpResponse, iRequestHost).a(BluedHttpTools.a(a2)).b(BluedHttpTools.a(true)).h();
     }
 
     public static void a(BluedUIHttpResponse bluedUIHttpResponse, String str, int i, String str2, String str3, IRequestHost iRequestHost) {
         String str4 = LiveRoomInfo.a().k() + "/users/" + str + "/live_idcard";
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         if (i == 0) {
             a2.put("type", "front");
         } else if (i == 1) {
@@ -143,26 +140,26 @@ public class LiveHttpUtils {
     }
 
     public static void a(String str, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("uid", str);
         HttpManager.b(BluedHttpUrl.q() + "/live/anchor-fans/" + str + "/leave", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
     }
 
     public static void b(int i, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put(WBPageConstants.ParamKey.PAGE, i + "");
         HttpManager.a(BluedHttpUrl.q() + "/live/anchor-fans/recommend", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
     }
 
     public static void b(BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("position_code", "9002");
         HttpManager.b(BluedHttpUrl.q() + "/blued/launch/adms", bluedUIHttpResponse, iRequestHost).a(BluedHttpTools.a(a2)).b(BluedHttpTools.a(true)).h();
     }
 
     public static void b(BluedUIHttpResponse bluedUIHttpResponse, String str, int i, String str2, IRequestHost iRequestHost) {
         String str3 = LiveRoomInfo.a().k() + "/users/" + str + "/idcard";
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         if (i == 0) {
             a2.put("type", "front");
         } else if (i == 1) {
@@ -176,7 +173,7 @@ public class LiveHttpUtils {
 
     public static void b(BluedUIHttpResponse bluedUIHttpResponse, String str, int i, String str2, String str3, IRequestHost iRequestHost) {
         String str4 = LiveRoomInfo.a().k() + "/users/" + str + "/live_idcard?http_method_override=DELETE";
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         if (i == 0) {
             a2.put("type", "front");
         } else if (i == 1) {
@@ -190,7 +187,7 @@ public class LiveHttpUtils {
     }
 
     public static void b(BluedUIHttpResponse bluedUIHttpResponse, String str, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put(WBPageConstants.ParamKey.PAGE, String.valueOf(str));
         HttpManager.a(LiveRoomInfo.a().k() + "/live/followed-list", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
     }
@@ -209,7 +206,7 @@ public class LiveHttpUtils {
 
     public static void c(BluedUIHttpResponse bluedUIHttpResponse, String str, int i, String str2, IRequestHost iRequestHost) {
         String str3 = LiveRoomInfo.a().k() + "/users/" + str + "/idcard?http_method_override=DELETE";
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         if (i == 0) {
             a2.put("type", "front");
         } else if (i == 1) {
@@ -222,14 +219,14 @@ public class LiveHttpUtils {
     }
 
     public static void c(BluedUIHttpResponse bluedUIHttpResponse, String str, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("anchor", str);
         HttpManager.b(LiveRoomInfo.a().k() + "/live/request", bluedUIHttpResponse, iRequestHost).a(BluedHttpTools.a(a2)).b(BluedHttpTools.a(true)).h();
     }
 
     public static void c(BluedUIHttpResponse bluedUIHttpResponse, String str, String str2, IRequestHost iRequestHost) {
         String str3 = BluedHttpUrl.q() + "/users/" + str + "/applied";
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("sign_contract", "1");
         if (!TextUtils.isEmpty(str2)) {
             a2.put("from", str2);
@@ -258,13 +255,13 @@ public class LiveHttpUtils {
     }
 
     public static void f(BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("type", "2");
         HttpManager.a(BluedHttpUrl.q() + "/live/tab/settings", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
     }
 
     public static void g(BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("type", "2");
         HttpManager.b(BluedHttpUrl.q() + "/live/tab/report", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
     }

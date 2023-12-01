@@ -74,7 +74,7 @@ public class MapSearchPositionFragment extends KeyBoardFragment implements View.
     public FindSearchMapActivity b;
 
     /* renamed from: c  reason: collision with root package name */
-    public FindSearchMapFragment f30347c;
+    public FindSearchMapFragment f16657c;
     private Context j;
     private View k;
     private Dialog l;
@@ -134,17 +134,17 @@ public class MapSearchPositionFragment extends KeyBoardFragment implements View.
             MapSearchPositionFragment.this.v = (RecyclerView) view.findViewById(2131369105);
             MapSearchPositionFragment.this.v.setLayoutManager(new LinearLayoutManager(MapSearchPositionFragment.this.j));
             if (i == 0) {
-                MapSearchPositionFragment.this.r = (NoDataAndLoadFailView) view.findViewById(R.id.nodataview);
+                MapSearchPositionFragment.this.r = view.findViewById(R.id.nodataview);
                 Log.v("drb", "findViewById nodataview");
-                MapSearchPositionFragment.this.r.setNoDataStr(R.string.search_no);
+                MapSearchPositionFragment.this.r.setNoDataStr((int) R.string.search_no);
                 MapSearchPositionFragment.this.r.setBackgroundColorRes(2131102170);
                 MapSearchPositionFragment.this.r.d();
                 if (MapSearchPositionFragment.this.v.getAdapter() == null) {
                     MapSearchPositionFragment.this.v.setAdapter(MapSearchPositionFragment.this.w);
                 }
             } else if (i == 1) {
-                MapSearchPositionFragment.this.s = (NoDataAndLoadFailView) view.findViewById(R.id.nodataview);
-                MapSearchPositionFragment.this.s.setNoDataStr(R.string.search_no);
+                MapSearchPositionFragment.this.s = view.findViewById(R.id.nodataview);
+                MapSearchPositionFragment.this.s.setNoDataStr((int) R.string.search_no);
                 MapSearchPositionFragment.this.s.setBackgroundColorRes(2131102170);
                 MapSearchPositionFragment.this.r.d();
                 if (MapSearchPositionFragment.this.v.getAdapter() == null) {
@@ -183,13 +183,13 @@ public class MapSearchPositionFragment extends KeyBoardFragment implements View.
                 this.b.a(this.M.get(i), this.D);
             }
         }
-        if (this.f30347c != null) {
+        if (this.f16657c != null) {
             if (z) {
                 if (this.L.size() > i) {
-                    this.f30347c.a(this.L.get(i), this.D);
+                    this.f16657c.a(this.L.get(i), this.D);
                 }
             } else if (this.M.size() > i) {
-                this.f30347c.a(this.M.get(i), this.D);
+                this.f16657c.a(this.M.get(i), this.D);
             }
         }
     }
@@ -341,8 +341,8 @@ public class MapSearchPositionFragment extends KeyBoardFragment implements View.
                     if (MapSearchPositionFragment.this.b != null) {
                         MapSearchPositionFragment.this.b.a(searchPositionModel);
                     }
-                    if (MapSearchPositionFragment.this.f30347c != null) {
-                        MapSearchPositionFragment.this.f30347c.a(searchPositionModel);
+                    if (MapSearchPositionFragment.this.f16657c != null) {
+                        MapSearchPositionFragment.this.f16657c.a(searchPositionModel);
                     }
                 } else {
                     MapSearchPositionFragment.this.D = searchPositionModel.name;
@@ -355,8 +355,8 @@ public class MapSearchPositionFragment extends KeyBoardFragment implements View.
                     if (MapSearchPositionFragment.this.b != null) {
                         MapSearchPositionFragment.this.b.a(searchPositionModel);
                     }
-                    if (MapSearchPositionFragment.this.f30347c != null) {
-                        MapSearchPositionFragment.this.f30347c.a(searchPositionModel);
+                    if (MapSearchPositionFragment.this.f16657c != null) {
+                        MapSearchPositionFragment.this.f16657c.a(searchPositionModel);
                     }
                 }
             }
@@ -364,9 +364,9 @@ public class MapSearchPositionFragment extends KeyBoardFragment implements View.
     }
 
     private void l() {
-        SearchView searchView = (SearchView) this.k.findViewById(2131369680);
-        this.m = searchView;
-        searchView.setRootBgColor(c(2131102170));
+        SearchView findViewById = this.k.findViewById(R.id.search_view);
+        this.m = findViewById;
+        findViewById.setRootBgColor(c(2131102170));
         this.n = this.m.getEditView();
         ShapeModel shapeModel = new ShapeModel();
         shapeModel.k = c(2131101689);
@@ -374,21 +374,19 @@ public class MapSearchPositionFragment extends KeyBoardFragment implements View.
         this.m.setShapeModel(shapeModel);
         this.n.setImeOptions(3);
         this.n.setTextColor(getActivity().getResources().getColor(2131102203));
-        this.o = this.k.findViewById(2131366095);
+        this.o = this.k.findViewById(R.id.keyboard_view);
         this.m.setOnSearchInfoListener(new SearchView.OnSearchInfoListener() { // from class: com.soft.blued.ui.find.fragment.MapSearchPositionFragment.4
-            @Override // com.blued.android.module.common.view.SearchView.OnSearchInfoListener
             public void a() {
                 if (MapSearchPositionFragment.this.b != null) {
                     KeyboardUtils.a(MapSearchPositionFragment.this.getActivity());
                     MapSearchPositionFragment.this.b.c();
                 }
-                if (MapSearchPositionFragment.this.f30347c != null) {
+                if (MapSearchPositionFragment.this.f16657c != null) {
                     KeyboardUtils.a(MapSearchPositionFragment.this.getActivity());
-                    MapSearchPositionFragment.this.f30347c.d();
+                    MapSearchPositionFragment.this.f16657c.d();
                 }
             }
 
-            @Override // com.blued.android.module.common.view.SearchView.OnSearchInfoListener
             public void a(String str) {
                 Log.v("drb", "doSearch");
                 if (MapSearchPositionFragment.this.i()) {
@@ -423,7 +421,6 @@ public class MapSearchPositionFragment extends KeyBoardFragment implements View.
                 }
             }
 
-            @Override // com.blued.android.module.common.view.SearchView.OnSearchInfoListener
             public void b() {
             }
         });
@@ -454,7 +451,7 @@ public class MapSearchPositionFragment extends KeyBoardFragment implements View.
     private void m() {
         this.l = DialogUtils.a(this.j);
         this.q = (ConstraintLayout) this.k.findViewById(R.id.layout_search_history);
-        this.O = (ViewPager) this.k.findViewById(2131373209);
+        this.O = (ViewPager) this.k.findViewById(R.id.view_pager);
         this.S = (TextView) this.k.findViewById(R.id.tv_search_record);
         this.T = (TextView) this.k.findViewById(R.id.tv_search_shadow_record);
         this.t = (LinearLayout) this.k.findViewById(R.id.layout_null_shadow_history);
@@ -469,7 +466,7 @@ public class MapSearchPositionFragment extends KeyBoardFragment implements View.
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
-                WebViewShowInfoFragment.show(MapSearchPositionFragment.this.j, H5Url.a(46, UserInfo.getInstance().getLoginUserInfo().uid, "nearby_friend_set_shadow"), 0);
+                WebViewShowInfoFragment.show(MapSearchPositionFragment.this.j, H5Url.a(46, new Object[]{UserInfo.getInstance().getLoginUserInfo().uid, "nearby_friend_set_shadow"}), 0);
             }
         });
         this.O.addOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: com.soft.blued.ui.find.fragment.MapSearchPositionFragment.7
@@ -554,12 +551,11 @@ public class MapSearchPositionFragment extends KeyBoardFragment implements View.
     }
 
     public void h() {
-        KeyboardListenLinearLayout keyboardListenLinearLayout = (KeyboardListenLinearLayout) this.k.findViewById(2131366091);
-        this.p = keyboardListenLinearLayout;
-        super.a(keyboardListenLinearLayout);
+        KeyboardListenLinearLayout findViewById = this.k.findViewById(R.id.keyboardRelativeLayout);
+        this.p = findViewById;
+        super.a(findViewById);
     }
 
-    @Override // com.blued.android.framework.activity.keyboardpage.KeyBoardFragment
     public void j_(int i) {
         if (i != -3) {
             if (i != -2) {
@@ -587,7 +583,6 @@ public class MapSearchPositionFragment extends KeyBoardFragment implements View.
         });
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener
     public boolean onBackPressed() {
         OnBackListener onBackListener = this.W;
         if (onBackListener != null) {
@@ -619,7 +614,6 @@ public class MapSearchPositionFragment extends KeyBoardFragment implements View.
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.j = getActivity();
         View view = this.k;
@@ -638,14 +632,12 @@ public class MapSearchPositionFragment extends KeyBoardFragment implements View.
         return this.k;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
         this.b = null;
-        this.f30347c = null;
+        this.f16657c = null;
     }
 
-    @Override // com.amap.api.services.help.Inputtips.InputtipsListener
     public void onGetInputtips(List<Tip> list, int i) {
         DialogUtils.b(this.l);
         if (this.C) {
@@ -706,11 +698,9 @@ public class MapSearchPositionFragment extends KeyBoardFragment implements View.
         }
     }
 
-    @Override // com.amap.api.services.poisearch.PoiSearch.OnPoiSearchListener
     public void onPoiItemSearched(PoiItem poiItem, int i) {
     }
 
-    @Override // com.amap.api.services.poisearch.PoiSearch.OnPoiSearchListener
     public void onPoiSearched(PoiResult poiResult, int i) {
         DialogUtils.b(this.l);
         if (this.C) {

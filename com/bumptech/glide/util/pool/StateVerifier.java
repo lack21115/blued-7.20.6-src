@@ -7,7 +7,7 @@ public abstract class StateVerifier {
     static class DebugStateVerifier extends StateVerifier {
 
         /* renamed from: a  reason: collision with root package name */
-        private volatile RuntimeException f21115a;
+        private volatile RuntimeException f7509a;
 
         DebugStateVerifier() {
             super();
@@ -16,26 +16,25 @@ public abstract class StateVerifier {
         @Override // com.bumptech.glide.util.pool.StateVerifier
         void a(boolean z) {
             if (z) {
-                this.f21115a = new RuntimeException("Released");
+                this.f7509a = new RuntimeException("Released");
             } else {
-                this.f21115a = null;
+                this.f7509a = null;
             }
         }
 
         @Override // com.bumptech.glide.util.pool.StateVerifier
         public void b() {
-            if (this.f21115a != null) {
-                throw new IllegalStateException("Already released", this.f21115a);
+            if (this.f7509a != null) {
+                throw new IllegalStateException("Already released", this.f7509a);
             }
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-7206380-dex2jar.jar:com/bumptech/glide/util/pool/StateVerifier$DefaultStateVerifier.class */
-    public static class DefaultStateVerifier extends StateVerifier {
+    static class DefaultStateVerifier extends StateVerifier {
 
         /* renamed from: a  reason: collision with root package name */
-        private volatile boolean f21116a;
+        private volatile boolean f7510a;
 
         DefaultStateVerifier() {
             super();
@@ -43,12 +42,12 @@ public abstract class StateVerifier {
 
         @Override // com.bumptech.glide.util.pool.StateVerifier
         public void a(boolean z) {
-            this.f21116a = z;
+            this.f7510a = z;
         }
 
         @Override // com.bumptech.glide.util.pool.StateVerifier
         public void b() {
-            if (this.f21116a) {
+            if (this.f7510a) {
                 throw new IllegalStateException("Already released");
             }
         }

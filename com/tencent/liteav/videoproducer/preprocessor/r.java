@@ -7,19 +7,19 @@ import android.graphics.Bitmap;
 public final /* synthetic */ class r implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final VideoPreprocessor f37085a;
+    private final VideoPreprocessor f23394a;
     private final float b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final Bitmap f37086c;
+    private final Bitmap f23395c;
     private final float d;
     private final Bitmap e;
     private final float f;
 
     private r(VideoPreprocessor videoPreprocessor, float f, Bitmap bitmap, float f2, Bitmap bitmap2, float f3) {
-        this.f37085a = videoPreprocessor;
+        this.f23394a = videoPreprocessor;
         this.b = f;
-        this.f37086c = bitmap;
+        this.f23395c = bitmap;
         this.d = f2;
         this.e = bitmap2;
         this.f = f3;
@@ -31,6 +31,6 @@ public final /* synthetic */ class r implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        this.f37085a.mPreprocessor.a(this.b, this.f37086c, this.d, this.e, this.f);
+        this.f23394a.mPreprocessor.a(this.b, this.f23395c, this.d, this.e, this.f);
     }
 }

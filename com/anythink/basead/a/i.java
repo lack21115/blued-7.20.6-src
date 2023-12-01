@@ -8,9 +8,7 @@ import com.anythink.core.common.e.k;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/a/i.class */
 public final class i implements com.anythink.core.common.f.b {
-
-    /* renamed from: a  reason: collision with root package name */
-    com.anythink.basead.d f5872a;
+    com.anythink.basead.d a;
     Context b = n.a().g();
 
     @Override // com.anythink.core.common.f.b
@@ -36,20 +34,20 @@ public final class i implements com.anythink.core.common.f.b {
             @Override // com.anythink.basead.a, android.app.Application.ActivityLifecycleCallbacks
             public final void onActivityPaused(Activity activity) {
                 super.onActivityPaused(activity);
-                if (i.this.f5872a != null) {
-                    i.this.f5872a.b();
+                if (i.this.a != null) {
+                    i.this.a.b();
                 }
             }
 
             @Override // com.anythink.basead.a, android.app.Application.ActivityLifecycleCallbacks
             public final void onActivityResumed(Activity activity) {
                 super.onActivityResumed(activity);
-                if (i.this.f5872a != null) {
-                    i.this.f5872a.a();
+                if (i.this.a != null) {
+                    i.this.a.a();
                 }
             }
         };
-        this.f5872a = new com.anythink.basead.d(I, new Runnable() { // from class: com.anythink.basead.a.i.2
+        this.a = new com.anythink.basead.d(I, new Runnable() { // from class: com.anythink.basead.a.i.2
             @Override // java.lang.Runnable
             public final void run() {
                 ((Application) i.this.b).unregisterActivityLifecycleCallbacks(aVar);

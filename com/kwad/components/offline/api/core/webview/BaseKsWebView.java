@@ -88,15 +88,14 @@ public abstract class BaseKsWebView extends FrameLayout {
 
     public abstract void destroy();
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void dispatchDraw(Canvas canvas) {
+    protected void dispatchDraw(Canvas canvas) {
         this.mViewRCHelper.beforeDispatchDraw(canvas);
         super.dispatchDraw(canvas);
         this.mViewRCHelper.afterDispatchDraw(canvas);
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
+    @Override // android.view.View
     public void draw(Canvas canvas) {
         this.mViewRCHelper.beforeDraw(canvas);
         super.draw(canvas);
@@ -112,9 +111,8 @@ public abstract class BaseKsWebView extends FrameLayout {
 
     public abstract void loadUrl(String str);
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onFocusChanged(boolean z, int i, Rect rect) {
+    protected void onFocusChanged(boolean z, int i, Rect rect) {
         super.onFocusChanged(z, i, rect);
         WebViewStateListener webViewStateListener = this.mWebViewStateListener;
         if (webViewStateListener != null) {
@@ -122,9 +120,8 @@ public abstract class BaseKsWebView extends FrameLayout {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onScrollChanged(int i, int i2, int i3, int i4) {
+    protected void onScrollChanged(int i, int i2, int i3, int i4) {
         super.onScrollChanged(i, i2, i3, i4);
         WebViewStateListener webViewStateListener = this.mWebViewStateListener;
         if (webViewStateListener != null) {
@@ -132,9 +129,8 @@ public abstract class BaseKsWebView extends FrameLayout {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // android.widget.FrameLayout, android.view.View
-    public void onSizeChanged(int i, int i2, int i3, int i4) {
+    @Override // android.view.View
+    protected void onSizeChanged(int i, int i2, int i3, int i4) {
         super.onSizeChanged(i, i2, i3, i4);
         this.mViewRCHelper.onSizeChanged(i, i2);
         WebViewStateListener webViewStateListener = this.mWebViewStateListener;
@@ -143,9 +139,8 @@ public abstract class BaseKsWebView extends FrameLayout {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onVisibilityChanged(View view, int i) {
+    protected void onVisibilityChanged(View view, int i) {
         super.onVisibilityChanged(view, i);
         WebViewStateListener webViewStateListener = this.mWebViewStateListener;
         if (webViewStateListener != null) {

@@ -75,8 +75,8 @@ public class Chip extends AppCompatCheckBox implements ChipDrawable.Delegate, Sh
     private boolean touchHelperEnabled;
     private static final int DEF_STYLE_RES = R.style.Widget_MaterialComponents_Chip_Action;
     private static final Rect EMPTY_BOUNDS = new Rect();
-    private static final int[] SELECTED_STATE = {16842913};
-    private static final int[] CHECKABLE_STATE_SET = {16842911};
+    private static final int[] SELECTED_STATE = {android.R.attr.state_selected};
+    private static final int[] CHECKABLE_STATE_SET = {android.R.attr.state_checkable};
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8110460-dex2jar.jar:com/google/android/material/chip/Chip$ChipTouchHelper.class */
@@ -436,9 +436,8 @@ public class Chip extends AppCompatCheckBox implements ChipDrawable.Delegate, Sh
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public boolean dispatchHoverEvent(MotionEvent motionEvent) {
+    protected boolean dispatchHoverEvent(MotionEvent motionEvent) {
         return !this.touchHelperEnabled ? super.dispatchHoverEvent(motionEvent) : this.touchHelper.dispatchHoverEvent(motionEvent) || super.dispatchHoverEvent(motionEvent);
     }
 
@@ -511,6 +510,7 @@ public class Chip extends AppCompatCheckBox implements ChipDrawable.Delegate, Sh
         return true;
     }
 
+    @Override // android.widget.CheckBox, android.widget.CompoundButton, android.widget.Button, android.widget.TextView, android.view.View
     public CharSequence getAccessibilityClassName() {
         if (!isCheckable()) {
             return isClickable() ? BUTTON_ACCESSIBILITY_CLASS_NAME : GENERIC_VIEW_ACCESSIBILITY_CLASS_NAME;
@@ -796,9 +796,8 @@ public class Chip extends AppCompatCheckBox implements ChipDrawable.Delegate, Sh
         return chipDrawable != null && chipDrawable.isCloseIconVisible();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.TextView, android.view.View
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         MaterialShapeUtils.setParentAbsoluteElevation(this, this.chipDrawable);
     }
@@ -812,9 +811,8 @@ public class Chip extends AppCompatCheckBox implements ChipDrawable.Delegate, Sh
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.CompoundButton, android.widget.TextView, android.view.View
-    public int[] onCreateDrawableState(int i) {
+    protected int[] onCreateDrawableState(int i) {
         int[] onCreateDrawableState = super.onCreateDrawableState(i + 2);
         if (isChecked()) {
             mergeDrawableStates(onCreateDrawableState, SELECTED_STATE);
@@ -825,9 +823,8 @@ public class Chip extends AppCompatCheckBox implements ChipDrawable.Delegate, Sh
         return onCreateDrawableState;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.TextView, android.view.View
-    public void onFocusChanged(boolean z, int i, Rect rect) {
+    protected void onFocusChanged(boolean z, int i, Rect rect) {
         super.onFocusChanged(z, i, rect);
         if (this.touchHelperEnabled) {
             this.touchHelper.onFocusChanged(z, i, rect);
@@ -845,7 +842,7 @@ public class Chip extends AppCompatCheckBox implements ChipDrawable.Delegate, Sh
         return super.onHoverEvent(motionEvent);
     }
 
-    @Override // android.widget.CheckBox, android.widget.CompoundButton, android.widget.Button, android.widget.TextView, android.view.View
+    @Override // android.view.View
     public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
         accessibilityNodeInfo.setClassName(getAccessibilityClassName());
@@ -857,6 +854,7 @@ public class Chip extends AppCompatCheckBox implements ChipDrawable.Delegate, Sh
         }
     }
 
+    @Override // android.widget.Button, android.widget.TextView, android.view.View
     public PointerIcon onResolvePointerIcon(MotionEvent motionEvent, int i) {
         if (getCloseIconTouchBounds().contains(motionEvent.getX(), motionEvent.getY()) && isEnabled()) {
             return PointerIcon.getSystemIcon(getContext(), 1002);
@@ -1649,6 +1647,7 @@ public class Chip extends AppCompatCheckBox implements ChipDrawable.Delegate, Sh
         }
     }
 
+    @Override // android.widget.TextView
     public void setTextAppearance(int i) {
         super.setTextAppearance(i);
         ChipDrawable chipDrawable = this.chipDrawable;

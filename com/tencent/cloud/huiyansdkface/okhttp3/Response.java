@@ -13,11 +13,11 @@ import java.util.List;
 public final class Response implements Closeable {
 
     /* renamed from: a  reason: collision with root package name */
-    final Request f35889a;
+    final Request f22198a;
     final Protocol b;
 
     /* renamed from: c  reason: collision with root package name */
-    final int f35890c;
+    final int f22199c;
     final String d;
     final Handshake e;
     final Headers f;
@@ -33,11 +33,11 @@ public final class Response implements Closeable {
     public static class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        Request f35891a;
+        Request f22200a;
         Protocol b;
 
         /* renamed from: c  reason: collision with root package name */
-        int f35892c;
+        int f22201c;
         String d;
         Handshake e;
         Headers.Builder f;
@@ -49,15 +49,15 @@ public final class Response implements Closeable {
         long l;
 
         public Builder() {
-            this.f35892c = -1;
+            this.f22201c = -1;
             this.f = new Headers.Builder();
         }
 
         Builder(Response response) {
-            this.f35892c = -1;
-            this.f35891a = response.f35889a;
+            this.f22201c = -1;
+            this.f22200a = response.f22198a;
             this.b = response.b;
-            this.f35892c = response.f35890c;
+            this.f22201c = response.f22199c;
             this.d = response.d;
             this.e = response.e;
             this.f = response.f.newBuilder();
@@ -99,15 +99,15 @@ public final class Response implements Closeable {
         }
 
         public Response build() {
-            if (this.f35891a != null) {
+            if (this.f22200a != null) {
                 if (this.b != null) {
-                    if (this.f35892c >= 0) {
+                    if (this.f22201c >= 0) {
                         if (this.d != null) {
                             return new Response(this);
                         }
                         throw new IllegalStateException("message == null");
                     }
-                    throw new IllegalStateException("code < 0: " + this.f35892c);
+                    throw new IllegalStateException("code < 0: " + this.f22201c);
                 }
                 throw new IllegalStateException("protocol == null");
             }
@@ -123,7 +123,7 @@ public final class Response implements Closeable {
         }
 
         public Builder code(int i) {
-            this.f35892c = i;
+            this.f22201c = i;
             return this;
         }
 
@@ -179,7 +179,7 @@ public final class Response implements Closeable {
         }
 
         public Builder request(Request request) {
-            this.f35891a = request;
+            this.f22200a = request;
             return this;
         }
 
@@ -190,9 +190,9 @@ public final class Response implements Closeable {
     }
 
     Response(Builder builder) {
-        this.f35889a = builder.f35891a;
+        this.f22198a = builder.f22200a;
         this.b = builder.b;
-        this.f35890c = builder.f35892c;
+        this.f22199c = builder.f22201c;
         this.d = builder.d;
         this.e = builder.e;
         this.f = builder.f.build();
@@ -224,7 +224,7 @@ public final class Response implements Closeable {
 
     public List<Challenge> challenges() {
         String str;
-        int i = this.f35890c;
+        int i = this.f22199c;
         if (i == 401) {
             str = HttpHeaders.WWW_AUTHENTICATE;
         } else if (i != 407) {
@@ -245,7 +245,7 @@ public final class Response implements Closeable {
     }
 
     public int code() {
-        return this.f35890c;
+        return this.f22199c;
     }
 
     public Handshake handshake() {
@@ -273,7 +273,7 @@ public final class Response implements Closeable {
     }
 
     public boolean isRedirect() {
-        int i = this.f35890c;
+        int i = this.f22199c;
         if (i == 307 || i == 308) {
             return true;
         }
@@ -289,7 +289,7 @@ public final class Response implements Closeable {
     }
 
     public boolean isSuccessful() {
-        int i = this.f35890c;
+        int i = this.f22199c;
         return i >= 200 && i < 300;
     }
 
@@ -308,12 +308,12 @@ public final class Response implements Closeable {
     public ResponseBody peekBody(long j) throws IOException {
         BufferedSource source = this.g.source();
         source.request(j);
-        Buffer m10133clone = source.buffer().m10133clone();
-        Buffer buffer = m10133clone;
-        if (m10133clone.size() > j) {
+        Buffer m7090clone = source.buffer().m7090clone();
+        Buffer buffer = m7090clone;
+        if (m7090clone.size() > j) {
             buffer = new Buffer();
-            buffer.write(m10133clone, j);
-            m10133clone.clear();
+            buffer.write(m7090clone, j);
+            m7090clone.clear();
         }
         return ResponseBody.create(this.g.contentType(), buffer.size(), buffer);
     }
@@ -331,7 +331,7 @@ public final class Response implements Closeable {
     }
 
     public Request request() {
-        return this.f35889a;
+        return this.f22198a;
     }
 
     public long sentRequestAtMillis() {
@@ -339,6 +339,6 @@ public final class Response implements Closeable {
     }
 
     public String toString() {
-        return "Response{protocol=" + this.b + ", code=" + this.f35890c + ", message=" + this.d + ", url=" + this.f35889a.url() + '}';
+        return "Response{protocol=" + this.b + ", code=" + this.f22199c + ", message=" + this.d + ", url=" + this.f22198a.url() + '}';
     }
 }

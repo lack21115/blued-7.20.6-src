@@ -8,7 +8,8 @@ import com.soft.blued.ui.welcome.model.SplashEntity;
 import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
-import kotlinx.coroutines.BuildersKt__Builders_commonKt;
+import kotlinx.coroutines.BuildersKt;
+import kotlinx.coroutines.CoroutineStart;
 import kotlinx.coroutines.Dispatchers;
 
 @Metadata
@@ -16,19 +17,19 @@ import kotlinx.coroutines.Dispatchers;
 public final class SplashUtil {
 
     /* renamed from: a  reason: collision with root package name */
-    private Fragment f34776a;
+    private Fragment f21085a;
     private ArrayList<SplashEntity.ShowEntity> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private LifecycleCoroutineScope f34777c;
+    private LifecycleCoroutineScope f21086c;
     private int d;
     private final long e;
 
     public SplashUtil(Fragment fragment) {
         Intrinsics.e(fragment, "fragment");
-        this.f34776a = fragment;
+        this.f21085a = fragment;
         this.b = new ArrayList<>();
-        this.f34777c = LifecycleOwnerKt.getLifecycleScope(this.f34776a);
+        this.f21086c = LifecycleOwnerKt.getLifecycleScope(this.f21085a);
         this.d = -1;
         this.e = 5000L;
     }
@@ -69,12 +70,12 @@ public final class SplashUtil {
     }
 
     public final void a(int i, int i2, Intent intent) {
-        BuildersKt__Builders_commonKt.a(this.f34777c, Dispatchers.b(), null, new SplashUtil$onActivityResult$1(this, null), 2, null);
+        BuildersKt.a(this.f21086c, Dispatchers.b(), (CoroutineStart) null, new SplashUtil$onActivityResult$1(this, null), 2, (Object) null);
     }
 
-    public final void a(ArrayList<SplashEntity.ShowEntity> list) {
-        Intrinsics.e(list, "list");
-        this.b = list;
-        BuildersKt__Builders_commonKt.a(this.f34777c, Dispatchers.b(), null, new SplashUtil$start$1(this, null), 2, null);
+    public final void a(ArrayList<SplashEntity.ShowEntity> arrayList) {
+        Intrinsics.e(arrayList, "list");
+        this.b = arrayList;
+        BuildersKt.a(this.f21086c, Dispatchers.b(), (CoroutineStart) null, new SplashUtil$start$1(this, null), 2, (Object) null);
     }
 }

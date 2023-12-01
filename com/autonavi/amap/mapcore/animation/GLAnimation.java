@@ -98,7 +98,7 @@ public class GLAnimation implements Cloneable {
 
     @Override // 
     /* renamed from: clone */
-    public GLAnimation mo3058clone() throws CloneNotSupportedException {
+    public GLAnimation mo1918clone() throws CloneNotSupportedException {
         GLAnimation gLAnimation = (GLAnimation) super.clone();
         gLAnimation.mPreviousRegion = new RectF();
         gLAnimation.mRegion = new RectF();

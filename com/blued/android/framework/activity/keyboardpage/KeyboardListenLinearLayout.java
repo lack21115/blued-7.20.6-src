@@ -13,13 +13,9 @@ import com.blued.android.framework.utils.KeyboardUtils;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/framework/activity/keyboardpage/KeyboardListenLinearLayout.class */
 public class KeyboardListenLinearLayout extends LinearLayout implements ViewTreeObserver.OnGlobalLayoutListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    private SwitchPanelRelativeLayout f9784a;
+    private SwitchPanelRelativeLayout a;
     private boolean b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private boolean f9785c;
+    private boolean c;
     private int d;
     private IOnKeyboardStateChangedListener e;
 
@@ -39,7 +35,7 @@ public class KeyboardListenLinearLayout extends LinearLayout implements ViewTree
     public KeyboardListenLinearLayout(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         this.b = false;
-        this.f9785c = false;
+        this.c = false;
         getViewTreeObserver().addOnGlobalLayoutListener(this);
     }
 
@@ -73,13 +69,13 @@ public class KeyboardListenLinearLayout extends LinearLayout implements ViewTree
     }
 
     private SwitchPanelRelativeLayout b(View view) {
-        SwitchPanelRelativeLayout switchPanelRelativeLayout = this.f9784a;
+        SwitchPanelRelativeLayout switchPanelRelativeLayout = this.a;
         if (switchPanelRelativeLayout != null) {
             return switchPanelRelativeLayout;
         }
         if (view instanceof SwitchPanelRelativeLayout) {
             SwitchPanelRelativeLayout switchPanelRelativeLayout2 = (SwitchPanelRelativeLayout) view;
-            this.f9784a = switchPanelRelativeLayout2;
+            this.a = switchPanelRelativeLayout2;
             return switchPanelRelativeLayout2;
         } else if (!(view instanceof ViewGroup)) {
             return null;
@@ -93,7 +89,7 @@ public class KeyboardListenLinearLayout extends LinearLayout implements ViewTree
                 }
                 SwitchPanelRelativeLayout b = b(viewGroup.getChildAt(i2));
                 if (b != null) {
-                    this.f9784a = b;
+                    this.a = b;
                     return b;
                 }
                 i = i2 + 1;
@@ -117,7 +113,7 @@ public class KeyboardListenLinearLayout extends LinearLayout implements ViewTree
     @Override // android.widget.LinearLayout, android.view.View
     public void onMeasure(int i, int i2) {
         if (this.e != null) {
-            if (this.f9784a == null) {
+            if (this.a == null) {
                 b(this);
             }
             if (!this.b) {
@@ -127,23 +123,23 @@ public class KeyboardListenLinearLayout extends LinearLayout implements ViewTree
                     iOnKeyboardStateChangedListener.a(-1);
                 }
             } else if (a(getRootView())) {
-                if (!this.f9785c) {
-                    SwitchPanelRelativeLayout switchPanelRelativeLayout = this.f9784a;
+                if (!this.c) {
+                    SwitchPanelRelativeLayout switchPanelRelativeLayout = this.a;
                     if (switchPanelRelativeLayout != null) {
                         switchPanelRelativeLayout.c();
-                        this.f9784a.a(true);
+                        this.a.a(true);
                     }
-                    this.f9785c = true;
+                    this.c = true;
                     this.e.a(-3);
                     a();
                 }
-            } else if (this.f9785c) {
-                SwitchPanelRelativeLayout switchPanelRelativeLayout2 = this.f9784a;
+            } else if (this.c) {
+                SwitchPanelRelativeLayout switchPanelRelativeLayout2 = this.a;
                 if (switchPanelRelativeLayout2 != null && switchPanelRelativeLayout2.a()) {
-                    this.f9784a.a(false);
-                    this.f9784a.b();
+                    this.a.a(false);
+                    this.a.b();
                 }
-                this.f9785c = false;
+                this.c = false;
                 this.e.a(-2);
             }
         }

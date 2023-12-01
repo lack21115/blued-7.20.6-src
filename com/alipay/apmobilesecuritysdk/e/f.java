@@ -2,43 +2,39 @@ package com.alipay.apmobilesecuritysdk.e;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alipay/apmobilesecuritysdk/e/f.class */
 public final class f {
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f4553a;
+    private String a;
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f4554c;
+    private String c;
     private String d;
     private String e;
 
     public f() {
-        this.f4553a = "";
+        this.a = "";
         this.b = "";
-        this.f4554c = "";
+        this.c = "";
         this.d = "";
         this.e = "";
     }
 
     public f(String str, String str2, String str3, String str4, String str5) {
-        this.f4553a = "";
+        this.a = "";
         this.b = "";
-        this.f4554c = "";
+        this.c = "";
         this.d = "";
         this.e = "";
-        this.f4553a = str;
+        this.a = str;
         this.b = str2;
-        this.f4554c = str3;
+        this.c = str3;
         this.d = str4;
         this.e = str5;
     }
 
     public final String a() {
-        return com.alipay.security.mobile.module.a.a.d(this.f4553a);
+        return com.alipay.security.mobile.module.a.a.d(this.a);
     }
 
     public final void a(String str) {
-        this.f4553a = str;
+        this.a = str;
     }
 
     public final String b() {
@@ -50,11 +46,11 @@ public final class f {
     }
 
     public final String c() {
-        return com.alipay.security.mobile.module.a.a.d(this.f4554c);
+        return com.alipay.security.mobile.module.a.a.d(this.c);
     }
 
     public final void c(String str) {
-        this.f4554c = str;
+        this.c = str;
     }
 
     public final String d() {

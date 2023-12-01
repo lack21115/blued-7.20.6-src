@@ -18,12 +18,17 @@ import android.widget.ListAdapter;
 import android.widget.TextView;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
+import androidx.viewbinding.ViewBinding;
+import com.anythink.expressad.a;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.AppMethods;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.image.ImageWrapper;
+import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.ui.ActivityFragmentActive;
 import com.blued.android.core.ui.TerminalActivity;
 import com.blued.android.core.utils.skin.BluedSkinUtils;
@@ -45,7 +50,6 @@ import com.blued.android.module.common.user.model.UserInfo;
 import com.blued.android.module.common.utils.CommonStringUtils;
 import com.blued.android.module.common.utils.ImgURLMap;
 import com.blued.android.module.common.view.CommonTopTitleNoTrans;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.blued.android.module.common.widget.dialog.CommonAlertDialog;
 import com.blued.android.module.live.base.model.BasePayRemaining;
 import com.blued.android.statistics.BluedStatistics;
@@ -89,7 +93,7 @@ import kotlin.reflect.KProperty;
 public final class SuperExposureFragment extends MVVMBaseFragment<SuperExposureViewModel> {
 
     /* renamed from: c  reason: collision with root package name */
-    public CommonAdapter<SuperExposurePayItemModel> f33969c;
+    public CommonAdapter<SuperExposurePayItemModel> f20278c;
     private long d;
     private String e;
     private int f;
@@ -107,10 +111,10 @@ public final class SuperExposureFragment extends MVVMBaseFragment<SuperExposureV
     private int r;
     private final ViewBindingProperty s;
     private boolean t;
-    static final /* synthetic */ KProperty<Object>[] b = {Reflection.a(new PropertyReference1Impl(SuperExposureFragment.class, "viewBinding", "getViewBinding()Lcom/soft/blued/databinding/FragmentSuperExposureBinding;", 0))};
+    static final /* synthetic */ KProperty<Object>[] b = {(KProperty) Reflection.a(new PropertyReference1Impl(SuperExposureFragment.class, "viewBinding", "getViewBinding()Lcom/soft/blued/databinding/FragmentSuperExposureBinding;", 0))};
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Companion f33968a = new Companion(null);
+    public static final Companion f20277a = new Companion(null);
 
     @Metadata
     /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/user/fragment/SuperExposureFragment$Companion.class */
@@ -122,19 +126,19 @@ public final class SuperExposureFragment extends MVVMBaseFragment<SuperExposureV
             this();
         }
 
-        public final void a(Context context, String strFeedId, String detail) {
+        public final void a(Context context, String str, String str2) {
             Intrinsics.e(context, "context");
-            Intrinsics.e(strFeedId, "strFeedId");
-            Intrinsics.e(detail, "detail");
+            Intrinsics.e(str, "strFeedId");
+            Intrinsics.e(str2, "detail");
             Bundle bundle = new Bundle();
-            bundle.putLong("feed_id", CommonStringUtils.c(strFeedId));
-            bundle.putString("detail", detail);
+            bundle.putLong("feed_id", CommonStringUtils.c(str));
+            bundle.putString("detail", str2);
             TerminalActivity.d(context, SuperExposureFragment.class, bundle);
         }
     }
 
     public SuperExposureFragment() {
-        super(R.layout.fragment_super_exposure);
+        super((int) R.layout.fragment_super_exposure);
         this.e = "";
         this.g = new ArrayList<>();
         this.h = new ArrayList<>();
@@ -144,17 +148,17 @@ public final class SuperExposureFragment extends MVVMBaseFragment<SuperExposureV
         this.n = -1;
         this.p = new ArrayList<>();
         this.q = new SparseArray<>();
-        this.s = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<SuperExposureFragment, FragmentSuperExposureBinding>() { // from class: com.soft.blued.ui.user.fragment.SuperExposureFragment$special$$inlined$viewBindingFragment$default$1
-            @Override // kotlin.jvm.functions.Function1
+        this.s = ((Fragment) this) instanceof DialogFragment ? (ViewBindingProperty) new DialogFragmentViewBindingProperty(new Function1<SuperExposureFragment, FragmentSuperExposureBinding>() { // from class: com.soft.blued.ui.user.fragment.SuperExposureFragment$special$$inlined$viewBindingFragment$default$1
+            /* JADX WARN: Incorrect types in method signature: (Lcom/soft/blued/ui/user/fragment/SuperExposureFragment;)Lcom/soft/blued/databinding/FragmentSuperExposureBinding; */
             /* renamed from: a */
-            public final FragmentSuperExposureBinding invoke(SuperExposureFragment fragment) {
+            public final ViewBinding invoke(Fragment fragment) {
                 Intrinsics.e(fragment, "fragment");
                 return FragmentSuperExposureBinding.a(fragment.requireView());
             }
         }) : new FragmentViewBindingProperty(new Function1<SuperExposureFragment, FragmentSuperExposureBinding>() { // from class: com.soft.blued.ui.user.fragment.SuperExposureFragment$special$$inlined$viewBindingFragment$default$2
-            @Override // kotlin.jvm.functions.Function1
+            /* JADX WARN: Incorrect types in method signature: (Lcom/soft/blued/ui/user/fragment/SuperExposureFragment;)Lcom/soft/blued/databinding/FragmentSuperExposureBinding; */
             /* renamed from: a */
-            public final FragmentSuperExposureBinding invoke(SuperExposureFragment fragment) {
+            public final ViewBinding invoke(Fragment fragment) {
                 Intrinsics.e(fragment, "fragment");
                 return FragmentSuperExposureBinding.a(fragment.requireView());
             }
@@ -162,7 +166,7 @@ public final class SuperExposureFragment extends MVVMBaseFragment<SuperExposureV
     }
 
     private final void A() {
-        boolean a2 = Intrinsics.a((Object) BluedStatistics.g().a("VAS_超级曝光购买页优化实验_VAS_promote_payment-page_price", ""), (Object) "test");
+        boolean a2 = Intrinsics.a(BluedStatistics.g().a("VAS_超级曝光购买页优化实验_VAS_promote_payment-page_price", ""), "test");
         this.t = a2;
         if (a2) {
             FragmentSuperExposureBinding x = x();
@@ -696,11 +700,11 @@ public final class SuperExposureFragment extends MVVMBaseFragment<SuperExposureV
     }
 
     private final void N() {
-        WebViewShowInfoFragment.show(getContext(), Intrinsics.a(Host.a("H5"), (Object) "/term/vipterm"), -1);
+        WebViewShowInfoFragment.show(getContext(), Intrinsics.a(Host.a("H5"), "/term/vipterm"), -1);
     }
 
     private final void O() {
-        WebViewShowInfoFragment.show(getContext(), Intrinsics.a(Host.a("H5"), (Object) "/home/fans/launchinfo"), -1);
+        WebViewShowInfoFragment.show(getContext(), Intrinsics.a(Host.a("H5"), "/home/fans/launchinfo"), -1);
     }
 
     private final boolean P() {
@@ -719,22 +723,26 @@ public final class SuperExposureFragment extends MVVMBaseFragment<SuperExposureV
         if (this.p.get(this.m).storage_num > 0) {
             final ActivityFragmentActive fragmentActive = getFragmentActive();
             PayHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<BasePayRemaining>>(fragmentActive) { // from class: com.soft.blued.ui.user.fragment.SuperExposureFragment$onClickPay$1
+                /* JADX INFO: Access modifiers changed from: package-private */
+                {
+                    super((IRequestHost) fragmentActive);
+                }
+
                 /* JADX INFO: Access modifiers changed from: protected */
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 /* renamed from: a */
-                public void onUIUpdate(BluedEntityA<BasePayRemaining> parseData) {
-                    Intrinsics.e(parseData, "parseData");
-                    if (parseData.code == 21001) {
+                public void onUIUpdate(BluedEntityA<BasePayRemaining> bluedEntityA) {
+                    Intrinsics.e(bluedEntityA, "parseData");
+                    if (bluedEntityA.code == 21001) {
                         AppMethods.d((int) R.string.super_exposure_fire_toast);
                         return;
                     }
-                    SuperExposureViewModel a4 = SuperExposureFragment.this.a();
+                    SuperExposureViewModel superExposureViewModel = (SuperExposureViewModel) SuperExposureFragment.this.a();
                     long p = SuperExposureFragment.this.p();
                     ActivityFragmentActive fragmentActive2 = SuperExposureFragment.this.getFragmentActive();
                     Intrinsics.c(fragmentActive2, "fragmentActive");
-                    a4.a(p, fragmentActive2);
-                    if (parseData.getSingleData() != null) {
-                        WebViewShowInfoFragment.show(AppInfo.d(), Intrinsics.a("http://common.blued.com?action=exposure_inventory_buy_success&order_id=", (Object) parseData.getSingleData().order_id), -1);
+                    superExposureViewModel.a(p, fragmentActive2);
+                    if (bluedEntityA.getSingleData() != null) {
+                        WebViewShowInfoFragment.show(AppInfo.d(), Intrinsics.a("http://common.blued.com?action=exposure_inventory_buy_success&order_id=", ((BasePayRemaining) bluedEntityA.getSingleData()).order_id), -1);
                     }
                 }
             }, i, this.d, this.e, valueOf, a2, a3, str, getFragmentActive());
@@ -746,8 +754,8 @@ public final class SuperExposureFragment extends MVVMBaseFragment<SuperExposureV
         SuperExposureCouponModel superExposureCouponModel = this.o;
         String valueOf2 = superExposureCouponModel == null ? "" : String.valueOf(superExposureCouponModel.id);
         int i2 = this.l;
-        String str3 = Host.a("H5") + "/home/pay/payway?from=exposure&detail=" + this.e + "&uid=" + ((Object) b2) + (i2 > 0 ? Intrinsics.a("&money=", (Object) Integer.valueOf(i2)) : "&money=0.01") + "&productId=" + i + "&productName=" + ((Object) str2) + "&fid=" + ((Object) b3) + "&promotionType=" + valueOf + "&couponsid=" + valueOf2 + "&role=" + ((Object) a2) + "&age=" + ((Object) a3) + "&area=" + str;
-        LogUtils.c(Intrinsics.a("wholeUrl: ", (Object) str3));
+        String str3 = Host.a("H5") + "/home/pay/payway?from=exposure&detail=" + this.e + "&uid=" + ((Object) b2) + (i2 > 0 ? Intrinsics.a("&money=", Integer.valueOf(i2)) : "&money=0.01") + "&productId=" + i + "&productName=" + ((Object) str2) + "&fid=" + ((Object) b3) + "&promotionType=" + valueOf + "&couponsid=" + valueOf2 + "&role=" + ((Object) a2) + "&age=" + ((Object) a3) + "&area=" + str;
+        LogUtils.c(Intrinsics.a("wholeUrl: ", str3));
         WebViewShowInfoFragment.show(getContext(), str3, -1);
         int i3 = !P();
         EventTrackSuperExpose.a(String.valueOf(i), valueOf2, this.f, i3);
@@ -782,26 +790,26 @@ public final class SuperExposureFragment extends MVVMBaseFragment<SuperExposureV
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(int i, SuperExposureFragment this$0, SuperExposureModel.FireBag fireModel, Context context, View view) {
+    public static final void a(int i, SuperExposureFragment superExposureFragment, SuperExposureModel.FireBag fireBag, Context context, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        Intrinsics.e(fireModel, "$fireModel");
+        Intrinsics.e(superExposureFragment, "this$0");
+        Intrinsics.e(fireBag, "$fireModel");
         Intrinsics.e(context, "$context");
         if (i == 1) {
             AppMethods.d((int) R.string.super_exposure_fire_can_not_buy);
             return;
         }
-        String a2 = this$0.g.contains("9") ? "9" : this$0.a(this$0.g);
-        String a3 = this$0.h.contains("9") ? "9" : this$0.a(this$0.h);
-        String str = this$0.P() ? "1" : "2";
-        int i2 = fireModel.id;
-        int i3 = this$0.f;
+        String a2 = superExposureFragment.g.contains("9") ? "9" : superExposureFragment.a(superExposureFragment.g);
+        String a3 = superExposureFragment.h.contains("9") ? "9" : superExposureFragment.a(superExposureFragment.h);
+        String str = superExposureFragment.P() ? "1" : "2";
+        int i2 = fireBag.id;
+        int i3 = superExposureFragment.f;
         String b2 = HashidEncryptTool.b(UserInfo.getInstance().getLoginUserInfo().uid);
         String string = context.getString(R.string.super_exposure_fire_bag);
         Intrinsics.c(string, "context.getString(R.stri….super_exposure_fire_bag)");
-        String b3 = HashidEncryptTool.b(String.valueOf(this$0.d));
-        String str2 = Host.a("H5") + "/home/pay/payway?from=exposure&detail=cs_fire&uid=" + ((Object) b2) + Intrinsics.a("&money=", (Object) Integer.valueOf(fireModel.total_price)) + "&productId=" + i2 + "&productName=" + string + "&fid=" + ((Object) b3) + "&promotionType=" + String.valueOf(i3 + 1) + "&couponsid=&role=" + ((Object) a2) + "&age=" + ((Object) a3) + "&area=" + str;
-        LogUtils.c(Intrinsics.a("wholeUrl: ", (Object) str2));
+        String b3 = HashidEncryptTool.b(String.valueOf(superExposureFragment.d));
+        String str2 = Host.a("H5") + "/home/pay/payway?from=exposure&detail=cs_fire&uid=" + ((Object) b2) + Intrinsics.a("&money=", Integer.valueOf(fireBag.total_price)) + "&productId=" + i2 + "&productName=" + string + "&fid=" + ((Object) b3) + "&promotionType=" + String.valueOf(i3 + 1) + "&couponsid=&role=" + ((Object) a2) + "&age=" + ((Object) a3) + "&area=" + str;
+        LogUtils.c(Intrinsics.a("wholeUrl: ", str2));
         WebViewShowInfoFragment.show(context, str2, -1);
         EventTrackSuperExpose.b(SuperExposeProtos.Event.SUPER_EXPOSE_BUY_PAGE_PAY_CLICK, String.valueOf(i2));
     }
@@ -811,20 +819,28 @@ public final class SuperExposureFragment extends MVVMBaseFragment<SuperExposureV
             this.q.clear();
         }
         final ActivityFragmentActive fragmentActive = getFragmentActive();
-        PayHttpUtils.b(new BluedUIHttpResponse<BluedEntityA<SuperExposureCouponModel>>(fragmentActive) { // from class: com.soft.blued.ui.user.fragment.SuperExposureFragment$getCouponData$1
+        PayHttpUtils.b(new BluedUIHttpResponse<BluedEntityA<SuperExposureCouponModel>>(i, fragmentActive) { // from class: com.soft.blued.ui.user.fragment.SuperExposureFragment$getCouponData$1
+            final /* synthetic */ int b;
+
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super((IRequestHost) fragmentActive);
+            }
+
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
+            /* JADX WARN: Type inference failed for: r2v1, types: [java.lang.Object] */
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<SuperExposureCouponModel> bluedEntityA) {
-                if ((bluedEntityA == null ? null : bluedEntityA.getSingleData()) == null) {
+                if ((bluedEntityA == null ? null : (SuperExposureCouponModel) bluedEntityA.getSingleData()) == null) {
                     SuperExposureFragment.this.a((SuperExposureCouponModel) null);
                     return;
                 }
-                if (bluedEntityA.getSingleData().is_available == 1) {
-                    bluedEntityA.getSingleData().is_confirm = 1;
+                if (((SuperExposureCouponModel) bluedEntityA.getSingleData()).is_available == 1) {
+                    ((SuperExposureCouponModel) bluedEntityA.getSingleData()).is_confirm = 1;
                 }
-                SuperExposureFragment.this.w().put(i, bluedEntityA.getSingleData());
-                SuperExposureFragment.this.a(bluedEntityA.getSingleData());
+                SuperExposureFragment.this.w().put(this.b, bluedEntityA.getSingleData());
+                SuperExposureFragment.this.a((SuperExposureCouponModel) bluedEntityA.getSingleData());
             }
         }, i, this.f, getFragmentActive());
     }
@@ -851,7 +867,7 @@ public final class SuperExposureFragment extends MVVMBaseFragment<SuperExposureV
             }
             this.o = null;
         } else {
-            string = Intrinsics.a("-￥", (Object) CommonStringUtils.d(superExposureCouponModel.money));
+            string = Intrinsics.a("-￥", CommonStringUtils.d(superExposureCouponModel.money));
             FragmentSuperExposureBinding x3 = x();
             if (x3 != null && (textView3 = x3.u) != null) {
                 textView3.setTextColor(i(2131102251));
@@ -868,7 +884,7 @@ public final class SuperExposureFragment extends MVVMBaseFragment<SuperExposureV
                     if (context == null) {
                         str = string;
                     } else {
-                        StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
+                        StringCompanionObject stringCompanionObject = StringCompanionObject.a;
                         String string2 = context.getResources().getString(R.string.super_exposure_discount_tip);
                         Intrinsics.c(string2, "it.resources.getString(R…er_exposure_discount_tip)");
                         str = String.format(string2, Arrays.copyOf(new Object[]{superExposureCouponModel.money}, 1));
@@ -1054,10 +1070,10 @@ public final class SuperExposureFragment extends MVVMBaseFragment<SuperExposureV
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(SuperExposureFragment this$0, View view) {
+    public static final void a(SuperExposureFragment superExposureFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        FragmentActivity activity = this$0.getActivity();
+        Intrinsics.e(superExposureFragment, "this$0");
+        FragmentActivity activity = superExposureFragment.getActivity();
         if (activity == null) {
             return;
         }
@@ -1065,21 +1081,21 @@ public final class SuperExposureFragment extends MVVMBaseFragment<SuperExposureV
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(SuperExposureFragment this$0, SuperExposurePayItemModel model, View view) {
+    public static final void a(SuperExposureFragment superExposureFragment, SuperExposurePayItemModel superExposurePayItemModel, View view) {
         EditText editText;
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        Intrinsics.e(model, "$model");
-        FragmentSuperExposureBinding x = this$0.x();
+        Intrinsics.e(superExposureFragment, "this$0");
+        Intrinsics.e(superExposurePayItemModel, "$model");
+        FragmentSuperExposureBinding x = superExposureFragment.x();
         Editable editable = null;
         if (x != null && (editText = x.B) != null) {
             editable = editText.getText();
         }
         int a2 = CommonStringUtils.a(String.valueOf(editable));
-        if (a2 < model.min || a2 > model.max || model.multiple == 0 || a2 % model.multiple != 0) {
+        if (a2 < superExposurePayItemModel.min || a2 > superExposurePayItemModel.max || superExposurePayItemModel.multiple == 0 || a2 % superExposurePayItemModel.multiple != 0) {
             return;
         }
-        this$0.e(a2);
+        superExposureFragment.e(a2);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1089,14 +1105,14 @@ public final class SuperExposureFragment extends MVVMBaseFragment<SuperExposureV
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(SuperExposureFragment this$0, Boolean bool) {
-        Intrinsics.e(this$0, "this$0");
-        if (this$0.d > 0) {
-            SuperExposureViewModel a2 = this$0.a();
-            long j = this$0.d;
-            ActivityFragmentActive fragmentActive = this$0.getFragmentActive();
+    public static final void a(SuperExposureFragment superExposureFragment, Boolean bool) {
+        Intrinsics.e(superExposureFragment, "this$0");
+        if (superExposureFragment.d > 0) {
+            SuperExposureViewModel superExposureViewModel = (SuperExposureViewModel) superExposureFragment.a();
+            long j = superExposureFragment.d;
+            ActivityFragmentActive fragmentActive = superExposureFragment.getFragmentActive();
             Intrinsics.c(fragmentActive, "fragmentActive");
-            a2.a(j, fragmentActive);
+            superExposureViewModel.a(j, fragmentActive);
         }
     }
 
@@ -1112,27 +1128,27 @@ public final class SuperExposureFragment extends MVVMBaseFragment<SuperExposureV
         }
         List<? extends SuperExposureModel.FireBag> list2 = list;
         if (list2 == null || list2.isEmpty()) {
-            x.f28984c.setVisibility(8);
+            x.f15294c.setVisibility(8);
             return;
         }
         EventTrackSuperExpose.b(SuperExposeProtos.Event.SUPER_EXPOSE_BUY_PAGE_SHOW, "");
-        x.f28984c.setVisibility(0);
+        x.f15294c.setVisibility(0);
         final SuperExposureModel.FireBag fireBag = list.get(0);
         TextView textView = x.as;
         textView.setText("x " + fireBag.buy_num + context.getString(R.string.super_exposure_fire_bag_times));
         x.at.setText(String.valueOf(fireBag.average_price));
-        x.aw.setText(Intrinsics.a(BridgeUtil.SPLIT_MARK, (Object) context.getString(R.string.super_exposure_fire_bag_times)));
+        x.aw.setText(Intrinsics.a("/", context.getString(R.string.super_exposure_fire_bag_times)));
         TextView textView2 = x.ay;
         textView2.setText((char) 65509 + fireBag.total_price + '/' + fireBag.buy_num + context.getString(R.string.super_exposure_fire_bag_times));
-        x.av.setText(Intrinsics.a(context.getString(R.string.super_exposure_fire_bag_save_money), (Object) fireBag.discount));
-        ImageLoader.a(getFragmentActive(), ImgURLMap.f10885a.a("icon_super_exposure_fire_bag")).a(x.b);
+        x.av.setText(Intrinsics.a(context.getString(R.string.super_exposure_fire_bag_save_money), fireBag.discount));
+        ImageLoader.a(getFragmentActive(), ImgURLMap.a.a("icon_super_exposure_fire_bag")).a(x.b);
         x.l.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$SuperExposureFragment$RDvd3Yup0NfEKi_KM1-Pjgg0f5c
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 SuperExposureFragment.z(SuperExposureFragment.this, view);
             }
         });
-        x.f28982a.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$SuperExposureFragment$y4tx9NjZomECponNEmYbH09-TTI
+        x.f15292a.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$SuperExposureFragment$y4tx9NjZomECponNEmYbH09-TTI
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 SuperExposureFragment.a(i, this, fireBag, context, view);
@@ -1184,12 +1200,12 @@ public final class SuperExposureFragment extends MVVMBaseFragment<SuperExposureV
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(SuperExposureFragment this$0, View view) {
+    public static final void b(SuperExposureFragment superExposureFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        String string = this$0.getString(R.string.exposure_recommend_user_tips);
+        Intrinsics.e(superExposureFragment, "this$0");
+        String string = superExposureFragment.getString(R.string.exposure_recommend_user_tips);
         Intrinsics.c(string, "getString(R.string.exposure_recommend_user_tips)");
-        this$0.a(string);
+        superExposureFragment.a(string);
     }
 
     private final void b(boolean z) {
@@ -1214,31 +1230,31 @@ public final class SuperExposureFragment extends MVVMBaseFragment<SuperExposureV
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void c(SuperExposureFragment this$0) {
+    public static final void c(SuperExposureFragment superExposureFragment) {
         EditText editText;
         Editable text;
         FragmentSuperExposureBinding x;
         EditText editText2;
         EditText editText3;
-        Intrinsics.e(this$0, "this$0");
-        FragmentSuperExposureBinding x2 = this$0.x();
+        Intrinsics.e(superExposureFragment, "this$0");
+        FragmentSuperExposureBinding x2 = superExposureFragment.x();
         if (x2 != null && (editText3 = x2.B) != null) {
             editText3.requestFocus();
         }
-        FragmentSuperExposureBinding x3 = this$0.x();
+        FragmentSuperExposureBinding x3 = superExposureFragment.x();
         KeyboardUtils.a(x3 == null ? null : x3.B);
-        FragmentSuperExposureBinding x4 = this$0.x();
-        if (x4 == null || (editText = x4.B) == null || (text = editText.getText()) == null || (x = this$0.x()) == null || (editText2 = x.B) == null) {
+        FragmentSuperExposureBinding x4 = superExposureFragment.x();
+        if (x4 == null || (editText = x4.B) == null || (text = editText.getText()) == null || (x = superExposureFragment.x()) == null || (editText2 = x.B) == null) {
             return;
         }
         editText2.setSelection(text.length());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void c(SuperExposureFragment this$0, View view) {
+    public static final void c(SuperExposureFragment superExposureFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.B();
+        Intrinsics.e(superExposureFragment, "this$0");
+        superExposureFragment.B();
     }
 
     private final void c(boolean z) {
@@ -1272,10 +1288,10 @@ public final class SuperExposureFragment extends MVVMBaseFragment<SuperExposureV
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void d(SuperExposureFragment this$0, View view) {
+    public static final void d(SuperExposureFragment superExposureFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.C();
+        Intrinsics.e(superExposureFragment, "this$0");
+        superExposureFragment.C();
     }
 
     private final void e(int i) {
@@ -1301,10 +1317,10 @@ public final class SuperExposureFragment extends MVVMBaseFragment<SuperExposureV
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void e(SuperExposureFragment this$0, View view) {
+    public static final void e(SuperExposureFragment superExposureFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.g(9);
+        Intrinsics.e(superExposureFragment, "this$0");
+        superExposureFragment.g(9);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1313,10 +1329,10 @@ public final class SuperExposureFragment extends MVVMBaseFragment<SuperExposureV
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void f(SuperExposureFragment this$0, View view) {
+    public static final void f(SuperExposureFragment superExposureFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.g(1);
+        Intrinsics.e(superExposureFragment, "this$0");
+        superExposureFragment.g(1);
     }
 
     private final void g(int i) {
@@ -1339,10 +1355,10 @@ public final class SuperExposureFragment extends MVVMBaseFragment<SuperExposureV
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void g(SuperExposureFragment this$0, View view) {
+    public static final void g(SuperExposureFragment superExposureFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.g(2);
+        Intrinsics.e(superExposureFragment, "this$0");
+        superExposureFragment.g(2);
     }
 
     private final void h(int i) {
@@ -1365,10 +1381,10 @@ public final class SuperExposureFragment extends MVVMBaseFragment<SuperExposureV
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void h(SuperExposureFragment this$0, View view) {
+    public static final void h(SuperExposureFragment superExposureFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.g(3);
+        Intrinsics.e(superExposureFragment, "this$0");
+        superExposureFragment.g(3);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1377,112 +1393,112 @@ public final class SuperExposureFragment extends MVVMBaseFragment<SuperExposureV
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void i(SuperExposureFragment this$0, View view) {
+    public static final void i(SuperExposureFragment superExposureFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.h(9);
+        Intrinsics.e(superExposureFragment, "this$0");
+        superExposureFragment.h(9);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void j(SuperExposureFragment this$0, View view) {
+    public static final void j(SuperExposureFragment superExposureFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.h(1);
+        Intrinsics.e(superExposureFragment, "this$0");
+        superExposureFragment.h(1);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void k(SuperExposureFragment this$0, View view) {
+    public static final void k(SuperExposureFragment superExposureFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.h(2);
+        Intrinsics.e(superExposureFragment, "this$0");
+        superExposureFragment.h(2);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void l(SuperExposureFragment this$0, View view) {
+    public static final void l(SuperExposureFragment superExposureFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.h(3);
+        Intrinsics.e(superExposureFragment, "this$0");
+        superExposureFragment.h(3);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void m(SuperExposureFragment this$0, View view) {
+    public static final void m(SuperExposureFragment superExposureFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.G();
+        Intrinsics.e(superExposureFragment, "this$0");
+        superExposureFragment.G();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void n(SuperExposureFragment this$0, View view) {
+    public static final void n(SuperExposureFragment superExposureFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.H();
+        Intrinsics.e(superExposureFragment, "this$0");
+        superExposureFragment.H();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void o(SuperExposureFragment this$0, View view) {
+    public static final void o(SuperExposureFragment superExposureFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.G();
+        Intrinsics.e(superExposureFragment, "this$0");
+        superExposureFragment.G();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void p(SuperExposureFragment this$0, View view) {
+    public static final void p(SuperExposureFragment superExposureFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.H();
+        Intrinsics.e(superExposureFragment, "this$0");
+        superExposureFragment.H();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void q(SuperExposureFragment this$0, View view) {
+    public static final void q(SuperExposureFragment superExposureFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        String string = this$0.getString(R.string.exposure_amount_tips);
+        Intrinsics.e(superExposureFragment, "this$0");
+        String string = superExposureFragment.getString(R.string.exposure_amount_tips);
         Intrinsics.c(string, "getString(R.string.exposure_amount_tips)");
-        this$0.a(string);
+        superExposureFragment.a(string);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void r(SuperExposureFragment this$0, View view) {
+    public static final void r(SuperExposureFragment superExposureFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        String string = this$0.getString(R.string.exposure_price_tips);
+        Intrinsics.e(superExposureFragment, "this$0");
+        String string = superExposureFragment.getString(R.string.exposure_price_tips);
         Intrinsics.c(string, "getString(R.string.exposure_price_tips)");
-        this$0.a(string);
+        superExposureFragment.a(string);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void s(SuperExposureFragment this$0, View view) {
+    public static final void s(SuperExposureFragment superExposureFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.K();
+        Intrinsics.e(superExposureFragment, "this$0");
+        superExposureFragment.K();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void t(SuperExposureFragment this$0, View view) {
+    public static final void t(SuperExposureFragment superExposureFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.L();
+        Intrinsics.e(superExposureFragment, "this$0");
+        superExposureFragment.L();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void u(SuperExposureFragment this$0, View view) {
+    public static final void u(SuperExposureFragment superExposureFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.N();
+        Intrinsics.e(superExposureFragment, "this$0");
+        superExposureFragment.N();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void v(SuperExposureFragment this$0, View view) {
+    public static final void v(SuperExposureFragment superExposureFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.O();
+        Intrinsics.e(superExposureFragment, "this$0");
+        superExposureFragment.O();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void w(SuperExposureFragment this$0, View view) {
+    public static final void w(SuperExposureFragment superExposureFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.Q();
+        Intrinsics.e(superExposureFragment, "this$0");
+        superExposureFragment.Q();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1491,30 +1507,27 @@ public final class SuperExposureFragment extends MVVMBaseFragment<SuperExposureV
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void x(SuperExposureFragment this$0, View view) {
+    public static final void x(SuperExposureFragment superExposureFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.e(0);
+        Intrinsics.e(superExposureFragment, "this$0");
+        superExposureFragment.e(0);
     }
 
     /* JADX WARN: Type inference failed for: r4v0, types: [com.soft.blued.ui.user.fragment.SuperExposureFragment$createAdapter$2] */
     private final void y() {
         a(new SuperExposureFragment$createAdapter$1(this, new MultiItemTypeSupport<SuperExposurePayItemModel>() { // from class: com.soft.blued.ui.user.fragment.SuperExposureFragment$createAdapter$2
-            @Override // com.blued.android.module.common.adapter.MultiItemTypeSupport
             public int a() {
                 return 2;
             }
 
-            @Override // com.blued.android.module.common.adapter.MultiItemTypeSupport
-            public int a(int i, SuperExposurePayItemModel model) {
-                Intrinsics.e(model, "model");
-                return !TextUtils.isEmpty(model.content) ? R.layout.item_super_exposure_pay_defined : R.layout.item_super_exposure_pay;
+            public int a(int i, SuperExposurePayItemModel superExposurePayItemModel) {
+                Intrinsics.e(superExposurePayItemModel, "model");
+                return !TextUtils.isEmpty(superExposurePayItemModel.content) ? R.layout.item_super_exposure_pay_defined : R.layout.item_super_exposure_pay;
             }
 
-            @Override // com.blued.android.module.common.adapter.MultiItemTypeSupport
-            public int b(int i, SuperExposurePayItemModel model) {
-                Intrinsics.e(model, "model");
-                return !TextUtils.isEmpty(model.content) ? 1 : 0;
+            public int b(int i, SuperExposurePayItemModel superExposurePayItemModel) {
+                Intrinsics.e(superExposurePayItemModel, "model");
+                return !TextUtils.isEmpty(superExposurePayItemModel.content) ? 1 : 0;
             }
         }));
         FragmentSuperExposureBinding x = x();
@@ -1526,10 +1539,10 @@ public final class SuperExposureFragment extends MVVMBaseFragment<SuperExposureV
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void y(SuperExposureFragment this$0, View view) {
+    public static final void y(SuperExposureFragment superExposureFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.e(0);
+        Intrinsics.e(superExposureFragment, "this$0");
+        superExposureFragment.e(0);
     }
 
     private final void z() {
@@ -1564,12 +1577,12 @@ public final class SuperExposureFragment extends MVVMBaseFragment<SuperExposureV
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void z(SuperExposureFragment this$0, View view) {
+    public static final void z(SuperExposureFragment superExposureFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        String string = this$0.getString(R.string.super_exposure_fire_bag_dialog_content);
+        Intrinsics.e(superExposureFragment, "this$0");
+        String string = superExposureFragment.getString(R.string.super_exposure_fire_bag_dialog_content);
         Intrinsics.c(string, "getString(R.string.super…_fire_bag_dialog_content)");
-        this$0.a(string);
+        superExposureFragment.a(string);
     }
 
     public final void a(int i) {
@@ -1578,27 +1591,27 @@ public final class SuperExposureFragment extends MVVMBaseFragment<SuperExposureV
 
     public final void a(CommonAdapter<SuperExposurePayItemModel> commonAdapter) {
         Intrinsics.e(commonAdapter, "<set-?>");
-        this.f33969c = commonAdapter;
+        this.f20278c = commonAdapter;
     }
 
-    public final void a(SuperExposureModel data) {
+    public final void a(SuperExposureModel superExposureModel) {
         LinearLayout linearLayout;
         LinearLayout linearLayout2;
         String str;
         String str2;
         SuperExposureFeedModel superExposureFeedModel;
-        Intrinsics.e(data, "data");
+        Intrinsics.e(superExposureModel, "data");
         FragmentSuperExposureBinding x = x();
         TextView textView = x == null ? null : x.aj;
         if (textView != null) {
             BluedLoginResult loginUserInfo = UserInfo.getInstance().getLoginUserInfo();
-            textView.setText(Intrinsics.a(loginUserInfo == null ? null : loginUserInfo.name, (Object) "的动态"));
+            textView.setText(Intrinsics.a(loginUserInfo == null ? null : loginUserInfo.name, "的动态"));
         }
-        SuperExposureFeedModel superExposureFeedModel2 = data.feed;
-        if (TextUtils.isEmpty(superExposureFeedModel2 == null ? null : superExposureFeedModel2.url) && (superExposureFeedModel = data.feed) != null) {
+        SuperExposureFeedModel superExposureFeedModel2 = superExposureModel.feed;
+        if (TextUtils.isEmpty(superExposureFeedModel2 == null ? null : superExposureFeedModel2.url) && (superExposureFeedModel = superExposureModel.feed) != null) {
             superExposureFeedModel.url = "https://web.bldimg.com/cblued/static/defaultpage.1df8d8us01jt5pv.png";
         }
-        SuperExposureFeedModel superExposureFeedModel3 = data.feed;
+        SuperExposureFeedModel superExposureFeedModel3 = superExposureModel.feed;
         if (superExposureFeedModel3 != null && (str2 = superExposureFeedModel3.url) != null) {
             ImageWrapper d = ImageLoader.a(getFragmentActive(), str2).d();
             FragmentSuperExposureBinding x2 = x();
@@ -1610,10 +1623,10 @@ public final class SuperExposureFragment extends MVVMBaseFragment<SuperExposureV
         FragmentSuperExposureBinding x4 = x();
         TextView textView2 = x4 == null ? null : x4.w;
         if (textView2 != null) {
-            SuperExposureFeedModel superExposureFeedModel4 = data.feed;
+            SuperExposureFeedModel superExposureFeedModel4 = superExposureModel.feed;
             textView2.setText(superExposureFeedModel4 == null ? null : superExposureFeedModel4.content);
         }
-        SuperExposureUserModel superExposureUserModel = data.user;
+        SuperExposureUserModel superExposureUserModel = superExposureModel.user;
         if (superExposureUserModel != null && (str = superExposureUserModel.avatar) != null) {
             ImageWrapper a3 = ImageLoader.a(getFragmentActive(), str).a(16.0f);
             FragmentSuperExposureBinding x5 = x();
@@ -1636,9 +1649,9 @@ public final class SuperExposureFragment extends MVVMBaseFragment<SuperExposureV
         M();
         E();
         b((SuperExposureCouponModel) null);
-        a(data.pack_list, data.buy_limited);
-        v().a(data.list);
-        if (data.is_limit == 1) {
+        a(superExposureModel.pack_list, superExposureModel.buy_limited);
+        v().a(superExposureModel.list);
+        if (superExposureModel.is_limit == 1) {
             FragmentSuperExposureBinding x8 = x();
             TextView textView3 = x8 == null ? null : x8.r;
             if (textView3 != null) {
@@ -1678,7 +1691,6 @@ public final class SuperExposureFragment extends MVVMBaseFragment<SuperExposureV
         this.n = i;
     }
 
-    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
     public void f() {
         ImageView imageView;
         FrameLayout frameLayout;
@@ -1728,11 +1740,11 @@ public final class SuperExposureFragment extends MVVMBaseFragment<SuperExposureV
                 }
             });
         }
-        SuperExposureViewModel a2 = a();
+        SuperExposureViewModel superExposureViewModel = (SuperExposureViewModel) a();
         long j = this.d;
         ActivityFragmentActive fragmentActive = getFragmentActive();
         Intrinsics.c(fragmentActive, "fragmentActive");
-        a2.a(j, fragmentActive);
+        superExposureViewModel.a(j, fragmentActive);
         FragmentSuperExposureBinding x2 = x();
         if (x2 != null && (textView15 = x2.N) != null) {
             textView15.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$SuperExposureFragment$a60eqQah-cDmscWmIRI1yXQTDzI
@@ -1958,58 +1970,56 @@ public final class SuperExposureFragment extends MVVMBaseFragment<SuperExposureV
         GuyEventUtils.a(SuperExposeProtos.Event.EXPOSE_BUY_PAGE_SHOW.name());
     }
 
-    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
     public void l() {
-        SuperExposureFragment superExposureFragment = this;
-        LifecycleExtKt.a(superExposureFragment, a().d(), new Function1<SuperExposureModel, Unit>() { // from class: com.soft.blued.ui.user.fragment.SuperExposureFragment$liveDataObserver$1
+        LifecycleOwner lifecycleOwner = (LifecycleOwner) this;
+        LifecycleExtKt.a(lifecycleOwner, ((SuperExposureViewModel) a()).d(), new Function1<SuperExposureModel, Unit>() { // from class: com.soft.blued.ui.user.fragment.SuperExposureFragment$liveDataObserver$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(1);
             }
 
-            public final void a(SuperExposureModel it) {
-                if (it.list != null) {
-                    Iterator<SuperExposurePayItemModel> it2 = it.list.iterator();
+            public final void a(SuperExposureModel superExposureModel) {
+                if (superExposureModel.list != null) {
+                    Iterator<SuperExposurePayItemModel> it = superExposureModel.list.iterator();
                     int i = 0;
                     while (true) {
                         int i2 = i;
-                        if (!it2.hasNext()) {
+                        if (!it.hasNext()) {
                             break;
                         }
-                        SuperExposurePayItemModel next = it2.next();
+                        SuperExposurePayItemModel next = it.next();
                         if (next.storage_num > 0 && SuperExposureFragment.this.s() == 0) {
                             SuperExposureFragment.this.b(i2);
-                            SuperExposureFragment superExposureFragment2 = SuperExposureFragment.this;
+                            SuperExposureFragment superExposureFragment = SuperExposureFragment.this;
                             String str = next.money;
                             Intrinsics.c(str, "value.money");
-                            superExposureFragment2.a((int) Double.parseDouble(str));
+                            superExposureFragment.a((int) Double.parseDouble(str));
                         } else if (next.isRecommend == 1) {
                             SuperExposureFragment.this.b(i2);
-                            SuperExposureFragment superExposureFragment3 = SuperExposureFragment.this;
+                            SuperExposureFragment superExposureFragment2 = SuperExposureFragment.this;
                             String str2 = next.money;
                             Intrinsics.c(str2, "value.money");
-                            superExposureFragment3.a((int) Double.parseDouble(str2));
+                            superExposureFragment2.a((int) Double.parseDouble(str2));
                         }
                         i = i2 + 1;
                     }
-                    if (it.list.size() > SuperExposureFragment.this.s()) {
-                        SuperExposureFragment.this.f(it.list.get(SuperExposureFragment.this.s()).id);
+                    if (superExposureModel.list.size() > SuperExposureFragment.this.s()) {
+                        SuperExposureFragment.this.f(superExposureModel.list.get(SuperExposureFragment.this.s()).id);
                     }
                     SuperExposureFragment.this.u().clear();
-                    SuperExposureFragment.this.u().addAll(it.list);
+                    SuperExposureFragment.this.u().addAll(superExposureModel.list);
                 }
-                SuperExposureFragment superExposureFragment4 = SuperExposureFragment.this;
-                Intrinsics.c(it, "it");
-                superExposureFragment4.a(it);
+                SuperExposureFragment superExposureFragment3 = SuperExposureFragment.this;
+                Intrinsics.c(superExposureModel, "it");
+                superExposureFragment3.a(superExposureModel);
             }
 
-            @Override // kotlin.jvm.functions.Function1
-            public /* synthetic */ Unit invoke(SuperExposureModel superExposureModel) {
-                a(superExposureModel);
-                return Unit.f42314a;
+            public /* synthetic */ Object invoke(Object obj) {
+                a((SuperExposureModel) obj);
+                return Unit.a;
             }
         });
-        LiveEventBus.get(EventBusConstant.KEY_EVENT_REFRESH_SUPER_EXPOSURE, Boolean.TYPE).observe(superExposureFragment, new Observer() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$SuperExposureFragment$1OYddT-wz0NE7N2ZFfXu0Q0QUQg
+        LiveEventBus.get(EventBusConstant.KEY_EVENT_REFRESH_SUPER_EXPOSURE, Boolean.TYPE).observe(lifecycleOwner, new Observer() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$SuperExposureFragment$1OYddT-wz0NE7N2ZFfXu0Q0QUQg
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 SuperExposureFragment.a(SuperExposureFragment.this, (Boolean) obj);
@@ -2017,7 +2027,6 @@ public final class SuperExposureFragment extends MVVMBaseFragment<SuperExposureV
         });
     }
 
-    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         Window window;
         FragmentActivity activity = getActivity();
@@ -2027,11 +2036,10 @@ public final class SuperExposureFragment extends MVVMBaseFragment<SuperExposureV
         super.onCreate(bundle);
     }
 
-    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onViewCreated(View view, Bundle bundle) {
-        Intrinsics.e(view, "view");
+        Intrinsics.e(view, a.B);
         super.onViewCreated(view, bundle);
-        LiveEventBus.get("select_coupon_model", BluedCoupon.class).observe(this, new Observer() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$SuperExposureFragment$YNLTh2EUAqlxnD8GJQ8NSHsKIGg
+        LiveEventBus.get("select_coupon_model", BluedCoupon.class).observe((LifecycleOwner) this, new Observer() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$SuperExposureFragment$YNLTh2EUAqlxnD8GJQ8NSHsKIGg
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 SuperExposureFragment.a(SuperExposureFragment.this, (BluedCoupon) obj);
@@ -2064,7 +2072,7 @@ public final class SuperExposureFragment extends MVVMBaseFragment<SuperExposureV
     }
 
     public final CommonAdapter<SuperExposurePayItemModel> v() {
-        CommonAdapter<SuperExposurePayItemModel> commonAdapter = this.f33969c;
+        CommonAdapter<SuperExposurePayItemModel> commonAdapter = this.f20278c;
         if (commonAdapter != null) {
             return commonAdapter;
         }

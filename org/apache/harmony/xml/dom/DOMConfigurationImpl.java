@@ -1,6 +1,5 @@
 package org.apache.harmony.xml.dom;
 
-import android.provider.ContactsContract;
 import com.alipay.sdk.cons.c;
 import java.util.Map;
 import java.util.TreeMap;
@@ -84,7 +83,7 @@ public final class DOMConfigurationImpl implements DOMConfiguration {
             }
         });
         PARAMETERS.put("check-character-normalization", new FixedParameter(false));
-        PARAMETERS.put(ContactsContract.StreamItemsColumns.COMMENTS, new BooleanParameter() { // from class: org.apache.harmony.xml.dom.DOMConfigurationImpl.2
+        PARAMETERS.put("comments", new BooleanParameter() { // from class: org.apache.harmony.xml.dom.DOMConfigurationImpl.2
             @Override // org.apache.harmony.xml.dom.DOMConfigurationImpl.Parameter
             public Object get(DOMConfigurationImpl dOMConfigurationImpl) {
                 return Boolean.valueOf(dOMConfigurationImpl.comments);
@@ -112,7 +111,7 @@ public final class DOMConfigurationImpl implements DOMConfiguration {
             }
         });
         PARAMETERS.put("element-content-whitespace", new FixedParameter(true));
-        PARAMETERS.put(ContactsContract.Contacts.Entity.CONTENT_DIRECTORY, new BooleanParameter() { // from class: org.apache.harmony.xml.dom.DOMConfigurationImpl.4
+        PARAMETERS.put("entities", new BooleanParameter() { // from class: org.apache.harmony.xml.dom.DOMConfigurationImpl.4
             @Override // org.apache.harmony.xml.dom.DOMConfigurationImpl.Parameter
             public Object get(DOMConfigurationImpl dOMConfigurationImpl) {
                 return Boolean.valueOf(dOMConfigurationImpl.entities);

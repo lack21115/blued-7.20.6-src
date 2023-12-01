@@ -30,7 +30,7 @@ public class a implements com.opos.cmn.func.a.d {
 
     private String a(com.opos.cmn.func.a.a aVar) {
         if (aVar != null) {
-            int i = aVar.f24797c;
+            int i = aVar.f11109c;
             if (i != 0) {
                 if (i != 1) {
                     if (i != 2) {
@@ -204,7 +204,7 @@ public class a implements com.opos.cmn.func.a.d {
             aVar2.a("internal error: saveNormalFile context=" + context + " contentLength=" + j + " downloadRequest=" + aVar + " netResponse=" + gVar);
             z = false;
         } else {
-            z = a(d.a(context, aVar), d.b(context, aVar), gVar.f24554c, j, aVar.b, aVar2);
+            z = a(d.a(context, aVar), d.b(context, aVar), gVar.f10867c, j, aVar.b, aVar2);
         }
         StringBuilder sb = new StringBuilder();
         sb.append("saveNormalFile downloadRequest=");
@@ -349,14 +349,14 @@ public class a implements com.opos.cmn.func.a.d {
                 if (gVar != null) {
                     try {
                         try {
-                            if (200 == gVar.f24553a) {
+                            if (200 == gVar.f10866a) {
                                 z = false;
                                 if (a(context, aVar, gVar, aVar2)) {
                                     z = true;
                                 }
                             } else {
-                                com.opos.cmn.an.f.a.b("DownloadEngineImpl", "downloadNormalFile httpResponseEntity.getResponseCode()=" + gVar.f24553a);
-                                aVar2.a(gVar.f24553a);
+                                com.opos.cmn.an.f.a.b("DownloadEngineImpl", "downloadNormalFile httpResponseEntity.getResponseCode()=" + gVar.f10866a);
+                                aVar2.a(gVar.f10866a);
                                 z = false;
                             }
                         } catch (Exception e) {

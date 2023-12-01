@@ -24,7 +24,7 @@ public class u7 extends r7 {
         float f3 = this.m;
         float f4 = this.l;
         float f5 = (float) j;
-        float f6 = (float) this.f37735a;
+        float f6 = (float) this.f24044a;
         gl10.glScalef(f2 + (((f - f2) * f5) / f6), f4 + (((f3 - f4) * f5) / f6), 1.0f);
     }
 }

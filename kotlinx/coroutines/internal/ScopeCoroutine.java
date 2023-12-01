@@ -13,25 +13,23 @@ import kotlinx.coroutines.Job;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/internal/ScopeCoroutine.class */
 public class ScopeCoroutine<T> extends AbstractCoroutine<T> implements CoroutineStackFrame {
-
-    /* renamed from: c  reason: collision with root package name */
-    public final Continuation<T> f43559c;
+    public final Continuation<T> c;
 
     /* JADX WARN: Multi-variable type inference failed */
     public ScopeCoroutine(CoroutineContext coroutineContext, Continuation<? super T> continuation) {
         super(coroutineContext, true, true);
-        this.f43559c = continuation;
+        this.c = continuation;
     }
 
     @Override // kotlinx.coroutines.AbstractCoroutine
     public void c(Object obj) {
-        Continuation<T> continuation = this.f43559c;
+        Continuation<T> continuation = this.c;
         continuation.resumeWith(CompletionStateKt.a(obj, continuation));
     }
 
     @Override // kotlinx.coroutines.JobSupport
     public void d(Object obj) {
-        DispatchedContinuationKt.a(IntrinsicsKt.a(this.f43559c), CompletionStateKt.a(obj, this.f43559c), null, 2, null);
+        DispatchedContinuationKt.a(IntrinsicsKt.a(this.c), CompletionStateKt.a(obj, this.c), null, 2, null);
     }
 
     @Override // kotlinx.coroutines.JobSupport
@@ -41,7 +39,7 @@ public class ScopeCoroutine<T> extends AbstractCoroutine<T> implements Coroutine
 
     @Override // kotlin.coroutines.jvm.internal.CoroutineStackFrame
     public final CoroutineStackFrame getCallerFrame() {
-        Continuation<T> continuation = this.f43559c;
+        Continuation<T> continuation = this.c;
         if (continuation instanceof CoroutineStackFrame) {
             return (CoroutineStackFrame) continuation;
         }

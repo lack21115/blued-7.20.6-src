@@ -8,7 +8,7 @@ public class SecureJsInterface extends a.b {
     public static boolean isPWDEdit = false;
 
     /* renamed from: a  reason: collision with root package name */
-    private String f38293a;
+    private String f24602a;
 
     public void clearAllEdit() {
         f.c("openSDK_LOG.SecureJsInterface", "-->clear all edit.");
@@ -32,7 +32,7 @@ public class SecureJsInterface extends a.b {
         if (i < 0) {
             throw new RuntimeException("position is illegal.");
         }
-        boolean z = a.f38295c;
+        boolean z = a.f24604c;
         if (a.b) {
             if (Boolean.valueOf(JniInterface.BackSpaceChar(a.b, i)).booleanValue()) {
                 a.b = false;
@@ -40,10 +40,10 @@ public class SecureJsInterface extends a.b {
             }
             return;
         }
-        String str2 = a.f38294a;
-        this.f38293a = str2;
+        String str2 = a.f24603a;
+        this.f24602a = str2;
         JniInterface.insetTextToArray(i, str2, str2.length());
-        f.a("openSDK_LOG.SecureJsInterface", "curPosFromJS mKey: " + this.f38293a);
+        f.a("openSDK_LOG.SecureJsInterface", "curPosFromJS mKey: " + this.f24602a);
     }
 
     @Override // com.tencent.open.a.b

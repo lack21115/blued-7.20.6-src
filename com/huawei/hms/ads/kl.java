@@ -29,11 +29,11 @@ public class kl {
     private int L = 0;
 
     /* renamed from: a  reason: collision with root package name */
-    private int f22513a = 0;
+    private int f8905a = 0;
     private int b = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f22514c = 100;
+    private int f8906c = 100;
 
     private kl(Context context) {
         this.d = context.getApplicationContext();
@@ -80,7 +80,7 @@ public class kl {
         HashMap hashMap = new HashMap();
         this.F = 0;
         this.L = 0;
-        this.f22513a = 0;
+        this.f8905a = 0;
         this.D = 0;
         Code(activity.getWindow().getDecorView(), map, hashMap, i, this.b);
         if (com.huawei.openalliance.ad.utils.af.Code(hashMap)) {
@@ -126,8 +126,8 @@ public class kl {
             return;
         }
         int i5 = i2 + 1;
-        if (i5 >= this.f22514c) {
-            ge.Code(Code, "clctCfgContentDepth outer round " + this.f22514c);
+        if (i5 >= this.f8906c) {
+            ge.Code(Code, "clctCfgContentDepth outer round " + this.f8906c);
             return;
         }
         ViewGroup viewGroup = (ViewGroup) view;
@@ -194,9 +194,9 @@ public class kl {
                         i4 = 0;
                         i3 = 0;
                     } else {
-                        i3 = this.f22513a;
+                        i3 = this.f8905a;
                         i4 = length + i3;
-                        this.f22513a = i4;
+                        this.f8905a = i4;
                     }
                     if (i3 >= i || i4 >= i) {
                         if (i3 < i && i4 >= i) {

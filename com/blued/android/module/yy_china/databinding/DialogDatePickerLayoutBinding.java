@@ -9,13 +9,9 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/DialogDatePickerLayoutBinding.class */
 public final class DialogDatePickerLayoutBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final View f16324a;
+    public final View a;
     public final StringScrollPicker b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final StringScrollPicker f16325c;
+    public final StringScrollPicker c;
     public final StringScrollPicker d;
     public final StringScrollPicker e;
     public final TextView f;
@@ -24,9 +20,9 @@ public final class DialogDatePickerLayoutBinding implements ViewBinding {
 
     private DialogDatePickerLayoutBinding(ConstraintLayout constraintLayout, View view, StringScrollPicker stringScrollPicker, StringScrollPicker stringScrollPicker2, StringScrollPicker stringScrollPicker3, StringScrollPicker stringScrollPicker4, TextView textView, TextView textView2) {
         this.h = constraintLayout;
-        this.f16324a = view;
+        this.a = view;
         this.b = stringScrollPicker;
-        this.f16325c = stringScrollPicker2;
+        this.c = stringScrollPicker2;
         this.d = stringScrollPicker3;
         this.e = stringScrollPicker4;
         this.f = textView;
@@ -73,7 +69,6 @@ public final class DialogDatePickerLayoutBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.h;

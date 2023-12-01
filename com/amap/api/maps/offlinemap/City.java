@@ -24,29 +24,25 @@ public class City implements Parcelable {
             return a(i);
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f5549a;
+    private String a;
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f5550c;
+    private String c;
     private String d;
     private String e;
 
     public City() {
-        this.f5549a = "";
+        this.a = "";
         this.b = "";
         this.e = "";
     }
 
     public City(Parcel parcel) {
-        this.f5549a = "";
+        this.a = "";
         this.b = "";
         this.e = "";
-        this.f5549a = parcel.readString();
+        this.a = parcel.readString();
         this.b = parcel.readString();
-        this.f5550c = parcel.readString();
+        this.c = parcel.readString();
         this.d = parcel.readString();
         this.e = parcel.readString();
     }
@@ -61,7 +57,7 @@ public class City implements Parcelable {
     }
 
     public String getCity() {
-        return this.f5549a;
+        return this.a;
     }
 
     public String getCode() {
@@ -69,7 +65,7 @@ public class City implements Parcelable {
     }
 
     public String getJianpin() {
-        return this.f5550c;
+        return this.c;
     }
 
     public String getPinyin() {
@@ -81,7 +77,7 @@ public class City implements Parcelable {
     }
 
     public void setCity(String str) {
-        this.f5549a = str;
+        this.a = str;
     }
 
     public void setCode(String str) {
@@ -92,7 +88,7 @@ public class City implements Parcelable {
     }
 
     public void setJianpin(String str) {
-        this.f5550c = str;
+        this.c = str;
     }
 
     public void setPinyin(String str) {
@@ -101,9 +97,9 @@ public class City implements Parcelable {
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.f5549a);
+        parcel.writeString(this.a);
         parcel.writeString(this.b);
-        parcel.writeString(this.f5550c);
+        parcel.writeString(this.c);
         parcel.writeString(this.d);
         parcel.writeString(this.e);
     }

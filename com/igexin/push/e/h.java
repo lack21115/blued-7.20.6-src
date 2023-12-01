@@ -1,5 +1,6 @@
 package com.igexin.push.e;
 
+import android.R;
 import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
@@ -50,11 +51,11 @@ import org.json.JSONObject;
 public final class h {
 
     /* renamed from: a */
-    public static final String f23627a = "com.igexin.sdk.GActivity";
+    public static final String f10019a = "com.igexin.sdk.GActivity";
     public static final String b = "com.sdk.plus.EnhActivity";
 
     /* renamed from: c */
-    public static final int f23628c = 1;
+    public static final int f10020c = 1;
     public static final int d = 0;
     private static final String e = "Type145Task";
 
@@ -63,25 +64,25 @@ public final class h {
     public static final class AnonymousClass2 implements Call.Callback {
 
         /* renamed from: a */
-        final /* synthetic */ AtomicInteger f23631a;
+        final /* synthetic */ AtomicInteger f10023a;
         final /* synthetic */ String b;
 
         /* renamed from: c */
-        final /* synthetic */ byte[] f23632c;
+        final /* synthetic */ byte[] f10024c;
         final /* synthetic */ int d;
 
         AnonymousClass2(AtomicInteger atomicInteger, String str, byte[] bArr, int i) {
-            this.f23631a = atomicInteger;
+            this.f10023a = atomicInteger;
             this.b = str;
-            this.f23632c = bArr;
+            this.f10024c = bArr;
             this.d = i;
         }
 
         @Override // com.getui.gtc.base.http.Call.Callback
         public final void onFailure(Call call, Exception exc) {
             com.igexin.c.a.c.a.a(exc);
-            if (!"network is not available".equals(exc.getMessage()) && this.f23631a.incrementAndGet() < 3) {
-                com.igexin.push.e.a.c.a(this.b, this.f23632c, this);
+            if (!"network is not available".equals(exc.getMessage()) && this.f10023a.incrementAndGet() < 3) {
+                com.igexin.push.e.a.c.a(this.b, this.f10024c, this);
             }
         }
 
@@ -109,7 +110,7 @@ public final class h {
     public static final class a {
 
         /* renamed from: a */
-        private static final h f23635a = new h();
+        private static final h f10027a = new h();
 
         private a() {
         }
@@ -242,7 +243,7 @@ public final class h {
     }
 
     private static String a(com.igexin.push.core.b.d dVar) {
-        return dVar.f23435a + "," + dVar.b + "," + dVar.f23436c + "," + dVar.d;
+        return dVar.f9827a + "," + dVar.b + "," + dVar.f9828c + "," + dVar.d;
     }
 
     public static List<String> a(String str, int i) throws Throwable {
@@ -349,9 +350,9 @@ public final class h {
                             return;
                         }
                         String className = activity.getComponentName().getClassName();
-                        if (!h.f23627a.equals(className) && !h.b.equals(className)) {
+                        if (!h.f10019a.equals(className) && !h.b.equals(className)) {
                             String a3 = booleanExtra2 ? h.a(activity) : "";
-                            boolean z = ((ViewGroup) activity.findViewById(16908290)).getChildAt(0) != null;
+                            boolean z = ((ViewGroup) activity.findViewById(R.id.content)).getChildAt(0) != null;
                             String str2 = (String) o.b(context, "ua", "");
                             boolean b2 = h.b(activity);
                             boolean z2 = context.getPackageManager().getActivityInfo(activity.getComponentName(), 0).theme == 16973840;
@@ -363,11 +364,11 @@ public final class h {
                                 StringBuffer stringBuffer = new StringBuffer();
                                 stringBuffer.append(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault()).format(new Date()));
                                 stringBuffer.append("|");
-                                stringBuffer.append(sVar.f23459a);
+                                stringBuffer.append(sVar.f9851a);
                                 stringBuffer.append("|");
                                 stringBuffer.append(sVar.b);
                                 stringBuffer.append("|");
-                                stringBuffer.append(sVar.f23460c);
+                                stringBuffer.append(sVar.f9852c);
                                 stringBuffer.append("|");
                                 stringBuffer.append(2);
                                 stringBuffer.append("|");
@@ -402,7 +403,7 @@ public final class h {
                                 stringBuffer.append("|");
                                 if (intent2.getBooleanExtra("type145CellInfoEnable", com.igexin.push.config.d.ae)) {
                                     com.igexin.push.core.b.d b3 = q.b(context2);
-                                    str = b3.f23435a + "," + b3.b + "," + b3.f23436c + "," + b3.d;
+                                    str = b3.f9827a + "," + b3.b + "," + b3.f9828c + "," + b3.d;
                                 } else {
                                     str = "";
                                 }
@@ -448,7 +449,7 @@ public final class h {
                 JSONObject jSONObject = new JSONObject();
                 jSONObject.put("action", "upload_BI");
                 jSONObject.put("BIType", 145);
-                jSONObject.put("cid", sVar.f23459a);
+                jSONObject.put("cid", sVar.f9851a);
                 jSONObject.put("BIData", new String(IOUtils.encode(sb2.getBytes(), 0)));
                 return jSONObject.toString().getBytes();
             }
@@ -463,7 +464,7 @@ public final class h {
     }
 
     private static h b() {
-        return a.f23635a;
+        return a.f10027a;
     }
 
     /* JADX WARN: Type inference failed for: r0v0, types: [java.lang.Throwable, java.lang.Runtime] */
@@ -516,7 +517,7 @@ public final class h {
         com.igexin.c.a.c.a.b(e, "doAction ---");
         Intent intent = new Intent(com.igexin.push.core.e.g + ".doaction");
         intent.putExtra("cid", com.igexin.push.core.e.A);
-        intent.putExtra("appid", com.igexin.push.core.e.f23495a);
+        intent.putExtra("appid", com.igexin.push.core.e.f9887a);
         intent.putExtra("gtcid", com.igexin.push.core.e.C);
         intent.putExtra("type145DelayMs", com.igexin.push.config.d.Z);
         intent.putExtra("type145Enable", com.igexin.push.config.d.Y);
@@ -528,7 +529,7 @@ public final class h {
         intent.putExtra("type145NetLocEnable", com.igexin.push.config.d.ad);
         intent.putExtra("type145CellInfoEnable", com.igexin.push.config.d.ae);
         a(com.igexin.push.core.e.l, 1, intent);
-        h unused = a.f23635a;
+        h unused = a.f10027a;
         a(com.igexin.push.core.e.l, intent);
     }
 

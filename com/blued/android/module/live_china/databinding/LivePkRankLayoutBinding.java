@@ -5,13 +5,10 @@ import androidx.viewbinding.ViewBinding;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/LivePkRankLayoutBinding.class */
 public final class LivePkRankLayoutBinding implements ViewBinding {
+    private final LinearLayout a;
 
-    /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f12342a;
-
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f12342a;
+        return this.a;
     }
 }

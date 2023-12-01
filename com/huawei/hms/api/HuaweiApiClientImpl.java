@@ -73,7 +73,7 @@ public class HuaweiApiClientImpl extends HuaweiApiClient implements ServiceConne
     private final Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final String f22593c;
+    private final String f8985c;
     private String d;
     private String e;
     private volatile IAIDLInvoke f;
@@ -94,7 +94,7 @@ public class HuaweiApiClientImpl extends HuaweiApiClient implements ServiceConne
     private CheckUpdatelistener z;
 
     /* renamed from: a  reason: collision with root package name */
-    private int f22592a = -1;
+    private int f8984a = -1;
     private boolean j = false;
     private AtomicInteger k = new AtomicInteger(1);
     private long p = 0;
@@ -147,17 +147,17 @@ public class HuaweiApiClientImpl extends HuaweiApiClient implements ServiceConne
     class c extends IAIDLCallback.Stub {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ ResultCallback f22596a;
+        final /* synthetic */ ResultCallback f8988a;
 
         c(HuaweiApiClientImpl huaweiApiClientImpl, ResultCallback resultCallback) {
-            this.f22596a = resultCallback;
+            this.f8988a = resultCallback;
         }
 
         @Override // com.huawei.hms.core.aidl.IAIDLCallback
         public void call(DataBuffer dataBuffer) {
             if (dataBuffer == null) {
                 HMSLog.i("HuaweiApiClientImpl", "Exit asyncRequest onResult -1");
-                this.f22596a.onResult(new BundleResult(-1, null));
+                this.f8988a.onResult(new BundleResult(-1, null));
                 return;
             }
             MessageCodec find = CodecLookup.find(dataBuffer.getProtocol());
@@ -165,7 +165,7 @@ public class HuaweiApiClientImpl extends HuaweiApiClient implements ServiceConne
             find.decode(dataBuffer.header, responseHeader);
             BundleResult bundleResult = new BundleResult(responseHeader.getStatusCode(), dataBuffer.getBody());
             HMSLog.i("HuaweiApiClientImpl", "Exit asyncRequest onResult");
-            this.f22596a.onResult(bundleResult);
+            this.f8988a.onResult(bundleResult);
         }
     }
 
@@ -190,15 +190,15 @@ public class HuaweiApiClientImpl extends HuaweiApiClient implements ServiceConne
         public class a implements Runnable {
 
             /* renamed from: a  reason: collision with root package name */
-            final /* synthetic */ ResolveResult f22598a;
+            final /* synthetic */ ResolveResult f8990a;
 
             a(ResolveResult resolveResult) {
-                this.f22598a = resolveResult;
+                this.f8990a = resolveResult;
             }
 
             @Override // java.lang.Runnable
             public void run() {
-                HuaweiApiClientImpl.this.a(this.f22598a);
+                HuaweiApiClientImpl.this.a(this.f8990a);
             }
         }
 
@@ -225,15 +225,15 @@ public class HuaweiApiClientImpl extends HuaweiApiClient implements ServiceConne
         public class a implements Runnable {
 
             /* renamed from: a  reason: collision with root package name */
-            final /* synthetic */ ResolveResult f22600a;
+            final /* synthetic */ ResolveResult f8992a;
 
             a(ResolveResult resolveResult) {
-                this.f22600a = resolveResult;
+                this.f8992a = resolveResult;
             }
 
             @Override // java.lang.Runnable
             public void run() {
-                HuaweiApiClientImpl.this.b(this.f22600a);
+                HuaweiApiClientImpl.this.b(this.f8992a);
             }
         }
 
@@ -289,7 +289,7 @@ public class HuaweiApiClientImpl extends HuaweiApiClient implements ServiceConne
         this.z = null;
         this.b = context;
         String appId = Util.getAppId(context);
-        this.f22593c = appId;
+        this.f8985c = appId;
         this.d = appId;
         this.e = Util.getCpId(context);
     }
@@ -638,7 +638,7 @@ public class HuaweiApiClientImpl extends HuaweiApiClient implements ServiceConne
             this.h = new WeakReference<>(activity);
             this.i = new WeakReference<>(activity);
         }
-        this.d = TextUtils.isEmpty(this.f22593c) ? Util.getAppId(this.b) : this.f22593c;
+        this.d = TextUtils.isEmpty(this.f8985c) ? Util.getAppId(this.b) : this.f8985c;
         int e2 = e();
         HMSLog.i("HuaweiApiClientImpl", "connect minVersion:" + e2);
         HuaweiApiAvailability.setServicesVersionCode(e2);
@@ -670,16 +670,16 @@ public class HuaweiApiClientImpl extends HuaweiApiClient implements ServiceConne
         if (i == 3 || i == 5 || i == 2 || i == 4) {
             return;
         }
-        this.d = TextUtils.isEmpty(this.f22593c) ? Util.getAppId(this.b) : this.f22593c;
+        this.d = TextUtils.isEmpty(this.f8985c) ? Util.getAppId(this.b) : this.f8985c;
         l();
     }
 
     @Override // com.huawei.hms.api.HuaweiApiClient
     public void disableLifeCycleManagement(Activity activity) {
-        if (this.f22592a < 0) {
+        if (this.f8984a < 0) {
             throw new IllegalStateException("disableLifeCycleManagement failed");
         }
-        AutoLifecycleFragment.getInstance(activity).stopAutoManage(this.f22592a);
+        AutoLifecycleFragment.getInstance(activity).stopAutoManage(this.f8984a);
     }
 
     @Override // com.huawei.hms.api.HuaweiApiClient
@@ -1013,7 +1013,7 @@ public class HuaweiApiClientImpl extends HuaweiApiClient implements ServiceConne
 
     /* JADX INFO: Access modifiers changed from: protected */
     public void setAutoLifecycleClientId(int i) {
-        this.f22592a = i;
+        this.f8984a = i;
     }
 
     @Override // com.huawei.hms.api.HuaweiApiClient
@@ -1050,7 +1050,7 @@ public class HuaweiApiClientImpl extends HuaweiApiClient implements ServiceConne
             HMSLog.e("HuaweiApiClientImpl", "subAppId is empty");
             return false;
         }
-        if (subAppID.equals(TextUtils.isEmpty(this.f22593c) ? Util.getAppId(this.b) : this.f22593c)) {
+        if (subAppID.equals(TextUtils.isEmpty(this.f8985c) ? Util.getAppId(this.b) : this.f8985c)) {
             HMSLog.e("HuaweiApiClientImpl", "subAppId is host appid");
             return false;
         }

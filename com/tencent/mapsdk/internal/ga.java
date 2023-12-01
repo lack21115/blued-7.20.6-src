@@ -15,7 +15,6 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.OutputStream;
 import java.io.RandomAccessFile;
 import java.nio.file.CopyOption;
 import java.nio.file.Files;
@@ -28,11 +27,11 @@ import java.util.regex.Pattern;
 public class ga {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f37486a = "FileUtil";
+    private static final String f23795a = "FileUtil";
     public static final int b = 1024;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final int f37487c = 1048576;
+    public static final int f23796c = 1048576;
     public static final int d = 1073741824;
     public static File e;
     private static final cb f = new cb();
@@ -41,15 +40,15 @@ public class ga {
     public static final class a implements FileFilter {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ String f37488a;
+        public final /* synthetic */ String f23797a;
 
         public a(String str) {
-            this.f37488a = str;
+            this.f23797a = str;
         }
 
         @Override // java.io.FileFilter
         public boolean accept(File file) {
-            return Pattern.compile(this.f37488a).matcher(file.getName()).matches();
+            return Pattern.compile(this.f23797a).matcher(file.getName()).matches();
         }
     }
 
@@ -841,14 +840,14 @@ public class ga {
 
     /* JADX WARN: Not initialized variable reg: 8, insn: 0x011e: MOVE  (r0 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = (r8 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]), block:B:72:0x011e */
     public static byte[] h(File file) {
-        OutputStream outputStream;
+        ByteArrayOutputStream byteArrayOutputStream;
         Throwable th;
         FileInputStream fileInputStream;
-        ByteArrayOutputStream byteArrayOutputStream;
-        FileInputStream fileInputStream2;
         ByteArrayOutputStream byteArrayOutputStream2;
+        FileInputStream fileInputStream2;
+        ByteArrayOutputStream byteArrayOutputStream3;
         FileInputStream fileInputStream3;
-        OutputStream outputStream2 = null;
+        ByteArrayOutputStream byteArrayOutputStream4 = null;
         if (file == null) {
             return null;
         }
@@ -860,7 +859,7 @@ public class ga {
                 try {
                     fileInputStream = new FileInputStream(file);
                     try {
-                        ByteArrayOutputStream byteArrayOutputStream3 = new ByteArrayOutputStream();
+                        ByteArrayOutputStream byteArrayOutputStream5 = new ByteArrayOutputStream();
                         try {
                             byte[] bArr = new byte[1024];
                             while (true) {
@@ -868,12 +867,12 @@ public class ga {
                                 if (read == -1) {
                                     break;
                                 }
-                                byteArrayOutputStream3.write(bArr, 0, read);
+                                byteArrayOutputStream5.write(bArr, 0, read);
                             }
-                            byte[] byteArray = byteArrayOutputStream3.toByteArray();
+                            byte[] byteArray = byteArrayOutputStream5.toByteArray();
                             try {
-                                byteArrayOutputStream3.flush();
-                                byteArrayOutputStream3.close();
+                                byteArrayOutputStream5.flush();
+                                byteArrayOutputStream5.close();
                             } catch (IOException e2) {
                                 e2.printStackTrace();
                             }
@@ -887,12 +886,12 @@ public class ga {
                         } catch (FileNotFoundException e4) {
                             e = e4;
                             fileInputStream3 = fileInputStream;
-                            byteArrayOutputStream2 = byteArrayOutputStream3;
+                            byteArrayOutputStream3 = byteArrayOutputStream5;
                             e.printStackTrace();
-                            if (byteArrayOutputStream2 != null) {
+                            if (byteArrayOutputStream3 != null) {
                                 try {
-                                    byteArrayOutputStream2.flush();
-                                    byteArrayOutputStream2.close();
+                                    byteArrayOutputStream3.flush();
+                                    byteArrayOutputStream3.close();
                                 } catch (IOException e5) {
                                     e5.printStackTrace();
                                 }
@@ -905,12 +904,12 @@ public class ga {
                         } catch (IOException e6) {
                             e = e6;
                             fileInputStream2 = fileInputStream;
-                            byteArrayOutputStream = byteArrayOutputStream3;
+                            byteArrayOutputStream2 = byteArrayOutputStream5;
                             e.printStackTrace();
-                            if (byteArrayOutputStream != null) {
+                            if (byteArrayOutputStream2 != null) {
                                 try {
-                                    byteArrayOutputStream.flush();
-                                    byteArrayOutputStream.close();
+                                    byteArrayOutputStream2.flush();
+                                    byteArrayOutputStream2.close();
                                 } catch (IOException e7) {
                                     e7.printStackTrace();
                                 }
@@ -924,17 +923,17 @@ public class ga {
                     } catch (FileNotFoundException e8) {
                         e = e8;
                         fileInputStream3 = fileInputStream;
-                        byteArrayOutputStream2 = null;
+                        byteArrayOutputStream3 = null;
                     } catch (IOException e9) {
                         e = e9;
                         fileInputStream2 = fileInputStream;
-                        byteArrayOutputStream = null;
+                        byteArrayOutputStream2 = null;
                     } catch (Throwable th2) {
                         th = th2;
-                        if (outputStream2 != null) {
+                        if (byteArrayOutputStream4 != null) {
                             try {
-                                outputStream2.flush();
-                                outputStream2.close();
+                                byteArrayOutputStream4.flush();
+                                byteArrayOutputStream4.close();
                             } catch (IOException e10) {
                                 e10.printStackTrace();
                             }
@@ -950,11 +949,11 @@ public class ga {
                     }
                 } catch (FileNotFoundException e12) {
                     e = e12;
-                    byteArrayOutputStream2 = null;
+                    byteArrayOutputStream3 = null;
                     fileInputStream3 = null;
                 } catch (IOException e13) {
                     e = e13;
-                    byteArrayOutputStream = null;
+                    byteArrayOutputStream2 = null;
                     fileInputStream2 = null;
                 } catch (Throwable th3) {
                     th = th3;
@@ -963,7 +962,7 @@ public class ga {
             } catch (Throwable th4) {
                 th = th4;
                 fileInputStream = null;
-                outputStream2 = outputStream;
+                byteArrayOutputStream4 = byteArrayOutputStream;
             }
         } catch (IOException e14) {
             e14.printStackTrace();

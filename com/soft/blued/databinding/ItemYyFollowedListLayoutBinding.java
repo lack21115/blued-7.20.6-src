@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemYyFollowedListLayoutBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29375a;
+    private final LinearLayout f15685a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29375a;
+        return this.f15685a;
     }
 }

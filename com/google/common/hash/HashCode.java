@@ -81,7 +81,7 @@ public abstract class HashCode {
 
         @Override // com.google.common.hash.HashCode
         void writeBytesToImpl(byte[] bArr, int i, int i2) {
-            System.arraycopy((Object) this.bytes, 0, (Object) bArr, i, i2);
+            System.arraycopy(this.bytes, 0, bArr, i, i2);
         }
     }
 

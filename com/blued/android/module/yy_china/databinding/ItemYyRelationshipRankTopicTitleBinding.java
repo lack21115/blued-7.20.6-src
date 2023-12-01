@@ -8,17 +8,13 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ItemYyRelationshipRankTopicTitleBinding.class */
 public final class ItemYyRelationshipRankTopicTitleBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ShapeTextView f16797a;
+    public final ShapeTextView a;
     public final ShapeTextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final ConstraintLayout f16798c;
+    private final ConstraintLayout c;
 
     private ItemYyRelationshipRankTopicTitleBinding(ConstraintLayout constraintLayout, ShapeTextView shapeTextView, ShapeTextView shapeTextView2) {
-        this.f16798c = constraintLayout;
-        this.f16797a = shapeTextView;
+        this.c = constraintLayout;
+        this.a = shapeTextView;
         this.b = shapeTextView2;
     }
 
@@ -37,9 +33,8 @@ public final class ItemYyRelationshipRankTopicTitleBinding implements ViewBindin
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f16798c;
+        return this.c;
     }
 }

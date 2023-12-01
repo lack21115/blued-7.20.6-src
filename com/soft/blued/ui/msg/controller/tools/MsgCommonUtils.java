@@ -32,6 +32,7 @@ import com.soft.blued.ui.msg_group.utils.GroupUtil;
 import com.soft.blued.ui.user.fragment.ReportChatFragment;
 import com.soft.blued.ui.web.WebViewShowInfoFragment;
 import com.soft.blued.utils.Logger;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -43,14 +44,14 @@ import java.util.regex.Pattern;
 public class MsgCommonUtils {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f32265a = MsgCommonUtils.class.getSimpleName();
+    private static final String f18575a = MsgCommonUtils.class.getSimpleName();
 
     /* renamed from: com.soft.blued.ui.msg.controller.tools.MsgCommonUtils$2  reason: invalid class name */
     /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/msg/controller/tools/MsgCommonUtils$2.class */
     static /* synthetic */ class AnonymousClass2 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f32266a;
+        static final /* synthetic */ int[] f18576a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:53:0x0131 -> B:131:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:55:0x0135 -> B:143:0x001f). Please submit an issue!!! */
@@ -78,105 +79,105 @@ public class MsgCommonUtils {
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:99:0x018d -> B:113:0x0124). Please submit an issue!!! */
         static {
             int[] iArr = new int[MessageProtos.StrangerSource.values().length];
-            f32266a = iArr;
+            f18576a = iArr;
             try {
                 iArr[MessageProtos.StrangerSource.UNKNOWN_STRANGER_SOURCE.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f32266a[MessageProtos.StrangerSource.FRIEND_NEARBY_VISIT.ordinal()] = 2;
+                f18576a[MessageProtos.StrangerSource.FRIEND_NEARBY_VISIT.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f32266a[MessageProtos.StrangerSource.FRIEND_NEARBY_VIEW.ordinal()] = 3;
+                f18576a[MessageProtos.StrangerSource.FRIEND_NEARBY_VIEW.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f32266a[MessageProtos.StrangerSource.FRIEND_NEARBY_NEARBY.ordinal()] = 4;
+                f18576a[MessageProtos.StrangerSource.FRIEND_NEARBY_NEARBY.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f32266a[MessageProtos.StrangerSource.FRIEND_NEARBY_ONLINE.ordinal()] = 5;
+                f18576a[MessageProtos.StrangerSource.FRIEND_NEARBY_ONLINE.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
             try {
-                f32266a[MessageProtos.StrangerSource.FRIEND_NEARBY_NEW_FACE.ordinal()] = 6;
+                f18576a[MessageProtos.StrangerSource.FRIEND_NEARBY_NEW_FACE.ordinal()] = 6;
             } catch (NoSuchFieldError e6) {
             }
             try {
-                f32266a[MessageProtos.StrangerSource.FRIEND_NEARBY_PERSONAL_NEARBY.ordinal()] = 7;
+                f18576a[MessageProtos.StrangerSource.FRIEND_NEARBY_PERSONAL_NEARBY.ordinal()] = 7;
             } catch (NoSuchFieldError e7) {
             }
             try {
-                f32266a[MessageProtos.StrangerSource.FOLLOW_ATTENTION.ordinal()] = 8;
+                f18576a[MessageProtos.StrangerSource.FOLLOW_ATTENTION.ordinal()] = 8;
             } catch (NoSuchFieldError e8) {
             }
             try {
-                f32266a[MessageProtos.StrangerSource.FEED_FIND_PHOTO.ordinal()] = 9;
+                f18576a[MessageProtos.StrangerSource.FEED_FIND_PHOTO.ordinal()] = 9;
             } catch (NoSuchFieldError e9) {
             }
             try {
-                f32266a[MessageProtos.StrangerSource.FEED_NEARBY.ordinal()] = 10;
+                f18576a[MessageProtos.StrangerSource.FEED_NEARBY.ordinal()] = 10;
             } catch (NoSuchFieldError e10) {
             }
             try {
-                f32266a[MessageProtos.StrangerSource.FEED_FIND_PLAZA.ordinal()] = 11;
+                f18576a[MessageProtos.StrangerSource.FEED_FIND_PLAZA.ordinal()] = 11;
             } catch (NoSuchFieldError e11) {
             }
             try {
-                f32266a[MessageProtos.StrangerSource.FEED_PERSONAL_TOPIC.ordinal()] = 12;
+                f18576a[MessageProtos.StrangerSource.FEED_PERSONAL_TOPIC.ordinal()] = 12;
             } catch (NoSuchFieldError e12) {
             }
             try {
-                f32266a[MessageProtos.StrangerSource.FEED_NOT_SUPER_EXPOSURE.ordinal()] = 13;
+                f18576a[MessageProtos.StrangerSource.FEED_NOT_SUPER_EXPOSURE.ordinal()] = 13;
             } catch (NoSuchFieldError e13) {
             }
             try {
-                f32266a[MessageProtos.StrangerSource.APPRECIATE_CALL_SHORT.ordinal()] = 14;
+                f18576a[MessageProtos.StrangerSource.APPRECIATE_CALL_SHORT.ordinal()] = 14;
             } catch (NoSuchFieldError e14) {
             }
             try {
-                f32266a[MessageProtos.StrangerSource.APPRECIATE_CALL_TOTAL.ordinal()] = 15;
+                f18576a[MessageProtos.StrangerSource.APPRECIATE_CALL_TOTAL.ordinal()] = 15;
             } catch (NoSuchFieldError e15) {
             }
             try {
-                f32266a[MessageProtos.StrangerSource.APPRECIATE_CALL_COMPLEX.ordinal()] = 16;
+                f18576a[MessageProtos.StrangerSource.APPRECIATE_CALL_COMPLEX.ordinal()] = 16;
             } catch (NoSuchFieldError e16) {
             }
             try {
-                f32266a[MessageProtos.StrangerSource.APPRECIATE_CALL_ONLINE.ordinal()] = 17;
+                f18576a[MessageProtos.StrangerSource.APPRECIATE_CALL_ONLINE.ordinal()] = 17;
             } catch (NoSuchFieldError e17) {
             }
             try {
-                f32266a[MessageProtos.StrangerSource.APPRECIATE_NEARBY.ordinal()] = 18;
+                f18576a[MessageProtos.StrangerSource.APPRECIATE_NEARBY.ordinal()] = 18;
             } catch (NoSuchFieldError e18) {
             }
             try {
-                f32266a[MessageProtos.StrangerSource.APPRECIATE_FIND.ordinal()] = 19;
+                f18576a[MessageProtos.StrangerSource.APPRECIATE_FIND.ordinal()] = 19;
             } catch (NoSuchFieldError e19) {
             }
             try {
-                f32266a[MessageProtos.StrangerSource.APPRECIATE_SUPER_EXPOSURE.ordinal()] = 20;
+                f18576a[MessageProtos.StrangerSource.APPRECIATE_SUPER_EXPOSURE.ordinal()] = 20;
             } catch (NoSuchFieldError e20) {
             }
             try {
-                f32266a[MessageProtos.StrangerSource.LIVE.ordinal()] = 21;
+                f18576a[MessageProtos.StrangerSource.LIVE.ordinal()] = 21;
             } catch (NoSuchFieldError e21) {
             }
             try {
-                f32266a[MessageProtos.StrangerSource.MINE_FOLLOW.ordinal()] = 22;
+                f18576a[MessageProtos.StrangerSource.MINE_FOLLOW.ordinal()] = 22;
             } catch (NoSuchFieldError e22) {
             }
             try {
-                f32266a[MessageProtos.StrangerSource.MINE_FAN.ordinal()] = 23;
+                f18576a[MessageProtos.StrangerSource.MINE_FAN.ordinal()] = 23;
             } catch (NoSuchFieldError e23) {
             }
             try {
-                f32266a[MessageProtos.StrangerSource.MAP_FIND.ordinal()] = 24;
+                f18576a[MessageProtos.StrangerSource.MAP_FIND.ordinal()] = 24;
             } catch (NoSuchFieldError e24) {
             }
             try {
-                f32266a[MessageProtos.StrangerSource.SHADOW_SOURCE.ordinal()] = 25;
+                f18576a[MessageProtos.StrangerSource.SHADOW_SOURCE.ordinal()] = 25;
             } catch (NoSuchFieldError e25) {
             }
         }
@@ -206,14 +207,14 @@ public class MsgCommonUtils {
     }
 
     public static String a(Context context, long j) {
-        return TimeAndDateUtils.g(j) ? TimeAndDateUtils.f(j) ? TimeAndDateUtils.f.get().format(new Date(j)) : TimeAndDateUtils.h(j) ? context.getResources().getString(R.string.biao_msg_yesterday) : TimeAndDateUtils.g.get().format(new Date(j)) : TimeAndDateUtils.f10913a.get().format(new Date(j));
+        return TimeAndDateUtils.g(j) ? TimeAndDateUtils.f(j) ? ((SimpleDateFormat) TimeAndDateUtils.f.get()).format(new Date(j)) : TimeAndDateUtils.h(j) ? context.getResources().getString(R.string.biao_msg_yesterday) : ((SimpleDateFormat) TimeAndDateUtils.g.get()).format(new Date(j)) : ((SimpleDateFormat) TimeAndDateUtils.a.get()).format(new Date(j));
     }
 
     public static String a(Context context, MessageProtos.StrangerSource strangerSource, String str, String str2) {
         String str3 = "";
         if (strangerSource != null) {
             EventTrackMessage.a(MessageProtos.Event.MSG_PRIVATE_STRANGER_SOURCE_PROMPT, strangerSource, str2);
-            switch (AnonymousClass2.f32266a[strangerSource.ordinal()]) {
+            switch (AnonymousClass2.f18576a[strangerSource.ordinal()]) {
                 case 2:
                     str3 = context.getResources().getString(R.string.he_noticed_your_visit);
                     break;
@@ -334,9 +335,9 @@ public class MsgCommonUtils {
 
     public static void a(Context context, MessageProtos.StrangerSource strangerSource, String str) {
         if (strangerSource != null) {
-            int i = AnonymousClass2.f32266a[strangerSource.ordinal()];
+            int i = AnonymousClass2.f18576a[strangerSource.ordinal()];
             if (i == 25) {
-                WebViewShowInfoFragment.show(context, H5Url.a(46, UserInfo.getInstance().getLoginUserInfo().uid), 0);
+                WebViewShowInfoFragment.show(context, H5Url.a(46, new Object[]{UserInfo.getInstance().getLoginUserInfo().uid}), 0);
                 return;
             }
             switch (i) {
@@ -359,7 +360,7 @@ public class MsgCommonUtils {
                 case 15:
                 case 16:
                 case 17:
-                    WebViewShowInfoFragment.show(context, H5Url.a(52, UserInfo.getInstance().getLoginUserInfo().uid), 0);
+                    WebViewShowInfoFragment.show(context, H5Url.a(52, new Object[]{UserInfo.getInstance().getLoginUserInfo().uid}), 0);
                     return;
                 default:
                     return;
@@ -368,9 +369,8 @@ public class MsgCommonUtils {
     }
 
     public static void a(Context context, String str, String str2, long j, IRequestHost iRequestHost) {
-        Logger.b(f32265a, "举报消息字符串：targetID：", str2, ",contents:", str);
+        Logger.b(f18575a, "举报消息字符串：targetID：", str2, ",contents:", str);
         ChatHttpUtils.a(context, new BluedUIHttpResponse(iRequestHost) { // from class: com.soft.blued.ui.msg.controller.tools.MsgCommonUtils.1
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity bluedEntity) {
                 AppMethods.d((int) R.string.biao_report_ok);
             }
@@ -386,8 +386,8 @@ public class MsgCommonUtils {
             if (!TextUtils.isEmpty(chattingModel.fromNickName)) {
                 str2 = str3;
                 if (chattingModel.isMatchMsg == 1) {
-                    DateTodayManager.f32404a.a(MessageProtos.Event.MSG_MATCH_CHAT_PAGE_REPORT_CLICK);
-                    str2 = DateTodayManager.f32404a.c(chattingModel.fromNickName);
+                    DateTodayManager.f18714a.a(MessageProtos.Event.MSG_MATCH_CHAT_PAGE_REPORT_CLICK);
+                    str2 = DateTodayManager.f18714a.c(chattingModel.fromNickName);
                 }
             }
         }

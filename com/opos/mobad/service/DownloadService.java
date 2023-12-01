@@ -34,11 +34,11 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class DownloadService extends Service {
 
     /* renamed from: c  reason: collision with root package name */
-    private static AtomicInteger f27260c = new AtomicInteger(10000);
+    private static AtomicInteger f13572c = new AtomicInteger(10000);
     private static boolean f = true;
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f27261a;
+    private Context f13573a;
     private com.opos.mobad.d.a.c b;
     private ConcurrentHashMap<String, com.opos.mobad.d.a.b> d = new ConcurrentHashMap<>();
     private ConcurrentHashMap<String, List<Messenger>> e = new ConcurrentHashMap<>();
@@ -86,7 +86,7 @@ public class DownloadService extends Service {
             }
         }
     });
-    private a.InterfaceC0689a i = new a.InterfaceC0689a() { // from class: com.opos.mobad.service.DownloadService.2
+    private a.InterfaceC0519a i = new a.InterfaceC0519a() { // from class: com.opos.mobad.service.DownloadService.2
         private int a(long j, long j2) {
             if (j2 <= 0 || j <= 0) {
                 return 0;
@@ -103,13 +103,13 @@ public class DownloadService extends Service {
 
         /* JADX INFO: Access modifiers changed from: private */
         public void a(com.opos.mobad.d.a.b bVar, String str) {
-            DownloadService.this.b.a(bVar.f25951c, new c.a(bVar.f25950a, "", 106, 0, DownloadService.this.a(str), DownloadService.this.b(str), DownloadService.this.c(str)));
+            DownloadService.this.b.a(bVar.f12263c, new c.a(bVar.f12262a, "", 106, 0, DownloadService.this.a(str), DownloadService.this.b(str), DownloadService.this.c(str)));
         }
 
         /* JADX INFO: Access modifiers changed from: private */
         public void a(com.opos.mobad.d.a.b bVar, String str, long j, long j2, int i) {
             a(str, i);
-            DownloadService.this.b.a(bVar.f25951c, new c.a(bVar.f25950a, (((float) (((j * 100) / 1024) / 1024)) / 100.0f) + "MB/" + (((float) (((100 * j2) / 1024) / 1024)) / 100.0f) + "MB", 103, i, DownloadService.this.a(str), DownloadService.this.b(str), DownloadService.this.c(str)));
+            DownloadService.this.b.a(bVar.f12263c, new c.a(bVar.f12262a, (((float) (((j * 100) / 1024) / 1024)) / 100.0f) + "MB/" + (((float) (((100 * j2) / 1024) / 1024)) / 100.0f) + "MB", 103, i, DownloadService.this.a(str), DownloadService.this.b(str), DownloadService.this.c(str)));
         }
 
         private void a(String str, int i) {
@@ -121,7 +121,7 @@ public class DownloadService extends Service {
 
         /* JADX INFO: Access modifiers changed from: private */
         public void b(com.opos.mobad.d.a.b bVar, String str) {
-            DownloadService.this.b.a(bVar.f25951c, new c.a(bVar.f25950a, "", 105, 0, DownloadService.this.d(str), DownloadService.this.b(str), DownloadService.this.c(str)));
+            DownloadService.this.b.a(bVar.f12263c, new c.a(bVar.f12262a, "", 105, 0, DownloadService.this.d(str), DownloadService.this.b(str), DownloadService.this.c(str)));
         }
 
         private void b(String str, int i) {
@@ -131,34 +131,34 @@ public class DownloadService extends Service {
             }
         }
 
-        @Override // com.opos.mobad.d.a.InterfaceC0689a
+        @Override // com.opos.mobad.d.a.InterfaceC0519a
         public void a(final String str) {
             final com.opos.mobad.d.a.b bVar;
             if (TextUtils.isEmpty(str)) {
                 return;
             }
             a(str, 0);
-            Toast.makeText(DownloadService.this.f27261a, DownloadService.this.f27261a.getResources().getString(R.string.download_toast_start_txt), 1).show();
+            Toast.makeText(DownloadService.this.f13573a, DownloadService.this.f13573a.getResources().getString(R.string.download_toast_start_txt), 1).show();
             b(str, 101);
             if (DownloadService.this.a() && (bVar = (com.opos.mobad.d.a.b) DownloadService.this.d.get(str)) != null) {
                 bVar.f.a(new Runnable() { // from class: com.opos.mobad.service.DownloadService.2.1
                     @Override // java.lang.Runnable
                     public void run() {
-                        DownloadService.this.b.a(bVar.f25951c, new c.a(bVar.f25950a, "", 107, 0, DownloadService.this.a(str), DownloadService.this.b(str), DownloadService.this.c(str)));
+                        DownloadService.this.b.a(bVar.f12263c, new c.a(bVar.f12262a, "", 107, 0, DownloadService.this.a(str), DownloadService.this.b(str), DownloadService.this.c(str)));
                     }
                 }, d.a.INIT_STATUS);
             }
             DownloadService.this.a(101, 0, str);
         }
 
-        @Override // com.opos.mobad.d.a.InterfaceC0689a
+        @Override // com.opos.mobad.d.a.InterfaceC0519a
         public void a(final String str, int i, long j, long j2) {
             com.opos.cmn.an.f.a.b("DownloadService", "fail exception:" + i);
             if (TextUtils.isEmpty(str)) {
                 return;
             }
             int a2 = a(j, j2);
-            Toast.makeText(DownloadService.this.f27261a, DownloadService.this.f27261a.getResources().getString(R.string.download_toast_fail_txt), 1).show();
+            Toast.makeText(DownloadService.this.f13573a, DownloadService.this.f13573a.getResources().getString(R.string.download_toast_fail_txt), 1).show();
             b(str, 106);
             if (DownloadService.this.a()) {
                 a(str, a2);
@@ -176,7 +176,7 @@ public class DownloadService extends Service {
             downloadService.a(106, a2, str, i + "");
         }
 
-        @Override // com.opos.mobad.d.a.InterfaceC0689a
+        @Override // com.opos.mobad.d.a.InterfaceC0519a
         public void a(String str, long j, long j2) {
             if (TextUtils.isEmpty(str)) {
                 return;
@@ -185,13 +185,13 @@ public class DownloadService extends Service {
             DownloadService.this.a(107, a(j, j2), str);
         }
 
-        @Override // com.opos.mobad.d.a.InterfaceC0689a
+        @Override // com.opos.mobad.d.a.InterfaceC0519a
         public void b(final String str) {
             com.opos.cmn.an.f.a.b("DownloadService", "complete ");
             if (TextUtils.isEmpty(str)) {
                 return;
             }
-            Toast.makeText(DownloadService.this.f27261a, DownloadService.this.f27261a.getResources().getString(R.string.download_toast_downloaded_txt), 1).show();
+            Toast.makeText(DownloadService.this.f13573a, DownloadService.this.f13573a.getResources().getString(R.string.download_toast_downloaded_txt), 1).show();
             b(str, 105);
             if (DownloadService.this.a()) {
                 a(str, 100);
@@ -206,10 +206,10 @@ public class DownloadService extends Service {
                 }
             }
             DownloadService.this.a(105, 100, str);
-            com.opos.mobad.d.b.b.a(DownloadService.this.f27261a, com.opos.cmn.d.a.a(DownloadService.this.f27261a, str));
+            com.opos.mobad.d.b.b.a(DownloadService.this.f13573a, com.opos.cmn.d.a.a(DownloadService.this.f13573a, str));
         }
 
-        @Override // com.opos.mobad.d.a.InterfaceC0689a
+        @Override // com.opos.mobad.d.a.InterfaceC0519a
         public void b(final String str, final long j, final long j2) {
             final com.opos.mobad.d.a.b bVar;
             if (TextUtils.isEmpty(str)) {
@@ -229,7 +229,7 @@ public class DownloadService extends Service {
                         @Override // java.lang.Runnable
                         public void run() {
                             if (bVar != null) {
-                                DownloadService.this.b.a(bVar.f25951c, new c.a(bVar.f25950a, (((float) (((j * 100) / 1024) / 1024)) / 100.0f) + "MB/" + (((float) (((j2 * 100) / 1024) / 1024)) / 100.0f) + "MB", 102, a2, DownloadService.this.a(str), DownloadService.this.b(str), DownloadService.this.c(str)));
+                                DownloadService.this.b.a(bVar.f12263c, new c.a(bVar.f12262a, (((float) (((j * 100) / 1024) / 1024)) / 100.0f) + "MB/" + (((float) (((j2 * 100) / 1024) / 1024)) / 100.0f) + "MB", 102, a2, DownloadService.this.a(str), DownloadService.this.b(str), DownloadService.this.c(str)));
                             }
                         }
                     }, d.a.PROGRESS_STATUS);
@@ -238,14 +238,14 @@ public class DownloadService extends Service {
             DownloadService.this.a(102, a2, str);
         }
 
-        @Override // com.opos.mobad.d.a.InterfaceC0689a
+        @Override // com.opos.mobad.d.a.InterfaceC0519a
         public void c(String str) {
             com.opos.cmn.an.f.a.b("DownloadService", "onMobileNetworkAvailableAndChooseRetry url =" + str);
-            com.opos.mobad.d.a.a(DownloadService.this.f27261a).a(str);
-            Toast.makeText(DownloadService.this.f27261a, DownloadService.this.f27261a.getResources().getString(R.string.download_toast_in_mobile_txt), 1).show();
+            com.opos.mobad.d.a.a(DownloadService.this.f13573a).a(str);
+            Toast.makeText(DownloadService.this.f13573a, DownloadService.this.f13573a.getResources().getString(R.string.download_toast_in_mobile_txt), 1).show();
         }
 
-        @Override // com.opos.mobad.d.a.InterfaceC0689a
+        @Override // com.opos.mobad.d.a.InterfaceC0519a
         public void c(final String str, final long j, final long j2) {
             final com.opos.mobad.d.a.b bVar;
             if (TextUtils.isEmpty(str)) {
@@ -264,7 +264,7 @@ public class DownloadService extends Service {
             DownloadService.this.a(103, a2, str);
         }
 
-        @Override // com.opos.mobad.d.a.InterfaceC0689a
+        @Override // com.opos.mobad.d.a.InterfaceC0519a
         public void d(String str, long j, long j2) {
             if (TextUtils.isEmpty(str)) {
                 return;
@@ -278,7 +278,7 @@ public class DownloadService extends Service {
                     bVar.f.a(new Runnable() { // from class: com.opos.mobad.service.DownloadService.2.4
                         @Override // java.lang.Runnable
                         public void run() {
-                            DownloadService.this.b.a(bVar.f25951c);
+                            DownloadService.this.b.a(bVar.f12263c);
                         }
                     }, d.a.END_STATUS);
                 }
@@ -293,7 +293,7 @@ public class DownloadService extends Service {
         if (TextUtils.isEmpty(str)) {
             return null;
         }
-        Intent intent = new Intent(this.f27261a, DownloadService.class);
+        Intent intent = new Intent(this.f13573a, DownloadService.class);
         intent.setAction("key_download_action");
         intent.putExtra("key_action_type", 1);
         intent.putExtra(DBDefinition.SAVE_PATH, str);
@@ -395,7 +395,7 @@ public class DownloadService extends Service {
     /* JADX INFO: Access modifiers changed from: private */
     public boolean a() {
         if (f) {
-            return Build.VERSION.SDK_INT < 33 || this.f27261a.checkSelfPermission(t.cv) == 0;
+            return Build.VERSION.SDK_INT < 33 || this.f13573a.checkSelfPermission(t.cv) == 0;
         }
         return false;
     }
@@ -405,7 +405,7 @@ public class DownloadService extends Service {
         if (TextUtils.isEmpty(str)) {
             return null;
         }
-        Intent intent = new Intent(this.f27261a, DownloadService.class);
+        Intent intent = new Intent(this.f13573a, DownloadService.class);
         intent.setAction("key_delete_action");
         intent.putExtra("key_action_type", 2);
         intent.putExtra(DBDefinition.SAVE_PATH, str);
@@ -424,7 +424,7 @@ public class DownloadService extends Service {
         if (TextUtils.isEmpty(str)) {
             return null;
         }
-        Intent intent = new Intent(this.f27261a, DownloadService.class);
+        Intent intent = new Intent(this.f13573a, DownloadService.class);
         intent.setAction("key_sys_delete_action");
         intent.putExtra("key_action_type", 3);
         intent.putExtra(DBDefinition.SAVE_PATH, str);
@@ -436,12 +436,12 @@ public class DownloadService extends Service {
         if (TextUtils.isEmpty(str)) {
             return null;
         }
-        String a2 = com.opos.cmn.d.a.a(this.f27261a, str);
+        String a2 = com.opos.cmn.d.a.a(this.f13573a, str);
         com.opos.cmn.an.f.a.b("DownloadService", "install intent downloadPath =" + a2);
         if (TextUtils.isEmpty(a2)) {
             return null;
         }
-        return com.opos.mobad.d.b.b.b(this.f27261a, a2);
+        return com.opos.mobad.d.b.b.b(this.f13573a, a2);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -463,8 +463,8 @@ public class DownloadService extends Service {
             if (value != null && value.a(str)) {
                 String key = entry.getKey();
                 if (a()) {
-                    com.opos.cmn.an.f.a.b("DownloadService", "cancel notificationId:" + value.f25951c);
-                    this.b.a(value.f25951c);
+                    com.opos.cmn.an.f.a.b("DownloadService", "cancel notificationId:" + value.f12263c);
+                    this.b.a(value.f12263c);
                 }
                 e(key);
             }
@@ -477,7 +477,7 @@ public class DownloadService extends Service {
             if (TextUtils.isEmpty(str)) {
                 return;
             }
-            com.opos.mobad.d.a.a(this.f27261a).b(str);
+            com.opos.mobad.d.a.a(this.f13573a).b(str);
         } catch (Exception e) {
             com.opos.cmn.an.f.a.a("DownloadService", "", (Throwable) e);
         }
@@ -489,7 +489,7 @@ public class DownloadService extends Service {
             if (TextUtils.isEmpty(str)) {
                 return;
             }
-            com.opos.mobad.d.a.a(this.f27261a).d(str);
+            com.opos.mobad.d.a.a(this.f13573a).d(str);
         } catch (Exception e) {
             com.opos.cmn.an.f.a.a("DownloadService", "", (Throwable) e);
         }
@@ -501,7 +501,7 @@ public class DownloadService extends Service {
             if (TextUtils.isEmpty(str)) {
                 return;
             }
-            com.opos.mobad.d.a.a(this.f27261a).c(str);
+            com.opos.mobad.d.a.a(this.f13573a).c(str);
         } catch (Exception e) {
             com.opos.cmn.an.f.a.a("DownloadService", "", (Throwable) e);
         }
@@ -527,7 +527,7 @@ public class DownloadService extends Service {
             return;
         }
         if (a() && (bVar = this.d.get(str)) != null) {
-            int i = bVar.f25951c;
+            int i = bVar.f12263c;
             this.b.a(i);
             com.opos.cmn.an.f.a.b("DownloadService", "cancelNotificationAndRemoveData:" + i);
         }
@@ -538,7 +538,7 @@ public class DownloadService extends Service {
         if (this.g.compareAndSet(false, true)) {
             f = z;
             com.opos.cmn.an.f.a.b("DownloadService", "int service downloadTaskNums:" + i + ",sIsShowNotification :" + f);
-            com.opos.mobad.d.a.a(this.f27261a).a(i, this.i);
+            com.opos.mobad.d.a.a(this.f13573a).a(i, this.i);
         }
     }
 
@@ -553,19 +553,19 @@ public class DownloadService extends Service {
         com.opos.cmn.an.f.a.b("DownloadService", "add downloadreq pkgName:" + str2 + ",appName :" + str4 + ",url:" + str + ",downloadReq:" + bVar);
         if (bVar != null) {
             if (102 != bVar.e && 107 != bVar.e) {
-                com.opos.mobad.d.a.a(this.f27261a).a(str, str3);
+                com.opos.mobad.d.a.a(this.f13573a).a(str, str3);
                 return;
             }
-            Context context = this.f27261a;
+            Context context = this.f13573a;
             Toast.makeText(context, context.getResources().getString(R.string.download_toast_downloading_txt), 1).show();
             return;
         }
-        com.opos.mobad.d.a.a(this.f27261a).a(str, str3);
+        com.opos.mobad.d.a.a(this.f13573a).a(str, str3);
         String str5 = str4;
         if (TextUtils.isEmpty(str4)) {
             str5 = com.opos.cmn.d.b.a(str);
         }
-        this.d.put(str, new com.opos.mobad.d.a.b(str5, str2, f27260c.getAndIncrement(), new com.opos.mobad.d.a.d()));
+        this.d.put(str, new com.opos.mobad.d.a.b(str5, str2, f13572c.getAndIncrement(), new com.opos.mobad.d.a.d()));
         com.opos.cmn.an.f.a.b("DownloadService", "add downloadreq mUrlToDownloadDataMap size:" + this.d.size());
     }
 
@@ -579,11 +579,11 @@ public class DownloadService extends Service {
     @Override // android.app.Service
     public void onCreate() {
         super.onCreate();
-        this.f27261a = getApplicationContext();
+        this.f13573a = getApplicationContext();
         b.a(PluginApi.sPluginContext, PluginApi.sHostContext);
         com.opos.cmn.an.f.a.b("DownloadService", "onCreate startForeground");
-        com.opos.mobad.d.a.e a2 = new e.a().a("mob_downloader").b(3).b("download_manager").a(false).a(e.a(this.f27261a, "opos_mob_drawable_download_icon", i.f7952c)).a();
-        this.b = Build.VERSION.SDK_INT > 30 ? new com.opos.mobad.d.a.g(this.f27261a, a2) : new com.opos.mobad.d.a.a(this.f27261a, a2);
+        com.opos.mobad.d.a.e a2 = new e.a().a("mob_downloader").b(3).b("download_manager").a(false).a(e.a(this.f13573a, "opos_mob_drawable_download_icon", i.f5112c)).a();
+        this.b = Build.VERSION.SDK_INT > 30 ? new com.opos.mobad.d.a.g(this.f13573a, a2) : new com.opos.mobad.d.a.a(this.f13573a, a2);
     }
 
     @Override // android.app.Service
@@ -591,7 +591,7 @@ public class DownloadService extends Service {
         com.opos.cmn.an.f.a.b("DownloadService", "onDestroy");
         this.d.clear();
         this.b.a();
-        com.opos.mobad.d.a.a(this.f27261a).a();
+        com.opos.mobad.d.a.a(this.f13573a).a();
         super.onDestroy();
     }
 

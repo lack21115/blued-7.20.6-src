@@ -10,11 +10,11 @@ public class b {
     private static volatile b e;
 
     /* renamed from: a  reason: collision with root package name */
-    final Map<String, Long> f21380a = new ConcurrentHashMap();
+    final Map<String, Long> f7774a = new ConcurrentHashMap();
     public final Handler b = new Handler(Looper.getMainLooper());
 
     /* renamed from: c  reason: collision with root package name */
-    public final Map<String, Runnable> f21381c = new ConcurrentHashMap();
+    public final Map<String, Runnable> f7775c = new ConcurrentHashMap();
     final Map<String, Runnable> d = new ConcurrentHashMap();
 
     private b() {

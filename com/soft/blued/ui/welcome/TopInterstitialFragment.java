@@ -5,7 +5,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import com.anythink.core.api.ATAdConst;
 import com.anythink.core.api.ATAdInfo;
 import com.anythink.core.api.AdError;
 import com.anythink.interstitial.api.ATInterstitial;
@@ -22,7 +21,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class TopInterstitialFragment extends BaseFragment {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Companion f34615a = new Companion(null);
+    public static final Companion f20924a = new Companion(null);
     private ATInterstitial b;
 
     @Metadata
@@ -39,7 +38,7 @@ public final class TopInterstitialFragment extends BaseFragment {
     private final void b() {
         ATInterstitial aTInterstitial = new ATInterstitial(getActivity(), "b5baca53984692");
         HashMap hashMap = new HashMap();
-        hashMap.put(ATAdConst.KEY.AD_CLICK_CONFIRM_STATUS, true);
+        hashMap.put("ad_click_confirm_status", true);
         aTInterstitial.setLocalExtra(hashMap);
         aTInterstitial.load();
         aTInterstitial.setAdListener(new ATInterstitialListener() { // from class: com.soft.blued.ui.welcome.TopInterstitialFragment$init$1$1
@@ -55,7 +54,7 @@ public final class TopInterstitialFragment extends BaseFragment {
 
             @Override // com.anythink.interstitial.api.ATInterstitialListener
             public void onInterstitialAdLoadFail(AdError adError) {
-                Log.v("drb", String.valueOf(Intrinsics.a("topon插屏广告失败：", (Object) adError)));
+                Log.v("drb", String.valueOf(Intrinsics.a("topon插屏广告失败：", adError)));
             }
 
             @Override // com.anythink.interstitial.api.ATInterstitialListener
@@ -92,10 +91,9 @@ public final class TopInterstitialFragment extends BaseFragment {
         return this.b;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
-    public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
-        Intrinsics.e(inflater, "inflater");
+    public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+        Intrinsics.e(layoutInflater, "inflater");
         b();
-        return inflater.inflate(R.layout.fragment_blued_interstitial, (ViewGroup) null);
+        return layoutInflater.inflate(R.layout.fragment_blued_interstitial, (ViewGroup) null);
     }
 }

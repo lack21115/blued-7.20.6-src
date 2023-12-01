@@ -7,11 +7,11 @@ import android.view.animation.Transformation;
 public class RotateAndTranslateAnimation extends Animation {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f28574a;
+    private int f14884a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f28575c;
+    private int f14885c;
     private int d;
     private float e;
     private float f;
@@ -31,9 +31,9 @@ public class RotateAndTranslateAnimation extends Animation {
     private float t;
 
     public RotateAndTranslateAnimation(float f, float f2, float f3, float f4, float f5, float f6) {
-        this.f28574a = 0;
+        this.f14884a = 0;
         this.b = 0;
-        this.f28575c = 0;
+        this.f14885c = 0;
         this.d = 0;
         this.e = 0.0f;
         this.f = 0.0f;
@@ -47,9 +47,9 @@ public class RotateAndTranslateAnimation extends Animation {
         this.f = f2;
         this.g = f3;
         this.h = f4;
-        this.f28574a = 0;
+        this.f14884a = 0;
         this.b = 0;
-        this.f28575c = 0;
+        this.f14885c = 0;
         this.d = 0;
         this.m = f5;
         this.n = f6;
@@ -59,9 +59,8 @@ public class RotateAndTranslateAnimation extends Animation {
         this.p = 1;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.animation.Animation
-    public void applyTransformation(float f, Transformation transformation) {
+    protected void applyTransformation(float f, Transformation transformation) {
         float f2 = this.m;
         float f3 = f2 + ((this.n - f2) * f);
         if (this.s == 0.0f && this.t == 0.0f) {
@@ -87,9 +86,9 @@ public class RotateAndTranslateAnimation extends Animation {
     @Override // android.view.animation.Animation
     public void initialize(int i, int i2, int i3, int i4) {
         super.initialize(i, i2, i3, i4);
-        this.i = resolveSize(this.f28574a, this.e, i, i3);
+        this.i = resolveSize(this.f14884a, this.e, i, i3);
         this.j = resolveSize(this.b, this.f, i, i3);
-        this.k = resolveSize(this.f28575c, this.g, i2, i4);
+        this.k = resolveSize(this.f14885c, this.g, i2, i4);
         this.l = resolveSize(this.d, this.h, i2, i4);
         this.s = resolveSize(this.o, this.q, i, i3);
         this.t = resolveSize(this.p, this.r, i2, i4);

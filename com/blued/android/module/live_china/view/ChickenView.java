@@ -29,13 +29,9 @@ import com.jeremyliao.liveeventbus.LiveEventBus;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/ChickenView.class */
 public class ChickenView extends RelativeLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    public boolean f14248a;
+    public boolean a;
     public BaseFragment b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private LiveGetChickenStatusExtraModel f14249c;
+    private LiveGetChickenStatusExtraModel c;
     private MarqueeTextView d;
     private String e;
     private String f;
@@ -100,24 +96,24 @@ public class ChickenView extends RelativeLayout {
     private void a(Context context) {
         LayoutInflater.from(getContext()).inflate(R.layout.live_chicken_layout, this);
         this.d = (MarqueeTextView) findViewById(R.id.tv_chicken_content);
-        this.f14249c = null;
+        this.c = null;
         a();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void a(View view) {
-        if (this.f14249c.link_half_open) {
-            if (this.f14248a) {
-                LiveSetDataObserver.a().b(this.f14249c.link_url, 0);
+        if (this.c.link_half_open) {
+            if (this.a) {
+                LiveSetDataObserver.a().b(this.c.link_url, 0);
             } else {
-                LiveRefreshUIObserver.a().b(this.f14249c.link_url, 0);
+                LiveRefreshUIObserver.a().b(this.c.link_url, 0);
             }
-        } else if (this.f14248a) {
-            LiveSetDataObserver.a().f(this.f14249c.link_url);
+        } else if (this.a) {
+            LiveSetDataObserver.a().f(this.c.link_url);
         } else {
-            LiveRefreshUIObserver.a().a(this.f14249c.link_url);
+            LiveRefreshUIObserver.a().a(this.c.link_url);
         }
-        LiveGetChickenStatusExtraModel liveGetChickenStatusExtraModel = this.f14249c;
+        LiveGetChickenStatusExtraModel liveGetChickenStatusExtraModel = this.c;
         if (liveGetChickenStatusExtraModel != null) {
             int i = liveGetChickenStatusExtraModel.status;
             EventTrackLive.o(LiveProtos.Event.LIVE_PK_CHICKEN_BTN_CLICK, LiveRoomManager.a().e(), LiveRoomManager.a().g(), i != 1 ? i != 2 ? "todo" : "countdown" : "pking");
@@ -127,7 +123,7 @@ public class ChickenView extends RelativeLayout {
     /* JADX INFO: Access modifiers changed from: private */
     public void a(LiveGetChickenStatusExtraModel liveGetChickenStatusExtraModel) {
         a();
-        this.f14249c = liveGetChickenStatusExtraModel;
+        this.c = liveGetChickenStatusExtraModel;
         int i = liveGetChickenStatusExtraModel.status;
         boolean z = true;
         if (i == 1) {
@@ -139,7 +135,7 @@ public class ChickenView extends RelativeLayout {
         } else if (i == 3) {
             this.e = AppUtils.a(R.string.live_chicken_icon_allow);
         } else if (i != 4) {
-            this.f14249c = null;
+            this.c = null;
             setVisibility(8);
             return;
         } else {
@@ -147,7 +143,7 @@ public class ChickenView extends RelativeLayout {
         }
         if (TextUtils.isEmpty(this.e)) {
             this.d.b();
-            this.f14249c = null;
+            this.c = null;
             a();
             setVisibility(8);
             return;
@@ -159,7 +155,7 @@ public class ChickenView extends RelativeLayout {
             this.d.b();
         }
         c();
-        if (TextUtils.isEmpty(this.f14249c.link_url)) {
+        if (TextUtils.isEmpty(this.c.link_url)) {
             setClickable(false);
         } else {
             setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.-$$Lambda$ChickenView$hO8E6cnh8-VqLr97OJSouupfG0w
@@ -187,7 +183,7 @@ public class ChickenView extends RelativeLayout {
     }
 
     private void c() {
-        LiveGetChickenStatusExtraModel liveGetChickenStatusExtraModel = this.f14249c;
+        LiveGetChickenStatusExtraModel liveGetChickenStatusExtraModel = this.c;
         if (liveGetChickenStatusExtraModel != null && liveGetChickenStatusExtraModel.countdown > 0) {
             this.g = new Runnable() { // from class: com.blued.android.module.live_china.view.-$$Lambda$ChickenView$9qtpT_wWLcnzV_DcQCaZ0_fSMbc
                 @Override // java.lang.Runnable
@@ -195,22 +191,23 @@ public class ChickenView extends RelativeLayout {
                     ChickenView.this.e();
                 }
             };
-            AppInfo.n().postDelayed(this.g, this.f14249c.countdown * 1000);
+            AppInfo.n().postDelayed(this.g, this.c.countdown * 1000);
         } else if (this.g != null) {
             AppInfo.n().removeCallbacks(this.g);
             this.g = null;
         }
     }
 
+    /* JADX WARN: Type inference failed for: r1v7, types: [com.blued.android.module.live_china.view.ChickenView$2] */
     private void d() {
-        this.f = a(this.f14249c.countdown * 1000);
+        this.f = a(this.c.countdown * 1000);
         this.e = String.format(getContext().getResources().getString(R.string.live_chicken_icon_game_time), this.f);
         CountDownTimer countDownTimer = this.h;
         if (countDownTimer != null) {
             countDownTimer.cancel();
             this.h = null;
         }
-        this.h = new CountDownTimer(this.f14249c.countdown * 1000, 1000L) { // from class: com.blued.android.module.live_china.view.ChickenView.2
+        this.h = new CountDownTimer(this.c.countdown * 1000, 1000L) { // from class: com.blued.android.module.live_china.view.ChickenView.2
             @Override // android.os.CountDownTimer
             public void onFinish() {
                 if (ChickenView.this.h != null) {
@@ -226,11 +223,11 @@ public class ChickenView extends RelativeLayout {
 
             @Override // android.os.CountDownTimer
             public void onTick(long j) {
-                String a2 = ChickenView.this.a(Math.round((float) j));
-                if (a2.equals(ChickenView.this.f)) {
+                String a = ChickenView.this.a(Math.round((float) j));
+                if (a.equals(ChickenView.this.f)) {
                     return;
                 }
-                ChickenView.this.f = a2;
+                ChickenView.this.f = a;
                 ChickenView chickenView = ChickenView.this;
                 chickenView.e = String.format(chickenView.getContext().getResources().getString(R.string.live_chicken_icon_game_time), ChickenView.this.f);
             }
@@ -252,7 +249,7 @@ public class ChickenView extends RelativeLayout {
                     ChickenView.this.a(bluedEntity.extra);
                     return;
                 }
-                ChickenView.this.f14249c = null;
+                ChickenView.this.c = null;
                 ChickenView.this.a();
                 ChickenView.this.setVisibility(8);
             }
@@ -265,7 +262,7 @@ public class ChickenView extends RelativeLayout {
         if (i == 8) {
             a();
             LiveEventBus.get(LiveEventBusUtil.k).post(Integer.valueOf(EnumOperation.VIEW_TYPE_CHICKEN_WIN.getValue()));
-        } else if (i != 0 || (liveGetChickenStatusExtraModel = this.f14249c) == null) {
+        } else if (i != 0 || (liveGetChickenStatusExtraModel = this.c) == null) {
         } else {
             int i2 = liveGetChickenStatusExtraModel.status;
             EventTrackLive.o(LiveProtos.Event.LIVE_PK_CHICKEN_BTN_SHOW, LiveRoomManager.a().e(), LiveRoomManager.a().g(), i2 != 1 ? i2 != 2 ? "todo" : "countdown" : "pking");

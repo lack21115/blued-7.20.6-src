@@ -7,9 +7,7 @@ public class StatisticEvent {
     public final String eventId;
     public final String ext;
     public final long maxResolveTime;
-
-    /* renamed from: net  reason: collision with root package name */
-    public final String f24668net;
+    public final String net;
     public final long resolveTime;
     public final long ret;
     public final String sdkVersion;
@@ -19,11 +17,11 @@ public class StatisticEvent {
     public static class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        private String f24669a;
+        private String f10981a;
         private String b;
 
         /* renamed from: c  reason: collision with root package name */
-        private long f24670c;
+        private long f10982c;
         private String d;
         private long e;
         private long f;
@@ -46,7 +44,7 @@ public class StatisticEvent {
         }
 
         public Builder setCurrentTime(long j) {
-            this.f24670c = j;
+            this.f10982c = j;
             return this;
         }
 
@@ -56,7 +54,7 @@ public class StatisticEvent {
         }
 
         public Builder setNet(String str) {
-            this.f24669a = str;
+            this.f10981a = str;
             return this;
         }
 
@@ -70,10 +68,10 @@ public class StatisticEvent {
         this.eventId = builder.b;
         this.url = builder.d;
         this.ret = builder.e;
-        this.currentTime = builder.f24670c;
+        this.currentTime = builder.f10982c;
         this.resolveTime = builder.f;
         this.maxResolveTime = builder.g;
-        this.f24668net = builder.f24669a;
+        this.net = builder.f10981a;
         this.ext = builder.h;
         this.channel = builder.i;
         this.sdkVersion = builder.j;

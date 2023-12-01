@@ -7,6 +7,7 @@ import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.SystemClock;
 import com.tencent.txcopyrightedmedia.TXCopyrightedMedia;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.security.NoSuchAlgorithmException;
@@ -16,11 +17,11 @@ import java.util.UUID;
 public final class aj {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f40055a;
+    private static String f26364a;
     private static String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static long f40056c = (long) (Math.random() * 1000000.0d);
+    private static long f26365c = (long) (Math.random() * 1000000.0d);
 
     public static i a(ByteArrayOutputStream byteArrayOutputStream, int i, int i2, int i3, byte[] bArr) {
         int i4 = i2;
@@ -28,7 +29,7 @@ public final class aj {
             i4 = (bArr.length + i3) - 1;
         }
         if (i > i4) {
-            return new i(-5, "request range error: range[" + i + "-" + i4 + ")");
+            return new i(-5, "request range error: range[" + i + Constants.ACCEPT_TIME_SEPARATOR_SERVER + i4 + ")");
         } else if (bArr == null || bArr.length + i3 <= i || i3 > i4) {
             StringBuilder sb = new StringBuilder("This data not in range. current [");
             sb.append(i3);
@@ -114,17 +115,17 @@ public final class aj {
 
     public static String b() {
         if (b == null) {
-            b bVar = (b) m.a().b(m.f40109a);
+            b bVar = (b) m.a().b(m.f26418a);
             if (bVar == null) {
                 return null;
             }
-            String string = bVar.d.f40099a.getString("SYSTEM_MODEL", null);
+            String string = bVar.d.f26408a.getString("SYSTEM_MODEL", null);
             b = string;
             if (string == null) {
                 b = Build.MODEL;
                 g gVar = bVar.d;
                 String str = b;
-                SharedPreferences.Editor edit = gVar.f40099a.edit();
+                SharedPreferences.Editor edit = gVar.f26408a.edit();
                 edit.putString("SYSTEM_MODEL", str);
                 edit.apply();
             }
@@ -160,8 +161,8 @@ public final class aj {
         long abs;
         synchronized (aj.class) {
             try {
-                abs = Math.abs((long) (f40056c + (Math.random() * 10000.0d)));
-                f40056c = abs;
+                abs = Math.abs((long) (f26365c + (Math.random() * 10000.0d)));
+                f26365c = abs;
             } catch (Throwable th) {
                 throw th;
             }
@@ -170,16 +171,16 @@ public final class aj {
     }
 
     public static String c(Context context) {
-        String str = f40055a;
+        String str = f26364a;
         if (str == null || str.length() <= 0) {
-            b bVar = (b) m.a().b(m.f40109a);
+            b bVar = (b) m.a().b(m.f26418a);
             if (bVar == null) {
                 return null;
             }
-            String string = bVar.d.f40099a.getString("USER_ID", null);
-            f40055a = string;
+            String string = bVar.d.f26408a.getString("USER_ID", null);
+            f26364a = string;
             if (string == null || string.length() == 0) {
-                f40055a = "";
+                f26364a = "";
                 long currentTimeMillis = System.currentTimeMillis();
                 long elapsedRealtime = SystemClock.elapsedRealtime();
                 String packageName = context.getPackageName();
@@ -189,14 +190,14 @@ public final class aj {
                     if (i2 < 0) {
                         break;
                     }
-                    f40055a += String.format("%02x", Byte.valueOf((byte) (255 & (currentTimeMillis >> (i2 * 8)))));
+                    f26364a += String.format("%02x", Byte.valueOf((byte) (255 & (currentTimeMillis >> (i2 * 8)))));
                     i = i2 - 1;
                 }
                 int i3 = 3;
                 while (true) {
                     int i4 = i3;
                     if (i4 >= 0) {
-                        f40055a += String.format("%02x", Byte.valueOf((byte) ((elapsedRealtime >> (i4 * 8)) & 255)));
+                        f26364a += String.format("%02x", Byte.valueOf((byte) ((elapsedRealtime >> (i4 * 8)) & 255)));
                         i3 = i4 - 1;
                     } else {
                         try {
@@ -207,19 +208,19 @@ public final class aj {
                     }
                 }
                 StringBuilder sb = new StringBuilder();
-                sb.append(f40055a);
+                sb.append(f26364a);
                 sb.append(ac.b(packageName + UUID.randomUUID().toString()));
-                f40055a = sb.toString();
+                f26364a = sb.toString();
                 g gVar = bVar.d;
-                String str2 = f40055a;
-                SharedPreferences.Editor edit = gVar.f40099a.edit();
+                String str2 = f26364a;
+                SharedPreferences.Editor edit = gVar.f26408a.edit();
                 edit.putString("USER_ID", str2);
                 edit.apply();
             }
-            new StringBuilder("UUID:").append(f40055a);
-            return f40055a;
+            new StringBuilder("UUID:").append(f26364a);
+            return f26364a;
         }
-        return f40055a;
+        return f26364a;
     }
 
     private static boolean c(File file) {
@@ -255,8 +256,8 @@ public final class aj {
     }
 
     public static String d() {
-        b bVar = (b) m.a().b(m.f40109a);
-        return (bVar != null ? bVar.d : new g(TXCopyrightedMedia.instance().getApplicationContext())).f40099a.getString("USER_ID_TOKEN", null);
+        b bVar = (b) m.a().b(m.f26418a);
+        return (bVar != null ? bVar.d : new g(TXCopyrightedMedia.instance().getApplicationContext())).f26408a.getString("USER_ID_TOKEN", null);
     }
 
     public static String d(Context context) {

@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class PopCustomerServiceRobotEvaluateBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29509a;
+    private final LinearLayout f15819a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29509a;
+        return this.f15819a;
     }
 }

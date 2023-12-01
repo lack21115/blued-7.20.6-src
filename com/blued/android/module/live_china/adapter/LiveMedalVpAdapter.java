@@ -20,39 +20,33 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/adapter/LiveMedalVpAdapter.class */
 public final class LiveMedalVpAdapter extends PagerAdapter {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final ArrayList<LiveMedalItemData> f11665a;
+    private final ArrayList<LiveMedalItemData> a;
 
     public LiveMedalVpAdapter(ArrayList<LiveMedalItemData> medalDataList) {
         Intrinsics.e(medalDataList, "medalDataList");
-        this.f11665a = medalDataList;
+        this.a = medalDataList;
     }
 
-    @Override // androidx.viewpager.widget.PagerAdapter
     public void destroyItem(ViewGroup container, int i, Object object) {
         Intrinsics.e(container, "container");
         Intrinsics.e(object, "object");
         container.removeView((View) object);
     }
 
-    @Override // androidx.viewpager.widget.PagerAdapter
     public int getCount() {
-        return this.f11665a.size();
+        return this.a.size();
     }
 
-    @Override // androidx.viewpager.widget.PagerAdapter
     public int getItemPosition(Object object) {
         Intrinsics.e(object, "object");
         return -2;
     }
 
-    @Override // androidx.viewpager.widget.PagerAdapter
     public Object instantiateItem(ViewGroup container, int i) {
         Intrinsics.e(container, "container");
         View inflate = LayoutInflater.from(AppInfo.d()).inflate(R.layout.fragment_live_medal_detail_item, container, false);
         Intrinsics.c(inflate, "from(AppInfo.getAppConte…l_item, container, false)");
-        LiveMedalItemData liveMedalItemData = this.f11665a.get(i);
+        LiveMedalItemData liveMedalItemData = this.a.get(i);
         Intrinsics.c(liveMedalItemData, "medalDataList[position]");
         LiveMedalItemData liveMedalItemData2 = liveMedalItemData;
         View findViewById = inflate.findViewById(R.id.iv_medal_detail);
@@ -75,10 +69,10 @@ public final class LiveMedalVpAdapter extends PagerAdapter {
         ImageLoader.a((IRequestHost) null, icon).b(R.drawable.anchor_badge_default).f().g(-1).a(imageView);
         textView.setText(liveMedalItemData2.getName());
         textView2.setText(liveMedalItemData2.getDescription());
-        String a2 = PermissionUtils.a(R.string.live_get_medal_time);
+        String a = PermissionUtils.a(R.string.live_get_medal_time);
         long created_time = liveMedalItemData2.getCreated_time();
         long j = 1000;
-        textView3.setText(Intrinsics.a(a2, (Object) LiveTimeAndDateUtils.b(created_time * j)));
+        textView3.setText(Intrinsics.a(a, (Object) LiveTimeAndDateUtils.b(created_time * j)));
         textView4.setVisibility(0);
         if (liveMedalItemData2.is_hide_expire_time() == 1) {
             textView4.setVisibility(8);
@@ -94,7 +88,6 @@ public final class LiveMedalVpAdapter extends PagerAdapter {
         return inflate;
     }
 
-    @Override // androidx.viewpager.widget.PagerAdapter
     public boolean isViewFromObject(View view, Object object) {
         Intrinsics.e(view, "view");
         Intrinsics.e(object, "object");

@@ -1,6 +1,5 @@
 package android.view.textservice;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.os.RemoteException;
 import android.os.ServiceManager;
@@ -18,7 +17,7 @@ public final class TextServicesManager {
 
     private TextServicesManager() {
         if (sService == null) {
-            sService = ITextServicesManager.Stub.asInterface(ServiceManager.getService(Context.TEXT_SERVICES_MANAGER_SERVICE));
+            sService = ITextServicesManager.Stub.asInterface(ServiceManager.getService("textservices"));
         }
     }
 

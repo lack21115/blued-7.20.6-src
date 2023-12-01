@@ -14,9 +14,8 @@ public interface IAccessibilityManagerClient extends IInterface {
         private static final String DESCRIPTOR = "android.view.accessibility.IAccessibilityManagerClient";
         static final int TRANSACTION_setState_0 = 1;
 
-        /* JADX INFO: Access modifiers changed from: private */
         /* loaded from: source-4181928-dex2jar.jar:android/view/accessibility/IAccessibilityManagerClient$Stub$Proxy.class */
-        public static class Proxy implements IAccessibilityManagerClient {
+        private static class Proxy implements IAccessibilityManagerClient {
             private IBinder mRemote;
 
             Proxy(IBinder iBinder) {
@@ -69,7 +68,7 @@ public interface IAccessibilityManagerClient extends IInterface {
                     parcel.enforceInterface(DESCRIPTOR);
                     setState(parcel.readInt());
                     return true;
-                case IBinder.INTERFACE_TRANSACTION /* 1598968902 */:
+                case 1598968902:
                     parcel2.writeString(DESCRIPTOR);
                     return true;
                 default:

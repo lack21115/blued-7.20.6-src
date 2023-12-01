@@ -27,11 +27,11 @@ import okhttp3.Response;
 public class OkHttpListener extends EventListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private static AtomicInteger f21828a = new AtomicInteger(0);
+    private static AtomicInteger f8221a = new AtomicInteger(0);
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f21829c;
+    private boolean f8222c;
     private List d = new ArrayList();
 
     private void a() {
@@ -40,7 +40,7 @@ public class OkHttpListener extends EventListener {
             if (c2 != null) {
                 Map<String, Long> map = c2.D;
                 Map<String, Long> map2 = c2.E;
-                map2.put(c.s, Long.valueOf(com.efs.sdk.net.b.a.a(map, c.f21844a, c.b)));
+                map2.put(c.s, Long.valueOf(com.efs.sdk.net.b.a.a(map, c.f8237a, c.b)));
                 map2.put(c.t, Long.valueOf(com.efs.sdk.net.b.a.a(map, c.d, c.e)));
                 map2.put(c.u, Long.valueOf(com.efs.sdk.net.b.a.a(map, c.g, c.h)));
                 map2.put(c.v, Long.valueOf(com.efs.sdk.net.b.a.a(map, c.f, c.i)));
@@ -155,8 +155,8 @@ public class OkHttpListener extends EventListener {
                     }
                 }
             }
-            if (map.containsKey(c.f21844a)) {
-                efsJSONLog.put("wd_rt", map.get(c.f21844a));
+            if (map.containsKey(c.f8237a)) {
+                efsJSONLog.put("wd_rt", map.get(c.f8237a));
             }
             if (map.containsKey(c.b)) {
                 efsJSONLog.put("wd_rttm", map.get(c.b));
@@ -183,19 +183,17 @@ public class OkHttpListener extends EventListener {
 
     public static EventListener.Factory get() {
         return new EventListener.Factory() { // from class: com.efs.sdk.net.OkHttpListener.1
-            @Override // okhttp3.EventListener.Factory
             public final EventListener create(Call call) {
                 return new OkHttpListener();
             }
         };
     }
 
-    @Override // okhttp3.EventListener
     public void callEnd(Call call) {
         super.callEnd(call);
         try {
             Log.d("NetTrace-Listener", "callEnd");
-            if (!this.f21829c && !IntegrationTestingUtil.isIntegrationTestingInPeriod()) {
+            if (!this.f8222c && !IntegrationTestingUtil.isIntegrationTestingInPeriod()) {
                 Log.d("NetTrace-Listener", "callEnd net enable false.");
                 return;
             }
@@ -206,37 +204,35 @@ public class OkHttpListener extends EventListener {
         }
     }
 
-    @Override // okhttp3.EventListener
     public void callFailed(Call call, IOException iOException) {
         super.callFailed(call, iOException);
         try {
             Log.d("NetTrace-Listener", "callFailed");
-            if (!this.f21829c && !IntegrationTestingUtil.isIntegrationTestingInPeriod()) {
+            if (!this.f8222c && !IntegrationTestingUtil.isIntegrationTestingInPeriod()) {
                 Log.d("NetTrace-Listener", "callFailed net enable false.");
                 return;
             }
-            a(c.f21845c);
+            a(c.f8238c);
             a();
         } catch (Throwable th) {
             th.printStackTrace();
         }
     }
 
-    @Override // okhttp3.EventListener
     public void callStart(Call call) {
         super.callStart(call);
         try {
             Log.d("NetTrace-Listener", "callStart");
             if (NetManager.getNetConfigManager() != null && NetManager.getNetConfigManager().enableTracer()) {
-                this.f21829c = true;
+                this.f8222c = true;
             }
-            if (!this.f21829c && !IntegrationTestingUtil.isIntegrationTestingInPeriod()) {
+            if (!this.f8222c && !IntegrationTestingUtil.isIntegrationTestingInPeriod()) {
                 Log.d("NetTrace-Listener", "callStart net enable false.");
                 return;
             }
-            this.b = String.valueOf(f21828a.getAndIncrement());
+            this.b = String.valueOf(f8221a.getAndIncrement());
             Log.i("NetTrace-Listener", "requestId is" + this.b);
-            a(c.f21844a);
+            a(c.f8237a);
             String httpUrl = call.request().url().toString();
             c c2 = a.a().c(this.b);
             if (c2 != null) {
@@ -247,12 +243,11 @@ public class OkHttpListener extends EventListener {
         }
     }
 
-    @Override // okhttp3.EventListener
     public void connectEnd(Call call, InetSocketAddress inetSocketAddress, Proxy proxy, Protocol protocol) {
         super.connectEnd(call, inetSocketAddress, proxy, protocol);
         try {
             Log.d("NetTrace-Listener", "connectEnd");
-            if (!this.f21829c && !IntegrationTestingUtil.isIntegrationTestingInPeriod()) {
+            if (!this.f8222c && !IntegrationTestingUtil.isIntegrationTestingInPeriod()) {
                 Log.d("NetTrace-Listener", "connectEnd net enable false.");
                 return;
             }
@@ -262,12 +257,11 @@ public class OkHttpListener extends EventListener {
         }
     }
 
-    @Override // okhttp3.EventListener
     public void connectFailed(Call call, InetSocketAddress inetSocketAddress, Proxy proxy, Protocol protocol, IOException iOException) {
         super.connectFailed(call, inetSocketAddress, proxy, protocol, iOException);
         try {
             Log.d("NetTrace-Listener", "connectFailed");
-            if (!this.f21829c && !IntegrationTestingUtil.isIntegrationTestingInPeriod()) {
+            if (!this.f8222c && !IntegrationTestingUtil.isIntegrationTestingInPeriod()) {
                 Log.d("NetTrace-Listener", "connectFailed net enable false.");
                 return;
             }
@@ -278,12 +272,11 @@ public class OkHttpListener extends EventListener {
         }
     }
 
-    @Override // okhttp3.EventListener
     public void connectStart(Call call, InetSocketAddress inetSocketAddress, Proxy proxy) {
         super.connectStart(call, inetSocketAddress, proxy);
         try {
             Log.d("NetTrace-Listener", "connectStart");
-            if (!this.f21829c && !IntegrationTestingUtil.isIntegrationTestingInPeriod()) {
+            if (!this.f8222c && !IntegrationTestingUtil.isIntegrationTestingInPeriod()) {
                 Log.d("NetTrace-Listener", "connectStart net enable false.");
                 return;
             }
@@ -293,12 +286,11 @@ public class OkHttpListener extends EventListener {
         }
     }
 
-    @Override // okhttp3.EventListener
     public void dnsEnd(Call call, String str, List<InetAddress> list) {
         super.dnsEnd(call, str, list);
         try {
             Log.d("NetTrace-Listener", "dnsEnd");
-            if (!this.f21829c && !IntegrationTestingUtil.isIntegrationTestingInPeriod()) {
+            if (!this.f8222c && !IntegrationTestingUtil.isIntegrationTestingInPeriod()) {
                 Log.d("NetTrace-Listener", "dnsEnd net enable false.");
                 return;
             }
@@ -308,12 +300,11 @@ public class OkHttpListener extends EventListener {
         }
     }
 
-    @Override // okhttp3.EventListener
     public void dnsStart(Call call, String str) {
         super.dnsStart(call, str);
         try {
             Log.d("NetTrace-Listener", "dnsStart");
-            if (!this.f21829c && !IntegrationTestingUtil.isIntegrationTestingInPeriod()) {
+            if (!this.f8222c && !IntegrationTestingUtil.isIntegrationTestingInPeriod()) {
                 Log.d("NetTrace-Listener", "dnsStart net enable false.");
                 return;
             }
@@ -323,12 +314,11 @@ public class OkHttpListener extends EventListener {
         }
     }
 
-    @Override // okhttp3.EventListener
     public void requestBodyEnd(Call call, long j) {
         super.requestBodyEnd(call, j);
         try {
             Log.d("NetTrace-Listener", "requestBodyEnd");
-            if (!this.f21829c && !IntegrationTestingUtil.isIntegrationTestingInPeriod()) {
+            if (!this.f8222c && !IntegrationTestingUtil.isIntegrationTestingInPeriod()) {
                 Log.d("NetTrace-Listener", "requestBodyEnd net enable false.");
                 return;
             }
@@ -338,12 +328,11 @@ public class OkHttpListener extends EventListener {
         }
     }
 
-    @Override // okhttp3.EventListener
     public void requestBodyStart(Call call) {
         super.requestBodyStart(call);
         try {
             Log.d("NetTrace-Listener", "requestBodyStart");
-            if (!this.f21829c && !IntegrationTestingUtil.isIntegrationTestingInPeriod()) {
+            if (!this.f8222c && !IntegrationTestingUtil.isIntegrationTestingInPeriod()) {
                 Log.d("NetTrace-Listener", "requestBodyStart net enable false.");
                 return;
             }
@@ -353,12 +342,11 @@ public class OkHttpListener extends EventListener {
         }
     }
 
-    @Override // okhttp3.EventListener
     public void requestHeadersEnd(Call call, Request request) {
         super.requestHeadersEnd(call, request);
         try {
             Log.d("NetTrace-Listener", "requestHeadersEnd");
-            if (!this.f21829c && !IntegrationTestingUtil.isIntegrationTestingInPeriod()) {
+            if (!this.f8222c && !IntegrationTestingUtil.isIntegrationTestingInPeriod()) {
                 Log.d("NetTrace-Listener", "requestHeadersEnd net enable false.");
                 return;
             }
@@ -368,12 +356,11 @@ public class OkHttpListener extends EventListener {
         }
     }
 
-    @Override // okhttp3.EventListener
     public void requestHeadersStart(Call call) {
         super.requestHeadersStart(call);
         try {
             Log.d("NetTrace-Listener", "requestHeadersStart");
-            if (!this.f21829c && !IntegrationTestingUtil.isIntegrationTestingInPeriod()) {
+            if (!this.f8222c && !IntegrationTestingUtil.isIntegrationTestingInPeriod()) {
                 Log.d("NetTrace-Listener", "requestHeadersStart net enable false.");
                 return;
             }
@@ -383,12 +370,11 @@ public class OkHttpListener extends EventListener {
         }
     }
 
-    @Override // okhttp3.EventListener
     public void responseBodyEnd(Call call, long j) {
         super.responseBodyEnd(call, j);
         try {
             Log.d("NetTrace-Listener", "responseBodyEnd");
-            if (!this.f21829c && !IntegrationTestingUtil.isIntegrationTestingInPeriod()) {
+            if (!this.f8222c && !IntegrationTestingUtil.isIntegrationTestingInPeriod()) {
                 Log.d("NetTrace-Listener", "responseBodyEnd net enable false.");
                 return;
             }
@@ -398,12 +384,11 @@ public class OkHttpListener extends EventListener {
         }
     }
 
-    @Override // okhttp3.EventListener
     public void responseBodyStart(Call call) {
         super.responseBodyStart(call);
         try {
             Log.d("NetTrace-Listener", "responseBodyStart");
-            if (!this.f21829c && !IntegrationTestingUtil.isIntegrationTestingInPeriod()) {
+            if (!this.f8222c && !IntegrationTestingUtil.isIntegrationTestingInPeriod()) {
                 Log.d("NetTrace-Listener", "responseBodyStart net enable false.");
                 return;
             }
@@ -413,12 +398,11 @@ public class OkHttpListener extends EventListener {
         }
     }
 
-    @Override // okhttp3.EventListener
     public void responseHeadersEnd(Call call, Response response) {
         super.responseHeadersEnd(call, response);
         try {
             Log.d("NetTrace-Listener", "responseHeadersEnd");
-            if (!this.f21829c && !IntegrationTestingUtil.isIntegrationTestingInPeriod()) {
+            if (!this.f8222c && !IntegrationTestingUtil.isIntegrationTestingInPeriod()) {
                 Log.d("NetTrace-Listener", "responseHeadersEnd net enable false.");
                 return;
             }
@@ -428,12 +412,11 @@ public class OkHttpListener extends EventListener {
         }
     }
 
-    @Override // okhttp3.EventListener
     public void responseHeadersStart(Call call) {
         super.responseHeadersStart(call);
         try {
             Log.d("NetTrace-Listener", "responseHeadersStart");
-            if (!this.f21829c && !IntegrationTestingUtil.isIntegrationTestingInPeriod()) {
+            if (!this.f8222c && !IntegrationTestingUtil.isIntegrationTestingInPeriod()) {
                 Log.d("NetTrace-Listener", "responseHeadersStart net enable false.");
                 return;
             }
@@ -443,12 +426,11 @@ public class OkHttpListener extends EventListener {
         }
     }
 
-    @Override // okhttp3.EventListener
     public void secureConnectEnd(Call call, Handshake handshake) {
         super.secureConnectEnd(call, handshake);
         try {
             Log.d("NetTrace-Listener", "secureConnectEnd");
-            if (!this.f21829c && !IntegrationTestingUtil.isIntegrationTestingInPeriod()) {
+            if (!this.f8222c && !IntegrationTestingUtil.isIntegrationTestingInPeriod()) {
                 Log.d("NetTrace-Listener", "secureConnectEnd net enable false.");
                 return;
             }
@@ -458,12 +440,11 @@ public class OkHttpListener extends EventListener {
         }
     }
 
-    @Override // okhttp3.EventListener
     public void secureConnectStart(Call call) {
         super.secureConnectStart(call);
         try {
             Log.d("NetTrace-Listener", "secureConnectStart");
-            if (!this.f21829c && !IntegrationTestingUtil.isIntegrationTestingInPeriod()) {
+            if (!this.f8222c && !IntegrationTestingUtil.isIntegrationTestingInPeriod()) {
                 Log.d("NetTrace-Listener", "secureConnectStart net enable false.");
                 return;
             }

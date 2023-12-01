@@ -3,6 +3,7 @@ package com.google.gson.stream;
 import android.net.wifi.WifiEnterpriseConfig;
 import com.google.gson.internal.JsonReaderInternalAccess;
 import com.google.gson.internal.bind.JsonTreeReader;
+import com.huawei.hms.ads.fw;
 import com.igexin.push.core.b;
 import java.io.Closeable;
 import java.io.EOFException;
@@ -42,7 +43,7 @@ public class JsonReader implements Closeable {
     private static final int PEEKED_UNQUOTED_NAME = 14;
 
     /* renamed from: in  reason: collision with root package name */
-    private final Reader f22219in;
+    private final Reader f8612in;
     private int[] pathIndices;
     private String[] pathNames;
     private long peekedLong;
@@ -95,7 +96,7 @@ public class JsonReader implements Closeable {
         if (reader == null) {
             throw new NullPointerException("in == null");
         }
-        this.f22219in = reader;
+        this.f8612in = reader;
     }
 
     private void checkLenient() throws IOException {
@@ -137,13 +138,13 @@ public class JsonReader implements Closeable {
         if (i5 != i4) {
             int i6 = i5 - i4;
             this.limit = i6;
-            System.arraycopy((Object) cArr, i4, (Object) cArr, 0, i6);
+            System.arraycopy(cArr, i4, cArr, 0, i6);
         } else {
             this.limit = 0;
         }
         this.pos = 0;
         do {
-            Reader reader = this.f22219in;
+            Reader reader = this.f8612in;
             int i7 = this.limit;
             int read = reader.read(cArr, i7, cArr.length - i7);
             if (read == -1) {
@@ -328,25 +329,25 @@ public class JsonReader implements Closeable {
 
     private int peekKeyword() throws IOException {
         int i;
-        CharSequence charSequence;
-        CharSequence charSequence2;
+        String str;
+        String str2;
         char c2 = this.buffer[this.pos];
         if (c2 == 't' || c2 == 'T') {
             i = 5;
-            charSequence = "true";
-            charSequence2 = "TRUE";
+            str = fw.Code;
+            str2 = "TRUE";
         } else if (c2 == 'f' || c2 == 'F') {
             i = 6;
-            charSequence = "false";
-            charSequence2 = "FALSE";
+            str = "false";
+            str2 = "FALSE";
         } else if (c2 != 'n' && c2 != 'N') {
             return 0;
         } else {
             i = 7;
-            charSequence = b.l;
-            charSequence2 = WifiEnterpriseConfig.EMPTY_VALUE;
+            str = b.l;
+            str2 = WifiEnterpriseConfig.EMPTY_VALUE;
         }
-        int length = charSequence.length();
+        int length = str.length();
         int i2 = 1;
         while (true) {
             int i3 = i2;
@@ -361,7 +362,7 @@ public class JsonReader implements Closeable {
                 return 0;
             } else {
                 char c3 = this.buffer[this.pos + i3];
-                if (c3 != charSequence.charAt(i3) && c3 != charSequence2.charAt(i3)) {
+                if (c3 != str.charAt(i3) && c3 != str2.charAt(i3)) {
                     return 0;
                 }
                 i2 = i3 + 1;
@@ -616,7 +617,7 @@ public class JsonReader implements Closeable {
         this.peeked = 0;
         this.stack[0] = 8;
         this.stackSize = 1;
-        this.f22219in.close();
+        this.f8612in.close();
     }
 
     int doPeek() throws IOException {

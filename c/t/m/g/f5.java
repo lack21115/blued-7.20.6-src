@@ -4,19 +4,19 @@ package c.t.m.g;
 public class f5 {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f3811a;
+    public String f3763a;
     public long b;
 
     public f5() {
     }
 
     public f5(String str, long j) {
-        this.f3811a = str;
+        this.f3763a = str;
         this.b = j;
     }
 
     public String a() {
-        return this.f3811a;
+        return this.f3763a;
     }
 
     public long b() {

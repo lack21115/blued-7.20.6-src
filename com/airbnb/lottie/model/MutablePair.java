@@ -5,9 +5,7 @@ import com.alipay.sdk.util.i;
 
 /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/model/MutablePair.class */
 public class MutablePair<T> {
-
-    /* renamed from: a  reason: collision with root package name */
-    T f4327a;
+    T a;
     T b;
 
     private static boolean b(Object obj, Object obj2) {
@@ -18,7 +16,7 @@ public class MutablePair<T> {
     }
 
     public void a(T t, T t2) {
-        this.f4327a = t;
+        this.a = t;
         this.b = t2;
     }
 
@@ -26,7 +24,7 @@ public class MutablePair<T> {
         if (obj instanceof Pair) {
             Pair pair = (Pair) obj;
             boolean z = false;
-            if (b(pair.first, this.f4327a)) {
+            if (b(pair.first, this.a)) {
                 z = false;
                 if (b(pair.second, this.b)) {
                     z = true;
@@ -38,7 +36,7 @@ public class MutablePair<T> {
     }
 
     public int hashCode() {
-        T t = this.f4327a;
+        T t = this.a;
         int i = 0;
         int hashCode = t == null ? 0 : t.hashCode();
         T t2 = this.b;
@@ -49,6 +47,6 @@ public class MutablePair<T> {
     }
 
     public String toString() {
-        return "Pair{" + String.valueOf(this.f4327a) + " " + String.valueOf(this.b) + i.d;
+        return "Pair{" + String.valueOf(this.a) + " " + String.valueOf(this.b) + i.d;
     }
 }

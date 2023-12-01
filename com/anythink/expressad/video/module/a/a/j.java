@@ -7,11 +7,11 @@ import android.widget.ImageView;
 public final class j extends e {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f8509a;
+    private int f5669a;
 
     public j(ImageView imageView, int i) {
         super(imageView);
-        this.f8509a = i;
+        this.f5669a = i;
     }
 
     @Override // com.anythink.expressad.video.module.a.a.e, com.anythink.expressad.foundation.g.d.c
@@ -21,12 +21,12 @@ public final class j extends e {
             return;
         }
         try {
-            if (this.f8507c == null || this.f8507c.get() == null || bitmap.isRecycled() || (a2 = com.anythink.expressad.foundation.h.n.a(bitmap, this.f8509a)) == null) {
+            if (this.f5667c == null || this.f5667c.get() == null || bitmap.isRecycled() || (a2 = com.anythink.expressad.foundation.h.n.a(bitmap, this.f5669a)) == null) {
                 return;
             }
-            this.f8507c.get().setImageBitmap(a2);
+            this.f5667c.get().setImageBitmap(a2);
         } catch (Throwable th) {
-            if (com.anythink.expressad.a.f6941a) {
+            if (com.anythink.expressad.a.f4103a) {
                 th.printStackTrace();
             }
         }

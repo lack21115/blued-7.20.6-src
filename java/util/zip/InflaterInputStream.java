@@ -73,10 +73,10 @@ public class InflaterInputStream extends FilterInputStream {
     public void fill() throws IOException {
         checkClosed();
         if (this.nativeEndBufSize > 0) {
-            this.len = ((ZipFile.RAFStream) this.f42254in).fill(this.inf, this.nativeEndBufSize);
+            this.len = ((ZipFile.RAFStream) this.in).fill(this.inf, this.nativeEndBufSize);
             return;
         }
-        int read = this.f42254in.read(this.buf);
+        int read = this.in.read(this.buf);
         this.len = read;
         if (read > 0) {
             this.inf.setInput(this.buf, 0, this.len);

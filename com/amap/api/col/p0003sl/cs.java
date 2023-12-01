@@ -1,7 +1,7 @@
 package com.amap.api.col.p0003sl;
 
 import android.content.Context;
-import android.provider.MediaStore;
+import com.anythink.core.common.c.d;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -12,9 +12,7 @@ public final class cs extends hg<String, a> {
     /* renamed from: com.amap.api.col.3sl.cs$a */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/cs$a.class */
     public static final class a {
-
-        /* renamed from: a  reason: collision with root package name */
-        public byte[] f4821a;
+        public byte[] a;
         public int b = -1;
     }
 
@@ -25,7 +23,7 @@ public final class cs extends hg<String, a> {
 
     private static a b(byte[] bArr) throws hf {
         a aVar = new a();
-        aVar.f4821a = bArr;
+        aVar.a = bArr;
         return aVar;
     }
 
@@ -56,8 +54,8 @@ public final class cs extends hg<String, a> {
     @Override // com.amap.api.col.p0003sl.da, com.amap.api.col.p0003sl.kb
     public final Map<String, String> getParams() {
         HashMap hashMap = new HashMap(16);
-        hashMap.put("key", ho.f(this.g));
-        hashMap.put(MediaStore.EXTRA_OUTPUT, "bin");
+        hashMap.put(d.a.b, ho.f(this.g));
+        hashMap.put("output", "bin");
         String a2 = hr.a();
         String a3 = hr.a(this.g, a2, ib.b(hashMap));
         hashMap.put("ts", a2);

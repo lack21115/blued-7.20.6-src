@@ -47,7 +47,7 @@ public abstract class BaseListViewModel<M> extends MVIBaseViewModel<BaseListStat
     }
 
     public void refreshData() {
-        BluedStructureExtKt.a(this, MviEvent.LoadStarted.f10685a);
+        BluedStructureExtKt.a(this, MviEvent.LoadStarted.a);
         this.mPage = 1;
         requestData();
     }

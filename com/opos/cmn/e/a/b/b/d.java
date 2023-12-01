@@ -19,11 +19,11 @@ import com.opos.cmn.i.g;
 public class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private RelativeLayout f24764a;
+    private RelativeLayout f11076a;
     private RelativeLayout b;
 
     /* renamed from: c  reason: collision with root package name */
-    private TextView f24765c;
+    private TextView f11077c;
     private ImageView d;
     private LinearLayout e;
     private Dialog f;
@@ -32,17 +32,17 @@ public class d {
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private Context f24768a;
+        private Context f11080a;
         private CharSequence b;
 
         /* renamed from: c  reason: collision with root package name */
-        private CharSequence f24769c;
+        private CharSequence f11081c;
         private b d;
         private CharSequence e;
         private b f;
 
         public a(Context context) {
-            this.f24768a = context;
+            this.f11080a = context;
         }
 
         public a a(CharSequence charSequence) {
@@ -51,7 +51,7 @@ public class d {
         }
 
         public a a(CharSequence charSequence, b bVar) {
-            this.f24769c = charSequence;
+            this.f11081c = charSequence;
             this.d = bVar;
             return this;
         }
@@ -78,26 +78,26 @@ public class d {
     }
 
     private void b(a aVar) {
-        RelativeLayout relativeLayout = new RelativeLayout(aVar.f24768a);
-        this.f24764a = relativeLayout;
+        RelativeLayout relativeLayout = new RelativeLayout(aVar.f11080a);
+        this.f11076a = relativeLayout;
         relativeLayout.setLayoutParams(new RelativeLayout.LayoutParams(-1, -1));
         c(aVar);
-        this.b = new RelativeLayout(aVar.f24768a);
+        this.b = new RelativeLayout(aVar.f11080a);
         d(aVar);
         if (Build.VERSION.SDK_INT >= 29) {
             this.b.setForceDarkAllowed(false);
         }
-        TextView textView = new TextView(aVar.f24768a);
-        this.f24765c = textView;
+        TextView textView = new TextView(aVar.f11080a);
+        this.f11077c = textView;
         textView.setId(1);
-        this.f24765c.setGravity(17);
-        this.f24765c.setMaxLines(2);
-        this.f24765c.setEllipsize(TextUtils.TruncateAt.END);
-        this.f24765c.setTextColor(Color.parseColor("#2f2f2f"));
-        this.f24765c.setTextSize(1, 16.0f);
-        this.f24765c.setText(aVar.b);
+        this.f11077c.setGravity(17);
+        this.f11077c.setMaxLines(2);
+        this.f11077c.setEllipsize(TextUtils.TruncateAt.END);
+        this.f11077c.setTextColor(Color.parseColor("#2f2f2f"));
+        this.f11077c.setTextSize(1, 16.0f);
+        this.f11077c.setText(aVar.b);
         e(aVar);
-        ImageView imageView = new ImageView(aVar.f24768a);
+        ImageView imageView = new ImageView(aVar.f11080a);
         this.d = imageView;
         imageView.setScaleType(ImageView.ScaleType.FIT_XY);
         this.d.setImageDrawable(new ColorDrawable(Color.parseColor("#cdd2d4")));
@@ -106,38 +106,38 @@ public class d {
     }
 
     private void c(a aVar) {
-        ImageView imageView = new ImageView(aVar.f24768a);
+        ImageView imageView = new ImageView(aVar.f11080a);
         imageView.setImageDrawable(new ColorDrawable(-16777216));
         imageView.setAlpha(0.6f);
-        this.f24764a.addView(imageView, new RelativeLayout.LayoutParams(-1, -1));
+        this.f11076a.addView(imageView, new RelativeLayout.LayoutParams(-1, -1));
     }
 
     private void d(a aVar) {
-        com.opos.cmn.e.a.a.c cVar = new com.opos.cmn.e.a.a.c(aVar.f24768a, 14.0f);
+        com.opos.cmn.e.a.a.c cVar = new com.opos.cmn.e.a.a.c(aVar.f11080a, 14.0f);
         cVar.setImageDrawable(new ColorDrawable(-1));
         this.b.addView(cVar, new RelativeLayout.LayoutParams(-1, -1));
     }
 
     private void e(a aVar) {
-        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(aVar.f24768a, 260.0f), com.opos.cmn.an.h.f.a.a(aVar.f24768a, 91.0f));
+        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(aVar.f11080a, 260.0f), com.opos.cmn.an.h.f.a.a(aVar.f11080a, 91.0f));
         layoutParams.addRule(10);
-        this.b.addView(this.f24765c, layoutParams);
+        this.b.addView(this.f11077c, layoutParams);
     }
 
     private void f(a aVar) {
-        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(aVar.f24768a, 260.0f), com.opos.cmn.an.h.f.a.a(aVar.f24768a, 1.0f));
+        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(aVar.f11080a, 260.0f), com.opos.cmn.an.h.f.a.a(aVar.f11080a, 1.0f));
         layoutParams.addRule(3, 1);
         this.b.addView(this.d, layoutParams);
     }
 
     private void g(a aVar) {
-        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(aVar.f24768a, 260.0f), com.opos.cmn.an.h.f.a.a(aVar.f24768a, 130.0f));
+        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(aVar.f11080a, 260.0f), com.opos.cmn.an.h.f.a.a(aVar.f11080a, 130.0f));
         layoutParams.addRule(13);
-        this.f24764a.addView(this.b, layoutParams);
+        this.f11076a.addView(this.b, layoutParams);
     }
 
     private void h(a aVar) {
-        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(aVar.f24768a, 260.0f), com.opos.cmn.an.h.f.a.a(aVar.f24768a, 38.0f));
+        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(aVar.f11080a, 260.0f), com.opos.cmn.an.h.f.a.a(aVar.f11080a, 38.0f));
         layoutParams.addRule(12);
         this.b.addView(this.e, layoutParams);
     }
@@ -158,7 +158,7 @@ public class d {
                 this.f.getWindow().setAttributes(attributes);
             }
             g.a(activity.getApplicationContext(), this.f.getWindow());
-            this.f.setContentView(this.f24764a);
+            this.f.setContentView(this.f11076a);
         }
         if (this.f.isShowing()) {
             return;
@@ -167,18 +167,18 @@ public class d {
     }
 
     protected void a(a aVar) {
-        LinearLayout linearLayout = new LinearLayout(aVar.f24768a);
+        LinearLayout linearLayout = new LinearLayout(aVar.f11080a);
         this.e = linearLayout;
         linearLayout.setOrientation(0);
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(1, -1);
         layoutParams.weight = 1.0f;
-        TextView textView = new TextView(aVar.f24768a);
+        TextView textView = new TextView(aVar.f11080a);
         textView.setGravity(17);
         textView.setSingleLine();
         textView.setEllipsize(TextUtils.TruncateAt.END);
         textView.setTextColor(Color.parseColor("#767575"));
         textView.setTextSize(1, 13.0f);
-        textView.setText(aVar.f24769c);
+        textView.setText(aVar.f11081c);
         final b bVar = aVar.d;
         com.opos.cmn.e.a.a aVar2 = new com.opos.cmn.e.a.a() { // from class: com.opos.cmn.e.a.b.b.d.1
             @Override // com.opos.cmn.e.a.a
@@ -192,10 +192,10 @@ public class d {
         textView.setOnTouchListener(aVar2);
         textView.setOnClickListener(aVar2);
         this.e.addView(textView, layoutParams);
-        TextView textView2 = new TextView(aVar.f24768a);
+        TextView textView2 = new TextView(aVar.f11080a);
         textView2.setBackgroundColor(Color.parseColor("#cdd2d4"));
-        this.e.addView(textView2, new LinearLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(aVar.f24768a, 1.0f), -1));
-        TextView textView3 = new TextView(aVar.f24768a);
+        this.e.addView(textView2, new LinearLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(aVar.f11080a, 1.0f), -1));
+        TextView textView3 = new TextView(aVar.f11080a);
         textView3.setGravity(17);
         textView3.setSingleLine();
         textView3.setEllipsize(TextUtils.TruncateAt.END);
@@ -230,7 +230,7 @@ public class d {
         if (TextUtils.isEmpty(charSequence)) {
             return;
         }
-        this.f24765c.setText(charSequence);
+        this.f11077c.setText(charSequence);
     }
 
     public boolean a() {

@@ -8,13 +8,9 @@ import java.util.concurrent.BlockingQueue;
 /* loaded from: source-4181928-dex2jar.jar:com/mokee/volley/NetworkDispatcher.class */
 public class NetworkDispatcher extends Thread {
     private static final String[] f = null;
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Cache f24236a;
+    private final Cache a;
     private final Network b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final BlockingQueue<Request<?>> f24237c;
+    private final BlockingQueue<Request<?>> c;
     private final ResponseDelivery d;
     private volatile boolean e = false;
 
@@ -24,9 +20,9 @@ public class NetworkDispatcher extends Thread {
     }
 
     public NetworkDispatcher(BlockingQueue<Request<?>> blockingQueue, Network network, Cache cache, ResponseDelivery responseDelivery) {
-        this.f24237c = blockingQueue;
+        this.c = blockingQueue;
         this.b = network;
-        this.f24236a = cache;
+        this.a = cache;
         this.d = responseDelivery;
     }
 
@@ -54,7 +50,7 @@ public class NetworkDispatcher extends Thread {
         Process.setThreadPriority(10);
         while (true) {
             try {
-                take = this.f24237c.take();
+                take = this.c.take();
                 try {
                     take.addMarker(f[6]);
                 } catch (VolleyError e) {
@@ -86,7 +82,7 @@ public class NetworkDispatcher extends Thread {
                     if (take.shouldCache()) {
                         try {
                             if (parseNetworkResponse.cacheEntry != null) {
-                                this.f24236a.put(take.getCacheKey(), parseNetworkResponse.cacheEntry);
+                                this.a.put(take.getCacheKey(), parseNetworkResponse.cacheEntry);
                                 take.addMarker(f[4]);
                             }
                         } catch (InterruptedException e4) {

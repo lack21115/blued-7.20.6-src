@@ -5,11 +5,11 @@ package com.tencent.ugc;
 public final /* synthetic */ class ai implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final TXVideoEditer f40224a;
+    private final TXVideoEditer f26533a;
     private final int b;
 
     private ai(TXVideoEditer tXVideoEditer, int i) {
-        this.f40224a = tXVideoEditer;
+        this.f26533a = tXVideoEditer;
         this.b = i;
     }
 
@@ -19,6 +19,6 @@ public final /* synthetic */ class ai implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        TXVideoEditer.lambda$setProfile$4(this.f40224a, this.b);
+        TXVideoEditer.lambda$setProfile$4(this.f26533a, this.b);
     }
 }

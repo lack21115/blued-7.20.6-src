@@ -1,6 +1,7 @@
 package com.soft.blued.ui.msg_group.viewmodel;
 
 import com.blued.android.framework.http.parser.BluedEntityA;
+import com.blued.android.module.common.api.ApiState;
 import com.blued.android.module.common.api.BluedApiProxy;
 import com.blued.android.module.common.api.Error;
 import com.blued.android.module.common.api.Succeed;
@@ -19,48 +20,44 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.CoroutineScope;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 @Metadata
 @DebugMetadata(b = "GroupCreateViewModel.kt", c = {27}, d = "invokeSuspend", e = "com.soft.blued.ui.msg_group.viewmodel.GroupCreateViewModel$createGroup$1")
 /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/msg_group/viewmodel/GroupCreateViewModel$createGroup$1.class */
-public final class GroupCreateViewModel$createGroup$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+final class GroupCreateViewModel$createGroup$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
 
     /* renamed from: a  reason: collision with root package name */
-    int f32841a;
+    int f19150a;
     final /* synthetic */ Map<String, String> b;
 
     /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ GroupCreateViewModel f32842c;
+    final /* synthetic */ GroupCreateViewModel f19151c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public GroupCreateViewModel$createGroup$1(Map<String, String> map, GroupCreateViewModel groupCreateViewModel, Continuation<? super GroupCreateViewModel$createGroup$1> continuation) {
         super(2, continuation);
         this.b = map;
-        this.f32842c = groupCreateViewModel;
+        this.f19151c = groupCreateViewModel;
     }
 
-    @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-        return ((GroupCreateViewModel$createGroup$1) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+        return create(coroutineScope, continuation).invokeSuspend(Unit.a);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        return new GroupCreateViewModel$createGroup$1(this.b, this.f32842c, continuation);
+        return new GroupCreateViewModel$createGroup$1(this.b, this.f19151c, continuation);
     }
 
     /* JADX WARN: Type inference failed for: r1v11, types: [java.lang.Object] */
     /* JADX WARN: Type inference failed for: r1v8, types: [java.lang.Object] */
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         Object a2 = IntrinsicsKt.a();
-        int i = this.f32841a;
+        int i = this.f19150a;
         if (i == 0) {
             ResultKt.a(obj);
-            this.f32841a = 1;
-            Object d = ((GroupApiService) BluedApiProxy.b().a(GroupApiService.class)).d(this.b, this);
+            this.f19150a = 1;
+            Object d = ((GroupApiService) BluedApiProxy.b().a(GroupApiService.class)).d(this.b, (Continuation) this);
             obj = d;
             if (d == a2) {
                 return a2;
@@ -71,23 +68,23 @@ public final class GroupCreateViewModel$createGroup$1 extends SuspendLambda impl
             ResultKt.a(obj);
         }
         BluedEntityA bluedEntityA = (BluedEntityA) obj;
-        GroupCreateViewModel groupCreateViewModel = this.f32842c;
+        GroupCreateViewModel groupCreateViewModel = this.f19151c;
         if (bluedEntityA.code == 200) {
             if (bluedEntityA.hasData()) {
-                List<T> data = bluedEntityA.data;
-                Intrinsics.c(data, "data");
+                List list = bluedEntityA.data;
+                Intrinsics.c(list, "data");
                 bluedEntityA.hasMore();
-                groupCreateViewModel.d().setValue(data.get(0));
+                groupCreateViewModel.d().setValue(list.get(0));
             } else {
                 groupCreateViewModel.d().setValue(CollectionsKt.b().get(0));
             }
-            Succeed succeed = Succeed.f10631a;
+            ApiState apiState = Succeed.a;
         } else {
             int i2 = bluedEntityA.code;
-            String message = bluedEntityA.message;
-            Intrinsics.c(message, "message");
-            new Error(i2, message);
+            String str = bluedEntityA.message;
+            Intrinsics.c(str, "message");
+            new Error(i2, str);
         }
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

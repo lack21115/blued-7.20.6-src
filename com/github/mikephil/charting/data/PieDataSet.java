@@ -10,7 +10,7 @@ public class PieDataSet extends DataSet<PieEntry> implements IPieDataSet {
     private boolean D;
 
     /* renamed from: a  reason: collision with root package name */
-    private float f22135a;
+    private float f8528a;
     private boolean o;
     private float p;
     private ValuePosition q;
@@ -47,7 +47,7 @@ public class PieDataSet extends DataSet<PieEntry> implements IPieDataSet {
 
     @Override // com.github.mikephil.charting.interfaces.datasets.IPieDataSet
     public float a() {
-        return this.f22135a;
+        return this.f8528a;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

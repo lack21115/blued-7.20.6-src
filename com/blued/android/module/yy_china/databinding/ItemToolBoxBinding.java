@@ -10,20 +10,16 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ItemToolBoxBinding.class */
 public final class ItemToolBoxBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ShapeTextView f16665a;
+    public final ShapeTextView a;
     public final SquareImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final TextView f16666c;
+    public final TextView c;
     private final LinearLayout d;
 
     private ItemToolBoxBinding(LinearLayout linearLayout, ShapeTextView shapeTextView, SquareImageView squareImageView, TextView textView) {
         this.d = linearLayout;
-        this.f16665a = shapeTextView;
+        this.a = shapeTextView;
         this.b = squareImageView;
-        this.f16666c = textView;
+        this.c = textView;
     }
 
     public static ItemToolBoxBinding a(View view) {
@@ -46,7 +42,6 @@ public final class ItemToolBoxBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
         return this.d;

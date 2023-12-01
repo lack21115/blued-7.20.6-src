@@ -1,5 +1,6 @@
 package com.huawei.hms.hatool;
 
+import com.anythink.pd.ExHandler;
 import org.json.JSONObject;
 
 /* loaded from: source-7994992-dex2jar.jar:com/huawei/hms/hatool/f1.class */
@@ -7,7 +8,7 @@ public class f1 extends n {
     public String b = "";
 
     /* renamed from: c  reason: collision with root package name */
-    public String f22742c = "";
+    public String f9134c = "";
     public String d = "";
     public String e = "";
     public String f = "";
@@ -16,12 +17,12 @@ public class f1 extends n {
     @Override // com.huawei.hms.hatool.s
     public JSONObject a() {
         JSONObject jSONObject = new JSONObject();
-        jSONObject.put("androidid", this.f22773a);
+        jSONObject.put("androidid", this.f9165a);
         jSONObject.put("oaid", this.g);
         jSONObject.put("uuid", this.f);
         jSONObject.put("upid", this.e);
-        jSONObject.put("imei", this.b);
-        jSONObject.put("sn", this.f22742c);
+        jSONObject.put(ExHandler.JSON_REQUEST_IMEI, this.b);
+        jSONObject.put("sn", this.f9134c);
         jSONObject.put("udid", this.d);
         return jSONObject;
     }
@@ -35,7 +36,7 @@ public class f1 extends n {
     }
 
     public void d(String str) {
-        this.f22742c = str;
+        this.f9134c = str;
     }
 
     public void e(String str) {

@@ -15,9 +15,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/statistics/util/Utils.class */
 public final class Utils {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static Handler f18734a = new Handler(Looper.getMainLooper());
+    private static Handler a = new Handler(Looper.getMainLooper());
 
     public static Metadata.Key<String> a(String str) {
         return Metadata.Key.of(str, Metadata.ASCII_STRING_MARSHALLER);
@@ -108,11 +106,11 @@ public final class Utils {
     }
 
     public static void a(Runnable runnable) {
-        f18734a.post(runnable);
+        a.post(runnable);
     }
 
     public static void a(Runnable runnable, long j) {
-        f18734a.postDelayed(runnable, j);
+        a.postDelayed(runnable, j);
     }
 
     public static String b(String str) {
@@ -124,6 +122,6 @@ public final class Utils {
     }
 
     public static void b(Runnable runnable) {
-        f18734a.removeCallbacks(runnable);
+        a.removeCallbacks(runnable);
     }
 }

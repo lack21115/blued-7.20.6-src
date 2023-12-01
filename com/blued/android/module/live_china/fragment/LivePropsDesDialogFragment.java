@@ -10,9 +10,9 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import com.anythink.expressad.d.a.b;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.ui.BaseDialogFragment;
 import com.blued.android.framework.utils.ReflectionUtils;
@@ -35,9 +35,7 @@ import kotlin.jvm.internal.StringCompanionObject;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LivePropsDesDialogFragment.class */
 public final class LivePropsDesDialogFragment extends BaseDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f13165a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private final Lazy b = LazyKt.a(new Function0<DialogLivePocketPropDesBinding>() { // from class: com.blued.android.module.live_china.fragment.LivePropsDesDialogFragment$viewBinding$2
         /* JADX INFO: Access modifiers changed from: package-private */
         {
@@ -108,7 +106,7 @@ public final class LivePropsDesDialogFragment extends BaseDialogFragment {
                 LivePropsDesDialogFragment.a(view);
             }
         });
-        d().f11803a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LivePropsDesDialogFragment$uLnHCDvK1Zzn-oN5jfNNRf2vN6g
+        d().a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LivePropsDesDialogFragment$uLnHCDvK1Zzn-oN5jfNNRf2vN6g
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 LivePropsDesDialogFragment.a(LivePropsDesDialogFragment.this, view);
@@ -120,14 +118,14 @@ public final class LivePropsDesDialogFragment extends BaseDialogFragment {
                 LivePropsDesDialogFragment.b(LivePropsDesDialogFragment.this, view);
             }
         });
-        ImageLoader.a(a(), livePocketModel.getImage()).a(d().f11804c);
+        ImageLoader.a(a(), livePocketModel.getImage()).a(d().c);
         d().d.setText(livePocketModel.getDescription());
         d().g.setText(livePocketModel.getName());
         if (livePocketModel.getEffect_time() > 0) {
             d().e.setVisibility(0);
-            if (livePocketModel.getEffect_time() < b.P) {
+            if (livePocketModel.getEffect_time() < 3600) {
                 TextView textView = d().e;
-                StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
+                StringCompanionObject stringCompanionObject = StringCompanionObject.a;
                 String string = getString(R.string.live_pocket_exp_time_minute);
                 Intrinsics.c(string, "getString(R.string.live_pocket_exp_time_minute)");
                 String format2 = String.format(string, Arrays.copyOf(new Object[]{String.valueOf(livePocketModel.getEffect_time() / 60)}, 1));
@@ -135,7 +133,7 @@ public final class LivePropsDesDialogFragment extends BaseDialogFragment {
                 textView.setText(format2);
             } else {
                 TextView textView2 = d().e;
-                StringCompanionObject stringCompanionObject2 = StringCompanionObject.f42549a;
+                StringCompanionObject stringCompanionObject2 = StringCompanionObject.a;
                 String string2 = getString(R.string.live_pocket_exp_time_hour);
                 Intrinsics.c(string2, "getString(R.string.live_pocket_exp_time_hour)");
                 String format3 = String.format(string2, Arrays.copyOf(new Object[]{String.valueOf(livePocketModel.getEffect_time() / 3600)}, 1));
@@ -151,7 +149,7 @@ public final class LivePropsDesDialogFragment extends BaseDialogFragment {
             return;
         }
         d().f.setVisibility(0);
-        SimpleDateFormat simpleDateFormat = TimeAndDateUtils.f10914c.get();
+        SimpleDateFormat simpleDateFormat = TimeAndDateUtils.c.get();
         if (TextUtils.equals(simpleDateFormat == null ? null : simpleDateFormat.format(new Date(livePocketModel.getExpire_time() * 1000)), "23:59:59")) {
             SimpleDateFormat simpleDateFormat2 = TimeAndDateUtils.m.get();
             format = simpleDateFormat2 == null ? null : simpleDateFormat2.format(new Date(livePocketModel.getExpire_time() * 1000));
@@ -164,7 +162,7 @@ public final class LivePropsDesDialogFragment extends BaseDialogFragment {
             str = "";
         }
         TextView textView3 = d().f;
-        StringCompanionObject stringCompanionObject3 = StringCompanionObject.f42549a;
+        StringCompanionObject stringCompanionObject3 = StringCompanionObject.a;
         String string3 = getString(R.string.live_pocket_date_use);
         Intrinsics.c(string3, "getString(R.string.live_pocket_date_use)");
         String format4 = String.format(string3, Arrays.copyOf(new Object[]{str}, 1));
@@ -186,7 +184,6 @@ public final class LivePropsDesDialogFragment extends BaseDialogFragment {
         return (DialogLivePocketPropDesBinding) this.b.getValue();
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
         Dialog dialog = new Dialog(requireActivity(), R.style.transparentFrameWindowStyleLive);
         dialog.requestWindowFeature(1);
@@ -203,14 +200,14 @@ public final class LivePropsDesDialogFragment extends BaseDialogFragment {
         return dialog;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
         e();
         return super.onCreateView(inflater, viewGroup, bundle);
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void show(FragmentManager manager, String str) {
         Intrinsics.e(manager, "manager");
         try {
@@ -218,7 +215,7 @@ public final class LivePropsDesDialogFragment extends BaseDialogFragment {
             ReflectionUtils.a(this, "mShownByMe", true);
             FragmentTransaction beginTransaction = manager.beginTransaction();
             Intrinsics.c(beginTransaction, "manager.beginTransaction()");
-            beginTransaction.add(this, str);
+            beginTransaction.add((Fragment) this, str);
             beginTransaction.commitAllowingStateLoss();
         } catch (Exception e) {
             super.show(manager, str);

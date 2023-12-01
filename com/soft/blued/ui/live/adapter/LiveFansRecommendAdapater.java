@@ -24,20 +24,20 @@ import java.util.List;
 public class LiveFansRecommendAdapater extends BaseQuickAdapter<LiveFansRecommendModel, BaseViewHolder> {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f31064a;
+    private Context f17374a;
     private IRequestHost b;
 
     /* renamed from: c  reason: collision with root package name */
-    private List<LiveFansRecommendModel> f31065c;
+    private List<LiveFansRecommendModel> f17375c;
     private List<String> d;
 
     public LiveFansRecommendAdapater(IRequestHost iRequestHost, Context context) {
         super((int) R.layout.live_join_recommend_item_view);
-        this.f31064a = context;
+        this.f17374a = context;
         this.b = iRequestHost;
-        this.f31065c = new ArrayList();
+        this.f17375c = new ArrayList();
         this.d = new ArrayList();
-        setNewData(this.f31065c);
+        setNewData(this.f17375c);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

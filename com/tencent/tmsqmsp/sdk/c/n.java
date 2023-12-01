@@ -7,14 +7,14 @@ import org.json.JSONObject;
 public class n implements d, e {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile n f39734a;
+    private static volatile n f26043a;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/tmsqmsp/sdk/c/n$a.class */
-    public class a implements f.InterfaceC1044f {
+    public class a implements f.InterfaceC0874f {
         public a() {
         }
 
-        @Override // com.tencent.tmsqmsp.sdk.c.f.InterfaceC1044f
+        @Override // com.tencent.tmsqmsp.sdk.c.f.InterfaceC0874f
         public int a(long j, long j2, long j3, Object obj, Object obj2, Object[] objArr, Object[] objArr2) {
             if (obj == null || !(obj instanceof String)) {
                 return 0;
@@ -31,18 +31,18 @@ public class n implements d, e {
     }
 
     public static n b() {
-        if (f39734a == null) {
+        if (f26043a == null) {
             synchronized (n.class) {
                 try {
-                    if (f39734a == null) {
-                        f39734a = new n();
+                    if (f26043a == null) {
+                        f26043a = new n();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f39734a;
+        return f26043a;
     }
 
     @Override // com.tencent.tmsqmsp.sdk.c.e

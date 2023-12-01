@@ -13,11 +13,11 @@ import java.util.Queue;
 public class ListPreloader<T> implements AbsListView.OnScrollListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private final int f20653a;
+    private final int f7047a;
     private final PreloadTargetQueue b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final RequestManager f20654c;
+    private final RequestManager f7048c;
     private final PreloadModelProvider<T> d;
     private final PreloadSizeProvider<T> e;
     private int f;
@@ -43,23 +43,23 @@ public class ListPreloader<T> implements AbsListView.OnScrollListener {
     public static final class PreloadTarget implements Target<Object> {
 
         /* renamed from: a  reason: collision with root package name */
-        int f20655a;
+        int f7049a;
         int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private Request f20656c;
+        private Request f7050c;
 
         PreloadTarget() {
         }
 
         @Override // com.bumptech.glide.request.target.Target
         public Request getRequest() {
-            return this.f20656c;
+            return this.f7050c;
         }
 
         @Override // com.bumptech.glide.request.target.Target
         public void getSize(SizeReadyCallback sizeReadyCallback) {
-            sizeReadyCallback.a(this.b, this.f20655a);
+            sizeReadyCallback.a(this.b, this.f7049a);
         }
 
         @Override // com.bumptech.glide.manager.LifecycleListener
@@ -96,7 +96,7 @@ public class ListPreloader<T> implements AbsListView.OnScrollListener {
 
         @Override // com.bumptech.glide.request.target.Target
         public void setRequest(Request request) {
-            this.f20656c = request;
+            this.f7050c = request;
         }
     }
 
@@ -105,13 +105,13 @@ public class ListPreloader<T> implements AbsListView.OnScrollListener {
     public static final class PreloadTargetQueue {
 
         /* renamed from: a  reason: collision with root package name */
-        final Queue<PreloadTarget> f20657a;
+        final Queue<PreloadTarget> f7051a;
 
         public PreloadTarget a(int i, int i2) {
-            PreloadTarget poll = this.f20657a.poll();
-            this.f20657a.offer(poll);
+            PreloadTarget poll = this.f7051a.poll();
+            this.f7051a.offer(poll);
             poll.b = i;
-            poll.f20655a = i2;
+            poll.f7049a = i2;
             return poll;
         }
     }
@@ -120,10 +120,10 @@ public class ListPreloader<T> implements AbsListView.OnScrollListener {
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= this.b.f20657a.size()) {
+            if (i2 >= this.b.f7051a.size()) {
                 return;
             }
-            this.f20654c.a(this.b.a(0, 0));
+            this.f7048c.a(this.b.a(0, 0));
             i = i2 + 1;
         }
     }
@@ -170,7 +170,7 @@ public class ListPreloader<T> implements AbsListView.OnScrollListener {
             this.j = z;
             a();
         }
-        a(i, (z ? this.f20653a : -this.f20653a) + i);
+        a(i, (z ? this.f7047a : -this.f7047a) + i);
     }
 
     private void a(T t, int i, int i2) {

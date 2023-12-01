@@ -1,5 +1,6 @@
 package androidx.viewpager2.adapter;
 
+import android.app.backup.FullBackup;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -26,11 +27,11 @@ import androidx.viewpager2.widget.ViewPager2;
 public abstract class FragmentStateAdapter extends RecyclerView.Adapter<FragmentViewHolder> implements StatefulAdapter {
 
     /* renamed from: a  reason: collision with root package name */
-    final Lifecycle f3566a;
+    final Lifecycle f3518a;
     final FragmentManager b;
 
     /* renamed from: c  reason: collision with root package name */
-    final LongSparseArray<Fragment> f3567c;
+    final LongSparseArray<Fragment> f3519c;
     boolean d;
     private final LongSparseArray<Fragment.SavedState> e;
     private final LongSparseArray<Integer> f;
@@ -77,7 +78,7 @@ public abstract class FragmentStateAdapter extends RecyclerView.Adapter<Fragment
         private ViewPager2.OnPageChangeCallback b;
 
         /* renamed from: c  reason: collision with root package name */
-        private RecyclerView.AdapterDataObserver f3577c;
+        private RecyclerView.AdapterDataObserver f3529c;
         private LifecycleEventObserver d;
         private ViewPager2 e;
         private long f = -1;
@@ -114,7 +115,7 @@ public abstract class FragmentStateAdapter extends RecyclerView.Adapter<Fragment
                     FragmentMaxLifecycleEnforcer.this.a(true);
                 }
             };
-            this.f3577c = dataSetChangeObserver;
+            this.f3529c = dataSetChangeObserver;
             FragmentStateAdapter.this.registerAdapterDataObserver(dataSetChangeObserver);
             this.d = new LifecycleEventObserver() { // from class: androidx.viewpager2.adapter.FragmentStateAdapter.FragmentMaxLifecycleEnforcer.3
                 @Override // androidx.lifecycle.LifecycleEventObserver
@@ -122,28 +123,28 @@ public abstract class FragmentStateAdapter extends RecyclerView.Adapter<Fragment
                     FragmentMaxLifecycleEnforcer.this.a(false);
                 }
             };
-            FragmentStateAdapter.this.f3566a.addObserver(this.d);
+            FragmentStateAdapter.this.f3518a.addObserver(this.d);
         }
 
         void a(boolean z) {
             int currentItem;
             Fragment fragment;
-            if (FragmentStateAdapter.this.b() || this.e.getScrollState() != 0 || FragmentStateAdapter.this.f3567c.isEmpty() || FragmentStateAdapter.this.getItemCount() == 0 || (currentItem = this.e.getCurrentItem()) >= FragmentStateAdapter.this.getItemCount()) {
+            if (FragmentStateAdapter.this.b() || this.e.getScrollState() != 0 || FragmentStateAdapter.this.f3519c.isEmpty() || FragmentStateAdapter.this.getItemCount() == 0 || (currentItem = this.e.getCurrentItem()) >= FragmentStateAdapter.this.getItemCount()) {
                 return;
             }
             long itemId = FragmentStateAdapter.this.getItemId(currentItem);
-            if ((itemId != this.f || z) && (fragment = FragmentStateAdapter.this.f3567c.get(itemId)) != null && fragment.isAdded()) {
+            if ((itemId != this.f || z) && (fragment = FragmentStateAdapter.this.f3519c.get(itemId)) != null && fragment.isAdded()) {
                 this.f = itemId;
                 FragmentTransaction beginTransaction = FragmentStateAdapter.this.b.beginTransaction();
                 Fragment fragment2 = null;
                 int i = 0;
                 while (true) {
                     int i2 = i;
-                    if (i2 >= FragmentStateAdapter.this.f3567c.size()) {
+                    if (i2 >= FragmentStateAdapter.this.f3519c.size()) {
                         break;
                     }
-                    long keyAt = FragmentStateAdapter.this.f3567c.keyAt(i2);
-                    Fragment valueAt = FragmentStateAdapter.this.f3567c.valueAt(i2);
+                    long keyAt = FragmentStateAdapter.this.f3519c.keyAt(i2);
+                    Fragment valueAt = FragmentStateAdapter.this.f3519c.valueAt(i2);
                     if (valueAt.isAdded()) {
                         if (keyAt != this.f) {
                             beginTransaction.setMaxLifecycle(valueAt, Lifecycle.State.STARTED);
@@ -166,8 +167,8 @@ public abstract class FragmentStateAdapter extends RecyclerView.Adapter<Fragment
 
         void b(RecyclerView recyclerView) {
             c(recyclerView).unregisterOnPageChangeCallback(this.b);
-            FragmentStateAdapter.this.unregisterAdapterDataObserver(this.f3577c);
-            FragmentStateAdapter.this.f3566a.removeObserver(this.d);
+            FragmentStateAdapter.this.unregisterAdapterDataObserver(this.f3529c);
+            FragmentStateAdapter.this.f3518a.removeObserver(this.d);
             this.e = null;
         }
     }
@@ -181,13 +182,13 @@ public abstract class FragmentStateAdapter extends RecyclerView.Adapter<Fragment
     }
 
     public FragmentStateAdapter(FragmentManager fragmentManager, Lifecycle lifecycle) {
-        this.f3567c = new LongSparseArray<>();
+        this.f3519c = new LongSparseArray<>();
         this.e = new LongSparseArray<>();
         this.f = new LongSparseArray<>();
         this.d = false;
         this.h = false;
         this.b = fragmentManager;
-        this.f3566a = lifecycle;
+        this.f3518a = lifecycle;
         super.setHasStableIds(true);
     }
 
@@ -229,7 +230,7 @@ public abstract class FragmentStateAdapter extends RecyclerView.Adapter<Fragment
         if (this.f.containsKey(j)) {
             return true;
         }
-        Fragment fragment = this.f3567c.get(j);
+        Fragment fragment = this.f3519c.get(j);
         return (fragment == null || (view = fragment.getView()) == null || view.getParent() == null) ? false : true;
     }
 
@@ -243,17 +244,17 @@ public abstract class FragmentStateAdapter extends RecyclerView.Adapter<Fragment
 
     private void b(int i) {
         long itemId = getItemId(i);
-        if (this.f3567c.containsKey(itemId)) {
+        if (this.f3519c.containsKey(itemId)) {
             return;
         }
         Fragment createFragment = createFragment(i);
         createFragment.setInitialSavedState(this.e.get(itemId));
-        this.f3567c.put(itemId, createFragment);
+        this.f3519c.put(itemId, createFragment);
     }
 
     private void b(long j) {
         ViewParent parent;
-        Fragment fragment = this.f3567c.get(j);
+        Fragment fragment = this.f3519c.get(j);
         if (fragment == null) {
             return;
         }
@@ -264,7 +265,7 @@ public abstract class FragmentStateAdapter extends RecyclerView.Adapter<Fragment
             this.e.remove(j);
         }
         if (!fragment.isAdded()) {
-            this.f3567c.remove(j);
+            this.f3519c.remove(j);
         } else if (b()) {
             this.h = true;
         } else {
@@ -272,7 +273,7 @@ public abstract class FragmentStateAdapter extends RecyclerView.Adapter<Fragment
                 this.e.put(j, this.b.saveFragmentInstanceState(fragment));
             }
             this.b.beginTransaction().remove(fragment).commitNow();
-            this.f3567c.remove(j);
+            this.f3519c.remove(j);
         }
     }
 
@@ -285,7 +286,7 @@ public abstract class FragmentStateAdapter extends RecyclerView.Adapter<Fragment
                 FragmentStateAdapter.this.a();
             }
         };
-        this.f3566a.addObserver(new LifecycleEventObserver() { // from class: androidx.viewpager2.adapter.FragmentStateAdapter.5
+        this.f3518a.addObserver(new LifecycleEventObserver() { // from class: androidx.viewpager2.adapter.FragmentStateAdapter.5
             @Override // androidx.lifecycle.LifecycleEventObserver
             public void onStateChanged(LifecycleOwner lifecycleOwner, Lifecycle.Event event) {
                 if (event == Lifecycle.Event.ON_DESTROY) {
@@ -305,10 +306,10 @@ public abstract class FragmentStateAdapter extends RecyclerView.Adapter<Fragment
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f3567c.size()) {
+            if (i2 >= this.f3519c.size()) {
                 break;
             }
-            long keyAt = this.f3567c.keyAt(i2);
+            long keyAt = this.f3519c.keyAt(i2);
             if (!containsItem(keyAt)) {
                 arraySet.add(Long.valueOf(keyAt));
                 this.f.remove(keyAt);
@@ -320,10 +321,10 @@ public abstract class FragmentStateAdapter extends RecyclerView.Adapter<Fragment
             int i3 = 0;
             while (true) {
                 int i4 = i3;
-                if (i4 >= this.f3567c.size()) {
+                if (i4 >= this.f3519c.size()) {
                     break;
                 }
-                long keyAt2 = this.f3567c.keyAt(i4);
+                long keyAt2 = this.f3519c.keyAt(i4);
                 if (!a(keyAt2)) {
                     arraySet.add(Long.valueOf(keyAt2));
                 }
@@ -352,7 +353,7 @@ public abstract class FragmentStateAdapter extends RecyclerView.Adapter<Fragment
     }
 
     void a(final FragmentViewHolder fragmentViewHolder) {
-        Fragment fragment = this.f3567c.get(fragmentViewHolder.getItemId());
+        Fragment fragment = this.f3519c.get(fragmentViewHolder.getItemId());
         if (fragment == null) {
             throw new IllegalStateException("Design assumption violated.");
         }
@@ -373,7 +374,7 @@ public abstract class FragmentStateAdapter extends RecyclerView.Adapter<Fragment
             if (this.b.isDestroyed()) {
                 return;
             }
-            this.f3566a.addObserver(new LifecycleEventObserver() { // from class: androidx.viewpager2.adapter.FragmentStateAdapter.2
+            this.f3518a.addObserver(new LifecycleEventObserver() { // from class: androidx.viewpager2.adapter.FragmentStateAdapter.2
                 @Override // androidx.lifecycle.LifecycleEventObserver
                 public void onStateChanged(LifecycleOwner lifecycleOwner, Lifecycle.Event event) {
                     if (FragmentStateAdapter.this.b()) {
@@ -388,7 +389,7 @@ public abstract class FragmentStateAdapter extends RecyclerView.Adapter<Fragment
         } else {
             a(fragment, a2);
             FragmentTransaction beginTransaction = this.b.beginTransaction();
-            beginTransaction.add(fragment, "f" + fragmentViewHolder.getItemId()).setMaxLifecycle(fragment, Lifecycle.State.STARTED).commitNow();
+            beginTransaction.add(fragment, FullBackup.DATA_TREE_TOKEN + fragmentViewHolder.getItemId()).setMaxLifecycle(fragment, Lifecycle.State.STARTED).commitNow();
             this.g.a(false);
         }
     }
@@ -478,7 +479,7 @@ public abstract class FragmentStateAdapter extends RecyclerView.Adapter<Fragment
 
     @Override // androidx.viewpager2.adapter.StatefulAdapter
     public final void restoreState(Parcelable parcelable) {
-        if (!this.e.isEmpty() || !this.f3567c.isEmpty()) {
+        if (!this.e.isEmpty() || !this.f3519c.isEmpty()) {
             throw new IllegalStateException("Expected the adapter to be 'fresh' while restoring state.");
         }
         Bundle bundle = (Bundle) parcelable;
@@ -487,7 +488,7 @@ public abstract class FragmentStateAdapter extends RecyclerView.Adapter<Fragment
         }
         for (String str : bundle.keySet()) {
             if (a(str, "f#")) {
-                this.f3567c.put(b(str, "f#"), this.b.getFragment(bundle, str));
+                this.f3519c.put(b(str, "f#"), this.b.getFragment(bundle, str));
             } else if (!a(str, "s#")) {
                 throw new IllegalArgumentException("Unexpected key in savedState: " + str);
             } else {
@@ -498,7 +499,7 @@ public abstract class FragmentStateAdapter extends RecyclerView.Adapter<Fragment
                 }
             }
         }
-        if (this.f3567c.isEmpty()) {
+        if (this.f3519c.isEmpty()) {
             return;
         }
         this.h = true;
@@ -510,15 +511,15 @@ public abstract class FragmentStateAdapter extends RecyclerView.Adapter<Fragment
     @Override // androidx.viewpager2.adapter.StatefulAdapter
     public final Parcelable saveState() {
         int i;
-        Bundle bundle = new Bundle(this.f3567c.size() + this.e.size());
+        Bundle bundle = new Bundle(this.f3519c.size() + this.e.size());
         int i2 = 0;
         while (true) {
             int i3 = i2;
-            if (i3 >= this.f3567c.size()) {
+            if (i3 >= this.f3519c.size()) {
                 break;
             }
-            long keyAt = this.f3567c.keyAt(i3);
-            Fragment fragment = this.f3567c.get(keyAt);
+            long keyAt = this.f3519c.keyAt(i3);
+            Fragment fragment = this.f3519c.get(keyAt);
             if (fragment != null && fragment.isAdded()) {
                 this.b.putFragment(bundle, a("f#", keyAt), fragment);
             }

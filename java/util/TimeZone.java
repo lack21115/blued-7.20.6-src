@@ -1,6 +1,5 @@
 package java.util;
 
-import android.text.format.Time;
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.regex.Matcher;
@@ -19,7 +18,7 @@ public abstract class TimeZone implements Serializable, Cloneable {
     private String ID;
     private static final Pattern CUSTOM_ZONE_ID_PATTERN = Pattern.compile("^GMT[-+](\\d{1,2})(:?(\\d\\d))?$");
     private static final TimeZone GMT = new SimpleTimeZone(0, "GMT");
-    private static final TimeZone UTC = new SimpleTimeZone(0, Time.TIMEZONE_UTC);
+    private static final TimeZone UTC = new SimpleTimeZone(0, "UTC");
 
     private static void appendNumber(StringBuilder sb, int i, int i2) {
         String num = Integer.toString(i2);
@@ -38,17 +37,17 @@ public abstract class TimeZone implements Serializable, Cloneable {
 
     public static String createGmtOffsetString(boolean z, boolean z2, int i) {
         int i2 = i / 60000;
-        char c2 = '+';
+        char c = '+';
         int i3 = i2;
         if (i2 < 0) {
-            c2 = '-';
+            c = '-';
             i3 = -i2;
         }
         StringBuilder sb = new StringBuilder(9);
         if (z) {
             sb.append("GMT");
         }
-        sb.append(c2);
+        sb.append(c);
         appendNumber(sb, 2, i3 / 60);
         if (z2) {
             sb.append(':');
@@ -94,7 +93,7 @@ public abstract class TimeZone implements Serializable, Cloneable {
                     return null;
                 }
                 char charAt = str.charAt(3);
-                int i2 = (3600000 * parseInt) + (60000 * i);
+                int i2 = (Grego.MILLIS_PER_HOUR * parseInt) + (60000 * i);
                 int i3 = i2;
                 if (charAt == '-') {
                     i3 = -i2;
@@ -260,7 +259,10 @@ public abstract class TimeZone implements Serializable, Cloneable {
     }
 
     public int getDSTSavings() {
-        return useDaylightTime() ? 3600000 : 0;
+        if (useDaylightTime()) {
+            return Grego.MILLIS_PER_HOUR;
+        }
+        return 0;
     }
 
     public final String getDisplayName() {

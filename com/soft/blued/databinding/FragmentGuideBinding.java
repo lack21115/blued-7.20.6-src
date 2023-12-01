@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentGuideBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ConstraintLayout f28846a;
+    private final ConstraintLayout f15156a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f28846a;
+        return this.f15156a;
     }
 }

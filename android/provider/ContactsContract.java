@@ -1,5 +1,6 @@
 package android.provider;
 
+import android.R;
 import android.accounts.Account;
 import android.app.Activity;
 import android.content.ActivityNotFoundException;
@@ -27,7 +28,6 @@ import android.text.TextUtils;
 import android.util.Pair;
 import android.view.View;
 import android.widget.Toast;
-import com.android.internal.R;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -131,15 +131,15 @@ public final class ContactsContract {
             public static final int getTypeLabelResource(int i) {
                 switch (i) {
                     case 1:
-                        return R.string.emailTypeHome;
+                        return 17040418;
                     case 2:
-                        return R.string.emailTypeWork;
+                        return 17040419;
                     case 3:
-                        return R.string.emailTypeOther;
+                        return 17040420;
                     case 4:
-                        return R.string.emailTypeMobile;
+                        return 17040421;
                     default:
-                        return R.string.emailTypeCustom;
+                        return 17040417;
                 }
             }
         }
@@ -161,17 +161,17 @@ public final class ContactsContract {
 
             public static int getTypeResource(Integer num) {
                 if (num == null) {
-                    return R.string.eventTypeOther;
+                    return 17040416;
                 }
                 switch (num.intValue()) {
                     case 1:
-                        return R.string.eventTypeAnniversary;
+                        return 17040415;
                     case 2:
-                        return R.string.eventTypeOther;
+                        return 17040416;
                     case 3:
-                        return R.string.eventTypeBirthday;
+                        return 17040414;
                     default:
-                        return R.string.eventTypeCustom;
+                        return 17040413;
                 }
             }
         }
@@ -225,25 +225,25 @@ public final class ContactsContract {
             public static final int getProtocolLabelResource(int i) {
                 switch (i) {
                     case 0:
-                        return R.string.imProtocolAim;
+                        return 17040431;
                     case 1:
-                        return R.string.imProtocolMsn;
+                        return 17040432;
                     case 2:
-                        return R.string.imProtocolYahoo;
+                        return 17040433;
                     case 3:
-                        return R.string.imProtocolSkype;
+                        return 17040434;
                     case 4:
-                        return R.string.imProtocolQq;
+                        return 17040435;
                     case 5:
-                        return R.string.imProtocolGoogleTalk;
+                        return 17040436;
                     case 6:
-                        return R.string.imProtocolIcq;
+                        return 17040437;
                     case 7:
-                        return R.string.imProtocolJabber;
+                        return 17040438;
                     case 8:
-                        return R.string.imProtocolNetMeeting;
+                        return 17040439;
                     default:
-                        return R.string.imProtocolCustom;
+                        return 17040430;
                 }
             }
 
@@ -254,13 +254,13 @@ public final class ContactsContract {
             public static final int getTypeLabelResource(int i) {
                 switch (i) {
                     case 1:
-                        return R.string.imTypeHome;
+                        return 17040427;
                     case 2:
-                        return R.string.imTypeWork;
+                        return 17040428;
                     case 3:
-                        return R.string.imTypeOther;
+                        return 17040429;
                     default:
-                        return R.string.imTypeCustom;
+                        return 17040426;
                 }
             }
         }
@@ -326,11 +326,11 @@ public final class ContactsContract {
             public static final int getTypeLabelResource(int i) {
                 switch (i) {
                     case 1:
-                        return R.string.orgTypeWork;
+                        return 17040440;
                     case 2:
-                        return R.string.orgTypeOther;
+                        return 17040441;
                     default:
-                        return R.string.orgTypeCustom;
+                        return 17040442;
                 }
             }
         }
@@ -386,47 +386,47 @@ public final class ContactsContract {
             public static final int getTypeLabelResource(int i) {
                 switch (i) {
                     case 1:
-                        return R.string.phoneTypeHome;
+                        return 17040393;
                     case 2:
-                        return R.string.phoneTypeMobile;
+                        return 17040394;
                     case 3:
-                        return R.string.phoneTypeWork;
+                        return 17040395;
                     case 4:
-                        return R.string.phoneTypeFaxWork;
+                        return 17040396;
                     case 5:
-                        return R.string.phoneTypeFaxHome;
+                        return 17040397;
                     case 6:
-                        return R.string.phoneTypePager;
+                        return 17040398;
                     case 7:
-                        return R.string.phoneTypeOther;
+                        return 17040399;
                     case 8:
-                        return R.string.phoneTypeCallback;
+                        return 17040400;
                     case 9:
-                        return R.string.phoneTypeCar;
+                        return 17040401;
                     case 10:
-                        return R.string.phoneTypeCompanyMain;
+                        return 17040402;
                     case 11:
-                        return R.string.phoneTypeIsdn;
+                        return 17040403;
                     case 12:
-                        return R.string.phoneTypeMain;
+                        return 17040404;
                     case 13:
-                        return R.string.phoneTypeOtherFax;
+                        return 17040405;
                     case 14:
-                        return R.string.phoneTypeRadio;
+                        return 17040406;
                     case 15:
-                        return R.string.phoneTypeTelex;
+                        return 17040407;
                     case 16:
-                        return R.string.phoneTypeTtyTdd;
+                        return 17040408;
                     case 17:
-                        return R.string.phoneTypeWorkMobile;
+                        return 17040409;
                     case 18:
-                        return R.string.phoneTypeWorkPager;
+                        return 17040410;
                     case 19:
-                        return R.string.phoneTypeAssistant;
+                        return 17040411;
                     case 20:
-                        return R.string.phoneTypeMms;
+                        return 17040412;
                     default:
-                        return R.string.phoneTypeCustom;
+                        return 17040392;
                 }
             }
         }
@@ -470,35 +470,35 @@ public final class ContactsContract {
             public static final int getTypeLabelResource(int i) {
                 switch (i) {
                     case 1:
-                        return R.string.relationTypeAssistant;
+                        return 17040444;
                     case 2:
-                        return R.string.relationTypeBrother;
+                        return 17040445;
                     case 3:
-                        return R.string.relationTypeChild;
+                        return 17040446;
                     case 4:
-                        return R.string.relationTypeDomesticPartner;
+                        return 17040447;
                     case 5:
-                        return R.string.relationTypeFather;
+                        return 17040448;
                     case 6:
-                        return R.string.relationTypeFriend;
+                        return 17040449;
                     case 7:
-                        return R.string.relationTypeManager;
+                        return 17040450;
                     case 8:
-                        return R.string.relationTypeMother;
+                        return 17040451;
                     case 9:
-                        return R.string.relationTypeParent;
+                        return 17040452;
                     case 10:
-                        return R.string.relationTypePartner;
+                        return 17040453;
                     case 11:
-                        return R.string.relationTypeReferredBy;
+                        return 17040454;
                     case 12:
-                        return R.string.relationTypeRelative;
+                        return 17040455;
                     case 13:
-                        return R.string.relationTypeSister;
+                        return 17040456;
                     case 14:
-                        return R.string.relationTypeSpouse;
+                        return 17040457;
                     default:
-                        return R.string.orgTypeCustom;
+                        return 17040442;
                 }
             }
         }
@@ -521,13 +521,13 @@ public final class ContactsContract {
             public static final int getTypeLabelResource(int i) {
                 switch (i) {
                     case 1:
-                        return R.string.sipAddressTypeHome;
+                        return 17040459;
                     case 2:
-                        return R.string.sipAddressTypeWork;
+                        return 17040460;
                     case 3:
-                        return R.string.sipAddressTypeOther;
+                        return 17040461;
                     default:
-                        return R.string.sipAddressTypeCustom;
+                        return 17040458;
                 }
             }
         }
@@ -578,13 +578,13 @@ public final class ContactsContract {
             public static final int getTypeLabelResource(int i) {
                 switch (i) {
                     case 1:
-                        return R.string.postalTypeHome;
+                        return 17040423;
                     case 2:
-                        return R.string.postalTypeWork;
+                        return 17040424;
                     case 3:
-                        return R.string.postalTypeOther;
+                        return 17040425;
                     default:
-                        return R.string.postalTypeCustom;
+                        return 17040422;
                 }
             }
         }
@@ -1381,7 +1381,7 @@ public final class ContactsContract {
             try {
                 context.startActivity(intent);
             } catch (ActivityNotFoundException e) {
-                Toast.makeText(context, (int) R.string.quick_contacts_not_available, 0).show();
+                Toast.makeText(context, 17040462, 0).show();
             }
         }
     }
@@ -1634,16 +1634,16 @@ public final class ContactsContract {
         public static final int getPresenceIconResourceId(int i) {
             switch (i) {
                 case 1:
-                    return 17301609;
+                    return R.drawable.presence_invisible;
                 case 2:
                 case 3:
-                    return 17301607;
+                    return R.drawable.presence_away;
                 case 4:
-                    return 17301608;
+                    return R.drawable.presence_busy;
                 case 5:
-                    return 17301611;
+                    return R.drawable.presence_online;
                 default:
-                    return 17301610;
+                    return R.drawable.presence_offline;
             }
         }
 

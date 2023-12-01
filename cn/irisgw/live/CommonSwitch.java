@@ -29,8 +29,8 @@ public final class CommonSwitch extends GeneratedMessageV3 implements CommonSwit
     private int status_;
     private static final CommonSwitch DEFAULT_INSTANCE = new CommonSwitch();
     private static final Parser<CommonSwitch> PARSER = new AbstractParser<CommonSwitch>() { // from class: cn.irisgw.live.CommonSwitch.1
-        @Override // com.google.protobuf.Parser
-        public CommonSwitch parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        /* renamed from: parsePartialFrom */
+        public CommonSwitch m1722parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             return new CommonSwitch(codedInputStream, extensionRegistryLite);
         }
     };
@@ -63,22 +63,22 @@ public final class CommonSwitch extends GeneratedMessageV3 implements CommonSwit
             boolean unused = CommonSwitch.alwaysUseFieldBuilders;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: addRepeatedField */
+        public Builder m1724addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.addRepeatedField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public CommonSwitch build() {
-            CommonSwitch buildPartial = buildPartial();
-            if (buildPartial.isInitialized()) {
-                return buildPartial;
+        /* renamed from: build */
+        public CommonSwitch m1726build() {
+            CommonSwitch m1728buildPartial = m1728buildPartial();
+            if (m1728buildPartial.isInitialized()) {
+                return m1728buildPartial;
             }
-            throw newUninitializedMessageException((Message) buildPartial);
+            throw newUninitializedMessageException(m1728buildPartial);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public CommonSwitch buildPartial() {
+        /* renamed from: buildPartial */
+        public CommonSwitch m1728buildPartial() {
             CommonSwitch commonSwitch = new CommonSwitch(this);
             commonSwitch.id_ = this.id_;
             commonSwitch.status_ = this.status_;
@@ -88,8 +88,8 @@ public final class CommonSwitch extends GeneratedMessageV3 implements CommonSwit
             return commonSwitch;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public Builder clear() {
+        /* renamed from: clear */
+        public Builder m1732clear() {
             super.clear();
             this.id_ = 0;
             this.status_ = 0;
@@ -110,8 +110,8 @@ public final class CommonSwitch extends GeneratedMessageV3 implements CommonSwit
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+        /* renamed from: clearField */
+        public Builder m1734clearField(Descriptors.FieldDescriptor fieldDescriptor) {
             return (Builder) super.clearField(fieldDescriptor);
         }
 
@@ -121,8 +121,8 @@ public final class CommonSwitch extends GeneratedMessageV3 implements CommonSwit
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+        /* renamed from: clearOneof */
+        public Builder m1737clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
             return (Builder) super.clearOneof(oneofDescriptor);
         }
 
@@ -132,10 +132,9 @@ public final class CommonSwitch extends GeneratedMessageV3 implements CommonSwit
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder m1743clone() {
+            return (Builder) super.clone();
         }
 
         @Override // cn.irisgw.live.CommonSwitchOrBuilder
@@ -160,12 +159,11 @@ public final class CommonSwitch extends GeneratedMessageV3 implements CommonSwit
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public CommonSwitch getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public CommonSwitch m1745getDefaultInstanceForType() {
             return CommonSwitch.getDefaultInstance();
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
         public Descriptors.Descriptor getDescriptorForType() {
             return LiveConstants.internal_static_cn_irisgw_live_CommonSwitch_descriptor;
         }
@@ -202,12 +200,10 @@ public final class CommonSwitch extends GeneratedMessageV3 implements CommonSwit
             return this.status_;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_CommonSwitch_fieldAccessorTable.ensureFieldAccessorsInitialized(CommonSwitch.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             return true;
         }
@@ -230,18 +226,18 @@ public final class CommonSwitch extends GeneratedMessageV3 implements CommonSwit
                 this.extra_ = commonSwitch.extra_;
                 onChanged();
             }
-            mergeUnknownFields(commonSwitch.unknownFields);
+            m1754mergeUnknownFields(commonSwitch.unknownFields);
             onChanged();
             return this;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+        /* renamed from: mergeFrom */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
         */
-        public cn.irisgw.live.CommonSwitch.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+        public cn.irisgw.live.CommonSwitch.Builder m1751mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
             /*
                 r4 = this;
                 r0 = 0
@@ -286,11 +282,11 @@ public final class CommonSwitch extends GeneratedMessageV3 implements CommonSwit
                 r0 = r6
                 throw r0
             */
-            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.CommonSwitch.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.CommonSwitch$Builder");
+            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.CommonSwitch.Builder.m1751mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.CommonSwitch$Builder");
         }
 
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder mergeFrom(Message message) {
+        /* renamed from: mergeFrom */
+        public Builder m1750mergeFrom(Message message) {
             if (message instanceof CommonSwitch) {
                 return mergeFrom((CommonSwitch) message);
             }
@@ -298,8 +294,8 @@ public final class CommonSwitch extends GeneratedMessageV3 implements CommonSwit
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: mergeUnknownFields */
+        public final Builder m1754mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.mergeUnknownFields(unknownFieldSet);
         }
 
@@ -341,8 +337,8 @@ public final class CommonSwitch extends GeneratedMessageV3 implements CommonSwit
             throw null;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: setField */
+        public Builder m1756setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.setField(fieldDescriptor, obj);
         }
 
@@ -352,8 +348,8 @@ public final class CommonSwitch extends GeneratedMessageV3 implements CommonSwit
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+        /* renamed from: setRepeatedField */
+        public Builder m1758setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
             return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
         }
 
@@ -363,8 +359,8 @@ public final class CommonSwitch extends GeneratedMessageV3 implements CommonSwit
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: setUnknownFields */
+        public final Builder m1760setUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.setUnknownFields(unknownFieldSet);
         }
     }
@@ -425,66 +421,65 @@ public final class CommonSwitch extends GeneratedMessageV3 implements CommonSwit
     }
 
     public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
+        return DEFAULT_INSTANCE.m1721toBuilder();
     }
 
     public static Builder newBuilder(CommonSwitch commonSwitch) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(commonSwitch);
+        return DEFAULT_INSTANCE.m1721toBuilder().mergeFrom(commonSwitch);
     }
 
     public static CommonSwitch parseDelimitedFrom(InputStream inputStream) throws IOException {
-        return (CommonSwitch) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
     }
 
     public static CommonSwitch parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (CommonSwitch) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static CommonSwitch parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString);
+        return (CommonSwitch) PARSER.parseFrom(byteString);
     }
 
     public static CommonSwitch parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString, extensionRegistryLite);
+        return (CommonSwitch) PARSER.parseFrom(byteString, extensionRegistryLite);
     }
 
     public static CommonSwitch parseFrom(CodedInputStream codedInputStream) throws IOException {
-        return (CommonSwitch) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
     }
 
     public static CommonSwitch parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (CommonSwitch) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
     }
 
     public static CommonSwitch parseFrom(InputStream inputStream) throws IOException {
-        return (CommonSwitch) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
     }
 
     public static CommonSwitch parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (CommonSwitch) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static CommonSwitch parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer);
+        return (CommonSwitch) PARSER.parseFrom(byteBuffer);
     }
 
     public static CommonSwitch parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+        return (CommonSwitch) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
     }
 
     public static CommonSwitch parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr);
+        return (CommonSwitch) PARSER.parseFrom(bArr);
     }
 
     public static CommonSwitch parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr, extensionRegistryLite);
+        return (CommonSwitch) PARSER.parseFrom(bArr, extensionRegistryLite);
     }
 
     public static Parser<CommonSwitch> parser() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
@@ -518,8 +513,8 @@ public final class CommonSwitch extends GeneratedMessageV3 implements CommonSwit
         return (ByteString) obj;
     }
 
-    @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-    public CommonSwitch getDefaultInstanceForType() {
+    /* renamed from: getDefaultInstanceForType */
+    public CommonSwitch m1716getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
     }
 
@@ -550,12 +545,10 @@ public final class CommonSwitch extends GeneratedMessageV3 implements CommonSwit
         return this.id_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
     public Parser<CommonSwitch> getParserForType() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public int getSerializedSize() {
         int i = this.memoizedSize;
         if (i != -1) {
@@ -589,12 +582,10 @@ public final class CommonSwitch extends GeneratedMessageV3 implements CommonSwit
         return this.status_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
     public final UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public int hashCode() {
         if (this.memoizedHashCode != 0) {
             return this.memoizedHashCode;
@@ -604,12 +595,10 @@ public final class CommonSwitch extends GeneratedMessageV3 implements CommonSwit
         return hashCode;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
         return LiveConstants.internal_static_cn_irisgw_live_CommonSwitch_fieldAccessorTable.ensureFieldAccessorsInitialized(CommonSwitch.class, Builder.class);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
     public final boolean isInitialized() {
         byte b = this.memoizedIsInitialized;
         if (b == 1) {
@@ -622,28 +611,26 @@ public final class CommonSwitch extends GeneratedMessageV3 implements CommonSwit
         return true;
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder newBuilderForType() {
+    /* renamed from: newBuilderForType */
+    public Builder m1719newBuilderForType() {
         return newBuilder();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.protobuf.GeneratedMessageV3
-    public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+    /* renamed from: newBuilderForType */
+    public Builder m1718newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
         return new Builder(builderParent);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
         return new CommonSwitch();
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder toBuilder() {
+    /* renamed from: toBuilder */
+    public Builder m1721toBuilder() {
         return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
         int i = this.id_;
         if (i != 0) {

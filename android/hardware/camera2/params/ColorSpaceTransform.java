@@ -3,7 +3,6 @@ package android.hardware.camera2.params;
 import android.hardware.camera2.utils.HashCodeHelpers;
 import android.util.Rational;
 import com.android.internal.util.Preconditions;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.util.Arrays;
 
 /* loaded from: source-9557208-dex2jar.jar:android/hardware/camera2/params/ColorSpaceTransform.class */
@@ -64,7 +63,7 @@ public final class ColorSpaceTransform {
                 int i4 = this.mElements[i + 0];
                 int i5 = this.mElements[i + 1];
                 sb.append(i4);
-                sb.append(BridgeUtil.SPLIT_MARK);
+                sb.append("/");
                 sb.append(i5);
                 if (i3 < 2) {
                     sb.append(", ");

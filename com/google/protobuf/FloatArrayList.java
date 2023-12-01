@@ -36,11 +36,11 @@ public final class FloatArrayList extends AbstractProtobufList<Float> implements
         }
         float[] fArr = this.array;
         if (i2 < fArr.length) {
-            System.arraycopy((Object) fArr, i, (Object) fArr, i + 1, i2 - i);
+            System.arraycopy(fArr, i, fArr, i + 1, i2 - i);
         } else {
             float[] fArr2 = new float[((i2 * 3) / 2) + 1];
-            System.arraycopy((Object) fArr, 0, (Object) fArr2, 0, i);
-            System.arraycopy((Object) this.array, i, (Object) fArr2, i + 1, this.size - i);
+            System.arraycopy(fArr, 0, fArr2, 0, i);
+            System.arraycopy(this.array, i, fArr2, i + 1, this.size - i);
             this.array = fArr2;
         }
         this.array[i] = f;
@@ -67,13 +67,13 @@ public final class FloatArrayList extends AbstractProtobufList<Float> implements
         addFloat(i, f.floatValue());
     }
 
-    @Override // com.google.protobuf.AbstractProtobufList, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // com.google.protobuf.AbstractProtobufList, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
     public boolean add(Float f) {
         addFloat(f.floatValue());
         return true;
     }
 
-    @Override // com.google.protobuf.AbstractProtobufList, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // com.google.protobuf.AbstractProtobufList, java.util.AbstractCollection, java.util.Collection, java.util.List
     public boolean addAll(Collection<? extends Float> collection) {
         ensureIsMutable();
         Internal.checkNotNull(collection);
@@ -90,7 +90,7 @@ public final class FloatArrayList extends AbstractProtobufList<Float> implements
                 if (i3 > fArr.length) {
                     this.array = Arrays.copyOf(fArr, i3);
                 }
-                System.arraycopy((Object) floatArrayList.array, 0, (Object) this.array, this.size, floatArrayList.size);
+                System.arraycopy(floatArrayList.array, 0, this.array, this.size, floatArrayList.size);
                 this.size = i3;
                 this.modCount++;
                 return true;
@@ -107,7 +107,7 @@ public final class FloatArrayList extends AbstractProtobufList<Float> implements
         float[] fArr = this.array;
         if (i == fArr.length) {
             float[] fArr2 = new float[((i * 3) / 2) + 1];
-            System.arraycopy((Object) fArr, 0, (Object) fArr2, 0, i);
+            System.arraycopy(fArr, 0, fArr2, 0, i);
             this.array = fArr2;
         }
         float[] fArr3 = this.array;
@@ -116,12 +116,12 @@ public final class FloatArrayList extends AbstractProtobufList<Float> implements
         fArr3[i2] = f;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public boolean contains(Object obj) {
         return indexOf(obj) != -1;
     }
 
-    @Override // com.google.protobuf.AbstractProtobufList, java.util.AbstractList, java.util.Collection, java.util.Set
+    @Override // com.google.protobuf.AbstractProtobufList, java.util.AbstractList, java.util.Collection, java.util.List
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
@@ -158,7 +158,7 @@ public final class FloatArrayList extends AbstractProtobufList<Float> implements
         return this.array[i];
     }
 
-    @Override // com.google.protobuf.AbstractProtobufList, java.util.AbstractList, java.util.Collection, java.util.Set
+    @Override // com.google.protobuf.AbstractProtobufList, java.util.AbstractList, java.util.Collection, java.util.List
     public int hashCode() {
         int i = 1;
         int i2 = 0;
@@ -209,14 +209,14 @@ public final class FloatArrayList extends AbstractProtobufList<Float> implements
         float f = fArr[i];
         int i2 = this.size;
         if (i < i2 - 1) {
-            System.arraycopy((Object) fArr, i + 1, (Object) fArr, i, (i2 - i) - 1);
+            System.arraycopy(fArr, i + 1, fArr, i, (i2 - i) - 1);
         }
         this.size--;
         this.modCount++;
         return Float.valueOf(f);
     }
 
-    @Override // com.google.protobuf.AbstractProtobufList, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // com.google.protobuf.AbstractProtobufList, java.util.AbstractCollection, java.util.Collection, java.util.List
     public boolean remove(Object obj) {
         ensureIsMutable();
         int i = 0;
@@ -227,7 +227,7 @@ public final class FloatArrayList extends AbstractProtobufList<Float> implements
             }
             if (obj.equals(Float.valueOf(this.array[i2]))) {
                 float[] fArr = this.array;
-                System.arraycopy((Object) fArr, i2 + 1, (Object) fArr, i2, (this.size - i2) - 1);
+                System.arraycopy(fArr, i2 + 1, fArr, i2, (this.size - i2) - 1);
                 this.size--;
                 this.modCount++;
                 return true;
@@ -243,7 +243,7 @@ public final class FloatArrayList extends AbstractProtobufList<Float> implements
             throw new IndexOutOfBoundsException("toIndex < fromIndex");
         }
         float[] fArr = this.array;
-        System.arraycopy((Object) fArr, i2, (Object) fArr, i, this.size - i2);
+        System.arraycopy(fArr, i2, fArr, i, this.size - i2);
         this.size -= i2 - i;
         this.modCount++;
     }

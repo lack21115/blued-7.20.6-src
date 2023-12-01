@@ -13,13 +13,9 @@ import java.util.concurrent.atomic.AtomicInteger;
 /* loaded from: source-4181928-dex2jar.jar:com/mokee/volley/RequestQueue.class */
 public class RequestQueue {
     private static final String[] k = null;
-
-    /* renamed from: a  reason: collision with root package name */
-    private CacheDispatcher f24241a;
+    private CacheDispatcher a;
     private final Cache b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final Map<String, Queue<Request<?>>> f24242c;
+    private final Map<String, Queue<Request<?>>> c;
     private final Network d;
     private NetworkDispatcher[] e;
     private AtomicInteger f;
@@ -63,7 +59,7 @@ public class RequestQueue {
     public RequestQueue(Cache cache, Network network, int i, ResponseDelivery responseDelivery) {
         boolean z = Request.e;
         this.f = new AtomicInteger();
-        this.f24242c = new HashMap();
+        this.c = new HashMap();
         this.i = new HashSet();
         this.j = new PriorityBlockingQueue<>();
         this.h = new PriorityBlockingQueue<>();
@@ -82,9 +78,9 @@ public class RequestQueue {
             this.i.remove(request);
         }
         if (request.shouldCache()) {
-            synchronized (this.f24242c) {
+            synchronized (this.c) {
                 String cacheKey = request.getCacheKey();
-                Queue<Request<?>> remove = this.f24242c.remove(cacheKey);
+                Queue<Request<?>> remove = this.c.remove(cacheKey);
                 if (remove != null) {
                     if (VolleyLog.DEBUG) {
                         VolleyLog.v(k[1], Integer.valueOf(remove.size()), cacheKey);
@@ -197,8 +193,8 @@ public class RequestQueue {
     public void start() {
         boolean z = Request.e;
         stop();
-        this.f24241a = new CacheDispatcher(this.j, this.h, this.b, this.g);
-        this.f24241a.start();
+        this.a = new CacheDispatcher(this.j, this.h, this.b, this.g);
+        this.a.start();
         int i = 0;
         if (z) {
             NetworkDispatcher networkDispatcher = new NetworkDispatcher(this.h, this.d, this.b, this.g);
@@ -256,10 +252,10 @@ public class RequestQueue {
             boolean r0 = com.mokee.volley.Request.e
             r6 = r0
             r0 = r3
-            com.mokee.volley.CacheDispatcher r0 = r0.f24241a     // Catch: java.lang.IllegalArgumentException -> L40
+            com.mokee.volley.CacheDispatcher r0 = r0.a     // Catch: java.lang.IllegalArgumentException -> L40
             if (r0 == 0) goto L12
             r0 = r3
-            com.mokee.volley.CacheDispatcher r0 = r0.f24241a     // Catch: java.lang.IllegalArgumentException -> L40
+            com.mokee.volley.CacheDispatcher r0 = r0.a     // Catch: java.lang.IllegalArgumentException -> L40
             r0.quit()     // Catch: java.lang.IllegalArgumentException -> L40
         L12:
             r0 = 0

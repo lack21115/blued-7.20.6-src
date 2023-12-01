@@ -173,7 +173,7 @@ public class GestureOverlayView extends FrameLayout {
     }
 
     public GestureOverlayView(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, R.attr.gestureOverlayViewStyle);
+        this(context, attributeSet, 18219028);
     }
 
     public GestureOverlayView(Context context, AttributeSet attributeSet, int i) {
@@ -600,7 +600,7 @@ public class GestureOverlayView extends FrameLayout {
         return super.dispatchTouchEvent(motionEvent);
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
+    @Override // android.view.View
     public void draw(Canvas canvas) {
         super.draw(canvas);
         if (this.mCurrentGesture == null || !this.mGestureVisible) {
@@ -682,9 +682,8 @@ public class GestureOverlayView extends FrameLayout {
         return this.mIsGesturing;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         cancelClearAnimation();
     }

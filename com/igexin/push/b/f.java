@@ -7,12 +7,12 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public class f extends com.igexin.push.e.b.f {
 
     /* renamed from: c  reason: collision with root package name */
-    private static f f23314c;
+    private static f f9706c;
     private boolean e;
-    private static final String b = b.f23300a + f.class.getName();
+    private static final String b = b.f9692a + f.class.getName();
 
     /* renamed from: a  reason: collision with root package name */
-    public static final AtomicBoolean f23313a = new AtomicBoolean(false);
+    public static final AtomicBoolean f9705a = new AtomicBoolean(false);
 
     private f() {
         super(10L, (byte) 0);
@@ -27,10 +27,10 @@ public class f extends com.igexin.push.e.b.f {
         f fVar;
         synchronized (f.class) {
             try {
-                if (f23314c == null) {
-                    f23314c = new f();
+                if (f9706c == null) {
+                    f9706c = new f();
                 }
-                fVar = f23314c;
+                fVar = f9706c;
             } catch (Throwable th) {
                 throw th;
             }
@@ -40,22 +40,22 @@ public class f extends com.igexin.push.e.b.f {
 
     @Override // com.igexin.push.e.b.f
     public final void b() {
-        a(b.f23301c, TimeUnit.MILLISECONDS);
+        a(b.f9693c, TimeUnit.MILLISECONDS);
         if (this.e) {
             com.igexin.c.a.c.a.a(b, "detect task already stop");
             com.igexin.c.a.c.a.a(b + "|detect task already stop", new Object[0]);
             return;
         }
-        long j = b.f23301c;
-        com.igexin.c.a.c.a.a(b + "|" + (b.f23301c / 1000) + "s passed, do task method, start redect ~~~~", new Object[0]);
+        long j = b.f9693c;
+        com.igexin.c.a.c.a.a(b + "|" + (b.f9693c / 1000) + "s passed, do task method, start redect ~~~~", new Object[0]);
         boolean e = com.igexin.push.f.c.e();
         com.igexin.push.core.e.n = e;
         if (e) {
             c.a().c();
             return;
         }
-        long j2 = b.f23301c;
-        com.igexin.c.a.c.a.a(b + "|" + (b.f23301c / 1000) + "s passed, network is unavailable, stop ###", new Object[0]);
+        long j2 = b.f9693c;
+        com.igexin.c.a.c.a.a(b + "|" + (b.f9693c / 1000) + "s passed, network is unavailable, stop ###", new Object[0]);
     }
 
     @Override // com.igexin.c.a.d.a.e

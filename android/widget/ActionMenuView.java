@@ -41,9 +41,8 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
         boolean needsDividerBefore();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: source-4181928-dex2jar.jar:android/widget/ActionMenuView$ActionMenuPresenterCallback.class */
-    public class ActionMenuPresenterCallback implements MenuPresenter.Callback {
+    private class ActionMenuPresenterCallback implements MenuPresenter.Callback {
         private ActionMenuPresenterCallback() {
         }
 
@@ -95,9 +94,8 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: source-4181928-dex2jar.jar:android/widget/ActionMenuView$MenuBuilderCallback.class */
-    public class MenuBuilderCallback implements MenuBuilder.Callback {
+    private class MenuBuilderCallback implements MenuBuilder.Callback {
         private MenuBuilderCallback() {
         }
 

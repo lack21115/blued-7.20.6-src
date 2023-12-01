@@ -47,6 +47,7 @@ public class DescribeMediaBucketsResult$$XmlAdapter implements IXmlAdapter<Descr
             }
         });
         this.childElementBinders.put("MediaBucketList", new ChildElementBinder<DescribeMediaBucketsResult>() { // from class: com.tencent.cos.xml.model.tag.DescribeMediaBucketsResult$$XmlAdapter.5
+            /* JADX WARN: Multi-variable type inference failed */
             @Override // com.tencent.qcloud.qcloudxml.core.ChildElementBinder
             public void fromXml(XmlPullParser xmlPullParser, DescribeMediaBucketsResult describeMediaBucketsResult, String str) throws IOException, XmlPullParserException {
                 if (describeMediaBucketsResult.mediaBucketList == null) {

@@ -19,7 +19,7 @@ public abstract class b {
                 return null;
             }
             return new ColorDrawable(context.getResources().getColor(((Integer) Code2).intValue()));
-        } else if (!str.startsWith("@drawable/") || (I = I(context, i.f7952c)) == null || (Code = an.Code(I, str.substring(10))) == null || !(Code instanceof Integer)) {
+        } else if (!str.startsWith("@drawable/") || (I = I(context, i.f5112c)) == null || (Code = an.Code(I, str.substring(10))) == null || !(Code instanceof Integer)) {
             return null;
         } else {
             return context.getResources().getDrawable(((Integer) Code).intValue());

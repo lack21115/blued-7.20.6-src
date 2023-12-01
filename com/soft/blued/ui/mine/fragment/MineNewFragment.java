@@ -21,12 +21,15 @@ import android.widget.TextView;
 import android.widget.ViewFlipper;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleEventObserver;
 import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
+import androidx.viewbinding.ViewBinding;
 import androidx.viewpager.widget.PagerAdapter;
+import com.anythink.expressad.a;
 import com.anythink.expressad.video.module.a.a.m;
 import com.blued.android.chat.listener.SingleSessionListener;
 import com.blued.android.chat.model.SessionModel;
@@ -119,8 +122,8 @@ import com.soft.blued.utils.AppUtils;
 import com.soft.blued.utils.BluedPreferences;
 import com.soft.blued.utils.PopMenuUtils;
 import com.soft.blued.utils.WeChatUtils;
+import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Comparator;
 import java.util.List;
 import kotlin.Metadata;
@@ -141,37 +144,37 @@ import skin.support.observe.SkinObservable;
 public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> implements SingleSessionListener, BluedSkinObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    static final /* synthetic */ KProperty<Object>[] f31620a = {Reflection.a(new PropertyReference1Impl(MineNewFragment.class, "viewBinding", "getViewBinding()Lcom/soft/blued/databinding/FragmentMineNewBinding;", 0))};
+    static final /* synthetic */ KProperty<Object>[] f17930a = {(KProperty) Reflection.a(new PropertyReference1Impl(MineNewFragment.class, "viewBinding", "getViewBinding()Lcom/soft/blued/databinding/FragmentMineNewBinding;", 0))};
     private final ViewBindingProperty b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final String f31621c;
+    private final String f17931c;
 
     @Metadata
     /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/mine/fragment/MineNewFragment$MyPagerAdapter.class */
     public static final class MyPagerAdapter extends PagerAdapter {
 
         /* renamed from: a  reason: collision with root package name */
-        private final Context f31622a;
+        private final Context f17932a;
         private final List<View> b;
 
         /* JADX WARN: Multi-variable type inference failed */
-        public MyPagerAdapter(Context context, List<? extends View> emotions) {
+        public MyPagerAdapter(Context context, List<? extends View> list) {
             Intrinsics.e(context, "context");
-            Intrinsics.e(emotions, "emotions");
-            this.f31622a = context;
-            this.b = emotions;
+            Intrinsics.e(list, "emotions");
+            this.f17932a = context;
+            this.b = list;
         }
 
         @Override // androidx.viewpager.widget.PagerAdapter
-        public void destroyItem(ViewGroup container, int i, Object object) {
-            Intrinsics.e(container, "container");
-            Intrinsics.e(object, "object");
-            container.removeView((View) object);
+        public void destroyItem(ViewGroup viewGroup, int i, Object obj) {
+            Intrinsics.e(viewGroup, "container");
+            Intrinsics.e(obj, "object");
+            viewGroup.removeView((View) obj);
         }
 
         public final Context getContext() {
-            return this.f31622a;
+            return this.f17932a;
         }
 
         @Override // androidx.viewpager.widget.PagerAdapter
@@ -180,38 +183,38 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
         }
 
         @Override // androidx.viewpager.widget.PagerAdapter
-        public Object instantiateItem(ViewGroup container, int i) {
-            Intrinsics.e(container, "container");
-            container.addView(this.b.get(i));
+        public Object instantiateItem(ViewGroup viewGroup, int i) {
+            Intrinsics.e(viewGroup, "container");
+            viewGroup.addView(this.b.get(i));
             return this.b.get(i);
         }
 
         @Override // androidx.viewpager.widget.PagerAdapter
-        public boolean isViewFromObject(View view, Object object) {
-            Intrinsics.e(view, "view");
-            Intrinsics.e(object, "object");
-            return Intrinsics.a(view, object);
+        public boolean isViewFromObject(View view, Object obj) {
+            Intrinsics.e(view, a.B);
+            Intrinsics.e(obj, "object");
+            return Intrinsics.a(view, obj);
         }
     }
 
     public MineNewFragment() {
-        super(R.layout.fragment_mine_new);
-        this.b = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<MineNewFragment, FragmentMineNewBinding>() { // from class: com.soft.blued.ui.mine.fragment.MineNewFragment$special$$inlined$viewBindingFragment$default$1
-            @Override // kotlin.jvm.functions.Function1
+        super((int) R.layout.fragment_mine_new);
+        this.b = ((Fragment) this) instanceof DialogFragment ? (ViewBindingProperty) new DialogFragmentViewBindingProperty(new Function1<MineNewFragment, FragmentMineNewBinding>() { // from class: com.soft.blued.ui.mine.fragment.MineNewFragment$special$$inlined$viewBindingFragment$default$1
+            /* JADX WARN: Incorrect types in method signature: (Lcom/soft/blued/ui/mine/fragment/MineNewFragment;)Lcom/soft/blued/databinding/FragmentMineNewBinding; */
             /* renamed from: a */
-            public final FragmentMineNewBinding invoke(MineNewFragment fragment) {
+            public final ViewBinding invoke(Fragment fragment) {
                 Intrinsics.e(fragment, "fragment");
                 return FragmentMineNewBinding.a(fragment.requireView());
             }
         }) : new FragmentViewBindingProperty(new Function1<MineNewFragment, FragmentMineNewBinding>() { // from class: com.soft.blued.ui.mine.fragment.MineNewFragment$special$$inlined$viewBindingFragment$default$2
-            @Override // kotlin.jvm.functions.Function1
+            /* JADX WARN: Incorrect types in method signature: (Lcom/soft/blued/ui/mine/fragment/MineNewFragment;)Lcom/soft/blued/databinding/FragmentMineNewBinding; */
             /* renamed from: a */
-            public final FragmentMineNewBinding invoke(MineNewFragment fragment) {
+            public final ViewBinding invoke(Fragment fragment) {
                 Intrinsics.e(fragment, "fragment");
                 return FragmentMineNewBinding.a(fragment.requireView());
             }
         });
-        this.f31621c = "http://native.blued.cn?action=emotion_shop&index=0";
+        this.f17931c = "http://native.blued.cn?action=emotion_shop&index=0";
     }
 
     private final void A() {
@@ -229,7 +232,7 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
         Context context = getContext();
         CharSequence charSequence = null;
         if (context != null && (resources = context.getResources()) != null) {
-            charSequence = resources.getText(2131893032);
+            charSequence = resources.getText(R.string.yy_in_use_owners);
         }
         AppMethods.a(charSequence);
     }
@@ -260,18 +263,18 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(MineNewFragment this$0, View view) {
+    public static final void a(MineNewFragment mineNewFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.b(true);
+        Intrinsics.e(mineNewFragment, "this$0");
+        mineNewFragment.b(true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(MineNewFragment this$0, SessionModel sessionModel) {
-        Intrinsics.e(this$0, "this$0");
-        if (CommonTools.a(this$0)) {
+    public static final void a(MineNewFragment mineNewFragment, SessionModel sessionModel) {
+        Intrinsics.e(mineNewFragment, "this$0");
+        if (CommonTools.a((Fragment) mineNewFragment)) {
             if (sessionModel.noReadMsgCount <= 0) {
-                FragmentMineNewBinding p = this$0.p();
+                FragmentMineNewBinding p = mineNewFragment.p();
                 ShapeTextView shapeTextView = p == null ? null : p.q;
                 if (shapeTextView == null) {
                     return;
@@ -280,12 +283,12 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
                 return;
             }
             BluedPreferences.G(true);
-            FragmentMineNewBinding p2 = this$0.p();
+            FragmentMineNewBinding p2 = mineNewFragment.p();
             ShapeTextView shapeTextView2 = p2 == null ? null : p2.q;
             if (shapeTextView2 != null) {
-                shapeTextView2.setText(Intrinsics.a("+", (Object) Integer.valueOf(sessionModel.noReadMsgCount)));
+                shapeTextView2.setText(Intrinsics.a("+", Integer.valueOf(sessionModel.noReadMsgCount)));
             }
-            FragmentMineNewBinding p3 = this$0.p();
+            FragmentMineNewBinding p3 = mineNewFragment.p();
             ShapeTextView shapeTextView3 = p3 == null ? null : p3.q;
             if (shapeTextView3 == null) {
                 return;
@@ -295,16 +298,16 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(MineNewFragment this$0, ObservableScrollView observableScrollView, int i, int i2, int i3, int i4) {
-        Intrinsics.e(this$0, "this$0");
-        int a2 = DensityUtils.a(this$0.getContext(), 72.0f);
+    public static final void a(MineNewFragment mineNewFragment, ObservableScrollView observableScrollView, int i, int i2, int i3, int i4) {
+        Intrinsics.e(mineNewFragment, "this$0");
+        int a2 = DensityUtils.a(mineNewFragment.getContext(), 72.0f);
         if (i2 >= a2) {
-            FragmentMineNewBinding p = this$0.p();
+            FragmentMineNewBinding p = mineNewFragment.p();
             FrameLayout frameLayout = p == null ? null : p.an;
             if (frameLayout != null) {
                 frameLayout.setAlpha(1.0f);
             }
-            FragmentMineNewBinding p2 = this$0.p();
+            FragmentMineNewBinding p2 = mineNewFragment.p();
             LinearLayout linearLayout = p2 == null ? null : p2.ai;
             if (linearLayout == null) {
                 return;
@@ -313,12 +316,12 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
             return;
         }
         float f = i2 / a2;
-        FragmentMineNewBinding p3 = this$0.p();
+        FragmentMineNewBinding p3 = mineNewFragment.p();
         FrameLayout frameLayout2 = p3 == null ? null : p3.an;
         if (frameLayout2 != null) {
             frameLayout2.setAlpha(f);
         }
-        FragmentMineNewBinding p4 = this$0.p();
+        FragmentMineNewBinding p4 = mineNewFragment.p();
         LinearLayout linearLayout2 = p4 == null ? null : p4.ai;
         if (linearLayout2 == null) {
             return;
@@ -327,66 +330,66 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(MineNewFragment this$0, MinePageModel.ColumnsItem columnsItem, View view) {
+    public static final void a(MineNewFragment mineNewFragment, MinePageModel.ColumnsItem columnsItem, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.b(columnsItem.url);
+        Intrinsics.e(mineNewFragment, "this$0");
+        mineNewFragment.b(columnsItem.url);
         SettingsEventUtils.a(SettingsProtos.Event.MINE_BTN_CLICK.name(), columnsItem.url);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(MineNewFragment this$0, UserInfoEntity userInfoEntity, View view) {
+    public static final void a(MineNewFragment mineNewFragment, UserInfoEntity userInfoEntity, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.a(Integer.valueOf(userInfoEntity.anchor_sing_type));
+        Intrinsics.e(mineNewFragment, "this$0");
+        mineNewFragment.a(Integer.valueOf(userInfoEntity.anchor_sing_type));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(MineNewFragment this$0, UserInfoEntity userInfoEntity, MinePageModel.VipInfo vipInfo, View view) {
+    public static final void a(MineNewFragment mineNewFragment, UserInfoEntity userInfoEntity, MinePageModel.VipInfo vipInfo, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.b(userInfoEntity, vipInfo);
+        Intrinsics.e(mineNewFragment, "this$0");
+        mineNewFragment.b(userInfoEntity, vipInfo);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(MineNewFragment this$0, Boolean bool) {
-        Intrinsics.e(this$0, "this$0");
-        MineViewModel j = this$0.j();
-        ActivityFragmentActive fragmentActive = this$0.getFragmentActive();
+    public static final void a(MineNewFragment mineNewFragment, Boolean bool) {
+        Intrinsics.e(mineNewFragment, "this$0");
+        MineViewModel mineViewModel = (MineViewModel) mineNewFragment.j();
+        ActivityFragmentActive fragmentActive = mineNewFragment.getFragmentActive();
         Intrinsics.c(fragmentActive, "fragmentActive");
-        j.a(fragmentActive);
+        mineViewModel.a(fragmentActive);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(MineNewFragment this$0, Integer resID) {
-        Intrinsics.e(this$0, "this$0");
-        MinePageModel value = this$0.a().d().getValue();
+    public static final void a(MineNewFragment mineNewFragment, Integer num) {
+        Intrinsics.e(mineNewFragment, "this$0");
+        MinePageModel value = ((MineViewModel) mineNewFragment.a()).d().getValue();
         UserInfoEntity userInfoEntity = value == null ? null : value.user;
         if (userInfoEntity != null) {
-            Intrinsics.c(resID, "resID");
-            userInfoEntity.theme_pendant = resID.intValue();
+            Intrinsics.c(num, "resID");
+            userInfoEntity.theme_pendant = num.intValue();
         }
-        ActivityFragmentActive fragmentActive = this$0.getFragmentActive();
+        IRequestHost fragmentActive = mineNewFragment.getFragmentActive();
         AvatarWidgetManager a2 = AvatarWidgetManager.a();
-        Intrinsics.c(resID, "resID");
-        ImageWrapper a3 = ImageLoader.a(fragmentActive, a2.a(resID.intValue()));
-        FragmentMineNewBinding p = this$0.p();
+        Intrinsics.c(num, "resID");
+        ImageWrapper a3 = ImageLoader.a(fragmentActive, a2.a(num.intValue()));
+        FragmentMineNewBinding p = mineNewFragment.p();
         a3.a(p == null ? null : p.w);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(MineNewFragment this$0, Object obj) {
-        Intrinsics.e(this$0, "this$0");
-        this$0.t();
+    public static final void a(MineNewFragment mineNewFragment, Object obj) {
+        Intrinsics.e(mineNewFragment, "this$0");
+        mineNewFragment.t();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(MineNewFragment this$0, List bannerList, View view) {
+    public static final void a(MineNewFragment mineNewFragment, List list, View view) {
         ViewFlipper viewFlipper;
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        Intrinsics.e(bannerList, "$bannerList");
-        FragmentMineNewBinding p = this$0.p();
+        Intrinsics.e(mineNewFragment, "this$0");
+        Intrinsics.e(list, "$bannerList");
+        FragmentMineNewBinding p = mineNewFragment.p();
         Integer num = null;
         if (p != null && (viewFlipper = p.aD) != null) {
             num = Integer.valueOf(viewFlipper.getDisplayedChild());
@@ -395,20 +398,20 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
             return;
         }
         int intValue = num.intValue();
-        if (!TextUtils.isEmpty(((MinePageModel.VipBroadcast) bannerList.get(intValue)).url)) {
-            EventTrackSettings.a(SettingsProtos.Event.MINE_VIP_BANNER_COPYWRITING_CLICK, ((MinePageModel.VipBroadcast) bannerList.get(intValue)).url, intValue + 1);
+        if (!TextUtils.isEmpty(((MinePageModel.VipBroadcast) list.get(intValue)).url)) {
+            EventTrackSettings.a(SettingsProtos.Event.MINE_VIP_BANNER_COPYWRITING_CLICK, ((MinePageModel.VipBroadcast) list.get(intValue)).url, intValue + 1);
         }
         InstantLog.a("mine_vip_banner_right_click");
-        WebViewShowInfoFragment.show(this$0.getContext(), ((MinePageModel.VipBroadcast) bannerList.get(intValue)).url, 0);
+        WebViewShowInfoFragment.show(mineNewFragment.getContext(), ((MinePageModel.VipBroadcast) list.get(intValue)).url, 0);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(MineNewFragment this$0, List list, ItemMineVasEntry2Binding leftViewBinding, View view) {
+    public static final void a(MineNewFragment mineNewFragment, List list, ItemMineVasEntry2Binding itemMineVasEntry2Binding, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        Intrinsics.e(leftViewBinding, "$leftViewBinding");
-        this$0.b(((MinePageModel.ColumnsItem) list.get(0)).url);
-        leftViewBinding.f29236a.setVisibility(8);
+        Intrinsics.e(mineNewFragment, "this$0");
+        Intrinsics.e(itemMineVasEntry2Binding, "$leftViewBinding");
+        mineNewFragment.b(((MinePageModel.ColumnsItem) list.get(0)).url);
+        itemMineVasEntry2Binding.f15546a.setVisibility(8);
         BluedPreferences.Q(((MinePageModel.ColumnsItem) list.get(0)).item_key);
     }
 
@@ -436,7 +439,7 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
             if (p3 != null && (resourcePromotionView3 = p3.af) != null) {
                 ActivityFragmentActive fragmentActive = getFragmentActive();
                 Intrinsics.c(fragmentActive, "fragmentActive");
-                resourcePromotionView3.a(minePageAdModel, fragmentActive);
+                resourcePromotionView3.a(minePageAdModel, (IRequestHost) fragmentActive);
             }
             long fE = BluedPreferences.fE();
             long currentTimeMillis = System.currentTimeMillis();
@@ -462,15 +465,15 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
             minePageAdModel.setShow(true);
             FindHttpUtils.b(minePageAdModel.show_url);
             EventTrackSettings.a(SettingsProtos.Event.MINE_RESOURCE_SHOW, minePageAdModel.getJump_url());
-            Log.v("drb", Intrinsics.a("我的页面_居中资源位_曝光： ", (Object) Long.valueOf(minePageAdModel.ads_id)));
+            Log.v("drb", Intrinsics.a("我的页面_居中资源位_曝光： ", Long.valueOf(minePageAdModel.ads_id)));
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(MinePageModel.ColumnsItem columnsItem, int i, MineNewFragment this$0, ItemMineHealthEntryExperienceBinding healthyItemVB, View view) {
+    public static final void a(MinePageModel.ColumnsItem columnsItem, int i, MineNewFragment mineNewFragment, ItemMineHealthEntryExperienceBinding itemMineHealthEntryExperienceBinding, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        Intrinsics.e(healthyItemVB, "$healthyItemVB");
+        Intrinsics.e(mineNewFragment, "this$0");
+        Intrinsics.e(itemMineHealthEntryExperienceBinding, "$healthyItemVB");
         SettingsProtos.Event event = SettingsProtos.Event.MINE_BTN_CLICK;
         String str = columnsItem.item.get(i).url;
         String str2 = columnsItem.item.get(i).key;
@@ -479,34 +482,34 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
             z = false;
         }
         EventTrackSettings.a(event, str, str2, z);
-        Log.v("drb", Intrinsics.a("columnsItem.item[i].url:", (Object) columnsItem.item.get(i).url));
-        this$0.b(columnsItem.item.get(i).url);
-        healthyItemVB.b.setVisibility(8);
+        Log.v("drb", Intrinsics.a("columnsItem.item[i].url:", columnsItem.item.get(i).url));
+        mineNewFragment.b(columnsItem.item.get(i).url);
+        itemMineHealthEntryExperienceBinding.b.setVisibility(8);
         BluedPreferences.Q(columnsItem.item.get(i).item_key);
         SettingsEventUtils.a(SettingsProtos.Event.MINE_BTN_CLICK.name(), columnsItem.item.get(i).url);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(MinePageModel.ColumnsItem banner, MineNewFragment this$0, View view) {
+    public static final void a(MinePageModel.ColumnsItem columnsItem, MineNewFragment mineNewFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(banner, "$banner");
-        Intrinsics.e(this$0, "this$0");
+        Intrinsics.e(columnsItem, "$banner");
+        Intrinsics.e(mineNewFragment, "this$0");
         SettingsProtos.Event event = SettingsProtos.Event.MINE_BTN_CLICK;
-        String str = banner.url;
-        String str2 = banner.id;
+        String str = columnsItem.url;
+        String str2 = columnsItem.id;
         boolean z = true;
         if (BluedConfig.a().g().is_chat_shadow != 1) {
             z = false;
         }
         EventTrackSettings.a(event, str, str2, z);
-        this$0.b(banner.url);
+        mineNewFragment.b(columnsItem.url);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(MinePageModel.ColumnsItem columnsItem, MineNewFragment this$0, ItemMineZhealthEntryBinding zhealthyItemVB, View view) {
+    public static final void a(MinePageModel.ColumnsItem columnsItem, MineNewFragment mineNewFragment, ItemMineZhealthEntryBinding itemMineZhealthEntryBinding, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        Intrinsics.e(zhealthyItemVB, "$zhealthyItemVB");
+        Intrinsics.e(mineNewFragment, "this$0");
+        Intrinsics.e(itemMineZhealthEntryBinding, "$zhealthyItemVB");
         SettingsProtos.Event event = SettingsProtos.Event.MINE_BTN_CLICK;
         String str = columnsItem.item.get(0).url;
         String str2 = columnsItem.item.get(0).id;
@@ -515,25 +518,25 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
             z = false;
         }
         EventTrackSettings.a(event, str, str2, z);
-        this$0.b(columnsItem.item.get(0).url);
-        zhealthyItemVB.b.setVisibility(8);
+        mineNewFragment.b(columnsItem.item.get(0).url);
+        itemMineZhealthEntryBinding.b.setVisibility(8);
         BluedPreferences.Q(columnsItem.item.get(0).item_key);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(MinePageModel.EmotionItem emotion, MineNewFragment this$0, View view) {
+    public static final void a(MinePageModel.EmotionItem emotionItem, MineNewFragment mineNewFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(emotion, "$emotion");
-        Intrinsics.e(this$0, "this$0");
+        Intrinsics.e(emotionItem, "$emotion");
+        Intrinsics.e(mineNewFragment, "this$0");
         SettingsProtos.Event event = SettingsProtos.Event.MINE_BTN_CLICK;
-        String str = emotion.redirect_url;
-        String str2 = emotion.emotion_id;
+        String str = emotionItem.redirect_url;
+        String str2 = emotionItem.emotion_id;
         boolean z = true;
         if (BluedConfig.a().g().is_chat_shadow != 1) {
             z = false;
         }
         EventTrackSettings.a(event, str, str2, z);
-        WebViewShowInfoFragment.show(this$0.getContext(), emotion.redirect_url);
+        WebViewShowInfoFragment.show(mineNewFragment.getContext(), emotionItem.redirect_url);
     }
 
     private final void a(MinePageModel.HealthItem healthItem) {
@@ -566,8 +569,8 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
         ItemMineNewHealthEntryBinding a2 = ItemMineNewHealthEntryBinding.a(inflate);
         Intrinsics.c(a2, "bind(rootView)");
         a2.d.setText(columnsItem.title);
-        a2.f29234c.setVisibility(8);
-        a2.f29233a.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.mine.fragment.-$$Lambda$MineNewFragment$RqB5ZL6bI5sWiLFeBrLqWRYTFnw
+        a2.f15544c.setVisibility(8);
+        a2.f15543a.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.mine.fragment.-$$Lambda$MineNewFragment$RqB5ZL6bI5sWiLFeBrLqWRYTFnw
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 MineNewFragment.a(MineNewFragment.this, columnsItem, view);
@@ -588,8 +591,8 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
         ItemMineNewHealthEntryBinding a3 = ItemMineNewHealthEntryBinding.a(inflate2);
         Intrinsics.c(a3, "bind(zhealthView)");
         a3.d.setText(columnsItem2.title);
-        a3.f29234c.setVisibility(0);
-        a3.f29233a.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.mine.fragment.-$$Lambda$MineNewFragment$CnoO2QlVT4KEym2OwHi0EAPpDbI
+        a3.f15544c.setVisibility(0);
+        a3.f15543a.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.mine.fragment.-$$Lambda$MineNewFragment$CnoO2QlVT4KEym2OwHi0EAPpDbI
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 MineNewFragment.b(MineNewFragment.this, columnsItem2, view);
@@ -609,7 +612,7 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
         } else {
             a4.f.setTextColor(BluedSkinUtils.a(getContext(), 2131101625));
         }
-        ImageLoader.a(getFragmentActive(), columnsItem2.item.get(0).icon1).a(a4.f29246c);
+        ImageLoader.a(getFragmentActive(), columnsItem2.item.get(0).icon1).a(a4.f15556c);
         if (TextUtils.isEmpty(columnsItem2.item.get(0).icon2)) {
             a4.d.setVisibility(8);
         } else {
@@ -628,7 +631,7 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
         TextView textView2 = a4.f;
         Intrinsics.c(textView2, "zhealthyItemVB.tvDes");
         a(textView2, columnsItem2.item.get(0).content_color);
-        a4.f29245a.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.mine.fragment.-$$Lambda$MineNewFragment$ReGq2c4aTzXH73dMTTTVIq4hrYM
+        a4.f15555a.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.mine.fragment.-$$Lambda$MineNewFragment$ReGq2c4aTzXH73dMTTTVIq4hrYM
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 MineNewFragment.a(MinePageModel.ColumnsItem.this, this, a4, view);
@@ -671,7 +674,7 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
                     View inflate2 = getLayoutInflater().inflate(R.layout.item_mine_health_entry_experience_mid_child, (ViewGroup) null);
                     ItemMineHealthEntryExperienceMidChildBinding a3 = ItemMineHealthEntryExperienceMidChildBinding.a(inflate2);
                     Intrinsics.c(a3, "bind(goodsView)");
-                    a3.f29230c.setText(columnsItem.title);
+                    a3.f15540c.setText(columnsItem.title);
                     ImageLoader.a(getFragmentActive(), columnsItem.icon1).f().g(-1).a(a3.b);
                     a3.getRoot().setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.mine.fragment.-$$Lambda$MineNewFragment$mytpolbczgNdsgF6aoXcwKepGQ0
                         @Override // android.view.View.OnClickListener
@@ -741,7 +744,7 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
             } else {
                 a4.d.setTextColor(BluedSkinUtils.a(getContext(), 2131101625));
             }
-            ImageLoader.a(getFragmentActive(), columnsItem2.item.get(i2).icon1).a(a4.f29226c);
+            ImageLoader.a(getFragmentActive(), columnsItem2.item.get(i2).icon1).a(a4.f15536c);
             linearLayout2.addView(inflate3);
             if (BluedPreferences.P(columnsItem2.item.get(i2).item_key)) {
                 a4.b.setVisibility(0);
@@ -754,7 +757,7 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
             TextView textView2 = a4.d;
             Intrinsics.c(textView2, "healthyItemVB.tvDes");
             a(textView2, columnsItem2.item.get(i2).content_color);
-            a4.f29225a.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.mine.fragment.-$$Lambda$MineNewFragment$6UEyB-ddXju-TB6nCiIezZHNhh0
+            a4.f15535a.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.mine.fragment.-$$Lambda$MineNewFragment$6UEyB-ddXju-TB6nCiIezZHNhh0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     MineNewFragment.a(MinePageModel.ColumnsItem.this, i2, this, a4, view);
@@ -790,7 +793,7 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
         FragmentMineNewBinding p3 = p();
         a2.a(p3 == null ? null : p3.u);
         FragmentMineNewBinding p4 = p();
-        if (p4 == null || (bluedADConstraintLayout = p4.f28892a) == null) {
+        if (p4 == null || (bluedADConstraintLayout = p4.f15202a) == null) {
             return;
         }
         bluedADConstraintLayout.a(mineBanner, new View.OnClickListener() { // from class: com.soft.blued.ui.mine.fragment.-$$Lambda$MineNewFragment$eBIThOztawrp1UvxzPEx7eI_0Yk
@@ -802,17 +805,17 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(MinePageModel.MineBanner mineBanner, MineNewFragment this$0, View view) {
+    public static final void a(MinePageModel.MineBanner mineBanner, MineNewFragment mineNewFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        EventTrackSettings.a(SettingsProtos.Event.MINE_BTN_CLICK, mineBanner.link, null, BluedConfig.a().g().is_chat_shadow == 1);
+        Intrinsics.e(mineNewFragment, "this$0");
+        EventTrackSettings.a(SettingsProtos.Event.MINE_BTN_CLICK, mineBanner.link, (String) null, BluedConfig.a().g().is_chat_shadow == 1);
         if (mineBanner.wx != null && !TextUtils.isEmpty(mineBanner.wx.id) && !TextUtils.isEmpty(mineBanner.wx.path)) {
             if (mineBanner.wx.is_popup != 1) {
-                WeChatUtils.a(this$0.getContext(), mineBanner.wx.id, mineBanner.wx.path);
+                WeChatUtils.a(mineNewFragment.getContext(), mineBanner.wx.id, mineBanner.wx.path);
                 return;
             }
-            AdMiniAppDialogFragment.Companion companion = AdMiniAppDialogFragment.f34510a;
-            FragmentManager childFragmentManager = this$0.getChildFragmentManager();
+            AdMiniAppDialogFragment.Companion companion = AdMiniAppDialogFragment.f20819a;
+            FragmentManager childFragmentManager = mineNewFragment.getChildFragmentManager();
             Intrinsics.c(childFragmentManager, "childFragmentManager");
             String str = mineBanner.wx.id;
             Intrinsics.c(str, "banner.wx.id");
@@ -820,16 +823,16 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
             Intrinsics.c(str2, "banner.wx.path");
             companion.a(childFragmentManager, str, str2, mineBanner);
         } else if (mineBanner.adm_type == 2) {
-            BaseADVideoFragment.a(this$0.getContext(), mineBanner, 1);
+            BaseADVideoFragment.a(mineNewFragment.getContext(), mineBanner, 1);
         } else if (TextUtils.isEmpty(mineBanner.deep_link_url)) {
-            WebViewShowInfoFragment.show(this$0.getContext(), mineBanner.link, 9);
+            WebViewShowInfoFragment.show(mineNewFragment.getContext(), mineBanner.link, 9);
         } else {
             Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(mineBanner.deep_link_url));
             if (!AppUtils.a(intent)) {
-                WebViewShowInfoFragment.show(this$0.getContext(), mineBanner.link, 9);
+                WebViewShowInfoFragment.show(mineNewFragment.getContext(), mineBanner.link, 9);
                 return;
             }
-            Context context = this$0.getContext();
+            Context context = mineNewFragment.getContext();
             if (context == null) {
                 return;
             }
@@ -899,7 +902,7 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
         FragmentMineNewBinding p5 = p();
         TextView textView = p5 == null ? null : p5.av;
         if (textView != null) {
-            textView.setText(Intrinsics.a("Lv", (Object) LiveUtils.a(UserInfo.getInstance().getLoginUserInfo().getRich_level())));
+            textView.setText(Intrinsics.a("Lv", LiveUtils.a(UserInfo.getInstance().getLoginUserInfo().getRich_level())));
         }
         FragmentMineNewBinding p6 = p();
         if (p6 != null && (shapeLinearLayout2 = p6.Q) != null) {
@@ -933,7 +936,7 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
         Resources resources;
         ViewFlipper viewFlipper = null;
         if (vipInfo != null) {
-            ImageWrapper d = ImageLoader.a(getFragmentActive(), vipInfo.getBg()).f().b(R.drawable.mine_vip_bg).d(R.drawable.mine_vip_bg);
+            ImageWrapper d = ImageLoader.a(getFragmentActive(), vipInfo.getBg()).f().b((int) R.drawable.mine_vip_bg).d((int) R.drawable.mine_vip_bg);
             FragmentMineNewBinding p = p();
             d.a(p == null ? null : p.D);
             FragmentMineNewBinding p2 = p();
@@ -1004,7 +1007,7 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
             if (imageView3 != null) {
                 imageView3.setVisibility(0);
             }
-            ImageWrapper d2 = ImageLoader.a(getFragmentActive(), vipInfo.arrow_pic).b(R.drawable.icon_vip_center_arrow_right).d(R.drawable.icon_vip_center_arrow_right);
+            ImageWrapper d2 = ImageLoader.a(getFragmentActive(), vipInfo.arrow_pic).b((int) R.drawable.icon_vip_center_arrow_right).d((int) R.drawable.icon_vip_center_arrow_right);
             FragmentMineNewBinding p15 = p();
             d2.a(p15 == null ? null : p15.E);
             if (vipInfo.carousels == null || vipInfo.carousels.size() <= 0) {
@@ -1129,16 +1132,16 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
         }
         ArrayList arrayList = new ArrayList();
         for (final MinePageModel.EmotionItem emotionItem : list) {
-            ItemMineEmotionBinding a2 = ItemMineEmotionBinding.a(LayoutInflater.from(getContext()).inflate(2131559860, (ViewGroup) null));
+            ItemMineEmotionBinding a2 = ItemMineEmotionBinding.a(LayoutInflater.from(getContext()).inflate(R.layout.item_mine_emotion, (ViewGroup) null));
             Intrinsics.c(a2, "bind(emotionView)");
-            ImageLoader.a((IRequestHost) null, emotionItem.banner).a(a2.f19001a);
-            a2.getRoot().setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.mine.fragment.-$$Lambda$MineNewFragment$gAlNKwYe5z9mGDCHNBDvuXMshHc
+            ImageLoader.a((IRequestHost) null, emotionItem.banner).a(a2.a);
+            a2.a().setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.mine.fragment.-$$Lambda$MineNewFragment$gAlNKwYe5z9mGDCHNBDvuXMshHc
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     MineNewFragment.a(MinePageModel.EmotionItem.this, this, view);
                 }
             });
-            arrayList.add(a2.getRoot());
+            arrayList.add(a2.a());
         }
         FragmentMineNewBinding p2 = p();
         ShapeConstraintLayout shapeConstraintLayout2 = p2 == null ? null : p2.L;
@@ -1160,7 +1163,7 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
         FragmentMineNewBinding p5 = p();
         AutoScrollViewPager autoScrollViewPager3 = p5 == null ? null : p5.ae;
         if (autoScrollViewPager3 != null) {
-            autoScrollViewPager3.setInterval(m.ag);
+            autoScrollViewPager3.setInterval((long) m.ag);
         }
         FragmentMineNewBinding p6 = p();
         if (p6 != null && (linePageIndicator = p6.v) != null) {
@@ -1185,10 +1188,10 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(List list, int i, MineNewFragment this$0, ItemMineVasEntryBinding vasViewBinding, View view) {
+    public static final void a(List list, int i, MineNewFragment mineNewFragment, ItemMineVasEntryBinding itemMineVasEntryBinding, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        Intrinsics.e(vasViewBinding, "$vasViewBinding");
+        Intrinsics.e(mineNewFragment, "this$0");
+        Intrinsics.e(itemMineVasEntryBinding, "$vasViewBinding");
         SettingsProtos.Event event = SettingsProtos.Event.MINE_BTN_CLICK;
         String str = ((MinePageModel.ColumnsItem) list.get(i)).url;
         String str2 = ((MinePageModel.ColumnsItem) list.get(i)).id;
@@ -1197,19 +1200,19 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
             z = false;
         }
         EventTrackSettings.a(event, str, str2, z);
-        this$0.b(((MinePageModel.ColumnsItem) list.get(i)).url);
-        vasViewBinding.f29240a.setVisibility(8);
+        mineNewFragment.b(((MinePageModel.ColumnsItem) list.get(i)).url);
+        itemMineVasEntryBinding.f15550a.setVisibility(8);
         BluedPreferences.Q(((MinePageModel.ColumnsItem) list.get(i)).item_key);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(List list, MineNewFragment this$0, ItemMineVasEntry3Binding rightViewBinding, View view) {
+    public static final void a(List list, MineNewFragment mineNewFragment, ItemMineVasEntry3Binding itemMineVasEntry3Binding, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        Intrinsics.e(rightViewBinding, "$rightViewBinding");
+        Intrinsics.e(mineNewFragment, "this$0");
+        Intrinsics.e(itemMineVasEntry3Binding, "$rightViewBinding");
         EventTrackSettings.a(SettingsProtos.Event.MINE_BTN_CLICK, ((MinePageModel.ColumnsItem) list.get(1)).url, ((MinePageModel.ColumnsItem) list.get(1)).id, BluedConfig.a().g().is_chat_shadow == 1);
-        this$0.b(((MinePageModel.ColumnsItem) list.get(1)).url);
-        rightViewBinding.f29238a.setVisibility(8);
+        mineNewFragment.b(((MinePageModel.ColumnsItem) list.get(1)).url);
+        itemMineVasEntry3Binding.f15548a.setVisibility(8);
         BluedPreferences.Q(((MinePageModel.ColumnsItem) list.get(1)).item_key);
     }
 
@@ -1270,7 +1273,7 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
         if (p4 != null && (viewFlipper3 = p4.aD) != null && (inAnimation = viewFlipper3.getInAnimation()) != null) {
             inAnimation.setAnimationListener(new Animation.AnimationListener() { // from class: com.soft.blued.ui.mine.fragment.MineNewFragment$setVipBroadcast$3
                 /* JADX WARN: Code restructure failed: missing block: B:13:0x00d1, code lost:
-                    r0 = r5.f31627a.p();
+                    r0 = r5.f17937a.p();
                  */
                 @Override // android.view.animation.Animation.AnimationListener
                 /*
@@ -1320,18 +1323,18 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(MineNewFragment this$0) {
+    public static final void b(MineNewFragment mineNewFragment) {
         CardView cardView;
         ViewGroup.LayoutParams layoutParams;
         CardView cardView2;
-        Intrinsics.e(this$0, "this$0");
-        FragmentMineNewBinding p = this$0.p();
+        Intrinsics.e(mineNewFragment, "this$0");
+        FragmentMineNewBinding p = mineNewFragment.p();
         if (p == null || (cardView = p.e) == null || (layoutParams = cardView.getLayoutParams()) == null) {
             return;
         }
-        layoutParams.width = AppInfo.l - DensityUtils.a(this$0.getContext(), 24.0f);
+        layoutParams.width = AppInfo.l - DensityUtils.a(mineNewFragment.getContext(), 24.0f);
         layoutParams.height = (int) ((layoutParams.width * 140.0f) / 710.0f);
-        FragmentMineNewBinding p2 = this$0.p();
+        FragmentMineNewBinding p2 = mineNewFragment.p();
         if (p2 == null || (cardView2 = p2.e) == null) {
             return;
         }
@@ -1339,48 +1342,48 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(MineNewFragment this$0, View view) {
+    public static final void b(MineNewFragment mineNewFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
+        Intrinsics.e(mineNewFragment, "this$0");
         SettingsProtos.Event event = SettingsProtos.Event.MINE_BTN_CLICK;
         boolean z = true;
         if (BluedConfig.a().g().is_chat_shadow != 1) {
             z = false;
         }
         EventTrackSettings.a(event, "http://native.blued.cn/?action=setting", "", z);
-        SettingFragment.a(this$0.getContext());
+        SettingFragment.a(mineNewFragment.getContext());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(MineNewFragment this$0, MinePageModel.ColumnsItem columnsItem, View view) {
+    public static final void b(MineNewFragment mineNewFragment, MinePageModel.ColumnsItem columnsItem, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.b(columnsItem.url);
+        Intrinsics.e(mineNewFragment, "this$0");
+        mineNewFragment.b(columnsItem.url);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(MineNewFragment this$0, UserInfoEntity userInfoEntity, View view) {
+    public static final void b(MineNewFragment mineNewFragment, UserInfoEntity userInfoEntity, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.a(userInfoEntity == null ? null : Integer.valueOf(userInfoEntity.anchor_sing_type));
+        Intrinsics.e(mineNewFragment, "this$0");
+        mineNewFragment.a(userInfoEntity == null ? null : Integer.valueOf(userInfoEntity.anchor_sing_type));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(MinePageModel.ColumnsItem it, MineNewFragment this$0, View view) {
+    public static final void b(MinePageModel.ColumnsItem columnsItem, MineNewFragment mineNewFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(it, "$it");
-        Intrinsics.e(this$0, "this$0");
+        Intrinsics.e(columnsItem, "$it");
+        Intrinsics.e(mineNewFragment, "this$0");
         SettingsProtos.Event event = SettingsProtos.Event.MINE_BTN_CLICK;
-        String str = it.url;
-        String str2 = it.key;
+        String str = columnsItem.url;
+        String str2 = columnsItem.key;
         boolean z = true;
         if (BluedConfig.a().g().is_chat_shadow != 1) {
             z = false;
         }
         EventTrackSettings.a(event, str, str2, z);
-        Log.v("drb", "商品点击id：" + ((Object) it.key) + " -- url:" + ((Object) it.url));
-        SettingsEventUtils.a(SettingsProtos.Event.MINE_BTN_CLICK.name(), it.url);
-        this$0.b(it.url);
+        Log.v("drb", "商品点击id：" + ((Object) columnsItem.key) + " -- url:" + ((Object) columnsItem.url));
+        SettingsEventUtils.a(SettingsProtos.Event.MINE_BTN_CLICK.name(), columnsItem.url);
+        mineNewFragment.b(columnsItem.url);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:112:0x0248  */
@@ -1450,10 +1453,10 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
             View inflate = getLayoutInflater().inflate(R.layout.item_mine_healthy_banner, (ViewGroup) null);
             ItemMineHealthyBannerBinding a2 = ItemMineHealthyBannerBinding.a(inflate);
             Intrinsics.c(a2, "bind(bannerView)");
-            a2.f29232c.setText(columnsItem.title);
+            a2.f15542c.setText(columnsItem.title);
             a2.b.setText(columnsItem.content);
-            ImageLoader.a(getFragmentActive(), columnsItem.icon).a(a2.f29231a);
-            TextView textView = a2.f29232c;
+            ImageLoader.a(getFragmentActive(), columnsItem.icon).a(a2.f15541a);
+            TextView textView = a2.f15542c;
             Intrinsics.c(textView, "bannerVB.tvTitle");
             a(textView, columnsItem.title_color);
             TextView textView2 = a2.b;
@@ -1474,7 +1477,7 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
         if (p5 != null && (viewFlipper3 = p5.aC) != null && (inAnimation = viewFlipper3.getInAnimation()) != null) {
             inAnimation.setAnimationListener(new Animation.AnimationListener() { // from class: com.soft.blued.ui.mine.fragment.MineNewFragment$setHealthBannerEntry$2
                 /* JADX WARN: Code restructure failed: missing block: B:19:0x00e9, code lost:
-                    r0 = r6.f31624a.p();
+                    r0 = r6.f17934a.p();
                  */
                 @Override // android.view.animation.Animation.AnimationListener
                 /*
@@ -1516,10 +1519,10 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(List list, MineNewFragment this$0, ItemMineVasEntry3Binding rightViewBinding, View view) {
+    public static final void b(List list, MineNewFragment mineNewFragment, ItemMineVasEntry3Binding itemMineVasEntry3Binding, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        Intrinsics.e(rightViewBinding, "$rightViewBinding");
+        Intrinsics.e(mineNewFragment, "this$0");
+        Intrinsics.e(itemMineVasEntry3Binding, "$rightViewBinding");
         SettingsProtos.Event event = SettingsProtos.Event.MINE_BTN_CLICK;
         String str = ((MinePageModel.ColumnsItem) list.get(2)).url;
         String str2 = ((MinePageModel.ColumnsItem) list.get(2)).id;
@@ -1528,8 +1531,8 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
             z = false;
         }
         EventTrackSettings.a(event, str, str2, z);
-        this$0.b(((MinePageModel.ColumnsItem) list.get(2)).url);
-        rightViewBinding.b.setVisibility(8);
+        mineNewFragment.b(((MinePageModel.ColumnsItem) list.get(2)).url);
+        itemMineVasEntry3Binding.b.setVisibility(8);
         BluedPreferences.Q(((MinePageModel.ColumnsItem) list.get(2)).item_key);
     }
 
@@ -1542,7 +1545,7 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
         Bundle bundle = new Bundle();
         UserBasicModel userBasicModel = new UserBasicModel();
         userBasicModel.uid = UserInfo.getInstance().getLoginUserInfo().uid;
-        bundle.putSerializable("user", userBasicModel);
+        bundle.putSerializable("user", (Serializable) userBasicModel);
         TerminalActivity.a(bundle);
         TerminalActivity.d(getContext(), UserInfoFragmentNew.class, bundle);
     }
@@ -1551,7 +1554,7 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
         ArrayList arrayList = new ArrayList();
         List<? extends MinePageModel.ColumnsItem> list2 = list;
         if (!list2.isEmpty()) {
-            List a2 = CollectionsKt.a((Iterable) CollectionsKt.c((Collection) list2), new Comparator() { // from class: com.soft.blued.ui.mine.fragment.MineNewFragment$findShowItems$$inlined$sortedByDescending$1
+            List a2 = CollectionsKt.a(CollectionsKt.c(list2), new Comparator() { // from class: com.soft.blued.ui.mine.fragment.MineNewFragment$findShowItems$$inlined$sortedByDescending$1
                 @Override // java.util.Comparator
                 public final int compare(T t, T t2) {
                     return ComparisonsKt.a(Integer.valueOf(((MinePageModel.ColumnsItem) t2).sort), Integer.valueOf(((MinePageModel.ColumnsItem) t).sort));
@@ -1564,7 +1567,7 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
             while (i < size) {
                 int i4 = i + 1;
                 if (i4 == a2.size() || ((MinePageModel.ColumnsItem) a2.get(i4)).sort != i2) {
-                    arrayList.add(a2.get(RangesKt.a(new IntRange(i3, i), Random.f42565a)));
+                    arrayList.add(a2.get(RangesKt.a(new IntRange(i3, i), Random.a)));
                     if (i4 < a2.size()) {
                         i2 = ((MinePageModel.ColumnsItem) a2.get(i4)).sort;
                         i = i4;
@@ -1578,10 +1581,10 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void c(MineNewFragment this$0) {
-        Intrinsics.e(this$0, "this$0");
-        if (CommonTools.a(this$0)) {
-            FragmentMineNewBinding p = this$0.p();
+    public static final void c(MineNewFragment mineNewFragment) {
+        Intrinsics.e(mineNewFragment, "this$0");
+        if (CommonTools.a((Fragment) mineNewFragment)) {
+            FragmentMineNewBinding p = mineNewFragment.p();
             ShapeTextView shapeTextView = p == null ? null : p.q;
             if (shapeTextView == null) {
                 return;
@@ -1591,10 +1594,10 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void c(MineNewFragment this$0, View view) {
+    public static final void c(MineNewFragment mineNewFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        WebViewShowInfoFragment.show(this$0.getContext(), "https://activity.blued.cn/activity-blued/work/hnaaydgt", 0);
+        Intrinsics.e(mineNewFragment, "this$0");
+        WebViewShowInfoFragment.show(mineNewFragment.getContext(), "https://activity.blued.cn/activity-blued/work/hnaaydgt", 0);
     }
 
     private final void c(UserInfoEntity userInfoEntity) {
@@ -1669,7 +1672,7 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
             }
         });
         p.ao.setText(loginUserInfo.getFollowedCount());
-        p.f28893ar.setText(loginUserInfo.getFollowerCount());
+        p.f15203ar.setText(loginUserInfo.getFollowerCount());
         p.U.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.mine.fragment.-$$Lambda$MineNewFragment$UYLkx3R5Z14taZCK2d12Tnbzpys
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -1687,14 +1690,14 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
                 p.q.setVisibility(4);
             } else {
                 p.q.setVisibility(0);
-                p.q.setText(Intrinsics.a("+", (Object) userInfoEntity.visit_increase));
+                p.q.setText(Intrinsics.a("+", userInfoEntity.visit_increase));
             }
         }
         if (userInfoEntity != null) {
             TextView textView = p.as;
             String str5 = userInfoEntity.ticktock_count;
             Context context2 = getContext();
-            textView.setText(Intrinsics.a(str5, (Object) (context2 == null ? null : context2.getString(2131887934))));
+            textView.setText(Intrinsics.a(str5, context2 == null ? null : context2.getString(R.string.feed_feeds)));
         }
         if (BluedConstant.b) {
             p.g.setVisibility(8);
@@ -1704,7 +1707,7 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
             String groupsCount = TextUtils.isEmpty(loginUserInfo.getGroupsCount()) ? "0" : loginUserInfo.getGroupsCount();
             TextView textView2 = p.at;
             Context context3 = getContext();
-            textView2.setText(Intrinsics.a(groupsCount, (Object) (context3 == null ? null : context3.getString(R.string.mine_groups))));
+            textView2.setText(Intrinsics.a(groupsCount, context3 == null ? null : context3.getString(R.string.mine_groups)));
             p.at.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.mine.fragment.-$$Lambda$MineNewFragment$iILk-60urk24JHJLAld6vU1xp9g
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -1757,9 +1760,9 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void d(MineNewFragment this$0, View view) {
+    public static final void d(MineNewFragment mineNewFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
+        Intrinsics.e(mineNewFragment, "this$0");
         SettingsProtos.Event event = SettingsProtos.Event.MINE_BTN_CLICK;
         String a2 = H5Url.a(68);
         boolean z = true;
@@ -1767,7 +1770,7 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
             z = false;
         }
         EventTrackSettings.a(event, a2, "", z);
-        this$0.b(H5Url.a(68));
+        mineNewFragment.b(H5Url.a(68));
     }
 
     private final void d(UserInfoEntity userInfoEntity) {
@@ -1835,11 +1838,11 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
             Intrinsics.c(textView2, "leftViewBinding.tvDes");
             a(textView2, list.get(0).content_color);
             ImageLoader.a(getFragmentActive(), list.get(0).icon).a(a3.b);
-            ImageLoader.a(getFragmentActive(), list.get(0).icon2).a(a3.f29237c);
+            ImageLoader.a(getFragmentActive(), list.get(0).icon2).a(a3.f15547c);
             if (BluedPreferences.P(list.get(0).item_key)) {
-                a3.f29236a.setVisibility(0);
+                a3.f15546a.setVisibility(0);
             } else {
-                a3.f29236a.setVisibility(8);
+                a3.f15546a.setVisibility(8);
             }
             inflate.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.mine.fragment.-$$Lambda$MineNewFragment$fIOZbx_rGmT6TaJ7WZqSPePDWC8
                 @Override // android.view.View.OnClickListener
@@ -1861,20 +1864,20 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
             TextView textView4 = a4.h;
             Intrinsics.c(textView4, "rightViewBinding.tvDes1");
             a(textView4, list.get(1).content_color);
-            ImageLoader.a(getFragmentActive(), list.get(1).icon).a(a4.f29239c);
+            ImageLoader.a(getFragmentActive(), list.get(1).icon).a(a4.f15549c);
             if (!TextUtils.isEmpty(list.get(1).activity_text)) {
                 a4.j.setText(list.get(1).activity_text);
                 a4.j.setVisibility(0);
             }
             if (BluedPreferences.P(list.get(1).item_key)) {
-                a4.f29238a.setVisibility(0);
+                a4.f15548a.setVisibility(0);
             } else {
-                a4.f29238a.setVisibility(8);
+                a4.f15548a.setVisibility(8);
             }
             a4.e.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.mine.fragment.-$$Lambda$MineNewFragment$L76OKIDVI8gnn-nAli0Y1WowrxY
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    MineNewFragment.a(List.this, this, a4, view);
+                    MineNewFragment.a(list, this, a4, view);
                 }
             });
             a4.m.setText(list.get(2).title);
@@ -1898,7 +1901,7 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
             a4.f.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.mine.fragment.-$$Lambda$MineNewFragment$Hi9O7r98WQquDoIsuFY83-izgw0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    MineNewFragment.b(List.this, this, a4, view);
+                    MineNewFragment.b(list, this, a4, view);
                 }
             });
             FragmentMineNewBinding p4 = p();
@@ -1949,28 +1952,28 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
                 ImageLoader.a(getFragmentActive(), list.get(i2).icon).a(a5.b);
             }
             if (TextUtils.isEmpty(list.get(i2).icon2)) {
-                a5.f29241c.setVisibility(8);
+                a5.f15551c.setVisibility(8);
             } else {
-                a5.f29241c.setVisibility(0);
-                ImageLoader.a(getFragmentActive(), list.get(i2).icon2).a(a5.f29241c);
+                a5.f15551c.setVisibility(0);
+                ImageLoader.a(getFragmentActive(), list.get(i2).icon2).a(a5.f15551c);
                 if (a5.b.getVisibility() == 8) {
-                    ViewGroup.LayoutParams layoutParams3 = a5.f29241c.getLayoutParams();
+                    ViewGroup.LayoutParams layoutParams3 = a5.f15551c.getLayoutParams();
                     if (layoutParams3 == null) {
                         throw new NullPointerException("null cannot be cast to non-null type android.view.ViewGroup.MarginLayoutParams");
                     }
                     ((ViewGroup.MarginLayoutParams) layoutParams3).leftMargin = 0;
-                    a5.f29241c.requestLayout();
+                    a5.f15551c.requestLayout();
                 }
             }
             if (BluedPreferences.P(list.get(i2).item_key)) {
-                a5.f29240a.setVisibility(0);
+                a5.f15550a.setVisibility(0);
             } else {
-                a5.f29240a.setVisibility(8);
+                a5.f15550a.setVisibility(8);
             }
             inflate3.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.mine.fragment.-$$Lambda$MineNewFragment$tmwSazzKYkWgq4FBiH6xPE1q5pQ
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    MineNewFragment.a(List.this, i2, this, a5, view);
+                    MineNewFragment.a(list, i2, this, a5, view);
                 }
             });
             FragmentMineNewBinding p6 = p();
@@ -1982,113 +1985,113 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void e(MineNewFragment this$0, View view) {
+    public static final void e(MineNewFragment mineNewFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
+        Intrinsics.e(mineNewFragment, "this$0");
         SettingsProtos.Event event = SettingsProtos.Event.MINE_BTN_CLICK;
         boolean z = true;
         if (BluedConfig.a().g().is_chat_shadow != 1) {
             z = false;
         }
         EventTrackSettings.a(event, "https://app.blued.cn/?action=live_fans", "", z);
-        WebViewShowInfoFragment.show(this$0.getContext(), "https://app.blued.cn/?action=live_fans");
+        WebViewShowInfoFragment.show(mineNewFragment.getContext(), "https://app.blued.cn/?action=live_fans");
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void f(MineNewFragment this$0, View view) {
+    public static final void f(MineNewFragment mineNewFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        EventTrackSettings.a(SettingsProtos.Event.MINE_BTN_CLICK, H5Url.a(69, EncryptTool.b(LiveRoomInfo.a().f())), "", BluedConfig.a().g().is_chat_shadow == 1);
-        this$0.b(H5Url.a(69, EncryptTool.b(LiveRoomInfo.a().f())));
+        Intrinsics.e(mineNewFragment, "this$0");
+        EventTrackSettings.a(SettingsProtos.Event.MINE_BTN_CLICK, H5Url.a(69, new Object[]{EncryptTool.b(LiveRoomInfo.a().f())}), "", BluedConfig.a().g().is_chat_shadow == 1);
+        mineNewFragment.b(H5Url.a(69, new Object[]{EncryptTool.b(LiveRoomInfo.a().f())}));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void g(MineNewFragment this$0, View view) {
+    public static final void g(MineNewFragment mineNewFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
+        Intrinsics.e(mineNewFragment, "this$0");
         SettingsProtos.Event event = SettingsProtos.Event.MINE_BTN_CLICK;
         String a2 = H5Url.a(67);
         boolean z = true;
         if (BluedConfig.a().g().is_chat_shadow != 1) {
             z = false;
         }
-        EventTrackSettings.a(event, a2, null, z);
-        this$0.b(H5Url.a(67));
+        EventTrackSettings.a(event, a2, (String) null, z);
+        mineNewFragment.b(H5Url.a(67));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void h(MineNewFragment this$0, View view) {
+    public static final void h(MineNewFragment mineNewFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
+        Intrinsics.e(mineNewFragment, "this$0");
         SettingsProtos.Event event = SettingsProtos.Event.MINE_BTN_CLICK;
         boolean z = true;
         if (BluedConfig.a().g().is_chat_shadow != 1) {
             z = false;
         }
-        EventTrackSettings.a(event, "http://native.blued.cn/?action=helpcenter", null, z);
-        HelpCenterFragment.a(this$0.getContext());
+        EventTrackSettings.a(event, "http://native.blued.cn/?action=helpcenter", (String) null, z);
+        HelpCenterFragment.a(mineNewFragment.getContext());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void i(MineNewFragment this$0, View view) {
+    public static final void i(MineNewFragment mineNewFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
+        Intrinsics.e(mineNewFragment, "this$0");
         EventTrackSettings.a(SettingsProtos.Event.MINE_BTN_CLICK, "http://native.blued.cn/?action=charge&from=1", "", BluedConfig.a().g().is_chat_shadow == 1);
-        BeansPrePayFragment.a(this$0.getContext(), 1);
+        BeansPrePayFragment.a(mineNewFragment.getContext(), 1);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void j(MineNewFragment this$0, View view) {
+    public static final void j(MineNewFragment mineNewFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.b(false);
+        Intrinsics.e(mineNewFragment, "this$0");
+        mineNewFragment.b(false);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void k(MineNewFragment this$0, View view) {
+    public static final void k(MineNewFragment mineNewFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.A();
+        Intrinsics.e(mineNewFragment, "this$0");
+        mineNewFragment.A();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void l(MineNewFragment this$0, View view) {
+    public static final void l(MineNewFragment mineNewFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.A();
+        Intrinsics.e(mineNewFragment, "this$0");
+        mineNewFragment.A();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void m(MineNewFragment this$0, View view) {
+    public static final void m(MineNewFragment mineNewFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.y();
+        Intrinsics.e(mineNewFragment, "this$0");
+        mineNewFragment.y();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void n(MineNewFragment this$0, View view) {
+    public static final void n(MineNewFragment mineNewFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.z();
+        Intrinsics.e(mineNewFragment, "this$0");
+        mineNewFragment.z();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void o(MineNewFragment this$0, View view) {
+    public static final void o(MineNewFragment mineNewFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.u();
+        Intrinsics.e(mineNewFragment, "this$0");
+        mineNewFragment.u();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final FragmentMineNewBinding p() {
-        return (FragmentMineNewBinding) this.b.b(this, f31620a[0]);
+        return (FragmentMineNewBinding) this.b.b(this, f17930a[0]);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void p(MineNewFragment this$0, View view) {
+    public static final void p(MineNewFragment mineNewFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.u();
+        Intrinsics.e(mineNewFragment, "this$0");
+        mineNewFragment.u();
     }
 
     private final void q() {
@@ -2098,7 +2101,7 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
             FrameLayout frameLayout2 = null;
             ViewGroup.LayoutParams layoutParams = (p == null || (frameLayout = p.an) == null) ? null : frameLayout.getLayoutParams();
             if (layoutParams != null) {
-                layoutParams.height = StatusBarHelper.a((Context) getActivity());
+                layoutParams.height = StatusBarHelper.a(getActivity());
             }
             FragmentMineNewBinding p2 = p();
             if (p2 != null) {
@@ -2112,10 +2115,10 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void q(MineNewFragment this$0, View view) {
+    public static final void q(MineNewFragment mineNewFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.x();
+        Intrinsics.e(mineNewFragment, "this$0");
+        mineNewFragment.x();
     }
 
     private final void r() {
@@ -2130,7 +2133,7 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
         inflate.post(new Runnable() { // from class: com.soft.blued.ui.mine.fragment.-$$Lambda$MineNewFragment$8_1JJ-8TtV3hA_A1Y7kdr4AgyZs
             @Override // java.lang.Runnable
             public final void run() {
-                MineNewFragment.a(View.this);
+                MineNewFragment.a(inflate);
             }
         });
         if (BluedConfig.a().G()) {
@@ -2140,7 +2143,7 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
         a2.i.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.mine.fragment.-$$Lambda$MineNewFragment$tOoQAsP9REnswKq1Gvm3vuJpyPY
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                MineNewFragment.a(BluedPopupWindow.this, view);
+                MineNewFragment.a(a3, view);
             }
         });
         try {
@@ -2152,10 +2155,10 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void r(MineNewFragment this$0, View view) {
+    public static final void r(MineNewFragment mineNewFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.x();
+        Intrinsics.e(mineNewFragment, "this$0");
+        mineNewFragment.x();
     }
 
     private final void s() {
@@ -2213,7 +2216,6 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
             return;
         }
         observableScrollView.setScrollViewListener(new ObservableScrollView.ScrollViewListener() { // from class: com.soft.blued.ui.mine.fragment.-$$Lambda$MineNewFragment$QBiIlLs8epfAdp_Qq2mssHHUkIw
-            @Override // com.blued.android.module.common.view.ObservableScrollView.ScrollViewListener
             public final void onScrollChanged(ObservableScrollView observableScrollView2, int i, int i2, int i3, int i4) {
                 MineNewFragment.a(MineNewFragment.this, observableScrollView2, i, i2, i3, i4);
             }
@@ -2221,33 +2223,33 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void s(MineNewFragment this$0, View view) {
+    public static final void s(MineNewFragment mineNewFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.w();
+        Intrinsics.e(mineNewFragment, "this$0");
+        mineNewFragment.w();
     }
 
     private final void t() {
         ShapeLinearLayout shapeLinearLayout;
-        QBadgeContainer qBadgeContainer;
+        QBadgeContainer findViewById;
         ShapeLinearLayout shapeLinearLayout2;
         FragmentMineNewBinding p = p();
         View view = null;
         if (p != null && (shapeLinearLayout2 = p.O) != null) {
-            view = shapeLinearLayout2.findViewById(R.id.bindView);
+            view = shapeLinearLayout2.findViewById((int) R.id.bindView);
         }
         FragmentMineNewBinding p2 = p();
-        if (p2 == null || (shapeLinearLayout = p2.O) == null || (qBadgeContainer = (QBadgeContainer) shapeLinearLayout.findViewById(R.id.badge_container)) == null || view == null) {
+        if (p2 == null || (shapeLinearLayout = p2.O) == null || (findViewById = shapeLinearLayout.findViewById((int) R.id.badge_container)) == null || view == null) {
             return;
         }
-        ServiceHelper.f33645a.a(qBadgeContainer, view);
+        ServiceHelper.f19954a.a(findViewById, view);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void t(MineNewFragment this$0, View view) {
+    public static final void t(MineNewFragment mineNewFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.w();
+        Intrinsics.e(mineNewFragment, "this$0");
+        mineNewFragment.w();
     }
 
     private final void u() {
@@ -2268,15 +2270,15 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
                 shapeTextView2.setVisibility(4);
             }
         }
-        MyGroupFragmentNew.f32768a.a(context, null);
+        MyGroupFragmentNew.f19077a.a(context, null);
         EventTrackSettings.a(SettingsProtos.Event.MINE_GROUP_CLICK);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void u(MineNewFragment this$0, View view) {
+    public static final void u(MineNewFragment mineNewFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.v();
+        Intrinsics.e(mineNewFragment, "this$0");
+        mineNewFragment.v();
     }
 
     private final void v() {
@@ -2284,17 +2286,17 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
         Bundle bundle = new Bundle();
         UserBasicModel userBasicModel = new UserBasicModel();
         userBasicModel.uid = UserInfo.getInstance().getLoginUserInfo().uid;
-        bundle.putSerializable("user", userBasicModel);
+        bundle.putSerializable("user", (Serializable) userBasicModel);
         bundle.putInt("tab", 1);
         TerminalActivity.a(bundle);
         TerminalActivity.d(getContext(), UserInfoFragmentNew.class, bundle);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void v(MineNewFragment this$0, View view) {
+    public static final void v(MineNewFragment mineNewFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.v();
+        Intrinsics.e(mineNewFragment, "this$0");
+        mineNewFragment.v();
     }
 
     private final void w() {
@@ -2310,7 +2312,7 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
 
     private final void x() {
         EventTrackSettings.a(SettingsProtos.Event.MINE_INTERACT_CLICK);
-        InteractFeedFragment.f19802a.a(getContext());
+        InteractFeedFragment.a.a(getContext());
     }
 
     private final void y() {
@@ -2329,24 +2331,20 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
         TerminalActivity.d(getActivity(), FollowedAndFansFragment.class, bundle);
     }
 
-    @Override // skin.support.observe.SkinObserver
     public void a(SkinObservable skinObservable, Object obj) {
-        MineViewModel a2 = a();
+        MineViewModel mineViewModel = (MineViewModel) a();
         ActivityFragmentActive fragmentActive = getFragmentActive();
         Intrinsics.c(fragmentActive, "fragmentActive");
-        a2.a(fragmentActive);
+        mineViewModel.a(fragmentActive);
     }
 
-    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
     public boolean c() {
         return true;
     }
 
-    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
     public void f() {
     }
 
-    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
     public void g() {
         super.g();
         postSafeRunOnUiThread(new Runnable() { // from class: com.soft.blued.ui.mine.fragment.-$$Lambda$MineNewFragment$L3klPsrpLJrHzdVUm3st1RQmJi0
@@ -2370,15 +2368,14 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
         BluedPreferences.ag(false);
     }
 
-    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
     public void k() {
         super.k();
         ChatHelperV4.a().c(this);
         BluedSkinUtils.a(this);
         getViewLifecycleOwner().getLifecycle().addObserver(new LifecycleEventObserver() { // from class: com.soft.blued.ui.mine.fragment.MineNewFragment$onRegisterLiveListener$1
             @Override // androidx.lifecycle.LifecycleEventObserver
-            public void onStateChanged(LifecycleOwner source, Lifecycle.Event event) {
-                Intrinsics.e(source, "source");
+            public void onStateChanged(LifecycleOwner lifecycleOwner, Lifecycle.Event event) {
+                Intrinsics.e(lifecycleOwner, "source");
                 Intrinsics.e(event, "event");
                 if (event == Lifecycle.Event.ON_DESTROY) {
                     ChatHelperV4.a().d(MineNewFragment.this);
@@ -2386,20 +2383,20 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
                 }
             }
         });
-        MineNewFragment mineNewFragment = this;
-        LiveEventBus.get("feed_avatar_widget", Integer.TYPE).observe(mineNewFragment, new Observer() { // from class: com.soft.blued.ui.mine.fragment.-$$Lambda$MineNewFragment$xswsPPCPwt0zVxNm4uJdOxXRyBc
+        LifecycleOwner lifecycleOwner = (LifecycleOwner) this;
+        LiveEventBus.get("feed_avatar_widget", Integer.TYPE).observe(lifecycleOwner, new Observer() { // from class: com.soft.blued.ui.mine.fragment.-$$Lambda$MineNewFragment$xswsPPCPwt0zVxNm4uJdOxXRyBc
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 MineNewFragment.a(MineNewFragment.this, (Integer) obj);
             }
         });
-        LiveEventBus.get(EventBusConstant.KEY_EVENT_ZHI_CHI_MSG).observe(mineNewFragment, new Observer() { // from class: com.soft.blued.ui.mine.fragment.-$$Lambda$MineNewFragment$b9hOZoXsICUEkYj4V9Kb7qQ4nGI
+        LiveEventBus.get(EventBusConstant.KEY_EVENT_ZHI_CHI_MSG).observe(lifecycleOwner, new Observer() { // from class: com.soft.blued.ui.mine.fragment.-$$Lambda$MineNewFragment$b9hOZoXsICUEkYj4V9Kb7qQ4nGI
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 MineNewFragment.a(MineNewFragment.this, obj);
             }
         });
-        LiveEventBus.get(EventBusConstant.KEY_EVENT_REFRESH_USER_VIP_INFO, Boolean.TYPE).observe(mineNewFragment, new Observer() { // from class: com.soft.blued.ui.mine.fragment.-$$Lambda$MineNewFragment$87X2kmA02y7_TrmGib2xyEcxHwQ
+        LiveEventBus.get(EventBusConstant.KEY_EVENT_REFRESH_USER_VIP_INFO, Boolean.TYPE).observe(lifecycleOwner, new Observer() { // from class: com.soft.blued.ui.mine.fragment.-$$Lambda$MineNewFragment$87X2kmA02y7_TrmGib2xyEcxHwQ
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 MineNewFragment.a(MineNewFragment.this, (Boolean) obj);
@@ -2407,15 +2404,13 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
         });
     }
 
-    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
     public void l() {
-        MineNewFragment mineNewFragment = this;
-        LifecycleExtKt.a(mineNewFragment, a().d(), new MineNewFragment$liveDataObserver$1(this));
-        LifecycleExtKt.a(mineNewFragment, a().e(), new MineNewFragment$liveDataObserver$2(this));
-        LifecycleExtKt.a(mineNewFragment, a().f(), new MineNewFragment$liveDataObserver$3(this));
+        LifecycleOwner lifecycleOwner = (LifecycleOwner) this;
+        LifecycleExtKt.a(lifecycleOwner, ((MineViewModel) a()).d(), new MineNewFragment$liveDataObserver$1(this));
+        LifecycleExtKt.a(lifecycleOwner, ((MineViewModel) a()).e(), new MineNewFragment$liveDataObserver$2(this));
+        LifecycleExtKt.a(lifecycleOwner, ((MineViewModel) a()).f(), new MineNewFragment$liveDataObserver$3(this));
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         ResourcePromotionView resourcePromotionView;
         super.onDestroy();
@@ -2426,13 +2421,11 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
         resourcePromotionView.b();
     }
 
-    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroyView() {
         super.onDestroyView();
-        j().d().removeObservers(this);
+        ((MineViewModel) j()).d().removeObservers((LifecycleOwner) this);
     }
 
-    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onResume() {
         super.onResume();
         q();
@@ -2440,10 +2433,10 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
             s();
             c((UserInfoEntity) null);
         }
-        MineViewModel j = j();
+        MineViewModel mineViewModel = (MineViewModel) j();
         ActivityFragmentActive fragmentActive = getFragmentActive();
         Intrinsics.c(fragmentActive, "fragmentActive");
-        j.a(fragmentActive);
+        mineViewModel.a(fragmentActive);
         if (!BluedPreferences.be()) {
             FragmentMineNewBinding p = p();
             ShapeTextView shapeTextView = p == null ? null : p.q;
@@ -2461,7 +2454,6 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
         t();
     }
 
-    @Override // com.blued.android.chat.listener.SingleSessionListener
     public void onSessionDataChanged(final SessionModel sessionModel) {
         boolean z = false;
         if (sessionModel != null && sessionModel.sessionId == 4) {
@@ -2477,7 +2469,6 @@ public final class MineNewFragment extends MVVMBaseFragment<MineViewModel> imple
         }
     }
 
-    @Override // com.blued.android.chat.listener.SingleSessionListener
     public void onSessionRemoved(short s, long j) {
         if (s == 1 && j == 4) {
             AppInfo.n().post(new Runnable() { // from class: com.soft.blued.ui.mine.fragment.-$$Lambda$MineNewFragment$GMAC1_w-iCfnc-i_eOQz7cICst0

@@ -11,9 +11,7 @@ import java.util.List;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/e/a/b.class */
 public class b extends i implements Serializable {
-
-    /* renamed from: a  reason: collision with root package name */
-    final String f6613a = b.class.getSimpleName();
+    final String a = b.class.getSimpleName();
 
     public b(e eVar) {
         n(eVar.getIconImageUrl());
@@ -26,7 +24,7 @@ public class b extends i implements Serializable {
         a(eVar.getAdLogo());
         if (eVar.getAdAppInfo() != null) {
             if (n.a().A()) {
-                String str = this.f6613a;
+                String str = this.a;
                 Log.i(str, "AdAppInfo:" + eVar.getAdAppInfo().toString());
             }
             ATAdAppInfo adAppInfo = eVar.getAdAppInfo();

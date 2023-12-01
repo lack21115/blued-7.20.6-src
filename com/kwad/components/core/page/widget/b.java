@@ -9,9 +9,8 @@ public final class b extends TextureView {
         super(context);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public final void onDetachedFromWindow() {
+    protected final void onDetachedFromWindow() {
         try {
             super.onDetachedFromWindow();
         } catch (Throwable th) {

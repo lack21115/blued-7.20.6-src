@@ -8,22 +8,22 @@ import com.tencent.qimei.upload.BuildConfig;
 public class e {
 
     /* renamed from: a  reason: collision with root package name */
-    public static e f38371a;
+    public static e f24680a;
     public boolean b = false;
 
     public static e a() {
-        if (f38371a == null) {
+        if (f24680a == null) {
             synchronized (e.class) {
                 try {
-                    if (f38371a == null) {
-                        f38371a = new e();
+                    if (f24680a == null) {
+                        f24680a = new e();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f38371a;
+        return f24680a;
     }
 
     public void a(Context context) {

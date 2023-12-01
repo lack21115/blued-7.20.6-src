@@ -36,8 +36,8 @@ public final class ScaleProvider implements VisibilityAnimatorProvider {
         ofPropertyValuesHolder.addListener(new AnimatorListenerAdapter() { // from class: com.google.android.material.transition.ScaleProvider.1
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator) {
-                View.this.setScaleX(scaleX);
-                View.this.setScaleY(scaleY);
+                view.setScaleX(scaleX);
+                view.setScaleY(scaleY);
             }
         });
         return ofPropertyValuesHolder;

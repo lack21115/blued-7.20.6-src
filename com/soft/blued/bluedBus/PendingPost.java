@@ -8,17 +8,17 @@ final class PendingPost {
     private static final List<PendingPost> d = new ArrayList();
 
     /* renamed from: a  reason: collision with root package name */
-    Object[] f28302a;
+    Object[] f14612a;
     Subscription b;
 
     /* renamed from: c  reason: collision with root package name */
-    PendingPost f28303c;
+    PendingPost f14613c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static void a(PendingPost pendingPost) {
-        pendingPost.f28302a = null;
+        pendingPost.f14612a = null;
         pendingPost.b = null;
-        pendingPost.f28303c = null;
+        pendingPost.f14613c = null;
         synchronized (d) {
             if (d.size() < 10000) {
                 d.add(pendingPost);

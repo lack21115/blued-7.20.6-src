@@ -6,7 +6,7 @@ import java.util.Map;
 public class WebStorage {
 
     /* renamed from: a  reason: collision with root package name */
-    private static WebStorage f38803a;
+    private static WebStorage f25112a;
 
     @Deprecated
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/smtt/sdk/WebStorage$QuotaUpdater.class */
@@ -18,10 +18,10 @@ public class WebStorage {
         WebStorage webStorage;
         synchronized (WebStorage.class) {
             try {
-                if (f38803a == null) {
-                    f38803a = new WebStorage();
+                if (f25112a == null) {
+                    f25112a = new WebStorage();
                 }
-                webStorage = f38803a;
+                webStorage = f25112a;
             } catch (Throwable th) {
                 throw th;
             }

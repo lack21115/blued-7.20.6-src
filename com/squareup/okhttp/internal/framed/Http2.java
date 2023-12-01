@@ -72,11 +72,9 @@ public final class Http2 implements Variant {
             }
         }
 
-        @Override // okio.Source, java.io.Closeable, java.lang.AutoCloseable
         public void close() throws IOException {
         }
 
-        @Override // okio.Source
         public long read(Buffer buffer, long j) throws IOException {
             while (true) {
                 int i = this.left;
@@ -97,7 +95,6 @@ public final class Http2 implements Variant {
             }
         }
 
-        @Override // okio.Source
         public Timeout timeout() {
             return this.source.timeout();
         }

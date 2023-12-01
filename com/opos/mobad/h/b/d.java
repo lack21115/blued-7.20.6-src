@@ -5,7 +5,6 @@ import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.opos.cmn.d.e;
 import com.opos.cmn.j.b;
 import com.opos.mobad.ad.c.h;
@@ -36,7 +35,7 @@ public class d {
     private com.opos.mobad.service.event.c H;
 
     /* renamed from: a  reason: collision with root package name */
-    private com.opos.mobad.cmn.a.a f26168a;
+    private com.opos.mobad.cmn.a.a f12480a;
     private Context b;
     private boolean k;
     private com.opos.cmn.j.b p;
@@ -48,7 +47,7 @@ public class d {
     private AdItemData z;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f26169c = false;
+    private boolean f12481c = false;
     private boolean d = false;
     private boolean e = false;
     private boolean f = false;
@@ -77,8 +76,8 @@ public class d {
             }
             d.this.t = true;
             d.this.z.k(com.opos.mobad.service.f.a.a().x());
-            d.this.f26168a.b(d.this.z);
-            d.this.f26168a.a(d.this.z);
+            d.this.f12480a.b(d.this.z);
+            d.this.f12480a.a(d.this.z);
             d.this.a(true);
             d.this.i();
             if (d.this.w != null) {
@@ -109,12 +108,12 @@ public class d {
         @Override // com.opos.mobad.h.a.a
         public void a(View view, int[] iArr, long j, com.opos.mobad.cmn.a.b.a aVar) {
             com.opos.cmn.an.f.a.b("NativeAdvancePresenter", "onVideoClick ");
-            if (!com.opos.mobad.h.f.a(d.this.z, aVar) || d.this.v || d.this.f26168a == null) {
+            if (!com.opos.mobad.h.f.a(d.this.z, aVar) || d.this.v || d.this.f12480a == null) {
                 return;
             }
             com.opos.mobad.service.event.b.a().b(d.this.H);
             final EventDescription eventDescription = new EventDescription(d.this.b());
-            d.this.f26168a.a(d.this.z, !d.this.u, iArr, (Map<String, String>) null, aVar, view, (b.InterfaceC0687b) null, new b.a().a(eventDescription).a(d.this.k).a(d.this.n).a(d.this.i).a(), new a.c() { // from class: com.opos.mobad.h.b.d.6.1
+            d.this.f12480a.a(d.this.z, !d.this.u, iArr, (Map<String, String>) null, aVar, view, (b.InterfaceC0517b) null, new b.a().a(eventDescription).a(d.this.k).a(d.this.n).a(d.this.i).a(), new a.c() { // from class: com.opos.mobad.h.b.d.6.1
                 @Override // com.opos.mobad.cmn.a.a.c
                 public void a(int i) {
                     if (!d.this.v && i == 3) {
@@ -162,7 +161,7 @@ public class d {
             d.this.n = 0L;
             d.this.h = -2;
             if (!d.this.g) {
-                d.this.f26169c = false;
+                d.this.f12481c = false;
                 d.this.d = false;
                 d.this.e = false;
                 d.this.f = false;
@@ -273,15 +272,15 @@ public class d {
     public static class a implements e.a {
 
         /* renamed from: a  reason: collision with root package name */
-        private h.a f26180a;
+        private h.a f12492a;
 
         public a(h.a aVar) {
-            this.f26180a = aVar;
+            this.f12492a = aVar;
         }
 
         @Override // com.opos.mobad.cmn.a.e.a
         public void a() {
-            h.a aVar = this.f26180a;
+            h.a aVar = this.f12492a;
             if (aVar == null) {
                 return;
             }
@@ -290,7 +289,7 @@ public class d {
 
         @Override // com.opos.mobad.cmn.a.e.a
         public void a(View view) {
-            h.a aVar = this.f26180a;
+            h.a aVar = this.f12492a;
             if (aVar == null) {
                 return;
             }
@@ -307,18 +306,18 @@ public class d {
         MaterialData materialData = adItemData.i().get(0);
         this.A = materialData;
         this.k = materialData.d() == 13 ? true : z;
-        this.f26168a = aVar;
+        this.f12480a = aVar;
         this.p = new com.opos.cmn.j.b(this.b);
         this.q = new FrameLayout(this.b);
         a.b a2 = com.opos.mobad.cmn.a.b.f.a(context, this.p);
         this.D = a2;
-        this.f26168a.a(a2);
+        this.f12480a.a(a2);
         if (this.k) {
             this.B = com.opos.mobad.cmn.a.b.f.a(adItemData);
             a(this.z);
         }
         if (this.z.O() != null) {
-            this.E = new ComplianceInfo(this.z.O().b, this.z.O().f26468a);
+            this.E = new ComplianceInfo(this.z.O().b, this.z.O().f12780a);
         }
         this.F = bVar;
     }
@@ -444,7 +443,7 @@ public class d {
             hashMap.put("clickState", this.u ? "2" : "1");
             com.opos.mobad.service.event.b.a().b(this.H);
             final EventDescription eventDescription = new EventDescription(b());
-            this.f26168a.a(this.z, !this.u, iArr, hashMap, com.opos.mobad.cmn.a.b.a.ClickBt, view, (b.InterfaceC0687b) null, new b.a().a(eventDescription).a(this.k).a(this.n).a(this.i).a(), new a.c() { // from class: com.opos.mobad.h.b.d.2
+            this.f12480a.a(this.z, !this.u, iArr, hashMap, com.opos.mobad.cmn.a.b.a.ClickBt, view, (b.InterfaceC0517b) null, new b.a().a(eventDescription).a(this.k).a(this.n).a(this.i).a(), new a.c() { // from class: com.opos.mobad.h.b.d.2
                 @Override // com.opos.mobad.cmn.a.a.c
                 public void a(int i) {
                     if (!d.this.v && i == 3) {
@@ -566,7 +565,7 @@ public class d {
 
     /* JADX INFO: Access modifiers changed from: private */
     public String b() {
-        return this.C + BridgeUtil.UNDERLINE_STR + System.currentTimeMillis();
+        return this.C + "_" + System.currentTimeMillis();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -712,14 +711,14 @@ public class d {
         this.n = 0L;
         this.o = 0L;
         if (!this.g) {
-            this.f26169c = false;
+            this.f12481c = false;
             this.d = false;
             this.e = false;
             this.f = false;
         }
-        if (!this.f26169c) {
+        if (!this.f12481c) {
             b(g());
-            this.f26169c = true;
+            this.f12481c = true;
         }
         k kVar = this.x;
         if (kVar != null) {
@@ -796,7 +795,7 @@ public class d {
             com.opos.mobad.service.event.b.a().b(this.H);
         }
         this.r = null;
-        this.f26168a.a();
+        this.f12480a.a();
         this.v = true;
     }
 

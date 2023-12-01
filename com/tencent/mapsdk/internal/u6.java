@@ -9,14 +9,14 @@ public class u6 extends x6 {
     @Json(name = "bwtc")
 
     /* renamed from: c  reason: collision with root package name */
-    private int f38040c;
+    private int f24349c;
 
     public u6(long j) {
         super(j);
     }
 
     public void a(int i) {
-        this.f38040c += i;
+        this.f24349c += i;
     }
 
     public void b(int i) {

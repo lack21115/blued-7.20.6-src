@@ -1,6 +1,5 @@
 package com.google.protobuf;
 
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.google.protobuf.Descriptors;
 import java.util.Collections;
 import java.util.HashMap;
@@ -90,7 +89,7 @@ public class TypeRegistry {
     }
 
     private static String getTypeName(String str) throws InvalidProtocolBufferException {
-        String[] split = str.split(BridgeUtil.SPLIT_MARK);
+        String[] split = str.split("/");
         if (split.length != 1) {
             return split[split.length - 1];
         }

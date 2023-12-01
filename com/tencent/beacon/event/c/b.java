@@ -7,7 +7,7 @@ import com.tencent.beacon.event.EventBean;
 public final class b extends c.a<EventBean, com.tencent.beacon.event.a.b> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final C0898b f35043a = new C0898b();
+    private final C0728b f21352a = new C0728b();
     private final a b = new a();
 
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/beacon/event/c/b$a.class */
@@ -23,7 +23,7 @@ public final class b extends c.a<EventBean, com.tencent.beacon.event.a.b> {
             byte[] a2 = com.tencent.beacon.base.util.b.a(eventBean);
             bVar.e = a2;
             if (a2 != null) {
-                bVar.f35036c = a2.length;
+                bVar.f21345c = a2.length;
             }
             return bVar;
         }
@@ -31,8 +31,8 @@ public final class b extends c.a<EventBean, com.tencent.beacon.event.a.b> {
 
     /* renamed from: com.tencent.beacon.event.c.b$b  reason: collision with other inner class name */
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/beacon/event/c/b$b.class */
-    static final class C0898b implements com.tencent.beacon.base.net.a.c<com.tencent.beacon.event.a.b, EventBean> {
-        C0898b() {
+    static final class C0728b implements com.tencent.beacon.base.net.a.c<com.tencent.beacon.event.a.b, EventBean> {
+        C0728b() {
         }
 
         @Override // com.tencent.beacon.base.net.a.c
@@ -40,7 +40,7 @@ public final class b extends c.a<EventBean, com.tencent.beacon.event.a.b> {
             Object a2 = com.tencent.beacon.base.util.b.a(bVar.e);
             if (a2 != null && (a2 instanceof EventBean)) {
                 EventBean eventBean = (EventBean) a2;
-                eventBean.setCid(bVar.f35035a);
+                eventBean.setCid(bVar.f21344a);
                 return eventBean;
             }
             return null;
@@ -59,6 +59,6 @@ public final class b extends c.a<EventBean, com.tencent.beacon.event.a.b> {
     }
 
     public com.tencent.beacon.base.net.a.c<com.tencent.beacon.event.a.b, EventBean> c() {
-        return this.f35043a;
+        return this.f21352a;
     }
 }

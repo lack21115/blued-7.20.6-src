@@ -8,12 +8,12 @@ import java.util.HashMap;
 public class b implements Serializable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final HashMap<String, String> f38244a = new HashMap<>();
+    public final HashMap<String, String> f24553a = new HashMap<>();
 
     public b(Bundle bundle) {
         if (bundle != null) {
             for (String str : bundle.keySet()) {
-                this.f38244a.put(str, bundle.getString(str));
+                this.f24553a.put(str, bundle.getString(str));
             }
         }
     }

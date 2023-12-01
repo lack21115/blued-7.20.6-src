@@ -23,40 +23,42 @@ public abstract class ListFieldSchema {
             return (List) UnsafeUtil.getObject(obj, j);
         }
 
+        /* JADX WARN: Multi-variable type inference failed */
         private static <L> List<L> mutableListAt(Object obj, long j, int i) {
-            List list;
-            List<L> list2 = getList(obj, j);
-            if (list2.isEmpty()) {
-                List lazyStringArrayList = list2 instanceof LazyStringList ? new LazyStringArrayList(i) : ((list2 instanceof PrimitiveNonBoxingCollection) && (list2 instanceof Internal.ProtobufList)) ? ((Internal.ProtobufList) list2).mutableCopyWithCapacity(i) : new ArrayList(i);
-                UnsafeUtil.putObject(obj, j, lazyStringArrayList);
-                return lazyStringArrayList;
+            LazyStringArrayList lazyStringArrayList;
+            List<L> list = getList(obj, j);
+            if (list.isEmpty()) {
+                List lazyStringArrayList2 = list instanceof LazyStringList ? new LazyStringArrayList(i) : ((list instanceof PrimitiveNonBoxingCollection) && (list instanceof Internal.ProtobufList)) ? ((Internal.ProtobufList) list).mutableCopyWithCapacity(i) : new ArrayList(i);
+                UnsafeUtil.putObject(obj, j, lazyStringArrayList2);
+                return lazyStringArrayList2;
             }
-            if (UNMODIFIABLE_LIST_CLASS.isAssignableFrom(list2.getClass())) {
-                List arrayList = new ArrayList(list2.size() + i);
-                arrayList.addAll(list2);
+            if (UNMODIFIABLE_LIST_CLASS.isAssignableFrom(list.getClass())) {
+                ArrayList arrayList = new ArrayList(list.size() + i);
+                arrayList.addAll(list);
                 UnsafeUtil.putObject(obj, j, arrayList);
-                list = arrayList;
-            } else if (!(list2 instanceof UnmodifiableLazyStringList)) {
-                Internal.ProtobufList protobufList = list2;
-                if (list2 instanceof PrimitiveNonBoxingCollection) {
-                    protobufList = list2;
-                    if (list2 instanceof Internal.ProtobufList) {
-                        Internal.ProtobufList protobufList2 = (Internal.ProtobufList) list2;
-                        protobufList = list2;
+                lazyStringArrayList = arrayList;
+            } else if (!(list instanceof UnmodifiableLazyStringList)) {
+                Internal.ProtobufList protobufList = list;
+                if (list instanceof PrimitiveNonBoxingCollection) {
+                    protobufList = list;
+                    if (list instanceof Internal.ProtobufList) {
+                        Internal.ProtobufList protobufList2 = (Internal.ProtobufList) list;
+                        protobufList = list;
                         if (!protobufList2.isModifiable()) {
-                            protobufList = protobufList2.mutableCopyWithCapacity(list2.size() + i);
-                            UnsafeUtil.putObject(obj, j, protobufList);
+                            Internal.ProtobufList mutableCopyWithCapacity = protobufList2.mutableCopyWithCapacity(list.size() + i);
+                            UnsafeUtil.putObject(obj, j, mutableCopyWithCapacity);
+                            protobufList = mutableCopyWithCapacity;
                         }
                     }
                 }
                 return protobufList;
             } else {
-                List lazyStringArrayList2 = new LazyStringArrayList(list2.size() + i);
-                lazyStringArrayList2.addAll((UnmodifiableLazyStringList) list2);
-                UnsafeUtil.putObject(obj, j, lazyStringArrayList2);
-                list = lazyStringArrayList2;
+                LazyStringArrayList lazyStringArrayList3 = new LazyStringArrayList(list.size() + i);
+                lazyStringArrayList3.addAll((UnmodifiableLazyStringList) list);
+                UnsafeUtil.putObject(obj, j, lazyStringArrayList3);
+                lazyStringArrayList = lazyStringArrayList3;
             }
-            return list;
+            return lazyStringArrayList;
         }
 
         @Override // com.google.protobuf.ListFieldSchema

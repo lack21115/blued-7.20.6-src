@@ -1,7 +1,6 @@
 package com.tencent.tinker.loader;
 
 import android.content.Intent;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.tinker.loader.app.TinkerApplication;
 import com.tencent.tinker.loader.shareutil.ShareArkHotDiffPatchInfo;
 import com.tencent.tinker.loader.shareutil.ShareConstants;
@@ -55,7 +54,7 @@ public class TinkerArkHotLoader {
         if (isArkHotRuning && !arkHotApkInfo.isEmpty()) {
             hashMap.put(ShareConstants.ARKHOT_PATCH_NAME, "");
         }
-        String str3 = str + BridgeUtil.SPLIT_MARK + "arkHot" + BridgeUtil.SPLIT_MARK;
+        String str3 = str + "/arkHot/";
         File file = new File(str3);
         if (!file.exists() || !file.isDirectory()) {
             ShareIntentUtil.setIntentReturnCode(intent, -9);
@@ -89,7 +88,7 @@ public class TinkerArkHotLoader {
             return false;
         }
         ShareTinkerLog.i(TAG, "classloader: " + pathClassLoader.toString(), new Object[0]);
-        String str2 = str + BridgeUtil.SPLIT_MARK + "arkHot" + BridgeUtil.SPLIT_MARK;
+        String str2 = str + "/arkHot/";
         ArrayList arrayList = new ArrayList();
         if (isArkHotRuning && !arkHotApkInfo.isEmpty()) {
             arrayList.add(new File(str2 + ShareConstants.ARKHOT_PATCH_NAME));

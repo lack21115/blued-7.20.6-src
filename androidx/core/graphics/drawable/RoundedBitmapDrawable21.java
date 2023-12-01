@@ -27,13 +27,13 @@ public class RoundedBitmapDrawable21 extends RoundedBitmapDrawable {
 
     @Override // androidx.core.graphics.drawable.RoundedBitmapDrawable
     public boolean hasMipMap() {
-        return this.f2471a != null && this.f2471a.hasMipMap();
+        return this.f2423a != null && this.f2423a.hasMipMap();
     }
 
     @Override // androidx.core.graphics.drawable.RoundedBitmapDrawable
     public void setMipMap(boolean z) {
-        if (this.f2471a != null) {
-            this.f2471a.setHasMipMap(z);
+        if (this.f2423a != null) {
+            this.f2423a.setHasMipMap(z);
             invalidateSelf();
         }
     }

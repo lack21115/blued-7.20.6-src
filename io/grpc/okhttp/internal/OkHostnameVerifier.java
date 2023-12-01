@@ -1,7 +1,6 @@
 package io.grpc.okhttp.internal;
 
 import com.android.internal.telephony.PhoneConstants;
-import com.meizu.cloud.pushsdk.notification.model.AdvanceSetting;
 import java.security.cert.CertificateParsingException;
 import java.security.cert.X509Certificate;
 import java.util.ArrayList;
@@ -94,7 +93,7 @@ public final class OkHostnameVerifier implements HostnameVerifier {
         while (true) {
             boolean z2 = z;
             if (i >= size) {
-                if (z2 || (findMostSpecific = new DistinguishedNameParser(x509Certificate.getSubjectX500Principal()).findMostSpecific(AdvanceSetting.CLEAR_NOTIFICATION)) == null) {
+                if (z2 || (findMostSpecific = new DistinguishedNameParser(x509Certificate.getSubjectX500Principal()).findMostSpecific("cn")) == null) {
                     return false;
                 }
                 return verifyHostName(lowerCase, findMostSpecific);

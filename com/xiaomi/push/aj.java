@@ -8,21 +8,21 @@ import com.xiaomi.push.ai;
 public class aj extends ai.b {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ ai f41249a;
+    final /* synthetic */ ai f27558a;
 
     /* renamed from: a  reason: collision with other field name */
-    final /* synthetic */ String f176a;
+    final /* synthetic */ String f129a;
 
     /* renamed from: a  reason: collision with other field name */
-    final /* synthetic */ boolean f177a;
+    final /* synthetic */ boolean f130a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public aj(ai aiVar, ai.a aVar, boolean z, String str) {
         super(aVar);
-        this.f41249a = aiVar;
-        this.f177a = z;
-        this.f176a = str;
+        this.f27558a = aiVar;
+        this.f130a = z;
+        this.f129a = str;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -34,10 +34,10 @@ public class aj extends ai.b {
     @Override // com.xiaomi.push.ai.b
     void b() {
         SharedPreferences sharedPreferences;
-        if (this.f177a) {
+        if (this.f130a) {
             return;
         }
-        sharedPreferences = this.f41249a.f172a;
-        sharedPreferences.edit().putLong(this.f176a, System.currentTimeMillis()).commit();
+        sharedPreferences = this.f27558a.f125a;
+        sharedPreferences.edit().putLong(this.f129a, System.currentTimeMillis()).commit();
     }
 }

@@ -15,7 +15,7 @@ import androidx.appcompat.widget.AppCompatImageView;
 public class PhotoView extends AppCompatImageView {
 
     /* renamed from: a  reason: collision with root package name */
-    private PhotoViewAttacher f22044a;
+    private PhotoViewAttacher f8437a;
     private ImageView.ScaleType b;
 
     public PhotoView(Context context) {
@@ -32,7 +32,7 @@ public class PhotoView extends AppCompatImageView {
     }
 
     private void a() {
-        this.f22044a = new PhotoViewAttacher(this);
+        this.f8437a = new PhotoViewAttacher(this);
         super.setScaleType(ImageView.ScaleType.MATRIX);
         ImageView.ScaleType scaleType = this.b;
         if (scaleType != null) {
@@ -42,57 +42,56 @@ public class PhotoView extends AppCompatImageView {
     }
 
     public void a(float f, float f2, float f3, boolean z) {
-        this.f22044a.a(f, f2, f3, z);
+        this.f8437a.a(f, f2, f3, z);
     }
 
     public void a(float f, boolean z) {
-        this.f22044a.a(f, z);
+        this.f8437a.a(f, z);
     }
 
     public PhotoViewAttacher getAttacher() {
-        return this.f22044a;
+        return this.f8437a;
     }
 
     public RectF getDisplayRect() {
-        return this.f22044a.a();
+        return this.f8437a.a();
     }
 
     @Override // android.widget.ImageView
     public Matrix getImageMatrix() {
-        return this.f22044a.g();
+        return this.f8437a.g();
     }
 
     public float getMaximumScale() {
-        return this.f22044a.d();
+        return this.f8437a.d();
     }
 
     public float getMediumScale() {
-        return this.f22044a.c();
+        return this.f8437a.c();
     }
 
     public float getMinimumScale() {
-        return this.f22044a.b();
+        return this.f8437a.b();
     }
 
     public float getScale() {
-        return this.f22044a.e();
+        return this.f8437a.e();
     }
 
     @Override // android.widget.ImageView
     public ImageView.ScaleType getScaleType() {
-        return this.f22044a.f();
+        return this.f8437a.f();
     }
 
     public void setAllowParentInterceptOnEdge(boolean z) {
-        this.f22044a.a(z);
+        this.f8437a.a(z);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // android.widget.ImageView, android.view.View
-    public boolean setFrame(int i, int i2, int i3, int i4) {
+    @Override // android.widget.ImageView
+    protected boolean setFrame(int i, int i2, int i3, int i4) {
         boolean frame = super.setFrame(i, i2, i3, i4);
         if (frame) {
-            this.f22044a.update();
+            this.f8437a.update();
         }
         return frame;
     }
@@ -100,7 +99,7 @@ public class PhotoView extends AppCompatImageView {
     @Override // androidx.appcompat.widget.AppCompatImageView, android.widget.ImageView
     public void setImageDrawable(Drawable drawable) {
         super.setImageDrawable(drawable);
-        PhotoViewAttacher photoViewAttacher = this.f22044a;
+        PhotoViewAttacher photoViewAttacher = this.f8437a;
         if (photoViewAttacher != null) {
             photoViewAttacher.update();
         }
@@ -109,7 +108,7 @@ public class PhotoView extends AppCompatImageView {
     @Override // androidx.appcompat.widget.AppCompatImageView, android.widget.ImageView
     public void setImageResource(int i) {
         super.setImageResource(i);
-        PhotoViewAttacher photoViewAttacher = this.f22044a;
+        PhotoViewAttacher photoViewAttacher = this.f8437a;
         if (photoViewAttacher != null) {
             photoViewAttacher.update();
         }
@@ -118,81 +117,81 @@ public class PhotoView extends AppCompatImageView {
     @Override // androidx.appcompat.widget.AppCompatImageView, android.widget.ImageView
     public void setImageURI(Uri uri) {
         super.setImageURI(uri);
-        PhotoViewAttacher photoViewAttacher = this.f22044a;
+        PhotoViewAttacher photoViewAttacher = this.f8437a;
         if (photoViewAttacher != null) {
             photoViewAttacher.update();
         }
     }
 
     public void setMaximumScale(float f) {
-        this.f22044a.e(f);
+        this.f8437a.e(f);
     }
 
     public void setMediumScale(float f) {
-        this.f22044a.d(f);
+        this.f8437a.d(f);
     }
 
     public void setMinimumScale(float f) {
-        this.f22044a.c(f);
+        this.f8437a.c(f);
     }
 
     @Override // android.view.View
     public void setOnClickListener(View.OnClickListener onClickListener) {
-        this.f22044a.a(onClickListener);
+        this.f8437a.a(onClickListener);
     }
 
     public void setOnDoubleTapListener(GestureDetector.OnDoubleTapListener onDoubleTapListener) {
-        this.f22044a.a(onDoubleTapListener);
+        this.f8437a.a(onDoubleTapListener);
     }
 
     @Override // android.view.View
     public void setOnLongClickListener(View.OnLongClickListener onLongClickListener) {
-        this.f22044a.a(onLongClickListener);
+        this.f8437a.a(onLongClickListener);
     }
 
     public void setOnMatrixChangeListener(OnMatrixChangedListener onMatrixChangedListener) {
-        this.f22044a.a(onMatrixChangedListener);
+        this.f8437a.a(onMatrixChangedListener);
     }
 
     public void setOnOutsidePhotoTapListener(OnOutsidePhotoTapListener onOutsidePhotoTapListener) {
-        this.f22044a.a(onOutsidePhotoTapListener);
+        this.f8437a.a(onOutsidePhotoTapListener);
     }
 
     public void setOnPhotoTapListener(OnPhotoTapListener onPhotoTapListener) {
-        this.f22044a.a(onPhotoTapListener);
+        this.f8437a.a(onPhotoTapListener);
     }
 
     public void setOnScaleChangeListener(OnScaleChangedListener onScaleChangedListener) {
-        this.f22044a.a(onScaleChangedListener);
+        this.f8437a.a(onScaleChangedListener);
     }
 
     public void setOnSingleFlingListener(OnSingleFlingListener onSingleFlingListener) {
-        this.f22044a.a(onSingleFlingListener);
+        this.f8437a.a(onSingleFlingListener);
     }
 
     public void setOnViewDragListener(OnViewDragListener onViewDragListener) {
-        this.f22044a.a(onViewDragListener);
+        this.f8437a.a(onViewDragListener);
     }
 
     public void setOnViewTapListener(OnViewTapListener onViewTapListener) {
-        this.f22044a.a(onViewTapListener);
+        this.f8437a.a(onViewTapListener);
     }
 
     public void setRotationBy(float f) {
-        this.f22044a.b(f);
+        this.f8437a.b(f);
     }
 
     public void setRotationTo(float f) {
-        this.f22044a.a(f);
+        this.f8437a.a(f);
     }
 
     public void setScale(float f) {
-        this.f22044a.f(f);
+        this.f8437a.f(f);
     }
 
     @Override // android.widget.ImageView
     public void setScaleType(ImageView.ScaleType scaleType) {
-        PhotoViewAttacher photoViewAttacher = this.f22044a;
+        PhotoViewAttacher photoViewAttacher = this.f8437a;
         if (photoViewAttacher == null) {
             this.b = scaleType;
         } else {
@@ -201,10 +200,10 @@ public class PhotoView extends AppCompatImageView {
     }
 
     public void setZoomTransitionDuration(int i) {
-        this.f22044a.a(i);
+        this.f8437a.a(i);
     }
 
     public void setZoomable(boolean z) {
-        this.f22044a.b(z);
+        this.f8437a.b(z);
     }
 }

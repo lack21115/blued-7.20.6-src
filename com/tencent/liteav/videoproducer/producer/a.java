@@ -10,7 +10,7 @@ import com.tencent.liteav.videobase.videobase.e;
 public final class a extends com.tencent.liteav.videobase.a.a implements e.a {
 
     /* renamed from: c  reason: collision with root package name */
-    CustomVideoProcessListener f37105c;
+    CustomVideoProcessListener f23414c;
     GLConstants.PixelBufferType d;
     GLConstants.PixelFormatType e;
     private final IVideoReporter g;
@@ -69,7 +69,7 @@ public final class a extends com.tencent.liteav.videobase.a.a implements e.a {
         this.j = null;
         if (d) {
             this.b.a();
-            b(this.f37105c);
+            b(this.f23414c);
         }
     }
 

@@ -1,16 +1,14 @@
 package com.soft.blued.http;
 
+import android.app.backup.FullBackup;
 import android.content.Context;
 import android.os.Build;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Log;
 import androidx.collection.ArrayMap;
-import com.anythink.core.api.ATCustomRuleKeys;
-import com.anythink.core.api.ErrorCode;
 import com.anythink.pd.ExHandler;
 import com.baidu.mobads.sdk.api.IAdInterListener;
-import com.blued.android.chat.core.pack.ReqAckPackage;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.net.HttpManager;
 import com.blued.android.core.net.IRequestHost;
@@ -48,8 +46,10 @@ import com.soft.blued.utils.NetworkUtils;
 import com.soft.blued.utils.StringUtils;
 import com.soft.blued.utils.UserRelationshipUtils;
 import com.soft.blued.utils.WeChatUtils;
+import com.tencent.cloud.huiyansdkface.facelight.api.WbCloudFaceContant;
 import com.tencent.tendinsv.a.b;
 import com.umeng.analytics.pro.bh;
+import com.xiaomi.mipush.sdk.Constants;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -98,8 +98,8 @@ public class NearbyHttpUtils {
                 str14 = K;
                 if (!StringUtils.d(K)) {
                     str14 = K;
-                    if (K.split("-").length == 2) {
-                        String[] split = K.split("-");
+                    if (K.split(Constants.ACCEPT_TIME_SEPARATOR_SERVER).length == 2) {
+                        String[] split = K.split(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
                         int parseInt = Integer.parseInt(split[0]);
                         int parseInt2 = Integer.parseInt(split[1]);
                         int i = parseInt2;
@@ -110,30 +110,30 @@ public class NearbyHttpUtils {
                                 i2 = 0;
                             }
                             i = stringArray3.length - 1;
-                            BluedPreferences.l(i2 + "-" + i);
+                            BluedPreferences.l(i2 + Constants.ACCEPT_TIME_SEPARATOR_SERVER + i);
                         }
                         String str20 = stringArray3[i2];
                         String str21 = stringArray3[i];
-                        if (FilterNewHelper.f30593a.a(str20) && FilterNewHelper.f30593a.a(str21)) {
-                            str19 = stringArray3[stringArray3.length - 2] + "-" + stringArray3[stringArray3.length - 2];
-                        } else if (FilterNewHelper.f30593a.a(str20)) {
+                        if (FilterNewHelper.f16903a.a(str20) && FilterNewHelper.f16903a.a(str21)) {
+                            str19 = stringArray3[stringArray3.length - 2] + Constants.ACCEPT_TIME_SEPARATOR_SERVER + stringArray3[stringArray3.length - 2];
+                        } else if (FilterNewHelper.f16903a.a(str20)) {
                             str19 = "0-" + str21;
-                        } else if (FilterNewHelper.f30593a.a(str21)) {
+                        } else if (FilterNewHelper.f16903a.a(str21)) {
                             str19 = str20 + "-300";
                         } else if (str20.equals(str21)) {
-                            str19 = str20 + "-" + str21;
+                            str19 = str20 + Constants.ACCEPT_TIME_SEPARATOR_SERVER + str21;
                         } else {
-                            str19 = str20 + "-" + str21;
+                            str19 = str20 + Constants.ACCEPT_TIME_SEPARATOR_SERVER + str21;
                         }
                         str14 = str19;
                     }
                 }
             }
             String M = z2 ? BluedPreferences.M() : BluedPreferences.L();
-            if (StringUtils.d(M) || M.split("-").length != 2) {
+            if (StringUtils.d(M) || M.split(Constants.ACCEPT_TIME_SEPARATOR_SERVER).length != 2) {
                 str = "0-500";
             } else {
-                String[] split2 = M.split("-");
+                String[] split2 = M.split(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
                 int parseInt3 = Integer.parseInt(split2[0]);
                 int parseInt4 = Integer.parseInt(split2[1]);
                 if (parseInt4 > stringArray.length - 1) {
@@ -145,9 +145,9 @@ public class NearbyHttpUtils {
                     }
                     str18 = stringArray[stringArray.length - 1];
                     if (z2) {
-                        BluedPreferences.n(parseInt3 + "-" + (stringArray.length - 1));
+                        BluedPreferences.n(parseInt3 + Constants.ACCEPT_TIME_SEPARATOR_SERVER + (stringArray.length - 1));
                     } else {
-                        BluedPreferences.m(parseInt3 + "-" + (stringArray.length - 1));
+                        BluedPreferences.m(parseInt3 + Constants.ACCEPT_TIME_SEPARATOR_SERVER + (stringArray.length - 1));
                     }
                 } else {
                     str17 = stringArray[parseInt3];
@@ -156,26 +156,26 @@ public class NearbyHttpUtils {
                 if (parseInt3 == 0 && parseInt4 == 0) {
                     if (z2) {
                         int b = UserRelationshipUtils.b(stringArray[1]);
-                        str = b + "-" + b;
+                        str = b + Constants.ACCEPT_TIME_SEPARATOR_SERVER + b;
                     } else {
-                        str = stringArray[1] + "-" + stringArray[1];
+                        str = stringArray[1] + Constants.ACCEPT_TIME_SEPARATOR_SERVER + stringArray[1];
                     }
                 } else if (parseInt3 == stringArray.length - 1 && parseInt4 == stringArray.length - 1) {
                     if (z2) {
                         int b2 = UserRelationshipUtils.b(stringArray[stringArray.length - 2]);
-                        str = b2 + "-" + b2;
+                        str = b2 + Constants.ACCEPT_TIME_SEPARATOR_SERVER + b2;
                     } else {
-                        str = stringArray[stringArray.length - 2] + "-" + stringArray[stringArray.length - 2];
+                        str = stringArray[stringArray.length - 2] + Constants.ACCEPT_TIME_SEPARATOR_SERVER + stringArray[stringArray.length - 2];
                     }
-                } else if (FilterNewHelper.f30593a.a(str17) && FilterNewHelper.f30593a.a(str18)) {
+                } else if (FilterNewHelper.f16903a.a(str17) && FilterNewHelper.f16903a.a(str18)) {
                     str = "";
-                } else if (FilterNewHelper.f30593a.a(str17)) {
+                } else if (FilterNewHelper.f16903a.a(str17)) {
                     if (z2) {
                         str = "0-" + UserRelationshipUtils.b(str18);
                     } else {
                         str = "0-" + str18;
                     }
-                } else if (FilterNewHelper.f30593a.a(str18)) {
+                } else if (FilterNewHelper.f16903a.a(str18)) {
                     if (z2) {
                         str = UserRelationshipUtils.b(str17) + "-500";
                     } else {
@@ -183,21 +183,21 @@ public class NearbyHttpUtils {
                     }
                 } else if (str17.equals(str18)) {
                     if (z2) {
-                        str = UserRelationshipUtils.b(str17) + "-" + UserRelationshipUtils.b(str18);
+                        str = UserRelationshipUtils.b(str17) + Constants.ACCEPT_TIME_SEPARATOR_SERVER + UserRelationshipUtils.b(str18);
                     } else {
-                        str = str17 + "-" + str18;
+                        str = str17 + Constants.ACCEPT_TIME_SEPARATOR_SERVER + str18;
                     }
                 } else if (z2) {
-                    str = UserRelationshipUtils.b(str17) + "-" + UserRelationshipUtils.b(str18);
+                    str = UserRelationshipUtils.b(str17) + Constants.ACCEPT_TIME_SEPARATOR_SERVER + UserRelationshipUtils.b(str18);
                 } else {
-                    str = str17 + "-" + str18;
+                    str = str17 + Constants.ACCEPT_TIME_SEPARATOR_SERVER + str18;
                 }
             }
             String O = z2 ? BluedPreferences.O() : BluedPreferences.N();
-            if (StringUtils.d(O) || O.split("-").length != 2) {
+            if (StringUtils.d(O) || O.split(Constants.ACCEPT_TIME_SEPARATOR_SERVER).length != 2) {
                 str13 = "0-1000";
             } else {
-                String[] split3 = O.split("-");
+                String[] split3 = O.split(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
                 int intValue = Integer.valueOf(split3[0]).intValue();
                 int intValue2 = Integer.valueOf(split3[1]).intValue();
                 if (intValue2 > stringArray2.length - 1) {
@@ -209,9 +209,9 @@ public class NearbyHttpUtils {
                     }
                     str16 = stringArray2[stringArray2.length - 1];
                     if (z2) {
-                        BluedPreferences.p(intValue + "-" + (stringArray2.length - 1));
+                        BluedPreferences.p(intValue + Constants.ACCEPT_TIME_SEPARATOR_SERVER + (stringArray2.length - 1));
                     } else {
-                        BluedPreferences.o(intValue + "-" + (stringArray2.length - 1));
+                        BluedPreferences.o(intValue + Constants.ACCEPT_TIME_SEPARATOR_SERVER + (stringArray2.length - 1));
                     }
                 } else {
                     str15 = stringArray2[intValue];
@@ -219,18 +219,18 @@ public class NearbyHttpUtils {
                 }
                 if (intValue == 0 && intValue2 == 0) {
                     int c2 = UserRelationshipUtils.c(stringArray2[1]);
-                    str13 = c2 + "-" + c2;
+                    str13 = c2 + Constants.ACCEPT_TIME_SEPARATOR_SERVER + c2;
                 } else if (intValue == stringArray2.length - 1 && intValue2 == stringArray2.length - 1) {
-                    str13 = stringArray2[stringArray2.length - 2] + "-" + stringArray2[stringArray2.length - 2];
-                } else if (FilterNewHelper.f30593a.a(str15) && FilterNewHelper.f30593a.a(str16)) {
+                    str13 = stringArray2[stringArray2.length - 2] + Constants.ACCEPT_TIME_SEPARATOR_SERVER + stringArray2[stringArray2.length - 2];
+                } else if (FilterNewHelper.f16903a.a(str15) && FilterNewHelper.f16903a.a(str16)) {
                     str13 = "";
-                } else if (FilterNewHelper.f30593a.a(str15)) {
+                } else if (FilterNewHelper.f16903a.a(str15)) {
                     if (z2) {
                         str13 = "0-" + UserRelationshipUtils.c(str16);
                     } else {
                         str13 = "0-" + str16;
                     }
-                } else if (FilterNewHelper.f30593a.a(str16)) {
+                } else if (FilterNewHelper.f16903a.a(str16)) {
                     if (z2) {
                         str13 = UserRelationshipUtils.c(str15) + "-1000";
                     } else {
@@ -238,14 +238,14 @@ public class NearbyHttpUtils {
                     }
                 } else if (str15.equals(str16)) {
                     if (z2) {
-                        str13 = UserRelationshipUtils.c(str15) + "-" + UserRelationshipUtils.c(str16);
+                        str13 = UserRelationshipUtils.c(str15) + Constants.ACCEPT_TIME_SEPARATOR_SERVER + UserRelationshipUtils.c(str16);
                     } else {
-                        str13 = str15 + "-" + str16;
+                        str13 = str15 + Constants.ACCEPT_TIME_SEPARATOR_SERVER + str16;
                     }
                 } else if (z2) {
-                    str13 = UserRelationshipUtils.c(str15) + "-" + UserRelationshipUtils.c(str16);
+                    str13 = UserRelationshipUtils.c(str15) + Constants.ACCEPT_TIME_SEPARATOR_SERVER + UserRelationshipUtils.c(str16);
                 } else {
-                    str13 = str15 + "-" + str16;
+                    str13 = str15 + Constants.ACCEPT_TIME_SEPARATOR_SERVER + str16;
                 }
             }
             str12 = BluedPreferences.P() ? "1" : "";
@@ -323,7 +323,7 @@ public class NearbyHttpUtils {
             arrayMap.put("role", filterEntity.role);
         }
         if (!StringUtils.d(filterEntity.age)) {
-            arrayMap.put(ATCustomRuleKeys.AGE, filterEntity.age);
+            arrayMap.put("age", filterEntity.age);
         }
         if (!StringUtils.d(filterEntity.height)) {
             arrayMap.put("height", filterEntity.height);
@@ -338,7 +338,7 @@ public class NearbyHttpUtils {
             arrayMap.put(UserFindResult.USER_SORT_BY.ONLINE, filterEntity.online);
         }
         if (!StringUtils.d(filterEntity.verified)) {
-            arrayMap.put(ReqAckPackage.REQ_RESPONSE_KEY.VBADGE, "4");
+            arrayMap.put("vbadge", "4");
         }
         if (!StringUtils.d(filterEntity.nickName)) {
             arrayMap.put("name", filterEntity.nickName);
@@ -365,14 +365,14 @@ public class NearbyHttpUtils {
             arrayMap.put("zodiac", filterEntity.zodiac);
         }
         if (UserHttpUtils.d && "recommend".equals(filterEntity.sort_by)) {
-            arrayMap.put("repeat", UserHttpUtils.f29667a + "");
-            UserHttpUtils.f29667a = UserHttpUtils.f29667a + 1;
+            arrayMap.put("repeat", UserHttpUtils.f15977a + "");
+            UserHttpUtils.f15977a = UserHttpUtils.f15977a + 1;
         }
         return f.toJson(arrayMap);
     }
 
     public static void a() {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("is_free_use", "1");
         HttpManager.b(BluedHttpUrl.q() + "/users/map").a(a2).b(BluedHttpTools.a(true)).h();
     }
@@ -402,7 +402,7 @@ public class NearbyHttpUtils {
         if (!StringUtils.d(str2)) {
             str4 = str3 + "?filter=" + str2;
         }
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         String update = !Build.MANUFACTURER.toLowerCase().equals(AssistUtils.BRAND_HW) ? YuvUtil.getUpdate() : "";
         a2.put(ExHandler.JSON_REQUEST_BOOT_MARK, "");
         a2.put(ExHandler.JSON_REQUEST_UPDATE_MARK, update);
@@ -454,7 +454,7 @@ public class NearbyHttpUtils {
         }
         a2.put(bh.P, ((!z || z) ? 1 : (z || z) ? 2 : (z || z) ? 3 : 0) + "");
         String buyerId = GDTAdSdk.getGDTAdManger().getBuyerId(new ArrayMap());
-        String sDKInfo = GDTAdSdk.getGDTAdManger().getSDKInfo(ErrorCode.networkError);
+        String sDKInfo = GDTAdSdk.getGDTAdManger().getSDKInfo("1001");
         Log.v("drb", "buyerId:" + buyerId + " -- sdkInfo:" + sDKInfo);
         a2.put("gdt_buyer_id", buyerId);
         a2.put("gdt_sdk_info", sDKInfo);
@@ -465,7 +465,7 @@ public class NearbyHttpUtils {
         a2.put("ipv6", DeviceUtils.l());
         a2.put("h", AppInfo.m + "");
         a2.put(IAdInterListener.AdReqParam.WIDTH, AppInfo.l + "");
-        a2.put("imei", AppInfo.d);
+        a2.put(ExHandler.JSON_REQUEST_IMEI, AppInfo.d);
         a2.put("didmd5", Md5.a(AppInfo.d).toLowerCase());
         a2.put(bh.x, "Android");
         a2.put("country", Locale.getDefault().getCountry());
@@ -473,7 +473,7 @@ public class NearbyHttpUtils {
         a2.put("longitude", CommonPreferences.u());
         a2.put("wx", WeChatUtils.a(AppInfo.d()) ? "1" : "0");
         a2.put("wx_sdk", "5.5.8");
-        a2.put("channel", AppInfo.f9487c);
+        a2.put("channel", AppInfo.c);
         a2.put("req_id", ADUtils.b());
         HttpManager.a(str4, bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
     }
@@ -487,8 +487,8 @@ public class NearbyHttpUtils {
         while (true) {
             String str2 = str;
             if (i >= list.size()) {
-                Map<String, String> a2 = BluedHttpTools.a();
-                a2.put("custom", str2);
+                Map a2 = BluedHttpTools.a();
+                a2.put(WbCloudFaceContant.CUSTOM, str2);
                 HttpManager.b(BluedHttpUrl.q() + "/users/custom", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
                 return;
             }
@@ -511,14 +511,14 @@ public class NearbyHttpUtils {
 
     public static void a(BluedUIHttpResponse bluedUIHttpResponse, boolean z) {
         String str = BluedHttpUrl.q() + "/blued/confirm_mobile";
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("is_use", z ? "1" : "0");
         HttpManager.b(str, bluedUIHttpResponse).a(BluedHttpTools.a(a2)).b(BluedHttpTools.a(true)).h();
     }
 
     public static void b() {
         LogUtils.c("模态弹层 getNearbyGuideModeLeaveOne:" + CommunityPreferences.al());
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("longitude", CommonPreferences.u());
         a2.put("latitude", CommonPreferences.v());
         a2.put("leave_one", String.valueOf(CommunityPreferences.al()));
@@ -527,7 +527,6 @@ public class NearbyHttpUtils {
             /* JADX WARN: Code restructure failed: missing block: B:78:0x03fd, code lost:
                 if (r0.getSubType() == 10) goto L69;
              */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
@@ -541,19 +540,18 @@ public class NearbyHttpUtils {
                 throw new UnsupportedOperationException("Method not decompiled: com.soft.blued.http.NearbyHttpUtils.AnonymousClass1.onUIUpdate(com.blued.android.framework.http.parser.BluedEntityA):void");
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish(boolean z) {
                 super.onUIFinish(z);
-                CommunityPreferences.a(CommunityManager.f19086a.a().o());
-                CommunityPreferences.b(CommunityManager.f19086a.a().p());
+                CommunityPreferences.a(CommunityManager.a.a().o());
+                CommunityPreferences.b(CommunityManager.a.a().p());
             }
-        }, null).b(BluedHttpTools.a(true)).a(a2).h();
+        }, (IRequestHost) null).b(BluedHttpTools.a(true)).a(a2).h();
     }
 
     public static void b(Context context, BluedUIHttpResponse bluedUIHttpResponse, FilterEntity filterEntity, String str, IRequestHost iRequestHost) {
         if (BluedPreferences.H() != UserHttpUtils.b && !BluedPreferences.H() && "recommend".equals(filterEntity.sort_by)) {
             UserHttpUtils.d = true;
-            UserHttpUtils.f29667a = 1;
+            UserHttpUtils.f15977a = 1;
         }
         FilterEntity filterEntity2 = filterEntity;
         if (UserHttpUtils.d) {
@@ -562,15 +560,15 @@ public class NearbyHttpUtils {
                 filterEntity2 = filterEntity;
                 if (!BluedPreferences.H()) {
                     filterEntity2 = filterEntity;
-                    if (UserHttpUtils.f29667a <= 5) {
-                        filterEntity2 = UserHttpUtils.f29668c;
+                    if (UserHttpUtils.f15977a <= 5) {
+                        filterEntity2 = UserHttpUtils.f15978c;
                     }
                 }
             }
         }
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         if (!StringUtils.d(filterEntity2.f)) {
-            a2.put("f", filterEntity2.f);
+            a2.put(FullBackup.DATA_TREE_TOKEN, filterEntity2.f);
         }
         a2.put("sort_by", filterEntity2.sort_by);
         a2.put("latitude", filterEntity2.latitude);
@@ -593,13 +591,13 @@ public class NearbyHttpUtils {
             a2.put("column", filterEntity2.column + "");
         }
         a2.put("filters", a(filterEntity2));
-        Log.v("http_params", a2.get("filters"));
+        Log.v("http_params", (String) a2.get("filters"));
         a2.put("start", filterEntity2.start);
         a2.put("limit", filterEntity2.limit);
         a2.put("next_min_dist", filterEntity2.next_min_dist);
         a2.put("next_skip_uid", filterEntity2.next_skip_uid);
         if (!StringUtils.d(filterEntity2.custom)) {
-            a2.put("custom", filterEntity2.custom);
+            a2.put(WbCloudFaceContant.CUSTOM, filterEntity2.custom);
         }
         if (!StringUtils.d(str)) {
             a2.put("exclude_id", str);
@@ -618,7 +616,7 @@ public class NearbyHttpUtils {
         HttpManager.a(BluedHttpUrl.q() + "/users", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
         UserHttpUtils.b = BluedPreferences.H();
         if ("recommend".equals(filterEntity2.sort_by) && BluedPreferences.H()) {
-            UserHttpUtils.f29668c = filterEntity2;
+            UserHttpUtils.f15978c = filterEntity2;
         }
     }
 
@@ -627,7 +625,7 @@ public class NearbyHttpUtils {
     }
 
     public static void b(BluedUIHttpResponse bluedUIHttpResponse, String str, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("bubble_click", str);
         HttpManager.b(BluedHttpUrl.q() + "/ticktocks/users/feed/bubble", bluedUIHttpResponse, iRequestHost).a(BluedHttpTools.a(a2)).b(BluedHttpTools.a(true)).h();
     }
@@ -637,14 +635,14 @@ public class NearbyHttpUtils {
     }
 
     public static void d(BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("longitude", CommonPreferences.u());
         a2.put("latitude", CommonPreferences.v());
         HttpManager.a(BluedHttpUrl.q() + "/ticktocks/users/feed/bubble", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
     }
 
     public static void e(BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("longitude", CityHelper.a().c());
         a2.put("latitude", CityHelper.a().e());
         HttpManager.a(LiveRoomInfo.a().k() + "/users/selection", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();

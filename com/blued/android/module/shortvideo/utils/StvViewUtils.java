@@ -10,20 +10,16 @@ import com.blued.android.module.shortvideo.R;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/shortvideo/utils/StvViewUtils.class */
 public class StvViewUtils {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static Animation f15863a;
+    private static Animation a;
 
     /* renamed from: com.blued.android.module.shortvideo.utils.StvViewUtils$1  reason: invalid class name */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/shortvideo/utils/StvViewUtils$1.class */
     class AnonymousClass1 implements Animation.AnimationListener {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ View f15864a;
+        final /* synthetic */ View a;
 
         @Override // android.view.animation.Animation.AnimationListener
         public void onAnimationEnd(Animation animation) {
-            View view = this.f15864a;
+            View view = this.a;
             if (view != null) {
                 view.setVisibility(8);
             }
@@ -41,14 +37,12 @@ public class StvViewUtils {
     /* renamed from: com.blued.android.module.shortvideo.utils.StvViewUtils$7  reason: invalid class name */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/shortvideo/utils/StvViewUtils$7.class */
     class AnonymousClass7 implements Animation.AnimationListener {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ View f15869a;
+        final /* synthetic */ View a;
         final /* synthetic */ ScaleAnimation b;
 
         @Override // android.view.animation.Animation.AnimationListener
         public void onAnimationEnd(Animation animation) {
-            this.f15869a.startAnimation(this.b);
+            this.a.startAnimation(this.b);
         }
 
         @Override // android.view.animation.Animation.AnimationListener
@@ -63,14 +57,12 @@ public class StvViewUtils {
     /* renamed from: com.blued.android.module.shortvideo.utils.StvViewUtils$8  reason: invalid class name */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/shortvideo/utils/StvViewUtils$8.class */
     class AnonymousClass8 implements Animation.AnimationListener {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ View f15870a;
+        final /* synthetic */ View a;
         final /* synthetic */ ScaleAnimation b;
 
         @Override // android.view.animation.Animation.AnimationListener
         public void onAnimationEnd(Animation animation) {
-            this.f15870a.startAnimation(this.b);
+            this.a.startAnimation(this.b);
         }
 
         @Override // android.view.animation.Animation.AnimationListener
@@ -239,9 +231,9 @@ public class StvViewUtils {
     }
 
     public static void g(Context context, View view) {
-        if (f15863a == null) {
-            f15863a = AnimationUtils.loadAnimation(context, R.anim.stv_button_shake_anim);
+        if (a == null) {
+            a = AnimationUtils.loadAnimation(context, R.anim.stv_button_shake_anim);
         }
-        view.startAnimation(f15863a);
+        view.startAnimation(a);
     }
 }

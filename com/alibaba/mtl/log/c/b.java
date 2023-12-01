@@ -7,7 +7,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.text.TextUtils;
 import com.alibaba.mtl.log.e.i;
-import com.heytap.mcssdk.constant.IntentConstant;
+import com.android.internal.util.cm.SpamFilter;
+import com.anythink.core.common.c.g;
+import com.anythink.core.common.l;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -16,9 +18,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-6737240-dex2jar.jar:com/alibaba/mtl/log/c/b.class */
 public class b implements com.alibaba.mtl.log.c.a {
-
-    /* renamed from: a  reason: collision with root package name */
-    a f4485a;
+    a a;
     String aa = "SELECT * FROM %s ORDER BY %s ASC LIMIT %s";
     String ab = "SELECT count(*) FROM %s";
     String ac = "DELETE FROM log where _id in ( select _id from log  ORDER BY _id ASC LIMIT %d )";
@@ -26,13 +26,11 @@ public class b implements com.alibaba.mtl.log.c.a {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-6737240-dex2jar.jar:com/alibaba/mtl/log/c/b$a.class */
     public class a extends SQLiteOpenHelper {
-
-        /* renamed from: a  reason: collision with root package name */
-        private SQLiteDatabase f4486a;
+        private SQLiteDatabase a;
         private AtomicInteger e;
 
         a(Context context) {
-            super(context, "ut.db", null, 2);
+            super(context, "ut.db", (SQLiteDatabase.CursorFactory) null, 2);
             this.e = new AtomicInteger();
         }
 
@@ -42,9 +40,9 @@ public class b implements com.alibaba.mtl.log.c.a {
                     return;
                 }
                 try {
-                    if (this.e.decrementAndGet() == 0 && this.f4486a != null) {
-                        this.f4486a.close();
-                        this.f4486a = null;
+                    if (this.e.decrementAndGet() == 0 && this.a != null) {
+                        this.a.close();
+                        this.a = null;
                     }
                 } catch (Throwable th) {
                 }
@@ -57,9 +55,9 @@ public class b implements com.alibaba.mtl.log.c.a {
             synchronized (this) {
                 try {
                     if (this.e.incrementAndGet() == 1) {
-                        this.f4486a = super.getWritableDatabase();
+                        this.a = super.getWritableDatabase();
                     }
-                    sQLiteDatabase = this.f4486a;
+                    sQLiteDatabase = this.a;
                 }
             }
             return sQLiteDatabase;
@@ -95,7 +93,7 @@ public class b implements com.alibaba.mtl.log.c.a {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public b(Context context) {
-        this.f4485a = new a(context);
+        this.a = new a(context);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -117,7 +115,7 @@ public class b implements com.alibaba.mtl.log.c.a {
         synchronized (this) {
             if (list != null) {
                 if (list.size() != 0) {
-                    SQLiteDatabase writableDatabase = this.f4485a.getWritableDatabase();
+                    SQLiteDatabase writableDatabase = this.a.getWritableDatabase();
                     if (writableDatabase != null) {
                         writableDatabase.beginTransaction();
                         int i3 = 0;
@@ -154,7 +152,7 @@ public class b implements com.alibaba.mtl.log.c.a {
                             writableDatabase.endTransaction();
                         } catch (Throwable th2) {
                         }
-                        this.f4485a.a(writableDatabase);
+                        this.a.a(writableDatabase);
                     } else {
                         i.a("UTSqliteLogStore", "db is null");
                         z = false;
@@ -181,7 +179,7 @@ public class b implements com.alibaba.mtl.log.c.a {
             }
             ArrayList<com.alibaba.mtl.log.model.a> arrayList2 = new ArrayList<>(i);
             try {
-                SQLiteDatabase writableDatabase = this.f4485a.getWritableDatabase();
+                SQLiteDatabase writableDatabase = this.a.getWritableDatabase();
                 if (writableDatabase != null) {
                     StringBuilder sb = new StringBuilder();
                     sb.append("SELECT * FROM ");
@@ -191,7 +189,7 @@ public class b implements com.alibaba.mtl.log.c.a {
                         sb.append(str);
                     }
                     sb.append(" ORDER BY ");
-                    sb.append("time");
+                    sb.append(g.a.g);
                     sb.append(" ASC ");
                     sb.append(" LIMIT ");
                     sb.append(i + "");
@@ -200,12 +198,12 @@ public class b implements com.alibaba.mtl.log.c.a {
                     Cursor rawQuery = writableDatabase.rawQuery(sb2, null);
                     while (rawQuery != null && rawQuery.moveToNext()) {
                         com.alibaba.mtl.log.model.a aVar = new com.alibaba.mtl.log.model.a();
-                        i.a("UTSqliteLogStore", "pos", Integer.valueOf(rawQuery.getPosition()), "count", Integer.valueOf(rawQuery.getCount()));
+                        i.a("UTSqliteLogStore", "pos", Integer.valueOf(rawQuery.getPosition()), SpamFilter.SpamContract.NotificationTable.COUNT, Integer.valueOf(rawQuery.getCount()));
                         aVar.id = rawQuery.getInt(rawQuery.getColumnIndex("_id"));
-                        aVar.T = rawQuery.getString(rawQuery.getColumnIndex(IntentConstant.EVENT_ID));
+                        aVar.T = rawQuery.getString(rawQuery.getColumnIndex("eventId"));
                         aVar.U = rawQuery.getString(rawQuery.getColumnIndex("priority"));
-                        aVar.k(rawQuery.getString(rawQuery.getColumnIndex("content")));
-                        aVar.W = rawQuery.getString(rawQuery.getColumnIndex("time"));
+                        aVar.k(rawQuery.getString(rawQuery.getColumnIndex(l.y)));
+                        aVar.W = rawQuery.getString(rawQuery.getColumnIndex(g.a.g));
                         try {
                             aVar.X = rawQuery.getString(rawQuery.getColumnIndex("_index"));
                         } catch (Throwable th2) {
@@ -213,7 +211,7 @@ public class b implements com.alibaba.mtl.log.c.a {
                         arrayList2.add(aVar);
                     }
                     a(rawQuery);
-                    this.f4485a.a(writableDatabase);
+                    this.a.a(writableDatabase);
                     arrayList = arrayList2;
                 } else {
                     i.a("UTSqliteLogStore", "db is null");
@@ -228,14 +226,14 @@ public class b implements com.alibaba.mtl.log.c.a {
 
     @Override // com.alibaba.mtl.log.c.a
     /* renamed from: a */
-    public boolean mo2170a(List<com.alibaba.mtl.log.model.a> list) {
+    public boolean mo8613a(List<com.alibaba.mtl.log.model.a> list) {
         synchronized (this) {
             if (list != null) {
                 if (list.size() != 0) {
                     SQLiteDatabase sQLiteDatabase = null;
                     boolean z = false;
                     try {
-                        SQLiteDatabase writableDatabase = this.f4485a.getWritableDatabase();
+                        SQLiteDatabase writableDatabase = this.a.getWritableDatabase();
                         if (writableDatabase != null) {
                             writableDatabase.beginTransaction();
                             int i = 0;
@@ -249,10 +247,10 @@ public class b implements com.alibaba.mtl.log.c.a {
                                     com.alibaba.mtl.log.model.a aVar = list.get(i2);
                                     if (aVar != null) {
                                         ContentValues contentValues = new ContentValues();
-                                        contentValues.put(IntentConstant.EVENT_ID, aVar.T);
+                                        contentValues.put("eventId", aVar.T);
                                         contentValues.put("priority", aVar.U);
-                                        contentValues.put("content", aVar.i());
-                                        contentValues.put("time", aVar.W);
+                                        contentValues.put(l.y, aVar.i());
+                                        contentValues.put(g.a.g, aVar.W);
                                         contentValues.put("_index", aVar.X);
                                         long insert = writableDatabase.insert("log", "", contentValues);
                                         if (insert == -1) {
@@ -267,7 +265,7 @@ public class b implements com.alibaba.mtl.log.c.a {
                                     z = true;
                                     sQLiteDatabase = writableDatabase;
                                     i.a("UTSqliteLogStore", "insert error", th);
-                                    com.alibaba.mtl.appmonitor.b.b.m2144a(th);
+                                    com.alibaba.mtl.appmonitor.b.b.m8587a(th);
                                     if (sQLiteDatabase != null) {
                                         try {
                                             sQLiteDatabase.setTransactionSuccessful();
@@ -278,7 +276,7 @@ public class b implements com.alibaba.mtl.log.c.a {
                                         } catch (Throwable th3) {
                                         }
                                     }
-                                    this.f4485a.a(sQLiteDatabase);
+                                    this.a.a(sQLiteDatabase);
                                     return z;
                                 }
                             }
@@ -295,7 +293,7 @@ public class b implements com.alibaba.mtl.log.c.a {
                             } catch (Throwable th5) {
                             }
                         }
-                        this.f4485a.a(writableDatabase);
+                        this.a.a(writableDatabase);
                     } catch (Throwable th6) {
                         th = th6;
                         z = false;
@@ -310,10 +308,10 @@ public class b implements com.alibaba.mtl.log.c.a {
     @Override // com.alibaba.mtl.log.c.a
     public void c(String str, String str2) {
         synchronized (this) {
-            SQLiteDatabase writableDatabase = this.f4485a.getWritableDatabase();
+            SQLiteDatabase writableDatabase = this.a.getWritableDatabase();
             if (writableDatabase != null) {
                 writableDatabase.delete("log", str + " < ?", new String[]{String.valueOf(str2)});
-                this.f4485a.a(writableDatabase);
+                this.a.a(writableDatabase);
             } else {
                 i.a("UTSqliteLogStore", "db is null");
             }
@@ -323,10 +321,10 @@ public class b implements com.alibaba.mtl.log.c.a {
     @Override // com.alibaba.mtl.log.c.a
     public void clear() {
         synchronized (this) {
-            SQLiteDatabase writableDatabase = this.f4485a.getWritableDatabase();
+            SQLiteDatabase writableDatabase = this.a.getWritableDatabase();
             if (writableDatabase != null) {
                 writableDatabase.delete("log", null, null);
-                this.f4485a.a(writableDatabase);
+                this.a.a(writableDatabase);
             }
         }
     }
@@ -336,7 +334,7 @@ public class b implements com.alibaba.mtl.log.c.a {
         if (i <= 0) {
             return;
         }
-        SQLiteDatabase writableDatabase = this.f4485a.getWritableDatabase();
+        SQLiteDatabase writableDatabase = this.a.getWritableDatabase();
         if (writableDatabase == null) {
             i.a("UTSqliteLogStore", "db is null");
             return;
@@ -345,14 +343,14 @@ public class b implements com.alibaba.mtl.log.c.a {
             writableDatabase.execSQL(String.format(this.ac, Integer.valueOf(i)));
         } catch (Throwable th) {
         }
-        this.f4485a.a(writableDatabase);
+        this.a.a(writableDatabase);
     }
 
     @Override // com.alibaba.mtl.log.c.a
     public int g() {
         int i;
         synchronized (this) {
-            SQLiteDatabase writableDatabase = this.f4485a.getWritableDatabase();
+            SQLiteDatabase writableDatabase = this.a.getWritableDatabase();
             i = 0;
             if (writableDatabase != null) {
                 Cursor rawQuery = writableDatabase.rawQuery(String.format(this.ab, "log"), null);
@@ -361,7 +359,7 @@ public class b implements com.alibaba.mtl.log.c.a {
                     i = rawQuery.getInt(0);
                 }
                 a(rawQuery);
-                this.f4485a.a(writableDatabase);
+                this.a.a(writableDatabase);
             } else {
                 i.a("UTSqliteLogStore", "db is null");
                 i = 0;

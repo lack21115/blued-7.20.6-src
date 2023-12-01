@@ -25,9 +25,8 @@ public interface IRemoteViewsFactory extends IInterface {
         static final int TRANSACTION_onDataSetChanged_0 = 1;
         static final int TRANSACTION_onDestroy = 3;
 
-        /* JADX INFO: Access modifiers changed from: private */
         /* loaded from: source-4181928-dex2jar.jar:com/android/internal/widget/IRemoteViewsFactory$Stub$Proxy.class */
-        public static class Proxy implements IRemoteViewsFactory {
+        private static class Proxy implements IRemoteViewsFactory {
             private IBinder mRemote;
 
             Proxy(IBinder iBinder) {
@@ -246,7 +245,7 @@ public interface IRemoteViewsFactory extends IInterface {
                     return true;
                 case 3:
                     parcel.enforceInterface(DESCRIPTOR);
-                    onDestroy(parcel.readInt() != 0 ? Intent.CREATOR.createFromParcel(parcel) : null);
+                    onDestroy(parcel.readInt() != 0 ? (Intent) Intent.CREATOR.createFromParcel(parcel) : null);
                     return true;
                 case 4:
                     parcel.enforceInterface(DESCRIPTOR);
@@ -308,7 +307,7 @@ public interface IRemoteViewsFactory extends IInterface {
                     }
                     parcel2.writeInt(i4);
                     return true;
-                case IBinder.INTERFACE_TRANSACTION /* 1598968902 */:
+                case 1598968902:
                     parcel2.writeString(DESCRIPTOR);
                     return true;
                 default:

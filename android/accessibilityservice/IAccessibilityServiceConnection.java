@@ -214,10 +214,10 @@ public interface IAccessibilityServiceConnection extends IInterface {
                     obtain.writeInt(i);
                     this.mRemote.transact(8, obtain, obtain2, 0);
                     obtain2.readException();
-                    AccessibilityWindowInfo createFromParcel = obtain2.readInt() != 0 ? AccessibilityWindowInfo.CREATOR.createFromParcel(obtain2) : null;
+                    AccessibilityWindowInfo accessibilityWindowInfo = obtain2.readInt() != 0 ? (AccessibilityWindowInfo) AccessibilityWindowInfo.CREATOR.createFromParcel(obtain2) : null;
                     obtain2.recycle();
                     obtain.recycle();
-                    return createFromParcel;
+                    return accessibilityWindowInfo;
                 } catch (Throwable th) {
                     obtain2.recycle();
                     obtain.recycle();

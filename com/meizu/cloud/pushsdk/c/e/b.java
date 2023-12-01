@@ -10,16 +10,16 @@ import java.io.IOException;
 public class b extends j {
 
     /* renamed from: a  reason: collision with root package name */
-    private final j f24052a;
+    private final j f10441a;
     private com.meizu.cloud.pushsdk.c.g.c b;
 
     /* renamed from: c  reason: collision with root package name */
-    private d f24053c;
+    private d f10442c;
 
     public b(j jVar, com.meizu.cloud.pushsdk.c.d.a aVar) {
-        this.f24052a = jVar;
+        this.f10441a = jVar;
         if (aVar != null) {
-            this.f24053c = new d(aVar);
+            this.f10442c = new d(aVar);
         }
     }
 
@@ -27,7 +27,7 @@ public class b extends j {
         return new f(lVar) { // from class: com.meizu.cloud.pushsdk.c.e.b.1
 
             /* renamed from: a  reason: collision with root package name */
-            long f24054a = 0;
+            long f10443a = 0;
             long b = 0;
 
             @Override // com.meizu.cloud.pushsdk.c.g.f, com.meizu.cloud.pushsdk.c.g.l
@@ -36,9 +36,9 @@ public class b extends j {
                 if (this.b == 0) {
                     this.b = b.this.b();
                 }
-                this.f24054a += j;
-                if (b.this.f24053c != null) {
-                    b.this.f24053c.obtainMessage(1, new com.meizu.cloud.pushsdk.c.f.a(this.f24054a, this.b)).sendToTarget();
+                this.f10443a += j;
+                if (b.this.f10442c != null) {
+                    b.this.f10442c.obtainMessage(1, new com.meizu.cloud.pushsdk.c.f.a(this.f10443a, this.b)).sendToTarget();
                 }
             }
         };
@@ -46,7 +46,7 @@ public class b extends j {
 
     @Override // com.meizu.cloud.pushsdk.c.c.j
     public g a() {
-        return this.f24052a.a();
+        return this.f10441a.a();
     }
 
     @Override // com.meizu.cloud.pushsdk.c.c.j
@@ -54,12 +54,12 @@ public class b extends j {
         if (this.b == null) {
             this.b = com.meizu.cloud.pushsdk.c.g.g.a(a((l) cVar));
         }
-        this.f24052a.a(this.b);
+        this.f10441a.a(this.b);
         this.b.flush();
     }
 
     @Override // com.meizu.cloud.pushsdk.c.c.j
     public long b() throws IOException {
-        return this.f24052a.b();
+        return this.f10441a.b();
     }
 }

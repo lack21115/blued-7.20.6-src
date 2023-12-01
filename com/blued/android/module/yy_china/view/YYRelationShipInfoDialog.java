@@ -27,9 +27,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYRelationShipInfoDialog.class */
 public final class YYRelationShipInfoDialog extends BaseFullScreenDialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    private DialofYyRelationshipRoomBinding f18396a;
+    private DialofYyRelationshipRoomBinding a;
     private YYRelationShipPagerAdapter b;
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -51,15 +49,12 @@ public final class YYRelationShipInfoDialog extends BaseFullScreenDialog {
     /* JADX INFO: Access modifiers changed from: private */
     public final void a(List<YYRelationShipRoomMode> list) {
         f().e.addOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: com.blued.android.module.yy_china.view.YYRelationShipInfoDialog$initTabs$1
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageScrollStateChanged(int i) {
             }
 
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageScrolled(int i, float f, int i2) {
             }
 
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageSelected(int i) {
                 DialofYyRelationshipRoomBinding f;
                 f = YYRelationShipInfoDialog.this.f();
@@ -130,14 +125,14 @@ public final class YYRelationShipInfoDialog extends BaseFullScreenDialog {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final DialofYyRelationshipRoomBinding f() {
-        DialofYyRelationshipRoomBinding dialofYyRelationshipRoomBinding = this.f18396a;
+        DialofYyRelationshipRoomBinding dialofYyRelationshipRoomBinding = this.a;
         Intrinsics.a(dialofYyRelationshipRoomBinding);
         return dialofYyRelationshipRoomBinding;
     }
 
     private final void g() {
-        final ActivityFragmentActive a2 = a();
-        YYRoomHttpUtils.s(new BluedUIHttpResponse<BluedEntityA<YYRelationShipRoomMode>>(a2) { // from class: com.blued.android.module.yy_china.view.YYRelationShipInfoDialog$loadData$1
+        final ActivityFragmentActive a = a();
+        YYRoomHttpUtils.s(new BluedUIHttpResponse<BluedEntityA<YYRelationShipRoomMode>>(a) { // from class: com.blued.android.module.yy_china.view.YYRelationShipInfoDialog$loadData$1
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
@@ -157,13 +152,13 @@ public final class YYRelationShipInfoDialog extends BaseFullScreenDialog {
     }
 
     private final void h() {
-        f().f16293c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYRelationShipInfoDialog$CkSByyIcJBLv5PkynCzyhgOtmYg
+        f().c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYRelationShipInfoDialog$CkSByyIcJBLv5PkynCzyhgOtmYg
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 YYRelationShipInfoDialog.a(YYRelationShipInfoDialog.this, view);
             }
         });
-        f().f16292a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYRelationShipInfoDialog$GIONGgKyfFt06Jy-pDcVPGk5nZw
+        f().a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYRelationShipInfoDialog$GIONGgKyfFt06Jy-pDcVPGk5nZw
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 YYRelationShipInfoDialog.a(view);
@@ -178,10 +173,10 @@ public final class YYRelationShipInfoDialog extends BaseFullScreenDialog {
         g();
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
-        this.f18396a = DialofYyRelationshipRoomBinding.a(inflater.inflate(R.layout.dialof_yy_relationship_room, viewGroup, true));
+        this.a = DialofYyRelationshipRoomBinding.a(inflater.inflate(R.layout.dialof_yy_relationship_room, viewGroup, true));
         h();
         return f().getRoot();
     }

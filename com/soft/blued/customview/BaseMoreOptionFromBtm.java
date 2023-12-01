@@ -20,11 +20,11 @@ import java.util.List;
 public abstract class BaseMoreOptionFromBtm {
 
     /* renamed from: a  reason: collision with root package name */
-    private ShareOptionRecyclerAdapter f28356a;
+    private ShareOptionRecyclerAdapter f14666a;
     public Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected BaseShareEntity f28357c;
+    protected BaseShareEntity f14667c;
     protected String d = "";
     public boolean e;
     public boolean f;
@@ -57,7 +57,7 @@ public abstract class BaseMoreOptionFromBtm {
         if (a2 != null && a2.size() > 0) {
             this.j.addAll(a2);
         }
-        this.f28356a = new ShareOptionRecyclerAdapter(context, this.i, false);
+        this.f14666a = new ShareOptionRecyclerAdapter(context, this.i, false);
         this.h = new ShareOptionRecyclerAdapter(context, this.j, false);
         View inflate = LayoutInflater.from(context).inflate(R.layout.more_options_common_layout, (ViewGroup) null);
         this.k = inflate;
@@ -70,8 +70,8 @@ public abstract class BaseMoreOptionFromBtm {
         linearLayoutManager.scrollToPosition(0);
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setHasFixedSize(true);
-        recyclerView.setAdapter(this.f28356a);
-        this.f28356a.notifyDataSetChanged();
+        recyclerView.setAdapter(this.f14666a);
+        this.f14666a.notifyDataSetChanged();
         LinearLayoutManager linearLayoutManager2 = new LinearLayoutManager(context);
         linearLayoutManager2.setStackFromEnd(true);
         linearLayoutManager2.setOrientation(0);
@@ -86,7 +86,7 @@ public abstract class BaseMoreOptionFromBtm {
                 BaseMoreOptionFromBtm.this.a(i);
             }
         };
-        this.f28356a.a(shareOptionsItemClickListener);
+        this.f14666a.a(shareOptionsItemClickListener);
         this.h.a(shareOptionsItemClickListener);
         this.l = new PopMenuFromBottom(context, this.k);
         this.m.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.customview.BaseMoreOptionFromBtm.2
@@ -114,9 +114,9 @@ public abstract class BaseMoreOptionFromBtm {
     }
 
     public void a(BaseShareEntity baseShareEntity) {
-        this.f28357c = baseShareEntity;
+        this.f14667c = baseShareEntity;
         a(this.i, this.j);
-        this.f28356a.notifyDataSetChanged();
+        this.f14666a.notifyDataSetChanged();
         this.h.notifyDataSetChanged();
         this.l.e();
     }

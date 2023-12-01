@@ -24,6 +24,7 @@ import android.widget.OverScroller;
 import android.widget.Toolbar;
 import com.android.internal.R;
 import com.android.internal.view.menu.MenuPresenter;
+import javax.microedition.khronos.opengles.GL10;
 
 /* loaded from: source-4181928-dex2jar.jar:com/android/internal/widget/ActionBarOverlayLayout.class */
 public class ActionBarOverlayLayout extends ViewGroup implements DecorContentParent {
@@ -38,7 +39,7 @@ public class ActionBarOverlayLayout extends ViewGroup implements DecorContentPar
             actionBarOverlayLayout.setActionBarHideOffset(i);
         }
     };
-    static final int[] ATTRS = {16843499, 16842841};
+    static final int[] ATTRS = {R.attr.actionBarSize, R.attr.windowContentOverlay};
     private static final String TAG = "ActionBarOverlayLayout";
     private final int ACTION_BAR_ANIMATE_DELAY;
     private ActionBarContainer mActionBarBottom;
@@ -359,9 +360,8 @@ public class ActionBarOverlayLayout extends ViewGroup implements DecorContentPar
         return new LayoutParams(-1, -1);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup
-    public ViewGroup.LayoutParams generateLayoutParams(ViewGroup.LayoutParams layoutParams) {
+    protected ViewGroup.LayoutParams generateLayoutParams(ViewGroup.LayoutParams layoutParams) {
         return new LayoutParams(layoutParams);
     }
 
@@ -753,7 +753,7 @@ public class ActionBarOverlayLayout extends ViewGroup implements DecorContentPar
     public void setShowingForActionMode(boolean z) {
         if (!z) {
             setDisabledSystemUiVisibility(0);
-        } else if ((getWindowSystemUiVisibility() & 1280) == 1280) {
+        } else if ((getWindowSystemUiVisibility() & GL10.GL_INVALID_ENUM) == 1280) {
             setDisabledSystemUiVisibility(4);
         }
     }

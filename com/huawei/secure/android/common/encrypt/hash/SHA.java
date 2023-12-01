@@ -11,10 +11,10 @@ import java.security.NoSuchAlgorithmException;
 public final class SHA {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23071a = "SHA";
+    private static final String f9463a = "SHA";
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f23072c = "";
+    private static final String f9464c = "";
     private static final String b = "SHA-256";
     private static final String[] d = {b, "SHA-384", "SHA-512"};
 
@@ -44,17 +44,17 @@ public final class SHA {
     public static String shaEncrypt(String str, String str2) {
         byte[] bArr;
         if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
-            b.b(f23071a, "content or algorithm is null.");
+            b.b(f9463a, "content or algorithm is null.");
             return "";
         } else if (!a(str2)) {
-            b.b(f23071a, "algorithm is not safe or legal");
+            b.b(f9463a, "algorithm is not safe or legal");
             return "";
         } else {
             try {
                 bArr = str.getBytes("UTF-8");
             } catch (UnsupportedEncodingException e) {
                 bArr = new byte[0];
-                b.b(f23071a, "Error in generate SHA UnsupportedEncodingException");
+                b.b(f9463a, "Error in generate SHA UnsupportedEncodingException");
             }
             return HexUtil.byteArray2HexStr(shaEncryptByte(bArr, str2));
         }
@@ -62,10 +62,10 @@ public final class SHA {
 
     public static byte[] shaEncryptByte(byte[] bArr, String str) {
         if (bArr == null || TextUtils.isEmpty(str)) {
-            b.b(f23071a, "content or algorithm is null.");
+            b.b(f9463a, "content or algorithm is null.");
             return new byte[0];
         } else if (!a(str)) {
-            b.b(f23071a, "algorithm is not safe or legal");
+            b.b(f9463a, "algorithm is not safe or legal");
             return new byte[0];
         } else {
             try {
@@ -73,7 +73,7 @@ public final class SHA {
                 messageDigest.update(bArr);
                 return messageDigest.digest();
             } catch (NoSuchAlgorithmException e) {
-                b.b(f23071a, "Error in generate SHA NoSuchAlgorithmException");
+                b.b(f9463a, "Error in generate SHA NoSuchAlgorithmException");
                 return new byte[0];
             }
         }

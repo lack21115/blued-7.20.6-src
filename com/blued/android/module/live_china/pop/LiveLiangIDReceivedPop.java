@@ -17,9 +17,7 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/pop/LiveLiangIDReceivedPop.class */
 public class LiveLiangIDReceivedPop extends CenterPopupView {
-
-    /* renamed from: c  reason: collision with root package name */
-    public Context f13976c;
+    public Context c;
     public final String d;
     private ImageView e;
     private TextView f;
@@ -31,7 +29,7 @@ public class LiveLiangIDReceivedPop extends CenterPopupView {
     public LiveLiangIDReceivedPop(Context context) {
         super(context);
         this.d = "LiveIDReceivedPop";
-        this.f13976c = context;
+        this.c = context;
     }
 
     public static LiveLiangIDReceivedPop a(Context context, String str, IRequestHost iRequestHost) {
@@ -83,11 +81,11 @@ public class LiveLiangIDReceivedPop extends CenterPopupView {
     }
 
     public void c() {
-        LiveRoomInfo.a().a(this.f13976c, LiveRoomInfo.a().E());
+        LiveRoomInfo.a().a(this.c, LiveRoomInfo.a().E());
     }
 
     public void d() {
-        LiveUserCardPop.a(this.f13976c, this.j, LiveRoomInfo.a().f());
+        LiveUserCardPop.a(this.c, this.j, LiveRoomInfo.a().f());
     }
 
     @Override // com.blued.android.framework.ui.xpop.core.CenterPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView

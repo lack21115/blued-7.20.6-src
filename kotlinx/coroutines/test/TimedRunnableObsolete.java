@@ -10,20 +10,16 @@ import kotlinx.coroutines.internal.ThreadSafeHeapNode;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/test/TimedRunnableObsolete.class */
 public final class TimedRunnableObsolete implements Comparable<TimedRunnableObsolete>, Runnable, ThreadSafeHeapNode {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final long f43647a;
+    public final long a;
     private final Runnable b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final long f43648c;
+    private final long c;
     private ThreadSafeHeap<?> d;
     private int e;
 
     public TimedRunnableObsolete(Runnable runnable, long j, long j2) {
         this.b = runnable;
-        this.f43648c = j;
-        this.f43647a = j2;
+        this.c = j;
+        this.a = j2;
     }
 
     public /* synthetic */ TimedRunnableObsolete(Runnable runnable, long j, long j2, int i, DefaultConstructorMarker defaultConstructorMarker) {
@@ -33,9 +29,9 @@ public final class TimedRunnableObsolete implements Comparable<TimedRunnableObso
     @Override // java.lang.Comparable
     /* renamed from: a */
     public int compareTo(TimedRunnableObsolete timedRunnableObsolete) {
-        long j = this.f43647a;
-        long j2 = timedRunnableObsolete.f43647a;
-        return j == j2 ? Intrinsics.a(this.f43648c, timedRunnableObsolete.f43648c) : Intrinsics.a(j, j2);
+        long j = this.a;
+        long j2 = timedRunnableObsolete.a;
+        return j == j2 ? Intrinsics.a(this.c, timedRunnableObsolete.c) : Intrinsics.a(j, j2);
     }
 
     @Override // kotlinx.coroutines.internal.ThreadSafeHeapNode
@@ -64,6 +60,6 @@ public final class TimedRunnableObsolete implements Comparable<TimedRunnableObso
     }
 
     public String toString() {
-        return "TimedRunnable(time=" + this.f43647a + ", run=" + this.b + ')';
+        return "TimedRunnable(time=" + this.a + ", run=" + this.b + ')';
     }
 }

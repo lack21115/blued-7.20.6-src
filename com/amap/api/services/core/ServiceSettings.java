@@ -1,6 +1,7 @@
 package com.amap.api.services.core;
 
 import android.content.Context;
+import android.view.Window;
 import com.amap.api.col.p0003sl.fd;
 import com.amap.api.col.p0003sl.fe;
 import com.amap.api.col.p0003sl.gk;
@@ -14,24 +15,20 @@ public class ServiceSettings {
     public static final String ENGLISH = "en";
     public static final int HTTP = 1;
     public static final int HTTPS = 2;
-
-    /* renamed from: c  reason: collision with root package name */
-    private static ServiceSettings f5614c;
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f5615a = "zh-CN";
+    private static ServiceSettings c;
+    private String a = "zh-CN";
     private int b = 1;
-    private int d = 20000;
-    private int e = 20000;
+    private int d = Window.PROGRESS_SECONDARY_START;
+    private int e = Window.PROGRESS_SECONDARY_START;
 
     private ServiceSettings() {
     }
 
     public static ServiceSettings getInstance() {
-        if (f5614c == null) {
-            f5614c = new ServiceSettings();
+        if (c == null) {
+            c = new ServiceSettings();
         }
-        return f5614c;
+        return c;
     }
 
     public static void updatePrivacyAgree(Context context, boolean z) {
@@ -67,7 +64,7 @@ public class ServiceSettings {
     }
 
     public String getLanguage() {
-        return this.f5615a;
+        return this.a;
     }
 
     public int getProtocol() {
@@ -93,7 +90,7 @@ public class ServiceSettings {
     }
 
     public void setLanguage(String str) {
-        this.f5615a = str;
+        this.a = str;
     }
 
     public void setProtocol(int i) {

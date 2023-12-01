@@ -7,11 +7,11 @@ import com.tencent.liteav.videoproducer.capture.CaptureSourceInterface;
 public final /* synthetic */ class b implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final CameraCaptureSingleton f36892a;
+    private final CameraCaptureSingleton f23201a;
     private final CaptureSourceInterface.a b;
 
     private b(CameraCaptureSingleton cameraCaptureSingleton, CaptureSourceInterface.a aVar) {
-        this.f36892a = cameraCaptureSingleton;
+        this.f23201a = cameraCaptureSingleton;
         this.b = aVar;
     }
 
@@ -21,6 +21,6 @@ public final /* synthetic */ class b implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        this.f36892a.mListenerManager.b(this.b);
+        this.f23201a.mListenerManager.b(this.b);
     }
 }

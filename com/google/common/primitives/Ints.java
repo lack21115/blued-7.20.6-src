@@ -35,12 +35,12 @@ public final class Ints extends IntsMethodsForWeb {
             this.end = i2;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
         public boolean contains(Object obj) {
             return (obj instanceof Integer) && Ints.indexOf(this.array, ((Integer) obj).intValue(), this.start, this.end) != -1;
         }
 
-        @Override // java.util.AbstractList, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractList, java.util.Collection, java.util.List
         public boolean equals(@NullableDecl Object obj) {
             if (obj == this) {
                 return true;
@@ -72,7 +72,7 @@ public final class Ints extends IntsMethodsForWeb {
             return Integer.valueOf(this.array[this.start + i]);
         }
 
-        @Override // java.util.AbstractList, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractList, java.util.Collection, java.util.List
         public int hashCode() {
             int i = 1;
             for (int i2 = this.start; i2 < this.end; i2++) {
@@ -90,7 +90,7 @@ public final class Ints extends IntsMethodsForWeb {
             return indexOf - this.start;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
         public boolean isEmpty() {
             return false;
         }
@@ -236,7 +236,7 @@ public final class Ints extends IntsMethodsForWeb {
         int[] iArr3 = new int[i];
         int i2 = 0;
         for (int[] iArr4 : iArr) {
-            System.arraycopy((Object) iArr4, 0, (Object) iArr3, i2, iArr4.length);
+            System.arraycopy(iArr4, 0, iArr3, i2, iArr4.length);
             i2 += iArr4.length;
         }
         return iArr3;

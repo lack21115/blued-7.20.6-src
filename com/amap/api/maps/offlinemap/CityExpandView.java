@@ -1,7 +1,6 @@
 package com.amap.api.maps.offlinemap;
 
 import android.content.Context;
-import android.media.MediaMetadataEditor;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.ExpandableListView;
@@ -22,7 +21,7 @@ public class CityExpandView extends ExpandableListView {
     @Override // android.widget.ListView, android.widget.AbsListView, android.view.View
     public void onMeasure(int i, int i2) {
         System.currentTimeMillis();
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(MediaMetadataEditor.KEY_EDITABLE_MASK, Integer.MIN_VALUE));
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(536870911, Integer.MIN_VALUE));
         System.currentTimeMillis();
     }
 }

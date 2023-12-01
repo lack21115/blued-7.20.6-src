@@ -11,17 +11,17 @@ public interface h {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private final Handler f7708a;
+        private final Handler f4869a;
         private final h b;
 
         public a(Handler handler, h hVar) {
-            this.f7708a = hVar != null ? (Handler) com.anythink.expressad.exoplayer.k.a.a(handler) : null;
+            this.f4869a = hVar != null ? (Handler) com.anythink.expressad.exoplayer.k.a.a(handler) : null;
             this.b = hVar;
         }
 
         public final void a(final int i, final int i2, final int i3, final float f) {
             if (this.b != null) {
-                this.f7708a.post(new Runnable() { // from class: com.anythink.expressad.exoplayer.l.h.a.5
+                this.f4869a.post(new Runnable() { // from class: com.anythink.expressad.exoplayer.l.h.a.5
                     @Override // java.lang.Runnable
                     public final void run() {
                         a.this.b.a(i, i2, i3, f);
@@ -32,7 +32,7 @@ public interface h {
 
         public final void a(final int i, final long j) {
             if (this.b != null) {
-                this.f7708a.post(new Runnable() { // from class: com.anythink.expressad.exoplayer.l.h.a.4
+                this.f4869a.post(new Runnable() { // from class: com.anythink.expressad.exoplayer.l.h.a.4
                     @Override // java.lang.Runnable
                     public final void run() {
                         a.this.b.a(i, j);
@@ -43,7 +43,7 @@ public interface h {
 
         public final void a(final Surface surface) {
             if (this.b != null) {
-                this.f7708a.post(new Runnable() { // from class: com.anythink.expressad.exoplayer.l.h.a.6
+                this.f4869a.post(new Runnable() { // from class: com.anythink.expressad.exoplayer.l.h.a.6
                     @Override // java.lang.Runnable
                     public final void run() {
                         a.this.b.a(surface);
@@ -54,7 +54,7 @@ public interface h {
 
         public final void a(final com.anythink.expressad.exoplayer.c.d dVar) {
             if (this.b != null) {
-                this.f7708a.post(new Runnable() { // from class: com.anythink.expressad.exoplayer.l.h.a.1
+                this.f4869a.post(new Runnable() { // from class: com.anythink.expressad.exoplayer.l.h.a.1
                     @Override // java.lang.Runnable
                     public final void run() {
                         a.this.b.a(dVar);
@@ -65,7 +65,7 @@ public interface h {
 
         public final void a(final m mVar) {
             if (this.b != null) {
-                this.f7708a.post(new Runnable() { // from class: com.anythink.expressad.exoplayer.l.h.a.3
+                this.f4869a.post(new Runnable() { // from class: com.anythink.expressad.exoplayer.l.h.a.3
                     @Override // java.lang.Runnable
                     public final void run() {
                         a.this.b.a(mVar);
@@ -76,7 +76,7 @@ public interface h {
 
         public final void a(final String str, final long j, final long j2) {
             if (this.b != null) {
-                this.f7708a.post(new Runnable() { // from class: com.anythink.expressad.exoplayer.l.h.a.2
+                this.f4869a.post(new Runnable() { // from class: com.anythink.expressad.exoplayer.l.h.a.2
                     @Override // java.lang.Runnable
                     public final void run() {
                         a.this.b.a(str, j, j2);
@@ -87,7 +87,7 @@ public interface h {
 
         public final void b(final com.anythink.expressad.exoplayer.c.d dVar) {
             if (this.b != null) {
-                this.f7708a.post(new Runnable() { // from class: com.anythink.expressad.exoplayer.l.h.a.7
+                this.f4869a.post(new Runnable() { // from class: com.anythink.expressad.exoplayer.l.h.a.7
                     @Override // java.lang.Runnable
                     public final void run() {
                         a.this.b.b(dVar);

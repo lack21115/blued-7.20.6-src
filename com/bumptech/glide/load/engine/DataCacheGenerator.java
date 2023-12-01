@@ -13,11 +13,11 @@ import java.util.List;
 public class DataCacheGenerator implements DataFetcher.DataCallback<Object>, DataFetcherGenerator {
 
     /* renamed from: a  reason: collision with root package name */
-    private final List<Key> f20740a;
+    private final List<Key> f7134a;
     private final DecodeHelper<?> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final DataFetcherGenerator.FetcherReadyCallback f20741c;
+    private final DataFetcherGenerator.FetcherReadyCallback f7135c;
     private int d;
     private Key e;
     private List<ModelLoader<File, ?>> f;
@@ -33,9 +33,9 @@ public class DataCacheGenerator implements DataFetcher.DataCallback<Object>, Dat
     /* JADX INFO: Access modifiers changed from: package-private */
     public DataCacheGenerator(List<Key> list, DecodeHelper<?> decodeHelper, DataFetcherGenerator.FetcherReadyCallback fetcherReadyCallback) {
         this.d = -1;
-        this.f20740a = list;
+        this.f7134a = list;
         this.b = decodeHelper;
-        this.f20741c = fetcherReadyCallback;
+        this.f7135c = fetcherReadyCallback;
     }
 
     private boolean c() {
@@ -44,12 +44,12 @@ public class DataCacheGenerator implements DataFetcher.DataCallback<Object>, Dat
 
     @Override // com.bumptech.glide.load.data.DataFetcher.DataCallback
     public void a(Exception exc) {
-        this.f20741c.a(this.e, exc, this.h.f20891c, DataSource.DATA_DISK_CACHE);
+        this.f7135c.a(this.e, exc, this.h.f7285c, DataSource.DATA_DISK_CACHE);
     }
 
     @Override // com.bumptech.glide.load.data.DataFetcher.DataCallback
     public void a(Object obj) {
-        this.f20741c.a(this.e, obj, this.h.f20891c, DataSource.DATA_DISK_CACHE, this.e);
+        this.f7135c.a(this.e, obj, this.h.f7285c, DataSource.DATA_DISK_CACHE, this.e);
     }
 
     @Override // com.bumptech.glide.load.engine.DataFetcherGenerator
@@ -63,8 +63,8 @@ public class DataCacheGenerator implements DataFetcher.DataCallback<Object>, Dat
                     int i = this.g;
                     this.g = i + 1;
                     this.h = list.get(i).a(this.i, this.b.g(), this.b.h(), this.b.e());
-                    if (this.h != null && this.b.a(this.h.f20891c.c())) {
-                        this.h.f20891c.a(this.b.d(), this);
+                    if (this.h != null && this.b.a(this.h.f7285c.c())) {
+                        this.h.f7285c.a(this.b.d(), this);
                         z = true;
                     }
                 }
@@ -72,10 +72,10 @@ public class DataCacheGenerator implements DataFetcher.DataCallback<Object>, Dat
             }
             int i2 = this.d + 1;
             this.d = i2;
-            if (i2 >= this.f20740a.size()) {
+            if (i2 >= this.f7134a.size()) {
                 return false;
             }
-            Key key = this.f20740a.get(this.d);
+            Key key = this.f7134a.get(this.d);
             File a2 = this.b.b().a(new DataCacheKey(key, this.b.f()));
             this.i = a2;
             if (a2 != null) {
@@ -90,7 +90,7 @@ public class DataCacheGenerator implements DataFetcher.DataCallback<Object>, Dat
     public void b() {
         ModelLoader.LoadData<?> loadData = this.h;
         if (loadData != null) {
-            loadData.f20891c.b();
+            loadData.f7285c.b();
         }
     }
 }

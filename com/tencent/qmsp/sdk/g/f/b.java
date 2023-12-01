@@ -11,7 +11,7 @@ import com.tencent.qmsp.sdk.base.c;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Uri f38640a = Uri.parse("content://cn.nubia.identity/identity");
+    private static final Uri f24949a = Uri.parse("content://cn.nubia.identity/identity");
 
     public static String a(Context context, String str) {
         Bundle bundle;
@@ -19,7 +19,7 @@ public class b {
         StringBuilder sb;
         try {
             if (Build.VERSION.SDK_INT >= 17) {
-                ContentProviderClient acquireUnstableContentProviderClient = context.getContentResolver().acquireUnstableContentProviderClient(f38640a);
+                ContentProviderClient acquireUnstableContentProviderClient = context.getContentResolver().acquireUnstableContentProviderClient(f24949a);
                 Bundle call = acquireUnstableContentProviderClient.call("getAAID", str, null);
                 bundle = call;
                 if (acquireUnstableContentProviderClient != null) {
@@ -32,7 +32,7 @@ public class b {
                     }
                 }
             } else {
-                bundle = context.getContentResolver().call(f38640a, "getAAID", str, null);
+                bundle = context.getContentResolver().call(f24949a, "getAAID", str, null);
             }
         } catch (Exception e) {
             e = e;
@@ -64,7 +64,7 @@ public class b {
         Bundle call;
         try {
             if (Build.VERSION.SDK_INT >= 17) {
-                ContentProviderClient acquireUnstableContentProviderClient = context.getContentResolver().acquireUnstableContentProviderClient(f38640a);
+                ContentProviderClient acquireUnstableContentProviderClient = context.getContentResolver().acquireUnstableContentProviderClient(f24949a);
                 Bundle call2 = acquireUnstableContentProviderClient.call("isSupport", null, null);
                 call = call2;
                 if (acquireUnstableContentProviderClient != null) {
@@ -77,7 +77,7 @@ public class b {
                     }
                 }
             } else {
-                call = context.getContentResolver().call(f38640a, "isSupport", null, null);
+                call = context.getContentResolver().call(f24949a, "isSupport", null, null);
             }
             if (call.getInt("code", -1) == 0) {
                 c.c("NubiaLog succeed");
@@ -103,7 +103,7 @@ public class b {
         StringBuilder sb;
         try {
             if (Build.VERSION.SDK_INT >= 17) {
-                ContentProviderClient acquireUnstableContentProviderClient = context.getContentResolver().acquireUnstableContentProviderClient(f38640a);
+                ContentProviderClient acquireUnstableContentProviderClient = context.getContentResolver().acquireUnstableContentProviderClient(f24949a);
                 Bundle call2 = acquireUnstableContentProviderClient.call("getOAID", null, null);
                 call = call2;
                 if (acquireUnstableContentProviderClient != null) {
@@ -116,7 +116,7 @@ public class b {
                     }
                 }
             } else {
-                call = context.getContentResolver().call(f38640a, "getOAID", null, null);
+                call = context.getContentResolver().call(f24949a, "getOAID", null, null);
             }
             try {
                 if (call.getInt("code", -1) == 0) {

@@ -17,44 +17,44 @@ import kotlin.jvm.internal.Intrinsics;
 public final class VIPPrivilegeTabAdapter extends BaseQuickAdapter<VIPCenterNewModel.PrivilegeModel, BaseViewHolder> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final int f33809a;
+    private final int f20118a;
 
     public VIPPrivilegeTabAdapter(int i) {
         super((int) R.layout.item_vip_center_privilege_tab);
-        this.f33809a = i;
+        this.f20118a = i;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
-    public void convert(BaseViewHolder helper, VIPCenterNewModel.PrivilegeModel item) {
-        Intrinsics.e(helper, "helper");
-        Intrinsics.e(item, "item");
-        ShapeTextView shapeTextView = (ShapeTextView) helper.getView(2131372672);
-        shapeTextView.setText(item.title);
-        ViewGroup.LayoutParams layoutParams = shapeTextView.getLayoutParams();
+    public void convert(BaseViewHolder baseViewHolder, VIPCenterNewModel.PrivilegeModel privilegeModel) {
+        Intrinsics.e(baseViewHolder, "helper");
+        Intrinsics.e(privilegeModel, "item");
+        ShapeHelper.ShapeView shapeView = (ShapeTextView) baseViewHolder.getView(R.id.tv_tab_name);
+        shapeView.setText(privilegeModel.title);
+        ViewGroup.LayoutParams layoutParams = shapeView.getLayoutParams();
         if (layoutParams == null) {
             throw new NullPointerException("null cannot be cast to non-null type android.widget.LinearLayout.LayoutParams");
         }
         LinearLayout.LayoutParams layoutParams2 = (LinearLayout.LayoutParams) layoutParams;
-        if (helper.getAdapterPosition() == 0) {
+        if (baseViewHolder.getAdapterPosition() == 0) {
             layoutParams2.setMarginStart(DensityUtil.a(15.0f));
         } else {
             layoutParams2.setMarginStart(DensityUtil.a(12.0f));
         }
-        shapeTextView.setLayoutParams(layoutParams2);
-        if (!item.checked) {
-            ShapeTextView shapeTextView2 = shapeTextView;
-            ShapeHelper.a((ShapeHelper.ShapeView) shapeTextView2, (int) R.color.syc_879298);
-            ShapeHelper.b(shapeTextView2, R.color.syc_f4f4f4);
+        shapeView.setLayoutParams(layoutParams2);
+        if (!privilegeModel.checked) {
+            ShapeHelper.ShapeView shapeView2 = shapeView;
+            ShapeHelper.a(shapeView2, (int) R.color.syc_879298);
+            ShapeHelper.b(shapeView2, (int) R.color.syc_f4f4f4);
             return;
         }
-        ShapeTextView shapeTextView3 = shapeTextView;
-        ShapeHelper.a((ShapeHelper.ShapeView) shapeTextView3, 2131102170);
-        if (this.f33809a == 1) {
-            ShapeHelper.b(shapeTextView3, R.color.syc_E2A371);
+        ShapeHelper.ShapeView shapeView3 = shapeView;
+        ShapeHelper.a(shapeView3, 2131102170);
+        if (this.f20118a == 1) {
+            ShapeHelper.b(shapeView3, (int) R.color.syc_E2A371);
         } else {
-            ShapeHelper.b(shapeTextView3, R.color.syc_20A7FD);
+            ShapeHelper.b(shapeView3, (int) R.color.syc_20A7FD);
         }
     }
 }

@@ -671,7 +671,7 @@ public class AppOpsManager {
 
     public void resetAllModes() {
         try {
-            this.mService.resetAllModes(UserHandle.myUserId(), null);
+            this.mService.resetAllModes(UserHandle.myUserId(), (String) null);
         } catch (RemoteException e) {
         }
     }
@@ -741,10 +741,9 @@ public class AppOpsManager {
     public void startWatchingMode(int i, String str, final OnOpChangedListener onOpChangedListener) {
         synchronized (this.mModeWatchers) {
             IAppOpsCallback iAppOpsCallback = this.mModeWatchers.get(onOpChangedListener);
-            IAppOpsCallback.Stub stub = iAppOpsCallback;
+            IAppOpsCallback iAppOpsCallback2 = iAppOpsCallback;
             if (iAppOpsCallback == null) {
-                stub = new IAppOpsCallback.Stub() { // from class: android.app.AppOpsManager.1
-                    @Override // com.android.internal.app.IAppOpsCallback
+                iAppOpsCallback2 = new IAppOpsCallback.Stub() { // from class: android.app.AppOpsManager.1
                     public void opChanged(int i2, String str2) {
                         if (onOpChangedListener instanceof OnOpChangedInternalListener) {
                             ((OnOpChangedInternalListener) onOpChangedListener).onOpChanged(i2, str2);
@@ -754,10 +753,10 @@ public class AppOpsManager {
                         }
                     }
                 };
-                this.mModeWatchers.put(onOpChangedListener, stub);
+                this.mModeWatchers.put(onOpChangedListener, iAppOpsCallback2);
             }
             try {
-                this.mService.startWatchingMode(i, str, stub);
+                this.mService.startWatchingMode(i, str, iAppOpsCallback2);
             } catch (RemoteException e) {
             }
         }

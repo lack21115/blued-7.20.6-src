@@ -27,55 +27,55 @@ import java.util.Map;
 public class SystemWebViewClient extends android.webkit.WebViewClient {
 
     /* renamed from: c  reason: collision with root package name */
-    private static String f38743c;
+    private static String f25052c;
 
     /* renamed from: a  reason: collision with root package name */
-    private WebViewClient f38744a;
+    private WebViewClient f25053a;
     private WebView b;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/smtt/sdk/SystemWebViewClient$a.class */
     static class a extends ClientCertRequest {
 
         /* renamed from: a  reason: collision with root package name */
-        private android.webkit.ClientCertRequest f38748a;
+        private android.webkit.ClientCertRequest f25057a;
 
         public a(android.webkit.ClientCertRequest clientCertRequest) {
-            this.f38748a = clientCertRequest;
+            this.f25057a = clientCertRequest;
         }
 
         @Override // com.tencent.smtt.export.external.interfaces.ClientCertRequest
         public void cancel() {
-            this.f38748a.cancel();
+            this.f25057a.cancel();
         }
 
         @Override // com.tencent.smtt.export.external.interfaces.ClientCertRequest
         public String getHost() {
-            return this.f38748a.getHost();
+            return this.f25057a.getHost();
         }
 
         @Override // com.tencent.smtt.export.external.interfaces.ClientCertRequest
         public String[] getKeyTypes() {
-            return this.f38748a.getKeyTypes();
+            return this.f25057a.getKeyTypes();
         }
 
         @Override // com.tencent.smtt.export.external.interfaces.ClientCertRequest
         public int getPort() {
-            return this.f38748a.getPort();
+            return this.f25057a.getPort();
         }
 
         @Override // com.tencent.smtt.export.external.interfaces.ClientCertRequest
         public Principal[] getPrincipals() {
-            return this.f38748a.getPrincipals();
+            return this.f25057a.getPrincipals();
         }
 
         @Override // com.tencent.smtt.export.external.interfaces.ClientCertRequest
         public void ignore() {
-            this.f38748a.ignore();
+            this.f25057a.ignore();
         }
 
         @Override // com.tencent.smtt.export.external.interfaces.ClientCertRequest
         public void proceed(PrivateKey privateKey, X509Certificate[] x509CertificateArr) {
-            this.f38748a.proceed(privateKey, x509CertificateArr);
+            this.f25057a.proceed(privateKey, x509CertificateArr);
         }
     }
 
@@ -83,25 +83,25 @@ public class SystemWebViewClient extends android.webkit.WebViewClient {
     static class b implements HttpAuthHandler {
 
         /* renamed from: a  reason: collision with root package name */
-        private android.webkit.HttpAuthHandler f38749a;
+        private android.webkit.HttpAuthHandler f25058a;
 
         b(android.webkit.HttpAuthHandler httpAuthHandler) {
-            this.f38749a = httpAuthHandler;
+            this.f25058a = httpAuthHandler;
         }
 
         @Override // com.tencent.smtt.export.external.interfaces.HttpAuthHandler
         public void cancel() {
-            this.f38749a.cancel();
+            this.f25058a.cancel();
         }
 
         @Override // com.tencent.smtt.export.external.interfaces.HttpAuthHandler
         public void proceed(String str, String str2) {
-            this.f38749a.proceed(str, str2);
+            this.f25058a.proceed(str, str2);
         }
 
         @Override // com.tencent.smtt.export.external.interfaces.HttpAuthHandler
         public boolean useHttpAuthUsernamePassword() {
-            return this.f38749a.useHttpAuthUsernamePassword();
+            return this.f25058a.useHttpAuthUsernamePassword();
         }
     }
 
@@ -109,20 +109,20 @@ public class SystemWebViewClient extends android.webkit.WebViewClient {
     static class c implements SslErrorHandler {
 
         /* renamed from: a  reason: collision with root package name */
-        android.webkit.SslErrorHandler f38750a;
+        android.webkit.SslErrorHandler f25059a;
 
         c(android.webkit.SslErrorHandler sslErrorHandler) {
-            this.f38750a = sslErrorHandler;
+            this.f25059a = sslErrorHandler;
         }
 
         @Override // com.tencent.smtt.export.external.interfaces.SslErrorHandler
         public void cancel() {
-            this.f38750a.cancel();
+            this.f25059a.cancel();
         }
 
         @Override // com.tencent.smtt.export.external.interfaces.SslErrorHandler
         public void proceed() {
-            this.f38750a.proceed();
+            this.f25059a.proceed();
         }
     }
 
@@ -130,35 +130,35 @@ public class SystemWebViewClient extends android.webkit.WebViewClient {
     static class d implements SslError {
 
         /* renamed from: a  reason: collision with root package name */
-        android.net.http.SslError f38751a;
+        android.net.http.SslError f25060a;
 
         d(android.net.http.SslError sslError) {
-            this.f38751a = sslError;
+            this.f25060a = sslError;
         }
 
         @Override // com.tencent.smtt.export.external.interfaces.SslError
         public boolean addError(int i) {
-            return this.f38751a.addError(i);
+            return this.f25060a.addError(i);
         }
 
         @Override // com.tencent.smtt.export.external.interfaces.SslError
         public SslCertificate getCertificate() {
-            return this.f38751a.getCertificate();
+            return this.f25060a.getCertificate();
         }
 
         @Override // com.tencent.smtt.export.external.interfaces.SslError
         public int getPrimaryError() {
-            return this.f38751a.getPrimaryError();
+            return this.f25060a.getPrimaryError();
         }
 
         @Override // com.tencent.smtt.export.external.interfaces.SslError
         public String getUrl() {
-            return this.f38751a.getUrl();
+            return this.f25060a.getUrl();
         }
 
         @Override // com.tencent.smtt.export.external.interfaces.SslError
         public boolean hasError(int i) {
-            return this.f38751a.hasError(i);
+            return this.f25060a.hasError(i);
         }
     }
 
@@ -166,19 +166,19 @@ public class SystemWebViewClient extends android.webkit.WebViewClient {
     static class e implements WebResourceRequest {
 
         /* renamed from: a  reason: collision with root package name */
-        private String f38752a;
+        private String f25061a;
         private boolean b;
 
         /* renamed from: c  reason: collision with root package name */
-        private boolean f38753c;
+        private boolean f25062c;
         private boolean d;
         private String e;
         private Map<String, String> f;
 
         public e(String str, boolean z, boolean z2, boolean z3, String str2, Map<String, String> map) {
-            this.f38752a = str;
+            this.f25061a = str;
             this.b = z;
-            this.f38753c = z2;
+            this.f25062c = z2;
             this.d = z3;
             this.e = str2;
             this.f = map;
@@ -196,7 +196,7 @@ public class SystemWebViewClient extends android.webkit.WebViewClient {
 
         @Override // com.tencent.smtt.export.external.interfaces.WebResourceRequest
         public Uri getUrl() {
-            return Uri.parse(this.f38752a);
+            return Uri.parse(this.f25061a);
         }
 
         @Override // com.tencent.smtt.export.external.interfaces.WebResourceRequest
@@ -211,7 +211,7 @@ public class SystemWebViewClient extends android.webkit.WebViewClient {
 
         @Override // com.tencent.smtt.export.external.interfaces.WebResourceRequest
         public boolean isRedirect() {
-            return this.f38753c;
+            return this.f25062c;
         }
     }
 
@@ -219,41 +219,41 @@ public class SystemWebViewClient extends android.webkit.WebViewClient {
     static class f implements WebResourceRequest {
 
         /* renamed from: a  reason: collision with root package name */
-        android.webkit.WebResourceRequest f38754a;
+        android.webkit.WebResourceRequest f25063a;
 
         f(android.webkit.WebResourceRequest webResourceRequest) {
-            this.f38754a = webResourceRequest;
+            this.f25063a = webResourceRequest;
         }
 
         @Override // com.tencent.smtt.export.external.interfaces.WebResourceRequest
         public String getMethod() {
-            return this.f38754a.getMethod();
+            return this.f25063a.getMethod();
         }
 
         @Override // com.tencent.smtt.export.external.interfaces.WebResourceRequest
         public Map<String, String> getRequestHeaders() {
-            return this.f38754a.getRequestHeaders();
+            return this.f25063a.getRequestHeaders();
         }
 
         @Override // com.tencent.smtt.export.external.interfaces.WebResourceRequest
         public Uri getUrl() {
-            return this.f38754a.getUrl();
+            return this.f25063a.getUrl();
         }
 
         @Override // com.tencent.smtt.export.external.interfaces.WebResourceRequest
         public boolean hasGesture() {
-            return this.f38754a.hasGesture();
+            return this.f25063a.hasGesture();
         }
 
         @Override // com.tencent.smtt.export.external.interfaces.WebResourceRequest
         public boolean isForMainFrame() {
-            return this.f38754a.isForMainFrame();
+            return this.f25063a.isForMainFrame();
         }
 
         @Override // com.tencent.smtt.export.external.interfaces.WebResourceRequest
         public boolean isRedirect() {
             if (Build.VERSION.SDK_INT >= 24) {
-                Object a2 = com.tencent.smtt.utils.i.a(this.f38754a, "isRedirect");
+                Object a2 = com.tencent.smtt.utils.i.a(this.f25063a, "isRedirect");
                 if (a2 instanceof Boolean) {
                     return ((Boolean) a2).booleanValue();
                 }
@@ -267,107 +267,108 @@ public class SystemWebViewClient extends android.webkit.WebViewClient {
     static class g extends WebResourceResponse {
 
         /* renamed from: a  reason: collision with root package name */
-        android.webkit.WebResourceResponse f38755a;
+        android.webkit.WebResourceResponse f25064a;
 
         public g(android.webkit.WebResourceResponse webResourceResponse) {
-            this.f38755a = webResourceResponse;
+            this.f25064a = webResourceResponse;
         }
 
         @Override // com.tencent.smtt.export.external.interfaces.WebResourceResponse
         public InputStream getData() {
-            return this.f38755a.getData();
+            return this.f25064a.getData();
         }
 
         @Override // com.tencent.smtt.export.external.interfaces.WebResourceResponse
         public String getEncoding() {
-            return this.f38755a.getEncoding();
+            return this.f25064a.getEncoding();
         }
 
         @Override // com.tencent.smtt.export.external.interfaces.WebResourceResponse
         public String getMimeType() {
-            return this.f38755a.getMimeType();
+            return this.f25064a.getMimeType();
         }
 
         @Override // com.tencent.smtt.export.external.interfaces.WebResourceResponse
         public String getReasonPhrase() {
-            return this.f38755a.getReasonPhrase();
+            return this.f25064a.getReasonPhrase();
         }
 
         @Override // com.tencent.smtt.export.external.interfaces.WebResourceResponse
         public Map<String, String> getResponseHeaders() {
-            return this.f38755a.getResponseHeaders();
+            return this.f25064a.getResponseHeaders();
         }
 
         @Override // com.tencent.smtt.export.external.interfaces.WebResourceResponse
         public int getStatusCode() {
-            return this.f38755a.getStatusCode();
+            return this.f25064a.getStatusCode();
         }
 
         @Override // com.tencent.smtt.export.external.interfaces.WebResourceResponse
         public void setData(InputStream inputStream) {
-            this.f38755a.setData(inputStream);
+            this.f25064a.setData(inputStream);
         }
 
         @Override // com.tencent.smtt.export.external.interfaces.WebResourceResponse
         public void setEncoding(String str) {
-            this.f38755a.setEncoding(str);
+            this.f25064a.setEncoding(str);
         }
 
         @Override // com.tencent.smtt.export.external.interfaces.WebResourceResponse
         public void setMimeType(String str) {
-            this.f38755a.setMimeType(str);
+            this.f25064a.setMimeType(str);
         }
 
         @Override // com.tencent.smtt.export.external.interfaces.WebResourceResponse
         public void setResponseHeaders(Map<String, String> map) {
-            this.f38755a.setResponseHeaders(map);
+            this.f25064a.setResponseHeaders(map);
         }
 
         @Override // com.tencent.smtt.export.external.interfaces.WebResourceResponse
         public void setStatusCodeAndReasonPhrase(int i, String str) {
-            this.f38755a.setStatusCodeAndReasonPhrase(i, str);
+            this.f25064a.setStatusCodeAndReasonPhrase(i, str);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public SystemWebViewClient(WebView webView, WebViewClient webViewClient) {
         this.b = webView;
-        this.f38744a = webViewClient;
+        this.f25053a = webViewClient;
     }
 
     @Override // android.webkit.WebViewClient
     public void doUpdateVisitedHistory(android.webkit.WebView webView, String str, boolean z) {
         this.b.a(webView);
-        this.f38744a.doUpdateVisitedHistory(this.b, str, z);
+        this.f25053a.doUpdateVisitedHistory(this.b, str, z);
     }
 
     @Override // android.webkit.WebViewClient
     public void onFormResubmission(android.webkit.WebView webView, Message message, Message message2) {
         this.b.a(webView);
-        this.f38744a.onFormResubmission(this.b, message, message2);
+        this.f25053a.onFormResubmission(this.b, message, message2);
     }
 
     @Override // android.webkit.WebViewClient
     public void onLoadResource(android.webkit.WebView webView, String str) {
         this.b.a(webView);
-        this.f38744a.onLoadResource(this.b, str);
+        this.f25053a.onLoadResource(this.b, str);
     }
 
+    @Override // android.webkit.WebViewClient
     public void onPageCommitVisible(android.webkit.WebView webView, String str) {
         this.b.a(webView);
-        this.f38744a.onPageCommitVisible(this.b, str);
+        this.f25053a.onPageCommitVisible(this.b, str);
     }
 
     @Override // android.webkit.WebViewClient
     public void onPageFinished(android.webkit.WebView webView, String str) {
         com.tencent.smtt.utils.n a2;
-        if (f38743c == null && (a2 = com.tencent.smtt.utils.n.a()) != null) {
+        if (f25052c == null && (a2 = com.tencent.smtt.utils.n.a()) != null) {
             a2.a(true);
-            f38743c = Boolean.toString(true);
+            f25052c = Boolean.toString(true);
         }
         this.b.a(webView);
-        this.b.f38805a++;
-        this.f38744a.onPageFinished(this.b, str);
+        this.b.f25114a++;
+        this.f25053a.onPageFinished(this.b, str);
         if ("com.qzone".equals(webView.getContext().getApplicationInfo().packageName)) {
             this.b.a(webView.getContext());
         }
@@ -395,23 +396,24 @@ public class SystemWebViewClient extends android.webkit.WebViewClient {
     @Override // android.webkit.WebViewClient
     public void onPageStarted(android.webkit.WebView webView, String str, Bitmap bitmap) {
         this.b.a(webView);
-        this.f38744a.onPageStarted(this.b, str, bitmap);
+        this.f25053a.onPageStarted(this.b, str, bitmap);
     }
 
     @Override // android.webkit.WebViewClient
     public void onReceivedClientCertRequest(android.webkit.WebView webView, android.webkit.ClientCertRequest clientCertRequest) {
         if (Build.VERSION.SDK_INT >= 21) {
             this.b.a(webView);
-            this.f38744a.onReceivedClientCertRequest(this.b, new a(clientCertRequest));
+            this.f25053a.onReceivedClientCertRequest(this.b, new a(clientCertRequest));
         }
     }
 
     @Override // android.webkit.WebViewClient
     public void onReceivedError(android.webkit.WebView webView, int i, String str, String str2) {
         this.b.a(webView);
-        this.f38744a.onReceivedError(this.b, i, str, str2);
+        this.f25053a.onReceivedError(this.b, i, str, str2);
     }
 
+    @Override // android.webkit.WebViewClient
     public void onReceivedError(android.webkit.WebView webView, android.webkit.WebResourceRequest webResourceRequest, final WebResourceError webResourceError) {
         this.b.a(webView);
         f fVar = webResourceRequest != null ? new f(webResourceRequest) : null;
@@ -429,25 +431,26 @@ public class SystemWebViewClient extends android.webkit.WebViewClient {
                 }
             };
         }
-        this.f38744a.onReceivedError(this.b, fVar, webResourceError2);
+        this.f25053a.onReceivedError(this.b, fVar, webResourceError2);
     }
 
     @Override // android.webkit.WebViewClient
     public void onReceivedHttpAuthRequest(android.webkit.WebView webView, android.webkit.HttpAuthHandler httpAuthHandler, String str, String str2) {
         this.b.a(webView);
-        this.f38744a.onReceivedHttpAuthRequest(this.b, new b(httpAuthHandler), str, str2);
+        this.f25053a.onReceivedHttpAuthRequest(this.b, new b(httpAuthHandler), str, str2);
     }
 
+    @Override // android.webkit.WebViewClient
     public void onReceivedHttpError(android.webkit.WebView webView, android.webkit.WebResourceRequest webResourceRequest, android.webkit.WebResourceResponse webResourceResponse) {
         this.b.a(webView);
-        this.f38744a.onReceivedHttpError(this.b, new f(webResourceRequest), new g(webResourceResponse));
+        this.f25053a.onReceivedHttpError(this.b, new f(webResourceRequest), new g(webResourceResponse));
     }
 
     @Override // android.webkit.WebViewClient
     public void onReceivedLoginRequest(android.webkit.WebView webView, String str, String str2, String str3) {
         if (Build.VERSION.SDK_INT >= 12) {
             this.b.a(webView);
-            this.f38744a.onReceivedLoginRequest(this.b, str, str2, str3);
+            this.f25053a.onReceivedLoginRequest(this.b, str, str2, str3);
         }
     }
 
@@ -455,32 +458,33 @@ public class SystemWebViewClient extends android.webkit.WebViewClient {
     public void onReceivedSslError(android.webkit.WebView webView, android.webkit.SslErrorHandler sslErrorHandler, android.net.http.SslError sslError) {
         if (Build.VERSION.SDK_INT >= 8) {
             this.b.a(webView);
-            this.f38744a.onReceivedSslError(this.b, new c(sslErrorHandler), new d(sslError));
+            this.f25053a.onReceivedSslError(this.b, new c(sslErrorHandler), new d(sslError));
         }
     }
 
+    @Override // android.webkit.WebViewClient
     public boolean onRenderProcessGone(android.webkit.WebView webView, final RenderProcessGoneDetail renderProcessGoneDetail) {
         this.b.a(webView);
-        return this.f38744a.onRenderProcessGone(this.b, new WebViewClient.a() { // from class: com.tencent.smtt.sdk.SystemWebViewClient.3
+        return this.f25053a.onRenderProcessGone(this.b, new WebViewClient.a() { // from class: com.tencent.smtt.sdk.SystemWebViewClient.3
         });
     }
 
     @Override // android.webkit.WebViewClient
     public void onScaleChanged(android.webkit.WebView webView, float f2, float f3) {
         this.b.a(webView);
-        this.f38744a.onScaleChanged(this.b, f2, f3);
+        this.f25053a.onScaleChanged(this.b, f2, f3);
     }
 
     @Override // android.webkit.WebViewClient
     public void onTooManyRedirects(android.webkit.WebView webView, Message message, Message message2) {
         this.b.a(webView);
-        this.f38744a.onTooManyRedirects(this.b, message, message2);
+        this.f25053a.onTooManyRedirects(this.b, message, message2);
     }
 
     @Override // android.webkit.WebViewClient
     public void onUnhandledKeyEvent(android.webkit.WebView webView, KeyEvent keyEvent) {
         this.b.a(webView);
-        this.f38744a.onUnhandledKeyEvent(this.b, keyEvent);
+        this.f25053a.onUnhandledKeyEvent(this.b, keyEvent);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:18:0x0072 A[RETURN] */
@@ -540,7 +544,7 @@ public class SystemWebViewClient extends android.webkit.WebViewClient {
             r1.<init>(r2, r3, r4, r5, r6, r7)
             r10 = r0
             r0 = r9
-            com.tencent.smtt.sdk.WebViewClient r0 = r0.f38744a
+            com.tencent.smtt.sdk.WebViewClient r0 = r0.f25053a
             r1 = r9
             com.tencent.smtt.sdk.WebView r1 = r1.b
             r2 = r10
@@ -597,7 +601,7 @@ public class SystemWebViewClient extends android.webkit.WebViewClient {
     @Override // android.webkit.WebViewClient
     public android.webkit.WebResourceResponse shouldInterceptRequest(android.webkit.WebView webView, String str) {
         WebResourceResponse shouldInterceptRequest;
-        if (Build.VERSION.SDK_INT >= 11 && (shouldInterceptRequest = this.f38744a.shouldInterceptRequest(this.b, str)) != null) {
+        if (Build.VERSION.SDK_INT >= 11 && (shouldInterceptRequest = this.f25053a.shouldInterceptRequest(this.b, str)) != null) {
             return new android.webkit.WebResourceResponse(shouldInterceptRequest.getMimeType(), shouldInterceptRequest.getEncoding(), shouldInterceptRequest.getData());
         }
         return null;
@@ -606,9 +610,10 @@ public class SystemWebViewClient extends android.webkit.WebViewClient {
     @Override // android.webkit.WebViewClient
     public boolean shouldOverrideKeyEvent(android.webkit.WebView webView, KeyEvent keyEvent) {
         this.b.a(webView);
-        return this.f38744a.shouldOverrideKeyEvent(this.b, keyEvent);
+        return this.f25053a.shouldOverrideKeyEvent(this.b, keyEvent);
     }
 
+    @Override // android.webkit.WebViewClient
     public boolean shouldOverrideUrlLoading(android.webkit.WebView webView, android.webkit.WebResourceRequest webResourceRequest) {
         boolean z;
         String uri = (webResourceRequest == null || webResourceRequest.getUrl() == null) ? null : webResourceRequest.getUrl().toString();
@@ -620,11 +625,11 @@ public class SystemWebViewClient extends android.webkit.WebViewClient {
             Object a2 = com.tencent.smtt.utils.i.a(webResourceRequest, "isRedirect");
             if (a2 instanceof Boolean) {
                 z = ((Boolean) a2).booleanValue();
-                return this.f38744a.shouldOverrideUrlLoading(this.b, new e(webResourceRequest.getUrl().toString(), webResourceRequest.isForMainFrame(), z, webResourceRequest.hasGesture(), webResourceRequest.getMethod(), webResourceRequest.getRequestHeaders()));
+                return this.f25053a.shouldOverrideUrlLoading(this.b, new e(webResourceRequest.getUrl().toString(), webResourceRequest.isForMainFrame(), z, webResourceRequest.hasGesture(), webResourceRequest.getMethod(), webResourceRequest.getRequestHeaders()));
             }
         }
         z = false;
-        return this.f38744a.shouldOverrideUrlLoading(this.b, new e(webResourceRequest.getUrl().toString(), webResourceRequest.isForMainFrame(), z, webResourceRequest.hasGesture(), webResourceRequest.getMethod(), webResourceRequest.getRequestHeaders()));
+        return this.f25053a.shouldOverrideUrlLoading(this.b, new e(webResourceRequest.getUrl().toString(), webResourceRequest.isForMainFrame(), z, webResourceRequest.hasGesture(), webResourceRequest.getMethod(), webResourceRequest.getRequestHeaders()));
     }
 
     @Override // android.webkit.WebViewClient
@@ -633,6 +638,6 @@ public class SystemWebViewClient extends android.webkit.WebViewClient {
             return true;
         }
         this.b.a(webView);
-        return this.f38744a.shouldOverrideUrlLoading(this.b, str);
+        return this.f25053a.shouldOverrideUrlLoading(this.b, str);
     }
 }

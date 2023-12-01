@@ -12,7 +12,6 @@ import okhttp3.HttpUrl;
 public final class SimpleCookieJar implements CookieJar {
     private final Set<Cookie> allCookies = new HashSet();
 
-    @Override // okhttp3.CookieJar
     public List<Cookie> loadForRequest(HttpUrl httpUrl) {
         ArrayList arrayList;
         synchronized (this) {
@@ -26,7 +25,6 @@ public final class SimpleCookieJar implements CookieJar {
         return arrayList;
     }
 
-    @Override // okhttp3.CookieJar
     public void saveFromResponse(HttpUrl httpUrl, List<Cookie> list) {
         synchronized (this) {
             ArrayList<Cookie> arrayList = new ArrayList(this.allCookies);

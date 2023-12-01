@@ -13,17 +13,17 @@ import com.tencent.cloud.huiyansdkface.normal.tools.secure.RSAEncrypt;
 public class WbSecureProviders {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final d f35594a;
+    public static final d f21903a;
     private static boolean b;
 
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/cloud/huiyansdkface/facelight/common/WbSecureProviders$GMProvider.class */
     public static class GMProvider {
 
         /* renamed from: a  reason: collision with root package name */
-        private static c f35595a = new c();
+        private static c f21904a = new c();
 
         public static c getGm() {
-            return f35595a;
+            return f21904a;
         }
     }
 
@@ -34,7 +34,7 @@ public class WbSecureProviders {
         } catch (ClassNotFoundException e) {
             b = false;
         }
-        f35594a = new d() { // from class: com.tencent.cloud.huiyansdkface.facelight.common.WbSecureProviders.1
+        f21903a = new d() { // from class: com.tencent.cloud.huiyansdkface.facelight.common.WbSecureProviders.1
             @Override // com.tencent.cloud.huiyansdkface.facelight.c.e.d
             public String a(byte[] bArr) throws GetEncryptKeyException {
                 WLogger.d("WbSecureProviders", "GJ_HELPER:asymmetricEncry");
@@ -81,6 +81,6 @@ public class WbSecureProviders {
     }
 
     public static d secureType(boolean z) {
-        return z ? GMProvider.getGm() : f35594a;
+        return z ? GMProvider.getGm() : f21903a;
     }
 }

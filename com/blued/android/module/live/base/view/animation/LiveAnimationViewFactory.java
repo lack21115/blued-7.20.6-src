@@ -9,9 +9,7 @@ import java.util.Map;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/live/base/view/animation/LiveAnimationViewFactory.class */
 public class LiveAnimationViewFactory {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Map<Integer, WeakReference<BaseLiveAnimationView>> f11504a = new ArrayMap();
+    private Map<Integer, WeakReference<BaseLiveAnimationView>> a = new ArrayMap();
 
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/live/base/view/animation/LiveAnimationViewFactory$ScaleType.class */
     public enum ScaleType {
@@ -21,10 +19,10 @@ public class LiveAnimationViewFactory {
     }
 
     private BaseLiveAnimationView a(Context context, int i, String str, ScaleType scaleType) {
-        WeakReference<BaseLiveAnimationView> weakReference = this.f11504a.get(Integer.valueOf(i));
+        WeakReference<BaseLiveAnimationView> weakReference = this.a.get(Integer.valueOf(i));
         if (weakReference == null) {
             BaseLiveAnimationView b = b(context, i, str, scaleType);
-            this.f11504a.put(Integer.valueOf(i), new WeakReference<>(b));
+            this.a.put(Integer.valueOf(i), new WeakReference<>(b));
             return b;
         }
         BaseLiveAnimationView baseLiveAnimationView = weakReference.get();
@@ -33,7 +31,7 @@ public class LiveAnimationViewFactory {
             return baseLiveAnimationView;
         }
         BaseLiveAnimationView b2 = b(context, i, str, scaleType);
-        this.f11504a.put(Integer.valueOf(i), new WeakReference<>(b2));
+        this.a.put(Integer.valueOf(i), new WeakReference<>(b2));
         return b2;
     }
 
@@ -75,7 +73,7 @@ public class LiveAnimationViewFactory {
     }
 
     public void a(int i) {
-        Map<Integer, WeakReference<BaseLiveAnimationView>> map = this.f11504a;
+        Map<Integer, WeakReference<BaseLiveAnimationView>> map = this.a;
         if (map != null) {
             map.remove(Integer.valueOf(i));
         }

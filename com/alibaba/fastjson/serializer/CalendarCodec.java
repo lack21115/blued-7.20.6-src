@@ -4,11 +4,12 @@ import com.alibaba.fastjson.parser.DefaultJSONParser;
 import com.alibaba.fastjson.parser.JSONLexer;
 import com.alibaba.fastjson.parser.deserializer.ObjectDeserializer;
 import com.alibaba.fastjson.util.IOUtils;
-import com.google.android.material.timepicker.TimeModel;
+import com.android.internal.content.NativeLibraryHelper;
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Grego;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alibaba/fastjson/serializer/CalendarCodec.class */
 public class CalendarCodec implements ObjectDeserializer, ObjectSerializer {
@@ -49,8 +50,8 @@ public class CalendarCodec implements ObjectDeserializer, ObjectSerializer {
             jSONSerializer.write(calendar.getTime());
             return;
         }
-        char c2 = serializeWriter.isEnabled(SerializerFeature.UseSingleQuotes) ? '\'' : '\"';
-        serializeWriter.append(c2);
+        char c = serializeWriter.isEnabled(SerializerFeature.UseSingleQuotes) ? '\'' : '\"';
+        serializeWriter.append(c);
         int i2 = calendar.get(1);
         int i3 = calendar.get(2) + 1;
         int i4 = calendar.get(5);
@@ -82,14 +83,14 @@ public class CalendarCodec implements ObjectDeserializer, ObjectSerializer {
             IOUtils.getChars(i2, 4, charArray);
         }
         serializeWriter.write(charArray);
-        int rawOffset = calendar.getTimeZone().getRawOffset() / 3600000;
+        int rawOffset = calendar.getTimeZone().getRawOffset() / Grego.MILLIS_PER_HOUR;
         if (rawOffset == 0) {
             serializeWriter.append((CharSequence) "Z");
         } else if (rawOffset > 0) {
-            serializeWriter.append((CharSequence) "+").append((CharSequence) String.format(TimeModel.ZERO_LEADING_NUMBER_FORMAT, Integer.valueOf(rawOffset))).append((CharSequence) ":00");
+            serializeWriter.append((CharSequence) "+").append((CharSequence) String.format("%02d", Integer.valueOf(rawOffset))).append((CharSequence) ":00");
         } else {
-            serializeWriter.append((CharSequence) "-").append((CharSequence) String.format(TimeModel.ZERO_LEADING_NUMBER_FORMAT, Integer.valueOf(-rawOffset))).append((CharSequence) ":00");
+            serializeWriter.append((CharSequence) NativeLibraryHelper.CLEAR_ABI_OVERRIDE).append((CharSequence) String.format("%02d", Integer.valueOf(-rawOffset))).append((CharSequence) ":00");
         }
-        serializeWriter.append(c2);
+        serializeWriter.append(c);
     }
 }

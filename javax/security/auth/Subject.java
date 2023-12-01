@@ -126,7 +126,7 @@ public final class Subject implements Serializable {
             objectOutputStream.defaultWriteObject();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean add(SST sst) {
             verifyElement(sst);
             Subject.this.checkState();
@@ -144,7 +144,7 @@ public final class Subject implements Serializable {
             AbstractSet<E> abstractSet = new AbstractSet<E>() { // from class: javax.security.auth.Subject.SecureSet.2
                 private LinkedList<E> elements = new LinkedList<>();
 
-                @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+                @Override // java.util.AbstractCollection, java.util.Collection
                 public boolean add(E e) {
                     if (cls.isAssignableFrom(e.getClass())) {
                         if (this.elements.contains(e)) {
@@ -161,7 +161,7 @@ public final class Subject implements Serializable {
                     return this.elements.iterator();
                 }
 
-                @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+                @Override // java.util.AbstractCollection, java.util.Collection
                 public boolean retainAll(Collection<?> collection) {
                     if (collection == null) {
                         throw new NullPointerException("c == null");
@@ -169,7 +169,7 @@ public final class Subject implements Serializable {
                     return super.retainAll(collection);
                 }
 
-                @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+                @Override // java.util.AbstractCollection, java.util.Collection
                 public int size() {
                     return this.elements.size();
                 }
@@ -194,7 +194,7 @@ public final class Subject implements Serializable {
             } : new SecureIterator(this.elements.iterator());
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean retainAll(Collection<?> collection) {
             if (collection == null) {
                 throw new NullPointerException("c == null");
@@ -202,7 +202,7 @@ public final class Subject implements Serializable {
             return super.retainAll(collection);
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection
         public int size() {
             return this.elements.size();
         }

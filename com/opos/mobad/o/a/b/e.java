@@ -12,14 +12,14 @@ import com.bytedance.applog.tracker.Tracker;
 public class e {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f27039a;
+    private Context f13351a;
     private c b;
 
     /* renamed from: c  reason: collision with root package name */
-    private TextView f27040c;
+    private TextView f13352c;
 
     public e(Context context, c cVar) {
-        this.f27039a = context;
+        this.f13351a = context;
         this.b = cVar;
         c();
     }
@@ -40,19 +40,19 @@ public class e {
 
     private void c() {
         ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#1A000000"));
-        colorDrawable.setBounds(0, 0, com.opos.cmn.an.h.f.a.c(this.f27039a, 288.0f), com.opos.cmn.an.h.f.a.c(this.f27039a, 1.0f));
-        TextView textView = new TextView(this.f27039a);
-        this.f27040c = textView;
+        colorDrawable.setBounds(0, 0, com.opos.cmn.an.h.f.a.c(this.f13351a, 288.0f), com.opos.cmn.an.h.f.a.c(this.f13351a, 1.0f));
+        TextView textView = new TextView(this.f13351a);
+        this.f13352c = textView;
         textView.setTextColor(com.opos.cmn.e.a.a.a.a(Color.parseColor("#8C000000"), Color.parseColor("#FF5A60")));
-        this.f27040c.setText("内容展示异常（黑屏/卡顿）");
-        this.f27040c.setTextSize(1, 13.0f);
-        this.f27040c.setCompoundDrawables(null, colorDrawable, null, null);
-        this.f27040c.setCompoundDrawablePadding(com.opos.cmn.an.h.f.a.a(this.f27039a, 14.0f));
-        new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(this.f27039a, 288.0f), -2).topMargin = com.opos.cmn.an.h.f.a.a(this.f27039a, 20.0f);
+        this.f13352c.setText("内容展示异常（黑屏/卡顿）");
+        this.f13352c.setTextSize(1, 13.0f);
+        this.f13352c.setCompoundDrawables(null, colorDrawable, null, null);
+        this.f13352c.setCompoundDrawablePadding(com.opos.cmn.an.h.f.a.a(this.f13351a, 14.0f));
+        new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(this.f13351a, 288.0f), -2).topMargin = com.opos.cmn.an.h.f.a.a(this.f13351a, 20.0f);
     }
 
     public View a() {
-        return this.f27040c;
+        return this.f13352c;
     }
 
     public void a(com.opos.mobad.o.a.a.a aVar) {
@@ -60,8 +60,8 @@ public class e {
         if (aVar == null || (bVar = aVar.b.get(0)) == null) {
             return;
         }
-        this.f27040c.setText(bVar.b());
-        a(this.f27040c, bVar.a());
+        this.f13352c.setText(bVar.b());
+        a(this.f13352c, bVar.a());
     }
 
     public void b() {

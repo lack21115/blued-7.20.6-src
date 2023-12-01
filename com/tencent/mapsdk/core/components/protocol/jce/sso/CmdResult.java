@@ -10,7 +10,7 @@ import com.tencent.mapsdk.internal.q;
 public final class CmdResult extends MapJceStruct implements Cloneable {
 
     /* renamed from: c  reason: collision with root package name */
-    public static final /* synthetic */ boolean f37269c = !CmdResult.class.desiredAssertionStatus();
+    public static final /* synthetic */ boolean f23578c = !CmdResult.class.desiredAssertionStatus();
     public int iErrCode;
     public int iSubErrCode;
     public String strErrDesc;
@@ -39,7 +39,7 @@ public final class CmdResult extends MapJceStruct implements Cloneable {
         try {
             return super.clone();
         } catch (CloneNotSupportedException e) {
-            if (f37269c) {
+            if (f23578c) {
                 return null;
             }
             throw new AssertionError();

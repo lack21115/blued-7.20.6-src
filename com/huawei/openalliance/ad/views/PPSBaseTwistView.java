@@ -5,6 +5,7 @@ import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.ImageView;
+import androidx.constraintlayout.motion.widget.Key;
 import com.huawei.hms.ads.fl;
 import com.huawei.hms.ads.ge;
 import com.huawei.openalliance.ad.utils.v;
@@ -34,19 +35,19 @@ public class PPSBaseTwistView extends PPSBaseStyleView {
         AnimatorSet animatorSet = new AnimatorSet();
         animatorSet.setInterpolator(new fl(0.33f, 0.0f, 0.67f, 1.0f));
         ArrayList arrayList = new ArrayList(4);
-        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this.F, "rotation", 0.0f, -7.0f);
+        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this.F, Key.ROTATION, 0.0f, -7.0f);
         ofFloat.setDuration(150L);
         arrayList.add(ofFloat);
-        ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(this.F, "rotation", -7.0f, 7.0f);
+        ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(this.F, Key.ROTATION, -7.0f, 7.0f);
         ofFloat2.setDuration(400L);
         arrayList.add(ofFloat2);
-        ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat(this.F, "rotation", 7.0f, -4.5f);
+        ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat(this.F, Key.ROTATION, 7.0f, -4.5f);
         ofFloat3.setDuration(350L);
         arrayList.add(ofFloat3);
-        ObjectAnimator ofFloat4 = ObjectAnimator.ofFloat(this.F, "rotation", -4.5f, 2.0f);
+        ObjectAnimator ofFloat4 = ObjectAnimator.ofFloat(this.F, Key.ROTATION, -4.5f, 2.0f);
         ofFloat4.setDuration(350L);
         arrayList.add(ofFloat4);
-        ObjectAnimator ofFloat5 = ObjectAnimator.ofFloat(this.F, "rotation", 2.0f, 0.0f);
+        ObjectAnimator ofFloat5 = ObjectAnimator.ofFloat(this.F, Key.ROTATION, 2.0f, 0.0f);
         ofFloat5.setDuration(250L);
         arrayList.add(ofFloat5);
         this.F.invalidate();
@@ -58,9 +59,8 @@ public class PPSBaseTwistView extends PPSBaseStyleView {
         return "PPSBaseStyleView";
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onSizeChanged(int i, int i2, int i3, int i4) {
+    protected void onSizeChanged(int i, int i2, int i3, int i4) {
         super.onSizeChanged(i, i2, i3, i4);
         ge.V(getViewTag(), "w=%s, h=%s, oldw=%s, oldh=%s", Integer.valueOf(i), Integer.valueOf(i2), Integer.valueOf(i3), Integer.valueOf(i4));
         this.F.post(new Runnable() { // from class: com.huawei.openalliance.ad.views.PPSBaseTwistView.1

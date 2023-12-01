@@ -23,9 +23,9 @@ public class PopMenuFromCenter extends PopMenuFromBottom {
         AlphaAnimation alphaAnimation = new AlphaAnimation(0.5f, 0.0f);
         alphaAnimation.setDuration(200L);
         alphaAnimation.setFillAfter(true);
-        this.f15086a.startAnimation(alphaAnimation);
+        this.a.startAnimation(alphaAnimation);
         this.b.setVisibility(8);
-        this.b.startAnimation(AnimationUtils.loadAnimation(this.f15087c, R.anim.push_center_out));
+        this.b.startAnimation(AnimationUtils.loadAnimation(this.c, R.anim.push_center_out));
         AppInfo.n().postDelayed(new Runnable() { // from class: com.blued.android.module.live_china.view.PopMenuFromCenter.1
             @Override // java.lang.Runnable
             public void run() {

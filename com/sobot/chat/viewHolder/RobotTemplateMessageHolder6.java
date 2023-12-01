@@ -6,7 +6,6 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import com.blued.android.chat.data.MsgType;
 import com.sobot.chat.api.model.SobotMultiDiaRespInfo;
 import com.sobot.chat.api.model.ZhiChiMessageBase;
 import com.sobot.chat.listener.NoDoubleClickListener;
@@ -73,7 +72,7 @@ public class RobotTemplateMessageHolder6 extends MessageHolderBase {
             HtmlTools.getInstance(context).setRichText(this.sobot_template6_msg, ChatUtils.getMultiMsgTitle(multiDiaRespInfo).replaceAll("\n", "<br/>"), getLinkTextColor());
             applyTextViewUIConfig(this.sobot_template6_msg);
             List<Map<String, String>> interfaceRetList = multiDiaRespInfo.getInterfaceRetList();
-            if (!MsgType.UID_GROUP_AT_ALL.equals(multiDiaRespInfo.getRetCode()) || interfaceRetList == null || interfaceRetList.size() <= 0) {
+            if (!"000000".equals(multiDiaRespInfo.getRetCode()) || interfaceRetList == null || interfaceRetList.size() <= 0) {
                 setFailureView();
             } else {
                 Map<String, String> map = interfaceRetList.get(0);

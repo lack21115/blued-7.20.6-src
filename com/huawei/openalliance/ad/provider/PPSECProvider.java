@@ -28,7 +28,7 @@ public class PPSECProvider extends ContentProvider {
     private final Map<String, a> L = new HashMap();
 
     /* renamed from: a  reason: collision with root package name */
-    private final a f22991a = new a() { // from class: com.huawei.openalliance.ad.provider.PPSECProvider.1
+    private final a f9383a = new a() { // from class: com.huawei.openalliance.ad.provider.PPSECProvider.1
         @Override // com.huawei.openalliance.ad.provider.a
         public Bundle Code(String str, Bundle bundle) {
             Bundle bundle2 = new Bundle();
@@ -89,7 +89,7 @@ public class PPSECProvider extends ContentProvider {
 
     @Override // android.content.ContentProvider
     public boolean onCreate() {
-        this.L.put(V, this.f22991a);
+        this.L.put(V, this.f9383a);
         return false;
     }
 

@@ -14,9 +14,7 @@ import kotlin.jvm.functions.Function2;
 @DebugMetadata(b = "Errors.kt", c = {}, d = "invokeSuspend", e = "kotlinx.coroutines.flow.FlowKt__ErrorsKt$retry$1")
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt__ErrorsKt$retry$1.class */
 final class FlowKt__ErrorsKt$retry$1 extends SuspendLambda implements Function2<Throwable, Continuation<? super Boolean>, Object> {
-
-    /* renamed from: a  reason: collision with root package name */
-    int f43180a;
+    int a;
 
     FlowKt__ErrorsKt$retry$1(Continuation<? super FlowKt__ErrorsKt$retry$1> continuation) {
         super(2, continuation);
@@ -25,7 +23,7 @@ final class FlowKt__ErrorsKt$retry$1 extends SuspendLambda implements Function2<
     @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(Throwable th, Continuation<? super Boolean> continuation) {
-        return ((FlowKt__ErrorsKt$retry$1) create(th, continuation)).invokeSuspend(Unit.f42314a);
+        return ((FlowKt__ErrorsKt$retry$1) create(th, continuation)).invokeSuspend(Unit.a);
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -36,7 +34,7 @@ final class FlowKt__ErrorsKt$retry$1 extends SuspendLambda implements Function2<
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         IntrinsicsKt.a();
-        if (this.f43180a == 0) {
+        if (this.a == 0) {
             ResultKt.a(obj);
             return Boxing.a(true);
         }

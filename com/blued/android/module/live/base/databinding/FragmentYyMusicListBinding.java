@@ -10,13 +10,9 @@ import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/live/base/databinding/FragmentYyMusicListBinding.class */
 public final class FragmentYyMusicListBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final YyMusicListNoDataBinding f11380a;
+    public final YyMusicListNoDataBinding a;
     public final YyMusicSearchNoDataBinding b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final YyMusicListLoadErrorBinding f11381c;
+    public final YyMusicListLoadErrorBinding c;
     public final ProgressBar d;
     public final RecyclerView e;
     public final SmartRefreshLayout f;
@@ -24,9 +20,9 @@ public final class FragmentYyMusicListBinding implements ViewBinding {
 
     private FragmentYyMusicListBinding(FrameLayout frameLayout, YyMusicListNoDataBinding yyMusicListNoDataBinding, YyMusicSearchNoDataBinding yyMusicSearchNoDataBinding, YyMusicListLoadErrorBinding yyMusicListLoadErrorBinding, ProgressBar progressBar, RecyclerView recyclerView, SmartRefreshLayout smartRefreshLayout) {
         this.g = frameLayout;
-        this.f11380a = yyMusicListNoDataBinding;
+        this.a = yyMusicListNoDataBinding;
         this.b = yyMusicSearchNoDataBinding;
-        this.f11381c = yyMusicListLoadErrorBinding;
+        this.c = yyMusicListLoadErrorBinding;
         this.d = progressBar;
         this.e = recyclerView;
         this.f = smartRefreshLayout;
@@ -36,20 +32,20 @@ public final class FragmentYyMusicListBinding implements ViewBinding {
         String str;
         View findViewById = view.findViewById(R.id.ll_nodata);
         if (findViewById != null) {
-            YyMusicListNoDataBinding a2 = YyMusicListNoDataBinding.a(findViewById);
+            YyMusicListNoDataBinding a = YyMusicListNoDataBinding.a(findViewById);
             View findViewById2 = view.findViewById(R.id.ll_search_no_data);
             if (findViewById2 != null) {
-                YyMusicSearchNoDataBinding a3 = YyMusicSearchNoDataBinding.a(findViewById2);
+                YyMusicSearchNoDataBinding a2 = YyMusicSearchNoDataBinding.a(findViewById2);
                 View findViewById3 = view.findViewById(R.id.ll_sheet_error);
                 if (findViewById3 != null) {
-                    YyMusicListLoadErrorBinding a4 = YyMusicListLoadErrorBinding.a(findViewById3);
+                    YyMusicListLoadErrorBinding a3 = YyMusicListLoadErrorBinding.a(findViewById3);
                     ProgressBar progressBar = (ProgressBar) view.findViewById(R.id.loading_view);
                     if (progressBar != null) {
-                        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rv_music);
-                        if (recyclerView != null) {
-                            SmartRefreshLayout smartRefreshLayout = (SmartRefreshLayout) view.findViewById(R.id.smart_members);
-                            if (smartRefreshLayout != null) {
-                                return new FragmentYyMusicListBinding((FrameLayout) view, a2, a3, a4, progressBar, recyclerView, smartRefreshLayout);
+                        RecyclerView findViewById4 = view.findViewById(R.id.rv_music);
+                        if (findViewById4 != null) {
+                            SmartRefreshLayout findViewById5 = view.findViewById(R.id.smart_members);
+                            if (findViewById5 != null) {
+                                return new FragmentYyMusicListBinding((FrameLayout) view, a, a2, a3, progressBar, findViewById4, findViewById5);
                             }
                             str = "smartMembers";
                         } else {
@@ -70,7 +66,6 @@ public final class FragmentYyMusicListBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.g;

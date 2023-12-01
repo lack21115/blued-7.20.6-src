@@ -1,7 +1,6 @@
 package com.baidu.mobads.sdk.api;
 
 import android.text.TextUtils;
-import com.amap.api.services.district.DistrictSearchQuery;
 import java.util.HashMap;
 
 /* loaded from: source-8756600-dex2jar.jar:com/baidu/mobads/sdk/api/CPUAggregationRequest.class */
@@ -29,7 +28,7 @@ public class CPUAggregationRequest {
         }
 
         public Builder setCity(String str) {
-            this.mExtras.put(DistrictSearchQuery.KEYWORDS_CITY, str);
+            this.mExtras.put("city", str);
             return this;
         }
 

@@ -37,7 +37,7 @@ public class kk {
         public void onRemoteCallResult(String str, CallResult<T> callResult) {
             if (callResult.getCode() == 201) {
                 try {
-                    fk.Code(this.V).I(new JSONObject(callResult.getMsg()).optInt(com.huawei.openalliance.ad.constant.at.f22945c, 0));
+                    fk.Code(this.V).I(new JSONObject(callResult.getMsg()).optInt(com.huawei.openalliance.ad.constant.at.f9337c, 0));
                     return;
                 } catch (JSONException e) {
                     ge.I(kk.V, "parse ad config JSONException");

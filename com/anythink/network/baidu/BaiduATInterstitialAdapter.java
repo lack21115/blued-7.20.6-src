@@ -18,6 +18,7 @@ import com.baidu.mobads.sdk.api.ExpressInterstitialListener;
 import com.baidu.mobads.sdk.api.FullScreenVideoAd;
 import com.baidu.mobads.sdk.api.InterstitialAd;
 import com.baidu.mobads.sdk.api.InterstitialAdListener;
+import com.igexin.assist.sdk.AssistPushConsts;
 import java.util.Map;
 
 /* loaded from: source-8756600-dex2jar.jar:com/anythink/network/baidu/BaiduATInterstitialAdapter.class */
@@ -25,11 +26,11 @@ public class BaiduATInterstitialAdapter extends CustomInterstitialAdapter {
     private static final String g = BaiduATInterstitialAdapter.class.getSimpleName();
 
     /* renamed from: a  reason: collision with root package name */
-    InterstitialAd f8867a;
+    InterstitialAd f6027a;
     FullScreenVideoAd b;
 
     /* renamed from: c  reason: collision with root package name */
-    ExpressInterstitialAd f8868c;
+    ExpressInterstitialAd f6028c;
     FullScreenVideoAd.FullScreenVideoAdListener d;
     private String h = "";
     private String i = "";
@@ -259,7 +260,7 @@ public class BaiduATInterstitialAdapter extends CustomInterstitialAdapter {
                 baiduATInterstitialAdapter.mLoadListener.onAdCacheLoaded(new BaseAd[0]);
             }
         } else if (baiduATInterstitialAdapter.mBiddingListener != null) {
-            ExpressInterstitialAd expressInterstitialAd = baiduATInterstitialAdapter.f8868c;
+            ExpressInterstitialAd expressInterstitialAd = baiduATInterstitialAdapter.f6028c;
             if (expressInterstitialAd == null) {
                 baiduATInterstitialAdapter.notifyATLoadFail("", "Baidu: ExpressInterstitialAd had been destroyed.");
                 return;
@@ -275,11 +276,11 @@ public class BaiduATInterstitialAdapter extends CustomInterstitialAdapter {
             } catch (Throwable th) {
                 th.printStackTrace();
             }
-            BaiduATBiddingNotice baiduATBiddingNotice = new BaiduATBiddingNotice(baiduATInterstitialAdapter.f8868c);
+            BaiduATBiddingNotice baiduATBiddingNotice = new BaiduATBiddingNotice(baiduATInterstitialAdapter.f6028c);
             ATBiddingListener aTBiddingListener = baiduATInterstitialAdapter.mBiddingListener;
             StringBuilder sb = new StringBuilder();
             sb.append(System.currentTimeMillis());
-            aTBiddingListener.onC2SBiddingResultWithCache(ATBiddingResult.success(d, sb.toString(), baiduATBiddingNotice, ATAdConst.CURRENCY.RMB_CENT), null);
+            aTBiddingListener.onC2SBiddingResultWithCache(ATBiddingResult.success(d, sb.toString(), baiduATBiddingNotice, ATAdConst.CURRENCY.RMB_CENT), (BaseAd) null);
         }
     }
 
@@ -309,7 +310,7 @@ public class BaiduATInterstitialAdapter extends CustomInterstitialAdapter {
             ATBiddingListener aTBiddingListener = this.mBiddingListener;
             StringBuilder sb = new StringBuilder();
             sb.append(System.currentTimeMillis());
-            aTBiddingListener.onC2SBiddingResultWithCache(ATBiddingResult.success(d, sb.toString(), baiduATBiddingNotice, ATAdConst.CURRENCY.RMB_CENT), null);
+            aTBiddingListener.onC2SBiddingResultWithCache(ATBiddingResult.success(d, sb.toString(), baiduATBiddingNotice, ATAdConst.CURRENCY.RMB_CENT), (BaseAd) null);
         }
     }
 
@@ -345,21 +346,21 @@ public class BaiduATInterstitialAdapter extends CustomInterstitialAdapter {
                 return;
             }
             InterstitialAd interstitialAd = new InterstitialAd(context, this.i);
-            this.f8867a = interstitialAd;
+            this.f6027a = interstitialAd;
             interstitialAd.setListener(new AnonymousClass2());
-            this.f8867a.loadAd();
+            this.f6027a.loadAd();
         } else {
-            this.f8868c = new ExpressInterstitialAd(context.getApplicationContext(), this.i);
+            this.f6028c = new ExpressInterstitialAd(context.getApplicationContext(), this.i);
             if (this.f && this.l > 0.0d) {
                 if (ATSDK.isNetworkLogDebug()) {
                     Log.i("BaiduATInterstitial", "setBidFloor:" + ((int) (this.l * 100.0d)));
                 }
-                this.f8868c.setBidFloor((int) (this.l * 100.0d));
+                this.f6028c.setBidFloor((int) (this.l * 100.0d));
             }
-            this.f8868c.setLoadListener(new AnonymousClass3());
-            this.f8868c.setDownloadListener(new AnonymousClass4());
-            this.f8868c.setDialogFrame(this.e);
-            this.f8868c.load();
+            this.f6028c.setLoadListener(new AnonymousClass3());
+            this.f6028c.setDownloadListener(new AnonymousClass4());
+            this.f6028c.setDialogFrame(this.e);
+            this.f6028c.load();
         }
     }
 
@@ -395,21 +396,21 @@ public class BaiduATInterstitialAdapter extends CustomInterstitialAdapter {
                 return;
             }
             InterstitialAd interstitialAd = new InterstitialAd(context, baiduATInterstitialAdapter.i);
-            baiduATInterstitialAdapter.f8867a = interstitialAd;
+            baiduATInterstitialAdapter.f6027a = interstitialAd;
             interstitialAd.setListener(new AnonymousClass2());
-            baiduATInterstitialAdapter.f8867a.loadAd();
+            baiduATInterstitialAdapter.f6027a.loadAd();
         } else {
-            baiduATInterstitialAdapter.f8868c = new ExpressInterstitialAd(context.getApplicationContext(), baiduATInterstitialAdapter.i);
+            baiduATInterstitialAdapter.f6028c = new ExpressInterstitialAd(context.getApplicationContext(), baiduATInterstitialAdapter.i);
             if (baiduATInterstitialAdapter.f && baiduATInterstitialAdapter.l > 0.0d) {
                 if (ATSDK.isNetworkLogDebug()) {
                     Log.i("BaiduATInterstitial", "setBidFloor:" + ((int) (baiduATInterstitialAdapter.l * 100.0d)));
                 }
-                baiduATInterstitialAdapter.f8868c.setBidFloor((int) (baiduATInterstitialAdapter.l * 100.0d));
+                baiduATInterstitialAdapter.f6028c.setBidFloor((int) (baiduATInterstitialAdapter.l * 100.0d));
             }
-            baiduATInterstitialAdapter.f8868c.setLoadListener(new AnonymousClass3());
-            baiduATInterstitialAdapter.f8868c.setDownloadListener(new AnonymousClass4());
-            baiduATInterstitialAdapter.f8868c.setDialogFrame(baiduATInterstitialAdapter.e);
-            baiduATInterstitialAdapter.f8868c.load();
+            baiduATInterstitialAdapter.f6028c.setLoadListener(new AnonymousClass3());
+            baiduATInterstitialAdapter.f6028c.setDownloadListener(new AnonymousClass4());
+            baiduATInterstitialAdapter.f6028c.setDialogFrame(baiduATInterstitialAdapter.e);
+            baiduATInterstitialAdapter.f6028c.load();
         }
     }
 
@@ -425,13 +426,13 @@ public class BaiduATInterstitialAdapter extends CustomInterstitialAdapter {
         }
         if (map2 != null) {
             try {
-                if (map2.containsKey(ATAdConst.KEY.AD_CLICK_CONFIRM_STATUS)) {
-                    this.e = Boolean.parseBoolean(map2.get(ATAdConst.KEY.AD_CLICK_CONFIRM_STATUS).toString());
+                if (map2.containsKey("ad_click_confirm_status")) {
+                    this.e = Boolean.parseBoolean(map2.get("ad_click_confirm_status").toString());
                 }
             } catch (Exception e) {
             }
         }
-        this.j = ATInitMediation.getStringFromMap(map, "payload");
+        this.j = ATInitMediation.getStringFromMap(map, AssistPushConsts.MSG_TYPE_PAYLOAD);
     }
 
     private void b() {
@@ -440,7 +441,7 @@ public class BaiduATInterstitialAdapter extends CustomInterstitialAdapter {
                 this.mLoadListener.onAdCacheLoaded(new BaseAd[0]);
             }
         } else if (this.mBiddingListener != null) {
-            ExpressInterstitialAd expressInterstitialAd = this.f8868c;
+            ExpressInterstitialAd expressInterstitialAd = this.f6028c;
             if (expressInterstitialAd == null) {
                 notifyATLoadFail("", "Baidu: ExpressInterstitialAd had been destroyed.");
                 return;
@@ -456,11 +457,11 @@ public class BaiduATInterstitialAdapter extends CustomInterstitialAdapter {
             } catch (Throwable th) {
                 th.printStackTrace();
             }
-            BaiduATBiddingNotice baiduATBiddingNotice = new BaiduATBiddingNotice(this.f8868c);
+            BaiduATBiddingNotice baiduATBiddingNotice = new BaiduATBiddingNotice(this.f6028c);
             ATBiddingListener aTBiddingListener = this.mBiddingListener;
             StringBuilder sb = new StringBuilder();
             sb.append(System.currentTimeMillis());
-            aTBiddingListener.onC2SBiddingResultWithCache(ATBiddingResult.success(d, sb.toString(), baiduATBiddingNotice, ATAdConst.CURRENCY.RMB_CENT), null);
+            aTBiddingListener.onC2SBiddingResultWithCache(ATBiddingResult.success(d, sb.toString(), baiduATBiddingNotice, ATAdConst.CURRENCY.RMB_CENT), (BaseAd) null);
         }
     }
 
@@ -483,23 +484,23 @@ public class BaiduATInterstitialAdapter extends CustomInterstitialAdapter {
             return;
         }
         InterstitialAd interstitialAd = new InterstitialAd(context, this.i);
-        this.f8867a = interstitialAd;
+        this.f6027a = interstitialAd;
         interstitialAd.setListener(new AnonymousClass2());
-        this.f8867a.loadAd();
+        this.f6027a.loadAd();
     }
 
     private void d(Context context) {
-        this.f8868c = new ExpressInterstitialAd(context, this.i);
+        this.f6028c = new ExpressInterstitialAd(context, this.i);
         if (this.f && this.l > 0.0d) {
             if (ATSDK.isNetworkLogDebug()) {
                 Log.i("BaiduATInterstitial", "setBidFloor:" + ((int) (this.l * 100.0d)));
             }
-            this.f8868c.setBidFloor((int) (this.l * 100.0d));
+            this.f6028c.setBidFloor((int) (this.l * 100.0d));
         }
-        this.f8868c.setLoadListener(new AnonymousClass3());
-        this.f8868c.setDownloadListener(new AnonymousClass4());
-        this.f8868c.setDialogFrame(this.e);
-        this.f8868c.load();
+        this.f6028c.setLoadListener(new AnonymousClass3());
+        this.f6028c.setDownloadListener(new AnonymousClass4());
+        this.f6028c.setDialogFrame(this.e);
+        this.f6028c.load();
     }
 
     static /* synthetic */ void h(BaiduATInterstitialAdapter baiduATInterstitialAdapter) {
@@ -528,7 +529,7 @@ public class BaiduATInterstitialAdapter extends CustomInterstitialAdapter {
             ATBiddingListener aTBiddingListener = baiduATInterstitialAdapter.mBiddingListener;
             StringBuilder sb = new StringBuilder();
             sb.append(System.currentTimeMillis());
-            aTBiddingListener.onC2SBiddingResultWithCache(ATBiddingResult.success(d, sb.toString(), baiduATBiddingNotice, ATAdConst.CURRENCY.RMB_CENT), null);
+            aTBiddingListener.onC2SBiddingResultWithCache(ATBiddingResult.success(d, sb.toString(), baiduATBiddingNotice, ATAdConst.CURRENCY.RMB_CENT), (BaseAd) null);
         }
     }
 
@@ -537,40 +538,35 @@ public class BaiduATInterstitialAdapter extends CustomInterstitialAdapter {
         return 2;
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public void destory() {
         if (this.b != null) {
             this.b = null;
             this.d = null;
         }
-        InterstitialAd interstitialAd = this.f8867a;
+        InterstitialAd interstitialAd = this.f6027a;
         if (interstitialAd != null) {
             interstitialAd.destroy();
-            this.f8867a = null;
+            this.f6027a = null;
         }
-        ExpressInterstitialAd expressInterstitialAd = this.f8868c;
+        ExpressInterstitialAd expressInterstitialAd = this.f6028c;
         if (expressInterstitialAd != null) {
             expressInterstitialAd.destroy();
-            this.f8868c = null;
+            this.f6028c = null;
         }
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public String getNetworkName() {
         return BaiduATInitManager.getInstance().getNetworkName();
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public String getNetworkPlacementId() {
         return this.i;
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public String getNetworkSDKVersion() {
         return BaiduATInitManager.getInstance().getNetworkVersion();
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public boolean isAdReady() {
         boolean z;
         String str = this.k;
@@ -593,13 +589,13 @@ public class BaiduATInterstitialAdapter extends CustomInterstitialAdapter {
             }
             return false;
         } else if (!z) {
-            InterstitialAd interstitialAd = this.f8867a;
+            InterstitialAd interstitialAd = this.f6027a;
             if (interstitialAd != null) {
                 return interstitialAd.isAdReady();
             }
             return false;
         } else {
-            ExpressInterstitialAd expressInterstitialAd = this.f8868c;
+            ExpressInterstitialAd expressInterstitialAd = this.f6028c;
             if (expressInterstitialAd != null) {
                 return expressInterstitialAd.isReady();
             }
@@ -607,7 +603,6 @@ public class BaiduATInterstitialAdapter extends CustomInterstitialAdapter {
         }
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public void loadCustomNetworkAd(final Context context, Map<String, Object> map, Map<String, Object> map2) {
         this.h = ATInitMediation.getStringFromMap(map, "app_id");
         this.i = ATInitMediation.getStringFromMap(map, "ad_place_id");
@@ -620,27 +615,25 @@ public class BaiduATInterstitialAdapter extends CustomInterstitialAdapter {
         }
         if (map2 != null) {
             try {
-                if (map2.containsKey(ATAdConst.KEY.AD_CLICK_CONFIRM_STATUS)) {
-                    this.e = Boolean.parseBoolean(map2.get(ATAdConst.KEY.AD_CLICK_CONFIRM_STATUS).toString());
+                if (map2.containsKey("ad_click_confirm_status")) {
+                    this.e = Boolean.parseBoolean(map2.get("ad_click_confirm_status").toString());
                 }
             } catch (Exception e) {
             }
         }
-        this.j = ATInitMediation.getStringFromMap(map, "payload");
+        this.j = ATInitMediation.getStringFromMap(map, AssistPushConsts.MSG_TYPE_PAYLOAD);
         if (TextUtils.isEmpty(this.h) || TextUtils.isEmpty(this.i)) {
             notifyATLoadFail("", " app_id ,ad_place_id is empty.");
         } else if ((TextUtils.isEmpty(this.k) || this.k.equals("0")) && !(context instanceof Activity)) {
             notifyATLoadFail("", "Baidu InterstitialAd context must be activity.");
         } else {
             BaiduATInitManager.getInstance().initSDK(context.getApplicationContext(), map, TextUtils.equals("0", this.k), new MediationInitCallback() { // from class: com.anythink.network.baidu.BaiduATInterstitialAdapter.5
-                @Override // com.anythink.core.api.MediationInitCallback
                 public final void onFail(String str) {
                     if (BaiduATInterstitialAdapter.this.mLoadListener != null) {
                         BaiduATInterstitialAdapter.this.mLoadListener.onAdLoadError("", str);
                     }
                 }
 
-                @Override // com.anythink.core.api.MediationInitCallback
                 public final void onSuccess() {
                     try {
                         BaiduATInterstitialAdapter.a(BaiduATInterstitialAdapter.this, context);
@@ -678,18 +671,17 @@ public class BaiduATInterstitialAdapter extends CustomInterstitialAdapter {
                     this.b.show();
                 }
             } else if (!z) {
-                if (this.f8867a != null) {
-                    this.f8867a.showAd();
+                if (this.f6027a != null) {
+                    this.f6027a.showAd();
                 }
-            } else if (this.f8868c != null) {
-                this.f8868c.show(activity);
+            } else if (this.f6028c != null) {
+                this.f6028c.show(activity);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public boolean startBiddingRequest(Context context, Map<String, Object> map, Map<String, Object> map2, ATBiddingListener aTBiddingListener) {
         this.f = true;
         loadCustomNetworkAd(context, map, map2);

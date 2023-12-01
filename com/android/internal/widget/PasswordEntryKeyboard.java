@@ -1,7 +1,6 @@
 package com.android.internal.widget;
 
 import android.content.Context;
-import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.content.res.XmlResourceParser;
 import android.graphics.drawable.Drawable;
@@ -134,7 +133,7 @@ public class PasswordEntryKeyboard extends Keyboard {
             latinKey.setEnabled(false);
         }
         switch (latinKey.codes[0]) {
-            case PackageManager.INSTALL_PARSE_FAILED_NO_CERTIFICATES /* -103 */:
+            case -103:
                 this.mF1Key = latinKey;
                 return latinKey;
             case 10:

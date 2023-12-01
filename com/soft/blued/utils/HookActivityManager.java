@@ -14,31 +14,30 @@ import java.lang.reflect.Proxy;
 public class HookActivityManager {
 
     /* renamed from: a  reason: collision with root package name */
-    private static WifiInfo f34741a;
+    private static WifiInfo f21050a;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/utils/HookActivityManager$IActivityManagerProxy.class */
-    public static class IActivityManagerProxy implements InvocationHandler {
+    static class IActivityManagerProxy implements InvocationHandler {
 
         /* renamed from: a  reason: collision with root package name */
-        private Object f34742a;
+        private Object f21051a;
 
         public IActivityManagerProxy(Object obj) {
-            this.f34742a = obj;
+            this.f21051a = obj;
         }
 
         @Override // java.lang.reflect.InvocationHandler
         public Object invoke(Object obj, Method method, Object[] objArr) throws Throwable {
             if (!"reportSizeConfigurations".equals(method.getName())) {
                 try {
-                    return method.invoke(this.f34742a, objArr);
+                    return method.invoke(this.f21051a, objArr);
                 } catch (Exception e) {
                     return false;
                 }
             }
             try {
                 Log.w("HookActivityManager", "reportSizeConfigurations invoke execute ");
-                return method.invoke(this.f34742a, objArr);
+                return method.invoke(this.f21051a, objArr);
             } catch (Exception e2) {
                 Log.w("HookActivityManager", "reportSizeConfigurations exception: " + e2.getMessage());
                 return false;
@@ -50,19 +49,19 @@ public class HookActivityManager {
     public static class WifiInvocationHandler implements InvocationHandler {
 
         /* renamed from: a  reason: collision with root package name */
-        private final String f34743a;
+        private final String f21052a;
         private final String b;
 
         /* renamed from: c  reason: collision with root package name */
-        private Object f34744c;
+        private Object f21053c;
 
         @Override // java.lang.reflect.InvocationHandler
         public Object invoke(Object obj, Method method, Object[] objArr) throws Throwable {
             WifiInfo wifiInfo;
             Exception e;
-            Log.d(this.f34743a, "method invoke " + method.getName());
+            Log.d(this.f21052a, "method invoke " + method.getName());
             if (!this.b.equals(method.getName())) {
-                return method.invoke(this.f34744c, objArr);
+                return method.invoke(this.f21053c, objArr);
             }
             if (BluedPreferences.aC() != 1 && !BluedPreferences.aD()) {
                 return null;
@@ -70,9 +69,9 @@ public class HookActivityManager {
             if (AppInfo.m()) {
                 new Exception("this is a log").printStackTrace();
             }
-            if (HookActivityManager.f34741a != null) {
-                Log.d(this.f34743a, "cacheWifiInfo:" + HookActivityManager.f34741a);
-                return HookActivityManager.f34741a;
+            if (HookActivityManager.f21050a != null) {
+                Log.d(this.f21052a, "cacheWifiInfo:" + HookActivityManager.f21050a);
+                return HookActivityManager.f21050a;
             }
             try {
                 wifiInfo = (WifiInfo) WifiInfo.class.newInstance();
@@ -80,12 +79,12 @@ public class HookActivityManager {
                     Field declaredField = WifiInfo.class.getDeclaredField("mMacAddress");
                     declaredField.setAccessible(true);
                     declaredField.set(wifiInfo, "");
-                    WifiInfo unused = HookActivityManager.f34741a = wifiInfo;
-                    Log.d(this.f34743a, "wifiInfo:" + wifiInfo);
+                    WifiInfo unused = HookActivityManager.f21050a = wifiInfo;
+                    Log.d(this.f21052a, "wifiInfo:" + wifiInfo);
                     return wifiInfo;
                 } catch (Exception e2) {
                     e = e2;
-                    Log.e(this.f34743a, "WifiInfo error:" + e.getMessage());
+                    Log.e(this.f21052a, "WifiInfo error:" + e.getMessage());
                     return wifiInfo;
                 }
             } catch (Exception e3) {

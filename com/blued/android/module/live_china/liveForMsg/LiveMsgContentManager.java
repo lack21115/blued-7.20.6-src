@@ -44,9 +44,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/liveForMsg/LiveMsgContentManager.class */
 public final class LiveMsgContentManager {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f13470a = new Companion(null);
+    public static final Companion a = new Companion(null);
     public static int b = -1;
     private long g;
     private long h;
@@ -61,9 +59,7 @@ public final class LiveMsgContentManager {
     private FreedomAdapter q;
     private Timer u;
     private boolean v;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final int f13471c = 150;
+    private final int c = 150;
     private final int d = 15;
     private final int e = 35;
     private final long f = 60;
@@ -542,13 +538,13 @@ public final class LiveMsgContentManager {
             Intrinsics.c("rvList");
             recyclerView4 = null;
         }
-        LiveMsgLayoutManager liveMsgLayoutManager3 = this.p;
-        LiveMsgLayoutManager liveMsgLayoutManager4 = liveMsgLayoutManager3;
-        if (liveMsgLayoutManager3 == null) {
+        RecyclerView.LayoutManager layoutManager = this.p;
+        LiveMsgLayoutManager liveMsgLayoutManager3 = layoutManager;
+        if (layoutManager == null) {
             Intrinsics.c("layoutManager");
-            liveMsgLayoutManager4 = null;
+            liveMsgLayoutManager3 = null;
         }
-        recyclerView4.setLayoutManager(liveMsgLayoutManager4);
+        recyclerView4.setLayoutManager(liveMsgLayoutManager3);
         this.r.setAddDuration(500L);
         MsgItemAnimator msgItemAnimator = this.r;
         msgItemAnimator.setRemoveDuration(msgItemAnimator.getAddDuration());
@@ -654,9 +650,9 @@ public final class LiveMsgContentManager {
                 if (currentTimeMillis - LiveMsgContentManager.this.a() > j3) {
                     LiveMsgContentManager.this.a(true);
                     if (LiveMsgContentManager.this.c() != null) {
-                        Runnable c2 = LiveMsgContentManager.this.c();
-                        if (c2 != null) {
-                            c2.run();
+                        Runnable c = LiveMsgContentManager.this.c();
+                        if (c != null) {
+                            c.run();
                         }
                         LiveMsgContentManager.this.a((Runnable) null);
                         LiveMsgContentManager.this.g = 800L;
@@ -683,7 +679,7 @@ public final class LiveMsgContentManager {
 
     private final void j() {
         int size;
-        if (!this.v && (size = this.s.size()) >= this.f13471c) {
+        if (!this.v && (size = this.s.size()) >= this.c) {
             int i = this.d;
             int i2 = this.e;
             final ArrayList arrayList = new ArrayList();
@@ -823,7 +819,7 @@ public final class LiveMsgContentManager {
                 if (liveChattingModel == null) {
                     return;
                 }
-                if (f13470a.a(liveChattingModel)) {
+                if (a.a(liveChattingModel)) {
                     this.j = new Runnable() { // from class: com.blued.android.module.live_china.liveForMsg.-$$Lambda$LiveMsgContentManager$ym1sQ604bIuRaUUHmWvw9LXPl-A
                         @Override // java.lang.Runnable
                         public final void run() {

@@ -7,10 +7,10 @@ import com.tencent.map.sdk.utilities.visualization.glmodel.GLModelOverlayProvide
 public class ed extends GLModelInfo implements vc {
 
     /* renamed from: a  reason: collision with root package name */
-    private GLModelOverlayProvider f37410a;
+    private GLModelOverlayProvider f23719a;
 
     public ed(GLModelOverlayProvider gLModelOverlayProvider) {
-        this.f37410a = gLModelOverlayProvider;
+        this.f23719a = gLModelOverlayProvider;
         this.mModelFilePath = gLModelOverlayProvider.getModelFilePath();
         this.mPosition = gLModelOverlayProvider.getPosition();
         this.mCoordType = gLModelOverlayProvider.getCoordType().ordinal();
@@ -39,6 +39,6 @@ public class ed extends GLModelInfo implements vc {
     }
 
     public GLModelOverlayProvider a() {
-        return this.f37410a;
+        return this.f23719a;
     }
 }

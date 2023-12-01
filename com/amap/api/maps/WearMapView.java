@@ -7,10 +7,12 @@ import android.graphics.Point;
 import android.os.Bundle;
 import android.util.AttributeSet;
 import android.view.Display;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import com.amap.api.col.p0003sl.aa;
+import com.android.internal.R;
 import com.autonavi.amap.mapcore.interfaces.IAMap;
 import com.autonavi.amap.mapcore.interfaces.IMapFragmentDelegate;
 
@@ -45,7 +47,7 @@ public class WearMapView extends ViewGroup implements BaseMapView {
         super(context, attributeSet);
         this.TAG = WearMapView.class.getSimpleName();
         this.visibility = 0;
-        this.visibility = attributeSet.getAttributeIntValue(16842972, 0);
+        this.visibility = attributeSet.getAttributeIntValue(R.attr.visibility, 0);
         getMapFragmentDelegate().setContext(context);
         getMapFragmentDelegate().setVisibility(this.visibility);
         a(context);
@@ -56,7 +58,7 @@ public class WearMapView extends ViewGroup implements BaseMapView {
         super(context, attributeSet, i);
         this.TAG = WearMapView.class.getSimpleName();
         this.visibility = 0;
-        this.visibility = attributeSet.getAttributeIntValue(16842972, 0);
+        this.visibility = attributeSet.getAttributeIntValue(R.attr.visibility, 0);
         getMapFragmentDelegate().setContext(context);
         getMapFragmentDelegate().setVisibility(this.visibility);
         a(context);
@@ -74,7 +76,7 @@ public class WearMapView extends ViewGroup implements BaseMapView {
     }
 
     private static void a(Context context) {
-        WindowManager windowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+        WindowManager windowManager = (WindowManager) context.getSystemService("window");
         if (windowManager != null) {
             Display defaultDisplay = windowManager.getDefaultDisplay();
             Point point = new Point();
@@ -140,7 +142,7 @@ public class WearMapView extends ViewGroup implements BaseMapView {
 
     public final void onCreate(Bundle bundle) {
         try {
-            this.mMapView = getMapFragmentDelegate().onCreateView(null, null, bundle);
+            this.mMapView = getMapFragmentDelegate().onCreateView((LayoutInflater) null, (ViewGroup) null, bundle);
             addView(this.mMapView, 0, new ViewGroup.LayoutParams(-1, -1));
         } catch (Throwable th) {
             th.printStackTrace();

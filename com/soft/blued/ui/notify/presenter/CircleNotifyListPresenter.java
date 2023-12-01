@@ -26,7 +26,6 @@ public class CircleNotifyListPresenter extends MvpPresenter {
         if (this.j) {
             CircleHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<CircleNotify>>(g()) { // from class: com.soft.blued.ui.notify.presenter.CircleNotifyListPresenter.1
                 /* JADX INFO: Access modifiers changed from: protected */
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 /* renamed from: a */
                 public void onUIUpdate(BluedEntityA<CircleNotify> bluedEntityA) {
                     if (bluedEntityA == null) {
@@ -43,7 +42,6 @@ public class CircleNotifyListPresenter extends MvpPresenter {
                     }
                 }
 
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public void onUIFinish(boolean z) {
                     if (!z && CircleNotifyListPresenter.this.h != 1) {
                         CircleNotifyListPresenter.c(CircleNotifyListPresenter.this);
@@ -54,13 +52,11 @@ public class CircleNotifyListPresenter extends MvpPresenter {
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void a(IFetchDataListener iFetchDataListener) {
         this.h = 1;
         c(iFetchDataListener);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void b(IFetchDataListener iFetchDataListener) {
         this.h++;
         c(iFetchDataListener);

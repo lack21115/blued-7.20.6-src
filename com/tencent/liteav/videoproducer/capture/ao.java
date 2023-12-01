@@ -7,11 +7,11 @@ import com.tencent.liteav.videoproducer.capture.ah;
 final /* synthetic */ class ao implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ah f36877a;
+    private final ah f23186a;
     private final CaptureSourceInterface.CaptureParams b;
 
     private ao(ah ahVar, CaptureSourceInterface.CaptureParams captureParams) {
-        this.f36877a = ahVar;
+        this.f23186a = ahVar;
         this.b = captureParams;
     }
 
@@ -21,18 +21,18 @@ final /* synthetic */ class ao implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        ah ahVar = this.f36877a;
+        ah ahVar = this.f23186a;
         CaptureSourceInterface.CaptureParams captureParams = this.b;
-        if (ahVar.f36865c != null) {
+        if (ahVar.f23174c != null) {
             ahVar.d = captureParams;
             if (ahVar.k == ah.a.STARTED) {
-                ahVar.f36865c.updateParams(captureParams);
+                ahVar.f23174c.updateParams(captureParams);
             } else if (ahVar.k == ah.a.PAUSED) {
-                ahVar.f36865c.updateParams(captureParams);
-                if (!ahVar.j || ahVar.f36864a == null) {
+                ahVar.f23174c.updateParams(captureParams);
+                if (!ahVar.j || ahVar.f23173a == null) {
                     return;
                 }
-                ahVar.f36864a.updateParams(ahVar.d);
+                ahVar.f23173a.updateParams(ahVar.d);
             }
         }
     }

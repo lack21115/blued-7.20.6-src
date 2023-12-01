@@ -33,8 +33,8 @@ public final class PlayLantern extends GeneratedMessageV3 implements PlayLantern
     private int playTimes_;
     private static final PlayLantern DEFAULT_INSTANCE = new PlayLantern();
     private static final Parser<PlayLantern> PARSER = new AbstractParser<PlayLantern>() { // from class: cn.irisgw.live.PlayLantern.1
-        @Override // com.google.protobuf.Parser
-        public PlayLantern parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        /* renamed from: parsePartialFrom */
+        public PlayLantern m6836parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             return new PlayLantern(codedInputStream, extensionRegistryLite);
         }
     };
@@ -95,7 +95,7 @@ public final class PlayLantern extends GeneratedMessageV3 implements PlayLantern
                 return this;
             }
             ensureImageIsMutable();
-            AbstractMessageLite.Builder.addAll((Iterable) iterable, (List) this.image_);
+            AbstractMessageLite.Builder.addAll(iterable, this.image_);
             onChanged();
             return this;
         }
@@ -103,11 +103,11 @@ public final class PlayLantern extends GeneratedMessageV3 implements PlayLantern
         public Builder addImage(int i, resource.Builder builder) {
             RepeatedFieldBuilderV3<resource, resource.Builder, resourceOrBuilder> repeatedFieldBuilderV3 = this.imageBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.addMessage(i, builder.build());
+                repeatedFieldBuilderV3.addMessage(i, builder.m6887build());
                 return this;
             }
             ensureImageIsMutable();
-            this.image_.add(i, builder.build());
+            this.image_.add(i, builder.m6887build());
             onChanged();
             return this;
         }
@@ -130,11 +130,11 @@ public final class PlayLantern extends GeneratedMessageV3 implements PlayLantern
         public Builder addImage(resource.Builder builder) {
             RepeatedFieldBuilderV3<resource, resource.Builder, resourceOrBuilder> repeatedFieldBuilderV3 = this.imageBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.addMessage(builder.build());
+                repeatedFieldBuilderV3.addMessage(builder.m6887build());
                 return this;
             }
             ensureImageIsMutable();
-            this.image_.add(builder.build());
+            this.image_.add(builder.m6887build());
             onChanged();
             return this;
         }
@@ -162,22 +162,22 @@ public final class PlayLantern extends GeneratedMessageV3 implements PlayLantern
             return getImageFieldBuilder().addBuilder(i, resource.getDefaultInstance());
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: addRepeatedField */
+        public Builder m6838addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.addRepeatedField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public PlayLantern build() {
-            PlayLantern buildPartial = buildPartial();
-            if (buildPartial.isInitialized()) {
-                return buildPartial;
+        /* renamed from: build */
+        public PlayLantern m6840build() {
+            PlayLantern m6842buildPartial = m6842buildPartial();
+            if (m6842buildPartial.isInitialized()) {
+                return m6842buildPartial;
             }
-            throw newUninitializedMessageException((Message) buildPartial);
+            throw newUninitializedMessageException(m6842buildPartial);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public PlayLantern buildPartial() {
+        /* renamed from: buildPartial */
+        public PlayLantern m6842buildPartial() {
             PlayLantern playLantern = new PlayLantern(this);
             int i = this.bitField0_;
             RepeatedFieldBuilderV3<resource, resource.Builder, resourceOrBuilder> repeatedFieldBuilderV3 = this.imageBuilder_;
@@ -196,8 +196,8 @@ public final class PlayLantern extends GeneratedMessageV3 implements PlayLantern
             return playLantern;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public Builder clear() {
+        /* renamed from: clear */
+        public Builder m6846clear() {
             super.clear();
             RepeatedFieldBuilderV3<resource, resource.Builder, resourceOrBuilder> repeatedFieldBuilderV3 = this.imageBuilder_;
             if (repeatedFieldBuilderV3 == null) {
@@ -211,8 +211,8 @@ public final class PlayLantern extends GeneratedMessageV3 implements PlayLantern
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+        /* renamed from: clearField */
+        public Builder m6848clearField(Descriptors.FieldDescriptor fieldDescriptor) {
             return (Builder) super.clearField(fieldDescriptor);
         }
 
@@ -234,8 +234,8 @@ public final class PlayLantern extends GeneratedMessageV3 implements PlayLantern
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+        /* renamed from: clearOneof */
+        public Builder m6851clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
             return (Builder) super.clearOneof(oneofDescriptor);
         }
 
@@ -245,18 +245,16 @@ public final class PlayLantern extends GeneratedMessageV3 implements PlayLantern
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder m6857clone() {
+            return (Builder) super.clone();
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public PlayLantern getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public PlayLantern m6859getDefaultInstanceForType() {
             return PlayLantern.getDefaultInstance();
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
         public Descriptors.Descriptor getDescriptorForType() {
             return LiveConstants.internal_static_cn_irisgw_live_PlayLantern_descriptor;
         }
@@ -290,7 +288,7 @@ public final class PlayLantern extends GeneratedMessageV3 implements PlayLantern
         @Override // cn.irisgw.live.PlayLanternOrBuilder
         public resourceOrBuilder getImageOrBuilder(int i) {
             RepeatedFieldBuilderV3<resource, resource.Builder, resourceOrBuilder> repeatedFieldBuilderV3 = this.imageBuilder_;
-            return repeatedFieldBuilderV3 == null ? this.image_.get(i) : repeatedFieldBuilderV3.getMessageOrBuilder(i);
+            return repeatedFieldBuilderV3 == null ? this.image_.get(i) : (resourceOrBuilder) repeatedFieldBuilderV3.getMessageOrBuilder(i);
         }
 
         @Override // cn.irisgw.live.PlayLanternOrBuilder
@@ -309,12 +307,10 @@ public final class PlayLantern extends GeneratedMessageV3 implements PlayLantern
             return this.playTimes_;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_PlayLantern_fieldAccessorTable.ensureFieldAccessorsInitialized(PlayLantern.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             return true;
         }
@@ -355,18 +351,18 @@ public final class PlayLantern extends GeneratedMessageV3 implements PlayLantern
             if (playLantern.getPlayTimes() != 0) {
                 setPlayTimes(playLantern.getPlayTimes());
             }
-            mergeUnknownFields(playLantern.unknownFields);
+            m6868mergeUnknownFields(playLantern.unknownFields);
             onChanged();
             return this;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+        /* renamed from: mergeFrom */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
         */
-        public cn.irisgw.live.PlayLantern.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+        public cn.irisgw.live.PlayLantern.Builder m6865mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
             /*
                 r4 = this;
                 r0 = 0
@@ -411,11 +407,11 @@ public final class PlayLantern extends GeneratedMessageV3 implements PlayLantern
                 r0 = r6
                 throw r0
             */
-            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.PlayLantern.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.PlayLantern$Builder");
+            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.PlayLantern.Builder.m6865mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.PlayLantern$Builder");
         }
 
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder mergeFrom(Message message) {
+        /* renamed from: mergeFrom */
+        public Builder m6864mergeFrom(Message message) {
             if (message instanceof PlayLantern) {
                 return mergeFrom((PlayLantern) message);
             }
@@ -423,8 +419,8 @@ public final class PlayLantern extends GeneratedMessageV3 implements PlayLantern
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: mergeUnknownFields */
+        public final Builder m6868mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.mergeUnknownFields(unknownFieldSet);
         }
 
@@ -440,19 +436,19 @@ public final class PlayLantern extends GeneratedMessageV3 implements PlayLantern
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: setField */
+        public Builder m6870setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.setField(fieldDescriptor, obj);
         }
 
         public Builder setImage(int i, resource.Builder builder) {
             RepeatedFieldBuilderV3<resource, resource.Builder, resourceOrBuilder> repeatedFieldBuilderV3 = this.imageBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.setMessage(i, builder.build());
+                repeatedFieldBuilderV3.setMessage(i, builder.m6887build());
                 return this;
             }
             ensureImageIsMutable();
-            this.image_.set(i, builder.build());
+            this.image_.set(i, builder.m6887build());
             onChanged();
             return this;
         }
@@ -484,13 +480,13 @@ public final class PlayLantern extends GeneratedMessageV3 implements PlayLantern
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+        /* renamed from: setRepeatedField */
+        public Builder m6872setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
             return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: setUnknownFields */
+        public final Builder m6874setUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.setUnknownFields(unknownFieldSet);
         }
     }
@@ -503,8 +499,8 @@ public final class PlayLantern extends GeneratedMessageV3 implements PlayLantern
         private byte memoizedIsInitialized;
         private static final resource DEFAULT_INSTANCE = new resource();
         private static final Parser<resource> PARSER = new AbstractParser<resource>() { // from class: cn.irisgw.live.PlayLantern.resource.1
-            @Override // com.google.protobuf.Parser
-            public resource parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+            /* renamed from: parsePartialFrom */
+            public resource m6883parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
                 return new resource(codedInputStream, extensionRegistryLite);
             }
         };
@@ -532,37 +528,37 @@ public final class PlayLantern extends GeneratedMessageV3 implements PlayLantern
                 boolean unused = resource.alwaysUseFieldBuilders;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: addRepeatedField */
+            public Builder m6885addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.addRepeatedField(fieldDescriptor, obj);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public resource build() {
-                resource buildPartial = buildPartial();
-                if (buildPartial.isInitialized()) {
-                    return buildPartial;
+            /* renamed from: build */
+            public resource m6887build() {
+                resource m6889buildPartial = m6889buildPartial();
+                if (m6889buildPartial.isInitialized()) {
+                    return m6889buildPartial;
                 }
-                throw newUninitializedMessageException((Message) buildPartial);
+                throw newUninitializedMessageException(m6889buildPartial);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public resource buildPartial() {
+            /* renamed from: buildPartial */
+            public resource m6889buildPartial() {
                 resource resourceVar = new resource(this);
                 resourceVar.img_ = this.img_;
                 onBuilt();
                 return resourceVar;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public Builder clear() {
+            /* renamed from: clear */
+            public Builder m6893clear() {
                 super.clear();
                 this.img_ = "";
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+            /* renamed from: clearField */
+            public Builder m6895clearField(Descriptors.FieldDescriptor fieldDescriptor) {
                 return (Builder) super.clearField(fieldDescriptor);
             }
 
@@ -572,23 +568,21 @@ public final class PlayLantern extends GeneratedMessageV3 implements PlayLantern
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+            /* renamed from: clearOneof */
+            public Builder m6898clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
                 return (Builder) super.clearOneof(oneofDescriptor);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder m6904clone() {
+                return (Builder) super.clone();
             }
 
-            @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-            public resource getDefaultInstanceForType() {
+            /* renamed from: getDefaultInstanceForType */
+            public resource m6906getDefaultInstanceForType() {
                 return resource.getDefaultInstance();
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
             public Descriptors.Descriptor getDescriptorForType() {
                 return LiveConstants.internal_static_cn_irisgw_live_PlayLantern_resource_descriptor;
             }
@@ -615,12 +609,10 @@ public final class PlayLantern extends GeneratedMessageV3 implements PlayLantern
                 return (ByteString) obj;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder
             public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
                 return LiveConstants.internal_static_cn_irisgw_live_PlayLantern_resource_fieldAccessorTable.ensureFieldAccessorsInitialized(resource.class, Builder.class);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
             public final boolean isInitialized() {
                 return true;
             }
@@ -633,18 +625,18 @@ public final class PlayLantern extends GeneratedMessageV3 implements PlayLantern
                     this.img_ = resourceVar.img_;
                     onChanged();
                 }
-                mergeUnknownFields(resourceVar.unknownFields);
+                m6915mergeUnknownFields(resourceVar.unknownFields);
                 onChanged();
                 return this;
             }
 
             /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+            /* renamed from: mergeFrom */
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
                 To view partially-correct code enable 'Show inconsistent code' option in preferences
             */
-            public cn.irisgw.live.PlayLantern.resource.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+            public cn.irisgw.live.PlayLantern.resource.Builder m6912mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
                 /*
                     r4 = this;
                     r0 = 0
@@ -689,11 +681,11 @@ public final class PlayLantern extends GeneratedMessageV3 implements PlayLantern
                     r0 = r6
                     throw r0
                 */
-                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.PlayLantern.resource.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.PlayLantern$resource$Builder");
+                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.PlayLantern.resource.Builder.m6912mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.PlayLantern$resource$Builder");
             }
 
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder mergeFrom(Message message) {
+            /* renamed from: mergeFrom */
+            public Builder m6911mergeFrom(Message message) {
                 if (message instanceof resource) {
                     return mergeFrom((resource) message);
                 }
@@ -701,13 +693,13 @@ public final class PlayLantern extends GeneratedMessageV3 implements PlayLantern
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: mergeUnknownFields */
+            public final Builder m6915mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.mergeUnknownFields(unknownFieldSet);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: setField */
+            public Builder m6917setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.setField(fieldDescriptor, obj);
             }
 
@@ -730,13 +722,13 @@ public final class PlayLantern extends GeneratedMessageV3 implements PlayLantern
                 throw null;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+            /* renamed from: setRepeatedField */
+            public Builder m6919setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
                 return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: setUnknownFields */
+            public final Builder m6921setUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.setUnknownFields(unknownFieldSet);
             }
         }
@@ -764,10 +756,10 @@ public final class PlayLantern extends GeneratedMessageV3 implements PlayLantern
                             }
                         }
                         z = true;
-                    } catch (InvalidProtocolBufferException e) {
-                        throw e.setUnfinishedMessage(this);
-                    } catch (IOException e2) {
-                        throw new InvalidProtocolBufferException(e2).setUnfinishedMessage(this);
+                    } catch (IOException e) {
+                        throw new InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+                    } catch (InvalidProtocolBufferException e2) {
+                        throw e2.setUnfinishedMessage(this);
                     }
                 } finally {
                     this.unknownFields = newBuilder.build();
@@ -790,66 +782,65 @@ public final class PlayLantern extends GeneratedMessageV3 implements PlayLantern
         }
 
         public static Builder newBuilder() {
-            return DEFAULT_INSTANCE.toBuilder();
+            return DEFAULT_INSTANCE.m6882toBuilder();
         }
 
         public static Builder newBuilder(resource resourceVar) {
-            return DEFAULT_INSTANCE.toBuilder().mergeFrom(resourceVar);
+            return DEFAULT_INSTANCE.m6882toBuilder().mergeFrom(resourceVar);
         }
 
         public static resource parseDelimitedFrom(InputStream inputStream) throws IOException {
-            return (resource) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
         }
 
         public static resource parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (resource) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static resource parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString);
+            return (resource) PARSER.parseFrom(byteString);
         }
 
         public static resource parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString, extensionRegistryLite);
+            return (resource) PARSER.parseFrom(byteString, extensionRegistryLite);
         }
 
         public static resource parseFrom(CodedInputStream codedInputStream) throws IOException {
-            return (resource) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
         }
 
         public static resource parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (resource) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
         }
 
         public static resource parseFrom(InputStream inputStream) throws IOException {
-            return (resource) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
         }
 
         public static resource parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (resource) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static resource parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer);
+            return (resource) PARSER.parseFrom(byteBuffer);
         }
 
         public static resource parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+            return (resource) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
         }
 
         public static resource parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr);
+            return (resource) PARSER.parseFrom(bArr);
         }
 
         public static resource parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr, extensionRegistryLite);
+            return (resource) PARSER.parseFrom(bArr, extensionRegistryLite);
         }
 
         public static Parser<resource> parser() {
             return PARSER;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public boolean equals(Object obj) {
             if (obj == this) {
                 return true;
@@ -861,8 +852,8 @@ public final class PlayLantern extends GeneratedMessageV3 implements PlayLantern
             return super.equals(obj);
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public resource getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public resource m6877getDefaultInstanceForType() {
             return DEFAULT_INSTANCE;
         }
 
@@ -888,12 +879,10 @@ public final class PlayLantern extends GeneratedMessageV3 implements PlayLantern
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
         public Parser<resource> getParserForType() {
             return PARSER;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public int getSerializedSize() {
             int i = this.memoizedSize;
             if (i != -1) {
@@ -908,12 +897,10 @@ public final class PlayLantern extends GeneratedMessageV3 implements PlayLantern
             return serializedSize;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
         public final UnknownFieldSet getUnknownFields() {
             return this.unknownFields;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public int hashCode() {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
@@ -923,12 +910,10 @@ public final class PlayLantern extends GeneratedMessageV3 implements PlayLantern
             return hashCode;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_PlayLantern_resource_fieldAccessorTable.ensureFieldAccessorsInitialized(resource.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte b = this.memoizedIsInitialized;
             if (b == 1) {
@@ -941,28 +926,26 @@ public final class PlayLantern extends GeneratedMessageV3 implements PlayLantern
             return true;
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder newBuilderForType() {
+        /* renamed from: newBuilderForType */
+        public Builder m6880newBuilderForType() {
             return newBuilder();
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.google.protobuf.GeneratedMessageV3
-        public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+        /* renamed from: newBuilderForType */
+        public Builder m6879newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
             return new Builder(builderParent);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
             return new resource();
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder toBuilder() {
+        /* renamed from: toBuilder */
+        public Builder m6882toBuilder() {
             return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
             if (!getImgBytes().isEmpty()) {
                 GeneratedMessageV3.writeString(codedOutputStream, 1, this.img_);
@@ -1048,66 +1031,65 @@ public final class PlayLantern extends GeneratedMessageV3 implements PlayLantern
     }
 
     public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
+        return DEFAULT_INSTANCE.m6835toBuilder();
     }
 
     public static Builder newBuilder(PlayLantern playLantern) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(playLantern);
+        return DEFAULT_INSTANCE.m6835toBuilder().mergeFrom(playLantern);
     }
 
     public static PlayLantern parseDelimitedFrom(InputStream inputStream) throws IOException {
-        return (PlayLantern) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
     }
 
     public static PlayLantern parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (PlayLantern) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static PlayLantern parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString);
+        return (PlayLantern) PARSER.parseFrom(byteString);
     }
 
     public static PlayLantern parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString, extensionRegistryLite);
+        return (PlayLantern) PARSER.parseFrom(byteString, extensionRegistryLite);
     }
 
     public static PlayLantern parseFrom(CodedInputStream codedInputStream) throws IOException {
-        return (PlayLantern) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
     }
 
     public static PlayLantern parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (PlayLantern) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
     }
 
     public static PlayLantern parseFrom(InputStream inputStream) throws IOException {
-        return (PlayLantern) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
     }
 
     public static PlayLantern parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (PlayLantern) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static PlayLantern parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer);
+        return (PlayLantern) PARSER.parseFrom(byteBuffer);
     }
 
     public static PlayLantern parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+        return (PlayLantern) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
     }
 
     public static PlayLantern parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr);
+        return (PlayLantern) PARSER.parseFrom(bArr);
     }
 
     public static PlayLantern parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr, extensionRegistryLite);
+        return (PlayLantern) PARSER.parseFrom(bArr, extensionRegistryLite);
     }
 
     public static Parser<PlayLantern> parser() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
@@ -1119,8 +1101,8 @@ public final class PlayLantern extends GeneratedMessageV3 implements PlayLantern
         return super.equals(obj);
     }
 
-    @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-    public PlayLantern getDefaultInstanceForType() {
+    /* renamed from: getDefaultInstanceForType */
+    public PlayLantern m6830getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
     }
 
@@ -1154,7 +1136,6 @@ public final class PlayLantern extends GeneratedMessageV3 implements PlayLantern
         return this.lanternId_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
     public Parser<PlayLantern> getParserForType() {
         return PARSER;
     }
@@ -1164,7 +1145,6 @@ public final class PlayLantern extends GeneratedMessageV3 implements PlayLantern
         return this.playTimes_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public int getSerializedSize() {
         int i = this.memoizedSize;
         if (i != -1) {
@@ -1189,12 +1169,10 @@ public final class PlayLantern extends GeneratedMessageV3 implements PlayLantern
         return serializedSize;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
     public final UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public int hashCode() {
         if (this.memoizedHashCode != 0) {
             return this.memoizedHashCode;
@@ -1209,12 +1187,10 @@ public final class PlayLantern extends GeneratedMessageV3 implements PlayLantern
         return lanternId;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
         return LiveConstants.internal_static_cn_irisgw_live_PlayLantern_fieldAccessorTable.ensureFieldAccessorsInitialized(PlayLantern.class, Builder.class);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
     public final boolean isInitialized() {
         byte b = this.memoizedIsInitialized;
         if (b == 1) {
@@ -1227,28 +1203,26 @@ public final class PlayLantern extends GeneratedMessageV3 implements PlayLantern
         return true;
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder newBuilderForType() {
+    /* renamed from: newBuilderForType */
+    public Builder m6833newBuilderForType() {
         return newBuilder();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.protobuf.GeneratedMessageV3
-    public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+    /* renamed from: newBuilderForType */
+    public Builder m6832newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
         return new Builder(builderParent);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
         return new PlayLantern();
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder toBuilder() {
+    /* renamed from: toBuilder */
+    public Builder m6835toBuilder() {
         return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
         int i = 0;
         while (true) {

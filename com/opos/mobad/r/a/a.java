@@ -29,11 +29,11 @@ import com.opos.exoplayer.core.y;
 class a implements q.b, com.opos.mobad.c.c.a {
 
     /* renamed from: a  reason: collision with root package name */
-    private x f27231a;
+    private x f13543a;
     private RelativeLayout b;
 
     /* renamed from: c  reason: collision with root package name */
-    private ImageView f27232c;
+    private ImageView f13544c;
     private com.opos.exoplayer.a.a d;
     private com.opos.exoplayer.a.c e;
     private g.a f;
@@ -93,10 +93,10 @@ class a implements q.b, com.opos.mobad.c.c.a {
     private void k() {
         com.opos.cmn.an.f.a.b("ExoVideoPlayer", "initPlayer");
         try {
-            x a2 = j.a(this.h, new com.opos.exoplayer.core.g.c(new a.C0665a(new k())));
-            this.f27231a = a2;
+            x a2 = j.a(this.h, new com.opos.exoplayer.core.g.c(new a.C0495a(new k())));
+            this.f13543a = a2;
             a2.a(this);
-            this.f27231a.a(true);
+            this.f13543a.a(true);
         } catch (Exception e) {
             com.opos.cmn.an.f.a.a("ExoVideoPlayer", "", (Throwable) e);
         }
@@ -111,19 +111,19 @@ class a implements q.b, com.opos.mobad.c.c.a {
             cVar.addOnAttachStateChangeListener(this.l);
             this.e.b(0);
             this.e.a(false);
-            this.e.a(this.f27231a);
+            this.e.a(this.f13543a);
             this.b.addView(this.e, new RelativeLayout.LayoutParams(-1, -1));
             com.opos.exoplayer.a.a aVar = new com.opos.exoplayer.a.a(this.h);
             this.d = aVar;
             aVar.a(0);
             ImageView imageView = new ImageView(this.h);
-            this.f27232c = imageView;
+            this.f13544c = imageView;
             imageView.setVisibility(8);
-            this.d.addView(this.f27232c, new FrameLayout.LayoutParams(-1, -1));
+            this.d.addView(this.f13544c, new FrameLayout.LayoutParams(-1, -1));
             RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(-1, -1);
             layoutParams.addRule(13);
             this.b.addView(this.d, layoutParams);
-            this.f27231a.a().a(new com.opos.exoplayer.core.video.e() { // from class: com.opos.mobad.r.a.a.1
+            this.f13543a.a().a(new com.opos.exoplayer.core.video.e() { // from class: com.opos.mobad.r.a.a.1
                 @Override // com.opos.exoplayer.core.video.e
                 public void a() {
                     com.opos.mobad.c.c.b bVar = a.this.i;
@@ -217,7 +217,7 @@ class a implements q.b, com.opos.mobad.c.c.a {
         try {
             if (this.g != null) {
                 this.j = 1;
-                this.f27231a.a(this.g);
+                this.f13543a.a(this.g);
             }
         } catch (Exception e) {
             com.opos.cmn.an.f.a.a("ExoVideoPlayer", "", (Throwable) e);
@@ -225,12 +225,12 @@ class a implements q.b, com.opos.mobad.c.c.a {
     }
 
     private void n() {
-        this.f27232c.setVisibility(8);
+        this.f13544c.setVisibility(8);
     }
 
     private void o() {
-        this.f27232c.setVisibility(0);
-        this.f27232c.setImageBitmap(null);
+        this.f13544c.setVisibility(0);
+        this.f13544c.setImageBitmap(null);
         try {
             long currentTimeMillis = System.currentTimeMillis();
             com.opos.exoplayer.a.c cVar = this.e;
@@ -241,13 +241,13 @@ class a implements q.b, com.opos.mobad.c.c.a {
             com.opos.cmn.an.f.a.b("ExoVideoPlayer", "show cover");
             if (b != null) {
                 if (b instanceof TextureView) {
-                    this.f27232c.setImageBitmap(((TextureView) b).getBitmap());
+                    this.f13544c.setImageBitmap(((TextureView) b).getBitmap());
                 } else if ((b instanceof SurfaceView) && Build.VERSION.SDK_INT >= 25) {
                     final Bitmap createBitmap = Bitmap.createBitmap(((SurfaceView) b).getWidth(), ((SurfaceView) b).getHeight(), Bitmap.Config.ARGB_8888);
                     PixelCopy.request((SurfaceView) b, createBitmap, new PixelCopy.OnPixelCopyFinishedListener() { // from class: com.opos.mobad.r.a.a.2
                         @Override // android.view.PixelCopy.OnPixelCopyFinishedListener
                         public void onPixelCopyFinished(int i) {
-                            a.this.f27232c.setImageBitmap(createBitmap);
+                            a.this.f13544c.setImageBitmap(createBitmap);
                         }
                     }, ((SurfaceView) b).getHandler());
                 }
@@ -261,7 +261,7 @@ class a implements q.b, com.opos.mobad.c.c.a {
     @Override // com.opos.mobad.c.c.a
     public void a(float f) {
         com.opos.cmn.an.f.a.b("ExoVideoPlayer", "setVolume =" + f);
-        this.f27231a.a(f);
+        this.f13543a.a(f);
     }
 
     @Override // com.opos.exoplayer.core.q.b
@@ -274,7 +274,7 @@ class a implements q.b, com.opos.mobad.c.c.a {
         com.opos.cmn.an.f.a.b("ExoVideoPlayer", "seekTo position=" + j);
         if (j >= 0) {
             try {
-                this.f27231a.a(j);
+                this.f13543a.a(j);
             } catch (Exception e) {
                 com.opos.cmn.an.f.a.a("ExoVideoPlayer", "", (Throwable) e);
             }
@@ -309,7 +309,7 @@ class a implements q.b, com.opos.mobad.c.c.a {
                 }
             } else if (this.i != null) {
                 com.opos.mobad.c.c.b bVar = this.i;
-                int i = hVar.f25440a;
+                int i = hVar.f11752a;
                 StringBuilder sb2 = new StringBuilder();
                 sb2.append("cause:");
                 sb2.append(hVar.getCause() != null ? hVar.getCause() : com.igexin.push.core.b.l);
@@ -374,10 +374,10 @@ class a implements q.b, com.opos.mobad.c.c.a {
         x xVar;
         int i;
         if (z) {
-            xVar = this.f27231a;
+            xVar = this.f13543a;
             i = 2;
         } else {
-            xVar = this.f27231a;
+            xVar = this.f13543a;
             i = 0;
         }
         xVar.a(i);
@@ -453,7 +453,7 @@ class a implements q.b, com.opos.mobad.c.c.a {
     public long c() {
         long j = 0;
         try {
-            long l = this.f27231a.l();
+            long l = this.f13543a.l();
             StringBuilder sb = new StringBuilder();
             sb.append("getDuration=");
             sb.append(l);
@@ -486,7 +486,7 @@ class a implements q.b, com.opos.mobad.c.c.a {
     public long d() {
         long j = 0;
         try {
-            long m = this.f27231a.m();
+            long m = this.f13543a.m();
             StringBuilder sb = new StringBuilder();
             sb.append("getCurrentPosition=");
             sb.append(m);
@@ -523,7 +523,7 @@ class a implements q.b, com.opos.mobad.c.c.a {
         try {
             if (1 == this.j || 2 == this.j || 4 == this.j) {
                 o();
-                this.f27231a.a(false);
+                this.f13543a.a(false);
                 this.k = d();
                 if (2 == this.j) {
                     this.j = 3;
@@ -545,7 +545,7 @@ class a implements q.b, com.opos.mobad.c.c.a {
             if (1 == this.j || 3 == this.j || 4 == this.j) {
                 n();
                 a(this.k);
-                this.f27231a.a(true);
+                this.f13543a.a(true);
                 com.opos.cmn.an.f.a.b("ExoVideoPlayer", "good");
                 if (3 == this.j) {
                     this.j = 2;
@@ -563,8 +563,8 @@ class a implements q.b, com.opos.mobad.c.c.a {
     public void h() {
         com.opos.cmn.an.f.a.b("ExoVideoPlayer", "releaseExoVideoPlayer mCurrentState=" + this.j);
         try {
-            if (this.f27231a != null) {
-                this.f27231a.f();
+            if (this.f13543a != null) {
+                this.f13543a.f();
             }
             if (this.e != null) {
                 this.e.removeOnAttachStateChangeListener(this.l);

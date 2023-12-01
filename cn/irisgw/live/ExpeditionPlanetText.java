@@ -36,8 +36,8 @@ public final class ExpeditionPlanetText extends GeneratedMessageV3 implements Ex
     private int uid_;
     private static final ExpeditionPlanetText DEFAULT_INSTANCE = new ExpeditionPlanetText();
     private static final Parser<ExpeditionPlanetText> PARSER = new AbstractParser<ExpeditionPlanetText>() { // from class: cn.irisgw.live.ExpeditionPlanetText.1
-        @Override // com.google.protobuf.Parser
-        public ExpeditionPlanetText parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        /* renamed from: parsePartialFrom */
+        public ExpeditionPlanetText m2383parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             return new ExpeditionPlanetText(codedInputStream, extensionRegistryLite);
         }
     };
@@ -77,22 +77,22 @@ public final class ExpeditionPlanetText extends GeneratedMessageV3 implements Ex
             boolean unused = ExpeditionPlanetText.alwaysUseFieldBuilders;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: addRepeatedField */
+        public Builder m2385addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.addRepeatedField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public ExpeditionPlanetText build() {
-            ExpeditionPlanetText buildPartial = buildPartial();
-            if (buildPartial.isInitialized()) {
-                return buildPartial;
+        /* renamed from: build */
+        public ExpeditionPlanetText m2387build() {
+            ExpeditionPlanetText m2389buildPartial = m2389buildPartial();
+            if (m2389buildPartial.isInitialized()) {
+                return m2389buildPartial;
             }
-            throw newUninitializedMessageException((Message) buildPartial);
+            throw newUninitializedMessageException(m2389buildPartial);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public ExpeditionPlanetText buildPartial() {
+        /* renamed from: buildPartial */
+        public ExpeditionPlanetText m2389buildPartial() {
             ExpeditionPlanetText expeditionPlanetText = new ExpeditionPlanetText(this);
             expeditionPlanetText.name_ = this.name_;
             expeditionPlanetText.goodsName_ = this.goodsName_;
@@ -105,8 +105,8 @@ public final class ExpeditionPlanetText extends GeneratedMessageV3 implements Ex
             return expeditionPlanetText;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public Builder clear() {
+        /* renamed from: clear */
+        public Builder m2393clear() {
             super.clear();
             this.name_ = "";
             this.goodsName_ = "";
@@ -118,8 +118,8 @@ public final class ExpeditionPlanetText extends GeneratedMessageV3 implements Ex
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+        /* renamed from: clearField */
+        public Builder m2395clearField(Descriptors.FieldDescriptor fieldDescriptor) {
             return (Builder) super.clearField(fieldDescriptor);
         }
 
@@ -153,8 +153,8 @@ public final class ExpeditionPlanetText extends GeneratedMessageV3 implements Ex
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+        /* renamed from: clearOneof */
+        public Builder m2398clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
             return (Builder) super.clearOneof(oneofDescriptor);
         }
 
@@ -170,18 +170,16 @@ public final class ExpeditionPlanetText extends GeneratedMessageV3 implements Ex
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder m2404clone() {
+            return (Builder) super.clone();
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public ExpeditionPlanetText getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public ExpeditionPlanetText m2406getDefaultInstanceForType() {
             return ExpeditionPlanetText.getDefaultInstance();
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
         public Descriptors.Descriptor getDescriptorForType() {
             return LiveConstants.internal_static_cn_irisgw_live_ExpeditionPlanetText_descriptor;
         }
@@ -289,12 +287,10 @@ public final class ExpeditionPlanetText extends GeneratedMessageV3 implements Ex
             return this.uid_;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_ExpeditionPlanetText_fieldAccessorTable.ensureFieldAccessorsInitialized(ExpeditionPlanetText.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             return true;
         }
@@ -328,18 +324,18 @@ public final class ExpeditionPlanetText extends GeneratedMessageV3 implements Ex
             if (expeditionPlanetText.getHide()) {
                 setHide(expeditionPlanetText.getHide());
             }
-            mergeUnknownFields(expeditionPlanetText.unknownFields);
+            m2415mergeUnknownFields(expeditionPlanetText.unknownFields);
             onChanged();
             return this;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+        /* renamed from: mergeFrom */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
         */
-        public cn.irisgw.live.ExpeditionPlanetText.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+        public cn.irisgw.live.ExpeditionPlanetText.Builder m2412mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
             /*
                 r4 = this;
                 r0 = 0
@@ -384,11 +380,11 @@ public final class ExpeditionPlanetText extends GeneratedMessageV3 implements Ex
                 r0 = r6
                 throw r0
             */
-            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.ExpeditionPlanetText.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.ExpeditionPlanetText$Builder");
+            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.ExpeditionPlanetText.Builder.m2412mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.ExpeditionPlanetText$Builder");
         }
 
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder mergeFrom(Message message) {
+        /* renamed from: mergeFrom */
+        public Builder m2411mergeFrom(Message message) {
             if (message instanceof ExpeditionPlanetText) {
                 return mergeFrom((ExpeditionPlanetText) message);
             }
@@ -396,13 +392,13 @@ public final class ExpeditionPlanetText extends GeneratedMessageV3 implements Ex
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: mergeUnknownFields */
+        public final Builder m2415mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.mergeUnknownFields(unknownFieldSet);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: setField */
+        public Builder m2417setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.setField(fieldDescriptor, obj);
         }
 
@@ -475,8 +471,8 @@ public final class ExpeditionPlanetText extends GeneratedMessageV3 implements Ex
             throw null;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+        /* renamed from: setRepeatedField */
+        public Builder m2419setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
             return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
         }
 
@@ -505,8 +501,8 @@ public final class ExpeditionPlanetText extends GeneratedMessageV3 implements Ex
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: setUnknownFields */
+        public final Builder m2421setUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.setUnknownFields(unknownFieldSet);
         }
     }
@@ -577,66 +573,65 @@ public final class ExpeditionPlanetText extends GeneratedMessageV3 implements Ex
     }
 
     public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
+        return DEFAULT_INSTANCE.m2382toBuilder();
     }
 
     public static Builder newBuilder(ExpeditionPlanetText expeditionPlanetText) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(expeditionPlanetText);
+        return DEFAULT_INSTANCE.m2382toBuilder().mergeFrom(expeditionPlanetText);
     }
 
     public static ExpeditionPlanetText parseDelimitedFrom(InputStream inputStream) throws IOException {
-        return (ExpeditionPlanetText) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
     }
 
     public static ExpeditionPlanetText parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (ExpeditionPlanetText) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static ExpeditionPlanetText parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString);
+        return (ExpeditionPlanetText) PARSER.parseFrom(byteString);
     }
 
     public static ExpeditionPlanetText parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString, extensionRegistryLite);
+        return (ExpeditionPlanetText) PARSER.parseFrom(byteString, extensionRegistryLite);
     }
 
     public static ExpeditionPlanetText parseFrom(CodedInputStream codedInputStream) throws IOException {
-        return (ExpeditionPlanetText) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
     }
 
     public static ExpeditionPlanetText parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (ExpeditionPlanetText) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
     }
 
     public static ExpeditionPlanetText parseFrom(InputStream inputStream) throws IOException {
-        return (ExpeditionPlanetText) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
     }
 
     public static ExpeditionPlanetText parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (ExpeditionPlanetText) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static ExpeditionPlanetText parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer);
+        return (ExpeditionPlanetText) PARSER.parseFrom(byteBuffer);
     }
 
     public static ExpeditionPlanetText parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+        return (ExpeditionPlanetText) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
     }
 
     public static ExpeditionPlanetText parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr);
+        return (ExpeditionPlanetText) PARSER.parseFrom(bArr);
     }
 
     public static ExpeditionPlanetText parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr, extensionRegistryLite);
+        return (ExpeditionPlanetText) PARSER.parseFrom(bArr, extensionRegistryLite);
     }
 
     public static Parser<ExpeditionPlanetText> parser() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
@@ -648,8 +643,8 @@ public final class ExpeditionPlanetText extends GeneratedMessageV3 implements Ex
         return super.equals(obj);
     }
 
-    @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-    public ExpeditionPlanetText getDefaultInstanceForType() {
+    /* renamed from: getDefaultInstanceForType */
+    public ExpeditionPlanetText m2377getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
     }
 
@@ -729,12 +724,10 @@ public final class ExpeditionPlanetText extends GeneratedMessageV3 implements Ex
         return (ByteString) obj;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
     public Parser<ExpeditionPlanetText> getParserForType() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public int getSerializedSize() {
         int i = this.memoizedSize;
         if (i != -1) {
@@ -803,12 +796,10 @@ public final class ExpeditionPlanetText extends GeneratedMessageV3 implements Ex
         return this.uid_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
     public final UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public int hashCode() {
         if (this.memoizedHashCode != 0) {
             return this.memoizedHashCode;
@@ -818,12 +809,10 @@ public final class ExpeditionPlanetText extends GeneratedMessageV3 implements Ex
         return hashCode;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
         return LiveConstants.internal_static_cn_irisgw_live_ExpeditionPlanetText_fieldAccessorTable.ensureFieldAccessorsInitialized(ExpeditionPlanetText.class, Builder.class);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
     public final boolean isInitialized() {
         byte b = this.memoizedIsInitialized;
         if (b == 1) {
@@ -836,28 +825,26 @@ public final class ExpeditionPlanetText extends GeneratedMessageV3 implements Ex
         return true;
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder newBuilderForType() {
+    /* renamed from: newBuilderForType */
+    public Builder m2380newBuilderForType() {
         return newBuilder();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.protobuf.GeneratedMessageV3
-    public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+    /* renamed from: newBuilderForType */
+    public Builder m2379newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
         return new Builder(builderParent);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
         return new ExpeditionPlanetText();
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder toBuilder() {
+    /* renamed from: toBuilder */
+    public Builder m2382toBuilder() {
         return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
         if (!getNameBytes().isEmpty()) {
             GeneratedMessageV3.writeString(codedOutputStream, 1, this.name_);

@@ -9,28 +9,28 @@ import java.util.Hashtable;
 public class BroadcastReceiverManager {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile BroadcastReceiverManager f29696a;
+    private static volatile BroadcastReceiverManager f16006a;
 
     /* renamed from: c  reason: collision with root package name */
-    private Hashtable<String, BluedBroadcastReceiver> f29697c = new Hashtable<>();
+    private Hashtable<String, BluedBroadcastReceiver> f16007c = new Hashtable<>();
     private Context b = AppInfo.d();
 
     private BroadcastReceiverManager() {
     }
 
     public static BroadcastReceiverManager a() {
-        if (f29696a == null) {
+        if (f16006a == null) {
             synchronized (BroadcastReceiverManager.class) {
                 try {
-                    if (f29696a == null) {
-                        f29696a = new BroadcastReceiverManager();
+                    if (f16006a == null) {
+                        f16006a = new BroadcastReceiverManager();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f29696a;
+        return f16006a;
     }
 
     private Context getContext() {
@@ -59,18 +59,18 @@ public class BroadcastReceiverManager {
                 return;
             }
             String str = strArr[i2];
-            if (this.f29697c.containsKey(str)) {
-                BluedBroadcastReceiver bluedBroadcastReceiver = this.f29697c.get(str);
+            if (this.f16007c.containsKey(str)) {
+                BluedBroadcastReceiver bluedBroadcastReceiver = this.f16007c.get(str);
                 BluedBroadcastReceiver bluedBroadcastReceiver2 = bluedBroadcastReceiver;
                 if (bluedBroadcastReceiver == null) {
                     bluedBroadcastReceiver2 = new BluedBroadcastReceiver(getContext(), str);
-                    this.f29697c.put(str, bluedBroadcastReceiver2);
+                    this.f16007c.put(str, bluedBroadcastReceiver2);
                 }
                 bluedBroadcastReceiver2.a(broadcastReceiverListener);
             } else {
                 BluedBroadcastReceiver bluedBroadcastReceiver3 = new BluedBroadcastReceiver(getContext(), str);
                 bluedBroadcastReceiver3.a(broadcastReceiverListener);
-                this.f29697c.put(str, bluedBroadcastReceiver3);
+                this.f16007c.put(str, bluedBroadcastReceiver3);
             }
             i = i2 + 1;
         }

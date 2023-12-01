@@ -160,7 +160,7 @@ public interface IFaceLockInterface extends IInterface {
                     unregisterCallback(IFaceLockCallback.Stub.asInterface(parcel.readStrongBinder()));
                     parcel2.writeNoException();
                     return true;
-                case IBinder.INTERFACE_TRANSACTION /* 1598968902 */:
+                case 1598968902:
                     parcel2.writeString(DESCRIPTOR);
                     return true;
                 default:

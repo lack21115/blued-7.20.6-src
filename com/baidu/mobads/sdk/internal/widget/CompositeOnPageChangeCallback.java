@@ -10,11 +10,11 @@ import java.util.List;
 public final class CompositeOnPageChangeCallback extends ViewPager2.OnPageChangeCallback {
 
     /* renamed from: a  reason: collision with root package name */
-    private final List<ViewPager2.OnPageChangeCallback> f9448a;
+    private final List<ViewPager2.OnPageChangeCallback> f6608a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public CompositeOnPageChangeCallback(int i) {
-        this.f9448a = new ArrayList(i);
+        this.f6608a = new ArrayList(i);
     }
 
     private void a(ConcurrentModificationException concurrentModificationException) {
@@ -23,18 +23,18 @@ public final class CompositeOnPageChangeCallback extends ViewPager2.OnPageChange
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a(ViewPager2.OnPageChangeCallback onPageChangeCallback) {
-        this.f9448a.add(onPageChangeCallback);
+        this.f6608a.add(onPageChangeCallback);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void b(ViewPager2.OnPageChangeCallback onPageChangeCallback) {
-        this.f9448a.remove(onPageChangeCallback);
+        this.f6608a.remove(onPageChangeCallback);
     }
 
     @Override // com.baidu.mobads.sdk.internal.widget.ViewPager2.OnPageChangeCallback
     public void onPageScrollStateChanged(int i) {
         try {
-            for (ViewPager2.OnPageChangeCallback onPageChangeCallback : this.f9448a) {
+            for (ViewPager2.OnPageChangeCallback onPageChangeCallback : this.f6608a) {
                 onPageChangeCallback.onPageScrollStateChanged(i);
             }
         } catch (ConcurrentModificationException e) {
@@ -45,7 +45,7 @@ public final class CompositeOnPageChangeCallback extends ViewPager2.OnPageChange
     @Override // com.baidu.mobads.sdk.internal.widget.ViewPager2.OnPageChangeCallback
     public void onPageScrolled(int i, float f, int i2) {
         try {
-            for (ViewPager2.OnPageChangeCallback onPageChangeCallback : this.f9448a) {
+            for (ViewPager2.OnPageChangeCallback onPageChangeCallback : this.f6608a) {
                 onPageChangeCallback.onPageScrolled(i, f, i2);
             }
         } catch (ConcurrentModificationException e) {
@@ -56,7 +56,7 @@ public final class CompositeOnPageChangeCallback extends ViewPager2.OnPageChange
     @Override // com.baidu.mobads.sdk.internal.widget.ViewPager2.OnPageChangeCallback
     public void onPageSelected(int i) {
         try {
-            for (ViewPager2.OnPageChangeCallback onPageChangeCallback : this.f9448a) {
+            for (ViewPager2.OnPageChangeCallback onPageChangeCallback : this.f6608a) {
                 onPageChangeCallback.onPageSelected(i);
             }
         } catch (ConcurrentModificationException e) {

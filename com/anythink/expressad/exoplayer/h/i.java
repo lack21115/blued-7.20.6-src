@@ -20,11 +20,11 @@ import java.util.Map;
 public final class i extends com.anythink.expressad.exoplayer.h.f<e> implements x.b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final int f7456a = 0;
+    private static final int f4617a = 0;
     private static final int b = 1;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final int f7457c = 2;
+    private static final int f4618c = 2;
     private static final int d = 3;
     private static final int e = 4;
     private static final int f = 5;
@@ -48,7 +48,7 @@ public final class i extends com.anythink.expressad.exoplayer.h.f<e> implements 
         private final int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final int f7458c;
+        private final int f4619c;
         private final int[] d;
         private final int[] e;
         private final com.anythink.expressad.exoplayer.ae[] f;
@@ -58,7 +58,7 @@ public final class i extends com.anythink.expressad.exoplayer.h.f<e> implements 
         public a(Collection<e> collection, int i, int i2, aa aaVar, boolean z) {
             super(z, aaVar);
             this.b = i;
-            this.f7458c = i2;
+            this.f4619c = i2;
             int size = collection.size();
             this.d = new int[size];
             this.e = new int[size];
@@ -73,7 +73,7 @@ public final class i extends com.anythink.expressad.exoplayer.h.f<e> implements 
                     return;
                 }
                 e next = it.next();
-                this.f[i4] = next.f7462c;
+                this.f[i4] = next.f4623c;
                 this.d[i4] = next.f;
                 this.e[i4] = next.e;
                 this.g[i4] = next.b;
@@ -108,7 +108,7 @@ public final class i extends com.anythink.expressad.exoplayer.h.f<e> implements 
 
         @Override // com.anythink.expressad.exoplayer.ae
         public final int c() {
-            return this.f7458c;
+            return this.f4619c;
         }
 
         @Override // com.anythink.expressad.exoplayer.h.a
@@ -137,7 +137,7 @@ public final class i extends com.anythink.expressad.exoplayer.h.f<e> implements 
     public static final class b extends p {
 
         /* renamed from: c  reason: collision with root package name */
-        private static final Object f7459c = new Object();
+        private static final Object f4620c = new Object();
         private static final ae.a d = new ae.a();
         private static final c e = new c((byte) 0);
         private final Object f;
@@ -155,7 +155,7 @@ public final class i extends com.anythink.expressad.exoplayer.h.f<e> implements 
         public final int a(Object obj) {
             com.anythink.expressad.exoplayer.ae aeVar = this.b;
             Object obj2 = obj;
-            if (f7459c.equals(obj)) {
+            if (f4620c.equals(obj)) {
                 obj2 = this.f;
             }
             return aeVar.a(obj2);
@@ -165,7 +165,7 @@ public final class i extends com.anythink.expressad.exoplayer.h.f<e> implements 
         public final ae.a a(int i, ae.a aVar, boolean z) {
             this.b.a(i, aVar, z);
             if (com.anythink.expressad.exoplayer.k.af.a(aVar.b, this.f)) {
-                aVar.b = f7459c;
+                aVar.b = f4620c;
             }
             return aVar;
         }
@@ -223,16 +223,16 @@ public final class i extends com.anythink.expressad.exoplayer.h.f<e> implements 
     public static final class d {
 
         /* renamed from: a  reason: collision with root package name */
-        public final Handler f7460a;
+        public final Handler f4621a;
         public final Runnable b;
 
         public d(Runnable runnable) {
             this.b = runnable;
-            this.f7460a = new Handler(Looper.myLooper() != null ? Looper.myLooper() : Looper.getMainLooper());
+            this.f4621a = new Handler(Looper.myLooper() != null ? Looper.myLooper() : Looper.getMainLooper());
         }
 
         private void a() {
-            this.f7460a.post(this.b);
+            this.f4621a.post(this.b);
         }
     }
 
@@ -241,7 +241,7 @@ public final class i extends com.anythink.expressad.exoplayer.h.f<e> implements 
     public static final class e implements Comparable<e> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final s f7461a;
+        public final s f4622a;
         public int d;
         public int e;
         public int f;
@@ -249,12 +249,12 @@ public final class i extends com.anythink.expressad.exoplayer.h.f<e> implements 
         public boolean h;
 
         /* renamed from: c  reason: collision with root package name */
-        public b f7462c = new b();
+        public b f4623c = new b();
         public List<l> i = new ArrayList();
         public final Object b = new Object();
 
         public e(s sVar) {
-            this.f7461a = sVar;
+            this.f4622a = sVar;
         }
 
         private int a(e eVar) {
@@ -281,15 +281,15 @@ public final class i extends com.anythink.expressad.exoplayer.h.f<e> implements 
     public static final class f<T> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final int f7463a;
+        public final int f4624a;
         public final T b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final d f7464c;
+        public final d f4625c;
 
         public f(int i, T t, Runnable runnable) {
-            this.f7463a = i;
-            this.f7464c = runnable != null ? new d(runnable) : null;
+            this.f4624a = i;
+            this.f4625c = runnable != null ? new d(runnable) : null;
             this.b = t;
         }
     }
@@ -350,7 +350,7 @@ public final class i extends com.anythink.expressad.exoplayer.h.f<e> implements 
                 return null;
             }
             if (eVar.i.get(i2).b.d == aVar.d) {
-                return aVar.a(aVar.f7484a + eVar.f);
+                return aVar.a(aVar.f4645a + eVar.f);
             }
             i = i2 + 1;
         }
@@ -403,13 +403,13 @@ public final class i extends com.anythink.expressad.exoplayer.h.f<e> implements 
     private void a(int i, e eVar) {
         if (i > 0) {
             e eVar2 = this.i.get(i - 1);
-            eVar.a(i, eVar2.e + eVar2.f7462c.b(), eVar2.f + eVar2.f7462c.c());
+            eVar.a(i, eVar2.e + eVar2.f4623c.b(), eVar2.f + eVar2.f4623c.c());
         } else {
             eVar.a(i, 0, 0);
         }
-        a(i, 1, eVar.f7462c.b(), eVar.f7462c.c());
+        a(i, 1, eVar.f4623c.b(), eVar.f4623c.c());
         this.i.add(i, eVar);
-        a((i) eVar, eVar.f7461a);
+        a((i) eVar, eVar.f4622a);
     }
 
     private void a(int i, s sVar) {
@@ -472,14 +472,14 @@ public final class i extends com.anythink.expressad.exoplayer.h.f<e> implements 
         if (eVar == null) {
             throw new IllegalArgumentException();
         }
-        b bVar = eVar.f7462c;
+        b bVar = eVar.f4623c;
         if (bVar.d() != aeVar) {
             int b2 = aeVar.b() - bVar.b();
             int c2 = aeVar.c() - bVar.c();
             if (b2 != 0 || c2 != 0) {
                 a(eVar.d + 1, 0, b2, c2);
             }
-            eVar.f7462c = bVar.a(aeVar);
+            eVar.f4623c = bVar.a(aeVar);
             if (!eVar.g && !aeVar.a()) {
                 aeVar.a(0, this.n, false);
                 long j = this.n.j;
@@ -522,7 +522,7 @@ public final class i extends com.anythink.expressad.exoplayer.h.f<e> implements 
     }
 
     private s b(int i) {
-        return this.h.get(i).f7461a;
+        return this.h.get(i).f4622a;
     }
 
     private void b(int i, int i2) {
@@ -542,8 +542,8 @@ public final class i extends com.anythink.expressad.exoplayer.h.f<e> implements 
             e eVar = this.i.get(i7);
             eVar.e = i3;
             eVar.f = i5;
-            i3 += eVar.f7462c.b();
-            i5 += eVar.f7462c.c();
+            i3 += eVar.f4623c.b();
+            i5 += eVar.f4623c.c();
             i6 = i7 + 1;
         }
     }
@@ -559,7 +559,7 @@ public final class i extends com.anythink.expressad.exoplayer.h.f<e> implements 
         if (eVar == null) {
             throw new IllegalArgumentException();
         }
-        b bVar = eVar.f7462c;
+        b bVar = eVar.f4623c;
         if (bVar.d() == aeVar) {
             return;
         }
@@ -568,7 +568,7 @@ public final class i extends com.anythink.expressad.exoplayer.h.f<e> implements 
         if (b2 != 0 || c2 != 0) {
             a(eVar.d + 1, 0, b2, c2);
         }
-        eVar.f7462c = bVar.a(aeVar);
+        eVar.f4623c = bVar.a(aeVar);
         if (!eVar.g && !aeVar.a()) {
             aeVar.a(0, this.n, false);
             long j = this.n.j;
@@ -593,7 +593,7 @@ public final class i extends com.anythink.expressad.exoplayer.h.f<e> implements 
 
     private void c(int i) {
         e remove = this.i.remove(i);
-        b bVar = remove.f7462c;
+        b bVar = remove.f4623c;
         a(i, -1, -bVar.b(), -bVar.c());
         remove.h = true;
         if (remove.i.isEmpty()) {
@@ -622,9 +622,11 @@ public final class i extends com.anythink.expressad.exoplayer.h.f<e> implements 
         return i2;
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r0v16, types: [java.util.List] */
     private void e() {
         this.p = false;
-        Collection emptyList = this.l.isEmpty() ? Collections.emptyList() : new ArrayList(this.l);
+        ArrayList emptyList = this.l.isEmpty() ? Collections.emptyList() : new ArrayList(this.l);
         this.l.clear();
         a(new a(this.i, this.r, this.s, this.q, this.m), (Object) null);
         if (emptyList.isEmpty()) {
@@ -652,7 +654,7 @@ public final class i extends com.anythink.expressad.exoplayer.h.f<e> implements 
 
     @Override // com.anythink.expressad.exoplayer.h.s
     public final r a(s.a aVar, com.anythink.expressad.exoplayer.j.b bVar) {
-        int i = aVar.f7484a;
+        int i = aVar.f4645a;
         this.j.f = i;
         int binarySearch = Collections.binarySearch(this.i, this.j);
         int i2 = binarySearch;
@@ -668,7 +670,7 @@ public final class i extends com.anythink.expressad.exoplayer.h.f<e> implements 
             i2 = (-binarySearch) - 2;
         }
         e eVar = this.i.get(i2);
-        l lVar = new l(eVar.f7461a, aVar.a(aVar.f7484a - eVar.f), bVar);
+        l lVar = new l(eVar.f4622a, aVar.a(aVar.f4645a - eVar.f), bVar);
         this.k.put(lVar, eVar);
         eVar.i.add(lVar);
         if (eVar.g) {
@@ -687,7 +689,7 @@ public final class i extends com.anythink.expressad.exoplayer.h.f<e> implements 
                 return null;
             }
             if (eVar2.i.get(i2).b.d == aVar.d) {
-                return aVar.a(aVar.f7484a + eVar2.f);
+                return aVar.a(aVar.f4645a + eVar2.f);
             }
             i = i2 + 1;
         }
@@ -708,28 +710,28 @@ public final class i extends com.anythink.expressad.exoplayer.h.f<e> implements 
         switch (i) {
             case 0:
                 f fVar = (f) obj;
-                this.q = this.q.a(fVar.f7463a, 1);
-                a(fVar.f7463a, (e) fVar.b);
-                a(fVar.f7464c);
+                this.q = this.q.a(fVar.f4624a, 1);
+                a(fVar.f4624a, (e) fVar.b);
+                a(fVar.f4625c);
                 return;
             case 1:
                 f fVar2 = (f) obj;
-                this.q = this.q.a(fVar2.f7463a, ((Collection) fVar2.b).size());
-                b(fVar2.f7463a, (Collection) fVar2.b);
-                a(fVar2.f7464c);
+                this.q = this.q.a(fVar2.f4624a, ((Collection) fVar2.b).size());
+                b(fVar2.f4624a, (Collection) fVar2.b);
+                a(fVar2.f4625c);
                 return;
             case 2:
                 f fVar3 = (f) obj;
-                this.q = this.q.c(fVar3.f7463a);
-                c(fVar3.f7463a);
-                a(fVar3.f7464c);
+                this.q = this.q.c(fVar3.f4624a);
+                c(fVar3.f4624a);
+                a(fVar3.f4625c);
                 return;
             case 3:
                 f fVar4 = (f) obj;
-                aa c2 = this.q.c(fVar4.f7463a);
+                aa c2 = this.q.c(fVar4.f4624a);
                 this.q = c2;
                 this.q = c2.a(((Integer) fVar4.b).intValue(), 1);
-                int i2 = fVar4.f7463a;
+                int i2 = fVar4.f4624a;
                 int intValue = ((Integer) fVar4.b).intValue();
                 int min = Math.min(i2, intValue);
                 int max = Math.max(i2, intValue);
@@ -741,11 +743,11 @@ public final class i extends com.anythink.expressad.exoplayer.h.f<e> implements 
                     e eVar = this.i.get(min);
                     eVar.e = i3;
                     eVar.f = i4;
-                    i3 += eVar.f7462c.b();
-                    i4 += eVar.f7462c.c();
+                    i3 += eVar.f4623c.b();
+                    i4 += eVar.f4623c.c();
                     min++;
                 }
-                a(fVar4.f7464c);
+                a(fVar4.f4625c);
                 return;
             case 4:
                 int size = this.i.size();
@@ -771,7 +773,7 @@ public final class i extends com.anythink.expressad.exoplayer.h.f<e> implements 
                         return;
                     }
                     d dVar = (d) list2.get(i7);
-                    dVar.f7460a.post(dVar.b);
+                    dVar.f4621a.post(dVar.b);
                     i6 = i7 + 1;
                 }
             default:
@@ -808,14 +810,14 @@ public final class i extends com.anythink.expressad.exoplayer.h.f<e> implements 
         if (eVar2 == null) {
             throw new IllegalArgumentException();
         }
-        b bVar = eVar2.f7462c;
+        b bVar = eVar2.f4623c;
         if (bVar.d() != aeVar) {
             int b2 = aeVar.b() - bVar.b();
             int c2 = aeVar.c() - bVar.c();
             if (b2 != 0 || c2 != 0) {
                 a(eVar2.d + 1, 0, b2, c2);
             }
-            eVar2.f7462c = bVar.a(aeVar);
+            eVar2.f4623c = bVar.a(aeVar);
             if (!eVar2.g && !aeVar.a()) {
                 aeVar.a(0, this.n, false);
                 long j = this.n.j;

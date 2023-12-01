@@ -11,7 +11,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class a implements b {
 
     /* renamed from: a  reason: collision with root package name */
-    private Map<Long, com.opos.cmn.an.g.a.a.b> f24543a = new ConcurrentHashMap();
+    private Map<Long, com.opos.cmn.an.g.a.a.b> f10856a = new ConcurrentHashMap();
 
     @Override // com.opos.cmn.an.g.b
     public g a(Context context, long j, f fVar) throws Exception {
@@ -20,7 +20,7 @@ public class a implements b {
             gVar = null;
         } else {
             com.opos.cmn.an.g.a.a.b bVar = new com.opos.cmn.an.g.a.a.b(context, fVar);
-            this.f24543a.put(Long.valueOf(j), bVar);
+            this.f10856a.put(Long.valueOf(j), bVar);
             gVar = bVar.a();
         }
         StringBuilder sb = new StringBuilder();
@@ -41,14 +41,14 @@ public class a implements b {
     @Override // com.opos.cmn.an.g.b
     public void a(long j) throws Exception {
         com.opos.cmn.an.f.a.b("HttpExecutorImpl", "shutDown taskCode=" + j);
-        Map<Long, com.opos.cmn.an.g.a.a.b> map = this.f24543a;
+        Map<Long, com.opos.cmn.an.g.a.a.b> map = this.f10856a;
         if (map == null || !map.containsKey(Long.valueOf(j))) {
             return;
         }
-        com.opos.cmn.an.g.a.a.b bVar = this.f24543a.get(Long.valueOf(j));
+        com.opos.cmn.an.g.a.a.b bVar = this.f10856a.get(Long.valueOf(j));
         if (bVar != null) {
             bVar.b();
         }
-        this.f24543a.remove(Long.valueOf(j));
+        this.f10856a.remove(Long.valueOf(j));
     }
 }

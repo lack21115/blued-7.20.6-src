@@ -15,11 +15,11 @@ import java.util.List;
 public final class g {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f37231a = null;
+    private Context f23540a = null;
     private WifiManager b = null;
 
     /* renamed from: c  reason: collision with root package name */
-    private a f37232c = null;
+    private a f23541c = null;
     private Handler d = null;
     private Runnable e = new Runnable() { // from class: com.tencent.map.b.g.1
         @Override // java.lang.Runnable
@@ -37,11 +37,11 @@ public final class g {
     public final class a extends BroadcastReceiver {
 
         /* renamed from: a  reason: collision with root package name */
-        private int f37234a = 4;
+        private int f23543a = 4;
         private List<ScanResult> b = null;
 
         /* renamed from: c  reason: collision with root package name */
-        private boolean f37235c = false;
+        private boolean f23544c = false;
 
         public a() {
         }
@@ -50,7 +50,7 @@ public final class g {
             if (list == null) {
                 return;
             }
-            if (!this.f37235c) {
+            if (!this.f23544c) {
                 List<ScanResult> list2 = this.b;
                 if (list2 == null) {
                     this.b = new ArrayList();
@@ -88,9 +88,9 @@ public final class g {
             g gVar;
             List<ScanResult> list;
             if (intent.getAction().equals(WifiManager.WIFI_STATE_CHANGED_ACTION)) {
-                this.f37234a = intent.getIntExtra("wifi_state", 4);
+                this.f23543a = intent.getIntExtra("wifi_state", 4);
                 if (g.this.g != null) {
-                    g.this.g.b(this.f37234a);
+                    g.this.g.b(this.f23543a);
                 }
             }
             if (intent.getAction().equals(WifiManager.SCAN_RESULTS_AVAILABLE_ACTION) || intent.getAction().equals(WifiManager.WIFI_STATE_CHANGED_ACTION)) {
@@ -106,16 +106,16 @@ public final class g {
                         return;
                     }
                 }
-                if (!this.f37235c && (list = this.b) != null && list.size() >= 4 && list2 != null && list2.size() <= 2) {
+                if (!this.f23544c && (list = this.b) != null && list.size() >= 4 && list2 != null && list2.size() <= 2) {
                     a(list2);
-                    this.f37235c = true;
+                    this.f23544c = true;
                     g.this.a(0L);
                     return;
                 }
                 a(list2);
-                this.f37235c = false;
+                this.f23544c = false;
                 g gVar2 = g.this;
-                gVar2.h = new b(gVar2, this.b, System.currentTimeMillis(), this.f37234a);
+                gVar2.h = new b(gVar2, this.b, System.currentTimeMillis(), this.f23543a);
                 if (g.this.g != null) {
                     g.this.g.a(g.this.h);
                 }
@@ -128,20 +128,20 @@ public final class g {
     public final class b implements Cloneable {
 
         /* renamed from: a  reason: collision with root package name */
-        private List<ScanResult> f37236a;
+        private List<ScanResult> f23545a;
 
         public b(g gVar, List<ScanResult> list, long j, int i) {
-            this.f37236a = null;
+            this.f23545a = null;
             if (list != null) {
-                this.f37236a = new ArrayList();
+                this.f23545a = new ArrayList();
                 for (ScanResult scanResult : list) {
-                    this.f37236a.add(scanResult);
+                    this.f23545a.add(scanResult);
                 }
             }
         }
 
         public final List<ScanResult> a() {
-            return this.f37236a;
+            return this.f23545a;
         }
 
         public final Object clone() {
@@ -151,10 +151,10 @@ public final class g {
             } catch (Exception e) {
                 bVar = null;
             }
-            if (this.f37236a != null) {
+            if (this.f23545a != null) {
                 ArrayList arrayList = new ArrayList();
-                bVar.f37236a = arrayList;
-                arrayList.addAll(this.f37236a);
+                bVar.f23545a = arrayList;
+                arrayList.addAll(this.f23545a);
             }
             return bVar;
         }
@@ -178,11 +178,11 @@ public final class g {
     public final void a() {
         synchronized (this.j) {
             if (this.i) {
-                if (this.f37231a == null || this.f37232c == null) {
+                if (this.f23540a == null || this.f23541c == null) {
                     return;
                 }
                 try {
-                    this.f37231a.unregisterReceiver(this.f37232c);
+                    this.f23540a.unregisterReceiver(this.f23541c);
                 } catch (Exception e) {
                 }
                 this.d.removeCallbacks(this.e);
@@ -209,20 +209,20 @@ public final class g {
                 return false;
             }
             this.d = new Handler(Looper.getMainLooper());
-            this.f37231a = context;
+            this.f23540a = context;
             this.g = cVar;
             this.f = 1;
             try {
                 this.b = (WifiManager) context.getSystemService("wifi");
                 IntentFilter intentFilter = new IntentFilter();
                 a aVar = new a();
-                this.f37232c = aVar;
+                this.f23541c = aVar;
                 if (this.b == null || aVar == null) {
                     return false;
                 }
                 intentFilter.addAction(WifiManager.WIFI_STATE_CHANGED_ACTION);
                 intentFilter.addAction(WifiManager.SCAN_RESULTS_AVAILABLE_ACTION);
-                this.f37231a.registerReceiver(this.f37232c, intentFilter);
+                this.f23540a.registerReceiver(this.f23541c, intentFilter);
                 a(0L);
                 this.i = true;
                 return true;
@@ -238,7 +238,7 @@ public final class g {
 
     public final boolean c() {
         WifiManager wifiManager;
-        if (this.f37231a == null || (wifiManager = this.b) == null) {
+        if (this.f23540a == null || (wifiManager = this.b) == null) {
             return false;
         }
         return wifiManager.isWifiEnabled();

@@ -12,34 +12,34 @@ import java.util.TreeMap;
 public class LyricsReader {
 
     /* renamed from: a  reason: collision with root package name */
-    private long f23690a = 0;
+    private long f10082a = 0;
     private long b = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f23691c = 1;
+    private int f10083c = 1;
     private String d;
     private TreeMap<Integer, LyricsLineInfo> e;
     private LyricsInfo f;
 
     private void a(LyricsInfo lyricsInfo) {
         this.f = lyricsInfo;
-        this.f23691c = lyricsInfo.c();
+        this.f10083c = lyricsInfo.c();
         Map<String, Object> a2 = lyricsInfo.a();
-        if (a2.containsKey(LyricsTag.f23698c)) {
-            this.f23690a = 0L;
+        if (a2.containsKey(LyricsTag.f10090c)) {
+            this.f10082a = 0L;
             try {
-                this.f23690a = Long.parseLong((String) a2.get(LyricsTag.f23698c));
+                this.f10082a = Long.parseLong((String) a2.get(LyricsTag.f10090c));
             } catch (Exception e) {
                 e.printStackTrace();
             }
         } else {
-            this.f23690a = 0L;
+            this.f10082a = 0L;
         }
         this.e = lyricsInfo.b();
     }
 
     public int a() {
-        return this.f23691c;
+        return this.f10083c;
     }
 
     public void a(File file) throws Exception {
@@ -55,6 +55,6 @@ public class LyricsReader {
     }
 
     public long c() {
-        return this.f23690a + this.b;
+        return this.f10082a + this.b;
     }
 }

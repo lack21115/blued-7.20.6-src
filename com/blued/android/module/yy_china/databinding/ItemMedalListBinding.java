@@ -9,17 +9,13 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ItemMedalListBinding.class */
 public final class ItemMedalListBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final SquareImageView f16628a;
+    public final SquareImageView a;
     public final TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final ConstraintLayout f16629c;
+    private final ConstraintLayout c;
 
     private ItemMedalListBinding(ConstraintLayout constraintLayout, SquareImageView squareImageView, TextView textView) {
-        this.f16629c = constraintLayout;
-        this.f16628a = squareImageView;
+        this.c = constraintLayout;
+        this.a = squareImageView;
         this.b = textView;
     }
 
@@ -38,9 +34,8 @@ public final class ItemMedalListBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f16629c;
+        return this.c;
     }
 }

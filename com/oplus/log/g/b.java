@@ -4,11 +4,11 @@ package com.oplus.log.g;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f24372a = getClass().getSimpleName();
+    private String f10685a = getClass().getSimpleName();
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f24373c;
+    private String f10686c;
 
     public b(int i) {
         this.b = i;
@@ -19,6 +19,6 @@ public class b {
     }
 
     public String b() {
-        return this.f24373c;
+        return this.f10686c;
     }
 }

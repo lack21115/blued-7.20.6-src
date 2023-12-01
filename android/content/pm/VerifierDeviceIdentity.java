@@ -2,6 +2,7 @@ package android.content.pm;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import com.anythink.expressad.exoplayer.b;
 import java.io.UnsupportedEncodingException;
 import java.security.SecureRandom;
 import java.util.Random;
@@ -123,7 +124,7 @@ public class VerifierDeviceIdentity implements Parcelable {
 
     public static VerifierDeviceIdentity parse(String str) throws IllegalArgumentException {
         try {
-            return new VerifierDeviceIdentity(decodeBase32(str.getBytes("US-ASCII")));
+            return new VerifierDeviceIdentity(decodeBase32(str.getBytes(b.i)));
         } catch (UnsupportedEncodingException e) {
             throw new IllegalArgumentException("bad base-32 characters in input");
         }

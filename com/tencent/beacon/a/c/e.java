@@ -13,7 +13,6 @@ import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.view.WindowManager;
-import com.android.internal.telephony.PhoneConstants;
 import com.tencent.beacon.a.d.a;
 import com.tencent.beacon.base.net.b.e;
 import java.io.BufferedReader;
@@ -28,11 +27,11 @@ import java.util.Locale;
 public class e implements e.a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile e f34942a;
+    private static volatile e f21251a;
     private final Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f34943c = "";
+    private String f21252c = "";
     private String d = "";
     private String e = "";
     private String f = "";
@@ -112,18 +111,18 @@ public class e implements e.a {
     }
 
     public static e l() {
-        if (f34942a == null) {
+        if (f21251a == null) {
             synchronized (e.class) {
                 try {
-                    if (f34942a == null) {
-                        f34942a = new e();
+                    if (f21251a == null) {
+                        f21251a = new e();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f34942a;
+        return f21251a;
     }
 
     public String A() {
@@ -132,12 +131,12 @@ public class e implements e.a {
 
     public void B() {
         String string = com.tencent.beacon.a.d.a.a().getString("BEACON_ANDROID_ID_DENGTA", "");
-        this.f34943c = string;
+        this.f21252c = string;
         if (TextUtils.isEmpty(string)) {
-            this.f34943c = com.tencent.beacon.base.util.b.a();
-            a.SharedPreferences$EditorC0895a edit = com.tencent.beacon.a.d.a.a().edit();
+            this.f21252c = com.tencent.beacon.base.util.b.a();
+            a.SharedPreferences$EditorC0725a edit = com.tencent.beacon.a.d.a.a().edit();
             if (com.tencent.beacon.base.util.b.a((SharedPreferences.Editor) edit)) {
-                edit.putString("BEACON_ANDROID_ID_DENGTA", this.f34943c);
+                edit.putString("BEACON_ANDROID_ID_DENGTA", this.f21252c);
             }
         }
     }
@@ -225,7 +224,7 @@ public class e implements e.a {
     }
 
     public String d() {
-        return this.f34943c;
+        return this.f21252c;
     }
 
     public int e() {
@@ -566,7 +565,7 @@ public class e implements e.a {
         if (i == null) {
             return "";
         }
-        return i.widthPixels + PhoneConstants.APN_TYPE_ALL + i.heightPixels;
+        return i.widthPixels + "*" + i.heightPixels;
     }
 
     public String v() {

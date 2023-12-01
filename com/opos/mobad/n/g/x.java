@@ -14,16 +14,16 @@ import java.util.List;
 public class x extends RelativeLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f26934a;
+    private int f13246a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private com.opos.mobad.n.c.b f26935c;
-    private a.InterfaceC0708a d;
+    private com.opos.mobad.n.c.b f13247c;
+    private a.InterfaceC0538a d;
 
     public x(Context context, int i, int i2) {
         super(context);
-        this.f26934a = i == 0 ? 256 : i;
+        this.f13246a = i == 0 ? 256 : i;
         this.b = i2 == 0 ? 168 : i2;
         a();
     }
@@ -33,16 +33,16 @@ public class x extends RelativeLayout {
     }
 
     private void a() {
-        int a2 = com.opos.cmn.an.h.f.a.a(getContext(), this.f26934a);
+        int a2 = com.opos.cmn.an.h.f.a.a(getContext(), this.f13246a);
         int a3 = com.opos.cmn.an.h.f.a.a(getContext(), this.b);
         setLayoutParams(new ViewGroup.LayoutParams(a2, a3));
-        this.f26935c = new com.opos.mobad.n.c.b(getContext(), 3);
-        addView(this.f26935c, new RelativeLayout.LayoutParams(a2, a3));
+        this.f13247c = new com.opos.mobad.n.c.b(getContext(), 3);
+        addView(this.f13247c, new RelativeLayout.LayoutParams(a2, a3));
     }
 
     private void a(com.opos.mobad.n.d.g gVar, com.opos.mobad.c.a aVar, final boolean z, final List<Bitmap> list) {
-        aVar.a(gVar.f26633a, gVar.b, this.f26934a, this.b, new a.InterfaceC0676a() { // from class: com.opos.mobad.n.g.x.1
-            @Override // com.opos.mobad.c.a.InterfaceC0676a
+        aVar.a(gVar.f12945a, gVar.b, this.f13246a, this.b, new a.InterfaceC0506a() { // from class: com.opos.mobad.n.g.x.1
+            @Override // com.opos.mobad.c.a.InterfaceC0506a
             public void a(int i, final Bitmap bitmap) {
                 if (z) {
                     return;
@@ -65,17 +65,17 @@ public class x extends RelativeLayout {
                             return;
                         }
                         list.add(bitmap);
-                        x.this.f26935c.a(list);
+                        x.this.f13247c.a(list);
                     }
                 });
             }
         });
     }
 
-    public void a(a.InterfaceC0708a interfaceC0708a) {
-        com.opos.cmn.an.f.a.b("BlockListImgHorizontalView", "setListener " + interfaceC0708a);
-        this.d = interfaceC0708a;
-        this.f26935c.a(new com.opos.mobad.n.c.g() { // from class: com.opos.mobad.n.g.x.2
+    public void a(a.InterfaceC0538a interfaceC0538a) {
+        com.opos.cmn.an.f.a.b("BlockListImgHorizontalView", "setListener " + interfaceC0538a);
+        this.d = interfaceC0538a;
+        this.f13247c.a(new com.opos.mobad.n.c.g() { // from class: com.opos.mobad.n.g.x.2
             @Override // com.opos.mobad.n.c.g
             public void a(View view, int[] iArr) {
                 if (x.this.d != null) {
@@ -94,7 +94,7 @@ public class x extends RelativeLayout {
         while (true) {
             int i2 = i;
             if (i2 >= Math.min(dVar.g.size(), 3)) {
-                this.f26935c.a(dVar.z);
+                this.f13247c.a(dVar.z);
                 return;
             }
             com.opos.mobad.n.d.g gVar = dVar.g.get(i2);

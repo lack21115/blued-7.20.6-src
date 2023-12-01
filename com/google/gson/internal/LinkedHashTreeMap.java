@@ -171,7 +171,7 @@ public final class LinkedHashTreeMap<K, V> extends AbstractMap<K, V> implements 
             return (obj instanceof Map.Entry) && LinkedHashTreeMap.this.findByEntry((Map.Entry) obj) != null;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+        @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
         public Iterator<Map.Entry<K, V>> iterator() {
             return new LinkedHashTreeMap<K, V>.LinkedTreeMapIterator<Map.Entry<K, V>>() { // from class: com.google.gson.internal.LinkedHashTreeMap.EntrySet.1
                 {
@@ -195,7 +195,7 @@ public final class LinkedHashTreeMap<K, V> extends AbstractMap<K, V> implements 
             return false;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
         public int size() {
             return LinkedHashTreeMap.this.size;
         }
@@ -216,7 +216,7 @@ public final class LinkedHashTreeMap<K, V> extends AbstractMap<K, V> implements 
             return LinkedHashTreeMap.this.containsKey(obj);
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+        @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
         public Iterator<K> iterator() {
             return new LinkedHashTreeMap<K, V>.LinkedTreeMapIterator<K>() { // from class: com.google.gson.internal.LinkedHashTreeMap.KeySet.1
                 {
@@ -235,7 +235,7 @@ public final class LinkedHashTreeMap<K, V> extends AbstractMap<K, V> implements 
             return LinkedHashTreeMap.this.removeInternalByKey(obj) != null;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
         public int size() {
             return LinkedHashTreeMap.this.size;
         }

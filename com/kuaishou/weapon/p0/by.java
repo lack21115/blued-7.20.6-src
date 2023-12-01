@@ -9,7 +9,7 @@ import org.json.JSONObject;
 public class by {
 
     /* renamed from: a  reason: collision with root package name */
-    private JSONObject f23766a;
+    private JSONObject f10158a;
 
     public by(Context context) {
         if (Engine.loadSuccess) {
@@ -18,14 +18,14 @@ public class by {
                 return;
             }
             try {
-                this.f23766a = new JSONObject(fgh);
+                this.f10158a = new JSONObject(fgh);
             } catch (Exception e) {
             }
         }
     }
 
     public String a(String str) {
-        JSONObject jSONObject = this.f23766a;
+        JSONObject jSONObject = this.f10158a;
         if (jSONObject != null) {
             try {
                 return jSONObject.getString(str);

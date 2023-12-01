@@ -17,7 +17,7 @@ public class w7 extends r7 {
         while (true) {
             int i2 = i;
             if (i2 >= r7VarArr.length) {
-                this.f37735a = j;
+                this.f24044a = j;
                 return;
             }
             this.j.add(r7VarArr[i2]);

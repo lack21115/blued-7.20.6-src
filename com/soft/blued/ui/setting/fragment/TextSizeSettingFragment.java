@@ -33,10 +33,9 @@ public class TextSizeSettingFragment extends MvpFragment {
     TextView tvRight;
 
     public static void a(Context context) {
-        TerminalActivity.d(context, TextSizeSettingFragment.class, null);
+        TerminalActivity.d(context, TextSizeSettingFragment.class, (Bundle) null);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public void a(Bundle bundle) {
         super.a(bundle);
         this.title.setLeftClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.setting.fragment.TextSizeSettingFragment.1
@@ -83,12 +82,10 @@ public class TextSizeSettingFragment extends MvpFragment {
         this.title.setRightBtnEnable(false);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public int g() {
         return R.layout.fragment_text_size_setting;
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
     }

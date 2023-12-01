@@ -16,7 +16,7 @@ public final class LocationCompat {
     public static final String EXTRA_VERTICAL_ACCURACY = "verticalAccuracy";
 
     /* renamed from: a  reason: collision with root package name */
-    private static Method f2486a;
+    private static Method f2438a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8756600-dex2jar.jar:androidx/core/location/LocationCompat$Api17Impl.class */
@@ -85,12 +85,12 @@ public final class LocationCompat {
     }
 
     private static Method a() throws NoSuchMethodException {
-        if (f2486a == null) {
+        if (f2438a == null) {
             Method declaredMethod = Location.class.getDeclaredMethod("setIsFromMockProvider", Boolean.TYPE);
-            f2486a = declaredMethod;
+            f2438a = declaredMethod;
             declaredMethod.setAccessible(true);
         }
-        return f2486a;
+        return f2438a;
     }
 
     public static float getBearingAccuracyDegrees(Location location) {

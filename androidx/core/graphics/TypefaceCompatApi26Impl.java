@@ -19,11 +19,11 @@ import java.nio.ByteBuffer;
 public class TypefaceCompatApi26Impl extends TypefaceCompatApi21Impl {
 
     /* renamed from: a  reason: collision with root package name */
-    protected final Class<?> f2462a;
+    protected final Class<?> f2414a;
     protected final Constructor<?> b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected final Method f2463c;
+    protected final Method f2415c;
     protected final Method d;
     protected final Method e;
     protected final Method f;
@@ -55,9 +55,9 @@ public class TypefaceCompatApi26Impl extends TypefaceCompatApi21Impl {
             method5 = null;
             cls = null;
         }
-        this.f2462a = cls;
+        this.f2414a = cls;
         this.b = constructor;
-        this.f2463c = method4;
+        this.f2415c = method4;
         this.d = method3;
         this.e = method2;
         this.f = method;
@@ -66,7 +66,7 @@ public class TypefaceCompatApi26Impl extends TypefaceCompatApi21Impl {
 
     private boolean a(Context context, Object obj, String str, int i, int i2, int i3, FontVariationAxis[] fontVariationAxisArr) {
         try {
-            return ((Boolean) this.f2463c.invoke(obj, context.getAssets(), str, 0, false, Integer.valueOf(i), Integer.valueOf(i2), Integer.valueOf(i3), fontVariationAxisArr)).booleanValue();
+            return ((Boolean) this.f2415c.invoke(obj, context.getAssets(), str, 0, false, Integer.valueOf(i), Integer.valueOf(i2), Integer.valueOf(i3), fontVariationAxisArr)).booleanValue();
         } catch (IllegalAccessException | InvocationTargetException e) {
             return false;
         }
@@ -81,10 +81,10 @@ public class TypefaceCompatApi26Impl extends TypefaceCompatApi21Impl {
     }
 
     private boolean b() {
-        if (this.f2463c == null) {
+        if (this.f2415c == null) {
             Log.w("TypefaceCompatApi26Impl", "Unable to collect necessary private methods. Fallback to legacy implementation.");
         }
-        return this.f2463c != null;
+        return this.f2415c != null;
     }
 
     private boolean b(Object obj) {
@@ -112,7 +112,7 @@ public class TypefaceCompatApi26Impl extends TypefaceCompatApi21Impl {
 
     protected Typeface a(Object obj) {
         try {
-            Object newInstance = Array.newInstance(this.f2462a, 1);
+            Object newInstance = Array.newInstance(this.f2414a, 1);
             Array.set(newInstance, 0, obj);
             return (Typeface) this.g.invoke(null, newInstance, -1, -1);
         } catch (IllegalAccessException | InvocationTargetException e) {

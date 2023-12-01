@@ -17,6 +17,7 @@ import android.widget.TextView;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.AppMethods;
 import com.blued.android.core.image.ImageLoader;
+import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.ui.BaseFragment;
 import com.blued.android.core.ui.TerminalActivity;
 import com.blued.android.framework.http.BluedUIHttpResponse;
@@ -43,11 +44,11 @@ import com.soft.blued.utils.StringUtils;
 public class ModifyVipBgFragment extends BaseFragment implements View.OnClickListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private View f33507a;
+    private View f19816a;
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private View f33508c;
+    private View f19817c;
     private View d;
     private View e;
     private View f;
@@ -85,56 +86,48 @@ public class ModifyVipBgFragment extends BaseFragment implements View.OnClickLis
     }
 
     private void a(final String str) {
-        LoginRegisterHttpUtils.a(this.b, new BluedUIHttpResponse<BluedEntityA<BluedAlbum>>(getFragmentActive()) { // from class: com.soft.blued.ui.setting.fragment.ModifyVipBgFragment.3
+        LoginRegisterHttpUtils.a(this.b, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<BluedAlbum>>(getFragmentActive()) { // from class: com.soft.blued.ui.setting.fragment.ModifyVipBgFragment.3
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<BluedAlbum> bluedEntityA) {
                 if (bluedEntityA.data == null || bluedEntityA.data.size() <= 0) {
                     return;
                 }
-                ModifyVipBgFragment.this.a(str, bluedEntityA.data.get(0));
+                ModifyVipBgFragment.this.a(str, (BluedAlbum) bluedEntityA.data.get(0));
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str2) {
                 return super.onUIFailure(i, str2);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 super.onUIFinish();
                 DialogUtils.b(ModifyVipBgFragment.this.l);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 super.onUIStart();
                 DialogUtils.a(ModifyVipBgFragment.this.l);
             }
-        }, getFragmentActive());
+        }, (IRequestHost) getFragmentActive());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void a(String str, BluedAlbum bluedAlbum) {
         QiniuUploadUtils.a(str, bluedAlbum, new QiniuUploadTools.QiNiuListener() { // from class: com.soft.blued.ui.setting.fragment.ModifyVipBgFragment.4
-            @Override // com.blued.android.framework.utils.upload.QiniuUploadTools.QiNiuListener
             public void a(String str2) {
                 if (CommonTools.a(ModifyVipBgFragment.this)) {
                     DialogUtils.b(ModifyVipBgFragment.this.l);
                 }
             }
 
-            @Override // com.blued.android.framework.utils.upload.QiniuUploadTools.QiNiuListener
             public void a(String str2, double d) {
             }
 
-            @Override // com.blued.android.framework.utils.upload.QiniuUploadTools.QiNiuListener
             public void a(String str2, String str3) {
                 ModifyVipBgFragment.this.b(str2);
             }
 
-            @Override // com.blued.android.framework.utils.upload.QiniuUploadTools.QiNiuListener
             public boolean a() {
                 return false;
             }
@@ -153,25 +146,22 @@ public class ModifyVipBgFragment extends BaseFragment implements View.OnClickLis
     public void b(final String str) {
         MineHttpUtils.d(this.b, new BluedUIHttpResponse<BluedEntityA<BluedAlbum>>(getFragmentActive()) { // from class: com.soft.blued.ui.setting.fragment.ModifyVipBgFragment.5
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<BluedAlbum> bluedEntityA) {
                 ModifyVipBgFragment.this.h.setVisibility(0);
                 ModifyVipBgFragment.this.i.setVisibility(0);
                 ModifyVipBgFragment.this.k = 1;
                 ModifyVipBgFragment.this.j = str;
-                ImageLoader.a(ModifyVipBgFragment.this.getFragmentActive(), AvatarUtils.a(3, ModifyVipBgFragment.this.j)).b(R.drawable.bg_vip_bg_default).d(R.drawable.bg_vip_bg_default).a(ModifyVipBgFragment.this.g);
-                ModifyVipBgFragment.this.f33508c.setVisibility(0);
+                ImageLoader.a(ModifyVipBgFragment.this.getFragmentActive(), AvatarUtils.a(3, ModifyVipBgFragment.this.j)).b((int) R.drawable.bg_vip_bg_default).d((int) R.drawable.bg_vip_bg_default).a(ModifyVipBgFragment.this.g);
+                ModifyVipBgFragment.this.f19817c.setVisibility(0);
                 ModifyVipBgFragment.this.d.setVisibility(0);
                 AppMethods.d((int) R.string.profile_background_upload_success);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str2) {
                 return super.onUIFailure(i, str2);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 super.onUIFinish();
                 DialogUtils.b(ModifyVipBgFragment.this.l);
@@ -181,17 +171,17 @@ public class ModifyVipBgFragment extends BaseFragment implements View.OnClickLis
 
     private void c() {
         this.l = DialogUtils.a(this.b);
-        this.f33508c = this.f33507a.findViewById(R.id.btn_vip_bg_delete);
-        this.d = this.f33507a.findViewById(R.id.btn_vip_bg_save);
-        this.e = this.f33507a.findViewById(R.id.btn_vip_bg_modify);
-        this.f = this.f33507a.findViewById(R.id.btn_vip_bg_cancel);
-        this.g = (ImageView) this.f33507a.findViewById(2131366044);
-        this.h = (TextView) this.f33507a.findViewById(R.id.tv_vip_bg_under_reviewing);
-        this.i = this.f33507a.findViewById(R.id.iv_vip_bg_ground);
+        this.f19817c = this.f19816a.findViewById(R.id.btn_vip_bg_delete);
+        this.d = this.f19816a.findViewById(R.id.btn_vip_bg_save);
+        this.e = this.f19816a.findViewById(R.id.btn_vip_bg_modify);
+        this.f = this.f19816a.findViewById(R.id.btn_vip_bg_cancel);
+        this.g = (ImageView) this.f19816a.findViewById(R.id.iv_vip_bg);
+        this.h = (TextView) this.f19816a.findViewById(R.id.tv_vip_bg_under_reviewing);
+        this.i = this.f19816a.findViewById(R.id.iv_vip_bg_ground);
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.g.getLayoutParams();
         layoutParams.height = AppInfo.l;
         this.g.setLayoutParams(layoutParams);
-        this.f33508c.setOnClickListener(this);
+        this.f19817c.setOnClickListener(this);
         this.d.setOnClickListener(this);
         this.e.setOnClickListener(this);
         this.f.setOnClickListener(this);
@@ -205,17 +195,15 @@ public class ModifyVipBgFragment extends BaseFragment implements View.OnClickLis
             this.h.setVisibility(8);
             this.i.setVisibility(8);
         }
-        ImageLoader.a(getFragmentActive(), AvatarUtils.a(3, this.j)).b(R.drawable.bg_vip_bg_default).d(R.drawable.bg_vip_bg_default).a(this.g);
+        ImageLoader.a(getFragmentActive(), AvatarUtils.a(3, this.j)).b((int) R.drawable.bg_vip_bg_default).d((int) R.drawable.bg_vip_bg_default).a(this.g);
     }
 
     private void d() {
         PermissionUtils.f(new PermissionCallbacks() { // from class: com.soft.blued.ui.setting.fragment.ModifyVipBgFragment.1
-            @Override // com.blued.android.framework.permission.PermissionCallbacks
             public void U_() {
                 PhotoSelectFragment.a(ModifyVipBgFragment.this, 14, 178);
             }
 
-            @Override // com.blued.android.framework.permission.PermissionCallbacks
             public void a(String[] strArr) {
             }
         });
@@ -228,26 +216,23 @@ public class ModifyVipBgFragment extends BaseFragment implements View.OnClickLis
     private void f() {
         UserHttpUtils.c(new BluedUIHttpResponse<BluedEntityA>(getFragmentActive()) { // from class: com.soft.blued.ui.setting.fragment.ModifyVipBgFragment.2
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA bluedEntityA) {
-                AppMethods.d(2131887470);
+                AppMethods.d((int) R.string.del_success);
                 ModifyVipBgFragment.this.j = "";
                 ModifyVipBgFragment.this.k = 0;
-                ImageLoader.a(ModifyVipBgFragment.this.getFragmentActive(), ModifyVipBgFragment.this.j).b(R.drawable.bg_vip_bg_default).d(R.drawable.bg_vip_bg_default).a(ModifyVipBgFragment.this.g);
+                ImageLoader.a(ModifyVipBgFragment.this.getFragmentActive(), ModifyVipBgFragment.this.j).b((int) R.drawable.bg_vip_bg_default).d((int) R.drawable.bg_vip_bg_default).a(ModifyVipBgFragment.this.g);
                 ModifyVipBgFragment.this.h.setVisibility(8);
                 ModifyVipBgFragment.this.i.setVisibility(8);
-                ModifyVipBgFragment.this.f33508c.setVisibility(8);
+                ModifyVipBgFragment.this.f19817c.setVisibility(8);
                 ModifyVipBgFragment.this.d.setVisibility(8);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 super.onUIFinish();
                 DialogUtils.b(ModifyVipBgFragment.this.l);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 super.onUIStart();
                 DialogUtils.a(ModifyVipBgFragment.this.l);
@@ -255,7 +240,6 @@ public class ModifyVipBgFragment extends BaseFragment implements View.OnClickLis
         }, getFragmentActive());
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         if (i2 == -1 && i == 178 && intent != null) {
             String stringExtra = intent.getStringExtra("photo_path");
@@ -266,7 +250,6 @@ public class ModifyVipBgFragment extends BaseFragment implements View.OnClickLis
         super.onActivityResult(i, i2, intent);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener
     public boolean onBackPressed() {
         a();
         return true;
@@ -299,17 +282,16 @@ public class ModifyVipBgFragment extends BaseFragment implements View.OnClickLis
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.b = getActivity();
-        View view = this.f33507a;
+        View view = this.f19816a;
         if (view == null) {
-            this.f33507a = layoutInflater.inflate(R.layout.fragment_modify_vip_bg, viewGroup, false);
+            this.f19816a = layoutInflater.inflate(R.layout.fragment_modify_vip_bg, viewGroup, false);
             b();
             c();
         } else if (view.getParent() != null) {
-            ((ViewGroup) this.f33507a.getParent()).removeView(this.f33507a);
+            ((ViewGroup) this.f19816a.getParent()).removeView(this.f19816a);
         }
-        return this.f33507a;
+        return this.f19816a;
     }
 }

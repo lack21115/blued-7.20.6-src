@@ -7,20 +7,20 @@ public class f extends d {
     public final String J;
 
     /* renamed from: a  reason: collision with root package name */
-    public final g f26631a;
+    public final g f12943a;
     public final String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final String f26632c;
+    public final String f12944c;
     public final String d;
 
     public f(h hVar) {
         super(hVar);
-        this.f26631a = hVar.K;
+        this.f12943a = hVar.K;
         this.H = hVar.L;
         this.b = hVar.H;
         this.d = hVar.J;
-        this.f26632c = hVar.I;
+        this.f12944c = hVar.I;
         this.I = hVar.n;
         this.J = hVar.o;
     }

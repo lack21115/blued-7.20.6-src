@@ -31,11 +31,11 @@ import java.util.List;
 public class PrivacyPhotoAlbumAuthedUsersItemAdapter extends BaseAdapter implements SlideView.OnSlideListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f33302a;
+    private Context f19611a;
     private LayoutInflater b;
 
     /* renamed from: c  reason: collision with root package name */
-    private List<UserFindResult> f33303c;
+    private List<UserFindResult> f19612c;
     private OnDeleteClickListener d;
     private SlideView e;
     private boolean f;
@@ -51,7 +51,7 @@ public class PrivacyPhotoAlbumAuthedUsersItemAdapter extends BaseAdapter impleme
         private ImageView b;
 
         /* renamed from: c  reason: collision with root package name */
-        private ImageView f33310c;
+        private ImageView f19619c;
         private ImageView d;
         private ImageView e;
         private ImageView f;
@@ -72,43 +72,42 @@ public class PrivacyPhotoAlbumAuthedUsersItemAdapter extends BaseAdapter impleme
         public ViewHolder(View view) {
             this.g = (LinearLayout) view.findViewById(R.id.layout_friend);
             this.h = (ImageView) view.findViewById(2131364232);
-            this.b = (ImageView) view.findViewById(2131364459);
-            this.f33310c = (ImageView) view.findViewById(2131364590);
-            this.d = (ImageView) view.findViewById(2131364625);
-            this.e = (ImageView) view.findViewById(2131364720);
+            this.b = (ImageView) view.findViewById(R.id.img_blued_medal);
+            this.f19619c = (ImageView) view.findViewById(R.id.img_living);
+            this.d = (ImageView) view.findViewById(R.id.img_online);
+            this.e = (ImageView) view.findViewById(R.id.img_verify);
             this.f = (ImageView) view.findViewById(R.id.img_recommend);
-            this.i = (SlideView) view.findViewById(R.id.sv_slide_item);
-            this.j = (TextView) view.findViewById(2131362003);
-            this.k = (TextView) view.findViewById(2131364242);
-            this.m = (TextView) view.findViewById(2131368652);
-            this.l = (TextView) view.findViewById(2131363246);
+            this.i = view.findViewById(R.id.sv_slide_item);
+            this.j = (TextView) view.findViewById(R.id.age_view);
+            this.k = (TextView) view.findViewById(R.id.height_view);
+            this.m = (TextView) view.findViewById(R.id.name_view);
+            this.l = (TextView) view.findViewById(R.id.distance_view);
             this.n = (TextView) view.findViewById(R.id.online_time_view);
-            this.o = (TextView) view.findViewById(2131369448);
+            this.o = (TextView) view.findViewById(R.id.role_view);
             this.p = (TextView) view.findViewById(R.id.sign_view);
-            this.q = (TextView) view.findViewById(2131373390);
+            this.q = (TextView) view.findViewById(R.id.weight_view);
             this.r = (TextView) view.findViewById(R.id.tv_item_button);
             this.s = (TextView) view.findViewById(R.id.tv_cover_transparent);
         }
     }
 
     public PrivacyPhotoAlbumAuthedUsersItemAdapter(Context context, IRequestHost iRequestHost, List<UserFindResult> list) {
-        this.f33302a = context;
+        this.f19611a = context;
         this.g = iRequestHost;
-        this.f33303c = list;
+        this.f19612c = list;
         this.b = LayoutInflater.from(context);
     }
 
     public void a() {
-        this.f33303c.clear();
+        this.f19612c.clear();
         notifyDataSetChanged();
     }
 
     public void a(int i) {
-        this.f33303c.remove(i);
+        this.f19612c.remove(i);
         notifyDataSetChanged();
     }
 
-    @Override // com.blued.android.framework.view.SlideView.OnSlideListener
     public void a(View view, int i) {
         SlideView slideView = this.e;
         if (slideView != null && slideView != view) {
@@ -127,7 +126,7 @@ public class PrivacyPhotoAlbumAuthedUsersItemAdapter extends BaseAdapter impleme
     }
 
     public void a(List<UserFindResult> list) {
-        this.f33303c.addAll(list);
+        this.f19612c.addAll(list);
         notifyDataSetChanged();
     }
 
@@ -138,7 +137,7 @@ public class PrivacyPhotoAlbumAuthedUsersItemAdapter extends BaseAdapter impleme
 
     @Override // android.widget.Adapter
     public int getCount() {
-        List<UserFindResult> list = this.f33303c;
+        List<UserFindResult> list = this.f19612c;
         if (list != null) {
             return list.size();
         }
@@ -147,7 +146,7 @@ public class PrivacyPhotoAlbumAuthedUsersItemAdapter extends BaseAdapter impleme
 
     @Override // android.widget.Adapter
     public Object getItem(int i) {
-        List<UserFindResult> list = this.f33303c;
+        List<UserFindResult> list = this.f19612c;
         if (list != null) {
             return list.get(i);
         }
@@ -189,14 +188,14 @@ public class PrivacyPhotoAlbumAuthedUsersItemAdapter extends BaseAdapter impleme
             viewHolder.e.setVisibility(0);
             UserInfoHelper.a(viewHolder.e, userFindResult.vbadge, 3);
         }
-        DisplayMetrics displayMetrics = this.f33302a.getResources().getDisplayMetrics();
-        viewHolder.g.setLayoutParams(new LinearLayout.LayoutParams(displayMetrics.widthPixels + 1, DensityUtils.a(this.f33302a, 87.5f)));
+        DisplayMetrics displayMetrics = this.f19611a.getResources().getDisplayMetrics();
+        viewHolder.g.setLayoutParams(new LinearLayout.LayoutParams(displayMetrics.widthPixels + 1, DensityUtils.a(this.f19611a, 87.5f)));
         final ViewHolder viewHolder2 = viewHolder;
         viewHolder.g.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.setting.adapter.PrivacyPhotoAlbumAuthedUsersItemAdapter.2
             @Override // android.view.View.OnClickListener
             public void onClick(View view2) {
                 Tracker.onClick(view2);
-                UserInfoFragmentNew.a(PrivacyPhotoAlbumAuthedUsersItemAdapter.this.f33302a, userFindResult, "", viewHolder2.h);
+                UserInfoFragmentNew.a(PrivacyPhotoAlbumAuthedUsersItemAdapter.this.f19611a, userFindResult, "", viewHolder2.h);
             }
         });
         viewHolder.i.setOnSlideListener(this);
@@ -211,22 +210,22 @@ public class PrivacyPhotoAlbumAuthedUsersItemAdapter extends BaseAdapter impleme
                 }
             }
         });
-        String a2 = TimeAndDateUtils.a(this.f33302a, TimeAndDateUtils.c(userFindResult.last_operate));
+        String a2 = TimeAndDateUtils.a(this.f19611a, TimeAndDateUtils.c(userFindResult.last_operate));
         String a3 = DistanceUtils.a(userFindResult.distance, BlueAppLocal.c(), false);
         if (userFindResult.live > 0) {
-            viewHolder.f33310c.setVisibility(0);
+            viewHolder.f19619c.setVisibility(0);
         } else {
-            viewHolder.f33310c.setVisibility(8);
+            viewHolder.f19619c.setVisibility(8);
         }
         ImageLoader.a(this.g, AvatarUtils.a(0, userFindResult.avatar)).b(2131237310).c().a(viewHolder.h);
-        UserInfoHelper.a(this.f33302a, viewHolder.o, userFindResult.role);
+        UserInfoHelper.a(this.f19611a, viewHolder.o, userFindResult.role);
         UserRelationshipUtils.a(viewHolder.b, userFindResult);
         if (TextUtils.isEmpty(a3)) {
             viewHolder.l.setText("");
         } else {
             viewHolder.l.setText(a3);
         }
-        DistanceUtils.a(this.f33302a, viewHolder.l, userFindResult, 1);
+        DistanceUtils.a(this.f19611a, viewHolder.l, userFindResult, 1);
         if (!TextUtils.isEmpty(userFindResult.note)) {
             viewHolder.m.setText(userFindResult.note);
         } else if (TextUtils.isEmpty(userFindResult.name)) {
@@ -234,7 +233,7 @@ public class PrivacyPhotoAlbumAuthedUsersItemAdapter extends BaseAdapter impleme
         } else {
             viewHolder.m.setText(userFindResult.name);
         }
-        UserRelationshipUtils.a(this.f33302a, viewHolder.m, userFindResult);
+        UserRelationshipUtils.a(this.f19611a, viewHolder.m, userFindResult);
         if (1 == userFindResult.online_state) {
             viewHolder.d.setVisibility(0);
         } else {
@@ -245,12 +244,12 @@ public class PrivacyPhotoAlbumAuthedUsersItemAdapter extends BaseAdapter impleme
         } else {
             viewHolder.n.setText(a2);
         }
-        TypefaceUtils.a(this.f33302a, viewHolder.n, userFindResult.is_hide_last_operate, 1);
+        TypefaceUtils.a(this.f19611a, viewHolder.n, userFindResult.is_hide_last_operate, 1);
         if (TextUtils.isEmpty(userFindResult.age)) {
             viewHolder.j.setText("");
         } else {
             TextView textView = viewHolder.j;
-            textView.setText(userFindResult.age + this.f33302a.getResources().getString(2131886374));
+            textView.setText(userFindResult.age + this.f19611a.getResources().getString(2131886374));
         }
         if (TextUtils.isEmpty(userFindResult.height)) {
             viewHolder.k.setText("");
@@ -263,7 +262,7 @@ public class PrivacyPhotoAlbumAuthedUsersItemAdapter extends BaseAdapter impleme
             viewHolder.q.setText(userFindResult.weight);
         }
         if (TextUtils.isEmpty(userFindResult.description)) {
-            viewHolder.p.setText(this.f33302a.getResources().getString(R.string.user_no_description));
+            viewHolder.p.setText(this.f19611a.getResources().getString(R.string.user_no_description));
             return view;
         }
         viewHolder.p.setText(userFindResult.description);

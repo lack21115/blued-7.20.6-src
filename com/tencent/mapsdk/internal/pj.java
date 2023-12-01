@@ -1,6 +1,5 @@
 package com.tencent.mapsdk.internal;
 
-import android.widget.ExpandableListView;
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -10,11 +9,11 @@ import java.util.Random;
 public class pj {
 
     /* renamed from: a  reason: collision with root package name */
-    private byte[] f37706a;
+    private byte[] f24015a;
     private byte[] b;
 
     /* renamed from: c  reason: collision with root package name */
-    private byte[] f37707c;
+    private byte[] f24016c;
     private int d;
     private int e;
     private int f;
@@ -32,20 +31,20 @@ public class pj {
                 break;
             }
             if (this.i) {
-                byte[] bArr = this.f37706a;
+                byte[] bArr = this.f24015a;
                 bArr[i] = (byte) (bArr[i] ^ this.b[i]);
             } else {
-                byte[] bArr2 = this.f37706a;
-                bArr2[i] = (byte) (bArr2[i] ^ this.f37707c[this.e + i]);
+                byte[] bArr2 = this.f24015a;
+                bArr2[i] = (byte) (bArr2[i] ^ this.f24016c[this.e + i]);
             }
             this.f = i + 1;
         }
-        System.arraycopy((Object) b(this.f37706a), 0, (Object) this.f37707c, this.d, 8);
+        System.arraycopy(b(this.f24015a), 0, this.f24016c, this.d, 8);
         this.f = 0;
         while (true) {
             int i2 = this.f;
             if (i2 >= 8) {
-                System.arraycopy((Object) this.f37706a, 0, (Object) this.b, 0, 8);
+                System.arraycopy(this.f24015a, 0, this.b, 0, 8);
                 int i3 = this.d;
                 this.e = i3;
                 this.d = i3 + 8;
@@ -53,7 +52,7 @@ public class pj {
                 this.i = false;
                 return;
             }
-            byte[] bArr3 = this.f37707c;
+            byte[] bArr3 = this.f24016c;
             int i4 = this.d + i2;
             bArr3[i4] = (byte) (bArr3[i4] ^ this.b[i2]);
             this.f = i2 + 1;
@@ -108,9 +107,9 @@ public class pj {
                     dataOutputStream.close();
                     return byteArrayOutputStream.toByteArray();
                 }
-                b2 = (b2 - ((((b << 4) + b5) ^ (b + j)) ^ ((b >>> 5) + b6))) & ExpandableListView.PACKED_POSITION_VALUE_NULL;
-                b = (b - ((((b2 << 4) + b3) ^ (b2 + j)) ^ ((b2 >>> 5) + b4))) & ExpandableListView.PACKED_POSITION_VALUE_NULL;
-                j = (j - 2654435769L) & ExpandableListView.PACKED_POSITION_VALUE_NULL;
+                b2 = (b2 - ((((b << 4) + b5) ^ (b + j)) ^ ((b >>> 5) + b6))) & 4294967295L;
+                b = (b - ((((b2 << 4) + b3) ^ (b2 + j)) ^ ((b2 >>> 5) + b4))) & 4294967295L;
+                j = (j - 2654435769L) & 4294967295L;
                 i2 = i3 - 1;
             }
         } catch (IOException e) {
@@ -129,7 +128,7 @@ public class pj {
             j = (j << 8) | (bArr[i] & 255);
             i++;
         }
-        return (ExpandableListView.PACKED_POSITION_VALUE_NULL & j) | (j >>> 32);
+        return (4294967295L & j) | (j >>> 32);
     }
 
     private byte[] b(byte[] bArr) {
@@ -152,9 +151,9 @@ public class pj {
                     dataOutputStream.close();
                     return byteArrayOutputStream.toByteArray();
                 }
-                j = (j + 2654435769L) & ExpandableListView.PACKED_POSITION_VALUE_NULL;
-                b = (b + ((((b2 << 4) + b3) ^ (b2 + j)) ^ ((b2 >>> 5) + b4))) & ExpandableListView.PACKED_POSITION_VALUE_NULL;
-                b2 = (b2 + ((((b << 4) + b5) ^ (b + j)) ^ ((b >>> 5) + b6))) & ExpandableListView.PACKED_POSITION_VALUE_NULL;
+                j = (j + 2654435769L) & 4294967295L;
+                b = (b + ((((b2 << 4) + b3) ^ (b2 + j)) ^ ((b2 >>> 5) + b4))) & 4294967295L;
+                b2 = (b2 + ((((b << 4) + b5) ^ (b + j)) ^ ((b >>> 5) + b6))) & 4294967295L;
                 i = i2 - 1;
             }
         } catch (IOException e) {
@@ -167,7 +166,7 @@ public class pj {
         int i4;
         int i5;
         byte[] bArr3 = new byte[8];
-        this.f37706a = bArr3;
+        this.f24015a = bArr3;
         this.b = new byte[8];
         this.f = 1;
         this.g = 0;
@@ -180,7 +179,7 @@ public class pj {
         if (i6 != 0) {
             this.f = 8 - i6;
         }
-        this.f37707c = new byte[this.f + i2 + 10];
+        this.f24016c = new byte[this.f + i2 + 10];
         bArr3[0] = (byte) ((b() & 248) | this.f);
         int i7 = 1;
         while (true) {
@@ -189,7 +188,7 @@ public class pj {
             if (i8 > i3) {
                 break;
             }
-            this.f37706a[i8] = (byte) (b() & 255);
+            this.f24015a[i8] = (byte) (b() & 255);
             i7 = i8 + 1;
         }
         this.f = i3 + 1;
@@ -211,7 +210,7 @@ public class pj {
             }
             int i11 = this.f;
             if (i11 < 8) {
-                byte[] bArr4 = this.f37706a;
+                byte[] bArr4 = this.f24015a;
                 this.f = i11 + 1;
                 bArr4[i11] = (byte) (b() & 255);
                 this.g++;
@@ -225,7 +224,7 @@ public class pj {
             int i13 = i4;
             int i14 = i5;
             if (i12 < 8) {
-                byte[] bArr5 = this.f37706a;
+                byte[] bArr5 = this.f24015a;
                 this.f = i12 + 1;
                 bArr5[i12] = bArr[i4];
                 i14 = i5 - 1;
@@ -243,11 +242,11 @@ public class pj {
         while (true) {
             int i15 = this.g;
             if (i15 > 7) {
-                return this.f37707c;
+                return this.f24016c;
             }
             int i16 = this.f;
             if (i16 < 8) {
-                byte[] bArr6 = this.f37706a;
+                byte[] bArr6 = this.f24015a;
                 this.f = i16 + 1;
                 bArr6[i16] = 0;
                 this.g = i15 + 1;
@@ -284,7 +283,7 @@ public class pj {
             bArr3[i7] = 0;
             i6 = i7 + 1;
         }
-        this.f37707c = new byte[i5];
+        this.f24016c = new byte[i5];
         this.e = 0;
         this.d = 8;
         this.j = 8;
@@ -301,7 +300,7 @@ public class pj {
                     int i12 = i9;
                     int i13 = i10;
                     if (i11 < 8) {
-                        this.f37707c[i9] = (byte) (bArr4[(this.e + i) + i11] ^ this.b[i11]);
+                        this.f24016c[i9] = (byte) (bArr4[(this.e + i) + i11] ^ this.b[i11]);
                         i12 = i9 + 1;
                         i13 = i10 - 1;
                         this.f = i11 + 1;
@@ -338,7 +337,7 @@ public class pj {
                     this.g++;
                     bArr4 = bArr5;
                 }
-                return this.f37707c;
+                return this.f24016c;
             }
             int i15 = this.f;
             if (i15 < 8) {

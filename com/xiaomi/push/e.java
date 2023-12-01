@@ -16,7 +16,7 @@ public abstract class e {
         try {
             b a2 = b.a(bArr, i, i2);
             a(a2);
-            a2.m11523a(0);
+            a2.m8473a(0);
             return this;
         } catch (d e) {
             throw e;
@@ -28,7 +28,7 @@ public abstract class e {
     public abstract void a(c cVar);
 
     /* renamed from: a  reason: collision with other method in class */
-    public void m11706a(byte[] bArr, int i, int i2) {
+    public void m8656a(byte[] bArr, int i, int i2) {
         try {
             c a2 = c.a(bArr, i, i2);
             a(a2);
@@ -40,14 +40,14 @@ public abstract class e {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public boolean a(b bVar, int i) {
-        return bVar.m11525a(i);
+        return bVar.m8475a(i);
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public byte[] m11707a() {
+    public byte[] m8657a() {
         int b = b();
         byte[] bArr = new byte[b];
-        m11706a(bArr, 0, b);
+        m8656a(bArr, 0, b);
         return bArr;
     }
 

@@ -3,7 +3,6 @@ package com.youzan.spiderman.c.e;
 import android.content.Context;
 import android.net.Uri;
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.youzan.spiderman.cache.CacheUrl;
 import com.youzan.spiderman.utils.FileCallback;
 import com.youzan.spiderman.utils.Logger;
@@ -20,18 +19,18 @@ import java.util.Set;
 public final class c extends com.youzan.spiderman.a.a {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f41758a;
+    private int f28067a;
     private Set<String> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Set<String> f41759c = Collections.synchronizedSet(new HashSet());
+    private Set<String> f28068c = Collections.synchronizedSet(new HashSet());
     private Context d;
     private com.youzan.spiderman.c.b.f e;
     private a f;
 
     public c(Set<String> set, Context context, com.youzan.spiderman.c.b.f fVar, a aVar) {
         this.b = set;
-        this.f41758a = set.size();
+        this.f28067a = set.size();
         this.d = context;
         this.e = fVar;
         this.f = aVar;
@@ -61,7 +60,7 @@ public final class c extends com.youzan.spiderman.a.a {
 
                 @Override // com.youzan.spiderman.utils.FileCallback
                 public final void success() {
-                    c.this.f41759c.add(str);
+                    c.this.f28068c.add(str);
                     c.this.b();
                 }
             });
@@ -75,15 +74,15 @@ public final class c extends com.youzan.spiderman.a.a {
     /* JADX INFO: Access modifiers changed from: private */
     public void b() {
         synchronized (this) {
-            int i = this.f41758a - 1;
-            this.f41758a = i;
+            int i = this.f28067a - 1;
+            this.f28067a = i;
             if (i == 0) {
-                this.b.removeAll(this.f41759c);
+                this.b.removeAll(this.f28068c);
                 if (this.f != null) {
                     this.f.a(this, this.b);
                 }
                 this.b.clear();
-                this.f41759c.clear();
+                this.f28068c.clear();
             }
         }
     }
@@ -99,10 +98,10 @@ public final class c extends com.youzan.spiderman.a.a {
         while (it.hasNext()) {
             String next = it.next();
             String str2 = next;
-            if (!next.startsWith(BridgeUtil.SPLIT_MARK)) {
+            if (!next.startsWith("/")) {
                 str2 = next;
                 if (!StringUtils.isStartWith(next, Stone.SUPPORTED_SCHEME)) {
-                    str2 = BridgeUtil.SPLIT_MARK + next;
+                    str2 = "/" + next;
                 }
             }
             if (TextUtils.isEmpty(str2)) {
@@ -138,7 +137,7 @@ public final class c extends com.youzan.spiderman.a.a {
 
                         @Override // com.youzan.spiderman.utils.FileCallback
                         public final void success() {
-                            c.this.f41759c.add(str3);
+                            c.this.f28068c.add(str3);
                             c.this.b();
                         }
                     });

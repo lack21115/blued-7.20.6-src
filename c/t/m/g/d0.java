@@ -70,7 +70,7 @@ public class d0 extends c2 {
             }
             b0 b0Var = new b0();
             this.i = b0Var;
-            b0Var.a(3, 25, 0.8f, k0.f3858a, k0.b, x.d, x.e);
+            b0Var.a(3, 25, 0.8f, k0.f3810a, k0.b, x.d, x.e);
             a(this.f, looper2);
             a(this.g, looper2);
             a(this.h, looper2);
@@ -148,11 +148,11 @@ public class d0 extends c2 {
         try {
             j0.a("ArMgrImpl", "setArData:" + str + "," + str2);
             if ("set_is_d".equals(str)) {
-                i0.f3836a = Integer.parseInt(str2) == 1;
+                i0.f3788a = Integer.parseInt(str2) == 1;
             } else if ("set_ar_detect_cycle".equals(str)) {
                 this.e = a(Long.parseLong(str2), 1000L, 15000L);
             } else if ("set_ar_model_tran_p".equals(str)) {
-                return a(k0.f3858a, str2);
+                return a(k0.f3810a, str2);
             } else {
                 if ("set_ar_speed_model".equals(str)) {
                     return a(k0.b, str2);
@@ -164,7 +164,7 @@ public class d0 extends c2 {
                     return a(x.e, str2);
                 }
                 if ("set_ar_lr_coefs".equals(str)) {
-                    return a(v.f4016a, str2);
+                    return a(v.f3968a, str2);
                 }
                 if ("set_ar_lr_bias".equals(str)) {
                     return a(v.b, str2);
@@ -194,7 +194,7 @@ public class d0 extends c2 {
         while (true) {
             int i2 = i;
             if (i2 >= a2.length) {
-                System.arraycopy((Object) a2, 0, (Object) dArr, 0, dArr.length);
+                System.arraycopy(a2, 0, dArr, 0, dArr.length);
                 h2.a().a(a2);
                 return true;
             }
@@ -204,7 +204,7 @@ public class d0 extends c2 {
     }
 
     public final boolean a(double[][] dArr, String str) {
-        String[] split = str.split(";");
+        String[] split = str.split(com.huawei.openalliance.ad.constant.t.aE);
         if (split.length != dArr.length) {
             return false;
         }

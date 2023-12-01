@@ -13,7 +13,7 @@ import java.util.Iterator;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static ClassLoader f37280a;
+    private static ClassLoader f23589a;
     private static boolean b = true;
 
     public static Object a(String str, boolean z, ClassLoader classLoader) throws b {
@@ -61,7 +61,7 @@ public class a {
             if (classLoader != null) {
                 cls = Class.forName(str, z, classLoader);
             } else {
-                ClassLoader classLoader2 = f37280a;
+                ClassLoader classLoader2 = f23589a;
                 cls = classLoader2 != null ? Class.forName(str, b, classLoader2) : Class.forName(str);
             }
             return cls.getConstructor(new Class[0]).newInstance(new Object[0]);
@@ -183,7 +183,7 @@ public class a {
 
     public static void a(boolean z, ClassLoader classLoader) {
         b = z;
-        f37280a = classLoader;
+        f23589a = classLoader;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:17:0x0069, code lost:

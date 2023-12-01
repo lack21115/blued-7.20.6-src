@@ -23,7 +23,6 @@ import android.os.Process;
 import android.text.TextUtils;
 import android.util.SparseArray;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
-import com.alipay.sdk.util.i;
 import com.anythink.expressad.video.module.a.a.m;
 import com.huawei.hms.push.constant.RemoteMessageConst;
 import com.sobot.chat.api.apiUtils.GsonUtil;
@@ -53,7 +52,7 @@ public class SobotTCPServer extends Service {
     public static NetworkInfo b;
 
     /* renamed from: c  reason: collision with root package name */
-    public static WifiInfo f28223c;
+    public static WifiInfo f14534c;
     public static boolean d = true;
     private com.sobot.chat.core.a.a B;
     private b M;
@@ -70,7 +69,7 @@ public class SobotTCPServer extends Service {
     private a x;
 
     /* renamed from: a  reason: collision with root package name */
-    int f28224a = 0;
+    int f14535a = 0;
     private final int y = Process.myPid();
     Context e = this;
     boolean m = true;
@@ -237,8 +236,8 @@ public class SobotTCPServer extends Service {
                 LogUtils.i("getActiveNetworkInfo failed.");
             }
             SobotTCPServer.this.a(context, networkInfo);
-            if (SobotTCPServer.this.f28224a == 0) {
-                SobotTCPServer.this.f28224a++;
+            if (SobotTCPServer.this.f14535a == 0) {
+                SobotTCPServer.this.f14535a++;
             }
         }
     }
@@ -318,7 +317,7 @@ public class SobotTCPServer extends Service {
                             this.A.offer(msgId);
                             Util.notifyMsg(this.e, string);
                         }
-                        jSONArray.put(new JSONObject("{msgId:" + msgId + i.d));
+                        jSONArray.put(new JSONObject("{msgId:" + msgId + "}"));
                     }
                     i = i2 + 1;
                 } catch (JSONException e) {
@@ -374,7 +373,7 @@ public class SobotTCPServer extends Service {
     private void d(com.sobot.chat.core.a.a aVar) {
         aVar.j().a(new i.c() { // from class: com.sobot.chat.core.channel.SobotTCPServer.2
             @Override // com.sobot.chat.core.a.a.i.c
-            public byte[] a(com.sobot.chat.core.a.a.i iVar, int i) {
+            public byte[] a(i iVar, int i) {
                 return new byte[]{(byte) ((i >> 24) & 255), (byte) ((i >> 16) & 255), (byte) ((i >> 8) & 255), (byte) (i & 255)};
             }
         });
@@ -387,7 +386,7 @@ public class SobotTCPServer extends Service {
         aVar.j().c(4);
         aVar.j().a(new i.b() { // from class: com.sobot.chat.core.channel.SobotTCPServer.3
             @Override // com.sobot.chat.core.a.a.i.b
-            public int a(com.sobot.chat.core.a.a.i iVar, byte[] bArr) {
+            public int a(i iVar, byte[] bArr) {
                 return (bArr[3] & 255) + ((bArr[2] & 255) << 8) + ((bArr[1] & 255) << 16) + ((bArr[0] & 255) << 24);
             }
         });
@@ -408,7 +407,7 @@ public class SobotTCPServer extends Service {
     }
 
     private void g() {
-        if (this.f28224a == 0) {
+        if (this.f14535a == 0) {
             return;
         }
         if (b()) {
@@ -586,7 +585,7 @@ public class SobotTCPServer extends Service {
     public void a(Context context, NetworkInfo networkInfo) {
         if (networkInfo == null) {
             b = null;
-            f28223c = null;
+            f14534c = null;
             g();
         } else if (networkInfo.getDetailedState() == NetworkInfo.DetailedState.CONNECTED) {
             if (b(context, networkInfo)) {
@@ -596,7 +595,7 @@ public class SobotTCPServer extends Service {
         } else {
             if (d) {
                 b = null;
-                f28223c = null;
+                f14534c = null;
                 g();
             }
             d = false;
@@ -683,11 +682,11 @@ public class SobotTCPServer extends Service {
                     wifiInfo2 = null;
                 }
             }
-            if (wifiInfo2 != null && (wifiInfo = f28223c) != null && wifiInfo.getBSSID() != null && f28223c.getBSSID().equals(wifiInfo2.getBSSID()) && f28223c.getSSID().equals(wifiInfo2.getSSID()) && f28223c.getNetworkId() == wifiInfo2.getNetworkId()) {
+            if (wifiInfo2 != null && (wifiInfo = f14534c) != null && wifiInfo.getBSSID() != null && f14534c.getBSSID().equals(wifiInfo2.getBSSID()) && f14534c.getSSID().equals(wifiInfo2.getSSID()) && f14534c.getNetworkId() == wifiInfo2.getNetworkId()) {
                 LogUtils.i("Same Wifi, do not NetworkChanged");
                 return false;
             }
-            f28223c = wifiInfo2;
+            f14534c = wifiInfo2;
         } else {
             NetworkInfo networkInfo2 = b;
             if (networkInfo2 != null && networkInfo2.getExtraInfo() != null && networkInfo.getExtraInfo() != null && b.getExtraInfo().equals(networkInfo.getExtraInfo()) && b.getSubtype() == networkInfo.getSubtype() && b.getType() == networkInfo.getType()) {

@@ -5,29 +5,28 @@ import java.util.Collections;
 import java.util.Set;
 import java.util.WeakHashMap;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-7206380-dex2jar.jar:com/bumptech/glide/manager/ActivityFragmentLifecycle.class */
-public class ActivityFragmentLifecycle implements Lifecycle {
+class ActivityFragmentLifecycle implements Lifecycle {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Set<LifecycleListener> f21011a = Collections.newSetFromMap(new WeakHashMap());
+    private final Set<LifecycleListener> f7405a = Collections.newSetFromMap(new WeakHashMap());
     private boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f21012c;
+    private boolean f7406c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a() {
         this.b = true;
-        for (LifecycleListener lifecycleListener : Util.a(this.f21011a)) {
+        for (LifecycleListener lifecycleListener : Util.a(this.f7405a)) {
             lifecycleListener.onStart();
         }
     }
 
     @Override // com.bumptech.glide.manager.Lifecycle
     public void a(LifecycleListener lifecycleListener) {
-        this.f21011a.add(lifecycleListener);
-        if (this.f21012c) {
+        this.f7405a.add(lifecycleListener);
+        if (this.f7406c) {
             lifecycleListener.onDestroy();
         } else if (this.b) {
             lifecycleListener.onStart();
@@ -39,20 +38,20 @@ public class ActivityFragmentLifecycle implements Lifecycle {
     /* JADX INFO: Access modifiers changed from: package-private */
     public void b() {
         this.b = false;
-        for (LifecycleListener lifecycleListener : Util.a(this.f21011a)) {
+        for (LifecycleListener lifecycleListener : Util.a(this.f7405a)) {
             lifecycleListener.onStop();
         }
     }
 
     @Override // com.bumptech.glide.manager.Lifecycle
     public void b(LifecycleListener lifecycleListener) {
-        this.f21011a.remove(lifecycleListener);
+        this.f7405a.remove(lifecycleListener);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void c() {
-        this.f21012c = true;
-        for (LifecycleListener lifecycleListener : Util.a(this.f21011a)) {
+        this.f7406c = true;
+        for (LifecycleListener lifecycleListener : Util.a(this.f7405a)) {
             lifecycleListener.onDestroy();
         }
     }

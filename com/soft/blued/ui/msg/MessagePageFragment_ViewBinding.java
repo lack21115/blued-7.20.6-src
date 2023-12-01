@@ -15,12 +15,12 @@ public class MessagePageFragment_ViewBinding implements Unbinder {
 
     public MessagePageFragment_ViewBinding(MessagePageFragment messagePageFragment, View view) {
         this.b = messagePageFragment;
-        messagePageFragment.vpIndicator = (TabPageIndicatorWithDot) Utils.a(view, 2131373299, "field 'vpIndicator'", TabPageIndicatorWithDot.class);
+        messagePageFragment.vpIndicator = (TabPageIndicatorWithDot) Utils.a(view, R.id.vp_indicator, "field 'vpIndicator'", TabPageIndicatorWithDot.class);
         messagePageFragment.cttLeft = (ImageView) Utils.a(view, 2131363120, "field 'cttLeft'", ImageView.class);
         messagePageFragment.cttRight = (ImageView) Utils.a(view, 2131363126, "field 'cttRight'", ImageView.class);
         messagePageFragment.mainMsgViewpager = (CustomViewPager) Utils.a(view, R.id.main_msg_viewpager, "field 'mainMsgViewpager'", CustomViewPager.class);
         messagePageFragment.findBadgeContainer = (QBadgeContainer) Utils.a(view, R.id.find_badge_container, "field 'findBadgeContainer'", QBadgeContainer.class);
-        messagePageFragment.title = Utils.a(view, 2131370749, "field 'title'");
+        messagePageFragment.title = Utils.a(view, R.id.top_title, "field 'title'");
     }
 
     @Override // butterknife.Unbinder

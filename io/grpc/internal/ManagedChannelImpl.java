@@ -1,8 +1,5 @@
 package io.grpc.internal;
 
-import android.net.wifi.WifiManager;
-import android.provider.ContactsContract;
-import androidx.constraintlayout.core.motion.utils.TypedValues;
 import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
@@ -10,7 +7,6 @@ import com.google.common.base.Stopwatch;
 import com.google.common.base.Supplier;
 import com.google.common.util.concurrent.ListenableFuture;
 import com.google.common.util.concurrent.SettableFuture;
-import com.opos.process.bridge.provider.ProcessBridgeProvider;
 import io.grpc.Attributes;
 import io.grpc.CallOptions;
 import io.grpc.Channel;
@@ -142,7 +138,6 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
     static final Status SUBCHANNEL_SHUTDOWN_STATUS = Status.UNAVAILABLE.withDescription("Subchannel shutdown invoked");
     private static final ManagedChannelServiceConfig EMPTY_SERVICE_CONFIG = ManagedChannelServiceConfig.empty();
     private static final InternalConfigSelector INITIAL_PENDING_SELECTOR = new InternalConfigSelector() { // from class: io.grpc.internal.ManagedChannelImpl.1
-        @Override // io.grpc.InternalConfigSelector
         public InternalConfigSelector.Result selectConfig(LoadBalancer.PickSubchannelArgs pickSubchannelArgs) {
             throw new IllegalStateException("Resolution is pending");
         }
@@ -365,7 +360,7 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
                 this.defaultPort = -1;
             }
 
-            @Override // io.grpc.internal.AbstractManagedChannelImplBuilder, io.grpc.ManagedChannelBuilder
+            @Override // io.grpc.internal.AbstractManagedChannelImplBuilder
             public ManagedChannel build() {
                 return new ManagedChannelImpl(this, ManagedChannelImpl.this.transportFactory, ManagedChannelImpl.this.backoffPolicyProvider, ManagedChannelImpl.this.balancerRpcExecutorPool, ManagedChannelImpl.this.stopwatchSupplier, Collections.emptyList(), ManagedChannelImpl.this.timeProvider);
             }
@@ -389,7 +384,6 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
             return new SubchannelImpl(createSubchannelArgs, this);
         }
 
-        @Override // io.grpc.LoadBalancer.Helper
         public ManagedChannel createOobChannel(EquivalentAddressGroup equivalentAddressGroup, String str) {
             Preconditions.checkState(!ManagedChannelImpl.this.terminated, "Channel is terminated");
             long currentTimeNanos = ManagedChannelImpl.this.timeProvider.currentTimeNanos();
@@ -435,7 +429,6 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
             return oobChannel;
         }
 
-        @Override // io.grpc.LoadBalancer.Helper
         public ManagedChannelBuilder<?> createResolvingOobChannelBuilder(String str) {
             Preconditions.checkState(!ManagedChannelImpl.this.terminated, "Channel is terminated");
             C1ResolvingOobChannelBuilder c1ResolvingOobChannelBuilder = new C1ResolvingOobChannelBuilder(str);
@@ -450,27 +443,24 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
             return c1ResolvingOobChannelBuilder;
         }
 
-        @Override // io.grpc.LoadBalancer.Helper
         @Deprecated
         public /* bridge */ /* synthetic */ LoadBalancer.Subchannel createSubchannel(List list, Attributes attributes) {
-            return createSubchannel((List<EquivalentAddressGroup>) list, attributes);
+            return m11431createSubchannel((List<EquivalentAddressGroup>) list, attributes);
         }
 
-        @Override // io.grpc.LoadBalancer.Helper
         public AbstractSubchannel createSubchannel(LoadBalancer.CreateSubchannelArgs createSubchannelArgs) {
             ManagedChannelImpl.this.syncContext.throwIfNotInThisSynchronizationContext();
             return createSubchannelInternal(createSubchannelArgs);
         }
 
-        @Override // io.grpc.LoadBalancer.Helper
         @Deprecated
-        public AbstractSubchannel createSubchannel(List<EquivalentAddressGroup> list, Attributes attributes) {
+        /* renamed from: createSubchannel  reason: collision with other method in class */
+        public AbstractSubchannel m11431createSubchannel(List<EquivalentAddressGroup> list, Attributes attributes) {
             ManagedChannelImpl.this.logWarningIfNotInSyncContext("createSubchannel()");
             Preconditions.checkNotNull(list, "addressGroups");
             Preconditions.checkNotNull(attributes, "attrs");
             final SubchannelImpl createSubchannelInternal = createSubchannelInternal(LoadBalancer.CreateSubchannelArgs.newBuilder().setAddresses(list).setAttributes(attributes).build());
             createSubchannelInternal.internalStart(new LoadBalancer.SubchannelStateListener() { // from class: io.grpc.internal.ManagedChannelImpl.LbHelperImpl.1
-                @Override // io.grpc.LoadBalancer.SubchannelStateListener
                 public void onSubchannelState(ConnectivityStateInfo connectivityStateInfo) {
                     LbHelperImpl lbHelperImpl = LbHelperImpl.this;
                     if (lbHelperImpl != ManagedChannelImpl.this.lbHelper) {
@@ -482,43 +472,35 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
             return createSubchannelInternal;
         }
 
-        @Override // io.grpc.LoadBalancer.Helper
         public String getAuthority() {
             return ManagedChannelImpl.this.authority();
         }
 
-        @Override // io.grpc.LoadBalancer.Helper
         public ChannelLogger getChannelLogger() {
             return ManagedChannelImpl.this.channelLogger;
         }
 
-        @Override // io.grpc.LoadBalancer.Helper
         public NameResolver.Args getNameResolverArgs() {
             return ManagedChannelImpl.this.nameResolverArgs;
         }
 
-        @Override // io.grpc.LoadBalancer.Helper
         @Deprecated
         public NameResolver.Factory getNameResolverFactory() {
             return ManagedChannelImpl.this.nameResolverFactory;
         }
 
-        @Override // io.grpc.LoadBalancer.Helper
         public NameResolverRegistry getNameResolverRegistry() {
             return ManagedChannelImpl.this.nameResolverRegistry;
         }
 
-        @Override // io.grpc.LoadBalancer.Helper
         public ScheduledExecutorService getScheduledExecutorService() {
             return ManagedChannelImpl.this.scheduledExecutor;
         }
 
-        @Override // io.grpc.LoadBalancer.Helper
         public SynchronizationContext getSynchronizationContext() {
             return ManagedChannelImpl.this.syncContext;
         }
 
-        @Override // io.grpc.LoadBalancer.Helper
         public void refreshNameResolution() {
             ManagedChannelImpl.this.logWarningIfNotInSyncContext("refreshNameResolution()");
             ManagedChannelImpl.this.syncContext.execute(new Runnable() { // from class: io.grpc.internal.ManagedChannelImpl.LbHelperImpl.1LoadBalancerRefreshNameResolution
@@ -529,9 +511,8 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
             });
         }
 
-        @Override // io.grpc.LoadBalancer.Helper
         public void updateBalancingState(final ConnectivityState connectivityState, final LoadBalancer.SubchannelPicker subchannelPicker) {
-            Preconditions.checkNotNull(connectivityState, WifiManager.EXTRA_NEW_STATE);
+            Preconditions.checkNotNull(connectivityState, "newState");
             Preconditions.checkNotNull(subchannelPicker, "newPicker");
             ManagedChannelImpl.this.logWarningIfNotInSyncContext("updateBalancingState()");
             ManagedChannelImpl.this.syncContext.execute(new Runnable() { // from class: io.grpc.internal.ManagedChannelImpl.LbHelperImpl.1UpdateBalancingState
@@ -543,20 +524,18 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
                     }
                     ManagedChannelImpl.this.updateSubchannelPicker(subchannelPicker);
                     if (connectivityState != ConnectivityState.SHUTDOWN) {
-                        ManagedChannelImpl.this.channelLogger.log(ChannelLogger.ChannelLogLevel.INFO, "Entering {0} state with picker: {1}", connectivityState, subchannelPicker);
+                        ManagedChannelImpl.this.channelLogger.log(ChannelLogger.ChannelLogLevel.INFO, "Entering {0} state with picker: {1}", new Object[]{connectivityState, subchannelPicker});
                         ManagedChannelImpl.this.channelStateManager.gotoState(connectivityState);
                     }
                 }
             });
         }
 
-        @Override // io.grpc.LoadBalancer.Helper
         public void updateOobChannelAddresses(ManagedChannel managedChannel, EquivalentAddressGroup equivalentAddressGroup) {
             Preconditions.checkArgument(managedChannel instanceof OobChannel, "channel must have been returned from createOobChannel");
             ((OobChannel) managedChannel).updateAddresses(equivalentAddressGroup);
         }
 
-        @Override // io.grpc.LoadBalancer.Helper
         @Deprecated
         public void updateSubchannelAddresses(LoadBalancer.Subchannel subchannel, List<EquivalentAddressGroup> list) {
             Preconditions.checkArgument(subchannel instanceof SubchannelImpl, "subchannel must have been returned from createSubchannel");
@@ -594,7 +573,7 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
                 drainPendingCalls();
             }
             if (ManagedChannelImpl.this.lastResolutionState != ResolutionState.ERROR) {
-                ManagedChannelImpl.this.channelLogger.log(ChannelLogger.ChannelLogLevel.WARNING, "Failed to resolve name: {0}", status);
+                ManagedChannelImpl.this.channelLogger.log(ChannelLogger.ChannelLogLevel.WARNING, "Failed to resolve name: {0}", new Object[]{status});
                 ManagedChannelImpl.this.lastResolutionState = ResolutionState.ERROR;
             }
             if (this.helper != ManagedChannelImpl.this.lbHelper) {
@@ -611,13 +590,12 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
                     managedChannelImpl.nameResolverBackoffPolicy = managedChannelImpl.backoffPolicyProvider.get();
                 }
                 long nextBackoffNanos = ManagedChannelImpl.this.nameResolverBackoffPolicy.nextBackoffNanos();
-                ManagedChannelImpl.this.channelLogger.log(ChannelLogger.ChannelLogLevel.DEBUG, "Scheduling DNS resolution backoff for {0} ns", Long.valueOf(nextBackoffNanos));
+                ManagedChannelImpl.this.channelLogger.log(ChannelLogger.ChannelLogLevel.DEBUG, "Scheduling DNS resolution backoff for {0} ns", new Object[]{Long.valueOf(nextBackoffNanos)});
                 ManagedChannelImpl managedChannelImpl2 = ManagedChannelImpl.this;
                 managedChannelImpl2.scheduledNameResolverRefresh = managedChannelImpl2.syncContext.schedule(new DelayedNameResolverRefresh(), nextBackoffNanos, TimeUnit.NANOSECONDS, ManagedChannelImpl.this.transportFactory.getScheduledExecutorService());
             }
         }
 
-        @Override // io.grpc.NameResolver.Listener2, io.grpc.NameResolver.Listener
         public void onError(final Status status) {
             Preconditions.checkArgument(!status.isOk(), "the error status must not be OK");
             ManagedChannelImpl.this.syncContext.execute(new Runnable() { // from class: io.grpc.internal.ManagedChannelImpl.NameResolverListener.1NameResolverErrorHandler
@@ -628,15 +606,14 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
             });
         }
 
-        @Override // io.grpc.NameResolver.Listener2
         public void onResult(final NameResolver.ResolutionResult resolutionResult) {
             ManagedChannelImpl.this.syncContext.execute(new Runnable() { // from class: io.grpc.internal.ManagedChannelImpl.NameResolverListener.1NamesResolved
                 @Override // java.lang.Runnable
                 public void run() {
-                    List<EquivalentAddressGroup> addresses = resolutionResult.getAddresses();
-                    ManagedChannelImpl.this.channelLogger.log(ChannelLogger.ChannelLogLevel.DEBUG, "Resolved address: {0}, config={1}", addresses, resolutionResult.getAttributes());
+                    List addresses = resolutionResult.getAddresses();
+                    ManagedChannelImpl.this.channelLogger.log(ChannelLogger.ChannelLogLevel.DEBUG, "Resolved address: {0}, config={1}", new Object[]{addresses, resolutionResult.getAttributes()});
                     if (ManagedChannelImpl.this.lastResolutionState != ResolutionState.SUCCESS) {
-                        ManagedChannelImpl.this.channelLogger.log(ChannelLogger.ChannelLogLevel.INFO, "Address resolved: {0}", addresses);
+                        ManagedChannelImpl.this.channelLogger.log(ChannelLogger.ChannelLogLevel.INFO, "Address resolved: {0}", new Object[]{addresses});
                         ManagedChannelImpl.this.lastResolutionState = ResolutionState.SUCCESS;
                     }
                     ManagedChannelImpl.this.nameResolverBackoffPolicy = null;
@@ -662,7 +639,7 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
                             managedChannelServiceConfig = ManagedChannelImpl.this.lastServiceConfig;
                         }
                         if (!managedChannelServiceConfig.equals(ManagedChannelImpl.this.lastServiceConfig)) {
-                            ManagedChannelImpl.this.channelLogger.log(ChannelLogger.ChannelLogLevel.INFO, "Service config changed{0}", managedChannelServiceConfig == ManagedChannelImpl.EMPTY_SERVICE_CONFIG ? " to empty" : "");
+                            ManagedChannelImpl.this.channelLogger.log(ChannelLogger.ChannelLogLevel.INFO, "Service config changed{0}", new Object[]{managedChannelServiceConfig == ManagedChannelImpl.EMPTY_SERVICE_CONFIG ? " to empty" : ""});
                             ManagedChannelImpl.this.lastServiceConfig = managedChannelServiceConfig;
                         }
                         try {
@@ -799,7 +776,7 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
         }
 
         private RealChannel(String str) {
-            this.authority = (String) Preconditions.checkNotNull(str, ContactsContract.Directory.DIRECTORY_AUTHORITY);
+            this.authority = (String) Preconditions.checkNotNull(str, "authority");
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -807,12 +784,10 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
             return new ClientCallImpl(methodDescriptor, ManagedChannelImpl.this.getCallExecutor(callOptions), callOptions, ManagedChannelImpl.this.transportProvider, ManagedChannelImpl.this.terminated ? null : ManagedChannelImpl.this.transportFactory.getScheduledExecutorService(), ManagedChannelImpl.this.channelCallTracer, (InternalConfigSelector) ManagedChannelImpl.this.configSelector.get()).setFullStreamDecompression(ManagedChannelImpl.this.fullStreamDecompression).setDecompressorRegistry(ManagedChannelImpl.this.decompressorRegistry).setCompressorRegistry(ManagedChannelImpl.this.compressorRegistry);
         }
 
-        @Override // io.grpc.Channel
         public String authority() {
             return this.authority;
         }
 
-        @Override // io.grpc.Channel
         public <ReqT, RespT> ClientCall<ReqT, RespT> newCall(MethodDescriptor<ReqT, RespT> methodDescriptor, CallOptions callOptions) {
             return newClientCall(methodDescriptor, callOptions);
         }
@@ -936,7 +911,6 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
             this.channelLogger = (ChannelLogger) Preconditions.checkNotNull(channelLogger, "channelLogger");
         }
 
-        @Override // io.grpc.NameResolver.ServiceConfigParser
         public NameResolver.ConfigOrError parseServiceConfig(Map<String, ?> map) {
             Object config;
             try {
@@ -970,7 +944,7 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
         final ChannelTracer subchannelTracer;
 
         SubchannelImpl(LoadBalancer.CreateSubchannelArgs createSubchannelArgs, LbHelperImpl lbHelperImpl) {
-            this.args = (LoadBalancer.CreateSubchannelArgs) Preconditions.checkNotNull(createSubchannelArgs, ProcessBridgeProvider.KEY_ARGS);
+            this.args = (LoadBalancer.CreateSubchannelArgs) Preconditions.checkNotNull(createSubchannelArgs, "args");
             this.helper = (LbHelperImpl) Preconditions.checkNotNull(lbHelperImpl, "helper");
             InternalLogId allocate = InternalLogId.allocate("Subchannel", ManagedChannelImpl.this.authority());
             this.subchannelLogId = allocate;
@@ -1005,7 +979,7 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
                     public void run() {
                         SubchannelImpl.this.subchannel.shutdown(ManagedChannelImpl.SUBCHANNEL_SHUTDOWN_STATUS);
                     }
-                }), 5L, TimeUnit.SECONDS, ManagedChannelImpl.this.transportFactory.getScheduledExecutorService());
+                }), (long) ManagedChannelImpl.SUBCHANNEL_SHUTDOWN_DELAY_SECONDS, TimeUnit.SECONDS, ManagedChannelImpl.this.transportFactory.getScheduledExecutorService());
             }
         }
 
@@ -1060,25 +1034,21 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
             });
         }
 
-        @Override // io.grpc.LoadBalancer.Subchannel
         public Channel asChannel() {
             Preconditions.checkState(this.started, "not started");
             return new SubchannelChannel(this.subchannel, ManagedChannelImpl.this.balancerRpcExecutorHolder.getExecutor(), ManagedChannelImpl.this.transportFactory.getScheduledExecutorService(), ManagedChannelImpl.this.callTracerFactory.create(), new AtomicReference(null));
         }
 
-        @Override // io.grpc.LoadBalancer.Subchannel
         public List<EquivalentAddressGroup> getAllAddresses() {
             ManagedChannelImpl.this.logWarningIfNotInSyncContext("Subchannel.getAllAddresses()");
             Preconditions.checkState(this.started, "not started");
             return this.subchannel.getAddressGroups();
         }
 
-        @Override // io.grpc.LoadBalancer.Subchannel
         public Attributes getAttributes() {
             return this.args.getAttributes();
         }
 
-        @Override // io.grpc.LoadBalancer.Subchannel
         public ChannelLogger getChannelLogger() {
             return this.subchannelLogger;
         }
@@ -1089,20 +1059,17 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
             return this.subchannel;
         }
 
-        @Override // io.grpc.LoadBalancer.Subchannel
         public Object getInternalSubchannel() {
             Preconditions.checkState(this.started, "Subchannel is not started");
             return this.subchannel;
         }
 
-        @Override // io.grpc.LoadBalancer.Subchannel
         public void requestConnection() {
             ManagedChannelImpl.this.logWarningIfNotInSyncContext("Subchannel.requestConnection()");
             Preconditions.checkState(this.started, "not started");
             this.subchannel.obtainActiveTransport();
         }
 
-        @Override // io.grpc.LoadBalancer.Subchannel
         public void shutdown() {
             ManagedChannelImpl.this.logWarningIfNotInSyncContext("Subchannel.shutdown()");
             ManagedChannelImpl.this.syncContext.execute(new Runnable() { // from class: io.grpc.internal.ManagedChannelImpl.SubchannelImpl.3
@@ -1113,7 +1080,6 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
             });
         }
 
-        @Override // io.grpc.LoadBalancer.Subchannel
         public void start(LoadBalancer.SubchannelStateListener subchannelStateListener) {
             ManagedChannelImpl.this.syncContext.throwIfNotInThisSynchronizationContext();
             internalStart(subchannelStateListener);
@@ -1123,7 +1089,6 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
             return this.subchannelLogId.toString();
         }
 
-        @Override // io.grpc.LoadBalancer.Subchannel
         public void updateAddresses(List<EquivalentAddressGroup> list) {
             ManagedChannelImpl.this.syncContext.throwIfNotInThisSynchronizationContext();
             this.subchannel.updateAddresses(list);
@@ -1198,7 +1163,7 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
     /* JADX INFO: Access modifiers changed from: package-private */
     public ManagedChannelImpl(AbstractManagedChannelImplBuilder<?> abstractManagedChannelImplBuilder, ClientTransportFactory clientTransportFactory, BackoffPolicy.Provider provider, ObjectPool<? extends Executor> objectPool, Supplier<Stopwatch> supplier, List<ClientInterceptor> list, final TimeProvider timeProvider) {
         this.lastServiceConfig = EMPTY_SERVICE_CONFIG;
-        String str = (String) Preconditions.checkNotNull(abstractManagedChannelImplBuilder.target, TypedValues.AttributesType.S_TARGET);
+        String str = (String) Preconditions.checkNotNull(abstractManagedChannelImplBuilder.target, "target");
         this.target = str;
         this.logId = InternalLogId.allocate("Channel", str);
         this.timeProvider = (TimeProvider) Preconditions.checkNotNull(timeProvider, "timeProvider");
@@ -1248,7 +1213,7 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
             this.defaultServiceConfig = null;
         }
         this.lookUpServiceConfig = abstractManagedChannelImplBuilder.lookUpServiceConfig;
-        Channel intercept = ClientInterceptors.intercept(new RealChannel(this.nameResolver.getServiceAuthority()), this.serviceConfigInterceptor);
+        Channel intercept = ClientInterceptors.intercept(new RealChannel(this.nameResolver.getServiceAuthority()), new ClientInterceptor[]{this.serviceConfigInterceptor});
         this.interceptorChannel = ClientInterceptors.intercept(abstractManagedChannelImplBuilder.binlog != null ? abstractManagedChannelImplBuilder.binlog.wrapChannel(intercept) : intercept, list);
         this.stopwatchSupplier = (Supplier) Preconditions.checkNotNull(supplier, "stopwatchSupplier");
         if (abstractManagedChannelImplBuilder.idleTimeoutMillis == -1) {
@@ -1257,7 +1222,7 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
             Preconditions.checkArgument(abstractManagedChannelImplBuilder.idleTimeoutMillis >= AbstractManagedChannelImplBuilder.IDLE_MODE_MIN_TIMEOUT_MILLIS, "invalid idleTimeoutMillis %s", abstractManagedChannelImplBuilder.idleTimeoutMillis);
             this.idleTimeoutMillis = abstractManagedChannelImplBuilder.idleTimeoutMillis;
         }
-        this.idleTimer = new Rescheduler(new IdleModeTimer(), this.syncContext, this.transportFactory.getScheduledExecutorService(), supplier.get());
+        this.idleTimer = new Rescheduler(new IdleModeTimer(), this.syncContext, this.transportFactory.getScheduledExecutorService(), (Stopwatch) supplier.get());
         this.fullStreamDecompression = abstractManagedChannelImplBuilder.fullStreamDecompression;
         this.decompressorRegistry = (DecompressorRegistry) Preconditions.checkNotNull(abstractManagedChannelImplBuilder.decompressorRegistry, "decompressorRegistry");
         this.compressorRegistry = (CompressorRegistry) Preconditions.checkNotNull(abstractManagedChannelImplBuilder.compressorRegistry, "compressorRegistry");
@@ -1455,17 +1420,14 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
         this.delayedTransport.reprocess(subchannelPicker);
     }
 
-    @Override // io.grpc.Channel
     public String authority() {
         return this.interceptorChannel.authority();
     }
 
-    @Override // io.grpc.ManagedChannel
     public boolean awaitTermination(long j, TimeUnit timeUnit) throws InterruptedException {
         return this.terminatedLatch.await(j, timeUnit);
     }
 
-    @Override // io.grpc.ManagedChannel
     public void enterIdle() {
         this.syncContext.execute(new Runnable() { // from class: io.grpc.internal.ManagedChannelImpl.1PrepareToLoseNetworkRunnable
             @Override // java.lang.Runnable
@@ -1496,7 +1458,7 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
         LbHelperImpl lbHelperImpl = new LbHelperImpl();
         lbHelperImpl.lb = this.loadBalancerFactory.newLoadBalancer(lbHelperImpl);
         this.lbHelper = lbHelperImpl;
-        this.nameResolver.start((NameResolver.Listener2) new NameResolverListener(lbHelperImpl, this.nameResolver));
+        this.nameResolver.start(new NameResolverListener(lbHelperImpl, this.nameResolver));
         this.nameResolverStarted = true;
     }
 
@@ -1504,12 +1466,10 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
         return this.configSelector.get();
     }
 
-    @Override // io.grpc.InternalWithLogId
     public InternalLogId getLogId() {
         return this.logId;
     }
 
-    @Override // io.grpc.ManagedChannel
     public ConnectivityState getState(boolean z) {
         ConnectivityState state = this.channelStateManager.getState();
         if (z && state == ConnectivityState.IDLE) {
@@ -1529,7 +1489,6 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
         return state;
     }
 
-    @Override // io.grpc.InternalInstrumented
     public ListenableFuture<InternalChannelz.ChannelStats> getStats() {
         final SettableFuture create = SettableFuture.create();
         this.syncContext.execute(new Runnable() { // from class: io.grpc.internal.ManagedChannelImpl.1StatsFetcher
@@ -1553,22 +1512,18 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
         return this.panicMode;
     }
 
-    @Override // io.grpc.ManagedChannel
     public boolean isShutdown() {
         return this.shutdown.get();
     }
 
-    @Override // io.grpc.ManagedChannel
     public boolean isTerminated() {
         return this.terminated;
     }
 
-    @Override // io.grpc.Channel
     public <ReqT, RespT> ClientCall<ReqT, RespT> newCall(MethodDescriptor<ReqT, RespT> methodDescriptor, CallOptions callOptions) {
         return this.interceptorChannel.newCall(methodDescriptor, callOptions);
     }
 
-    @Override // io.grpc.ManagedChannel
     public void notifyWhenStateChanged(final ConnectivityState connectivityState, final Runnable runnable) {
         this.syncContext.execute(new Runnable() { // from class: io.grpc.internal.ManagedChannelImpl.1NotifyStateChanged
             @Override // java.lang.Runnable
@@ -1592,20 +1547,18 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
                 this.panicPickResult = LoadBalancer.PickResult.withDrop(Status.INTERNAL.withDescription("Panic! This is a bug!").withCause(th));
             }
 
-            @Override // io.grpc.LoadBalancer.SubchannelPicker
             public LoadBalancer.PickResult pickSubchannel(LoadBalancer.PickSubchannelArgs pickSubchannelArgs) {
                 return this.panicPickResult;
             }
 
             public String toString() {
-                return MoreObjects.toStringHelper((Class<?>) C1PanicSubchannelPicker.class).add("panicPickResult", this.panicPickResult).toString();
+                return MoreObjects.toStringHelper(C1PanicSubchannelPicker.class).add("panicPickResult", this.panicPickResult).toString();
             }
         });
         this.channelLogger.log(ChannelLogger.ChannelLogLevel.ERROR, "PANIC! Entering TRANSIENT_FAILURE");
         this.channelStateManager.gotoState(ConnectivityState.TRANSIENT_FAILURE);
     }
 
-    @Override // io.grpc.ManagedChannel
     public void resetConnectBackoff() {
         this.syncContext.execute(new Runnable() { // from class: io.grpc.internal.ManagedChannelImpl.1ResetConnectBackoff
             @Override // java.lang.Runnable
@@ -1627,7 +1580,6 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
         });
     }
 
-    @Override // io.grpc.ManagedChannel
     public ManagedChannelImpl shutdown() {
         this.channelLogger.log(ChannelLogger.ChannelLogLevel.DEBUG, "shutdown() called");
         if (this.shutdown.compareAndSet(false, true)) {
@@ -1650,7 +1602,6 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
         return this;
     }
 
-    @Override // io.grpc.ManagedChannel
     public ManagedChannelImpl shutdownNow() {
         this.channelLogger.log(ChannelLogger.ChannelLogLevel.DEBUG, "shutdownNow() called");
         shutdown();
@@ -1669,6 +1620,6 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
     }
 
     public String toString() {
-        return MoreObjects.toStringHelper(this).add("logId", this.logId.getId()).add(TypedValues.AttributesType.S_TARGET, this.target).toString();
+        return MoreObjects.toStringHelper(this).add("logId", this.logId.getId()).add("target", this.target).toString();
     }
 }

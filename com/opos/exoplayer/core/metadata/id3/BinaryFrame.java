@@ -22,16 +22,16 @@ public final class BinaryFrame extends Id3Frame {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    public final byte[] f25526a;
+    public final byte[] f11838a;
 
     BinaryFrame(Parcel parcel) {
         super(parcel.readString());
-        this.f25526a = parcel.createByteArray();
+        this.f11838a = parcel.createByteArray();
     }
 
     public BinaryFrame(String str, byte[] bArr) {
         super(str);
-        this.f25526a = bArr;
+        this.f11838a = bArr;
     }
 
     public boolean equals(Object obj) {
@@ -45,7 +45,7 @@ public final class BinaryFrame extends Id3Frame {
                 BinaryFrame binaryFrame = (BinaryFrame) obj;
                 z = false;
                 if (this.f.equals(binaryFrame.f)) {
-                    if (!Arrays.equals(this.f25526a, binaryFrame.f25526a)) {
+                    if (!Arrays.equals(this.f11838a, binaryFrame.f11838a)) {
                         return false;
                     }
                 }
@@ -57,12 +57,12 @@ public final class BinaryFrame extends Id3Frame {
     }
 
     public int hashCode() {
-        return ((this.f.hashCode() + LiveProtos.Event.LIVE_END_PAGE_CLOSE_CLICK_VALUE) * 31) + Arrays.hashCode(this.f25526a);
+        return ((this.f.hashCode() + LiveProtos.Event.LIVE_END_PAGE_CLOSE_CLICK_VALUE) * 31) + Arrays.hashCode(this.f11838a);
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeString(this.f);
-        parcel.writeByteArray(this.f25526a);
+        parcel.writeByteArray(this.f11838a);
     }
 }

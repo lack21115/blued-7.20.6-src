@@ -109,7 +109,7 @@ public class Vector<E> extends AbstractList<E> implements List<E>, RandomAccess,
         insertElementAt(e, i);
     }
 
-    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection
     public boolean add(E e) {
         synchronized (this) {
             if (this.elementCount == this.elementData.length) {
@@ -166,7 +166,7 @@ public class Vector<E> extends AbstractList<E> implements List<E>, RandomAccess,
         }
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean addAll(Collection<? extends E> collection) {
         boolean addAll;
         synchronized (this) {
@@ -196,7 +196,7 @@ public class Vector<E> extends AbstractList<E> implements List<E>, RandomAccess,
         return length;
     }
 
-    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection
     public void clear() {
         removeAllElements();
     }
@@ -214,7 +214,7 @@ public class Vector<E> extends AbstractList<E> implements List<E>, RandomAccess,
         return vector;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean contains(Object obj) {
         boolean z = false;
         if (indexOf(obj, 0) != -1) {
@@ -223,7 +223,7 @@ public class Vector<E> extends AbstractList<E> implements List<E>, RandomAccess,
         return z;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean containsAll(Collection<?> collection) {
         boolean containsAll;
         synchronized (this) {
@@ -285,7 +285,7 @@ public class Vector<E> extends AbstractList<E> implements List<E>, RandomAccess,
         }
     }
 
-    @Override // java.util.AbstractList, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractList, java.util.Collection
     public boolean equals(Object obj) {
         boolean z;
         synchronized (this) {
@@ -342,7 +342,7 @@ public class Vector<E> extends AbstractList<E> implements List<E>, RandomAccess,
         return elementAt(i);
     }
 
-    @Override // java.util.AbstractList, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractList, java.util.Collection
     public int hashCode() {
         int i;
         synchronized (this) {
@@ -407,7 +407,7 @@ public class Vector<E> extends AbstractList<E> implements List<E>, RandomAccess,
         }
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean isEmpty() {
         boolean z;
         synchronized (this) {
@@ -482,12 +482,12 @@ public class Vector<E> extends AbstractList<E> implements List<E>, RandomAccess,
         return e;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean remove(Object obj) {
         return removeElement(obj);
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean removeAll(Collection<?> collection) {
         boolean removeAll;
         synchronized (this) {
@@ -561,7 +561,7 @@ public class Vector<E> extends AbstractList<E> implements List<E>, RandomAccess,
         this.modCount++;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean retainAll(Collection<?> collection) {
         boolean retainAll;
         synchronized (this) {
@@ -605,7 +605,7 @@ public class Vector<E> extends AbstractList<E> implements List<E>, RandomAccess,
         }
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    @Override // java.util.AbstractCollection, java.util.Collection
     public int size() {
         int i;
         synchronized (this) {
@@ -623,7 +623,7 @@ public class Vector<E> extends AbstractList<E> implements List<E>, RandomAccess,
         return synchronizedRandomAccessList;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public Object[] toArray() {
         Object[] objArr;
         synchronized (this) {
@@ -635,7 +635,7 @@ public class Vector<E> extends AbstractList<E> implements List<E>, RandomAccess,
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r0v18, types: [java.lang.Object[]] */
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public <T> T[] toArray(T[] tArr) {
         T[] tArr2;
         synchronized (this) {

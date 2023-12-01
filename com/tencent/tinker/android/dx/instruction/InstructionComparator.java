@@ -3,6 +3,7 @@ package com.tencent.tinker.android.dx.instruction;
 import com.tencent.tinker.android.dex.DexException;
 import com.tencent.tinker.android.dex.util.CompareUtils;
 import com.tencent.tinker.android.dx.util.Hex;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.EOFException;
 import java.util.HashSet;
 import java.util.Set;
@@ -35,12 +36,12 @@ public abstract class InstructionComparator {
     public static class InstructionHolder {
 
         /* renamed from: a  reason: collision with root package name */
-        int f39455a;
+        int f25764a;
         int address;
         int b;
 
         /* renamed from: c  reason: collision with root package name */
-        int f39456c;
+        int f25765c;
         int d;
         int e;
         int index;
@@ -58,9 +59,9 @@ public abstract class InstructionComparator {
             this.target = 0;
             this.literal = 0L;
             this.registerCount = 0;
-            this.f39455a = 0;
+            this.f25764a = 0;
             this.b = 0;
-            this.f39456c = 0;
+            this.f25765c = 0;
             this.d = 0;
             this.e = 0;
         }
@@ -151,9 +152,9 @@ public abstract class InstructionComparator {
                     instructionHolder.target = i6;
                     instructionHolder.literal = j;
                     instructionHolder.registerCount = 5;
-                    instructionHolder.f39455a = i7;
+                    instructionHolder.f25764a = i7;
                     instructionHolder.b = i8;
-                    instructionHolder.f39456c = i9;
+                    instructionHolder.f25765c = i9;
                     instructionHolder.d = i10;
                     instructionHolder.e = i11;
                     instructionHolderArr[i2] = instructionHolder;
@@ -169,9 +170,9 @@ public abstract class InstructionComparator {
                     instructionHolder.target = i6;
                     instructionHolder.literal = j;
                     instructionHolder.registerCount = 4;
-                    instructionHolder.f39455a = i7;
+                    instructionHolder.f25764a = i7;
                     instructionHolder.b = i8;
-                    instructionHolder.f39456c = i9;
+                    instructionHolder.f25765c = i9;
                     instructionHolder.d = i10;
                     instructionHolderArr[i2] = instructionHolder;
                 }
@@ -186,7 +187,7 @@ public abstract class InstructionComparator {
                     instructionHolder.target = i6;
                     instructionHolder.literal = j;
                     instructionHolder.registerCount = 1;
-                    instructionHolder.f39455a = i7;
+                    instructionHolder.f25764a = i7;
                     instructionHolderArr[i2] = instructionHolder;
                 }
 
@@ -211,7 +212,7 @@ public abstract class InstructionComparator {
                     instructionHolder.target = i6;
                     instructionHolder.literal = j;
                     instructionHolder.registerCount = i8;
-                    instructionHolder.f39455a = i7;
+                    instructionHolder.f25764a = i7;
                     instructionHolderArr[i2] = instructionHolder;
                 }
 
@@ -236,9 +237,9 @@ public abstract class InstructionComparator {
                     instructionHolder.target = i6;
                     instructionHolder.literal = j;
                     instructionHolder.registerCount = 3;
-                    instructionHolder.f39455a = i7;
+                    instructionHolder.f25764a = i7;
                     instructionHolder.b = i8;
-                    instructionHolder.f39456c = i9;
+                    instructionHolder.f25765c = i9;
                     instructionHolderArr[i2] = instructionHolder;
                 }
 
@@ -252,7 +253,7 @@ public abstract class InstructionComparator {
                     instructionHolder.target = i6;
                     instructionHolder.literal = j;
                     instructionHolder.registerCount = 2;
-                    instructionHolder.f39455a = i7;
+                    instructionHolder.f25764a = i7;
                     instructionHolder.b = i8;
                     instructionHolderArr[i2] = instructionHolder;
                 }
@@ -441,7 +442,7 @@ public abstract class InstructionComparator {
                                         }
                                         break;
                                     default:
-                                        return instructionHolder.literal == instructionHolder2.literal && instructionHolder.registerCount == instructionHolder2.registerCount && instructionHolder.f39455a == instructionHolder2.f39455a && instructionHolder.b == instructionHolder2.b && instructionHolder.f39456c == instructionHolder2.f39456c && instructionHolder.d == instructionHolder2.d && instructionHolder.e == instructionHolder2.e;
+                                        return instructionHolder.literal == instructionHolder2.literal && instructionHolder.registerCount == instructionHolder2.registerCount && instructionHolder.f25764a == instructionHolder2.f25764a && instructionHolder.b == instructionHolder2.b && instructionHolder.f25765c == instructionHolder2.f25765c && instructionHolder.d == instructionHolder2.d && instructionHolder.e == instructionHolder2.e;
                                 }
                             }
                         }
@@ -450,7 +451,7 @@ public abstract class InstructionComparator {
             }
             return compareIndex(i, instructionHolder.index, instructionHolder2.index);
         }
-        if (this.visitedInsnAddrPairs.add(instructionHolder.address + "-" + instructionHolder2.address)) {
+        if (this.visitedInsnAddrPairs.add(instructionHolder.address + Constants.ACCEPT_TIME_SEPARATOR_SERVER + instructionHolder2.address)) {
             return isSameInstruction(instructionHolder.target, instructionHolder2.target);
         }
         return true;

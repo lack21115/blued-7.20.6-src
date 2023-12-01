@@ -59,6 +59,7 @@ import com.blued.android.module.yy_china.view.YYBaseUserHeadView;
 import com.blued.android.module.yy_china.view.YYMemberRobView;
 import com.blued.das.client.chatroom.ChatRoomProtos;
 import com.bumptech.glide.request.target.SimpleTarget;
+import com.bumptech.glide.request.target.Target;
 import com.bumptech.glide.request.transition.Transition;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.jeremyliao.liveeventbus.LiveEventBus;
@@ -79,26 +80,18 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/adapter/YYRobMusicAdapter.class */
 public final class YYRobMusicAdapter extends BaseConnectingAdapter<YYSeatMemberModel, BaseViewHolder> implements FollowStatusObserver, SeatChangedObserver {
-
-    /* renamed from: a  reason: collision with root package name */
-    private BaseYYStudioFragment f16218a;
+    private BaseYYStudioFragment a;
     private ItemYyConnectingRobLayoutBinding b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private HashMap<Integer, YYMemberRobView> f16219c;
+    private HashMap<Integer, YYMemberRobView> c;
     private YYRoomModel d;
     private SVGAParser e;
 
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/adapter/YYRobMusicAdapter$LrcAsyncTask.class */
     final class LrcAsyncTask extends AsyncTask<Object, Object, ArrayList<LineInfo>> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ YYRobMusicAdapter f16220a;
+        final /* synthetic */ YYRobMusicAdapter a;
         private final long b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private final AbstractLrcView f16221c;
+        private final AbstractLrcView c;
         private final File d;
         private final LyricsReader e;
 
@@ -107,9 +100,9 @@ public final class YYRobMusicAdapter extends BaseConnectingAdapter<YYSeatMemberM
             Intrinsics.e(lrcView, "lrcView");
             Intrinsics.e(file, "file");
             Intrinsics.e(mLyricsReader, "mLyricsReader");
-            this.f16220a = this$0;
+            this.a = this$0;
             this.b = j;
-            this.f16221c = lrcView;
+            this.c = lrcView;
             this.d = file;
             this.e = mLyricsReader;
         }
@@ -135,7 +128,7 @@ public final class YYRobMusicAdapter extends BaseConnectingAdapter<YYSeatMemberM
         @Override // android.os.AsyncTask
         /* renamed from: a */
         public void onPostExecute(ArrayList<LineInfo> arrayList) {
-            BaseYYStudioFragment baseYYStudioFragment = this.f16220a.f16218a;
+            BaseYYStudioFragment baseYYStudioFragment = this.a.a;
             boolean z = false;
             if (baseYYStudioFragment != null && baseYYStudioFragment.isDetached()) {
                 z = true;
@@ -143,11 +136,11 @@ public final class YYRobMusicAdapter extends BaseConnectingAdapter<YYSeatMemberM
             if (z) {
                 return;
             }
-            AbstractLrcView abstractLrcView = this.f16221c;
+            AbstractLrcView abstractLrcView = this.c;
             if (abstractLrcView != null) {
                 abstractLrcView.setLyricsReader(this.e);
             }
-            AbstractLrcView abstractLrcView2 = this.f16221c;
+            AbstractLrcView abstractLrcView2 = this.c;
             if (abstractLrcView2 == null) {
                 return;
             }
@@ -161,11 +154,11 @@ public final class YYRobMusicAdapter extends BaseConnectingAdapter<YYSeatMemberM
         Intrinsics.e(context, "context");
         Intrinsics.e(fragmentActive, "fragmentActive");
         this.mContext = context;
-        this.e = SVGAParser.f15958a.b();
-        this.f16218a = fragmentActive;
+        this.e = SVGAParser.a.b();
+        this.a = fragmentActive;
         addItemType(10, R.layout.item_yy_connecting_rob_layout);
         this.d = YYRoomInfoManager.e().b();
-        this.f16219c = new HashMap<>();
+        this.c = new HashMap<>();
     }
 
     private final void a(int i, View view) {
@@ -178,7 +171,7 @@ public final class YYRobMusicAdapter extends BaseConnectingAdapter<YYSeatMemberM
                 return;
             }
             YYSeatMemberModel yYSeatMemberModel = list.get(i);
-            BaseYYStudioFragment baseYYStudioFragment = this.f16218a;
+            BaseYYStudioFragment baseYYStudioFragment = this.a;
             if (baseYYStudioFragment == null) {
                 return;
             }
@@ -187,13 +180,13 @@ public final class YYRobMusicAdapter extends BaseConnectingAdapter<YYSeatMemberM
     }
 
     private final void a(int i, YYSeatMemberModel yYSeatMemberModel) {
-        HashMap<Integer, YYMemberRobView> hashMap = this.f16219c;
+        HashMap<Integer, YYMemberRobView> hashMap = this.c;
         ActivityFragmentActive activityFragmentActive = null;
         YYMemberRobView yYMemberRobView = hashMap == null ? null : hashMap.get(Integer.valueOf(i));
         if (yYMemberRobView == null) {
             return;
         }
-        BaseYYStudioFragment baseYYStudioFragment = this.f16218a;
+        BaseYYStudioFragment baseYYStudioFragment = this.a;
         if (baseYYStudioFragment != null) {
             activityFragmentActive = baseYYStudioFragment.getFragmentActive();
         }
@@ -338,7 +331,7 @@ public final class YYRobMusicAdapter extends BaseConnectingAdapter<YYSeatMemberM
     public static final void i(YYRobMusicAdapter this$0, View view) {
         FragmentManager parentFragmentManager;
         Intrinsics.e(this$0, "this$0");
-        BaseYYStudioFragment baseYYStudioFragment = this$0.f16218a;
+        BaseYYStudioFragment baseYYStudioFragment = this$0.a;
         if (baseYYStudioFragment != null && (parentFragmentManager = baseYYStudioFragment.getParentFragmentManager()) != null) {
             new YYChorusMusicCenterDialog().show(parentFragmentManager, "show_chorus_music_center_dialog");
         }
@@ -377,7 +370,7 @@ public final class YYRobMusicAdapter extends BaseConnectingAdapter<YYSeatMemberM
         String uid;
         FragmentManager parentFragmentManager;
         Intrinsics.e(this$0, "this$0");
-        BaseYYStudioFragment baseYYStudioFragment = this$0.f16218a;
+        BaseYYStudioFragment baseYYStudioFragment = this$0.a;
         if (baseYYStudioFragment != null && (parentFragmentManager = baseYYStudioFragment.getParentFragmentManager()) != null) {
             new YYChorusGiftsDialog().show(parentFragmentManager, "show_chorus_gifts_dialog");
         }
@@ -422,7 +415,7 @@ public final class YYRobMusicAdapter extends BaseConnectingAdapter<YYSeatMemberM
     public static final void k(YYRobMusicAdapter this$0, View view) {
         AbstractBasePresenter l;
         Intrinsics.e(this$0, "this$0");
-        BaseYYStudioFragment baseYYStudioFragment = this$0.f16218a;
+        BaseYYStudioFragment baseYYStudioFragment = this$0.a;
         if (baseYYStudioFragment == null || (l = baseYYStudioFragment.l()) == null || !(l instanceof YYRobMusicPresenter)) {
             return;
         }
@@ -452,10 +445,10 @@ public final class YYRobMusicAdapter extends BaseConnectingAdapter<YYSeatMemberM
             return;
         }
         YYRoomInfoManager e = YYRoomInfoManager.e();
-        BaseYYStudioFragment baseYYStudioFragment = this$0.f16218a;
+        BaseYYStudioFragment baseYYStudioFragment = this$0.a;
         Context context = baseYYStudioFragment == null ? null : baseYYStudioFragment.b;
         String uid = yYBorImJsonBodyInfoMode.getUid();
-        BaseYYStudioFragment baseYYStudioFragment2 = this$0.f16218a;
+        BaseYYStudioFragment baseYYStudioFragment2 = this$0.a;
         e.b(context, uid, "", baseYYStudioFragment2 == null ? null : baseYYStudioFragment2.getFragmentActive());
         ItemYyConnectingRobLayoutBinding itemYyConnectingRobLayoutBinding = this$0.b;
         ShapeTextView shapeTextView = itemYyConnectingRobLayoutBinding == null ? null : itemYyConnectingRobLayoutBinding.B;
@@ -473,7 +466,7 @@ public final class YYRobMusicAdapter extends BaseConnectingAdapter<YYSeatMemberM
     public static final void m(YYRobMusicAdapter this$0, View view) {
         AbstractBasePresenter l;
         Intrinsics.e(this$0, "this$0");
-        BaseYYStudioFragment baseYYStudioFragment = this$0.f16218a;
+        BaseYYStudioFragment baseYYStudioFragment = this$0.a;
         if (baseYYStudioFragment == null || (l = baseYYStudioFragment.l()) == null || !(l instanceof YYRobMusicPresenter)) {
             return;
         }
@@ -483,7 +476,7 @@ public final class YYRobMusicAdapter extends BaseConnectingAdapter<YYSeatMemberM
     /* JADX INFO: Access modifiers changed from: private */
     public static final void n(final YYRobMusicAdapter this$0, View view) {
         Intrinsics.e(this$0, "this$0");
-        BaseYYStudioFragment baseYYStudioFragment = this$0.f16218a;
+        BaseYYStudioFragment baseYYStudioFragment = this$0.a;
         LiveAlterDialog.a(baseYYStudioFragment == null ? null : baseYYStudioFragment.b, R.layout.dialog_rob_music_close_layout, (View.OnClickListener) null, new View.OnClickListener() { // from class: com.blued.android.module.yy_china.adapter.-$$Lambda$YYRobMusicAdapter$Rc-idoPfSttjxI93n-1NJL8LRuQ
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
@@ -501,7 +494,7 @@ public final class YYRobMusicAdapter extends BaseConnectingAdapter<YYSeatMemberM
     public static final void o(YYRobMusicAdapter this$0, View view) {
         FragmentManager parentFragmentManager;
         Intrinsics.e(this$0, "this$0");
-        BaseYYStudioFragment baseYYStudioFragment = this$0.f16218a;
+        BaseYYStudioFragment baseYYStudioFragment = this$0.a;
         if (baseYYStudioFragment == null || (parentFragmentManager = baseYYStudioFragment.getParentFragmentManager()) == null) {
             return;
         }
@@ -513,7 +506,7 @@ public final class YYRobMusicAdapter extends BaseConnectingAdapter<YYSeatMemberM
         BaseYYStudioFragment baseYYStudioFragment;
         AbstractBasePresenter l;
         Intrinsics.e(this$0, "this$0");
-        if (ClickUtils.a(view.getId(), 2000L) || (baseYYStudioFragment = this$0.f16218a) == null || (l = baseYYStudioFragment.l()) == null) {
+        if (ClickUtils.a(view.getId(), 2000L) || (baseYYStudioFragment = this$0.a) == null || (l = baseYYStudioFragment.l()) == null) {
             return;
         }
         if (l instanceof YYRobMusicPresenter) {
@@ -534,7 +527,7 @@ public final class YYRobMusicAdapter extends BaseConnectingAdapter<YYSeatMemberM
             k();
         }
         l();
-        BaseYYStudioFragment baseYYStudioFragment = this.f16218a;
+        BaseYYStudioFragment baseYYStudioFragment = this.a;
         if (baseYYStudioFragment == null) {
             return;
         }
@@ -573,7 +566,7 @@ public final class YYRobMusicAdapter extends BaseConnectingAdapter<YYSeatMemberM
 
     @Override // com.blued.android.module.yy_china.adapter.BaseConnectingAdapter
     public void a(int i, String str, String str2, YYImModel yYImModel) {
-        HashMap<Integer, YYMemberRobView> hashMap = this.f16219c;
+        HashMap<Integer, YYMemberRobView> hashMap = this.c;
         if (hashMap != null) {
             ActivityFragmentActive activityFragmentActive = null;
             Integer valueOf = hashMap == null ? null : Integer.valueOf(hashMap.size());
@@ -581,12 +574,12 @@ public final class YYRobMusicAdapter extends BaseConnectingAdapter<YYSeatMemberM
             if (i > valueOf.intValue()) {
                 return;
             }
-            HashMap<Integer, YYMemberRobView> hashMap2 = this.f16219c;
+            HashMap<Integer, YYMemberRobView> hashMap2 = this.c;
             YYMemberRobView yYMemberRobView = hashMap2 == null ? null : hashMap2.get(Integer.valueOf(i));
             if (yYMemberRobView == null) {
                 return;
             }
-            BaseYYStudioFragment baseYYStudioFragment = this.f16218a;
+            BaseYYStudioFragment baseYYStudioFragment = this.a;
             if (baseYYStudioFragment != null) {
                 activityFragmentActive = baseYYStudioFragment.getFragmentActive();
             }
@@ -636,11 +629,11 @@ public final class YYRobMusicAdapter extends BaseConnectingAdapter<YYSeatMemberM
                     if (i3 >= size) {
                         break;
                     } else if (TextUtils.equals(list.get(i3).getUid(), musicInfo.getUid())) {
-                        HashMap<Integer, YYMemberRobView> hashMap2 = this.f16219c;
+                        HashMap<Integer, YYMemberRobView> hashMap2 = this.c;
                         if (hashMap2 != null) {
                             i = hashMap2.size();
                         }
-                        if (i3 < i && (hashMap = this.f16219c) != null && (yYMemberRobView = hashMap.get(Integer.valueOf(i3))) != null) {
+                        if (i3 < i && (hashMap = this.c) != null && (yYMemberRobView = hashMap.get(Integer.valueOf(i3))) != null) {
                             yYMemberRobView.a(musicInfo.getAni_rob_svga());
                         }
                     } else {
@@ -663,9 +656,8 @@ public final class YYRobMusicAdapter extends BaseConnectingAdapter<YYSeatMemberM
                     return;
                 }
                 final YYRobMusicAdapter yYRobMusicAdapter = YYRobMusicAdapter.this;
-                BaseYYStudioFragment baseYYStudioFragment = yYRobMusicAdapter.f16218a;
-                ImageLoader.a(baseYYStudioFragment == null ? null : baseYYStudioFragment.getFragmentActive(), yYBorImJsonBodyInfoMode.getAvatar()).c().a(new SimpleTarget<Drawable>() { // from class: com.blued.android.module.yy_china.adapter.YYRobMusicAdapter$onRobMusicByUser$3$onComplete$1$1
-                    @Override // com.bumptech.glide.request.target.Target
+                BaseYYStudioFragment baseYYStudioFragment = yYRobMusicAdapter.a;
+                ImageLoader.a(baseYYStudioFragment == null ? null : baseYYStudioFragment.getFragmentActive(), yYBorImJsonBodyInfoMode.getAvatar()).c().a((Target) new SimpleTarget<Drawable>() { // from class: com.blued.android.module.yy_china.adapter.YYRobMusicAdapter$onRobMusicByUser$3$onComplete$1$1
                     /* renamed from: a */
                     public void onResourceReady(Drawable resource, Transition<? super Drawable> transition) {
                         Context context;
@@ -688,16 +680,16 @@ public final class YYRobMusicAdapter extends BaseConnectingAdapter<YYSeatMemberM
                         textPaint.setColor(context.getResources().getColor(R.color.white));
                         context2 = YYRobMusicAdapter.this.mContext;
                         textPaint.setTextSize(context2.getResources().getDimensionPixelOffset(R.dimen.sp_13));
-                        String a2 = Intrinsics.a("恭喜 ", (Object) yYBorImJsonBodyInfoMode.getName());
+                        String a = Intrinsics.a("恭喜 ", (Object) yYBorImJsonBodyInfoMode.getName());
                         TextPaint textPaint2 = textPaint;
-                        BaseYYStudioFragment baseYYStudioFragment2 = YYRobMusicAdapter.this.f16218a;
+                        BaseYYStudioFragment baseYYStudioFragment2 = YYRobMusicAdapter.this.a;
                         int i4 = 100;
                         if (baseYYStudioFragment2 != null && (context3 = baseYYStudioFragment2.getContext()) != null && (resources = context3.getResources()) != null) {
                             i4 = resources.getDimensionPixelOffset(R.dimen.dp_120);
                         }
-                        String a3 = YYCommonStringUtils.a(a2, textPaint2, i4);
-                        Intrinsics.c(a3, "getSubString(\"恭喜 ${it.na…                  ?: 100)");
-                        sVGADynamicEntity.a(a3, textPaint, "img_839");
+                        String a2 = YYCommonStringUtils.a(a, textPaint2, i4);
+                        Intrinsics.c(a2, "getSubString(\"恭喜 ${it.na…                  ?: 100)");
+                        sVGADynamicEntity.a(a2, textPaint, "img_839");
                         itemYyConnectingRobLayoutBinding2 = YYRobMusicAdapter.this.b;
                         SVGAImageView sVGAImageView3 = itemYyConnectingRobLayoutBinding2 == null ? null : itemYyConnectingRobLayoutBinding2.y;
                         if (sVGAImageView3 != null) {
@@ -738,14 +730,13 @@ public final class YYRobMusicAdapter extends BaseConnectingAdapter<YYSeatMemberM
         }
         int size = list.size();
         for (int i = 0; i < size; i++) {
-            if (StringUtils.a(list.get(i).getUid(), str) && (hashMap = this.f16219c) != null && (yYMemberRobView = hashMap.get(Integer.valueOf(i))) != null) {
+            if (StringUtils.a(list.get(i).getUid(), str) && (hashMap = this.c) != null && (yYMemberRobView = hashMap.get(Integer.valueOf(i))) != null) {
                 yYMemberRobView.a(getViewX_Y_W_H);
             }
         }
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(BaseViewHolder helper, YYSeatMemberModel yYSeatMemberModel) {
         ShapeTextView shapeTextView;
@@ -764,9 +755,9 @@ public final class YYRobMusicAdapter extends BaseConnectingAdapter<YYSeatMemberM
         YYMemberRobView yYMemberRobView8;
         ConstraintLayout root;
         Intrinsics.e(helper, "helper");
-        ItemYyConnectingRobLayoutBinding a2 = ItemYyConnectingRobLayoutBinding.a(helper.itemView);
-        this.b = a2;
-        if (a2 != null && (root = a2.getRoot()) != null) {
+        ItemYyConnectingRobLayoutBinding a = ItemYyConnectingRobLayoutBinding.a(helper.itemView);
+        this.b = a;
+        if (a != null && (root = a.getRoot()) != null) {
             root.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.adapter.-$$Lambda$YYRobMusicAdapter$qNJfGcIWbmchTqq6aLr0l6lvjOE
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -774,7 +765,7 @@ public final class YYRobMusicAdapter extends BaseConnectingAdapter<YYSeatMemberM
                 }
             });
         }
-        HashMap<Integer, YYMemberRobView> hashMap = this.f16219c;
+        HashMap<Integer, YYMemberRobView> hashMap = this.c;
         if (hashMap != null) {
             HashMap<Integer, YYMemberRobView> hashMap2 = hashMap;
             ItemYyConnectingRobLayoutBinding itemYyConnectingRobLayoutBinding = this.b;
@@ -887,7 +878,7 @@ public final class YYRobMusicAdapter extends BaseConnectingAdapter<YYSeatMemberM
             });
         }
         ItemYyConnectingRobLayoutBinding itemYyConnectingRobLayoutBinding19 = this.b;
-        if (itemYyConnectingRobLayoutBinding19 != null && (shapeTextView4 = itemYyConnectingRobLayoutBinding19.f16693a) != null) {
+        if (itemYyConnectingRobLayoutBinding19 != null && (shapeTextView4 = itemYyConnectingRobLayoutBinding19.a) != null) {
             shapeTextView4.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.adapter.-$$Lambda$YYRobMusicAdapter$wcXo6TOPDzlKHfdYFM26yiZVElo
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -931,41 +922,41 @@ public final class YYRobMusicAdapter extends BaseConnectingAdapter<YYSeatMemberM
         YYBorImJsonBodyInfoMode yYBorImJsonBodyInfoMode2;
         LyricsBorSingSingerView lyricsBorSingSingerView;
         YYBorImJsonBodyInfoMode yYBorImJsonBodyInfoMode3;
-        LyricsBorSingSingerView lyricsBorSingSingerView2;
-        LyricsBorSinglisView lyricsBorSinglisView2;
+        AbstractLrcView abstractLrcView;
+        AbstractLrcView abstractLrcView2;
         LyricsBorShowingView lyricsBorShowingView;
         YYBorImJsonBodyInfoMode yYBorImJsonBodyInfoMode4;
+        AbstractLrcView abstractLrcView3;
+        LyricsBorSinglisView lyricsBorSinglisView2;
         LyricsBorShowingView lyricsBorShowingView2;
-        LyricsBorSinglisView lyricsBorSinglisView3;
-        LyricsBorShowingView lyricsBorShowingView3;
-        LyricsBorSingSingerView lyricsBorSingSingerView3;
+        LyricsBorSingSingerView lyricsBorSingSingerView2;
         Intrinsics.e(lrcFile, "lrcFile");
         ItemYyConnectingRobLayoutBinding itemYyConnectingRobLayoutBinding = this.b;
-        if (itemYyConnectingRobLayoutBinding != null && (lyricsBorSingSingerView3 = itemYyConnectingRobLayoutBinding.x) != null) {
-            lyricsBorSingSingerView3.b();
+        if (itemYyConnectingRobLayoutBinding != null && (lyricsBorSingSingerView2 = itemYyConnectingRobLayoutBinding.x) != null) {
+            lyricsBorSingSingerView2.b();
         }
         ItemYyConnectingRobLayoutBinding itemYyConnectingRobLayoutBinding2 = this.b;
-        if (itemYyConnectingRobLayoutBinding2 != null && (lyricsBorShowingView3 = itemYyConnectingRobLayoutBinding2.v) != null) {
-            lyricsBorShowingView3.b();
+        if (itemYyConnectingRobLayoutBinding2 != null && (lyricsBorShowingView2 = itemYyConnectingRobLayoutBinding2.v) != null) {
+            lyricsBorShowingView2.b();
         }
         ItemYyConnectingRobLayoutBinding itemYyConnectingRobLayoutBinding3 = this.b;
-        if (itemYyConnectingRobLayoutBinding3 != null && (lyricsBorSinglisView3 = itemYyConnectingRobLayoutBinding3.w) != null) {
-            lyricsBorSinglisView3.b();
+        if (itemYyConnectingRobLayoutBinding3 != null && (lyricsBorSinglisView2 = itemYyConnectingRobLayoutBinding3.w) != null) {
+            lyricsBorSinglisView2.b();
         }
         ItemYyConnectingRobLayoutBinding itemYyConnectingRobLayoutBinding4 = this.b;
-        LyricsBorSingSingerView lyricsBorSingSingerView4 = itemYyConnectingRobLayoutBinding4 == null ? null : itemYyConnectingRobLayoutBinding4.x;
-        if (lyricsBorSingSingerView4 != null) {
-            lyricsBorSingSingerView4.setLrcStatus(0);
+        LyricsBorSingSingerView lyricsBorSingSingerView3 = itemYyConnectingRobLayoutBinding4 == null ? null : itemYyConnectingRobLayoutBinding4.x;
+        if (lyricsBorSingSingerView3 != null) {
+            lyricsBorSingSingerView3.setLrcStatus(0);
         }
         ItemYyConnectingRobLayoutBinding itemYyConnectingRobLayoutBinding5 = this.b;
-        LyricsBorShowingView lyricsBorShowingView4 = itemYyConnectingRobLayoutBinding5 == null ? null : itemYyConnectingRobLayoutBinding5.v;
-        if (lyricsBorShowingView4 != null) {
-            lyricsBorShowingView4.setLrcStatus(0);
+        LyricsBorShowingView lyricsBorShowingView3 = itemYyConnectingRobLayoutBinding5 == null ? null : itemYyConnectingRobLayoutBinding5.v;
+        if (lyricsBorShowingView3 != null) {
+            lyricsBorShowingView3.setLrcStatus(0);
         }
         ItemYyConnectingRobLayoutBinding itemYyConnectingRobLayoutBinding6 = this.b;
-        LyricsBorSinglisView lyricsBorSinglisView4 = itemYyConnectingRobLayoutBinding6 == null ? null : itemYyConnectingRobLayoutBinding6.w;
-        if (lyricsBorSinglisView4 != null) {
-            lyricsBorSinglisView4.setLrcStatus(0);
+        LyricsBorSinglisView lyricsBorSinglisView3 = itemYyConnectingRobLayoutBinding6 == null ? null : itemYyConnectingRobLayoutBinding6.w;
+        if (lyricsBorSinglisView3 != null) {
+            lyricsBorSinglisView3.setLrcStatus(0);
         }
         LyricsReader lyricsReader = new LyricsReader();
         YYRoomModel b = YYRoomInfoManager.e().b();
@@ -973,18 +964,18 @@ public final class YYRobMusicAdapter extends BaseConnectingAdapter<YYSeatMemberM
         long startTime = (b == null || (yYBorImJsonBodyInfoMode = b.robMus) == null) ? 0L : yYBorImJsonBodyInfoMode.getStartTime();
         if (z) {
             ItemYyConnectingRobLayoutBinding itemYyConnectingRobLayoutBinding7 = this.b;
-            LyricsBorSingSingerView lyricsBorSingSingerView5 = itemYyConnectingRobLayoutBinding7 == null ? null : itemYyConnectingRobLayoutBinding7.x;
-            if (lyricsBorSingSingerView5 != null) {
-                lyricsBorSingSingerView5.setLyricsReader(null);
+            LyricsBorSingSingerView lyricsBorSingSingerView4 = itemYyConnectingRobLayoutBinding7 == null ? null : itemYyConnectingRobLayoutBinding7.x;
+            if (lyricsBorSingSingerView4 != null) {
+                lyricsBorSingSingerView4.setLyricsReader((LyricsReader) null);
             }
             ItemYyConnectingRobLayoutBinding itemYyConnectingRobLayoutBinding8 = this.b;
-            LyricsBorSinglisView lyricsBorSinglisView5 = itemYyConnectingRobLayoutBinding8 == null ? null : itemYyConnectingRobLayoutBinding8.w;
-            if (lyricsBorSinglisView5 != null) {
-                lyricsBorSinglisView5.setLyricsReader(null);
+            LyricsBorSinglisView lyricsBorSinglisView4 = itemYyConnectingRobLayoutBinding8 == null ? null : itemYyConnectingRobLayoutBinding8.w;
+            if (lyricsBorSinglisView4 != null) {
+                lyricsBorSinglisView4.setLyricsReader((LyricsReader) null);
             }
             ItemYyConnectingRobLayoutBinding itemYyConnectingRobLayoutBinding9 = this.b;
-            if (itemYyConnectingRobLayoutBinding9 != null && (lyricsBorShowingView2 = itemYyConnectingRobLayoutBinding9.v) != null) {
-                new LrcAsyncTask(this, startTime, lyricsBorShowingView2, lrcFile, lyricsReader).execute(new Object[0]);
+            if (itemYyConnectingRobLayoutBinding9 != null && (abstractLrcView3 = itemYyConnectingRobLayoutBinding9.v) != null) {
+                new LrcAsyncTask(this, startTime, abstractLrcView3, lrcFile, lyricsReader).execute(new Object[0]);
             }
             ItemYyConnectingRobLayoutBinding itemYyConnectingRobLayoutBinding10 = this.b;
             if (itemYyConnectingRobLayoutBinding10 == null || (lyricsBorShowingView = itemYyConnectingRobLayoutBinding10.v) == null) {
@@ -998,17 +989,17 @@ public final class YYRobMusicAdapter extends BaseConnectingAdapter<YYSeatMemberM
             return;
         }
         ItemYyConnectingRobLayoutBinding itemYyConnectingRobLayoutBinding11 = this.b;
-        LyricsBorShowingView lyricsBorShowingView5 = itemYyConnectingRobLayoutBinding11 == null ? null : itemYyConnectingRobLayoutBinding11.v;
-        if (lyricsBorShowingView5 != null) {
-            lyricsBorShowingView5.setLyricsReader(null);
+        LyricsBorShowingView lyricsBorShowingView4 = itemYyConnectingRobLayoutBinding11 == null ? null : itemYyConnectingRobLayoutBinding11.v;
+        if (lyricsBorShowingView4 != null) {
+            lyricsBorShowingView4.setLyricsReader((LyricsReader) null);
         }
         ItemYyConnectingRobLayoutBinding itemYyConnectingRobLayoutBinding12 = this.b;
-        if (itemYyConnectingRobLayoutBinding12 != null && (lyricsBorSinglisView2 = itemYyConnectingRobLayoutBinding12.w) != null) {
-            new LrcAsyncTask(this, startTime, lyricsBorSinglisView2, lrcFile, lyricsReader).execute(new Object[0]);
+        if (itemYyConnectingRobLayoutBinding12 != null && (abstractLrcView2 = itemYyConnectingRobLayoutBinding12.w) != null) {
+            new LrcAsyncTask(this, startTime, abstractLrcView2, lrcFile, lyricsReader).execute(new Object[0]);
         }
         ItemYyConnectingRobLayoutBinding itemYyConnectingRobLayoutBinding13 = this.b;
-        if (itemYyConnectingRobLayoutBinding13 != null && (lyricsBorSingSingerView2 = itemYyConnectingRobLayoutBinding13.x) != null) {
-            new LrcAsyncTask(this, startTime, lyricsBorSingSingerView2, lrcFile, lyricsReader).execute(new Object[0]);
+        if (itemYyConnectingRobLayoutBinding13 != null && (abstractLrcView = itemYyConnectingRobLayoutBinding13.x) != null) {
+            new LrcAsyncTask(this, startTime, abstractLrcView, lrcFile, lyricsReader).execute(new Object[0]);
         }
         ItemYyConnectingRobLayoutBinding itemYyConnectingRobLayoutBinding14 = this.b;
         if (itemYyConnectingRobLayoutBinding14 != null && (lyricsBorSingSingerView = itemYyConnectingRobLayoutBinding14.x) != null) {
@@ -1077,7 +1068,7 @@ public final class YYRobMusicAdapter extends BaseConnectingAdapter<YYSeatMemberM
                 } else {
                     yYSeatMemberModel.is_open_mic = 2;
                 }
-                HashMap<Integer, YYMemberRobView> hashMap = this.f16219c;
+                HashMap<Integer, YYMemberRobView> hashMap = this.c;
                 if (hashMap != null && (yYMemberRobView = hashMap.get(Integer.valueOf(i2))) != null) {
                     yYMemberRobView.a(set, yYSeatMemberModel);
                 }
@@ -1101,7 +1092,7 @@ public final class YYRobMusicAdapter extends BaseConnectingAdapter<YYSeatMemberM
         YYRoomModel b = YYRoomInfoManager.e().b();
         if (b != null && (yYBorImJsonBodyInfoMode3 = b.robMus) != null) {
             YYBaseUserHeadView yYBaseUserHeadView = itemYyConnectingRobLayoutBinding2.i;
-            BaseYYStudioFragment baseYYStudioFragment = this.f16218a;
+            BaseYYStudioFragment baseYYStudioFragment = this.a;
             yYBaseUserHeadView.a(baseYYStudioFragment == null ? null : baseYYStudioFragment.getFragmentActive(), yYBorImJsonBodyInfoMode3.getAvatar(), "");
             itemYyConnectingRobLayoutBinding2.F.setText(yYBorImJsonBodyInfoMode3.getName());
         }
@@ -1150,7 +1141,7 @@ public final class YYRobMusicAdapter extends BaseConnectingAdapter<YYSeatMemberM
                 itemYyConnectingRobLayoutBinding2.B.setVisibility(8);
                 YYRoomModel b2 = YYRoomInfoManager.e().b();
                 String uid = (b2 == null || (yYBorImJsonBodyInfoMode = b2.robMus) == null) ? null : yYBorImJsonBodyInfoMode.getUid();
-                BaseYYStudioFragment baseYYStudioFragment2 = this.f16218a;
+                BaseYYStudioFragment baseYYStudioFragment2 = this.a;
                 final ActivityFragmentActive fragmentActive = baseYYStudioFragment2 == null ? null : baseYYStudioFragment2.getFragmentActive();
                 BluedUIHttpResponse<BluedEntityA<YYIsFollowMode>> bluedUIHttpResponse = new BluedUIHttpResponse<BluedEntityA<YYIsFollowMode>>(fragmentActive) { // from class: com.blued.android.module.yy_china.adapter.YYRobMusicAdapter$showUserRobMusicUI$1$3
                     /* JADX INFO: Access modifiers changed from: protected */
@@ -1186,7 +1177,7 @@ public final class YYRobMusicAdapter extends BaseConnectingAdapter<YYSeatMemberM
                         shapeTextView2.setVisibility(0);
                     }
                 };
-                BaseYYStudioFragment baseYYStudioFragment3 = this.f16218a;
+                BaseYYStudioFragment baseYYStudioFragment3 = this.a;
                 YYRoomHttpUtils.b(uid, (BluedUIHttpResponse) bluedUIHttpResponse, (IRequestHost) (baseYYStudioFragment3 == null ? null : baseYYStudioFragment3.getFragmentActive()));
             }
         }
@@ -1313,7 +1304,6 @@ public final class YYRobMusicAdapter extends BaseConnectingAdapter<YYSeatMemberM
         }
     }
 
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter, androidx.recyclerview.widget.RecyclerView.Adapter
     public void onAttachedToRecyclerView(RecyclerView recyclerView) {
         Intrinsics.e(recyclerView, "recyclerView");
         super.onAttachedToRecyclerView(recyclerView);
@@ -1322,7 +1312,6 @@ public final class YYRobMusicAdapter extends BaseConnectingAdapter<YYSeatMemberM
         YYObserverManager.a().a((FollowStatusObserver) this);
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     public void onDetachedFromRecyclerView(RecyclerView recyclerView) {
         Intrinsics.e(recyclerView, "recyclerView");
         super.onDetachedFromRecyclerView(recyclerView);
@@ -1336,7 +1325,6 @@ public final class YYRobMusicAdapter extends BaseConnectingAdapter<YYSeatMemberM
         yYRoomModel.clearEmojiAndSendMessage();
     }
 
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     public void setNewData(List<? extends YYSeatMemberModel> list) {
         ArrayList arrayList = new ArrayList();
         YYSeatMemberModel yYSeatMemberModel = new YYSeatMemberModel();

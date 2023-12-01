@@ -8,11 +8,11 @@ import java.util.Arrays;
 public class ChunkSeqReader implements IBytesConsumer {
 
     /* renamed from: a  reason: collision with root package name */
-    private byte[] f3617a;
+    private byte[] f3569a;
     protected final boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f3618c;
+    private int f3570c;
     private boolean d;
     private boolean e;
     private int f;
@@ -26,8 +26,8 @@ public class ChunkSeqReader implements IBytesConsumer {
     }
 
     public ChunkSeqReader(boolean z) {
-        this.f3617a = new byte[8];
-        this.f3618c = 0;
+        this.f3569a = new byte[8];
+        this.f3570c = 0;
         this.d = false;
         this.e = false;
         this.f = 0;
@@ -55,33 +55,33 @@ public class ChunkSeqReader implements IBytesConsumer {
                 this.g += a2;
                 return a2 + 0;
             }
-            int i4 = 8 - this.f3618c;
+            int i4 = 8 - this.f3570c;
             if (i4 <= i2) {
                 i2 = i4;
             }
-            System.arraycopy((Object) bArr, i, (Object) this.f3617a, this.f3618c, i2);
-            int i5 = this.f3618c + i2;
-            this.f3618c = i5;
+            System.arraycopy(bArr, i, this.f3569a, this.f3570c, i2);
+            int i5 = this.f3570c + i2;
+            this.f3570c = i5;
             int i6 = 0 + i2;
             this.g += i2;
             i3 = i6;
             if (i5 == 8) {
                 this.f++;
-                a(PngHelperInternal.c(this.f3617a, 0), ChunkHelper.a(this.f3617a, 4, 4), this.g - 8);
-                this.f3618c = 0;
+                a(PngHelperInternal.c(this.f3569a, 0), ChunkHelper.a(this.f3569a, 4, 4), this.g - 8);
+                this.f3570c = 0;
                 return i6;
             }
         } else {
-            int i7 = 8 - this.f3618c;
+            int i7 = 8 - this.f3570c;
             if (i7 <= i2) {
                 i2 = i7;
             }
-            System.arraycopy((Object) bArr, i, (Object) this.f3617a, this.f3618c, i2);
-            int i8 = this.f3618c + i2;
-            this.f3618c = i8;
+            System.arraycopy(bArr, i, this.f3569a, this.f3570c, i2);
+            int i8 = this.f3570c + i2;
+            this.f3570c = i8;
             if (i8 == 8) {
-                a(this.f3617a);
-                this.f3618c = 0;
+                a(this.f3569a);
+                this.f3570c = 0;
                 this.d = true;
             }
             i3 = 0 + i2;
@@ -131,8 +131,9 @@ public class ChunkSeqReader implements IBytesConsumer {
             this.h = b(str);
         }
         this.i = new DeflatedChunkReader(i, str, a2, j, this.h) { // from class: ar.com.hjg.pngj.ChunkSeqReader.1
+            /* JADX INFO: Access modifiers changed from: protected */
             @Override // ar.com.hjg.pngj.DeflatedChunkReader, ar.com.hjg.pngj.ChunkReader
-            protected void c() {
+            public void c() {
                 super.c();
                 ChunkSeqReader.this.a(this);
             }
@@ -142,14 +143,14 @@ public class ChunkSeqReader implements IBytesConsumer {
     /* JADX INFO: Access modifiers changed from: protected */
     public void a(ChunkReader chunkReader) {
         String e;
-        if (this.f != 1 || (e = e()) == null || e.equals(chunkReader.a().f3660c)) {
-            if (chunkReader.a().f3660c.equals(f())) {
+        if (this.f != 1 || (e = e()) == null || e.equals(chunkReader.a().f3612c)) {
+            if (chunkReader.a().f3612c.equals(f())) {
                 this.e = true;
                 return;
             }
             return;
         }
-        throw new PngjInputException("Bad first chunk: " + chunkReader.a().f3660c + " expected: " + e());
+        throw new PngjInputException("Bad first chunk: " + chunkReader.a().f3612c + " expected: " + e());
     }
 
     protected void a(byte[] bArr) {

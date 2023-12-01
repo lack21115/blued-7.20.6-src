@@ -61,7 +61,7 @@ public class SparseArray<E> implements Cloneable {
             gc();
         }
         this.mKeys = GrowingArrayUtils.append(this.mKeys, this.mSize, i);
-        this.mValues = GrowingArrayUtils.append((E[]) this.mValues, this.mSize, e);
+        this.mValues = GrowingArrayUtils.append(this.mValues, this.mSize, e);
         this.mSize++;
     }
 
@@ -82,7 +82,7 @@ public class SparseArray<E> implements Cloneable {
     }
 
     /* renamed from: clone */
-    public SparseArray<E> m1029clone() {
+    public SparseArray<E> m1025clone() {
         SparseArray<E> sparseArray = null;
         try {
             SparseArray<E> sparseArray2 = (SparseArray) super.clone();
@@ -165,7 +165,7 @@ public class SparseArray<E> implements Cloneable {
             }
         }
         this.mKeys = GrowingArrayUtils.insert(this.mKeys, this.mSize, i3, i);
-        this.mValues = GrowingArrayUtils.insert((E[]) this.mValues, this.mSize, i3, e);
+        this.mValues = GrowingArrayUtils.insert(this.mValues, this.mSize, i3, e);
         this.mSize++;
     }
 

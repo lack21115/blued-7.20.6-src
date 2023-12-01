@@ -330,7 +330,7 @@ public class PriorityBlockingQueue<E> extends AbstractQueue<E> implements Serial
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // java.util.AbstractQueue, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractQueue, java.util.AbstractCollection, java.util.Collection
     public void clear() {
         fullyLock();
         try {
@@ -354,7 +354,7 @@ public class PriorityBlockingQueue<E> extends AbstractQueue<E> implements Serial
         }
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.concurrent.BlockingQueue
     public boolean contains(Object obj) {
         if (obj == null) {
             return false;
@@ -630,7 +630,7 @@ public class PriorityBlockingQueue<E> extends AbstractQueue<E> implements Serial
         return this.capacity - this.count.get();
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.concurrent.BlockingQueue
     public boolean remove(Object obj) {
         PriorityBlockingQueue<E>.Node<E> node;
         PriorityBlockingQueue<E>.Node<E> node2;
@@ -658,7 +658,7 @@ public class PriorityBlockingQueue<E> extends AbstractQueue<E> implements Serial
         }
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    @Override // java.util.AbstractCollection, java.util.Collection
     public int size() {
         return this.count.get();
     }
@@ -688,7 +688,7 @@ public class PriorityBlockingQueue<E> extends AbstractQueue<E> implements Serial
         return opQueue;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public Object[] toArray() {
         fullyLock();
         try {
@@ -708,7 +708,7 @@ public class PriorityBlockingQueue<E> extends AbstractQueue<E> implements Serial
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r0v29, types: [java.lang.Object[]] */
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public <T> T[] toArray(T[] tArr) {
         fullyLock();
         try {

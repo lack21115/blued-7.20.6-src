@@ -22,18 +22,18 @@ public final class UrlLinkFrame extends Id3Frame {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f25537a;
+    public final String f11849a;
     public final String b;
 
     UrlLinkFrame(Parcel parcel) {
         super(parcel.readString());
-        this.f25537a = parcel.readString();
+        this.f11849a = parcel.readString();
         this.b = parcel.readString();
     }
 
     public UrlLinkFrame(String str, String str2, String str3) {
         super(str);
-        this.f25537a = str2;
+        this.f11849a = str2;
         this.b = str3;
     }
 
@@ -49,7 +49,7 @@ public final class UrlLinkFrame extends Id3Frame {
                 z = false;
                 if (this.f.equals(urlLinkFrame.f)) {
                     z = false;
-                    if (u.a(this.f25537a, urlLinkFrame.f25537a)) {
+                    if (u.a(this.f11849a, urlLinkFrame.f11849a)) {
                         if (!u.a(this.b, urlLinkFrame.b)) {
                             return false;
                         }
@@ -64,7 +64,7 @@ public final class UrlLinkFrame extends Id3Frame {
 
     public int hashCode() {
         int hashCode = this.f.hashCode();
-        String str = this.f25537a;
+        String str = this.f11849a;
         int i = 0;
         int hashCode2 = str != null ? str.hashCode() : 0;
         String str2 = this.b;
@@ -77,7 +77,7 @@ public final class UrlLinkFrame extends Id3Frame {
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeString(this.f);
-        parcel.writeString(this.f25537a);
+        parcel.writeString(this.f11849a);
         parcel.writeString(this.b);
     }
 }

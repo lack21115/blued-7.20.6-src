@@ -28,11 +28,11 @@ import com.soft.blued.utils.AppUtils;
 public class AdvertFloatFragment extends BaseFragment {
 
     /* renamed from: a  reason: collision with root package name */
-    private Activity f30186a;
+    private Activity f16496a;
     private View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private View f30187c;
+    private View f16497c;
     private ImageView d;
     private AdvertFloatModel e;
     private BluedADConstraintLayout f;
@@ -50,7 +50,7 @@ public class AdvertFloatFragment extends BaseFragment {
     }
 
     public static void a(Context context, AdvertFloatModel advertFloatModel, ADConstants.AD_POSITION ad_position) {
-        CommunityManager.f19086a.a().b(true);
+        CommunityManager.a.a().b(true);
         Bundle bundle = new Bundle();
         bundle.putSerializable("model", advertFloatModel);
         bundle.putSerializable("KEY_AD_POSITION", ad_position);
@@ -61,7 +61,7 @@ public class AdvertFloatFragment extends BaseFragment {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void a(View view) {
         Tracker.onClick(view);
-        ADClosePopOptionsUtils.a(this.f30186a, this.e, this.f30187c, this.g, new ADClosePopOptionsUtils.ADRemovedListener() { // from class: com.soft.blued.ui.find.fragment.-$$Lambda$AdvertFloatFragment$XP-z07Sym1HGEWcsirLVyULp83E
+        ADClosePopOptionsUtils.a(this.f16496a, this.e, this.f16497c, this.g, new ADClosePopOptionsUtils.ADRemovedListener() { // from class: com.soft.blued.ui.find.fragment.-$$Lambda$AdvertFloatFragment$XP-z07Sym1HGEWcsirLVyULp83E
             @Override // com.soft.blued.utils.ADClosePopOptionsUtils.ADRemovedListener
             public final void onRemoved() {
                 AdvertFloatFragment.this.c();
@@ -82,10 +82,10 @@ public class AdvertFloatFragment extends BaseFragment {
                 AdvertFloatFragment.this.b(view);
             }
         });
-        this.f30187c = this.b.findViewById(2131364488);
+        this.f16497c = this.b.findViewById(R.id.img_close);
         this.d = (ImageView) this.b.findViewById(R.id.img_advert);
         ImageLoader.a(getFragmentActive(), this.e.advert_pic).a(this.d);
-        this.f30187c.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.fragment.-$$Lambda$AdvertFloatFragment$nQbj0YiutdxXk0wIppqVjH6mJsA
+        this.f16497c.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.fragment.-$$Lambda$AdvertFloatFragment$nQbj0YiutdxXk0wIppqVjH6mJsA
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 AdvertFloatFragment.this.a(view);
@@ -102,14 +102,14 @@ public class AdvertFloatFragment extends BaseFragment {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void b(View view) {
         Tracker.onClick(view);
-        WebViewShowInfoFragment.show(this.f30186a, this.e.target_url, 9);
+        WebViewShowInfoFragment.show(this.f16496a, this.e.target_url, 9);
         c();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void c() {
         AdFloatObserver.a().b();
-        CommunityManager.f19086a.a().b(false);
+        CommunityManager.a.a().b(false);
         getActivity().finish();
         ActivityChangeAnimationUtils.k(getActivity());
     }
@@ -120,29 +120,25 @@ public class AdvertFloatFragment extends BaseFragment {
         scaleAnimation.setDuration(300L);
         this.d.startAnimation(scaleAnimation);
         this.d.setVisibility(0);
-        this.f30187c.setVisibility(0);
+        this.f16497c.setVisibility(0);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment
     public boolean isActivitySwipeBackEnable() {
         return false;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener
     public boolean onBackPressed() {
-        this.f30187c.performClick();
+        this.f16497c.performClick();
         return true;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
-        this.f30186a = getActivity();
+        this.f16496a = getActivity();
         ActivityChangeAnimationUtils.h(getActivity());
         a();
         super.onCreate(bundle);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         View view = this.b;
         if (view == null) {
@@ -154,9 +150,8 @@ public class AdvertFloatFragment extends BaseFragment {
         return this.b;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onResume() {
         super.onResume();
-        AppUtils.a(this.f);
+        AppUtils.a((View) this.f);
     }
 }

@@ -11,16 +11,14 @@ public abstract class c implements a {
     public static final String i = "extra_scenario";
     public static final String j = "extra_orientation";
     public String b = getClass().getSimpleName();
-
-    /* renamed from: c  reason: collision with root package name */
-    protected Context f5991c;
+    protected Context c;
     protected j d;
     protected String e;
     protected boolean f;
     protected s g;
 
     public c(Context context, j jVar, String str, boolean z) {
-        this.f5991c = context.getApplicationContext();
+        this.c = context.getApplicationContext();
         this.d = jVar;
         this.e = str;
         this.f = z;
@@ -30,9 +28,9 @@ public abstract class c implements a {
         if (TextUtils.isEmpty(this.e) || TextUtils.isEmpty(this.d.b)) {
             return com.anythink.basead.c.f.a(com.anythink.basead.c.f.i, com.anythink.basead.c.f.u);
         }
-        s a2 = com.anythink.basead.f.a.a.a(this.f5991c).a(this.d.b, this.e);
-        this.g = a2;
-        if (a2 == null) {
+        s a = com.anythink.basead.f.a.a.a(this.c).a(this.d.b, this.e);
+        this.g = a;
+        if (a == null) {
             return com.anythink.basead.c.f.a(com.anythink.basead.c.f.i, com.anythink.basead.c.f.x);
         }
         if (this.d.m == null) {
@@ -65,7 +63,7 @@ public abstract class c implements a {
             goto L5b
         L1c:
             r0 = r9
-            android.content.Context r0 = r0.f5991c     // Catch: java.lang.Exception -> L92
+            android.content.Context r0 = r0.c     // Catch: java.lang.Exception -> L92
             com.anythink.basead.f.a.a r0 = com.anythink.basead.f.a.a.a(r0)     // Catch: java.lang.Exception -> L92
             r1 = r9
             com.anythink.core.common.e.j r1 = r1.d     // Catch: java.lang.Exception -> L92
@@ -108,7 +106,7 @@ public abstract class c implements a {
             return
         L6f:
             r0 = r9
-            android.content.Context r0 = r0.f5991c     // Catch: java.lang.Exception -> L92
+            android.content.Context r0 = r0.c     // Catch: java.lang.Exception -> L92
             com.anythink.basead.f.a.a r0 = com.anythink.basead.f.a.a.a(r0)     // Catch: java.lang.Exception -> L92
             r1 = r9
             com.anythink.core.common.e.j r1 = r1.d     // Catch: java.lang.Exception -> L92
@@ -147,7 +145,7 @@ public abstract class c implements a {
     public boolean a() {
         try {
             if (d()) {
-                return com.anythink.basead.f.a.a.a(this.f5991c).a(this.g, this.d, this.f);
+                return com.anythink.basead.f.a.a.a(this.c).a(this.g, this.d, this.f);
             }
             return false;
         } catch (Exception e) {
@@ -161,13 +159,13 @@ public abstract class c implements a {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public final boolean d() {
-        if (this.f5991c == null || TextUtils.isEmpty(this.d.b) || TextUtils.isEmpty(this.e)) {
+        if (this.c == null || TextUtils.isEmpty(this.d.b) || TextUtils.isEmpty(this.e)) {
             return false;
         }
         if (this.g == null) {
-            s a2 = com.anythink.basead.f.a.a.a(this.f5991c).a(this.d.b, this.e);
-            this.g = a2;
-            return a2 != null;
+            s a = com.anythink.basead.f.a.a.a(this.c).a(this.d.b, this.e);
+            this.g = a;
+            return a != null;
         }
         return true;
     }

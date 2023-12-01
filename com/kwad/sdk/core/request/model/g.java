@@ -1,5 +1,6 @@
 package com.kwad.sdk.core.request.model;
 
+import android.provider.SearchIndexablesContract;
 import com.kwad.sdk.utils.t;
 import org.json.JSONObject;
 
@@ -26,7 +27,7 @@ public final class g implements com.kwad.sdk.core.b {
     @Override // com.kwad.sdk.core.b
     public final JSONObject toJson() {
         JSONObject jSONObject = new JSONObject();
-        t.putValue(jSONObject, "user_id", this.alL);
+        t.putValue(jSONObject, SearchIndexablesContract.RawData.COLUMN_USER_ID, this.alL);
         t.putValue(jSONObject, "thirdUserId", this.alM);
         int i = this.aaM;
         if (i != 0) {

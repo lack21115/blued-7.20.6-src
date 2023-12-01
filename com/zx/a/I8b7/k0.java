@@ -1,6 +1,7 @@
 package com.zx.a.I8b7;
 
 import android.content.Context;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -10,21 +11,21 @@ import java.util.Locale;
 public class k0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public m0 f42142a = new m0();
+    public m0 f28451a = new m0();
     public h0 b;
 
     /* renamed from: c  reason: collision with root package name */
-    public j0 f42143c;
+    public j0 f28452c;
     public u d;
     public y e;
     public x f;
 
     public k0(Context context) {
         j0 j0Var = new j0(new i0());
-        this.f42143c = j0Var;
+        this.f28452c = j0Var;
         h0 h0Var = new h0(j0Var);
         this.b = h0Var;
-        this.f42142a.a(h0Var);
+        this.f28451a.a(h0Var);
         if (context != null) {
             Context applicationContext = context.getApplicationContext();
             x xVar = new x(applicationContext);
@@ -33,13 +34,13 @@ public class k0 {
             this.e = yVar;
             u uVar = new u(applicationContext, yVar);
             this.d = uVar;
-            this.f42142a.a(uVar);
+            this.f28451a.a(uVar);
         }
     }
 
     public void a(int i) {
         int i2 = i + 8;
-        this.f42143c.f42137c = i2;
+        this.f28452c.f28446c = i2;
         y yVar = this.e;
         if (yVar != null) {
             yVar.d = i2;
@@ -47,7 +48,7 @@ public class k0 {
     }
 
     public void a(String str) {
-        this.f42142a.a(2, null, str, null);
+        this.f28451a.a(2, null, str, null);
     }
 
     public void a(boolean z) {
@@ -62,18 +63,18 @@ public class k0 {
     }
 
     public void c(String str) {
-        this.f42143c.b = str;
+        this.f28452c.b = str;
         y yVar = this.e;
         if (yVar != null) {
-            yVar.f42230c = str;
+            yVar.f28539c = str;
         }
     }
 
     public void d(String str) {
         x xVar = this.f;
         if (xVar != null) {
-            xVar.b = xVar.f42226c.getPackageName() + "-" + str + "-" + new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date()) + com.anythink.china.common.a.a.f;
-            xVar.f42225a = new File("sdcard/libs", xVar.b);
+            xVar.b = xVar.f28535c.getPackageName() + Constants.ACCEPT_TIME_SEPARATOR_SERVER + str + Constants.ACCEPT_TIME_SEPARATOR_SERVER + new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date()) + ".log";
+            xVar.f28534a = new File("sdcard/libs", xVar.b);
         }
     }
 }

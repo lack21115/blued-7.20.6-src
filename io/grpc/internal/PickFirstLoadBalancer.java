@@ -1,10 +1,10 @@
 package io.grpc.internal;
 
+import com.alipay.sdk.util.l;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import io.grpc.ConnectivityState;
 import io.grpc.ConnectivityStateInfo;
-import io.grpc.EquivalentAddressGroup;
 import io.grpc.LoadBalancer;
 import io.grpc.Status;
 import java.util.List;
@@ -52,16 +52,15 @@ final class PickFirstLoadBalancer extends LoadBalancer {
         private final LoadBalancer.PickResult result;
 
         Picker(LoadBalancer.PickResult pickResult) {
-            this.result = (LoadBalancer.PickResult) Preconditions.checkNotNull(pickResult, "result");
+            this.result = (LoadBalancer.PickResult) Preconditions.checkNotNull(pickResult, l.c);
         }
 
-        @Override // io.grpc.LoadBalancer.SubchannelPicker
         public LoadBalancer.PickResult pickSubchannel(LoadBalancer.PickSubchannelArgs pickSubchannelArgs) {
             return this.result;
         }
 
         public String toString() {
-            return MoreObjects.toStringHelper((Class<?>) Picker.class).add("result", this.result).toString();
+            return MoreObjects.toStringHelper(Picker.class).add(l.c, this.result).toString();
         }
     }
 
@@ -75,7 +74,6 @@ final class PickFirstLoadBalancer extends LoadBalancer {
             this.subchannel = (LoadBalancer.Subchannel) Preconditions.checkNotNull(subchannel, "subchannel");
         }
 
-        @Override // io.grpc.LoadBalancer.SubchannelPicker
         public LoadBalancer.PickResult pickSubchannel(LoadBalancer.PickSubchannelArgs pickSubchannelArgs) {
             if (this.connectionRequested.compareAndSet(false, true)) {
                 PickFirstLoadBalancer.this.helper.getSynchronizationContext().execute(new Runnable() { // from class: io.grpc.internal.PickFirstLoadBalancer.RequestConnectionPicker.1
@@ -116,7 +114,6 @@ final class PickFirstLoadBalancer extends LoadBalancer {
         this.helper.updateBalancingState(state, requestConnectionPicker);
     }
 
-    @Override // io.grpc.LoadBalancer
     public void handleNameResolutionError(Status status) {
         LoadBalancer.Subchannel subchannel = this.subchannel;
         if (subchannel != null) {
@@ -126,9 +123,8 @@ final class PickFirstLoadBalancer extends LoadBalancer {
         this.helper.updateBalancingState(ConnectivityState.TRANSIENT_FAILURE, new Picker(LoadBalancer.PickResult.withError(status)));
     }
 
-    @Override // io.grpc.LoadBalancer
     public void handleResolvedAddresses(LoadBalancer.ResolvedAddresses resolvedAddresses) {
-        List<EquivalentAddressGroup> addresses = resolvedAddresses.getAddresses();
+        List addresses = resolvedAddresses.getAddresses();
         LoadBalancer.Subchannel subchannel = this.subchannel;
         if (subchannel != null) {
             subchannel.updateAddresses(addresses);
@@ -136,7 +132,6 @@ final class PickFirstLoadBalancer extends LoadBalancer {
         }
         final LoadBalancer.Subchannel createSubchannel = this.helper.createSubchannel(LoadBalancer.CreateSubchannelArgs.newBuilder().setAddresses(addresses).build());
         createSubchannel.start(new LoadBalancer.SubchannelStateListener() { // from class: io.grpc.internal.PickFirstLoadBalancer.1
-            @Override // io.grpc.LoadBalancer.SubchannelStateListener
             public void onSubchannelState(ConnectivityStateInfo connectivityStateInfo) {
                 PickFirstLoadBalancer.this.processSubchannelState(createSubchannel, connectivityStateInfo);
             }
@@ -146,7 +141,6 @@ final class PickFirstLoadBalancer extends LoadBalancer {
         createSubchannel.requestConnection();
     }
 
-    @Override // io.grpc.LoadBalancer
     public void requestConnection() {
         LoadBalancer.Subchannel subchannel = this.subchannel;
         if (subchannel != null) {
@@ -154,7 +148,6 @@ final class PickFirstLoadBalancer extends LoadBalancer {
         }
     }
 
-    @Override // io.grpc.LoadBalancer
     public void shutdown() {
         LoadBalancer.Subchannel subchannel = this.subchannel;
         if (subchannel != null) {

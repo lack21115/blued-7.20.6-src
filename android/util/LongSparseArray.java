@@ -61,7 +61,7 @@ public class LongSparseArray<E> implements Cloneable {
             gc();
         }
         this.mKeys = GrowingArrayUtils.append(this.mKeys, this.mSize, j);
-        this.mValues = GrowingArrayUtils.append((E[]) this.mValues, this.mSize, e);
+        this.mValues = GrowingArrayUtils.append(this.mValues, this.mSize, e);
         this.mSize++;
     }
 
@@ -82,7 +82,7 @@ public class LongSparseArray<E> implements Cloneable {
     }
 
     /* renamed from: clone */
-    public LongSparseArray<E> m1022clone() {
+    public LongSparseArray<E> m1018clone() {
         LongSparseArray<E> longSparseArray = null;
         try {
             LongSparseArray<E> longSparseArray2 = (LongSparseArray) super.clone();
@@ -165,7 +165,7 @@ public class LongSparseArray<E> implements Cloneable {
             }
         }
         this.mKeys = GrowingArrayUtils.insert(this.mKeys, this.mSize, i2, j);
-        this.mValues = GrowingArrayUtils.insert((E[]) this.mValues, this.mSize, i2, e);
+        this.mValues = GrowingArrayUtils.insert(this.mValues, this.mSize, i2, e);
         this.mSize++;
     }
 

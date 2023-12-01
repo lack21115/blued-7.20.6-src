@@ -9,7 +9,7 @@ import java.util.List;
 public interface Dns {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Dns f35848a = new Dns() { // from class: com.tencent.cloud.huiyansdkface.okhttp3.Dns.1
+    public static final Dns f22157a = new Dns() { // from class: com.tencent.cloud.huiyansdkface.okhttp3.Dns.1
         @Override // com.tencent.cloud.huiyansdkface.okhttp3.Dns
         public List<InetAddress> lookup(String str) throws UnknownHostException {
             if (str != null) {

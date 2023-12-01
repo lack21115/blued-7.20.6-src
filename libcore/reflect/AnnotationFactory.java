@@ -1,6 +1,5 @@
 package libcore.reflect;
 
-import com.bytedance.sdk.openadsdk.downloadnew.core.TTDownloadField;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.Serializable;
@@ -252,7 +251,7 @@ public final class AnnotationFactory implements InvocationHandler, Serializable 
         } else if ("toString".equals(name)) {
             return toString();
         } else {
-            if (TTDownloadField.TT_HASHCODE.equals(name)) {
+            if ("hashCode".equals(name)) {
                 return Integer.valueOf(hashCode());
             }
             AnnotationMember[] annotationMemberArr = this.elements;

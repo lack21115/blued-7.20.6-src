@@ -7,11 +7,11 @@ import com.huawei.hms.ads.banner.BannerView;
 public final class HwBannerBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final BannerView f29069a;
+    private final BannerView f15379a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public BannerView getRoot() {
-        return this.f29069a;
+        return this.f15379a;
     }
 }

@@ -39,7 +39,7 @@ public final class SimpleAnnotationMirror implements AnnotationMirror {
         Preconditions.checkArgument(linkedHashMap2.isEmpty(), "namedValues has entries for members that are not in %s: %s", typeElement, linkedHashMap2);
         Preconditions.checkArgument(arrayList.isEmpty(), "namedValues is missing entries for: %s", arrayList);
         this.annotationType = typeElement;
-        this.namedValues = ImmutableMap.copyOf(map);
+        this.namedValues = ImmutableMap.copyOf((Map) map);
         this.elementValues = (ImmutableMap) ElementFilter.methodsIn(typeElement.getEnclosedElements()).stream().collect(ImmutableMap.toImmutableMap(new Function() { // from class: com.google.auto.common.-$$Lambda$SimpleAnnotationMirror$w__eFBjV9m1l-pGPBFxprZMqwJ8
             @Override // java.util.function.Function
             public final Object apply(Object obj2) {
@@ -48,7 +48,7 @@ public final class SimpleAnnotationMirror implements AnnotationMirror {
         }, new Function() { // from class: com.google.auto.common.-$$Lambda$SimpleAnnotationMirror$UB0XDZaEec7eqFlNYR8OgycSdzg
             @Override // java.util.function.Function
             public final Object apply(Object obj2) {
-                return SimpleAnnotationMirror.lambda$new$1(Map.this, (ExecutableElement) obj2);
+                return SimpleAnnotationMirror.lambda$new$1(linkedHashMap, (ExecutableElement) obj2);
             }
         }));
     }

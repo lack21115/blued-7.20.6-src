@@ -13,7 +13,6 @@ public class HelloOpenDialogPresenter extends MvpPresenter {
     private boolean h = false;
     private boolean k = false;
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void a(FragmentActivity fragmentActivity, Bundle bundle, Bundle bundle2) {
         super.a(fragmentActivity, bundle, bundle2);
         if (bundle != null) {
@@ -23,7 +22,6 @@ public class HelloOpenDialogPresenter extends MvpPresenter {
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void a(IFetchDataListener iFetchDataListener) {
     }
 
@@ -31,7 +29,6 @@ public class HelloOpenDialogPresenter extends MvpPresenter {
         this.k = z;
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void b(IFetchDataListener iFetchDataListener) {
     }
 

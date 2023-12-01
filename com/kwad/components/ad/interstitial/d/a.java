@@ -26,14 +26,14 @@ public final class a {
             com.kwad.components.ad.interstitial.e.b.d(cVar);
             return true;
         } else if (com.kwad.sdk.core.response.a.a.bU(cb) == 1) {
-            new com.kwad.components.core.page.widget.a(ownerActivity, com.kwad.sdk.core.response.a.a.bX(cb), new a.InterfaceC0532a() { // from class: com.kwad.components.ad.interstitial.d.a.1
-                @Override // com.kwad.components.core.page.widget.a.InterfaceC0532a
+            new com.kwad.components.core.page.widget.a(ownerActivity, com.kwad.sdk.core.response.a.a.bX(cb), new a.InterfaceC0362a() { // from class: com.kwad.components.ad.interstitial.d.a.1
+                @Override // com.kwad.components.core.page.widget.a.InterfaceC0362a
                 public final void a(DialogInterface dialogInterface) {
                     dialogInterface.dismiss();
                     com.kwad.sdk.core.report.a.c(c.this.mAdTemplate, (JSONObject) null, new i().bn(8));
                 }
 
-                @Override // com.kwad.components.core.page.widget.a.InterfaceC0532a
+                @Override // com.kwad.components.core.page.widget.a.InterfaceC0362a
                 public final void b(DialogInterface dialogInterface) {
                     c cVar2 = c.this;
                     cVar2.a(false, -1, cVar2.eN);
@@ -42,7 +42,7 @@ public final class a {
                     c.this.hU.dismiss();
                 }
 
-                @Override // com.kwad.components.core.page.widget.a.InterfaceC0532a
+                @Override // com.kwad.components.core.page.widget.a.InterfaceC0362a
                 public final void c(DialogInterface dialogInterface) {
                 }
             }).show();

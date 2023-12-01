@@ -12,13 +12,9 @@ import com.google.android.material.imageview.ShapeableImageView;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ViewConfessedRoomBinding.class */
 public final class ViewConfessedRoomBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f16846a;
+    public final ImageView a;
     public final ShapeableImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f16847c;
+    public final ImageView c;
     public final ShapeableImageView d;
     public final ImageView e;
     public final TextView f;
@@ -26,9 +22,9 @@ public final class ViewConfessedRoomBinding implements ViewBinding {
 
     private ViewConfessedRoomBinding(ConstraintLayout constraintLayout, ImageView imageView, ShapeableImageView shapeableImageView, ImageView imageView2, ShapeableImageView shapeableImageView2, ImageView imageView3, TextView textView) {
         this.g = constraintLayout;
-        this.f16846a = imageView;
+        this.a = imageView;
         this.b = shapeableImageView;
-        this.f16847c = imageView2;
+        this.c = imageView2;
         this.d = shapeableImageView2;
         this.e = imageView3;
         this.f = textView;
@@ -46,17 +42,17 @@ public final class ViewConfessedRoomBinding implements ViewBinding {
         String str;
         ImageView imageView = (ImageView) view.findViewById(R.id.iv);
         if (imageView != null) {
-            ShapeableImageView shapeableImageView = (ShapeableImageView) view.findViewById(R.id.iv_user_1);
-            if (shapeableImageView != null) {
+            ShapeableImageView findViewById = view.findViewById(R.id.iv_user_1);
+            if (findViewById != null) {
                 ImageView imageView2 = (ImageView) view.findViewById(R.id.iv_user_1_tag);
                 if (imageView2 != null) {
-                    ShapeableImageView shapeableImageView2 = (ShapeableImageView) view.findViewById(R.id.iv_user_2);
-                    if (shapeableImageView2 != null) {
+                    ShapeableImageView findViewById2 = view.findViewById(R.id.iv_user_2);
+                    if (findViewById2 != null) {
                         ImageView imageView3 = (ImageView) view.findViewById(R.id.iv_user_2_tag);
                         if (imageView3 != null) {
                             TextView textView = (TextView) view.findViewById(R.id.tv_time);
                             if (textView != null) {
-                                return new ViewConfessedRoomBinding((ConstraintLayout) view, imageView, shapeableImageView, imageView2, shapeableImageView2, imageView3, textView);
+                                return new ViewConfessedRoomBinding((ConstraintLayout) view, imageView, findViewById, imageView2, findViewById2, imageView3, textView);
                             }
                             str = "tvTime";
                         } else {
@@ -77,7 +73,6 @@ public final class ViewConfessedRoomBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.g;

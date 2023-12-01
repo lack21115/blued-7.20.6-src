@@ -8,7 +8,7 @@ import java.nio.ByteBuffer;
 public class d extends c {
 
     /* renamed from: a  reason: collision with root package name */
-    public MediaCodec f1223a = null;
+    public MediaCodec f1175a = null;
     public volatile b b;
 
     @Override // a.a.a.a.a.a.e.c
@@ -24,7 +24,7 @@ public class d extends c {
     public void a(a.a.a.a.a.a.i.c cVar) {
         e.f.c("MicrophoneTransfer", "startRecording");
         this.b = new b(cVar);
-        this.f1223a = this.b.c();
+        this.f1175a = this.b.c();
     }
 
     @Override // a.a.a.a.a.a.e.c
@@ -45,8 +45,8 @@ public class d extends c {
                 return;
             }
         }
-        ByteBuffer[] inputBuffers = this.f1223a.getInputBuffers();
-        int dequeueInputBuffer = this.f1223a.dequeueInputBuffer(-1L);
+        ByteBuffer[] inputBuffers = this.f1175a.getInputBuffers();
+        int dequeueInputBuffer = this.f1175a.dequeueInputBuffer(-1L);
         if (dequeueInputBuffer >= 0) {
             ByteBuffer byteBuffer2 = inputBuffers[dequeueInputBuffer];
             byteBuffer2.clear();
@@ -61,11 +61,11 @@ public class d extends c {
                 i = bArr.length;
             }
             if (!z) {
-                this.f1223a.queueInputBuffer(dequeueInputBuffer, 0, i, j, 0);
+                this.f1175a.queueInputBuffer(dequeueInputBuffer, 0, i, j, 0);
                 return;
             }
             e.f.a("MicrophoneTransfer", "EOS received in sendAudioToEncoder");
-            this.f1223a.queueInputBuffer(dequeueInputBuffer, 0, i, j, 4);
+            this.f1175a.queueInputBuffer(dequeueInputBuffer, 0, i, j, 4);
         }
     }
 

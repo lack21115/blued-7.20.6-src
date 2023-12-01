@@ -10,14 +10,14 @@ import java.util.Set;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private SharedPreferences f24491a;
+    private SharedPreferences f10804a;
 
     public a(Context context, String str, int i) {
-        this.f24491a = null;
+        this.f10804a = null;
         if (context == null || com.opos.cmn.an.c.a.a(str)) {
             return;
         }
-        this.f24491a = context.getSharedPreferences(str, i);
+        this.f10804a = context.getSharedPreferences(str, i);
         com.opos.cmn.an.f.a.b("SPEngine", "context.getSharedPreferences name=" + str + ",mode=" + i);
     }
 
@@ -29,7 +29,7 @@ public class a {
                 z = false;
                 if (obj != null) {
                     z = false;
-                    if (this.f24491a != null) {
+                    if (this.f10804a != null) {
                         try {
                             if (obj instanceof Boolean) {
                                 editor.putBoolean(str, ((Boolean) obj).booleanValue());
@@ -76,7 +76,7 @@ public class a {
     public long a(String str, long j) {
         long j2 = j;
         if (!com.opos.cmn.an.c.a.a(str)) {
-            SharedPreferences sharedPreferences = this.f24491a;
+            SharedPreferences sharedPreferences = this.f10804a;
             j2 = j;
             if (sharedPreferences != null) {
                 try {
@@ -100,7 +100,7 @@ public class a {
     }
 
     public Map<String, ?> a() {
-        SharedPreferences sharedPreferences = this.f24491a;
+        SharedPreferences sharedPreferences = this.f10804a;
         Map<String, ?> all = sharedPreferences != null ? sharedPreferences.getAll() : null;
         StringBuilder sb = new StringBuilder();
         sb.append("getAll=");
@@ -115,7 +115,7 @@ public class a {
         sb.append("removeAndApply key=");
         sb.append(str != null ? str : b.l);
         com.opos.cmn.an.f.a.b("SPEngine", sb.toString());
-        if (com.opos.cmn.an.c.a.a(str) || (sharedPreferences = this.f24491a) == null) {
+        if (com.opos.cmn.an.c.a.a(str) || (sharedPreferences = this.f10804a) == null) {
             return;
         }
         try {
@@ -139,7 +139,7 @@ public class a {
         }
         sb.append(obj2);
         com.opos.cmn.an.f.a.b("SPEngine", sb.toString());
-        if (com.opos.cmn.an.c.a.a(str) || obj == null || (sharedPreferences = this.f24491a) == null) {
+        if (com.opos.cmn.an.c.a.a(str) || obj == null || (sharedPreferences = this.f10804a) == null) {
             return;
         }
         try {
@@ -155,7 +155,7 @@ public class a {
     public boolean a(String str, boolean z) {
         boolean z2 = z;
         if (!com.opos.cmn.an.c.a.a(str)) {
-            SharedPreferences sharedPreferences = this.f24491a;
+            SharedPreferences sharedPreferences = this.f10804a;
             z2 = z;
             if (sharedPreferences != null) {
                 try {

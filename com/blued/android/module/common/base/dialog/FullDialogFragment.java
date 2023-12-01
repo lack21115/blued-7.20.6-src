@@ -10,10 +10,10 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.view.Window;
 import androidx.viewbinding.ViewBinding;
+import com.blued.android.chat.grpc.backup.MsgBackupManager;
 import com.blued.android.core.ui.BaseDialogFragment;
 import com.blued.android.module.common.R;
 import com.blued.android.module.common.ext.AnyExtKt;
-import com.ss.android.socialbase.downloader.constants.MonitorConstants;
 import java.lang.reflect.Method;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
@@ -23,9 +23,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/base/dialog/FullDialogFragment.class */
 public abstract class FullDialogFragment<VB extends ViewBinding> extends BaseDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public VB f10644a;
+    public VB a;
     private final String b = "navigationBarBackground";
 
     private final void a(Dialog dialog) {
@@ -40,7 +38,7 @@ public abstract class FullDialogFragment<VB extends ViewBinding> extends BaseDia
 
     public final void a(VB vb) {
         Intrinsics.e(vb, "<set-?>");
-        this.f10644a = vb;
+        this.a = vb;
     }
 
     public final boolean a(Activity activity) {
@@ -69,7 +67,7 @@ public abstract class FullDialogFragment<VB extends ViewBinding> extends BaseDia
     }
 
     public final VB d() {
-        VB vb = this.f10644a;
+        VB vb = this.a;
         if (vb != null) {
             return vb;
         }
@@ -85,11 +83,11 @@ public abstract class FullDialogFragment<VB extends ViewBinding> extends BaseDia
         Object invoke;
         Resources resources = getResources();
         Intrinsics.c(resources, "resources");
-        int identifier = resources.getIdentifier("config_showNavigationBar", "bool", "android");
+        int identifier = resources.getIdentifier("config_showNavigationBar", "bool", MsgBackupManager.PLATFORM_ANDROID);
         boolean z = identifier > 0 ? resources.getBoolean(identifier) : false;
         try {
             Class<?> cls = Class.forName("android.os.SystemProperties");
-            Method method = cls.getMethod(MonitorConstants.CONNECT_TYPE_GET, String.class);
+            Method method = cls.getMethod("get", String.class);
             Intrinsics.c(method, "systemPropertiesClass.ge…get\", String::class.java)");
             invoke = method.invoke(cls, "qemu.hw.mainkeys");
         } catch (Exception e) {
@@ -108,7 +106,6 @@ public abstract class FullDialogFragment<VB extends ViewBinding> extends BaseDia
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
         Type genericSuperclass = getClass().getGenericSuperclass();
         Intrinsics.a(genericSuperclass);
@@ -130,7 +127,6 @@ public abstract class FullDialogFragment<VB extends ViewBinding> extends BaseDia
         throw new NullPointerException("null cannot be cast to non-null type java.lang.reflect.ParameterizedType");
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public void setupDialog(Dialog dialog, int i) {
         Intrinsics.e(dialog, "dialog");
         super.setupDialog(dialog, i);

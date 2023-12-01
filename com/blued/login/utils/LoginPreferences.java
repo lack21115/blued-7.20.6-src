@@ -6,11 +6,11 @@ import com.blued.android.module.common.utils.BluedSharedPreferences;
 public class LoginPreferences {
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f20596a = "adress";
+    public static String f6990a = "adress";
     public static String b = "latitude";
 
     /* renamed from: c  reason: collision with root package name */
-    public static String f20597c = "longitude";
+    public static String f6991c = "longitude";
     public static String d = "USER_CONSENT_CLAUSE";
     @Deprecated
     private static volatile BluedSharedPreferences e;
@@ -19,7 +19,7 @@ public class LoginPreferences {
     }
 
     public static String a() {
-        return h().a(f20596a, "");
+        return h().a(f6990a, "");
     }
 
     public static void a(String str) {
@@ -35,7 +35,7 @@ public class LoginPreferences {
     }
 
     public static String c() {
-        return h().a(f20597c, "0");
+        return h().a(f6991c, "0");
     }
 
     public static String d() {

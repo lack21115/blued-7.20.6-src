@@ -4,18 +4,14 @@ import java.util.Map;
 
 /* loaded from: source-3503164-dex2jar.jar:mtopsdk/a/b/h.class */
 public final class h {
-
-    /* renamed from: a */
-    private b f43668a;
+    private b a;
     private int b = -1;
-
-    /* renamed from: c */
-    private String f43669c;
+    private String c;
     private Map d;
     private i e;
 
     public final g a() {
-        if (this.f43668a != null) {
+        if (this.a != null) {
             return new g(this, (byte) 0);
         }
         throw new IllegalStateException("request == null");
@@ -27,7 +23,7 @@ public final class h {
     }
 
     public final h a(String str) {
-        this.f43669c = str;
+        this.c = str;
         return this;
     }
 
@@ -37,7 +33,7 @@ public final class h {
     }
 
     public final h a(b bVar) {
-        this.f43668a = bVar;
+        this.a = bVar;
         return this;
     }
 

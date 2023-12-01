@@ -1,5 +1,6 @@
 package com.sobot.chat.widget.dialog;
 
+import android.R;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -11,7 +12,7 @@ public class SobotDialogUtils {
     public static SobotLoadingDialog progressDialog;
 
     public static void resetDialogStyle(AlertDialog alertDialog) {
-        TextView textView = (TextView) alertDialog.findViewById(16908299);
+        TextView textView = (TextView) alertDialog.findViewById(R.id.message);
         if (textView != null) {
             textView.setTextSize(14.0f);
             textView.setGravity(17);

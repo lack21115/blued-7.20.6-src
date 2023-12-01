@@ -10,14 +10,12 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/DialogLiveOnlineUserFooterviewBinding.class */
 public final class DialogLiveOnlineUserFooterviewBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final TextView f11794a;
+    public final TextView a;
     private final ShapeRelativeLayout b;
 
     private DialogLiveOnlineUserFooterviewBinding(ShapeRelativeLayout shapeRelativeLayout, TextView textView) {
         this.b = shapeRelativeLayout;
-        this.f11794a = textView;
+        this.a = textView;
     }
 
     public static DialogLiveOnlineUserFooterviewBinding a(LayoutInflater layoutInflater) {
@@ -40,7 +38,6 @@ public final class DialogLiveOnlineUserFooterviewBinding implements ViewBinding 
         throw new NullPointerException("Missing required view with ID: ".concat("tvOnlineUserMaxTips"));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ShapeRelativeLayout getRoot() {
         return this.b;

@@ -94,16 +94,14 @@ public final class MaterialCalendarGridView extends GridView {
         return (MonthAdapter) super.getAdapter();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.AbsListView, android.view.ViewGroup, android.view.View
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         getAdapter2().notifyDataSetChanged();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
+    protected final void onDraw(Canvas canvas) {
         int dayToPosition;
         int horizontalMidPoint;
         int dayToPosition2;
@@ -163,9 +161,8 @@ public final class MaterialCalendarGridView extends GridView {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.GridView, android.widget.AbsListView, android.view.View
-    public void onFocusChanged(boolean z, int i, Rect rect) {
+    protected void onFocusChanged(boolean z, int i, Rect rect) {
         if (z) {
             gainFocus(i, rect);
         } else {
@@ -198,7 +195,7 @@ public final class MaterialCalendarGridView extends GridView {
         getLayoutParams().height = getMeasuredHeight();
     }
 
-    @Override // android.widget.GridView, android.widget.AbsListView, android.widget.AdapterView
+    @Override // android.widget.AdapterView
     public final void setAdapter(ListAdapter listAdapter) {
         if (!(listAdapter instanceof MonthAdapter)) {
             throw new IllegalArgumentException(String.format("%1$s must have its Adapter set to a %2$s", MaterialCalendarGridView.class.getCanonicalName(), MonthAdapter.class.getCanonicalName()));

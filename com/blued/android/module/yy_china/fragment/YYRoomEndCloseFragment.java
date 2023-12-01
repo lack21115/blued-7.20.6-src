@@ -22,13 +22,9 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYRoomEndCloseFragment.class */
 public class YYRoomEndCloseFragment extends MvpFragment<MvpPresenter> {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected YYHostEndView f17433a;
+    protected YYHostEndView a;
     protected YYOtherEndView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f17434c;
+    private String c;
     private boolean d;
     private boolean e;
     private YYMsgKickInfoExtra f;
@@ -74,7 +70,7 @@ public class YYRoomEndCloseFragment extends MvpFragment<MvpPresenter> {
     @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public void a(Bundle bundle) {
         super.a(bundle);
-        this.f17433a = (YYHostEndView) this.i.findViewById(R.id.ll_end_view);
+        this.a = (YYHostEndView) this.i.findViewById(R.id.ll_end_view);
         this.b = (YYOtherEndView) this.i.findViewById(R.id.ll_other_end_view);
         LiveLogUtils.a("YYRoomEndCloseFragment --> leaveRoom --> 显示关播页面 ");
         if (!this.d) {
@@ -82,8 +78,8 @@ public class YYRoomEndCloseFragment extends MvpFragment<MvpPresenter> {
             this.b.setVisibility(0);
             return;
         }
-        this.f17433a.a(this, this.f17434c, this.e);
-        this.f17433a.setVisibility(0);
+        this.a.a(this, this.c, this.e);
+        this.a.setVisibility(0);
         YYMsgKickInfoExtra yYMsgKickInfoExtra = this.f;
         if (yYMsgKickInfoExtra == null || this.e) {
             return;
@@ -97,7 +93,7 @@ public class YYRoomEndCloseFragment extends MvpFragment<MvpPresenter> {
     }
 
     public YYRoomEndCloseFragment c(String str) {
-        this.f17434c = str;
+        this.c = str;
         return this;
     }
 

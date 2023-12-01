@@ -9,10 +9,10 @@ import com.opos.process.bridge.provider.c;
 public final class a extends com.opos.process.bridge.provider.a {
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f27112c = AdCacheModel.class.getName();
+    private static final String f13424c = AdCacheModel.class.getName();
 
     public a(Context context) {
-        this.f27427a = context;
+        this.f13739a = context;
     }
 
     @Override // com.opos.process.bridge.provider.a
@@ -21,10 +21,10 @@ public final class a extends com.opos.process.bridge.provider.a {
     }
 
     public final AdEntity a(String str) throws c, com.opos.process.bridge.provider.b {
-        return (AdEntity) a(this.f27427a, f27112c, this.b, 2, str);
+        return (AdEntity) a(this.f13739a, f13424c, this.b, 2, str);
     }
 
     public final void a(String str, AdEntity adEntity) throws c, com.opos.process.bridge.provider.b {
-        b(this.f27427a, f27112c, this.b, 1, str, adEntity);
+        b(this.f13739a, f13424c, this.b, 1, str, adEntity);
     }
 }

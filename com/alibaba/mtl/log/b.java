@@ -12,12 +12,11 @@ import com.ut.mini.core.appstatus.UTMCAppStatusRegHelper;
 import com.ut.mini.core.sign.IUTRequestAuthentication;
 import com.ut.mini.internal.UTOriginalCustomHitBuilder;
 import java.io.UnsupportedEncodingException;
+import java.util.Map;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alibaba/mtl/log/b.class */
 public class b {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static b f4482a = new b();
+    private static b a = new b();
     private Context mContext = null;
     private String C = null;
     private String D = null;
@@ -37,7 +36,7 @@ public class b {
     }
 
     public static b a() {
-        return f4482a;
+        return a;
     }
 
     private void c(String str) {
@@ -81,8 +80,8 @@ public class b {
             return;
         }
         try {
-            if (a().m2166a() != null) {
-                UTMCAppStatusRegHelper.registeActivityLifecycleCallbacks(a().m2166a());
+            if (a().m8609a() != null) {
+                UTMCAppStatusRegHelper.registeActivityLifecycleCallbacks(a().m8609a());
                 this.s = true;
                 return;
             }
@@ -95,7 +94,7 @@ public class b {
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public Application m2166a() {
+    public Application m8609a() {
         return this.f27a;
     }
 
@@ -150,6 +149,6 @@ public class b {
         if (TextUtils.isEmpty(str)) {
             return;
         }
-        UTAnalytics.getInstance().getDefaultTracker().send(new UTOriginalCustomHitBuilder("UT", 1007, str, str2, null, null).build());
+        UTAnalytics.getInstance().getDefaultTracker().send(new UTOriginalCustomHitBuilder("UT", 1007, str, str2, (String) null, (Map) null).build());
     }
 }

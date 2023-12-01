@@ -23,6 +23,6 @@ final /* synthetic */ class LiveMainFragment$liveDataObserver$1 extends Function
     @Override // kotlin.jvm.functions.Function1
     public /* synthetic */ Unit invoke(LiveTabInfo liveTabInfo) {
         a(liveTabInfo);
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

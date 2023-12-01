@@ -125,7 +125,7 @@ public abstract class NavigationBarView extends FrameLayout {
             this.menuView.setIconTintList(obtainTintedStyledAttributes.getColorStateList(R.styleable.NavigationBarView_itemIconTint));
         } else {
             NavigationBarMenuView navigationBarMenuView = this.menuView;
-            navigationBarMenuView.setIconTintList(navigationBarMenuView.createDefaultColorStateList(16842808));
+            navigationBarMenuView.setIconTintList(navigationBarMenuView.createDefaultColorStateList(android.R.attr.textColorSecondary));
         }
         setItemIconSize(obtainTintedStyledAttributes.getDimensionPixelSize(R.styleable.NavigationBarView_itemIconSize, getResources().getDimensionPixelSize(R.dimen.mtrl_navigation_bar_item_default_icon_size)));
         if (obtainTintedStyledAttributes.hasValue(R.styleable.NavigationBarView_itemTextAppearanceInactive)) {
@@ -310,16 +310,14 @@ public abstract class NavigationBarView extends FrameLayout {
         return this.menuView.getItemActiveIndicatorEnabled();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         MaterialShapeUtils.setParentAbsoluteElevation(this);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onRestoreInstanceState(Parcelable parcelable) {
+    protected void onRestoreInstanceState(Parcelable parcelable) {
         if (!(parcelable instanceof SavedState)) {
             super.onRestoreInstanceState(parcelable);
             return;
@@ -329,9 +327,8 @@ public abstract class NavigationBarView extends FrameLayout {
         this.menu.restorePresenterStates(savedState.menuPresenterState);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public Parcelable onSaveInstanceState() {
+    protected Parcelable onSaveInstanceState() {
         SavedState savedState = new SavedState(super.onSaveInstanceState());
         savedState.menuPresenterState = new Bundle();
         this.menu.savePresenterStates(savedState.menuPresenterState);

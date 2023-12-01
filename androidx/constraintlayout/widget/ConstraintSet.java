@@ -27,7 +27,6 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.constraintlayout.widget.Constraints;
 import androidx.constraintlayout.widget.R;
 import com.baidu.mobads.sdk.api.IAdInterListener;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.huawei.hms.ads.jsb.constant.Constant;
 import java.io.IOException;
 import java.io.Writer;
@@ -82,25 +81,25 @@ public class ConstraintSet {
     private static SparseIntArray g = new SparseIntArray();
 
     /* renamed from: a  reason: collision with root package name */
-    private boolean f2266a;
+    private boolean f2218a;
     public String mIdString;
     public String derivedState = "";
     public int mRotate = 0;
     private HashMap<String, ConstraintAttribute> b = new HashMap<>();
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f2267c = true;
+    private boolean f2219c = true;
     private HashMap<Integer, Constraint> e = new HashMap<>();
 
     /* loaded from: source-8756600-dex2jar.jar:androidx/constraintlayout/widget/ConstraintSet$Constraint.class */
     public static class Constraint {
 
         /* renamed from: a  reason: collision with root package name */
-        int f2268a;
+        int f2220a;
         String b;
 
         /* renamed from: c  reason: collision with root package name */
-        Delta f2269c;
+        Delta f2221c;
         public final PropertySet propertySet = new PropertySet();
         public final Motion motion = new Motion();
         public final Layout layout = new Layout();
@@ -112,11 +111,11 @@ public class ConstraintSet {
         public static class Delta {
 
             /* renamed from: a  reason: collision with root package name */
-            int[] f2270a = new int[10];
+            int[] f2222a = new int[10];
             int[] b = new int[10];
 
             /* renamed from: c  reason: collision with root package name */
-            int f2271c = 0;
+            int f2223c = 0;
             int[] d = new int[10];
             float[] e = new float[10];
             int f = 0;
@@ -147,18 +146,18 @@ public class ConstraintSet {
             }
 
             void a(int i, int i2) {
-                int i3 = this.f2271c;
-                int[] iArr = this.f2270a;
+                int i3 = this.f2223c;
+                int[] iArr = this.f2222a;
                 if (i3 >= iArr.length) {
-                    this.f2270a = Arrays.copyOf(iArr, iArr.length * 2);
+                    this.f2222a = Arrays.copyOf(iArr, iArr.length * 2);
                     int[] iArr2 = this.b;
                     this.b = Arrays.copyOf(iArr2, iArr2.length * 2);
                 }
-                int[] iArr3 = this.f2270a;
-                int i4 = this.f2271c;
+                int[] iArr3 = this.f2222a;
+                int i4 = this.f2223c;
                 iArr3[i4] = i;
                 int[] iArr4 = this.b;
-                this.f2271c = i4 + 1;
+                this.f2223c = i4 + 1;
                 iArr4[i4] = i2;
             }
 
@@ -199,10 +198,10 @@ public class ConstraintSet {
                 int i2 = 0;
                 while (true) {
                     int i3 = i2;
-                    if (i3 >= this.f2271c) {
+                    if (i3 >= this.f2223c) {
                         break;
                     }
-                    ConstraintSet.b(constraint, this.f2270a[i3], this.b[i3]);
+                    ConstraintSet.b(constraint, this.f2222a[i3], this.b[i3]);
                     i2 = i3 + 1;
                 }
                 int i4 = 0;
@@ -233,10 +232,10 @@ public class ConstraintSet {
                 int i = 0;
                 while (true) {
                     int i2 = i;
-                    if (i2 >= this.f2271c) {
+                    if (i2 >= this.f2223c) {
                         break;
                     }
-                    Log.v(str, this.f2270a[i2] + " = " + this.b[i2]);
+                    Log.v(str, this.f2222a[i2] + " = " + this.b[i2]);
                     i = i2 + 1;
                 }
                 Log.v(str, TypedValues.Custom.S_FLOAT);
@@ -287,7 +286,7 @@ public class ConstraintSet {
 
         /* JADX INFO: Access modifiers changed from: private */
         public void a(int i, ConstraintLayout.LayoutParams layoutParams) {
-            this.f2268a = i;
+            this.f2220a = i;
             this.layout.leftToLeft = layoutParams.leftToLeft;
             this.layout.leftToRight = layoutParams.leftToRight;
             this.layout.rightToLeft = layoutParams.rightToLeft;
@@ -402,7 +401,7 @@ public class ConstraintSet {
         }
 
         public void applyDelta(Constraint constraint) {
-            Delta delta = this.f2269c;
+            Delta delta = this.f2221c;
             if (delta != null) {
                 delta.a(constraint);
             }
@@ -472,19 +471,19 @@ public class ConstraintSet {
         }
 
         /* renamed from: clone */
-        public Constraint m1387clone() {
+        public Constraint m1250clone() {
             Constraint constraint = new Constraint();
             constraint.layout.copyFrom(this.layout);
             constraint.motion.copyFrom(this.motion);
             constraint.propertySet.copyFrom(this.propertySet);
             constraint.transform.copyFrom(this.transform);
-            constraint.f2268a = this.f2268a;
-            constraint.f2269c = this.f2269c;
+            constraint.f2220a = this.f2220a;
+            constraint.f2221c = this.f2221c;
             return constraint;
         }
 
         public void printDelta(String str) {
-            Delta delta = this.f2269c;
+            Delta delta = this.f2221c;
             if (delta != null) {
                 delta.a(str);
             } else {
@@ -499,7 +498,7 @@ public class ConstraintSet {
         public static final int UNSET_GONE_MARGIN = Integer.MIN_VALUE;
 
         /* renamed from: a  reason: collision with root package name */
-        private static SparseIntArray f2272a;
+        private static SparseIntArray f2224a;
         public String mConstraintTag;
         public int mHeight;
         public String mReferenceIdString;
@@ -572,68 +571,68 @@ public class ConstraintSet {
 
         static {
             SparseIntArray sparseIntArray = new SparseIntArray();
-            f2272a = sparseIntArray;
+            f2224a = sparseIntArray;
             sparseIntArray.append(R.styleable.Layout_layout_constraintLeft_toLeftOf, 24);
-            f2272a.append(R.styleable.Layout_layout_constraintLeft_toRightOf, 25);
-            f2272a.append(R.styleable.Layout_layout_constraintRight_toLeftOf, 28);
-            f2272a.append(R.styleable.Layout_layout_constraintRight_toRightOf, 29);
-            f2272a.append(R.styleable.Layout_layout_constraintTop_toTopOf, 35);
-            f2272a.append(R.styleable.Layout_layout_constraintTop_toBottomOf, 34);
-            f2272a.append(R.styleable.Layout_layout_constraintBottom_toTopOf, 4);
-            f2272a.append(R.styleable.Layout_layout_constraintBottom_toBottomOf, 3);
-            f2272a.append(R.styleable.Layout_layout_constraintBaseline_toBaselineOf, 1);
-            f2272a.append(R.styleable.Layout_layout_editor_absoluteX, 6);
-            f2272a.append(R.styleable.Layout_layout_editor_absoluteY, 7);
-            f2272a.append(R.styleable.Layout_layout_constraintGuide_begin, 17);
-            f2272a.append(R.styleable.Layout_layout_constraintGuide_end, 18);
-            f2272a.append(R.styleable.Layout_layout_constraintGuide_percent, 19);
-            f2272a.append(R.styleable.Layout_guidelineUseRtl, 90);
-            f2272a.append(R.styleable.Layout_android_orientation, 26);
-            f2272a.append(R.styleable.Layout_layout_constraintStart_toEndOf, 31);
-            f2272a.append(R.styleable.Layout_layout_constraintStart_toStartOf, 32);
-            f2272a.append(R.styleable.Layout_layout_constraintEnd_toStartOf, 10);
-            f2272a.append(R.styleable.Layout_layout_constraintEnd_toEndOf, 9);
-            f2272a.append(R.styleable.Layout_layout_goneMarginLeft, 13);
-            f2272a.append(R.styleable.Layout_layout_goneMarginTop, 16);
-            f2272a.append(R.styleable.Layout_layout_goneMarginRight, 14);
-            f2272a.append(R.styleable.Layout_layout_goneMarginBottom, 11);
-            f2272a.append(R.styleable.Layout_layout_goneMarginStart, 15);
-            f2272a.append(R.styleable.Layout_layout_goneMarginEnd, 12);
-            f2272a.append(R.styleable.Layout_layout_constraintVertical_weight, 38);
-            f2272a.append(R.styleable.Layout_layout_constraintHorizontal_weight, 37);
-            f2272a.append(R.styleable.Layout_layout_constraintHorizontal_chainStyle, 39);
-            f2272a.append(R.styleable.Layout_layout_constraintVertical_chainStyle, 40);
-            f2272a.append(R.styleable.Layout_layout_constraintHorizontal_bias, 20);
-            f2272a.append(R.styleable.Layout_layout_constraintVertical_bias, 36);
-            f2272a.append(R.styleable.Layout_layout_constraintDimensionRatio, 5);
-            f2272a.append(R.styleable.Layout_layout_constraintLeft_creator, 91);
-            f2272a.append(R.styleable.Layout_layout_constraintTop_creator, 91);
-            f2272a.append(R.styleable.Layout_layout_constraintRight_creator, 91);
-            f2272a.append(R.styleable.Layout_layout_constraintBottom_creator, 91);
-            f2272a.append(R.styleable.Layout_layout_constraintBaseline_creator, 91);
-            f2272a.append(R.styleable.Layout_android_layout_marginLeft, 23);
-            f2272a.append(R.styleable.Layout_android_layout_marginRight, 27);
-            f2272a.append(R.styleable.Layout_android_layout_marginStart, 30);
-            f2272a.append(R.styleable.Layout_android_layout_marginEnd, 8);
-            f2272a.append(R.styleable.Layout_android_layout_marginTop, 33);
-            f2272a.append(R.styleable.Layout_android_layout_marginBottom, 2);
-            f2272a.append(R.styleable.Layout_android_layout_width, 22);
-            f2272a.append(R.styleable.Layout_android_layout_height, 21);
-            f2272a.append(R.styleable.Layout_layout_constraintWidth, 41);
-            f2272a.append(R.styleable.Layout_layout_constraintHeight, 42);
-            f2272a.append(R.styleable.Layout_layout_constrainedWidth, 41);
-            f2272a.append(R.styleable.Layout_layout_constrainedHeight, 42);
-            f2272a.append(R.styleable.Layout_layout_wrapBehaviorInParent, 76);
-            f2272a.append(R.styleable.Layout_layout_constraintCircle, 61);
-            f2272a.append(R.styleable.Layout_layout_constraintCircleRadius, 62);
-            f2272a.append(R.styleable.Layout_layout_constraintCircleAngle, 63);
-            f2272a.append(R.styleable.Layout_layout_constraintWidth_percent, 69);
-            f2272a.append(R.styleable.Layout_layout_constraintHeight_percent, 70);
-            f2272a.append(R.styleable.Layout_chainUseRtl, 71);
-            f2272a.append(R.styleable.Layout_barrierDirection, 72);
-            f2272a.append(R.styleable.Layout_barrierMargin, 73);
-            f2272a.append(R.styleable.Layout_constraint_referenced_ids, 74);
-            f2272a.append(R.styleable.Layout_barrierAllowsGoneWidgets, 75);
+            f2224a.append(R.styleable.Layout_layout_constraintLeft_toRightOf, 25);
+            f2224a.append(R.styleable.Layout_layout_constraintRight_toLeftOf, 28);
+            f2224a.append(R.styleable.Layout_layout_constraintRight_toRightOf, 29);
+            f2224a.append(R.styleable.Layout_layout_constraintTop_toTopOf, 35);
+            f2224a.append(R.styleable.Layout_layout_constraintTop_toBottomOf, 34);
+            f2224a.append(R.styleable.Layout_layout_constraintBottom_toTopOf, 4);
+            f2224a.append(R.styleable.Layout_layout_constraintBottom_toBottomOf, 3);
+            f2224a.append(R.styleable.Layout_layout_constraintBaseline_toBaselineOf, 1);
+            f2224a.append(R.styleable.Layout_layout_editor_absoluteX, 6);
+            f2224a.append(R.styleable.Layout_layout_editor_absoluteY, 7);
+            f2224a.append(R.styleable.Layout_layout_constraintGuide_begin, 17);
+            f2224a.append(R.styleable.Layout_layout_constraintGuide_end, 18);
+            f2224a.append(R.styleable.Layout_layout_constraintGuide_percent, 19);
+            f2224a.append(R.styleable.Layout_guidelineUseRtl, 90);
+            f2224a.append(R.styleable.Layout_android_orientation, 26);
+            f2224a.append(R.styleable.Layout_layout_constraintStart_toEndOf, 31);
+            f2224a.append(R.styleable.Layout_layout_constraintStart_toStartOf, 32);
+            f2224a.append(R.styleable.Layout_layout_constraintEnd_toStartOf, 10);
+            f2224a.append(R.styleable.Layout_layout_constraintEnd_toEndOf, 9);
+            f2224a.append(R.styleable.Layout_layout_goneMarginLeft, 13);
+            f2224a.append(R.styleable.Layout_layout_goneMarginTop, 16);
+            f2224a.append(R.styleable.Layout_layout_goneMarginRight, 14);
+            f2224a.append(R.styleable.Layout_layout_goneMarginBottom, 11);
+            f2224a.append(R.styleable.Layout_layout_goneMarginStart, 15);
+            f2224a.append(R.styleable.Layout_layout_goneMarginEnd, 12);
+            f2224a.append(R.styleable.Layout_layout_constraintVertical_weight, 38);
+            f2224a.append(R.styleable.Layout_layout_constraintHorizontal_weight, 37);
+            f2224a.append(R.styleable.Layout_layout_constraintHorizontal_chainStyle, 39);
+            f2224a.append(R.styleable.Layout_layout_constraintVertical_chainStyle, 40);
+            f2224a.append(R.styleable.Layout_layout_constraintHorizontal_bias, 20);
+            f2224a.append(R.styleable.Layout_layout_constraintVertical_bias, 36);
+            f2224a.append(R.styleable.Layout_layout_constraintDimensionRatio, 5);
+            f2224a.append(R.styleable.Layout_layout_constraintLeft_creator, 91);
+            f2224a.append(R.styleable.Layout_layout_constraintTop_creator, 91);
+            f2224a.append(R.styleable.Layout_layout_constraintRight_creator, 91);
+            f2224a.append(R.styleable.Layout_layout_constraintBottom_creator, 91);
+            f2224a.append(R.styleable.Layout_layout_constraintBaseline_creator, 91);
+            f2224a.append(R.styleable.Layout_android_layout_marginLeft, 23);
+            f2224a.append(R.styleable.Layout_android_layout_marginRight, 27);
+            f2224a.append(R.styleable.Layout_android_layout_marginStart, 30);
+            f2224a.append(R.styleable.Layout_android_layout_marginEnd, 8);
+            f2224a.append(R.styleable.Layout_android_layout_marginTop, 33);
+            f2224a.append(R.styleable.Layout_android_layout_marginBottom, 2);
+            f2224a.append(R.styleable.Layout_android_layout_width, 22);
+            f2224a.append(R.styleable.Layout_android_layout_height, 21);
+            f2224a.append(R.styleable.Layout_layout_constraintWidth, 41);
+            f2224a.append(R.styleable.Layout_layout_constraintHeight, 42);
+            f2224a.append(R.styleable.Layout_layout_constrainedWidth, 41);
+            f2224a.append(R.styleable.Layout_layout_constrainedHeight, 42);
+            f2224a.append(R.styleable.Layout_layout_wrapBehaviorInParent, 76);
+            f2224a.append(R.styleable.Layout_layout_constraintCircle, 61);
+            f2224a.append(R.styleable.Layout_layout_constraintCircleRadius, 62);
+            f2224a.append(R.styleable.Layout_layout_constraintCircleAngle, 63);
+            f2224a.append(R.styleable.Layout_layout_constraintWidth_percent, 69);
+            f2224a.append(R.styleable.Layout_layout_constraintHeight_percent, 70);
+            f2224a.append(R.styleable.Layout_chainUseRtl, 71);
+            f2224a.append(R.styleable.Layout_barrierDirection, 72);
+            f2224a.append(R.styleable.Layout_barrierMargin, 73);
+            f2224a.append(R.styleable.Layout_constraint_referenced_ids, 74);
+            f2224a.append(R.styleable.Layout_barrierAllowsGoneWidgets, 75);
         }
 
         void a(Context context, AttributeSet attributeSet) {
@@ -648,7 +647,7 @@ public class ConstraintSet {
                     return;
                 }
                 int index = obtainStyledAttributes.getIndex(i2);
-                int i3 = f2272a.get(index);
+                int i3 = f2224a.get(index);
                 switch (i3) {
                     case 1:
                         this.baselineToBaseline = ConstraintSet.b(obtainStyledAttributes, index, this.baselineToBaseline);
@@ -864,10 +863,10 @@ public class ConstraintSet {
                                         this.guidelineUseRtl = obtainStyledAttributes.getBoolean(index, this.guidelineUseRtl);
                                         continue;
                                     case 91:
-                                        Log.w("ConstraintSet", "unused attribute 0x" + Integer.toHexString(index) + "   " + f2272a.get(index));
+                                        Log.w("ConstraintSet", "unused attribute 0x" + Integer.toHexString(index) + "   " + f2224a.get(index));
                                         continue;
                                     default:
-                                        Log.w("ConstraintSet", "Unknown attribute 0x" + Integer.toHexString(index) + "   " + f2272a.get(index));
+                                        Log.w("ConstraintSet", "Unknown attribute 0x" + Integer.toHexString(index) + "   " + f2224a.get(index));
                                         continue;
                                         continue;
                                 }
@@ -1005,7 +1004,7 @@ public class ConstraintSet {
     public static class Motion {
 
         /* renamed from: a  reason: collision with root package name */
-        private static SparseIntArray f2273a;
+        private static SparseIntArray f2225a;
         public boolean mApply = false;
         public int mAnimateRelativeTo = -1;
         public int mAnimateCircleAngleTo = 0;
@@ -1023,17 +1022,17 @@ public class ConstraintSet {
 
         static {
             SparseIntArray sparseIntArray = new SparseIntArray();
-            f2273a = sparseIntArray;
+            f2225a = sparseIntArray;
             sparseIntArray.append(R.styleable.Motion_motionPathRotate, 1);
-            f2273a.append(R.styleable.Motion_pathMotionArc, 2);
-            f2273a.append(R.styleable.Motion_transitionEasing, 3);
-            f2273a.append(R.styleable.Motion_drawPath, 4);
-            f2273a.append(R.styleable.Motion_animateRelativeTo, 5);
-            f2273a.append(R.styleable.Motion_animateCircleAngleTo, 6);
-            f2273a.append(R.styleable.Motion_motionStagger, 7);
-            f2273a.append(R.styleable.Motion_quantizeMotionSteps, 8);
-            f2273a.append(R.styleable.Motion_quantizeMotionPhase, 9);
-            f2273a.append(R.styleable.Motion_quantizeMotionInterpolator, 10);
+            f2225a.append(R.styleable.Motion_pathMotionArc, 2);
+            f2225a.append(R.styleable.Motion_transitionEasing, 3);
+            f2225a.append(R.styleable.Motion_drawPath, 4);
+            f2225a.append(R.styleable.Motion_animateRelativeTo, 5);
+            f2225a.append(R.styleable.Motion_animateCircleAngleTo, 6);
+            f2225a.append(R.styleable.Motion_motionStagger, 7);
+            f2225a.append(R.styleable.Motion_quantizeMotionSteps, 8);
+            f2225a.append(R.styleable.Motion_quantizeMotionPhase, 9);
+            f2225a.append(R.styleable.Motion_quantizeMotionInterpolator, 10);
         }
 
         void a(Context context, AttributeSet attributeSet) {
@@ -1048,7 +1047,7 @@ public class ConstraintSet {
                     return;
                 }
                 int index = obtainStyledAttributes.getIndex(i2);
-                switch (f2273a.get(index)) {
+                switch (f2225a.get(index)) {
                     case 1:
                         this.mPathRotate = obtainStyledAttributes.getFloat(index, this.mPathRotate);
                         break;
@@ -1090,7 +1089,7 @@ public class ConstraintSet {
                             } else {
                                 String string = obtainStyledAttributes.getString(index);
                                 this.mQuantizeInterpolatorString = string;
-                                if (string.indexOf(BridgeUtil.SPLIT_MARK) <= 0) {
+                                if (string.indexOf("/") <= 0) {
                                     this.mQuantizeInterpolatorType = -1;
                                     break;
                                 } else {
@@ -1173,7 +1172,7 @@ public class ConstraintSet {
     public static class Transform {
 
         /* renamed from: a  reason: collision with root package name */
-        private static SparseIntArray f2274a;
+        private static SparseIntArray f2226a;
         public boolean mApply = false;
         public float rotation = 0.0f;
         public float rotationX = 0.0f;
@@ -1191,19 +1190,19 @@ public class ConstraintSet {
 
         static {
             SparseIntArray sparseIntArray = new SparseIntArray();
-            f2274a = sparseIntArray;
+            f2226a = sparseIntArray;
             sparseIntArray.append(R.styleable.Transform_android_rotation, 1);
-            f2274a.append(R.styleable.Transform_android_rotationX, 2);
-            f2274a.append(R.styleable.Transform_android_rotationY, 3);
-            f2274a.append(R.styleable.Transform_android_scaleX, 4);
-            f2274a.append(R.styleable.Transform_android_scaleY, 5);
-            f2274a.append(R.styleable.Transform_android_transformPivotX, 6);
-            f2274a.append(R.styleable.Transform_android_transformPivotY, 7);
-            f2274a.append(R.styleable.Transform_android_translationX, 8);
-            f2274a.append(R.styleable.Transform_android_translationY, 9);
-            f2274a.append(R.styleable.Transform_android_translationZ, 10);
-            f2274a.append(R.styleable.Transform_android_elevation, 11);
-            f2274a.append(R.styleable.Transform_transformPivotTarget, 12);
+            f2226a.append(R.styleable.Transform_android_rotationX, 2);
+            f2226a.append(R.styleable.Transform_android_rotationY, 3);
+            f2226a.append(R.styleable.Transform_android_scaleX, 4);
+            f2226a.append(R.styleable.Transform_android_scaleY, 5);
+            f2226a.append(R.styleable.Transform_android_transformPivotX, 6);
+            f2226a.append(R.styleable.Transform_android_transformPivotY, 7);
+            f2226a.append(R.styleable.Transform_android_translationX, 8);
+            f2226a.append(R.styleable.Transform_android_translationY, 9);
+            f2226a.append(R.styleable.Transform_android_translationZ, 10);
+            f2226a.append(R.styleable.Transform_android_elevation, 11);
+            f2226a.append(R.styleable.Transform_transformPivotTarget, 12);
         }
 
         void a(Context context, AttributeSet attributeSet) {
@@ -1218,7 +1217,7 @@ public class ConstraintSet {
                     return;
                 }
                 int index = obtainStyledAttributes.getIndex(i2);
-                switch (f2274a.get(index)) {
+                switch (f2226a.get(index)) {
                     case 1:
                         this.rotation = obtainStyledAttributes.getFloat(index, this.rotation);
                         break;
@@ -1291,11 +1290,11 @@ public class ConstraintSet {
     class WriteJsonEngine {
 
         /* renamed from: a  reason: collision with root package name */
-        Writer f2275a;
+        Writer f2227a;
         ConstraintLayout b;
 
         /* renamed from: c  reason: collision with root package name */
-        Context f2276c;
+        Context f2228c;
         int d;
         int e = 0;
         final String f = "'left'";
@@ -1308,9 +1307,9 @@ public class ConstraintSet {
         HashMap<Integer, String> m = new HashMap<>();
 
         WriteJsonEngine(Writer writer, ConstraintLayout constraintLayout, int i) throws IOException {
-            this.f2275a = writer;
+            this.f2227a = writer;
             this.b = constraintLayout;
-            this.f2276c = constraintLayout.getContext();
+            this.f2228c = constraintLayout.getContext();
             this.d = i;
         }
 
@@ -1320,33 +1319,33 @@ public class ConstraintSet {
         private void a(String str, int i, int i2, float f, int i3, int i4, boolean z) throws IOException {
             if (i != 0) {
                 if (i == -2) {
-                    Writer writer = this.f2275a;
+                    Writer writer = this.f2227a;
                     writer.write("       " + str + ": 'wrap'\n");
                 } else if (i == -1) {
-                    Writer writer2 = this.f2275a;
+                    Writer writer2 = this.f2227a;
                     writer2.write("       " + str + ": 'parent'\n");
                 } else {
-                    Writer writer3 = this.f2275a;
+                    Writer writer3 = this.f2227a;
                     writer3.write("       " + str + ": " + i + ",\n");
                 }
             } else if (i4 == -1 && i3 == -1) {
                 if (i2 == 1) {
-                    Writer writer4 = this.f2275a;
+                    Writer writer4 = this.f2227a;
                     writer4.write("       " + str + ": '???????????',\n");
                 } else if (i2 != 2) {
                 } else {
-                    Writer writer5 = this.f2275a;
+                    Writer writer5 = this.f2227a;
                     writer5.write("       " + str + ": '" + f + "%',\n");
                 }
             } else if (i2 == 0) {
-                Writer writer6 = this.f2275a;
+                Writer writer6 = this.f2227a;
                 writer6.write("       " + str + ": {'spread' ," + i3 + ", " + i4 + "}\n");
             } else if (i2 == 1) {
-                Writer writer7 = this.f2275a;
+                Writer writer7 = this.f2227a;
                 writer7.write("       " + str + ": {'wrap' ," + i3 + ", " + i4 + "}\n");
             } else if (i2 != 2) {
             } else {
-                Writer writer8 = this.f2275a;
+                Writer writer8 = this.f2227a;
                 writer8.write("       " + str + ": {'" + f + "'% ," + i3 + ", " + i4 + "}\n");
             }
         }
@@ -1364,11 +1363,11 @@ public class ConstraintSet {
         }
 
         void a() throws IOException {
-            this.f2275a.write("\n'ConstraintSet':{\n");
+            this.f2227a.write("\n'ConstraintSet':{\n");
             for (Integer num : ConstraintSet.this.e.keySet()) {
                 Constraint constraint = (Constraint) ConstraintSet.this.e.get(num);
                 String a2 = a(num.intValue());
-                Writer writer = this.f2275a;
+                Writer writer = this.f2227a;
                 writer.write(a2 + ":{\n");
                 Layout layout = constraint.layout;
                 a("height", layout.mHeight, layout.heightDefault, layout.heightPercent, layout.heightMin, layout.heightMax, layout.constrainedHeight);
@@ -1406,21 +1405,21 @@ public class ConstraintSet {
                 if (layout.mReferenceIds != null) {
                     a("'ReferenceIds'", layout.mReferenceIds);
                 }
-                this.f2275a.write("}\n");
+                this.f2227a.write("}\n");
             }
-            this.f2275a.write("}\n");
+            this.f2227a.write("}\n");
         }
 
         void a(int i, float f, int i2) throws IOException {
             if (i == -1) {
                 return;
             }
-            this.f2275a.write("       circle");
-            this.f2275a.write(":[");
-            this.f2275a.write(a(i));
-            Writer writer = this.f2275a;
+            this.f2227a.write("       circle");
+            this.f2227a.write(":[");
+            this.f2227a.write(a(i));
+            Writer writer = this.f2227a;
             writer.write(", " + f);
-            Writer writer2 = this.f2275a;
+            Writer writer2 = this.f2227a;
             writer2.write(i2 + "]");
         }
 
@@ -1428,91 +1427,91 @@ public class ConstraintSet {
             if (f == -1.0f) {
                 return;
             }
-            Writer writer = this.f2275a;
+            Writer writer = this.f2227a;
             writer.write("       " + str);
-            Writer writer2 = this.f2275a;
+            Writer writer2 = this.f2227a;
             writer2.write(": " + f);
-            this.f2275a.write(",\n");
+            this.f2227a.write(",\n");
         }
 
         void a(String str, float f, float f2) throws IOException {
             if (f == f2) {
                 return;
             }
-            Writer writer = this.f2275a;
+            Writer writer = this.f2227a;
             writer.write("       " + str);
-            Writer writer2 = this.f2275a;
+            Writer writer2 = this.f2227a;
             writer2.write(": " + f);
-            this.f2275a.write(",\n");
+            this.f2227a.write(",\n");
         }
 
         void a(String str, int i) throws IOException {
             if (i == 0 || i == -1) {
                 return;
             }
-            Writer writer = this.f2275a;
+            Writer writer = this.f2227a;
             writer.write("       " + str);
-            this.f2275a.write(":");
-            Writer writer2 = this.f2275a;
+            this.f2227a.write(":");
+            Writer writer2 = this.f2227a;
             writer2.write(", " + i);
-            this.f2275a.write("\n");
+            this.f2227a.write("\n");
         }
 
         void a(String str, int i, String str2, int i2, int i3) throws IOException {
             if (i == -1) {
                 return;
             }
-            Writer writer = this.f2275a;
+            Writer writer = this.f2227a;
             writer.write("       " + str);
-            this.f2275a.write(":[");
-            this.f2275a.write(a(i));
-            this.f2275a.write(" , ");
-            this.f2275a.write(str2);
+            this.f2227a.write(":[");
+            this.f2227a.write(a(i));
+            this.f2227a.write(" , ");
+            this.f2227a.write(str2);
             if (i2 != 0) {
-                Writer writer2 = this.f2275a;
+                Writer writer2 = this.f2227a;
                 writer2.write(" , " + i2);
             }
-            this.f2275a.write("],\n");
+            this.f2227a.write("],\n");
         }
 
         void a(String str, String str2) throws IOException {
             if (str2 == null) {
                 return;
             }
-            Writer writer = this.f2275a;
+            Writer writer = this.f2227a;
             writer.write("       " + str);
-            this.f2275a.write(":");
-            Writer writer2 = this.f2275a;
+            this.f2227a.write(":");
+            Writer writer2 = this.f2227a;
             writer2.write(", " + str2);
-            this.f2275a.write("\n");
+            this.f2227a.write("\n");
         }
 
         void a(String str, boolean z, boolean z2) throws IOException {
             if (z == z2) {
                 return;
             }
-            Writer writer = this.f2275a;
+            Writer writer = this.f2227a;
             writer.write("       " + str);
-            Writer writer2 = this.f2275a;
+            Writer writer2 = this.f2227a;
             writer2.write(": " + z);
-            this.f2275a.write(",\n");
+            this.f2227a.write(",\n");
         }
 
         void a(String str, int[] iArr) throws IOException {
             if (iArr == null) {
                 return;
             }
-            Writer writer = this.f2275a;
+            Writer writer = this.f2227a;
             writer.write("       " + str);
-            this.f2275a.write(": ");
+            this.f2227a.write(": ");
             int i = 0;
             while (true) {
                 int i2 = i;
                 if (i2 >= iArr.length) {
-                    this.f2275a.write("],\n");
+                    this.f2227a.write("],\n");
                     return;
                 }
-                Writer writer2 = this.f2275a;
+                Writer writer2 = this.f2227a;
                 StringBuilder sb = new StringBuilder();
                 sb.append(i2 == 0 ? "[" : ", ");
                 sb.append(a(iArr[i2]));
@@ -1524,7 +1523,7 @@ public class ConstraintSet {
         String b(int i) {
             try {
                 if (i != -1) {
-                    return this.f2276c.getResources().getResourceEntryName(i);
+                    return this.f2228c.getResources().getResourceEntryName(i);
                 }
                 StringBuilder sb = new StringBuilder();
                 sb.append("unknown");
@@ -1547,11 +1546,11 @@ public class ConstraintSet {
     class WriteXmlEngine {
 
         /* renamed from: a  reason: collision with root package name */
-        Writer f2277a;
+        Writer f2229a;
         ConstraintLayout b;
 
         /* renamed from: c  reason: collision with root package name */
-        Context f2278c;
+        Context f2230c;
         int d;
         int e = 0;
         final String f = "'left'";
@@ -1564,29 +1563,29 @@ public class ConstraintSet {
         HashMap<Integer, String> m = new HashMap<>();
 
         WriteXmlEngine(Writer writer, ConstraintLayout constraintLayout, int i) throws IOException {
-            this.f2277a = writer;
+            this.f2229a = writer;
             this.b = constraintLayout;
-            this.f2278c = constraintLayout.getContext();
+            this.f2230c = constraintLayout.getContext();
             this.d = i;
         }
 
         private void a(String str, int i, int i2) throws IOException {
             if (i != i2) {
-                Writer writer = this.f2277a;
+                Writer writer = this.f2229a;
                 writer.write("\n       " + str + "=\"" + i + "dp\"");
             }
         }
 
         private void a(String str, int i, String[] strArr, int i2) throws IOException {
             if (i != i2) {
-                Writer writer = this.f2277a;
+                Writer writer = this.f2229a;
                 writer.write("\n       " + str + "=\"" + strArr[i] + "\"");
             }
         }
 
         private void a(String str, boolean z, boolean z2) throws IOException {
             if (z != z2) {
-                Writer writer = this.f2277a;
+                Writer writer = this.f2229a;
                 writer.write("\n       " + str + "=\"" + z + "dp\"");
             }
         }
@@ -1594,13 +1593,13 @@ public class ConstraintSet {
         private void b(String str, int i, int i2) throws IOException {
             if (i != i2) {
                 if (i == -2) {
-                    Writer writer = this.f2277a;
+                    Writer writer = this.f2229a;
                     writer.write("\n       " + str + "=\"wrap_content\"");
                 } else if (i == -1) {
-                    Writer writer2 = this.f2277a;
+                    Writer writer2 = this.f2229a;
                     writer2.write("\n       " + str + "=\"match_parent\"");
                 } else {
-                    Writer writer3 = this.f2277a;
+                    Writer writer3 = this.f2229a;
                     writer3.write("\n       " + str + "=\"" + i + "dp\"");
                 }
             }
@@ -1619,12 +1618,12 @@ public class ConstraintSet {
         }
 
         void a() throws IOException {
-            this.f2277a.write("\n<ConstraintSet>\n");
+            this.f2229a.write("\n<ConstraintSet>\n");
             for (Integer num : ConstraintSet.this.e.keySet()) {
                 Constraint constraint = (Constraint) ConstraintSet.this.e.get(num);
                 String a2 = a(num.intValue());
-                this.f2277a.write("  <Constraint");
-                Writer writer = this.f2277a;
+                this.f2229a.write("  <Constraint");
+                Writer writer = this.f2229a;
                 writer.write("\n       android:id=\"" + a2 + "\"");
                 Layout layout = constraint.layout;
                 b("android:layout_width", layout.mWidth, -5);
@@ -1698,18 +1697,18 @@ public class ConstraintSet {
                 if (layout.mReferenceIds != null) {
                     a("'ReferenceIds'", layout.mReferenceIds);
                 }
-                this.f2277a.write(" />\n");
+                this.f2229a.write(" />\n");
             }
-            this.f2277a.write("</ConstraintSet>\n");
+            this.f2229a.write("</ConstraintSet>\n");
         }
 
         void a(String str, float f, float f2) throws IOException {
             if (f == f2) {
                 return;
             }
-            Writer writer = this.f2277a;
+            Writer writer = this.f2229a;
             writer.write("\n       " + str);
-            Writer writer2 = this.f2277a;
+            Writer writer2 = this.f2229a;
             writer2.write("=\"" + f + "\"");
         }
 
@@ -1717,9 +1716,9 @@ public class ConstraintSet {
             if (i == -1) {
                 return;
             }
-            Writer writer = this.f2277a;
+            Writer writer = this.f2229a;
             writer.write("\n       " + str);
-            Writer writer2 = this.f2277a;
+            Writer writer2 = this.f2229a;
             writer2.write("=\"" + a(i) + "\"");
         }
 
@@ -1727,9 +1726,9 @@ public class ConstraintSet {
             if (str2 == null || str2.equals(str3)) {
                 return;
             }
-            Writer writer = this.f2277a;
+            Writer writer = this.f2229a;
             writer.write("\n       " + str);
-            Writer writer2 = this.f2277a;
+            Writer writer2 = this.f2229a;
             writer2.write("=\"" + str2 + "\"");
         }
 
@@ -1737,17 +1736,17 @@ public class ConstraintSet {
             if (iArr == null) {
                 return;
             }
-            Writer writer = this.f2277a;
+            Writer writer = this.f2229a;
             writer.write("\n       " + str);
-            this.f2277a.write(":");
+            this.f2229a.write(":");
             int i = 0;
             while (true) {
                 int i2 = i;
                 if (i2 >= iArr.length) {
-                    this.f2277a.write("],\n");
+                    this.f2229a.write("],\n");
                     return;
                 }
-                Writer writer2 = this.f2277a;
+                Writer writer2 = this.f2229a;
                 StringBuilder sb = new StringBuilder();
                 sb.append(i2 == 0 ? "[" : ", ");
                 sb.append(a(iArr[i2]));
@@ -1759,7 +1758,7 @@ public class ConstraintSet {
         String b(int i) {
             try {
                 if (i != -1) {
-                    return this.f2278c.getResources().getResourceEntryName(i);
+                    return this.f2230c.getResources().getResourceEntryName(i);
                 }
                 StringBuilder sb = new StringBuilder();
                 sb.append("unknown");
@@ -1781,7 +1780,7 @@ public class ConstraintSet {
             if (i == 0 || i == -1) {
                 return;
             }
-            Writer writer = this.f2277a;
+            Writer writer = this.f2229a;
             writer.write("\n       " + str + "=\"" + i + "\"\n");
         }
     }
@@ -2012,7 +2011,7 @@ public class ConstraintSet {
     private static void a(Context context, Constraint constraint, TypedArray typedArray) {
         int indexCount = typedArray.getIndexCount();
         Constraint.Delta delta = new Constraint.Delta();
-        constraint.f2269c = delta;
+        constraint.f2221c = delta;
         constraint.motion.mApply = false;
         constraint.layout.mApply = false;
         constraint.propertySet.mApply = false;
@@ -2127,8 +2126,8 @@ public class ConstraintSet {
                     delta.a(37, typedArray.getFloat(index, constraint.layout.verticalBias));
                     break;
                 case 38:
-                    constraint.f2268a = typedArray.getResourceId(index, constraint.f2268a);
-                    delta.a(38, constraint.f2268a);
+                    constraint.f2220a = typedArray.getResourceId(index, constraint.f2220a);
+                    delta.a(38, constraint.f2220a);
                     break;
                 case 39:
                     delta.a(39, typedArray.getFloat(index, constraint.layout.horizontalWeight));
@@ -2292,7 +2291,7 @@ public class ConstraintSet {
                         } else {
                             constraint.motion.mQuantizeInterpolatorString = typedArray.getString(index);
                             delta.a(90, constraint.motion.mQuantizeInterpolatorString);
-                            if (constraint.motion.mQuantizeInterpolatorString.indexOf(BridgeUtil.SPLIT_MARK) <= 0) {
+                            if (constraint.motion.mQuantizeInterpolatorString.indexOf("/") <= 0) {
                                 constraint.motion.mQuantizeInterpolatorType = -1;
                                 delta.a(88, constraint.motion.mQuantizeInterpolatorType);
                                 break;
@@ -2336,15 +2335,15 @@ public class ConstraintSet {
                 case 98:
                     if (!MotionLayout.IS_IN_EDIT_MODE) {
                         if (typedArray.peekValue(index).type != 3) {
-                            constraint.f2268a = typedArray.getResourceId(index, constraint.f2268a);
+                            constraint.f2220a = typedArray.getResourceId(index, constraint.f2220a);
                             break;
                         } else {
                             constraint.b = typedArray.getString(index);
                             break;
                         }
                     } else {
-                        constraint.f2268a = typedArray.getResourceId(index, constraint.f2268a);
-                        if (constraint.f2268a != -1) {
+                        constraint.f2220a = typedArray.getResourceId(index, constraint.f2220a);
+                        if (constraint.f2220a != -1) {
                             break;
                         } else {
                             constraint.b = typedArray.getString(index);
@@ -2504,7 +2503,7 @@ public class ConstraintSet {
                     constraint.layout.verticalBias = typedArray.getFloat(index, constraint.layout.verticalBias);
                     break;
                 case 38:
-                    constraint.f2268a = typedArray.getResourceId(index, constraint.f2268a);
+                    constraint.f2220a = typedArray.getResourceId(index, constraint.f2220a);
                     break;
                 case 39:
                     constraint.layout.horizontalWeight = typedArray.getFloat(index, constraint.layout.horizontalWeight);
@@ -2669,7 +2668,7 @@ public class ConstraintSet {
                             break;
                         } else {
                             constraint.motion.mQuantizeInterpolatorString = typedArray.getString(index);
-                            if (constraint.motion.mQuantizeInterpolatorString.indexOf(BridgeUtil.SPLIT_MARK) <= 0) {
+                            if (constraint.motion.mQuantizeInterpolatorString.indexOf("/") <= 0) {
                                 constraint.motion.mQuantizeInterpolatorType = -1;
                                 break;
                             } else {
@@ -2811,7 +2810,7 @@ public class ConstraintSet {
             }
         }
         layoutParams.dimensionRatio = str;
-        layoutParams.f2256c = f2;
+        layoutParams.f2208c = f2;
         layoutParams.d = i;
     }
 
@@ -3227,7 +3226,7 @@ public class ConstraintSet {
                     constraint.layout.topMargin = i2;
                     return;
                 case 38:
-                    constraint.f2268a = i2;
+                    constraint.f2220a = i2;
                     return;
                 case 64:
                     constraint.motion.mAnimateRelativeTo = i2;
@@ -3397,7 +3396,7 @@ public class ConstraintSet {
                             constraintLayout.addView(barrier, generateDefaultLayoutParams);
                         }
                         if (constraint.layout.mIsGuideline) {
-                            View guideline = new Guideline(constraintLayout.getContext());
+                            Guideline guideline = new Guideline(constraintLayout.getContext());
                             guideline.setId(num.intValue());
                             ConstraintLayout.LayoutParams generateDefaultLayoutParams2 = constraintLayout.generateDefaultLayoutParams();
                             constraint.applyTo(generateDefaultLayoutParams2);
@@ -3417,7 +3416,7 @@ public class ConstraintSet {
             int id = childAt2.getId();
             if (!this.e.containsKey(Integer.valueOf(id))) {
                 Log.w("ConstraintSet", "id unknown " + Debug.getName(childAt2));
-            } else if (this.f2267c && id == -1) {
+            } else if (this.f2219c && id == -1) {
                 throw new RuntimeException("All children of ConstraintLayout must have ids to use ConstraintSet");
             } else {
                 if (id != -1) {
@@ -3554,7 +3553,7 @@ public class ConstraintSet {
             int id = childAt.getId();
             if (!this.e.containsKey(Integer.valueOf(id))) {
                 Log.w("ConstraintSet", "id unknown " + Debug.getName(childAt));
-            } else if (this.f2267c && id == -1) {
+            } else if (this.f2219c && id == -1) {
                 throw new RuntimeException("All children of ConstraintLayout must have ids to use ConstraintSet");
             } else {
                 if (this.e.containsKey(Integer.valueOf(id)) && (constraint = this.e.get(Integer.valueOf(id))) != null) {
@@ -3567,17 +3566,17 @@ public class ConstraintSet {
 
     public void applyDeltaFrom(ConstraintSet constraintSet) {
         for (Constraint constraint : constraintSet.e.values()) {
-            if (constraint.f2269c != null) {
+            if (constraint.f2221c != null) {
                 if (constraint.b != null) {
                     for (Integer num : this.e.keySet()) {
                         Constraint constraint2 = getConstraint(num.intValue());
                         if (constraint2.layout.mConstraintTag != null && constraint.b.matches(constraint2.layout.mConstraintTag)) {
-                            constraint.f2269c.a(constraint2);
+                            constraint.f2221c.a(constraint2);
                             constraint2.mCustomConstraints.putAll((HashMap) constraint.mCustomConstraints.clone());
                         }
                     }
                 } else {
-                    constraint.f2269c.a(getConstraint(constraint.f2268a));
+                    constraint.f2221c.a(getConstraint(constraint.f2220a));
                 }
             }
         }
@@ -3774,7 +3773,7 @@ public class ConstraintSet {
             View childAt = constraintLayout.getChildAt(i2);
             ConstraintLayout.LayoutParams layoutParams = (ConstraintLayout.LayoutParams) childAt.getLayoutParams();
             int id = childAt.getId();
-            if (this.f2267c && id == -1) {
+            if (this.f2219c && id == -1) {
                 throw new RuntimeException("All children of ConstraintLayout must have ids to use ConstraintSet");
             }
             if (!this.e.containsKey(Integer.valueOf(id))) {
@@ -3824,7 +3823,7 @@ public class ConstraintSet {
         for (Integer num : constraintSet.e.keySet()) {
             Constraint constraint = constraintSet.e.get(num);
             if (constraint != null) {
-                this.e.put(num, constraint.m1387clone());
+                this.e.put(num, constraint.m1250clone());
             }
         }
     }
@@ -3841,7 +3840,7 @@ public class ConstraintSet {
             View childAt = constraints.getChildAt(i2);
             Constraints.LayoutParams layoutParams = (Constraints.LayoutParams) childAt.getLayoutParams();
             int id = childAt.getId();
-            if (this.f2267c && id == -1) {
+            if (this.f2219c && id == -1) {
                 throw new RuntimeException("All children of ConstraintLayout must have ids to use ConstraintSet");
             }
             if (!this.e.containsKey(Integer.valueOf(id))) {
@@ -4306,7 +4305,7 @@ public class ConstraintSet {
     }
 
     public boolean isForceId() {
-        return this.f2267c;
+        return this.f2219c;
     }
 
     public void load(Context context, int i) {
@@ -4321,7 +4320,7 @@ public class ConstraintSet {
                     if (name.equalsIgnoreCase("Guideline")) {
                         a2.layout.mIsGuideline = true;
                     }
-                    this.e.put(Integer.valueOf(a2.f2268a), a2);
+                    this.e.put(Integer.valueOf(a2.f2220a), a2);
                 }
             }
         } catch (IOException e) {
@@ -4504,7 +4503,7 @@ public class ConstraintSet {
                         return;
                     }
                     if (z || z || z) {
-                        this.e.put(Integer.valueOf(constraint.f2268a), constraint);
+                        this.e.put(Integer.valueOf(constraint.f2220a), constraint);
                         constraint = null;
                     }
                 }
@@ -4597,7 +4596,7 @@ public class ConstraintSet {
             View childAt = constraintLayout.getChildAt(i2);
             ConstraintLayout.LayoutParams layoutParams = (ConstraintLayout.LayoutParams) childAt.getLayoutParams();
             int id = childAt.getId();
-            if (this.f2267c && id == -1) {
+            if (this.f2219c && id == -1) {
                 throw new RuntimeException("All children of ConstraintLayout must have ids to use ConstraintSet");
             }
             if (!this.e.containsKey(Integer.valueOf(id))) {
@@ -4787,7 +4786,7 @@ public class ConstraintSet {
     }
 
     public void setForceId(boolean z) {
-        this.f2267c = z;
+        this.f2219c = z;
     }
 
     public void setGoneMargin(int i, int i2, int i3) {
@@ -4952,7 +4951,7 @@ public class ConstraintSet {
     }
 
     public void setValidateOnParse(boolean z) {
-        this.f2266a = z;
+        this.f2218a = z;
     }
 
     public void setVerticalBias(int i, float f2) {

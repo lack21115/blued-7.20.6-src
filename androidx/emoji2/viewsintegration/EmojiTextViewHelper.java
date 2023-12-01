@@ -13,11 +13,10 @@ import androidx.emoji2.text.EmojiCompat;
 public final class EmojiTextViewHelper {
 
     /* renamed from: a  reason: collision with root package name */
-    private final HelperInternal f2887a;
+    private final HelperInternal f2839a;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8756600-dex2jar.jar:androidx/emoji2/viewsintegration/EmojiTextViewHelper$HelperInternal.class */
-    public static class HelperInternal {
+    static class HelperInternal {
         HelperInternal() {
         }
 
@@ -47,14 +46,14 @@ public final class EmojiTextViewHelper {
     static class HelperInternal19 extends HelperInternal {
 
         /* renamed from: a  reason: collision with root package name */
-        private final TextView f2888a;
+        private final TextView f2840a;
         private final EmojiInputFilter b;
 
         /* renamed from: c  reason: collision with root package name */
-        private boolean f2889c = true;
+        private boolean f2841c = true;
 
         HelperInternal19(TextView textView) {
-            this.f2888a = textView;
+            this.f2840a = textView;
             this.b = new EmojiInputFilter(textView);
         }
 
@@ -67,7 +66,7 @@ public final class EmojiTextViewHelper {
         }
 
         private void b() {
-            this.f2888a.setFilters(a(this.f2888a.getFilters()));
+            this.f2840a.setFilters(a(this.f2840a.getFilters()));
         }
 
         private InputFilter[] b(InputFilter[] inputFilterArr) {
@@ -136,12 +135,12 @@ public final class EmojiTextViewHelper {
 
         @Override // androidx.emoji2.viewsintegration.EmojiTextViewHelper.HelperInternal
         TransformationMethod a(TransformationMethod transformationMethod) {
-            return this.f2889c ? c(transformationMethod) : b(transformationMethod);
+            return this.f2841c ? c(transformationMethod) : b(transformationMethod);
         }
 
         @Override // androidx.emoji2.viewsintegration.EmojiTextViewHelper.HelperInternal
         void a() {
-            this.f2888a.setTransformationMethod(a(this.f2888a.getTransformationMethod()));
+            this.f2840a.setTransformationMethod(a(this.f2840a.getTransformationMethod()));
         }
 
         @Override // androidx.emoji2.viewsintegration.EmojiTextViewHelper.HelperInternal
@@ -153,23 +152,23 @@ public final class EmojiTextViewHelper {
 
         @Override // androidx.emoji2.viewsintegration.EmojiTextViewHelper.HelperInternal
         InputFilter[] a(InputFilter[] inputFilterArr) {
-            return !this.f2889c ? c(inputFilterArr) : b(inputFilterArr);
+            return !this.f2841c ? c(inputFilterArr) : b(inputFilterArr);
         }
 
         @Override // androidx.emoji2.viewsintegration.EmojiTextViewHelper.HelperInternal
         void b(boolean z) {
-            this.f2889c = z;
+            this.f2841c = z;
             a();
             b();
         }
 
         void c(boolean z) {
-            this.f2889c = z;
+            this.f2841c = z;
         }
 
         @Override // androidx.emoji2.viewsintegration.EmojiTextViewHelper.HelperInternal
         public boolean isEnabled() {
-            return this.f2889c;
+            return this.f2841c;
         }
     }
 
@@ -177,10 +176,10 @@ public final class EmojiTextViewHelper {
     static class SkippingHelper19 extends HelperInternal {
 
         /* renamed from: a  reason: collision with root package name */
-        private final HelperInternal19 f2890a;
+        private final HelperInternal19 f2842a;
 
         SkippingHelper19(TextView textView) {
-            this.f2890a = new HelperInternal19(textView);
+            this.f2842a = new HelperInternal19(textView);
         }
 
         private boolean b() {
@@ -189,7 +188,7 @@ public final class EmojiTextViewHelper {
 
         @Override // androidx.emoji2.viewsintegration.EmojiTextViewHelper.HelperInternal
         TransformationMethod a(TransformationMethod transformationMethod) {
-            return b() ? transformationMethod : this.f2890a.a(transformationMethod);
+            return b() ? transformationMethod : this.f2842a.a(transformationMethod);
         }
 
         @Override // androidx.emoji2.viewsintegration.EmojiTextViewHelper.HelperInternal
@@ -197,7 +196,7 @@ public final class EmojiTextViewHelper {
             if (b()) {
                 return;
             }
-            this.f2890a.a();
+            this.f2842a.a();
         }
 
         @Override // androidx.emoji2.viewsintegration.EmojiTextViewHelper.HelperInternal
@@ -205,26 +204,26 @@ public final class EmojiTextViewHelper {
             if (b()) {
                 return;
             }
-            this.f2890a.a(z);
+            this.f2842a.a(z);
         }
 
         @Override // androidx.emoji2.viewsintegration.EmojiTextViewHelper.HelperInternal
         InputFilter[] a(InputFilter[] inputFilterArr) {
-            return b() ? inputFilterArr : this.f2890a.a(inputFilterArr);
+            return b() ? inputFilterArr : this.f2842a.a(inputFilterArr);
         }
 
         @Override // androidx.emoji2.viewsintegration.EmojiTextViewHelper.HelperInternal
         void b(boolean z) {
             if (b()) {
-                this.f2890a.c(z);
+                this.f2842a.c(z);
             } else {
-                this.f2890a.b(z);
+                this.f2842a.b(z);
             }
         }
 
         @Override // androidx.emoji2.viewsintegration.EmojiTextViewHelper.HelperInternal
         public boolean isEnabled() {
-            return this.f2890a.isEnabled();
+            return this.f2842a.isEnabled();
         }
     }
 
@@ -235,35 +234,35 @@ public final class EmojiTextViewHelper {
     public EmojiTextViewHelper(TextView textView, boolean z) {
         Preconditions.checkNotNull(textView, "textView cannot be null");
         if (Build.VERSION.SDK_INT < 19) {
-            this.f2887a = new HelperInternal();
+            this.f2839a = new HelperInternal();
         } else if (z) {
-            this.f2887a = new HelperInternal19(textView);
+            this.f2839a = new HelperInternal19(textView);
         } else {
-            this.f2887a = new SkippingHelper19(textView);
+            this.f2839a = new SkippingHelper19(textView);
         }
     }
 
     public InputFilter[] getFilters(InputFilter[] inputFilterArr) {
-        return this.f2887a.a(inputFilterArr);
+        return this.f2839a.a(inputFilterArr);
     }
 
     public boolean isEnabled() {
-        return this.f2887a.isEnabled();
+        return this.f2839a.isEnabled();
     }
 
     public void setAllCaps(boolean z) {
-        this.f2887a.a(z);
+        this.f2839a.a(z);
     }
 
     public void setEnabled(boolean z) {
-        this.f2887a.b(z);
+        this.f2839a.b(z);
     }
 
     public void updateTransformationMethod() {
-        this.f2887a.a();
+        this.f2839a.a();
     }
 
     public TransformationMethod wrapTransformationMethod(TransformationMethod transformationMethod) {
-        return this.f2887a.a(transformationMethod);
+        return this.f2839a.a(transformationMethod);
     }
 }

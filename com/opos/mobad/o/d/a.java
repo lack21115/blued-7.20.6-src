@@ -18,19 +18,19 @@ import java.util.Map;
 public class a implements com.opos.mobad.o.d.d {
 
     /* renamed from: a  reason: collision with root package name */
-    ListView f27089a;
+    ListView f13401a;
     c b;
 
     /* renamed from: com.opos.mobad.o.d.a$a  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/opos/mobad/o/d/a$a.class */
-    public static class C0722a {
+    public static class C0552a {
 
         /* renamed from: a  reason: collision with root package name */
-        public final String f27090a;
+        public final String f13402a;
         public final String b;
 
-        public C0722a(String str, String str2) {
-            this.f27090a = str;
+        public C0552a(String str, String str2) {
+            this.f13402a = str;
             this.b = str2;
         }
     }
@@ -39,7 +39,7 @@ public class a implements com.opos.mobad.o.d.d {
     public static class b extends RelativeLayout {
 
         /* renamed from: a  reason: collision with root package name */
-        private TextView f27091a;
+        private TextView f13403a;
         private TextView b;
 
         public b(Context context) {
@@ -52,16 +52,16 @@ public class a implements com.opos.mobad.o.d.d {
             int a3 = com.opos.cmn.an.h.f.a.a(context, 24.0f);
             setPadding(a3, a2, a3, a2);
             TextView textView = new TextView(getContext());
-            this.f27091a = textView;
+            this.f13403a = textView;
             textView.setId(View.generateViewId());
-            this.f27091a.setTextColor(Color.parseColor("#D9000000"));
-            this.f27091a.setTextSize(1, 16.0f);
-            this.f27091a.setGravity(17);
-            this.f27091a.setGravity(51);
-            this.f27091a.setLineSpacing(com.opos.cmn.an.h.f.a.a(getContext(), 4.0f), 1.0f);
+            this.f13403a.setTextColor(Color.parseColor("#D9000000"));
+            this.f13403a.setTextSize(1, 16.0f);
+            this.f13403a.setGravity(17);
+            this.f13403a.setGravity(51);
+            this.f13403a.setLineSpacing(com.opos.cmn.an.h.f.a.a(getContext(), 4.0f), 1.0f);
             RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(-1, -2);
             layoutParams.addRule(10);
-            addView(this.f27091a, layoutParams);
+            addView(this.f13403a, layoutParams);
             TextView textView2 = new TextView(getContext());
             this.b = textView2;
             textView2.setTextColor(Color.parseColor("#C4000000"));
@@ -70,23 +70,23 @@ public class a implements com.opos.mobad.o.d.d {
             this.b.setGravity(51);
             this.b.setLineSpacing(com.opos.cmn.an.h.f.a.a(getContext(), 4.0f), 1.0f);
             RelativeLayout.LayoutParams layoutParams2 = new RelativeLayout.LayoutParams(-1, -2);
-            layoutParams2.addRule(3, this.f27091a.getId());
+            layoutParams2.addRule(3, this.f13403a.getId());
             layoutParams2.topMargin = com.opos.cmn.an.h.f.a.a(context, 3.0f);
             addView(this.b, layoutParams2);
         }
 
-        public void a(C0722a c0722a) {
+        public void a(C0552a c0552a) {
             TextView textView;
             int i;
-            if (c0722a == null) {
+            if (c0552a == null) {
                 return;
             }
-            this.f27091a.setText(TextUtils.isEmpty(c0722a.f27090a) ? "" : c0722a.f27090a);
-            if (TextUtils.isEmpty(c0722a.b)) {
+            this.f13403a.setText(TextUtils.isEmpty(c0552a.f13402a) ? "" : c0552a.f13402a);
+            if (TextUtils.isEmpty(c0552a.b)) {
                 textView = this.b;
                 i = 8;
             } else {
-                this.b.setText(c0722a.b);
+                this.b.setText(c0552a.b);
                 textView = this.b;
                 i = 0;
             }
@@ -98,22 +98,22 @@ public class a implements com.opos.mobad.o.d.d {
     static class c extends BaseAdapter {
 
         /* renamed from: a  reason: collision with root package name */
-        private List<C0722a> f27092a = new ArrayList();
+        private List<C0552a> f13404a = new ArrayList();
 
-        public void a(List<C0722a> list) {
-            this.f27092a.clear();
-            this.f27092a.addAll(list);
+        public void a(List<C0552a> list) {
+            this.f13404a.clear();
+            this.f13404a.addAll(list);
             notifyDataSetChanged();
         }
 
         @Override // android.widget.Adapter
         public int getCount() {
-            return this.f27092a.size();
+            return this.f13404a.size();
         }
 
         @Override // android.widget.Adapter
         public Object getItem(int i) {
-            return this.f27092a.get(i);
+            return this.f13404a.get(i);
         }
 
         @Override // android.widget.Adapter
@@ -123,10 +123,10 @@ public class a implements com.opos.mobad.o.d.d {
 
         @Override // android.widget.Adapter
         public View getView(int i, View view, ViewGroup viewGroup) {
-            C0722a c0722a = (C0722a) getItem(i);
+            C0552a c0552a = (C0552a) getItem(i);
             d a2 = d.a(view, viewGroup);
-            a2.f27093a.a(c0722a);
-            return a2.f27093a;
+            a2.f13405a.a(c0552a);
+            return a2.f13405a;
         }
     }
 
@@ -134,10 +134,10 @@ public class a implements com.opos.mobad.o.d.d {
     static class d {
 
         /* renamed from: a  reason: collision with root package name */
-        public final b f27093a;
+        public final b f13405a;
 
         private d(b bVar) {
-            this.f27093a = bVar;
+            this.f13405a = bVar;
         }
 
         public static final d a(View view, View view2) {
@@ -153,14 +153,14 @@ public class a implements com.opos.mobad.o.d.d {
 
     public a(Context context) {
         ListView listView = new ListView(context);
-        this.f27089a = listView;
+        this.f13401a = listView;
         listView.setDividerHeight(0);
         c cVar = new c();
         this.b = cVar;
-        this.f27089a.setAdapter((ListAdapter) cVar);
+        this.f13401a.setAdapter((ListAdapter) cVar);
     }
 
-    public static List<C0722a> b(Map<String, String> map) {
+    public static List<C0552a> b(Map<String, String> map) {
         com.opos.cmn.an.f.a.b("ComplianceListView", "transformMapToList = " + map);
         ArrayList arrayList = new ArrayList();
         if (map != null) {
@@ -168,7 +168,7 @@ public class a implements com.opos.mobad.o.d.d {
                 return arrayList;
             }
             for (Map.Entry<String, String> entry : map.entrySet()) {
-                arrayList.add(new C0722a(entry.getKey(), entry.getValue()));
+                arrayList.add(new C0552a(entry.getKey(), entry.getValue()));
             }
         }
         return arrayList;
@@ -190,7 +190,7 @@ public class a implements com.opos.mobad.o.d.d {
 
     @Override // com.opos.mobad.o.d.d
     public View b() {
-        return this.f27089a;
+        return this.f13401a;
     }
 
     @Override // com.opos.mobad.o.d.d

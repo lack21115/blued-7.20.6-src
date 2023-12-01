@@ -9,15 +9,15 @@ import java.util.List;
 public abstract class BarLineScatterCandleBubbleDataSet<T extends Entry> extends DataSet<T> implements IBarLineScatterCandleBubbleDataSet<T> {
 
     /* renamed from: a  reason: collision with root package name */
-    protected int f22120a;
+    protected int f8513a;
 
     public BarLineScatterCandleBubbleDataSet(List<T> list, String str) {
         super(list, str);
-        this.f22120a = Color.rgb(255, 187, 115);
+        this.f8513a = Color.rgb(255, 187, 115);
     }
 
     @Override // com.github.mikephil.charting.interfaces.datasets.IBarLineScatterCandleBubbleDataSet
     public int h() {
-        return this.f22120a;
+        return this.f8513a;
     }
 }

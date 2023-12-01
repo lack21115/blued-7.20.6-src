@@ -19,11 +19,11 @@ import java.util.zip.ZipFile;
 public final class x {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f22578a = 0;
+    public static final int f8970a = 0;
     private static final String b = "ExtractNativeUtils";
 
     /* renamed from: c  reason: collision with root package name */
-    private static final int f22579c = -1;
+    private static final int f8971c = -1;
     private static final int d = 128;
     private static final int e = 50;
     private static final int f = 52428800;
@@ -33,16 +33,16 @@ public final class x {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        String f22580a;
+        String f8972a;
         ZipEntry b;
 
         /* renamed from: c  reason: collision with root package name */
-        String f22581c;
+        String f8973c;
 
         private a(ZipEntry zipEntry, String str, String str2) {
             this.b = zipEntry;
-            this.f22580a = str;
-            this.f22581c = str2;
+            this.f8972a = str;
+            this.f8973c = str2;
         }
 
         /* synthetic */ a(ZipEntry zipEntry, String str, String str2, byte b) {
@@ -103,7 +103,7 @@ public final class x {
                                             int i8 = i4;
                                             sb.append(File.separator);
                                             int i9 = i4;
-                                            sb.append(aVar.f22581c);
+                                            sb.append(aVar.f8973c);
                                             int i10 = i4;
                                             String sb2 = sb.toString();
                                             int i11 = i4;
@@ -116,7 +116,7 @@ public final class x {
                                                 ae.a(zipFile);
                                                 return i4;
                                             }
-                                            new File(sb2, aVar.f22580a).setReadable(true, false);
+                                            new File(sb2, aVar.f8972a).setReadable(true, false);
                                         }
                                     }
                                 } catch (IOException e2) {
@@ -175,13 +175,13 @@ public final class x {
         r0 = new java.lang.StringBuilder("so file too big , ");
      */
     /* JADX WARN: Code restructure failed: missing block: B:15:0x0085, code lost:
-        r0.append(r8.f22581c);
+        r0.append(r8.f8973c);
      */
     /* JADX WARN: Code restructure failed: missing block: B:17:0x0098, code lost:
         r0.append(" , ");
      */
     /* JADX WARN: Code restructure failed: missing block: B:19:0x00a9, code lost:
-        r0.append(r8.f22580a);
+        r0.append(r8.f8972a);
      */
     /* JADX WARN: Code restructure failed: missing block: B:20:0x00b4, code lost:
         r13 = r0;
@@ -219,7 +219,7 @@ public final class x {
             if (i != 0) {
                 return i;
             }
-            File file2 = new File(str, aVar.f22580a);
+            File file2 = new File(str, aVar.f8972a);
             if (Build.VERSION.SDK_INT < 23 && file2.getAbsolutePath().length() > 128) {
                 aa.c(b, file2.getName() + "  too long,  length > 128");
                 return -1;

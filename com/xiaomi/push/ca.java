@@ -8,31 +8,31 @@ import java.lang.ref.WeakReference;
 public class ca implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f41298a;
+    private String f27607a;
 
     /* renamed from: a  reason: collision with other field name */
-    private WeakReference<Context> f238a;
+    private WeakReference<Context> f191a;
 
     public ca(String str, WeakReference<Context> weakReference) {
-        this.f41298a = str;
-        this.f238a = weakReference;
+        this.f27607a = str;
+        this.f191a = weakReference;
     }
 
     @Override // java.lang.Runnable
     public void run() {
         Context context;
-        WeakReference<Context> weakReference = this.f238a;
+        WeakReference<Context> weakReference = this.f191a;
         if (weakReference == null || (context = weakReference.get()) == null) {
             return;
         }
-        if (cn.a(this.f41298a) <= bz.f234a) {
+        if (cn.a(this.f27607a) <= bz.f187a) {
             com.xiaomi.channel.commonutils.logger.b.b("=====> do not need clean db");
             return;
         }
-        cd a2 = cd.a(this.f41298a);
-        cc a3 = cc.a(this.f41298a);
+        cd a2 = cd.a(this.f27607a);
+        cc a3 = cc.a(this.f27607a);
         a2.a(a3);
-        a3.a(cb.a(context, this.f41298a, 1000));
+        a3.a(cb.a(context, this.f27607a, 1000));
         ch.a(context).a((ch.a) a2);
     }
 }

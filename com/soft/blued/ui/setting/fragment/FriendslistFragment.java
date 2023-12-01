@@ -43,16 +43,14 @@ public class FriendslistFragment extends PreloadFragment implements View.OnClick
     BluedUIHttpResponse j = new BluedUIHttpResponse<BluedEntityA<BluedBlackList>>() { // from class: com.soft.blued.ui.setting.fragment.FriendslistFragment.4
 
         /* renamed from: a  reason: collision with root package name */
-        boolean f33362a;
+        boolean f19671a;
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public BluedEntityA<BluedBlackList> parseData(String str) {
-            return (BluedEntityA) super.parseData(str);
+            return super.parseData(str);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public void onUIUpdate(BluedEntityA<BluedBlackList> bluedEntityA) {
             if (bluedEntityA != null) {
@@ -65,9 +63,9 @@ public class FriendslistFragment extends PreloadFragment implements View.OnClick
                         FriendslistFragment.this.m.p();
                     }
                 } catch (Exception e) {
-                    this.f33362a = true;
+                    this.f19671a = true;
                     e.printStackTrace();
-                    AppMethods.a((CharSequence) FriendslistFragment.this.k.getResources().getString(2131887272));
+                    AppMethods.a(FriendslistFragment.this.k.getResources().getString(2131887272));
                     if (FriendslistFragment.this.r != 1) {
                         FriendslistFragment.g(FriendslistFragment.this);
                         return;
@@ -97,26 +95,24 @@ public class FriendslistFragment extends PreloadFragment implements View.OnClick
                 FriendslistFragment.this.m.q();
             }
             if (FriendslistFragment.this.o.size() != 0) {
-                AppMethods.a((CharSequence) FriendslistFragment.this.k.getResources().getString(2131887275));
+                AppMethods.a(FriendslistFragment.this.k.getResources().getString(2131887275));
             }
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public boolean onUIFailure(int i, String str) {
-            this.f33362a = true;
+            this.f19671a = true;
             if (FriendslistFragment.this.r != 1) {
                 FriendslistFragment.g(FriendslistFragment.this);
             }
             return super.onUIFailure(i, str);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIFinish() {
             FriendslistFragment.this.m.j();
             FriendslistFragment.this.m.q();
             if (FriendslistFragment.this.o == null || FriendslistFragment.this.o.size() == 0) {
                 FriendslistFragment.this.m.setVisibility(8);
-                if (this.f33362a) {
+                if (this.f19671a) {
                     FriendslistFragment.this.x.b();
                 } else {
                     FriendslistFragment.this.x.a();
@@ -126,7 +122,7 @@ public class FriendslistFragment extends PreloadFragment implements View.OnClick
                 FriendslistFragment.this.x.d();
             }
             FriendslistFragment.this.q.notifyDataSetChanged();
-            this.f33362a = false;
+            this.f19671a = false;
         }
     };
 
@@ -141,7 +137,7 @@ public class FriendslistFragment extends PreloadFragment implements View.OnClick
         }
         if (!this.t && (i = this.r) != 1) {
             this.r = i - 1;
-            AppMethods.a((CharSequence) this.k.getResources().getString(2131887275));
+            AppMethods.a(this.k.getResources().getString(2131887275));
             this.m.j();
             this.m.q();
             return;
@@ -158,7 +154,6 @@ public class FriendslistFragment extends PreloadFragment implements View.OnClick
     private void b(String str) {
         MineHttpUtils.b(this.k, new BluedUIHttpResponse<BluedEntityA<BluedBlackList>>() { // from class: com.soft.blued.ui.setting.fragment.FriendslistFragment.3
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<BluedBlackList> bluedEntityA) {
                 if (bluedEntityA == null || bluedEntityA.data == null || bluedEntityA.data.size() <= 0) {
@@ -180,10 +175,10 @@ public class FriendslistFragment extends PreloadFragment implements View.OnClick
     }
 
     private void h() {
-        this.x = (NoDataAndLoadFailView) this.l.findViewById(2131368079);
-        RenrenPullToRefreshListView renrenPullToRefreshListView = (RenrenPullToRefreshListView) this.l.findViewById(2131366898);
-        this.m = renrenPullToRefreshListView;
-        renrenPullToRefreshListView.setRefreshEnabled(true);
+        this.x = this.l.findViewById(R.id.ll_nodata);
+        RenrenPullToRefreshListView findViewById = this.l.findViewById(R.id.list_view);
+        this.m = findViewById;
+        findViewById.setRefreshEnabled(true);
         ListView listView = (ListView) this.m.getRefreshableView();
         this.n = listView;
         listView.setClipToPadding(false);
@@ -198,13 +193,11 @@ public class FriendslistFragment extends PreloadFragment implements View.OnClick
         }, 100L);
         this.q = new GoodFriendsListAdapter(this.k, getFragmentActive());
         this.m.setOnPullDownListener(new RenrenPullToRefreshListView.OnPullDownListener() { // from class: com.soft.blued.ui.setting.fragment.FriendslistFragment.2
-            @Override // com.blued.android.framework.view.pulltorefresh.RenrenPullToRefreshListView.OnPullDownListener
             public void a() {
                 FriendslistFragment.this.r = 1;
                 FriendslistFragment.this.a(false);
             }
 
-            @Override // com.blued.android.framework.view.pulltorefresh.RenrenPullToRefreshListView.OnPullDownListener
             public void b() {
                 FriendslistFragment.b(FriendslistFragment.this);
                 FriendslistFragment.this.a(false);
@@ -213,7 +206,6 @@ public class FriendslistFragment extends PreloadFragment implements View.OnClick
         this.n.setAdapter((ListAdapter) this.q);
     }
 
-    @Override // com.blued.android.framework.activity.PreloadFragment
     public void a(View view) {
         FragmentActivity activity = getActivity();
         this.k = activity;
@@ -224,7 +216,6 @@ public class FriendslistFragment extends PreloadFragment implements View.OnClick
         h();
     }
 
-    @Override // com.blued.android.framework.utils.SearchTaskTool.TaskListener
     public void a(String str) {
         try {
             if (str.length() == 0) {
@@ -249,12 +240,10 @@ public class FriendslistFragment extends PreloadFragment implements View.OnClick
         getActivity().finish();
     }
 
-    @Override // com.blued.android.framework.activity.PreloadFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         return super.onCreateView(layoutInflater, viewGroup, bundle);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
     }

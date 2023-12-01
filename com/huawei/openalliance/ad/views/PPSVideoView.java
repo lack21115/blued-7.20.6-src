@@ -32,7 +32,7 @@ public class PPSVideoView extends PPSBaseView<kc> implements li {
     private VideoView b;
 
     /* renamed from: c  reason: collision with root package name */
-    private ImageView f23031c;
+    private ImageView f9423c;
     private boolean d;
     private boolean e;
     private VideoInfo f;
@@ -422,10 +422,10 @@ public class PPSVideoView extends PPSBaseView<kc> implements li {
 
     public void setMuteButtonState(boolean z) {
         this.d = z;
-        if (this.f23031c != null) {
-            this.f23031c.setImageResource(ay.Code(z));
-            this.f23031c.setSelected(!z);
-            ay.Code(this.f23031c);
+        if (this.f9423c != null) {
+            this.f9423c.setImageResource(ay.Code(z));
+            this.f9423c.setSelected(!z);
+            ay.Code(this.f9423c);
         }
     }
 

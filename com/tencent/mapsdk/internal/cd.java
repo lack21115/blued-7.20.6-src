@@ -8,10 +8,10 @@ import java.util.ArrayList;
 public class cd extends ArcLineOverlayInfo implements vc {
 
     /* renamed from: a  reason: collision with root package name */
-    private ArcLineOverlayProvider f37370a;
+    private ArcLineOverlayProvider f23679a;
 
     public cd(ArcLineOverlayProvider arcLineOverlayProvider) {
-        this.f37370a = arcLineOverlayProvider;
+        this.f23679a = arcLineOverlayProvider;
         ArrayList arrayList = new ArrayList();
         arrayList.add(arcLineOverlayProvider.getData());
         setDataList(arrayList);
@@ -34,6 +34,6 @@ public class cd extends ArcLineOverlayInfo implements vc {
     }
 
     public ArcLineOverlayProvider a() {
-        return this.f37370a;
+        return this.f23679a;
     }
 }

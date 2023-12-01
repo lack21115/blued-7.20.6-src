@@ -9,23 +9,23 @@ import org.json.JSONObject;
 public class ay {
 
     /* renamed from: a  reason: collision with root package name */
-    private JSONObject f23737a;
+    private JSONObject f10129a;
 
     public ay(Context context, int i) {
         if (Engine.loadSuccess) {
             try {
-                String pqr = Engine.getInstance(context).pqr(Integer.valueOf(cj.f23783c).intValue(), 2, i < 10 ? 10 : i, "");
+                String pqr = Engine.getInstance(context).pqr(Integer.valueOf(cj.f10175c).intValue(), 2, i < 10 ? 10 : i, "");
                 if (TextUtils.isEmpty(pqr)) {
                     return;
                 }
-                this.f23737a = new JSONObject(pqr);
+                this.f10129a = new JSONObject(pqr);
             } catch (Throwable th) {
             }
         }
     }
 
     private String b(String str) {
-        JSONObject jSONObject = this.f23737a;
+        JSONObject jSONObject = this.f10129a;
         if (jSONObject != null) {
             try {
                 return jSONObject.getString(str);

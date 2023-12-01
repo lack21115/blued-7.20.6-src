@@ -39,7 +39,7 @@ public class RegularImmutableMultiset<E> extends ImmutableMultiset<E> {
             return true;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
         public int size() {
             return RegularImmutableMultiset.this.contents.size();
         }
@@ -129,7 +129,7 @@ public class RegularImmutableMultiset<E> extends ImmutableMultiset<E> {
         return false;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    @Override // java.util.AbstractCollection, java.util.Collection, com.google.common.collect.Multiset
     public int size() {
         return this.size;
     }

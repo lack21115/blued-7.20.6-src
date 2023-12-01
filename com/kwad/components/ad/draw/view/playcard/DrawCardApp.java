@@ -191,7 +191,7 @@ public class DrawCardApp extends FrameLayout implements View.OnClickListener {
         }
         boolean z = true;
         int i = view == this.dy ? 1 : 2;
-        a.C0519a b = new a.C0519a(getContext()).I(this.mAdTemplate).b(this.mApkDownloadHelper);
+        a.C0349a b = new a.C0349a(getContext()).I(this.mAdTemplate).b(this.mApkDownloadHelper);
         if (view != this.dy) {
             z = false;
         }

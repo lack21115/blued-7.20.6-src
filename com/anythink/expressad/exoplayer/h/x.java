@@ -9,11 +9,11 @@ import java.nio.ByteBuffer;
 public final class x implements com.anythink.expressad.exoplayer.e.m {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f7517a = -1;
+    public static final int f4678a = -1;
     private static final int b = 32;
 
     /* renamed from: c  reason: collision with root package name */
-    private final com.anythink.expressad.exoplayer.j.b f7518c;
+    private final com.anythink.expressad.exoplayer.j.b f4679c;
     private final int d;
     private final w e = new w();
     private final w.a f = new w.a();
@@ -34,21 +34,21 @@ public final class x implements com.anythink.expressad.exoplayer.e.m {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public final long f7519a;
+        public final long f4680a;
         public final long b;
 
         /* renamed from: c  reason: collision with root package name */
-        public boolean f7520c;
+        public boolean f4681c;
         public com.anythink.expressad.exoplayer.j.a d;
         public a e;
 
         public a(long j, int i) {
-            this.f7519a = j;
+            this.f4680a = j;
             this.b = j + i;
         }
 
         public final int a(long j) {
-            return ((int) (j - this.f7519a)) + this.d.b;
+            return ((int) (j - this.f4680a)) + this.d.b;
         }
 
         public final a a() {
@@ -61,7 +61,7 @@ public final class x implements com.anythink.expressad.exoplayer.e.m {
         public final void a(com.anythink.expressad.exoplayer.j.a aVar, a aVar2) {
             this.d = aVar;
             this.e = aVar2;
-            this.f7520c = true;
+            this.f4681c = true;
         }
     }
 
@@ -71,7 +71,7 @@ public final class x implements com.anythink.expressad.exoplayer.e.m {
     }
 
     public x(com.anythink.expressad.exoplayer.j.b bVar) {
-        this.f7518c = bVar;
+        this.f4679c = bVar;
         this.d = bVar.d();
         a aVar = new a(0L, this.d);
         this.h = aVar;
@@ -97,7 +97,7 @@ public final class x implements com.anythink.expressad.exoplayer.e.m {
         b(j);
         while (i > 0) {
             int min = Math.min(i, (int) (this.i.b - j));
-            byteBuffer.put(this.i.d.f7550a, this.i.a(j), min);
+            byteBuffer.put(this.i.d.f4711a, this.i.a(j), min);
             int i2 = i - min;
             long j2 = j + min;
             j = j2;
@@ -115,7 +115,7 @@ public final class x implements com.anythink.expressad.exoplayer.e.m {
         int i2 = i;
         while (i2 > 0) {
             int min = Math.min(i2, (int) (this.i.b - j));
-            System.arraycopy((Object) this.i.d.f7550a, this.i.a(j), (Object) bArr, i - i2, min);
+            System.arraycopy(this.i.d.f4711a, this.i.a(j), bArr, i - i2, min);
             int i3 = i2 - min;
             long j2 = j + min;
             i2 = i3;
@@ -166,17 +166,17 @@ public final class x implements com.anythink.expressad.exoplayer.e.m {
             return;
         }
         while (j >= this.h.b) {
-            this.f7518c.a(this.h.d);
+            this.f4679c.a(this.h.d);
             this.h = this.h.a();
         }
-        if (this.i.f7519a < this.h.f7519a) {
+        if (this.i.f4680a < this.h.f4680a) {
             this.i = this.h;
         }
     }
 
     private int d(int i) {
-        if (!this.j.f7520c) {
-            this.j.a(this.f7518c.a(), new a(this.j.b, this.d));
+        if (!this.j.f4681c) {
+            this.j.a(this.f4679c.a(), new a(this.j.b, this.d));
         }
         return Math.min(i, (int) (this.j.b - this.o));
     }
@@ -197,7 +197,7 @@ public final class x implements com.anythink.expressad.exoplayer.e.m {
         this.i = aVar;
         this.j = aVar;
         this.o = 0L;
-        this.f7518c.b();
+        this.f4679c.b();
     }
 
     private void m() {
@@ -218,7 +218,7 @@ public final class x implements com.anythink.expressad.exoplayer.e.m {
 
     @Override // com.anythink.expressad.exoplayer.e.m
     public final int a(com.anythink.expressad.exoplayer.e.f fVar, int i, boolean z) {
-        int a2 = fVar.a(this.j.d.f7550a, this.j.a(this.o), d(i));
+        int a2 = fVar.a(this.j.d.f4711a, this.j.a(this.o), d(i));
         if (a2 != -1) {
             e(a2);
             return a2;
@@ -255,14 +255,14 @@ public final class x implements com.anythink.expressad.exoplayer.e.m {
         this.i = aVar;
         this.j = aVar;
         this.o = 0L;
-        this.f7518c.b();
+        this.f4679c.b();
     }
 
     public final void a(int i) {
         a aVar;
         long a2 = this.e.a(i);
         this.o = a2;
-        if (a2 == 0 || a2 == this.h.f7519a) {
+        if (a2 == 0 || a2 == this.h.f4680a) {
             a(this.h);
             a aVar2 = new a(this.o, this.d);
             this.h = aVar2;
@@ -320,7 +320,7 @@ public final class x implements com.anythink.expressad.exoplayer.e.m {
     public final void a(com.anythink.expressad.exoplayer.k.s sVar, int i) {
         while (i > 0) {
             int d = d(i);
-            sVar.a(this.j.d.f7550a, this.j.a(this.o), d);
+            sVar.a(this.j.d.f4711a, this.j.a(this.o), d);
             i -= d;
             e(d);
         }

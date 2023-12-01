@@ -6,7 +6,7 @@ import java.io.Serializable;
 /* loaded from: source-7994992-dex2jar.jar:com/igexin/sdk/message/BaseMessage.class */
 public class BaseMessage implements Serializable {
     private static final long serialVersionUID = 1;
-    private String appid = e.f23495a;
+    private String appid = e.f9887a;
     private String pkgName = e.g;
     private String clientId = e.A;
 

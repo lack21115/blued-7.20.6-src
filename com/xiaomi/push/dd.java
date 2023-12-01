@@ -3,6 +3,7 @@ package com.xiaomi.push;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.SharedPreferences;
+import com.kwad.components.offline.api.tk.model.report.TKDownloadReason;
 import com.xiaomi.push.al;
 import java.io.File;
 import java.io.IOException;
@@ -16,13 +17,13 @@ import org.json.JSONObject;
 public class dd {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile dd f41328a;
+    private static volatile dd f27637a;
 
     /* renamed from: a  reason: collision with other field name */
-    private Context f284a;
+    private Context f237a;
 
     /* renamed from: a  reason: collision with other field name */
-    private final ConcurrentLinkedQueue<b> f285a;
+    private final ConcurrentLinkedQueue<b> f238a;
 
     /* loaded from: source-8829756-dex2jar.jar:com/xiaomi/push/dd$a.class */
     class a extends b {
@@ -41,7 +42,7 @@ public class dd {
     public class b extends al.b {
 
         /* renamed from: a  reason: collision with root package name */
-        long f41330a = System.currentTimeMillis();
+        long f27639a = System.currentTimeMillis();
 
         /* JADX INFO: Access modifiers changed from: package-private */
         public b() {
@@ -56,8 +57,8 @@ public class dd {
         }
 
         /* renamed from: b  reason: collision with other method in class */
-        final boolean m11617b() {
-            return System.currentTimeMillis() - this.f41330a > com.baidu.mobads.sdk.internal.bj.e;
+        final boolean m8567b() {
+            return System.currentTimeMillis() - this.f27639a > com.baidu.mobads.sdk.internal.bj.e;
         }
     }
 
@@ -65,33 +66,33 @@ public class dd {
     class c extends b {
 
         /* renamed from: a  reason: collision with root package name */
-        int f41331a;
+        int f27640a;
 
         /* renamed from: a  reason: collision with other field name */
-        File f287a;
+        File f240a;
 
         /* renamed from: a  reason: collision with other field name */
-        String f288a;
+        String f241a;
 
         /* renamed from: a  reason: collision with other field name */
-        boolean f289a;
+        boolean f242a;
         String b;
 
         /* renamed from: b  reason: collision with other field name */
-        boolean f290b;
+        boolean f243b;
 
         /* JADX INFO: Access modifiers changed from: package-private */
         public c(String str, String str2, File file, boolean z) {
             super();
-            this.f288a = str;
+            this.f241a = str;
             this.b = str2;
-            this.f287a = file;
-            this.f290b = z;
+            this.f240a = file;
+            this.f243b = z;
         }
 
         private boolean c() {
             int i;
-            SharedPreferences sharedPreferences = dd.this.f284a.getSharedPreferences("log.timestamp", 0);
+            SharedPreferences sharedPreferences = dd.this.f237a.getSharedPreferences("log.timestamp", 0);
             String string = sharedPreferences.getString("log.requst", "");
             long currentTimeMillis = System.currentTimeMillis();
             try {
@@ -123,10 +124,10 @@ public class dd {
 
         @Override // com.xiaomi.push.dd.b
         public boolean a() {
-            if (bh.e(dd.this.f284a)) {
+            if (bh.e(dd.this.f237a)) {
                 return true;
             }
-            return this.f290b && bh.b(dd.this.f284a);
+            return this.f243b && bh.b(dd.this.f237a);
         }
 
         @Override // com.xiaomi.push.dd.b, com.xiaomi.push.al.b
@@ -134,60 +135,60 @@ public class dd {
             try {
                 if (c()) {
                     HashMap hashMap = new HashMap();
-                    hashMap.put("uid", com.xiaomi.push.service.bv.m12168a());
+                    hashMap.put("uid", com.xiaomi.push.service.bv.m9118a());
                     hashMap.put("token", this.b);
-                    hashMap.put("net", bh.m11535a(dd.this.f284a));
-                    bh.a(this.f288a, hashMap, this.f287a, ContentResolver.SCHEME_FILE);
+                    hashMap.put(TKDownloadReason.KSAD_TK_NET, bh.m8485a(dd.this.f237a));
+                    bh.a(this.f241a, hashMap, this.f240a, ContentResolver.SCHEME_FILE);
                 }
-                this.f289a = true;
+                this.f242a = true;
             } catch (IOException e) {
             }
         }
 
         @Override // com.xiaomi.push.al.b
         /* renamed from: c  reason: collision with other method in class */
-        public void mo11618c() {
-            if (!this.f289a) {
-                int i = this.f41331a + 1;
-                this.f41331a = i;
+        public void mo8568c() {
+            if (!this.f242a) {
+                int i = this.f27640a + 1;
+                this.f27640a = i;
                 if (i < 3) {
-                    dd.this.f285a.add(this);
+                    dd.this.f238a.add(this);
                 }
             }
-            if (this.f289a || this.f41331a >= 3) {
-                this.f287a.delete();
+            if (this.f242a || this.f27640a >= 3) {
+                this.f240a.delete();
             }
-            dd.this.a((1 << this.f41331a) * 1000);
+            dd.this.a((1 << this.f27640a) * 1000);
         }
     }
 
     private dd(Context context) {
         ConcurrentLinkedQueue<b> concurrentLinkedQueue = new ConcurrentLinkedQueue<>();
-        this.f285a = concurrentLinkedQueue;
-        this.f284a = context;
+        this.f238a = concurrentLinkedQueue;
+        this.f237a = context;
         concurrentLinkedQueue.add(new a());
         b(0L);
     }
 
     public static dd a(Context context) {
-        if (f41328a == null) {
+        if (f27637a == null) {
             synchronized (dd.class) {
                 try {
-                    if (f41328a == null) {
-                        f41328a = new dd(context);
+                    if (f27637a == null) {
+                        f27637a = new dd(context);
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        f41328a.f284a = context;
-        return f41328a;
+        f27637a.f237a = context;
+        return f27637a;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void a(long j) {
-        b peek = this.f285a.peek();
+        b peek = this.f238a.peek();
         if (peek == null || !peek.a()) {
             return;
         }
@@ -196,11 +197,11 @@ public class dd {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void b() {
-        if (z.b() || z.m12223a()) {
+        if (z.b() || z.m9173a()) {
             return;
         }
         try {
-            File file = new File(this.f284a.getExternalFilesDir(null) + "/.logcache");
+            File file = new File(this.f237a.getExternalFilesDir(null) + "/.logcache");
             if (!file.exists() || !file.isDirectory()) {
                 return;
             }
@@ -220,21 +221,21 @@ public class dd {
     }
 
     private void b(long j) {
-        if (this.f285a.isEmpty()) {
+        if (this.f238a.isEmpty()) {
             return;
         }
         gx.a(new df(this), j);
     }
 
     private void c() {
-        while (!this.f285a.isEmpty()) {
-            b peek = this.f285a.peek();
+        while (!this.f238a.isEmpty()) {
+            b peek = this.f238a.peek();
             if (peek != null) {
-                if (!peek.m11617b() && this.f285a.size() <= 6) {
+                if (!peek.m8567b() && this.f238a.size() <= 6) {
                     return;
                 }
                 com.xiaomi.channel.commonutils.logger.b.c("remove Expired task");
-                this.f285a.remove(peek);
+                this.f238a.remove(peek);
             }
         }
     }
@@ -245,7 +246,7 @@ public class dd {
     }
 
     public void a(String str, String str2, Date date, Date date2, int i, boolean z) {
-        this.f285a.add(new de(this, i, date, date2, str, str2, z));
+        this.f238a.add(new de(this, i, date, date2, str, str2, z));
         b(0L);
     }
 }

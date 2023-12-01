@@ -15,33 +15,32 @@ public final class Primitives {
         return type == Integer.class || type == Float.class || type == Byte.class || type == Double.class || type == Long.class || type == Character.class || type == Boolean.class || type == Short.class || type == Void.class;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
     public static <T> Class<T> unwrap(Class<T> cls) {
         if (cls == Integer.class) {
-            return (Class<T>) Integer.TYPE;
+            return Integer.TYPE;
         }
         if (cls == Float.class) {
-            return (Class<T>) Float.TYPE;
+            return Float.TYPE;
         }
         if (cls == Byte.class) {
-            return (Class<T>) Byte.TYPE;
+            return Byte.TYPE;
         }
         if (cls == Double.class) {
-            return (Class<T>) Double.TYPE;
+            return Double.TYPE;
         }
         if (cls == Long.class) {
-            return (Class<T>) Long.TYPE;
+            return Long.TYPE;
         }
         if (cls == Character.class) {
-            return (Class<T>) Character.TYPE;
+            return Character.TYPE;
         }
         if (cls == Boolean.class) {
-            return (Class<T>) Boolean.TYPE;
+            return Boolean.TYPE;
         }
         if (cls == Short.class) {
-            return (Class<T>) Short.TYPE;
+            return Short.TYPE;
         }
-        Class cls2 = cls;
+        Class<T> cls2 = cls;
         if (cls == Void.class) {
             cls2 = Void.TYPE;
         }

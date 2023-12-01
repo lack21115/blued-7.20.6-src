@@ -5,16 +5,16 @@ package com.tencent.ugc;
 public final /* synthetic */ class db implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final UGCMediaListSource f40315a;
+    private final UGCMediaListSource f26624a;
     private final long b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final boolean f40316c;
+    private final boolean f26625c;
 
     private db(UGCMediaListSource uGCMediaListSource, long j, boolean z) {
-        this.f40315a = uGCMediaListSource;
+        this.f26624a = uGCMediaListSource;
         this.b = j;
-        this.f40316c = z;
+        this.f26625c = z;
     }
 
     public static Runnable a(UGCMediaListSource uGCMediaListSource, long j, boolean z) {
@@ -23,6 +23,6 @@ public final /* synthetic */ class db implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        this.f40315a.seekToInternal(this.b, this.f40316c);
+        this.f26624a.seekToInternal(this.b, this.f26625c);
     }
 }

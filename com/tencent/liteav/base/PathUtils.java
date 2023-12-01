@@ -28,7 +28,7 @@ public abstract class PathUtils {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final String[] f36277a = PathUtils.access$000();
+        private static final String[] f22586a = PathUtils.access$000();
     }
 
     private PathUtils() {
@@ -58,7 +58,7 @@ public abstract class PathUtils {
     }
 
     private static String getDirectoryPath(int i) {
-        return a.f36277a[i];
+        return a.f22586a[i];
     }
 
     public static String getLogDirectory() {

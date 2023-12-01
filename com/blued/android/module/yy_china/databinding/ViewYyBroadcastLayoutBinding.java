@@ -14,13 +14,9 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ViewYyBroadcastLayoutBinding.class */
 public final class ViewYyBroadcastLayoutBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ShapeTextView f16891a;
+    public final ShapeTextView a;
     public final EditText b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final FrameLayout f16892c;
+    public final FrameLayout c;
     public final ImageView d;
     public final ImageView e;
     public final LinearLayout f;
@@ -30,9 +26,9 @@ public final class ViewYyBroadcastLayoutBinding implements ViewBinding {
 
     private ViewYyBroadcastLayoutBinding(RelativeLayout relativeLayout, ShapeTextView shapeTextView, EditText editText, FrameLayout frameLayout, ImageView imageView, ImageView imageView2, LinearLayout linearLayout, ScrollView scrollView, TextView textView) {
         this.i = relativeLayout;
-        this.f16891a = shapeTextView;
+        this.a = shapeTextView;
         this.b = editText;
-        this.f16892c = frameLayout;
+        this.c = frameLayout;
         this.d = imageView;
         this.e = imageView2;
         this.f = linearLayout;
@@ -85,7 +81,6 @@ public final class ViewYyBroadcastLayoutBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
         return this.i;

@@ -3,16 +3,14 @@ package com.amap.api.col.p0003sl;
 /* renamed from: com.amap.api.col.3sl.gq  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/gq.class */
 public final class gq {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static int f4996a = 4;
+    private static int a = 4;
 
     public static byte[] a(byte[] bArr, byte[] bArr2) {
         if (bArr.length == 0) {
             return bArr;
         }
         int length = bArr.length;
-        int i = f4996a;
+        int i = a;
         int i2 = ((length / i) + 1) * i;
         byte[] bArr3 = new byte[i2];
         System.arraycopy((Object) bArr, 0, (Object) bArr3, 0, bArr.length);

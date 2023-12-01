@@ -17,21 +17,17 @@ import com.blued.android.framework.ui.xpop.widget.PartShadowContainer;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/ui/xpop/impl/PartShadowPopupView.class */
 public abstract class PartShadowPopupView extends BasePopupView {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected PartShadowContainer f10006a;
+    protected PartShadowContainer a;
     public boolean b;
 
     /* renamed from: com.blued.android.framework.ui.xpop.impl.PartShadowPopupView$1  reason: invalid class name */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/ui/xpop/impl/PartShadowPopupView$1.class */
     class AnonymousClass1 implements Runnable {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ PartShadowPopupView f10007a;
+        final /* synthetic */ PartShadowPopupView a;
 
         @Override // java.lang.Runnable
         public void run() {
-            this.f10007a.a();
+            this.a.a();
         }
     }
 
@@ -78,20 +74,20 @@ public abstract class PartShadowPopupView extends BasePopupView {
         }
         getPopupContentView().setLayoutParams(marginLayoutParams);
         getPopupImplView().setTranslationY(this.l.y);
-        this.f10006a.setOnLongClickListener(new View.OnLongClickListener() { // from class: com.blued.android.framework.ui.xpop.impl.PartShadowPopupView.3
+        this.a.setOnLongClickListener(new View.OnLongClickListener() { // from class: com.blued.android.framework.ui.xpop.impl.PartShadowPopupView.3
             @Override // android.view.View.OnLongClickListener
             public boolean onLongClick(View view) {
-                if (PartShadowPopupView.this.l.f9988c.booleanValue()) {
+                if (PartShadowPopupView.this.l.c.booleanValue()) {
                     PartShadowPopupView.this.p();
                     return false;
                 }
                 return false;
             }
         });
-        this.f10006a.setOnClickOutsideListener(new OnClickOutsideListener() { // from class: com.blued.android.framework.ui.xpop.impl.PartShadowPopupView.4
+        this.a.setOnClickOutsideListener(new OnClickOutsideListener() { // from class: com.blued.android.framework.ui.xpop.impl.PartShadowPopupView.4
             @Override // com.blued.android.framework.ui.xpop.interfaces.OnClickOutsideListener
             public void a() {
-                if (PartShadowPopupView.this.l.f9988c.booleanValue()) {
+                if (PartShadowPopupView.this.l.c.booleanValue()) {
                     PartShadowPopupView.this.p();
                 }
             }
@@ -122,7 +118,7 @@ public abstract class PartShadowPopupView extends BasePopupView {
 
     @Override // com.blued.android.framework.ui.xpop.core.BasePopupView, android.view.View
     public boolean onTouchEvent(MotionEvent motionEvent) {
-        if (this.l.f9988c.booleanValue()) {
+        if (this.l.c.booleanValue()) {
             p();
         }
         if (this.r != null && this.l.D) {

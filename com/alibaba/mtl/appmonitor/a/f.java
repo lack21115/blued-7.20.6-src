@@ -34,7 +34,7 @@ public enum f {
                 return null;
             }
             f fVar = values[i3];
-            if (fVar != null && fVar.m2139a() == i) {
+            if (fVar != null && fVar.m8582a() == i) {
                 return fVar;
             }
             i2 = i3 + 1;
@@ -42,12 +42,12 @@ public enum f {
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public int m2139a() {
+    public int m8582a() {
         return this.e;
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public String m2140a() {
+    public String m8583a() {
         return this.t;
     }
 

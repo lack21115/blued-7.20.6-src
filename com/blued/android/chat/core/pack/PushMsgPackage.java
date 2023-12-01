@@ -1,7 +1,7 @@
 package com.blued.android.chat.core.pack;
 
-import android.media.MediaFormat;
 import android.util.Log;
+import com.android.internal.util.cm.NavigationRingConstants;
 import com.blued.android.chat.ChatManager;
 import com.blued.android.chat.core.pack.ReqAckPackage;
 import com.blued.android.chat.model.ChattingModel;
@@ -9,8 +9,6 @@ import com.blued.android.chat.utils.BytesUtils;
 import com.blued.android.chat.utils.ChatHelper;
 import com.blued.android.chat.utils.MsgPackHelper;
 import com.google.gson.Gson;
-import com.soft.blued.ui.find.model.UserFindResult;
-import com.soft.blued.ui.mine.model.MineEntryInfo;
 import java.util.Map;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/chat/core/pack/PushMsgPackage.class */
@@ -106,7 +104,7 @@ public class PushMsgPackage {
                     this.msgContent = str;
                 }
                 this.status = MsgPackHelper.getIntValue(unpackMap, "session_status");
-                this.app = MsgPackHelper.getIntValue(unpackMap, "app");
+                this.app = MsgPackHelper.getIntValue(unpackMap, NavigationRingConstants.ACTION_APP);
                 this.msgAt = MsgPackHelper.getStringValue(unpackMap, "at");
                 Map<String, Object> mapValue = MsgPackHelper.getMapValue(unpackMap, "extra");
                 this.msgMapExtra = mapValue;
@@ -121,7 +119,7 @@ public class PushMsgPackage {
                     }
                 }
                 this.session_common_status = MsgPackHelper.getStringValue(unpackMap, "session_common_status");
-                Map mapValue2 = MsgPackHelper.getMapValue(unpackMap, MediaFormat.KEY_PROFILE);
+                Map mapValue2 = MsgPackHelper.getMapValue(unpackMap, "profile");
                 if (mapValue2 != null) {
                     if (ChatManager.debug) {
                         this.profileMap = new Gson().toJson(mapValue2);
@@ -129,10 +127,10 @@ public class PushMsgPackage {
                     this.fromName = MsgPackHelper.getStringValue(mapValue2, "name");
                     this.fromAvatar = MsgPackHelper.getStringValue(mapValue2, ReqAckPackage.REQ_RESPONSE_KEY.AVATAR);
                     this.fromVBadge = MsgPackHelper.getIntValue(mapValue2, ReqAckPackage.REQ_RESPONSE_KEY.VBADGE);
-                    this.fromOnline = MsgPackHelper.getIntValue(mapValue2, UserFindResult.USER_SORT_BY.ONLINE);
+                    this.fromOnline = MsgPackHelper.getIntValue(mapValue2, "online");
                     this.fromFriend = MsgPackHelper.getIntValue(mapValue2, "friend");
                     if (ChatManager.clientType == ChatManager.ClientType.CHINA) {
-                        this.fromRichLevel = MsgPackHelper.getIntValue(mapValue2, MineEntryInfo.ColumnsExtra.TYPE_RICH_LEVEL);
+                        this.fromRichLevel = MsgPackHelper.getIntValue(mapValue2, "rich_level");
                     } else if (ChatManager.clientType == ChatManager.ClientType.INTERNATIONAL) {
                         this.fromRichLevel = MsgPackHelper.getIntValue(mapValue2, "o_rich_level");
                     }

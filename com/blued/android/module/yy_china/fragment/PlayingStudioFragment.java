@@ -97,14 +97,14 @@ public class PlayingStudioFragment extends BaseYYStudioFragment {
         int i = width / 2;
         int i2 = measuredWidth / 2;
         int i3 = height / 2;
-        int a2 = DensityUtils.a(getContext(), 6.0f);
+        int a = DensityUtils.a(getContext(), 6.0f);
         int i4 = iArr[0];
         int i5 = iArr[1];
         PopupWindow popupWindow = new PopupWindow(linearLayout, measuredWidth, measuredHeight);
         popupWindow.setFocusable(true);
         popupWindow.setOutsideTouchable(true);
         popupWindow.setBackgroundDrawable(new ColorDrawable(0));
-        popupWindow.showAtLocation(getActivity().getWindow().getDecorView(), 0, i4 + (i - i2), i5 + i3 + a2);
+        popupWindow.showAtLocation(getActivity().getWindow().getDecorView(), 0, i4 + (i - i2), i5 + i3 + a);
         return popupWindow;
     }
 
@@ -171,7 +171,7 @@ public class PlayingStudioFragment extends BaseYYStudioFragment {
         textView2.setVisibility(8);
         findViewById.setVisibility(8);
         textView.setText(getResources().getString(R.string.yy_up_seat));
-        final PopupWindow a2 = a(view, linearLayout);
+        final PopupWindow a = a(view, linearLayout);
         textView.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.PlayingStudioFragment.12
             @Override // android.view.View.OnClickListener
             public void onClick(View view2) {
@@ -180,11 +180,11 @@ public class PlayingStudioFragment extends BaseYYStudioFragment {
                 YYClickApplyEvent yYClickApplyEvent = new YYClickApplyEvent(applyFromSource, i + "");
                 yYClickApplyEvent.setShowApplicationDialog(false);
                 LiveEventBus.get("common_apply_seat").post(yYClickApplyEvent);
-                PopupWindow popupWindow = a2;
+                PopupWindow popupWindow = a;
                 if (popupWindow == null || !popupWindow.isShowing()) {
                     return;
                 }
-                a2.dismiss();
+                a.dismiss();
             }
         });
     }
@@ -212,17 +212,17 @@ public class PlayingStudioFragment extends BaseYYStudioFragment {
             textView.setVisibility(8);
             findViewById.setVisibility(8);
         }
-        final PopupWindow a2 = a(view, linearLayout);
+        final PopupWindow a = a(view, linearLayout);
         textView.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.PlayingStudioFragment.13
             @Override // android.view.View.OnClickListener
             public void onClick(View view2) {
                 Tracker.onClick(view2);
                 PlayingStudioFragment.this.a(yYSeatMemberModel, i);
-                PopupWindow popupWindow = a2;
+                PopupWindow popupWindow = a;
                 if (popupWindow == null || !popupWindow.isShowing()) {
                     return;
                 }
-                a2.dismiss();
+                a.dismiss();
             }
         });
         if (YYRoomInfoManager.e().i() || !YYRoomInfoManager.e().j()) {
@@ -231,11 +231,11 @@ public class PlayingStudioFragment extends BaseYYStudioFragment {
                 public void onClick(View view2) {
                     Tracker.onClick(view2);
                     PlayingStudioFragment.this.c(i);
-                    PopupWindow popupWindow = a2;
+                    PopupWindow popupWindow = a;
                     if (popupWindow == null || !popupWindow.isShowing()) {
                         return;
                     }
-                    a2.dismiss();
+                    a.dismiss();
                 }
             });
             return;
@@ -249,11 +249,11 @@ public class PlayingStudioFragment extends BaseYYStudioFragment {
                 YYClickApplyEvent yYClickApplyEvent = new YYClickApplyEvent(applyFromSource, "" + i);
                 yYClickApplyEvent.setShowApplicationDialog(false);
                 LiveEventBus.get("common_apply_seat").post(yYClickApplyEvent);
-                PopupWindow popupWindow = a2;
+                PopupWindow popupWindow = a;
                 if (popupWindow == null || !popupWindow.isShowing()) {
                     return;
                 }
-                a2.dismiss();
+                a.dismiss();
             }
         });
     }
@@ -302,9 +302,7 @@ public class PlayingStudioFragment extends BaseYYStudioFragment {
         LiveLogUtils.a("PlayingStudioFragment --> leaveRoom --> 准备请求退出直播间接口 ... room_id： " + str);
         z();
         YYRoomInfoManager.e().a(str, new BluedUIHttpResponse<BluedEntityA<Object>>(getFragmentActive()) { // from class: com.blued.android.module.yy_china.fragment.PlayingStudioFragment.1
-
-            /* renamed from: a  reason: collision with root package name */
-            Dialog f17038a = null;
+            Dialog a = null;
 
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
@@ -318,32 +316,32 @@ public class PlayingStudioFragment extends BaseYYStudioFragment {
                 } else {
                     PlayingStudioFragment.this.a(str, false, (YYMsgKickInfoExtra) null);
                 }
-                Dialog dialog = this.f17038a;
+                Dialog dialog = this.a;
                 if (dialog != null) {
                     dialog.cancel();
                 }
-                DialogUtils.b(this.f17038a);
+                DialogUtils.b(this.a);
             }
 
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str2) {
                 LiveLogUtils.a("PlayingStudioFragment --> leaveRoom --> 退出直播间接口请求失败 ... errorMessage： " + str2);
-                DialogUtils.b(this.f17038a);
+                DialogUtils.b(this.a);
                 return super.onUIFailure(i, str2);
             }
 
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish(boolean z) {
                 super.onUIFinish(z);
-                DialogUtils.b(this.f17038a);
+                DialogUtils.b(this.a);
             }
 
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 super.onUIStart();
-                Dialog a2 = DialogUtils.a(PlayingStudioFragment.this.getContext());
-                this.f17038a = a2;
-                DialogUtils.a(a2);
+                Dialog a = DialogUtils.a(PlayingStudioFragment.this.getContext());
+                this.a = a;
+                DialogUtils.a(a);
             }
         }, getFragmentActive());
     }
@@ -351,14 +349,13 @@ public class PlayingStudioFragment extends BaseYYStudioFragment {
     @Override // com.blued.android.module.yy_china.fragment.BaseYYStudioFragment
     public void A() {
         LiveEventBus.get("invite_seat_msg", YYImModel.class).observe(this, new Observer<YYImModel>() { // from class: com.blued.android.module.yy_china.fragment.PlayingStudioFragment.3
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(YYImModel yYImModel) {
                 final YYAudienceModel yYAudienceModel;
                 if (YYRoomInfoManager.e().c().a(PlayingStudioFragment.this.getContext(), (View.OnClickListener) null) || (yYAudienceModel = yYImModel.source_profile) == null) {
                     return;
                 }
-                final YYMsgMicInfoExtra yYMsgMicInfoExtra = (YYMsgMicInfoExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) YYMsgMicInfoExtra.class);
+                final YYMsgMicInfoExtra yYMsgMicInfoExtra = (YYMsgMicInfoExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), YYMsgMicInfoExtra.class);
                 YYRoomModel b = YYRoomInfoManager.e().b();
                 if (b != null) {
                     EventTrackYY.d(ChatRoomProtos.Event.CHAT_ROOM_INVITE_POP_SHOW, b.room_id, b.uid);
@@ -383,7 +380,6 @@ public class PlayingStudioFragment extends BaseYYStudioFragment {
             }
         });
         LiveEventBus.get("close_living_room", YYMsgKickInfoExtra.class).observe(this, new Observer<YYMsgKickInfoExtra>() { // from class: com.blued.android.module.yy_china.fragment.PlayingStudioFragment.4
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(YYMsgKickInfoExtra yYMsgKickInfoExtra) {
                 if (yYMsgKickInfoExtra.source_profile == null) {
@@ -399,14 +395,12 @@ public class PlayingStudioFragment extends BaseYYStudioFragment {
             }
         });
         LiveEventBus.get("late_accept_msg", String.class).observe(this, new Observer<String>() { // from class: com.blued.android.module.yy_china.fragment.PlayingStudioFragment.5
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(String str) {
                 new YYLateAcceptView(PlayingStudioFragment.this.getContext()).a(PlayingStudioFragment.this);
             }
         });
         LiveEventBus.get("send_apply_reject", String.class).observe(this, new Observer<String>() { // from class: com.blued.android.module.yy_china.fragment.PlayingStudioFragment.6
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(String str) {
                 YYRoomModel b = YYRoomInfoManager.e().b();
@@ -416,7 +410,6 @@ public class PlayingStudioFragment extends BaseYYStudioFragment {
             }
         });
         LiveEventBus.get("down_seat_msg", YYAudienceModel.class).observe(this, new Observer<YYAudienceModel>() { // from class: com.blued.android.module.yy_china.fragment.PlayingStudioFragment.7
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(YYAudienceModel yYAudienceModel) {
                 LiveLogUtils.a("PlayingStudioFragment --> EVENT_DOWN_SEAT_MSG --> 被下麦");
@@ -428,7 +421,6 @@ public class PlayingStudioFragment extends BaseYYStudioFragment {
             }
         });
         LiveEventBus.get("set_mute_status", String.class).observe(this, new Observer<String>() { // from class: com.blued.android.module.yy_china.fragment.PlayingStudioFragment.8
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(String str) {
                 String str2 = TextUtils.equals("1", str) ? "你已被禁言，本场不可在公屏发言" : "你已被解除禁言，恢复公屏发言权限";
@@ -487,18 +479,18 @@ public class PlayingStudioFragment extends BaseYYStudioFragment {
         } else {
             this.o.a(true);
         }
-        LiveMusicModel a2 = YYMusicManager.f11418a.c().a();
-        if (a2 != null) {
-            a(a2);
+        LiveMusicModel a = YYMusicManager.a.c().a();
+        if (a != null) {
+            a(a);
         }
     }
 
     @Override // com.blued.android.module.yy_china.fragment.BaseYYStudioFragment
     public int F() {
-        if (YYRoomInfoManager.e().f17578a == null) {
+        if (YYRoomInfoManager.e().a == null) {
             return 0;
         }
-        return StringUtils.a(YYRoomInfoManager.e().f17578a.chat_anchor, 0);
+        return StringUtils.a(YYRoomInfoManager.e().a.chat_anchor, 0);
     }
 
     @Override // com.blued.android.module.yy_china.fragment.BaseYYStudioFragment
@@ -536,22 +528,22 @@ public class PlayingStudioFragment extends BaseYYStudioFragment {
             return;
         }
         YYAudioConfig yYAudioConfig = new YYAudioConfig();
-        yYAudioConfig.f17862c = YYRoomInfoManager.e().k();
+        yYAudioConfig.c = YYRoomInfoManager.e().k();
         yYAudioConfig.b = b.room_id;
         int i = 20;
         if (TextUtils.equals(b.chat_type, "9")) {
-            if (b.getSeatMember(yYAudioConfig.f17862c) == null) {
+            if (b.getSeatMember(yYAudioConfig.c) == null) {
                 i = 21;
             }
             yYAudioConfig.d = i;
         } else {
-            if (!YYRoomInfoManager.e().f17578a.chat_anchor.equals("1")) {
+            if (!YYRoomInfoManager.e().a.chat_anchor.equals("1")) {
                 i = 21;
             }
             yYAudioConfig.d = i;
         }
-        yYAudioConfig.f17861a = b.user_sig;
-        Logger.c("ulog", "客态 getUserInfo -- role  " + yYAudioConfig.d + "  uid " + yYAudioConfig.f17862c);
+        yYAudioConfig.a = b.user_sig;
+        Logger.c("ulog", "客态 getUserInfo -- role  " + yYAudioConfig.d + "  uid " + yYAudioConfig.c);
         AudioChannelManager.j().a(L());
         AudioChannelManager.j().a(yYAudioConfig);
     }
@@ -574,9 +566,9 @@ public class PlayingStudioFragment extends BaseYYStudioFragment {
 
     public void V() {
         if (this.ak == null) {
-            KtvNewSongMessageView a2 = KtvNewSongMessageView.f17951a.a(this.r);
-            this.ak = a2;
-            a2.setFrag(this);
+            KtvNewSongMessageView a = KtvNewSongMessageView.a.a(this.r);
+            this.ak = a;
+            a.setFrag(this);
         }
         this.ak.b();
     }
@@ -584,10 +576,10 @@ public class PlayingStudioFragment extends BaseYYStudioFragment {
     @Override // com.blued.android.module.live.base.music.BlackMusicListener
     public void a() {
         this.p.setPlaying(true);
-        if (this.p.f18333a == null) {
+        if (this.p.a == null) {
             l().a(3, "");
         } else {
-            l().a(3, this.p.f18333a.cover);
+            l().a(3, this.p.a.cover);
         }
     }
 
@@ -686,10 +678,10 @@ public class PlayingStudioFragment extends BaseYYStudioFragment {
     @Override // com.blued.android.module.live.base.music.BlackMusicListener
     public void d() {
         this.p.setPlaying(false);
-        if (this.p.f18333a == null) {
+        if (this.p.a == null) {
             l().a(3, "");
         } else {
-            l().a(2, this.p.f18333a.cover);
+            l().a(2, this.p.a.cover);
         }
     }
 

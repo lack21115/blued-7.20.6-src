@@ -11,31 +11,31 @@ public interface f {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private final Handler f25288a;
+        private final Handler f11600a;
         private final f b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final long f25289c;
+        private final long f11601c;
 
         public a(Handler handler, f fVar) {
             this(handler, fVar, 0L);
         }
 
         public a(Handler handler, f fVar, long j) {
-            this.f25288a = fVar != null ? (Handler) com.opos.exoplayer.core.i.a.a(handler) : null;
+            this.f11600a = fVar != null ? (Handler) com.opos.exoplayer.core.i.a.a(handler) : null;
             this.b = fVar;
-            this.f25289c = j;
+            this.f11601c = j;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
         public long a(long j) {
             long a2 = com.opos.exoplayer.core.b.a(j);
-            return a2 == com.anythink.expressad.exoplayer.b.b ? com.anythink.expressad.exoplayer.b.b : this.f25289c + a2;
+            return a2 == com.anythink.expressad.exoplayer.b.b ? com.anythink.expressad.exoplayer.b.b : this.f11601c + a2;
         }
 
         public void a(final int i, final Format format, final int i2, final Object obj, final long j) {
             Handler handler;
-            if (this.b == null || (handler = this.f25288a) == null) {
+            if (this.b == null || (handler = this.f11600a) == null) {
                 return;
             }
             handler.post(new Runnable() { // from class: com.opos.exoplayer.core.e.f.a.5
@@ -48,7 +48,7 @@ public interface f {
 
         public void a(final com.opos.exoplayer.core.h.i iVar, final int i, final int i2, final Format format, final int i3, final Object obj, final long j, final long j2, final long j3) {
             Handler handler;
-            if (this.b == null || (handler = this.f25288a) == null) {
+            if (this.b == null || (handler = this.f11600a) == null) {
                 return;
             }
             handler.post(new Runnable() { // from class: com.opos.exoplayer.core.e.f.a.1
@@ -61,7 +61,7 @@ public interface f {
 
         public void a(final com.opos.exoplayer.core.h.i iVar, final int i, final int i2, final Format format, final int i3, final Object obj, final long j, final long j2, final long j3, final long j4, final long j5) {
             Handler handler;
-            if (this.b == null || (handler = this.f25288a) == null) {
+            if (this.b == null || (handler = this.f11600a) == null) {
                 return;
             }
             handler.post(new Runnable() { // from class: com.opos.exoplayer.core.e.f.a.2
@@ -74,7 +74,7 @@ public interface f {
 
         public void a(final com.opos.exoplayer.core.h.i iVar, final int i, final int i2, final Format format, final int i3, final Object obj, final long j, final long j2, final long j3, final long j4, final long j5, final IOException iOException, final boolean z) {
             Handler handler;
-            if (this.b == null || (handler = this.f25288a) == null) {
+            if (this.b == null || (handler = this.f11600a) == null) {
                 return;
             }
             handler.post(new Runnable() { // from class: com.opos.exoplayer.core.e.f.a.4
@@ -87,7 +87,7 @@ public interface f {
 
         public void b(final com.opos.exoplayer.core.h.i iVar, final int i, final int i2, final Format format, final int i3, final Object obj, final long j, final long j2, final long j3, final long j4, final long j5) {
             Handler handler;
-            if (this.b == null || (handler = this.f25288a) == null) {
+            if (this.b == null || (handler = this.f11600a) == null) {
                 return;
             }
             handler.post(new Runnable() { // from class: com.opos.exoplayer.core.e.f.a.3

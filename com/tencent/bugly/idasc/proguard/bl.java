@@ -4,31 +4,31 @@ package com.tencent.bugly.idasc.proguard;
 public final class bl extends m implements Cloneable {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f35297a = "";
+    public String f21606a = "";
     public String b = "";
 
     /* renamed from: c  reason: collision with root package name */
-    public String f35298c = "";
+    public String f21607c = "";
     public String d = "";
     public String e = "";
 
     @Override // com.tencent.bugly.idasc.proguard.m
     public final void a(k kVar) {
-        this.f35297a = kVar.b(0, true);
+        this.f21606a = kVar.b(0, true);
         this.b = kVar.b(1, false);
-        this.f35298c = kVar.b(2, false);
+        this.f21607c = kVar.b(2, false);
         this.d = kVar.b(3, false);
         this.e = kVar.b(4, false);
     }
 
     @Override // com.tencent.bugly.idasc.proguard.m
     public final void a(l lVar) {
-        lVar.a(this.f35297a, 0);
+        lVar.a(this.f21606a, 0);
         String str = this.b;
         if (str != null) {
             lVar.a(str, 1);
         }
-        String str2 = this.f35298c;
+        String str2 = this.f21607c;
         if (str2 != null) {
             lVar.a(str2, 2);
         }

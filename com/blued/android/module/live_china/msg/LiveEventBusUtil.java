@@ -49,16 +49,12 @@ public class LiveEventBusUtil {
     public static String X = "key_event_live_constellation_bar_update";
     public static String Y = "live_constellation_buy_failure";
     public static String Z = "live_constellation_summit_succeed";
-
-    /* renamed from: a  reason: collision with root package name */
-    public static String f13937a = "live_beans_update";
+    public static String a = "live_beans_update";
     public static String aa = "live_start_rank_dialog";
     public static String ab = "live_rank_loaded_dialog";
     public static String ac = "live_rank_current_position_dialog";
     public static String b = "live_new_msg";
-
-    /* renamed from: c  reason: collision with root package name */
-    public static String f13938c = "live_entrance_data";
+    public static String c = "live_entrance_data";
     public static String d = "pay_result";
     public static String e = "start_first_charge_success_anim";
     public static String f = "live_msg_hot_word";
@@ -84,7 +80,7 @@ public class LiveEventBusUtil {
     public static String z = "custom_rank_title";
 
     public static void a() {
-        LiveEventBus.get(f13937a).post(null);
+        LiveEventBus.get(a).post((Object) null);
     }
 
     public static void a(int i2) {
@@ -92,7 +88,7 @@ public class LiveEventBusUtil {
     }
 
     public static void a(int i2, int i3) {
-        Observable<Object> observable = LiveEventBus.get(r);
+        Observable observable = LiveEventBus.get(r);
         observable.post(i2 + BridgeUtil.UNDERLINE_STR + i3);
     }
 
@@ -120,7 +116,7 @@ public class LiveEventBusUtil {
 
     public static void a(LiveEntranceData liveEntranceData) {
         if (liveEntranceData != null) {
-            LiveEventBus.get(f13938c).post(liveEntranceData);
+            LiveEventBus.get(c).post(liveEntranceData);
         }
     }
 
@@ -192,7 +188,7 @@ public class LiveEventBusUtil {
     }
 
     public static void b() {
-        LiveEventBus.get(p).post(null);
+        LiveEventBus.get(p).post((Object) null);
     }
 
     public static void b(int i2) {

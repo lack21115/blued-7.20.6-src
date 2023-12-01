@@ -4,11 +4,11 @@ package com.xiaomi.push;
 public final class f {
 
     /* renamed from: a  reason: collision with root package name */
-    static final int f41395a = a(1, 3);
+    static final int f27704a = a(1, 3);
     static final int b = a(1, 4);
 
     /* renamed from: c  reason: collision with root package name */
-    static final int f41396c = a(2, 0);
+    static final int f27705c = a(2, 0);
     static final int d = a(3, 2);
 
     /* JADX INFO: Access modifiers changed from: package-private */

@@ -24,11 +24,11 @@ import java.util.concurrent.TimeUnit;
 public class PushMessageHandler extends BaseService {
 
     /* renamed from: a  reason: collision with root package name */
-    private static List<MiPushClient.ICallbackResult> f41193a = new ArrayList();
+    private static List<MiPushClient.ICallbackResult> f27502a = new ArrayList();
     private static List<MiPushClient.MiPushClientCallback> b = new ArrayList();
 
     /* renamed from: a  reason: collision with other field name */
-    private static ThreadPoolExecutor f121a = new ThreadPoolExecutor(1, 1, 15, TimeUnit.SECONDS, new LinkedBlockingQueue());
+    private static ThreadPoolExecutor f74a = new ThreadPoolExecutor(1, 1, 15, TimeUnit.SECONDS, new LinkedBlockingQueue());
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8829756-dex2jar.jar:com/xiaomi/mipush/sdk/PushMessageHandler$a.class */
@@ -56,7 +56,7 @@ public class PushMessageHandler extends BaseService {
         try {
             context.startService(intent);
         } catch (Exception e) {
-            com.xiaomi.channel.commonutils.logger.b.m11394a(e.getMessage());
+            com.xiaomi.channel.commonutils.logger.b.m8344a(e.getMessage());
         }
     }
 
@@ -84,8 +84,8 @@ public class PushMessageHandler extends BaseService {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public static void a(Context context, MiPushCommandMessage miPushCommandMessage) {
-        synchronized (f41193a) {
-            for (MiPushClient.ICallbackResult iCallbackResult : f41193a) {
+        synchronized (f27502a) {
+            for (MiPushClient.ICallbackResult iCallbackResult : f27502a) {
                 if (iCallbackResult instanceof MiPushClient.UPSRegisterCallBack) {
                     MiPushClient.TokenResult tokenResult = new MiPushClient.TokenResult();
                     if (miPushCommandMessage != null && miPushCommandMessage.getCommandArguments() != null && miPushCommandMessage.getCommandArguments().size() > 0) {
@@ -115,7 +115,7 @@ public class PushMessageHandler extends BaseService {
         } else if (aVar instanceof MiPushCommandMessage) {
             MiPushCommandMessage miPushCommandMessage = (MiPushCommandMessage) aVar;
             String command = miPushCommandMessage.getCommand();
-            if (ew.COMMAND_REGISTER.f411a.equals(command)) {
+            if (ew.COMMAND_REGISTER.f364a.equals(command)) {
                 List<String> commandArguments = miPushCommandMessage.getCommandArguments();
                 String str = null;
                 if (commandArguments != null) {
@@ -125,9 +125,9 @@ public class PushMessageHandler extends BaseService {
                     }
                 }
                 a(miPushCommandMessage.getResultCode(), miPushCommandMessage.getReason(), str);
-            } else if (ew.COMMAND_SET_ALIAS.f411a.equals(command) || ew.COMMAND_UNSET_ALIAS.f411a.equals(command) || ew.COMMAND_SET_ACCEPT_TIME.f411a.equals(command)) {
+            } else if (ew.COMMAND_SET_ALIAS.f364a.equals(command) || ew.COMMAND_UNSET_ALIAS.f364a.equals(command) || ew.COMMAND_SET_ACCEPT_TIME.f364a.equals(command)) {
                 a(context, miPushCommandMessage.getCategory(), command, miPushCommandMessage.getResultCode(), miPushCommandMessage.getReason(), miPushCommandMessage.getCommandArguments());
-            } else if (ew.COMMAND_SUBSCRIBE_TOPIC.f411a.equals(command)) {
+            } else if (ew.COMMAND_SUBSCRIBE_TOPIC.f364a.equals(command)) {
                 List<String> commandArguments2 = miPushCommandMessage.getCommandArguments();
                 String str2 = null;
                 if (commandArguments2 != null) {
@@ -137,7 +137,7 @@ public class PushMessageHandler extends BaseService {
                     }
                 }
                 a(context, miPushCommandMessage.getCategory(), miPushCommandMessage.getResultCode(), miPushCommandMessage.getReason(), str2);
-            } else if (ew.COMMAND_UNSUBSCRIBE_TOPIC.f411a.equals(command)) {
+            } else if (ew.COMMAND_UNSUBSCRIBE_TOPIC.f364a.equals(command)) {
                 List<String> commandArguments3 = miPushCommandMessage.getCommandArguments();
                 String str3 = null;
                 if (commandArguments3 != null) {
@@ -175,9 +175,9 @@ public class PushMessageHandler extends BaseService {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public static void a(MiPushClient.ICallbackResult iCallbackResult) {
-        synchronized (f41193a) {
-            if (!f41193a.contains(iCallbackResult)) {
-                f41193a.add(iCallbackResult);
+        synchronized (f27502a) {
+            if (!f27502a.contains(iCallbackResult)) {
+                f27502a.add(iCallbackResult);
             }
         }
     }
@@ -197,8 +197,8 @@ public class PushMessageHandler extends BaseService {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public static void b() {
-        synchronized (f41193a) {
-            f41193a.clear();
+        synchronized (f27502a) {
+            f27502a.clear();
         }
     }
 
@@ -209,7 +209,7 @@ public class PushMessageHandler extends BaseService {
             intent.setAction("action_clicked_activity_finish");
             context.sendBroadcast(intent, d.a(context));
         } catch (Exception e) {
-            com.xiaomi.channel.commonutils.logger.b.m11394a("callback sync error".concat(String.valueOf(e)));
+            com.xiaomi.channel.commonutils.logger.b.m8344a("callback sync error".concat(String.valueOf(e)));
         }
     }
 
@@ -219,7 +219,7 @@ public class PushMessageHandler extends BaseService {
         try {
             z = intent.getBooleanExtra("is_clicked_activity_call", false);
         } catch (Throwable th) {
-            com.xiaomi.channel.commonutils.logger.b.m11394a("intent unparcel error:".concat(String.valueOf(th)));
+            com.xiaomi.channel.commonutils.logger.b.m8344a("intent unparcel error:".concat(String.valueOf(th)));
         }
         try {
             if ("com.xiaomi.mipush.sdk.WAKEUP".equals(intent.getAction())) {
@@ -230,7 +230,7 @@ public class PushMessageHandler extends BaseService {
                 com.xiaomi.channel.commonutils.logger.b.c("PushMessageHandler.onHandleIntent " + hkVar.d());
                 MiTinyDataClient.upload(context, hkVar);
             } else if (1 == PushMessageHelper.getPushMode(context)) {
-                if (m11423b()) {
+                if (m8373b()) {
                     com.xiaomi.channel.commonutils.logger.b.d("receive a message before application calling initialize");
                     if (z) {
                         b(context);
@@ -299,22 +299,22 @@ public class PushMessageHandler extends BaseService {
     }
 
     /* renamed from: b  reason: collision with other method in class */
-    public static boolean m11423b() {
+    public static boolean m8373b() {
         return b.isEmpty();
     }
 
     private static void c(Context context, Intent intent) {
-        if (intent == null || f121a.isShutdown()) {
+        if (intent == null || f74a.isShutdown()) {
             return;
         }
-        f121a.execute(new al(context, intent));
+        f74a.execute(new al(context, intent));
     }
 
     @Override // com.xiaomi.mipush.sdk.BaseService
     /* renamed from: a  reason: collision with other method in class */
-    protected boolean mo11424a() {
-        ThreadPoolExecutor threadPoolExecutor = f121a;
-        return (threadPoolExecutor == null || threadPoolExecutor.getQueue() == null || f121a.getQueue().size() <= 0) ? false : true;
+    protected boolean mo8374a() {
+        ThreadPoolExecutor threadPoolExecutor = f74a;
+        return (threadPoolExecutor == null || threadPoolExecutor.getQueue() == null || f74a.getQueue().size() <= 0) ? false : true;
     }
 
     @Override // com.xiaomi.mipush.sdk.BaseService, android.app.Service

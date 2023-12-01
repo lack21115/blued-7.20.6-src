@@ -17,7 +17,7 @@ import java.util.Locale;
 public class HiPkgSignManager {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23094a = "HiPkgSignManager";
+    private static final String f9486a = "HiPkgSignManager";
 
     private static PackageInfo a(Context context, String str) {
         try {
@@ -27,7 +27,7 @@ public class HiPkgSignManager {
             }
             return null;
         } catch (Exception e) {
-            LogsUtil.e(f23094a, "Exception : " + e.getMessage(), true);
+            LogsUtil.e(f9486a, "Exception : " + e.getMessage(), true);
             return null;
         }
     }
@@ -78,7 +78,7 @@ public class HiPkgSignManager {
         try {
             return a(MessageDigest.getInstance("SHA-256").digest(bArr));
         } catch (NoSuchAlgorithmException e) {
-            LogsUtil.e(f23094a, "NoSuchAlgorithmException" + e.getMessage());
+            LogsUtil.e(f9486a, "NoSuchAlgorithmException" + e.getMessage());
             return "";
         }
     }
@@ -139,7 +139,7 @@ public class HiPkgSignManager {
     public static byte[] getInstalledAPPSignature(Context context, String str) {
         PackageInfo packageInfo;
         if (context == null || TextUtils.isEmpty(str)) {
-            LogsUtil.e(f23094a, "packageName is null or context is null");
+            LogsUtil.e(f9486a, "packageName is null or context is null");
             return new byte[0];
         }
         try {
@@ -148,9 +148,9 @@ public class HiPkgSignManager {
                 return packageInfo.signatures[0].toByteArray();
             }
         } catch (PackageManager.NameNotFoundException e) {
-            LogsUtil.e(f23094a, "PackageManager.NameNotFoundException : " + e.getMessage(), true);
+            LogsUtil.e(f9486a, "PackageManager.NameNotFoundException : " + e.getMessage(), true);
         } catch (Exception e2) {
-            LogsUtil.e(f23094a, "Exception : " + e2.getMessage(), true);
+            LogsUtil.e(f9486a, "Exception : " + e2.getMessage(), true);
         }
         return new byte[0];
     }
@@ -188,7 +188,7 @@ public class HiPkgSignManager {
 
     public static String getUnInstalledAPPPackageName(Context context, String str) {
         if (context == null || TextUtils.isEmpty(str)) {
-            LogsUtil.e(f23094a, "archiveFilePath is null or context is null");
+            LogsUtil.e(f9486a, "archiveFilePath is null or context is null");
             return "";
         }
         PackageInfo a2 = a(context, str);
@@ -197,7 +197,7 @@ public class HiPkgSignManager {
 
     public static byte[] getUnInstalledAPPSignature(Context context, String str) {
         if (context == null || TextUtils.isEmpty(str)) {
-            LogsUtil.e(f23094a, "archiveFilePath is null or context is null");
+            LogsUtil.e(f9486a, "archiveFilePath is null or context is null");
             return new byte[0];
         }
         PackageInfo a2 = a(context, str);
@@ -207,7 +207,7 @@ public class HiPkgSignManager {
                 return signature.toByteArray();
             }
         } else {
-            LogsUtil.e(f23094a, "PackageInfo is null ");
+            LogsUtil.e(f9486a, "PackageInfo is null ");
         }
         return new byte[0];
     }

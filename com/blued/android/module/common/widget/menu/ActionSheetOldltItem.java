@@ -32,10 +32,10 @@ public class ActionSheetOldltItem extends ActionSheetItem<ItemActionsheetOldBind
             layoutParams.setMargins(itemActionsheetOldBinding.b.getMeasuredWidth(), 0, 0, 0);
             itemActionsheetOldBinding.g.setLayoutParams(layoutParams);
             itemActionsheetOldBinding.b.setVisibility(0);
-            itemActionsheetOldBinding.f10732c.setVisibility(4);
+            itemActionsheetOldBinding.c.setVisibility(4);
         } else {
             itemActionsheetOldBinding.b.setVisibility(8);
-            itemActionsheetOldBinding.f10732c.setVisibility(8);
+            itemActionsheetOldBinding.c.setVisibility(8);
         }
         itemActionsheetOldBinding.g.setTextColor(BluedSkinUtils.a(itemActionsheetOldBinding.g.getContext(), this.g));
         if (this.j) {
@@ -82,7 +82,6 @@ public class ActionSheetOldltItem extends ActionSheetItem<ItemActionsheetOldBind
         }
     }
 
-    @Override // com.chad.library.adapter.base.entity.MultiItemEntity
     public int getItemType() {
         return 0;
     }

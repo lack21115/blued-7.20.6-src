@@ -26,49 +26,49 @@ public class b {
     private static volatile b d;
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f36509a;
-    private Map<String, List<C0930b>> b = new HashMap();
+    private Context f22818a;
+    private Map<String, List<C0760b>> b = new HashMap();
 
     /* renamed from: c  reason: collision with root package name */
-    private Map<String, Long> f36510c = new HashMap();
+    private Map<String, Long> f22819c = new HashMap();
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/liteav/txcvodplayer/a/b$a.class */
-    public static final class a extends C0930b {
+    public static final class a extends C0760b {
 
         /* renamed from: a  reason: collision with root package name */
-        int f36512a;
+        int f22821a;
         boolean b;
 
         /* renamed from: c  reason: collision with root package name */
-        long f36513c;
+        long f22822c;
 
         public a(int i, boolean z, long j, String str) {
             super(str, "40305");
-            this.f36512a = 60;
+            this.f22821a = 60;
             this.b = false;
-            this.f36513c = 0L;
-            this.f36512a = i;
+            this.f22822c = 0L;
+            this.f22821a = i;
             this.b = z;
-            this.f36513c = j;
+            this.f22822c = j;
         }
 
         public a(String str) {
-            this.f36512a = 60;
+            this.f22821a = 60;
             this.b = false;
-            this.f36513c = 0L;
+            this.f22822c = 0L;
             try {
                 JSONObject jSONObject = new JSONObject(str);
-                this.f36512a = jSONObject.optInt("SengmentDuration", 60);
+                this.f22821a = jSONObject.optInt("SengmentDuration", 60);
                 this.b = jSONObject.optBoolean("ReportSwitch", false);
-                this.f36513c = jSONObject.optLong("ExpireTime", (System.currentTimeMillis() / 1000) + com.anythink.expressad.d.a.b.P);
+                this.f22822c = jSONObject.optLong("ExpireTime", (System.currentTimeMillis() / 1000) + com.anythink.expressad.d.a.b.P);
                 this.d = jSONObject.optString("appid", "");
                 this.e = jSONObject.optString("eventid", "");
             } catch (JSONException e) {
                 LiteavLog.i("TXCVodPlayReportControl", "parseFromString: " + e.toString());
-                this.f36512a = 60;
+                this.f22821a = 60;
                 this.b = false;
-                this.f36513c = 0L;
+                this.f22822c = 0L;
                 this.d = "";
                 this.e = "40305";
             }
@@ -77,9 +77,9 @@ public class b {
         private JSONObject a() {
             JSONObject jSONObject = new JSONObject();
             try {
-                jSONObject.put("SengmentDuration", this.f36512a);
+                jSONObject.put("SengmentDuration", this.f22821a);
                 jSONObject.put("ReportSwitch", this.b);
-                jSONObject.put("ExpireTime", this.f36513c);
+                jSONObject.put("ExpireTime", this.f22822c);
                 jSONObject.put("appid", this.d);
                 jSONObject.put("eventid", this.e);
                 return jSONObject;
@@ -97,16 +97,16 @@ public class b {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.tencent.liteav.txcvodplayer.a.b$b  reason: collision with other inner class name */
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/liteav/txcvodplayer/a/b$b.class */
-    public static class C0930b {
+    public static class C0760b {
         protected String d;
         protected String e;
 
-        public C0930b() {
+        public C0760b() {
             this.d = "";
             this.e = "";
         }
 
-        public C0930b(String str, String str2) {
+        public C0760b(String str, String str2) {
             this.d = "";
             this.e = "";
             this.d = str;
@@ -115,7 +115,7 @@ public class b {
     }
 
     private b(Context context) {
-        this.f36509a = context.getApplicationContext();
+        this.f22818a = context.getApplicationContext();
         a();
     }
 
@@ -134,16 +134,16 @@ public class b {
         return d;
     }
 
-    private static String a(List<C0930b> list) {
+    private static String a(List<C0760b> list) {
         if (list == null) {
             return "";
         }
         JSONArray jSONArray = new JSONArray();
         int i = 0;
-        for (C0930b c0930b : list) {
+        for (C0760b c0760b : list) {
             JSONObject jSONObject = new JSONObject();
-            if ("40305".equals(c0930b.e)) {
-                a aVar = (a) c0930b;
+            if ("40305".equals(c0760b.e)) {
+                a aVar = (a) c0760b;
                 try {
                     jSONObject.put("appid", aVar.d);
                     jSONObject.put("eventid", aVar.e);
@@ -163,7 +163,7 @@ public class b {
     }
 
     private void a() {
-        SharedPreferences sharedPreferences = this.f36509a.getSharedPreferences("vod_report_config", 0);
+        SharedPreferences sharedPreferences = this.f22818a.getSharedPreferences("vod_report_config", 0);
         if (sharedPreferences != null) {
             String string = sharedPreferences.getString("value", "");
             if (string.isEmpty()) {
@@ -176,7 +176,7 @@ public class b {
                     while (true) {
                         int i2 = i;
                         if (i2 < jSONArray.length()) {
-                            List<C0930b> e = e(jSONArray.optString(i2));
+                            List<C0760b> e = e(jSONArray.optString(i2));
                             if (e.size() > 0) {
                                 this.b.put(e.get(0).d, e);
                             }
@@ -194,10 +194,10 @@ public class b {
         SharedPreferences.Editor edit;
         synchronized (bVar) {
             int i = 0;
-            SharedPreferences sharedPreferences = bVar.f36509a.getSharedPreferences("vod_report_config", 0);
+            SharedPreferences sharedPreferences = bVar.f22818a.getSharedPreferences("vod_report_config", 0);
             if (sharedPreferences != null && (edit = sharedPreferences.edit()) != null && bVar.b.size() > 0) {
                 JSONArray jSONArray = new JSONArray();
-                for (Map.Entry<String, List<C0930b>> entry : bVar.b.entrySet()) {
+                for (Map.Entry<String, List<C0760b>> entry : bVar.b.entrySet()) {
                     try {
                         jSONArray.put(i, a(entry.getValue()));
                     } catch (JSONException e) {
@@ -321,7 +321,7 @@ public class b {
 
     private void a(String str, long j) {
         synchronized (this) {
-            this.f36510c.put(str, Long.valueOf(j));
+            this.f22819c.put(str, Long.valueOf(j));
             LiteavLog.i("TXCVodPlayReportControl", "SetReportExpireTime in mem appid= " + str + " , time=" + j);
         }
     }
@@ -357,7 +357,7 @@ public class b {
             synchronized (this) {
                 if (arrayList.size() != 0) {
                     this.b.put(String.valueOf(optInt), arrayList);
-                    this.f36510c.remove(Integer.valueOf(optInt));
+                    this.f22819c.remove(Integer.valueOf(optInt));
                 }
             }
         }
@@ -368,14 +368,14 @@ public class b {
             return (System.currentTimeMillis() / 1000) + com.anythink.expressad.d.a.b.P;
         }
         synchronized (this) {
-            if (this.f36510c.containsKey(str)) {
-                return this.f36510c.get(str).longValue();
+            if (this.f22819c.containsKey(str)) {
+                return this.f22819c.get(str).longValue();
             }
-            List<C0930b> list = this.b.get(str);
+            List<C0760b> list = this.b.get(str);
             if (list != null) {
-                for (C0930b c0930b : list) {
-                    if ("40305".equals(c0930b.e) && str.equalsIgnoreCase(c0930b.d)) {
-                        return ((a) c0930b).f36513c;
+                for (C0760b c0760b : list) {
+                    if ("40305".equals(c0760b.e) && str.equalsIgnoreCase(c0760b.d)) {
+                        return ((a) c0760b).f22822c;
                     }
                 }
             }
@@ -383,7 +383,7 @@ public class b {
         }
     }
 
-    private static List<C0930b> e(String str) {
+    private static List<C0760b> e(String str) {
         ArrayList arrayList = new ArrayList();
         try {
             JSONArray jSONArray = new JSONArray(str);
@@ -417,11 +417,11 @@ public class b {
             return 60;
         }
         synchronized (this) {
-            List<C0930b> list = this.b.get(str);
+            List<C0760b> list = this.b.get(str);
             if (list != null) {
-                for (C0930b c0930b : list) {
-                    if (c0930b != null && "40305".equals(c0930b.e) && str.equalsIgnoreCase(c0930b.d) && (aVar = (a) c0930b) != null && aVar.f36513c > System.currentTimeMillis() / 1000) {
-                        return aVar.f36512a;
+                for (C0760b c0760b : list) {
+                    if (c0760b != null && "40305".equals(c0760b.e) && str.equalsIgnoreCase(c0760b.d) && (aVar = (a) c0760b) != null && aVar.f22822c > System.currentTimeMillis() / 1000) {
+                        return aVar.f22821a;
                     }
                 }
             }
@@ -435,10 +435,10 @@ public class b {
             return false;
         }
         synchronized (this) {
-            List<C0930b> list = this.b.get(str);
+            List<C0760b> list = this.b.get(str);
             if (list != null) {
-                for (C0930b c0930b : list) {
-                    if (c0930b != null && "40305".equals(c0930b.e) && str.equalsIgnoreCase(c0930b.d) && (aVar = (a) c0930b) != null && aVar.f36513c > System.currentTimeMillis() / 1000) {
+                for (C0760b c0760b : list) {
+                    if (c0760b != null && "40305".equals(c0760b.e) && str.equalsIgnoreCase(c0760b.d) && (aVar = (a) c0760b) != null && aVar.f22822c > System.currentTimeMillis() / 1000) {
                         return aVar.b;
                     }
                 }

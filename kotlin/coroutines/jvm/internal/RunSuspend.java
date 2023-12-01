@@ -10,25 +10,23 @@ import kotlin.coroutines.EmptyCoroutineContext;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/coroutines/jvm/internal/RunSuspend.class */
 final class RunSuspend implements Continuation<Unit> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Result<Unit> f42475a;
+    private Result<Unit> a;
 
     @Override // kotlin.coroutines.Continuation
     public CoroutineContext getContext() {
-        return EmptyCoroutineContext.f42457a;
+        return EmptyCoroutineContext.a;
     }
 
     @Override // kotlin.coroutines.Continuation
     public void resumeWith(Object obj) {
         synchronized (this) {
-            this.f42475a = Result.g(obj);
+            this.a = Result.g(obj);
             notifyAll();
-            Unit unit = Unit.f42314a;
+            Unit unit = Unit.a;
         }
     }
 
     public final void setResult(Result<Unit> result) {
-        this.f42475a = result;
+        this.a = result;
     }
 }

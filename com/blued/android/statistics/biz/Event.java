@@ -10,9 +10,7 @@ public class Event {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/statistics/biz/Event$InstanceHolder.class */
     public static class InstanceHolder {
-
-        /* renamed from: a  reason: collision with root package name */
-        private static final Event f18689a = new Event();
+        private static final Event a = new Event();
 
         private InstanceHolder() {
         }
@@ -22,7 +20,7 @@ public class Event {
     }
 
     public static Event a() {
-        return InstanceHolder.f18689a;
+        return InstanceHolder.a;
     }
 
     private void a(CustomEventProtos.Request.Builder builder) {

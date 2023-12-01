@@ -13,26 +13,26 @@ import android.util.Log;
 public class q implements ServiceConnection {
 
     /* renamed from: a  reason: collision with root package name */
-    public Messenger f22320a;
+    public Messenger f8712a;
     public Bundle b;
 
     /* renamed from: c  reason: collision with root package name */
-    public Context f22321c;
+    public Context f8713c;
 
     @Override // android.content.ServiceConnection
     public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
         Log.i("MessengerSrvConnection", "onServiceConnected");
-        this.f22320a = new Messenger(iBinder);
+        this.f8712a = new Messenger(iBinder);
         Message obtain = Message.obtain();
         obtain.setData(this.b);
         try {
-            this.f22320a.send(obtain);
+            this.f8712a.send(obtain);
         } catch (Exception e) {
             new StringBuilder("message sending failed. ").append(e.getMessage());
         }
         Log.i("MessengerSrvConnection", "start unbind service.");
         try {
-            this.f22321c.unbindService(this);
+            this.f8713c.unbindService(this);
             Log.i("MessengerSrvConnection", "unbind service end.");
         } catch (Exception e2) {
         }
@@ -41,8 +41,8 @@ public class q implements ServiceConnection {
     @Override // android.content.ServiceConnection
     public void onServiceDisconnected(ComponentName componentName) {
         Log.i("MessengerSrvConnection", "onServiceDisconnected");
-        this.f22320a = null;
+        this.f8712a = null;
         this.b = null;
-        this.f22321c = null;
+        this.f8713c = null;
     }
 }

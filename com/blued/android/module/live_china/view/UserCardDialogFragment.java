@@ -20,8 +20,10 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.AppMethods;
@@ -90,13 +92,9 @@ import kotlin.text.StringsKt;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/UserCardDialogFragment.class */
 public final class UserCardDialogFragment extends BottomSheetDialogFragment implements LiveUserRelationshipUtils.IAddOrRemoveAttentionDone {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f15275a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private final Lazy b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private boolean f15276c;
+    private boolean c;
     private Context d;
     private BaseFragment e;
     private IRequestHost f;
@@ -130,16 +128,12 @@ public final class UserCardDialogFragment extends BottomSheetDialogFragment impl
     @Metadata
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/UserCardDialogFragment$FROM_SOURCE.class */
     public interface FROM_SOURCE {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static final Companion f15277a = Companion.f15278a;
+        public static final Companion a = Companion.a;
 
         @Metadata
         /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/UserCardDialogFragment$FROM_SOURCE$Companion.class */
         public static final class Companion {
-
-            /* renamed from: a  reason: collision with root package name */
-            static final /* synthetic */ Companion f15278a = new Companion();
+            static final /* synthetic */ Companion a = new Companion();
 
             private Companion() {
             }
@@ -149,16 +143,12 @@ public final class UserCardDialogFragment extends BottomSheetDialogFragment impl
     @Metadata
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/UserCardDialogFragment$USER_PRIVILLAGE.class */
     public interface USER_PRIVILLAGE {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static final Companion f15279a = Companion.f15280a;
+        public static final Companion a = Companion.a;
 
         @Metadata
         /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/UserCardDialogFragment$USER_PRIVILLAGE$Companion.class */
         public static final class Companion {
-
-            /* renamed from: a  reason: collision with root package name */
-            static final /* synthetic */ Companion f15280a = new Companion();
+            static final /* synthetic */ Companion a = new Companion();
 
             private Companion() {
             }
@@ -194,13 +184,11 @@ public final class UserCardDialogFragment extends BottomSheetDialogFragment impl
     @Metadata
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/UserCardDialogFragment$UserMedalAdapterForCard.class */
     public static final class UserMedalAdapterForCard extends UserMedalsAdapter {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final Context f15281a;
+        private final Context a;
 
         @Override // com.blued.android.module.live_china.adapter.UserMedalsAdapter
         public View a() {
-            View inflate = LayoutInflater.from(this.f15281a).inflate(R.layout.item_user_anchor_medal4card, (ViewGroup) null);
+            View inflate = LayoutInflater.from(this.a).inflate(R.layout.item_user_anchor_medal4card, (ViewGroup) null);
             Intrinsics.c(inflate, "from(mContext).inflate(R…_anchor_medal4card, null)");
             return inflate;
         }
@@ -863,9 +851,9 @@ public final class UserCardDialogFragment extends BottomSheetDialogFragment impl
             return;
         }
         final Ref.IntRef intRef = new Ref.IntRef();
-        intRef.f42543a = behalfExtra.getStatus() == 0 ? 1 : 0;
-        EventTrackLive.h(LiveProtos.Event.LIVE_PROFILE_CARD_SUBSTITUTE_ME_SHOW, String.valueOf(intRef.f42543a));
-        int i = intRef.f42543a;
+        intRef.a = behalfExtra.getStatus() == 0 ? 1 : 0;
+        EventTrackLive.h(LiveProtos.Event.LIVE_PROFILE_CARD_SUBSTITUTE_ME_SHOW, String.valueOf(intRef.a));
+        int i = intRef.a;
         IRequestHost iRequestHost = this$0.f;
         IRequestHost iRequestHost2 = iRequestHost;
         if (iRequestHost == null) {
@@ -878,7 +866,7 @@ public final class UserCardDialogFragment extends BottomSheetDialogFragment impl
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<LiveFansGroupModel> bluedEntityA) {
-                BehalfExtra.this.setStatus(intRef.f42543a);
+                BehalfExtra.this.setStatus(intRef.a);
                 this$0.a(BehalfExtra.this);
                 ToastUtils.a(bluedEntityA == null ? null : bluedEntityA.message);
             }
@@ -1032,7 +1020,7 @@ public final class UserCardDialogFragment extends BottomSheetDialogFragment impl
             if (status == 0) {
                 ShapeTextView shapeTextView = v().R;
                 Intrinsics.c(shapeTextView, "vb.tvUserCardBehalfStatus");
-                BluedViewExKt.b(shapeTextView);
+                BluedViewExKt.b((View) shapeTextView);
                 v().R.setText(behalfExtra.getSwitch_enable_name());
                 shapeModel.t = getResources().getColor(R.color.syc_dark_f8f8f8);
                 shapeModel.v = getResources().getColor(R.color.syc_dark_f8f8f8);
@@ -1046,11 +1034,11 @@ public final class UserCardDialogFragment extends BottomSheetDialogFragment impl
             } else if (status != 1) {
                 ShapeTextView shapeTextView2 = v().R;
                 Intrinsics.c(shapeTextView2, "vb.tvUserCardBehalfStatus");
-                BluedViewExKt.a(shapeTextView2);
+                BluedViewExKt.a((View) shapeTextView2);
             } else {
                 ShapeTextView shapeTextView3 = v().R;
                 Intrinsics.c(shapeTextView3, "vb.tvUserCardBehalfStatus");
-                BluedViewExKt.b(shapeTextView3);
+                BluedViewExKt.b((View) shapeTextView3);
                 v().R.setText(behalfExtra.getSwitch_disable_name());
                 shapeModel.t = getResources().getColor(R.color.syc_dark_922CEE);
                 shapeModel.v = getResources().getColor(R.color.syc_dark_FF3AAA);
@@ -1351,21 +1339,18 @@ public final class UserCardDialogFragment extends BottomSheetDialogFragment impl
     }
 
     public final void i() {
-        UserCardDialogFragment userCardDialogFragment = this;
-        LiveEventBus.get("live_user_card_dismiss", String.class).observe(userCardDialogFragment, new Observer() { // from class: com.blued.android.module.live_china.view.-$$Lambda$UserCardDialogFragment$-52CEQFj7E-tCYZ20gqeBkYsAkA
-            @Override // androidx.lifecycle.Observer
+        LifecycleOwner lifecycleOwner = (LifecycleOwner) this;
+        LiveEventBus.get("live_user_card_dismiss", String.class).observe(lifecycleOwner, new Observer() { // from class: com.blued.android.module.live_china.view.-$$Lambda$UserCardDialogFragment$-52CEQFj7E-tCYZ20gqeBkYsAkA
             public final void onChanged(Object obj) {
                 UserCardDialogFragment.a(UserCardDialogFragment.this, (String) obj);
             }
         });
-        LiveEventBus.get("multi_dialog_banner", Boolean.TYPE).observe(userCardDialogFragment, new Observer() { // from class: com.blued.android.module.live_china.view.-$$Lambda$UserCardDialogFragment$SLHnz9nzcnPPuTVqqfgKdowtWaM
-            @Override // androidx.lifecycle.Observer
+        LiveEventBus.get("multi_dialog_banner", Boolean.TYPE).observe(lifecycleOwner, new Observer() { // from class: com.blued.android.module.live_china.view.-$$Lambda$UserCardDialogFragment$SLHnz9nzcnPPuTVqqfgKdowtWaM
             public final void onChanged(Object obj) {
                 UserCardDialogFragment.a(UserCardDialogFragment.this, ((Boolean) obj).booleanValue());
             }
         });
-        LiveEventBus.get("multi_dialog_banner_cancel", Boolean.TYPE).observe(userCardDialogFragment, new Observer() { // from class: com.blued.android.module.live_china.view.-$$Lambda$UserCardDialogFragment$YrOzj6YdmEUNiAWKrphrXJdr3-M
-            @Override // androidx.lifecycle.Observer
+        LiveEventBus.get("multi_dialog_banner_cancel", Boolean.TYPE).observe(lifecycleOwner, new Observer() { // from class: com.blued.android.module.live_china.view.-$$Lambda$UserCardDialogFragment$YrOzj6YdmEUNiAWKrphrXJdr3-M
             public final void onChanged(Object obj) {
                 UserCardDialogFragment.b(UserCardDialogFragment.this, ((Boolean) obj).booleanValue());
             }
@@ -1602,14 +1587,14 @@ public final class UserCardDialogFragment extends BottomSheetDialogFragment impl
         LiveRoomHttpUtils.c(bluedUIHttpResponse, iRequestHost5, String.valueOf(j), str);
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
         i();
         return super.onCreateView(inflater, viewGroup, bundle);
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, android.content.DialogInterface.OnDismissListener
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onDismiss(DialogInterface dialog) {
         Intrinsics.e(dialog, "dialog");
         try {
@@ -1694,7 +1679,7 @@ public final class UserCardDialogFragment extends BottomSheetDialogFragment impl
         liveUserCardModuleView.a(module, str);
     }
 
-    @Override // com.blued.android.module.common.base.dialog.bottomsheet.BottomSheetDialogFragment, androidx.fragment.app.DialogFragment
+    @Override // com.blued.android.module.common.base.dialog.bottomsheet.BottomSheetDialogFragment
     public void setupDialog(Dialog dialog, int i) {
         ViewParent parent;
         Intrinsics.e(dialog, "dialog");
@@ -1707,7 +1692,7 @@ public final class UserCardDialogFragment extends BottomSheetDialogFragment impl
         }
         super.setupDialog(dialog, i);
         dialog.setContentView(v().getRoot());
-        if (this.f15276c) {
+        if (this.c) {
             BottomSheetDialog R_ = R_();
             if (R_ != null) {
                 R_.a(x());
@@ -1745,7 +1730,7 @@ public final class UserCardDialogFragment extends BottomSheetDialogFragment impl
         w();
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void show(FragmentManager manager, String str) {
         Intrinsics.e(manager, "manager");
         if (this.d == null) {
@@ -1754,7 +1739,7 @@ public final class UserCardDialogFragment extends BottomSheetDialogFragment impl
         try {
             FragmentTransaction beginTransaction = manager.beginTransaction();
             Intrinsics.c(beginTransaction, "manager.beginTransaction()");
-            beginTransaction.add(this, str);
+            beginTransaction.add((Fragment) this, str);
             beginTransaction.commitAllowingStateLoss();
         } catch (Exception e) {
             super.show(manager, str);
@@ -1818,7 +1803,7 @@ public final class UserCardDialogFragment extends BottomSheetDialogFragment impl
                 liveRoomUserModel = UserCardDialogFragment.this.m;
                 EventTrackLive.e(event, e, g, liveRoomUserModel == null ? null : liveRoomUserModel.uid);
                 TextUtils.equals(LiveRoomInfo.a().f(), LiveRoomManager.a().g());
-                LiveGoodsWallDialogFragment.Companion companion = LiveGoodsWallDialogFragment.f12934a;
+                LiveGoodsWallDialogFragment.Companion companion = LiveGoodsWallDialogFragment.a;
                 FragmentManager childFragmentManager = UserCardDialogFragment.this.getChildFragmentManager();
                 Intrinsics.c(childFragmentManager, "childFragmentManager");
                 companion.a(childFragmentManager);
@@ -1834,7 +1819,7 @@ public final class UserCardDialogFragment extends BottomSheetDialogFragment impl
                 String g = LiveRoomManager.a().g();
                 liveRoomUserModel = UserCardDialogFragment.this.m;
                 EventTrackLive.e(event, e, g, liveRoomUserModel == null ? null : liveRoomUserModel.uid);
-                LiveMedalWallDialogFragment.Companion companion = LiveMedalWallDialogFragment.f13060a;
+                LiveMedalWallDialogFragment.Companion companion = LiveMedalWallDialogFragment.a;
                 liveRoomUserModel2 = UserCardDialogFragment.this.m;
                 FragmentManager childFragmentManager = UserCardDialogFragment.this.getChildFragmentManager();
                 Intrinsics.c(childFragmentManager, "childFragmentManager");

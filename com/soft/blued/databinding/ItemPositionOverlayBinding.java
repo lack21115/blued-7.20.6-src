@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemPositionOverlayBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ConstraintLayout f29287a;
+    private final ConstraintLayout f15597a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f29287a;
+        return this.f15597a;
     }
 }

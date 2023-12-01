@@ -1,6 +1,5 @@
 package com.alibaba.fastjson.util;
 
-import android.os.Process;
 import com.alibaba.fastjson.JSONException;
 import java.io.BufferedReader;
 import java.io.Closeable;
@@ -36,40 +35,40 @@ public class IOUtils {
     public static final boolean[] firstIdentifierFlags = new boolean[256];
 
     static {
-        char c2 = 0;
+        char c = 0;
         while (true) {
-            char c3 = c2;
+            char c2 = c;
             boolean[] zArr = firstIdentifierFlags;
-            if (c3 >= zArr.length) {
+            if (c2 >= zArr.length) {
                 break;
             }
-            if (c3 >= 'A' && c3 <= 'Z') {
-                zArr[c3] = true;
-            } else if (c3 >= 'a' && c3 <= 'z') {
-                firstIdentifierFlags[c3] = true;
-            } else if (c3 == '_') {
-                firstIdentifierFlags[c3] = true;
+            if (c2 >= 'A' && c2 <= 'Z') {
+                zArr[c2] = true;
+            } else if (c2 >= 'a' && c2 <= 'z') {
+                firstIdentifierFlags[c2] = true;
+            } else if (c2 == '_') {
+                firstIdentifierFlags[c2] = true;
             }
-            c2 = (char) (c3 + 1);
+            c = (char) (c2 + 1);
         }
         identifierFlags = new boolean[256];
-        char c4 = 0;
+        char c3 = 0;
         while (true) {
-            char c5 = c4;
+            char c4 = c3;
             boolean[] zArr2 = identifierFlags;
-            if (c5 >= zArr2.length) {
+            if (c4 >= zArr2.length) {
                 break;
             }
-            if (c5 >= 'A' && c5 <= 'Z') {
-                zArr2[c5] = true;
-            } else if (c5 >= 'a' && c5 <= 'z') {
-                identifierFlags[c5] = true;
-            } else if (c5 == '_') {
-                identifierFlags[c5] = true;
-            } else if (c5 >= '0' && c5 <= '9') {
-                identifierFlags[c5] = true;
+            if (c4 >= 'A' && c4 <= 'Z') {
+                zArr2[c4] = true;
+            } else if (c4 >= 'a' && c4 <= 'z') {
+                identifierFlags[c4] = true;
+            } else if (c4 == '_') {
+                identifierFlags[c4] = true;
+            } else if (c4 >= '0' && c4 <= '9') {
+                identifierFlags[c4] = true;
             }
-            c4 = (char) (c5 + 1);
+            c3 = (char) (c4 + 1);
         }
         byte[] bArr = new byte[161];
         specicalFlags_doubleQuotes = bArr;
@@ -163,7 +162,7 @@ public class IOUtils {
         digits = new char[]{'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
         DigitTens = new char[]{'0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '6', '6', '6', '6', '6', '6', '6', '6', '6', '6', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '9', '9', '9', '9', '9', '9', '9', '9', '9', '9'};
         DigitOnes = new char[]{'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
-        sizeTable = new int[]{9, 99, 999, 9999, Process.LAST_ISOLATED_UID, 999999, 9999999, 99999999, 999999999, Integer.MAX_VALUE};
+        sizeTable = new int[]{9, 99, 999, 9999, 99999, 999999, 9999999, 99999999, 999999999, Integer.MAX_VALUE};
         CA = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/".toCharArray();
         int[] iArr = new int[256];
         IA = iArr;
@@ -468,20 +467,20 @@ public class IOUtils {
         return bArr;
     }
 
-    public static boolean firstIdentifier(char c2) {
+    public static boolean firstIdentifier(char c) {
         boolean[] zArr = firstIdentifierFlags;
-        return c2 < zArr.length && zArr[c2];
+        return c < zArr.length && zArr[c];
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r0v14, types: [int] */
     public static void getChars(byte b, int i, char[] cArr) {
-        char c2;
+        char c;
         if (b < 0) {
-            c2 = '-';
+            c = '-';
             b = -b;
         } else {
-            c2 = 0;
+            c = 0;
         }
         while (true) {
             int i2 = (52429 * b) >>> 19;
@@ -492,20 +491,20 @@ public class IOUtils {
             }
             b = i2;
         }
-        if (c2 != 0) {
-            cArr[i - 1] = c2;
+        if (c != 0) {
+            cArr[i - 1] = c;
         }
     }
 
     public static void getChars(int i, int i2, char[] cArr) {
-        char c2;
+        char c;
         int i3;
         int i4;
         if (i < 0) {
-            c2 = '-';
+            c = '-';
             i = -i;
         } else {
-            c2 = 0;
+            c = 0;
         }
         while (true) {
             i3 = i;
@@ -530,20 +529,20 @@ public class IOUtils {
             }
             i3 = i8;
         }
-        if (c2 != 0) {
-            cArr[i4 - 1] = c2;
+        if (c != 0) {
+            cArr[i4 - 1] = c;
         }
     }
 
     public static void getChars(long j, int i, char[] cArr) {
-        char c2;
+        char c;
         int i2;
         int i3;
         if (j < 0) {
-            c2 = '-';
+            c = '-';
             j = -j;
         } else {
-            c2 = 0;
+            c = 0;
         }
         while (j > 2147483647L) {
             long j2 = j / 100;
@@ -579,8 +578,8 @@ public class IOUtils {
             }
             i2 = i11;
         }
-        if (c2 != 0) {
-            cArr[i3 - 1] = c2;
+        if (c != 0) {
+            cArr[i3 - 1] = c;
         }
     }
 
@@ -607,9 +606,9 @@ public class IOUtils {
         return uTF8Decoder;
     }
 
-    public static boolean isIdent(char c2) {
+    public static boolean isIdent(char c) {
         boolean[] zArr = identifierFlags;
-        return c2 < zArr.length && zArr[c2];
+        return c < zArr.length && zArr[c];
     }
 
     public static String readAll(Reader reader) {

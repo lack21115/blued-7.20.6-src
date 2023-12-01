@@ -33,13 +33,9 @@ import java.util.ArrayList;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LivePKFriendListView.class */
 public class LivePKFriendListView extends FrameLayout implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    public RenrenPullToRefreshListView f14729a;
+    public RenrenPullToRefreshListView a;
     public ListView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public LivePKInviteAdapter f14730c;
+    public LivePKInviteAdapter c;
     public boolean d;
     public View e;
     public View f;
@@ -76,34 +72,32 @@ public class LivePKFriendListView extends FrameLayout implements View.OnClickLis
         this.d = true;
         this.p = 0;
         this.x = new BluedUIHttpResponse<BluedEntity<LiveFriendModel, LiveFriendExtraModel>>() { // from class: com.blued.android.module.live_china.view.LivePKFriendListView.3
-
-            /* renamed from: a  reason: collision with root package name */
-            boolean f14735a = false;
+            boolean a = false;
 
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i2, String str) {
-                this.f14735a = true;
+                this.a = true;
                 return super.onUIFailure(i2, str);
             }
 
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 super.onUIFinish();
-                if (this.f14735a) {
+                if (this.a) {
                     LivePKFriendListView.this.c();
-                } else if (LivePKFriendListView.this.f14730c.getCount() == 0) {
+                } else if (LivePKFriendListView.this.c.getCount() == 0) {
                     LivePKFriendListView.this.a();
                 } else {
                     LivePKFriendListView.this.d();
                 }
                 if (LivePKFriendListView.this.d) {
-                    LivePKFriendListView.this.f14729a.o();
+                    LivePKFriendListView.this.a.o();
                 } else {
-                    LivePKFriendListView.this.f14729a.p();
+                    LivePKFriendListView.this.a.p();
                 }
-                LivePKFriendListView.this.f14729a.q();
-                LivePKFriendListView.this.f14729a.j();
-                this.f14735a = false;
+                LivePKFriendListView.this.a.q();
+                LivePKFriendListView.this.a.j();
+                this.a = false;
             }
 
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
@@ -118,9 +112,9 @@ public class LivePKFriendListView extends FrameLayout implements View.OnClickLis
             public void onUIUpdate(BluedEntity<LiveFriendModel, LiveFriendExtraModel> bluedEntity) {
                 if (bluedEntity != null && bluedEntity.data != null && bluedEntity.data.size() > 0) {
                     if (LivePKFriendListView.this.p == 0) {
-                        LivePKFriendListView.this.f14730c.a(bluedEntity.data);
+                        LivePKFriendListView.this.c.a(bluedEntity.data);
                     } else {
-                        LivePKFriendListView.this.f14730c.b(bluedEntity.data);
+                        LivePKFriendListView.this.c.b(bluedEntity.data);
                     }
                 }
                 LivePKFriendListView.this.d = bluedEntity.hasMore();
@@ -139,7 +133,7 @@ public class LivePKFriendListView extends FrameLayout implements View.OnClickLis
         if (liveFriendModel == null) {
             return;
         }
-        LiveRoomHttpUtils.e(new BluedUIHttpResponse(this.n.f14428a.getFragmentActive()) { // from class: com.blued.android.module.live_china.view.LivePKFriendListView.9
+        LiveRoomHttpUtils.e(new BluedUIHttpResponse(this.n.a.getFragmentActive()) { // from class: com.blued.android.module.live_china.view.LivePKFriendListView.9
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 super.onUIFinish();
@@ -169,7 +163,7 @@ public class LivePKFriendListView extends FrameLayout implements View.OnClickLis
         if (liveFriendModel == null) {
             return;
         }
-        LiveRoomHttpUtils.d(new BluedUIHttpResponse<BluedEntity<LiveInviteModel, LiveInviteModel>>(this.n.f14428a.getFragmentActive()) { // from class: com.blued.android.module.live_china.view.LivePKFriendListView.10
+        LiveRoomHttpUtils.d(new BluedUIHttpResponse<BluedEntity<LiveInviteModel, LiveInviteModel>>(this.n.a.getFragmentActive()) { // from class: com.blued.android.module.live_china.view.LivePKFriendListView.10
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 super.onUIFinish();
@@ -228,10 +222,10 @@ public class LivePKFriendListView extends FrameLayout implements View.OnClickLis
         this.g = this.j.findViewById(R.id.pk_loading_view);
         this.s = (TextView) this.k.findViewById(R.id.tv_live_reload);
         RenrenPullToRefreshListView renrenPullToRefreshListView = (RenrenPullToRefreshListView) this.j.findViewById(R.id.rptrlv_live_list);
-        this.f14729a = renrenPullToRefreshListView;
+        this.a = renrenPullToRefreshListView;
         renrenPullToRefreshListView.setRefreshEnabled(false);
-        this.b = (ListView) this.f14729a.getRefreshableView();
-        this.f14729a.setOnPullDownListener(new RenrenPullToRefreshListView.OnPullDownListener() { // from class: com.blued.android.module.live_china.view.LivePKFriendListView.1
+        this.b = (ListView) this.a.getRefreshableView();
+        this.a.setOnPullDownListener(new RenrenPullToRefreshListView.OnPullDownListener() { // from class: com.blued.android.module.live_china.view.LivePKFriendListView.1
             @Override // com.blued.android.framework.view.pulltorefresh.RenrenPullToRefreshListView.OnPullDownListener
             public void a() {
                 LivePKFriendListView.this.a(true);
@@ -255,13 +249,13 @@ public class LivePKFriendListView extends FrameLayout implements View.OnClickLis
                 LivePKFriendListView.this.b(liveFriendModel);
             }
         });
-        this.f14730c = livePKInviteAdapter;
+        this.c = livePKInviteAdapter;
         this.b.setAdapter((ListAdapter) livePKInviteAdapter);
         this.s.setOnClickListener(this);
     }
 
     private void setLiveConnectionStatus(int i) {
-        LiveRoomHttpUtils.f(new BluedUIHttpResponse(this.n.f14428a.getFragmentActive()) { // from class: com.blued.android.module.live_china.view.LivePKFriendListView.8
+        LiveRoomHttpUtils.f(new BluedUIHttpResponse(this.n.a.getFragmentActive()) { // from class: com.blued.android.module.live_china.view.LivePKFriendListView.8
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 super.onUIFinish();
@@ -281,7 +275,7 @@ public class LivePKFriendListView extends FrameLayout implements View.OnClickLis
     }
 
     private void setLivePkStatus(int i) {
-        LiveRoomHttpUtils.c(new BluedUIHttpResponse(this.n.f14428a.getFragmentActive()) { // from class: com.blued.android.module.live_china.view.LivePKFriendListView.7
+        LiveRoomHttpUtils.c(new BluedUIHttpResponse(this.n.a.getFragmentActive()) { // from class: com.blued.android.module.live_china.view.LivePKFriendListView.7
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 super.onUIFinish();
@@ -303,7 +297,7 @@ public class LivePKFriendListView extends FrameLayout implements View.OnClickLis
     public void a() {
         this.e.setVisibility(0);
         this.f.setVisibility(8);
-        this.f14729a.setVisibility(8);
+        this.a.setVisibility(8);
         this.g.setVisibility(8);
     }
 
@@ -368,10 +362,10 @@ public class LivePKFriendListView extends FrameLayout implements View.OnClickLis
             this.r.setVisibility(0);
             EventTrackLive.b(LiveProtos.Event.LIVE_MANY_CONNECT_PAGE_SHOW, LiveRoomManager.a().e());
         }
-        this.f14730c.a(i);
+        this.c.a(i);
         if (z) {
             b();
-            LivePKInviteAdapter livePKInviteAdapter = this.f14730c;
+            LivePKInviteAdapter livePKInviteAdapter = this.c;
             if (livePKInviteAdapter != null) {
                 livePKInviteAdapter.a(new ArrayList());
             }
@@ -385,10 +379,10 @@ public class LivePKFriendListView extends FrameLayout implements View.OnClickLis
             @Override // android.view.animation.Animation.AnimationListener
             public void onAnimationEnd(Animation animation) {
                 if (z) {
-                    LivePKFriendListView.this.f14729a.k();
-                } else if (LivePKFriendListView.this.f.getVisibility() == 0 || LivePKFriendListView.this.e.getVisibility() == 0 || LivePKFriendListView.this.f14730c.getCount() != 0) {
+                    LivePKFriendListView.this.a.k();
+                } else if (LivePKFriendListView.this.f.getVisibility() == 0 || LivePKFriendListView.this.e.getVisibility() == 0 || LivePKFriendListView.this.c.getCount() != 0) {
                 } else {
-                    LivePKFriendListView.this.f14729a.k();
+                    LivePKFriendListView.this.a.k();
                 }
             }
 
@@ -410,19 +404,19 @@ public class LivePKFriendListView extends FrameLayout implements View.OnClickLis
     public void b() {
         this.g.setVisibility(0);
         this.f.setVisibility(8);
-        this.f14729a.setVisibility(8);
+        this.a.setVisibility(8);
         this.e.setVisibility(8);
     }
 
     public void c() {
         this.f.setVisibility(0);
         this.g.setVisibility(8);
-        this.f14729a.setVisibility(8);
+        this.a.setVisibility(8);
         this.e.setVisibility(8);
     }
 
     public void d() {
-        this.f14729a.setVisibility(0);
+        this.a.setVisibility(0);
         this.g.setVisibility(8);
         this.f.setVisibility(8);
         this.e.setVisibility(8);
@@ -453,7 +447,7 @@ public class LivePKFriendListView extends FrameLayout implements View.OnClickLis
 
     public void j() {
         if (this.y == 0) {
-            if (this.n.f14428a.cs) {
+            if (this.n.a.cs) {
                 this.t.setImageResource(R.drawable.live_invite_select);
             } else {
                 this.t.setImageResource(R.drawable.live_invite_default);
@@ -461,7 +455,7 @@ public class LivePKFriendListView extends FrameLayout implements View.OnClickLis
             this.u.setText(R.string.live_pk_no_invitation);
             return;
         }
-        if (this.n.f14428a.ct) {
+        if (this.n.a.ct) {
             this.t.setImageResource(R.drawable.live_invite_select);
         } else {
             this.t.setImageResource(R.drawable.live_invite_default);
@@ -482,7 +476,7 @@ public class LivePKFriendListView extends FrameLayout implements View.OnClickLis
             a(new ILiveConnectionAnimListener() { // from class: com.blued.android.module.live_china.view.LivePKFriendListView.6
                 @Override // com.blued.android.module.live_china.view.ILiveConnectionAnimListener
                 public void onAnimationEnd() {
-                    if (LivePKFriendListView.this.n == null || LivePKFriendListView.this.n.f14428a == null || !LivePKFriendListView.this.n.f14428a.aW()) {
+                    if (LivePKFriendListView.this.n == null || LivePKFriendListView.this.n.a == null || !LivePKFriendListView.this.n.a.aW()) {
                         LivePKFriendListView.this.n.a(false);
                     }
                 }
@@ -494,21 +488,21 @@ public class LivePKFriendListView extends FrameLayout implements View.OnClickLis
                 LiveSetDataObserver.a().b(LiveRoomInfo.a().A(), DisplayUtil.a(AppInfo.d(), 13.0f));
             }
         } else if (this.y == 0) {
-            if (this.n.f14428a.cs) {
-                this.n.f14428a.cs = false;
+            if (this.n.a.cs) {
+                this.n.a.cs = false;
                 this.t.setImageResource(R.drawable.live_invite_default);
                 setLivePkStatus(0);
                 return;
             }
-            this.n.f14428a.cs = true;
+            this.n.a.cs = true;
             this.t.setImageResource(R.drawable.live_invite_select);
             setLivePkStatus(1);
-        } else if (this.n.f14428a.ct) {
-            this.n.f14428a.ct = false;
+        } else if (this.n.a.ct) {
+            this.n.a.ct = false;
             this.t.setImageResource(R.drawable.live_invite_default);
             setLiveConnectionStatus(0);
         } else {
-            this.n.f14428a.ct = true;
+            this.n.a.ct = true;
             this.t.setImageResource(R.drawable.live_invite_select);
             setLiveConnectionStatus(1);
         }

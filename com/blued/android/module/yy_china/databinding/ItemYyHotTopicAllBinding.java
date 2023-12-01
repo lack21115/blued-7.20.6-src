@@ -11,13 +11,9 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ItemYyHotTopicAllBinding.class */
 public final class ItemYyHotTopicAllBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final SVGAImageView f16739a;
+    public final SVGAImageView a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ShapeTextView f16740c;
+    public final ShapeTextView c;
     public final TextView d;
     public final TextView e;
     public final TextView f;
@@ -25,9 +21,9 @@ public final class ItemYyHotTopicAllBinding implements ViewBinding {
 
     private ItemYyHotTopicAllBinding(ConstraintLayout constraintLayout, SVGAImageView sVGAImageView, ImageView imageView, ShapeTextView shapeTextView, TextView textView, TextView textView2, TextView textView3) {
         this.g = constraintLayout;
-        this.f16739a = sVGAImageView;
+        this.a = sVGAImageView;
         this.b = imageView;
-        this.f16740c = shapeTextView;
+        this.c = shapeTextView;
         this.d = textView;
         this.e = textView2;
         this.f = textView3;
@@ -68,7 +64,6 @@ public final class ItemYyHotTopicAllBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.g;

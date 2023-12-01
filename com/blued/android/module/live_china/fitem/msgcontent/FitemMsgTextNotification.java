@@ -1,7 +1,6 @@
 package com.blued.android.module.live_china.fitem.msgcontent;
 
 import android.content.Context;
-import android.os.BatteryManager;
 import android.view.View;
 import android.widget.TextView;
 import com.blued.android.chat.utils.MsgPackHelper;
@@ -45,8 +44,8 @@ public final class FitemMsgTextNotification extends FitemMsgBase {
 
             public final void a(DslSpannableStringBuilder buildSpannableString) {
                 Intrinsics.e(buildSpannableString, "$this$buildSpannableString");
-                StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
-                String string = Context.this.getString(R.string.live_on_being_manager);
+                StringCompanionObject stringCompanionObject = StringCompanionObject.a;
+                String string = context.getString(R.string.live_on_being_manager);
                 Intrinsics.c(string, "context.getString(R.string.live_on_being_manager)");
                 String format = String.format(string, Arrays.copyOf(new Object[]{this.k()}, 1));
                 Intrinsics.c(format, "format(format, *args)");
@@ -61,7 +60,7 @@ public final class FitemMsgTextNotification extends FitemMsgBase {
                     @Override // kotlin.jvm.functions.Function1
                     public /* synthetic */ Unit invoke(DslSpanBuilder dslSpanBuilder) {
                         a(dslSpanBuilder);
-                        return Unit.f42314a;
+                        return Unit.a;
                     }
                 });
             }
@@ -69,7 +68,7 @@ public final class FitemMsgTextNotification extends FitemMsgBase {
             @Override // kotlin.jvm.functions.Function1
             public /* synthetic */ Unit invoke(DslSpannableStringBuilder dslSpannableStringBuilder) {
                 a(dslSpannableStringBuilder);
-                return Unit.f42314a;
+                return Unit.a;
             }
         });
     }
@@ -90,8 +89,8 @@ public final class FitemMsgTextNotification extends FitemMsgBase {
 
             public final void a(DslSpannableStringBuilder buildSpannableString) {
                 Intrinsics.e(buildSpannableString, "$this$buildSpannableString");
-                StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
-                String string = Context.this.getString(R.string.live_removed_your_manager);
+                StringCompanionObject stringCompanionObject = StringCompanionObject.a;
+                String string = context.getString(R.string.live_removed_your_manager);
                 Intrinsics.c(string, "context.getString(R.stri…ive_removed_your_manager)");
                 String format = String.format(string, Arrays.copyOf(new Object[]{this.k()}, 1));
                 Intrinsics.c(format, "format(format, *args)");
@@ -106,7 +105,7 @@ public final class FitemMsgTextNotification extends FitemMsgBase {
                     @Override // kotlin.jvm.functions.Function1
                     public /* synthetic */ Unit invoke(DslSpanBuilder dslSpanBuilder) {
                         a(dslSpanBuilder);
-                        return Unit.f42314a;
+                        return Unit.a;
                     }
                 });
             }
@@ -114,7 +113,7 @@ public final class FitemMsgTextNotification extends FitemMsgBase {
             @Override // kotlin.jvm.functions.Function1
             public /* synthetic */ Unit invoke(DslSpannableStringBuilder dslSpannableStringBuilder) {
                 a(dslSpannableStringBuilder);
-                return Unit.f42314a;
+                return Unit.a;
             }
         });
     }
@@ -140,8 +139,8 @@ public final class FitemMsgTextNotification extends FitemMsgBase {
 
             public final void a(DslSpannableStringBuilder buildSpannableString) {
                 Intrinsics.e(buildSpannableString, "$this$buildSpannableString");
-                StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
-                String string = Context.this.getString(R.string.live_forbade_to_speak);
+                StringCompanionObject stringCompanionObject = StringCompanionObject.a;
+                String string = context.getString(R.string.live_forbade_to_speak);
                 Intrinsics.c(string, "context.getString(R.string.live_forbade_to_speak)");
                 String format = String.format(string, Arrays.copyOf(new Object[]{this.k(), stringValue}, 2));
                 Intrinsics.c(format, "format(format, *args)");
@@ -156,7 +155,7 @@ public final class FitemMsgTextNotification extends FitemMsgBase {
                     @Override // kotlin.jvm.functions.Function1
                     public /* synthetic */ Unit invoke(DslSpanBuilder dslSpanBuilder) {
                         a(dslSpanBuilder);
-                        return Unit.f42314a;
+                        return Unit.a;
                     }
                 });
             }
@@ -164,7 +163,7 @@ public final class FitemMsgTextNotification extends FitemMsgBase {
             @Override // kotlin.jvm.functions.Function1
             public /* synthetic */ Unit invoke(DslSpannableStringBuilder dslSpannableStringBuilder) {
                 a(dslSpannableStringBuilder);
-                return Unit.f42314a;
+                return Unit.a;
             }
         });
     }
@@ -184,8 +183,8 @@ public final class FitemMsgTextNotification extends FitemMsgBase {
 
             public final void a(DslSpannableStringBuilder buildSpannableString) {
                 Intrinsics.e(buildSpannableString, "$this$buildSpannableString");
-                StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
-                String string = Context.this.getString(R.string.live_released_to_speak);
+                StringCompanionObject stringCompanionObject = StringCompanionObject.a;
+                String string = context.getString(R.string.live_released_to_speak);
                 Intrinsics.c(string, "context.getString(R.string.live_released_to_speak)");
                 String format = String.format(string, Arrays.copyOf(new Object[]{this.k(), stringValue}, 2));
                 Intrinsics.c(format, "format(format, *args)");
@@ -200,7 +199,7 @@ public final class FitemMsgTextNotification extends FitemMsgBase {
                     @Override // kotlin.jvm.functions.Function1
                     public /* synthetic */ Unit invoke(DslSpanBuilder dslSpanBuilder) {
                         a(dslSpanBuilder);
-                        return Unit.f42314a;
+                        return Unit.a;
                     }
                 });
             }
@@ -208,7 +207,7 @@ public final class FitemMsgTextNotification extends FitemMsgBase {
             @Override // kotlin.jvm.functions.Function1
             public /* synthetic */ Unit invoke(DslSpannableStringBuilder dslSpannableStringBuilder) {
                 a(dslSpannableStringBuilder);
-                return Unit.f42314a;
+                return Unit.a;
             }
         });
     }
@@ -234,7 +233,7 @@ public final class FitemMsgTextNotification extends FitemMsgBase {
                     @Override // kotlin.jvm.functions.Function1
                     public /* synthetic */ Unit invoke(DslSpanBuilder dslSpanBuilder) {
                         a(dslSpanBuilder);
-                        return Unit.f42314a;
+                        return Unit.a;
                     }
                 });
                 String string = context.getResources().getString(R.string.live_kick_user);
@@ -250,7 +249,7 @@ public final class FitemMsgTextNotification extends FitemMsgBase {
                     @Override // kotlin.jvm.functions.Function1
                     public /* synthetic */ Unit invoke(DslSpanBuilder dslSpanBuilder) {
                         a(dslSpanBuilder);
-                        return Unit.f42314a;
+                        return Unit.a;
                     }
                 });
             }
@@ -258,7 +257,7 @@ public final class FitemMsgTextNotification extends FitemMsgBase {
             @Override // kotlin.jvm.functions.Function1
             public /* synthetic */ Unit invoke(DslSpannableStringBuilder dslSpannableStringBuilder) {
                 a(dslSpannableStringBuilder);
-                return Unit.f42314a;
+                return Unit.a;
             }
         });
     }
@@ -274,28 +273,29 @@ public final class FitemMsgTextNotification extends FitemMsgBase {
             public final void a(DslSpannableStringBuilder buildSpannableString) {
                 String str;
                 Intrinsics.e(buildSpannableString, "$this$buildSpannableString");
-                String string = Context.this.getResources().getString(R.string.live_chat_congratulations);
+                String string = context.getResources().getString(R.string.live_chat_congratulations);
                 Intrinsics.c(string, "context.resources.getStr…ive_chat_congratulations)");
                 DslSpannableStringBuilder.DefaultImpls.a(buildSpannableString, string, null, 2, null);
-                final Context context2 = Context.this;
+                final Context context2 = context;
                 buildSpannableString.a(' ' + this.k() + ' ', new Function1<DslSpanBuilder, Unit>() { // from class: com.blued.android.module.live_china.fitem.msgcontent.FitemMsgTextNotification$setSpanToUpgradeRich$1.1
+                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                     {
                         super(1);
                     }
 
                     public final void a(DslSpanBuilder addText) {
                         Intrinsics.e(addText, "$this$addText");
-                        addText.a(Context.this, R.color.biao_live_msg_name_3);
+                        addText.a(context2, R.color.biao_live_msg_name_3);
                     }
 
                     @Override // kotlin.jvm.functions.Function1
                     public /* synthetic */ Unit invoke(DslSpanBuilder dslSpanBuilder) {
                         a(dslSpanBuilder);
-                        return Unit.f42314a;
+                        return Unit.a;
                     }
                 });
-                StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
-                String string2 = Context.this.getString(R.string.live_chat_upgrade);
+                StringCompanionObject stringCompanionObject = StringCompanionObject.a;
+                String string2 = context.getString(R.string.live_chat_upgrade);
                 Intrinsics.c(string2, "context.getString(R.string.live_chat_upgrade)");
                 switch (this.e().fromRichLevel) {
                     case 30:
@@ -331,10 +331,10 @@ public final class FitemMsgTextNotification extends FitemMsgBase {
             @Override // kotlin.jvm.functions.Function1
             public /* synthetic */ Unit invoke(DslSpannableStringBuilder dslSpannableStringBuilder) {
                 a(dslSpannableStringBuilder);
-                return Unit.f42314a;
+                return Unit.a;
             }
         });
-        this.f10935a.a(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fitem.msgcontent.-$$Lambda$FitemMsgTextNotification$dkMooskDN_ngida_xH8NycJWXL4
+        this.a.a(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fitem.msgcontent.-$$Lambda$FitemMsgTextNotification$dkMooskDN_ngida_xH8NycJWXL4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 FitemMsgTextNotification.a(FitemMsgTextNotification.this, view);
@@ -353,30 +353,31 @@ public final class FitemMsgTextNotification extends FitemMsgBase {
             public final void a(DslSpannableStringBuilder buildSpannableString) {
                 String str;
                 Intrinsics.e(buildSpannableString, "$this$buildSpannableString");
-                String string = Context.this.getResources().getString(R.string.live_chat_congratulations);
+                String string = context.getResources().getString(R.string.live_chat_congratulations);
                 Intrinsics.c(string, "context.resources.getStr…ive_chat_congratulations)");
                 DslSpannableStringBuilder.DefaultImpls.a(buildSpannableString, string, null, 2, null);
-                final Context context2 = Context.this;
+                final Context context2 = context;
                 buildSpannableString.a(' ' + this.k() + ' ', new Function1<DslSpanBuilder, Unit>() { // from class: com.blued.android.module.live_china.fitem.msgcontent.FitemMsgTextNotification$setSpanToUpgradeLive$1.1
+                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                     {
                         super(1);
                     }
 
                     public final void a(DslSpanBuilder addText) {
                         Intrinsics.e(addText, "$this$addText");
-                        addText.a(Context.this, R.color.biao_live_msg_name_3);
+                        addText.a(context2, R.color.biao_live_msg_name_3);
                     }
 
                     @Override // kotlin.jvm.functions.Function1
                     public /* synthetic */ Unit invoke(DslSpanBuilder dslSpanBuilder) {
                         a(dslSpanBuilder);
-                        return Unit.f42314a;
+                        return Unit.a;
                     }
                 });
                 try {
-                    int intValue = MsgPackHelper.getIntValue(this.e().msgMapExtra, BatteryManager.EXTRA_LEVEL);
-                    StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
-                    String string2 = Context.this.getString(R.string.live_record_level_msg);
+                    int intValue = MsgPackHelper.getIntValue(this.e().msgMapExtra, "level");
+                    StringCompanionObject stringCompanionObject = StringCompanionObject.a;
+                    String string2 = context.getString(R.string.live_record_level_msg);
                     Intrinsics.c(string2, "context.getString(R.string.live_record_level_msg)");
                     str = String.format(string2, Arrays.copyOf(new Object[]{String.valueOf(intValue)}, 1));
                     Intrinsics.c(str, "format(format, *args)");
@@ -389,10 +390,10 @@ public final class FitemMsgTextNotification extends FitemMsgBase {
             @Override // kotlin.jvm.functions.Function1
             public /* synthetic */ Unit invoke(DslSpannableStringBuilder dslSpannableStringBuilder) {
                 a(dslSpannableStringBuilder);
-                return Unit.f42314a;
+                return Unit.a;
             }
         });
-        this.f10935a.a(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fitem.msgcontent.-$$Lambda$FitemMsgTextNotification$o_TMQ1ffIg3vh2tHGzFsOKJAR38
+        this.a.a(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fitem.msgcontent.-$$Lambda$FitemMsgTextNotification$o_TMQ1ffIg3vh2tHGzFsOKJAR38
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 FitemMsgTextNotification.b(FitemMsgTextNotification.this, view);

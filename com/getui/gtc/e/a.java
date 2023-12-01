@@ -4,7 +4,6 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.util.SparseArray;
 import android.util.SparseIntArray;
-import com.amap.api.col.p0003sl.iu;
 import com.getui.gtc.base.db.AbstractTable;
 import com.meizu.cloud.pushsdk.notification.model.NotificationStyle;
 
@@ -12,14 +11,14 @@ import com.meizu.cloud.pushsdk.notification.model.NotificationStyle;
 public class a extends AbstractTable {
 
     /* renamed from: a  reason: collision with root package name */
-    private SparseArray<Long> f21993a = new SparseArray<>();
+    private SparseArray<Long> f8386a = new SparseArray<>();
     private SparseArray<Long> b = new SparseArray<>();
 
     /* renamed from: c  reason: collision with root package name */
-    private SparseIntArray f21994c = new SparseIntArray();
+    private SparseIntArray f8387c = new SparseIntArray();
 
     public final long a(int i) {
-        Long l = this.f21993a.get(i);
+        Long l = this.f8386a.get(i);
         if (l == null) {
             return 0L;
         }
@@ -31,7 +30,7 @@ public class a extends AbstractTable {
         contentValues.put(NotificationStyle.EXPANDABLE_IMAGE_URL, Integer.valueOf(i));
         contentValues.put("elt", String.valueOf(j));
         if (replace(null, contentValues) != -1) {
-            this.f21993a.put(i, Long.valueOf(j));
+            this.f8386a.put(i, Long.valueOf(j));
         }
     }
 
@@ -42,7 +41,7 @@ public class a extends AbstractTable {
         contentValues.put("esn", Integer.valueOf(i2));
         if (replace(null, contentValues) != -1) {
             this.b.put(i, Long.valueOf(j));
-            this.f21994c.put(i, i2);
+            this.f8387c.put(i, i2);
         }
     }
 
@@ -55,7 +54,7 @@ public class a extends AbstractTable {
     }
 
     public final int c(int i) {
-        return this.f21994c.get(i);
+        return this.f8387c.get(i);
     }
 
     @Override // com.getui.gtc.base.db.AbstractTable
@@ -65,7 +64,7 @@ public class a extends AbstractTable {
 
     @Override // com.getui.gtc.base.db.AbstractTable
     public String getTableName() {
-        return iu.h;
+        return "e";
     }
 
     @Override // com.getui.gtc.base.db.AbstractTable
@@ -90,14 +89,14 @@ public class a extends AbstractTable {
                     }
                     int i = query.getInt(query.getColumnIndex(NotificationStyle.EXPANDABLE_IMAGE_URL));
                     try {
-                        this.f21993a.put(i, Long.valueOf(Long.parseLong(query.getString(query.getColumnIndex("elt")))));
+                        this.f8386a.put(i, Long.valueOf(Long.parseLong(query.getString(query.getColumnIndex("elt")))));
                     } catch (Exception e) {
                     }
                     try {
                         this.b.put(i, Long.valueOf(Long.parseLong(query.getString(query.getColumnIndex("est")))));
                     } catch (Exception e2) {
                     }
-                    this.f21994c.put(i, query.getInt(query.getColumnIndex("esn")));
+                    this.f8387c.put(i, query.getInt(query.getColumnIndex("esn")));
                 }
                 if (query != null) {
                     query.close();

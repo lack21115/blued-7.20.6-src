@@ -5,10 +5,10 @@ package com.tencent.ugc;
 public final /* synthetic */ class fi implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final UGCThumbnailGenerator f40382a;
+    private final UGCThumbnailGenerator f26691a;
 
     private fi(UGCThumbnailGenerator uGCThumbnailGenerator) {
-        this.f40382a = uGCThumbnailGenerator;
+        this.f26691a = uGCThumbnailGenerator;
     }
 
     public static Runnable a(UGCThumbnailGenerator uGCThumbnailGenerator) {
@@ -17,6 +17,6 @@ public final /* synthetic */ class fi implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        UGCThumbnailGenerator.lambda$uninitialize$0(this.f40382a);
+        UGCThumbnailGenerator.lambda$uninitialize$0(this.f26691a);
     }
 }

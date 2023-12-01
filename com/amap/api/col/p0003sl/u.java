@@ -11,13 +11,9 @@ import java.util.Map;
 /* renamed from: com.amap.api.col.3sl.u  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/u.class */
 public final class u implements jw.a {
-
-    /* renamed from: a  reason: collision with root package name */
-    a f5425a;
+    a a;
     private final Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private RandomAccessFile f5426c;
+    private RandomAccessFile c;
     private kd d;
     private String e;
 
@@ -25,27 +21,23 @@ public final class u implements jw.a {
     /* renamed from: com.amap.api.col.3sl.u$a */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/u$a.class */
     public static class a {
-
-        /* renamed from: a  reason: collision with root package name */
-        protected String f5427a;
+        protected String a;
         protected String b;
-
-        /* renamed from: c  reason: collision with root package name */
-        protected String f5428c;
+        protected String c;
         protected String d;
         protected String e;
         protected c f;
 
         public a(String str, String str2, String str3, String str4) {
-            this.f5427a = str;
+            this.a = str;
             this.b = str2;
-            this.f5428c = str3;
+            this.c = str3;
             this.d = str4 + ".tmp";
             this.e = str4;
         }
 
         public final String a() {
-            return this.f5427a;
+            return this.a;
         }
 
         public final void a(c cVar) {
@@ -72,12 +64,10 @@ public final class u implements jw.a {
     /* renamed from: com.amap.api.col.3sl.u$b */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/u$b.class */
     static final class b extends da {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final a f5429a;
+        private final a a;
 
         b(a aVar) {
-            this.f5429a = aVar;
+            this.a = aVar;
         }
 
         @Override // com.amap.api.col.p0003sl.kb
@@ -97,7 +87,7 @@ public final class u implements jw.a {
 
         @Override // com.amap.api.col.p0003sl.kb
         public final String getURL() {
-            a aVar = this.f5429a;
+            a aVar = this.a;
             if (aVar != null) {
                 return aVar.a();
             }
@@ -114,18 +104,16 @@ public final class u implements jw.a {
     /* renamed from: com.amap.api.col.3sl.u$c */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/u$c.class */
     public static final class c {
-
-        /* renamed from: a  reason: collision with root package name */
-        protected String f5430a;
+        protected String a;
         protected String b;
 
         public c(String str, String str2) {
-            this.f5430a = str;
+            this.a = str;
             this.b = str2;
         }
 
         public final String a() {
-            return this.f5430a;
+            return this.a;
         }
 
         public final String b() {
@@ -133,7 +121,7 @@ public final class u implements jw.a {
         }
 
         public final boolean c() {
-            return (TextUtils.isEmpty(this.f5430a) || TextUtils.isEmpty(this.b)) ? false : true;
+            return (TextUtils.isEmpty(this.a) || TextUtils.isEmpty(this.b)) ? false : true;
         }
     }
 
@@ -151,18 +139,18 @@ public final class u implements jw.a {
 
     public u(Context context, a aVar) {
         this.b = context.getApplicationContext();
-        this.f5425a = aVar;
+        this.a = aVar;
         this.d = new kd(new b(aVar));
         this.e = aVar.c();
     }
 
     private boolean b() {
-        c e = this.f5425a.e();
-        return (e != null && e.c() && dm.a(this.b, e.a(), e.b(), "").equalsIgnoreCase(this.f5425a.b())) ? false : true;
+        c e = this.a.e();
+        return (e != null && e.c() && dm.a(this.b, e.a(), e.b(), "").equalsIgnoreCase(this.a.b())) ? false : true;
     }
 
     public final void a() {
-        if (aa.f4728a == null || hx.a(aa.f4728a, dw.a()).f5127a == hx.c.SuccessCode) {
+        if (aa.a == null || hx.a(aa.a, dw.a()).a == hx.c.SuccessCode) {
             try {
                 if (!b() || this.d == null) {
                     return;
@@ -177,16 +165,16 @@ public final class u implements jw.a {
     @Override // com.amap.api.col.p0003sl.jw.a
     public final void onDownload(byte[] bArr, long j) {
         try {
-            if (this.f5426c == null) {
+            if (this.c == null) {
                 File file = new File(this.e);
                 File parentFile = file.getParentFile();
                 if (!parentFile.exists()) {
                     parentFile.mkdirs();
                 }
-                this.f5426c = new RandomAccessFile(file, "rw");
+                this.c = new RandomAccessFile(file, "rw");
             }
-            this.f5426c.seek(j);
-            this.f5426c.write(bArr);
+            this.c.seek(j);
+            this.c.write(bArr);
         } catch (Throwable th) {
             iw.c(th, "AuthTaskDownload", "onDownload()");
         }
@@ -195,10 +183,10 @@ public final class u implements jw.a {
     @Override // com.amap.api.col.p0003sl.jw.a
     public final void onException(Throwable th) {
         try {
-            if (this.f5426c == null) {
+            if (this.c == null) {
                 return;
             }
-            this.f5426c.close();
+            this.c.close();
         } catch (Throwable th2) {
             iw.c(th2, "AuthTaskDownload", "onException()");
         }
@@ -207,21 +195,21 @@ public final class u implements jw.a {
     @Override // com.amap.api.col.p0003sl.jw.a
     public final void onFinish() {
         try {
-            if (this.f5426c == null) {
+            if (this.c == null) {
                 return;
             }
-            this.f5426c.close();
-            String b2 = this.f5425a.b();
+            this.c.close();
+            String b2 = this.a.b();
             String a2 = hw.a(this.e);
             if (a2 == null || !b2.equalsIgnoreCase(a2)) {
                 new File(this.e).delete();
                 return;
             }
-            String d2 = this.f5425a.d();
+            String d2 = this.a.d();
             bo boVar = new bo();
             File file = new File(this.e);
             boVar.a(file, new File(d2), -1L, bu.a(file), null);
-            c e = this.f5425a.e();
+            c e = this.a.e();
             if (e != null && e.c()) {
                 dm.a(this.b, e.a(), e.b(), (Object) a2);
             }

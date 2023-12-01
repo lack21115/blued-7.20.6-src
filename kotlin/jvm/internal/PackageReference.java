@@ -5,21 +5,19 @@ import kotlin.Metadata;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/jvm/internal/PackageReference.class */
 public final class PackageReference implements ClassBasedDeclarationContainer {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Class<?> f42537a;
+    private final Class<?> a;
     private final String b;
 
     public PackageReference(Class<?> jClass, String moduleName) {
         Intrinsics.e(jClass, "jClass");
         Intrinsics.e(moduleName, "moduleName");
-        this.f42537a = jClass;
+        this.a = jClass;
         this.b = moduleName;
     }
 
     @Override // kotlin.jvm.internal.ClassBasedDeclarationContainer
     public Class<?> a() {
-        return this.f42537a;
+        return this.a;
     }
 
     public boolean equals(Object obj) {

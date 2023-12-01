@@ -1,7 +1,6 @@
 package com.sdk.tencent.r;
 
 import android.content.ContentResolver;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.igexin.push.core.b;
 import com.sdk.tencent.f.c;
 import com.sdk.tencent.q.e;
@@ -12,7 +11,7 @@ import java.util.TreeMap;
 public class a extends com.sdk.tencent.i.a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f28076a = "com.sdk.tencent.r.a";
+    public static final String f14388a = "com.sdk.tencent.r.a";
     public static boolean b = c.b;
 
     public static String a(String str, String str2, TreeMap<String, Object> treeMap) {
@@ -24,7 +23,7 @@ public class a extends com.sdk.tencent.i.a {
             for (Map.Entry<String, Object> entry : treeMap.entrySet()) {
                 String key = entry.getKey();
                 String str3 = entry.getValue() + "";
-                if (entry.getValue() != null && str3.length() > 0 && !b.l.equals(str3) && !"sign".equals(key) && !key.startsWith(BridgeUtil.UNDERLINE_STR) && !ContentResolver.SCHEME_FILE.equals(key)) {
+                if (entry.getValue() != null && str3.length() > 0 && !b.l.equals(str3) && !com.anythink.expressad.d.a.b.d.equals(key) && !key.startsWith("_") && !ContentResolver.SCHEME_FILE.equals(key)) {
                     stringBuffer.append(key);
                     stringBuffer.append('=');
                     stringBuffer.append(entry.getValue());
@@ -36,7 +35,7 @@ public class a extends com.sdk.tencent.i.a {
             }
             return e.a(stringBuffer.toString());
         } catch (Exception e) {
-            com.sdk.tencent.n.b.a(f28076a, e.getMessage(), Boolean.valueOf(b));
+            com.sdk.tencent.n.b.a(f14388a, e.getMessage(), Boolean.valueOf(b));
             return null;
         }
     }

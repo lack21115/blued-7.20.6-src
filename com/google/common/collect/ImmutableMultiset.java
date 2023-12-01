@@ -197,7 +197,7 @@ public abstract class ImmutableMultiset<E> extends ImmutableMultisetGwtSerializa
             return ImmutableMultiset.this.isPartialView();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
         public int size() {
             return ImmutableMultiset.this.elementSet().size();
         }
@@ -338,19 +338,19 @@ public abstract class ImmutableMultiset<E> extends ImmutableMultisetGwtSerializa
         return immutableSet2;
     }
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection, com.google.common.collect.Multiset
     public boolean equals(@NullableDecl Object obj) {
         return Multisets.equalsImpl(this, obj);
     }
 
     abstract Multiset.Entry<E> getEntry(int i);
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection, com.google.common.collect.Multiset
     public int hashCode() {
         return Sets.hashCodeImpl(entrySet());
     }
 
-    @Override // com.google.common.collect.ImmutableCollection, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+    @Override // com.google.common.collect.ImmutableCollection, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set, com.google.common.collect.SortedIterable, java.util.NavigableSet
     public UnmodifiableIterator<E> iterator() {
         final UnmodifiableIterator<Multiset.Entry<E>> it = entrySet().iterator();
         return new UnmodifiableIterator<E>() { // from class: com.google.common.collect.ImmutableMultiset.1
@@ -394,7 +394,7 @@ public abstract class ImmutableMultiset<E> extends ImmutableMultisetGwtSerializa
         throw new UnsupportedOperationException();
     }
 
-    @Override // java.util.AbstractCollection
+    @Override // java.util.AbstractCollection, com.google.common.collect.Multiset
     public String toString() {
         return entrySet().toString();
     }

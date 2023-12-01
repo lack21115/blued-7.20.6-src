@@ -8,18 +8,18 @@ import com.youzan.spiderman.utils.StringUtils;
 public final class k {
 
     /* renamed from: a  reason: collision with root package name */
-    private com.youzan.spiderman.html.a f41843a;
+    private com.youzan.spiderman.html.a f28152a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8829756-dex2jar.jar:com/youzan/spiderman/html/k$a.class */
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        static k f41844a = new k((byte) 0);
+        static k f28153a = new k((byte) 0);
     }
 
     private k() {
-        this.f41843a = new com.youzan.spiderman.html.a();
+        this.f28152a = new com.youzan.spiderman.html.a();
     }
 
     /* synthetic */ k(byte b) {
@@ -27,11 +27,11 @@ public final class k {
     }
 
     public static k a() {
-        return a.f41844a;
+        return a.f28153a;
     }
 
     public final HtmlResponse a(Context context, l lVar, HtmlStatistic htmlStatistic) {
-        return this.f41843a.a(context, lVar, htmlStatistic);
+        return this.f28152a.a(context, lVar, htmlStatistic);
     }
 
     public final HtmlResponse a(Context context, String str, HtmlStatistic htmlStatistic) {
@@ -39,7 +39,7 @@ public final class k {
             Logger.e("HtmlManager", "fetchHtmlWith null context or url, return", new Object[0]);
             return null;
         }
-        return this.f41843a.a(context, new l(str), htmlStatistic);
+        return this.f28152a.a(context, new l(str), htmlStatistic);
     }
 
     public final void a(Context context, String str, HtmlCallback htmlCallback) {
@@ -47,14 +47,14 @@ public final class k {
             Logger.e("HtmlManager", "fetchHtmlWith null context or url, return", new Object[0]);
             return;
         }
-        this.f41843a.a(context, new l(str), htmlCallback);
+        this.f28152a.a(context, new l(str), htmlCallback);
     }
 
     public final void a(HtmlCacheStrategy htmlCacheStrategy) {
-        this.f41843a.a(htmlCacheStrategy);
+        this.f28152a.a(htmlCacheStrategy);
     }
 
     public final HtmlCacheStrategy b() {
-        return this.f41843a.a();
+        return this.f28152a.a();
     }
 }

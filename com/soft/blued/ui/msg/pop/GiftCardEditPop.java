@@ -29,24 +29,23 @@ public class GiftCardEditPop extends BottomPopupView {
     private EditText b;
 
     /* renamed from: c  reason: collision with root package name */
-    private GiftGivingOptionForJsonParse.CardGift f32476c;
+    private GiftGivingOptionForJsonParse.CardGift f18785c;
 
     public GiftCardEditPop(Context context, GiftGivingOptionForJsonParse.CardGift cardGift) {
         super(context);
-        this.f32476c = cardGift;
+        this.f18785c = cardGift;
         if (context instanceof Activity) {
             Logger.c(getClass().getSimpleName(), "SOFT_INPUT_ADJUST_NOTHING");
             ((Activity) context).getWindow().setSoftInputMode(48);
         }
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.BottomPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
     public void b() {
         super.b();
         this.b = (EditText) findViewById(R.id.et_content);
-        GiftGivingOptionForJsonParse.CardGift cardGift = this.f32476c;
+        GiftGivingOptionForJsonParse.CardGift cardGift = this.f18785c;
         if (cardGift != null && !TextUtils.isEmpty(cardGift.text)) {
-            this.b.setText(this.f32476c.text);
+            this.b.setText(this.f18785c.text);
         }
         EditText editText = this.b;
         editText.setSelection(editText.getText().length());
@@ -62,11 +61,10 @@ public class GiftCardEditPop extends BottomPopupView {
                 }
                 BluedUIHttpResponse<BluedEntityA<CardWordCheckModel>> bluedUIHttpResponse = new BluedUIHttpResponse<BluedEntityA<CardWordCheckModel>>(null) { // from class: com.soft.blued.ui.msg.pop.GiftCardEditPop.1.1
                     /* JADX INFO: Access modifiers changed from: protected */
-                    @Override // com.blued.android.framework.http.BluedUIHttpResponse
                     /* renamed from: a */
                     public void onUIUpdate(BluedEntityA<CardWordCheckModel> bluedEntityA) {
                         if (bluedEntityA.hasData()) {
-                            if (!bluedEntityA.data.get(0).validation) {
+                            if (!((CardWordCheckModel) bluedEntityA.data.get(0)).validation) {
                                 ToastUtils.a(GiftCardEditPop.this.getResources().getString(R.string.msg_card_gift_content_sensitive));
                                 return;
                             }
@@ -86,15 +84,15 @@ public class GiftCardEditPop extends BottomPopupView {
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
-                GiftCardEditPop.this.b.setText(BlueAppLocal.d() ? "CN".equals(BlueAppLocal.c().getCountry().toUpperCase()) ? GiftCardEditPop.this.f32476c.text_zh_cn : GiftCardEditPop.this.f32476c.text_zh_tw : GiftCardEditPop.this.f32476c.text_en_us);
+                GiftCardEditPop.this.b.setText(BlueAppLocal.d() ? "CN".equals(BlueAppLocal.c().getCountry().toUpperCase()) ? GiftCardEditPop.this.f18785c.text_zh_cn : GiftCardEditPop.this.f18785c.text_zh_tw : GiftCardEditPop.this.f18785c.text_en_us);
                 GiftCardEditPop.this.b.setSelection(GiftCardEditPop.this.b.getText().toString().length());
             }
         });
-        GiftGivingOptionForJsonParse.CardGift cardGift2 = this.f32476c;
+        GiftGivingOptionForJsonParse.CardGift cardGift2 = this.f18785c;
         if (cardGift2 != null) {
             editText2.setText(cardGift2.to);
             editText2.setSelection(editText2.getText().toString().length());
-            editText3.setText(this.f32476c.from);
+            editText3.setText(this.f18785c.from);
             editText3.setSelection(editText3.getText().toString().length());
         }
         this.b.setFilters(new InputFilter[]{new InputFilter() { // from class: com.soft.blued.ui.msg.pop.GiftCardEditPop.3
@@ -145,12 +143,10 @@ public class GiftCardEditPop extends BottomPopupView {
         this.b.requestFocus();
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.BottomPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
     public int getImplLayoutId() {
         return R.layout.pop_gift_card_edit;
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.BasePopupView
     public void u() {
         super.u();
         if (getContext() instanceof Activity) {

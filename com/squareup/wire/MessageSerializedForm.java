@@ -29,11 +29,11 @@ public final class MessageSerializedForm<M extends Message<M, B>, B extends Mess
         }
     }
 
-    public MessageSerializedForm(byte[] bytes, Class<M> messageClass) {
-        Intrinsics.e(bytes, "bytes");
-        Intrinsics.e(messageClass, "messageClass");
-        this.bytes = bytes;
-        this.messageClass = messageClass;
+    public MessageSerializedForm(byte[] bArr, Class<M> cls) {
+        Intrinsics.e(bArr, "bytes");
+        Intrinsics.e(cls, "messageClass");
+        this.bytes = bArr;
+        this.messageClass = cls;
     }
 
     public final Object readResolve() throws ObjectStreamException {

@@ -12,11 +12,11 @@ public class CrashModule extends a {
     public static final int MODULE_ID = 1004;
 
     /* renamed from: c  reason: collision with root package name */
-    private static int f35106c;
+    private static int f21415c;
     private static CrashModule e = new CrashModule();
 
     /* renamed from: a  reason: collision with root package name */
-    private long f35107a;
+    private long f21416a;
     private BuglyStrategy.a b;
     private boolean d = false;
 
@@ -36,7 +36,7 @@ public class CrashModule extends a {
             }
             if (buglyStrategy.getAppReportDelay() > 0) {
                 long appReportDelay = buglyStrategy.getAppReportDelay();
-                this.f35107a = appReportDelay;
+                this.f21416a = appReportDelay;
                 x.a("setted delay: %d", Long.valueOf(appReportDelay));
             }
         }

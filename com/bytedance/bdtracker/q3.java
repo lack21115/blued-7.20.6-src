@@ -34,7 +34,7 @@ public final class q3 implements s3 {
             }
             if (call.getInt("code", -1) == 0) {
                 s3.a aVar = new s3.a();
-                aVar.f21305a = call.getString("id");
+                aVar.f7699a = call.getString("id");
                 return aVar;
             }
             String string = call.getString("message");

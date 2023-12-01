@@ -6,16 +6,16 @@ import java.util.LinkedList;
 public final class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinkedList<Runnable> f36655a = new LinkedList<>();
+    private final LinkedList<Runnable> f22964a = new LinkedList<>();
 
     public final void a() {
         LinkedList linkedList;
-        synchronized (this.f36655a) {
-            if (this.f36655a.isEmpty()) {
+        synchronized (this.f22964a) {
+            if (this.f22964a.isEmpty()) {
                 linkedList = null;
             } else {
-                linkedList = new LinkedList(this.f36655a);
-                this.f36655a.clear();
+                linkedList = new LinkedList(this.f22964a);
+                this.f22964a.clear();
             }
         }
         while (linkedList != null && !linkedList.isEmpty()) {
@@ -24,8 +24,8 @@ public final class d {
     }
 
     public final void a(Runnable runnable) {
-        synchronized (this.f36655a) {
-            this.f36655a.add(runnable);
+        synchronized (this.f22964a) {
+            this.f22964a.add(runnable);
         }
     }
 }

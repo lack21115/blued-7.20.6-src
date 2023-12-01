@@ -7,23 +7,22 @@ import android.widget.CheckedTextView;
 import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.core.widget.CheckedTextViewCompat;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8756600-dex2jar.jar:androidx/appcompat/widget/AppCompatCheckedTextViewHelper.class */
-public class AppCompatCheckedTextViewHelper {
+class AppCompatCheckedTextViewHelper {
 
     /* renamed from: a  reason: collision with root package name */
-    private final CheckedTextView f1749a;
+    private final CheckedTextView f1701a;
     private ColorStateList b = null;
 
     /* renamed from: c  reason: collision with root package name */
-    private PorterDuff.Mode f1750c = null;
+    private PorterDuff.Mode f1702c = null;
     private boolean d = false;
     private boolean e = false;
     private boolean f;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public AppCompatCheckedTextViewHelper(CheckedTextView checkedTextView) {
-        this.f1749a = checkedTextView;
+        this.f1701a = checkedTextView;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -40,7 +39,7 @@ public class AppCompatCheckedTextViewHelper {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a(PorterDuff.Mode mode) {
-        this.f1750c = mode;
+        this.f1702c = mode;
         this.e = true;
         d();
     }
@@ -56,7 +55,7 @@ public class AppCompatCheckedTextViewHelper {
         /*
             r8 = this;
             r0 = r8
-            android.widget.CheckedTextView r0 = r0.f1749a
+            android.widget.CheckedTextView r0 = r0.f1701a
             android.content.Context r0 = r0.getContext()
             r1 = r9
             int[] r2 = androidx.appcompat.R.styleable.CheckedTextView
@@ -65,7 +64,7 @@ public class AppCompatCheckedTextViewHelper {
             androidx.appcompat.widget.TintTypedArray r0 = androidx.appcompat.widget.TintTypedArray.obtainStyledAttributes(r0, r1, r2, r3, r4)
             r11 = r0
             r0 = r8
-            android.widget.CheckedTextView r0 = r0.f1749a
+            android.widget.CheckedTextView r0 = r0.f1701a
             r12 = r0
             r0 = r12
             r1 = r12
@@ -89,9 +88,9 @@ public class AppCompatCheckedTextViewHelper {
             r0 = r10
             if (r0 == 0) goto L59
             r0 = r8
-            android.widget.CheckedTextView r0 = r0.f1749a     // Catch: java.lang.Throwable -> Lc2 android.content.res.Resources.NotFoundException -> Lc9
+            android.widget.CheckedTextView r0 = r0.f1701a     // Catch: java.lang.Throwable -> Lc2 android.content.res.Resources.NotFoundException -> Lc9
             r1 = r8
-            android.widget.CheckedTextView r1 = r1.f1749a     // Catch: java.lang.Throwable -> Lc2 android.content.res.Resources.NotFoundException -> Lc9
+            android.widget.CheckedTextView r1 = r1.f1701a     // Catch: java.lang.Throwable -> Lc2 android.content.res.Resources.NotFoundException -> Lc9
             android.content.Context r1 = r1.getContext()     // Catch: java.lang.Throwable -> Lc2 android.content.res.Resources.NotFoundException -> Lc9
             r2 = r10
             android.graphics.drawable.Drawable r1 = androidx.appcompat.content.res.AppCompatResources.getDrawable(r1, r2)     // Catch: java.lang.Throwable -> Lc2 android.content.res.Resources.NotFoundException -> Lc9
@@ -117,9 +116,9 @@ public class AppCompatCheckedTextViewHelper {
             r0 = r10
             if (r0 == 0) goto L88
             r0 = r8
-            android.widget.CheckedTextView r0 = r0.f1749a     // Catch: java.lang.Throwable -> Lc2
+            android.widget.CheckedTextView r0 = r0.f1701a     // Catch: java.lang.Throwable -> Lc2
             r1 = r8
-            android.widget.CheckedTextView r1 = r1.f1749a     // Catch: java.lang.Throwable -> Lc2
+            android.widget.CheckedTextView r1 = r1.f1701a     // Catch: java.lang.Throwable -> Lc2
             android.content.Context r1 = r1.getContext()     // Catch: java.lang.Throwable -> Lc2
             r2 = r10
             android.graphics.drawable.Drawable r1 = androidx.appcompat.content.res.AppCompatResources.getDrawable(r1, r2)     // Catch: java.lang.Throwable -> Lc2
@@ -130,7 +129,7 @@ public class AppCompatCheckedTextViewHelper {
             boolean r0 = r0.hasValue(r1)     // Catch: java.lang.Throwable -> Lc2
             if (r0 == 0) goto La0
             r0 = r8
-            android.widget.CheckedTextView r0 = r0.f1749a     // Catch: java.lang.Throwable -> Lc2
+            android.widget.CheckedTextView r0 = r0.f1701a     // Catch: java.lang.Throwable -> Lc2
             r1 = r11
             int r2 = androidx.appcompat.R.styleable.CheckedTextView_checkMarkTint     // Catch: java.lang.Throwable -> Lc2
             android.content.res.ColorStateList r1 = r1.getColorStateList(r2)     // Catch: java.lang.Throwable -> Lc2
@@ -141,7 +140,7 @@ public class AppCompatCheckedTextViewHelper {
             boolean r0 = r0.hasValue(r1)     // Catch: java.lang.Throwable -> Lc2
             if (r0 == 0) goto Lbd
             r0 = r8
-            android.widget.CheckedTextView r0 = r0.f1749a     // Catch: java.lang.Throwable -> Lc2
+            android.widget.CheckedTextView r0 = r0.f1701a     // Catch: java.lang.Throwable -> Lc2
             r1 = r11
             int r2 = androidx.appcompat.R.styleable.CheckedTextView_checkMarkTintMode     // Catch: java.lang.Throwable -> Lc2
             r3 = -1
@@ -168,7 +167,7 @@ public class AppCompatCheckedTextViewHelper {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public PorterDuff.Mode b() {
-        return this.f1750c;
+        return this.f1702c;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -183,7 +182,7 @@ public class AppCompatCheckedTextViewHelper {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void d() {
-        Drawable checkMarkDrawable = CheckedTextViewCompat.getCheckMarkDrawable(this.f1749a);
+        Drawable checkMarkDrawable = CheckedTextViewCompat.getCheckMarkDrawable(this.f1701a);
         if (checkMarkDrawable != null) {
             if (this.d || this.e) {
                 Drawable mutate = DrawableCompat.wrap(checkMarkDrawable).mutate();
@@ -191,12 +190,12 @@ public class AppCompatCheckedTextViewHelper {
                     DrawableCompat.setTintList(mutate, this.b);
                 }
                 if (this.e) {
-                    DrawableCompat.setTintMode(mutate, this.f1750c);
+                    DrawableCompat.setTintMode(mutate, this.f1702c);
                 }
                 if (mutate.isStateful()) {
-                    mutate.setState(this.f1749a.getDrawableState());
+                    mutate.setState(this.f1701a.getDrawableState());
                 }
-                this.f1749a.setCheckMarkDrawable(mutate);
+                this.f1701a.setCheckMarkDrawable(mutate);
             }
         }
     }

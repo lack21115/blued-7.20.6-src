@@ -1,6 +1,5 @@
 package android.widget;
 
-import android.content.Context;
 import android.text.Editable;
 import android.text.Selection;
 import android.text.TextUtils;
@@ -277,7 +276,7 @@ public class SpellChecker implements SpellCheckerSession.SpellCheckerSessionList
 
     private void resetSession() {
         closeSession();
-        this.mTextServicesManager = (TextServicesManager) this.mTextView.getContext().getSystemService(Context.TEXT_SERVICES_MANAGER_SERVICE);
+        this.mTextServicesManager = (TextServicesManager) this.mTextView.getContext().getSystemService("textservices");
         if (!this.mTextServicesManager.isSpellCheckerEnabled() || this.mCurrentLocale == null || this.mTextServicesManager.getCurrentSpellCheckerSubtype(true) == null) {
             this.mSpellCheckerSession = null;
         } else {

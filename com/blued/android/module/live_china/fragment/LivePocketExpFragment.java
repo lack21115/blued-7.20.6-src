@@ -35,13 +35,9 @@ import kotlin.jvm.internal.StringCompanionObject;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LivePocketExpFragment.class */
 public final class LivePocketExpFragment extends BaseFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f13152a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private DialogLivePocketExpBinding b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private List<LivePocketModel> f13153c = new ArrayList();
+    private List<LivePocketModel> c = new ArrayList();
 
     @Metadata
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LivePocketExpFragment$Companion.class */
@@ -64,10 +60,10 @@ public final class LivePocketExpFragment extends BaseFragment {
             }
             List<LivePocketModel> in_use = ((LivePocketExtraModel) serializable).getIn_use();
             if (in_use != null) {
-                this.f13153c.addAll(in_use);
+                this.c.addAll(in_use);
             }
         }
-        List<LivePocketModel> list = this.f13153c;
+        List<LivePocketModel> list = this.c;
         if (list == null || list.size() == 0) {
             DialogLivePocketExpBinding dialogLivePocketExpBinding = this.b;
             LinearLayout linearLayout = dialogLivePocketExpBinding == null ? null : dialogLivePocketExpBinding.b;
@@ -75,7 +71,7 @@ public final class LivePocketExpFragment extends BaseFragment {
                 linearLayout.setVisibility(0);
             }
             DialogLivePocketExpBinding dialogLivePocketExpBinding2 = this.b;
-            ListView listView = dialogLivePocketExpBinding2 == null ? null : dialogLivePocketExpBinding2.f11801a;
+            ListView listView = dialogLivePocketExpBinding2 == null ? null : dialogLivePocketExpBinding2.a;
             if (listView == null) {
                 return;
             }
@@ -88,7 +84,7 @@ public final class LivePocketExpFragment extends BaseFragment {
             linearLayout2.setVisibility(8);
         }
         DialogLivePocketExpBinding dialogLivePocketExpBinding4 = this.b;
-        ListView listView2 = dialogLivePocketExpBinding4 == null ? null : dialogLivePocketExpBinding4.f11801a;
+        ListView listView2 = dialogLivePocketExpBinding4 == null ? null : dialogLivePocketExpBinding4.a;
         if (listView2 != null) {
             listView2.setVisibility(0);
         }
@@ -119,7 +115,7 @@ public final class LivePocketExpFragment extends BaseFragment {
                     str = "";
                 }
                 int i3 = R.id.tv_time;
-                StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
+                StringCompanionObject stringCompanionObject = StringCompanionObject.a;
                 String string = AppInfo.d().getString(R.string.live_pocket_exp_over1);
                 Intrinsics.c(string, "getAppContext().getStrin…ng.live_pocket_exp_over1)");
                 String format2 = String.format(string, Arrays.copyOf(new Object[]{str}, 1));
@@ -127,24 +123,24 @@ public final class LivePocketExpFragment extends BaseFragment {
                 holder.a(i3, format2);
                 holder.a(R.id.tv_des, item.getDescription());
                 final Ref.ObjectRef objectRef = new Ref.ObjectRef();
-                objectRef.f42545a = holder.a(R.id.tv_des);
+                objectRef.a = holder.a(R.id.tv_des);
                 final Ref.ObjectRef objectRef2 = new Ref.ObjectRef();
-                objectRef2.f42545a = holder.a(R.id.ll_des);
-                ViewTreeObserver viewTreeObserver = ((TextView) objectRef.f42545a).getViewTreeObserver();
+                objectRef2.a = holder.a(R.id.ll_des);
+                ViewTreeObserver viewTreeObserver = ((TextView) objectRef.a).getViewTreeObserver();
                 final LivePocketExpFragment livePocketExpFragment = LivePocketExpFragment.this;
                 viewTreeObserver.addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() { // from class: com.blued.android.module.live_china.fragment.LivePocketExpFragment$setData$adapter$1$convert$1
                     @Override // android.view.ViewTreeObserver.OnPreDrawListener
                     public boolean onPreDraw() {
-                        objectRef.f42545a.getViewTreeObserver().removeOnPreDrawListener(this);
-                        if (objectRef.f42545a.getLineCount() > 1) {
-                            ViewGroup.LayoutParams layoutParams2 = objectRef2.f42545a.getLayoutParams();
+                        objectRef.a.getViewTreeObserver().removeOnPreDrawListener(this);
+                        if (objectRef.a.getLineCount() > 1) {
+                            ViewGroup.LayoutParams layoutParams2 = objectRef2.a.getLayoutParams();
                             if (layoutParams2 != null) {
                                 ((ViewGroup.MarginLayoutParams) layoutParams2).topMargin = DensityUtils.a(livePocketExpFragment.getContext(), 20.5f);
                                 return true;
                             }
                             throw new NullPointerException("null cannot be cast to non-null type android.view.ViewGroup.MarginLayoutParams");
                         }
-                        ViewGroup.LayoutParams layoutParams3 = objectRef2.f42545a.getLayoutParams();
+                        ViewGroup.LayoutParams layoutParams3 = objectRef2.a.getLayoutParams();
                         if (layoutParams3 != null) {
                             ((ViewGroup.MarginLayoutParams) layoutParams3).topMargin = DensityUtils.a(livePocketExpFragment.getContext(), 13.0f);
                             return true;
@@ -155,20 +151,20 @@ public final class LivePocketExpFragment extends BaseFragment {
             }
         };
         DialogLivePocketExpBinding dialogLivePocketExpBinding5 = this.b;
-        ListView listView3 = dialogLivePocketExpBinding5 == null ? null : dialogLivePocketExpBinding5.f11801a;
+        ListView listView3 = dialogLivePocketExpBinding5 == null ? null : dialogLivePocketExpBinding5.a;
         if (listView3 != null) {
             listView3.setAdapter((ListAdapter) commonAdapter);
         }
-        commonAdapter.a(this.f13153c);
+        commonAdapter.a(this.c);
         commonAdapter.notifyDataSetChanged();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         FrameLayout root;
         FrameLayout root2;

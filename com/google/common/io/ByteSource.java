@@ -23,9 +23,8 @@ import java.util.Iterator;
 /* loaded from: source-8110460-dex2jar.jar:com/google/common/io/ByteSource.class */
 public abstract class ByteSource {
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8110460-dex2jar.jar:com/google/common/io/ByteSource$AsCharSource.class */
-    public class AsCharSource extends CharSource {
+    class AsCharSource extends CharSource {
         final Charset charset;
 
         AsCharSource(Charset charset) {

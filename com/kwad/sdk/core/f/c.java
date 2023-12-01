@@ -5,7 +5,6 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
-import com.alipay.sdk.util.i;
 import com.kwad.sdk.core.response.model.AdMatrixInfo;
 
 /* loaded from: source-7994992-dex2jar.jar:com/kwad/sdk/core/f/c.class */
@@ -96,7 +95,7 @@ public final class c {
     }
 
     private String xG() {
-        return "{\"x\": " + this.alY[0] + ",\"y\":" + this.alY[1] + ",\"z\":" + this.alY[2] + i.d;
+        return "{\"x\": " + this.alY[0] + ",\"y\":" + this.alY[1] + ",\"z\":" + this.alY[2] + "}";
     }
 
     public final void a(com.kwad.sdk.core.f.a aVar) {

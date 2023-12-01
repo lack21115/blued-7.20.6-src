@@ -1,6 +1,5 @@
 package org.apache.harmony.xml.dom;
 
-import com.j256.ormlite.stmt.query.SimpleComparison;
 import org.w3c.dom.CDATASection;
 import org.w3c.dom.Node;
 
@@ -42,10 +41,10 @@ public final class CDATASectionImpl extends TextImpl implements CDATASection {
         while (true) {
             int i2 = i;
             if (i2 >= split.length - 1) {
-                setData(SimpleComparison.GREATER_THAN_OPERATION + split[split.length - 1]);
+                setData(">" + split[split.length - 1]);
                 return;
             } else {
-                parentNode.insertBefore(new CDATASectionImpl(this.document, SimpleComparison.GREATER_THAN_OPERATION + split[i2] + "]]"), this);
+                parentNode.insertBefore(new CDATASectionImpl(this.document, ">" + split[i2] + "]]"), this);
                 i = i2 + 1;
             }
         }

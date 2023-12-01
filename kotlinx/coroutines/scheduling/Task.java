@@ -9,7 +9,7 @@ public abstract class Task implements Runnable {
     public TaskContext g;
 
     public Task() {
-        this(0L, NonBlockingContext.f43584a);
+        this(0L, NonBlockingContext.a);
     }
 
     public Task(long j, TaskContext taskContext) {

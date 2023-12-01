@@ -13,11 +13,11 @@ public class z {
     private Set<String> h = new HashSet();
 
     /* renamed from: a  reason: collision with root package name */
-    private String f23901a = i.a("f118f1f9431de3a626df48d7302911", "0820");
+    private String f10293a = i.a("f118f1f9431de3a626df48d7302911", "0820");
     private String b = i.a("f118f1ef4616f3fc27d1", "0820");
 
     /* renamed from: c  reason: collision with root package name */
-    private String f23902c = i.a("f118f1e84f0bf5ba3bd1579c6d35", "0820");
+    private String f10294c = i.a("f118f1e84f0bf5ba3bd1579c6d35", "0820");
     private String d = i.a("fc03e7a44510", "0820");
 
     public int a() {
@@ -75,11 +75,11 @@ public class z {
             }
             JSONObject jSONObject = new JSONObject();
             for (String str2 : this.e) {
-                if (str2.contains(this.f23901a)) {
+                if (str2.contains(this.f10293a)) {
                     str = "0";
                 } else if (str2.contains(this.b)) {
                     str = "1";
-                } else if (str2.contains(this.f23902c)) {
+                } else if (str2.contains(this.f10294c)) {
                     str = "2";
                 }
                 jSONObject.put(str, 1);

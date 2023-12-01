@@ -160,7 +160,7 @@ public class h {
                 }
             }
             bufferedReader.close();
-            Iterator<E> it = hashSet.iterator();
+            Iterator it = hashSet.iterator();
             do {
                 if (!it.hasNext()) {
                     return false;

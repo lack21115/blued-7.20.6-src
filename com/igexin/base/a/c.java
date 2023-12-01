@@ -15,21 +15,21 @@ public final class c implements a {
     public String f;
 
     /* renamed from: a  reason: collision with root package name */
-    final List<String> f23206a = new CopyOnWriteArrayList();
+    final List<String> f9598a = new CopyOnWriteArrayList();
     public int b = 10;
 
     /* renamed from: c  reason: collision with root package name */
-    public long f23207c = 30000;
+    public long f9599c = 30000;
     private final Pattern g = Pattern.compile("(.+)?[$][{](.+)?[}].+");
     private final AtomicBoolean h = new AtomicBoolean(true);
     long d = SystemClock.elapsedRealtime();
 
     public c() {
         b a2 = b.a();
-        if (a2.f23205a.contains(this)) {
+        if (a2.f9597a.contains(this)) {
             return;
         }
-        a2.f23205a.add(this);
+        a2.f9597a.add(this);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -58,7 +58,7 @@ public final class c implements a {
     @Override // com.igexin.base.a.a
     public final void log(String str) {
         if (isEnabled()) {
-            this.f23206a.add(str);
+            this.f9598a.add(str);
         }
     }
 }

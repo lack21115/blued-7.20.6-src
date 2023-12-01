@@ -15,10 +15,10 @@ public interface IDeviceIdService extends IInterface {
         static class Proxy implements IDeviceIdService {
 
             /* renamed from: a  reason: collision with root package name */
-            private IBinder f27936a;
+            private IBinder f14248a;
 
             Proxy(IBinder iBinder) {
-                this.f27936a = iBinder;
+                this.f14248a = iBinder;
             }
 
             @Override // android.os.IInterface

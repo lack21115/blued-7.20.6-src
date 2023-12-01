@@ -12,13 +12,9 @@ import com.blued.android.module.live.base.R;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/live/base/databinding/FragmentYyMusicBinding.class */
 public final class FragmentYyMusicBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f11378a;
+    public final ImageView a;
     public final LinearLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ShapeLinearLayout f11379c;
+    public final ShapeLinearLayout c;
     public final YyBaseMusicMainViewBinding d;
     public final YyMusicSearchViewBinding e;
     public final ImageView f;
@@ -28,9 +24,9 @@ public final class FragmentYyMusicBinding implements ViewBinding {
 
     private FragmentYyMusicBinding(LinearLayout linearLayout, ImageView imageView, LinearLayout linearLayout2, ShapeLinearLayout shapeLinearLayout, YyBaseMusicMainViewBinding yyBaseMusicMainViewBinding, YyMusicSearchViewBinding yyMusicSearchViewBinding, ImageView imageView2, TextView textView, TextView textView2) {
         this.i = linearLayout;
-        this.f11378a = imageView;
+        this.a = imageView;
         this.b = linearLayout2;
-        this.f11379c = shapeLinearLayout;
+        this.c = shapeLinearLayout;
         this.d = yyBaseMusicMainViewBinding;
         this.e = yyMusicSearchViewBinding;
         this.f = imageView2;
@@ -56,17 +52,17 @@ public final class FragmentYyMusicBinding implements ViewBinding {
                 if (shapeLinearLayout != null) {
                     View findViewById = view.findViewById(R.id.inc_main);
                     if (findViewById != null) {
-                        YyBaseMusicMainViewBinding a2 = YyBaseMusicMainViewBinding.a(findViewById);
+                        YyBaseMusicMainViewBinding a = YyBaseMusicMainViewBinding.a(findViewById);
                         View findViewById2 = view.findViewById(R.id.inv_search);
                         if (findViewById2 != null) {
-                            YyMusicSearchViewBinding a3 = YyMusicSearchViewBinding.a(findViewById2);
+                            YyMusicSearchViewBinding a2 = YyMusicSearchViewBinding.a(findViewById2);
                             ImageView imageView2 = (ImageView) view.findViewById(R.id.iv_start);
                             if (imageView2 != null) {
                                 TextView textView = (TextView) view.findViewById(R.id.tv_exit);
                                 if (textView != null) {
                                     TextView textView2 = (TextView) view.findViewById(R.id.tv_time);
                                     if (textView2 != null) {
-                                        return new FragmentYyMusicBinding((LinearLayout) view, imageView, linearLayout, shapeLinearLayout, a2, a3, imageView2, textView, textView2);
+                                        return new FragmentYyMusicBinding((LinearLayout) view, imageView, linearLayout, shapeLinearLayout, a, a2, imageView2, textView, textView2);
                                     }
                                     str = "tvTime";
                                 } else {
@@ -93,7 +89,6 @@ public final class FragmentYyMusicBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
         return this.i;

@@ -12,11 +12,11 @@ import java.io.Writer;
 public class a extends i implements Handler.Callback {
 
     /* renamed from: a  reason: collision with root package name */
-    private b f38225a;
+    private b f24534a;
     private FileWriter b;
 
     /* renamed from: c  reason: collision with root package name */
-    private File f38226c;
+    private File f24535c;
     private char[] d;
     private volatile g e;
     private volatile g f;
@@ -48,7 +48,7 @@ public class a extends i implements Handler.Callback {
     }
 
     public a(b bVar) {
-        this(c.b, true, h.f38239a, bVar);
+        this(c.b, true, h.f24548a, bVar);
     }
 
     private void f() {
@@ -69,11 +69,11 @@ public class a extends i implements Handler.Callback {
 
     private Writer g() {
         File a2 = c().a();
-        if ((a2 != null && !a2.equals(this.f38226c)) || (this.b == null && a2 != null)) {
-            this.f38226c = a2;
+        if ((a2 != null && !a2.equals(this.f24535c)) || (this.b == null && a2 != null)) {
+            this.f24535c = a2;
             h();
             try {
-                this.b = new FileWriter(this.f38226c, true);
+                this.b = new FileWriter(this.f24535c, true);
             } catch (IOException e) {
                 return null;
             }
@@ -117,7 +117,7 @@ public class a extends i implements Handler.Callback {
     }
 
     public void a(b bVar) {
-        this.f38225a = bVar;
+        this.f24534a = bVar;
     }
 
     protected void a(String str) {
@@ -133,7 +133,7 @@ public class a extends i implements Handler.Callback {
     }
 
     public b c() {
-        return this.f38225a;
+        return this.f24534a;
     }
 
     @Override // android.os.Handler.Callback

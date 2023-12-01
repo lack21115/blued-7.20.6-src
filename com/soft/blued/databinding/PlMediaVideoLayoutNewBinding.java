@@ -7,11 +7,11 @@ import com.blued.android.module.player.media.view.PLVideoPageView;
 public final class PlMediaVideoLayoutNewBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final PLVideoPageView f29501a;
+    private final PLVideoPageView f15811a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public PLVideoPageView getRoot() {
-        return this.f29501a;
+        return this.f15811a;
     }
 }

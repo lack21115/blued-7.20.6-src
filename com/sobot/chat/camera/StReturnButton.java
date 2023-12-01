@@ -35,9 +35,8 @@ public class StReturnButton extends View {
         this.path = new Path();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         Path path = this.path;
         float f = this.strokeWidth;
@@ -50,9 +49,8 @@ public class StReturnButton extends View {
         canvas.drawPath(this.path, this.paint);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         int i3 = this.size;
         setMeasuredDimension(i3, i3 / 2);
     }

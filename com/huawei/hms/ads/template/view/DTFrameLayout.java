@@ -34,7 +34,7 @@ public class DTFrameLayout extends FrameLayout implements a, b {
         }
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
+    @Override // android.view.View
     public void draw(Canvas canvas) {
         this.V.Code(canvas);
         super.draw(canvas);
@@ -49,9 +49,8 @@ public class DTFrameLayout extends FrameLayout implements a, b {
         return layoutParams;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z, int i, int i2, int i3, int i4) {
+    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         super.onLayout(z, i, i2, i3, i4);
         this.V.Code(z, i, i2, i3, i4);
     }

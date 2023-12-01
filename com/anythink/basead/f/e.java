@@ -14,9 +14,7 @@ import java.util.Map;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/f/e.class */
 public class e extends c {
-
-    /* renamed from: a  reason: collision with root package name */
-    com.anythink.basead.e.a f5995a;
+    com.anythink.basead.e.a a;
     com.anythink.core.common.k.a.c k;
     com.anythink.basead.a.c l;
     View m;
@@ -30,25 +28,23 @@ public class e extends c {
     /* renamed from: com.anythink.basead.f.e$2  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/f/e$2.class */
     public final class AnonymousClass2 implements c.b {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ int f5997a;
+        final /* synthetic */ int a;
 
         AnonymousClass2(int i) {
-            this.f5997a = i;
+            this.a = i;
         }
 
         @Override // com.anythink.basead.a.c.b
         public final void a() {
-            if (e.this.f5995a != null) {
-                e.this.f5995a.onAdClick(this.f5997a);
+            if (e.this.a != null) {
+                e.this.a.onAdClick(this.a);
             }
         }
 
         @Override // com.anythink.basead.a.c.b
         public final void a(boolean z) {
-            if (e.this.f5995a != null) {
-                e.this.f5995a.onDeeplinkCallback(z);
+            if (e.this.a != null) {
+                e.this.a.onDeeplinkCallback(z);
             }
         }
 
@@ -59,11 +55,11 @@ public class e extends c {
 
     /* renamed from: com.anythink.basead.f.e$3  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/f/e$3.class */
-    final class AnonymousClass3 implements a.InterfaceC0066a {
+    final class AnonymousClass3 implements a.InterfaceC0026a {
         AnonymousClass3() {
         }
 
-        @Override // com.anythink.basead.a.a.InterfaceC0066a
+        @Override // com.anythink.basead.a.a.InterfaceC0026a
         public final void a(int i) {
             e.a(e.this, 2);
         }
@@ -86,7 +82,7 @@ public class e extends c {
         o();
         p();
         if (this.l == null) {
-            this.l = new com.anythink.basead.a.c(this.f5991c, this.d, this.g);
+            this.l = new com.anythink.basead.a.c(this.c, this.d, this.g);
         }
         if (this.l.a()) {
             return;
@@ -116,7 +112,7 @@ public class e extends c {
         eVar.o();
         eVar.p();
         if (eVar.l == null) {
-            eVar.l = new com.anythink.basead.a.c(eVar.f5991c, eVar.d, eVar.g);
+            eVar.l = new com.anythink.basead.a.c(eVar.c, eVar.d, eVar.g);
         }
         if (eVar.l.a()) {
             return;
@@ -173,9 +169,9 @@ public class e extends c {
             return;
         }
         this.n = true;
-        com.anythink.basead.f.a.b.a(this.f5991c).a(this.g);
+        com.anythink.basead.f.a.b.a(this.c).a(this.g);
         com.anythink.basead.a.b.a(8, this.g, new i(this.d.d, ""));
-        com.anythink.basead.e.a aVar = this.f5995a;
+        com.anythink.basead.e.a aVar = this.a;
         if (aVar != null) {
             aVar.onAdShow();
         }
@@ -209,7 +205,7 @@ public class e extends c {
     }
 
     public final void a(com.anythink.basead.e.a aVar) {
-        this.f5995a = aVar;
+        this.a = aVar;
     }
 
     public final String b() {
@@ -246,7 +242,7 @@ public class e extends c {
     public final void m() {
         l();
         o();
-        this.f5995a = null;
+        this.a = null;
         com.anythink.basead.a.c cVar = this.l;
         if (cVar != null) {
             cVar.d();

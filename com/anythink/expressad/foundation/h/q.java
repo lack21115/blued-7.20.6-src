@@ -7,11 +7,11 @@ import java.util.Map;
 public final class q {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f7968a = 256;
+    public static final int f5128a = 256;
     private static Map<Character, Character> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static Map<Character, Character> f7969c;
+    private static Map<Character, Character> f5129c;
     private static final char[] d = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '/'};
     private static char[] e;
     private static final char f = '=';
@@ -257,7 +257,7 @@ public final class q {
                 return bArr;
             }
             byte[] bArr2 = new byte[i7];
-            System.arraycopy((Object) bArr, 0, (Object) bArr2, 0, i7);
+            System.arraycopy(bArr, 0, bArr2, 0, i7);
             return bArr2;
         } catch (Exception e2) {
             return null;
@@ -329,7 +329,7 @@ public final class q {
                 return bArr;
             }
             byte[] bArr2 = new byte[i6];
-            System.arraycopy((Object) bArr, 0, (Object) bArr2, 0, i6);
+            System.arraycopy(bArr, 0, bArr2, 0, i6);
             return bArr2;
         } catch (Exception e2) {
             return null;

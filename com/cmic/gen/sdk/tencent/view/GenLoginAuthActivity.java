@@ -1,5 +1,6 @@
 package com.cmic.gen.sdk.tencent.view;
 
+import android.R;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -35,6 +36,7 @@ import com.cmic.gen.sdk.tencent.e.h;
 import com.cmic.gen.sdk.tencent.e.n;
 import com.cmic.gen.sdk.tencent.e.q;
 import com.cmic.gen.sdk.tencent.view.b;
+import com.huawei.openalliance.ad.constant.t;
 import com.opos.process.bridge.provider.ProcessBridgeProvider;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
@@ -45,7 +47,7 @@ import org.json.JSONObject;
 public class GenLoginAuthActivity extends Activity implements View.OnClickListener {
 
     /* renamed from: a  reason: collision with root package name */
-    protected static final String f21685a = GenLoginAuthActivity.class.getSimpleName();
+    protected static final String f8079a = GenLoginAuthActivity.class.getSimpleName();
     private GenAuthThemeConfig A;
     private int B;
     private int C;
@@ -54,7 +56,7 @@ public class GenLoginAuthActivity extends Activity implements View.OnClickListen
     private Handler b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f21686c;
+    private Context f8080c;
     private RelativeLayout d;
     private d e;
     private d f;
@@ -84,14 +86,14 @@ public class GenLoginAuthActivity extends Activity implements View.OnClickListen
     public static class a extends Handler {
 
         /* renamed from: a  reason: collision with root package name */
-        WeakReference<GenLoginAuthActivity> f21695a;
+        WeakReference<GenLoginAuthActivity> f8089a;
 
         a(GenLoginAuthActivity genLoginAuthActivity) {
-            this.f21695a = new WeakReference<>(genLoginAuthActivity);
+            this.f8089a = new WeakReference<>(genLoginAuthActivity);
         }
 
         private void a(Message message) {
-            GenLoginAuthActivity genLoginAuthActivity = this.f21695a.get();
+            GenLoginAuthActivity genLoginAuthActivity = this.f8089a.get();
             if (genLoginAuthActivity == null || message.what != 1) {
                 return;
             }
@@ -115,18 +117,18 @@ public class GenLoginAuthActivity extends Activity implements View.OnClickListen
     public static class b extends n.a {
 
         /* renamed from: a  reason: collision with root package name */
-        WeakReference<GenLoginAuthActivity> f21696a;
+        WeakReference<GenLoginAuthActivity> f8090a;
         WeakReference<c> b;
 
         protected b(GenLoginAuthActivity genLoginAuthActivity, c cVar) {
-            this.f21696a = new WeakReference<>(genLoginAuthActivity);
+            this.f8090a = new WeakReference<>(genLoginAuthActivity);
             this.b = new WeakReference<>(cVar);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
         public boolean b() {
             c cVar = this.b.get();
-            if (this.f21696a.get() == null || cVar == null) {
+            if (this.f8090a.get() == null || cVar == null) {
                 return false;
             }
             return cVar.a(false);
@@ -134,7 +136,7 @@ public class GenLoginAuthActivity extends Activity implements View.OnClickListen
 
         @Override // com.cmic.gen.sdk.tencent.e.n.a
         public void a() {
-            final GenLoginAuthActivity genLoginAuthActivity = this.f21696a.get();
+            final GenLoginAuthActivity genLoginAuthActivity = this.f8090a.get();
             genLoginAuthActivity.m.a("logintype", 1);
             h.a(true, false);
             genLoginAuthActivity.n.b(genLoginAuthActivity.m, new com.cmic.gen.sdk.tencent.auth.b() { // from class: com.cmic.gen.sdk.tencent.view.GenLoginAuthActivity.b.1
@@ -172,7 +174,7 @@ public class GenLoginAuthActivity extends Activity implements View.OnClickListen
         private com.cmic.gen.sdk.tencent.a b;
 
         /* renamed from: c  reason: collision with root package name */
-        private boolean f21699c;
+        private boolean f8093c;
 
         c(com.cmic.gen.sdk.tencent.a aVar) {
             this.b = aVar;
@@ -182,8 +184,8 @@ public class GenLoginAuthActivity extends Activity implements View.OnClickListen
         public boolean a(boolean z) {
             boolean z2;
             synchronized (this) {
-                z2 = this.f21699c;
-                this.f21699c = z;
+                z2 = this.f8093c;
+                this.f8093c = z;
             }
             return !z2;
         }
@@ -236,7 +238,7 @@ public class GenLoginAuthActivity extends Activity implements View.OnClickListen
             }
             genAuthnHelper.callBackResult(str, str2, aVar, jSONObject);
         } catch (Exception e) {
-            com.cmic.gen.sdk.tencent.e.c.a(f21685a, "CallbackResult:未知错误");
+            com.cmic.gen.sdk.tencent.e.c.a(f8079a, "CallbackResult:未知错误");
             e.printStackTrace();
         }
     }
@@ -264,17 +266,17 @@ public class GenLoginAuthActivity extends Activity implements View.OnClickListen
         this.b = new Handler(getMainLooper());
         this.u = new a(this);
         this.o = this.m.b(com.tencent.tendinsv.b.x);
-        String str2 = f21685a;
+        String str2 = f8079a;
         com.cmic.gen.sdk.tencent.e.c.b(str2, "mSecurityPhone value is " + this.o);
         String b2 = this.m.b("operatortype", "");
-        String str3 = f21685a;
+        String str3 = f8079a;
         com.cmic.gen.sdk.tencent.e.c.b(str3, "operator value is " + b2);
         if (this.A.getAppLanguageType() == 1) {
             this.l = com.cmic.gen.sdk.tencent.c.b;
         } else if (this.A.getAppLanguageType() == 2) {
-            this.l = com.cmic.gen.sdk.tencent.c.f21617c;
+            this.l = com.cmic.gen.sdk.tencent.c.f8011c;
         } else {
-            this.l = com.cmic.gen.sdk.tencent.c.f21616a;
+            this.l = com.cmic.gen.sdk.tencent.c.f8010a;
         }
         if (b2.equals("1")) {
             this.y = this.l[0];
@@ -286,7 +288,7 @@ public class GenLoginAuthActivity extends Activity implements View.OnClickListen
             this.y = this.l[2];
             str = "https://opencloud.wostore.cn/authz/resource/html/disclaimer.html?fromsdk=true";
         }
-        d dVar = new d(this.f21686c, 16973840, this.y, str);
+        d dVar = new d(this.f8080c, R.style.Theme_Translucent_NoTitleBar, this.y, str);
         this.e = dVar;
         dVar.setOnKeyListener(new DialogInterface.OnKeyListener() { // from class: com.cmic.gen.sdk.tencent.view.GenLoginAuthActivity.1
             @Override // android.content.DialogInterface.OnKeyListener
@@ -301,7 +303,7 @@ public class GenLoginAuthActivity extends Activity implements View.OnClickListen
         this.j = new ArrayList<>();
         this.k = new ArrayList<>();
         if (!TextUtils.isEmpty(this.A.getClauseUrl())) {
-            d dVar2 = new d(this.f21686c, 16973840, this.A.getClauseName(), this.A.getClauseUrl());
+            d dVar2 = new d(this.f8080c, R.style.Theme_Translucent_NoTitleBar, this.A.getClauseName(), this.A.getClauseUrl());
             this.f = dVar2;
             dVar2.setOnKeyListener(new DialogInterface.OnKeyListener() { // from class: com.cmic.gen.sdk.tencent.view.GenLoginAuthActivity.2
                 @Override // android.content.DialogInterface.OnKeyListener
@@ -317,7 +319,7 @@ public class GenLoginAuthActivity extends Activity implements View.OnClickListen
             this.k.add(this.A.getClauseName());
         }
         if (!TextUtils.isEmpty(this.A.getClauseUrl2())) {
-            d dVar3 = new d(this.f21686c, 16973840, this.A.getClauseName2(), this.A.getClauseUrl2());
+            d dVar3 = new d(this.f8080c, R.style.Theme_Translucent_NoTitleBar, this.A.getClauseName2(), this.A.getClauseUrl2());
             this.g = dVar3;
             dVar3.setOnKeyListener(new DialogInterface.OnKeyListener() { // from class: com.cmic.gen.sdk.tencent.view.GenLoginAuthActivity.3
                 @Override // android.content.DialogInterface.OnKeyListener
@@ -333,7 +335,7 @@ public class GenLoginAuthActivity extends Activity implements View.OnClickListen
             this.k.add(this.A.getClauseName2());
         }
         if (!TextUtils.isEmpty(this.A.getClauseUrl3())) {
-            d dVar4 = new d(this.f21686c, 16973840, this.A.getClauseName3(), this.A.getClauseUrl3());
+            d dVar4 = new d(this.f8080c, R.style.Theme_Translucent_NoTitleBar, this.A.getClauseName3(), this.A.getClauseUrl3());
             this.h = dVar4;
             dVar4.setOnKeyListener(new DialogInterface.OnKeyListener() { // from class: com.cmic.gen.sdk.tencent.view.GenLoginAuthActivity.4
                 @Override // android.content.DialogInterface.OnKeyListener
@@ -349,7 +351,7 @@ public class GenLoginAuthActivity extends Activity implements View.OnClickListen
             this.k.add(this.A.getClauseName3());
         }
         if (!TextUtils.isEmpty(this.A.getClauseUrl4())) {
-            d dVar5 = new d(this.f21686c, 16973840, this.A.getClauseName4(), this.A.getClauseUrl4());
+            d dVar5 = new d(this.f8080c, R.style.Theme_Translucent_NoTitleBar, this.A.getClauseName4(), this.A.getClauseUrl4());
             this.i = dVar5;
             dVar5.setOnKeyListener(new DialogInterface.OnKeyListener() { // from class: com.cmic.gen.sdk.tencent.view.GenLoginAuthActivity.5
                 @Override // android.content.DialogInterface.OnKeyListener
@@ -398,42 +400,42 @@ public class GenLoginAuthActivity extends Activity implements View.OnClickListen
         if (this.A.getNumFieldOffsetY() > 0 || this.A.getNumFieldOffsetY_B() < 0) {
             int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(0, 0);
             this.r.measure(makeMeasureSpec, makeMeasureSpec);
-            String str = f21685a;
+            String str = f8079a;
             com.cmic.gen.sdk.tencent.e.c.b(str, "mPhoneLayout.getMeasuredHeight()=" + this.r.getMeasuredHeight());
-            if (this.A.getNumFieldOffsetY() <= 0 || (this.B - this.r.getMeasuredHeight()) - e.a(this.f21686c, this.A.getNumFieldOffsetY()) <= 0) {
+            if (this.A.getNumFieldOffsetY() <= 0 || (this.B - this.r.getMeasuredHeight()) - e.a(this.f8080c, this.A.getNumFieldOffsetY()) <= 0) {
                 layoutParams.addRule(12, -1);
             } else {
-                com.cmic.gen.sdk.tencent.e.c.b(f21685a, "numberField_top");
+                com.cmic.gen.sdk.tencent.e.c.b(f8079a, "numberField_top");
                 layoutParams.addRule(10, -1);
-                layoutParams.setMargins(0, e.a(this.f21686c, this.A.getNumFieldOffsetY()), 0, 0);
+                layoutParams.setMargins(0, e.a(this.f8080c, this.A.getNumFieldOffsetY()), 0, 0);
             }
-        } else if (this.A.getNumFieldOffsetY_B() <= 0 || (this.B - this.r.getMeasuredHeight()) - e.a(this.f21686c, this.A.getNumFieldOffsetY_B()) <= 0) {
+        } else if (this.A.getNumFieldOffsetY_B() <= 0 || (this.B - this.r.getMeasuredHeight()) - e.a(this.f8080c, this.A.getNumFieldOffsetY_B()) <= 0) {
             layoutParams.addRule(10, -1);
         } else {
-            com.cmic.gen.sdk.tencent.e.c.b(f21685a, "numberField_bottom");
+            com.cmic.gen.sdk.tencent.e.c.b(f8079a, "numberField_bottom");
             layoutParams.addRule(12, -1);
-            layoutParams.setMargins(0, 0, 0, e.a(this.f21686c, this.A.getNumFieldOffsetY_B()));
+            layoutParams.setMargins(0, 0, 0, e.a(this.f8080c, this.A.getNumFieldOffsetY_B()));
         }
         this.r.setLayoutParams(layoutParams);
         RelativeLayout.LayoutParams layoutParams2 = (RelativeLayout.LayoutParams) this.d.getLayoutParams();
         int max = Math.max(this.A.getLogBtnMarginLeft(), 0);
         int max2 = Math.max(this.A.getLogBtnMarginRight(), 0);
         if (this.A.getLogBtnOffsetY() > 0 || this.A.getLogBtnOffsetY_B() < 0) {
-            if (this.A.getLogBtnOffsetY() <= 0 || this.B - e.a(this.f21686c, this.A.getLogBtnHeight() + this.A.getLogBtnOffsetY()) <= 0) {
+            if (this.A.getLogBtnOffsetY() <= 0 || this.B - e.a(this.f8080c, this.A.getLogBtnHeight() + this.A.getLogBtnOffsetY()) <= 0) {
                 layoutParams2.addRule(12, -1);
-                layoutParams2.setMargins(e.a(this.f21686c, max), 0, e.a(this.f21686c, max2), 0);
+                layoutParams2.setMargins(e.a(this.f8080c, max), 0, e.a(this.f8080c, max2), 0);
             } else {
-                com.cmic.gen.sdk.tencent.e.c.b(f21685a, "logBtn_top");
+                com.cmic.gen.sdk.tencent.e.c.b(f8079a, "logBtn_top");
                 layoutParams2.addRule(10, -1);
-                layoutParams2.setMargins(e.a(this.f21686c, max), e.a(this.f21686c, this.A.getLogBtnOffsetY()), e.a(this.f21686c, max2), 0);
+                layoutParams2.setMargins(e.a(this.f8080c, max), e.a(this.f8080c, this.A.getLogBtnOffsetY()), e.a(this.f8080c, max2), 0);
             }
-        } else if (this.A.getLogBtnOffsetY_B() <= 0 || this.B - e.a(this.f21686c, this.A.getLogBtnHeight() + this.A.getLogBtnOffsetY_B()) <= 0) {
+        } else if (this.A.getLogBtnOffsetY_B() <= 0 || this.B - e.a(this.f8080c, this.A.getLogBtnHeight() + this.A.getLogBtnOffsetY_B()) <= 0) {
             layoutParams2.addRule(10, -1);
-            layoutParams2.setMargins(e.a(this.f21686c, max), 0, e.a(this.f21686c, max2), 0);
+            layoutParams2.setMargins(e.a(this.f8080c, max), 0, e.a(this.f8080c, max2), 0);
         } else {
-            com.cmic.gen.sdk.tencent.e.c.b(f21685a, "logBtn_bottom");
+            com.cmic.gen.sdk.tencent.e.c.b(f8079a, "logBtn_bottom");
             layoutParams2.addRule(12, -1);
-            layoutParams2.setMargins(e.a(this.f21686c, max), 0, e.a(this.f21686c, max2), e.a(this.f21686c, this.A.getLogBtnOffsetY_B()));
+            layoutParams2.setMargins(e.a(this.f8080c, max), 0, e.a(this.f8080c, max2), e.a(this.f8080c, this.A.getLogBtnOffsetY_B()));
         }
         this.d.setLayoutParams(layoutParams2);
         RelativeLayout.LayoutParams layoutParams3 = (RelativeLayout.LayoutParams) this.q.getLayoutParams();
@@ -442,26 +444,26 @@ public class GenLoginAuthActivity extends Activity implements View.OnClickListen
         int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(0, 0);
         this.q.measure(makeMeasureSpec2, makeMeasureSpec2);
         if (this.A.getPrivacyOffsetY() > 0 || this.A.getPrivacyOffsetY_B() < 0) {
-            if (this.A.getPrivacyOffsetY() <= 0 || (this.B - this.q.getMeasuredHeight()) - e.a(this.f21686c, this.A.getPrivacyOffsetY()) <= 0) {
-                String str2 = f21685a;
+            if (this.A.getPrivacyOffsetY() <= 0 || (this.B - this.q.getMeasuredHeight()) - e.a(this.f8080c, this.A.getPrivacyOffsetY()) <= 0) {
+                String str2 = f8079a;
                 com.cmic.gen.sdk.tencent.e.c.b(str2, "privacy_bottom=" + privacyMarginLeft);
                 layoutParams3.addRule(12, -1);
-                layoutParams3.setMargins(e.a(this.f21686c, (float) privacyMarginLeft), 0, e.a(this.f21686c, (float) max3), 0);
+                layoutParams3.setMargins(e.a(this.f8080c, (float) privacyMarginLeft), 0, e.a(this.f8080c, (float) max3), 0);
             } else {
-                String str3 = f21685a;
+                String str3 = f8079a;
                 com.cmic.gen.sdk.tencent.e.c.b(str3, "privacy_top = " + this.q.getMeasuredHeight());
                 layoutParams3.addRule(10, -1);
-                layoutParams3.setMargins(e.a(this.f21686c, (float) privacyMarginLeft), e.a(this.f21686c, (float) this.A.getPrivacyOffsetY()), e.a(this.f21686c, (float) max3), 0);
+                layoutParams3.setMargins(e.a(this.f8080c, (float) privacyMarginLeft), e.a(this.f8080c, (float) this.A.getPrivacyOffsetY()), e.a(this.f8080c, (float) max3), 0);
             }
-        } else if (this.A.getPrivacyOffsetY_B() <= 0 || (this.B - this.q.getMeasuredHeight()) - e.a(this.f21686c, this.A.getPrivacyOffsetY_B()) <= 0) {
+        } else if (this.A.getPrivacyOffsetY_B() <= 0 || (this.B - this.q.getMeasuredHeight()) - e.a(this.f8080c, this.A.getPrivacyOffsetY_B()) <= 0) {
             layoutParams3.addRule(10, -1);
-            layoutParams3.setMargins(e.a(this.f21686c, privacyMarginLeft), 0, e.a(this.f21686c, max3), 0);
-            com.cmic.gen.sdk.tencent.e.c.b(f21685a, "privacy_top");
+            layoutParams3.setMargins(e.a(this.f8080c, privacyMarginLeft), 0, e.a(this.f8080c, max3), 0);
+            com.cmic.gen.sdk.tencent.e.c.b(f8079a, "privacy_top");
         } else {
-            String str4 = f21685a;
+            String str4 = f8079a;
             com.cmic.gen.sdk.tencent.e.c.b(str4, "privacy_bottom=" + this.q.getMeasuredHeight());
             layoutParams3.addRule(12, -1);
-            layoutParams3.setMargins(e.a(this.f21686c, (float) privacyMarginLeft), 0, e.a(this.f21686c, (float) max3), e.a(this.f21686c, (float) this.A.getPrivacyOffsetY_B()));
+            layoutParams3.setMargins(e.a(this.f8080c, (float) privacyMarginLeft), 0, e.a(this.f8080c, (float) max3), e.a(this.f8080c, (float) this.A.getPrivacyOffsetY_B()));
         }
         this.q.setLayoutParams(layoutParams3);
     }
@@ -484,7 +486,7 @@ public class GenLoginAuthActivity extends Activity implements View.OnClickListen
                 getWindow().getDecorView().setSystemUiVisibility(0);
             }
         }
-        ViewGroup relativeLayout = new RelativeLayout(this);
+        RelativeLayout relativeLayout = new RelativeLayout(this);
         relativeLayout.setLayoutParams(new RelativeLayout.LayoutParams(-1, -1));
         View contentView = this.A.getContentView();
         if (contentView != null) {
@@ -498,28 +500,28 @@ public class GenLoginAuthActivity extends Activity implements View.OnClickListen
         }
         setContentView(relativeLayout);
         int requestedOrientation = getRequestedOrientation();
-        this.B = e.b(this.f21686c);
-        int a2 = e.a(this.f21686c);
+        this.B = e.b(this.f8080c);
+        int a2 = e.a(this.f8080c);
         this.C = a2;
         if ((requestedOrientation == 1 && a2 > this.B) || (requestedOrientation == 0 && this.C < this.B)) {
             int i = this.C;
             this.C = this.B;
             this.B = i;
         }
-        com.cmic.gen.sdk.tencent.e.c.b(f21685a, "orientation = " + requestedOrientation + "--screenWidth = " + this.C + "--screenHeight = " + this.B);
+        com.cmic.gen.sdk.tencent.e.c.b(f8079a, "orientation = " + requestedOrientation + "--screenWidth = " + this.C + "--screenHeight = " + this.B);
         WindowManager.LayoutParams attributes = getWindow().getAttributes();
         if (this.A.getWindowWidth() != 0) {
             getWindow().getWindowManager().getDefaultDisplay().getMetrics(new DisplayMetrics());
             getWindowManager().getDefaultDisplay().getSize(new Point());
-            attributes.width = e.a(this.f21686c, this.A.getWindowWidth());
-            attributes.height = e.a(this.f21686c, this.A.getWindowHeight());
+            attributes.width = e.a(this.f8080c, this.A.getWindowWidth());
+            attributes.height = e.a(this.f8080c, this.A.getWindowHeight());
             this.C = attributes.width;
             this.B = attributes.height;
-            attributes.x = e.a(this.f21686c, this.A.getWindowX());
+            attributes.x = e.a(this.f8080c, this.A.getWindowX());
             if (this.A.getWindowBottom() == 1) {
                 getWindow().setGravity(80);
             } else {
-                attributes.y = e.a(this.f21686c, this.A.getWindowY());
+                attributes.y = e.a(this.f8080c, this.A.getWindowY());
             }
             getWindow().setAttributes(attributes);
         }
@@ -592,7 +594,7 @@ public class GenLoginAuthActivity extends Activity implements View.OnClickListen
         } catch (Exception e2) {
             com.cmic.gen.sdk.tencent.d.c.b.add(e2);
             e2.printStackTrace();
-            com.cmic.gen.sdk.tencent.e.c.a(f21685a, e2.toString());
+            com.cmic.gen.sdk.tencent.e.c.a(f8079a, e2.toString());
             a("200040", "UI资源加载异常", this.m, null);
         }
     }
@@ -621,7 +623,7 @@ public class GenLoginAuthActivity extends Activity implements View.OnClickListen
         RelativeLayout relativeLayout = new RelativeLayout(this);
         this.d = relativeLayout;
         relativeLayout.setId(17476);
-        this.d.setLayoutParams(new RelativeLayout.LayoutParams(e.a(this.f21686c, this.A.getLogBtnWidth()), e.a(this.f21686c, this.A.getLogBtnHeight())));
+        this.d.setLayoutParams(new RelativeLayout.LayoutParams(e.a(this.f8080c, this.A.getLogBtnWidth()), e.a(this.f8080c, this.A.getLogBtnHeight())));
         TextView textView = new TextView(this);
         textView.setTextSize(2, this.A.getLogBtnTextSize());
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(-2, -2);
@@ -638,10 +640,10 @@ public class GenLoginAuthActivity extends Activity implements View.OnClickListen
             textView.setTextColor(-1);
         }
         try {
-            this.d.setBackgroundResource(com.cmic.gen.sdk.tencent.view.c.b(this.f21686c, this.A.getLogBtnBackgroundPath()));
+            this.d.setBackgroundResource(com.cmic.gen.sdk.tencent.view.c.b(this.f8080c, this.A.getLogBtnBackgroundPath()));
         } catch (Exception e2) {
             e2.printStackTrace();
-            this.d.setBackgroundResource(com.cmic.gen.sdk.tencent.view.c.b(this.f21686c, "umcsdk_login_btn_bg"));
+            this.d.setBackgroundResource(com.cmic.gen.sdk.tencent.view.c.b(this.f8080c, "umcsdk_login_btn_bg"));
         }
         return this.d;
     }
@@ -652,7 +654,7 @@ public class GenLoginAuthActivity extends Activity implements View.OnClickListen
         relativeLayout.setHorizontalGravity(1);
         this.q.setLayoutParams(new RelativeLayout.LayoutParams(-1, -2));
         int checkedImgWidth = this.A.getCheckedImgWidth();
-        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(e.a(this.f21686c, Math.max(checkedImgWidth, 30)), e.a(this.f21686c, Math.max(this.A.getCheckedImgHeight(), 30)));
+        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(e.a(this.f8080c, Math.max(checkedImgWidth, 30)), e.a(this.f8080c, Math.max(this.A.getCheckedImgHeight(), 30)));
         if (this.A.getCheckBoxLocation() == 1) {
             layoutParams.addRule(15, -1);
         }
@@ -663,8 +665,8 @@ public class GenLoginAuthActivity extends Activity implements View.OnClickListen
         CheckBox checkBox = new CheckBox(this);
         this.p = checkBox;
         checkBox.setChecked(false);
-        RelativeLayout.LayoutParams layoutParams2 = new RelativeLayout.LayoutParams(e.a(this.f21686c, this.A.getCheckedImgWidth()), e.a(this.f21686c, this.A.getCheckedImgHeight()));
-        layoutParams2.setMargins(e.a(this.f21686c, checkedImgWidth > 30 ? 0.0f : 30 - checkedImgWidth), 0, 0, 0);
+        RelativeLayout.LayoutParams layoutParams2 = new RelativeLayout.LayoutParams(e.a(this.f8080c, this.A.getCheckedImgWidth()), e.a(this.f8080c, this.A.getCheckedImgHeight()));
+        layoutParams2.setMargins(e.a(this.f8080c, checkedImgWidth > 30 ? 0.0f : 30 - checkedImgWidth), 0, 0, 0);
         layoutParams2.addRule(11, -1);
         if (this.A.getCheckBoxLocation() == 1) {
             layoutParams2.addRule(15, -1);
@@ -675,7 +677,7 @@ public class GenLoginAuthActivity extends Activity implements View.OnClickListen
         TextView textView = new TextView(this);
         textView.setTextSize(2, this.A.getPrivacyTextSize());
         RelativeLayout.LayoutParams layoutParams3 = new RelativeLayout.LayoutParams(-2, -2);
-        layoutParams3.setMargins(e.a(this.f21686c, 5.0f), 0, 0, e.a(this.f21686c, 5.0f));
+        layoutParams3.setMargins(e.a(this.f8080c, 5.0f), 0, 0, e.a(this.f8080c, 5.0f));
         layoutParams3.addRule(1, 34952);
         textView.setLayoutParams(layoutParams3);
         this.q.addView(textView);
@@ -689,7 +691,7 @@ public class GenLoginAuthActivity extends Activity implements View.OnClickListen
         if (this.A.isPrivacyTextGravityCenter()) {
             textView.setGravity(17);
         }
-        textView.setHighlightColor(getResources().getColor(17170445));
+        textView.setHighlightColor(getResources().getColor(R.color.transparent));
         textView.setMovementMethod(LinkMovementMethod.getInstance());
         this.p.setButtonDrawable(new ColorDrawable());
         try {
@@ -725,7 +727,7 @@ public class GenLoginAuthActivity extends Activity implements View.OnClickListen
     private void m() {
         try {
             if (this.t >= 5) {
-                Toast.makeText(this.f21686c, "网络不稳定,请返回重试其他登录方式", 1).show();
+                Toast.makeText(this.f8080c, "网络不稳定,请返回重试其他登录方式", 1).show();
                 this.d.setClickable(true);
                 return;
             }
@@ -743,7 +745,7 @@ public class GenLoginAuthActivity extends Activity implements View.OnClickListen
                 String className = stackTraceElement.getClassName();
                 if (!TextUtils.isEmpty(className) && className.contains("com.cmic.gen.sdk.tencent.activity") && !sb.toString().contains(className)) {
                     sb.append(className);
-                    sb.append(";");
+                    sb.append(t.aE);
                 }
                 i = i2 + 1;
             }
@@ -788,11 +790,11 @@ public class GenLoginAuthActivity extends Activity implements View.OnClickListen
     }
 
     public void b() {
-        com.cmic.gen.sdk.tencent.e.c.a(f21685a, "loginClickStart");
+        com.cmic.gen.sdk.tencent.e.c.a(f8079a, "loginClickStart");
         try {
             this.D = true;
             if (this.A.getGenLoginClickListener() != null) {
-                this.A.getGenLoginClickListener().onLoginClickStart(this.f21686c, null);
+                this.A.getGenLoginClickListener().onLoginClickStart(this.f8080c, null);
             } else if (this.E != null) {
                 this.E.show();
                 return;
@@ -810,7 +812,7 @@ public class GenLoginAuthActivity extends Activity implements View.OnClickListen
                 RelativeLayout relativeLayout = new RelativeLayout(this.E.getContext());
                 relativeLayout.setLayoutParams(new RelativeLayout.LayoutParams(-1, -2));
                 ImageView imageView = new ImageView(this.E.getContext());
-                imageView.setImageResource(com.cmic.gen.sdk.tencent.view.c.b(this.f21686c, "dialog_loading"));
+                imageView.setImageResource(com.cmic.gen.sdk.tencent.view.c.b(this.f8080c, "dialog_loading"));
                 RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(80, 80);
                 layoutParams.addRule(13, -1);
                 relativeLayout.addView(imageView, layoutParams);
@@ -823,15 +825,15 @@ public class GenLoginAuthActivity extends Activity implements View.OnClickListen
         } catch (Exception e) {
             e.printStackTrace();
         }
-        com.cmic.gen.sdk.tencent.e.c.a(f21685a, "loginClickStart");
+        com.cmic.gen.sdk.tencent.e.c.a(f8079a, "loginClickStart");
     }
 
     public void c() {
         try {
-            com.cmic.gen.sdk.tencent.e.c.a(f21685a, "loginClickComplete");
+            com.cmic.gen.sdk.tencent.e.c.a(f8079a, "loginClickComplete");
             if (this.A.getGenLoginClickListener() != null && this.D) {
                 this.D = false;
-                this.A.getGenLoginClickListener().onLoginClickComplete(this.f21686c, null);
+                this.A.getGenLoginClickListener().onLoginClickComplete(this.f8080c, null);
             } else if (this.E == null || !this.E.isShowing()) {
             } else {
                 this.E.dismiss();
@@ -870,13 +872,13 @@ public class GenLoginAuthActivity extends Activity implements View.OnClickListen
             }
             if (!this.p.isChecked()) {
                 if (this.A.getPrivacyAnimation() != null) {
-                    this.q.startAnimation(AnimationUtils.loadAnimation(this.f21686c, com.cmic.gen.sdk.tencent.view.c.c(this.f21686c, this.A.getPrivacyAnimation())));
+                    this.q.startAnimation(AnimationUtils.loadAnimation(this.f8080c, com.cmic.gen.sdk.tencent.view.c.c(this.f8080c, this.A.getPrivacyAnimation())));
                 }
                 if (this.A.getGenCheckBoxListener() != null) {
-                    this.A.getGenCheckBoxListener().onLoginClick(this.f21686c, null);
+                    this.A.getGenCheckBoxListener().onLoginClick(this.f8080c, null);
                     return;
                 } else if (!TextUtils.isEmpty(this.A.getCheckTipText())) {
-                    Toast.makeText(this.f21686c, this.A.getCheckTipText(), 1).show();
+                    Toast.makeText(this.f8080c, this.A.getCheckTipText(), 1).show();
                     return;
                 }
             }
@@ -895,7 +897,7 @@ public class GenLoginAuthActivity extends Activity implements View.OnClickListen
             if (bundle != null) {
                 finish();
             }
-            this.f21686c = this;
+            this.f8080c = this;
             GenAuthThemeConfig authThemeConfig = GenAuthnHelper.getInstance((Context) this).getAuthThemeConfig();
             this.A = authThemeConfig;
             if (authThemeConfig != null) {
@@ -915,8 +917,8 @@ public class GenLoginAuthActivity extends Activity implements View.OnClickListen
             if (this.m == null) {
                 this.m = new com.cmic.gen.sdk.tencent.a(0);
             }
-            this.m.a().f21653a.add(e);
-            com.cmic.gen.sdk.tencent.e.c.a(f21685a, e.toString());
+            this.m.a().f8047a.add(e);
+            com.cmic.gen.sdk.tencent.e.c.a(f8079a, e.toString());
             e.printStackTrace();
             a("200025", "发生未知错误", this.m, null);
         }
@@ -929,13 +931,13 @@ public class GenLoginAuthActivity extends Activity implements View.OnClickListen
             this.b.removeCallbacksAndMessages(null);
             com.cmic.gen.sdk.tencent.d.a.a("timeOnAuthPage", (System.currentTimeMillis() - this.s) + "");
             com.cmic.gen.sdk.tencent.d.a.a("authPrivacyState", this.p.isChecked() ? "1" : "0");
-            com.cmic.gen.sdk.tencent.d.a.a(this.f21686c.getApplicationContext(), this.m);
+            com.cmic.gen.sdk.tencent.d.a.a(this.f8080c.getApplicationContext(), this.m);
             com.cmic.gen.sdk.tencent.d.a.a();
             this.E = null;
             com.cmic.gen.sdk.tencent.view.b.a().c();
             this.u.removeCallbacksAndMessages(null);
         } catch (Exception e) {
-            com.cmic.gen.sdk.tencent.e.c.a(f21685a, "GenLoginAuthActivity clear failed");
+            com.cmic.gen.sdk.tencent.e.c.a(f8079a, "GenLoginAuthActivity clear failed");
             com.cmic.gen.sdk.tencent.d.c.b.add(e);
             e.printStackTrace();
         }
@@ -967,7 +969,7 @@ public class GenLoginAuthActivity extends Activity implements View.OnClickListen
             }
             GenAuthnHelper.getInstance((Context) this).loginPageInCallBack("200087", null);
         } catch (Exception e) {
-            this.m.a().f21653a.add(e);
+            this.m.a().f8047a.add(e);
             a("200025", "发生未知错误", this.m, null);
         }
     }

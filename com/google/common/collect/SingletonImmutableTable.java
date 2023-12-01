@@ -26,7 +26,7 @@ class SingletonImmutableTable<R, C, V> extends ImmutableTable<R, C, V> {
     @Override // com.google.common.collect.ImmutableTable, com.google.common.collect.Table
     public ImmutableMap<R, V> column(C c2) {
         Preconditions.checkNotNull(c2);
-        return containsColumn(c2) ? ImmutableMap.of(this.singleRowKey, this.singleValue) : ImmutableMap.of();
+        return containsColumn(c2) ? ImmutableMap.of(this.singleRowKey, (Object) this.singleValue) : ImmutableMap.of();
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -37,7 +37,7 @@ class SingletonImmutableTable<R, C, V> extends ImmutableTable<R, C, V> {
 
     @Override // com.google.common.collect.ImmutableTable, com.google.common.collect.Table
     public ImmutableMap<C, Map<R, V>> columnMap() {
-        return ImmutableMap.of(this.singleColumnKey, ImmutableMap.of(this.singleRowKey, this.singleValue));
+        return ImmutableMap.of(this.singleColumnKey, ImmutableMap.of(this.singleRowKey, (Object) this.singleValue));
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -59,7 +59,7 @@ class SingletonImmutableTable<R, C, V> extends ImmutableTable<R, C, V> {
 
     @Override // com.google.common.collect.ImmutableTable, com.google.common.collect.Table
     public ImmutableMap<R, Map<C, V>> rowMap() {
-        return ImmutableMap.of(this.singleRowKey, ImmutableMap.of(this.singleColumnKey, this.singleValue));
+        return ImmutableMap.of(this.singleRowKey, ImmutableMap.of(this.singleColumnKey, (Object) this.singleValue));
     }
 
     @Override // com.google.common.collect.Table

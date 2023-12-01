@@ -40,7 +40,7 @@ public class SolidLayer extends BaseLayer {
     public void a(RectF rectF, Matrix matrix, boolean z) {
         super.a(rectF, matrix, z);
         this.e.set(0.0f, 0.0f, this.i.r(), this.i.q());
-        this.f4379a.mapRect(this.e);
+        this.a.mapRect(this.e);
         rectF.set(this.e);
     }
 

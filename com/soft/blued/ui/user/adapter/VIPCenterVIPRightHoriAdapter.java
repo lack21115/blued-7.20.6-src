@@ -32,18 +32,18 @@ import java.util.List;
 public class VIPCenterVIPRightHoriAdapter extends BaseQuickAdapter<VIPRightOption, BaseViewHolder> {
 
     /* renamed from: a  reason: collision with root package name */
-    public IRequestHost f33792a;
+    public IRequestHost f20101a;
     int b;
 
     /* renamed from: c  reason: collision with root package name */
-    FragmentManager f33793c;
+    FragmentManager f20102c;
     private VipInvisibleDialogFragment d;
 
     public VIPCenterVIPRightHoriAdapter(IRequestHost iRequestHost, List<VIPRightOption> list, int i, FragmentManager fragmentManager) {
         super(R.layout.item_vip_center_hori_right_desc, list);
-        this.f33792a = iRequestHost;
+        this.f20101a = iRequestHost;
         this.b = i;
-        this.f33793c = fragmentManager;
+        this.f20102c = fragmentManager;
         this.d = new VipInvisibleDialogFragment();
     }
 
@@ -62,7 +62,7 @@ public class VIPCenterVIPRightHoriAdapter extends BaseQuickAdapter<VIPRightOptio
             if (this.d.isAdded()) {
                 this.d.dismiss();
             } else {
-                this.d.show(this.f33793c, VIPCenterVIPRightHoriAdapter.class.getName());
+                this.d.show(this.f20102c, VIPCenterVIPRightHoriAdapter.class.getName());
             }
             BluedPreferences.dU();
             notifyDataSetChanged();
@@ -75,7 +75,7 @@ public class VIPCenterVIPRightHoriAdapter extends BaseQuickAdapter<VIPRightOptio
         } else {
             switch (i) {
                 case 28:
-                    BluedURIRouterAdapter.goChatAndOpenMsgBox(this.f33793c, this.b);
+                    BluedURIRouterAdapter.goChatAndOpenMsgBox(this.f20102c, this.b);
                     return;
                 case 29:
                     BluedPreferences.dO();
@@ -121,7 +121,7 @@ public class VIPCenterVIPRightHoriAdapter extends BaseQuickAdapter<VIPRightOptio
         if (baseViewHolder == null || vIPRightOption == null) {
             return;
         }
-        final ImageView imageView = (ImageView) baseViewHolder.getView(2131364496);
+        final ImageView imageView = (ImageView) baseViewHolder.getView(R.id.img_cover);
         TextView textView = (TextView) baseViewHolder.getView(2131372046);
         View view = baseViewHolder.getView(R.id.view_red_dot);
         View view2 = baseViewHolder.getView(R.id.img_svip);
@@ -152,7 +152,7 @@ public class VIPCenterVIPRightHoriAdapter extends BaseQuickAdapter<VIPRightOptio
             view.setVisibility(0);
             textView.setMaxWidth(DensityUtils.a(this.mContext, 71.0f));
         }
-        ImageLoader.a(this.f33792a, vIPRightOption.icon).a(imageView);
+        ImageLoader.a(this.f20101a, vIPRightOption.icon).a(imageView);
         if (StringUtils.d(vIPRightOption.title)) {
             textView.setVisibility(8);
         } else {
@@ -171,7 +171,7 @@ public class VIPCenterVIPRightHoriAdapter extends BaseQuickAdapter<VIPRightOptio
         textView.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.adapter.-$$Lambda$VIPCenterVIPRightHoriAdapter$IWZ0CEvv-pcfCkxcyU8ZpzsYPnI
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
-                VIPCenterVIPRightHoriAdapter.a(ImageView.this, view3);
+                VIPCenterVIPRightHoriAdapter.a(imageView, view3);
             }
         });
     }

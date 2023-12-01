@@ -224,7 +224,7 @@ public class WatermarkSetting {
                 return null;
             }
             setWidthAndHeight(bitmap);
-            e.f1361c.c(TAG, "mWatermarkWidth:" + this.mWatermarkWidth + ",mWatermarkHeight:" + this.mWatermarkHeight);
+            e.f1313c.c(TAG, "mWatermarkWidth:" + this.mWatermarkWidth + ",mWatermarkHeight:" + this.mWatermarkHeight);
             return Bitmap.createScaledBitmap(bitmap, this.mWatermarkWidth, this.mWatermarkHeight, true);
         }
         return null;

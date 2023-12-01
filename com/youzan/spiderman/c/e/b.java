@@ -7,15 +7,15 @@ import java.util.Set;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private Set<String> f41757a = new HashSet();
+    private Set<String> f28066a = new HashSet();
 
     public final Set<String> a() {
-        return this.f41757a;
+        return this.f28066a;
     }
 
     public final void a(Set<String> set) {
         synchronized (this) {
-            this.f41757a = set;
+            this.f28066a = set;
         }
     }
 }

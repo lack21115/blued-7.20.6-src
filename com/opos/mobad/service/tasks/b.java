@@ -12,7 +12,7 @@ import java.util.concurrent.CountDownLatch;
 public class b implements SensorEventListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private CountDownLatch f27422a;
+    private CountDownLatch f13734a;
     private Map<Integer, float[]> b;
 
     public Map<Integer, float[]> a(Context context, int[] iArr, int i) {

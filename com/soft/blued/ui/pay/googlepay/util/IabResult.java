@@ -4,11 +4,11 @@ package com.soft.blued.ui.pay.googlepay.util;
 public class IabResult {
 
     /* renamed from: a  reason: collision with root package name */
-    int f33010a;
+    int f19319a;
     String b;
 
     public IabResult(int i, String str) {
-        this.f33010a = i;
+        this.f19319a = i;
         if (str == null || str.trim().length() == 0) {
             this.b = IabHelper.a(i);
             return;

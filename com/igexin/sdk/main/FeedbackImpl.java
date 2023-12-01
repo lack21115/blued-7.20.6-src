@@ -79,7 +79,7 @@ public class FeedbackImpl {
         }
         String jSONObject2 = jSONObject.toString();
         com.igexin.push.c.c.b bVar = new com.igexin.push.c.c.b();
-        bVar.f23334c = 128;
+        bVar.f9726c = 128;
         bVar.b = (int) currentTimeMillis;
         bVar.e = b.K;
         bVar.f = jSONObject2;

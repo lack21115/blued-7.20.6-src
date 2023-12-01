@@ -8,7 +8,7 @@ import java.util.List;
 
 /* loaded from: source-7994992-dex2jar.jar:com/kwai/filedownloader/z.class */
 public final class z extends e implements v {
-    private final ArrayList<a.InterfaceC0583a> aGm = new ArrayList<>();
+    private final ArrayList<a.InterfaceC0413a> aGm = new ArrayList<>();
 
     @Override // com.kwai.filedownloader.e
     public final void GR() {
@@ -17,18 +17,18 @@ public final class z extends e implements v {
             com.kwai.filedownloader.e.d.g(this, "The downloader service is connected.", new Object[0]);
         }
         synchronized (this.aGm) {
-            List<a.InterfaceC0583a> list = (List) this.aGm.clone();
+            List<a.InterfaceC0413a> list = (List) this.aGm.clone();
             this.aGm.clear();
             ArrayList arrayList = new ArrayList(Hs.Hw());
-            for (a.InterfaceC0583a interfaceC0583a : list) {
-                int GA = interfaceC0583a.GA();
+            for (a.InterfaceC0413a interfaceC0413a : list) {
+                int GA = interfaceC0413a.GA();
                 if (Hs.cF(GA)) {
-                    interfaceC0583a.Gy().Gh().GG();
+                    interfaceC0413a.Gy().Gh().GG();
                     if (!arrayList.contains(Integer.valueOf(GA))) {
                         arrayList.add(Integer.valueOf(GA));
                     }
                 } else {
-                    interfaceC0583a.GE();
+                    interfaceC0413a.GE();
                 }
             }
             Hs.F(arrayList);
@@ -51,7 +51,7 @@ public final class z extends e implements v {
         if (h.GW().size() > 0) {
             synchronized (this.aGm) {
                 h.GW().E(this.aGm);
-                Iterator<a.InterfaceC0583a> it = this.aGm.iterator();
+                Iterator<a.InterfaceC0413a> it = this.aGm.iterator();
                 while (it.hasNext()) {
                     it.next().free();
                 }
@@ -62,40 +62,40 @@ public final class z extends e implements v {
     }
 
     @Override // com.kwai.filedownloader.v
-    public final boolean d(a.InterfaceC0583a interfaceC0583a) {
-        return !this.aGm.isEmpty() && this.aGm.contains(interfaceC0583a);
+    public final boolean d(a.InterfaceC0413a interfaceC0413a) {
+        return !this.aGm.isEmpty() && this.aGm.contains(interfaceC0413a);
     }
 
     @Override // com.kwai.filedownloader.v
-    public final void e(a.InterfaceC0583a interfaceC0583a) {
+    public final void e(a.InterfaceC0413a interfaceC0413a) {
         if (this.aGm.isEmpty()) {
             return;
         }
         synchronized (this.aGm) {
-            this.aGm.remove(interfaceC0583a);
+            this.aGm.remove(interfaceC0413a);
         }
     }
 
     @Override // com.kwai.filedownloader.v
-    public final boolean f(a.InterfaceC0583a interfaceC0583a) {
+    public final boolean f(a.InterfaceC0413a interfaceC0413a) {
         r.Hp();
         if (!r.Hr()) {
             synchronized (this.aGm) {
                 r.Hp();
                 if (!r.Hr()) {
                     if (com.kwai.filedownloader.e.d.aJq) {
-                        com.kwai.filedownloader.e.d.g(this, "Waiting for connecting with the downloader service... %d", Integer.valueOf(interfaceC0583a.Gy().getId()));
+                        com.kwai.filedownloader.e.d.g(this, "Waiting for connecting with the downloader service... %d", Integer.valueOf(interfaceC0413a.Gy().getId()));
                     }
                     n.Hh().dr(com.kwai.filedownloader.e.c.IZ());
-                    if (!this.aGm.contains(interfaceC0583a)) {
-                        interfaceC0583a.free();
-                        this.aGm.add(interfaceC0583a);
+                    if (!this.aGm.contains(interfaceC0413a)) {
+                        interfaceC0413a.free();
+                        this.aGm.add(interfaceC0413a);
                     }
                     return true;
                 }
             }
         }
-        e(interfaceC0583a);
+        e(interfaceC0413a);
         return false;
     }
 }

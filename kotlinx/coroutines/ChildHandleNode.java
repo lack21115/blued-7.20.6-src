@@ -6,12 +6,10 @@ import kotlin.Unit;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/ChildHandleNode.class */
 public final class ChildHandleNode extends JobCancellingNode implements ChildHandle {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ChildJob f42788a;
+    public final ChildJob a;
 
     public ChildHandleNode(ChildJob childJob) {
-        this.f42788a = childJob;
+        this.a = childJob;
     }
 
     @Override // kotlinx.coroutines.ChildHandle
@@ -21,7 +19,7 @@ public final class ChildHandleNode extends JobCancellingNode implements ChildHan
 
     @Override // kotlinx.coroutines.CompletionHandlerBase
     public void a(Throwable th) {
-        this.f42788a.a((ParentJob) c());
+        this.a.a((ParentJob) c());
     }
 
     @Override // kotlinx.coroutines.ChildHandle
@@ -32,6 +30,6 @@ public final class ChildHandleNode extends JobCancellingNode implements ChildHan
     @Override // kotlin.jvm.functions.Function1
     public /* synthetic */ Unit invoke(Throwable th) {
         a(th);
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

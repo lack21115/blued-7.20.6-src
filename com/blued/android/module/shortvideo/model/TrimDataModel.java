@@ -27,12 +27,8 @@ public class TrimDataModel extends CommonModel {
 
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/shortvideo/model/TrimDataModel$SerializableData.class */
     public static class SerializableData implements Serializable {
-
-        /* renamed from: a  reason: collision with root package name */
-        public long f15758a;
-
-        /* renamed from: c  reason: collision with root package name */
-        private float f15759c;
+        public long a;
+        private float c;
         private float d;
         private double e;
         private double f;
@@ -40,9 +36,9 @@ public class TrimDataModel extends CommonModel {
         private long g = 0;
 
         public void a() {
-            this.f15758a = 0L;
+            this.a = 0L;
             this.b = 60000L;
-            this.f15759c = 0.0f;
+            this.c = 0.0f;
             this.d = 0.0f;
             this.e = 0.0d;
             this.f = 0.0d;
@@ -51,9 +47,9 @@ public class TrimDataModel extends CommonModel {
 
         public void a(SerializableData serializableData) {
             if (serializableData != null) {
-                this.f15758a = serializableData.f15758a;
+                this.a = serializableData.a;
                 this.b = serializableData.b;
-                this.f15759c = serializableData.f15759c;
+                this.c = serializableData.c;
                 this.d = serializableData.d;
                 this.e = serializableData.e;
                 this.f = serializableData.f;
@@ -74,7 +70,7 @@ public class TrimDataModel extends CommonModel {
                 this.rangeWidth = this.maxWidth / ((((float) getMaxVideoDuration()) * 1.0f) / ((float) this.durationMs));
             }
             this.singleRangeWidth = (int) Math.round(this.rangeWidth / this.thumbnailsCount);
-            this.serializableData.f15759c = (float) ((this.rangeWidth / this.durationMs) * 1.0d);
+            this.serializableData.c = (float) ((this.rangeWidth / this.durationMs) * 1.0d);
             this.serializableData.d = (float) (((((float) this.durationMs) * 1.0f) / this.rangeWidth) * 1.0d);
         }
     }
@@ -117,7 +113,7 @@ public class TrimDataModel extends CommonModel {
     }
 
     public float getAverageMsPx() {
-        return this.serializableData.f15759c;
+        return this.serializableData.c;
     }
 
     public float getAveragePxMs() {
@@ -161,11 +157,11 @@ public class TrimDataModel extends CommonModel {
     }
 
     public long getSelectedBeginMs() {
-        return this.serializableData.f15758a;
+        return this.serializableData.a;
     }
 
     public long getSelectedDurationMs() {
-        return this.serializableData.b - this.serializableData.f15758a;
+        return this.serializableData.b - this.serializableData.a;
     }
 
     public long getSelectedEndMs() {
@@ -219,9 +215,9 @@ public class TrimDataModel extends CommonModel {
     public void initViewData() {
         this.slidingBlockPxWidth = DensityUtils.a(AppInfo.d(), 11.0f);
         this.slidingBlockPxHeight = DensityUtils.a(AppInfo.d(), 55.0f);
-        int a2 = DensityUtils.a(AppInfo.d(), 39.0f);
-        this.paddingSize = a2;
-        this.marginSize = a2 + DensityUtils.a(AppInfo.d(), 11.0f);
+        int a = DensityUtils.a(AppInfo.d(), 39.0f);
+        this.paddingSize = a;
+        this.marginSize = a + DensityUtils.a(AppInfo.d(), 11.0f);
         this.maxWidth = AppInfo.l - (this.marginSize * 2);
     }
 
@@ -267,7 +263,7 @@ public class TrimDataModel extends CommonModel {
     }
 
     public void setSelectedBeginMs(long j) {
-        this.serializableData.f15758a = j;
+        this.serializableData.a = j;
     }
 
     public void setSelectedEndMs(long j) {

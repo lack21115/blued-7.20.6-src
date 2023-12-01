@@ -13,7 +13,7 @@ public class ActivityUtil {
 
     public static PendingIntent getActivities(Context context, int i, Intent[] intentArr, int i2) {
         if (context == null) {
-            Logger.w(TAG, b.f7836a);
+            Logger.w(TAG, b.f4996a);
             return null;
         }
         try {

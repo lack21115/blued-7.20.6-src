@@ -33,10 +33,10 @@ import java.util.concurrent.LinkedBlockingQueue;
 public class IdentifyYellowManager {
 
     /* renamed from: a  reason: collision with root package name */
-    private static IdentifyYellowManager f32242a;
+    private static IdentifyYellowManager f18552a;
 
     /* renamed from: c  reason: collision with root package name */
-    private volatile boolean f32243c;
+    private volatile boolean f18553c;
     private String d;
     private CheckYellowListener f;
     private LinkedBlockingQueue<ChattingModel> b = new LinkedBlockingQueue<>();
@@ -46,25 +46,25 @@ public class IdentifyYellowManager {
     }
 
     public static IdentifyYellowManager a() {
-        if (f32242a == null) {
+        if (f18552a == null) {
             synchronized (IdentifyYellowManager.class) {
                 try {
-                    if (f32242a == null) {
-                        f32242a = new IdentifyYellowManager();
+                    if (f18552a == null) {
+                        f18552a = new IdentifyYellowManager();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f32242a;
+        return f18552a;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void b() {
         Log.v("drb", "checkAndUpload");
         if (this.b.size() == 0) {
-            this.f32243c = false;
+            this.f18553c = false;
             this.d = null;
             c();
             return;
@@ -79,11 +79,11 @@ public class IdentifyYellowManager {
                 MediaSender.a(this.d);
             }
             this.b.clear();
-            this.f32243c = false;
+            this.f18553c = false;
             this.d = null;
             return;
         }
-        this.f32243c = true;
+        this.f18553c = true;
         final String a2 = a(poll);
         Log.v("drb", "checkAndUpload uploadFilePath:" + a2);
         if (a2.startsWith("http")) {
@@ -102,11 +102,9 @@ public class IdentifyYellowManager {
             }
             Log.v("drb", "checkAndUpload 开始七牛上传");
             MediaSender.a(ChatHttpUtils.a(poll), new Pair(a2, ""), new SenderListener() { // from class: com.soft.blued.ui.msg.controller.tools.IdentifyYellowManager.2
-                @Override // com.blued.android.framework.utils.upload.qiniu.SenderListener
                 public void a(String str, int i) {
                 }
 
-                @Override // com.blued.android.framework.utils.upload.qiniu.SenderListener
                 public void a(String str, Pair<String, UploadModel> pair) {
                     Log.v("drb", "checkAndUpload 七牛上传完成 pair.second：" + pair.second + " -- pair.second.url：" + pair.second.url);
                     if (pair == null || pair.second == null || TextUtils.isEmpty(pair.second.url)) {
@@ -132,10 +130,9 @@ public class IdentifyYellowManager {
                         IdentifyYellowManager.this.e.add(new Pair(a2, str3));
                         IdentifyYellowManager.this.e();
                     }
-                    IdentifyYellowManager.this.f32243c = false;
+                    IdentifyYellowManager.this.f18553c = false;
                 }
 
-                @Override // com.blued.android.framework.utils.upload.qiniu.SenderListener
                 public void a(String str, boolean z, List<Pair<String, String>> list) {
                 }
             });
@@ -143,13 +140,11 @@ public class IdentifyYellowManager {
         }
         boolean a3 = ChatHelperV4.a(new File(a2));
         this.d = MediaSender.a(ChatHttpUtils.a(poll), QiniuUploadUtils.a(a2, ""), !a3, new SenderListener() { // from class: com.soft.blued.ui.msg.controller.tools.IdentifyYellowManager.1
-            @Override // com.blued.android.framework.utils.upload.qiniu.SenderListener
             public void a(String str, int i) {
             }
 
-            @Override // com.blued.android.framework.utils.upload.qiniu.SenderListener
             public void a(String str, Pair<String, UploadModel> pair) {
-                if (AppUtils.c(poll.fromId + "") && IdentifyYellowManager.this.f32243c) {
+                if (AppUtils.c(poll.fromId + "") && IdentifyYellowManager.this.f18553c) {
                     if (pair != null) {
                         if (poll.msgType == 24) {
                             try {
@@ -167,7 +162,6 @@ public class IdentifyYellowManager {
                 }
             }
 
-            @Override // com.blued.android.framework.utils.upload.qiniu.SenderListener
             public void a(String str, boolean z, List<Pair<String, String>> list) {
             }
         });
@@ -187,19 +181,17 @@ public class IdentifyYellowManager {
         }
         ChatHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<MessageIdentifyYellowModel>>() { // from class: com.soft.blued.ui.msg.controller.tools.IdentifyYellowManager.3
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<MessageIdentifyYellowModel> bluedEntityA) {
                 IdentifyYellowManager.this.d();
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse, com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
             public void onFailure(Throwable th, int i, String str) {
                 super.onFailure(th, i, str);
                 Log.v("drb", "statusCode:" + i + " -- content:" + str);
                 if (i != 400) {
                     IdentifyYellowManager.this.d();
-                } else if (BluedHttpUtils.a(th, i, str).first.intValue() != 4036114) {
+                } else if (((Integer) BluedHttpUtils.a(th, i, str).first).intValue() != 4036114) {
                     IdentifyYellowManager.this.d();
                 } else {
                     try {
@@ -240,12 +232,10 @@ public class IdentifyYellowManager {
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str) {
                 return true;
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 IdentifyYellowManager.this.e.clear();
                 super.onUIFinish();
@@ -271,17 +261,15 @@ public class IdentifyYellowManager {
         }
         ChatHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<MessageIdentifyYellowModel>>() { // from class: com.soft.blued.ui.msg.controller.tools.IdentifyYellowManager.4
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<MessageIdentifyYellowModel> bluedEntityA) {
                 IdentifyYellowManager.this.d();
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse, com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
             public void onFailure(Throwable th, int i, String str) {
                 super.onFailure(th, i, str);
                 Log.v("drb", "statusCode:" + i + " -- content:" + str);
-                if (i == 400 && BluedHttpUtils.a(th, i, str).first.intValue() == 4036114) {
+                if (i == 400 && ((Integer) BluedHttpUtils.a(th, i, str).first).intValue() == 4036114) {
                     try {
                         final BluedEntityA bluedEntityA = (BluedEntityA) AppInfo.f().fromJson(str, new TypeToken<BluedEntityA<MessageIdentifyYellowModel>>() { // from class: com.soft.blued.ui.msg.controller.tools.IdentifyYellowManager.4.1
                         }.getType());
@@ -319,12 +307,10 @@ public class IdentifyYellowManager {
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str) {
                 return true;
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 IdentifyYellowManager.this.e.clear();
                 super.onUIFinish();
@@ -413,7 +399,7 @@ public class IdentifyYellowManager {
                     return;
                 }
                 for (MarkYellowModel markYellowModel : MarkYellowManager.a().b().getModelList()) {
-                    Iterator<E> it = arrayList.iterator();
+                    Iterator it = arrayList.iterator();
                     while (true) {
                         if (!it.hasNext()) {
                             break;
@@ -434,7 +420,7 @@ public class IdentifyYellowManager {
             }
             for (ChattingModel chattingModel3 : arrayList) {
                 this.b.add(chattingModel3);
-                if (!this.f32243c) {
+                if (!this.f18553c) {
                     b();
                 }
             }

@@ -7,12 +7,12 @@ import android.os.Bundle;
 /* loaded from: source-7206380-dex2jar.jar:com/bytedance/sdk/openadsdk/mb/mb.class */
 class mb implements Application.ActivityLifecycleCallbacks {
     private static volatile boolean mb = false;
-    private InterfaceC0326mb b;
+    private InterfaceC0156mb b;
     private int ox = 0;
 
     /* renamed from: com.bytedance.sdk.openadsdk.mb.mb$mb  reason: collision with other inner class name */
     /* loaded from: source-7206380-dex2jar.jar:com/bytedance/sdk/openadsdk/mb/mb$mb.class */
-    public interface InterfaceC0326mb {
+    public interface InterfaceC0156mb {
         void mb();
 
         void ox();
@@ -22,8 +22,8 @@ class mb implements Application.ActivityLifecycleCallbacks {
         return Boolean.valueOf(mb);
     }
 
-    public void mb(InterfaceC0326mb interfaceC0326mb) {
-        this.b = interfaceC0326mb;
+    public void mb(InterfaceC0156mb interfaceC0156mb) {
+        this.b = interfaceC0156mb;
     }
 
     @Override // android.app.Application.ActivityLifecycleCallbacks
@@ -50,9 +50,9 @@ class mb implements Application.ActivityLifecycleCallbacks {
     public void onActivityStarted(Activity activity) {
         this.ox++;
         mb = false;
-        InterfaceC0326mb interfaceC0326mb = this.b;
-        if (interfaceC0326mb != null) {
-            interfaceC0326mb.ox();
+        InterfaceC0156mb interfaceC0156mb = this.b;
+        if (interfaceC0156mb != null) {
+            interfaceC0156mb.ox();
         }
     }
 
@@ -62,9 +62,9 @@ class mb implements Application.ActivityLifecycleCallbacks {
         this.ox = i;
         if (i == 0) {
             mb = true;
-            InterfaceC0326mb interfaceC0326mb = this.b;
-            if (interfaceC0326mb != null) {
-                interfaceC0326mb.mb();
+            InterfaceC0156mb interfaceC0156mb = this.b;
+            if (interfaceC0156mb != null) {
+                interfaceC0156mb.mb();
             }
         }
     }

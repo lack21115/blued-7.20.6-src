@@ -2,6 +2,7 @@ package com.zx.a.I8b7;
 
 import android.text.TextUtils;
 import com.umeng.analytics.pro.bh;
+import com.xiaomi.mipush.sdk.Constants;
 import com.zx.sdk.api.ZXID;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -22,7 +23,7 @@ public abstract class p0 {
             zxid.setTags(optJSONArray == null ? null : optJSONArray.toString());
             String optString = jSONObject.optString(bh.al);
             zxid.setValue(optString);
-            String[] split = optString.split("-");
+            String[] split = optString.split(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
             zxid.setVersion(split[0]);
             zxid.setExpiredTime(Long.parseLong(split[1]) * 1000);
             zxid.setOpenid(jSONObject2.optString("openid"));

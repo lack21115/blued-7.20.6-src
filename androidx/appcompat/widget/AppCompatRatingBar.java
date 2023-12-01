@@ -11,7 +11,7 @@ import androidx.appcompat.R;
 public class AppCompatRatingBar extends RatingBar {
 
     /* renamed from: a  reason: collision with root package name */
-    private final AppCompatProgressBarHelper f1776a;
+    private final AppCompatProgressBarHelper f1728a;
 
     public AppCompatRatingBar(Context context) {
         this(context, null);
@@ -25,16 +25,15 @@ public class AppCompatRatingBar extends RatingBar {
         super(context, attributeSet, i);
         ThemeUtils.checkAppCompatTheme(this, getContext());
         AppCompatProgressBarHelper appCompatProgressBarHelper = new AppCompatProgressBarHelper(this);
-        this.f1776a = appCompatProgressBarHelper;
+        this.f1728a = appCompatProgressBarHelper;
         appCompatProgressBarHelper.a(attributeSet, i);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.RatingBar, android.widget.AbsSeekBar, android.widget.ProgressBar, android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         synchronized (this) {
             super.onMeasure(i, i2);
-            Bitmap a2 = this.f1776a.a();
+            Bitmap a2 = this.f1728a.a();
             if (a2 != null) {
                 setMeasuredDimension(View.resolveSizeAndState(a2.getWidth() * getNumStars(), i, 0), getMeasuredHeight());
             }

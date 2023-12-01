@@ -1,6 +1,5 @@
 package dalvik.system.profiler;
 
-import com.blued.das.live.LiveProtos;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -66,7 +65,7 @@ public final class HprofData {
         }
 
         public int hashCode() {
-            return ((this.stackTrace.hashCode() + LiveProtos.Event.LIVE_END_PAGE_CLOSE_CLICK_VALUE) * 31) + this.count;
+            return ((this.stackTrace.hashCode() + 527) * 31) + this.count;
         }
 
         public String toString() {
@@ -111,7 +110,7 @@ public final class HprofData {
         }
 
         public int hashCode() {
-            return ((this.threadId + LiveProtos.Event.LIVE_END_PAGE_CLOSE_CLICK_VALUE) * 31) + Arrays.hashCode(this.stackFrames);
+            return ((this.threadId + 527) * 31) + Arrays.hashCode(this.stackFrames);
         }
 
         public String toString() {
@@ -200,7 +199,7 @@ public final class HprofData {
         }
 
         public int hashCode() {
-            return ((((((((this.objectId + LiveProtos.Event.LIVE_END_PAGE_CLOSE_CLICK_VALUE) * 31) + this.threadId) * 31) + hashCode(this.threadName)) * 31) + hashCode(this.groupName)) * 31) + hashCode(this.parentGroupName);
+            return ((((((((this.objectId + 527) * 31) + this.threadId) * 31) + hashCode(this.threadName)) * 31) + hashCode(this.groupName)) * 31) + hashCode(this.parentGroupName);
         }
 
         public String toString() {

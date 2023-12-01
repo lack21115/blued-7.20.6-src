@@ -22,9 +22,8 @@ public class u {
     private volatile boolean mb;
     private final ConcurrentHashMap<Long, DownloadModel> ox;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8457232-dex2jar.jar:com/ss/android/downloadlib/addownload/model/u$mb.class */
-    public static class mb {
+    static class mb {
         private static u mb = new u();
     }
 

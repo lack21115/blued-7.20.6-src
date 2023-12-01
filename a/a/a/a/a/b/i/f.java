@@ -6,15 +6,15 @@ import com.qiniu.pili.droid.streaming.PreviewAppearance;
 public class f extends g {
 
     /* renamed from: a  reason: collision with root package name */
-    public int f1323a;
+    public int f1275a;
     public int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public float[] f1324c;
+    public float[] f1276c;
     public float[] d;
 
     public final void a(int i, int i2, int i3, int i4) {
-        this.f1324c = k.f1327a;
+        this.f1276c = k.f1279a;
         float f = (i3 * 1.0f) / i4;
         float f2 = i;
         float f3 = i2;
@@ -30,7 +30,7 @@ public class f extends g {
     }
 
     public boolean a(int i, int i2, int i3, int i4, int i5, int i6, PreviewAppearance.ScaleType scaleType) {
-        this.f1323a = i3;
+        this.f1275a = i3;
         this.b = i4;
         if (scaleType == PreviewAppearance.ScaleType.FULL) {
             a(i, i2, i5, i6);
@@ -50,18 +50,18 @@ public class f extends g {
             float f5 = ((f2 * f4) / f) / 2.0f;
             float f6 = ((0.5f - f5) * 2.0f) - 1.0f;
             float f7 = ((f5 + 0.5f) * 2.0f) - 1.0f;
-            this.f1324c = new float[]{f6, -1.0f, f6, 1.0f, f7, -1.0f, f7, 1.0f};
+            this.f1276c = new float[]{f6, -1.0f, f6, 1.0f, f7, -1.0f, f7, 1.0f};
             return;
         }
         float f8 = ((f / f4) / f2) / 2.0f;
         float f9 = ((0.5f - f8) * 2.0f) - 1.0f;
         float f10 = ((f8 + 0.5f) * 2.0f) - 1.0f;
-        this.f1324c = new float[]{-1.0f, f9, -1.0f, f10, 1.0f, f9, 1.0f, f10};
+        this.f1276c = new float[]{-1.0f, f9, -1.0f, f10, 1.0f, f9, 1.0f, f10};
     }
 
     @Override // a.a.a.a.a.b.i.g
     public int c() {
-        return this.f1323a;
+        return this.f1275a;
     }
 
     @Override // a.a.a.a.a.b.i.g
@@ -71,7 +71,7 @@ public class f extends g {
 
     @Override // a.a.a.a.a.b.i.g
     public float[] e() {
-        return this.f1324c;
+        return this.f1276c;
     }
 
     @Override // a.a.a.a.a.b.i.g

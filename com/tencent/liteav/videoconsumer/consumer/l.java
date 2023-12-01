@@ -8,11 +8,11 @@ import com.tencent.liteav.videoconsumer.renderer.VideoRenderInterface;
 final /* synthetic */ class l implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final j f36715a;
+    private final j f23024a;
     private final Rotation b;
 
     private l(j jVar, Rotation rotation) {
-        this.f36715a = jVar;
+        this.f23024a = jVar;
         this.b = rotation;
     }
 
@@ -22,9 +22,9 @@ final /* synthetic */ class l implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        j jVar = this.f36715a;
+        j jVar = this.f23024a;
         Rotation rotation = this.b;
-        LiteavLog.i(jVar.f36705a, "setRenderRotation: ".concat(String.valueOf(rotation)));
+        LiteavLog.i(jVar.f23014a, "setRenderRotation: ".concat(String.valueOf(rotation)));
         jVar.k = rotation;
         for (VideoRenderInterface videoRenderInterface : jVar.a()) {
             if (videoRenderInterface != null) {

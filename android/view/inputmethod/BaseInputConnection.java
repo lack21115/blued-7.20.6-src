@@ -15,6 +15,7 @@ import android.view.KeyCharacterMap;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewRootImpl;
+import com.android.internal.R;
 
 /* loaded from: source-4181928-dex2jar.jar:android/view/inputmethod/BaseInputConnection.class */
 public class BaseInputConnection implements InputConnection {
@@ -29,7 +30,7 @@ public class BaseInputConnection implements InputConnection {
     final View mTargetView;
 
     public BaseInputConnection(View view, boolean z) {
-        this.mIMM = (InputMethodManager) view.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+        this.mIMM = (InputMethodManager) view.getContext().getSystemService("input_method");
         this.mTargetView = view;
         this.mDummyMode = !z;
     }
@@ -45,7 +46,7 @@ public class BaseInputConnection implements InputConnection {
         if (this.mDefaultComposingSpans == null) {
             Context context = this.mTargetView != null ? this.mTargetView.getContext() : this.mIMM.mServedView != null ? this.mIMM.mServedView.getContext() : null;
             if (context != null) {
-                TypedArray obtainStyledAttributes = context.getTheme().obtainStyledAttributes(new int[]{16843312});
+                TypedArray obtainStyledAttributes = context.getTheme().obtainStyledAttributes(new int[]{R.attr.candidatesTextStyleSpans});
                 CharSequence text = obtainStyledAttributes.getText(0);
                 obtainStyledAttributes.recycle();
                 if (text == null || !(text instanceof Spanned)) {
@@ -137,7 +138,7 @@ public class BaseInputConnection implements InputConnection {
                         if (i7 >= this.mDefaultComposingSpans.length) {
                             break;
                         }
-                        spannableStringBuilder2.setSpan(this.mDefaultComposingSpans[i7], 0, spannableStringBuilder2.length(), 289);
+                        spannableStringBuilder2.setSpan(this.mDefaultComposingSpans[i7], 0, spannableStringBuilder2.length(), R.styleable.Theme_preferenceActivityStyle);
                         i6 = i7 + 1;
                     }
                 }
@@ -208,14 +209,14 @@ public class BaseInputConnection implements InputConnection {
                     spannable.removeSpan(obj);
                 } else {
                     int spanFlags = spannable.getSpanFlags(obj);
-                    if ((spanFlags & 307) != 289) {
+                    if ((spanFlags & R.styleable.Theme_colorSwitchThumbNormal) != 289) {
                         spannable.setSpan(obj, spannable.getSpanStart(obj), spannable.getSpanEnd(obj), (spanFlags & (-52)) | 256 | 33);
                     }
                 }
                 length = i3;
             }
         }
-        spannable.setSpan(COMPOSING, i, i2, 289);
+        spannable.setSpan(COMPOSING, i, i2, R.styleable.Theme_preferenceActivityStyle);
     }
 
     @Override // android.view.inputmethod.InputConnection
@@ -515,11 +516,11 @@ public class BaseInputConnection implements InputConnection {
                     if (i10 >= this.mDefaultComposingSpans.length) {
                         break;
                     }
-                    editable.setSpan(this.mDefaultComposingSpans[i10], i7, i8, 289);
+                    editable.setSpan(this.mDefaultComposingSpans[i10], i7, i8, R.styleable.Theme_preferenceActivityStyle);
                     i9 = i10 + 1;
                 }
             }
-            editable.setSpan(COMPOSING, i7, i8, 289);
+            editable.setSpan(COMPOSING, i7, i8, R.styleable.Theme_preferenceActivityStyle);
             sendCurrentText();
             endBatchEdit();
             return true;

@@ -8,25 +8,25 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public class p {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile p f9439a;
+    private static volatile p f6599a;
     private List<z.a> b = new CopyOnWriteArrayList();
 
     private p() {
     }
 
     public static p a() {
-        if (f9439a == null) {
+        if (f6599a == null) {
             synchronized (p.class) {
                 try {
-                    if (f9439a == null) {
-                        f9439a = new p();
+                    if (f6599a == null) {
+                        f6599a = new p();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f9439a;
+        return f6599a;
     }
 
     private void b(z.a aVar) {

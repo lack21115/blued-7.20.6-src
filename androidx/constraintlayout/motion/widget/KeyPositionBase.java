@@ -4,9 +4,8 @@ import android.graphics.RectF;
 import android.view.View;
 import java.util.HashSet;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8756600-dex2jar.jar:androidx/constraintlayout/motion/widget/KeyPositionBase.class */
-public abstract class KeyPositionBase extends Key {
+abstract class KeyPositionBase extends Key {
     int p = UNSET;
 
     abstract void a(int i, int i2, float f, float f2, float f3, float f4);

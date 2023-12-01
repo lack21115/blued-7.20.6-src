@@ -7,7 +7,7 @@ import java.util.List;
 public class NearbyFindSetSelectedTab {
 
     /* renamed from: a  reason: collision with root package name */
-    private static NearbyFindSetSelectedTab f30621a = new NearbyFindSetSelectedTab();
+    private static NearbyFindSetSelectedTab f16931a = new NearbyFindSetSelectedTab();
     private List<INearbyFindSetSelectedTab> b = new ArrayList();
 
     /* loaded from: source-8303388-dex2jar.jar:com/soft/blued/ui/find/observer/NearbyFindSetSelectedTab$INearbyFindSetSelectedTab.class */
@@ -16,7 +16,7 @@ public class NearbyFindSetSelectedTab {
     }
 
     public static NearbyFindSetSelectedTab a() {
-        return f30621a;
+        return f16931a;
     }
 
     public void a(int i) {

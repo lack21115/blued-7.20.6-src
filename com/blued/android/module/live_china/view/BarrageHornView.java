@@ -15,6 +15,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import com.alipay.sdk.app.OpenAuthTask;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.AppMethods;
 import com.blued.android.core.image.ImageLoader;
@@ -37,36 +38,32 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/BarrageHornView.class */
 public class BarrageHornView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f14214a;
+    private Context a;
     private LinearLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private List<View> f14215c;
+    private List<View> c;
     private List<LiveHornModelNew> d;
 
     public BarrageHornView(Context context) {
         super(context);
-        this.f14215c = new ArrayList();
+        this.c = new ArrayList();
         this.d = new CopyOnWriteArrayList();
-        this.f14214a = context;
+        this.a = context;
         a();
     }
 
     public BarrageHornView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f14215c = new ArrayList();
+        this.c = new ArrayList();
         this.d = new CopyOnWriteArrayList();
-        this.f14214a = context;
+        this.a = context;
         a();
     }
 
     public BarrageHornView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f14215c = new ArrayList();
+        this.c = new ArrayList();
         this.d = new CopyOnWriteArrayList();
-        this.f14214a = context;
+        this.a = context;
         a();
     }
 
@@ -108,7 +105,7 @@ public class BarrageHornView extends FrameLayout {
                 findViewById.getLayoutParams().width = AppMethods.a(80) + i;
             }
             findViewById.getParent().requestLayout();
-            int max = Math.max(9000, (int) (((i * 1.0f) / (AppInfo.l == 0 ? 1080 : AppInfo.l)) * 9000.0f)) + ((int) (Math.random() * 5000.0d));
+            int max = Math.max((int) OpenAuthTask.OK, (int) (((i * 1.0f) / (AppInfo.l == 0 ? 1080 : AppInfo.l)) * 9000.0f)) + ((int) (Math.random() * 5000.0d));
             Log.i("==xpz", " textWidth:" + i + " time:" + max);
             ImageLoader.a((IRequestHost) null, remove.head_image).b(R.drawable.live_horn_left_bg).a(imageView);
             ImageLoader.a((IRequestHost) null, remove.back_image).b(R.drawable.live_horn_middle_bg).a(imageView2);
@@ -184,14 +181,14 @@ public class BarrageHornView extends FrameLayout {
     }
 
     private View getBarrageView() {
-        if (this.f14215c.size() < 2) {
+        if (this.c.size() < 2) {
             View inflate = LayoutInflater.from(getContext()).inflate(R.layout.item_barrage_horn, (ViewGroup) null);
             this.b.addView(inflate, -1, -2);
             inflate.setTag(true);
-            this.f14215c.add(inflate);
+            this.c.add(inflate);
             return inflate;
         }
-        for (View view : this.f14215c) {
+        for (View view : this.c) {
             if ((view.getTag() instanceof Boolean) && !((Boolean) view.getTag()).booleanValue()) {
                 return view;
             }

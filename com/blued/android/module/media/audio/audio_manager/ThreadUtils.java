@@ -15,9 +15,7 @@ public class ThreadUtils {
     /* renamed from: com.blued.android.module.media.audio.audio_manager.ThreadUtils$1CaughtException  reason: invalid class name */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/media/audio/audio_manager/ThreadUtils$1CaughtException.class */
     class C1CaughtException {
-
-        /* renamed from: a  reason: collision with root package name */
-        Exception f15522a;
+        Exception a;
 
         C1CaughtException() {
         }
@@ -26,9 +24,7 @@ public class ThreadUtils {
     /* renamed from: com.blued.android.module.media.audio.audio_manager.ThreadUtils$1Result  reason: invalid class name */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/media/audio/audio_manager/ThreadUtils$1Result.class */
     class C1Result {
-
-        /* renamed from: a  reason: collision with root package name */
-        public V f15523a;
+        public V a;
 
         C1Result() {
         }
@@ -42,22 +38,18 @@ public class ThreadUtils {
     /* renamed from: com.blued.android.module.media.audio.audio_manager.ThreadUtils$3  reason: invalid class name */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/media/audio/audio_manager/ThreadUtils$3.class */
     static final class AnonymousClass3 implements Runnable {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ C1Result f15524a;
+        final /* synthetic */ C1Result a;
         final /* synthetic */ Callable b;
-
-        /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ C1CaughtException f15525c;
+        final /* synthetic */ C1CaughtException c;
         final /* synthetic */ CountDownLatch d;
 
         /* JADX WARN: Type inference failed for: r1v3, types: [V, java.lang.Object] */
         @Override // java.lang.Runnable
         public void run() {
             try {
-                this.f15524a.f15523a = this.b.call();
+                this.a.a = this.b.call();
             } catch (Exception e) {
-                this.f15525c.f15522a = e;
+                this.c.a = e;
             }
             this.d.countDown();
         }
@@ -66,13 +58,11 @@ public class ThreadUtils {
     /* renamed from: com.blued.android.module.media.audio.audio_manager.ThreadUtils$4  reason: invalid class name */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/media/audio/audio_manager/ThreadUtils$4.class */
     static final class AnonymousClass4 implements Callable<Void> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ Runnable f15526a;
+        final /* synthetic */ Runnable a;
 
         @Override // java.util.concurrent.Callable
         public Void call() {
-            this.f15526a.run();
+            this.a.run();
             return null;
         }
     }
@@ -83,15 +73,13 @@ public class ThreadUtils {
 
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/media/audio/audio_manager/ThreadUtils$ThreadChecker.class */
     public static class ThreadChecker {
-
-        /* renamed from: a  reason: collision with root package name */
-        private Thread f15527a = Thread.currentThread();
+        private Thread a = Thread.currentThread();
 
         public void a() {
-            if (this.f15527a == null) {
-                this.f15527a = Thread.currentThread();
+            if (this.a == null) {
+                this.a = Thread.currentThread();
             }
-            if (Thread.currentThread() != this.f15527a) {
+            if (Thread.currentThread() != this.a) {
                 throw new IllegalStateException("Wrong thread");
             }
         }

@@ -21,7 +21,7 @@ public final class z3 extends g3<d4> {
 
         @Override // com.bytedance.bdtracker.a4.b
         public String a(d4 d4Var) {
-            return ((d4.a.C0308a) d4Var).a();
+            return ((d4.a.C0138a) d4Var).a();
         }
     }
 

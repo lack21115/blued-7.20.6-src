@@ -6,19 +6,19 @@ import com.tencent.ugc.TXVideoEditer;
 final /* synthetic */ class ac implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final TXVideoEditer f40217a;
+    private final TXVideoEditer f26526a;
     private final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final int f40218c;
+    private final int f26527c;
     private final boolean d;
     private final int e;
     private final TXVideoEditer.TXThumbnailListener f;
 
     private ac(TXVideoEditer tXVideoEditer, int i, int i2, boolean z, int i3, TXVideoEditer.TXThumbnailListener tXThumbnailListener) {
-        this.f40217a = tXVideoEditer;
+        this.f26526a = tXVideoEditer;
         this.b = i;
-        this.f40218c = i2;
+        this.f26527c = i2;
         this.d = z;
         this.e = i3;
         this.f = tXThumbnailListener;
@@ -30,6 +30,6 @@ final /* synthetic */ class ac implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        TXVideoEditer.lambda$getThumbnail$34(this.f40217a, this.b, this.f40218c, this.d, this.e, this.f);
+        TXVideoEditer.lambda$getThumbnail$34(this.f26526a, this.b, this.f26527c, this.d, this.e, this.f);
     }
 }

@@ -28,13 +28,9 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveManagerDialogFragment.class */
 public class LiveManagerDialogFragment extends BaseDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public Context f13047a;
+    public Context a;
     public ListView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public LiveManagerAdapter f13048c;
+    public LiveManagerAdapter c;
     public LiveRankGuestDialogFragment.ILiveGuestDialog d;
     private LinearLayout e;
     private View f;
@@ -55,9 +51,7 @@ public class LiveManagerDialogFragment extends BaseDialogFragment {
 
     public void d() {
         LiveRoomHttpUtils.f(new BluedUIHttpResponse<BluedEntityA<LiveUserinfoModel>>(a()) { // from class: com.blued.android.module.live_china.fragment.LiveManagerDialogFragment.2
-
-            /* renamed from: a  reason: collision with root package name */
-            boolean f13050a = false;
+            boolean a = false;
 
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
@@ -66,24 +60,24 @@ public class LiveManagerDialogFragment extends BaseDialogFragment {
                 if (bluedEntityA == null || !bluedEntityA.hasData()) {
                     return;
                 }
-                LiveManagerDialogFragment.this.f13048c.a(bluedEntityA.data);
+                LiveManagerDialogFragment.this.c.a(bluedEntityA.data);
             }
 
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str) {
-                this.f13050a = true;
+                this.a = true;
                 return super.onUIFailure(i, str);
             }
 
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 super.onUIFinish();
-                if (this.f13050a) {
+                if (this.a) {
                     LiveManagerDialogFragment.this.f.setVisibility(8);
                     LiveManagerDialogFragment.this.g.setVisibility(0);
                     LiveManagerDialogFragment.this.h.setVisibility(8);
                     LiveManagerDialogFragment.this.b.setVisibility(4);
-                } else if (LiveManagerDialogFragment.this.f13048c.getCount() == 0) {
+                } else if (LiveManagerDialogFragment.this.c.getCount() == 0) {
                     LiveManagerDialogFragment.this.f.setVisibility(0);
                     LiveManagerDialogFragment.this.g.setVisibility(8);
                     LiveManagerDialogFragment.this.h.setVisibility(8);
@@ -94,7 +88,7 @@ public class LiveManagerDialogFragment extends BaseDialogFragment {
                     LiveManagerDialogFragment.this.h.setVisibility(8);
                     LiveManagerDialogFragment.this.b.setVisibility(0);
                 }
-                this.f13050a = false;
+                this.a = false;
             }
 
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
@@ -108,12 +102,11 @@ public class LiveManagerDialogFragment extends BaseDialogFragment {
         }, a());
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
-        this.f13047a = getActivity();
+        this.a = getActivity();
         boolean C = LiveFloatManager.a().C();
         View inflate = getActivity().getLayoutInflater().inflate(C ? R.layout.dialog_live_manager_list_land : R.layout.dialog_live_manager_list, (ViewGroup) null);
-        int a2 = DensityUtils.a(getActivity(), 290.0f);
+        int a = DensityUtils.a(getActivity(), 290.0f);
         Dialog dialog = new Dialog(getActivity(), R.style.transparentFrameWindowStyleLive);
         dialog.requestWindowFeature(1);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
@@ -127,7 +120,7 @@ public class LiveManagerDialogFragment extends BaseDialogFragment {
         window.setWindowAnimations(C ? R.style.rank_menu_animstyle : R.style.main_menu_animstyle);
         WindowManager.LayoutParams attributes = window.getAttributes();
         attributes.x = 0;
-        attributes.y = height - a2;
+        attributes.y = height - a;
         attributes.width = C ? DensityUtils.a(getActivity(), 360.0f) : -1;
         attributes.height = C ? -1 : DensityUtils.a(getActivity(), 290.0f);
         attributes.gravity = 5;
@@ -136,7 +129,7 @@ public class LiveManagerDialogFragment extends BaseDialogFragment {
         return dialog;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         boolean C = LiveFloatManager.a().C();
         getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(0));
@@ -155,9 +148,9 @@ public class LiveManagerDialogFragment extends BaseDialogFragment {
                 LiveManagerDialogFragment.this.d();
             }
         });
-        Context context = this.f13047a;
+        Context context = this.a;
         LiveManagerAdapter liveManagerAdapter = new LiveManagerAdapter(context, this.j + "", a());
-        this.f13048c = liveManagerAdapter;
+        this.c = liveManagerAdapter;
         this.b.setAdapter((ListAdapter) liveManagerAdapter);
         d();
         LiveRankGuestDialogFragment.ILiveGuestDialog iLiveGuestDialog = this.d;
@@ -167,7 +160,7 @@ public class LiveManagerDialogFragment extends BaseDialogFragment {
         return inflate;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onDestroy() {
         super.onDestroy();
         LiveRankGuestDialogFragment.ILiveGuestDialog iLiveGuestDialog = this.d;

@@ -10,9 +10,7 @@ import pl.droidsonroids.gif.GifViewUtils;
 
 /* loaded from: source-3503164-dex2jar.jar:pl/droidsonroids/gif/GifImageView.class */
 public class GifImageView extends ImageView {
-
-    /* renamed from: a  reason: collision with root package name */
-    private boolean f44139a;
+    private boolean a;
 
     public GifImageView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
@@ -25,9 +23,9 @@ public class GifImageView extends ImageView {
     }
 
     private void a(GifViewUtils.InitResult initResult) {
-        this.f44139a = initResult.f44154c;
-        if (initResult.f44153a > 0) {
-            super.setImageResource(initResult.f44153a);
+        this.a = initResult.c;
+        if (initResult.a > 0) {
+            super.setImageResource(initResult.a);
         }
         if (initResult.b > 0) {
             super.setBackgroundResource(initResult.b);
@@ -49,8 +47,8 @@ public class GifImageView extends ImageView {
     @Override // android.view.View
     public Parcelable onSaveInstanceState() {
         Drawable drawable = null;
-        Drawable drawable2 = this.f44139a ? getDrawable() : null;
-        if (this.f44139a) {
+        Drawable drawable2 = this.a ? getDrawable() : null;
+        if (this.a) {
             drawable = getBackground();
         }
         return new GifViewSavedState(super.onSaveInstanceState(), drawable2, drawable);
@@ -65,7 +63,7 @@ public class GifImageView extends ImageView {
     }
 
     public void setFreezesAnimation(boolean z) {
-        this.f44139a = z;
+        this.a = z;
     }
 
     @Override // android.widget.ImageView

@@ -297,7 +297,7 @@ public abstract class BaseSlider<S extends BaseSlider<S, L, T>, L extends BaseOn
             super(parcelable);
         }
 
-        @Override // android.view.AbsSavedState, android.os.Parcelable
+        @Override // android.view.View.BaseSavedState, android.view.AbsSavedState, android.os.Parcelable
         public void writeToParcel(Parcel parcel, int i) {
             super.writeToParcel(parcel, i);
             parcel.writeFloat(this.valueFrom);
@@ -1142,9 +1142,8 @@ public abstract class BaseSlider<S extends BaseSlider<S, L, T>, L extends BaseOn
         return super.dispatchKeyEvent(keyEvent);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void drawableStateChanged() {
+    protected void drawableStateChanged() {
         super.drawableStateChanged();
         this.inactiveTrackPaint.setColor(getColorForState(this.trackColorInactive));
         this.activeTrackPaint.setColor(getColorForState(this.trackColorActive));
@@ -1166,6 +1165,7 @@ public abstract class BaseSlider<S extends BaseSlider<S, L, T>, L extends BaseOn
         this.forceDrawCompatHalo = z;
     }
 
+    @Override // android.view.View
     public CharSequence getAccessibilityClassName() {
         return SeekBar.class.getName();
     }
@@ -1289,18 +1289,16 @@ public abstract class BaseSlider<S extends BaseSlider<S, L, T>, L extends BaseOn
         return this.tickVisible;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         for (TooltipDrawable tooltipDrawable : this.labels) {
             attachLabelToContentView(tooltipDrawable);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         BaseSlider<S, L, T>.AccessibilityEventSender accessibilityEventSender = this.accessibilityEventSender;
         if (accessibilityEventSender != null) {
             removeCallbacks(accessibilityEventSender);
@@ -1312,9 +1310,8 @@ public abstract class BaseSlider<S extends BaseSlider<S, L, T>, L extends BaseOn
         super.onDetachedFromWindow();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         if (this.dirtyConfig) {
             validateConfigurationIfDirty();
             maybeCalculateTicksCoordinates();
@@ -1335,9 +1332,8 @@ public abstract class BaseSlider<S extends BaseSlider<S, L, T>, L extends BaseOn
         drawThumbs(canvas, this.trackWidth, calculateTop);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onFocusChanged(boolean z, int i, Rect rect) {
+    protected void onFocusChanged(boolean z, int i, Rect rect) {
         super.onFocusChanged(z, i, rect);
         if (z) {
             focusThumbOnFocusGained(i);
@@ -1396,9 +1392,8 @@ public abstract class BaseSlider<S extends BaseSlider<S, L, T>, L extends BaseOn
         return super.onKeyUp(i, keyEvent);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         int i3 = this.widgetHeight;
         int i4 = 0;
         if (this.labelBehavior == 1) {
@@ -1433,9 +1428,8 @@ public abstract class BaseSlider<S extends BaseSlider<S, L, T>, L extends BaseOn
         return sliderState;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onSizeChanged(int i, int i2, int i3, int i4) {
+    protected void onSizeChanged(int i, int i2, int i3, int i4) {
         updateTrackWidth(i);
         updateHaloHotspot();
     }

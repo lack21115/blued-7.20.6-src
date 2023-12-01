@@ -33,10 +33,9 @@ public class ServiceMenuPopWindow extends AttachPopupView {
         this.y = i;
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.AttachPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
     public void b() {
         super.b();
-        CardView cardView = (CardView) findViewById(2131363153);
+        CardView cardView = (CardView) findViewById(R.id.cv_content);
         if (BluedSkinUtils.c()) {
             cardView.setBackgroundColor(ContextCompat.getColor(this.t, 2131101699));
         } else {
@@ -54,7 +53,6 @@ public class ServiceMenuPopWindow extends AttachPopupView {
         this.v.setNewData(this.x);
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.BasePopupView
     public int getImplLayoutId() {
         return R.layout.pop_service_menu_list;
     }

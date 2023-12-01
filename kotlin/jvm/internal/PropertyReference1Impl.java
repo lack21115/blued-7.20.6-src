@@ -13,6 +13,7 @@ public class PropertyReference1Impl extends PropertyReference1 {
         super(NO_RECEIVER, ((ClassBasedDeclarationContainer) kDeclarationContainer).a(), str, str2, !(kDeclarationContainer instanceof KClass) ? 1 : 0);
     }
 
+    @Override // kotlin.reflect.KProperty1
     public Object a(Object obj) {
         return a().call(obj);
     }

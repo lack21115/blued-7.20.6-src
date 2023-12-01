@@ -34,9 +34,9 @@ public class d extends c {
                 throw new IllegalArgumentException("can not support Set");
             }
             l lVar = new l();
-            lVar.a(this.f35318c);
+            lVar.a(this.f21627c);
             lVar.a(t, 0);
-            this.e.put(str, n.a(lVar.f35325a));
+            this.e.put(str, n.a(lVar.f21634a));
         }
     }
 
@@ -46,7 +46,7 @@ public class d extends c {
             super.a(bArr);
         } catch (Exception e) {
             this.f.a(bArr);
-            this.f.a(this.f35318c);
+            this.f.a(this.f21627c);
             HashMap hashMap = new HashMap(1);
             hashMap.put("", new byte[0]);
             this.e = this.f.a((Map) hashMap, 0, false);
@@ -57,9 +57,9 @@ public class d extends c {
     public byte[] a() {
         if (this.e != null) {
             l lVar = new l(0);
-            lVar.a(this.f35318c);
+            lVar.a(this.f21627c);
             lVar.a((Map) this.e, 0);
-            return n.a(lVar.f35325a);
+            return n.a(lVar.f21634a);
         }
         return super.a();
     }
@@ -73,7 +73,7 @@ public class d extends c {
             if (!this.g.containsKey(str)) {
                 try {
                     this.f.a(this.e.get(str));
-                    this.f.a(this.f35318c);
+                    this.f.a(this.f21627c);
                     T t2 = (T) this.f.a((k) t, 0, true);
                     if (t2 != null) {
                         c(str, t2);
@@ -83,12 +83,12 @@ public class d extends c {
                     throw new b(e);
                 }
             }
-        } else if (!this.f35317a.containsKey(str)) {
+        } else if (!this.f21626a.containsKey(str)) {
             return null;
         } else {
             if (!this.g.containsKey(str)) {
                 byte[] bArr = new byte[0];
-                Iterator<Map.Entry<String, byte[]>> it = this.f35317a.get(str).entrySet().iterator();
+                Iterator<Map.Entry<String, byte[]>> it = this.f21626a.get(str).entrySet().iterator();
                 if (it.hasNext()) {
                     Map.Entry<String, byte[]> next = it.next();
                     next.getKey();
@@ -96,7 +96,7 @@ public class d extends c {
                 }
                 try {
                     this.f.a(bArr);
-                    this.f.a(this.f35318c);
+                    this.f.a(this.f21627c);
                     T t3 = (T) this.f.a((k) t, 0, true);
                     c(str, t3);
                     return t3;

@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class PopBirthCardBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ConstraintLayout f29506a;
+    private final ConstraintLayout f15816a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f29506a;
+        return this.f15816a;
     }
 }

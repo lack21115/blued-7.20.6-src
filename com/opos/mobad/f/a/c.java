@@ -1,5 +1,6 @@
 package com.opos.mobad.f.a;
 
+import android.R;
 import android.app.Activity;
 import android.content.Context;
 import android.text.TextUtils;
@@ -17,11 +18,11 @@ import java.util.List;
 public class c extends com.opos.mobad.l.b {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f26063a = c.class.getSimpleName();
+    public static final String f12375a = c.class.getSimpleName();
     private com.opos.mobad.ad.e.f b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f26064c;
+    private String f12376c;
     private RelativeLayout d;
     private com.opos.mobad.ad.e.c g;
     private ViewGroup h;
@@ -36,11 +37,11 @@ public class c extends com.opos.mobad.l.b {
     public class a extends com.opos.mobad.f.a.a.b implements com.opos.mobad.ad.e.c {
 
         /* renamed from: c  reason: collision with root package name */
-        private final int f26073c;
+        private final int f12385c;
 
         public a(int i, com.opos.mobad.f.a.a.n nVar) {
             super(i, nVar);
-            this.f26073c = i;
+            this.f12385c = i;
         }
 
         @Override // com.opos.mobad.f.a.a.b, com.opos.mobad.ad.b.a
@@ -49,40 +50,40 @@ public class c extends com.opos.mobad.l.b {
             cVar.c("ad failed:" + i + ",msg:" + str + ", state=" + c.this.d());
             if (1 == c.this.d()) {
                 super.a(i, str);
-            } else if (2 == c.this.d() && this.f26073c == c.this.j.j()) {
+            } else if (2 == c.this.d() && this.f12385c == c.this.j.j()) {
                 c.this.c(i, str);
             } else {
                 c cVar2 = c.this;
-                cVar2.c("ignore fail:" + this.f26073c);
+                cVar2.c("ignore fail:" + this.f12385c);
             }
         }
 
         @Override // com.opos.mobad.ad.i.b
         public void a(long j) {
             c cVar = c.this;
-            cVar.c("ad click:" + this.f26073c + "," + c.this.j.i());
-            if (this.f26073c != c.this.j.j()) {
+            cVar.c("ad click:" + this.f12385c + "," + c.this.j.i());
+            if (this.f12385c != c.this.j.j()) {
                 return;
             }
-            com.opos.mobad.service.j.n.a().b(c.this.f26064c);
+            com.opos.mobad.service.j.n.a().b(c.this.f12376c);
             c.this.i();
         }
 
         @Override // com.opos.mobad.ad.i.b
         public void a(String str) {
             c.this.c("ad show");
-            if (this.f26073c != c.this.j.j()) {
+            if (this.f12385c != c.this.j.j()) {
                 return;
             }
-            com.opos.mobad.service.j.n.a().a(c.this.f26064c);
+            com.opos.mobad.service.j.n.a().a(c.this.f12376c);
             c.this.d(str);
         }
 
         @Override // com.opos.mobad.f.a.a.b, com.opos.mobad.ad.b.a
         public void b() {
             c cVar = c.this;
-            cVar.c("ad close:" + this.f26073c + "," + c.this.j.i());
-            if (this.f26073c != c.this.j.j()) {
+            cVar.c("ad close:" + this.f12385c + "," + c.this.j.i());
+            if (this.f12385c != c.this.j.j()) {
                 return;
             }
             c.this.i_();
@@ -92,12 +93,12 @@ public class c extends com.opos.mobad.l.b {
     public c(final Context context, final String str, com.opos.mobad.ad.e.f fVar, com.opos.mobad.ad.e.c cVar, final com.opos.mobad.f.b bVar) {
         super(cVar);
         if (context == null || TextUtils.isEmpty(str) || fVar == null || cVar == null || bVar == null) {
-            com.opos.cmn.an.f.a.c(f26063a, "HotSplashAd params null.");
+            com.opos.cmn.an.f.a.c(f12375a, "HotSplashAd params null.");
             c(-1, "HotSplashAd params null.");
             return;
         }
         this.g = cVar;
-        this.f26064c = str;
+        this.f12376c = str;
         this.i = context.getApplicationContext();
         this.d = new RelativeLayout(this.i);
         this.b = a(fVar);
@@ -106,25 +107,25 @@ public class c extends com.opos.mobad.l.b {
             @Override // com.opos.mobad.f.a.b.a
             /* renamed from: a */
             public com.opos.mobad.ad.e.a b(e.a aVar, com.opos.mobad.f.a.a.n nVar) {
-                com.opos.mobad.ad.c b = bVar.b(aVar.f27301a);
+                com.opos.mobad.ad.c b = bVar.b(aVar.f13613a);
                 if (b == null) {
                     return null;
                 }
-                return b.a(context, str, aVar.b, c.this.b, new a(aVar.f27301a, nVar));
+                return b.a(context, str, aVar.b, c.this.b, new a(aVar.f13613a, nVar));
             }
         }, new com.opos.mobad.f.a.c.a(this.i));
     }
 
     private com.opos.mobad.ad.e.f a(com.opos.mobad.ad.e.f fVar) {
         String str;
-        f.a a2 = new f.a(this.i).a(fVar.f25680a).a(fVar.d).b(fVar.f).c(com.opos.mobad.service.f.b().a(this.f26064c) == com.opos.mobad.m.a.n.VERTICAL.a()).a(fVar.g);
+        f.a a2 = new f.a(this.i).a(fVar.f11992a).a(fVar.d).b(fVar.f).c(com.opos.mobad.service.f.b().a(this.f12376c) == com.opos.mobad.m.a.n.VERTICAL.a()).a(fVar.g);
         if (TextUtils.isEmpty(fVar.b)) {
             Context context = this.i;
             str = com.opos.mobad.l.n.a(context, context.getPackageName());
         } else {
             str = fVar.b;
         }
-        String str2 = TextUtils.isEmpty(fVar.f25681c) ? "欢迎使用" : fVar.f25681c;
+        String str2 = TextUtils.isEmpty(fVar.f11993c) ? "欢迎使用" : fVar.f11993c;
         return a2.b(str2).a(str).a(k.a(fVar.e, this.i, str, str2)).a();
     }
 
@@ -216,9 +217,9 @@ public class c extends com.opos.mobad.l.b {
 
     @Override // com.opos.mobad.ad.g.a, com.opos.mobad.ad.g
     public void a(int i, String str, int i2) {
-        if (com.opos.mobad.service.f.b().b(this.f26064c) && d() == 2 && !this.l) {
+        if (com.opos.mobad.service.f.b().b(this.f12376c) && d() == 2 && !this.l) {
             this.l = true;
-            com.opos.mobad.service.i.d.a().a(this.f26064c, this.m, i, str, this.j.j(), g(), i2);
+            com.opos.mobad.service.i.d.a().a(this.f12376c, this.m, i, str, this.j.j(), g(), i2);
         }
     }
 
@@ -230,7 +231,7 @@ public class c extends com.opos.mobad.l.b {
             cVar = this.g;
             str = "activity error.";
         } else if (com.opos.cmn.an.h.f.a.a(activity)) {
-            ViewGroup viewGroup = (ViewGroup) activity.findViewById(16908290);
+            ViewGroup viewGroup = (ViewGroup) activity.findViewById(R.id.content);
             this.h = viewGroup;
             if (viewGroup == null) {
                 cVar = this.g;
@@ -284,9 +285,9 @@ public class c extends com.opos.mobad.l.b {
 
     @Override // com.opos.mobad.ad.g.a, com.opos.mobad.ad.g
     public void b(int i) {
-        if (com.opos.mobad.service.f.b().b(this.f26064c) && d() == 2 && !this.l) {
+        if (com.opos.mobad.service.f.b().b(this.f12376c) && d() == 2 && !this.l) {
             this.l = true;
-            com.opos.mobad.service.i.d.a().a(this.f26064c, this.m, this.j.j(), g(), i);
+            com.opos.mobad.service.i.d.a().a(this.f12376c, this.m, this.j.j(), g(), i);
         }
     }
 
@@ -312,7 +313,7 @@ public class c extends com.opos.mobad.l.b {
     @Override // com.opos.mobad.ad.g.a, com.opos.mobad.ad.g
     public void c(int i) {
         com.opos.mobad.ad.e.a i2;
-        if (com.opos.mobad.service.f.b().b(this.f26064c) && (i2 = this.j.i()) != null) {
+        if (com.opos.mobad.service.f.b().b(this.f12376c) && (i2 = this.j.i()) != null) {
             i2.c(i);
         }
     }
@@ -333,7 +334,7 @@ public class c extends com.opos.mobad.l.b {
     @Override // com.opos.mobad.ad.g.a, com.opos.mobad.ad.g
     public int g() {
         com.opos.mobad.ad.e.a i;
-        if (com.opos.mobad.service.f.b().b(this.f26064c) && (i = this.j.i()) != null) {
+        if (com.opos.mobad.service.f.b().b(this.f12376c) && (i = this.j.i()) != null) {
             int g = i.g();
             if (g > 0) {
                 return g;

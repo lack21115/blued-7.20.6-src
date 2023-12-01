@@ -7,7 +7,7 @@ import java.util.Iterator;
 public class SecretlyFollowedObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    private static SecretlyFollowedObserver f34244a = new SecretlyFollowedObserver();
+    private static SecretlyFollowedObserver f20553a = new SecretlyFollowedObserver();
     private ArrayList<ISecretlyFollowedObserver> b = new ArrayList<>();
 
     /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/user/observer/SecretlyFollowedObserver$ISecretlyFollowedObserver.class */
@@ -19,7 +19,7 @@ public class SecretlyFollowedObserver {
     }
 
     public static SecretlyFollowedObserver a() {
-        return f34244a;
+        return f20553a;
     }
 
     public void a(int i, int i2) {

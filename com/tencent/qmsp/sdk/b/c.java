@@ -6,7 +6,7 @@ import java.util.HashMap;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    public int f38531a = 2;
+    public int f24840a = 2;
     public b b;
 
     public c(b bVar) {

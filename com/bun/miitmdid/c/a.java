@@ -23,10 +23,10 @@ public enum a {
     
 
     /* renamed from: a  reason: collision with root package name */
-    private String f21134a;
+    private String f7528a;
 
     a(int i, String str) {
-        this.f21134a = str;
+        this.f7528a = str;
     }
 
     public static native a a(String str);

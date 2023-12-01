@@ -11,24 +11,24 @@ import java.util.Map;
 public class d implements Application.ActivityLifecycleCallbacks {
 
     /* renamed from: a  reason: collision with root package name */
-    private long f35008a = System.currentTimeMillis();
+    private long f21317a = System.currentTimeMillis();
     private Map<Activity, Long> b = new HashMap(3);
 
     /* renamed from: c  reason: collision with root package name */
-    private StatModule f35009c;
+    private StatModule f21318c;
 
     public d(StatModule statModule) {
-        this.f35009c = statModule;
+        this.f21318c = statModule;
     }
 
     private void a(Activity activity) {
         Long l = this.b.get(activity);
         Long l2 = l;
         if (l == null) {
-            l2 = Long.valueOf(this.f35008a);
+            l2 = Long.valueOf(this.f21317a);
         }
         long currentTimeMillis = System.currentTimeMillis();
-        this.f35009c.b(activity.getLocalClassName(), currentTimeMillis - l2.longValue(), currentTimeMillis);
+        this.f21318c.b(activity.getLocalClassName(), currentTimeMillis - l2.longValue(), currentTimeMillis);
         this.b.remove(activity);
     }
 

@@ -16,10 +16,10 @@ public class CommonDialog extends Dialog {
     private static int b = 2131951966;
 
     /* renamed from: a  reason: collision with root package name */
-    private Activity f34862a;
+    private Activity f21171a;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f34863c;
+    private String f21172c;
     private String d;
     private TextView e;
     private TextView f;
@@ -65,7 +65,7 @@ public class CommonDialog extends Dialog {
         this.g.setText(this.j);
         this.h.setText(this.k);
         this.f.setText(this.d);
-        this.e.setText(this.f34863c);
+        this.e.setText(this.f21172c);
         if (this.l == null) {
             this.g.setVisibility(8);
         } else {
@@ -74,10 +74,10 @@ public class CommonDialog extends Dialog {
                 public void onClick(View view) {
                     Tracker.onClick(view);
                     CommonDialog.this.g.setEnabled(false);
-                    if (CommonDialog.this.f34862a == null) {
+                    if (CommonDialog.this.f21171a == null) {
                         return;
                     }
-                    if (!CommonDialog.this.f34862a.isFinishing() && CommonDialog.this.isShowing()) {
+                    if (!CommonDialog.this.f21171a.isFinishing() && CommonDialog.this.isShowing()) {
                         CommonDialog.this.dismiss();
                     }
                     if (CommonDialog.this.l != null) {
@@ -91,10 +91,10 @@ public class CommonDialog extends Dialog {
             public void onClick(View view) {
                 Tracker.onClick(view);
                 CommonDialog.this.h.setEnabled(false);
-                if (CommonDialog.this.f34862a == null) {
+                if (CommonDialog.this.f21171a == null) {
                     return;
                 }
-                if (!CommonDialog.this.f34862a.isFinishing() && CommonDialog.this.isShowing()) {
+                if (!CommonDialog.this.f21171a.isFinishing() && CommonDialog.this.isShowing()) {
                     CommonDialog.this.dismiss();
                 }
                 if (CommonDialog.this.m != null) {

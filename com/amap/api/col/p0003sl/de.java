@@ -1,5 +1,8 @@
 package com.amap.api.col.p0003sl;
 
+import com.alipay.sdk.sys.a;
+import com.anythink.core.common.c.d;
+import com.efs.sdk.base.Constants;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.util.Arrays;
@@ -11,7 +14,7 @@ import java.util.Map;
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/de.class */
 public abstract class de extends da {
     public de() {
-        setProxy(hz.a(aa.f4728a));
+        setProxy(hz.a(aa.a));
         setConnectionTimeout(5000);
         setSoTimeout(50000);
     }
@@ -21,14 +24,14 @@ public abstract class de extends da {
         String b = b(str);
         StringBuffer stringBuffer = new StringBuffer();
         stringBuffer.append(str);
-        String a2 = hr.a();
-        stringBuffer.append("&ts=".concat(String.valueOf(a2)));
-        stringBuffer.append("&scode=" + hr.a(aa.f4728a, a2, b));
+        String a = hr.a();
+        stringBuffer.append("&ts=".concat(String.valueOf(a)));
+        stringBuffer.append("&scode=" + hr.a(aa.a, a, b));
         return stringBuffer.toString();
     }
 
     private static String b(String str) {
-        String[] split = str.split("&");
+        String[] split = str.split(a.b);
         Arrays.sort(split);
         StringBuffer stringBuffer = new StringBuffer();
         int length = split.length;
@@ -39,7 +42,7 @@ public abstract class de extends da {
                 break;
             }
             stringBuffer.append(c(split[i2]));
-            stringBuffer.append("&");
+            stringBuffer.append(a.b);
             i = i2 + 1;
         }
         String stringBuffer2 = stringBuffer.toString();
@@ -85,11 +88,11 @@ public abstract class de extends da {
     @Override // com.amap.api.col.p0003sl.kb
     public Map<String, String> getRequestHead() {
         Hashtable hashtable = new Hashtable(16);
-        hashtable.put("User-Agent", w.f5440c);
-        hashtable.put("Accept-Encoding", "gzip");
+        hashtable.put("User-Agent", w.c);
+        hashtable.put("Accept-Encoding", Constants.CP_GZIP);
         hashtable.put("platinfo", String.format(Locale.US, "platform=Android&sdkversion=%s&product=%s", "9.3.1", "3dmap"));
-        hashtable.put("x-INFO", hr.a(aa.f4728a));
-        hashtable.put("key", ho.f(aa.f4728a));
+        hashtable.put("x-INFO", hr.a(aa.a));
+        hashtable.put(d.a.b, ho.f(aa.a));
         hashtable.put("logversion", "2.1");
         return hashtable;
     }

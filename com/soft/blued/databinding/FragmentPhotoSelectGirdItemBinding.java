@@ -7,11 +7,11 @@ import com.blued.android.module.common.view.SquareLayout;
 public final class FragmentPhotoSelectGirdItemBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final SquareLayout f28929a;
+    private final SquareLayout f15239a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public SquareLayout getRoot() {
-        return this.f28929a;
+        return this.f15239a;
     }
 }

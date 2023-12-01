@@ -6,15 +6,15 @@ import com.efs.sdk.base.integrationtesting.IntegrationTestingUtil;
 public final class a implements PAANRListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private PAFactory f21848a;
+    private PAFactory f8241a;
     private PATraceListener b;
 
     public a(PAFactory pAFactory) {
-        this.f21848a = pAFactory;
+        this.f8241a = pAFactory;
         this.b = pAFactory.getTraceListener();
         boolean enableTracer = pAFactory.getConfigManager().enableTracer();
         if (enableTracer || IntegrationTestingUtil.isIntegrationTestingInPeriod()) {
-            c.a(this.f21848a, "patracepv", null);
+            c.a(this.f8241a, "patracepv", null);
         }
         PATraceListener pATraceListener = this.b;
         if (pATraceListener != null) {
@@ -27,7 +27,7 @@ public final class a implements PAANRListener {
         if (str == null || str.length() <= 200) {
             return;
         }
-        c.a(this.f21848a, "patrace", str);
+        c.a(this.f8241a, "patrace", str);
         PATraceListener pATraceListener = this.b;
         if (pATraceListener != null) {
             pATraceListener.onAnrTrace();

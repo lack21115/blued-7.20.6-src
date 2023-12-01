@@ -2,7 +2,6 @@ package com.tencent.thumbplayer.f.b;
 
 import android.os.SystemClock;
 import android.provider.BrowserContract;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.thumbplayer.api.richmedia.TPRichMediaFeature;
 import com.tencent.thumbplayer.config.TPPlayerConfig;
 import com.tencent.thumbplayer.core.downloadproxy.api.TPDownloadProxyEnum;
@@ -21,28 +20,28 @@ public class a implements com.tencent.thumbplayer.tplayer.plugins.a {
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f39308c;
+    private String f25617c;
     private TPRichMediaFeature[] d;
 
     /* renamed from: a  reason: collision with root package name */
-    m f39307a = new m();
+    m f25616a = new m();
     private int e = 0;
     private int f = 0;
     private int g = -1;
     private long h = 0;
     private List<b> i = new ArrayList();
-    private Map<Integer, C1021a> j = new HashMap();
+    private Map<Integer, C0851a> j = new HashMap();
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.tencent.thumbplayer.f.b.a$a  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/thumbplayer/f/b/a$a.class */
-    public static class C1021a {
+    public static class C0851a {
 
         /* renamed from: a  reason: collision with root package name */
-        public int f39310a;
+        public int f25619a;
         public long b;
 
-        private C1021a() {
+        private C0851a() {
         }
     }
 
@@ -51,11 +50,11 @@ public class a implements com.tencent.thumbplayer.tplayer.plugins.a {
     public static class b {
 
         /* renamed from: a  reason: collision with root package name */
-        public int f39311a;
+        public int f25620a;
         public int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public long f39312c;
+        public long f25621c;
 
         private b() {
         }
@@ -64,9 +63,9 @@ public class a implements com.tencent.thumbplayer.tplayer.plugins.a {
     private void a(int i) {
         this.e++;
         b bVar = new b();
-        bVar.f39311a = i;
+        bVar.f25620a = i;
         bVar.b = this.e;
-        bVar.f39312c = SystemClock.elapsedRealtime();
+        bVar.f25621c = SystemClock.elapsedRealtime();
         this.i.add(bVar);
     }
 
@@ -76,18 +75,18 @@ public class a implements com.tencent.thumbplayer.tplayer.plugins.a {
     }
 
     private void a(com.tencent.thumbplayer.common.a.a aVar) {
-        aVar.a("url", this.f39308c);
+        aVar.a("url", this.f25617c);
         aVar.a("flowid", this.b);
         aVar.a(TPDownloadProxyEnum.USER_GUID, TPPlayerConfig.getGuid());
         aVar.a("appplatform", TPPlayerConfig.getPlatform());
         aVar.a("network", i.b());
     }
 
-    private void a(C1021a c1021a, String str, int i) {
+    private void a(C0851a c0851a, String str, int i) {
         l lVar = new l();
-        lVar.a("duration", SystemClock.elapsedRealtime() - c1021a.b);
+        lVar.a("duration", SystemClock.elapsedRealtime() - c0851a.b);
         lVar.a("code", i);
-        lVar.a("seq", c1021a.f39310a);
+        lVar.a("seq", c0851a.f25619a);
         lVar.a("featuretype", str);
         lVar.a(BrowserContract.Bookmarks.POSITION, this.g);
         a("rich_media_feature_data_callback", lVar);
@@ -95,7 +94,7 @@ public class a implements com.tencent.thumbplayer.tplayer.plugins.a {
 
     private void a(b bVar, String str, int i) {
         l lVar = new l();
-        lVar.a("duration", SystemClock.elapsedRealtime() - bVar.f39312c);
+        lVar.a("duration", SystemClock.elapsedRealtime() - bVar.f25621c);
         lVar.a("code", i);
         lVar.a("seq", bVar.b);
         lVar.a("featuretype", str);
@@ -111,8 +110,8 @@ public class a implements com.tencent.thumbplayer.tplayer.plugins.a {
     }
 
     private void a(String str) {
-        this.b = UUID.randomUUID().toString() + System.nanoTime() + BridgeUtil.UNDERLINE_STR + TPPlayerConfig.getPlatform();
-        this.f39308c = str;
+        this.b = UUID.randomUUID().toString() + System.nanoTime() + "_" + TPPlayerConfig.getPlatform();
+        this.f25617c = str;
     }
 
     private void a(String str, com.tencent.thumbplayer.common.a.a aVar) {
@@ -126,10 +125,10 @@ public class a implements com.tencent.thumbplayer.tplayer.plugins.a {
             return;
         }
         this.f++;
-        C1021a c1021a = new C1021a();
-        c1021a.f39310a = this.f;
-        c1021a.b = SystemClock.elapsedRealtime();
-        this.j.put(Integer.valueOf(i), c1021a);
+        C0851a c0851a = new C0851a();
+        c0851a.f25619a = this.f;
+        c0851a.b = SystemClock.elapsedRealtime();
+        this.j.put(Integer.valueOf(i), c0851a);
     }
 
     private void b(int i, int i2) {
@@ -137,7 +136,7 @@ public class a implements com.tencent.thumbplayer.tplayer.plugins.a {
         Iterator<b> it = this.i.iterator();
         while (it.hasNext()) {
             b next = it.next();
-            if (next.f39311a == i) {
+            if (next.f25620a == i) {
                 a(next, k, i2);
                 it.remove();
             }
@@ -251,7 +250,7 @@ public class a implements com.tencent.thumbplayer.tplayer.plugins.a {
 
     @Override // com.tencent.thumbplayer.tplayer.plugins.a
     public void a(int i, int i2, int i3, String str, Object obj) {
-        this.f39307a.writeLock().lock();
+        this.f25616a.writeLock().lock();
         switch (i) {
             case 300:
                 c();
@@ -290,7 +289,7 @@ public class a implements com.tencent.thumbplayer.tplayer.plugins.a {
                 f(i2);
                 break;
         }
-        this.f39307a.writeLock().unlock();
+        this.f25616a.writeLock().unlock();
     }
 
     @Override // com.tencent.thumbplayer.tplayer.plugins.a

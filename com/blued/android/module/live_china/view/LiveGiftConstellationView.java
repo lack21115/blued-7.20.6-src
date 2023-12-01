@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.fragment.app.FragmentManager;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.net.IRequestHost;
@@ -44,13 +45,9 @@ import kotlin.jvm.internal.StringCompanionObject;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveGiftConstellationView.class */
 public final class LiveGiftConstellationView extends RelativeLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Context f14472a;
+    private final Context a;
     private PlayingOnliveFragment b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private LiveGiftConstellationModel f14473c;
+    private LiveGiftConstellationModel c;
     private String d;
     private String e;
     private String f;
@@ -73,12 +70,11 @@ public final class LiveGiftConstellationView extends RelativeLayout {
     public LiveGiftConstellationView(Context mContext, AttributeSet attributeSet, int i) {
         super(mContext, attributeSet, i);
         Intrinsics.e(mContext, "mContext");
-        this.f14472a = mContext;
+        this.a = mContext;
         this.d = "";
         this.e = "";
         this.f = "https://web.bldimg.com/image-manager/1688543781_46784.webp";
         this.g = new Observer() { // from class: com.blued.android.module.live_china.view.-$$Lambda$LiveGiftConstellationView$yJ6pEd1ldOHqPahxa42JuhPiAYk
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 LiveGiftConstellationView.a(LiveGiftConstellationView.this, (LiveGiftConstellationModel) obj);
             }
@@ -92,9 +88,9 @@ public final class LiveGiftConstellationView extends RelativeLayout {
             @Override // kotlin.jvm.functions.Function0
             /* renamed from: a */
             public final LiveConstellationGiftBarViewBinding invoke() {
-                LiveConstellationGiftBarViewBinding a2 = LiveConstellationGiftBarViewBinding.a(LayoutInflater.from(LiveGiftConstellationView.this.getMContext()).inflate(R.layout.live_constellation_gift_bar_view, LiveGiftConstellationView.this));
-                Intrinsics.c(a2, "bind(\n            Layout…bar_view, this)\n        )");
-                return a2;
+                LiveConstellationGiftBarViewBinding a = LiveConstellationGiftBarViewBinding.a(LayoutInflater.from(LiveGiftConstellationView.this.getMContext()).inflate(R.layout.live_constellation_gift_bar_view, LiveGiftConstellationView.this));
+                Intrinsics.c(a, "bind(\n            Layout…bar_view, this)\n        )");
+                return a;
             }
         });
     }
@@ -105,13 +101,13 @@ public final class LiveGiftConstellationView extends RelativeLayout {
 
     private final void a() {
         Observable observable = LiveEventBus.get(LiveEventBusUtil.X, LiveGiftConstellationModel.class);
-        PlayingOnliveFragment playingOnliveFragment = this.b;
-        PlayingOnliveFragment playingOnliveFragment2 = playingOnliveFragment;
-        if (playingOnliveFragment == null) {
+        LifecycleOwner lifecycleOwner = this.b;
+        PlayingOnliveFragment playingOnliveFragment = lifecycleOwner;
+        if (lifecycleOwner == null) {
             Intrinsics.c("mFragment");
-            playingOnliveFragment2 = null;
+            playingOnliveFragment = null;
         }
-        observable.observe(playingOnliveFragment2, this.g);
+        observable.observe(playingOnliveFragment, this.g);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -125,19 +121,19 @@ public final class LiveGiftConstellationView extends RelativeLayout {
             return;
         }
         if (z) {
-            StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
-            String string = this.f14472a.getString(R.string.live_constellation_onekey_to_top_title, giftConstellationBuyInfoModel.getBeans(), giftConstellationBuyInfoModel.getCount(), giftConstellationBuyInfoModel.getGoods_name(), LiveRoomManager.a().h());
+            StringCompanionObject stringCompanionObject = StringCompanionObject.a;
+            String string = this.a.getString(R.string.live_constellation_onekey_to_top_title, giftConstellationBuyInfoModel.getBeans(), giftConstellationBuyInfoModel.getCount(), giftConstellationBuyInfoModel.getGoods_name(), LiveRoomManager.a().h());
             Intrinsics.c(string, "mContext.getString(\n    …orName,\n                )");
             format = String.format(string, Arrays.copyOf(new Object[0], 0));
             Intrinsics.c(format, "format(format, *args)");
         } else {
-            StringCompanionObject stringCompanionObject2 = StringCompanionObject.f42549a;
-            String string2 = this.f14472a.getString(R.string.live_constellation_onekey_to_unlock_title, giftConstellationBuyInfoModel.getBeans(), giftConstellationBuyInfoModel.getCount(), giftConstellationBuyInfoModel.getGoods_name());
+            StringCompanionObject stringCompanionObject2 = StringCompanionObject.a;
+            String string2 = this.a.getString(R.string.live_constellation_onekey_to_unlock_title, giftConstellationBuyInfoModel.getBeans(), giftConstellationBuyInfoModel.getCount(), giftConstellationBuyInfoModel.getGoods_name());
             Intrinsics.c(string2, "mContext.getString(\n    …ds_name\n                )");
             format = String.format(string2, Arrays.copyOf(new Object[0], 0));
             Intrinsics.c(format, "format(format, *args)");
         }
-        CommonAlertDialog.a(this.f14472a, format, (String) null, "确认", new DialogInterface.OnClickListener() { // from class: com.blued.android.module.live_china.view.-$$Lambda$LiveGiftConstellationView$PQ1y9vSxxjp463t7FrURKqASBaQ
+        CommonAlertDialog.a(this.a, format, (String) null, "确认", new DialogInterface.OnClickListener() { // from class: com.blued.android.module.live_china.view.-$$Lambda$LiveGiftConstellationView$PQ1y9vSxxjp463t7FrURKqASBaQ
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
                 LiveGiftConstellationView.a(z, this, giftConstellationBuyInfoModel, dialogInterface, i);
@@ -155,7 +151,7 @@ public final class LiveGiftConstellationView extends RelativeLayout {
             return;
         }
         if (!TextUtils.isEmpty(liveGiftConstellationModel.getAnchor_avatar())) {
-            ImageLoader.a((IRequestHost) null, liveGiftConstellationModel.getAnchor_avatar()).c().a(getVb().f12167a);
+            ImageLoader.a((IRequestHost) null, liveGiftConstellationModel.getAnchor_avatar()).c().a(getVb().a);
         }
         if (!TextUtils.isEmpty(liveGiftConstellationModel.getAvatar())) {
             ImageLoader.a((IRequestHost) null, liveGiftConstellationModel.getAvatar()).c().a(getVb().b);
@@ -190,7 +186,7 @@ public final class LiveGiftConstellationView extends RelativeLayout {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(LiveGiftConstellationView this$0, View view) {
         Intrinsics.e(this$0, "this$0");
-        LiveConstellationDialogFragment.Companion companion = LiveConstellationDialogFragment.f12792a;
+        LiveConstellationDialogFragment.Companion companion = LiveConstellationDialogFragment.a;
         PlayingOnliveFragment playingOnliveFragment = this$0.b;
         PlayingOnliveFragment playingOnliveFragment2 = playingOnliveFragment;
         if (playingOnliveFragment == null) {
@@ -265,7 +261,7 @@ public final class LiveGiftConstellationView extends RelativeLayout {
         Intrinsics.e(goodId, "goodId");
         Intrinsics.e(data, "data");
         this.b = fragment;
-        this.f14473c = data;
+        this.c = data;
         this.d = goodId;
         this.e = data.getId();
         a();
@@ -285,7 +281,7 @@ public final class LiveGiftConstellationView extends RelativeLayout {
         getVb().l.setVisibility(8);
         ImageLoader.a((IRequestHost) null, data.getImage()).a(getVb().e);
         getVb().k.setText(data.getDesc());
-        ImageLoader.a((IRequestHost) null, data.getAnchor_avatar()).a("https://web.bldimg.com/image-manager/1688612005_75792.png").c().a(getVb().f12167a);
+        ImageLoader.a((IRequestHost) null, data.getAnchor_avatar()).a("https://web.bldimg.com/image-manager/1688612005_75792.png").c().a(getVb().a);
         ImageLoader.a((IRequestHost) null, data.getAvatar()).a("https://web.bldimg.com/image-manager/1688612005_75792.png").c().a(getVb().b);
         if (data.getBasic_remain() == 0) {
             getVb().h.setImageResource(R.drawable.live_constellation_one_key_to_peak);
@@ -320,7 +316,7 @@ public final class LiveGiftConstellationView extends RelativeLayout {
     }
 
     public final Context getMContext() {
-        return this.f14472a;
+        return this.a;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

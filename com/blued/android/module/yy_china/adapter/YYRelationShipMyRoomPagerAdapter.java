@@ -14,21 +14,19 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/adapter/YYRelationShipMyRoomPagerAdapter.class */
 public final class YYRelationShipMyRoomPagerAdapter extends BaseFragmentPagerAdapter {
     private final FragmentManager b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private List<YYRelationShipRoomMode> f16215c;
+    private List<YYRelationShipRoomMode> c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public YYRelationShipMyRoomPagerAdapter(FragmentManager fm) {
         super(fm, 1);
         Intrinsics.e(fm, "fm");
         this.b = fm;
-        this.f16215c = new ArrayList();
+        this.c = new ArrayList();
     }
 
     private final boolean c(List<YYRelationShipRoomMode> list) {
-        if (list.size() != this.f16215c.size()) {
-            this.f16215c = list;
+        if (list.size() != this.c.size()) {
+            this.c = list;
             return true;
         }
         int size = list.size();
@@ -36,10 +34,10 @@ public final class YYRelationShipMyRoomPagerAdapter extends BaseFragmentPagerAda
         while (true) {
             int i2 = i;
             if (i2 >= size) {
-                this.f16215c = list;
+                this.c = list;
                 return false;
-            } else if (!Intrinsics.a((Object) this.f16215c.get(i2).getId(), (Object) list.get(i2).getId())) {
-                this.f16215c = list;
+            } else if (!Intrinsics.a((Object) this.c.get(i2).getId(), (Object) list.get(i2).getId())) {
+                this.c = list;
                 return true;
             } else {
                 i = i2 + 1;
@@ -47,10 +45,9 @@ public final class YYRelationShipMyRoomPagerAdapter extends BaseFragmentPagerAda
         }
     }
 
-    @Override // androidx.viewpager.widget.PagerAdapter
     /* renamed from: a */
     public String getPageTitle(int i) {
-        return this.f16215c.get(i).getRelation_name();
+        return this.c.get(i).getRelation_name();
     }
 
     public final void b(List<YYRelationShipRoomMode> tabs) {

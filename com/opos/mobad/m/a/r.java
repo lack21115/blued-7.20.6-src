@@ -2,7 +2,6 @@ package com.opos.mobad.m.a;
 
 import com.heytap.nearx.a.a.b;
 import java.io.IOException;
-import java.util.Collection;
 import java.util.List;
 import okio.ByteString;
 
@@ -10,7 +9,7 @@ import okio.ByteString;
 public final class r extends com.heytap.nearx.a.a.b<r, a> {
 
     /* renamed from: c  reason: collision with root package name */
-    public static final com.heytap.nearx.a.a.e<r> f26361c = new b();
+    public static final com.heytap.nearx.a.a.e<r> f12673c = new b();
     public static final Long d = 0L;
     public static final Long e = 0L;
     private static final long serialVersionUID = 0;
@@ -30,7 +29,7 @@ public final class r extends com.heytap.nearx.a.a.b<r, a> {
         public String h;
 
         /* renamed from: c  reason: collision with root package name */
-        public List<e> f26362c = com.heytap.nearx.a.a.a.b.a();
+        public List<e> f12674c = com.heytap.nearx.a.a.a.b.a();
         public List<s> d = com.heytap.nearx.a.a.a.b.a();
         public List<o> i = com.heytap.nearx.a.a.a.b.a();
 
@@ -66,7 +65,7 @@ public final class r extends com.heytap.nearx.a.a.b<r, a> {
             if (l == null || (bVar = this.f) == null) {
                 throw com.heytap.nearx.a.a.a.b.a(this.e, "adEnableTime", this.f, "appConfig");
             }
-            return new r(this.f26362c, this.d, l, bVar, this.g, this.h, this.i, super.a());
+            return new r(this.f12674c, this.d, l, bVar, this.g, this.h, this.i, super.a());
         }
     }
 
@@ -78,38 +77,40 @@ public final class r extends com.heytap.nearx.a.a.b<r, a> {
 
         @Override // com.heytap.nearx.a.a.e
         public int a(r rVar) {
-            int a2 = e.f26335c.a().a(1, (int) rVar.f);
-            int a3 = s.f26363c.a().a(2, (int) rVar.g);
+            int a2 = e.f12647c.a().a(1, (int) rVar.f);
+            int a3 = s.f12675c.a().a(2, (int) rVar.g);
             int a4 = com.heytap.nearx.a.a.e.i.a(3, (int) rVar.h);
-            int a5 = com.opos.mobad.m.a.b.f26329c.a(4, (int) rVar.i);
+            int a5 = com.opos.mobad.m.a.b.f12641c.a(4, (int) rVar.i);
             int i = 0;
             int a6 = rVar.j != null ? com.heytap.nearx.a.a.e.i.a(5, (int) rVar.j) : 0;
             if (rVar.k != null) {
                 i = com.heytap.nearx.a.a.e.p.a(6, (int) rVar.k);
             }
-            return a6 + a5 + a2 + a3 + a4 + i + o.f26355c.a().a(7, (int) rVar.l) + rVar.a().size();
+            return a6 + a5 + a2 + a3 + a4 + i + o.f12667c.a().a(7, (int) rVar.l) + rVar.a().size();
         }
 
         @Override // com.heytap.nearx.a.a.e
         public void a(com.heytap.nearx.a.a.g gVar, r rVar) throws IOException {
-            e.f26335c.a().a(gVar, 1, rVar.f);
-            s.f26363c.a().a(gVar, 2, rVar.g);
+            e.f12647c.a().a(gVar, 1, rVar.f);
+            s.f12675c.a().a(gVar, 2, rVar.g);
             com.heytap.nearx.a.a.e.i.a(gVar, 3, rVar.h);
-            com.opos.mobad.m.a.b.f26329c.a(gVar, 4, rVar.i);
+            com.opos.mobad.m.a.b.f12641c.a(gVar, 4, rVar.i);
             if (rVar.j != null) {
                 com.heytap.nearx.a.a.e.i.a(gVar, 5, rVar.j);
             }
             if (rVar.k != null) {
                 com.heytap.nearx.a.a.e.p.a(gVar, 6, rVar.k);
             }
-            o.f26355c.a().a(gVar, 7, rVar.l);
+            o.f12667c.a().a(gVar, 7, rVar.l);
             gVar.a(rVar.a());
         }
 
+        /* JADX WARN: Multi-variable type inference failed */
+        /* JADX WARN: Type inference failed for: r1v17, types: [java.lang.Object] */
         @Override // com.heytap.nearx.a.a.e
         /* renamed from: b */
         public r a(com.heytap.nearx.a.a.f fVar) throws IOException {
-            Collection collection;
+            List list;
             com.heytap.nearx.a.a.e eVar;
             a aVar = new a();
             long a2 = fVar.a();
@@ -121,18 +122,18 @@ public final class r extends com.heytap.nearx.a.a.b<r, a> {
                 }
                 switch (b) {
                     case 1:
-                        collection = aVar.f26362c;
-                        eVar = e.f26335c;
+                        list = aVar.f12674c;
+                        eVar = e.f12647c;
                         break;
                     case 2:
-                        collection = aVar.d;
-                        eVar = s.f26363c;
+                        list = aVar.d;
+                        eVar = s.f12675c;
                         break;
                     case 3:
                         aVar.a(com.heytap.nearx.a.a.e.i.a(fVar));
                         continue;
                     case 4:
-                        aVar.a(com.opos.mobad.m.a.b.f26329c.a(fVar));
+                        aVar.a(com.opos.mobad.m.a.b.f12641c.a(fVar));
                         continue;
                     case 5:
                         aVar.b(com.heytap.nearx.a.a.e.i.a(fVar));
@@ -141,21 +142,21 @@ public final class r extends com.heytap.nearx.a.a.b<r, a> {
                         aVar.a(com.heytap.nearx.a.a.e.p.a(fVar));
                         continue;
                     case 7:
-                        collection = aVar.i;
-                        eVar = o.f26355c;
+                        list = aVar.i;
+                        eVar = o.f12667c;
                         break;
                     default:
                         com.heytap.nearx.a.a.a c2 = fVar.c();
                         aVar.a(b, c2, c2.a().a(fVar));
                         continue;
                 }
-                collection.add(eVar.a(fVar));
+                list.add(eVar.a(fVar));
             }
         }
     }
 
     public r(List<e> list, List<s> list2, Long l, com.opos.mobad.m.a.b bVar, Long l2, String str, List<o> list3, ByteString byteString) {
-        super(f26361c, byteString);
+        super(f12673c, byteString);
         this.f = com.heytap.nearx.a.a.a.b.b("channelList", list);
         this.g = com.heytap.nearx.a.a.a.b.b("strategyList", list2);
         this.h = l;
@@ -167,7 +168,7 @@ public final class r extends com.heytap.nearx.a.a.b<r, a> {
 
     public a c() {
         a aVar = new a();
-        aVar.f26362c = com.heytap.nearx.a.a.a.b.a("channelList", this.f);
+        aVar.f12674c = com.heytap.nearx.a.a.a.b.a("channelList", this.f);
         aVar.d = com.heytap.nearx.a.a.a.b.a("strategyList", this.g);
         aVar.e = this.h;
         aVar.f = this.i;

@@ -17,18 +17,18 @@ import java.util.Map;
 public class StickyLayoutManager extends LinearLayoutManager {
 
     /* renamed from: a  reason: collision with root package name */
-    private StickyHeaderPositioner f20640a;
+    private StickyHeaderPositioner f7034a;
     private StickyHeaderHandler b;
 
     /* renamed from: c  reason: collision with root package name */
-    private List<Integer> f20641c;
+    private List<Integer> f7035c;
     private ViewRetriever.RecyclerViewRetriever d;
     private int e;
     private StickyHeaderListener f;
 
     public StickyLayoutManager(Context context, int i, boolean z, StickyHeaderHandler stickyHeaderHandler) {
         super(context, i, z);
-        this.f20641c = new ArrayList();
+        this.f7035c = new ArrayList();
         this.e = -1;
         a(stickyHeaderHandler);
     }
@@ -39,8 +39,8 @@ public class StickyLayoutManager extends LinearLayoutManager {
     }
 
     private void a() {
-        this.f20640a.b(getOrientation());
-        this.f20640a.a(findFirstVisibleItemPosition(), b(), this.d, findFirstCompletelyVisibleItemPosition() == 0);
+        this.f7034a.b(getOrientation());
+        this.f7034a.a(findFirstVisibleItemPosition(), b(), this.d, findFirstCompletelyVisibleItemPosition() == 0);
     }
 
     private void a(StickyHeaderHandler stickyHeaderHandler) {
@@ -58,7 +58,7 @@ public class StickyLayoutManager extends LinearLayoutManager {
             }
             View childAt = getChildAt(i2);
             int position = getPosition(childAt);
-            if (this.f20641c.contains(Integer.valueOf(position))) {
+            if (this.f7035c.contains(Integer.valueOf(position))) {
                 linkedHashMap.put(Integer.valueOf(position), childAt);
             }
             i = i2 + 1;
@@ -66,12 +66,12 @@ public class StickyLayoutManager extends LinearLayoutManager {
     }
 
     private void c() {
-        this.f20641c.clear();
+        this.f7035c.clear();
         List<?> a2 = this.b.a();
         if (a2 == null) {
-            StickyHeaderPositioner stickyHeaderPositioner = this.f20640a;
+            StickyHeaderPositioner stickyHeaderPositioner = this.f7034a;
             if (stickyHeaderPositioner != null) {
-                stickyHeaderPositioner.a(this.f20641c);
+                stickyHeaderPositioner.a(this.f7035c);
                 return;
             }
             return;
@@ -83,13 +83,13 @@ public class StickyLayoutManager extends LinearLayoutManager {
                 break;
             }
             if (a2.get(i2) instanceof StickyHeader) {
-                this.f20641c.add(Integer.valueOf(i2));
+                this.f7035c.add(Integer.valueOf(i2));
             }
             i = i2 + 1;
         }
-        StickyHeaderPositioner stickyHeaderPositioner2 = this.f20640a;
+        StickyHeaderPositioner stickyHeaderPositioner2 = this.f7034a;
         if (stickyHeaderPositioner2 != null) {
-            stickyHeaderPositioner2.a(this.f20641c);
+            stickyHeaderPositioner2.a(this.f7035c);
         }
     }
 
@@ -98,11 +98,11 @@ public class StickyLayoutManager extends LinearLayoutManager {
         Preconditions.a(recyclerView);
         this.d = new ViewRetriever.RecyclerViewRetriever(recyclerView);
         StickyHeaderPositioner stickyHeaderPositioner = new StickyHeaderPositioner(recyclerView);
-        this.f20640a = stickyHeaderPositioner;
+        this.f7034a = stickyHeaderPositioner;
         stickyHeaderPositioner.a(this.e);
-        this.f20640a.a(this.f);
-        if (this.f20641c.size() > 0) {
-            this.f20640a.a(this.f20641c);
+        this.f7034a.a(this.f);
+        if (this.f7035c.size() > 0) {
+            this.f7034a.a(this.f7035c);
             a();
         }
         super.onAttachedToWindow(recyclerView);
@@ -112,7 +112,7 @@ public class StickyLayoutManager extends LinearLayoutManager {
     public void onLayoutChildren(RecyclerView.Recycler recycler, RecyclerView.State state) {
         super.onLayoutChildren(recycler, state);
         c();
-        if (this.f20640a != null) {
+        if (this.f7034a != null) {
             a();
         }
     }
@@ -120,7 +120,7 @@ public class StickyLayoutManager extends LinearLayoutManager {
     @Override // androidx.recyclerview.widget.RecyclerView.LayoutManager
     public void removeAndRecycleAllViews(RecyclerView.Recycler recycler) {
         super.removeAndRecycleAllViews(recycler);
-        StickyHeaderPositioner stickyHeaderPositioner = this.f20640a;
+        StickyHeaderPositioner stickyHeaderPositioner = this.f7034a;
         if (stickyHeaderPositioner != null) {
             stickyHeaderPositioner.a();
         }
@@ -130,7 +130,7 @@ public class StickyLayoutManager extends LinearLayoutManager {
     public int scrollHorizontallyBy(int i, RecyclerView.Recycler recycler, RecyclerView.State state) {
         StickyHeaderPositioner stickyHeaderPositioner;
         int scrollHorizontallyBy = super.scrollHorizontallyBy(i, recycler, state);
-        if (Math.abs(scrollHorizontallyBy) > 0 && (stickyHeaderPositioner = this.f20640a) != null) {
+        if (Math.abs(scrollHorizontallyBy) > 0 && (stickyHeaderPositioner = this.f7034a) != null) {
             stickyHeaderPositioner.a(findFirstVisibleItemPosition(), b(), this.d, findFirstCompletelyVisibleItemPosition() == 0);
         }
         return scrollHorizontallyBy;
@@ -140,7 +140,7 @@ public class StickyLayoutManager extends LinearLayoutManager {
     public int scrollVerticallyBy(int i, RecyclerView.Recycler recycler, RecyclerView.State state) {
         StickyHeaderPositioner stickyHeaderPositioner;
         int scrollVerticallyBy = super.scrollVerticallyBy(i, recycler, state);
-        if (Math.abs(scrollVerticallyBy) > 0 && (stickyHeaderPositioner = this.f20640a) != null) {
+        if (Math.abs(scrollVerticallyBy) > 0 && (stickyHeaderPositioner = this.f7034a) != null) {
             stickyHeaderPositioner.a(findFirstVisibleItemPosition(), b(), this.d, findFirstCompletelyVisibleItemPosition() == 0);
         }
         return scrollVerticallyBy;

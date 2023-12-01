@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class DialogNoticOneBtnLayoutBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final FrameLayout f28710a;
+    private final FrameLayout f15020a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f28710a;
+        return this.f15020a;
     }
 }

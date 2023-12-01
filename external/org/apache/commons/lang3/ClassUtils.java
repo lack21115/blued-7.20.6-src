@@ -1,10 +1,6 @@
 package external.org.apache.commons.lang3;
 
-import androidx.constraintlayout.core.motion.utils.TypedValues;
-import androidx.exifinterface.media.ExifInterface;
-import com.baidu.mobads.sdk.api.IAdInterListener;
-import com.huawei.hms.ads.ContentClassification;
-import com.tencent.lbssearch.object.param.Geo2AddressParam;
+import com.alipay.sdk.util.i;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.ArrayList;
@@ -44,11 +40,11 @@ public class ClassUtils {
         }
         abbreviationMap = new HashMap();
         reverseAbbreviationMap = new HashMap();
-        addAbbreviation(IAdInterListener.AdProdType.PRODUCT_INTERSTITIAL, "I");
-        addAbbreviation(TypedValues.Custom.S_BOOLEAN, "Z");
-        addAbbreviation(TypedValues.Custom.S_FLOAT, "F");
-        addAbbreviation("long", ContentClassification.AD_CONTENT_CLASSIFICATION_J);
-        addAbbreviation(Geo2AddressParam.PoiOptions.ADDRESS_FORMAT_SHORT, ExifInterface.LATITUDE_SOUTH);
+        addAbbreviation("int", "I");
+        addAbbreviation("boolean", "Z");
+        addAbbreviation("float", "F");
+        addAbbreviation("long", "J");
+        addAbbreviation("short", "S");
         addAbbreviation("byte", "B");
         addAbbreviation("double", "D");
         addAbbreviation("char", "C");
@@ -167,7 +163,7 @@ public class ClassUtils {
             str2 = deleteWhitespace;
             if (i >= 1) {
                 if (deleteWhitespace.startsWith("L")) {
-                    str3 = deleteWhitespace.substring(1, deleteWhitespace.endsWith(";") ? deleteWhitespace.length() - 1 : deleteWhitespace.length());
+                    str3 = deleteWhitespace.substring(1, deleteWhitespace.endsWith(i.b) ? deleteWhitespace.length() - 1 : deleteWhitespace.length());
                 } else {
                     str3 = deleteWhitespace;
                     if (deleteWhitespace.length() > 0) {
@@ -508,7 +504,7 @@ public class ClassUtils {
             if (str3 != null) {
                 sb.append(str3);
             } else {
-                sb.append("L").append(deleteWhitespace).append(";");
+                sb.append("L").append(deleteWhitespace).append(i.b);
             }
             str2 = sb.toString();
         }

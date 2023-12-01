@@ -35,7 +35,6 @@ public class ShareEventToMsgEntity extends ShareToMsgEntity {
         this.activityLocation = parcel.readString();
     }
 
-    @Override // com.soft.blued.ui.msg.model.ShareToMsgEntity, android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
         super.writeToParcel(parcel, i);
         parcel.writeInt(this.isActivity);

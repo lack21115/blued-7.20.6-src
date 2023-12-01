@@ -4,9 +4,9 @@ package com.tencent.tmsbeacon.d;
 public class i {
 
     /* renamed from: a  reason: collision with root package name */
-    public long f39551a = -1;
+    public long f25860a = -1;
     public int b = -1;
 
     /* renamed from: c  reason: collision with root package name */
-    public byte[] f39552c = null;
+    public byte[] f25861c = null;
 }

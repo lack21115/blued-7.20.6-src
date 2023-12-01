@@ -8,7 +8,7 @@ import java.io.InputStream;
 public class d extends AsyncTask<Context, Integer, Boolean> {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23129a = d.class.getSimpleName();
+    private static final String f9521a = d.class.getSimpleName();
 
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.os.AsyncTask
@@ -19,11 +19,11 @@ public class d extends AsyncTask<Context, Integer, Boolean> {
         try {
             inputStream = BksUtil.getBksFromTss(contextArr[0]);
         } catch (Exception e) {
-            String str = f23129a;
+            String str = f9521a;
             g.b(str, "doInBackground: exception : " + e.getMessage());
             inputStream = null;
         }
-        String str2 = f23129a;
+        String str2 = f9521a;
         g.a(str2, "doInBackground: get bks from hms tss cost : " + (System.currentTimeMillis() - currentTimeMillis) + " ms");
         if (inputStream != null) {
             f.a(inputStream);
@@ -37,9 +37,9 @@ public class d extends AsyncTask<Context, Integer, Boolean> {
     /* renamed from: a */
     public void onPostExecute(Boolean bool) {
         if (bool.booleanValue()) {
-            g.c(f23129a, "onPostExecute: upate done");
+            g.c(f9521a, "onPostExecute: upate done");
         } else {
-            g.b(f23129a, "onPostExecute: upate failed");
+            g.b(f9521a, "onPostExecute: upate failed");
         }
     }
 
@@ -47,12 +47,11 @@ public class d extends AsyncTask<Context, Integer, Boolean> {
     @Override // android.os.AsyncTask
     /* renamed from: a */
     public void onProgressUpdate(Integer... numArr) {
-        g.c(f23129a, "onProgressUpdate");
+        g.c(f9521a, "onProgressUpdate");
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.os.AsyncTask
-    public void onPreExecute() {
-        g.a(f23129a, "onPreExecute");
+    protected void onPreExecute() {
+        g.a(f9521a, "onPreExecute");
     }
 }

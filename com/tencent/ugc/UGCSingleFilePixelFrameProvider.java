@@ -387,7 +387,7 @@ public class UGCSingleFilePixelFrameProvider implements VideoDecodeController.a,
         this.mIsAbandoningDecodingFrame = true;
         this.mHasReadEOF = false;
         VideoDecodeController videoDecodeController = this.mVideoDecodeController;
-        LiteavLog.i(videoDecodeController.f36734a, "decoder abandonDecodingFrames");
+        LiteavLog.i(videoDecodeController.f23043a, "decoder abandonDecodingFrames");
         videoDecodeController.a(com.tencent.liteav.videoconsumer.decoder.ad.a(videoDecodeController));
         PixelFrame.releasePixelFrames(this.mPixFrameCacheForReverse);
     }

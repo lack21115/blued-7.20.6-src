@@ -12,19 +12,19 @@ import com.bun.supplier.SupplierListener;
 public class a implements IDIDBinderStatusListener, InnerIdSupplier {
 
     /* renamed from: a  reason: collision with root package name */
-    private SupplierListener f21135a;
+    private SupplierListener f7529a;
     private SupplementaryDIDManager f;
     private String b = "";
 
     /* renamed from: c  reason: collision with root package name */
-    private String f21136c = "";
+    private String f7530c = "";
     private String d = "";
     private String e = "";
     private boolean g = false;
     private boolean h = false;
 
     public a(Context context, SupplierListener supplierListener) {
-        this.f21135a = supplierListener;
+        this.f7529a = supplierListener;
         this.f = new SupplementaryDIDManager(context);
     }
 

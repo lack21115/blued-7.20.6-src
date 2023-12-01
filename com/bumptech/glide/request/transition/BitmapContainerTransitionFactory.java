@@ -10,7 +10,7 @@ import com.bumptech.glide.request.transition.Transition;
 public abstract class BitmapContainerTransitionFactory<R> implements TransitionFactory<R> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final TransitionFactory<Drawable> f21077a;
+    private final TransitionFactory<Drawable> f7471a;
 
     /* loaded from: source-7206380-dex2jar.jar:com/bumptech/glide/request/transition/BitmapContainerTransitionFactory$BitmapGlideAnimation.class */
     final class BitmapGlideAnimation implements Transition<R> {
@@ -30,6 +30,6 @@ public abstract class BitmapContainerTransitionFactory<R> implements TransitionF
 
     @Override // com.bumptech.glide.request.transition.TransitionFactory
     public Transition<R> a(DataSource dataSource, boolean z) {
-        return new BitmapGlideAnimation(this.f21077a.a(dataSource, z));
+        return new BitmapGlideAnimation(this.f7471a.a(dataSource, z));
     }
 }

@@ -65,49 +65,49 @@ class ReflectiveProperty<T, V> extends Property<T, V> {
             boolean r0 = r0.isPrimitive()
             if (r0 == 0) goto L82
             r0 = r5
-            java.lang.Class<java.lang.Float> r1 = java.lang.Float.TYPE
+            java.lang.Class r1 = java.lang.Float.TYPE
             if (r0 != r1) goto L1f
             r0 = r4
             java.lang.Class<java.lang.Float> r1 = java.lang.Float.class
             if (r0 == r1) goto L80
         L1f:
             r0 = r5
-            java.lang.Class<java.lang.Integer> r1 = java.lang.Integer.TYPE
+            java.lang.Class r1 = java.lang.Integer.TYPE
             if (r0 != r1) goto L2c
             r0 = r4
             java.lang.Class<java.lang.Integer> r1 = java.lang.Integer.class
             if (r0 == r1) goto L80
         L2c:
             r0 = r5
-            java.lang.Class<java.lang.Boolean> r1 = java.lang.Boolean.TYPE
+            java.lang.Class r1 = java.lang.Boolean.TYPE
             if (r0 != r1) goto L39
             r0 = r4
             java.lang.Class<java.lang.Boolean> r1 = java.lang.Boolean.class
             if (r0 == r1) goto L80
         L39:
             r0 = r5
-            java.lang.Class<java.lang.Long> r1 = java.lang.Long.TYPE
+            java.lang.Class r1 = java.lang.Long.TYPE
             if (r0 != r1) goto L46
             r0 = r4
             java.lang.Class<java.lang.Long> r1 = java.lang.Long.class
             if (r0 == r1) goto L80
         L46:
             r0 = r5
-            java.lang.Class<java.lang.Double> r1 = java.lang.Double.TYPE
+            java.lang.Class r1 = java.lang.Double.TYPE
             if (r0 != r1) goto L53
             r0 = r4
             java.lang.Class<java.lang.Double> r1 = java.lang.Double.class
             if (r0 == r1) goto L80
         L53:
             r0 = r5
-            java.lang.Class<java.lang.Short> r1 = java.lang.Short.TYPE
+            java.lang.Class r1 = java.lang.Short.TYPE
             if (r0 != r1) goto L60
             r0 = r4
             java.lang.Class<java.lang.Short> r1 = java.lang.Short.class
             if (r0 == r1) goto L80
         L60:
             r0 = r5
-            java.lang.Class<java.lang.Byte> r1 = java.lang.Byte.TYPE
+            java.lang.Class r1 = java.lang.Byte.TYPE
             if (r0 != r1) goto L6d
             r0 = r4
             java.lang.Class<java.lang.Byte> r1 = java.lang.Byte.class
@@ -116,7 +116,7 @@ class ReflectiveProperty<T, V> extends Property<T, V> {
             r0 = r7
             r6 = r0
             r0 = r5
-            java.lang.Class<java.lang.Character> r1 = java.lang.Character.TYPE
+            java.lang.Class r1 = java.lang.Character.TYPE
             if (r0 != r1) goto L82
             r0 = r7
             r6 = r0

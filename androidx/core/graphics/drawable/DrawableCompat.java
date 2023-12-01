@@ -19,11 +19,11 @@ import org.xmlpull.v1.XmlPullParserException;
 public final class DrawableCompat {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Method f2467a;
+    private static Method f2419a;
     private static boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static Method f2468c;
+    private static Method f2420c;
     private static boolean d;
 
     private DrawableCompat() {
@@ -88,20 +88,20 @@ public final class DrawableCompat {
             if (!d) {
                 try {
                     Method declaredMethod = Drawable.class.getDeclaredMethod("getLayoutDirection", new Class[0]);
-                    f2468c = declaredMethod;
+                    f2420c = declaredMethod;
                     declaredMethod.setAccessible(true);
                 } catch (NoSuchMethodException e) {
                     Log.i("DrawableCompat", "Failed to retrieve getLayoutDirection() method", e);
                 }
                 d = true;
             }
-            Method method = f2468c;
+            Method method = f2420c;
             if (method != null) {
                 try {
                     return ((Integer) method.invoke(drawable, new Object[0])).intValue();
                 } catch (Exception e2) {
                     Log.i("DrawableCompat", "Failed to invoke getLayoutDirection() via reflection", e2);
-                    f2468c = null;
+                    f2420c = null;
                     return 0;
                 }
             }
@@ -156,21 +156,21 @@ public final class DrawableCompat {
             if (!b) {
                 try {
                     Method declaredMethod = Drawable.class.getDeclaredMethod("setLayoutDirection", Integer.TYPE);
-                    f2467a = declaredMethod;
+                    f2419a = declaredMethod;
                     declaredMethod.setAccessible(true);
                 } catch (NoSuchMethodException e) {
                     Log.i("DrawableCompat", "Failed to retrieve setLayoutDirection(int) method", e);
                 }
                 b = true;
             }
-            Method method = f2467a;
+            Method method = f2419a;
             if (method != null) {
                 try {
                     method.invoke(drawable, Integer.valueOf(i));
                     return true;
                 } catch (Exception e2) {
                     Log.i("DrawableCompat", "Failed to invoke setLayoutDirection(int) via reflection", e2);
-                    f2467a = null;
+                    f2419a = null;
                     return false;
                 }
             }

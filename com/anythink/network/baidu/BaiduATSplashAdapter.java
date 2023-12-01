@@ -17,6 +17,7 @@ import com.anythink.splashad.unitgroup.api.CustomSplashAdapter;
 import com.baidu.mobads.sdk.api.RequestParameters;
 import com.baidu.mobads.sdk.api.SplashAd;
 import com.baidu.mobads.sdk.api.SplashInteractionListener;
+import com.huawei.hms.ads.fw;
 import java.util.Map;
 
 /* loaded from: source-8756600-dex2jar.jar:com/anythink/network/baidu/BaiduATSplashAdapter.class */
@@ -24,11 +25,11 @@ public class BaiduATSplashAdapter extends CustomSplashAdapter {
     SplashAd b;
 
     /* renamed from: c  reason: collision with root package name */
-    String f8898c;
+    String f6058c;
     private final String g = BaiduATSplashAdapter.class.getSimpleName();
 
     /* renamed from: a  reason: collision with root package name */
-    String f8897a = "";
+    String f6057a = "";
     private double h = 0.0d;
     boolean d = false;
     boolean e = false;
@@ -82,7 +83,7 @@ public class BaiduATSplashAdapter extends CustomSplashAdapter {
             Log.e(BaiduATSplashAdapter.this.g, "onAdFailed: ".concat(String.valueOf(str)));
             BaiduATSplashAdapter.d(BaiduATSplashAdapter.this);
             if (BaiduATSplashAdapter.this.mImpressionListener != null) {
-                BaiduATSplashAdapter.this.mImpressionListener.onSplashAdShowFail(ErrorCode.getErrorCode(ErrorCode.adShowError, "", str));
+                BaiduATSplashAdapter.this.mImpressionListener.onSplashAdShowFail(ErrorCode.getErrorCode("4006", "", str));
                 BaiduATSplashAdapter.this.mImpressionListener.onSplashAdDismiss();
             }
         }
@@ -134,22 +135,22 @@ public class BaiduATSplashAdapter extends CustomSplashAdapter {
             ATBiddingListener aTBiddingListener = this.mBiddingListener;
             StringBuilder sb = new StringBuilder();
             sb.append(System.currentTimeMillis());
-            aTBiddingListener.onC2SBiddingResultWithCache(ATBiddingResult.success(d, sb.toString(), baiduATBiddingNotice, ATAdConst.CURRENCY.RMB_CENT), null);
+            aTBiddingListener.onC2SBiddingResultWithCache(ATBiddingResult.success(d, sb.toString(), baiduATBiddingNotice, ATAdConst.CURRENCY.RMB_CENT), (BaseAd) null);
         }
     }
 
     private void a(Context context, boolean z, Map<String, Object> map) {
         RequestParameters.Builder builder = new RequestParameters.Builder();
         builder.addExtra("timeout", String.valueOf(this.mFetchAdTimeout));
-        builder.addExtra(SplashAd.KEY_DISPLAY_DOWNLOADINFO, "true");
+        builder.addExtra(SplashAd.KEY_DISPLAY_DOWNLOADINFO, fw.Code);
         builder.addExtra(SplashAd.KEY_POPDIALOG_DOWNLOAD, String.valueOf(z));
-        int intFromMap = ATInitMediation.getIntFromMap(map, ATAdConst.KEY.AD_WIDTH, 0);
-        int intFromMap2 = ATInitMediation.getIntFromMap(map, ATAdConst.KEY.AD_HEIGHT, 0);
+        int intFromMap = ATInitMediation.getIntFromMap(map, "key_width", 0);
+        int intFromMap2 = ATInitMediation.getIntFromMap(map, "key_height", 0);
         if (intFromMap > 0 && intFromMap2 > 0) {
             builder.setWidth(a(context, intFromMap));
             builder.setHeight(a(context, intFromMap2));
         }
-        this.b = new SplashAd(context.getApplicationContext(), this.f8897a, builder.build(), new AnonymousClass1());
+        this.b = new SplashAd(context.getApplicationContext(), this.f6057a, builder.build(), new AnonymousClass1());
         if (this.f && this.h > 0.0d) {
             if (ATSDK.isNetworkLogDebug()) {
                 Log.i("BaiduATSplashAdapter", "setBidFloor:" + ((int) this.h));
@@ -162,15 +163,15 @@ public class BaiduATSplashAdapter extends CustomSplashAdapter {
     static /* synthetic */ void a(BaiduATSplashAdapter baiduATSplashAdapter, Context context, boolean z, Map map) {
         RequestParameters.Builder builder = new RequestParameters.Builder();
         builder.addExtra("timeout", String.valueOf(baiduATSplashAdapter.mFetchAdTimeout));
-        builder.addExtra(SplashAd.KEY_DISPLAY_DOWNLOADINFO, "true");
+        builder.addExtra(SplashAd.KEY_DISPLAY_DOWNLOADINFO, fw.Code);
         builder.addExtra(SplashAd.KEY_POPDIALOG_DOWNLOAD, String.valueOf(z));
-        int intFromMap = ATInitMediation.getIntFromMap(map, ATAdConst.KEY.AD_WIDTH, 0);
-        int intFromMap2 = ATInitMediation.getIntFromMap(map, ATAdConst.KEY.AD_HEIGHT, 0);
+        int intFromMap = ATInitMediation.getIntFromMap(map, "key_width", 0);
+        int intFromMap2 = ATInitMediation.getIntFromMap(map, "key_height", 0);
         if (intFromMap > 0 && intFromMap2 > 0) {
             builder.setWidth(a(context, intFromMap));
             builder.setHeight(a(context, intFromMap2));
         }
-        baiduATSplashAdapter.b = new SplashAd(context.getApplicationContext(), baiduATSplashAdapter.f8897a, builder.build(), new AnonymousClass1());
+        baiduATSplashAdapter.b = new SplashAd(context.getApplicationContext(), baiduATSplashAdapter.f6057a, builder.build(), new AnonymousClass1());
         if (baiduATSplashAdapter.f && baiduATSplashAdapter.h > 0.0d) {
             if (ATSDK.isNetworkLogDebug()) {
                 Log.i("BaiduATSplashAdapter", "setBidFloor:" + ((int) baiduATSplashAdapter.h));
@@ -181,10 +182,10 @@ public class BaiduATSplashAdapter extends CustomSplashAdapter {
     }
 
     private void a(Map<String, Object> map) {
-        this.f8898c = ATInitMediation.getStringFromMap(map, "app_id");
-        this.f8897a = ATInitMediation.getStringFromMap(map, "ad_place_id");
+        this.f6058c = ATInitMediation.getStringFromMap(map, "app_id");
+        this.f6057a = ATInitMediation.getStringFromMap(map, "ad_place_id");
         this.h = ATInitMediation.getDoubleFromMap(map, "bid_floor");
-        this.d = ATInitMediation.getBooleanFromMap(map, ATAdConst.KEY.AD_CLICK_CONFIRM_STATUS);
+        this.d = ATInitMediation.getBooleanFromMap(map, "ad_click_confirm_status");
     }
 
     static /* synthetic */ int d(BaiduATSplashAdapter baiduATSplashAdapter) {
@@ -218,11 +219,10 @@ public class BaiduATSplashAdapter extends CustomSplashAdapter {
             ATBiddingListener aTBiddingListener = baiduATSplashAdapter.mBiddingListener;
             StringBuilder sb = new StringBuilder();
             sb.append(System.currentTimeMillis());
-            aTBiddingListener.onC2SBiddingResultWithCache(ATBiddingResult.success(d, sb.toString(), baiduATBiddingNotice, ATAdConst.CURRENCY.RMB_CENT), null);
+            aTBiddingListener.onC2SBiddingResultWithCache(ATBiddingResult.success(d, sb.toString(), baiduATBiddingNotice, ATAdConst.CURRENCY.RMB_CENT), (BaseAd) null);
         }
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public void destory() {
         SplashAd splashAd = this.b;
         if (splashAd != null) {
@@ -230,22 +230,18 @@ public class BaiduATSplashAdapter extends CustomSplashAdapter {
         }
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public String getNetworkName() {
         return BaiduATInitManager.getInstance().getNetworkName();
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public String getNetworkPlacementId() {
-        return this.f8897a;
+        return this.f6057a;
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public String getNetworkSDKVersion() {
         return BaiduATInitManager.getInstance().getNetworkVersion();
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public boolean isAdReady() {
         SplashAd splashAd = this.b;
         if (splashAd != null) {
@@ -254,27 +250,24 @@ public class BaiduATSplashAdapter extends CustomSplashAdapter {
         return false;
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public void loadCustomNetworkAd(final Context context, final Map<String, Object> map, final Map<String, Object> map2) {
         this.e = false;
-        this.f8898c = ATInitMediation.getStringFromMap(map, "app_id");
-        this.f8897a = ATInitMediation.getStringFromMap(map, "ad_place_id");
+        this.f6058c = ATInitMediation.getStringFromMap(map, "app_id");
+        this.f6057a = ATInitMediation.getStringFromMap(map, "ad_place_id");
         this.h = ATInitMediation.getDoubleFromMap(map, "bid_floor");
-        this.d = ATInitMediation.getBooleanFromMap(map, ATAdConst.KEY.AD_CLICK_CONFIRM_STATUS);
-        if (TextUtils.isEmpty(this.f8898c) || TextUtils.isEmpty(this.f8897a)) {
+        this.d = ATInitMediation.getBooleanFromMap(map, "ad_click_confirm_status");
+        if (TextUtils.isEmpty(this.f6058c) || TextUtils.isEmpty(this.f6057a)) {
             notifyATLoadFail("", " app_id ,ad_place_id is empty.");
             return;
         }
         final Context applicationContext = context.getApplicationContext();
         BaiduATInitManager.getInstance().initSDK(applicationContext, map, new MediationInitCallback() { // from class: com.anythink.network.baidu.BaiduATSplashAdapter.2
-            @Override // com.anythink.core.api.MediationInitCallback
             public final void onFail(String str) {
                 if (BaiduATSplashAdapter.this.mLoadListener != null) {
                     BaiduATSplashAdapter.this.mLoadListener.onAdLoadError("", str);
                 }
             }
 
-            @Override // com.anythink.core.api.MediationInitCallback
             public final void onSuccess() {
                 if (BaiduATSplashAdapter.this.getMixedFormatAdType() == 0) {
                     BaiduATSplashAdapter.this.thirdPartyLoad(new BaiduATAdapter(), context, map, map2);
@@ -299,12 +292,11 @@ public class BaiduATSplashAdapter extends CustomSplashAdapter {
         }
         this.mDismissType = 99;
         if (this.mImpressionListener != null) {
-            this.mImpressionListener.onSplashAdShowFail(ErrorCode.getErrorCode(ErrorCode.adShowError, "", "Baidu Splash show fail: mSplashAd = null"));
+            this.mImpressionListener.onSplashAdShowFail(ErrorCode.getErrorCode("4006", "", "Baidu Splash show fail: mSplashAd = null"));
             this.mImpressionListener.onSplashAdDismiss();
         }
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public boolean startBiddingRequest(Context context, Map<String, Object> map, Map<String, Object> map2, ATBiddingListener aTBiddingListener) {
         this.f = true;
         if (getMixedFormatAdType() == 0) {

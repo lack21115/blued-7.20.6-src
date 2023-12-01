@@ -8,20 +8,20 @@ import java.util.Set;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f25972a;
+    public final String f12284a;
     public final String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final String f25973c;
+    public final String f12285c;
     public final String d;
     public int f = 0;
     public int g = 0;
     public final Set<e> e = new HashSet();
 
     public a(String str, String str2, String str3, String str4) {
-        this.f25972a = str2;
+        this.f12284a = str2;
         this.b = str3;
-        this.f25973c = str4;
+        this.f12285c = str4;
         this.d = str;
     }
 
@@ -46,6 +46,6 @@ public class a {
     }
 
     public String toString() {
-        return "DownloadData{url='" + this.d + "', md5='" + this.f25973c + "', appName='" + this.f25972a + "', pkgName='" + this.b + "'}";
+        return "DownloadData{url='" + this.d + "', md5='" + this.f12285c + "', appName='" + this.f12284a + "', pkgName='" + this.b + "'}";
     }
 }

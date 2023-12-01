@@ -35,36 +35,36 @@ public class NativeWindowImageView extends AutoScaleSizeRelativeLayout implement
     private ProgressBar S;
 
     /* renamed from: a  reason: collision with root package name */
-    private Rect f23009a;
+    private Rect f9401a;
     private float b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f23010c;
+    private int f9402c;
     private boolean d;
 
     public NativeWindowImageView(Context context) {
         super(context);
-        this.f23009a = new Rect();
+        this.f9401a = new Rect();
         this.b = 1.3007812f;
-        this.f23010c = 0;
+        this.f9402c = 0;
         this.d = true;
         Code(context);
     }
 
     public NativeWindowImageView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f23009a = new Rect();
+        this.f9401a = new Rect();
         this.b = 1.3007812f;
-        this.f23010c = 0;
+        this.f9402c = 0;
         this.d = true;
         Code(context);
     }
 
     public NativeWindowImageView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f23009a = new Rect();
+        this.f9401a = new Rect();
         this.b = 1.3007812f;
-        this.f23010c = 0;
+        this.f9402c = 0;
         this.d = true;
         Code(context);
     }
@@ -126,7 +126,7 @@ public class NativeWindowImageView extends AutoScaleSizeRelativeLayout implement
         }
         Matrix matrix = new Matrix();
         matrix.setScale(f, f);
-        matrix.postTranslate(0.0f, this.f23010c);
+        matrix.postTranslate(0.0f, this.f9402c);
         this.C.setImageMatrix(matrix);
         this.C.invalidate();
     }
@@ -146,11 +146,11 @@ public class NativeWindowImageView extends AutoScaleSizeRelativeLayout implement
         getLocalVisibleRect(rect);
         Rect rect2 = new Rect();
         getGlobalVisibleRect(rect2);
-        this.f23009a.left = rect2.left - rect.left;
-        Rect rect3 = this.f23009a;
+        this.f9401a.left = rect2.left - rect.left;
+        Rect rect3 = this.f9401a;
         rect3.right = rect3.left + getWidth();
-        this.f23009a.top = rect2.top - rect.top;
-        Rect rect4 = this.f23009a;
+        this.f9401a.top = rect2.top - rect.top;
+        Rect rect4 = this.f9401a;
         rect4.bottom = rect4.top + getHeight();
     }
 
@@ -182,15 +182,15 @@ public class NativeWindowImageView extends AutoScaleSizeRelativeLayout implement
         int width = (int) (getWidth() * this.b);
         if (Code(width)) {
             int height = (this.L.height() - width) / 2;
-            if (this.f23009a.top - this.L.top <= height) {
+            if (this.f9401a.top - this.L.top <= height) {
                 i = 0;
-            } else if (this.L.bottom - this.f23009a.bottom <= height) {
-                this.f23010c = this.f23009a.height() - width;
+            } else if (this.L.bottom - this.f9401a.bottom <= height) {
+                this.f9402c = this.f9401a.height() - width;
                 return;
             } else {
-                i = (this.L.top + height) - this.f23009a.top;
+                i = (this.L.top + height) - this.f9401a.top;
             }
-            this.f23010c = i;
+            this.f9402c = i;
         }
     }
 
@@ -247,16 +247,14 @@ public class NativeWindowImageView extends AutoScaleSizeRelativeLayout implement
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         I();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         B();
     }

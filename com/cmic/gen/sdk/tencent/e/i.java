@@ -10,12 +10,12 @@ import javax.crypto.Cipher;
 public class i {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f21665a = i.class.getSimpleName();
+    private static final String f8059a = i.class.getSimpleName();
     private static i d = null;
     private PublicKey b = null;
 
     /* renamed from: c  reason: collision with root package name */
-    private PublicKey f21666c = null;
+    private PublicKey f8060c = null;
 
     private i() {
         if (0 == 0) {
@@ -26,7 +26,7 @@ public class i {
                 return;
             }
         }
-        if (this.f21666c == null) {
+        if (this.f8060c == null) {
             c();
         }
     }
@@ -48,7 +48,7 @@ public class i {
 
     private void c() {
         try {
-            this.f21666c = KeyFactory.getInstance("RSA").generatePublic(new X509EncodedKeySpec(Base64.decode("MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuyqBGJVxu+5Z2ZwItIhl\noxI53CVpYUR3OWAQyAQNcMhDDf3nGsxLLHP8kGWqrpLn1uAIgI+EIAl0sM+i1leD\nFD+sYU2rkUVZgpwO7ly+THBFw/YcZNwS094NBdhzxmCCFbCKHVNzDLirlV9T2q4k\nJhjaEmyCOtSU6+mdjcHhbcbF6lKYx8tfQlpPmyM5suFY138qtEoB4b+q/j8q22MI\naUotg1Av257RuMh97hAwoi5D7HS5LH0piLIN/au/X08rxbXnWNdgQtFtUeCNy3vw\nkO0ykg5qH942X8poQ+a9GgBUeDBpY4GSIv6/qq+zJxiJxpoL0SGKAP3FlcuLr07f\nxwIDAQAB", 0)));
+            this.f8060c = KeyFactory.getInstance("RSA").generatePublic(new X509EncodedKeySpec(Base64.decode("MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuyqBGJVxu+5Z2ZwItIhl\noxI53CVpYUR3OWAQyAQNcMhDDf3nGsxLLHP8kGWqrpLn1uAIgI+EIAl0sM+i1leD\nFD+sYU2rkUVZgpwO7ly+THBFw/YcZNwS094NBdhzxmCCFbCKHVNzDLirlV9T2q4k\nJhjaEmyCOtSU6+mdjcHhbcbF6lKYx8tfQlpPmyM5suFY138qtEoB4b+q/j8q22MI\naUotg1Av257RuMh97hAwoi5D7HS5LH0piLIN/au/X08rxbXnWNdgQtFtUeCNy3vw\nkO0ykg5qH942X8poQ+a9GgBUeDBpY4GSIv6/qq+zJxiJxpoL0SGKAP3FlcuLr07f\nxwIDAQAB", 0)));
         } catch (NullPointerException e) {
             throw new Exception("公钥输入流为空");
         }
@@ -56,7 +56,7 @@ public class i {
 
     public String a(byte[] bArr) {
         if (this.b == null) {
-            c.a(f21665a, "mServerPublicKey == null");
+            c.a(f8059a, "mServerPublicKey == null");
             return "";
         }
         try {
@@ -71,12 +71,12 @@ public class i {
 
     public String b(byte[] bArr) {
         if (this.b == null) {
-            c.a(f21665a, "mServerPublicKey == null");
+            c.a(f8059a, "mServerPublicKey == null");
             return null;
         }
         try {
             Cipher cipher = Cipher.getInstance("RSA/ECB/OAEPWithSHA256AndMGF1Padding");
-            cipher.init(1, this.f21666c);
+            cipher.init(1, this.f8060c);
             return Base64.encodeToString(cipher.doFinal(bArr), 0);
         } catch (Exception e) {
             e.printStackTrace();

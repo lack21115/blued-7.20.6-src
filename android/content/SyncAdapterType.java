@@ -3,7 +3,6 @@ package android.content;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
-import com.alipay.sdk.util.i;
 import com.blued.das.live.LiveProtos;
 
 /* loaded from: source-9557208-dex2jar.jar:android/content/SyncAdapterType.class */
@@ -145,7 +144,7 @@ public class SyncAdapterType implements Parcelable {
     }
 
     public String toString() {
-        return this.isKey ? "SyncAdapterType Key {name=" + this.authority + ", type=" + this.accountType + i.d : "SyncAdapterType {name=" + this.authority + ", type=" + this.accountType + ", userVisible=" + this.userVisible + ", supportsUploading=" + this.supportsUploading + ", isAlwaysSyncable=" + this.isAlwaysSyncable + ", allowParallelSyncs=" + this.allowParallelSyncs + ", settingsActivity=" + this.settingsActivity + i.d;
+        return this.isKey ? "SyncAdapterType Key {name=" + this.authority + ", type=" + this.accountType + "}" : "SyncAdapterType {name=" + this.authority + ", type=" + this.accountType + ", userVisible=" + this.userVisible + ", supportsUploading=" + this.supportsUploading + ", isAlwaysSyncable=" + this.isAlwaysSyncable + ", allowParallelSyncs=" + this.allowParallelSyncs + ", settingsActivity=" + this.settingsActivity + "}";
     }
 
     @Override // android.os.Parcelable

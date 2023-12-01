@@ -26,7 +26,7 @@ public class HmsMessageService extends Service {
     public static final String SUBJECT_ID = "subject_id";
 
     /* renamed from: a  reason: collision with root package name */
-    private final Messenger f22831a = new Messenger(new e(new b()));
+    private final Messenger f9223a = new Messenger(new e(new b()));
 
     /* loaded from: source-7994992-dex2jar.jar:com/huawei/hms/push/HmsMessageService$b.class */
     class b implements e.a {
@@ -255,7 +255,7 @@ public class HmsMessageService extends Service {
     @Override // android.app.Service
     public IBinder onBind(Intent intent) {
         HMSLog.i("HmsMessageService", "start to bind");
-        return this.f22831a.getBinder();
+        return this.f9223a.getBinder();
     }
 
     public void onDeletedMessages() {

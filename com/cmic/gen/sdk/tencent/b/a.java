@@ -13,18 +13,18 @@ import java.lang.reflect.Method;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static a f21613a;
+    private static a f8007a;
     private static long b;
 
     /* renamed from: c  reason: collision with root package name */
-    private C0329a f21614c = null;
+    private C0159a f8008c = null;
 
     /* renamed from: com.cmic.gen.sdk.tencent.b.a$a  reason: collision with other inner class name */
     /* loaded from: source-7206380-dex2jar.jar:com/cmic/gen/sdk/tencent/b/a$a.class */
-    public static class C0329a {
+    public static class C0159a {
 
         /* renamed from: a  reason: collision with root package name */
-        private int f21615a = -1;
+        private int f8009a = -1;
         private int b = -1;
 
         public int a() {
@@ -36,23 +36,23 @@ public class a {
     }
 
     public static a a() {
-        if (f21613a == null) {
-            f21613a = new a();
+        if (f8007a == null) {
+            f8007a = new a();
         }
-        return f21613a;
+        return f8007a;
     }
 
     private void a(Context context, boolean z) {
         if (Build.VERSION.SDK_INT < 22) {
-            this.f21614c.f21615a = -1;
+            this.f8008c.f8009a = -1;
             return;
         }
         SubscriptionManager from = SubscriptionManager.from(context.getApplicationContext());
         if (from != null) {
             try {
-                if (this.f21614c.f21615a == -1 && Build.VERSION.SDK_INT >= 24) {
-                    this.f21614c.b = SubscriptionManager.getDefaultDataSubscriptionId();
-                    c.b("UMCTelephonyManagement", "android 7.0及以上手机getDefaultDataSubscriptionId适配成功: dataSubId = " + this.f21614c.b);
+                if (this.f8008c.f8009a == -1 && Build.VERSION.SDK_INT >= 24) {
+                    this.f8008c.b = SubscriptionManager.getDefaultDataSubscriptionId();
+                    c.b("UMCTelephonyManagement", "android 7.0及以上手机getDefaultDataSubscriptionId适配成功: dataSubId = " + this.f8008c.b);
                     return;
                 }
             } catch (Exception e) {
@@ -61,8 +61,8 @@ public class a {
             try {
                 Object invoke = from.getClass().getMethod("getDefaultDataSubId", new Class[0]).invoke(from, new Object[0]);
                 if ((invoke instanceof Integer) || (invoke instanceof Long)) {
-                    this.f21614c.b = ((Integer) invoke).intValue();
-                    c.b("UMCTelephonyManagement", "android 7.0以下手机getDefaultDataSubId适配成功: dataSubId = " + this.f21614c.b);
+                    this.f8008c.b = ((Integer) invoke).intValue();
+                    c.b("UMCTelephonyManagement", "android 7.0以下手机getDefaultDataSubId适配成功: dataSubId = " + this.f8008c.b);
                     return;
                 }
             } catch (Exception e2) {
@@ -71,8 +71,8 @@ public class a {
             try {
                 Object invoke2 = from.getClass().getMethod("getDefaultDataSubscriptionId", new Class[0]).invoke(from, new Object[0]);
                 if ((invoke2 instanceof Integer) || (invoke2 instanceof Long)) {
-                    this.f21614c.b = ((Integer) invoke2).intValue();
-                    c.b("UMCTelephonyManagement", "反射getDefaultDataSubscriptionId适配成功: dataSubId = " + this.f21614c.b);
+                    this.f8008c.b = ((Integer) invoke2).intValue();
+                    c.b("UMCTelephonyManagement", "反射getDefaultDataSubscriptionId适配成功: dataSubId = " + this.f8008c.b);
                 }
             } catch (Exception e3) {
                 c.a("UMCTelephonyManagement", "getDefaultDataSubscriptionId-->getDefaultDataSubscriptionId 反射出错");
@@ -103,8 +103,8 @@ public class a {
         if (m.d()) {
             try {
                 Method method = telephonyManager.getClass().getMethod("getDataNetworkType", Integer.TYPE);
-                c.b("UMCTelephonyManagement", "data dataNetworkType defaultDataSubId = " + this.f21614c.b);
-                int intValue = ((Integer) method.invoke(telephonyManager, Integer.valueOf(this.f21614c.b))).intValue();
+                c.b("UMCTelephonyManagement", "data dataNetworkType defaultDataSubId = " + this.f8008c.b);
+                int intValue = ((Integer) method.invoke(telephonyManager, Integer.valueOf(this.f8008c.b))).intValue();
                 c.b("UMCTelephonyManagement", "data dataNetworkType ---------" + intValue);
                 int i = intValue;
                 if (intValue == 0) {
@@ -158,19 +158,19 @@ public class a {
     public void a(Context context, boolean z, boolean z2) {
         long currentTimeMillis = System.currentTimeMillis() - b;
         if (currentTimeMillis >= 5000 || currentTimeMillis <= 0) {
-            this.f21614c = new C0329a();
+            this.f8008c = new C0159a();
             if (z2) {
                 a(context, z);
                 if (m.e() && m.d()) {
                     c.b("UMCTelephonyManagement", "华为手机兼容性处理");
-                    if (this.f21614c.b == 0 || this.f21614c.b == 1) {
-                        if (this.f21614c.f21615a == -1) {
-                            C0329a c0329a = this.f21614c;
-                            c0329a.f21615a = c0329a.b;
+                    if (this.f8008c.b == 0 || this.f8008c.b == 1) {
+                        if (this.f8008c.f8009a == -1) {
+                            C0159a c0159a = this.f8008c;
+                            c0159a.f8009a = c0159a.b;
                         }
-                        this.f21614c.b = -1;
+                        this.f8008c.b = -1;
                     }
-                    if ((this.f21614c.f21615a != -1 || this.f21614c.b != -1) && Build.VERSION.SDK_INT >= 21) {
+                    if ((this.f8008c.f8009a != -1 || this.f8008c.b != -1) && Build.VERSION.SDK_INT >= 21) {
                         b(context);
                     }
                 }
@@ -179,12 +179,12 @@ public class a {
         }
     }
 
-    public C0329a b() {
-        C0329a c0329a = this.f21614c;
-        C0329a c0329a2 = c0329a;
-        if (c0329a == null) {
-            c0329a2 = new C0329a();
+    public C0159a b() {
+        C0159a c0159a = this.f8008c;
+        C0159a c0159a2 = c0159a;
+        if (c0159a == null) {
+            c0159a2 = new C0159a();
         }
-        return c0329a2;
+        return c0159a2;
     }
 }

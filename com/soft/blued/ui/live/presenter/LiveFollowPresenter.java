@@ -52,14 +52,14 @@ public class LiveFollowPresenter extends MvpPresenter {
     class AnonymousClass6 implements DialogInterface.OnClickListener {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ BluedLiveListData f31259a;
+        final /* synthetic */ BluedLiveListData f17569a;
         final /* synthetic */ LiveFollowPresenter b;
 
         @Override // android.content.DialogInterface.OnClickListener
         public void onClick(DialogInterface dialogInterface, int i) {
             Tracker.onClick(dialogInterface, i);
             if (!BluedPreferences.aL()) {
-                this.b.a(this.f31259a);
+                this.b.a(this.f17569a);
                 return;
             }
             final AlertDialog create = new AlertDialog.Builder(this.b.h()).create();
@@ -82,7 +82,7 @@ public class LiveFollowPresenter extends MvpPresenter {
                         dialog.cancel();
                     }
                     BluedPreferences.aM();
-                    AnonymousClass6.this.b.a(AnonymousClass6.this.f31259a);
+                    AnonymousClass6.this.b.a(AnonymousClass6.this.f17569a);
                 }
             });
         }
@@ -109,7 +109,7 @@ public class LiveFollowPresenter extends MvpPresenter {
 
             @Override // com.soft.blued.utils.UserRelationshipUtils.IAddOrRemoveAttentionDone
             public void b(String str) {
-                LiveFollowPresenter.this.a("recommend_list_user_no_more", (String) bluedLiveListData, false);
+                LiveFollowPresenter.this.a("recommend_list_user_no_more", bluedLiveListData, false);
             }
 
             @Override // com.soft.blued.utils.UserRelationshipUtils.IAddOrRemoveAttentionDone
@@ -151,7 +151,6 @@ public class LiveFollowPresenter extends MvpPresenter {
 
     private void d(final IFetchDataListener iFetchDataListener) {
         a(new BluedUIHttpResponse<BluedEntity<LiveRecommendModel, LiveRecommendExtra>>(g()) { // from class: com.soft.blued.ui.live.presenter.LiveFollowPresenter.5
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity<LiveRecommendModel, LiveRecommendExtra> bluedEntity) {
                 LiveRecommendExtra liveRecommendExtra = bluedEntity.extra;
                 if (liveRecommendExtra == null) {
@@ -162,7 +161,7 @@ public class LiveFollowPresenter extends MvpPresenter {
                     if (bluedEntity.data == null) {
                         bluedEntity.data = new ArrayList();
                     }
-                    LiveFollowPresenter.this.a("recommend_list_user", (String) bluedEntity.data);
+                    LiveFollowPresenter.this.a("recommend_list_user", bluedEntity.data);
                     LiveFollowPresenter.this.f_("recommend_list_user_has_more");
                 } else {
                     LiveFollowPresenter.this.k = bluedEntity.data;
@@ -187,7 +186,6 @@ public class LiveFollowPresenter extends MvpPresenter {
         return bluedLiveListData;
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void a(LifecycleOwner lifecycleOwner) {
         super.a(lifecycleOwner);
         LiveEventBus.get(EventBusConstant.KEY_EVENT_DELETE_ALL_RECOMMEND_USER, String.class).observe(lifecycleOwner, new Observer<String>() { // from class: com.soft.blued.ui.live.presenter.LiveFollowPresenter.1
@@ -199,7 +197,6 @@ public class LiveFollowPresenter extends MvpPresenter {
         });
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void a(IFetchDataListener iFetchDataListener) {
         this.h = 1;
         this.l = 1;
@@ -212,14 +209,12 @@ public class LiveFollowPresenter extends MvpPresenter {
         d(iFetchDataListener);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void b(IFetchDataListener iFetchDataListener) {
         c(iFetchDataListener);
     }
 
     public void c(final IFetchDataListener iFetchDataListener) {
         LiveHttpUtils.b(new BluedUIHttpResponse<BluedEntityA<BluedLiveListData>>(g()) { // from class: com.soft.blued.ui.live.presenter.LiveFollowPresenter.3
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<BluedLiveListData> bluedEntityA) {
                 if (bluedEntityA == null || !bluedEntityA.hasData()) {
@@ -237,13 +232,11 @@ public class LiveFollowPresenter extends MvpPresenter {
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str) {
                 LiveFollowPresenter.this.m = false;
                 return super.onUIFailure(i, str);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish(boolean z) {
                 super.onUIFinish(z);
                 Logger.e("LiveFollowPresenter", "onFinish");
@@ -254,13 +247,11 @@ public class LiveFollowPresenter extends MvpPresenter {
 
     public void m() {
         a(new BluedUIHttpResponse<BluedEntity<LiveRecommendModel, LiveRecommendExtra>>(g()) { // from class: com.soft.blued.ui.live.presenter.LiveFollowPresenter.4
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str) {
                 LiveFollowPresenter.this.n = false;
                 return super.onUIFailure(i, str);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish(boolean z) {
                 super.onUIFinish(z);
                 if (LiveFollowPresenter.this.n) {
@@ -270,7 +261,6 @@ public class LiveFollowPresenter extends MvpPresenter {
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity<LiveRecommendModel, LiveRecommendExtra> bluedEntity) {
                 if (bluedEntity == null) {
                     LiveFollowPresenter.this.n = false;
@@ -280,7 +270,7 @@ public class LiveFollowPresenter extends MvpPresenter {
                     LiveFollowPresenter.this.j = bluedEntity.extra.last_id;
                 }
                 if (bluedEntity.data != null) {
-                    LiveFollowPresenter.this.a("more_recommend_list_new_user", (String) bluedEntity.data, false);
+                    LiveFollowPresenter.this.a("more_recommend_list_new_user", bluedEntity.data, false);
                 }
                 LiveFollowPresenter.this.n = bluedEntity.hasMore();
                 if (LiveFollowPresenter.this.n) {

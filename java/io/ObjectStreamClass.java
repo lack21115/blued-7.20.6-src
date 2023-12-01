@@ -229,8 +229,8 @@ public class ObjectStreamClass implements Serializable {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static boolean isPrimitiveType(char c2) {
-        return (c2 == '[' || c2 == 'L') ? false : true;
+    public static boolean isPrimitiveType(char c) {
+        return (c == '[' || c == 'L') ? false : true;
     }
 
     static boolean isSerializable(Class<?> cls) {

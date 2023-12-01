@@ -5,6 +5,7 @@ import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewbinding.ViewBinding;
 import androidx.viewpager.widget.ViewPager;
 import com.blued.android.module.common.base.mvi.MVIBaseFragment;
 import com.blued.android.module.common.extensions.DialogFragmentViewBindingProperty;
@@ -32,10 +33,10 @@ import kotlin.reflect.KProperty;
 @Metadata
 /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/user/fragment/VirtualImagePackageFragment.class */
 public final class VirtualImagePackageFragment extends MVIBaseFragment<VirtualImageVM> {
-    static final /* synthetic */ KProperty<Object>[] b = {Reflection.a(new PropertyReference1Impl(VirtualImagePackageFragment.class, "vb", "getVb()Lcom/soft/blued/databinding/FragmentVirtualImagePackageBinding;", 0))};
+    static final /* synthetic */ KProperty<Object>[] b = {(KProperty) Reflection.a(new PropertyReference1Impl(VirtualImagePackageFragment.class, "vb", "getVb()Lcom/soft/blued/databinding/FragmentVirtualImagePackageBinding;", 0))};
 
     /* renamed from: c  reason: collision with root package name */
-    private final ViewBindingProperty f34202c;
+    private final ViewBindingProperty f20511c;
     private List<VirtualImageModel.CategoryModel> d;
     private VirtualImageFragment.ImageCallBack e;
     private final List<VirtualImagePackageGoodsFragment> f;
@@ -48,42 +49,42 @@ public final class VirtualImagePackageFragment extends MVIBaseFragment<VirtualIm
     public static final class GoodsPagerAdapter extends FragmentPagerAdapter {
 
         /* renamed from: a  reason: collision with root package name */
-        private final List<VirtualImagePackageGoodsFragment> f34203a;
+        private final List<VirtualImagePackageGoodsFragment> f20512a;
         private final List<Integer> b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f34204c;
+        private int f20513c;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public GoodsPagerAdapter(FragmentManager fragmentManager) {
             super(fragmentManager, 1);
             Intrinsics.e(fragmentManager, "fragmentManager");
-            this.f34203a = new ArrayList();
+            this.f20512a = new ArrayList();
             this.b = new ArrayList();
         }
 
         public final void a(int i) {
-            this.f34203a.remove(i);
+            this.f20512a.remove(i);
             this.b.remove(i);
         }
 
-        public final void a(int i, VirtualImagePackageGoodsFragment fragment) {
-            Intrinsics.e(fragment, "fragment");
-            this.f34203a.add(i, fragment);
+        public final void a(int i, VirtualImagePackageGoodsFragment virtualImagePackageGoodsFragment) {
+            Intrinsics.e(virtualImagePackageGoodsFragment, "fragment");
+            this.f20512a.add(i, virtualImagePackageGoodsFragment);
             List<Integer> list = this.b;
-            int i2 = this.f34204c;
-            this.f34204c = i2 + 1;
+            int i2 = this.f20513c;
+            this.f20513c = i2 + 1;
             list.add(i, Integer.valueOf(i2));
         }
 
         @Override // androidx.viewpager.widget.PagerAdapter
         public int getCount() {
-            return this.f34203a.size();
+            return this.f20512a.size();
         }
 
         @Override // androidx.fragment.app.FragmentPagerAdapter
         public Fragment getItem(int i) {
-            return this.f34203a.get(i);
+            return (Fragment) this.f20512a.get(i);
         }
 
         @Override // androidx.fragment.app.FragmentPagerAdapter
@@ -92,31 +93,31 @@ public final class VirtualImagePackageFragment extends MVIBaseFragment<VirtualIm
         }
 
         @Override // androidx.viewpager.widget.PagerAdapter
-        public int getItemPosition(Object fm) {
-            Intrinsics.e(fm, "fm");
-            if (fm instanceof VirtualImagePackageGoodsFragment) {
-                if (this.f34203a.contains(fm)) {
-                    return this.f34203a.indexOf(fm);
+        public int getItemPosition(Object obj) {
+            Intrinsics.e(obj, "fm");
+            if (obj instanceof VirtualImagePackageGoodsFragment) {
+                if (this.f20512a.contains(obj)) {
+                    return this.f20512a.indexOf(obj);
                 }
                 return -2;
             }
-            return super.getItemPosition(fm);
+            return super.getItemPosition(obj);
         }
     }
 
     public VirtualImagePackageFragment() {
-        super(R.layout.fragment_virtual_image_package);
-        this.f34202c = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<VirtualImagePackageFragment, FragmentVirtualImagePackageBinding>() { // from class: com.soft.blued.ui.user.fragment.VirtualImagePackageFragment$special$$inlined$viewBindingFragment$default$1
-            @Override // kotlin.jvm.functions.Function1
+        super((int) R.layout.fragment_virtual_image_package);
+        this.f20511c = ((Fragment) this) instanceof DialogFragment ? (ViewBindingProperty) new DialogFragmentViewBindingProperty(new Function1<VirtualImagePackageFragment, FragmentVirtualImagePackageBinding>() { // from class: com.soft.blued.ui.user.fragment.VirtualImagePackageFragment$special$$inlined$viewBindingFragment$default$1
+            /* JADX WARN: Incorrect types in method signature: (Lcom/soft/blued/ui/user/fragment/VirtualImagePackageFragment;)Lcom/soft/blued/databinding/FragmentVirtualImagePackageBinding; */
             /* renamed from: a */
-            public final FragmentVirtualImagePackageBinding invoke(VirtualImagePackageFragment fragment) {
+            public final ViewBinding invoke(Fragment fragment) {
                 Intrinsics.e(fragment, "fragment");
                 return FragmentVirtualImagePackageBinding.a(fragment.requireView());
             }
         }) : new FragmentViewBindingProperty(new Function1<VirtualImagePackageFragment, FragmentVirtualImagePackageBinding>() { // from class: com.soft.blued.ui.user.fragment.VirtualImagePackageFragment$special$$inlined$viewBindingFragment$default$2
-            @Override // kotlin.jvm.functions.Function1
+            /* JADX WARN: Incorrect types in method signature: (Lcom/soft/blued/ui/user/fragment/VirtualImagePackageFragment;)Lcom/soft/blued/databinding/FragmentVirtualImagePackageBinding; */
             /* renamed from: a */
-            public final FragmentVirtualImagePackageBinding invoke(VirtualImagePackageFragment fragment) {
+            public final ViewBinding invoke(Fragment fragment) {
                 Intrinsics.e(fragment, "fragment");
                 return FragmentVirtualImagePackageBinding.a(fragment.requireView());
             }
@@ -144,7 +145,7 @@ public final class VirtualImagePackageFragment extends MVIBaseFragment<VirtualIm
     }
 
     private final FragmentVirtualImagePackageBinding d() {
-        return (FragmentVirtualImagePackageBinding) this.f34202c.b(this, b[0]);
+        return (FragmentVirtualImagePackageBinding) this.f20511c.b(this, b[0]);
     }
 
     private final void e() {
@@ -155,7 +156,7 @@ public final class VirtualImagePackageFragment extends MVIBaseFragment<VirtualIm
         int size = a().size();
         for (int i = 0; i < size; i++) {
             VirtualImageModel.CategoryModel categoryModel = a().get(i);
-            PageTabLayout.Tab a2 = d.f29027a.a(i);
+            PageTabLayout.Tab a2 = d.f15337a.a(i);
             if (a2 != null) {
                 a2.a(categoryModel.getName());
             }
@@ -179,19 +180,19 @@ public final class VirtualImagePackageFragment extends MVIBaseFragment<VirtualIm
         return this.e;
     }
 
-    public final void b(List<VirtualImageModel.CategoryModel> newData) {
+    public final void b(List<VirtualImageModel.CategoryModel> list) {
         int i;
-        Intrinsics.e(newData, "newData");
-        this.d = newData;
-        if (newData.isEmpty()) {
+        Intrinsics.e(list, "newData");
+        this.d = list;
+        if (list.isEmpty()) {
             this.h = 0;
-        } else if (this.h >= newData.size()) {
-            this.h = newData.size() - 1;
+        } else if (this.h >= list.size()) {
+            this.h = list.size() - 1;
         }
         ArrayList<Number> arrayList = new ArrayList();
-        for (IndexedValue indexedValue : CollectionsKt.d(CollectionsKt.i((Iterable) this.f))) {
+        for (IndexedValue indexedValue : CollectionsKt.d(CollectionsKt.i(this.f))) {
             boolean z = false;
-            for (VirtualImageModel.CategoryModel categoryModel : newData) {
+            for (VirtualImageModel.CategoryModel categoryModel : list) {
                 int id = categoryModel.getId();
                 Integer F = ((VirtualImagePackageGoodsFragment) indexedValue.b()).F();
                 if (F != null && id == F.intValue()) {
@@ -218,14 +219,14 @@ public final class VirtualImagePackageFragment extends MVIBaseFragment<VirtualIm
                 arrayList2.add(Integer.valueOf(F2.intValue()));
             }
         }
-        int size = newData.size();
+        int size = list.size();
         int i2 = 0;
         while (true) {
             int i3 = i2;
             if (i3 >= size) {
                 break;
             }
-            VirtualImageModel.CategoryModel categoryModel2 = newData.get(i3);
+            VirtualImageModel.CategoryModel categoryModel2 = list.get(i3);
             int size2 = arrayList2.size();
             int i4 = 0;
             while (true) {
@@ -254,8 +255,8 @@ public final class VirtualImagePackageFragment extends MVIBaseFragment<VirtualIm
             goodsPagerAdapter3.notifyDataSetChanged();
         }
         for (VirtualImagePackageGoodsFragment virtualImagePackageGoodsFragment2 : this.f) {
-            if (CollectionsKt.a((Iterable<? extends Integer>) arrayList2, virtualImagePackageGoodsFragment2.F())) {
-                Iterator<VirtualImageModel.CategoryModel> it = newData.iterator();
+            if (CollectionsKt.a(arrayList2, virtualImagePackageGoodsFragment2.F())) {
+                Iterator<VirtualImageModel.CategoryModel> it = list.iterator();
                 while (true) {
                     if (it.hasNext()) {
                         VirtualImageModel.CategoryModel next = it.next();
@@ -271,9 +272,9 @@ public final class VirtualImagePackageFragment extends MVIBaseFragment<VirtualIm
         }
         arrayList2.clear();
         FragmentVirtualImagePackageBinding d = d();
-        NoScrollViewPager noScrollViewPager = d == null ? null : d.f29028c;
+        NoScrollViewPager noScrollViewPager = d == null ? null : d.f15338c;
         if (noScrollViewPager != null) {
-            noScrollViewPager.setOffscreenPageLimit(newData.size());
+            noScrollViewPager.setOffscreenPageLimit(list.size());
         }
         e();
     }
@@ -285,7 +286,6 @@ public final class VirtualImagePackageFragment extends MVIBaseFragment<VirtualIm
         this.f.get(this.h).G();
     }
 
-    @Override // com.blued.android.module.common.base.mvi.MVIBaseFragment
     public void m() {
         FragmentManager childFragmentManager = getChildFragmentManager();
         Intrinsics.c(childFragmentManager, "childFragmentManager");
@@ -293,9 +293,9 @@ public final class VirtualImagePackageFragment extends MVIBaseFragment<VirtualIm
         FragmentVirtualImagePackageBinding d = d();
         if (d != null) {
             d.b.setVisibility(a().isEmpty() ? 0 : 8);
-            d.f29028c.setAdapter(this.g);
-            d.f29028c.a(false);
-            d.f29028c.addOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: com.soft.blued.ui.user.fragment.VirtualImagePackageFragment$initView$1$1
+            d.f15338c.setAdapter(this.g);
+            d.f15338c.a(false);
+            d.f15338c.addOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: com.soft.blued.ui.user.fragment.VirtualImagePackageFragment$initView$1$1
                 @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
                 public void onPageScrollStateChanged(int i) {
                 }
@@ -318,12 +318,11 @@ public final class VirtualImagePackageFragment extends MVIBaseFragment<VirtualIm
                     }
                 }
             });
-            d.f29027a.setupWithViewPager(d.f29028c);
+            d.f15337a.setupWithViewPager(d.f15338c);
         }
         b(this.d);
     }
 
-    @Override // com.blued.android.module.common.base.mvi.MVIBaseFragment
     public void o() {
     }
 }

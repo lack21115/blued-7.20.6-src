@@ -16,13 +16,9 @@ import kotlin.jvm.functions.Function4;
 @DebugMetadata(b = "Errors.kt", c = {}, d = "invokeSuspend", e = "kotlinx.coroutines.flow.FlowKt__ErrorsKt$retry$6")
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt__ErrorsKt$retry$6.class */
 final class FlowKt__ErrorsKt$retry$6<T> extends SuspendLambda implements Function4<FlowCollector<? super T>, Throwable, Long, Continuation<? super Boolean>, Object> {
-
-    /* renamed from: a  reason: collision with root package name */
-    int f43184a;
+    int a;
     /* synthetic */ Object b;
-
-    /* renamed from: c  reason: collision with root package name */
-    /* synthetic */ long f43185c;
+    /* synthetic */ long c;
     final /* synthetic */ Function1<Throwable, Boolean> d;
     final /* synthetic */ int e;
 
@@ -37,8 +33,8 @@ final class FlowKt__ErrorsKt$retry$6<T> extends SuspendLambda implements Functio
     public final Object a(FlowCollector<? super T> flowCollector, Throwable th, long j, Continuation<? super Boolean> continuation) {
         FlowKt__ErrorsKt$retry$6 flowKt__ErrorsKt$retry$6 = new FlowKt__ErrorsKt$retry$6(this.d, this.e, continuation);
         flowKt__ErrorsKt$retry$6.b = th;
-        flowKt__ErrorsKt$retry$6.f43185c = j;
-        return flowKt__ErrorsKt$retry$6.invokeSuspend(Unit.f42314a);
+        flowKt__ErrorsKt$retry$6.c = j;
+        return flowKt__ErrorsKt$retry$6.invokeSuspend(Unit.a);
     }
 
     @Override // kotlin.jvm.functions.Function4
@@ -49,9 +45,9 @@ final class FlowKt__ErrorsKt$retry$6<T> extends SuspendLambda implements Functio
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         IntrinsicsKt.a();
-        if (this.f43184a == 0) {
+        if (this.a == 0) {
             ResultKt.a(obj);
-            return Boxing.a(this.d.invoke((Throwable) this.b).booleanValue() && this.f43185c < ((long) this.e));
+            return Boxing.a(this.d.invoke((Throwable) this.b).booleanValue() && this.c < ((long) this.e));
         }
         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
     }

@@ -6,19 +6,19 @@ import com.tencent.thumbplayer.core.downloadproxy.api.ITPDownloadProxy;
 public class j implements b {
 
     /* renamed from: a  reason: collision with root package name */
-    private ITPDownloadProxy f39266a;
+    private ITPDownloadProxy f25575a;
 
     public j(ITPDownloadProxy iTPDownloadProxy) {
-        this.f39266a = iTPDownloadProxy;
+        this.f25575a = iTPDownloadProxy;
     }
 
     @Override // com.tencent.thumbplayer.c.b
     public ITPDownloadProxy a() {
-        return this.f39266a;
+        return this.f25575a;
     }
 
     @Override // com.tencent.thumbplayer.c.b
     public void a(int i) {
-        this.f39266a.pushEvent(i);
+        this.f25575a.pushEvent(i);
     }
 }

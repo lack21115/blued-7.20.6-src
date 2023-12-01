@@ -20,7 +20,7 @@ import com.huawei.hms.utils.ResourceLoaderUtil;
 public class l {
 
     /* renamed from: a  reason: collision with root package name */
-    private static int f22849a;
+    private static int f9241a;
 
     private static Notification a(Context context, m mVar, int[] iArr) {
         Notification.Builder builder = new Notification.Builder(context);
@@ -94,8 +94,8 @@ public class l {
                 try {
                     if (!a(mVar)) {
                         HMSLog.d("PushSelfShowLog", "showNotification, the msg id = " + mVar.p());
-                        if (f22849a == 0) {
-                            f22849a = (context.getPackageName() + System.currentTimeMillis()).hashCode();
+                        if (f9241a == 0) {
+                            f9241a = (context.getPackageName() + System.currentTimeMillis()).hashCode();
                         }
                         if (TextUtils.isEmpty(mVar.l())) {
                             String q = mVar.q();
@@ -110,17 +110,17 @@ public class l {
                                 i2 = i + 1;
                                 hashCode2 = (mVar.s() + mVar.k() + context.getPackageName()).hashCode();
                             } else {
-                                hashCode = f22849a + 1;
+                                hashCode = f9241a + 1;
                                 i = hashCode + 1;
                                 i2 = i + 1;
                                 hashCode2 = i2 + 1;
-                                f22849a = hashCode2;
+                                f9241a = hashCode2;
                             }
                         } else {
                             hashCode = (mVar.l() + mVar.k()).hashCode();
-                            i = f22849a + 1;
+                            i = f9241a + 1;
                             i2 = i + 1;
-                            f22849a = i2;
+                            f9241a = i2;
                             hashCode2 = (mVar.l() + mVar.k() + context.getPackageName()).hashCode();
                         }
                         HMSLog.d("PushSelfShowLog", "notifyId:" + hashCode + ",openNotifyId:" + i + ",delNotifyId:" + i2 + ",alarmNotifyId:" + hashCode2);

@@ -8,15 +8,15 @@ public class w extends u {
     public x b;
 
     /* renamed from: c  reason: collision with root package name */
-    public double[] f4030c = new double[3];
+    public double[] f3982c = new double[3];
 
     /* renamed from: a  reason: collision with root package name */
-    public ArrayList<u> f4029a = new ArrayList<>();
+    public ArrayList<u> f3981a = new ArrayList<>();
 
     public w() {
         x xVar = new x();
         this.b = xVar;
-        this.f4029a.add(xVar);
+        this.f3981a.add(xVar);
     }
 
     @Override // c.t.m.g.u
@@ -24,22 +24,22 @@ public class w extends u {
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f4029a.size()) {
+            if (i2 >= this.f3981a.size()) {
                 return;
             }
-            this.f4029a.get(i2).a();
+            this.f3981a.get(i2).a();
             i = i2 + 1;
         }
     }
 
     @Override // c.t.m.g.u
     public double[] a(double[] dArr) {
-        Arrays.fill(this.f4030c, 0.0d);
+        Arrays.fill(this.f3982c, 0.0d);
         double[] a2 = this.b.a(dArr);
         k2.a(a2, 4, false);
-        double[] dArr2 = this.f4030c;
-        System.arraycopy((Object) a2, 0, (Object) dArr2, 0, dArr2.length);
-        return this.f4030c;
+        double[] dArr2 = this.f3982c;
+        System.arraycopy(a2, 0, dArr2, 0, dArr2.length);
+        return this.f3982c;
     }
 
     @Override // c.t.m.g.u
@@ -49,15 +49,15 @@ public class w extends u {
 
     @Override // c.t.m.g.u
     public String b() {
-        StringBuilder sb = new StringBuilder(this.f4029a.get(0).b());
+        StringBuilder sb = new StringBuilder(this.f3981a.get(0).b());
         int i = 1;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f4029a.size()) {
+            if (i2 >= this.f3981a.size()) {
                 return sb.toString();
             }
             sb.append('_');
-            sb.append(this.f4029a.get(i2).b());
+            sb.append(this.f3981a.get(i2).b());
             i = i2 + 1;
         }
     }
@@ -67,10 +67,10 @@ public class w extends u {
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f4029a.size()) {
+            if (i2 >= this.f3981a.size()) {
                 return;
             }
-            this.f4029a.get(i2).c();
+            this.f3981a.get(i2).c();
             i = i2 + 1;
         }
     }
@@ -80,10 +80,10 @@ public class w extends u {
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f4029a.size()) {
+            if (i2 >= this.f3981a.size()) {
                 return;
             }
-            this.f4029a.get(i2).d();
+            this.f3981a.get(i2).d();
             i = i2 + 1;
         }
     }

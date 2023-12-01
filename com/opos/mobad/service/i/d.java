@@ -15,11 +15,11 @@ import org.json.JSONObject;
 public class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private static d f27382a;
+    private static d f13694a;
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f27383c;
+    private String f13695c;
     private int d;
     private int e;
     private String f;
@@ -32,16 +32,16 @@ public class d {
 
     public static d a() {
         d dVar;
-        d dVar2 = f27382a;
+        d dVar2 = f13694a;
         if (dVar2 != null) {
             return dVar2;
         }
         synchronized (d.class) {
             try {
-                if (f27382a == null) {
-                    f27382a = new d();
+                if (f13694a == null) {
+                    f13694a = new d();
                 }
-                dVar = f27382a;
+                dVar = f13694a;
             } catch (Throwable th) {
                 throw th;
             }
@@ -127,13 +127,13 @@ public class d {
     /* JADX INFO: Access modifiers changed from: private */
     public JSONObject d() throws JSONException {
         JSONObject jSONObject = new JSONObject();
-        jSONObject.put("appId", this.f27383c);
+        jSONObject.put("appId", this.f13695c);
         jSONObject.put("phBrand", com.opos.cmn.an.b.a.a(this.b));
         jSONObject.put("phMaker", com.opos.cmn.an.b.c.e());
         jSONObject.put("aid", com.opos.mobad.service.e.a.a().e());
         jSONObject.put("ua", com.opos.cmn.i.d.a());
         jSONObject.put("coverVc", this.e);
-        jSONObject.put(com.alipay.sdk.sys.a.m, !TextUtils.isEmpty(this.f) ? this.f : "");
+        jSONObject.put("extInfo", !TextUtils.isEmpty(this.f) ? this.f : "");
         jSONObject.put("classifyByAge", com.opos.mobad.service.f.a.a().w());
         jSONObject.put("ouidStatus", com.opos.mobad.service.e.a.a().j() ? "1" : "0");
         jSONObject.put("appOuidStatus", com.opos.mobad.service.e.a.a().d() ? "1" : "0");
@@ -166,7 +166,7 @@ public class d {
 
     public void a(Context context, String str, int i, int i2) {
         this.b = context;
-        this.f27383c = str;
+        this.f13695c = str;
         this.d = i;
         this.e = i2;
         this.g = new com.opos.mobad.provider.statistic.a(context, new StatisticModelIdentify(com.opos.cmn.a.a.a(), com.opos.cmn.a.a.b()));
@@ -196,7 +196,7 @@ public class d {
             JSONObject d = d();
             e(d, "lm-bid-call");
             d.put("adPosId", str);
-            d.put("appId", this.f27383c);
+            d.put("appId", this.f13695c);
             d.put("uSdkVC", this.d + "");
             d.put("accType", 1);
             d.put("sdkReqId", str2);
@@ -265,7 +265,7 @@ public class d {
             JSONObject d = d();
             e(d, "lm-bid-call");
             d.put("adPosId", str);
-            d.put("appId", this.f27383c);
+            d.put("appId", this.f13695c);
             d.put("uSdkVC", this.d + "");
             d.put("accType", 1);
             d.put("sdkReqId", str2);

@@ -232,12 +232,12 @@ public class ad implements h, w.e, w.g {
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
     public ad(ab abVar, com.anythink.expressad.exoplayer.i.h hVar, p pVar, com.anythink.expressad.exoplayer.d.g<com.anythink.expressad.exoplayer.d.k> gVar) {
         this(abVar, hVar, pVar, gVar, (byte) 0);
-        new a.C0118a();
+        new a.C0047a();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     public ad(ab abVar, com.anythink.expressad.exoplayer.i.h hVar, p pVar, com.anythink.expressad.exoplayer.d.g<com.anythink.expressad.exoplayer.d.k> gVar, byte b2) {
-        this(abVar, hVar, pVar, gVar, com.anythink.expressad.exoplayer.k.c.f7640a);
+        this(abVar, hVar, pVar, gVar, com.anythink.expressad.exoplayer.k.c.f4801a);
     }
 
     private ad(ab abVar, com.anythink.expressad.exoplayer.i.h hVar, p pVar, com.anythink.expressad.exoplayer.d.g<com.anythink.expressad.exoplayer.d.k> gVar, com.anythink.expressad.exoplayer.k.c cVar) {
@@ -252,11 +252,11 @@ public class ad implements h, w.e, w.g {
         this.w = abVar.a(handler, aVar, aVar, aVar, gVar);
         this.R = 1.0f;
         this.P = 0;
-        this.Q = com.anythink.expressad.exoplayer.b.b.f7172a;
+        this.Q = com.anythink.expressad.exoplayer.b.b.f4333a;
         this.K = 1;
         j jVar = new j(this.w, hVar, pVar, cVar);
         this.y = jVar;
-        com.anythink.expressad.exoplayer.a.a a2 = a.C0118a.a(jVar, cVar);
+        com.anythink.expressad.exoplayer.a.a a2 = a.C0047a.a(jVar, cVar);
         this.F = a2;
         a((w.c) a2);
         this.D.add(this.F);

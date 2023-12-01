@@ -43,7 +43,7 @@ public class i {
                     dataOutputStream.close();
                     int length = byteArray.length - 2;
                     byte[] bArr = new byte[length];
-                    System.arraycopy((Object) byteArray, 2, (Object) bArr, 0, length);
+                    System.arraycopy(byteArray, 2, bArr, 0, length);
                     return bArr;
                 } catch (IOException e2) {
                 }

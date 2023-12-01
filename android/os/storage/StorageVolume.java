@@ -5,6 +5,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.UserHandle;
 import com.android.internal.util.IndentingPrintWriter;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.CharArrayWriter;
 import java.io.File;
 
@@ -163,7 +164,7 @@ public class StorageVolume implements Parcelable {
         if (str == null) {
             return -1;
         }
-        String replace = str.replace("-", "");
+        String replace = str.replace(Constants.ACCEPT_TIME_SEPARATOR_SERVER, "");
         String str2 = replace;
         if (replace.length() > 8) {
             str2 = replace.substring(0, 8);

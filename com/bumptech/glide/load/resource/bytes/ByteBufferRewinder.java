@@ -7,7 +7,7 @@ import java.nio.ByteBuffer;
 public class ByteBufferRewinder implements DataRewinder<ByteBuffer> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ByteBuffer f20983a;
+    private final ByteBuffer f7377a;
 
     /* loaded from: source-7206380-dex2jar.jar:com/bumptech/glide/load/resource/bytes/ByteBufferRewinder$Factory.class */
     public static class Factory implements DataRewinder.Factory<ByteBuffer> {
@@ -23,7 +23,7 @@ public class ByteBufferRewinder implements DataRewinder<ByteBuffer> {
     }
 
     public ByteBufferRewinder(ByteBuffer byteBuffer) {
-        this.f20983a = byteBuffer;
+        this.f7377a = byteBuffer;
     }
 
     @Override // com.bumptech.glide.load.data.DataRewinder
@@ -33,7 +33,7 @@ public class ByteBufferRewinder implements DataRewinder<ByteBuffer> {
     @Override // com.bumptech.glide.load.data.DataRewinder
     /* renamed from: c */
     public ByteBuffer a() {
-        this.f20983a.position(0);
-        return this.f20983a;
+        this.f7377a.position(0);
+        return this.f7377a;
     }
 }

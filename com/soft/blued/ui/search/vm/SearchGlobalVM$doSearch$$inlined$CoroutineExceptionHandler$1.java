@@ -12,18 +12,17 @@ import kotlinx.coroutines.CoroutineExceptionHandler;
 public final class SearchGlobalVM$doSearch$$inlined$CoroutineExceptionHandler$1 extends AbstractCoroutineContextElement implements CoroutineExceptionHandler {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ SearchGlobalVM f33187a;
+    final /* synthetic */ SearchGlobalVM f19496a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public SearchGlobalVM$doSearch$$inlined$CoroutineExceptionHandler$1(CoroutineExceptionHandler.Key key, SearchGlobalVM searchGlobalVM) {
-        super(key);
-        this.f33187a = searchGlobalVM;
+        super((CoroutineContext.Key) key);
+        this.f19496a = searchGlobalVM;
     }
 
-    @Override // kotlinx.coroutines.CoroutineExceptionHandler
     public void handleException(CoroutineContext coroutineContext, Throwable th) {
         String tag;
-        tag = this.f33187a.getTAG();
-        Logger.e(tag, Intrinsics.a("CoroutineExceptionHandler: ", (Object) th));
+        tag = this.f19496a.getTAG();
+        Logger.e(tag, Intrinsics.a("CoroutineExceptionHandler: ", th));
     }
 }

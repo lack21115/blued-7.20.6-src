@@ -12,11 +12,11 @@ import java.util.Locale;
 public class CityHelper {
 
     /* renamed from: a  reason: collision with root package name */
-    private static CityHelper f20457a;
+    private static CityHelper f6851a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f20458c;
+    private String f6852c;
     private String d;
     private String e;
 
@@ -24,18 +24,18 @@ public class CityHelper {
     }
 
     public static CityHelper a() {
-        if (f20457a == null) {
+        if (f6851a == null) {
             synchronized (CityHelper.class) {
                 try {
-                    if (f20457a == null) {
-                        f20457a = new CityHelper();
+                    if (f6851a == null) {
+                        f6851a = new CityHelper();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f20457a;
+        return f6851a;
     }
 
     public String a(Context context) {
@@ -44,7 +44,7 @@ public class CityHelper {
 
     public String a(Context context, String str) {
         if (b()) {
-            return this.f20458c;
+            return this.f6852c;
         }
         String cityTxt = AreaUtils.getCityTxt(str, new Locale(a.V, "CN"));
         this.b = cityTxt;
@@ -77,7 +77,7 @@ public class CityHelper {
     }
 
     public boolean b() {
-        return (TextUtils.isEmpty(this.f20458c) || TextUtils.isEmpty(this.d) || TextUtils.isEmpty(this.e)) ? false : true;
+        return (TextUtils.isEmpty(this.f6852c) || TextUtils.isEmpty(this.d) || TextUtils.isEmpty(this.e)) ? false : true;
     }
 
     public String c() {
@@ -86,7 +86,7 @@ public class CityHelper {
 
     public String c(Context context) {
         if (b()) {
-            return this.f20458c;
+            return this.f6852c;
         }
         if (TextUtils.isEmpty(this.b)) {
             if (context != null) {
@@ -98,11 +98,11 @@ public class CityHelper {
     }
 
     public void c(String str) {
-        this.f20458c = str;
+        this.f6852c = str;
     }
 
     public String d() {
-        return (!b() || TextUtils.equals(this.f20458c, this.b)) ? "" : this.d;
+        return (!b() || TextUtils.equals(this.f6852c, this.b)) ? "" : this.d;
     }
 
     public String d(Context context) {
@@ -114,11 +114,11 @@ public class CityHelper {
     }
 
     public String f() {
-        return (!b() || TextUtils.equals(this.f20458c, this.b)) ? "" : this.e;
+        return (!b() || TextUtils.equals(this.f6852c, this.b)) ? "" : this.e;
     }
 
     public String g() {
-        return this.f20458c;
+        return this.f6852c;
     }
 
     public String h() {

@@ -17,7 +17,7 @@ import com.bytedance.applog.tracker.Tracker;
 public abstract class MenuPopup implements AdapterView.OnItemClickListener, MenuPresenter, ShowableListMenu {
 
     /* renamed from: a  reason: collision with root package name */
-    private Rect f1688a;
+    private Rect f1640a;
 
     /* JADX INFO: Access modifiers changed from: protected */
     public static int a(ListAdapter listAdapter, ViewGroup viewGroup, Context context, int i) {
@@ -97,7 +97,7 @@ public abstract class MenuPopup implements AdapterView.OnItemClickListener, Menu
     }
 
     public Rect getEpicenterBounds() {
-        return this.f1688a;
+        return this.f1640a;
     }
 
     @Override // androidx.appcompat.view.menu.MenuPresenter
@@ -118,13 +118,13 @@ public abstract class MenuPopup implements AdapterView.OnItemClickListener, Menu
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long j) {
         Tracker.onItemClick(adapterView, view, i, j);
         ListAdapter listAdapter = (ListAdapter) adapterView.getAdapter();
-        a(listAdapter).f1675a.performItemAction((MenuItem) listAdapter.getItem(i), this, a() ? 0 : 4);
+        a(listAdapter).f1627a.performItemAction((MenuItem) listAdapter.getItem(i), this, a() ? 0 : 4);
     }
 
     public abstract void setAnchorView(View view);
 
     public void setEpicenterBounds(Rect rect) {
-        this.f1688a = rect;
+        this.f1640a = rect;
     }
 
     public abstract void setForceShowIcon(boolean z);

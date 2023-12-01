@@ -7,11 +7,11 @@ import java.util.Arrays;
 final class s {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final int f7216a = 65;
+    private static final int f4377a = 65;
     private static final int b = 400;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final int f7217c = 4000;
+    private static final int f4378c = 4000;
     private final int d;
     private final int e;
     private final float f;
@@ -156,7 +156,7 @@ final class s {
         this.q = a2;
         short[] sArr = this.o;
         int i8 = this.e;
-        System.arraycopy((Object) sArr, i * i8, (Object) a2, this.r * i8, i8 * i7);
+        System.arraycopy(sArr, i * i8, a2, this.r * i8, i8 * i7);
         this.p = i;
         this.r += i7;
         int i9 = 0;
@@ -213,7 +213,7 @@ final class s {
         if (i22 != 0) {
             short[] sArr4 = this.q;
             int i23 = this.e;
-            System.arraycopy((Object) sArr4, i22 * i23, (Object) sArr4, 0, (i2 - i22) * i23);
+            System.arraycopy(sArr4, i22 * i23, sArr4, 0, (i2 - i22) * i23);
             this.r -= i22;
         }
     }
@@ -222,7 +222,7 @@ final class s {
         int i2 = this.n - i;
         short[] sArr = this.m;
         int i3 = this.e;
-        System.arraycopy((Object) sArr, i * i3, (Object) sArr, 0, i3 * i2);
+        System.arraycopy(sArr, i * i3, sArr, 0, i3 * i2);
         this.n = i2;
     }
 
@@ -281,7 +281,7 @@ final class s {
         short[] a2 = a(this.o, this.p, i4);
         this.o = a2;
         int i5 = this.e;
-        System.arraycopy((Object) sArr, i * i5, (Object) a2, this.p * i5, i5 * i2);
+        System.arraycopy(sArr, i * i5, a2, this.p * i5, i5 * i2);
         a(i3, this.e, this.o, this.p + i2, sArr, i + i2, sArr, i);
         this.p += i4;
         return i3;
@@ -302,7 +302,7 @@ final class s {
         short[] a2 = a(this.o, this.p, i2);
         this.o = a2;
         int i3 = this.e;
-        System.arraycopy((Object) sArr, i * i3, (Object) a2, this.p * i3, i3 * i2);
+        System.arraycopy(sArr, i * i3, a2, this.p * i3, i3 * i2);
         this.p += i2;
     }
 
@@ -312,7 +312,7 @@ final class s {
         this.q = a2;
         short[] sArr = this.o;
         int i3 = this.e;
-        System.arraycopy((Object) sArr, i * i3, (Object) a2, this.r * i3, i3 * i2);
+        System.arraycopy(sArr, i * i3, a2, this.r * i3, i3 * i2);
         this.p = i;
         this.r += i2;
     }
@@ -360,7 +360,7 @@ final class s {
         }
         short[] sArr = this.q;
         int i2 = this.e;
-        System.arraycopy((Object) sArr, i * i2, (Object) sArr, 0, (this.r - i) * i2);
+        System.arraycopy(sArr, i * i2, sArr, 0, (this.r - i) * i2);
         this.r -= i;
     }
 
@@ -423,7 +423,7 @@ final class s {
         this.p = i;
         short[] sArr = this.o;
         int i2 = this.e;
-        System.arraycopy((Object) sArr, min * i2, (Object) sArr, 0, i * i2);
+        System.arraycopy(sArr, min * i2, sArr, 0, i * i2);
     }
 
     public final int c() {

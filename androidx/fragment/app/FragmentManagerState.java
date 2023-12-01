@@ -24,11 +24,11 @@ public final class FragmentManagerState implements Parcelable {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    ArrayList<FragmentState> f2991a;
+    ArrayList<FragmentState> f2943a;
     ArrayList<String> b;
 
     /* renamed from: c  reason: collision with root package name */
-    BackStackState[] f2992c;
+    BackStackState[] f2944c;
     int d;
     String e;
     ArrayList<String> f;
@@ -45,9 +45,9 @@ public final class FragmentManagerState implements Parcelable {
         this.e = null;
         this.f = new ArrayList<>();
         this.g = new ArrayList<>();
-        this.f2991a = parcel.createTypedArrayList(FragmentState.CREATOR);
+        this.f2943a = parcel.createTypedArrayList(FragmentState.CREATOR);
         this.b = parcel.createStringArrayList();
-        this.f2992c = (BackStackState[]) parcel.createTypedArray(BackStackState.CREATOR);
+        this.f2944c = (BackStackState[]) parcel.createTypedArray(BackStackState.CREATOR);
         this.d = parcel.readInt();
         this.e = parcel.readString();
         this.f = parcel.createStringArrayList();
@@ -62,9 +62,9 @@ public final class FragmentManagerState implements Parcelable {
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeTypedList(this.f2991a);
+        parcel.writeTypedList(this.f2943a);
         parcel.writeStringList(this.b);
-        parcel.writeTypedArray(this.f2992c, i);
+        parcel.writeTypedArray(this.f2944c, i);
         parcel.writeInt(this.d);
         parcel.writeString(this.e);
         parcel.writeStringList(this.f);

@@ -7,6 +7,6 @@ import java.util.Iterator;
 interface SortedIterable<T> extends Iterable<T> {
     Comparator<? super T> comparator();
 
-    @Override // java.lang.Iterable
+    @Override // java.util.Collection, java.lang.Iterable, java.util.Set, com.google.common.collect.SortedIterable, java.util.NavigableSet
     Iterator<T> iterator();
 }

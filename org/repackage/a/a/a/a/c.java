@@ -11,29 +11,21 @@ import android.os.Build;
 import android.os.Looper;
 import android.os.RemoteException;
 import android.text.TextUtils;
-import com.anythink.expressad.video.module.a.a.m;
-import com.youzan.androidsdk.tool.AppSigning;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import org.repackage.a.a.a.a;
 
 /* loaded from: source-3503164-dex2jar.jar:org/repackage/a/a/a/a/c.class */
 public class c {
-
-    /* renamed from: a  reason: collision with root package name */
-    public org.repackage.a.a.a.a f44103a = null;
+    public org.repackage.a.a.a.a a = null;
     public String b = null;
-
-    /* renamed from: c  reason: collision with root package name */
-    public String f44104c = null;
+    public String c = null;
     public final Object d = new Object();
     public ServiceConnection e = new b(this);
 
     /* loaded from: source-3503164-dex2jar.jar:org/repackage/a/a/a/a/c$a.class */
     public static class a {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static final c f44105a = new c(null);
+        public static final c a = new c(null);
     }
 
     public /* synthetic */ c(b bVar) {
@@ -42,7 +34,7 @@ public class c {
     public String a(Context context, String str) {
         synchronized (this) {
             if (Looper.myLooper() != Looper.getMainLooper()) {
-                if (this.f44103a != null) {
+                if (this.a != null) {
                     try {
                         return b(context, str);
                     } catch (RemoteException e) {
@@ -56,13 +48,13 @@ public class c {
                 if (context.bindService(intent, this.e, 1)) {
                     synchronized (this.d) {
                         try {
-                            this.d.wait(m.ag);
+                            this.d.wait(3000L);
                         } catch (InterruptedException e2) {
                             e2.printStackTrace();
                         }
                     }
                 }
-                if (this.f44103a == null) {
+                if (this.a == null) {
                     return "";
                 }
                 try {
@@ -101,7 +93,7 @@ public class c {
         if (TextUtils.isEmpty(this.b)) {
             this.b = context.getPackageName();
         }
-        if (TextUtils.isEmpty(this.f44104c)) {
+        if (TextUtils.isEmpty(this.c)) {
             try {
                 signatureArr = context.getPackageManager().getPackageInfo(this.b, 64).signatures;
             } catch (PackageManager.NameNotFoundException e) {
@@ -114,7 +106,7 @@ public class c {
                 if (signatureArr.length > 0) {
                     byte[] byteArray = signatureArr[0].toByteArray();
                     try {
-                        MessageDigest messageDigest = MessageDigest.getInstance(AppSigning.SHA1);
+                        MessageDigest messageDigest = MessageDigest.getInstance("SHA1");
                         str2 = null;
                         if (messageDigest != null) {
                             byte[] digest = messageDigest.digest(byteArray);
@@ -130,9 +122,9 @@ public class c {
                     }
                 }
             }
-            this.f44104c = str2;
+            this.c = str2;
         }
-        String a2 = ((a.AbstractBinderC1133a.C1134a) this.f44103a).a(this.b, this.f44104c, str);
+        String a2 = ((a.AbstractBinderC0178a.C0179a) this.a).a(this.b, this.c, str);
         String str3 = a2;
         if (TextUtils.isEmpty(a2)) {
             str3 = "";

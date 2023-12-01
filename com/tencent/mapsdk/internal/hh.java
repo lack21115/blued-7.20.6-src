@@ -4,7 +4,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.PointF;
 import android.graphics.Rect;
 import android.util.SparseArray;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
+import com.kwad.components.offline.api.tk.model.report.TKDownloadReason;
 import com.tencent.map.tools.EncryptAesUtils;
 import com.tencent.map.tools.net.NetManager;
 import com.tencent.map.tools.net.NetResponse;
@@ -42,7 +42,7 @@ public class hh implements ne {
     public class a extends Thread {
 
         /* renamed from: c  reason: collision with root package name */
-        private static final int f37528c = 60000;
+        private static final int f23837c = 60000;
 
         public a() {
             setName("tms-traffic");
@@ -51,7 +51,7 @@ public class hh implements ne {
         }
 
         /* JADX WARN: Code restructure failed: missing block: B:29:0x00cd, code lost:
-            if (r7.f37419c == null) goto L64;
+            if (r7.f23728c == null) goto L64;
          */
         @Override // java.lang.Thread, java.lang.Runnable
         /*
@@ -85,7 +85,7 @@ public class hh implements ne {
             StringBuilder sb = new StringBuilder();
             sb.append("rsp = ");
             sb.append(mapTrafficEvent != null ? Integer.valueOf(mapTrafficEvent.statusCode) : com.igexin.push.core.b.l);
-            na.c("net", sb.toString());
+            na.c(TKDownloadReason.KSAD_TK_NET, sb.toString());
             return null;
         }
         m mVar = new m(bArr);
@@ -108,7 +108,7 @@ public class hh implements ne {
         byte[] bArr;
         for (Detail detail : list) {
             String str = detail.basic.icon_normal;
-            int lastIndexOf = str.lastIndexOf(BridgeUtil.SPLIT_MARK);
+            int lastIndexOf = str.lastIndexOf("/");
             if (lastIndexOf != -1 && (i = lastIndexOf + 1) <= str.length()) {
                 String substring = str.substring(i);
                 if (b7.e.a(substring) == null) {
@@ -151,7 +151,7 @@ public class hh implements ne {
         }
         for (String str : ghVar.c().keySet()) {
             gh.a aVar = this.l.c().get(str);
-            if (aVar != null && aVar.f37493a.d() == i) {
+            if (aVar != null && aVar.f23802a.d() == i) {
                 return new fh(aVar.b);
             }
         }
@@ -169,22 +169,22 @@ public class hh implements ne {
     public void a(eh ehVar) {
         List<Detail> list;
         w6 w;
-        if (ehVar == null || (list = ehVar.f37419c) == null || list.isEmpty()) {
+        if (ehVar == null || (list = ehVar.f23728c) == null || list.isEmpty()) {
             return;
         }
         rc rcVar = this.j;
         if (rcVar != null && (w = rcVar.w()) != null) {
             w.o().b();
         }
-        a(ehVar.f37419c);
-        this.l.b(ehVar.f37419c);
+        a(ehVar.f23728c);
+        this.l.b(ehVar.f23728c);
     }
 
     public void a(eh ehVar, eh ehVar2) {
         List<Detail> list;
         List<Detail> list2;
         boolean z;
-        if (ehVar2 == null || (list = ehVar2.f37419c) == null) {
+        if (ehVar2 == null || (list = ehVar2.f23728c) == null) {
             return;
         }
         if (list.isEmpty()) {
@@ -192,11 +192,11 @@ public class hh implements ne {
             return;
         }
         LinkedList linkedList = new LinkedList();
-        if (ehVar == null || (list2 = ehVar.f37419c) == null || list2.isEmpty()) {
+        if (ehVar == null || (list2 = ehVar.f23728c) == null || list2.isEmpty()) {
             return;
         }
-        List<Detail> list3 = ehVar.f37419c;
-        List<Detail> list4 = ehVar2.f37419c;
+        List<Detail> list3 = ehVar.f23728c;
+        List<Detail> list4 = ehVar2.f23728c;
         for (Detail detail : list3) {
             Iterator<Detail> it = list4.iterator();
             while (true) {

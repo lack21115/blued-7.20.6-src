@@ -13,11 +13,11 @@ import java.util.List;
 public class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f27288a;
+    private String f13600a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private com.opos.mobad.provider.strategy.b f27289c;
+    private com.opos.mobad.provider.strategy.b f13601c;
 
     /* loaded from: source-8303388-dex2jar.jar:com/opos/mobad/service/a/d$a.class */
     public interface a {
@@ -34,9 +34,9 @@ public class d {
     }
 
     public d(Context context, String str, String str2) {
-        this.f27288a = str;
+        this.f13600a = str;
         this.b = str2;
-        this.f27289c = new com.opos.mobad.provider.strategy.b(context.getApplicationContext());
+        this.f13601c = new com.opos.mobad.provider.strategy.b(context.getApplicationContext());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -45,9 +45,9 @@ public class d {
         try {
             Bundle bundle = new Bundle();
             for (s sVar : list) {
-                bundle.putByteArray(sVar.l, s.f26363c.b((com.heytap.nearx.a.a.e<s>) sVar));
+                bundle.putByteArray(sVar.l, s.f12675c.b((com.heytap.nearx.a.a.e<s>) sVar));
             }
-            this.f27289c.a(this.f27288a, new StrategyInfo(j, bundle));
+            this.f13601c.a(this.f13600a, new StrategyInfo(j, bundle));
         } catch (Exception e) {
             com.opos.cmn.an.f.a.b("DispatchController", "write strategy fail", e);
         }
@@ -57,7 +57,7 @@ public class d {
     public void b(r rVar, long j) {
         com.opos.cmn.an.f.a.b("DispatchController", "write app:" + rVar);
         try {
-            this.f27289c.a(this.b, this.f27288a, new AppInfo(j, r.f26361c.b((com.heytap.nearx.a.a.e<r>) rVar)));
+            this.f13601c.a(this.b, this.f13600a, new AppInfo(j, r.f12673c.b((com.heytap.nearx.a.a.e<r>) rVar)));
         } catch (Exception e) {
             com.opos.cmn.an.f.a.b("DispatchController", "write app fail", e);
         }
@@ -78,7 +78,7 @@ public class d {
             @Override // java.lang.Runnable
             public void run() {
                 try {
-                    AppInfo b2 = d.this.f27289c.b(d.this.f27288a);
+                    AppInfo b2 = d.this.f13601c.b(d.this.f13600a);
                     if (b2 == null) {
                         if (aVar != null) {
                             aVar.a();
@@ -86,8 +86,8 @@ public class d {
                         }
                         return;
                     }
-                    r a2 = r.f26361c.a(b2.b);
-                    long j = b2.f27133a;
+                    r a2 = r.f12673c.a(b2.b);
+                    long j = b2.f13445a;
                     if (aVar != null) {
                         aVar.a(a2, j);
                     }
@@ -107,7 +107,7 @@ public class d {
             @Override // java.lang.Runnable
             public void run() {
                 try {
-                    Bundle a2 = d.this.f27289c.a(d.this.f27288a);
+                    Bundle a2 = d.this.f13601c.a(d.this.f13600a);
                     if (a2 != null) {
                         if (bVar != null) {
                             bVar.a(a2);

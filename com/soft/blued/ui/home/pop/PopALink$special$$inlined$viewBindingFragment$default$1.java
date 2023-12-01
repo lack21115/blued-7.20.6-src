@@ -13,10 +13,9 @@ public final class PopALink$special$$inlined$viewBindingFragment$default$1 exten
         super(1);
     }
 
-    @Override // kotlin.jvm.functions.Function1
     /* renamed from: a */
-    public final PopAlinkBinding invoke(PopALink popView) {
-        Intrinsics.e(popView, "popView");
-        return PopAlinkBinding.a(popView.getPopupImplView());
+    public final PopAlinkBinding invoke(PopALink popALink) {
+        Intrinsics.e(popALink, "popView");
+        return PopAlinkBinding.a(popALink.getPopupImplView());
     }
 }

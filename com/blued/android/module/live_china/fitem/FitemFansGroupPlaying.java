@@ -13,9 +13,7 @@ import java.util.List;
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fitem/FitemFansGroupPlaying.class */
 public class FitemFansGroupPlaying extends FreedomItem {
     public LiveFansGroupModel b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public boolean f12532c = false;
+    public boolean c = false;
     public TextView d;
     public View e;
     public View f;
@@ -30,7 +28,7 @@ public class FitemFansGroupPlaying extends FreedomItem {
         this.g = baseViewHolder.a(R.id.view_select_border_coutent);
         this.f.animate().cancel();
         this.g.animate().cancel();
-        if (!this.f12532c) {
+        if (!this.c) {
             this.f.setScaleX(0.9f);
             this.f.setScaleY(0.9f);
             this.f.setAlpha(0.0f);
@@ -53,9 +51,9 @@ public class FitemFansGroupPlaying extends FreedomItem {
 
     @Override // com.blued.android.module.common.utils.freedom.FreedomItem
     public void a(Context context, BaseViewHolder baseViewHolder, List<FreedomItem> list, int i) {
-        BaseViewHolder a2 = baseViewHolder.a(R.id.iv_avatar, this.b.group_cover, R.drawable.user_bg_round, true).a(R.id.tv_title, (CharSequence) this.b.group_title).a(R.id.tv_subtitle, (CharSequence) this.b.group_desc);
+        BaseViewHolder a = baseViewHolder.a(R.id.iv_avatar, this.b.group_cover, R.drawable.user_bg_round, true).a(R.id.tv_title, (CharSequence) this.b.group_title).a(R.id.tv_subtitle, (CharSequence) this.b.group_desc);
         int i2 = R.id.tv_count;
-        a2.a(i2, (CharSequence) (this.b.group_now_population + BridgeUtil.SPLIT_MARK + this.b.group_max_population)).b(R.id.tv_already_join, this.b.apply_status == 3).a(R.id.tv_fans_badge, true);
+        a.a(i2, (CharSequence) (this.b.group_now_population + BridgeUtil.SPLIT_MARK + this.b.group_max_population)).b(R.id.tv_already_join, this.b.apply_status == 3).a(R.id.tv_fans_badge, true);
         this.e = baseViewHolder.a(R.id.tv_count);
         this.e = baseViewHolder.a(R.id.tv_already_join);
         this.d = (TextView) baseViewHolder.a(R.id.tv_count);
@@ -63,7 +61,7 @@ public class FitemFansGroupPlaying extends FreedomItem {
     }
 
     public void a(boolean z) {
-        this.f12532c = z;
+        this.c = z;
         View view = this.f;
         if (view == null || this.g == null) {
             return;

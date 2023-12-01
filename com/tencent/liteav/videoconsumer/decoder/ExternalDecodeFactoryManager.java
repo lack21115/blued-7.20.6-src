@@ -6,12 +6,12 @@ import com.tencent.liteav.base.util.LiteavLog;
 public class ExternalDecodeFactoryManager {
 
     /* renamed from: a  reason: collision with root package name */
-    private static o f36733a;
+    private static o f23042a;
 
     public static void a(o oVar) {
         synchronized (ExternalDecodeFactoryManager.class) {
             try {
-                f36733a = oVar;
+                f23042a = oVar;
             } catch (Throwable th) {
                 throw th;
             }
@@ -21,12 +21,12 @@ public class ExternalDecodeFactoryManager {
     public static boolean a() {
         synchronized (ExternalDecodeFactoryManager.class) {
             try {
-                if (f36733a == null) {
+                if (f23042a == null) {
                     return false;
                 }
-                long a2 = f36733a.a();
+                long a2 = f23042a.a();
                 if (a2 != 0) {
-                    f36733a.a(a2);
+                    f23042a.a(a2);
                     return true;
                 }
                 return false;
@@ -39,10 +39,10 @@ public class ExternalDecodeFactoryManager {
     public static long createH265Decoder() {
         synchronized (ExternalDecodeFactoryManager.class) {
             try {
-                if (f36733a == null) {
+                if (f23042a == null) {
                     return 0L;
                 }
-                return f36733a.a();
+                return f23042a.a();
             } finally {
             }
         }
@@ -51,10 +51,10 @@ public class ExternalDecodeFactoryManager {
     public static void destroyH265Decoder(long j) {
         synchronized (ExternalDecodeFactoryManager.class) {
             try {
-                if (f36733a == null) {
+                if (f23042a == null) {
                     LiteavLog.w("ExternalDecodeFactoryManager", "DestroyHevcDecoder sDecoderFactory is null: ".concat(String.valueOf(j)));
                 } else {
-                    f36733a.a(j);
+                    f23042a.a(j);
                 }
             } catch (Throwable th) {
                 throw th;

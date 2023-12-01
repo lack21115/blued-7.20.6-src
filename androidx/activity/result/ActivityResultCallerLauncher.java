@@ -5,6 +5,7 @@ import android.content.Intent;
 import androidx.activity.result.ActivityResultCallerLauncher$resultContract$2;
 import androidx.activity.result.contract.ActivityResultContract;
 import androidx.core.app.ActivityOptionsCompat;
+import com.anythink.expressad.d.a.b;
 import kotlin.Lazy;
 import kotlin.LazyKt;
 import kotlin.Metadata;
@@ -17,29 +18,28 @@ import kotlin.jvm.internal.Intrinsics;
 public final class ActivityResultCallerLauncher<I, O> extends ActivityResultLauncher<Unit> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Lazy f1508a;
+    private final Lazy f1460a;
     private final ActivityResultLauncher<I> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final ActivityResultContract<I, O> f1509c;
+    private final ActivityResultContract<I, O> f1461c;
     private final I d;
 
-    public ActivityResultCallerLauncher(ActivityResultLauncher<I> launcher, ActivityResultContract<I, O> callerContract, I i) {
-        Intrinsics.e(launcher, "launcher");
-        Intrinsics.e(callerContract, "callerContract");
-        this.b = launcher;
-        this.f1509c = callerContract;
+    public ActivityResultCallerLauncher(ActivityResultLauncher<I> activityResultLauncher, ActivityResultContract<I, O> activityResultContract, I i) {
+        Intrinsics.e(activityResultLauncher, b.bU);
+        Intrinsics.e(activityResultContract, "callerContract");
+        this.b = activityResultLauncher;
+        this.f1461c = activityResultContract;
         this.d = i;
-        this.f1508a = LazyKt.a(new Function0<ActivityResultCallerLauncher$resultContract$2.AnonymousClass1>() { // from class: androidx.activity.result.ActivityResultCallerLauncher$resultContract$2
+        this.f1460a = LazyKt.a(new Function0<ActivityResultCallerLauncher$resultContract$2.AnonymousClass1>() { // from class: androidx.activity.result.ActivityResultCallerLauncher$resultContract$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(0);
             }
 
-            /* JADX WARN: Can't rename method to resolve collision */
             /* JADX WARN: Type inference failed for: r0v0, types: [androidx.activity.result.ActivityResultCallerLauncher$resultContract$2$1] */
-            @Override // kotlin.jvm.functions.Function0
-            public final AnonymousClass1 invoke() {
+            /* renamed from: invoke */
+            public final AnonymousClass1 m1071invoke() {
                 return new ActivityResultContract<Unit, O>() { // from class: androidx.activity.result.ActivityResultCallerLauncher$resultContract$2.1
                     @Override // androidx.activity.result.contract.ActivityResultContract
                     public Intent createIntent(Context context, Unit unit) {
@@ -59,7 +59,7 @@ public final class ActivityResultCallerLauncher<I, O> extends ActivityResultLaun
     }
 
     public final ActivityResultContract<I, O> getCallerContract() {
-        return this.f1509c;
+        return this.f1461c;
     }
 
     @Override // androidx.activity.result.ActivityResultLauncher
@@ -76,7 +76,7 @@ public final class ActivityResultCallerLauncher<I, O> extends ActivityResultLaun
     }
 
     public final ActivityResultContract<Unit, O> getResultContract() {
-        return (ActivityResultContract) this.f1508a.getValue();
+        return (ActivityResultContract) this.f1460a.getValue();
     }
 
     @Override // androidx.activity.result.ActivityResultLauncher

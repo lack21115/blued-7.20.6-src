@@ -24,43 +24,43 @@ import java.util.Map;
 public abstract class eq extends eo {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f41381a;
+    private int f27690a;
 
     /* renamed from: a  reason: collision with other field name */
-    protected Bitmap f394a;
+    protected Bitmap f347a;
 
     /* renamed from: a  reason: collision with other field name */
-    private RemoteViews f395a;
+    private RemoteViews f348a;
 
     /* renamed from: a  reason: collision with other field name */
-    protected CharSequence f396a;
+    protected CharSequence f349a;
 
     /* renamed from: a  reason: collision with other field name */
-    private String f397a;
+    private String f350a;
 
     /* renamed from: a  reason: collision with other field name */
-    private ArrayList<Notification.Action> f398a;
+    private ArrayList<Notification.Action> f351a;
 
     /* renamed from: a  reason: collision with other field name */
-    protected Map<String, String> f399a;
+    protected Map<String, String> f352a;
 
     /* renamed from: a  reason: collision with other field name */
-    private boolean f400a;
+    private boolean f353a;
     private int b;
 
     /* renamed from: b  reason: collision with other field name */
-    protected CharSequence f401b;
+    protected CharSequence f354b;
 
     /* renamed from: b  reason: collision with other field name */
-    private boolean f402b;
+    private boolean f355b;
 
     public eq(Context context, int i, String str) {
         super(context);
-        this.f398a = new ArrayList<>();
+        this.f351a = new ArrayList<>();
         this.b = 0;
-        this.f397a = str;
-        this.f41381a = i;
-        m11721c();
+        this.f350a = str;
+        this.f27690a = i;
+        m8671c();
     }
 
     public eq(Context context, String str) {
@@ -68,53 +68,53 @@ public abstract class eq extends eo {
     }
 
     private Bitmap a() {
-        return com.xiaomi.push.service.ak.a(g.m11797a(a(), this.f397a));
+        return com.xiaomi.push.service.ak.a(g.m8747a(a(), this.f350a));
     }
 
     private String c() {
         boolean e = e();
-        this.f402b = e;
-        return e ? b() : mo11725a();
+        this.f355b = e;
+        return e ? b() : mo8675a();
     }
 
     /* renamed from: c  reason: collision with other method in class */
-    private void m11721c() {
+    private void m8671c() {
         int a2 = a(a().getResources(), c(), "layout", a().getPackageName());
         if (a2 == 0) {
-            com.xiaomi.channel.commonutils.logger.b.m11394a("create RemoteViews failed, no such layout resource was found");
+            com.xiaomi.channel.commonutils.logger.b.m8344a("create RemoteViews failed, no such layout resource was found");
             return;
         }
-        this.f395a = new RemoteViews(a().getPackageName(), a2);
-        this.f400a = mo11719a();
+        this.f348a = new RemoteViews(a().getPackageName(), a2);
+        this.f353a = mo8669a();
     }
 
     /* renamed from: c  reason: collision with other method in class */
-    private boolean m11722c() {
-        Map<String, String> map = this.f399a;
+    private boolean m8672c() {
+        Map<String, String> map = this.f352a;
         return map != null && Boolean.parseBoolean(map.get("custom_builder_set_title"));
     }
 
     private void d() {
-        super.setContentTitle(this.f396a);
-        super.setContentText(this.f401b);
+        super.setContentTitle(this.f349a);
+        super.setContentText(this.f354b);
     }
 
     /* renamed from: d  reason: collision with other method in class */
-    private boolean m11723d() {
-        return (TextUtils.isEmpty(b()) || TextUtils.isEmpty(this.f397a)) ? false : true;
+    private boolean m8673d() {
+        return (TextUtils.isEmpty(b()) || TextUtils.isEmpty(this.f350a)) ? false : true;
     }
 
     private boolean e() {
-        return m11723d() && f();
+        return m8673d() && f();
     }
 
     private boolean f() {
-        List<StatusBarNotification> m12141b;
-        if (Build.VERSION.SDK_INT < 20 || (m12141b = com.xiaomi.push.service.ax.a(a(), this.f397a).m12141b()) == null || m12141b.isEmpty()) {
+        List<StatusBarNotification> m9091b;
+        if (Build.VERSION.SDK_INT < 20 || (m9091b = com.xiaomi.push.service.ax.a(a(), this.f350a).m9091b()) == null || m9091b.isEmpty()) {
             return false;
         }
-        for (StatusBarNotification statusBarNotification : m12141b) {
-            if (statusBarNotification.getId() == this.f41381a) {
+        for (StatusBarNotification statusBarNotification : m9091b) {
+            if (statusBarNotification.getId() == this.f27690a) {
                 Notification notification = statusBarNotification.getNotification();
                 return (notification == null || notification.extras.getBoolean("mipush.customCopyLayout", true)) ? false : true;
             }
@@ -144,13 +144,13 @@ public abstract class eq extends eo {
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public final RemoteViews m11724a() {
-        return this.f395a;
+    public final RemoteViews m8674a() {
+        return this.f348a;
     }
 
     @Override // com.xiaomi.push.eo
     public eo a(Map<String, String> map) {
-        this.f399a = map;
+        this.f352a = map;
         return this;
     }
 
@@ -165,7 +165,7 @@ public abstract class eq extends eo {
     /* renamed from: a */
     public eq addAction(Notification.Action action) {
         if (action != null) {
-            this.f398a.add(action);
+            this.f351a.add(action);
         }
         int i = this.b;
         this.b = i + 1;
@@ -176,44 +176,44 @@ public abstract class eq extends eo {
     @Override // android.app.Notification.Builder
     /* renamed from: a */
     public eq setLargeIcon(Bitmap bitmap) {
-        this.f394a = bitmap;
+        this.f347a = bitmap;
         return this;
     }
 
     @Override // android.app.Notification.Builder
     /* renamed from: a */
     public eq setContentTitle(CharSequence charSequence) {
-        this.f396a = charSequence;
+        this.f349a = charSequence;
         return this;
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    protected abstract String mo11725a();
+    protected abstract String mo8675a();
 
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.xiaomi.push.eo
     /* renamed from: a */
-    public void mo11718a() {
-        super.mo11718a();
+    public void mo8668a() {
+        super.mo8668a();
         Bundle bundle = new Bundle();
-        if (m11723d()) {
-            bundle.putBoolean("mipush.customCopyLayout", this.f402b);
+        if (m8673d()) {
+            bundle.putBoolean("mipush.customCopyLayout", this.f355b);
         } else {
             bundle.putBoolean("mipush.customCopyLayout", false);
         }
         bundle.putBoolean("miui.customHeight", false);
         bundle.putBoolean("mipush.customNotification", true);
         bundle.putInt("mipush.customLargeIconId", a("large_icon"));
-        if (this.f398a.size() > 0) {
-            Notification.Action[] actionArr = new Notification.Action[this.f398a.size()];
-            this.f398a.toArray(actionArr);
+        if (this.f351a.size() > 0) {
+            Notification.Action[] actionArr = new Notification.Action[this.f351a.size()];
+            this.f351a.toArray(actionArr);
             bundle.putParcelableArray("mipush.customActions", actionArr);
         }
-        if (m11722c() || !com.xiaomi.push.service.ay.m12144a(a().getContentResolver())) {
+        if (m8672c() || !com.xiaomi.push.service.ay.m9094a(a().getContentResolver())) {
             d();
         } else {
-            bundle.putCharSequence("mipush.customTitle", this.f396a);
-            bundle.putCharSequence("mipush.customContent", this.f401b);
+            bundle.putCharSequence("mipush.customTitle", this.f349a);
+            bundle.putCharSequence("mipush.customContent", this.f354b);
         }
         addExtras(bundle);
     }
@@ -222,12 +222,12 @@ public abstract class eq extends eo {
     public void a(int i) {
         Bitmap a2 = a();
         if (a2 != null) {
-            m11724a().setImageViewBitmap(i, a2);
+            m8674a().setImageViewBitmap(i, a2);
             return;
         }
-        int b = g.b(a(), this.f397a);
+        int b = g.b(a(), this.f350a);
         if (b != 0) {
-            m11724a().setImageViewResource(i, b);
+            m8674a().setImageViewResource(i, b);
         }
     }
 
@@ -235,34 +235,34 @@ public abstract class eq extends eo {
     }
 
     /* renamed from: a */
-    protected abstract boolean mo11719a();
+    protected abstract boolean mo8669a();
 
     /* renamed from: a  reason: collision with other method in class */
-    protected final boolean m11726a(int i) {
+    protected final boolean m8676a(int i) {
         return ((((double) Color.red(i)) * 0.299d) + (((double) Color.green(i)) * 0.587d)) + (((double) Color.blue(i)) * 0.114d) < 192.0d;
     }
 
     @Override // android.app.Notification.Builder
     /* renamed from: b */
     public eq setContentText(CharSequence charSequence) {
-        this.f401b = charSequence;
+        this.f354b = charSequence;
         return this;
     }
 
     protected abstract String b();
 
     /* renamed from: b  reason: collision with other method in class */
-    protected final void m11727b() {
-        super.setContentTitle(this.f396a);
-        super.setContentText(this.f401b);
-        Bitmap bitmap = this.f394a;
+    protected final void m8677b() {
+        super.setContentTitle(this.f349a);
+        super.setContentText(this.f354b);
+        Bitmap bitmap = this.f347a;
         if (bitmap != null) {
             super.setLargeIcon(bitmap);
         }
     }
 
     /* renamed from: b  reason: collision with other method in class */
-    protected final boolean m11728b() {
-        return this.f400a;
+    protected final boolean m8678b() {
+        return this.f353a;
     }
 }

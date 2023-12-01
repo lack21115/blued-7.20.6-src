@@ -8,26 +8,24 @@ import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/basead/b.class */
 public class b {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static volatile b f6393a;
+    private static volatile b a;
 
     private b() {
     }
 
     public static b a() {
-        if (f6393a == null) {
+        if (a == null) {
             synchronized (b.class) {
                 try {
-                    if (f6393a == null) {
-                        f6393a = new b();
+                    if (a == null) {
+                        a = new b();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f6393a;
+        return a;
     }
 
     public static String a(Context context, String str) {
@@ -35,7 +33,7 @@ public class b {
     }
 
     public static String a(j jVar) {
-        return jVar == null ? "" : a(jVar.b, jVar.f6664c, jVar.f);
+        return jVar == null ? "" : a(jVar.b, jVar.c, jVar.f);
     }
 
     public static String a(String str, String str2, int i) {

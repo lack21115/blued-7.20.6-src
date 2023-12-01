@@ -3,11 +3,10 @@ package com.getui.gtc.base.log.c;
 import android.os.Process;
 import android.text.TextUtils;
 import androidx.exifinterface.media.ExifInterface;
-import com.alipay.sdk.util.i;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.getui.gtc.base.log.ILogDestination;
 import com.getui.gtc.base.log.ILogFormatter;
 import com.getui.gtc.base.util.CommonUtil;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStream;
 import java.io.PrintWriter;
@@ -21,11 +20,11 @@ import org.json.JSONObject;
 public final class a implements ILogFormatter {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f21914a;
+    public String f8307a;
     public int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final ILogDestination f21915c;
+    private final ILogDestination f8308c;
     private final SimpleDateFormat d;
     private String e;
 
@@ -35,10 +34,10 @@ public final class a implements ILogFormatter {
 
     public a(ILogDestination iLogDestination) {
         this.d = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
-        this.f21914a = "";
+        this.f8307a = "";
         this.e = "";
         this.b = 8;
-        this.f21915c = (ILogDestination) com.getui.gtc.base.log.e.a.a(iLogDestination);
+        this.f8308c = (ILogDestination) com.getui.gtc.base.log.e.a.a(iLogDestination);
         this.e = CommonUtil.getProcessName();
     }
 
@@ -75,7 +74,7 @@ public final class a implements ILogFormatter {
         String str5 = trim;
         if (trim.startsWith("{")) {
             str5 = trim;
-            if (trim.endsWith(i.d)) {
+            if (trim.endsWith("}")) {
                 try {
                     str5 = new JSONObject(trim).toString(2);
                 } catch (Throwable th2) {
@@ -138,17 +137,17 @@ public final class a implements ILogFormatter {
         sb.append(this.d.format(new Date()));
         sb.append(" ");
         sb.append(Process.myPid());
-        sb.append(BridgeUtil.SPLIT_MARK);
+        sb.append("/");
         sb.append(this.e);
         sb.append(" ");
         sb.append(i != 1 ? i != 2 ? i != 3 ? i != 4 ? i != 5 ? "?" : ExifInterface.LONGITUDE_EAST : "W" : "I" : "D" : ExifInterface.GPS_MEASUREMENT_INTERRUPTED);
-        sb.append(BridgeUtil.SPLIT_MARK);
+        sb.append("/");
         String a2 = a();
-        String str4 = TextUtils.isEmpty(str) ? this.f21914a : str;
+        String str4 = TextUtils.isEmpty(str) ? this.f8307a : str;
         if (TextUtils.isEmpty(str4)) {
             str3 = a2;
         } else {
-            str3 = str4 + "-" + a2;
+            str3 = str4 + Constants.ACCEPT_TIME_SEPARATOR_SERVER + a2;
         }
         sb.append(str3);
         sb.append(": ");
@@ -158,6 +157,6 @@ public final class a implements ILogFormatter {
         if (!sb2.endsWith("\n")) {
             str5 = sb2 + "\n";
         }
-        this.f21915c.log(i, str, str5);
+        this.f8308c.log(i, str, str5);
     }
 }

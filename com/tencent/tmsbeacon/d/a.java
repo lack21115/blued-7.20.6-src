@@ -7,11 +7,11 @@ import java.util.Map;
 public class a implements c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile a f39540a;
+    private static volatile a f25849a;
     public boolean b = false;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f39541c = "oth.str.mdt.qq.com";
+    private String f25850c = "oth.str.mdt.qq.com";
     private int d = 360;
     private int e = 100;
     private Map<String, String> f = null;
@@ -22,18 +22,18 @@ public class a implements c {
     }
 
     public static a a() {
-        if (f39540a == null) {
+        if (f25849a == null) {
             synchronized (a.class) {
                 try {
-                    if (f39540a == null) {
-                        f39540a = new a();
+                    if (f25849a == null) {
+                        f25849a = new a();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f39540a;
+        return f25849a;
     }
 
     @Override // com.tencent.tmsbeacon.d.c

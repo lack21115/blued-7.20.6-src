@@ -9,7 +9,7 @@ public interface a {
     List<com.alibaba.mtl.log.model.a> a(String str, int i);
 
     /* renamed from: a  reason: collision with other method in class */
-    boolean mo2170a(List<com.alibaba.mtl.log.model.a> list);
+    boolean mo8613a(List<com.alibaba.mtl.log.model.a> list);
 
     void c(String str, String str2);
 

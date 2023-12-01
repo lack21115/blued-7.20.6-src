@@ -1,6 +1,6 @@
 package com.sobot.chat.widget.zxing.client.result;
 
-import com.blued.android.chat.grpc.backup.MsgBackupService;
+import com.huawei.openalliance.ad.constant.t;
 import com.sobot.chat.widget.zxing.Result;
 import com.sobot.chat.widget.zxing.util.Intents;
 import java.io.ByteArrayOutputStream;
@@ -21,7 +21,7 @@ public final class VCardResultParser extends ResultParser {
     private static final Pattern NEWLINE_ESCAPE = Pattern.compile("\\\\[nN]");
     private static final Pattern VCARD_ESCAPES = Pattern.compile("\\\\([,;\\\\])");
     private static final Pattern EQUALS = Pattern.compile("=");
-    private static final Pattern SEMICOLON = Pattern.compile(";");
+    private static final Pattern SEMICOLON = Pattern.compile(t.aE);
     private static final Pattern UNESCAPED_SEMICOLONS = Pattern.compile("(?<!\\\\);+");
     private static final Pattern COMMA = Pattern.compile(",");
     private static final Pattern SEMICOLON_OR_COMMA = Pattern.compile("[;,]");
@@ -382,7 +382,7 @@ public final class VCardResultParser extends ResultParser {
             if (matchSingleVCardPrefixedField4 != null && !isLikeVCardDate(matchSingleVCardPrefixedField4.get(0))) {
                 matchSingleVCardPrefixedField4 = null;
             }
-            List<String> matchSingleVCardPrefixedField5 = matchSingleVCardPrefixedField(MsgBackupService.INTENT_KEY_TITLE, massagedText, true, false);
+            List<String> matchSingleVCardPrefixedField5 = matchSingleVCardPrefixedField("TITLE", massagedText, true, false);
             List<List<String>> matchVCardPrefixedField5 = matchVCardPrefixedField("URL", massagedText, true, false);
             List<String> matchSingleVCardPrefixedField6 = matchSingleVCardPrefixedField("IMPP", massagedText, true, false);
             List<String> matchSingleVCardPrefixedField7 = matchSingleVCardPrefixedField("GEO", massagedText, true, false);

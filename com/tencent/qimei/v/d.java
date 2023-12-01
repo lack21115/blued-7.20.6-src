@@ -6,12 +6,12 @@ import com.tencent.qimei.shellapi.IDependency;
 public class d {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final b f38422a = new a();
+    public static final b f24731a = new a();
 
     public static b a(String str) {
         com.tencent.qimei.t.b a2 = com.tencent.qimei.t.b.a();
         IDependency a3 = a2.a("StrategyProvider" + str);
-        return a3 instanceof b ? (b) a3 : f38422a;
+        return a3 instanceof b ? (b) a3 : f24731a;
     }
 
     public static void a(String str, b bVar) {

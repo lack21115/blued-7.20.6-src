@@ -3,7 +3,6 @@ package com.tencent.beacon.event.c;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Handler;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.beacon.event.open.EventType;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +14,7 @@ import java.util.concurrent.atomic.AtomicLong;
 public class g {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Map<String, g> f35048a = new ConcurrentHashMap(5);
+    private static final Map<String, g> f21357a = new ConcurrentHashMap(5);
     private static volatile Handler b;
     private final Context m;
     private final String n;
@@ -29,7 +28,7 @@ public class g {
     private SharedPreferences z;
 
     /* renamed from: c  reason: collision with root package name */
-    private final String f35049c = "normal_log_id";
+    private final String f21358c = "normal_log_id";
     private final String d = "realtime_log_id";
     private final String e = "immediate_log_id";
     private final String f = "normal_min_log_id";
@@ -52,7 +51,7 @@ public class g {
     }
 
     private long a(EventType eventType) {
-        switch (f.f35047a[eventType.ordinal()]) {
+        switch (f.f21356a[eventType.ordinal()]) {
             case 1:
             case 2:
                 return this.q.incrementAndGet();
@@ -70,7 +69,7 @@ public class g {
     /* JADX INFO: Access modifiers changed from: private */
     public SharedPreferences a(Context context) {
         if (this.z == null) {
-            this.z = context.getSharedPreferences("new_b_log_ID_" + com.tencent.beacon.a.c.b.c(context) + BridgeUtil.UNDERLINE_STR + this.n, 0);
+            this.z = context.getSharedPreferences("new_b_log_ID_" + com.tencent.beacon.a.c.b.c(context) + "_" + this.n, 0);
         }
         return this.z;
     }
@@ -79,11 +78,11 @@ public class g {
         g gVar;
         synchronized (g.class) {
             try {
-                g gVar2 = f35048a.get(str);
+                g gVar2 = f21357a.get(str);
                 gVar = gVar2;
                 if (gVar2 == null) {
                     gVar = new g(context, str);
-                    f35048a.put(str, gVar);
+                    f21357a.put(str, gVar);
                 }
             } catch (Throwable th) {
                 throw th;

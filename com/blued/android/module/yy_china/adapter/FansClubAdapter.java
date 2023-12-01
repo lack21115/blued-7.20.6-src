@@ -24,15 +24,13 @@ import kotlin.jvm.internal.StringCompanionObject;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/adapter/FansClubAdapter.class */
 public final class FansClubAdapter extends BaseQuickAdapter<YYClubRankMemberModel, BaseViewHolder> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private ActivityFragmentActive f16129a;
+    private ActivityFragmentActive a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public FansClubAdapter(ActivityFragmentActive fragmentActive) {
         super(R.layout.item_fans_info);
         Intrinsics.e(fragmentActive, "fragmentActive");
-        this.f16129a = fragmentActive;
+        this.a = fragmentActive;
     }
 
     private final int a(int i) {
@@ -79,11 +77,10 @@ public final class FansClubAdapter extends BaseQuickAdapter<YYClubRankMemberMode
     }
 
     public final ActivityFragmentActive a() {
-        return this.f16129a;
+        return this.a;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(BaseViewHolder baseViewHolder, final YYClubRankMemberModel yYClubRankMemberModel) {
         Context context;
@@ -107,7 +104,7 @@ public final class FansClubAdapter extends BaseQuickAdapter<YYClubRankMemberMode
                     if (textView3 == null || (context = textView3.getContext()) == null || (string = context.getString(R.string.yy_fans_consumption)) == null) {
                         format = null;
                     } else {
-                        StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
+                        StringCompanionObject stringCompanionObject = StringCompanionObject.a;
                         format = String.format(string, Arrays.copyOf(new Object[]{yYClubLevelInfoModel.score}, 1));
                         Intrinsics.c(format, "format(format, *args)");
                     }

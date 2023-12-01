@@ -7,7 +7,7 @@ import com.ss.android.socialbase.downloader.constants.MonitorConstants;
 public class m0 implements b {
 
     /* renamed from: a  reason: collision with root package name */
-    public l0 f38492a;
+    public l0 f24801a;
 
     public static String a(String str, String str2) {
         try {
@@ -21,12 +21,12 @@ public class m0 implements b {
 
     @Override // com.tencent.qmsp.oaid2.b
     public String a() {
-        return this.f38492a.a(0, "");
+        return this.f24801a.a(0, "");
     }
 
     @Override // com.tencent.qmsp.oaid2.b
     public void a(Context context, IVendorCallback iVendorCallback) {
-        this.f38492a = new l0(context);
+        this.f24801a = new l0(context);
     }
 
     @Override // com.tencent.qmsp.oaid2.b

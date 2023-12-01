@@ -1,14 +1,15 @@
 package com.blued.android.core.net.http;
 
 import android.text.TextUtils;
+import com.alibaba.fastjson.support.spring.FastJsonJsonView;
+import com.android.internal.http.multipart.FilePart;
+import com.anythink.core.common.g.g;
 import com.blued.android.core.net.HttpManager;
 import com.blued.android.core.net.HttpRequestWrapper;
 import com.blued.android.core.net.HttpResponseHandler;
 import com.blued.android.core.net.StringHttpResponseHandler;
 import com.blued.android.core.utils.Log;
-import com.huawei.openalliance.ad.constant.ax;
 import com.qiniu.android.dns.DnsManager;
-import com.tencent.ugc.common.UGCConstants;
 import java.io.File;
 import java.io.IOException;
 import java.util.Map;
@@ -29,38 +30,34 @@ import okio.Source;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/net/http/OkHttpUrlRequest.class */
 public class OkHttpUrlRequest {
-
-    /* renamed from: a  reason: collision with root package name */
-    private long f9682a;
+    private long a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.blued.android.core.net.http.OkHttpUrlRequest$3  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/net/http/OkHttpUrlRequest$3.class */
     public static /* synthetic */ class AnonymousClass3 {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f9686a;
+        static final /* synthetic */ int[] a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x0036 -> B:21:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:13:0x003a -> B:19:0x001f). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:15:0x003e -> B:25:0x002a). Please submit an issue!!! */
         static {
             int[] iArr = new int[HttpRequestWrapper.HttpType.values().length];
-            f9686a = iArr;
+            a = iArr;
             try {
                 iArr[HttpRequestWrapper.HttpType.Get.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f9686a[HttpRequestWrapper.HttpType.Post.ordinal()] = 2;
+                a[HttpRequestWrapper.HttpType.Post.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f9686a[HttpRequestWrapper.HttpType.Put.ordinal()] = 3;
+                a[HttpRequestWrapper.HttpType.Put.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f9686a[HttpRequestWrapper.HttpType.Delete.ordinal()] = 4;
+                a[HttpRequestWrapper.HttpType.Delete.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
         }
@@ -87,7 +84,7 @@ public class OkHttpUrlRequest {
                     String httpUrl = url.toString();
                     if (response == null) {
                         OkHttpUrlRequest.this.a(url, (HttpUrl) null, httpResponseHandler);
-                        httpResponseHandler.sendFailureMessage(httpUrl, new Exception("response is null!"), -1001, null);
+                        httpResponseHandler.sendFailureMessage(httpUrl, new Exception("response is null!"), g.b, null);
                     } else {
                         OkHttpUrlRequest.this.a(url, response.request().url(), httpResponseHandler);
                         if (HttpManager.c() && (handshake = response.handshake()) != null) {
@@ -208,7 +205,7 @@ public class OkHttpUrlRequest {
     public void a(Response response) {
         if (HttpManager.c()) {
             StringBuilder sb = new StringBuilder("request take time:");
-            sb.append(System.currentTimeMillis() - this.f9682a);
+            sb.append(System.currentTimeMillis() - this.a);
             if (response != null) {
                 sb.append(" / real take time:");
                 sb.append(response.receivedResponseAtMillis() - response.sentRequestAtMillis());
@@ -229,7 +226,7 @@ public class OkHttpUrlRequest {
             return RequestBody.create((MediaType) null, "");
         }
         if (b.e != null) {
-            return RequestBody.create(MediaType.parse("application/json"), b.e);
+            return RequestBody.create(MediaType.parse(FastJsonJsonView.DEFAULT_CONTENT_TYPE), b.e);
         }
         if (b.f != null) {
             FormBody.Builder builder = new FormBody.Builder();
@@ -238,12 +235,12 @@ public class OkHttpUrlRequest {
             }
             return builder.build();
         } else if (b.g != null) {
-            return RequestBody.create(MediaType.parse("application/octet-stream"), b.g);
+            return RequestBody.create(MediaType.parse(FilePart.DEFAULT_CONTENT_TYPE), b.g);
         } else {
-            if (TextUtils.isEmpty(b.f9696c)) {
-                if (b.f9695a != null) {
+            if (TextUtils.isEmpty(b.c)) {
+                if (b.a != null) {
                     FormBody.Builder builder2 = new FormBody.Builder();
-                    for (Map.Entry<String, String> entry2 : b.f9695a.entrySet()) {
+                    for (Map.Entry<String, String> entry2 : b.a.entrySet()) {
                         builder2.add(entry2.getKey(), entry2.getValue());
                     }
                     return builder2.build();
@@ -251,15 +248,15 @@ public class OkHttpUrlRequest {
                 return RequestBody.create((MediaType) null, "");
             }
             MultipartBody.Builder type = new MultipartBody.Builder().setType(MultipartBody.FORM);
-            for (Map.Entry<String, String> entry3 : b.f9695a.entrySet()) {
+            for (Map.Entry<String, String> entry3 : b.a.entrySet()) {
                 type.addFormDataPart(entry3.getKey(), entry3.getValue());
             }
-            File file = new File(b.f9696c);
-            RequestBody a2 = a(MediaType.parse(ax.V), file, httpRequestWrapper.c());
+            File file = new File(b.c);
+            RequestBody a = a(MediaType.parse("image/jpeg"), file, httpRequestWrapper.c());
             if (TextUtils.isEmpty(b.b)) {
-                type.addFormDataPart(file.getName(), file.getName(), a2);
+                type.addFormDataPart(file.getName(), file.getName(), a);
             } else {
-                type.addFormDataPart(b.b, file.getName(), a2);
+                type.addFormDataPart(b.b, file.getName(), a);
             }
             return type.build();
         }
@@ -269,15 +266,15 @@ public class OkHttpUrlRequest {
         if (HttpManager.c()) {
             Log.a("HttpManager", "use okhttp to execute");
         }
-        HttpResponseHandler<?> c2 = httpRequestWrapper.c();
-        if (c2 != null) {
-            c2.sendStartMessage();
+        HttpResponseHandler<?> c = httpRequestWrapper.c();
+        if (c != null) {
+            c.sendStartMessage();
         }
-        this.f9682a = System.currentTimeMillis();
+        this.a = System.currentTimeMillis();
         String j = httpRequestWrapper.j();
         try {
             Request.Builder builder = new Request.Builder();
-            int i = AnonymousClass3.f9686a[httpRequestWrapper.getType().ordinal()];
+            int i = AnonymousClass3.a[httpRequestWrapper.getType().ordinal()];
             if (i == 1) {
                 builder.get();
             } else if (i == 2) {
@@ -294,24 +291,24 @@ public class OkHttpUrlRequest {
                     builder.addHeader(entry.getKey(), entry.getValue());
                 }
             }
-            Call newCall = OkHttpUtils.f9687a.newCall(builder.build());
-            Callback a2 = a(c2);
+            Call newCall = OkHttpUtils.a.newCall(builder.build());
+            Callback a = a(c);
             if (!httpRequestWrapper.g()) {
-                newCall.enqueue(a2);
+                newCall.enqueue(a);
                 return newCall;
             }
             try {
-                a2.onResponse(newCall, newCall.execute());
+                a.onResponse(newCall, newCall.execute());
                 return newCall;
             } catch (IOException e2) {
-                a2.onFailure(newCall, e2);
+                a.onFailure(newCall, e2);
                 return newCall;
             }
         } catch (Exception e3) {
             e3.printStackTrace();
-            if (c2 != null) {
-                c2.sendFailureMessage(j, e3, UGCConstants.ERR_BGM_UNSUPPORT_SYSTEM, null);
-                c2.sendFinishMessage();
+            if (c != null) {
+                c.sendFailureMessage(j, e3, -2001, null);
+                c.sendFinishMessage();
                 return null;
             }
             return null;

@@ -4,10 +4,10 @@ package com.umeng.analytics.pro;
 public class bl {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f40665a = 1;
+    public static final int f26974a = 1;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f40666c = "stf";
+    public static final String f26975c = "stf";
     public static final String d = "_id";
     public static final String e = "_tp";
     public static final String f = "_hd";

@@ -38,11 +38,11 @@ import java.util.List;
 public class LiveJoinFansFragment extends MvpFragment<LiveJoinFansPresenter> implements View.OnClickListener {
 
     /* renamed from: a  reason: collision with root package name */
-    public Dialog f31181a;
+    public Dialog f17491a;
     LiveJoinFansAdapater b = null;
 
     /* renamed from: c  reason: collision with root package name */
-    LiveFansRecommendAdapater f31182c = null;
+    LiveFansRecommendAdapater f17492c = null;
     private Context d;
     @BindView
     View fl_main;
@@ -72,7 +72,7 @@ public class LiveJoinFansFragment extends MvpFragment<LiveJoinFansPresenter> imp
     }
 
     private void d() {
-        this.f31181a = DialogUtils.a(getActivity());
+        this.f17491a = DialogUtils.a(getActivity());
         this.top_title.a();
         this.top_title.setCenterText(getText(R.string.live_fans));
         this.top_title.setLeftClickListener(this);
@@ -87,8 +87,8 @@ public class LiveJoinFansFragment extends MvpFragment<LiveJoinFansPresenter> imp
 
             @Override // com.soft.blued.ui.live.adapter.LiveJoinFansAdapater.EventCallBack
             public void a(String str, int i) {
-                DialogUtils.a(LiveJoinFansFragment.this.f31181a);
-                LiveJoinFansFragment.this.j().d(str);
+                DialogUtils.a(LiveJoinFansFragment.this.f17491a);
+                ((LiveJoinFansPresenter) LiveJoinFansFragment.this.j()).d(str);
             }
         });
         this.recycle_view.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -96,7 +96,7 @@ public class LiveJoinFansFragment extends MvpFragment<LiveJoinFansPresenter> imp
         this.refresh_view.b((OnMultiPurposeListener) new SimpleMultiPurposeListener() { // from class: com.soft.blued.ui.live.fragment.LiveJoinFansFragment.2
             @Override // com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener, com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
             public void onLoadMore(RefreshLayout refreshLayout) {
-                LiveJoinFansFragment.this.j().f();
+                ((LiveJoinFansPresenter) LiveJoinFansFragment.this.j()).f();
             }
 
             @Override // com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener, com.scwang.smartrefresh.layout.listener.OnRefreshListener
@@ -109,20 +109,19 @@ public class LiveJoinFansFragment extends MvpFragment<LiveJoinFansPresenter> imp
         linearLayoutManager.setOrientation(0);
         this.recycle_recommend.setLayoutManager(linearLayoutManager);
         LiveFansRecommendAdapater liveFansRecommendAdapater = new LiveFansRecommendAdapater(getFragmentActive(), this.d);
-        this.f31182c = liveFansRecommendAdapater;
+        this.f17492c = liveFansRecommendAdapater;
         liveFansRecommendAdapater.setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() { // from class: com.soft.blued.ui.live.fragment.LiveJoinFansFragment.3
             @Override // com.chad.library.adapter.base.BaseQuickAdapter.RequestLoadMoreListener
             public void onLoadMoreRequested() {
                 Log.i("LiveJoinFansFragment", "onLoadMoreRequested");
-                LiveJoinFansFragment.this.j().a(false);
+                ((LiveJoinFansPresenter) LiveJoinFansFragment.this.j()).a(false);
             }
         }, this.recycle_recommend);
-        this.recycle_recommend.setAdapter(this.f31182c);
+        this.recycle_recommend.setAdapter(this.f17492c);
         this.tv_fans_qa.setOnClickListener(this);
-        j().e();
+        ((LiveJoinFansPresenter) j()).e();
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public void a(Bundle bundle) {
         super.a(bundle);
         d();
@@ -135,19 +134,18 @@ public class LiveJoinFansFragment extends MvpFragment<LiveJoinFansPresenter> imp
         this.b.a(liveFansQuitModel.localUid);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void a(String str, boolean z) {
         super.a(str, z);
         if (str == "LIVE_JOIN_FANS_QUIT") {
-            DialogUtils.b(this.f31181a);
+            DialogUtils.b(this.f17491a);
         } else if (str == "LIVE_JOIN_FANS") {
             this.refresh_view.j();
             this.refresh_view.h();
-            this.refresh_view.l(j().i);
+            this.refresh_view.l(((LiveJoinFansPresenter) j()).i);
             if (z) {
                 this.tv_no_data.setText(getText(R.string.live_fans_no_data));
             } else {
-                this.tv_no_data.setText(getText(2131889870));
+                this.tv_no_data.setText(getText(R.string.live_network_error));
             }
         }
     }
@@ -192,14 +190,14 @@ public class LiveJoinFansFragment extends MvpFragment<LiveJoinFansPresenter> imp
         if (list == null) {
             return;
         }
-        Log.i("LiveJoinFansFragment", "pageRecommend:" + j().l);
+        Log.i("LiveJoinFansFragment", "pageRecommend:" + ((LiveJoinFansPresenter) j()).l);
         this.tv_re_title.setVisibility(0);
-        if (j().l == 1) {
-            this.f31182c.a(list);
+        if (((LiveJoinFansPresenter) j()).l == 1) {
+            this.f17492c.a(list);
         } else {
-            this.f31182c.b(list);
+            this.f17492c.b(list);
         }
-        this.f31182c.setEnableLoadMore(j().j);
+        this.f17492c.setEnableLoadMore(((LiveJoinFansPresenter) j()).j);
     }
 
     public void c() {
@@ -213,11 +211,10 @@ public class LiveJoinFansFragment extends MvpFragment<LiveJoinFansPresenter> imp
         this.fl_main.setVisibility(0);
         this.recycle_view.setVisibility(8);
         this.ll_no_fans.setVisibility(0);
-        j().a(true);
+        ((LiveJoinFansPresenter) j()).a(true);
         EventTrackLive.a(LiveProtos.Event.FANS_CLUB_PAGE_SHOW, false);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public int g() {
         return R.layout.fragment_live_join_fans;
     }
@@ -234,7 +231,6 @@ public class LiveJoinFansFragment extends MvpFragment<LiveJoinFansPresenter> imp
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         this.d = getContext();

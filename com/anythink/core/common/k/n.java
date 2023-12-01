@@ -1,6 +1,5 @@
 package com.anythink.core.common.k;
 
-import android.provider.Downloads;
 import android.text.TextUtils;
 import android.util.Log;
 import com.anythink.core.api.ATSDK;
@@ -15,9 +14,7 @@ import org.json.JSONObject;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/k/n.class */
 public final class n {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final String f6818a = "anythink_bidding";
+    public static final String a = "anythink_bidding";
 
     public static void a(String str, com.anythink.core.common.e.e eVar, String str2, ai aiVar, int i, int i2) {
         a(str, eVar, str2, aiVar, i, i2, null);
@@ -28,11 +25,11 @@ public final class n {
             try {
                 JSONObject jSONObject = new JSONObject();
                 jSONObject.put("reason", str2);
-                jSONObject.put(com.anythink.expressad.videocommon.e.b.v, str);
+                jSONObject.put("placementId", str);
                 jSONObject.put("adtype", eVar.Z());
                 jSONObject.put("adsourceId", aiVar.t());
                 jSONObject.put("networkFirmId", aiVar.c());
-                jSONObject.put("content", eVar.G());
+                jSONObject.put(com.anythink.core.common.l.y, eVar.G());
                 jSONObject.put("hourly_frequency", i);
                 jSONObject.put("hourly_limit", aiVar.f());
                 jSONObject.put("daily_frequency", i2);
@@ -60,14 +57,14 @@ public final class n {
             try {
                 JSONObject jSONObject = new JSONObject();
                 jSONObject.put("action", g.i.v);
-                jSONObject.put("result", str);
-                jSONObject.put(com.anythink.expressad.videocommon.e.b.v, str2);
+                jSONObject.put(com.alipay.sdk.util.l.c, str);
+                jSONObject.put("placementId", str2);
                 jSONObject.put("adtype", str3);
                 jSONObject.put("adsourceId", aiVar.t());
                 jSONObject.put("networkFirmId", aiVar.c());
-                jSONObject.put("content", aiVar.g());
-                jSONObject.put("msg", aiVar.z());
-                a(f6818a, jSONObject.toString(), TextUtils.equals(g.i.g, str));
+                jSONObject.put(com.anythink.core.common.l.y, aiVar.g());
+                jSONObject.put(com.alipay.sdk.cons.c.b, aiVar.z());
+                a(a, jSONObject.toString(), TextUtils.equals(g.i.g, str));
             } catch (Throwable th) {
             }
         }
@@ -78,10 +75,10 @@ public final class n {
             try {
                 JSONObject jSONObject = new JSONObject();
                 jSONObject.put("action", g.i.w);
-                jSONObject.put("result", str);
-                jSONObject.put(com.anythink.expressad.videocommon.e.b.v, str2);
+                jSONObject.put(com.alipay.sdk.util.l.c, str);
+                jSONObject.put("placementId", str2);
                 jSONObject.put("adtype", str3);
-                jSONObject.put(Downloads.Impl.COLUMN_ERROR_MSG, str4);
+                jSONObject.put("errorMsg", str4);
                 a("anythink_network", jSONObject.toString(), TextUtils.equals(g.i.g, str));
             } catch (Throwable th) {
             }
@@ -132,18 +129,18 @@ public final class n {
         if (ATSDK.isNetworkLogDebug()) {
             try {
                 JSONObject jSONObject = new JSONObject();
-                jSONObject.put(com.anythink.expressad.videocommon.e.b.v, str);
+                jSONObject.put("placementId", str);
                 jSONObject.put("adtype", str2);
                 jSONObject.put("api", str3);
-                jSONObject.put("result", str4);
+                jSONObject.put(com.alipay.sdk.util.l.c, str4);
                 jSONObject.put("reason", str5);
                 if (z) {
                     if (!TextUtils.isEmpty(str)) {
-                        Map<String, Object> c2 = v.a().c(str);
-                        if (c2.size() > 0) {
+                        Map<String, Object> c = v.a().c(str);
+                        if (c.size() > 0) {
                             String str7 = "";
-                            for (Map.Entry<String, Object> entry : c2.entrySet()) {
-                                str7 = str7 + "key=" + entry.getKey() + ",value=" + entry.getValue().toString() + ";";
+                            for (Map.Entry<String, Object> entry : c.entrySet()) {
+                                str7 = str7 + "key=" + entry.getKey() + ",value=" + entry.getValue().toString() + com.alipay.sdk.util.i.b;
                             }
                             str6 = "[" + str7 + "]";
                             jSONObject.put("extra", str6);

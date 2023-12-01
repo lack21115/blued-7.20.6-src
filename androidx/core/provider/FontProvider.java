@@ -19,11 +19,12 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8756600-dex2jar.jar:androidx/core/provider/FontProvider.class */
-class FontProvider {
+public class FontProvider {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Comparator<byte[]> f2528a = new Comparator<byte[]>() { // from class: androidx.core.provider.FontProvider.1
+    private static final Comparator<byte[]> f2480a = new Comparator<byte[]>() { // from class: androidx.core.provider.FontProvider.1
         /* JADX WARN: Multi-variable type inference failed */
         /* JADX WARN: Type inference failed for: r0v19, types: [int] */
         /* JADX WARN: Type inference failed for: r0v21, types: [int] */
@@ -68,11 +69,11 @@ class FontProvider {
             throw new PackageManager.NameNotFoundException("Found content provider " + providerAuthority + ", but package was not " + fontRequest.getProviderPackage());
         } else {
             List<byte[]> a2 = a(packageManager.getPackageInfo(resolveContentProvider.packageName, 64).signatures);
-            Collections.sort(a2, f2528a);
+            Collections.sort(a2, f2480a);
             List<List<byte[]>> a3 = a(fontRequest, resources);
             for (int i = 0; i < a3.size(); i++) {
                 ArrayList arrayList = new ArrayList(a3.get(i));
-                Collections.sort(arrayList, f2528a);
+                Collections.sort(arrayList, f2480a);
                 if (a(a2, arrayList)) {
                     return resolveContentProvider;
                 }

@@ -8,12 +8,10 @@ import kotlin.jvm.functions.Function0;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/sequences/SequencesKt__SequencesKt$Sequence$1.class */
 public final class SequencesKt__SequencesKt$Sequence$1<T> implements Sequence<T> {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ Function0<Iterator<T>> f42646a;
+    final /* synthetic */ Function0<Iterator<T>> a;
 
     @Override // kotlin.sequences.Sequence
     public Iterator<T> iterator() {
-        return this.f42646a.invoke();
+        return this.a.invoke();
     }
 }

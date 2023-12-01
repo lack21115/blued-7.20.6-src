@@ -516,7 +516,7 @@ public class WindowDecorActionBar extends ActionBar implements ActionBarOverlayL
         ActionBarPolicy actionBarPolicy = ActionBarPolicy.get(this.mContext);
         setHomeButtonEnabled(actionBarPolicy.enableHomeButtonByDefault() || z);
         setHasEmbeddedTabs(actionBarPolicy.hasEmbeddedTabs());
-        TypedArray obtainStyledAttributes = this.mContext.obtainStyledAttributes(null, R.styleable.ActionBar, 16843470, 0);
+        TypedArray obtainStyledAttributes = this.mContext.obtainStyledAttributes(null, R.styleable.ActionBar, R.attr.actionBarStyle, 0);
         if (obtainStyledAttributes.getBoolean(21, false)) {
             setHideOnContentScrollEnabled(true);
         }
@@ -620,7 +620,6 @@ public class WindowDecorActionBar extends ActionBar implements ActionBarOverlayL
         this.mContextView.animateToVisibility(z ? 0 : 8);
     }
 
-    @Override // android.app.ActionBar
     public boolean collapseActionView() {
         if (this.mDecorToolbar == null || !this.mDecorToolbar.hasExpandedActionView()) {
             return false;
@@ -637,7 +636,6 @@ public class WindowDecorActionBar extends ActionBar implements ActionBarOverlayL
         }
     }
 
-    @Override // android.app.ActionBar
     public void dispatchMenuVisibilityChanged(boolean z) {
         if (z == this.mLastMenuVisibility) {
             return;
@@ -683,7 +681,7 @@ public class WindowDecorActionBar extends ActionBar implements ActionBarOverlayL
             this.mSplitView.setAlpha(1.0f);
             play.with(ObjectAnimator.ofFloat(this.mSplitView, (Property<ActionBarContainer, Float>) View.TRANSLATION_Y, this.mSplitView.getHeight()));
         }
-        animatorSet.setInterpolator(AnimationUtils.loadInterpolator(this.mContext, 17563650));
+        animatorSet.setInterpolator(AnimationUtils.loadInterpolator(this.mContext, R.interpolator.accelerate_cubic));
         animatorSet.setDuration(250L);
         animatorSet.addListener(this.mHideListener);
         this.mCurrentShowAnim = animatorSet;
@@ -717,7 +715,7 @@ public class WindowDecorActionBar extends ActionBar implements ActionBarOverlayL
                 this.mSplitView.setVisibility(0);
                 play.with(ObjectAnimator.ofFloat(this.mSplitView, (Property<ActionBarContainer, Float>) View.TRANSLATION_Y, 0.0f));
             }
-            animatorSet.setInterpolator(AnimationUtils.loadInterpolator(this.mContext, 17563651));
+            animatorSet.setInterpolator(AnimationUtils.loadInterpolator(this.mContext, R.interpolator.decelerate_cubic));
             animatorSet.setDuration(250L);
             animatorSet.addListener(this.mShowListener);
             this.mCurrentShowAnim = animatorSet;
@@ -826,7 +824,7 @@ public class WindowDecorActionBar extends ActionBar implements ActionBarOverlayL
     public Context getThemedContext() {
         if (this.mThemedContext == null) {
             TypedValue typedValue = new TypedValue();
-            this.mContext.getTheme().resolveAttribute(16843671, typedValue, true);
+            this.mContext.getTheme().resolveAttribute(R.attr.actionBarWidgetTheme, typedValue, true);
             int i = typedValue.resourceId;
             if (i == 0 || this.mContext.getThemeResId() == i) {
                 this.mThemedContext = this.mContext;
@@ -882,7 +880,6 @@ public class WindowDecorActionBar extends ActionBar implements ActionBarOverlayL
         return false;
     }
 
-    @Override // android.app.ActionBar
     public boolean isTitleTruncated() {
         return this.mDecorToolbar != null && this.mDecorToolbar.isTitleTruncated();
     }
@@ -892,7 +889,6 @@ public class WindowDecorActionBar extends ActionBar implements ActionBarOverlayL
         return new TabImpl();
     }
 
-    @Override // android.app.ActionBar
     public void onConfigurationChanged(Configuration configuration) {
         setHasEmbeddedTabs(ActionBarPolicy.get(this.mContext).hasEmbeddedTabs());
     }
@@ -1010,7 +1006,6 @@ public class WindowDecorActionBar extends ActionBar implements ActionBarOverlayL
         this.mDecorToolbar.setCustomView(view);
     }
 
-    @Override // android.app.ActionBar
     public void setDefaultDisplayHomeAsUpEnabled(boolean z) {
         if (this.mDisplayHomeAsUpSet) {
             return;
@@ -1178,7 +1173,6 @@ public class WindowDecorActionBar extends ActionBar implements ActionBarOverlayL
         }
     }
 
-    @Override // android.app.ActionBar
     public void setShowHideAnimationEnabled(boolean z) {
         this.mShowHideAnimationEnabled = z;
         if (z || this.mCurrentShowAnim == null) {
@@ -1219,7 +1213,6 @@ public class WindowDecorActionBar extends ActionBar implements ActionBarOverlayL
         this.mDecorToolbar.setTitle(charSequence);
     }
 
-    @Override // android.app.ActionBar
     public void setWindowTitle(CharSequence charSequence) {
         this.mDecorToolbar.setWindowTitle(charSequence);
     }
@@ -1240,7 +1233,6 @@ public class WindowDecorActionBar extends ActionBar implements ActionBarOverlayL
         }
     }
 
-    @Override // android.app.ActionBar
     public ActionMode startActionMode(ActionMode.Callback callback) {
         if (this.mActionMode != null) {
             this.mActionMode.finish();

@@ -9,18 +9,19 @@ import android.os.Message;
 import android.telephony.PhoneStateListener;
 import android.telephony.SignalStrength;
 import android.telephony.TelephonyManager;
+import com.huawei.hms.framework.network.grs.GrsBaseInfo;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /* loaded from: source-8829756-dex2jar.jar:com/tencent/tendinsv/tool/k.class */
 public class k {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile k f39075a;
+    private static volatile k f25384a;
     private Context b;
     private Handler h;
 
     /* renamed from: c  reason: collision with root package name */
-    private volatile int f39076c = 0;
+    private volatile int f25385c = 0;
     private volatile String d = "";
     private String e = "0";
     private TelephonyManager f = null;
@@ -50,18 +51,18 @@ public class k {
     }
 
     public static k a() {
-        if (f39075a == null) {
+        if (f25384a == null) {
             synchronized (k.class) {
                 try {
-                    if (f39075a == null) {
-                        f39075a = new k();
+                    if (f25384a == null) {
+                        f25384a = new k();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f39075a;
+        return f25384a;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -81,9 +82,9 @@ public class k {
                     case 14:
                     case 15:
                         try {
-                            this.f39076c = ((Integer) signalStrength.getClass().getMethod("getGsmDbm", new Class[0]).invoke(signalStrength, new Object[0])).intValue();
+                            this.f25385c = ((Integer) signalStrength.getClass().getMethod("getGsmDbm", new Class[0]).invoke(signalStrength, new Object[0])).intValue();
                         } catch (Exception e) {
-                            this.f39076c = -1000;
+                            this.f25385c = -1000;
                         }
                         switch (networkType) {
                             case 3:
@@ -128,7 +129,7 @@ public class k {
                     case 11:
                     case 16:
                     default:
-                        this.f39076c = signalStrength.getGsmSignalStrength();
+                        this.f25385c = signalStrength.getGsmSignalStrength();
                         if (networkType == 1) {
                             str = "GPRS";
                         } else if (networkType == 2) {
@@ -141,7 +142,7 @@ public class k {
                             str = "IDEN";
                         } else if (networkType != 16) {
                             if (networkType != 18) {
-                                str = "UNKNOWN";
+                                str = GrsBaseInfo.CountryCodeSource.UNKNOWN;
                             }
                             this.d = "IWLAN";
                             break;
@@ -154,9 +155,9 @@ public class k {
                     case 18:
                     case 19:
                         try {
-                            this.f39076c = ((Integer) signalStrength.getClass().getMethod("getDbm", new Class[0]).invoke(signalStrength, new Object[0])).intValue();
+                            this.f25385c = ((Integer) signalStrength.getClass().getMethod("getDbm", new Class[0]).invoke(signalStrength, new Object[0])).intValue();
                         } catch (Exception e2) {
-                            this.f39076c = -1000;
+                            this.f25385c = -1000;
                         }
                         if (networkType != 13) {
                             if (networkType != 18) {
@@ -173,7 +174,7 @@ public class k {
                         break;
                     case 17:
                         try {
-                            this.f39076c = ((Integer) signalStrength.getClass().getMethod("getTdScdmaDbm", new Class[0]).invoke(signalStrength, new Object[0])).intValue();
+                            this.f25385c = ((Integer) signalStrength.getClass().getMethod("getTdScdmaDbm", new Class[0]).invoke(signalStrength, new Object[0])).intValue();
                         } catch (Exception e3) {
                             e3.printStackTrace();
                         }
@@ -258,11 +259,11 @@ public class k {
     public int d() {
         try {
             if (!com.tencent.tendinsv.utils.c.a(this.b, null)) {
-                this.f39076c = -1;
-            } else if (this.f39076c > 0) {
-                this.f39076c = 0;
+                this.f25385c = -1;
+            } else if (this.f25385c > 0) {
+                this.f25385c = 0;
             }
-            return this.f39076c;
+            return this.f25385c;
         } catch (Exception e) {
             e.printStackTrace();
             com.tencent.tendinsv.utils.l.d(com.tencent.tendinsv.b.F, "getItedbm--Exception_e=", e);

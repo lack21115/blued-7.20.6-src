@@ -42,7 +42,7 @@ public class PreferenceFrameLayout extends FrameLayout {
     }
 
     public PreferenceFrameLayout(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, R.attr.preferenceFrameLayoutStyle);
+        this(context, attributeSet, 18219047);
     }
 
     public PreferenceFrameLayout(Context context, AttributeSet attributeSet, int i) {

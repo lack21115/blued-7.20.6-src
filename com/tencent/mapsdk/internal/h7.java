@@ -2,6 +2,7 @@ package com.tencent.mapsdk.internal;
 
 import android.text.TextUtils;
 import com.baidu.mobads.sdk.api.ArticleInfo;
+import com.xiaomi.mipush.sdk.Constants;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.ThreadFactory;
@@ -13,11 +14,11 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class h7 {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final a f37518a = new a("sw");
+    private static final a f23827a = new a("sw");
     private static final a b = new a("lw");
 
     /* renamed from: c  reason: collision with root package name */
-    private static final a f37519c = new a("mlw");
+    private static final a f23828c = new a("mlw");
     private static final a d = new a(ArticleInfo.QUERY_WORD);
     private static final a e = new a("mqw");
     private static ScheduledThreadPoolExecutor f;
@@ -30,13 +31,13 @@ public class h7 {
     public static class a implements ThreadFactory {
 
         /* renamed from: a  reason: collision with root package name */
-        private String f37520a;
+        private String f23829a;
         private final AtomicInteger b = new AtomicInteger(0);
 
         public a(String str) {
-            this.f37520a = str;
+            this.f23829a = str;
             if (TextUtils.isEmpty(str)) {
-                this.f37520a = "def";
+                this.f23829a = "def";
             }
         }
 
@@ -51,7 +52,7 @@ public class h7 {
 
         @Override // java.util.concurrent.ThreadFactory
         public Thread newThread(Runnable runnable) {
-            Thread thread = new Thread(runnable, "tms-" + this.f37520a + "-" + this.b.incrementAndGet());
+            Thread thread = new Thread(runnable, "tms-" + this.f23829a + Constants.ACCEPT_TIME_SEPARATOR_SERVER + this.b.incrementAndGet());
             StringBuilder sb = new StringBuilder();
             sb.append("创建线程：");
             sb.append(thread);
@@ -62,7 +63,7 @@ public class h7 {
 
     public static String a() {
         Thread currentThread = Thread.currentThread();
-        return currentThread + ";" + currentThread.getState() + ";interrupted=" + Thread.interrupted() + "|" + currentThread.isInterrupted();
+        return currentThread + com.huawei.openalliance.ad.constant.t.aE + currentThread.getState() + ";interrupted=" + Thread.interrupted() + "|" + currentThread.isInterrupted();
     }
 
     /* JADX WARN: Removed duplicated region for block: B:14:0x0027  */
@@ -154,7 +155,7 @@ public class h7 {
         synchronized (h7.class) {
             try {
                 if (a(j)) {
-                    j = new ThreadPoolExecutor(0, Math.max(4, Runtime.getRuntime().availableProcessors()) / 2, 5L, TimeUnit.SECONDS, new LinkedBlockingQueue(), f37519c.a(), new ThreadPoolExecutor.DiscardPolicy());
+                    j = new ThreadPoolExecutor(0, Math.max(4, Runtime.getRuntime().availableProcessors()) / 2, 5L, TimeUnit.SECONDS, new LinkedBlockingQueue(), f23828c.a(), new ThreadPoolExecutor.DiscardPolicy());
                 }
                 threadPoolExecutor = j;
             } catch (Throwable th) {
@@ -169,7 +170,7 @@ public class h7 {
         synchronized (h7.class) {
             try {
                 if (a(f)) {
-                    f = new ScheduledThreadPoolExecutor(2, f37518a.a(), new ThreadPoolExecutor.DiscardPolicy());
+                    f = new ScheduledThreadPoolExecutor(2, f23827a.a(), new ThreadPoolExecutor.DiscardPolicy());
                 }
                 scheduledThreadPoolExecutor = f;
             } catch (Throwable th) {

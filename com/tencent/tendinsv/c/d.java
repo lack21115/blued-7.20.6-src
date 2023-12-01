@@ -10,10 +10,10 @@ import com.tencent.tendinsv.utils.t;
 public class d implements LoginAuthCallbacks {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f39016a;
+    private Context f25325a;
 
     public d(Context context) {
-        this.f39016a = context;
+        this.f25325a = context;
     }
 
     @Override // com.tencent.tendinsv.listener.LoginAuthCallbacks
@@ -39,7 +39,7 @@ public class d implements LoginAuthCallbacks {
             e = e;
         }
         try {
-            t.a(this.f39016a, t.R, true);
+            t.a(this.f25325a, t.R, true);
             com.tencent.tendinsv.b.X.set(com.tencent.tendinsv.b.T);
             e.a().c(i, i2, str, str2, com.tencent.tendinsv.b.p, 4, 4, com.tencent.tendinsv.b.T, j, SystemClock.uptimeMillis() - j2, SystemClock.uptimeMillis() - j3);
         } catch (Exception e2) {

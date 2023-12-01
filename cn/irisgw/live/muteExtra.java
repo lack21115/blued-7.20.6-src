@@ -25,8 +25,8 @@ public final class muteExtra extends GeneratedMessageV3 implements muteExtraOrBu
     private MuteProfile muteProfile_;
     private static final muteExtra DEFAULT_INSTANCE = new muteExtra();
     private static final Parser<muteExtra> PARSER = new AbstractParser<muteExtra>() { // from class: cn.irisgw.live.muteExtra.1
-        @Override // com.google.protobuf.Parser
-        public muteExtra parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        /* renamed from: parsePartialFrom */
+        public muteExtra m8358parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             return new muteExtra(codedInputStream, extensionRegistryLite);
         }
     };
@@ -61,22 +61,22 @@ public final class muteExtra extends GeneratedMessageV3 implements muteExtraOrBu
             boolean unused = muteExtra.alwaysUseFieldBuilders;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: addRepeatedField */
+        public Builder m8360addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.addRepeatedField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public muteExtra build() {
-            muteExtra buildPartial = buildPartial();
-            if (buildPartial.isInitialized()) {
-                return buildPartial;
+        /* renamed from: build */
+        public muteExtra m8362build() {
+            muteExtra m8364buildPartial = m8364buildPartial();
+            if (m8364buildPartial.isInitialized()) {
+                return m8364buildPartial;
             }
-            throw newUninitializedMessageException((Message) buildPartial);
+            throw newUninitializedMessageException(m8364buildPartial);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public muteExtra buildPartial() {
+        /* renamed from: buildPartial */
+        public muteExtra m8364buildPartial() {
             muteExtra muteextra = new muteExtra(this);
             SingleFieldBuilderV3<MuteProfile, MuteProfile.Builder, MuteProfileOrBuilder> singleFieldBuilderV3 = this.muteProfileBuilder_;
             if (singleFieldBuilderV3 == null) {
@@ -88,8 +88,8 @@ public final class muteExtra extends GeneratedMessageV3 implements muteExtraOrBu
             return muteextra;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public Builder clear() {
+        /* renamed from: clear */
+        public Builder m8368clear() {
             super.clear();
             if (this.muteProfileBuilder_ == null) {
                 this.muteProfile_ = null;
@@ -100,8 +100,8 @@ public final class muteExtra extends GeneratedMessageV3 implements muteExtraOrBu
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+        /* renamed from: clearField */
+        public Builder m8370clearField(Descriptors.FieldDescriptor fieldDescriptor) {
             return (Builder) super.clearField(fieldDescriptor);
         }
 
@@ -116,23 +116,21 @@ public final class muteExtra extends GeneratedMessageV3 implements muteExtraOrBu
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+        /* renamed from: clearOneof */
+        public Builder m8373clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
             return (Builder) super.clearOneof(oneofDescriptor);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder m8379clone() {
+            return (Builder) super.clone();
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public muteExtra getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public muteExtra m8381getDefaultInstanceForType() {
             return muteExtra.getDefaultInstance();
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
         public Descriptors.Descriptor getDescriptorForType() {
             return LiveConstants.internal_static_cn_irisgw_live_muteExtra_descriptor;
         }
@@ -160,7 +158,7 @@ public final class muteExtra extends GeneratedMessageV3 implements muteExtraOrBu
         public MuteProfileOrBuilder getMuteProfileOrBuilder() {
             SingleFieldBuilderV3<MuteProfile, MuteProfile.Builder, MuteProfileOrBuilder> singleFieldBuilderV3 = this.muteProfileBuilder_;
             if (singleFieldBuilderV3 != null) {
-                return singleFieldBuilderV3.getMessageOrBuilder();
+                return (MuteProfileOrBuilder) singleFieldBuilderV3.getMessageOrBuilder();
             }
             MuteProfile muteProfile = this.muteProfile_;
             MuteProfile muteProfile2 = muteProfile;
@@ -175,12 +173,10 @@ public final class muteExtra extends GeneratedMessageV3 implements muteExtraOrBu
             return (this.muteProfileBuilder_ == null && this.muteProfile_ == null) ? false : true;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_muteExtra_fieldAccessorTable.ensureFieldAccessorsInitialized(muteExtra.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             return true;
         }
@@ -192,18 +188,18 @@ public final class muteExtra extends GeneratedMessageV3 implements muteExtraOrBu
             if (muteextra.hasMuteProfile()) {
                 mergeMuteProfile(muteextra.getMuteProfile());
             }
-            mergeUnknownFields(muteextra.unknownFields);
+            m8390mergeUnknownFields(muteextra.unknownFields);
             onChanged();
             return this;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+        /* renamed from: mergeFrom */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
         */
-        public cn.irisgw.live.muteExtra.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+        public cn.irisgw.live.muteExtra.Builder m8387mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
             /*
                 r4 = this;
                 r0 = 0
@@ -248,11 +244,11 @@ public final class muteExtra extends GeneratedMessageV3 implements muteExtraOrBu
                 r0 = r6
                 throw r0
             */
-            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.muteExtra.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.muteExtra$Builder");
+            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.muteExtra.Builder.m8387mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.muteExtra$Builder");
         }
 
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder mergeFrom(Message message) {
+        /* renamed from: mergeFrom */
+        public Builder m8386mergeFrom(Message message) {
             if (message instanceof muteExtra) {
                 return mergeFrom((muteExtra) message);
             }
@@ -268,7 +264,7 @@ public final class muteExtra extends GeneratedMessageV3 implements muteExtraOrBu
             }
             MuteProfile muteProfile2 = this.muteProfile_;
             if (muteProfile2 != null) {
-                this.muteProfile_ = MuteProfile.newBuilder(muteProfile2).mergeFrom(muteProfile).buildPartial();
+                this.muteProfile_ = MuteProfile.newBuilder(muteProfile2).mergeFrom(muteProfile).m8411buildPartial();
             } else {
                 this.muteProfile_ = muteProfile;
             }
@@ -276,23 +272,23 @@ public final class muteExtra extends GeneratedMessageV3 implements muteExtraOrBu
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: mergeUnknownFields */
+        public final Builder m8390mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.mergeUnknownFields(unknownFieldSet);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: setField */
+        public Builder m8392setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.setField(fieldDescriptor, obj);
         }
 
         public Builder setMuteProfile(MuteProfile.Builder builder) {
             SingleFieldBuilderV3<MuteProfile, MuteProfile.Builder, MuteProfileOrBuilder> singleFieldBuilderV3 = this.muteProfileBuilder_;
             if (singleFieldBuilderV3 != null) {
-                singleFieldBuilderV3.setMessage(builder.build());
+                singleFieldBuilderV3.setMessage(builder.m8409build());
                 return this;
             }
-            this.muteProfile_ = builder.build();
+            this.muteProfile_ = builder.m8409build();
             onChanged();
             return this;
         }
@@ -311,13 +307,13 @@ public final class muteExtra extends GeneratedMessageV3 implements muteExtraOrBu
             }
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+        /* renamed from: setRepeatedField */
+        public Builder m8394setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
             return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: setUnknownFields */
+        public final Builder m8396setUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.setUnknownFields(unknownFieldSet);
         }
     }
@@ -332,8 +328,8 @@ public final class muteExtra extends GeneratedMessageV3 implements muteExtraOrBu
         private int uid_;
         private static final MuteProfile DEFAULT_INSTANCE = new MuteProfile();
         private static final Parser<MuteProfile> PARSER = new AbstractParser<MuteProfile>() { // from class: cn.irisgw.live.muteExtra.MuteProfile.1
-            @Override // com.google.protobuf.Parser
-            public MuteProfile parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+            /* renamed from: parsePartialFrom */
+            public MuteProfile m8405parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
                 return new MuteProfile(codedInputStream, extensionRegistryLite);
             }
         };
@@ -362,22 +358,22 @@ public final class muteExtra extends GeneratedMessageV3 implements muteExtraOrBu
                 boolean unused = MuteProfile.alwaysUseFieldBuilders;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: addRepeatedField */
+            public Builder m8407addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.addRepeatedField(fieldDescriptor, obj);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public MuteProfile build() {
-                MuteProfile buildPartial = buildPartial();
-                if (buildPartial.isInitialized()) {
-                    return buildPartial;
+            /* renamed from: build */
+            public MuteProfile m8409build() {
+                MuteProfile m8411buildPartial = m8411buildPartial();
+                if (m8411buildPartial.isInitialized()) {
+                    return m8411buildPartial;
                 }
-                throw newUninitializedMessageException((Message) buildPartial);
+                throw newUninitializedMessageException(m8411buildPartial);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public MuteProfile buildPartial() {
+            /* renamed from: buildPartial */
+            public MuteProfile m8411buildPartial() {
                 MuteProfile muteProfile = new MuteProfile(this);
                 muteProfile.uid_ = this.uid_;
                 muteProfile.name_ = this.name_;
@@ -385,16 +381,16 @@ public final class muteExtra extends GeneratedMessageV3 implements muteExtraOrBu
                 return muteProfile;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public Builder clear() {
+            /* renamed from: clear */
+            public Builder m8415clear() {
                 super.clear();
                 this.uid_ = 0;
                 this.name_ = "";
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+            /* renamed from: clearField */
+            public Builder m8417clearField(Descriptors.FieldDescriptor fieldDescriptor) {
                 return (Builder) super.clearField(fieldDescriptor);
             }
 
@@ -404,8 +400,8 @@ public final class muteExtra extends GeneratedMessageV3 implements muteExtraOrBu
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+            /* renamed from: clearOneof */
+            public Builder m8420clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
                 return (Builder) super.clearOneof(oneofDescriptor);
             }
 
@@ -415,18 +411,16 @@ public final class muteExtra extends GeneratedMessageV3 implements muteExtraOrBu
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder m8426clone() {
+                return (Builder) super.clone();
             }
 
-            @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-            public MuteProfile getDefaultInstanceForType() {
+            /* renamed from: getDefaultInstanceForType */
+            public MuteProfile m8428getDefaultInstanceForType() {
                 return MuteProfile.getDefaultInstance();
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
             public Descriptors.Descriptor getDescriptorForType() {
                 return LiveConstants.internal_static_cn_irisgw_live_muteExtra_MuteProfile_descriptor;
             }
@@ -458,12 +452,10 @@ public final class muteExtra extends GeneratedMessageV3 implements muteExtraOrBu
                 return this.uid_;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder
             public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
                 return LiveConstants.internal_static_cn_irisgw_live_muteExtra_MuteProfile_fieldAccessorTable.ensureFieldAccessorsInitialized(MuteProfile.class, Builder.class);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
             public final boolean isInitialized() {
                 return true;
             }
@@ -479,18 +471,18 @@ public final class muteExtra extends GeneratedMessageV3 implements muteExtraOrBu
                     this.name_ = muteProfile.name_;
                     onChanged();
                 }
-                mergeUnknownFields(muteProfile.unknownFields);
+                m8437mergeUnknownFields(muteProfile.unknownFields);
                 onChanged();
                 return this;
             }
 
             /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+            /* renamed from: mergeFrom */
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
                 To view partially-correct code enable 'Show inconsistent code' option in preferences
             */
-            public cn.irisgw.live.muteExtra.MuteProfile.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+            public cn.irisgw.live.muteExtra.MuteProfile.Builder m8434mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
                 /*
                     r4 = this;
                     r0 = 0
@@ -535,11 +527,11 @@ public final class muteExtra extends GeneratedMessageV3 implements muteExtraOrBu
                     r0 = r6
                     throw r0
                 */
-                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.muteExtra.MuteProfile.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.muteExtra$MuteProfile$Builder");
+                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.muteExtra.MuteProfile.Builder.m8434mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.muteExtra$MuteProfile$Builder");
             }
 
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder mergeFrom(Message message) {
+            /* renamed from: mergeFrom */
+            public Builder m8433mergeFrom(Message message) {
                 if (message instanceof MuteProfile) {
                     return mergeFrom((MuteProfile) message);
                 }
@@ -547,13 +539,13 @@ public final class muteExtra extends GeneratedMessageV3 implements muteExtraOrBu
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: mergeUnknownFields */
+            public final Builder m8437mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.mergeUnknownFields(unknownFieldSet);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: setField */
+            public Builder m8439setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.setField(fieldDescriptor, obj);
             }
 
@@ -576,8 +568,8 @@ public final class muteExtra extends GeneratedMessageV3 implements muteExtraOrBu
                 throw null;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+            /* renamed from: setRepeatedField */
+            public Builder m8441setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
                 return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
             }
 
@@ -587,8 +579,8 @@ public final class muteExtra extends GeneratedMessageV3 implements muteExtraOrBu
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: setUnknownFields */
+            public final Builder m8443setUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.setUnknownFields(unknownFieldSet);
             }
         }
@@ -646,66 +638,65 @@ public final class muteExtra extends GeneratedMessageV3 implements muteExtraOrBu
         }
 
         public static Builder newBuilder() {
-            return DEFAULT_INSTANCE.toBuilder();
+            return DEFAULT_INSTANCE.m8404toBuilder();
         }
 
         public static Builder newBuilder(MuteProfile muteProfile) {
-            return DEFAULT_INSTANCE.toBuilder().mergeFrom(muteProfile);
+            return DEFAULT_INSTANCE.m8404toBuilder().mergeFrom(muteProfile);
         }
 
         public static MuteProfile parseDelimitedFrom(InputStream inputStream) throws IOException {
-            return (MuteProfile) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
         }
 
         public static MuteProfile parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (MuteProfile) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static MuteProfile parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString);
+            return (MuteProfile) PARSER.parseFrom(byteString);
         }
 
         public static MuteProfile parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString, extensionRegistryLite);
+            return (MuteProfile) PARSER.parseFrom(byteString, extensionRegistryLite);
         }
 
         public static MuteProfile parseFrom(CodedInputStream codedInputStream) throws IOException {
-            return (MuteProfile) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
         }
 
         public static MuteProfile parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (MuteProfile) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
         }
 
         public static MuteProfile parseFrom(InputStream inputStream) throws IOException {
-            return (MuteProfile) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
         }
 
         public static MuteProfile parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (MuteProfile) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static MuteProfile parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer);
+            return (MuteProfile) PARSER.parseFrom(byteBuffer);
         }
 
         public static MuteProfile parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+            return (MuteProfile) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
         }
 
         public static MuteProfile parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr);
+            return (MuteProfile) PARSER.parseFrom(bArr);
         }
 
         public static MuteProfile parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr, extensionRegistryLite);
+            return (MuteProfile) PARSER.parseFrom(bArr, extensionRegistryLite);
         }
 
         public static Parser<MuteProfile> parser() {
             return PARSER;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public boolean equals(Object obj) {
             if (obj == this) {
                 return true;
@@ -717,8 +708,8 @@ public final class muteExtra extends GeneratedMessageV3 implements muteExtraOrBu
             return super.equals(obj);
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public MuteProfile getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public MuteProfile m8399getDefaultInstanceForType() {
             return DEFAULT_INSTANCE;
         }
 
@@ -744,12 +735,10 @@ public final class muteExtra extends GeneratedMessageV3 implements muteExtraOrBu
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
         public Parser<MuteProfile> getParserForType() {
             return PARSER;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public int getSerializedSize() {
             int i = this.memoizedSize;
             if (i != -1) {
@@ -774,12 +763,10 @@ public final class muteExtra extends GeneratedMessageV3 implements muteExtraOrBu
             return this.uid_;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
         public final UnknownFieldSet getUnknownFields() {
             return this.unknownFields;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public int hashCode() {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
@@ -789,12 +776,10 @@ public final class muteExtra extends GeneratedMessageV3 implements muteExtraOrBu
             return hashCode;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_muteExtra_MuteProfile_fieldAccessorTable.ensureFieldAccessorsInitialized(MuteProfile.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte b = this.memoizedIsInitialized;
             if (b == 1) {
@@ -807,28 +792,26 @@ public final class muteExtra extends GeneratedMessageV3 implements muteExtraOrBu
             return true;
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder newBuilderForType() {
+        /* renamed from: newBuilderForType */
+        public Builder m8402newBuilderForType() {
             return newBuilder();
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.google.protobuf.GeneratedMessageV3
-        public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+        /* renamed from: newBuilderForType */
+        public Builder m8401newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
             return new Builder(builderParent);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
             return new MuteProfile();
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder toBuilder() {
+        /* renamed from: toBuilder */
+        public Builder m8404toBuilder() {
             return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
             int i = this.uid_;
             if (i != 0) {
@@ -868,12 +851,12 @@ public final class muteExtra extends GeneratedMessageV3 implements muteExtraOrBu
                         int readTag = codedInputStream.readTag();
                         if (readTag != 0) {
                             if (readTag == 10) {
-                                MuteProfile.Builder builder = this.muteProfile_ != null ? this.muteProfile_.toBuilder() : null;
-                                MuteProfile muteProfile = (MuteProfile) codedInputStream.readMessage(MuteProfile.parser(), extensionRegistryLite);
-                                this.muteProfile_ = muteProfile;
-                                if (builder != null) {
-                                    builder.mergeFrom(muteProfile);
-                                    this.muteProfile_ = builder.buildPartial();
+                                MuteProfile.Builder m8404toBuilder = this.muteProfile_ != null ? this.muteProfile_.m8404toBuilder() : null;
+                                MuteProfile readMessage = codedInputStream.readMessage(MuteProfile.parser(), extensionRegistryLite);
+                                this.muteProfile_ = readMessage;
+                                if (m8404toBuilder != null) {
+                                    m8404toBuilder.mergeFrom(readMessage);
+                                    this.muteProfile_ = m8404toBuilder.m8411buildPartial();
                                 }
                             } else if (!parseUnknownField(codedInputStream, newBuilder, extensionRegistryLite, readTag)) {
                             }
@@ -906,66 +889,65 @@ public final class muteExtra extends GeneratedMessageV3 implements muteExtraOrBu
     }
 
     public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
+        return DEFAULT_INSTANCE.m8357toBuilder();
     }
 
     public static Builder newBuilder(muteExtra muteextra) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(muteextra);
+        return DEFAULT_INSTANCE.m8357toBuilder().mergeFrom(muteextra);
     }
 
     public static muteExtra parseDelimitedFrom(InputStream inputStream) throws IOException {
-        return (muteExtra) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
     }
 
     public static muteExtra parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (muteExtra) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static muteExtra parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString);
+        return (muteExtra) PARSER.parseFrom(byteString);
     }
 
     public static muteExtra parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString, extensionRegistryLite);
+        return (muteExtra) PARSER.parseFrom(byteString, extensionRegistryLite);
     }
 
     public static muteExtra parseFrom(CodedInputStream codedInputStream) throws IOException {
-        return (muteExtra) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
     }
 
     public static muteExtra parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (muteExtra) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
     }
 
     public static muteExtra parseFrom(InputStream inputStream) throws IOException {
-        return (muteExtra) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
     }
 
     public static muteExtra parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (muteExtra) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static muteExtra parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer);
+        return (muteExtra) PARSER.parseFrom(byteBuffer);
     }
 
     public static muteExtra parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+        return (muteExtra) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
     }
 
     public static muteExtra parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr);
+        return (muteExtra) PARSER.parseFrom(bArr);
     }
 
     public static muteExtra parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr, extensionRegistryLite);
+        return (muteExtra) PARSER.parseFrom(bArr, extensionRegistryLite);
     }
 
     public static Parser<muteExtra> parser() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
@@ -980,8 +962,8 @@ public final class muteExtra extends GeneratedMessageV3 implements muteExtraOrBu
         return super.equals(obj);
     }
 
-    @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-    public muteExtra getDefaultInstanceForType() {
+    /* renamed from: getDefaultInstanceForType */
+    public muteExtra m8352getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
     }
 
@@ -1000,12 +982,10 @@ public final class muteExtra extends GeneratedMessageV3 implements muteExtraOrBu
         return getMuteProfile();
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
     public Parser<muteExtra> getParserForType() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public int getSerializedSize() {
         int i = this.memoizedSize;
         if (i != -1) {
@@ -1020,7 +1000,6 @@ public final class muteExtra extends GeneratedMessageV3 implements muteExtraOrBu
         return serializedSize;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
     public final UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
     }
@@ -1030,7 +1009,6 @@ public final class muteExtra extends GeneratedMessageV3 implements muteExtraOrBu
         return this.muteProfile_ != null;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public int hashCode() {
         if (this.memoizedHashCode != 0) {
             return this.memoizedHashCode;
@@ -1045,12 +1023,10 @@ public final class muteExtra extends GeneratedMessageV3 implements muteExtraOrBu
         return hashCode2;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
         return LiveConstants.internal_static_cn_irisgw_live_muteExtra_fieldAccessorTable.ensureFieldAccessorsInitialized(muteExtra.class, Builder.class);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
     public final boolean isInitialized() {
         byte b = this.memoizedIsInitialized;
         if (b == 1) {
@@ -1063,28 +1039,26 @@ public final class muteExtra extends GeneratedMessageV3 implements muteExtraOrBu
         return true;
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder newBuilderForType() {
+    /* renamed from: newBuilderForType */
+    public Builder m8355newBuilderForType() {
         return newBuilder();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.protobuf.GeneratedMessageV3
-    public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+    /* renamed from: newBuilderForType */
+    public Builder m8354newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
         return new Builder(builderParent);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
         return new muteExtra();
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder toBuilder() {
+    /* renamed from: toBuilder */
+    public Builder m8357toBuilder() {
         return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
         if (this.muteProfile_ != null) {
             codedOutputStream.writeMessage(1, getMuteProfile());

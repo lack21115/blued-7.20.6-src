@@ -173,7 +173,7 @@ public class MapMakerInternalMap<K, V, E extends InternalEntry<K, V, E>, S exten
 
         @Override // com.google.common.collect.MapMakerInternalMap.InternalEntry
         public K getKey() {
-            return get();
+            return (K) get();
         }
 
         @Override // com.google.common.collect.MapMakerInternalMap.InternalEntry
@@ -285,7 +285,7 @@ public class MapMakerInternalMap<K, V, E extends InternalEntry<K, V, E>, S exten
             return MapMakerInternalMap.this.isEmpty();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+        @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
         public Iterator<Map.Entry<K, V>> iterator() {
             return new EntryIterator();
         }
@@ -307,7 +307,7 @@ public class MapMakerInternalMap<K, V, E extends InternalEntry<K, V, E>, S exten
             return false;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
         public int size() {
             return MapMakerInternalMap.this.size();
         }
@@ -496,7 +496,7 @@ public class MapMakerInternalMap<K, V, E extends InternalEntry<K, V, E>, S exten
             return MapMakerInternalMap.this.isEmpty();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+        @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
         public Iterator<K> iterator() {
             return new KeyIterator();
         }
@@ -506,7 +506,7 @@ public class MapMakerInternalMap<K, V, E extends InternalEntry<K, V, E>, S exten
             return MapMakerInternalMap.this.remove(obj) != null;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
         public int size() {
             return MapMakerInternalMap.this.size();
         }
@@ -1640,17 +1640,17 @@ public class MapMakerInternalMap<K, V, E extends InternalEntry<K, V, E>, S exten
         Values() {
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public void clear() {
             MapMakerInternalMap.this.clear();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean contains(Object obj) {
             return MapMakerInternalMap.this.containsValue(obj);
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean isEmpty() {
             return MapMakerInternalMap.this.isEmpty();
         }
@@ -1660,17 +1660,17 @@ public class MapMakerInternalMap<K, V, E extends InternalEntry<K, V, E>, S exten
             return new ValueIterator();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection
         public int size() {
             return MapMakerInternalMap.this.size();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public Object[] toArray() {
             return MapMakerInternalMap.toArrayList(this).toArray();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public <T> T[] toArray(T[] tArr) {
             return (T[]) MapMakerInternalMap.toArrayList(this).toArray(tArr);
         }
@@ -2533,7 +2533,7 @@ public class MapMakerInternalMap<K, V, E extends InternalEntry<K, V, E>, S exten
         }
     }
 
-    @Override // java.util.concurrent.ConcurrentMap
+    @Override // java.util.Map, java.util.concurrent.ConcurrentMap
     public V putIfAbsent(K k, V v) {
         Preconditions.checkNotNull(k);
         Preconditions.checkNotNull(v);
@@ -2561,7 +2561,7 @@ public class MapMakerInternalMap<K, V, E extends InternalEntry<K, V, E>, S exten
         return segmentFor(hash).remove(obj, hash);
     }
 
-    @Override // java.util.concurrent.ConcurrentMap
+    @Override // java.util.Map, java.util.concurrent.ConcurrentMap
     public boolean remove(@NullableDecl Object obj, @NullableDecl Object obj2) {
         if (obj == null || obj2 == null) {
             return false;
@@ -2570,7 +2570,7 @@ public class MapMakerInternalMap<K, V, E extends InternalEntry<K, V, E>, S exten
         return segmentFor(hash).remove(obj, hash, obj2);
     }
 
-    @Override // java.util.concurrent.ConcurrentMap
+    @Override // java.util.Map, java.util.concurrent.ConcurrentMap
     public V replace(K k, V v) {
         Preconditions.checkNotNull(k);
         Preconditions.checkNotNull(v);
@@ -2578,7 +2578,7 @@ public class MapMakerInternalMap<K, V, E extends InternalEntry<K, V, E>, S exten
         return segmentFor(hash).replace(k, hash, v);
     }
 
-    @Override // java.util.concurrent.ConcurrentMap
+    @Override // java.util.Map, java.util.concurrent.ConcurrentMap
     public boolean replace(K k, @NullableDecl V v, V v2) {
         Preconditions.checkNotNull(k);
         Preconditions.checkNotNull(v2);

@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 public abstract class ErrorResultImpl<R extends Result> extends PendingResult<R> {
 
     /* renamed from: a  reason: collision with root package name */
-    private R f22872a = null;
+    private R f9264a = null;
     private int b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -24,17 +24,17 @@ public abstract class ErrorResultImpl<R extends Result> extends PendingResult<R>
     public class a implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ ResultCallback f22873a;
+        final /* synthetic */ ResultCallback f9265a;
         final /* synthetic */ ErrorResultImpl b;
 
         a(ResultCallback resultCallback, ErrorResultImpl errorResultImpl) {
-            this.f22873a = resultCallback;
+            this.f9265a = resultCallback;
             this.b = errorResultImpl;
         }
 
         @Override // java.lang.Runnable
         public void run() {
-            ResultCallback resultCallback = this.f22873a;
+            ResultCallback resultCallback = this.f9265a;
             ErrorResultImpl errorResultImpl = ErrorResultImpl.this;
             resultCallback.onResult(errorResultImpl.a(errorResultImpl.b, this.b));
         }
@@ -50,14 +50,14 @@ public abstract class ErrorResultImpl<R extends Result> extends PendingResult<R>
         if (genericSuperclass != null) {
             try {
                 R r = (R) GenericTypeReflector.getType(((ParameterizedType) genericSuperclass).getActualTypeArguments()[0]).newInstance();
-                this.f22872a = r;
+                this.f9264a = r;
                 r.setStatus(new Status(i));
             } catch (IllegalAccessException e) {
                 HMSLog.e("ErrorResultImpl", "IllegalAccessException");
             } catch (InstantiationException e2) {
                 HMSLog.e("ErrorResultImpl", "InstantiationException");
             }
-            return this.f22872a;
+            return this.f9264a;
         }
         return null;
     }

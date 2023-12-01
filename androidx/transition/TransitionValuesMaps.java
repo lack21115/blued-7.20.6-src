@@ -10,10 +10,10 @@ import androidx.collection.LongSparseArray;
 public class TransitionValuesMaps {
 
     /* renamed from: a  reason: collision with root package name */
-    final ArrayMap<View, TransitionValues> f3488a = new ArrayMap<>();
+    final ArrayMap<View, TransitionValues> f3440a = new ArrayMap<>();
     final SparseArray<View> b = new SparseArray<>();
 
     /* renamed from: c  reason: collision with root package name */
-    final LongSparseArray<View> f3489c = new LongSparseArray<>();
+    final LongSparseArray<View> f3441c = new LongSparseArray<>();
     final ArrayMap<String, View> d = new ArrayMap<>();
 }

@@ -17,11 +17,11 @@ public final class bo extends m {
     static ArrayList<bl> z;
 
     /* renamed from: a  reason: collision with root package name */
-    public String f35303a = "";
+    public String f21612a = "";
     public long b = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f35304c = "";
+    public String f21613c = "";
     public String d = "";
     public String e = "";
     public String f = "";
@@ -63,9 +63,9 @@ public final class bo extends m {
 
     @Override // com.tencent.bugly.idasc.proguard.m
     public final void a(k kVar) {
-        this.f35303a = kVar.b(0, true);
+        this.f21612a = kVar.b(0, true);
         this.b = kVar.a(this.b, 1, true);
-        this.f35304c = kVar.b(2, true);
+        this.f21613c = kVar.b(2, true);
         this.d = kVar.b(3, false);
         this.e = kVar.b(4, false);
         this.f = kVar.b(5, false);
@@ -88,9 +88,9 @@ public final class bo extends m {
 
     @Override // com.tencent.bugly.idasc.proguard.m
     public final void a(l lVar) {
-        lVar.a(this.f35303a, 0);
+        lVar.a(this.f21612a, 0);
         lVar.a(this.b, 1);
-        lVar.a(this.f35304c, 2);
+        lVar.a(this.f21613c, 2);
         String str = this.d;
         if (str != null) {
             lVar.a(str, 3);

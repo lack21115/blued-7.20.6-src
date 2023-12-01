@@ -53,7 +53,7 @@ public class PLDraft {
 
     public String getSectionFilePath(int i) {
         if (isIndexValid(i)) {
-            return this.mDraft.b().get(i).f27552a.getAbsolutePath();
+            return this.mDraft.b().get(i).f13864a.getAbsolutePath();
         }
         return null;
     }

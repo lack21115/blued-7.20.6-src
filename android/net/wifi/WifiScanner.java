@@ -347,15 +347,15 @@ public class WifiScanner {
             switch (message.what) {
                 case 69632:
                     if (message.arg1 == 0) {
-                        WifiScanner.sAsyncChannel.sendMessage(AsyncChannel.CMD_CHANNEL_FULL_CONNECTION);
+                        WifiScanner.sAsyncChannel.sendMessage(69633);
                     } else {
                         Log.e(WifiScanner.TAG, "Failed to set up channel connection");
                         AsyncChannel unused = WifiScanner.sAsyncChannel = null;
                     }
                     WifiScanner.sConnected.countDown();
                     return;
-                case AsyncChannel.CMD_CHANNEL_FULL_CONNECTION /* 69633 */:
-                case AsyncChannel.CMD_CHANNEL_DISCONNECT /* 69635 */:
+                case 69633:
+                case 69635:
                 default:
                     Object listener = WifiScanner.getListener(message.arg2);
                     if (listener == null) {
@@ -402,9 +402,9 @@ public class WifiScanner {
                             ((ScanListener) listener).onFullResult((ScanResult) message.obj);
                             return;
                     }
-                case AsyncChannel.CMD_CHANNEL_FULLY_CONNECTED /* 69634 */:
+                case 69634:
                     return;
-                case AsyncChannel.CMD_CHANNEL_DISCONNECTED /* 69636 */:
+                case 69636:
                     Log.e(WifiScanner.TAG, "Channel connection lost");
                     AsyncChannel unused2 = WifiScanner.sAsyncChannel = null;
                     getLooper().quit();
@@ -615,7 +615,7 @@ public class WifiScanner {
 
     public void configureWifiChange(WifiChangeSettings wifiChangeSettings) {
         validateChannel();
-        sAsyncChannel.sendMessage(CMD_CONFIGURE_WIFI_CHANGE, 0, 0, wifiChangeSettings);
+        sAsyncChannel.sendMessage((int) CMD_CONFIGURE_WIFI_CHANGE, 0, 0, wifiChangeSettings);
     }
 
     public List<Integer> getAvailableChannels(int i) {
@@ -628,38 +628,38 @@ public class WifiScanner {
 
     public ScanResult[] getScanResults() {
         validateChannel();
-        return (ScanResult[]) sAsyncChannel.sendMessageSynchronously(CMD_GET_SCAN_RESULTS, 0).obj;
+        return (ScanResult[]) sAsyncChannel.sendMessageSynchronously((int) CMD_GET_SCAN_RESULTS, 0).obj;
     }
 
     public void startBackgroundScan(ScanSettings scanSettings, ScanListener scanListener) {
         validateChannel();
-        sAsyncChannel.sendMessage(CMD_START_BACKGROUND_SCAN, 0, putListener(scanListener), scanSettings);
+        sAsyncChannel.sendMessage((int) CMD_START_BACKGROUND_SCAN, 0, putListener(scanListener), scanSettings);
     }
 
     public void startTrackingBssids(BssidInfo[] bssidInfoArr, int i, BssidListener bssidListener) {
         validateChannel();
         HotlistSettings hotlistSettings = new HotlistSettings();
         hotlistSettings.bssidInfos = bssidInfoArr;
-        sAsyncChannel.sendMessage(CMD_SET_HOTLIST, 0, putListener(bssidListener), hotlistSettings);
+        sAsyncChannel.sendMessage((int) CMD_SET_HOTLIST, 0, putListener(bssidListener), hotlistSettings);
     }
 
     public void startTrackingWifiChange(WifiChangeListener wifiChangeListener) {
         validateChannel();
-        sAsyncChannel.sendMessage(CMD_START_TRACKING_CHANGE, 0, putListener(wifiChangeListener));
+        sAsyncChannel.sendMessage((int) CMD_START_TRACKING_CHANGE, 0, putListener(wifiChangeListener));
     }
 
     public void stopBackgroundScan(ScanListener scanListener) {
         validateChannel();
-        sAsyncChannel.sendMessage(CMD_STOP_BACKGROUND_SCAN, 0, removeListener(scanListener));
+        sAsyncChannel.sendMessage((int) CMD_STOP_BACKGROUND_SCAN, 0, removeListener(scanListener));
     }
 
     public void stopTrackingBssids(BssidListener bssidListener) {
         validateChannel();
-        sAsyncChannel.sendMessage(CMD_RESET_HOTLIST, 0, removeListener(bssidListener));
+        sAsyncChannel.sendMessage((int) CMD_RESET_HOTLIST, 0, removeListener(bssidListener));
     }
 
     public void stopTrackingWifiChange(WifiChangeListener wifiChangeListener) {
         validateChannel();
-        sAsyncChannel.sendMessage(CMD_STOP_TRACKING_CHANGE, 0, removeListener(wifiChangeListener));
+        sAsyncChannel.sendMessage((int) CMD_STOP_TRACKING_CHANGE, 0, removeListener(wifiChangeListener));
     }
 }

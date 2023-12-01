@@ -1,6 +1,5 @@
 package kotlinx.coroutines.channels;
 
-import com.blued.das.live.LiveProtos;
 import kotlin.Metadata;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
@@ -9,16 +8,12 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 
 /* JADX INFO: Access modifiers changed from: package-private */
 @Metadata
-@DebugMetadata(b = "AbstractChannel.kt", c = {LiveProtos.Event.LIVE_SET_GIFT_EXPLAIN_PAGE_DETAIL_CLICK_VALUE}, d = "receiveCatching-JP2dKIU", e = "kotlinx.coroutines.channels.AbstractChannel")
+@DebugMetadata(b = "AbstractChannel.kt", c = {632}, d = "receiveCatching-JP2dKIU", e = "kotlinx.coroutines.channels.AbstractChannel")
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/channels/AbstractChannel$receiveCatching$1.class */
 public final class AbstractChannel$receiveCatching$1 extends ContinuationImpl {
-
-    /* renamed from: a  reason: collision with root package name */
-    /* synthetic */ Object f42879a;
+    /* synthetic */ Object a;
     final /* synthetic */ AbstractChannel<E> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    int f42880c;
+    int c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -29,9 +24,9 @@ public final class AbstractChannel$receiveCatching$1 extends ContinuationImpl {
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        this.f42879a = obj;
-        this.f42880c |= Integer.MIN_VALUE;
-        Object a2 = this.b.a(this);
-        return a2 == IntrinsicsKt.a() ? a2 : ChannelResult.h(a2);
+        this.a = obj;
+        this.c |= Integer.MIN_VALUE;
+        Object a = this.b.a(this);
+        return a == IntrinsicsKt.a() ? a : ChannelResult.h(a);
     }
 }

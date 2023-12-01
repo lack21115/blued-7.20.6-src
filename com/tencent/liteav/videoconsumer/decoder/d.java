@@ -1,6 +1,5 @@
 package com.tencent.liteav.videoconsumer.decoder;
 
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.liteav.base.util.LiteavLog;
 import com.tencent.liteav.videobase.common.EncodedVideoFrame;
 import com.tencent.liteav.videobase.videobase.IVideoReporter;
@@ -14,11 +13,11 @@ import java.nio.ByteBuffer;
 public final class d {
 
     /* renamed from: a  reason: collision with root package name */
-    String f36779a;
-    final InterfaceC0938d b;
+    String f23088a;
+    final InterfaceC0768d b;
 
     /* renamed from: c  reason: collision with root package name */
-    final IVideoReporter f36780c;
+    final IVideoReporter f23089c;
     boolean e;
     boolean f;
     ay.a h;
@@ -32,7 +31,7 @@ public final class d {
     int t;
     boolean u;
     final SpsInfo d = new SpsInfo();
-    VideoDecodeController.DecodeStrategy g = VideoDecodeController.DecodeStrategy.PREFER_HARDWARE;
+    VideoDecodeController.DecodeStrategy g = VideoDecodeController.DecodeStrategy.f23046a;
     boolean i = false;
     int m = 8;
     int n = 6;
@@ -47,63 +46,60 @@ public final class d {
     boolean C = false;
     int D = 1;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.tencent.liteav.videoconsumer.decoder.d$1  reason: invalid class name */
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/liteav/videoconsumer/decoder/d$1.class */
-    public static final /* synthetic */ class AnonymousClass1 {
+    static final /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f36781a;
+        static final /* synthetic */ int[] f23090a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x0036 -> B:21:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:13:0x003a -> B:19:0x001f). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:15:0x003e -> B:25:0x002a). Please submit an issue!!! */
         static {
             int[] iArr = new int[c.values().length];
-            f36781a = iArr;
+            f23090a = iArr;
             try {
                 iArr[c.SWITCH_TO_SOFTWARE.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f36781a[c.SWITCH_TO_HARDWARE.ordinal()] = 2;
+                f23090a[c.SWITCH_TO_HARDWARE.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f36781a[c.RESTART_DECODER.ordinal()] = 3;
+                f23090a[c.RESTART_DECODER.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f36781a[c.CONTINUE_DECODE.ordinal()] = 4;
+                f23090a[c.CONTINUE_DECODE.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/liteav/videoconsumer/decoder/d$a.class */
-    public interface a {
+    interface a {
         b a(EncodedVideoFrame encodedVideoFrame);
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/liteav/videoconsumer/decoder/d$b.class */
-    public static final class b {
+    static final class b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final c f36782a;
+        public final c f23091a;
         public final e b;
 
         public b(c cVar, e eVar) {
-            this.f36782a = cVar;
+            this.f23091a = cVar;
             this.b = eVar;
-            if (cVar != c.SWITCH_TO_HARDWARE && this.f36782a != c.SWITCH_TO_SOFTWARE && this.b != e.NONE) {
+            if (cVar != c.SWITCH_TO_HARDWARE && this.f23091a != c.SWITCH_TO_SOFTWARE && this.b != e.NONE) {
                 throw new RuntimeException("SwitchReason must be NONE.)");
             }
         }
 
         public final String toString() {
-            return "CheckResult{instruction=" + this.f36782a + ", reason=" + this.b + '}';
+            return "CheckResult{instruction=" + this.f23091a + ", reason=" + this.b + '}';
         }
     }
 
@@ -122,16 +118,11 @@ public final class d {
         c(int i) {
             this.mPriority = i;
         }
-
-        /* JADX INFO: Access modifiers changed from: package-private */
-        public static /* synthetic */ int a(c cVar) {
-            return cVar.mPriority;
-        }
     }
 
     /* renamed from: com.tencent.liteav.videoconsumer.decoder.d$d  reason: collision with other inner class name */
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/liteav/videoconsumer/decoder/d$d.class */
-    public interface InterfaceC0938d {
+    public interface InterfaceC0768d {
         SpsInfo a(boolean z, ByteBuffer byteBuffer);
     }
 
@@ -153,27 +144,27 @@ public final class d {
         }
     }
 
-    public d(InterfaceC0938d interfaceC0938d, IVideoReporter iVideoReporter, boolean z, boolean z2) {
-        this.f36779a = "DecoderSupervisor";
-        this.b = interfaceC0938d;
-        this.f36780c = iVideoReporter;
+    public d(InterfaceC0768d interfaceC0768d, IVideoReporter iVideoReporter, boolean z, boolean z2) {
+        this.f23088a = "DecoderSupervisor";
+        this.b = interfaceC0768d;
+        this.f23089c = iVideoReporter;
         this.e = z;
         this.f = z2;
-        String str = this.f36779a + BridgeUtil.UNDERLINE_STR + hashCode();
-        this.f36779a = str;
+        String str = this.f23088a + "_" + hashCode();
+        this.f23088a = str;
         LiteavLog.i(str, "mIsSW265Supported:" + z + ",mIsHW265Supported:" + z2);
         b();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final void a() {
-        this.f36780c.notifyError(h.a.ERR_VIDEO_NO_AVAILABLE_HEVC_DECODERS, "no available hevc decoders", new Object[0]);
+        this.f23089c.notifyError(h.a.ERR_VIDEO_NO_AVAILABLE_HEVC_DECODERS, "no available hevc decoders", new Object[0]);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final boolean a(EncodedVideoFrame encodedVideoFrame) {
         if (!encodedVideoFrame.isH265() || this.f) {
-            return this.g == VideoDecodeController.DecodeStrategy.USE_HARDWARE_ONLY || this.g == VideoDecodeController.DecodeStrategy.PREFER_HARDWARE || this.g == VideoDecodeController.DecodeStrategy.PREFER_SOFTWARE;
+            return this.g == VideoDecodeController.DecodeStrategy.f23047c || this.g == VideoDecodeController.DecodeStrategy.f23046a || this.g == VideoDecodeController.DecodeStrategy.b;
         }
         return false;
     }

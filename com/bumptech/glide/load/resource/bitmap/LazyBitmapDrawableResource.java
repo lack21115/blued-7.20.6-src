@@ -11,11 +11,11 @@ import com.bumptech.glide.util.Preconditions;
 public final class LazyBitmapDrawableResource implements Initializable, Resource<BitmapDrawable> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Resources f20963a;
+    private final Resources f7357a;
     private final Resource<Bitmap> b;
 
     private LazyBitmapDrawableResource(Resources resources, Resource<Bitmap> resource) {
-        this.f20963a = (Resources) Preconditions.a(resources);
+        this.f7357a = (Resources) Preconditions.a(resources);
         this.b = (Resource) Preconditions.a(resource);
     }
 
@@ -52,6 +52,6 @@ public final class LazyBitmapDrawableResource implements Initializable, Resource
     @Override // com.bumptech.glide.load.engine.Resource
     /* renamed from: e */
     public BitmapDrawable f() {
-        return new BitmapDrawable(this.f20963a, this.b.f());
+        return new BitmapDrawable(this.f7357a, this.b.f());
     }
 }

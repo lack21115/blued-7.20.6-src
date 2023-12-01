@@ -9,10 +9,10 @@ public class j {
     private static j b;
 
     /* renamed from: a  reason: collision with root package name */
-    private final Context f21667a;
+    private final Context f8061a;
 
     private j(Context context) {
-        this.f21667a = context;
+        this.f8061a = context;
     }
 
     public static j a() {
@@ -141,7 +141,7 @@ public class j {
     }
 
     public String c() {
-        TelephonyManager telephonyManager = (TelephonyManager) this.f21667a.getSystemService("phone");
+        TelephonyManager telephonyManager = (TelephonyManager) this.f8061a.getSystemService("phone");
         if (telephonyManager != null) {
             String simOperator = telephonyManager.getSimOperator();
             c.b("SIMUtils", "SysOperator= " + simOperator);

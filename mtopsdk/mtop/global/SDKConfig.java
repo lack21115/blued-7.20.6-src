@@ -13,9 +13,7 @@ import mtopsdk.xstate.a;
 
 /* loaded from: source-3503164-dex2jar.jar:mtopsdk/mtop/global/SDKConfig.class */
 public class SDKConfig {
-
-    /* renamed from: c  reason: collision with root package name */
-    private static Context f43764c;
+    private static Context c;
     private static c d;
     private static String g;
     private static String h;
@@ -25,9 +23,7 @@ public class SDKConfig {
     private static String l;
     private static volatile ApiUnit m;
     private Lock n = new ReentrantLock();
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final SDKConfig f43763a = new SDKConfig();
+    private static final SDKConfig a = new SDKConfig();
     private static EnvModeEnum b = EnvModeEnum.ONLINE;
     private static int e = 0;
     private static int f = 0;
@@ -37,12 +33,12 @@ public class SDKConfig {
     }
 
     public static SDKConfig a() {
-        return f43763a;
+        return a;
     }
 
     public SDKConfig a(Context context) {
         if (context != null) {
-            f43764c = context.getApplicationContext();
+            c = context.getApplicationContext();
         }
         return this;
     }
@@ -86,7 +82,7 @@ public class SDKConfig {
     }
 
     public Context b() {
-        return f43764c;
+        return c;
     }
 
     public SDKConfig b(String str) {

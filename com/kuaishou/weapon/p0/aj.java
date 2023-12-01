@@ -22,11 +22,11 @@ public class aj {
     private static final String K = "bW9iaS5hY3BtLmluc3BlY2thZ2U=";
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23721a = "Y29tLmdpdGh1Yi51aWF1dG9tYXRvcg==";
+    private static final String f10113a = "Y29tLmdpdGh1Yi51aWF1dG9tYXRvcg==";
     private static final String b = "Y29tLmJ1c2NvZGUud2hhdHNpbnB1dA==";
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f23722c = "b3JnLmF1dG9qcy5hdXRvanM=";
+    private static final String f10114c = "b3JnLmF1dG9qcy5hdXRvanM=";
     private static final String d = "ZGUucm9idi5hbmRyb2lkLnhwb3NlZC5pbnN0YWxsZXI=";
     private static final String e = "Y29tLnNhbmZlbmdhbmRyb2lkLmRhdGFmaWx0ZXI=";
     private static final String f = "aXQuZXZpbHNvY2tldC5kc3Bsb2l0";
@@ -132,7 +132,7 @@ public class aj {
     private JSONObject o(Context context) {
         try {
             JSONObject jSONObject = new JSONObject();
-            if (a(context, f23721a)) {
+            if (a(context, f10113a)) {
                 jSONObject.put("0", 1);
             }
             return jSONObject;
@@ -195,9 +195,9 @@ public class aj {
     public JSONObject a(Context context) {
         try {
             JSONObject jSONObject = new JSONObject();
-            jSONObject.put("0", a(context, f23721a) ? 1 : 0);
+            jSONObject.put("0", a(context, f10113a) ? 1 : 0);
             jSONObject.put("1", a(context, b) ? 1 : 0);
-            jSONObject.put("2", a(context, f23722c) ? 1 : 0);
+            jSONObject.put("2", a(context, f10114c) ? 1 : 0);
             jSONObject.put("3", a(context, d) ? 1 : 0);
             jSONObject.put("4", a(context, e) ? 1 : 0);
             return jSONObject;

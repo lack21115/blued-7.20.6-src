@@ -3,6 +3,7 @@ package com.blued.android.module.media.selector.view;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
+import android.view.View;
 import androidx.viewpager.widget.ViewPager;
 import com.blued.android.core.AppInfo;
 import com.blued.android.framework.utils.DensityUtils;
@@ -21,20 +22,17 @@ public class HackyViewPager extends ViewPager {
 
     public void a() {
         setPageMargin(DensityUtils.a(AppInfo.d(), 20.0f));
-        setBackgroundColor(-16777216);
+        setBackgroundColor(View.MEASURED_STATE_MASK);
     }
 
-    @Override // androidx.viewpager.widget.ViewPager, android.view.ViewGroup, android.view.View
     public void onAttachedToWindow() {
         super.onAttachedToWindow();
     }
 
-    @Override // androidx.viewpager.widget.ViewPager, android.view.ViewGroup, android.view.View
     public void onDetachedFromWindow() {
         super.onDetachedFromWindow();
     }
 
-    @Override // androidx.viewpager.widget.ViewPager, android.view.ViewGroup
     public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         try {
             return super.onInterceptTouchEvent(motionEvent);

@@ -82,7 +82,7 @@ public class SmartRefreshLayout extends ViewGroup implements NestedScrollingPare
     protected OnLoadMoreListener W;
 
     /* renamed from: a  reason: collision with root package name */
-    protected int f27937a;
+    protected int f14249a;
     protected long aA;
     protected int aB;
     protected int aC;
@@ -112,7 +112,7 @@ public class SmartRefreshLayout extends ViewGroup implements NestedScrollingPare
     protected float aq;
 
     /* renamed from: ar  reason: collision with root package name */
-    protected RefreshInternal f27938ar;
+    protected RefreshInternal f14250ar;
     protected RefreshInternal as;
     protected RefreshContent at;
     protected Paint au;
@@ -124,7 +124,7 @@ public class SmartRefreshLayout extends ViewGroup implements NestedScrollingPare
     protected int b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected int f27939c;
+    protected int f14251c;
     protected int d;
     protected int e;
     protected int f;
@@ -154,7 +154,7 @@ public class SmartRefreshLayout extends ViewGroup implements NestedScrollingPare
     static /* synthetic */ class AnonymousClass10 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f27941a;
+        static final /* synthetic */ int[] f14253a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:37:0x00d1 -> B:81:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:39:0x00d5 -> B:95:0x001f). Please submit an issue!!! */
@@ -174,73 +174,73 @@ public class SmartRefreshLayout extends ViewGroup implements NestedScrollingPare
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:67:0x010d -> B:83:0x00c4). Please submit an issue!!! */
         static {
             int[] iArr = new int[RefreshState.values().length];
-            f27941a = iArr;
+            f14253a = iArr;
             try {
                 iArr[RefreshState.None.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f27941a[RefreshState.PullDownToRefresh.ordinal()] = 2;
+                f14253a[RefreshState.PullDownToRefresh.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f27941a[RefreshState.PullUpToLoad.ordinal()] = 3;
+                f14253a[RefreshState.PullUpToLoad.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f27941a[RefreshState.PullDownCanceled.ordinal()] = 4;
+                f14253a[RefreshState.PullDownCanceled.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f27941a[RefreshState.PullUpCanceled.ordinal()] = 5;
+                f14253a[RefreshState.PullUpCanceled.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
             try {
-                f27941a[RefreshState.ReleaseToRefresh.ordinal()] = 6;
+                f14253a[RefreshState.ReleaseToRefresh.ordinal()] = 6;
             } catch (NoSuchFieldError e6) {
             }
             try {
-                f27941a[RefreshState.ReleaseToLoad.ordinal()] = 7;
+                f14253a[RefreshState.ReleaseToLoad.ordinal()] = 7;
             } catch (NoSuchFieldError e7) {
             }
             try {
-                f27941a[RefreshState.ReleaseToTwoLevel.ordinal()] = 8;
+                f14253a[RefreshState.ReleaseToTwoLevel.ordinal()] = 8;
             } catch (NoSuchFieldError e8) {
             }
             try {
-                f27941a[RefreshState.RefreshReleased.ordinal()] = 9;
+                f14253a[RefreshState.RefreshReleased.ordinal()] = 9;
             } catch (NoSuchFieldError e9) {
             }
             try {
-                f27941a[RefreshState.LoadReleased.ordinal()] = 10;
+                f14253a[RefreshState.LoadReleased.ordinal()] = 10;
             } catch (NoSuchFieldError e10) {
             }
             try {
-                f27941a[RefreshState.Refreshing.ordinal()] = 11;
+                f14253a[RefreshState.Refreshing.ordinal()] = 11;
             } catch (NoSuchFieldError e11) {
             }
             try {
-                f27941a[RefreshState.Loading.ordinal()] = 12;
+                f14253a[RefreshState.Loading.ordinal()] = 12;
             } catch (NoSuchFieldError e12) {
             }
             try {
-                f27941a[RefreshState.RefreshFinish.ordinal()] = 13;
+                f14253a[RefreshState.RefreshFinish.ordinal()] = 13;
             } catch (NoSuchFieldError e13) {
             }
             try {
-                f27941a[RefreshState.LoadFinish.ordinal()] = 14;
+                f14253a[RefreshState.LoadFinish.ordinal()] = 14;
             } catch (NoSuchFieldError e14) {
             }
             try {
-                f27941a[RefreshState.TwoLevelReleased.ordinal()] = 15;
+                f14253a[RefreshState.TwoLevelReleased.ordinal()] = 15;
             } catch (NoSuchFieldError e15) {
             }
             try {
-                f27941a[RefreshState.TwoLevelFinish.ordinal()] = 16;
+                f14253a[RefreshState.TwoLevelFinish.ordinal()] = 16;
             } catch (NoSuchFieldError e16) {
             }
             try {
-                f27941a[RefreshState.TwoLevel.ordinal()] = 17;
+                f14253a[RefreshState.TwoLevel.ordinal()] = 17;
             } catch (NoSuchFieldError e17) {
             }
         }
@@ -252,11 +252,11 @@ public class SmartRefreshLayout extends ViewGroup implements NestedScrollingPare
     public class AnonymousClass7 implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ boolean f27947a;
+        final /* synthetic */ boolean f14259a;
         final /* synthetic */ boolean b;
 
         AnonymousClass7(boolean z, boolean z2) {
-            this.f27947a = z;
+            this.f14259a = z;
             this.b = z2;
         }
 
@@ -271,9 +271,9 @@ public class SmartRefreshLayout extends ViewGroup implements NestedScrollingPare
                 return;
             }
             SmartRefreshLayout.this.a(RefreshState.LoadFinish);
-            int a2 = SmartRefreshLayout.this.as.a(SmartRefreshLayout.this, this.f27947a);
+            int a2 = SmartRefreshLayout.this.as.a(SmartRefreshLayout.this, this.f14259a);
             if (SmartRefreshLayout.this.aa != null && (SmartRefreshLayout.this.as instanceof RefreshFooter)) {
-                SmartRefreshLayout.this.aa.a((RefreshFooter) SmartRefreshLayout.this.as, this.f27947a);
+                SmartRefreshLayout.this.aa.a((RefreshFooter) SmartRefreshLayout.this.as, this.f14259a);
             }
             if (a2 < Integer.MAX_VALUE) {
                 if (!this.b || !SmartRefreshLayout.this.G || SmartRefreshLayout.this.b >= 0 || !SmartRefreshLayout.this.at.d()) {
@@ -291,7 +291,7 @@ public class SmartRefreshLayout extends ViewGroup implements NestedScrollingPare
                     long currentTimeMillis = System.currentTimeMillis();
                     SmartRefreshLayout smartRefreshLayout3 = SmartRefreshLayout.this;
                     float f = max;
-                    SmartRefreshLayout.super.dispatchTouchEvent(MotionEvent.obtain(currentTimeMillis, currentTimeMillis, 0, smartRefreshLayout3.j, SmartRefreshLayout.this.k + f + (SmartRefreshLayout.this.f27937a * 2), 0));
+                    SmartRefreshLayout.super.dispatchTouchEvent(MotionEvent.obtain(currentTimeMillis, currentTimeMillis, 0, smartRefreshLayout3.j, SmartRefreshLayout.this.k + f + (SmartRefreshLayout.this.f14249a * 2), 0));
                     SmartRefreshLayout smartRefreshLayout4 = SmartRefreshLayout.this;
                     SmartRefreshLayout.super.dispatchTouchEvent(MotionEvent.obtain(currentTimeMillis, currentTimeMillis, 2, smartRefreshLayout4.j, SmartRefreshLayout.this.k + f, 0));
                     if (SmartRefreshLayout.this.ad) {
@@ -353,11 +353,11 @@ public class SmartRefreshLayout extends ViewGroup implements NestedScrollingPare
     class AnonymousClass9 implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ float f27955a;
+        final /* synthetic */ float f14267a;
         final /* synthetic */ int b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ boolean f27956c;
+        final /* synthetic */ boolean f14268c;
         final /* synthetic */ SmartRefreshLayout d;
 
         @Override // java.lang.Runnable
@@ -366,7 +366,7 @@ public class SmartRefreshLayout extends ViewGroup implements NestedScrollingPare
                 this.d.aM.cancel();
             }
             SmartRefreshLayout smartRefreshLayout = this.d;
-            smartRefreshLayout.aM = ValueAnimator.ofInt(smartRefreshLayout.b, -((int) (this.d.aj * this.f27955a)));
+            smartRefreshLayout.aM = ValueAnimator.ofInt(smartRefreshLayout.b, -((int) (this.d.aj * this.f14267a)));
             this.d.aM.setDuration(this.b);
             this.d.aM.setInterpolator(new DecelerateInterpolator());
             this.d.aM.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.scwang.smartrefresh.layout.SmartRefreshLayout.9.1
@@ -379,7 +379,7 @@ public class SmartRefreshLayout extends ViewGroup implements NestedScrollingPare
                 @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                 public void onAnimationEnd(Animator animator) {
                     AnonymousClass9.this.d.aM = null;
-                    if (AnonymousClass9.this.f27956c) {
+                    if (AnonymousClass9.this.f14268c) {
                         if (AnonymousClass9.this.d.ay == RefreshState.ReleaseToLoad) {
                             AnonymousClass9.this.d.aw.a(RefreshState.PullUpToLoad);
                         }
@@ -410,18 +410,18 @@ public class SmartRefreshLayout extends ViewGroup implements NestedScrollingPare
     public class BounceRunnable implements Runnable {
 
         /* renamed from: c  reason: collision with root package name */
-        int f27960c;
+        int f14272c;
         float f;
 
         /* renamed from: a  reason: collision with root package name */
-        int f27959a = 0;
+        int f14271a = 0;
         int b = 10;
         float e = 0.0f;
         long d = AnimationUtils.currentAnimationTimeMillis();
 
         BounceRunnable(float f, int i) {
             this.f = f;
-            this.f27960c = i;
+            this.f14272c = i;
             SmartRefreshLayout.this.postDelayed(this, this.b);
         }
 
@@ -433,17 +433,17 @@ public class SmartRefreshLayout extends ViewGroup implements NestedScrollingPare
             if (SmartRefreshLayout.this.aL != this || SmartRefreshLayout.this.ay.w) {
                 return;
             }
-            if (Math.abs(SmartRefreshLayout.this.b) < Math.abs(this.f27960c)) {
+            if (Math.abs(SmartRefreshLayout.this.b) < Math.abs(this.f14272c)) {
                 double d = this.f;
-                this.f27959a = this.f27959a + 1;
+                this.f14271a = this.f14271a + 1;
                 this.f = (float) (d * Math.pow(0.949999988079071d, i * 2));
-            } else if (this.f27960c != 0) {
+            } else if (this.f14272c != 0) {
                 double d2 = this.f;
-                this.f27959a = this.f27959a + 1;
+                this.f14271a = this.f14271a + 1;
                 this.f = (float) (d2 * Math.pow(0.44999998807907104d, i3 * 2));
             } else {
                 double d3 = this.f;
-                this.f27959a = this.f27959a + 1;
+                this.f14271a = this.f14271a + 1;
                 this.f = (float) (d3 * Math.pow(0.8500000238418579d, i2 * 2));
             }
             long currentAnimationTimeMillis = AnimationUtils.currentAnimationTimeMillis();
@@ -457,10 +457,10 @@ public class SmartRefreshLayout extends ViewGroup implements NestedScrollingPare
                 return;
             }
             SmartRefreshLayout.this.aL = null;
-            if (Math.abs(SmartRefreshLayout.this.b) >= Math.abs(this.f27960c)) {
-                int min = Math.min(Math.max((int) DensityUtil.a(Math.abs(SmartRefreshLayout.this.b - this.f27960c)), 30), 100);
+            if (Math.abs(SmartRefreshLayout.this.b) >= Math.abs(this.f14272c)) {
+                int min = Math.min(Math.max((int) DensityUtil.a(Math.abs(SmartRefreshLayout.this.b - this.f14272c)), 30), 100);
                 SmartRefreshLayout smartRefreshLayout = SmartRefreshLayout.this;
-                smartRefreshLayout.a(this.f27960c, 0, smartRefreshLayout.y, min * 10);
+                smartRefreshLayout.a(this.f14272c, 0, smartRefreshLayout.y, min * 10);
             }
         }
     }
@@ -469,19 +469,19 @@ public class SmartRefreshLayout extends ViewGroup implements NestedScrollingPare
     public class FlingRunnable implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        int f27961a;
+        int f14273a;
         float d;
         int b = 0;
 
         /* renamed from: c  reason: collision with root package name */
-        int f27962c = 10;
+        int f14274c = 10;
         float e = 0.98f;
         long f = 0;
         long g = AnimationUtils.currentAnimationTimeMillis();
 
         FlingRunnable(float f) {
             this.d = f;
-            this.f27961a = SmartRefreshLayout.this.b;
+            this.f14273a = SmartRefreshLayout.this.b;
         }
 
         /* JADX WARN: Code restructure failed: missing block: B:15:0x004a, code lost:
@@ -515,7 +515,7 @@ public class SmartRefreshLayout extends ViewGroup implements NestedScrollingPare
             }
             long currentAnimationTimeMillis = AnimationUtils.currentAnimationTimeMillis();
             long j = this.g;
-            float pow = (float) (this.d * Math.pow(this.e, (currentAnimationTimeMillis - this.f) / (1000 / this.f27962c)));
+            float pow = (float) (this.d * Math.pow(this.e, (currentAnimationTimeMillis - this.f) / (1000 / this.f14274c)));
             this.d = pow;
             float f = pow * ((((float) (currentAnimationTimeMillis - j)) * 1.0f) / 1000.0f);
             if (Math.abs(f) <= 1.0f) {
@@ -523,10 +523,10 @@ public class SmartRefreshLayout extends ViewGroup implements NestedScrollingPare
                 return;
             }
             this.g = currentAnimationTimeMillis;
-            this.f27961a = (int) (this.f27961a + f);
-            if (SmartRefreshLayout.this.b * this.f27961a > 0) {
-                SmartRefreshLayout.this.aw.a(this.f27961a, true);
-                SmartRefreshLayout.this.postDelayed(this, this.f27962c);
+            this.f14273a = (int) (this.f14273a + f);
+            if (SmartRefreshLayout.this.b * this.f14273a > 0) {
+                SmartRefreshLayout.this.aw.a(this.f14273a, true);
+                SmartRefreshLayout.this.postDelayed(this, this.f14274c);
                 return;
             }
             SmartRefreshLayout.this.aL = null;
@@ -543,21 +543,21 @@ public class SmartRefreshLayout extends ViewGroup implements NestedScrollingPare
     public static class LayoutParams extends ViewGroup.MarginLayoutParams {
 
         /* renamed from: a  reason: collision with root package name */
-        public int f27963a;
+        public int f14275a;
         public SpinnerStyle b;
 
         public LayoutParams(int i, int i2) {
             super(i, i2);
-            this.f27963a = 0;
+            this.f14275a = 0;
             this.b = null;
         }
 
         public LayoutParams(Context context, AttributeSet attributeSet) {
             super(context, attributeSet);
-            this.f27963a = 0;
+            this.f14275a = 0;
             this.b = null;
             TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.SmartRefreshLayout_Layout);
-            this.f27963a = obtainStyledAttributes.getColor(R.styleable.SmartRefreshLayout_Layout_layout_srlBackgroundColor, this.f27963a);
+            this.f14275a = obtainStyledAttributes.getColor(R.styleable.SmartRefreshLayout_Layout_layout_srlBackgroundColor, this.f14275a);
             if (obtainStyledAttributes.hasValue(R.styleable.SmartRefreshLayout_Layout_layout_srlSpinnerStyle)) {
                 this.b = SpinnerStyle.values()[obtainStyledAttributes.getInt(R.styleable.SmartRefreshLayout_Layout_layout_srlSpinnerStyle, SpinnerStyle.Translate.ordinal())];
             }
@@ -566,7 +566,7 @@ public class SmartRefreshLayout extends ViewGroup implements NestedScrollingPare
 
         public LayoutParams(ViewGroup.LayoutParams layoutParams) {
             super(layoutParams);
-            this.f27963a = 0;
+            this.f14275a = 0;
             this.b = null;
         }
     }
@@ -584,7 +584,7 @@ public class SmartRefreshLayout extends ViewGroup implements NestedScrollingPare
 
         @Override // com.scwang.smartrefresh.layout.api.RefreshKernel
         public RefreshKernel a(int i, boolean z) {
-            if (SmartRefreshLayout.this.b != i || ((SmartRefreshLayout.this.f27938ar != null && SmartRefreshLayout.this.f27938ar.b()) || (SmartRefreshLayout.this.as != null && SmartRefreshLayout.this.as.b()))) {
+            if (SmartRefreshLayout.this.b != i || ((SmartRefreshLayout.this.f14250ar != null && SmartRefreshLayout.this.f14250ar.b()) || (SmartRefreshLayout.this.as != null && SmartRefreshLayout.this.as.b()))) {
                 SmartRefreshLayout smartRefreshLayout = SmartRefreshLayout.this;
                 int i2 = smartRefreshLayout.b;
                 SmartRefreshLayout.this.b = i;
@@ -605,9 +605,9 @@ public class SmartRefreshLayout extends ViewGroup implements NestedScrollingPare
                     Integer num = null;
                     if (i >= 0) {
                         num = null;
-                        if (SmartRefreshLayout.this.f27938ar != null) {
+                        if (SmartRefreshLayout.this.f14250ar != null) {
                             SmartRefreshLayout smartRefreshLayout2 = SmartRefreshLayout.this;
-                            if (smartRefreshLayout2.a(smartRefreshLayout2.E, SmartRefreshLayout.this.f27938ar)) {
+                            if (smartRefreshLayout2.a(smartRefreshLayout2.E, SmartRefreshLayout.this.f14250ar)) {
                                 num = Integer.valueOf(i);
                             } else {
                                 num = null;
@@ -634,14 +634,14 @@ public class SmartRefreshLayout extends ViewGroup implements NestedScrollingPare
                     }
                     if (num2 != null) {
                         SmartRefreshLayout.this.at.a(num2.intValue(), SmartRefreshLayout.this.r, SmartRefreshLayout.this.s);
-                        boolean z2 = (SmartRefreshLayout.this.C && SmartRefreshLayout.this.f27938ar != null && SmartRefreshLayout.this.f27938ar.getSpinnerStyle() == SpinnerStyle.FixedBehind) || SmartRefreshLayout.this.aB != 0;
+                        boolean z2 = (SmartRefreshLayout.this.C && SmartRefreshLayout.this.f14250ar != null && SmartRefreshLayout.this.f14250ar.getSpinnerStyle() == SpinnerStyle.FixedBehind) || SmartRefreshLayout.this.aB != 0;
                         boolean z3 = (SmartRefreshLayout.this.D && SmartRefreshLayout.this.as != null && SmartRefreshLayout.this.as.getSpinnerStyle() == SpinnerStyle.FixedBehind) || SmartRefreshLayout.this.aC != 0;
                         if ((z2 && (num2.intValue() >= 0 || i2 > 0)) || (z3 && (num2.intValue() <= 0 || i2 < 0))) {
                             smartRefreshLayout.invalidate();
                         }
                     }
                 }
-                if ((i >= 0 || i2 > 0) && SmartRefreshLayout.this.f27938ar != null) {
+                if ((i >= 0 || i2 > 0) && SmartRefreshLayout.this.f14250ar != null) {
                     int max = Math.max(i, 0);
                     int i3 = SmartRefreshLayout.this.ah;
                     int i4 = (int) (SmartRefreshLayout.this.ah * SmartRefreshLayout.this.an);
@@ -649,27 +649,27 @@ public class SmartRefreshLayout extends ViewGroup implements NestedScrollingPare
                     SmartRefreshLayout smartRefreshLayout4 = SmartRefreshLayout.this;
                     if (smartRefreshLayout4.a(smartRefreshLayout4.A) || (SmartRefreshLayout.this.ay == RefreshState.RefreshFinish && !z)) {
                         if (i2 != SmartRefreshLayout.this.b) {
-                            if (SmartRefreshLayout.this.f27938ar.getSpinnerStyle() == SpinnerStyle.Translate) {
-                                SmartRefreshLayout.this.f27938ar.getView().setTranslationY(SmartRefreshLayout.this.b);
+                            if (SmartRefreshLayout.this.f14250ar.getSpinnerStyle() == SpinnerStyle.Translate) {
+                                SmartRefreshLayout.this.f14250ar.getView().setTranslationY(SmartRefreshLayout.this.b);
                                 if (SmartRefreshLayout.this.aB != 0 && SmartRefreshLayout.this.au != null) {
                                     SmartRefreshLayout smartRefreshLayout5 = SmartRefreshLayout.this;
-                                    if (!smartRefreshLayout5.a(smartRefreshLayout5.E, SmartRefreshLayout.this.f27938ar)) {
+                                    if (!smartRefreshLayout5.a(smartRefreshLayout5.E, SmartRefreshLayout.this.f14250ar)) {
                                         smartRefreshLayout.invalidate();
                                     }
                                 }
-                            } else if (SmartRefreshLayout.this.f27938ar.getSpinnerStyle() == SpinnerStyle.Scale) {
-                                SmartRefreshLayout.this.f27938ar.getView().requestLayout();
+                            } else if (SmartRefreshLayout.this.f14250ar.getSpinnerStyle() == SpinnerStyle.Scale) {
+                                SmartRefreshLayout.this.f14250ar.getView().requestLayout();
                             }
-                            SmartRefreshLayout.this.f27938ar.a(z, f, max, i3, i4);
+                            SmartRefreshLayout.this.f14250ar.a(z, f, max, i3, i4);
                         }
-                        if (z && SmartRefreshLayout.this.f27938ar.b()) {
+                        if (z && SmartRefreshLayout.this.f14250ar.b()) {
                             int i5 = (int) SmartRefreshLayout.this.j;
                             int width = smartRefreshLayout.getWidth();
-                            SmartRefreshLayout.this.f27938ar.a(SmartRefreshLayout.this.j / (width == 0 ? 1 : width), i5, width);
+                            SmartRefreshLayout.this.f14250ar.a(SmartRefreshLayout.this.j / (width == 0 ? 1 : width), i5, width);
                         }
                     }
-                    if (i2 != SmartRefreshLayout.this.b && SmartRefreshLayout.this.aa != null && (SmartRefreshLayout.this.f27938ar instanceof RefreshHeader)) {
-                        SmartRefreshLayout.this.aa.a((RefreshHeader) SmartRefreshLayout.this.f27938ar, z, f, max, i3, i4);
+                    if (i2 != SmartRefreshLayout.this.b && SmartRefreshLayout.this.aa != null && (SmartRefreshLayout.this.f14250ar instanceof RefreshHeader)) {
+                        SmartRefreshLayout.this.aa.a((RefreshHeader) SmartRefreshLayout.this.f14250ar, z, f, max, i3, i4);
                     }
                 }
                 if ((i <= 0 || i2 < 0) && SmartRefreshLayout.this.as != null) {
@@ -713,7 +713,7 @@ public class SmartRefreshLayout extends ViewGroup implements NestedScrollingPare
             if (SmartRefreshLayout.this.au == null && i != 0) {
                 SmartRefreshLayout.this.au = new Paint();
             }
-            if (refreshInternal.equals(SmartRefreshLayout.this.f27938ar)) {
+            if (refreshInternal.equals(SmartRefreshLayout.this.f14250ar)) {
                 SmartRefreshLayout.this.aB = i;
                 return this;
             }
@@ -725,7 +725,7 @@ public class SmartRefreshLayout extends ViewGroup implements NestedScrollingPare
 
         @Override // com.scwang.smartrefresh.layout.api.RefreshKernel
         public RefreshKernel a(RefreshInternal refreshInternal, boolean z) {
-            if (refreshInternal.equals(SmartRefreshLayout.this.f27938ar)) {
+            if (refreshInternal.equals(SmartRefreshLayout.this.f14250ar)) {
                 SmartRefreshLayout.this.aD = z;
                 return this;
             }
@@ -737,7 +737,7 @@ public class SmartRefreshLayout extends ViewGroup implements NestedScrollingPare
 
         @Override // com.scwang.smartrefresh.layout.api.RefreshKernel
         public RefreshKernel a(RefreshState refreshState) {
-            switch (AnonymousClass10.f27941a[refreshState.ordinal()]) {
+            switch (AnonymousClass10.f14253a[refreshState.ordinal()]) {
                 case 1:
                     SmartRefreshLayout.this.c();
                     return null;
@@ -973,7 +973,7 @@ public class SmartRefreshLayout extends ViewGroup implements NestedScrollingPare
         this.x = VelocityTracker.obtain();
         this.g = context.getResources().getDisplayMetrics().heightPixels;
         this.y = new ViscousFluidInterpolator();
-        this.f27937a = viewConfiguration.getScaledTouchSlop();
+        this.f14249a = viewConfiguration.getScaledTouchSlop();
         this.t = viewConfiguration.getScaledMinimumFlingVelocity();
         this.u = viewConfiguration.getScaledMaximumFlingVelocity();
         this.aj = densityUtil.b(60.0f);
@@ -1110,13 +1110,13 @@ public class SmartRefreshLayout extends ViewGroup implements NestedScrollingPare
         postDelayed(new Runnable() { // from class: com.scwang.smartrefresh.layout.SmartRefreshLayout.6
             @Override // java.lang.Runnable
             public void run() {
-                if (SmartRefreshLayout.this.ay != RefreshState.Refreshing || SmartRefreshLayout.this.f27938ar == null || SmartRefreshLayout.this.at == null) {
+                if (SmartRefreshLayout.this.ay != RefreshState.Refreshing || SmartRefreshLayout.this.f14250ar == null || SmartRefreshLayout.this.at == null) {
                     return;
                 }
                 SmartRefreshLayout.this.a(RefreshState.RefreshFinish);
-                int a2 = SmartRefreshLayout.this.f27938ar.a(SmartRefreshLayout.this, z);
-                if (SmartRefreshLayout.this.aa != null && (SmartRefreshLayout.this.f27938ar instanceof RefreshHeader)) {
-                    SmartRefreshLayout.this.aa.a((RefreshHeader) SmartRefreshLayout.this.f27938ar, z);
+                int a2 = SmartRefreshLayout.this.f14250ar.a(SmartRefreshLayout.this, z);
+                if (SmartRefreshLayout.this.aa != null && (SmartRefreshLayout.this.f14250ar instanceof RefreshHeader)) {
+                    SmartRefreshLayout.this.aa.a((RefreshHeader) SmartRefreshLayout.this.f14250ar, z);
                 }
                 if (a2 < Integer.MAX_VALUE) {
                     if (SmartRefreshLayout.this.n || SmartRefreshLayout.this.ad) {
@@ -1128,7 +1128,7 @@ public class SmartRefreshLayout extends ViewGroup implements NestedScrollingPare
                         }
                         long currentTimeMillis = System.currentTimeMillis();
                         SmartRefreshLayout smartRefreshLayout2 = SmartRefreshLayout.this;
-                        SmartRefreshLayout.super.dispatchTouchEvent(MotionEvent.obtain(currentTimeMillis, currentTimeMillis, 0, smartRefreshLayout2.j, (SmartRefreshLayout.this.k + SmartRefreshLayout.this.b) - (SmartRefreshLayout.this.f27937a * 2), 0));
+                        SmartRefreshLayout.super.dispatchTouchEvent(MotionEvent.obtain(currentTimeMillis, currentTimeMillis, 0, smartRefreshLayout2.j, (SmartRefreshLayout.this.k + SmartRefreshLayout.this.b) - (SmartRefreshLayout.this.f14249a * 2), 0));
                         SmartRefreshLayout smartRefreshLayout3 = SmartRefreshLayout.this;
                         SmartRefreshLayout.super.dispatchTouchEvent(MotionEvent.obtain(currentTimeMillis, currentTimeMillis, 2, smartRefreshLayout3.j, SmartRefreshLayout.this.k + SmartRefreshLayout.this.b, 0));
                         if (SmartRefreshLayout.this.ad) {
@@ -1195,19 +1195,19 @@ public class SmartRefreshLayout extends ViewGroup implements NestedScrollingPare
     }
 
     public SmartRefreshLayout a(RefreshHeader refreshHeader, int i, int i2) {
-        RefreshInternal refreshInternal = this.f27938ar;
+        RefreshInternal refreshInternal = this.f14250ar;
         if (refreshInternal != null) {
             super.removeView(refreshInternal.getView());
         }
-        this.f27938ar = refreshHeader;
+        this.f14250ar = refreshHeader;
         this.aB = 0;
         this.aD = false;
         this.ai = this.ai.a();
-        if (this.f27938ar.getSpinnerStyle() == SpinnerStyle.FixedBehind) {
-            super.addView(this.f27938ar.getView(), 0, new LayoutParams(i, i2));
+        if (this.f14250ar.getSpinnerStyle() == SpinnerStyle.FixedBehind) {
+            super.addView(this.f14250ar.getView(), 0, new LayoutParams(i, i2));
             return this;
         }
-        super.addView(this.f27938ar.getView(), i, i2);
+        super.addView(this.f14250ar.getView(), i, i2);
         return this;
     }
 
@@ -1237,7 +1237,7 @@ public class SmartRefreshLayout extends ViewGroup implements NestedScrollingPare
     }
 
     public SmartRefreshLayout a(int... iArr) {
-        RefreshInternal refreshInternal = this.f27938ar;
+        RefreshInternal refreshInternal = this.f14250ar;
         if (refreshInternal != null) {
             refreshInternal.setPrimaryColors(iArr);
         }
@@ -1303,7 +1303,7 @@ public class SmartRefreshLayout extends ViewGroup implements NestedScrollingPare
         }
         this.ay = refreshState;
         this.az = refreshState;
-        RefreshInternal refreshInternal = this.f27938ar;
+        RefreshInternal refreshInternal = this.f14250ar;
         RefreshInternal refreshInternal2 = this.as;
         OnMultiPurposeListener onMultiPurposeListener = this.aa;
         if (refreshInternal != null) {
@@ -1463,16 +1463,16 @@ public class SmartRefreshLayout extends ViewGroup implements NestedScrollingPare
                 } else if (SmartRefreshLayout.this.aa == null) {
                     SmartRefreshLayout.this.b(3000);
                 }
-                if (SmartRefreshLayout.this.f27938ar != null) {
-                    RefreshInternal refreshInternal = SmartRefreshLayout.this.f27938ar;
+                if (SmartRefreshLayout.this.f14250ar != null) {
+                    RefreshInternal refreshInternal = SmartRefreshLayout.this.f14250ar;
                     SmartRefreshLayout smartRefreshLayout = SmartRefreshLayout.this;
                     refreshInternal.a(smartRefreshLayout, smartRefreshLayout.ah, (int) (SmartRefreshLayout.this.an * SmartRefreshLayout.this.ah));
                 }
-                if (SmartRefreshLayout.this.aa == null || !(SmartRefreshLayout.this.f27938ar instanceof RefreshHeader)) {
+                if (SmartRefreshLayout.this.aa == null || !(SmartRefreshLayout.this.f14250ar instanceof RefreshHeader)) {
                     return;
                 }
                 SmartRefreshLayout.this.aa.onRefresh(SmartRefreshLayout.this);
-                SmartRefreshLayout.this.aa.b((RefreshHeader) SmartRefreshLayout.this.f27938ar, SmartRefreshLayout.this.ah, (int) (SmartRefreshLayout.this.an * SmartRefreshLayout.this.ah));
+                SmartRefreshLayout.this.aa.b((RefreshHeader) SmartRefreshLayout.this.f14250ar, SmartRefreshLayout.this.ah, (int) (SmartRefreshLayout.this.an * SmartRefreshLayout.this.ah));
             }
         };
         a(RefreshState.RefreshReleased);
@@ -1480,14 +1480,14 @@ public class SmartRefreshLayout extends ViewGroup implements NestedScrollingPare
         if (a2 != null) {
             a2.addListener(animatorListenerAdapter);
         }
-        RefreshInternal refreshInternal = this.f27938ar;
+        RefreshInternal refreshInternal = this.f14250ar;
         if (refreshInternal != null) {
             int i = this.ah;
             refreshInternal.b(this, i, (int) (this.an * i));
         }
         OnMultiPurposeListener onMultiPurposeListener = this.aa;
         if (onMultiPurposeListener != null) {
-            RefreshInternal refreshInternal2 = this.f27938ar;
+            RefreshInternal refreshInternal2 = this.f14250ar;
             if (refreshInternal2 instanceof RefreshHeader) {
                 RefreshHeader refreshHeader = (RefreshHeader) refreshInternal2;
                 int i2 = this.ah;
@@ -1616,9 +1616,8 @@ public class SmartRefreshLayout extends ViewGroup implements NestedScrollingPare
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup
-    public boolean checkLayoutParams(ViewGroup.LayoutParams layoutParams) {
+    protected boolean checkLayoutParams(ViewGroup.LayoutParams layoutParams) {
         return layoutParams instanceof LayoutParams;
     }
 
@@ -1643,7 +1642,7 @@ public class SmartRefreshLayout extends ViewGroup implements NestedScrollingPare
     /* renamed from: d */
     public SmartRefreshLayout e(float f) {
         this.an = f;
-        RefreshInternal refreshInternal = this.f27938ar;
+        RefreshInternal refreshInternal = this.f14250ar;
         if (refreshInternal == null || this.av == null) {
             this.ai = this.ai.a();
             return this;
@@ -1730,7 +1729,7 @@ public class SmartRefreshLayout extends ViewGroup implements NestedScrollingPare
         if (r0 != 3) goto L107;
      */
     /* JADX WARN: Code restructure failed: missing block: B:177:0x03db, code lost:
-        if (r9.f27939c > 0) goto L174;
+        if (r9.f14251c > 0) goto L174;
      */
     @Override // android.view.ViewGroup, android.view.View
     /*
@@ -1745,12 +1744,11 @@ public class SmartRefreshLayout extends ViewGroup implements NestedScrollingPare
         throw new UnsupportedOperationException("Method not decompiled: com.scwang.smartrefresh.layout.SmartRefreshLayout.dispatchTouchEvent(android.view.MotionEvent):boolean");
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup
-    public boolean drawChild(Canvas canvas, View view, long j) {
+    protected boolean drawChild(Canvas canvas, View view, long j) {
         RefreshContent refreshContent = this.at;
         View a2 = refreshContent != null ? refreshContent.a() : null;
-        RefreshInternal refreshInternal = this.f27938ar;
+        RefreshInternal refreshInternal = this.f14250ar;
         if (refreshInternal != null && refreshInternal.getView() == view) {
             if (!a(this.A)) {
                 return true;
@@ -1767,16 +1765,16 @@ public class SmartRefreshLayout extends ViewGroup implements NestedScrollingPare
                     i2 = max;
                     if (paint != null) {
                         paint.setColor(i);
-                        if (this.f27938ar.getSpinnerStyle() == SpinnerStyle.Scale) {
+                        if (this.f14250ar.getSpinnerStyle() == SpinnerStyle.Scale) {
                             max = view.getBottom();
-                        } else if (this.f27938ar.getSpinnerStyle() == SpinnerStyle.Translate) {
+                        } else if (this.f14250ar.getSpinnerStyle() == SpinnerStyle.Translate) {
                             max = view.getBottom() + this.b;
                         }
                         canvas.drawRect(view.getLeft(), view.getTop(), view.getRight(), max, this.au);
                         i2 = max;
                     }
                 }
-                if (this.C && this.f27938ar.getSpinnerStyle() == SpinnerStyle.FixedBehind) {
+                if (this.C && this.f14250ar.getSpinnerStyle() == SpinnerStyle.FixedBehind) {
                     canvas.save();
                     canvas.clipRect(view.getLeft(), view.getTop(), view.getRight(), i2);
                     boolean drawChild = super.drawChild(canvas, view, j);
@@ -1880,7 +1878,7 @@ public class SmartRefreshLayout extends ViewGroup implements NestedScrollingPare
     }
 
     public RefreshHeader getRefreshHeader() {
-        RefreshInternal refreshInternal = this.f27938ar;
+        RefreshInternal refreshInternal = this.f14250ar;
         if (refreshInternal instanceof RefreshHeader) {
             return (RefreshHeader) refreshInternal;
         }
@@ -1930,7 +1928,7 @@ public class SmartRefreshLayout extends ViewGroup implements NestedScrollingPare
         return a(i, i2, (((f + 0.5f) * f2) * 1.0f) / i4, false);
     }
 
-    @Override // android.view.View, androidx.core.view.NestedScrollingChild
+    @Override // android.view.View
     public boolean isNestedScrollingEnabled() {
         return this.af.isNestedScrollingEnabled();
     }
@@ -1939,9 +1937,8 @@ public class SmartRefreshLayout extends ViewGroup implements NestedScrollingPare
         return a(z ? Math.min(Math.max(0, 300 - ((int) (System.currentTimeMillis() - this.aA))), 300) : 0, z, false);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         RefreshInternal refreshInternal;
         super.onAttachedToWindow();
         if (!isInEditMode()) {
@@ -1951,12 +1948,12 @@ public class SmartRefreshLayout extends ViewGroup implements NestedScrollingPare
             List<DelayedRunnable> list = this.ax;
             if (list != null) {
                 for (DelayedRunnable delayedRunnable : list) {
-                    this.av.postDelayed(delayedRunnable, delayedRunnable.f27997a);
+                    this.av.postDelayed(delayedRunnable, delayedRunnable.f14309a);
                 }
                 this.ax.clear();
                 this.ax = null;
             }
-            if (this.f27938ar == null) {
+            if (this.f14250ar == null) {
                 DefaultRefreshHeaderCreator defaultRefreshHeaderCreator = aH;
                 if (defaultRefreshHeaderCreator != null) {
                     b(defaultRefreshHeaderCreator.createRefreshHeader(getContext(), this));
@@ -1985,7 +1982,7 @@ public class SmartRefreshLayout extends ViewGroup implements NestedScrollingPare
                         break;
                     }
                     View childAt = getChildAt(i2);
-                    RefreshInternal refreshInternal2 = this.f27938ar;
+                    RefreshInternal refreshInternal2 = this.f14250ar;
                     if ((refreshInternal2 == null || childAt != refreshInternal2.getView()) && ((refreshInternal = this.as) == null || childAt != refreshInternal.getView())) {
                         this.at = new RefreshContentWrapper(childAt);
                     }
@@ -2020,7 +2017,7 @@ public class SmartRefreshLayout extends ViewGroup implements NestedScrollingPare
         }
         int[] iArr = this.z;
         if (iArr != null) {
-            RefreshInternal refreshInternal3 = this.f27938ar;
+            RefreshInternal refreshInternal3 = this.f14250ar;
             if (refreshInternal3 != null) {
                 refreshInternal3.setPrimaryColors(iArr);
             }
@@ -2033,9 +2030,9 @@ public class SmartRefreshLayout extends ViewGroup implements NestedScrollingPare
         if (refreshContent2 != null) {
             super.bringChildToFront(refreshContent2.a());
         }
-        RefreshInternal refreshInternal5 = this.f27938ar;
+        RefreshInternal refreshInternal5 = this.f14250ar;
         if (refreshInternal5 != null && refreshInternal5.getSpinnerStyle() != SpinnerStyle.FixedBehind) {
-            super.bringChildToFront(this.f27938ar.getView());
+            super.bringChildToFront(this.f14250ar.getView());
         }
         RefreshInternal refreshInternal6 = this.as;
         if (refreshInternal6 == null || refreshInternal6.getSpinnerStyle() == SpinnerStyle.FixedBehind) {
@@ -2044,9 +2041,8 @@ public class SmartRefreshLayout extends ViewGroup implements NestedScrollingPare
         super.bringChildToFront(this.as.getView());
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.aw.a(0, true);
         a(RefreshState.None);
@@ -2086,9 +2082,8 @@ public class SmartRefreshLayout extends ViewGroup implements NestedScrollingPare
         throw new UnsupportedOperationException("Method not decompiled: com.scwang.smartrefresh.layout.SmartRefreshLayout.onFinishInflate():void");
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z, int i, int i2, int i3, int i4) {
+    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         int i5;
         int i6;
         int paddingLeft = getPaddingLeft();
@@ -2105,7 +2100,7 @@ public class SmartRefreshLayout extends ViewGroup implements NestedScrollingPare
             if (childAt.getVisibility() != 8 && childAt.getTag(R.string.srl_component_falsify) != childAt) {
                 RefreshContent refreshContent = this.at;
                 if (refreshContent != null && refreshContent.a() == childAt) {
-                    boolean z2 = isInEditMode() && this.H && a(this.A) && this.f27938ar != null;
+                    boolean z2 = isInEditMode() && this.H && a(this.A) && this.f14250ar != null;
                     View a2 = this.at.a();
                     LayoutParams layoutParams = (LayoutParams) a2.getLayoutParams();
                     int i9 = layoutParams.leftMargin + paddingLeft;
@@ -2117,7 +2112,7 @@ public class SmartRefreshLayout extends ViewGroup implements NestedScrollingPare
                     if (z2) {
                         i11 = i10;
                         i12 = measuredHeight;
-                        if (a(this.E, this.f27938ar)) {
+                        if (a(this.E, this.f14250ar)) {
                             int i13 = this.ah;
                             i11 = i10 + i13;
                             i12 = measuredHeight + i13;
@@ -2125,10 +2120,10 @@ public class SmartRefreshLayout extends ViewGroup implements NestedScrollingPare
                     }
                     a2.layout(i9, i11, measuredWidth + i9, i12);
                 }
-                RefreshInternal refreshInternal = this.f27938ar;
+                RefreshInternal refreshInternal = this.f14250ar;
                 if (refreshInternal != null && refreshInternal.getView() == childAt) {
                     boolean z3 = isInEditMode() && this.H && a(this.A);
-                    View view = this.f27938ar.getView();
+                    View view = this.f14250ar.getView();
                     LayoutParams layoutParams2 = (LayoutParams) view.getLayoutParams();
                     int i14 = layoutParams2.leftMargin;
                     int i15 = layoutParams2.topMargin + this.al;
@@ -2139,7 +2134,7 @@ public class SmartRefreshLayout extends ViewGroup implements NestedScrollingPare
                     if (!z3) {
                         i16 = i15;
                         i17 = measuredHeight2;
-                        if (this.f27938ar.getSpinnerStyle() == SpinnerStyle.Translate) {
+                        if (this.f14250ar.getSpinnerStyle() == SpinnerStyle.Translate) {
                             int i18 = this.ah;
                             i16 = i15 - i18;
                             i17 = measuredHeight2 - i18;
@@ -2178,7 +2173,6 @@ public class SmartRefreshLayout extends ViewGroup implements NestedScrollingPare
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     /* JADX WARN: Code restructure failed: missing block: B:32:0x0130, code lost:
         if (r6.ai.m == false) goto L33;
      */
@@ -2190,7 +2184,7 @@ public class SmartRefreshLayout extends ViewGroup implements NestedScrollingPare
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences
     */
-    public void onMeasure(int r7, int r8) {
+    protected void onMeasure(int r7, int r8) {
         /*
             Method dump skipped, instructions count: 1449
             To view this dump change 'Code comments level' option to 'DEBUG'
@@ -2198,17 +2192,17 @@ public class SmartRefreshLayout extends ViewGroup implements NestedScrollingPare
         throw new UnsupportedOperationException("Method not decompiled: com.scwang.smartrefresh.layout.SmartRefreshLayout.onMeasure(int, int):void");
     }
 
-    @Override // android.view.ViewGroup, android.view.ViewParent
+    @Override // android.view.ViewGroup, android.view.ViewParent, androidx.core.view.NestedScrollingParent
     public boolean onNestedFling(View view, float f, float f2, boolean z) {
         return this.af.dispatchNestedFling(f, f2, z);
     }
 
-    @Override // android.view.ViewGroup, android.view.ViewParent
+    @Override // android.view.ViewGroup, android.view.ViewParent, androidx.core.view.NestedScrollingParent
     public boolean onNestedPreFling(View view, float f, float f2) {
         return (this.aF && f2 > 0.0f) || a(Float.valueOf(-f2)) || this.af.dispatchNestedPreFling(f, f2);
     }
 
-    @Override // android.view.ViewGroup, android.view.ViewParent
+    @Override // android.view.ViewGroup, android.view.ViewParent, androidx.core.view.NestedScrollingParent
     public void onNestedPreScroll(View view, int i, int i2, int[] iArr) {
         int i3;
         int i4 = this.ac;
@@ -2237,7 +2231,7 @@ public class SmartRefreshLayout extends ViewGroup implements NestedScrollingPare
         iArr[1] = iArr[1] + i3;
     }
 
-    @Override // android.view.ViewGroup, android.view.ViewParent
+    @Override // android.view.ViewGroup, android.view.ViewParent, androidx.core.view.NestedScrollingParent
     public void onNestedScroll(View view, int i, int i2, int i3, int i4) {
         this.af.dispatchNestedScroll(i, i2, i3, i4, this.ae);
         int i5 = i4 + this.ae[1];
@@ -2255,7 +2249,7 @@ public class SmartRefreshLayout extends ViewGroup implements NestedScrollingPare
         this.aF = false;
     }
 
-    @Override // android.view.ViewGroup, android.view.ViewParent
+    @Override // android.view.ViewGroup, android.view.ViewParent, androidx.core.view.NestedScrollingParent
     public void onNestedScrollAccepted(View view, View view2, int i) {
         this.ag.onNestedScrollAccepted(view, view2, i);
         this.af.startNestedScroll(i & 2);
@@ -2264,7 +2258,7 @@ public class SmartRefreshLayout extends ViewGroup implements NestedScrollingPare
         a(0);
     }
 
-    @Override // android.view.ViewGroup, android.view.ViewParent
+    @Override // android.view.ViewGroup, android.view.ViewParent, androidx.core.view.NestedScrollingParent
     public boolean onStartNestedScroll(View view, View view2, int i) {
         boolean z = true;
         if (isEnabled() && isNestedScrollingEnabled() && (i & 2) != 0) {
@@ -2279,7 +2273,7 @@ public class SmartRefreshLayout extends ViewGroup implements NestedScrollingPare
         return z;
     }
 
-    @Override // android.view.ViewGroup, android.view.ViewParent
+    @Override // android.view.ViewGroup, android.view.ViewParent, androidx.core.view.NestedScrollingParent
     public void onStopNestedScroll(View view) {
         this.ag.onStopNestedScroll(view);
         this.ad = false;
@@ -2324,7 +2318,7 @@ public class SmartRefreshLayout extends ViewGroup implements NestedScrollingPare
         return handler.postDelayed(new DelayedRunnable(runnable, 0L), j);
     }
 
-    @Override // android.view.View, androidx.core.view.NestedScrollingChild
+    @Override // android.view.View
     public void setNestedScrollingEnabled(boolean z) {
         this.af.setNestedScrollingEnabled(z);
     }

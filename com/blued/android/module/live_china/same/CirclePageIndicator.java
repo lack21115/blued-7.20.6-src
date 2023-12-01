@@ -17,13 +17,9 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/same/CirclePageIndicator.class */
 public class CirclePageIndicator extends View implements PageIndicator {
-
-    /* renamed from: a  reason: collision with root package name */
-    private float f14098a;
+    private float a;
     private final Paint b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final Paint f14099c;
+    private final Paint c;
     private final Paint d;
     private ViewPager e;
     private ViewPager.OnPageChangeListener f;
@@ -56,13 +52,11 @@ public class CirclePageIndicator extends View implements PageIndicator {
                 return new SavedState[i];
             }
         };
-
-        /* renamed from: a  reason: collision with root package name */
-        int f14100a;
+        int a;
 
         private SavedState(Parcel parcel) {
             super(parcel);
-            this.f14100a = parcel.readInt();
+            this.a = parcel.readInt();
         }
 
         public SavedState(Parcelable parcelable) {
@@ -72,7 +66,7 @@ public class CirclePageIndicator extends View implements PageIndicator {
         @Override // android.view.AbsSavedState, android.os.Parcelable
         public void writeToParcel(Parcel parcel, int i) {
             super.writeToParcel(parcel, i);
-            parcel.writeInt(this.f14100a);
+            parcel.writeInt(this.a);
         }
     }
 
@@ -87,7 +81,7 @@ public class CirclePageIndicator extends View implements PageIndicator {
     public CirclePageIndicator(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         this.b = new Paint(1);
-        this.f14099c = new Paint(1);
+        this.c = new Paint(1);
         this.d = new Paint(1);
         this.l = true;
         this.o = -1.0f;
@@ -124,7 +118,7 @@ public class CirclePageIndicator extends View implements PageIndicator {
             int count = viewPager.getAdapter().getCount();
             float paddingLeft = getPaddingLeft() + getPaddingRight();
             float f = count * 2;
-            float f2 = this.f14098a;
+            float f2 = this.a;
             i2 = (int) (paddingLeft + (f * f2) + ((count - 1) * (f2 + this.r)) + 1.0f);
             if (mode == Integer.MIN_VALUE) {
                 return Math.min(i2, size);
@@ -139,7 +133,7 @@ public class CirclePageIndicator extends View implements PageIndicator {
         if (mode == 1073741824) {
             return size;
         }
-        int paddingTop = (int) ((this.f14098a * 2.0f) + getPaddingTop() + getPaddingBottom() + 1.0f);
+        int paddingTop = (int) ((this.a * 2.0f) + getPaddingTop() + getPaddingBottom() + 1.0f);
         return mode == Integer.MIN_VALUE ? Math.min(paddingTop, size) : paddingTop;
     }
 
@@ -160,15 +154,15 @@ public class CirclePageIndicator extends View implements PageIndicator {
     }
 
     public float getRadius() {
-        return this.f14098a;
+        return this.a;
     }
 
     public int getStrokeColor() {
-        return this.f14099c.getColor();
+        return this.c.getColor();
     }
 
     public float getStrokeWidth() {
-        return this.f14099c.getStrokeWidth();
+        return this.c.getStrokeWidth();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -202,7 +196,7 @@ public class CirclePageIndicator extends View implements PageIndicator {
             paddingBottom = getPaddingBottom();
             paddingLeft = getPaddingLeft();
         }
-        float f4 = this.f14098a;
+        float f4 = this.a;
         float f5 = 3.0f * f4;
         float f6 = paddingLeft + f4;
         float f7 = paddingTop + f4;
@@ -214,10 +208,10 @@ public class CirclePageIndicator extends View implements PageIndicator {
         if (f8 < 0.0f) {
             f9 = 0.0f;
         }
-        float f10 = this.f14098a;
+        float f10 = this.a;
         float f11 = f10;
-        if (this.f14099c.getStrokeWidth() > 0.0f) {
-            f11 = f10 - (this.f14099c.getStrokeWidth() / 2.0f);
+        if (this.c.getStrokeWidth() > 0.0f) {
+            f11 = f10 - (this.c.getStrokeWidth() / 2.0f);
         }
         int i = 0;
         while (true) {
@@ -235,9 +229,9 @@ public class CirclePageIndicator extends View implements PageIndicator {
             if (this.b.getAlpha() > 0) {
                 canvas.drawCircle(f12, f3, f11, this.b);
             }
-            float f13 = this.f14098a;
+            float f13 = this.a;
             if (f11 != f13) {
-                canvas.drawCircle(f12, f3, f13, this.f14099c);
+                canvas.drawCircle(f12, f3, f13, this.c);
             }
             i = i2 + 1;
         }
@@ -255,7 +249,7 @@ public class CirclePageIndicator extends View implements PageIndicator {
             f = f9 + f15;
             f2 = f6;
         }
-        canvas.drawCircle(f2, f, this.f14098a, this.d);
+        canvas.drawCircle(f2, f, this.a, this.d);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -268,7 +262,6 @@ public class CirclePageIndicator extends View implements PageIndicator {
         }
     }
 
-    @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
     public void onPageScrollStateChanged(int i) {
         this.j = i;
         ViewPager.OnPageChangeListener onPageChangeListener = this.f;
@@ -277,7 +270,6 @@ public class CirclePageIndicator extends View implements PageIndicator {
         }
     }
 
-    @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
     public void onPageScrolled(int i, float f, int i2) {
         this.g = i;
         this.i = f;
@@ -288,7 +280,6 @@ public class CirclePageIndicator extends View implements PageIndicator {
         }
     }
 
-    @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
     public void onPageSelected(int i) {
         if (this.m || this.j == 0) {
             this.g = i;
@@ -305,15 +296,15 @@ public class CirclePageIndicator extends View implements PageIndicator {
     public void onRestoreInstanceState(Parcelable parcelable) {
         SavedState savedState = (SavedState) parcelable;
         super.onRestoreInstanceState(savedState.getSuperState());
-        this.g = savedState.f14100a;
-        this.h = savedState.f14100a;
+        this.g = savedState.a;
+        this.h = savedState.a;
         requestLayout();
     }
 
     @Override // android.view.View
     public Parcelable onSaveInstanceState() {
         SavedState savedState = new SavedState(super.onSaveInstanceState());
-        savedState.f14100a = this.g;
+        savedState.a = this.g;
         return savedState;
     }
 
@@ -444,7 +435,7 @@ public class CirclePageIndicator extends View implements PageIndicator {
     }
 
     public void setRadius(float f) {
-        this.f14098a = f;
+        this.a = f;
         invalidate();
     }
 
@@ -454,12 +445,12 @@ public class CirclePageIndicator extends View implements PageIndicator {
     }
 
     public void setStrokeColor(int i) {
-        this.f14099c.setColor(i);
+        this.c.setColor(i);
         invalidate();
     }
 
     public void setStrokeWidth(float f) {
-        this.f14099c.setStrokeWidth(f);
+        this.c.setStrokeWidth(f);
         invalidate();
     }
 
@@ -469,7 +460,7 @@ public class CirclePageIndicator extends View implements PageIndicator {
             return;
         }
         if (viewPager2 != null) {
-            viewPager2.setOnPageChangeListener(null);
+            viewPager2.setOnPageChangeListener((ViewPager.OnPageChangeListener) null);
         }
         if (viewPager.getAdapter() == null) {
             throw new IllegalStateException("ViewPager does not have adapter instance.");

@@ -63,7 +63,7 @@ public class ComponentActivity extends androidx.core.app.ComponentActivity imple
     public static final class NonConfigurationInstances {
 
         /* renamed from: a  reason: collision with root package name */
-        Object f1491a;
+        Object f1443a;
         ViewModelStore b;
 
         NonConfigurationInstances() {
@@ -248,7 +248,7 @@ public class ComponentActivity extends androidx.core.app.ComponentActivity imple
     public Object getLastCustomNonConfigurationInstance() {
         NonConfigurationInstances nonConfigurationInstances = (NonConfigurationInstances) getLastNonConfigurationInstance();
         if (nonConfigurationInstances != null) {
-            return nonConfigurationInstances.f1491a;
+            return nonConfigurationInstances.f1443a;
         }
         return null;
     }
@@ -332,7 +332,7 @@ public class ComponentActivity extends androidx.core.app.ComponentActivity imple
             return null;
         }
         NonConfigurationInstances nonConfigurationInstances2 = new NonConfigurationInstances();
-        nonConfigurationInstances2.f1491a = onRetainCustomNonConfigurationInstance;
+        nonConfigurationInstances2.f1443a = onRetainCustomNonConfigurationInstance;
         nonConfigurationInstances2.b = viewModelStore2;
         return nonConfigurationInstances2;
     }

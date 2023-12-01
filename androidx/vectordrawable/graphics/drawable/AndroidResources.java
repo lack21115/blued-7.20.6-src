@@ -1,5 +1,7 @@
 package androidx.vectordrawable.graphics.drawable;
 
+import android.R;
+
 /* loaded from: source-8756600-dex2jar.jar:androidx/vectordrawable/graphics/drawable/AndroidResources.class */
 class AndroidResources {
     public static final int FAST_OUT_LINEAR_IN = 17563663;
@@ -33,20 +35,20 @@ class AndroidResources {
     public static final int STYLEABLE_PROPERTY_VALUES_HOLDER_VALUE_TYPE = 2;
 
     /* renamed from: a  reason: collision with root package name */
-    static final int[] f3519a = {16842755, 16843041, 16843093, 16843097, 16843551, 16843754, 16843771, 16843778, 16843779};
-    static final int[] b = {16842755, 16843189, 16843190, 16843556, 16843557, 16843558, 16843866, 16843867};
+    static final int[] f3471a = {R.attr.name, R.attr.tint, R.attr.height, R.attr.width, R.attr.alpha, R.attr.autoMirrored, R.attr.tintMode, R.attr.viewportWidth, R.attr.viewportHeight};
+    static final int[] b = {R.attr.name, R.attr.pivotX, R.attr.pivotY, R.attr.scaleX, R.attr.scaleY, R.attr.rotation, R.attr.translateX, R.attr.translateY};
 
     /* renamed from: c  reason: collision with root package name */
-    static final int[] f3520c = {16842755, 16843780, 16843781, 16843782, 16843783, 16843784, 16843785, 16843786, 16843787, 16843788, 16843789, 16843979, 16843980, 16844062};
-    static final int[] d = {16842755, 16843781, 16844062};
-    static final int[] e = {16843161};
-    static final int[] f = {16842755, 16843213};
-    public static final int[] STYLEABLE_ANIMATOR = {16843073, 16843160, 16843198, 16843199, 16843200, 16843486, 16843487, 16843488};
-    public static final int[] STYLEABLE_ANIMATOR_SET = {16843490};
-    public static final int[] STYLEABLE_PROPERTY_VALUES_HOLDER = {16843486, 16843487, 16843488, 16843489};
-    public static final int[] STYLEABLE_KEYFRAME = {16842788, 16843073, 16843488, 16843992};
-    public static final int[] STYLEABLE_PROPERTY_ANIMATOR = {16843489, 16843781, 16843892, 16843893};
-    public static final int[] STYLEABLE_PATH_INTERPOLATOR = {16843772, 16843773, 16843774, 16843775, 16843781};
+    static final int[] f3472c = {R.attr.name, R.attr.fillColor, R.attr.pathData, R.attr.strokeColor, R.attr.strokeWidth, R.attr.trimPathStart, R.attr.trimPathEnd, R.attr.trimPathOffset, R.attr.strokeLineCap, R.attr.strokeLineJoin, R.attr.strokeMiterLimit, R.attr.strokeAlpha, R.attr.fillAlpha, 16844062};
+    static final int[] d = {R.attr.name, R.attr.pathData, 16844062};
+    static final int[] e = {R.attr.drawable};
+    static final int[] f = {R.attr.name, R.attr.animation};
+    public static final int[] STYLEABLE_ANIMATOR = {R.attr.interpolator, R.attr.duration, R.attr.startOffset, R.attr.repeatCount, R.attr.repeatMode, R.attr.valueFrom, R.attr.valueTo, R.attr.valueType};
+    public static final int[] STYLEABLE_ANIMATOR_SET = {R.attr.ordering};
+    public static final int[] STYLEABLE_PROPERTY_VALUES_HOLDER = {R.attr.valueFrom, R.attr.valueTo, R.attr.valueType, R.attr.propertyName};
+    public static final int[] STYLEABLE_KEYFRAME = {R.attr.value, R.attr.interpolator, R.attr.valueType, 16843992};
+    public static final int[] STYLEABLE_PROPERTY_ANIMATOR = {R.attr.propertyName, R.attr.pathData, R.attr.propertyXName, R.attr.propertyYName};
+    public static final int[] STYLEABLE_PATH_INTERPOLATOR = {R.attr.controlX1, R.attr.controlY1, R.attr.controlX2, R.attr.controlY2, R.attr.pathData};
 
     private AndroidResources() {
     }

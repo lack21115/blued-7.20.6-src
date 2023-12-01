@@ -11,13 +11,9 @@ import java.util.Map;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/live/base/view/animation/LiveAnimationView.class */
 public class LiveAnimationView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f11501a;
+    private Context a;
     private LiveAnimationViewFactory b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private LiveAnimationListener f11502c;
+    private LiveAnimationListener c;
 
     public LiveAnimationView(Context context) {
         this(context, null);
@@ -29,7 +25,7 @@ public class LiveAnimationView extends FrameLayout {
 
     public LiveAnimationView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f11501a = context;
+        this.a = context;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -71,36 +67,36 @@ public class LiveAnimationView extends FrameLayout {
             }
             return;
         }
-        this.f11502c = liveAnimationListener;
+        this.c = liveAnimationListener;
         if (this.b == null) {
             this.b = new LiveAnimationViewFactory();
         }
-        final BaseLiveAnimationView a2 = this.b.a(this.f11501a, str, str2, str3, str4, scaleType);
-        a2.a(new LiveAnimationListener() { // from class: com.blued.android.module.live.base.view.animation.LiveAnimationView.1
+        final BaseLiveAnimationView a = this.b.a(this.a, str, str2, str3, str4, scaleType);
+        a.a(new LiveAnimationListener() { // from class: com.blued.android.module.live.base.view.animation.LiveAnimationView.1
             @Override // com.blued.android.module.live.base.view.animation.LiveAnimationListener
             public void a() {
-                if (LiveAnimationView.this.f11502c != null) {
-                    LiveAnimationView.this.f11502c.a();
+                if (LiveAnimationView.this.c != null) {
+                    LiveAnimationView.this.c.a();
                 }
             }
 
             @Override // com.blued.android.module.live.base.view.animation.LiveAnimationListener
             public void b() {
-                LiveAnimationView.this.a(a2.a());
-                if (LiveAnimationView.this.f11502c != null) {
-                    LiveAnimationView.this.f11502c.b();
+                LiveAnimationView.this.a(a.a());
+                if (LiveAnimationView.this.c != null) {
+                    LiveAnimationView.this.c.b();
                 }
             }
         });
-        a(a2.a(), scaleType);
-        if ("luckybag".equals(str4) && (a2 instanceof LuckyBagView)) {
+        a(a.a(), scaleType);
+        if ("luckybag".equals(str4) && (a instanceof LuckyBagView)) {
             if (map != null && map.containsKey("KEY_LUCKY_BAG_IMG_URL") && (map.get("KEY_LUCKY_BAG_IMG_URL") instanceof String)) {
-                ((LuckyBagView) a2).c((String) map.get("KEY_LUCKY_BAG_IMG_URL"));
+                ((LuckyBagView) a).c((String) map.get("KEY_LUCKY_BAG_IMG_URL"));
             }
             if (map != null && map.containsKey("KEY_LUCKY_BAG_GIFT_IMG_URL") && (map.get("KEY_LUCKY_BAG_GIFT_IMG_URL") instanceof String)) {
-                ((LuckyBagView) a2).b((String) map.get("KEY_LUCKY_BAG_GIFT_IMG_URL"));
+                ((LuckyBagView) a).b((String) map.get("KEY_LUCKY_BAG_GIFT_IMG_URL"));
             }
         }
-        a2.a(iRequestHost);
+        a.a(iRequestHost);
     }
 }

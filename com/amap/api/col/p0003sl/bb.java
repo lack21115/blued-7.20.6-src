@@ -12,22 +12,18 @@ import java.util.List;
 /* renamed from: com.amap.api.col.3sl.bb  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/bb.class */
 public final class bb {
-
-    /* renamed from: a  reason: collision with root package name */
-    public ArrayList<OfflineMapProvince> f4771a = new ArrayList<>();
+    public ArrayList<OfflineMapProvince> a = new ArrayList<>();
     private bm b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private Context f4772c;
+    private Context c;
 
     public bb(Context context) {
-        this.f4772c = context;
+        this.c = context;
         this.b = bm.a(context);
     }
 
     private void a(aw awVar, OfflineMapCity offlineMapCity) {
         int b = awVar.c().b();
-        if (awVar.c().equals(awVar.f4756a)) {
+        if (awVar.c().equals(awVar.a)) {
             b(awVar.t());
         } else {
             if (awVar.c().equals(awVar.f)) {
@@ -49,9 +45,9 @@ public final class bb {
         if (b == 6) {
             offlineMapProvince.setState(b);
             offlineMapProvince.setCompleteCode(0);
-            b(new bh(offlineMapProvince, this.f4772c));
+            b(new bh(offlineMapProvince, this.c));
             try {
-                bu.b(offlineMapProvince.getProvinceCode(), this.f4772c);
+                bu.b(offlineMapProvince.getProvinceCode(), this.c);
             } catch (IOException e) {
                 e.printStackTrace();
             } catch (Exception e2) {
@@ -63,14 +59,14 @@ public final class bb {
                 offlineMapProvince.setCompleteCode(awVar.getcompleteCode());
                 offlineMapProvince.setVersion(awVar.getVersion());
                 offlineMapProvince.setUrl(awVar.getUrl());
-                bh bhVar2 = new bh(offlineMapProvince, this.f4772c);
+                bh bhVar2 = new bh(offlineMapProvince, this.c);
                 bhVar2.a(awVar.a());
                 bhVar2.d(awVar.getCode());
                 bhVar = bhVar2;
             } else {
                 offlineMapProvince.setState(b);
                 offlineMapProvince.setCompleteCode(100);
-                bhVar = new bh(offlineMapProvince, this.f4772c);
+                bhVar = new bh(offlineMapProvince, this.c);
             }
             bhVar.b();
             a(bhVar);
@@ -125,7 +121,7 @@ public final class bb {
     }
 
     private void b(aw awVar) {
-        File[] listFiles = new File(dw.c(this.f4772c)).listFiles();
+        File[] listFiles = new File(dw.c(this.c)).listFiles();
         if (listFiles == null) {
             return;
         }
@@ -156,10 +152,10 @@ public final class bb {
     }
 
     private void h() {
-        ArrayList<OfflineMapProvince> arrayList = this.f4771a;
+        ArrayList<OfflineMapProvince> arrayList = this.a;
         if (arrayList != null) {
             synchronized (arrayList) {
-                this.f4771a.clear();
+                this.a.clear();
             }
         }
     }
@@ -168,8 +164,8 @@ public final class bb {
         if (str == null || "".equals(str)) {
             return null;
         }
-        synchronized (this.f4771a) {
-            Iterator<OfflineMapProvince> it = this.f4771a.iterator();
+        synchronized (this.a) {
+            Iterator<OfflineMapProvince> it = this.a.iterator();
             while (it.hasNext()) {
                 Iterator<OfflineMapCity> it2 = it.next().getCityList().iterator();
                 while (it2.hasNext()) {
@@ -185,8 +181,8 @@ public final class bb {
 
     public final ArrayList<OfflineMapProvince> a() {
         ArrayList<OfflineMapProvince> arrayList = new ArrayList<>();
-        synchronized (this.f4771a) {
-            Iterator<OfflineMapProvince> it = this.f4771a.iterator();
+        synchronized (this.a) {
+            Iterator<OfflineMapProvince> it = this.a.iterator();
             while (it.hasNext()) {
                 arrayList.add(it.next());
             }
@@ -196,8 +192,8 @@ public final class bb {
 
     public final void a(aw awVar) {
         String pinyin = awVar.getPinyin();
-        synchronized (this.f4771a) {
-            Iterator<OfflineMapProvince> it = this.f4771a.iterator();
+        synchronized (this.a) {
+            Iterator<OfflineMapProvince> it = this.a.iterator();
             loop0: while (true) {
                 if (!it.hasNext()) {
                     break;
@@ -220,15 +216,15 @@ public final class bb {
     public final void a(List<OfflineMapProvince> list) {
         OfflineMapProvince offlineMapProvince;
         OfflineMapCity offlineMapCity;
-        synchronized (this.f4771a) {
-            if (this.f4771a.size() > 0) {
+        synchronized (this.a) {
+            if (this.a.size() > 0) {
                 int i = 0;
                 while (true) {
                     int i2 = i;
-                    if (i2 >= this.f4771a.size()) {
+                    if (i2 >= this.a.size()) {
                         break;
                     }
-                    OfflineMapProvince offlineMapProvince2 = this.f4771a.get(i2);
+                    OfflineMapProvince offlineMapProvince2 = this.a.get(i2);
                     Iterator<OfflineMapProvince> it = list.iterator();
                     while (true) {
                         if (!it.hasNext()) {
@@ -275,7 +271,7 @@ public final class bb {
                 }
             } else {
                 for (OfflineMapProvince offlineMapProvince3 : list) {
-                    this.f4771a.add(offlineMapProvince3);
+                    this.a.add(offlineMapProvince3);
                 }
             }
         }
@@ -285,8 +281,8 @@ public final class bb {
         if (str == null || "".equals(str)) {
             return null;
         }
-        synchronized (this.f4771a) {
-            Iterator<OfflineMapProvince> it = this.f4771a.iterator();
+        synchronized (this.a) {
+            Iterator<OfflineMapProvince> it = this.a.iterator();
             while (it.hasNext()) {
                 Iterator<OfflineMapCity> it2 = it.next().getCityList().iterator();
                 while (it2.hasNext()) {
@@ -302,8 +298,8 @@ public final class bb {
 
     public final ArrayList<OfflineMapCity> b() {
         ArrayList<OfflineMapCity> arrayList = new ArrayList<>();
-        synchronized (this.f4771a) {
-            Iterator<OfflineMapProvince> it = this.f4771a.iterator();
+        synchronized (this.a) {
+            Iterator<OfflineMapProvince> it = this.a.iterator();
             while (it.hasNext()) {
                 Iterator<OfflineMapCity> it2 = it.next().getCityList().iterator();
                 while (it2.hasNext()) {
@@ -319,8 +315,8 @@ public final class bb {
         if (str == null || "".equals(str)) {
             return null;
         }
-        synchronized (this.f4771a) {
-            Iterator<OfflineMapProvince> it = this.f4771a.iterator();
+        synchronized (this.a) {
+            Iterator<OfflineMapProvince> it = this.a.iterator();
             do {
                 if (!it.hasNext()) {
                     return null;
@@ -333,9 +329,9 @@ public final class bb {
 
     public final ArrayList<OfflineMapCity> c() {
         ArrayList<OfflineMapCity> arrayList;
-        synchronized (this.f4771a) {
+        synchronized (this.a) {
             arrayList = new ArrayList<>();
-            Iterator<OfflineMapProvince> it = this.f4771a.iterator();
+            Iterator<OfflineMapProvince> it = this.a.iterator();
             while (it.hasNext()) {
                 OfflineMapProvince next = it.next();
                 if (next != null) {
@@ -352,9 +348,9 @@ public final class bb {
 
     public final ArrayList<OfflineMapProvince> d() {
         ArrayList<OfflineMapProvince> arrayList;
-        synchronized (this.f4771a) {
+        synchronized (this.a) {
             arrayList = new ArrayList<>();
-            Iterator<OfflineMapProvince> it = this.f4771a.iterator();
+            Iterator<OfflineMapProvince> it = this.a.iterator();
             while (it.hasNext()) {
                 OfflineMapProvince next = it.next();
                 if (next != null && (next.getState() == 4 || next.getState() == 7)) {
@@ -367,9 +363,9 @@ public final class bb {
 
     public final ArrayList<OfflineMapCity> e() {
         ArrayList<OfflineMapCity> arrayList;
-        synchronized (this.f4771a) {
+        synchronized (this.a) {
             arrayList = new ArrayList<>();
-            Iterator<OfflineMapProvince> it = this.f4771a.iterator();
+            Iterator<OfflineMapProvince> it = this.a.iterator();
             while (it.hasNext()) {
                 OfflineMapProvince next = it.next();
                 if (next != null) {
@@ -386,9 +382,9 @@ public final class bb {
 
     public final ArrayList<OfflineMapProvince> f() {
         ArrayList<OfflineMapProvince> arrayList;
-        synchronized (this.f4771a) {
+        synchronized (this.a) {
             arrayList = new ArrayList<>();
-            Iterator<OfflineMapProvince> it = this.f4771a.iterator();
+            Iterator<OfflineMapProvince> it = this.a.iterator();
             while (it.hasNext()) {
                 OfflineMapProvince next = it.next();
                 if (next != null && b(next.getState())) {
@@ -402,6 +398,6 @@ public final class bb {
     public final void g() {
         h();
         this.b = null;
-        this.f4772c = null;
+        this.c = null;
     }
 }

@@ -1,5 +1,6 @@
 package com.ss.android.socialbase.downloader.model;
 
+import com.ss.android.socialbase.downloader.constants.DownloadErrorCode;
 import com.ss.android.socialbase.downloader.exception.BaseException;
 import com.ss.android.socialbase.downloader.utils.DownloadUtils;
 import java.io.BufferedOutputStream;
@@ -38,7 +39,7 @@ public class RandomAccessOutputStream implements Closeable {
             }
             this.outputStream = new BufferedOutputStream(new FileOutputStream(this.randomAccess.getFD()), i2);
         } catch (IOException e) {
-            throw new BaseException(1039, e);
+            throw new BaseException((int) DownloadErrorCode.ERROR_OUTPUT_STREAM_CREATE_IO, e);
         }
     }
 

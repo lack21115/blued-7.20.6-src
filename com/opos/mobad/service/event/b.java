@@ -15,12 +15,12 @@ import java.util.Map;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile b f27343a;
+    private static volatile b f13655a;
     private Context b;
     private BroadcastReceiver d;
 
     /* renamed from: c  reason: collision with root package name */
-    private Map<String, c> f27344c = new HashMap();
+    private Map<String, c> f13656c = new HashMap();
     private LruCache<String, a> e = new LruCache<>(15);
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -28,16 +28,16 @@ public class b {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        String f27346a;
+        String f13658a;
         int b;
 
         /* renamed from: c  reason: collision with root package name */
-        Parcel f27347c;
+        Parcel f13659c;
 
         public a(String str, int i, Parcel parcel) {
-            this.f27346a = str;
+            this.f13658a = str;
             this.b = i;
-            this.f27347c = parcel;
+            this.f13659c = parcel;
         }
     }
 
@@ -46,15 +46,15 @@ public class b {
 
     public static final b a() {
         b bVar;
-        b bVar2 = f27343a;
+        b bVar2 = f13655a;
         if (bVar2 == null) {
             synchronized (b.class) {
                 try {
-                    b bVar3 = f27343a;
+                    b bVar3 = f13655a;
                     bVar = bVar3;
                     if (bVar3 == null) {
                         bVar = new b();
-                        f27343a = bVar;
+                        f13655a = bVar;
                     }
                 } catch (Throwable th) {
                     throw th;
@@ -131,7 +131,7 @@ public class b {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void b(String str, int i, Parcel parcel, boolean z) {
-        c cVar = this.f27344c.get(str);
+        c cVar = this.f13656c.get(str);
         if (cVar != null) {
             cVar.a(i, parcel);
         } else if (z) {
@@ -143,7 +143,7 @@ public class b {
         if (eventDescription == null) {
             return null;
         }
-        return this.f27344c.get(eventDescription.a());
+        return this.f13656c.get(eventDescription.a());
     }
 
     public void a(Context context) {
@@ -157,10 +157,10 @@ public class b {
         if (cVar == null) {
             return;
         }
-        this.f27344c.put(cVar.a().a(), cVar);
+        this.f13656c.put(cVar.a().a(), cVar);
         a remove = this.e.remove(cVar.a().a());
         if (remove != null) {
-            cVar.a(remove.b, remove.f27347c);
+            cVar.a(remove.b, remove.f13659c);
         }
     }
 
@@ -178,6 +178,6 @@ public class b {
         if (cVar == null) {
             return;
         }
-        this.f27344c.remove(cVar.a().a());
+        this.f13656c.remove(cVar.a().a());
     }
 }

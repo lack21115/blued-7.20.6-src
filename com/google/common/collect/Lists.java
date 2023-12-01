@@ -43,7 +43,7 @@ public final class Lists {
             return this.backingList.addAll(i, collection);
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
         public boolean contains(Object obj) {
             return this.backingList.contains(obj);
         }
@@ -132,7 +132,7 @@ public final class Lists {
             return this.list.subList(i3, Math.min(i2 + i3, this.list.size()));
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
         public boolean isEmpty() {
             return this.list.isEmpty();
         }
@@ -192,7 +192,7 @@ public final class Lists {
             this.forwardList.add(reversePosition(i), t);
         }
 
-        @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
         public void clear() {
             this.forwardList.clear();
         }
@@ -206,7 +206,7 @@ public final class Lists {
             return this.forwardList;
         }
 
-        @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+        @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.List
         public Iterator<T> iterator() {
             return listIterator();
         }
@@ -365,7 +365,7 @@ public final class Lists {
             this.function = (Function) Preconditions.checkNotNull(function);
         }
 
-        @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
         public void clear() {
             this.fromList.clear();
         }
@@ -375,12 +375,12 @@ public final class Lists {
             return this.function.apply((F) this.fromList.get(i));
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
         public boolean isEmpty() {
             return this.fromList.isEmpty();
         }
 
-        @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+        @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.List
         public Iterator<T> iterator() {
             return listIterator();
         }
@@ -419,7 +419,7 @@ public final class Lists {
             this.function = (Function) Preconditions.checkNotNull(function);
         }
 
-        @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
         public void clear() {
             this.fromList.clear();
         }

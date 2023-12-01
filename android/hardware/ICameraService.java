@@ -31,9 +31,8 @@ public interface ICameraService extends IInterface {
         static final int TRANSACTION_removeListener = 7;
         static final int TRANSACTION_supportsCameraApi = 11;
 
-        /* JADX INFO: Access modifiers changed from: private */
         /* loaded from: source-9557208-dex2jar.jar:android/hardware/ICameraService$Stub$Proxy.class */
-        public static class Proxy implements ICameraService {
+        private static class Proxy implements ICameraService {
             private IBinder mRemote;
 
             Proxy(IBinder iBinder) {

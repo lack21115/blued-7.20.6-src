@@ -36,18 +36,17 @@ public class ImageReader {
     class AnonymousClass1 extends ThreadExecutor {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ long f9845a;
+        final /* synthetic */ long f6643a;
         final /* synthetic */ OnReadFinishListener b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ Rect f9846c;
+        final /* synthetic */ Rect f6644c;
         final /* synthetic */ ImageReader d;
 
-        @Override // com.blued.android.framework.pool.ThreadExecutor
         public void execute() {
-            String a2 = this.d.a(this.f9845a);
-            if (!this.d.a(a2, this.f9845a)) {
-                this.d.a(a2, this.f9846c, this.b);
+            String a2 = this.d.a(this.f6643a);
+            if (!this.d.a(a2, this.f6643a)) {
+                this.d.a(a2, this.f6644c, this.b);
             } else if (this.b != null) {
                 AppInfo.n().post(new Runnable() { // from class: com.blued.android.framework.qrcode.ImageReader.1.1
                     @Override // java.lang.Runnable
@@ -64,16 +63,15 @@ public class ImageReader {
     class AnonymousClass3 extends ThreadExecutor {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ String f9850a;
+        final /* synthetic */ String f6648a;
         final /* synthetic */ Rect b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ OnReadFinishListener f9851c;
+        final /* synthetic */ OnReadFinishListener f6649c;
         final /* synthetic */ ImageReader d;
 
-        @Override // com.blued.android.framework.pool.ThreadExecutor
         public void execute() {
-            this.d.a(this.f9850a, this.b, this.f9851c);
+            this.d.a(this.f6648a, this.b, this.f6649c);
         }
     }
 
@@ -295,7 +293,6 @@ public class ImageReader {
             return;
         }
         ThreadManager.a().a(new ThreadExecutor("ReadImageQRCode") { // from class: com.blued.android.framework.qrcode.ImageReader.2
-            @Override // com.blued.android.framework.pool.ThreadExecutor
             public void execute() {
                 ImageReader.this.a(str, (Rect) null, onReadFinishListener);
             }

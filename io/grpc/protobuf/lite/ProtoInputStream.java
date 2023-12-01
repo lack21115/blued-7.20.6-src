@@ -38,7 +38,6 @@ final class ProtoInputStream extends InputStream implements Drainable, KnownLeng
         return 0;
     }
 
-    @Override // io.grpc.Drainable
     public int drainTo(OutputStream outputStream) throws IOException {
         MessageLite messageLite = this.message;
         if (messageLite != null) {

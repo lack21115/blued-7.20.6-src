@@ -29,32 +29,24 @@ import java.io.IOException;
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/shortvideo/presenter/EditPreViewPresenter.class */
 public class EditPreViewPresenter extends ShortVideoBasePresent<IBaseView> {
     private static final String b = EditPreViewPresenter.class.getSimpleName();
-
-    /* renamed from: a  reason: collision with root package name */
-    PLVideoFilterListener f15782a = new PLVideoFilterListener() { // from class: com.blued.android.module.shortvideo.presenter.EditPreViewPresenter.2
-        @Override // com.qiniu.pili.droid.shortvideo.PLVideoFilterListener
+    PLVideoFilterListener a = new PLVideoFilterListener() { // from class: com.blued.android.module.shortvideo.presenter.EditPreViewPresenter.2
         public int onDrawFrame(int i, int i2, int i3, long j, float[] fArr) {
             return EditPreViewPresenter.this.d.drawFrame(i, i2, i3, false);
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.PLVideoFilterListener
         public void onSurfaceChanged(int i, int i2) {
             EditPreViewPresenter.this.d.adjustViewPort(i, i2);
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.PLVideoFilterListener
         public void onSurfaceCreated() {
             EditPreViewPresenter.this.d.onSurfaceCreated();
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.PLVideoFilterListener
         public void onSurfaceDestroy() {
             EditPreViewPresenter.this.d.onSurfaceDestroyed();
         }
     };
-
-    /* renamed from: c  reason: collision with root package name */
-    private PLShortVideoEditor f15783c;
+    private PLShortVideoEditor c;
     private SenseTimeQiniuEditVideoManager d;
     private Bundle e;
     private EditDataModel f;
@@ -62,17 +54,15 @@ public class EditPreViewPresenter extends ShortVideoBasePresent<IBaseView> {
     /* renamed from: com.blued.android.module.shortvideo.presenter.EditPreViewPresenter$1  reason: invalid class name */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/shortvideo/presenter/EditPreViewPresenter$1.class */
     class AnonymousClass1 implements IStvVideoFrameForTimeCallback {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ EditPreViewPresenter f15784a;
+        final /* synthetic */ EditPreViewPresenter a;
 
         @Override // com.blued.android.module.shortvideo.contract.IStvVideoFrameForTimeCallback
         public void a(final String str) {
             new Thread(new Runnable() { // from class: com.blued.android.module.shortvideo.presenter.EditPreViewPresenter.1.1
                 @Override // java.lang.Runnable
                 public void run() {
-                    AnonymousClass1.this.f15784a.f.setCoverImgPath(str);
-                    AnonymousClass1.this.f15784a.u();
+                    AnonymousClass1.this.a.f.setCoverImgPath(str);
+                    AnonymousClass1.this.a.u();
                 }
             }).start();
         }
@@ -193,13 +183,13 @@ public class EditPreViewPresenter extends ShortVideoBasePresent<IBaseView> {
                 pLVideoEditSetting.setSourceFilepath(videoPath);
                 pLVideoEditSetting.setDestFilepath(StvTools.c());
                 PLShortVideoEditor pLShortVideoEditor = new PLShortVideoEditor(D.a(), pLVideoEditSetting);
-                this.f15783c = pLShortVideoEditor;
+                this.c = pLShortVideoEditor;
                 pLShortVideoEditor.setDisplayMode(PLDisplayMode.FULL);
                 c(false);
                 try {
                     AssetFileDescriptor openFd = D.getActivity().getAssets().openFd(EditDataModel.DEFAULT_MUTE_AUDIO_NAME);
                     if (openFd != null) {
-                        this.f15783c.setAudioMixAsset(openFd);
+                        this.c.setAudioMixAsset(openFd);
                     }
                     a(i(), h() ? j() : 0);
                 } catch (IOException e) {
@@ -229,7 +219,7 @@ public class EditPreViewPresenter extends ShortVideoBasePresent<IBaseView> {
     public void a(int i, int i2) {
         this.f.setCurrentFgVolume(i);
         this.f.setCurrentBgVolume(i2);
-        PLShortVideoEditor pLShortVideoEditor = this.f15783c;
+        PLShortVideoEditor pLShortVideoEditor = this.c;
         if (pLShortVideoEditor != null) {
             pLShortVideoEditor.setAudioMixVolume(i / 100.0f, i2 / 100.0f);
         }
@@ -255,18 +245,18 @@ public class EditPreViewPresenter extends ShortVideoBasePresent<IBaseView> {
     }
 
     public void a(PLVideoFilterListener pLVideoFilterListener) {
-        this.f15783c.startPlayback(pLVideoFilterListener);
+        this.c.startPlayback(pLVideoFilterListener);
     }
 
     public void a(String str) {
         this.f.getSerializableData().setHasBgMusic(true);
         this.f.getSerializableData().setMusicPath(str);
-        this.f15783c.setAudioMixFile(str);
+        this.c.setAudioMixFile(str);
         a(this.f.getCurrentFgVolume(), 100);
     }
 
     public void a(boolean z) {
-        this.f15783c.setPlaybackLoop(z);
+        this.c.setPlaybackLoop(z);
     }
 
     @Override // com.blued.android.module.shortvideo.presenter.ShortVideoBasePresent
@@ -278,7 +268,7 @@ public class EditPreViewPresenter extends ShortVideoBasePresent<IBaseView> {
     }
 
     public void b(boolean z) {
-        this.f15783c.setAudioMixLooping(z);
+        this.c.setAudioMixLooping(z);
     }
 
     @Override // com.blued.android.module.shortvideo.presenter.ShortVideoBasePresent
@@ -287,7 +277,7 @@ public class EditPreViewPresenter extends ShortVideoBasePresent<IBaseView> {
         a(true);
         l();
         if (this.d != null) {
-            a(this.f15782a);
+            a(this.a);
         } else {
             a((PLVideoFilterListener) null);
         }
@@ -295,7 +285,7 @@ public class EditPreViewPresenter extends ShortVideoBasePresent<IBaseView> {
     }
 
     public void c(boolean z) {
-        this.f15783c.muteOriginAudio(z);
+        this.c.muteOriginAudio(z);
     }
 
     @Override // com.blued.android.module.shortvideo.presenter.ShortVideoBasePresent
@@ -347,15 +337,15 @@ public class EditPreViewPresenter extends ShortVideoBasePresent<IBaseView> {
     }
 
     public void l() {
-        this.f15783c.resumePlayback();
+        this.c.resumePlayback();
     }
 
     public void m() {
-        this.f15783c.pausePlayback();
+        this.c.pausePlayback();
     }
 
     public void n() {
-        this.f15783c.stopPlayback();
+        this.c.stopPlayback();
     }
 
     public int o() {

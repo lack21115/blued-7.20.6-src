@@ -7,13 +7,9 @@ public final class o {
     public static final String h = "business_type";
     public static final int i = 1000;
     public static final int j = 1001;
-
-    /* renamed from: a  reason: collision with root package name */
-    public String f6671a;
+    public String a;
     public int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public String f6672c;
+    public String c;
     public String d;
     public String e;
     public long f;

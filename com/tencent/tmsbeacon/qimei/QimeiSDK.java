@@ -176,7 +176,7 @@ public class QimeiSDK implements d {
 
     @Override // com.tencent.tmsbeacon.a.a.d
     public void onEvent(com.tencent.tmsbeacon.a.a.c cVar) {
-        if (cVar.f39460a == 1) {
+        if (cVar.f25769a == 1) {
             synchronized (this.qimeiListeners) {
                 Qimei b = com.tencent.tmsbeacon.qimei.a.a().b();
                 if (b == null || !b.isEmpty()) {

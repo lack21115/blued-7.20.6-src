@@ -5,6 +5,7 @@ import android.text.TextUtils;
 import cn.com.chinatelecom.account.api.CtAuth;
 import cn.com.chinatelecom.account.api.e.j;
 import com.google.common.net.HttpHeaders;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -100,11 +101,11 @@ public final class b extends f {
                                     String str4 = bufferedReader4;
                                     sb2.append(cn.com.chinatelecom.account.api.a.d.a(j.f));
                                     String str5 = bufferedReader4;
-                                    sb2.append("-");
+                                    sb2.append(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
                                     String str6 = bufferedReader4;
-                                    sb2.append(gVar.f4131c);
+                                    sb2.append(gVar.f4083c);
                                     String str7 = bufferedReader4;
-                                    sb2.append("-");
+                                    sb2.append(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
                                     String str8 = bufferedReader4;
                                     sb2.append(e.getMessage());
                                     String str9 = bufferedReader4;
@@ -116,9 +117,9 @@ public final class b extends f {
                                     String str13 = bufferedReader4;
                                     sb3.append("SocketTimeoutException-");
                                     String str14 = bufferedReader4;
-                                    sb3.append(gVar.f4131c);
+                                    sb3.append(gVar.f4083c);
                                     String str15 = bufferedReader4;
-                                    sb3.append("-");
+                                    sb3.append(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
                                     String str16 = bufferedReader4;
                                     sb3.append(e.getMessage());
                                     String str17 = bufferedReader4;
@@ -152,11 +153,11 @@ public final class b extends f {
                                     String str22 = bufferedReader3;
                                     sb5.append(cn.com.chinatelecom.account.api.a.d.a(j.g));
                                     String str23 = bufferedReader3;
-                                    sb5.append("-");
+                                    sb5.append(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
                                     String str24 = bufferedReader3;
-                                    sb5.append(gVar.f4131c);
+                                    sb5.append(gVar.f4083c);
                                     String str25 = bufferedReader3;
-                                    sb5.append("-");
+                                    sb5.append(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
                                     String str26 = bufferedReader3;
                                     sb5.append(e.getMessage());
                                     String str27 = bufferedReader3;
@@ -168,9 +169,9 @@ public final class b extends f {
                                     String str31 = bufferedReader3;
                                     sb6.append("UnknownHostException-");
                                     String str32 = bufferedReader3;
-                                    sb6.append(gVar.f4131c);
+                                    sb6.append(gVar.f4083c);
                                     String str33 = bufferedReader3;
-                                    sb6.append("-");
+                                    sb6.append(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
                                     String str34 = bufferedReader3;
                                     sb6.append(e.getMessage());
                                     String str35 = bufferedReader3;
@@ -201,11 +202,11 @@ public final class b extends f {
                                     String str40 = bufferedReader5;
                                     sb8.append(cn.com.chinatelecom.account.api.a.d.a(j.h));
                                     String str41 = bufferedReader5;
-                                    sb8.append("-");
+                                    sb8.append(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
                                     String str42 = bufferedReader5;
-                                    sb8.append(gVar.f4131c);
+                                    sb8.append(gVar.f4083c);
                                     String str43 = bufferedReader5;
-                                    sb8.append("-");
+                                    sb8.append(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
                                     String str44 = bufferedReader5;
                                     sb8.append(e.getMessage());
                                     String str45 = bufferedReader5;
@@ -217,9 +218,9 @@ public final class b extends f {
                                     String str49 = bufferedReader5;
                                     sb9.append("IOException-");
                                     String str50 = bufferedReader5;
-                                    sb9.append(gVar.f4131c);
+                                    sb9.append(gVar.f4083c);
                                     String str51 = bufferedReader5;
-                                    sb9.append("-");
+                                    sb9.append(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
                                     String str52 = bufferedReader5;
                                     sb9.append(e.getMessage());
                                     String str53 = bufferedReader5;
@@ -248,8 +249,8 @@ public final class b extends f {
                                     inputStream = inputStream5;
                                     bufferedReader2 = bufferedReader7;
                                     try {
-                                        hVar.b = j.a(80001, cn.com.chinatelecom.account.api.a.d.a(j.b) + "-" + gVar.f4131c + "-" + th.getMessage());
-                                        CtAuth.warn(b, "Throwable-" + gVar.f4131c + "-" + th.getMessage(), th);
+                                        hVar.b = j.a(80001, cn.com.chinatelecom.account.api.a.d.a(j.b) + Constants.ACCEPT_TIME_SEPARATOR_SERVER + gVar.f4083c + Constants.ACCEPT_TIME_SEPARATOR_SERVER + th.getMessage());
+                                        CtAuth.warn(b, "Throwable-" + gVar.f4083c + Constants.ACCEPT_TIME_SEPARATOR_SERVER + th.getMessage(), th);
                                         StringBuilder sb11 = new StringBuilder();
                                         sb11.append("Throwable ：");
                                         sb11.append(th.getMessage());
@@ -280,17 +281,17 @@ public final class b extends f {
                                     }
                                 }
                             }
-                            hVar.f4134a = 0;
+                            hVar.f4086a = 0;
                             String sb12 = sb.toString();
                             if (!TextUtils.isEmpty(sb12)) {
                                 hVar.b = new JSONObject(sb12);
                                 cn.com.chinatelecom.account.api.e.f.a(gVar.d, hVar.b, null);
                             }
                             cn.com.chinatelecom.account.api.e.f.a(gVar.d, hVar.b, null);
-                            d a2 = cn.com.chinatelecom.account.api.e.a.a(this.f4129a, d, true);
+                            d a2 = cn.com.chinatelecom.account.api.e.a.a(this.f4081a, d, true);
                             if (a2 != null) {
-                                hVar.f4135c = a2.f4127a;
-                                cn.com.chinatelecom.account.api.e.f.a(gVar.d).f(a2.f4128c);
+                                hVar.f4087c = a2.f4079a;
+                                cn.com.chinatelecom.account.api.e.f.a(gVar.d).f(a2.f4080c);
                             }
                         } catch (SocketTimeoutException e5) {
                             e = e5;
@@ -310,7 +311,7 @@ public final class b extends f {
                         }
                     } else {
                         if (responseCode != 302) {
-                            hVar.b = j.a(80002, cn.com.chinatelecom.account.api.a.d.a(j.f4149c) + "-" + gVar.f4131c + "-code : " + responseCode);
+                            hVar.b = j.a(80002, cn.com.chinatelecom.account.api.a.d.a(j.f4101c) + Constants.ACCEPT_TIME_SEPARATOR_SERVER + gVar.f4083c + "-code : " + responseCode);
                             StringBuilder sb13 = new StringBuilder();
                             sb13.append(" Http response code :");
                             sb13.append(responseCode);
@@ -322,7 +323,7 @@ public final class b extends f {
                             gVar.f = false;
                             String headerField = d.getHeaderField(HttpHeaders.LOCATION);
                             d a3 = cn.com.chinatelecom.account.api.e.a.a(d);
-                            cn.com.chinatelecom.account.api.e.f.a(gVar.d).f(a3.f4128c);
+                            cn.com.chinatelecom.account.api.e.f.a(gVar.d).f(a3.f4080c);
                             int i2 = 0;
                             if (!TextUtils.isEmpty(a3.d)) {
                                 i2 = a3.d.equals("0") ? 0 : 1;

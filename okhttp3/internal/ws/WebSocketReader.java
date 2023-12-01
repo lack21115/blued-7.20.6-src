@@ -9,13 +9,9 @@ import okio.ByteString;
 
 /* loaded from: source-3503164-dex2jar.jar:okhttp3/internal/ws/WebSocketReader.class */
 final class WebSocketReader {
-
-    /* renamed from: a  reason: collision with root package name */
-    final boolean f43994a;
+    final boolean a;
     final BufferedSource b;
-
-    /* renamed from: c  reason: collision with root package name */
-    final FrameCallback f43995c;
+    final FrameCallback c;
     boolean d;
     int e;
     long f;
@@ -47,9 +43,9 @@ final class WebSocketReader {
         if (frameCallback == null) {
             throw new NullPointerException("frameCallback == null");
         }
-        this.f43994a = z;
+        this.a = z;
         this.b = bufferedSource;
-        this.f43995c = frameCallback;
+        this.c = frameCallback;
         this.k = z ? null : new byte[4];
         this.l = z ? null : new Buffer.UnsafeCursor();
     }
@@ -79,8 +75,8 @@ final class WebSocketReader {
             }
             int readByte2 = this.b.readByte() & 255;
             boolean z5 = (readByte2 & 128) != 0;
-            if (z5 == this.f43994a) {
-                throw new ProtocolException(this.f43994a ? "Server-sent frames must not be masked." : "Client-sent frames must be masked.");
+            if (z5 == this.a) {
+                throw new ProtocolException(this.a ? "Server-sent frames must not be masked." : "Client-sent frames must be masked.");
             }
             long j = readByte2 & 127;
             this.f = j;
@@ -110,7 +106,7 @@ final class WebSocketReader {
         long j = this.f;
         if (j > 0) {
             this.b.readFully(this.i, j);
-            if (!this.f43994a) {
+            if (!this.a) {
                 this.i.readAndWriteUnsafe(this.l);
                 this.l.seek(0L);
                 WebSocketProtocol.a(this.l, this.k);
@@ -127,21 +123,21 @@ final class WebSocketReader {
                 if (size != 0) {
                     s = this.i.readShort();
                     str = this.i.readUtf8();
-                    String a2 = WebSocketProtocol.a(s);
-                    if (a2 != null) {
-                        throw new ProtocolException(a2);
+                    String a = WebSocketProtocol.a(s);
+                    if (a != null) {
+                        throw new ProtocolException(a);
                     }
                 } else {
                     str = "";
                 }
-                this.f43995c.a(s, str);
+                this.c.a(s, str);
                 this.d = true;
                 return;
             case 9:
-                this.f43995c.b(this.i.readByteString());
+                this.c.b(this.i.readByteString());
                 return;
             case 10:
-                this.f43995c.c(this.i.readByteString());
+                this.c.c(this.i.readByteString());
                 return;
             default:
                 throw new ProtocolException("Unknown control opcode: " + Integer.toHexString(this.e));
@@ -155,9 +151,9 @@ final class WebSocketReader {
         }
         f();
         if (i == 1) {
-            this.f43995c.a(this.j.readUtf8());
+            this.c.a(this.j.readUtf8());
         } else {
-            this.f43995c.a(this.j.readByteString());
+            this.c.a(this.j.readByteString());
         }
     }
 
@@ -176,7 +172,7 @@ final class WebSocketReader {
             long j = this.f;
             if (j > 0) {
                 this.b.readFully(this.j, j);
-                if (!this.f43994a) {
+                if (!this.a) {
                     this.j.readAndWriteUnsafe(this.l);
                     this.l.seek(this.j.size() - this.f);
                     WebSocketProtocol.a(this.l, this.k);

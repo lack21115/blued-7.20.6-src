@@ -17,13 +17,9 @@ import com.google.android.material.imageview.ShapeableImageView;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ItemYyHomeRoomsRoomBinding.class */
 public final class ItemYyHomeRoomsRoomBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ConstraintLayout f16735a;
+    public final ConstraintLayout a;
     public final ShapeableImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f16736c;
+    public final ImageView c;
     public final ImageView d;
     public final ImageView e;
     public final SVGAImageView f;
@@ -42,9 +38,9 @@ public final class ItemYyHomeRoomsRoomBinding implements ViewBinding {
 
     private ItemYyHomeRoomsRoomBinding(FrameLayout frameLayout, ConstraintLayout constraintLayout, ShapeableImageView shapeableImageView, ImageView imageView, ImageView imageView2, ImageView imageView3, SVGAImageView sVGAImageView, ShapeableImageView shapeableImageView2, ShapeLinearLayout shapeLinearLayout, LinearLayout linearLayout, CardView cardView, YYSvgaView yYSvgaView, ShapeTextView shapeTextView, TextView textView, TextView textView2, ShapeTextView shapeTextView2, TextView textView3, TextView textView4) {
         this.r = frameLayout;
-        this.f16735a = constraintLayout;
+        this.a = constraintLayout;
         this.b = shapeableImageView;
-        this.f16736c = imageView;
+        this.c = imageView;
         this.d = imageView2;
         this.e = imageView3;
         this.f = sVGAImageView;
@@ -63,10 +59,10 @@ public final class ItemYyHomeRoomsRoomBinding implements ViewBinding {
 
     public static ItemYyHomeRoomsRoomBinding a(View view) {
         String str;
-        ConstraintLayout constraintLayout = (ConstraintLayout) view.findViewById(R.id.con);
-        if (constraintLayout != null) {
-            ShapeableImageView shapeableImageView = (ShapeableImageView) view.findViewById(R.id.img_mask_tag);
-            if (shapeableImageView != null) {
+        ConstraintLayout findViewById = view.findViewById(R.id.con);
+        if (findViewById != null) {
+            ShapeableImageView findViewById2 = view.findViewById(R.id.img_mask_tag);
+            if (findViewById2 != null) {
                 ImageView imageView = (ImageView) view.findViewById(R.id.iv_anchor_leve);
                 if (imageView != null) {
                     ImageView imageView2 = (ImageView) view.findViewById(R.id.iv_city);
@@ -75,14 +71,14 @@ public final class ItemYyHomeRoomsRoomBinding implements ViewBinding {
                         if (imageView3 != null) {
                             SVGAImageView sVGAImageView = (SVGAImageView) view.findViewById(R.id.iv_room_type_ani);
                             if (sVGAImageView != null) {
-                                ShapeableImageView shapeableImageView2 = (ShapeableImageView) view.findViewById(R.id.iv_user);
-                                if (shapeableImageView2 != null) {
+                                ShapeableImageView findViewById3 = view.findViewById(R.id.iv_user);
+                                if (findViewById3 != null) {
                                     ShapeLinearLayout shapeLinearLayout = (ShapeLinearLayout) view.findViewById(R.id.ll_room_type);
                                     if (shapeLinearLayout != null) {
                                         LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.ll_task);
                                         if (linearLayout != null) {
-                                            CardView cardView = (CardView) view.findViewById(R.id.room_card);
-                                            if (cardView != null) {
+                                            CardView findViewById4 = view.findViewById(R.id.room_card);
+                                            if (findViewById4 != null) {
                                                 YYSvgaView yYSvgaView = (YYSvgaView) view.findViewById(R.id.svga);
                                                 if (yYSvgaView != null) {
                                                     ShapeTextView shapeTextView = (ShapeTextView) view.findViewById(R.id.tv_bg_top);
@@ -97,7 +93,7 @@ public final class ItemYyHomeRoomsRoomBinding implements ViewBinding {
                                                                     if (textView3 != null) {
                                                                         TextView textView4 = (TextView) view.findViewById(R.id.tv_room_user_name);
                                                                         if (textView4 != null) {
-                                                                            return new ItemYyHomeRoomsRoomBinding((FrameLayout) view, constraintLayout, shapeableImageView, imageView, imageView2, imageView3, sVGAImageView, shapeableImageView2, shapeLinearLayout, linearLayout, cardView, yYSvgaView, shapeTextView, textView, textView2, shapeTextView2, textView3, textView4);
+                                                                            return new ItemYyHomeRoomsRoomBinding((FrameLayout) view, findViewById, findViewById2, imageView, imageView2, imageView3, sVGAImageView, findViewById3, shapeLinearLayout, linearLayout, findViewById4, yYSvgaView, shapeTextView, textView, textView2, shapeTextView2, textView3, textView4);
                                                                         }
                                                                         str = "tvRoomUserName";
                                                                     } else {
@@ -151,7 +147,6 @@ public final class ItemYyHomeRoomsRoomBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.r;

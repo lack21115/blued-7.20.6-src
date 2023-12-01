@@ -11,11 +11,11 @@ import java.util.concurrent.ConcurrentHashMap;
 public class l {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Map<String, l> f38380a = new ConcurrentHashMap();
+    public static final Map<String, l> f24689a = new ConcurrentHashMap();
     public final String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public Qimei f38381c;
+    public Qimei f24690c;
     public boolean h = false;
     public String d = "";
     public long e = 0;
@@ -25,7 +25,7 @@ public class l {
     public l(String str) {
         this.b = str;
         Qimei qimei = new Qimei();
-        this.f38381c = qimei;
+        this.f24690c = qimei;
         qimei.setAppKey(str);
     }
 
@@ -33,7 +33,7 @@ public class l {
         l lVar;
         synchronized (l.class) {
             try {
-                l lVar2 = f38380a.get(str);
+                l lVar2 = f24689a.get(str);
                 lVar = lVar2;
                 if (lVar2 == null) {
                     lVar = new l(str);
@@ -41,7 +41,7 @@ public class l {
                         lVar.a();
                         lVar.h = true;
                     }
-                    f38380a.put(str, lVar);
+                    f24689a.put(str, lVar);
                 }
             } catch (Throwable th) {
                 throw th;
@@ -55,9 +55,9 @@ public class l {
             b(com.tencent.qimei.a.a.e(this.b));
             com.tencent.qimei.q.a a2 = com.tencent.qimei.q.a.a(this.b);
             if (a2.a()) {
-                a2.f = this.f38381c;
+                a2.f = this.f24690c;
                 Qimei qimei = new Qimei();
-                this.f38381c = qimei;
+                this.f24690c = qimei;
                 qimei.setAppKey(this.b);
                 com.tencent.qimei.a.a.b(this.b);
                 SharedPreferences sharedPreferences = com.tencent.qimei.i.f.a(this.b).b;
@@ -66,8 +66,8 @@ public class l {
                 }
                 return;
             }
-            String a3 = this.f38381c.a();
-            String b = this.f38381c.b();
+            String a3 = this.f24690c.a();
+            String b = this.f24690c.b();
             if (TextUtils.isEmpty(a3) && TextUtils.isEmpty(b)) {
                 com.tencent.qimei.k.a.b("QM", "Local qm cache not found, try load from old version cache(appKey: %s)", this.b);
                 Qimei a4 = k.a();
@@ -75,11 +75,11 @@ public class l {
                     com.tencent.qimei.k.a.b("QM", "Local qm cache failed(appKey: %s)", this.b);
                     return;
                 } else {
-                    this.f38381c = a4;
+                    this.f24690c = a4;
                     this.g = true;
                 }
             }
-            com.tencent.qimei.k.a.b("QM", "(appKey: %s) Qm load successfully from cache, detail: %s", this.b, this.f38381c.toString());
+            com.tencent.qimei.k.a.b("QM", "(appKey: %s) Qm load successfully from cache, detail: %s", this.b, this.f24690c.toString());
         }
     }
 
@@ -93,7 +93,7 @@ public class l {
             return;
         }
         Qimei a2 = m.b.a(str);
-        this.f38381c = a2;
+        this.f24690c = a2;
         a2.setAppKey(this.b);
     }
 }

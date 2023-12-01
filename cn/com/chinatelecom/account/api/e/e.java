@@ -5,6 +5,7 @@ import android.os.SystemClock;
 import android.text.TextUtils;
 import cn.com.chinatelecom.account.api.ClientUtils;
 import cn.com.chinatelecom.account.api.CtAuth;
+import com.huawei.openalliance.ad.constant.t;
 import com.meizu.cloud.pushsdk.notification.model.AppIconSetting;
 import com.umeng.analytics.pro.bh;
 import java.text.SimpleDateFormat;
@@ -23,14 +24,14 @@ public class e {
     private StringBuffer u = new StringBuffer();
 
     /* renamed from: c  reason: collision with root package name */
-    private String f4142c = "";
+    private String f4094c = "";
     private String e = "";
     private String n = "";
     private String m = "";
     private String p = "";
 
     /* renamed from: a  reason: collision with root package name */
-    private String f4141a = "1.2";
+    private String f4093a = "1.2";
     private long v = SystemClock.uptimeMillis();
     private String b = a(System.currentTimeMillis());
     private String d = CtAuth.mAppId;
@@ -120,7 +121,7 @@ public class e {
         if (!TextUtils.isEmpty(str)) {
             StringBuffer stringBuffer = this.u;
             stringBuffer.append(str);
-            stringBuffer.append(";");
+            stringBuffer.append(t.aE);
         }
         return this;
     }
@@ -128,9 +129,9 @@ public class e {
     public String toString() {
         try {
             JSONObject jSONObject = new JSONObject();
-            jSONObject.put("v", this.f4141a);
+            jSONObject.put("v", this.f4093a);
             jSONObject.put("t", this.b);
-            jSONObject.put("tag", this.f4142c);
+            jSONObject.put("tag", this.f4094c);
             jSONObject.put(com.anythink.expressad.d.a.b.cZ, this.d);
             jSONObject.put(AppIconSetting.DEFAULT_LARGE_ICON, this.e);
             jSONObject.put("ns", this.f);
@@ -138,7 +139,7 @@ public class e {
             jSONObject.put("ml", this.h);
             jSONObject.put(bh.x, this.i);
             jSONObject.put(com.anythink.expressad.foundation.g.a.F, this.j);
-            jSONObject.put("sv", this.k);
+            jSONObject.put(com.anythink.expressad.foundation.g.a.Z, this.k);
             jSONObject.put("ri", this.l);
             jSONObject.put("api", this.m);
             jSONObject.put("p", this.n);

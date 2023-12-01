@@ -10,7 +10,6 @@ import com.tencent.cloud.huiyansdkface.facelivesdk.BuildConfig;
 import com.tencent.smtt.sdk.TbsMediaPlayer;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.datatype.DatatypeConstants;
 
 /* loaded from: source-7994992-dex2jar.jar:com/google/zxing/oned/EANManufacturerOrgSupport.class */
 final class EANManufacturerOrgSupport {
@@ -110,7 +109,7 @@ final class EANManufacturerOrgSupport {
                 add(new int[]{786}, "EC");
                 add(new int[]{789, TbsMediaPlayer.TbsMediaPlayerListener.MEDIA_INFO_BUFFERING_PERCENTAGE}, "BR");
                 add(new int[]{800, BuildConfig.VERSION_CODE}, "IT");
-                add(new int[]{DatatypeConstants.MIN_TIMEZONE_OFFSET, 849}, "ES");
+                add(new int[]{840, 849}, "ES");
                 add(new int[]{850}, "CU");
                 add(new int[]{858}, "SK");
                 add(new int[]{859}, "CZ");

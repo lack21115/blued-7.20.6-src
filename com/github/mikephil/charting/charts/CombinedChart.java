@@ -21,7 +21,7 @@ import com.github.mikephil.charting.renderer.CombinedChartRenderer;
 public class CombinedChart extends BarLineChartBase<CombinedData> implements CombinedDataProvider {
 
     /* renamed from: a  reason: collision with root package name */
-    protected boolean f22073a;
+    protected boolean f8466a;
     protected DrawOrder[] aa;
     private boolean ab;
     private boolean ac;
@@ -38,14 +38,14 @@ public class CombinedChart extends BarLineChartBase<CombinedData> implements Com
     public CombinedChart(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         this.ab = true;
-        this.f22073a = false;
+        this.f8466a = false;
         this.ac = false;
     }
 
     public CombinedChart(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         this.ab = true;
-        this.f22073a = false;
+        this.f8466a = false;
         this.ac = false;
     }
 
@@ -110,7 +110,7 @@ public class CombinedChart extends BarLineChartBase<CombinedData> implements Com
 
     @Override // com.github.mikephil.charting.interfaces.dataprovider.BarDataProvider
     public boolean e() {
-        return this.f22073a;
+        return this.f8466a;
     }
 
     @Override // com.github.mikephil.charting.interfaces.dataprovider.BarDataProvider
@@ -186,6 +186,6 @@ public class CombinedChart extends BarLineChartBase<CombinedData> implements Com
     }
 
     public void setHighlightFullBarEnabled(boolean z) {
-        this.f22073a = z;
+        this.f8466a = z;
     }
 }

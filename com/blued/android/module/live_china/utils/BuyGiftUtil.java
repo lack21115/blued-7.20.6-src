@@ -1,10 +1,13 @@
 package com.blued.android.module.live_china.utils;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import androidx.fragment.app.Fragment;
+import com.anythink.core.common.l;
 import com.blued.android.core.AppMethods;
 import com.blued.android.core.ui.BaseDialogFragment;
 import com.blued.android.framework.http.BluedUIHttpResponse;
@@ -25,13 +28,9 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/utils/BuyGiftUtil.class */
 public class BuyGiftUtil {
-
-    /* renamed from: a  reason: collision with root package name */
-    private BaseDialogFragment f14151a;
+    private BaseDialogFragment a;
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f14152c;
+    private int c;
     private boolean d;
     private View e;
     private CallBack f;
@@ -46,10 +45,10 @@ public class BuyGiftUtil {
 
     public BuyGiftUtil(String str, int i, boolean z, View view, BaseDialogFragment baseDialogFragment, CallBack callBack) {
         this.b = str;
-        this.f14152c = i;
+        this.c = i;
         this.d = z;
         this.e = view;
-        this.f14151a = baseDialogFragment;
+        this.a = baseDialogFragment;
         this.f = callBack;
         a("", false);
     }
@@ -61,9 +60,9 @@ public class BuyGiftUtil {
             case 4221002:
                 Bundle bundle = new Bundle();
                 bundle.putString("title", AppUtils.a(R.string.Live_SendPresent_resetPayPassword));
-                bundle.putString("content", AppUtils.a(R.string.live_set_6_num));
+                bundle.putString(l.y, AppUtils.a(R.string.live_set_6_num));
                 bundle.putString("http_host", LiveRoomInfo.a().m());
-                LiveRouteUtil.a(this.f14151a, bundle, i);
+                LiveRouteUtil.a((Fragment) this.a, bundle, i);
                 break;
             case 4221003:
             case 4221006:
@@ -82,8 +81,8 @@ public class BuyGiftUtil {
                 } else {
                     bundle2.putString("title", str);
                 }
-                bundle2.putString("content", AppUtils.a(R.string.Live_SendPresent_verifyPasswordText));
-                LiveRouteUtil.a(this.f14151a, bundle2, i);
+                bundle2.putString(l.y, AppUtils.a(R.string.Live_SendPresent_verifyPasswordText));
+                LiveRouteUtil.a((Fragment) this.a, bundle2, i);
                 break;
             case 4221008:
                 b();
@@ -97,21 +96,21 @@ public class BuyGiftUtil {
 
     private void b() {
         LiveGiftPayTools.b();
-        if (this.g || this.f14151a.getActivity() == null || this.f14151a.getActivity().isFinishing()) {
+        if (this.g || this.a.getActivity() == null || this.a.getActivity().isFinishing()) {
             return;
         }
-        String a2 = AppUtils.a(R.string.live_id_charge_tip);
+        String a = AppUtils.a(R.string.live_id_charge_tip);
         this.g = true;
-        CommonAlertDialog.a((Context) this.f14151a.getActivity(), (View) null, "", a2, AppUtils.a(R.string.cancel), AppUtils.a(R.string.Live_SendPresent_recharge), new DialogInterface.OnClickListener() { // from class: com.blued.android.module.live_china.utils.BuyGiftUtil.2
+        CommonAlertDialog.a((Context) this.a.getActivity(), (View) null, "", a, AppUtils.a(R.string.cancel), AppUtils.a(R.string.Live_SendPresent_recharge), new DialogInterface.OnClickListener() { // from class: com.blued.android.module.live_china.utils.BuyGiftUtil.2
             @Override // android.content.DialogInterface.OnClickListener
             public void onClick(DialogInterface dialogInterface, int i) {
                 Tracker.onClick(dialogInterface, i);
                 EventTrackLive.a(LiveProtos.Event.BETTER_ID_RENEW_INSUFFICIENT_CONFIRM_CLICK);
                 BuyGiftUtil.this.g = false;
                 if (LiveDataManager.a().f()) {
-                    LiveRoomInfo.a().a(BuyGiftUtil.this.f14151a.getActivity(), 2);
+                    LiveRoomInfo.a().a((Context) BuyGiftUtil.this.a.getActivity(), 2);
                 } else {
-                    LiveRoomInfo.a().a(BuyGiftUtil.this.f14151a.getActivity(), BuyGiftUtil.this.f14151a.getFragmentManager(), 2);
+                    LiveRoomInfo.a().a((Context) BuyGiftUtil.this.a.getActivity(), BuyGiftUtil.this.a.getFragmentManager(), 2);
                 }
             }
         }, new DialogInterface.OnClickListener() { // from class: com.blued.android.module.live_china.utils.BuyGiftUtil.3
@@ -130,7 +129,7 @@ public class BuyGiftUtil {
     }
 
     public void a(String str, boolean z) {
-        LiveRoomHttpUtils.a(this.b, this.f14152c, this.d, str, TextUtils.isEmpty(str) ? LiveRoomPreferences.b("") : "", z, new BluedUIHttpResponse<BluedEntity<PayRemaining, LiveZanExtraModel>>(this.f14151a.a()) { // from class: com.blued.android.module.live_china.utils.BuyGiftUtil.1
+        LiveRoomHttpUtils.a(this.b, this.c, this.d, str, TextUtils.isEmpty(str) ? LiveRoomPreferences.b("") : "", z, new BluedUIHttpResponse<BluedEntity<PayRemaining, LiveZanExtraModel>>(this.a.a()) { // from class: com.blued.android.module.live_china.utils.BuyGiftUtil.1
             @Override // com.blued.android.framework.http.BluedUIHttpResponse, com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
             public void onFailure(Throwable th, int i, String str2) {
                 super.onFailure(th, i, str2);
@@ -140,10 +139,10 @@ public class BuyGiftUtil {
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str2) {
                 if (!BuyGiftUtil.this.a()) {
-                    BuyGiftUtil.this.f14151a.getActivity().finish();
+                    BuyGiftUtil.this.a.getActivity().finish();
                     return false;
                 }
-                KeyboardUtils.a(BuyGiftUtil.this.f14151a.getActivity());
+                KeyboardUtils.a((Activity) BuyGiftUtil.this.a.getActivity());
                 BuyGiftUtil.this.a(i, str2);
                 return true;
             }
@@ -163,10 +162,10 @@ public class BuyGiftUtil {
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity<PayRemaining, LiveZanExtraModel> bluedEntity) {
                 if (!BuyGiftUtil.this.a()) {
-                    BuyGiftUtil.this.f14151a.getActivity().finish();
+                    BuyGiftUtil.this.a.getActivity().finish();
                     return;
                 }
-                KeyboardUtils.a(BuyGiftUtil.this.f14151a.getActivity());
+                KeyboardUtils.a((Activity) BuyGiftUtil.this.a.getActivity());
                 if (bluedEntity == null || bluedEntity.getSingleData() == null) {
                     BuyGiftUtil.this.a(0, "");
                     return;
@@ -186,10 +185,10 @@ public class BuyGiftUtil {
                     BuyGiftUtil.this.f.a(j);
                 }
             }
-        }, this.f14151a.a());
+        }, this.a.a());
     }
 
     protected boolean a() {
-        return this.f14151a.a() != null;
+        return this.a.a() != null;
     }
 }

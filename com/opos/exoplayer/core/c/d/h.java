@@ -15,31 +15,29 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8303388-dex2jar.jar:com/opos/exoplayer/core/c/d/h.class */
-public final class h {
+final class h {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final int f25131a = u.f("vide");
+    private static final int f11443a = u.f("vide");
     private static final int b = u.f("soun");
 
     /* renamed from: c  reason: collision with root package name */
-    private static final int f25132c = u.f("text");
+    private static final int f11444c = u.f("text");
     private static final int d = u.f("sbtl");
     private static final int e = u.f("subt");
     private static final int f = u.f("clcp");
     private static final int g = u.f(TTDownloadField.TT_META);
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8303388-dex2jar.jar:com/opos/exoplayer/core/c/d/h$a.class */
-    public static final class a {
+    static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public final int f25133a;
+        public final int f11445a;
         public int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public int f25134c;
+        public int f11446c;
         public long d;
         private final boolean e;
         private final com.opos.exoplayer.core.i.m f;
@@ -52,7 +50,7 @@ public final class h {
             this.f = mVar2;
             this.e = z;
             mVar2.c(12);
-            this.f25133a = mVar2.u();
+            this.f11445a = mVar2.u();
             mVar.c(12);
             this.i = mVar.u();
             com.opos.exoplayer.core.i.a.b(mVar.o() != 1 ? false : true, "first_chunk must be 1");
@@ -62,12 +60,12 @@ public final class h {
         public boolean a() {
             int i = this.b + 1;
             this.b = i;
-            if (i == this.f25133a) {
+            if (i == this.f11445a) {
                 return false;
             }
             this.d = this.e ? this.f.w() : this.f.m();
             if (this.b == this.h) {
-                this.f25134c = this.g.u();
+                this.f11446c = this.g.u();
                 this.g.d(4);
                 int i2 = this.i - 1;
                 this.i = i2;
@@ -78,9 +76,8 @@ public final class h {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8303388-dex2jar.jar:com/opos/exoplayer/core/c/d/h$b.class */
-    public interface b {
+    interface b {
         int a();
 
         int b();
@@ -93,35 +90,34 @@ public final class h {
     public static final class c {
 
         /* renamed from: a  reason: collision with root package name */
-        public final com.opos.exoplayer.core.c.d.f[] f25135a;
+        public final com.opos.exoplayer.core.c.d.f[] f11447a;
         public Format b;
 
         /* renamed from: c  reason: collision with root package name */
-        public int f25136c;
+        public int f11448c;
         public int d = 0;
 
         public c(int i) {
-            this.f25135a = new com.opos.exoplayer.core.c.d.f[i];
+            this.f11447a = new com.opos.exoplayer.core.c.d.f[i];
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8303388-dex2jar.jar:com/opos/exoplayer/core/c/d/h$d.class */
-    public static final class d implements b {
+    static final class d implements b {
 
         /* renamed from: a  reason: collision with root package name */
-        private final int f25137a;
+        private final int f11449a;
         private final int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final com.opos.exoplayer.core.i.m f25138c;
+        private final com.opos.exoplayer.core.i.m f11450c;
 
         public d(g.b bVar) {
             com.opos.exoplayer.core.i.m mVar = bVar.aQ;
-            this.f25138c = mVar;
+            this.f11450c = mVar;
             mVar.c(12);
-            this.f25137a = this.f25138c.u();
-            this.b = this.f25138c.u();
+            this.f11449a = this.f11450c.u();
+            this.b = this.f11450c.u();
         }
 
         @Override // com.opos.exoplayer.core.c.d.h.b
@@ -131,39 +127,38 @@ public final class h {
 
         @Override // com.opos.exoplayer.core.c.d.h.b
         public int b() {
-            int i = this.f25137a;
+            int i = this.f11449a;
             int i2 = i;
             if (i == 0) {
-                i2 = this.f25138c.u();
+                i2 = this.f11450c.u();
             }
             return i2;
         }
 
         @Override // com.opos.exoplayer.core.c.d.h.b
         public boolean c() {
-            return this.f25137a != 0;
+            return this.f11449a != 0;
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8303388-dex2jar.jar:com/opos/exoplayer/core/c/d/h$e.class */
-    public static final class e implements b {
+    static final class e implements b {
 
         /* renamed from: a  reason: collision with root package name */
-        private final com.opos.exoplayer.core.i.m f25139a;
+        private final com.opos.exoplayer.core.i.m f11451a;
         private final int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final int f25140c;
+        private final int f11452c;
         private int d;
         private int e;
 
         public e(g.b bVar) {
             com.opos.exoplayer.core.i.m mVar = bVar.aQ;
-            this.f25139a = mVar;
+            this.f11451a = mVar;
             mVar.c(12);
-            this.f25140c = this.f25139a.u() & 255;
-            this.b = this.f25139a.u();
+            this.f11452c = this.f11451a.u() & 255;
+            this.b = this.f11451a.u();
         }
 
         @Override // com.opos.exoplayer.core.c.d.h.b
@@ -173,17 +168,17 @@ public final class h {
 
         @Override // com.opos.exoplayer.core.c.d.h.b
         public int b() {
-            int i = this.f25140c;
+            int i = this.f11452c;
             if (i == 8) {
-                return this.f25139a.g();
+                return this.f11451a.g();
             }
             if (i == 16) {
-                return this.f25139a.h();
+                return this.f11451a.h();
             }
             int i2 = this.d;
             this.d = i2 + 1;
             if (i2 % 2 == 0) {
-                int g = this.f25139a.g();
+                int g = this.f11451a.g();
                 this.e = g;
                 return (g & 240) >> 4;
             }
@@ -201,16 +196,16 @@ public final class h {
     public static final class f {
 
         /* renamed from: a  reason: collision with root package name */
-        private final int f25141a;
+        private final int f11453a;
         private final long b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final int f25142c;
+        private final int f11454c;
 
         public f(int i, long j, int i2) {
-            this.f25141a = i;
+            this.f11453a = i;
             this.b = j;
-            this.f25142c = i2;
+            this.f11454c = i2;
         }
     }
 
@@ -282,7 +277,7 @@ public final class h {
         long d2 = j == com.anythink.expressad.exoplayer.b.b ? -9223372036854775807L : u.d(j, 1000000L, a2);
         g.a e3 = e2.e(g.F).e(g.G);
         Pair<Long, String> d3 = d(e2.d(g.R).aQ);
-        c a3 = a(e3.d(g.T).aQ, b2.f25141a, b2.f25142c, d3.second, drmInitData, z2);
+        c a3 = a(e3.d(g.T).aQ, b2.f11453a, b2.f11454c, d3.second, drmInitData, z2);
         if (z) {
             jArr = null;
             jArr2 = null;
@@ -294,7 +289,7 @@ public final class h {
         if (a3.b == null) {
             return null;
         }
-        return new com.opos.exoplayer.core.c.d.e(b2.f25141a, c2, d3.first.longValue(), a2, d2, a3.b, a3.d, a3.f25135a, a3.f25136c, jArr, jArr2);
+        return new com.opos.exoplayer.core.c.d.e(b2.f11453a, c2, d3.first.longValue(), a2, d2, a3.b, a3.d, a3.f11447a, a3.f11448c, jArr, jArr2);
     }
 
     private static com.opos.exoplayer.core.c.d.f a(com.opos.exoplayer.core.i.m mVar, int i, int i2, String str) {
@@ -355,7 +350,7 @@ public final class h {
             int o2 = mVar.o();
             com.opos.exoplayer.core.i.a.a(o2 > 0, "childAtomSize should be positive");
             int o3 = mVar.o();
-            if (o3 == g.b || o3 == g.f25130c || o3 == g.Z || o3 == g.al || o3 == g.d || o3 == g.e || o3 == g.f || o3 == g.aK || o3 == g.aL) {
+            if (o3 == g.b || o3 == g.f11442c || o3 == g.Z || o3 == g.al || o3 == g.d || o3 == g.e || o3 == g.f || o3 == g.aK || o3 == g.aL) {
                 a(mVar, o3, d2, o2, i, i2, drmInitData, cVar, i4);
             } else if (o3 == g.i || o3 == g.aa || o3 == g.n || o3 == g.p || o3 == g.r || o3 == g.u || o3 == g.s || o3 == g.t || o3 == g.ay || o3 == g.az || o3 == g.l || o3 == g.m || o3 == g.j || o3 == g.aO) {
                 a(mVar, o3, d2, o2, i, str, z, drmInitData, cVar, i4);
@@ -389,7 +384,7 @@ public final class h {
         if (d2 != null) {
             eVar2 = new d(d2);
         } else {
-            g.b d3 = aVar.d(g.f25129ar);
+            g.b d3 = aVar.d(g.f11441ar);
             if (d3 == null) {
                 throw new com.opos.exoplayer.core.o("Track has no sample table size information");
             }
@@ -441,16 +436,16 @@ public final class h {
         }
         if (eVar2.c() && "audio/raw".equals(eVar.f.f) && u == 0 && i == 0 && i2 == 0) {
             i3 = a2;
-            long[] jArr3 = new long[aVar2.f25133a];
-            int[] iArr3 = new int[aVar2.f25133a];
+            long[] jArr3 = new long[aVar2.f11445a];
+            int[] iArr3 = new int[aVar2.f11445a];
             while (aVar2.a()) {
                 jArr3[aVar2.b] = aVar2.d;
-                iArr3[aVar2.b] = aVar2.f25134c;
+                iArr3[aVar2.b] = aVar2.f11446c;
             }
-            a.C0651a a3 = com.opos.exoplayer.core.c.d.a.a(eVar2.b(), jArr3, iArr3, u3);
-            jArr = a3.f25111a;
+            a.C0481a a3 = com.opos.exoplayer.core.c.d.a.a(eVar2.b(), jArr3, iArr3, u3);
+            jArr = a3.f11423a;
             iArr = a3.b;
-            i4 = a3.f25112c;
+            i4 = a3.f11424c;
             jArr2 = a3.d;
             iArr2 = a3.e;
             j = a3.f;
@@ -474,7 +469,7 @@ public final class h {
                 while (i9 == 0) {
                     com.opos.exoplayer.core.i.a.b(aVar2.a());
                     j2 = aVar2.d;
-                    i9 = aVar2.f25134c;
+                    i9 = aVar2.f11446c;
                 }
                 int i16 = u;
                 int i17 = i;
@@ -546,7 +541,7 @@ public final class h {
                 i--;
             }
             if (i10 != 0 || u2 != 0 || i9 != 0 || u != 0) {
-                com.opos.cmn.an.f.a.c("AtomParsers", "Inconsistent stbl box for track " + eVar.f25124a + ": remainingSynchronizationSamples " + i10 + ", remainingSamplesAtTimestampDelta " + u2 + ", remainingSamplesInChunk " + i9 + ", remainingTimestampDeltaChanges " + u);
+                com.opos.cmn.an.f.a.c("AtomParsers", "Inconsistent stbl box for track " + eVar.f11436a + ": remainingSynchronizationSamples " + i10 + ", remainingSamplesAtTimestampDelta " + u2 + ", remainingSamplesInChunk " + i9 + ", remainingTimestampDeltaChanges " + u);
             }
             j = j3 + j4;
             jArr2 = jArr4;
@@ -556,21 +551,21 @@ public final class h {
             i3 = a2;
         }
         int[] iArr6 = iArr2;
-        long d7 = u.d(j, 1000000L, eVar.f25125c);
+        long d7 = u.d(j, 1000000L, eVar.f11437c);
         if (eVar.h == null || iVar.a()) {
-            u.a(jArr2, 1000000L, eVar.f25125c);
+            u.a(jArr2, 1000000L, eVar.f11437c);
             return new m(jArr, iArr, i4, jArr2, iArr6, d7);
         }
         if (eVar.h.length == 1 && eVar.b == 1 && jArr2.length >= 2) {
             long j5 = eVar.i[0];
-            long d8 = u.d(eVar.h[0], eVar.f25125c, eVar.d) + j5;
+            long d8 = u.d(eVar.h[0], eVar.f11437c, eVar.d) + j5;
             if (jArr2[0] <= j5 && j5 < jArr2[1] && jArr2[jArr2.length - 1] < d8 && d8 <= j) {
-                long d9 = u.d(j5 - jArr2[0], eVar.f.s, eVar.f25125c);
-                long d10 = u.d(j - d8, eVar.f.s, eVar.f25125c);
+                long d9 = u.d(j5 - jArr2[0], eVar.f.s, eVar.f11437c);
+                long d10 = u.d(j - d8, eVar.f.s, eVar.f11437c);
                 if ((d9 != 0 || d10 != 0) && d9 <= 2147483647L && d10 <= 2147483647L) {
                     iVar.b = (int) d9;
-                    iVar.f25246c = (int) d10;
-                    u.a(jArr2, 1000000L, eVar.f25125c);
+                    iVar.f11558c = (int) d10;
+                    u.a(jArr2, 1000000L, eVar.f11437c);
                     mVar2 = new m(jArr, iArr, i4, jArr2, iArr6, d7);
                     return mVar2;
                 }
@@ -584,10 +579,10 @@ public final class h {
                 if (i29 >= jArr2.length) {
                     break;
                 }
-                jArr2[i29] = u.d(jArr2[i29] - j6, 1000000L, eVar.f25125c);
+                jArr2[i29] = u.d(jArr2[i29] - j6, 1000000L, eVar.f11437c);
                 i28 = i29 + 1;
             }
-            mVar2 = new m(jArr, iArr, i4, jArr2, iArr6, u.d(j - j6, 1000000L, eVar.f25125c));
+            mVar2 = new m(jArr, iArr, i4, jArr2, iArr6, u.d(j - j6, 1000000L, eVar.f11437c));
             return mVar2;
         }
         boolean z3 = eVar.b == 1;
@@ -598,7 +593,7 @@ public final class h {
         while (i30 < eVar.h.length) {
             long j7 = eVar.i[i30];
             if (j7 != -1) {
-                long d11 = u.d(eVar.h[i30], eVar.f25125c, eVar.d);
+                long d11 = u.d(eVar.h[i30], eVar.f11437c, eVar.d);
                 int b2 = u.b(jArr2, j7, true, true);
                 int b3 = u.b(jArr2, d11 + j7, z3, false);
                 int i33 = i31 + (b3 - b2);
@@ -627,17 +622,17 @@ public final class h {
             long j9 = eVar.i[i35];
             long j10 = eVar.h[i35];
             if (j9 != -1) {
-                long d12 = u.d(j10, eVar.f25125c, eVar.d);
+                long d12 = u.d(j10, eVar.f11437c, eVar.d);
                 int b4 = u.b(jArr2, j9, true, true);
                 int b5 = u.b(jArr2, d12 + j9, z3, false);
                 if (z6) {
                     int i37 = b5 - b4;
-                    System.arraycopy((Object) jArr, b4, (Object) jArr5, i36, i37);
-                    System.arraycopy((Object) iArr, b4, (Object) iArr7, i36, i37);
-                    System.arraycopy((Object) iArr6, b4, (Object) iArr8, i36, i37);
+                    System.arraycopy(jArr, b4, jArr5, i36, i37);
+                    System.arraycopy(iArr, b4, iArr7, i36, i37);
+                    System.arraycopy(iArr6, b4, iArr8, i36, i37);
                 }
                 while (b4 < b5) {
-                    jArr6[i36] = u.d(jArr2[b4] - j9, 1000000L, eVar.f25125c) + u.d(j8, 1000000L, eVar.d);
+                    jArr6[i36] = u.d(jArr2[b4] - j9, 1000000L, eVar.f11437c) + u.d(j8, 1000000L, eVar.d);
                     int i38 = i34;
                     if (z6) {
                         i38 = i34;
@@ -654,7 +649,7 @@ public final class h {
             i35++;
             iArr = iArr;
         }
-        long d13 = u.d(j8, 1000000L, eVar.f25125c);
+        long d13 = u.d(j8, 1000000L, eVar.f11437c);
         boolean z7 = false;
         int i39 = 0;
         while (true) {
@@ -669,7 +664,7 @@ public final class h {
             return new m(jArr5, iArr7, i34, jArr6, iArr8, d13);
         }
         com.opos.cmn.an.f.a.c("AtomParsers", "Ignoring edit list: Edited sample sequence does not contain a sync sample.");
-        u.a(jArr2, 1000000L, eVar.f25125c);
+        u.a(jArr2, 1000000L, eVar.f11437c);
         return new m(jArr, iArr, i4, jArr2, iArr6, d7);
     }
 
@@ -727,7 +722,7 @@ public final class h {
             if (c2 != null) {
                 i = c2.first.intValue();
                 drmInitData3 = drmInitData == null ? null : drmInitData.a(c2.second.b);
-                cVar.f25135a[i6] = c2.second;
+                cVar.f11447a[i6] = c2.second;
             }
             mVar.c(d2);
             i8 = i;
@@ -752,8 +747,8 @@ public final class h {
                 com.opos.exoplayer.core.i.a.b(str2 == null);
                 mVar.c(d3 + 8);
                 com.opos.exoplayer.core.video.a a2 = com.opos.exoplayer.core.video.a.a(mVar);
-                list = a2.f25565a;
-                cVar.f25136c = a2.b;
+                list = a2.f11877a;
+                cVar.f11448c = a2.b;
                 if (!z2) {
                     f3 = a2.e;
                 }
@@ -766,8 +761,8 @@ public final class h {
                 com.opos.exoplayer.core.i.a.b(str2 == null);
                 mVar.c(d3 + 8);
                 com.opos.exoplayer.core.video.b a3 = com.opos.exoplayer.core.video.b.a(mVar);
-                list = a3.f25567a;
-                cVar.f25136c = a3.b;
+                list = a3.f11879a;
+                cVar.f11448c = a3.b;
                 str = "video/hevc";
                 z = z2;
                 f2 = f3;
@@ -957,7 +952,7 @@ public final class h {
             if (c2 != null) {
                 i = c2.first.intValue();
                 drmInitData2 = drmInitData == null ? null : drmInitData.a(c2.second.b);
-                cVar.f25135a[i5] = c2.second;
+                cVar.f11447a[i5] = c2.second;
             }
             mVar.c(d2);
             i8 = i;
@@ -1052,7 +1047,7 @@ public final class h {
             if (i4 >= i2) {
                 z = true;
                 break;
-            } else if (mVar.f25496a[d2 + i4] != -1) {
+            } else if (mVar.f11808a[d2 + i4] != -1) {
                 z = false;
                 break;
             } else {
@@ -1122,10 +1117,10 @@ public final class h {
         if (o == b) {
             return 1;
         }
-        if (o == f25131a) {
+        if (o == f11443a) {
             return 2;
         }
-        if (o == f25132c || o == d || o == e || o == f) {
+        if (o == f11444c || o == d || o == e || o == f) {
             return 3;
         }
         return o == g ? 4 : -1;
@@ -1203,7 +1198,7 @@ public final class h {
             mVar.c(i5);
             int o = mVar.o();
             if (mVar.o() == g.aJ) {
-                return Arrays.copyOfRange(mVar.f25496a, i5, o + i5);
+                return Arrays.copyOfRange(mVar.f11808a, i5, o + i5);
             }
             i3 = i5;
             i4 = o;

@@ -30,11 +30,11 @@ import java.util.concurrent.Callable;
 public class b implements com.opos.mobad.c.c.a {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f27236a;
+    private Context f13548a;
     private com.opos.mobad.c.c.b b;
 
     /* renamed from: c  reason: collision with root package name */
-    private MediaPlayer f27237c;
+    private MediaPlayer f13549c;
     private RelativeLayout d;
     private View e;
     private com.opos.libs.a.a f;
@@ -93,25 +93,25 @@ public class b implements com.opos.mobad.c.c.a {
                 b.this.p();
             }
         };
-        this.f27236a = context;
+        this.f13548a = context;
         this.b = bVar;
         this.n = z;
         a();
-        this.f = new a.C0668a(0).a(0, 7, 6).a(7, 1, 3, 2, 0, 6).a(1, 3, 2, 5, 0, 6).a(2, 3, 5, 0, 6).a(3, 2, 0, 6).a(5, 2, 0, 6).a();
+        this.f = new a.C0498a(0).a(0, 7, 6).a(7, 1, 3, 2, 0, 6).a(1, 3, 2, 5, 0, 6).a(2, 3, 5, 0, 6).a(3, 2, 0, 6).a(5, 2, 0, 6).a();
     }
 
     private void a() {
-        this.d = new RelativeLayout(this.f27236a);
-        View view = new View(this.f27236a);
+        this.d = new RelativeLayout(this.f13548a);
+        View view = new View(this.f13548a);
         this.e = view;
         view.setBackgroundColor(-16777216);
         this.d.addView(this.e, new ViewGroup.LayoutParams(-1, -1));
-        this.g = new com.opos.exoplayer.a.a(this.f27236a);
+        this.g = new com.opos.exoplayer.a.a(this.f13548a);
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(-1, -1);
         layoutParams.addRule(13);
         this.d.addView(this.g, layoutParams);
         this.g.setId(View.generateViewId());
-        this.l = new ImageView(this.f27236a);
+        this.l = new ImageView(this.f13548a);
         RelativeLayout.LayoutParams layoutParams2 = new RelativeLayout.LayoutParams(-2, -2);
         layoutParams2.addRule(6, this.g.getId());
         layoutParams2.addRule(8, this.g.getId());
@@ -119,14 +119,14 @@ public class b implements com.opos.mobad.c.c.a {
         layoutParams2.addRule(5, this.g.getId());
         this.d.addView(this.l, layoutParams2);
         this.l.setVisibility(8);
-        com.opos.cmn.j.a aVar = new com.opos.cmn.j.a(this.f27236a);
+        com.opos.cmn.j.a aVar = new com.opos.cmn.j.a(this.f13548a);
         this.d.addView(aVar, new ViewGroup.LayoutParams(0, 0));
-        aVar.a(new a.InterfaceC0646a() { // from class: com.opos.mobad.r.a.b.11
-            @Override // com.opos.cmn.j.a.InterfaceC0646a
+        aVar.a(new a.InterfaceC0476a() { // from class: com.opos.mobad.r.a.b.11
+            @Override // com.opos.cmn.j.a.InterfaceC0476a
             public void a() {
             }
 
-            @Override // com.opos.cmn.j.a.InterfaceC0646a
+            @Override // com.opos.cmn.j.a.InterfaceC0476a
             public void b() {
                 com.opos.cmn.an.f.a.b("MiniVideoPlayer", "view attach to window");
                 if (b.this.f.a() == 6 || b.this.d.isHardwareAccelerated()) {
@@ -155,20 +155,20 @@ public class b implements com.opos.mobad.c.c.a {
     /* JADX INFO: Access modifiers changed from: private */
     public void c(String str) throws Exception {
         this.m = false;
-        MediaPlayer mediaPlayer = this.f27237c;
+        MediaPlayer mediaPlayer = this.f13549c;
         if (mediaPlayer != null) {
             mediaPlayer.reset();
         } else {
-            this.f27237c = new MediaPlayer();
+            this.f13549c = new MediaPlayer();
         }
-        this.f27237c.setDataSource(this.f27236a, Uri.parse(str), (Map<String, String>) null);
-        this.f27237c.setOnVideoSizeChangedListener(new MediaPlayer.OnVideoSizeChangedListener() { // from class: com.opos.mobad.r.a.b.6
+        this.f13549c.setDataSource(this.f13548a, Uri.parse(str), (Map<String, String>) null);
+        this.f13549c.setOnVideoSizeChangedListener(new MediaPlayer.OnVideoSizeChangedListener() { // from class: com.opos.mobad.r.a.b.6
             @Override // android.media.MediaPlayer.OnVideoSizeChangedListener
             public void onVideoSizeChanged(MediaPlayer mediaPlayer2, int i, int i2) {
                 b.this.a(i, i2);
             }
         });
-        this.f27237c.setOnCompletionListener(new MediaPlayer.OnCompletionListener() { // from class: com.opos.mobad.r.a.b.7
+        this.f13549c.setOnCompletionListener(new MediaPlayer.OnCompletionListener() { // from class: com.opos.mobad.r.a.b.7
             @Override // android.media.MediaPlayer.OnCompletionListener
             public void onCompletion(MediaPlayer mediaPlayer2) {
                 b.this.f.a(5);
@@ -178,7 +178,7 @@ public class b implements com.opos.mobad.c.c.a {
                 }
             }
         });
-        this.f27237c.setOnErrorListener(new MediaPlayer.OnErrorListener() { // from class: com.opos.mobad.r.a.b.8
+        this.f13549c.setOnErrorListener(new MediaPlayer.OnErrorListener() { // from class: com.opos.mobad.r.a.b.8
             @Override // android.media.MediaPlayer.OnErrorListener
             public boolean onError(MediaPlayer mediaPlayer2, int i, int i2) {
                 com.opos.cmn.an.f.a.b("MiniVideoPlayer", "play fail:" + i + "," + i2 + ",state:" + b.this.f.a());
@@ -198,7 +198,7 @@ public class b implements com.opos.mobad.c.c.a {
                 }
             }
         });
-        this.f27237c.setOnInfoListener(new MediaPlayer.OnInfoListener() { // from class: com.opos.mobad.r.a.b.9
+        this.f13549c.setOnInfoListener(new MediaPlayer.OnInfoListener() { // from class: com.opos.mobad.r.a.b.9
             @Override // android.media.MediaPlayer.OnInfoListener
             public boolean onInfo(MediaPlayer mediaPlayer2, int i, int i2) {
                 Handler handler;
@@ -223,7 +223,7 @@ public class b implements com.opos.mobad.c.c.a {
                 return false;
             }
         });
-        this.f27237c.setOnPreparedListener(new MediaPlayer.OnPreparedListener() { // from class: com.opos.mobad.r.a.b.10
+        this.f13549c.setOnPreparedListener(new MediaPlayer.OnPreparedListener() { // from class: com.opos.mobad.r.a.b.10
             @Override // android.media.MediaPlayer.OnPreparedListener
             public void onPrepared(MediaPlayer mediaPlayer2) {
                 com.opos.cmn.an.f.a.b("MiniVideoPlayer", "player prepared duration:" + mediaPlayer2.getDuration() + "," + b.this.k);
@@ -231,17 +231,17 @@ public class b implements com.opos.mobad.c.c.a {
                 b.this.q.obtainMessage(1).sendToTarget();
             }
         });
-        MediaPlayer mediaPlayer2 = this.f27237c;
+        MediaPlayer mediaPlayer2 = this.f13549c;
         float f = this.h;
         mediaPlayer2.setVolume(f, f);
         if (this.o) {
-            this.f27237c.setLooping(true);
+            this.f13549c.setLooping(true);
         }
-        this.f27237c.prepareAsync();
+        this.f13549c.prepareAsync();
     }
 
     private void j() {
-        TextureView textureView = new TextureView(this.f27236a);
+        TextureView textureView = new TextureView(this.f13548a);
         this.j = textureView;
         this.g.addView(textureView, new ViewGroup.LayoutParams(-1, -1));
         this.j.setSurfaceTextureListener(new TextureView.SurfaceTextureListener() { // from class: com.opos.mobad.r.a.b.12
@@ -280,7 +280,7 @@ public class b implements com.opos.mobad.c.c.a {
             this.k.release();
         }
         this.j = null;
-        SurfaceView surfaceView = new SurfaceView(this.f27236a);
+        SurfaceView surfaceView = new SurfaceView(this.f13548a);
         this.i = surfaceView;
         this.g.addView(surfaceView, new ViewGroup.LayoutParams(-1, -1));
         this.i.getHolder().addCallback(new SurfaceHolder.Callback() { // from class: com.opos.mobad.r.a.b.13
@@ -345,9 +345,9 @@ public class b implements com.opos.mobad.c.c.a {
             @Override // java.util.concurrent.Callable
             /* renamed from: a */
             public Boolean call() throws Exception {
-                if (b.this.f27237c != null) {
-                    b.this.f27237c.reset();
-                    b.this.f27237c = null;
+                if (b.this.f13549c != null) {
+                    b.this.f13549c.reset();
+                    b.this.f13549c = null;
                 }
                 return true;
             }
@@ -401,8 +401,8 @@ public class b implements com.opos.mobad.c.c.a {
             return false;
         }
         com.opos.cmn.an.f.a.b("MiniVideoPlayer", "check to start");
-        this.f27237c.setSurface(this.k);
-        this.f27237c.start();
+        this.f13549c.setSurface(this.k);
+        this.f13549c.start();
         this.e.setVisibility(8);
         l();
         return true;
@@ -413,13 +413,13 @@ public class b implements com.opos.mobad.c.c.a {
         if (this.k == null || !this.m) {
             return;
         }
-        this.f27237c.pause();
+        this.f13549c.pause();
     }
 
     @Override // com.opos.mobad.c.c.a
     public void a(float f) {
         this.h = f;
-        MediaPlayer mediaPlayer = this.f27237c;
+        MediaPlayer mediaPlayer = this.f13549c;
         if (mediaPlayer != null) {
             mediaPlayer.setVolume(f, f);
         }
@@ -430,7 +430,7 @@ public class b implements com.opos.mobad.c.c.a {
         com.opos.cmn.an.f.a.b("MiniVideoPlayer", "seekTo");
         int a2 = this.f.a();
         if (2 == a2 || 4 == a2 || 3 == a2 || 5 == a2) {
-            this.f27237c.seekTo((int) j);
+            this.f13549c.seekTo((int) j);
         }
     }
 
@@ -488,7 +488,7 @@ public class b implements com.opos.mobad.c.c.a {
 
     @Override // com.opos.mobad.c.c.a
     public long c() {
-        MediaPlayer mediaPlayer = this.f27237c;
+        MediaPlayer mediaPlayer = this.f13549c;
         if (mediaPlayer != null) {
             return mediaPlayer.getDuration();
         }
@@ -502,8 +502,8 @@ public class b implements com.opos.mobad.c.c.a {
 
     @Override // com.opos.mobad.c.c.a
     public long d() {
-        if (this.f27237c != null) {
-            return this.f.a() == 5 ? this.f27237c.getDuration() : this.f27237c.getCurrentPosition();
+        if (this.f13549c != null) {
+            return this.f.a() == 5 ? this.f13549c.getDuration() : this.f13549c.getCurrentPosition();
         }
         return 0L;
     }
@@ -578,9 +578,9 @@ public class b implements com.opos.mobad.c.c.a {
             @Override // java.util.concurrent.Callable
             /* renamed from: a */
             public Boolean call() throws Exception {
-                if (b.this.f27237c != null) {
-                    b.this.f27237c.release();
-                    b.this.f27237c = null;
+                if (b.this.f13549c != null) {
+                    b.this.f13549c.release();
+                    b.this.f13549c = null;
                 }
                 b.this.n();
                 return true;

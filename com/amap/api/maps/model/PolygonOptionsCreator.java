@@ -36,7 +36,7 @@ public class PolygonOptionsCreator implements Parcelable.Creator<PolygonOptions>
         polygonOptions.fillColor(readInt2);
         polygonOptions.zIndex(readFloat2);
         polygonOptions.visible(z);
-        polygonOptions.f5536a = parcel.readString();
+        polygonOptions.a = parcel.readString();
         ArrayList arrayList2 = new ArrayList();
         parcel.readList(arrayList2, BaseHoleOptions.class.getClassLoader());
         polygonOptions.addHoles(arrayList2);

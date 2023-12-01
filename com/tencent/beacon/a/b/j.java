@@ -7,10 +7,10 @@ import java.util.concurrent.atomic.AtomicInteger;
 public final class j implements ThreadFactory {
 
     /* renamed from: a  reason: collision with root package name */
-    private final AtomicInteger f34934a = new AtomicInteger(1);
+    private final AtomicInteger f21243a = new AtomicInteger(1);
 
     public String a() {
-        return "beacon-thread-" + this.f34934a.getAndIncrement();
+        return "beacon-thread-" + this.f21243a.getAndIncrement();
     }
 
     @Override // java.util.concurrent.ThreadFactory

@@ -9,13 +9,13 @@ import com.vivo.push.util.z;
 public final class f implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ String f41097a;
+    final /* synthetic */ String f27406a;
     final /* synthetic */ e b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public f(e eVar, String str) {
         this.b = eVar;
-        this.f41097a = str;
+        this.f27406a = str;
     }
 
     @Override // java.lang.Runnable
@@ -24,12 +24,12 @@ public final class f implements Runnable {
         Context context2;
         Context context3;
         context = this.b.h;
-        if (context == null || TextUtils.isEmpty(this.f41097a)) {
+        if (context == null || TextUtils.isEmpty(this.f27406a)) {
             return;
         }
         context2 = this.b.h;
         context3 = this.b.h;
-        if (z.b(context2, context3.getPackageName(), this.f41097a)) {
+        if (z.b(context2, context3.getPackageName(), this.f27406a)) {
             this.b.i();
         }
     }

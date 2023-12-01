@@ -137,7 +137,7 @@ public class AlertController {
 
         public AlertParams(Context context) {
             this.mContext = context;
-            this.mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            this.mInflater = (LayoutInflater) context.getSystemService("layout_inflater");
         }
 
         /* JADX WARN: Multi-variable type inference failed */
@@ -146,7 +146,7 @@ public class AlertController {
             BaseAdapter checkedItemAdapter;
             final RecycleListView recycleListView = (RecycleListView) this.mInflater.inflate(alertController.mListLayout, (ViewGroup) null);
             if (this.mIsMultiChoice) {
-                checkedItemAdapter = this.mCursor == null ? new ArrayAdapter<CharSequence>(this.mContext, alertController.mMultiChoiceItemLayout, 16908308, this.mItems) { // from class: com.android.internal.app.AlertController.AlertParams.1
+                checkedItemAdapter = this.mCursor == null ? new ArrayAdapter<CharSequence>(this.mContext, alertController.mMultiChoiceItemLayout, R.id.text1, this.mItems) { // from class: com.android.internal.app.AlertController.AlertParams.1
                     @Override // android.widget.ArrayAdapter, android.widget.Adapter
                     public View getView(int i, View view, ViewGroup viewGroup) {
                         View view2 = super.getView(i, view, viewGroup);
@@ -168,7 +168,7 @@ public class AlertController {
                     @Override // android.widget.CursorAdapter
                     public void bindView(View view, Context context, Cursor cursor) {
                         boolean z = true;
-                        ((CheckedTextView) view.findViewById(16908308)).setText(cursor.getString(this.mLabelIndex));
+                        ((CheckedTextView) view.findViewById(R.id.text1)).setText(cursor.getString(this.mLabelIndex));
                         RecycleListView recycleListView2 = recycleListView;
                         int position = cursor.getPosition();
                         if (cursor.getInt(this.mIsCheckedIndex) != 1) {
@@ -184,7 +184,7 @@ public class AlertController {
                 };
             } else {
                 int i = this.mIsSingleChoice ? alertController.mSingleChoiceItemLayout : alertController.mListItemLayout;
-                checkedItemAdapter = this.mCursor == null ? this.mAdapter != null ? this.mAdapter : new CheckedItemAdapter(this.mContext, i, 16908308, this.mItems) : new SimpleCursorAdapter(this.mContext, i, this.mCursor, new String[]{this.mLabelColumn}, new int[]{16908308});
+                checkedItemAdapter = this.mCursor == null ? this.mAdapter != null ? this.mAdapter : new CheckedItemAdapter(this.mContext, i, R.id.text1, this.mItems) : new SimpleCursorAdapter(this.mContext, i, this.mCursor, new String[]{this.mLabelColumn}, new int[]{R.id.text1});
             }
             if (this.mOnPrepareListViewListener != null) {
                 this.mOnPrepareListViewListener.onPrepareListView(recycleListView);
@@ -352,13 +352,13 @@ public class AlertController {
         this.mDialogInterface = dialogInterface;
         this.mWindow = window;
         this.mHandler = new ButtonHandler(dialogInterface);
-        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(null, R.styleable.AlertDialog, 16842845, 0);
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(null, R.styleable.AlertDialog, R.attr.alertDialogStyle, 0);
         this.mAlertDialogLayout = obtainStyledAttributes.getResourceId(10, R.layout.alert_dialog);
         this.mButtonPanelSideLayout = obtainStyledAttributes.getResourceId(11, 0);
         this.mListLayout = obtainStyledAttributes.getResourceId(12, R.layout.select_dialog);
-        this.mMultiChoiceItemLayout = obtainStyledAttributes.getResourceId(13, 17367059);
-        this.mSingleChoiceItemLayout = obtainStyledAttributes.getResourceId(14, 17367058);
-        this.mListItemLayout = obtainStyledAttributes.getResourceId(15, 17367057);
+        this.mMultiChoiceItemLayout = obtainStyledAttributes.getResourceId(13, R.layout.select_dialog_multichoice);
+        this.mSingleChoiceItemLayout = obtainStyledAttributes.getResourceId(14, R.layout.select_dialog_singlechoice);
+        this.mListItemLayout = obtainStyledAttributes.getResourceId(15, R.layout.select_dialog_item);
         obtainStyledAttributes.recycle();
     }
 
@@ -517,7 +517,7 @@ public class AlertController {
 
     private boolean setupButtons() {
         boolean z = false;
-        this.mButtonPositive = (Button) this.mWindow.findViewById(16908313);
+        this.mButtonPositive = (Button) this.mWindow.findViewById(R.id.button1);
         this.mButtonPositive.setOnClickListener(this.mButtonHandler);
         if (TextUtils.isEmpty(this.mButtonPositiveText)) {
             this.mButtonPositive.setVisibility(8);
@@ -526,7 +526,7 @@ public class AlertController {
             this.mButtonPositive.setVisibility(0);
             z = false | true;
         }
-        this.mButtonNegative = (Button) this.mWindow.findViewById(16908314);
+        this.mButtonNegative = (Button) this.mWindow.findViewById(R.id.button2);
         this.mButtonNegative.setOnClickListener(this.mButtonHandler);
         if (TextUtils.isEmpty(this.mButtonNegativeText)) {
             this.mButtonNegative.setVisibility(8);
@@ -535,7 +535,7 @@ public class AlertController {
             this.mButtonNegative.setVisibility(0);
             z |= true;
         }
-        this.mButtonNeutral = (Button) this.mWindow.findViewById(16908315);
+        this.mButtonNeutral = (Button) this.mWindow.findViewById(R.id.button3);
         this.mButtonNeutral.setOnClickListener(this.mButtonHandler);
         if (TextUtils.isEmpty(this.mButtonNeutralText)) {
             this.mButtonNeutral.setVisibility(8);
@@ -559,7 +559,7 @@ public class AlertController {
     private void setupContent(ViewGroup viewGroup) {
         this.mScrollView = (ScrollView) this.mWindow.findViewById(R.id.scrollView);
         this.mScrollView.setFocusable(false);
-        this.mMessageView = (TextView) this.mWindow.findViewById(16908299);
+        this.mMessageView = (TextView) this.mWindow.findViewById(R.id.message);
         if (this.mMessageView == null) {
             return;
         }
@@ -649,7 +649,7 @@ public class AlertController {
             this.mWindow.findViewById(R.id.title_template).setVisibility(8);
             return true;
         }
-        this.mIconView = (ImageView) this.mWindow.findViewById(16908294);
+        this.mIconView = (ImageView) this.mWindow.findViewById(R.id.icon);
         if (!TextUtils.isEmpty(this.mTitle)) {
             z = true;
         }
@@ -679,7 +679,7 @@ public class AlertController {
         setupContent(viewGroup);
         boolean z = setupButtons();
         ViewGroup viewGroup2 = (ViewGroup) this.mWindow.findViewById(R.id.topPanel);
-        TypedArray obtainStyledAttributes = this.mContext.obtainStyledAttributes(null, R.styleable.AlertDialog, 16842845, 0);
+        TypedArray obtainStyledAttributes = this.mContext.obtainStyledAttributes(null, R.styleable.AlertDialog, R.attr.alertDialogStyle, 0);
         boolean z2 = setupTitle(viewGroup2);
         View findViewById = this.mWindow.findViewById(R.id.buttonPanel);
         if (!z) {
@@ -697,7 +697,7 @@ public class AlertController {
             this.mWindow.setFlags(131072, 131072);
         }
         if (z3) {
-            FrameLayout frameLayout2 = (FrameLayout) this.mWindow.findViewById(16908331);
+            FrameLayout frameLayout2 = (FrameLayout) this.mWindow.findViewById(R.id.custom);
             frameLayout2.addView(inflate, new ViewGroup.LayoutParams(-1, -1));
             if (this.mViewSpacingSpecified) {
                 frameLayout2.setPadding(this.mViewSpacingLeft, this.mViewSpacingTop, this.mViewSpacingRight, this.mViewSpacingBottom);

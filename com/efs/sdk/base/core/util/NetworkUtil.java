@@ -232,7 +232,7 @@ public class NetworkUtil {
         }
         NetworkInfo activeNetworkInfo = getActiveNetworkInfo(context);
         if (activeNetworkInfo == null) {
-            return "disconnected";
+            return NETWORK_CLASS_DISCONNECTED;
         }
         if (activeNetworkInfo.getType() == 1) {
             return "wifi";

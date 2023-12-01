@@ -38,9 +38,9 @@ public final class WebSocketProtocol {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static void b(int i) {
-        String a2 = a(i);
-        if (a2 != null) {
-            throw new IllegalArgumentException(a2);
+        String a = a(i);
+        if (a != null) {
+            throw new IllegalArgumentException(a);
         }
     }
 }

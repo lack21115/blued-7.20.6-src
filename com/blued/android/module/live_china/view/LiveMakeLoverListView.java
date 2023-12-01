@@ -26,13 +26,9 @@ import java.util.ArrayList;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveMakeLoverListView.class */
 public class LiveMakeLoverListView extends FrameLayout implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    public RenrenPullToRefreshListView f14550a;
+    public RenrenPullToRefreshListView a;
     public LiveMakeFriendAdapter b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public boolean f14551c;
+    public boolean c;
     public View d;
     public View e;
     public View f;
@@ -55,63 +51,57 @@ public class LiveMakeLoverListView extends FrameLayout implements View.OnClickLi
     /* renamed from: com.blued.android.module.live_china.view.LiveMakeLoverListView$2  reason: invalid class name */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveMakeLoverListView$2.class */
     class AnonymousClass2 implements RenrenPullToRefreshListView.OnPullDownListener {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ LiveMakeLoverListView f14553a;
+        final /* synthetic */ LiveMakeLoverListView a;
 
         @Override // com.blued.android.framework.view.pulltorefresh.RenrenPullToRefreshListView.OnPullDownListener
         public void a() {
-            this.f14553a.a(true);
+            this.a.a(true);
         }
 
         @Override // com.blued.android.framework.view.pulltorefresh.RenrenPullToRefreshListView.OnPullDownListener
         public void b() {
-            this.f14553a.a(false);
+            this.a.a(false);
         }
     }
 
     /* renamed from: com.blued.android.module.live_china.view.LiveMakeLoverListView$3  reason: invalid class name */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveMakeLoverListView$3.class */
     class AnonymousClass3 implements LiveMakeFriendAdapter.LiveJoinListener {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ LiveMakeLoverListView f14554a;
+        final /* synthetic */ LiveMakeLoverListView a;
 
         @Override // com.blued.android.module.live_china.adapter.LiveMakeFriendAdapter.LiveJoinListener
         public void a(LiveFriendModel liveFriendModel, int i) {
-            if (this.f14554a.r instanceof RecordingOnliveFragment) {
-                this.f14554a.s.dd.a(liveFriendModel.uid);
-            } else if (this.f14554a.r instanceof PlayingOnliveFragment) {
+            if (this.a.r instanceof RecordingOnliveFragment) {
+                this.a.s.dd.a(liveFriendModel.uid);
+            } else if (this.a.r instanceof PlayingOnliveFragment) {
                 LiveSetDataObserver.a().e(liveFriendModel.uid);
             }
         }
 
         @Override // com.blued.android.module.live_china.adapter.LiveMakeFriendAdapter.LiveJoinListener
         public void a(LiveFriendModel liveFriendModel, int i, TextView textView) {
-            this.f14554a.a(liveFriendModel, textView);
+            this.a.a(liveFriendModel, textView);
         }
 
         @Override // com.blued.android.module.live_china.adapter.LiveMakeFriendAdapter.LiveJoinListener
         public void b(LiveFriendModel liveFriendModel, int i, TextView textView) {
-            this.f14554a.b(liveFriendModel, textView);
+            this.a.b(liveFriendModel, textView);
         }
     }
 
     /* renamed from: com.blued.android.module.live_china.view.LiveMakeLoverListView$5  reason: invalid class name */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveMakeLoverListView$5.class */
     class AnonymousClass5 implements Animation.AnimationListener {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ boolean f14556a;
+        final /* synthetic */ boolean a;
         final /* synthetic */ LiveMakeLoverListView b;
 
         @Override // android.view.animation.Animation.AnimationListener
         public void onAnimationEnd(Animation animation) {
-            if (this.f14556a) {
-                this.b.f14550a.k();
+            if (this.a) {
+                this.b.a.k();
             } else if (this.b.e.getVisibility() == 0 || this.b.d.getVisibility() == 0 || this.b.b.getCount() != 0) {
             } else {
-                this.b.f14550a.k();
+                this.b.a.k();
             }
         }
 
@@ -135,32 +125,30 @@ public class LiveMakeLoverListView extends FrameLayout implements View.OnClickLi
 
     public LiveMakeLoverListView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f14551c = true;
+        this.c = true;
         this.o = 0;
         this.u = new BluedUIHttpResponse<BluedEntity<LiveFriendModel, LiveFriendExtraModel>>() { // from class: com.blued.android.module.live_china.view.LiveMakeLoverListView.4
-
-            /* renamed from: a  reason: collision with root package name */
-            boolean f14555a = false;
+            boolean a = false;
 
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i2, String str) {
-                this.f14555a = true;
+                this.a = true;
                 return super.onUIFailure(i2, str);
             }
 
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 super.onUIFinish();
-                if (this.f14555a) {
+                if (this.a) {
                     LiveMakeLoverListView.this.d();
                 } else if (LiveMakeLoverListView.this.b.getCount() == 0) {
                     LiveMakeLoverListView.this.b();
                 } else {
                     LiveMakeLoverListView.this.e();
                 }
-                LiveMakeLoverListView.this.f14550a.q();
-                LiveMakeLoverListView.this.f14550a.j();
-                this.f14555a = false;
+                LiveMakeLoverListView.this.a.q();
+                LiveMakeLoverListView.this.a.j();
+                this.a = false;
             }
 
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
@@ -277,7 +265,7 @@ public class LiveMakeLoverListView extends FrameLayout implements View.OnClickLi
     public void b() {
         this.d.setVisibility(0);
         this.e.setVisibility(8);
-        this.f14550a.setVisibility(8);
+        this.a.setVisibility(8);
         this.f.setVisibility(8);
     }
 
@@ -311,19 +299,19 @@ public class LiveMakeLoverListView extends FrameLayout implements View.OnClickLi
     public void c() {
         this.f.setVisibility(0);
         this.e.setVisibility(8);
-        this.f14550a.setVisibility(8);
+        this.a.setVisibility(8);
         this.d.setVisibility(8);
     }
 
     public void d() {
         this.e.setVisibility(0);
         this.f.setVisibility(8);
-        this.f14550a.setVisibility(8);
+        this.a.setVisibility(8);
         this.d.setVisibility(8);
     }
 
     public void e() {
-        this.f14550a.setVisibility(0);
+        this.a.setVisibility(0);
         this.f.setVisibility(8);
         this.e.setVisibility(8);
         this.d.setVisibility(8);

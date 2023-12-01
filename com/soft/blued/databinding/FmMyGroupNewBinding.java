@@ -18,11 +18,11 @@ import com.soft.blued.customview.TabPageIndicatorWithDot;
 public final class FmMyGroupNewBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final RecyclerView f28757a;
+    public final RecyclerView f15067a;
     public final SmartRefreshLayout b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final RelativeLayout f28758c;
+    public final RelativeLayout f15068c;
     public final ConsecutiveScrollerLayout d;
     public final ShapeTextView e;
     public final TabPageIndicatorWithDot f;
@@ -35,9 +35,9 @@ public final class FmMyGroupNewBinding implements ViewBinding {
 
     private FmMyGroupNewBinding(LinearLayout linearLayout, RecyclerView recyclerView, SmartRefreshLayout smartRefreshLayout, RelativeLayout relativeLayout, ConsecutiveScrollerLayout consecutiveScrollerLayout, ShapeTextView shapeTextView, TabPageIndicatorWithDot tabPageIndicatorWithDot, CommonTopTitleNoTrans commonTopTitleNoTrans, TextView textView, TextView textView2, ConsecutiveViewPager consecutiveViewPager, ViewSearchBinding viewSearchBinding) {
         this.l = linearLayout;
-        this.f28757a = recyclerView;
+        this.f15067a = recyclerView;
         this.b = smartRefreshLayout;
-        this.f28758c = relativeLayout;
+        this.f15068c = relativeLayout;
         this.d = consecutiveScrollerLayout;
         this.e = shapeTextView;
         this.f = tabPageIndicatorWithDot;
@@ -50,29 +50,29 @@ public final class FmMyGroupNewBinding implements ViewBinding {
 
     public static FmMyGroupNewBinding a(View view) {
         String str;
-        RecyclerView recyclerView = (RecyclerView) view.findViewById(2131364150);
+        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.group_list);
         if (recyclerView != null) {
-            SmartRefreshLayout smartRefreshLayout = (SmartRefreshLayout) view.findViewById(2131369119);
+            SmartRefreshLayout smartRefreshLayout = (SmartRefreshLayout) view.findViewById(R.id.refresh_layout);
             if (smartRefreshLayout != null) {
                 RelativeLayout relativeLayout = (RelativeLayout) view.findViewById(R.id.rl_group_title);
                 if (relativeLayout != null) {
-                    ConsecutiveScrollerLayout consecutiveScrollerLayout = (ConsecutiveScrollerLayout) view.findViewById(R.id.scrollerLayout);
-                    if (consecutiveScrollerLayout != null) {
-                        ShapeTextView shapeTextView = (ShapeTextView) view.findViewById(2131369781);
-                        if (shapeTextView != null) {
-                            TabPageIndicatorWithDot tabPageIndicatorWithDot = (TabPageIndicatorWithDot) view.findViewById(2131370555);
+                    ConsecutiveScrollerLayout findViewById = view.findViewById(R.id.scrollerLayout);
+                    if (findViewById != null) {
+                        ShapeTextView findViewById2 = view.findViewById(R.id.shape_tab_layout);
+                        if (findViewById2 != null) {
+                            TabPageIndicatorWithDot tabPageIndicatorWithDot = (TabPageIndicatorWithDot) view.findViewById(R.id.tablayout);
                             if (tabPageIndicatorWithDot != null) {
-                                CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) view.findViewById(2131370694);
-                                if (commonTopTitleNoTrans != null) {
+                                CommonTopTitleNoTrans findViewById3 = view.findViewById(2131370694);
+                                if (findViewById3 != null) {
                                     TextView textView = (TextView) view.findViewById(R.id.tv_all);
                                     if (textView != null) {
-                                        TextView textView2 = (TextView) view.findViewById(2131371781);
+                                        TextView textView2 = (TextView) view.findViewById(R.id.tv_left);
                                         if (textView2 != null) {
-                                            ConsecutiveViewPager consecutiveViewPager = (ConsecutiveViewPager) view.findViewById(2131373100);
-                                            if (consecutiveViewPager != null) {
-                                                View findViewById = view.findViewById(R.id.view_search);
-                                                if (findViewById != null) {
-                                                    return new FmMyGroupNewBinding((LinearLayout) view, recyclerView, smartRefreshLayout, relativeLayout, consecutiveScrollerLayout, shapeTextView, tabPageIndicatorWithDot, commonTopTitleNoTrans, textView, textView2, consecutiveViewPager, ViewSearchBinding.a(findViewById));
+                                            ConsecutiveViewPager findViewById4 = view.findViewById(2131373100);
+                                            if (findViewById4 != null) {
+                                                View findViewById5 = view.findViewById(R.id.view_search);
+                                                if (findViewById5 != null) {
+                                                    return new FmMyGroupNewBinding((LinearLayout) view, recyclerView, smartRefreshLayout, relativeLayout, findViewById, findViewById2, tabPageIndicatorWithDot, findViewById3, textView, textView2, findViewById4, ViewSearchBinding.a(findViewById5));
                                                 }
                                                 str = "viewSearch";
                                             } else {

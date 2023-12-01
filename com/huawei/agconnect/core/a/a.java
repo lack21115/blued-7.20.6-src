@@ -8,10 +8,10 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public class a extends AGCInitFinishManager {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final List<AGCInitFinishManager.AGCInitFinishCallback> f22345a = new CopyOnWriteArrayList();
+    private static final List<AGCInitFinishManager.AGCInitFinishCallback> f8737a = new CopyOnWriteArrayList();
 
     public static void a() {
-        for (AGCInitFinishManager.AGCInitFinishCallback aGCInitFinishCallback : f22345a) {
+        for (AGCInitFinishManager.AGCInitFinishCallback aGCInitFinishCallback : f8737a) {
             aGCInitFinishCallback.onFinish();
         }
     }
@@ -19,7 +19,7 @@ public class a extends AGCInitFinishManager {
     @Override // com.huawei.agconnect.AGCInitFinishManager
     public void addAGCInitFinishCallback(AGCInitFinishManager.AGCInitFinishCallback aGCInitFinishCallback) {
         if (aGCInitFinishCallback != null) {
-            f22345a.add(aGCInitFinishCallback);
+            f8737a.add(aGCInitFinishCallback);
         }
     }
 }

@@ -10,7 +10,7 @@ public class MotionKeyTimeCycle extends MotionKey {
     public static final int KEY_TYPE = 3;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f2021c;
+    private String f1973c;
     private int d = -1;
     private float e = Float.NaN;
     private float f = Float.NaN;
@@ -56,7 +56,7 @@ public class MotionKeyTimeCycle extends MotionKey {
 
     @Override // androidx.constraintlayout.core.motion.key.MotionKey
     /* renamed from: clone */
-    public MotionKey mo1293clone() {
+    public MotionKey mo1156clone() {
         return new MotionKeyTimeCycle().copy((MotionKey) this);
     }
 
@@ -64,7 +64,7 @@ public class MotionKeyTimeCycle extends MotionKey {
     public MotionKeyTimeCycle copy(MotionKey motionKey) {
         super.copy(motionKey);
         MotionKeyTimeCycle motionKeyTimeCycle = (MotionKeyTimeCycle) motionKey;
-        this.f2021c = motionKeyTimeCycle.f2021c;
+        this.f1973c = motionKeyTimeCycle.f1973c;
         this.d = motionKeyTimeCycle.d;
         this.q = motionKeyTimeCycle.q;
         this.s = motionKeyTimeCycle.s;
@@ -202,7 +202,7 @@ public class MotionKeyTimeCycle extends MotionKey {
     @Override // androidx.constraintlayout.core.motion.key.MotionKey, androidx.constraintlayout.core.motion.utils.TypedValues
     public boolean setValue(int i, String str) {
         if (i == 420) {
-            this.f2021c = str;
+            this.f1973c = str;
             return true;
         } else if (i != 421) {
             return super.setValue(i, str);

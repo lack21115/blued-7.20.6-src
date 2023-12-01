@@ -25,7 +25,7 @@ public class FilePart extends PartBase {
     }
 
     public FilePart(String str, PartSource partSource, String str2, String str3) {
-        super(str, str2 == null ? "application/octet-stream" : str2, str3 == null ? "ISO-8859-1" : str3, DEFAULT_TRANSFER_ENCODING);
+        super(str, str2 == null ? DEFAULT_CONTENT_TYPE : str2, str3 == null ? "ISO-8859-1" : str3, DEFAULT_TRANSFER_ENCODING);
         if (partSource == null) {
             throw new IllegalArgumentException("Source may not be null");
         }

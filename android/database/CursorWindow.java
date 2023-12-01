@@ -9,8 +9,6 @@ import android.os.Process;
 import android.util.Log;
 import android.util.LongSparseArray;
 import android.util.SparseIntArray;
-import com.alipay.sdk.util.i;
-import com.android.internal.R;
 import dalvik.system.CloseGuard;
 
 /* loaded from: source-9557208-dex2jar.jar:android/database/CursorWindow.class */
@@ -52,7 +50,7 @@ public class CursorWindow extends SQLiteClosable implements Parcelable {
         this.mStartPos = 0;
         this.mName = (str == null || str.length() == 0) ? "<unnamed>" : "<unnamed>";
         if (sCursorWindowSize < 0) {
-            sCursorWindowSize = Resources.getSystem().getInteger(R.integer.config_cursorWindowSize) * 1024;
+            sCursorWindowSize = Resources.getSystem().getInteger(17694834) * 1024;
         }
         this.mWindowPtr = nativeCreate(this.mName, sCursorWindowSize);
         if (this.mWindowPtr == 0) {
@@ -406,7 +404,7 @@ public class CursorWindow extends SQLiteClosable implements Parcelable {
     }
 
     public String toString() {
-        return getName() + " {" + Long.toHexString(this.mWindowPtr) + i.d;
+        return getName() + " {" + Long.toHexString(this.mWindowPtr) + "}";
     }
 
     @Override // android.os.Parcelable

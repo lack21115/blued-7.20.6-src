@@ -6,7 +6,7 @@ import java.util.Map;
 public abstract class d {
 
     /* renamed from: c  reason: collision with root package name */
-    public com.getui.gtc.dyc.b.c f22008c = new com.getui.gtc.dyc.b.d() { // from class: com.getui.gtc.f.d.1
+    public com.getui.gtc.dyc.b.c f8401c = new com.getui.gtc.dyc.b.d() { // from class: com.getui.gtc.f.d.1
         @Override // com.getui.gtc.dyc.b.d
         public final void a(Exception exc) {
             d.this.a(exc);

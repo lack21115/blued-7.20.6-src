@@ -63,7 +63,7 @@ public class WidgetListFragment extends CustomSettingBaseFragment {
                 this.q.setVisibility(0);
                 String b = TimeAndDateUtils.b(vIPCustomSettingBase.stop_time + "");
                 TextView textView = this.q;
-                textView.setText(this.f33846a.getResources().getString(R.string.valid_time_period) + b);
+                textView.setText(this.f20155a.getResources().getString(R.string.valid_time_period) + b);
             } else {
                 this.p.setVisibility(8);
                 this.q.setVisibility(8);
@@ -73,7 +73,7 @@ public class WidgetListFragment extends CustomSettingBaseFragment {
             this.q.setVisibility(8);
             if (vIPCustomSettingBase.isDefault) {
                 if (h()) {
-                    this.k.setText(R.string.restore_default);
+                    this.k.setText((int) R.string.restore_default);
                 }
                 this.k.setVisibility(0);
                 this.l.setVisibility(8);
@@ -83,12 +83,12 @@ public class WidgetListFragment extends CustomSettingBaseFragment {
                     this.l.setVisibility(0);
                     String b2 = TimeAndDateUtils.b(vIPCustomSettingBase.stop_time + "");
                     TextView textView2 = this.l;
-                    textView2.setText(this.f33846a.getResources().getString(R.string.valid_time_period) + b2);
+                    textView2.setText(this.f20155a.getResources().getString(R.string.valid_time_period) + b2);
                 } else {
                     this.l.setVisibility(8);
                 }
                 if (h()) {
-                    this.k.setText(R.string.customize_now);
+                    this.k.setText((int) R.string.customize_now);
                 }
                 this.k.setVisibility(0);
             }
@@ -136,13 +136,13 @@ public class WidgetListFragment extends CustomSettingBaseFragment {
             this.q.setVisibility(0);
             String b = TimeAndDateUtils.b(vIPCustomSettingBase.stop_time + "");
             TextView textView = this.q;
-            textView.setText(this.f33846a.getResources().getString(R.string.valid_time_period) + b);
+            textView.setText(this.f20155a.getResources().getString(R.string.valid_time_period) + b);
         }
     }
 
     @Override // com.soft.blued.ui.user.fragment.CustomSettingBaseFragment
     public String c() {
-        return this.f33846a.getResources().getString(2131887375);
+        return this.f20155a.getResources().getString(2131887375);
     }
 
     @Override // com.soft.blued.ui.user.fragment.CustomSettingBaseFragment
@@ -165,10 +165,9 @@ public class WidgetListFragment extends CustomSettingBaseFragment {
         return R.layout.widget_skin_item;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onViewCreated(View view, Bundle bundle) {
         super.onViewCreated(view, bundle);
-        this.k = (ShapeTextView) this.b.findViewById(R.id.tv_btm_btn);
+        this.k = this.b.findViewById(R.id.tv_btm_btn);
         this.n = (TextView) this.b.findViewById(R.id.theme_name);
         this.m = (ImageView) this.b.findViewById(R.id.widget_view);
         this.o = (ImageView) this.b.findViewById(2131364232);
@@ -181,7 +180,7 @@ public class WidgetListFragment extends CustomSettingBaseFragment {
             this.k.setVisibility(8);
         } else {
             this.l.setVisibility(8);
-            this.k.setText(R.string.buy_vip_for_custom_setting);
+            this.k.setText((int) R.string.buy_vip_for_custom_setting);
         }
         this.k.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.WidgetListFragment.1
             @Override // android.view.View.OnClickListener

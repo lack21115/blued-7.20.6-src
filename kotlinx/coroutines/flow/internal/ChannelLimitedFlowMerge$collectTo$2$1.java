@@ -15,13 +15,9 @@ import kotlinx.coroutines.flow.Flow;
 @DebugMetadata(b = "Merge.kt", c = {96}, d = "invokeSuspend", e = "kotlinx.coroutines.flow.internal.ChannelLimitedFlowMerge$collectTo$2$1")
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/internal/ChannelLimitedFlowMerge$collectTo$2$1.class */
 final class ChannelLimitedFlowMerge$collectTo$2$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
-
-    /* renamed from: a  reason: collision with root package name */
-    int f43468a;
+    int a;
     final /* synthetic */ Flow<T> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ SendingCollector<T> f43469c;
+    final /* synthetic */ SendingCollector<T> c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -29,35 +25,35 @@ final class ChannelLimitedFlowMerge$collectTo$2$1 extends SuspendLambda implemen
     public ChannelLimitedFlowMerge$collectTo$2$1(Flow<? extends T> flow, SendingCollector<T> sendingCollector, Continuation<? super ChannelLimitedFlowMerge$collectTo$2$1> continuation) {
         super(2, continuation);
         this.b = flow;
-        this.f43469c = sendingCollector;
+        this.c = sendingCollector;
     }
 
     @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-        return ((ChannelLimitedFlowMerge$collectTo$2$1) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+        return ((ChannelLimitedFlowMerge$collectTo$2$1) create(coroutineScope, continuation)).invokeSuspend(Unit.a);
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        return new ChannelLimitedFlowMerge$collectTo$2$1(this.b, this.f43469c, continuation);
+        return new ChannelLimitedFlowMerge$collectTo$2$1(this.b, this.c, continuation);
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        Object a2 = IntrinsicsKt.a();
-        int i = this.f43468a;
+        Object a = IntrinsicsKt.a();
+        int i = this.a;
         if (i == 0) {
             ResultKt.a(obj);
-            this.f43468a = 1;
-            if (this.b.a(this.f43469c, this) == a2) {
-                return a2;
+            this.a = 1;
+            if (this.b.a(this.c, this) == a) {
+                return a;
             }
         } else if (i != 1) {
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         } else {
             ResultKt.a(obj);
         }
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

@@ -4,7 +4,7 @@ import android.os.AsyncTask;
 
 /* loaded from: source-8457232-dex2jar.jar:com/ss/android/downloadlib/utils/ox.class */
 public class ox {
-    static final mb mb = new C0881ox();
+    static final mb mb = new C0711ox();
 
     /* loaded from: source-8457232-dex2jar.jar:com/ss/android/downloadlib/utils/ox$mb.class */
     static class mb {
@@ -21,8 +21,8 @@ public class ox {
 
     /* renamed from: com.ss.android.downloadlib.utils.ox$ox  reason: collision with other inner class name */
     /* loaded from: source-8457232-dex2jar.jar:com/ss/android/downloadlib/utils/ox$ox.class */
-    static class C0881ox extends mb {
-        private C0881ox() {
+    static class C0711ox extends mb {
+        private C0711ox() {
             super();
         }
 

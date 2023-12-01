@@ -20,9 +20,7 @@ import java.util.Set;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/imagecache/drawable/RoundedDrawable.class */
 public class RoundedDrawable extends Drawable implements IRecyclingDrawable {
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f9621a;
+    private String a;
     private Set<RecyclingBitmapDrawable> b;
     private float e;
     private final BitmapShader g;
@@ -32,9 +30,7 @@ public class RoundedDrawable extends Drawable implements IRecyclingDrawable {
     private final Paint l;
     private int m;
     private int n;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final RectF f9622c = new RectF();
+    private final RectF c = new RectF();
     private final RectF d = new RectF();
     private final RectF f = new RectF();
     private final RectF k = new RectF();
@@ -45,9 +41,7 @@ public class RoundedDrawable extends Drawable implements IRecyclingDrawable {
     /* renamed from: com.blued.android.core.imagecache.drawable.RoundedDrawable$1  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/imagecache/drawable/RoundedDrawable$1.class */
     public static /* synthetic */ class AnonymousClass1 {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f9623a;
+        static final /* synthetic */ int[] a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:17:0x0059 -> B:33:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:19:0x005d -> B:43:0x001f). Please submit an issue!!! */
@@ -57,33 +51,33 @@ public class RoundedDrawable extends Drawable implements IRecyclingDrawable {
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:27:0x006d -> B:41:0x004c). Please submit an issue!!! */
         static {
             int[] iArr = new int[ImageView.ScaleType.values().length];
-            f9623a = iArr;
+            a = iArr;
             try {
                 iArr[ImageView.ScaleType.CENTER.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f9623a[ImageView.ScaleType.CENTER_CROP.ordinal()] = 2;
+                a[ImageView.ScaleType.CENTER_CROP.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f9623a[ImageView.ScaleType.CENTER_INSIDE.ordinal()] = 3;
+                a[ImageView.ScaleType.CENTER_INSIDE.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f9623a[ImageView.ScaleType.FIT_CENTER.ordinal()] = 4;
+                a[ImageView.ScaleType.FIT_CENTER.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f9623a[ImageView.ScaleType.FIT_END.ordinal()] = 5;
+                a[ImageView.ScaleType.FIT_END.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
             try {
-                f9623a[ImageView.ScaleType.FIT_START.ordinal()] = 6;
+                a[ImageView.ScaleType.FIT_START.ordinal()] = 6;
             } catch (NoSuchFieldError e6) {
             }
             try {
-                f9623a[ImageView.ScaleType.FIT_XY.ordinal()] = 7;
+                a[ImageView.ScaleType.FIT_XY.ordinal()] = 7;
             } catch (NoSuchFieldError e7) {
             }
         }
@@ -158,9 +152,9 @@ public class RoundedDrawable extends Drawable implements IRecyclingDrawable {
                     } else if (drawable2 instanceof RoundedDrawable) {
                         drawableArr[i4] = drawable2;
                     } else {
-                        Bitmap a2 = a(drawable2);
-                        if (a2 != null) {
-                            drawableArr[i4] = new RoundedDrawable(a2, f, i, i2);
+                        Bitmap a = a(drawable2);
+                        if (a != null) {
+                            drawableArr[i4] = new RoundedDrawable(a, f, i, i2);
                             if (drawable2 instanceof RecyclingBitmapDrawable) {
                                 ((RoundedDrawable) drawableArr[i4]).a((RecyclingBitmapDrawable) drawable2);
                             }
@@ -172,9 +166,9 @@ public class RoundedDrawable extends Drawable implements IRecyclingDrawable {
                     i3 = i4 + 1;
                 }
             } else {
-                Bitmap a3 = a(drawable);
-                if (a3 != null) {
-                    RoundedDrawable roundedDrawable = new RoundedDrawable(a3, f, i, i2);
+                Bitmap a2 = a(drawable);
+                if (a2 != null) {
+                    RoundedDrawable roundedDrawable = new RoundedDrawable(a2, f, i, i2);
                     if (drawable instanceof RecyclingBitmapDrawable) {
                         roundedDrawable.a((RecyclingBitmapDrawable) drawable);
                     }
@@ -192,13 +186,13 @@ public class RoundedDrawable extends Drawable implements IRecyclingDrawable {
     private void g() {
         float width;
         float height;
-        this.k.set(this.f9622c);
+        this.k.set(this.c);
         RectF rectF = this.d;
         int i = this.m;
         rectF.set(i + 0, i + 0, this.k.width() - this.m, this.k.height() - this.m);
-        switch (AnonymousClass1.f9623a[this.o.ordinal()]) {
+        switch (AnonymousClass1.a[this.o.ordinal()]) {
             case 1:
-                this.k.set(this.f9622c);
+                this.k.set(this.c);
                 RectF rectF2 = this.d;
                 int i2 = this.m;
                 rectF2.set(i2 + 0, i2 + 0, this.k.width() - this.m, this.k.height() - this.m);
@@ -206,7 +200,7 @@ public class RoundedDrawable extends Drawable implements IRecyclingDrawable {
                 this.p.setTranslate((int) (((this.d.width() - this.i) * 0.5f) + 0.5f), (int) (((this.d.height() - this.j) * 0.5f) + 0.5f));
                 break;
             case 2:
-                this.k.set(this.f9622c);
+                this.k.set(this.c);
                 RectF rectF3 = this.d;
                 int i3 = this.m;
                 rectF3.set(i3 + 0, i3 + 0, this.k.width() - this.m, this.k.height() - this.m);
@@ -226,9 +220,9 @@ public class RoundedDrawable extends Drawable implements IRecyclingDrawable {
                 break;
             case 3:
                 this.p.set(null);
-                float min = (((float) this.i) > this.f9622c.width() || ((float) this.j) > this.f9622c.height()) ? Math.min(this.f9622c.width() / this.i, this.f9622c.height() / this.j) : 1.0f;
-                float width2 = (int) (((this.f9622c.width() - (this.i * min)) * 0.5f) + 0.5f);
-                float height2 = (int) (((this.f9622c.height() - (this.j * min)) * 0.5f) + 0.5f);
+                float min = (((float) this.i) > this.c.width() || ((float) this.j) > this.c.height()) ? Math.min(this.c.width() / this.i, this.c.height() / this.j) : 1.0f;
+                float width2 = (int) (((this.c.width() - (this.i * min)) * 0.5f) + 0.5f);
+                float height2 = (int) (((this.c.height() - (this.j * min)) * 0.5f) + 0.5f);
                 this.p.setScale(min, min);
                 this.p.postTranslate(width2, height2);
                 this.k.set(this.f);
@@ -238,27 +232,27 @@ public class RoundedDrawable extends Drawable implements IRecyclingDrawable {
                 break;
             case 4:
                 this.k.set(this.f);
-                this.p.setRectToRect(this.f, this.f9622c, Matrix.ScaleToFit.CENTER);
+                this.p.setRectToRect(this.f, this.c, Matrix.ScaleToFit.CENTER);
                 this.p.mapRect(this.k);
                 this.d.set(this.k.left + this.m, this.k.top + this.m, this.k.right - this.m, this.k.bottom - this.m);
                 this.p.setRectToRect(this.f, this.d, Matrix.ScaleToFit.FILL);
                 break;
             case 5:
                 this.k.set(this.f);
-                this.p.setRectToRect(this.f, this.f9622c, Matrix.ScaleToFit.END);
+                this.p.setRectToRect(this.f, this.c, Matrix.ScaleToFit.END);
                 this.p.mapRect(this.k);
                 this.d.set(this.k.left + this.m, this.k.top + this.m, this.k.right - this.m, this.k.bottom - this.m);
                 this.p.setRectToRect(this.f, this.d, Matrix.ScaleToFit.FILL);
                 break;
             case 6:
                 this.k.set(this.f);
-                this.p.setRectToRect(this.f, this.f9622c, Matrix.ScaleToFit.START);
+                this.p.setRectToRect(this.f, this.c, Matrix.ScaleToFit.START);
                 this.p.mapRect(this.k);
                 this.d.set(this.k.left + this.m, this.k.top + this.m, this.k.right - this.m, this.k.bottom - this.m);
                 this.p.setRectToRect(this.f, this.d, Matrix.ScaleToFit.FILL);
                 break;
             default:
-                this.k.set(this.f9622c);
+                this.k.set(this.c);
                 RectF rectF4 = this.d;
                 int i5 = this.m;
                 rectF4.set(i5 + 0, i5 + 0, this.k.width() - this.m, this.k.height() - this.m);
@@ -301,7 +295,7 @@ public class RoundedDrawable extends Drawable implements IRecyclingDrawable {
 
     @Override // com.blued.android.core.imagecache.drawable.IRecyclingDrawable
     public void a(String str) {
-        this.f9621a = str;
+        this.a = str;
     }
 
     @Override // com.blued.android.core.imagecache.drawable.IRecyclingDrawable
@@ -321,7 +315,7 @@ public class RoundedDrawable extends Drawable implements IRecyclingDrawable {
 
     @Override // com.blued.android.core.imagecache.drawable.IRecyclingDrawable
     public String b() {
-        return this.f9621a;
+        return this.a;
     }
 
     public void b(int i) {
@@ -402,11 +396,10 @@ public class RoundedDrawable extends Drawable implements IRecyclingDrawable {
         return -3;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.graphics.drawable.Drawable
-    public void onBoundsChange(Rect rect) {
+    protected void onBoundsChange(Rect rect) {
         super.onBoundsChange(rect);
-        this.f9622c.set(rect);
+        this.c.set(rect);
         g();
     }
 

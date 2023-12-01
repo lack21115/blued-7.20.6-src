@@ -12,11 +12,11 @@ import java.util.HashMap;
 public class bn implements ExpressResponse {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f9348a;
+    private Context f6508a;
     private int b = 1;
 
     /* renamed from: c  reason: collision with root package name */
-    private ExpressResponse.ExpressInteractionListener f9349c;
+    private ExpressResponse.ExpressInteractionListener f6509c;
     private ExpressResponse.ExpressAdDownloadWindowListener d;
     private ExpressResponse.ExpressDislikeListener e;
     private final dd f;
@@ -25,7 +25,7 @@ public class bn implements ExpressResponse {
     private ExpressAdData i;
 
     public bn(Context context, dd ddVar, a aVar) {
-        this.f9348a = context;
+        this.f6508a = context;
         this.f = ddVar;
         this.g = aVar;
     }
@@ -40,14 +40,14 @@ public class bn implements ExpressResponse {
     }
 
     public void a(View view, int i, int i2) {
-        ExpressResponse.ExpressInteractionListener expressInteractionListener = this.f9349c;
+        ExpressResponse.ExpressInteractionListener expressInteractionListener = this.f6509c;
         if (expressInteractionListener != null) {
             expressInteractionListener.onAdRenderSuccess(view, i, i2);
         }
     }
 
     public void a(View view, String str, int i) {
-        ExpressResponse.ExpressInteractionListener expressInteractionListener = this.f9349c;
+        ExpressResponse.ExpressInteractionListener expressInteractionListener = this.f6509c;
         if (expressInteractionListener != null) {
             expressInteractionListener.onAdRenderFail(view, str, i);
         }
@@ -77,7 +77,7 @@ public class bn implements ExpressResponse {
     }
 
     public void b() {
-        ExpressResponse.ExpressInteractionListener expressInteractionListener = this.f9349c;
+        ExpressResponse.ExpressInteractionListener expressInteractionListener = this.f6509c;
         if (expressInteractionListener != null) {
             expressInteractionListener.onAdClick();
         }
@@ -128,7 +128,7 @@ public class bn implements ExpressResponse {
     }
 
     public void c() {
-        ExpressResponse.ExpressInteractionListener expressInteractionListener = this.f9349c;
+        ExpressResponse.ExpressInteractionListener expressInteractionListener = this.f6509c;
         if (expressInteractionListener != null) {
             expressInteractionListener.onAdExposed();
         }
@@ -149,7 +149,7 @@ public class bn implements ExpressResponse {
     }
 
     public void f() {
-        ExpressResponse.ExpressInteractionListener expressInteractionListener = this.f9349c;
+        ExpressResponse.ExpressInteractionListener expressInteractionListener = this.f6509c;
         if (expressInteractionListener != null) {
             expressInteractionListener.onAdUnionClick();
         }
@@ -233,7 +233,7 @@ public class bn implements ExpressResponse {
 
     @Override // com.baidu.mobads.sdk.api.ExpressResponse
     public void setInteractionListener(ExpressResponse.ExpressInteractionListener expressInteractionListener) {
-        this.f9349c = expressInteractionListener;
+        this.f6509c = expressInteractionListener;
     }
 
     @Override // com.baidu.mobads.sdk.api.ExpressResponse

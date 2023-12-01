@@ -26,9 +26,8 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Locale;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-4181928-dex2jar.jar:android/widget/DatePickerCalendarDelegate.class */
-public class DatePickerCalendarDelegate extends DatePicker.AbstractDatePickerDelegate implements View.OnClickListener, DatePickerController {
+class DatePickerCalendarDelegate extends DatePicker.AbstractDatePickerDelegate implements View.OnClickListener, DatePickerController {
     private static final int ANIMATION_DURATION = 300;
     private static final int DAY_INDEX = 1;
     private static final int DEFAULT_END_YEAR = 2100;
@@ -184,7 +183,7 @@ public class DatePickerCalendarDelegate extends DatePicker.AbstractDatePickerDel
         this.mMaxDate.set(2100, 11, 31);
         Resources resources = this.mDelegator.getResources();
         TypedArray obtainStyledAttributes = this.mContext.obtainStyledAttributes(attributeSet, R.styleable.DatePicker, i, i2);
-        View inflate = ((LayoutInflater) this.mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(obtainStyledAttributes.getResourceId(17, R.layout.date_picker_holo), (ViewGroup) null);
+        View inflate = ((LayoutInflater) this.mContext.getSystemService("layout_inflater")).inflate(obtainStyledAttributes.getResourceId(17, R.layout.date_picker_holo), (ViewGroup) null);
         this.mDelegator.addView(inflate);
         this.mDayOfWeekView = (TextView) inflate.findViewById(R.id.date_picker_header);
         LinearLayout linearLayout = (LinearLayout) inflate.findViewById(R.id.day_picker_selector_layout);
@@ -207,17 +206,17 @@ public class DatePickerCalendarDelegate extends DatePicker.AbstractDatePickerDel
         if (resourceId2 != -1) {
             this.mHeaderMonthTextView.setTextAppearance(context, resourceId2);
         }
-        this.mHeaderMonthTextView.setTextColor(ColorStateList.addFirstIfMissing(this.mHeaderMonthTextView.getTextColors(), 16842913, color));
+        this.mHeaderMonthTextView.setTextColor(ColorStateList.addFirstIfMissing(this.mHeaderMonthTextView.getTextColors(), R.attr.state_selected, color));
         int resourceId3 = obtainStyledAttributes.getResourceId(11, -1);
         if (resourceId3 != -1) {
             this.mHeaderDayOfMonthTextView.setTextAppearance(context, resourceId3);
         }
-        this.mHeaderDayOfMonthTextView.setTextColor(ColorStateList.addFirstIfMissing(this.mHeaderDayOfMonthTextView.getTextColors(), 16842913, color));
+        this.mHeaderDayOfMonthTextView.setTextColor(ColorStateList.addFirstIfMissing(this.mHeaderDayOfMonthTextView.getTextColors(), R.attr.state_selected, color));
         int resourceId4 = obtainStyledAttributes.getResourceId(12, -1);
         if (resourceId4 != -1) {
             this.mHeaderYearTextView.setTextAppearance(context, resourceId4);
         }
-        this.mHeaderYearTextView.setTextColor(ColorStateList.addFirstIfMissing(this.mHeaderYearTextView.getTextColors(), 16842913, color));
+        this.mHeaderYearTextView.setTextColor(ColorStateList.addFirstIfMissing(this.mHeaderYearTextView.getTextColors(), R.attr.state_selected, color));
         this.mDayPickerView = new DayPickerView(this.mContext);
         this.mDayPickerView.setFirstDayOfWeek(this.mFirstDayOfWeek);
         this.mDayPickerView.setMinDate(this.mMinDate.getTimeInMillis());
@@ -228,7 +227,7 @@ public class DatePickerCalendarDelegate extends DatePicker.AbstractDatePickerDel
         this.mYearPickerView.init(this);
         this.mYearPickerView.setRange(this.mMinDate, this.mMaxDate);
         this.mYearPickerView.setYearSelectedCircleColor(obtainStyledAttributes.getColor(14, highlightColor));
-        this.mDayPickerView.setCalendarTextColor(ColorStateList.addFirstIfMissing(obtainStyledAttributes.getColorStateList(15), 16842913, obtainStyledAttributes.getColor(18, highlightColor)));
+        this.mDayPickerView.setCalendarTextColor(ColorStateList.addFirstIfMissing(obtainStyledAttributes.getColorStateList(15), R.attr.state_selected, obtainStyledAttributes.getColor(18, highlightColor)));
         this.mDayPickerDescription = resources.getString(R.string.day_picker_description);
         this.mSelectDay = resources.getString(R.string.select_day);
         this.mYearPickerDescription = resources.getString(R.string.year_picker_description);

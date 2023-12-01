@@ -8,11 +8,12 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import androidx.cardview.widget.RoundRectDrawableWithShadow;
 
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8756600-dex2jar.jar:androidx/cardview/widget/CardViewBaseImpl.class */
-class CardViewBaseImpl implements CardViewImpl {
+public class CardViewBaseImpl implements CardViewImpl {
 
     /* renamed from: a  reason: collision with root package name */
-    final RectF f1934a = new RectF();
+    final RectF f1886a = new RectF();
 
     private RoundRectDrawableWithShadow a(Context context, ColorStateList colorStateList, float f, float f2, float f3) {
         return new RoundRectDrawableWithShadow(context.getResources(), colorStateList, f, f2, f3);
@@ -54,7 +55,7 @@ class CardViewBaseImpl implements CardViewImpl {
 
     @Override // androidx.cardview.widget.CardViewImpl
     public void initStatic() {
-        RoundRectDrawableWithShadow.f1938a = new RoundRectDrawableWithShadow.RoundRectHelper() { // from class: androidx.cardview.widget.CardViewBaseImpl.1
+        RoundRectDrawableWithShadow.f1890a = new RoundRectDrawableWithShadow.RoundRectHelper() { // from class: androidx.cardview.widget.CardViewBaseImpl.1
             @Override // androidx.cardview.widget.RoundRectDrawableWithShadow.RoundRectHelper
             public void drawRoundRect(Canvas canvas, RectF rectF, float f, Paint paint) {
                 float f2 = 2.0f * f;
@@ -63,19 +64,19 @@ class CardViewBaseImpl implements CardViewImpl {
                 if (f >= 1.0f) {
                     float f3 = f + 0.5f;
                     float f4 = -f3;
-                    CardViewBaseImpl.this.f1934a.set(f4, f4, f3, f3);
+                    CardViewBaseImpl.this.f1886a.set(f4, f4, f3, f3);
                     int save = canvas.save();
                     canvas.translate(rectF.left + f3, rectF.top + f3);
-                    canvas.drawArc(CardViewBaseImpl.this.f1934a, 180.0f, 90.0f, true, paint);
+                    canvas.drawArc(CardViewBaseImpl.this.f1886a, 180.0f, 90.0f, true, paint);
                     canvas.translate(width, 0.0f);
                     canvas.rotate(90.0f);
-                    canvas.drawArc(CardViewBaseImpl.this.f1934a, 180.0f, 90.0f, true, paint);
+                    canvas.drawArc(CardViewBaseImpl.this.f1886a, 180.0f, 90.0f, true, paint);
                     canvas.translate((height - f2) - 1.0f, 0.0f);
                     canvas.rotate(90.0f);
-                    canvas.drawArc(CardViewBaseImpl.this.f1934a, 180.0f, 90.0f, true, paint);
+                    canvas.drawArc(CardViewBaseImpl.this.f1886a, 180.0f, 90.0f, true, paint);
                     canvas.translate(width, 0.0f);
                     canvas.rotate(90.0f);
-                    canvas.drawArc(CardViewBaseImpl.this.f1934a, 180.0f, 90.0f, true, paint);
+                    canvas.drawArc(CardViewBaseImpl.this.f1886a, 180.0f, 90.0f, true, paint);
                     canvas.restoreToCount(save);
                     canvas.drawRect((rectF.left + f3) - 1.0f, rectF.top, (rectF.right - f3) + 1.0f, rectF.top + f3, paint);
                     canvas.drawRect((rectF.left + f3) - 1.0f, rectF.bottom - f3, (rectF.right - f3) + 1.0f, rectF.bottom, paint);

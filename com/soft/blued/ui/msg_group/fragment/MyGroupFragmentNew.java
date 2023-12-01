@@ -16,9 +16,12 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewbinding.ViewBinding;
+import com.anythink.expressad.a;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.ui.TerminalActivity;
 import com.blued.android.core.utils.skin.BluedSkinUtils;
@@ -41,6 +44,7 @@ import com.blued.android.module.common.widget.dialog.CommonAlertDialog;
 import com.blued.das.client.socialnet.SocialNetWorkProtos;
 import com.bytedance.applog.tracker.Tracker;
 import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.heytap.mcssdk.constant.IntentConstant;
 import com.jeremyliao.liveeventbus.LiveEventBus;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
@@ -87,15 +91,15 @@ import skin.support.observe.SkinObservable;
 public class MyGroupFragmentNew extends MVVMBaseFragment<MyGroupViewModel> implements BluedSkinObserver {
 
     /* renamed from: c  reason: collision with root package name */
-    private final ViewBindingProperty f32769c;
+    private final ViewBindingProperty f19078c;
     private boolean d;
     private int e;
     private final MyGroupAdapter f;
     private MyAdapter g;
-    static final /* synthetic */ KProperty<Object>[] b = {Reflection.a(new PropertyReference1Impl(MyGroupFragmentNew.class, "viewBinding", "getViewBinding()Lcom/soft/blued/databinding/FmMyGroupNewBinding;", 0))};
+    static final /* synthetic */ KProperty<Object>[] b = {(KProperty) Reflection.a(new PropertyReference1Impl(MyGroupFragmentNew.class, "viewBinding", "getViewBinding()Lcom/soft/blued/databinding/FmMyGroupNewBinding;", 0))};
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Companion f32768a = new Companion(null);
+    public static final Companion f19077a = new Companion(null);
 
     @Metadata
     /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/msg_group/fragment/MyGroupFragmentNew$Companion.class */
@@ -117,49 +121,49 @@ public class MyGroupFragmentNew extends MVVMBaseFragment<MyGroupViewModel> imple
     public static final class MyAdapter extends FragmentStatePagerAdapter {
 
         /* renamed from: a  reason: collision with root package name */
-        private final ArrayList<String> f32770a;
+        private final ArrayList<String> f19079a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public MyAdapter(FragmentManager fm) {
-            super(fm, 1);
-            Intrinsics.e(fm, "fm");
-            this.f32770a = CollectionsKt.d(AppInfo.d().getString(R.string.group_nearby_tab), AppInfo.d().getString(R.string.group_recommend_tab));
+        public MyAdapter(FragmentManager fragmentManager) {
+            super(fragmentManager, 1);
+            Intrinsics.e(fragmentManager, "fm");
+            this.f19079a = CollectionsKt.d(new String[]{AppInfo.d().getString(R.string.group_nearby_tab), AppInfo.d().getString(R.string.group_recommend_tab)});
         }
 
         @Override // androidx.viewpager.widget.PagerAdapter
         public int getCount() {
-            return this.f32770a.size();
+            return this.f19079a.size();
         }
 
         @Override // androidx.fragment.app.FragmentStatePagerAdapter
         public Fragment getItem(int i) {
             if (i != 0 && i == 1) {
-                return new RecommendGroupFragment(RecommendGroupFragment.RecommendType.RECOMMEND);
+                return (Fragment) new RecommendGroupFragment(RecommendGroupFragment.RecommendType.RECOMMEND);
             }
-            return new RecommendGroupFragment(RecommendGroupFragment.RecommendType.NEARBY);
+            return (Fragment) new RecommendGroupFragment(RecommendGroupFragment.RecommendType.NEARBY);
         }
 
         @Override // androidx.viewpager.widget.PagerAdapter
         public CharSequence getPageTitle(int i) {
-            String str = this.f32770a.get(i);
+            String str = this.f19079a.get(i);
             Intrinsics.c(str, "tabs[position]");
             return str;
         }
     }
 
     public MyGroupFragmentNew() {
-        super(R.layout.fm_my_group_new);
-        this.f32769c = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<MyGroupFragmentNew, FmMyGroupNewBinding>() { // from class: com.soft.blued.ui.msg_group.fragment.MyGroupFragmentNew$special$$inlined$viewBindingFragment$default$1
-            @Override // kotlin.jvm.functions.Function1
+        super((int) R.layout.fm_my_group_new);
+        this.f19078c = ((Fragment) this) instanceof DialogFragment ? (ViewBindingProperty) new DialogFragmentViewBindingProperty(new Function1<MyGroupFragmentNew, FmMyGroupNewBinding>() { // from class: com.soft.blued.ui.msg_group.fragment.MyGroupFragmentNew$special$$inlined$viewBindingFragment$default$1
+            /* JADX WARN: Incorrect types in method signature: (Lcom/soft/blued/ui/msg_group/fragment/MyGroupFragmentNew;)Lcom/soft/blued/databinding/FmMyGroupNewBinding; */
             /* renamed from: a */
-            public final FmMyGroupNewBinding invoke(MyGroupFragmentNew fragment) {
+            public final ViewBinding invoke(Fragment fragment) {
                 Intrinsics.e(fragment, "fragment");
                 return FmMyGroupNewBinding.a(fragment.requireView());
             }
         }) : new FragmentViewBindingProperty(new Function1<MyGroupFragmentNew, FmMyGroupNewBinding>() { // from class: com.soft.blued.ui.msg_group.fragment.MyGroupFragmentNew$special$$inlined$viewBindingFragment$default$2
-            @Override // kotlin.jvm.functions.Function1
+            /* JADX WARN: Incorrect types in method signature: (Lcom/soft/blued/ui/msg_group/fragment/MyGroupFragmentNew;)Lcom/soft/blued/databinding/FmMyGroupNewBinding; */
             /* renamed from: a */
-            public final FmMyGroupNewBinding invoke(MyGroupFragmentNew fragment) {
+            public final ViewBinding invoke(Fragment fragment) {
                 Intrinsics.e(fragment, "fragment");
                 return FmMyGroupNewBinding.a(fragment.requireView());
             }
@@ -174,9 +178,9 @@ public class MyGroupFragmentNew extends MVVMBaseFragment<MyGroupViewModel> imple
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(FmMyGroupNewBinding it, ValueAnimator valueAnimator) {
-        Intrinsics.e(it, "$it");
-        ConsecutiveScrollerLayout consecutiveScrollerLayout = it.d;
+    public static final void a(FmMyGroupNewBinding fmMyGroupNewBinding, ValueAnimator valueAnimator) {
+        Intrinsics.e(fmMyGroupNewBinding, "$it");
+        ConsecutiveScrollerLayout consecutiveScrollerLayout = fmMyGroupNewBinding.d;
         Object animatedValue = valueAnimator.getAnimatedValue();
         if (animatedValue == null) {
             throw new NullPointerException("null cannot be cast to non-null type kotlin.Int");
@@ -185,12 +189,12 @@ public class MyGroupFragmentNew extends MVVMBaseFragment<MyGroupViewModel> imple
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(MyGroupFragmentNew this$0) {
+    public static final void a(MyGroupFragmentNew myGroupFragmentNew) {
         int e;
         int e2;
-        Intrinsics.e(this$0, "this$0");
-        final FmMyGroupNewBinding p = this$0.p();
-        if (p != null && (e2 = (e = this$0.a().e() + BluedViewExtKt.a(20)) - BluedViewExtKt.a(40)) > 0) {
+        Intrinsics.e(myGroupFragmentNew, "this$0");
+        final FmMyGroupNewBinding p = myGroupFragmentNew.p();
+        if (p != null && (e2 = (e = ((MyGroupViewModel) myGroupFragmentNew.a()).e() + BluedViewExtKt.a(20)) - BluedViewExtKt.a(40)) > 0) {
             p.d.scrollTo(0, e2);
             ValueAnimator ofInt = ValueAnimator.ofInt(e2, e);
             ofInt.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.soft.blued.ui.msg_group.fragment.-$$Lambda$MyGroupFragmentNew$k8MG_MK5Jkob-CamvTZG36hLun8
@@ -216,24 +220,24 @@ public class MyGroupFragmentNew extends MVVMBaseFragment<MyGroupViewModel> imple
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(MyGroupFragmentNew this$0, DialogInterface dialogInterface, int i) {
+    public static final void a(MyGroupFragmentNew myGroupFragmentNew, DialogInterface dialogInterface, int i) {
         Tracker.onClick(dialogInterface, i);
-        Intrinsics.e(this$0, "this$0");
+        Intrinsics.e(myGroupFragmentNew, "this$0");
         dialogInterface.dismiss();
-        WebViewShowInfoFragment.show(this$0.getContext(), Intrinsics.a(GroupConstant.f32663a, (Object) "create_group"));
+        WebViewShowInfoFragment.show(myGroupFragmentNew.getContext(), Intrinsics.a(GroupConstant.f18972a, "create_group"));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(MyGroupFragmentNew this$0, View view) {
+    public static final void a(MyGroupFragmentNew myGroupFragmentNew, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.a().k();
+        Intrinsics.e(myGroupFragmentNew, "this$0");
+        ((MyGroupViewModel) myGroupFragmentNew.a()).k();
         EventTrackGroup.a(SocialNetWorkProtos.Event.GROUP_CREATE_CLICK);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(MyGroupFragmentNew this$0, BaseQuickAdapter baseQuickAdapter, View view, int i) {
-        Intrinsics.e(this$0, "this$0");
+    public static final void a(MyGroupFragmentNew myGroupFragmentNew, BaseQuickAdapter baseQuickAdapter, View view, int i) {
+        Intrinsics.e(myGroupFragmentNew, "this$0");
         Object obj = baseQuickAdapter.getData().get(i);
         if (obj == null) {
             throw new NullPointerException("null cannot be cast to non-null type com.blued.android.module.common.group.GroupInfoModel");
@@ -241,23 +245,23 @@ public class MyGroupFragmentNew extends MVVMBaseFragment<MyGroupViewModel> imple
         GroupInfoModel groupInfoModel = (GroupInfoModel) obj;
         if (groupInfoModel.itemType != 0 && groupInfoModel.itemType != 5) {
             if (groupInfoModel.itemType == 4) {
-                WebViewShowInfoFragment.show(this$0.getContext(), Intrinsics.a(GroupConstant.f32663a, (Object) "group_list"));
+                WebViewShowInfoFragment.show(myGroupFragmentNew.getContext(), Intrinsics.a(GroupConstant.f18972a, "group_list"));
                 return;
             }
             return;
         }
         EventTrackGroup.a(SocialNetWorkProtos.Event.GROUP_CLICK, groupInfoModel.label, groupInfoModel.group_role == 1 ? SocialNetWorkProtos.SourceType.CREATE : SocialNetWorkProtos.SourceType.JOIN, String.valueOf(groupInfoModel.group_id));
-        Context context = this$0.getContext();
+        Context context = myGroupFragmentNew.getContext();
         GroupInfoFragment.a(context, groupInfoModel.group_id + "", groupInfoModel, SocialNetWorkProtos.SourceType.MYGROUP);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(MyGroupFragmentNew this$0, RefreshLayout it) {
+    public static final void a(MyGroupFragmentNew myGroupFragmentNew, RefreshLayout refreshLayout) {
         ConsecutiveViewPager consecutiveViewPager;
-        Intrinsics.e(this$0, "this$0");
-        Intrinsics.e(it, "it");
-        this$0.a().l();
-        FmMyGroupNewBinding p = this$0.p();
+        Intrinsics.e(myGroupFragmentNew, "this$0");
+        Intrinsics.e(refreshLayout, "it");
+        ((MyGroupViewModel) myGroupFragmentNew.a()).l();
+        FmMyGroupNewBinding p = myGroupFragmentNew.p();
         if (p == null || (consecutiveViewPager = p.j) == null) {
             return;
         }
@@ -269,19 +273,19 @@ public class MyGroupFragmentNew extends MVVMBaseFragment<MyGroupViewModel> imple
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(MyGroupFragmentNew this$0, GroupGuideModel groupGuideModel) {
-        Intrinsics.e(this$0, "this$0");
+    public static final void a(MyGroupFragmentNew myGroupFragmentNew, GroupGuideModel groupGuideModel) {
+        Intrinsics.e(myGroupFragmentNew, "this$0");
         String str = groupGuideModel.square;
         Intrinsics.c(str, "it.square");
-        this$0.a(str);
+        myGroupFragmentNew.a(str);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(final MyGroupFragmentNew this$0, GroupIdentifyModel groupIdentifyModel) {
+    public static final void a(final MyGroupFragmentNew myGroupFragmentNew, GroupIdentifyModel groupIdentifyModel) {
         Context context;
-        Intrinsics.e(this$0, "this$0");
-        if (groupIdentifyModel.getVerify() == 1 && groupIdentifyModel.getVideo_verify() == 1 && (context = this$0.getContext()) != null) {
-            new XPopup.Builder(context).a(PopupAnimation.ScaleAlphaFromCenter).c((Boolean) false).d((Boolean) true).a((BasePopupView) new CreateGroupHintPop(context, new View.OnClickListener() { // from class: com.soft.blued.ui.msg_group.fragment.-$$Lambda$MyGroupFragmentNew$W-8grbPbjIbOvWvptQ3UPpkms5o
+        Intrinsics.e(myGroupFragmentNew, "this$0");
+        if (groupIdentifyModel.getVerify() == 1 && groupIdentifyModel.getVideo_verify() == 1 && (context = myGroupFragmentNew.getContext()) != null) {
+            new XPopup.Builder(context).a(PopupAnimation.a).c(false).d(true).a(new CreateGroupHintPop(context, new View.OnClickListener() { // from class: com.soft.blued.ui.msg_group.fragment.-$$Lambda$MyGroupFragmentNew$W-8grbPbjIbOvWvptQ3UPpkms5o
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     MyGroupFragmentNew.e(MyGroupFragmentNew.this, view);
@@ -291,24 +295,24 @@ public class MyGroupFragmentNew extends MVVMBaseFragment<MyGroupViewModel> imple
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(MyGroupFragmentNew this$0, GroupPrivilegeModel groupPrivilegeModel) {
+    public static final void a(MyGroupFragmentNew myGroupFragmentNew, GroupPrivilegeModel groupPrivilegeModel) {
         Context context;
-        Intrinsics.e(this$0, "this$0");
-        if (groupPrivilegeModel == null || (context = this$0.getContext()) == null) {
+        Intrinsics.e(myGroupFragmentNew, "this$0");
+        if (groupPrivilegeModel == null || (context = myGroupFragmentNew.getContext()) == null) {
             return;
         }
-        new XPopup.Builder(context).a(PopupAnimation.ScaleAlphaFromCenter).a((BasePopupView) new PopGroupRecover(context, this$0.a(), groupPrivilegeModel)).h();
+        new XPopup.Builder(context).a(PopupAnimation.a).a(new PopGroupRecover(context, (MyGroupViewModel) myGroupFragmentNew.a(), groupPrivilegeModel)).h();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(final MyGroupFragmentNew this$0, String str) {
-        Intrinsics.e(this$0, "this$0");
-        CommonAlertDialog.a(this$0.getContext(), this$0.getString(R.string.group_create_limit), str, this$0.getString(R.string.group_go_to), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.msg_group.fragment.-$$Lambda$MyGroupFragmentNew$MYAf2JERCCbMd0T0r55wSfjPpi8
+    public static final void a(final MyGroupFragmentNew myGroupFragmentNew, String str) {
+        Intrinsics.e(myGroupFragmentNew, "this$0");
+        CommonAlertDialog.a(myGroupFragmentNew.getContext(), myGroupFragmentNew.getString(R.string.group_create_limit), str, myGroupFragmentNew.getString(R.string.group_go_to), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.msg_group.fragment.-$$Lambda$MyGroupFragmentNew$MYAf2JERCCbMd0T0r55wSfjPpi8
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
                 MyGroupFragmentNew.a(MyGroupFragmentNew.this, dialogInterface, i);
             }
-        }, this$0.getString(2131886885), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.msg_group.fragment.-$$Lambda$MyGroupFragmentNew$823lNP6WXBQmYsM0BA5Sqne7I3c
+        }, myGroupFragmentNew.getString(2131886885), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.msg_group.fragment.-$$Lambda$MyGroupFragmentNew$823lNP6WXBQmYsM0BA5Sqne7I3c
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
                 MyGroupFragmentNew.a(dialogInterface, i);
@@ -317,31 +321,31 @@ public class MyGroupFragmentNew extends MVVMBaseFragment<MyGroupViewModel> imple
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(final MyGroupFragmentNew this$0, List list) {
+    public static final void a(final MyGroupFragmentNew myGroupFragmentNew, List list) {
         TextView textView;
         SmartRefreshLayout smartRefreshLayout;
-        Intrinsics.e(this$0, "this$0");
-        FmMyGroupNewBinding p = this$0.p();
+        Intrinsics.e(myGroupFragmentNew, "this$0");
+        FmMyGroupNewBinding p = myGroupFragmentNew.p();
         if (p != null && (smartRefreshLayout = p.b) != null) {
             smartRefreshLayout.j();
         }
-        this$0.f.setEnableLoadMore(false);
-        this$0.f.setNewData(list);
-        FmMyGroupNewBinding p2 = this$0.p();
-        RecyclerView recyclerView = p2 == null ? null : p2.f28757a;
+        myGroupFragmentNew.f.setEnableLoadMore(false);
+        myGroupFragmentNew.f.setNewData(list);
+        FmMyGroupNewBinding p2 = myGroupFragmentNew.p();
+        RecyclerView recyclerView = p2 == null ? null : p2.f15067a;
         if (recyclerView != null) {
-            recyclerView.setAdapter(this$0.f);
+            recyclerView.setAdapter(myGroupFragmentNew.f);
         }
         List list2 = list;
         if (list2 == null || list2.isEmpty()) {
             return;
         }
-        FmMyGroupNewBinding p3 = this$0.p();
-        RelativeLayout relativeLayout = p3 == null ? null : p3.f28758c;
+        FmMyGroupNewBinding p3 = myGroupFragmentNew.p();
+        RelativeLayout relativeLayout = p3 == null ? null : p3.f15068c;
         if (relativeLayout != null) {
             relativeLayout.setVisibility(0);
         }
-        FmMyGroupNewBinding p4 = this$0.p();
+        FmMyGroupNewBinding p4 = myGroupFragmentNew.p();
         if (p4 == null || (textView = p4.h) == null) {
             return;
         }
@@ -356,24 +360,24 @@ public class MyGroupFragmentNew extends MVVMBaseFragment<MyGroupViewModel> imple
     private final void a(String str) {
         Context context;
         CommonTopTitleNoTrans commonTopTitleNoTrans;
-        if (BluedConstant.f28239a || !GroupUtil.b || BluedPreferences.et() || TextUtils.isEmpty(str) || (context = getContext()) == null) {
+        if (BluedConstant.f14549a || !GroupUtil.b || BluedPreferences.et() || TextUtils.isEmpty(str) || (context = getContext()) == null) {
             return;
         }
-        GuideAttachPop guideAttachPop = new GuideAttachPop(context, str, GuideAttachPop.ArrowPosition.RIGHT, GuideAttachPop.Position.BOTTOM, BluedViewExtKt.a(10));
-        XPopup.Builder d = new XPopup.Builder(context).d((Boolean) false);
+        BasePopupView guideAttachPop = new GuideAttachPop(context, str, GuideAttachPop.ArrowPosition.RIGHT, GuideAttachPop.Position.BOTTOM, BluedViewExtKt.a(10));
+        XPopup.Builder d = new XPopup.Builder(context).d(false);
         FmMyGroupNewBinding p = p();
         ImageView imageView = null;
         if (p != null && (commonTopTitleNoTrans = p.g) != null) {
             imageView = commonTopTitleNoTrans.getRightImg();
         }
-        d.a(imageView).a(PopupPosition.Bottom).a(PopupAnimation.ScaleAlphaFromCenter).c(BluedViewExtKt.a(-8)).b(BluedViewExtKt.a(10)).a(new MyGroupFragmentNew$showGuide$1$1(this)).a((BasePopupView) guideAttachPop).h();
+        d.a(imageView).a(PopupPosition.d).a(PopupAnimation.a).c(BluedViewExtKt.a(-8)).b(BluedViewExtKt.a(10)).a(new MyGroupFragmentNew$showGuide$1$1(this)).a(guideAttachPop).h();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(MyGroupFragmentNew this$0, View view) {
+    public static final void b(MyGroupFragmentNew myGroupFragmentNew, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        FragmentActivity activity = this$0.getActivity();
+        Intrinsics.e(myGroupFragmentNew, "this$0");
+        FragmentActivity activity = myGroupFragmentNew.getActivity();
         if (activity == null) {
             return;
         }
@@ -381,17 +385,17 @@ public class MyGroupFragmentNew extends MVVMBaseFragment<MyGroupViewModel> imple
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void c(MyGroupFragmentNew this$0, View view) {
+    public static final void c(MyGroupFragmentNew myGroupFragmentNew, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        TerminalActivity.d(this$0.getContext(), SearchGroupFragment.class, null);
+        Intrinsics.e(myGroupFragmentNew, "this$0");
+        TerminalActivity.d(myGroupFragmentNew.getContext(), SearchGroupFragment.class, (Bundle) null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void d(MyGroupFragmentNew this$0, View view) {
+    public static final void d(MyGroupFragmentNew myGroupFragmentNew, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        Context context = this$0.getContext();
+        Intrinsics.e(myGroupFragmentNew, "this$0");
+        Context context = myGroupFragmentNew.getContext();
         if (context == null) {
             return;
         }
@@ -399,21 +403,19 @@ public class MyGroupFragmentNew extends MVVMBaseFragment<MyGroupViewModel> imple
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void e(MyGroupFragmentNew this$0, View view) {
+    public static final void e(MyGroupFragmentNew myGroupFragmentNew, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        GroupCategoryFragment.Companion.a(GroupCategoryFragment.b, this$0, 0, null, 4, null);
+        Intrinsics.e(myGroupFragmentNew, "this$0");
+        GroupCategoryFragment.Companion.a(GroupCategoryFragment.b, (Fragment) myGroupFragmentNew, 0, null, 4, null);
     }
 
     private final FmMyGroupNewBinding p() {
-        return (FmMyGroupNewBinding) this.f32769c.b(this, b[0]);
+        return (FmMyGroupNewBinding) this.f19078c.b(this, b[0]);
     }
 
-    @Override // skin.support.observe.SkinObserver
     public void a(SkinObservable skinObservable, Object obj) {
     }
 
-    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
     public void e() {
         super.e();
         Bundle arguments = getArguments();
@@ -424,7 +426,6 @@ public class MyGroupFragmentNew extends MVVMBaseFragment<MyGroupViewModel> imple
         this.e = arguments.getInt("group_my_index");
     }
 
-    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
     public void f() {
         CommonTopTitleNoTrans commonTopTitleNoTrans;
         CommonTopTitleNoTrans commonTopTitleNoTrans2;
@@ -446,7 +447,7 @@ public class MyGroupFragmentNew extends MVVMBaseFragment<MyGroupViewModel> imple
             }
             FmMyGroupNewBinding p2 = p();
             if (p2 != null && (commonTopTitleNoTrans3 = p2.g) != null) {
-                commonTopTitleNoTrans3.setRightImg(R.drawable.icon_group_create);
+                commonTopTitleNoTrans3.setRightImg((int) R.drawable.icon_group_create);
             }
             FmMyGroupNewBinding p3 = p();
             if (p3 != null && (commonTopTitleNoTrans2 = p3.g) != null) {
@@ -466,7 +467,7 @@ public class MyGroupFragmentNew extends MVVMBaseFragment<MyGroupViewModel> imple
         }
         FmMyGroupNewBinding p5 = p();
         if (p5 != null && (commonTopTitleNoTrans5 = p5.g) != null) {
-            commonTopTitleNoTrans5.setCenterText(getString(2131888331));
+            commonTopTitleNoTrans5.setCenterText(getString(R.string.group_chat));
         }
         FmMyGroupNewBinding p6 = p();
         if (p6 != null && (commonTopTitleNoTrans4 = p6.g) != null) {
@@ -478,13 +479,13 @@ public class MyGroupFragmentNew extends MVVMBaseFragment<MyGroupViewModel> imple
             });
         }
         FmMyGroupNewBinding p7 = p();
-        RecyclerView recyclerView = p7 == null ? null : p7.f28757a;
+        RecyclerView recyclerView = p7 == null ? null : p7.f15067a;
         if (recyclerView != null) {
             recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), 0, false));
         }
-        FragmentManager it = getChildFragmentManager();
-        Intrinsics.c(it, "it");
-        this.g = new MyAdapter(it);
+        FragmentManager childFragmentManager = getChildFragmentManager();
+        Intrinsics.c(childFragmentManager, "it");
+        this.g = new MyAdapter(childFragmentManager);
         FmMyGroupNewBinding p8 = p();
         ConsecutiveViewPager consecutiveViewPager2 = p8 == null ? null : p8.j;
         if (consecutiveViewPager2 != null) {
@@ -522,7 +523,7 @@ public class MyGroupFragmentNew extends MVVMBaseFragment<MyGroupViewModel> imple
             tabPageIndicatorWithDot2.setForeverShowTabIndicator(false);
         }
         FmMyGroupNewBinding p14 = p();
-        RecyclerView recyclerView2 = p14 == null ? null : p14.f28757a;
+        RecyclerView recyclerView2 = p14 == null ? null : p14.f15067a;
         if (recyclerView2 != null) {
             recyclerView2.setAdapter(this.f);
         }
@@ -557,40 +558,38 @@ public class MyGroupFragmentNew extends MVVMBaseFragment<MyGroupViewModel> imple
         });
     }
 
-    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
     public void g() {
-        a().l();
-        a().m();
+        ((MyGroupViewModel) a()).l();
+        ((MyGroupViewModel) a()).m();
     }
 
-    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
     public void l() {
-        MyGroupFragmentNew myGroupFragmentNew = this;
-        a().d().observe(myGroupFragmentNew, new Observer() { // from class: com.soft.blued.ui.msg_group.fragment.-$$Lambda$MyGroupFragmentNew$wTksUlBj3_NlrSH3-gLYEEImOrc
+        LifecycleOwner lifecycleOwner = (LifecycleOwner) this;
+        ((MyGroupViewModel) a()).d().observe(lifecycleOwner, new Observer() { // from class: com.soft.blued.ui.msg_group.fragment.-$$Lambda$MyGroupFragmentNew$wTksUlBj3_NlrSH3-gLYEEImOrc
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 MyGroupFragmentNew.a(MyGroupFragmentNew.this, (List) obj);
             }
         });
-        a().f().observe(myGroupFragmentNew, new Observer() { // from class: com.soft.blued.ui.msg_group.fragment.-$$Lambda$MyGroupFragmentNew$4jsP_rq2TYjVgpwI0kVeDRWyrbQ
+        ((MyGroupViewModel) a()).f().observe(lifecycleOwner, new Observer() { // from class: com.soft.blued.ui.msg_group.fragment.-$$Lambda$MyGroupFragmentNew$4jsP_rq2TYjVgpwI0kVeDRWyrbQ
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 MyGroupFragmentNew.a(MyGroupFragmentNew.this, (GroupIdentifyModel) obj);
             }
         });
-        a().g().observe(myGroupFragmentNew, new Observer() { // from class: com.soft.blued.ui.msg_group.fragment.-$$Lambda$MyGroupFragmentNew$k3mu-BXhKDd8Qzer5t9JBsKbcI4
+        ((MyGroupViewModel) a()).g().observe(lifecycleOwner, new Observer() { // from class: com.soft.blued.ui.msg_group.fragment.-$$Lambda$MyGroupFragmentNew$k3mu-BXhKDd8Qzer5t9JBsKbcI4
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 MyGroupFragmentNew.a(MyGroupFragmentNew.this, (GroupPrivilegeModel) obj);
             }
         });
-        a().i().observe(myGroupFragmentNew, new Observer() { // from class: com.soft.blued.ui.msg_group.fragment.-$$Lambda$MyGroupFragmentNew$yNtWV08o-gdbnTOyANLBRKe6sSE
+        ((MyGroupViewModel) a()).i().observe(lifecycleOwner, new Observer() { // from class: com.soft.blued.ui.msg_group.fragment.-$$Lambda$MyGroupFragmentNew$yNtWV08o-gdbnTOyANLBRKe6sSE
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 MyGroupFragmentNew.a(MyGroupFragmentNew.this, (String) obj);
             }
         });
-        a().j().observe(myGroupFragmentNew, new Observer() { // from class: com.soft.blued.ui.msg_group.fragment.-$$Lambda$MyGroupFragmentNew$QJLV4g4KKbVATfpGgkjO22OQIYA
+        ((MyGroupViewModel) a()).j().observe(lifecycleOwner, new Observer() { // from class: com.soft.blued.ui.msg_group.fragment.-$$Lambda$MyGroupFragmentNew$QJLV4g4KKbVATfpGgkjO22OQIYA
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 MyGroupFragmentNew.a(MyGroupFragmentNew.this, (GroupGuideModel) obj);
@@ -598,10 +597,9 @@ public class MyGroupFragmentNew extends MVVMBaseFragment<MyGroupViewModel> imple
         });
     }
 
-    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onViewCreated(View view, Bundle bundle) {
         Context context;
-        Intrinsics.e(view, "view");
+        Intrinsics.e(view, a.B);
         super.onViewCreated(view, bundle);
         if (this.d) {
             postDelaySafeRunOnUiThread(new Runnable() { // from class: com.soft.blued.ui.msg_group.fragment.-$$Lambda$MyGroupFragmentNew$MlrRm1sKk-NQFCmDHW8k0BnJjUQ
@@ -618,14 +616,14 @@ public class MyGroupFragmentNew extends MVVMBaseFragment<MyGroupViewModel> imple
         }
         Bundle arguments = getArguments();
         if (arguments != null && arguments.containsKey("group_command")) {
-            String command = arguments.getString("group_command", "");
+            String string = arguments.getString("group_command", "");
             Serializable serializable = arguments.getSerializable("group_command_data");
             if (serializable == null || (context = getContext()) == null) {
                 return;
             }
-            XPopup.Builder a2 = new XPopup.Builder(context).b((Boolean) false).d((Boolean) true).a(PopupAnimation.ScaleAlphaFromCenter);
-            Intrinsics.c(command, "command");
-            a2.a((BasePopupView) new PopGroupHelpDetail(context, command, (GroupCommandDetailResp) serializable)).h();
+            XPopup.Builder a2 = new XPopup.Builder(context).b(false).d(true).a(PopupAnimation.a);
+            Intrinsics.c(string, IntentConstant.COMMAND);
+            a2.a(new PopGroupHelpDetail(context, string, (GroupCommandDetailResp) serializable)).h();
         }
     }
 }

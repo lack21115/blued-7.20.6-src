@@ -60,11 +60,11 @@ public class AdItemData extends a implements Parcelable {
     private String z;
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f26460a = b.a("b3Bwb19hZHg=");
+    public static final String f12772a = b.a("b3Bwb19hZHg=");
     public static final String b = b.a("b3Bwb19mZWVk");
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f26461c = b.a("b3Bwb19jcGQ=");
+    public static final String f12773c = b.a("b3Bwb19jcGQ=");
     public static final Parcelable.Creator<AdItemData> CREATOR = new Parcelable.Creator<AdItemData>() { // from class: com.opos.mobad.model.data.AdItemData.1
         @Override // android.os.Parcelable.Creator
         /* renamed from: a */
@@ -134,11 +134,11 @@ public class AdItemData extends a implements Parcelable {
     public static /* synthetic */ class AnonymousClass2 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f26462a;
+        static final /* synthetic */ int[] f12774a;
         static final /* synthetic */ int[] b;
 
         /* renamed from: c  reason: collision with root package name */
-        static final /* synthetic */ int[] f26463c;
+        static final /* synthetic */ int[] f12775c;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:21:0x0074 -> B:43:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:23:0x0078 -> B:6:0x001f). Please submit an issue!!! */
@@ -149,13 +149,13 @@ public class AdItemData extends a implements Parcelable {
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:33:0x008c -> B:49:0x0068). Please submit an issue!!! */
         static {
             int[] iArr = new int[b.c.values().length];
-            f26463c = iArr;
+            f12775c = iArr;
             try {
                 iArr[b.c.PLAY_CACHE.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f26463c[b.c.PLAY_STREAM.ordinal()] = 2;
+                f12775c[b.c.PLAY_STREAM.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             int[] iArr2 = new int[b.f.values().length];
@@ -172,18 +172,18 @@ public class AdItemData extends a implements Parcelable {
                 b[b.f.BOTTOM_RIGHT_CORNER.ordinal()] = 3;
             } catch (NoSuchFieldError e5) {
             }
-            int[] iArr3 = new int[b.EnumC0674b.values().length];
-            f26462a = iArr3;
+            int[] iArr3 = new int[b.EnumC0504b.values().length];
+            f12774a = iArr3;
             try {
-                iArr3[b.EnumC0674b.SENSOR.ordinal()] = 1;
+                iArr3[b.EnumC0504b.SENSOR.ordinal()] = 1;
             } catch (NoSuchFieldError e6) {
             }
             try {
-                f26462a[b.EnumC0674b.HORIZONTAL.ordinal()] = 2;
+                f12774a[b.EnumC0504b.HORIZONTAL.ordinal()] = 2;
             } catch (NoSuchFieldError e7) {
             }
             try {
-                f26462a[b.EnumC0674b.VERTICAL.ordinal()] = 3;
+                f12774a[b.EnumC0504b.VERTICAL.ordinal()] = 3;
             } catch (NoSuchFieldError e8) {
             }
         }
@@ -256,13 +256,13 @@ public class AdItemData extends a implements Parcelable {
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences
     */
-    private static int a(com.opos.mobad.b.a.b.EnumC0674b r3) {
+    private static int a(com.opos.mobad.b.a.b.EnumC0504b r3) {
         /*
             r0 = 2
             r4 = r0
             r0 = r3
             if (r0 == 0) goto L1e
-            int[] r0 = com.opos.mobad.model.data.AdItemData.AnonymousClass2.f26462a
+            int[] r0 = com.opos.mobad.model.data.AdItemData.AnonymousClass2.f12774a
             r1 = r3
             int r1 = r1.ordinal()
             r0 = r0[r1]
@@ -300,7 +300,7 @@ public class AdItemData extends a implements Parcelable {
             r4 = r0
             r0 = r3
             if (r0 == 0) goto L1e
-            int[] r0 = com.opos.mobad.model.data.AdItemData.AnonymousClass2.f26463c
+            int[] r0 = com.opos.mobad.model.data.AdItemData.AnonymousClass2.f12775c
             r1 = r3
             int r1 = r1.ordinal()
             r0 = r0[r1]

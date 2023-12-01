@@ -15,16 +15,16 @@ import javax.crypto.spec.SecretKeySpec;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f35581a = b.class.getSimpleName();
+    private static final String f21890a = b.class.getSimpleName();
 
     public static String a(Context context, byte[] bArr) {
         if (context == null) {
-            WLogger.e(f35581a, "byteToProguardVideo context is null!");
+            WLogger.e(f21890a, "byteToProguardVideo context is null!");
             return "";
         }
         File file = new File(context.getCacheDir().getAbsolutePath());
         if (!file.exists() && !file.mkdirs()) {
-            WLogger.i(f35581a, "failed to createAdapter media dir!");
+            WLogger.i(f21890a, "failed to createAdapter media dir!");
         }
         String str = file.getPath() + File.separator + ("proguard_" + ("" + System.currentTimeMillis()) + ".mp4");
         File file2 = new File(str);
@@ -66,18 +66,18 @@ public class b {
     public static String a(byte[] bArr, byte[] bArr2, String str) throws Exception {
         byte[] bArr3;
         byte[] bArr4;
-        WLogger.d(f35581a, "salt=" + str);
+        WLogger.d(f21890a, "salt=" + str);
         if (TextUtils.isEmpty(str)) {
             return "";
         }
         if (bArr == null || bArr.length == 0) {
-            WLogger.e(f35581a, "generateFileMd5 video is null!");
+            WLogger.e(f21890a, "generateFileMd5 video is null!");
             bArr3 = null;
         } else {
             bArr3 = Base64.encode(bArr, 2);
         }
         if (bArr2 == null || bArr2.length == 0) {
-            WLogger.e(f35581a, "generateFileMd5 wbVideo is null!");
+            WLogger.e(f21890a, "generateFileMd5 wbVideo is null!");
             bArr4 = null;
         } else {
             bArr4 = Base64.encode(bArr2, 2);
@@ -86,12 +86,12 @@ public class b {
             return "";
         }
         byte[] a2 = a(bArr3, bArr4);
-        WLogger.d(f35581a, "after arrayBytes=" + a2.length);
+        WLogger.d(f21890a, "after arrayBytes=" + a2.length);
         if (a2 == null || a2.length == 0) {
             return "";
         }
         String a3 = a(a2, str);
-        WLogger.d(f35581a, "md5=" + a3);
+        WLogger.d(f21890a, "md5=" + a3);
         return a3;
     }
 
@@ -101,9 +101,9 @@ public class b {
         }
         File file = new File(str);
         if (file.exists()) {
-            WLogger.d(f35581a, "old video exist!");
+            WLogger.d(f21890a, "old video exist!");
             if (file.delete()) {
-                WLogger.d(f35581a, "old video detele!");
+                WLogger.d(f21890a, "old video detele!");
             } else {
                 WLogger.i("video file detele failed!");
             }
@@ -130,57 +130,57 @@ public class b {
         if (bArr2 == null) {
             return c(bArr);
         }
-        String str = f35581a;
+        String str = f21890a;
         WLogger.d(str, "array1=" + bArr.length + ",array2=" + bArr2.length);
         byte[] bArr3 = new byte[bArr.length + bArr2.length];
-        System.arraycopy((Object) bArr, 0, (Object) bArr3, 0, bArr.length);
-        System.arraycopy((Object) bArr2, 0, (Object) bArr3, bArr.length, bArr2.length);
+        System.arraycopy(bArr, 0, bArr3, 0, bArr.length);
+        System.arraycopy(bArr2, 0, bArr3, bArr.length, bArr2.length);
         return bArr3;
     }
 
     public static byte[] b(byte[] bArr) {
         if (bArr == null || bArr.length == 0) {
-            WLogger.e(f35581a, "proguardMp4Byte video length is 0!");
+            WLogger.e(f21890a, "proguardMp4Byte video length is 0!");
             return null;
         }
-        String str = f35581a;
+        String str = f21890a;
         WLogger.d(str, "proguardMp4Byte videoByte=" + bArr.length);
         if (bArr.length < 200) {
-            WLogger.e(f35581a, "proguardMp4Byte video length < 200!no proguard!");
+            WLogger.e(f21890a, "proguardMp4Byte video length < 200!no proguard!");
             return bArr;
         }
         String a2 = f.a(1);
         String a3 = f.a(1);
         String a4 = f.a(1);
-        String str2 = f35581a;
+        String str2 = f21890a;
         WLogger.d(str2, "first=" + a2 + ",len=" + a2.getBytes().length + ";second=" + a3 + ",len=" + a3.getBytes().length + ";third=" + a4 + ",len=" + a4.getBytes().length);
         int length = bArr.length + a2.getBytes().length + a3.getBytes().length + a4.getBytes().length;
         byte[] bArr2 = new byte[length];
-        System.arraycopy((Object) a2.getBytes(), 0, (Object) bArr2, 0, a2.getBytes().length);
+        System.arraycopy(a2.getBytes(), 0, bArr2, 0, a2.getBytes().length);
         int length2 = a2.getBytes().length + 0;
-        System.arraycopy((Object) bArr, 0, (Object) bArr2, length2, 99);
+        System.arraycopy(bArr, 0, bArr2, length2, 99);
         int i = length2 + 99;
-        String str3 = f35581a;
+        String str3 = f21890a;
         StringBuilder sb = new StringBuilder();
         sb.append("after1 destPos=");
         sb.append(i);
         WLogger.d(str3, sb.toString());
-        System.arraycopy((Object) a3.getBytes(), 0, (Object) bArr2, i, a3.getBytes().length);
+        System.arraycopy(a3.getBytes(), 0, bArr2, i, a3.getBytes().length);
         int length3 = i + a3.getBytes().length;
-        String str4 = f35581a;
+        String str4 = f21890a;
         WLogger.d(str4, "after2 destPos=" + length3);
-        System.arraycopy((Object) bArr, 99, (Object) bArr2, length3, 99);
+        System.arraycopy(bArr, 99, bArr2, length3, 99);
         int i2 = length3 + 99;
-        String str5 = f35581a;
+        String str5 = f21890a;
         WLogger.d(str5, "after3 destPos=" + i2);
-        System.arraycopy((Object) a4.getBytes(), 0, (Object) bArr2, i2, a4.getBytes().length);
+        System.arraycopy(a4.getBytes(), 0, bArr2, i2, a4.getBytes().length);
         int length4 = i2 + a4.getBytes().length;
-        String str6 = f35581a;
+        String str6 = f21890a;
         WLogger.d(str6, "after4 destPos=" + length4);
-        System.arraycopy((Object) bArr, 198, (Object) bArr2, length4, bArr.length - 198);
-        String str7 = f35581a;
+        System.arraycopy(bArr, 198, bArr2, length4, bArr.length - 198);
+        String str7 = f21890a;
         WLogger.d(str7, "after5 destPos=" + length4);
-        String str8 = f35581a;
+        String str8 = f21890a;
         WLogger.d(str8, "after RESULT=" + length);
         return bArr2;
     }

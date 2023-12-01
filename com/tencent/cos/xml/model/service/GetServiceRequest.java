@@ -1,6 +1,5 @@
 package com.tencent.cos.xml.model.service;
 
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.cos.xml.CosXmlServiceConfig;
 import com.tencent.cos.xml.exception.CosXmlClientException;
 import com.tencent.cos.xml.model.CosXmlRequest;
@@ -19,7 +18,7 @@ public final class GetServiceRequest extends CosXmlRequest {
 
     @Override // com.tencent.cos.xml.model.CosXmlRequest
     public String getPath(CosXmlServiceConfig cosXmlServiceConfig) {
-        return BridgeUtil.SPLIT_MARK;
+        return "/";
     }
 
     @Override // com.tencent.cos.xml.model.CosXmlRequest

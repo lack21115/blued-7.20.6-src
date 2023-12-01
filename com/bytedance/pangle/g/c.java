@@ -39,28 +39,28 @@ public final class c {
     public static final class b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final List<X509Certificate> f21410a;
+        public final List<X509Certificate> f7804a;
         public final List<Integer> b;
 
         public b(List<X509Certificate> list, List<Integer> list2) {
-            this.f21410a = list;
+            this.f7804a = list;
             this.b = list2;
         }
     }
 
     /* renamed from: com.bytedance.pangle.g.c$c  reason: collision with other inner class name */
     /* loaded from: source-7206380-dex2jar.jar:com/bytedance/pangle/g/c$c.class */
-    public static final class C0318c {
+    public static final class C0148c {
 
         /* renamed from: a  reason: collision with root package name */
-        public final X509Certificate[] f21411a;
+        public final X509Certificate[] f7805a;
         public final b b;
 
         /* renamed from: c  reason: collision with root package name */
-        public byte[] f21412c;
+        public byte[] f7806c;
 
-        public C0318c(X509Certificate[] x509CertificateArr, b bVar) {
-            this.f21411a = x509CertificateArr;
+        public C0148c(X509Certificate[] x509CertificateArr, b bVar) {
+            this.f7805a = x509CertificateArr;
             this.b = bVar;
         }
     }
@@ -149,18 +149,18 @@ public final class c {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static C0318c a(RandomAccessFile randomAccessFile, m mVar) {
+    public static C0148c a(RandomAccessFile randomAccessFile, m mVar) {
         ArrayMap arrayMap = new ArrayMap();
         try {
             CertificateFactory certificateFactory = CertificateFactory.getInstance("X.509");
             try {
-                ByteBuffer a2 = f.a(mVar.f21422a);
+                ByteBuffer a2 = f.a(mVar.f7816a);
                 int i = 0;
-                C0318c c0318c = null;
+                C0148c c0148c = null;
                 while (a2.hasRemaining()) {
                     try {
                         i++;
-                        c0318c = a(f.a(a2), arrayMap, certificateFactory);
+                        c0148c = a(f.a(a2), arrayMap, certificateFactory);
                     } catch (a e) {
                     } catch (IOException e2) {
                         e = e2;
@@ -173,7 +173,7 @@ public final class c {
                         throw new SecurityException("Failed to parse/verify signer #" + i + " block", e);
                     }
                 }
-                if (i <= 0 || c0318c == null) {
+                if (i <= 0 || c0148c == null) {
                     throw new SecurityException("No signers found");
                 }
                 if (i == 1) {
@@ -182,9 +182,9 @@ public final class c {
                     }
                     f.a(arrayMap, randomAccessFile, mVar);
                     if (arrayMap.containsKey(3)) {
-                        c0318c.f21412c = f.a((byte[]) arrayMap.get(3), randomAccessFile.length(), mVar);
+                        c0148c.f7806c = f.a((byte[]) arrayMap.get(3), randomAccessFile.length(), mVar);
                     }
-                    return c0318c;
+                    return c0148c;
                 }
                 throw new SecurityException("APK Signature Scheme V3 only supports one signer: multiple signers found.");
             } catch (IOException e5) {
@@ -195,7 +195,7 @@ public final class c {
         }
     }
 
-    private static C0318c a(ByteBuffer byteBuffer, List<X509Certificate> list, CertificateFactory certificateFactory) {
+    private static C0148c a(ByteBuffer byteBuffer, List<X509Certificate> list, CertificateFactory certificateFactory) {
         X509Certificate[] x509CertificateArr = (X509Certificate[]) list.toArray(new X509Certificate[list.size()]);
         b bVar = null;
         while (byteBuffer.hasRemaining()) {
@@ -209,9 +209,9 @@ public final class c {
                 b a3 = a(a2, certificateFactory);
                 bVar = a3;
                 try {
-                    if (a3.f21410a.size() <= 0) {
+                    if (a3.f7804a.size() <= 0) {
                         continue;
-                    } else if (!Arrays.equals(a3.f21410a.get(a3.f21410a.size() - 1).getEncoded(), x509CertificateArr[0].getEncoded())) {
+                    } else if (!Arrays.equals(a3.f7804a.get(a3.f7804a.size() - 1).getEncoded(), x509CertificateArr[0].getEncoded())) {
                         throw new SecurityException("Terminal certificate in Proof-of-rotation record does not match APK signing certificate");
                     } else {
                         bVar = a3;
@@ -221,10 +221,10 @@ public final class c {
                 }
             }
         }
-        return new C0318c(x509CertificateArr, bVar);
+        return new C0148c(x509CertificateArr, bVar);
     }
 
-    private static C0318c a(ByteBuffer byteBuffer, Map<Integer, byte[]> map, CertificateFactory certificateFactory) {
+    private static C0148c a(ByteBuffer byteBuffer, Map<Integer, byte[]> map, CertificateFactory certificateFactory) {
         int a2;
         ByteBuffer a3 = f.a(byteBuffer);
         int i = byteBuffer.getInt();

@@ -28,7 +28,6 @@ import com.blued.android.module.live_china.view.LiveRechargeGiftBagView;
 import com.blued.android.module.live_china.view.LiveWishCourtView;
 import com.blued.android.module.live_china.view.WishingWellView;
 import com.google.gson.Gson;
-import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import kotlin.Lazy;
 import kotlin.LazyKt;
@@ -39,13 +38,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/operation/OperationChildView.class */
 public final class OperationChildView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Context f15367a;
+    private final Context a;
     private final Lazy b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private BaseFragment f15368c;
+    private BaseFragment c;
     private boolean d;
     private LiveRoomOperationModel e;
     private View f;
@@ -61,7 +56,7 @@ public final class OperationChildView extends FrameLayout {
     public OperationChildView(Context mContext) {
         super(mContext);
         Intrinsics.e(mContext, "mContext");
-        this.f15367a = mContext;
+        this.a = mContext;
         this.b = LazyKt.a(new Function0<LiveOperationChildViewBinding>() { // from class: com.blued.android.module.live_china.view.operation.OperationChildView$vb$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
@@ -71,9 +66,9 @@ public final class OperationChildView extends FrameLayout {
             @Override // kotlin.jvm.functions.Function0
             /* renamed from: a */
             public final LiveOperationChildViewBinding invoke() {
-                LiveOperationChildViewBinding a2 = LiveOperationChildViewBinding.a(LayoutInflater.from(OperationChildView.this.getMContext()).inflate(R.layout.live_operation_child_view, OperationChildView.this));
-                Intrinsics.c(a2, "bind(\n            Layout…ild_view, this)\n        )");
-                return a2;
+                LiveOperationChildViewBinding a = LiveOperationChildViewBinding.a(LayoutInflater.from(OperationChildView.this.getMContext()).inflate(R.layout.live_operation_child_view, OperationChildView.this));
+                Intrinsics.c(a, "bind(\n            Layout…ild_view, this)\n        )");
+                return a;
             }
         });
         this.j = 0.3f;
@@ -101,7 +96,7 @@ public final class OperationChildView extends FrameLayout {
         Intrinsics.e(animation, "animation");
         if (this$0.getParent() == null) {
             valueAnimator.cancel();
-            valueAnimator.mo53clone();
+            valueAnimator.clone();
             return;
         }
         ViewGroup.LayoutParams layoutParams = this$0.getVb().b.getLayoutParams();
@@ -158,9 +153,9 @@ public final class OperationChildView extends FrameLayout {
     private final View c(Object obj) {
         LiveRoomOperationModel model;
         LiveRewardModel liveRewardModel;
-        if (this.f15368c != null && (model = getModel()) != null) {
+        if (this.c != null && (model = getModel()) != null) {
             GrabRewardView grabRewardView = new GrabRewardView(getMContext());
-            grabRewardView.a(this.f15368c);
+            grabRewardView.a(this.c);
             if (obj == null || !(obj instanceof LiveRewardModel)) {
                 liveRewardModel = null;
                 if (model.getExtra() != null) {
@@ -186,9 +181,9 @@ public final class OperationChildView extends FrameLayout {
 
     private final View d() {
         LiveRoomOperationModel model;
-        if (this.f15368c != null && (model = getModel()) != null) {
+        if (this.c != null && (model = getModel()) != null) {
             OperationChildDefaultView operationChildDefaultView = new OperationChildDefaultView(getMContext());
-            model.setView_init_finish(operationChildDefaultView.a(this.f15368c, model) != null);
+            model.setView_init_finish(operationChildDefaultView.a(this.c, model) != null);
             OperationChildDefaultView operationChildDefaultView2 = operationChildDefaultView;
             setView(operationChildDefaultView2);
             return operationChildDefaultView2;
@@ -198,9 +193,9 @@ public final class OperationChildView extends FrameLayout {
 
     private final View d(Object obj) {
         LiveRoomOperationModel model;
-        if (this.f15368c != null && (model = getModel()) != null) {
+        if (this.c != null && (model = getModel()) != null) {
             GrabBoxView grabBoxView = new GrabBoxView(getMContext());
-            grabBoxView.a(this.f15368c);
+            grabBoxView.a(this.c);
             if (obj != null) {
                 if (obj == null) {
                     throw new NullPointerException("null cannot be cast to non-null type com.blued.android.module.live_china.model.GrabBoxListModel");
@@ -215,27 +210,27 @@ public final class OperationChildView extends FrameLayout {
 
     private final View e() {
         LiveRoomOperationModel model;
-        if (this.f15368c == null || (model = getModel()) == null || TextUtils.isEmpty(model.getIcon())) {
+        if (this.c == null || (model = getModel()) == null || TextUtils.isEmpty(model.getIcon())) {
             return null;
         }
         LiveRoomOperationModel model2 = getModel();
         if (model2 != null) {
             model2.setView_init_finish(true);
         }
-        return new LiveRechargeGiftBagView(getMContext()).a(this.f15368c, model);
+        return new LiveRechargeGiftBagView(getMContext()).a(this.c, model);
     }
 
     private final View e(Object obj) {
         LiveRoomOperationModel model;
         LiveWishingDrawModel liveWishingDrawModel;
         LiveRoomOperationModel model2;
-        if (this.f15368c != null && (model = getModel()) != null) {
+        if (this.c != null && (model = getModel()) != null) {
             WishingWellView wishingWellView = new WishingWellView(getMContext());
-            wishingWellView.setBaseFragment(this.f15368c);
+            wishingWellView.setBaseFragment(this.c);
             if (obj == null || !(obj instanceof LiveWishingDrawModel)) {
                 liveWishingDrawModel = null;
                 if (model.getExtra() != null) {
-                    liveWishingDrawModel = (LiveWishingDrawModel) AppInfo.f().fromJson((JsonElement) model.getExtra(), (Class<Object>) LiveWishingDrawModel.class);
+                    liveWishingDrawModel = (LiveWishingDrawModel) AppInfo.f().fromJson(model.getExtra(), LiveWishingDrawModel.class);
                 }
             } else {
                 liveWishingDrawModel = (LiveWishingDrawModel) obj;
@@ -252,13 +247,13 @@ public final class OperationChildView extends FrameLayout {
         LiveRoomOperationModel model;
         LiveWishCourtModel liveWishCourtModel;
         LiveRoomOperationModel model2;
-        if (this.f15368c != null && (model = getModel()) != null) {
+        if (this.c != null && (model = getModel()) != null) {
             LiveWishCourtView liveWishCourtView = new LiveWishCourtView(getMContext());
-            liveWishCourtView.setBaseFragment(this.f15368c);
+            liveWishCourtView.setBaseFragment(this.c);
             if (obj == null || !(obj instanceof LiveWishCourtModel)) {
                 liveWishCourtModel = null;
                 if (model.getExtra() != null) {
-                    AppInfo.f().fromJson((JsonElement) model.getExtra(), LiveWishCourtModel.class);
+                    AppInfo.f().fromJson(model.getExtra(), LiveWishCourtModel.class);
                     liveWishCourtModel = null;
                 }
             } else {
@@ -278,41 +273,41 @@ public final class OperationChildView extends FrameLayout {
 
     public final View a(Object obj) {
         LiveRoomOperationModel liveRoomOperationModel = this.e;
-        if (liveRoomOperationModel == null || this.f15368c == null) {
+        if (liveRoomOperationModel == null || this.c == null) {
             return null;
         }
         Intrinsics.a(liveRoomOperationModel);
         int tools_type = liveRoomOperationModel.getTools_type();
         View d = tools_type == EnumOperation.VIEW_TYPE_DEFAULT.getValue() ? d() : tools_type == EnumOperation.VIEW_TYPE_RED_BAG.getValue() ? c(obj) : tools_type == EnumOperation.VIEW_TYPE_TREASURE_BOX.getValue() ? d(obj) : tools_type == EnumOperation.VIEW_TYPE_WISHING_KNOCKING.getValue() ? e(obj) : tools_type == EnumOperation.VIEW_TYPE_WISHING_CONTEST.getValue() ? f(obj) : tools_type == EnumOperation.VIEW_TYPE_CHICKEN_WIN.getValue() ? d() : tools_type == EnumOperation.VIEW_TYPE_FIRST_RECHARGE_GIFT_BAG.getValue() ? e() : tools_type == EnumOperation.VIEW_TYPE_RECHARGE_GIFT_BAG.getValue() ? e() : tools_type == EnumOperation.VIEW_TYPE_DARED_ATM.getValue() ? d() : d();
-        this.g = getVb().f12309c;
+        this.g = getVb().c;
         return d;
     }
 
     public final OperationChildView a(BaseFragment baseFragment, boolean z, final LiveRoomOperationModel liveRoomOperationModel, Object obj) {
         if (baseFragment != null) {
-            this.f15368c = baseFragment;
+            this.c = baseFragment;
         }
         this.d = z;
         this.e = liveRoomOperationModel;
         if (liveRoomOperationModel == null || liveRoomOperationModel.getStatus() == 0) {
             return null;
         }
-        View a2 = a(obj);
-        if (a2 != null) {
-            setView(a2);
-            getVb().f12308a.removeAllViews();
-            if (a2.getParent() != null) {
-                ViewParent parent = a2.getParent();
+        View a = a(obj);
+        if (a != null) {
+            setView(a);
+            getVb().a.removeAllViews();
+            if (a.getParent() != null) {
+                ViewParent parent = a.getParent();
                 if (parent == null) {
                     throw new NullPointerException("null cannot be cast to non-null type android.view.ViewGroup");
                 }
-                ((ViewGroup) parent).removeView(a2);
+                ((ViewGroup) parent).removeView(a);
             }
-            getVb().f12308a.addView(a2);
-            a2.setScaleX(this.j);
-            a2.setScaleY(this.k);
-            a2.setAlpha(0.0f);
-            a2.post(new Runnable() { // from class: com.blued.android.module.live_china.view.operation.-$$Lambda$OperationChildView$I3X7hmeKIYmtRmKGNyUpwSzvfdw
+            getVb().a.addView(a);
+            a.setScaleX(this.j);
+            a.setScaleY(this.k);
+            a.setAlpha(0.0f);
+            a.post(new Runnable() { // from class: com.blued.android.module.live_china.view.operation.-$$Lambda$OperationChildView$I3X7hmeKIYmtRmKGNyUpwSzvfdw
                 @Override // java.lang.Runnable
                 public final void run() {
                     OperationChildView.a(OperationChildView.this, liveRoomOperationModel);
@@ -346,13 +341,13 @@ public final class OperationChildView extends FrameLayout {
             return false;
         }
         if ((view instanceof OperationChildDefaultView) && (data instanceof LiveRoomOperationModel)) {
-            boolean a2 = ((OperationChildDefaultView) view).a((LiveRoomOperationModel) data);
+            boolean a = ((OperationChildDefaultView) view).a((LiveRoomOperationModel) data);
             LiveRoomOperationModel model = getModel();
             if (model == null) {
-                return a2;
+                return a;
             }
-            model.setView_init_finish(a2);
-            return a2;
+            model.setView_init_finish(a);
+            return a;
         } else if ((view instanceof GrabRewardView) && (data instanceof LiveRewardModel)) {
             Boolean initFinish = ((GrabRewardView) view).a((LiveRewardModel) data);
             LiveRoomOperationModel model2 = getModel();
@@ -363,29 +358,29 @@ public final class OperationChildView extends FrameLayout {
             Intrinsics.c(initFinish, "initFinish");
             return initFinish.booleanValue();
         } else if ((view instanceof GrabBoxView) && (data instanceof GrabBoxListModel)) {
-            boolean a3 = ((GrabBoxView) view).a(((GrabBoxListModel) data).getList());
+            boolean a2 = ((GrabBoxView) view).a(((GrabBoxListModel) data).getList());
             LiveRoomOperationModel model3 = getModel();
             if (model3 == null) {
-                return a3;
+                return a2;
             }
-            model3.setView_init_finish(a3);
-            return a3;
+            model3.setView_init_finish(a2);
+            return a2;
         } else if ((view instanceof WishingWellView) && (data instanceof LiveWishingDrawModel)) {
-            boolean a4 = ((WishingWellView) view).a((LiveWishingDrawModel) data);
+            boolean a3 = ((WishingWellView) view).a((LiveWishingDrawModel) data);
             LiveRoomOperationModel model4 = getModel();
             if (model4 == null) {
-                return a4;
+                return a3;
             }
-            model4.setView_init_finish(a4);
-            return a4;
+            model4.setView_init_finish(a3);
+            return a3;
         } else if ((view instanceof LiveWishCourtView) && (data instanceof LiveWishCourtModel)) {
-            boolean a5 = ((LiveWishCourtView) view).a((LiveWishCourtModel) data);
+            boolean a4 = ((LiveWishCourtView) view).a((LiveWishCourtModel) data);
             LiveRoomOperationModel model5 = getModel();
             if (model5 == null) {
-                return a5;
+                return a4;
             }
-            model5.setView_init_finish(a5);
-            return a5;
+            model5.setView_init_finish(a4);
+            return a4;
         } else {
             return false;
         }
@@ -403,7 +398,7 @@ public final class OperationChildView extends FrameLayout {
     }
 
     public final Context getMContext() {
-        return this.f15367a;
+        return this.a;
     }
 
     public final LiveRoomOperationModel getModel() {

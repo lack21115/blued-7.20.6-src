@@ -101,10 +101,10 @@ public final class NsdManager {
         public void handleMessage(Message message) {
             switch (message.what) {
                 case 69632:
-                    NsdManager.this.mAsyncChannel.sendMessage(AsyncChannel.CMD_CHANNEL_FULL_CONNECTION);
+                    NsdManager.this.mAsyncChannel.sendMessage(69633);
                     return;
-                case AsyncChannel.CMD_CHANNEL_FULL_CONNECTION /* 69633 */:
-                case AsyncChannel.CMD_CHANNEL_DISCONNECT /* 69635 */:
+                case 69633:
+                case 69635:
                 default:
                     Object listener = NsdManager.this.getListener(message.arg2);
                     if (listener == null) {
@@ -168,10 +168,10 @@ public final class NsdManager {
                             ((ResolveListener) listener).onServiceResolved((NsdServiceInfo) message.obj);
                             return;
                     }
-                case AsyncChannel.CMD_CHANNEL_FULLY_CONNECTED /* 69634 */:
+                case 69634:
                     NsdManager.this.mConnected.countDown();
                     return;
-                case AsyncChannel.CMD_CHANNEL_DISCONNECTED /* 69636 */:
+                case 69636:
                     Log.e(NsdManager.TAG, "Channel lost");
                     return;
             }
@@ -290,7 +290,7 @@ public final class NsdManager {
         if (putListener == -1) {
             throw new IllegalArgumentException("listener already in use");
         }
-        this.mAsyncChannel.sendMessage(DISCOVER_SERVICES, 0, putListener, nsdServiceInfo);
+        this.mAsyncChannel.sendMessage((int) DISCOVER_SERVICES, 0, putListener, nsdServiceInfo);
     }
 
     public void registerService(NsdServiceInfo nsdServiceInfo, int i, RegistrationListener registrationListener) {
@@ -310,7 +310,7 @@ public final class NsdManager {
         if (putListener == -1) {
             throw new IllegalArgumentException("listener already in use");
         }
-        this.mAsyncChannel.sendMessage(REGISTER_SERVICE, 0, putListener, nsdServiceInfo);
+        this.mAsyncChannel.sendMessage((int) REGISTER_SERVICE, 0, putListener, nsdServiceInfo);
     }
 
     public void resolveService(NsdServiceInfo nsdServiceInfo, ResolveListener resolveListener) {
@@ -324,7 +324,7 @@ public final class NsdManager {
         if (putListener == -1) {
             throw new IllegalArgumentException("listener already in use");
         }
-        this.mAsyncChannel.sendMessage(RESOLVE_SERVICE, 0, putListener, nsdServiceInfo);
+        this.mAsyncChannel.sendMessage((int) RESOLVE_SERVICE, 0, putListener, nsdServiceInfo);
     }
 
     public void setEnabled(boolean z) {
@@ -342,7 +342,7 @@ public final class NsdManager {
         if (discoveryListener == null) {
             throw new IllegalArgumentException("listener cannot be null");
         }
-        this.mAsyncChannel.sendMessage(STOP_DISCOVERY, 0, listenerKey);
+        this.mAsyncChannel.sendMessage((int) STOP_DISCOVERY, 0, listenerKey);
     }
 
     public void unregisterService(RegistrationListener registrationListener) {
@@ -353,6 +353,6 @@ public final class NsdManager {
         if (registrationListener == null) {
             throw new IllegalArgumentException("listener cannot be null");
         }
-        this.mAsyncChannel.sendMessage(UNREGISTER_SERVICE, 0, listenerKey);
+        this.mAsyncChannel.sendMessage((int) UNREGISTER_SERVICE, 0, listenerKey);
     }
 }

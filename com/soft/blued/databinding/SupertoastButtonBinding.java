@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class SupertoastButtonBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29592a;
+    private final LinearLayout f15902a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29592a;
+        return this.f15902a;
     }
 }

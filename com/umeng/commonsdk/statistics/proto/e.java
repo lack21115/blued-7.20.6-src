@@ -31,8 +31,8 @@ import java.util.Iterator;
 import java.util.Map;
 
 /* loaded from: source-8829756-dex2jar.jar:com/umeng/commonsdk/statistics/proto/e.class */
-public class e implements bq<e, EnumC1089e>, Serializable, Cloneable {
-    public static final Map<EnumC1089e, cc> d;
+public class e implements bq<e, EnumC0919e>, Serializable, Cloneable {
+    public static final Map<EnumC0919e, cc> d;
     private static final long e = 7501688097813630241L;
     private static final cu f = new cu("ImprintValue");
     private static final ck g = new ck("value", (byte) 11, 1);
@@ -42,13 +42,13 @@ public class e implements bq<e, EnumC1089e>, Serializable, Cloneable {
     private static final int k = 0;
 
     /* renamed from: a  reason: collision with root package name */
-    public String f40955a;
+    public String f27264a;
     public long b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f40956c;
+    public String f27265c;
     private byte l;
-    private EnumC1089e[] m;
+    private EnumC0919e[] m;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8829756-dex2jar.jar:com/umeng/commonsdk/statistics/proto/e$a.class */
@@ -67,13 +67,13 @@ public class e implements bq<e, EnumC1089e>, Serializable, Cloneable {
                     eVar.k();
                     return;
                 }
-                short s = l.f40700c;
+                short s = l.f27009c;
                 if (s != 1) {
                     if (s != 2) {
                         if (s != 3) {
                             cs.a(cpVar, l.b);
                         } else if (l.b == 11) {
-                            eVar.f40956c = cpVar.z();
+                            eVar.f27265c = cpVar.z();
                             eVar.c(true);
                         } else {
                             cs.a(cpVar, l.b);
@@ -85,7 +85,7 @@ public class e implements bq<e, EnumC1089e>, Serializable, Cloneable {
                         cs.a(cpVar, l.b);
                     }
                 } else if (l.b == 11) {
-                    eVar.f40955a = cpVar.z();
+                    eVar.f27264a = cpVar.z();
                     eVar.a(true);
                 } else {
                     cs.a(cpVar, l.b);
@@ -99,9 +99,9 @@ public class e implements bq<e, EnumC1089e>, Serializable, Cloneable {
         public void a(cp cpVar, e eVar) throws bw {
             eVar.k();
             cpVar.a(e.f);
-            if (eVar.f40955a != null && eVar.d()) {
+            if (eVar.f27264a != null && eVar.d()) {
                 cpVar.a(e.g);
-                cpVar.a(eVar.f40955a);
+                cpVar.a(eVar.f27264a);
                 cpVar.c();
             }
             if (eVar.g()) {
@@ -109,9 +109,9 @@ public class e implements bq<e, EnumC1089e>, Serializable, Cloneable {
                 cpVar.a(eVar.b);
                 cpVar.c();
             }
-            if (eVar.f40956c != null && eVar.j()) {
+            if (eVar.f27265c != null && eVar.j()) {
                 cpVar.a(e.i);
-                cpVar.a(eVar.f40956c);
+                cpVar.a(eVar.f27265c);
                 cpVar.c();
             }
             cpVar.d();
@@ -152,13 +152,13 @@ public class e implements bq<e, EnumC1089e>, Serializable, Cloneable {
             }
             cvVar.a(bitSet, 3);
             if (eVar.d()) {
-                cvVar.a(eVar.f40955a);
+                cvVar.a(eVar.f27264a);
             }
             if (eVar.g()) {
                 cvVar.a(eVar.b);
             }
             if (eVar.j()) {
-                cvVar.a(eVar.f40956c);
+                cvVar.a(eVar.f27265c);
             }
         }
 
@@ -167,7 +167,7 @@ public class e implements bq<e, EnumC1089e>, Serializable, Cloneable {
             cv cvVar = (cv) cpVar;
             BitSet b = cvVar.b(3);
             if (b.get(0)) {
-                eVar.f40955a = cvVar.z();
+                eVar.f27264a = cvVar.z();
                 eVar.a(true);
             }
             if (b.get(1)) {
@@ -175,7 +175,7 @@ public class e implements bq<e, EnumC1089e>, Serializable, Cloneable {
                 eVar.b(true);
             }
             if (b.get(2)) {
-                eVar.f40956c = cvVar.z();
+                eVar.f27265c = cvVar.z();
                 eVar.c(true);
             }
         }
@@ -195,29 +195,29 @@ public class e implements bq<e, EnumC1089e>, Serializable, Cloneable {
 
     /* renamed from: com.umeng.commonsdk.statistics.proto.e$e  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/umeng/commonsdk/statistics/proto/e$e.class */
-    public enum EnumC1089e implements bx {
+    public enum EnumC0919e implements bx {
         VALUE(1, "value"),
         TS(2, "ts"),
         GUID(3, TPDownloadProxyEnum.USER_GUID);
         
-        private static final Map<String, EnumC1089e> d = new HashMap();
+        private static final Map<String, EnumC0919e> d = new HashMap();
         private final short e;
         private final String f;
 
         static {
-            Iterator<E> it = EnumSet.allOf(EnumC1089e.class).iterator();
+            Iterator it = EnumSet.allOf(EnumC0919e.class).iterator();
             while (it.hasNext()) {
-                EnumC1089e enumC1089e = (EnumC1089e) it.next();
-                d.put(enumC1089e.b(), enumC1089e);
+                EnumC0919e enumC0919e = (EnumC0919e) it.next();
+                d.put(enumC0919e.b(), enumC0919e);
             }
         }
 
-        EnumC1089e(short s, String str) {
+        EnumC0919e(short s, String str) {
             this.e = s;
             this.f = str;
         }
 
-        public static EnumC1089e a(int i) {
+        public static EnumC0919e a(int i) {
             if (i != 1) {
                 if (i != 2) {
                     if (i != 3) {
@@ -230,12 +230,12 @@ public class e implements bq<e, EnumC1089e>, Serializable, Cloneable {
             return VALUE;
         }
 
-        public static EnumC1089e a(String str) {
+        public static EnumC0919e a(String str) {
             return d.get(str);
         }
 
-        public static EnumC1089e b(int i) {
-            EnumC1089e a2 = a(i);
+        public static EnumC0919e b(int i) {
+            EnumC0919e a2 = a(i);
             if (a2 != null) {
                 return a2;
             }
@@ -258,37 +258,37 @@ public class e implements bq<e, EnumC1089e>, Serializable, Cloneable {
         j = hashMap;
         hashMap.put(cz.class, new b());
         j.put(da.class, new d());
-        EnumMap enumMap = new EnumMap(EnumC1089e.class);
-        enumMap.put((EnumMap) EnumC1089e.VALUE, (EnumC1089e) new cc("value", (byte) 2, new cd((byte) 11)));
-        enumMap.put((EnumMap) EnumC1089e.TS, (EnumC1089e) new cc("ts", (byte) 2, new cd((byte) 10)));
-        enumMap.put((EnumMap) EnumC1089e.GUID, (EnumC1089e) new cc(TPDownloadProxyEnum.USER_GUID, (byte) 2, new cd((byte) 11)));
-        Map<EnumC1089e, cc> unmodifiableMap = Collections.unmodifiableMap(enumMap);
+        EnumMap enumMap = new EnumMap(EnumC0919e.class);
+        enumMap.put((EnumMap) EnumC0919e.VALUE, (EnumC0919e) new cc("value", (byte) 2, new cd((byte) 11)));
+        enumMap.put((EnumMap) EnumC0919e.TS, (EnumC0919e) new cc("ts", (byte) 2, new cd((byte) 10)));
+        enumMap.put((EnumMap) EnumC0919e.GUID, (EnumC0919e) new cc(TPDownloadProxyEnum.USER_GUID, (byte) 2, new cd((byte) 11)));
+        Map<EnumC0919e, cc> unmodifiableMap = Collections.unmodifiableMap(enumMap);
         d = unmodifiableMap;
         cc.a(e.class, unmodifiableMap);
     }
 
     public e() {
         this.l = (byte) 0;
-        this.m = new EnumC1089e[]{EnumC1089e.VALUE, EnumC1089e.TS, EnumC1089e.GUID};
+        this.m = new EnumC0919e[]{EnumC0919e.VALUE, EnumC0919e.TS, EnumC0919e.GUID};
     }
 
     public e(long j2, String str) {
         this();
         this.b = j2;
         b(true);
-        this.f40956c = str;
+        this.f27265c = str;
     }
 
     public e(e eVar) {
         this.l = (byte) 0;
-        this.m = new EnumC1089e[]{EnumC1089e.VALUE, EnumC1089e.TS, EnumC1089e.GUID};
+        this.m = new EnumC0919e[]{EnumC0919e.VALUE, EnumC0919e.TS, EnumC0919e.GUID};
         this.l = eVar.l;
         if (eVar.d()) {
-            this.f40955a = eVar.f40955a;
+            this.f27264a = eVar.f27264a;
         }
         this.b = eVar.b;
         if (eVar.j()) {
-            this.f40956c = eVar.f40956c;
+            this.f27265c = eVar.f27265c;
         }
     }
 
@@ -311,8 +311,8 @@ public class e implements bq<e, EnumC1089e>, Serializable, Cloneable {
 
     @Override // com.umeng.analytics.pro.bq
     /* renamed from: a */
-    public EnumC1089e fieldForId(int i2) {
-        return EnumC1089e.a(i2);
+    public EnumC0919e fieldForId(int i2) {
+        return EnumC0919e.a(i2);
     }
 
     @Override // com.umeng.analytics.pro.bq
@@ -328,7 +328,7 @@ public class e implements bq<e, EnumC1089e>, Serializable, Cloneable {
     }
 
     public e a(String str) {
-        this.f40955a = str;
+        this.f27264a = str;
         return this;
     }
 
@@ -336,16 +336,16 @@ public class e implements bq<e, EnumC1089e>, Serializable, Cloneable {
         if (z) {
             return;
         }
-        this.f40955a = null;
+        this.f27264a = null;
     }
 
     public e b(String str) {
-        this.f40956c = str;
+        this.f27265c = str;
         return this;
     }
 
     public String b() {
-        return this.f40955a;
+        return this.f27264a;
     }
 
     public void b(boolean z) {
@@ -353,26 +353,26 @@ public class e implements bq<e, EnumC1089e>, Serializable, Cloneable {
     }
 
     public void c() {
-        this.f40955a = null;
+        this.f27264a = null;
     }
 
     public void c(boolean z) {
         if (z) {
             return;
         }
-        this.f40956c = null;
+        this.f27265c = null;
     }
 
     @Override // com.umeng.analytics.pro.bq
     public void clear() {
-        this.f40955a = null;
+        this.f27264a = null;
         b(false);
         this.b = 0L;
-        this.f40956c = null;
+        this.f27265c = null;
     }
 
     public boolean d() {
-        return this.f40955a != null;
+        return this.f27264a != null;
     }
 
     public long e() {
@@ -388,15 +388,15 @@ public class e implements bq<e, EnumC1089e>, Serializable, Cloneable {
     }
 
     public String h() {
-        return this.f40956c;
+        return this.f27265c;
     }
 
     public void i() {
-        this.f40956c = null;
+        this.f27265c = null;
     }
 
     public boolean j() {
-        return this.f40956c != null;
+        return this.f27265c != null;
     }
 
     public void k() throws bw {
@@ -412,7 +412,7 @@ public class e implements bq<e, EnumC1089e>, Serializable, Cloneable {
         StringBuilder sb = new StringBuilder("ImprintValue(");
         if (d()) {
             sb.append("value:");
-            String str = this.f40955a;
+            String str = this.f27264a;
             if (str == null) {
                 sb.append(com.igexin.push.core.b.l);
             } else {
@@ -429,7 +429,7 @@ public class e implements bq<e, EnumC1089e>, Serializable, Cloneable {
         sb.append(this.b);
         sb.append(", ");
         sb.append("guid:");
-        String str2 = this.f40956c;
+        String str2 = this.f27265c;
         if (str2 == null) {
             sb.append(com.igexin.push.core.b.l);
         } else {

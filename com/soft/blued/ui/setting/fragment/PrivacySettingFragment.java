@@ -20,7 +20,6 @@ import com.blued.android.framework.view.shape.ShapeTextView;
 import com.blued.android.module.common.trace.EventTrackSettings;
 import com.blued.android.module.common.user.model.UserInfo;
 import com.blued.android.module.common.view.CommonTopTitleNoTrans;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.blued.android.module.common.widget.dialog.BluedAlertDialog;
 import com.blued.android.module.common.widget.dialog.CommonAlertDialog;
 import com.blued.das.settings.SettingsProtos;
@@ -39,6 +38,7 @@ import com.soft.blued.ui.user.model.VipUpgradeModel;
 import com.soft.blued.ui.user.presenter.PayUtils;
 import com.soft.blued.user.BluedConfig;
 import com.soft.blued.utils.BluedPreferences;
+import com.xiaomi.mipush.sdk.Constants;
 
 /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/setting/fragment/PrivacySettingFragment.class */
 public class PrivacySettingFragment extends BaseFragment implements View.OnClickListener, IPrivacySettingContract.IView {
@@ -46,11 +46,11 @@ public class PrivacySettingFragment extends BaseFragment implements View.OnClick
     private View B;
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f33565a;
+    private Context f19874a;
     private View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private ToggleButton f33566c;
+    private ToggleButton f19875c;
     private ToggleButton d;
     private ToggleButton e;
     private ToggleButton f;
@@ -78,17 +78,15 @@ public class PrivacySettingFragment extends BaseFragment implements View.OnClick
     private void a(final int i, final String str) {
         PayHttpUtils.c(new BluedUIHttpResponse<BluedEntityA<VipUpgradeModel>>(getFragmentActive()) { // from class: com.soft.blued.ui.setting.fragment.PrivacySettingFragment.8
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<VipUpgradeModel> bluedEntityA) {
                 if (bluedEntityA == null || bluedEntityA.data == null || bluedEntityA.data.size() <= 0) {
                     PayUtils.a(PrivacySettingFragment.this.getActivity(), i, str);
                 } else {
-                    VipUpgradeDialogFragment.f34178a.a(PrivacySettingFragment.this.getContext(), PrivacySettingFragment.this.getParentFragmentManager(), bluedEntityA.data, 2, str, i);
+                    VipUpgradeDialogFragment.f20487a.a(PrivacySettingFragment.this.getContext(), PrivacySettingFragment.this.getParentFragmentManager(), bluedEntityA.data, 2, str, i);
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i2, String str2, String str3) {
                 PayUtils.a(PrivacySettingFragment.this.getActivity(), i, str);
                 return true;
@@ -99,7 +97,7 @@ public class PrivacySettingFragment extends BaseFragment implements View.OnClick
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void a(View view) {
         Tracker.onClick(view);
-        TerminalActivity.d(getActivity(), BlacklistFragment.class, null);
+        TerminalActivity.d(getActivity(), BlacklistFragment.class, (Bundle) null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -124,6 +122,7 @@ public class PrivacySettingFragment extends BaseFragment implements View.OnClick
         }
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private void c() {
         LiveEventBus.get(EventBusConstant.KEY_EVENT_REFRESH_BLACK_LIST_NUM, Boolean.class).observe(this, new Observer<Boolean>() { // from class: com.soft.blued.ui.setting.fragment.PrivacySettingFragment.1
             @Override // androidx.lifecycle.Observer
@@ -140,12 +139,12 @@ public class PrivacySettingFragment extends BaseFragment implements View.OnClick
     public /* synthetic */ void c(View view) {
         Tracker.onClick(view);
         VipInvisibleDialogFragment vipInvisibleDialogFragment = new VipInvisibleDialogFragment();
-        vipInvisibleDialogFragment.b = this.f33565a.getResources().getString(R.string.custom_invisible);
+        vipInvisibleDialogFragment.b = this.f19874a.getResources().getString(R.string.custom_invisible);
         vipInvisibleDialogFragment.a(new DialogInterface.OnDismissListener() { // from class: com.soft.blued.ui.setting.fragment.PrivacySettingFragment.3
             @Override // android.content.DialogInterface.OnDismissListener
             public void onDismiss(DialogInterface dialogInterface) {
                 if (PrivacySettingFragment.this.getActivity() != null && PrivacySettingFragment.this.isActivityListenerEnable() && (PrivacySettingFragment.this.getActivity() instanceof BaseFragmentActivity)) {
-                    ((BaseFragmentActivity) PrivacySettingFragment.this.getActivity()).a((BaseFragmentActivity.IOnBackPressedListener) PrivacySettingFragment.this);
+                    PrivacySettingFragment.this.getActivity().a(PrivacySettingFragment.this);
                 }
             }
         });
@@ -162,7 +161,7 @@ public class PrivacySettingFragment extends BaseFragment implements View.OnClick
     }
 
     private void d() {
-        this.q.b(this.f33566c.isChecked());
+        this.q.b(this.f19875c.isChecked());
         this.q.c(this.e.isChecked());
         this.q.e(this.f.isChecked());
         this.q.f(this.g.isChecked());
@@ -179,7 +178,7 @@ public class PrivacySettingFragment extends BaseFragment implements View.OnClick
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void d(View view) {
         Tracker.onClick(view);
-        CustomOptionsFragment.f33337a.a(this.f33565a);
+        CustomOptionsFragment.f19646a.a(this.f19874a);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -200,7 +199,7 @@ public class PrivacySettingFragment extends BaseFragment implements View.OnClick
     }
 
     private void e() {
-        new BluedAlertDialog.Builder(getContext()).d(R.string.no_disturb_hint_dialog_title).e(R.string.no_disturb_hint_dialog_message).a(2131887278, (DialogInterface.OnClickListener) null).f(2131101766).a().show();
+        new BluedAlertDialog.Builder(getContext()).d((int) R.string.no_disturb_hint_dialog_title).e((int) R.string.no_disturb_hint_dialog_message).a(2131887278, (DialogInterface.OnClickListener) null).f(2131101766).a().show();
     }
 
     @Override // com.soft.blued.ui.setting.Contract.IPrivacySettingContract.IView
@@ -235,18 +234,18 @@ public class PrivacySettingFragment extends BaseFragment implements View.OnClick
         TwoWaysBar twoWaysBar = (TwoWaysBar) this.b.findViewById(R.id.half_range_bar);
         this.x = twoWaysBar;
         twoWaysBar.a(ab, 100);
-        this.w.setText(TwoWaysBar.a(this.f33565a, ab, 1));
+        this.w.setText(TwoWaysBar.a(this.f19874a, ab, 1));
         this.x.setTwoWaysBarListner(new TwoWaysBar.TowWaysBarListenerAdapter() { // from class: com.soft.blued.ui.setting.fragment.PrivacySettingFragment.2
             @Override // com.soft.blued.ui.find.view.TwoWaysBar.TowWaysBarListenerAdapter, com.soft.blued.ui.find.view.TwoWaysBar.TwoWaysBarListner
             public void a(int i, int i2) {
                 StringBuilder sb = new StringBuilder();
                 sb.append(i);
-                sb.append("-");
+                sb.append(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
                 sb.append(i2 >= 100 ? "max" : Integer.valueOf(i2));
                 String sb2 = sb.toString();
                 BluedPreferences.x(sb2);
                 PrivacySettingFragment.this.q.b = sb2;
-                PrivacySettingFragment.this.w.setText(TwoWaysBar.a(PrivacySettingFragment.this.f33565a, i, i2, 1));
+                PrivacySettingFragment.this.w.setText(TwoWaysBar.a(PrivacySettingFragment.this.f19874a, i, i2, 1));
             }
 
             @Override // com.soft.blued.ui.find.view.TwoWaysBar.TowWaysBarListenerAdapter, com.soft.blued.ui.find.view.TwoWaysBar.TwoWaysBarListner
@@ -269,20 +268,20 @@ public class PrivacySettingFragment extends BaseFragment implements View.OnClick
                 PrivacySettingFragment.this.c(view);
             }
         });
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.b.findViewById(2131370749);
-        commonTopTitleNoTrans.f();
-        commonTopTitleNoTrans.a();
-        commonTopTitleNoTrans.setCenterText(getString(R.string.privacy_setting));
-        commonTopTitleNoTrans.setLeftClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.setting.fragment.-$$Lambda$PrivacySettingFragment$wZHs1JkS0hJ61mtZ1MVeM7HN5EM
+        CommonTopTitleNoTrans findViewById2 = this.b.findViewById(R.id.top_title);
+        findViewById2.f();
+        findViewById2.a();
+        findViewById2.setCenterText(getString(R.string.privacy_setting));
+        findViewById2.setLeftClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.setting.fragment.-$$Lambda$PrivacySettingFragment$wZHs1JkS0hJ61mtZ1MVeM7HN5EM
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 PrivacySettingFragment.this.b(view);
             }
         });
         ToggleButton toggleButton = (ToggleButton) this.b.findViewById(R.id.tglbtn_attention_onoff);
-        this.f33566c = toggleButton;
+        this.f19875c = toggleButton;
         toggleButton.setChecked(true);
-        ToggleButton toggleButton2 = (ToggleButton) this.b.findViewById(2131370648);
+        ToggleButton toggleButton2 = (ToggleButton) this.b.findViewById(R.id.tglbtn_fans_onoff);
         this.e = toggleButton2;
         toggleButton2.setChecked(true);
         ToggleButton toggleButton3 = (ToggleButton) this.b.findViewById(R.id.tglbtn_secret_onoff);
@@ -345,8 +344,8 @@ public class PrivacySettingFragment extends BaseFragment implements View.OnClick
         this.o = (TextView) this.b.findViewById(R.id.tv_black_list_count);
         this.p = (TextView) this.b.findViewById(R.id.tv_black_count_max);
         this.q.c();
-        this.y = (ShapeTextView) this.b.findViewById(R.id.tv_fans_list_red_point);
-        this.A = (ShapeTextView) this.b.findViewById(R.id.tv_group_list_red_point);
+        this.y = this.b.findViewById(R.id.tv_fans_list_red_point);
+        this.A = this.b.findViewById(R.id.tv_group_list_red_point);
         if (BluedPreferences.cY()) {
             return;
         }
@@ -357,7 +356,7 @@ public class PrivacySettingFragment extends BaseFragment implements View.OnClick
     public void a(String str, String str2) {
         this.o.setText(str);
         TextView textView = this.p;
-        textView.setText(BridgeUtil.SPLIT_MARK + str2);
+        textView.setText("/" + str2);
     }
 
     public void b() {
@@ -379,7 +378,7 @@ public class PrivacySettingFragment extends BaseFragment implements View.OnClick
 
     @Override // com.soft.blued.ui.setting.Contract.IPrivacySettingContract.IView
     public void f(boolean z) {
-        this.f33566c.setChecked(z);
+        this.f19875c.setChecked(z);
     }
 
     @Override // com.soft.blued.ui.setting.Contract.IPrivacySettingContract.IView
@@ -387,7 +386,6 @@ public class PrivacySettingFragment extends BaseFragment implements View.OnClick
         this.e.setChecked(z);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.utils.PageTimeUtils.APMInterface
     public String getPageBizName() {
         return super.getPageBizName();
     }
@@ -433,7 +431,6 @@ public class PrivacySettingFragment extends BaseFragment implements View.OnClick
         this.z = z;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener
     public boolean onBackPressed() {
         d();
         return true;
@@ -445,7 +442,7 @@ public class PrivacySettingFragment extends BaseFragment implements View.OnClick
         final int i = UserInfo.getInstance().getLoginUserInfo().vip_grade;
         int id = view.getId();
         if (id == 2131368266) {
-            TerminalActivity.d(getContext(), SystemPermissionFragment.class, null);
+            TerminalActivity.d(getContext(), SystemPermissionFragment.class, (Bundle) null);
         } else if (id == 2131370660) {
             if (this.k.isChecked()) {
                 e();
@@ -455,8 +452,8 @@ public class PrivacySettingFragment extends BaseFragment implements View.OnClick
             switch (id) {
                 case R.id.tglbtn_distance_onoff /* 2131370647 */:
                     if (this.z && UserInfo.getInstance().getLoginUserInfo().vip_grade != 0) {
-                        Context context = this.f33565a;
-                        CommonAlertDialog.a(context, context.getResources().getString(2131888879), this.f33565a.getResources().getString(R.string.close_the_location_and_open_hide_distance), this.f33565a.getResources().getString(R.string.close_now), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.setting.fragment.PrivacySettingFragment.4
+                        Context context = this.f19874a;
+                        CommonAlertDialog.a(context, context.getResources().getString(2131888879), this.f19874a.getResources().getString(R.string.close_the_location_and_open_hide_distance), this.f19874a.getResources().getString(R.string.close_now), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.setting.fragment.PrivacySettingFragment.4
                             @Override // android.content.DialogInterface.OnClickListener
                             public void onClick(DialogInterface dialogInterface, int i2) {
                                 Tracker.onClick(dialogInterface, i2);
@@ -469,7 +466,7 @@ public class PrivacySettingFragment extends BaseFragment implements View.OnClick
                                 PayUtils.a(PrivacySettingFragment.this.getActivity(), 1, "setting_hide_distance");
                                 InstantLog.a("setting_hide_distance_click", 0);
                             }
-                        }, this.f33565a.getResources().getString(2131886885), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.setting.fragment.PrivacySettingFragment.5
+                        }, this.f19874a.getResources().getString(2131886885), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.setting.fragment.PrivacySettingFragment.5
                             @Override // android.content.DialogInterface.OnClickListener
                             public void onClick(DialogInterface dialogInterface, int i2) {
                                 Tracker.onClick(dialogInterface, i2);
@@ -487,7 +484,7 @@ public class PrivacySettingFragment extends BaseFragment implements View.OnClick
                         InstantLog.a("setting_hide_distance_click", 0);
                         return;
                     }
-                case 2131370648:
+                case R.id.tglbtn_fans_onoff /* 2131370648 */:
                     BluedPreferences.cX();
                     this.y.setVisibility(8);
                     return;
@@ -512,7 +509,7 @@ public class PrivacySettingFragment extends BaseFragment implements View.OnClick
                         this.x.setVisibility(8);
                         return;
                     } else {
-                        CommonAlertDialog.a(this.f33565a, this.f33565a.getResources().getString(R.string.open_half_invisible), this.f33565a.getResources().getString(R.string.open_half_invisible_alert), (String) null, new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.setting.fragment.PrivacySettingFragment.6
+                        CommonAlertDialog.a(this.f19874a, this.f19874a.getResources().getString(R.string.open_half_invisible), this.f19874a.getResources().getString(R.string.open_half_invisible_alert), (String) null, new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.setting.fragment.PrivacySettingFragment.6
                             @Override // android.content.DialogInterface.OnClickListener
                             public void onClick(DialogInterface dialogInterface, int i2) {
                                 Tracker.onClick(dialogInterface, i2);
@@ -569,12 +566,11 @@ public class PrivacySettingFragment extends BaseFragment implements View.OnClick
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         View view = this.b;
         if (view == null) {
             this.b = layoutInflater.inflate(R.layout.fragment_privacy_setting, viewGroup, false);
-            this.f33565a = getActivity();
+            this.f19874a = getActivity();
             this.q = new PrivacySettingPresenter(getActivity(), getFragmentActive(), this);
             a();
             c();
@@ -585,7 +581,6 @@ public class PrivacySettingFragment extends BaseFragment implements View.OnClick
         return this.b;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onStart() {
         super.onStart();
         b();

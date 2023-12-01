@@ -8,11 +8,11 @@ import java.lang.annotation.RetentionPolicy;
 public final class g extends Exception {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f7338a = 0;
+    public static final int f4499a = 0;
     public static final int b = 1;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final int f7339c = 2;
+    public static final int f4500c = 2;
     public final int d;
     public final int e;
 

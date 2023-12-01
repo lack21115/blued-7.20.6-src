@@ -16,7 +16,6 @@ public class FixAndroid7WebviewCrashActivity extends TerminalActivity {
         a(context, cls, bundle).b();
     }
 
-    @Override // android.content.ContextWrapper, android.content.Context
     public AssetManager getAssets() {
         return getResources().getAssets();
     }

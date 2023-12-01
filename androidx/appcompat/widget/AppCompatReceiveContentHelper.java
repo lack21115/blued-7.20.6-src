@@ -18,9 +18,8 @@ import androidx.core.view.ViewCompat;
 /* loaded from: source-8756600-dex2jar.jar:androidx/appcompat/widget/AppCompatReceiveContentHelper.class */
 final class AppCompatReceiveContentHelper {
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8756600-dex2jar.jar:androidx/appcompat/widget/AppCompatReceiveContentHelper$OnDropApi24Impl.class */
-    public static final class OnDropApi24Impl {
+    static final class OnDropApi24Impl {
         private OnDropApi24Impl() {
         }
 

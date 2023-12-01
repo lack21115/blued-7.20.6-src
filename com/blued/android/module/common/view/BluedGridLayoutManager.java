@@ -12,7 +12,6 @@ public class BluedGridLayoutManager extends GridLayoutManager {
         super(context, attributeSet, i, i2);
     }
 
-    @Override // androidx.recyclerview.widget.GridLayoutManager, androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
     public void onLayoutChildren(RecyclerView.Recycler recycler, RecyclerView.State state) {
         try {
             super.onLayoutChildren(recycler, state);
@@ -21,7 +20,6 @@ public class BluedGridLayoutManager extends GridLayoutManager {
         }
     }
 
-    @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
     public void scrollToPosition(int i) {
         try {
             super.scrollToPosition(i);
@@ -30,7 +28,6 @@ public class BluedGridLayoutManager extends GridLayoutManager {
         }
     }
 
-    @Override // androidx.recyclerview.widget.GridLayoutManager, androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
     public boolean supportsPredictiveItemAnimations() {
         return false;
     }

@@ -5,16 +5,16 @@ package com.tencent.ugc;
 public final /* synthetic */ class fk implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final UGCThumbnailGenerator f40384a;
+    private final UGCThumbnailGenerator f26693a;
     private final long b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final long f40385c;
+    private final long f26694c;
 
     private fk(UGCThumbnailGenerator uGCThumbnailGenerator, long j, long j2) {
-        this.f40384a = uGCThumbnailGenerator;
+        this.f26693a = uGCThumbnailGenerator;
         this.b = j;
-        this.f40385c = j2;
+        this.f26694c = j2;
     }
 
     public static Runnable a(UGCThumbnailGenerator uGCThumbnailGenerator, long j, long j2) {
@@ -23,6 +23,6 @@ public final /* synthetic */ class fk implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        this.f40384a.mMediaListSource.setVideoSourceRange(this.b, this.f40385c);
+        this.f26693a.mMediaListSource.setVideoSourceRange(this.b, this.f26694c);
     }
 }

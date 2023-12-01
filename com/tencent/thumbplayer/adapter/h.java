@@ -11,61 +11,61 @@ import java.util.Map;
 public class h {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f39208a;
+    private String f25517a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private ParcelFileDescriptor f39209c;
+    private ParcelFileDescriptor f25518c;
     private AssetFileDescriptor d;
     private Map<String, String> e = new HashMap();
     private ITPMediaAsset f;
     private com.tencent.thumbplayer.adapter.a.e g;
 
     public String a() {
-        return this.f39208a;
+        return this.f25517a;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     public void a(AssetFileDescriptor assetFileDescriptor) {
-        this.f39208a = null;
+        this.f25517a = null;
         this.b = 4;
         this.e.clear();
-        this.f39209c = null;
+        this.f25518c = null;
         this.d = assetFileDescriptor;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     public void a(ParcelFileDescriptor parcelFileDescriptor) {
-        this.f39208a = null;
+        this.f25517a = null;
         this.b = 1;
         this.e.clear();
-        this.f39209c = parcelFileDescriptor;
+        this.f25518c = parcelFileDescriptor;
         this.d = null;
     }
 
     public void a(com.tencent.thumbplayer.adapter.a.e eVar) {
-        this.f39208a = null;
+        this.f25517a = null;
         this.b = 3;
-        this.f39209c = null;
+        this.f25518c = null;
         this.d = null;
         this.g = eVar;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     public void a(ITPMediaAsset iTPMediaAsset) {
-        this.f39208a = null;
+        this.f25517a = null;
         this.b = 2;
         this.e.clear();
-        this.f39209c = null;
+        this.f25518c = null;
         this.d = null;
         this.f = iTPMediaAsset;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     public void a(String str) {
-        this.f39208a = str;
+        this.f25517a = str;
         this.b = 0;
-        this.f39209c = null;
+        this.f25518c = null;
         this.d = null;
     }
 
@@ -85,7 +85,7 @@ public class h {
     }
 
     public ParcelFileDescriptor c() {
-        return this.f39209c;
+        return this.f25518c;
     }
 
     public AssetFileDescriptor d() {
@@ -106,6 +106,6 @@ public class h {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public boolean h() {
-        return (TextUtils.isEmpty(this.f39208a) && this.f39209c == null && this.d == null && this.f == null && this.g == null) ? false : true;
+        return (TextUtils.isEmpty(this.f25517a) && this.f25518c == null && this.d == null && this.f == null && this.g == null) ? false : true;
     }
 }

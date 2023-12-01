@@ -3,6 +3,7 @@ package com.anythink.interstitial.a;
 import android.content.Context;
 import android.os.SystemClock;
 import android.text.TextUtils;
+import com.anythink.core.api.ATAdInfo;
 import com.anythink.core.api.ATAdStatusInfo;
 import com.anythink.core.api.ATNetworkConfirmInfo;
 import com.anythink.core.api.AdError;
@@ -22,17 +23,17 @@ import java.util.Map;
 public final class d implements CustomInterstitialEventListener {
 
     /* renamed from: a  reason: collision with root package name */
-    ATInterstitialListener f8823a;
+    ATInterstitialListener f5983a;
     CustomInterstitialAdapter b;
 
     /* renamed from: c  reason: collision with root package name */
-    long f8824c;
+    long f5984c;
     long d;
     int e = 0;
     boolean f = true;
 
     public d(CustomInterstitialAdapter customInterstitialAdapter, ATInterstitialListener aTInterstitialListener) {
-        this.f8823a = aTInterstitialListener;
+        this.f5983a = aTInterstitialListener;
         this.b = customInterstitialAdapter;
     }
 
@@ -47,7 +48,7 @@ public final class d implements CustomInterstitialEventListener {
 
     @Override // com.anythink.interstitial.unitgroup.api.CustomInterstitialEventListener
     public final void onDeeplinkCallback(boolean z) {
-        ATInterstitialListener aTInterstitialListener = this.f8823a;
+        ATInterstitialListener aTInterstitialListener = this.f5983a;
         if (aTInterstitialListener == null || !(aTInterstitialListener instanceof ATInterstitialExListener)) {
             return;
         }
@@ -56,7 +57,7 @@ public final class d implements CustomInterstitialEventListener {
 
     @Override // com.anythink.interstitial.unitgroup.api.CustomInterstitialEventListener
     public final void onDownloadConfirm(Context context, ATNetworkConfirmInfo aTNetworkConfirmInfo) {
-        ATInterstitialListener aTInterstitialListener = this.f8823a;
+        ATInterstitialListener aTInterstitialListener = this.f5983a;
         if (aTInterstitialListener == null || !(aTInterstitialListener instanceof ATInterstitialExListener)) {
             return;
         }
@@ -71,7 +72,7 @@ public final class d implements CustomInterstitialEventListener {
             g.a(trackingInfo, g.i.d, g.i.f, "");
             com.anythink.core.common.j.a.a(n.a().g()).a(6, trackingInfo);
         }
-        ATInterstitialListener aTInterstitialListener = this.f8823a;
+        ATInterstitialListener aTInterstitialListener = this.f5983a;
         if (aTInterstitialListener != null) {
             aTInterstitialListener.onInterstitialAdClicked(j.a(this.b));
         }
@@ -93,7 +94,7 @@ public final class d implements CustomInterstitialEventListener {
             }
             trackingInfo.y(i3);
             com.anythink.core.common.k.g.a(trackingInfo, g.i.e, g.i.f, "");
-            long j = this.f8824c;
+            long j = this.f5984c;
             if (j != 0) {
                 com.anythink.core.common.j.c.a(trackingInfo, false, j, System.currentTimeMillis(), SystemClock.elapsedRealtime() - this.d);
             }
@@ -103,7 +104,7 @@ public final class d implements CustomInterstitialEventListener {
                 this.b.destory();
             } catch (Throwable th) {
             }
-            ATInterstitialListener aTInterstitialListener = this.f8823a;
+            ATInterstitialListener aTInterstitialListener = this.f5983a;
             if (aTInterstitialListener != null) {
                 aTInterstitialListener.onInterstitialAdClose(j.a(trackingInfo, this.b));
             }
@@ -115,9 +116,9 @@ public final class d implements CustomInterstitialEventListener {
 
     @Override // com.anythink.interstitial.unitgroup.api.CustomInterstitialEventListener
     public final void onInterstitialAdShow() {
-        this.f8824c = System.currentTimeMillis();
+        this.f5984c = System.currentTimeMillis();
         this.d = SystemClock.elapsedRealtime();
-        j a2 = j.a(this.b);
+        ATAdInfo a2 = j.a(this.b);
         CustomInterstitialAdapter customInterstitialAdapter = this.b;
         if (customInterstitialAdapter != null) {
             com.anythink.core.common.e.e trackingInfo = customInterstitialAdapter.getTrackingInfo();
@@ -126,7 +127,7 @@ public final class d implements CustomInterstitialEventListener {
                 trackingInfo.a(ilrd);
             }
             String str = "";
-            com.anythink.core.common.k.g.a(trackingInfo, g.i.f6512c, g.i.f, "");
+            com.anythink.core.common.k.g.a(trackingInfo, g.i.c, g.i.f, "");
             com.anythink.core.common.j.a.a(n.a().g()).a(4, trackingInfo, this.b.getUnitGroupInfo());
             if (trackingInfo != null) {
                 str = trackingInfo.W();
@@ -139,7 +140,7 @@ public final class d implements CustomInterstitialEventListener {
                 }
             }
         }
-        ATInterstitialListener aTInterstitialListener = this.f8823a;
+        ATInterstitialListener aTInterstitialListener = this.f5983a;
         if (aTInterstitialListener != null) {
             aTInterstitialListener.onInterstitialAdShow(a2);
         }
@@ -153,7 +154,7 @@ public final class d implements CustomInterstitialEventListener {
                 this.e = 3;
             }
             com.anythink.core.common.j.a.a(n.a().g()).a(9, this.b.getTrackingInfo());
-            ATInterstitialListener aTInterstitialListener = this.f8823a;
+            ATInterstitialListener aTInterstitialListener = this.f5983a;
             if (aTInterstitialListener != null) {
                 aTInterstitialListener.onInterstitialAdVideoEnd(j.a(this.b));
             }
@@ -164,7 +165,7 @@ public final class d implements CustomInterstitialEventListener {
     public final void onInterstitialAdVideoError(String str, String str2) {
         String str3;
         this.e = 99;
-        AdError errorCode = ErrorCode.getErrorCode(ErrorCode.adShowError, str, str2);
+        AdError errorCode = ErrorCode.getErrorCode("4006", str, str2);
         CustomInterstitialAdapter customInterstitialAdapter = this.b;
         if (customInterstitialAdapter != null) {
             com.anythink.core.common.e.e trackingInfo = customInterstitialAdapter.getTrackingInfo();
@@ -185,7 +186,7 @@ public final class d implements CustomInterstitialEventListener {
                 }
             }
         }
-        ATInterstitialListener aTInterstitialListener = this.f8823a;
+        ATInterstitialListener aTInterstitialListener = this.f5983a;
         if (aTInterstitialListener != null) {
             aTInterstitialListener.onInterstitialAdVideoError(errorCode);
         }
@@ -198,7 +199,7 @@ public final class d implements CustomInterstitialEventListener {
             com.anythink.core.common.e.e trackingInfo = customInterstitialAdapter.getTrackingInfo();
             if (this.f) {
                 com.anythink.core.common.j.a.a(n.a().g()).a(8, trackingInfo);
-                ATInterstitialListener aTInterstitialListener = this.f8823a;
+                ATInterstitialListener aTInterstitialListener = this.f5983a;
                 if (aTInterstitialListener != null) {
                     aTInterstitialListener.onInterstitialAdVideoStart(j.a(this.b));
                 }

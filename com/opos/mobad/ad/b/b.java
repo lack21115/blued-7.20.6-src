@@ -7,7 +7,7 @@ import com.opos.mobad.ad.i;
 public interface b extends i.a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final b f25669a = new b() { // from class: com.opos.mobad.ad.b.b.1
+    public static final b f11981a = new b() { // from class: com.opos.mobad.ad.b.b.1
         @Override // com.opos.mobad.ad.b.a
         public void a() {
             com.opos.cmn.an.f.a.b("IInterstitialAdListener", "onAdReady");

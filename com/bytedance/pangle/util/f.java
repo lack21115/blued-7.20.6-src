@@ -7,11 +7,11 @@ import java.security.NoSuchAlgorithmException;
 public final class f {
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f21502a = "DES/ECB/NoPadding";
+    public static String f7896a = "DES/ECB/NoPadding";
     public static String b = "DESede/ECB/NoPadding";
 
     /* renamed from: c  reason: collision with root package name */
-    private static final char[] f21503c = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
+    private static final char[] f7897c = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
 
     public static String a(String str) {
         return b(a(str.getBytes(), "MD5"));
@@ -42,7 +42,7 @@ public final class f {
             int i = 0;
             for (int i2 = 0; i2 < length; i2++) {
                 int i3 = i + 1;
-                char[] cArr2 = f21503c;
+                char[] cArr2 = f7897c;
                 cArr[i] = cArr2[(bArr[i2] >>> 4) & 15];
                 i = i3 + 1;
                 cArr[i3] = cArr2[bArr[i2] & 15];

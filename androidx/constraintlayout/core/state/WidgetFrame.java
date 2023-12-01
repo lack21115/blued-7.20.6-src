@@ -11,6 +11,7 @@ import androidx.constraintlayout.core.state.Transition;
 import androidx.constraintlayout.core.widgets.ConstraintAnchor;
 import androidx.constraintlayout.core.widgets.ConstraintWidget;
 import com.huawei.hms.ads.jsb.constant.Constant;
+import com.tencent.cloud.huiyansdkface.facelight.api.WbCloudFaceContant;
 import java.util.HashMap;
 import java.util.Set;
 
@@ -252,14 +253,14 @@ public class WidgetFrame {
             if (findPreviousPosition != null) {
                 i8 = (int) (findPreviousPosition.d * i);
                 i9 = (int) (findPreviousPosition.e * i2);
-                i5 = findPreviousPosition.f2103a;
+                i5 = findPreviousPosition.f2055a;
             } else {
                 i5 = 0;
             }
             if (keyPosition != null) {
                 i16 = (int) (keyPosition.d * i);
                 i17 = (int) (keyPosition.e * i2);
-                i6 = keyPosition.f2103a;
+                i6 = keyPosition.f2055a;
             } else {
                 i6 = 100;
             }
@@ -526,7 +527,7 @@ public class WidgetFrame {
                 z = true;
                 break;
             case -1349088399:
-                if (str.equals("custom")) {
+                if (str.equals(WbCloudFaceContant.CUSTOM)) {
                     z = true;
                     break;
                 }

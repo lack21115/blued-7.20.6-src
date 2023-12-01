@@ -16,11 +16,11 @@ import java.util.List;
 public final class a extends c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final int f25388a = u.f("styl");
+    private static final int f11700a = u.f("styl");
     private static final int b = u.f("tbox");
 
     /* renamed from: c  reason: collision with root package name */
-    private final m f25389c;
+    private final m f11701c;
     private boolean d;
     private int e;
     private int f;
@@ -30,7 +30,7 @@ public final class a extends c {
 
     public a(List<byte[]> list) {
         super("Tx3gDecoder");
-        this.f25389c = new m();
+        this.f11701c = new m();
         a(list);
     }
 
@@ -41,7 +41,7 @@ public final class a extends c {
         if (h == 0) {
             return "";
         }
-        return mVar.a(h, Charset.forName((mVar.b() < 2 || !((f = mVar.f()) == 65279 || f == 65534)) ? "UTF-8" : "UTF-16"));
+        return mVar.a(h, Charset.forName((mVar.b() < 2 || !((f = mVar.f()) == 65279 || f == 65534)) ? "UTF-8" : com.anythink.expressad.exoplayer.b.k));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:24:0x006e  */
@@ -224,10 +224,10 @@ public final class a extends c {
     @Override // com.opos.exoplayer.core.f.c
     public d a(byte[] bArr, int i, boolean z) {
         float f;
-        this.f25389c.a(bArr, i);
-        String a2 = a(this.f25389c);
+        this.f11701c.a(bArr, i);
+        String a2 = a(this.f11701c);
         if (a2.isEmpty()) {
-            return b.f25390a;
+            return b.f11702a;
         }
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(a2);
         a(spannableStringBuilder, this.e, 0, 0, spannableStringBuilder.length(), (int) Spanned.SPAN_PRIORITY);
@@ -236,24 +236,24 @@ public final class a extends c {
         float f2 = this.h;
         while (true) {
             float f3 = f2;
-            if (this.f25389c.b() < 8) {
+            if (this.f11701c.b() < 8) {
                 return new b(new com.opos.exoplayer.core.f.b(spannableStringBuilder, null, f3, 0, 0, Float.MIN_VALUE, Integer.MIN_VALUE, Float.MIN_VALUE));
             }
-            int d = this.f25389c.d();
-            int o = this.f25389c.o();
-            int o2 = this.f25389c.o();
+            int d = this.f11701c.d();
+            int o = this.f11701c.o();
+            int o2 = this.f11701c.o();
             boolean z2 = true;
             int i2 = 0;
-            if (o2 == f25388a) {
-                if (this.f25389c.b() < 2) {
+            if (o2 == f11700a) {
+                if (this.f11701c.b() < 2) {
                     z2 = false;
                 }
                 a(z2);
-                int h = this.f25389c.h();
+                int h = this.f11701c.h();
                 while (true) {
                     f = f3;
                     if (i2 < h) {
-                        a(this.f25389c, spannableStringBuilder);
+                        a(this.f11701c, spannableStringBuilder);
                         i2++;
                     }
                 }
@@ -262,12 +262,12 @@ public final class a extends c {
                 if (o2 == b) {
                     f = f3;
                     if (this.d) {
-                        a(this.f25389c.b() >= 2);
-                        f = u.a(this.f25389c.h() / this.i, 0.0f, 0.95f);
+                        a(this.f11701c.b() >= 2);
+                        f = u.a(this.f11701c.h() / this.i, 0.0f, 0.95f);
                     }
                 }
             }
-            this.f25389c.c(d + o);
+            this.f11701c.c(d + o);
             f2 = f;
         }
     }

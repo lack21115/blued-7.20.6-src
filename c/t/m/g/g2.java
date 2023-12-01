@@ -12,11 +12,11 @@ public class g2 {
     public static final Comparator<byte[]> f = new a();
 
     /* renamed from: a  reason: collision with root package name */
-    public final List<byte[]> f3817a = new ArrayList(32);
+    public final List<byte[]> f3769a = new ArrayList(32);
     public final List<byte[]> b = new ArrayList(32);
 
     /* renamed from: c  reason: collision with root package name */
-    public int f3818c = 0;
+    public int f3770c = 0;
     public int d = 10240;
 
     /* loaded from: source-8756600-dex2jar.jar:c/t/m/g/g2$a.class */
@@ -37,14 +37,14 @@ public class g2 {
             if (bArr != null) {
                 if (bArr.length <= this.d) {
                     Arrays.fill(bArr, (byte) 0);
-                    this.f3817a.add(bArr);
+                    this.f3769a.add(bArr);
                     int binarySearch = Collections.binarySearch(this.b, bArr, f);
                     int i = binarySearch;
                     if (binarySearch < 0) {
                         i = (-binarySearch) - 1;
                     }
                     this.b.add(i, bArr);
-                    this.f3818c += bArr.length;
+                    this.f3770c += bArr.length;
                     b();
                 }
             }
@@ -61,9 +61,9 @@ public class g2 {
                 }
                 byte[] bArr = this.b.get(i3);
                 if (bArr.length == i) {
-                    this.f3818c -= bArr.length;
+                    this.f3770c -= bArr.length;
                     this.b.remove(i3);
-                    this.f3817a.remove(bArr);
+                    this.f3769a.remove(bArr);
                     return bArr;
                 }
                 i2 = i3 + 1;
@@ -73,10 +73,10 @@ public class g2 {
 
     public final void b() {
         synchronized (this) {
-            while (this.f3818c > this.d) {
-                byte[] remove = this.f3817a.remove(0);
+            while (this.f3770c > this.d) {
+                byte[] remove = this.f3769a.remove(0);
                 this.b.remove(remove);
-                this.f3818c -= remove.length;
+                this.f3770c -= remove.length;
             }
         }
     }

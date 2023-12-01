@@ -24,16 +24,16 @@ public class TidHelper {
 
     private static Tid b(Context context) throws Exception {
         try {
-            com.alipay.sdk.packet.b a2 = new c().a(com.alipay.sdk.sys.a.a(), context);
-            if (a2 != null) {
-                JSONObject jSONObject = new JSONObject(a2.b());
-                b a3 = b.a(context);
+            com.alipay.sdk.packet.b a = new c().a(com.alipay.sdk.sys.a.a(), context);
+            if (a != null) {
+                JSONObject jSONObject = new JSONObject(a.b());
+                b a2 = b.a(context);
                 String optString = jSONObject.optString("tid");
                 String string = jSONObject.getString(b.e);
                 if (!TextUtils.isEmpty(optString) && !TextUtils.isEmpty(string)) {
-                    a3.a(optString, string);
+                    a2.a(optString, string);
                 }
-                return a(context, a3);
+                return a(context, a2);
             }
             return null;
         } catch (Throwable th) {
@@ -80,11 +80,11 @@ public class TidHelper {
     }
 
     public static Tid loadLocalTid(Context context) {
-        b a2 = b.a(context);
-        if (a2.h()) {
+        b a = b.a(context);
+        if (a.h()) {
             return null;
         }
-        return new Tid(a2.a(), a2.b(), a2.i().longValue());
+        return new Tid(a.a(), a.b(), a.i().longValue());
     }
 
     public static Tid loadOrCreateTID(Context context) {
@@ -113,11 +113,11 @@ public class TidHelper {
 
     public static Tid loadTID(Context context) {
         a(context);
-        Tid a2 = a(context, b.a(context));
-        if (a2 == null) {
+        Tid a = a(context, b.a(context));
+        if (a == null) {
             com.alipay.sdk.util.c.a(com.alipay.sdk.cons.a.x, "load_tid null");
         }
-        return a2;
+        return a;
     }
 
     public static boolean resetTID(Context context) throws Exception {

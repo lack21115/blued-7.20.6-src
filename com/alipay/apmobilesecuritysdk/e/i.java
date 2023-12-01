@@ -6,13 +6,9 @@ import java.util.Map;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alipay/apmobilesecuritysdk/e/i.class */
 public final class i {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static String f4556a = "";
+    private static String a = "";
     private static String b = "";
-
-    /* renamed from: c  reason: collision with root package name */
-    private static String f4557c = "";
+    private static String c = "";
     private static String d = "";
     private static String e = "";
     private static Map<String, String> f = new HashMap();
@@ -42,9 +38,9 @@ public final class i {
         synchronized (i.class) {
             if (bVar != null) {
                 try {
-                    f4556a = bVar.f4549a;
+                    a = bVar.a;
                     b = bVar.b;
-                    f4557c = bVar.f4550c;
+                    c = bVar.c;
                 } finally {
                 }
             }
@@ -55,11 +51,11 @@ public final class i {
         synchronized (i.class) {
             if (cVar != null) {
                 try {
-                    f4556a = cVar.f4551a;
+                    a = cVar.a;
                     b = cVar.b;
                     d = cVar.d;
                     e = cVar.e;
-                    f4557c = cVar.f4552c;
+                    c = cVar.c;
                 } finally {
                 }
             }
@@ -109,7 +105,7 @@ public final class i {
         String str;
         synchronized (i.class) {
             try {
-                str = f4556a;
+                str = a;
             } catch (Throwable th) {
                 throw th;
             }
@@ -118,7 +114,7 @@ public final class i {
     }
 
     public static void b(String str) {
-        f4556a = str;
+        a = str;
     }
 
     public static String c() {
@@ -150,7 +146,7 @@ public final class i {
     }
 
     public static void d(String str) {
-        f4557c = str;
+        c = str;
     }
 
     public static String e() {
@@ -173,7 +169,7 @@ public final class i {
         String str;
         synchronized (i.class) {
             try {
-                str = f4557c;
+                str = c;
             } catch (Throwable th) {
                 throw th;
             }
@@ -189,7 +185,7 @@ public final class i {
         c cVar;
         synchronized (i.class) {
             try {
-                cVar = new c(f4556a, b, f4557c, d, e);
+                cVar = new c(a, b, c, d, e);
             } catch (Throwable th) {
                 throw th;
             }
@@ -199,10 +195,10 @@ public final class i {
 
     public static void h() {
         f.clear();
-        f4556a = "";
+        a = "";
         b = "";
         d = "";
         e = "";
-        f4557c = "";
+        c = "";
     }
 }

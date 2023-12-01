@@ -10,11 +10,11 @@ import java.util.concurrent.CountDownLatch;
 public class c implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f26213a;
+    private Context f12525a;
     private com.opos.mobad.i.a b;
 
     /* renamed from: c  reason: collision with root package name */
-    private long f26214c;
+    private long f12526c;
     private long d;
     private CountDownLatch e;
     private boolean f = false;
@@ -75,17 +75,17 @@ public class c implements Runnable {
 
     public c(Context context, com.opos.mobad.i.a aVar, long j, long j2, long j3, CountDownLatch countDownLatch) {
         this.h = -1;
-        this.f26213a = context.getApplicationContext();
+        this.f12525a = context.getApplicationContext();
         this.b = aVar;
         this.g = j;
-        this.f26214c = j2;
+        this.f12526c = j2;
         this.d = j3;
         this.e = countDownLatch;
         this.h = hashCode();
     }
 
     public long a() {
-        return this.f26214c;
+        return this.f12526c;
     }
 
     public long b() {

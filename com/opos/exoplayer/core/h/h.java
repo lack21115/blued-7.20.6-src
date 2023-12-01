@@ -6,9 +6,9 @@ import java.io.IOException;
 public final class h extends IOException {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f25448a;
+    public final int f11760a;
 
     public h(int i) {
-        this.f25448a = i;
+        this.f11760a = i;
     }
 }

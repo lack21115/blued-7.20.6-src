@@ -53,7 +53,7 @@ import java.util.regex.Pattern;
 public final class a {
 
     /* renamed from: c  reason: collision with root package name */
-    private static final Map<String, String> f21944c = new HashMap<String, String>() { // from class: com.getui.gtc.dim.c.a.1
+    private static final Map<String, String> f8337c = new HashMap<String, String>() { // from class: com.getui.gtc.dim.c.a.1
         {
             put(AssistUtils.BRAND_HW, "ro.build.version.emui");
             put(AssistUtils.BRAND_XIAOMI, "ro.build.version.incremental");
@@ -74,7 +74,7 @@ public final class a {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Map<String, String> f21943a = new HashMap();
+    public static final Map<String, String> f8336a = new HashMap();
     private static final Map<String, String> d = new HashMap<String, String>() { // from class: com.getui.gtc.dim.c.a.2
         {
             put(AssistUtils.BRAND_HW, "com.android.permission.GET_INSTALLED_APP");
@@ -86,13 +86,13 @@ public final class a {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.getui.gtc.dim.c.a$a  reason: collision with other inner class name */
     /* loaded from: source-8110460-dex2jar.jar:com/getui/gtc/dim/c/a$a.class */
-    public final class ServiceConnectionC0345a implements ServiceConnection {
+    public final class ServiceConnectionC0175a implements ServiceConnection {
 
         /* renamed from: a  reason: collision with root package name */
-        boolean f21945a = false;
+        boolean f8338a = false;
         final LinkedBlockingQueue<IBinder> b = new LinkedBlockingQueue<>(1);
 
-        ServiceConnectionC0345a() {
+        ServiceConnectionC0175a() {
         }
 
         @Override // android.content.ServiceConnection
@@ -114,10 +114,10 @@ public final class a {
     public final class b implements IInterface {
 
         /* renamed from: a  reason: collision with root package name */
-        private IBinder f21946a;
+        private IBinder f8339a;
 
         public b(IBinder iBinder) {
-            this.f21946a = iBinder;
+            this.f8339a = iBinder;
         }
 
         public final String a() throws RemoteException {
@@ -126,7 +126,7 @@ public final class a {
             try {
                 try {
                     obtain.writeInterfaceToken("com.google.android.gms.ads.identifier.internal.IAdvertisingIdService");
-                    this.f21946a.transact(1, obtain, obtain2, 0);
+                    this.f8339a.transact(1, obtain, obtain2, 0);
                     obtain2.readException();
                     return obtain2.readString();
                 } catch (Exception e) {
@@ -143,7 +143,7 @@ public final class a {
 
         @Override // android.os.IInterface
         public final IBinder asBinder() {
-            return this.f21946a;
+            return this.f8339a;
         }
     }
 
@@ -385,11 +385,11 @@ public final class a {
             String b2 = b();
             if (!TextUtils.isEmpty(b2)) {
                 String lowerCase = b2.toLowerCase();
-                if (f21943a.containsKey(lowerCase)) {
-                    return com.getui.gtc.dim.e.c.a(f21943a.get(lowerCase), "");
+                if (f8336a.containsKey(lowerCase)) {
+                    return com.getui.gtc.dim.e.c.a(f8336a.get(lowerCase), "");
                 }
-                if (f21944c.containsKey(lowerCase)) {
-                    return com.getui.gtc.dim.e.c.a(f21944c.get(lowerCase), "");
+                if (f8337c.containsKey(lowerCase)) {
+                    return com.getui.gtc.dim.e.c.a(f8337c.get(lowerCase), "");
                 }
             }
             String e = e();
@@ -397,7 +397,7 @@ public final class a {
                 return "";
             }
             String lowerCase2 = e.toLowerCase();
-            return f21943a.containsKey(lowerCase2) ? com.getui.gtc.dim.e.c.a(f21943a.get(lowerCase2), "") : f21944c.containsKey(lowerCase2) ? com.getui.gtc.dim.e.c.a(f21944c.get(lowerCase2), "") : "";
+            return f8336a.containsKey(lowerCase2) ? com.getui.gtc.dim.e.c.a(f8336a.get(lowerCase2), "") : f8337c.containsKey(lowerCase2) ? com.getui.gtc.dim.e.c.a(f8337c.get(lowerCase2), "") : "";
         } catch (Throwable th) {
             com.getui.gtc.dim.e.b.a(th);
             return "";
@@ -453,15 +453,15 @@ public final class a {
             }
             Intent intent = new Intent("com.google.android.gms.ads.identifier.service.START");
             intent.setPackage("com.google.android.gms");
-            ServiceConnectionC0345a serviceConnectionC0345a = new ServiceConnectionC0345a();
-            if (context.bindService(intent, serviceConnectionC0345a, 1)) {
+            ServiceConnectionC0175a serviceConnectionC0175a = new ServiceConnectionC0175a();
+            if (context.bindService(intent, serviceConnectionC0175a, 1)) {
                 try {
-                    if (serviceConnectionC0345a.f21945a) {
+                    if (serviceConnectionC0175a.f8338a) {
                         throw new IllegalStateException();
                     }
-                    serviceConnectionC0345a.f21945a = true;
-                    String a2 = new b(serviceConnectionC0345a.b.poll(m.ag, TimeUnit.MILLISECONDS)).a();
-                    context.unbindService(serviceConnectionC0345a);
+                    serviceConnectionC0175a.f8338a = true;
+                    String a2 = new b(serviceConnectionC0175a.b.poll(m.ag, TimeUnit.MILLISECONDS)).a();
+                    context.unbindService(serviceConnectionC0175a);
                     return a2;
                 } catch (Exception e) {
                     throw e;
@@ -508,7 +508,7 @@ public final class a {
             if (Looper.myLooper() != Looper.getMainLooper()) {
                 d.a();
                 d.a(context);
-                if (d.f21948a) {
+                if (d.f8341a) {
                     return d.b();
                 }
                 return null;

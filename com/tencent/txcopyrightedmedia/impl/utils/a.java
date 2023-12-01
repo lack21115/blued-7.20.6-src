@@ -17,35 +17,35 @@ import java.util.concurrent.atomic.AtomicInteger;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static boolean f40026a = true;
+    private static boolean f26335a = true;
 
     /* renamed from: com.tencent.txcopyrightedmedia.impl.utils.a$3  reason: invalid class name */
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/txcopyrightedmedia/impl/utils/a$3.class */
     static final class AnonymousClass3 implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ at f40031a;
+        final /* synthetic */ at f26340a;
         final /* synthetic */ AtomicInteger b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ InterfaceC1064a f40032c;
+        final /* synthetic */ InterfaceC0894a f26341c;
         final /* synthetic */ CountDownLatch d;
 
-        AnonymousClass3(at atVar, AtomicInteger atomicInteger, InterfaceC1064a interfaceC1064a, CountDownLatch countDownLatch) {
-            this.f40031a = atVar;
+        AnonymousClass3(at atVar, AtomicInteger atomicInteger, InterfaceC0894a interfaceC0894a, CountDownLatch countDownLatch) {
+            this.f26340a = atVar;
             this.b = atomicInteger;
-            this.f40032c = interfaceC1064a;
+            this.f26341c = interfaceC0894a;
             this.d = countDownLatch;
         }
 
         @Override // java.lang.Runnable
         public final void run() {
-            i d = this.f40031a.d();
+            i d = this.f26340a.d();
             synchronized (this.b) {
-                if (this.b.compareAndSet(0, d.code) && d.code != 0 && this.f40032c != null) {
-                    this.f40032c.a(d);
+                if (this.b.compareAndSet(0, d.code) && d.code != 0 && this.f26341c != null) {
+                    this.f26341c.a(d);
                 }
-                if (this.f40031a.b != 3) {
+                if (this.f26340a.b != 3) {
                     this.d.countDown();
                 }
             }
@@ -57,31 +57,31 @@ public final class a {
     static final class AnonymousClass4 implements com.tencent.txcopyrightedmedia.a {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ AtomicInteger f40033a;
+        final /* synthetic */ AtomicInteger f26342a;
         final /* synthetic */ float[] b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ int f40034c;
+        final /* synthetic */ int f26343c;
         final /* synthetic */ at d;
         final /* synthetic */ float[] e;
         final /* synthetic */ int[] f;
-        final /* synthetic */ InterfaceC1064a g;
+        final /* synthetic */ InterfaceC0894a g;
 
-        AnonymousClass4(AtomicInteger atomicInteger, float[] fArr, int i, at atVar, float[] fArr2, int[] iArr, InterfaceC1064a interfaceC1064a) {
-            this.f40033a = atomicInteger;
+        AnonymousClass4(AtomicInteger atomicInteger, float[] fArr, int i, at atVar, float[] fArr2, int[] iArr, InterfaceC0894a interfaceC0894a) {
+            this.f26342a = atomicInteger;
             this.b = fArr;
-            this.f40034c = i;
+            this.f26343c = i;
             this.d = atVar;
             this.e = fArr2;
             this.f = iArr;
-            this.g = interfaceC1064a;
+            this.g = interfaceC0894a;
         }
 
         @Override // com.tencent.txcopyrightedmedia.a
         public final void a(String str, String str2, float f) {
-            synchronized (this.f40033a) {
-                this.b[this.f40034c] = f;
-                if (this.f40033a.get() != 0) {
+            synchronized (this.f26342a) {
+                this.b[this.f26343c] = f;
+                if (this.f26342a.get() != 0) {
                     TXCopyrightedMedia.instance().cancelPreloadMusic(this.d.i(), this.d.j());
                     return;
                 }
@@ -109,18 +109,18 @@ public final class a {
     static final class AnonymousClass5 implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ int f40035a;
+        final /* synthetic */ int f26344a;
         final /* synthetic */ int b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ at f40036c;
+        final /* synthetic */ at f26345c;
         final /* synthetic */ b d;
         final /* synthetic */ CountDownLatch e;
 
         AnonymousClass5(int i, int i2, at atVar, b bVar, CountDownLatch countDownLatch) {
-            this.f40035a = i;
+            this.f26344a = i;
             this.b = i2;
-            this.f40036c = atVar;
+            this.f26345c = atVar;
             this.d = bVar;
             this.e = countDownLatch;
         }
@@ -128,16 +128,16 @@ public final class a {
         @Override // java.lang.Runnable
         public final void run() {
             i iVar;
-            int i = this.f40035a;
+            int i = this.f26344a;
             while (true) {
                 int i2 = i;
                 if (i2 < this.b) {
-                    ar a2 = this.f40036c.a(i2);
+                    ar a2 = this.f26345c.a(i2);
                     if (a2 == null) {
                         iVar = new i(-5, "Async error.");
                     } else if (a2.f().b) {
                         iVar = new i(-2, "Cancel by user.");
-                    } else if (TextUtils.isEmpty(a2.f40067a)) {
+                    } else if (TextUtils.isEmpty(a2.f26376a)) {
                         iVar = new i(-6, "Get url fail.");
                     } else {
                         StringBuilder sb = new StringBuilder("fill content: abort: ");
@@ -145,19 +145,19 @@ public final class a {
                         sb.append(", thread id: ");
                         sb.append(Thread.currentThread().getId());
                         sb.append(". url: ");
-                        sb.append(a2.f40067a);
+                        sb.append(a2.f26376a);
                         if (a2.g() != null) {
-                            a2.m = a2.g().a(a2.f40067a, a2.j());
+                            a2.m = a2.g().a(a2.f26376a, a2.j());
                         }
                         if (a2.o().a()) {
-                            w wVar = w.c.f40184a;
+                            w wVar = w.c.f26493a;
                             w.d a3 = w.a(a2.m());
                             if (a2.f().b) {
                                 iVar = new i(-2, "Cancel by user.");
-                            } else if (a3.f40185a < 200 || a3.f40185a >= 300) {
-                                iVar = new i(-4, "Fetch " + a2.f40067a + " fail. Status: " + a3.f40185a);
-                                i.a aVar = iVar.f40101a;
-                                aVar.b = String.valueOf(a3.f40185a);
+                            } else if (a3.f26494a < 200 || a3.f26494a >= 300) {
+                                iVar = new i(-4, "Fetch " + a2.f26376a + " fail. Status: " + a3.f26494a);
+                                i.a aVar = iVar.f26410a;
+                                aVar.b = String.valueOf(a3.f26494a);
                                 aVar.a(a3.e);
                             } else {
                                 a2.o().a(a3.b, a3.d);
@@ -168,9 +168,9 @@ public final class a {
                         }
                         if (a2.f().d && a2.b != null) {
                             az azVar = a2.b;
-                            if (!(azVar.f40082a == null || azVar.b == null || azVar.f40083c == null)) {
-                                a2.o().f40088a = ac.a(a2.o().f40088a, a2.b.f40082a, a2.b.b, "PKCS5Padding");
-                                if (a2.o().f40088a == null) {
+                            if (!(azVar.f26391a == null || azVar.b == null || azVar.f26392c == null)) {
+                                a2.o().f26397a = ac.a(a2.o().f26397a, a2.b.f26391a, a2.b.b, "PKCS5Padding");
+                                if (a2.o().f26397a == null) {
                                     iVar = new i(-7, "Decrypt fail.");
                                 }
                             }
@@ -197,7 +197,7 @@ public final class a {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.tencent.txcopyrightedmedia.impl.utils.a$a  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/txcopyrightedmedia/impl/utils/a$a.class */
-    public interface InterfaceC1064a {
+    public interface InterfaceC0894a {
         void a(float f);
 
         void a(i iVar);
@@ -213,7 +213,7 @@ public final class a {
         if (TXCopyrightedMedia.instance().getAppID() == -1) {
             return new i(-1, "Licence init fail.");
         }
-        asVar.f40068a = "https://play.yinsuda.qcloud.com/v1/playapi?musicid=" + asVar.i();
+        asVar.f26377a = "https://play.yinsuda.qcloud.com/v1/playapi?musicid=" + asVar.i();
         return new i(0, null);
     }
 
@@ -224,11 +224,11 @@ public final class a {
         i iVar2;
         i iVar3;
         i iVar4;
-        ax axVar2 = asVar.f().f40087c;
-        if (asVar.f40068a == null) {
-            asVar.f40068a = axVar2.f40079c;
-        } else if (TextUtils.isEmpty(axVar2.f40079c)) {
-            axVar2.f40079c = asVar.f40068a;
+        ax axVar2 = asVar.f().f26396c;
+        if (asVar.f26377a == null) {
+            asVar.f26377a = axVar2.f26388c;
+        } else if (TextUtils.isEmpty(axVar2.f26388c)) {
+            axVar2.f26388c = asVar.f26377a;
             axVar2.e = 0;
             int a3 = bVar.b.a();
             int a4 = bVar.d.a();
@@ -243,16 +243,16 @@ public final class a {
                     }
                     Pair<String, String> pair = a2[i4];
                     bVar.b.b(pair.first, pair.second);
-                    bVar.f40084a.b(pair.first, pair.second);
+                    bVar.f26393a.b(pair.first, pair.second);
                     d.a(pair.first);
                     i3 = i4 + 1;
                 }
             }
             if (a4 > 0) {
-                SQLiteDatabase writableDatabase = bVar.b.f40096a.getWritableDatabase();
+                SQLiteDatabase writableDatabase = bVar.b.f26405a.getWritableDatabase();
                 Object[] objArr = new Object[9];
-                if (axVar2.f40078a != null) {
-                    objArr[0] = axVar2.f40078a;
+                if (axVar2.f26387a != null) {
+                    objArr[0] = axVar2.f26387a;
                 } else {
                     objArr[0] = "";
                 }
@@ -261,8 +261,8 @@ public final class a {
                 } else {
                     objArr[1] = "";
                 }
-                if (axVar2.f40079c != null) {
-                    objArr[2] = axVar2.f40079c;
+                if (axVar2.f26388c != null) {
+                    objArr[2] = axVar2.f26388c;
                 } else {
                     objArr[2] = "";
                 }
@@ -286,8 +286,8 @@ public final class a {
                 objArr[8] = Integer.valueOf(axVar2.j);
                 writableDatabase.execSQL("REPLACE INTO m4a_file_id_cache ( music_id, file_id,url,music_ext_id,cache_progress,overlay_key,overlay_iv,date,source_type) VALUES (?,?,?,?,?,?,?,?,?);", objArr);
             }
-        } else if (!TextUtils.equals(asVar.f40068a, axVar2.f40079c)) {
-            axVar2.f40079c = asVar.f40068a;
+        } else if (!TextUtils.equals(asVar.f26377a, axVar2.f26388c)) {
+            axVar2.f26388c = asVar.f26377a;
             axVar2.e = 0;
             bVar.b.a(axVar2);
         }
@@ -299,8 +299,8 @@ public final class a {
             ArrayList arrayList2 = new ArrayList(arrayList);
             final AtomicInteger atomicInteger = new AtomicInteger(0);
             final i iVar5 = new i(0, null);
-            a(asVar, arrayList2, new InterfaceC1064a() { // from class: com.tencent.txcopyrightedmedia.impl.utils.a.1
-                @Override // com.tencent.txcopyrightedmedia.impl.utils.a.InterfaceC1064a
+            a(asVar, arrayList2, new InterfaceC0894a() { // from class: com.tencent.txcopyrightedmedia.impl.utils.a.1
+                @Override // com.tencent.txcopyrightedmedia.impl.utils.a.InterfaceC0894a
                 public final void a(float f) {
                     com.tencent.txcopyrightedmedia.a aVar2 = com.tencent.txcopyrightedmedia.a.this;
                     if (aVar2 != null) {
@@ -308,11 +308,11 @@ public final class a {
                     }
                 }
 
-                @Override // com.tencent.txcopyrightedmedia.impl.utils.a.InterfaceC1064a
+                @Override // com.tencent.txcopyrightedmedia.impl.utils.a.InterfaceC0894a
                 public final void a(i iVar6) {
                     iVar5.code = iVar6.code;
                     iVar5.msg = iVar6.msg;
-                    iVar5.f40101a = iVar6.f40101a;
+                    iVar5.f26410a = iVar6.f26410a;
                 }
             });
             if (iVar5.code == 0) {
@@ -326,27 +326,27 @@ public final class a {
                         break;
                     }
                     at.a aVar2 = (at.a) it.next();
-                    at a5 = asVar.a(aVar2.f40071a, aVar2.b, aVar2.f40072c);
+                    at a5 = asVar.a(aVar2.f26380a, aVar2.b, aVar2.f26381c);
                     if (a5.e != null) {
                         aq aqVar = a5.e;
                         if (aqVar.f().b) {
                             iVar5 = new i(-2, "Cancel by user.");
-                        } else if (TextUtils.isEmpty(aqVar.f40066a)) {
+                        } else if (TextUtils.isEmpty(aqVar.f26375a)) {
                             iVar5 = new i(-6, "Get url fail.");
                         } else {
-                            new StringBuilder("fill content: url: ").append(aqVar.f40066a);
+                            new StringBuilder("fill content: url: ").append(aqVar.f26375a);
                             if (aqVar.g() != null) {
-                                aqVar.m = aqVar.g().a(aqVar.f40066a, aqVar.j());
+                                aqVar.m = aqVar.g().a(aqVar.f26375a, aqVar.j());
                             }
                             if (aqVar.o().a()) {
-                                w wVar = w.c.f40184a;
+                                w wVar = w.c.f26493a;
                                 w.d a6 = w.a(aqVar.m());
                                 if (aqVar.f().b) {
                                     iVar5 = new i(-2, "Cancel by user.");
-                                } else if (a6.f40185a < 200 || a6.f40185a >= 300) {
-                                    iVar5 = new i(-4, "Fetch " + aqVar.f40066a + " fail. Status: " + a6.f40185a);
-                                    i.a aVar3 = iVar5.f40101a;
-                                    aVar3.b = String.valueOf(a6.f40185a);
+                                } else if (a6.f26494a < 200 || a6.f26494a >= 300) {
+                                    iVar5 = new i(-4, "Fetch " + aqVar.f26375a + " fail. Status: " + a6.f26494a);
+                                    i.a aVar3 = iVar5.f26410a;
+                                    aVar3.b = String.valueOf(a6.f26494a);
                                     aVar3.a(a6.e);
                                 } else {
                                     aqVar.o().a(a6.b, a6.d);
@@ -367,30 +367,30 @@ public final class a {
                         au auVar = a5.g;
                         if (auVar.f().b) {
                             iVar4 = new i(-2, "Cancel by user.");
-                        } else if (TextUtils.isEmpty(auVar.f40073a)) {
+                        } else if (TextUtils.isEmpty(auVar.f26382a)) {
                             iVar4 = new i(-6, "Get url fail.");
                         } else {
-                            new StringBuilder("fill content: url: ").append(auVar.f40073a);
+                            new StringBuilder("fill content: url: ").append(auVar.f26382a);
                             if (auVar.g() != null) {
-                                auVar.o().f40088a = d.a(d.b(auVar));
+                                auVar.o().f26397a = d.a(d.b(auVar));
                                 auVar.o().b = auVar.a() == null ? 0L : auVar.a().length;
                             }
                             if (auVar.o().a()) {
-                                if (auVar.f40073a.startsWith("http")) {
-                                    w wVar2 = w.c.f40184a;
+                                if (auVar.f26382a.startsWith("http")) {
+                                    w wVar2 = w.c.f26493a;
                                     w.d a7 = w.a(auVar.m());
                                     if (auVar.f().b) {
                                         iVar4 = new i(-2, "Cancel by user.");
-                                    } else if (a7.f40185a < 200 || a7.f40185a >= 300) {
-                                        iVar4 = new i(-4, "Fetch " + auVar.f40073a + " fail. Status: " + a7.f40185a);
-                                        i.a aVar4 = iVar4.f40101a;
-                                        aVar4.b = String.valueOf(a7.f40185a);
+                                    } else if (a7.f26494a < 200 || a7.f26494a >= 300) {
+                                        iVar4 = new i(-4, "Fetch " + auVar.f26382a + " fail. Status: " + a7.f26494a);
+                                        i.a aVar4 = iVar4.f26410a;
+                                        aVar4.b = String.valueOf(a7.f26494a);
                                         aVar4.a(a7.e);
                                     } else {
                                         auVar.o().a(a7.b, a7.d);
                                     }
                                 } else {
-                                    auVar.o().a(auVar.f40073a.getBytes(), auVar.f40073a.length());
+                                    auVar.o().a(auVar.f26382a.getBytes(), auVar.f26382a.length());
                                 }
                                 d.a(auVar);
                             }
@@ -411,15 +411,15 @@ public final class a {
                             @Override // com.tencent.txcopyrightedmedia.impl.utils.a.b
                             public final void a(i iVar8) {
                                 if (iVar8.code == 0) {
-                                    AtomicInteger.this.incrementAndGet();
+                                    atomicInteger.incrementAndGet();
                                     com.tencent.txcopyrightedmedia.a aVar5 = aVar;
                                     if (aVar5 != null) {
-                                        aVar5.a(asVar.i(), asVar.j(), (AtomicInteger.this.get() * 1.0f) / this.d);
+                                        aVar5.a(asVar.i(), asVar.j(), (atomicInteger.get() * 1.0f) / this.d);
                                     }
                                 } else if (atomicInteger2.compareAndSet(0, iVar8.code)) {
                                     iVar7.code = iVar8.code;
                                     iVar7.msg = iVar8.msg;
-                                    iVar7.f40101a = iVar8.f40101a;
+                                    iVar7.f26410a = iVar8.f26410a;
                                 }
                             }
                         });
@@ -458,7 +458,7 @@ public final class a {
         CountDownLatch countDownLatch2 = new CountDownLatch(1);
         a8.b.obtainMessage(100, countDownLatch2).sendToTarget();
         try {
-            if (a8.f40191a.isAlive()) {
+            if (a8.f26500a.isAlive()) {
                 countDownLatch2.await(5000L, TimeUnit.MILLISECONDS);
                 return iVar;
             }
@@ -469,7 +469,7 @@ public final class a {
     }
 
     /* JADX WARN: Type inference failed for: r0v0, types: [java.lang.Throwable, java.lang.Runtime] */
-    private static void a(as asVar, ArrayList<at.a> arrayList, InterfaceC1064a interfaceC1064a) {
+    private static void a(as asVar, ArrayList<at.a> arrayList, InterfaceC0894a interfaceC0894a) {
         throw new Runtime("d2j fail translate: java.lang.RuntimeException: can not merge I and Z\r\n\tat com.googlecode.dex2jar.ir.TypeClass.merge(TypeClass.java:100)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeRef.updateTypeClass(TypeTransformer.java:174)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeAnalyze.copyTypes(TypeTransformer.java:311)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeAnalyze.fixTypes(TypeTransformer.java:226)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeAnalyze.analyze(TypeTransformer.java:207)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer.transform(TypeTransformer.java:44)\r\n\tat com.googlecode.d2j.dex.Dex2jar$2.optimize(Dex2jar.java:162)\r\n\tat com.googlecode.d2j.dex.Dex2Asm.convertCode(Dex2Asm.java:414)\r\n\tat com.googlecode.d2j.dex.ExDex2Asm.convertCode(ExDex2Asm.java:42)\r\n\tat com.googlecode.d2j.dex.Dex2jar$2.convertCode(Dex2jar.java:128)\r\n\tat com.googlecode.d2j.dex.Dex2Asm.convertMethod(Dex2Asm.java:509)\r\n\tat com.googlecode.d2j.dex.Dex2Asm.convertClass(Dex2Asm.java:406)\r\n\tat com.googlecode.d2j.dex.Dex2Asm.convertDex(Dex2Asm.java:422)\r\n\tat com.googlecode.d2j.dex.Dex2jar.doTranslate(Dex2jar.java:172)\r\n\tat com.googlecode.d2j.dex.Dex2jar.to(Dex2jar.java:272)\r\n\tat com.googlecode.dex2jar.tools.Dex2jarCmd.doCommandLine(Dex2jarCmd.java:108)\r\n\tat com.googlecode.dex2jar.tools.BaseCmd.doMain(BaseCmd.java:288)\r\n\tat com.googlecode.dex2jar.tools.Dex2jarCmd.main(Dex2jarCmd.java:32)\r\n");
     }
 

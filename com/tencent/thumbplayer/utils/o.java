@@ -10,11 +10,11 @@ import java.util.concurrent.ScheduledExecutorService;
 public class o {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile HandlerThread f39445a;
+    private static volatile HandlerThread f25754a;
     private static volatile Handler b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static int f39446c;
+    private static int f25755c;
     private static volatile ExecutorService d;
     private static volatile ExecutorService e;
     private static volatile ScheduledExecutorService f;
@@ -47,7 +47,7 @@ public class o {
         /*
             java.lang.Class<com.tencent.thumbplayer.utils.o> r0 = com.tencent.thumbplayer.utils.o.class
             monitor-enter(r0)
-            android.os.HandlerThread r0 = com.tencent.thumbplayer.utils.o.f39445a     // Catch: java.lang.Throwable -> L54
+            android.os.HandlerThread r0 = com.tencent.thumbplayer.utils.o.f25754a     // Catch: java.lang.Throwable -> L54
             if (r0 != 0) goto L1e
             android.os.HandlerThread r0 = new android.os.HandlerThread     // Catch: java.lang.Throwable -> L54
             r1 = r0
@@ -55,23 +55,23 @@ public class o {
             r1.<init>(r2)     // Catch: java.lang.Throwable -> L54
             r4 = r0
             r0 = r4
-            com.tencent.thumbplayer.utils.o.f39445a = r0     // Catch: java.lang.Throwable -> L54
+            com.tencent.thumbplayer.utils.o.f25754a = r0     // Catch: java.lang.Throwable -> L54
         L17:
             r0 = r4
             r0.start()     // Catch: java.lang.Throwable -> L54
             goto L2e
         L1e:
-            android.os.HandlerThread r0 = com.tencent.thumbplayer.utils.o.f39445a     // Catch: java.lang.Throwable -> L54
+            android.os.HandlerThread r0 = com.tencent.thumbplayer.utils.o.f25754a     // Catch: java.lang.Throwable -> L54
             boolean r0 = r0.isAlive()     // Catch: java.lang.Throwable -> L54
             if (r0 != 0) goto L2e
-            android.os.HandlerThread r0 = com.tencent.thumbplayer.utils.o.f39445a     // Catch: java.lang.Throwable -> L54
+            android.os.HandlerThread r0 = com.tencent.thumbplayer.utils.o.f25754a     // Catch: java.lang.Throwable -> L54
             r4 = r0
             goto L17
         L2e:
-            android.os.HandlerThread r0 = com.tencent.thumbplayer.utils.o.f39445a     // Catch: java.lang.Throwable -> L54
+            android.os.HandlerThread r0 = com.tencent.thumbplayer.utils.o.f25754a     // Catch: java.lang.Throwable -> L54
             android.os.Looper r0 = r0.getLooper()     // Catch: java.lang.Throwable -> L54
             if (r0 != 0) goto L50
-            android.os.HandlerThread r0 = com.tencent.thumbplayer.utils.o.f39445a     // Catch: java.lang.Throwable -> L54
+            android.os.HandlerThread r0 = com.tencent.thumbplayer.utils.o.f25754a     // Catch: java.lang.Throwable -> L54
             boolean r0 = r0.quit()     // Catch: java.lang.Throwable -> L54
             android.os.HandlerThread r0 = new android.os.HandlerThread     // Catch: java.lang.Throwable -> L54
             r1 = r0
@@ -79,7 +79,7 @@ public class o {
             r1.<init>(r2)     // Catch: java.lang.Throwable -> L54
             r4 = r0
             r0 = r4
-            com.tencent.thumbplayer.utils.o.f39445a = r0     // Catch: java.lang.Throwable -> L54
+            com.tencent.thumbplayer.utils.o.f25754a = r0     // Catch: java.lang.Throwable -> L54
             r0 = r4
             r0.start()     // Catch: java.lang.Throwable -> L54
         L50:
@@ -151,14 +151,14 @@ public class o {
         if (handler != null) {
             handler.removeCallbacksAndMessages(null);
         }
-        if (!handlerThread.equals(f39445a)) {
+        if (!handlerThread.equals(f25754a)) {
             handlerThread.quit();
             return;
         }
         synchronized (o.class) {
             try {
-                f39446c--;
-                TPLogUtil.i("TPPlayer[TPThreadPool]", "handlerThread recycle mShareThreadCount:" + f39446c);
+                f25755c--;
+                TPLogUtil.i("TPPlayer[TPThreadPool]", "handlerThread recycle mShareThreadCount:" + f25755c);
             } catch (Throwable th) {
                 throw th;
             }
@@ -170,9 +170,9 @@ public class o {
         f();
         synchronized (o.class) {
             try {
-                f39446c++;
-                TPLogUtil.i("TPPlayer[TPThreadPool]", "handlerThread obtainShareThread mShareThreadCount:" + f39446c);
-                handlerThread = f39445a;
+                f25755c++;
+                TPLogUtil.i("TPPlayer[TPThreadPool]", "handlerThread obtainShareThread mShareThreadCount:" + f25755c);
+                handlerThread = f25754a;
             } catch (Throwable th) {
                 throw th;
             }

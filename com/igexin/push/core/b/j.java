@@ -7,11 +7,11 @@ import org.json.JSONObject;
 public final class j implements Comparable<j> {
 
     /* renamed from: a  reason: collision with root package name */
-    public long f23444a;
+    public long f9836a;
     public String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f23445c;
+    public String f9837c;
     public String d;
     public byte[] e;
     public byte[] f;
@@ -26,9 +26,9 @@ public final class j implements Comparable<j> {
     private int o;
 
     public j(long j, String str, String str2, String str3, byte[] bArr, byte[] bArr2, String str4, int i, long j2) {
-        this.f23444a = j;
+        this.f9836a = j;
         this.b = str;
-        this.f23445c = str2;
+        this.f9837c = str2;
         this.d = str3;
         this.e = bArr;
         this.f = bArr2;
@@ -52,7 +52,7 @@ public final class j implements Comparable<j> {
     }
 
     private void a(long j) {
-        this.f23444a = j;
+        this.f9836a = j;
     }
 
     private void a(String str) {
@@ -64,7 +64,7 @@ public final class j implements Comparable<j> {
     }
 
     private long b() {
-        return this.f23444a;
+        return this.f9836a;
     }
 
     private void b(int i) {
@@ -76,7 +76,7 @@ public final class j implements Comparable<j> {
     }
 
     private void b(String str) {
-        this.f23445c = str;
+        this.f9837c = str;
     }
 
     private void b(byte[] bArr) {
@@ -100,7 +100,7 @@ public final class j implements Comparable<j> {
     }
 
     private String d() {
-        return this.f23445c;
+        return this.f9837c;
     }
 
     private void d(int i) {

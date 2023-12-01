@@ -69,7 +69,7 @@ public class b {
             try {
                 httpURLConnection.setInstanceFollowRedirects(false);
                 httpURLConnection.setRequestProperty("accept", "*/*");
-                httpURLConnection.setRequestProperty(Headers.CONN_DIRECTIVE, c.f7906c);
+                httpURLConnection.setRequestProperty(Headers.CONN_DIRECTIVE, c.f5066c);
                 if (map != null && !map.isEmpty()) {
                     for (Map.Entry<String, String> entry : map.entrySet()) {
                         httpURLConnection.setRequestProperty(entry.getKey(), entry.getValue());

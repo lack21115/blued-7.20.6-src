@@ -5,15 +5,15 @@ package com.xiaomi.push;
 public class dq implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ dp f41342a;
+    final /* synthetic */ dp f27651a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public dq(dp dpVar) {
-        this.f41342a = dpVar;
+        this.f27651a = dpVar;
     }
 
     @Override // java.lang.Runnable
     public void run() {
-        this.f41342a.b();
+        this.f27651a.b();
     }
 }

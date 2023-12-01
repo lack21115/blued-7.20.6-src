@@ -1,5 +1,6 @@
 package okhttp3.internal.http;
 
+import com.blued.android.module.common.web.LoaderConstants;
 import java.io.IOException;
 import java.net.ProtocolException;
 import okhttp3.Interceptor;
@@ -16,15 +17,11 @@ import okio.Sink;
 
 /* loaded from: source-3503164-dex2jar.jar:okhttp3/internal/http/CallServerInterceptor.class */
 public final class CallServerInterceptor implements Interceptor {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final boolean f43883a;
+    private final boolean a;
 
     /* loaded from: source-3503164-dex2jar.jar:okhttp3/internal/http/CallServerInterceptor$CountingSink.class */
     static final class CountingSink extends ForwardingSink {
-
-        /* renamed from: a  reason: collision with root package name */
-        long f43884a;
+        long a;
 
         CountingSink(Sink sink) {
             super(sink);
@@ -33,19 +30,19 @@ public final class CallServerInterceptor implements Interceptor {
         @Override // okio.ForwardingSink, okio.Sink
         public void write(Buffer buffer, long j) throws IOException {
             super.write(buffer, j);
-            this.f43884a += j;
+            this.a += j;
         }
     }
 
     public CallServerInterceptor(boolean z) {
-        this.f43883a = z;
+        this.a = z;
     }
 
     @Override // okhttp3.Interceptor
     public Response intercept(Interceptor.Chain chain) throws IOException {
         RealInterceptorChain realInterceptorChain = (RealInterceptorChain) chain;
         HttpCodec b = realInterceptorChain.b();
-        StreamAllocation a2 = realInterceptorChain.a();
+        StreamAllocation a = realInterceptorChain.a();
         RealConnection realConnection = (RealConnection) realInterceptorChain.connection();
         Request request = realInterceptorChain.request();
         long currentTimeMillis = System.currentTimeMillis();
@@ -68,12 +65,12 @@ public final class CallServerInterceptor implements Interceptor {
                     BufferedSink buffer = Okio.buffer(countingSink);
                     request.body().writeTo(buffer);
                     buffer.close();
-                    realInterceptorChain.c().requestBodyEnd(realInterceptorChain.call(), countingSink.f43884a);
+                    realInterceptorChain.c().requestBodyEnd(realInterceptorChain.call(), countingSink.a);
                     builder2 = builder;
                 } else {
                     builder2 = builder;
                     if (!realConnection.b()) {
-                        a2.e();
+                        a.e();
                         builder2 = builder;
                     }
                 }
@@ -85,17 +82,17 @@ public final class CallServerInterceptor implements Interceptor {
             realInterceptorChain.c().responseHeadersStart(realInterceptorChain.call());
             builder3 = b.a(false);
         }
-        Response build = builder3.request(request).handshake(a2.c().handshake()).sentRequestAtMillis(currentTimeMillis).receivedResponseAtMillis(System.currentTimeMillis()).build();
+        Response build = builder3.request(request).handshake(a.c().handshake()).sentRequestAtMillis(currentTimeMillis).receivedResponseAtMillis(System.currentTimeMillis()).build();
         int code = build.code();
         int i = code;
         if (code == 100) {
-            build = b.a(false).request(request).handshake(a2.c().handshake()).sentRequestAtMillis(currentTimeMillis).receivedResponseAtMillis(System.currentTimeMillis()).build();
+            build = b.a(false).request(request).handshake(a.c().handshake()).sentRequestAtMillis(currentTimeMillis).receivedResponseAtMillis(System.currentTimeMillis()).build();
             i = build.code();
         }
         realInterceptorChain.c().responseHeadersEnd(realInterceptorChain.call(), build);
-        Response build2 = (this.f43883a && i == 101) ? build.newBuilder().body(Util.f43841c).build() : build.newBuilder().body(b.a(build)).build();
-        if ("close".equalsIgnoreCase(build2.request().header("Connection")) || "close".equalsIgnoreCase(build2.header("Connection"))) {
-            a2.e();
+        Response build2 = (this.a && i == 101) ? build.newBuilder().body(Util.c).build() : build.newBuilder().body(b.a(build)).build();
+        if (LoaderConstants.CLOSE.equalsIgnoreCase(build2.request().header("Connection")) || LoaderConstants.CLOSE.equalsIgnoreCase(build2.header("Connection"))) {
+            a.e();
         }
         if ((i == 204 || i == 205) && build2.body().contentLength() > 0) {
             throw new ProtocolException("HTTP " + i + " had non-zero Content-Length: " + build2.body().contentLength());

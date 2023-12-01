@@ -32,7 +32,7 @@ public class dd extends bf {
     private int E;
 
     /* renamed from: a  reason: collision with root package name */
-    private List<NativeResponse> f9414a;
+    private List<NativeResponse> f6574a;
     private List<ExpressResponse> q;
     private List<EntryResponse> r;
     private int s;
@@ -149,14 +149,14 @@ public class dd extends bf {
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.baidu.mobads.sdk.internal.bf
     public void a(String str, boolean z) {
-        if (!TextUtils.isEmpty(str) && this.f9414a != null) {
+        if (!TextUtils.isEmpty(str) && this.f6574a != null) {
             int i = 0;
             while (true) {
                 int i2 = i;
-                if (i2 >= this.f9414a.size()) {
+                if (i2 >= this.f6574a.size()) {
                     break;
                 }
-                XAdNativeResponse xAdNativeResponse = (XAdNativeResponse) this.f9414a.get(i2);
+                XAdNativeResponse xAdNativeResponse = (XAdNativeResponse) this.f6574a.get(i2);
                 if (xAdNativeResponse.getUniqueId().equals(str)) {
                     xAdNativeResponse.onADPermissionShow(z);
                 }
@@ -268,17 +268,17 @@ public class dd extends bf {
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.baidu.mobads.sdk.internal.bf
     public void b(IOAdEvent iOAdEvent) {
-        if (this.D == null || iOAdEvent == null || this.f9414a == null) {
+        if (this.D == null || iOAdEvent == null || this.f6574a == null) {
             return;
         }
         String message = iOAdEvent.getMessage();
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f9414a.size()) {
+            if (i2 >= this.f6574a.size()) {
                 return;
             }
-            XAdNativeResponse xAdNativeResponse = (XAdNativeResponse) this.f9414a.get(i2);
+            XAdNativeResponse xAdNativeResponse = (XAdNativeResponse) this.f6574a.get(i2);
             if (xAdNativeResponse.getUniqueId().equals(message)) {
                 this.D.a(xAdNativeResponse);
             }
@@ -306,14 +306,14 @@ public class dd extends bf {
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.baidu.mobads.sdk.internal.bf
     public void b(String str, boolean z) {
-        if (!TextUtils.isEmpty(str) && this.f9414a != null) {
+        if (!TextUtils.isEmpty(str) && this.f6574a != null) {
             int i = 0;
             while (true) {
                 int i2 = i;
-                if (i2 >= this.f9414a.size()) {
+                if (i2 >= this.f6574a.size()) {
                     break;
                 }
-                XAdNativeResponse xAdNativeResponse = (XAdNativeResponse) this.f9414a.get(i2);
+                XAdNativeResponse xAdNativeResponse = (XAdNativeResponse) this.f6574a.get(i2);
                 if (xAdNativeResponse.getUniqueId().equals(str)) {
                     xAdNativeResponse.onAdDownloadWindow(z);
                 }
@@ -442,14 +442,14 @@ public class dd extends bf {
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.baidu.mobads.sdk.internal.bf
     public void d(String str) {
-        if (!TextUtils.isEmpty(str) && this.f9414a != null) {
+        if (!TextUtils.isEmpty(str) && this.f6574a != null) {
             int i = 0;
             while (true) {
                 int i2 = i;
-                if (i2 >= this.f9414a.size()) {
+                if (i2 >= this.f6574a.size()) {
                     break;
                 }
-                XAdNativeResponse xAdNativeResponse = (XAdNativeResponse) this.f9414a.get(i2);
+                XAdNativeResponse xAdNativeResponse = (XAdNativeResponse) this.f6574a.get(i2);
                 if (xAdNativeResponse.getUniqueId().equals(str)) {
                     xAdNativeResponse.onAdUnionClick();
                 }
@@ -491,9 +491,9 @@ public class dd extends bf {
     @Override // com.baidu.mobads.sdk.internal.bf
     public void e(IOAdEvent iOAdEvent) {
         String message = iOAdEvent.getMessage();
-        if (this.A != null && !TextUtils.isEmpty(message) && this.f9414a != null) {
-            for (int i = 0; i < this.f9414a.size(); i++) {
-                XAdNativeResponse xAdNativeResponse = (XAdNativeResponse) this.f9414a.get(i);
+        if (this.A != null && !TextUtils.isEmpty(message) && this.f6574a != null) {
+            for (int i = 0; i < this.f6574a.size(); i++) {
+                XAdNativeResponse xAdNativeResponse = (XAdNativeResponse) this.f6574a.get(i);
                 if (xAdNativeResponse.getUniqueId().equals(message)) {
                     this.A.a(xAdNativeResponse);
                 }
@@ -530,14 +530,14 @@ public class dd extends bf {
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.baidu.mobads.sdk.internal.bf
     public void e(String str) {
-        if (!TextUtils.isEmpty(str) && this.f9414a != null) {
+        if (!TextUtils.isEmpty(str) && this.f6574a != null) {
             int i = 0;
             while (true) {
                 int i2 = i;
-                if (i2 >= this.f9414a.size()) {
+                if (i2 >= this.f6574a.size()) {
                     break;
                 }
-                XAdNativeResponse xAdNativeResponse = (XAdNativeResponse) this.f9414a.get(i2);
+                XAdNativeResponse xAdNativeResponse = (XAdNativeResponse) this.f6574a.get(i2);
                 if (xAdNativeResponse.getUniqueId().equals(str)) {
                     xAdNativeResponse.onADPrivacyClick();
                 }
@@ -572,10 +572,10 @@ public class dd extends bf {
             return;
         }
         Map<String, Object> data = iOAdEvent.getData();
-        if (this.A != null && data != null && this.f9414a != null) {
+        if (this.A != null && data != null && this.f6574a != null) {
             String str = (String) data.get("instanceInfo");
-            for (int i = 0; i < this.f9414a.size(); i++) {
-                XAdNativeResponse xAdNativeResponse = (XAdNativeResponse) this.f9414a.get(i);
+            for (int i = 0; i < this.f6574a.size(); i++) {
+                XAdNativeResponse xAdNativeResponse = (XAdNativeResponse) this.f6574a.get(i);
                 if (xAdNativeResponse != null && xAdNativeResponse.getUniqueId().equals(str)) {
                     this.A.a(xAdNativeResponse, Integer.parseInt((String) data.get("showState")));
                 }
@@ -609,9 +609,9 @@ public class dd extends bf {
     @Override // com.baidu.mobads.sdk.internal.bf
     public void h(IOAdEvent iOAdEvent) {
         String message = iOAdEvent.getMessage();
-        if (this.A != null && !TextUtils.isEmpty(message) && this.f9414a != null) {
-            for (int i = 0; i < this.f9414a.size(); i++) {
-                XAdNativeResponse xAdNativeResponse = (XAdNativeResponse) this.f9414a.get(i);
+        if (this.A != null && !TextUtils.isEmpty(message) && this.f6574a != null) {
+            for (int i = 0; i < this.f6574a.size(); i++) {
+                XAdNativeResponse xAdNativeResponse = (XAdNativeResponse) this.f6574a.get(i);
                 if (xAdNativeResponse.getUniqueId().equals(message)) {
                     this.A.b(xAdNativeResponse);
                 }
@@ -753,7 +753,7 @@ public class dd extends bf {
     @Override // com.baidu.mobads.sdk.internal.bf
     public void k(IOAdEvent iOAdEvent) {
         Map<String, Object> data;
-        if (iOAdEvent == null || this.f9414a == null || (data = iOAdEvent.getData()) == null) {
+        if (iOAdEvent == null || this.f6574a == null || (data = iOAdEvent.getData()) == null) {
             return;
         }
         String str = (String) data.get("uniqueId");
@@ -761,10 +761,10 @@ public class dd extends bf {
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f9414a.size()) {
+            if (i2 >= this.f6574a.size()) {
                 return;
             }
-            XAdNativeResponse xAdNativeResponse = (XAdNativeResponse) this.f9414a.get(i2);
+            XAdNativeResponse xAdNativeResponse = (XAdNativeResponse) this.f6574a.get(i2);
             if (TextUtils.equals(xAdNativeResponse.getUniqueId(), str) && TextUtils.equals(bc.b.C, str2)) {
                 xAdNativeResponse.onShakeViewDismiss();
             }

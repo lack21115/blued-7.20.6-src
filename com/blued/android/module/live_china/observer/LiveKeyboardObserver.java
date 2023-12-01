@@ -5,9 +5,7 @@ import java.util.Iterator;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/observer/LiveKeyboardObserver.class */
 public class LiveKeyboardObserver {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static LiveKeyboardObserver f13945a = new LiveKeyboardObserver();
+    private static LiveKeyboardObserver a = new LiveKeyboardObserver();
     private ArrayList<ILiveKeyboardObserver> b = new ArrayList<>();
 
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/observer/LiveKeyboardObserver$ILiveKeyboardObserver.class */
@@ -21,7 +19,7 @@ public class LiveKeyboardObserver {
     }
 
     public static LiveKeyboardObserver a() {
-        return f13945a;
+        return a;
     }
 
     public void a(ILiveKeyboardObserver iLiveKeyboardObserver) {

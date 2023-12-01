@@ -29,16 +29,16 @@ public class xe extends ze<g0> implements g0 {
     public class a implements IndexCallback<Pair<Double, Double>> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ LatLng[] f38112a;
+        public final /* synthetic */ LatLng[] f24421a;
 
         public a(LatLng[] latLngArr) {
-            this.f38112a = latLngArr;
+            this.f24421a = latLngArr;
         }
 
         @Override // com.tencent.map.tools.IndexCallback
         /* renamed from: a */
         public void callback(int i, Pair<Double, Double> pair) {
-            this.f38112a[i] = xe.this.B.getProjection().a(new x5(pair.first.doubleValue(), pair.second.doubleValue()));
+            this.f24421a[i] = xe.this.B.getProjection().a(new x5(pair.first.doubleValue(), pair.second.doubleValue()));
         }
     }
 

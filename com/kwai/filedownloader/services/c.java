@@ -15,7 +15,7 @@ public final class c {
 
     /* loaded from: source-7994992-dex2jar.jar:com/kwai/filedownloader/services/c$b.class */
     public static final class b {
-        c.InterfaceC0589c aIU;
+        c.InterfaceC0419c aIU;
         Integer aIV;
         c.e aIW;
         c.b aIX;

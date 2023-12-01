@@ -39,7 +39,7 @@ public class AnimatorInflaterCompat {
     public static class PathDataEvaluator implements TypeEvaluator<PathParser.PathDataNode[]> {
 
         /* renamed from: a  reason: collision with root package name */
-        private PathParser.PathDataNode[] f3529a;
+        private PathParser.PathDataNode[] f3481a;
 
         PathDataEvaluator() {
         }
@@ -49,16 +49,16 @@ public class AnimatorInflaterCompat {
             if (!PathParser.canMorph(pathDataNodeArr, pathDataNodeArr2)) {
                 throw new IllegalArgumentException("Can't interpolate between two incompatible pathData");
             }
-            if (!PathParser.canMorph(this.f3529a, pathDataNodeArr)) {
-                this.f3529a = PathParser.deepCopyNodes(pathDataNodeArr);
+            if (!PathParser.canMorph(this.f3481a, pathDataNodeArr)) {
+                this.f3481a = PathParser.deepCopyNodes(pathDataNodeArr);
             }
             int i = 0;
             while (true) {
                 int i2 = i;
                 if (i2 >= pathDataNodeArr.length) {
-                    return this.f3529a;
+                    return this.f3481a;
                 }
-                this.f3529a[i2].interpolatePathDataNode(pathDataNodeArr[i2], pathDataNodeArr2[i2], f);
+                this.f3481a[i2].interpolatePathDataNode(pathDataNodeArr[i2], pathDataNodeArr2[i2], f);
                 i = i2 + 1;
             }
         }

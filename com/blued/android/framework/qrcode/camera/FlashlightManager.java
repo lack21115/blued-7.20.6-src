@@ -9,20 +9,20 @@ import java.lang.reflect.Method;
 final class FlashlightManager {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f9860a = FlashlightManager.class.getSimpleName();
+    private static final String f6658a = FlashlightManager.class.getSimpleName();
     private static final Object b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final Method f9861c;
+    private static final Method f6659c;
 
     static {
         Object c2 = c();
         b = c2;
-        f9861c = a(c2);
+        f6659c = a(c2);
         if (b == null) {
-            Log.v(f9860a, "This device does supports control of a flashlight");
+            Log.v(f6658a, "This device does supports control of a flashlight");
         } else {
-            Log.v(f9860a, "This device does not support control of a flashlight");
+            Log.v(f6658a, "This device does not support control of a flashlight");
         }
     }
 
@@ -35,7 +35,7 @@ final class FlashlightManager {
         } catch (ClassNotFoundException e) {
             return null;
         } catch (RuntimeException e2) {
-            String str2 = f9860a;
+            String str2 = f6658a;
             Log.w(str2, "Unexpected error while finding class " + str, e2);
             return null;
         }
@@ -45,15 +45,15 @@ final class FlashlightManager {
         try {
             return method.invoke(obj, objArr);
         } catch (IllegalAccessException e) {
-            String str = f9860a;
+            String str = f6658a;
             Log.w(str, "Unexpected error while invoking " + method, e);
             return null;
         } catch (RuntimeException e2) {
-            String str2 = f9860a;
+            String str2 = f6658a;
             Log.w(str2, "Unexpected error while invoking " + method, e2);
             return null;
         } catch (InvocationTargetException e3) {
-            String str3 = f9860a;
+            String str3 = f6658a;
             Log.w(str3, "Unexpected error while invoking " + method, e3.getCause());
             return null;
         }
@@ -65,7 +65,7 @@ final class FlashlightManager {
         } catch (NoSuchMethodException e) {
             return null;
         } catch (RuntimeException e2) {
-            String str2 = f9860a;
+            String str2 = f6658a;
             Log.w(str2, "Unexpected error while finding method " + str, e2);
             return null;
         }
@@ -86,7 +86,7 @@ final class FlashlightManager {
     private static void a(boolean z) {
         Object obj = b;
         if (obj != null) {
-            a(f9861c, obj, Boolean.valueOf(z));
+            a(f6659c, obj, Boolean.valueOf(z));
         }
     }
 

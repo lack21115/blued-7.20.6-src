@@ -7,7 +7,7 @@ import android.util.ArraySet;
 import android.util.Slog;
 import android.view.WindowManager;
 import android.view.WindowManagerPolicy;
-import com.igexin.push.core.b;
+import com.android.internal.content.NativeLibraryHelper;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.io.Writer;
@@ -82,7 +82,7 @@ public class WindowManagerPolicyControl {
                     return new Filter(arraySet, arraySet2);
                 }
                 String trim = split[i2].trim();
-                if (!trim.startsWith("-") || trim.length() <= 1) {
+                if (!trim.startsWith(NativeLibraryHelper.CLEAR_ABI_OVERRIDE) || trim.length() <= 1) {
                     arraySet.add(trim);
                 } else {
                     arraySet2.add(trim.substring(1));
@@ -187,7 +187,7 @@ public class WindowManagerPolicyControl {
         printWriter.print(str);
         printWriter.print('=');
         if (filter == null) {
-            printWriter.println(b.l);
+            printWriter.println("null");
             return;
         }
         filter.dump(printWriter);
@@ -438,8 +438,8 @@ public class WindowManagerPolicyControl {
     }
 
     public static void reloadFromSetting(Context context) {
-        reloadStyleFromSetting(context, Settings.Global.POLICY_CONTROL_STYLE);
-        reloadFromSetting(context, Settings.Global.POLICY_CONTROL);
+        reloadStyleFromSetting(context, "policy_control_style");
+        reloadFromSetting(context, "policy_control");
     }
 
     public static void reloadFromSetting(Context context, String str) {
@@ -476,12 +476,12 @@ public class WindowManagerPolicyControl {
     }
 
     public static void saveStyleToSettings(Context context, int i) {
-        Settings.Global.putInt(context.getContentResolver(), Settings.Global.POLICY_CONTROL_STYLE, i);
+        Settings.Global.putInt(context.getContentResolver(), "policy_control_style", i);
         sDefaultImmersiveStyle = i;
     }
 
     public static void saveToSettings(Context context) {
-        saveToSettings(context, Settings.Global.POLICY_CONTROL);
+        saveToSettings(context, "policy_control");
     }
 
     public static void saveToSettings(Context context, String str) {
@@ -582,7 +582,7 @@ public class WindowManagerPolicyControl {
         Iterator<String> it = arraySet.iterator();
         while (it.hasNext()) {
             if (z) {
-                sb.append("-");
+                sb.append(NativeLibraryHelper.CLEAR_ABI_OVERRIDE);
             }
             sb.append(it.next());
             if (it.hasNext()) {

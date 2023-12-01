@@ -8,24 +8,24 @@ import com.tencent.liteav.videoproducer.producer.ServerVideoProducerConfig;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public final VideoEncoderDef.EncodeAbility f36967a;
+    public final VideoEncoderDef.EncodeAbility f23276a;
     private final com.tencent.liteav.base.util.j b;
 
     /* renamed from: com.tencent.liteav.videoproducer.encoder.a$a  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/liteav/videoproducer/encoder/a$a.class */
-    public static final class C0941a {
+    public static final class C0771a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final a f36968a = new a((byte) 0);
+        private static final a f23277a = new a((byte) 0);
     }
 
     private a() {
-        this.f36967a = new VideoEncoderDef.EncodeAbility();
+        this.f23276a = new VideoEncoderDef.EncodeAbility();
         com.tencent.liteav.base.util.j jVar = new com.tencent.liteav.base.util.j();
         this.b = jVar;
         jVar.a(b.a(this));
         synchronized (this) {
-            this.f36967a.f36956c = a();
+            this.f23276a.f23265c = a();
         }
     }
 

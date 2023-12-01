@@ -1,5 +1,6 @@
 package com.tencent.mapsdk.internal;
 
+import android.R;
 import android.content.Context;
 import android.graphics.Color;
 import android.text.TextUtils;
@@ -17,11 +18,11 @@ public class da {
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private Toast f37390a;
+        private Toast f23699a;
         private int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f37391c;
+        private int f23700c;
         private int d;
         private String e;
         private String f;
@@ -56,7 +57,7 @@ public class da {
             if (!TextUtils.isEmpty(str2)) {
                 TextView textView = new TextView(context);
                 this.i = textView;
-                textView.setId(16908299);
+                textView.setId(R.id.message);
                 this.i.setText(str2);
                 this.i.setTextColor(-1);
                 this.i.setTextSize(2, 16.0f);
@@ -83,26 +84,26 @@ public class da {
         /* JADX INFO: Access modifiers changed from: private */
         public a a(Context context, View view, int i) {
             Toast toast = new Toast(context);
-            this.f37390a = toast;
+            this.f23699a = toast;
             toast.setView(view);
-            this.f37390a.setDuration(i);
-            this.b = this.f37390a.getGravity();
+            this.f23699a.setDuration(i);
+            this.b = this.f23699a.getGravity();
             return this;
         }
 
         public a a(int i) {
             this.b = i;
-            Toast toast = this.f37390a;
+            Toast toast = this.f23699a;
             if (toast != null) {
-                toast.setGravity(i, this.f37391c, this.d);
+                toast.setGravity(i, this.f23700c, this.d);
             }
             return this;
         }
 
         public a a(int i, int i2) {
-            this.f37391c = i;
+            this.f23700c = i;
             this.d = i2;
-            Toast toast = this.f37390a;
+            Toast toast = this.f23699a;
             if (toast != null) {
                 toast.setGravity(this.b, i, i2);
             }
@@ -134,7 +135,7 @@ public class da {
 
         public a a(boolean z) {
             try {
-                Object a2 = e7.a(this.f37390a, "mTN");
+                Object a2 = e7.a(this.f23699a, "mTN");
                 if (a2 != null) {
                     Object a3 = e7.a(a2, "mParams");
                     if (a3 instanceof WindowManager.LayoutParams) {
@@ -154,7 +155,7 @@ public class da {
         }
 
         public void a() {
-            Toast toast = this.f37390a;
+            Toast toast = this.f23699a;
             if (toast != null) {
                 toast.cancel();
             }
@@ -170,7 +171,7 @@ public class da {
         }
 
         public boolean b() {
-            Toast toast = this.f37390a;
+            Toast toast = this.f23699a;
             if (toast != null) {
                 toast.show();
                 return true;

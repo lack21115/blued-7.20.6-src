@@ -95,32 +95,32 @@ public final class DisplayCompat {
     public static final class ModeCompat {
 
         /* renamed from: a  reason: collision with root package name */
-        private final Display.Mode f2626a;
+        private final Display.Mode f2578a;
         private final Point b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final boolean f2627c;
+        private final boolean f2579c;
 
         ModeCompat(Point point) {
             Preconditions.checkNotNull(point, "physicalSize == null");
             this.b = point;
-            this.f2626a = null;
-            this.f2627c = true;
+            this.f2578a = null;
+            this.f2579c = true;
         }
 
         ModeCompat(Display.Mode mode, Point point) {
             Preconditions.checkNotNull(mode, "mode == null, can't wrap a null reference");
             Preconditions.checkNotNull(point, "physicalSize == null");
             this.b = point;
-            this.f2626a = mode;
-            this.f2627c = true;
+            this.f2578a = mode;
+            this.f2579c = true;
         }
 
         ModeCompat(Display.Mode mode, boolean z) {
             Preconditions.checkNotNull(mode, "mode == null, can't wrap a null reference");
             this.b = new Point(mode.getPhysicalWidth(), mode.getPhysicalHeight());
-            this.f2626a = mode;
-            this.f2627c = z;
+            this.f2578a = mode;
+            this.f2579c = z;
         }
 
         public int getPhysicalHeight() {
@@ -133,11 +133,11 @@ public final class DisplayCompat {
 
         @Deprecated
         public boolean isNative() {
-            return this.f2627c;
+            return this.f2579c;
         }
 
         public Display.Mode toMode() {
-            return this.f2626a;
+            return this.f2578a;
         }
     }
 

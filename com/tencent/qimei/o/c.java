@@ -9,10 +9,10 @@ import org.json.JSONObject;
 public class c implements com.tencent.qimei.c.d {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ d f38368a;
+    public final /* synthetic */ d f24677a;
 
     public c(d dVar) {
-        this.f38368a = dVar;
+        this.f24677a = dVar;
     }
 
     @Override // com.tencent.qimei.c.d
@@ -21,9 +21,9 @@ public class c implements com.tencent.qimei.c.d {
         d.a aVar;
         boolean z;
         String str2;
-        str = this.f38368a.f38370c;
+        str = this.f24677a.f24679c;
         com.tencent.qimei.k.a.b("SDK_INIT", "OD 初始化完成(appKey: %s)，结果:%s", str, Integer.valueOf(i));
-        aVar = this.f38368a.j;
+        aVar = this.f24677a.j;
         u uVar = (u) aVar;
         if (uVar.d()) {
             w a2 = w.a(uVar.g);
@@ -54,7 +54,7 @@ public class c implements com.tencent.qimei.c.d {
                         e.printStackTrace();
                         str2 = "";
                     }
-                    a2.c(m.f38382a.a(com.tencent.qimei.j.a.a(), a2.b, com.tencent.qimei.a.a.i(a2.b), str2));
+                    a2.c(m.f24691a.a(com.tencent.qimei.j.a.a(), a2.b, com.tencent.qimei.a.a.i(a2.b), str2));
                 } else if (com.tencent.qimei.a.a.a(com.tencent.qimei.i.f.a(a2.b).b("t_s_t"))) {
                     a2.a();
                 }

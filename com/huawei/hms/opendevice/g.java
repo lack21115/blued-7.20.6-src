@@ -29,14 +29,14 @@ public abstract class g {
         
 
         /* renamed from: a  reason: collision with root package name */
-        private String f22815a;
+        private String f9207a;
 
         a(String str) {
-            this.f22815a = str;
+            this.f9207a = str;
         }
 
         public String a() {
-            return this.f22815a;
+            return this.f9207a;
         }
     }
 

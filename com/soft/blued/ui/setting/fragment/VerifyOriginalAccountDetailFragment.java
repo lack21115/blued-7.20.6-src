@@ -31,11 +31,11 @@ import com.soft.blued.ui.login_register.RegisterV1ForPhone2Fragment;
 public class VerifyOriginalAccountDetailFragment extends BaseFragment implements View.OnClickListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f33629a = VerifyOriginalAccountDetailFragment.class.getSimpleName();
+    private final String f19938a = VerifyOriginalAccountDetailFragment.class.getSimpleName();
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Dialog f33630c;
+    private Dialog f19939c;
     private ClearEditText d;
     private CommonTopTitleNoTrans e;
     private TextView f;
@@ -45,9 +45,9 @@ public class VerifyOriginalAccountDetailFragment extends BaseFragment implements
     private String j;
 
     private void a() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.i.findViewById(2131370749);
-        this.e = commonTopTitleNoTrans;
-        commonTopTitleNoTrans.a();
+        CommonTopTitleNoTrans findViewById = this.i.findViewById(R.id.top_title);
+        this.e = findViewById;
+        findViewById.a();
         this.e.f();
         this.e.setTitleBackgroundDrawable(2131101191);
         this.e.setCenterText("");
@@ -55,12 +55,12 @@ public class VerifyOriginalAccountDetailFragment extends BaseFragment implements
     }
 
     private void b() {
-        this.f33630c = DialogUtils.a(this.b);
+        this.f19939c = DialogUtils.a(this.b);
         this.f = (TextView) this.i.findViewById(2131371164);
         this.g = (TextView) this.i.findViewById(R.id.tv_to_mobile_verify);
-        CommonEdittextView commonEdittextView = (CommonEdittextView) this.i.findViewById(R.id.cev_email);
-        this.h = commonEdittextView;
-        ClearEditText editText = commonEdittextView.getEditText();
+        CommonEdittextView findViewById = this.i.findViewById(R.id.cev_email);
+        this.h = findViewById;
+        ClearEditText editText = findViewById.getEditText();
         this.d = editText;
         editText.addTextChangedListener(new TextWatcher() { // from class: com.soft.blued.ui.setting.fragment.VerifyOriginalAccountDetailFragment.1
             @Override // android.text.TextWatcher
@@ -103,10 +103,9 @@ public class VerifyOriginalAccountDetailFragment extends BaseFragment implements
         bundle.putString("binding_type", "change");
         bundle.putString(LoginRegisterTools.e, b);
         if (TextUtils.isEmpty(b)) {
-            AppMethods.d(2131892289);
+            AppMethods.d((int) R.string.tips_change_mobile_verify);
         } else {
             LoginRegisterHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<Object>>() { // from class: com.soft.blued.ui.setting.fragment.VerifyOriginalAccountDetailFragment.2
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 /* renamed from: a */
                 public void onUIUpdate(BluedEntityA<Object> bluedEntityA) {
                     try {
@@ -118,14 +117,12 @@ public class VerifyOriginalAccountDetailFragment extends BaseFragment implements
                     }
                 }
 
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public void onUIFinish() {
-                    DialogUtils.b(VerifyOriginalAccountDetailFragment.this.f33630c);
+                    DialogUtils.b(VerifyOriginalAccountDetailFragment.this.f19939c);
                 }
 
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public void onUIStart() {
-                    DialogUtils.a(VerifyOriginalAccountDetailFragment.this.f33630c);
+                    DialogUtils.a(VerifyOriginalAccountDetailFragment.this.f19939c);
                 }
             }, "mobile", "", (IRequestHost) null);
         }
@@ -140,7 +137,6 @@ public class VerifyOriginalAccountDetailFragment extends BaseFragment implements
             return;
         }
         LoginRegisterHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<Object>>() { // from class: com.soft.blued.ui.setting.fragment.VerifyOriginalAccountDetailFragment.3
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<Object> bluedEntityA) {
                 try {
@@ -152,14 +148,12 @@ public class VerifyOriginalAccountDetailFragment extends BaseFragment implements
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
-                DialogUtils.b(VerifyOriginalAccountDetailFragment.this.f33630c);
+                DialogUtils.b(VerifyOriginalAccountDetailFragment.this.f19939c);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
-                DialogUtils.a(VerifyOriginalAccountDetailFragment.this.f33630c);
+                DialogUtils.a(VerifyOriginalAccountDetailFragment.this.f19939c);
             }
         }, "email", obj, (IRequestHost) null);
     }
@@ -178,7 +172,6 @@ public class VerifyOriginalAccountDetailFragment extends BaseFragment implements
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.b = getActivity();
         View view = this.i;
@@ -193,7 +186,6 @@ public class VerifyOriginalAccountDetailFragment extends BaseFragment implements
         return this.i;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onStart() {
         super.onStart();
         d();

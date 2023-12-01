@@ -4,6 +4,7 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
+import com.android.internal.R;
 
 /* loaded from: source-4181928-dex2jar.jar:android/widget/RadioButton.class */
 public class RadioButton extends CompoundButton {
@@ -12,7 +13,7 @@ public class RadioButton extends CompoundButton {
     }
 
     public RadioButton(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, 16842878);
+        this(context, attributeSet, R.attr.radioButtonStyle);
     }
 
     public RadioButton(Context context, AttributeSet attributeSet, int i) {

@@ -1,7 +1,5 @@
 package android.media;
 
-import com.alipay.sdk.util.i;
-
 /* loaded from: source-9557208-dex2jar.jar:android/media/AudioPortConfig.class */
 public class AudioPortConfig {
     static final int CHANNEL_MASK = 2;
@@ -45,6 +43,6 @@ public class AudioPortConfig {
     }
 
     public String toString() {
-        return "{mPort:" + this.mPort + ", mSamplingRate:" + this.mSamplingRate + ", mChannelMask: " + this.mChannelMask + ", mFormat:" + this.mFormat + ", mGain:" + this.mGain + i.d;
+        return "{mPort:" + this.mPort + ", mSamplingRate:" + this.mSamplingRate + ", mChannelMask: " + this.mChannelMask + ", mFormat:" + this.mFormat + ", mGain:" + this.mGain + "}";
     }
 }

@@ -2,7 +2,6 @@ package com.opos.mobad.model.d;
 
 import android.content.Context;
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.cdo.oaps.ad.OapsWrapper;
 import com.opos.cmn.biz.web.a.b.a;
 import com.opos.cmn.biz.web.a.b.b;
@@ -25,17 +24,17 @@ public class u {
                 try {
                     String str2 = create.getScheme() + "://" + create.getHost();
                     String str3 = str2;
-                    if (URI.create(String.this).getPort() > 0) {
+                    if (URI.create(str).getPort() > 0) {
                         str3 = str2 + ":" + create.getPort();
                     }
                     HashMap hashMap = new HashMap();
                     hashMap.put("Route-Data", com.opos.cmn.biz.a.e.a(context));
-                    com.opos.cmn.func.b.b.e a2 = com.opos.cmn.func.b.b.b.a().a(context, new d.a().a(hashMap).a("GET").b(String.this).a());
-                    com.opos.cmn.an.f.a.b("WebPrepare", "get code:" + a2.f24862a);
-                    if (a2 == null || 200 != a2.f24862a) {
+                    com.opos.cmn.func.b.b.e a2 = com.opos.cmn.func.b.b.b.a().a(context, new d.a().a(hashMap).a("GET").b(str).a());
+                    com.opos.cmn.an.f.a.b("WebPrepare", "get code:" + a2.f11174a);
+                    if (a2 == null || 200 != a2.f11174a) {
                         return;
                     }
-                    String a3 = com.opos.mobad.model.e.c.a(a2.f24863c);
+                    String a3 = com.opos.mobad.model.e.c.a(a2.f11175c);
                     com.opos.cmn.an.f.a.b("WebPrepare", "get data:" + a3);
                     JSONArray jSONArray = new JSONArray(a3);
                     if (jSONArray.length() <= 0) {
@@ -50,7 +49,7 @@ public class u {
                             return;
                         }
                         JSONObject jSONObject = jSONArray.getJSONObject(i2);
-                        arrayList.add(new a.C0633a().a(u.b(jSONObject.getString(OapsWrapper.KEY_PATH), str3)).b(jSONObject.getString("md5")).a());
+                        arrayList.add(new a.C0463a().a(u.b(jSONObject.getString(OapsWrapper.KEY_PATH), str3)).b(jSONObject.getString("md5")).a());
                         i = i2 + 1;
                     }
                 } catch (Throwable th) {
@@ -71,7 +70,7 @@ public class u {
                 if (!it.hasNext()) {
                     break;
                 }
-                arrayList2.add(new a.C0633a().a(it.next()).a());
+                arrayList2.add(new a.C0463a().a(it.next()).a());
             }
         } else {
             arrayList = null;
@@ -90,7 +89,7 @@ public class u {
             if (str.startsWith("https")) {
                 return str;
             }
-            str3 = str2 + BridgeUtil.SPLIT_MARK + str;
+            str3 = str2 + "/" + str;
         }
         return str3;
     }

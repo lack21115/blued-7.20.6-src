@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentVipDynamicSkinBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final FrameLayout f29022a;
+    private final FrameLayout f15332a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f29022a;
+        return this.f15332a;
     }
 }

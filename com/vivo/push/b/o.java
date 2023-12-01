@@ -7,7 +7,7 @@ import com.vivo.push.model.UnvarnishedMessage;
 public final class o extends v {
 
     /* renamed from: a  reason: collision with root package name */
-    protected UnvarnishedMessage f41048a;
+    protected UnvarnishedMessage f27357a;
 
     public o() {
         super(3);
@@ -16,11 +16,11 @@ public final class o extends v {
     @Override // com.vivo.push.b.v, com.vivo.push.b.s, com.vivo.push.o
     public final void c(com.vivo.push.a aVar) {
         super.c(aVar);
-        aVar.a("msg_v1", this.f41048a.unpackToJson());
+        aVar.a("msg_v1", this.f27357a.unpackToJson());
     }
 
     public final String d() {
-        UnvarnishedMessage unvarnishedMessage = this.f41048a;
+        UnvarnishedMessage unvarnishedMessage = this.f27357a;
         if (unvarnishedMessage == null) {
             return null;
         }
@@ -35,12 +35,12 @@ public final class o extends v {
             return;
         }
         UnvarnishedMessage unvarnishedMessage = new UnvarnishedMessage(a2);
-        this.f41048a = unvarnishedMessage;
+        this.f27357a = unvarnishedMessage;
         unvarnishedMessage.setMsgId(f());
     }
 
     public final UnvarnishedMessage e() {
-        return this.f41048a;
+        return this.f27357a;
     }
 
     @Override // com.vivo.push.b.s, com.vivo.push.o

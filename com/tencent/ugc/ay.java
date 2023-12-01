@@ -5,16 +5,16 @@ package com.tencent.ugc;
 public final /* synthetic */ class ay implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final TXVideoEditer f40244a;
+    private final TXVideoEditer f26553a;
     private final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final long f40245c;
+    private final long f26554c;
 
     private ay(TXVideoEditer tXVideoEditer, int i, long j) {
-        this.f40244a = tXVideoEditer;
+        this.f26553a = tXVideoEditer;
         this.b = i;
-        this.f40245c = j;
+        this.f26554c = j;
     }
 
     public static Runnable a(TXVideoEditer tXVideoEditer, int i, long j) {
@@ -23,6 +23,6 @@ public final /* synthetic */ class ay implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        TXVideoEditer.lambda$handleWriteMP4Completed$53(this.f40244a, this.b, this.f40245c);
+        TXVideoEditer.lambda$handleWriteMP4Completed$53(this.f26553a, this.b, this.f26554c);
     }
 }

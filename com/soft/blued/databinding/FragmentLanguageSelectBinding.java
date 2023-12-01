@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentLanguageSelectBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f28856a;
+    private final LinearLayout f15166a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f28856a;
+        return this.f15166a;
     }
 }

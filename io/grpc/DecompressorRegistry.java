@@ -1,5 +1,6 @@
 package io.grpc;
 
+import com.anythink.expressad.exoplayer.b;
 import com.google.common.base.Joiner;
 import com.google.common.base.Preconditions;
 import io.grpc.Codec;
@@ -48,7 +49,7 @@ public final class DecompressorRegistry {
         }
         linkedHashMap.put(messageEncoding, new DecompressorInfo(decompressor, z));
         this.decompressors = Collections.unmodifiableMap(linkedHashMap);
-        this.advertisedDecompressors = ACCEPT_ENCODING_JOINER.join(getAdvertisedMessageEncodings()).getBytes(Charset.forName("US-ASCII"));
+        this.advertisedDecompressors = ACCEPT_ENCODING_JOINER.join(getAdvertisedMessageEncodings()).getBytes(Charset.forName(b.i));
     }
 
     public static DecompressorRegistry emptyInstance() {

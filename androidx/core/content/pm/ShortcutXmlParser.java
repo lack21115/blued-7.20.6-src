@@ -19,7 +19,7 @@ import org.xmlpull.v1.XmlPullParserException;
 public class ShortcutXmlParser {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile ArrayList<String> f2421a;
+    private static volatile ArrayList<String> f2373a;
     private static final Object b = new Object();
 
     private ShortcutXmlParser() {
@@ -72,15 +72,15 @@ public class ShortcutXmlParser {
     }
 
     public static List<String> getShortcutIds(Context context) {
-        if (f2421a == null) {
+        if (f2373a == null) {
             synchronized (b) {
-                if (f2421a == null) {
-                    f2421a = new ArrayList<>();
-                    f2421a.addAll(a(context));
+                if (f2373a == null) {
+                    f2373a = new ArrayList<>();
+                    f2373a.addAll(a(context));
                 }
             }
         }
-        return f2421a;
+        return f2373a;
     }
 
     public static List<String> parseShortcutIds(XmlPullParser xmlPullParser) throws IOException, XmlPullParserException {

@@ -1,7 +1,7 @@
 package com.blued.android.module.shortvideo.model;
 
 import android.graphics.Bitmap;
-import androidx.constraintlayout.core.motion.utils.TypedValues;
+import com.android.internal.content.NativeLibraryHelper;
 import com.blued.android.module.shortvideo.contract.IGetFrameCallback;
 import com.blued.android.module.shortvideo.contract.IStvVideoFrameCallback;
 import com.blued.android.module.shortvideo.contract.IStvVideoFrameForTimeCallback;
@@ -91,7 +91,7 @@ public class VideoFrameModel extends IModel {
         @Override // com.blued.android.module.shortvideo.utils.StvThreadPoolHelper.StvThread, java.lang.Thread, java.lang.Runnable
         public void run() {
             if (this.b) {
-                this.f15861c = false;
+                this.c = false;
                 if (this.d == null || !this.b) {
                     StvLogUtils.a(VideoFrameModel.Tag + " videoFrame == null !!!", new Object[0]);
                 } else {
@@ -106,7 +106,7 @@ public class VideoFrameModel extends IModel {
                     }
                 }
             }
-            this.f15861c = true;
+            this.c = true;
         }
     }
 
@@ -145,15 +145,15 @@ public class VideoFrameModel extends IModel {
     }
 
     private String getVideoFrameKey(Object obj, int i, int i2) {
-        return obj + "-" + i + "-" + i2 + "-" + System.currentTimeMillis();
+        return obj + NativeLibraryHelper.CLEAR_ABI_OVERRIDE + i + NativeLibraryHelper.CLEAR_ABI_OVERRIDE + i2 + NativeLibraryHelper.CLEAR_ABI_OVERRIDE + System.currentTimeMillis();
     }
 
     private String getVideoFrameKey(String str, int i, int i2) {
-        return str + "-" + i + "-" + i2;
+        return str + NativeLibraryHelper.CLEAR_ABI_OVERRIDE + i + NativeLibraryHelper.CLEAR_ABI_OVERRIDE + i2;
     }
 
     private String getVideoFrameKey(String str, Object obj, int i, int i2) {
-        return str + "-" + obj + "-" + i + "-" + i2;
+        return str + NativeLibraryHelper.CLEAR_ABI_OVERRIDE + obj + NativeLibraryHelper.CLEAR_ABI_OVERRIDE + i + NativeLibraryHelper.CLEAR_ABI_OVERRIDE + i2;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -180,12 +180,12 @@ public class VideoFrameModel extends IModel {
     }
 
     public String getFrameDirectory() {
-        return StvTools.a(TypedValues.AttributesType.S_FRAME);
+        return StvTools.a("frame");
     }
 
     public String getTakePhotoFrameImgPath(Object obj, int i, int i2) {
         getVideoFrameKey(obj, i, i2);
-        return StvTools.b(TypedValues.AttributesType.S_FRAME);
+        return StvTools.b("frame");
     }
 
     public void getVideoFrame(String str, long j, long j2, int i, int i2, int i3, IGetFrameCallback iGetFrameCallback) {

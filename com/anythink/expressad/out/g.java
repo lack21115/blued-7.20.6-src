@@ -4,23 +4,23 @@ package com.anythink.expressad.out;
 public class g {
 
     /* renamed from: a  reason: collision with root package name */
-    private static com.anythink.expressad.e.a f8070a;
+    private static com.anythink.expressad.e.a f5230a;
 
     private g() {
     }
 
     public static com.anythink.expressad.e.a a() {
-        if (f8070a == null) {
+        if (f5230a == null) {
             synchronized (g.class) {
                 try {
-                    if (f8070a == null) {
-                        f8070a = new com.anythink.expressad.e.a();
+                    if (f5230a == null) {
+                        f5230a = new com.anythink.expressad.e.a();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f8070a;
+        return f5230a;
     }
 }

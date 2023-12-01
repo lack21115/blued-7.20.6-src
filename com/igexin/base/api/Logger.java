@@ -34,7 +34,7 @@ public final class Logger implements a {
             int max = Math.max(0, i);
             long max2 = Math.max(0L, j);
             cVar.b = max;
-            cVar.f23207c = max2;
+            cVar.f9599c = max2;
             return this;
         }
 

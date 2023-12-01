@@ -56,7 +56,7 @@ public final class a {
             public final void onActivityCreated(Activity activity, Bundle bundle) {
                 super.onActivityCreated(activity, bundle);
                 try {
-                    a.a(activity, List.this);
+                    a.a(activity, list);
                 } catch (Throwable th) {
                     com.kwad.sdk.core.d.b.e(a.TAG, Log.getStackTraceString(th));
                 }

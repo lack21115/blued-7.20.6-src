@@ -3,6 +3,7 @@ package com.tencent.bugly.idasc.crashreport.crash.jni;
 import android.content.Context;
 import android.os.Build;
 import android.text.TextUtils;
+import com.huawei.hms.ads.fw;
 import com.huawei.openalliance.ad.constant.bc;
 import com.tencent.bugly.idasc.crashreport.common.strategy.StrategyBean;
 import com.tencent.bugly.idasc.crashreport.crash.CrashDetailBean;
@@ -17,6 +18,7 @@ import com.tencent.bugly.idasc.proguard.at;
 import com.tencent.bugly.idasc.proguard.bd;
 import com.tencent.bugly.idasc.proguard.be;
 import com.tencent.bugly.idasc.proguard.q;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.File;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -25,11 +27,11 @@ import java.util.Comparator;
 public class NativeCrashHandler implements q {
 
     /* renamed from: a  reason: collision with root package name */
-    static String f35207a;
+    static String f21516a;
     private static NativeCrashHandler b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static int f35208c = 1;
+    private static int f21517c = 1;
     private static boolean n = true;
     private final Context d;
     private final aa e;
@@ -44,16 +46,16 @@ public class NativeCrashHandler implements q {
 
     private NativeCrashHandler(Context context, aa aaVar, as asVar, ak akVar, boolean z, String str) {
         this.d = ap.a(context);
-        if (ap.b(f35207a)) {
+        if (ap.b(f21516a)) {
             String str2 = str;
             try {
                 if (ap.b(str)) {
                     str2 = context.getDir("bugly", 0).getAbsolutePath();
                 }
             } catch (Throwable th) {
-                str2 = "/data/data/" + aa.a(context).f35213c + "/app_bugly";
+                str2 = "/data/data/" + aa.a(context).f21522c + "/app_bugly";
             }
-            f35207a = str2;
+            f21516a = str2;
         }
         this.m = asVar;
         this.e = aaVar;
@@ -69,13 +71,13 @@ public class NativeCrashHandler implements q {
                 return;
             }
             if (this.j) {
-                String regist = regist(f35207a, z, f35208c);
+                String regist = regist(f21516a, z, f21517c);
                 if (regist != null) {
                     al.a("[Native] Native Crash Report enable.", new Object[0]);
                     this.e.u = regist;
-                    String concat = "-".concat(this.e.u);
+                    String concat = Constants.ACCEPT_TIME_SEPARATOR_SERVER.concat(this.e.u);
                     if (!at.b && !this.e.h.contains(concat)) {
-                        this.e.h = this.e.h.concat("-").concat(this.e.u);
+                        this.e.h = this.e.h.concat(Constants.ACCEPT_TIME_SEPARATOR_SERVER).concat(this.e.u);
                     }
                     al.a("comInfo.sdkVersion %s", this.e.h);
                     this.k = true;
@@ -87,11 +89,11 @@ public class NativeCrashHandler implements q {
                 }
             } else if (this.i) {
                 try {
-                    String str = (String) ap.a("com.tencent.feedback.eup.jni.NativeExceptionUpload", "registNativeExceptionHandler2", new Class[]{String.class, String.class, Integer.TYPE, Integer.TYPE}, new Object[]{f35207a, ab.d(), Integer.valueOf(z ? 1 : 5), 1});
+                    String str = (String) ap.a("com.tencent.feedback.eup.jni.NativeExceptionUpload", "registNativeExceptionHandler2", new Class[]{String.class, String.class, Integer.TYPE, Integer.TYPE}, new Object[]{f21516a, ab.d(), Integer.valueOf(z ? 1 : 5), 1});
                     String str2 = str;
                     if (str == null) {
-                        Class<Integer> cls = Integer.TYPE;
-                        String str3 = f35207a;
+                        Class cls = Integer.TYPE;
+                        String str3 = f21516a;
                         String d = ab.d();
                         aa.b();
                         str2 = (String) ap.a("com.tencent.feedback.eup.jni.NativeExceptionUpload", "registNativeExceptionHandler", new Class[]{String.class, String.class, cls}, new Object[]{str3, d, Integer.valueOf(aa.B())});
@@ -201,7 +203,7 @@ public class NativeCrashHandler implements q {
         String str;
         synchronized (NativeCrashHandler.class) {
             try {
-                str = f35207a;
+                str = f21516a;
             } catch (Throwable th) {
                 throw th;
             }
@@ -247,7 +249,7 @@ public class NativeCrashHandler implements q {
     public static void setDumpFilePath(String str) {
         synchronized (NativeCrashHandler.class) {
             try {
-                f35207a = str;
+                f21516a = str;
             } catch (Throwable th) {
                 throw th;
             }
@@ -304,19 +306,19 @@ public class NativeCrashHandler implements q {
                 if (!NativeCrashHandler.n) {
                     NativeCrashHandler.this.a(999, "false");
                 }
-                CrashDetailBean a2 = be.a(NativeCrashHandler.this.d, NativeCrashHandler.f35207a, NativeCrashHandler.this.g);
+                CrashDetailBean a2 = be.a(NativeCrashHandler.this.d, NativeCrashHandler.f21516a, NativeCrashHandler.this.g);
                 if (a2 != null) {
                     al.a("[Native] Get crash from native record.", new Object[0]);
                     if (!NativeCrashHandler.this.m.a(a2, true)) {
                         NativeCrashHandler.this.m.b(a2, false);
                     }
-                    be.a(false, NativeCrashHandler.f35207a);
+                    be.a(false, NativeCrashHandler.f21516a);
                 }
                 final NativeCrashHandler nativeCrashHandler = NativeCrashHandler.this;
                 long b2 = ap.b();
                 long j = at.j;
                 long b3 = ap.b();
-                File file = new File(NativeCrashHandler.f35207a);
+                File file = new File(NativeCrashHandler.f21516a);
                 if (file.exists() && file.isDirectory()) {
                     try {
                         File[] listFiles = file.listFiles();
@@ -369,7 +371,7 @@ public class NativeCrashHandler implements q {
 
     public void disableCatchAnrTrace() {
         if (Build.VERSION.SDK_INT > 19) {
-            f35208c = 1;
+            f21517c = 1;
         }
     }
 
@@ -379,12 +381,12 @@ public class NativeCrashHandler implements q {
 
     public void enableCatchAnrTrace() {
         if (Build.VERSION.SDK_INT > 19) {
-            f35208c |= 2;
+            f21517c |= 2;
         }
     }
 
     public boolean filterSigabrtSysLog() {
-        return a(998, "true");
+        return a(998, fw.Code);
     }
 
     @Override // com.tencent.bugly.idasc.proguard.q
@@ -427,7 +429,7 @@ public class NativeCrashHandler implements q {
     }
 
     public boolean isEnableCatchAnrTrace() {
-        return (f35208c & 2) == 2;
+        return (f21517c & 2) == 2;
     }
 
     public boolean isUserOpened() {
@@ -482,7 +484,7 @@ public class NativeCrashHandler implements q {
     protected native String regist(String str, boolean z, int i);
 
     public void removeEmptyNativeRecordFiles() {
-        be.c(f35207a);
+        be.c(f21516a);
     }
 
     protected native String removeNativeKeyValue(String str);
@@ -507,7 +509,7 @@ public class NativeCrashHandler implements q {
 
     @Override // com.tencent.bugly.idasc.proguard.q
     public boolean setNativeIsAppForeground(boolean z) {
-        return a(14, z ? "true" : "false");
+        return a(14, z ? fw.Code : "false");
     }
 
     public boolean setNativeLaunchTime(long j) {
@@ -566,10 +568,10 @@ public class NativeCrashHandler implements q {
                     a(this.h);
                     setNativeAppVersion(this.e.o);
                     setNativeAppChannel(this.e.s);
-                    setNativeAppPackage(this.e.f35213c);
+                    setNativeAppPackage(this.e.f21522c);
                     setNativeUserId(this.e.f());
                     setNativeIsAppForeground(this.e.a());
-                    setNativeLaunchTime(this.e.f35211a);
+                    setNativeLaunchTime(this.e.f21520a);
                     return;
                 }
                 return;
@@ -596,7 +598,7 @@ public class NativeCrashHandler implements q {
     }
 
     public void unBlockSigquit(boolean z) {
-        a(21, z ? "true" : "false");
+        a(21, z ? fw.Code : "false");
     }
 
     protected native String unregist();

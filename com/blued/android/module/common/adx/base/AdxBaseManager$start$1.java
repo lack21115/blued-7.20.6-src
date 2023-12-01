@@ -11,14 +11,11 @@ import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.TimeoutKt;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 @Metadata
 @DebugMetadata(b = "AdxBaseManager.kt", c = {89}, d = "invokeSuspend", e = "com.blued.android.module.common.adx.base.AdxBaseManager$start$1")
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/adx/base/AdxBaseManager$start$1.class */
-public final class AdxBaseManager$start$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
-
-    /* renamed from: a  reason: collision with root package name */
-    int f10520a;
+final class AdxBaseManager$start$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+    int a;
     final /* synthetic */ AdxBaseManager b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -31,7 +28,7 @@ public final class AdxBaseManager$start$1 extends SuspendLambda implements Funct
     @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-        return ((AdxBaseManager$start$1) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+        return ((AdxBaseManager$start$1) create(coroutineScope, continuation)).invokeSuspend(Unit.a);
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -41,15 +38,15 @@ public final class AdxBaseManager$start$1 extends SuspendLambda implements Funct
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        Object a2 = IntrinsicsKt.a();
-        int i = this.f10520a;
+        Object a = IntrinsicsKt.a();
+        int i = this.a;
         if (i == 0) {
             ResultKt.a(obj);
-            this.f10520a = 1;
-            Object a3 = TimeoutKt.a(this.b.e(), new AdxBaseManager$start$1$result$1(this.b, null), this);
-            obj = a3;
-            if (a3 == a2) {
-                return a2;
+            this.a = 1;
+            Object a2 = TimeoutKt.a(this.b.e(), new AdxBaseManager$start$1$result$1(this.b, null), this);
+            obj = a2;
+            if (a2 == a) {
+                return a;
             }
         } else if (i != 1) {
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
@@ -59,6 +56,6 @@ public final class AdxBaseManager$start$1 extends SuspendLambda implements Funct
         if (((Unit) obj) == null) {
             this.b.b();
         }
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

@@ -51,13 +51,12 @@ public abstract class MapCollections<K, V> {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-9557208-dex2jar.jar:android/util/MapCollections$EntrySet.class */
-    public final class EntrySet implements Set<Map.Entry<K, V>> {
+    final class EntrySet implements Set<Map.Entry<K, V>> {
         EntrySet() {
         }
 
-        @Override // java.util.Set
+        @Override // java.util.Set, java.util.Collection
         public /* bridge */ /* synthetic */ boolean add(Object obj) {
             return add((Map.Entry) ((Map.Entry) obj));
         }
@@ -66,7 +65,7 @@ public abstract class MapCollections<K, V> {
             throw new UnsupportedOperationException();
         }
 
-        @Override // java.util.Set
+        @Override // java.util.Set, java.util.Collection
         public boolean addAll(Collection<? extends Map.Entry<K, V>> collection) {
             int colGetSize = MapCollections.this.colGetSize();
             for (Map.Entry<K, V> entry : collection) {
@@ -75,12 +74,12 @@ public abstract class MapCollections<K, V> {
             return colGetSize != MapCollections.this.colGetSize();
         }
 
-        @Override // java.util.Set
+        @Override // java.util.Set, java.util.Collection
         public void clear() {
             MapCollections.this.colClear();
         }
 
-        @Override // java.util.Set
+        @Override // java.util.Set, java.util.Collection
         public boolean contains(Object obj) {
             if (obj instanceof Map.Entry) {
                 Map.Entry entry = (Map.Entry) obj;
@@ -93,7 +92,7 @@ public abstract class MapCollections<K, V> {
             return false;
         }
 
-        @Override // java.util.Set
+        @Override // java.util.Set, java.util.Collection
         public boolean containsAll(Collection<?> collection) {
             Iterator<?> it = collection.iterator();
             while (it.hasNext()) {
@@ -104,12 +103,12 @@ public abstract class MapCollections<K, V> {
             return true;
         }
 
-        @Override // java.util.Set
+        @Override // java.util.Set, java.util.Collection
         public boolean equals(Object obj) {
             return MapCollections.equalsSetHelper(this, obj);
         }
 
-        @Override // java.util.Set
+        @Override // java.util.Set, java.util.Collection
         public int hashCode() {
             int i = 0;
             int colGetSize = MapCollections.this.colGetSize();
@@ -125,7 +124,7 @@ public abstract class MapCollections<K, V> {
             }
         }
 
-        @Override // java.util.Set
+        @Override // java.util.Set, java.util.Collection
         public boolean isEmpty() {
             return MapCollections.this.colGetSize() == 0;
         }
@@ -135,74 +134,73 @@ public abstract class MapCollections<K, V> {
             return new MapIterator();
         }
 
-        @Override // java.util.Set
+        @Override // java.util.Set, java.util.Collection
         public boolean remove(Object obj) {
             throw new UnsupportedOperationException();
         }
 
-        @Override // java.util.Set
+        @Override // java.util.Set, java.util.Collection
         public boolean removeAll(Collection<?> collection) {
             throw new UnsupportedOperationException();
         }
 
-        @Override // java.util.Set
+        @Override // java.util.Set, java.util.Collection
         public boolean retainAll(Collection<?> collection) {
             throw new UnsupportedOperationException();
         }
 
-        @Override // java.util.Set, java.util.Collection, java.util.List
+        @Override // java.util.Set, java.util.Collection
         public int size() {
             return MapCollections.this.colGetSize();
         }
 
-        @Override // java.util.Set
+        @Override // java.util.Set, java.util.Collection
         public Object[] toArray() {
             throw new UnsupportedOperationException();
         }
 
-        @Override // java.util.Set
+        @Override // java.util.Set, java.util.Collection
         public <T> T[] toArray(T[] tArr) {
             throw new UnsupportedOperationException();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-9557208-dex2jar.jar:android/util/MapCollections$KeySet.class */
-    public final class KeySet implements Set<K> {
+    final class KeySet implements Set<K> {
         KeySet() {
         }
 
-        @Override // java.util.Set
+        @Override // java.util.Set, java.util.Collection
         public boolean add(K k) {
             throw new UnsupportedOperationException();
         }
 
-        @Override // java.util.Set
+        @Override // java.util.Set, java.util.Collection
         public boolean addAll(Collection<? extends K> collection) {
             throw new UnsupportedOperationException();
         }
 
-        @Override // java.util.Set
+        @Override // java.util.Set, java.util.Collection
         public void clear() {
             MapCollections.this.colClear();
         }
 
-        @Override // java.util.Set
+        @Override // java.util.Set, java.util.Collection
         public boolean contains(Object obj) {
             return MapCollections.this.colIndexOfKey(obj) >= 0;
         }
 
-        @Override // java.util.Set
+        @Override // java.util.Set, java.util.Collection
         public boolean containsAll(Collection<?> collection) {
             return MapCollections.containsAllHelper(MapCollections.this.colGetMap(), collection);
         }
 
-        @Override // java.util.Set
+        @Override // java.util.Set, java.util.Collection
         public boolean equals(Object obj) {
             return MapCollections.equalsSetHelper(this, obj);
         }
 
-        @Override // java.util.Set
+        @Override // java.util.Set, java.util.Collection
         public int hashCode() {
             int i = 0;
             int colGetSize = MapCollections.this.colGetSize();
@@ -217,7 +215,7 @@ public abstract class MapCollections<K, V> {
             }
         }
 
-        @Override // java.util.Set
+        @Override // java.util.Set, java.util.Collection
         public boolean isEmpty() {
             return MapCollections.this.colGetSize() == 0;
         }
@@ -227,7 +225,7 @@ public abstract class MapCollections<K, V> {
             return new ArrayIterator(0);
         }
 
-        @Override // java.util.Set
+        @Override // java.util.Set, java.util.Collection
         public boolean remove(Object obj) {
             int colIndexOfKey = MapCollections.this.colIndexOfKey(obj);
             if (colIndexOfKey >= 0) {
@@ -237,27 +235,27 @@ public abstract class MapCollections<K, V> {
             return false;
         }
 
-        @Override // java.util.Set
+        @Override // java.util.Set, java.util.Collection
         public boolean removeAll(Collection<?> collection) {
             return MapCollections.removeAllHelper(MapCollections.this.colGetMap(), collection);
         }
 
-        @Override // java.util.Set
+        @Override // java.util.Set, java.util.Collection
         public boolean retainAll(Collection<?> collection) {
             return MapCollections.retainAllHelper(MapCollections.this.colGetMap(), collection);
         }
 
-        @Override // java.util.Set, java.util.Collection, java.util.List
+        @Override // java.util.Set, java.util.Collection
         public int size() {
             return MapCollections.this.colGetSize();
         }
 
-        @Override // java.util.Set
+        @Override // java.util.Set, java.util.Collection
         public Object[] toArray() {
             return MapCollections.this.toArrayHelper(0);
         }
 
-        @Override // java.util.Set
+        @Override // java.util.Set, java.util.Collection
         public <T> T[] toArray(T[] tArr) {
             return (T[]) MapCollections.this.toArrayHelper(tArr, 0);
         }
@@ -356,33 +354,32 @@ public abstract class MapCollections<K, V> {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-9557208-dex2jar.jar:android/util/MapCollections$ValuesCollection.class */
-    public final class ValuesCollection implements Collection<V> {
+    final class ValuesCollection implements Collection<V> {
         ValuesCollection() {
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public boolean add(V v) {
             throw new UnsupportedOperationException();
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public boolean addAll(Collection<? extends V> collection) {
             throw new UnsupportedOperationException();
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public void clear() {
             MapCollections.this.colClear();
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public boolean contains(Object obj) {
             return MapCollections.this.colIndexOfValue(obj) >= 0;
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public boolean containsAll(Collection<?> collection) {
             Iterator<?> it = collection.iterator();
             while (it.hasNext()) {
@@ -393,7 +390,7 @@ public abstract class MapCollections<K, V> {
             return true;
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public boolean isEmpty() {
             return MapCollections.this.colGetSize() == 0;
         }
@@ -403,7 +400,7 @@ public abstract class MapCollections<K, V> {
             return new ArrayIterator(1);
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public boolean remove(Object obj) {
             int colIndexOfValue = MapCollections.this.colIndexOfValue(obj);
             if (colIndexOfValue >= 0) {
@@ -413,7 +410,7 @@ public abstract class MapCollections<K, V> {
             return false;
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public boolean removeAll(Collection<?> collection) {
             int colGetSize = MapCollections.this.colGetSize();
             boolean z = false;
@@ -433,7 +430,7 @@ public abstract class MapCollections<K, V> {
             return z;
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public boolean retainAll(Collection<?> collection) {
             int colGetSize = MapCollections.this.colGetSize();
             boolean z = false;
@@ -453,17 +450,17 @@ public abstract class MapCollections<K, V> {
             return z;
         }
 
-        @Override // java.util.Collection, java.util.List
+        @Override // java.util.Collection
         public int size() {
             return MapCollections.this.colGetSize();
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public Object[] toArray() {
             return MapCollections.this.toArrayHelper(1);
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public <T> T[] toArray(T[] tArr) {
             return (T[]) MapCollections.this.toArrayHelper(tArr, 1);
         }

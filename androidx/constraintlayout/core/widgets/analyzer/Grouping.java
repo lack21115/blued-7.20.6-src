@@ -17,7 +17,7 @@ public class Grouping {
                 return null;
             }
             WidgetGroup widgetGroup = arrayList.get(i3);
-            if (i == widgetGroup.f2147c) {
+            if (i == widgetGroup.f2099c) {
                 return widgetGroup;
             }
             i2 = i3 + 1;
@@ -27,7 +27,7 @@ public class Grouping {
     public static WidgetGroup findDependents(ConstraintWidget constraintWidget, int i, ArrayList<WidgetGroup> arrayList, WidgetGroup widgetGroup) {
         WidgetGroup widgetGroup2;
         int i2 = i == 0 ? constraintWidget.horizontalGroup : constraintWidget.verticalGroup;
-        if (i2 != -1 && (widgetGroup == null || i2 != widgetGroup.f2147c)) {
+        if (i2 != -1 && (widgetGroup == null || i2 != widgetGroup.f2099c)) {
             int i3 = 0;
             while (true) {
                 int i4 = i3;

@@ -20,22 +20,22 @@ import com.chad.library.adapter.base.BaseViewHolder;
 public class CircleTextVoteViewAdapter extends BaseQuickAdapter<CircleTextVote, BaseViewHolder> {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f20494a;
+    private int f6888a;
     private boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f20495c;
+    private boolean f6889c;
     private boolean d;
     private int e;
 
     public CircleTextVoteViewAdapter() {
         super(R.layout.view_item_circle_text_vote);
-        this.f20494a = 0;
+        this.f6888a = 0;
         this.b = false;
-        this.f20495c = false;
+        this.f6889c = false;
         this.d = false;
         this.e = 0;
-        this.d = CommunityManager.f19086a.a().s();
+        this.d = CommunityManager.a.a().s();
         this.e = AppInfo.l - FeedMethods.c(48);
     }
 
@@ -47,7 +47,7 @@ public class CircleTextVoteViewAdapter extends BaseQuickAdapter<CircleTextVote, 
             return;
         }
         int a2 = DensityUtils.a(this.mContext, 8);
-        int i2 = this.f20494a;
+        int i2 = this.f6888a;
         if (i == i2) {
             ViewGroup.LayoutParams layoutParams2 = shapeTextView.getLayoutParams();
             layoutParams2.width = this.e;
@@ -64,7 +64,7 @@ public class CircleTextVoteViewAdapter extends BaseQuickAdapter<CircleTextVote, 
     }
 
     public void a(int i) {
-        this.f20494a = i;
+        this.f6888a = i;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -92,15 +92,15 @@ public class CircleTextVoteViewAdapter extends BaseQuickAdapter<CircleTextVote, 
         } else {
             baseViewHolder.setGone(R.id.tv_num, false);
         }
-        ShapeTextView shapeTextView = (ShapeTextView) baseViewHolder.getView(R.id.stv_select_option);
-        ShapeTextView shapeTextView2 = (ShapeTextView) baseViewHolder.getView(R.id.stv_vote_option);
+        ShapeTextView view = baseViewHolder.getView(R.id.stv_select_option);
+        ShapeTextView shapeTextView = (ShapeTextView) baseViewHolder.getView(R.id.stv_vote_option);
         LogUtils.c("text:" + circleTextVote.option + ", isVoted:" + this.b + ", select:" + circleTextVote.select + ", num:" + circleTextVote.count);
         if (!this.b) {
-            shapeTextView2.setVisibility(8);
-            shapeTextView.setEnabled(true);
+            shapeTextView.setVisibility(8);
+            view.setEnabled(true);
             return;
         }
-        ShapeModel shapeModel = shapeTextView2.getShapeModel();
+        ShapeModel shapeModel = shapeTextView.getShapeModel();
         ShapeModel shapeModel2 = shapeModel;
         if (shapeModel == null) {
             shapeModel2 = new ShapeModel();
@@ -114,10 +114,10 @@ public class CircleTextVoteViewAdapter extends BaseQuickAdapter<CircleTextVote, 
         } else {
             shapeModel2.k = Color.parseColor("#E5E5E5");
         }
-        shapeTextView2.setShapeModel(shapeModel2);
-        a(shapeTextView2, circleTextVote.count);
-        shapeTextView2.setVisibility(0);
-        shapeTextView.setEnabled(false);
+        shapeTextView.setShapeModel(shapeModel2);
+        a(shapeTextView, circleTextVote.count);
+        shapeTextView.setVisibility(0);
+        view.setEnabled(false);
     }
 
     public void a(boolean z) {
@@ -130,6 +130,6 @@ public class CircleTextVoteViewAdapter extends BaseQuickAdapter<CircleTextVote, 
     }
 
     public void b(boolean z) {
-        this.f20495c = z;
+        this.f6889c = z;
     }
 }

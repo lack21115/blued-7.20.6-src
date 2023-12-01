@@ -7,17 +7,17 @@ import com.tencent.cloud.huiyansdkface.normal.tools.WLogger;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final b f35565a;
+    public static final b f21874a;
     private static boolean b;
 
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/cloud/huiyansdkface/facelight/c/c/c$a.class */
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static com.tencent.cloud.huiyansdkface.facelight.c.c.a f35566a = new com.tencent.cloud.huiyansdkface.facelight.c.c.a();
+        private static com.tencent.cloud.huiyansdkface.facelight.c.c.a f21875a = new com.tencent.cloud.huiyansdkface.facelight.c.c.a();
 
         public static com.tencent.cloud.huiyansdkface.facelight.c.c.a a() {
-            return f35566a;
+            return f21875a;
         }
     }
 
@@ -28,7 +28,7 @@ public class c {
         } catch (ClassNotFoundException e) {
             b = false;
         }
-        f35565a = new b() { // from class: com.tencent.cloud.huiyansdkface.facelight.c.c.c.1
+        f21874a = new b() { // from class: com.tencent.cloud.huiyansdkface.facelight.c.c.c.1
             @Override // com.tencent.cloud.huiyansdkface.facelight.c.c.b
             public void a() {
                 WLogger.d("WbCrashReportProviders", "close empty crash report");
@@ -54,6 +54,6 @@ public class c {
     }
 
     public static b a() {
-        return b ? a.a() : f35565a;
+        return b ? a.a() : f21874a;
     }
 }

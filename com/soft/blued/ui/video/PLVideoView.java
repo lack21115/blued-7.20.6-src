@@ -16,10 +16,10 @@ public class PLVideoView extends LinearLayout implements PLViewInterface {
     public static WeakReference<PLVideoView> b;
 
     /* renamed from: a  reason: collision with root package name */
-    public String f34423a;
+    public String f20732a;
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f34424c;
+    private Context f20733c;
     private LayoutInflater d;
     private View e;
     private VideoView f;
@@ -29,24 +29,24 @@ public class PLVideoView extends LinearLayout implements PLViewInterface {
     class AnonymousClass1 implements MediaPlayer.OnCompletionListener {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ PLVideoView f34425a;
+        final /* synthetic */ PLVideoView f20734a;
 
         @Override // android.media.MediaPlayer.OnCompletionListener
         public void onCompletion(MediaPlayer mediaPlayer) {
-            this.f34425a.a();
-            Logger.b(this.f34425a.f34423a, "onCompletion:");
+            this.f20734a.a();
+            Logger.b(this.f20734a.f20732a, "onCompletion:");
         }
     }
 
     public PLVideoView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f34423a = "PLVideoView";
-        this.f34424c = context;
+        this.f20732a = "PLVideoView";
+        this.f20733c = context;
         b();
     }
 
     private void b() {
-        LayoutInflater from = LayoutInflater.from(this.f34424c);
+        LayoutInflater from = LayoutInflater.from(this.f20733c);
         this.d = from;
         View inflate = from.inflate(R.layout.pl_video_view, this);
         this.e = inflate;
@@ -54,16 +54,15 @@ public class PLVideoView extends LinearLayout implements PLViewInterface {
     }
 
     public void a() {
-        Logger.b(this.f34423a, "start");
+        Logger.b(this.f20732a, "start");
         VideoView videoView = this.f;
         if (videoView != null) {
             videoView.start();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onFinishInflate() {
+    protected void onFinishInflate() {
         super.onFinishInflate();
     }
 

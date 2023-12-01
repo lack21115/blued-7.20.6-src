@@ -11,7 +11,7 @@ public interface ConcurrentNavigableMap<K, V> extends ConcurrentMap<K, V>, Navig
     @Override // java.util.NavigableMap
     ConcurrentNavigableMap<K, V> descendingMap();
 
-    @Override // java.util.NavigableMap
+    @Override // java.util.NavigableMap, java.util.SortedMap
     ConcurrentNavigableMap<K, V> headMap(K k);
 
     @Override // java.util.NavigableMap
@@ -23,13 +23,13 @@ public interface ConcurrentNavigableMap<K, V> extends ConcurrentMap<K, V>, Navig
     @Override // java.util.NavigableMap
     NavigableSet<K> navigableKeySet();
 
-    @Override // java.util.NavigableMap
+    @Override // java.util.NavigableMap, java.util.SortedMap
     ConcurrentNavigableMap<K, V> subMap(K k, K k2);
 
     @Override // java.util.NavigableMap
     ConcurrentNavigableMap<K, V> subMap(K k, boolean z, K k2, boolean z2);
 
-    @Override // java.util.NavigableMap
+    @Override // java.util.NavigableMap, java.util.SortedMap
     ConcurrentNavigableMap<K, V> tailMap(K k);
 
     @Override // java.util.NavigableMap

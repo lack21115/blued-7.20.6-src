@@ -16,7 +16,7 @@ public class UserGiftFragment_ViewBinding implements Unbinder {
 
     public UserGiftFragment_ViewBinding(UserGiftFragment userGiftFragment, View view) {
         this.b = userGiftFragment;
-        userGiftFragment.circlePageIndicator = (CirclePageIndicator) Utils.a(view, 2131364744, "field 'circlePageIndicator'", CirclePageIndicator.class);
+        userGiftFragment.circlePageIndicator = (CirclePageIndicator) Utils.a(view, R.id.indicator, "field 'circlePageIndicator'", CirclePageIndicator.class);
         userGiftFragment.gift_pager = (ViewPager) Utils.a(view, R.id.gift_pager, "field 'gift_pager'", ViewPager.class);
         userGiftFragment.rl_pay_type = (ShapeRelativeLayout) Utils.a(view, R.id.rl_pay_type, "field 'rl_pay_type'", ShapeRelativeLayout.class);
         userGiftFragment.stv_buy = (TextView) Utils.a(view, R.id.stv_buy, "field 'stv_buy'", TextView.class);

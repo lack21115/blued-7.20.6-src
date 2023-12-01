@@ -8,33 +8,24 @@ import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
 import android.widget.ImageView;
-import com.anythink.expressad.foundation.h.i;
-import com.cdo.oaps.ad.OapsKey;
-import com.tencent.tinker.loader.shareutil.ShareConstants;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
 /* loaded from: source-3503164-dex2jar.jar:pl/droidsonroids/gif/GifViewUtils.class */
 final class GifViewUtils {
-
-    /* renamed from: a  reason: collision with root package name */
-    static final List<String> f44152a = Arrays.asList(ShareConstants.DEXMODE_RAW, i.f7952c, "mipmap");
+    static final List<String> a = Arrays.asList("raw", "drawable", "mipmap");
 
     /* loaded from: source-3503164-dex2jar.jar:pl/droidsonroids/gif/GifViewUtils$InitResult.class */
     static class InitResult {
-
-        /* renamed from: a  reason: collision with root package name */
-        final int f44153a;
+        final int a;
         final int b;
-
-        /* renamed from: c  reason: collision with root package name */
-        final boolean f44154c;
+        final boolean c;
 
         InitResult(int i, int i2, boolean z) {
-            this.f44153a = i;
+            this.a = i;
             this.b = i2;
-            this.f44154c = z;
+            this.c = z;
         }
     }
 
@@ -59,9 +50,9 @@ final class GifViewUtils {
     }
 
     private static int a(ImageView imageView, AttributeSet attributeSet, boolean z) {
-        int attributeResourceValue = attributeSet.getAttributeResourceValue("http://schemas.android.com/apk/res/android", z ? OapsKey.KEY_SRC : "background", 0);
+        int attributeResourceValue = attributeSet.getAttributeResourceValue("http://schemas.android.com/apk/res/android", z ? "src" : "background", 0);
         if (attributeResourceValue > 0) {
-            if (!f44152a.contains(imageView.getResources().getResourceTypeName(attributeResourceValue)) || a(imageView, z, attributeResourceValue)) {
+            if (!a.contains(imageView.getResources().getResourceTypeName(attributeResourceValue)) || a(imageView, z, attributeResourceValue)) {
                 return 0;
             }
             return attributeResourceValue;

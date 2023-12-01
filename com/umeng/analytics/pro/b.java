@@ -34,14 +34,14 @@ public interface b extends IInterface {
 
     /* renamed from: com.umeng.analytics.pro.b$b  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/umeng/analytics/pro/b$b.class */
-    public static abstract class AbstractBinderC1076b extends Binder implements b {
+    public static abstract class AbstractBinderC0906b extends Binder implements b {
 
         /* renamed from: a  reason: collision with root package name */
-        static final int f40647a = 1;
+        static final int f26956a = 1;
         static final int b = 2;
 
         /* renamed from: c  reason: collision with root package name */
-        static final int f40648c = 3;
+        static final int f26957c = 3;
         private static final String d = "com.samsung.android.deviceidservice.IDeviceIdService";
 
         /* JADX INFO: Access modifiers changed from: package-private */
@@ -50,7 +50,7 @@ public interface b extends IInterface {
         public static class a implements b {
 
             /* renamed from: a  reason: collision with root package name */
-            public static b f40649a;
+            public static b f26958a;
             private IBinder b;
 
             a(IBinder iBinder) {
@@ -62,12 +62,12 @@ public interface b extends IInterface {
                 Parcel obtain = Parcel.obtain();
                 Parcel obtain2 = Parcel.obtain();
                 try {
-                    obtain.writeInterfaceToken(AbstractBinderC1076b.d);
-                    if (this.b.transact(1, obtain, obtain2, 0) || AbstractBinderC1076b.b() == null) {
+                    obtain.writeInterfaceToken(AbstractBinderC0906b.d);
+                    if (this.b.transact(1, obtain, obtain2, 0) || AbstractBinderC0906b.b() == null) {
                         obtain2.readException();
                         return obtain2.readString();
                     }
-                    return AbstractBinderC1076b.b().a();
+                    return AbstractBinderC0906b.b().a();
                 } finally {
                     obtain2.recycle();
                     obtain.recycle();
@@ -79,13 +79,13 @@ public interface b extends IInterface {
                 Parcel obtain = Parcel.obtain();
                 Parcel obtain2 = Parcel.obtain();
                 try {
-                    obtain.writeInterfaceToken(AbstractBinderC1076b.d);
+                    obtain.writeInterfaceToken(AbstractBinderC0906b.d);
                     obtain.writeString(str);
-                    if (this.b.transact(2, obtain, obtain2, 0) || AbstractBinderC1076b.b() == null) {
+                    if (this.b.transact(2, obtain, obtain2, 0) || AbstractBinderC0906b.b() == null) {
                         obtain2.readException();
                         return obtain2.readString();
                     }
-                    return AbstractBinderC1076b.b().a(str);
+                    return AbstractBinderC0906b.b().a(str);
                 } finally {
                     obtain2.recycle();
                     obtain.recycle();
@@ -98,7 +98,7 @@ public interface b extends IInterface {
             }
 
             public String b() {
-                return AbstractBinderC1076b.d;
+                return AbstractBinderC0906b.d;
             }
 
             @Override // com.umeng.analytics.pro.b
@@ -106,13 +106,13 @@ public interface b extends IInterface {
                 Parcel obtain = Parcel.obtain();
                 Parcel obtain2 = Parcel.obtain();
                 try {
-                    obtain.writeInterfaceToken(AbstractBinderC1076b.d);
+                    obtain.writeInterfaceToken(AbstractBinderC0906b.d);
                     obtain.writeString(str);
-                    if (this.b.transact(3, obtain, obtain2, 0) || AbstractBinderC1076b.b() == null) {
+                    if (this.b.transact(3, obtain, obtain2, 0) || AbstractBinderC0906b.b() == null) {
                         obtain2.readException();
                         return obtain2.readString();
                     }
-                    return AbstractBinderC1076b.b().b(str);
+                    return AbstractBinderC0906b.b().b(str);
                 } finally {
                     obtain2.recycle();
                     obtain.recycle();
@@ -120,7 +120,7 @@ public interface b extends IInterface {
             }
         }
 
-        public AbstractBinderC1076b() {
+        public AbstractBinderC0906b() {
             attachInterface(this, d);
         }
 
@@ -133,15 +133,15 @@ public interface b extends IInterface {
         }
 
         public static boolean a(b bVar) {
-            if (a.f40649a != null || bVar == null) {
+            if (a.f26958a != null || bVar == null) {
                 return false;
             }
-            a.f40649a = bVar;
+            a.f26958a = bVar;
             return true;
         }
 
         public static b b() {
-            return a.f40649a;
+            return a.f26958a;
         }
 
         @Override // android.os.IInterface

@@ -29,13 +29,9 @@ import com.blued.das.client.chatroom.ChatRoomProtos;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/SeatUserCardView.class */
 public class SeatUserCardView extends YYUserCardView {
-
-    /* renamed from: a  reason: collision with root package name */
-    private TextView f17995a;
+    private TextView a;
     private ShapeTextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private ShapeTextView f17996c;
+    private ShapeTextView c;
     private ShapeTextView d;
     private ShapeTextView e;
     private TextView f;
@@ -79,7 +75,7 @@ public class SeatUserCardView extends YYUserCardView {
                     AudioChannelManager.j().a(21);
                 } else if (YYRoomInfoManager.e().y() || YYRoomInfoManager.e().j()) {
                     YYAudioConfig yYAudioConfig = new YYAudioConfig();
-                    yYAudioConfig.f17862c = SeatUserCardView.this.getUserModel().getUid();
+                    yYAudioConfig.c = SeatUserCardView.this.getUserModel().getUid();
                     AudioChannelManager.j().b(5, AppInfo.f().toJson(yYAudioConfig));
                     if (AppInfo.h >= 713040) {
                         TRTCSendLeaveMsg tRTCSendLeaveMsg = new TRTCSendLeaveMsg();
@@ -149,7 +145,7 @@ public class SeatUserCardView extends YYUserCardView {
         }
         if (TextUtils.equals(getUserModel().getUid(), YYRoomInfoManager.e().k())) {
             this.g.setVisibility(8);
-            this.f17995a.setVisibility(8);
+            this.a.setVisibility(8);
             this.h.setVisibility(8);
             getBinding().P.setVisibility(8);
             if (b == null || !TextUtils.equals(getUserModel().getUid(), b.uid)) {
@@ -165,12 +161,12 @@ public class SeatUserCardView extends YYUserCardView {
             if (TextUtils.equals(getURole(), "1")) {
                 this.f.setVisibility(0);
                 this.g.setVisibility(0);
-                this.f17995a.setVisibility(0);
+                this.a.setVisibility(0);
                 this.h.setVisibility(0);
                 this.d.setVisibility(0);
                 this.e.setVisibility(0);
             } else if (TextUtils.equals(getURole(), "2")) {
-                this.f17995a.setVisibility(0);
+                this.a.setVisibility(0);
                 this.h.setVisibility(0);
                 if (b != null && TextUtils.equals(getUserModel().getUid(), b.uid)) {
                     this.d.setVisibility(8);
@@ -197,7 +193,7 @@ public class SeatUserCardView extends YYUserCardView {
                 this.d.setVisibility(8);
                 this.e.setVisibility(8);
                 this.g.setVisibility(8);
-                this.f17995a.setVisibility(0);
+                this.a.setVisibility(0);
                 this.h.setVisibility(0);
             }
         }
@@ -208,15 +204,15 @@ public class SeatUserCardView extends YYUserCardView {
         if (!YYRoomInfoManager.e().J() || YYRoomInfoManager.e().g(getUserModel().getUid())) {
             return;
         }
-        this.f17996c.setVisibility(8);
+        this.c.setVisibility(8);
     }
 
     @Override // com.blued.android.module.yy_china.view.YYUserCardView
     public void a(LinearLayout linearLayout) {
         linearLayout.addView((LinearLayout) LayoutInflater.from(getContext()).inflate(R.layout.view_seat_user_menu_layout, (ViewGroup) null));
-        this.f17995a = (TextView) findViewById(R.id.tv_send_gift);
+        this.a = (TextView) findViewById(R.id.tv_send_gift);
         this.b = (ShapeTextView) findViewById(R.id.tv_at_him);
-        this.f17996c = (ShapeTextView) findViewById(R.id.tv_private_chat);
+        this.c = (ShapeTextView) findViewById(R.id.tv_private_chat);
         this.d = (ShapeTextView) findViewById(R.id.tv_close_audio);
         this.e = (ShapeTextView) findViewById(R.id.tv_out);
         this.f = (TextView) findViewById(R.id.tv_down_seat);
@@ -224,9 +220,9 @@ public class SeatUserCardView extends YYUserCardView {
         this.h = (LinearLayout) findViewById(R.id.ll_menu);
         this.i = (ShapeLinearLayout) findViewById(R.id.ll_up_gift);
         this.e.setOnClickListener(this);
-        this.f17995a.setOnClickListener(this);
+        this.a.setOnClickListener(this);
         this.b.setOnClickListener(this);
-        this.f17996c.setOnClickListener(this);
+        this.c.setOnClickListener(this);
         this.d.setOnClickListener(this);
         this.f.setOnClickListener(this);
     }

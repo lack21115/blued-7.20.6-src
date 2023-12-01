@@ -2,25 +2,21 @@ package org.commonmark.node;
 
 /* loaded from: source-3503164-dex2jar.jar:org/commonmark/node/LinkReferenceDefinition.class */
 public class LinkReferenceDefinition extends Node {
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f44061a;
+    private String a;
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f44062c;
+    private String c;
 
     public LinkReferenceDefinition() {
     }
 
     public LinkReferenceDefinition(String str, String str2, String str3) {
-        this.f44061a = str;
+        this.a = str;
         this.b = str2;
-        this.f44062c = str3;
+        this.c = str3;
     }
 
     public String a() {
-        return this.f44061a;
+        return this.a;
     }
 
     @Override // org.commonmark.node.Node
@@ -33,6 +29,6 @@ public class LinkReferenceDefinition extends Node {
     }
 
     public String e() {
-        return this.f44062c;
+        return this.c;
     }
 }

@@ -8,9 +8,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 @JvmInline
 /* loaded from: source-3503164-dex2jar.jar:kotlin/UInt.class */
 public final class UInt implements Comparable<UInt> {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f42304a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private final int b;
 
     @Metadata

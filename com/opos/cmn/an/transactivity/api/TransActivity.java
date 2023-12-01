@@ -10,7 +10,7 @@ import com.bytedance.applog.tracker.Tracker;
 public class TransActivity extends Activity {
 
     /* renamed from: a  reason: collision with root package name */
-    private com.opos.cmn.an.transactivity.a.a f24598a = null;
+    private com.opos.cmn.an.transactivity.a.a f10911a = null;
 
     private void a() {
         finish();
@@ -31,7 +31,7 @@ public class TransActivity extends Activity {
             Intent intent = getIntent();
             if (intent != null) {
                 com.opos.cmn.an.transactivity.a.a aVar = (com.opos.cmn.an.transactivity.a.a) intent.getSerializableExtra("extra_key_trans_life_callback");
-                this.f24598a = aVar;
+                this.f10911a = aVar;
                 if (aVar != null) {
                     aVar.a(this, bundle);
                     return;
@@ -51,13 +51,13 @@ public class TransActivity extends Activity {
         super.onDestroy();
         com.opos.cmn.an.f.a.b("TransActivity", "onDestroy");
         try {
-            if (this.f24598a != null) {
-                this.f24598a.f(this);
+            if (this.f10911a != null) {
+                this.f10911a.f(this);
             }
         } catch (Exception e) {
             com.opos.cmn.an.f.a.c("TransActivity", "onDestroy", e);
         }
-        this.f24598a = null;
+        this.f10911a = null;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -66,8 +66,8 @@ public class TransActivity extends Activity {
         super.onNewIntent(intent);
         com.opos.cmn.an.f.a.b("TransActivity", "onNewIntent");
         try {
-            if (this.f24598a != null) {
-                this.f24598a.a(this, intent);
+            if (this.f10911a != null) {
+                this.f10911a.a(this, intent);
             }
         } catch (Exception e) {
             com.opos.cmn.an.f.a.c("TransActivity", "onNewIntent", e);
@@ -81,8 +81,8 @@ public class TransActivity extends Activity {
         super.onPause();
         com.opos.cmn.an.f.a.b("TransActivity", "onPause");
         try {
-            if (this.f24598a != null) {
-                this.f24598a.d(this);
+            if (this.f10911a != null) {
+                this.f10911a.d(this);
             }
         } catch (Exception e) {
             com.opos.cmn.an.f.a.c("TransActivity", "onPause", e);
@@ -96,8 +96,8 @@ public class TransActivity extends Activity {
         super.onRestart();
         com.opos.cmn.an.f.a.b("TransActivity", "onRestart");
         try {
-            if (this.f24598a != null) {
-                this.f24598a.b(this);
+            if (this.f10911a != null) {
+                this.f10911a.b(this);
             }
         } catch (Exception e) {
             com.opos.cmn.an.f.a.c("TransActivity", "onRestart", e);
@@ -111,8 +111,8 @@ public class TransActivity extends Activity {
         super.onResume();
         com.opos.cmn.an.f.a.b("TransActivity", "onResume");
         try {
-            if (this.f24598a != null) {
-                this.f24598a.c(this);
+            if (this.f10911a != null) {
+                this.f10911a.c(this);
             }
         } catch (Exception e) {
             com.opos.cmn.an.f.a.c("TransActivity", "onResume", e);
@@ -126,8 +126,8 @@ public class TransActivity extends Activity {
         super.onStart();
         com.opos.cmn.an.f.a.b("TransActivity", "onStart");
         try {
-            if (this.f24598a != null) {
-                this.f24598a.a(this);
+            if (this.f10911a != null) {
+                this.f10911a.a(this);
             }
         } catch (Exception e) {
             com.opos.cmn.an.f.a.c("TransActivity", "onStart", e);
@@ -141,8 +141,8 @@ public class TransActivity extends Activity {
         super.onStop();
         com.opos.cmn.an.f.a.b("TransActivity", "onStop");
         try {
-            if (this.f24598a != null) {
-                this.f24598a.e(this);
+            if (this.f10911a != null) {
+                this.f10911a.e(this);
             }
         } catch (Exception e) {
             com.opos.cmn.an.f.a.c("TransActivity", "onStop", e);

@@ -52,6 +52,7 @@ public class DefaultHandler implements EntityResolver, DTDHandler, ContentHandle
         return null;
     }
 
+    @Override // org.xml.sax.ContentHandler
     public void setDocumentLocator(Locator locator) {
     }
 

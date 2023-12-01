@@ -12,17 +12,13 @@ import kotlin.jvm.internal.Ref;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/coroutines/CombinedContext.class */
 public final class CombinedContext implements Serializable, CoroutineContext {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final CoroutineContext f42449a;
+    private final CoroutineContext a;
     private final CoroutineContext.Element b;
 
     @Metadata
     /* loaded from: source-3503164-dex2jar.jar:kotlin/coroutines/CombinedContext$Serialized.class */
     static final class Serialized implements Serializable {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static final Companion f42450a = new Companion(null);
+        public static final Companion a = new Companion(null);
         private static final long serialVersionUID = 0;
         private final CoroutineContext[] b;
 
@@ -44,7 +40,7 @@ public final class CombinedContext implements Serializable, CoroutineContext {
 
         private final Object readResolve() {
             CoroutineContext[] coroutineContextArr = this.b;
-            EmptyCoroutineContext emptyCoroutineContext = EmptyCoroutineContext.f42457a;
+            EmptyCoroutineContext emptyCoroutineContext = EmptyCoroutineContext.a;
             int length = coroutineContextArr.length;
             int i = 0;
             while (true) {
@@ -61,7 +57,7 @@ public final class CombinedContext implements Serializable, CoroutineContext {
     public CombinedContext(CoroutineContext left, CoroutineContext.Element element) {
         Intrinsics.e(left, "left");
         Intrinsics.e(element, "element");
-        this.f42449a = left;
+        this.a = left;
         this.b = element;
     }
 
@@ -69,7 +65,7 @@ public final class CombinedContext implements Serializable, CoroutineContext {
         int i = 2;
         CombinedContext combinedContext = this;
         while (true) {
-            CoroutineContext coroutineContext = combinedContext.f42449a;
+            CoroutineContext coroutineContext = combinedContext.a;
             combinedContext = coroutineContext instanceof CombinedContext ? (CombinedContext) coroutineContext : null;
             if (combinedContext == null) {
                 return i;
@@ -80,7 +76,7 @@ public final class CombinedContext implements Serializable, CoroutineContext {
 
     private final boolean a(CombinedContext combinedContext) {
         while (a(combinedContext.b)) {
-            CoroutineContext coroutineContext = combinedContext.f42449a;
+            CoroutineContext coroutineContext = combinedContext.a;
             if (!(coroutineContext instanceof CombinedContext)) {
                 return a((CoroutineContext.Element) coroutineContext);
             }
@@ -94,10 +90,10 @@ public final class CombinedContext implements Serializable, CoroutineContext {
     }
 
     private final Object writeReplace() {
-        int a2 = a();
-        final CoroutineContext[] coroutineContextArr = new CoroutineContext[a2];
+        int a = a();
+        final CoroutineContext[] coroutineContextArr = new CoroutineContext[a];
         final Ref.IntRef intRef = new Ref.IntRef();
-        fold(Unit.f42314a, new Function2<Unit, CoroutineContext.Element, Unit>() { // from class: kotlin.coroutines.CombinedContext$writeReplace$1
+        fold(Unit.a, new Function2<Unit, CoroutineContext.Element, Unit>() { // from class: kotlin.coroutines.CombinedContext$writeReplace$1
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
@@ -108,18 +104,18 @@ public final class CombinedContext implements Serializable, CoroutineContext {
                 Intrinsics.e(unit, "<anonymous parameter 0>");
                 Intrinsics.e(element, "element");
                 CoroutineContext[] coroutineContextArr2 = coroutineContextArr;
-                int i = intRef.f42543a;
-                intRef.f42543a = i + 1;
+                int i = intRef.a;
+                intRef.a = i + 1;
                 coroutineContextArr2[i] = element;
             }
 
             @Override // kotlin.jvm.functions.Function2
             public /* synthetic */ Unit invoke(Unit unit, CoroutineContext.Element element) {
                 a(unit, element);
-                return Unit.f42314a;
+                return Unit.a;
             }
         });
-        if (intRef.f42543a == a2) {
+        if (intRef.a == a) {
             return new Serialized(coroutineContextArr);
         }
         throw new IllegalStateException("Check failed.".toString());
@@ -139,7 +135,7 @@ public final class CombinedContext implements Serializable, CoroutineContext {
     @Override // kotlin.coroutines.CoroutineContext
     public <R> R fold(R r, Function2<? super R, ? super CoroutineContext.Element, ? extends R> operation) {
         Intrinsics.e(operation, "operation");
-        return operation.invoke((Object) this.f42449a.fold(r, operation), this.b);
+        return operation.invoke((Object) this.a.fold(r, operation), this.b);
     }
 
     @Override // kotlin.coroutines.CoroutineContext
@@ -152,7 +148,7 @@ public final class CombinedContext implements Serializable, CoroutineContext {
             if (e != null) {
                 return e;
             }
-            CoroutineContext coroutineContext = combinedContext2.f42449a;
+            CoroutineContext coroutineContext = combinedContext2.a;
             if (!(coroutineContext instanceof CombinedContext)) {
                 return (E) coroutineContext.get(key);
             }
@@ -161,17 +157,17 @@ public final class CombinedContext implements Serializable, CoroutineContext {
     }
 
     public int hashCode() {
-        return this.f42449a.hashCode() + this.b.hashCode();
+        return this.a.hashCode() + this.b.hashCode();
     }
 
     @Override // kotlin.coroutines.CoroutineContext
     public CoroutineContext minusKey(CoroutineContext.Key<?> key) {
         Intrinsics.e(key, "key");
         if (this.b.get(key) != null) {
-            return this.f42449a;
+            return this.a;
         }
-        CoroutineContext minusKey = this.f42449a.minusKey(key);
-        return minusKey == this.f42449a ? this : minusKey == EmptyCoroutineContext.f42457a ? this.b : new CombinedContext(minusKey, this.b);
+        CoroutineContext minusKey = this.a.minusKey(key);
+        return minusKey == this.a ? this : minusKey == EmptyCoroutineContext.a ? this.b : new CombinedContext(minusKey, this.b);
     }
 
     @Override // kotlin.coroutines.CoroutineContext

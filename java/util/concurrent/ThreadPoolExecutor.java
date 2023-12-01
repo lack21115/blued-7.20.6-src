@@ -482,11 +482,10 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
     }
 
     private static int workerCountOf(int i) {
-        return 536870911 & i;
+        return CAPACITY & i;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    public void afterExecute(Runnable runnable, Throwable th) {
+    protected void afterExecute(Runnable runnable, Throwable th) {
     }
 
     public void allowCoreThreadTimeOut(boolean z) {
@@ -526,8 +525,7 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    public void beforeExecute(Thread thread, Runnable runnable) {
+    protected void beforeExecute(Thread thread, Runnable runnable) {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

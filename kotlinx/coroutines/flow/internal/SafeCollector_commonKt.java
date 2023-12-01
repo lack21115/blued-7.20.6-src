@@ -37,18 +37,18 @@ public final class SafeCollector_commonKt {
                     return i + 1;
                 }
                 Job job = (Job) element2;
-                Job a2 = SafeCollector_commonKt.a((Job) element, job);
-                if (a2 == job) {
+                Job a = SafeCollector_commonKt.a((Job) element, job);
+                if (a == job) {
                     return job == null ? i : i + 1;
                 }
-                throw new IllegalStateException(("Flow invariant is violated:\n\t\tEmission from another coroutine is detected.\n\t\tChild of " + a2 + ", expected child of " + job + ".\n\t\tFlowCollector is not thread-safe and concurrent emissions are prohibited.\n\t\tTo mitigate this restriction please use 'channelFlow' builder instead of 'flow'").toString());
+                throw new IllegalStateException(("Flow invariant is violated:\n\t\tEmission from another coroutine is detected.\n\t\tChild of " + a + ", expected child of " + job + ".\n\t\tFlowCollector is not thread-safe and concurrent emissions are prohibited.\n\t\tTo mitigate this restriction please use 'channelFlow' builder instead of 'flow'").toString());
             }
 
             @Override // kotlin.jvm.functions.Function2
             public /* synthetic */ Integer invoke(Integer num, CoroutineContext.Element element) {
                 return Integer.valueOf(a(num.intValue(), element));
             }
-        })).intValue() == safeCollector.f43501c) {
+        })).intValue() == safeCollector.c) {
             return;
         }
         throw new IllegalStateException(("Flow invariant is violated:\n\t\tFlow was collected in " + safeCollector.b + ",\n\t\tbut emission happened in " + coroutineContext + ".\n\t\tPlease refer to 'flow' documentation or use 'flowOn' instead").toString());

@@ -33,13 +33,9 @@ public final class DialogNewLiveHostFinishBinding implements ViewBinding {
     public final View P;
     public final View Q;
     private final ConstraintLayout R;
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ShapeConstraintLayout f11833a;
+    public final ShapeConstraintLayout a;
     public final ShapeConstraintLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ShapeConstraintLayout f11834c;
+    public final ShapeConstraintLayout c;
     public final ShapeConstraintLayout d;
     public final ShapeConstraintLayout e;
     public final ImageView f;
@@ -66,9 +62,9 @@ public final class DialogNewLiveHostFinishBinding implements ViewBinding {
 
     private DialogNewLiveHostFinishBinding(ConstraintLayout constraintLayout, ShapeConstraintLayout shapeConstraintLayout, ShapeConstraintLayout shapeConstraintLayout2, ShapeConstraintLayout shapeConstraintLayout3, ShapeConstraintLayout shapeConstraintLayout4, ShapeConstraintLayout shapeConstraintLayout5, ImageView imageView, ImageView imageView2, ImageView imageView3, ImageView imageView4, ImageView imageView5, SlopeLoadingView slopeLoadingView, NestedScrollView nestedScrollView, TextView textView, TextView textView2, TextView textView3, ShapeTextView shapeTextView, TextView textView4, TextView textView5, ShapeTextView shapeTextView2, TextView textView6, TextView textView7, TextView textView8, TextView textView9, TextView textView10, TextView textView11, TextView textView12, TextView textView13, TextView textView14, TextView textView15, TextView textView16, TextView textView17, TextView textView18, TextView textView19, TextView textView20, TextView textView21, TextView textView22, TextView textView23, View view, View view2, View view3, View view4, View view5, View view6) {
         this.R = constraintLayout;
-        this.f11833a = shapeConstraintLayout;
+        this.a = shapeConstraintLayout;
         this.b = shapeConstraintLayout2;
-        this.f11834c = shapeConstraintLayout3;
+        this.c = shapeConstraintLayout3;
         this.d = shapeConstraintLayout4;
         this.e = shapeConstraintLayout5;
         this.f = imageView;
@@ -147,8 +143,8 @@ public final class DialogNewLiveHostFinishBinding implements ViewBinding {
                                             if (imageView5 != null) {
                                                 SlopeLoadingView slopeLoadingView = (SlopeLoadingView) view.findViewById(R.id.loading);
                                                 if (slopeLoadingView != null) {
-                                                    NestedScrollView nestedScrollView = (NestedScrollView) view.findViewById(R.id.nsv_content);
-                                                    if (nestedScrollView != null) {
+                                                    NestedScrollView findViewById = view.findViewById(R.id.nsv_content);
+                                                    if (findViewById != null) {
                                                         TextView textView = (TextView) view.findViewById(R.id.tv_add_follow);
                                                         if (textView != null) {
                                                             TextView textView2 = (TextView) view.findViewById(R.id.tv_add_follow_num);
@@ -199,19 +195,19 @@ public final class DialogNewLiveHostFinishBinding implements ViewBinding {
                                                                                                                                                     if (textView22 != null) {
                                                                                                                                                         TextView textView23 = (TextView) view.findViewById(R.id.tv_viewer_count_num);
                                                                                                                                                         if (textView23 != null) {
-                                                                                                                                                            View findViewById = view.findViewById(R.id.view_separator_info_head);
-                                                                                                                                                            if (findViewById != null) {
-                                                                                                                                                                View findViewById2 = view.findViewById(R.id.view_separator_left_bottom);
-                                                                                                                                                                if (findViewById2 != null) {
-                                                                                                                                                                    View findViewById3 = view.findViewById(R.id.view_separator_left_top);
-                                                                                                                                                                    if (findViewById3 != null) {
-                                                                                                                                                                        View findViewById4 = view.findViewById(R.id.view_separator_right_bottom);
-                                                                                                                                                                        if (findViewById4 != null) {
-                                                                                                                                                                            View findViewById5 = view.findViewById(R.id.view_separator_right_top);
-                                                                                                                                                                            if (findViewById5 != null) {
-                                                                                                                                                                                View findViewById6 = view.findViewById(R.id.view_status_bar);
-                                                                                                                                                                                if (findViewById6 != null) {
-                                                                                                                                                                                    return new DialogNewLiveHostFinishBinding((ConstraintLayout) view, shapeConstraintLayout, shapeConstraintLayout2, shapeConstraintLayout3, shapeConstraintLayout4, shapeConstraintLayout5, imageView, imageView2, imageView3, imageView4, imageView5, slopeLoadingView, nestedScrollView, textView, textView2, textView3, shapeTextView, textView4, textView5, shapeTextView2, textView6, textView7, textView8, textView9, textView10, textView11, textView12, textView13, textView14, textView15, textView16, textView17, textView18, textView19, textView20, textView21, textView22, textView23, findViewById, findViewById2, findViewById3, findViewById4, findViewById5, findViewById6);
+                                                                                                                                                            View findViewById2 = view.findViewById(R.id.view_separator_info_head);
+                                                                                                                                                            if (findViewById2 != null) {
+                                                                                                                                                                View findViewById3 = view.findViewById(R.id.view_separator_left_bottom);
+                                                                                                                                                                if (findViewById3 != null) {
+                                                                                                                                                                    View findViewById4 = view.findViewById(R.id.view_separator_left_top);
+                                                                                                                                                                    if (findViewById4 != null) {
+                                                                                                                                                                        View findViewById5 = view.findViewById(R.id.view_separator_right_bottom);
+                                                                                                                                                                        if (findViewById5 != null) {
+                                                                                                                                                                            View findViewById6 = view.findViewById(R.id.view_separator_right_top);
+                                                                                                                                                                            if (findViewById6 != null) {
+                                                                                                                                                                                View findViewById7 = view.findViewById(R.id.view_status_bar);
+                                                                                                                                                                                if (findViewById7 != null) {
+                                                                                                                                                                                    return new DialogNewLiveHostFinishBinding((ConstraintLayout) view, shapeConstraintLayout, shapeConstraintLayout2, shapeConstraintLayout3, shapeConstraintLayout4, shapeConstraintLayout5, imageView, imageView2, imageView3, imageView4, imageView5, slopeLoadingView, findViewById, textView, textView2, textView3, shapeTextView, textView4, textView5, shapeTextView2, textView6, textView7, textView8, textView9, textView10, textView11, textView12, textView13, textView14, textView15, textView16, textView17, textView18, textView19, textView20, textView21, textView22, textView23, findViewById2, findViewById3, findViewById4, findViewById5, findViewById6, findViewById7);
                                                                                                                                                                                 }
                                                                                                                                                                                 str = "viewStatusBar";
                                                                                                                                                                             } else {
@@ -343,7 +339,6 @@ public final class DialogNewLiveHostFinishBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.R;

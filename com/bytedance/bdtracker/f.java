@@ -20,11 +20,11 @@ import org.json.JSONObject;
 public final class f implements Application.ActivityLifecycleCallbacks, Handler.Callback {
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f21214a;
+    public boolean f7608a;
     public Handler b;
 
     /* renamed from: c  reason: collision with root package name */
-    public v f21215c;
+    public v f7609c;
     public e d;
     public int e;
     public m f;
@@ -33,23 +33,23 @@ public final class f implements Application.ActivityLifecycleCallbacks, Handler.
     public final List<String> i;
     public final List<String> j;
 
-    public f(v engine) {
-        Intrinsics.d(engine, "engine");
-        this.f21215c = engine;
+    public f(v vVar) {
+        Intrinsics.d(vVar, "engine");
+        this.f7609c = vVar;
         this.g = 10;
-        this.i = CollectionsKt.b("utm_campaign", "utm_source", "utm_term", "utm_medium", "utm_content");
-        this.j = CollectionsKt.b("tr_shareuser", "tr_admaster", "tr_param1", "tr_param2", "tr_param3", "tr_param4", "reengagement_window", "reengagement_time", "is_retargeting");
+        this.i = CollectionsKt.b(new String[]{"utm_campaign", "utm_source", "utm_term", "utm_medium", "utm_content"});
+        this.j = CollectionsKt.b(new String[]{"tr_shareuser", "tr_admaster", "tr_param1", "tr_param2", "tr_param3", "tr_param4", "reengagement_window", "reengagement_time", "is_retargeting"});
         HandlerThread handlerThread = new HandlerThread("bd_tracker_alink");
         handlerThread.start();
         this.b = new Handler(handlerThread.getLooper(), this);
-        String spName = b.a(engine.f21325c, "ALINK_CACHE_SP");
-        Context a2 = engine.a();
-        if (a2 == null) {
+        String a2 = b.a(vVar.f7719c, "ALINK_CACHE_SP");
+        Context a3 = vVar.a();
+        if (a3 == null) {
             throw new TypeCastException("null cannot be cast to non-null type android.app.Application");
         }
-        Intrinsics.b(spName, "spName");
-        this.d = new e((Application) a2, spName);
-        c cVar = engine.f21325c;
+        Intrinsics.b(a2, "spName");
+        this.d = new e((Application) a3, a2);
+        c cVar = vVar.f7719c;
         Intrinsics.b(cVar, "engine.appLog");
         this.f = new m(cVar);
     }
@@ -74,32 +74,32 @@ public final class f implements Application.ActivityLifecycleCallbacks, Handler.
                     return true;
                 }
                 hVar.l = "android";
-                c cVar = this.f21215c.f21325c;
+                c cVar = this.f7609c.f7719c;
                 Intrinsics.b(cVar, "mEngine.appLog");
                 hVar.a(cVar.l);
-                c cVar2 = this.f21215c.f21325c;
+                c cVar2 = this.f7609c.f7719c;
                 Intrinsics.b(cVar2, "mEngine.appLog");
                 hVar.b(cVar2.getDid());
-                c cVar3 = this.f21215c.f21325c;
+                c cVar3 = this.f7609c.f7719c;
                 Intrinsics.b(cVar3, "mEngine.appLog");
                 hVar.c(cVar3.getSsid());
-                c cVar4 = this.f21215c.f21325c;
+                c cVar4 = this.f7609c.f7719c;
                 Intrinsics.b(cVar4, "mEngine.appLog");
                 hVar.d(cVar4.getUserUniqueID());
-                n0 n0Var = this.f21215c.h;
+                n0 n0Var = this.f7609c.h;
                 hVar.h = n0Var != null ? n0Var.g() : null;
-                n0 n0Var2 = this.f21215c.h;
+                n0 n0Var2 = this.f7609c.h;
                 hVar.i = n0Var2 != null ? n0Var2.j() : null;
-                n0 n0Var3 = this.f21215c.h;
+                n0 n0Var3 = this.f7609c.h;
                 hVar.n = n0Var3 != null ? (String) n0Var3.a("device_model", (String) null, String.class) : null;
-                n0 n0Var4 = this.f21215c.h;
+                n0 n0Var4 = this.f7609c.h;
                 hVar.m = n0Var4 != null ? (String) n0Var4.a("os_version", (String) null, String.class) : null;
-                n0 n0Var5 = this.f21215c.h;
+                n0 n0Var5 = this.f7609c.h;
                 JSONObject jSONObject = n0Var5 != null ? (JSONObject) n0Var5.a("oaid", (String) null, JSONObject.class) : null;
                 hVar.j = jSONObject != null ? jSONObject.optString("id") : null;
-                n0 n0Var6 = this.f21215c.h;
+                n0 n0Var6 = this.f7609c.h;
                 hVar.k = n0Var6 != null ? (String) n0Var6.a("google_aid", (String) null, String.class) : null;
-                UriConfig c2 = this.f21215c.c();
+                UriConfig c2 = this.f7609c.c();
                 Intrinsics.b(c2, "mEngine.uriConfig");
                 String alinkQueryUri = c2.getAlinkQueryUri();
                 i<g> a4 = alinkQueryUri != null ? this.f.a(alinkQueryUri, hVar) : null;
@@ -111,9 +111,9 @@ public final class f implements Application.ActivityLifecycleCallbacks, Handler.
                 JSONObject jSONObject2 = new JSONObject();
                 jSONObject2.put("$link_type", "direct");
                 jSONObject2.put("$deeplink_url", this.h);
-                this.f21215c.f21325c.onEventV3("$invoke", jSONObject2, 0);
+                this.f7609c.f7719c.onEventV3("$invoke", jSONObject2, 0);
                 a();
-                c cVar5 = this.f21215c.f21325c;
+                c cVar5 = this.f7609c.f7719c;
                 Intrinsics.b(cVar5, "mEngine.appLog");
                 IALinkListener aLinkListener = cVar5.getALinkListener();
                 if (aLinkListener != null) {
@@ -124,40 +124,40 @@ public final class f implements Application.ActivityLifecycleCallbacks, Handler.
             }
             throw new TypeCastException("null cannot be cast to non-null type com.bytedance.applog.alink.model.ALinkQueryParam");
         } else if (valueOf != null && valueOf.intValue() == 0) {
-            n0 n0Var7 = this.f21215c.h;
+            n0 n0Var7 = this.f7609c.h;
             if (n0Var7 == null || n0Var7.h() != 0) {
-                JSONObject jSONObject3 = (!this.f21214a || this.e >= this.g) ? new JSONObject() : n.f21263a.a(this.f21215c.a());
+                JSONObject jSONObject3 = (!this.f7608a || this.e >= this.g) ? new JSONObject() : n.f7657a.a(this.f7609c.a());
                 if (jSONObject3 != null) {
-                    h queryParam = (h) l.f21245a.a(jSONObject3, h.class);
-                    if (queryParam != null) {
-                        Intrinsics.d(queryParam, "queryParam");
-                        c cVar6 = this.f21215c.f21325c;
+                    h hVar2 = (h) l.f7639a.a(jSONObject3, h.class);
+                    if (hVar2 != null) {
+                        Intrinsics.d(hVar2, "queryParam");
+                        c cVar6 = this.f7609c.f7719c;
                         Intrinsics.b(cVar6, "mEngine.appLog");
-                        queryParam.a(cVar6.l);
-                        c cVar7 = this.f21215c.f21325c;
+                        hVar2.a(cVar6.l);
+                        c cVar7 = this.f7609c.f7719c;
                         Intrinsics.b(cVar7, "mEngine.appLog");
-                        queryParam.b(cVar7.getDid());
-                        c cVar8 = this.f21215c.f21325c;
+                        hVar2.b(cVar7.getDid());
+                        c cVar8 = this.f7609c.f7719c;
                         Intrinsics.b(cVar8, "mEngine.appLog");
-                        queryParam.c(cVar8.getSsid());
-                        c cVar9 = this.f21215c.f21325c;
+                        hVar2.c(cVar8.getSsid());
+                        c cVar9 = this.f7609c.f7719c;
                         Intrinsics.b(cVar9, "mEngine.appLog");
-                        queryParam.d(cVar9.getUserUniqueID());
-                        String c3 = queryParam.c();
+                        hVar2.d(cVar9.getUserUniqueID());
+                        String c3 = hVar2.c();
                         if (!(c3 == null || c3.length() == 0)) {
-                            this.f21215c.f21325c.setExternalAbVersion(queryParam.c());
+                            this.f7609c.f7719c.setExternalAbVersion(hVar2.c());
                         }
-                        String e = queryParam.e();
+                        String e = hVar2.e();
                         if (!(e == null || e.length() == 0)) {
-                            this.d.a("tr_web_ssid", queryParam.e(), 31536000000L);
+                            this.d.a("tr_web_ssid", hVar2.e(), 31536000000L);
                         }
-                        UriConfig c4 = this.f21215c.c();
+                        UriConfig c4 = this.f7609c.c();
                         Intrinsics.b(c4, "mEngine.uriConfig");
                         String alinkAttributionUri = c4.getAlinkAttributionUri();
                         if (alinkAttributionUri != null) {
                             m mVar = this.f;
                             k kVar = new k();
-                            n0 n0Var8 = this.f21215c.h;
+                            n0 n0Var8 = this.f7609c.h;
                             if (n0Var8 != null) {
                                 kVar.b = n0Var8.a();
                                 kVar.f = "android";
@@ -168,7 +168,7 @@ public final class f implements Application.ActivityLifecycleCallbacks, Handler.
                                 kVar.d = n0Var8.b();
                                 kVar.n = jSONObject4 != null ? jSONObject4.optString("id") : null;
                                 kVar.o = (String) n0Var8.a("google_aid", (String) null, String.class);
-                                kVar.q = (String) n0Var8.a(com.alipay.sdk.cons.b.b, (String) null, String.class);
+                                kVar.q = (String) n0Var8.a("user_agent", (String) null, String.class);
                                 kVar.r = (String) n0Var8.a("device_model", (String) null, String.class);
                                 kVar.s = (String) n0Var8.a("os_version", (String) null, String.class);
                                 kVar.h = n0Var8.n();
@@ -177,7 +177,7 @@ public final class f implements Application.ActivityLifecycleCallbacks, Handler.
                                 kVar.j = n0Var8.m();
                                 kVar.k = (String) n0Var8.a("channel", (String) null, String.class);
                             }
-                            iVar = mVar.a(alinkAttributionUri, kVar, queryParam);
+                            iVar = mVar.a(alinkAttributionUri, kVar, hVar2);
                         } else {
                             iVar = null;
                         }
@@ -192,8 +192,8 @@ public final class f implements Application.ActivityLifecycleCallbacks, Handler.
                         this.d.a("deferred_deep_link", a2, -1L);
                         JSONObject jSONObject5 = new JSONObject();
                         jSONObject5.put("$link_type", "deferred");
-                        this.f21215c.f21325c.onEventV3("$invoke", jSONObject5, 0);
-                        c cVar10 = this.f21215c.f21325c;
+                        this.f7609c.f7719c.onEventV3("$invoke", jSONObject5, 0);
+                        c cVar10 = this.f7609c.f7719c;
                         Intrinsics.b(cVar10, "mEngine.appLog");
                         IALinkListener aLinkListener2 = cVar10.getALinkListener();
                         if (aLinkListener2 != null) {
@@ -238,7 +238,7 @@ public final class f implements Application.ActivityLifecycleCallbacks, Handler.
         r0.sendEmptyMessage(0);
      */
     /* JADX WARN: Code restructure failed: missing block: B:73:0x016f, code lost:
-        r0 = r5.f21215c.a();
+        r0 = r5.f7609c.a();
      */
     /* JADX WARN: Code restructure failed: missing block: B:74:0x0178, code lost:
         if (r0 == null) goto L50;

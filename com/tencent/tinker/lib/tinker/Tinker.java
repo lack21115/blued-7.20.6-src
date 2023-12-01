@@ -3,7 +3,6 @@ package com.tencent.tinker.lib.tinker;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Process;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.tinker.lib.listener.DefaultPatchListener;
 import com.tencent.tinker.lib.listener.PatchListener;
 import com.tencent.tinker.lib.patch.AbstractPatch;
@@ -217,7 +216,7 @@ public class Tinker {
         if (this.patchDirectory == null || str == null) {
             return;
         }
-        SharePatchFileUtil.deleteDir(this.patchDirectory.getAbsolutePath() + BridgeUtil.SPLIT_MARK + str);
+        SharePatchFileUtil.deleteDir(this.patchDirectory.getAbsolutePath() + "/" + str);
     }
 
     public Context getContext() {

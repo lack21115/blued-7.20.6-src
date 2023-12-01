@@ -16,18 +16,18 @@ public class yg {
     public static final int g = 11;
 
     /* renamed from: a  reason: collision with root package name */
-    private volatile List<xg> f38130a;
+    private volatile List<xg> f24439a;
 
     /* renamed from: c  reason: collision with root package name */
-    private ic f38131c;
+    private ic f24440c;
     private final Object b = new Object();
     private int d = -1;
 
     public yg(Context context, String str) {
         if (str == null) {
-            this.f38131c = lc.a(context);
+            this.f24440c = lc.a(context);
         } else {
-            this.f38131c = kc.a(context, str);
+            this.f24440c = kc.a(context, str);
         }
         b();
     }
@@ -56,8 +56,8 @@ public class yg {
     }
 
     private void b() {
-        this.f38130a = new CopyOnWriteArrayList();
-        String d = this.f38131c.d(m4.A);
+        this.f24439a = new CopyOnWriteArrayList();
+        String d = this.f24440c.d(m4.A);
         String str = d;
         if (d == null) {
             str = e;
@@ -65,7 +65,7 @@ public class yg {
         try {
             JSONArray jSONArray = new JSONArray(str);
             synchronized (this.b) {
-                this.f38130a.addAll(a(jSONArray));
+                this.f24439a.addAll(a(jSONArray));
             }
         } catch (Exception e2) {
         }
@@ -74,23 +74,23 @@ public class yg {
     public xg a(int i) {
         xg next;
         synchronized (this.b) {
-            if (this.f38130a != null && this.f38130a.size() != 0 && i >= 0) {
+            if (this.f24439a != null && this.f24439a.size() != 0 && i >= 0) {
                 int i2 = i - 1000;
-                if (i2 < this.f38130a.size()) {
+                if (i2 < this.f24439a.size()) {
                     this.d = i;
                     if (i >= 1000) {
-                        return this.f38130a.get(i2);
+                        return this.f24439a.get(i2);
                     } else if (i > 8 && i < 989) {
                         int i3 = i + 11;
-                        if (i3 >= this.f38130a.size()) {
+                        if (i3 >= this.f24439a.size()) {
                             return null;
                         }
-                        return this.f38130a.get(i3);
+                        return this.f24439a.get(i3);
                     } else {
-                        Iterator<xg> it = this.f38130a.iterator();
+                        Iterator<xg> it = this.f24439a.iterator();
                         do {
                             if (!it.hasNext()) {
-                                return this.f38130a.get(0);
+                                return this.f24439a.get(0);
                             }
                             next = it.next();
                         } while (next.d != i);
@@ -103,17 +103,17 @@ public class yg {
     }
 
     public String a() {
-        if (this.f38130a == null) {
+        if (this.f24439a == null) {
             return null;
         }
         StringBuilder sb = new StringBuilder(128);
-        for (xg xgVar : this.f38130a) {
-            if (xgVar.f38114c != -1) {
+        for (xg xgVar : this.f24439a) {
+            if (xgVar.f24423c != -1) {
                 if (sb.length() == 0) {
-                    sb.append(xgVar.f38114c);
+                    sb.append(xgVar.f24423c);
                 } else {
                     sb.append(",");
-                    sb.append(xgVar.f38114c);
+                    sb.append(xgVar.f24423c);
                 }
             } else if (sb.length() == 0) {
                 sb.append(0);
@@ -135,19 +135,19 @@ public class yg {
     public int b(int i) {
         xg next;
         synchronized (this.b) {
-            if (this.f38130a == null || this.f38130a.size() == 0 || i < 0) {
+            if (this.f24439a == null || this.f24439a.size() == 0 || i < 0) {
                 return i;
             }
             if ((i < 8 || i > 19) && this.d < 1000) {
                 if (i <= 19 || i >= 1000) {
-                    Iterator<xg> it = this.f38130a.iterator();
+                    Iterator<xg> it = this.f24439a.iterator();
                     do {
                         if (!it.hasNext()) {
                             return i;
                         }
                         next = it.next();
                     } while (i != next.b);
-                    if (i == 0 && next.f38114c == 0 && this.d < 1) {
+                    if (i == 0 && next.f24423c == 0 && this.d < 1) {
                         return 1000;
                     }
                     return next.d;
@@ -160,18 +160,18 @@ public class yg {
 
     public void b(JSONArray jSONArray) {
         List<xg> a2;
-        String d = this.f38131c.d(m4.A);
+        String d = this.f24440c.d(m4.A);
         if (jSONArray == null || (a2 = a(jSONArray)) == null) {
             return;
         }
         synchronized (this.b) {
-            this.f38130a.clear();
-            this.f38130a.addAll(a2);
+            this.f24439a.clear();
+            this.f24439a.addAll(a2);
         }
         if (jSONArray.toString().equals(d)) {
             return;
         }
-        this.f38131c.b();
-        this.f38131c.b(m4.A, jSONArray.toString());
+        this.f24440c.b();
+        this.f24440c.b(m4.A, jSONArray.toString());
     }
 }

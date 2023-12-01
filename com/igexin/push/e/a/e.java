@@ -12,10 +12,10 @@ import java.net.URL;
 public class e extends com.igexin.c.a.d.f {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f23596a = -2147483638;
+    public static final int f9988a = -2147483638;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f23597c = "HttpTask";
+    private static final String f9989c = "HttpTask";
     private static final int d = 20000;
     private static final int e = 3;
     public d b;
@@ -26,11 +26,11 @@ public class e extends com.igexin.c.a.d.f {
     public final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        boolean f23598a;
+        boolean f9990a;
         byte[] b;
 
         public a(boolean z, byte[] bArr) {
-            this.f23598a = z;
+            this.f9990a = z;
             this.b = bArr;
         }
     }
@@ -209,13 +209,13 @@ public class e extends com.igexin.c.a.d.f {
                 if (headerField != null && headerField.equals("0")) {
                     String headerField2 = httpURLConnection.getHeaderField("GT_T");
                     if (headerField2 == null) {
-                        com.igexin.c.a.c.a.a(f23597c, "GT_T = null");
+                        com.igexin.c.a.c.a.a(f9989c, "GT_T = null");
                         com.igexin.c.a.c.a.a("HttpTask|GT_T = null", new Object[0]);
                         return new a(true, null);
                     }
                     String headerField3 = httpURLConnection.getHeaderField("GT_C_S");
                     if (headerField3 == null) {
-                        com.igexin.c.a.c.a.a(f23597c, "GT_C_S = null");
+                        com.igexin.c.a.c.a.a(f9989c, "GT_C_S = null");
                         com.igexin.c.a.c.a.a("HttpTask|GT_C_S = null", new Object[0]);
                         return new a(true, null);
                     }
@@ -224,11 +224,11 @@ public class e extends com.igexin.c.a.d.f {
                     if (a2 != null && a2.equals(headerField3)) {
                         return new a(false, b);
                     }
-                    com.igexin.c.a.c.a.a(f23597c, "signature = null or error");
+                    com.igexin.c.a.c.a.a(f9989c, "signature = null or error");
                     com.igexin.c.a.c.a.a("HttpTask|signature = null or error", new Object[0]);
                     return new a(true, null);
                 }
-                com.igexin.c.a.c.a.a(f23597c, "GT_ERR = ".concat(String.valueOf(headerField)));
+                com.igexin.c.a.c.a.a(f9989c, "GT_ERR = ".concat(String.valueOf(headerField)));
                 com.igexin.c.a.c.a.a("HttpTask|GT_ERR = ".concat(String.valueOf(headerField)), new Object[0]);
                 return new a(true, null);
             }
@@ -288,7 +288,7 @@ public class e extends com.igexin.c.a.d.f {
         d dVar = this.b;
         if (dVar == null || dVar.f == null || (this.b.g != null && this.b.g.length > com.igexin.push.config.d.A * 1024)) {
             g();
-            com.igexin.c.a.c.a.a(f23597c, "run return ###");
+            com.igexin.c.a.c.a.a(f9989c, "run return ###");
             com.igexin.c.a.c.a.a("HttpTask|run return ###", new Object[0]);
             return;
         }
@@ -303,8 +303,8 @@ public class e extends com.igexin.c.a.d.f {
         }
         while (i < 3) {
             a a2 = this.b.g == null ? a(this.b.f) : a(this.b.f, this.b.g);
-            if (a2.f23598a) {
-                com.igexin.c.a.c.a.a(f23597c, "http server resp decode header error");
+            if (a2.f9990a) {
+                com.igexin.c.a.c.a.a(f9989c, "http server resp decode header error");
             } else if (a2.b != null) {
                 try {
                     this.b.a(a2.b);
@@ -316,7 +316,7 @@ public class e extends com.igexin.c.a.d.f {
             }
             if (i == 2) {
                 this.b.a(new Exception("try up to limit"));
-                com.igexin.c.a.c.a.a(f23597c, "http request exception, try times = " + (i + 1));
+                com.igexin.c.a.c.a.a(f9989c, "http request exception, try times = " + (i + 1));
             }
             i++;
         }

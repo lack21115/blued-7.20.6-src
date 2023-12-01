@@ -24,7 +24,7 @@ public final class b extends com.kwad.components.ad.reward.presenter.a implement
     }
 
     private void b(View view, final boolean z) {
-        com.kwad.components.core.d.b.a.a(new a.C0519a(view.getContext()).I(this.mAdTemplate).a(new a.b() { // from class: com.kwad.components.ad.reward.presenter.platdetail.b.1
+        com.kwad.components.core.d.b.a.a(new a.C0349a(view.getContext()).I(this.mAdTemplate).a(new a.b() { // from class: com.kwad.components.ad.reward.presenter.platdetail.b.1
             @Override // com.kwad.components.core.d.b.a.b
             public final void onAdClicked() {
                 b.this.P(z);

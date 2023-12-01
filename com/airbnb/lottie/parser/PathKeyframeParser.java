@@ -14,6 +14,6 @@ class PathKeyframeParser {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static PathKeyframe a(JsonReader jsonReader, LottieComposition lottieComposition) throws IOException {
-        return new PathKeyframe(lottieComposition, KeyframeParser.a(jsonReader, lottieComposition, Utils.a(), PathParser.f4405a, jsonReader.peek() == JsonToken.BEGIN_OBJECT));
+        return new PathKeyframe(lottieComposition, KeyframeParser.a(jsonReader, lottieComposition, Utils.a(), PathParser.a, jsonReader.peek() == JsonToken.BEGIN_OBJECT));
     }
 }

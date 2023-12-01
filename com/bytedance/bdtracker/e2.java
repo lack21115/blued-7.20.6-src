@@ -11,7 +11,7 @@ public class e2 extends u1 {
     public static e2 f;
 
     /* renamed from: c  reason: collision with root package name */
-    public final SharedPreferences f21212c;
+    public final SharedPreferences f7606c;
     public SharedPreferences d;
     public boolean e;
 
@@ -22,13 +22,13 @@ public class e2 extends u1 {
 
     public e2(Context context, String str, String str2) {
         this.e = false;
-        this.f21212c = a(context, str, 0);
+        this.f7606c = a(context, str, 0);
         this.d = a(context, str2, 0);
     }
 
     public e2(Context context, String str, boolean z) {
         this.e = false;
-        this.f21212c = a((Context) Objects.requireNonNull(context), str, 0);
+        this.f7606c = a((Context) Objects.requireNonNull(context), str, 0);
         this.e = z;
     }
 
@@ -126,7 +126,7 @@ public class e2 extends u1 {
 
     public SharedPreferences d(String str) {
         SharedPreferences sharedPreferences;
-        return (!"device_id".equals(str) || (sharedPreferences = this.d) == null) ? this.f21212c : sharedPreferences;
+        return (!"device_id".equals(str) || (sharedPreferences = this.d) == null) ? this.f7606c : sharedPreferences;
     }
 
     public String e(String str) {

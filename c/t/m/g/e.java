@@ -15,7 +15,6 @@ import android.provider.ContactsContract;
 import android.text.TextUtils;
 import c.t.m.g.j3;
 import com.baidu.mobads.sdk.internal.bj;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.cdo.oaps.ad.OapsKey;
 import com.huawei.hms.utils.FileUtil;
 import java.io.BufferedOutputStream;
@@ -30,7 +29,7 @@ public class e extends d2 {
     public static final String z = j.b() + i3.a(e.class.getName(), "SHA-256").substring(0, 8);
 
     /* renamed from: c  reason: collision with root package name */
-    public Context f3789c;
+    public Context f3741c;
     public final File d;
     public boolean e;
     public volatile Handler f;
@@ -85,7 +84,7 @@ public class e extends d2 {
     public class b implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ File f3791a;
+        public final /* synthetic */ File f3743a;
         public final /* synthetic */ String b;
 
         /* loaded from: source-8756600-dex2jar.jar:c/t/m/g/e$b$a.class */
@@ -99,29 +98,29 @@ public class e extends d2 {
 
             @Override // c.t.m.g.t1
             public void b(String str) {
-                b.this.f3791a.delete();
+                b.this.f3743a.delete();
                 if (g3.a()) {
-                    b.this.f3791a.getName();
+                    b.this.f3743a.getName();
                 }
             }
         }
 
         public b(e eVar, File file, String str) {
-            this.f3791a = file;
+            this.f3743a = file;
             this.b = str;
         }
 
         @Override // java.lang.Runnable
         public void run() {
             try {
-                byte[] b = z2.b(this.f3791a);
+                byte[] b = z2.b(this.f3743a);
                 if (!m3.a(b)) {
                     j.k.a(this.b, b, new a());
                     return;
                 }
-                this.f3791a.delete();
+                this.f3743a.delete();
                 if (g3.a()) {
-                    this.f3791a.getName();
+                    this.f3743a.getName();
                 }
             } catch (Throwable th) {
                 g3.a();
@@ -133,11 +132,11 @@ public class e extends d2 {
     public class c extends Handler {
 
         /* renamed from: a  reason: collision with root package name */
-        public File f3793a;
+        public File f3745a;
         public BufferedOutputStream b;
 
         /* renamed from: c  reason: collision with root package name */
-        public StringBuffer f3794c;
+        public StringBuffer f3746c;
         public String d;
         public long e;
 
@@ -148,13 +147,13 @@ public class e extends d2 {
         }
 
         public final void a() {
-            File file = this.f3793a;
-            if (file == null || !file.exists() || this.b == null || !e.z.equals(this.f3793a.getName())) {
+            File file = this.f3745a;
+            if (file == null || !file.exists() || this.b == null || !e.z.equals(this.f3745a.getName())) {
                 File d = d();
-                this.f3793a = d;
+                this.f3745a = d;
                 try {
                     boolean exists = d.exists();
-                    this.b = new BufferedOutputStream(new FileOutputStream(this.f3793a, true), 1024);
+                    this.b = new BufferedOutputStream(new FileOutputStream(this.f3745a, true), 1024);
                     if (exists) {
                         return;
                     }
@@ -197,15 +196,15 @@ public class e extends d2 {
                 return;
             }
             this.d = a2;
-            if (this.f3794c == null) {
-                this.f3794c = new StringBuffer(e.this.j);
+            if (this.f3746c == null) {
+                this.f3746c = new StringBuffer(e.this.j);
             }
-            StringBuffer stringBuffer = this.f3794c;
+            StringBuffer stringBuffer = this.f3746c;
             stringBuffer.append(str);
             stringBuffer.append("\n");
-            if (this.f3794c.length() > e.this.j || ((file = this.f3793a) != null && file.length() == 0)) {
+            if (this.f3746c.length() > e.this.j || ((file = this.f3745a) != null && file.length() == 0)) {
                 f();
-                if (this.f3793a.length() > c()) {
+                if (this.f3745a.length() > c()) {
                     c3.b(e.this.f, 106);
                 }
             }
@@ -342,30 +341,30 @@ public class e extends d2 {
                 case 105:
                     try {
                         f();
-                        if (this.f3794c != null) {
-                            this.f3794c.setLength(0);
+                        if (this.f3746c != null) {
+                            this.f3746c.setLength(0);
                         }
                     } catch (Throwable th2) {
                     }
-                    this.f3793a = null;
+                    this.f3745a = null;
                     z2.a(this.b);
                     a(e.this.n, e.this.k);
                     removeCallbacksAndMessages(null);
                     return;
                 case 106:
                     a();
-                    if (e.this.d == null || (file = this.f3793a) == null || !file.exists()) {
+                    if (e.this.d == null || (file = this.f3745a) == null || !file.exists()) {
                         return;
                     }
                     f();
                     long longValue = ((Long) p3.a("LocationSDK", "log_fc_create", (Object) 0L)).longValue();
                     long currentTimeMillis = System.currentTimeMillis();
                     if (g3.a()) {
-                        this.f3793a.length();
+                        this.f3745a.length();
                         c();
                         long unused = e.this.m;
                     }
-                    if (this.f3793a.length() > c() || currentTimeMillis - longValue > e.this.m) {
+                    if (this.f3745a.length() > c() || currentTimeMillis - longValue > e.this.m) {
                         e();
                         a(e.this.n, e.this.k);
                         if (j.f) {
@@ -485,7 +484,7 @@ public class e extends d2 {
                     this.b.flush();
                 }
             } catch (Throwable th) {
-                this.f3793a = null;
+                this.f3745a = null;
                 z2.a(this.b);
             }
         }
@@ -505,30 +504,30 @@ public class e extends d2 {
 
         public final void e() {
             b();
-            File file = this.f3793a;
+            File file = this.f3745a;
             if (file == null || file.length() < 1024) {
                 return;
             }
             z2.a(this.b);
             this.b = null;
-            a(4, this.f3793a);
-            this.f3793a = null;
+            a(4, this.f3745a);
+            this.f3745a = null;
             p3.b("LocationSDK", "log_fc_create", (Object) 0L);
         }
 
         public final void f() {
-            StringBuffer stringBuffer = this.f3794c;
+            StringBuffer stringBuffer = this.f3746c;
             if (stringBuffer == null || stringBuffer.length() == 0 || this.b == null) {
                 return;
             }
-            byte[] a2 = l.a(this.f3794c.toString());
+            byte[] a2 = l.a(this.f3746c.toString());
             if (g3.a()) {
-                this.f3794c.length();
+                this.f3746c.length();
                 if (a2 != null) {
                     int length = a2.length;
                 }
             }
-            this.f3794c.setLength(0);
+            this.f3746c.setLength(0);
             if (a2 == null || a2.length == 0) {
                 return;
             }
@@ -537,7 +536,7 @@ public class e extends d2 {
                 this.b.write(36);
                 this.b.flush();
             } catch (Throwable th) {
-                this.f3793a = null;
+                this.f3745a = null;
                 z2.a(this.b);
             }
         }
@@ -556,7 +555,7 @@ public class e extends d2 {
     }
 
     public e(Context context, File file) {
-        this.f3789c = null;
+        this.f3741c = null;
         this.g = 102400L;
         this.h = 3600000L;
         this.i = 1;
@@ -570,13 +569,13 @@ public class e extends d2 {
         this.q = false;
         this.r = 0L;
         this.y = new a();
-        this.f3789c = context;
+        this.f3741c = context;
         this.d = file;
         this.e = false;
     }
 
     public e(Context context, String str) {
-        this(context, new File(str + BridgeUtil.SPLIT_MARK + "f_c"));
+        this(context, new File(str + "/f_c"));
     }
 
     public final long a(long j, long j2, long j3) {
@@ -720,7 +719,7 @@ public class e extends d2 {
             this.r = System.currentTimeMillis() - 40000;
             c3.a(this.f, 107, 300000L);
             try {
-                this.f3789c.registerReceiver(this.y, new IntentFilter("android.net.conn.CONNECTIVITY_CHANGE"));
+                this.f3741c.registerReceiver(this.y, new IntentFilter("android.net.conn.CONNECTIVITY_CHANGE"));
             } catch (Throwable th) {
                 g3.a();
             }
@@ -748,7 +747,7 @@ public class e extends d2 {
     @Override // c.t.m.g.e2
     public void d() {
         try {
-            this.f3789c.unregisterReceiver(this.y);
+            this.f3741c.unregisterReceiver(this.y);
         } catch (Throwable th) {
         }
         h hVar = this.v;

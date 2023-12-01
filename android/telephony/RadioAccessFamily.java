@@ -2,7 +2,6 @@ package android.telephony;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.alipay.sdk.util.i;
 import com.igexin.push.a.c;
 
 /* loaded from: source-9557208-dex2jar.jar:android/telephony/RadioAccessFamily.class */
@@ -51,7 +50,7 @@ public class RadioAccessFamily implements Parcelable {
             case 0:
                 return 101902;
             case 1:
-                return c.f23290c;
+                return c.f9682c;
             case 2:
                 return 36360;
             case 3:
@@ -93,7 +92,7 @@ public class RadioAccessFamily implements Parcelable {
     }
 
     public String toString() {
-        return "{ mPhoneId = " + this.mPhoneId + ", mRadioAccessFamily = " + this.mRadioAccessFamily + i.d;
+        return "{ mPhoneId = " + this.mPhoneId + ", mRadioAccessFamily = " + this.mRadioAccessFamily + "}";
     }
 
     @Override // android.os.Parcelable

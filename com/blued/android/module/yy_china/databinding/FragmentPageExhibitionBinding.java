@@ -12,13 +12,9 @@ import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/FragmentPageExhibitionBinding.class */
 public final class FragmentPageExhibitionBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f16481a;
+    public final ImageView a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f16482c;
+    public final ImageView c;
     public final LinearLayout d;
     public final SmartRefreshLayout e;
     public final RecyclerView f;
@@ -27,9 +23,9 @@ public final class FragmentPageExhibitionBinding implements ViewBinding {
 
     private FragmentPageExhibitionBinding(ConstraintLayout constraintLayout, ImageView imageView, ImageView imageView2, ImageView imageView3, LinearLayout linearLayout, SmartRefreshLayout smartRefreshLayout, RecyclerView recyclerView, TextView textView) {
         this.h = constraintLayout;
-        this.f16481a = imageView;
+        this.a = imageView;
         this.b = imageView2;
-        this.f16482c = imageView3;
+        this.c = imageView3;
         this.d = linearLayout;
         this.e = smartRefreshLayout;
         this.f = recyclerView;
@@ -46,13 +42,13 @@ public final class FragmentPageExhibitionBinding implements ViewBinding {
                 if (imageView3 != null) {
                     LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.ll_empty_view);
                     if (linearLayout != null) {
-                        SmartRefreshLayout smartRefreshLayout = (SmartRefreshLayout) view.findViewById(R.id.refresh_layout);
-                        if (smartRefreshLayout != null) {
-                            RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rv_receive_cars);
-                            if (recyclerView != null) {
+                        SmartRefreshLayout findViewById = view.findViewById(R.id.refresh_layout);
+                        if (findViewById != null) {
+                            RecyclerView findViewById2 = view.findViewById(R.id.rv_receive_cars);
+                            if (findViewById2 != null) {
                                 TextView textView = (TextView) view.findViewById(R.id.tv_somebody_exhibition);
                                 if (textView != null) {
-                                    return new FragmentPageExhibitionBinding((ConstraintLayout) view, imageView, imageView2, imageView3, linearLayout, smartRefreshLayout, recyclerView, textView);
+                                    return new FragmentPageExhibitionBinding((ConstraintLayout) view, imageView, imageView2, imageView3, linearLayout, findViewById, findViewById2, textView);
                                 }
                                 str = "tvSomebodyExhibition";
                             } else {
@@ -76,7 +72,6 @@ public final class FragmentPageExhibitionBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.h;

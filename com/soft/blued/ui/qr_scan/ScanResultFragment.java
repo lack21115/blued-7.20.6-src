@@ -14,34 +14,34 @@ import com.soft.blued.R;
 public class ScanResultFragment extends BaseFragment implements View.OnClickListener {
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f33130a;
+    public static String f19439a;
     private CommonTopTitleNoTrans b;
 
     /* renamed from: c  reason: collision with root package name */
-    private EditText f33131c;
+    private EditText f19440c;
     private View d;
     private Bundle e;
     private String f;
 
     private void a() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.d.findViewById(2131370749);
-        this.b = commonTopTitleNoTrans;
-        commonTopTitleNoTrans.a();
+        CommonTopTitleNoTrans findViewById = this.d.findViewById(R.id.top_title);
+        this.b = findViewById;
+        findViewById.a();
         this.b.setCenterText(getString(R.string.qr_scan_result_remind_title));
         this.b.setLeftClickListener(this);
     }
 
     private void b() {
-        this.f33131c = (EditText) this.d.findViewById(R.id.qr_scan_result_info);
+        this.f19440c = (EditText) this.d.findViewById(R.id.qr_scan_result_info);
     }
 
     private void c() {
         Bundle arguments = getArguments();
         this.e = arguments;
         if (arguments != null) {
-            String string = arguments.getString(f33130a);
+            String string = arguments.getString(f19439a);
             this.f = string;
-            this.f33131c.setText(string);
+            this.f19440c.setText(string);
         }
     }
 
@@ -54,7 +54,6 @@ public class ScanResultFragment extends BaseFragment implements View.OnClickList
         getActivity().finish();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         View view = this.d;
         if (view == null) {

@@ -9,16 +9,16 @@ import java.util.List;
 public final /* synthetic */ class ax implements TXVideoEditer.TXThumbnailListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private final TXVideoEditer.TXThumbnailListener f40242a;
+    private final TXVideoEditer.TXThumbnailListener f26551a;
     private final List b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final UGCThumbnailGenerator f40243c;
+    private final UGCThumbnailGenerator f26552c;
 
     private ax(TXVideoEditer.TXThumbnailListener tXThumbnailListener, List list, UGCThumbnailGenerator uGCThumbnailGenerator) {
-        this.f40242a = tXThumbnailListener;
+        this.f26551a = tXThumbnailListener;
         this.b = list;
-        this.f40243c = uGCThumbnailGenerator;
+        this.f26552c = uGCThumbnailGenerator;
     }
 
     public static TXVideoEditer.TXThumbnailListener a(TXVideoEditer.TXThumbnailListener tXThumbnailListener, List list, UGCThumbnailGenerator uGCThumbnailGenerator) {
@@ -27,6 +27,6 @@ public final /* synthetic */ class ax implements TXVideoEditer.TXThumbnailListen
 
     @Override // com.tencent.ugc.TXVideoEditer.TXThumbnailListener
     public final void onThumbnail(int i, long j, Bitmap bitmap) {
-        TXVideoEditer.lambda$doGetThumbnail$52(this.f40242a, this.b, this.f40243c, i, j, bitmap);
+        TXVideoEditer.lambda$doGetThumbnail$52(this.f26551a, this.b, this.f26552c, i, j, bitmap);
     }
 }

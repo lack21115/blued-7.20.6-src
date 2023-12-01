@@ -104,37 +104,37 @@ public class ImageUtils {
         int i3;
         int i4;
         float f = (i * 1.0f) / i2;
-        int a2 = DisplayUtil.a(AppInfo.d(), 200.0f);
-        int a3 = DisplayUtil.a(AppInfo.d(), 135.0f);
-        int a4 = DisplayUtil.a(AppInfo.d(), 120.0f);
+        int a = DisplayUtil.a(AppInfo.d(), 200.0f);
+        int a2 = DisplayUtil.a(AppInfo.d(), 135.0f);
+        int a3 = DisplayUtil.a(AppInfo.d(), 120.0f);
         if (f > 1.4814814f) {
-            i3 = a3;
-        } else if (f <= 0.6f) {
             i3 = a2;
-            a2 = a4;
+        } else if (f <= 0.6f) {
+            i3 = a;
+            a = a3;
         } else if (f > 1.0f) {
-            if (i < a4) {
-                i4 = a4;
+            if (i < a3) {
+                i4 = a3;
             } else {
                 i4 = i;
-                if (i > a2) {
-                    i4 = a2;
+                if (i > a) {
+                    i4 = a;
                 }
             }
             i3 = (int) (i4 / f);
-            a2 = i4;
+            a = i4;
         } else {
-            if (i2 < a3) {
-                i3 = a3;
+            if (i2 < a2) {
+                i3 = a2;
             } else {
                 i3 = i2;
-                if (i2 > a2) {
-                    i3 = a2;
+                if (i2 > a) {
+                    i3 = a;
                 }
             }
-            a2 = (int) (i3 * f);
+            a = (int) (i3 * f);
         }
-        return new Size(a2, i3);
+        return new Size(a, i3);
     }
 
     public static int[] b(int i, int i2, int i3, int i4, int i5, int i6) {

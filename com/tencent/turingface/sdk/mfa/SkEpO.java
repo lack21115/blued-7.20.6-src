@@ -7,7 +7,7 @@ import com.tencent.turingface.sdk.mfa.ORjG3;
 public final class SkEpO {
 
     /* renamed from: a  reason: collision with root package name */
-    public static volatile ORjG3 f39923a;
+    public static volatile ORjG3 f26232a;
 
     /* JADX WARN: Code restructure failed: missing block: B:24:0x0049, code lost:
         if ((r9 instanceof java.lang.InterruptedException) != false) goto L27;
@@ -27,14 +27,14 @@ public final class SkEpO {
             r7 = r0
             r0 = 0
             r8 = r0
-            com.tencent.turingface.sdk.mfa.ORjG3 r0 = com.tencent.turingface.sdk.mfa.SkEpO.f39923a     // Catch: java.lang.Exception -> L3b
+            com.tencent.turingface.sdk.mfa.ORjG3 r0 = com.tencent.turingface.sdk.mfa.SkEpO.f26232a     // Catch: java.lang.Exception -> L3b
             if (r0 != 0) goto L30
             java.lang.Class<com.tencent.turingface.sdk.mfa.SkEpO> r0 = com.tencent.turingface.sdk.mfa.SkEpO.class
             monitor-enter(r0)     // Catch: java.lang.Exception -> L3b
-            com.tencent.turingface.sdk.mfa.ORjG3 r0 = com.tencent.turingface.sdk.mfa.SkEpO.f39923a     // Catch: java.lang.Throwable -> L2a java.lang.Exception -> L3b
+            com.tencent.turingface.sdk.mfa.ORjG3 r0 = com.tencent.turingface.sdk.mfa.SkEpO.f26232a     // Catch: java.lang.Throwable -> L2a java.lang.Exception -> L3b
             if (r0 != 0) goto L24
             com.tencent.turingface.sdk.mfa.ORjG3 r0 = a()     // Catch: java.lang.Throwable -> L2a
-            com.tencent.turingface.sdk.mfa.SkEpO.f39923a = r0     // Catch: java.lang.Throwable -> L2a
+            com.tencent.turingface.sdk.mfa.SkEpO.f26232a = r0     // Catch: java.lang.Throwable -> L2a
         L24:
             java.lang.Class<com.tencent.turingface.sdk.mfa.SkEpO> r0 = com.tencent.turingface.sdk.mfa.SkEpO.class
             monitor-exit(r0)     // Catch: java.lang.Throwable -> L2a
@@ -46,7 +46,7 @@ public final class SkEpO {
             r0 = r7
             throw r0     // Catch: java.lang.Exception -> L3b
         L30:
-            com.tencent.turingface.sdk.mfa.ORjG3 r0 = com.tencent.turingface.sdk.mfa.SkEpO.f39923a     // Catch: java.lang.Exception -> L3b java.lang.Exception -> L3b
+            com.tencent.turingface.sdk.mfa.ORjG3 r0 = com.tencent.turingface.sdk.mfa.SkEpO.f26232a     // Catch: java.lang.Exception -> L3b java.lang.Exception -> L3b
             r1 = r7
             com.tencent.turingface.sdk.mfa.ORjG3$SkEpO r0 = r0.a(r1)     // Catch: java.lang.Exception -> L3b
             r7 = r0
@@ -64,13 +64,13 @@ public final class SkEpO {
         L4c:
             r0 = r8
             r7 = r0
-            com.tencent.turingface.sdk.mfa.ORjG3 r0 = com.tencent.turingface.sdk.mfa.SkEpO.f39923a
+            com.tencent.turingface.sdk.mfa.ORjG3 r0 = com.tencent.turingface.sdk.mfa.SkEpO.f26232a
             if (r0 == 0) goto L7c
             java.lang.Class<com.tencent.turingface.sdk.mfa.SkEpO> r0 = com.tencent.turingface.sdk.mfa.SkEpO.class
             monitor-enter(r0)
-            com.tencent.turingface.sdk.mfa.ORjG3 r0 = com.tencent.turingface.sdk.mfa.SkEpO.f39923a     // Catch: java.lang.Throwable -> L76
+            com.tencent.turingface.sdk.mfa.ORjG3 r0 = com.tencent.turingface.sdk.mfa.SkEpO.f26232a     // Catch: java.lang.Throwable -> L76
             if (r0 == 0) goto L6e
-            com.tencent.turingface.sdk.mfa.ORjG3 r0 = com.tencent.turingface.sdk.mfa.SkEpO.f39923a     // Catch: java.lang.Throwable -> L76
+            com.tencent.turingface.sdk.mfa.ORjG3 r0 = com.tencent.turingface.sdk.mfa.SkEpO.f26232a     // Catch: java.lang.Throwable -> L76
             r7 = r0
             r0 = r7
             java.lang.Class r0 = r0.getClass()     // Catch: java.lang.Throwable -> L76
@@ -78,7 +78,7 @@ public final class SkEpO {
             r0.a()     // Catch: java.lang.Throwable -> L90
         L6a:
             r0 = 0
-            com.tencent.turingface.sdk.mfa.SkEpO.f39923a = r0     // Catch: java.lang.Throwable -> L76
+            com.tencent.turingface.sdk.mfa.SkEpO.f26232a = r0     // Catch: java.lang.Throwable -> L76
         L6e:
             java.lang.Class<com.tencent.turingface.sdk.mfa.SkEpO> r0 = com.tencent.turingface.sdk.mfa.SkEpO.class
             monitor-exit(r0)     // Catch: java.lang.Throwable -> L76

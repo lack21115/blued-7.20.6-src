@@ -351,7 +351,7 @@ public interface IImsConfig extends IInterface {
                     parcel.enforceInterface(DESCRIPTOR);
                     setWifiCallingPreference(parcel.readInt(), parcel.readInt(), ImsConfigListener.Stub.asInterface(parcel.readStrongBinder()));
                     return true;
-                case IBinder.INTERFACE_TRANSACTION /* 1598968902 */:
+                case 1598968902:
                     parcel2.writeString(DESCRIPTOR);
                     return true;
                 default:

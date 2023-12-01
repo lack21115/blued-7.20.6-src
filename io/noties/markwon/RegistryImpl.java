@@ -8,8 +8,9 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-3503164-dex2jar.jar:io/noties/markwon/RegistryImpl.class */
-class RegistryImpl implements MarkwonPlugin.Registry {
+public class RegistryImpl implements MarkwonPlugin.Registry {
     private final List<MarkwonPlugin> origin;
     private final Set<MarkwonPlugin> pending = new HashSet(3);
     private final List<MarkwonPlugin> plugins;

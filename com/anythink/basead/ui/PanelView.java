@@ -38,13 +38,9 @@ public class PanelView extends RelativeLayout {
     public static final int TYPE_HALF_SCREEN_EMPTY_INFO = 7;
     public static final int TYPE_HALF_SCREEN_HORIZONTAL = 4;
     public static final int TYPE_HALF_SCREEN_VERTICAL = 3;
-
-    /* renamed from: a  reason: collision with root package name */
-    private View f6143a;
+    private View a;
     private ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private ImageView f6144c;
+    private ImageView c;
     private TextView d;
     private TextView e;
     private Button f;
@@ -70,12 +66,10 @@ public class PanelView extends RelativeLayout {
     /* renamed from: com.anythink.basead.ui.PanelView$1  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/ui/PanelView$1.class */
     public final class AnonymousClass1 implements b.a {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ String f6145a;
+        final /* synthetic */ String a;
 
         AnonymousClass1(String str) {
-            this.f6145a = str;
+            this.a = str;
         }
 
         @Override // com.anythink.core.common.res.b.a
@@ -84,7 +78,7 @@ public class PanelView extends RelativeLayout {
 
         @Override // com.anythink.core.common.res.b.a
         public final void onSuccess(String str, Bitmap bitmap) {
-            if (TextUtils.equals(str, this.f6145a)) {
+            if (TextUtils.equals(str, this.a)) {
                 PanelView.this.b.setImageBitmap(bitmap);
             }
         }
@@ -94,33 +88,31 @@ public class PanelView extends RelativeLayout {
     /* renamed from: com.anythink.basead.ui.PanelView$2  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/ui/PanelView$2.class */
     public final class AnonymousClass2 implements b.a {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ String f6146a;
+        final /* synthetic */ String a;
         final /* synthetic */ ViewGroup.LayoutParams b;
 
         AnonymousClass2(String str, ViewGroup.LayoutParams layoutParams) {
-            this.f6146a = str;
+            this.a = str;
             this.b = layoutParams;
         }
 
         @Override // com.anythink.core.common.res.b.a
         public final void onFail(String str, String str2) {
-            PanelView.this.f6144c.setVisibility(8);
+            PanelView.this.c.setVisibility(8);
         }
 
         @Override // com.anythink.core.common.res.b.a
         public final void onSuccess(String str, Bitmap bitmap) {
-            if (TextUtils.equals(str, this.f6146a)) {
-                PanelView.this.f6144c.setImageBitmap(bitmap);
+            if (TextUtils.equals(str, this.a)) {
+                PanelView.this.c.setImageBitmap(bitmap);
                 float width = (bitmap.getWidth() * 1.0f) / bitmap.getHeight();
                 int i = this.b.height;
                 this.b.width = (int) (i * width);
                 this.b.height = i;
-                PanelView.this.f6144c.setLayoutParams(this.b);
-                PanelView.this.f6144c.setScaleType(ImageView.ScaleType.FIT_XY);
-                PanelView.this.f6144c.setImageBitmap(bitmap);
-                PanelView.this.f6144c.setVisibility(0);
+                PanelView.this.c.setLayoutParams(this.b);
+                PanelView.this.c.setScaleType(ImageView.ScaleType.FIT_XY);
+                PanelView.this.c.setImageBitmap(bitmap);
+                PanelView.this.c.setVisibility(0);
             }
         }
     }
@@ -194,12 +186,12 @@ public class PanelView extends RelativeLayout {
                 this.b.setVisibility(8);
             }
         }
-        if (this.f6144c != null) {
+        if (this.c != null) {
             String v = iVar.v();
             if (TextUtils.isEmpty(v)) {
-                this.f6144c.setVisibility(8);
+                this.c.setVisibility(8);
             } else {
-                ViewGroup.LayoutParams layoutParams2 = this.f6144c.getLayoutParams();
+                ViewGroup.LayoutParams layoutParams2 = this.c.getLayoutParams();
                 com.anythink.core.common.res.b.a(getContext()).a(new e(1, v), layoutParams2.width, layoutParams2.height, new AnonymousClass2(v, layoutParams2));
             }
         }
@@ -242,12 +234,12 @@ public class PanelView extends RelativeLayout {
                 this.b.setVisibility(8);
             }
         }
-        if (this.f6144c != null) {
+        if (this.c != null) {
             String v = iVar.v();
             if (TextUtils.isEmpty(v)) {
-                this.f6144c.setVisibility(8);
+                this.c.setVisibility(8);
             } else {
-                ViewGroup.LayoutParams layoutParams2 = this.f6144c.getLayoutParams();
+                ViewGroup.LayoutParams layoutParams2 = this.c.getLayoutParams();
                 com.anythink.core.common.res.b.a(getContext()).a(new e(1, v), layoutParams2.width, layoutParams2.height, new AnonymousClass2(v, layoutParams2));
             }
         }
@@ -288,23 +280,23 @@ public class PanelView extends RelativeLayout {
         }
         this.f.setOnClickListener(this.w);
         this.v.add(this.f);
-        ImageView imageView2 = this.f6144c;
+        ImageView imageView2 = this.c;
         if (imageView2 != null) {
             imageView2.setOnClickListener(this.w);
-            this.v.add(this.f6144c);
+            this.v.add(this.c);
         }
         BaseShakeView baseShakeView = this.g;
         if (baseShakeView != null && this.u) {
             baseShakeView.setOnClickListener(new AnonymousClass7());
             this.g.setOnShakeListener(new AnonymousClass8(), this.j);
         }
-        View findViewById = this.f6143a.findViewById(h.a(getContext(), "myoffer_panel_view_blank", "id"));
+        View findViewById = this.a.findViewById(h.a(getContext(), "myoffer_panel_view_blank", "id"));
         if (findViewById != null) {
             findViewById.setOnClickListener(this.w);
             this.v.add(findViewById);
         } else {
-            this.f6143a.setOnClickListener(this.w);
-            this.v.add(this.f6143a);
+            this.a.setOnClickListener(this.w);
+            this.v.add(this.a);
         }
         ImageView imageView3 = this.b;
         if (imageView3 instanceof RoundImageView) {
@@ -418,18 +410,18 @@ public class PanelView extends RelativeLayout {
 
     private void d() {
         this.v.clear();
-        this.b = (ImageView) this.f6143a.findViewById(h.a(getContext(), "myoffer_iv_banner_icon", "id"));
-        this.d = (TextView) this.f6143a.findViewById(h.a(getContext(), "myoffer_tv_banner_title", "id"));
-        this.e = (TextView) this.f6143a.findViewById(h.a(getContext(), "myoffer_tv_banner_desc", "id"));
-        this.f = (Button) this.f6143a.findViewById(h.a(getContext(), "myoffer_btn_banner_cta", "id"));
-        this.f6144c = (ImageView) this.f6143a.findViewById(h.a(getContext(), "myoffer_ad_logo", "id"));
-        this.n = (ViewGroup) this.f6143a.findViewById(h.a(getContext(), "myoffer_four_element_container", "id"));
-        this.o = (TextView) this.f6143a.findViewById(h.a(getContext(), "myoffer_version_name", "id"));
-        this.p = (TextView) this.f6143a.findViewById(h.a(getContext(), "myoffer_publisher_name", "id"));
-        this.q = (TextView) this.f6143a.findViewById(h.a(getContext(), "myoffer_permission_manage", "id"));
-        this.r = (TextView) this.f6143a.findViewById(h.a(getContext(), "myoffer_privacy_agreement", "id"));
+        this.b = (ImageView) this.a.findViewById(h.a(getContext(), "myoffer_iv_banner_icon", "id"));
+        this.d = (TextView) this.a.findViewById(h.a(getContext(), "myoffer_tv_banner_title", "id"));
+        this.e = (TextView) this.a.findViewById(h.a(getContext(), "myoffer_tv_banner_desc", "id"));
+        this.f = (Button) this.a.findViewById(h.a(getContext(), "myoffer_btn_banner_cta", "id"));
+        this.c = (ImageView) this.a.findViewById(h.a(getContext(), "myoffer_ad_logo", "id"));
+        this.n = (ViewGroup) this.a.findViewById(h.a(getContext(), "myoffer_four_element_container", "id"));
+        this.o = (TextView) this.a.findViewById(h.a(getContext(), "myoffer_version_name", "id"));
+        this.p = (TextView) this.a.findViewById(h.a(getContext(), "myoffer_publisher_name", "id"));
+        this.q = (TextView) this.a.findViewById(h.a(getContext(), "myoffer_permission_manage", "id"));
+        this.r = (TextView) this.a.findViewById(h.a(getContext(), "myoffer_privacy_agreement", "id"));
         try {
-            this.g = (BaseShakeView) this.f6143a.findViewById(h.a(getContext(), "myoffer_shake_hint_text", "id"));
+            this.g = (BaseShakeView) this.a.findViewById(h.a(getContext(), "myoffer_shake_hint_text", "id"));
         } catch (Throwable th) {
         }
         e();
@@ -461,24 +453,24 @@ public class PanelView extends RelativeLayout {
         }
         this.f.setOnClickListener(this.w);
         this.v.add(this.f);
-        ImageView imageView2 = this.f6144c;
+        ImageView imageView2 = this.c;
         if (imageView2 != null) {
             imageView2.setOnClickListener(this.w);
-            this.v.add(this.f6144c);
+            this.v.add(this.c);
         }
         BaseShakeView baseShakeView = this.g;
         if (baseShakeView != null && this.u) {
             baseShakeView.setOnClickListener(new AnonymousClass7());
             this.g.setOnShakeListener(new AnonymousClass8(), this.j);
         }
-        View findViewById = this.f6143a.findViewById(h.a(getContext(), "myoffer_panel_view_blank", "id"));
+        View findViewById = this.a.findViewById(h.a(getContext(), "myoffer_panel_view_blank", "id"));
         if (findViewById != null) {
             findViewById.setOnClickListener(this.w);
             this.v.add(findViewById);
             return;
         }
-        this.f6143a.setOnClickListener(this.w);
-        this.v.add(this.f6143a);
+        this.a.setOnClickListener(this.w);
+        this.v.add(this.a);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -533,65 +525,65 @@ public class PanelView extends RelativeLayout {
         switch (i) {
             case 1:
                 if (!TextUtils.isEmpty(this.l.t())) {
-                    this.f6143a = LayoutInflater.from(getContext()).inflate(h.a(getContext(), "myoffer_panel_view_endcard_horizontal_portrait", "layout"), (ViewGroup) this, true);
+                    this.a = LayoutInflater.from(getContext()).inflate(h.a(getContext(), "myoffer_panel_view_endcard_horizontal_portrait", "layout"), (ViewGroup) this, true);
                     break;
                 } else {
-                    this.f6143a = LayoutInflater.from(getContext()).inflate(h.a(getContext(), "myoffer_panel_view_endcard_portrait_without_icon", "layout"), (ViewGroup) this, true);
+                    this.a = LayoutInflater.from(getContext()).inflate(h.a(getContext(), "myoffer_panel_view_endcard_portrait_without_icon", "layout"), (ViewGroup) this, true);
                     break;
                 }
             case 2:
             case 6:
                 if (!TextUtils.isEmpty(this.l.t())) {
-                    this.f6143a = LayoutInflater.from(getContext()).inflate(h.a(getContext(), "myoffer_panel_view_endcard_landscape", "layout"), (ViewGroup) this, true);
+                    this.a = LayoutInflater.from(getContext()).inflate(h.a(getContext(), "myoffer_panel_view_endcard_landscape", "layout"), (ViewGroup) this, true);
                     break;
                 } else {
-                    this.f6143a = LayoutInflater.from(getContext()).inflate(h.a(getContext(), "myoffer_panel_view_endcard_landscape_without_icon", "layout"), (ViewGroup) this, true);
+                    this.a = LayoutInflater.from(getContext()).inflate(h.a(getContext(), "myoffer_panel_view_endcard_landscape_without_icon", "layout"), (ViewGroup) this, true);
                     break;
                 }
             case 3:
                 if (this.i != 1) {
                     if (!TextUtils.isEmpty(this.l.t())) {
-                        this.f6143a = LayoutInflater.from(getContext()).inflate(h.a(getContext(), "myoffer_panel_view_vertical", "layout"), (ViewGroup) this, true);
+                        this.a = LayoutInflater.from(getContext()).inflate(h.a(getContext(), "myoffer_panel_view_vertical", "layout"), (ViewGroup) this, true);
                         break;
                     } else {
-                        this.f6143a = LayoutInflater.from(getContext()).inflate(h.a(getContext(), "myoffer_panel_view_vertical_without_icon", "layout"), (ViewGroup) this, true);
+                        this.a = LayoutInflater.from(getContext()).inflate(h.a(getContext(), "myoffer_panel_view_vertical_without_icon", "layout"), (ViewGroup) this, true);
                         break;
                     }
                 } else if (!TextUtils.isEmpty(this.l.t())) {
-                    this.f6143a = LayoutInflater.from(getContext()).inflate(h.a(getContext(), "myoffer_panel_view_horizontal", "layout"), (ViewGroup) this, true);
+                    this.a = LayoutInflater.from(getContext()).inflate(h.a(getContext(), "myoffer_panel_view_horizontal", "layout"), (ViewGroup) this, true);
                     break;
                 } else {
-                    this.f6143a = LayoutInflater.from(getContext()).inflate(h.a(getContext(), "myoffer_panel_view_horizontal_without_icon", "layout"), (ViewGroup) this, true);
+                    this.a = LayoutInflater.from(getContext()).inflate(h.a(getContext(), "myoffer_panel_view_horizontal_without_icon", "layout"), (ViewGroup) this, true);
                     break;
                 }
             case 4:
                 if (!TextUtils.isEmpty(this.l.t())) {
-                    this.f6143a = LayoutInflater.from(getContext()).inflate(h.a(getContext(), "myoffer_panel_view_horizontal", "layout"), (ViewGroup) this, true);
+                    this.a = LayoutInflater.from(getContext()).inflate(h.a(getContext(), "myoffer_panel_view_horizontal", "layout"), (ViewGroup) this, true);
                     break;
                 } else {
-                    this.f6143a = LayoutInflater.from(getContext()).inflate(h.a(getContext(), "myoffer_panel_view_horizontal_without_icon", "layout"), (ViewGroup) this, true);
+                    this.a = LayoutInflater.from(getContext()).inflate(h.a(getContext(), "myoffer_panel_view_horizontal_without_icon", "layout"), (ViewGroup) this, true);
                     break;
                 }
             case 5:
                 if (!TextUtils.isEmpty(this.l.t())) {
-                    this.f6143a = LayoutInflater.from(getContext()).inflate(h.a(getContext(), "myoffer_panel_view_endcard_vertical_portrait", "layout"), (ViewGroup) this, true);
+                    this.a = LayoutInflater.from(getContext()).inflate(h.a(getContext(), "myoffer_panel_view_endcard_vertical_portrait", "layout"), (ViewGroup) this, true);
                     break;
                 } else {
-                    this.f6143a = LayoutInflater.from(getContext()).inflate(h.a(getContext(), "myoffer_panel_view_endcard_portrait_without_icon", "layout"), (ViewGroup) this, true);
+                    this.a = LayoutInflater.from(getContext()).inflate(h.a(getContext(), "myoffer_panel_view_endcard_portrait_without_icon", "layout"), (ViewGroup) this, true);
                     break;
                 }
             case 7:
-                this.f6143a = LayoutInflater.from(getContext()).inflate(h.a(getContext(), "myoffer_panel_view_empty_info", "layout"), (ViewGroup) this, true);
+                this.a = LayoutInflater.from(getContext()).inflate(h.a(getContext(), "myoffer_panel_view_empty_info", "layout"), (ViewGroup) this, true);
                 break;
             case 8:
-                this.f6143a = LayoutInflater.from(getContext()).inflate(h.a(getContext(), "myoffer_panel_view_full_screen_empty_info", "layout"), (ViewGroup) this, true);
+                this.a = LayoutInflater.from(getContext()).inflate(h.a(getContext(), "myoffer_panel_view_full_screen_empty_info", "layout"), (ViewGroup) this, true);
                 break;
             default:
                 if (!TextUtils.isEmpty(this.l.t())) {
-                    this.f6143a = LayoutInflater.from(getContext()).inflate(h.a(getContext(), "myoffer_panel_view_bottom_banner", "layout"), (ViewGroup) this, true);
+                    this.a = LayoutInflater.from(getContext()).inflate(h.a(getContext(), "myoffer_panel_view_bottom_banner", "layout"), (ViewGroup) this, true);
                     break;
                 } else {
-                    this.f6143a = LayoutInflater.from(getContext()).inflate(h.a(getContext(), "myoffer_panel_view_bottom_banner_without_icon", "layout"), (ViewGroup) this, true);
+                    this.a = LayoutInflater.from(getContext()).inflate(h.a(getContext(), "myoffer_panel_view_bottom_banner_without_icon", "layout"), (ViewGroup) this, true);
                     break;
                 }
         }
@@ -607,12 +599,12 @@ public class PanelView extends RelativeLayout {
                 this.b.setVisibility(8);
             }
         }
-        if (this.f6144c != null) {
+        if (this.c != null) {
             String v = iVar.v();
             if (TextUtils.isEmpty(v)) {
-                this.f6144c.setVisibility(8);
+                this.c.setVisibility(8);
             } else {
-                ViewGroup.LayoutParams layoutParams2 = this.f6144c.getLayoutParams();
+                ViewGroup.LayoutParams layoutParams2 = this.c.getLayoutParams();
                 com.anythink.core.common.res.b.a(getContext()).a(new e(1, v), layoutParams2.width, layoutParams2.height, new AnonymousClass2(v, layoutParams2));
             }
         }
@@ -653,23 +645,23 @@ public class PanelView extends RelativeLayout {
         }
         this.f.setOnClickListener(this.w);
         this.v.add(this.f);
-        ImageView imageView2 = this.f6144c;
+        ImageView imageView2 = this.c;
         if (imageView2 != null) {
             imageView2.setOnClickListener(this.w);
-            this.v.add(this.f6144c);
+            this.v.add(this.c);
         }
         BaseShakeView baseShakeView = this.g;
         if (baseShakeView != null && this.u) {
             baseShakeView.setOnClickListener(new AnonymousClass7());
             this.g.setOnShakeListener(new AnonymousClass8(), this.j);
         }
-        View findViewById = this.f6143a.findViewById(h.a(getContext(), "myoffer_panel_view_blank", "id"));
+        View findViewById = this.a.findViewById(h.a(getContext(), "myoffer_panel_view_blank", "id"));
         if (findViewById != null) {
             findViewById.setOnClickListener(this.w);
             this.v.add(findViewById);
         } else {
-            this.f6143a.setOnClickListener(this.w);
-            this.v.add(this.f6143a);
+            this.a.setOnClickListener(this.w);
+            this.v.add(this.a);
         }
         ImageView imageView3 = this.b;
         if (imageView3 instanceof RoundImageView) {

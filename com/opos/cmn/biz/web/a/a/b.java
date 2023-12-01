@@ -24,11 +24,11 @@ public class b implements a {
     private static String e = "";
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f24709a;
+    private Context f11021a;
     private volatile boolean b = false;
 
     /* renamed from: c  reason: collision with root package name */
-    private com.opos.cmn.biz.web.a.b.b f24710c;
+    private com.opos.cmn.biz.web.a.b.b f11022c;
     private ThreadPoolExecutor d;
 
     public static List<File> a(Context context) {
@@ -65,19 +65,19 @@ public class b implements a {
         for (final com.opos.cmn.biz.web.a.b.a aVar : list) {
             if (aVar != null) {
                 try {
-                    if (!TextUtils.isEmpty(aVar.f24714a)) {
+                    if (!TextUtils.isEmpty(aVar.f11026a)) {
                         this.d.execute(new Runnable() { // from class: com.opos.cmn.biz.web.a.a.b.1
                             @Override // java.lang.Runnable
                             public void run() {
                                 try {
                                     try {
                                         try {
-                                            com.opos.cmn.func.a.b a2 = c.a(context, new a.C0635a().b(b.b(context, aVar.f24714a)).a(0).a(b.this.b(aVar.f24714a)).a(aVar.b).a());
-                                            if (a2 == null || !a2.f24807a) {
+                                            com.opos.cmn.func.a.b a2 = c.a(context, new a.C0465a().b(b.b(context, aVar.f11026a)).a(0).a(b.this.b(aVar.f11026a)).a(aVar.b).a());
+                                            if (a2 == null || !a2.f11119a) {
                                                 com.opos.cmn.an.f.a.b("WebViewCacheImpl", "download resource failed, url:" + aVar);
                                             } else {
                                                 com.opos.cmn.an.f.a.b("WebViewCacheImpl", "download resource success:" + aVar);
-                                                File file = new File(b.b(context, aVar.f24714a));
+                                                File file = new File(b.b(context, aVar.f11026a));
                                                 if (file.exists()) {
                                                     file.setLastModified(System.currentTimeMillis());
                                                 }
@@ -174,7 +174,7 @@ public class b implements a {
                 }
             }
             long j2 = j;
-            if (j > this.f24710c.f24716a) {
+            if (j > this.f11022c.f11028a) {
                 Collections.sort(arrayList, new Comparator<File>() { // from class: com.opos.cmn.biz.web.a.a.b.2
                     @Override // java.util.Comparator
                     /* renamed from: a */
@@ -185,7 +185,7 @@ public class b implements a {
                 for (File file2 : arrayList) {
                     com.opos.cmn.an.f.a.b("WebViewCacheImpl", "noPeriodMat=" + file2.getName() + " lastModified:" + file2.lastModified());
                 }
-                Iterator<E> it = arrayList.iterator();
+                Iterator it = arrayList.iterator();
                 do {
                     j2 = j;
                     if (!it.hasNext()) {
@@ -203,9 +203,9 @@ public class b implements a {
                     }
                     com.opos.cmn.an.f.a.b("WebViewCacheImpl", str);
                     j = j2;
-                } while (j2 > this.f24710c.f24716a);
+                } while (j2 > this.f11022c.f11028a);
             }
-            com.opos.cmn.an.f.a.b("WebViewCacheImpl", "tryRecycleCache nowCachedSize:" + (((float) j2) / 1048576.0f) + "M maxCacheSize:" + (((float) this.f24710c.f24716a) / 1048576.0f) + "M");
+            com.opos.cmn.an.f.a.b("WebViewCacheImpl", "tryRecycleCache nowCachedSize:" + (((float) j2) / 1048576.0f) + "M maxCacheSize:" + (((float) this.f11022c.f11028a) / 1048576.0f) + "M");
         } catch (Exception e2) {
             com.opos.cmn.an.f.a.b("WebViewCacheImpl", "tryRecycleCache", e2);
         }
@@ -218,7 +218,7 @@ public class b implements a {
             return null;
         }
         try {
-            File file = new File(b(this.f24709a, str));
+            File file = new File(b(this.f11021a, str));
             if (!file.exists()) {
                 com.opos.cmn.an.f.a.b("WebViewCacheImpl", "loadResourceFormLocalCache cache not exits:" + str);
                 return null;
@@ -237,9 +237,9 @@ public class b implements a {
         if (this.b) {
             return;
         }
-        this.f24709a = context.getApplicationContext();
-        this.f24710c = bVar;
-        this.d = new ThreadPoolExecutor(0, this.f24710c.b, 30L, TimeUnit.SECONDS, new LinkedBlockingQueue(), new com.opos.cmn.biz.web.a.a.a.b("web_cache"), new ThreadPoolExecutor.DiscardPolicy());
+        this.f11021a = context.getApplicationContext();
+        this.f11022c = bVar;
+        this.d = new ThreadPoolExecutor(0, this.f11022c.b, 30L, TimeUnit.SECONDS, new LinkedBlockingQueue(), new com.opos.cmn.biz.web.a.a.a.b("web_cache"), new ThreadPoolExecutor.DiscardPolicy());
         this.b = true;
     }
 
@@ -250,9 +250,9 @@ public class b implements a {
             return;
         }
         com.opos.cmn.an.f.a.c("WebViewCacheImpl", "startCacheResource");
-        if (this.f24709a == null || list == null || list.size() <= 0) {
+        if (this.f11021a == null || list == null || list.size() <= 0) {
             return;
         }
-        a(this.f24709a, list);
+        a(this.f11021a, list);
     }
 }

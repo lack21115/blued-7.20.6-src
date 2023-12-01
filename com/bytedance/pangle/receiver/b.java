@@ -16,7 +16,7 @@ import java.util.Map;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final c f21464a;
+    private static final c f7858a;
 
     /* loaded from: source-7206380-dex2jar.jar:com/bytedance/pangle/receiver/b$a.class */
     static class a implements c {
@@ -78,12 +78,12 @@ public final class b {
 
     /* renamed from: com.bytedance.pangle.receiver.b$b  reason: collision with other inner class name */
     /* loaded from: source-7206380-dex2jar.jar:com/bytedance/pangle/receiver/b$b.class */
-    static final class C0320b extends e {
-        private C0320b() {
+    static final class C0150b extends e {
+        private C0150b() {
             super((byte) 0);
         }
 
-        /* synthetic */ C0320b(byte b) {
+        /* synthetic */ C0150b(byte b) {
             this();
         }
 
@@ -151,13 +151,13 @@ public final class b {
     static {
         int i = Build.VERSION.SDK_INT;
         if (i < 24) {
-            f21464a = new a((byte) 0);
+            f7858a = new a((byte) 0);
         } else if (i < 26) {
-            f21464a = new d((byte) 0);
+            f7858a = new d((byte) 0);
         } else if (i < 28) {
-            f21464a = new e((byte) 0);
+            f7858a = new e((byte) 0);
         } else {
-            f21464a = new C0320b((byte) 0);
+            f7858a = new C0150b((byte) 0);
         }
     }
 
@@ -165,7 +165,7 @@ public final class b {
         if (application != null) {
             try {
                 if (TextUtils.equals(Build.BRAND.toLowerCase(), AssistUtils.BRAND_HW)) {
-                    f21464a.a(application.getBaseContext());
+                    f7858a.a(application.getBaseContext());
                 }
             } catch (Throwable th) {
             }

@@ -24,11 +24,11 @@ import java.util.List;
 public final class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23640a = "ro.miui.ui.version.name";
+    private static final String f10032a = "ro.miui.ui.version.name";
     private static final String b = "ro.miui.ui.version.code";
 
     /* renamed from: c  reason: collision with root package name */
-    private static volatile Boolean f23641c;
+    private static volatile Boolean f10033c;
     private static PackageInfo d;
 
     /* JADX WARN: Code restructure failed: missing block: B:262:0x0513, code lost:
@@ -103,7 +103,7 @@ public final class d {
 
     public static String a(ApplicationInfo applicationInfo) {
         try {
-            String string = applicationInfo.metaData.getString(com.igexin.push.core.b.f23426a);
+            String string = applicationInfo.metaData.getString(com.igexin.push.core.b.f9818a);
             String str = string;
             if (TextUtils.isEmpty(string)) {
                 str = applicationInfo.packageName;
@@ -119,20 +119,20 @@ public final class d {
     private static boolean a() {
         boolean z;
         try {
-            if (f23641c != null) {
-                return f23641c.booleanValue();
+            if (f10033c != null) {
+                return f10033c.booleanValue();
             }
             String c2 = c("ro.miui.ui.version.name");
             String c3 = c("ro.miui.ui.version.code");
             if (!"Xiaomi".equalsIgnoreCase(com.igexin.push.core.e.G) && TextUtils.isEmpty(c2) && TextUtils.isEmpty(c3)) {
                 z = false;
                 Boolean valueOf = Boolean.valueOf(z);
-                f23641c = valueOf;
+                f10033c = valueOf;
                 return valueOf.booleanValue();
             }
             z = true;
             Boolean valueOf2 = Boolean.valueOf(z);
-            f23641c = valueOf2;
+            f10033c = valueOf2;
             return valueOf2.booleanValue();
         } catch (Throwable th) {
             return false;

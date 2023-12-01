@@ -7,7 +7,7 @@ import android.content.Intent;
 public class WXProvider {
 
     /* renamed from: a  reason: collision with root package name */
-    private static WXProvider f34880a;
+    private static WXProvider f21189a;
     private ILoginCallback b;
 
     /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/wxapi/WXProvider$ILoginCallback.class */
@@ -20,10 +20,10 @@ public class WXProvider {
     }
 
     public static WXProvider a() {
-        if (f34880a == null) {
-            f34880a = new WXProvider();
+        if (f21189a == null) {
+            f21189a = new WXProvider();
         }
-        return f34880a;
+        return f21189a;
     }
 
     public void a(int i, WXLoginBean wXLoginBean) {

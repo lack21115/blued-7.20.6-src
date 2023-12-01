@@ -34,9 +34,8 @@ public final class ProxyConfiguration {
     /* JADX INFO: Access modifiers changed from: package-private */
     public Authenticator authenticator() {
         return new Authenticator() { // from class: com.qiniu.android.http.ProxyConfiguration.1
-            @Override // okhttp3.Authenticator
             public Request authenticate(Route route, Response response) throws IOException {
-                return response.request().newBuilder().header(HttpHeaders.PROXY_AUTHORIZATION, Credentials.basic(ProxyConfiguration.this.user, ProxyConfiguration.this.password)).header("Proxy-Connection", c.f7906c).build();
+                return response.request().newBuilder().header(HttpHeaders.PROXY_AUTHORIZATION, Credentials.basic(ProxyConfiguration.this.user, ProxyConfiguration.this.password)).header("Proxy-Connection", c.f5066c).build();
             }
         };
     }

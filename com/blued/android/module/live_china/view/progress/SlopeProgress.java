@@ -12,13 +12,9 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/progress/SlopeProgress.class */
 public class SlopeProgress extends View {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected OnProgressListener f15428a;
+    protected OnProgressListener a;
     public int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    protected int f15429c;
+    protected int c;
     private int d;
     private int e;
     private float f;
@@ -28,7 +24,7 @@ public class SlopeProgress extends View {
     public SlopeProgress(Context context) {
         super(context);
         this.b = 0;
-        this.f15429c = 100;
+        this.c = 100;
         this.f = 100.0f;
         this.g = 0;
         this.h = -1.0f;
@@ -38,7 +34,7 @@ public class SlopeProgress extends View {
     public SlopeProgress(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         this.b = 0;
-        this.f15429c = 100;
+        this.c = 100;
         this.f = 100.0f;
         this.g = 0;
         this.h = -1.0f;
@@ -48,7 +44,7 @@ public class SlopeProgress extends View {
     public SlopeProgress(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         this.b = 0;
-        this.f15429c = 100;
+        this.c = 100;
         this.f = 100.0f;
         this.g = 0;
         this.h = -1.0f;
@@ -68,7 +64,7 @@ public class SlopeProgress extends View {
     private void a(Context context, AttributeSet attributeSet) {
         if (attributeSet == null) {
             this.b = 0;
-            this.f15429c = 100;
+            this.c = 100;
             this.d = -16736618;
             this.e = 855678614;
             return;
@@ -76,7 +72,7 @@ public class SlopeProgress extends View {
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.slope_progress);
         this.h = obtainStyledAttributes.getDimension(R.styleable.slope_progress_bam_line_width, -1.0f);
         this.b = obtainStyledAttributes.getInteger(R.styleable.slope_progress_bam_progress, 0);
-        this.f15429c = obtainStyledAttributes.getInteger(R.styleable.slope_progress_bam_progress_max, 100);
+        this.c = obtainStyledAttributes.getInteger(R.styleable.slope_progress_bam_progress_max, 100);
         this.d = obtainStyledAttributes.getColor(R.styleable.slope_progress_bam_color_finished, -16736618);
         this.e = obtainStyledAttributes.getColor(R.styleable.slope_progress_bam_color_un_finished, 855678614);
         obtainStyledAttributes.recycle();
@@ -89,7 +85,7 @@ public class SlopeProgress extends View {
     }
 
     private void a(Canvas canvas) {
-        float f = (this.b / this.f15429c) * 360.0f;
+        float f = (this.b / this.c) * 360.0f;
         this.g = (int) ((Math.min(getMeasuredWidth(), getMeasuredHeight()) - this.f) / 2.0f);
         int i = this.g;
         float f2 = i;
@@ -97,12 +93,12 @@ public class SlopeProgress extends View {
         float f4 = i;
         float f5 = this.f;
         RectF rectF = new RectF(f2, f3, f4 + f5, i + f5);
+        Paint a = a();
+        a.setColor(this.e);
+        canvas.drawArc(rectF, f + 90.0f, 360.0f - f, false, a);
         Paint a2 = a();
-        a2.setColor(this.e);
-        canvas.drawArc(rectF, f + 90.0f, 360.0f - f, false, a2);
-        Paint a3 = a();
-        a3.setColor(this.d);
-        canvas.drawArc(rectF, 90.0f, f, false, a3);
+        a2.setColor(this.d);
+        canvas.drawArc(rectF, 90.0f, f, false, a2);
     }
 
     public float getLineWidth() {
@@ -114,7 +110,7 @@ public class SlopeProgress extends View {
     }
 
     public int getProgressMax() {
-        return this.f15429c;
+        return this.c;
     }
 
     public int getRingColor() {
@@ -155,13 +151,13 @@ public class SlopeProgress extends View {
         if (i < 0) {
             i2 = 0;
         }
-        int i3 = this.f15429c;
+        int i3 = this.c;
         int i4 = i2;
         if (i2 > i3) {
             i4 = i3;
         }
         this.b = i4;
-        OnProgressListener onProgressListener = this.f15428a;
+        OnProgressListener onProgressListener = this.a;
         if (onProgressListener != null) {
             onProgressListener.a(this, i4);
         }
@@ -169,7 +165,7 @@ public class SlopeProgress extends View {
     }
 
     public void setProgressListener(OnProgressListener onProgressListener) {
-        this.f15428a = onProgressListener;
+        this.a = onProgressListener;
     }
 
     public void setRingColor(int i) {

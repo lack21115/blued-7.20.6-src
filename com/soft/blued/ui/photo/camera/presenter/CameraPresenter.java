@@ -16,17 +16,17 @@ import com.soft.blued.ui.photo.camera.view.BluedCameraView;
 public class CameraPresenter extends MediaBasePresent<ICameraView> implements PermissionCallbacks, BluedCameraView.OperationCallback {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f33039a = CameraPresenter.class.getSimpleName();
+    private static String f19348a = CameraPresenter.class.getSimpleName();
 
     /* renamed from: c  reason: collision with root package name */
-    private CameraModel f33040c;
+    private CameraModel f19349c;
     private Runnable d = new Runnable() { // from class: com.soft.blued.ui.photo.camera.presenter.CameraPresenter.1
         @Override // java.lang.Runnable
         public void run() {
-            ICameraView n = CameraPresenter.this.n();
-            if (n != null) {
-                if (n.d()) {
-                    n.a().setFacing(CameraPresenter.this.f33040c.d());
+            ICameraView iCameraView = (ICameraView) CameraPresenter.this.n();
+            if (iCameraView != null) {
+                if (iCameraView.d()) {
+                    iCameraView.a().setFacing(CameraPresenter.this.f19349c.d());
                 } else {
                     AppInfo.n().postDelayed(CameraPresenter.this.d, 300L);
                 }
@@ -35,25 +35,23 @@ public class CameraPresenter extends MediaBasePresent<ICameraView> implements Pe
     };
 
     public CameraPresenter() {
-        if (this.f33040c == null) {
-            this.f33040c = new CameraModel();
+        if (this.f19349c == null) {
+            this.f19349c = new CameraModel();
         }
     }
 
-    @Override // com.blued.android.framework.permission.PermissionCallbacks
     public void U_() {
-        ICameraView n = n();
-        if (n == null || !n.d()) {
+        ICameraView iCameraView = (ICameraView) n();
+        if (iCameraView == null || !iCameraView.d()) {
             return;
         }
-        if (n.e()) {
-            n.b();
+        if (iCameraView.e()) {
+            iCameraView.b();
         } else {
-            n.c();
+            iCameraView.c();
         }
     }
 
-    @Override // com.blued.android.module.media.selector.present.MediaBasePresent
     public void a(Activity activity, int i, int i2, Intent intent) {
         if (i2 == -1) {
             if (i != 1) {
@@ -63,54 +61,52 @@ public class CameraPresenter extends MediaBasePresent<ICameraView> implements Pe
             activity.finish();
             return;
         }
-        ICameraView n = n();
-        if (n != null) {
-            n.g();
+        ICameraView iCameraView = (ICameraView) n();
+        if (iCameraView != null) {
+            iCameraView.g();
         }
     }
 
-    @Override // com.blued.android.module.media.selector.present.MediaBasePresent
     public void a(Bundle bundle) {
-        ICameraView n = n();
-        if (n == null) {
-            StvLogUtils.a(f33039a + "ICameraView == null!!!", new Object[0]);
+        ICameraView iCameraView = (ICameraView) n();
+        if (iCameraView == null) {
+            StvLogUtils.a(f19348a + "ICameraView == null!!!", new Object[0]);
             return;
         }
-        Bundle arguments = n.getArguments();
+        Bundle arguments = iCameraView.getArguments();
         if (arguments != null) {
-            this.f33040c.a(arguments.getInt("from"));
-            n.a(this.f33040c.a(n.getActivity()));
-            n.b(this.f33040c.b(n.getActivity()));
-            n.a().setFacing(this.f33040c.d());
+            this.f19349c.a(arguments.getInt("from"));
+            iCameraView.a(this.f19349c.a(iCameraView.getActivity()));
+            iCameraView.b(this.f19349c.b(iCameraView.getActivity()));
+            iCameraView.a().setFacing(this.f19349c.d());
             return;
         }
-        StvLogUtils.a(f33039a + " bundle == null!!!", new Object[0]);
-        n.getActivity().finish();
+        StvLogUtils.a(f19348a + " bundle == null!!!", new Object[0]);
+        iCameraView.getActivity().finish();
     }
 
     @Override // com.soft.blued.ui.photo.camera.view.BluedCameraView.OperationCallback
     public void a(boolean z, String str) {
-        ICameraView n = n();
-        if (n == null || n.f() == null || !n.f().isAdded()) {
+        ICameraView iCameraView = (ICameraView) n();
+        if (iCameraView == null || iCameraView.f() == null || !iCameraView.f().isAdded()) {
             return;
         }
-        n.b(z);
+        iCameraView.b(z);
         if (z) {
-            CameraModel cameraModel = this.f33040c;
+            CameraModel cameraModel = this.f19349c;
             if (cameraModel != null) {
                 cameraModel.a(str);
             }
             CameraModel cameraModel2 = new CameraModel();
-            cameraModel2.a(this.f33040c);
-            BluedCameraView a2 = n.a();
+            cameraModel2.a(this.f19349c);
+            BluedCameraView a2 = iCameraView.a();
             if (a2 != null) {
                 cameraModel2.b(a2.getFacing());
             }
-            CameraPreViewFragment.a(n.f(), cameraModel2, 1);
+            CameraPreViewFragment.a(iCameraView.f(), cameraModel2, 1);
         }
     }
 
-    @Override // com.blued.android.framework.permission.PermissionCallbacks
     public void a(String[] strArr) {
     }
 
@@ -118,32 +114,30 @@ public class CameraPresenter extends MediaBasePresent<ICameraView> implements Pe
     public void b() {
     }
 
-    @Override // com.blued.android.module.media.selector.present.MediaBasePresent
     public void b(Bundle bundle) {
     }
 
     public void c() {
-        ICameraView n = n();
-        if (n == null || !n.d()) {
+        ICameraView iCameraView = (ICameraView) n();
+        if (iCameraView == null || !iCameraView.d()) {
             return;
         }
-        if (n.e()) {
-            n.b();
+        if (iCameraView.e()) {
+            iCameraView.b();
         } else {
-            n.c();
+            iCameraView.c();
         }
     }
 
     @Override // com.soft.blued.ui.photo.camera.view.BluedCameraView.OperationCallback
     public void d() {
-        ICameraView n = n();
-        if (n == null || n.f() == null || !n.f().isAdded()) {
+        ICameraView iCameraView = (ICameraView) n();
+        if (iCameraView == null || iCameraView.f() == null || !iCameraView.f().isAdded()) {
             return;
         }
-        n.a(true);
+        iCameraView.a(true);
     }
 
-    @Override // com.blued.android.module.media.selector.present.MediaBasePresent
     public void h() {
     }
 }

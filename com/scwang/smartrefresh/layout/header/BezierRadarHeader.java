@@ -25,11 +25,11 @@ import com.scwang.smartrefresh.layout.util.DensityUtil;
 public class BezierRadarHeader extends InternalAbstract implements RefreshHeader {
 
     /* renamed from: a  reason: collision with root package name */
-    protected int f27980a;
+    protected int f14292a;
     protected int b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected boolean f27981c;
+    protected boolean f14293c;
     protected boolean d;
     protected boolean e;
     protected boolean f;
@@ -54,18 +54,18 @@ public class BezierRadarHeader extends InternalAbstract implements RefreshHeader
     static /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f27982a;
+        static final /* synthetic */ int[] f14294a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:7:0x0020 -> B:11:0x0014). Please submit an issue!!! */
         static {
             int[] iArr = new int[RefreshState.values().length];
-            f27982a = iArr;
+            f14294a = iArr;
             try {
                 iArr[RefreshState.None.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f27982a[RefreshState.PullDownToRefresh.ordinal()] = 2;
+                f14294a[RefreshState.PullDownToRefresh.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
         }
@@ -75,15 +75,15 @@ public class BezierRadarHeader extends InternalAbstract implements RefreshHeader
     public class AnimatorUpdater implements ValueAnimator.AnimatorUpdateListener {
 
         /* renamed from: a  reason: collision with root package name */
-        byte f27983a;
+        byte f14295a;
 
         AnimatorUpdater(byte b) {
-            this.f27983a = b;
+            this.f14295a = b;
         }
 
         @Override // android.animation.ValueAnimator.AnimatorUpdateListener
         public void onAnimationUpdate(ValueAnimator valueAnimator) {
-            byte b = this.f27983a;
+            byte b = this.f14295a;
             if (b == 0) {
                 BezierRadarHeader.this.s = ((Float) valueAnimator.getAnimatedValue()).floatValue();
             } else if (1 == b) {
@@ -144,7 +144,7 @@ public class BezierRadarHeader extends InternalAbstract implements RefreshHeader
         b(obtainStyledAttributes.getColor(R.styleable.BezierRadarHeader_srlAccentColor, -1));
         a(obtainStyledAttributes.getColor(R.styleable.BezierRadarHeader_srlPrimaryColor, -14540254));
         this.d = obtainStyledAttributes.hasValue(R.styleable.BezierRadarHeader_srlAccentColor);
-        this.f27981c = obtainStyledAttributes.hasValue(R.styleable.BezierRadarHeader_srlPrimaryColor);
+        this.f14293c = obtainStyledAttributes.hasValue(R.styleable.BezierRadarHeader_srlPrimaryColor);
         obtainStyledAttributes.recycle();
     }
 
@@ -167,7 +167,7 @@ public class BezierRadarHeader extends InternalAbstract implements RefreshHeader
 
     public BezierRadarHeader a(int i) {
         this.b = i;
-        this.f27981c = true;
+        this.f14293c = true;
         return this;
     }
 
@@ -204,7 +204,7 @@ public class BezierRadarHeader extends InternalAbstract implements RefreshHeader
         if (this.l <= 0.0f) {
             return;
         }
-        this.h.setColor(this.f27980a);
+        this.h.setColor(this.f14292a);
         float a2 = DensityUtil.a(i2);
         float f3 = i / 7;
         float f4 = this.m;
@@ -230,7 +230,7 @@ public class BezierRadarHeader extends InternalAbstract implements RefreshHeader
 
     @Override // com.scwang.smartrefresh.layout.internal.InternalAbstract, com.scwang.smartrefresh.layout.listener.OnStateChangedListener
     public void a(RefreshLayout refreshLayout, RefreshState refreshState, RefreshState refreshState2) {
-        int i = AnonymousClass1.f27982a[refreshState2.ordinal()];
+        int i = AnonymousClass1.f14294a[refreshState2.ordinal()];
         if (i == 1 || i == 2) {
             this.l = 1.0f;
             this.s = 0.0f;
@@ -249,7 +249,7 @@ public class BezierRadarHeader extends InternalAbstract implements RefreshHeader
     }
 
     public BezierRadarHeader b(int i) {
-        this.f27980a = i;
+        this.f14292a = i;
         this.d = true;
         return this;
     }
@@ -260,7 +260,7 @@ public class BezierRadarHeader extends InternalAbstract implements RefreshHeader
             float f2 = this.s;
             float f3 = f * f2;
             float f4 = this.r;
-            this.h.setColor(this.f27980a);
+            this.h.setColor(this.f14292a);
             this.h.setStyle(Paint.Style.FILL);
             float f5 = i / 2;
             float f6 = i2 / 2;
@@ -314,14 +314,13 @@ public class BezierRadarHeader extends InternalAbstract implements RefreshHeader
 
     protected void c(Canvas canvas, int i, int i2) {
         if (this.o > 0.0f) {
-            this.h.setColor(this.f27980a);
+            this.h.setColor(this.f14292a);
             canvas.drawCircle(i / 2, i2 / 2, this.o, this.h);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void dispatchDraw(Canvas canvas) {
+    protected void dispatchDraw(Canvas canvas) {
         int width = getWidth();
         int height = getHeight();
         a(canvas, width);
@@ -331,9 +330,8 @@ public class BezierRadarHeader extends InternalAbstract implements RefreshHeader
         super.dispatchDraw(canvas);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         Animator animator = this.t;
         if (animator != null) {
@@ -346,9 +344,9 @@ public class BezierRadarHeader extends InternalAbstract implements RefreshHeader
     @Override // com.scwang.smartrefresh.layout.internal.InternalAbstract, com.scwang.smartrefresh.layout.api.RefreshInternal
     @Deprecated
     public void setPrimaryColors(int... iArr) {
-        if (iArr.length > 0 && !this.f27981c) {
+        if (iArr.length > 0 && !this.f14293c) {
             a(iArr[0]);
-            this.f27981c = false;
+            this.f14293c = false;
         }
         if (iArr.length <= 1 || this.d) {
             return;

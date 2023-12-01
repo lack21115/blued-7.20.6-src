@@ -19,11 +19,11 @@ import java.security.MessageDigest;
 public class a1 {
 
     /* renamed from: a  reason: collision with root package name */
-    public Context f3737a;
+    public Context f3689a;
     public String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public j1 f3738c;
+    public j1 f3690c;
     public ServiceConnection d = new a();
 
     /* loaded from: source-8756600-dex2jar.jar:c/t/m/g/a1$a.class */
@@ -33,17 +33,17 @@ public class a1 {
 
         @Override // android.content.ServiceConnection
         public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
-            a1.this.f3738c = j1.a.a(iBinder);
+            a1.this.f3690c = j1.a.a(iBinder);
         }
 
         @Override // android.content.ServiceConnection
         public void onServiceDisconnected(ComponentName componentName) {
-            a1.this.f3738c = null;
+            a1.this.f3690c = null;
         }
     }
 
     public a1(Context context) {
-        this.f3737a = context;
+        this.f3689a = context;
     }
 
     public String a(v0.b bVar) {
@@ -52,12 +52,12 @@ public class a1 {
             Intent intent = new Intent();
             intent.setComponent(new ComponentName("com.heytap.openid", "com.heytap.openid.IdentifyService"));
             intent.setAction("action.com.heytap.openid.OPEN_ID_SERVICE");
-            if (this.f3737a.bindService(intent, this.d, 1)) {
+            if (this.f3689a.bindService(intent, this.d, 1)) {
                 try {
                     SystemClock.sleep(com.anythink.expressad.video.module.a.a.m.ag);
                 } catch (Exception e) {
                 }
-                if (this.f3738c != null) {
+                if (this.f3690c != null) {
                     String a2 = a("OUID");
                     boolean a3 = a();
                     str = a2;
@@ -76,10 +76,10 @@ public class a1 {
 
     public final String a(String str) {
         Signature[] signatureArr;
-        String packageName = this.f3737a.getPackageName();
+        String packageName = this.f3689a.getPackageName();
         if (this.b == null) {
             try {
-                signatureArr = this.f3737a.getPackageManager().getPackageInfo(packageName, 64).signatures;
+                signatureArr = this.f3689a.getPackageManager().getPackageInfo(packageName, 64).signatures;
             } catch (Exception e) {
                 signatureArr = null;
             }
@@ -106,12 +106,12 @@ public class a1 {
             }
             this.b = str2;
         }
-        return ((j1.a.C0039a) this.f3738c).a(packageName, this.b, str);
+        return ((j1.a.C0037a) this.f3690c).a(packageName, this.b, str);
     }
 
     public final boolean a() {
         try {
-            PackageInfo packageInfo = this.f3737a.getPackageManager().getPackageInfo("com.heytap.openid", 0);
+            PackageInfo packageInfo = this.f3689a.getPackageManager().getPackageInfo("com.heytap.openid", 0);
             long longVersionCode = Build.VERSION.SDK_INT >= 28 ? packageInfo.getLongVersionCode() : packageInfo.versionCode;
             boolean z = false;
             if (packageInfo != null) {

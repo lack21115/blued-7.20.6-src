@@ -8,7 +8,7 @@ import androidx.core.util.Preconditions;
 public final class LocusIdCompat {
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f2407a;
+    private final String f2359a;
     private final LocusId b;
 
     /* loaded from: source-8756600-dex2jar.jar:androidx/core/content/LocusIdCompat$Api29Impl.class */
@@ -26,7 +26,7 @@ public final class LocusIdCompat {
     }
 
     public LocusIdCompat(String str) {
-        this.f2407a = (String) Preconditions.checkStringNotEmpty(str, "id cannot be empty");
+        this.f2359a = (String) Preconditions.checkStringNotEmpty(str, "id cannot be empty");
         if (Build.VERSION.SDK_INT >= 29) {
             this.b = Api29Impl.a(str);
         } else {
@@ -35,7 +35,7 @@ public final class LocusIdCompat {
     }
 
     private String a() {
-        int length = this.f2407a.length();
+        int length = this.f2359a.length();
         return length + "_chars";
     }
 
@@ -50,18 +50,18 @@ public final class LocusIdCompat {
         }
         if (obj != null && getClass() == obj.getClass()) {
             LocusIdCompat locusIdCompat = (LocusIdCompat) obj;
-            String str = this.f2407a;
-            return str == null ? locusIdCompat.f2407a == null : str.equals(locusIdCompat.f2407a);
+            String str = this.f2359a;
+            return str == null ? locusIdCompat.f2359a == null : str.equals(locusIdCompat.f2359a);
         }
         return false;
     }
 
     public String getId() {
-        return this.f2407a;
+        return this.f2359a;
     }
 
     public int hashCode() {
-        String str = this.f2407a;
+        String str = this.f2359a;
         return 31 + (str == null ? 0 : str.hashCode());
     }
 

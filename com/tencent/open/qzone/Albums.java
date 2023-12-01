@@ -25,14 +25,14 @@ public class Albums extends BaseApi {
         
 
         /* renamed from: a  reason: collision with root package name */
-        private final String f38267a;
+        private final String f24576a;
 
         AlbumSecurity(String str) {
-            this.f38267a = str;
+            this.f24576a = str;
         }
 
         public String getSecurity() {
-            return this.f38267a;
+            return this.f24576a;
         }
     }
 

@@ -7,10 +7,9 @@ import com.soft.blued.ui.home.HomeTabClick;
 
 /* loaded from: source-8303388-dex2jar.jar:com/soft/blued/ui/community/fragment/CircleHomeFragment.class */
 public class CircleHomeFragment extends CircleNewFragment<CirclePresenter> implements HomeTabClick.TabClickListener {
-    @Override // com.blued.community.ui.circle.fragment.CircleNewFragment
     public void c() {
         super.c();
-        this.f19230a.setVisibility(8);
+        this.a.setVisibility(8);
     }
 
     @Override // com.soft.blued.ui.home.HomeTabClick.TabClickListener
@@ -25,18 +24,15 @@ public class CircleHomeFragment extends CircleNewFragment<CirclePresenter> imple
         c(str);
     }
 
-    @Override // com.blued.community.ui.circle.fragment.CircleNewFragment, com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void l() {
         b();
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroyView() {
         HomeTabClick.b(IAdInterListener.AdProdType.PRODUCT_FEEDS, this);
         super.onDestroyView();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onResume() {
         if (getUserVisibleHint()) {
             HomeTabClick.a(IAdInterListener.AdProdType.PRODUCT_FEEDS, this);
@@ -44,7 +40,6 @@ public class CircleHomeFragment extends CircleNewFragment<CirclePresenter> imple
         super.onResume();
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void setUserVisibleHint(boolean z) {
         if (z) {
             HomeTabClick.a(IAdInterListener.AdProdType.PRODUCT_FEEDS, this);

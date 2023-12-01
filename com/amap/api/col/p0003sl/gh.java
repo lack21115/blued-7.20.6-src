@@ -2,6 +2,7 @@ package com.amap.api.col.p0003sl;
 
 import android.content.Context;
 import com.amap.api.services.core.AMapException;
+import com.anythink.core.common.b.g;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.HashMap;
@@ -23,25 +24,25 @@ public final class gh extends ew<String, String> {
     private static String b(String str) throws AMapException {
         try {
             JSONObject jSONObject = new JSONObject(str);
-            String a2 = fm.a(jSONObject, "code");
-            String a3 = fm.a(jSONObject, "message");
-            if ("1".equals(a2)) {
+            String a = fm.a(jSONObject, g.c.b);
+            String a2 = fm.a(jSONObject, "message");
+            if ("1".equals(a)) {
                 return fm.a(jSONObject, "transfer_url");
             }
-            if ("0".equals(a2)) {
-                throw new AMapException(AMapException.AMAP_SERVICE_UNKNOWN_ERROR, 0, a3);
+            if ("0".equals(a)) {
+                throw new AMapException(AMapException.AMAP_SERVICE_UNKNOWN_ERROR, 0, a2);
             }
-            if ("2".equals(a2)) {
-                throw new AMapException(AMapException.AMAP_SHARE_FAILURE, 0, a3);
+            if ("2".equals(a)) {
+                throw new AMapException(AMapException.AMAP_SHARE_FAILURE, 0, a2);
             }
-            if ("3".equals(a2)) {
-                throw new AMapException(AMapException.AMAP_SERVICE_INVALID_PARAMS, 0, a3);
+            if ("3".equals(a)) {
+                throw new AMapException(AMapException.AMAP_SERVICE_INVALID_PARAMS, 0, a2);
             }
-            if ("4".equals(a2)) {
-                throw new AMapException("用户签名未通过", 0, a3);
+            if ("4".equals(a)) {
+                throw new AMapException("用户签名未通过", 0, a2);
             }
-            if ("5".equals(a2)) {
-                throw new AMapException(AMapException.AMAP_SHARE_LICENSE_IS_EXPIRED, 0, a3);
+            if ("5".equals(a)) {
+                throw new AMapException(AMapException.AMAP_SHARE_LICENSE_IS_EXPIRED, 0, a2);
             }
             return null;
         } catch (JSONException e) {

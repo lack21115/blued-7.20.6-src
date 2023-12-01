@@ -186,7 +186,7 @@ public class u {
         oxVar.mMd5 = jSONObject.optString("md5");
         oxVar.mApiVersionMin = jSONObject.optInt("min_version");
         oxVar.mApiVersionMax = jSONObject.optInt("max_version");
-        oxVar.mb = jSONObject.optString("sign");
+        oxVar.mb = jSONObject.optString(com.anythink.expressad.d.a.b.d);
         oxVar.mFlag = jSONObject.optBoolean("is_revert") ? 3 : 2;
         oxVar.ox = new File(jSONObject.optString("plugin_file"));
         return oxVar;

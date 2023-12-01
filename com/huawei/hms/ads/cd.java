@@ -256,7 +256,7 @@ public class cd {
             this.C.setBackground(dkVar);
             return true;
         } else if (!str.startsWith("@")) {
-            if (str.length() > 2 && str.startsWith("{") && str.endsWith(com.alipay.sdk.util.i.d)) {
+            if (str.length() > 2 && str.startsWith("{") && str.endsWith("}")) {
                 return V(str);
             }
             return false;

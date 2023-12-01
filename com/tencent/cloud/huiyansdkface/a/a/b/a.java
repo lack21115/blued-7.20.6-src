@@ -6,10 +6,10 @@ import java.util.List;
 public class a<T> implements com.tencent.cloud.huiyansdkface.a.a.g<T> {
 
     /* renamed from: a  reason: collision with root package name */
-    private com.tencent.cloud.huiyansdkface.a.a.g<T>[] f35432a;
+    private com.tencent.cloud.huiyansdkface.a.a.g<T>[] f21741a;
 
     public a(com.tencent.cloud.huiyansdkface.a.a.g<T>[] gVarArr) {
-        this.f35432a = gVarArr;
+        this.f21741a = gVarArr;
         if (gVarArr == null || gVarArr.length == 0) {
             throw new IllegalArgumentException("priorities must 1 element at least");
         }
@@ -18,7 +18,7 @@ public class a<T> implements com.tencent.cloud.huiyansdkface.a.a.g<T> {
     @Override // com.tencent.cloud.huiyansdkface.a.a.g
     public T b(List<T> list, com.tencent.cloud.huiyansdkface.a.c.d dVar) {
         T b;
-        com.tencent.cloud.huiyansdkface.a.a.g<T>[] gVarArr = this.f35432a;
+        com.tencent.cloud.huiyansdkface.a.a.g<T>[] gVarArr = this.f21741a;
         int length = gVarArr.length;
         int i = 0;
         while (true) {

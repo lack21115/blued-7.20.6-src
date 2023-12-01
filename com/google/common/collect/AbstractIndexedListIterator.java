@@ -3,9 +3,8 @@ package com.google.common.collect;
 import com.google.common.base.Preconditions;
 import java.util.NoSuchElementException;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8110460-dex2jar.jar:com/google/common/collect/AbstractIndexedListIterator.class */
-public abstract class AbstractIndexedListIterator<E> extends UnmodifiableListIterator<E> {
+abstract class AbstractIndexedListIterator<E> extends UnmodifiableListIterator<E> {
     private int position;
     private final int size;
 
@@ -23,7 +22,7 @@ public abstract class AbstractIndexedListIterator<E> extends UnmodifiableListIte
 
     protected abstract E get(int i);
 
-    @Override // java.util.Iterator
+    @Override // java.util.Iterator, java.util.ListIterator
     public final boolean hasNext() {
         return this.position < this.size;
     }
@@ -33,7 +32,7 @@ public abstract class AbstractIndexedListIterator<E> extends UnmodifiableListIte
         return this.position > 0;
     }
 
-    @Override // java.util.Iterator
+    @Override // java.util.Iterator, java.util.ListIterator
     public final E next() {
         if (hasNext()) {
             int i = this.position;

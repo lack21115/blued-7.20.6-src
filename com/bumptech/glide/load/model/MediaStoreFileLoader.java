@@ -18,21 +18,21 @@ import java.io.FileNotFoundException;
 public final class MediaStoreFileLoader implements ModelLoader<Uri, File> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Context f20882a;
+    private final Context f7276a;
 
     /* loaded from: source-7206380-dex2jar.jar:com/bumptech/glide/load/model/MediaStoreFileLoader$Factory.class */
     public static final class Factory implements ModelLoaderFactory<Uri, File> {
 
         /* renamed from: a  reason: collision with root package name */
-        private final Context f20883a;
+        private final Context f7277a;
 
         public Factory(Context context) {
-            this.f20883a = context;
+            this.f7277a = context;
         }
 
         @Override // com.bumptech.glide.load.model.ModelLoaderFactory
         public ModelLoader<Uri, File> a(MultiModelLoaderFactory multiModelLoaderFactory) {
-            return new MediaStoreFileLoader(this.f20883a);
+            return new MediaStoreFileLoader(this.f7277a);
         }
 
         @Override // com.bumptech.glide.load.model.ModelLoaderFactory
@@ -45,15 +45,15 @@ public final class MediaStoreFileLoader implements ModelLoader<Uri, File> {
     public static class FilePathFetcher implements DataFetcher<File> {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final String[] f20884a = {"_data"};
+        private static final String[] f7278a = {"_data"};
         private final Context b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final Uri f20885c;
+        private final Uri f7279c;
 
         FilePathFetcher(Context context, Uri uri) {
             this.b = context;
-            this.f20885c = uri;
+            this.f7279c = uri;
         }
 
         @Override // com.bumptech.glide.load.data.DataFetcher
@@ -62,7 +62,7 @@ public final class MediaStoreFileLoader implements ModelLoader<Uri, File> {
 
         @Override // com.bumptech.glide.load.data.DataFetcher
         public void a(Priority priority, DataFetcher.DataCallback<? super File> dataCallback) {
-            Cursor query = this.b.getContentResolver().query(this.f20885c, f20884a, null, null, null);
+            Cursor query = this.b.getContentResolver().query(this.f7279c, f7278a, null, null, null);
             String str = null;
             if (query != null) {
                 str = null;
@@ -78,7 +78,7 @@ public final class MediaStoreFileLoader implements ModelLoader<Uri, File> {
                 dataCallback.a((DataFetcher.DataCallback<? super File>) new File(str));
                 return;
             }
-            dataCallback.a((Exception) new FileNotFoundException("Failed to find file path for: " + this.f20885c));
+            dataCallback.a((Exception) new FileNotFoundException("Failed to find file path for: " + this.f7279c));
         }
 
         @Override // com.bumptech.glide.load.data.DataFetcher
@@ -97,12 +97,12 @@ public final class MediaStoreFileLoader implements ModelLoader<Uri, File> {
     }
 
     public MediaStoreFileLoader(Context context) {
-        this.f20882a = context;
+        this.f7276a = context;
     }
 
     @Override // com.bumptech.glide.load.model.ModelLoader
     public ModelLoader.LoadData<File> a(Uri uri, int i, int i2, Options options) {
-        return new ModelLoader.LoadData<>(new ObjectKey(uri), new FilePathFetcher(this.f20882a, uri));
+        return new ModelLoader.LoadData<>(new ObjectKey(uri), new FilePathFetcher(this.f7276a, uri));
     }
 
     @Override // com.bumptech.glide.load.model.ModelLoader

@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemAnchorBadgeSwipeBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29075a;
+    private final LinearLayout f15385a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29075a;
+        return this.f15385a;
     }
 }

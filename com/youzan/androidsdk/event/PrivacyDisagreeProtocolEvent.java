@@ -2,6 +2,7 @@ package com.youzan.androidsdk.event;
 
 import android.content.Context;
 import android.text.TextUtils;
+import com.bytedance.applog.util.WebViewJsUtil;
 import com.huawei.openalliance.ad.constant.bc;
 import com.youzan.androidsdk.ui.YouzanClient;
 import org.json.JSONException;
@@ -11,10 +12,10 @@ import org.json.JSONObject;
 public abstract class PrivacyDisagreeProtocolEvent implements Event {
 
     /* renamed from: ˊ  reason: contains not printable characters */
-    private final YouzanClient f1108;
+    private final YouzanClient f1061;
 
     public PrivacyDisagreeProtocolEvent(YouzanClient youzanClient) {
-        this.f1108 = youzanClient;
+        this.f1061 = youzanClient;
     }
 
     public static String injectSupportPrivacyDisagreeProtocol() {
@@ -34,21 +35,21 @@ public abstract class PrivacyDisagreeProtocolEvent implements Event {
                 z2 = call;
                 z = call;
                 String optString = new JSONObject(str).optString(bc.e.D);
-                if (TextUtils.isEmpty(optString) || (youzanClient3 = this.f1108) == null) {
+                if (TextUtils.isEmpty(optString) || (youzanClient3 = this.f1061) == null) {
                     return;
                 }
-                youzanClient3.loadUrl("javascript:" + optString + "(" + call + ")");
+                youzanClient3.loadUrl(WebViewJsUtil.JS_URL_PREFIX + optString + "(" + call + ")");
             } catch (JSONException e) {
                 z2 = z;
                 e.printStackTrace();
-                if (TextUtils.isEmpty(null) || (youzanClient = this.f1108) == null) {
+                if (TextUtils.isEmpty(null) || (youzanClient = this.f1061) == null) {
                     return;
                 }
-                youzanClient.loadUrl("javascript:" + ((String) null) + "(" + z + ")");
+                youzanClient.loadUrl(WebViewJsUtil.JS_URL_PREFIX + ((String) null) + "(" + z + ")");
             }
         } catch (Throwable th) {
-            if (!TextUtils.isEmpty(null) && (youzanClient2 = this.f1108) != null) {
-                youzanClient2.loadUrl("javascript:" + ((String) null) + "(" + z2 + ")");
+            if (!TextUtils.isEmpty(null) && (youzanClient2 = this.f1061) != null) {
+                youzanClient2.loadUrl(WebViewJsUtil.JS_URL_PREFIX + ((String) null) + "(" + z2 + ")");
             }
             throw th;
         }

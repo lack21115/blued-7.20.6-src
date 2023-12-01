@@ -11,6 +11,7 @@ import android.view.Window;
 import android.widget.TextView;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.FragmentManager;
+import com.anythink.core.common.l;
 import com.blued.android.core.ui.ActivityFragmentActive;
 import com.blued.android.framework.http.BluedUIHttpResponse;
 import com.blued.android.framework.http.parser.BluedEntityA;
@@ -62,7 +63,7 @@ public final class CommonEditDlgFragment extends LiveBaseDialogFragment {
             Bundle bundle = new Bundle();
             bundle.putString("aid", str);
             bundle.putBoolean("is_manager", z);
-            bundle.putString("content", str2);
+            bundle.putString(l.y, str2);
             commonEditDlgFragment.setArguments(bundle);
             commonEditDlgFragment.show(fragmentManager, CommonEditDlgFragment.class.getSimpleName());
         }
@@ -194,35 +195,27 @@ public final class CommonEditDlgFragment extends LiveBaseDialogFragment {
     }
 
     private final void t() {
-        SelectionEditText selectionEditText = this.m;
-        if (selectionEditText == null) {
+        View view = this.m;
+        if (view == null) {
             return;
         }
-        KeyboardUtils.b(selectionEditText);
+        KeyboardUtils.b(view);
     }
 
     private final void u() {
         final SelectionEditText selectionEditText;
         if (m() && (selectionEditText = this.m) != null) {
-            EventHttpUtils eventHttpUtils = EventHttpUtils.f19079a;
-            final ActivityFragmentActive a2 = a();
-            eventHttpUtils.b(new BluedUIHttpResponse<BluedEntityA<Object>>(this, a2) { // from class: com.blued.community.ui.common.CommonEditDlgFragment$onClickConfirm$1$1
-                final /* synthetic */ CommonEditDlgFragment b;
-
-                /* JADX INFO: Access modifiers changed from: package-private */
-                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                {
-                    super(a2);
-                }
-
+            EventHttpUtils eventHttpUtils = EventHttpUtils.a;
+            final ActivityFragmentActive a = a();
+            eventHttpUtils.b(new BluedUIHttpResponse<BluedEntityA<Object>>(a) { // from class: com.blued.community.ui.common.CommonEditDlgFragment$onClickConfirm$1$1
                 /* JADX INFO: Access modifiers changed from: protected */
                 @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 /* renamed from: a */
                 public void onUIUpdate(BluedEntityA<Object> result) {
                     Intrinsics.e(result, "result");
                     ToastUtils.a(R.string.event_signature_post_success);
-                    LiveEventBus.get("event_signature_post_success").post(String.valueOf(SelectionEditText.this.getText()));
-                    this.b.j();
+                    LiveEventBus.get("event_signature_post_success").post(String.valueOf(selectionEditText.getText()));
+                    this.j();
                 }
             }, l(), String.valueOf(selectionEditText.getText()), a());
         }
@@ -248,14 +241,14 @@ public final class CommonEditDlgFragment extends LiveBaseDialogFragment {
 
     @Override // com.blued.android.module.common.fragment.LiveBaseDialogFragment
     public void e() {
-        this.v = CommunityManager.f19086a.a().s();
+        this.v = CommunityManager.a.a().s();
         Bundle arguments = getArguments();
         if (arguments != null) {
             String string = arguments.getString("aid", "");
             Intrinsics.c(string, "it.getString(\"aid\", \"\")");
             a(string);
             a(arguments.getBoolean("is_manager"));
-            b(arguments.getString("content", ""));
+            b(arguments.getString(l.y, ""));
         }
         TextView textView = (TextView) this.b.findViewById(R.id.common_edit_title);
         this.k = textView;
@@ -278,17 +271,17 @@ public final class CommonEditDlgFragment extends LiveBaseDialogFragment {
                 textView4.setVisibility(0);
             }
         }
-        CardView cardView = (CardView) this.b.findViewById(R.id.common_edit_cv);
-        this.r = cardView;
+        CardView findViewById = this.b.findViewById(R.id.common_edit_cv);
+        this.r = findViewById;
         if (this.v) {
-            if (cardView != null) {
-                cardView.setCardBackgroundColor(getResources().getColor(R.color.syc_0E0E0E));
+            if (findViewById != null) {
+                findViewById.setCardBackgroundColor(getResources().getColor(R.color.syc_0E0E0E));
             }
-        } else if (cardView != null) {
-            cardView.setCardBackgroundColor(getResources().getColor(R.color.syc_dark_f8f8f8));
+        } else if (findViewById != null) {
+            findViewById.setCardBackgroundColor(getResources().getColor(R.color.syc_dark_f8f8f8));
         }
-        this.m = (SelectionEditText) this.b.findViewById(R.id.common_edit_et);
-        this.n = (EditInputNumView) this.b.findViewById(R.id.common_edit_num_tv);
+        this.m = this.b.findViewById(R.id.common_edit_et);
+        this.n = this.b.findViewById(R.id.common_edit_num_tv);
         this.o = (TextView) this.b.findViewById(R.id.common_edit_cancel);
         this.p = (TextView) this.b.findViewById(R.id.common_edit_confirm);
         SelectionEditText selectionEditText = this.m;
@@ -300,9 +293,9 @@ public final class CommonEditDlgFragment extends LiveBaseDialogFragment {
             selectionEditText2.setOnTouchListener(new View.OnTouchListener() { // from class: com.blued.community.ui.common.-$$Lambda$CommonEditDlgFragment$o1DvZSDkZncKa59rTzM1zC78Npg
                 @Override // android.view.View.OnTouchListener
                 public final boolean onTouch(View view, MotionEvent motionEvent) {
-                    boolean a2;
-                    a2 = CommonEditDlgFragment.a(view, motionEvent);
-                    return a2;
+                    boolean a;
+                    a = CommonEditDlgFragment.a(view, motionEvent);
+                    return a;
                 }
             });
         }
@@ -382,7 +375,7 @@ public final class CommonEditDlgFragment extends LiveBaseDialogFragment {
         return this.s;
     }
 
-    @Override // com.blued.android.module.common.fragment.LiveBaseDialogFragment, androidx.fragment.app.DialogFragment
+    @Override // com.blued.android.module.common.fragment.LiveBaseDialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
         Dialog onCreateDialog = super.onCreateDialog(bundle);
         Intrinsics.c(onCreateDialog, "super.onCreateDialog(savedInstanceState)");
@@ -394,7 +387,7 @@ public final class CommonEditDlgFragment extends LiveBaseDialogFragment {
         return onCreateDialog;
     }
 
-    @Override // com.blued.android.module.common.fragment.LiveBaseDialogFragment, com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.common.fragment.LiveBaseDialogFragment, com.blued.android.core.ui.BaseDialogFragment
     public void onViewCreated(View view, Bundle bundle) {
         Intrinsics.e(view, "view");
         super.onViewCreated(view, bundle);

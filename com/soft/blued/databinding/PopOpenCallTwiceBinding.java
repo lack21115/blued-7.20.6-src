@@ -13,11 +13,11 @@ import com.soft.blued.R;
 public final class PopOpenCallTwiceBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ShapeTextView f29550a;
+    public final ShapeTextView f15860a;
     public final TextView b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final ImageView f29551c;
+    public final ImageView f15861c;
     public final ImageView d;
     public final LinearLayout e;
     public final TextView f;
@@ -25,9 +25,9 @@ public final class PopOpenCallTwiceBinding implements ViewBinding {
 
     private PopOpenCallTwiceBinding(FrameLayout frameLayout, ShapeTextView shapeTextView, TextView textView, ImageView imageView, ImageView imageView2, LinearLayout linearLayout, TextView textView2) {
         this.g = frameLayout;
-        this.f29550a = shapeTextView;
+        this.f15860a = shapeTextView;
         this.b = textView;
-        this.f29551c = imageView;
+        this.f15861c = imageView;
         this.d = imageView2;
         this.e = linearLayout;
         this.f = textView2;
@@ -35,8 +35,8 @@ public final class PopOpenCallTwiceBinding implements ViewBinding {
 
     public static PopOpenCallTwiceBinding a(View view) {
         String str;
-        ShapeTextView shapeTextView = (ShapeTextView) view.findViewById(R.id.btn_open_once);
-        if (shapeTextView != null) {
+        ShapeTextView findViewById = view.findViewById(R.id.btn_open_once);
+        if (findViewById != null) {
             TextView textView = (TextView) view.findViewById(R.id.btn_open_twice);
             if (textView != null) {
                 ImageView imageView = (ImageView) view.findViewById(R.id.iv_btn_twice_tag);
@@ -47,7 +47,7 @@ public final class PopOpenCallTwiceBinding implements ViewBinding {
                         if (linearLayout != null) {
                             TextView textView2 = (TextView) view.findViewById(2131372754);
                             if (textView2 != null) {
-                                return new PopOpenCallTwiceBinding((FrameLayout) view, shapeTextView, textView, imageView, imageView2, linearLayout, textView2);
+                                return new PopOpenCallTwiceBinding((FrameLayout) view, findViewById, textView, imageView, imageView2, linearLayout, textView2);
                             }
                             str = "tvTitle";
                         } else {

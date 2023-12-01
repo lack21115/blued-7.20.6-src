@@ -19,11 +19,11 @@ import java.util.Locale;
 public class b extends FrameLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    private final View$OnClickListenerC0647b f24988a;
+    private final View$OnClickListenerC0477b f11300a;
     private final StringBuilder b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final Formatter f24989c;
+    private final Formatter f11301c;
     private final y.a d;
     private final y.b e;
     private q f;
@@ -53,8 +53,8 @@ public class b extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.opos.exoplayer.a.b$b  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/opos/exoplayer/a/b$b.class */
-    public final class View$OnClickListenerC0647b extends q.a implements View.OnClickListener {
-        private View$OnClickListenerC0647b() {
+    public final class View$OnClickListenerC0477b extends q.a implements View.OnClickListener {
+        private View$OnClickListenerC0477b() {
         }
 
         @Override // com.opos.exoplayer.core.q.a, com.opos.exoplayer.core.q.b
@@ -117,12 +117,12 @@ public class b extends FrameLayout {
         this.d = new y.a();
         this.e = new y.b();
         this.b = new StringBuilder();
-        this.f24989c = new Formatter(this.b, Locale.getDefault());
+        this.f11301c = new Formatter(this.b, Locale.getDefault());
         this.r = new long[0];
         this.s = new boolean[0];
         this.t = new long[0];
         this.u = new boolean[0];
-        this.f24988a = new View$OnClickListenerC0647b();
+        this.f11300a = new View$OnClickListenerC0477b();
         this.g = new com.opos.exoplayer.core.d();
         setDescendantFocusability(262144);
     }
@@ -427,11 +427,11 @@ public class b extends FrameLayout {
             return;
         }
         if (qVar2 != null) {
-            qVar2.b(this.f24988a);
+            qVar2.b(this.f11300a);
         }
         this.f = qVar;
         if (qVar != null) {
-            qVar.a(this.f24988a);
+            qVar.a(this.f11300a);
         }
         f();
     }

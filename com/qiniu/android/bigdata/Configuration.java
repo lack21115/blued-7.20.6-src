@@ -14,14 +14,14 @@ public final class Configuration implements Cloneable {
             return new Configuration();
         }
         try {
-            return configuration.m8511clone();
+            return configuration.m5462clone();
         } catch (CloneNotSupportedException e) {
             return new Configuration();
         }
     }
 
     /* renamed from: clone */
-    public Configuration m8511clone() throws CloneNotSupportedException {
+    public Configuration m5462clone() throws CloneNotSupportedException {
         return (Configuration) super.clone();
     }
 }

@@ -32,9 +32,9 @@ public class DeleteSessionPackage extends DeleteBasePackage {
         bytesData.data[0] = this.deleteHeader.toByte();
         BytesUtils.numberTo4Bytes(bytesData.data, 1, this.localId);
         for (Pair<Short, Long> pair : this.sessionPairList) {
-            BytesUtils.numberTo1Byte(bytesData.data, i, pair.first.shortValue());
+            BytesUtils.numberTo1Byte(bytesData.data, i, ((Short) pair.first).shortValue());
             int i2 = i + 1;
-            BytesUtils.numberTo4Bytes(bytesData.data, i2, pair.second.longValue());
+            BytesUtils.numberTo4Bytes(bytesData.data, i2, ((Long) pair.second).longValue());
             i = i2 + 4;
         }
         return bytesData;

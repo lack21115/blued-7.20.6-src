@@ -9,16 +9,12 @@ import com.blued.android.module.live_china.model.PayRemaining;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/modules/UserModule.class */
 class UserModule {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static IUser f18644a = new IUser() { // from class: com.blued.android.modules.UserModule.1
+    private static IUser a = new IUser() { // from class: com.blued.android.modules.UserModule.1
 
         /* renamed from: com.blued.android.modules.UserModule$1$1  reason: invalid class name and collision with other inner class name */
         /* loaded from: source-5382004-dex2jar.jar:com/blued/android/modules/UserModule$1$1.class */
-        class C02821 extends BluedUIHttpResponse<BluedEntityA<PayRemaining>> {
-
-            /* renamed from: a  reason: collision with root package name */
-            final /* synthetic */ IUser.IWandouBalanceListener f18645a;
+        class C01581 extends BluedUIHttpResponse<BluedEntityA<PayRemaining>> {
+            final /* synthetic */ IUser.IWandouBalanceListener a;
 
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
@@ -29,7 +25,7 @@ class UserModule {
                     return;
                 }
                 double d = payRemaining.beans + payRemaining.bonus;
-                IUser.IWandouBalanceListener iWandouBalanceListener = this.f18645a;
+                IUser.IWandouBalanceListener iWandouBalanceListener = this.a;
                 if (iWandouBalanceListener != null) {
                     iWandouBalanceListener.a(d);
                 }
@@ -39,7 +35,7 @@ class UserModule {
             @Override // com.blued.android.framework.http.BluedUIHttpResponse, com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
             public void onFailure(Throwable th, int i, String str) {
                 super.onFailure(th, i, str);
-                IUser.IWandouBalanceListener iWandouBalanceListener = this.f18645a;
+                IUser.IWandouBalanceListener iWandouBalanceListener = this.a;
                 if (iWandouBalanceListener != null) {
                     iWandouBalanceListener.a(th, 0, null);
                 }
@@ -56,6 +52,6 @@ class UserModule {
     }
 
     public static void a() {
-        UserProxy.b().a(f18644a);
+        UserProxy.b().a(a);
     }
 }

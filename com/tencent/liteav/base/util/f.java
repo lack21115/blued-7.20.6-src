@@ -7,11 +7,11 @@ import android.os.MessageQueue;
 public final /* synthetic */ class f implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final b f36330a;
+    private final b f22639a;
     private final MessageQueue.IdleHandler b;
 
     private f(b bVar, MessageQueue.IdleHandler idleHandler) {
-        this.f36330a = bVar;
+        this.f22639a = bVar;
         this.b = idleHandler;
     }
 
@@ -21,6 +21,6 @@ public final /* synthetic */ class f implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        b.a(this.f36330a, this.b);
+        b.a(this.f22639a, this.b);
     }
 }

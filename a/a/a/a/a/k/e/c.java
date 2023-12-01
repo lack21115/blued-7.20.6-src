@@ -9,6 +9,7 @@ import android.os.Build;
 import android.os.Handler;
 import com.huawei.hms.push.constant.RemoteMessageConst;
 import com.kuaishou.pushad.BuildConfig;
+import com.kwad.components.offline.api.tk.model.report.TKDownloadReason;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
@@ -26,7 +27,7 @@ import org.json.JSONObject;
 public final class c {
 
     /* renamed from: a  reason: collision with root package name */
-    public static c f1427a = new c();
+    public static c f1379a = new c();
     public Context h;
     public final Object b = new Object();
     public Map<String, String[]> d = new HashMap();
@@ -39,7 +40,7 @@ public final class c {
     public int g = 3600;
 
     /* renamed from: c  reason: collision with root package name */
-    public final a.a.a.a.a.k.e.b f1428c = new a.a.a.a.a.k.e.a();
+    public final a.a.a.a.a.k.e.b f1380c = new a.a.a.a.a.k.e.a();
 
     /* loaded from: source-8756600-dex2jar.jar:a/a/a/a/a/k/e/c$a.class */
     public class a implements Runnable {
@@ -100,10 +101,10 @@ public final class c {
     public class RunnableC0016c implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ String[] f1433a;
+        public final /* synthetic */ String[] f1385a;
 
         public RunnableC0016c(String[] strArr) {
-            this.f1433a = strArr;
+            this.f1385a = strArr;
         }
 
         @Override // java.lang.Runnable
@@ -112,7 +113,7 @@ public final class c {
                 return;
             }
             ArrayList arrayList = new ArrayList();
-            String[] strArr = this.f1433a;
+            String[] strArr = this.f1385a;
             int length = strArr.length;
             int i = 0;
             while (true) {
@@ -121,7 +122,7 @@ public final class c {
                     c.this.a(arrayList);
                     return;
                 }
-                arrayList.add(c.this.f1428c.a(String.format(Locale.getDefault(), "http://%s:%d/%s", strArr[i2], 1230, "ping"), 65536));
+                arrayList.add(c.this.f1380c.a(String.format(Locale.getDefault(), "http://%s:%d/%s", strArr[i2], 1230, "ping"), 65536));
                 i = i2 + 1;
             }
         }
@@ -135,8 +136,8 @@ public final class c {
         @Override // java.util.Comparator
         /* renamed from: a */
         public int compare(e eVar, e eVar2) {
-            int i = eVar.f1435c;
-            int i2 = eVar2.f1435c;
+            int i = eVar.f1387c;
+            int i2 = eVar2.f1387c;
             if (i < i2) {
                 return -1;
             }
@@ -148,19 +149,19 @@ public final class c {
     public static class e {
 
         /* renamed from: a  reason: collision with root package name */
-        public final String f1434a;
+        public final String f1386a;
         public final int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final int f1435c;
+        public final int f1387c;
         public final String d;
         public String e;
 
         public e(String str, String str2, int i, int i2, String str3) {
             this.e = str;
-            this.f1434a = str2;
+            this.f1386a = str2;
             this.b = i;
-            this.f1435c = i2;
+            this.f1387c = i2;
             this.d = str3;
         }
     }
@@ -169,11 +170,11 @@ public final class c {
     public static class f implements Comparable<f> {
 
         /* renamed from: a  reason: collision with root package name */
-        public String f1436a;
+        public String f1388a;
         public String b;
 
         public f(String str, String str2) {
-            this.f1436a = str;
+            this.f1388a = str;
             this.b = str2;
         }
 
@@ -188,7 +189,7 @@ public final class c {
     public static class g {
 
         /* renamed from: a  reason: collision with root package name */
-        public Handler f1437a;
+        public Handler f1389a;
         public volatile boolean b;
 
         /* loaded from: source-8756600-dex2jar.jar:a/a/a/a/a/k/e/c$g$a.class */
@@ -203,7 +204,7 @@ public final class c {
         }
 
         public g() {
-            this.f1437a = new Handler();
+            this.f1389a = new Handler();
             this.b = false;
         }
 
@@ -216,12 +217,12 @@ public final class c {
                 return;
             }
             this.b = true;
-            this.f1437a.postDelayed(new a(), i * 1000);
+            this.f1389a.postDelayed(new a(), i * 1000);
         }
     }
 
     public static c a() {
-        return f1427a;
+        return f1379a;
     }
 
     public e a(String str, int i) {
@@ -254,7 +255,7 @@ public final class c {
             Iterator<e> it = arrayList.iterator();
             while (it.hasNext()) {
                 e next = it.next();
-                if (next.f1434a.equals(str)) {
+                if (next.f1386a.equals(str)) {
                     arrayList2.add(next);
                 }
             }
@@ -268,7 +269,7 @@ public final class c {
         JSONArray jSONArray = new JSONArray();
         try {
             jSONObject.put("method", BuildConfig.FLAVOR);
-            jSONObject.put("net", a.a.a.a.a.k.c.a.b(this.h));
+            jSONObject.put(TKDownloadReason.KSAD_TK_NET, a.a.a.a.a.k.c.a.b(this.h));
         } catch (JSONException e2) {
         }
         int i = 0;
@@ -290,10 +291,10 @@ public final class c {
                 } else {
                     jSONObject2.put("domain", eVar.e);
                 }
-                jSONObject2.put("serverIP", eVar.f1434a);
+                jSONObject2.put("serverIP", eVar.f1386a);
                 jSONObject2.put("sendBytes", 65536);
                 jSONObject2.put("connect", eVar.b);
-                jSONObject2.put("durationMs", eVar.f1435c);
+                jSONObject2.put("durationMs", eVar.f1387c);
                 if (eVar.d != null) {
                     jSONObject2.put("error", eVar.d);
                 }
@@ -329,9 +330,9 @@ public final class c {
                     break;
                 }
                 f fVar = fVarArr[i3];
-                e a3 = this.f1428c.a(String.format(Locale.getDefault(), "http://%s:%d/%s", fVar.b, 1230, "ping"), i);
+                e a3 = this.f1380c.a(String.format(Locale.getDefault(), "http://%s:%d/%s", fVar.b, 1230, "ping"), i);
                 if (a3 != null) {
-                    a3.e = fVar.f1436a;
+                    a3.e = fVar.f1388a;
                     arrayList.add(a3);
                 }
                 i2 = i3 + 1;

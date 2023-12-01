@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class PopGiftVoucherHelpBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29520a;
+    private final LinearLayout f15830a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29520a;
+        return this.f15830a;
     }
 }

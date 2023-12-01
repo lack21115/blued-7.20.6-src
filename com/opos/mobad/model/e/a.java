@@ -12,31 +12,31 @@ public class a {
 
     /* renamed from: com.opos.mobad.model.e.a$a  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/opos/mobad/model/e/a$a.class */
-    public static class C0707a {
+    public static class C0537a {
 
         /* renamed from: a  reason: collision with root package name */
-        public final AdData f26482a;
+        public final AdData f12794a;
         public final AdItemData b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final MaterialData f26483c;
+        public final MaterialData f12795c;
         public final MaterialFileData d;
         public final long e;
 
-        private C0707a(AdData adData, AdItemData adItemData, MaterialData materialData) {
+        private C0537a(AdData adData, AdItemData adItemData, MaterialData materialData) {
             this(adData, adItemData, materialData, (MaterialFileData) null);
         }
 
-        private C0707a(AdData adData, AdItemData adItemData, MaterialData materialData, MaterialFileData materialFileData) {
-            this.f26482a = adData;
+        private C0537a(AdData adData, AdItemData adItemData, MaterialData materialData, MaterialFileData materialFileData) {
+            this.f12794a = adData;
             this.b = adItemData;
-            this.f26483c = materialData;
+            this.f12795c = materialData;
             this.d = materialFileData;
             this.e = SystemClock.elapsedRealtime();
         }
     }
 
-    public static final C0707a a(AdData adData) {
+    public static final C0537a a(AdData adData) {
         List<AdItemData> f;
         MaterialData materialData;
         MaterialFileData materialFileData;
@@ -53,10 +53,10 @@ public class a {
             if (adItemData != null && adItemData.i() != null && adItemData.i().size() > 0 && (materialData = adItemData.i().get(0)) != null) {
                 int d = materialData.d();
                 if ((d == 4 || d == 9 || d == 10 || d == 11 || d == 12 || d == 13) ? false : true) {
-                    return new C0707a(adData, adItemData, materialData);
+                    return new C0537a(adData, adItemData, materialData);
                 }
                 if (materialData.F() != null && materialData.F().size() > 0 && (materialFileData = materialData.F().get(0)) != null) {
-                    return new C0707a(adData, adItemData, materialData, materialFileData);
+                    return new C0537a(adData, adItemData, materialData, materialFileData);
                 }
             }
             i = i2 + 1;

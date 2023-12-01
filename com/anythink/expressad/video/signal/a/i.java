@@ -7,11 +7,11 @@ import com.anythink.expressad.video.bt.module.AnythinkBTContainer;
 public final class i extends b {
 
     /* renamed from: a  reason: collision with root package name */
-    private Activity f8518a;
+    private Activity f5678a;
     private AnythinkBTContainer d;
 
     public i(Activity activity, AnythinkBTContainer anythinkBTContainer) {
-        this.f8518a = activity;
+        this.f5678a = activity;
         this.d = anythinkBTContainer;
     }
 

@@ -2,6 +2,7 @@ package com.soft.blued.ui.msg_group;
 
 import android.os.Bundle;
 import android.view.View;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.LifecycleOwnerKt;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,15 +15,17 @@ import com.soft.blued.R;
 import com.soft.blued.ui.msg_group.adapter.MyGroupAdapter;
 import java.util.List;
 import kotlin.Metadata;
+import kotlin.coroutines.CoroutineContext;
 import kotlin.jvm.internal.Intrinsics;
-import kotlinx.coroutines.BuildersKt__Builders_commonKt;
+import kotlinx.coroutines.BuildersKt;
+import kotlinx.coroutines.CoroutineStart;
 
 @Metadata
 /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/msg_group/TestFragment.class */
 public final class TestFragment extends MvpFragment<MvpPresenter> {
 
     /* renamed from: a  reason: collision with root package name */
-    public MyGroupAdapter f32622a;
+    public MyGroupAdapter f18931a;
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Code restructure failed: missing block: B:13:0x005e, code lost:
@@ -47,10 +50,10 @@ public final class TestFragment extends MvpFragment<MvpPresenter> {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(TestFragment this$0, View view) {
+    public static final void a(TestFragment testFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.t();
+        Intrinsics.e(testFragment, "this$0");
+        testFragment.t();
     }
 
     private final void a(List<GroupInfoModel> list) {
@@ -111,16 +114,15 @@ public final class TestFragment extends MvpFragment<MvpPresenter> {
     }
 
     private final void c() {
-        BuildersKt__Builders_commonKt.a(LifecycleOwnerKt.getLifecycleScope(this), null, null, new TestFragment$requestApi$1(this, null), 3, null);
+        BuildersKt.a(LifecycleOwnerKt.getLifecycleScope((LifecycleOwner) this), (CoroutineContext) null, (CoroutineStart) null, new TestFragment$requestApi$1(this, null), 3, (Object) null);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public void a(Bundle bundle) {
         super.a(bundle);
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.i.findViewById(2131370694);
-        RecyclerView recyclerView = (RecyclerView) this.i.findViewById(2131364150);
-        commonTopTitleNoTrans.setCenterText(getString(R.string.my_groups));
-        commonTopTitleNoTrans.setLeftClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg_group.-$$Lambda$TestFragment$OmE_wSnu0pTImQWcOTHFEEuozcs
+        CommonTopTitleNoTrans findViewById = this.i.findViewById(2131370694);
+        RecyclerView recyclerView = (RecyclerView) this.i.findViewById(R.id.group_list);
+        findViewById.setCenterText(getString(R.string.my_groups));
+        findViewById.setLeftClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg_group.-$$Lambda$TestFragment$OmE_wSnu0pTImQWcOTHFEEuozcs
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 TestFragment.a(TestFragment.this, view);
@@ -134,11 +136,11 @@ public final class TestFragment extends MvpFragment<MvpPresenter> {
 
     public final void a(MyGroupAdapter myGroupAdapter) {
         Intrinsics.e(myGroupAdapter, "<set-?>");
-        this.f32622a = myGroupAdapter;
+        this.f18931a = myGroupAdapter;
     }
 
     public final MyGroupAdapter b() {
-        MyGroupAdapter myGroupAdapter = this.f32622a;
+        MyGroupAdapter myGroupAdapter = this.f18931a;
         if (myGroupAdapter != null) {
             return myGroupAdapter;
         }
@@ -146,7 +148,6 @@ public final class TestFragment extends MvpFragment<MvpPresenter> {
         return null;
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public int g() {
         return R.layout.fm_my_group_new;
     }

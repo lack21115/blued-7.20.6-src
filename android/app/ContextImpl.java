@@ -1,5 +1,6 @@
 package android.app;
 
+import android.R;
 import android.accounts.AccountManager;
 import android.accounts.IAccountManager;
 import android.app.IAlarmManager;
@@ -467,7 +468,7 @@ public class ContextImpl extends Context {
             @Override // android.app.ContextImpl.ServiceFetcher
             public Object createService(ContextImpl contextImpl) {
                 Context outerContext = contextImpl.getOuterContext();
-                return new NotificationManager(new ContextThemeWrapper(outerContext, Resources.selectSystemTheme(0, outerContext.getApplicationInfo().targetSdkVersion, 16973835, 16973935, 16974126, 16974130)), contextImpl.mMainThread.getHandler());
+                return new NotificationManager(new ContextThemeWrapper(outerContext, Resources.selectSystemTheme(0, outerContext.getApplicationInfo().targetSdkVersion, R.style.Theme_Dialog, R.style.Theme_Holo_Dialog, R.style.Theme_DeviceDefault_Dialog, R.style.Theme_DeviceDefault_Light_Dialog)), contextImpl.mMainThread.getHandler());
             }
         });
         registerService(Context.NSD_SERVICE, new ServiceFetcher() { // from class: android.app.ContextImpl.28
@@ -476,10 +477,10 @@ public class ContextImpl extends Context {
                 return new NsdManager(contextImpl.getOuterContext(), INsdManager.Stub.asInterface(ServiceManager.getService(Context.NSD_SERVICE)));
             }
         });
-        registerService("power", new ServiceFetcher() { // from class: android.app.ContextImpl.29
+        registerService(Context.POWER_SERVICE, new ServiceFetcher() { // from class: android.app.ContextImpl.29
             @Override // android.app.ContextImpl.ServiceFetcher
             public Object createService(ContextImpl contextImpl) {
-                IPowerManager asInterface = IPowerManager.Stub.asInterface(ServiceManager.getService("power"));
+                IPowerManager asInterface = IPowerManager.Stub.asInterface(ServiceManager.getService(Context.POWER_SERVICE));
                 if (asInterface == null) {
                     Log.wtf(ContextImpl.TAG, "Failed to get power manager service.");
                 }

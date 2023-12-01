@@ -8,11 +8,11 @@ import java.util.List;
 public class f {
 
     /* renamed from: a  reason: collision with root package name */
-    private Camera f35454a;
+    private Camera f21763a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Camera.CameraInfo f35455c;
+    private Camera.CameraInfo f21764c;
     private com.tencent.cloud.huiyansdkface.a.a.a.a d;
     private List<com.tencent.cloud.huiyansdkface.a.c.d> e = new ArrayList();
 
@@ -21,8 +21,8 @@ public class f {
     }
 
     private a a(Camera.CameraInfo cameraInfo, int i) {
-        this.f35454a = Camera.open(i);
-        this.f35455c = cameraInfo;
+        this.f21763a = Camera.open(i);
+        this.f21764c = cameraInfo;
         this.b = i;
         return b();
     }
@@ -82,16 +82,16 @@ public class f {
 
     public void a() {
         synchronized (this) {
-            if (this.f35454a != null) {
-                com.tencent.cloud.huiyansdkface.a.d.a.a("V1Connector", "close camera:" + this.f35454a, new Object[0]);
-                this.f35454a.release();
-                this.f35455c = null;
-                this.f35454a = null;
+            if (this.f21763a != null) {
+                com.tencent.cloud.huiyansdkface.a.d.a.a("V1Connector", "close camera:" + this.f21763a, new Object[0]);
+                this.f21763a.release();
+                this.f21764c = null;
+                this.f21763a = null;
             }
         }
     }
 
     public a b() {
-        return new a().a(this.f35454a).a(this.f35455c.orientation).a(this.f35455c).a(this.d).b(this.b);
+        return new a().a(this.f21763a).a(this.f21764c.orientation).a(this.f21764c).a(this.d).b(this.b);
     }
 }

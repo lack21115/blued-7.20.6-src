@@ -30,9 +30,7 @@ import okio.ByteString;
 public final class Http2Connection implements Closeable {
     static final /* synthetic */ boolean p = !Http2Connection.class.desiredAssertionStatus();
     private static final ExecutorService q = new ThreadPoolExecutor(0, Integer.MAX_VALUE, 60, TimeUnit.SECONDS, new SynchronousQueue(), Util.a("OkHttp Http2Connection", true));
-
-    /* renamed from: a  reason: collision with root package name */
-    final boolean f43919a;
+    final boolean a;
     final Listener b;
     final String d;
     int e;
@@ -45,9 +43,7 @@ public final class Http2Connection implements Closeable {
     private boolean r;
     private final ScheduledExecutorService s;
     private final ExecutorService t;
-
-    /* renamed from: c  reason: collision with root package name */
-    final Map<Integer, Http2Stream> f43920c = new LinkedHashMap();
+    final Map<Integer, Http2Stream> c = new LinkedHashMap();
     private long u = 0;
     private long v = 0;
     private long w = 0;
@@ -62,16 +58,12 @@ public final class Http2Connection implements Closeable {
 
     /* loaded from: source-3503164-dex2jar.jar:okhttp3/internal/http2/Http2Connection$Builder.class */
     public static class Builder {
-
-        /* renamed from: a  reason: collision with root package name */
-        Socket f43934a;
+        Socket a;
         String b;
-
-        /* renamed from: c  reason: collision with root package name */
-        BufferedSource f43935c;
+        BufferedSource c;
         BufferedSink d;
         Listener e = Listener.f;
-        PushObserver f = PushObserver.f43961a;
+        PushObserver f = PushObserver.a;
         boolean g;
         int h;
 
@@ -85,9 +77,9 @@ public final class Http2Connection implements Closeable {
         }
 
         public Builder a(Socket socket, String str, BufferedSource bufferedSource, BufferedSink bufferedSink) {
-            this.f43934a = socket;
+            this.a = socket;
             this.b = str;
-            this.f43935c = bufferedSource;
+            this.c = bufferedSource;
             this.d = bufferedSink;
             return this;
         }
@@ -144,37 +136,31 @@ public final class Http2Connection implements Closeable {
 
     /* loaded from: source-3503164-dex2jar.jar:okhttp3/internal/http2/Http2Connection$PingRunnable.class */
     final class PingRunnable extends NamedRunnable {
-
-        /* renamed from: a  reason: collision with root package name */
-        final boolean f43937a;
+        final boolean a;
         final int b;
-
-        /* renamed from: c  reason: collision with root package name */
-        final int f43938c;
+        final int c;
 
         PingRunnable(boolean z, int i, int i2) {
             super("OkHttp %s ping %08x%08x", Http2Connection.this.d, Integer.valueOf(i), Integer.valueOf(i2));
-            this.f43937a = z;
+            this.a = z;
             this.b = i;
-            this.f43938c = i2;
+            this.c = i2;
         }
 
         @Override // okhttp3.internal.NamedRunnable
         public void execute() {
-            Http2Connection.this.a(this.f43937a, this.b, this.f43938c);
+            Http2Connection.this.a(this.a, this.b, this.c);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-3503164-dex2jar.jar:okhttp3/internal/http2/Http2Connection$ReaderRunnable.class */
     public class ReaderRunnable extends NamedRunnable implements Http2Reader.Handler {
-
-        /* renamed from: a  reason: collision with root package name */
-        final Http2Reader f43939a;
+        final Http2Reader a;
 
         ReaderRunnable(Http2Reader http2Reader) {
             super("OkHttp %s", Http2Connection.this.d);
-            this.f43939a = http2Reader;
+            this.a = http2Reader;
         }
 
         @Override // okhttp3.internal.http2.Http2Reader.Handler
@@ -199,10 +185,10 @@ public final class Http2Connection implements Closeable {
                 }
                 return;
             }
-            Http2Stream a2 = Http2Connection.this.a(i);
-            if (a2 != null) {
-                synchronized (a2) {
-                    a2.a(j);
+            Http2Stream a = Http2Connection.this.a(i);
+            if (a != null) {
+                synchronized (a) {
+                    a.a(j);
                 }
             }
         }
@@ -224,7 +210,7 @@ public final class Http2Connection implements Closeable {
             Http2Stream[] http2StreamArr;
             byteString.size();
             synchronized (Http2Connection.this) {
-                http2StreamArr = (Http2Stream[]) Http2Connection.this.f43920c.values().toArray(new Http2Stream[Http2Connection.this.f43920c.size()]);
+                http2StreamArr = (Http2Stream[]) Http2Connection.this.c.values().toArray(new Http2Stream[Http2Connection.this.c.size()]);
                 Http2Connection.this.r = true;
             }
             int length = http2StreamArr.length;
@@ -272,11 +258,11 @@ public final class Http2Connection implements Closeable {
                 return;
             }
             synchronized (Http2Connection.this) {
-                Http2Stream a2 = Http2Connection.this.a(i);
-                if (a2 != null) {
-                    a2.a(list);
+                Http2Stream a = Http2Connection.this.a(i);
+                if (a != null) {
+                    a.a(list);
                     if (z) {
-                        a2.i();
+                        a.i();
                     }
                 } else if (Http2Connection.this.r) {
                 } else {
@@ -288,7 +274,7 @@ public final class Http2Connection implements Closeable {
                     }
                     final Http2Stream http2Stream = new Http2Stream(i, Http2Connection.this, false, z, Util.b(list));
                     Http2Connection.this.e = i;
-                    Http2Connection.this.f43920c.put(Integer.valueOf(i), http2Stream);
+                    Http2Connection.this.c.put(Integer.valueOf(i), http2Stream);
                     Http2Connection.q.execute(new NamedRunnable("OkHttp %s stream %d", new Object[]{Http2Connection.this.d, Integer.valueOf(i)}) { // from class: okhttp3.internal.http2.Http2Connection.ReaderRunnable.1
                         @Override // okhttp3.internal.NamedRunnable
                         public void execute() {
@@ -314,17 +300,17 @@ public final class Http2Connection implements Closeable {
                 Http2Connection.this.a(i, bufferedSource, i2, z);
                 return;
             }
-            Http2Stream a2 = Http2Connection.this.a(i);
-            if (a2 == null) {
+            Http2Stream a = Http2Connection.this.a(i);
+            if (a == null) {
                 Http2Connection.this.a(i, ErrorCode.PROTOCOL_ERROR);
                 long j = i2;
                 Http2Connection.this.a(j);
                 bufferedSource.skip(j);
                 return;
             }
-            a2.a(bufferedSource, i2);
+            a.a(bufferedSource, i2);
             if (z) {
-                a2.i();
+                a.i();
             }
         }
 
@@ -358,8 +344,8 @@ public final class Http2Connection implements Closeable {
                     } else {
                         long j2 = d2 - d;
                         j = j2;
-                        if (!Http2Connection.this.f43920c.isEmpty()) {
-                            http2StreamArr = (Http2Stream[]) Http2Connection.this.f43920c.values().toArray(new Http2Stream[Http2Connection.this.f43920c.size()]);
+                        if (!Http2Connection.this.c.isEmpty()) {
+                            http2StreamArr = (Http2Stream[]) Http2Connection.this.c.values().toArray(new Http2Stream[Http2Connection.this.c.size()]);
                             j = j2;
                         }
                     }
@@ -405,8 +391,8 @@ public final class Http2Connection implements Closeable {
             try {
                 try {
                     try {
-                        this.f43939a.a(this);
-                        while (this.f43939a.a(false, (Http2Reader.Handler) this)) {
+                        this.a.a(this);
+                        while (this.a.a(false, (Http2Reader.Handler) this)) {
                         }
                         ErrorCode errorCode7 = ErrorCode.NO_ERROR;
                         errorCode6 = errorCode7;
@@ -418,7 +404,7 @@ public final class Http2Connection implements Closeable {
                             Http2Connection.this.a(errorCode5, errorCode4);
                         } catch (IOException e) {
                         }
-                        Util.a(this.f43939a);
+                        Util.a(this.a);
                         throw th;
                     }
                 } catch (IOException e2) {
@@ -431,13 +417,13 @@ public final class Http2Connection implements Closeable {
                 http2Connection.a(errorCode, errorCode2);
             } catch (IOException e3) {
             }
-            Util.a(this.f43939a);
+            Util.a(this.a);
         }
     }
 
     Http2Connection(Builder builder) {
         this.g = builder.f;
-        this.f43919a = builder.g;
+        this.a = builder.g;
         this.b = builder.e;
         this.f = builder.g ? 1 : 2;
         if (builder.g) {
@@ -455,9 +441,9 @@ public final class Http2Connection implements Closeable {
         this.k.a(7, 65535);
         this.k.a(5, 16384);
         this.i = this.k.d();
-        this.l = builder.f43934a;
-        this.m = new Http2Writer(builder.d, this.f43919a);
-        this.n = new ReaderRunnable(new Http2Reader(builder.f43935c, this.f43919a));
+        this.l = builder.a;
+        this.m = new Http2Writer(builder.d, this.a);
+        this.n = new ReaderRunnable(new Http2Reader(builder.c, this.a));
     }
 
     private void a(NamedRunnable namedRunnable) {
@@ -514,17 +500,17 @@ public final class Http2Connection implements Closeable {
     }
 
     public int a() {
-        int c2;
+        int c;
         synchronized (this) {
-            c2 = this.k.c(Integer.MAX_VALUE);
+            c = this.k.c(Integer.MAX_VALUE);
         }
-        return c2;
+        return c;
     }
 
     Http2Stream a(int i) {
         Http2Stream http2Stream;
         synchronized (this) {
-            http2Stream = this.f43920c.get(Integer.valueOf(i));
+            http2Stream = this.c.get(Integer.valueOf(i));
         }
         return http2Stream;
     }
@@ -582,15 +568,15 @@ public final class Http2Connection implements Closeable {
             a(new NamedRunnable("OkHttp %s Push Headers[%s]", new Object[]{this.d, Integer.valueOf(i)}) { // from class: okhttp3.internal.http2.Http2Connection.5
                 @Override // okhttp3.internal.NamedRunnable
                 public void execute() {
-                    boolean a2 = Http2Connection.this.g.a(i, list, z);
-                    if (a2) {
+                    boolean a = Http2Connection.this.g.a(i, list, z);
+                    if (a) {
                         try {
                             Http2Connection.this.m.a(i, ErrorCode.CANCEL);
                         } catch (IOException e) {
                             return;
                         }
                     }
-                    if (a2 || z) {
+                    if (a || z) {
                         synchronized (Http2Connection.this) {
                             Http2Connection.this.o.remove(Integer.valueOf(i));
                         }
@@ -628,11 +614,11 @@ public final class Http2Connection implements Closeable {
                 @Override // okhttp3.internal.NamedRunnable
                 public void execute() {
                     try {
-                        boolean a2 = Http2Connection.this.g.a(i, buffer, i2, z);
-                        if (a2) {
+                        boolean a = Http2Connection.this.g.a(i, buffer, i2, z);
+                        if (a) {
                             Http2Connection.this.m.a(i, ErrorCode.CANCEL);
                         }
-                        if (a2 || z) {
+                        if (a || z) {
                             synchronized (Http2Connection.this) {
                                 Http2Connection.this.o.remove(Integer.valueOf(i));
                             }
@@ -658,7 +644,7 @@ public final class Http2Connection implements Closeable {
             synchronized (this) {
                 while (this.i <= 0) {
                     try {
-                        if (!this.f43920c.containsKey(Integer.valueOf(i))) {
+                        if (!this.c.containsKey(Integer.valueOf(i))) {
                             throw new IOException("stream closed");
                         }
                         wait();
@@ -695,7 +681,7 @@ public final class Http2Connection implements Closeable {
                     return;
                 }
                 this.r = true;
-                this.m.a(this.e, errorCode, Util.f43840a);
+                this.m.a(this.e, errorCode, Util.a);
             }
         }
     }
@@ -754,7 +740,7 @@ public final class Http2Connection implements Closeable {
     public Http2Stream b(int i) {
         Http2Stream remove;
         synchronized (this) {
-            remove = this.f43920c.remove(Integer.valueOf(i));
+            remove = this.c.remove(Integer.valueOf(i));
             notifyAll();
         }
         return remove;

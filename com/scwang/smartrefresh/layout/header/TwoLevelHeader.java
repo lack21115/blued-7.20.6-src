@@ -20,7 +20,7 @@ import com.scwang.smartrefresh.layout.internal.InternalAbstract;
 public class TwoLevelHeader extends InternalAbstract implements RefreshHeader {
 
     /* renamed from: c  reason: collision with root package name */
-    protected int f27988c;
+    protected int f14300c;
     protected float d;
     protected float e;
     protected float f;
@@ -39,7 +39,7 @@ public class TwoLevelHeader extends InternalAbstract implements RefreshHeader {
     public static /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f27989a;
+        static final /* synthetic */ int[] f14301a;
         static final /* synthetic */ int[] b;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:16:0x0055 -> B:32:0x0014). Please submit an issue!!! */
@@ -59,21 +59,21 @@ public class TwoLevelHeader extends InternalAbstract implements RefreshHeader {
             } catch (NoSuchFieldError e2) {
             }
             int[] iArr2 = new int[RefreshState.values().length];
-            f27989a = iArr2;
+            f14301a = iArr2;
             try {
                 iArr2[RefreshState.TwoLevelReleased.ordinal()] = 1;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f27989a[RefreshState.TwoLevel.ordinal()] = 2;
+                f14301a[RefreshState.TwoLevel.ordinal()] = 2;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f27989a[RefreshState.TwoLevelFinish.ordinal()] = 3;
+                f14301a[RefreshState.TwoLevelFinish.ordinal()] = 3;
             } catch (NoSuchFieldError e5) {
             }
             try {
-                f27989a[RefreshState.PullDownToRefresh.ordinal()] = 4;
+                f14301a[RefreshState.PullDownToRefresh.ordinal()] = 4;
             } catch (NoSuchFieldError e6) {
             }
         }
@@ -140,10 +140,10 @@ public class TwoLevelHeader extends InternalAbstract implements RefreshHeader {
 
     protected void a(int i) {
         RefreshInternal refreshInternal = this.l;
-        if (this.f27988c == i || refreshInternal == null) {
+        if (this.f14300c == i || refreshInternal == null) {
             return;
         }
-        this.f27988c = i;
+        this.f14300c = i;
         int i2 = AnonymousClass1.b[refreshInternal.getSpinnerStyle().ordinal()];
         if (i2 == 1) {
             refreshInternal.getView().setTranslationY(i);
@@ -183,7 +183,7 @@ public class TwoLevelHeader extends InternalAbstract implements RefreshHeader {
         RefreshInternal refreshInternal = this.l;
         if (refreshInternal != null) {
             refreshInternal.a(refreshLayout, refreshState, refreshState2);
-            int i = AnonymousClass1.f27989a[refreshState2.ordinal()];
+            int i = AnonymousClass1.f14301a[refreshState2.ordinal()];
             if (i != 1) {
                 if (i == 3) {
                     if (refreshInternal.getView() != this) {
@@ -267,9 +267,8 @@ public class TwoLevelHeader extends InternalAbstract implements RefreshHeader {
         return (refreshInternal != null && refreshInternal.equals(obj)) || super.equals(obj);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         this.x = SpinnerStyle.MatchLayout;
         if (this.l == null) {
@@ -277,16 +276,14 @@ public class TwoLevelHeader extends InternalAbstract implements RefreshHeader {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.x = SpinnerStyle.FixedBehind;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onFinishInflate() {
+    protected void onFinishInflate() {
         super.onFinishInflate();
         int childCount = getChildCount();
         int i = 0;
@@ -309,9 +306,8 @@ public class TwoLevelHeader extends InternalAbstract implements RefreshHeader {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.RelativeLayout, android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         RefreshInternal refreshInternal = this.l;
         if (refreshInternal == null) {
             super.onMeasure(i, i2);

@@ -11,21 +11,21 @@ public class ucT3w extends s7Dnc {
     private WeakReference<View> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f39834c;
+    private int f26143c;
     private int d;
     private long e;
     private long f;
 
     public ucT3w() {
         super("3");
-        this.f39834c = 0;
+        this.f26143c = 0;
         this.d = 180;
     }
 
     private Bi3eT a(Bitmap bitmap, int i) {
         Bi3eT bi3eT = new Bi3eT();
         bi3eT.b = a();
-        bi3eT.f39810c = i;
+        bi3eT.f26119c = i;
         bi3eT.e = bitmap.getWidth();
         bi3eT.f = bitmap.getHeight();
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
@@ -51,7 +51,7 @@ public class ucT3w extends s7Dnc {
                 this.d = b2;
             }
             this.b = new WeakReference<>(b);
-            this.f39834c = 0;
+            this.f26143c = 0;
             hxUS9.b().a("checker_start_codes", a(), String.valueOf(0L));
             return 0L;
         }

@@ -16,14 +16,14 @@ import kotlin.jvm.JvmStatic;
 public final class YouMengUtils {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final YouMengUtils f34845a = new YouMengUtils();
+    public static final YouMengUtils f21154a = new YouMengUtils();
 
     private YouMengUtils() {
     }
 
     @JvmStatic
     public static final void a() {
-        UMConfigure.init(AppInfo.d(), BluedApplicationLike.umengAppKey, AppInfo.f9487c, 1, null);
+        UMConfigure.init(AppInfo.d(), BluedApplicationLike.umengAppKey, AppInfo.c, 1, null);
         UMCrash.setAppVersion("7.20.6.3", "", "");
         Bundle bundle = new Bundle();
         bundle.putBoolean("mCallNativeDefaultHandler", true);

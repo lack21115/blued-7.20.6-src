@@ -9,6 +9,7 @@ import android.os.Process;
 import android.os.StrictMode;
 import android.util.Log;
 import androidx.core.provider.FontsContractCompat;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.Closeable;
 import java.io.File;
 import java.io.FileInputStream;
@@ -134,7 +135,7 @@ public class TypefaceCompatUtil {
         if (cacheDir == null) {
             return null;
         }
-        String str = ".font" + Process.myPid() + "-" + Process.myTid() + "-";
+        String str = ".font" + Process.myPid() + Constants.ACCEPT_TIME_SEPARATOR_SERVER + Process.myTid() + Constants.ACCEPT_TIME_SEPARATOR_SERVER;
         int i = 0;
         while (true) {
             int i2 = i;

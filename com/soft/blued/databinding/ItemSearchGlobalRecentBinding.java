@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemSearchGlobalRecentBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final FrameLayout f29305a;
+    private final FrameLayout f15615a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f29305a;
+        return this.f15615a;
     }
 }

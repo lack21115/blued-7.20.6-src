@@ -2,7 +2,6 @@ package com.umeng.commonsdk.stateless;
 
 import android.content.Context;
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.umeng.analytics.pro.bh;
 import com.umeng.commonsdk.debug.UMRTLog;
 import com.umeng.commonsdk.framework.UMEnvelopeBuild;
@@ -24,18 +23,18 @@ import org.apache.http.conn.ssl.SSLSocketFactory;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f40894a = "10.0.0.172";
+    private String f27203a = "10.0.0.172";
     private int b = 80;
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f40895c;
+    private Context f27204c;
 
     public c(Context context) {
-        this.f40895c = context;
+        this.f27204c = context;
     }
 
     private void a() {
-        String imprintProperty = UMEnvelopeBuild.imprintProperty(this.f40895c, "sl_domain_p", "");
+        String imprintProperty = UMEnvelopeBuild.imprintProperty(this.f27204c, "sl_domain_p", "");
         if (TextUtils.isEmpty(imprintProperty)) {
             return;
         }
@@ -43,8 +42,8 @@ public class c {
     }
 
     private void b() {
-        String imprintProperty = UMEnvelopeBuild.imprintProperty(this.f40895c, "sl_domain_p", "");
-        String imprintProperty2 = UMEnvelopeBuild.imprintProperty(this.f40895c, "oversea_sl_domain_p", "");
+        String imprintProperty = UMEnvelopeBuild.imprintProperty(this.f27204c, "sl_domain_p", "");
+        String imprintProperty2 = UMEnvelopeBuild.imprintProperty(this.f27204c, "oversea_sl_domain_p", "");
         if (!TextUtils.isEmpty(imprintProperty)) {
             a.h = DataHelper.assembleStatelessURL(imprintProperty);
         }
@@ -80,7 +79,7 @@ public class c {
             b();
         }
         String str4 = a.i;
-        if (!com.umeng.commonsdk.vchannel.a.f40970c.equalsIgnoreCase(str)) {
+        if (!com.umeng.commonsdk.vchannel.a.f27279c.equalsIgnoreCase(str)) {
             str2 = str4;
         }
         UMRTLog.e(UMRTLog.RTLOG_TAG, "--->>> 无状态收数域名：" + str2);
@@ -125,7 +124,7 @@ public class c {
                     StringBuilder sb2 = new StringBuilder();
                     sb2.append("--->>> send stateless message success : ");
                     sb2.append(a.i);
-                    sb2.append(BridgeUtil.SPLIT_MARK);
+                    sb2.append("/");
                     sb2.append((String) str);
                     outputStream = outputStream3;
                     outputStream2 = outputStream3;

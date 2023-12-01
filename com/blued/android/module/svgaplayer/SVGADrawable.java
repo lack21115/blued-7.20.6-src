@@ -15,13 +15,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/svgaplayer/SVGADrawable.class */
 public final class SVGADrawable extends Drawable {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final SVGAVideoEntity f15944a;
+    private final SVGAVideoEntity a;
     private final SVGADynamicEntity b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private boolean f15945c;
+    private boolean c;
     private int d;
     private ImageView.ScaleType e;
     private final SVGACanvasDrawer f;
@@ -35,15 +31,15 @@ public final class SVGADrawable extends Drawable {
     public SVGADrawable(SVGAVideoEntity videoItem, SVGADynamicEntity dynamicItem) {
         Intrinsics.e(videoItem, "videoItem");
         Intrinsics.e(dynamicItem, "dynamicItem");
-        this.f15944a = videoItem;
+        this.a = videoItem;
         this.b = dynamicItem;
-        this.f15945c = true;
+        this.c = true;
         this.e = ImageView.ScaleType.MATRIX;
-        this.f = new SVGACanvasDrawer(this.f15944a, this.b);
+        this.f = new SVGACanvasDrawer(this.a, this.b);
     }
 
     public final SVGAVideoEntity a() {
-        return this.f15944a;
+        return this.a;
     }
 
     public final void a(int i) {
@@ -60,10 +56,10 @@ public final class SVGADrawable extends Drawable {
     }
 
     public final void a(boolean z) {
-        if (this.f15945c == z) {
+        if (this.c == z) {
             return;
         }
-        this.f15945c = z;
+        this.c = z;
         invalidateSelf();
     }
 
@@ -77,18 +73,18 @@ public final class SVGADrawable extends Drawable {
 
     public final void d() {
         List<SVGAAudioEntity> g;
-        SVGAVideoData a2 = this.f15944a.a();
-        if (a2 == null || (g = a2.g()) == null) {
+        SVGAVideoData a = this.a.a();
+        if (a == null || (g = a.g()) == null) {
             return;
         }
         for (SVGAAudioEntity sVGAAudioEntity : g) {
             Integer e = sVGAAudioEntity.e();
             if (e != null) {
                 int intValue = e.intValue();
-                if (SVGASoundManager.f15975a.a()) {
-                    SVGASoundManager.f15975a.c(intValue);
+                if (SVGASoundManager.a.a()) {
+                    SVGASoundManager.a.c(intValue);
                 } else {
-                    SoundPool b = this.f15944a.b();
+                    SoundPool b = this.a.b();
                     if (b != null) {
                         b.stop(intValue);
                     }
@@ -100,7 +96,7 @@ public final class SVGADrawable extends Drawable {
     @Override // android.graphics.drawable.Drawable
     public void draw(Canvas canvas) {
         Intrinsics.e(canvas, "canvas");
-        if (this.f15945c) {
+        if (this.c) {
             return;
         }
         this.f.a(canvas, this.d, this.e);
@@ -108,16 +104,16 @@ public final class SVGADrawable extends Drawable {
 
     public final void e() {
         List<SVGAAudioEntity> g;
-        SVGAVideoData a2 = this.f15944a.a();
-        if (a2 != null && (g = a2.g()) != null) {
+        SVGAVideoData a = this.a.a();
+        if (a != null && (g = a.g()) != null) {
             for (SVGAAudioEntity sVGAAudioEntity : g) {
                 Integer e = sVGAAudioEntity.e();
                 if (e != null) {
                     int intValue = e.intValue();
-                    if (SVGASoundManager.f15975a.a()) {
-                        SVGASoundManager.f15975a.c(intValue);
+                    if (SVGASoundManager.a.a()) {
+                        SVGASoundManager.a.c(intValue);
                     } else {
-                        SoundPool b = this.f15944a.b();
+                        SoundPool b = this.a.b();
                         if (b != null) {
                             b.stop(intValue);
                         }
@@ -126,7 +122,7 @@ public final class SVGADrawable extends Drawable {
                 sVGAAudioEntity.b(null);
             }
         }
-        this.f15944a.c();
+        this.a.c();
     }
 
     @Override // android.graphics.drawable.Drawable

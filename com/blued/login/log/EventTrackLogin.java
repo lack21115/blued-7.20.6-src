@@ -11,7 +11,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class EventTrackLogin {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final EventTrackLogin f20558a = new EventTrackLogin();
+    public static final EventTrackLogin f6952a = new EventTrackLogin();
 
     private EventTrackLogin() {
     }

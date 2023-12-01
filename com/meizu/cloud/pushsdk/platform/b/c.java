@@ -15,11 +15,11 @@ import java.util.concurrent.ScheduledExecutorService;
 public abstract class c<T extends BasicPushStatus> {
 
     /* renamed from: a  reason: collision with root package name */
-    protected final Context f24187a;
+    protected final Context f10572a;
     protected String b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected String f24188c;
+    protected String f10573c;
     protected String d;
     protected final com.meizu.cloud.pushsdk.platform.a.a e;
     private ScheduledExecutorService h;
@@ -29,9 +29,9 @@ public abstract class c<T extends BasicPushStatus> {
 
     public c(Context context, String str, String str2, com.meizu.cloud.pushsdk.platform.a.a aVar, ScheduledExecutorService scheduledExecutorService) {
         this.h = scheduledExecutorService;
-        this.f24187a = context;
+        this.f10572a = context;
         this.b = str;
-        this.f24188c = str2;
+        this.f10573c = str2;
         this.e = aVar;
     }
 
@@ -48,7 +48,7 @@ public abstract class c<T extends BasicPushStatus> {
     }
 
     private boolean h() {
-        return this.g && !this.f24187a.getPackageName().equals(this.i);
+        return this.g && !this.f10572a.getPackageName().equals(this.i);
     }
 
     protected String a(Context context, String str) {
@@ -89,7 +89,7 @@ public abstract class c<T extends BasicPushStatus> {
         try {
             intent.setPackage(this.i);
             intent.setAction(PushConstants.MZ_PUSH_MANAGER_SERVICE_ACTION);
-            this.f24187a.startService(intent);
+            this.f10572a.startService(intent);
         } catch (Exception e) {
             DebugLogger.e("Strategy", "start RemoteService error " + e.getMessage());
         }
@@ -112,7 +112,7 @@ public abstract class c<T extends BasicPushStatus> {
     protected abstract Intent c();
 
     public void c(String str) {
-        this.f24188c = str;
+        this.f10573c = str;
     }
 
     public void d(String str) {
@@ -130,7 +130,7 @@ public abstract class c<T extends BasicPushStatus> {
     protected abstract int g();
 
     protected boolean k() {
-        return this.g && this.f && !TextUtils.isEmpty(a(this.f24187a, PushConstants.MZ_PUSH_MANAGER_SERVICE_ACTION));
+        return this.g && this.f && !TextUtils.isEmpty(a(this.f10572a, PushConstants.MZ_PUSH_MANAGER_SERVICE_ACTION));
     }
 
     protected boolean l() {

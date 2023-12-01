@@ -27,14 +27,14 @@ import java.util.List;
 public class AtChooseUserHelper {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f34717a;
+    private Context f21026a;
     private List<UserBasicModel> b = new ArrayList();
 
     /* renamed from: c  reason: collision with root package name */
-    private String f34718c = a("0");
+    private String f21027c = a("0");
 
     public AtChooseUserHelper(Context context) {
-        this.f34717a = context;
+        this.f21026a = context;
     }
 
     public static String a(String str) {
@@ -85,7 +85,7 @@ public class AtChooseUserHelper {
                 this.b = new ArrayList();
             }
             this.b.add(userBasicModel);
-            String str3 = "@" + userBasicModel.name + " " + this.f34718c;
+            String str3 = "@" + userBasicModel.name + " " + this.f21027c;
             Editable text2 = editText.getText();
             int selectionEnd = editText.getSelectionEnd();
             if (selectionEnd != 0) {
@@ -99,7 +99,7 @@ public class AtChooseUserHelper {
             editText.setText("");
             editText.append(text);
             SpannableString spannableString = new SpannableString(str3);
-            spannableString.setSpan(new ForegroundColorSpan(this.f34717a.getResources().getColor(2131101766)), 0, str3.length(), 33);
+            spannableString.setSpan(new ForegroundColorSpan(this.f21026a.getResources().getColor(2131101766)), 0, str3.length(), 33);
             spannableString.setSpan(new StyleSpan(1), 0, str3.length(), 33);
             editText.addTextChangedListener(textWatcher);
             editText.append(spannableString);
@@ -124,12 +124,12 @@ public class AtChooseUserHelper {
                 return false;
             }
             int i5 = i2 + 1;
-            if (this.f34718c.equals(str.substring(i2, i5))) {
+            if (this.f21027c.equals(str.substring(i2, i5))) {
                 if (str.length() < i5) {
                     i5 = str.length();
                 }
                 int i6 = i5 - 1;
-                if (this.f34718c.equals(str.substring(i6, i5))) {
+                if (this.f21027c.equals(str.substring(i6, i5))) {
                     CharSequence subSequence = editable.subSequence(0, i6);
                     String[] split = (((Object) subSequence) + "").split("@");
                     if (split.length >= 2) {
@@ -202,10 +202,10 @@ public class AtChooseUserHelper {
             }
             while (true) {
                 str3 = str2;
-                if (!str2.contains(this.f34718c)) {
+                if (!str2.contains(this.f21027c)) {
                     break;
                 }
-                str2 = str2.replace(this.f34718c, "");
+                str2 = str2.replace(this.f21027c, "");
             }
         }
         return str3;

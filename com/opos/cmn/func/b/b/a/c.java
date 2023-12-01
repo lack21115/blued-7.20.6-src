@@ -6,11 +6,11 @@ import java.util.List;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    public final boolean f24840a;
+    public final boolean f11152a;
     public final String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final String f24841c;
+    public final String f11153c;
     public final boolean d;
     public final List<String> e;
     public final b f;
@@ -20,12 +20,12 @@ public class c {
         private String b;
 
         /* renamed from: c  reason: collision with root package name */
-        private String f24843c;
+        private String f11155c;
         private List<String> e;
         private b f;
 
         /* renamed from: a  reason: collision with root package name */
-        private boolean f24842a = true;
+        private boolean f11154a = true;
         private boolean d = true;
 
         public c a() {
@@ -38,15 +38,15 @@ public class c {
     }
 
     private c(a aVar) {
-        this.f24840a = aVar.f24842a;
+        this.f11152a = aVar.f11154a;
         this.b = aVar.b;
-        this.f24841c = aVar.f24843c;
+        this.f11153c = aVar.f11155c;
         this.d = aVar.d;
         this.e = aVar.e;
         this.f = aVar.f;
     }
 
     public String toString() {
-        return "HttpDnsConfig{enableHttpDns=" + this.f24840a + ", region='" + this.b + "', appVersion='" + this.f24841c + "', enableDnUnit=" + this.d + ", innerWhiteList=" + this.e + ", accountCallback=" + this.f + '}';
+        return "HttpDnsConfig{enableHttpDns=" + this.f11152a + ", region='" + this.b + "', appVersion='" + this.f11153c + "', enableDnUnit=" + this.d + ", innerWhiteList=" + this.e + ", accountCallback=" + this.f + '}';
     }
 }

@@ -11,11 +11,11 @@ import java.security.MessageDigest;
 public class c implements com.tencent.qmsp.sdk.base.b {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f38616a;
+    private Context f24925a;
     private IVendorCallback b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f38617c = null;
+    private String f24926c = null;
     private boolean d = false;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/qmsp/sdk/g/b/c$a.class */
@@ -26,25 +26,25 @@ public class c implements com.tencent.qmsp.sdk.base.b {
         @Override // java.lang.Runnable
         public void run() {
             try {
-                a.C0993a a2 = com.tencent.qmsp.sdk.g.b.a.a(c.this.f38616a);
-                c.this.f38617c = a2.a();
+                a.C0823a a2 = com.tencent.qmsp.sdk.g.b.a.a(c.this.f24925a);
+                c.this.f24926c = a2.a();
                 a2.b();
-                if (!TextUtils.isEmpty(c.this.f38617c)) {
+                if (!TextUtils.isEmpty(c.this.f24926c)) {
                     c.this.d = true;
                 }
                 if (c.this.b != null) {
-                    c.this.b.onResult(c.this.d, c.this.a(f.a(c.this.f38616a)), c.this.f38617c);
+                    c.this.b.onResult(c.this.d, c.this.a(f.a(c.this.f24925a)), c.this.f24926c);
                 }
             } catch (Exception e) {
                 e.printStackTrace();
-                if (TextUtils.isEmpty(c.this.f38617c)) {
+                if (TextUtils.isEmpty(c.this.f24926c)) {
                     c.this.d = false;
                 }
                 if (c.this.b != null) {
                     IVendorCallback iVendorCallback = c.this.b;
                     boolean z = c.this.d;
                     c cVar = c.this;
-                    iVendorCallback.onResult(z, cVar.a(f.a(cVar.f38616a)), c.this.f38617c);
+                    iVendorCallback.onResult(z, cVar.a(f.a(cVar.f24925a)), c.this.f24926c);
                 }
             }
         }
@@ -92,18 +92,18 @@ public class c implements com.tencent.qmsp.sdk.base.b {
 
     @Override // com.tencent.qmsp.sdk.base.b
     public String a() {
-        return this.f38617c;
+        return this.f24926c;
     }
 
     @Override // com.tencent.qmsp.sdk.base.b
     public void a(Context context, IVendorCallback iVendorCallback) {
-        this.f38616a = context;
+        this.f24925a = context;
         this.b = iVendorCallback;
     }
 
     @Override // com.tencent.qmsp.sdk.base.b
     public String b() {
-        return a(f.a(this.f38616a));
+        return a(f.a(this.f24925a));
     }
 
     @Override // com.tencent.qmsp.sdk.base.b

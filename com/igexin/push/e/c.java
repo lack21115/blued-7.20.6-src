@@ -7,10 +7,10 @@ import com.igexin.sdk.main.FeedbackImpl;
 public class c implements com.igexin.push.e.b.c {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f23614a = c.class.getName();
+    public static final String f10006a = c.class.getName();
 
     /* renamed from: c  reason: collision with root package name */
-    private static final long f23615c = 3600000;
+    private static final long f10007c = 3600000;
     public long b = 0;
 
     @Override // com.igexin.push.e.b.c

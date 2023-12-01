@@ -10,21 +10,17 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ItemYyPopularLayoutBinding.class */
 public final class ItemYyPopularLayoutBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f16780a;
+    public final ImageView a;
     public final ConstraintLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final RecyclerView f16781c;
+    public final RecyclerView c;
     public final TextView d;
     private final ConstraintLayout e;
 
     private ItemYyPopularLayoutBinding(ConstraintLayout constraintLayout, ImageView imageView, ConstraintLayout constraintLayout2, RecyclerView recyclerView, TextView textView) {
         this.e = constraintLayout;
-        this.f16780a = imageView;
+        this.a = imageView;
         this.b = constraintLayout2;
-        this.f16781c = recyclerView;
+        this.c = recyclerView;
         this.d = textView;
     }
 
@@ -32,13 +28,13 @@ public final class ItemYyPopularLayoutBinding implements ViewBinding {
         String str;
         ImageView imageView = (ImageView) view.findViewById(R.id.img_entertainment);
         if (imageView != null) {
-            ConstraintLayout constraintLayout = (ConstraintLayout) view.findViewById(R.id.ll_title);
-            if (constraintLayout != null) {
-                RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rv_popular_list);
-                if (recyclerView != null) {
+            ConstraintLayout findViewById = view.findViewById(R.id.ll_title);
+            if (findViewById != null) {
+                RecyclerView findViewById2 = view.findViewById(R.id.rv_popular_list);
+                if (findViewById2 != null) {
                     TextView textView = (TextView) view.findViewById(R.id.tv_popular_title);
                     if (textView != null) {
-                        return new ItemYyPopularLayoutBinding((ConstraintLayout) view, imageView, constraintLayout, recyclerView, textView);
+                        return new ItemYyPopularLayoutBinding((ConstraintLayout) view, imageView, findViewById, findViewById2, textView);
                     }
                     str = "tvPopularTitle";
                 } else {
@@ -53,7 +49,6 @@ public final class ItemYyPopularLayoutBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.e;

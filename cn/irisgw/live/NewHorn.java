@@ -57,8 +57,8 @@ public final class NewHorn extends GeneratedMessageV3 implements NewHornOrBuilde
     private volatile Object uid_;
     private static final NewHorn DEFAULT_INSTANCE = new NewHorn();
     private static final Parser<NewHorn> PARSER = new AbstractParser<NewHorn>() { // from class: cn.irisgw.live.NewHorn.1
-        @Override // com.google.protobuf.Parser
-        public NewHorn parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        /* renamed from: parsePartialFrom */
+        public NewHorn m6223parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             return new NewHorn(codedInputStream, extensionRegistryLite);
         }
     };
@@ -129,22 +129,22 @@ public final class NewHorn extends GeneratedMessageV3 implements NewHornOrBuilde
             boolean unused = NewHorn.alwaysUseFieldBuilders;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: addRepeatedField */
+        public Builder m6225addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.addRepeatedField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public NewHorn build() {
-            NewHorn buildPartial = buildPartial();
-            if (buildPartial.isInitialized()) {
-                return buildPartial;
+        /* renamed from: build */
+        public NewHorn m6227build() {
+            NewHorn m6229buildPartial = m6229buildPartial();
+            if (m6229buildPartial.isInitialized()) {
+                return m6229buildPartial;
             }
-            throw newUninitializedMessageException((Message) buildPartial);
+            throw newUninitializedMessageException(m6229buildPartial);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public NewHorn buildPartial() {
+        /* renamed from: buildPartial */
+        public NewHorn m6229buildPartial() {
             NewHorn newHorn = new NewHorn(this);
             newHorn.scene_ = this.scene_;
             newHorn.iconImage_ = this.iconImage_;
@@ -168,8 +168,8 @@ public final class NewHorn extends GeneratedMessageV3 implements NewHornOrBuilde
             return newHorn;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public Builder clear() {
+        /* renamed from: clear */
+        public Builder m6233clear() {
             super.clear();
             this.scene_ = 0;
             this.iconImage_ = "";
@@ -216,8 +216,8 @@ public final class NewHorn extends GeneratedMessageV3 implements NewHornOrBuilde
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+        /* renamed from: clearField */
+        public Builder m6235clearField(Descriptors.FieldDescriptor fieldDescriptor) {
             return (Builder) super.clearField(fieldDescriptor);
         }
 
@@ -269,8 +269,8 @@ public final class NewHorn extends GeneratedMessageV3 implements NewHornOrBuilde
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+        /* renamed from: clearOneof */
+        public Builder m6238clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
             return (Builder) super.clearOneof(oneofDescriptor);
         }
 
@@ -310,10 +310,9 @@ public final class NewHorn extends GeneratedMessageV3 implements NewHornOrBuilde
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder m6244clone() {
+            return (Builder) super.clone();
         }
 
         @Override // cn.irisgw.live.NewHornOrBuilder
@@ -382,12 +381,11 @@ public final class NewHorn extends GeneratedMessageV3 implements NewHornOrBuilde
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public NewHorn getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public NewHorn m6246getDefaultInstanceForType() {
             return NewHorn.getDefaultInstance();
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
         public Descriptors.Descriptor getDescriptorForType() {
             return LiveConstants.internal_static_cn_irisgw_live_NewHorn_descriptor;
         }
@@ -654,12 +652,10 @@ public final class NewHorn extends GeneratedMessageV3 implements NewHornOrBuilde
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_NewHorn_fieldAccessorTable.ensureFieldAccessorsInitialized(NewHorn.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             return true;
         }
@@ -736,18 +732,18 @@ public final class NewHorn extends GeneratedMessageV3 implements NewHornOrBuilde
                 this.link_ = newHorn.link_;
                 onChanged();
             }
-            mergeUnknownFields(newHorn.unknownFields);
+            m6255mergeUnknownFields(newHorn.unknownFields);
             onChanged();
             return this;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+        /* renamed from: mergeFrom */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
         */
-        public cn.irisgw.live.NewHorn.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+        public cn.irisgw.live.NewHorn.Builder m6252mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
             /*
                 r4 = this;
                 r0 = 0
@@ -792,11 +788,11 @@ public final class NewHorn extends GeneratedMessageV3 implements NewHornOrBuilde
                 r0 = r6
                 throw r0
             */
-            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.NewHorn.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.NewHorn$Builder");
+            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.NewHorn.Builder.m6252mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.NewHorn$Builder");
         }
 
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder mergeFrom(Message message) {
+        /* renamed from: mergeFrom */
+        public Builder m6251mergeFrom(Message message) {
             if (message instanceof NewHorn) {
                 return mergeFrom((NewHorn) message);
             }
@@ -804,8 +800,8 @@ public final class NewHorn extends GeneratedMessageV3 implements NewHornOrBuilde
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: mergeUnknownFields */
+        public final Builder m6255mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.mergeUnknownFields(unknownFieldSet);
         }
 
@@ -872,8 +868,8 @@ public final class NewHorn extends GeneratedMessageV3 implements NewHornOrBuilde
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: setField */
+        public Builder m6257setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.setField(fieldDescriptor, obj);
         }
 
@@ -1041,8 +1037,8 @@ public final class NewHorn extends GeneratedMessageV3 implements NewHornOrBuilde
             throw null;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+        /* renamed from: setRepeatedField */
+        public Builder m6259setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
             return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
         }
 
@@ -1109,8 +1105,8 @@ public final class NewHorn extends GeneratedMessageV3 implements NewHornOrBuilde
             throw null;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: setUnknownFields */
+        public final Builder m6261setUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.setUnknownFields(unknownFieldSet);
         }
     }
@@ -1209,10 +1205,10 @@ public final class NewHorn extends GeneratedMessageV3 implements NewHornOrBuilde
                             }
                     }
                     z = true;
-                } catch (InvalidProtocolBufferException e) {
-                    throw e.setUnfinishedMessage(this);
-                } catch (IOException e2) {
-                    throw new InvalidProtocolBufferException(e2).setUnfinishedMessage(this);
+                } catch (IOException e) {
+                    throw new InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+                } catch (InvalidProtocolBufferException e2) {
+                    throw e2.setUnfinishedMessage(this);
                 }
             } finally {
                 this.unknownFields = newBuilder.build();
@@ -1235,66 +1231,65 @@ public final class NewHorn extends GeneratedMessageV3 implements NewHornOrBuilde
     }
 
     public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
+        return DEFAULT_INSTANCE.m6222toBuilder();
     }
 
     public static Builder newBuilder(NewHorn newHorn) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(newHorn);
+        return DEFAULT_INSTANCE.m6222toBuilder().mergeFrom(newHorn);
     }
 
     public static NewHorn parseDelimitedFrom(InputStream inputStream) throws IOException {
-        return (NewHorn) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
     }
 
     public static NewHorn parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (NewHorn) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static NewHorn parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString);
+        return (NewHorn) PARSER.parseFrom(byteString);
     }
 
     public static NewHorn parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString, extensionRegistryLite);
+        return (NewHorn) PARSER.parseFrom(byteString, extensionRegistryLite);
     }
 
     public static NewHorn parseFrom(CodedInputStream codedInputStream) throws IOException {
-        return (NewHorn) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
     }
 
     public static NewHorn parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (NewHorn) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
     }
 
     public static NewHorn parseFrom(InputStream inputStream) throws IOException {
-        return (NewHorn) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
     }
 
     public static NewHorn parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (NewHorn) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static NewHorn parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer);
+        return (NewHorn) PARSER.parseFrom(byteBuffer);
     }
 
     public static NewHorn parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+        return (NewHorn) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
     }
 
     public static NewHorn parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr);
+        return (NewHorn) PARSER.parseFrom(bArr);
     }
 
     public static NewHorn parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr, extensionRegistryLite);
+        return (NewHorn) PARSER.parseFrom(bArr, extensionRegistryLite);
     }
 
     public static Parser<NewHorn> parser() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
@@ -1372,8 +1367,8 @@ public final class NewHorn extends GeneratedMessageV3 implements NewHornOrBuilde
         return (ByteString) obj;
     }
 
-    @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-    public NewHorn getDefaultInstanceForType() {
+    /* renamed from: getDefaultInstanceForType */
+    public NewHorn m6217getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
     }
 
@@ -1541,7 +1536,6 @@ public final class NewHorn extends GeneratedMessageV3 implements NewHornOrBuilde
         return this.linkType_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
     public Parser<NewHorn> getParserForType() {
         return PARSER;
     }
@@ -1600,7 +1594,6 @@ public final class NewHorn extends GeneratedMessageV3 implements NewHornOrBuilde
         return this.scene_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public int getSerializedSize() {
         int i = this.memoizedSize;
         if (i != -1) {
@@ -1731,12 +1724,10 @@ public final class NewHorn extends GeneratedMessageV3 implements NewHornOrBuilde
         return (ByteString) obj;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
     public final UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public int hashCode() {
         if (this.memoizedHashCode != 0) {
             return this.memoizedHashCode;
@@ -1746,12 +1737,10 @@ public final class NewHorn extends GeneratedMessageV3 implements NewHornOrBuilde
         return hashCode;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
         return LiveConstants.internal_static_cn_irisgw_live_NewHorn_fieldAccessorTable.ensureFieldAccessorsInitialized(NewHorn.class, Builder.class);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
     public final boolean isInitialized() {
         byte b = this.memoizedIsInitialized;
         if (b == 1) {
@@ -1764,28 +1753,26 @@ public final class NewHorn extends GeneratedMessageV3 implements NewHornOrBuilde
         return true;
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder newBuilderForType() {
+    /* renamed from: newBuilderForType */
+    public Builder m6220newBuilderForType() {
         return newBuilder();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.protobuf.GeneratedMessageV3
-    public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+    /* renamed from: newBuilderForType */
+    public Builder m6219newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
         return new Builder(builderParent);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
         return new NewHorn();
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder toBuilder() {
+    /* renamed from: toBuilder */
+    public Builder m6222toBuilder() {
         return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
         int i = this.scene_;
         if (i != 0) {

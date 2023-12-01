@@ -10,10 +10,10 @@ import org.json.JSONObject;
 class cq {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f41316a;
+    private String f27625a;
 
     /* renamed from: a  reason: collision with other field name */
-    private final ArrayList<cp> f262a = new ArrayList<>();
+    private final ArrayList<cp> f215a = new ArrayList<>();
 
     public cq() {
     }
@@ -22,20 +22,20 @@ class cq {
         if (TextUtils.isEmpty(str)) {
             throw new IllegalArgumentException("the host is empty");
         }
-        this.f41316a = str;
+        this.f27625a = str;
     }
 
     public cp a() {
         synchronized (this) {
-            int size = this.f262a.size();
+            int size = this.f215a.size();
             while (true) {
                 int i = size - 1;
                 if (i < 0) {
                     return null;
                 }
-                cp cpVar = this.f262a.get(i);
-                if (cpVar.m11590a()) {
-                    ct.a().m11602a(cpVar.a());
+                cp cpVar = this.f215a.get(i);
+                if (cpVar.m8540a()) {
+                    ct.a().m8552a(cpVar.a());
                     return cpVar;
                 }
                 size = i;
@@ -45,13 +45,13 @@ class cq {
 
     public cq a(JSONObject jSONObject) {
         synchronized (this) {
-            this.f41316a = jSONObject.getString("host");
+            this.f27625a = jSONObject.getString("host");
             JSONArray jSONArray = jSONObject.getJSONArray("fbs");
             int i = 0;
             while (true) {
                 int i2 = i;
                 if (i2 < jSONArray.length()) {
-                    this.f262a.add(new cp(this.f41316a).a(jSONArray.getJSONObject(i2)));
+                    this.f215a.add(new cp(this.f27625a).a(jSONArray.getJSONObject(i2)));
                     i = i2 + 1;
                 }
             }
@@ -60,25 +60,25 @@ class cq {
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public String m11591a() {
-        return this.f41316a;
+    public String m8541a() {
+        return this.f27625a;
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public ArrayList<cp> m11592a() {
-        return this.f262a;
+    public ArrayList<cp> m8542a() {
+        return this.f215a;
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public JSONObject m11593a() {
+    public JSONObject m8543a() {
         JSONObject jSONObject;
         synchronized (this) {
             jSONObject = new JSONObject();
-            jSONObject.put("host", this.f41316a);
+            jSONObject.put("host", this.f27625a);
             JSONArray jSONArray = new JSONArray();
-            Iterator<cp> it = this.f262a.iterator();
+            Iterator<cp> it = this.f215a.iterator();
             while (it.hasNext()) {
-                jSONArray.put(it.next().m11588a());
+                jSONArray.put(it.next().m8538a());
             }
             jSONObject.put("fbs", jSONArray);
         }
@@ -91,17 +91,17 @@ class cq {
             int i2 = 0;
             while (true) {
                 i = i2;
-                if (i >= this.f262a.size()) {
+                if (i >= this.f215a.size()) {
                     break;
-                } else if (this.f262a.get(i).a(cpVar)) {
-                    this.f262a.set(i, cpVar);
+                } else if (this.f215a.get(i).a(cpVar)) {
+                    this.f215a.set(i, cpVar);
                     break;
                 } else {
                     i2 = i + 1;
                 }
             }
-            if (i >= this.f262a.size()) {
-                this.f262a.add(cpVar);
+            if (i >= this.f215a.size()) {
+                this.f215a.add(cpVar);
             }
         }
     }
@@ -109,14 +109,14 @@ class cq {
     public void a(boolean z) {
         ArrayList<cp> arrayList;
         synchronized (this) {
-            int size = this.f262a.size();
+            int size = this.f215a.size();
             while (true) {
                 int i = size - 1;
                 if (i >= 0) {
-                    cp cpVar = this.f262a.get(i);
+                    cp cpVar = this.f215a.get(i);
                     if (z) {
                         if (cpVar.c()) {
-                            arrayList = this.f262a;
+                            arrayList = this.f215a;
                             arrayList.remove(i);
                             size = i;
                         } else {
@@ -125,7 +125,7 @@ class cq {
                     } else if (cpVar.b()) {
                         size = i;
                     } else {
-                        arrayList = this.f262a;
+                        arrayList = this.f215a;
                         arrayList.remove(i);
                         size = i;
                     }
@@ -136,9 +136,9 @@ class cq {
 
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(this.f41316a);
+        sb.append(this.f27625a);
         sb.append("\n");
-        Iterator<cp> it = this.f262a.iterator();
+        Iterator<cp> it = this.f215a.iterator();
         while (it.hasNext()) {
             sb.append(it.next());
         }

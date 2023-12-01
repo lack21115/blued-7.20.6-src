@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentMainMsgBoxSettingBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f28885a;
+    private final LinearLayout f15195a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f28885a;
+        return this.f15195a;
     }
 }

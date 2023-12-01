@@ -23,14 +23,14 @@ public class l1111l111111Il {
 
     /* renamed from: com.ishumei.l111l11111Il.l111l11111lIl.l1111l111111Il$l1111l111111Il  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/ishumei/l111l11111Il/l111l11111lIl/l1111l111111Il$l1111l111111Il.class */
-    public static class C0454l1111l111111Il {
+    public static class C0284l1111l111111Il {
         public final X509Certificate[][] l1111l111111Il;
         private byte[] l111l11111lIl;
 
-        public C0454l1111l111111Il() {
+        public C0284l1111l111111Il() {
         }
 
-        public C0454l1111l111111Il(X509Certificate[][] x509CertificateArr, byte[] bArr) {
+        public C0284l1111l111111Il(X509Certificate[][] x509CertificateArr, byte[] bArr) {
             this.l1111l111111Il = x509CertificateArr;
             this.l111l11111lIl = bArr;
         }
@@ -87,7 +87,7 @@ public class l1111l111111Il {
         this.l111l1111lI1l = byteBuffer2;
     }
 
-    public static C0454l1111l111111Il l1111l111111Il(RandomAccessFile randomAccessFile, l1111l111111Il l1111l111111il) {
+    public static C0284l1111l111111Il l1111l111111Il(RandomAccessFile randomAccessFile, l1111l111111Il l1111l111111il) {
         HashMap hashMap = new HashMap();
         ArrayList arrayList = new ArrayList();
         CertificateFactory certificateFactory = CertificateFactory.getInstance("X.509");
@@ -109,7 +109,7 @@ public class l1111l111111Il {
             }
             bArr = Arrays.copyOfRange(bArr2, 0, 32);
         }
-        return new C0454l1111l111111Il((X509Certificate[][]) arrayList.toArray(new X509Certificate[arrayList.size()]), bArr);
+        return new C0284l1111l111111Il((X509Certificate[][]) arrayList.toArray(new X509Certificate[arrayList.size()]), bArr);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:12:0x0049  */

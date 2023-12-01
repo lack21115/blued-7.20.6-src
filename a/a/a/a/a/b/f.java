@@ -13,7 +13,7 @@ import java.util.List;
 public class f {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final List<a.a.a.a.a.e.f> f1307a;
+    public static final List<a.a.a.a.a.e.f> f1259a;
 
     /* loaded from: source-8756600-dex2jar.jar:a/a/a/a/a/b/f$a.class */
     public static final class a implements Comparator<Camera.Size> {
@@ -28,7 +28,7 @@ public class f {
     public static /* synthetic */ class b {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final /* synthetic */ int[] f1308a;
+        public static final /* synthetic */ int[] f1260a;
         public static final /* synthetic */ int[] b;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:14:0x004a -> B:24:0x0014). Please submit an issue!!! */
@@ -47,17 +47,17 @@ public class f {
             } catch (NoSuchFieldError e2) {
             }
             int[] iArr2 = new int[CameraStreamingSetting.PREVIEW_SIZE_LEVEL.values().length];
-            f1308a = iArr2;
+            f1260a = iArr2;
             try {
                 iArr2[CameraStreamingSetting.PREVIEW_SIZE_LEVEL.SMALL.ordinal()] = 1;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f1308a[CameraStreamingSetting.PREVIEW_SIZE_LEVEL.MEDIUM.ordinal()] = 2;
+                f1260a[CameraStreamingSetting.PREVIEW_SIZE_LEVEL.MEDIUM.ordinal()] = 2;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f1308a[CameraStreamingSetting.PREVIEW_SIZE_LEVEL.LARGE.ordinal()] = 3;
+                f1260a[CameraStreamingSetting.PREVIEW_SIZE_LEVEL.LARGE.ordinal()] = 3;
             } catch (NoSuchFieldError e5) {
             }
         }
@@ -65,9 +65,9 @@ public class f {
 
     static {
         ArrayList arrayList = new ArrayList();
-        f1307a = arrayList;
+        f1259a = arrayList;
         arrayList.add(new a.a.a.a.a.e.f(1184, 666));
-        f1307a.add(new a.a.a.a.a.e.f(854, 480));
+        f1259a.add(new a.a.a.a.a.e.f(854, 480));
     }
 
     public static double a(CameraStreamingSetting.PREVIEW_SIZE_RATIO preview_size_ratio) {
@@ -145,7 +145,7 @@ public class f {
         if (a2.isEmpty()) {
             return null;
         }
-        int i = b.f1308a[preview_size_level.ordinal()];
+        int i = b.f1260a[preview_size_level.ordinal()];
         if (i == 1) {
             size = a2.get(0);
         } else if (i == 2) {
@@ -284,7 +284,7 @@ public class f {
     }
 
     public static boolean b(Camera.Size size) {
-        for (a.a.a.a.a.e.f fVar : f1307a) {
+        for (a.a.a.a.a.e.f fVar : f1259a) {
             if (size.width == fVar.a() && size.height == fVar.b()) {
                 a.a.a.a.a.e.e.g.c("CameraUtils", "Incompatible size just remove it.");
                 return true;

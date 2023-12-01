@@ -2,11 +2,11 @@ package com.amap.api.col.p0003sl;
 
 import android.content.Context;
 import android.util.Log;
+import com.alipay.sdk.sys.a;
 import com.amap.api.maps.model.LatLng;
 import com.amap.api.maps.model.MarkerOptions;
 import com.amap.api.maps.model.PolygonOptions;
 import com.amap.api.maps.model.PolylineOptions;
-import com.meizu.cloud.pushsdk.notification.model.AppIconSetting;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -16,15 +16,13 @@ import org.json.JSONObject;
 /* renamed from: com.amap.api.col.3sl.dy  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/dy.class */
 public final class dy {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static Map<String, dz> f4873a = new ConcurrentHashMap();
+    private static Map<String, dz> a = new ConcurrentHashMap();
     private static String b = "";
 
     public static void a() {
         try {
-            if (dx.f4871a) {
-                for (Map.Entry<String, dz> entry : f4873a.entrySet()) {
+            if (dx.a) {
+                for (Map.Entry<String, dz> entry : a.entrySet()) {
                     entry.getValue().a();
                 }
             }
@@ -47,7 +45,7 @@ public final class dy {
             if (dx.b) {
                 a(i, str2, str5);
             }
-            if (!dx.f4871a || f4873a == null || (dzVar = f4873a.get(str)) == null) {
+            if (!dx.a || a == null || (dzVar = a.get(str)) == null) {
                 return;
             }
             dzVar.a(i, str2, str5);
@@ -138,11 +136,11 @@ public final class dy {
             boolean a4 = hp.a(jSONObject.optString("debugupload", ""), false);
             boolean a5 = hp.a(jSONObject.optString("debugwrite", ""), false);
             boolean a6 = hp.a(jSONObject.optString("forcedUpload", ""), false);
-            dx.f4871a = a2;
-            boolean a7 = hp.a(jSONObject.optString(AppIconSetting.DEFAULT_LARGE_ICON, ""), false);
+            dx.a = a2;
+            boolean a7 = hp.a(jSONObject.optString("di", ""), false);
             String optString = jSONObject.optString("dis", "");
             if (!a7 || ib.e(optString)) {
-                il.a(dw.a()).a(a2, a3, a5, a4, Arrays.asList(jSONObject.optString("filter", "").split("&")));
+                il.a(dw.a()).a(a2, a3, a5, a4, Arrays.asList(jSONObject.optString("filter", "").split(a.b)));
                 if (a6) {
                     il.a(dw.a()).a(a6);
                 }
@@ -153,8 +151,8 @@ public final class dy {
 
     private static void b() {
         try {
-            f4873a.put("overlay", new eb());
-            f4873a.put("normal", new ea());
+            a.put("overlay", new eb());
+            a.put("normal", new ea());
         } catch (Throwable th) {
         }
     }

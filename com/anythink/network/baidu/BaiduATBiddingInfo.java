@@ -4,16 +4,16 @@ package com.anythink.network.baidu;
 public class BaiduATBiddingInfo {
 
     /* renamed from: a  reason: collision with root package name */
-    protected double f8861a;
+    protected double f6021a;
     protected Object b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected Object f8862c;
+    protected Object f6022c;
 
     /* JADX INFO: Access modifiers changed from: protected */
     public BaiduATBiddingInfo(Object obj, double d, Object obj2) {
-        this.f8861a = d;
+        this.f6021a = d;
         this.b = obj;
-        this.f8862c = obj2;
+        this.f6022c = obj2;
     }
 }

@@ -19,9 +19,9 @@ public class JobImpl extends JobSupport implements CompletableJob {
         if (childHandleNode == null) {
             return false;
         }
-        JobSupport c2 = childHandleNode.c();
+        JobSupport c = childHandleNode.c();
         while (true) {
-            JobSupport jobSupport = c2;
+            JobSupport jobSupport = c;
             if (jobSupport.au_()) {
                 return true;
             }
@@ -30,7 +30,7 @@ public class JobImpl extends JobSupport implements CompletableJob {
             if (childHandleNode2 == null) {
                 return false;
             }
-            c2 = childHandleNode2.c();
+            c = childHandleNode2.c();
         }
     }
 

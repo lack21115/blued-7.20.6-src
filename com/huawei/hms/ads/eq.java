@@ -15,9 +15,10 @@ public class eq {
     private BroadcastReceiver B;
     private Context I;
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.huawei.hms.ads.eq$1  reason: invalid class name */
     /* loaded from: source-7994992-dex2jar.jar:com/huawei/hms/ads/eq$1.class */
-    class AnonymousClass1 implements Runnable {
+    public class AnonymousClass1 implements Runnable {
         AnonymousClass1() {
         }
 

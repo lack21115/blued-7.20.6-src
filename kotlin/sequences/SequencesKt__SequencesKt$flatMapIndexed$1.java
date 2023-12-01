@@ -1,5 +1,6 @@
 package kotlin.sequences;
 
+import com.android.ims.ImsReasonInfo;
 import java.util.Iterator;
 import kotlin.Metadata;
 import kotlin.ResultKt;
@@ -15,16 +16,12 @@ import kotlin.jvm.functions.Function2;
 
 /* JADX INFO: Add missing generic type declarations: [R] */
 @Metadata
-@DebugMetadata(b = "Sequences.kt", c = {332}, d = "invokeSuspend", e = "kotlin.sequences.SequencesKt__SequencesKt$flatMapIndexed$1")
+@DebugMetadata(b = "Sequences.kt", c = {ImsReasonInfo.CODE_SIP_FORBIDDEN}, d = "invokeSuspend", e = "kotlin.sequences.SequencesKt__SequencesKt$flatMapIndexed$1")
 /* loaded from: source-3503164-dex2jar.jar:kotlin/sequences/SequencesKt__SequencesKt$flatMapIndexed$1.class */
 final class SequencesKt__SequencesKt$flatMapIndexed$1<R> extends RestrictedSuspendLambda implements Function2<SequenceScope<? super R>, Continuation<? super Unit>, Object> {
-
-    /* renamed from: a  reason: collision with root package name */
-    Object f42647a;
+    Object a;
     int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    int f42648c;
+    int c;
     final /* synthetic */ Sequence<T> d;
     final /* synthetic */ Function2<Integer, T, C> e;
     final /* synthetic */ Function1<C, Iterator<R>> f;
@@ -42,7 +39,7 @@ final class SequencesKt__SequencesKt$flatMapIndexed$1<R> extends RestrictedSuspe
     @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(SequenceScope<? super R> sequenceScope, Continuation<? super Unit> continuation) {
-        return ((SequencesKt__SequencesKt$flatMapIndexed$1) create(sequenceScope, continuation)).invokeSuspend(Unit.f42314a);
+        return ((SequencesKt__SequencesKt$flatMapIndexed$1) create(sequenceScope, continuation)).invokeSuspend(Unit.a);
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -57,8 +54,8 @@ final class SequencesKt__SequencesKt$flatMapIndexed$1<R> extends RestrictedSuspe
         SequenceScope sequenceScope;
         int i;
         Iterator it;
-        Object a2 = IntrinsicsKt.a();
-        int i2 = this.f42648c;
+        Object a = IntrinsicsKt.a();
+        int i2 = this.c;
         if (i2 == 0) {
             ResultKt.a(obj);
             sequenceScope = (SequenceScope) this.g;
@@ -68,7 +65,7 @@ final class SequencesKt__SequencesKt$flatMapIndexed$1<R> extends RestrictedSuspe
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         } else {
             i = this.b;
-            Iterator it2 = (Iterator) this.f42647a;
+            Iterator it2 = (Iterator) this.a;
             sequenceScope = (SequenceScope) this.g;
             ResultKt.a(obj);
             it = it2;
@@ -82,14 +79,14 @@ final class SequencesKt__SequencesKt$flatMapIndexed$1<R> extends RestrictedSuspe
             }
             Object invoke = function2.invoke(Boxing.a(i), next);
             this.g = sequenceScope;
-            this.f42647a = it;
+            this.a = it;
             this.b = i3;
-            this.f42648c = 1;
-            if (sequenceScope.a((Iterator) this.f.invoke(invoke), (Continuation<? super Unit>) this) == a2) {
-                return a2;
+            this.c = 1;
+            if (sequenceScope.a((Iterator) this.f.invoke(invoke), (Continuation<? super Unit>) this) == a) {
+                return a;
             }
             i = i3;
         }
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

@@ -11,7 +11,7 @@ import java.util.Map;
 public class i extends PushPreferences {
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f22816c = "i";
+    private static final String f9208c = "i";
     private Context b;
 
     private i(Context context) {
@@ -30,7 +30,7 @@ public class i extends PushPreferences {
         try {
             return PushEncrypter.decrypter(this.b, getString(str));
         } catch (Exception e) {
-            String str2 = f22816c;
+            String str2 = f9208c;
             HMSLog.e(str2, "getSecureData" + e.getMessage());
             return "";
         }
@@ -55,7 +55,7 @@ public class i extends PushPreferences {
         try {
             return saveString(str, PushEncrypter.encrypter(this.b, str2));
         } catch (Exception e) {
-            String str3 = f22816c;
+            String str3 = f9208c;
             HMSLog.e(str3, "saveSecureData" + e.getMessage());
             return false;
         }
@@ -65,7 +65,7 @@ public class i extends PushPreferences {
         try {
             return TextUtils.isEmpty(str) ? a("token_info_v2") : a(str);
         } catch (Exception e) {
-            String str2 = f22816c;
+            String str2 = f9208c;
             HMSLog.e(str2, "getSecureData" + e.getMessage());
             return "";
         }
@@ -75,7 +75,7 @@ public class i extends PushPreferences {
         try {
             return TextUtils.isEmpty(str) ? a("token_info_v2", str2) : a(str, str2);
         } catch (Exception e) {
-            String str3 = f22816c;
+            String str3 = f9208c;
             HMSLog.e(str3, "saveSecureData" + e.getMessage());
             return false;
         }
@@ -85,7 +85,7 @@ public class i extends PushPreferences {
         try {
             return TextUtils.isEmpty(str) ? removeKey("token_info_v2") : removeKey(str);
         } catch (Exception e) {
-            String str2 = f22816c;
+            String str2 = f9208c;
             HMSLog.e(str2, "removeToken" + e.getMessage());
             return false;
         }

@@ -4,18 +4,18 @@ package com.kuaishou.weapon.p0;
 public class bi {
 
     /* renamed from: c  reason: collision with root package name */
-    private String f23751c = "";
+    private String f10143c = "";
     private String b = "";
 
     /* renamed from: a  reason: collision with root package name */
-    private int f23750a = 0;
+    private int f10142a = 0;
 
     public int a() {
-        return this.f23750a;
+        return this.f10142a;
     }
 
     public void a(int i) {
-        this.f23750a = i;
+        this.f10142a = i;
     }
 
     public void a(String str) {
@@ -27,10 +27,10 @@ public class bi {
     }
 
     public void b(String str) {
-        this.f23751c = str;
+        this.f10143c = str;
     }
 
     public String c() {
-        return this.f23751c;
+        return this.f10143c;
     }
 }

@@ -54,7 +54,6 @@ public final class YYRelationShipRoomMyRoom implements MultiItemEntity {
         return this.da;
     }
 
-    @Override // com.chad.library.adapter.base.entity.MultiItemEntity
     public int getItemType() {
         return this.type;
     }

@@ -15,11 +15,11 @@ import org.json.JSONObject;
 public class CommonJSBridgeImpUtils {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f7075a = CommonJSBridgeImpUtils.class.getSimpleName();
+    public static final String f4237a = CommonJSBridgeImpUtils.class.getSimpleName();
     public static int b = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    public static int f7076c = 1;
+    public static int f4238c = 1;
 
     static /* synthetic */ void a(String str, c cVar) {
         if (f.n == null || TextUtils.isEmpty(cVar.aZ())) {
@@ -54,12 +54,12 @@ public class CommonJSBridgeImpUtils {
     public static void callbackExcep(Object obj, String str) {
         try {
             JSONObject jSONObject = new JSONObject();
-            jSONObject.put("code", f7076c);
+            jSONObject.put("code", f4238c);
             jSONObject.put("message", str);
             jSONObject.put("data", new JSONObject());
             j.a().a(obj, Base64.encodeToString(jSONObject.toString().getBytes(), 2));
         } catch (Exception e) {
-            o.a(f7075a, e.getMessage());
+            o.a(f4237a, e.getMessage());
         }
     }
 
@@ -73,7 +73,7 @@ public class CommonJSBridgeImpUtils {
             j.a().a(obj, Base64.encodeToString(jSONObject.toString().getBytes(), 2));
         } catch (Exception e) {
             callbackExcep(obj, e.getMessage());
-            o.a(f7075a, e.getMessage());
+            o.a(f4237a, e.getMessage());
         }
     }
 
@@ -84,7 +84,7 @@ public class CommonJSBridgeImpUtils {
             String jSONObject2 = jSONObject.toString();
             return !TextUtils.isEmpty(jSONObject2) ? Base64.encodeToString(jSONObject2.getBytes(), 2) : "";
         } catch (Throwable th) {
-            o.d(f7075a, "code to string is error");
+            o.d(f4237a, "code to string is error");
             return "";
         }
     }
@@ -115,7 +115,7 @@ public class CommonJSBridgeImpUtils {
                 try {
                     CommonJSBridgeImpUtils.a(c.this.K(), c.this);
                 } catch (Throwable th) {
-                    o.b(CommonJSBridgeImpUtils.f7075a, th.getMessage(), th);
+                    o.b(CommonJSBridgeImpUtils.f4237a, th.getMessage(), th);
                 }
             }
         }).start();

@@ -9,9 +9,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alipay/sdk/app/AlipayResultActivity.class */
 public class AlipayResultActivity extends Activity {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final ConcurrentHashMap<String, a> f4571a = new ConcurrentHashMap<>();
+    public static final ConcurrentHashMap<String, a> a = new ConcurrentHashMap<>();
 
     /* loaded from: source-6737240-dex2jar.jar:com/alipay/sdk/app/AlipayResultActivity$a.class */
     public interface a {
@@ -19,12 +17,12 @@ public class AlipayResultActivity extends Activity {
     }
 
     private void a(String str, Bundle bundle) {
-        a remove = f4571a.remove(str);
+        a remove = a.remove(str);
         if (remove == null) {
             return;
         }
         try {
-            remove.a(bundle.getInt("endCode"), bundle.getString(l.b), bundle.getString("result"));
+            remove.a(bundle.getInt("endCode"), bundle.getString(l.b), bundle.getString(l.c));
         } finally {
             finish();
         }
@@ -36,7 +34,6 @@ public class AlipayResultActivity extends Activity {
         return super.dispatchTouchEvent(motionEvent);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     /* JADX WARN: Code restructure failed: missing block: B:35:0x00a1, code lost:
         if (r11 == null) goto L48;
      */
@@ -45,7 +42,7 @@ public class AlipayResultActivity extends Activity {
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences
     */
-    public void onCreate(android.os.Bundle r8) {
+    protected void onCreate(android.os.Bundle r8) {
         /*
             Method dump skipped, instructions count: 500
             To view this dump change 'Code comments level' option to 'DEBUG'

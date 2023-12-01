@@ -10,18 +10,18 @@ import com.qiniu.pili.droid.shortvideo.f.e;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f27522a;
+    private int f13834a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f27523c;
+    private int f13835c;
     private MediaProjection d;
     private VirtualDisplay e;
 
     public a(int i, int i2, int i3, MediaProjection mediaProjection) {
-        this.f27522a = i;
+        this.f13834a = i;
         this.b = i2;
-        this.f27523c = i3;
+        this.f13835c = i3;
         this.d = mediaProjection;
     }
 
@@ -37,7 +37,7 @@ public final class a {
     }
 
     public void a(Surface surface) {
-        this.e = this.d.createVirtualDisplay("ScreenRecorder-display", this.f27522a, this.b, this.f27523c, 16, surface, (VirtualDisplay.Callback) null, (Handler) null);
+        this.e = this.d.createVirtualDisplay("ScreenRecorder-display", this.f13834a, this.b, this.f13835c, 16, surface, (VirtualDisplay.Callback) null, (Handler) null);
         e eVar = e.f;
         eVar.c("ScreenRecorder", "created virtual display: " + this.e);
     }

@@ -9,22 +9,22 @@ import com.xiaomi.push.service.XMPushService;
 class ci implements fz {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ XMPushService f41666a;
+    final /* synthetic */ XMPushService f27975a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public ci(XMPushService xMPushService) {
-        this.f41666a = xMPushService;
+        this.f27975a = xMPushService;
     }
 
     @Override // com.xiaomi.push.fz
     public void a(fj fjVar) {
-        XMPushService xMPushService = this.f41666a;
+        XMPushService xMPushService = this.f27975a;
         xMPushService.a(new XMPushService.d(fjVar));
     }
 
     @Override // com.xiaomi.push.fz
     public void a(gl glVar) {
-        XMPushService xMPushService = this.f41666a;
+        XMPushService xMPushService = this.f27975a;
         xMPushService.a(new XMPushService.m(glVar));
     }
 }

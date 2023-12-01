@@ -7,9 +7,7 @@ import java.util.concurrent.FutureTask;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alipay/android/phone/mrpc/core/m.class */
 final class m extends FutureTask<u> {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ q f4531a;
+    final /* synthetic */ q a;
     final /* synthetic */ l b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -17,21 +15,21 @@ final class m extends FutureTask<u> {
     public m(l lVar, Callable callable, q qVar) {
         super(callable);
         this.b = lVar;
-        this.f4531a = qVar;
+        this.a = qVar;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // java.util.concurrent.FutureTask
     public final void done() {
-        o a2 = this.f4531a.a();
-        if (a2.f() == null) {
+        o a = this.a.a();
+        if (a.f() == null) {
             super.done();
             return;
         }
         try {
             get();
-            if (isCancelled() || a2.h()) {
-                a2.g();
+            if (isCancelled() || a.h()) {
+                a.g();
                 if (isCancelled() && isDone()) {
                     return;
                 }
@@ -40,7 +38,7 @@ final class m extends FutureTask<u> {
         } catch (InterruptedException e) {
             new StringBuilder().append(e);
         } catch (CancellationException e2) {
-            a2.g();
+            a.g();
         } catch (ExecutionException e3) {
             if (e3.getCause() == null || !(e3.getCause() instanceof HttpException)) {
                 new StringBuilder().append(e3);

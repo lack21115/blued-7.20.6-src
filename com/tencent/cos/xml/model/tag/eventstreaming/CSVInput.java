@@ -1,7 +1,6 @@
 package com.tencent.cos.xml.model.tag.eventstreaming;
 
 import android.provider.ContactsContract;
-import com.alipay.sdk.util.i;
 import java.io.Serializable;
 
 /* loaded from: source-8457232-dex2jar.jar:com/tencent/cos/xml/model/tag/eventstreaming/CSVInput.class */
@@ -45,7 +44,7 @@ public class CSVInput implements Serializable, Cloneable {
     }
 
     /* renamed from: clone */
-    public CSVInput m10187clone() {
+    public CSVInput m7144clone() {
         try {
             return (CSVInput) super.clone();
         } catch (CloneNotSupportedException e) {
@@ -255,7 +254,7 @@ public class CSVInput implements Serializable, Cloneable {
             sb.append("AllowQuotedRecordDelimiter: ");
             sb.append(getAllowQuotedRecordDelimiter());
         }
-        sb.append(i.d);
+        sb.append("}");
         return sb.toString();
     }
 

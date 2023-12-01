@@ -9,9 +9,7 @@ import org.json.JSONObject;
 /* loaded from: source-6737240-dex2jar.jar:com/alibaba/mtl/appmonitor/d/j.class */
 public class j {
     private static final String TAG = null;
-
-    /* renamed from: a  reason: collision with root package name */
-    private static j f4469a;
+    private static j a;
     private String A;
     private Map<com.alibaba.mtl.appmonitor.a.f, g> q = new HashMap();
     private int r;
@@ -36,18 +34,18 @@ public class j {
     }
 
     public static j a() {
-        if (f4469a == null) {
+        if (a == null) {
             synchronized (j.class) {
                 try {
-                    if (f4469a == null) {
-                        f4469a = new j();
+                    if (a == null) {
+                        a = new j();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f4469a;
+        return a;
     }
 
     public static boolean a(com.alibaba.mtl.appmonitor.a.f fVar, String str, String str2) {

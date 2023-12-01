@@ -34,21 +34,21 @@ public class NativeAdvanceAd {
     static class a implements INativeAdvanceData {
 
         /* renamed from: a  reason: collision with root package name */
-        private h f22239a;
+        private h f8631a;
         private INativeAdvanceComplianceInfo b;
 
         public a(h hVar) {
-            this.f22239a = hVar;
+            this.f8631a = hVar;
             if (hVar.n() != null) {
                 this.b = new INativeAdvanceComplianceInfo() { // from class: com.heytap.msp.mobad.api.ad.NativeAdvanceAd.a.3
                     @Override // com.heytap.msp.mobad.api.params.INativeAdvanceComplianceInfo
                     public String getAppVersion() {
-                        return a.this.f22239a.n().a();
+                        return a.this.f8631a.n().a();
                     }
 
                     @Override // com.heytap.msp.mobad.api.params.INativeAdvanceComplianceInfo
                     public String getDeveloperName() {
-                        return a.this.f22239a.n().b();
+                        return a.this.f8631a.n().b();
                     }
                 };
             }
@@ -56,12 +56,12 @@ public class NativeAdvanceAd {
 
         @Override // com.heytap.msp.mobad.api.params.INativeAdvanceData
         public void bindMediaView(Context context, MediaView mediaView, INativeAdvanceMediaListener iNativeAdvanceMediaListener) {
-            this.f22239a.a(context, mediaView, new d(iNativeAdvanceMediaListener));
+            this.f8631a.a(context, mediaView, new d(iNativeAdvanceMediaListener));
         }
 
         @Override // com.heytap.msp.mobad.api.params.INativeAdvanceData
         public void bindToComplianceView(Context context, List<View> list, final INativeComplianceListener iNativeComplianceListener, List<View> list2, final INativeComplianceListener iNativeComplianceListener2) {
-            this.f22239a.a(context, list, new h.a() { // from class: com.heytap.msp.mobad.api.ad.NativeAdvanceAd.a.1
+            this.f8631a.a(context, list, new h.a() { // from class: com.heytap.msp.mobad.api.ad.NativeAdvanceAd.a.1
                 @Override // com.opos.mobad.ad.c.h.a
                 public void a() {
                     INativeComplianceListener iNativeComplianceListener3 = iNativeComplianceListener;
@@ -102,12 +102,12 @@ public class NativeAdvanceAd {
 
         @Override // com.heytap.msp.mobad.api.params.INativeAdvanceData
         public void bindToView(Context context, NativeAdvanceContainer nativeAdvanceContainer, List<View> list) {
-            this.f22239a.a(context, nativeAdvanceContainer, list);
+            this.f8631a.a(context, nativeAdvanceContainer, list);
         }
 
         @Override // com.heytap.msp.mobad.api.params.INativeAdvanceData
         public String getClickBnText() {
-            return this.f22239a.l();
+            return this.f8631a.l();
         }
 
         @Override // com.heytap.msp.mobad.api.params.INativeAdvanceData
@@ -117,28 +117,28 @@ public class NativeAdvanceAd {
 
         @Override // com.heytap.msp.mobad.api.params.INativeAdvanceData
         public int getCreativeType() {
-            return this.f22239a.e();
+            return this.f8631a.e();
         }
 
         @Override // com.heytap.msp.mobad.api.params.INativeAdvanceData
         public String getDesc() {
-            return this.f22239a.b();
+            return this.f8631a.b();
         }
 
         @Override // com.heytap.msp.mobad.api.ad.IBidding
         public int getECPM() {
-            return this.f22239a.g();
+            return this.f8631a.g();
         }
 
         @Override // com.heytap.msp.mobad.api.params.INativeAdvanceData
         public String getExtra() {
-            return this.f22239a.k();
+            return this.f8631a.k();
         }
 
         @Override // com.heytap.msp.mobad.api.params.INativeAdvanceData
         public List<INativeAdFile> getIconFiles() {
             ArrayList arrayList;
-            List<com.opos.mobad.ad.c.e> c2 = this.f22239a.c();
+            List<com.opos.mobad.ad.c.e> c2 = this.f8631a.c();
             if (c2 != null) {
                 ArrayList arrayList2 = new ArrayList();
                 Iterator<com.opos.mobad.ad.c.e> it = c2.iterator();
@@ -161,7 +161,7 @@ public class NativeAdvanceAd {
         @Override // com.heytap.msp.mobad.api.params.INativeAdvanceData
         public List<INativeAdFile> getImgFiles() {
             ArrayList arrayList;
-            List<com.opos.mobad.ad.c.e> d = this.f22239a.d();
+            List<com.opos.mobad.ad.c.e> d = this.f8631a.d();
             if (d != null) {
                 ArrayList arrayList2 = new ArrayList();
                 Iterator<com.opos.mobad.ad.c.e> it = d.iterator();
@@ -183,7 +183,7 @@ public class NativeAdvanceAd {
 
         @Override // com.heytap.msp.mobad.api.params.INativeAdvanceData
         public INativeAdFile getLogoFile() {
-            com.opos.mobad.ad.c.e i = this.f22239a.i();
+            com.opos.mobad.ad.c.e i = this.f8631a.i();
             if (i == null) {
                 return null;
             }
@@ -192,42 +192,42 @@ public class NativeAdvanceAd {
 
         @Override // com.heytap.msp.mobad.api.params.INativeAdvanceData
         public String getTitle() {
-            return this.f22239a.a();
+            return this.f8631a.a();
         }
 
         @Override // com.heytap.msp.mobad.api.params.INativeAdvanceData
         public int getVideoDuration() {
-            return this.f22239a.h();
+            return this.f8631a.h();
         }
 
         @Override // com.heytap.msp.mobad.api.params.INativeAdvanceData
         public boolean isAdValid() {
-            return this.f22239a.j();
+            return this.f8631a.j();
         }
 
         @Override // com.heytap.msp.mobad.api.ad.IBidding
         public void notifyRankLoss(int i, String str, int i2) {
-            this.f22239a.a(i, str, i2);
+            this.f8631a.a(i, str, i2);
         }
 
         @Override // com.heytap.msp.mobad.api.ad.IBidding
         public void notifyRankWin(int i) {
-            this.f22239a.b(i);
+            this.f8631a.b(i);
         }
 
         @Override // com.heytap.msp.mobad.api.params.INativeAdvanceData
         public void release() {
-            this.f22239a.m();
+            this.f8631a.m();
         }
 
         @Override // com.heytap.msp.mobad.api.ad.IBidding
         public void setBidECPM(int i) {
-            this.f22239a.c(i);
+            this.f8631a.c(i);
         }
 
         @Override // com.heytap.msp.mobad.api.params.INativeAdvanceData
         public void setInteractListener(INativeAdvanceInteractListener iNativeAdvanceInteractListener) {
-            this.f22239a.a(new b(iNativeAdvanceInteractListener));
+            this.f8631a.a(new b(iNativeAdvanceInteractListener));
         }
     }
 
@@ -235,15 +235,15 @@ public class NativeAdvanceAd {
     static class b implements i {
 
         /* renamed from: a  reason: collision with root package name */
-        private INativeAdvanceInteractListener f22243a;
+        private INativeAdvanceInteractListener f8635a;
 
         public b(INativeAdvanceInteractListener iNativeAdvanceInteractListener) {
-            this.f22243a = iNativeAdvanceInteractListener;
+            this.f8635a = iNativeAdvanceInteractListener;
         }
 
         @Override // com.opos.mobad.ad.c.i
         public void a() {
-            INativeAdvanceInteractListener iNativeAdvanceInteractListener = this.f22243a;
+            INativeAdvanceInteractListener iNativeAdvanceInteractListener = this.f8635a;
             if (iNativeAdvanceInteractListener != null) {
                 iNativeAdvanceInteractListener.onClick();
             }
@@ -251,7 +251,7 @@ public class NativeAdvanceAd {
 
         @Override // com.opos.mobad.ad.c.i
         public void a(int i, String str) {
-            INativeAdvanceInteractListener iNativeAdvanceInteractListener = this.f22243a;
+            INativeAdvanceInteractListener iNativeAdvanceInteractListener = this.f8635a;
             if (iNativeAdvanceInteractListener != null) {
                 iNativeAdvanceInteractListener.onError(i, str);
             }
@@ -259,7 +259,7 @@ public class NativeAdvanceAd {
 
         @Override // com.opos.mobad.ad.c.i
         public void b() {
-            INativeAdvanceInteractListener iNativeAdvanceInteractListener = this.f22243a;
+            INativeAdvanceInteractListener iNativeAdvanceInteractListener = this.f8635a;
             if (iNativeAdvanceInteractListener != null) {
                 iNativeAdvanceInteractListener.onShow();
             }
@@ -271,15 +271,15 @@ public class NativeAdvanceAd {
     public static class c implements j {
 
         /* renamed from: a  reason: collision with root package name */
-        private INativeAdvanceLoadListener f22244a;
+        private INativeAdvanceLoadListener f8636a;
 
         public c(INativeAdvanceLoadListener iNativeAdvanceLoadListener) {
-            this.f22244a = iNativeAdvanceLoadListener;
+            this.f8636a = iNativeAdvanceLoadListener;
         }
 
         @Override // com.opos.mobad.ad.c.a
         public void a(int i, String str) {
-            INativeAdvanceLoadListener iNativeAdvanceLoadListener = this.f22244a;
+            INativeAdvanceLoadListener iNativeAdvanceLoadListener = this.f8636a;
             if (iNativeAdvanceLoadListener != null) {
                 iNativeAdvanceLoadListener.onAdFailed(i, str);
             }
@@ -287,7 +287,7 @@ public class NativeAdvanceAd {
 
         @Override // com.opos.mobad.ad.c.a
         public void a(List<h> list) {
-            if (this.f22244a != null) {
+            if (this.f8636a != null) {
                 ArrayList arrayList = null;
                 if (list != null) {
                     ArrayList arrayList2 = new ArrayList();
@@ -300,7 +300,7 @@ public class NativeAdvanceAd {
                         arrayList2.add(new a(it.next()));
                     }
                 }
-                this.f22244a.onAdSuccess(arrayList);
+                this.f8636a.onAdSuccess(arrayList);
             }
         }
     }
@@ -309,15 +309,15 @@ public class NativeAdvanceAd {
     static class d implements k {
 
         /* renamed from: a  reason: collision with root package name */
-        private INativeAdvanceMediaListener f22245a;
+        private INativeAdvanceMediaListener f8637a;
 
         public d(INativeAdvanceMediaListener iNativeAdvanceMediaListener) {
-            this.f22245a = iNativeAdvanceMediaListener;
+            this.f8637a = iNativeAdvanceMediaListener;
         }
 
         @Override // com.opos.mobad.ad.c.k
         public void a() {
-            INativeAdvanceMediaListener iNativeAdvanceMediaListener = this.f22245a;
+            INativeAdvanceMediaListener iNativeAdvanceMediaListener = this.f8637a;
             if (iNativeAdvanceMediaListener != null) {
                 iNativeAdvanceMediaListener.onVideoPlayStart();
             }
@@ -325,7 +325,7 @@ public class NativeAdvanceAd {
 
         @Override // com.opos.mobad.ad.c.k
         public void a(int i, String str) {
-            INativeAdvanceMediaListener iNativeAdvanceMediaListener = this.f22245a;
+            INativeAdvanceMediaListener iNativeAdvanceMediaListener = this.f8637a;
             if (iNativeAdvanceMediaListener != null) {
                 iNativeAdvanceMediaListener.onVideoPlayError(i, str);
             }
@@ -333,7 +333,7 @@ public class NativeAdvanceAd {
 
         @Override // com.opos.mobad.ad.c.k
         public void b() {
-            INativeAdvanceMediaListener iNativeAdvanceMediaListener = this.f22245a;
+            INativeAdvanceMediaListener iNativeAdvanceMediaListener = this.f8637a;
             if (iNativeAdvanceMediaListener != null) {
                 iNativeAdvanceMediaListener.onVideoPlayComplete();
             }
@@ -344,20 +344,20 @@ public class NativeAdvanceAd {
     static class e implements INativeAdFile {
 
         /* renamed from: a  reason: collision with root package name */
-        private com.opos.mobad.ad.c.e f22246a;
+        private com.opos.mobad.ad.c.e f8638a;
 
         public e(com.opos.mobad.ad.c.e eVar) {
-            this.f22246a = eVar;
+            this.f8638a = eVar;
         }
 
         @Override // com.heytap.msp.mobad.api.params.INativeAdFile
         public String getMd5() {
-            return this.f22246a.a();
+            return this.f8638a.a();
         }
 
         @Override // com.heytap.msp.mobad.api.params.INativeAdFile
         public String getUrl() {
-            return this.f22246a.a();
+            return this.f8638a.a();
         }
     }
 

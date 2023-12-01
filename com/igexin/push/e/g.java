@@ -17,33 +17,33 @@ import java.util.Locale;
 public class g implements com.igexin.push.e.b.c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile g f23622a;
+    private static volatile g f10014a;
     private static String b = "Type10Task";
 
     /* renamed from: c  reason: collision with root package name */
-    private SimpleDateFormat f23623c = new SimpleDateFormat("yyyy-MM-dd", Locale.CHINA);
+    private SimpleDateFormat f10015c = new SimpleDateFormat("yyyy-MM-dd", Locale.CHINA);
 
     static /* synthetic */ String a(String str) {
-        return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault()).format(new Date()) + "|" + com.igexin.push.core.e.A + "|" + com.igexin.push.core.e.f23495a + "|3|" + str + "|" + com.igexin.push.core.e.C + "|" + ServiceManager.getInstance().initType.first;
+        return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault()).format(new Date()) + "|" + com.igexin.push.core.e.A + "|" + com.igexin.push.core.e.f9887a + "|3|" + str + "|" + com.igexin.push.core.e.C + "|" + ServiceManager.getInstance().initType.first;
     }
 
     private static String b(String str) {
-        return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault()).format(new Date()) + "|" + com.igexin.push.core.e.A + "|" + com.igexin.push.core.e.f23495a + "|3|" + str + "|" + com.igexin.push.core.e.C + "|" + ServiceManager.getInstance().initType.first;
+        return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault()).format(new Date()) + "|" + com.igexin.push.core.e.A + "|" + com.igexin.push.core.e.f9887a + "|3|" + str + "|" + com.igexin.push.core.e.C + "|" + ServiceManager.getInstance().initType.first;
     }
 
     public static g c() {
-        if (f23622a == null) {
+        if (f10014a == null) {
             synchronized (g.class) {
                 try {
-                    if (f23622a == null) {
-                        f23622a = new g();
+                    if (f10014a == null) {
+                        f10014a = new g();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f23622a;
+        return f10014a;
     }
 
     private void f() {
@@ -51,10 +51,10 @@ public class g implements com.igexin.push.e.b.c {
             return;
         }
         try {
-            String format = this.f23623c.format(new Date(com.igexin.push.core.e.ax));
-            String format2 = this.f23623c.format(new Date());
-            Date parse = this.f23623c.parse(format);
-            Date parse2 = this.f23623c.parse(format2);
+            String format = this.f10015c.format(new Date(com.igexin.push.core.e.ax));
+            String format2 = this.f10015c.format(new Date());
+            Date parse = this.f10015c.parse(format);
+            Date parse2 = this.f10015c.parse(format2);
             String str = b;
             com.igexin.c.a.c.a.b(str, " lastDateString = " + format + " ; nowDateString = " + format2);
             if (parse2.after(parse)) {
@@ -69,10 +69,10 @@ public class g implements com.igexin.push.e.b.c {
     public final void a() {
         if (com.igexin.push.core.e.ax != 0) {
             try {
-                String format = this.f23623c.format(new Date(com.igexin.push.core.e.ax));
-                String format2 = this.f23623c.format(new Date());
-                Date parse = this.f23623c.parse(format);
-                Date parse2 = this.f23623c.parse(format2);
+                String format = this.f10015c.format(new Date(com.igexin.push.core.e.ax));
+                String format2 = this.f10015c.format(new Date());
+                Date parse = this.f10015c.parse(format);
+                Date parse2 = this.f10015c.parse(format2);
                 String str = b;
                 com.igexin.c.a.c.a.b(str, " lastDateString = " + format + " ; nowDateString = " + format2);
                 if (parse2.after(parse)) {
@@ -102,7 +102,7 @@ public class g implements com.igexin.push.e.b.c {
         }
         int i = TextUtils.isEmpty(com.igexin.push.core.e.A) ? com.igexin.push.config.d.af * 1000 : 0;
         com.igexin.c.a.c.a.b(b, "upload type10 delay time = ".concat(String.valueOf(i)));
-        com.igexin.push.core.d unused = d.a.f23474a;
+        com.igexin.push.core.d unused = d.a.f9866a;
         com.igexin.push.core.d.a(new com.igexin.push.e.b.f(i) { // from class: com.igexin.push.e.g.1
             @Override // com.igexin.push.e.b.f
             public final void b() {
@@ -120,13 +120,13 @@ public class g implements com.igexin.push.e.b.c {
                         contentValues.put("type", (Integer) 10);
                         contentValues.put("data", a2);
                         contentValues.put("time", Long.valueOf(System.currentTimeMillis()));
-                        d.a.f23474a.i.a(com.igexin.push.core.b.ab, contentValues);
+                        d.a.f9866a.i.a(com.igexin.push.core.b.ab, contentValues);
                         StringBuilder sb = new StringBuilder();
                         com.igexin.push.core.c.a.a();
                         List<com.igexin.push.core.b.c> c2 = com.igexin.push.core.c.a.c();
                         final ArrayList arrayList = new ArrayList();
                         for (com.igexin.push.core.b.c cVar : c2) {
-                            arrayList.add(String.valueOf(cVar.f23433a));
+                            arrayList.add(String.valueOf(cVar.f9825a));
                             sb.append(cVar.b);
                             sb.append("\n");
                         }
@@ -140,7 +140,7 @@ public class g implements com.igexin.push.e.b.c {
                                 super.a(bArr);
                                 com.igexin.push.core.c.a.a();
                                 ArrayList arrayList2 = arrayList;
-                                d.a.f23474a.i.a(com.igexin.push.core.b.ab, new String[]{"id"}, (String[]) arrayList2.toArray(new String[arrayList2.size()]));
+                                d.a.f9866a.i.a(com.igexin.push.core.b.ab, new String[]{"id"}, (String[]) arrayList2.toArray(new String[arrayList2.size()]));
                             }
                         }), false, true);
                     }

@@ -23,21 +23,19 @@ public final class EglBase10 extends EglBase {
 
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/zegoVideoCapture/ve_gl/EglBase10$Context.class */
     public static class Context extends EglBase.Context {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final EGLContext f15499a;
+        private final EGLContext a;
 
         public Context(EGLContext eGLContext) {
-            this.f15499a = eGLContext;
+            this.a = eGLContext;
         }
     }
 
     public EglBase10(Context context, int[] iArr) {
         EGLDisplay j = j();
         this.l = j;
-        EGLConfig a2 = a(j, iArr);
-        this.k = a2;
-        this.j = a(context, this.l, a2);
+        EGLConfig a = a(j, iArr);
+        this.k = a;
+        this.j = a(context, this.l, a);
     }
 
     private EGLConfig a(EGLDisplay eGLDisplay, int[] iArr) {
@@ -45,18 +43,18 @@ public final class EglBase10 extends EglBase {
         int[] iArr2 = new int[1];
         if (!this.i.eglChooseConfig(eGLDisplay, iArr, eGLConfigArr, 1, iArr2)) {
             this.b = true;
-            String str = f15496a;
+            String str = a;
             Log.e(str, "eglChooseConfig failed: 0x" + Integer.toHexString(this.i.eglGetError()));
             return null;
         } else if (iArr2[0] <= 0) {
             this.b = true;
-            Log.e(f15496a, "Unable to find any matching EGL config");
+            Log.e(a, "Unable to find any matching EGL config");
             return null;
         } else {
             EGLConfig eGLConfig = eGLConfigArr[0];
             if (eGLConfig == null) {
                 this.b = true;
-                Log.e(f15496a, "eglChooseConfig returned null");
+                Log.e(a, "eglChooseConfig returned null");
                 return null;
             }
             return eGLConfig;
@@ -65,18 +63,18 @@ public final class EglBase10 extends EglBase {
 
     private EGLContext a(Context context, EGLDisplay eGLDisplay, EGLConfig eGLConfig) {
         EGLContext eglCreateContext;
-        if (context != null && context.f15499a == EGL10.EGL_NO_CONTEXT) {
+        if (context != null && context.a == EGL10.EGL_NO_CONTEXT) {
             this.b = true;
-            Log.e(f15496a, "Invalid sharedContext");
+            Log.e(a, "Invalid sharedContext");
             return null;
         }
-        EGLContext eGLContext = context == null ? EGL10.EGL_NO_CONTEXT : context.f15499a;
-        synchronized (EglBase.f15497c) {
-            eglCreateContext = this.i.eglCreateContext(eGLDisplay, eGLConfig, eGLContext, new int[]{12440, 2, 12344});
+        EGLContext eGLContext = context == null ? EGL10.EGL_NO_CONTEXT : context.a;
+        synchronized (EglBase.c) {
+            eglCreateContext = this.i.eglCreateContext(eGLDisplay, eGLConfig, eGLContext, new int[]{12440, 2, EGL10.EGL_NONE});
         }
         if (eglCreateContext == EGL10.EGL_NO_CONTEXT) {
             this.b = true;
-            String str = f15496a;
+            String str = a;
             Log.e(str, "Failed to create EGL context: 0x" + Integer.toHexString(this.i.eglGetError()));
         }
         return eglCreateContext;
@@ -85,20 +83,20 @@ public final class EglBase10 extends EglBase {
     private void a(Object obj) {
         if (!(obj instanceof SurfaceHolder) && !(obj instanceof SurfaceTexture)) {
             this.b = true;
-            Log.e(f15496a, "Input must be either a SurfaceHolder or SurfaceTexture");
+            Log.e(a, "Input must be either a SurfaceHolder or SurfaceTexture");
             return;
         }
         i();
         if (this.m != EGL10.EGL_NO_SURFACE) {
             this.b = true;
-            Log.e(f15496a, "Already has an EGLSurface");
+            Log.e(a, "Already has an EGLSurface");
             return;
         }
-        this.m = this.i.eglCreateWindowSurface(this.l, this.k, obj, new int[]{12344});
+        this.m = this.i.eglCreateWindowSurface(this.l, this.k, obj, new int[]{EGL10.EGL_NONE});
         int eglGetError = this.i.eglGetError();
         if (this.m == EGL10.EGL_NO_SURFACE || eglGetError != 12288) {
             this.b = true;
-            String str = f15496a;
+            String str = a;
             Log.e(str, "Failed to create window surface: 0x" + Integer.toHexString(eglGetError));
         }
     }
@@ -106,7 +104,7 @@ public final class EglBase10 extends EglBase {
     private void i() {
         if (this.l == EGL10.EGL_NO_DISPLAY || this.j == EGL10.EGL_NO_CONTEXT || this.k == null) {
             this.b = true;
-            Log.e(f15496a, "This object has been released");
+            Log.e(a, "This object has been released");
         }
     }
 
@@ -114,13 +112,13 @@ public final class EglBase10 extends EglBase {
         EGLDisplay eglGetDisplay = this.i.eglGetDisplay(EGL10.EGL_DEFAULT_DISPLAY);
         if (eglGetDisplay == EGL10.EGL_NO_DISPLAY) {
             this.b = true;
-            String str = f15496a;
+            String str = a;
             Log.e(str, "Unable to get EGL10 display: 0x" + Integer.toHexString(this.i.eglGetError()));
             return eglGetDisplay;
         }
         if (!this.i.eglInitialize(eglGetDisplay, new int[2])) {
             this.b = true;
-            String str2 = f15496a;
+            String str2 = a;
             Log.e(str2, "Unable to initialize EGL10: 0x" + Integer.toHexString(this.i.eglGetError()));
         }
         return eglGetDisplay;
@@ -135,14 +133,14 @@ public final class EglBase10 extends EglBase {
         i();
         if (this.m != EGL10.EGL_NO_SURFACE) {
             this.b = true;
-            Log.e(f15496a, "Already has an EGLSurface");
+            Log.e(a, "Already has an EGLSurface");
             return;
         }
-        this.m = this.i.eglCreatePbufferSurface(this.l, this.k, new int[]{12375, i, 12374, i2, 12344});
+        this.m = this.i.eglCreatePbufferSurface(this.l, this.k, new int[]{EGL10.EGL_WIDTH, i, EGL10.EGL_HEIGHT, i2, EGL10.EGL_NONE});
         int eglGetError = this.i.eglGetError();
         if (this.m == EGL10.EGL_NO_SURFACE || eglGetError != 12288) {
             this.b = true;
-            String str = f15496a;
+            String str = a;
             Log.e(str, "Failed to create pixel buffer surface with size " + i + "x" + i2 + ": 0x" + Integer.toHexString(eglGetError));
         }
     }
@@ -255,12 +253,12 @@ public final class EglBase10 extends EglBase {
         i();
         if (this.m == EGL10.EGL_NO_SURFACE) {
             this.b = true;
-            Log.e(f15496a, "No EGLSurface - can't make current");
+            Log.e(a, "No EGLSurface - can't make current");
             return;
         }
-        synchronized (EglBase.f15497c) {
+        synchronized (EglBase.c) {
             EGLContext eglGetCurrentContext = this.i.eglGetCurrentContext();
-            EGLSurface eglGetCurrentSurface = this.i.eglGetCurrentSurface(12377);
+            EGLSurface eglGetCurrentSurface = this.i.eglGetCurrentSurface(EGL10.EGL_DRAW);
             if (eglGetCurrentContext == this.j && eglGetCurrentSurface == this.m) {
                 return;
             }
@@ -268,17 +266,17 @@ public final class EglBase10 extends EglBase {
                 return;
             }
             this.b = true;
-            String str = f15496a;
+            String str = a;
             Log.e(str, "eglMakeCurrent failed: 0x" + Integer.toHexString(this.i.eglGetError()));
         }
     }
 
     @Override // com.blued.android.module.live_china.zegoVideoCapture.ve_gl.EglBase
     public void g() {
-        synchronized (EglBase.f15497c) {
+        synchronized (EglBase.c) {
             if (!this.i.eglMakeCurrent(this.l, EGL10.EGL_NO_SURFACE, EGL10.EGL_NO_SURFACE, EGL10.EGL_NO_CONTEXT)) {
                 this.b = true;
-                String str = f15496a;
+                String str = a;
                 Log.e(str, "eglDetachCurrent failed: 0x" + Integer.toHexString(this.i.eglGetError()));
             }
         }
@@ -289,10 +287,10 @@ public final class EglBase10 extends EglBase {
         i();
         if (this.m == EGL10.EGL_NO_SURFACE) {
             this.b = true;
-            Log.e(f15496a, "No EGLSurface - can't swap buffers");
+            Log.e(a, "No EGLSurface - can't swap buffers");
             return;
         }
-        synchronized (EglBase.f15497c) {
+        synchronized (EglBase.c) {
             this.i.eglSwapBuffers(this.l, this.m);
         }
     }

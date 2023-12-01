@@ -13,15 +13,13 @@ import com.blued.android.module.video_gift.FitViewHelper;
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/live/base/view/animation/LiveMp4AnimationView.class */
 public class LiveMp4AnimationView extends BaseLiveAnimationView {
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private Context f11507c;
+    private Context c;
     private AlphaVideoGiftView d;
 
     public LiveMp4AnimationView(Context context, String str, LiveAnimationViewFactory.ScaleType scaleType) {
         this.b = str;
-        this.f11507c = context;
-        this.d = new AlphaVideoGiftView(this.f11507c, null);
+        this.c = context;
+        this.d = new AlphaVideoGiftView(this.c, null);
         if (scaleType == LiveAnimationViewFactory.ScaleType.FIT_CENTER) {
             this.d.setScaleType(FitViewHelper.ScaleType.FIT_CENTER);
         } else if (scaleType == LiveAnimationViewFactory.ScaleType.FIT_BOTTOM) {
@@ -48,16 +46,16 @@ public class LiveMp4AnimationView extends BaseLiveAnimationView {
             @Override // com.blued.android.module.video_gift.AlphaVideoGiftView.OnVideoStateChangedListener
             public void a() {
                 Log.v("drb", "AlphaVideoGiftView onLoadingStarted");
-                if (LiveMp4AnimationView.this.f11493a != null) {
-                    LiveMp4AnimationView.this.f11493a.a();
+                if (LiveMp4AnimationView.this.a != null) {
+                    LiveMp4AnimationView.this.a.a();
                 }
             }
 
             @Override // com.blued.android.module.video_gift.AlphaVideoGiftView.OnVideoStateChangedListener
             public void b() {
                 Log.v("drb", "AlphaVideoGiftView onEnded");
-                if (LiveMp4AnimationView.this.f11493a != null) {
-                    LiveMp4AnimationView.this.f11493a.b();
+                if (LiveMp4AnimationView.this.a != null) {
+                    LiveMp4AnimationView.this.a.b();
                 }
             }
 
@@ -66,9 +64,9 @@ public class LiveMp4AnimationView extends BaseLiveAnimationView {
             }
         });
         if (TextUtils.isEmpty(this.b) || !this.b.contains("http")) {
-            this.d.a(this.f11507c, this.b);
+            this.d.a(this.c, this.b);
         } else {
-            this.d.a(this.f11507c, iRequestHost, this.b);
+            this.d.a(this.c, iRequestHost, this.b);
         }
     }
 

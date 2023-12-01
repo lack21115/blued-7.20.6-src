@@ -16,11 +16,11 @@ import com.anythink.expressad.foundation.h.o;
 public class AnyThinkImageView extends ImageView {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f8414a = "MBridgeImageView";
+    private static final String f5574a = "MBridgeImageView";
     private Xfermode b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f8415c;
+    private int f5575c;
     private int d;
     private int e;
     private int f;
@@ -158,26 +158,25 @@ public class AnyThinkImageView extends ImageView {
         RectF rectF = this.o;
         if (rectF != null) {
             int i = this.j;
-            rectF.set(i / 2.0f, i / 2.0f, this.f8415c - (i / 2.0f), this.d - (i / 2.0f));
+            rectF.set(i / 2.0f, i / 2.0f, this.f5575c - (i / 2.0f), this.d - (i / 2.0f));
         }
     }
 
     private void d() {
         RectF rectF = this.n;
         if (rectF != null) {
-            rectF.set(0.0f, 0.0f, this.f8415c, this.d);
+            rectF.set(0.0f, 0.0f, this.f5575c, this.d);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.ImageView, android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         if (canvas == null) {
             return;
         }
         try {
             canvas.saveLayer(this.n, null, 31);
-            canvas.scale(((this.f8415c - (this.j * 2)) * 1.0f) / this.f8415c, ((this.d - (this.j * 2)) * 1.0f) / this.d, this.f8415c / 2.0f, this.d / 2.0f);
+            canvas.scale(((this.f5575c - (this.j * 2)) * 1.0f) / this.f5575c, ((this.d - (this.j * 2)) * 1.0f) / this.d, this.f5575c / 2.0f, this.d / 2.0f);
             super.onDraw(canvas);
             if (this.s != null) {
                 this.s.reset();
@@ -198,18 +197,17 @@ public class AnyThinkImageView extends ImageView {
                 a(canvas, this.j, this.k, this.o, this.l);
             }
         } catch (Exception e) {
-            o.a(f8414a, e.getMessage());
+            o.a(f5574a, e.getMessage());
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onSizeChanged(int i, int i2, int i3, int i4) {
+    protected void onSizeChanged(int i, int i2, int i3, int i4) {
         int i5;
         int i6;
         int i7;
         super.onSizeChanged(i, i2, i3, i4);
-        this.f8415c = i;
+        this.f5575c = i;
         this.d = i2;
         int i8 = 0;
         if (this.q) {
@@ -262,11 +260,11 @@ public class AnyThinkImageView extends ImageView {
         RectF rectF = this.o;
         if (rectF != null) {
             int i10 = this.j;
-            rectF.set(i10 / 2.0f, i10 / 2.0f, this.f8415c - (i10 / 2.0f), this.d - (i10 / 2.0f));
+            rectF.set(i10 / 2.0f, i10 / 2.0f, this.f5575c - (i10 / 2.0f), this.d - (i10 / 2.0f));
         }
         RectF rectF2 = this.n;
         if (rectF2 != null) {
-            rectF2.set(0.0f, 0.0f, this.f8415c, this.d);
+            rectF2.set(0.0f, 0.0f, this.f5575c, this.d);
         }
     }
 

@@ -20,9 +20,8 @@ public interface INotificationListener extends IInterface {
         static final int TRANSACTION_onNotificationRankingUpdate = 4;
         static final int TRANSACTION_onNotificationRemoved = 3;
 
-        /* JADX INFO: Access modifiers changed from: private */
         /* loaded from: source-9557208-dex2jar.jar:android/service/notification/INotificationListener$Stub$Proxy.class */
-        public static class Proxy implements INotificationListener {
+        private static class Proxy implements INotificationListener {
             private IBinder mRemote;
 
             Proxy(IBinder iBinder) {

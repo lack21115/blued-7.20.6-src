@@ -6,7 +6,6 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.huawei.hms.android.HwBuildEx;
 import com.huawei.hms.support.log.HMSLog;
 
@@ -16,7 +15,7 @@ public class f {
         int i = context.getApplicationInfo().icon;
         int i2 = i;
         if (i == 0) {
-            int identifier = context.getResources().getIdentifier("btn_star_big_on", com.anythink.expressad.foundation.h.i.f7952c, "android");
+            int identifier = context.getResources().getIdentifier("btn_star_big_on", com.anythink.expressad.foundation.h.i.f5112c, "android");
             HMSLog.d("PushSelfShowLog", "icon is btn_star_big_on ");
             i2 = identifier;
             if (identifier == 0) {
@@ -65,7 +64,7 @@ public class f {
         }
         int i = 0;
         if (!TextUtils.isEmpty(mVar.m())) {
-            String[] split = mVar.m().split(BridgeUtil.SPLIT_MARK);
+            String[] split = mVar.m().split("/");
             i = 0;
             if (split.length == 3) {
                 i = q.a(context, split[1], split[2]);

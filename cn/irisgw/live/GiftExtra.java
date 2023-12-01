@@ -1,5 +1,9 @@
 package cn.irisgw.live;
 
+import com.amap.api.maps.utils.SpatialRelationUtil;
+import com.android.ims.ImsReasonInfo;
+import com.android.internal.R;
+import com.android.org.conscrypt.NativeCrypto;
 import com.google.protobuf.AbstractMessageLite;
 import com.google.protobuf.AbstractParser;
 import com.google.protobuf.ByteString;
@@ -127,8 +131,8 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
     private volatile Object typeName_;
     private static final GiftExtra DEFAULT_INSTANCE = new GiftExtra();
     private static final Parser<GiftExtra> PARSER = new AbstractParser<GiftExtra>() { // from class: cn.irisgw.live.GiftExtra.1
-        @Override // com.google.protobuf.Parser
-        public GiftExtra parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        /* renamed from: parsePartialFrom */
+        public GiftExtra m2670parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             return new GiftExtra(codedInputStream, extensionRegistryLite);
         }
     };
@@ -289,21 +293,21 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
 
         public Builder addAllBgColor(Iterable<String> iterable) {
             ensureBgColorIsMutable();
-            AbstractMessageLite.Builder.addAll((Iterable) iterable, (List) this.bgColor_);
+            AbstractMessageLite.Builder.addAll(iterable, this.bgColor_);
             onChanged();
             return this;
         }
 
         public Builder addAllChatFrameBorderColor(Iterable<String> iterable) {
             ensureChatFrameBorderColorIsMutable();
-            AbstractMessageLite.Builder.addAll((Iterable) iterable, (List) this.chatFrameBorderColor_);
+            AbstractMessageLite.Builder.addAll(iterable, this.chatFrameBorderColor_);
             onChanged();
             return this;
         }
 
         public Builder addAllChatFrameFrameColor(Iterable<String> iterable) {
             ensureChatFrameFrameColorIsMutable();
-            AbstractMessageLite.Builder.addAll((Iterable) iterable, (List) this.chatFrameFrameColor_);
+            AbstractMessageLite.Builder.addAll(iterable, this.chatFrameFrameColor_);
             onChanged();
             return this;
         }
@@ -315,7 +319,7 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
                 return this;
             }
             ensureLanternImageIsMutable();
-            AbstractMessageLite.Builder.addAll((Iterable) iterable, (List) this.lanternImage_);
+            AbstractMessageLite.Builder.addAll(iterable, this.lanternImage_);
             onChanged();
             return this;
         }
@@ -323,7 +327,7 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
         public Builder addBgColor(String str) {
             if (str != null) {
                 ensureBgColorIsMutable();
-                this.bgColor_.add((LazyStringList) str);
+                this.bgColor_.add(str);
                 onChanged();
                 return this;
             }
@@ -344,7 +348,7 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
         public Builder addChatFrameBorderColor(String str) {
             if (str != null) {
                 ensureChatFrameBorderColorIsMutable();
-                this.chatFrameBorderColor_.add((LazyStringList) str);
+                this.chatFrameBorderColor_.add(str);
                 onChanged();
                 return this;
             }
@@ -365,7 +369,7 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
         public Builder addChatFrameFrameColor(String str) {
             if (str != null) {
                 ensureChatFrameFrameColorIsMutable();
-                this.chatFrameFrameColor_.add((LazyStringList) str);
+                this.chatFrameFrameColor_.add(str);
                 onChanged();
                 return this;
             }
@@ -386,11 +390,11 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
         public Builder addLanternImage(int i, lantern_resource.Builder builder) {
             RepeatedFieldBuilderV3<lantern_resource, lantern_resource.Builder, lantern_resourceOrBuilder> repeatedFieldBuilderV3 = this.lanternImageBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.addMessage(i, builder.build());
+                repeatedFieldBuilderV3.addMessage(i, builder.m2721build());
                 return this;
             }
             ensureLanternImageIsMutable();
-            this.lanternImage_.add(i, builder.build());
+            this.lanternImage_.add(i, builder.m2721build());
             onChanged();
             return this;
         }
@@ -413,11 +417,11 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
         public Builder addLanternImage(lantern_resource.Builder builder) {
             RepeatedFieldBuilderV3<lantern_resource, lantern_resource.Builder, lantern_resourceOrBuilder> repeatedFieldBuilderV3 = this.lanternImageBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.addMessage(builder.build());
+                repeatedFieldBuilderV3.addMessage(builder.m2721build());
                 return this;
             }
             ensureLanternImageIsMutable();
-            this.lanternImage_.add(builder.build());
+            this.lanternImage_.add(builder.m2721build());
             onChanged();
             return this;
         }
@@ -445,22 +449,22 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
             return getLanternImageFieldBuilder().addBuilder(i, lantern_resource.getDefaultInstance());
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: addRepeatedField */
+        public Builder m2672addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.addRepeatedField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public GiftExtra build() {
-            GiftExtra buildPartial = buildPartial();
-            if (buildPartial.isInitialized()) {
-                return buildPartial;
+        /* renamed from: build */
+        public GiftExtra m2674build() {
+            GiftExtra m2676buildPartial = m2676buildPartial();
+            if (m2676buildPartial.isInitialized()) {
+                return m2676buildPartial;
             }
-            throw newUninitializedMessageException((Message) buildPartial);
+            throw newUninitializedMessageException(m2676buildPartial);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public GiftExtra buildPartial() {
+        /* renamed from: buildPartial */
+        public GiftExtra m2676buildPartial() {
             GiftExtra giftExtra = new GiftExtra(this);
             giftExtra.giftPicUrl_ = this.giftPicUrl_;
             giftExtra.giftPicGif_ = this.giftPicGif_;
@@ -535,8 +539,8 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
             return giftExtra;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public Builder clear() {
+        /* renamed from: clear */
+        public Builder m2680clear() {
             super.clear();
             this.giftPicUrl_ = "";
             this.giftPicGif_ = "";
@@ -545,10 +549,10 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
             this.giftType_ = 0;
             this.giftId_ = 0;
             this.hitCount_ = 0;
-            this.hitId_ = 0L;
+            this.hitId_ = GiftExtra.serialVersionUID;
             this.hitBatch_ = 0;
-            this.beansCount_ = 0L;
-            this.beansCurrentCount_ = 0L;
+            this.beansCount_ = GiftExtra.serialVersionUID;
+            this.beansCurrentCount_ = GiftExtra.serialVersionUID;
             this.animCode_ = "";
             this.typeName_ = "";
             this.resourceUrl_ = "";
@@ -574,7 +578,7 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
             this.chatFrame_ = "";
             this.chatFrameIcon_ = "";
             this.isVibrate_ = false;
-            this.giftBeansCount_ = 0L;
+            this.giftBeansCount_ = GiftExtra.serialVersionUID;
             this.alwaysShowAnimation_ = false;
             this.chatBadgeUrl_ = "";
             this.chatBadgeLength_ = 0;
@@ -629,13 +633,13 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
         }
 
         public Builder clearBeansCount() {
-            this.beansCount_ = 0L;
+            this.beansCount_ = GiftExtra.serialVersionUID;
             onChanged();
             return this;
         }
 
         public Builder clearBeansCurrentCount() {
-            this.beansCurrentCount_ = 0L;
+            this.beansCurrentCount_ = GiftExtra.serialVersionUID;
             onChanged();
             return this;
         }
@@ -727,13 +731,13 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+        /* renamed from: clearField */
+        public Builder m2682clearField(Descriptors.FieldDescriptor fieldDescriptor) {
             return (Builder) super.clearField(fieldDescriptor);
         }
 
         public Builder clearGiftBeansCount() {
-            this.giftBeansCount_ = 0L;
+            this.giftBeansCount_ = GiftExtra.serialVersionUID;
             onChanged();
             return this;
         }
@@ -793,7 +797,7 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
         }
 
         public Builder clearHitId() {
-            this.hitId_ = 0L;
+            this.hitId_ = GiftExtra.serialVersionUID;
             onChanged();
             return this;
         }
@@ -870,8 +874,8 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+        /* renamed from: clearOneof */
+        public Builder m2685clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
             return (Builder) super.clearOneof(oneofDescriptor);
         }
 
@@ -905,10 +909,9 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder m2691clone() {
+            return (Builder) super.clone();
         }
 
         @Override // cn.irisgw.live.GiftExtraOrBuilder
@@ -982,7 +985,7 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
 
         @Override // cn.irisgw.live.GiftExtraOrBuilder
         public String getBgColor(int i) {
-            return this.bgColor_.get(i);
+            return (String) this.bgColor_.get(i);
         }
 
         @Override // cn.irisgw.live.GiftExtraOrBuilder
@@ -996,7 +999,8 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
         }
 
         @Override // cn.irisgw.live.GiftExtraOrBuilder
-        public ProtocolStringList getBgColorList() {
+        /* renamed from: getBgColorList */
+        public ProtocolStringList mo2660getBgColorList() {
             return this.bgColor_.getUnmodifiableView();
         }
 
@@ -1067,7 +1071,7 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
 
         @Override // cn.irisgw.live.GiftExtraOrBuilder
         public String getChatFrameBorderColor(int i) {
-            return this.chatFrameBorderColor_.get(i);
+            return (String) this.chatFrameBorderColor_.get(i);
         }
 
         @Override // cn.irisgw.live.GiftExtraOrBuilder
@@ -1081,7 +1085,8 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
         }
 
         @Override // cn.irisgw.live.GiftExtraOrBuilder
-        public ProtocolStringList getChatFrameBorderColorList() {
+        /* renamed from: getChatFrameBorderColorList */
+        public ProtocolStringList mo2661getChatFrameBorderColorList() {
             return this.chatFrameBorderColor_.getUnmodifiableView();
         }
 
@@ -1103,7 +1108,7 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
 
         @Override // cn.irisgw.live.GiftExtraOrBuilder
         public String getChatFrameFrameColor(int i) {
-            return this.chatFrameFrameColor_.get(i);
+            return (String) this.chatFrameFrameColor_.get(i);
         }
 
         @Override // cn.irisgw.live.GiftExtraOrBuilder
@@ -1117,7 +1122,8 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
         }
 
         @Override // cn.irisgw.live.GiftExtraOrBuilder
-        public ProtocolStringList getChatFrameFrameColorList() {
+        /* renamed from: getChatFrameFrameColorList */
+        public ProtocolStringList mo2662getChatFrameFrameColorList() {
             return this.chatFrameFrameColor_.getUnmodifiableView();
         }
 
@@ -1148,12 +1154,11 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public GiftExtra getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public GiftExtra m2693getDefaultInstanceForType() {
             return GiftExtra.getDefaultInstance();
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
         public Descriptors.Descriptor getDescriptorForType() {
             return LiveConstants.internal_static_cn_irisgw_live_GiftExtra_descriptor;
         }
@@ -1404,7 +1409,7 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
         @Override // cn.irisgw.live.GiftExtraOrBuilder
         public lantern_resourceOrBuilder getLanternImageOrBuilder(int i) {
             RepeatedFieldBuilderV3<lantern_resource, lantern_resource.Builder, lantern_resourceOrBuilder> repeatedFieldBuilderV3 = this.lanternImageBuilder_;
-            return repeatedFieldBuilderV3 == null ? this.lanternImage_.get(i) : repeatedFieldBuilderV3.getMessageOrBuilder(i);
+            return repeatedFieldBuilderV3 == null ? this.lanternImage_.get(i) : (lantern_resourceOrBuilder) repeatedFieldBuilderV3.getMessageOrBuilder(i);
         }
 
         @Override // cn.irisgw.live.GiftExtraOrBuilder
@@ -1548,12 +1553,10 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_GiftExtra_fieldAccessorTable.ensureFieldAccessorsInitialized(GiftExtra.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             return true;
         }
@@ -1586,16 +1589,16 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
             if (giftExtra.getHitCount() != 0) {
                 setHitCount(giftExtra.getHitCount());
             }
-            if (giftExtra.getHitId() != 0) {
+            if (giftExtra.getHitId() != GiftExtra.serialVersionUID) {
                 setHitId(giftExtra.getHitId());
             }
             if (giftExtra.getHitBatch() != 0) {
                 setHitBatch(giftExtra.getHitBatch());
             }
-            if (giftExtra.getBeansCount() != 0) {
+            if (giftExtra.getBeansCount() != GiftExtra.serialVersionUID) {
                 setBeansCount(giftExtra.getBeansCount());
             }
-            if (giftExtra.getBeansCurrentCount() != 0) {
+            if (giftExtra.getBeansCurrentCount() != GiftExtra.serialVersionUID) {
                 setBeansCurrentCount(giftExtra.getBeansCurrentCount());
             }
             if (!giftExtra.getAnimCode().isEmpty()) {
@@ -1690,7 +1693,7 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
             if (giftExtra.getIsVibrate()) {
                 setIsVibrate(giftExtra.getIsVibrate());
             }
-            if (giftExtra.getGiftBeansCount() != 0) {
+            if (giftExtra.getGiftBeansCount() != GiftExtra.serialVersionUID) {
                 setGiftBeansCount(giftExtra.getGiftBeansCount());
             }
             if (giftExtra.getAlwaysShowAnimation()) {
@@ -1767,18 +1770,18 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
                 this.randomStatic_ = giftExtra.randomStatic_;
                 onChanged();
             }
-            mergeUnknownFields(giftExtra.unknownFields);
+            m2702mergeUnknownFields(giftExtra.unknownFields);
             onChanged();
             return this;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+        /* renamed from: mergeFrom */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
         */
-        public cn.irisgw.live.GiftExtra.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+        public cn.irisgw.live.GiftExtra.Builder m2699mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
             /*
                 r4 = this;
                 r0 = 0
@@ -1823,11 +1826,11 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
                 r0 = r6
                 throw r0
             */
-            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.GiftExtra.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.GiftExtra$Builder");
+            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.GiftExtra.Builder.m2699mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.GiftExtra$Builder");
         }
 
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder mergeFrom(Message message) {
+        /* renamed from: mergeFrom */
+        public Builder m2698mergeFrom(Message message) {
             if (message instanceof GiftExtra) {
                 return mergeFrom((GiftExtra) message);
             }
@@ -1835,8 +1838,8 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: mergeUnknownFields */
+        public final Builder m2702mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.mergeUnknownFields(unknownFieldSet);
         }
 
@@ -1923,7 +1926,7 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
         public Builder setBgColor(int i, String str) {
             if (str != null) {
                 ensureBgColorIsMutable();
-                this.bgColor_.set(i, (int) str);
+                this.bgColor_.set(i, str);
                 onChanged();
                 return this;
             }
@@ -1992,7 +1995,7 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
         public Builder setChatFrameBorderColor(int i, String str) {
             if (str != null) {
                 ensureChatFrameBorderColorIsMutable();
-                this.chatFrameBorderColor_.set(i, (int) str);
+                this.chatFrameBorderColor_.set(i, str);
                 onChanged();
                 return this;
             }
@@ -2018,7 +2021,7 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
         public Builder setChatFrameFrameColor(int i, String str) {
             if (str != null) {
                 ensureChatFrameFrameColorIsMutable();
-                this.chatFrameFrameColor_.set(i, (int) str);
+                this.chatFrameFrameColor_.set(i, str);
                 onChanged();
                 return this;
             }
@@ -2090,8 +2093,8 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: setField */
+        public Builder m2704setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.setField(fieldDescriptor, obj);
         }
 
@@ -2271,11 +2274,11 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
         public Builder setLanternImage(int i, lantern_resource.Builder builder) {
             RepeatedFieldBuilderV3<lantern_resource, lantern_resource.Builder, lantern_resourceOrBuilder> repeatedFieldBuilderV3 = this.lanternImageBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.setMessage(i, builder.build());
+                repeatedFieldBuilderV3.setMessage(i, builder.m2721build());
                 return this;
             }
             ensureLanternImageIsMutable();
-            this.lanternImage_.set(i, builder.build());
+            this.lanternImage_.set(i, builder.m2721build());
             onChanged();
             return this;
         }
@@ -2379,8 +2382,8 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+        /* renamed from: setRepeatedField */
+        public Builder m2706setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
             return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
         }
 
@@ -2422,8 +2425,8 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
             throw null;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: setUnknownFields */
+        public final Builder m2708setUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.setUnknownFields(unknownFieldSet);
         }
     }
@@ -2436,8 +2439,8 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
         private byte memoizedIsInitialized;
         private static final lantern_resource DEFAULT_INSTANCE = new lantern_resource();
         private static final Parser<lantern_resource> PARSER = new AbstractParser<lantern_resource>() { // from class: cn.irisgw.live.GiftExtra.lantern_resource.1
-            @Override // com.google.protobuf.Parser
-            public lantern_resource parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+            /* renamed from: parsePartialFrom */
+            public lantern_resource m2717parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
                 return new lantern_resource(codedInputStream, extensionRegistryLite);
             }
         };
@@ -2465,37 +2468,37 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
                 boolean unused = lantern_resource.alwaysUseFieldBuilders;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: addRepeatedField */
+            public Builder m2719addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.addRepeatedField(fieldDescriptor, obj);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public lantern_resource build() {
-                lantern_resource buildPartial = buildPartial();
-                if (buildPartial.isInitialized()) {
-                    return buildPartial;
+            /* renamed from: build */
+            public lantern_resource m2721build() {
+                lantern_resource m2723buildPartial = m2723buildPartial();
+                if (m2723buildPartial.isInitialized()) {
+                    return m2723buildPartial;
                 }
-                throw newUninitializedMessageException((Message) buildPartial);
+                throw newUninitializedMessageException(m2723buildPartial);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public lantern_resource buildPartial() {
+            /* renamed from: buildPartial */
+            public lantern_resource m2723buildPartial() {
                 lantern_resource lantern_resourceVar = new lantern_resource(this);
                 lantern_resourceVar.img_ = this.img_;
                 onBuilt();
                 return lantern_resourceVar;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public Builder clear() {
+            /* renamed from: clear */
+            public Builder m2727clear() {
                 super.clear();
                 this.img_ = "";
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+            /* renamed from: clearField */
+            public Builder m2729clearField(Descriptors.FieldDescriptor fieldDescriptor) {
                 return (Builder) super.clearField(fieldDescriptor);
             }
 
@@ -2505,23 +2508,21 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+            /* renamed from: clearOneof */
+            public Builder m2732clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
                 return (Builder) super.clearOneof(oneofDescriptor);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder m2738clone() {
+                return (Builder) super.clone();
             }
 
-            @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-            public lantern_resource getDefaultInstanceForType() {
+            /* renamed from: getDefaultInstanceForType */
+            public lantern_resource m2740getDefaultInstanceForType() {
                 return lantern_resource.getDefaultInstance();
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
             public Descriptors.Descriptor getDescriptorForType() {
                 return LiveConstants.internal_static_cn_irisgw_live_GiftExtra_lantern_resource_descriptor;
             }
@@ -2548,12 +2549,10 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
                 return (ByteString) obj;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder
             public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
                 return LiveConstants.internal_static_cn_irisgw_live_GiftExtra_lantern_resource_fieldAccessorTable.ensureFieldAccessorsInitialized(lantern_resource.class, Builder.class);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
             public final boolean isInitialized() {
                 return true;
             }
@@ -2566,18 +2565,18 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
                     this.img_ = lantern_resourceVar.img_;
                     onChanged();
                 }
-                mergeUnknownFields(lantern_resourceVar.unknownFields);
+                m2749mergeUnknownFields(lantern_resourceVar.unknownFields);
                 onChanged();
                 return this;
             }
 
             /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+            /* renamed from: mergeFrom */
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
                 To view partially-correct code enable 'Show inconsistent code' option in preferences
             */
-            public cn.irisgw.live.GiftExtra.lantern_resource.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+            public cn.irisgw.live.GiftExtra.lantern_resource.Builder m2746mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
                 /*
                     r4 = this;
                     r0 = 0
@@ -2622,11 +2621,11 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
                     r0 = r6
                     throw r0
                 */
-                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.GiftExtra.lantern_resource.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.GiftExtra$lantern_resource$Builder");
+                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.GiftExtra.lantern_resource.Builder.m2746mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.GiftExtra$lantern_resource$Builder");
             }
 
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder mergeFrom(Message message) {
+            /* renamed from: mergeFrom */
+            public Builder m2745mergeFrom(Message message) {
                 if (message instanceof lantern_resource) {
                     return mergeFrom((lantern_resource) message);
                 }
@@ -2634,13 +2633,13 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: mergeUnknownFields */
+            public final Builder m2749mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.mergeUnknownFields(unknownFieldSet);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: setField */
+            public Builder m2751setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.setField(fieldDescriptor, obj);
             }
 
@@ -2663,13 +2662,13 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
                 throw null;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+            /* renamed from: setRepeatedField */
+            public Builder m2753setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
                 return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: setUnknownFields */
+            public final Builder m2755setUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.setUnknownFields(unknownFieldSet);
             }
         }
@@ -2697,10 +2696,10 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
                             }
                         }
                         z = true;
-                    } catch (InvalidProtocolBufferException e) {
-                        throw e.setUnfinishedMessage(this);
-                    } catch (IOException e2) {
-                        throw new InvalidProtocolBufferException(e2).setUnfinishedMessage(this);
+                    } catch (IOException e) {
+                        throw new InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+                    } catch (InvalidProtocolBufferException e2) {
+                        throw e2.setUnfinishedMessage(this);
                     }
                 } finally {
                     this.unknownFields = newBuilder.build();
@@ -2723,66 +2722,65 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
         }
 
         public static Builder newBuilder() {
-            return DEFAULT_INSTANCE.toBuilder();
+            return DEFAULT_INSTANCE.m2716toBuilder();
         }
 
         public static Builder newBuilder(lantern_resource lantern_resourceVar) {
-            return DEFAULT_INSTANCE.toBuilder().mergeFrom(lantern_resourceVar);
+            return DEFAULT_INSTANCE.m2716toBuilder().mergeFrom(lantern_resourceVar);
         }
 
         public static lantern_resource parseDelimitedFrom(InputStream inputStream) throws IOException {
-            return (lantern_resource) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
         }
 
         public static lantern_resource parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (lantern_resource) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static lantern_resource parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString);
+            return (lantern_resource) PARSER.parseFrom(byteString);
         }
 
         public static lantern_resource parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString, extensionRegistryLite);
+            return (lantern_resource) PARSER.parseFrom(byteString, extensionRegistryLite);
         }
 
         public static lantern_resource parseFrom(CodedInputStream codedInputStream) throws IOException {
-            return (lantern_resource) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
         }
 
         public static lantern_resource parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (lantern_resource) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
         }
 
         public static lantern_resource parseFrom(InputStream inputStream) throws IOException {
-            return (lantern_resource) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
         }
 
         public static lantern_resource parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (lantern_resource) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static lantern_resource parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer);
+            return (lantern_resource) PARSER.parseFrom(byteBuffer);
         }
 
         public static lantern_resource parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+            return (lantern_resource) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
         }
 
         public static lantern_resource parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr);
+            return (lantern_resource) PARSER.parseFrom(bArr);
         }
 
         public static lantern_resource parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr, extensionRegistryLite);
+            return (lantern_resource) PARSER.parseFrom(bArr, extensionRegistryLite);
         }
 
         public static Parser<lantern_resource> parser() {
             return PARSER;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public boolean equals(Object obj) {
             if (obj == this) {
                 return true;
@@ -2794,8 +2792,8 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
             return super.equals(obj);
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public lantern_resource getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public lantern_resource m2711getDefaultInstanceForType() {
             return DEFAULT_INSTANCE;
         }
 
@@ -2821,12 +2819,10 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
         public Parser<lantern_resource> getParserForType() {
             return PARSER;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public int getSerializedSize() {
             int i = this.memoizedSize;
             if (i != -1) {
@@ -2841,12 +2837,10 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
             return serializedSize;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
         public final UnknownFieldSet getUnknownFields() {
             return this.unknownFields;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public int hashCode() {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
@@ -2856,12 +2850,10 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
             return hashCode;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_GiftExtra_lantern_resource_fieldAccessorTable.ensureFieldAccessorsInitialized(lantern_resource.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte b = this.memoizedIsInitialized;
             if (b == 1) {
@@ -2874,28 +2866,26 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
             return true;
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder newBuilderForType() {
+        /* renamed from: newBuilderForType */
+        public Builder m2714newBuilderForType() {
             return newBuilder();
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.google.protobuf.GeneratedMessageV3
-        public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+        /* renamed from: newBuilderForType */
+        public Builder m2713newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
             return new Builder(builderParent);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
             return new lantern_resource();
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder toBuilder() {
+        /* renamed from: toBuilder */
+        public Builder m2716toBuilder() {
             return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
             if (!getImgBytes().isEmpty()) {
                 GeneratedMessageV3.writeString(codedOutputStream, 1, this.img_);
@@ -3048,7 +3038,7 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
                                 this.chatFrameFrameColor_ = new LazyStringArrayList();
                                 z4 = z2 | true;
                             }
-                            this.chatFrameFrameColor_.add((LazyStringList) readStringRequireUtf8);
+                            this.chatFrameFrameColor_.add(readStringRequireUtf8);
                             z2 = z4;
                             continue;
                         case 258:
@@ -3058,7 +3048,7 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
                                 this.chatFrameBorderColor_ = new LazyStringArrayList();
                                 z5 = z2 | true;
                             }
-                            this.chatFrameBorderColor_.add((LazyStringList) readStringRequireUtf82);
+                            this.chatFrameBorderColor_.add(readStringRequireUtf82);
                             z2 = z5;
                             continue;
                         case 266:
@@ -3073,22 +3063,22 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
                         case 288:
                             this.giftBeansCount_ = codedInputStream.readUInt64();
                             continue;
-                        case 296:
+                        case R.styleable.Theme_seekBarPreferenceStyle /* 296 */:
                             this.alwaysShowAnimation_ = codedInputStream.readBool();
                             continue;
-                        case 306:
+                        case R.styleable.Theme_findOnPagePreviousDrawable /* 306 */:
                             this.chatBadgeUrl_ = codedInputStream.readStringRequireUtf8();
                             continue;
                         case 312:
                             this.chatBadgeLength_ = codedInputStream.readInt32();
                             continue;
-                        case 320:
+                        case NativeCrypto.SSL3_RT_MAX_ENCRYPTED_OVERHEAD /* 320 */:
                             this.chatBadgeHeight_ = codedInputStream.readInt32();
                             continue;
                         case 330:
                             this.avatarFrameUrl_ = codedInputStream.readStringRequireUtf8();
                             continue;
-                        case 338:
+                        case ImsReasonInfo.CODE_SIP_BUSY /* 338 */:
                             this.bgImg_ = codedInputStream.readStringRequireUtf8();
                             continue;
                         case 346:
@@ -3098,10 +3088,10 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
                                 this.bgColor_ = new LazyStringArrayList();
                                 z6 = z2 | true;
                             }
-                            this.bgColor_.add((LazyStringList) readStringRequireUtf83);
+                            this.bgColor_.add(readStringRequireUtf83);
                             z2 = z6;
                             continue;
-                        case 354:
+                        case ImsReasonInfo.CODE_SIP_SERVICE_UNAVAILABLE /* 354 */:
                             boolean z7 = z2;
                             if (!(z2 & true)) {
                                 this.lanternImage_ = new ArrayList();
@@ -3110,7 +3100,7 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
                             this.lanternImage_.add((lantern_resource) codedInputStream.readMessage(lantern_resource.parser(), extensionRegistryLite));
                             z2 = z7;
                             continue;
-                        case 360:
+                        case SpatialRelationUtil.A_CIRCLE_DEGREE /* 360 */:
                             this.lanternId_ = codedInputStream.readInt32();
                             continue;
                         case 368:
@@ -3186,73 +3176,72 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
     }
 
     public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
+        return DEFAULT_INSTANCE.m2669toBuilder();
     }
 
     public static Builder newBuilder(GiftExtra giftExtra) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(giftExtra);
+        return DEFAULT_INSTANCE.m2669toBuilder().mergeFrom(giftExtra);
     }
 
     public static GiftExtra parseDelimitedFrom(InputStream inputStream) throws IOException {
-        return (GiftExtra) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
     }
 
     public static GiftExtra parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (GiftExtra) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static GiftExtra parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString);
+        return (GiftExtra) PARSER.parseFrom(byteString);
     }
 
     public static GiftExtra parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString, extensionRegistryLite);
+        return (GiftExtra) PARSER.parseFrom(byteString, extensionRegistryLite);
     }
 
     public static GiftExtra parseFrom(CodedInputStream codedInputStream) throws IOException {
-        return (GiftExtra) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
     }
 
     public static GiftExtra parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (GiftExtra) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
     }
 
     public static GiftExtra parseFrom(InputStream inputStream) throws IOException {
-        return (GiftExtra) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
     }
 
     public static GiftExtra parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (GiftExtra) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static GiftExtra parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer);
+        return (GiftExtra) PARSER.parseFrom(byteBuffer);
     }
 
     public static GiftExtra parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+        return (GiftExtra) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
     }
 
     public static GiftExtra parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr);
+        return (GiftExtra) PARSER.parseFrom(bArr);
     }
 
     public static GiftExtra parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr, extensionRegistryLite);
+        return (GiftExtra) PARSER.parseFrom(bArr, extensionRegistryLite);
     }
 
     public static Parser<GiftExtra> parser() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
         }
         if (obj instanceof GiftExtra) {
             GiftExtra giftExtra = (GiftExtra) obj;
-            return getGiftPicUrl().equals(giftExtra.getGiftPicUrl()) && getGiftPicGif().equals(giftExtra.getGiftPicGif()) && getGiftPicApng().equals(giftExtra.getGiftPicApng()) && getAnimation() == giftExtra.getAnimation() && getGiftType() == giftExtra.getGiftType() && getGiftId() == giftExtra.getGiftId() && getHitCount() == giftExtra.getHitCount() && getHitId() == giftExtra.getHitId() && getHitBatch() == giftExtra.getHitBatch() && getBeansCount() == giftExtra.getBeansCount() && getBeansCurrentCount() == giftExtra.getBeansCurrentCount() && getAnimCode().equals(giftExtra.getAnimCode()) && getTypeName().equals(giftExtra.getTypeName()) && getResourceUrl().equals(giftExtra.getResourceUrl()) && getGiftPicMp4().equals(giftExtra.getGiftPicMp4()) && getFanClubName().equals(giftExtra.getFanClubName()) && getFanClubLevel() == giftExtra.getFanClubLevel() && getInFanClub() == giftExtra.getInFanClub() && this.fansStatus_ == giftExtra.fansStatus_ && this.liangType_ == giftExtra.liangType_ && getLiangId().equals(giftExtra.getLiangId()) && getGiftName().equals(giftExtra.getGiftName()) && getRechargeBadge() == giftExtra.getRechargeBadge() && getIsDrawGoods() == giftExtra.getIsDrawGoods() && getIsLuckBag() == giftExtra.getIsLuckBag() && getIsHelpWishList() == giftExtra.getIsHelpWishList() && getIsReward() == giftExtra.getIsReward() && getChatFrameColorType() == giftExtra.getChatFrameColorType() && getChatFrameGradientType() == giftExtra.getChatFrameGradientType() && getChatFrameFrameColorList().equals(giftExtra.getChatFrameFrameColorList()) && getChatFrameBorderColorList().equals(giftExtra.getChatFrameBorderColorList()) && getChatFrame().equals(giftExtra.getChatFrame()) && getChatFrameIcon().equals(giftExtra.getChatFrameIcon()) && getIsVibrate() == giftExtra.getIsVibrate() && getGiftBeansCount() == giftExtra.getGiftBeansCount() && getAlwaysShowAnimation() == giftExtra.getAlwaysShowAnimation() && getChatBadgeUrl().equals(giftExtra.getChatBadgeUrl()) && getChatBadgeLength() == giftExtra.getChatBadgeLength() && getChatBadgeHeight() == giftExtra.getChatBadgeHeight() && getAvatarFrameUrl().equals(giftExtra.getAvatarFrameUrl()) && getBgImg().equals(giftExtra.getBgImg()) && getBgColorList().equals(giftExtra.getBgColorList()) && getLanternImageList().equals(giftExtra.getLanternImageList()) && getLanternId() == giftExtra.getLanternId() && getLanternPlayTimes() == giftExtra.getLanternPlayTimes() && getAnimMany() == giftExtra.getAnimMany() && getRandomName().equals(giftExtra.getRandomName()) && getRandomStatic().equals(giftExtra.getRandomStatic()) && this.unknownFields.equals(giftExtra.unknownFields);
+            return getGiftPicUrl().equals(giftExtra.getGiftPicUrl()) && getGiftPicGif().equals(giftExtra.getGiftPicGif()) && getGiftPicApng().equals(giftExtra.getGiftPicApng()) && getAnimation() == giftExtra.getAnimation() && getGiftType() == giftExtra.getGiftType() && getGiftId() == giftExtra.getGiftId() && getHitCount() == giftExtra.getHitCount() && getHitId() == giftExtra.getHitId() && getHitBatch() == giftExtra.getHitBatch() && getBeansCount() == giftExtra.getBeansCount() && getBeansCurrentCount() == giftExtra.getBeansCurrentCount() && getAnimCode().equals(giftExtra.getAnimCode()) && getTypeName().equals(giftExtra.getTypeName()) && getResourceUrl().equals(giftExtra.getResourceUrl()) && getGiftPicMp4().equals(giftExtra.getGiftPicMp4()) && getFanClubName().equals(giftExtra.getFanClubName()) && getFanClubLevel() == giftExtra.getFanClubLevel() && getInFanClub() == giftExtra.getInFanClub() && this.fansStatus_ == giftExtra.fansStatus_ && this.liangType_ == giftExtra.liangType_ && getLiangId().equals(giftExtra.getLiangId()) && getGiftName().equals(giftExtra.getGiftName()) && getRechargeBadge() == giftExtra.getRechargeBadge() && getIsDrawGoods() == giftExtra.getIsDrawGoods() && getIsLuckBag() == giftExtra.getIsLuckBag() && getIsHelpWishList() == giftExtra.getIsHelpWishList() && getIsReward() == giftExtra.getIsReward() && getChatFrameColorType() == giftExtra.getChatFrameColorType() && getChatFrameGradientType() == giftExtra.getChatFrameGradientType() && mo2662getChatFrameFrameColorList().equals(giftExtra.mo2662getChatFrameFrameColorList()) && mo2661getChatFrameBorderColorList().equals(giftExtra.mo2661getChatFrameBorderColorList()) && getChatFrame().equals(giftExtra.getChatFrame()) && getChatFrameIcon().equals(giftExtra.getChatFrameIcon()) && getIsVibrate() == giftExtra.getIsVibrate() && getGiftBeansCount() == giftExtra.getGiftBeansCount() && getAlwaysShowAnimation() == giftExtra.getAlwaysShowAnimation() && getChatBadgeUrl().equals(giftExtra.getChatBadgeUrl()) && getChatBadgeLength() == giftExtra.getChatBadgeLength() && getChatBadgeHeight() == giftExtra.getChatBadgeHeight() && getAvatarFrameUrl().equals(giftExtra.getAvatarFrameUrl()) && getBgImg().equals(giftExtra.getBgImg()) && mo2660getBgColorList().equals(giftExtra.mo2660getBgColorList()) && getLanternImageList().equals(giftExtra.getLanternImageList()) && getLanternId() == giftExtra.getLanternId() && getLanternPlayTimes() == giftExtra.getLanternPlayTimes() && getAnimMany() == giftExtra.getAnimMany() && getRandomName().equals(giftExtra.getRandomName()) && getRandomStatic().equals(giftExtra.getRandomStatic()) && this.unknownFields.equals(giftExtra.unknownFields);
         }
         return super.equals(obj);
     }
@@ -3328,7 +3317,7 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
 
     @Override // cn.irisgw.live.GiftExtraOrBuilder
     public String getBgColor(int i) {
-        return this.bgColor_.get(i);
+        return (String) this.bgColor_.get(i);
     }
 
     @Override // cn.irisgw.live.GiftExtraOrBuilder
@@ -3342,7 +3331,8 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
     }
 
     @Override // cn.irisgw.live.GiftExtraOrBuilder
-    public ProtocolStringList getBgColorList() {
+    /* renamed from: getBgColorList */
+    public ProtocolStringList mo2660getBgColorList() {
         return this.bgColor_;
     }
 
@@ -3413,7 +3403,7 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
 
     @Override // cn.irisgw.live.GiftExtraOrBuilder
     public String getChatFrameBorderColor(int i) {
-        return this.chatFrameBorderColor_.get(i);
+        return (String) this.chatFrameBorderColor_.get(i);
     }
 
     @Override // cn.irisgw.live.GiftExtraOrBuilder
@@ -3427,7 +3417,8 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
     }
 
     @Override // cn.irisgw.live.GiftExtraOrBuilder
-    public ProtocolStringList getChatFrameBorderColorList() {
+    /* renamed from: getChatFrameBorderColorList */
+    public ProtocolStringList mo2661getChatFrameBorderColorList() {
         return this.chatFrameBorderColor_;
     }
 
@@ -3449,7 +3440,7 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
 
     @Override // cn.irisgw.live.GiftExtraOrBuilder
     public String getChatFrameFrameColor(int i) {
-        return this.chatFrameFrameColor_.get(i);
+        return (String) this.chatFrameFrameColor_.get(i);
     }
 
     @Override // cn.irisgw.live.GiftExtraOrBuilder
@@ -3463,7 +3454,8 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
     }
 
     @Override // cn.irisgw.live.GiftExtraOrBuilder
-    public ProtocolStringList getChatFrameFrameColorList() {
+    /* renamed from: getChatFrameFrameColorList */
+    public ProtocolStringList mo2662getChatFrameFrameColorList() {
         return this.chatFrameFrameColor_;
     }
 
@@ -3494,8 +3486,8 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
         return (ByteString) obj;
     }
 
-    @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-    public GiftExtra getDefaultInstanceForType() {
+    /* renamed from: getDefaultInstanceForType */
+    public GiftExtra m2664getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
     }
 
@@ -3783,7 +3775,6 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
         return this.liangType_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
     public Parser<GiftExtra> getParserForType() {
         return PARSER;
     }
@@ -3859,7 +3850,6 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
         return (ByteString) obj;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public int getSerializedSize() {
         int i = this.memoizedSize;
         if (i != -1) {
@@ -3896,7 +3886,7 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
         }
         long j = this.hitId_;
         int i12 = i11;
-        if (j != 0) {
+        if (j != serialVersionUID) {
             i12 = i11 + CodedOutputStream.computeUInt64Size(8, j);
         }
         int i13 = this.hitBatch_;
@@ -3906,12 +3896,12 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
         }
         long j2 = this.beansCount_;
         int i15 = i14;
-        if (j2 != 0) {
+        if (j2 != serialVersionUID) {
             i15 = i14 + CodedOutputStream.computeUInt64Size(10, j2);
         }
         long j3 = this.beansCurrentCount_;
         int i16 = i15;
-        if (j3 != 0) {
+        if (j3 != serialVersionUID) {
             i16 = i15 + CodedOutputStream.computeUInt64Size(11, j3);
         }
         int i17 = i16;
@@ -3999,12 +3989,12 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
         for (int i40 = 0; i40 < this.chatFrameFrameColor_.size(); i40++) {
             i39 += computeStringSizeNoTag(this.chatFrameFrameColor_.getRaw(i40));
         }
-        int size = getChatFrameFrameColorList().size();
+        int size = mo2662getChatFrameFrameColorList().size();
         int i41 = 0;
         for (int i42 = 0; i42 < this.chatFrameBorderColor_.size(); i42++) {
             i41 += computeStringSizeNoTag(this.chatFrameBorderColor_.getRaw(i42));
         }
-        int size2 = i38 + i39 + (size * 2) + i41 + (getChatFrameBorderColorList().size() * 2);
+        int size2 = i38 + i39 + (size * 2) + i41 + (mo2661getChatFrameBorderColorList().size() * 2);
         int i43 = size2;
         if (!getChatFrameBytes().isEmpty()) {
             i43 = size2 + GeneratedMessageV3.computeStringSize(33, this.chatFrame_);
@@ -4020,7 +4010,7 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
         }
         long j4 = this.giftBeansCount_;
         int i46 = i45;
-        if (j4 != 0) {
+        if (j4 != serialVersionUID) {
             i46 = i45 + CodedOutputStream.computeUInt64Size(36, j4);
         }
         boolean z7 = this.alwaysShowAnimation_;
@@ -4054,7 +4044,7 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
         for (int i56 = 0; i56 < this.bgColor_.size(); i56++) {
             i55 += computeStringSizeNoTag(this.bgColor_.getRaw(i56));
         }
-        int size3 = i54 + i55 + (getBgColorList().size() * 2);
+        int size3 = i54 + i55 + (mo2660getBgColorList().size() * 2);
         int i57 = 0;
         while (true) {
             int i58 = i57;
@@ -4114,12 +4104,10 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
         return (ByteString) obj;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
     public final UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public int hashCode() {
         if (this.memoizedHashCode != 0) {
             return this.memoizedHashCode;
@@ -4127,16 +4115,16 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
         int hashCode = ((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((779 + getDescriptor().hashCode()) * 37) + 1) * 53) + getGiftPicUrl().hashCode()) * 37) + 2) * 53) + getGiftPicGif().hashCode()) * 37) + 3) * 53) + getGiftPicApng().hashCode()) * 37) + 4) * 53) + getAnimation()) * 37) + 5) * 53) + getGiftType()) * 37) + 6) * 53) + getGiftId()) * 37) + 7) * 53) + getHitCount()) * 37) + 8) * 53) + Internal.hashLong(getHitId())) * 37) + 9) * 53) + getHitBatch()) * 37) + 10) * 53) + Internal.hashLong(getBeansCount())) * 37) + 11) * 53) + Internal.hashLong(getBeansCurrentCount())) * 37) + 12) * 53) + getAnimCode().hashCode()) * 37) + 13) * 53) + getTypeName().hashCode()) * 37) + 14) * 53) + getResourceUrl().hashCode()) * 37) + 15) * 53) + getGiftPicMp4().hashCode()) * 37) + 16) * 53) + getFanClubName().hashCode()) * 37) + 17) * 53) + getFanClubLevel()) * 37) + 18) * 53) + Internal.hashBoolean(getInFanClub())) * 37) + 19) * 53) + this.fansStatus_) * 37) + 20) * 53) + this.liangType_) * 37) + 21) * 53) + getLiangId().hashCode()) * 37) + 22) * 53) + getGiftName().hashCode()) * 37) + 23) * 53) + getRechargeBadge()) * 37) + 24) * 53) + Internal.hashBoolean(getIsDrawGoods())) * 37) + 25) * 53) + Internal.hashBoolean(getIsLuckBag())) * 37) + 26) * 53) + Internal.hashBoolean(getIsHelpWishList())) * 37) + 28) * 53) + Internal.hashBoolean(getIsReward())) * 37) + 29) * 53) + getChatFrameColorType()) * 37) + 30) * 53) + getChatFrameGradientType();
         int i = hashCode;
         if (getChatFrameFrameColorCount() > 0) {
-            i = (((hashCode * 37) + 31) * 53) + getChatFrameFrameColorList().hashCode();
+            i = (((hashCode * 37) + 31) * 53) + mo2662getChatFrameFrameColorList().hashCode();
         }
         int i2 = i;
         if (getChatFrameBorderColorCount() > 0) {
-            i2 = (((i * 37) + 32) * 53) + getChatFrameBorderColorList().hashCode();
+            i2 = (((i * 37) + 32) * 53) + mo2661getChatFrameBorderColorList().hashCode();
         }
         int hashCode2 = (((((((((((((((((((((((((((((((((((((((i2 * 37) + 33) * 53) + getChatFrame().hashCode()) * 37) + 34) * 53) + getChatFrameIcon().hashCode()) * 37) + 35) * 53) + Internal.hashBoolean(getIsVibrate())) * 37) + 36) * 53) + Internal.hashLong(getGiftBeansCount())) * 37) + 37) * 53) + Internal.hashBoolean(getAlwaysShowAnimation())) * 37) + 38) * 53) + getChatBadgeUrl().hashCode()) * 37) + 39) * 53) + getChatBadgeLength()) * 37) + 40) * 53) + getChatBadgeHeight()) * 37) + 41) * 53) + getAvatarFrameUrl().hashCode()) * 37) + 42) * 53) + getBgImg().hashCode();
         int i3 = hashCode2;
         if (getBgColorCount() > 0) {
-            i3 = (((hashCode2 * 37) + 43) * 53) + getBgColorList().hashCode();
+            i3 = (((hashCode2 * 37) + 43) * 53) + mo2660getBgColorList().hashCode();
         }
         int i4 = i3;
         if (getLanternImageCount() > 0) {
@@ -4147,12 +4135,10 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
         return lanternId;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
         return LiveConstants.internal_static_cn_irisgw_live_GiftExtra_fieldAccessorTable.ensureFieldAccessorsInitialized(GiftExtra.class, Builder.class);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
     public final boolean isInitialized() {
         byte b = this.memoizedIsInitialized;
         if (b == 1) {
@@ -4165,28 +4151,26 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
         return true;
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder newBuilderForType() {
+    /* renamed from: newBuilderForType */
+    public Builder m2667newBuilderForType() {
         return newBuilder();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.protobuf.GeneratedMessageV3
-    public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+    /* renamed from: newBuilderForType */
+    public Builder m2666newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
         return new Builder(builderParent);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
         return new GiftExtra();
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder toBuilder() {
+    /* renamed from: toBuilder */
+    public Builder m2669toBuilder() {
         return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
         int i;
         if (!getGiftPicUrlBytes().isEmpty()) {
@@ -4215,7 +4199,7 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
             codedOutputStream.writeUInt32(7, i5);
         }
         long j = this.hitId_;
-        if (j != 0) {
+        if (j != serialVersionUID) {
             codedOutputStream.writeUInt64(8, j);
         }
         int i6 = this.hitBatch_;
@@ -4223,11 +4207,11 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
             codedOutputStream.writeUInt32(9, i6);
         }
         long j2 = this.beansCount_;
-        if (j2 != 0) {
+        if (j2 != serialVersionUID) {
             codedOutputStream.writeUInt64(10, j2);
         }
         long j3 = this.beansCurrentCount_;
-        if (j3 != 0) {
+        if (j3 != serialVersionUID) {
             codedOutputStream.writeUInt64(11, j3);
         }
         if (!getAnimCodeBytes().isEmpty()) {
@@ -4322,7 +4306,7 @@ public final class GiftExtra extends GeneratedMessageV3 implements GiftExtraOrBu
             codedOutputStream.writeBool(35, z6);
         }
         long j4 = this.giftBeansCount_;
-        if (j4 != 0) {
+        if (j4 != serialVersionUID) {
             codedOutputStream.writeUInt64(36, j4);
         }
         boolean z7 = this.alwaysShowAnimation_;

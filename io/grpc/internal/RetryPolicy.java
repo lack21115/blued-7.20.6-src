@@ -4,7 +4,6 @@ import com.google.common.base.MoreObjects;
 import com.google.common.base.Objects;
 import com.google.common.collect.ImmutableSet;
 import io.grpc.Status;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Set;
 import javax.annotation.Nonnull;
@@ -31,7 +30,7 @@ public final class RetryPolicy {
         this.initialBackoffNanos = j;
         this.maxBackoffNanos = j2;
         this.backoffMultiplier = d;
-        this.retryableStatusCodes = ImmutableSet.copyOf((Collection) set);
+        this.retryableStatusCodes = ImmutableSet.copyOf(set);
     }
 
     public boolean equals(Object obj) {
@@ -59,7 +58,7 @@ public final class RetryPolicy {
     }
 
     public int hashCode() {
-        return Objects.hashCode(Integer.valueOf(this.maxAttempts), Long.valueOf(this.initialBackoffNanos), Long.valueOf(this.maxBackoffNanos), Double.valueOf(this.backoffMultiplier), this.retryableStatusCodes);
+        return Objects.hashCode(new Object[]{Integer.valueOf(this.maxAttempts), Long.valueOf(this.initialBackoffNanos), Long.valueOf(this.maxBackoffNanos), Double.valueOf(this.backoffMultiplier), this.retryableStatusCodes});
     }
 
     public String toString() {

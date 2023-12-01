@@ -24,13 +24,9 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveBottomWebDialogFragment.class */
 public class LiveBottomWebDialogFragment extends BaseDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public LayoutInflater f12772a;
+    public LayoutInflater a;
     private Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private View f12773c;
+    private View c;
     private ImageView d;
     private ProgressBar e;
     private BluedWebView f;
@@ -54,24 +50,24 @@ public class LiveBottomWebDialogFragment extends BaseDialogFragment {
     }
 
     private void d() {
-        this.f12773c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.LiveBottomWebDialogFragment.1
+        this.c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.LiveBottomWebDialogFragment.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
                 LiveBottomWebDialogFragment.this.getActivity().finish();
             }
         });
-        this.e = (ProgressBar) this.f12773c.findViewById(R.id.loading);
-        this.d = (ImageView) this.f12773c.findViewById(R.id.loading_bg);
+        this.e = (ProgressBar) this.c.findViewById(R.id.loading);
+        this.d = (ImageView) this.c.findViewById(R.id.loading_bg);
         this.e.setVisibility(0);
         this.d.setVisibility(0);
-        WebView webView = (WebView) this.f12773c.findViewById(R.id.web_view);
+        WebView webView = (WebView) this.c.findViewById(R.id.web_view);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.setWebViewClient(new WebViewClient());
         webView.setLayerType(2, null);
         webView.setBackgroundColor(0);
         webView.getBackground().setAlpha(0);
-        this.f = new BluedWebView(this, webView, (ViewGroup) this.f12773c, new LiveWebCallBack() { // from class: com.blued.android.module.live_china.fragment.LiveBottomWebDialogFragment.2
+        this.f = new BluedWebView(this, webView, (ViewGroup) this.c, new LiveWebCallBack() { // from class: com.blued.android.module.live_china.fragment.LiveBottomWebDialogFragment.2
             @Override // com.blued.android.module.live_china.web.LiveWebCallBack, com.blued.android.framework.web.BluedWebView.WebCallback
             public void b(BluedWebView bluedWebView, String str, boolean z) {
                 LiveBottomWebDialogFragment.this.e.setVisibility(8);
@@ -90,7 +86,6 @@ public class LiveBottomWebDialogFragment extends BaseDialogFragment {
         }
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
         View inflate = getActivity().getLayoutInflater().inflate(R.layout.dialog_live_bottom_web, (ViewGroup) null);
         Dialog dialog = new Dialog(getActivity(), R.style.transparentFrameWindowStyleLive);
@@ -108,20 +103,20 @@ public class LiveBottomWebDialogFragment extends BaseDialogFragment {
         return dialog;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         FragmentActivity activity = getActivity();
         this.b = activity;
-        this.f12772a = LayoutInflater.from(activity);
-        if (this.f12773c == null) {
-            this.f12773c = layoutInflater.inflate(R.layout.dialog_live_bottom_web, viewGroup, false);
+        this.a = LayoutInflater.from(activity);
+        if (this.c == null) {
+            this.c = layoutInflater.inflate(R.layout.dialog_live_bottom_web, viewGroup, false);
             d();
         }
         e();
-        return this.f12773c;
+        return this.c;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onDestroy() {
         super.onDestroy();
         OnDismissListener onDismissListener = this.g;

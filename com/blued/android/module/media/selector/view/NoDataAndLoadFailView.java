@@ -13,13 +13,9 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/media/selector/view/NoDataAndLoadFailView.class */
 public class NoDataAndLoadFailView extends LinearLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f15610a;
+    private Context a;
     private View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private ImageView f15611c;
+    private ImageView c;
     private TextView d;
     private TextView e;
     private int f;
@@ -37,28 +33,28 @@ public class NoDataAndLoadFailView extends LinearLayout {
     public NoDataAndLoadFailView(Context context) {
         super(context);
         this.j = false;
-        this.f15610a = context;
+        this.a = context;
         c();
     }
 
     public NoDataAndLoadFailView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         this.j = false;
-        this.f15610a = context;
+        this.a = context;
         c();
     }
 
     public NoDataAndLoadFailView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         this.j = false;
-        this.f15610a = context;
+        this.a = context;
         c();
     }
 
     public NoDataAndLoadFailView(Context context, ViewGroup viewGroup) {
         super(context);
         this.j = false;
-        this.f15610a = context;
+        this.a = context;
         this.k = viewGroup;
         c();
     }
@@ -66,7 +62,7 @@ public class NoDataAndLoadFailView extends LinearLayout {
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r0v5, types: [android.view.ViewGroup] */
     private void c() {
-        LayoutInflater from = LayoutInflater.from(this.f15610a);
+        LayoutInflater from = LayoutInflater.from(this.a);
         int i = R.layout.item_ll_nodata;
         ?? r0 = this.k;
         NoDataAndLoadFailView noDataAndLoadFailView = r0;
@@ -76,7 +72,7 @@ public class NoDataAndLoadFailView extends LinearLayout {
         View inflate = from.inflate(i, noDataAndLoadFailView);
         this.b = inflate;
         inflate.setVisibility(8);
-        this.f15611c = (ImageView) this.b.findViewById(R.id.img_nodata);
+        this.c = (ImageView) this.b.findViewById(R.id.img_nodata);
         this.d = (TextView) this.b.findViewById(R.id.tv_nodata);
         this.e = (TextView) this.b.findViewById(R.id.tv_reload);
         this.f = R.drawable.icon_no_data_posted;
@@ -88,7 +84,7 @@ public class NoDataAndLoadFailView extends LinearLayout {
 
     public void a() {
         this.b.setVisibility(0);
-        this.f15611c.setImageResource(this.f);
+        this.c.setImageResource(this.f);
         this.d.setText(this.g);
         this.e.setVisibility(4);
     }
@@ -102,7 +98,7 @@ public class NoDataAndLoadFailView extends LinearLayout {
     }
 
     public void setBackgroundColorRes(int i) {
-        this.b.findViewById(R.id.ll_main).setBackgroundColor(this.f15610a.getResources().getColor(i));
+        this.b.findViewById(R.id.ll_main).setBackgroundColor(this.a.getResources().getColor(i));
     }
 
     public void setBtnStr(int i) {

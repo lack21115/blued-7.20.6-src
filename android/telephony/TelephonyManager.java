@@ -11,13 +11,13 @@ import android.os.ServiceManager;
 import android.os.SystemProperties;
 import android.provider.Settings;
 import android.util.Log;
-import com.android.internal.R;
 import com.android.internal.telecom.ITelecomService;
 import com.android.internal.telephony.IPhoneSubInfo;
 import com.android.internal.telephony.ITelephony;
 import com.android.internal.telephony.ITelephonyRegistry;
 import com.android.internal.telephony.PhoneConstants;
-import com.android.internal.telephony.TelephonyProperties;
+import com.huawei.hms.ads.fw;
+import com.huawei.hms.framework.network.grs.GrsBaseInfo;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.List;
@@ -102,14 +102,14 @@ public class TelephonyManager {
     private static ITelephonyRegistry sRegistry;
     private final Context mContext;
     private SubscriptionManager mSubscriptionManager;
-    private static String multiSimConfig = SystemProperties.get(TelephonyProperties.PROPERTY_MULTI_SIM_CONFIG);
+    private static String multiSimConfig = SystemProperties.get("persist.radio.multisim.config");
     private static TelephonyManager sInstance = new TelephonyManager();
     public static final String EXTRA_STATE_IDLE = PhoneConstants.State.IDLE.toString();
     public static final String EXTRA_STATE_RINGING = PhoneConstants.State.RINGING.toString();
     public static final String EXTRA_STATE_OFFHOOK = PhoneConstants.State.OFFHOOK.toString();
     private static final String sKernelCmdLine = getProcCmdLine();
     private static final Pattern sProductTypePattern = Pattern.compile("\\sproduct_type\\s*=\\s*(\\w+)");
-    private static final String sLteOnCdmaProductType = SystemProperties.get(TelephonyProperties.PROPERTY_LTE_ON_CDMA_PRODUCT_TYPE, "");
+    private static final String sLteOnCdmaProductType = SystemProperties.get("telephony.lteOnCdmaProductType", "");
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: android.telephony.TelephonyManager$1  reason: invalid class name */
@@ -216,7 +216,7 @@ public class TelephonyManager {
                 Settings.Global.putInt(contentResolver, str + i, i3);
                 int i4 = i3;
                 if (str.equals(Settings.Global.MOBILE_DATA)) {
-                    i4 = "true".equalsIgnoreCase(SystemProperties.get("ro.com.android.mobiledata", "true")) ? 1 : 0;
+                    i4 = fw.Code.equalsIgnoreCase(SystemProperties.get("ro.com.android.mobiledata", fw.Code)) ? 1 : 0;
                 }
                 i2 = i3;
                 if (i4 != i3) {
@@ -239,7 +239,7 @@ public class TelephonyManager {
     }
 
     public static int getLteOnCdmaModeStatic(int i) {
-        int telephonyProperty = getTelephonyProperty(TelephonyProperties.PROPERTY_LTE_ON_CDMA_DEVICE, i, -1);
+        int telephonyProperty = getTelephonyProperty("telephony.lteOnCdmaDevice", i, -1);
         String str = "";
         int i2 = telephonyProperty;
         if (telephonyProperty == -1) {
@@ -257,7 +257,7 @@ public class TelephonyManager {
     }
 
     public static int getLteOnGsmModeStatic() {
-        return SystemProperties.getInt(TelephonyProperties.PROPERTY_LTE_ON_GSM_DEVICE, 0);
+        return SystemProperties.getInt("telephony.lteOnGsmDevice", 0);
     }
 
     public static int getNetworkClass(int i) {
@@ -327,7 +327,7 @@ public class TelephonyManager {
             case 18:
                 return "IWLAN";
             default:
-                return "UNKNOWN";
+                return GrsBaseInfo.CountryCodeSource.UNKNOWN;
         }
     }
 
@@ -388,7 +388,7 @@ public class TelephonyManager {
     }
 
     private int getPhoneTypeFromProperty(int i) {
-        String telephonyProperty = getTelephonyProperty(i, TelephonyProperties.CURRENT_ACTIVE_PHONE, (String) null);
+        String telephonyProperty = getTelephonyProperty(i, "gsm.current.phone-type", (String) null);
         return (telephonyProperty == null || telephonyProperty.equals("")) ? getPhoneTypeFromNetworkType(i) : Integer.parseInt(telephonyProperty);
     }
 
@@ -1147,14 +1147,14 @@ public class TelephonyManager {
         if (this.mContext == null) {
             return null;
         }
-        return this.mContext.getResources().getString(R.string.config_mms_user_agent_profile_url);
+        return this.mContext.getResources().getString(17039609);
     }
 
     public String getMmsUserAgent() {
         if (this.mContext == null) {
             return null;
         }
-        return this.mContext.getResources().getString(R.string.config_mms_user_agent);
+        return this.mContext.getResources().getString(17039608);
     }
 
     public String getMsisdn() {
@@ -1172,7 +1172,7 @@ public class TelephonyManager {
     }
 
     public MultiSimVariants getMultiSimConfiguration() {
-        String str = SystemProperties.get(TelephonyProperties.PROPERTY_MULTI_SIM_CONFIG);
+        String str = SystemProperties.get("persist.radio.multisim.config");
         return str.equals("dsds") ? MultiSimVariants.DSDS : str.equals("dsda") ? MultiSimVariants.DSDA : str.equals("tsts") ? MultiSimVariants.TSTS : MultiSimVariants.UNKNOWN;
     }
 
@@ -1209,7 +1209,7 @@ public class TelephonyManager {
     }
 
     public String getNetworkCountryIsoForPhone(int i) {
-        return getTelephonyProperty(i, TelephonyProperties.PROPERTY_OPERATOR_ISO_COUNTRY, "");
+        return getTelephonyProperty(i, "gsm.operator.iso-country", "");
     }
 
     public String getNetworkCountryIsoForSubscription(int i) {
@@ -1221,7 +1221,7 @@ public class TelephonyManager {
     }
 
     public String getNetworkOperatorForPhone(int i) {
-        return getTelephonyProperty(i, TelephonyProperties.PROPERTY_OPERATOR_NUMERIC, "");
+        return getTelephonyProperty(i, "gsm.operator.numeric", "");
     }
 
     public String getNetworkOperatorForSubscription(int i) {
@@ -1233,7 +1233,7 @@ public class TelephonyManager {
     }
 
     public String getNetworkOperatorName(int i) {
-        return getTelephonyProperty(SubscriptionManager.getPhoneId(i), TelephonyProperties.PROPERTY_OPERATOR_ALPHA, "");
+        return getTelephonyProperty(SubscriptionManager.getPhoneId(i), "gsm.operator.alpha", "");
     }
 
     public int getNetworkType() {
@@ -1266,7 +1266,7 @@ public class TelephonyManager {
     public String getOtaSpNumberSchemaForPhone(int i, String str) {
         String str2 = str;
         if (SubscriptionManager.isValidPhoneId(i)) {
-            str2 = getTelephonyProperty(i, TelephonyProperties.PROPERTY_OTASP_NUM_SCHEMA, str);
+            str2 = getTelephonyProperty(i, "ro.cdma.otaspnumschema", str);
         }
         return str2;
     }
@@ -1325,7 +1325,7 @@ public class TelephonyManager {
     }
 
     public String getSimCountryIsoForPhone(int i) {
-        return getTelephonyProperty(i, TelephonyProperties.PROPERTY_ICC_OPERATOR_ISO_COUNTRY, "");
+        return getTelephonyProperty(i, "gsm.sim.operator.iso-country", "");
     }
 
     public String getSimCountryIsoForSubscription(int i) {
@@ -1345,7 +1345,7 @@ public class TelephonyManager {
     }
 
     public String getSimOperatorNameForPhone(int i) {
-        return getTelephonyProperty(i, TelephonyProperties.PROPERTY_ICC_OPERATOR_ALPHA, "");
+        return getTelephonyProperty(i, "gsm.sim.operator.alpha", "");
     }
 
     public String getSimOperatorNameForSubscription(int i) {
@@ -1370,7 +1370,7 @@ public class TelephonyManager {
     }
 
     public String getSimOperatorNumericForPhone(int i) {
-        return getTelephonyProperty(i, TelephonyProperties.PROPERTY_ICC_OPERATOR_NUMERIC, "");
+        return getTelephonyProperty(i, "gsm.sim.operator.numeric", "");
     }
 
     public String getSimOperatorNumericForSubscription(int i) {
@@ -1411,7 +1411,7 @@ public class TelephonyManager {
     public boolean getSmsReceiveCapableForPhone(int i, boolean z) {
         boolean z2 = z;
         if (SubscriptionManager.isValidPhoneId(i)) {
-            z2 = Boolean.valueOf(getTelephonyProperty(i, TelephonyProperties.PROPERTY_SMS_RECEIVE, String.valueOf(z))).booleanValue();
+            z2 = Boolean.valueOf(getTelephonyProperty(i, "telephony.sms.receive", String.valueOf(z))).booleanValue();
         }
         return z2;
     }
@@ -1423,7 +1423,7 @@ public class TelephonyManager {
     public boolean getSmsSendCapableForPhone(int i, boolean z) {
         boolean z2 = z;
         if (SubscriptionManager.isValidPhoneId(i)) {
-            z2 = Boolean.valueOf(getTelephonyProperty(i, TelephonyProperties.PROPERTY_SMS_SEND, String.valueOf(z))).booleanValue();
+            z2 = Boolean.valueOf(getTelephonyProperty(i, "telephony.sms.send", String.valueOf(z))).booleanValue();
         }
         return z2;
     }
@@ -1656,7 +1656,7 @@ public class TelephonyManager {
     }
 
     public boolean isNetworkRoaming(int i) {
-        return Boolean.parseBoolean(getTelephonyProperty(SubscriptionManager.getPhoneId(i), TelephonyProperties.PROPERTY_OPERATOR_ISROAMING, (String) null));
+        return Boolean.parseBoolean(getTelephonyProperty(SubscriptionManager.getPhoneId(i), "gsm.operator.isroaming", (String) null));
     }
 
     public boolean isOffhook() {
@@ -1699,7 +1699,7 @@ public class TelephonyManager {
         if (this.mContext == null) {
             return true;
         }
-        return this.mContext.getResources().getBoolean(R.bool.config_sms_capable);
+        return this.mContext.getResources().getBoolean(17956960);
     }
 
     public boolean isVideoCallingEnabled() {
@@ -1715,7 +1715,7 @@ public class TelephonyManager {
         if (this.mContext == null) {
             return true;
         }
-        return this.mContext.getResources().getBoolean(R.bool.config_voice_capable);
+        return this.mContext.getResources().getBoolean(17956958);
     }
 
     public void listen(PhoneStateListener phoneStateListener, int i) {
@@ -1747,13 +1747,13 @@ public class TelephonyManager {
         }
         switch (networkClass) {
             case 1:
-                string = this.mContext.getResources().getString(R.string.config_rat_2g);
+                string = this.mContext.getResources().getString(17039635);
                 break;
             case 2:
-                string = this.mContext.getResources().getString(R.string.config_rat_3g);
+                string = this.mContext.getResources().getString(17039636);
                 break;
             case 3:
-                string = this.mContext.getResources().getString(R.string.config_rat_4g);
+                string = this.mContext.getResources().getString(17039637);
                 break;
             default:
                 string = "";
@@ -1833,7 +1833,7 @@ public class TelephonyManager {
 
     public void setBasebandVersionForPhone(int i, String str) {
         if (SubscriptionManager.isValidPhoneId(i)) {
-            SystemProperties.set(TelephonyProperties.PROPERTY_BASEBAND_VERSION + (i == 0 ? "" : Integer.toString(i)), str);
+            SystemProperties.set("gsm.version.baseband" + (i == 0 ? "" : Integer.toString(i)), str);
         }
     }
 
@@ -1880,7 +1880,7 @@ public class TelephonyManager {
 
     public void setDataNetworkTypeForPhone(int i, int i2) {
         if (SubscriptionManager.isValidPhoneId(i)) {
-            setTelephonyProperty(i, TelephonyProperties.PROPERTY_DATA_NETWORK_TYPE, ServiceState.rilRadioTechnologyToString(i2));
+            setTelephonyProperty(i, "gsm.network.type", ServiceState.rilRadioTechnologyToString(i2));
         }
     }
 
@@ -1909,7 +1909,7 @@ public class TelephonyManager {
 
     public void setNetworkCountryIsoForPhone(int i, String str) {
         if (SubscriptionManager.isValidPhoneId(i)) {
-            setTelephonyProperty(i, TelephonyProperties.PROPERTY_OPERATOR_ISO_COUNTRY, str);
+            setTelephonyProperty(i, "gsm.operator.iso-country", str);
         }
     }
 
@@ -1919,7 +1919,7 @@ public class TelephonyManager {
 
     public void setNetworkOperatorNameForPhone(int i, String str) {
         if (SubscriptionManager.isValidPhoneId(i)) {
-            setTelephonyProperty(i, TelephonyProperties.PROPERTY_OPERATOR_ALPHA, str);
+            setTelephonyProperty(i, "gsm.operator.alpha", str);
         }
     }
 
@@ -1928,7 +1928,7 @@ public class TelephonyManager {
     }
 
     public void setNetworkOperatorNumericForPhone(int i, String str) {
-        setTelephonyProperty(i, TelephonyProperties.PROPERTY_OPERATOR_NUMERIC, str);
+        setTelephonyProperty(i, "gsm.operator.numeric", str);
     }
 
     public void setNetworkRoaming(boolean z) {
@@ -1937,7 +1937,7 @@ public class TelephonyManager {
 
     public void setNetworkRoamingForPhone(int i, boolean z) {
         if (SubscriptionManager.isValidPhoneId(i)) {
-            setTelephonyProperty(i, TelephonyProperties.PROPERTY_OPERATOR_ISROAMING, z ? "true" : "false");
+            setTelephonyProperty(i, "gsm.operator.isroaming", z ? fw.Code : "false");
         }
     }
 
@@ -1959,7 +1959,7 @@ public class TelephonyManager {
 
     public void setPhoneType(int i, int i2) {
         if (SubscriptionManager.isValidPhoneId(i)) {
-            setTelephonyProperty(i, TelephonyProperties.CURRENT_ACTIVE_PHONE, String.valueOf(i2));
+            setTelephonyProperty(i, "gsm.current.phone-type", String.valueOf(i2));
         }
     }
 
@@ -2014,7 +2014,7 @@ public class TelephonyManager {
     }
 
     public void setSimCountryIsoForPhone(int i, String str) {
-        setTelephonyProperty(i, TelephonyProperties.PROPERTY_ICC_OPERATOR_ISO_COUNTRY, str);
+        setTelephonyProperty(i, "gsm.sim.operator.iso-country", str);
     }
 
     public void setSimOperatorName(String str) {
@@ -2022,7 +2022,7 @@ public class TelephonyManager {
     }
 
     public void setSimOperatorNameForPhone(int i, String str) {
-        setTelephonyProperty(i, TelephonyProperties.PROPERTY_ICC_OPERATOR_ALPHA, str);
+        setTelephonyProperty(i, "gsm.sim.operator.alpha", str);
     }
 
     public void setSimOperatorNumeric(String str) {
@@ -2030,7 +2030,7 @@ public class TelephonyManager {
     }
 
     public void setSimOperatorNumericForPhone(int i, String str) {
-        setTelephonyProperty(i, TelephonyProperties.PROPERTY_ICC_OPERATOR_NUMERIC, str);
+        setTelephonyProperty(i, "gsm.sim.operator.numeric", str);
     }
 
     public void setSimState(String str) {
@@ -2038,7 +2038,7 @@ public class TelephonyManager {
     }
 
     public void setSimStateForPhone(int i, String str) {
-        setTelephonyProperty(i, TelephonyProperties.PROPERTY_SIM_STATE, str);
+        setTelephonyProperty(i, "gsm.sim.state", str);
     }
 
     public boolean setVoiceMailNumber(int i, String str, String str2) {

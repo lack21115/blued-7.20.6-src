@@ -4,6 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
 import android.util.Log;
+import com.android.dex.DexFormat;
 import java.net.InetAddress;
 import java.nio.charset.StandardCharsets;
 
@@ -110,7 +111,7 @@ public class VpnProfile implements Cloneable, Parcelable {
             return null;
         }
         try {
-            String[] split = new String(bArr, StandardCharsets.UTF_8).split("��", -1);
+            String[] split = new String(bArr, StandardCharsets.UTF_8).split(DexFormat.MAGIC_SUFFIX, -1);
             if (split.length >= 14 && split.length <= 15) {
                 VpnProfile vpnProfile = new VpnProfile(str);
                 vpnProfile.name = split[0];

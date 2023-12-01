@@ -36,14 +36,13 @@ import kotlin.jvm.internal.Intrinsics;
 public final class AdDownLoadAppDialogFragment extends BaseDialogFragment {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Companion f34505a = new Companion(null);
+    public static final Companion f20814a = new Companion(null);
     private final Lazy b = LazyKt.a(new Function0<LayoutAdDownLoadAppDialogBinding>() { // from class: com.soft.blued.ui.welcome.AdDownLoadAppDialogFragment$vb$2
         /* JADX INFO: Access modifiers changed from: package-private */
         {
             super(0);
         }
 
-        @Override // kotlin.jvm.functions.Function0
         /* renamed from: a */
         public final LayoutAdDownLoadAppDialogBinding invoke() {
             return LayoutAdDownLoadAppDialogBinding.a(LayoutInflater.from(AdDownLoadAppDialogFragment.this.getContext()));
@@ -51,7 +50,7 @@ public final class AdDownLoadAppDialogFragment extends BaseDialogFragment {
     });
 
     /* renamed from: c  reason: collision with root package name */
-    private BluedADExtra.DownLoadModel f34506c;
+    private BluedADExtra.DownLoadModel f20815c;
 
     @Metadata
     /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/welcome/AdDownLoadAppDialogFragment$Companion.class */
@@ -63,30 +62,28 @@ public final class AdDownLoadAppDialogFragment extends BaseDialogFragment {
             this();
         }
 
-        public final AdDownLoadAppDialogFragment a(FragmentManager manager, Context context, BluedADExtra.DownLoadModel downLoadModel) {
-            Intrinsics.e(manager, "manager");
+        public final AdDownLoadAppDialogFragment a(FragmentManager fragmentManager, Context context, BluedADExtra.DownLoadModel downLoadModel) {
+            Intrinsics.e(fragmentManager, "manager");
             Intrinsics.e(context, "context");
             Intrinsics.e(downLoadModel, "downLoadModel");
             AdDownLoadAppDialogFragment adDownLoadAppDialogFragment = new AdDownLoadAppDialogFragment();
             Bundle bundle = new Bundle();
-            bundle.putSerializable("down_load_model", downLoadModel);
+            bundle.putSerializable("down_load_model", (Serializable) downLoadModel);
             adDownLoadAppDialogFragment.setArguments(bundle);
-            adDownLoadAppDialogFragment.show(manager, AdDownLoadAppDialogFragment.class.getSimpleName());
+            adDownLoadAppDialogFragment.show(fragmentManager, AdDownLoadAppDialogFragment.class.getSimpleName());
             return adDownLoadAppDialogFragment;
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(final AdDownLoadAppDialogFragment this$0, View view) {
+    public static final void a(final AdDownLoadAppDialogFragment adDownLoadAppDialogFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
+        Intrinsics.e(adDownLoadAppDialogFragment, "this$0");
         PermissionUtils.f(new PermissionCallbacks() { // from class: com.soft.blued.ui.welcome.AdDownLoadAppDialogFragment$initView$1$1
-            @Override // com.blued.android.framework.permission.PermissionCallbacks
             public void U_() {
                 AdDownLoadAppDialogFragment.this.g();
             }
 
-            @Override // com.blued.android.framework.permission.PermissionCallbacks
             public void a(String[] strArr) {
                 AdDownLoadAppDialogFragment.this.dismiss();
             }
@@ -94,33 +91,33 @@ public final class AdDownLoadAppDialogFragment extends BaseDialogFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(AdDownLoadAppDialogFragment this$0, BluedADExtra.DownLoadModel this_apply, View view) {
+    public static final void a(AdDownLoadAppDialogFragment adDownLoadAppDialogFragment, BluedADExtra.DownLoadModel downLoadModel, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        Intrinsics.e(this_apply, "$this_apply");
-        WebViewShowInfoFragment.show(this$0.getContext(), this_apply.app_privacy_url);
+        Intrinsics.e(adDownLoadAppDialogFragment, "this$0");
+        Intrinsics.e(downLoadModel, "$this_apply");
+        WebViewShowInfoFragment.show(adDownLoadAppDialogFragment.getContext(), downLoadModel.app_privacy_url);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(AdDownLoadAppDialogFragment this$0, View view) {
+    public static final void b(AdDownLoadAppDialogFragment adDownLoadAppDialogFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.dismiss();
+        Intrinsics.e(adDownLoadAppDialogFragment, "this$0");
+        adDownLoadAppDialogFragment.dismiss();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(AdDownLoadAppDialogFragment this$0, BluedADExtra.DownLoadModel this_apply, View view) {
+    public static final void b(AdDownLoadAppDialogFragment adDownLoadAppDialogFragment, BluedADExtra.DownLoadModel downLoadModel, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        Intrinsics.e(this_apply, "$this_apply");
-        WebViewShowInfoFragment.show(this$0.getContext(), this_apply.app_permission_url);
+        Intrinsics.e(adDownLoadAppDialogFragment, "this$0");
+        Intrinsics.e(downLoadModel, "$this_apply");
+        WebViewShowInfoFragment.show(adDownLoadAppDialogFragment.getContext(), downLoadModel.app_permission_url);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void c(AdDownLoadAppDialogFragment this$0, View view) {
+    public static final void c(AdDownLoadAppDialogFragment adDownLoadAppDialogFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.dismiss();
+        Intrinsics.e(adDownLoadAppDialogFragment, "this$0");
+        adDownLoadAppDialogFragment.dismiss();
     }
 
     private final LayoutAdDownLoadAppDialogBinding d() {
@@ -129,12 +126,12 @@ public final class AdDownLoadAppDialogFragment extends BaseDialogFragment {
 
     private final void e() {
         LayoutAdDownLoadAppDialogBinding d = d();
-        final BluedADExtra.DownLoadModel downLoadModel = this.f34506c;
+        final BluedADExtra.DownLoadModel downLoadModel = this.f20815c;
         if (downLoadModel == null) {
             return;
         }
         Log.v("drb", "下载apk   link=" + ((Object) downLoadModel.down_link) + ", appName=" + ((Object) downLoadModel.app_name));
-        ImageLoader.a(a(), downLoadModel.app_icon).a(12.0f).a(d.f29379c);
+        ImageLoader.a(a(), downLoadModel.app_icon).a(12.0f).a(d.f15689c);
         if (TextUtils.isEmpty(downLoadModel.app_name)) {
             d.g.setVisibility(8);
         } else {
@@ -159,14 +156,14 @@ public final class AdDownLoadAppDialogFragment extends BaseDialogFragment {
         if (!TextUtils.isEmpty(downLoadModel.app_version)) {
             TextView textView = d.l;
             Context context = getContext();
-            textView.setText(Intrinsics.a(context == null ? null : context.getString(R.string.ad_download_app_version), (Object) downLoadModel.app_version));
+            textView.setText(Intrinsics.a(context == null ? null : context.getString(R.string.ad_download_app_version), downLoadModel.app_version));
         }
         if (TextUtils.isEmpty(downLoadModel.app_size)) {
             return;
         }
         TextView textView2 = d.h;
         Context context2 = getContext();
-        textView2.setText(Intrinsics.a(context2 == null ? null : context2.getString(R.string.ad_download_app_size), (Object) downLoadModel.app_size));
+        textView2.setText(Intrinsics.a(context2 == null ? null : context2.getString(R.string.ad_download_app_size), downLoadModel.app_size));
     }
 
     private final void f() {
@@ -176,7 +173,7 @@ public final class AdDownLoadAppDialogFragment extends BaseDialogFragment {
                 AdDownLoadAppDialogFragment.a(AdDownLoadAppDialogFragment.this, view);
             }
         });
-        d().f29378a.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.welcome.-$$Lambda$AdDownLoadAppDialogFragment$0ge8QbMy1rB0Wke6z5Ds_s72lkY
+        d().f15688a.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.welcome.-$$Lambda$AdDownLoadAppDialogFragment$0ge8QbMy1rB0Wke6z5Ds_s72lkY
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 AdDownLoadAppDialogFragment.b(AdDownLoadAppDialogFragment.this, view);
@@ -192,17 +189,16 @@ public final class AdDownLoadAppDialogFragment extends BaseDialogFragment {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void g() {
-        BluedADExtra.DownLoadModel downLoadModel = this.f34506c;
+        BluedADExtra.DownLoadModel downLoadModel = this.f20815c;
         if (downLoadModel == null) {
             return;
         }
-        Log.v("drb", Intrinsics.a("「开机图下载」downLoadModel:", (Object) downLoadModel));
+        Log.v("drb", Intrinsics.a("「开机图下载」downLoadModel:", downLoadModel));
         ImageLoader.a(a(), downLoadModel.app_icon).c().a(new AdDownLoadAppDialogFragment$downloadApkIcon$1$1(this, downLoadModel));
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
-        Dialog dialog = new Dialog(requireActivity(), 2131953017);
+        Dialog dialog = new Dialog(requireActivity(), R.style.transparentFrameWindowStyleLive);
         dialog.requestWindowFeature(1);
         dialog.setContentView(d().getRoot(), new ViewGroup.LayoutParams(-1, -1));
         Window window = dialog.getWindow();
@@ -210,7 +206,7 @@ public final class AdDownLoadAppDialogFragment extends BaseDialogFragment {
             return dialog;
         }
         window.setBackgroundDrawable(new ColorDrawable(0));
-        window.setWindowAnimations(2131952742);
+        window.setWindowAnimations(R.style.alpha_menu_slow_animstyle);
         WindowManager.LayoutParams attributes = window.getAttributes();
         attributes.width = AppInfo.l;
         attributes.height = -1;
@@ -219,23 +215,21 @@ public final class AdDownLoadAppDialogFragment extends BaseDialogFragment {
         return dialog;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
-    public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
-        Intrinsics.e(inflater, "inflater");
-        return super.onCreateView(inflater, viewGroup, bundle);
+    public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+        Intrinsics.e(layoutInflater, "inflater");
+        return super.onCreateView(layoutInflater, viewGroup, bundle);
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public void setupDialog(Dialog dialog, int i) {
         Intrinsics.e(dialog, "dialog");
         super.setupDialog(dialog, i);
         Bundle arguments = getArguments();
         if (arguments != null) {
-            Serializable serializable = arguments.getSerializable("down_load_model");
+            BluedADExtra.DownLoadModel serializable = arguments.getSerializable("down_load_model");
             if (serializable == null) {
                 throw new NullPointerException("null cannot be cast to non-null type com.blued.android.module.common.login.model.BluedADExtra.DownLoadModel");
             }
-            this.f34506c = (BluedADExtra.DownLoadModel) serializable;
+            this.f20815c = serializable;
         }
         f();
         e();

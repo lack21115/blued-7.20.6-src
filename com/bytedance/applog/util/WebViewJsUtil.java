@@ -117,7 +117,7 @@ public class WebViewJsUtil {
     }
 
     public static String getJsCodeUrl(String str) {
-        StringBuilder a2 = com.bytedance.bdtracker.a.a("javascript:");
+        StringBuilder a2 = com.bytedance.bdtracker.a.a(JS_URL_PREFIX);
         String str2 = str;
         if (TextUtils.isEmpty(str)) {
             str2 = "";
@@ -141,8 +141,8 @@ public class WebViewJsUtil {
 
     public static void injectCollectJs(View view, String str) {
         z2.a("WebViewJsUtil collect js to: {}", view);
-        String str2 = !com.bytedance.bdtracker.b.b(new b.InterfaceC0306b() { // from class: com.bytedance.applog.util.-$$Lambda$QbdrvTGsbkEc-enup9d6vFYVIaE
-            @Override // com.bytedance.bdtracker.b.InterfaceC0306b
+        String str2 = !com.bytedance.bdtracker.b.b(new b.InterfaceC0136b() { // from class: com.bytedance.applog.util.-$$Lambda$QbdrvTGsbkEc-enup9d6vFYVIaE
+            @Override // com.bytedance.bdtracker.b.InterfaceC0136b
             public final boolean a(c cVar) {
                 return WebViewJsUtil.a(cVar);
             }
@@ -209,7 +209,7 @@ public class WebViewJsUtil {
                 }
                 z1 create = create(string, string2, z, jSONObject.getJSONObject("params"));
                 if (create != null) {
-                    com.bytedance.bdtracker.b.a(create, com.bytedance.bdtracker.b.f21195c);
+                    com.bytedance.bdtracker.b.a(create, com.bytedance.bdtracker.b.f7589c);
                 }
                 i = i2 + 1;
             }

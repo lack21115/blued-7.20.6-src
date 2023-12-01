@@ -1,7 +1,6 @@
 package io.grpc.okhttp.internal;
 
 import com.android.org.conscrypt.NativeCrypto;
-import com.blued.das.live.LiveProtos;
 import java.util.Arrays;
 import java.util.List;
 import javax.net.ssl.SSLSocket;
@@ -226,7 +225,7 @@ public final class ConnectionSpec {
 
     public int hashCode() {
         if (this.tls) {
-            return ((((LiveProtos.Event.LIVE_END_PAGE_CLOSE_CLICK_VALUE + Arrays.hashCode(this.cipherSuites)) * 31) + Arrays.hashCode(this.tlsVersions)) * 31) + (!this.supportsTlsExtensions ? 1 : 0);
+            return ((((527 + Arrays.hashCode(this.cipherSuites)) * 31) + Arrays.hashCode(this.tlsVersions)) * 31) + (!this.supportsTlsExtensions ? 1 : 0);
         }
         return 17;
     }

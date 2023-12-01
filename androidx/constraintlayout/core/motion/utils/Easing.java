@@ -8,7 +8,7 @@ public class Easing {
     String b = WifiEnterpriseConfig.IDENTITY_KEY;
 
     /* renamed from: a  reason: collision with root package name */
-    static Easing f2028a = new Easing();
+    static Easing f1980a = new Easing();
     public static String[] NAMED_EASING = {"standard", "accelerate", "decelerate", "linear"};
 
     /* loaded from: source-8756600-dex2jar.jar:androidx/constraintlayout/core/motion/utils/Easing$CubicEasing.class */
@@ -17,7 +17,7 @@ public class Easing {
         private static double h = 1.0E-4d;
 
         /* renamed from: c  reason: collision with root package name */
-        double f2029c;
+        double f1981c;
         double d;
         double e;
         double f;
@@ -30,7 +30,7 @@ public class Easing {
             this.b = str;
             int indexOf = str.indexOf(40);
             int indexOf2 = str.indexOf(44, indexOf);
-            this.f2029c = Double.parseDouble(str.substring(indexOf + 1, indexOf2).trim());
+            this.f1981c = Double.parseDouble(str.substring(indexOf + 1, indexOf2).trim());
             int i = indexOf2 + 1;
             int indexOf3 = str.indexOf(44, i);
             this.d = Double.parseDouble(str.substring(i, indexOf3).trim());
@@ -44,7 +44,7 @@ public class Easing {
         private double a(double d) {
             double d2 = 1.0d - d;
             double d3 = 3.0d * d2;
-            return (this.f2029c * d2 * d3 * d) + (this.e * d3 * d * d) + (d * d * d);
+            return (this.f1981c * d2 * d3 * d) + (this.e * d3 * d * d) + (d * d * d);
         }
 
         private double b(double d) {
@@ -54,7 +54,7 @@ public class Easing {
         }
 
         void a(double d, double d2, double d3, double d4) {
-            this.f2029c = d;
+            this.f1981c = d;
             this.d = d2;
             this.e = d3;
             this.f = d4;
@@ -162,7 +162,7 @@ public class Easing {
                         if (!z) {
                             if (!z) {
                                 System.err.println("transitionEasing syntax error syntax:transitionEasing=\"cubic(1.0,0.5,0.0,0.6)\" or " + Arrays.toString(NAMED_EASING));
-                                return f2028a;
+                                return f1980a;
                             }
                             return new CubicEasing("cubic(0.34, 1.56, 0.64, 1)");
                         }

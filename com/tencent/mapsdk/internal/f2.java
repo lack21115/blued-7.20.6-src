@@ -20,24 +20,24 @@ public abstract class f2 implements h2 {
     public static class a<S extends l2> {
 
         /* renamed from: a  reason: collision with root package name */
-        public String f37427a;
+        public String f23736a;
         public Class<S> b;
 
         /* renamed from: c  reason: collision with root package name */
-        public Method f37428c;
+        public Method f23737c;
         public Map<String, String> d;
         public S e;
 
         public a(String str, Class cls, Method method) {
-            this.f37427a = str;
+            this.f23736a = str;
             this.b = cls;
-            this.f37428c = method;
+            this.f23737c = method;
         }
     }
 
     private a b(String str) {
         for (a aVar : this.f) {
-            if (aVar.f37427a.equals(str)) {
+            if (aVar.f23736a.equals(str)) {
                 return aVar;
             }
         }
@@ -56,7 +56,7 @@ public abstract class f2 implements h2 {
     private <S extends l2> S e(Class<S> cls) {
         for (a aVar : this.f) {
             if (aVar.b == cls) {
-                Method method = aVar.f37428c;
+                Method method = aVar.f23737c;
                 if (method != null) {
                     try {
                         method.setAccessible(true);

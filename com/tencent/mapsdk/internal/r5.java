@@ -10,7 +10,7 @@ public class r5 implements Parcelable {
     public int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f37734c;
+    public String f24043c;
     public int d;
     public int e;
     public float f;
@@ -61,7 +61,7 @@ public class r5 implements Parcelable {
         this.o = 0;
         this.p = 3;
         this.b = parcel.readInt();
-        this.f37734c = parcel.readString();
+        this.f24043c = parcel.readString();
         this.d = parcel.readInt();
         this.e = parcel.readInt();
         this.f = parcel.readFloat();
@@ -89,7 +89,7 @@ public class r5 implements Parcelable {
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeInt(this.b);
-        parcel.writeString(this.f37734c);
+        parcel.writeString(this.f24043c);
         parcel.writeInt(this.d);
         parcel.writeInt(this.e);
         parcel.writeFloat(this.f);

@@ -17,7 +17,6 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.bytedance.applog.tracker.Tracker;
 import com.tencent.map.lib.models.AccessibleTouchItem;
 import com.tencent.map.tools.net.NetManager;
@@ -125,15 +124,15 @@ public class qh extends n4 {
     public class b implements View.OnLongClickListener {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ yi f37723a;
+        public final /* synthetic */ yi f24032a;
 
         public b(yi yiVar) {
-            this.f37723a = yiVar;
+            this.f24032a = yiVar;
         }
 
         @Override // android.view.View.OnLongClickListener
         public boolean onLongClick(View view) {
-            return g6.a(this.f37723a.getMapContext());
+            return g6.a(this.f24032a.getMapContext());
         }
     }
 
@@ -200,43 +199,43 @@ public class qh extends n4 {
     public static /* synthetic */ class g {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final /* synthetic */ int[] f37726a;
+        public static final /* synthetic */ int[] f24035a;
 
         static {
             p4.b.values();
             int[] iArr = new int[6];
-            f37726a = iArr;
+            f24035a = iArr;
             try {
                 p4.b bVar = p4.b.LEFT_BOTTOM;
                 iArr[0] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                int[] iArr2 = f37726a;
+                int[] iArr2 = f24035a;
                 p4.b bVar2 = p4.b.CENTER_BOTTOM;
                 iArr2[1] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                int[] iArr3 = f37726a;
+                int[] iArr3 = f24035a;
                 p4.b bVar3 = p4.b.RIGHT_BOTTOM;
                 iArr3[2] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                int[] iArr4 = f37726a;
+                int[] iArr4 = f24035a;
                 p4.b bVar4 = p4.b.LEFT_TOP;
                 iArr4[3] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                int[] iArr5 = f37726a;
+                int[] iArr5 = f24035a;
                 p4.b bVar5 = p4.b.CENTER_TOP;
                 iArr5[4] = 5;
             } catch (NoSuchFieldError e5) {
             }
             try {
-                int[] iArr6 = f37726a;
+                int[] iArr6 = f24035a;
                 p4.b bVar6 = p4.b.RIGHT_TOP;
                 iArr6[5] = 6;
             } catch (NoSuchFieldError e6) {
@@ -248,12 +247,12 @@ public class qh extends n4 {
     public static class h extends ca.i<Bitmap> {
 
         /* renamed from: c  reason: collision with root package name */
-        private WeakReference<qh> f37727c;
+        private WeakReference<qh> f24036c;
         private String d;
         private String e;
 
         public h(qh qhVar, String str, String str2) {
-            this.f37727c = new WeakReference<>(qhVar);
+            this.f24036c = new WeakReference<>(qhVar);
             this.d = str;
             this.e = str2;
         }
@@ -261,7 +260,7 @@ public class qh extends n4 {
         @Override // java.util.concurrent.Callable
         /* renamed from: a */
         public Bitmap call() throws Exception {
-            WeakReference<qh> weakReference = this.f37727c;
+            WeakReference<qh> weakReference = this.f24036c;
             Bitmap bitmap = null;
             if (weakReference != null) {
                 qh qhVar = weakReference.get();
@@ -297,11 +296,11 @@ public class qh extends n4 {
         private WeakReference<qh> b;
 
         /* renamed from: c  reason: collision with root package name */
-        private String f37728c;
+        private String f24037c;
 
         public i(qh qhVar, String str) {
             this.b = new WeakReference<>(qhVar);
-            this.f37728c = str;
+            this.f24037c = str;
         }
 
         @Override // com.tencent.mapsdk.internal.ca.c, com.tencent.map.tools.Callback
@@ -312,12 +311,12 @@ public class qh extends n4 {
             if (bitmap == null || (weakReference = this.b) == null || (qhVar = weakReference.get()) == null) {
                 return;
             }
-            ga.b(new File(qhVar.c(this.f37728c)), new File(qhVar.b(this.f37728c)));
-            if (this.f37728c.equals(qhVar.L)) {
-                na.c(ma.v, "Logo[" + this.f37728c + "] set from net");
+            ga.b(new File(qhVar.c(this.f24037c)), new File(qhVar.b(this.f24037c)));
+            if (this.f24037c.equals(qhVar.L)) {
+                na.c(ma.v, "Logo[" + this.f24037c + "] set from net");
                 qhVar.a(bitmap);
             }
-            qhVar.K.remove(this.f37728c);
+            qhVar.K.remove(this.f24037c);
         }
     }
 
@@ -570,7 +569,7 @@ public class qh extends n4 {
                     int[] iArr = this.w;
                     layoutParams.bottomMargin = iArr[p4.a.BOTTOM.b];
                     layoutParams.rightMargin = iArr[p4.a.RIGHT.b];
-                    if (mi.f37650c.equals(ConstantsAPI.Token.WX_TOKEN_PLATFORMID_VALUE) && (egVar = this.j0) != null) {
+                    if (mi.f23959c.equals(ConstantsAPI.Token.WX_TOKEN_PLATFORMID_VALUE) && (egVar = this.j0) != null) {
                         egVar.a(layoutParams.bottomMargin + (i3 * 2));
                     }
                     this.g0 = (this.C - layoutParams.bottomMargin) - i3;
@@ -624,7 +623,7 @@ public class qh extends n4 {
     public String b(String str) {
         String g2 = g();
         ha.b(g2);
-        return g2 + BridgeUtil.SPLIT_MARK + str;
+        return g2 + "/" + str;
     }
 
     /* JADX INFO: Access modifiers changed from: private */

@@ -28,7 +28,7 @@ public class LinearSystem {
     public boolean hasSimpleDefinition = false;
 
     /* renamed from: a  reason: collision with root package name */
-    int f1990a = 0;
+    int f1942a = 0;
     private HashMap<String, SolverVariable> g = null;
     private int i = 32;
     private int j = 32;
@@ -37,7 +37,7 @@ public class LinearSystem {
     private boolean[] k = new boolean[32];
 
     /* renamed from: c  reason: collision with root package name */
-    int f1991c = 1;
+    int f1943c = 1;
     int d = 0;
     private int l = 32;
     private SolverVariable[] m = new SolverVariable[f];
@@ -98,7 +98,7 @@ public class LinearSystem {
         int i3 = 0;
         while (true) {
             int i4 = i3;
-            if (i4 >= this.f1991c) {
+            if (i4 >= this.f1943c) {
                 break;
             }
             this.k[i4] = false;
@@ -112,7 +112,7 @@ public class LinearSystem {
                 metrics2.iterations++;
             }
             int i6 = i5 + 1;
-            if (i6 >= this.f1991c * 2) {
+            if (i6 >= this.f1943c * 2) {
                 return i6;
             }
             if (row.getKey() != null) {
@@ -135,7 +135,7 @@ public class LinearSystem {
                         break;
                     }
                     ArrayRow arrayRow = this.b[i7];
-                    if (arrayRow.f1986a.d == SolverVariable.Type.UNRESTRICTED) {
+                    if (arrayRow.f1938a.d == SolverVariable.Type.UNRESTRICTED) {
                         f2 = f3;
                         i2 = i;
                     } else if (arrayRow.e) {
@@ -166,14 +166,14 @@ public class LinearSystem {
                 i5 = i6;
                 if (i > -1) {
                     ArrayRow arrayRow2 = this.b[i];
-                    arrayRow2.f1986a.f1996a = -1;
+                    arrayRow2.f1938a.f1948a = -1;
                     Metrics metrics3 = sMetrics;
                     if (metrics3 != null) {
                         metrics3.pivots++;
                     }
                     arrayRow2.b(pivotCandidate);
-                    arrayRow2.f1986a.f1996a = i;
-                    arrayRow2.f1986a.updateReferencesWithNewDefinition(this, arrayRow2);
+                    arrayRow2.f1938a.f1948a = i;
+                    arrayRow2.f1938a.updateReferencesWithNewDefinition(this, arrayRow2);
                     i5 = i6;
                 }
             } else {
@@ -186,7 +186,7 @@ public class LinearSystem {
 
     private SolverVariable a(SolverVariable.Type type, String str) {
         SolverVariable solverVariable;
-        SolverVariable acquire = this.e.f1989c.acquire();
+        SolverVariable acquire = this.e.f1941c.acquire();
         if (acquire == null) {
             SolverVariable solverVariable2 = new SolverVariable(type, str);
             solverVariable2.setType(type, str);
@@ -233,12 +233,12 @@ public class LinearSystem {
     private final void a(ArrayRow arrayRow) {
         int i;
         if (SIMPLIFY_SYNONYMS && arrayRow.e) {
-            arrayRow.f1986a.setFinalValue(this, arrayRow.b);
+            arrayRow.f1938a.setFinalValue(this, arrayRow.b);
         } else {
             this.b[this.d] = arrayRow;
-            arrayRow.f1986a.f1996a = this.d;
+            arrayRow.f1938a.f1948a = this.d;
             this.d++;
-            arrayRow.f1986a.updateReferencesWithNewDefinition(this, arrayRow);
+            arrayRow.f1938a.updateReferencesWithNewDefinition(this, arrayRow);
         }
         if (!SIMPLIFY_SYNONYMS || !this.hasSimpleDefinition) {
             return;
@@ -259,9 +259,9 @@ public class LinearSystem {
                 i4 = i3;
                 if (arrayRowArr[i3].e) {
                     ArrayRow arrayRow2 = this.b[i3];
-                    arrayRow2.f1986a.setFinalValue(this, arrayRow2.b);
+                    arrayRow2.f1938a.setFinalValue(this, arrayRow2.b);
                     if (OPTIMIZED_ENGINE) {
-                        this.e.f1988a.release(arrayRow2);
+                        this.e.f1940a.release(arrayRow2);
                     } else {
                         this.e.b.release(arrayRow2);
                     }
@@ -276,8 +276,8 @@ public class LinearSystem {
                         ArrayRow[] arrayRowArr2 = this.b;
                         int i7 = i5 - 1;
                         arrayRowArr2[i7] = arrayRowArr2[i5];
-                        if (arrayRowArr2[i7].f1986a.f1996a == i5) {
-                            this.b[i7].f1986a.f1996a = i7;
+                        if (arrayRowArr2[i7].f1938a.f1948a == i5) {
+                            this.b[i7].f1938a.f1948a = i7;
                         }
                         i6 = i5;
                         i5++;
@@ -315,7 +315,7 @@ public class LinearSystem {
             if (i13 >= this.d) {
                 z = false;
                 break;
-            } else if (this.b[i13].f1986a.d != SolverVariable.Type.UNRESTRICTED && this.b[i13].b < 0.0f) {
+            } else if (this.b[i13].f1938a.d != SolverVariable.Type.UNRESTRICTED && this.b[i13].b < 0.0f) {
                 z = true;
                 break;
             } else {
@@ -342,7 +342,7 @@ public class LinearSystem {
                         break;
                     }
                     ArrayRow arrayRow = this.b[i16];
-                    if (arrayRow.f1986a.d == SolverVariable.Type.UNRESTRICTED) {
+                    if (arrayRow.f1938a.d == SolverVariable.Type.UNRESTRICTED) {
                         f2 = f5;
                         i = i17;
                         i2 = i18;
@@ -414,7 +414,7 @@ public class LinearSystem {
                                     i = i17;
                                     i2 = i18;
                                     i3 = i20;
-                                    if (i24 < this.f1991c) {
+                                    if (i24 < this.f1943c) {
                                         SolverVariable solverVariable = this.e.d[i24];
                                         float f8 = arrayRow.variables.get(solverVariable);
                                         if (f8 <= 0.0f) {
@@ -466,19 +466,19 @@ public class LinearSystem {
                 }
                 if (i17 != -1) {
                     ArrayRow arrayRow2 = this.b[i17];
-                    arrayRow2.f1986a.f1996a = -1;
+                    arrayRow2.f1938a.f1948a = -1;
                     Metrics metrics2 = sMetrics;
                     if (metrics2 != null) {
                         metrics2.pivots++;
                     }
                     arrayRow2.b(this.e.d[i18]);
-                    arrayRow2.f1986a.f1996a = i17;
-                    arrayRow2.f1986a.updateReferencesWithNewDefinition(this, arrayRow2);
+                    arrayRow2.f1938a.f1948a = i17;
+                    arrayRow2.f1938a.updateReferencesWithNewDefinition(this, arrayRow2);
                 } else {
                     z2 = true;
                 }
                 i14 = i15;
-                if (i15 > this.f1991c / 2) {
+                if (i15 > this.f1943c / 2) {
                     z2 = true;
                     i14 = i15;
                 }
@@ -507,7 +507,7 @@ public class LinearSystem {
             }
             ArrayRow arrayRow2 = this.b[i3];
             if (arrayRow2 != null) {
-                this.e.f1988a.release(arrayRow2);
+                this.e.f1940a.release(arrayRow2);
             }
             this.b[i3] = null;
             i2 = i3 + 1;
@@ -522,7 +522,7 @@ public class LinearSystem {
                 return;
             }
             ArrayRow arrayRow = this.b[i2];
-            arrayRow.f1986a.computedValue = arrayRow.b;
+            arrayRow.f1938a.computedValue = arrayRow.b;
             i = i2 + 1;
         }
     }
@@ -532,7 +532,7 @@ public class LinearSystem {
     }
 
     private void d() {
-        System.out.println("Display Rows (" + this.d + "x" + this.f1991c + ")\n");
+        System.out.println("Display Rows (" + this.d + "x" + this.f1943c + ")\n");
     }
 
     public static Metrics getMetrics() {
@@ -548,7 +548,7 @@ public class LinearSystem {
         if (metrics != null) {
             metrics.minimizeGoal++;
             Metrics metrics2 = sMetrics;
-            metrics2.maxVariables = Math.max(metrics2.maxVariables, this.f1991c);
+            metrics2.maxVariables = Math.max(metrics2.maxVariables, this.f1943c);
             Metrics metrics3 = sMetrics;
             metrics3.maxRows = Math.max(metrics3.maxRows, this.d);
         }
@@ -600,7 +600,7 @@ public class LinearSystem {
     }
 
     public ArrayRow addEquality(SolverVariable solverVariable, SolverVariable solverVariable2, int i, int i2) {
-        if (USE_BASIC_SYNONYMS && i2 == 8 && solverVariable2.isFinalValue && solverVariable.f1996a == -1) {
+        if (USE_BASIC_SYNONYMS && i2 == 8 && solverVariable2.isFinalValue && solverVariable.f1948a == -1) {
             solverVariable.setFinalValue(this, solverVariable2.computedValue + i);
             return null;
         }
@@ -614,9 +614,9 @@ public class LinearSystem {
     }
 
     public void addEquality(SolverVariable solverVariable, int i) {
-        if (!USE_BASIC_SYNONYMS || solverVariable.f1996a != -1) {
-            int i2 = solverVariable.f1996a;
-            if (solverVariable.f1996a == -1) {
+        if (!USE_BASIC_SYNONYMS || solverVariable.f1948a != -1) {
+            int i2 = solverVariable.f1948a;
+            if (solverVariable.f1948a == -1) {
                 ArrayRow createRow = createRow();
                 createRow.a(solverVariable, i);
                 addConstraint(createRow);
@@ -642,7 +642,7 @@ public class LinearSystem {
         int i3 = 0;
         while (true) {
             int i4 = i3;
-            if (i4 >= this.f1990a + 1) {
+            if (i4 >= this.f1942a + 1) {
                 return;
             }
             SolverVariable solverVariable2 = this.e.d[i4];
@@ -701,7 +701,7 @@ public class LinearSystem {
     }
 
     public void addSynonym(SolverVariable solverVariable, SolverVariable solverVariable2, int i) {
-        if (solverVariable.f1996a != -1 || i != 0) {
+        if (solverVariable.f1948a != -1 || i != 0) {
             addEquality(solverVariable, solverVariable2, i, 8);
             return;
         }
@@ -723,16 +723,16 @@ public class LinearSystem {
         if (metrics != null) {
             metrics.errors++;
         }
-        if (this.f1991c + 1 >= this.j) {
+        if (this.f1943c + 1 >= this.j) {
             a();
         }
         SolverVariable a2 = a(SolverVariable.Type.ERROR, str);
-        int i2 = this.f1990a + 1;
-        this.f1990a = i2;
-        this.f1991c++;
+        int i2 = this.f1942a + 1;
+        this.f1942a = i2;
+        this.f1943c++;
         a2.id = i2;
         a2.strength = i;
-        this.e.d[this.f1990a] = a2;
+        this.e.d[this.f1942a] = a2;
         this.h.addError(a2);
         return a2;
     }
@@ -742,15 +742,15 @@ public class LinearSystem {
         if (metrics != null) {
             metrics.extravariables++;
         }
-        if (this.f1991c + 1 >= this.j) {
+        if (this.f1943c + 1 >= this.j) {
             a();
         }
         SolverVariable a2 = a(SolverVariable.Type.SLACK, (String) null);
-        int i = this.f1990a + 1;
-        this.f1990a = i;
-        this.f1991c++;
+        int i = this.f1942a + 1;
+        this.f1942a = i;
+        this.f1943c++;
         a2.id = i;
-        this.e.d[this.f1990a] = a2;
+        this.e.d[this.f1942a] = a2;
         return a2;
     }
 
@@ -772,7 +772,7 @@ public class LinearSystem {
             return r0
         L8:
             r0 = r4
-            int r0 = r0.f1991c
+            int r0 = r0.f1943c
             r1 = 1
             int r0 = r0 + r1
             r1 = r4
@@ -809,7 +809,7 @@ public class LinearSystem {
             r0 = r5
             int r0 = r0.id
             r1 = r4
-            int r1 = r1.f1990a
+            int r1 = r1.f1942a
             if (r0 > r1) goto L65
             r0 = r5
             r7 = r0
@@ -829,19 +829,19 @@ public class LinearSystem {
             r0.reset()
         L71:
             r0 = r4
-            int r0 = r0.f1990a
+            int r0 = r0.f1942a
             r1 = 1
             int r0 = r0 + r1
             r6 = r0
             r0 = r4
             r1 = r6
-            r0.f1990a = r1
+            r0.f1942a = r1
             r0 = r4
             r1 = r4
-            int r1 = r1.f1991c
+            int r1 = r1.f1943c
             r2 = 1
             int r1 = r1 + r2
-            r0.f1991c = r1
+            r0.f1943c = r1
             r0 = r5
             r1 = r6
             r0.id = r1
@@ -852,7 +852,7 @@ public class LinearSystem {
             androidx.constraintlayout.core.Cache r0 = r0.e
             androidx.constraintlayout.core.SolverVariable[] r0 = r0.d
             r1 = r4
-            int r1 = r1.f1990a
+            int r1 = r1.f1942a
             r2 = r5
             r0[r1] = r2
             r0 = r5
@@ -867,7 +867,7 @@ public class LinearSystem {
     public ArrayRow createRow() {
         ValuesRow acquire;
         if (OPTIMIZED_ENGINE) {
-            acquire = this.e.f1988a.acquire();
+            acquire = this.e.f1940a.acquire();
             if (acquire == null) {
                 acquire = new ValuesRow(this.e);
                 OPTIMIZED_ARRAY_ROW_CREATION++;
@@ -892,23 +892,23 @@ public class LinearSystem {
         if (metrics != null) {
             metrics.slackvariables++;
         }
-        if (this.f1991c + 1 >= this.j) {
+        if (this.f1943c + 1 >= this.j) {
             a();
         }
         SolverVariable a2 = a(SolverVariable.Type.SLACK, (String) null);
-        int i = this.f1990a + 1;
-        this.f1990a = i;
-        this.f1991c++;
+        int i = this.f1942a + 1;
+        this.f1942a = i;
+        this.f1943c++;
         a2.id = i;
-        this.e.d[this.f1990a] = a2;
+        this.e.d[this.f1942a] = a2;
         return a2;
     }
 
     public void displayReadableRows() {
         d();
-        String str = " num vars " + this.f1990a + "\n";
+        String str = " num vars " + this.f1942a + "\n";
         int i = 0;
-        while (i < this.f1990a + 1) {
+        while (i < this.f1942a + 1) {
             SolverVariable solverVariable = this.e.d[i];
             String str2 = str;
             if (solverVariable != null) {
@@ -922,7 +922,7 @@ public class LinearSystem {
         }
         String str3 = str + "\n";
         int i2 = 0;
-        while (i2 < this.f1990a + 1) {
+        while (i2 < this.f1942a + 1) {
             SolverVariable solverVariable2 = this.e.d[i2];
             String str4 = str3;
             if (solverVariable2 != null) {
@@ -957,7 +957,7 @@ public class LinearSystem {
         int i = 0;
         while (i < this.d) {
             String str2 = str;
-            if (this.b[i].f1986a.d == SolverVariable.Type.UNRESTRICTED) {
+            if (this.b[i].f1938a.d == SolverVariable.Type.UNRESTRICTED) {
                 str2 = (str + this.b[i].b()) + "\n";
             }
             i++;
@@ -997,7 +997,7 @@ public class LinearSystem {
     }
 
     public int getNumVariables() {
-        return this.f1990a;
+        return this.f1942a;
     }
 
     public int getObjectVariableValue(Object obj) {
@@ -1050,11 +1050,11 @@ public class LinearSystem {
 
     public void removeRow(ArrayRow arrayRow) {
         int i;
-        if (!arrayRow.e || arrayRow.f1986a == null) {
+        if (!arrayRow.e || arrayRow.f1938a == null) {
             return;
         }
-        if (arrayRow.f1986a.f1996a != -1) {
-            int i2 = arrayRow.f1986a.f1996a;
+        if (arrayRow.f1938a.f1948a != -1) {
+            int i2 = arrayRow.f1938a.f1948a;
             while (true) {
                 int i3 = i2;
                 i = this.d;
@@ -1062,9 +1062,9 @@ public class LinearSystem {
                     break;
                 }
                 int i4 = i3 + 1;
-                SolverVariable solverVariable = this.b[i4].f1986a;
-                if (solverVariable.f1996a == i4) {
-                    solverVariable.f1996a = i3;
+                SolverVariable solverVariable = this.b[i4].f1938a;
+                if (solverVariable.f1948a == i4) {
+                    solverVariable.f1948a = i3;
                 }
                 ArrayRow[] arrayRowArr = this.b;
                 arrayRowArr[i3] = arrayRowArr[i4];
@@ -1072,11 +1072,11 @@ public class LinearSystem {
             }
             this.d = i - 1;
         }
-        if (!arrayRow.f1986a.isFinalValue) {
-            arrayRow.f1986a.setFinalValue(this, arrayRow.b);
+        if (!arrayRow.f1938a.isFinalValue) {
+            arrayRow.f1938a.setFinalValue(this, arrayRow.b);
         }
         if (OPTIMIZED_ENGINE) {
-            this.e.f1988a.release(arrayRow);
+            this.e.f1940a.release(arrayRow);
         } else {
             this.e.b.release(arrayRow);
         }
@@ -1095,16 +1095,16 @@ public class LinearSystem {
             }
             i = i2 + 1;
         }
-        this.e.f1989c.releaseAll(this.m, this.n);
+        this.e.f1941c.releaseAll(this.m, this.n);
         this.n = 0;
         Arrays.fill(this.e.d, (Object) null);
         HashMap<String, SolverVariable> hashMap = this.g;
         if (hashMap != null) {
             hashMap.clear();
         }
-        this.f1990a = 0;
+        this.f1942a = 0;
         this.h.clear();
-        this.f1991c = 1;
+        this.f1943c = 1;
         int i3 = 0;
         while (true) {
             int i4 = i3;
@@ -1113,7 +1113,7 @@ public class LinearSystem {
             }
             ArrayRow[] arrayRowArr = this.b;
             if (arrayRowArr[i4] != null) {
-                arrayRowArr[i4].f1987c = false;
+                arrayRowArr[i4].f1939c = false;
             }
             i3 = i4 + 1;
         }

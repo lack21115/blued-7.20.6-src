@@ -45,8 +45,8 @@ public class NotificationUtils {
         intent.setPackage(context.getPackageName());
         boolean z = false;
         PendingIntent broadcast = PendingIntent.getBroadcast(context, 0, intent, 134217728);
-        int intData = SharedPreferencesUtil.getIntData(context, ZhiChiConstant.SOBOT_NOTIFICATION_SMALL_ICON, ResourceUtils.getIdByName(context, i.f7952c, "sobot_logo_small_icon"));
-        ((BitmapDrawable) context.getResources().getDrawable(SharedPreferencesUtil.getIntData(context, ZhiChiConstant.SOBOT_NOTIFICATION_LARGE_ICON, ResourceUtils.getIdByName(context, i.f7952c, "sobot_logo_icon")))).getBitmap();
+        int intData = SharedPreferencesUtil.getIntData(context, ZhiChiConstant.SOBOT_NOTIFICATION_SMALL_ICON, ResourceUtils.getIdByName(context, i.f5112c, "sobot_logo_small_icon"));
+        ((BitmapDrawable) context.getResources().getDrawable(SharedPreferencesUtil.getIntData(context, ZhiChiConstant.SOBOT_NOTIFICATION_LARGE_ICON, ResourceUtils.getIdByName(context, i.f5112c, "sobot_logo_icon")))).getBitmap();
         Notification.Builder contentIntent = new Notification.Builder(context).setSmallIcon(intData).setTicker(str3).setContentTitle(str).setWhen(sobotLeaveReplyModel.getReplyTime() * 1000).setShowWhen(true).setContentText(Html.fromHtml(str2)).setContentIntent(broadcast);
         if (CommonUtils.getTargetSdkVersion(context) >= 26) {
             z = true;
@@ -73,8 +73,8 @@ public class NotificationUtils {
         intent.setPackage(context.getPackageName());
         boolean z = false;
         PendingIntent broadcast = Build.VERSION.SDK_INT >= 23 ? PendingIntent.getBroadcast(context, 0, intent, 67108864) : PendingIntent.getBroadcast(context, 0, intent, 134217728);
-        int intData = SharedPreferencesUtil.getIntData(context, ZhiChiConstant.SOBOT_NOTIFICATION_SMALL_ICON, ResourceUtils.getIdByName(context, i.f7952c, "sobot_logo_small_icon"));
-        ((BitmapDrawable) context.getResources().getDrawable(SharedPreferencesUtil.getIntData(context, ZhiChiConstant.SOBOT_NOTIFICATION_LARGE_ICON, ResourceUtils.getIdByName(context, i.f7952c, "sobot_logo_icon")))).getBitmap();
+        int intData = SharedPreferencesUtil.getIntData(context, ZhiChiConstant.SOBOT_NOTIFICATION_SMALL_ICON, ResourceUtils.getIdByName(context, i.f5112c, "sobot_logo_small_icon"));
+        ((BitmapDrawable) context.getResources().getDrawable(SharedPreferencesUtil.getIntData(context, ZhiChiConstant.SOBOT_NOTIFICATION_LARGE_ICON, ResourceUtils.getIdByName(context, i.f5112c, "sobot_logo_icon")))).getBitmap();
         Notification.Builder contentIntent = new Notification.Builder(context).setSmallIcon(intData).setTicker(str3).setContentText(HtmlTools.getInstance(context).getHTMLStr(str2)).setContentIntent(broadcast);
         if (CommonUtils.getTargetSdkVersion(context) >= 26) {
             z = true;

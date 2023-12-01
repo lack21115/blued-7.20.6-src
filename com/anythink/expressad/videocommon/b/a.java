@@ -6,25 +6,25 @@ import android.text.TextUtils;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile a f8724a;
+    private static volatile a f5884a;
     private final com.anythink.core.common.res.a.c b = com.anythink.core.common.res.a.c.a();
 
     private a() {
     }
 
     public static a a() {
-        if (f8724a == null) {
+        if (f5884a == null) {
             synchronized (a.class) {
                 try {
-                    if (f8724a == null) {
-                        f8724a = new a();
+                    if (f5884a == null) {
+                        f5884a = new a();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f8724a;
+        return f5884a;
     }
 
     public static String a(String str) {

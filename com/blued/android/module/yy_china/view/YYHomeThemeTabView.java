@@ -28,13 +28,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYHomeThemeTabView.class */
 public final class YYHomeThemeTabView extends FrameLayout {
-
-    /* renamed from: a */
-    private final List<HomeThemeModel> f18233a;
+    private final List<HomeThemeModel> a;
     private int b;
-
-    /* renamed from: c */
-    private RecyclerView f18234c;
+    private RecyclerView c;
     private HomeTabAdapter d;
     private ViewPager e;
     private int f;
@@ -43,20 +39,20 @@ public final class YYHomeThemeTabView extends FrameLayout {
     private float i;
     private int j;
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYHomeThemeTabView$HomeTabAdapter.class */
     public final class HomeTabAdapter extends CommonRecycleAdapter<HomeThemeModel> {
-
-        /* renamed from: a */
-        final /* synthetic */ YYHomeThemeTabView f18235a;
+        final /* synthetic */ YYHomeThemeTabView a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public HomeTabAdapter(YYHomeThemeTabView this$0) {
             super(this$0.getContext());
             Intrinsics.e(this$0, "this$0");
-            this.f18235a = this$0;
+            this.a = this$0;
         }
 
+        /* JADX INFO: Access modifiers changed from: private */
         public static final void a(YYHomeThemeTabView this$0, int i, HomeTabAdapter this$1, View view) {
             ViewPager viewPager;
             Intrinsics.e(this$0, "this$0");
@@ -68,62 +64,63 @@ public final class YYHomeThemeTabView extends FrameLayout {
             viewPager.setCurrentItem(i);
         }
 
+        /* JADX INFO: Access modifiers changed from: protected */
         @Override // com.blued.android.module.common.adapter.CommonRecycleAdapter
         /* renamed from: a */
         public void onBindViewHolderData(HomeThemeModel model, final int i, CommonRecycleAdapter.CommonAdapterHolder viewHolder) {
             Intrinsics.e(model, "model");
             Intrinsics.e(viewHolder, "viewHolder");
-            ItemYyHomeTabViewBinding a2 = ItemYyHomeTabViewBinding.a(viewHolder.a());
-            Intrinsics.c(a2, "bind(viewHolder.convertView)");
+            ItemYyHomeTabViewBinding a = ItemYyHomeTabViewBinding.a(viewHolder.a());
+            Intrinsics.c(a, "bind(viewHolder.convertView)");
             if (model.getId() == -10) {
-                a2.f16738c.setVisibility(8);
-                a2.f16737a.setVisibility(8);
-                a2.b.setVisibility(8);
+                a.c.setVisibility(8);
+                a.a.setVisibility(8);
+                a.b.setVisibility(8);
                 return;
             }
-            a2.f16737a.setVisibility(StringUtils.b(model.getIcon_after()) ? 8 : 0);
-            a2.f16738c.setVisibility(StringUtils.b(model.getIcon_after()) ? 0 : 8);
+            a.a.setVisibility(StringUtils.b(model.getIcon_after()) ? 8 : 0);
+            a.c.setVisibility(StringUtils.b(model.getIcon_after()) ? 0 : 8);
             List<Integer> underLineColors = model.getUnderLineColors();
             if (underLineColors != null) {
                 if (underLineColors.size() >= 3) {
-                    ShapeHelper.d(a2.b, underLineColors.get(0).intValue(), underLineColors.get(1).intValue(), underLineColors.get(2).intValue());
+                    ShapeHelper.d(a.b, underLineColors.get(0).intValue(), underLineColors.get(1).intValue(), underLineColors.get(2).intValue());
                 } else if (underLineColors.size() >= 2) {
-                    ShapeHelper.a(a2.b, underLineColors.get(0).intValue(), underLineColors.get(1).intValue());
+                    ShapeHelper.a(a.b, underLineColors.get(0).intValue(), underLineColors.get(1).intValue());
                 } else if (!underLineColors.isEmpty()) {
-                    ShapeHelper.a(a2.b, underLineColors.get(0).intValue(), underLineColors.get(0).intValue());
+                    ShapeHelper.a(a.b, underLineColors.get(0).intValue(), underLineColors.get(0).intValue());
                 }
             }
-            if (this.f18235a.j > 0) {
-                ViewGroup.LayoutParams layoutParams = a2.b.getLayoutParams();
+            if (this.a.j > 0) {
+                ConstraintLayout.LayoutParams layoutParams = a.b.getLayoutParams();
                 if (layoutParams == null) {
                     throw new NullPointerException("null cannot be cast to non-null type androidx.constraintlayout.widget.ConstraintLayout.LayoutParams");
                 }
-                ((ConstraintLayout.LayoutParams) layoutParams).topMargin = this.f18235a.j;
+                layoutParams.topMargin = this.a.j;
             }
-            ViewGroup.LayoutParams layoutParams2 = a2.f16737a.getLayoutParams();
-            if (this.f18235a.b == i) {
-                layoutParams2.height = a2.getRoot().getResources().getDimensionPixelOffset(R.dimen.dp_20);
-                layoutParams2.width = a2.getRoot().getResources().getDimensionPixelOffset(R.dimen.dp_91);
-                a2.f16738c.setTextSize(this.f18235a.i);
+            ViewGroup.LayoutParams layoutParams2 = a.a.getLayoutParams();
+            if (this.a.b == i) {
+                layoutParams2.height = a.getRoot().getResources().getDimensionPixelOffset(R.dimen.dp_20);
+                layoutParams2.width = a.getRoot().getResources().getDimensionPixelOffset(R.dimen.dp_91);
+                a.c.setTextSize(this.a.i);
                 if (!StringUtils.b(model.getIcon_after())) {
-                    ImageLoader.a((IRequestHost) null, model.getIcon_after()).e(model.hashCode()).g(-1).a(a2.f16737a);
+                    ImageLoader.a((IRequestHost) null, model.getIcon_after()).e(model.hashCode()).g(-1).a(a.a);
                 }
-                a2.b.setVisibility(0);
-                a2.f16738c.setTextColor(BluedSkinUtils.a(this.mContext, this.f18235a.f));
+                a.b.setVisibility(0);
+                a.c.setTextColor(BluedSkinUtils.a(this.mContext, this.a.f));
             } else {
-                layoutParams2.height = a2.getRoot().getResources().getDimensionPixelOffset(R.dimen.dp_16);
-                layoutParams2.width = a2.getRoot().getResources().getDimensionPixelOffset(R.dimen.dp_74);
-                a2.f16738c.setTextSize(this.f18235a.h);
-                a2.f16738c.setTextColor(BluedSkinUtils.a(this.mContext, this.f18235a.g));
+                layoutParams2.height = a.getRoot().getResources().getDimensionPixelOffset(R.dimen.dp_16);
+                layoutParams2.width = a.getRoot().getResources().getDimensionPixelOffset(R.dimen.dp_74);
+                a.c.setTextSize(this.a.h);
+                a.c.setTextColor(BluedSkinUtils.a(this.mContext, this.a.g));
                 if (!StringUtils.b(model.getIcon_before())) {
-                    ImageLoader.a((IRequestHost) null, model.getIcon_before()).a(a2.f16737a);
+                    ImageLoader.a((IRequestHost) null, model.getIcon_before()).a(a.a);
                 }
-                a2.b.setVisibility(8);
+                a.b.setVisibility(8);
             }
-            a2.f16738c.setText(model.getName());
-            View a3 = viewHolder.a();
-            final YYHomeThemeTabView yYHomeThemeTabView = this.f18235a;
-            a3.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYHomeThemeTabView$HomeTabAdapter$sLkwnZI-rwe3abHRUI2XOBqA9Zs
+            a.c.setText(model.getName());
+            View a2 = viewHolder.a();
+            final YYHomeThemeTabView yYHomeThemeTabView = this.a;
+            a2.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYHomeThemeTabView$HomeTabAdapter$sLkwnZI-rwe3abHRUI2XOBqA9Zs
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     YYHomeThemeTabView.HomeTabAdapter.a(YYHomeThemeTabView.this, i, this, view);
@@ -153,18 +150,18 @@ public final class YYHomeThemeTabView extends FrameLayout {
     public YYHomeThemeTabView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         Intrinsics.e(context, "context");
-        this.f18233a = new ArrayList();
+        this.a = new ArrayList();
         this.f = R.color.syc_h;
         this.g = R.color.syc_999999;
         this.h = 14.0f;
         this.i = 17.0f;
-        this.f18234c = (RecyclerView) LayoutInflater.from(getContext()).inflate(R.layout.common_tab_view, this).findViewById(R.id.common_tab_view_id);
+        this.c = LayoutInflater.from(getContext()).inflate(R.layout.common_tab_view, this).findViewById(R.id.common_tab_view_id);
         this.d = a();
-        RecyclerView recyclerView = this.f18234c;
+        RecyclerView recyclerView = this.c;
         if (recyclerView != null) {
             recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), 0, false));
         }
-        RecyclerView recyclerView2 = this.f18234c;
+        RecyclerView recyclerView2 = this.c;
         Intrinsics.a(recyclerView2);
         recyclerView2.setAdapter(this.d);
     }
@@ -185,7 +182,7 @@ public final class YYHomeThemeTabView extends FrameLayout {
 
     public final void a(RecyclerView.OnScrollListener listener) {
         Intrinsics.e(listener, "listener");
-        RecyclerView recyclerView = this.f18234c;
+        RecyclerView recyclerView = this.c;
         if (recyclerView == null) {
             return;
         }
@@ -203,20 +200,20 @@ public final class YYHomeThemeTabView extends FrameLayout {
         }
         this.f = i;
         this.g = i2;
-        this.f18233a.clear();
-        this.f18233a.addAll(list);
+        this.a.clear();
+        this.a.addAll(list);
         if (!z) {
-            this.f18233a.add(new HomeThemeModel(-10, "", "", "", null, 16, null));
+            this.a.add(new HomeThemeModel(-10, "", "", "", null, 16, null));
         }
         HomeTabAdapter homeTabAdapter = this.d;
         if (homeTabAdapter == null) {
             return;
         }
-        homeTabAdapter.setDataAndNotify(this.f18233a);
+        homeTabAdapter.setDataAndNotify(this.a);
     }
 
     public final int getListCount() {
-        return this.f18233a.size();
+        return this.a.size();
     }
 
     public final void setTextHighlightSize(float f) {
@@ -228,18 +225,18 @@ public final class YYHomeThemeTabView extends FrameLayout {
     }
 
     public final void setToolBtnSelect(int i) {
-        if (i < this.f18233a.size()) {
+        if (i < this.a.size()) {
             this.b = i;
-        } else if (this.b >= this.f18233a.size()) {
+        } else if (this.b >= this.a.size()) {
             this.b = 0;
         }
-        if (i == this.f18233a.size() - 2) {
-            RecyclerView recyclerView = this.f18234c;
+        if (i == this.a.size() - 2) {
+            RecyclerView recyclerView = this.c;
             if (recyclerView != null) {
                 recyclerView.smoothScrollToPosition(i + 2);
             }
         } else {
-            RecyclerView recyclerView2 = this.f18234c;
+            RecyclerView recyclerView2 = this.c;
             if (recyclerView2 != null) {
                 recyclerView2.smoothScrollToPosition(i);
             }

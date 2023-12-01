@@ -4,7 +4,7 @@ package com.igexin.push.c;
 public final class d implements b {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f23358a = "NormalModel";
+    public static final String f9750a = "NormalModel";
 
     @Override // com.igexin.push.c.b
     public final long a() {
@@ -18,7 +18,7 @@ public final class d implements b {
         boolean z3 = com.igexin.push.core.e.n;
         com.igexin.c.a.c.a.a("NormalModel|isSdkOn = " + com.igexin.push.core.e.p + " isPushOn = " + com.igexin.push.core.e.s + " checkIsSilentTime = " + a2 + " isBlockEndTime = " + a3 + " isNetworkAvailable = " + com.igexin.push.core.e.n, new Object[0]);
         if (!com.igexin.push.core.e.n || !com.igexin.push.core.e.p || !com.igexin.push.core.e.s || a2 || !a3) {
-            com.igexin.c.a.c.a.a(f23358a, "reconnect stop, interval= 20min ++++++");
+            com.igexin.c.a.c.a.a(f9750a, "reconnect stop, interval= 20min ++++++");
             com.igexin.c.a.c.a.a("NormalModel|reconnect stop, interval= 20min ++++", new Object[0]);
             return com.igexin.push.config.c.g;
         }

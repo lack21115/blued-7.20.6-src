@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Process;
+import com.huawei.hms.ads.fw;
 import com.ss.android.socialbase.downloader.constants.MonitorConstants;
 import com.tencent.tinker.loader.TinkerRuntimeException;
 import java.io.ByteArrayOutputStream;
@@ -412,7 +413,7 @@ public class ShareTinkerInternals {
             case 4:
                 return "dex_opt";
             case 5:
-                return "lib";
+                return ShareConstants.SO_PATH;
             case 6:
                 return "resource";
             default:
@@ -640,7 +641,7 @@ public class ShareTinkerInternals {
             if (isNullOrNil(str) || !isNullOrNil(str2)) {
                 return false;
             }
-            return str.equals("true");
+            return str.equals(fw.Code);
         } catch (Throwable th) {
             ShareTinkerLog.e(TAG, "isVmJitInternal ex:" + th, new Object[0]);
             return false;

@@ -1,6 +1,6 @@
 package org.apache.harmony.security.asn1;
 
-import androidx.constraintlayout.core.motion.utils.TypedValues;
+import com.amap.api.services.core.AMapException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Array;
@@ -14,9 +14,7 @@ public class BerInputStream {
     public int choiceIndex;
     public Object content;
     protected int contentOffset;
-
-    /* renamed from: in  reason: collision with root package name */
-    private final InputStream f44000in;
+    private final InputStream in;
     protected boolean isIndefinedLength;
     protected boolean isVerify;
     protected int length;
@@ -33,7 +31,7 @@ public class BerInputStream {
 
     public BerInputStream(InputStream inputStream, int i) throws IOException {
         this.offset = 0;
-        this.f44000in = inputStream;
+        this.in = inputStream;
         this.buffer = new byte[i];
         next();
         if (this.length == -1) {
@@ -52,7 +50,7 @@ public class BerInputStream {
 
     public BerInputStream(byte[] bArr, int i, int i2) throws IOException {
         this.offset = 0;
-        this.f44000in = null;
+        this.in = null;
         this.buffer = bArr;
         this.offset = i;
         next();
@@ -281,13 +279,13 @@ public class BerInputStream {
         if (this.offset == this.buffer.length) {
             throw new ASN1Exception("Unexpected end of encoding");
         }
-        if (this.f44000in == null) {
+        if (this.in == null) {
             byte[] bArr = this.buffer;
             int i = this.offset;
             this.offset = i + 1;
             return bArr[i] & 255;
         }
-        int read = this.f44000in.read();
+        int read = this.in.read();
         if (read == -1) {
             throw new ASN1Exception("Unexpected end of encoding");
         }
@@ -319,7 +317,7 @@ public class BerInputStream {
 
     public void readBoolean() throws IOException {
         if (this.tag != 1) {
-            throw expected(TypedValues.Custom.S_BOOLEAN);
+            throw expected("boolean");
         }
         if (this.length != 1) {
             throw new ASN1Exception("Wrong length for ASN.1 boolean at [" + this.tagOffset + "]");
@@ -331,18 +329,18 @@ public class BerInputStream {
         if (this.offset + this.length > this.buffer.length) {
             throw new ASN1Exception("Unexpected end of encoding");
         }
-        if (this.f44000in == null) {
+        if (this.in == null) {
             this.offset += this.length;
             return;
         }
-        int read = this.f44000in.read(this.buffer, this.offset, this.length);
+        int read = this.in.read(this.buffer, this.offset, this.length);
         if (read == this.length) {
             this.offset += this.length;
             return;
         }
         int i = read;
         while (i >= 1 && read <= this.length) {
-            i = this.f44000in.read(this.buffer, this.offset + read, this.length - read);
+            i = this.in.read(this.buffer, this.offset + read, this.length - read);
             int i2 = read + i;
             read = i2;
             if (i2 == this.length) {
@@ -412,7 +410,7 @@ public class BerInputStream {
 
     public void readInteger() throws IOException {
         if (this.tag != 2) {
-            throw expected(TypedValues.Custom.S_INT);
+            throw expected("integer");
         }
         if (this.length < 1) {
             throw new ASN1Exception("Wrong length for ASN.1 integer at [" + this.tagOffset + "]");
@@ -537,7 +535,7 @@ public class BerInputStream {
                 this.times[0] = strToInt(this.contentOffset, 2);
                 if (this.times[0] > 49) {
                     int[] iArr = this.times;
-                    iArr[0] = iArr[0] + 1900;
+                    iArr[0] = iArr[0] + AMapException.CODE_AMAP_CLIENT_UNKNOWN_ERROR;
                 } else {
                     int[] iArr2 = this.times;
                     iArr2[0] = iArr2[0] + 2000;

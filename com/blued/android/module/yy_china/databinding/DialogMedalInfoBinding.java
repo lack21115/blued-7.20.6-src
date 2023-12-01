@@ -8,17 +8,13 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/DialogMedalInfoBinding.class */
 public final class DialogMedalInfoBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final FrameLayout f16364a;
+    public final FrameLayout a;
     public final ViewPager b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final FrameLayout f16365c;
+    private final FrameLayout c;
 
     private DialogMedalInfoBinding(FrameLayout frameLayout, FrameLayout frameLayout2, ViewPager viewPager) {
-        this.f16365c = frameLayout;
-        this.f16364a = frameLayout2;
+        this.c = frameLayout;
+        this.a = frameLayout2;
         this.b = viewPager;
     }
 
@@ -26,9 +22,9 @@ public final class DialogMedalInfoBinding implements ViewBinding {
         String str;
         FrameLayout frameLayout = (FrameLayout) view.findViewById(R.id.con);
         if (frameLayout != null) {
-            ViewPager viewPager = (ViewPager) view.findViewById(R.id.vp);
-            if (viewPager != null) {
-                return new DialogMedalInfoBinding((FrameLayout) view, frameLayout, viewPager);
+            ViewPager findViewById = view.findViewById(R.id.vp);
+            if (findViewById != null) {
+                return new DialogMedalInfoBinding((FrameLayout) view, frameLayout, findViewById);
             }
             str = "vp";
         } else {
@@ -37,9 +33,8 @@ public final class DialogMedalInfoBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f16365c;
+        return this.c;
     }
 }

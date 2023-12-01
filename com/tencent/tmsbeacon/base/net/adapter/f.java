@@ -27,7 +27,7 @@ import java.nio.ByteOrder;
 public class f extends AbstractNetAdapter {
 
     /* renamed from: a  reason: collision with root package name */
-    private c<byte[], SocketResponsePackage> f39500a = new e();
+    private c<byte[], SocketResponsePackage> f25809a = new e();
     private c<JceRequestEntity, SocketRequestPackage> b = new d();
 
     private f() {
@@ -145,7 +145,7 @@ public class f extends AbstractNetAdapter {
                 sb2.append("receivedData: ");
                 sb2.append(a3.length);
                 com.tencent.tmsbeacon.base.util.c.a("SocketAdapter", 1, sb2.toString(), new Object[0]);
-                SocketResponsePackage a4 = this.f39500a.a(a3);
+                SocketResponsePackage a4 = this.f25809a.a(a3);
                 if (a4 == null) {
                     callback.onFailure(new com.tencent.tmsbeacon.base.net.d(name, "402", -1, "responsePackage == null"));
                     return;

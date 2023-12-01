@@ -56,7 +56,7 @@ public class LiveZanExtraModel extends BluedEntityBaseExtra implements Serializa
     public class LiveZanModel implements Serializable {
 
         /* renamed from: me  reason: collision with root package name */
-        public String f13931me;
+        public String f52me;
         public String other;
         public String[] random;
 

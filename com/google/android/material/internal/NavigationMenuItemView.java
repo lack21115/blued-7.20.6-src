@@ -1,5 +1,6 @@
 package com.google.android.material.internal;
 
+import android.R;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.graphics.drawable.ColorDrawable;
@@ -23,11 +24,10 @@ import androidx.core.view.AccessibilityDelegateCompat;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import androidx.core.widget.TextViewCompat;
-import com.google.android.material.R;
 
 /* loaded from: source-8110460-dex2jar.jar:com/google/android/material/internal/NavigationMenuItemView.class */
 public class NavigationMenuItemView extends ForegroundLinearLayout implements MenuView.ItemView {
-    private static final int[] CHECKED_STATE_SET = {16842912};
+    private static final int[] CHECKED_STATE_SET = {R.attr.state_checked};
     private final AccessibilityDelegateCompat accessibilityDelegate;
     private FrameLayout actionArea;
     boolean checkable;
@@ -57,9 +57,9 @@ public class NavigationMenuItemView extends ForegroundLinearLayout implements Me
             }
         };
         setOrientation(0);
-        LayoutInflater.from(context).inflate(R.layout.design_navigation_menu_item, (ViewGroup) this, true);
-        setIconSize(context.getResources().getDimensionPixelSize(R.dimen.design_navigation_icon_size));
-        CheckedTextView checkedTextView = (CheckedTextView) findViewById(R.id.design_menu_item_text);
+        LayoutInflater.from(context).inflate(com.google.android.material.R.layout.design_navigation_menu_item, (ViewGroup) this, true);
+        setIconSize(context.getResources().getDimensionPixelSize(com.google.android.material.R.dimen.design_navigation_icon_size));
+        CheckedTextView checkedTextView = (CheckedTextView) findViewById(com.google.android.material.R.id.design_menu_item_text);
         this.textView = checkedTextView;
         checkedTextView.setDuplicateParentStateEnabled(true);
         ViewCompat.setAccessibilityDelegate(this.textView, this.accessibilityDelegate);
@@ -100,7 +100,7 @@ public class NavigationMenuItemView extends ForegroundLinearLayout implements Me
     private void setActionView(View view) {
         if (view != null) {
             if (this.actionArea == null) {
-                this.actionArea = (FrameLayout) ((ViewStub) findViewById(R.id.design_menu_item_action_area_stub)).inflate();
+                this.actionArea = (FrameLayout) ((ViewStub) findViewById(com.google.android.material.R.id.design_menu_item_action_area_stub)).inflate();
             }
             this.actionArea.removeAllViews();
             this.actionArea.addView(view);
@@ -137,9 +137,8 @@ public class NavigationMenuItemView extends ForegroundLinearLayout implements Me
         adjustAppearance();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public int[] onCreateDrawableState(int i) {
+    protected int[] onCreateDrawableState(int i) {
         int[] onCreateDrawableState = super.onCreateDrawableState(i + 1);
         MenuItemImpl menuItemImpl = this.itemData;
         if (menuItemImpl != null && menuItemImpl.isCheckable() && this.itemData.isChecked()) {
@@ -197,7 +196,7 @@ public class NavigationMenuItemView extends ForegroundLinearLayout implements Me
             drawable = drawable2;
         } else if (this.needsEmptyIcon) {
             if (this.emptyDrawable == null) {
-                Drawable drawable3 = ResourcesCompat.getDrawable(getResources(), R.drawable.navigation_empty_icon, getContext().getTheme());
+                Drawable drawable3 = ResourcesCompat.getDrawable(getResources(), com.google.android.material.R.drawable.navigation_empty_icon, getContext().getTheme());
                 this.emptyDrawable = drawable3;
                 if (drawable3 != null) {
                     int i2 = this.iconSize;

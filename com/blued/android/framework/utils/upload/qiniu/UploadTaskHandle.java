@@ -8,14 +8,10 @@ import java.util.Iterator;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/utils/upload/qiniu/UploadTaskHandle.class */
 public class UploadTaskHandle {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final String f10159a = UploadTaskHandle.class.getSimpleName();
+    private static final String a = UploadTaskHandle.class.getSimpleName();
     private static UploadTaskHandle b;
     private IUploadTask d;
-
-    /* renamed from: c  reason: collision with root package name */
-    private ArrayList<IUploadTask> f10160c = new ArrayList<>();
+    private ArrayList<IUploadTask> c = new ArrayList<>();
     private ArrayList<String> e = new ArrayList<>();
 
     private UploadTaskHandle() {
@@ -39,7 +35,7 @@ public class UploadTaskHandle {
     private IUploadTask b() {
         IUploadTask remove;
         b("getStackTopTask");
-        if (this.f10160c.size() <= 0 || (remove = this.f10160c.remove(0)) == null) {
+        if (this.c.size() <= 0 || (remove = this.c.remove(0)) == null) {
             return null;
         }
         b("getStackTopTask  | taskId:" + remove.a());
@@ -48,7 +44,7 @@ public class UploadTaskHandle {
 
     private void b(String str) {
         if (AppInfo.m()) {
-            Logger.c(MediaSender.f10132a, str);
+            Logger.c(MediaSender.a, str);
         }
     }
 
@@ -80,7 +76,7 @@ public class UploadTaskHandle {
         IUploadTask iUploadTask;
         synchronized (this) {
             if (this.d == null || !this.d.a().equals(str)) {
-                Iterator<IUploadTask> it = this.f10160c.iterator();
+                Iterator<IUploadTask> it = this.c.iterator();
                 while (true) {
                     iUploadTask = null;
                     if (!it.hasNext()) {
@@ -93,12 +89,12 @@ public class UploadTaskHandle {
                     }
                 }
                 if (iUploadTask != null) {
-                    this.f10160c.remove(iUploadTask);
+                    this.c.remove(iUploadTask);
                 }
             } else {
                 IUploadTask iUploadTask2 = this.d;
                 iUploadTask2.b();
-                this.f10160c.remove(iUploadTask2);
+                this.c.remove(iUploadTask2);
                 this.d = null;
             }
             this.e.remove(str);
@@ -113,7 +109,7 @@ public class UploadTaskHandle {
             if (this.e.contains(iUploadTask.a())) {
                 return false;
             }
-            this.f10160c.add(iUploadTask);
+            this.c.add(iUploadTask);
             this.e.add(iUploadTask.a());
             c();
             b("添加上传任务, taskId" + iUploadTask.a());

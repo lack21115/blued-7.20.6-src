@@ -13,23 +13,23 @@ public class b implements com.opos.cmn.func.dl.base.b {
     private static final String b = b.class.getSimpleName();
 
     /* renamed from: a  reason: collision with root package name */
-    public List<com.opos.cmn.func.dl.base.b> f24933a = new ArrayList();
+    public List<com.opos.cmn.func.dl.base.b> f11245a = new ArrayList();
 
     /* renamed from: c  reason: collision with root package name */
-    private Executor f24934c;
+    private Executor f11246c;
 
     public b(boolean z, c cVar) {
-        this.f24934c = z ? cVar.a() : cVar.d();
+        this.f11246c = z ? cVar.a() : cVar.d();
     }
 
     @Override // com.opos.cmn.func.dl.base.b
     public void a(final DownloadRequest downloadRequest, final DownloadResponse downloadResponse) {
         String str = b;
-        com.opos.cmn.an.f.a.b(str, "onQueued:" + downloadRequest.f24869a);
-        this.f24934c.execute(new Runnable() { // from class: com.opos.cmn.func.dl.base.g.b.1
+        com.opos.cmn.an.f.a.b(str, "onQueued:" + downloadRequest.f11181a);
+        this.f11246c.execute(new Runnable() { // from class: com.opos.cmn.func.dl.base.g.b.1
             @Override // java.lang.Runnable
             public final void run() {
-                for (com.opos.cmn.func.dl.base.b bVar : b.this.f24933a) {
+                for (com.opos.cmn.func.dl.base.b bVar : b.this.f11245a) {
                     bVar.a(downloadRequest, downloadResponse);
                 }
             }
@@ -40,10 +40,10 @@ public class b implements com.opos.cmn.func.dl.base.b {
     public void a(final DownloadRequest downloadRequest, final DownloadResponse downloadResponse, final DlException dlException) {
         String str = b;
         com.opos.cmn.an.f.a.b(str, "onError:" + dlException.toString());
-        this.f24934c.execute(new Runnable() { // from class: com.opos.cmn.func.dl.base.g.b.7
+        this.f11246c.execute(new Runnable() { // from class: com.opos.cmn.func.dl.base.g.b.7
             @Override // java.lang.Runnable
             public final void run() {
-                for (com.opos.cmn.func.dl.base.b bVar : b.this.f24933a) {
+                for (com.opos.cmn.func.dl.base.b bVar : b.this.f11245a) {
                     bVar.a(downloadRequest, downloadResponse, dlException);
                 }
             }
@@ -53,11 +53,11 @@ public class b implements com.opos.cmn.func.dl.base.b {
     @Override // com.opos.cmn.func.dl.base.b
     public void b(final DownloadRequest downloadRequest, final DownloadResponse downloadResponse) {
         String str = b;
-        com.opos.cmn.an.f.a.b(str, "onStart:" + downloadRequest.f24869a);
-        this.f24934c.execute(new Runnable() { // from class: com.opos.cmn.func.dl.base.g.b.2
+        com.opos.cmn.an.f.a.b(str, "onStart:" + downloadRequest.f11181a);
+        this.f11246c.execute(new Runnable() { // from class: com.opos.cmn.func.dl.base.g.b.2
             @Override // java.lang.Runnable
             public final void run() {
-                for (com.opos.cmn.func.dl.base.b bVar : b.this.f24933a) {
+                for (com.opos.cmn.func.dl.base.b bVar : b.this.f11245a) {
                     bVar.b(downloadRequest, downloadResponse);
                 }
             }
@@ -66,10 +66,10 @@ public class b implements com.opos.cmn.func.dl.base.b {
 
     @Override // com.opos.cmn.func.dl.base.b
     public void c(final DownloadRequest downloadRequest, final DownloadResponse downloadResponse) {
-        this.f24934c.execute(new Runnable() { // from class: com.opos.cmn.func.dl.base.g.b.3
+        this.f11246c.execute(new Runnable() { // from class: com.opos.cmn.func.dl.base.g.b.3
             @Override // java.lang.Runnable
             public final void run() {
-                for (com.opos.cmn.func.dl.base.b bVar : b.this.f24933a) {
+                for (com.opos.cmn.func.dl.base.b bVar : b.this.f11245a) {
                     bVar.c(downloadRequest, downloadResponse);
                 }
             }
@@ -79,11 +79,11 @@ public class b implements com.opos.cmn.func.dl.base.b {
     @Override // com.opos.cmn.func.dl.base.b
     public void d(final DownloadRequest downloadRequest, final DownloadResponse downloadResponse) {
         String str = b;
-        com.opos.cmn.an.f.a.b(str, "onPause:" + downloadRequest.f24869a);
-        this.f24934c.execute(new Runnable() { // from class: com.opos.cmn.func.dl.base.g.b.4
+        com.opos.cmn.an.f.a.b(str, "onPause:" + downloadRequest.f11181a);
+        this.f11246c.execute(new Runnable() { // from class: com.opos.cmn.func.dl.base.g.b.4
             @Override // java.lang.Runnable
             public final void run() {
-                for (com.opos.cmn.func.dl.base.b bVar : b.this.f24933a) {
+                for (com.opos.cmn.func.dl.base.b bVar : b.this.f11245a) {
                     bVar.d(downloadRequest, downloadResponse);
                 }
             }
@@ -93,11 +93,11 @@ public class b implements com.opos.cmn.func.dl.base.b {
     @Override // com.opos.cmn.func.dl.base.b
     public void e(final DownloadRequest downloadRequest, final DownloadResponse downloadResponse) {
         String str = b;
-        com.opos.cmn.an.f.a.b(str, "onCancle:" + downloadRequest.f24869a);
-        this.f24934c.execute(new Runnable() { // from class: com.opos.cmn.func.dl.base.g.b.5
+        com.opos.cmn.an.f.a.b(str, "onCancle:" + downloadRequest.f11181a);
+        this.f11246c.execute(new Runnable() { // from class: com.opos.cmn.func.dl.base.g.b.5
             @Override // java.lang.Runnable
             public final void run() {
-                for (com.opos.cmn.func.dl.base.b bVar : b.this.f24933a) {
+                for (com.opos.cmn.func.dl.base.b bVar : b.this.f11245a) {
                     bVar.e(downloadRequest, downloadResponse);
                 }
             }
@@ -107,11 +107,11 @@ public class b implements com.opos.cmn.func.dl.base.b {
     @Override // com.opos.cmn.func.dl.base.b
     public void f(final DownloadRequest downloadRequest, final DownloadResponse downloadResponse) {
         String str = b;
-        com.opos.cmn.an.f.a.b(str, "onComplete:" + downloadRequest.f24869a);
-        this.f24934c.execute(new Runnable() { // from class: com.opos.cmn.func.dl.base.g.b.6
+        com.opos.cmn.an.f.a.b(str, "onComplete:" + downloadRequest.f11181a);
+        this.f11246c.execute(new Runnable() { // from class: com.opos.cmn.func.dl.base.g.b.6
             @Override // java.lang.Runnable
             public final void run() {
-                for (com.opos.cmn.func.dl.base.b bVar : b.this.f24933a) {
+                for (com.opos.cmn.func.dl.base.b bVar : b.this.f11245a) {
                     bVar.f(downloadRequest, downloadResponse);
                 }
             }

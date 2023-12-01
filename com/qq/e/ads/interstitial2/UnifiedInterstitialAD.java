@@ -21,7 +21,7 @@ public class UnifiedInterstitialAD extends LiteAbstractAD<UIADI> implements IRew
     private AtomicInteger b;
 
     /* renamed from: c  reason: collision with root package name */
-    private AtomicInteger f27878c;
+    private AtomicInteger f14190c;
     private volatile VideoOption d;
     private volatile int e;
     private volatile int f;
@@ -36,7 +36,7 @@ public class UnifiedInterstitialAD extends LiteAbstractAD<UIADI> implements IRew
 
     public UnifiedInterstitialAD(Activity activity, String str, UnifiedInterstitialADListener unifiedInterstitialADListener, Map map) {
         this.b = new AtomicInteger(0);
-        this.f27878c = new AtomicInteger(0);
+        this.f14190c = new AtomicInteger(0);
         this.h = unifiedInterstitialADListener;
         this.j = new ADListenerAdapter(unifiedInterstitialADListener);
         a(activity, str);
@@ -44,7 +44,7 @@ public class UnifiedInterstitialAD extends LiteAbstractAD<UIADI> implements IRew
 
     public UnifiedInterstitialAD(Activity activity, String str, UnifiedInterstitialADListener unifiedInterstitialADListener, Map map, String str2) {
         this.b = new AtomicInteger(0);
-        this.f27878c = new AtomicInteger(0);
+        this.f14190c = new AtomicInteger(0);
         this.h = unifiedInterstitialADListener;
         this.j = new ADListenerAdapter(unifiedInterstitialADListener);
         a(activity, str, str2);
@@ -78,20 +78,20 @@ public class UnifiedInterstitialAD extends LiteAbstractAD<UIADI> implements IRew
         while (this.b.getAndDecrement() > 0) {
             loadAD();
         }
-        while (this.f27878c.getAndDecrement() > 0) {
+        while (this.f14190c.getAndDecrement() > 0) {
             loadFullScreenAD();
         }
     }
 
     public void close() {
-        T t = this.f27851a;
+        T t = this.f14163a;
         if (t != 0) {
             ((UIADI) t).close();
         }
     }
 
     public void destroy() {
-        T t = this.f27851a;
+        T t = this.f14163a;
         if (t != 0) {
             ((UIADI) t).destroy();
         } else {
@@ -100,7 +100,7 @@ public class UnifiedInterstitialAD extends LiteAbstractAD<UIADI> implements IRew
     }
 
     public String getAdNetWorkName() {
-        T t = this.f27851a;
+        T t = this.f14163a;
         if (t != 0) {
             return ((UIADI) t).getAdNetWorkName();
         }
@@ -109,7 +109,7 @@ public class UnifiedInterstitialAD extends LiteAbstractAD<UIADI> implements IRew
     }
 
     public int getAdPatternType() {
-        T t = this.f27851a;
+        T t = this.f14163a;
         if (t != 0) {
             return ((UIADI) t).getAdPatternType();
         }
@@ -118,7 +118,7 @@ public class UnifiedInterstitialAD extends LiteAbstractAD<UIADI> implements IRew
     }
 
     public int getVideoDuration() {
-        T t = this.f27851a;
+        T t = this.f14163a;
         if (t != 0) {
             return ((UIADI) t).getVideoDuration();
         }
@@ -132,7 +132,7 @@ public class UnifiedInterstitialAD extends LiteAbstractAD<UIADI> implements IRew
                 this.b.incrementAndGet();
                 return;
             }
-            T t = this.f27851a;
+            T t = this.f14163a;
             if (t != 0) {
                 ((UIADI) t).loadAd();
             } else {
@@ -144,10 +144,10 @@ public class UnifiedInterstitialAD extends LiteAbstractAD<UIADI> implements IRew
     public void loadFullScreenAD() {
         if (a()) {
             if (!b()) {
-                this.f27878c.incrementAndGet();
+                this.f14190c.incrementAndGet();
                 return;
             }
-            T t = this.f27851a;
+            T t = this.f14163a;
             if (t != 0) {
                 ((UIADI) t).loadFullScreenAD();
             } else {
@@ -158,7 +158,7 @@ public class UnifiedInterstitialAD extends LiteAbstractAD<UIADI> implements IRew
 
     public void setLoadAdParams(LoadAdParams loadAdParams) {
         this.g = loadAdParams;
-        T t = this.f27851a;
+        T t = this.f14163a;
         if (t != 0) {
             ((UIADI) t).setLoadAdParams(this.g);
         }
@@ -169,7 +169,7 @@ public class UnifiedInterstitialAD extends LiteAbstractAD<UIADI> implements IRew
         if (this.f > 0 && this.e > this.f) {
             GDTLogger.e("maxVideoDuration 设置值非法，不得小于minVideoDuration");
         }
-        T t = this.f27851a;
+        T t = this.f14163a;
         if (t != 0) {
             ((UIADI) t).setMaxVideoDuration(i);
         }
@@ -184,7 +184,7 @@ public class UnifiedInterstitialAD extends LiteAbstractAD<UIADI> implements IRew
         if (this.f > 0 && this.e > this.f) {
             GDTLogger.e("minVideoDuration 设置值非法，不得大于maxVideoDuration");
         }
-        T t = this.f27851a;
+        T t = this.f14163a;
         if (t != 0) {
             ((UIADI) t).setMinVideoDuration(i);
         }
@@ -203,7 +203,7 @@ public class UnifiedInterstitialAD extends LiteAbstractAD<UIADI> implements IRew
     @Override // com.qq.e.comm.pi.IReward
     public void setServerSideVerificationOptions(ServerSideVerificationOptions serverSideVerificationOptions) {
         this.i = serverSideVerificationOptions;
-        T t = this.f27851a;
+        T t = this.f14163a;
         if (t != 0) {
             ((UIADI) t).setServerSideVerificationOptions(serverSideVerificationOptions);
         }
@@ -211,14 +211,14 @@ public class UnifiedInterstitialAD extends LiteAbstractAD<UIADI> implements IRew
 
     public void setVideoOption(VideoOption videoOption) {
         this.d = videoOption;
-        T t = this.f27851a;
+        T t = this.f14163a;
         if (t != 0) {
             ((UIADI) t).setVideoOption(videoOption);
         }
     }
 
     public void show() {
-        T t = this.f27851a;
+        T t = this.f14163a;
         if (t != 0) {
             ((UIADI) t).show();
         } else {
@@ -227,7 +227,7 @@ public class UnifiedInterstitialAD extends LiteAbstractAD<UIADI> implements IRew
     }
 
     public void show(Activity activity) {
-        T t = this.f27851a;
+        T t = this.f14163a;
         if (t != 0) {
             ((UIADI) t).show(activity);
         } else {
@@ -236,7 +236,7 @@ public class UnifiedInterstitialAD extends LiteAbstractAD<UIADI> implements IRew
     }
 
     public void showAsPopupWindow() {
-        T t = this.f27851a;
+        T t = this.f14163a;
         if (t != 0) {
             ((UIADI) t).showAsPopupWindow();
         } else {
@@ -245,7 +245,7 @@ public class UnifiedInterstitialAD extends LiteAbstractAD<UIADI> implements IRew
     }
 
     public void showAsPopupWindow(Activity activity) {
-        T t = this.f27851a;
+        T t = this.f14163a;
         if (t != 0) {
             ((UIADI) t).showAsPopupWindow(activity);
         } else {
@@ -254,7 +254,7 @@ public class UnifiedInterstitialAD extends LiteAbstractAD<UIADI> implements IRew
     }
 
     public void showFullScreenAD(Activity activity) {
-        T t = this.f27851a;
+        T t = this.f14163a;
         if (t != 0) {
             ((UIADI) t).showFullScreenAD(activity);
         } else {

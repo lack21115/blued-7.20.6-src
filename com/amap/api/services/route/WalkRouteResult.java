@@ -27,19 +27,17 @@ public class WalkRouteResult extends RouteResult implements Parcelable {
             return a(i);
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    private List<WalkPath> f5780a;
+    private List<WalkPath> a;
     private RouteSearch.WalkRouteQuery b;
 
     public WalkRouteResult() {
-        this.f5780a = new ArrayList();
+        this.a = new ArrayList();
     }
 
     public WalkRouteResult(Parcel parcel) {
         super(parcel);
-        this.f5780a = new ArrayList();
-        this.f5780a = parcel.createTypedArrayList(WalkPath.CREATOR);
+        this.a = new ArrayList();
+        this.a = parcel.createTypedArrayList(WalkPath.CREATOR);
         this.b = (RouteSearch.WalkRouteQuery) parcel.readParcelable(RouteSearch.WalkRouteQuery.class.getClassLoader());
     }
 
@@ -49,7 +47,7 @@ public class WalkRouteResult extends RouteResult implements Parcelable {
     }
 
     public List<WalkPath> getPaths() {
-        return this.f5780a;
+        return this.a;
     }
 
     public RouteSearch.WalkRouteQuery getWalkQuery() {
@@ -57,7 +55,7 @@ public class WalkRouteResult extends RouteResult implements Parcelable {
     }
 
     public void setPaths(List<WalkPath> list) {
-        this.f5780a = list;
+        this.a = list;
     }
 
     public void setWalkQuery(RouteSearch.WalkRouteQuery walkRouteQuery) {
@@ -67,7 +65,7 @@ public class WalkRouteResult extends RouteResult implements Parcelable {
     @Override // com.amap.api.services.route.RouteResult, android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
         super.writeToParcel(parcel, i);
-        parcel.writeTypedList(this.f5780a);
+        parcel.writeTypedList(this.a);
         parcel.writeParcelable(this.b, i);
     }
 }

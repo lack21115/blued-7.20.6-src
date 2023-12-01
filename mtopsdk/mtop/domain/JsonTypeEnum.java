@@ -5,15 +5,13 @@ public enum JsonTypeEnum {
     JSON("json"),
     ORIGINALJSON("originaljson");
     
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f43740c;
+    private String c;
 
     JsonTypeEnum(String str) {
-        this.f43740c = str;
+        this.c = str;
     }
 
     public final String a() {
-        return this.f43740c;
+        return this.c;
     }
 }

@@ -1,5 +1,6 @@
 package com.blued.android.module.live_china.model;
 
+import $r8;
 import java.io.Serializable;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
@@ -323,7 +324,7 @@ public final class LiveOnlineUserEntity implements Serializable {
     }
 
     public int hashCode() {
-        return (((((((((((((((((((((((((((((((((((((((((this.is_hide * 31) + this.is_manager) * 31) + this.name.hashCode()) * 31) + this.avatar.hashCode()) * 31) + C$r8$backportedMethods$utility$Long$1$hashCode.hashCode(this.uid)) * 31) + this.vbadge) * 31) + this.chat_badge_url.hashCode()) * 31) + this.chat_badge_length) * 31) + this.chat_badge_height) * 31) + this.avatar_frame.hashCode()) * 31) + this.avatar_frame_type) * 31) + this.fans_status) * 31) + this.club_level) * 31) + this.club_name.hashCode()) * 31) + this.rich_level) * 31) + this.weight) * 31) + this.noble_level) * 31) + this.noble_badge_image.hashCode()) * 31) + this.nameplate_img.hashCode()) * 31) + this.nameplate_img_width) * 31) + this.nameplate_img_height) * 31) + this.behalf_status;
+        return (((((((((((((((((((((((((((((((((((((((((this.is_hide * 31) + this.is_manager) * 31) + this.name.hashCode()) * 31) + this.avatar.hashCode()) * 31) + $r8.backportedMethods.utility.Long.1.hashCode.hashCode(this.uid)) * 31) + this.vbadge) * 31) + this.chat_badge_url.hashCode()) * 31) + this.chat_badge_length) * 31) + this.chat_badge_height) * 31) + this.avatar_frame.hashCode()) * 31) + this.avatar_frame_type) * 31) + this.fans_status) * 31) + this.club_level) * 31) + this.club_name.hashCode()) * 31) + this.rich_level) * 31) + this.weight) * 31) + this.noble_level) * 31) + this.noble_badge_image.hashCode()) * 31) + this.nameplate_img.hashCode()) * 31) + this.nameplate_img_width) * 31) + this.nameplate_img_height) * 31) + this.behalf_status;
     }
 
     public final int is_hide() {

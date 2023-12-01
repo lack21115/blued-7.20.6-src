@@ -1,5 +1,6 @@
 package com.tencent.tmsbeacon.b;
 
+import com.huawei.openalliance.ad.constant.t;
 import com.tencent.tmsbeacon.a.b.d;
 import com.tencent.tmsbeacon.base.util.c;
 import com.tencent.tmsbeacon.base.util.f;
@@ -9,7 +10,7 @@ import com.tencent.tmsqmsp.sdk.u.U;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static boolean f39489a = false;
+    private static boolean f25798a = false;
 
     public static String a(int i) {
         synchronized (a.class) {
@@ -19,9 +20,9 @@ public class a {
                 }
                 String[] c2 = U.c(i);
                 if (c2 == null) {
-                    if (!f39489a) {
+                    if (!f25798a) {
                         d.b().a("501", "[beaconId] jni execute error or load so fail!");
-                        f39489a = true;
+                        f25798a = true;
                     }
                     return "";
                 }
@@ -50,13 +51,13 @@ public class a {
                         sb.append(i5 + 2);
                         sb.append(":");
                         sb.append(c2[i5]);
-                        sb.append(";");
+                        sb.append(t.aE);
                     } else {
                         sb.append("k");
                         sb.append(i5 + 1);
                         sb.append(":");
                         sb.append(c2[i5]);
-                        sb.append(";");
+                        sb.append(t.aE);
                     }
                     i4 = i5 + 1;
                 }

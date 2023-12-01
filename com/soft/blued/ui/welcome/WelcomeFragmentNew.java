@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import com.blued.android.config.FlexDebugSevConfig;
 import com.blued.android.core.AppInfo;
@@ -23,6 +24,7 @@ import com.blued.android.framework.http.BluedHttpTools;
 import com.blued.android.framework.urlroute.BluedURIRouter;
 import com.blued.android.framework.utils.CommonTools;
 import com.blued.android.module.common.log.oldtrack.InstantLogBody;
+import com.blued.android.module.common.login.model.BluedADExtra;
 import com.blued.android.module.common.url.BluedHttpUrl;
 import com.blued.android.module.common.url.Host;
 import com.blued.android.module.common.user.model.UserInfo;
@@ -123,7 +125,6 @@ public class WelcomeFragmentNew extends TimeoutFragment implements View.OnClickL
         public void run() {
             WelcomeFragmentNew.this.L = System.currentTimeMillis();
             ImageLoader.a(WelcomeFragmentNew.this.getFragmentActive(), WelcomeADManager.a().g()).f().g(-1).a(new ImageLoadResult(WelcomeFragmentNew.this.getFragmentActive()) { // from class: com.soft.blued.ui.welcome.WelcomeFragmentNew.5.1
-                @Override // com.blued.android.core.image.ImageLoadResult
                 public void a() {
                     Log.v("drb", "onSuccess");
                     if (WelcomeADManager.a().e().today != null) {
@@ -141,7 +142,6 @@ public class WelcomeFragmentNew extends TimeoutFragment implements View.OnClickL
                     WelcomeFragmentNew.this.a(e.extra_json.splash.hot_area_limit_type);
                 }
 
-                @Override // com.blued.android.core.image.ImageLoadResult
                 public void a(int i, Exception exc) {
                     WelcomeFragmentNew.this.c("image onLoadingFailed");
                 }
@@ -171,7 +171,7 @@ public class WelcomeFragmentNew extends TimeoutFragment implements View.OnClickL
                 if (WelcomeADManager.a().h() == -1) {
                     InstantLogBody instantLogBody = new InstantLogBody();
                     instantLogBody.service = "AD_REQUEST_TIMEOUT";
-                    Map<String, String> a2 = BluedHttpTools.a();
+                    Map a2 = BluedHttpTools.a();
                     a2.put("req_id", WelcomeADManager.a().b());
                     InstantLog.a(instantLogBody, a2);
                     EventTrackLoginAndRegister.b(LoginAndRegisterProtos.Event.AD_REQUEST_TIMEOUT, WelcomeADManager.a().b());
@@ -241,7 +241,7 @@ public class WelcomeFragmentNew extends TimeoutFragment implements View.OnClickL
         LinearLayout linearLayout = (LinearLayout) this.s.findViewById(R.id.ll_click_skip);
         this.w = linearLayout;
         linearLayout.setOnClickListener(this);
-        this.v = (ImageView) this.s.findViewById(2131364417);
+        this.v = (ImageView) this.s.findViewById(R.id.img_ad_icon);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -289,6 +289,7 @@ public class WelcomeFragmentNew extends TimeoutFragment implements View.OnClickL
         }
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     public void a(SplashEntity.ShowEntity showEntity) {
         Logger.a("drb", "showThirdSplash:" + showEntity.adms_type);
         Log.v("drb", "开机广告 adms_type:" + showEntity.adms_type + "third_id：" + showEntity.third_id);
@@ -297,7 +298,7 @@ public class WelcomeFragmentNew extends TimeoutFragment implements View.OnClickL
             return;
         }
         this.M = System.currentTimeMillis();
-        SerialSplashFragment.a(this, showEntity, 105);
+        SerialSplashFragment.a((Fragment) this, showEntity, 105);
     }
 
     public TimerTask b(final String str) {
@@ -315,18 +316,15 @@ public class WelcomeFragmentNew extends TimeoutFragment implements View.OnClickL
         };
     }
 
-    @Override // com.blued.android.ui.TimeoutFragment
     public void g() {
         Log.v("drb", "onTimeoutFinish finish()");
         a(this.r, true);
     }
 
-    @Override // com.blued.android.ui.TimeoutFragment
     public View h() {
         return this.s;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment
     public boolean isActivitySwipeBackEnable() {
         return false;
     }
@@ -343,7 +341,6 @@ public class WelcomeFragmentNew extends TimeoutFragment implements View.OnClickL
             p();
         } else {
             ImageFileLoader.a(getFragmentActive()).b(WelcomeADManager.a().g()).a(new ImageFileLoader.OnLoadFileListener() { // from class: com.soft.blued.ui.welcome.WelcomeFragmentNew.4
-                @Override // com.blued.android.core.image.ImageFileLoader.OnLoadFileListener
                 public void onUIFinish(File file, Exception exc) {
                     if (file == null || !file.exists()) {
                         WelcomeFragmentNew.this.p();
@@ -371,11 +368,11 @@ public class WelcomeFragmentNew extends TimeoutFragment implements View.OnClickL
                 String str2 = str;
                 if (str.startsWith(BluedHttpUrl.q())) {
                     if (this.E) {
-                        Map<String, String> a2 = BluedHttpTools.a();
+                        Map a2 = BluedHttpTools.a();
                         a2.put("is_valid", "0");
                         str2 = HttpUtils.a(a2, str);
                     } else {
-                        Map<String, String> a3 = BluedHttpTools.a();
+                        Map a3 = BluedHttpTools.a();
                         a3.put("is_valid", "1");
                         str2 = HttpUtils.a(a3, str);
                     }
@@ -386,26 +383,26 @@ public class WelcomeFragmentNew extends TimeoutFragment implements View.OnClickL
             this.E = true;
         }
         SplashEntity.ShowEntity showEntity = WelcomeADManager.a().e().today;
-        Log.v("drb", "intoADUrl adExtra.deep_link_url:" + showEntity.deep_link_url);
-        Log.v("drb", "intoADUrl adExtra.target_url:" + showEntity.target_url);
-        if (TextUtils.isEmpty(showEntity.deep_link_url)) {
-            BluedApplicationLike.outUri = BluedURIRouter.a().f(showEntity.target_url);
+        Log.v("drb", "intoADUrl adExtra.deep_link_url:" + ((BluedADExtra) showEntity).deep_link_url);
+        Log.v("drb", "intoADUrl adExtra.target_url:" + ((BluedADExtra) showEntity).target_url);
+        if (TextUtils.isEmpty(((BluedADExtra) showEntity).deep_link_url)) {
+            BluedApplicationLike.outUri = BluedURIRouter.a().f(((BluedADExtra) showEntity).target_url);
             if (BluedApplicationLike.outUri == null) {
-                BluedApplicationLike.outUri = BluedURIRouter.a().a(showEntity.target_url, 9);
+                BluedApplicationLike.outUri = BluedURIRouter.a().a(((BluedADExtra) showEntity).target_url, 9);
             }
             c("intoADUrl");
             EventTrackLoginAndRegister.a(LoginAndRegisterProtos.Event.JD_AD_TO_H5);
             return;
         }
-        Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(showEntity.deep_link_url));
+        Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(((BluedADExtra) showEntity).deep_link_url));
         if (AppUtils.a(intent)) {
             EventTrackLoginAndRegister.a(LoginAndRegisterProtos.Event.JD_AD_TO_APP);
             this.r.startActivity(intent);
             return;
         }
-        BluedApplicationLike.outUri = BluedURIRouter.a().f(showEntity.target_url);
+        BluedApplicationLike.outUri = BluedURIRouter.a().f(((BluedADExtra) showEntity).target_url);
         if (BluedApplicationLike.outUri == null) {
-            BluedApplicationLike.outUri = BluedURIRouter.a().a(showEntity.target_url, 9);
+            BluedApplicationLike.outUri = BluedURIRouter.a().a(((BluedADExtra) showEntity).target_url, 9);
         }
         c("intoADUrl");
         EventTrackLoginAndRegister.a(LoginAndRegisterProtos.Event.JD_AD_TO_H5);
@@ -448,7 +445,6 @@ public class WelcomeFragmentNew extends TimeoutFragment implements View.OnClickL
         }
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityCreated(Bundle bundle) {
         super.onActivityCreated(bundle);
         Log.v("drb", "WelcomeFragmentNew onActivityCreated");
@@ -494,7 +490,6 @@ public class WelcomeFragmentNew extends TimeoutFragment implements View.OnClickL
             if (!WelcomeADManager.a().i()) {
                 if (!StringUtils.d(WelcomeADManager.a().g())) {
                     ImageFileLoader.a(getFragmentActive()).b(WelcomeADManager.a().g()).a(new ImageFileLoader.OnLoadFileListener() { // from class: com.soft.blued.ui.welcome.WelcomeFragmentNew.2
-                        @Override // com.blued.android.core.image.ImageFileLoader.OnLoadFileListener
                         public void onUIFinish(File file, Exception exc) {
                             if (file == null || !file.exists()) {
                                 WelcomeFragmentNew.this.l();
@@ -525,7 +520,6 @@ public class WelcomeFragmentNew extends TimeoutFragment implements View.OnClickL
         }
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         a(this.r, this.o);
         if (intent != null) {
@@ -558,7 +552,6 @@ public class WelcomeFragmentNew extends TimeoutFragment implements View.OnClickL
         c("onClick ll_click_skip");
     }
 
-    @Override // com.blued.android.ui.TimeoutFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         TXSplashFragment.p = false;
@@ -567,7 +560,6 @@ public class WelcomeFragmentNew extends TimeoutFragment implements View.OnClickL
         n();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.F = System.currentTimeMillis();
         View view = this.s;
@@ -582,7 +574,6 @@ public class WelcomeFragmentNew extends TimeoutFragment implements View.OnClickL
         return this.s;
     }
 
-    @Override // com.blued.android.ui.TimeoutFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
         BluedPreferences.N(false);
@@ -595,7 +586,6 @@ public class WelcomeFragmentNew extends TimeoutFragment implements View.OnClickL
         WelcomeADManager.a().d();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onStart() {
         super.onStart();
         Log.v("drb", "WelcomeFragment onStart");
@@ -613,7 +603,6 @@ public class WelcomeFragmentNew extends TimeoutFragment implements View.OnClickL
         this.y = false;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onStop() {
         super.onStop();
         Log.v("drb", "WelcomeFragment onStop");
@@ -623,7 +612,6 @@ public class WelcomeFragmentNew extends TimeoutFragment implements View.OnClickL
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onViewCreated(View view, Bundle bundle) {
         super.onViewCreated(view, bundle);
         this.K = System.currentTimeMillis();

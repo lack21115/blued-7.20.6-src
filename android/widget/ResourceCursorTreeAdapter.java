@@ -28,7 +28,7 @@ public abstract class ResourceCursorTreeAdapter extends CursorTreeAdapter {
         this.mExpandedGroupLayout = i2;
         this.mChildLayout = i3;
         this.mLastChildLayout = i4;
-        this.mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        this.mInflater = (LayoutInflater) context.getSystemService("layout_inflater");
     }
 
     @Override // android.widget.CursorTreeAdapter

@@ -17,7 +17,7 @@ public abstract class TbsBaseConfig {
     public static final String TAG = "TbsBaseConfig";
 
     /* renamed from: a  reason: collision with root package name */
-    Map<String, String> f38756a;
+    Map<String, String> f25065a;
     private Context b;
 
     private static File a(Context context, String str) {
@@ -40,7 +40,7 @@ public abstract class TbsBaseConfig {
     }
 
     public void clear() {
-        this.f38756a.clear();
+        this.f25065a.clear();
         commit();
     }
 
@@ -53,7 +53,7 @@ public abstract class TbsBaseConfig {
     public abstract String getConfigFileName();
 
     public void init(Context context) {
-        this.f38756a = new HashMap();
+        this.f25065a = new HashMap();
         Context applicationContext = context.getApplicationContext();
         this.b = applicationContext;
         if (applicationContext == null) {
@@ -75,13 +75,13 @@ public abstract class TbsBaseConfig {
             if (a2 == null) {
                 return;
             }
-            this.f38756a.clear();
+            this.f25065a.clear();
             bufferedInputStream = new BufferedInputStream(new FileInputStream(a2));
             try {
                 Properties properties = new Properties();
                 properties.load(bufferedInputStream);
                 for (String str : properties.stringPropertyNames()) {
-                    this.f38756a.put(str, properties.getProperty(str));
+                    this.f25065a.put(str, properties.getProperty(str));
                 }
             } catch (Throwable th2) {
                 th = th2;
@@ -126,12 +126,12 @@ public abstract class TbsBaseConfig {
                 properties = new Properties();
                 properties.load(bufferedInputStream);
                 properties.clear();
-                for (String str : this.f38756a.keySet()) {
-                    String str2 = this.f38756a.get(str);
+                for (String str : this.f25065a.keySet()) {
+                    String str2 = this.f25065a.get(str);
                     properties.setProperty(str, "" + ((Object) str2));
                     TbsLog.i(TAG, "writeTbsDownloadInfo key is " + str + " value is " + ((Object) str2));
                 }
-                this.f38756a.clear();
+                this.f25065a.clear();
                 bufferedOutputStream = new BufferedOutputStream(new FileOutputStream(a2));
             } catch (Throwable th2) {
                 th = th2;

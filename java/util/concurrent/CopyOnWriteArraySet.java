@@ -22,32 +22,32 @@ public class CopyOnWriteArraySet<E> extends AbstractSet<E> implements Serializab
         return obj == null ? obj2 == null : obj.equals(obj2);
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean add(E e) {
         return this.al.addIfAbsent(e);
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean addAll(Collection<? extends E> collection) {
         return this.al.addAllAbsent(collection) > 0;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public void clear() {
         this.al.clear();
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean contains(Object obj) {
         return this.al.contains(obj);
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean containsAll(Collection<?> collection) {
         return this.al.containsAll(collection);
     }
 
-    @Override // java.util.AbstractSet, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractSet, java.util.Collection
     public boolean equals(Object obj) {
         boolean z;
         int i;
@@ -90,7 +90,7 @@ public class CopyOnWriteArraySet<E> extends AbstractSet<E> implements Serializab
         return z;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean isEmpty() {
         return this.al.isEmpty();
     }
@@ -100,32 +100,32 @@ public class CopyOnWriteArraySet<E> extends AbstractSet<E> implements Serializab
         return this.al.iterator();
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean remove(Object obj) {
         return this.al.remove(obj);
     }
 
-    @Override // java.util.AbstractSet, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractSet, java.util.AbstractCollection, java.util.Collection
     public boolean removeAll(Collection<?> collection) {
         return this.al.removeAll(collection);
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean retainAll(Collection<?> collection) {
         return this.al.retainAll(collection);
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    @Override // java.util.AbstractCollection, java.util.Collection
     public int size() {
         return this.al.size();
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public Object[] toArray() {
         return this.al.toArray();
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public <T> T[] toArray(T[] tArr) {
         return (T[]) this.al.toArray(tArr);
     }

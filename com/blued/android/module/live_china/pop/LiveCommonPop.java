@@ -36,21 +36,17 @@ public class LiveCommonPop extends AttachPopupView {
     /* renamed from: com.blued.android.module.live_china.pop.LiveCommonPop$3  reason: invalid class name */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/pop/LiveCommonPop$3.class */
     class AnonymousClass3 implements Runnable {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ View f13965a;
+        final /* synthetic */ View a;
         final /* synthetic */ XPopupCallback b;
-
-        /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ boolean f13966c;
+        final /* synthetic */ boolean c;
         final /* synthetic */ LiveCommonPop d;
 
         @Override // java.lang.Runnable
         public void run() {
-            this.f13965a.getLocationOnScreen(this.d.z);
-            this.d.A[0] = this.f13965a.getMeasuredWidth();
-            this.d.A[1] = this.f13965a.getMeasuredHeight();
-            new XPopup.Builder(this.d.getContext()).a(this.b).a(PopupAnimation.ScaleAlphaFromCenter).d((Boolean) false).a(PopupPosition.Top).b(this.f13966c).a(this.f13965a).a((BasePopupView) this.d).h();
+            this.a.getLocationOnScreen(this.d.z);
+            this.d.A[0] = this.a.getMeasuredWidth();
+            this.d.A[1] = this.a.getMeasuredHeight();
+            new XPopup.Builder(this.d.getContext()).a(this.b).a(PopupAnimation.ScaleAlphaFromCenter).d((Boolean) false).a(PopupPosition.Top).b(this.c).a(this.a).a((BasePopupView) this.d).h();
         }
     }
 

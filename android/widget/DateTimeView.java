@@ -11,6 +11,7 @@ import android.text.format.Time;
 import android.util.AttributeSet;
 import android.view.RemotableViewMethod;
 import android.widget.RemoteViews;
+import com.amap.api.services.core.AMapException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -42,7 +43,7 @@ public class DateTimeView extends TextView {
             this.mReceiver = new BroadcastReceiver() { // from class: android.widget.DateTimeView.ReceiverInfo.1
                 @Override // android.content.BroadcastReceiver
                 public void onReceive(Context context, Intent intent) {
-                    if (!Intent.ACTION_TIME_TICK.equals(intent.getAction()) || System.currentTimeMillis() >= ReceiverInfo.this.getSoonestUpdateTime()) {
+                    if (!"android.intent.action.TIME_TICK".equals(intent.getAction()) || System.currentTimeMillis() >= ReceiverInfo.this.getSoonestUpdateTime()) {
                         ReceiverInfo.this.updateAll();
                     }
                 }
@@ -81,12 +82,12 @@ public class DateTimeView extends TextView {
 
         void register(Context context) {
             IntentFilter intentFilter = new IntentFilter();
-            intentFilter.addAction(Intent.ACTION_TIME_TICK);
+            intentFilter.addAction("android.intent.action.TIME_TICK");
             intentFilter.addAction("android.intent.action.TIME_SET");
-            intentFilter.addAction(Intent.ACTION_CONFIGURATION_CHANGED);
-            intentFilter.addAction(Intent.ACTION_TIMEZONE_CHANGED);
+            intentFilter.addAction("android.intent.action.CONFIGURATION_CHANGED");
+            intentFilter.addAction("android.intent.action.TIMEZONE_CHANGED");
             context.registerReceiver(this.mReceiver, intentFilter);
-            context.getContentResolver().registerContentObserver(Settings.System.getUriFor(Settings.System.DATE_FORMAT), true, this.mObserver);
+            context.getContentResolver().registerContentObserver(Settings.System.getUriFor("date_format"), true, this.mObserver);
         }
 
         public void removeView(DateTimeView dateTimeView) {
@@ -126,7 +127,7 @@ public class DateTimeView extends TextView {
     }
 
     private DateFormat getDateFormat() {
-        String string = Settings.System.getString(getContext().getContentResolver(), Settings.System.DATE_FORMAT);
+        String string = Settings.System.getString(getContext().getContentResolver(), "date_format");
         if (string == null || "".equals(string)) {
             return DateFormat.getDateInstance(3);
         }
@@ -175,7 +176,7 @@ public class DateTimeView extends TextView {
         time.set(j);
         time.second = 0;
         this.mTimeMillis = time.toMillis(false);
-        this.mTime = new Date(time.year - 1900, time.month, time.monthDay, time.hour, time.minute, 0);
+        this.mTime = new Date(time.year - AMapException.CODE_AMAP_CLIENT_UNKNOWN_ERROR, time.month, time.monthDay, time.hour, time.minute, 0);
         update();
     }
 

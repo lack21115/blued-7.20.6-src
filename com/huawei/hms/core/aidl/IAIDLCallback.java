@@ -19,15 +19,15 @@ public interface IAIDLCallback extends IInterface {
             public static IAIDLCallback b;
 
             /* renamed from: a  reason: collision with root package name */
-            private IBinder f22672a;
+            private IBinder f9064a;
 
             a(IBinder iBinder) {
-                this.f22672a = iBinder;
+                this.f9064a = iBinder;
             }
 
             @Override // android.os.IInterface
             public IBinder asBinder() {
-                return this.f22672a;
+                return this.f9064a;
             }
         }
 

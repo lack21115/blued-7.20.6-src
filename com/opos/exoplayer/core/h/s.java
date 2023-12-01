@@ -15,11 +15,11 @@ import java.io.InputStream;
 public final class s implements g {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Resources f25477a;
+    private final Resources f11789a;
     private final t<? super s> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Uri f25478c;
+    private Uri f11790c;
     private AssetFileDescriptor d;
     private InputStream e;
     private long f;
@@ -37,7 +37,7 @@ public final class s implements g {
     }
 
     public s(Context context, t<? super s> tVar) {
-        this.f25477a = context.getResources();
+        this.f11789a = context.getResources();
         this.b = tVar;
     }
 
@@ -78,11 +78,11 @@ public final class s implements g {
     @Override // com.opos.exoplayer.core.h.g
     public long a(i iVar) {
         try {
-            Uri uri = iVar.f25449a;
-            this.f25478c = uri;
-            if (TextUtils.equals(y.f7618a, uri.getScheme())) {
+            Uri uri = iVar.f11761a;
+            this.f11790c = uri;
+            if (TextUtils.equals(y.f4779a, uri.getScheme())) {
                 try {
-                    this.d = this.f25477a.openRawResourceFd(Integer.parseInt(this.f25478c.getLastPathSegment()));
+                    this.d = this.f11789a.openRawResourceFd(Integer.parseInt(this.f11790c.getLastPathSegment()));
                     FileInputStream fileInputStream = new FileInputStream(this.d.getFileDescriptor());
                     this.e = fileInputStream;
                     fileInputStream.skip(this.d.getStartOffset());
@@ -117,12 +117,12 @@ public final class s implements g {
 
     @Override // com.opos.exoplayer.core.h.g
     public Uri a() {
-        return this.f25478c;
+        return this.f11790c;
     }
 
     @Override // com.opos.exoplayer.core.h.g
     public void b() {
-        this.f25478c = null;
+        this.f11790c = null;
         try {
             try {
                 if (this.e != null) {

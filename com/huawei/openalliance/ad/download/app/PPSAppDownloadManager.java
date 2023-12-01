@@ -6,6 +6,7 @@ import android.view.View;
 import com.huawei.hms.ads.dp;
 import com.huawei.hms.ads.eu;
 import com.huawei.hms.ads.ev;
+import com.huawei.hms.ads.fw;
 import com.huawei.hms.ads.ge;
 import com.huawei.hms.ads.kn;
 import com.huawei.hms.ads.ko;
@@ -330,7 +331,7 @@ public class PPSAppDownloadManager implements IAppDownloadManager {
             int L = vVar.L();
             ge.V("PPSAppDownloadManager", "buildLinkedAdConfig, set progress from native view " + L);
             hashMap.put(at.n, String.valueOf(adContentData.z()));
-            hashMap.put(at.q, adContentData.y() ? "true" : "false");
+            hashMap.put(at.q, adContentData.y() ? fw.Code : "false");
             hashMap.put(at.p, vVar.a());
             hashMap.put(at.o, String.valueOf(L));
         }

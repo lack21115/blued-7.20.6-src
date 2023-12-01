@@ -8,11 +8,11 @@ public final class bt extends m implements Cloneable {
     static Map<String, String> n;
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f35311a = true;
+    public boolean f21620a = true;
     public boolean b = true;
 
     /* renamed from: c  reason: collision with root package name */
-    public boolean f35312c = true;
+    public boolean f21621c = true;
     public String d = "";
     public String e = "";
     public bs f = null;
@@ -33,9 +33,9 @@ public final class bt extends m implements Cloneable {
 
     @Override // com.tencent.bugly.idasc.proguard.m
     public final void a(k kVar) {
-        this.f35311a = kVar.a(0, true);
+        this.f21620a = kVar.a(0, true);
         this.b = kVar.a(1, true);
-        this.f35312c = kVar.a(2, true);
+        this.f21621c = kVar.a(2, true);
         this.d = kVar.b(3, false);
         this.e = kVar.b(4, false);
         this.f = (bs) kVar.a((m) m, 5, false);
@@ -49,9 +49,9 @@ public final class bt extends m implements Cloneable {
 
     @Override // com.tencent.bugly.idasc.proguard.m
     public final void a(l lVar) {
-        lVar.a(this.f35311a, 0);
+        lVar.a(this.f21620a, 0);
         lVar.a(this.b, 1);
-        lVar.a(this.f35312c, 2);
+        lVar.a(this.f21621c, 2);
         String str = this.d;
         if (str != null) {
             lVar.a(str, 3);
@@ -84,9 +84,9 @@ public final class bt extends m implements Cloneable {
     @Override // com.tencent.bugly.idasc.proguard.m
     public final void a(StringBuilder sb, int i) {
         i iVar = new i(sb, i);
-        iVar.a(this.f35311a, "enable");
+        iVar.a(this.f21620a, "enable");
         iVar.a(this.b, "enableUserInfo");
-        iVar.a(this.f35312c, "enableQuery");
+        iVar.a(this.f21621c, "enableQuery");
         iVar.a(this.d, "url");
         iVar.a(this.e, "expUrl");
         iVar.a((m) this.f, "security");
@@ -114,7 +114,7 @@ public final class bt extends m implements Cloneable {
             return false;
         }
         bt btVar = (bt) obj;
-        return n.a(this.f35311a, btVar.f35311a) && n.a(this.b, btVar.b) && n.a(this.f35312c, btVar.f35312c) && n.a(this.d, btVar.d) && n.a(this.e, btVar.e) && n.a(this.f, btVar.f) && n.a(this.g, btVar.g) && n.a(this.h, btVar.h) && n.a(this.i, btVar.i) && n.a(this.j, btVar.j) && n.a(this.k, btVar.k) && n.a(this.l, btVar.l);
+        return n.a(this.f21620a, btVar.f21620a) && n.a(this.b, btVar.b) && n.a(this.f21621c, btVar.f21621c) && n.a(this.d, btVar.d) && n.a(this.e, btVar.e) && n.a(this.f, btVar.f) && n.a(this.g, btVar.g) && n.a(this.h, btVar.h) && n.a(this.i, btVar.i) && n.a(this.j, btVar.j) && n.a(this.k, btVar.k) && n.a(this.l, btVar.l);
     }
 
     public final int hashCode() {

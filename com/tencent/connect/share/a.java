@@ -152,16 +152,16 @@ public class a {
                 @Override // java.lang.Runnable
                 public void run() {
                     String a2;
-                    Bitmap a3 = a.a(String.this, 140);
+                    Bitmap a3 = a.a(str, 140);
                     if (a3 != null) {
                         String str2 = Environment.getExternalStorageDirectory() + "/tmp/";
-                        String str3 = "share2qq_temp" + Util.encrypt(String.this) + ".jpg";
-                        if (a.b(String.this, 140, 140)) {
+                        String str3 = "share2qq_temp" + Util.encrypt(str) + ".jpg";
+                        if (a.b(str, 140, 140)) {
                             f.b("openSDK_LOG.AsynScaleCompressImage", "out of bound,compress!");
                             a2 = a.a(a3, str2, str3);
                         } else {
                             f.b("openSDK_LOG.AsynScaleCompressImage", "not out of bound,not compress!");
-                            a2 = String.this;
+                            a2 = str;
                         }
                         f.b("openSDK_LOG.AsynScaleCompressImage", "-->destFilePath: " + a2);
                         if (a2 != null) {
@@ -202,15 +202,15 @@ public class a {
                 int i = 0;
                 while (true) {
                     int i2 = i;
-                    if (i2 >= ArrayList.this.size()) {
+                    if (i2 >= arrayList.size()) {
                         Message obtainMessage = handler.obtainMessage(101);
                         Bundle bundle = new Bundle();
-                        bundle.putStringArrayList("images", ArrayList.this);
+                        bundle.putStringArrayList("images", arrayList);
                         obtainMessage.setData(bundle);
                         handler.sendMessage(obtainMessage);
                         return;
                     }
-                    String str = (String) ArrayList.this.get(i2);
+                    String str = (String) arrayList.get(i2);
                     if (!Util.isValidUrl(str) && Util.fileExists(str) && (a2 = a.a(str, 10000)) != null) {
                         String str2 = Environment.getExternalStorageDirectory() + "/tmp/";
                         String str3 = "share2qzone_temp" + Util.encrypt(str) + ".jpg";
@@ -221,7 +221,7 @@ public class a {
                             f.b("openSDK_LOG.AsynScaleCompressImage", "not out of bound,not compress!");
                         }
                         if (str != null) {
-                            ArrayList.this.set(i2, str);
+                            arrayList.set(i2, str);
                         }
                     }
                     i = i2 + 1;

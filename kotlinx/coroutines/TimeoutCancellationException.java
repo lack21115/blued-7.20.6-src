@@ -6,13 +6,11 @@ import kotlin.Metadata;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/TimeoutCancellationException.class */
 public final class TimeoutCancellationException extends CancellationException implements CopyableThrowable<TimeoutCancellationException> {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final Job f42858a;
+    public final Job a;
 
     public TimeoutCancellationException(String str, Job job) {
         super(str);
-        this.f42858a = job;
+        this.a = job;
     }
 
     @Override // kotlinx.coroutines.CopyableThrowable
@@ -23,7 +21,7 @@ public final class TimeoutCancellationException extends CancellationException im
         if (message == null) {
             str = "";
         }
-        TimeoutCancellationException timeoutCancellationException = new TimeoutCancellationException(str, this.f42858a);
+        TimeoutCancellationException timeoutCancellationException = new TimeoutCancellationException(str, this.a);
         timeoutCancellationException.initCause(this);
         return timeoutCancellationException;
     }

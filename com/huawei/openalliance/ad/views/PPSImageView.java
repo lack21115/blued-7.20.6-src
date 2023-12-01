@@ -12,7 +12,7 @@ import com.huawei.hms.ads.splash.R;
 public class PPSImageView extends PPSBaseView implements ld {
 
     /* renamed from: a  reason: collision with root package name */
-    private ImageView f23019a;
+    private ImageView f9411a;
 
     public PPSImageView(Context context) {
         super(context);
@@ -22,7 +22,7 @@ public class PPSImageView extends PPSBaseView implements ld {
 
     private void Code(Context context) {
         inflate(context, R.layout.hiad_view_image_ad, this);
-        this.f23019a = (ImageView) findViewById(R.id.iv_ad_content);
+        this.f9411a = (ImageView) findViewById(R.id.iv_ad_content);
     }
 
     @Override // com.huawei.openalliance.ad.views.PPSBaseView, com.huawei.hms.ads.lj
@@ -33,7 +33,7 @@ public class PPSImageView extends PPSBaseView implements ld {
     @Override // com.huawei.hms.ads.ld
     public void Code(Drawable drawable) {
         ge.V("PPSImageView", "onAdImageLoaded - set image to view");
-        this.f23019a.setImageDrawable(drawable);
+        this.f9411a.setImageDrawable(drawable);
         this.B.Code(this.F);
     }
 }

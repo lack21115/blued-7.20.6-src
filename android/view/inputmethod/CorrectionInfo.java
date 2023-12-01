@@ -31,8 +31,8 @@ public final class CorrectionInfo implements Parcelable {
 
     private CorrectionInfo(Parcel parcel) {
         this.mOffset = parcel.readInt();
-        this.mOldText = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
-        this.mNewText = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
+        this.mOldText = (CharSequence) TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
+        this.mNewText = (CharSequence) TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
     }
 
     @Override // android.os.Parcelable

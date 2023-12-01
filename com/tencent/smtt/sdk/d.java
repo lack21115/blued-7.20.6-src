@@ -1,6 +1,7 @@
 package com.tencent.smtt.sdk;
 
 import android.content.Context;
+import com.tencent.tinker.android.dex.DexFormat;
 import java.io.IOException;
 import java.util.UnknownFormatConversionException;
 
@@ -8,19 +9,19 @@ import java.util.UnknownFormatConversionException;
 public class d {
 
     /* renamed from: a  reason: collision with root package name */
-    static int f38840a = 5;
+    static int f25149a = 5;
     static int b = 16;
 
     /* renamed from: c  reason: collision with root package name */
-    static char[] f38841c = new char[16];
+    static char[] f25150c = new char[16];
     static String d = "dex2oat-cmdline";
     static long e = 4096;
 
     public static String a(Context context, String str) throws Exception {
         com.tencent.smtt.utils.c cVar = new com.tencent.smtt.utils.c(str);
-        cVar.a(f38841c);
+        cVar.a(f25150c);
         boolean z = true;
-        if (f38841c[f38840a] != 1) {
+        if (f25150c[f25149a] != 1) {
             z = false;
         }
         cVar.a(z);
@@ -29,7 +30,7 @@ public class d {
     }
 
     private static String a(String str) {
-        String[] split = str.split(new String("��"));
+        String[] split = str.split(new String(DexFormat.MAGIC_SUFFIX));
         int i = 0;
         while (true) {
             int i2 = i;

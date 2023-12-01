@@ -9,7 +9,7 @@ import com.tencent.open.utils.Global;
 public class f extends SQLiteOpenHelper {
 
     /* renamed from: a  reason: collision with root package name */
-    protected static final String[] f38248a = {"key"};
+    protected static final String[] f24557a = {"key"};
     protected static f b;
 
     public f(Context context) {

@@ -19,7 +19,6 @@ import com.google.protobuf.UnknownFieldSet;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
-import java.util.List;
 
 /* loaded from: source-6737240-dex2jar.jar:cn/irisgw/live/Barrage.class */
 public final class Barrage extends GeneratedMessageV3 implements BarrageOrBuilder {
@@ -59,8 +58,8 @@ public final class Barrage extends GeneratedMessageV3 implements BarrageOrBuilde
     private int rechargeBadge_;
     private static final Barrage DEFAULT_INSTANCE = new Barrage();
     private static final Parser<Barrage> PARSER = new AbstractParser<Barrage>() { // from class: cn.irisgw.live.Barrage.1
-        @Override // com.google.protobuf.Parser
-        public Barrage parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        /* renamed from: parsePartialFrom */
+        public Barrage m482parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             return new Barrage(codedInputStream, extensionRegistryLite);
         }
     };
@@ -136,14 +135,14 @@ public final class Barrage extends GeneratedMessageV3 implements BarrageOrBuilde
 
         public Builder addAllChatFrameBorderColor(Iterable<String> iterable) {
             ensureChatFrameBorderColorIsMutable();
-            AbstractMessageLite.Builder.addAll((Iterable) iterable, (List) this.chatFrameBorderColor_);
+            AbstractMessageLite.Builder.addAll(iterable, this.chatFrameBorderColor_);
             onChanged();
             return this;
         }
 
         public Builder addAllChatFrameFrameColor(Iterable<String> iterable) {
             ensureChatFrameFrameColorIsMutable();
-            AbstractMessageLite.Builder.addAll((Iterable) iterable, (List) this.chatFrameFrameColor_);
+            AbstractMessageLite.Builder.addAll(iterable, this.chatFrameFrameColor_);
             onChanged();
             return this;
         }
@@ -151,7 +150,7 @@ public final class Barrage extends GeneratedMessageV3 implements BarrageOrBuilde
         public Builder addChatFrameBorderColor(String str) {
             if (str != null) {
                 ensureChatFrameBorderColorIsMutable();
-                this.chatFrameBorderColor_.add((LazyStringList) str);
+                this.chatFrameBorderColor_.add(str);
                 onChanged();
                 return this;
             }
@@ -172,7 +171,7 @@ public final class Barrage extends GeneratedMessageV3 implements BarrageOrBuilde
         public Builder addChatFrameFrameColor(String str) {
             if (str != null) {
                 ensureChatFrameFrameColorIsMutable();
-                this.chatFrameFrameColor_.add((LazyStringList) str);
+                this.chatFrameFrameColor_.add(str);
                 onChanged();
                 return this;
             }
@@ -190,22 +189,22 @@ public final class Barrage extends GeneratedMessageV3 implements BarrageOrBuilde
             throw null;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: addRepeatedField */
+        public Builder m484addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.addRepeatedField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public Barrage build() {
-            Barrage buildPartial = buildPartial();
-            if (buildPartial.isInitialized()) {
-                return buildPartial;
+        /* renamed from: build */
+        public Barrage m486build() {
+            Barrage m488buildPartial = m488buildPartial();
+            if (m488buildPartial.isInitialized()) {
+                return m488buildPartial;
             }
-            throw newUninitializedMessageException((Message) buildPartial);
+            throw newUninitializedMessageException(m488buildPartial);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public Barrage buildPartial() {
+        /* renamed from: buildPartial */
+        public Barrage m488buildPartial() {
             Barrage barrage = new Barrage(this);
             barrage.fanClubName_ = this.fanClubName_;
             barrage.fanClubLevel_ = this.fanClubLevel_;
@@ -235,8 +234,8 @@ public final class Barrage extends GeneratedMessageV3 implements BarrageOrBuilde
             return barrage;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public Builder clear() {
+        /* renamed from: clear */
+        public Builder m492clear() {
             super.clear();
             this.fanClubName_ = "";
             this.fanClubLevel_ = 0;
@@ -333,8 +332,8 @@ public final class Barrage extends GeneratedMessageV3 implements BarrageOrBuilde
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+        /* renamed from: clearField */
+        public Builder m494clearField(Descriptors.FieldDescriptor fieldDescriptor) {
             return (Builder) super.clearField(fieldDescriptor);
         }
 
@@ -356,8 +355,8 @@ public final class Barrage extends GeneratedMessageV3 implements BarrageOrBuilde
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+        /* renamed from: clearOneof */
+        public Builder m497clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
             return (Builder) super.clearOneof(oneofDescriptor);
         }
 
@@ -367,10 +366,9 @@ public final class Barrage extends GeneratedMessageV3 implements BarrageOrBuilde
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder m503clone() {
+            return (Builder) super.clone();
         }
 
         @Override // cn.irisgw.live.BarrageOrBuilder
@@ -418,7 +416,7 @@ public final class Barrage extends GeneratedMessageV3 implements BarrageOrBuilde
 
         @Override // cn.irisgw.live.BarrageOrBuilder
         public String getChatFrameBorderColor(int i) {
-            return this.chatFrameBorderColor_.get(i);
+            return (String) this.chatFrameBorderColor_.get(i);
         }
 
         @Override // cn.irisgw.live.BarrageOrBuilder
@@ -432,7 +430,8 @@ public final class Barrage extends GeneratedMessageV3 implements BarrageOrBuilde
         }
 
         @Override // cn.irisgw.live.BarrageOrBuilder
-        public ProtocolStringList getChatFrameBorderColorList() {
+        /* renamed from: getChatFrameBorderColorList */
+        public ProtocolStringList mo473getChatFrameBorderColorList() {
             return this.chatFrameBorderColor_.getUnmodifiableView();
         }
 
@@ -454,7 +453,7 @@ public final class Barrage extends GeneratedMessageV3 implements BarrageOrBuilde
 
         @Override // cn.irisgw.live.BarrageOrBuilder
         public String getChatFrameFrameColor(int i) {
-            return this.chatFrameFrameColor_.get(i);
+            return (String) this.chatFrameFrameColor_.get(i);
         }
 
         @Override // cn.irisgw.live.BarrageOrBuilder
@@ -468,7 +467,8 @@ public final class Barrage extends GeneratedMessageV3 implements BarrageOrBuilde
         }
 
         @Override // cn.irisgw.live.BarrageOrBuilder
-        public ProtocolStringList getChatFrameFrameColorList() {
+        /* renamed from: getChatFrameFrameColorList */
+        public ProtocolStringList mo474getChatFrameFrameColorList() {
             return this.chatFrameFrameColor_.getUnmodifiableView();
         }
 
@@ -499,12 +499,11 @@ public final class Barrage extends GeneratedMessageV3 implements BarrageOrBuilde
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public Barrage getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public Barrage m505getDefaultInstanceForType() {
             return Barrage.getDefaultInstance();
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
         public Descriptors.Descriptor getDescriptorForType() {
             return LiveConstants.internal_static_cn_irisgw_live_Barrage_descriptor;
         }
@@ -598,12 +597,10 @@ public final class Barrage extends GeneratedMessageV3 implements BarrageOrBuilde
             return this.rechargeBadge_;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_Barrage_fieldAccessorTable.ensureFieldAccessorsInitialized(Barrage.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             return true;
         }
@@ -679,18 +676,18 @@ public final class Barrage extends GeneratedMessageV3 implements BarrageOrBuilde
             if (barrage.getChatBadgeHeight() != 0) {
                 setChatBadgeHeight(barrage.getChatBadgeHeight());
             }
-            mergeUnknownFields(barrage.unknownFields);
+            m514mergeUnknownFields(barrage.unknownFields);
             onChanged();
             return this;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+        /* renamed from: mergeFrom */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
         */
-        public cn.irisgw.live.Barrage.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+        public cn.irisgw.live.Barrage.Builder m511mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
             /*
                 r4 = this;
                 r0 = 0
@@ -735,11 +732,11 @@ public final class Barrage extends GeneratedMessageV3 implements BarrageOrBuilde
                 r0 = r6
                 throw r0
             */
-            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.Barrage.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.Barrage$Builder");
+            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.Barrage.Builder.m511mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.Barrage$Builder");
         }
 
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder mergeFrom(Message message) {
+        /* renamed from: mergeFrom */
+        public Builder m510mergeFrom(Message message) {
             if (message instanceof Barrage) {
                 return mergeFrom((Barrage) message);
             }
@@ -747,8 +744,8 @@ public final class Barrage extends GeneratedMessageV3 implements BarrageOrBuilde
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: mergeUnknownFields */
+        public final Builder m514mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.mergeUnknownFields(unknownFieldSet);
         }
 
@@ -795,7 +792,7 @@ public final class Barrage extends GeneratedMessageV3 implements BarrageOrBuilde
         public Builder setChatFrameBorderColor(int i, String str) {
             if (str != null) {
                 ensureChatFrameBorderColorIsMutable();
-                this.chatFrameBorderColor_.set(i, (int) str);
+                this.chatFrameBorderColor_.set(i, str);
                 onChanged();
                 return this;
             }
@@ -821,7 +818,7 @@ public final class Barrage extends GeneratedMessageV3 implements BarrageOrBuilde
         public Builder setChatFrameFrameColor(int i, String str) {
             if (str != null) {
                 ensureChatFrameFrameColorIsMutable();
-                this.chatFrameFrameColor_.set(i, (int) str);
+                this.chatFrameFrameColor_.set(i, str);
                 onChanged();
                 return this;
             }
@@ -893,8 +890,8 @@ public final class Barrage extends GeneratedMessageV3 implements BarrageOrBuilde
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: setField */
+        public Builder m516setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.setField(fieldDescriptor, obj);
         }
 
@@ -944,13 +941,13 @@ public final class Barrage extends GeneratedMessageV3 implements BarrageOrBuilde
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+        /* renamed from: setRepeatedField */
+        public Builder m518setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
             return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: setUnknownFields */
+        public final Builder m520setUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.setUnknownFields(unknownFieldSet);
         }
     }
@@ -1024,7 +1021,7 @@ public final class Barrage extends GeneratedMessageV3 implements BarrageOrBuilde
                                 this.chatFrameFrameColor_ = new LazyStringArrayList();
                                 z4 = z2 | true;
                             }
-                            this.chatFrameFrameColor_.add((LazyStringList) readStringRequireUtf8);
+                            this.chatFrameFrameColor_.add(readStringRequireUtf8);
                             z2 = z4;
                             continue;
                         case 106:
@@ -1034,7 +1031,7 @@ public final class Barrage extends GeneratedMessageV3 implements BarrageOrBuilde
                                 this.chatFrameBorderColor_ = new LazyStringArrayList();
                                 z5 = z2 | true;
                             }
-                            this.chatFrameBorderColor_.add((LazyStringList) readStringRequireUtf82);
+                            this.chatFrameBorderColor_.add(readStringRequireUtf82);
                             z2 = z5;
                             continue;
                         case 114:
@@ -1095,73 +1092,72 @@ public final class Barrage extends GeneratedMessageV3 implements BarrageOrBuilde
     }
 
     public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
+        return DEFAULT_INSTANCE.m481toBuilder();
     }
 
     public static Builder newBuilder(Barrage barrage) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(barrage);
+        return DEFAULT_INSTANCE.m481toBuilder().mergeFrom(barrage);
     }
 
     public static Barrage parseDelimitedFrom(InputStream inputStream) throws IOException {
-        return (Barrage) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
     }
 
     public static Barrage parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (Barrage) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static Barrage parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString);
+        return (Barrage) PARSER.parseFrom(byteString);
     }
 
     public static Barrage parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString, extensionRegistryLite);
+        return (Barrage) PARSER.parseFrom(byteString, extensionRegistryLite);
     }
 
     public static Barrage parseFrom(CodedInputStream codedInputStream) throws IOException {
-        return (Barrage) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
     }
 
     public static Barrage parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (Barrage) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
     }
 
     public static Barrage parseFrom(InputStream inputStream) throws IOException {
-        return (Barrage) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
     }
 
     public static Barrage parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (Barrage) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static Barrage parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer);
+        return (Barrage) PARSER.parseFrom(byteBuffer);
     }
 
     public static Barrage parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+        return (Barrage) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
     }
 
     public static Barrage parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr);
+        return (Barrage) PARSER.parseFrom(bArr);
     }
 
     public static Barrage parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr, extensionRegistryLite);
+        return (Barrage) PARSER.parseFrom(bArr, extensionRegistryLite);
     }
 
     public static Parser<Barrage> parser() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
         }
         if (obj instanceof Barrage) {
             Barrage barrage = (Barrage) obj;
-            return getFanClubName().equals(barrage.getFanClubName()) && getFanClubLevel() == barrage.getFanClubLevel() && getInFanClub() == barrage.getInFanClub() && this.fansStatus_ == barrage.fansStatus_ && this.liangType_ == barrage.liangType_ && getLiangId().equals(barrage.getLiangId()) && getRechargeBadge() == barrage.getRechargeBadge() && getChatFrame().equals(barrage.getChatFrame()) && getChatFrameIcon().equals(barrage.getChatFrameIcon()) && getChatFrameColorType() == barrage.getChatFrameColorType() && getChatFrameGradientType() == barrage.getChatFrameGradientType() && getChatFrameFrameColorList().equals(barrage.getChatFrameFrameColorList()) && getChatFrameBorderColorList().equals(barrage.getChatFrameBorderColorList()) && getChatBadgeUrl().equals(barrage.getChatBadgeUrl()) && getChatBadgeLength() == barrage.getChatBadgeLength() && getChatBadgeHeight() == barrage.getChatBadgeHeight() && this.unknownFields.equals(barrage.unknownFields);
+            return getFanClubName().equals(barrage.getFanClubName()) && getFanClubLevel() == barrage.getFanClubLevel() && getInFanClub() == barrage.getInFanClub() && this.fansStatus_ == barrage.fansStatus_ && this.liangType_ == barrage.liangType_ && getLiangId().equals(barrage.getLiangId()) && getRechargeBadge() == barrage.getRechargeBadge() && getChatFrame().equals(barrage.getChatFrame()) && getChatFrameIcon().equals(barrage.getChatFrameIcon()) && getChatFrameColorType() == barrage.getChatFrameColorType() && getChatFrameGradientType() == barrage.getChatFrameGradientType() && mo474getChatFrameFrameColorList().equals(barrage.mo474getChatFrameFrameColorList()) && mo473getChatFrameBorderColorList().equals(barrage.mo473getChatFrameBorderColorList()) && getChatBadgeUrl().equals(barrage.getChatBadgeUrl()) && getChatBadgeLength() == barrage.getChatBadgeLength() && getChatBadgeHeight() == barrage.getChatBadgeHeight() && this.unknownFields.equals(barrage.unknownFields);
         }
         return super.equals(obj);
     }
@@ -1211,7 +1207,7 @@ public final class Barrage extends GeneratedMessageV3 implements BarrageOrBuilde
 
     @Override // cn.irisgw.live.BarrageOrBuilder
     public String getChatFrameBorderColor(int i) {
-        return this.chatFrameBorderColor_.get(i);
+        return (String) this.chatFrameBorderColor_.get(i);
     }
 
     @Override // cn.irisgw.live.BarrageOrBuilder
@@ -1225,7 +1221,8 @@ public final class Barrage extends GeneratedMessageV3 implements BarrageOrBuilde
     }
 
     @Override // cn.irisgw.live.BarrageOrBuilder
-    public ProtocolStringList getChatFrameBorderColorList() {
+    /* renamed from: getChatFrameBorderColorList */
+    public ProtocolStringList mo473getChatFrameBorderColorList() {
         return this.chatFrameBorderColor_;
     }
 
@@ -1247,7 +1244,7 @@ public final class Barrage extends GeneratedMessageV3 implements BarrageOrBuilde
 
     @Override // cn.irisgw.live.BarrageOrBuilder
     public String getChatFrameFrameColor(int i) {
-        return this.chatFrameFrameColor_.get(i);
+        return (String) this.chatFrameFrameColor_.get(i);
     }
 
     @Override // cn.irisgw.live.BarrageOrBuilder
@@ -1261,7 +1258,8 @@ public final class Barrage extends GeneratedMessageV3 implements BarrageOrBuilde
     }
 
     @Override // cn.irisgw.live.BarrageOrBuilder
-    public ProtocolStringList getChatFrameFrameColorList() {
+    /* renamed from: getChatFrameFrameColorList */
+    public ProtocolStringList mo474getChatFrameFrameColorList() {
         return this.chatFrameFrameColor_;
     }
 
@@ -1292,8 +1290,8 @@ public final class Barrage extends GeneratedMessageV3 implements BarrageOrBuilde
         return (ByteString) obj;
     }
 
-    @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-    public Barrage getDefaultInstanceForType() {
+    /* renamed from: getDefaultInstanceForType */
+    public Barrage m476getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
     }
 
@@ -1381,7 +1379,6 @@ public final class Barrage extends GeneratedMessageV3 implements BarrageOrBuilde
         return this.liangType_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
     public Parser<Barrage> getParserForType() {
         return PARSER;
     }
@@ -1391,7 +1388,6 @@ public final class Barrage extends GeneratedMessageV3 implements BarrageOrBuilde
         return this.rechargeBadge_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public int getSerializedSize() {
         int i = this.memoizedSize;
         if (i != -1) {
@@ -1447,7 +1443,7 @@ public final class Barrage extends GeneratedMessageV3 implements BarrageOrBuilde
         for (int i17 = 0; i17 < this.chatFrameFrameColor_.size(); i17++) {
             i16 += computeStringSizeNoTag(this.chatFrameFrameColor_.getRaw(i17));
         }
-        int size = getChatFrameFrameColorList().size();
+        int size = mo474getChatFrameFrameColorList().size();
         int i18 = 0;
         int i19 = 0;
         while (true) {
@@ -1458,7 +1454,7 @@ public final class Barrage extends GeneratedMessageV3 implements BarrageOrBuilde
             i18 += computeStringSizeNoTag(this.chatFrameBorderColor_.getRaw(i20));
             i19 = i20 + 1;
         }
-        int size2 = i15 + i16 + (size * 1) + i18 + (getChatFrameBorderColorList().size() * 1);
+        int size2 = i15 + i16 + (size * 1) + i18 + (mo473getChatFrameBorderColorList().size() * 1);
         int i21 = size2;
         if (!getChatBadgeUrlBytes().isEmpty()) {
             i21 = size2 + GeneratedMessageV3.computeStringSize(14, this.chatBadgeUrl_);
@@ -1478,12 +1474,10 @@ public final class Barrage extends GeneratedMessageV3 implements BarrageOrBuilde
         return serializedSize;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
     public final UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public int hashCode() {
         if (this.memoizedHashCode != 0) {
             return this.memoizedHashCode;
@@ -1491,23 +1485,21 @@ public final class Barrage extends GeneratedMessageV3 implements BarrageOrBuilde
         int hashCode = ((((((((((((((((((((((((((((((((((((((((((((779 + getDescriptor().hashCode()) * 37) + 1) * 53) + getFanClubName().hashCode()) * 37) + 2) * 53) + getFanClubLevel()) * 37) + 3) * 53) + Internal.hashBoolean(getInFanClub())) * 37) + 4) * 53) + this.fansStatus_) * 37) + 5) * 53) + this.liangType_) * 37) + 6) * 53) + getLiangId().hashCode()) * 37) + 7) * 53) + getRechargeBadge()) * 37) + 8) * 53) + getChatFrame().hashCode()) * 37) + 9) * 53) + getChatFrameIcon().hashCode()) * 37) + 10) * 53) + getChatFrameColorType()) * 37) + 11) * 53) + getChatFrameGradientType();
         int i = hashCode;
         if (getChatFrameFrameColorCount() > 0) {
-            i = (((hashCode * 37) + 12) * 53) + getChatFrameFrameColorList().hashCode();
+            i = (((hashCode * 37) + 12) * 53) + mo474getChatFrameFrameColorList().hashCode();
         }
         int i2 = i;
         if (getChatFrameBorderColorCount() > 0) {
-            i2 = (((i * 37) + 13) * 53) + getChatFrameBorderColorList().hashCode();
+            i2 = (((i * 37) + 13) * 53) + mo473getChatFrameBorderColorList().hashCode();
         }
         int hashCode2 = (((((((((((((i2 * 37) + 14) * 53) + getChatBadgeUrl().hashCode()) * 37) + 15) * 53) + getChatBadgeLength()) * 37) + 16) * 53) + getChatBadgeHeight()) * 29) + this.unknownFields.hashCode();
         this.memoizedHashCode = hashCode2;
         return hashCode2;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
         return LiveConstants.internal_static_cn_irisgw_live_Barrage_fieldAccessorTable.ensureFieldAccessorsInitialized(Barrage.class, Builder.class);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
     public final boolean isInitialized() {
         byte b = this.memoizedIsInitialized;
         if (b == 1) {
@@ -1520,28 +1512,26 @@ public final class Barrage extends GeneratedMessageV3 implements BarrageOrBuilde
         return true;
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder newBuilderForType() {
+    /* renamed from: newBuilderForType */
+    public Builder m479newBuilderForType() {
         return newBuilder();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.protobuf.GeneratedMessageV3
-    public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+    /* renamed from: newBuilderForType */
+    public Builder m478newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
         return new Builder(builderParent);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
         return new Barrage();
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder toBuilder() {
+    /* renamed from: toBuilder */
+    public Builder m481toBuilder() {
         return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
         int i;
         if (!getFanClubNameBytes().isEmpty()) {

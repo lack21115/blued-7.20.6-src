@@ -13,17 +13,17 @@ public class VideoSplashManager extends SplashAdManagerAdapter {
     class AnonymousClass1 implements VideoLoadController.IVideoController {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ SplashAdListener f34662a;
+        final /* synthetic */ SplashAdListener f20971a;
         final /* synthetic */ int b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ int f34663c;
+        final /* synthetic */ int f20972c;
         final /* synthetic */ PLVideoPageView d;
 
         @Override // com.soft.blued.utils.VideoLoadController.IVideoController
         public void a(String str) {
             Log.v("drb", "视频下载失败 videoUrl:" + str);
-            this.f34662a.a(0, "");
+            this.f20971a.a(0, "");
         }
 
         @Override // com.soft.blued.utils.VideoLoadController.IVideoController
@@ -33,11 +33,11 @@ public class VideoSplashManager extends SplashAdManagerAdapter {
 
         @Override // com.soft.blued.utils.VideoLoadController.IVideoController
         public void a(String str, String str2) {
-            this.f34662a.a();
+            this.f20971a.a();
             VideoPlayConfig videoPlayConfig = new VideoPlayConfig();
             videoPlayConfig.b = str2;
             videoPlayConfig.e = this.b;
-            videoPlayConfig.f = this.f34663c;
+            videoPlayConfig.f = this.f20972c;
             videoPlayConfig.j = false;
             videoPlayConfig.s = false;
             videoPlayConfig.l = true;
@@ -53,30 +53,24 @@ public class VideoSplashManager extends SplashAdManagerAdapter {
     class AnonymousClass2 implements PLVideoPageView.OnPLVideoListener {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ SplashAdListener f34664a;
+        final /* synthetic */ SplashAdListener f20973a;
 
-        @Override // com.blued.android.module.player.media.view.PLVideoPageView.OnPLVideoListener
         public void a() {
         }
 
-        @Override // com.blued.android.module.player.media.view.PLVideoPageView.OnPLVideoListener
         public void a(int i) {
-            this.f34664a.b();
+            this.f20973a.b();
         }
 
-        @Override // com.blued.android.module.player.media.view.PLVideoPageView.OnPLVideoListener
         public void a(long j, long j2) {
         }
 
-        @Override // com.blued.android.module.player.media.view.PLVideoPageView.OnPLVideoListener
         public void b() {
         }
 
-        @Override // com.blued.android.module.player.media.view.PLVideoPageView.OnPLVideoListener
         public void c() {
         }
 
-        @Override // com.blued.android.module.player.media.view.PLVideoPageView.OnPLVideoListener
         public void d() {
         }
     }

@@ -7,11 +7,11 @@ import com.blued.android.framework.view.shape.ShapeLinearLayout;
 public final class ItemChatGroupShareUserIncludeBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ShapeLinearLayout f29095a;
+    private final ShapeLinearLayout f15405a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ShapeLinearLayout getRoot() {
-        return this.f29095a;
+        return this.f15405a;
     }
 }

@@ -134,7 +134,7 @@ public class WeiboAppManager {
     public WeiboInfo parseWeiboInfoByAsset(String str) {
         InputStream inputStream;
         byte[] bArr;
-        AutoCloseable autoCloseable = null;
+        InputStream inputStream2 = null;
         try {
             try {
                 if (TextUtils.isEmpty(str)) {
@@ -159,7 +159,7 @@ public class WeiboAppManager {
                     th = th;
                     if (0 != 0) {
                         try {
-                            autoCloseable.close();
+                            inputStream2.close();
                         } catch (IOException e5) {
                             LogUtil.e(TAG, e5.getMessage());
                         }

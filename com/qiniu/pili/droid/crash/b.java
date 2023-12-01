@@ -8,6 +8,6 @@ import java.util.Set;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    static final String[] f27473a = null;
+    static final String[] f13785a = null;
     static final Set<String> b = new HashSet(Arrays.asList("libpldroid_amix.so", "libpldroid_beauty.so", "libpldroid_encoder.so", "libpldroid_shortvideo_core.so"));
 }

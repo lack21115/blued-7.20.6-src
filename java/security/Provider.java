@@ -1,6 +1,5 @@
 package java.security;
 
-import com.igexin.push.core.b;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.NotActiveException;
@@ -405,9 +404,9 @@ public abstract class Provider extends Properties {
     }
 
     private void putProviderInfo() {
-        super.put("Provider.id name", this.name != null ? this.name : b.l);
+        super.put("Provider.id name", this.name != null ? this.name : "null");
         super.put("Provider.id version", this.versionString);
-        super.put("Provider.id info", this.info != null ? this.info : b.l);
+        super.put("Provider.id info", this.info != null ? this.info : "null");
         super.put("Provider.id className", getClass().getName());
     }
 

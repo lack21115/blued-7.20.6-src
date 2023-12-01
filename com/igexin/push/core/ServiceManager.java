@@ -26,10 +26,10 @@ public class ServiceManager {
     public static Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f23381c = "ServiceManager";
+    private static final String f9773c = "ServiceManager";
 
     /* renamed from: a  reason: collision with root package name */
-    public IPushCore f23382a;
+    public IPushCore f9774a;
     private final AtomicBoolean d;
     private String e;
     private Class f;
@@ -42,7 +42,7 @@ public class ServiceManager {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final ServiceManager f23393a = new ServiceManager((byte) 0);
+        private static final ServiceManager f9785a = new ServiceManager((byte) 0);
 
         private a() {
         }
@@ -67,9 +67,9 @@ public class ServiceManager {
 
     /* JADX INFO: Access modifiers changed from: private */
     public int a(Intent intent, int i, int i2) {
-        if (this.f23382a != null) {
+        if (this.f9774a != null) {
             com.igexin.c.a.c.a.a("ServiceManager|inInit = true, call onServiceStartCommand...", new Object[0]);
-            return this.f23382a.onServiceStartCommand(intent, i, i2);
+            return this.f9774a.onServiceStartCommand(intent, i, i2);
         }
         return 2;
     }
@@ -81,10 +81,10 @@ public class ServiceManager {
     private void a(final Service service) {
         com.igexin.c.a.c.a.a("ServiceManager|startGTCore ++++", new Object[0]);
         if (!com.igexin.push.f.g.a()) {
-            com.igexin.b.a.a().f23194a.execute(new h.AnonymousClass1(service, new h.a() { // from class: com.igexin.push.core.ServiceManager.2
+            com.igexin.b.a.a().f9586a.execute(new h.AnonymousClass1(service, new h.a() { // from class: com.igexin.push.core.ServiceManager.2
                 @Override // com.igexin.push.f.h.a
                 public final void a(boolean z) {
-                    com.igexin.c.a.c.a.a(ServiceManager.f23381c, "load encrypt error, report bi result = " + z + " ###########");
+                    com.igexin.c.a.c.a.a(ServiceManager.f9773c, "load encrypt error, report bi result = " + z + " ###########");
                     com.igexin.c.a.c.a.a("ServiceManager|load encrypt error, report bi result = " + z + " ###########", new Object[0]);
                     service.stopSelf();
                 }
@@ -92,11 +92,11 @@ public class ServiceManager {
             return;
         }
         PushCoreLoader.getInstance().init(service);
-        this.f23382a = PushCoreLoader.getInstance().getPushCore();
+        this.f9774a = PushCoreLoader.getInstance().getPushCore();
         if (PushCoreLoader.getInstance().getGtcCore() != null) {
             PushCoreLoader.getInstance().getGtcCore().start(service);
         }
-        IPushCore iPushCore = this.f23382a;
+        IPushCore iPushCore = this.f9774a;
         if (iPushCore != null) {
             iPushCore.start(service);
         }
@@ -126,7 +126,7 @@ public class ServiceManager {
         com.igexin.c.a.c.a.a("ServiceManager|start from initialize...", new Object[0]);
         com.igexin.c.a.c.a.d.a().a("[ServiceManager] ServiceManager start from initialize...");
         a(service);
-        IPushCore iPushCore = this.f23382a;
+        IPushCore iPushCore = this.f9774a;
         if (iPushCore != null) {
             return iPushCore.onServiceStartCommand(intent, i, i2);
         }
@@ -135,7 +135,7 @@ public class ServiceManager {
 
     private void b() {
         com.igexin.c.a.c.a.a("ServiceManager|onDestroy...", new Object[0]);
-        IPushCore iPushCore = this.f23382a;
+        IPushCore iPushCore = this.f9774a;
         if (iPushCore != null) {
             iPushCore.onServiceDestroy();
         }
@@ -149,7 +149,7 @@ public class ServiceManager {
             return 2;
         }
         a(service);
-        IPushCore iPushCore = this.f23382a;
+        IPushCore iPushCore = this.f9774a;
         if (iPushCore != null) {
             return iPushCore.onServiceStartCommand(intent, i, i2);
         }
@@ -166,7 +166,7 @@ public class ServiceManager {
                     intent.setClass(context, ServiceManager.this.b(context));
                     context.getApplicationContext().bindService(intent, ServiceManager.this.h, 1);
                 } catch (Throwable th) {
-                    com.igexin.c.a.c.a.b(ServiceManager.f23381c, "startPService exception = " + th.toString());
+                    com.igexin.c.a.c.a.b(ServiceManager.f9773c, "startPService exception = " + th.toString());
                     com.igexin.c.a.c.a.a(th);
                 }
             }
@@ -180,7 +180,7 @@ public class ServiceManager {
                         a();
                     }
                 } catch (Throwable th) {
-                    com.igexin.c.a.c.a.b(ServiceManager.f23381c, "startPService exception = " + th.toString());
+                    com.igexin.c.a.c.a.b(ServiceManager.f9773c, "startPService exception = " + th.toString());
                     com.igexin.c.a.c.a.a(th);
                     if (th instanceof IllegalStateException) {
                         a();
@@ -196,7 +196,7 @@ public class ServiceManager {
     }
 
     public static String e(Context context) {
-        return (String) o.b(context, o.f23663a, "");
+        return (String) o.b(context, o.f10055a, "");
     }
 
     private static boolean f(Context context) {
@@ -204,7 +204,7 @@ public class ServiceManager {
     }
 
     public static ServiceManager getInstance() {
-        return a.f23393a;
+        return a.f9785a;
     }
 
     public final int a(final Service service, final Intent intent, final int i, final int i2) {
@@ -242,7 +242,7 @@ public class ServiceManager {
     public final IBinder a(Service service, Intent intent) {
         com.igexin.c.a.c.a.a("ServiceManager|onBind...", new Object[0]);
         a(service, intent, 0, 0);
-        IPushCore iPushCore = this.f23382a;
+        IPushCore iPushCore = this.f9774a;
         if (iPushCore != null) {
             return iPushCore.onServiceBind(intent);
         }
@@ -255,7 +255,7 @@ public class ServiceManager {
             b = applicationContext;
             GtcProvider.setContext(applicationContext);
             final Intent intent = activity.getIntent();
-            com.igexin.b.a.a().f23194a.execute(new Runnable() { // from class: com.igexin.push.core.ServiceManager.3
+            com.igexin.b.a.a().f9586a.execute(new Runnable() { // from class: com.igexin.push.core.ServiceManager.3
                 @Override // java.lang.Runnable
                 public final void run() {
                     Bundle extras;
@@ -303,7 +303,7 @@ public class ServiceManager {
             Context applicationContext = context.getApplicationContext();
             b = applicationContext;
             GtcProvider.setContext(applicationContext);
-            com.igexin.b.a.a().f23194a.execute(new Runnable() { // from class: com.igexin.push.core.ServiceManager.4
+            com.igexin.b.a.a().f9586a.execute(new Runnable() { // from class: com.igexin.push.core.ServiceManager.4
                 @Override // java.lang.Runnable
                 public final void run() {
                     if (com.igexin.push.f.j.a(ServiceManager.b)) {
@@ -393,7 +393,7 @@ public class ServiceManager {
             return cls2;
         }
         try {
-            String str = (String) o.b(context, o.f23664c, "");
+            String str = (String) o.b(context, o.f10056c, "");
             if (!TextUtils.isEmpty(str)) {
                 Class<?> cls3 = Class.forName(str);
                 this.f = cls3;

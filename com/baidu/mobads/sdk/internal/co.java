@@ -8,7 +8,7 @@ import android.widget.RelativeLayout;
 public class co extends RelativeLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f9389a = "ContainerView";
+    public static final String f6549a = "ContainerView";
     private a b;
 
     /* loaded from: source-8756600-dex2jar.jar:com/baidu/mobads/sdk/internal/co$a.class */
@@ -34,9 +34,8 @@ public class co extends RelativeLayout {
         this.b = aVar;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         a aVar = this.b;
         if (aVar != null) {
@@ -44,9 +43,8 @@ public class co extends RelativeLayout {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         a aVar = this.b;
         if (aVar != null) {
@@ -64,9 +62,8 @@ public class co extends RelativeLayout {
         return false;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.RelativeLayout, android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z, int i, int i2, int i3, int i4) {
+    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         a aVar;
         super.onLayout(z, i, i2, i3, i4);
         if (!z || (aVar = this.b) == null) {
@@ -84,9 +81,8 @@ public class co extends RelativeLayout {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onWindowVisibilityChanged(int i) {
+    protected void onWindowVisibilityChanged(int i) {
         super.onWindowVisibilityChanged(i);
         a aVar = this.b;
         if (aVar != null) {

@@ -1,7 +1,6 @@
 package com.tencent.cos.xml.crypto;
 
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
@@ -61,7 +60,7 @@ public class ObjectMetadata {
     }
 
     /* renamed from: clone */
-    public ObjectMetadata m10179clone() {
+    public ObjectMetadata m7136clone() {
         return new ObjectMetadata(this);
     }
 
@@ -116,7 +115,7 @@ public class ObjectMetadata {
     public long getInstanceLength() {
         int lastIndexOf;
         String str = (String) this.metadata.get("Content-Range");
-        return (str == null || (lastIndexOf = str.lastIndexOf(BridgeUtil.SPLIT_MARK)) < 0) ? getContentLength() : Long.parseLong(str.substring(lastIndexOf + 1));
+        return (str == null || (lastIndexOf = str.lastIndexOf("/")) < 0) ? getContentLength() : Long.parseLong(str.substring(lastIndexOf + 1));
     }
 
     public Date getLastModified() {

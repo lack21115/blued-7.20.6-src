@@ -18,9 +18,7 @@ import com.blued.android.framework.view.pulltorefresh.PullToRefreshBase;
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/view/pulltorefresh/PullToRefreshAdapterViewBase.class */
 public abstract class PullToRefreshAdapterViewBase<T extends AbsListView> extends PullToRefreshBase<T> implements AbsListView.OnScrollListener {
     private boolean b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private PauseOnScrollListener f10246c;
+    private PauseOnScrollListener c;
     private AbsListView.OnScrollListener d;
     private PullToRefreshBase.OnLastItemVisibleListener e;
     private View f;
@@ -32,20 +30,18 @@ public abstract class PullToRefreshAdapterViewBase<T extends AbsListView> extend
     /* renamed from: com.blued.android.framework.view.pulltorefresh.PullToRefreshAdapterViewBase$1  reason: invalid class name */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/view/pulltorefresh/PullToRefreshAdapterViewBase$1.class */
     static /* synthetic */ class AnonymousClass1 {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f10247a;
+        static final /* synthetic */ int[] a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:7:0x0020 -> B:11:0x0014). Please submit an issue!!! */
         static {
             int[] iArr = new int[PullToRefreshBase.Mode.values().length];
-            f10247a = iArr;
+            a = iArr;
             try {
                 iArr[PullToRefreshBase.Mode.PULL_FROM_END.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f10247a[PullToRefreshBase.Mode.PULL_FROM_START.ordinal()] = 2;
+                a[PullToRefreshBase.Mode.PULL_FROM_START.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
         }
@@ -54,29 +50,29 @@ public abstract class PullToRefreshAdapterViewBase<T extends AbsListView> extend
     public PullToRefreshAdapterViewBase(Context context) {
         super(context);
         this.j = true;
-        this.f10246c = new PauseOnScrollListener(false, true);
-        ((AbsListView) this.f10248a).setOnScrollListener(this);
+        this.c = new PauseOnScrollListener(false, true);
+        ((AbsListView) this.a).setOnScrollListener(this);
     }
 
     public PullToRefreshAdapterViewBase(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         this.j = true;
-        this.f10246c = new PauseOnScrollListener(false, true);
-        ((AbsListView) this.f10248a).setOnScrollListener(this);
+        this.c = new PauseOnScrollListener(false, true);
+        ((AbsListView) this.a).setOnScrollListener(this);
     }
 
     public PullToRefreshAdapterViewBase(Context context, PullToRefreshBase.Mode mode) {
         super(context, mode);
         this.j = true;
-        this.f10246c = new PauseOnScrollListener(false, true);
-        ((AbsListView) this.f10248a).setOnScrollListener(this);
+        this.c = new PauseOnScrollListener(false, true);
+        ((AbsListView) this.a).setOnScrollListener(this);
     }
 
     public PullToRefreshAdapterViewBase(Context context, PullToRefreshBase.Mode mode, PullToRefreshBase.AnimationStyle animationStyle) {
         super(context, mode, animationStyle);
         this.j = true;
-        this.f10246c = new PauseOnScrollListener(false, true);
-        ((AbsListView) this.f10248a).setOnScrollListener(this);
+        this.c = new PauseOnScrollListener(false, true);
+        ((AbsListView) this.a).setOnScrollListener(this);
     }
 
     private static FrameLayout.LayoutParams a(ViewGroup.LayoutParams layoutParams) {
@@ -126,22 +122,22 @@ public abstract class PullToRefreshAdapterViewBase<T extends AbsListView> extend
 
     private boolean p() {
         View childAt;
-        if (((AbsListView) this.f10248a).getAdapter() == null) {
+        if (((AbsListView) this.a).getAdapter() == null) {
             return true;
         }
-        return ((AbsListView) this.f10248a).getFirstVisiblePosition() <= 1 && (childAt = ((AbsListView) this.f10248a).getChildAt(0)) != null && childAt.getTop() >= ((AbsListView) this.f10248a).getTop();
+        return ((AbsListView) this.a).getFirstVisiblePosition() <= 1 && (childAt = ((AbsListView) this.a).getChildAt(0)) != null && childAt.getTop() >= ((AbsListView) this.a).getTop();
     }
 
     private boolean q() {
-        ListAdapter adapter = ((AbsListView) this.f10248a).getAdapter();
+        ListAdapter adapter = ((AbsListView) this.a).getAdapter();
         if (adapter == null || adapter.isEmpty()) {
             return true;
         }
-        int count = ((AbsListView) this.f10248a).getCount();
-        int lastVisiblePosition = ((AbsListView) this.f10248a).getLastVisiblePosition();
+        int count = ((AbsListView) this.a).getCount();
+        int lastVisiblePosition = ((AbsListView) this.a).getLastVisiblePosition();
         if (lastVisiblePosition >= (count - 1) - 1) {
-            View childAt = ((AbsListView) this.f10248a).getChildAt(lastVisiblePosition - ((AbsListView) this.f10248a).getFirstVisiblePosition());
-            return childAt != null && childAt.getBottom() <= ((AbsListView) this.f10248a).getBottom();
+            View childAt = ((AbsListView) this.a).getChildAt(lastVisiblePosition - ((AbsListView) this.a).getFirstVisiblePosition());
+            return childAt != null && childAt.getBottom() <= ((AbsListView) this.a).getBottom();
         }
         return false;
     }
@@ -184,7 +180,7 @@ public abstract class PullToRefreshAdapterViewBase<T extends AbsListView> extend
     public void a() {
         super.a();
         if (getShowIndicatorInternal()) {
-            int i = AnonymousClass1.f10247a[getCurrentMode().ordinal()];
+            int i = AnonymousClass1.a[getCurrentMode().ordinal()];
             if (i == 1) {
                 this.h.e();
             } else if (i != 2) {
@@ -214,7 +210,7 @@ public abstract class PullToRefreshAdapterViewBase<T extends AbsListView> extend
     public void b() {
         super.b();
         if (getShowIndicatorInternal()) {
-            int i = AnonymousClass1.f10247a[getCurrentMode().ordinal()];
+            int i = AnonymousClass1.a[getCurrentMode().ordinal()];
             if (i == 1) {
                 this.h.d();
             } else if (i != 2) {
@@ -260,7 +256,7 @@ public abstract class PullToRefreshAdapterViewBase<T extends AbsListView> extend
 
     @Override // android.widget.AbsListView.OnScrollListener
     public final void onScroll(AbsListView absListView, int i, int i2, int i3) {
-        this.f10246c.onScroll(absListView, i, i2, i3);
+        this.c.onScroll(absListView, i, i2, i3);
         if (this.e != null) {
             this.b = i3 > 0 && i + i2 >= i3 - 1;
         }
@@ -287,7 +283,7 @@ public abstract class PullToRefreshAdapterViewBase<T extends AbsListView> extend
     @Override // android.widget.AbsListView.OnScrollListener
     public final void onScrollStateChanged(AbsListView absListView, int i) {
         PullToRefreshBase.OnLastItemVisibleListener onLastItemVisibleListener;
-        this.f10246c.onScrollStateChanged(absListView, i);
+        this.c.onScrollStateChanged(absListView, i);
         if (i == 0 && (onLastItemVisibleListener = this.e) != null && this.b) {
             onLastItemVisibleListener.a();
         }
@@ -298,7 +294,7 @@ public abstract class PullToRefreshAdapterViewBase<T extends AbsListView> extend
     }
 
     public void setAdapter(ListAdapter listAdapter) {
-        ((AdapterView) this.f10248a).setAdapter(listAdapter);
+        ((AdapterView) this.a).setAdapter(listAdapter);
     }
 
     public final void setEmptyView(View view) {
@@ -309,23 +305,23 @@ public abstract class PullToRefreshAdapterViewBase<T extends AbsListView> extend
             if (parent != null && (parent instanceof ViewGroup)) {
                 ((ViewGroup) parent).removeView(view);
             }
-            FrameLayout.LayoutParams a2 = a(view.getLayoutParams());
-            if (a2 != null) {
-                refreshableViewWrapper.addView(view, a2);
+            FrameLayout.LayoutParams a = a(view.getLayoutParams());
+            if (a != null) {
+                refreshableViewWrapper.addView(view, a);
             } else {
                 refreshableViewWrapper.addView(view);
             }
         }
-        if (this.f10248a instanceof EmptyViewMethodAccessor) {
-            ((EmptyViewMethodAccessor) this.f10248a).setEmptyViewInternal(view);
+        if (this.a instanceof EmptyViewMethodAccessor) {
+            ((EmptyViewMethodAccessor) this.a).setEmptyViewInternal(view);
         } else {
-            ((AbsListView) this.f10248a).setEmptyView(view);
+            ((AbsListView) this.a).setEmptyView(view);
         }
         this.f = view;
     }
 
     public void setOnItemClickListener(AdapterView.OnItemClickListener onItemClickListener) {
-        ((AbsListView) this.f10248a).setOnItemClickListener(onItemClickListener);
+        ((AbsListView) this.a).setOnItemClickListener(onItemClickListener);
     }
 
     public final void setOnLastItemVisibleListener(PullToRefreshBase.OnLastItemVisibleListener onLastItemVisibleListener) {

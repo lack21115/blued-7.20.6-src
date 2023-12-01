@@ -4,15 +4,15 @@ package com.github.mikephil.charting.data;
 public class CandleEntry extends Entry {
 
     /* renamed from: a  reason: collision with root package name */
-    private float f22126a;
+    private float f8519a;
     private float b;
 
     /* renamed from: c  reason: collision with root package name */
-    private float f22127c;
+    private float f8520c;
     private float d;
 
     public float a() {
-        return this.f22126a;
+        return this.f8519a;
     }
 
     @Override // com.github.mikephil.charting.data.BaseEntry
@@ -25,7 +25,7 @@ public class CandleEntry extends Entry {
     }
 
     public float d() {
-        return this.f22127c;
+        return this.f8520c;
     }
 
     public float e() {

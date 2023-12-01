@@ -35,10 +35,10 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public abstract class PendingResultImpl<R extends Result, T extends IMessageEntity> extends InnerPendingResult<R> {
 
     /* renamed from: a  reason: collision with root package name */
-    private CountDownLatch f22875a;
+    private CountDownLatch f9267a;
 
     /* renamed from: c  reason: collision with root package name */
-    private WeakReference<ApiClient> f22876c;
+    private WeakReference<ApiClient> f9268c;
     protected DatagramTransport transport = null;
     private R b = null;
     private String d = null;
@@ -54,7 +54,7 @@ public abstract class PendingResultImpl<R extends Result, T extends IMessageEnti
         @Override // com.huawei.hms.support.api.transport.DatagramTransport.a
         public void a(int i, IMessageEntity iMessageEntity) {
             PendingResultImpl.this.a(i, iMessageEntity);
-            PendingResultImpl.this.f22875a.countDown();
+            PendingResultImpl.this.f9267a.countDown();
         }
     }
 
@@ -63,18 +63,18 @@ public abstract class PendingResultImpl<R extends Result, T extends IMessageEnti
     public class b implements DatagramTransport.a {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ AtomicBoolean f22878a;
+        final /* synthetic */ AtomicBoolean f9270a;
 
         b(AtomicBoolean atomicBoolean) {
-            this.f22878a = atomicBoolean;
+            this.f9270a = atomicBoolean;
         }
 
         @Override // com.huawei.hms.support.api.transport.DatagramTransport.a
         public void a(int i, IMessageEntity iMessageEntity) {
-            if (!this.f22878a.get()) {
+            if (!this.f9270a.get()) {
                 PendingResultImpl.this.a(i, iMessageEntity);
             }
-            PendingResultImpl.this.f22875a.countDown();
+            PendingResultImpl.this.f9267a.countDown();
         }
     }
 
@@ -83,11 +83,11 @@ public abstract class PendingResultImpl<R extends Result, T extends IMessageEnti
     public class c implements DatagramTransport.a {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ d f22879a;
+        final /* synthetic */ d f9271a;
         final /* synthetic */ ResultCallback b;
 
         c(d dVar, ResultCallback resultCallback) {
-            this.f22879a = dVar;
+            this.f9271a = dVar;
             this.b = resultCallback;
         }
 
@@ -95,7 +95,7 @@ public abstract class PendingResultImpl<R extends Result, T extends IMessageEnti
         @Override // com.huawei.hms.support.api.transport.DatagramTransport.a
         public void a(int i, IMessageEntity iMessageEntity) {
             PendingResultImpl.this.a(i, iMessageEntity);
-            this.f22879a.a(this.b, PendingResultImpl.this.b);
+            this.f9271a.a(this.b, PendingResultImpl.this.b);
         }
     }
 
@@ -138,7 +138,7 @@ public abstract class PendingResultImpl<R extends Result, T extends IMessageEnti
 
     private void a(int i, int i2) {
         HMSLog.i("PendingResultImpl", "biReportEvent ====== ");
-        ApiClient apiClient = this.f22876c.get();
+        ApiClient apiClient = this.f9268c.get();
         if (apiClient == null || this.d == null || HiAnalyticsUtil.getInstance().hasError(apiClient.getContext())) {
             return;
         }
@@ -225,8 +225,8 @@ public abstract class PendingResultImpl<R extends Result, T extends IMessageEnti
             HMSLog.e("PendingResultImpl", "client is null");
             return;
         }
-        this.f22876c = new WeakReference<>(apiClient);
-        this.f22875a = new CountDownLatch(1);
+        this.f9268c = new WeakReference<>(apiClient);
+        this.f9267a = new CountDownLatch(1);
         try {
             this.transport = (DatagramTransport) Class.forName(apiClient.getTransportName()).getConstructor(String.class, IMessageEntity.class, Class.class, Integer.TYPE).newInstance(str, iMessageEntity, cls, Integer.valueOf(i));
         } catch (ClassNotFoundException | IllegalAccessException | IllegalArgumentException | InstantiationException | NoSuchMethodException | InvocationTargetException e) {
@@ -258,7 +258,7 @@ public abstract class PendingResultImpl<R extends Result, T extends IMessageEnti
     @Override // com.huawei.hms.support.api.client.InnerPendingResult
     public final R awaitOnAnyThread() {
         HMSLog.i("PendingResultImpl", "awaitOnAnyThread");
-        WeakReference<ApiClient> weakReference = this.f22876c;
+        WeakReference<ApiClient> weakReference = this.f9268c;
         if (weakReference == null) {
             HMSLog.e("PendingResultImpl", "api is null");
             a((int) CommonCode.ErrorCode.CLIENT_API_INVALID, (IMessageEntity) null);
@@ -275,7 +275,7 @@ public abstract class PendingResultImpl<R extends Result, T extends IMessageEnti
         }
         this.transport.send(apiClient, new a());
         try {
-            this.f22875a.await();
+            this.f9267a.await();
         } catch (InterruptedException e) {
             HMSLog.e("PendingResultImpl", "await in anythread InterruptedException");
             a((int) CommonCode.ErrorCode.INTERNAL_ERROR, (IMessageEntity) null);
@@ -286,7 +286,7 @@ public abstract class PendingResultImpl<R extends Result, T extends IMessageEnti
     @Override // com.huawei.hms.support.api.client.InnerPendingResult
     public final R awaitOnAnyThread(long j, TimeUnit timeUnit) {
         HMSLog.i("PendingResultImpl", "awaitOnAnyThread timeout:" + j + " unit:" + timeUnit.toString());
-        WeakReference<ApiClient> weakReference = this.f22876c;
+        WeakReference<ApiClient> weakReference = this.f9268c;
         if (weakReference == null) {
             HMSLog.e("PendingResultImpl", "api is null");
             a((int) CommonCode.ErrorCode.CLIENT_API_INVALID, (IMessageEntity) null);
@@ -304,7 +304,7 @@ public abstract class PendingResultImpl<R extends Result, T extends IMessageEnti
         }
         this.transport.post(apiClient, new b(atomicBoolean));
         try {
-            if (!this.f22875a.await(j, timeUnit)) {
+            if (!this.f9267a.await(j, timeUnit)) {
                 atomicBoolean.set(true);
                 a((int) CommonCode.ErrorCode.EXECUTE_TIMEOUT, (IMessageEntity) null);
             }
@@ -366,7 +366,7 @@ public abstract class PendingResultImpl<R extends Result, T extends IMessageEnti
             looper2 = Looper.myLooper();
         }
         d dVar = new d(looper2);
-        WeakReference<ApiClient> weakReference = this.f22876c;
+        WeakReference<ApiClient> weakReference = this.f9268c;
         if (weakReference == null) {
             HMSLog.e("PendingResultImpl", "api is null");
             a((int) CommonCode.ErrorCode.CLIENT_API_INVALID, (IMessageEntity) null);

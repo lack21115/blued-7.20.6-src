@@ -41,13 +41,9 @@ public final class DialogLiveBattlePassBinding implements ViewBinding {
     public final View S;
     public final View T;
     private final FrameLayout U;
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f11747a;
+    public final ImageView a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f11748c;
+    public final ImageView c;
     public final ImageView d;
     public final ImageView e;
     public final ShapeConstraintLayout f;
@@ -74,9 +70,9 @@ public final class DialogLiveBattlePassBinding implements ViewBinding {
 
     private DialogLiveBattlePassBinding(FrameLayout frameLayout, ImageView imageView, ImageView imageView2, ImageView imageView3, ImageView imageView4, ImageView imageView5, ShapeConstraintLayout shapeConstraintLayout, CardView cardView, FrameLayout frameLayout2, FrameLayout frameLayout3, ShapeFrameLayout shapeFrameLayout, FrameLayout frameLayout4, FrameLayout frameLayout5, FrameLayout frameLayout6, HorizontalScrollView horizontalScrollView, ImageView imageView6, ImageView imageView7, ImageView imageView8, ImageView imageView9, ImageView imageView10, ImageView imageView11, ImageView imageView12, ImageView imageView13, ImageView imageView14, ImageView imageView15, ImageView imageView16, ImageView imageView17, ShapeTextView shapeTextView, ShapeTextView shapeTextView2, LinearLayout linearLayout, FrameLayout frameLayout7, BattlePassProgressLevelView battlePassProgressLevelView, RelativeLayout relativeLayout, RelativeLayout relativeLayout2, RelativeLayout relativeLayout3, RecyclerView recyclerView, RecyclerView recyclerView2, TextView textView, TextView textView2, TextView textView3, TextView textView4, TextView textView5, TextView textView6, TextView textView7, TextView textView8, View view, View view2) {
         this.U = frameLayout;
-        this.f11747a = imageView;
+        this.a = imageView;
         this.b = imageView2;
-        this.f11748c = imageView3;
+        this.c = imageView3;
         this.d = imageView4;
         this.e = imageView5;
         this.f = shapeConstraintLayout;
@@ -148,8 +144,8 @@ public final class DialogLiveBattlePassBinding implements ViewBinding {
                         if (imageView5 != null) {
                             ShapeConstraintLayout shapeConstraintLayout = (ShapeConstraintLayout) view.findViewById(R.id.cl_bonus_history_content);
                             if (shapeConstraintLayout != null) {
-                                CardView cardView = (CardView) view.findViewById(R.id.cv_bonus_history_root);
-                                if (cardView != null) {
+                                CardView findViewById = view.findViewById(R.id.cv_bonus_history_root);
+                                if (findViewById != null) {
                                     FrameLayout frameLayout = (FrameLayout) view.findViewById(R.id.fl_bonus_history_content);
                                     if (frameLayout != null) {
                                         FrameLayout frameLayout2 = (FrameLayout) view.findViewById(R.id.fl_bonus_history_empty);
@@ -204,10 +200,10 @@ public final class DialogLiveBattlePassBinding implements ViewBinding {
                                                                                                                                         if (relativeLayout2 != null) {
                                                                                                                                             RelativeLayout relativeLayout3 = (RelativeLayout) view.findViewById(R.id.rl_task_root);
                                                                                                                                             if (relativeLayout3 != null) {
-                                                                                                                                                RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rv_level_list);
-                                                                                                                                                if (recyclerView != null) {
-                                                                                                                                                    RecyclerView recyclerView2 = (RecyclerView) view.findViewById(R.id.rv_task_list);
-                                                                                                                                                    if (recyclerView2 != null) {
+                                                                                                                                                RecyclerView findViewById2 = view.findViewById(R.id.rv_level_list);
+                                                                                                                                                if (findViewById2 != null) {
+                                                                                                                                                    RecyclerView findViewById3 = view.findViewById(R.id.rv_task_list);
+                                                                                                                                                    if (findViewById3 != null) {
                                                                                                                                                         TextView textView = (TextView) view.findViewById(R.id.tv_bonus_content);
                                                                                                                                                         if (textView != null) {
                                                                                                                                                             TextView textView2 = (TextView) view.findViewById(R.id.tv_bonus_count);
@@ -224,11 +220,11 @@ public final class DialogLiveBattlePassBinding implements ViewBinding {
                                                                                                                                                                                 if (textView7 != null) {
                                                                                                                                                                                     TextView textView8 = (TextView) view.findViewById(R.id.tv_subtitle);
                                                                                                                                                                                     if (textView8 != null) {
-                                                                                                                                                                                        View findViewById = view.findViewById(R.id.view_tab_day_back);
-                                                                                                                                                                                        if (findViewById != null) {
-                                                                                                                                                                                            View findViewById2 = view.findViewById(R.id.view_tab_weekly_back);
-                                                                                                                                                                                            if (findViewById2 != null) {
-                                                                                                                                                                                                return new DialogLiveBattlePassBinding((FrameLayout) view, imageView, imageView2, imageView3, imageView4, imageView5, shapeConstraintLayout, cardView, frameLayout, frameLayout2, shapeFrameLayout, frameLayout3, frameLayout4, frameLayout5, horizontalScrollView, imageView6, imageView7, imageView8, imageView9, imageView10, imageView11, imageView12, imageView13, imageView14, imageView15, imageView16, imageView17, shapeTextView, shapeTextView2, linearLayout, frameLayout6, battlePassProgressLevelView, relativeLayout, relativeLayout2, relativeLayout3, recyclerView, recyclerView2, textView, textView2, textView3, textView4, textView5, textView6, textView7, textView8, findViewById, findViewById2);
+                                                                                                                                                                                        View findViewById4 = view.findViewById(R.id.view_tab_day_back);
+                                                                                                                                                                                        if (findViewById4 != null) {
+                                                                                                                                                                                            View findViewById5 = view.findViewById(R.id.view_tab_weekly_back);
+                                                                                                                                                                                            if (findViewById5 != null) {
+                                                                                                                                                                                                return new DialogLiveBattlePassBinding((FrameLayout) view, imageView, imageView2, imageView3, imageView4, imageView5, shapeConstraintLayout, findViewById, frameLayout, frameLayout2, shapeFrameLayout, frameLayout3, frameLayout4, frameLayout5, horizontalScrollView, imageView6, imageView7, imageView8, imageView9, imageView10, imageView11, imageView12, imageView13, imageView14, imageView15, imageView16, imageView17, shapeTextView, shapeTextView2, linearLayout, frameLayout6, battlePassProgressLevelView, relativeLayout, relativeLayout2, relativeLayout3, findViewById2, findViewById3, textView, textView2, textView3, textView4, textView5, textView6, textView7, textView8, findViewById4, findViewById5);
                                                                                                                                                                                             }
                                                                                                                                                                                             str = "viewTabWeeklyBack";
                                                                                                                                                                                         } else {
@@ -369,7 +365,6 @@ public final class DialogLiveBattlePassBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.U;

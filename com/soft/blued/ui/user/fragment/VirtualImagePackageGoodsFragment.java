@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.blued.android.module.common.base.config.ListConfig;
 import com.blued.android.module.common.base.mvi.BaseListAction;
 import com.blued.android.module.common.base.mvi.BaseListFragment;
+import com.blued.android.module.common.base.mvi.MVIBaseFragment;
 import com.blued.android.module.common.extensions.BluedStructureExtKt;
 import com.blued.android.module.common.extensions.BluedViewExtKt;
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -24,12 +25,12 @@ public final class VirtualImagePackageGoodsFragment extends BaseListFragment<Vir
     private VirtualImageFragment.ImageCallBack b;
 
     /* renamed from: c  reason: collision with root package name */
-    private VirtualImageModel.CategoryModel f34206c;
+    private VirtualImageModel.CategoryModel f20515c;
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(VirtualImagePackageGoodsFragment this$0, BaseQuickAdapter baseQuickAdapter, View view, int i) {
+    public static final void a(VirtualImagePackageGoodsFragment virtualImagePackageGoodsFragment, BaseQuickAdapter baseQuickAdapter, View view, int i) {
         VirtualImageFragment.ImageCallBack C;
-        Intrinsics.e(this$0, "this$0");
+        Intrinsics.e(virtualImagePackageGoodsFragment, "this$0");
         Object obj = baseQuickAdapter.getData().get(i);
         if (obj == null) {
             throw new NullPointerException("null cannot be cast to non-null type com.soft.blued.ui.user.model.VirtualImageModel.ImageGoodsModel");
@@ -38,12 +39,12 @@ public final class VirtualImagePackageGoodsFragment extends BaseListFragment<Vir
         if (imageGoodsModel.getCurrent_use() == 1) {
             return;
         }
-        VirtualImageFragment.ImageCallBack imageCallBack = this$0.b;
+        VirtualImageFragment.ImageCallBack imageCallBack = virtualImagePackageGoodsFragment.b;
         if (imageCallBack != null) {
             imageCallBack.a();
         }
-        VirtualImageModel.CategoryModel a2 = ((VirtualImageGoodsVM) this$0.y()).a();
-        if (a2 != null && (C = this$0.C()) != null) {
+        VirtualImageModel.CategoryModel a2 = virtualImagePackageGoodsFragment.y().a();
+        if (a2 != null && (C = virtualImagePackageGoodsFragment.C()) != null) {
             C.a(a2.getId(), imageGoodsModel);
         }
         baseQuickAdapter.notifyDataSetChanged();
@@ -53,21 +54,19 @@ public final class VirtualImagePackageGoodsFragment extends BaseListFragment<Vir
         return this.b;
     }
 
-    @Override // com.blued.android.module.common.base.mvi.BaseListFragment
     /* renamed from: D */
     public VirtualImageGoodsAdapter i() {
         return new VirtualImageGoodsAdapter(this.b);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.blued.android.module.common.base.mvi.BaseListFragment
     /* renamed from: E */
     public GridLayoutManager g() {
         return new GridLayoutManager(getContext(), 5);
     }
 
     public final Integer F() {
-        VirtualImageModel.CategoryModel categoryModel = this.f34206c;
+        VirtualImageModel.CategoryModel categoryModel = this.f20515c;
         if (categoryModel == null) {
             return null;
         }
@@ -75,7 +74,7 @@ public final class VirtualImagePackageGoodsFragment extends BaseListFragment<Vir
     }
 
     public final void G() {
-        BluedStructureExtKt.a(this, BaseListAction.RefreshData.f10668a);
+        BluedStructureExtKt.a((MVIBaseFragment) this, BaseListAction.RefreshData.a);
     }
 
     public final void a(VirtualImageFragment.ImageCallBack imageCallBack) {
@@ -84,12 +83,11 @@ public final class VirtualImagePackageGoodsFragment extends BaseListFragment<Vir
 
     public final void a(VirtualImageModel.CategoryModel categoryModel) {
         Intrinsics.e(categoryModel, "categoryModel");
-        this.f34206c = categoryModel;
-        ((VirtualImageGoodsVM) y()).a(categoryModel);
-        BluedStructureExtKt.a(this, BaseListAction.RefreshData.f10668a);
+        this.f20515c = categoryModel;
+        y().a(categoryModel);
+        BluedStructureExtKt.a((MVIBaseFragment) this, BaseListAction.RefreshData.a);
     }
 
-    @Override // com.blued.android.module.common.base.mvi.BaseListFragment
     public ListConfig h() {
         ListConfig h = super.h();
         h.b(false);
@@ -98,7 +96,6 @@ public final class VirtualImagePackageGoodsFragment extends BaseListFragment<Vir
         return h;
     }
 
-    @Override // com.blued.android.module.common.base.mvi.BaseListFragment, com.blued.android.module.common.base.mvi.MVIBaseFragment
     public void m() {
         super.m();
         RecyclerView a2 = a();
@@ -115,7 +112,6 @@ public final class VirtualImagePackageGoodsFragment extends BaseListFragment<Vir
         });
     }
 
-    @Override // com.blued.android.module.common.base.mvi.MVIBaseFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         Bundle arguments = getArguments();
@@ -123,6 +119,6 @@ public final class VirtualImagePackageGoodsFragment extends BaseListFragment<Vir
         if (obj == null) {
             throw new NullPointerException("null cannot be cast to non-null type com.soft.blued.ui.user.model.VirtualImageModel.CategoryModel");
         }
-        this.f34206c = (VirtualImageModel.CategoryModel) obj;
+        this.f20515c = (VirtualImageModel.CategoryModel) obj;
     }
 }

@@ -8,19 +8,19 @@ import java.util.List;
 public final class ImageHeaderParserRegistry {
 
     /* renamed from: a  reason: collision with root package name */
-    private final List<ImageHeaderParser> f21030a = new ArrayList();
+    private final List<ImageHeaderParser> f7424a = new ArrayList();
 
     public List<ImageHeaderParser> a() {
         List<ImageHeaderParser> list;
         synchronized (this) {
-            list = this.f21030a;
+            list = this.f7424a;
         }
         return list;
     }
 
     public void a(ImageHeaderParser imageHeaderParser) {
         synchronized (this) {
-            this.f21030a.add(imageHeaderParser);
+            this.f7424a.add(imageHeaderParser);
         }
     }
 }

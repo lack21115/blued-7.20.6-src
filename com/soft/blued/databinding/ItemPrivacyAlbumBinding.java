@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemPrivacyAlbumBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29289a;
+    private final LinearLayout f15599a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29289a;
+        return this.f15599a;
     }
 }

@@ -21,54 +21,44 @@ import java.util.concurrent.Future;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/media/selector/utils/ThumbLoader.class */
 public class ThumbLoader {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static String f15578a;
+    public static String a;
     private static final String d = ThumbLoader.class.getSimpleName();
     private static ThumbLoader e;
     protected ConcurrentMap<Long, Future> b = new ConcurrentHashMap();
-
-    /* renamed from: c  reason: collision with root package name */
-    protected HashMap<ImageView, Long> f15579c = new HashMap<>();
+    protected HashMap<ImageView, Long> c = new HashMap<>();
 
     /* renamed from: com.blued.android.module.media.selector.utils.ThumbLoader$2  reason: invalid class name */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/media/selector/utils/ThumbLoader$2.class */
     class AnonymousClass2 extends ImageLoadResult {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ ImageView f15582a;
+        final /* synthetic */ ImageView a;
         final /* synthetic */ MediaInfo b;
-
-        /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ LoadOptions f15583c;
+        final /* synthetic */ LoadOptions c;
         final /* synthetic */ ThumbLoader d;
 
         @Override // com.blued.android.core.image.ImageLoadResult
         public void a() {
-            this.d.a(this.f15582a);
+            this.d.a(this.a);
         }
 
         @Override // com.blued.android.core.image.ImageLoadResult
         public void a(int i, Exception exc) {
-            this.d.a(this.f15582a, this.b.id);
+            this.d.a(this.a, this.b.id);
             if (this.d.b(this.b.id)) {
                 return;
             }
-            this.d.a(this.b.id, this.f15582a, new CreateVideoThumsAsynctack(this.b, this.f15582a, this.f15583c));
+            this.d.a(this.b.id, this.a, new CreateVideoThumsAsynctack(this.b, this.a, this.c));
         }
     }
 
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/media/selector/utils/ThumbLoader$CreateVideoThumsAsynctack.class */
     class CreateVideoThumsAsynctack extends ThreadPoolHelper.AlbumThread {
-
-        /* renamed from: c  reason: collision with root package name */
-        ImageView f15584c;
+        ImageView c;
         MediaInfo d;
         LoadOptions e;
 
         public CreateVideoThumsAsynctack(MediaInfo mediaInfo, ImageView imageView, LoadOptions loadOptions) {
             this.d = mediaInfo;
-            this.f15584c = imageView;
+            this.c = imageView;
             this.e = loadOptions;
         }
 
@@ -93,14 +83,12 @@ public class ThumbLoader {
 
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/media/selector/utils/ThumbLoader$GetVideoThumsAsynctack.class */
     public static class GetVideoThumsAsynctack extends ThreadPoolHelper.AlbumThread {
-
-        /* renamed from: c  reason: collision with root package name */
-        OnGetVideoThumsListener f15587c;
+        OnGetVideoThumsListener c;
         HashMap<String, MediaInfo> d = new HashMap<>();
         List<MediaInfo> e;
 
         public GetVideoThumsAsynctack(OnGetVideoThumsListener onGetVideoThumsListener, List<MediaInfo> list) {
-            this.f15587c = onGetVideoThumsListener;
+            this.c = onGetVideoThumsListener;
             this.e = list;
         }
 
@@ -114,7 +102,7 @@ public class ThumbLoader {
             r0.close();
          */
         /* JADX WARN: Code restructure failed: missing block: B:65:0x01dc, code lost:
-            r0 = r7.f15587c;
+            r0 = r7.c;
          */
         /* JADX WARN: Code restructure failed: missing block: B:66:0x01e2, code lost:
             if (r0 == null) goto L72;
@@ -172,7 +160,7 @@ public class ThumbLoader {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void a(long j, Bitmap bitmap) {
-        for (Map.Entry<ImageView, Long> entry : this.f15579c.entrySet()) {
+        for (Map.Entry<ImageView, Long> entry : this.c.entrySet()) {
             if (entry.getValue().longValue() == j) {
                 ImageView key = entry.getKey();
                 try {
@@ -189,12 +177,12 @@ public class ThumbLoader {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void a(ImageView imageView) {
-        this.f15579c.remove(imageView);
+        this.c.remove(imageView);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void a(ImageView imageView, long j) {
-        this.f15579c.put(imageView, Long.valueOf(j));
+        this.c.put(imageView, Long.valueOf(j));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -212,7 +200,7 @@ public class ThumbLoader {
 
     /* JADX INFO: Access modifiers changed from: private */
     public boolean b(ImageView imageView, long j) {
-        Long l = this.f15579c.get(imageView);
+        Long l = this.c.get(imageView);
         return l != null && l.longValue() == j;
     }
 

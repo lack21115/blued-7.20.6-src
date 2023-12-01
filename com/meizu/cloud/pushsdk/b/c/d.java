@@ -9,18 +9,18 @@ import java.util.concurrent.atomic.AtomicLong;
 public final class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f23981a = null;
+    private String f10370a = null;
     private Boolean b = null;
 
     /* renamed from: c  reason: collision with root package name */
-    private Integer f23982c = null;
+    private Integer f10371c = null;
     private Thread.UncaughtExceptionHandler d = null;
     private ThreadFactory e = null;
 
     private static ThreadFactory a(d dVar) {
-        final String str = dVar.f23981a;
+        final String str = dVar.f10370a;
         final Boolean bool = dVar.b;
-        final Integer num = dVar.f23982c;
+        final Integer num = dVar.f10371c;
         final Thread.UncaughtExceptionHandler uncaughtExceptionHandler = dVar.d;
         ThreadFactory threadFactory = dVar.e;
         if (threadFactory == null) {
@@ -31,7 +31,7 @@ public final class d {
         return new ThreadFactory() { // from class: com.meizu.cloud.pushsdk.b.c.d.1
             @Override // java.util.concurrent.ThreadFactory
             public Thread newThread(Runnable runnable) {
-                Thread newThread = ThreadFactory.this.newThread(runnable);
+                Thread newThread = threadFactory2.newThread(runnable);
                 String str2 = str;
                 if (str2 != null) {
                     newThread.setName(String.format(str2, Long.valueOf(atomicLong.getAndIncrement())));
@@ -54,13 +54,13 @@ public final class d {
     }
 
     public d a(Integer num) {
-        this.f23982c = num;
+        this.f10371c = num;
         return this;
     }
 
     public d a(String str) {
         String.format(str, 0);
-        this.f23981a = str;
+        this.f10370a = str;
         return this;
     }
 

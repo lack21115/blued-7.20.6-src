@@ -22,11 +22,11 @@ public final class LocationRequestCompat {
     private static Method l;
 
     /* renamed from: a  reason: collision with root package name */
-    final int f2500a;
+    final int f2452a;
     final long b;
 
     /* renamed from: c  reason: collision with root package name */
-    final long f2501c;
+    final long f2453c;
     final long d;
     final int e;
     final float f;
@@ -36,11 +36,11 @@ public final class LocationRequestCompat {
     public static final class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        private long f2502a;
+        private long f2454a;
         private int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private long f2503c;
+        private long f2455c;
         private int d;
         private long e;
         private float f;
@@ -49,7 +49,7 @@ public final class LocationRequestCompat {
         public Builder(long j) {
             setIntervalMillis(j);
             this.b = 102;
-            this.f2503c = Long.MAX_VALUE;
+            this.f2455c = Long.MAX_VALUE;
             this.d = Integer.MAX_VALUE;
             this.e = -1L;
             this.f = 0.0f;
@@ -57,19 +57,19 @@ public final class LocationRequestCompat {
         }
 
         public Builder(LocationRequestCompat locationRequestCompat) {
-            this.f2502a = locationRequestCompat.b;
-            this.b = locationRequestCompat.f2500a;
-            this.f2503c = locationRequestCompat.d;
+            this.f2454a = locationRequestCompat.b;
+            this.b = locationRequestCompat.f2452a;
+            this.f2455c = locationRequestCompat.d;
             this.d = locationRequestCompat.e;
-            this.e = locationRequestCompat.f2501c;
+            this.e = locationRequestCompat.f2453c;
             this.f = locationRequestCompat.f;
             this.g = locationRequestCompat.g;
         }
 
         public LocationRequestCompat build() {
-            Preconditions.checkState((this.f2502a == Long.MAX_VALUE && this.e == -1) ? false : true, "passive location requests must have an explicit minimum update interval");
-            long j = this.f2502a;
-            return new LocationRequestCompat(j, this.b, this.f2503c, this.d, Math.min(this.e, j), this.f, this.g);
+            Preconditions.checkState((this.f2454a == Long.MAX_VALUE && this.e == -1) ? false : true, "passive location requests must have an explicit minimum update interval");
+            long j = this.f2454a;
+            return new LocationRequestCompat(j, this.b, this.f2455c, this.d, Math.min(this.e, j), this.f, this.g);
         }
 
         public Builder clearMinUpdateIntervalMillis() {
@@ -78,12 +78,12 @@ public final class LocationRequestCompat {
         }
 
         public Builder setDurationMillis(long j) {
-            this.f2503c = Preconditions.checkArgumentInRange(j, 1L, Long.MAX_VALUE, "durationMillis");
+            this.f2455c = Preconditions.checkArgumentInRange(j, 1L, Long.MAX_VALUE, "durationMillis");
             return this;
         }
 
         public Builder setIntervalMillis(long j) {
-            this.f2502a = Preconditions.checkArgumentInRange(j, 0L, Long.MAX_VALUE, "intervalMillis");
+            this.f2454a = Preconditions.checkArgumentInRange(j, 0L, Long.MAX_VALUE, "intervalMillis");
             return this;
         }
 
@@ -123,8 +123,8 @@ public final class LocationRequestCompat {
 
     LocationRequestCompat(long j2, int i2, long j3, int i3, long j4, float f, long j5) {
         this.b = j2;
-        this.f2500a = i2;
-        this.f2501c = j4;
+        this.f2452a = i2;
+        this.f2453c = j4;
         this.d = j3;
         this.e = i3;
         this.f = f;
@@ -137,7 +137,7 @@ public final class LocationRequestCompat {
         }
         if (obj instanceof LocationRequestCompat) {
             LocationRequestCompat locationRequestCompat = (LocationRequestCompat) obj;
-            return this.f2500a == locationRequestCompat.f2500a && this.b == locationRequestCompat.b && this.f2501c == locationRequestCompat.f2501c && this.d == locationRequestCompat.d && this.e == locationRequestCompat.e && Float.compare(locationRequestCompat.f, this.f) == 0 && this.g == locationRequestCompat.g;
+            return this.f2452a == locationRequestCompat.f2452a && this.b == locationRequestCompat.b && this.f2453c == locationRequestCompat.f2453c && this.d == locationRequestCompat.d && this.e == locationRequestCompat.e && Float.compare(locationRequestCompat.f, this.f) == 0 && this.g == locationRequestCompat.g;
         }
         return false;
     }
@@ -163,7 +163,7 @@ public final class LocationRequestCompat {
     }
 
     public long getMinUpdateIntervalMillis() {
-        long j2 = this.f2501c;
+        long j2 = this.f2453c;
         long j3 = j2;
         if (j2 == -1) {
             j3 = this.b;
@@ -172,19 +172,19 @@ public final class LocationRequestCompat {
     }
 
     public int getQuality() {
-        return this.f2500a;
+        return this.f2452a;
     }
 
     public int hashCode() {
-        int i2 = this.f2500a;
+        int i2 = this.f2452a;
         long j2 = this.b;
         int i3 = (int) (j2 ^ (j2 >>> 32));
-        long j3 = this.f2501c;
+        long j3 = this.f2453c;
         return (((i2 * 31) + i3) * 31) + ((int) (j3 ^ (j3 >>> 32)));
     }
 
     public LocationRequest toLocationRequest() {
-        return new LocationRequest.Builder(this.b).setQuality(this.f2500a).setMinUpdateIntervalMillis(this.f2501c).setDurationMillis(this.d).setMaxUpdates(this.e).setMinUpdateDistanceMeters(this.f).setMaxUpdateDelayMillis(this.g).build();
+        return new LocationRequest.Builder(this.b).setQuality(this.f2452a).setMinUpdateIntervalMillis(this.f2453c).setDurationMillis(this.d).setMaxUpdates(this.e).setMinUpdateDistanceMeters(this.f).setMaxUpdateDelayMillis(this.g).build();
     }
 
     public LocationRequest toLocationRequest(String str) {
@@ -206,14 +206,14 @@ public final class LocationRequestCompat {
                 i = declaredMethod2;
                 declaredMethod2.setAccessible(true);
             }
-            i.invoke(locationRequest, Integer.valueOf(this.f2500a));
+            i.invoke(locationRequest, Integer.valueOf(this.f2452a));
             if (getMinUpdateIntervalMillis() != this.b) {
                 if (j == null) {
                     Method declaredMethod3 = LocationRequest.class.getDeclaredMethod("setFastestInterval", Long.TYPE);
                     j = declaredMethod3;
                     declaredMethod3.setAccessible(true);
                 }
-                j.invoke(locationRequest, Long.valueOf(this.f2501c));
+                j.invoke(locationRequest, Long.valueOf(this.f2453c));
             }
             if (this.e < Integer.MAX_VALUE) {
                 if (k == null) {
@@ -243,7 +243,7 @@ public final class LocationRequestCompat {
         if (this.b != Long.MAX_VALUE) {
             sb.append("@");
             TimeUtils.formatDuration(this.b, sb);
-            int i2 = this.f2500a;
+            int i2 = this.f2452a;
             if (i2 == 100) {
                 sb.append(" HIGH_ACCURACY");
             } else if (i2 == 102) {
@@ -262,10 +262,10 @@ public final class LocationRequestCompat {
             sb.append(", maxUpdates=");
             sb.append(this.e);
         }
-        long j2 = this.f2501c;
+        long j2 = this.f2453c;
         if (j2 != -1 && j2 < this.b) {
             sb.append(", minUpdateInterval=");
-            TimeUtils.formatDuration(this.f2501c, sb);
+            TimeUtils.formatDuration(this.f2453c, sb);
         }
         if (this.f > 0.0d) {
             sb.append(", minUpdateDistance=");

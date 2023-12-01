@@ -8,22 +8,22 @@ public class bv {
     private static final byte[] d = new byte[0];
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f23762a;
+    private Context f10154a;
     private boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f23763c;
+    private int f10155c;
 
     public bv(Context context, int i, boolean z) {
-        this.f23762a = context;
+        this.f10154a = context;
         this.b = z;
-        this.f23763c = i;
+        this.f10155c = i;
     }
 
     public String a(String str) {
         try {
             synchronized (d) {
-                JSONObject a2 = new cl(str, cj.j).a(this.f23762a);
+                JSONObject a2 = new cl(str, cj.j).a(this.f10154a);
                 if (a2 == null) {
                     return null;
                 }

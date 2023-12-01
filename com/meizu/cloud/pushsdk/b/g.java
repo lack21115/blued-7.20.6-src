@@ -9,7 +9,7 @@ import com.meizu.cloud.pushsdk.util.MzSystemUtils;
 public class g extends h<f> implements f {
 
     /* renamed from: a  reason: collision with root package name */
-    private static g f23991a;
+    private static g f10380a;
     private boolean b;
 
     private g(f fVar) {
@@ -18,18 +18,18 @@ public class g extends h<f> implements f {
     }
 
     public static g b() {
-        if (f23991a == null) {
+        if (f10380a == null) {
             synchronized (g.class) {
                 try {
-                    if (f23991a == null) {
-                        f23991a = new g(new b());
+                    if (f10380a == null) {
+                        f10380a = new g(new b());
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f23991a;
+        return f10380a;
     }
 
     public void a(Context context) {

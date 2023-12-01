@@ -7,7 +7,7 @@ import com.soft.blued.ui.share_custom.Model.BaseShareEntity;
 public class ShareEntity<T> extends BaseShareEntity {
 
     /* renamed from: a  reason: collision with root package name */
-    public T f9215a;
+    public T f6375a;
     public String d;
     public BaseShareEntity.ShareLiveData f;
     public View g;
@@ -24,7 +24,7 @@ public class ShareEntity<T> extends BaseShareEntity {
     public int b = -1;
 
     /* renamed from: c  reason: collision with root package name */
-    public int f9216c = -1;
+    public int f6376c = -1;
     public int e = -1;
     public int i = -1;
 }

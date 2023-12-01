@@ -4,9 +4,8 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 import org.checkerframework.checker.nullness.compatqual.NullableDecl;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8110460-dex2jar.jar:com/google/common/base/AbstractIterator.class */
-public abstract class AbstractIterator<T> implements Iterator<T> {
+abstract class AbstractIterator<T> implements Iterator<T> {
     @NullableDecl
     private T next;
     private State state = State.NOT_READY;

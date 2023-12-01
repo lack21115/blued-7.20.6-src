@@ -10,8 +10,8 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.bytedance.applog.tracker.Tracker;
+import com.huawei.hms.ads.fw;
 import com.sobot.chat.activity.base.SobotDialogBaseActivity;
 import com.sobot.chat.adapter.SobotSikllAdapter;
 import com.sobot.chat.api.ZhiChiApi;
@@ -58,7 +58,7 @@ public class SobotSkillGroupActivity extends SobotDialogBaseActivity {
     /* JADX INFO: Access modifiers changed from: private */
     public void finishPageOrSDK() {
         Context applicationContext = getApplicationContext();
-        if (SharedPreferencesUtil.getIntData(applicationContext, this.appkey + BridgeUtil.UNDERLINE_STR + ZhiChiConstant.initType, -1) == 2) {
+        if (SharedPreferencesUtil.getIntData(applicationContext, this.appkey + "_" + ZhiChiConstant.initType, -1) == 2) {
             finish();
             sendCloseIntent(1);
         } else if (this.flag_exit_sdk) {
@@ -149,7 +149,7 @@ public class SobotSkillGroupActivity extends SobotDialogBaseActivity {
                 if (SobotSkillGroupActivity.this.list_skill == null || SobotSkillGroupActivity.this.list_skill.size() <= 0) {
                     return;
                 }
-                if (!"true".equals(((ZhiChiGroupBase) SobotSkillGroupActivity.this.list_skill.get(i)).isOnline())) {
+                if (!fw.Code.equals(((ZhiChiGroupBase) SobotSkillGroupActivity.this.list_skill.get(i)).isOnline())) {
                     if (SobotSkillGroupActivity.this.msgFlag == 0) {
                         Intent intent = new Intent();
                         intent.putExtra("toLeaveMsg", true);

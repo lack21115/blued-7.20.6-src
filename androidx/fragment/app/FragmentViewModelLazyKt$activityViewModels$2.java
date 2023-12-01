@@ -11,18 +11,17 @@ import kotlin.jvm.internal.Lambda;
 public final class FragmentViewModelLazyKt$activityViewModels$2 extends Lambda implements Function0<ViewModelProvider.Factory> {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ Fragment f3043a;
+    final /* synthetic */ Fragment f2995a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public FragmentViewModelLazyKt$activityViewModels$2(Fragment fragment) {
         super(0);
-        this.f3043a = fragment;
+        this.f2995a = fragment;
     }
 
-    /* JADX WARN: Can't rename method to resolve collision */
-    @Override // kotlin.jvm.functions.Function0
-    public final ViewModelProvider.Factory invoke() {
-        FragmentActivity requireActivity = this.f3043a.requireActivity();
+    /* renamed from: invoke */
+    public final ViewModelProvider.Factory m1402invoke() {
+        FragmentActivity requireActivity = this.f2995a.requireActivity();
         Intrinsics.c(requireActivity, "requireActivity()");
         return requireActivity.getDefaultViewModelProviderFactory();
     }

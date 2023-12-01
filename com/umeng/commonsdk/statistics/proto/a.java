@@ -43,11 +43,11 @@ public class a implements bq<a, e>, Serializable, Cloneable {
     private static final int m = 0;
 
     /* renamed from: a  reason: collision with root package name */
-    public String f40939a;
+    public String f27248a;
     public String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f40940c;
+    public String f27249c;
     public long d;
     private byte n;
     private e[] o;
@@ -55,8 +55,8 @@ public class a implements bq<a, e>, Serializable, Cloneable {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.umeng.commonsdk.statistics.proto.a$a  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/umeng/commonsdk/statistics/proto/a$a.class */
-    public static class C1085a extends cz<a> {
-        private C1085a() {
+    public static class C0915a extends cz<a> {
+        private C0915a() {
         }
 
         @Override // com.umeng.analytics.pro.cx
@@ -68,7 +68,7 @@ public class a implements bq<a, e>, Serializable, Cloneable {
                 if (l.b == 0) {
                     break;
                 }
-                short s = l.f40700c;
+                short s = l.f27009c;
                 if (s != 1) {
                     if (s != 2) {
                         if (s != 3) {
@@ -81,7 +81,7 @@ public class a implements bq<a, e>, Serializable, Cloneable {
                                 cs.a(cpVar, l.b);
                             }
                         } else if (l.b == 11) {
-                            aVar.f40940c = cpVar.z();
+                            aVar.f27249c = cpVar.z();
                             aVar.c(true);
                         } else {
                             cs.a(cpVar, l.b);
@@ -93,7 +93,7 @@ public class a implements bq<a, e>, Serializable, Cloneable {
                         cs.a(cpVar, l.b);
                     }
                 } else if (l.b == 11) {
-                    aVar.f40939a = cpVar.z();
+                    aVar.f27248a = cpVar.z();
                     aVar.a(true);
                 } else {
                     cs.a(cpVar, l.b);
@@ -113,9 +113,9 @@ public class a implements bq<a, e>, Serializable, Cloneable {
         public void a(cp cpVar, a aVar) throws bw {
             aVar.n();
             cpVar.a(a.g);
-            if (aVar.f40939a != null) {
+            if (aVar.f27248a != null) {
                 cpVar.a(a.h);
-                cpVar.a(aVar.f40939a);
+                cpVar.a(aVar.f27248a);
                 cpVar.c();
             }
             if (aVar.b != null && aVar.g()) {
@@ -123,9 +123,9 @@ public class a implements bq<a, e>, Serializable, Cloneable {
                 cpVar.a(aVar.b);
                 cpVar.c();
             }
-            if (aVar.f40940c != null) {
+            if (aVar.f27249c != null) {
                 cpVar.a(a.j);
-                cpVar.a(aVar.f40940c);
+                cpVar.a(aVar.f27249c);
                 cpVar.c();
             }
             cpVar.a(a.k);
@@ -143,8 +143,8 @@ public class a implements bq<a, e>, Serializable, Cloneable {
 
         @Override // com.umeng.analytics.pro.cy
         /* renamed from: a */
-        public C1085a b() {
-            return new C1085a();
+        public C0915a b() {
+            return new C0915a();
         }
     }
 
@@ -157,8 +157,8 @@ public class a implements bq<a, e>, Serializable, Cloneable {
         @Override // com.umeng.analytics.pro.cx
         public void a(cp cpVar, a aVar) throws bw {
             cv cvVar = (cv) cpVar;
-            cvVar.a(aVar.f40939a);
-            cvVar.a(aVar.f40940c);
+            cvVar.a(aVar.f27248a);
+            cvVar.a(aVar.f27249c);
             cvVar.a(aVar.d);
             BitSet bitSet = new BitSet();
             if (aVar.g()) {
@@ -173,9 +173,9 @@ public class a implements bq<a, e>, Serializable, Cloneable {
         @Override // com.umeng.analytics.pro.cx
         public void b(cp cpVar, a aVar) throws bw {
             cv cvVar = (cv) cpVar;
-            aVar.f40939a = cvVar.z();
+            aVar.f27248a = cvVar.z();
             aVar.a(true);
-            aVar.f40940c = cvVar.z();
+            aVar.f27249c = cvVar.z();
             aVar.c(true);
             aVar.d = cvVar.x();
             aVar.d(true);
@@ -210,7 +210,7 @@ public class a implements bq<a, e>, Serializable, Cloneable {
         private final String g;
 
         static {
-            Iterator<E> it = EnumSet.allOf(e.class).iterator();
+            Iterator it = EnumSet.allOf(e.class).iterator();
             while (it.hasNext()) {
                 e eVar = (e) it.next();
                 e.put(eVar.b(), eVar);
@@ -286,21 +286,21 @@ public class a implements bq<a, e>, Serializable, Cloneable {
         this.o = new e[]{e.OLD_ID};
         this.n = aVar.n;
         if (aVar.d()) {
-            this.f40939a = aVar.f40939a;
+            this.f27248a = aVar.f27248a;
         }
         if (aVar.g()) {
             this.b = aVar.b;
         }
         if (aVar.j()) {
-            this.f40940c = aVar.f40940c;
+            this.f27249c = aVar.f27249c;
         }
         this.d = aVar.d;
     }
 
     public a(String str, String str2, long j2) {
         this();
-        this.f40939a = str;
-        this.f40940c = str2;
+        this.f27248a = str;
+        this.f27249c = str2;
         this.d = j2;
         d(true);
     }
@@ -341,7 +341,7 @@ public class a implements bq<a, e>, Serializable, Cloneable {
     }
 
     public a a(String str) {
-        this.f40939a = str;
+        this.f27248a = str;
         return this;
     }
 
@@ -349,7 +349,7 @@ public class a implements bq<a, e>, Serializable, Cloneable {
         if (z) {
             return;
         }
-        this.f40939a = null;
+        this.f27248a = null;
     }
 
     public a b(String str) {
@@ -358,7 +358,7 @@ public class a implements bq<a, e>, Serializable, Cloneable {
     }
 
     public String b() {
-        return this.f40939a;
+        return this.f27248a;
     }
 
     public void b(boolean z) {
@@ -369,26 +369,26 @@ public class a implements bq<a, e>, Serializable, Cloneable {
     }
 
     public a c(String str) {
-        this.f40940c = str;
+        this.f27249c = str;
         return this;
     }
 
     public void c() {
-        this.f40939a = null;
+        this.f27248a = null;
     }
 
     public void c(boolean z) {
         if (z) {
             return;
         }
-        this.f40940c = null;
+        this.f27249c = null;
     }
 
     @Override // com.umeng.analytics.pro.bq
     public void clear() {
-        this.f40939a = null;
+        this.f27248a = null;
         this.b = null;
-        this.f40940c = null;
+        this.f27249c = null;
         d(false);
         this.d = 0L;
     }
@@ -398,7 +398,7 @@ public class a implements bq<a, e>, Serializable, Cloneable {
     }
 
     public boolean d() {
-        return this.f40939a != null;
+        return this.f27248a != null;
     }
 
     public String e() {
@@ -414,15 +414,15 @@ public class a implements bq<a, e>, Serializable, Cloneable {
     }
 
     public String h() {
-        return this.f40940c;
+        return this.f27249c;
     }
 
     public void i() {
-        this.f40940c = null;
+        this.f27249c = null;
     }
 
     public boolean j() {
-        return this.f40940c != null;
+        return this.f27249c != null;
     }
 
     public long k() {
@@ -438,9 +438,9 @@ public class a implements bq<a, e>, Serializable, Cloneable {
     }
 
     public void n() throws bw {
-        if (this.f40939a == null) {
+        if (this.f27248a == null) {
             throw new cq("Required field 'domain' was not present! Struct: " + toString());
-        } else if (this.f40940c != null) {
+        } else if (this.f27249c != null) {
         } else {
             throw new cq("Required field 'new_id' was not present! Struct: " + toString());
         }
@@ -454,7 +454,7 @@ public class a implements bq<a, e>, Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder("IdJournal(");
         sb.append("domain:");
-        String str = this.f40939a;
+        String str = this.f27248a;
         if (str == null) {
             sb.append(com.igexin.push.core.b.l);
         } else {
@@ -472,7 +472,7 @@ public class a implements bq<a, e>, Serializable, Cloneable {
         }
         sb.append(", ");
         sb.append("new_id:");
-        String str3 = this.f40940c;
+        String str3 = this.f27249c;
         if (str3 == null) {
             sb.append(com.igexin.push.core.b.l);
         } else {

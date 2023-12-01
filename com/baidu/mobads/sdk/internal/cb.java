@@ -6,17 +6,17 @@ public class cb extends h {
     final /* synthetic */ boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ bw f9371c;
+    final /* synthetic */ bw f6531c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public cb(bw bwVar, boolean z) {
-        this.f9371c = bwVar;
+        this.f6531c = bwVar;
         this.b = z;
     }
 
     @Override // com.baidu.mobads.sdk.internal.h
     protected Object i() {
-        this.f9371c.c(this.b);
+        this.f6531c.c(this.b);
         return null;
     }
 }

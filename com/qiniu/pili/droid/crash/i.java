@@ -12,11 +12,11 @@ import org.json.JSONObject;
 public class i {
 
     /* renamed from: a  reason: collision with root package name */
-    private Throwable f27484a;
+    private Throwable f13796a;
     private Thread b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Map<String, String> f27485c = new HashMap();
+    private Map<String, String> f13797c = new HashMap();
     private Map<String, String> d = new HashMap();
     private Context e;
 
@@ -38,7 +38,7 @@ public class i {
     }
 
     public i a(Throwable th) {
-        this.f27484a = th;
+        this.f13796a = th;
         return this;
     }
 
@@ -49,7 +49,7 @@ public class i {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public String a(String str) {
-        return this.f27485c.get(str);
+        return this.f13797c.get(str);
     }
 
     public Thread a() {
@@ -57,7 +57,7 @@ public class i {
     }
 
     public Throwable b() {
-        return this.f27484a;
+        return this.f13796a;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

@@ -114,10 +114,10 @@ public interface IVoiceInteractionManagerService extends IInterface {
                     obtain.writeStrongBinder(iVoiceInteractionService != null ? iVoiceInteractionService.asBinder() : null);
                     this.mRemote.transact(8, obtain, obtain2, 0);
                     obtain2.readException();
-                    SoundTrigger.ModuleProperties createFromParcel = obtain2.readInt() != 0 ? SoundTrigger.ModuleProperties.CREATOR.createFromParcel(obtain2) : null;
+                    SoundTrigger.ModuleProperties moduleProperties = obtain2.readInt() != 0 ? (SoundTrigger.ModuleProperties) SoundTrigger.ModuleProperties.CREATOR.createFromParcel(obtain2) : null;
                     obtain2.recycle();
                     obtain.recycle();
-                    return createFromParcel;
+                    return moduleProperties;
                 } catch (Throwable th) {
                     obtain2.recycle();
                     obtain.recycle();
@@ -139,10 +139,10 @@ public interface IVoiceInteractionManagerService extends IInterface {
                     obtain.writeString(str);
                     this.mRemote.transact(5, obtain, obtain2, 0);
                     obtain2.readException();
-                    SoundTrigger.KeyphraseSoundModel createFromParcel = obtain2.readInt() != 0 ? SoundTrigger.KeyphraseSoundModel.CREATOR.createFromParcel(obtain2) : null;
+                    SoundTrigger.KeyphraseSoundModel keyphraseSoundModel = obtain2.readInt() != 0 ? (SoundTrigger.KeyphraseSoundModel) SoundTrigger.KeyphraseSoundModel.CREATOR.createFromParcel(obtain2) : null;
                     obtain2.recycle();
                     obtain.recycle();
-                    return createFromParcel;
+                    return keyphraseSoundModel;
                 } catch (Throwable th) {
                     obtain2.recycle();
                     obtain.recycle();
@@ -314,7 +314,7 @@ public interface IVoiceInteractionManagerService extends IInterface {
             switch (i) {
                 case 1:
                     parcel.enforceInterface(DESCRIPTOR);
-                    startSession(IVoiceInteractionService.Stub.asInterface(parcel.readStrongBinder()), parcel.readInt() != 0 ? Bundle.CREATOR.createFromParcel(parcel) : null);
+                    startSession(IVoiceInteractionService.Stub.asInterface(parcel.readStrongBinder()), parcel.readInt() != 0 ? (Bundle) Bundle.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     return true;
                 case 2:
@@ -329,7 +329,7 @@ public interface IVoiceInteractionManagerService extends IInterface {
                     return true;
                 case 3:
                     parcel.enforceInterface(DESCRIPTOR);
-                    int startVoiceActivity = startVoiceActivity(parcel.readStrongBinder(), parcel.readInt() != 0 ? Intent.CREATOR.createFromParcel(parcel) : null, parcel.readString());
+                    int startVoiceActivity = startVoiceActivity(parcel.readStrongBinder(), parcel.readInt() != 0 ? (Intent) Intent.CREATOR.createFromParcel(parcel) : null, parcel.readString());
                     parcel2.writeNoException();
                     parcel2.writeInt(startVoiceActivity);
                     return true;
@@ -351,7 +351,7 @@ public interface IVoiceInteractionManagerService extends IInterface {
                     return true;
                 case 6:
                     parcel.enforceInterface(DESCRIPTOR);
-                    int updateKeyphraseSoundModel = updateKeyphraseSoundModel(parcel.readInt() != 0 ? SoundTrigger.KeyphraseSoundModel.CREATOR.createFromParcel(parcel) : null);
+                    int updateKeyphraseSoundModel = updateKeyphraseSoundModel(parcel.readInt() != 0 ? (SoundTrigger.KeyphraseSoundModel) SoundTrigger.KeyphraseSoundModel.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     parcel2.writeInt(updateKeyphraseSoundModel);
                     return true;
@@ -384,7 +384,7 @@ public interface IVoiceInteractionManagerService extends IInterface {
                     return true;
                 case 10:
                     parcel.enforceInterface(DESCRIPTOR);
-                    int startRecognition = startRecognition(IVoiceInteractionService.Stub.asInterface(parcel.readStrongBinder()), parcel.readInt(), parcel.readString(), IRecognitionStatusCallback.Stub.asInterface(parcel.readStrongBinder()), parcel.readInt() != 0 ? SoundTrigger.RecognitionConfig.CREATOR.createFromParcel(parcel) : null);
+                    int startRecognition = startRecognition(IVoiceInteractionService.Stub.asInterface(parcel.readStrongBinder()), parcel.readInt(), parcel.readString(), IRecognitionStatusCallback.Stub.asInterface(parcel.readStrongBinder()), parcel.readInt() != 0 ? (SoundTrigger.RecognitionConfig) SoundTrigger.RecognitionConfig.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     parcel2.writeInt(startRecognition);
                     return true;
@@ -394,7 +394,7 @@ public interface IVoiceInteractionManagerService extends IInterface {
                     parcel2.writeNoException();
                     parcel2.writeInt(stopRecognition);
                     return true;
-                case IBinder.INTERFACE_TRANSACTION /* 1598968902 */:
+                case 1598968902:
                     parcel2.writeString(DESCRIPTOR);
                     return true;
                 default:

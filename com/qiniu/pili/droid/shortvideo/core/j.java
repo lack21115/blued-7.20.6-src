@@ -47,11 +47,11 @@ public class j implements PLAudioFrameListener, i.a {
     private volatile boolean U;
 
     /* renamed from: a  reason: collision with root package name */
-    private com.qiniu.pili.droid.shortvideo.encode.a f27557a;
+    private com.qiniu.pili.droid.shortvideo.encode.a f13869a;
     private PLAudioFrameListener b;
 
     /* renamed from: c  reason: collision with root package name */
-    private volatile boolean f27558c;
+    private volatile boolean f13870c;
     private volatile boolean d;
     private PLVideoSaveListener e;
     protected volatile boolean g;
@@ -81,7 +81,7 @@ public class j implements PLAudioFrameListener, i.a {
     private b.a V = new b.a() { // from class: com.qiniu.pili.droid.shortvideo.core.j.4
         @Override // com.qiniu.pili.droid.shortvideo.transcoder.audio.b.a
         public void a(ByteBuffer byteBuffer, int i) {
-            j.this.f27557a.a(byteBuffer, i, j.this.O);
+            j.this.f13869a.a(byteBuffer, i, j.this.O);
             j.this.O += j.this.Q;
         }
     };
@@ -119,8 +119,8 @@ public class j implements PLAudioFrameListener, i.a {
             }
         }
     };
-    protected a.InterfaceC0745a y = new a.InterfaceC0745a() { // from class: com.qiniu.pili.droid.shortvideo.core.j.6
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+    protected a.InterfaceC0575a y = new a.InterfaceC0575a() { // from class: com.qiniu.pili.droid.shortvideo.core.j.6
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(MediaFormat mediaFormat) {
             com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.n;
             eVar.c("ShortAudioRecorderCore", "got audio format:" + mediaFormat.toString());
@@ -129,11 +129,11 @@ public class j implements PLAudioFrameListener, i.a {
             j.this.r();
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(Surface surface) {
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(ByteBuffer byteBuffer, MediaCodec.BufferInfo bufferInfo) {
             if (j.this.l) {
                 com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.h;
@@ -142,7 +142,7 @@ public class j implements PLAudioFrameListener, i.a {
             }
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(boolean z) {
             com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.h;
             eVar.c("ShortAudioRecorderCore", "audio encoder started: " + z);
@@ -155,7 +155,7 @@ public class j implements PLAudioFrameListener, i.a {
             QosManager.a().a(7);
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void b(boolean z) {
             com.qiniu.pili.droid.shortvideo.f.e.h.c("ShortAudioRecorderCore", "audio encoder stopped.");
             j.this.j = false;
@@ -231,7 +231,7 @@ public class j implements PLAudioFrameListener, i.a {
     /* JADX INFO: Access modifiers changed from: private */
     public void b() {
         this.j = false;
-        this.f27557a.c();
+        this.f13869a.c();
     }
 
     private void c(boolean z) {
@@ -407,15 +407,15 @@ public class j implements PLAudioFrameListener, i.a {
         this.p = pLAudioEncodeSetting;
         this.q = new com.qiniu.pili.droid.shortvideo.a.b.a(pLMicrophoneSetting);
         if (pLAudioEncodeSetting.isHWCodecEnabled()) {
-            this.f27557a = new com.qiniu.pili.droid.shortvideo.encode.c(pLAudioEncodeSetting);
+            this.f13869a = new com.qiniu.pili.droid.shortvideo.encode.c(pLAudioEncodeSetting);
         } else {
-            this.f27557a = new SWAudioEncoder(pLAudioEncodeSetting);
+            this.f13869a = new SWAudioEncoder(pLAudioEncodeSetting);
         }
         i g = g();
         this.r = g;
         g.a(pLRecordSetting.getMaxRecordDuration());
         this.r.a(this);
-        this.f27557a.a(this.y);
+        this.f13869a.a(this.y);
         this.q.a(this);
         this.Q = (long) ((1024 * 1000000.0d) / this.p.getSamplerate());
         com.qiniu.pili.droid.shortvideo.f.e.d.c("ShortAudioRecorderCore", "prepare -");
@@ -460,7 +460,7 @@ public class j implements PLAudioFrameListener, i.a {
             }
         } else {
             if (this.l) {
-                this.f27558c = true;
+                this.f13870c = true;
                 this.e = pLVideoSaveListener;
                 c();
             } else {
@@ -533,13 +533,13 @@ public class j implements PLAudioFrameListener, i.a {
                     }
                     this.F = str;
                     this.i = true;
-                    this.z.a(new a.InterfaceC0743a() { // from class: com.qiniu.pili.droid.shortvideo.core.j.1
-                        @Override // com.qiniu.pili.droid.shortvideo.core.a.InterfaceC0743a
+                    this.z.a(new a.InterfaceC0573a() { // from class: com.qiniu.pili.droid.shortvideo.core.j.1
+                        @Override // com.qiniu.pili.droid.shortvideo.core.a.InterfaceC0573a
                         public void a(ByteBuffer byteBuffer, int i, long j) {
-                            j.this.f27557a.a(byteBuffer, i, j);
+                            j.this.f13869a.a(byteBuffer, i, j);
                         }
                     });
-                    this.f27557a.a();
+                    this.f13869a.a();
                     if (this.A != null && !this.D) {
                         this.C.push(this.u == null ? this.v : this.u);
                         this.A.start();
@@ -771,7 +771,7 @@ public class j implements PLAudioFrameListener, i.a {
                 this.z.c(wrap, wrap.remaining(), j / 1000);
             } else if (!this.k) {
                 ByteBuffer allocateDirect = ByteBuffer.allocateDirect(bArr.length);
-                this.f27557a.a(allocateDirect, allocateDirect.remaining(), 0L);
+                this.f13869a.a(allocateDirect, allocateDirect.remaining(), 0L);
             }
         }
         if (a()) {
@@ -841,8 +841,8 @@ public class j implements PLAudioFrameListener, i.a {
                 if (this.s != null) {
                     this.s.onRecordStopped();
                 }
-                if (this.f27558c) {
-                    this.f27558c = false;
+                if (this.f13870c) {
+                    this.f13870c = false;
                     this.r.a(this.e);
                 }
                 this.z.b();

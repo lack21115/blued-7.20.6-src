@@ -8,17 +8,17 @@ import com.tencent.liteav.videobase.base.GLConstants;
 public final /* synthetic */ class b implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final a f37144a;
+    private final a f23453a;
     private final GLConstants.PixelFormatType b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final GLConstants.PixelBufferType f37145c;
+    private final GLConstants.PixelBufferType f23454c;
     private final CustomVideoProcessListener d;
 
     private b(a aVar, GLConstants.PixelFormatType pixelFormatType, GLConstants.PixelBufferType pixelBufferType, CustomVideoProcessListener customVideoProcessListener) {
-        this.f37144a = aVar;
+        this.f23453a = aVar;
         this.b = pixelFormatType;
-        this.f37145c = pixelBufferType;
+        this.f23454c = pixelBufferType;
         this.d = customVideoProcessListener;
     }
 
@@ -28,24 +28,24 @@ public final /* synthetic */ class b implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        a aVar = this.f37144a;
+        a aVar = this.f23453a;
         GLConstants.PixelFormatType pixelFormatType = this.b;
-        GLConstants.PixelBufferType pixelBufferType = this.f37145c;
+        GLConstants.PixelBufferType pixelBufferType = this.f23454c;
         CustomVideoProcessListener customVideoProcessListener = this.d;
         boolean z = (aVar.e == pixelFormatType && aVar.d == pixelBufferType) ? false : true;
         if (z) {
             LiteavLog.i("CustomVideoProcessListenerAdapter", "FormatOrBufferTypeChanged from (PixelFormat:" + aVar.e + ",  PixelBuffer:" + aVar.d + ") to (PixelFormat:" + pixelFormatType + ",  PixelBuffer:" + pixelBufferType);
             aVar.f = true;
         }
-        if (aVar.f37105c == null) {
+        if (aVar.f23414c == null) {
             aVar.a(customVideoProcessListener);
         }
-        if (aVar.f37105c != null && (z || aVar.f37105c != customVideoProcessListener)) {
-            aVar.b(aVar.f37105c);
+        if (aVar.f23414c != null && (z || aVar.f23414c != customVideoProcessListener)) {
+            aVar.b(aVar.f23414c);
             aVar.a(customVideoProcessListener);
         }
         aVar.e = pixelFormatType;
         aVar.d = pixelBufferType;
-        aVar.f37105c = customVideoProcessListener;
+        aVar.f23414c = customVideoProcessListener;
     }
 }

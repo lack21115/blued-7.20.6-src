@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemInviteFromMsgFriendListBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final RelativeLayout f29206a;
+    private final RelativeLayout f15516a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
-        return this.f29206a;
+        return this.f15516a;
     }
 }

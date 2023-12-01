@@ -7,7 +7,7 @@ public class q7 implements y8<p5> {
         double d = p5Var.b;
         double d2 = f;
         double d3 = p5Var2.b;
-        double d4 = p5Var.f37683c;
-        return new p5(d + ((d3 - d) * d2), d4 + (d2 * (p5Var2.f37683c - d4)));
+        double d4 = p5Var.f23992c;
+        return new p5(d + ((d3 - d) * d2), d4 + (d2 * (p5Var2.f23992c - d4)));
     }
 }

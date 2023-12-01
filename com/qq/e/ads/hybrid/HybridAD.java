@@ -14,7 +14,7 @@ public class HybridAD extends AbstractAD<HADI> implements HADI {
     private HybridADListener b;
 
     /* renamed from: c  reason: collision with root package name */
-    private CountDownLatch f27872c = new CountDownLatch(1);
+    private CountDownLatch f14184c = new CountDownLatch(1);
     private HybridADSetting d;
 
     public HybridAD(Context context, HybridADSetting hybridADSetting, HybridADListener hybridADListener) {
@@ -43,11 +43,11 @@ public class HybridAD extends AbstractAD<HADI> implements HADI {
         if (hybridADListener != null) {
             hybridADListener.onError(AdErrorConvertor.formatErrorCode(i));
         }
-        this.f27872c.countDown();
+        this.f14184c.countDown();
     }
 
     protected void c() {
-        this.f27872c.countDown();
+        this.f14184c.countDown();
     }
 
     @Override // com.qq.e.comm.pi.HADI
@@ -58,9 +58,9 @@ public class HybridAD extends AbstractAD<HADI> implements HADI {
                     @Override // java.lang.Runnable
                     public void run() {
                         try {
-                            HybridAD.this.f27872c.await(30L, TimeUnit.SECONDS);
-                            if (HybridAD.this.b() && HybridAD.this.f27851a != null) {
-                                ((HADI) HybridAD.this.f27851a).loadUrl(str);
+                            HybridAD.this.f14184c.await(30L, TimeUnit.SECONDS);
+                            if (HybridAD.this.b() && HybridAD.this.f14163a != null) {
+                                ((HADI) HybridAD.this.f14163a).loadUrl(str);
                                 return;
                             }
                             GDTLogger.e("初始化错误：广告实例未被初始化");
@@ -73,7 +73,7 @@ public class HybridAD extends AbstractAD<HADI> implements HADI {
                 }).start();
                 return;
             }
-            T t = this.f27851a;
+            T t = this.f14163a;
             if (t != 0) {
                 ((HADI) t).loadUrl(str);
             } else {

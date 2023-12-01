@@ -11,19 +11,19 @@ import com.soft.blued.R;
 public final class ItemMineNewHealthEntryBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final LinearLayout f29233a;
+    public final LinearLayout f15543a;
     public final LinearLayout b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final TextView f29234c;
+    public final TextView f15544c;
     public final TextView d;
     private final ConstraintLayout e;
 
     private ItemMineNewHealthEntryBinding(ConstraintLayout constraintLayout, LinearLayout linearLayout, LinearLayout linearLayout2, TextView textView, TextView textView2) {
         this.e = constraintLayout;
-        this.f29233a = linearLayout;
+        this.f15543a = linearLayout;
         this.b = linearLayout2;
-        this.f29234c = textView;
+        this.f15544c = textView;
         this.d = textView2;
     }
 

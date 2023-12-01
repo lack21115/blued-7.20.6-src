@@ -37,8 +37,8 @@ public class ImageLineChartRenderer extends LineChartRenderer {
         }
         float a2 = this.g.a();
         float[] fArr = {0.0f, 0.0f};
-        LineData lineData = this.f22185a.getLineData();
-        List<T> i = this.f22185a.getLineData().i();
+        LineData lineData = this.f8578a.getLineData();
+        List<T> i = this.f8578a.getLineData().i();
         Bitmap[] bitmapArr = new Bitmap[i.size()];
         float[] fArr2 = new float[i.size()];
         int i2 = 0;

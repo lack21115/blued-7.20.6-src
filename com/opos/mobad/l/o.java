@@ -12,21 +12,21 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 public class o {
 
     /* renamed from: a  reason: collision with root package name */
-    private Map<Integer, Set<Integer>> f26322a;
+    private Map<Integer, Set<Integer>> f12634a;
     private AtomicInteger b;
 
     /* renamed from: c  reason: collision with root package name */
-    private ReentrantReadWriteLock f26323c = new ReentrantReadWriteLock();
+    private ReentrantReadWriteLock f12635c = new ReentrantReadWriteLock();
 
     /* loaded from: source-8303388-dex2jar.jar:com/opos/mobad/l/o$a.class */
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private int f26324a;
+        private int f12636a;
         private Map<Integer, Set<Integer>> b = new HashMap();
 
         public a(int i) {
-            this.f26324a = i;
+            this.f12636a = i;
         }
 
         public a a(int i, int i2) {
@@ -63,7 +63,7 @@ public class o {
         }
 
         public o a() {
-            return new o(this.f26324a, this.b);
+            return new o(this.f12636a, this.b);
         }
     }
 
@@ -97,11 +97,11 @@ public class o {
         if (map == null || map.isEmpty()) {
             return;
         }
-        this.f26322a = new HashMap();
+        this.f12634a = new HashMap();
         for (Integer num : map.keySet()) {
             Set<Integer> set = map.get(num);
             if (set != null && !set.isEmpty()) {
-                this.f26322a.put(num, new HashSet(map.get(num)));
+                this.f12634a.put(num, new HashSet(map.get(num)));
             }
         }
     }
@@ -111,12 +111,12 @@ public class o {
 
     private boolean b(int i, int i2) {
         String str;
-        Map<Integer, Set<Integer>> map = this.f26322a;
+        Map<Integer, Set<Integer>> map = this.f12634a;
         if (map == null) {
             str = "checkEnable but mController = null";
         } else if (!map.containsKey(Integer.valueOf(i))) {
             str = "checkEnable but error current state:" + i;
-        } else if (this.f26322a.get(Integer.valueOf(i)).contains(Integer.valueOf(i2))) {
+        } else if (this.f12634a.get(Integer.valueOf(i)).contains(Integer.valueOf(i2))) {
             return true;
         } else {
             str = "checkEnable but error next state:" + i + ",to:" + i2;
@@ -132,25 +132,25 @@ public class o {
     public int a(int i) {
         a("changeToState:" + i);
         try {
-            this.f26323c.readLock().lock();
+            this.f12635c.readLock().lock();
             int i2 = this.b.get();
             if (i2 != i) {
                 int i3 = 3;
                 while (i3 > 0) {
                     if (!b(i2, i)) {
-                        this.f26323c.readLock().unlock();
+                        this.f12635c.readLock().unlock();
                         return i2;
                     } else if (!this.b.compareAndSet(i2, i)) {
                         i3--;
                         i2 = this.b.get();
                     }
                 }
-                this.f26323c.readLock().unlock();
+                this.f12635c.readLock().unlock();
                 return a(i, (Callable<Boolean>) null);
             }
             return i;
         } finally {
-            this.f26323c.readLock().unlock();
+            this.f12635c.readLock().unlock();
         }
     }
 
@@ -158,7 +158,7 @@ public class o {
         AtomicInteger atomicInteger;
         a("changeToStateFrom:" + i + ", to:" + i2 + ", mCurrentState:" + this.b.get());
         try {
-            this.f26323c.readLock().lock();
+            this.f12635c.readLock().lock();
             if (this.b.get() == i2) {
                 a("changeToStateFrom target equal mCurrentState:" + this.b);
             } else {
@@ -169,10 +169,10 @@ public class o {
                 }
                 i2 = atomicInteger.get();
             }
-            this.f26323c.readLock().unlock();
+            this.f12635c.readLock().unlock();
             return i2;
         } catch (Throwable th) {
-            this.f26323c.readLock().unlock();
+            this.f12635c.readLock().unlock();
             throw th;
         }
     }
@@ -182,7 +182,7 @@ public class o {
         String str;
         a("changeToStateBy:" + i + ", callable = " + callable + ", mCurrentState:" + this.b.get());
         try {
-            this.f26323c.writeLock().lock();
+            this.f12635c.writeLock().lock();
             int i2 = this.b.get();
             if (i2 == i) {
                 str = "changeToStateBy but now target:" + i;
@@ -196,7 +196,7 @@ public class o {
                 } else {
                     a2 = a(i2, i, callable);
                 }
-                this.f26323c.writeLock().unlock();
+                this.f12635c.writeLock().unlock();
                 return a2;
             } else {
                 str = "changeToStateBy but target is not enable:" + i;
@@ -204,7 +204,7 @@ public class o {
             a(str);
             return i2;
         } finally {
-            this.f26323c.writeLock().unlock();
+            this.f12635c.writeLock().unlock();
         }
     }
 }

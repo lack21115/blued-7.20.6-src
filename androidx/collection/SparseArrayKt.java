@@ -12,50 +12,50 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-8756600-dex2jar.jar:androidx/collection/SparseArrayKt.class */
 public final class SparseArrayKt {
-    public static final <T> boolean contains(SparseArrayCompat<T> receiver$0, int i) {
-        Intrinsics.d(receiver$0, "receiver$0");
-        return receiver$0.containsKey(i);
+    public static final <T> boolean contains(SparseArrayCompat<T> sparseArrayCompat, int i) {
+        Intrinsics.d(sparseArrayCompat, "receiver$0");
+        return sparseArrayCompat.containsKey(i);
     }
 
-    public static final <T> void forEach(SparseArrayCompat<T> receiver$0, Function2<? super Integer, ? super T, Unit> action) {
-        Intrinsics.d(receiver$0, "receiver$0");
-        Intrinsics.d(action, "action");
-        int size = receiver$0.size();
+    public static final <T> void forEach(SparseArrayCompat<T> sparseArrayCompat, Function2<? super Integer, ? super T, Unit> function2) {
+        Intrinsics.d(sparseArrayCompat, "receiver$0");
+        Intrinsics.d(function2, "action");
+        int size = sparseArrayCompat.size();
         int i = 0;
         while (true) {
             int i2 = i;
             if (i2 >= size) {
                 return;
             }
-            action.invoke(Integer.valueOf(receiver$0.keyAt(i2)), receiver$0.valueAt(i2));
+            function2.invoke(Integer.valueOf(sparseArrayCompat.keyAt(i2)), sparseArrayCompat.valueAt(i2));
             i = i2 + 1;
         }
     }
 
-    public static final <T> T getOrDefault(SparseArrayCompat<T> receiver$0, int i, T t) {
-        Intrinsics.d(receiver$0, "receiver$0");
-        return receiver$0.get(i, t);
+    public static final <T> T getOrDefault(SparseArrayCompat<T> sparseArrayCompat, int i, T t) {
+        Intrinsics.d(sparseArrayCompat, "receiver$0");
+        return sparseArrayCompat.get(i, t);
     }
 
-    public static final <T> T getOrElse(SparseArrayCompat<T> receiver$0, int i, Function0<? extends T> defaultValue) {
-        Intrinsics.d(receiver$0, "receiver$0");
-        Intrinsics.d(defaultValue, "defaultValue");
-        T t = receiver$0.get(i);
-        return t != null ? t : defaultValue.invoke();
+    public static final <T> T getOrElse(SparseArrayCompat<T> sparseArrayCompat, int i, Function0<? extends T> function0) {
+        Intrinsics.d(sparseArrayCompat, "receiver$0");
+        Intrinsics.d(function0, "defaultValue");
+        T t = sparseArrayCompat.get(i);
+        return t != null ? t : (T) function0.invoke();
     }
 
-    public static final <T> int getSize(SparseArrayCompat<T> receiver$0) {
-        Intrinsics.d(receiver$0, "receiver$0");
-        return receiver$0.size();
+    public static final <T> int getSize(SparseArrayCompat<T> sparseArrayCompat) {
+        Intrinsics.d(sparseArrayCompat, "receiver$0");
+        return sparseArrayCompat.size();
     }
 
-    public static final <T> boolean isNotEmpty(SparseArrayCompat<T> receiver$0) {
-        Intrinsics.d(receiver$0, "receiver$0");
-        return !receiver$0.isEmpty();
+    public static final <T> boolean isNotEmpty(SparseArrayCompat<T> sparseArrayCompat) {
+        Intrinsics.d(sparseArrayCompat, "receiver$0");
+        return !sparseArrayCompat.isEmpty();
     }
 
-    public static final <T> IntIterator keyIterator(final SparseArrayCompat<T> receiver$0) {
-        Intrinsics.d(receiver$0, "receiver$0");
+    public static final <T> IntIterator keyIterator(final SparseArrayCompat<T> sparseArrayCompat) {
+        Intrinsics.d(sparseArrayCompat, "receiver$0");
         return new IntIterator() { // from class: androidx.collection.SparseArrayKt$keyIterator$1
             private int b;
 
@@ -63,17 +63,15 @@ public final class SparseArrayKt {
                 return this.b;
             }
 
-            @Override // java.util.Iterator
             public boolean hasNext() {
-                return this.b < receiver$0.size();
+                return this.b < sparseArrayCompat.size();
             }
 
-            @Override // kotlin.collections.IntIterator
             public int nextInt() {
-                SparseArrayCompat sparseArrayCompat = receiver$0;
+                SparseArrayCompat sparseArrayCompat2 = sparseArrayCompat;
                 int i = this.b;
                 this.b = i + 1;
-                return sparseArrayCompat.keyAt(i);
+                return sparseArrayCompat2.keyAt(i);
             }
 
             public final void setIndex(int i) {
@@ -82,28 +80,28 @@ public final class SparseArrayKt {
         };
     }
 
-    public static final <T> SparseArrayCompat<T> plus(SparseArrayCompat<T> receiver$0, SparseArrayCompat<T> other) {
-        Intrinsics.d(receiver$0, "receiver$0");
-        Intrinsics.d(other, "other");
-        SparseArrayCompat<T> sparseArrayCompat = new SparseArrayCompat<>(receiver$0.size() + other.size());
-        sparseArrayCompat.putAll(receiver$0);
-        sparseArrayCompat.putAll(other);
-        return sparseArrayCompat;
+    public static final <T> SparseArrayCompat<T> plus(SparseArrayCompat<T> sparseArrayCompat, SparseArrayCompat<T> sparseArrayCompat2) {
+        Intrinsics.d(sparseArrayCompat, "receiver$0");
+        Intrinsics.d(sparseArrayCompat2, "other");
+        SparseArrayCompat<T> sparseArrayCompat3 = new SparseArrayCompat<>(sparseArrayCompat.size() + sparseArrayCompat2.size());
+        sparseArrayCompat3.putAll(sparseArrayCompat);
+        sparseArrayCompat3.putAll(sparseArrayCompat2);
+        return sparseArrayCompat3;
     }
 
     @Deprecated
-    public static final <T> boolean remove(SparseArrayCompat<T> receiver$0, int i, T t) {
-        Intrinsics.d(receiver$0, "receiver$0");
-        return receiver$0.remove(i, t);
+    public static final <T> boolean remove(SparseArrayCompat<T> sparseArrayCompat, int i, T t) {
+        Intrinsics.d(sparseArrayCompat, "receiver$0");
+        return sparseArrayCompat.remove(i, t);
     }
 
-    public static final <T> void set(SparseArrayCompat<T> receiver$0, int i, T t) {
-        Intrinsics.d(receiver$0, "receiver$0");
-        receiver$0.put(i, t);
+    public static final <T> void set(SparseArrayCompat<T> sparseArrayCompat, int i, T t) {
+        Intrinsics.d(sparseArrayCompat, "receiver$0");
+        sparseArrayCompat.put(i, t);
     }
 
-    public static final <T> Iterator<T> valueIterator(SparseArrayCompat<T> receiver$0) {
-        Intrinsics.d(receiver$0, "receiver$0");
-        return new SparseArrayKt$valueIterator$1(receiver$0);
+    public static final <T> Iterator<T> valueIterator(SparseArrayCompat<T> sparseArrayCompat) {
+        Intrinsics.d(sparseArrayCompat, "receiver$0");
+        return new SparseArrayKt$valueIterator$1(sparseArrayCompat);
     }
 }

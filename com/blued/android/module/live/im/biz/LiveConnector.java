@@ -26,26 +26,26 @@ public final class LiveConnector extends BaseConnector {
     @Override // com.blued.android.module.im.grpc.BaseConnector
     public Any a(Any any) throws Exception {
         if (any.is(LiveConnect.LiveBasePackage.class)) {
-            LiveConnect.LiveBasePackage liveBasePackage = (LiveConnect.LiveBasePackage) any.unpack(LiveConnect.LiveBasePackage.class);
-            if (liveBasePackage.getNeedAck()) {
-                LiveConnect.LiveBasePackageAck build = LiveConnect.LiveBasePackageAck.newBuilder().setPackageId(liveBasePackage.getPackageId()).build();
+            LiveConnect.LiveBasePackage unpack = any.unpack(LiveConnect.LiveBasePackage.class);
+            if (unpack.getNeedAck()) {
+                LiveConnect.LiveBasePackageAck m4715build = LiveConnect.LiveBasePackageAck.newBuilder().setPackageId(unpack.getPackageId()).m4715build();
                 if (LiveIMConfig.b()) {
-                    LiveIMConfig.a().b(">> sendAck : ", build);
+                    LiveIMConfig.a().b(">> sendAck : ", m4715build);
                 }
-                b(Any.pack(build));
+                b(Any.pack(m4715build));
             }
-            return liveBasePackage.getBody();
+            return unpack.getBody();
         }
         return null;
     }
 
     public void a(String str, String str2, String str3, String str4) {
         try {
-            LiveConnect.LiveSetting build = LiveConnect.LiveSetting.newBuilder().setAppVersion(Utils.b(str)).setPlatform(Utils.b(str2)).setLanguage(Utils.b(str3)).setOsVersion(Utils.b(Build.VERSION.RELEASE)).setDevice(Utils.b(DeviceUtils.a())).setChannel(Utils.b(str4)).build();
+            LiveConnect.LiveSetting m4762build = LiveConnect.LiveSetting.newBuilder().setAppVersion(Utils.b(str)).setPlatform(Utils.b(str2)).setLanguage(Utils.b(str3)).setOsVersion(Utils.b(Build.VERSION.RELEASE)).setDevice(Utils.b(DeviceUtils.a())).setChannel(Utils.b(str4)).m4762build();
             if (LiveIMConfig.b()) {
-                LiveIMConfig.a().b(">> sendSetting : ", build);
+                LiveIMConfig.a().b(">> sendSetting : ", m4762build);
             }
-            b(Any.pack(build));
+            b(Any.pack(m4762build));
         } catch (Exception e) {
             e.printStackTrace();
         }

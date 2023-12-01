@@ -4,10 +4,10 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.viewpager.widget.ViewPager;
 import com.blued.android.module.live_china.R;
 import com.blued.android.module.live_china.adapter.LiveMedalVpAdapter;
 import com.blued.android.module.live_china.databinding.DialogLiveMedalDetailBinding;
@@ -27,13 +27,9 @@ import kotlin.jvm.internal.Ref;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveMedalDetailDialogFragment.class */
 public final class LiveMedalDetailDialogFragment extends LiveCurBaseDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f13051a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private boolean b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final Lazy f13052c;
+    private final Lazy c;
     private int d;
     private final Lazy e;
     private final ArrayList<Fragment> f;
@@ -60,7 +56,7 @@ public final class LiveMedalDetailDialogFragment extends LiveCurBaseDialogFragme
     }
 
     public LiveMedalDetailDialogFragment() {
-        this.f13052c = LazyKt.a(LazyThreadSafetyMode.NONE, new Function0<DialogLiveMedalDetailBinding>() { // from class: com.blued.android.module.live_china.fragment.LiveMedalDetailDialogFragment$viewBinding$2
+        this.c = LazyKt.a(LazyThreadSafetyMode.NONE, new Function0<DialogLiveMedalDetailBinding>() { // from class: com.blued.android.module.live_china.fragment.LiveMedalDetailDialogFragment$viewBinding$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(0);
@@ -122,7 +118,7 @@ public final class LiveMedalDetailDialogFragment extends LiveCurBaseDialogFragme
     public static final void a(DialogLiveMedalDetailBinding it, Ref.IntRef curItem) {
         Intrinsics.e(it, "$it");
         Intrinsics.e(curItem, "$curItem");
-        it.e.setCurrentItem(curItem.f42543a, false);
+        it.e.setCurrentItem(curItem.a, false);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -138,7 +134,7 @@ public final class LiveMedalDetailDialogFragment extends LiveCurBaseDialogFragme
         Intrinsics.e(it, "$it");
         int action = motionEvent.getAction();
         if (action == 0) {
-            actionDownX.f42542a = motionEvent.getX();
+            actionDownX.a = motionEvent.getX();
             return false;
         } else if (action != 1) {
             return false;
@@ -146,21 +142,21 @@ public final class LiveMedalDetailDialogFragment extends LiveCurBaseDialogFragme
             int currentItem = it.e.getCurrentItem();
             if (currentItem == 0 || currentItem == i - 1) {
                 float x = motionEvent.getX();
-                if (Math.abs(x - actionDownX.f42542a) > i2) {
-                    if (x - actionDownX.f42542a > 0.0f && currentItem != (i3 = i - 1)) {
+                if (Math.abs(x - actionDownX.a) > i2) {
+                    if (x - actionDownX.a > 0.0f && currentItem != (i3 = i - 1)) {
                         it.e.setCurrentItem(i3, false);
                         return false;
-                    } else if (x - actionDownX.f42542a >= 0.0f || currentItem == 0) {
+                    } else if (x - actionDownX.a >= 0.0f || currentItem == 0) {
                         return false;
                     } else {
                         final Ref.IntRef intRef = new Ref.IntRef();
-                        intRef.f42543a = it.e.getCurrentItem();
-                        intRef.f42543a++;
-                        int i4 = intRef.f42543a;
-                        ViewPager viewPager = it.e;
-                        Intrinsics.c(viewPager, "it.vpMedalDetail");
-                        if (i4 > viewPager.getChildCount() - 1) {
-                            intRef.f42543a = 0;
+                        intRef.a = it.e.getCurrentItem();
+                        intRef.a++;
+                        int i4 = intRef.a;
+                        ViewGroup viewGroup = it.e;
+                        Intrinsics.c(viewGroup, "it.vpMedalDetail");
+                        if (i4 > viewGroup.getChildCount() - 1) {
+                            intRef.a = 0;
                         }
                         it.e.post(new Runnable() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveMedalDetailDialogFragment$tPr7X4cpp_qXWd6Ku9kt3aNgz2M
                             @Override // java.lang.Runnable
@@ -189,7 +185,7 @@ public final class LiveMedalDetailDialogFragment extends LiveCurBaseDialogFragme
     }
 
     private final DialogLiveMedalDetailBinding j() {
-        return (DialogLiveMedalDetailBinding) this.f13052c.getValue();
+        return (DialogLiveMedalDetailBinding) this.c.getValue();
     }
 
     private final ArrayList<LiveMedalItemData> k() {
@@ -232,7 +228,7 @@ public final class LiveMedalDetailDialogFragment extends LiveCurBaseDialogFragme
                 final DialogLiveMedalDetailBinding j = j();
                 j.e.setOffscreenPageLimit(1);
                 j.e.setAdapter(l());
-                j.f11784a.setViewPager(j.e);
+                j.a.setViewPager(j.e);
                 j.e.setCurrentItem(this.d, false);
                 final int size = this.g.size();
                 j.b.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveMedalDetailDialogFragment$UFWdNdhWN1eK6oVjshixLYfIS8A
@@ -247,7 +243,7 @@ public final class LiveMedalDetailDialogFragment extends LiveCurBaseDialogFragme
                         LiveMedalDetailDialogFragment.b(DialogLiveMedalDetailBinding.this, size, view);
                     }
                 });
-                j.f11785c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveMedalDetailDialogFragment$gl5sk26w8TY1DbPK671Gdak-294
+                j.c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveMedalDetailDialogFragment$gl5sk26w8TY1DbPK671Gdak-294
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
                         LiveMedalDetailDialogFragment.a(LiveMedalDetailDialogFragment.this, view);
@@ -275,7 +271,7 @@ public final class LiveMedalDetailDialogFragment extends LiveCurBaseDialogFragme
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         i();

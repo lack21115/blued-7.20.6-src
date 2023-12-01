@@ -10,13 +10,9 @@ import okio.Timeout;
 
 /* loaded from: source-3503164-dex2jar.jar:okhttp3/internal/ws/WebSocketWriter.class */
 final class WebSocketWriter {
-
-    /* renamed from: a  reason: collision with root package name */
-    final boolean f43996a;
+    final boolean a;
     final Random b;
-
-    /* renamed from: c  reason: collision with root package name */
-    final BufferedSink f43997c;
+    final BufferedSink c;
     final Buffer d;
     boolean e;
     final Buffer f = new Buffer();
@@ -27,13 +23,9 @@ final class WebSocketWriter {
 
     /* loaded from: source-3503164-dex2jar.jar:okhttp3/internal/ws/WebSocketWriter$FrameSink.class */
     final class FrameSink implements Sink {
-
-        /* renamed from: a  reason: collision with root package name */
-        int f43998a;
+        int a;
         long b;
-
-        /* renamed from: c  reason: collision with root package name */
-        boolean f43999c;
+        boolean c;
         boolean d;
 
         FrameSink() {
@@ -45,7 +37,7 @@ final class WebSocketWriter {
                 throw new IOException("closed");
             }
             WebSocketWriter webSocketWriter = WebSocketWriter.this;
-            webSocketWriter.a(this.f43998a, webSocketWriter.f.size(), this.f43999c, true);
+            webSocketWriter.a(this.a, webSocketWriter.f.size(), this.c, true);
             this.d = true;
             WebSocketWriter.this.h = false;
         }
@@ -56,13 +48,13 @@ final class WebSocketWriter {
                 throw new IOException("closed");
             }
             WebSocketWriter webSocketWriter = WebSocketWriter.this;
-            webSocketWriter.a(this.f43998a, webSocketWriter.f.size(), this.f43999c, false);
-            this.f43999c = false;
+            webSocketWriter.a(this.a, webSocketWriter.f.size(), this.c, false);
+            this.c = false;
         }
 
         @Override // okio.Sink
         public Timeout timeout() {
-            return WebSocketWriter.this.f43997c.timeout();
+            return WebSocketWriter.this.c.timeout();
         }
 
         @Override // okio.Sink
@@ -71,13 +63,13 @@ final class WebSocketWriter {
                 throw new IOException("closed");
             }
             WebSocketWriter.this.f.write(buffer, j);
-            boolean z = this.f43999c && this.b != -1 && WebSocketWriter.this.f.size() > this.b - 8192;
+            boolean z = this.c && this.b != -1 && WebSocketWriter.this.f.size() > this.b - 8192;
             long completeSegmentByteCount = WebSocketWriter.this.f.completeSegmentByteCount();
             if (completeSegmentByteCount <= 0 || z) {
                 return;
             }
-            WebSocketWriter.this.a(this.f43998a, completeSegmentByteCount, this.f43999c, false);
-            this.f43999c = false;
+            WebSocketWriter.this.a(this.a, completeSegmentByteCount, this.c, false);
+            this.c = false;
         }
     }
 
@@ -89,8 +81,8 @@ final class WebSocketWriter {
         if (random == null) {
             throw new NullPointerException("random == null");
         }
-        this.f43996a = z;
-        this.f43997c = bufferedSink;
+        this.a = z;
+        this.c = bufferedSink;
         this.d = bufferedSink.buffer();
         this.b = random;
         this.i = z ? new byte[4] : null;
@@ -106,7 +98,7 @@ final class WebSocketWriter {
             throw new IllegalArgumentException("Payload size must be less than or equal to 125");
         }
         this.d.writeByte(i | 128);
-        if (this.f43996a) {
+        if (this.a) {
             this.d.writeByte(size | 128);
             this.b.nextBytes(this.i);
             this.d.write(this.i);
@@ -122,7 +114,7 @@ final class WebSocketWriter {
             this.d.writeByte(size);
             this.d.write(byteString);
         }
-        this.f43997c.flush();
+        this.c.flush();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -131,9 +123,9 @@ final class WebSocketWriter {
             throw new IllegalStateException("Another message writer is active. Did you call close()?");
         }
         this.h = true;
-        this.g.f43998a = i;
+        this.g.a = i;
         this.g.b = j;
-        this.g.f43999c = true;
+        this.g.c = true;
         this.g.d = false;
         return this.g;
     }
@@ -151,7 +143,7 @@ final class WebSocketWriter {
         }
         this.d.writeByte(i2);
         int i3 = 0;
-        if (this.f43996a) {
+        if (this.a) {
             i3 = 128;
         }
         if (j <= 125) {
@@ -163,7 +155,7 @@ final class WebSocketWriter {
             this.d.writeByte(i3 | 127);
             this.d.writeLong(j);
         }
-        if (this.f43996a) {
+        if (this.a) {
             this.b.nextBytes(this.i);
             this.d.write(this.i);
             if (j > 0) {
@@ -177,7 +169,7 @@ final class WebSocketWriter {
         } else {
             this.d.write(this.f, j);
         }
-        this.f43997c.emit();
+        this.c.emit();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

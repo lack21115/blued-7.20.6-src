@@ -31,15 +31,13 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fitem/randomgift/FitemRandomGiftLove.class */
 public final class FitemRandomGiftLove extends FreedomItem {
     private RandomGiftDialogTopModel b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final ArrayList<FitemRandomGiftLoveItem> f12688c;
+    private final ArrayList<FitemRandomGiftLoveItem> c;
     private FreedomAdapter d;
 
     public FitemRandomGiftLove(RandomGiftDialogTopModel model) {
         Intrinsics.e(model, "model");
         this.b = model;
-        this.f12688c = new ArrayList<>();
+        this.c = new ArrayList<>();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -59,16 +57,16 @@ public final class FitemRandomGiftLove extends FreedomItem {
         Intrinsics.e(vh, "$vh");
         RandomGiftDialogTopModel randomGiftDialogTopModel = this$0.b;
         randomGiftDialogTopModel.setExpand(!randomGiftDialogTopModel.isExpand());
-        View a2 = vh.a(R.id.iv_expand);
+        View a = vh.a(R.id.iv_expand);
         if (this$0.b.isExpand()) {
             EventTrackLive.a(LiveProtos.Event.LIVE_USER_RANDOM_GIFT_PAGE_OPEN_CLICK, LiveRoomManager.a().e(), LiveRoomManager.a().g());
-            a2.setRotation(0.0f);
-            a2.animate().rotation(180.0f).setDuration(150L).start();
+            a.setRotation(0.0f);
+            a.animate().rotation(180.0f).setDuration(150L).start();
             vh.a(R.id.tv_expand, (CharSequence) AppInfo.d().getString(R.string.live_random_gift_love_close));
         } else {
             EventTrackLive.a(LiveProtos.Event.LIVE_USER_RANDOM_GIFT_PAGE_CLOSE_CLICK, LiveRoomManager.a().e(), LiveRoomManager.a().g());
-            a2.setRotation(180.0f);
-            a2.animate().rotation(360.0f).setDuration(150L).start();
+            a.setRotation(180.0f);
+            a.animate().rotation(360.0f).setDuration(150L).start();
             vh.a(R.id.tv_expand, (CharSequence) AppInfo.d().getString(R.string.live_random_gift_love_expand));
         }
         this$0.f();
@@ -76,24 +74,24 @@ public final class FitemRandomGiftLove extends FreedomItem {
 
     private final void f() {
         int i;
-        final RecyclerView recyclerView = (RecyclerView) this.f10935a.a(R.id.rv_list);
-        recyclerView.animate().alpha(0.0f).setDuration(150L).setStartDelay(100L).start();
+        final RecyclerView a = this.a.a(R.id.rv_list);
+        a.animate().alpha(0.0f).setDuration(150L).setStartDelay(100L).start();
         if (this.b.isExpand()) {
-            int size = this.f12688c.size() / 4;
+            int size = this.c.size() / 4;
             i = size;
-            if (this.f12688c.size() % 4 > 0) {
+            if (this.c.size() % 4 > 0) {
                 i = size + 1;
             }
         } else {
             i = 1;
         }
-        ValueAnimator animLiveActivityLp = ValueAnimator.ofInt(recyclerView.getLayoutParams().height, DisplayUtil.a(AppInfo.d(), 116.0f) * i);
+        ValueAnimator animLiveActivityLp = ValueAnimator.ofInt(a.getLayoutParams().height, DisplayUtil.a(AppInfo.d(), 116.0f) * i);
         animLiveActivityLp.setDuration(250L);
         animLiveActivityLp.setInterpolator(new DecelerateInterpolator(1.5f));
         animLiveActivityLp.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.blued.android.module.live_china.fitem.randomgift.-$$Lambda$FitemRandomGiftLove$ApSaK2lFkAWIzikepa1N1GDJqh8
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                FitemRandomGiftLove.a(RecyclerView.this, valueAnimator);
+                FitemRandomGiftLove.a(a, valueAnimator);
             }
         });
         Intrinsics.c(animLiveActivityLp, "animLiveActivityLp");
@@ -112,20 +110,20 @@ public final class FitemRandomGiftLove extends FreedomItem {
                 FreedomAdapter freedomAdapter4;
                 Intrinsics.e(animator, "animator");
                 int a2 = DisplayUtil.a(AppInfo.d(), FitemRandomGiftLove.this.e().isExpand() ? 6.5f : 14.5f);
-                recyclerView.setPadding(a2, 0, a2, 0);
+                a.setPadding(a2, 0, a2, 0);
                 if (FitemRandomGiftLove.this.e().isExpand()) {
-                    recyclerView.setLayoutManager(new GridLayoutManager(FitemRandomGiftLove.this.f10935a.f10931a.b, 4));
+                    a.setLayoutManager(new GridLayoutManager(FitemRandomGiftLove.this.a.a.b, 4));
                 } else {
-                    LinearLayoutManager linearLayoutManager = new LinearLayoutManager(FitemRandomGiftLove.this.f10935a.f10931a.b);
+                    RecyclerView.LayoutManager linearLayoutManager = new LinearLayoutManager(FitemRandomGiftLove.this.a.a.b);
                     linearLayoutManager.setOrientation(0);
-                    recyclerView.setLayoutManager(linearLayoutManager);
+                    a.setLayoutManager(linearLayoutManager);
                 }
                 FitemRandomGiftLove fitemRandomGiftLove = FitemRandomGiftLove.this;
-                Context context = fitemRandomGiftLove.f10935a.f10931a.b;
-                IRequestHost iRequestHost = FitemRandomGiftLove.this.f10935a.b;
-                arrayList = FitemRandomGiftLove.this.f12688c;
+                Context context = fitemRandomGiftLove.a.a.b;
+                IRequestHost iRequestHost = FitemRandomGiftLove.this.a.b;
+                arrayList = FitemRandomGiftLove.this.c;
                 fitemRandomGiftLove.d = new FreedomAdapter(context, iRequestHost, arrayList);
-                recyclerView.setItemAnimator(new DefaultItemAnimator());
+                a.setItemAnimator(new DefaultItemAnimator());
                 freedomAdapter = FitemRandomGiftLove.this.d;
                 if (freedomAdapter != null) {
                     freedomAdapter.b("highlight", FitemRandomGiftLove.this.e().getLight_apng());
@@ -138,10 +136,10 @@ public final class FitemRandomGiftLove extends FreedomItem {
                 if (freedomAdapter3 != null) {
                     freedomAdapter3.b("full_times", Integer.valueOf(FitemRandomGiftLove.this.e().getFull_times()));
                 }
-                RecyclerView recyclerView2 = recyclerView;
+                RecyclerView recyclerView = a;
                 freedomAdapter4 = FitemRandomGiftLove.this.d;
-                recyclerView2.setAdapter(freedomAdapter4);
-                recyclerView.animate().alpha(1.0f).setDuration(150L).setStartDelay(0L).start();
+                recyclerView.setAdapter(freedomAdapter4);
+                a.animate().alpha(1.0f).setDuration(150L).setStartDelay(0L).start();
             }
 
             @Override // android.animation.Animator.AnimatorListener
@@ -170,11 +168,11 @@ public final class FitemRandomGiftLove extends FreedomItem {
         if (list2 == null) {
             return;
         }
-        this.f12688c.clear();
+        this.c.clear();
         ArrayList<RandomGiftItemModel> list3 = e().getList();
         if (list3 != null) {
             for (RandomGiftItemModel randomGiftItemModel : list3) {
-                this.f12688c.add(new FitemRandomGiftLoveItem(randomGiftItemModel));
+                this.c.add(new FitemRandomGiftLoveItem(randomGiftItemModel));
             }
         }
         f();

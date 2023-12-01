@@ -6,11 +6,11 @@ import java.util.HashMap;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final HashMap<String, Class<?>> f23966a = new HashMap<>();
+    private static final HashMap<String, Class<?>> f10355a = new HashMap<>();
     private Class<?> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f23967c;
+    private String f10356c;
     private Object d;
 
     private a(Object obj) {
@@ -18,7 +18,7 @@ public class a {
     }
 
     private a(String str) {
-        this.f23967c = str;
+        this.f10356c = str;
     }
 
     public static a a(Object obj) {
@@ -47,11 +47,11 @@ public class a {
         if (obj != null) {
             return obj.getClass();
         }
-        Class<?> cls2 = f23966a.get(this.f23967c);
+        Class<?> cls2 = f10355a.get(this.f10356c);
         Class<?> cls3 = cls2;
         if (cls2 == null) {
-            cls3 = Class.forName(this.f23967c);
-            f23966a.put(this.f23967c, cls3);
+            cls3 = Class.forName(this.f10356c);
+            f10355a.put(this.f10356c, cls3);
         }
         return cls3;
     }

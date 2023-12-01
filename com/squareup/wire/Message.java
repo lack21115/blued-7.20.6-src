@@ -1,5 +1,6 @@
 package com.squareup.wire;
 
+import android.app.Instrumentation;
 import com.squareup.wire.Message;
 import com.squareup.wire.Message.Builder;
 import java.io.IOException;
@@ -32,7 +33,7 @@ public abstract class Message<M extends Message<M, B>, B extends Builder<M, B>> 
 
         private final void prepareForNewUnknownFields() {
             if (this.unknownFieldsBuffer == null) {
-                Buffer buffer = new Buffer();
+                BufferedSink buffer = new Buffer();
                 this.unknownFieldsBuffer = buffer;
                 Intrinsics.a(buffer);
                 ProtoWriter protoWriter = new ProtoWriter(buffer);
@@ -54,14 +55,14 @@ public abstract class Message<M extends Message<M, B>, B extends Builder<M, B>> 
             return builder;
         }
 
-        public final Builder<M, B> addUnknownFields(ByteString unknownFields) {
-            Intrinsics.e(unknownFields, "unknownFields");
+        public final Builder<M, B> addUnknownFields(ByteString byteString) {
+            Intrinsics.e(byteString, "unknownFields");
             Builder<M, B> builder = this;
-            if (unknownFields.size() > 0) {
+            if (byteString.size() > 0) {
                 builder.prepareForNewUnknownFields();
                 ProtoWriter unknownFieldsWriter$wire_runtime = builder.getUnknownFieldsWriter$wire_runtime();
                 Intrinsics.a(unknownFieldsWriter$wire_runtime);
-                unknownFieldsWriter$wire_runtime.writeBytes(unknownFields);
+                unknownFieldsWriter$wire_runtime.writeBytes(byteString);
             }
             return builder;
         }
@@ -129,25 +130,25 @@ public abstract class Message<M extends Message<M, B>, B extends Builder<M, B>> 
         }
     }
 
-    public Message(ProtoAdapter<M> adapter, ByteString unknownFields) {
-        Intrinsics.e(adapter, "adapter");
-        Intrinsics.e(unknownFields, "unknownFields");
-        this.adapter = adapter;
-        this.unknownFields = unknownFields;
+    public Message(ProtoAdapter<M> protoAdapter, ByteString byteString) {
+        Intrinsics.e(protoAdapter, "adapter");
+        Intrinsics.e(byteString, "unknownFields");
+        this.adapter = protoAdapter;
+        this.unknownFields = byteString;
     }
 
     public final ProtoAdapter<M> adapter() {
         return this.adapter;
     }
 
-    public final void encode(OutputStream stream) throws IOException {
-        Intrinsics.e(stream, "stream");
-        this.adapter.encode(stream, (OutputStream) this);
+    public final void encode(OutputStream outputStream) throws IOException {
+        Intrinsics.e(outputStream, Instrumentation.REPORT_KEY_STREAMRESULT);
+        this.adapter.encode(outputStream, (OutputStream) this);
     }
 
-    public final void encode(BufferedSink sink) throws IOException {
-        Intrinsics.e(sink, "sink");
-        this.adapter.encode(sink, (BufferedSink) this);
+    public final void encode(BufferedSink bufferedSink) throws IOException {
+        Intrinsics.e(bufferedSink, "sink");
+        this.adapter.encode(bufferedSink, (BufferedSink) this);
     }
 
     public final byte[] encode() {

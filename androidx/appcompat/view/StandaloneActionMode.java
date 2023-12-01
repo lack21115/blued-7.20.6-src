@@ -16,20 +16,20 @@ import java.lang.ref.WeakReference;
 public class StandaloneActionMode extends ActionMode implements MenuBuilder.Callback {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f1637a;
+    private Context f1589a;
     private ActionBarContextView b;
 
     /* renamed from: c  reason: collision with root package name */
-    private ActionMode.Callback f1638c;
+    private ActionMode.Callback f1590c;
     private WeakReference<View> d;
     private boolean e;
     private boolean f;
     private MenuBuilder g;
 
     public StandaloneActionMode(Context context, ActionBarContextView actionBarContextView, ActionMode.Callback callback, boolean z) {
-        this.f1637a = context;
+        this.f1589a = context;
         this.b = actionBarContextView;
-        this.f1638c = callback;
+        this.f1590c = callback;
         MenuBuilder defaultShowAsAction = new MenuBuilder(actionBarContextView.getContext()).setDefaultShowAsAction(1);
         this.g = defaultShowAsAction;
         defaultShowAsAction.setCallback(this);
@@ -42,7 +42,7 @@ public class StandaloneActionMode extends ActionMode implements MenuBuilder.Call
             return;
         }
         this.e = true;
-        this.f1638c.onDestroyActionMode(this);
+        this.f1590c.onDestroyActionMode(this);
     }
 
     @Override // androidx.appcompat.view.ActionMode
@@ -76,7 +76,7 @@ public class StandaloneActionMode extends ActionMode implements MenuBuilder.Call
 
     @Override // androidx.appcompat.view.ActionMode
     public void invalidate() {
-        this.f1638c.onPrepareActionMode(this, this.g);
+        this.f1590c.onPrepareActionMode(this, this.g);
     }
 
     @Override // androidx.appcompat.view.ActionMode
@@ -97,7 +97,7 @@ public class StandaloneActionMode extends ActionMode implements MenuBuilder.Call
 
     @Override // androidx.appcompat.view.menu.MenuBuilder.Callback
     public boolean onMenuItemSelected(MenuBuilder menuBuilder, MenuItem menuItem) {
-        return this.f1638c.onActionItemClicked(this, menuItem);
+        return this.f1590c.onActionItemClicked(this, menuItem);
     }
 
     @Override // androidx.appcompat.view.menu.MenuBuilder.Callback
@@ -122,7 +122,7 @@ public class StandaloneActionMode extends ActionMode implements MenuBuilder.Call
 
     @Override // androidx.appcompat.view.ActionMode
     public void setSubtitle(int i) {
-        setSubtitle(this.f1637a.getString(i));
+        setSubtitle(this.f1589a.getString(i));
     }
 
     @Override // androidx.appcompat.view.ActionMode
@@ -132,7 +132,7 @@ public class StandaloneActionMode extends ActionMode implements MenuBuilder.Call
 
     @Override // androidx.appcompat.view.ActionMode
     public void setTitle(int i) {
-        setTitle(this.f1637a.getString(i));
+        setTitle(this.f1589a.getString(i));
     }
 
     @Override // androidx.appcompat.view.ActionMode

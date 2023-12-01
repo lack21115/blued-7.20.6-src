@@ -8,17 +8,17 @@ import java.text.DecimalFormat;
 public class PercentFormatter extends ValueFormatter {
 
     /* renamed from: a  reason: collision with root package name */
-    public DecimalFormat f22145a = new DecimalFormat("###,###,##0.0");
+    public DecimalFormat f8538a = new DecimalFormat("###,###,##0.0");
     private PieChart b;
 
     @Override // com.github.mikephil.charting.formatter.ValueFormatter
     public String a(float f) {
-        return this.f22145a.format(f) + " %";
+        return this.f8538a.format(f) + " %";
     }
 
     @Override // com.github.mikephil.charting.formatter.ValueFormatter
     public String a(float f, PieEntry pieEntry) {
         PieChart pieChart = this.b;
-        return (pieChart == null || !pieChart.i()) ? this.f22145a.format(f) : a(f);
+        return (pieChart == null || !pieChart.i()) ? this.f8538a.format(f) : a(f);
     }
 }

@@ -24,24 +24,20 @@ public class IndoorData implements Parcelable {
             return a(i);
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f5659a;
+    private String a;
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f5660c;
+    private String c;
 
     protected IndoorData(Parcel parcel) {
-        this.f5659a = parcel.readString();
+        this.a = parcel.readString();
         this.b = parcel.readInt();
-        this.f5660c = parcel.readString();
+        this.c = parcel.readString();
     }
 
     public IndoorData(String str, int i, String str2) {
-        this.f5659a = str;
+        this.a = str;
         this.b = i;
-        this.f5660c = str2;
+        this.c = str2;
     }
 
     @Override // android.os.Parcelable
@@ -54,11 +50,11 @@ public class IndoorData implements Parcelable {
     }
 
     public String getFloorName() {
-        return this.f5660c;
+        return this.c;
     }
 
     public String getPoiId() {
-        return this.f5659a;
+        return this.a;
     }
 
     public void setFloor(int i) {
@@ -66,17 +62,17 @@ public class IndoorData implements Parcelable {
     }
 
     public void setFloorName(String str) {
-        this.f5660c = str;
+        this.c = str;
     }
 
     public void setPoiId(String str) {
-        this.f5659a = str;
+        this.a = str;
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.f5659a);
+        parcel.writeString(this.a);
         parcel.writeInt(this.b);
-        parcel.writeString(this.f5660c);
+        parcel.writeString(this.c);
     }
 }

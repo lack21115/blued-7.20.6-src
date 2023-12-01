@@ -28,10 +28,10 @@ public class t {
         String str8 = d.a(context).get(LogField.OS.toString());
         String str9 = d.a(context).get(LogField.UTDID.toString());
         String valueOf = String.valueOf(System.currentTimeMillis());
-        IRequestAuth a2 = com.alibaba.mtl.log.a.a();
+        IRequestAuth a = com.alibaba.mtl.log.a.a();
         String str10 = "0";
         Object obj = "1";
-        if (a2 instanceof SecurityRequestAuth) {
+        if (a instanceof SecurityRequestAuth) {
             obj = "0";
             str10 = "1";
         }
@@ -53,11 +53,11 @@ public class t {
             str4 = "";
         }
         sb.append(str4);
-        String sign = a2.getSign(j.b(sb.toString().getBytes()));
+        String sign = a.getSign(j.b(sb.toString().getBytes()));
         if (TextUtils.isEmpty(str2)) {
             str5 = "";
         } else {
-            str5 = str2 + "&";
+            str5 = str2 + com.alipay.sdk.sys.a.b;
         }
         return String.format("%s?%sak=%s&av=%s&c=%s&v=%s&s=%s&d=%s&sv=%s&p=%s&t=%s&u=%s&is=%s&k=%s", str, str5, e(appkey), e(str7), e(str6), e("3.0"), e(sign), e(str9), SdkMeta.SDK_VERSION, str8, valueOf, "", str10, obj);
     }
@@ -94,10 +94,10 @@ public class t {
         String str4 = d.a(context).get(LogField.OS.toString());
         String str5 = d.a(context).get(LogField.UTDID.toString());
         String valueOf = String.valueOf(System.currentTimeMillis());
-        IRequestAuth a2 = com.alibaba.mtl.log.a.a();
-        String str6 = a2 instanceof SecurityRequestAuth ? "1" : "0";
-        String sign = a2.getSign(j.b((appkey + str3 + str2 + str4 + str5 + SdkMeta.SDK_VERSION + valueOf + str6 + map.get("_b01n15") + map.get("_b01na")).getBytes()));
-        return str + "?ak=" + appkey + "&" + com.alipay.sdk.sys.a.k + "=" + str3 + "&c=" + URLEncoder.encode(str2) + "&d=" + str5 + "&sv=" + SdkMeta.SDK_VERSION + "&t=" + valueOf + "&is=" + str6 + "&_b01n15=" + map.get("_b01n15") + "&_b01na=" + map.get("_b01na") + "&s=" + sign;
+        IRequestAuth a = com.alibaba.mtl.log.a.a();
+        String str6 = a instanceof SecurityRequestAuth ? "1" : "0";
+        String sign = a.getSign(j.b((appkey + str3 + str2 + str4 + str5 + SdkMeta.SDK_VERSION + valueOf + str6 + map.get("_b01n15") + map.get("_b01na")).getBytes()));
+        return str + "?ak=" + appkey + com.alipay.sdk.sys.a.b + com.alipay.sdk.sys.a.k + "=" + str3 + com.alipay.sdk.sys.a.b + "c=" + URLEncoder.encode(str2) + com.alipay.sdk.sys.a.b + "d=" + str5 + com.alipay.sdk.sys.a.b + com.alipay.sdk.sys.a.h + "=" + SdkMeta.SDK_VERSION + com.alipay.sdk.sys.a.b + "t=" + valueOf + com.alipay.sdk.sys.a.b + "is=" + str6 + com.alipay.sdk.sys.a.b + "_b01n15=" + map.get("_b01n15") + com.alipay.sdk.sys.a.b + "_b01na=" + map.get("_b01na") + com.alipay.sdk.sys.a.b + "s=" + sign;
     }
 
     private static String e(String str) {

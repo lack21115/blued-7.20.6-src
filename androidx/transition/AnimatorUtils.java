@@ -5,11 +5,13 @@ import android.animation.AnimatorListenerAdapter;
 import android.os.Build;
 import java.util.ArrayList;
 
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8756600-dex2jar.jar:androidx/transition/AnimatorUtils.class */
-class AnimatorUtils {
+public class AnimatorUtils {
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8756600-dex2jar.jar:androidx/transition/AnimatorUtils$AnimatorPauseListenerCompat.class */
-    interface AnimatorPauseListenerCompat {
+    public interface AnimatorPauseListenerCompat {
         void onAnimationPause(Animator animator);
 
         void onAnimationResume(Animator animator);

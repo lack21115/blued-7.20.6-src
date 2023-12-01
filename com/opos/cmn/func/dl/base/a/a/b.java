@@ -4,19 +4,19 @@ package com.opos.cmn.func.dl.base.a.a;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Object f24881a = new Object();
+    private static final Object f11193a = new Object();
     private a b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f24882c;
+    private int f11194c;
 
     public final a a() {
-        synchronized (f24881a) {
+        synchronized (f11193a) {
             if (this.b != null) {
                 a aVar = this.b;
                 this.b = aVar.f;
                 aVar.f = null;
-                this.f24882c--;
+                this.f11194c--;
                 return aVar;
             }
             return new a();
@@ -28,15 +28,15 @@ public final class b {
             return;
         }
         aVar.d = 0L;
-        aVar.f24879a = 0;
+        aVar.f11191a = 0;
         aVar.b = 0;
-        aVar.f24880c = 0;
+        aVar.f11192c = 0;
         aVar.f = null;
-        synchronized (f24881a) {
-            if (this.f24882c < 100) {
+        synchronized (f11193a) {
+            if (this.f11194c < 100) {
                 aVar.f = this.b;
                 this.b = aVar;
-                this.f24882c++;
+                this.f11194c++;
             }
         }
     }

@@ -29,19 +29,19 @@ public class v {
     public static class b {
 
         /* renamed from: a  reason: collision with root package name */
-        public String f41236a;
+        public String f27545a;
 
         /* renamed from: a  reason: collision with other field name */
-        public boolean f163a;
+        public boolean f116a;
         public String b;
 
         /* renamed from: b  reason: collision with other field name */
-        public boolean f164b;
+        public boolean f117b;
 
         public b(String str, boolean z, boolean z2, String str2) {
-            this.f41236a = str;
-            this.f163a = z;
-            this.f164b = z2;
+            this.f27545a = str;
+            this.f116a = z;
+            this.f117b = z2;
             this.b = str2;
         }
     }
@@ -219,8 +219,8 @@ public class v {
                 ServiceInfo serviceInfo = serviceInfoArr[i2];
                 if (!TextUtils.isEmpty(serviceInfo.name) && hashMap2.containsKey(serviceInfo.name)) {
                     b bVar = (b) hashMap2.remove(serviceInfo.name);
-                    boolean z = bVar.f163a;
-                    boolean z2 = bVar.f164b;
+                    boolean z = bVar.f116a;
+                    boolean z2 = bVar.f117b;
                     String str = bVar.b;
                     if (z != serviceInfo.enabled) {
                         throw new a(String.format("<service android:name=\"%1$s\" .../> in AndroidManifest had the wrong enabled attribute, which should be android:enabled=%2$b.", serviceInfo.name, Boolean.valueOf(z)));

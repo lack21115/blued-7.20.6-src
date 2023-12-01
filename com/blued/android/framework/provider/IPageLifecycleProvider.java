@@ -5,9 +5,7 @@ import android.os.Bundle;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/framework/provider/IPageLifecycleProvider.class */
 public interface IPageLifecycleProvider {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final EmptyImpl f9838a = new EmptyImpl();
+    public static final EmptyImpl a = new EmptyImpl();
 
     /* loaded from: source-6737240-dex2jar.jar:com/blued/android/framework/provider/IPageLifecycleProvider$EmptyImpl.class */
     public static class EmptyImpl implements IPageLifecycleProvider {

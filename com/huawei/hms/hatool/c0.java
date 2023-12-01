@@ -4,11 +4,11 @@ package com.huawei.hms.hatool;
 public class c0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public int f22735a;
+    public int f9127a;
     public String b;
 
     public c0(int i, String str) {
-        this.f22735a = i;
+        this.f9127a = i;
         this.b = str;
     }
 
@@ -17,6 +17,6 @@ public class c0 {
     }
 
     public int b() {
-        return this.f22735a;
+        return this.f9127a;
     }
 }

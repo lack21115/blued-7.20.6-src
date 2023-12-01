@@ -16,7 +16,7 @@ import com.tencent.tauth.IUiListener;
 public class QQAvatar extends BaseApi {
 
     /* renamed from: a  reason: collision with root package name */
-    private IUiListener f36183a;
+    private IUiListener f22492a;
 
     public QQAvatar(QQToken qQToken) {
         super(qQToken);
@@ -32,7 +32,7 @@ public class QQAvatar extends BaseApi {
         a(bundle);
         intent.putExtra(Constants.KEY_ACTION, "action_avatar");
         intent.putExtra(Constants.KEY_PARAMS, bundle);
-        UIListenerManager.getInstance().setListenerWithRequestcode(Constants.REQUEST_AVATER, this.f36183a);
+        UIListenerManager.getInstance().setListenerWithRequestcode(Constants.REQUEST_AVATER, this.f22492a);
         startAssitActivity(activity, intent, Constants.REQUEST_AVATER);
     }
 
@@ -60,11 +60,11 @@ public class QQAvatar extends BaseApi {
     }
 
     public void setAvatar(Activity activity, Uri uri, IUiListener iUiListener, int i) {
-        IUiListener iUiListener2 = this.f36183a;
+        IUiListener iUiListener2 = this.f22492a;
         if (iUiListener2 != null) {
             iUiListener2.onCancel();
         }
-        this.f36183a = iUiListener;
+        this.f22492a = iUiListener;
         Bundle bundle = new Bundle();
         bundle.putString("picture", uri.toString());
         bundle.putInt("exitAnim", i);

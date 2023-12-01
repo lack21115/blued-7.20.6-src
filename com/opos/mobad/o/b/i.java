@@ -36,15 +36,15 @@ public class i extends b {
 
     @Override // com.opos.mobad.o.b.b
     protected void a() {
-        ImageView imageView = new ImageView(this.f27049a);
+        ImageView imageView = new ImageView(this.f13361a);
         imageView.setImageDrawable(new ColorDrawable(-16777216));
         imageView.setAlpha(0.4f);
-        this.f27050c.addView(imageView, new RelativeLayout.LayoutParams(-1, -1));
+        this.f13362c.addView(imageView, new RelativeLayout.LayoutParams(-1, -1));
     }
 
     @Override // com.opos.mobad.o.b.b
     protected void b() {
-        TextView textView = new TextView(this.f27049a);
+        TextView textView = new TextView(this.f13361a);
         this.e = textView;
         textView.setText("当前是数据网络，播放视频将消耗流量");
         int a2 = com.opos.mobad.cmn.a.b.g.a();
@@ -60,14 +60,14 @@ public class i extends b {
 
     @Override // com.opos.mobad.o.b.b
     protected void c() {
-        com.opos.cmn.e.a.a.a aVar = new com.opos.cmn.e.a.a.a(this.f27049a, R.drawable.native_video_bt);
+        com.opos.cmn.e.a.a.a aVar = new com.opos.cmn.e.a.a.a(this.f13361a, R.drawable.native_video_bt);
         this.f = aVar;
         aVar.setText("继续播放");
         this.f.setGravity(17);
         this.f.setTextSize(1, 14.0f);
         this.f.setTextColor(Color.parseColor("#2AD181"));
-        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(this.f27049a, 70.0f), com.opos.cmn.an.h.f.a.a(this.f27049a, 24.0f));
-        layoutParams.topMargin = com.opos.cmn.an.h.f.a.a(this.f27049a, 14.0f);
+        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(this.f13361a, 70.0f), com.opos.cmn.an.h.f.a.a(this.f13361a, 24.0f));
+        layoutParams.topMargin = com.opos.cmn.an.h.f.a.a(this.f13361a, 14.0f);
         layoutParams.addRule(3, h);
         layoutParams.addRule(14);
         this.d.addView(this.f, layoutParams);
@@ -75,6 +75,6 @@ public class i extends b {
     }
 
     public View d() {
-        return this.f27050c;
+        return this.f13362c;
     }
 }

@@ -86,7 +86,7 @@ public abstract class b implements f, Closeable {
     public void a(ChunkReader chunkReader) {
         if (this.auJ == 1 && !Bo().equals(chunkReader.Bj().awG)) {
             String str = "Bad first chunk: " + chunkReader.Bj().awG + " expected: " + Bo();
-            if (this.auO.f23928c < ErrorBehaviour.SUPER_LENIENT.f23928c) {
+            if (this.auO.f10317c < ErrorBehaviour.SUPER_LENIENT.f10317c) {
                 com.kwad.sdk.core.d.b.printStackTrace(new PngjException(str));
             } else {
                 com.kwad.sdk.core.d.b.d("PNG_ENCRYPT", str);
@@ -120,7 +120,7 @@ public abstract class b implements f, Closeable {
                 if (i4 <= i2) {
                     i2 = i4;
                 }
-                System.arraycopy((Object) bArr, i, (Object) this.auF, this.auG, i2);
+                System.arraycopy(bArr, i, this.auF, this.auG, i2);
                 int i5 = this.auG + i2;
                 this.auG = i5;
                 int i6 = i2 + 0;
@@ -146,7 +146,7 @@ public abstract class b implements f, Closeable {
             if (i7 <= i2) {
                 i2 = i7;
             }
-            System.arraycopy((Object) bArr, i, (Object) this.auF, this.auG, i2);
+            System.arraycopy(bArr, i, this.auF, this.auG, i2);
             int i8 = this.auG + i2;
             this.auG = i8;
             if (i8 == this.auE) {

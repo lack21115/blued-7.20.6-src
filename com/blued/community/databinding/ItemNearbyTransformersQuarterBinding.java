@@ -10,17 +10,13 @@ import com.blued.community.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/databinding/ItemNearbyTransformersQuarterBinding.class */
 public final class ItemNearbyTransformersQuarterBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ConstraintLayout f19013a;
+    public final ConstraintLayout a;
     public final TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final ConstraintLayout f19014c;
+    private final ConstraintLayout c;
 
     private ItemNearbyTransformersQuarterBinding(ConstraintLayout constraintLayout, ConstraintLayout constraintLayout2, TextView textView) {
-        this.f19014c = constraintLayout;
-        this.f19013a = constraintLayout2;
+        this.c = constraintLayout;
+        this.a = constraintLayout2;
         this.b = textView;
     }
 
@@ -38,11 +34,11 @@ public final class ItemNearbyTransformersQuarterBinding implements ViewBinding {
 
     public static ItemNearbyTransformersQuarterBinding a(View view) {
         String str;
-        ConstraintLayout constraintLayout = (ConstraintLayout) view.findViewById(R.id.root_layout);
-        if (constraintLayout != null) {
+        ConstraintLayout findViewById = view.findViewById(R.id.root_layout);
+        if (findViewById != null) {
             TextView textView = (TextView) view.findViewById(R.id.tv_title);
             if (textView != null) {
-                return new ItemNearbyTransformersQuarterBinding((ConstraintLayout) view, constraintLayout, textView);
+                return new ItemNearbyTransformersQuarterBinding((ConstraintLayout) view, findViewById, textView);
             }
             str = "tvTitle";
         } else {
@@ -51,9 +47,8 @@ public final class ItemNearbyTransformersQuarterBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f19014c;
+        return this.c;
     }
 }

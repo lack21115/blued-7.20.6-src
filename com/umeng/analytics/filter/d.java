@@ -12,18 +12,18 @@ public class d {
     private static final String b = "Ă";
 
     /* renamed from: c  reason: collision with root package name */
-    private MessageDigest f40608c;
+    private MessageDigest f26917c;
     private boolean e;
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f40607a = "MD5";
+    private final String f26916a = "MD5";
     private Set<Object> d = new HashSet();
 
     public d(boolean z, String str) {
         this.e = false;
         this.e = z;
         try {
-            this.f40608c = MessageDigest.getInstance("MD5");
+            this.f26917c = MessageDigest.getInstance("MD5");
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
@@ -55,8 +55,8 @@ public class d {
 
     private Integer c(String str) {
         try {
-            this.f40608c.update(str.getBytes());
-            byte[] digest = this.f40608c.digest();
+            this.f26917c.update(str.getBytes());
+            byte[] digest = this.f26917c.digest();
             return Integer.valueOf(((digest[0] & 255) << 24) + ((digest[1] & 255) << 16) + ((digest[2] & 255) << 8) + (digest[3] & 255));
         } catch (Exception e) {
             e.printStackTrace();

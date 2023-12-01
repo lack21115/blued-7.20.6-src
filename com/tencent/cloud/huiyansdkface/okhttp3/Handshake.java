@@ -15,17 +15,17 @@ import javax.net.ssl.SSLSession;
 public final class Handshake {
 
     /* renamed from: a  reason: collision with root package name */
-    private final TlsVersion f35855a;
+    private final TlsVersion f22164a;
     private final CipherSuite b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final List<Certificate> f35856c;
+    private final List<Certificate> f22165c;
     private final List<Certificate> d;
 
     private Handshake(TlsVersion tlsVersion, CipherSuite cipherSuite, List<Certificate> list, List<Certificate> list2) {
-        this.f35855a = tlsVersion;
+        this.f22164a = tlsVersion;
         this.b = cipherSuite;
-        this.f35856c = list;
+        this.f22165c = list;
         this.d = list2;
     }
 
@@ -75,11 +75,11 @@ public final class Handshake {
         if (obj instanceof Handshake) {
             Handshake handshake = (Handshake) obj;
             boolean z = false;
-            if (this.f35855a.equals(handshake.f35855a)) {
+            if (this.f22164a.equals(handshake.f22164a)) {
                 z = false;
                 if (this.b.equals(handshake.b)) {
                     z = false;
-                    if (this.f35856c.equals(handshake.f35856c)) {
+                    if (this.f22165c.equals(handshake.f22165c)) {
                         z = false;
                         if (this.d.equals(handshake.d)) {
                             z = true;
@@ -93,7 +93,7 @@ public final class Handshake {
     }
 
     public int hashCode() {
-        return ((((((LiveProtos.Event.LIVE_END_PAGE_CLOSE_CLICK_VALUE + this.f35855a.hashCode()) * 31) + this.b.hashCode()) * 31) + this.f35856c.hashCode()) * 31) + this.d.hashCode();
+        return ((((((LiveProtos.Event.LIVE_END_PAGE_CLOSE_CLICK_VALUE + this.f22164a.hashCode()) * 31) + this.b.hashCode()) * 31) + this.f22165c.hashCode()) * 31) + this.d.hashCode();
     }
 
     public List<Certificate> localCertificates() {
@@ -108,17 +108,17 @@ public final class Handshake {
     }
 
     public List<Certificate> peerCertificates() {
-        return this.f35856c;
+        return this.f22165c;
     }
 
     public Principal peerPrincipal() {
-        if (this.f35856c.isEmpty()) {
+        if (this.f22165c.isEmpty()) {
             return null;
         }
-        return ((X509Certificate) this.f35856c.get(0)).getSubjectX500Principal();
+        return ((X509Certificate) this.f22165c.get(0)).getSubjectX500Principal();
     }
 
     public TlsVersion tlsVersion() {
-        return this.f35855a;
+        return this.f22164a;
     }
 }

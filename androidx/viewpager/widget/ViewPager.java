@@ -1,5 +1,6 @@
 package androidx.viewpager.widget;
 
+import android.R;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.database.DataSetObserver;
@@ -30,7 +31,6 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import androidx.customview.view.AbsSavedState;
-import com.alipay.sdk.util.i;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Inherited;
 import java.lang.annotation.Retention;
@@ -116,7 +116,7 @@ public class ViewPager extends ViewGroup {
     private int mTopPageBounds;
     private int mTouchSlop;
     private VelocityTracker mVelocityTracker;
-    static final int[] LAYOUT_ATTRS = {16842931};
+    static final int[] LAYOUT_ATTRS = {R.attr.layout_gravity};
     private static final Comparator<ItemInfo> COMPARATOR = new Comparator<ItemInfo>() { // from class: androidx.viewpager.widget.ViewPager.1
         @Override // java.util.Comparator
         public int compare(ItemInfo itemInfo, ItemInfo itemInfo2) {
@@ -144,11 +144,11 @@ public class ViewPager extends ViewGroup {
     public static class ItemInfo {
 
         /* renamed from: a  reason: collision with root package name */
-        Object f3558a;
+        Object f3510a;
         int b;
 
         /* renamed from: c  reason: collision with root package name */
-        boolean f3559c;
+        boolean f3511c;
         float d;
         float e;
 
@@ -160,23 +160,23 @@ public class ViewPager extends ViewGroup {
     public static class LayoutParams extends ViewGroup.LayoutParams {
 
         /* renamed from: a  reason: collision with root package name */
-        float f3560a;
+        float f3512a;
         boolean b;
 
         /* renamed from: c  reason: collision with root package name */
-        int f3561c;
+        int f3513c;
         int d;
         public int gravity;
         public boolean isDecor;
 
         public LayoutParams() {
             super(-1, -1);
-            this.f3560a = 0.0f;
+            this.f3512a = 0.0f;
         }
 
         public LayoutParams(Context context, AttributeSet attributeSet) {
             super(context, attributeSet);
-            this.f3560a = 0.0f;
+            this.f3512a = 0.0f;
             TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, ViewPager.LAYOUT_ATTRS);
             this.gravity = obtainStyledAttributes.getInteger(0, 48);
             obtainStyledAttributes.recycle();
@@ -297,18 +297,18 @@ public class ViewPager extends ViewGroup {
         };
 
         /* renamed from: a  reason: collision with root package name */
-        int f3564a;
+        int f3516a;
         Parcelable b;
 
         /* renamed from: c  reason: collision with root package name */
-        ClassLoader f3565c;
+        ClassLoader f3517c;
 
         SavedState(Parcel parcel, ClassLoader classLoader) {
             super(parcel, classLoader);
             ClassLoader classLoader2 = classLoader == null ? getClass().getClassLoader() : classLoader;
-            this.f3564a = parcel.readInt();
+            this.f3516a = parcel.readInt();
             this.b = parcel.readParcelable(classLoader2);
-            this.f3565c = classLoader2;
+            this.f3517c = classLoader2;
         }
 
         public SavedState(Parcelable parcelable) {
@@ -316,13 +316,13 @@ public class ViewPager extends ViewGroup {
         }
 
         public String toString() {
-            return "FragmentPager.SavedState{" + Integer.toHexString(System.identityHashCode(this)) + " position=" + this.f3564a + i.d;
+            return "FragmentPager.SavedState{" + Integer.toHexString(System.identityHashCode(this)) + " position=" + this.f3516a + "}";
         }
 
         @Override // androidx.customview.view.AbsSavedState, android.os.Parcelable
         public void writeToParcel(Parcel parcel, int i) {
             super.writeToParcel(parcel, i);
-            parcel.writeInt(this.f3564a);
+            parcel.writeInt(this.f3516a);
             parcel.writeParcelable(this.b, i);
         }
     }
@@ -352,7 +352,7 @@ public class ViewPager extends ViewGroup {
         public int compare(View view, View view2) {
             LayoutParams layoutParams = (LayoutParams) view.getLayoutParams();
             LayoutParams layoutParams2 = (LayoutParams) view2.getLayoutParams();
-            return layoutParams.isDecor != layoutParams2.isDecor ? layoutParams.isDecor ? 1 : -1 : layoutParams.f3561c - layoutParams2.f3561c;
+            return layoutParams.isDecor != layoutParams2.isDecor ? layoutParams.isDecor ? 1 : -1 : layoutParams.f3513c - layoutParams2.f3513c;
         }
     }
 
@@ -552,8 +552,8 @@ public class ViewPager extends ViewGroup {
                 break;
             }
             ItemInfo itemInfo = this.mItems.get(i2);
-            if (itemInfo.f3559c) {
-                itemInfo.f3559c = false;
+            if (itemInfo.f3511c) {
+                itemInfo.f3511c = false;
                 z2 = true;
             }
             i = i2 + 1;
@@ -970,7 +970,7 @@ public class ViewPager extends ViewGroup {
     ItemInfo addNewItem(int i, int i2) {
         ItemInfo itemInfo = new ItemInfo();
         itemInfo.b = i;
-        itemInfo.f3558a = this.mAdapter.instantiateItem((ViewGroup) this, i);
+        itemInfo.f3510a = this.mAdapter.instantiateItem((ViewGroup) this, i);
         itemInfo.d = this.mAdapter.getPageWidth(i);
         if (i2 < 0 || i2 >= this.mItems.size()) {
             this.mItems.add(itemInfo);
@@ -1111,9 +1111,8 @@ public class ViewPager extends ViewGroup {
         return z2;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup
-    public boolean checkLayoutParams(ViewGroup.LayoutParams layoutParams) {
+    protected boolean checkLayoutParams(ViewGroup.LayoutParams layoutParams) {
         return (layoutParams instanceof LayoutParams) && super.checkLayoutParams(layoutParams);
     }
 
@@ -1162,7 +1161,7 @@ public class ViewPager extends ViewGroup {
                 break;
             }
             ItemInfo itemInfo = this.mItems.get(i4);
-            int itemPosition = this.mAdapter.getItemPosition(itemInfo.f3558a);
+            int itemPosition = this.mAdapter.getItemPosition(itemInfo.f3510a);
             if (itemPosition == -1) {
                 i = i3;
                 i2 = i4;
@@ -1176,7 +1175,7 @@ public class ViewPager extends ViewGroup {
                         this.mAdapter.startUpdate((ViewGroup) this);
                         z5 = true;
                     }
-                    this.mAdapter.destroyItem((ViewGroup) this, itemInfo.b, itemInfo.f3558a);
+                    this.mAdapter.destroyItem((ViewGroup) this, itemInfo.b, itemInfo.f3510a);
                     i4 = i5;
                     z = z5;
                     if (this.mCurItem == itemInfo.b) {
@@ -1222,7 +1221,7 @@ public class ViewPager extends ViewGroup {
             }
             LayoutParams layoutParams = (LayoutParams) getChildAt(i7).getLayoutParams();
             if (!layoutParams.isDecor) {
-                layoutParams.f3560a = 0.0f;
+                layoutParams.f3512a = 0.0f;
             }
             i6 = i7 + 1;
         }
@@ -1298,9 +1297,8 @@ public class ViewPager extends ViewGroup {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void drawableStateChanged() {
+    protected void drawableStateChanged() {
         super.drawableStateChanged();
         Drawable drawable = this.mMarginDrawable;
         if (drawable == null || !drawable.isStateful()) {
@@ -1385,9 +1383,8 @@ public class ViewPager extends ViewGroup {
         obtain.recycle();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup
-    public ViewGroup.LayoutParams generateDefaultLayoutParams() {
+    protected ViewGroup.LayoutParams generateDefaultLayoutParams() {
         return new LayoutParams();
     }
 
@@ -1396,9 +1393,8 @@ public class ViewPager extends ViewGroup {
         return new LayoutParams(getContext(), attributeSet);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup
-    public ViewGroup.LayoutParams generateLayoutParams(ViewGroup.LayoutParams layoutParams) {
+    protected ViewGroup.LayoutParams generateLayoutParams(ViewGroup.LayoutParams layoutParams) {
         return generateDefaultLayoutParams();
     }
 
@@ -1406,9 +1402,8 @@ public class ViewPager extends ViewGroup {
         return this.mAdapter;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup
-    public int getChildDrawingOrder(int i, int i2) {
+    protected int getChildDrawingOrder(int i, int i2) {
         int i3 = i2;
         if (this.mDrawingOrder == 2) {
             i3 = (i - 1) - i2;
@@ -1449,7 +1444,7 @@ public class ViewPager extends ViewGroup {
                 return null;
             }
             ItemInfo itemInfo = this.mItems.get(i2);
-            if (this.mAdapter.isViewFromObject(view, itemInfo.f3558a)) {
+            if (this.mAdapter.isViewFromObject(view, itemInfo.f3510a)) {
                 return itemInfo;
             }
             i = i2 + 1;
@@ -1538,9 +1533,8 @@ public class ViewPager extends ViewGroup {
         super.onDetachedFromWindow();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         int width;
         float f;
         super.onDraw(canvas);
@@ -1657,7 +1651,6 @@ public class ViewPager extends ViewGroup {
         return this.mIsBeingDragged;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     /* JADX WARN: Removed duplicated region for block: B:22:0x00fc  */
     /* JADX WARN: Removed duplicated region for block: B:29:0x0142  */
     @Override // android.view.ViewGroup, android.view.View
@@ -1665,7 +1658,7 @@ public class ViewPager extends ViewGroup {
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences
     */
-    public void onLayout(boolean r8, int r9, int r10, int r11, int r12) {
+    protected void onLayout(boolean r8, int r9, int r10, int r11, int r12) {
         /*
             Method dump skipped, instructions count: 625
             To view this dump change 'Code comments level' option to 'DEBUG'
@@ -1750,9 +1743,8 @@ public class ViewPager extends ViewGroup {
         this.mCalledSuper = true;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup
-    public boolean onRequestFocusInDescendants(int i, Rect rect) {
+    protected boolean onRequestFocusInDescendants(int i, Rect rect) {
         int i2;
         int i3;
         ItemInfo infoForChild;
@@ -1786,19 +1778,19 @@ public class ViewPager extends ViewGroup {
         super.onRestoreInstanceState(savedState.getSuperState());
         PagerAdapter pagerAdapter = this.mAdapter;
         if (pagerAdapter != null) {
-            pagerAdapter.restoreState(savedState.b, savedState.f3565c);
-            setCurrentItemInternal(savedState.f3564a, false, true);
+            pagerAdapter.restoreState(savedState.b, savedState.f3517c);
+            setCurrentItemInternal(savedState.f3516a, false, true);
             return;
         }
-        this.mRestoredCurItem = savedState.f3564a;
+        this.mRestoredCurItem = savedState.f3516a;
         this.mRestoredAdapterState = savedState.b;
-        this.mRestoredClassLoader = savedState.f3565c;
+        this.mRestoredClassLoader = savedState.f3517c;
     }
 
     @Override // android.view.View
     public Parcelable onSaveInstanceState() {
         SavedState savedState = new SavedState(super.onSaveInstanceState());
-        savedState.f3564a = this.mCurItem;
+        savedState.f3516a = this.mCurItem;
         PagerAdapter pagerAdapter = this.mAdapter;
         if (pagerAdapter != null) {
             savedState.b = pagerAdapter.saveState();
@@ -1977,7 +1969,7 @@ public class ViewPager extends ViewGroup {
                     break;
                 }
                 ItemInfo itemInfo = this.mItems.get(i2);
-                this.mAdapter.destroyItem((ViewGroup) this, itemInfo.b, itemInfo.f3558a);
+                this.mAdapter.destroyItem((ViewGroup) this, itemInfo.b, itemInfo.f3510a);
                 i = i2 + 1;
             }
             this.mAdapter.finishUpdate((ViewGroup) this);
@@ -2065,7 +2057,7 @@ public class ViewPager extends ViewGroup {
                     if (i7 >= this.mItems.size()) {
                         break;
                     }
-                    this.mItems.get(i7).f3559c = true;
+                    this.mItems.get(i7).f3511c = true;
                     i6 = i7 + 1;
                 }
             }
@@ -2208,9 +2200,8 @@ public class ViewPager extends ViewGroup {
         ViewCompat.postInvalidateOnAnimation(this);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public boolean verifyDrawable(Drawable drawable) {
+    protected boolean verifyDrawable(Drawable drawable) {
         return super.verifyDrawable(drawable) || drawable == this.mMarginDrawable;
     }
 }

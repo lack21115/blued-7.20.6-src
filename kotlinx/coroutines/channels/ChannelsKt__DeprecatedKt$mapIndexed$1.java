@@ -1,5 +1,6 @@
 package kotlinx.coroutines.channels;
 
+import com.android.internal.R;
 import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
@@ -10,16 +11,12 @@ import kotlin.jvm.functions.Function3;
 
 /* JADX INFO: Add missing generic type declarations: [R] */
 @Metadata
-@DebugMetadata(b = "Deprecated.kt", c = {296, 297, 297}, d = "invokeSuspend", e = "kotlinx.coroutines.channels.ChannelsKt__DeprecatedKt$mapIndexed$1")
+@DebugMetadata(b = "Deprecated.kt", c = {R.styleable.Theme_seekBarPreferenceStyle, R.styleable.Theme_dialogTitleIconsDecorLayout, R.styleable.Theme_dialogTitleIconsDecorLayout}, d = "invokeSuspend", e = "kotlinx.coroutines.channels.ChannelsKt__DeprecatedKt$mapIndexed$1")
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/channels/ChannelsKt__DeprecatedKt$mapIndexed$1.class */
 final class ChannelsKt__DeprecatedKt$mapIndexed$1<R> extends SuspendLambda implements Function2<ProducerScope<? super R>, Continuation<? super Unit>, Object> {
-
-    /* renamed from: a  reason: collision with root package name */
-    Object f42960a;
+    Object a;
     Object b;
-
-    /* renamed from: c  reason: collision with root package name */
-    int f42961c;
+    int c;
     int d;
     final /* synthetic */ ReceiveChannel<E> e;
     final /* synthetic */ Function3<Integer, E, Continuation<? super R>, Object> f;
@@ -36,7 +33,7 @@ final class ChannelsKt__DeprecatedKt$mapIndexed$1<R> extends SuspendLambda imple
     @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(ProducerScope<? super R> producerScope, Continuation<? super Unit> continuation) {
-        return ((ChannelsKt__DeprecatedKt$mapIndexed$1) create(producerScope, continuation)).invokeSuspend(Unit.f42314a);
+        return ((ChannelsKt__DeprecatedKt$mapIndexed$1) create(producerScope, continuation)).invokeSuspend(Unit.a);
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl

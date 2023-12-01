@@ -277,8 +277,9 @@ public class PropertyValuesHolder implements Cloneable {
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-9557208-dex2jar.jar:android/animation/PropertyValuesHolder$MultiFloatValuesHolder.class */
-    static class MultiFloatValuesHolder extends PropertyValuesHolder {
+    public static class MultiFloatValuesHolder extends PropertyValuesHolder {
         private static final HashMap<Class, HashMap<String, Long>> sJNISetterPropertyMap = new HashMap<>();
         private long mJniSetter;
 
@@ -373,8 +374,9 @@ public class PropertyValuesHolder implements Cloneable {
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-9557208-dex2jar.jar:android/animation/PropertyValuesHolder$MultiIntValuesHolder.class */
-    static class MultiIntValuesHolder extends PropertyValuesHolder {
+    public static class MultiIntValuesHolder extends PropertyValuesHolder {
         private static final HashMap<Class, HashMap<String, Long>> sJNISetterPropertyMap = new HashMap<>();
         private long mJniSetter;
 
@@ -469,8 +471,9 @@ public class PropertyValuesHolder implements Cloneable {
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: source-9557208-dex2jar.jar:android/animation/PropertyValuesHolder$PointFToFloatArray.class */
-    private static class PointFToFloatArray extends TypeConverter<PointF, float[]> {
+    public static class PointFToFloatArray extends TypeConverter<PointF, float[]> {
         private float[] mCoordinates;
 
         public PointFToFloatArray() {
@@ -486,8 +489,9 @@ public class PropertyValuesHolder implements Cloneable {
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: source-9557208-dex2jar.jar:android/animation/PropertyValuesHolder$PointFToIntArray.class */
-    private static class PointFToIntArray extends TypeConverter<PointF, int[]> {
+    public static class PointFToIntArray extends TypeConverter<PointF, int[]> {
         private int[] mCoordinates;
 
         public PointFToIntArray() {

@@ -36,13 +36,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/FloatComingEventsView.class */
 public final class FloatComingEventsView extends RelativeLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private int f17929a;
+    private int a;
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f17930c;
+    private int c;
     private int d;
     private CountDownTimer e;
     private String f;
@@ -63,9 +59,9 @@ public final class FloatComingEventsView extends RelativeLayout {
     public FloatComingEventsView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         this.f = "";
-        FloatViewComingEventsBinding a2 = FloatViewComingEventsBinding.a(LayoutInflater.from(getContext()), this, true);
-        Intrinsics.c(a2, "inflate(LayoutInflater.from(context), this, true)");
-        this.h = a2;
+        FloatViewComingEventsBinding a = FloatViewComingEventsBinding.a(LayoutInflater.from(getContext()), this, true);
+        Intrinsics.c(a, "inflate(LayoutInflater.from(context), this, true)");
+        this.h = a;
     }
 
     private final String a(String str) {
@@ -86,20 +82,18 @@ public final class FloatComingEventsView extends RelativeLayout {
     }
 
     private final void a(final long j) {
-        this.h.f16464c.setVisibility(8);
+        this.h.c.setVisibility(8);
         this.h.g.setVisibility(8);
-        this.h.f16463a.setVisibility(8);
+        this.h.a.setVisibility(8);
         CountDownTimer countDownTimer = new CountDownTimer(j, this) { // from class: com.blued.android.module.yy_china.view.FloatComingEventsView$showTimer$1
-
-            /* renamed from: a  reason: collision with root package name */
-            final /* synthetic */ long f17931a;
+            final /* synthetic */ long a;
             final /* synthetic */ FloatComingEventsView b;
 
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
                 super(j, 1000L);
-                this.f17931a = j;
+                this.a = j;
                 this.b = this;
             }
 
@@ -133,9 +127,9 @@ public final class FloatComingEventsView extends RelativeLayout {
         gradientDrawable.setCornerRadius(DensityUtils.a(getContext(), 13.0f));
         gradientDrawable.setColor(Color.parseColor(str));
         this.h.g.setBackground(gradientDrawable);
-        this.h.f16464c.setText(a(yYThemeActivityInfo.getStart_time()));
+        this.h.c.setText(a(yYThemeActivityInfo.getStart_time()));
         this.h.e.setText(b(yYThemeActivityInfo.getStart_time()));
-        this.h.f16463a.setVisibility(0);
+        this.h.a.setVisibility(0);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -162,15 +156,15 @@ public final class FloatComingEventsView extends RelativeLayout {
     }
 
     private final String b(String str) {
-        String a2 = TimeAndDateUtils.a(str);
-        Intrinsics.c(a2, "toDateMillionString(time)");
-        return a2;
+        String a = TimeAndDateUtils.a(str);
+        Intrinsics.c(a, "toDateMillionString(time)");
+        return a;
     }
 
     public final void a(final BaseYYStudioFragment fragment, IMJsonContents108Model iMJsonContents108Model) {
         Intrinsics.e(fragment, "fragment");
         this.g = fragment;
-        this.h.f16463a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$FloatComingEventsView$XqUY4eqrJibxiQZJDr3kkorSY5s
+        this.h.a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$FloatComingEventsView$XqUY4eqrJibxiQZJDr3kkorSY5s
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 FloatComingEventsView.a(FloatComingEventsView.this, view);
@@ -234,14 +228,14 @@ public final class FloatComingEventsView extends RelativeLayout {
     @Override // android.widget.RelativeLayout, android.view.View
     public void onMeasure(int i, int i2) {
         super.onMeasure(i, i2);
-        this.f17929a = getMeasuredWidth();
+        this.a = getMeasuredWidth();
         this.b = getMeasuredHeight();
-        Object systemService = getContext().getSystemService(Context.WINDOW_SERVICE);
+        Object systemService = getContext().getSystemService("window");
         if (systemService == null) {
             throw new NullPointerException("null cannot be cast to non-null type android.view.WindowManager");
         }
         WindowManager windowManager = (WindowManager) systemService;
-        this.f17930c = windowManager.getDefaultDisplay().getWidth();
+        this.c = windowManager.getDefaultDisplay().getWidth();
         this.d = windowManager.getDefaultDisplay().getHeight();
     }
 
@@ -286,8 +280,8 @@ public final class FloatComingEventsView extends RelativeLayout {
                         f2 = 0.0f;
                     } else {
                         f2 = x;
-                        if (x > this.f17930c - getWidth()) {
-                            f2 = this.f17930c - getWidth();
+                        if (x > this.c - getWidth()) {
+                            f2 = this.c - getWidth();
                         }
                     }
                     setX(f2);

@@ -23,19 +23,18 @@ public abstract class LiveCurBaseDialogFragment extends BaseDialogFragment {
 
     public abstract int g();
 
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
-        int a2 = DensityUtils.a(getContext(), e());
+        int a = DensityUtils.a(getContext(), e());
         Dialog dialog = new Dialog(requireActivity(), R.style.transparentFrameWindowStyleLive);
         dialog.requestWindowFeature(1);
-        dialog.setContentView(d(), new ViewGroup.LayoutParams(-1, a2));
+        dialog.setContentView(d(), new ViewGroup.LayoutParams(-1, a));
         Window window = dialog.getWindow();
         if (window != null) {
             window.setBackgroundDrawable(new ColorDrawable(0));
             window.setWindowAnimations(R.style.main_menu_animstyle);
             WindowManager.LayoutParams attributes = window.getAttributes();
             attributes.width = -1;
-            attributes.height = a2;
+            attributes.height = a;
             attributes.gravity = 80;
             dialog.onWindowAttributesChanged(attributes);
             window.setFlags(67108864, 67108864);

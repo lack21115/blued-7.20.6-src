@@ -12,7 +12,7 @@ import javax.annotation.CheckReturnValue;
 /* loaded from: source-3503164-dex2jar.jar:io/grpc/internal/TransportFrameUtil.class */
 public final class TransportFrameUtil {
     private static final Logger logger = Logger.getLogger(TransportFrameUtil.class.getName());
-    private static final byte[] binaryHeaderSuffixBytes = Metadata.BINARY_HEADER_SUFFIX.getBytes(Charsets.US_ASCII);
+    private static final byte[] binaryHeaderSuffixBytes = "-bin".getBytes(Charsets.US_ASCII);
 
     private TransportFrameUtil() {
     }

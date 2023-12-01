@@ -13,9 +13,7 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fitem/FitemConstellationTab.class */
 public final class FitemConstellationTab extends FreedomItem {
     private final ConstellationTabDataModel b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private boolean f12529c;
+    private boolean c;
 
     public FitemConstellationTab(ConstellationTabDataModel model) {
         Intrinsics.e(model, "model");
@@ -43,14 +41,14 @@ public final class FitemConstellationTab extends FreedomItem {
     }
 
     public final boolean f() {
-        return this.f12529c;
+        return this.c;
     }
 
     public final int g() {
-        if (this.f10935a == null) {
+        if (this.a == null) {
             return 0;
         }
-        return this.f10935a.itemView.getLeft();
+        return this.a.itemView.getLeft();
     }
 
     public final int h() {

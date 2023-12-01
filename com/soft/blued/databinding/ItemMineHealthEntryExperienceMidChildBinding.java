@@ -10,29 +10,29 @@ import com.blued.android.framework.view.shape.ShapeConstraintLayout;
 public final class ItemMineHealthEntryExperienceMidChildBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ShapeConstraintLayout f29229a;
+    public final ShapeConstraintLayout f15539a;
     public final ImageView b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final TextView f29230c;
+    public final TextView f15540c;
     private final ShapeConstraintLayout d;
 
     private ItemMineHealthEntryExperienceMidChildBinding(ShapeConstraintLayout shapeConstraintLayout, ShapeConstraintLayout shapeConstraintLayout2, ImageView imageView, TextView textView) {
         this.d = shapeConstraintLayout;
-        this.f29229a = shapeConstraintLayout2;
+        this.f15539a = shapeConstraintLayout2;
         this.b = imageView;
-        this.f29230c = textView;
+        this.f15540c = textView;
     }
 
     public static ItemMineHealthEntryExperienceMidChildBinding a(View view) {
         String str;
-        ShapeConstraintLayout shapeConstraintLayout = (ShapeConstraintLayout) view.findViewById(2131363075);
-        if (shapeConstraintLayout != null) {
+        ShapeConstraintLayout findViewById = view.findViewById(2131363075);
+        if (findViewById != null) {
             ImageView imageView = (ImageView) view.findViewById(2131365504);
             if (imageView != null) {
                 TextView textView = (TextView) view.findViewById(2131372754);
                 if (textView != null) {
-                    return new ItemMineHealthEntryExperienceMidChildBinding((ShapeConstraintLayout) view, shapeConstraintLayout, imageView, textView);
+                    return new ItemMineHealthEntryExperienceMidChildBinding((ShapeConstraintLayout) view, findViewById, imageView, textView);
                 }
                 str = "tvTitle";
             } else {

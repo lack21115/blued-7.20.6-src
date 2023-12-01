@@ -10,8 +10,8 @@ import com.tencent.tmsbeacon.pack.ResponsePackageV2;
 public class b extends c.a<byte[], AbstractJceStruct> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final a f39493a = new a();
-    private final C1033b b = new C1033b();
+    private final a f25802a = new a();
+    private final C0863b b = new C0863b();
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/tmsbeacon/base/net/a/b$a.class */
     public static final class a implements c<RequestPackageV2, byte[]> {
@@ -45,7 +45,7 @@ public class b extends c.a<byte[], AbstractJceStruct> {
 
     /* renamed from: com.tencent.tmsbeacon.base.net.a.b$b  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/tmsbeacon/base/net/a/b$b.class */
-    public static final class C1033b implements c<byte[], ResponsePackageV2> {
+    public static final class C0863b implements c<byte[], ResponsePackageV2> {
         private byte[] b(byte[] bArr) {
             return com.tencent.tmsbeacon.d.b.a().h() ? com.tencent.tmsbeacon.base.util.b.a(bArr, 2, 3, g.b().a()) : com.tencent.tmsbeacon.base.util.b.a(bArr, 2);
         }
@@ -71,6 +71,6 @@ public class b extends c.a<byte[], AbstractJceStruct> {
     }
 
     public c<RequestPackageV2, byte[]> c() {
-        return this.f39493a;
+        return this.f25802a;
     }
 }

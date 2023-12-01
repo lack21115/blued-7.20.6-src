@@ -1,9 +1,9 @@
 package com.google.zxing.common;
 
+import com.anythink.expressad.exoplayer.b;
 import com.google.zxing.FormatException;
 import java.util.HashMap;
 import java.util.Map;
-import org.apache.commons.codec.CharEncoding;
 
 /* loaded from: source-7994992-dex2jar.jar:com/google/zxing/common/CharacterSetECI.class */
 public enum CharacterSetECI {
@@ -28,9 +28,9 @@ public enum CharacterSetECI {
     Cp1251(22, "windows-1251"),
     Cp1252(23, "windows-1252"),
     Cp1256(24, "windows-1256"),
-    UnicodeBigUnmarked(25, CharEncoding.UTF_16BE, "UnicodeBig"),
+    UnicodeBigUnmarked(25, "UTF-16BE", "UnicodeBig"),
     UTF8(26, "UTF-8"),
-    ASCII(new int[]{27, 170}, "US-ASCII"),
+    ASCII(new int[]{27, 170}, b.i),
     Big5(28),
     GB18030(29, "GB2312", "EUC_CN", "GBK"),
     EUC_KR(30, "EUC-KR");

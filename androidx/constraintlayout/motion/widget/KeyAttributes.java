@@ -35,29 +35,29 @@ public class KeyAttributes extends Key {
     static class Loader {
 
         /* renamed from: a  reason: collision with root package name */
-        private static SparseIntArray f2171a;
+        private static SparseIntArray f2123a;
 
         static {
             SparseIntArray sparseIntArray = new SparseIntArray();
-            f2171a = sparseIntArray;
+            f2123a = sparseIntArray;
             sparseIntArray.append(R.styleable.KeyAttribute_android_alpha, 1);
-            f2171a.append(R.styleable.KeyAttribute_android_elevation, 2);
-            f2171a.append(R.styleable.KeyAttribute_android_rotation, 4);
-            f2171a.append(R.styleable.KeyAttribute_android_rotationX, 5);
-            f2171a.append(R.styleable.KeyAttribute_android_rotationY, 6);
-            f2171a.append(R.styleable.KeyAttribute_android_transformPivotX, 19);
-            f2171a.append(R.styleable.KeyAttribute_android_transformPivotY, 20);
-            f2171a.append(R.styleable.KeyAttribute_android_scaleX, 7);
-            f2171a.append(R.styleable.KeyAttribute_transitionPathRotate, 8);
-            f2171a.append(R.styleable.KeyAttribute_transitionEasing, 9);
-            f2171a.append(R.styleable.KeyAttribute_motionTarget, 10);
-            f2171a.append(R.styleable.KeyAttribute_framePosition, 12);
-            f2171a.append(R.styleable.KeyAttribute_curveFit, 13);
-            f2171a.append(R.styleable.KeyAttribute_android_scaleY, 14);
-            f2171a.append(R.styleable.KeyAttribute_android_translationX, 15);
-            f2171a.append(R.styleable.KeyAttribute_android_translationY, 16);
-            f2171a.append(R.styleable.KeyAttribute_android_translationZ, 17);
-            f2171a.append(R.styleable.KeyAttribute_motionProgress, 18);
+            f2123a.append(R.styleable.KeyAttribute_android_elevation, 2);
+            f2123a.append(R.styleable.KeyAttribute_android_rotation, 4);
+            f2123a.append(R.styleable.KeyAttribute_android_rotationX, 5);
+            f2123a.append(R.styleable.KeyAttribute_android_rotationY, 6);
+            f2123a.append(R.styleable.KeyAttribute_android_transformPivotX, 19);
+            f2123a.append(R.styleable.KeyAttribute_android_transformPivotY, 20);
+            f2123a.append(R.styleable.KeyAttribute_android_scaleX, 7);
+            f2123a.append(R.styleable.KeyAttribute_transitionPathRotate, 8);
+            f2123a.append(R.styleable.KeyAttribute_transitionEasing, 9);
+            f2123a.append(R.styleable.KeyAttribute_motionTarget, 10);
+            f2123a.append(R.styleable.KeyAttribute_framePosition, 12);
+            f2123a.append(R.styleable.KeyAttribute_curveFit, 13);
+            f2123a.append(R.styleable.KeyAttribute_android_scaleY, 14);
+            f2123a.append(R.styleable.KeyAttribute_android_translationX, 15);
+            f2123a.append(R.styleable.KeyAttribute_android_translationY, 16);
+            f2123a.append(R.styleable.KeyAttribute_android_translationZ, 17);
+            f2123a.append(R.styleable.KeyAttribute_motionProgress, 18);
         }
 
         private Loader() {
@@ -72,7 +72,7 @@ public class KeyAttributes extends Key {
                     return;
                 }
                 int index = typedArray.getIndex(i2);
-                switch (f2171a.get(index)) {
+                switch (f2123a.get(index)) {
                     case 1:
                         keyAttributes.i = typedArray.getFloat(index, keyAttributes.i);
                         break;
@@ -82,7 +82,7 @@ public class KeyAttributes extends Key {
                     case 3:
                     case 11:
                     default:
-                        Log.e("KeyAttribute", "unused attribute 0x" + Integer.toHexString(index) + "   " + f2171a.get(index));
+                        Log.e("KeyAttribute", "unused attribute 0x" + Integer.toHexString(index) + "   " + f2123a.get(index));
                         break;
                     case 4:
                         keyAttributes.k = typedArray.getFloat(index, keyAttributes.k);
@@ -108,7 +108,7 @@ public class KeyAttributes extends Key {
                                 keyAttributes.b = typedArray.getResourceId(index, keyAttributes.b);
                                 break;
                             } else {
-                                keyAttributes.f2170c = typedArray.getString(index);
+                                keyAttributes.f2122c = typedArray.getString(index);
                                 break;
                             }
                         } else {
@@ -116,12 +116,12 @@ public class KeyAttributes extends Key {
                             if (keyAttributes.b != -1) {
                                 break;
                             } else {
-                                keyAttributes.f2170c = typedArray.getString(index);
+                                keyAttributes.f2122c = typedArray.getString(index);
                                 break;
                             }
                         }
                     case 12:
-                        keyAttributes.f2169a = typedArray.getInt(index, keyAttributes.f2169a);
+                        keyAttributes.f2121a = typedArray.getInt(index, keyAttributes.f2121a);
                         break;
                     case 13:
                         keyAttributes.g = typedArray.getInteger(index, keyAttributes.g);
@@ -181,7 +181,7 @@ public class KeyAttributes extends Key {
 
     @Override // androidx.constraintlayout.motion.widget.Key
     /* renamed from: clone */
-    public Key mo1365clone() {
+    public Key mo1228clone() {
         return new KeyAttributes().copy(this);
     }
 
@@ -217,7 +217,7 @@ public class KeyAttributes extends Key {
             hashSet.add("elevation");
         }
         if (!Float.isNaN(this.k)) {
-            hashSet.add("rotation");
+            hashSet.add(Key.ROTATION);
         }
         if (!Float.isNaN(this.l)) {
             hashSet.add("rotationX");
@@ -276,7 +276,7 @@ public class KeyAttributes extends Key {
             hashMap.put("elevation", Integer.valueOf(this.g));
         }
         if (!Float.isNaN(this.k)) {
-            hashMap.put("rotation", Integer.valueOf(this.g));
+            hashMap.put(Key.ROTATION, Integer.valueOf(this.g));
         }
         if (!Float.isNaN(this.l)) {
             hashMap.put("rotationX", Integer.valueOf(this.g));
@@ -401,7 +401,7 @@ public class KeyAttributes extends Key {
                 z = true;
                 break;
             case -40300674:
-                if (str.equals("rotation")) {
+                if (str.equals(Key.ROTATION)) {
                     z = true;
                     break;
                 }

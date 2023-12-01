@@ -5,7 +5,6 @@ import com.android.internal.util.XmlUtils;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.Reader;
-import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
 /* JADX INFO: Access modifiers changed from: package-private */
@@ -265,7 +264,7 @@ public final class XmlBlock {
 
         @Override // org.xmlpull.v1.XmlPullParser
         public boolean getFeature(String str) {
-            return XmlPullParser.FEATURE_PROCESS_NAMESPACES.equals(str) || XmlPullParser.FEATURE_REPORT_NAMESPACE_ATTRIBUTES.equals(str);
+            return "http://xmlpull.org/v1/doc/features.html#process-namespaces".equals(str) || "http://xmlpull.org/v1/doc/features.html#report-namespace-prefixes".equals(str);
         }
 
         @Override // android.util.AttributeSet
@@ -471,10 +470,10 @@ public final class XmlBlock {
 
         @Override // org.xmlpull.v1.XmlPullParser
         public void setFeature(String str, boolean z) throws XmlPullParserException {
-            if (XmlPullParser.FEATURE_PROCESS_NAMESPACES.equals(str) && z) {
+            if ("http://xmlpull.org/v1/doc/features.html#process-namespaces".equals(str) && z) {
                 return;
             }
-            if (!XmlPullParser.FEATURE_REPORT_NAMESPACE_ATTRIBUTES.equals(str) || !z) {
+            if (!"http://xmlpull.org/v1/doc/features.html#report-namespace-prefixes".equals(str) || !z) {
                 throw new XmlPullParserException("Unsupported feature: " + str);
             }
         }

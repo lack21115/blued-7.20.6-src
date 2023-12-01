@@ -21,11 +21,11 @@ import java.util.concurrent.TimeoutException;
 public class q {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ExecutorService f27457a = Executors.newSingleThreadExecutor();
+    private final ExecutorService f13769a = Executors.newSingleThreadExecutor();
     private final String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final int f27458c;
+    private final int f13770c;
 
     /* loaded from: source-8303388-dex2jar.jar:com/opos/videocache/q$a.class */
     class a implements Callable<Boolean> {
@@ -42,7 +42,7 @@ public class q {
     /* JADX INFO: Access modifiers changed from: package-private */
     public q(String str, int i) {
         this.b = (String) f.a(str);
-        this.f27458c = i;
+        this.f13770c = i;
     }
 
     private List<Proxy> a() {
@@ -78,7 +78,7 @@ public class q {
     }
 
     private String c() {
-        return String.format(Locale.US, "http://%s:%d/%s", this.b, Integer.valueOf(this.f27458c), "ping");
+        return String.format(Locale.US, "http://%s:%d/%s", this.b, Integer.valueOf(this.f13770c), "ping");
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -111,7 +111,7 @@ public class q {
             } catch (TimeoutException e3) {
                 com.opos.cmn.an.f.a.c("Pinger", "Error pinging server (attempt: " + i5 + ", timeout: " + i3 + "). ");
             }
-            if (((Boolean) this.f27457a.submit(new a()).get(i3, TimeUnit.MILLISECONDS)).booleanValue()) {
+            if (((Boolean) this.f13769a.submit(new a()).get(i3, TimeUnit.MILLISECONDS)).booleanValue()) {
                 return true;
             }
             i3 *= 2;

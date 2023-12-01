@@ -7,25 +7,25 @@ import android.database.sqlite.SQLiteDatabase;
 public class c extends b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile c f7761a;
+    private static volatile c f4922a;
 
     private c(Context context) {
         super(context);
     }
 
     public static c a(Context context) {
-        if (f7761a == null) {
+        if (f4922a == null) {
             synchronized (c.class) {
                 try {
-                    if (f7761a == null) {
-                        f7761a = new c(context.getApplicationContext());
+                    if (f4922a == null) {
+                        f4922a = new c(context.getApplicationContext());
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f7761a;
+        return f4922a;
     }
 
     private static void c(SQLiteDatabase sQLiteDatabase) {
@@ -41,7 +41,7 @@ public class c extends b {
             sQLiteDatabase.execSQL("DROP TABLE IF EXISTS 'unit_id'");
             sQLiteDatabase.execSQL("DROP TABLE IF EXISTS 'c_replace_temp'");
         } catch (Exception e) {
-            if (com.anythink.expressad.a.f6941a) {
+            if (com.anythink.expressad.a.f4103a) {
                 e.printStackTrace();
             }
         }

@@ -7,18 +7,16 @@ import android.graphics.drawable.Drawable;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/view/pulltorefresh/RefreshDrawable.class */
 public abstract class RefreshDrawable extends Drawable implements Animatable, Drawable.Callback {
-
-    /* renamed from: a  reason: collision with root package name */
-    private PullRefreshLayout f10275a;
+    private PullRefreshLayout a;
 
     public RefreshDrawable(Context context, PullRefreshLayout pullRefreshLayout) {
-        this.f10275a = pullRefreshLayout;
+        this.a = pullRefreshLayout;
     }
 
     public abstract void a(int[] iArr);
 
     public PullRefreshLayout c() {
-        return this.f10275a;
+        return this.a;
     }
 
     public abstract void c(float f);
@@ -26,7 +24,7 @@ public abstract class RefreshDrawable extends Drawable implements Animatable, Dr
     public abstract void c(int i);
 
     public Context getContext() {
-        PullRefreshLayout pullRefreshLayout = this.f10275a;
+        PullRefreshLayout pullRefreshLayout = this.a;
         if (pullRefreshLayout != null) {
             return pullRefreshLayout.getContext();
         }

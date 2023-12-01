@@ -4,24 +4,21 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import androidx.appcompat.widget.AppCompatCheckedTextView;
-import skin.support.appcompat.R;
+import com.android.internal.R;
 import skin.support.content.res.SkinCompatVectorResources;
 
 /* loaded from: source-3503164-dex2jar.jar:skin/support/widget/SkinCompatCheckedTextView.class */
 public class SkinCompatCheckedTextView extends AppCompatCheckedTextView implements SkinCompatSupportable {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final int[] f44263a = {16843016};
+    private static final int[] a = {R.attr.checkMark};
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private SkinCompatTextHelper f44264c;
+    private SkinCompatTextHelper c;
     private SkinCompatBackgroundHelper d;
 
     public SkinCompatCheckedTextView(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, R.attr.checkedTextViewStyle);
+        this(context, attributeSet, skin.support.appcompat.R.attr.checkedTextViewStyle);
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     public SkinCompatCheckedTextView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         this.b = 0;
@@ -29,9 +26,9 @@ public class SkinCompatCheckedTextView extends AppCompatCheckedTextView implemen
         this.d = skinCompatBackgroundHelper;
         skinCompatBackgroundHelper.a(attributeSet, i);
         SkinCompatTextHelper a2 = SkinCompatTextHelper.a(this);
-        this.f44264c = a2;
+        this.c = a2;
         a2.a(attributeSet, i);
-        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, f44263a, i, 0);
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, a, i, 0);
         this.b = obtainStyledAttributes.getResourceId(0, 0);
         obtainStyledAttributes.recycle();
         a();
@@ -51,14 +48,13 @@ public class SkinCompatCheckedTextView extends AppCompatCheckedTextView implemen
         if (skinCompatBackgroundHelper != null) {
             skinCompatBackgroundHelper.a();
         }
-        SkinCompatTextHelper skinCompatTextHelper = this.f44264c;
+        SkinCompatTextHelper skinCompatTextHelper = this.c;
         if (skinCompatTextHelper != null) {
             skinCompatTextHelper.d();
         }
         a();
     }
 
-    @Override // androidx.appcompat.widget.AppCompatCheckedTextView, android.view.View
     public void setBackgroundResource(int i) {
         super.setBackgroundResource(i);
         SkinCompatBackgroundHelper skinCompatBackgroundHelper = this.d;
@@ -67,25 +63,22 @@ public class SkinCompatCheckedTextView extends AppCompatCheckedTextView implemen
         }
     }
 
-    @Override // androidx.appcompat.widget.AppCompatCheckedTextView, android.widget.CheckedTextView
     public void setCheckMarkDrawable(int i) {
         this.b = i;
         a();
     }
 
-    @Override // android.widget.TextView
     public void setCompoundDrawablesRelativeWithIntrinsicBounds(int i, int i2, int i3, int i4) {
         super.setCompoundDrawablesRelativeWithIntrinsicBounds(i, i2, i3, i4);
-        SkinCompatTextHelper skinCompatTextHelper = this.f44264c;
+        SkinCompatTextHelper skinCompatTextHelper = this.c;
         if (skinCompatTextHelper != null) {
             skinCompatTextHelper.a(i, i2, i3, i4);
         }
     }
 
-    @Override // android.widget.TextView
     public void setCompoundDrawablesWithIntrinsicBounds(int i, int i2, int i3, int i4) {
         super.setCompoundDrawablesWithIntrinsicBounds(i, i2, i3, i4);
-        SkinCompatTextHelper skinCompatTextHelper = this.f44264c;
+        SkinCompatTextHelper skinCompatTextHelper = this.c;
         if (skinCompatTextHelper != null) {
             skinCompatTextHelper.b(i, i2, i3, i4);
         }
@@ -95,10 +88,9 @@ public class SkinCompatCheckedTextView extends AppCompatCheckedTextView implemen
         setTextAppearance(getContext(), i);
     }
 
-    @Override // androidx.appcompat.widget.AppCompatCheckedTextView, android.widget.TextView
     public void setTextAppearance(Context context, int i) {
         super.setTextAppearance(context, i);
-        SkinCompatTextHelper skinCompatTextHelper = this.f44264c;
+        SkinCompatTextHelper skinCompatTextHelper = this.c;
         if (skinCompatTextHelper != null) {
             skinCompatTextHelper.a(context, i);
         }

@@ -45,18 +45,18 @@ public interface VideoEncoderDef {
     public static class EncodeAbility {
 
         /* renamed from: a  reason: collision with root package name */
-        public boolean f36955a = true;
+        public boolean f23264a = true;
         public boolean b = false;
 
         /* renamed from: c  reason: collision with root package name */
-        public boolean f36956c = false;
+        public boolean f23265c = false;
 
         public boolean isSupportHEVC() {
-            return this.f36956c;
+            return this.f23265c;
         }
 
         public boolean isSupportRPS() {
-            return this.f36955a;
+            return this.f23264a;
         }
 
         public boolean isSupportSVC() {
@@ -134,24 +134,24 @@ public interface VideoEncoderDef {
     public static class EncoderProperty {
 
         /* renamed from: a  reason: collision with root package name */
-        public a f36961a;
+        public a f23270a;
         public ReferenceStrategy b;
 
         /* renamed from: c  reason: collision with root package name */
-        public CodecType f36962c;
+        public CodecType f23271c;
 
         public EncoderProperty(a aVar, ReferenceStrategy referenceStrategy, CodecType codecType) {
-            this.f36961a = aVar;
+            this.f23270a = aVar;
             this.b = referenceStrategy;
-            this.f36962c = codecType;
+            this.f23271c = codecType;
         }
 
         public int getCodecType() {
-            return this.f36962c.mValue;
+            return this.f23271c.mValue;
         }
 
         public int getEncoderType() {
-            return this.f36961a.value;
+            return this.f23270a.value;
         }
 
         public int getReferenceStrategy() {

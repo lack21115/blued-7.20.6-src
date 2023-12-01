@@ -4,11 +4,11 @@ package com.tencent.tmsbeacon.a.c;
 public class f {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile f f39479a;
+    private static volatile f f25788a;
     private String b = "";
 
     /* renamed from: c  reason: collision with root package name */
-    private String f39480c = "";
+    private String f25789c = "";
     private String d = "";
     private String e = "";
     private String f = "";
@@ -22,18 +22,18 @@ public class f {
     }
 
     public static f e() {
-        if (f39479a == null) {
+        if (f25788a == null) {
             synchronized (f.class) {
                 try {
-                    if (f39479a == null) {
-                        f39479a = new f();
+                    if (f25788a == null) {
+                        f25788a = new f();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f39479a;
+        return f25788a;
     }
 
     public String a() {
@@ -45,11 +45,11 @@ public class f {
     }
 
     public String b() {
-        return this.f39480c;
+        return this.f25789c;
     }
 
     public void b(String str) {
-        this.f39480c = str;
+        this.f25789c = str;
     }
 
     public String c() {

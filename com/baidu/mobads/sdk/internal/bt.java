@@ -7,21 +7,21 @@ import com.baidu.mobads.sdk.internal.cf;
 public class bt implements cf.a {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ bs f9359a;
+    final /* synthetic */ bs f6519a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public bt(bs bsVar) {
-        this.f9359a = bsVar;
+        this.f6519a = bsVar;
     }
 
     @Override // com.baidu.mobads.sdk.internal.cf.a
     public void a(bu buVar) {
-        this.f9359a.a(bw.k, buVar, "download apk successfully, downloader exit");
+        this.f6519a.a(bw.k, buVar, "download apk successfully, downloader exit");
         bs unused = bs.h = null;
     }
 
     @Override // com.baidu.mobads.sdk.internal.cf.a
     public void b(bu buVar) {
-        this.f9359a.a(bw.l, buVar, "downloadApk failed");
+        this.f6519a.a(bw.l, buVar, "downloadApk failed");
     }
 }

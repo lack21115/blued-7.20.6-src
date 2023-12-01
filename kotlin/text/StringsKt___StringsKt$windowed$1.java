@@ -8,9 +8,7 @@ import kotlin.jvm.internal.Lambda;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/text/StringsKt___StringsKt$windowed$1.class */
 final class StringsKt___StringsKt$windowed$1 extends Lambda implements Function1<CharSequence, String> {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final StringsKt___StringsKt$windowed$1 f42754a = new StringsKt___StringsKt$windowed$1();
+    public static final StringsKt___StringsKt$windowed$1 a = new StringsKt___StringsKt$windowed$1();
 
     StringsKt___StringsKt$windowed$1() {
         super(1);

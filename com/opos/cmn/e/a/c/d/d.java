@@ -14,7 +14,7 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 public class d extends a implements c {
 
     /* renamed from: c  reason: collision with root package name */
-    private com.opos.cmn.e.a.c.c.d f24792c;
+    private com.opos.cmn.e.a.c.c.d f11104c;
     private com.opos.cmn.e.a.c.a.a d;
     private View e;
     private String f;
@@ -68,7 +68,7 @@ public class d extends a implements c {
     }
 
     private void c() {
-        com.opos.cmn.e.a.c.a.b bVar = new com.opos.cmn.e.a.c.a.b(this.f24789a, this);
+        com.opos.cmn.e.a.c.a.b bVar = new com.opos.cmn.e.a.c.a.b(this.f11101a, this);
         this.d = bVar;
         this.e = bVar.a();
         if (k()) {
@@ -83,13 +83,13 @@ public class d extends a implements c {
             WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams();
             layoutParams.type = 2002;
             layoutParams.flags = 136;
-            layoutParams.width = com.opos.cmn.an.h.f.a.b(this.f24789a);
-            layoutParams.height = com.opos.cmn.an.h.f.a.a(this.f24789a, 90.0f);
+            layoutParams.width = com.opos.cmn.an.h.f.a.b(this.f11101a);
+            layoutParams.height = com.opos.cmn.an.h.f.a.a(this.f11101a, 90.0f);
             layoutParams.gravity = 49;
             layoutParams.format = 1;
             if (this.e != null) {
                 this.e.setVisibility(8);
-                com.opos.cmn.an.h.f.a.a(this.f24789a, this.e, layoutParams);
+                com.opos.cmn.an.h.f.a.a(this.f11101a, this.e, layoutParams);
             }
         } catch (Exception e) {
             com.opos.cmn.an.f.a.a("ReminderToastWidget", "", (Throwable) e);
@@ -98,18 +98,18 @@ public class d extends a implements c {
 
     private void e() {
         try {
-            com.opos.cmn.e.a.c.c.c cVar = new com.opos.cmn.e.a.c.c.c(this.f24789a, null);
-            this.f24792c = cVar;
+            com.opos.cmn.e.a.c.c.c cVar = new com.opos.cmn.e.a.c.c.c(this.f11101a, null);
+            this.f11104c = cVar;
             if (this.e != null) {
                 cVar.a(this.e);
             }
-            WindowManager.LayoutParams a2 = this.f24792c.a();
+            WindowManager.LayoutParams a2 = this.f11104c.a();
             if (a2 != null) {
                 a2.flags = 136;
-                a2.width = com.opos.cmn.an.h.f.a.b(this.f24789a);
-                a2.height = com.opos.cmn.an.h.f.a.a(this.f24789a, 90.0f);
+                a2.width = com.opos.cmn.an.h.f.a.b(this.f11101a);
+                a2.height = com.opos.cmn.an.h.f.a.a(this.f11101a, 90.0f);
             }
-            this.f24792c.a(49, 0, 0);
+            this.f11104c.a(49, 0, 0);
         } catch (Exception e) {
             com.opos.cmn.an.f.a.a("ReminderToastWidget", "", (Throwable) e);
         }
@@ -130,11 +130,11 @@ public class d extends a implements c {
     private void g() {
         com.opos.cmn.an.f.a.b("ReminderToastWidget", "showCustomToast");
         try {
-            this.f24792c.a(1);
+            this.f11104c.a(1);
             if (this.i.hasMessages(2)) {
                 this.i.removeMessages(2);
             }
-            this.f24792c.b();
+            this.f11104c.b();
             this.i.sendEmptyMessageDelayed(2, 4000L);
         } catch (Exception e) {
             com.opos.cmn.an.f.a.a("ReminderToastWidget", "", (Throwable) e);
@@ -260,11 +260,11 @@ public class d extends a implements c {
         com.opos.cmn.an.f.a.b("ReminderToastWidget", "destroyContext");
         try {
             if (k()) {
-                if (this.f24792c != null) {
-                    this.f24792c.c();
+                if (this.f11104c != null) {
+                    this.f11104c.c();
                 }
             } else if (this.e != null) {
-                com.opos.cmn.an.h.f.a.a(this.f24789a, this.e);
+                com.opos.cmn.an.h.f.a.a(this.f11101a, this.e);
                 this.e = null;
             }
             this.g = false;

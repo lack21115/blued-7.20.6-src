@@ -42,13 +42,13 @@ public class a {
                 com.opos.cmn.an.f.a.c("MiniProgramUtils", "openMiniProgram", th);
                 z = false;
             }
-            if (!TextUtils.isEmpty(aVar.f24968a)) {
+            if (!TextUtils.isEmpty(aVar.f11280a)) {
                 z = false;
                 if (a(context)) {
-                    IWXAPI createWXAPI = WXAPIFactory.createWXAPI(context.getApplicationContext(), aVar.f24968a, false);
+                    IWXAPI createWXAPI = WXAPIFactory.createWXAPI(context.getApplicationContext(), aVar.f11280a, false);
                     WXLaunchMiniProgram.Req req = new WXLaunchMiniProgram.Req();
                     req.userName = aVar.b;
-                    req.path = aVar.f24969c;
+                    req.path = aVar.f11281c;
                     req.miniprogramType = 0;
                     z = createWXAPI.sendReq(req);
                 }

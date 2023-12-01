@@ -134,7 +134,7 @@ public class VideoFeedsPlayer implements w.c {
             this.mHandler.post(new Runnable() { // from class: com.anythink.expressad.playercommon.VideoFeedsPlayer.5
                 @Override // java.lang.Runnable
                 public void run() {
-                    if (VideoFeedsPlayer.this.mLoadingView != null && VideoFeedsPlayer.this.mLoadingView.get() != 0) {
+                    if (VideoFeedsPlayer.this.mLoadingView != null && VideoFeedsPlayer.this.mLoadingView.get() != null) {
                         ((View) VideoFeedsPlayer.this.mLoadingView.get()).setVisibility(8);
                     }
                     if (VideoFeedsPlayer.this.mFullScreenLoadingView != null) {

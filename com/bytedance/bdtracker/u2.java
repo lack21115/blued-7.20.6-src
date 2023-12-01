@@ -7,7 +7,7 @@ import android.content.SharedPreferences;
 public class u2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static boolean f21322a;
+    public static boolean f7716a;
     public static j2<SharedPreferences> b = new a();
 
     /* loaded from: source-7206380-dex2jar.jar:com/bytedance/bdtracker/u2$a.class */
@@ -22,15 +22,15 @@ public class u2 {
         if (context == null) {
             return false;
         }
-        if (f21322a) {
+        if (f7716a) {
             return true;
         }
         return b.b(context).getBoolean("_install_started_v2", false);
     }
 
     public static void c(final Context context) {
-        f21322a = true;
-        p.f21279a.submit(new Runnable() { // from class: com.bytedance.bdtracker.-$$Lambda$ollyFADSgX4drvciTJ4BwX9GYL8
+        f7716a = true;
+        p.f7673a.submit(new Runnable() { // from class: com.bytedance.bdtracker.-$$Lambda$ollyFADSgX4drvciTJ4BwX9GYL8
             @Override // java.lang.Runnable
             public final void run() {
                 u2.b.b(Context.this).edit().putBoolean("_install_started_v2", true).apply();

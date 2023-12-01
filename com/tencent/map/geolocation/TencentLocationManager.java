@@ -28,7 +28,7 @@ public final class TencentLocationManager {
     public Context d;
 
     /* renamed from: a  reason: collision with root package name */
-    public volatile boolean f37252a = false;
+    public volatile boolean f23561a = false;
     public final byte[] b = new byte[0];
     public ServiceConnection e = new ServiceConnection(this) { // from class: com.tencent.map.geolocation.TencentLocationManager.1
         public void onNullBinding(ComponentName componentName) {
@@ -46,7 +46,7 @@ public final class TencentLocationManager {
     };
 
     /* renamed from: c  reason: collision with root package name */
-    public TencentLocationBridge f37253c = a();
+    public TencentLocationBridge f23562c = a();
 
     public TencentLocationManager(Context context) {
         this.d = context;
@@ -58,7 +58,7 @@ public final class TencentLocationManager {
             try {
                 if (g == null) {
                     if (context == null) {
-                        throw new NullPointerException(b.f7836a);
+                        throw new NullPointerException(b.f4996a);
                     }
                     if (context.getApplicationContext() == null) {
                         throw new NullPointerException("application context is null");
@@ -82,17 +82,17 @@ public final class TencentLocationManager {
 
     public final TencentLocationBridge a() {
         if (f) {
-            TencentLocationBridge tencentLocationBridge = this.f37253c;
+            TencentLocationBridge tencentLocationBridge = this.f23562c;
             return tencentLocationBridge != null ? tencentLocationBridge : new s5(this.d);
         }
         return null;
     }
 
     public void disableForegroundLocation(boolean z) {
-        if (f && this.f37252a) {
+        if (f && this.f23561a) {
             s.removeNotification = z;
             this.d.unbindService(this.e);
-            this.f37252a = false;
+            this.f23561a = false;
             s3.a("LOC", "disableForegroundLocation");
         }
     }
@@ -102,14 +102,14 @@ public final class TencentLocationManager {
             if (i <= 0 || notification == null) {
                 throw new IllegalArgumentException("enableForegroundLocation illegalArgument");
             }
-            if (this.f37252a) {
+            if (this.f23561a) {
                 return;
             }
             Intent intent = new Intent(this.d, s.class);
             intent.putExtra("LocNotification", notification);
             intent.putExtra("LocNotificationId", i);
             this.d.bindService(intent, this.e, 1);
-            this.f37252a = true;
+            this.f23561a = true;
             s3.a("LOC", "enableForegroundLocation");
         }
     }
@@ -119,7 +119,7 @@ public final class TencentLocationManager {
         if (f) {
             synchronized (this.b) {
                 TencentLocationBridge a2 = a();
-                this.f37253c = a2;
+                this.f23562c = a2;
                 build = a2.getBuild();
             }
             return build;
@@ -131,7 +131,7 @@ public final class TencentLocationManager {
         synchronized (this.b) {
             if (f) {
                 TencentLocationBridge a2 = a();
-                this.f37253c = a2;
+                this.f23562c = a2;
                 return a2.getCoordinateType();
             }
             return -1;
@@ -143,7 +143,7 @@ public final class TencentLocationManager {
         if (f) {
             synchronized (this.b) {
                 TencentLocationBridge a2 = a();
-                this.f37253c = a2;
+                this.f23562c = a2;
                 position = a2.getPosition();
             }
             return position;
@@ -156,7 +156,7 @@ public final class TencentLocationManager {
         if (f) {
             synchronized (this.b) {
                 TencentLocationBridge a2 = a();
-                this.f37253c = a2;
+                this.f23562c = a2;
                 lastKnownLocation = a2.getLastKnownLocation();
             }
             return lastKnownLocation;
@@ -169,7 +169,7 @@ public final class TencentLocationManager {
         if (f) {
             synchronized (this.b) {
                 TencentLocationBridge a2 = a();
-                this.f37253c = a2;
+                this.f23562c = a2;
                 version = a2.getVersion();
             }
             return version;
@@ -182,7 +182,7 @@ public final class TencentLocationManager {
         if (f) {
             synchronized (this.b) {
                 TencentLocationBridge a2 = a();
-                this.f37253c = a2;
+                this.f23562c = a2;
                 isSupport = a2.isSupport();
             }
             return isSupport;
@@ -194,7 +194,7 @@ public final class TencentLocationManager {
         if (f) {
             synchronized (this.b) {
                 TencentLocationBridge a2 = a();
-                this.f37253c = a2;
+                this.f23562c = a2;
                 a2.removeUpdates(tencentLocationListener);
             }
         }
@@ -215,7 +215,7 @@ public final class TencentLocationManager {
                     if (looper != null) {
                         synchronized (this.b) {
                             TencentLocationBridge a2 = a();
-                            this.f37253c = a2;
+                            this.f23562c = a2;
                             requestLocationUpdates = a2.requestLocationUpdates(tencentLocationRequest, tencentLocationListener, looper);
                         }
                         return requestLocationUpdates;
@@ -238,7 +238,7 @@ public final class TencentLocationManager {
                 }
                 synchronized (this.b) {
                     TencentLocationBridge a2 = a();
-                    this.f37253c = a2;
+                    this.f23562c = a2;
                     requestLocationWithScene = a2.requestLocationWithScene(i, tencentLocationListener);
                 }
             }
@@ -254,7 +254,7 @@ public final class TencentLocationManager {
                 if (looper != null) {
                     synchronized (this.b) {
                         TencentLocationBridge a2 = a();
-                        this.f37253c = a2;
+                        this.f23562c = a2;
                         requestSingleFreshLocation = a2.requestSingleFreshLocation(tencentLocationRequest, tencentLocationListener, looper);
                     }
                     return requestSingleFreshLocation;
@@ -274,7 +274,7 @@ public final class TencentLocationManager {
                 }
                 synchronized (this.b) {
                     TencentLocationBridge a2 = a();
-                    this.f37253c = a2;
+                    this.f23562c = a2;
                     a2.setCoordinateType(i);
                 }
             }
@@ -285,7 +285,7 @@ public final class TencentLocationManager {
         if (f) {
             synchronized (this.b) {
                 TencentLocationBridge a2 = a();
-                this.f37253c = a2;
+                this.f23562c = a2;
                 a2.setDebuggable(z);
             }
         }
@@ -301,7 +301,7 @@ public final class TencentLocationManager {
             }
             synchronized (this.b) {
                 TencentLocationBridge a2 = a();
-                this.f37253c = a2;
+                this.f23562c = a2;
                 a2.setDeviceID(context, str);
             }
         }
@@ -325,12 +325,12 @@ public final class TencentLocationManager {
             try {
                 synchronized (this.b) {
                     TencentLocationBridge a2 = a();
-                    this.f37253c = a2;
+                    this.f23562c = a2;
                     startDrEngine = a2.startDrEngine(i);
                 }
                 return startDrEngine;
             } catch (Exception e) {
-                return c.f8290a;
+                return c.f5450a;
             }
         }
         return -6;
@@ -342,7 +342,7 @@ public final class TencentLocationManager {
         if (f) {
             synchronized (this.b) {
                 TencentLocationBridge a2 = a();
-                this.f37253c = a2;
+                this.f23562c = a2;
                 startIndoorLocation = a2.startIndoorLocation();
             }
             return startIndoorLocation;
@@ -356,7 +356,7 @@ public final class TencentLocationManager {
         if (f) {
             synchronized (this.b) {
                 TencentLocationBridge a2 = a();
-                this.f37253c = a2;
+                this.f23562c = a2;
                 stopIndoorLocation = a2.stopIndoorLocation();
             }
             return stopIndoorLocation;
@@ -372,7 +372,7 @@ public final class TencentLocationManager {
                 }
                 synchronized (this.b) {
                     TencentLocationBridge a2 = a();
-                    this.f37253c = a2;
+                    this.f23562c = a2;
                     a2.stopLocationWithScene(i, tencentLocationListener);
                 }
             }
@@ -383,7 +383,7 @@ public final class TencentLocationManager {
         if (f) {
             synchronized (this.b) {
                 TencentLocationBridge a2 = a();
-                this.f37253c = a2;
+                this.f23562c = a2;
                 a2.terminateDrEngine();
             }
         }
@@ -393,7 +393,7 @@ public final class TencentLocationManager {
         if (f) {
             synchronized (this.b) {
                 TencentLocationBridge a2 = a();
-                this.f37253c = a2;
+                this.f23562c = a2;
                 a2.triggerCodeGuarder(z);
             }
         }

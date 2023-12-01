@@ -62,12 +62,12 @@ public final class Shorts extends ShortsMethodsForWeb {
             this.end = i2;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
         public boolean contains(@NullableDecl Object obj) {
             return (obj instanceof Short) && Shorts.indexOf(this.array, ((Short) obj).shortValue(), this.start, this.end) != -1;
         }
 
-        @Override // java.util.AbstractList, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractList, java.util.Collection, java.util.List
         public boolean equals(@NullableDecl Object obj) {
             if (obj == this) {
                 return true;
@@ -99,7 +99,7 @@ public final class Shorts extends ShortsMethodsForWeb {
             return Short.valueOf(this.array[this.start + i]);
         }
 
-        @Override // java.util.AbstractList, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractList, java.util.Collection, java.util.List
         public int hashCode() {
             int i = 1;
             for (int i2 = this.start; i2 < this.end; i2++) {
@@ -117,7 +117,7 @@ public final class Shorts extends ShortsMethodsForWeb {
             return indexOf - this.start;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
         public boolean isEmpty() {
             return false;
         }
@@ -233,7 +233,7 @@ public final class Shorts extends ShortsMethodsForWeb {
         short[] sArr3 = new short[i];
         int i2 = 0;
         for (short[] sArr4 : sArr) {
-            System.arraycopy((Object) sArr4, 0, (Object) sArr3, i2, sArr4.length);
+            System.arraycopy(sArr4, 0, sArr3, i2, sArr4.length);
             i2 += sArr4.length;
         }
         return sArr3;

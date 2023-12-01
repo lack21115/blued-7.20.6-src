@@ -22,13 +22,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveConnectPKUserItemView.class */
 public final class LiveConnectPKUserItemView extends RelativeLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Context f14410a;
+    private final Context a;
     private long b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private long f14411c;
+    private long c;
     private boolean d;
     private boolean e;
     private View f;
@@ -50,9 +46,9 @@ public final class LiveConnectPKUserItemView extends RelativeLayout {
     public LiveConnectPKUserItemView(Context mContext, AttributeSet attributeSet, int i) {
         super(mContext, attributeSet, i);
         Intrinsics.e(mContext, "mContext");
-        this.f14410a = mContext;
+        this.a = mContext;
         this.b = -2L;
-        this.f14411c = -2L;
+        this.c = -2L;
         this.g = LazyKt.a(new Function0<LiveConnectPkUserItemBinding>() { // from class: com.blued.android.module.live_china.view.LiveConnectPKUserItemView$vb$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
@@ -62,12 +58,12 @@ public final class LiveConnectPKUserItemView extends RelativeLayout {
             @Override // kotlin.jvm.functions.Function0
             /* renamed from: a */
             public final LiveConnectPkUserItemBinding invoke() {
-                LiveConnectPkUserItemBinding a2 = LiveConnectPkUserItemBinding.a(LayoutInflater.from(LiveConnectPKUserItemView.this.getMContext()).inflate(R.layout.live_connect_pk_user_item, LiveConnectPKUserItemView.this));
-                Intrinsics.c(a2, "bind(\n            Layout…ser_item, this)\n        )");
-                return a2;
+                LiveConnectPkUserItemBinding a = LiveConnectPkUserItemBinding.a(LayoutInflater.from(LiveConnectPKUserItemView.this.getMContext()).inflate(R.layout.live_connect_pk_user_item, LiveConnectPKUserItemView.this));
+                Intrinsics.c(a, "bind(\n            Layout…ser_item, this)\n        )");
+                return a;
             }
         });
-        this.f = getVb().f12162c;
+        this.f = getVb().c;
     }
 
     public /* synthetic */ LiveConnectPKUserItemView(Context context, AttributeSet attributeSet, int i, int i2, DefaultConstructorMarker defaultConstructorMarker) {
@@ -75,8 +71,8 @@ public final class LiveConnectPKUserItemView extends RelativeLayout {
     }
 
     private final void a() {
-        final boolean z = !this.e && this.d && this.f14411c == LiveRoomInfo.a().g();
-        getVb().f12162c.post(new Runnable() { // from class: com.blued.android.module.live_china.view.-$$Lambda$LiveConnectPKUserItemView$Olo8ZHtWYcj89jsGqkle97fj928
+        final boolean z = !this.e && this.d && this.c == LiveRoomInfo.a().g();
+        getVb().c.post(new Runnable() { // from class: com.blued.android.module.live_china.view.-$$Lambda$LiveConnectPKUserItemView$Olo8ZHtWYcj89jsGqkle97fj928
             @Override // java.lang.Runnable
             public final void run() {
                 LiveConnectPKUserItemView.a(LiveConnectPKUserItemView.this, z);
@@ -88,7 +84,7 @@ public final class LiveConnectPKUserItemView extends RelativeLayout {
     public static final void a(LiveConnectPKUserItemView this$0, boolean z) {
         Intrinsics.e(this$0, "this$0");
         long j = 100;
-        ViewPropertyAnimator duration = this$0.getVb().f12162c.animate().alpha(z ? 1.0f : 0.0f).setDuration(100L);
+        ViewPropertyAnimator duration = this$0.getVb().c.animate().alpha(z ? 1.0f : 0.0f).setDuration(100L);
         if (!z) {
             j = 0;
         }
@@ -102,7 +98,7 @@ public final class LiveConnectPKUserItemView extends RelativeLayout {
     public final void a(LiveInviteUserModel liveInviteUserModel) {
         if (liveInviteUserModel == null) {
             setUid(-1L);
-            getVb().f12161a.setImageResource(R.drawable.live_connet_pk_user_bg_round);
+            getVb().a.setImageResource(R.drawable.live_connet_pk_user_bg_round);
             getVb().d.setText("待邀请");
             return;
         }
@@ -110,7 +106,7 @@ public final class LiveConnectPKUserItemView extends RelativeLayout {
         Long valueOf = str == null ? null : Long.valueOf(Long.parseLong(str));
         Intrinsics.a(valueOf);
         setUid(valueOf.longValue());
-        ImageLoader.a((IRequestHost) null, liveInviteUserModel.avatar).b(R.drawable.live_connet_pk_user_bg_round).c().a(getVb().f12161a);
+        ImageLoader.a((IRequestHost) null, liveInviteUserModel.avatar).b(R.drawable.live_connet_pk_user_bg_round).c().a(getVb().a);
         getVb().d.setText(liveInviteUserModel.name);
     }
 
@@ -119,7 +115,7 @@ public final class LiveConnectPKUserItemView extends RelativeLayout {
     }
 
     public final Context getMContext() {
-        return this.f14410a;
+        return this.a;
     }
 
     public final View getSwitchBtn() {
@@ -127,7 +123,7 @@ public final class LiveConnectPKUserItemView extends RelativeLayout {
     }
 
     public final long getUid() {
-        return this.f14411c;
+        return this.c;
     }
 
     public final void setGroup(boolean z) {
@@ -155,7 +151,7 @@ public final class LiveConnectPKUserItemView extends RelativeLayout {
     }
 
     public final void setUid(long j) {
-        this.f14411c = j;
+        this.c = j;
         if (j != -2) {
             this.b = j;
         }

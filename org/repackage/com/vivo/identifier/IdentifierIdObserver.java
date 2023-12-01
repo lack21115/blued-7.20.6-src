@@ -5,27 +5,23 @@ import android.util.Log;
 
 /* loaded from: source-3503164-dex2jar.jar:org/repackage/com/vivo/identifier/IdentifierIdObserver.class */
 public class IdentifierIdObserver extends ContentObserver {
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f44120a;
+    private String a;
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private IdentifierIdClient f44121c;
+    private IdentifierIdClient c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public IdentifierIdObserver(IdentifierIdClient identifierIdClient, int i, String str) {
         super(null);
-        this.f44121c = identifierIdClient;
+        this.c = identifierIdClient;
         this.b = i;
-        this.f44120a = str;
+        this.a = str;
     }
 
     @Override // android.database.ContentObserver
     public void onChange(boolean z) {
-        IdentifierIdClient identifierIdClient = this.f44121c;
+        IdentifierIdClient identifierIdClient = this.c;
         if (identifierIdClient != null) {
-            identifierIdClient.a(this.b, this.f44120a);
+            identifierIdClient.a(this.b, this.a);
         } else {
             Log.e("VMS_SDK_Observer", "mIdentifierIdClient is null");
         }

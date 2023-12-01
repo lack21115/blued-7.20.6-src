@@ -34,7 +34,7 @@ public final class DateTodayPurposePop extends BottomPopupView {
     private final IRequestHost b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final List<DateTodayPurposeModel> f32471c;
+    private final List<DateTodayPurposeModel> f18780c;
     private TextView d;
     private Set<String> e;
 
@@ -43,14 +43,14 @@ public final class DateTodayPurposePop extends BottomPopupView {
     public final class PurposeAdapter extends BaseQuickAdapter<DateTodayPurposeModel, BaseViewHolder> {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ DateTodayPurposePop f32472a;
+        final /* synthetic */ DateTodayPurposePop f18781a;
         private final IRequestHost b;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public PurposeAdapter(DateTodayPurposePop this$0, IRequestHost iRequestHost) {
+        public PurposeAdapter(DateTodayPurposePop dateTodayPurposePop, IRequestHost iRequestHost) {
             super((int) R.layout.item_date_today_purpose);
-            Intrinsics.e(this$0, "this$0");
-            this.f32472a = this$0;
+            Intrinsics.e(dateTodayPurposePop, "this$0");
+            this.f18781a = dateTodayPurposePop;
             this.b = iRequestHost;
         }
 
@@ -65,104 +65,103 @@ public final class DateTodayPurposePop extends BottomPopupView {
             if (baseViewHolder == null) {
                 return;
             }
-            DateTodayPurposePop dateTodayPurposePop = this.f32472a;
+            DateTodayPurposePop dateTodayPurposePop = this.f18781a;
             if (dateTodayPurposeModel == null) {
                 return;
             }
             ImageLoader.a(a(), dateTodayPurposeModel.getIcon()).a((ImageView) baseViewHolder.getView(R.id.iv_item_icon));
-            ((TextView) baseViewHolder.getView(2131371752)).setText(dateTodayPurposeModel.getTitle());
-            ((LinearLayout) baseViewHolder.getView(2131367942)).setBackgroundResource(dateTodayPurposePop.e.contains(dateTodayPurposeModel.getTitle()) ? 2131236425 : 2131236424);
+            ((TextView) baseViewHolder.getView(R.id.tv_item_text)).setText(dateTodayPurposeModel.getTitle());
+            ((LinearLayout) baseViewHolder.getView(R.id.ll_item_root)).setBackgroundResource(dateTodayPurposePop.e.contains(dateTodayPurposeModel.getTitle()) ? 2131236425 : 2131236424);
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public DateTodayPurposePop(Context context, IRequestHost iRequestHost, List<DateTodayPurposeModel> data) {
+    public DateTodayPurposePop(Context context, IRequestHost iRequestHost, List<DateTodayPurposeModel> list) {
         super(context);
         Intrinsics.e(context, "context");
-        Intrinsics.e(data, "data");
+        Intrinsics.e(list, "data");
         this.b = iRequestHost;
-        this.f32471c = data;
+        this.f18780c = list;
         this.e = new LinkedHashSet();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(DateTodayPurposePop this$0, View view) {
+    public static final void a(DateTodayPurposePop dateTodayPurposePop, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        DateTodayManager.f32404a.c(System.currentTimeMillis());
-        this$0.p();
+        Intrinsics.e(dateTodayPurposePop, "this$0");
+        DateTodayManager.f18714a.c(System.currentTimeMillis());
+        dateTodayPurposePop.p();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(DateTodayPurposePop this$0, BaseQuickAdapter baseQuickAdapter, View view, int i) {
-        Intrinsics.e(this$0, "this$0");
-        String title = this$0.f32471c.get(i).getTitle();
-        if (this$0.e.contains(title)) {
-            this$0.e.remove(title);
+    public static final void a(DateTodayPurposePop dateTodayPurposePop, BaseQuickAdapter baseQuickAdapter, View view, int i) {
+        Intrinsics.e(dateTodayPurposePop, "this$0");
+        String title = dateTodayPurposePop.f18780c.get(i).getTitle();
+        if (dateTodayPurposePop.e.contains(title)) {
+            dateTodayPurposePop.e.remove(title);
         } else {
-            this$0.e.add(title);
+            dateTodayPurposePop.e.add(title);
         }
         baseQuickAdapter.notifyItemChanged(i);
-        if (this$0.e.size() > 0) {
-            TextView textView = this$0.d;
+        if (dateTodayPurposePop.e.size() > 0) {
+            TextView textView = dateTodayPurposePop.d;
             if (textView != null) {
                 textView.setBackgroundResource(R.drawable.shape_date_today_done);
             }
-            TextView textView2 = this$0.d;
+            TextView textView2 = dateTodayPurposePop.d;
             if (textView2 == null) {
                 return;
             }
-            textView2.setTextColor(this$0.getContext().getResources().getColor(BluedPreferences.cK() ? 2131102254 : 2131101780));
+            textView2.setTextColor(dateTodayPurposePop.getContext().getResources().getColor(BluedPreferences.cK() ? 2131102254 : 2131101780));
             return;
         }
-        TextView textView3 = this$0.d;
+        TextView textView3 = dateTodayPurposePop.d;
         if (textView3 != null) {
             textView3.setBackgroundResource(R.drawable.shape_date_today_cancel);
         }
-        TextView textView4 = this$0.d;
+        TextView textView4 = dateTodayPurposePop.d;
         if (textView4 == null) {
             return;
         }
-        textView4.setTextColor(BluedSkinUtils.a(this$0.getContext(), 2131102264));
+        textView4.setTextColor(BluedSkinUtils.a(dateTodayPurposePop.getContext(), 2131102264));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(DateTodayPurposePop this$0, View view) {
+    public static final void b(DateTodayPurposePop dateTodayPurposePop, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        DateTodayManager.f32404a.p();
-        this$0.p();
-        if (!this$0.e.isEmpty()) {
-            this$0.d();
-            ChatHttpUtils.a(CollectionsKt.f(this$0.e), this$0.b);
+        Intrinsics.e(dateTodayPurposePop, "this$0");
+        DateTodayManager.f18714a.p();
+        dateTodayPurposePop.p();
+        if (!dateTodayPurposePop.e.isEmpty()) {
+            dateTodayPurposePop.d();
+            ChatHttpUtils.a(CollectionsKt.f(dateTodayPurposePop.e), dateTodayPurposePop.b);
         }
     }
 
     private final void c() {
-        String v = DateTodayManager.f32404a.v();
+        String v = DateTodayManager.f18714a.v();
         if (v == null || v.length() == 0) {
             return;
         }
-        List b = StringsKt.b((CharSequence) v, new String[]{","}, false, 0, 6, (Object) null);
+        List b = StringsKt.b(v, new String[]{","}, false, 0, 6, (Object) null);
         if (true ^ b.isEmpty()) {
-            this.e = CollectionsKt.k((Iterable) b);
+            this.e = CollectionsKt.k(b);
         }
     }
 
     private final void d() {
         if (this.e.size() > 0) {
-            String text = StringUtils.a(CollectionsKt.f(this.e));
-            String str = text;
+            String a2 = StringUtils.a(CollectionsKt.f(this.e));
+            String str = a2;
             if (str == null || str.length() == 0) {
                 return;
             }
-            DateTodayManager dateTodayManager = DateTodayManager.f32404a;
-            Intrinsics.c(text, "text");
-            dateTodayManager.e(text);
+            DateTodayManager dateTodayManager = DateTodayManager.f18714a;
+            Intrinsics.c(a2, "text");
+            dateTodayManager.e(a2);
         }
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.BottomPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
     public void b() {
         super.b();
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.rv_content);
@@ -170,7 +169,7 @@ public final class DateTodayPurposePop extends BottomPopupView {
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
         recyclerView.setAdapter(purposeAdapter);
         c();
-        purposeAdapter.setNewData(this.f32471c);
+        purposeAdapter.setNewData(this.f18780c);
         purposeAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() { // from class: com.soft.blued.ui.msg.pop.-$$Lambda$DateTodayPurposePop$ERnon-zNn2eqgv7FHE370EpmFd4
             @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemClickListener
             public final void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
@@ -183,7 +182,7 @@ public final class DateTodayPurposePop extends BottomPopupView {
                 DateTodayPurposePop.a(DateTodayPurposePop.this, view);
             }
         });
-        TextView textView = (TextView) findViewById(2131371293);
+        TextView textView = (TextView) findViewById(R.id.tv_done);
         this.d = textView;
         if (textView == null) {
             return;
@@ -196,7 +195,6 @@ public final class DateTodayPurposePop extends BottomPopupView {
         });
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.BottomPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
     public int getImplLayoutId() {
         return R.layout.pop_date_today_purpose;
     }

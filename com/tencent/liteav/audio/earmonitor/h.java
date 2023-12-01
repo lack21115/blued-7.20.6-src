@@ -12,7 +12,7 @@ import java.util.StringTokenizer;
 public final class h extends SystemAudioKit {
 
     /* renamed from: a  reason: collision with root package name */
-    private final AudioManager f36245a;
+    private final AudioManager f22554a;
     private a b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -20,7 +20,7 @@ public final class h extends SystemAudioKit {
     public static final class a extends Thread {
 
         /* renamed from: a  reason: collision with root package name */
-        volatile boolean f36246a = false;
+        volatile boolean f22555a = false;
         private final SystemAudioKit b;
 
         public a(SystemAudioKit systemAudioKit) {
@@ -35,7 +35,7 @@ public final class h extends SystemAudioKit {
             byte[] bArr = new byte[3840];
             Arrays.fill(bArr, (byte) 0);
             allocateDirect.put(bArr);
-            while (!this.f36246a && !isInterrupted()) {
+            while (!this.f22555a && !isInterrupted()) {
                 try {
                     liteavAudioTrack.write(allocateDirect, 0, 3840);
                 } catch (Exception e) {
@@ -50,12 +50,12 @@ public final class h extends SystemAudioKit {
     /* JADX INFO: Access modifiers changed from: package-private */
     public h(long j, Context context) {
         super(j);
-        this.f36245a = (AudioManager) context.getSystemService("audio");
+        this.f22554a = (AudioManager) context.getSystemService("audio");
     }
 
     private void a(String str) {
         try {
-            this.f36245a.setParameters(str);
+            this.f22554a.setParameters(str);
         } catch (Throwable th) {
             Log.e("VivoSystemAudioKit", "setParameters failed. ".concat(String.valueOf(th)), new Object[0]);
             notifySystemError(this);
@@ -64,7 +64,7 @@ public final class h extends SystemAudioKit {
 
     private boolean a() {
         try {
-            String parameters = this.f36245a.getParameters("vivo_ktv_mic_type");
+            String parameters = this.f22554a.getParameters("vivo_ktv_mic_type");
             if (parameters == null) {
                 return false;
             }
@@ -92,9 +92,9 @@ public final class h extends SystemAudioKit {
             return;
         }
         try {
-            this.f36245a.setParameters("vivo_ktv_mode=1");
-            this.f36245a.setParameters("vivo_ktv_rec_source=0");
-            this.f36245a.setParameters("vivo_ktv_play_source=0");
+            this.f22554a.setParameters("vivo_ktv_mode=1");
+            this.f22554a.setParameters("vivo_ktv_rec_source=0");
+            this.f22554a.setParameters("vivo_ktv_play_source=0");
             notifyEarMonitoringInitialized(this, true);
         } catch (Throwable th) {
             Log.d("VivoSystemAudioKit", "initialize failed. ".concat(String.valueOf(th)), new Object[0]);
@@ -124,7 +124,7 @@ public final class h extends SystemAudioKit {
             return;
         }
         a("vivo_ktv_play_source=0");
-        this.b.f36246a = true;
+        this.b.f22555a = true;
         this.b = null;
     }
 

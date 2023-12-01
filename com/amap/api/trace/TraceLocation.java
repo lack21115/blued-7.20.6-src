@@ -2,13 +2,9 @@ package com.amap.api.trace;
 
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/trace/TraceLocation.class */
 public class TraceLocation {
-
-    /* renamed from: a  reason: collision with root package name */
-    private double f5808a;
+    private double a;
     private double b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private float f5809c;
+    private float c;
     private float d;
     private long e;
 
@@ -16,9 +12,9 @@ public class TraceLocation {
     }
 
     public TraceLocation(double d, double d2, float f, float f2, long j) {
-        this.f5808a = a(d);
+        this.a = a(d);
         this.b = a(d2);
-        this.f5809c = (int) ((f * 3600.0f) / 1000.0f);
+        this.c = (int) ((f * 3600.0f) / 1000.0f);
         this.d = (int) f2;
         this.e = j;
     }
@@ -30,9 +26,9 @@ public class TraceLocation {
     public TraceLocation copy() {
         TraceLocation traceLocation = new TraceLocation();
         traceLocation.d = this.d;
-        traceLocation.f5808a = this.f5808a;
+        traceLocation.a = this.a;
         traceLocation.b = this.b;
-        traceLocation.f5809c = this.f5809c;
+        traceLocation.c = this.c;
         traceLocation.e = this.e;
         return traceLocation;
     }
@@ -42,7 +38,7 @@ public class TraceLocation {
     }
 
     public double getLatitude() {
-        return this.f5808a;
+        return this.a;
     }
 
     public double getLongitude() {
@@ -50,7 +46,7 @@ public class TraceLocation {
     }
 
     public float getSpeed() {
-        return this.f5809c;
+        return this.c;
     }
 
     public long getTime() {
@@ -62,7 +58,7 @@ public class TraceLocation {
     }
 
     public void setLatitude(double d) {
-        this.f5808a = a(d);
+        this.a = a(d);
     }
 
     public void setLongitude(double d) {
@@ -70,7 +66,7 @@ public class TraceLocation {
     }
 
     public void setSpeed(float f) {
-        this.f5809c = (int) ((f * 3600.0f) / 1000.0f);
+        this.c = (int) ((f * 3600.0f) / 1000.0f);
     }
 
     public void setTime(long j) {
@@ -78,6 +74,6 @@ public class TraceLocation {
     }
 
     public String toString() {
-        return this.f5808a + ",longtitude " + this.b + ",speed " + this.f5809c + ",bearing " + this.d + ",time " + this.e;
+        return this.a + ",longtitude " + this.b + ",speed " + this.c + ",bearing " + this.d + ",time " + this.e;
     }
 }

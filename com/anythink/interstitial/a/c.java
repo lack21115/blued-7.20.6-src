@@ -12,11 +12,11 @@ import com.anythink.interstitial.api.ATInterstitialExListener;
 public final class c implements ATInterstitialExListener {
 
     /* renamed from: a  reason: collision with root package name */
-    ATInterstitialAutoEventListener f8812a;
+    ATInterstitialAutoEventListener f5972a;
 
     /* JADX INFO: Access modifiers changed from: protected */
     public c(ATInterstitialAutoEventListener aTInterstitialAutoEventListener) {
-        this.f8812a = aTInterstitialAutoEventListener;
+        this.f5972a = aTInterstitialAutoEventListener;
     }
 
     @Override // com.anythink.interstitial.api.ATInterstitialExListener
@@ -24,8 +24,8 @@ public final class c implements ATInterstitialExListener {
         n.a().a(new Runnable() { // from class: com.anythink.interstitial.a.c.1
             @Override // java.lang.Runnable
             public final void run() {
-                if (c.this.f8812a != null) {
-                    c.this.f8812a.onDeeplinkCallback(aTAdInfo, z);
+                if (c.this.f5972a != null) {
+                    c.this.f5972a.onDeeplinkCallback(aTAdInfo, z);
                 }
             }
         });
@@ -36,8 +36,8 @@ public final class c implements ATInterstitialExListener {
         n.a().a(new Runnable() { // from class: com.anythink.interstitial.a.c.2
             @Override // java.lang.Runnable
             public final void run() {
-                if (c.this.f8812a != null) {
-                    ATInterstitialAutoEventListener aTInterstitialAutoEventListener = c.this.f8812a;
+                if (c.this.f5972a != null) {
+                    ATInterstitialAutoEventListener aTInterstitialAutoEventListener = c.this.f5972a;
                     Context context2 = context;
                     Context context3 = context2;
                     if (context2 == null) {
@@ -54,8 +54,8 @@ public final class c implements ATInterstitialExListener {
         n.a().a(new Runnable() { // from class: com.anythink.interstitial.a.c.7
             @Override // java.lang.Runnable
             public final void run() {
-                if (c.this.f8812a != null) {
-                    c.this.f8812a.onInterstitialAdClicked(aTAdInfo);
+                if (c.this.f5972a != null) {
+                    c.this.f5972a.onInterstitialAdClicked(aTAdInfo);
                 }
             }
         });
@@ -66,8 +66,8 @@ public final class c implements ATInterstitialExListener {
         n.a().a(new Runnable() { // from class: com.anythink.interstitial.a.c.6
             @Override // java.lang.Runnable
             public final void run() {
-                if (c.this.f8812a != null) {
-                    c.this.f8812a.onInterstitialAdClose(aTAdInfo);
+                if (c.this.f5972a != null) {
+                    c.this.f5972a.onInterstitialAdClose(aTAdInfo);
                 }
             }
         });
@@ -86,8 +86,8 @@ public final class c implements ATInterstitialExListener {
         n.a().a(new Runnable() { // from class: com.anythink.interstitial.a.c.8
             @Override // java.lang.Runnable
             public final void run() {
-                if (c.this.f8812a != null) {
-                    c.this.f8812a.onInterstitialAdShow(aTAdInfo);
+                if (c.this.f5972a != null) {
+                    c.this.f5972a.onInterstitialAdShow(aTAdInfo);
                 }
             }
         });
@@ -98,8 +98,8 @@ public final class c implements ATInterstitialExListener {
         n.a().a(new Runnable() { // from class: com.anythink.interstitial.a.c.4
             @Override // java.lang.Runnable
             public final void run() {
-                if (c.this.f8812a != null) {
-                    c.this.f8812a.onInterstitialAdVideoEnd(aTAdInfo);
+                if (c.this.f5972a != null) {
+                    c.this.f5972a.onInterstitialAdVideoEnd(aTAdInfo);
                 }
             }
         });
@@ -110,8 +110,8 @@ public final class c implements ATInterstitialExListener {
         n.a().a(new Runnable() { // from class: com.anythink.interstitial.a.c.5
             @Override // java.lang.Runnable
             public final void run() {
-                if (c.this.f8812a != null) {
-                    c.this.f8812a.onInterstitialAdVideoError(adError);
+                if (c.this.f5972a != null) {
+                    c.this.f5972a.onInterstitialAdVideoError(adError);
                 }
             }
         });
@@ -122,8 +122,8 @@ public final class c implements ATInterstitialExListener {
         n.a().a(new Runnable() { // from class: com.anythink.interstitial.a.c.3
             @Override // java.lang.Runnable
             public final void run() {
-                if (c.this.f8812a != null) {
-                    c.this.f8812a.onInterstitialAdVideoStart(aTAdInfo);
+                if (c.this.f5972a != null) {
+                    c.this.f5972a.onInterstitialAdVideoStart(aTAdInfo);
                 }
             }
         });

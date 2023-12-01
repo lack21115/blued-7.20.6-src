@@ -430,8 +430,7 @@ public final class Choreographer {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public void dump(String str, PrintWriter printWriter) {
+    void dump(String str, PrintWriter printWriter) {
         String str2 = str + "  ";
         printWriter.print(str);
         printWriter.println("Choreographer:");

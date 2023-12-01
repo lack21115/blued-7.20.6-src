@@ -23,6 +23,6 @@ final /* synthetic */ class EventDetailsFragment$liveDataObserver$1 extends Func
     @Override // kotlin.jvm.functions.Function1
     public /* synthetic */ Unit invoke(EventDetailsModel eventDetailsModel) {
         a(eventDetailsModel);
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

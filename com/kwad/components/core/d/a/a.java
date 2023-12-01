@@ -16,9 +16,9 @@ import com.kwad.sdk.widget.KSFrameLayout;
 /* loaded from: source-7994992-dex2jar.jar:com/kwad/components/core/d/a/a.class */
 public final class a extends KSFrameLayout {
     private final b Iv;
-    private final b.C0518b Iw;
+    private final b.C0348b Iw;
     private d Ix;
-    private InterfaceC0517a Iy;
+    private InterfaceC0347a Iy;
     private final AdTemplate mAdTemplate;
     private final Context mContext;
     private Presenter mPresenter;
@@ -26,16 +26,16 @@ public final class a extends KSFrameLayout {
 
     /* renamed from: com.kwad.components.core.d.a.a$a  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/components/core/d/a/a$a.class */
-    public interface InterfaceC0517a {
+    public interface InterfaceC0347a {
         void mE();
     }
 
-    public a(Context context, b bVar, b.C0518b c0518b) {
+    public a(Context context, b bVar, b.C0348b c0348b) {
         super(context);
         this.mContext = context;
         this.Iv = bVar;
-        this.Iw = c0518b;
-        this.mAdTemplate = c0518b.adTemplate;
+        this.Iw = c0348b;
+        this.mAdTemplate = c0348b.adTemplate;
         k.inflate(context, R.layout.ksad_download_dialog_layout, this);
         AdBaseFrameLayout adBaseFrameLayout = (AdBaseFrameLayout) findViewById(R.id.ksad_root_container);
         this.mRootContainer = adBaseFrameLayout;
@@ -68,13 +68,12 @@ public final class a extends KSFrameLayout {
         return dVar;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public final void onConfigurationChanged(Configuration configuration) {
+    protected final void onConfigurationChanged(Configuration configuration) {
         super.onConfigurationChanged(configuration);
-        InterfaceC0517a interfaceC0517a = this.Iy;
-        if (interfaceC0517a != null) {
-            interfaceC0517a.mE();
+        InterfaceC0347a interfaceC0347a = this.Iy;
+        if (interfaceC0347a != null) {
+            interfaceC0347a.mE();
         }
     }
 
@@ -101,7 +100,7 @@ public final class a extends KSFrameLayout {
         }
     }
 
-    public final void setChangeListener(InterfaceC0517a interfaceC0517a) {
-        this.Iy = interfaceC0517a;
+    public final void setChangeListener(InterfaceC0347a interfaceC0347a) {
+        this.Iy = interfaceC0347a;
     }
 }

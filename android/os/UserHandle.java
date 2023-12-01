@@ -2,7 +2,6 @@ package android.os;
 
 import android.os.Parcelable;
 import android.util.SparseArray;
-import com.alipay.sdk.util.i;
 import java.io.PrintWriter;
 
 /* loaded from: source-9557208-dex2jar.jar:android/os/UserHandle.class */
@@ -208,7 +207,7 @@ public final class UserHandle implements Parcelable {
     }
 
     public String toString() {
-        return "UserHandle{" + this.mHandle + i.d;
+        return "UserHandle{" + this.mHandle + "}";
     }
 
     @Override // android.os.Parcelable

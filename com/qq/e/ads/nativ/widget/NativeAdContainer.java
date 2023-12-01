@@ -10,7 +10,7 @@ import com.qq.e.comm.util.GDTLogger;
 public class NativeAdContainer extends FrameLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    private ViewStatusListener f27890a;
+    private ViewStatusListener f14202a;
     private ViewStatus b;
 
     /* renamed from: com.qq.e.ads.nativ.widget.NativeAdContainer$1  reason: invalid class name */
@@ -18,14 +18,14 @@ public class NativeAdContainer extends FrameLayout {
     static /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f27891a;
+        static final /* synthetic */ int[] f14203a;
 
         static {
             int[] iArr = new int[ViewStatus.values().length];
-            f27891a = iArr;
+            f14203a = iArr;
             iArr[1] = 1;
             try {
-                f27891a[2] = 2;
+                f14203a[2] = 2;
             } catch (NoSuchFieldError e) {
             }
         }
@@ -55,32 +55,30 @@ public class NativeAdContainer extends FrameLayout {
 
     @Override // android.view.ViewGroup, android.view.View
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        ViewStatusListener viewStatusListener = this.f27890a;
+        ViewStatusListener viewStatusListener = this.f14202a;
         if (viewStatusListener != null) {
             viewStatusListener.onDispatchTouchEvent(motionEvent);
         }
         return super.dispatchTouchEvent(motionEvent);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         GDTLogger.d("NativeAdContainer onAttachedToWindow");
         this.b = ViewStatus.ATTACHED;
-        ViewStatusListener viewStatusListener = this.f27890a;
+        ViewStatusListener viewStatusListener = this.f14202a;
         if (viewStatusListener != null) {
             viewStatusListener.onAttachToWindow();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         GDTLogger.d("NativeAdContainer onDetachedFromWindow");
         this.b = ViewStatus.DETACHED;
-        ViewStatusListener viewStatusListener = this.f27890a;
+        ViewStatusListener viewStatusListener = this.f14202a;
         if (viewStatusListener != null) {
             viewStatusListener.onDetachFromWindow();
         }
@@ -90,32 +88,31 @@ public class NativeAdContainer extends FrameLayout {
     public void onWindowFocusChanged(boolean z) {
         super.onWindowFocusChanged(z);
         GDTLogger.d("onWindowFocusChanged: hasWindowFocus: " + z);
-        ViewStatusListener viewStatusListener = this.f27890a;
+        ViewStatusListener viewStatusListener = this.f14202a;
         if (viewStatusListener != null) {
             viewStatusListener.onWindowFocusChanged(z);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onWindowVisibilityChanged(int i) {
+    protected void onWindowVisibilityChanged(int i) {
         super.onWindowVisibilityChanged(i);
         GDTLogger.d("onWindowVisibilityChanged: visibility: " + i);
-        ViewStatusListener viewStatusListener = this.f27890a;
+        ViewStatusListener viewStatusListener = this.f14202a;
         if (viewStatusListener != null) {
             viewStatusListener.onWindowVisibilityChanged(i);
         }
     }
 
     public void setViewStatusListener(ViewStatusListener viewStatusListener) {
-        this.f27890a = viewStatusListener;
+        this.f14202a = viewStatusListener;
         if (viewStatusListener != null) {
             int ordinal = this.b.ordinal();
             if (ordinal == 1) {
-                this.f27890a.onAttachToWindow();
+                this.f14202a.onAttachToWindow();
             } else if (ordinal != 2) {
             } else {
-                this.f27890a.onDetachFromWindow();
+                this.f14202a.onDetachFromWindow();
             }
         }
     }

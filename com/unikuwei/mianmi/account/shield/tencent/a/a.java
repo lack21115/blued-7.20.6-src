@@ -1,6 +1,7 @@
 package com.unikuwei.mianmi.account.shield.tencent.a;
 
 import android.text.TextUtils;
+import com.xiaomi.mipush.sdk.Constants;
 import java.security.InvalidAlgorithmParameterException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
@@ -16,7 +17,7 @@ import javax.crypto.spec.SecretKeySpec;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final char[] f40981a = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '/'};
+    private static final char[] f27290a = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '/'};
 
     public static String a() {
         String str;
@@ -25,7 +26,7 @@ public class a {
             String uuid = UUID.randomUUID().toString();
             str = "";
             if (!TextUtils.isEmpty(uuid)) {
-                String replace = uuid.replace("-", "");
+                String replace = uuid.replace(Constants.ACCEPT_TIME_SEPARATOR_SERVER, "");
                 str = replace;
                 if (replace.length() >= 16) {
                     str2 = replace;

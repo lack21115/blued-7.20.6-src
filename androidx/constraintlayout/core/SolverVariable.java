@@ -21,11 +21,11 @@ public class SolverVariable implements Comparable<SolverVariable> {
     private static int o = 1;
 
     /* renamed from: a  reason: collision with root package name */
-    int f1996a;
+    int f1948a;
     float[] b;
 
     /* renamed from: c  reason: collision with root package name */
-    float[] f1997c;
+    float[] f1949c;
     public float computedValue;
     Type d;
     ArrayRow[] e;
@@ -46,7 +46,7 @@ public class SolverVariable implements Comparable<SolverVariable> {
     static /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f1998a;
+        static final /* synthetic */ int[] f1950a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:13:0x0041 -> B:27:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:15:0x0045 -> B:25:0x001f). Please submit an issue!!! */
@@ -54,25 +54,25 @@ public class SolverVariable implements Comparable<SolverVariable> {
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:19:0x004d -> B:29:0x0035). Please submit an issue!!! */
         static {
             int[] iArr = new int[Type.values().length];
-            f1998a = iArr;
+            f1950a = iArr;
             try {
                 iArr[Type.UNRESTRICTED.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f1998a[Type.CONSTANT.ordinal()] = 2;
+                f1950a[Type.CONSTANT.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f1998a[Type.SLACK.ordinal()] = 3;
+                f1950a[Type.SLACK.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f1998a[Type.ERROR.ordinal()] = 4;
+                f1950a[Type.ERROR.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f1998a[Type.UNKNOWN.ordinal()] = 5;
+                f1950a[Type.UNKNOWN.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
         }
@@ -89,11 +89,11 @@ public class SolverVariable implements Comparable<SolverVariable> {
 
     public SolverVariable(Type type, String str) {
         this.id = -1;
-        this.f1996a = -1;
+        this.f1948a = -1;
         this.strength = 0;
         this.isFinalValue = false;
         this.b = new float[9];
-        this.f1997c = new float[9];
+        this.f1949c = new float[9];
         this.e = new ArrayRow[16];
         this.f = 0;
         this.usageInRowCount = 0;
@@ -106,11 +106,11 @@ public class SolverVariable implements Comparable<SolverVariable> {
 
     public SolverVariable(String str, Type type) {
         this.id = -1;
-        this.f1996a = -1;
+        this.f1948a = -1;
         this.strength = 0;
         this.isFinalValue = false;
         this.b = new float[9];
-        this.f1997c = new float[9];
+        this.f1949c = new float[9];
         this.e = new ArrayRow[16];
         this.f = 0;
         this.usageInRowCount = 0;
@@ -186,7 +186,7 @@ public class SolverVariable implements Comparable<SolverVariable> {
         this.d = Type.UNKNOWN;
         this.strength = 0;
         this.id = -1;
-        this.f1996a = -1;
+        this.f1948a = -1;
         this.computedValue = 0.0f;
         this.isFinalValue = false;
         this.g = false;
@@ -200,7 +200,7 @@ public class SolverVariable implements Comparable<SolverVariable> {
                 this.f = 0;
                 this.usageInRowCount = 0;
                 this.inGoal = false;
-                Arrays.fill(this.f1997c, 0.0f);
+                Arrays.fill(this.f1949c, 0.0f);
                 return;
             }
             this.e[i3] = null;
@@ -215,7 +215,7 @@ public class SolverVariable implements Comparable<SolverVariable> {
         this.h = -1;
         this.i = 0.0f;
         int i = this.f;
-        this.f1996a = -1;
+        this.f1948a = -1;
         int i2 = 0;
         while (true) {
             int i3 = i2;
@@ -238,7 +238,7 @@ public class SolverVariable implements Comparable<SolverVariable> {
         this.h = solverVariable.id;
         this.i = f;
         int i = this.f;
-        this.f1996a = -1;
+        this.f1948a = -1;
         int i2 = 0;
         while (true) {
             int i3 = i2;

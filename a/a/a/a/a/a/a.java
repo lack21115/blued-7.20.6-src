@@ -12,14 +12,14 @@ import com.qiniu.pili.droid.streaming.av.encoder.PLAACEncoder;
 public abstract class a implements c.d {
 
     /* renamed from: a  reason: collision with root package name */
-    public a.a.a.a.a.a.i.c f1212a;
+    public a.a.a.a.a.a.i.c f1164a;
     public a.a.a.a.a.a.g.b b;
 
     /* renamed from: c  reason: collision with root package name */
-    public int f1213c;
+    public int f1165c;
 
     public a(a.a.a.a.a.a.i.c cVar) {
-        this.f1212a = cVar;
+        this.f1164a = cVar;
         a.a.a.a.a.a.j.a.a().a(cVar.d().r());
     }
 
@@ -63,7 +63,7 @@ public abstract class a implements c.d {
         a.a.a.a.a.a.g.b bVar = this.b;
         if (bVar != null) {
             try {
-                bVar.a(this.f1212a, z);
+                bVar.a(this.f1164a, z);
             } catch (IllegalStateException e) {
                 e.printStackTrace();
             }
@@ -79,9 +79,9 @@ public abstract class a implements c.d {
     }
 
     public void b() {
-        a.a.a.a.a.a.i.c cVar = this.f1212a;
+        a.a.a.a.a.a.i.c cVar = this.f1164a;
         if (cVar != null) {
-            cVar.b(this.f1213c);
+            cVar.b(this.f1165c);
         }
         a.a.a.a.a.a.g.b bVar = this.b;
         if (bVar != null) {

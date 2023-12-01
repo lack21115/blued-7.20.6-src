@@ -9,26 +9,26 @@ import java.util.concurrent.ConcurrentHashMap;
 public class f {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Map<String, f> f38338a = new ConcurrentHashMap();
+    public static final Map<String, f> f24647a = new ConcurrentHashMap();
     public SharedPreferences b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final String f38339c;
+    public final String f24648c;
     public Context d;
 
     public f(String str) {
-        this.f38339c = str;
+        this.f24648c = str;
     }
 
     public static f a(String str) {
         f fVar;
         synchronized (f.class) {
             try {
-                f fVar2 = f38338a.get(str);
+                f fVar2 = f24647a.get(str);
                 fVar = fVar2;
                 if (fVar2 == null) {
                     fVar = new f(str);
-                    f38338a.put(str, fVar);
+                    f24647a.put(str, fVar);
                 }
             } catch (Throwable th) {
                 throw th;

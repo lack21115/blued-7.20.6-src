@@ -8,10 +8,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.LifecycleOwner;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewbinding.ViewBinding;
 import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.ui.ActivityFragmentActive;
 import com.blued.android.core.ui.TerminalActivity;
@@ -79,7 +81,7 @@ public final class HelloCallNewFragment extends MVIBaseFragment<HelloCallViewMod
     private boolean p;
 
     /* renamed from: c  reason: collision with root package name */
-    static final /* synthetic */ KProperty<Object>[] f32358c = {Reflection.a(new PropertyReference1Impl(HelloCallNewFragment.class, "viewBinding", "getViewBinding()Lcom/soft/blued/databinding/FragmentHelloCallNewBinding;", 0))};
+    static final /* synthetic */ KProperty<Object>[] f18668c = {(KProperty) Reflection.a(new PropertyReference1Impl(HelloCallNewFragment.class, "viewBinding", "getViewBinding()Lcom/soft/blued/databinding/FragmentHelloCallNewBinding;", 0))};
     public static final Companion b = new Companion(null);
 
     @Metadata
@@ -92,28 +94,28 @@ public final class HelloCallNewFragment extends MVIBaseFragment<HelloCallViewMod
             this();
         }
 
-        public final void a(Context context, String title) {
+        public final void a(Context context, String str) {
             Intrinsics.e(context, "context");
-            Intrinsics.e(title, "title");
+            Intrinsics.e(str, "title");
             Bundle bundle = new Bundle();
-            bundle.putString("hello_title", title);
+            bundle.putString("hello_title", str);
             TerminalActivity.d(context, HelloCallNewFragment.class, bundle);
         }
     }
 
     public HelloCallNewFragment() {
-        super(R.layout.fragment_hello_call_new);
-        this.d = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<HelloCallNewFragment, FragmentHelloCallNewBinding>() { // from class: com.soft.blued.ui.msg.fragment.HelloCallNewFragment$special$$inlined$viewBindingFragment$default$1
-            @Override // kotlin.jvm.functions.Function1
+        super((int) R.layout.fragment_hello_call_new);
+        this.d = ((Fragment) this) instanceof DialogFragment ? (ViewBindingProperty) new DialogFragmentViewBindingProperty(new Function1<HelloCallNewFragment, FragmentHelloCallNewBinding>() { // from class: com.soft.blued.ui.msg.fragment.HelloCallNewFragment$special$$inlined$viewBindingFragment$default$1
+            /* JADX WARN: Incorrect types in method signature: (Lcom/soft/blued/ui/msg/fragment/HelloCallNewFragment;)Lcom/soft/blued/databinding/FragmentHelloCallNewBinding; */
             /* renamed from: a */
-            public final FragmentHelloCallNewBinding invoke(HelloCallNewFragment fragment) {
+            public final ViewBinding invoke(Fragment fragment) {
                 Intrinsics.e(fragment, "fragment");
                 return FragmentHelloCallNewBinding.a(fragment.requireView());
             }
         }) : new FragmentViewBindingProperty(new Function1<HelloCallNewFragment, FragmentHelloCallNewBinding>() { // from class: com.soft.blued.ui.msg.fragment.HelloCallNewFragment$special$$inlined$viewBindingFragment$default$2
-            @Override // kotlin.jvm.functions.Function1
+            /* JADX WARN: Incorrect types in method signature: (Lcom/soft/blued/ui/msg/fragment/HelloCallNewFragment;)Lcom/soft/blued/databinding/FragmentHelloCallNewBinding; */
             /* renamed from: a */
-            public final FragmentHelloCallNewBinding invoke(HelloCallNewFragment fragment) {
+            public final ViewBinding invoke(Fragment fragment) {
                 Intrinsics.e(fragment, "fragment");
                 return FragmentHelloCallNewBinding.a(fragment.requireView());
             }
@@ -125,11 +127,11 @@ public final class HelloCallNewFragment extends MVIBaseFragment<HelloCallViewMod
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(HelloCallNewFragment this$0, View view) {
+    public static final void a(HelloCallNewFragment helloCallNewFragment, View view) {
         ShapeTextView shapeTextView;
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        HelloCallNewHeaderBinding helloCallNewHeaderBinding = this$0.n;
+        Intrinsics.e(helloCallNewFragment, "this$0");
+        HelloCallNewHeaderBinding helloCallNewHeaderBinding = helloCallNewFragment.n;
         if (helloCallNewHeaderBinding == null || (shapeTextView = helloCallNewHeaderBinding.h) == null) {
             return;
         }
@@ -137,24 +139,24 @@ public final class HelloCallNewFragment extends MVIBaseFragment<HelloCallViewMod
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(HelloCallNewFragment this$0, PullToRefreshBase pullToRefreshBase) {
-        Intrinsics.e(this$0, "this$0");
-        this$0.e = 1;
-        this$0.j();
+    public static final void a(HelloCallNewFragment helloCallNewFragment, PullToRefreshBase pullToRefreshBase) {
+        Intrinsics.e(helloCallNewFragment, "this$0");
+        helloCallNewFragment.e = 1;
+        helloCallNewFragment.j();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(HelloCallNewFragment this$0, String r) {
+    public static final void a(HelloCallNewFragment helloCallNewFragment, String str) {
         PullToRefreshRecyclerView pullToRefreshRecyclerView;
-        Intrinsics.e(this$0, "this$0");
-        Intrinsics.c(r, "r");
-        this$0.i = r;
-        this$0.g();
-        RecyclerView recyclerView = this$0.o;
+        Intrinsics.e(helloCallNewFragment, "this$0");
+        Intrinsics.c(str, "r");
+        helloCallNewFragment.i = str;
+        helloCallNewFragment.g();
+        RecyclerView recyclerView = helloCallNewFragment.o;
         if (recyclerView != null) {
             recyclerView.scrollToPosition(0);
         }
-        FragmentHelloCallNewBinding c2 = this$0.c();
+        FragmentHelloCallNewBinding c2 = helloCallNewFragment.c();
         if (c2 == null || (pullToRefreshRecyclerView = c2.f) == null) {
             return;
         }
@@ -162,10 +164,10 @@ public final class HelloCallNewFragment extends MVIBaseFragment<HelloCallViewMod
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(HelloCallNewFragment this$0, boolean z) {
-        Intrinsics.e(this$0, "this$0");
+    public static final void a(HelloCallNewFragment helloCallNewFragment, boolean z) {
+        Intrinsics.e(helloCallNewFragment, "this$0");
         if (z) {
-            CallHelloManager.a().a(this$0.getContext(), (IRequestHost) this$0.getFragmentActive(), false, 8);
+            CallHelloManager.a().a(helloCallNewFragment.getContext(), (IRequestHost) helloCallNewFragment.getFragmentActive(), false, 8);
         }
     }
 
@@ -190,7 +192,7 @@ public final class HelloCallNewFragment extends MVIBaseFragment<HelloCallViewMod
                     return;
                 }
             }
-            CallHelloManager.a().a(context, getFragmentActive(), 8);
+            CallHelloManager.a().a(context, (IRequestHost) getFragmentActive(), 8);
         } else if (callMeStatusData.free_count != 0) {
             c2.b.setBtnText(R.string.free_call);
         } else if (callMeStatusData.pay_count == 0) {
@@ -202,11 +204,11 @@ public final class HelloCallNewFragment extends MVIBaseFragment<HelloCallViewMod
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(HelloCallNewFragment this$0, View view) {
+    public static final void b(HelloCallNewFragment helloCallNewFragment, View view) {
         ShapeTextView shapeTextView;
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        HelloCallNewHeaderBinding helloCallNewHeaderBinding = this$0.n;
+        Intrinsics.e(helloCallNewFragment, "this$0");
+        HelloCallNewHeaderBinding helloCallNewHeaderBinding = helloCallNewFragment.n;
         if (helloCallNewHeaderBinding == null || (shapeTextView = helloCallNewHeaderBinding.i) == null) {
             return;
         }
@@ -214,24 +216,24 @@ public final class HelloCallNewFragment extends MVIBaseFragment<HelloCallViewMod
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(HelloCallNewFragment this$0, boolean z) {
-        Intrinsics.e(this$0, "this$0");
+    public static final void b(HelloCallNewFragment helloCallNewFragment, boolean z) {
+        Intrinsics.e(helloCallNewFragment, "this$0");
         if (z) {
-            CallHelloManager.a().a(this$0.getContext(), (IRequestHost) this$0.getFragmentActive(), false, 8);
+            CallHelloManager.a().a(helloCallNewFragment.getContext(), (IRequestHost) helloCallNewFragment.getFragmentActive(), false, 8);
         }
     }
 
     private final FragmentHelloCallNewBinding c() {
-        return (FragmentHelloCallNewBinding) this.d.b(this, f32358c[0]);
+        return (FragmentHelloCallNewBinding) this.d.b(this, f18668c[0]);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void c(HelloCallNewFragment this$0, View view) {
+    public static final void c(HelloCallNewFragment helloCallNewFragment, View view) {
         LinearLayout linearLayout;
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        HelloCallNewHeaderBinding helloCallNewHeaderBinding = this$0.n;
-        if (helloCallNewHeaderBinding == null || (linearLayout = helloCallNewHeaderBinding.f29061a) == null) {
+        Intrinsics.e(helloCallNewFragment, "this$0");
+        HelloCallNewHeaderBinding helloCallNewHeaderBinding = helloCallNewFragment.n;
+        if (helloCallNewHeaderBinding == null || (linearLayout = helloCallNewHeaderBinding.f15371a) == null) {
             return;
         }
         linearLayout.callOnClick();
@@ -258,7 +260,7 @@ public final class HelloCallNewFragment extends MVIBaseFragment<HelloCallViewMod
                 HelloCallNewFragment.e(HelloCallNewFragment.this, view);
             }
         });
-        a2.f29061a.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.fragment.-$$Lambda$HelloCallNewFragment$Nvb8dihc8-VwZkKJn7zBvtrfHjQ
+        a2.f15371a.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.fragment.-$$Lambda$HelloCallNewFragment$Nvb8dihc8-VwZkKJn7zBvtrfHjQ
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 HelloCallNewFragment.f(HelloCallNewFragment.this, view);
@@ -267,18 +269,18 @@ public final class HelloCallNewFragment extends MVIBaseFragment<HelloCallViewMod
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void d(HelloCallNewFragment this$0, View view) {
+    public static final void d(HelloCallNewFragment helloCallNewFragment, View view) {
         PullToRefreshRecyclerView pullToRefreshRecyclerView;
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
+        Intrinsics.e(helloCallNewFragment, "this$0");
         EventTrackGuy.a(GuyProtos.Event.VOCATIVE_SECOND_AUTO_SORT_CLICK);
-        this$0.h = "intelligent";
-        this$0.h();
-        FragmentHelloCallNewBinding c2 = this$0.c();
+        helloCallNewFragment.h = "intelligent";
+        helloCallNewFragment.h();
+        FragmentHelloCallNewBinding c2 = helloCallNewFragment.c();
         if (c2 != null && (pullToRefreshRecyclerView = c2.f) != null) {
             pullToRefreshRecyclerView.k();
         }
-        PeopleHelloQuickAdapter peopleHelloQuickAdapter = this$0.j;
+        PeopleHelloQuickAdapter peopleHelloQuickAdapter = helloCallNewFragment.j;
         if (peopleHelloQuickAdapter == null) {
             return;
         }
@@ -298,13 +300,13 @@ public final class HelloCallNewFragment extends MVIBaseFragment<HelloCallViewMod
                 HelloCallNewFragment.g(HelloCallNewFragment.this, view);
             }
         });
-        c2.g.setCenterText(R.string.hello_page_title);
+        c2.g.setCenterText((int) R.string.hello_page_title);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void e(final HelloCallNewFragment this$0) {
-        Intrinsics.e(this$0, "this$0");
-        CallHelloManager.a().a(this$0.getContext(), this$0.getFragmentActive(), 8, new CallHelloManager.ToOpenListener() { // from class: com.soft.blued.ui.msg.fragment.-$$Lambda$HelloCallNewFragment$C31_TSU1cv90hE0o0CttzB4xbls
+    public static final void e(final HelloCallNewFragment helloCallNewFragment) {
+        Intrinsics.e(helloCallNewFragment, "this$0");
+        CallHelloManager.a().a(helloCallNewFragment.getContext(), (IRequestHost) helloCallNewFragment.getFragmentActive(), 8, new CallHelloManager.ToOpenListener() { // from class: com.soft.blued.ui.msg.fragment.-$$Lambda$HelloCallNewFragment$C31_TSU1cv90hE0o0CttzB4xbls
             @Override // com.soft.blued.ui.find.manager.CallHelloManager.ToOpenListener
             public final void done(boolean z) {
                 HelloCallNewFragment.a(HelloCallNewFragment.this, z);
@@ -342,18 +344,18 @@ public final class HelloCallNewFragment extends MVIBaseFragment<HelloCallViewMod
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void e(HelloCallNewFragment this$0, View view) {
+    public static final void e(HelloCallNewFragment helloCallNewFragment, View view) {
         PullToRefreshRecyclerView pullToRefreshRecyclerView;
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
+        Intrinsics.e(helloCallNewFragment, "this$0");
         EventTrackGuy.a(GuyProtos.Event.VOCATIVE_SECOND_DISTANCE_SORT_CLICK);
-        this$0.h = "distance";
-        this$0.h();
-        FragmentHelloCallNewBinding c2 = this$0.c();
+        helloCallNewFragment.h = "distance";
+        helloCallNewFragment.h();
+        FragmentHelloCallNewBinding c2 = helloCallNewFragment.c();
         if (c2 != null && (pullToRefreshRecyclerView = c2.f) != null) {
             pullToRefreshRecyclerView.k();
         }
-        PeopleHelloQuickAdapter peopleHelloQuickAdapter = this$0.j;
+        PeopleHelloQuickAdapter peopleHelloQuickAdapter = helloCallNewFragment.j;
         if (peopleHelloQuickAdapter == null) {
             return;
         }
@@ -368,13 +370,13 @@ public final class HelloCallNewFragment extends MVIBaseFragment<HelloCallViewMod
         h();
         g();
         this.g = BluedConfig.a().E();
-        helloCallNewHeaderBinding.f29062c.setVisibility(this.g ? 0 : 8);
+        helloCallNewHeaderBinding.f15372c.setVisibility(this.g ? 0 : 8);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void f(final HelloCallNewFragment this$0) {
-        Intrinsics.e(this$0, "this$0");
-        CallHelloManager.a().a(this$0.getContext(), this$0.getFragmentActive(), 8, new CallHelloManager.ToOpenListener() { // from class: com.soft.blued.ui.msg.fragment.-$$Lambda$HelloCallNewFragment$VyfAdgQDoXxDXkqCXXTiJWmpSzk
+    public static final void f(final HelloCallNewFragment helloCallNewFragment) {
+        Intrinsics.e(helloCallNewFragment, "this$0");
+        CallHelloManager.a().a(helloCallNewFragment.getContext(), (IRequestHost) helloCallNewFragment.getFragmentActive(), 8, new CallHelloManager.ToOpenListener() { // from class: com.soft.blued.ui.msg.fragment.-$$Lambda$HelloCallNewFragment$VyfAdgQDoXxDXkqCXXTiJWmpSzk
             @Override // com.soft.blued.ui.find.manager.CallHelloManager.ToOpenListener
             public final void done(boolean z) {
                 HelloCallNewFragment.b(HelloCallNewFragment.this, z);
@@ -412,10 +414,10 @@ public final class HelloCallNewFragment extends MVIBaseFragment<HelloCallViewMod
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void f(final HelloCallNewFragment this$0, View view) {
+    public static final void f(final HelloCallNewFragment helloCallNewFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        FragmentActivity activity = this$0.getActivity();
+        Intrinsics.e(helloCallNewFragment, "this$0");
+        FragmentActivity activity = helloCallNewFragment.getActivity();
         if (activity == null) {
             return;
         }
@@ -434,10 +436,10 @@ public final class HelloCallNewFragment extends MVIBaseFragment<HelloCallViewMod
         if (helloCallNewHeaderBinding != null) {
             if (TextUtils.isEmpty(a())) {
                 helloCallNewHeaderBinding.f.setTextColor(BluedSkinUtils.a(getContext(), 2131102254));
-                helloCallNewHeaderBinding.b.setImageDrawable(BluedSkinUtils.b(getContext(), R.drawable.icon_hello_call_filter_close));
+                helloCallNewHeaderBinding.b.setImageDrawable(BluedSkinUtils.b(getContext(), (int) R.drawable.icon_hello_call_filter_close));
             } else {
                 helloCallNewHeaderBinding.f.setTextColor(BluedSkinUtils.a(getContext(), 2131101766));
-                helloCallNewHeaderBinding.b.setImageDrawable(BluedSkinUtils.b(getContext(), R.drawable.icon_hello_call_filter_open));
+                helloCallNewHeaderBinding.b.setImageDrawable(BluedSkinUtils.b(getContext(), (int) R.drawable.icon_hello_call_filter_open));
             }
         }
         FragmentHelloCallNewBinding c2 = c();
@@ -446,18 +448,18 @@ public final class HelloCallNewFragment extends MVIBaseFragment<HelloCallViewMod
         }
         if (TextUtils.isEmpty(a())) {
             c2.h.setTextColor(BluedSkinUtils.a(getContext(), 2131102254));
-            c2.f28850c.setImageDrawable(BluedSkinUtils.b(getContext(), R.drawable.icon_hello_call_filter_close));
+            c2.f15160c.setImageDrawable(BluedSkinUtils.b(getContext(), (int) R.drawable.icon_hello_call_filter_close));
             return;
         }
         c2.h.setTextColor(BluedSkinUtils.a(getContext(), 2131101766));
-        c2.f28850c.setImageDrawable(BluedSkinUtils.b(getContext(), R.drawable.icon_hello_call_filter_open));
+        c2.f15160c.setImageDrawable(BluedSkinUtils.b(getContext(), (int) R.drawable.icon_hello_call_filter_open));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void g(HelloCallNewFragment this$0, View view) {
+    public static final void g(HelloCallNewFragment helloCallNewFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        FragmentActivity activity = this$0.getActivity();
+        Intrinsics.e(helloCallNewFragment, "this$0");
+        FragmentActivity activity = helloCallNewFragment.getActivity();
         if (activity == null) {
             return;
         }
@@ -468,13 +470,13 @@ public final class HelloCallNewFragment extends MVIBaseFragment<HelloCallViewMod
         HelloCallNewHeaderBinding helloCallNewHeaderBinding = this.n;
         if (helloCallNewHeaderBinding != null) {
             if (TextUtils.equals("intelligent", this.h)) {
-                ShapeHelper.a((ShapeHelper.ShapeView) helloCallNewHeaderBinding.h, 2131102254);
-                ShapeHelper.a((ShapeHelper.ShapeView) helloCallNewHeaderBinding.i, 2131102263);
+                ShapeHelper.a(helloCallNewHeaderBinding.h, 2131102254);
+                ShapeHelper.a(helloCallNewHeaderBinding.i, 2131102263);
                 this.h = "intelligent";
                 BluedPreferences.Z("intelligent");
             } else {
-                ShapeHelper.a((ShapeHelper.ShapeView) helloCallNewHeaderBinding.h, 2131102263);
-                ShapeHelper.a((ShapeHelper.ShapeView) helloCallNewHeaderBinding.i, 2131102254);
+                ShapeHelper.a(helloCallNewHeaderBinding.h, 2131102263);
+                ShapeHelper.a(helloCallNewHeaderBinding.i, 2131102254);
                 this.h = "distance";
                 BluedPreferences.Z("distance");
             }
@@ -484,14 +486,14 @@ public final class HelloCallNewFragment extends MVIBaseFragment<HelloCallViewMod
             return;
         }
         if (TextUtils.equals("intelligent", this.h)) {
-            ShapeHelper.a((ShapeHelper.ShapeView) c2.i, 2131102254);
-            ShapeHelper.a((ShapeHelper.ShapeView) c2.j, 2131102263);
+            ShapeHelper.a(c2.i, 2131102254);
+            ShapeHelper.a(c2.j, 2131102263);
             this.h = "intelligent";
             BluedPreferences.Z("intelligent");
             return;
         }
-        ShapeHelper.a((ShapeHelper.ShapeView) c2.i, 2131102263);
-        ShapeHelper.a((ShapeHelper.ShapeView) c2.j, 2131102254);
+        ShapeHelper.a(c2.i, 2131102263);
+        ShapeHelper.a(c2.j, 2131102254);
         this.h = "distance";
         BluedPreferences.Z("distance");
     }
@@ -504,7 +506,7 @@ public final class HelloCallNewFragment extends MVIBaseFragment<HelloCallViewMod
         NoDataAndLoadFailView noDataAndLoadFailView = new NoDataAndLoadFailView(getContext());
         this.m = noDataAndLoadFailView;
         Intrinsics.a(noDataAndLoadFailView);
-        noDataAndLoadFailView.setNoDataStr(R.string.people_search_no_data_tip);
+        noDataAndLoadFailView.setNoDataStr((int) R.string.people_search_no_data_tip);
         NoDataAndLoadFailView noDataAndLoadFailView2 = this.m;
         Intrinsics.a(noDataAndLoadFailView2);
         noDataAndLoadFailView2.setNoDataImg(2131233637);
@@ -513,16 +515,15 @@ public final class HelloCallNewFragment extends MVIBaseFragment<HelloCallViewMod
         noDataAndLoadFailView3.d();
         c2.f.setRefreshEnabled(true);
         c2.f.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener() { // from class: com.soft.blued.ui.msg.fragment.-$$Lambda$HelloCallNewFragment$HEOpuNqAMWrYnw8DmLXm0aLJ0Us
-            @Override // com.blued.android.framework.view.pulltorefresh.PullToRefreshBase.OnRefreshListener
             public final void onRefresh(PullToRefreshBase pullToRefreshBase) {
                 HelloCallNewFragment.a(HelloCallNewFragment.this, pullToRefreshBase);
             }
         });
-        RecyclerView refreshableView = c2.f.getRefreshableView();
+        View refreshableView = c2.f.getRefreshableView();
         if (refreshableView == null) {
             throw new NullPointerException("null cannot be cast to non-null type androidx.recyclerview.widget.RecyclerView");
         }
-        RecyclerView recyclerView = refreshableView;
+        RecyclerView recyclerView = (RecyclerView) refreshableView;
         this.o = recyclerView;
         final int[] iArr = new int[2];
         final int[] iArr2 = new int[2];
@@ -605,7 +606,7 @@ public final class HelloCallNewFragment extends MVIBaseFragment<HelloCallViewMod
                     int r0 = r0.getHeight()
                     r7 = r0
                     r0 = r5
-                    android.widget.LinearLayout r0 = r0.f29062c
+                    android.widget.LinearLayout r0 = r0.f15372c
                     r1 = r10
                     r0.getLocationOnScreen(r1)
                     r0 = r10
@@ -632,7 +633,7 @@ public final class HelloCallNewFragment extends MVIBaseFragment<HelloCallViewMod
             }
         });
         c2.f.k();
-        CallHelloManager.a().a(getContext(), getFragmentActive(), 8, (CallHelloManager.ToOpenListener) null);
+        CallHelloManager.a().a(getContext(), (IRequestHost) getFragmentActive(), 8, (CallHelloManager.ToOpenListener) null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -675,7 +676,6 @@ public final class HelloCallNewFragment extends MVIBaseFragment<HelloCallViewMod
     public void a(boolean z, String str) {
     }
 
-    @Override // com.blued.android.module.common.base.mvi.MVIBaseFragment
     public void a(boolean z, boolean z2) {
         NoDataAndLoadFailView noDataAndLoadFailView;
         NoDataAndLoadFailView noDataAndLoadFailView2;
@@ -728,10 +728,10 @@ public final class HelloCallNewFragment extends MVIBaseFragment<HelloCallViewMod
             recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 3));
             PeopleHelloQuickAdapter peopleHelloQuickAdapter = this.j;
             Intrinsics.a(peopleHelloQuickAdapter);
-            peopleHelloQuickAdapter.setEmptyView(this.m);
+            peopleHelloQuickAdapter.setEmptyView((View) this.m);
             PeopleHelloQuickAdapter peopleHelloQuickAdapter2 = this.j;
             Intrinsics.a(peopleHelloQuickAdapter2);
-            peopleHelloQuickAdapter2.a(Intrinsics.a((Object) "intelligent", (Object) this.h) ? MessageProtos.SortType.AI_SORT_TYPE : MessageProtos.SortType.DISTANCE_SORT_TYPE);
+            peopleHelloQuickAdapter2.a(Intrinsics.a("intelligent", this.h) ? MessageProtos.SortType.AI_SORT_TYPE : MessageProtos.SortType.DISTANCE_SORT_TYPE);
             recyclerView.setAdapter(this.j);
             PeopleHelloQuickAdapter peopleHelloQuickAdapter3 = this.j;
             Intrinsics.a(peopleHelloQuickAdapter3);
@@ -764,7 +764,6 @@ public final class HelloCallNewFragment extends MVIBaseFragment<HelloCallViewMod
         floatFooterView.setBtnText(TimeAndDateUtils.a(i, false));
     }
 
-    @Override // com.blued.android.module.common.base.mvi.MVIBaseFragment
     public void m() {
         d();
         e();
@@ -798,7 +797,7 @@ public final class HelloCallNewFragment extends MVIBaseFragment<HelloCallViewMod
                 HelloCallNewFragment.b(HelloCallNewFragment.this, view);
             }
         });
-        c2.f28849a.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.fragment.-$$Lambda$HelloCallNewFragment$7pIwmuuMR6heus0MCdqgf16zTXA
+        c2.f15159a.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.fragment.-$$Lambda$HelloCallNewFragment$7pIwmuuMR6heus0MCdqgf16zTXA
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 HelloCallNewFragment.c(HelloCallNewFragment.this, view);
@@ -806,13 +805,11 @@ public final class HelloCallNewFragment extends MVIBaseFragment<HelloCallViewMod
         });
     }
 
-    @Override // com.blued.android.module.common.base.mvi.MVIBaseFragment
     public void o() {
         CallHelloObserver.a().a(this, getLifecycle());
         LifecycleOwner viewLifecycleOwner = getViewLifecycleOwner();
         Intrinsics.c(viewLifecycleOwner, "viewLifecycleOwner");
         BluedStructureExtKt.a(this, viewLifecycleOwner, new PropertyReference1Impl() { // from class: com.soft.blued.ui.msg.fragment.HelloCallNewFragment$liveDataObserver$1
-            @Override // kotlin.jvm.internal.PropertyReference1Impl, kotlin.reflect.KProperty1
             public Object a(Object obj) {
                 return ((HelloCallState) obj).a();
             }
@@ -822,15 +819,14 @@ public final class HelloCallNewFragment extends MVIBaseFragment<HelloCallViewMod
                 super(1);
             }
 
-            public final void a(BluedEntity<UserFindResult, HelloDataExtra> it) {
-                Intrinsics.e(it, "it");
-                HelloCallNewFragment.this.a(it);
+            public final void a(BluedEntity<UserFindResult, HelloDataExtra> bluedEntity) {
+                Intrinsics.e(bluedEntity, "it");
+                HelloCallNewFragment.this.a(bluedEntity);
             }
 
-            @Override // kotlin.jvm.functions.Function1
-            public /* synthetic */ Unit invoke(BluedEntity<UserFindResult, HelloDataExtra> bluedEntity) {
-                a(bluedEntity);
-                return Unit.f42314a;
+            public /* synthetic */ Object invoke(Object obj) {
+                a((BluedEntity) obj);
+                return Unit.a;
             }
         });
     }

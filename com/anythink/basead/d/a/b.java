@@ -20,36 +20,28 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/d/a/b.class */
 public class b {
-
-    /* renamed from: c  reason: collision with root package name */
-    private static volatile b f5924c;
+    private static volatile b c;
     private final String b = getClass().getSimpleName();
-
-    /* renamed from: a  reason: collision with root package name */
-    ConcurrentHashMap<String, g> f5925a = new ConcurrentHashMap<>(2);
+    ConcurrentHashMap<String, g> a = new ConcurrentHashMap<>(2);
 
     /* renamed from: com.anythink.basead.d.a.b$1  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/d/a/b$1.class */
     final class AnonymousClass1 implements Runnable {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ com.anythink.core.common.e.g f5926a;
+        final /* synthetic */ com.anythink.core.common.e.g a;
         final /* synthetic */ j b;
-
-        /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ d f5927c;
+        final /* synthetic */ d c;
         final /* synthetic */ a d;
 
         AnonymousClass1(com.anythink.core.common.e.g gVar, j jVar, d dVar, a aVar) {
-            this.f5926a = gVar;
+            this.a = gVar;
             this.b = jVar;
-            this.f5927c = dVar;
+            this.c = dVar;
             this.d = aVar;
         }
 
         @Override // java.lang.Runnable
         public final void run() {
-            c cVar = new c(n.a().g(), "", TextUtils.isEmpty(this.f5926a.S()) ? this.b.f6664c : this.f5926a.S());
+            g cVar = new c(n.a().g(), "", TextUtils.isEmpty(this.a.S()) ? this.b.c : this.a.S());
             cVar.b(this.b.m.p() == 0);
             int n = ((int) this.b.m.n()) / 1000;
             if (n <= 2) {
@@ -61,16 +53,16 @@ public class b {
             }
             cVar.a(this.b.m.x() == 0);
             cVar.f();
-            ArrayList<com.anythink.expressad.foundation.d.c> arrayList = this.f5927c.J;
+            ArrayList<com.anythink.expressad.foundation.d.c> arrayList = this.c.J;
             if (arrayList != null && arrayList.size() > 0) {
                 for (com.anythink.expressad.foundation.d.c cVar2 : arrayList) {
                     if (cVar2 != null) {
-                        String c2 = cVar2.c();
-                        String str = c2;
-                        if (!TextUtils.isEmpty(c2)) {
+                        String c = cVar2.c();
+                        String str = c;
+                        if (!TextUtils.isEmpty(c)) {
                             boolean z = this.b.m.x() == 0;
                             boolean z2 = com.anythink.expressad.shake.a.a().b() && this.b.m.M() == 1;
-                            String b = b.b(b.c(c2, z), z2, this.b.m.N(), this.b.m.O());
+                            String b = b.b(b.c(c, z), z2, this.b.m.N(), this.b.m.O());
                             if (z2 || z) {
                                 str = b;
                                 if (z2) {
@@ -85,87 +77,74 @@ public class b {
                 }
             }
             cVar.a(new com.anythink.expressad.out.d() { // from class: com.anythink.basead.d.a.b.1.1
-                @Override // com.anythink.expressad.out.d
                 public final void a() {
-                    ConcurrentHashMap<String, g> concurrentHashMap = b.this.f5925a;
-                    c cVar3 = (c) concurrentHashMap.remove(AnonymousClass1.this.b.b + AnonymousClass1.this.b.f6663a);
-                    if (cVar3 != null) {
+                    ConcurrentHashMap<String, g> concurrentHashMap = b.this.a;
+                    g gVar = (c) concurrentHashMap.remove(AnonymousClass1.this.b.b + AnonymousClass1.this.b.a);
+                    if (gVar != null) {
                         if (AnonymousClass1.this.d != null) {
-                            AnonymousClass1.this.d.a(cVar3);
+                            AnonymousClass1.this.d.a(gVar);
                         }
                     } else if (AnonymousClass1.this.d != null) {
                         AnonymousClass1.this.d.a(f.a(f.l, "Resource download fail."));
                     }
                 }
 
-                @Override // com.anythink.expressad.out.d
                 public final void a(String str2) {
                     b.a(b.this, str2, AnonymousClass1.this.b, AnonymousClass1.this.d);
                 }
 
-                @Override // com.anythink.expressad.out.d
                 public final void b() {
                 }
             });
-            ConcurrentHashMap<String, g> concurrentHashMap = b.this.f5925a;
-            concurrentHashMap.put(this.b.b + this.b.f6663a, cVar);
-            cVar.a(this.f5927c);
+            ConcurrentHashMap<String, g> concurrentHashMap = b.this.a;
+            concurrentHashMap.put(this.b.b + this.b.a, cVar);
+            cVar.a(this.c);
         }
     }
 
     /* renamed from: com.anythink.basead.d.a.b$2  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/d/a/b$2.class */
     final class AnonymousClass2 implements h {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ j f5929a;
+        final /* synthetic */ j a;
         final /* synthetic */ a b;
 
         AnonymousClass2(j jVar, a aVar) {
-            this.f5929a = jVar;
+            this.a = jVar;
             this.b = aVar;
         }
 
-        @Override // com.anythink.expressad.out.h
         public final void a() {
-            ConcurrentHashMap<String, g> concurrentHashMap = b.this.f5925a;
-            TemplateBannerView templateBannerView = (TemplateBannerView) concurrentHashMap.remove(this.f5929a.b + this.f5929a.f6663a);
-            if (templateBannerView != null) {
+            ConcurrentHashMap<String, g> concurrentHashMap = b.this.a;
+            g gVar = (TemplateBannerView) concurrentHashMap.remove(this.a.b + this.a.a);
+            if (gVar != null) {
                 a aVar = this.b;
                 if (aVar != null) {
-                    aVar.a(templateBannerView);
+                    aVar.a(gVar);
                 }
             } else if (this.b != null) {
                 this.b.a(f.a(f.l, "Resource download fail."));
             }
         }
 
-        @Override // com.anythink.expressad.out.h
         public final void a(com.anythink.expressad.foundation.d.c cVar) {
         }
 
-        @Override // com.anythink.expressad.out.h
         public final void a(String str) {
-            b.a(b.this, str, this.f5929a, this.b);
+            b.a(b.this, str, this.a, this.b);
         }
 
-        @Override // com.anythink.expressad.out.h
         public final void b() {
         }
 
-        @Override // com.anythink.expressad.out.h
         public final void c() {
         }
 
-        @Override // com.anythink.expressad.out.h
         public final void d() {
         }
 
-        @Override // com.anythink.expressad.out.h
         public final void e() {
         }
 
-        @Override // com.anythink.expressad.out.h
         public final void f() {
         }
     }
@@ -173,70 +152,58 @@ public class b {
     /* renamed from: com.anythink.basead.d.a.b$4  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/d/a/b$4.class */
     final class AnonymousClass4 implements Runnable {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ com.anythink.core.common.e.g f5933a;
+        final /* synthetic */ com.anythink.core.common.e.g a;
         final /* synthetic */ j b;
-
-        /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ a f5934c;
+        final /* synthetic */ a c;
         final /* synthetic */ d d;
 
         AnonymousClass4(com.anythink.core.common.e.g gVar, j jVar, a aVar, d dVar) {
-            this.f5933a = gVar;
+            this.a = gVar;
             this.b = jVar;
-            this.f5934c = aVar;
+            this.c = aVar;
             this.d = dVar;
         }
 
         @Override // java.lang.Runnable
         public final void run() {
-            com.anythink.expressad.advanced.d.c cVar = new com.anythink.expressad.advanced.d.c("", TextUtils.isEmpty(this.f5933a.S()) ? this.b.f6664c : this.f5933a.S(), n.a().g());
+            g cVar = new com.anythink.expressad.advanced.d.c("", TextUtils.isEmpty(this.a.S()) ? this.b.c : this.a.S(), n.a().g());
             cVar.a(new o() { // from class: com.anythink.basead.d.a.b.4.1
-                @Override // com.anythink.expressad.out.o
                 public final void a() {
-                    ConcurrentHashMap<String, g> concurrentHashMap = b.this.f5925a;
-                    com.anythink.expressad.advanced.d.c cVar2 = (com.anythink.expressad.advanced.d.c) concurrentHashMap.remove(AnonymousClass4.this.b.b + AnonymousClass4.this.b.f6663a);
-                    if (cVar2 != null) {
-                        if (AnonymousClass4.this.f5934c != null) {
-                            AnonymousClass4.this.f5934c.a(cVar2);
+                    ConcurrentHashMap<String, g> concurrentHashMap = b.this.a;
+                    g gVar = (com.anythink.expressad.advanced.d.c) concurrentHashMap.remove(AnonymousClass4.this.b.b + AnonymousClass4.this.b.a);
+                    if (gVar != null) {
+                        if (AnonymousClass4.this.c != null) {
+                            AnonymousClass4.this.c.a(gVar);
                         }
-                    } else if (AnonymousClass4.this.f5934c != null) {
-                        AnonymousClass4.this.f5934c.a(f.a(f.m, f.H));
+                    } else if (AnonymousClass4.this.c != null) {
+                        AnonymousClass4.this.c.a(f.a(f.m, f.H));
                     }
                 }
 
-                @Override // com.anythink.expressad.out.o
                 public final void a(com.anythink.expressad.foundation.d.c cVar2) {
                 }
 
-                @Override // com.anythink.expressad.out.o
                 public final void a(String str) {
-                    b.a(b.this, str, AnonymousClass4.this.b, AnonymousClass4.this.f5934c);
+                    b.a(b.this, str, AnonymousClass4.this.b, AnonymousClass4.this.c);
                 }
 
-                @Override // com.anythink.expressad.out.o
                 public final void b() {
                 }
 
-                @Override // com.anythink.expressad.out.o
                 public final void c() {
                 }
 
-                @Override // com.anythink.expressad.out.o
                 public final void d() {
                 }
 
-                @Override // com.anythink.expressad.out.o
                 public final void e() {
                 }
 
-                @Override // com.anythink.expressad.out.o
                 public final void f() {
                 }
             });
-            ConcurrentHashMap<String, g> concurrentHashMap = b.this.f5925a;
-            concurrentHashMap.put(this.b.b + this.b.f6663a, cVar);
+            ConcurrentHashMap<String, g> concurrentHashMap = b.this.a;
+            concurrentHashMap.put(this.b.b + this.b.a, cVar);
             cVar.a(this.d);
         }
     }
@@ -265,23 +232,23 @@ public class b {
     }
 
     public static b a() {
-        if (f5924c == null) {
+        if (c == null) {
             synchronized (b.class) {
                 try {
-                    if (f5924c == null) {
-                        f5924c = new b();
+                    if (c == null) {
+                        c = new b();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f5924c;
+        return c;
     }
 
     static /* synthetic */ void a(b bVar, String str, j jVar, a aVar) {
-        ConcurrentHashMap<String, g> concurrentHashMap = bVar.f5925a;
-        concurrentHashMap.remove(jVar.b + jVar.f6663a);
+        ConcurrentHashMap<String, g> concurrentHashMap = bVar.a;
+        concurrentHashMap.remove(jVar.b + jVar.a);
         if (aVar != null) {
             aVar.a(f.a(f.l, str));
         }
@@ -358,8 +325,8 @@ public class b {
     }
 
     private void a(String str, j jVar, a aVar) {
-        ConcurrentHashMap<String, g> concurrentHashMap = this.f5925a;
-        concurrentHashMap.remove(jVar.b + jVar.f6663a);
+        ConcurrentHashMap<String, g> concurrentHashMap = this.a;
+        concurrentHashMap.remove(jVar.b + jVar.a);
         if (aVar != null) {
             aVar.a(f.a(f.l, str));
         }
@@ -411,11 +378,11 @@ public class b {
     /* JADX INFO: Access modifiers changed from: private */
     public static String c(String str, boolean z) {
         if (z) {
-            if (str.contains(com.anythink.expressad.video.dynview.a.a.Q)) {
+            if (str.contains("alecfc")) {
                 return str.replace("alecfc=0", "alecfc=1");
             }
             return str + "&alecfc=1";
-        } else if (str.contains(com.anythink.expressad.video.dynview.a.a.Q)) {
+        } else if (str.contains("alecfc")) {
             return str.replace("alecfc=1", "alecfc=0");
         } else {
             return str + "&alecfc=0";
@@ -449,8 +416,8 @@ public class b {
     }
 
     private void d(com.anythink.core.common.e.g gVar, final j jVar, d dVar, final a aVar) {
-        com.anythink.expressad.reward.b.a aVar2 = new com.anythink.expressad.reward.b.a();
-        String S = TextUtils.isEmpty(gVar.S()) ? jVar.f6664c : gVar.S();
+        g aVar2 = new com.anythink.expressad.reward.b.a();
+        String S = TextUtils.isEmpty(gVar.S()) ? jVar.c : gVar.S();
         if (jVar.j == 1) {
             com.anythink.expressad.videocommon.e.c.a().a(com.anythink.expressad.foundation.b.a.b().e(), S, false);
             aVar2.a(false);
@@ -481,7 +448,7 @@ public class b {
                     if (!TextUtils.isEmpty(P)) {
                         cVar.n(b(c(P, z2), z, jVar.m.N(), jVar.m.O()));
                     }
-                    c.C0143c M = cVar.M();
+                    c.c M = cVar.M();
                     boolean z3 = jVar.m.u() == 1;
                     if (M != null) {
                         String e = M.e();
@@ -493,62 +460,52 @@ public class b {
             }
         }
         aVar2.a(new com.anythink.expressad.videocommon.d.a() { // from class: com.anythink.basead.d.a.b.3
-            @Override // com.anythink.expressad.videocommon.d.a
             public final void a() {
             }
 
-            @Override // com.anythink.expressad.videocommon.d.a
             public final void a(com.anythink.expressad.foundation.d.c cVar2) {
             }
 
-            @Override // com.anythink.expressad.videocommon.d.a
             public final void a(String str) {
                 b.a(b.this, str, jVar, aVar);
             }
 
-            @Override // com.anythink.expressad.videocommon.d.a
             public final void a(boolean z4, String str, float f) {
             }
 
-            @Override // com.anythink.expressad.videocommon.d.a
             public final void b() {
-                ConcurrentHashMap<String, g> concurrentHashMap = b.this.f5925a;
-                com.anythink.expressad.reward.b.a aVar3 = (com.anythink.expressad.reward.b.a) concurrentHashMap.remove(jVar.b + jVar.f6663a);
-                if (aVar3 == null || !aVar3.isReady()) {
+                ConcurrentHashMap<String, g> concurrentHashMap = b.this.a;
+                g gVar2 = (com.anythink.expressad.reward.b.a) concurrentHashMap.remove(jVar.b + jVar.a);
+                if (gVar2 == null || !gVar2.isReady()) {
                     if (aVar != null) {
                         aVar.a(f.a(f.l, "Resource download fail."));
                         return;
                     }
                     return;
                 }
-                a aVar4 = aVar;
-                if (aVar4 != null) {
-                    aVar4.a(aVar3);
+                a aVar3 = aVar;
+                if (aVar3 != null) {
+                    aVar3.a(gVar2);
                 }
             }
 
-            @Override // com.anythink.expressad.videocommon.d.a
             public final void b(String str) {
             }
 
-            @Override // com.anythink.expressad.videocommon.d.a
             public final void c() {
             }
 
-            @Override // com.anythink.expressad.videocommon.d.a
             public final void d() {
             }
 
-            @Override // com.anythink.expressad.videocommon.d.a
             public final void e() {
             }
 
-            @Override // com.anythink.expressad.videocommon.d.a
             public final void f() {
             }
         });
-        ConcurrentHashMap<String, g> concurrentHashMap = this.f5925a;
-        concurrentHashMap.put(jVar.b + jVar.f6663a, aVar2);
+        ConcurrentHashMap<String, g> concurrentHashMap = this.a;
+        concurrentHashMap.put(jVar.b + jVar.a, aVar2);
         aVar2.a(dVar);
     }
 

@@ -9,7 +9,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import com.android.internal.R;
 import com.android.internal.view.menu.MenuBuilder;
 import com.android.internal.view.menu.MenuPopupHelper;
 
@@ -93,7 +92,6 @@ public class ExtractEditLayout extends LinearLayout {
             return true;
         }
 
-        @Override // com.android.internal.view.menu.MenuBuilder.Callback
         public boolean onMenuItemSelected(MenuBuilder menuBuilder, MenuItem menuItem) {
             if (this.mCallback != null) {
                 return this.mCallback.onActionItemClicked(this, menuItem);
@@ -101,7 +99,6 @@ public class ExtractEditLayout extends LinearLayout {
             return false;
         }
 
-        @Override // com.android.internal.view.menu.MenuBuilder.Callback
         public void onMenuModeChange(MenuBuilder menuBuilder) {
         }
 
@@ -147,8 +144,8 @@ public class ExtractEditLayout extends LinearLayout {
     @Override // android.view.View
     public void onFinishInflate() {
         super.onFinishInflate();
-        this.mExtractActionButton = (Button) findViewById(R.id.inputExtractAction);
-        this.mEditButton = (Button) findViewById(R.id.inputExtractEditButton);
+        this.mExtractActionButton = (Button) findViewById(16909074);
+        this.mEditButton = (Button) findViewById(16909075);
         this.mEditButton.setOnClickListener(new View.OnClickListener() { // from class: android.inputmethodservice.ExtractEditLayout.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {

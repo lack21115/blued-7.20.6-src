@@ -169,11 +169,11 @@ public interface IVideoCallback extends IInterface {
             switch (i) {
                 case 1:
                     parcel.enforceInterface(DESCRIPTOR);
-                    receiveSessionModifyRequest(parcel.readInt() != 0 ? VideoProfile.CREATOR.createFromParcel(parcel) : null);
+                    receiveSessionModifyRequest(parcel.readInt() != 0 ? (VideoProfile) VideoProfile.CREATOR.createFromParcel(parcel) : null);
                     return true;
                 case 2:
                     parcel.enforceInterface(DESCRIPTOR);
-                    receiveSessionModifyResponse(parcel.readInt(), parcel.readInt() != 0 ? VideoProfile.CREATOR.createFromParcel(parcel) : null, parcel.readInt() != 0 ? VideoProfile.CREATOR.createFromParcel(parcel) : null);
+                    receiveSessionModifyResponse(parcel.readInt(), parcel.readInt() != 0 ? (VideoProfile) VideoProfile.CREATOR.createFromParcel(parcel) : null, parcel.readInt() != 0 ? (VideoProfile) VideoProfile.CREATOR.createFromParcel(parcel) : null);
                     return true;
                 case 3:
                     parcel.enforceInterface(DESCRIPTOR);
@@ -189,13 +189,13 @@ public interface IVideoCallback extends IInterface {
                     return true;
                 case 6:
                     parcel.enforceInterface(DESCRIPTOR);
-                    changeCameraCapabilities(parcel.readInt() != 0 ? CameraCapabilities.CREATOR.createFromParcel(parcel) : null);
+                    changeCameraCapabilities(parcel.readInt() != 0 ? (CameraCapabilities) CameraCapabilities.CREATOR.createFromParcel(parcel) : null);
                     return true;
                 case 7:
                     parcel.enforceInterface(DESCRIPTOR);
                     changeVideoQuality(parcel.readInt());
                     return true;
-                case IBinder.INTERFACE_TRANSACTION /* 1598968902 */:
+                case 1598968902:
                     parcel2.writeString(DESCRIPTOR);
                     return true;
                 default:

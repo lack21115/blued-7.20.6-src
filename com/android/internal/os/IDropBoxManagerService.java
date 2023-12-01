@@ -17,9 +17,8 @@ public interface IDropBoxManagerService extends IInterface {
         static final int TRANSACTION_getNextEntry = 3;
         static final int TRANSACTION_isTagEnabled = 2;
 
-        /* JADX INFO: Access modifiers changed from: private */
         /* loaded from: source-4181928-dex2jar.jar:com/android/internal/os/IDropBoxManagerService$Stub$Proxy.class */
-        public static class Proxy implements IDropBoxManagerService {
+        private static class Proxy implements IDropBoxManagerService {
             private IBinder mRemote;
 
             Proxy(IBinder iBinder) {
@@ -65,10 +64,10 @@ public interface IDropBoxManagerService extends IInterface {
                     obtain.writeLong(j);
                     this.mRemote.transact(3, obtain, obtain2, 0);
                     obtain2.readException();
-                    DropBoxManager.Entry createFromParcel = obtain2.readInt() != 0 ? DropBoxManager.Entry.CREATOR.createFromParcel(obtain2) : null;
+                    DropBoxManager.Entry entry = obtain2.readInt() != 0 ? (DropBoxManager.Entry) DropBoxManager.Entry.CREATOR.createFromParcel(obtain2) : null;
                     obtain2.recycle();
                     obtain.recycle();
-                    return createFromParcel;
+                    return entry;
                 } catch (Throwable th) {
                     obtain2.recycle();
                     obtain.recycle();
@@ -122,7 +121,7 @@ public interface IDropBoxManagerService extends IInterface {
             switch (i) {
                 case 1:
                     parcel.enforceInterface(DESCRIPTOR);
-                    add(parcel.readInt() != 0 ? DropBoxManager.Entry.CREATOR.createFromParcel(parcel) : null);
+                    add(parcel.readInt() != 0 ? (DropBoxManager.Entry) DropBoxManager.Entry.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     return true;
                 case 2:
@@ -146,7 +145,7 @@ public interface IDropBoxManagerService extends IInterface {
                     parcel2.writeInt(1);
                     nextEntry.writeToParcel(parcel2, 1);
                     return true;
-                case IBinder.INTERFACE_TRANSACTION /* 1598968902 */:
+                case 1598968902:
                     parcel2.writeString(DESCRIPTOR);
                     return true;
                 default:

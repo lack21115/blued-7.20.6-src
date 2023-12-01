@@ -4,17 +4,17 @@ package com.xiaomi.push;
 public final class ja {
 
     /* renamed from: a  reason: collision with root package name */
-    public final byte f41545a;
+    public final byte f27854a;
 
     /* renamed from: a  reason: collision with other field name */
-    public final int f889a;
+    public final int f842a;
 
     public ja() {
         this((byte) 0, 0);
     }
 
     public ja(byte b, int i) {
-        this.f41545a = b;
-        this.f889a = i;
+        this.f27854a = b;
+        this.f842a = i;
     }
 }

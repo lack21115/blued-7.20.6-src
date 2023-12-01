@@ -27,7 +27,7 @@ public final class CommentFragment_MVP implements MvpDispatcher {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:22:0x0065, code lost:
-        if (r6.equals(android.provider.ContactsContract.StreamItemsColumns.COMMENTS) != false) goto L16;
+        if (r6.equals("comments") != false) goto L16;
      */
     /* JADX WARN: Removed duplicated region for block: B:27:0x0073  */
     /* JADX WARN: Removed duplicated region for block: B:40:0x00aa  */

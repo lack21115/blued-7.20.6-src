@@ -50,7 +50,7 @@ public abstract class BaseProgressIndicatorSpec {
             return;
         }
         this.trackColor = this.indicatorColors[0];
-        TypedArray obtainStyledAttributes = context.getTheme().obtainStyledAttributes(new int[]{16842803});
+        TypedArray obtainStyledAttributes = context.getTheme().obtainStyledAttributes(new int[]{android.R.attr.disabledAlpha});
         float f = obtainStyledAttributes.getFloat(0, 0.2f);
         obtainStyledAttributes.recycle();
         this.trackColor = MaterialColors.compositeARGBWithAlpha(this.trackColor, (int) (f * 255.0f));

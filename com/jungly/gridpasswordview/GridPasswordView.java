@@ -29,11 +29,11 @@ import com.jungly.gridpasswordview.imebugfixer.ImeDelBugFixedEditText;
 public class GridPasswordView extends LinearLayout implements PasswordView {
 
     /* renamed from: a  reason: collision with root package name */
-    private ColorStateList f23679a;
+    private ColorStateList f10071a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f23680c;
+    private int f10072c;
     private int d;
     private int e;
     private Drawable f;
@@ -57,23 +57,23 @@ public class GridPasswordView extends LinearLayout implements PasswordView {
     static /* synthetic */ class AnonymousClass5 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f23685a;
+        static final /* synthetic */ int[] f10077a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x002f -> B:19:0x001f). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:9:0x002b -> B:15:0x0014). Please submit an issue!!! */
         static {
             int[] iArr = new int[PasswordType.values().length];
-            f23685a = iArr;
+            f10077a = iArr;
             try {
                 iArr[PasswordType.TEXT.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f23685a[PasswordType.TEXTVISIBLE.ordinal()] = 2;
+                f10077a[PasswordType.TEXTVISIBLE.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f23685a[PasswordType.TEXTWEB.ordinal()] = 3;
+                f10077a[PasswordType.TEXTWEB.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
         }
@@ -192,15 +192,15 @@ public class GridPasswordView extends LinearLayout implements PasswordView {
     private void a(Context context, AttributeSet attributeSet, int i) {
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.gridPasswordView, i, 0);
         ColorStateList colorStateList = obtainStyledAttributes.getColorStateList(R.styleable.gridPasswordView_textColorGpv);
-        this.f23679a = colorStateList;
+        this.f10071a = colorStateList;
         if (colorStateList == null) {
-            this.f23679a = ColorStateList.valueOf(getResources().getColor(17170435));
+            this.f10071a = ColorStateList.valueOf(getResources().getColor(android.R.color.primary_text_light));
         }
         int dimensionPixelSize = obtainStyledAttributes.getDimensionPixelSize(R.styleable.gridPasswordView_textSizeGpv, -1);
         if (dimensionPixelSize != -1) {
             this.b = Util.a(context, dimensionPixelSize);
         }
-        this.f23680c = (int) obtainStyledAttributes.getDimension(R.styleable.gridPasswordView_lineWidthGpv, Util.a(getContext(), 1));
+        this.f10072c = (int) obtainStyledAttributes.getDimension(R.styleable.gridPasswordView_lineWidthGpv, Util.a(getContext(), 1));
         this.d = obtainStyledAttributes.getColor(R.styleable.gridPasswordView_lineColorGpv, -1433892728);
         this.e = obtainStyledAttributes.getColor(R.styleable.gridPasswordView_gridColorGpv, -1);
         Drawable drawable = obtainStyledAttributes.getDrawable(R.styleable.gridPasswordView_lineColorGpv);
@@ -225,7 +225,7 @@ public class GridPasswordView extends LinearLayout implements PasswordView {
     private GradientDrawable b() {
         GradientDrawable gradientDrawable = new GradientDrawable();
         gradientDrawable.setColor(this.e);
-        gradientDrawable.setStroke(this.f23680c, this.d);
+        gradientDrawable.setStroke(this.f10072c, this.d);
         return gradientDrawable;
     }
 
@@ -247,7 +247,7 @@ public class GridPasswordView extends LinearLayout implements PasswordView {
                 return;
             }
             View inflate = from.inflate(R.layout.divider, (ViewGroup) null);
-            ViewGroup.LayoutParams layoutParams = new LinearLayout.LayoutParams(this.f23680c, -1);
+            ViewGroup.LayoutParams layoutParams = new LinearLayout.LayoutParams(this.f10072c, -1);
             inflate.setBackgroundDrawable(this.f);
             addView(inflate, layoutParams);
             TextView textView = (TextView) from.inflate(R.layout.textview, (ViewGroup) null);
@@ -287,7 +287,7 @@ public class GridPasswordView extends LinearLayout implements PasswordView {
     }
 
     private void setCustomAttr(TextView textView) {
-        ColorStateList colorStateList = this.f23679a;
+        ColorStateList colorStateList = this.f10071a;
         if (colorStateList != null) {
             textView.setTextColor(colorStateList);
         }
@@ -339,9 +339,8 @@ public class GridPasswordView extends LinearLayout implements PasswordView {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onRestoreInstanceState(Parcelable parcelable) {
+    protected void onRestoreInstanceState(Parcelable parcelable) {
         Parcelable parcelable2 = parcelable;
         if (parcelable instanceof Bundle) {
             Bundle bundle = (Bundle) parcelable;
@@ -354,9 +353,8 @@ public class GridPasswordView extends LinearLayout implements PasswordView {
         super.onRestoreInstanceState(parcelable2);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public Parcelable onSaveInstanceState() {
+    protected Parcelable onSaveInstanceState() {
         Bundle bundle = new Bundle();
         bundle.putParcelable("instanceState", super.onSaveInstanceState());
         bundle.putStringArray("passwordArr", this.l);
@@ -406,7 +404,7 @@ public class GridPasswordView extends LinearLayout implements PasswordView {
 
     public void setPasswordType(PasswordType passwordType) {
         boolean passWordVisibility = getPassWordVisibility();
-        int i = AnonymousClass5.f23685a[passwordType.ordinal()];
+        int i = AnonymousClass5.f10077a[passwordType.ordinal()];
         int i2 = i != 1 ? i != 2 ? i != 3 ? 18 : 225 : 145 : 129;
         TextView[] textViewArr = this.m;
         int length = textViewArr.length;

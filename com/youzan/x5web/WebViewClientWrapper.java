@@ -5,7 +5,6 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Message;
 import android.view.KeyEvent;
-import com.android.internal.telephony.PhoneConstants;
 import com.tencent.smtt.export.external.interfaces.ClientCertRequest;
 import com.tencent.smtt.export.external.interfaces.HttpAuthHandler;
 import com.tencent.smtt.export.external.interfaces.SslError;
@@ -210,7 +209,7 @@ public class WebViewClientWrapper extends WebViewClient {
             if (shouldInterceptRequest2 != null) {
                 WebResourceResponse webResourceResponse2 = new WebResourceResponse(shouldInterceptRequest2.getMimeType(), shouldInterceptRequest2.getEncoding(), shouldInterceptRequest2.getInputStream());
                 HashMap hashMap = new HashMap();
-                hashMap.put("access-control-allow-origin", PhoneConstants.APN_TYPE_ALL);
+                hashMap.put("access-control-allow-origin", "*");
                 webResourceResponse2.setResponseHeaders(hashMap);
                 return webResourceResponse2;
             }

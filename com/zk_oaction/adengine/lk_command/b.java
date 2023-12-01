@@ -3,18 +3,17 @@ package com.zk_oaction.adengine.lk_command;
 import android.os.Handler;
 import android.service.notification.Condition;
 import androidx.constraintlayout.core.motion.utils.TypedValues;
-import com.blued.android.chat.core.pack.ReqAckPackage;
 import org.xmlpull.v1.XmlPullParser;
 
 /* loaded from: source-8829756-dex2jar.jar:com/zk_oaction/adengine/lk_command/b.class */
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    protected com.zk_oaction.adengine.lk_sdk.c f41909a;
+    protected com.zk_oaction.adengine.lk_sdk.c f28218a;
     protected com.zk_oaction.adengine.lk_expression.a b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected int f41910c;
+    protected int f28219c;
     protected com.zk_oaction.adengine.lk_expression.a d;
     protected String e;
     protected com.zk_oaction.adengine.lk_expression.c g;
@@ -33,11 +32,11 @@ public class b {
         @Override // java.lang.Runnable
         public void run() {
             b bVar = b.this;
-            com.zk_oaction.adengine.lk_sdk.interfaces.f fVar = bVar.f41909a.p.get(bVar.i);
+            com.zk_oaction.adengine.lk_sdk.interfaces.f fVar = bVar.f28218a.p.get(bVar.i);
             if (fVar != null) {
                 if (b.this.j.equals("visibility")) {
                     fVar.a(b.this.k);
-                } else if (b.this.j.equals(ReqAckPackage.REQ_RESPONSE_KEY.ANIMATION)) {
+                } else if (b.this.j.equals("animation")) {
                     fVar.b(b.this.k);
                 } else if (b.this.j.equals("clickable")) {
                     fVar.c(b.this.k);
@@ -53,16 +52,16 @@ public class b {
     }
 
     public b(com.zk_oaction.adengine.lk_sdk.c cVar) {
-        this.f41909a = cVar;
+        this.f28218a = cVar;
     }
 
     public void a() {
         this.b.a((String) null, (String) null);
         if (this.b.a() != 0.0f) {
-            if (this.d.a() != 1.0f || this.f41910c == 0) {
+            if (this.d.a() != 1.0f || this.f28219c == 0) {
                 this.l.run();
             } else {
-                new Handler().postDelayed(this.l, this.f41910c);
+                new Handler().postDelayed(this.l, this.f28219c);
             }
         }
     }
@@ -76,7 +75,7 @@ public class b {
             }
             String attributeValue2 = xmlPullParser.getAttributeValue(null, "extend");
             if (attributeValue2 != null) {
-                this.g = new com.zk_oaction.adengine.lk_expression.c(this.f41909a, attributeValue2, null);
+                this.g = new com.zk_oaction.adengine.lk_expression.c(this.f28218a, attributeValue2, null);
             }
             this.h = xmlPullParser.getAttributeValue(null, "report");
             this.e = xmlPullParser.getAttributeValue(null, "scene");
@@ -91,12 +90,12 @@ public class b {
             this.i = attributeValue.substring(0, indexOf);
             this.j = attributeValue.substring(indexOf + 1);
             this.k = xmlPullParser.getAttributeValue(null, "value");
-            this.b = new com.zk_oaction.adengine.lk_expression.a(this.f41909a, null, xmlPullParser.getAttributeValue(null, Condition.SCHEME), 1.0f, null, false);
+            this.b = new com.zk_oaction.adengine.lk_expression.a(this.f28218a, null, xmlPullParser.getAttributeValue(null, Condition.SCHEME), 1.0f, null, false);
             String attributeValue2 = xmlPullParser.getAttributeValue(null, "delay");
             if (attributeValue2 != null) {
-                this.f41910c = Integer.parseInt(attributeValue2);
+                this.f28219c = Integer.parseInt(attributeValue2);
             }
-            this.d = new com.zk_oaction.adengine.lk_expression.a(this.f41909a, null, xmlPullParser.getAttributeValue(null, "delayCondition"), 1.0f, null, false);
+            this.d = new com.zk_oaction.adengine.lk_expression.a(this.f28218a, null, xmlPullParser.getAttributeValue(null, "delayCondition"), 1.0f, null, false);
             return true;
         } catch (Exception e) {
             e.printStackTrace();

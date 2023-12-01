@@ -4,10 +4,10 @@ package com.umeng.analytics.pro;
 public class cb extends cd {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Class<? extends bu> f40680a;
+    public final Class<? extends bu> f26989a;
 
     public cb(byte b, Class<? extends bu> cls) {
         super(b);
-        this.f40680a = cls;
+        this.f26989a = cls;
     }
 }

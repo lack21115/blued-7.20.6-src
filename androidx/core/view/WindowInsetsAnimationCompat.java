@@ -13,7 +13,6 @@ import android.view.animation.Interpolator;
 import androidx.core.R;
 import androidx.core.graphics.Insets;
 import androidx.core.view.WindowInsetsCompat;
-import com.alipay.sdk.util.i;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.util.ArrayList;
@@ -26,22 +25,22 @@ import java.util.Objects;
 public final class WindowInsetsAnimationCompat {
 
     /* renamed from: a  reason: collision with root package name */
-    private Impl f2685a;
+    private Impl f2637a;
 
     /* loaded from: source-8756600-dex2jar.jar:androidx/core/view/WindowInsetsAnimationCompat$BoundsCompat.class */
     public static final class BoundsCompat {
 
         /* renamed from: a  reason: collision with root package name */
-        private final Insets f2686a;
+        private final Insets f2638a;
         private final Insets b;
 
         private BoundsCompat(WindowInsetsAnimation.Bounds bounds) {
-            this.f2686a = Impl30.getLowerBounds(bounds);
+            this.f2638a = Impl30.getLowerBounds(bounds);
             this.b = Impl30.getHigherBounds(bounds);
         }
 
         public BoundsCompat(Insets insets, Insets insets2) {
-            this.f2686a = insets;
+            this.f2638a = insets;
             this.b = insets2;
         }
 
@@ -50,7 +49,7 @@ public final class WindowInsetsAnimationCompat {
         }
 
         public Insets getLowerBound() {
-            return this.f2686a;
+            return this.f2638a;
         }
 
         public Insets getUpperBound() {
@@ -58,7 +57,7 @@ public final class WindowInsetsAnimationCompat {
         }
 
         public BoundsCompat inset(Insets insets) {
-            return new BoundsCompat(WindowInsetsCompat.a(this.f2686a, insets.left, insets.top, insets.right, insets.bottom), WindowInsetsCompat.a(this.b, insets.left, insets.top, insets.right, insets.bottom));
+            return new BoundsCompat(WindowInsetsCompat.a(this.f2638a, insets.left, insets.top, insets.right, insets.bottom), WindowInsetsCompat.a(this.b, insets.left, insets.top, insets.right, insets.bottom));
         }
 
         public WindowInsetsAnimation.Bounds toBounds() {
@@ -66,7 +65,7 @@ public final class WindowInsetsAnimationCompat {
         }
 
         public String toString() {
-            return "Bounds{lower=" + this.f2686a + " upper=" + this.b + i.d;
+            return "Bounds{lower=" + this.f2638a + " upper=" + this.b + "}";
         }
     }
 
@@ -76,7 +75,7 @@ public final class WindowInsetsAnimationCompat {
         public static final int DISPATCH_MODE_STOP = 0;
 
         /* renamed from: a  reason: collision with root package name */
-        WindowInsets f2687a;
+        WindowInsets f2639a;
         private final int b;
 
         @Retention(RetentionPolicy.SOURCE)
@@ -110,17 +109,17 @@ public final class WindowInsetsAnimationCompat {
     public static class Impl {
 
         /* renamed from: a  reason: collision with root package name */
-        private final int f2688a;
+        private final int f2640a;
         private float b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final Interpolator f2689c;
+        private final Interpolator f2641c;
         private final long d;
         private float e;
 
         Impl(int i, Interpolator interpolator, long j) {
-            this.f2688a = i;
-            this.f2689c = interpolator;
+            this.f2640a = i;
+            this.f2641c = interpolator;
             this.d = j;
         }
 
@@ -137,16 +136,16 @@ public final class WindowInsetsAnimationCompat {
         }
 
         public float getInterpolatedFraction() {
-            Interpolator interpolator = this.f2689c;
+            Interpolator interpolator = this.f2641c;
             return interpolator != null ? interpolator.getInterpolation(this.b) : this.b;
         }
 
         public Interpolator getInterpolator() {
-            return this.f2689c;
+            return this.f2641c;
         }
 
         public int getTypeMask() {
-            return this.f2688a;
+            return this.f2640a;
         }
 
         public void setAlpha(float f) {
@@ -167,11 +166,11 @@ public final class WindowInsetsAnimationCompat {
         public static class Impl21OnApplyWindowInsetsListener implements View.OnApplyWindowInsetsListener {
 
             /* renamed from: a  reason: collision with root package name */
-            final Callback f2690a;
+            final Callback f2642a;
             private WindowInsetsCompat b;
 
             Impl21OnApplyWindowInsetsListener(View view, Callback callback) {
-                this.f2690a = callback;
+                this.f2642a = callback;
                 WindowInsetsCompat rootWindowInsets = ViewCompat.getRootWindowInsets(view);
                 this.b = rootWindowInsets != null ? new WindowInsetsCompat.Builder(rootWindowInsets).build() : null;
             }
@@ -192,7 +191,7 @@ public final class WindowInsetsAnimationCompat {
                     return Impl21.a(view, windowInsets);
                 }
                 Callback a3 = Impl21.a(view);
-                if ((a3 == null || !Objects.equals(a3.f2687a, windowInsets)) && (a2 = Impl21.a(windowInsetsCompat, this.b)) != 0) {
+                if ((a3 == null || !Objects.equals(a3.f2639a, windowInsets)) && (a2 = Impl21.a(windowInsetsCompat, this.b)) != 0) {
                     final WindowInsetsCompat windowInsetsCompat2 = this.b;
                     final WindowInsetsAnimationCompat windowInsetsAnimationCompat = new WindowInsetsAnimationCompat(a2, new DecelerateInterpolator(), 160L);
                     windowInsetsAnimationCompat.setFraction(0.0f);
@@ -261,7 +260,7 @@ public final class WindowInsetsAnimationCompat {
         static Callback a(View view) {
             Object tag = view.getTag(R.id.tag_window_insets_animation_callback);
             if (tag instanceof Impl21OnApplyWindowInsetsListener) {
-                return ((Impl21OnApplyWindowInsetsListener) tag).f2690a;
+                return ((Impl21OnApplyWindowInsetsListener) tag).f2642a;
             }
             return null;
         }
@@ -331,7 +330,7 @@ public final class WindowInsetsAnimationCompat {
             Callback a2 = a(view);
             boolean z2 = z;
             if (a2 != null) {
-                a2.f2687a = windowInsets;
+                a2.f2639a = windowInsets;
                 z2 = z;
                 if (!z) {
                     a2.onPrepare(windowInsetsAnimationCompat);
@@ -403,24 +402,24 @@ public final class WindowInsetsAnimationCompat {
     public static class Impl30 extends Impl {
 
         /* renamed from: a  reason: collision with root package name */
-        private final WindowInsetsAnimation f2697a;
+        private final WindowInsetsAnimation f2649a;
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* loaded from: source-8756600-dex2jar.jar:androidx/core/view/WindowInsetsAnimationCompat$Impl30$ProxyCallback.class */
         public static class ProxyCallback extends WindowInsetsAnimation.Callback {
 
             /* renamed from: a  reason: collision with root package name */
-            private final Callback f2698a;
+            private final Callback f2650a;
             private List<WindowInsetsAnimationCompat> b;
 
             /* renamed from: c  reason: collision with root package name */
-            private ArrayList<WindowInsetsAnimationCompat> f2699c;
+            private ArrayList<WindowInsetsAnimationCompat> f2651c;
             private final HashMap<WindowInsetsAnimation, WindowInsetsAnimationCompat> d;
 
             ProxyCallback(Callback callback) {
                 super(callback.getDispatchMode());
                 this.d = new HashMap<>();
-                this.f2698a = callback;
+                this.f2650a = callback;
             }
 
             private WindowInsetsAnimationCompat a(WindowInsetsAnimation windowInsetsAnimation) {
@@ -435,21 +434,21 @@ public final class WindowInsetsAnimationCompat {
 
             @Override // android.view.WindowInsetsAnimation.Callback
             public void onEnd(WindowInsetsAnimation windowInsetsAnimation) {
-                this.f2698a.onEnd(a(windowInsetsAnimation));
+                this.f2650a.onEnd(a(windowInsetsAnimation));
                 this.d.remove(windowInsetsAnimation);
             }
 
             @Override // android.view.WindowInsetsAnimation.Callback
             public void onPrepare(WindowInsetsAnimation windowInsetsAnimation) {
-                this.f2698a.onPrepare(a(windowInsetsAnimation));
+                this.f2650a.onPrepare(a(windowInsetsAnimation));
             }
 
             @Override // android.view.WindowInsetsAnimation.Callback
             public WindowInsets onProgress(WindowInsets windowInsets, List<WindowInsetsAnimation> list) {
-                ArrayList<WindowInsetsAnimationCompat> arrayList = this.f2699c;
+                ArrayList<WindowInsetsAnimationCompat> arrayList = this.f2651c;
                 if (arrayList == null) {
                     ArrayList<WindowInsetsAnimationCompat> arrayList2 = new ArrayList<>(list.size());
-                    this.f2699c = arrayList2;
+                    this.f2651c = arrayList2;
                     this.b = Collections.unmodifiableList(arrayList2);
                 } else {
                     arrayList.clear();
@@ -458,19 +457,19 @@ public final class WindowInsetsAnimationCompat {
                 while (true) {
                     int i = size - 1;
                     if (i < 0) {
-                        return this.f2698a.onProgress(WindowInsetsCompat.toWindowInsetsCompat(windowInsets), this.b).toWindowInsets();
+                        return this.f2650a.onProgress(WindowInsetsCompat.toWindowInsetsCompat(windowInsets), this.b).toWindowInsets();
                     }
                     WindowInsetsAnimation windowInsetsAnimation = list.get(i);
                     WindowInsetsAnimationCompat a2 = a(windowInsetsAnimation);
                     a2.setFraction(windowInsetsAnimation.getFraction());
-                    this.f2699c.add(a2);
+                    this.f2651c.add(a2);
                     size = i;
                 }
             }
 
             @Override // android.view.WindowInsetsAnimation.Callback
             public WindowInsetsAnimation.Bounds onStart(WindowInsetsAnimation windowInsetsAnimation, WindowInsetsAnimation.Bounds bounds) {
-                return this.f2698a.onStart(a(windowInsetsAnimation), BoundsCompat.toBoundsCompat(bounds)).toBounds();
+                return this.f2650a.onStart(a(windowInsetsAnimation), BoundsCompat.toBoundsCompat(bounds)).toBounds();
             }
         }
 
@@ -480,7 +479,7 @@ public final class WindowInsetsAnimationCompat {
 
         Impl30(WindowInsetsAnimation windowInsetsAnimation) {
             super(0, null, 0L);
-            this.f2697a = windowInsetsAnimation;
+            this.f2649a = windowInsetsAnimation;
         }
 
         public static WindowInsetsAnimation.Bounds createPlatformBounds(BoundsCompat boundsCompat) {
@@ -501,49 +500,49 @@ public final class WindowInsetsAnimationCompat {
 
         @Override // androidx.core.view.WindowInsetsAnimationCompat.Impl
         public long getDurationMillis() {
-            return this.f2697a.getDurationMillis();
+            return this.f2649a.getDurationMillis();
         }
 
         @Override // androidx.core.view.WindowInsetsAnimationCompat.Impl
         public float getFraction() {
-            return this.f2697a.getFraction();
+            return this.f2649a.getFraction();
         }
 
         @Override // androidx.core.view.WindowInsetsAnimationCompat.Impl
         public float getInterpolatedFraction() {
-            return this.f2697a.getInterpolatedFraction();
+            return this.f2649a.getInterpolatedFraction();
         }
 
         @Override // androidx.core.view.WindowInsetsAnimationCompat.Impl
         public Interpolator getInterpolator() {
-            return this.f2697a.getInterpolator();
+            return this.f2649a.getInterpolator();
         }
 
         @Override // androidx.core.view.WindowInsetsAnimationCompat.Impl
         public int getTypeMask() {
-            return this.f2697a.getTypeMask();
+            return this.f2649a.getTypeMask();
         }
 
         @Override // androidx.core.view.WindowInsetsAnimationCompat.Impl
         public void setFraction(float f) {
-            this.f2697a.setFraction(f);
+            this.f2649a.setFraction(f);
         }
     }
 
     public WindowInsetsAnimationCompat(int i, Interpolator interpolator, long j) {
         if (Build.VERSION.SDK_INT >= 30) {
-            this.f2685a = new Impl30(i, interpolator, j);
+            this.f2637a = new Impl30(i, interpolator, j);
         } else if (Build.VERSION.SDK_INT >= 21) {
-            this.f2685a = new Impl21(i, interpolator, j);
+            this.f2637a = new Impl21(i, interpolator, j);
         } else {
-            this.f2685a = new Impl(0, interpolator, j);
+            this.f2637a = new Impl(0, interpolator, j);
         }
     }
 
     private WindowInsetsAnimationCompat(WindowInsetsAnimation windowInsetsAnimation) {
         this(0, null, 0L);
         if (Build.VERSION.SDK_INT >= 30) {
-            this.f2685a = new Impl30(windowInsetsAnimation);
+            this.f2637a = new Impl30(windowInsetsAnimation);
         }
     }
 
@@ -561,34 +560,34 @@ public final class WindowInsetsAnimationCompat {
     }
 
     public float getAlpha() {
-        return this.f2685a.getAlpha();
+        return this.f2637a.getAlpha();
     }
 
     public long getDurationMillis() {
-        return this.f2685a.getDurationMillis();
+        return this.f2637a.getDurationMillis();
     }
 
     public float getFraction() {
-        return this.f2685a.getFraction();
+        return this.f2637a.getFraction();
     }
 
     public float getInterpolatedFraction() {
-        return this.f2685a.getInterpolatedFraction();
+        return this.f2637a.getInterpolatedFraction();
     }
 
     public Interpolator getInterpolator() {
-        return this.f2685a.getInterpolator();
+        return this.f2637a.getInterpolator();
     }
 
     public int getTypeMask() {
-        return this.f2685a.getTypeMask();
+        return this.f2637a.getTypeMask();
     }
 
     public void setAlpha(float f) {
-        this.f2685a.setAlpha(f);
+        this.f2637a.setAlpha(f);
     }
 
     public void setFraction(float f) {
-        this.f2685a.setFraction(f);
+        this.f2637a.setFraction(f);
     }
 }

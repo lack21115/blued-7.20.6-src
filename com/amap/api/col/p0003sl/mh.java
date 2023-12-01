@@ -6,7 +6,7 @@ public final class mh {
     public static void a(mp mpVar, mp mpVar2, long j, long j2) {
         mpVar.k = j;
         mpVar.b = j;
-        mpVar.f5386c = j2;
+        mpVar.c = j2;
         mpVar.e = mpVar2.e;
         mpVar.d = mpVar2.d;
         mpVar.f = mpVar2.f;

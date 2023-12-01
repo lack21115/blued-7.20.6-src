@@ -9,5 +9,5 @@ public class YYGiftGottenModel {
     public String gotten_count;
 
     /* renamed from: skin  reason: collision with root package name */
-    public YYcollectorMode.SkinDTO f17618skin;
+    public YYcollectorMode.SkinDTO f56skin;
 }

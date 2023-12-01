@@ -15,7 +15,7 @@ public class MdidSdk implements SupplierListener {
     static /* synthetic */ class a {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f21160a;
+        static final /* synthetic */ int[] f7554a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:33:0x00b9 -> B:79:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:35:0x00bd -> B:91:0x001f). Please submit an issue!!! */
@@ -33,65 +33,65 @@ public class MdidSdk implements SupplierListener {
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:59:0x00ed -> B:73:0x00ac). Please submit an issue!!! */
         static {
             int[] iArr = new int[com.bun.miitmdid.c.a.values().length];
-            f21160a = iArr;
+            f7554a = iArr;
             try {
                 iArr[com.bun.miitmdid.c.a.XIAOMI.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f21160a[com.bun.miitmdid.c.a.BLACKSHARK.ordinal()] = 2;
+                f7554a[com.bun.miitmdid.c.a.BLACKSHARK.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f21160a[com.bun.miitmdid.c.a.VIVO.ordinal()] = 3;
+                f7554a[com.bun.miitmdid.c.a.VIVO.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f21160a[com.bun.miitmdid.c.a.HUA_WEI.ordinal()] = 4;
+                f7554a[com.bun.miitmdid.c.a.HUA_WEI.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f21160a[com.bun.miitmdid.c.a.OPPO.ordinal()] = 5;
+                f7554a[com.bun.miitmdid.c.a.OPPO.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
             try {
-                f21160a[com.bun.miitmdid.c.a.ONEPLUS.ordinal()] = 6;
+                f7554a[com.bun.miitmdid.c.a.ONEPLUS.ordinal()] = 6;
             } catch (NoSuchFieldError e6) {
             }
             try {
-                f21160a[com.bun.miitmdid.c.a.MOTO.ordinal()] = 7;
+                f7554a[com.bun.miitmdid.c.a.MOTO.ordinal()] = 7;
             } catch (NoSuchFieldError e7) {
             }
             try {
-                f21160a[com.bun.miitmdid.c.a.LENOVO.ordinal()] = 8;
+                f7554a[com.bun.miitmdid.c.a.LENOVO.ordinal()] = 8;
             } catch (NoSuchFieldError e8) {
             }
             try {
-                f21160a[com.bun.miitmdid.c.a.ASUS.ordinal()] = 9;
+                f7554a[com.bun.miitmdid.c.a.ASUS.ordinal()] = 9;
             } catch (NoSuchFieldError e9) {
             }
             try {
-                f21160a[com.bun.miitmdid.c.a.SAMSUNG.ordinal()] = 10;
+                f7554a[com.bun.miitmdid.c.a.SAMSUNG.ordinal()] = 10;
             } catch (NoSuchFieldError e10) {
             }
             try {
-                f21160a[com.bun.miitmdid.c.a.MEIZU.ordinal()] = 11;
+                f7554a[com.bun.miitmdid.c.a.MEIZU.ordinal()] = 11;
             } catch (NoSuchFieldError e11) {
             }
             try {
-                f21160a[com.bun.miitmdid.c.a.NUBIA.ordinal()] = 12;
+                f7554a[com.bun.miitmdid.c.a.NUBIA.ordinal()] = 12;
             } catch (NoSuchFieldError e12) {
             }
             try {
-                f21160a[com.bun.miitmdid.c.a.ZTE.ordinal()] = 13;
+                f7554a[com.bun.miitmdid.c.a.ZTE.ordinal()] = 13;
             } catch (NoSuchFieldError e13) {
             }
             try {
-                f21160a[com.bun.miitmdid.c.a.FREEMEOS.ordinal()] = 14;
+                f7554a[com.bun.miitmdid.c.a.FREEMEOS.ordinal()] = 14;
             } catch (NoSuchFieldError e14) {
             }
             try {
-                f21160a[com.bun.miitmdid.c.a.SSUIOS.ordinal()] = 15;
+                f7554a[com.bun.miitmdid.c.a.SSUIOS.ordinal()] = 15;
             } catch (NoSuchFieldError e15) {
             }
         }

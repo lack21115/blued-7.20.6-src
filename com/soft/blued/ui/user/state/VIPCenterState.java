@@ -11,14 +11,14 @@ import kotlin.jvm.internal.Intrinsics;
 public final class VIPCenterState implements UiState {
 
     /* renamed from: a  reason: collision with root package name */
-    private final VIPCenterNewModel f34311a;
+    private final VIPCenterNewModel f20620a;
 
     public VIPCenterState() {
         this(null, 1, null);
     }
 
     public VIPCenterState(VIPCenterNewModel vIPCenterNewModel) {
-        this.f34311a = vIPCenterNewModel;
+        this.f20620a = vIPCenterNewModel;
     }
 
     public /* synthetic */ VIPCenterState(VIPCenterNewModel vIPCenterNewModel, int i, DefaultConstructorMarker defaultConstructorMarker) {
@@ -26,7 +26,7 @@ public final class VIPCenterState implements UiState {
     }
 
     public final VIPCenterNewModel a() {
-        return this.f34311a;
+        return this.f20620a;
     }
 
     public final VIPCenterState a(VIPCenterNewModel vIPCenterNewModel) {
@@ -37,11 +37,11 @@ public final class VIPCenterState implements UiState {
         if (this == obj) {
             return true;
         }
-        return (obj instanceof VIPCenterState) && Intrinsics.a(this.f34311a, ((VIPCenterState) obj).f34311a);
+        return (obj instanceof VIPCenterState) && Intrinsics.a(this.f20620a, ((VIPCenterState) obj).f20620a);
     }
 
     public int hashCode() {
-        VIPCenterNewModel vIPCenterNewModel = this.f34311a;
+        VIPCenterNewModel vIPCenterNewModel = this.f20620a;
         if (vIPCenterNewModel == null) {
             return 0;
         }
@@ -49,6 +49,6 @@ public final class VIPCenterState implements UiState {
     }
 
     public String toString() {
-        return "VIPCenterState(model=" + this.f34311a + ')';
+        return "VIPCenterState(model=" + this.f20620a + ')';
     }
 }

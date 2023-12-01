@@ -4,11 +4,11 @@ package com.igexin.push.c.c;
 public class b extends c {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f23333a = 25;
+    public static final int f9725a = 25;
     public int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public int f23334c;
+    public int f9726c;
     public long d;
     public String e;
     public Object f;
@@ -25,27 +25,27 @@ public class b extends c {
     }
 
     private boolean d() {
-        return this.f23334c == 128;
+        return this.f9726c == 128;
     }
 
     private boolean e() {
-        return this.f23334c == 64;
+        return this.f9726c == 64;
     }
 
     private boolean f() {
-        return this.f23334c == 192;
+        return this.f9726c == 192;
     }
 
     private void g() {
-        this.f23334c = 128;
+        this.f9726c = 128;
     }
 
     private void h() {
-        this.f23334c = 64;
+        this.f9726c = 64;
     }
 
     private void k() {
-        this.f23334c = 192;
+        this.f9726c = 192;
     }
 
     @Override // com.igexin.push.c.c.c, com.igexin.c.a.d.a.a
@@ -61,7 +61,7 @@ public class b extends c {
         int i;
         int i2;
         this.b = com.igexin.c.a.b.g.b(bArr, 0);
-        this.f23334c = bArr[2] & 192;
+        this.f9726c = bArr[2] & 192;
         this.i = a(bArr[2]);
         this.d = com.igexin.c.a.b.g.d(bArr, 3);
         int i3 = bArr[11] & 255;
@@ -82,10 +82,10 @@ public class b extends c {
         }
         int i6 = i4 + 1;
         if (i > 0) {
-            if (this.f23334c == 192) {
+            if (this.f9726c == 192) {
                 byte[] bArr2 = new byte[i];
                 this.f = bArr2;
-                System.arraycopy((Object) bArr, i6, (Object) bArr2, 0, i);
+                System.arraycopy(bArr, i6, bArr2, 0, i);
             } else {
                 try {
                     this.f = new String(bArr, i6, i, this.i);
@@ -108,7 +108,7 @@ public class b extends c {
         if (i2 > 0) {
             byte[] bArr3 = new byte[i2];
             this.g = bArr3;
-            System.arraycopy((Object) bArr, i9, (Object) bArr3, 0, i2);
+            System.arraycopy(bArr, i9, bArr3, 0, i2);
         }
         int i10 = i9 + i2;
         if (bArr.length > i10) {
@@ -125,7 +125,7 @@ public class b extends c {
         byte[] bArr = null;
         try {
             byte[] bytes = this.e.getBytes(this.i);
-            byte[] bytes2 = !"".equals(this.f) ? this.f23334c == 192 ? (byte[]) this.f : ((String) this.f).getBytes(this.i) : null;
+            byte[] bytes2 = !"".equals(this.f) ? this.f9726c == 192 ? (byte[]) this.f : ((String) this.f).getBytes(this.i) : null;
             byte[] bArr2 = this.g != null ? (byte[]) this.g : null;
             byte[] bytes3 = this.h.getBytes(this.i);
             int length = bytes2 == null ? 0 : bytes2.length;
@@ -134,7 +134,7 @@ public class b extends c {
             byte[] a3 = com.igexin.c.a.b.g.a(length2);
             byte[] bArr3 = new byte[bytes.length + 13 + a2.length + length + a3.length + length2 + bytes3.length];
             com.igexin.c.a.b.g.b(this.b, bArr3, 0);
-            bArr3[2] = (byte) (this.f23334c | a(this.i));
+            bArr3[2] = (byte) (this.f9726c | a(this.i));
             com.igexin.c.a.b.g.a(this.d, bArr3, 3);
             bArr3[11] = (byte) bytes.length;
             int a4 = com.igexin.c.a.b.g.a(bytes, bArr3, 12, bytes.length) + 12;

@@ -13,15 +13,12 @@ import com.amap.api.maps.offlinemap.DownloadProgressView;
 import com.amap.api.maps.offlinemap.OfflineMapCity;
 import com.amap.api.maps.offlinemap.OfflineMapManager;
 import com.bytedance.applog.tracker.Tracker;
-import com.soft.blued.R;
 
 /* renamed from: com.amap.api.col.3sl.er  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/er.class */
 public final class er implements View.OnClickListener {
     private Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private TextView f4936c;
+    private TextView c;
     private TextView d;
     private ImageView e;
     private TextView f;
@@ -29,9 +26,7 @@ public final class er implements View.OnClickListener {
     private OfflineMapCity h;
     private View k;
     private DownloadProgressView l;
-
-    /* renamed from: a  reason: collision with root package name */
-    private int f4935a = 0;
+    private int a = 0;
     private boolean i = false;
     private Handler j = new Handler() { // from class: com.amap.api.col.3sl.er.1
         @Override // android.os.Handler
@@ -53,7 +48,7 @@ public final class er implements View.OnClickListener {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void a(int i, int i2) throws Exception {
-        if (this.f4935a != 2 || i2 <= 3 || i2 >= 100) {
+        if (this.a != 2 || i2 <= 3 || i2 >= 100) {
             this.l.setVisibility(8);
         } else {
             this.l.setVisibility(0);
@@ -62,7 +57,7 @@ public final class er implements View.OnClickListener {
         if (i == -1) {
             f();
         } else if (i == 0) {
-            if (this.f4935a != 1) {
+            if (this.a != 1) {
                 j();
                 return;
             }
@@ -95,10 +90,10 @@ public final class er implements View.OnClickListener {
     }
 
     private void b() {
-        View a2 = ev.a(this.b, (int) R.array.age_array_key_more);
-        this.k = a2;
-        this.l = (DownloadProgressView) a2.findViewById(2131165200);
-        this.f4936c = (TextView) this.k.findViewById(2131165195);
+        View a = ev.a(this.b, 2130903042);
+        this.k = a;
+        this.l = (DownloadProgressView) a.findViewById(2131165200);
+        this.c = (TextView) this.k.findViewById(2131165195);
         this.d = (TextView) this.k.findViewById(2131165199);
         this.e = (ImageView) this.k.findViewById(2131165198);
         this.f = (TextView) this.k.findViewById(2131165197);
@@ -131,7 +126,7 @@ public final class er implements View.OnClickListener {
     }
 
     private void e() {
-        if (this.f4935a == 1) {
+        if (this.a == 1) {
             this.e.setVisibility(8);
             this.f.setVisibility(0);
             this.f.setText("等待中");
@@ -154,7 +149,7 @@ public final class er implements View.OnClickListener {
     private void g() {
         this.f.setVisibility(0);
         this.e.setVisibility(8);
-        this.f.setTextColor(Color.GRAY);
+        this.f.setTextColor(-7829368);
         this.f.setText("暂停");
     }
 
@@ -166,7 +161,7 @@ public final class er implements View.OnClickListener {
     }
 
     private void i() {
-        if (this.f4935a == 1) {
+        if (this.a == 1) {
             return;
         }
         this.f.setVisibility(0);
@@ -210,13 +205,13 @@ public final class er implements View.OnClickListener {
     }
 
     public final void a(int i) {
-        this.f4935a = i;
+        this.a = i;
     }
 
     public final void a(OfflineMapCity offlineMapCity) {
         if (offlineMapCity != null) {
             this.h = offlineMapCity;
-            this.f4936c.setText(offlineMapCity.getCity());
+            this.c.setText(offlineMapCity.getCity());
             double size = ((int) (((offlineMapCity.getSize() / 1024.0d) / 1024.0d) * 100.0d)) / 100.0d;
             TextView textView = this.d;
             textView.setText(String.valueOf(size) + " M");

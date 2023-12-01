@@ -11,13 +11,9 @@ import java.util.HashMap;
 /* renamed from: com.amap.api.col.3sl.ju  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/ju.class */
 public class ju {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static int f5230a = 0;
+    public static int a = 0;
     public static String b = "";
-
-    /* renamed from: c  reason: collision with root package name */
-    public static HashMap<String, String> f5231c;
+    public static HashMap<String, String> c;
     public static HashMap<String, String> d;
     public static HashMap<String, String> e;
     private static ju f;
@@ -176,7 +172,7 @@ public class ju {
                 kcVar = null;
             }
         }
-        if (kcVar == null || kcVar.f5264a == null || kcVar.f5264a.length <= 0) {
+        if (kcVar == null || kcVar.a == null || kcVar.a.length <= 0) {
             try {
                 return a(kbVar, b(kbVar, z2), a(kbVar, j));
             } catch (hn e3) {

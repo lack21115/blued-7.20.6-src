@@ -3,7 +3,6 @@ package com.oplus.quickgame.sdk.engine.utils;
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.umeng.analytics.pro.bh;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -57,8 +56,8 @@ public class n {
             String a2 = c.a("Y29tLmhleXRhcC54Z2FtZQ==");
             String str3 = context.getPackageManager().getPackageInfo(a2, 0).versionName;
             String str4 = str3;
-            if (str3.contains(BridgeUtil.UNDERLINE_STR)) {
-                str4 = str3.substring(0, str3.indexOf(BridgeUtil.UNDERLINE_STR));
+            if (str3.contains("_")) {
+                str4 = str3.substring(0, str3.indexOf("_"));
             }
             ApplicationInfo applicationInfo = context.getPackageManager().getApplicationInfo(a2, 128);
             StringBuilder sb = new StringBuilder();
@@ -66,7 +65,7 @@ public class n {
             if (applicationInfo.metaData.get(bh.aj) == null) {
                 str = "";
             } else {
-                str = BridgeUtil.UNDERLINE_STR + applicationInfo.metaData.get(bh.aj);
+                str = "_" + applicationInfo.metaData.get(bh.aj);
             }
             sb.append(str);
             String sb2 = sb.toString();
@@ -75,7 +74,7 @@ public class n {
             if (applicationInfo.metaData.get("versionCommit") == null) {
                 str2 = "";
             } else {
-                str2 = BridgeUtil.UNDERLINE_STR + applicationInfo.metaData.get("versionCommit");
+                str2 = "_" + applicationInfo.metaData.get("versionCommit");
             }
             sb3.append(str2);
             return sb3.toString();
@@ -122,9 +121,9 @@ public class n {
                     }
                     StringBuilder sb = new StringBuilder();
                     sb.append(a2);
-                    sb.append(BridgeUtil.SPLIT_MARK);
+                    sb.append("/");
                     sb.append(e);
-                    sb.append(BridgeUtil.SPLIT_MARK);
+                    sb.append("/");
                     sb.append(b);
                     try {
                         return URLEncoder.encode(sb.toString(), "UTF-8");

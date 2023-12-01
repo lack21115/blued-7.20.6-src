@@ -2,7 +2,6 @@ package com.kwad.sdk.utils;
 
 import android.content.Context;
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.sensetime.stmobile.STMobileHumanActionNative;
 import java.io.BufferedInputStream;
 import java.io.File;
@@ -59,7 +58,7 @@ public final class q {
     }
 
     public static String G(Context context, String str) {
-        return "/data/data/" + context.getPackageName() + BridgeUtil.SPLIT_MARK + str + BridgeUtil.SPLIT_MARK;
+        return "/data/data/" + context.getPackageName() + "/" + str + "/";
     }
 
     public static boolean G(File file) {

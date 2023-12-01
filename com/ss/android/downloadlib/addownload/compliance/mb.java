@@ -37,7 +37,7 @@ public class mb extends Dialog {
         super(activity);
         this.lz = activity;
         this.x = j;
-        this.je = b.mb().get(Long.valueOf(j));
+        this.je = (com.ss.android.downloadlib.addownload.model.ox) b.mb().get(Long.valueOf(j));
     }
 
     private void mb() {

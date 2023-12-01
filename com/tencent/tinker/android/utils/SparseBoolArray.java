@@ -38,7 +38,7 @@ public class SparseBoolArray implements Cloneable {
             boolean[] zArr2 = zArr;
             if (i + 1 > zArr.length) {
                 zArr2 = new boolean[growSize(i)];
-                System.arraycopy((Object) zArr, 0, (Object) zArr2, 0, i);
+                System.arraycopy(zArr, 0, zArr2, 0, i);
             }
             zArr2[i] = z;
             return zArr2;
@@ -51,7 +51,7 @@ public class SparseBoolArray implements Cloneable {
             int[] iArr2 = iArr;
             if (i + 1 > iArr.length) {
                 iArr2 = new int[growSize(i)];
-                System.arraycopy((Object) iArr, 0, (Object) iArr2, 0, i);
+                System.arraycopy(iArr, 0, iArr2, 0, i);
             }
             iArr2[i] = i2;
             return iArr2;
@@ -87,14 +87,14 @@ public class SparseBoolArray implements Cloneable {
         if (i > zArr.length) {
             throw new IllegalArgumentException("Bad currentSize, originalSize: " + zArr.length + " currentSize: " + i);
         } else if (i + 1 <= zArr.length) {
-            System.arraycopy((Object) zArr, i2, (Object) zArr, i2 + 1, i - i2);
+            System.arraycopy(zArr, i2, zArr, i2 + 1, i - i2);
             zArr[i2] = z;
             return zArr;
         } else {
             boolean[] zArr2 = new boolean[growSize(i)];
-            System.arraycopy((Object) zArr, 0, (Object) zArr2, 0, i2);
+            System.arraycopy(zArr, 0, zArr2, 0, i2);
             zArr2[i2] = z;
-            System.arraycopy((Object) zArr, i2, (Object) zArr2, i2 + 1, zArr.length - i2);
+            System.arraycopy(zArr, i2, zArr2, i2 + 1, zArr.length - i2);
             return zArr2;
         }
     }
@@ -103,14 +103,14 @@ public class SparseBoolArray implements Cloneable {
         if (i > iArr.length) {
             throw new IllegalArgumentException("Bad currentSize, originalSize: " + iArr.length + " currentSize: " + i);
         } else if (i + 1 <= iArr.length) {
-            System.arraycopy((Object) iArr, i2, (Object) iArr, i2 + 1, i - i2);
+            System.arraycopy(iArr, i2, iArr, i2 + 1, i - i2);
             iArr[i2] = i3;
             return iArr;
         } else {
             int[] iArr2 = new int[growSize(i)];
-            System.arraycopy((Object) iArr, 0, (Object) iArr2, 0, i2);
+            System.arraycopy(iArr, 0, iArr2, 0, i2);
             iArr2[i2] = i3;
-            System.arraycopy((Object) iArr, i2, (Object) iArr2, i2 + 1, iArr.length - i2);
+            System.arraycopy(iArr, i2, iArr2, i2 + 1, iArr.length - i2);
             return iArr2;
         }
     }
@@ -131,7 +131,7 @@ public class SparseBoolArray implements Cloneable {
     }
 
     /* renamed from: clone */
-    public SparseBoolArray m10920clone() {
+    public SparseBoolArray m7877clone() {
         SparseBoolArray sparseBoolArray = null;
         try {
             SparseBoolArray sparseBoolArray2 = (SparseBoolArray) super.clone();
@@ -202,9 +202,9 @@ public class SparseBoolArray implements Cloneable {
     public void removeAt(int i) {
         int[] iArr = this.mKeys;
         int i2 = i + 1;
-        System.arraycopy((Object) iArr, i2, (Object) iArr, i, this.mSize - i2);
+        System.arraycopy(iArr, i2, iArr, i, this.mSize - i2);
         boolean[] zArr = this.mValues;
-        System.arraycopy((Object) zArr, i2, (Object) zArr, i, this.mSize - i2);
+        System.arraycopy(zArr, i2, zArr, i, this.mSize - i2);
         this.mSize--;
     }
 

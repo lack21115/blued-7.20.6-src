@@ -7,25 +7,20 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import androidx.viewbinding.ViewBinding;
 import com.blued.android.module.yy_china.R;
-import com.igexin.push.core.b;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/DialogApplyCloseRoomLayoutBinding.class */
 public final class DialogApplyCloseRoomLayoutBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final TextView f16295a;
+    public final TextView a;
     public final TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final TextView f16296c;
+    public final TextView c;
     public final TextView d;
     private final FrameLayout e;
 
     private DialogApplyCloseRoomLayoutBinding(FrameLayout frameLayout, TextView textView, TextView textView2, TextView textView3, TextView textView4) {
         this.e = frameLayout;
-        this.f16295a = textView;
+        this.a = textView;
         this.b = textView2;
-        this.f16296c = textView3;
+        this.c = textView3;
         this.d = textView4;
     }
 
@@ -51,7 +46,7 @@ public final class DialogApplyCloseRoomLayoutBinding implements ViewBinding {
                     }
                     str = "tvContentNum";
                 } else {
-                    str = b.x;
+                    str = "ok";
                 }
             } else {
                 str = "dialogTitleTime";
@@ -62,7 +57,6 @@ public final class DialogApplyCloseRoomLayoutBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.e;

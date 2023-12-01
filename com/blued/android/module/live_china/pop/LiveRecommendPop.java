@@ -33,8 +33,8 @@ public class LiveRecommendPop extends AttachPopupView {
 
     public void a(View view, XPopupCallback xPopupCallback) {
         if (LiveRoomPreferences.d()) {
-            int a2 = DensityUtils.a(getContext(), 33.0f);
-            new XPopup.Builder(getContext()).a(xPopupCallback).a(PopupAnimation.ScaleAlphaFromCenter).d((Boolean) false).a(PopupPosition.Bottom).b(true).a(view).b(a2).c(DensityUtils.a(getContext(), 5.0f)).a((BasePopupView) this).h();
+            int a = DensityUtils.a(getContext(), 33.0f);
+            new XPopup.Builder(getContext()).a(xPopupCallback).a(PopupAnimation.ScaleAlphaFromCenter).d((Boolean) false).a(PopupPosition.Bottom).b(true).a(view).b(a).c(DensityUtils.a(getContext(), 5.0f)).a((BasePopupView) this).h();
             LiveRoomPreferences.e();
         }
     }

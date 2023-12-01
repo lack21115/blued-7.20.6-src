@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.fragment.app.Fragment;
+import com.android.internal.util.cm.PowerMenuConstants;
 import com.blued.android.core.AppMethods;
 import com.blued.android.core.ui.BaseFragment;
 import com.blued.android.core.ui.TerminalActivity;
@@ -39,9 +40,7 @@ public class AuthRecorderFragment extends ShortVideoBaseFragment<IAuthRecorderVi
             AuthRecorderFragment.this.i();
         }
     };
-
-    /* renamed from: c  reason: collision with root package name */
-    private PowerManager.WakeLock f15710c;
+    private PowerManager.WakeLock c;
     private TextView n;
     private TextView o;
     private GLSurfaceView p;
@@ -236,19 +235,19 @@ public class AuthRecorderFragment extends ShortVideoBaseFragment<IAuthRecorderVi
         }
     }
 
-    @Override // com.blued.android.module.shortvideo.fragment.ShortVideoBaseFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.shortvideo.fragment.ShortVideoBaseFragment, com.blued.android.core.ui.BaseFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        this.f15710c = ((PowerManager) getActivity().getSystemService("power")).newWakeLock(536870938, "RecorderActivity");
+        this.c = ((PowerManager) getActivity().getSystemService(PowerMenuConstants.GLOBAL_ACTION_KEY_POWER)).newWakeLock(536870938, "RecorderActivity");
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         super.a(layoutInflater, R.layout.auth_recorder_v, viewGroup, bundle);
         return this.m;
     }
 
-    @Override // com.blued.android.module.shortvideo.fragment.ShortVideoBaseFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.shortvideo.fragment.ShortVideoBaseFragment, com.blued.android.core.ui.BaseFragment
     public void onDestroy() {
         super.onDestroy();
         View view = this.s;
@@ -265,7 +264,7 @@ public class AuthRecorderFragment extends ShortVideoBaseFragment<IAuthRecorderVi
         return super.onKeyDown(i, keyEvent);
     }
 
-    @Override // com.blued.android.module.shortvideo.fragment.ShortVideoBaseFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.shortvideo.fragment.ShortVideoBaseFragment, com.blued.android.core.ui.BaseFragment
     public void onPause() {
         super.onPause();
         TimeDownUtils timeDownUtils = this.u;
@@ -278,7 +277,7 @@ public class AuthRecorderFragment extends ShortVideoBaseFragment<IAuthRecorderVi
         }
     }
 
-    @Override // com.blued.android.module.shortvideo.fragment.ShortVideoBaseFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.shortvideo.fragment.ShortVideoBaseFragment, com.blued.android.core.ui.BaseFragment
     public void onResume() {
         super.onResume();
         AuthProgressBar authProgressBar = this.r;
@@ -286,17 +285,17 @@ public class AuthRecorderFragment extends ShortVideoBaseFragment<IAuthRecorderVi
             authProgressBar.setVisibility(4);
         }
         try {
-            this.f15710c.acquire();
+            this.c.acquire();
         } catch (Exception e) {
             Log.e("RecorderActivity", "wake lock acquire fail", e);
         }
     }
 
-    @Override // com.blued.android.module.shortvideo.fragment.ShortVideoBaseFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.shortvideo.fragment.ShortVideoBaseFragment, com.blued.android.core.ui.BaseFragment
     public void onStop() {
         super.onStop();
         try {
-            this.f15710c.release();
+            this.c.release();
         } catch (Exception e) {
             Log.e("RecorderActivity", "wake lock release fail", e);
         }

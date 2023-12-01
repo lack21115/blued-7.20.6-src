@@ -10,13 +10,9 @@ import com.blued.android.module.yy_china.view.YYLivingStreamView;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ItemConfessedRankItemBinding.class */
 public final class ItemConfessedRankItemBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final SquareImageView f16576a;
+    public final SquareImageView a;
     public final SquareImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final SquareImageView f16577c;
+    public final SquareImageView c;
     public final YYLivingStreamView d;
     public final YYLivingStreamView e;
     public final TextView f;
@@ -26,9 +22,9 @@ public final class ItemConfessedRankItemBinding implements ViewBinding {
 
     private ItemConfessedRankItemBinding(ConstraintLayout constraintLayout, SquareImageView squareImageView, SquareImageView squareImageView2, SquareImageView squareImageView3, YYLivingStreamView yYLivingStreamView, YYLivingStreamView yYLivingStreamView2, TextView textView, TextView textView2, TextView textView3) {
         this.i = constraintLayout;
-        this.f16576a = squareImageView;
+        this.a = squareImageView;
         this.b = squareImageView2;
-        this.f16577c = squareImageView3;
+        this.c = squareImageView3;
         this.d = yYLivingStreamView;
         this.e = yYLivingStreamView2;
         this.f = textView;
@@ -81,7 +77,6 @@ public final class ItemConfessedRankItemBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.i;

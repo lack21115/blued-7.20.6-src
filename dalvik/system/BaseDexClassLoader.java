@@ -1,6 +1,5 @@
 package dalvik.system;
 
-import com.baidu.mobads.sdk.internal.ci;
 import java.io.File;
 import java.net.URL;
 import java.util.ArrayList;
@@ -41,9 +40,8 @@ public class BaseDexClassLoader extends ClassLoader {
         return this.pathList.findResource(str);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // java.lang.ClassLoader
-    public Enumeration<URL> findResources(String str) {
+    protected Enumeration<URL> findResources(String str) {
         return this.pathList.findResources(str);
     }
 
@@ -78,7 +76,7 @@ public class BaseDexClassLoader extends ClassLoader {
                     Package r0 = super.getPackage(str);
                     r12 = r0;
                     if (r0 == null) {
-                        r12 = definePackage(str, "Unknown", ci.d, "Unknown", "Unknown", ci.d, "Unknown", null);
+                        r12 = definePackage(str, "Unknown", "0.0", "Unknown", "Unknown", "0.0", "Unknown", null);
                     }
                 }
             }

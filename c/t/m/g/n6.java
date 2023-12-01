@@ -18,11 +18,11 @@ import java.util.Locale;
 public class n6 {
 
     /* renamed from: a  reason: collision with root package name */
-    public b f3898a;
+    public b f3850a;
     public SensorManager b;
 
     /* renamed from: c  reason: collision with root package name */
-    public o6 f3899c;
+    public o6 f3851c;
     public p d;
     public p6 e;
     public boolean g;
@@ -38,7 +38,7 @@ public class n6 {
         public void a(o1 o1Var) {
             q1 q1Var;
             if (o1Var.a() == 10001 && (q1Var = (q1) o1Var) != null) {
-                c3.b(n6.this.f3898a, 4005, 0, 0, q1Var.f3943a);
+                c3.b(n6.this.f3850a, 4005, 0, 0, q1Var.f3895a);
             }
         }
     }
@@ -48,11 +48,11 @@ public class n6 {
         public static final String i = b.class.getSimpleName();
 
         /* renamed from: a  reason: collision with root package name */
-        public final SparseArray<SensorEvent> f3901a;
+        public final SparseArray<SensorEvent> f3853a;
         public WeakReference<n6> b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final float[] f3902c;
+        public final float[] f3854c;
         public final float[] d;
         public final float[] e;
         public double f;
@@ -61,8 +61,8 @@ public class n6 {
 
         public b(Looper looper, n6 n6Var) {
             super(looper);
-            this.f3901a = new SparseArray<>();
-            this.f3902c = new float[16];
+            this.f3853a = new SparseArray<>();
+            this.f3854c = new float[16];
             this.d = new float[16];
             this.e = new float[]{0.0f, 0.0f, 0.0f};
             this.f = 0.0d;
@@ -72,8 +72,8 @@ public class n6 {
         }
 
         public final void a() {
-            synchronized (this.f3901a) {
-                this.f3901a.clear();
+            synchronized (this.f3853a) {
+                this.f3853a.clear();
             }
         }
 
@@ -82,23 +82,23 @@ public class n6 {
                 case 4001:
                     removeMessages(4001);
                     sendEmptyMessageDelayed(4001, 40L);
-                    SensorEvent sensorEvent = this.f3901a.get(1);
-                    SensorEvent sensorEvent2 = this.f3901a.get(4);
-                    SensorEvent sensorEvent3 = this.f3901a.get(2);
-                    SensorEvent sensorEvent4 = this.f3901a.get(11);
-                    SensorEvent sensorEvent5 = this.f3901a.get(9);
+                    SensorEvent sensorEvent = this.f3853a.get(1);
+                    SensorEvent sensorEvent2 = this.f3853a.get(4);
+                    SensorEvent sensorEvent3 = this.f3853a.get(2);
+                    SensorEvent sensorEvent4 = this.f3853a.get(11);
+                    SensorEvent sensorEvent5 = this.f3853a.get(9);
                     if (sensorEvent4 != null) {
-                        SensorManager.getRotationMatrixFromVector(this.f3902c, sensorEvent4.values);
+                        SensorManager.getRotationMatrixFromVector(this.f3854c, sensorEvent4.values);
                         boolean a2 = a(sensorEvent5);
                         if (a2) {
-                            SensorManager.remapCoordinateSystem(this.f3902c, 1, 3, this.d);
+                            SensorManager.remapCoordinateSystem(this.f3854c, 1, 3, this.d);
                         }
-                        SensorManager.getOrientation(a2 ? this.d : this.f3902c, this.e);
+                        SensorManager.getOrientation(a2 ? this.d : this.f3854c, this.e);
                     }
                     if (sensorEvent == null || sensorEvent2 == null || sensorEvent3 == null || sensorEvent4 == null) {
                         return;
                     }
-                    o6 o6Var = this.b.get().f3899c;
+                    o6 o6Var = this.b.get().f3851c;
                     long j = sensorEvent.timestamp;
                     float[] fArr = sensorEvent.values;
                     float f = fArr[0];
@@ -119,7 +119,7 @@ public class n6 {
                     o6Var.a(j, f, f2, f3, j2, f4, f5, f6, j3, f7, f8, f9, j4, fArr4[0], fArr4[1], fArr4[2]);
                     return;
                 case 4002:
-                    this.b.get().f3899c.a();
+                    this.b.get().f3851c.a();
                     a();
                     removeCallbacksAndMessages(null);
                     a3.a("tc_pdr_thread");
@@ -129,8 +129,8 @@ public class n6 {
                     return;
                 case 4004:
                     int i2 = message.arg1;
-                    this.b.get().f3899c.d();
-                    this.b.get().f3899c.a((double[][]) null, i2);
+                    this.b.get().f3851c.d();
+                    this.b.get().f3851c.a((double[][]) null, i2);
                     c3.b(this, 4001);
                     return;
                 case 4005:
@@ -140,7 +140,7 @@ public class n6 {
                         location = (Location) obj;
                     }
                     if (location != null) {
-                        this.b.get().f3899c.a(System.currentTimeMillis() / 1000.0d, location.getTime() / 1000.0d, location.getLatitude(), location.getLongitude(), location.hasAltitude() ? location.getAltitude() : 9999.0d, location.hasAccuracy() ? location.getAccuracy() : 9999.0d, location.hasSpeed() ? location.getSpeed() : 9999.0d, location.hasBearing() ? location.getBearing() : 9999.0d);
+                        this.b.get().f3851c.a(System.currentTimeMillis() / 1000.0d, location.getTime() / 1000.0d, location.getLatitude(), location.getLongitude(), location.hasAltitude() ? location.getAltitude() : 9999.0d, location.hasAccuracy() ? location.getAccuracy() : 9999.0d, location.hasSpeed() ? location.getSpeed() : 9999.0d, location.hasBearing() ? location.getBearing() : 9999.0d);
                         return;
                     }
                     return;
@@ -152,7 +152,7 @@ public class n6 {
                     }
                     if (oVar != null) {
                         g3.b("AR", oVar.a() + "," + oVar.b());
-                        this.b.get().f3899c.a(oVar.a(), oVar.b());
+                        this.b.get().f3851c.a(oVar.a(), oVar.b());
                         return;
                     }
                     return;
@@ -207,9 +207,9 @@ public class n6 {
 
         @Override // android.hardware.SensorEventListener
         public void onSensorChanged(SensorEvent sensorEvent) {
-            synchronized (this.f3901a) {
+            synchronized (this.f3853a) {
                 sensorEvent.timestamp = System.currentTimeMillis();
-                this.f3901a.put(sensorEvent.sensor.getType(), sensorEvent);
+                this.f3853a.put(sensorEvent.sensor.getType(), sensorEvent);
             }
         }
     }
@@ -222,7 +222,7 @@ public class n6 {
             p6Var.a(context);
             this.b = (SensorManager) context.getSystemService("sensor");
             this.d = p.a(context);
-            this.f3899c = o6.b();
+            this.f3851c = o6.b();
         } catch (Throwable th) {
             th.printStackTrace();
             this.g = false;
@@ -236,7 +236,7 @@ public class n6 {
         boolean e = e();
         this.g = e;
         if (e) {
-            this.f3898a = new b(a3.b("tc_pdr_thread").getLooper(), this);
+            this.f3850a = new b(a3.b("tc_pdr_thread").getLooper(), this);
             if (!h()) {
                 a();
                 return -3;
@@ -248,7 +248,7 @@ public class n6 {
             }
             g3.b("DR", "startup," + i);
             f();
-            c3.b(this.f3898a, 4004, i, 0, null);
+            c3.b(this.f3850a, 4004, i, 0, null);
             this.f = true;
             return 0;
         }
@@ -256,14 +256,14 @@ public class n6 {
     }
 
     public final void a() {
-        c3.b(this.f3898a);
-        c3.b(this.f3898a, 4002);
-        this.f3898a = null;
+        c3.b(this.f3850a);
+        c3.b(this.f3850a, 4002);
+        this.f3850a = null;
     }
 
     public double[] b() {
         if (this.f) {
-            return this.f3899c.c();
+            return this.f3851c.c();
         }
         return null;
     }
@@ -316,7 +316,7 @@ public class n6 {
 
     public final void f() {
         this.d.c();
-        this.d.a(this.f3898a);
+        this.d.a(this.f3850a);
         this.d.a("set_ar_detect_cycle", Constants.DEFAULT_UIN);
     }
 
@@ -327,11 +327,11 @@ public class n6 {
 
     public final boolean h() {
         try {
-            boolean registerListener = this.b.registerListener(this.f3898a, this.b.getDefaultSensor(11), 10000, this.f3898a);
-            boolean registerListener2 = this.b.registerListener(this.f3898a, this.b.getDefaultSensor(1), 10000, this.f3898a);
-            boolean registerListener3 = this.b.registerListener(this.f3898a, this.b.getDefaultSensor(4), 10000, this.f3898a);
-            boolean registerListener4 = this.b.registerListener(this.f3898a, this.b.getDefaultSensor(2), 10000, this.f3898a);
-            boolean registerListener5 = this.b.registerListener(this.f3898a, this.b.getDefaultSensor(9), 10000, this.f3898a);
+            boolean registerListener = this.b.registerListener(this.f3850a, this.b.getDefaultSensor(11), 10000, this.f3850a);
+            boolean registerListener2 = this.b.registerListener(this.f3850a, this.b.getDefaultSensor(1), 10000, this.f3850a);
+            boolean registerListener3 = this.b.registerListener(this.f3850a, this.b.getDefaultSensor(4), 10000, this.f3850a);
+            boolean registerListener4 = this.b.registerListener(this.f3850a, this.b.getDefaultSensor(2), 10000, this.f3850a);
+            boolean registerListener5 = this.b.registerListener(this.f3850a, this.b.getDefaultSensor(9), 10000, this.f3850a);
             g3.b("Sen", String.format(Locale.ENGLISH, "register:%.1b,%.1b,%.1b,%.1b,%.1b", Boolean.valueOf(registerListener), Boolean.valueOf(registerListener2), Boolean.valueOf(registerListener3), Boolean.valueOf(registerListener4), Boolean.valueOf(registerListener5)));
             return true;
         } catch (Throwable th) {
@@ -343,9 +343,9 @@ public class n6 {
     public void i() {
         if (this.f) {
             g3.b("DR", "shutdown");
-            this.b.unregisterListener(this.f3898a);
+            this.b.unregisterListener(this.f3850a);
             n1.a().b(this.h);
-            this.d.b(this.f3898a);
+            this.d.b(this.f3850a);
             this.d.b();
             a();
             this.f = false;

@@ -3,17 +3,14 @@ package com.blued.android.module.common.url;
 import com.blued.android.framework.utils.AesCrypto;
 import com.blued.android.framework.utils.EncryptTool;
 import com.blued.android.module.common.utils.CommonPreferences;
+import io.grpc.internal.GrpcUtil;
 import java.net.URLEncoder;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/url/BluedHttpUrl.class */
 public class BluedHttpUrl {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final String f10844a = "https://m.blued.cn";
+    public static final String a = "https://m.blued.cn";
     private static String b = "https://argo.blued.cn";
-
-    /* renamed from: c  reason: collision with root package name */
-    private static String f10845c = "https://pay.blued.cn";
+    private static String c = "https://pay.blued.cn";
     private static String d = "https://sdk.blued.cn";
     private static String e = "https://health.blued.cn";
     private static String f = "h4.blued.cn";
@@ -136,7 +133,7 @@ public class BluedHttpUrl {
     }
 
     public static void i(String str) {
-        f10845c = str;
+        c = str;
         x();
     }
 
@@ -177,12 +174,12 @@ public class BluedHttpUrl {
         i("https://pay.blued.cn");
         j("https://sdk.blued.cn");
         k("h4.blued.cn");
-        a(443);
+        a((int) GrpcUtil.DEFAULT_PORT_SSL);
         b(8080);
         f("https://health.blued.cn");
         l("blued.irisdt.cn");
         g("https://i.blued.cn");
-        e(f10844a);
+        e(a);
         m("live-im.blued.cn");
         n("h8.blued.cn");
     }
@@ -197,12 +194,12 @@ public class BluedHttpUrl {
         i("https://pre-pay.blued.cn");
         j("https://sdk.blued.cn");
         k("h4.blued.cn");
-        a(443);
+        a((int) GrpcUtil.DEFAULT_PORT_SSL);
         b(8080);
         f("https://health.blued.cn");
         l("blued.irisdt.cn");
         g("https://i.blued.cn");
-        e(f10844a);
+        e(a);
         m("pre-live-im.blued.cn");
         n("h8.blued.cn");
     }
@@ -234,7 +231,7 @@ public class BluedHttpUrl {
     }
 
     public static String r() {
-        return f10845c;
+        return c;
     }
 
     public static String s() {
@@ -259,7 +256,7 @@ public class BluedHttpUrl {
 
     public static void x() {
         CommonPreferences.b(b);
-        CommonPreferences.d(f10845c);
+        CommonPreferences.d(c);
         CommonPreferences.f(d);
         CommonPreferences.h(f);
         CommonPreferences.b(g);
@@ -274,7 +271,7 @@ public class BluedHttpUrl {
 
     public static void y() {
         b = CommonPreferences.a(b);
-        f10845c = CommonPreferences.c(f10845c);
+        c = CommonPreferences.c(c);
         d = CommonPreferences.e(d);
         f = CommonPreferences.g(f);
         g = CommonPreferences.a(g);

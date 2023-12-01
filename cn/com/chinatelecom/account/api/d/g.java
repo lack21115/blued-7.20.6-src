@@ -7,11 +7,11 @@ import java.util.Map;
 public class g {
 
     /* renamed from: a  reason: collision with root package name */
-    public Network f4130a;
+    public Network f4082a;
     public int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f4131c;
+    public String f4083c;
     public String d;
     public boolean e;
     public boolean f;
@@ -25,11 +25,11 @@ public class g {
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private int f4132a;
+        private int f4084a;
         private int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private Network f4133c;
+        private Network f4085c;
         private int d;
         private String e;
         private String f;
@@ -40,12 +40,12 @@ public class g {
         private Map<String, String> k;
 
         public a a(int i) {
-            this.f4132a = i;
+            this.f4084a = i;
             return this;
         }
 
         public a a(Network network) {
-            this.f4133c = network;
+            this.f4085c = network;
             return this;
         }
 
@@ -87,11 +87,11 @@ public class g {
     }
 
     public g(a aVar) {
-        this.j = aVar.f4132a;
+        this.j = aVar.f4084a;
         this.k = aVar.b;
-        this.f4130a = aVar.f4133c;
+        this.f4082a = aVar.f4085c;
         this.b = aVar.d;
-        this.f4131c = aVar.e;
+        this.f4083c = aVar.e;
         this.d = aVar.f;
         this.e = aVar.g;
         this.f = aVar.h;

@@ -7,11 +7,11 @@ public class e extends com.igexin.c.a.d.g {
     private static volatile e I;
 
     /* renamed from: a  reason: collision with root package name */
-    public volatile long f23245a;
+    public volatile long f9637a;
     public volatile long b;
 
     /* renamed from: c  reason: collision with root package name */
-    public volatile long f23246c;
+    public volatile long f9638c;
     public volatile long d;
     public byte[] e;
     public byte[] f;
@@ -104,8 +104,8 @@ public class e extends com.igexin.c.a.d.g {
     }
 
     public static void c() {
-        I.f23245a = 0L;
-        I.f23246c = 0L;
+        I.f9637a = 0L;
+        I.f9638c = 0L;
         I.b = 0L;
         I.d = 0L;
     }

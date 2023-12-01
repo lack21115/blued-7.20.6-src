@@ -1,5 +1,6 @@
 package com.tencent.mapsdk.internal;
 
+import com.cdo.oaps.ad.OapsKey;
 import com.tencent.mapsdk.shell.events.EngineWriteDataModel;
 import com.tencent.mapsdk.shell.events.ReportEvent;
 import java.util.HashMap;
@@ -17,7 +18,7 @@ public class ni extends ReportEvent {
         Map<String, String> map = this.params;
         map.put("writeCount", engineWriteDataModel.totalWriteCount + "");
         Map<String, String> map2 = this.params;
-        map2.put("size", engineWriteDataModel.dataSize + "");
+        map2.put(OapsKey.KEY_SIZE, engineWriteDataModel.dataSize + "");
         Map<String, String> map3 = this.params;
         map3.put("ptr", engineWriteDataModel.ptr + "");
         Map<String, String> map4 = this.params;

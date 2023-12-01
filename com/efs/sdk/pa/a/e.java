@@ -12,21 +12,21 @@ final class e implements Printer {
     private boolean b = false;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f21860c = null;
+    private String f8253c = null;
     private long d = -1;
     private long e = -1;
 
     /* renamed from: a  reason: collision with root package name */
-    Vector<d> f21859a = new Vector<>();
+    Vector<d> f8252a = new Vector<>();
 
     @Override // android.util.Printer
     public final void println(String str) {
         if (str.startsWith(SimpleComparison.GREATER_THAN_OPERATION)) {
             this.d = SystemClock.elapsedRealtime();
             this.e = SystemClock.currentThreadTimeMillis();
-            this.f21860c = str;
+            this.f8253c = str;
             this.b = true;
-            Iterator<d> it = this.f21859a.iterator();
+            Iterator<d> it = this.f8252a.iterator();
             while (it.hasNext()) {
                 it.next();
             }
@@ -36,9 +36,9 @@ final class e implements Printer {
             if (elapsedRealtime > this.f) {
                 long currentThreadTimeMillis = SystemClock.currentThreadTimeMillis();
                 long j = this.e;
-                Iterator<d> it2 = this.f21859a.iterator();
+                Iterator<d> it2 = this.f8252a.iterator();
                 while (it2.hasNext()) {
-                    it2.next().a(this.f21860c, elapsedRealtime, currentThreadTimeMillis - j);
+                    it2.next().a(this.f8253c, elapsedRealtime, currentThreadTimeMillis - j);
                 }
             }
         }

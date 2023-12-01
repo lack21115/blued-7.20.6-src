@@ -1,5 +1,6 @@
 package com.blued.android.module.yy_china.model;
 
+import $r8;
 import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
@@ -89,7 +90,7 @@ public final class YYPackGiftInfoMode {
     }
 
     public int hashCode() {
-        return (((((this.remark1.hashCode() * 31) + this.remark2.hashCode()) * 31) + C$r8$backportedMethods$utility$Long$1$hashCode.hashCode(this.count_down)) * 31) + this.item.hashCode();
+        return (((((this.remark1.hashCode() * 31) + this.remark2.hashCode()) * 31) + $r8.backportedMethods.utility.Long.1.hashCode.hashCode(this.count_down)) * 31) + this.item.hashCode();
     }
 
     public String toString() {

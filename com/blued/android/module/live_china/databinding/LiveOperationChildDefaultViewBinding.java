@@ -11,22 +11,18 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/LiveOperationChildDefaultViewBinding.class */
 public final class LiveOperationChildDefaultViewBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ShapeFrameLayout f12306a;
+    public final ShapeFrameLayout a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final RelativeLayout f12307c;
+    public final RelativeLayout c;
     public final ShapeTextView d;
     public final TextView e;
     private final RelativeLayout f;
 
     private LiveOperationChildDefaultViewBinding(RelativeLayout relativeLayout, ShapeFrameLayout shapeFrameLayout, ImageView imageView, RelativeLayout relativeLayout2, ShapeTextView shapeTextView, TextView textView) {
         this.f = relativeLayout;
-        this.f12306a = shapeFrameLayout;
+        this.a = shapeFrameLayout;
         this.b = imageView;
-        this.f12307c = relativeLayout2;
+        this.c = relativeLayout2;
         this.d = shapeTextView;
         this.e = textView;
     }
@@ -61,7 +57,6 @@ public final class LiveOperationChildDefaultViewBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
         return this.f;

@@ -7,23 +7,23 @@ import android.content.Context;
 public final class c implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private /* synthetic */ Context f41802a;
+    private /* synthetic */ Context f28111a;
     private /* synthetic */ String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private /* synthetic */ String f41803c;
+    private /* synthetic */ String f28112c;
     private /* synthetic */ d d;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public c(Context context, String str, String str2, d dVar) {
-        this.f41802a = context;
+        this.f28111a = context;
         this.b = str;
-        this.f41803c = str2;
+        this.f28112c = str2;
         this.d = dVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        b.a(this.f41802a, this.b, this.f41803c, this.d);
+        b.a(this.f28111a, this.b, this.f28112c, this.d);
     }
 }

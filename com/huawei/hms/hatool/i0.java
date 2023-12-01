@@ -10,7 +10,7 @@ public class i0 {
     public static i0 b;
 
     /* renamed from: a  reason: collision with root package name */
-    public Context f22749a;
+    public Context f9141a;
 
     static {
         new HashMap();
@@ -36,13 +36,13 @@ public class i0 {
     }
 
     public void a(Context context) {
-        this.f22749a = context;
+        this.f9141a = context;
         b(context);
         i.c().b().h(f.a());
     }
 
     public void a(String str, int i) {
-        if (this.f22749a == null) {
+        if (this.f9141a == null) {
             z.e("hmsSdk", "onReport() null context or SDK was not init.");
             return;
         }
@@ -80,7 +80,7 @@ public class i0 {
     }
 
     public void a(String str, String str2, String str3) {
-        Context context = this.f22749a;
+        Context context = this.f9141a;
         if (context == null) {
             z.e("hmsSdk", "onReport() null context or SDK was not init.");
             return;

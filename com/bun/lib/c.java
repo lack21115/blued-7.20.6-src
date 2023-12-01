@@ -12,13 +12,13 @@ public interface c extends IInterface {
 
         /* renamed from: com.bun.lib.c$a$a  reason: collision with other inner class name */
         /* loaded from: source-7206380-dex2jar.jar:com/bun/lib/c$a$a.class */
-        static class C0298a implements c {
+        static class C0128a implements c {
 
             /* renamed from: a  reason: collision with root package name */
-            private IBinder f21119a;
+            private IBinder f7513a;
 
-            C0298a(IBinder iBinder) {
-                this.f21119a = iBinder;
+            C0128a(IBinder iBinder) {
+                this.f7513a = iBinder;
             }
 
             @Override // android.os.IInterface

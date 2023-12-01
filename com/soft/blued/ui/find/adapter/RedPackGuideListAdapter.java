@@ -24,21 +24,21 @@ import java.util.ArrayList;
 public class RedPackGuideListAdapter extends BaseQuickAdapter<AppConfigModel.SignData, BaseViewHolder> {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f30135a;
+    private Context f16445a;
     private IRequestHost b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f30136c;
+    private int f16446c;
     private String d;
 
     public RedPackGuideListAdapter(Context context, IRequestHost iRequestHost) {
         super(R.layout.item_red_pack_guide, new ArrayList());
-        this.f30135a = context;
+        this.f16445a = context;
         this.b = iRequestHost;
     }
 
     public void a(int i) {
-        this.f30136c = i;
+        this.f16446c = i;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -46,11 +46,11 @@ public class RedPackGuideListAdapter extends BaseQuickAdapter<AppConfigModel.Sig
     /* renamed from: a */
     public void convert(BaseViewHolder baseViewHolder, final AppConfigModel.SignData signData) {
         Drawable b;
-        String string = this.f30135a.getString(R.string.red_pack_days);
+        String string = this.f16445a.getString(R.string.red_pack_days);
         baseViewHolder.setText(R.id.tv_days, String.format(string, (signData.dayIndex + 1) + ""));
         TextView textView = (TextView) baseViewHolder.getView(R.id.tv_receive_btn);
         int adapterPosition = baseViewHolder.getAdapterPosition();
-        if (adapterPosition == this.f30136c) {
+        if (adapterPosition == this.f16446c) {
             textView.setVisibility(0);
         } else {
             textView.setVisibility(4);
@@ -59,8 +59,8 @@ public class RedPackGuideListAdapter extends BaseQuickAdapter<AppConfigModel.Sig
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
-                if (signData.dayIndex == RedPackGuideListAdapter.this.f30136c) {
-                    WebViewShowInfoFragment.show(RedPackGuideListAdapter.this.f30135a, RedPackGuideListAdapter.this.d, 9);
+                if (signData.dayIndex == RedPackGuideListAdapter.this.f16446c) {
+                    WebViewShowInfoFragment.show(RedPackGuideListAdapter.this.f16445a, RedPackGuideListAdapter.this.d, 9);
                 }
             }
         });
@@ -69,10 +69,10 @@ public class RedPackGuideListAdapter extends BaseQuickAdapter<AppConfigModel.Sig
         TextView textView3 = (TextView) baseViewHolder.getView(R.id.iv_sign_progress_left);
         TextView textView4 = (TextView) baseViewHolder.getView(R.id.iv_sign_progress_deep);
         TextView textView5 = (TextView) baseViewHolder.getView(R.id.iv_sign_progress_left_deep);
-        if (adapterPosition >= this.f30136c) {
+        if (adapterPosition >= this.f16446c) {
             textView2.setVisibility(0);
             textView4.setVisibility(8);
-            if (this.f30136c == adapterPosition) {
+            if (this.f16446c == adapterPosition) {
                 textView3.setVisibility(8);
                 textView5.setVisibility(0);
             } else {
@@ -90,42 +90,42 @@ public class RedPackGuideListAdapter extends BaseQuickAdapter<AppConfigModel.Sig
         if (adapterPosition == 29) {
             textView2.setVisibility(8);
             textView4.setVisibility(8);
-            constraintLayout.setPadding(0, 0, DensityUtils.a(this.f30135a, 10.0f), 0);
+            constraintLayout.setPadding(0, 0, DensityUtils.a(this.f16445a, 10.0f), 0);
         }
         if (adapterPosition == 0) {
             textView5.setVisibility(8);
             textView3.setVisibility(8);
-            constraintLayout.setPadding(DensityUtils.a(this.f30135a, 10.0f), 0, 0, 0);
+            constraintLayout.setPadding(DensityUtils.a(this.f16445a, 10.0f), 0, 0, 0);
         }
-        ShapeTextView shapeTextView = (ShapeTextView) baseViewHolder.getView(R.id.tv_tips_money);
+        ShapeTextView view = baseViewHolder.getView(R.id.tv_tips_money);
         ShapeModel shapeModel = new ShapeModel();
-        shapeModel.I = DensityUtils.a(this.f30135a, 8.0f);
-        shapeModel.J = DensityUtils.a(this.f30135a, 8.0f);
-        shapeModel.L = DensityUtils.a(this.f30135a, 8.0f);
-        shapeModel.n = BluedSkinUtils.a(this.f30135a, 2131102360);
-        shapeModel.b = ContextCompat.getColor(this.f30135a, 2131102170);
-        shapeModel.q = DensityUtils.a(this.f30135a, 1.0f);
-        if (adapterPosition < this.f30136c) {
+        shapeModel.I = DensityUtils.a(this.f16445a, 8.0f);
+        shapeModel.J = DensityUtils.a(this.f16445a, 8.0f);
+        shapeModel.L = DensityUtils.a(this.f16445a, 8.0f);
+        shapeModel.n = BluedSkinUtils.a(this.f16445a, 2131102360);
+        shapeModel.b = ContextCompat.getColor(this.f16445a, 2131102170);
+        shapeModel.q = DensityUtils.a(this.f16445a, 1.0f);
+        if (adapterPosition < this.f16446c) {
             baseViewHolder.setGone(R.id.tv_tips_money, false);
             baseViewHolder.setGone(R.id.tv_money, true);
-            imageView.setImageDrawable(this.f30135a.getDrawable(R.drawable.icon_red_pack_signed));
+            imageView.setImageDrawable(this.f16445a.getDrawable(R.drawable.icon_red_pack_signed));
             baseViewHolder.setText(R.id.tv_money, "￥" + (Float.parseFloat(signData.money) + Float.parseFloat(signData.additionalReward)));
             return;
         }
         baseViewHolder.setGone(R.id.tv_money, false);
         baseViewHolder.setGone(R.id.tv_tips_money, true);
         if (Float.parseFloat(signData.additionalReward) > 0.0f) {
-            shapeModel.k = BluedSkinUtils.a(this.f30135a, 2131102215);
-            b = BluedSkinUtils.b(this.f30135a, R.drawable.icon_no_sign_more_reward);
+            shapeModel.k = BluedSkinUtils.a(this.f16445a, 2131102215);
+            b = BluedSkinUtils.b(this.f16445a, (int) R.drawable.icon_no_sign_more_reward);
         } else {
-            shapeModel.k = BluedSkinUtils.a(this.f30135a, 2131102222);
-            b = BluedSkinUtils.b(this.f30135a, R.drawable.icon_no_sign_reward);
+            shapeModel.k = BluedSkinUtils.a(this.f16445a, 2131102222);
+            b = BluedSkinUtils.b(this.f16445a, (int) R.drawable.icon_no_sign_reward);
         }
-        shapeTextView.setAlpha(0.6f);
-        shapeTextView.setShapeModel(shapeModel);
-        if (adapterPosition == this.f30136c) {
-            shapeTextView.setAlpha(1.0f);
-            b = Float.parseFloat(signData.additionalReward) > 0.0f ? BluedSkinUtils.b(this.f30135a, R.drawable.icon_no_sign_more_reward_today) : BluedSkinUtils.b(this.f30135a, R.drawable.icon_no_sign_reward_today);
+        view.setAlpha(0.6f);
+        view.setShapeModel(shapeModel);
+        if (adapterPosition == this.f16446c) {
+            view.setAlpha(1.0f);
+            b = Float.parseFloat(signData.additionalReward) > 0.0f ? BluedSkinUtils.b(this.f16445a, (int) R.drawable.icon_no_sign_more_reward_today) : BluedSkinUtils.b(this.f16445a, (int) R.drawable.icon_no_sign_reward_today);
         }
         imageView.setImageDrawable(b);
         baseViewHolder.setText(R.id.tv_tips_money, "￥" + (Float.parseFloat(signData.money) + Float.parseFloat(signData.additionalReward)));

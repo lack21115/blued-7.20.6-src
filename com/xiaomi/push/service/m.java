@@ -10,18 +10,18 @@ import java.util.Map;
 public class m {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Map<String, Long> f41685a = new HashMap();
+    private static final Map<String, Long> f27994a = new HashMap();
 
     private static void a() {
         long elapsedRealtime = SystemClock.elapsedRealtime();
-        ArrayList<String> arrayList = new ArrayList(f41685a.size());
-        for (Map.Entry<String, Long> entry : f41685a.entrySet()) {
+        ArrayList<String> arrayList = new ArrayList(f27994a.size());
+        for (Map.Entry<String, Long> entry : f27994a.entrySet()) {
             if (elapsedRealtime - entry.getValue().longValue() > 60000) {
                 arrayList.add(entry.getKey());
             }
         }
         for (String str : arrayList) {
-            f41685a.remove(str);
+            f27994a.remove(str);
         }
     }
 
@@ -34,11 +34,11 @@ public class m {
         if (TextUtils.isEmpty(a2)) {
             return false;
         }
-        synchronized (f41685a) {
-            if (f41685a.get(a2 + str) != null) {
+        synchronized (f27994a) {
+            if (f27994a.get(a2 + str) != null) {
                 z = true;
             } else {
-                f41685a.put(a2 + str, Long.valueOf(SystemClock.elapsedRealtime()));
+                f27994a.put(a2 + str, Long.valueOf(SystemClock.elapsedRealtime()));
             }
             a();
         }

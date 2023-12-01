@@ -21,7 +21,6 @@ import com.airbnb.lottie.model.animatable.AnimatableTextProperties;
 import com.airbnb.lottie.model.content.ShapeGroup;
 import com.airbnb.lottie.utils.Utils;
 import com.airbnb.lottie.value.LottieValueCallback;
-import com.tencent.qcloud.core.util.IOUtils;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -49,25 +48,23 @@ public class TextLayer extends BaseLayer {
     /* renamed from: com.airbnb.lottie.model.layer.TextLayer$3  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/model/layer/TextLayer$3.class */
     public static /* synthetic */ class AnonymousClass3 {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f4392a;
+        static final /* synthetic */ int[] a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x002f -> B:19:0x001f). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:9:0x002b -> B:15:0x0014). Please submit an issue!!! */
         static {
             int[] iArr = new int[DocumentData.Justification.values().length];
-            f4392a = iArr;
+            a = iArr;
             try {
                 iArr[DocumentData.Justification.LEFT_ALIGN.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f4392a[DocumentData.Justification.RIGHT_ALIGN.ordinal()] = 2;
+                a[DocumentData.Justification.RIGHT_ALIGN.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f4392a[DocumentData.Justification.CENTER.ordinal()] = 3;
+                a[DocumentData.Justification.CENTER.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
         }
@@ -93,35 +90,35 @@ public class TextLayer extends BaseLayer {
         this.k = new LongSparseArray<>();
         this.m = lottieDrawable;
         this.n = layer.a();
-        TextKeyframeAnimation a2 = layer.s().a();
-        this.l = a2;
-        a2.a(this);
+        TextKeyframeAnimation a = layer.s().a();
+        this.l = a;
+        a.a(this);
         a(this.l);
         AnimatableTextProperties t = layer.t();
-        if (t != null && t.f4330a != null) {
-            BaseKeyframeAnimation<Integer, Integer> a3 = t.f4330a.a();
-            this.o = a3;
-            a3.a(this);
+        if (t != null && t.a != null) {
+            BaseKeyframeAnimation<Integer, Integer> a2 = t.a.a();
+            this.o = a2;
+            a2.a(this);
             a(this.o);
         }
         if (t != null && t.b != null) {
-            BaseKeyframeAnimation<Integer, Integer> a4 = t.b.a();
-            this.p = a4;
-            a4.a(this);
+            BaseKeyframeAnimation<Integer, Integer> a3 = t.b.a();
+            this.p = a3;
+            a3.a(this);
             a(this.p);
         }
-        if (t != null && t.f4331c != null) {
-            BaseKeyframeAnimation<Float, Float> a5 = t.f4331c.a();
-            this.q = a5;
-            a5.a(this);
+        if (t != null && t.c != null) {
+            BaseKeyframeAnimation<Float, Float> a4 = t.c.a();
+            this.q = a4;
+            a4.a(this);
             a(this.q);
         }
         if (t == null || t.d == null) {
             return;
         }
-        BaseKeyframeAnimation<Float, Float> a6 = t.d.a();
-        this.r = a6;
-        a6.a(this);
+        BaseKeyframeAnimation<Float, Float> a5 = t.d.a();
+        this.r = a5;
+        a5.a(this);
         a(this.r);
     }
 
@@ -133,7 +130,7 @@ public class TextLayer extends BaseLayer {
             if (i2 >= str.length()) {
                 return f3;
             }
-            FontCharacter fontCharacter = this.n.j().get(FontCharacter.a(str.charAt(i2), font.a(), font.c()));
+            FontCharacter fontCharacter = (FontCharacter) this.n.j().get(FontCharacter.a(str.charAt(i2), font.a(), font.c()));
             if (fontCharacter != null) {
                 f3 = (float) (f3 + (fontCharacter.b() * f * Utils.a() * f2));
             }
@@ -154,7 +151,7 @@ public class TextLayer extends BaseLayer {
         }
         long j = codePointAt;
         if (this.k.containsKey(j)) {
-            return this.k.get(j);
+            return (String) this.k.get(j);
         }
         this.e.setLength(0);
         while (i < charCount) {
@@ -171,8 +168,8 @@ public class TextLayer extends BaseLayer {
         if (this.j.containsKey(fontCharacter)) {
             return this.j.get(fontCharacter);
         }
-        List<ShapeGroup> a2 = fontCharacter.a();
-        int size = a2.size();
+        List<ShapeGroup> a = fontCharacter.a();
+        int size = a.size();
         ArrayList arrayList = new ArrayList(size);
         int i = 0;
         while (true) {
@@ -181,13 +178,13 @@ public class TextLayer extends BaseLayer {
                 this.j.put(fontCharacter, arrayList);
                 return arrayList;
             }
-            arrayList.add(new ContentGroup(this.m, this, a2.get(i2)));
+            arrayList.add(new ContentGroup(this.m, this, a.get(i2)));
             i = i2 + 1;
         }
     }
 
     private List<String> a(String str) {
-        return Arrays.asList(str.replaceAll(IOUtils.LINE_SEPARATOR_WINDOWS, "\r").replaceAll("\n", "\r").split("\r"));
+        return Arrays.asList(str.replaceAll("\r\n", "\r").replaceAll("\n", "\r").split("\r"));
     }
 
     private void a(Path path, Paint paint, Canvas canvas) {
@@ -201,7 +198,7 @@ public class TextLayer extends BaseLayer {
     }
 
     private void a(DocumentData.Justification justification, Canvas canvas, float f) {
-        int i = AnonymousClass3.f4392a[justification.ordinal()];
+        int i = AnonymousClass3.a[justification.ordinal()];
         if (i == 2) {
             canvas.translate(-f, 0.0f);
         } else if (i != 3) {
@@ -211,11 +208,47 @@ public class TextLayer extends BaseLayer {
     }
 
     private void a(DocumentData documentData, Matrix matrix, Font font, Canvas canvas) {
-        float f = ((float) documentData.f4316c) / 100.0f;
-        float a2 = Utils.a(matrix);
-        String str = documentData.f4315a;
+        float f = ((float) documentData.c) / 100.0f;
+        float a = Utils.a(matrix);
+        String str = documentData.a;
+        float a2 = ((float) documentData.f) * Utils.a();
+        List<String> a3 = a(str);
+        int size = a3.size();
+        int i = 0;
+        while (true) {
+            int i2 = i;
+            if (i2 >= size) {
+                return;
+            }
+            String str2 = a3.get(i2);
+            float a4 = a(str2, font, f, a);
+            canvas.save();
+            a(documentData.d, canvas, a4);
+            canvas.translate(0.0f, (i2 * a2) - (((size - 1) * a2) / 2.0f));
+            a(str2, documentData, matrix, font, canvas, a, f);
+            canvas.restore();
+            i = i2 + 1;
+        }
+    }
+
+    private void a(DocumentData documentData, Font font, Matrix matrix, Canvas canvas) {
+        float a = Utils.a(matrix);
+        Typeface a2 = this.m.a(font.a(), font.c());
+        if (a2 == null) {
+            return;
+        }
+        String str = documentData.a;
+        TextDelegate o = this.m.o();
+        String str2 = str;
+        if (o != null) {
+            str2 = o.a(str);
+        }
+        this.h.setTypeface(a2);
+        this.h.setTextSize((float) (documentData.c * Utils.a()));
+        this.i.setTypeface(this.h.getTypeface());
+        this.i.setTextSize(this.h.getTextSize());
         float a3 = ((float) documentData.f) * Utils.a();
-        List<String> a4 = a(str);
+        List<String> a4 = a(str2);
         int size = a4.size();
         int i = 0;
         while (true) {
@@ -223,60 +256,24 @@ public class TextLayer extends BaseLayer {
             if (i2 >= size) {
                 return;
             }
-            String str2 = a4.get(i2);
-            float a5 = a(str2, font, f, a2);
-            canvas.save();
-            a(documentData.d, canvas, a5);
-            canvas.translate(0.0f, (i2 * a3) - (((size - 1) * a3) / 2.0f));
-            a(str2, documentData, matrix, font, canvas, a2, f);
-            canvas.restore();
-            i = i2 + 1;
-        }
-    }
-
-    private void a(DocumentData documentData, Font font, Matrix matrix, Canvas canvas) {
-        float a2 = Utils.a(matrix);
-        Typeface a3 = this.m.a(font.a(), font.c());
-        if (a3 == null) {
-            return;
-        }
-        String str = documentData.f4315a;
-        TextDelegate o = this.m.o();
-        String str2 = str;
-        if (o != null) {
-            str2 = o.a(str);
-        }
-        this.h.setTypeface(a3);
-        this.h.setTextSize((float) (documentData.f4316c * Utils.a()));
-        this.i.setTypeface(this.h.getTypeface());
-        this.i.setTextSize(this.h.getTextSize());
-        float a4 = ((float) documentData.f) * Utils.a();
-        List<String> a5 = a(str2);
-        int size = a5.size();
-        int i = 0;
-        while (true) {
-            int i2 = i;
-            if (i2 >= size) {
-                return;
-            }
-            String str3 = a5.get(i2);
+            String str3 = a4.get(i2);
             a(documentData.d, canvas, this.i.measureText(str3));
-            canvas.translate(0.0f, (i2 * a4) - (((size - 1) * a4) / 2.0f));
-            a(str3, documentData, canvas, a2);
+            canvas.translate(0.0f, (i2 * a3) - (((size - 1) * a3) / 2.0f));
+            a(str3, documentData, canvas, a);
             canvas.setMatrix(matrix);
             i = i2 + 1;
         }
     }
 
     private void a(FontCharacter fontCharacter, Matrix matrix, float f, DocumentData documentData, Canvas canvas) {
-        List<ContentGroup> a2 = a(fontCharacter);
+        List<ContentGroup> a = a(fontCharacter);
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= a2.size()) {
+            if (i2 >= a.size()) {
                 return;
             }
-            Path e = a2.get(i2).e();
+            Path e = a.get(i2).e();
             e.computeBounds(this.f, false);
             this.g.set(matrix);
             this.g.preTranslate(0.0f, ((float) (-documentData.g)) * Utils.a());
@@ -316,10 +313,10 @@ public class TextLayer extends BaseLayer {
     private void a(String str, DocumentData documentData, Canvas canvas, float f) {
         int i = 0;
         while (i < str.length()) {
-            String a2 = a(str, i);
-            i += a2.length();
-            a(a2, documentData, canvas);
-            float measureText = this.h.measureText(a2, 0, 1);
+            String a = a(str, i);
+            i += a.length();
+            a(a, documentData, canvas);
+            float measureText = this.h.measureText(a, 0, 1);
             float f2 = documentData.e / 10.0f;
             BaseKeyframeAnimation<Float, Float> baseKeyframeAnimation = this.r;
             float f3 = f2;
@@ -337,18 +334,18 @@ public class TextLayer extends BaseLayer {
             if (i2 >= str.length()) {
                 return;
             }
-            FontCharacter fontCharacter = this.n.j().get(FontCharacter.a(str.charAt(i2), font.a(), font.c()));
+            FontCharacter fontCharacter = (FontCharacter) this.n.j().get(FontCharacter.a(str.charAt(i2), font.a(), font.c()));
             if (fontCharacter != null) {
                 a(fontCharacter, matrix, f2, documentData, canvas);
                 float b = (float) fontCharacter.b();
-                float a2 = Utils.a();
+                float a = Utils.a();
                 float f3 = documentData.e / 10.0f;
                 BaseKeyframeAnimation<Float, Float> baseKeyframeAnimation = this.r;
                 float f4 = f3;
                 if (baseKeyframeAnimation != null) {
                     f4 = f3 + baseKeyframeAnimation.g().floatValue();
                 }
-                canvas.translate((b * f2 * a2 * f) + (f4 * f), 0.0f);
+                canvas.translate((b * f2 * a * f) + (f4 * f), 0.0f);
             }
             i = i2 + 1;
         }
@@ -371,7 +368,7 @@ public class TextLayer extends BaseLayer {
         BaseKeyframeAnimation<Integer, Integer> baseKeyframeAnimation3;
         BaseKeyframeAnimation<Integer, Integer> baseKeyframeAnimation4;
         super.a((TextLayer) t, (LottieValueCallback<TextLayer>) lottieValueCallback);
-        if (t == LottieProperty.f4254a && (baseKeyframeAnimation4 = this.o) != null) {
+        if (t == LottieProperty.a && (baseKeyframeAnimation4 = this.o) != null) {
             baseKeyframeAnimation4.a((LottieValueCallback<Integer>) lottieValueCallback);
         } else if (t == LottieProperty.b && (baseKeyframeAnimation3 = this.p) != null) {
             baseKeyframeAnimation3.a((LottieValueCallback<Integer>) lottieValueCallback);

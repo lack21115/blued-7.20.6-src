@@ -16,7 +16,7 @@ import android.widget.ImageView;
 public abstract class d extends ImageView {
 
     /* renamed from: a  reason: collision with root package name */
-    protected Paint f24755a;
+    protected Paint f11067a;
     protected Matrix b;
 
     public d(Context context) {
@@ -31,7 +31,7 @@ public abstract class d extends ImageView {
         super(context, attributeSet, i);
         this.b = new Matrix();
         Paint paint = new Paint();
-        this.f24755a = paint;
+        this.f11067a = paint;
         paint.setAntiAlias(true);
     }
 
@@ -55,9 +55,8 @@ public abstract class d extends ImageView {
 
     protected abstract void a(Canvas canvas, int i, int i2);
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.ImageView, android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         try {
             if (getDrawable() == null) {
                 return;
@@ -70,7 +69,7 @@ public abstract class d extends ImageView {
             }
             this.b.setScale(f, f);
             bitmapShader.setLocalMatrix(this.b);
-            this.f24755a.setShader(bitmapShader);
+            this.f11067a.setShader(bitmapShader);
             a(canvas, getWidth(), getHeight());
         } catch (Throwable th) {
             com.opos.cmn.an.f.a.a("RoundImageView", "onDraw", th);

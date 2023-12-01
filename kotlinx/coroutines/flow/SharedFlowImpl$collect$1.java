@@ -1,5 +1,6 @@
 package kotlinx.coroutines.flow;
 
+import com.android.ims.ImsReasonInfo;
 import kotlin.Metadata;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
@@ -7,16 +8,12 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 
 /* JADX INFO: Access modifiers changed from: package-private */
 @Metadata
-@DebugMetadata(b = "SharedFlow.kt", c = {341, 348, 351}, d = "collect", e = "kotlinx.coroutines.flow.SharedFlowImpl")
+@DebugMetadata(b = "SharedFlow.kt", c = {ImsReasonInfo.CODE_SIP_NOT_REACHABLE, 348, ImsReasonInfo.CODE_SIP_SERVER_INTERNAL_ERROR}, d = "collect", e = "kotlinx.coroutines.flow.SharedFlowImpl")
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/SharedFlowImpl$collect$1.class */
 public final class SharedFlowImpl$collect$1 extends ContinuationImpl {
-
-    /* renamed from: a  reason: collision with root package name */
-    Object f43414a;
+    Object a;
     Object b;
-
-    /* renamed from: c  reason: collision with root package name */
-    Object f43415c;
+    Object c;
     Object d;
     /* synthetic */ Object e;
     final /* synthetic */ SharedFlowImpl<T> f;

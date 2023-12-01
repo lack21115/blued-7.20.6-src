@@ -12,17 +12,12 @@ import com.blued.android.framework.view.shape.ShapeLinearLayout;
 import com.blued.android.module.common.view.FlowLayout;
 import com.blued.android.module.yy_china.R;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
-import com.tencent.cloud.huiyansdkface.facelight.api.WbCloudFaceContant;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/FragmentYyKtvSearchMusicBinding.class */
 public final class FragmentYyKtvSearchMusicBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ConstraintLayout f16523a;
+    public final ConstraintLayout a;
     public final View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final TextView f16524c;
+    public final TextView c;
     public final EditText d;
     public final LinearLayout e;
     public final ShapeLinearLayout f;
@@ -34,9 +29,9 @@ public final class FragmentYyKtvSearchMusicBinding implements ViewBinding {
 
     private FragmentYyKtvSearchMusicBinding(FrameLayout frameLayout, ConstraintLayout constraintLayout, View view, TextView textView, EditText editText, LinearLayout linearLayout, ShapeLinearLayout shapeLinearLayout, FlowLayout flowLayout, RecyclerView recyclerView, SmartRefreshLayout smartRefreshLayout, TextView textView2) {
         this.k = frameLayout;
-        this.f16523a = constraintLayout;
+        this.a = constraintLayout;
         this.b = view;
-        this.f16524c = textView;
+        this.c = textView;
         this.d = editText;
         this.e = linearLayout;
         this.f = shapeLinearLayout;
@@ -48,10 +43,10 @@ public final class FragmentYyKtvSearchMusicBinding implements ViewBinding {
 
     public static FragmentYyKtvSearchMusicBinding a(View view) {
         String str;
-        ConstraintLayout constraintLayout = (ConstraintLayout) view.findViewById(R.id.con_cont);
-        if (constraintLayout != null) {
-            View findViewById = view.findViewById(R.id.cover_view);
-            if (findViewById != null) {
+        ConstraintLayout findViewById = view.findViewById(R.id.con_cont);
+        if (findViewById != null) {
+            View findViewById2 = view.findViewById(R.id.cover_view);
+            if (findViewById2 != null) {
                 TextView textView = (TextView) view.findViewById(R.id.dialog_title);
                 if (textView != null) {
                     EditText editText = (EditText) view.findViewById(R.id.et_keyword);
@@ -62,13 +57,13 @@ public final class FragmentYyKtvSearchMusicBinding implements ViewBinding {
                             if (shapeLinearLayout != null) {
                                 FlowLayout flowLayout = (FlowLayout) view.findViewById(R.id.rv_historical_record);
                                 if (flowLayout != null) {
-                                    RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rv_music_list);
-                                    if (recyclerView != null) {
-                                        SmartRefreshLayout smartRefreshLayout = (SmartRefreshLayout) view.findViewById(R.id.srl_layout);
-                                        if (smartRefreshLayout != null) {
+                                    RecyclerView findViewById3 = view.findViewById(R.id.rv_music_list);
+                                    if (findViewById3 != null) {
+                                        SmartRefreshLayout findViewById4 = view.findViewById(R.id.srl_layout);
+                                        if (findViewById4 != null) {
                                             TextView textView2 = (TextView) view.findViewById(R.id.tv_cancel);
                                             if (textView2 != null) {
-                                                return new FragmentYyKtvSearchMusicBinding((FrameLayout) view, constraintLayout, findViewById, textView, editText, linearLayout, shapeLinearLayout, flowLayout, recyclerView, smartRefreshLayout, textView2);
+                                                return new FragmentYyKtvSearchMusicBinding((FrameLayout) view, findViewById, findViewById2, textView, editText, linearLayout, shapeLinearLayout, flowLayout, findViewById3, findViewById4, textView2);
                                             }
                                             str = "tvCancel";
                                         } else {
@@ -90,7 +85,7 @@ public final class FragmentYyKtvSearchMusicBinding implements ViewBinding {
                         str = "etKeyword";
                     }
                 } else {
-                    str = WbCloudFaceContant.DIALOG_TITLE;
+                    str = "dialogTitle";
                 }
             } else {
                 str = "coverView";
@@ -101,7 +96,6 @@ public final class FragmentYyKtvSearchMusicBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.k;

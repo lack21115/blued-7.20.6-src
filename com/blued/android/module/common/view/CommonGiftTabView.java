@@ -18,13 +18,9 @@ import java.util.List;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/view/CommonGiftTabView.class */
 public class CommonGiftTabView<T extends CommonGiftPackageModel> extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected Context f10971a;
+    protected Context a;
     protected LayoutInflater b;
-
-    /* renamed from: c  reason: collision with root package name */
-    protected final List<T> f10972c;
+    protected final List<T> c;
     public int d;
     protected int e;
     protected int f;
@@ -73,20 +69,20 @@ public class CommonGiftTabView<T extends CommonGiftPackageModel> extends FrameLa
 
     public CommonGiftTabView(Context context) {
         super(context);
-        this.f10972c = new ArrayList();
+        this.c = new ArrayList();
         this.d = 0;
         a(context);
     }
 
     public CommonGiftTabView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f10972c = new ArrayList();
+        this.c = new ArrayList();
         this.d = 0;
         a(context);
     }
 
     protected CommonGiftTabView<T>.GiftTabAdapter a() {
-        return new GiftTabAdapter(this.f10971a);
+        return new GiftTabAdapter(this.a);
     }
 
     public void a(int i) {
@@ -94,14 +90,13 @@ public class CommonGiftTabView<T extends CommonGiftPackageModel> extends FrameLa
     }
 
     public void a(Context context) {
-        this.f10971a = context;
-        LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        this.a = context;
+        LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService("layout_inflater");
         this.b = layoutInflater;
-        this.g = (RecyclerView) layoutInflater.inflate(R.layout.common_tab_view, this).findViewById(R.id.common_tab_view_id);
+        this.g = layoutInflater.inflate(R.layout.common_tab_view, this).findViewById(R.id.common_tab_view_id);
         this.h = a();
         this.g.setLayoutManager(new LinearLayoutManager(getContext(), 0, false));
         this.g.addItemDecoration(new RecyclerView.ItemDecoration() { // from class: com.blued.android.module.common.view.CommonGiftTabView.1
-            @Override // androidx.recyclerview.widget.RecyclerView.ItemDecoration
             public void getItemOffsets(Rect rect, View view, RecyclerView recyclerView, RecyclerView.State state) {
                 rect.left = CommonGiftTabView.this.e;
                 rect.right = CommonGiftTabView.this.f;
@@ -122,16 +117,16 @@ public class CommonGiftTabView<T extends CommonGiftPackageModel> extends FrameLa
         if (list == null) {
             return;
         }
-        this.f10972c.clear();
-        this.f10972c.addAll(list);
-        this.h.setDataAndNotify(this.f10972c);
+        this.c.clear();
+        this.c.addAll(list);
+        this.h.setDataAndNotify(this.c);
         setToolBtnSelect(this.d);
     }
 
     public void setToolBtnSelect(int i) {
-        if (i < this.f10972c.size()) {
+        if (i < this.c.size()) {
             this.d = i;
-        } else if (this.d >= this.f10972c.size()) {
+        } else if (this.d >= this.c.size()) {
             this.d = 0;
         }
         this.g.smoothScrollToPosition(i);

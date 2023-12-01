@@ -11,9 +11,7 @@ import java.util.List;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/a/f.class */
 public class f {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final String f5869a = f.class.getSimpleName();
+    public static final String a = f.class.getSimpleName();
     private static volatile f b;
 
     private f() {
@@ -38,8 +36,8 @@ public class f {
         return com.anythink.core.common.res.d.a(n.a().g()).b(i, com.anythink.core.common.k.f.a(str));
     }
 
-    public static void a(String str, com.anythink.core.common.e.i iVar, com.anythink.core.common.e.j jVar, b.InterfaceC0067b interfaceC0067b) {
-        a(str, false, iVar, jVar, interfaceC0067b);
+    public static void a(String str, com.anythink.core.common.e.i iVar, com.anythink.core.common.e.j jVar, b.InterfaceC0027b interfaceC0027b) {
+        a(str, false, iVar, jVar, interfaceC0027b);
     }
 
     private static void a(String str, List<s> list, u uVar) {
@@ -60,8 +58,8 @@ public class f {
         }
     }
 
-    public static void a(String str, boolean z, com.anythink.core.common.e.i iVar, com.anythink.core.common.e.j jVar, b.InterfaceC0067b interfaceC0067b) {
-        new com.anythink.basead.a.b.b(str, z, iVar, jVar).a(interfaceC0067b);
+    public static void a(String str, boolean z, com.anythink.core.common.e.i iVar, com.anythink.core.common.e.j jVar, b.InterfaceC0027b interfaceC0027b) {
+        new com.anythink.basead.a.b.b(str, z, iVar, jVar).a(interfaceC0027b);
     }
 
     public static boolean a(s sVar, int i, k kVar) {

@@ -17,34 +17,30 @@ import com.blued.android.framework.view.pulltorefresh.PullToRefreshBase;
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/view/pulltorefresh/PullToRefreshListView.class */
 public class PullToRefreshListView extends PullToRefreshAdapterViewBase<ListView> {
     private LoadingLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private LoadingLayout f10268c;
+    private LoadingLayout c;
     private FrameLayout d;
     private boolean e;
 
     /* renamed from: com.blued.android.framework.view.pulltorefresh.PullToRefreshListView$1  reason: invalid class name */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/view/pulltorefresh/PullToRefreshListView$1.class */
     static /* synthetic */ class AnonymousClass1 {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f10269a;
+        static final /* synthetic */ int[] a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x002f -> B:19:0x001f). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:9:0x002b -> B:15:0x0014). Please submit an issue!!! */
         static {
             int[] iArr = new int[PullToRefreshBase.Mode.values().length];
-            f10269a = iArr;
+            a = iArr;
             try {
                 iArr[PullToRefreshBase.Mode.MANUAL_REFRESH_ONLY.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f10269a[PullToRefreshBase.Mode.PULL_FROM_END.ordinal()] = 2;
+                a[PullToRefreshBase.Mode.PULL_FROM_END.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f10269a[PullToRefreshBase.Mode.PULL_FROM_START.ordinal()] = 3;
+                a[PullToRefreshBase.Mode.PULL_FROM_START.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
         }
@@ -140,16 +136,16 @@ public class PullToRefreshListView extends PullToRefreshAdapterViewBase<ListView
         if (z) {
             FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-1, -2, 1);
             FrameLayout frameLayout = new FrameLayout(getContext());
-            LoadingLayout a2 = a(getContext(), PullToRefreshBase.Mode.PULL_FROM_START, typedArray);
-            this.b = a2;
-            a2.setVisibility(8);
+            LoadingLayout a = a(getContext(), PullToRefreshBase.Mode.PULL_FROM_START, typedArray);
+            this.b = a;
+            a.setVisibility(8);
             frameLayout.addView(this.b, layoutParams);
-            ((ListView) this.f10248a).addHeaderView(frameLayout, null, false);
+            ((ListView) this.a).addHeaderView(frameLayout, null, false);
             this.d = new FrameLayout(getContext());
-            LoadingLayout a3 = a(getContext(), PullToRefreshBase.Mode.PULL_FROM_END, typedArray);
-            this.f10268c = a3;
-            a3.setVisibility(8);
-            this.d.addView(this.f10268c, layoutParams);
+            LoadingLayout a2 = a(getContext(), PullToRefreshBase.Mode.PULL_FROM_END, typedArray);
+            this.c = a2;
+            a2.setVisibility(8);
+            this.d.addView(this.c, layoutParams);
             if (typedArray.hasValue(R.styleable.PullToRefresh_ptrScrollingWhileRefreshingEnabled)) {
                 return;
             }
@@ -165,26 +161,26 @@ public class PullToRefreshListView extends PullToRefreshAdapterViewBase<ListView
         int scrollY;
         LoadingLayout loadingLayout2;
         LoadingLayout loadingLayout3;
-        ListAdapter adapter = ((ListView) this.f10248a).getAdapter();
+        ListAdapter adapter = ((ListView) this.a).getAdapter();
         if (!this.e || !getShowViewWhileRefreshing() || adapter == null || adapter.isEmpty() || z) {
-            ((ListView) this.f10248a).setSelection(0);
+            ((ListView) this.a).setSelection(0);
             super.a(z);
             return;
         }
         super.a(false);
-        int i = AnonymousClass1.f10269a[getCurrentMode().ordinal()];
+        int i = AnonymousClass1.a[getCurrentMode().ordinal()];
         if (i == 1 || i == 2) {
             LoadingLayout footerLayout = getFooterLayout();
-            LoadingLayout loadingLayout4 = this.f10268c;
+            LoadingLayout loadingLayout4 = this.c;
             loadingLayout = this.b;
-            count = ((ListView) this.f10248a).getCount() - 1;
+            count = ((ListView) this.a).getCount() - 1;
             scrollY = getScrollY() - getFooterSize();
             loadingLayout2 = loadingLayout4;
             loadingLayout3 = footerLayout;
         } else {
             loadingLayout3 = getHeaderLayout();
             loadingLayout2 = this.b;
-            loadingLayout = this.f10268c;
+            loadingLayout = this.c;
             scrollY = getScrollY() + getHeaderSize();
             count = 0;
         }
@@ -196,7 +192,7 @@ public class PullToRefreshListView extends PullToRefreshAdapterViewBase<ListView
         if (z) {
             l();
             setHeaderScroll(scrollY);
-            ((ListView) this.f10248a).setSelection(count);
+            ((ListView) this.a).setSelection(count);
             a(0);
         }
     }
@@ -215,7 +211,7 @@ public class PullToRefreshListView extends PullToRefreshAdapterViewBase<ListView
                 b.a(this.b);
             }
             if (z2 && mode.d()) {
-                b.a(this.f10268c);
+                b.a(this.c);
             }
         }
         return b;
@@ -234,7 +230,7 @@ public class PullToRefreshListView extends PullToRefreshAdapterViewBase<ListView
         b.setHeaderDividersEnabled(false);
         b.setSelector(new ColorDrawable(0));
         b.setCacheColorHint(0);
-        b.setId(16908298);
+        b.setId(com.android.internal.R.id.list);
         return b;
     }
 
@@ -248,22 +244,22 @@ public class PullToRefreshListView extends PullToRefreshAdapterViewBase<ListView
             super.c();
             return;
         }
-        int i = AnonymousClass1.f10269a[getCurrentMode().ordinal()];
+        int i = AnonymousClass1.a[getCurrentMode().ordinal()];
         int i2 = 0;
         boolean z = false;
         if (i == 1 || i == 2) {
             footerLayout = getFooterLayout();
-            loadingLayout = this.f10268c;
-            i2 = ((ListView) this.f10248a).getCount() - 1;
+            loadingLayout = this.c;
+            i2 = ((ListView) this.a).getCount() - 1;
             footerSize = getFooterSize();
-            if (Math.abs(((ListView) this.f10248a).getLastVisiblePosition() - i2) <= 1) {
+            if (Math.abs(((ListView) this.a).getLastVisiblePosition() - i2) <= 1) {
                 z = true;
             }
         } else {
             footerLayout = getHeaderLayout();
             loadingLayout = this.b;
             int i3 = -getHeaderSize();
-            if (Math.abs(((ListView) this.f10248a).getFirstVisiblePosition() - 0) <= 1) {
+            if (Math.abs(((ListView) this.a).getFirstVisiblePosition() - 0) <= 1) {
                 z = true;
                 footerSize = i3;
             } else {
@@ -275,7 +271,7 @@ public class PullToRefreshListView extends PullToRefreshAdapterViewBase<ListView
             footerLayout.showInvisibleViews();
             loadingLayout.setVisibility(8);
             if (z && getState() != PullToRefreshBase.State.MANUAL_REFRESHING) {
-                ((ListView) this.f10248a).setSelection(i2);
+                ((ListView) this.a).setSelection(i2);
                 setHeaderScroll(footerSize);
             }
         }

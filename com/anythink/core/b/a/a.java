@@ -2,12 +2,15 @@ package com.anythink.core.b.a;
 
 import android.content.Context;
 import android.text.TextUtils;
+import com.anythink.core.api.ATAdConst;
 import com.anythink.core.api.AdError;
 import com.anythink.core.c.d;
 import com.anythink.core.c.e;
 import com.anythink.core.common.b.n;
 import com.anythink.core.common.k.c;
 import com.anythink.core.common.p;
+import com.blued.android.chat.core.pack.ReqAckPackage;
+import com.efs.sdk.base.Constants;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -18,13 +21,9 @@ import org.json.JSONObject;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/b/a/a.class */
 public final class a extends com.anythink.core.common.g.a {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final int f6342a = 0;
+    public static final int a = 0;
     public static final int b = 1;
-
-    /* renamed from: c  reason: collision with root package name */
-    public static final String f6343c = "ex_pkg";
+    public static final String c = "ex_pkg";
     public static final String d = "unit_ids";
     String e;
     String f;
@@ -41,7 +40,7 @@ public final class a extends com.anythink.core.common.g.a {
     String t;
     private int u;
     private final String v = d.a.j;
-    private final String w = "request_id";
+    private final String w = ATAdConst.NETWORK_CUSTOM_KEY.NETWORK_REQUEST_ID;
     private final String x = "ch_info";
     private final String y = "wf";
     private final String z = "np";
@@ -105,15 +104,15 @@ public final class a extends com.anythink.core.common.g.a {
     }
 
     public final void a(b bVar) {
-        if (bVar.f6344a != null) {
-            this.g = c.a(bVar.f6344a.getBytes());
+        if (bVar.a != null) {
+            this.g = c.a(bVar.a.getBytes());
         }
         this.q = bVar.f;
         if (!TextUtils.isEmpty(bVar.b) && !TextUtils.equals("[]", bVar.b)) {
             this.j = c.a(bVar.b.getBytes());
         }
-        if (!TextUtils.isEmpty(bVar.f6345c) && !TextUtils.equals("[]", bVar.f6345c)) {
-            this.k = c.a(bVar.f6345c.getBytes());
+        if (!TextUtils.isEmpty(bVar.c) && !TextUtils.equals("[]", bVar.c)) {
+            this.k = c.a(bVar.c.getBytes());
         }
         if (!TextUtils.isEmpty(bVar.d) && !TextUtils.equals("[]", bVar.d)) {
             this.r = c.a(bVar.d.getBytes());
@@ -146,7 +145,7 @@ public final class a extends com.anythink.core.common.g.a {
     public final Map<String, String> c() {
         HashMap hashMap = new HashMap();
         if (this.u == 0) {
-            hashMap.put("Accept-Encoding", "gzip");
+            hashMap.put("Accept-Encoding", Constants.CP_GZIP);
         }
         hashMap.put("Content-Type", "application/json;charset=utf-8");
         return hashMap;
@@ -163,7 +162,7 @@ public final class a extends com.anythink.core.common.g.a {
         try {
             e.put("app_id", n.a().p());
             e.put("pl_id", this.i);
-            e.put("session_id", n.a().g(this.i));
+            e.put(ReqAckPackage.REQ_RESPONSE_KEY.SESSION_ID, n.a().g(this.i));
             e.put("t_g_id", this.l);
             e.put("gro_id", this.p);
             String y = n.a().y();
@@ -215,10 +214,10 @@ public final class a extends com.anythink.core.common.g.a {
         HashMap hashMap = new HashMap();
         String a2 = c.a(e().toString());
         String a3 = c.a(f().toString());
-        hashMap.put("p", a2);
+        hashMap.put(com.anythink.core.common.g.c.W, a2);
         hashMap.put(com.anythink.core.common.g.c.X, a3);
         hashMap.put(d.a.j, this.f);
-        hashMap.put("request_id", this.e);
+        hashMap.put(ATAdConst.NETWORK_CUSTOM_KEY.NETWORK_REQUEST_ID, this.e);
         int i = this.q;
         if (i > 0) {
             hashMap.put("hb_size", Integer.valueOf(i));
@@ -241,7 +240,7 @@ public final class a extends com.anythink.core.common.g.a {
             }
             hashMap.put(d.a.T, this.t);
             if (n.a().l() != null) {
-                hashMap.put(f6343c, c.a(n.a().l().toString()));
+                hashMap.put(c, c.a(n.a().l().toString()));
             }
             if (n.a().A() && n.a().u()) {
                 hashMap.put("debug", 1);

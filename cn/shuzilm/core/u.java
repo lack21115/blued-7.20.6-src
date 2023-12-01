@@ -2,14 +2,12 @@ package cn.shuzilm.core;
 
 /* loaded from: source-6737240-dex2jar.jar:cn/shuzilm/core/u.class */
 final class u implements Runnable {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ String f4198a;
+    final /* synthetic */ String a;
     final /* synthetic */ String b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public u(String str, String str2) {
-        this.f4198a = str;
+        this.a = str;
         this.b = str2;
     }
 
@@ -19,7 +17,7 @@ final class u implements Runnable {
             Main.mLock.lock();
             IDUService iDUService = DUConnection.duService;
             if (iDUService != null && iDUService.asBinder().isBinderAlive()) {
-                int unused = Main.e = iDUService.setData(this.f4198a, this.b);
+                int unused = Main.e = iDUService.setData(this.a, this.b);
             }
             Main.mLock.unlock();
         } catch (Exception e) {

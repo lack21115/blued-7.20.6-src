@@ -7,17 +7,17 @@ import com.tencent.liteav.videoproducer.capture.CaptureSourceInterface;
 public final /* synthetic */ class as implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ar f36882a;
+    private final ar f23191a;
     private final CaptureSourceInterface.a b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final Object f36883c;
+    private final Object f23192c;
     private final CaptureSourceInterface.CaptureParams d;
 
     private as(ar arVar, CaptureSourceInterface.a aVar, Object obj, CaptureSourceInterface.CaptureParams captureParams) {
-        this.f36882a = arVar;
+        this.f23191a = arVar;
         this.b = aVar;
-        this.f36883c = obj;
+        this.f23192c = obj;
         this.d = captureParams;
     }
 
@@ -27,6 +27,6 @@ public final /* synthetic */ class as implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        ar.a(this.f36882a, this.b, this.f36883c, this.d);
+        ar.a(this.f23191a, this.b, this.f23192c, this.d);
     }
 }

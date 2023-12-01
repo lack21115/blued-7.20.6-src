@@ -1,5 +1,7 @@
 package com.hihonor.push.sdk;
 
+import com.tencent.thumbplayer.api.TPErrorCode;
+
 /* loaded from: source-7994992-dex2jar.jar:com/hihonor/push/sdk/b.class */
 public class b {
     public static void a(String str) {
@@ -32,7 +34,7 @@ public class b {
             if (i2 >= str2.length()) {
                 return;
             }
-            int i3 = i2 + 4000;
+            int i3 = i2 + TPErrorCode.TP_ERROR_TYPE_DOWNLOAD_PROXY;
             if (i3 < str2.length()) {
                 str2.substring(i2, i3);
             } else {

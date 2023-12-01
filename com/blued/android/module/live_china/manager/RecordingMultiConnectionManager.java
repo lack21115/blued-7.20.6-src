@@ -44,13 +44,9 @@ import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/manager/RecordingMultiConnectionManager.class */
 public class RecordingMultiConnectionManager {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static int f13785a = 0;
+    public static int a = 0;
     public static int b = 0;
-
-    /* renamed from: c  reason: collision with root package name */
-    public static int f13786c = 0;
+    public static int c = 0;
     public static int d = 0;
     public static double e = 0.85d;
     public static int f;
@@ -61,10 +57,10 @@ public class RecordingMultiConnectionManager {
     public RecordingMultiConnectionManager(RecordingOnliveFragment recordingOnliveFragment) {
         this.i = recordingOnliveFragment;
         this.h = recordingOnliveFragment.getContext();
-        f13785a = AppInfo.l / 2;
+        a = AppInfo.l / 2;
         int i = (int) (AppInfo.l * e);
         b = i;
-        f13786c = i / 2;
+        c = i / 2;
         d = DensityUtils.a(this.h, 148);
         f = StatusBarHelper.a() ? d - StatusBarHelper.a((Context) recordingOnliveFragment.getActivity()) : d;
     }
@@ -272,7 +268,7 @@ public class RecordingMultiConnectionManager {
                 final SVGAImageView sVGAImageView = (SVGAImageView) frameLayout.findViewById(R.id.live_multi_pk_multi_start_view_id);
                 sVGAImageView.setVisibility(0);
                 sVGAImageView.setLoops(1);
-                SVGAParser.f15958a.b().a("live_multi_pk_group_start_anim.svga", new SVGAParser.ParseCompletion() { // from class: com.blued.android.module.live_china.manager.RecordingMultiConnectionManager.5
+                SVGAParser.a.b().a("live_multi_pk_group_start_anim.svga", new SVGAParser.ParseCompletion() { // from class: com.blued.android.module.live_china.manager.RecordingMultiConnectionManager.5
                     @Override // com.blued.android.module.svgaplayer.SVGAParser.ParseCompletion
                     public void onComplete(SVGAVideoEntity sVGAVideoEntity) {
                         SVGAImageView.this.setVideoItem(sVGAVideoEntity);
@@ -702,56 +698,56 @@ public class RecordingMultiConnectionManager {
         int size = this.g.size();
         if (size == 2) {
             FrameLayout frameLayout = new FrameLayout(this.h);
-            this.i.bJ.addView(frameLayout, new FrameLayout.LayoutParams(f13785a, b));
+            this.i.bJ.addView(frameLayout, new FrameLayout.LayoutParams(a, b));
             a(frameLayout);
             FrameLayout frameLayout2 = new FrameLayout(this.h);
             frameLayout2.setBackgroundColor(Color.parseColor("#000000"));
-            FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(f13785a, b);
-            layoutParams.leftMargin = f13785a;
+            FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(a, b);
+            layoutParams.leftMargin = a;
             this.i.bJ.addView(frameLayout2, layoutParams);
             a(frameLayout2, this.g.get(1).stream_id);
         } else if (size == 3) {
             FrameLayout frameLayout3 = new FrameLayout(this.h);
-            this.i.bJ.addView(frameLayout3, new FrameLayout.LayoutParams(f13785a, b));
+            this.i.bJ.addView(frameLayout3, new FrameLayout.LayoutParams(a, b));
             a(frameLayout3);
             FrameLayout frameLayout4 = new FrameLayout(this.h);
             frameLayout4.setBackgroundColor(Color.parseColor("#000000"));
-            FrameLayout.LayoutParams layoutParams2 = new FrameLayout.LayoutParams(f13785a, f13786c);
-            layoutParams2.leftMargin = f13785a;
+            FrameLayout.LayoutParams layoutParams2 = new FrameLayout.LayoutParams(a, c);
+            layoutParams2.leftMargin = a;
             this.i.bJ.addView(frameLayout4, layoutParams2);
             a(frameLayout4, this.g.get(1).stream_id);
             FrameLayout frameLayout5 = new FrameLayout(this.h);
             frameLayout5.setBackgroundColor(Color.parseColor("#000000"));
-            FrameLayout.LayoutParams layoutParams3 = new FrameLayout.LayoutParams(f13785a, f13786c);
-            layoutParams3.leftMargin = f13785a;
-            layoutParams3.topMargin = f13786c;
+            FrameLayout.LayoutParams layoutParams3 = new FrameLayout.LayoutParams(a, c);
+            layoutParams3.leftMargin = a;
+            layoutParams3.topMargin = c;
             this.i.bJ.addView(frameLayout5, layoutParams3);
             a(frameLayout5, this.g.get(2).stream_id);
         } else if (size == 4) {
             FrameLayout frameLayout6 = new FrameLayout(this.h);
-            this.i.bJ.addView(frameLayout6, new FrameLayout.LayoutParams(f13785a, f13786c));
+            this.i.bJ.addView(frameLayout6, new FrameLayout.LayoutParams(a, c));
             a(frameLayout6);
             FrameLayout frameLayout7 = new FrameLayout(this.h);
             frameLayout7.setBackgroundColor(Color.parseColor("#000000"));
-            FrameLayout.LayoutParams layoutParams4 = new FrameLayout.LayoutParams(f13785a, f13786c);
-            layoutParams4.leftMargin = f13785a;
+            FrameLayout.LayoutParams layoutParams4 = new FrameLayout.LayoutParams(a, c);
+            layoutParams4.leftMargin = a;
             this.i.bJ.addView(frameLayout7, layoutParams4);
             a(frameLayout7, this.g.get(1).stream_id);
             FrameLayout frameLayout8 = new FrameLayout(this.h);
             frameLayout8.setBackgroundColor(Color.parseColor("#000000"));
-            FrameLayout.LayoutParams layoutParams5 = new FrameLayout.LayoutParams(f13785a, f13786c);
-            layoutParams5.topMargin = f13786c;
+            FrameLayout.LayoutParams layoutParams5 = new FrameLayout.LayoutParams(a, c);
+            layoutParams5.topMargin = c;
             this.i.bJ.addView(frameLayout8, layoutParams5);
             a(frameLayout8, this.g.get(2).stream_id);
             FrameLayout frameLayout9 = new FrameLayout(this.h);
             frameLayout9.setBackgroundColor(Color.parseColor("#000000"));
-            FrameLayout.LayoutParams layoutParams6 = new FrameLayout.LayoutParams(f13785a, f13786c);
-            layoutParams6.leftMargin = f13785a;
-            layoutParams6.topMargin = f13786c;
+            FrameLayout.LayoutParams layoutParams6 = new FrameLayout.LayoutParams(a, c);
+            layoutParams6.leftMargin = a;
+            layoutParams6.topMargin = c;
             this.i.bJ.addView(frameLayout9, layoutParams6);
             a(frameLayout9, this.g.get(3).stream_id);
         }
-        a(this.i.bJ, this.g, f13785a, b, this.i);
+        a(this.i.bJ, this.g, a, b, this.i);
         ZegoMixStreamHelper.a().a(this.g);
     }
 
@@ -853,7 +849,7 @@ public class RecordingMultiConnectionManager {
         if (this.i.getContext() == null) {
             return;
         }
-        ZegoCommonHelper.b().c().setPreviewView(null);
+        ZegoCommonHelper.b().c().setPreviewView((Object) null);
         this.i.N = new TextureView(this.i.getContext());
         FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-1, -1);
         layoutParams.gravity = 17;

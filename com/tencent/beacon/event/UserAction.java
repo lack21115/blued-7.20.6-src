@@ -25,10 +25,10 @@ import java.util.concurrent.ScheduledExecutorService;
 public class UserAction {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f35030a;
+    private static String f21339a;
 
     /* renamed from: c  reason: collision with root package name */
-    private static String f35031c;
+    private static String f21340c;
     public static Context mContext;
     private static BeaconConfig.Builder b = BeaconConfig.builder();
     private static boolean d = true;
@@ -60,7 +60,7 @@ public class UserAction {
     }
 
     public static String getAppKey() {
-        return f35030a;
+        return f21339a;
     }
 
     public static String getCloudParas(String str) {
@@ -72,7 +72,7 @@ public class UserAction {
     }
 
     public static String getEventDomain() {
-        return com.tencent.beacon.base.net.b.b.f34973c;
+        return com.tencent.beacon.base.net.b.b.f21282c;
     }
 
     public static String getOpenID(String str) {
@@ -142,7 +142,7 @@ public class UserAction {
             return;
         }
         mContext = context;
-        BeaconReport.getInstance().start(context, f35030a, b.build());
+        BeaconReport.getInstance().start(context, f21339a, b.build());
     }
 
     public static boolean loginEvent(boolean z, long j, Map<String, String> map) {
@@ -203,7 +203,7 @@ public class UserAction {
     }
 
     public static boolean onUserAction(String str, boolean z, long j, long j2, Map<String, String> map, boolean z2, boolean z3) {
-        return BeaconReport.getInstance().report(BeaconEvent.builder().withCode(str).withType(z2 ? EventType.REALTIME : EventType.NORMAL).withParams(map).withAppKey(f35030a).withIsSucceed(z).build()).isSuccess();
+        return BeaconReport.getInstance().report(BeaconEvent.builder().withCode(str).withType(z2 ? EventType.REALTIME : EventType.NORMAL).withParams(map).withAppKey(f21339a).withIsSucceed(z).build()).isSuccess();
     }
 
     public static boolean onUserActionToTunnel(String str, String str2, Map<String, String> map, boolean z, boolean z2) {
@@ -226,11 +226,11 @@ public class UserAction {
     }
 
     public static void setAppKey(String str) {
-        f35030a = str;
+        f21339a = str;
     }
 
     public static void setAppVersion(String str) {
-        f35031c = str;
+        f21340c = str;
     }
 
     @Deprecated

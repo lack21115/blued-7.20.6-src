@@ -12,17 +12,15 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/view/CustomVerticalCenterSpan.class */
 public final class CustomVerticalCenterSpan extends ReplacementSpan {
-
-    /* renamed from: a  reason: collision with root package name */
-    private int f10981a;
+    private int a;
 
     public CustomVerticalCenterSpan(int i) {
-        this.f10981a = i;
+        this.a = i;
     }
 
     private final TextPaint a(Paint paint) {
         TextPaint textPaint = new TextPaint(paint);
-        textPaint.setTextSize(DensityUtils.d(AppInfo.d(), this.f10981a));
+        textPaint.setTextSize(DensityUtils.d(AppInfo.d(), this.a));
         return textPaint;
     }
 
@@ -32,9 +30,9 @@ public final class CustomVerticalCenterSpan extends ReplacementSpan {
         Intrinsics.e(text, "text");
         Intrinsics.e(paint, "paint");
         CharSequence subSequence = text.subSequence(i, i2);
-        TextPaint a2 = a(paint);
-        Paint.FontMetricsInt fontMetricsInt = a2.getFontMetricsInt();
-        canvas.drawText(subSequence.toString(), f, i4 - (((((fontMetricsInt.descent + i4) + i4) + fontMetricsInt.ascent) / 2) - ((i5 + i3) / 2)), a2);
+        TextPaint a = a(paint);
+        Paint.FontMetricsInt fontMetricsInt = a.getFontMetricsInt();
+        canvas.drawText(subSequence.toString(), f, i4 - (((((fontMetricsInt.descent + i4) + i4) + fontMetricsInt.ascent) / 2) - ((i5 + i3) / 2)), a);
     }
 
     @Override // android.text.style.ReplacementSpan

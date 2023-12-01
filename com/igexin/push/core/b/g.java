@@ -6,13 +6,13 @@ import com.igexin.push.extension.mod.BaseActionBean;
 public final class g extends BaseActionBean {
 
     /* renamed from: a  reason: collision with root package name */
-    public int[] f23441a;
+    public int[] f9833a;
 
     private void a(int[] iArr) {
-        this.f23441a = iArr;
+        this.f9833a = iArr;
     }
 
     private int[] a() {
-        return this.f23441a;
+        return this.f9833a;
     }
 }

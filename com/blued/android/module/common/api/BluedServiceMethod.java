@@ -14,6 +14,7 @@ import com.blued.android.module.common.api.annotation.Param;
 import com.blued.android.module.common.api.annotation.ParamsMap;
 import com.blued.android.module.common.api.annotation.ReplaceMap;
 import com.soft.blued.http.api.ApiUtils;
+import io.grpc.internal.GrpcUtil;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
 import java.lang.reflect.ParameterizedType;
@@ -28,13 +29,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/api/BluedServiceMethod.class */
 public final class BluedServiceMethod {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f10625a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final String f10626c;
+    private final String c;
     private final String d;
     private HashMap<String, String> e;
     private final ParamModel[] f;
@@ -48,13 +45,9 @@ public final class BluedServiceMethod {
     @Metadata
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/api/BluedServiceMethod$Builder.class */
     public static final class Builder {
-
-        /* renamed from: a  reason: collision with root package name */
-        public String f10627a;
+        public String a;
         public String b;
-
-        /* renamed from: c  reason: collision with root package name */
-        public ParamModel[] f10628c;
+        public ParamModel[] c;
         private final Method d;
         private boolean e;
         private boolean f;
@@ -118,7 +111,7 @@ public final class BluedServiceMethod {
             } else if (annotation instanceof PUT) {
                 a("PUT", ((PUT) annotation).a());
             } else if (annotation instanceof POST) {
-                a("POST", ((POST) annotation).a());
+                a(GrpcUtil.HTTP_METHOD, ((POST) annotation).a());
             } else if (annotation instanceof ApiHost) {
                 this.g = BluedApiProxy.b().a().get(((ApiHost) annotation).a());
             } else if (annotation instanceof InterruptError) {
@@ -130,21 +123,21 @@ public final class BluedServiceMethod {
 
         private final void a(Method method) {
             Type[] genericParameterTypes = method.getGenericParameterTypes();
-            ApiUtils apiUtils = ApiUtils.f29672a;
+            ApiUtils apiUtils = ApiUtils.a;
             Type type = genericParameterTypes[genericParameterTypes.length - 1];
             if (type == null) {
                 throw new NullPointerException("null cannot be cast to non-null type java.lang.reflect.ParameterizedType");
             }
             Type b = apiUtils.b(0, (ParameterizedType) type);
             Logger.c("KT_API", Intrinsics.a("parseReturnType : ", (Object) b));
-            if (ApiUtils.f29672a.b(b) == BluedEntityA.class && (b instanceof ParameterizedType)) {
-                Type a2 = ApiUtils.f29672a.a(0, (ParameterizedType) b);
-                this.h = a2;
-                Logger.c("KT_API", Intrinsics.a("actual parseReturnType : ", (Object) a2));
-            } else if (ApiUtils.f29672a.b(b) == BluedEntity.class && (b instanceof ParameterizedType)) {
+            if (ApiUtils.a.b(b) == BluedEntityA.class && (b instanceof ParameterizedType)) {
+                Type a = ApiUtils.a.a(0, (ParameterizedType) b);
+                this.h = a;
+                Logger.c("KT_API", Intrinsics.a("actual parseReturnType : ", (Object) a));
+            } else if (ApiUtils.a.b(b) == BluedEntity.class && (b instanceof ParameterizedType)) {
                 ParameterizedType parameterizedType = (ParameterizedType) b;
-                this.h = ApiUtils.f29672a.a(0, parameterizedType);
-                this.i = ApiUtils.f29672a.a(1, parameterizedType);
+                this.h = ApiUtils.a.a(0, parameterizedType);
+                this.i = ApiUtils.a.a(1, parameterizedType);
                 Logger.c("KT_API", "actual parseReturnType : " + this.h + " + extraType : " + this.i);
                 this.j = true;
             }
@@ -163,17 +156,17 @@ public final class BluedServiceMethod {
         }
 
         private final boolean a(Type type) {
-            return a(ApiUtils.f29672a.b(type));
+            return a(ApiUtils.a.b(type));
         }
 
         public final void a(String str) {
             Intrinsics.e(str, "<set-?>");
-            this.f10627a = str;
+            this.a = str;
         }
 
         public final void a(ParamModel[] paramModelArr) {
             Intrinsics.e(paramModelArr, "<set-?>");
-            this.f10628c = paramModelArr;
+            this.c = paramModelArr;
         }
 
         public final boolean a() {
@@ -190,7 +183,7 @@ public final class BluedServiceMethod {
         }
 
         public final String c() {
-            String str = this.f10627a;
+            String str = this.a;
             if (str != null) {
                 return str;
             }
@@ -212,7 +205,7 @@ public final class BluedServiceMethod {
         }
 
         public final ParamModel[] f() {
-            ParamModel[] paramModelArr = this.f10628c;
+            ParamModel[] paramModelArr = this.c;
             if (paramModelArr != null) {
                 return paramModelArr;
             }
@@ -261,19 +254,17 @@ public final class BluedServiceMethod {
     @Metadata
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/api/BluedServiceMethod$ParamModel.class */
     public static final class ParamModel {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final String f10629a;
+        private final String a;
         private final boolean b;
 
         public ParamModel(String name, boolean z) {
             Intrinsics.e(name, "name");
-            this.f10629a = name;
+            this.a = name;
             this.b = z;
         }
 
         public final String a() {
-            return this.f10629a;
+            return this.a;
         }
 
         public final boolean b() {
@@ -284,7 +275,7 @@ public final class BluedServiceMethod {
     public BluedServiceMethod(Builder builder) {
         Intrinsics.e(builder, "builder");
         this.b = builder.c();
-        this.f10626c = builder.d();
+        this.c = builder.d();
         String e = builder.e();
         this.d = e == null ? BluedApiProxy.b().a().get("HOST_HTTP") : e;
         this.e = new HashMap<>();
@@ -313,7 +304,7 @@ public final class BluedServiceMethod {
 
     public final Object a(Object[] objArr, Continuation<? super BluedEntity<?, ?>> continuation) {
         a(objArr);
-        return ApiUtils.f29672a.a(this.f10626c, Intrinsics.a(b(), (Object) a()), c(), f(), e(), this.g, this.h, continuation);
+        return ApiUtils.a.a(this.c, Intrinsics.a(b(), (Object) a()), c(), f(), e(), this.g, this.h, continuation);
     }
 
     public final String a() {
@@ -335,7 +326,7 @@ public final class BluedServiceMethod {
 
     public final Object call(Object[] objArr, Continuation<? super BluedEntityA<?>> continuation) {
         a(objArr);
-        return ApiUtils.f29672a.a(this.f10626c, Intrinsics.a(b(), (Object) a()), c(), f(), e(), ApiUtils.f29672a.b(this.g), continuation);
+        return ApiUtils.a.a(this.c, Intrinsics.a(b(), (Object) a()), c(), f(), e(), ApiUtils.a.b(this.g), continuation);
     }
 
     public final boolean d() {

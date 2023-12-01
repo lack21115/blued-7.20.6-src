@@ -13,11 +13,11 @@ import android.view.WindowManager;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static int[] f24564a;
+    private static int[] f10877a;
     private static float b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static float f24565c;
+    private static float f10878c;
     private static float d;
     private static float e;
     private static float f;
@@ -71,7 +71,7 @@ public final class a {
     }
 
     public static boolean a() {
-        boolean a2 = a(com.opos.cmn.an.a.a.f24483a);
+        boolean a2 = a(com.opos.cmn.an.a.a.f10796a);
         com.opos.cmn.an.f.a.b("WinMgrTool", "isOPMobile=" + a2);
         return a2;
     }
@@ -216,19 +216,19 @@ public final class a {
 
     private static int[] a(Context context, boolean z) {
         try {
-            if (f24564a == null && context != null) {
+            if (f10877a == null && context != null) {
                 DisplayMetrics p = p(context);
-                f24564a = new int[]{p.widthPixels > p.heightPixels ? p.heightPixels : p.widthPixels, p.widthPixels > p.heightPixels ? p.widthPixels : p.heightPixels};
+                f10877a = new int[]{p.widthPixels > p.heightPixels ? p.heightPixels : p.widthPixels, p.widthPixels > p.heightPixels ? p.widthPixels : p.heightPixels};
             }
         } catch (Exception e2) {
             com.opos.cmn.an.f.a.c("WinMgrTool", "", e2);
         }
-        if (f24564a != null) {
+        if (f10877a != null) {
             if (z || d(context)) {
-                int[] iArr = f24564a;
+                int[] iArr = f10877a;
                 return new int[]{iArr[0], iArr[1]};
             }
-            int[] iArr2 = f24564a;
+            int[] iArr2 = f10877a;
             return new int[]{iArr2[1], iArr2[0]};
         }
         return new int[]{-1, -1};
@@ -331,15 +331,15 @@ public final class a {
     }
 
     public static float h(Context context) {
-        float f2 = f24565c;
+        float f2 = f10878c;
         if (0.0f != f2) {
             return f2;
         }
         if (context != null) {
-            f24565c = p(context).scaledDensity;
+            f10878c = p(context).scaledDensity;
         }
-        com.opos.cmn.an.f.a.b("WinMgrTool", "getScaledDensity=" + f24565c);
-        return f24565c;
+        com.opos.cmn.an.f.a.b("WinMgrTool", "getScaledDensity=" + f10878c);
+        return f10878c;
     }
 
     public static int i(Context context) {

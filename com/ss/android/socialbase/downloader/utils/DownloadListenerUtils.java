@@ -10,7 +10,7 @@ import com.ss.android.socialbase.downloader.model.DownloadInfo;
 /* loaded from: source-8457232-dex2jar.jar:com/ss/android/socialbase/downloader/utils/DownloadListenerUtils.class */
 public class DownloadListenerUtils {
     public static void notifyListener(int i, SparseArray<IDownloadListener> sparseArray, boolean z, DownloadInfo downloadInfo, BaseException baseException) {
-        SparseArray<IDownloadListener> m1029clone;
+        SparseArray<IDownloadListener> m1025clone;
         if (!z || sparseArray == null) {
             return;
         }
@@ -19,15 +19,15 @@ public class DownloadListenerUtils {
                 return;
             }
             synchronized (sparseArray) {
-                m1029clone = sparseArray.m1029clone();
+                m1025clone = sparseArray.m1025clone();
             }
             int i2 = 0;
             while (true) {
                 int i3 = i2;
-                if (i3 >= m1029clone.size()) {
+                if (i3 >= m1025clone.size()) {
                     return;
                 }
-                IDownloadListener iDownloadListener = m1029clone.get(m1029clone.keyAt(i3));
+                IDownloadListener iDownloadListener = m1025clone.get(m1025clone.keyAt(i3));
                 if (iDownloadListener != null) {
                     if (i == 1) {
                         iDownloadListener.onPrepare(downloadInfo);

@@ -4,9 +4,9 @@ package com.tencent.turingface.sdk.mfa;
 public final class FLlEM {
 
     /* renamed from: a  reason: collision with root package name */
-    public byte[] f39872a;
+    public byte[] f26181a;
 
     public FLlEM(byte[] bArr) {
-        this.f39872a = bArr;
+        this.f26181a = bArr;
     }
 }

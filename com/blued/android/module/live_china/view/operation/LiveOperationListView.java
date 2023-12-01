@@ -24,13 +24,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/operation/LiveOperationListView.class */
 public final class LiveOperationListView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Context f15350a;
+    private final Context a;
     private final Lazy b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private ArrayList<LiveRoomOperationModel> f15351c;
+    private ArrayList<LiveRoomOperationModel> c;
     private final ArrayList<OperationChildView> d;
     private BaseFragment e;
     private boolean f;
@@ -52,7 +48,7 @@ public final class LiveOperationListView extends FrameLayout {
     public LiveOperationListView(Context mContext, AttributeSet attributeSet, int i) {
         super(mContext, attributeSet, i);
         Intrinsics.e(mContext, "mContext");
-        this.f15350a = mContext;
+        this.a = mContext;
         this.b = LazyKt.a(new Function0<LiveOperationListViewBinding>() { // from class: com.blued.android.module.live_china.view.operation.LiveOperationListView$vb$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
@@ -62,12 +58,12 @@ public final class LiveOperationListView extends FrameLayout {
             @Override // kotlin.jvm.functions.Function0
             /* renamed from: a */
             public final LiveOperationListViewBinding invoke() {
-                LiveOperationListViewBinding a2 = LiveOperationListViewBinding.a(LayoutInflater.from(LiveOperationListView.this.getMContext()).inflate(R.layout.live_operation_list_view, LiveOperationListView.this));
-                Intrinsics.c(a2, "bind(\n            Layout…ist_view, this)\n        )");
-                return a2;
+                LiveOperationListViewBinding a = LiveOperationListViewBinding.a(LayoutInflater.from(LiveOperationListView.this.getMContext()).inflate(R.layout.live_operation_list_view, LiveOperationListView.this));
+                Intrinsics.c(a, "bind(\n            Layout…ist_view, this)\n        )");
+                return a;
             }
         });
-        this.f15351c = new ArrayList<>();
+        this.c = new ArrayList<>();
         this.d = new ArrayList<>();
         this.g = -1;
     }
@@ -77,24 +73,24 @@ public final class LiveOperationListView extends FrameLayout {
     }
 
     private final void a() {
-        OperationChildView a2;
-        Iterator<LiveRoomOperationModel> it = this.f15351c.iterator();
+        OperationChildView a;
+        Iterator<LiveRoomOperationModel> it = this.c.iterator();
         while (it.hasNext()) {
             LiveRoomOperationModel next = it.next();
-            if (next.getStatus() == 1 && (a2 = new OperationChildView(this.f15350a).a(this.e, this.f, next, (Object) null)) != null) {
-                LiveRoomOperationModel model = a2.getModel();
+            if (next.getStatus() == 1 && (a = new OperationChildView(this.a).a(this.e, this.f, next, (Object) null)) != null) {
+                LiveRoomOperationModel model = a.getModel();
                 if (model != null && model.getStatus() == 1) {
-                    this.d.add(a2);
-                    LiveRoomOperationModel model2 = a2.getModel();
+                    this.d.add(a);
+                    LiveRoomOperationModel model2 = a.getModel();
                     if (!(model2 != null && model2.getTools_type() == EnumOperation.VIEW_TYPE_TREASURE_BOX.getValue()) || this.g == -1) {
-                        getVb().f12312a.addView(a2);
+                        getVb().a.addView(a);
                     } else {
-                        getVb().f12312a.addView(a2, this.g);
+                        getVb().a.addView(a, this.g);
                         this.g = -1;
                     }
-                    LiveRoomOperationModel model3 = a2.getModel();
+                    LiveRoomOperationModel model3 = a.getModel();
                     if (model3 != null && model3.getView_init_finish()) {
-                        a2.c();
+                        a.c();
                     }
                 }
             }
@@ -109,7 +105,7 @@ public final class LiveOperationListView extends FrameLayout {
         if (arrayList != null) {
             arrayList.remove(it);
         }
-        this$0.getVb().f12312a.removeView(it);
+        this$0.getVb().a.removeView(it);
         if ((i == EnumOperation.VIEW_TYPE_RECHARGE_GIFT_BAG.getValue() || i == EnumOperation.VIEW_TYPE_FIRST_RECHARGE_GIFT_BAG.getValue()) && (it.getView() instanceof LiveRechargeGiftBagView)) {
             View view = it.getView();
             if (view == null) {
@@ -124,8 +120,8 @@ public final class LiveOperationListView extends FrameLayout {
             if (operationChildView.a()) {
                 boolean b = operationChildView.b();
                 OperationChildView operationChildView2 = operationChildView;
-                getVb().f12312a.removeView(operationChildView2);
-                getVb().f12312a.addView(operationChildView2, i);
+                getVb().a.removeView(operationChildView2);
+                getVb().a.addView(operationChildView2, i);
                 if (b) {
                     operationChildView.setShow(false);
                     operationChildView.c();
@@ -177,14 +173,14 @@ public final class LiveOperationListView extends FrameLayout {
     }
 
     private final void setData(List<LiveRoomOperationModel> list) {
-        getVb().f12312a.removeAllViews();
+        getVb().a.removeAllViews();
         if (list == null) {
             return;
         }
         if (list == null) {
             throw new NullPointerException("null cannot be cast to non-null type java.util.ArrayList<com.blued.android.module.live_china.model.LiveRoomOperationModel>{ kotlin.collections.TypeAliasesKt.ArrayList<com.blued.android.module.live_china.model.LiveRoomOperationModel> }");
         }
-        this.f15351c = (ArrayList) list;
+        this.c = (ArrayList) list;
         a();
         b();
     }
@@ -229,24 +225,24 @@ public final class LiveOperationListView extends FrameLayout {
             }
             i4 = i2 + 1;
         }
-        OperationChildView a2 = new OperationChildView(this.f15350a).a(this.e, this.f, model, data);
-        if (a2 == null) {
+        OperationChildView a = new OperationChildView(this.a).a(this.e, this.f, model, data);
+        if (a == null) {
             return;
         }
-        LiveRoomOperationModel model3 = a2.getModel();
+        LiveRoomOperationModel model3 = a.getModel();
         if (model3 != null && model3.getTools_type() == EnumOperation.VIEW_TYPE_TREASURE_BOX.getValue()) {
             z = true;
         }
         if (!z || (i3 = this.g) == -1) {
-            this.d.add(i2, a2);
-            getVb().f12312a.addView(a2, i2);
+            this.d.add(i2, a);
+            getVb().a.addView(a, i2);
         } else {
-            this.d.add(i3, a2);
-            getVb().f12312a.addView(a2, this.g);
+            this.d.add(i3, a);
+            getVb().a.addView(a, this.g);
             this.g = -1;
         }
         if (model.getView_init_finish()) {
-            a2.c();
+            a.c();
         }
     }
 
@@ -261,7 +257,7 @@ public final class LiveOperationListView extends FrameLayout {
     public final void a(boolean z) {
         LiveRoomOperationModel liveRoomOperationModel;
         int i;
-        Iterator<LiveRoomOperationModel> it = this.f15351c.iterator();
+        Iterator<LiveRoomOperationModel> it = this.c.iterator();
         while (true) {
             if (!it.hasNext()) {
                 liveRoomOperationModel = null;
@@ -304,31 +300,31 @@ public final class LiveOperationListView extends FrameLayout {
             i2++;
         }
         if (i != i2) {
-            OperationChildView a2 = a(EnumOperation.VIEW_TYPE_TREASURE_BOX.getValue());
-            if (a2 == null) {
+            OperationChildView a = a(EnumOperation.VIEW_TYPE_TREASURE_BOX.getValue());
+            if (a == null) {
                 this.g = i2;
             } else {
-                a(a2, i2, liveRoomOperationModel);
+                a(a, i2, liveRoomOperationModel);
             }
         }
     }
 
     public final void b(final int i) {
-        final OperationChildView a2 = a(i);
-        if (a2 == null) {
+        final OperationChildView a = a(i);
+        if (a == null) {
             return;
         }
-        a2.a(new Runnable() { // from class: com.blued.android.module.live_china.view.operation.-$$Lambda$LiveOperationListView$dowWWiT8LaPOI7mDchqu75F6TBk
+        a.a(new Runnable() { // from class: com.blued.android.module.live_china.view.operation.-$$Lambda$LiveOperationListView$dowWWiT8LaPOI7mDchqu75F6TBk
             @Override // java.lang.Runnable
             public final void run() {
-                LiveOperationListView.a(LiveOperationListView.this, a2, i);
+                LiveOperationListView.a(LiveOperationListView.this, a, i);
             }
         });
         b();
     }
 
     public final Context getMContext() {
-        return this.f15350a;
+        return this.a;
     }
 
     public final int getShowChildCount() {

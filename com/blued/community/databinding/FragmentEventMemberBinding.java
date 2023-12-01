@@ -12,30 +12,26 @@ import com.blued.community.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/databinding/FragmentEventMemberBinding.class */
 public final class FragmentEventMemberBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ViewPager f18856a;
+    public final ViewPager a;
     public final FrameLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ShapeTextView f18857c;
+    public final ShapeTextView c;
     public final PageTabLayout d;
     public final CommonTopTitleNoTrans e;
     private final LinearLayout f;
 
     private FragmentEventMemberBinding(LinearLayout linearLayout, ViewPager viewPager, FrameLayout frameLayout, ShapeTextView shapeTextView, PageTabLayout pageTabLayout, CommonTopTitleNoTrans commonTopTitleNoTrans) {
         this.f = linearLayout;
-        this.f18856a = viewPager;
+        this.a = viewPager;
         this.b = frameLayout;
-        this.f18857c = shapeTextView;
+        this.c = shapeTextView;
         this.d = pageTabLayout;
         this.e = commonTopTitleNoTrans;
     }
 
     public static FragmentEventMemberBinding a(View view) {
         String str;
-        ViewPager viewPager = (ViewPager) view.findViewById(R.id.base_view_pager_id);
-        if (viewPager != null) {
+        ViewPager findViewById = view.findViewById(R.id.base_view_pager_id);
+        if (findViewById != null) {
             FrameLayout frameLayout = (FrameLayout) view.findViewById(R.id.fl_tab_title);
             if (frameLayout != null) {
                 ShapeTextView shapeTextView = (ShapeTextView) view.findViewById(R.id.shape_tab);
@@ -44,7 +40,7 @@ public final class FragmentEventMemberBinding implements ViewBinding {
                     if (pageTabLayout != null) {
                         CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) view.findViewById(R.id.top_title);
                         if (commonTopTitleNoTrans != null) {
-                            return new FragmentEventMemberBinding((LinearLayout) view, viewPager, frameLayout, shapeTextView, pageTabLayout, commonTopTitleNoTrans);
+                            return new FragmentEventMemberBinding((LinearLayout) view, findViewById, frameLayout, shapeTextView, pageTabLayout, commonTopTitleNoTrans);
                         }
                         str = "topTitle";
                     } else {
@@ -62,7 +58,6 @@ public final class FragmentEventMemberBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
         return this.f;

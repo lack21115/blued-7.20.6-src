@@ -9,19 +9,19 @@ import android.view.View;
 public class a extends Dialog implements View.OnClickListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f35776a;
+    private String f22085a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f35777c;
+    private String f22086c;
     private String d;
     private String e;
     private Context f;
-    private InterfaceC0916a g;
+    private InterfaceC0746a g;
 
     /* renamed from: com.tencent.cloud.huiyansdkface.facelight.ui.widget.a$a  reason: collision with other inner class name */
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/cloud/huiyansdkface/facelight/ui/widget/a$a.class */
-    public interface InterfaceC0916a {
+    public interface InterfaceC0746a {
         void a();
 
         void b();
@@ -46,12 +46,12 @@ public class a extends Dialog implements View.OnClickListener {
     }
 
     public a a(String str) {
-        this.f35776a = str;
+        this.f22085a = str;
         return this;
     }
 
-    public void a(InterfaceC0916a interfaceC0916a) {
-        this.g = interfaceC0916a;
+    public void a(InterfaceC0746a interfaceC0746a) {
+        this.g = interfaceC0746a;
     }
 
     public a b(String str) {
@@ -60,7 +60,7 @@ public class a extends Dialog implements View.OnClickListener {
     }
 
     public a c(String str) {
-        this.f35777c = str;
+        this.f22086c = str;
         return this;
     }
 

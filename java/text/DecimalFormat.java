@@ -1,5 +1,8 @@
 package java.text;
 
+import com.android.ims.ImsReasonInfo;
+import com.android.internal.R;
+import com.android.internal.content.NativeLibraryHelper;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -72,17 +75,17 @@ public class DecimalFormat extends NumberFormat {
         initNative("");
         this.ndf.setPositivePrefix((String) readFields.get("positivePrefix", ""));
         this.ndf.setPositiveSuffix((String) readFields.get("positiveSuffix", ""));
-        this.ndf.setNegativePrefix((String) readFields.get("negativePrefix", "-"));
+        this.ndf.setNegativePrefix((String) readFields.get("negativePrefix", NativeLibraryHelper.CLEAR_ABI_OVERRIDE));
         this.ndf.setNegativeSuffix((String) readFields.get("negativeSuffix", ""));
         this.ndf.setMultiplier(readFields.get("multiplier", 1));
         this.ndf.setGroupingSize(readFields.get("groupingSize", (byte) 3));
         this.ndf.setGroupingUsed(readFields.get("groupingUsed", true));
         this.ndf.setDecimalSeparatorAlwaysShown(readFields.get("decimalSeparatorAlwaysShown", false));
         setRoundingMode((RoundingMode) readFields.get("roundingMode", RoundingMode.HALF_EVEN));
-        int i = readFields.get("maximumIntegerDigits", 309);
-        int i2 = readFields.get("minimumIntegerDigits", 309);
-        int i3 = readFields.get("maximumFractionDigits", 340);
-        int i4 = readFields.get("minimumFractionDigits", 340);
+        int i = readFields.get("maximumIntegerDigits", R.styleable.Theme_lightZ);
+        int i2 = readFields.get("minimumIntegerDigits", R.styleable.Theme_lightZ);
+        int i3 = readFields.get("maximumFractionDigits", ImsReasonInfo.CODE_SIP_NOT_ACCEPTABLE);
+        int i4 = readFields.get("minimumFractionDigits", ImsReasonInfo.CODE_SIP_NOT_ACCEPTABLE);
         this.ndf.setMaximumIntegerDigits(i);
         super.setMaximumIntegerDigits(this.ndf.getMaximumIntegerDigits());
         setMinimumIntegerDigits(i2);

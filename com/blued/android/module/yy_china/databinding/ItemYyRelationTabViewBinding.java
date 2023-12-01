@@ -9,17 +9,13 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ItemYyRelationTabViewBinding.class */
 public final class ItemYyRelationTabViewBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f16795a;
+    public final ImageView a;
     public final TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final ConstraintLayout f16796c;
+    private final ConstraintLayout c;
 
     private ItemYyRelationTabViewBinding(ConstraintLayout constraintLayout, ImageView imageView, TextView textView) {
-        this.f16796c = constraintLayout;
-        this.f16795a = imageView;
+        this.c = constraintLayout;
+        this.a = imageView;
         this.b = textView;
     }
 
@@ -38,9 +34,8 @@ public final class ItemYyRelationTabViewBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f16796c;
+        return this.c;
     }
 }

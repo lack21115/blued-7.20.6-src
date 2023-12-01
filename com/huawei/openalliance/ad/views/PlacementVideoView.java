@@ -31,11 +31,11 @@ public class PlacementVideoView extends PlacementMediaView implements hr, lo {
     private VideoView L;
 
     /* renamed from: a  reason: collision with root package name */
-    private boolean f23034a;
+    private boolean f9426a;
     private r b;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f23035c;
+    private boolean f9427c;
     private boolean d;
     private long e;
     private long f;
@@ -364,7 +364,7 @@ public class PlacementVideoView extends PlacementMediaView implements hr, lo {
         }
         this.L.setDefaultDuration((int) this.b.d());
         this.D.Code(this.b);
-        this.f23035c = false;
+        this.f9427c = false;
         this.d = true;
     }
 
@@ -390,8 +390,8 @@ public class PlacementVideoView extends PlacementMediaView implements hr, lo {
     private void a() {
         ge.V(getTAG(), "resetVideoView");
         setPreferStartPlayTime(0);
-        this.f23034a = false;
-        this.f23035c = false;
+        this.f9426a = false;
+        this.f9427c = false;
         this.d = true;
     }
 
@@ -464,7 +464,7 @@ public class PlacementVideoView extends PlacementMediaView implements hr, lo {
             return;
         }
         this.b = rVar;
-        this.f23034a = true;
+        this.f9426a = true;
         String e = rVar.e();
         String str = e;
         if (TextUtils.isEmpty(e)) {
@@ -473,7 +473,7 @@ public class PlacementVideoView extends PlacementMediaView implements hr, lo {
         this.V = str;
         this.L.setVideoFileUrl(str);
         this.L.setContentId(this.Code == null ? null : this.Code.D());
-        if (this.f23035c) {
+        if (this.f9427c) {
             ge.V(getTAG(), "play when hash check success");
             V(true, this.h);
         }
@@ -492,11 +492,11 @@ public class PlacementVideoView extends PlacementMediaView implements hr, lo {
     public void Code(boolean z, boolean z2) {
         String tag = getTAG();
         ge.V(tag, "play, auto:" + z + ", isMute:" + z2);
-        if (this.f23034a) {
+        if (this.f9426a) {
             V(z, z2);
             return;
         }
-        this.f23035c = true;
+        this.f9427c = true;
         this.h = z2;
     }
 

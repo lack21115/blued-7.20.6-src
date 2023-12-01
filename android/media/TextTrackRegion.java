@@ -1,7 +1,5 @@
 package android.media;
 
-import com.alipay.sdk.util.i;
-
 /* loaded from: source-9557208-dex2jar.jar:android/media/TextTrackRegion.class */
 class TextTrackRegion {
     static final int SCROLL_VALUE_NONE = 300;
@@ -16,6 +14,6 @@ class TextTrackRegion {
     int mScrollValue = 300;
 
     public String toString() {
-        return " {id:\"" + this.mId + "\", width:" + this.mWidth + ", lines:" + this.mLines + ", anchorPoint:(" + this.mAnchorPointX + ", " + this.mAnchorPointY + "), viewportAnchorPoints:" + this.mViewportAnchorPointX + ", " + this.mViewportAnchorPointY + "), scrollValue:" + (this.mScrollValue == 300 ? "none" : this.mScrollValue == 301 ? "scroll_up" : "INVALID") + i.d;
+        return " {id:\"" + this.mId + "\", width:" + this.mWidth + ", lines:" + this.mLines + ", anchorPoint:(" + this.mAnchorPointX + ", " + this.mAnchorPointY + "), viewportAnchorPoints:" + this.mViewportAnchorPointX + ", " + this.mViewportAnchorPointY + "), scrollValue:" + (this.mScrollValue == 300 ? "none" : this.mScrollValue == 301 ? "scroll_up" : "INVALID") + "}";
     }
 }

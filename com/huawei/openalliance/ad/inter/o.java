@@ -11,6 +11,7 @@ import com.huawei.hms.ads.kk;
 import com.huawei.openalliance.ad.beans.inner.PlacementAdReqParam;
 import com.huawei.openalliance.ad.beans.metadata.Video;
 import com.huawei.openalliance.ad.beans.parameter.AdSlotParam;
+import com.huawei.openalliance.ad.constant.ab;
 import com.huawei.openalliance.ad.inter.data.AdContentData;
 import com.huawei.openalliance.ad.inter.listeners.n;
 import com.huawei.openalliance.ad.ipc.CallResult;
@@ -43,11 +44,11 @@ public class o {
     private final String[] Z;
 
     /* renamed from: a  reason: collision with root package name */
-    private RequestOptions f22982a;
+    private RequestOptions f9374a;
     private Location b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f22983c;
+    private String f9375c;
     private long d;
     private long e;
     private long f;
@@ -72,7 +73,7 @@ public class o {
         private String Z;
 
         /* renamed from: a  reason: collision with root package name */
-        private String f22984a;
+        private String f9376a;
 
         public a(Context context) {
             this.Code = context.getApplicationContext();
@@ -184,9 +185,9 @@ public class o {
         this.D = aVar.C();
         this.L = aVar.S();
         this.b = aVar.D;
-        this.f22982a = aVar.F;
+        this.f9374a = aVar.F;
         this.k = aVar.L;
-        this.l = aVar.f22984a;
+        this.l = aVar.f9376a;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -208,8 +209,8 @@ public class o {
                             if (list != null) {
                                 ArrayList arrayList = new ArrayList(list.size());
                                 for (AdContentData adContentData : list) {
-                                    if (o.this.f22983c == null) {
-                                        o.this.f22983c = adContentData.E();
+                                    if (o.this.f9375c == null) {
+                                        o.this.f9375c = adContentData.E();
                                     }
                                     arrayList.add(new com.huawei.openalliance.ad.inter.data.p(adContentData));
                                 }
@@ -247,7 +248,7 @@ public class o {
                     if (nVar != null) {
                         nVar.Code(map);
                     }
-                    eh.Code(o.this.I, 200, o.this.f22983c, 60, map, o.this.d, o.this.e, o.this.f);
+                    eh.Code(o.this.I, 200, o.this.f9375c, 60, map, o.this.d, o.this.e, o.this.f);
                 }
             });
         }
@@ -261,7 +262,7 @@ public class o {
             I(1001);
         } else if (!Z(this.S)) {
             ge.I("PlacementAdLoader", "extra info is invalid");
-            I(804);
+            I(ab.Y);
         } else if (b.LOADING == this.V) {
             ge.V("PlacementAdLoader", "waiting for request finish");
             I(801);
@@ -272,16 +273,16 @@ public class o {
                 I(802);
             } else if (i <= 0) {
                 ge.I("PlacementAdLoader", "invalid totalDuration.");
-                I(804);
+                I(ab.Y);
             } else if (i2 < 0) {
                 ge.I("PlacementAdLoader", "invalid maxCount");
-                I(804);
+                I(ab.Y);
             } else {
                 this.V = b.LOADING;
-                ac.Code(this.I, this.f22982a);
+                ac.Code(this.I, this.f9374a);
                 Video video = new Video(this.F);
                 final AdSlotParam.a aVar = new AdSlotParam.a();
-                aVar.Code(Arrays.asList(this.Z)).V(this.C).Code(Boolean.valueOf(z)).Code(1).I(com.huawei.openalliance.ad.utils.c.Z(this.I)).Z(com.huawei.openalliance.ad.utils.c.B(this.I)).Code(this.D).Code(dr.Code(this.f22982a)).Code(this.b).B(i2).D(i).C(this.l).Code(video);
+                aVar.Code(Arrays.asList(this.Z)).V(this.C).Code(Boolean.valueOf(z)).Code(1).I(com.huawei.openalliance.ad.utils.c.Z(this.I)).Z(com.huawei.openalliance.ad.utils.c.B(this.I)).Code(this.D).Code(dr.Code(this.f9374a)).Code(this.b).B(i2).D(i).C(this.l).Code(video);
                 Integer num = this.k;
                 if (num != null) {
                     aVar.S(num);
@@ -312,7 +313,7 @@ public class o {
                     if (nVar != null) {
                         nVar.I(i);
                     }
-                    eh.Code(o.this.I, i, o.this.f22983c, 60, null, o.this.d, o.this.e, o.this.f);
+                    eh.Code(o.this.I, i, o.this.f9375c, 60, null, o.this.d, o.this.e, o.this.f);
                 }
             });
         }

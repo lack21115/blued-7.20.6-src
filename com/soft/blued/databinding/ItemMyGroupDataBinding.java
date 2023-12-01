@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemMyGroupDataBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final RelativeLayout f29255a;
+    private final RelativeLayout f15565a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
-        return this.f29255a;
+        return this.f15565a;
     }
 }

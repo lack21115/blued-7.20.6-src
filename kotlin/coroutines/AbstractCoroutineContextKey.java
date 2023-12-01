@@ -9,9 +9,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/coroutines/AbstractCoroutineContextKey.class */
 public abstract class AbstractCoroutineContextKey<B extends CoroutineContext.Element, E extends B> implements CoroutineContext.Key<E> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Function1<CoroutineContext.Element, E> f42448a;
+    private final Function1<CoroutineContext.Element, E> a;
     private final CoroutineContext.Key<?> b;
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -19,14 +17,14 @@ public abstract class AbstractCoroutineContextKey<B extends CoroutineContext.Ele
     public AbstractCoroutineContextKey(CoroutineContext.Key<B> baseKey, Function1<? super CoroutineContext.Element, ? extends E> safeCast) {
         Intrinsics.e(baseKey, "baseKey");
         Intrinsics.e(safeCast, "safeCast");
-        this.f42448a = safeCast;
+        this.a = safeCast;
         this.b = baseKey instanceof AbstractCoroutineContextKey ? ((AbstractCoroutineContextKey) baseKey).b : baseKey;
     }
 
     /* JADX WARN: Incorrect return type in method signature: (Lkotlin/coroutines/CoroutineContext$Element;)TE; */
     public final CoroutineContext.Element a(CoroutineContext.Element element) {
         Intrinsics.e(element, "element");
-        return (CoroutineContext.Element) this.f42448a.invoke(element);
+        return (CoroutineContext.Element) this.a.invoke(element);
     }
 
     public final boolean a(CoroutineContext.Key<?> key) {

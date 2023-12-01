@@ -10,10 +10,10 @@ import com.bytedance.pangle.log.ZeusLogger;
 final class b implements Application.ActivityLifecycleCallbacks {
 
     /* renamed from: a  reason: collision with root package name */
-    Fragment f21404a;
+    Fragment f7798a;
 
     public b(Fragment fragment) {
-        this.f21404a = fragment;
+        this.f7798a = fragment;
     }
 
     @Override // android.app.Application.ActivityLifecycleCallbacks
@@ -29,7 +29,7 @@ final class b implements Application.ActivityLifecycleCallbacks {
     }
 
     public final void onActivityPostSaveInstanceState(Activity activity, Bundle bundle) {
-        if (this.f21404a.getActivity() == activity && activity.getClassLoader() != this.f21404a.getClass().getClassLoader()) {
+        if (this.f7798a.getActivity() == activity && activity.getClassLoader() != this.f7798a.getClass().getClassLoader()) {
             try {
                 Object obj = bundle.get("androidx.lifecycle.BundlableSavedStateRegistry.key");
                 if (obj != null) {

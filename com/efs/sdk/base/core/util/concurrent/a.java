@@ -6,11 +6,11 @@ import android.os.HandlerThread;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static HandlerThread f21795a;
+    public static HandlerThread f8189a;
 
     static {
         HandlerThread handlerThread = new HandlerThread("efs-base", 10);
-        f21795a = handlerThread;
+        f8189a = handlerThread;
         handlerThread.start();
     }
 }

@@ -25,26 +25,26 @@ public class FileTypeConfig {
         if (i != 10) {
             switch (i) {
                 case 13:
-                    return ResourceUtils.getIdByName(context, i.f7952c, "sobot_icon_file_doc");
+                    return ResourceUtils.getIdByName(context, i.f5112c, "sobot_icon_file_doc");
                 case 14:
-                    return ResourceUtils.getIdByName(context, i.f7952c, "sobot_icon_file_ppt");
+                    return ResourceUtils.getIdByName(context, i.f5112c, "sobot_icon_file_ppt");
                 case 15:
-                    return ResourceUtils.getIdByName(context, i.f7952c, "sobot_icon_file_xls");
+                    return ResourceUtils.getIdByName(context, i.f5112c, "sobot_icon_file_xls");
                 case 16:
-                    return ResourceUtils.getIdByName(context, i.f7952c, "sobot_icon_file_pdf");
+                    return ResourceUtils.getIdByName(context, i.f5112c, "sobot_icon_file_pdf");
                 case 17:
-                    return ResourceUtils.getIdByName(context, i.f7952c, "sobot_icon_file_mp3");
+                    return ResourceUtils.getIdByName(context, i.f5112c, "sobot_icon_file_mp3");
                 case 18:
-                    return ResourceUtils.getIdByName(context, i.f7952c, "sobot_icon_file_mp4");
+                    return ResourceUtils.getIdByName(context, i.f5112c, "sobot_icon_file_mp4");
                 case 19:
-                    return ResourceUtils.getIdByName(context, i.f7952c, "sobot_icon_file_rar");
+                    return ResourceUtils.getIdByName(context, i.f5112c, "sobot_icon_file_rar");
                 case 20:
-                    return ResourceUtils.getIdByName(context, i.f7952c, "sobot_icon_file_txt");
+                    return ResourceUtils.getIdByName(context, i.f5112c, "sobot_icon_file_txt");
                 default:
-                    return ResourceUtils.getIdByName(context, i.f7952c, "sobot_icon_file_unknow");
+                    return ResourceUtils.getIdByName(context, i.f5112c, "sobot_icon_file_unknow");
             }
         }
-        return ResourceUtils.getIdByName(context, i.f7952c, "sobot_icon_file_unknow");
+        return ResourceUtils.getIdByName(context, i.f5112c, "sobot_icon_file_unknow");
     }
 
     public static int getFileType(String str) {

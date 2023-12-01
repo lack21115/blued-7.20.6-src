@@ -14,11 +14,11 @@ import org.json.JSONObject;
 public class f {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f4143a = f.class.getSimpleName();
+    private static final String f4095a = f.class.getSimpleName();
     private static int b = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    private static Map<String, e> f4144c = new HashMap();
+    private static Map<String, e> f4096c = new HashMap();
     private static List<e> d = new ArrayList();
     private static e e = null;
 
@@ -27,13 +27,13 @@ public class f {
         synchronized (f.class) {
             e eVar2 = null;
             try {
-                if (f4144c.containsKey(str)) {
-                    eVar2 = f4144c.get(str);
+                if (f4096c.containsKey(str)) {
+                    eVar2 = f4096c.get(str);
                 }
                 eVar = eVar2;
                 if (eVar2 == null) {
                     eVar = new e(str);
-                    f4144c.put(str, eVar);
+                    f4096c.put(str, eVar);
                 }
             } catch (Throwable th) {
                 try {
@@ -61,8 +61,8 @@ public class f {
                     throw th2;
                 }
             }
-            if (f4144c.containsKey(str)) {
-                f4144c.get(str).g(str2);
+            if (f4096c.containsKey(str)) {
+                f4096c.get(str).g(str2);
                 return;
             }
             if (d.size() > 0) {
@@ -107,11 +107,11 @@ public class f {
     public static void b(String str) {
         synchronized (f.class) {
             try {
-                if (f4144c.containsKey(str)) {
-                    e eVar = f4144c.get(str);
+                if (f4096c.containsKey(str)) {
+                    e eVar = f4096c.get(str);
                     e = eVar;
                     eVar.b();
-                    f4144c.remove(str);
+                    f4096c.remove(str);
                 }
             } catch (Throwable th) {
                 try {
@@ -140,11 +140,11 @@ public class f {
     public static void c(String str) {
         try {
             synchronized (f.class) {
-                if (f4144c.containsKey(str)) {
-                    e eVar = f4144c.get(str);
+                if (f4096c.containsKey(str)) {
+                    e eVar = f4096c.get(str);
                     eVar.b();
                     d.add(eVar);
-                    f4144c.remove(str);
+                    f4096c.remove(str);
                 }
                 if (b != 1 && !d.isEmpty()) {
                     b = 1;

@@ -13,7 +13,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class i extends com.tencent.beacon.a.b.a {
 
     /* renamed from: c  reason: collision with root package name */
-    private static final int f34931c;
+    private static final int f21240c;
     private static final int d;
     private static final AtomicInteger e;
     private final ScheduledExecutorService f;
@@ -27,19 +27,19 @@ public class i extends com.tencent.beacon.a.b.a {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private final Runnable f34932a;
+        private final Runnable f21241a;
         private final long b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final long f34933c;
+        private final long f21242c;
         private final TimeUnit d;
         private Future<?> e;
 
         a(Future<?> future, Runnable runnable, long j, long j2, TimeUnit timeUnit) {
             this.e = future;
-            this.f34932a = runnable;
+            this.f21241a = runnable;
             this.b = j;
-            this.f34933c = j2;
+            this.f21242c = j2;
             this.d = timeUnit;
         }
 
@@ -54,7 +54,7 @@ public class i extends com.tencent.beacon.a.b.a {
 
     static {
         int availableProcessors = Runtime.getRuntime().availableProcessors();
-        f34931c = availableProcessors;
+        f21240c = availableProcessors;
         d = Math.max(2, Math.min(availableProcessors - 1, 3));
         e = new AtomicInteger(0);
     }
@@ -187,7 +187,7 @@ public class i extends com.tencent.beacon.a.b.a {
                     if (!aVar.a()) {
                         return;
                     }
-                    aVar.e = this.f.scheduleAtFixedRate(aVar.f34932a, aVar.b, aVar.f34933c, aVar.d);
+                    aVar.e = this.f.scheduleAtFixedRate(aVar.f21241a, aVar.b, aVar.f21242c, aVar.d);
                 }
             }
         }

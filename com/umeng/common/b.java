@@ -10,18 +10,18 @@ import com.umeng.commonsdk.statistics.internal.PreferenceWrapper;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static b f40826a;
+    private static b f27135a;
     private static Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static String f40827c;
+    private static String f27136c;
     private static final String d = at.b().b("user");
 
     /* loaded from: source-8829756-dex2jar.jar:com/umeng/common/b$a.class */
     static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final b f40828a = new b();
+        private static final b f27137a = new b();
 
         private a() {
         }
@@ -35,9 +35,9 @@ public final class b {
                     b = context.getApplicationContext();
                 }
                 if (b != null) {
-                    f40827c = context.getPackageName();
+                    f27136c = context.getPackageName();
                 }
-                bVar = a.f40828a;
+                bVar = a.f27137a;
             } catch (Throwable th) {
                 throw th;
             }
@@ -74,7 +74,7 @@ public final class b {
         if (context == null) {
             return null;
         }
-        return context.getSharedPreferences(d + f40827c, 0);
+        return context.getSharedPreferences(d + f27136c, 0);
     }
 
     public void a(int i) {

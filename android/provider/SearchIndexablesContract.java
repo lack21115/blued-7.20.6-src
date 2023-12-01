@@ -33,7 +33,7 @@ public class SearchIndexablesContract {
     public static final String PROVIDER_INTERFACE = "android.content.action.SEARCH_INDEXABLES_PROVIDER";
     private static final String SETTINGS = "settings";
     public static final String[] INDEXABLES_XML_RES_COLUMNS = {"rank", XmlResource.COLUMN_XML_RESID, "className", BaseColumns.COLUMN_ICON_RESID, BaseColumns.COLUMN_INTENT_ACTION, BaseColumns.COLUMN_INTENT_TARGET_PACKAGE, BaseColumns.COLUMN_INTENT_TARGET_CLASS};
-    public static final String[] INDEXABLES_RAW_COLUMNS = {"rank", "title", RawData.COLUMN_SUMMARY_ON, RawData.COLUMN_SUMMARY_OFF, RawData.COLUMN_ENTRIES, RawData.COLUMN_KEYWORDS, RawData.COLUMN_SCREEN_TITLE, "className", BaseColumns.COLUMN_ICON_RESID, BaseColumns.COLUMN_INTENT_ACTION, BaseColumns.COLUMN_INTENT_TARGET_PACKAGE, BaseColumns.COLUMN_INTENT_TARGET_CLASS, "key", "user_id"};
+    public static final String[] INDEXABLES_RAW_COLUMNS = {"rank", "title", RawData.COLUMN_SUMMARY_ON, RawData.COLUMN_SUMMARY_OFF, RawData.COLUMN_ENTRIES, RawData.COLUMN_KEYWORDS, RawData.COLUMN_SCREEN_TITLE, "className", BaseColumns.COLUMN_ICON_RESID, BaseColumns.COLUMN_INTENT_ACTION, BaseColumns.COLUMN_INTENT_TARGET_PACKAGE, BaseColumns.COLUMN_INTENT_TARGET_CLASS, "key", RawData.COLUMN_USER_ID};
     public static final String[] NON_INDEXABLES_KEYS_COLUMNS = {"key"};
 
     /* loaded from: source-9557208-dex2jar.jar:android/provider/SearchIndexablesContract$BaseColumns.class */

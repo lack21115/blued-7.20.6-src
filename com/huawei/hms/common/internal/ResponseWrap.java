@@ -12,7 +12,7 @@ import org.json.JSONObject;
 public class ResponseWrap {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f22663a;
+    private String f9055a;
     private ResponseHeader b;
 
     public ResponseWrap(ResponseHeader responseHeader) {
@@ -32,7 +32,7 @@ public class ResponseWrap {
             this.b.setSessionId(JsonUtil.getStringValue(jSONObject, "session_id"));
             this.b.setTransactionId(JsonUtil.getStringValue(jSONObject, CommonCode.MapKey.TRANSACTION_ID));
             this.b.setResolution(JsonUtil.getStringValue(jSONObject, "resolution"));
-            this.f22663a = JsonUtil.getStringValue(jSONObject, TtmlUtils.TAG_BODY);
+            this.f9055a = JsonUtil.getStringValue(jSONObject, TtmlUtils.TAG_BODY);
             return true;
         } catch (JSONException e) {
             HMSLog.e("ResponseWrap", "fromJson failed: " + e.getMessage());
@@ -41,10 +41,10 @@ public class ResponseWrap {
     }
 
     public String getBody() {
-        if (TextUtils.isEmpty(this.f22663a)) {
-            this.f22663a = new JSONObject().toString();
+        if (TextUtils.isEmpty(this.f9055a)) {
+            this.f9055a = new JSONObject().toString();
         }
-        return this.f22663a;
+        return this.f9055a;
     }
 
     public ResponseHeader getResponseHeader() {
@@ -52,7 +52,7 @@ public class ResponseWrap {
     }
 
     public void setBody(String str) {
-        this.f22663a = str;
+        this.f9055a = str;
     }
 
     public void setResponseHeader(ResponseHeader responseHeader) {
@@ -75,8 +75,8 @@ public class ResponseWrap {
             if (!TextUtils.isEmpty(sessionId)) {
                 jSONObject.put("session_id", sessionId);
             }
-            if (!TextUtils.isEmpty(this.f22663a)) {
-                jSONObject.put(TtmlUtils.TAG_BODY, this.f22663a);
+            if (!TextUtils.isEmpty(this.f9055a)) {
+                jSONObject.put(TtmlUtils.TAG_BODY, this.f9055a);
             }
         } catch (JSONException e) {
             HMSLog.e("ResponseWrap", "toJson failed: " + e.getMessage());
@@ -85,6 +85,6 @@ public class ResponseWrap {
     }
 
     public String toString() {
-        return "ResponseWrap{body='" + this.f22663a + "', responseHeader=" + this.b + '}';
+        return "ResponseWrap{body='" + this.f9055a + "', responseHeader=" + this.b + '}';
     }
 }

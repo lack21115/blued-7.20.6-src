@@ -15,7 +15,7 @@ import javax.crypto.NoSuchPaddingException;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f4089a = "RSA/ECB/PKCS1Padding";
+    private static String f4041a = "RSA/ECB/PKCS1Padding";
 
     public static String a(String str, RSAPublicKey rSAPublicKey) {
         try {
@@ -33,7 +33,7 @@ public class b {
     public static byte[] a(RSAPublicKey rSAPublicKey, byte[] bArr) {
         if (rSAPublicKey != null) {
             try {
-                Cipher cipher = Cipher.getInstance(f4089a);
+                Cipher cipher = Cipher.getInstance(f4041a);
                 cipher.init(1, rSAPublicKey);
                 return cipher.doFinal(bArr);
             } catch (InvalidKeyException e) {

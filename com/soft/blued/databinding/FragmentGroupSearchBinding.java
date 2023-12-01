@@ -7,11 +7,11 @@ import com.blued.android.framework.activity.keyboardpage.KeyboardListenLinearLay
 public final class FragmentGroupSearchBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final KeyboardListenLinearLayout f28842a;
+    private final KeyboardListenLinearLayout f15152a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public KeyboardListenLinearLayout getRoot() {
-        return this.f28842a;
+        return this.f15152a;
     }
 }

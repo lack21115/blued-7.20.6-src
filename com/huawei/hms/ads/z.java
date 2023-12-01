@@ -34,11 +34,11 @@ public class z {
     private AdListener Z;
 
     /* renamed from: a  reason: collision with root package name */
-    private long f22585a;
+    private long f8977a;
     private long b;
 
     /* renamed from: c  reason: collision with root package name */
-    private long f22586c;
+    private long f8978c;
     private App d;
     private RewardVerifyConfig g;
     private com.huawei.openalliance.ad.inter.listeners.h h;
@@ -147,7 +147,7 @@ public class z {
                 if (z.this.S != null) {
                     z.this.S.onRewardAdFailedToLoad(dq.Code(i));
                 }
-                eh.Code(z.this.I, i, z.this.L, 12, null, z.this.f22585a, z.this.b, z.this.f22586c);
+                eh.Code(z.this.I, i, z.this.L, 12, null, z.this.f8977a, z.this.b, z.this.f8978c);
             }
         });
     }
@@ -207,7 +207,7 @@ public class z {
                 if (z.this.S != null) {
                     z.this.S.onRewardAdLoaded();
                 }
-                eh.Code(z.this.I, 200, z.this.L, 12, map, z.this.f22585a, z.this.b, z.this.f22586c);
+                eh.Code(z.this.I, 200, z.this.L, 12, map, z.this.f8977a, z.this.b, z.this.f8978c);
             }
         });
     }
@@ -298,7 +298,7 @@ public class z {
     }
 
     public final void Code(AdParam adParam) {
-        this.f22585a = System.currentTimeMillis();
+        this.f8977a = System.currentTimeMillis();
         ge.V("InterstitialAdManager", com.huawei.openalliance.ad.constant.f.Code);
         if (F()) {
             AdSlotParam.a aVar = new AdSlotParam.a();
@@ -312,13 +312,13 @@ public class z {
             this.V = a.LOADING;
             this.e.clear();
             BaseAdReqParam baseAdReqParam = new BaseAdReqParam();
-            baseAdReqParam.Code(this.f22585a);
+            baseAdReqParam.Code(this.f8977a);
             kk.Code(this.I, "interstitial_ad_load", aVar.S(), com.huawei.openalliance.ad.utils.z.V(baseAdReqParam), new RemoteCallResultCallback<String>() { // from class: com.huawei.hms.ads.z.3
                 @Override // com.huawei.openalliance.ad.ipc.RemoteCallResultCallback
                 public void onRemoteCallResult(String str, CallResult<String> callResult) {
                     z zVar;
                     int code;
-                    z.this.f22586c = System.currentTimeMillis();
+                    z.this.f8978c = System.currentTimeMillis();
                     if (callResult.getCode() == 200) {
                         Map<String, List<AdContentData>> map = (Map) com.huawei.openalliance.ad.utils.z.V(callResult.getData(), Map.class, List.class, AdContentData.class);
                         if (z.this.h != null) {

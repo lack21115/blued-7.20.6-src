@@ -36,7 +36,6 @@ class MtopProgressListenerImpl extends b implements MtopCallback.MtopHeaderListe
         TBSdkLog.a(TAG, seqNo, str);
     }
 
-    @Override // mtopsdk.mtop.common.MtopCallback.MtopHeaderListener
     public void onHeader(MtopHeaderEvent mtopHeaderEvent, Object obj) {
         String seqNo;
         String str;

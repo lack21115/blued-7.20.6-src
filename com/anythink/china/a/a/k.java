@@ -3,16 +3,13 @@ package com.anythink.china.a.a;
 import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
+import com.anythink.core.common.c.d;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/china/a/a/k.class */
 public final class k {
     private Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private boolean f6237c = false;
-
-    /* renamed from: a  reason: collision with root package name */
-    String f6236a = null;
+    private boolean c = false;
+    String a = null;
 
     public k(Context context) {
         this.b = context;
@@ -27,7 +24,7 @@ public final class k {
             str3 = null;
             if (query != null) {
                 if (query.moveToNext()) {
-                    str = query.getString(query.getColumnIndex("value"));
+                    str = query.getString(query.getColumnIndex(d.a.d));
                 }
                 str2 = str;
                 str3 = str;

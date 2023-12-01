@@ -267,13 +267,13 @@ public final class R {
         public static final int RecyclerView_spanCount = 0x0000000a;
         public static final int RecyclerView_stackFromEnd = 0x0000000b;
         public static final int ViewPager2_android_orientation = 0x00000000;
-        public static final int[] ColorStateListItem = {16843173, 16843551, 16844359, 2130968626, 2130969491};
+        public static final int[] ColorStateListItem = {android.R.attr.color, android.R.attr.alpha, 16844359, 2130968626, 2130969491};
         public static final int[] FontFamily = {2130969223, 2130969224, 2130969225, 2130969226, 2130969227, 2130969228, 2130969229};
         public static final int[] FontFamilyFont = {16844082, 16844083, 16844095, 16844143, 16844144, 2130969220, 2130969230, 2130969231, 2130969232, 2130970410};
-        public static final int[] GradientColor = {16843165, 16843166, 16843169, 16843170, 16843171, 16843172, 16843265, 16843275, 16844048, 16844049, 16844050, 16844051};
-        public static final int[] GradientColorItem = {16843173, 16844052};
-        public static final int[] RecyclerView = {16842948, 16842987, 16842993, 2130969166, 2130969167, 2130969168, 2130969169, 2130969170, 2130969510, 2130969912, 2130970059, 2130970152};
-        public static final int[] ViewPager2 = {16842948};
+        public static final int[] GradientColor = {android.R.attr.startColor, android.R.attr.endColor, android.R.attr.type, android.R.attr.centerX, android.R.attr.centerY, android.R.attr.gradientRadius, android.R.attr.tileMode, android.R.attr.centerColor, 16844048, 16844049, 16844050, 16844051};
+        public static final int[] GradientColorItem = {android.R.attr.color, 16844052};
+        public static final int[] RecyclerView = {android.R.attr.orientation, android.R.attr.clipToPadding, android.R.attr.descendantFocusability, 2130969166, 2130969167, 2130969168, 2130969169, 2130969170, 2130969510, 2130969912, 2130970059, 2130970152};
+        public static final int[] ViewPager2 = {android.R.attr.orientation};
 
         private styleable() {
         }

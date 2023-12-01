@@ -12,14 +12,14 @@ import com.bumptech.glide.util.Preconditions;
 public class BitmapDrawableTranscoder implements ResourceTranscoder<Bitmap, BitmapDrawable> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Resources f21004a;
+    private final Resources f7398a;
 
     public BitmapDrawableTranscoder(Resources resources) {
-        this.f21004a = (Resources) Preconditions.a(resources);
+        this.f7398a = (Resources) Preconditions.a(resources);
     }
 
     @Override // com.bumptech.glide.load.resource.transcode.ResourceTranscoder
     public Resource<BitmapDrawable> a(Resource<Bitmap> resource, Options options) {
-        return LazyBitmapDrawableResource.a(this.f21004a, resource);
+        return LazyBitmapDrawableResource.a(this.f7398a, resource);
     }
 }

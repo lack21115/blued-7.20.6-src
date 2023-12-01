@@ -12,11 +12,11 @@ import java.util.Locale;
 public final class ScrollEventAdapter extends RecyclerView.OnScrollListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private ViewPager2.OnPageChangeCallback f3589a;
+    private ViewPager2.OnPageChangeCallback f3541a;
     private final ViewPager2 b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final RecyclerView f3590c;
+    private final RecyclerView f3542c;
     private final LinearLayoutManager d;
     private int e;
     private int f;
@@ -33,19 +33,19 @@ public final class ScrollEventAdapter extends RecyclerView.OnScrollListener {
     public static final class ScrollEventValues {
 
         /* renamed from: a  reason: collision with root package name */
-        int f3591a;
+        int f3543a;
         float b;
 
         /* renamed from: c  reason: collision with root package name */
-        int f3592c;
+        int f3544c;
 
         ScrollEventValues() {
         }
 
         void a() {
-            this.f3591a = -1;
+            this.f3543a = -1;
             this.b = 0.0f;
-            this.f3592c = 0;
+            this.f3544c = 0;
         }
     }
 
@@ -53,7 +53,7 @@ public final class ScrollEventAdapter extends RecyclerView.OnScrollListener {
     public ScrollEventAdapter(ViewPager2 viewPager2) {
         this.b = viewPager2;
         RecyclerView recyclerView = viewPager2.d;
-        this.f3590c = recyclerView;
+        this.f3542c = recyclerView;
         this.d = (LinearLayoutManager) recyclerView.getLayoutManager();
         this.g = new ScrollEventValues();
         i();
@@ -64,14 +64,14 @@ public final class ScrollEventAdapter extends RecyclerView.OnScrollListener {
             return;
         }
         this.f = i;
-        ViewPager2.OnPageChangeCallback onPageChangeCallback = this.f3589a;
+        ViewPager2.OnPageChangeCallback onPageChangeCallback = this.f3541a;
         if (onPageChangeCallback != null) {
             onPageChangeCallback.onPageScrollStateChanged(i);
         }
     }
 
     private void a(int i, float f, int i2) {
-        ViewPager2.OnPageChangeCallback onPageChangeCallback = this.f3589a;
+        ViewPager2.OnPageChangeCallback onPageChangeCallback = this.f3541a;
         if (onPageChangeCallback != null) {
             onPageChangeCallback.onPageScrolled(i, f, i2);
         }
@@ -91,7 +91,7 @@ public final class ScrollEventAdapter extends RecyclerView.OnScrollListener {
     }
 
     private void b(int i) {
-        ViewPager2.OnPageChangeCallback onPageChangeCallback = this.f3589a;
+        ViewPager2.OnPageChangeCallback onPageChangeCallback = this.f3541a;
         if (onPageChangeCallback != null) {
             onPageChangeCallback.onPageSelected(i);
         }
@@ -113,12 +113,12 @@ public final class ScrollEventAdapter extends RecyclerView.OnScrollListener {
         int top;
         int i;
         ScrollEventValues scrollEventValues = this.g;
-        scrollEventValues.f3591a = this.d.findFirstVisibleItemPosition();
-        if (scrollEventValues.f3591a == -1) {
+        scrollEventValues.f3543a = this.d.findFirstVisibleItemPosition();
+        if (scrollEventValues.f3543a == -1) {
             scrollEventValues.a();
             return;
         }
-        View findViewByPosition = this.d.findViewByPosition(scrollEventValues.f3591a);
+        View findViewByPosition = this.d.findViewByPosition(scrollEventValues.f3543a);
         if (findViewByPosition == null) {
             scrollEventValues.a();
             return;
@@ -142,21 +142,21 @@ public final class ScrollEventAdapter extends RecyclerView.OnScrollListener {
         int height = findViewByPosition.getHeight() + i4 + i5;
         int width = findViewByPosition.getWidth();
         if (this.d.getOrientation() == 0) {
-            int left = (findViewByPosition.getLeft() - i2) - this.f3590c.getPaddingLeft();
+            int left = (findViewByPosition.getLeft() - i2) - this.f3542c.getPaddingLeft();
             top = left;
             if (this.b.b()) {
                 top = -left;
             }
             i = width + i2 + i3;
         } else {
-            top = (findViewByPosition.getTop() - i4) - this.f3590c.getPaddingTop();
+            top = (findViewByPosition.getTop() - i4) - this.f3542c.getPaddingTop();
             i = height;
         }
-        scrollEventValues.f3592c = -top;
-        if (scrollEventValues.f3592c >= 0) {
-            scrollEventValues.b = i == 0 ? 0.0f : scrollEventValues.f3592c / i;
+        scrollEventValues.f3544c = -top;
+        if (scrollEventValues.f3544c >= 0) {
+            scrollEventValues.b = i == 0 ? 0.0f : scrollEventValues.f3544c / i;
         } else if (!new AnimateLayoutChangeDetector(this.d).a()) {
-            throw new IllegalStateException(String.format(Locale.US, "Page can only be offset by a positive amount, not by %d", Integer.valueOf(scrollEventValues.f3592c)));
+            throw new IllegalStateException(String.format(Locale.US, "Page can only be offset by a positive amount, not by %d", Integer.valueOf(scrollEventValues.f3544c)));
         } else {
             throw new IllegalStateException("Page(s) contain a ViewGroup with a LayoutTransition (or animateLayoutChanges=\"true\"), which interferes with the scrolling animation. Make sure to call getLayoutTransition().setAnimateParentHierarchy(false) on all ViewGroups with a LayoutTransition before an animation is started.");
         }
@@ -200,7 +200,7 @@ public final class ScrollEventAdapter extends RecyclerView.OnScrollListener {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a(ViewPager2.OnPageChangeCallback onPageChangeCallback) {
-        this.f3589a = onPageChangeCallback;
+        this.f3541a = onPageChangeCallback;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -214,12 +214,12 @@ public final class ScrollEventAdapter extends RecyclerView.OnScrollListener {
         if (!f() || this.m) {
             this.m = false;
             j();
-            if (this.g.f3592c != 0) {
+            if (this.g.f3544c != 0) {
                 a(2);
                 return;
             }
-            if (this.g.f3591a != this.h) {
-                b(this.g.f3591a);
+            if (this.g.f3543a != this.h) {
+                b(this.g.f3543a);
             }
             a(0);
             i();
@@ -249,7 +249,7 @@ public final class ScrollEventAdapter extends RecyclerView.OnScrollListener {
     /* JADX INFO: Access modifiers changed from: package-private */
     public double h() {
         j();
-        return this.g.f3591a + this.g.b;
+        return this.g.f3543a + this.g.b;
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
@@ -267,14 +267,14 @@ public final class ScrollEventAdapter extends RecyclerView.OnScrollListener {
                 j();
                 if (!this.k) {
                     z = true;
-                    if (this.g.f3591a != -1) {
-                        a(this.g.f3591a, 0.0f, 0);
+                    if (this.g.f3543a != -1) {
+                        a(this.g.f3543a, 0.0f, 0);
                         z = true;
                     }
-                } else if (this.g.f3592c == 0) {
+                } else if (this.g.f3544c == 0) {
                     z = true;
-                    if (this.h != this.g.f3591a) {
-                        b(this.g.f3591a);
+                    if (this.h != this.g.f3543a) {
+                        b(this.g.f3543a);
                         z = true;
                     }
                 } else {
@@ -287,9 +287,9 @@ public final class ScrollEventAdapter extends RecyclerView.OnScrollListener {
             }
             if (this.e == 2 && i == 0 && this.l) {
                 j();
-                if (this.g.f3592c == 0) {
-                    if (this.i != this.g.f3591a) {
-                        b(this.g.f3591a == -1 ? 0 : this.g.f3591a);
+                if (this.g.f3544c == 0) {
+                    if (this.i != this.g.f3543a) {
+                        b(this.g.f3543a == -1 ? 0 : this.g.f3543a);
                     }
                     a(0);
                     i();

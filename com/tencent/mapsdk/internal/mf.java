@@ -16,11 +16,11 @@ public class mf implements nf.d, of.a {
     public static final String j = "AUTH_MARKER";
 
     /* renamed from: a  reason: collision with root package name */
-    private final l1 f37647a;
+    private final l1 f23956a;
     private final wh b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final yg f37648c;
+    private final yg f23957c;
     private final tf d;
     private final rc e;
     private List<AsyncTask> f;
@@ -39,8 +39,8 @@ public class mf implements nf.d, of.a {
         this.i = h1Var.l();
         this.b = h1Var.l().n0();
         l1 n = h1Var.n();
-        this.f37647a = n;
-        this.f37648c = h1Var.m();
+        this.f23956a = n;
+        this.f23957c = h1Var.m();
         this.d = h1Var.k();
         this.e = h1Var.l().A();
         this.f = new ArrayList();
@@ -74,7 +74,7 @@ public class mf implements nf.d, of.a {
     }
 
     public void a(a aVar, TencentMapOptions tencentMapOptions) {
-        this.f37647a.a(aVar, tencentMapOptions);
+        this.f23956a.a(aVar, tencentMapOptions);
     }
 
     @Override // com.tencent.mapsdk.internal.nf.d
@@ -86,7 +86,7 @@ public class mf implements nf.d, of.a {
         JSONArray jSONArray = null;
         if (cVar != null) {
             JSONArray jSONArray2 = cVar.b;
-            s5 s5Var2 = cVar.f37669a;
+            s5 s5Var2 = cVar.f23978a;
             sf sfVar = cVar.d;
             s5Var = s5Var2;
             jSONArray = jSONArray2;
@@ -109,14 +109,14 @@ public class mf implements nf.d, of.a {
             }
             z3 z3Var = (z3) this.e.getMapComponent(z3.class);
             if (z3Var != null) {
-                z3Var.a(cVar.f37670c);
+                z3Var.a(cVar.f23979c);
             }
         }
         ra.i(qa.U);
     }
 
     public void a(JSONArray jSONArray, s5 s5Var) {
-        yg ygVar = this.f37648c;
+        yg ygVar = this.f23957c;
         if (ygVar == null) {
             return;
         }
@@ -125,7 +125,7 @@ public class mf implements nf.d, of.a {
         if (i != null) {
             i.a(s5Var);
         }
-        this.g.a(this.f37648c.a(), s5Var);
+        this.g.a(this.f23957c.a(), s5Var);
     }
 
     @Override // com.tencent.mapsdk.internal.of.a

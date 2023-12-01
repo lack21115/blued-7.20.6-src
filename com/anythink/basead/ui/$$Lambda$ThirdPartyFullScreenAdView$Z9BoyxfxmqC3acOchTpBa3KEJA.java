@@ -13,6 +13,6 @@ public final /* synthetic */ class $$Lambda$ThirdPartyFullScreenAdView$Z9Boyxfxm
 
     @Override // java.lang.Runnable
     public final void run() {
-        ThirdPartyFullScreenAdView.m2749lambda$Z9BoyxfxmqC3acOchTpBa3KEJA(this.f$0, this.f$1);
+        ThirdPartyFullScreenAdView.m9196lambda$Z9BoyxfxmqC3acOchTpBa3KEJA(this.f$0, this.f$1);
     }
 }

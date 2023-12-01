@@ -255,7 +255,7 @@ public interface ITextServicesManager extends IInterface {
                     return true;
                 case 3:
                     parcel.enforceInterface(DESCRIPTOR);
-                    getSpellCheckerService(parcel.readString(), parcel.readString(), ITextServicesSessionListener.Stub.asInterface(parcel.readStrongBinder()), ISpellCheckerSessionListener.Stub.asInterface(parcel.readStrongBinder()), parcel.readInt() != 0 ? Bundle.CREATOR.createFromParcel(parcel) : null);
+                    getSpellCheckerService(parcel.readString(), parcel.readString(), ITextServicesSessionListener.Stub.asInterface(parcel.readStrongBinder()), ISpellCheckerSessionListener.Stub.asInterface(parcel.readStrongBinder()), parcel.readInt() != 0 ? (Bundle) Bundle.CREATOR.createFromParcel(parcel) : null);
                     return true;
                 case 4:
                     parcel.enforceInterface(DESCRIPTOR);
@@ -289,7 +289,7 @@ public interface ITextServicesManager extends IInterface {
                     parcel2.writeNoException();
                     parcel2.writeTypedArray(enabledSpellCheckers, 1);
                     return true;
-                case IBinder.INTERFACE_TRANSACTION /* 1598968902 */:
+                case 1598968902:
                     parcel2.writeString(DESCRIPTOR);
                     return true;
                 default:

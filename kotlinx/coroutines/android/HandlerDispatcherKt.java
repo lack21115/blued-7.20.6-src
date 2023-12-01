@@ -16,24 +16,22 @@ import kotlinx.coroutines.MainCoroutineDispatcher;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/android/HandlerDispatcherKt.class */
 public final class HandlerDispatcherKt {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final HandlerDispatcher f42867a;
+    public static final HandlerDispatcher a;
     private static volatile Choreographer choreographer;
 
     static {
         Object f;
         try {
-            Result.Companion companion = Result.f42293a;
+            Result.Companion companion = Result.a;
             f = Result.f(new HandlerContext(a(Looper.getMainLooper(), true), null, 2, null));
         } catch (Throwable th) {
-            Result.Companion companion2 = Result.f42293a;
+            Result.Companion companion2 = Result.a;
             f = Result.f(ResultKt.a(th));
         }
         if (Result.b(f)) {
             f = null;
         }
-        f42867a = (HandlerDispatcher) f;
+        a = (HandlerDispatcher) f;
     }
 
     public static final Handler a(Looper looper, boolean z) {
@@ -65,7 +63,7 @@ public final class HandlerDispatcherKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(CancellableContinuation cancellableContinuation, long j) {
-        Dispatchers dispatchers = Dispatchers.f42810a;
+        Dispatchers dispatchers = Dispatchers.a;
         cancellableContinuation.a((CoroutineDispatcher) Dispatchers.b(), (MainCoroutineDispatcher) Long.valueOf(j));
     }
 

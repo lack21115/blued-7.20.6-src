@@ -24,11 +24,11 @@ public class a {
     private boolean Y;
 
     /* renamed from: a  reason: collision with root package name */
-    boolean f35517a;
+    boolean f21826a;
     boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    boolean f35518c;
+    boolean f21827c;
     boolean d;
     boolean e;
     int f;
@@ -140,7 +140,7 @@ public class a {
     }
 
     public boolean T() {
-        return this.f35518c;
+        return this.f21827c;
     }
 
     public String U() {
@@ -226,7 +226,7 @@ public class a {
     }
 
     public boolean e() {
-        return this.f35517a;
+        return this.f21826a;
     }
 
     public void f(String str) {

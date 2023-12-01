@@ -35,18 +35,13 @@ import com.bytedance.applog.tracker.Tracker;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/PopGestureView.class */
 public class PopGestureView {
-
-    /* renamed from: a  reason: collision with root package name */
-    private LayoutInflater f15021a;
+    private LayoutInflater a;
     private Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private View f15022c;
+    private View c;
     private View d;
     private MyPopupWindow e;
     private RecordingOnliveFragment f;
@@ -63,22 +58,19 @@ public class PopGestureView {
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/PopGestureView$GestureAdapter.class */
     public class GestureAdapter extends BaseQuickAdapter<LiveRecordLevelGestureModel, BaseViewHolder> {
         private ImageView b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private ImageView f15032c;
+        private ImageView c;
         private TextView d;
 
         public GestureAdapter() {
-            super(R.layout.gesture_view_item, null);
+            super(R.layout.gesture_view_item, (List) null);
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.chad.library.adapter.base.BaseQuickAdapter
         /* renamed from: a */
         public void convert(BaseViewHolder baseViewHolder, final LiveRecordLevelGestureModel liveRecordLevelGestureModel) {
             if (baseViewHolder != null) {
                 this.b = (ImageView) baseViewHolder.getView(R.id.guest_image);
-                this.f15032c = (ImageView) baseViewHolder.getView(R.id.guest_image_bg);
+                this.c = (ImageView) baseViewHolder.getView(R.id.guest_image_bg);
                 this.d = (TextView) baseViewHolder.getView(R.id.guest_text);
                 if (liveRecordLevelGestureModel.status == 1) {
                     ImageLoader.a((IRequestHost) null, liveRecordLevelGestureModel.icon).a(this.b);
@@ -87,9 +79,9 @@ public class PopGestureView {
                 }
                 baseViewHolder.setText(R.id.guest_text, liveRecordLevelGestureModel.title);
                 if (liveRecordLevelGestureModel.isSelect) {
-                    this.f15032c.setVisibility(0);
+                    this.c.setVisibility(0);
                 } else {
-                    this.f15032c.setVisibility(8);
+                    this.c.setVisibility(8);
                 }
                 baseViewHolder.setOnClickListener(R.id.guest_root_layout, new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.PopGestureView.GestureAdapter.1
                     @Override // android.view.View.OnClickListener
@@ -191,7 +183,7 @@ public class PopGestureView {
             return;
         }
         gestureAdapter.getData().clear();
-        this.k.addData((Collection) list);
+        this.k.addData(list);
         ArrayList arrayList = new ArrayList();
         for (LiveRecordLevelGestureModel liveRecordLevelGestureModel : list) {
             StickerBaseModel stickerBaseModel = new StickerBaseModel();
@@ -241,9 +233,9 @@ public class PopGestureView {
 
     private void g() {
         LayoutInflater from = LayoutInflater.from(this.b);
-        this.f15021a = from;
+        this.a = from;
         View inflate = from.inflate(R.layout.pop_window_record_level_gesture, (ViewGroup) null);
-        this.f15022c = inflate.findViewById(R.id.tv_bg);
+        this.c = inflate.findViewById(R.id.tv_bg);
         this.h = (PullToRefreshRecyclerView) inflate.findViewById(R.id.live_gesture_recycler_view);
         this.l = (ImageView) inflate.findViewById(R.id.live_gesture_tip_view);
         this.i = inflate.findViewById(R.id.ll_loading);
@@ -254,7 +246,7 @@ public class PopGestureView {
         GestureAdapter gestureAdapter = new GestureAdapter();
         this.k = gestureAdapter;
         this.j.setAdapter(gestureAdapter);
-        this.f15022c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.PopGestureView.1
+        this.c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.PopGestureView.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
@@ -272,7 +264,7 @@ public class PopGestureView {
         });
         MyPopupWindow myPopupWindow = new MyPopupWindow(inflate, -1, -1, true);
         this.e = myPopupWindow;
-        myPopupWindow.setBackgroundDrawable(this.b.getResources().getDrawable(17170445));
+        myPopupWindow.setBackgroundDrawable(this.b.getResources().getDrawable(com.android.internal.R.color.transparent));
         this.e.setTouchable(true);
         this.e.setOutsideTouchable(true);
         this.e.setFocusable(true);
@@ -320,7 +312,7 @@ public class PopGestureView {
         if (recordingOnliveFragment != null) {
             recordingOnliveFragment.O();
         }
-        this.f15022c.clearAnimation();
+        this.c.clearAnimation();
         this.d.clearAnimation();
         if (this.e.isShowing()) {
             this.e.a();

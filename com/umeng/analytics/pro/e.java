@@ -4,11 +4,11 @@ package com.umeng.analytics.pro;
 public class e {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f40723a = "subprocess/";
+    public static final String f27032a = "subprocess/";
     public static final String b = at.b().b("ua");
 
     /* renamed from: c  reason: collision with root package name */
-    public static final int f40724c = 2;
+    public static final int f27033c = 2;
     public static final String d = "id";
     public static final String e = "INTEGER";
 
@@ -16,18 +16,18 @@ public class e {
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final String f40725a = "__er";
+        public static final String f27034a = "__er";
 
         /* renamed from: com.umeng.analytics.pro.e$a$a  reason: collision with other inner class name */
         /* loaded from: source-8829756-dex2jar.jar:com/umeng/analytics/pro/e$a$a.class */
-        public static class C1077a {
+        public static class C0907a {
 
             /* renamed from: a  reason: collision with root package name */
-            public static final String f40726a = "__i";
+            public static final String f27035a = "__i";
             public static final String b = "__a";
 
             /* renamed from: c  reason: collision with root package name */
-            public static final String f40727c = "__t";
+            public static final String f27036c = "__t";
             public static final String d = "__av";
             public static final String e = "__vc";
         }
@@ -36,11 +36,11 @@ public class e {
         public static class b {
 
             /* renamed from: a  reason: collision with root package name */
-            public static final String f40728a = "TEXT";
+            public static final String f27037a = "TEXT";
             public static final String b = "TEXT";
 
             /* renamed from: c  reason: collision with root package name */
-            public static final String f40729c = "INTEGER";
+            public static final String f27038c = "INTEGER";
             public static final String d = "TEXT";
             public static final String e = "TEXT";
         }
@@ -50,17 +50,17 @@ public class e {
     public static class b {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final String f40730a = "__et";
+        public static final String f27039a = "__et";
 
         /* loaded from: source-8829756-dex2jar.jar:com/umeng/analytics/pro/e$b$a.class */
         public static class a {
 
             /* renamed from: a  reason: collision with root package name */
-            public static final String f40731a = "__i";
+            public static final String f27040a = "__i";
             public static final String b = "__e";
 
             /* renamed from: c  reason: collision with root package name */
-            public static final String f40732c = "__s";
+            public static final String f27041c = "__s";
             public static final String d = "__t";
             public static final String e = "__av";
             public static final String f = "__vc";
@@ -68,14 +68,14 @@ public class e {
 
         /* renamed from: com.umeng.analytics.pro.e$b$b  reason: collision with other inner class name */
         /* loaded from: source-8829756-dex2jar.jar:com/umeng/analytics/pro/e$b$b.class */
-        public static class C1078b {
+        public static class C0908b {
 
             /* renamed from: a  reason: collision with root package name */
-            public static final String f40733a = "TEXT";
+            public static final String f27042a = "TEXT";
             public static final String b = "TEXT";
 
             /* renamed from: c  reason: collision with root package name */
-            public static final String f40734c = "TEXT";
+            public static final String f27043c = "TEXT";
             public static final String d = "INTEGER";
             public static final String e = "TEXT";
             public static final String f = "TEXT";
@@ -86,17 +86,17 @@ public class e {
     public static class c {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final String f40735a = "__is";
+        public static final String f27044a = "__is";
 
         /* loaded from: source-8829756-dex2jar.jar:com/umeng/analytics/pro/e$c$a.class */
         public static class a {
 
             /* renamed from: a  reason: collision with root package name */
-            public static final String f40736a = "__ii";
+            public static final String f27045a = "__ii";
             public static final String b = "__e";
 
             /* renamed from: c  reason: collision with root package name */
-            public static final String f40737c = "__sp";
+            public static final String f27046c = "__sp";
             public static final String d = "__pp";
             public static final String e = "__av";
             public static final String f = "__vc";
@@ -106,11 +106,11 @@ public class e {
         public static class b {
 
             /* renamed from: a  reason: collision with root package name */
-            public static final String f40738a = "TEXT";
+            public static final String f27047a = "TEXT";
             public static final String b = "TEXT";
 
             /* renamed from: c  reason: collision with root package name */
-            public static final String f40739c = "TEXT";
+            public static final String f27048c = "TEXT";
             public static final String d = "TEXT";
             public static final String e = "TEXT";
             public static final String f = "TEXT";
@@ -121,17 +121,17 @@ public class e {
     public static class d {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final String f40740a = "__sd";
+        public static final String f27049a = "__sd";
 
         /* loaded from: source-8829756-dex2jar.jar:com/umeng/analytics/pro/e$d$a.class */
         public static class a {
 
             /* renamed from: a  reason: collision with root package name */
-            public static final String f40741a = "__ii";
+            public static final String f27050a = "__ii";
             public static final String b = "__a";
 
             /* renamed from: c  reason: collision with root package name */
-            public static final String f40742c = "__b";
+            public static final String f27051c = "__b";
             public static final String d = "__c";
             public static final String e = "__d";
             public static final String f = "__e";
@@ -147,11 +147,11 @@ public class e {
         public static class b {
 
             /* renamed from: a  reason: collision with root package name */
-            public static final String f40743a = "TEXT";
+            public static final String f27052a = "TEXT";
             public static final String b = "TEXT";
 
             /* renamed from: c  reason: collision with root package name */
-            public static final String f40744c = "TEXT";
+            public static final String f27053c = "TEXT";
             public static final String d = "TEXT";
             public static final String e = "TEXT";
             public static final String f = "TEXT";

@@ -9,6 +9,7 @@ import com.opos.mobad.e.a.g;
 import com.opos.mobad.e.a.i;
 import com.opos.mobad.e.a.k;
 import com.wrapper_oaction.ZkViewSDK;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
@@ -19,7 +20,7 @@ public final class b implements f {
     String b;
 
     /* renamed from: c  reason: collision with root package name */
-    String f25992c;
+    String f12304c;
     String d;
     Object e;
     Object f;
@@ -36,7 +37,7 @@ public final class b implements f {
     k q;
 
     /* renamed from: a  reason: collision with root package name */
-    boolean f25991a = true;
+    boolean f12303a = true;
     private final com.opos.mobad.e.a.a.a.b r = new com.opos.mobad.e.a.a.a.a();
     private final com.opos.mobad.e.a.a.a.b s = new com.opos.mobad.e.a.a.a.c();
 
@@ -55,19 +56,19 @@ public final class b implements f {
             }
             Context applicationContext = context.getApplicationContext();
             com.opos.mobad.e.a.a.b.a.a();
-            a.C0691a a2 = com.opos.mobad.e.a.a.b.a.a(UUID.randomUUID().toString() + "-" + System.currentTimeMillis(), str2, str3, this.i);
+            a.C0521a a2 = com.opos.mobad.e.a.a.b.a.a(UUID.randomUUID().toString() + Constants.ACCEPT_TIME_SEPARATOR_SERVER + System.currentTimeMillis(), str2, str3, this.i);
             if (!TextUtils.isEmpty(str)) {
                 try {
                     com.opos.cmn.an.f.a.b("MatLoader", "load path:" + str + ",adId:" + str2 + ",matId:" + str3 + ",exist:" + new File(str).exists());
-                    boolean z = this.f25991a;
+                    boolean z = this.f12303a;
                     if (this.j == null) {
                         this.j = new HashMap<>();
                     }
                     if (!TextUtils.isEmpty(this.b)) {
                         this.j.put(ZkViewSDK.KEY.KEY_AD_TITLE, this.b);
                     }
-                    if (!TextUtils.isEmpty(this.f25992c)) {
-                        this.j.put(ZkViewSDK.KEY.KEY_AD_DESC, this.f25992c);
+                    if (!TextUtils.isEmpty(this.f12304c)) {
+                        this.j.put(ZkViewSDK.KEY.KEY_AD_DESC, this.f12304c);
                     }
                     if (!TextUtils.isEmpty(this.d)) {
                         this.j.put(ZkViewSDK.KEY.KEY_AD_ACTION, this.d);
@@ -124,7 +125,7 @@ public final class b implements f {
 
     @Override // com.opos.mobad.e.a.f
     public final f a(boolean z) {
-        this.f25991a = z;
+        this.f12303a = z;
         return this;
     }
 
@@ -141,7 +142,7 @@ public final class b implements f {
 
     @Override // com.opos.mobad.e.a.f
     public final f b(String str) {
-        this.f25992c = str;
+        this.f12304c = str;
         return this;
     }
 
@@ -152,6 +153,6 @@ public final class b implements f {
     }
 
     public final String toString() {
-        return "MatLoader{autoPlay=" + this.f25991a + ", matTitle='" + this.b + "', matDesc='" + this.f25992c + "', matAction='" + this.d + "', mMatImage=" + this.e + ", mMatLogo=" + this.f + ", skipTime=" + this.g + ", mTansMap=" + this.h + ", mReportMap=" + this.i + ", mMatMap=" + this.j + ", mClickListener=" + this.k + ", mExposeListener=" + this.l + ", mRenderListener=" + this.m + ", mExClickListener=" + this.n + ", mExExposeListener=" + this.o + ", mExRenderListener=" + this.p + ", mVideoListener=" + this.q + ", mFullLoader=" + this.r + ", mInsideLoader=" + this.s + '}';
+        return "MatLoader{autoPlay=" + this.f12303a + ", matTitle='" + this.b + "', matDesc='" + this.f12304c + "', matAction='" + this.d + "', mMatImage=" + this.e + ", mMatLogo=" + this.f + ", skipTime=" + this.g + ", mTansMap=" + this.h + ", mReportMap=" + this.i + ", mMatMap=" + this.j + ", mClickListener=" + this.k + ", mExposeListener=" + this.l + ", mRenderListener=" + this.m + ", mExClickListener=" + this.n + ", mExExposeListener=" + this.o + ", mExRenderListener=" + this.p + ", mVideoListener=" + this.q + ", mFullLoader=" + this.r + ", mInsideLoader=" + this.s + '}';
     }
 }

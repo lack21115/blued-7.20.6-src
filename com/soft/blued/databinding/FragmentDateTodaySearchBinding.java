@@ -15,11 +15,11 @@ import com.soft.blued.R;
 public final class FragmentDateTodaySearchBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final View f28809a;
+    public final View f15119a;
     public final View b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final View f28810c;
+    public final View f15120c;
     public final View d;
     public final View e;
     public final View f;
@@ -44,9 +44,9 @@ public final class FragmentDateTodaySearchBinding implements ViewBinding {
 
     private FragmentDateTodaySearchBinding(FrameLayout frameLayout, View view, View view2, View view3, View view4, View view5, View view6, View view7, View view8, View view9, FrameLayout frameLayout2, FrameLayout frameLayout3, FrameLayout frameLayout4, FrameLayout frameLayout5, LinearLayout linearLayout, ImageView imageView, ImageView imageView2, ImageView imageView3, SVGAImageView sVGAImageView, SVGAImageView sVGAImageView2, SVGAImageView sVGAImageView3, TextView textView, TextView textView2, TextView textView3) {
         this.x = frameLayout;
-        this.f28809a = view;
+        this.f15119a = view;
         this.b = view2;
-        this.f28810c = view3;
+        this.f15120c = view3;
         this.d = view4;
         this.e = view5;
         this.f = view6;
@@ -113,19 +113,19 @@ public final class FragmentDateTodaySearchBinding implements ViewBinding {
                                                                     if (imageView2 != null) {
                                                                         ImageView imageView3 = (ImageView) view.findViewById(R.id.iv_match_success);
                                                                         if (imageView3 != null) {
-                                                                            SVGAImageView sVGAImageView = (SVGAImageView) view.findViewById(R.id.svga_match_heart_anim);
-                                                                            if (sVGAImageView != null) {
-                                                                                SVGAImageView sVGAImageView2 = (SVGAImageView) view.findViewById(R.id.svga_match_small_heart_anim);
-                                                                                if (sVGAImageView2 != null) {
-                                                                                    SVGAImageView sVGAImageView3 = (SVGAImageView) view.findViewById(R.id.svga_search_anim);
-                                                                                    if (sVGAImageView3 != null) {
+                                                                            SVGAImageView findViewById10 = view.findViewById(R.id.svga_match_heart_anim);
+                                                                            if (findViewById10 != null) {
+                                                                                SVGAImageView findViewById11 = view.findViewById(R.id.svga_match_small_heart_anim);
+                                                                                if (findViewById11 != null) {
+                                                                                    SVGAImageView findViewById12 = view.findViewById(R.id.svga_search_anim);
+                                                                                    if (findViewById12 != null) {
                                                                                         TextView textView = (TextView) view.findViewById(2131371051);
                                                                                         if (textView != null) {
                                                                                             TextView textView2 = (TextView) view.findViewById(R.id.tv_search_hint);
                                                                                             if (textView2 != null) {
                                                                                                 TextView textView3 = (TextView) view.findViewById(R.id.tv_try_later);
                                                                                                 if (textView3 != null) {
-                                                                                                    return new FragmentDateTodaySearchBinding((FrameLayout) view, findViewById, findViewById2, findViewById3, findViewById4, findViewById5, findViewById6, findViewById7, findViewById8, findViewById9, frameLayout, frameLayout2, frameLayout3, frameLayout4, linearLayout, imageView, imageView2, imageView3, sVGAImageView, sVGAImageView2, sVGAImageView3, textView, textView2, textView3);
+                                                                                                    return new FragmentDateTodaySearchBinding((FrameLayout) view, findViewById, findViewById2, findViewById3, findViewById4, findViewById5, findViewById6, findViewById7, findViewById8, findViewById9, frameLayout, frameLayout2, frameLayout3, frameLayout4, linearLayout, imageView, imageView2, imageView3, findViewById10, findViewById11, findViewById12, textView, textView2, textView3);
                                                                                                 }
                                                                                                 str = "tvTryLater";
                                                                                             } else {

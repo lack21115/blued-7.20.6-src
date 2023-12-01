@@ -9,11 +9,11 @@ import java.util.Map;
 public final class l {
 
     /* renamed from: a  reason: collision with root package name */
-    static final b.a f36264a = b.a.SPEAKERPHONE;
+    static final b.a f22573a = b.a.SPEAKERPHONE;
     final HashMap<b.a, b> b = new HashMap<>();
 
     /* renamed from: c  reason: collision with root package name */
-    boolean f36265c = false;
+    boolean f22574c = false;
 
     private static boolean a(b.a aVar) {
         return aVar == b.a.WIRED_HEADSET || aVar == b.a.BLUETOOTH_HEADSET;
@@ -25,21 +25,21 @@ public final class l {
             Log.e("AudioRouteSupervisor", "error in promoteRoutePriority, route(%s) is not existed", aVar);
             return;
         }
-        int i = bVar.f36252c;
+        int i = bVar.f22561c;
         if (i == this.b.size() - 1) {
             return;
         }
-        bVar.f36252c = this.b.size() - 1;
+        bVar.f22561c = this.b.size() - 1;
         for (Map.Entry<b.a, b> entry : this.b.entrySet()) {
             b value = entry.getValue();
-            if (aVar != value.f36251a && value.f36252c >= i) {
-                value.f36252c--;
+            if (aVar != value.f22560a && value.f22561c >= i) {
+                value.f22561c--;
             }
         }
     }
 
     public final boolean a(b.a aVar, boolean z) {
-        if (!this.f36265c) {
+        if (!this.f22574c) {
             Log.e("AudioRouteSupervisor", "error in updateRouteAvailability(), it's not been initialized yet", new Object[0]);
             return false;
         }

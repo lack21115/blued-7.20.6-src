@@ -7,18 +7,18 @@ import java.util.HashMap;
 public class l {
 
     /* renamed from: a  reason: collision with root package name */
-    private static HashMap<e, a> f41228a = new HashMap<>();
+    private static HashMap<e, a> f27537a = new HashMap<>();
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8829756-dex2jar.jar:com/xiaomi/mipush/sdk/l$a.class */
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public String f41229a;
+        public String f27538a;
         public String b;
 
         public a(String str, String str2) {
-            this.f41229a = str;
+            this.f27538a = str;
             this.b = str2;
         }
     }
@@ -31,7 +31,7 @@ public class l {
     }
 
     public static au a(e eVar) {
-        int i = m.f41230a[eVar.ordinal()];
+        int i = m.f27539a[eVar.ordinal()];
         if (i != 1) {
             if (i != 2) {
                 if (i != 3) {
@@ -48,18 +48,18 @@ public class l {
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public static a m11487a(e eVar) {
-        return f41228a.get(eVar);
+    public static a m8437a(e eVar) {
+        return f27537a.get(eVar);
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public static hl m11488a(e eVar) {
+    public static hl m8438a(e eVar) {
         return hl.AggregatePushSwitch;
     }
 
     private static void a(e eVar, a aVar) {
         if (aVar != null) {
-            f41228a.put(eVar, aVar);
+            f27537a.put(eVar, aVar);
         }
     }
 }

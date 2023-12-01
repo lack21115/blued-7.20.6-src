@@ -5,10 +5,10 @@ package com.tencent.rtmp.ui;
 public final /* synthetic */ class c implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final TXCloudVideoView f38689a;
+    private final TXCloudVideoView f24998a;
 
     private c(TXCloudVideoView tXCloudVideoView) {
-        this.f38689a = tXCloudVideoView;
+        this.f24998a = tXCloudVideoView;
     }
 
     public static Runnable a(TXCloudVideoView tXCloudVideoView) {
@@ -17,6 +17,6 @@ public final /* synthetic */ class c implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        this.f38689a.hideIndicatorView();
+        this.f24998a.hideIndicatorView();
     }
 }

@@ -5,13 +5,10 @@ import androidx.viewbinding.ViewBinding;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/databinding/PopSuperExposureGuideBinding.class */
 public final class PopSuperExposureGuideBinding implements ViewBinding {
+    private final FrameLayout a;
 
-    /* renamed from: a  reason: collision with root package name */
-    private final FrameLayout f19062a;
-
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f19062a;
+        return this.a;
     }
 }

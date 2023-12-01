@@ -30,7 +30,7 @@ public class FilteredKeyMultimap<K, V> extends AbstractMultimap<K, V> implements
             throw new IllegalArgumentException("Key does not satisfy predicate: " + this.key);
         }
 
-        @Override // com.google.common.collect.ForwardingCollection, java.util.Collection, java.util.Set
+        @Override // com.google.common.collect.ForwardingCollection, java.util.Collection, java.util.Queue
         public boolean add(V v) {
             add(0, v);
             return true;
@@ -43,7 +43,7 @@ public class FilteredKeyMultimap<K, V> extends AbstractMultimap<K, V> implements
             throw new IllegalArgumentException("Key does not satisfy predicate: " + this.key);
         }
 
-        @Override // com.google.common.collect.ForwardingCollection, java.util.Collection, java.util.Set
+        @Override // com.google.common.collect.ForwardingCollection, java.util.Collection
         public boolean addAll(Collection<? extends V> collection) {
             addAll(0, collection);
             return true;
@@ -64,12 +64,12 @@ public class FilteredKeyMultimap<K, V> extends AbstractMultimap<K, V> implements
             this.key = k;
         }
 
-        @Override // com.google.common.collect.ForwardingCollection, java.util.Collection, java.util.Set
+        @Override // com.google.common.collect.ForwardingCollection, java.util.Collection, java.util.Queue
         public boolean add(V v) {
             throw new IllegalArgumentException("Key does not satisfy predicate: " + this.key);
         }
 
-        @Override // com.google.common.collect.ForwardingCollection, java.util.Collection, java.util.Set
+        @Override // com.google.common.collect.ForwardingCollection, java.util.Collection
         public boolean addAll(Collection<? extends V> collection) {
             Preconditions.checkNotNull(collection);
             throw new IllegalArgumentException("Key does not satisfy predicate: " + this.key);

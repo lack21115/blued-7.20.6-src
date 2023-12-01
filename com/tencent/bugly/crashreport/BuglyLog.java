@@ -16,7 +16,7 @@ public class BuglyLog {
         if (str2 == null) {
             str4 = b.l;
         }
-        if (com.tencent.bugly.b.f35109c) {
+        if (com.tencent.bugly.b.f21418c) {
             Log.d(str3, str4);
         }
         y.a("D", str3, str4);
@@ -31,7 +31,7 @@ public class BuglyLog {
         if (str2 == null) {
             str4 = b.l;
         }
-        if (com.tencent.bugly.b.f35109c) {
+        if (com.tencent.bugly.b.f21418c) {
             Log.e(str3, str4);
         }
         y.a(ExifInterface.LONGITUDE_EAST, str3, str4);
@@ -46,7 +46,7 @@ public class BuglyLog {
         if (str2 == null) {
             str4 = b.l;
         }
-        if (com.tencent.bugly.b.f35109c) {
+        if (com.tencent.bugly.b.f21418c) {
             Log.e(str3, str4, th);
         }
         y.a(ExifInterface.LONGITUDE_EAST, str3, th);
@@ -61,7 +61,7 @@ public class BuglyLog {
         if (str2 == null) {
             str4 = b.l;
         }
-        if (com.tencent.bugly.b.f35109c) {
+        if (com.tencent.bugly.b.f21418c) {
             Log.i(str3, str4);
         }
         y.a("I", str3, str4);
@@ -80,7 +80,7 @@ public class BuglyLog {
         if (str2 == null) {
             str4 = b.l;
         }
-        if (com.tencent.bugly.b.f35109c) {
+        if (com.tencent.bugly.b.f21418c) {
             Log.v(str3, str4);
         }
         y.a(ExifInterface.GPS_MEASUREMENT_INTERRUPTED, str3, str4);
@@ -95,7 +95,7 @@ public class BuglyLog {
         if (str2 == null) {
             str4 = b.l;
         }
-        if (com.tencent.bugly.b.f35109c) {
+        if (com.tencent.bugly.b.f21418c) {
             Log.w(str3, str4);
         }
         y.a("W", str3, str4);

@@ -36,7 +36,7 @@ public class d extends c {
         MessageV4 parse = MessageV4.parse(messageV3);
         if (parse.getActVideoSetting() == null) {
             DebugLogger.e("AbstractPushNotification", "only wifi can download act");
-        } else if (parse.getActVideoSetting().isWifiDisplay() && !com.meizu.cloud.pushsdk.util.a.b(this.f24165a)) {
+        } else if (parse.getActVideoSetting().isWifiDisplay() && !com.meizu.cloud.pushsdk.util.a.b(this.f10550a)) {
             DebugLogger.e("AbstractPushNotification", "only wifi can download act");
         } else {
             final String str = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Android/data/pushSdkAct/" + messageV3.getUploadDataPackageName();

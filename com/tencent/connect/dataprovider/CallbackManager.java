@@ -14,11 +14,11 @@ import java.lang.ref.WeakReference;
 public final class CallbackManager {
 
     /* renamed from: a  reason: collision with root package name */
-    private WeakReference<Context> f36189a;
+    private WeakReference<Context> f22498a;
     private Uri b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f36190c;
+    private String f22499c;
     private String d;
     private String e;
     private String f;
@@ -27,11 +27,11 @@ public final class CallbackManager {
 
     public CallbackManager(Activity activity) {
         this.g = false;
-        this.f36189a = new WeakReference<>(activity.getApplicationContext());
+        this.f22498a = new WeakReference<>(activity.getApplicationContext());
         Intent intent = activity.getIntent();
         if (intent != null) {
             this.b = intent.getData();
-            this.f36190c = intent.getStringExtra(Constants.SRC_PACKAGE_NAME);
+            this.f22499c = intent.getStringExtra(Constants.SRC_PACKAGE_NAME);
             this.d = intent.getStringExtra(Constants.SRC_ACTIVITY_CLASS_NAME);
             this.e = intent.getStringExtra(Constants.SRC_ACTIVITY_ACTION);
             this.h = intent.getIntExtra(Constants.REQUEST_TYPE, 0);
@@ -45,16 +45,16 @@ public final class CallbackManager {
 
     private int a(Bundle bundle) {
         if (this.g) {
-            if (this.f36189a == null) {
+            if (this.f22498a == null) {
                 return -3;
             }
             Intent intent = new Intent();
-            intent.setClassName(this.f36190c, this.d);
+            intent.setClassName(this.f22499c, this.d);
             intent.setAction(this.e);
             bundle.putString(Constants.APPID, this.f);
             intent.putExtras(bundle);
             intent.setFlags(268435456);
-            this.f36189a.get().startActivity(intent);
+            this.f22498a.get().startActivity(intent);
             return 0;
         }
         return -2;

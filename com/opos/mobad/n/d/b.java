@@ -4,12 +4,12 @@ package com.opos.mobad.n.d;
 public class b extends d {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f26627a;
+    public final String f12939a;
     public final g b;
 
     public b(h hVar) {
         super(hVar);
-        this.f26627a = hVar.G;
+        this.f12939a = hVar.G;
         this.b = hVar.k;
     }
 }

@@ -1,7 +1,6 @@
 package com.blued.community.ui.comment.presenter;
 
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.text.TextUtils;
 import androidx.fragment.app.FragmentActivity;
 import com.blued.android.core.AppInfo;
@@ -47,7 +46,7 @@ public class CommentPresenter extends MvpPresenter {
                 if (bluedEntityA != null) {
                     CommentPresenter.this.t = bluedEntityA.getSingleData();
                     iFetchDataListener.a("comment", bluedEntityA.data);
-                    iFetchDataListener.a(ContactsContract.StreamItemsColumns.COMMENTS, CommentPresenter.this.t.comments);
+                    iFetchDataListener.a("comments", CommentPresenter.this.t.comments);
                     if (bluedEntityA.extra == 0 || bluedEntityA.extra.hasmore != 1) {
                         CommentPresenter.this.s = false;
                     } else {

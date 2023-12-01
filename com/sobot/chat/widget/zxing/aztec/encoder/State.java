@@ -3,8 +3,9 @@ package com.sobot.chat.widget.zxing.aztec.encoder;
 import com.sobot.chat.widget.zxing.common.BitArray;
 import java.util.LinkedList;
 
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8303388-dex2jar.jar:com/sobot/chat/widget/zxing/aztec/encoder/State.class */
-final class State {
+public final class State {
     static final State INITIAL_STATE = new State(Token.EMPTY, 0, 0, 0);
     private final int binaryShiftByteCount;
     private final int bitCount;

@@ -7,13 +7,9 @@ import kotlinx.coroutines.internal.Symbol;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/sync/MutexKt.class */
 public final class MutexKt {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final Symbol f43630a = new Symbol("LOCK_FAIL");
+    private static final Symbol a = new Symbol("LOCK_FAIL");
     private static final Symbol b = new Symbol("UNLOCK_FAIL");
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final Symbol f43631c = new Symbol("SELECT_SUCCESS");
+    private static final Symbol c = new Symbol("SELECT_SUCCESS");
     private static final Symbol d = new Symbol(IccCardConstants.INTENT_VALUE_ICC_LOCKED);
     private static final Symbol e = new Symbol("UNLOCKED");
     private static final Empty f = new Empty(d);

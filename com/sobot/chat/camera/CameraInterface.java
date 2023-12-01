@@ -21,6 +21,7 @@ import android.view.Surface;
 import android.view.SurfaceHolder;
 import android.view.WindowManager;
 import android.widget.ImageView;
+import androidx.constraintlayout.motion.widget.Key;
 import com.sobot.chat.camera.listener.StErrorListener;
 import com.sobot.chat.camera.util.AngleUtil;
 import com.sobot.chat.camera.util.CameraParamUtil;
@@ -283,7 +284,7 @@ public class CameraInterface implements Camera.PreviewCallback {
             i3 = i5;
             i4 = 180;
         }
-        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this.mSwitchView, "rotation", i4, i3);
+        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this.mSwitchView, Key.ROTATION, i4, i3);
         AnimatorSet animatorSet = new AnimatorSet();
         animatorSet.playTogether(ofFloat);
         animatorSet.setDuration(500L);

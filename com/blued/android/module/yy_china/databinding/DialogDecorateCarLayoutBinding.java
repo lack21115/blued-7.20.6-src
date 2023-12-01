@@ -11,13 +11,9 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/DialogDecorateCarLayoutBinding.class */
 public final class DialogDecorateCarLayoutBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final TextView f16326a;
+    public final TextView a;
     public final TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final View f16327c;
+    public final View c;
     public final ImageView d;
     public final View e;
     public final View f;
@@ -31,9 +27,9 @@ public final class DialogDecorateCarLayoutBinding implements ViewBinding {
 
     private DialogDecorateCarLayoutBinding(ConstraintLayout constraintLayout, TextView textView, TextView textView2, View view, ImageView imageView, View view2, View view3, ConstraintLayout constraintLayout2, ConstraintLayout constraintLayout3, ConstraintLayout constraintLayout4, SVGAImageView sVGAImageView, SVGAImageView sVGAImageView2, BluedNoScrollViewPager bluedNoScrollViewPager) {
         this.m = constraintLayout;
-        this.f16326a = textView;
+        this.a = textView;
         this.b = textView2;
-        this.f16327c = view;
+        this.c = view;
         this.d = imageView;
         this.e = view2;
         this.f = view3;
@@ -59,19 +55,19 @@ public final class DialogDecorateCarLayoutBinding implements ViewBinding {
                         if (findViewById2 != null) {
                             View findViewById3 = view.findViewById(R.id.ll_menu_cover_view);
                             if (findViewById3 != null) {
-                                ConstraintLayout constraintLayout = (ConstraintLayout) view.findViewById(R.id.ll_menu_layout);
-                                if (constraintLayout != null) {
-                                    ConstraintLayout constraintLayout2 = (ConstraintLayout) view.findViewById(R.id.ll_page_left);
-                                    if (constraintLayout2 != null) {
-                                        ConstraintLayout constraintLayout3 = (ConstraintLayout) view.findViewById(R.id.ll_page_right);
-                                        if (constraintLayout3 != null) {
+                                ConstraintLayout findViewById4 = view.findViewById(R.id.ll_menu_layout);
+                                if (findViewById4 != null) {
+                                    ConstraintLayout findViewById5 = view.findViewById(R.id.ll_page_left);
+                                    if (findViewById5 != null) {
+                                        ConstraintLayout findViewById6 = view.findViewById(R.id.ll_page_right);
+                                        if (findViewById6 != null) {
                                             SVGAImageView sVGAImageView = (SVGAImageView) view.findViewById(R.id.tab_left_svga);
                                             if (sVGAImageView != null) {
                                                 SVGAImageView sVGAImageView2 = (SVGAImageView) view.findViewById(R.id.tab_right_svga);
                                                 if (sVGAImageView2 != null) {
                                                     BluedNoScrollViewPager bluedNoScrollViewPager = (BluedNoScrollViewPager) view.findViewById(R.id.view_pager);
                                                     if (bluedNoScrollViewPager != null) {
-                                                        return new DialogDecorateCarLayoutBinding((ConstraintLayout) view, textView, textView2, findViewById, imageView, findViewById2, findViewById3, constraintLayout, constraintLayout2, constraintLayout3, sVGAImageView, sVGAImageView2, bluedNoScrollViewPager);
+                                                        return new DialogDecorateCarLayoutBinding((ConstraintLayout) view, textView, textView2, findViewById, imageView, findViewById2, findViewById3, findViewById4, findViewById5, findViewById6, sVGAImageView, sVGAImageView2, bluedNoScrollViewPager);
                                                     }
                                                     str = "viewPager";
                                                 } else {
@@ -110,7 +106,6 @@ public final class DialogDecorateCarLayoutBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.m;

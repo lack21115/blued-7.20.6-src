@@ -18,8 +18,6 @@ import android.widget.TextView;
 import androidx.core.content.ContextCompat;
 import androidx.core.util.Pair;
 import com.anythink.expressad.video.dynview.a.a;
-import com.blued.android.chat.data.MsgType;
-import com.blued.android.chat.utils.AtRegExpUtils;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.utils.skin.BluedSkinUtils;
 import com.blued.android.framework.utils.EncryptTool;
@@ -47,11 +45,11 @@ import java.util.regex.Pattern;
 public class StringUtils {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Pattern f34780a = Pattern.compile("[^一-龥]");
+    private static final Pattern f21089a = Pattern.compile("[^一-龥]");
     private static final Pattern b = Pattern.compile("((http[s]{0,1}|blued)://|www\\.)[A-Za-z0-9\\.\\?\\-_~!@#$%^&/:=]+[A-Za-z0-9/#]");
 
     /* renamed from: c  reason: collision with root package name */
-    private static final Pattern f34781c = Pattern.compile(AtRegExpUtils.AT_USERNAME_PATTERN2);
+    private static final Pattern f21090c = Pattern.compile("@\\(name:([^\\n\\r`~\\!@#\\$%\\^&\\*\\(\\)\\+=\\|'\\:;'\\,\\[\\]\\.\\<\\>/\\?！@#￥%……（）——\\{\\}【】‘；：”“’。，、？]+),id:([A-Za-z0-9]+)\\)");
     private static final Pattern d = Pattern.compile("@([^\\s`~\\!@#\\$%\\^&\\*\\(\\)\\+=\\|'\\:;'\\,\\[\\]\\.\\<\\>/\\?！@#￥%……（）——\\{\\}【】‘；：”“’。，、？]+)");
     private static final Pattern e = Pattern.compile("[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\\.[a-zA-Z0-9_-]+)+");
     private static final Pattern f = Pattern.compile("@\\(name:(.+?),id:([A-Za-z0-9]+?)\\)");
@@ -60,20 +58,20 @@ public class StringUtils {
     static class JayceSpan extends ClickableSpan {
 
         /* renamed from: a  reason: collision with root package name */
-        public boolean f34791a;
+        public boolean f21100a;
         private String b;
 
         /* renamed from: c  reason: collision with root package name */
-        private boolean f34792c;
+        private boolean f21101c;
 
         JayceSpan(String str, boolean z) {
             this.b = str;
-            this.f34792c = z;
+            this.f21101c = z;
         }
 
         @Override // android.text.style.ClickableSpan
         public void onClick(View view) {
-            if (this.f34791a) {
+            if (this.f21100a) {
                 MessageEventUtils.b(this.b);
             }
             Selection.removeSelection((Spannable) ((TextView) view).getText());
@@ -82,7 +80,7 @@ public class StringUtils {
 
         @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
         public void updateDrawState(TextPaint textPaint) {
-            if (this.f34792c) {
+            if (this.f21101c) {
                 textPaint.setColor(BluedSkinUtils.a(AppInfo.d(), 2131102270));
             }
             textPaint.setUnderlineText(true);
@@ -235,7 +233,7 @@ public class StringUtils {
         if (TextUtils.isEmpty(charSequence)) {
             return "";
         }
-        Matcher matcher = f34781c.matcher(charSequence);
+        Matcher matcher = f21090c.matcher(charSequence);
         SpannableStringBuilder spannableStringBuilder = null;
         int i = 0;
         while (matcher.find()) {
@@ -248,7 +246,7 @@ public class StringUtils {
             String str3 = group2;
             if (!TextUtils.isEmpty(group2)) {
                 str3 = group2;
-                if (!group2.equals(MsgType.UID_GROUP_AT_ALL)) {
+                if (!group2.equals("000000")) {
                     str3 = EncryptTool.a(group2);
                 }
             }
@@ -256,7 +254,7 @@ public class StringUtils {
                 FeedSendManager.a().c().put(group, str3);
             }
             boolean z6 = !TextUtils.isEmpty(str3) && str3.equals(UserInfo.getInstance().getLoginUserInfo().uid);
-            boolean z7 = !TextUtils.isEmpty(str3) && str3.equals(MsgType.UID_GROUP_AT_ALL);
+            boolean z7 = !TextUtils.isEmpty(str3) && str3.equals("000000");
             String str4 = group;
             if (z2) {
                 str4 = "@" + group;
@@ -366,15 +364,15 @@ public class StringUtils {
                     spannableStringBuilder4.setSpan(new ClickableSpan() { // from class: com.soft.blued.utils.StringUtils.2
                         @Override // android.text.style.ClickableSpan
                         public void onClick(View view) {
-                            if (String.this.equals(view.getContext().getString(R.string.group_at_all))) {
+                            if (group3.equals(view.getContext().getString(R.string.group_at_all))) {
                                 return;
                             }
                             Selection.removeSelection((Spannable) ((TextView) view).getText());
                             TypefaceUtils.ClickAtLinkListener clickAtLinkListener2 = clickAtLinkListener;
                             if (clickAtLinkListener2 != null) {
-                                clickAtLinkListener2.a(String.this, null);
+                                clickAtLinkListener2.a(group3, null);
                             } else {
-                                UserInfoFragmentNew.d(AppInfo.d(), String.this, str2);
+                                UserInfoFragmentNew.d(AppInfo.d(), group3, str2);
                             }
                         }
 
@@ -531,7 +529,7 @@ public class StringUtils {
                     }
                 }
             }
-            jayceSpan.f34791a = z2;
+            jayceSpan.f21100a = z2;
             spannableStringBuilder3.setSpan(jayceSpan, matcher.start(), matcher.end(), 33);
             spannableStringBuilder2 = spannableStringBuilder3;
         }
@@ -646,7 +644,7 @@ public class StringUtils {
     }
 
     public static String a(int i) {
-        return i != 2 ? i != 3 ? i != 4 ? i != 5 ? i != 7 ? i != 8 ? "" : AppInfo.d().getResources().getString(R.string.official_merchant) : AppInfo.d().getResources().getString(2131888971) : AppInfo.d().getResources().getString(R.string.official_redribbon) : AppInfo.d().getResources().getString(R.string.official_person) : AppInfo.d().getResources().getString(R.string.official_mate) : AppInfo.d().getResources().getString(R.string.official_partner);
+        return i != 2 ? i != 3 ? i != 4 ? i != 5 ? i != 7 ? i != 8 ? "" : AppInfo.d().getResources().getString(R.string.official_merchant) : AppInfo.d().getResources().getString(R.string.host_tag) : AppInfo.d().getResources().getString(R.string.official_redribbon) : AppInfo.d().getResources().getString(R.string.official_person) : AppInfo.d().getResources().getString(R.string.official_mate) : AppInfo.d().getResources().getString(R.string.official_partner);
     }
 
     public static String a(int i, String str) {
@@ -795,7 +793,7 @@ public class StringUtils {
     }
 
     public static boolean a(CharSequence charSequence) {
-        return f34780a.matcher(charSequence).find();
+        return f21089a.matcher(charSequence).find();
     }
 
     public static String[] a(Context context) {
@@ -871,7 +869,7 @@ public class StringUtils {
             return String.format("@%s", str);
         }
         String b2 = EncryptTool.b(str2);
-        if (!str2.equals(MsgType.UID_GROUP_AT_ALL)) {
+        if (!str2.equals("000000")) {
             str2 = b2;
         }
         return String.format("@(name:%s,id:%s)", str, str2);

@@ -156,7 +156,7 @@ public final class gd extends gc {
                 if (!TextUtils.isEmpty(str)) {
                     File canonicalFile = new File(str, "Log").getCanonicalFile();
                     if (canonicalFile.isDirectory() || com.huawei.openalliance.ad.utils.p.Code(canonicalFile)) {
-                        File file = new File(canonicalFile, str2 + com.anythink.china.common.a.a.f);
+                        File file = new File(canonicalFile, str2 + ".log");
                         this.Z = file;
                         file.setReadable(true);
                         this.Z.setWritable(true);

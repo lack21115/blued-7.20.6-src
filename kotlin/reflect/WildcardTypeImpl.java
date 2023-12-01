@@ -11,14 +11,10 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/reflect/WildcardTypeImpl.class */
 public final class WildcardTypeImpl implements WildcardType, TypeImpl {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f42612a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private static final WildcardTypeImpl d = new WildcardTypeImpl(null, null);
     private final Type b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final Type f42613c;
+    private final Type c;
 
     @Metadata
     /* loaded from: source-3503164-dex2jar.jar:kotlin/reflect/WildcardTypeImpl$Companion.class */
@@ -37,7 +33,7 @@ public final class WildcardTypeImpl implements WildcardType, TypeImpl {
 
     public WildcardTypeImpl(Type type, Type type2) {
         this.b = type;
-        this.f42613c = type2;
+        this.c = type2;
     }
 
     public boolean equals(Object obj) {
@@ -50,17 +46,17 @@ public final class WildcardTypeImpl implements WildcardType, TypeImpl {
 
     @Override // java.lang.reflect.WildcardType
     public Type[] getLowerBounds() {
-        Type type = this.f42613c;
+        Type type = this.c;
         return type == null ? new Type[0] : new Type[]{type};
     }
 
     public String getTypeName() {
         String b;
         String b2;
-        if (this.f42613c != null) {
+        if (this.c != null) {
             StringBuilder sb = new StringBuilder();
             sb.append("? super ");
-            b2 = TypesJVMKt.b(this.f42613c);
+            b2 = TypesJVMKt.b(this.c);
             sb.append(b2);
             return sb.toString();
         }

@@ -39,12 +39,12 @@ public final class FitemVipPrivilege extends FreedomItem {
     }
 
     public final void a(boolean z) {
-        View a2;
-        BaseViewHolder baseViewHolder = this.f10935a;
-        if (baseViewHolder == null || (a2 = baseViewHolder.a(R.id.iv_icon_light)) == null) {
+        View a;
+        BaseViewHolder baseViewHolder = this.a;
+        if (baseViewHolder == null || (a = baseViewHolder.a(R.id.iv_icon_light)) == null) {
             return;
         }
-        a2.animate().alpha(z ? 1.0f : 0.0f).setDuration(200L).start();
+        a.animate().alpha(z ? 1.0f : 0.0f).setDuration(200L).start();
     }
 
     public final VipPrivilegeModel e() {
@@ -53,12 +53,12 @@ public final class FitemVipPrivilege extends FreedomItem {
 
     public final void f() {
         Integer num;
-        this.f10935a.a(R.id.iv_icon, this.b.getIcon()).a(R.id.iv_icon_light, this.b.getIcon_select()).a(R.id.tv_title, (CharSequence) this.b.getName());
-        FreedomAdapter freedomAdapter = this.f10935a.f10931a;
+        this.a.a(R.id.iv_icon, this.b.getIcon()).a(R.id.iv_icon_light, this.b.getIcon_select()).a(R.id.tv_title, (CharSequence) this.b.getName());
+        FreedomAdapter freedomAdapter = this.a.a;
         if (freedomAdapter == null || (num = (Integer) freedomAdapter.a("lightItemPosition", (String) (-1))) == null) {
             return;
         }
-        this.f10935a.a(R.id.iv_icon_light, num.intValue() == this.f10935a.getLayoutPosition() ? 1.0f : 0.0f);
+        this.a.a(R.id.iv_icon_light, num.intValue() == this.a.getLayoutPosition() ? 1.0f : 0.0f);
     }
 
     public final Integer g() {
@@ -70,6 +70,6 @@ public final class FitemVipPrivilege extends FreedomItem {
     }
 
     public final int i() {
-        return this.f10935a.itemView.getLeft();
+        return this.a.itemView.getLeft();
     }
 }

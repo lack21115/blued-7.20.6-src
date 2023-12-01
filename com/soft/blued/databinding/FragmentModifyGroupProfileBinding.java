@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentModifyGroupProfileBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f28898a;
+    private final LinearLayout f15208a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f28898a;
+        return this.f15208a;
     }
 }

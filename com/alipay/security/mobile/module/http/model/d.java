@@ -4,13 +4,9 @@ import java.util.Map;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alipay/security/mobile/module/http/model/d.class */
 public class d {
-
-    /* renamed from: a  reason: collision with root package name */
-    public String f4720a;
+    public String a;
     public String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public String f4721c;
+    public String c;
     public String d;
     public String e;
     public Map<String, String> f;

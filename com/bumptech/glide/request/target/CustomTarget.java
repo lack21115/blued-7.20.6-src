@@ -8,11 +8,11 @@ import com.bumptech.glide.util.Util;
 public abstract class CustomTarget<T> implements Target<T> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final int f21056a;
+    private final int f7450a;
     private final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Request f21057c;
+    private Request f7451c;
 
     public CustomTarget() {
         this(Integer.MIN_VALUE, Integer.MIN_VALUE);
@@ -20,7 +20,7 @@ public abstract class CustomTarget<T> implements Target<T> {
 
     public CustomTarget(int i, int i2) {
         if (Util.a(i, i2)) {
-            this.f21056a = i;
+            this.f7450a = i;
             this.b = i2;
             return;
         }
@@ -29,12 +29,12 @@ public abstract class CustomTarget<T> implements Target<T> {
 
     @Override // com.bumptech.glide.request.target.Target
     public final Request getRequest() {
-        return this.f21057c;
+        return this.f7451c;
     }
 
     @Override // com.bumptech.glide.request.target.Target
     public final void getSize(SizeReadyCallback sizeReadyCallback) {
-        sizeReadyCallback.a(this.f21056a, this.b);
+        sizeReadyCallback.a(this.f7450a, this.b);
     }
 
     @Override // com.bumptech.glide.manager.LifecycleListener
@@ -63,6 +63,6 @@ public abstract class CustomTarget<T> implements Target<T> {
 
     @Override // com.bumptech.glide.request.target.Target
     public final void setRequest(Request request) {
-        this.f21057c = request;
+        this.f7451c = request;
     }
 }

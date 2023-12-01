@@ -62,11 +62,11 @@ public final class DiskCache<D extends n9> extends s9<D> {
     public static final class c extends n9 {
 
         /* renamed from: a  reason: collision with root package name */
-        private File f37275a;
+        private File f23584a;
         private int b;
 
         public c(File file, int i) {
-            this.f37275a = file;
+            this.f23584a = file;
             this.b = i;
         }
 
@@ -85,7 +85,7 @@ public final class DiskCache<D extends n9> extends s9<D> {
         }
 
         public String toString() {
-            return this.f37275a.getName() + "," + this.b;
+            return this.f23584a.getName() + "," + this.b;
         }
     }
 
@@ -110,11 +110,11 @@ public final class DiskCache<D extends n9> extends s9<D> {
                 boolean z2 = false;
                 if (cVar != null) {
                     if (d.this.j != null) {
-                        z2 = d.this.j.a(cVar.f37275a);
+                        z2 = d.this.j.a(cVar.f23584a);
                     }
                     z = z2;
                     if (!z2) {
-                        ga.d(cVar.f37275a);
+                        ga.d(cVar.f23584a);
                         z = true;
                     }
                 }
@@ -191,10 +191,10 @@ public final class DiskCache<D extends n9> extends s9<D> {
     }
 
     private void a(String str, c cVar) {
-        if (cVar == null || cVar.f37275a == null) {
+        if (cVar == null || cVar.f23584a == null) {
             return;
         }
-        File parentFile = cVar.f37275a.getParentFile();
+        File parentFile = cVar.f23584a.getParentFile();
         File b2 = ga.b(parentFile, l);
         String str2 = str + "#" + cVar.toString();
         if (ga.d(b2, str2) == -1) {
@@ -392,7 +392,7 @@ public final class DiskCache<D extends n9> extends s9<D> {
                 c cVar = (c) this.d.b((o9.a<c>) a2);
                 File file3 = null;
                 if (cVar != null) {
-                    file3 = cVar.f37275a;
+                    file3 = cVar.f23584a;
                 }
                 file = file3;
                 if (file3 != null) {

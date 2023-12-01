@@ -17,17 +17,17 @@ import java.io.InputStream;
 public final class a extends InputStream {
 
     /* renamed from: a  reason: collision with root package name */
-    private InputStream f41808a;
+    private InputStream f28117a;
     private CacheUrl b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f41809c;
+    private Context f28118c;
     private File d = null;
     private BufferedOutputStream e = null;
     private boolean f = false;
 
     public a(Context context, CacheUrl cacheUrl) {
-        this.f41809c = context;
+        this.f28118c = context;
         this.b = cacheUrl;
     }
 
@@ -42,7 +42,7 @@ public final class a extends InputStream {
                 this.e = null;
             }
         }
-        d downloadFile = OkHttpUtil.downloadFile(this.f41809c, this.b.getUri().toString());
+        d downloadFile = OkHttpUtil.downloadFile(this.f28118c, this.b.getUri().toString());
         if (downloadFile == null) {
             return null;
         }
@@ -59,7 +59,7 @@ public final class a extends InputStream {
             try {
                 byte[] bArr = new byte[4096];
                 while (true) {
-                    int read = aVar.f41808a.read(bArr, 0, 4096);
+                    int read = aVar.f28117a.read(bArr, 0, 4096);
                     if (read == -1) {
                         break;
                     }
@@ -80,7 +80,7 @@ public final class a extends InputStream {
                         Logger.e("InputStreamWrapper", e);
                     }
                 }
-                InputStream inputStream = aVar.f41808a;
+                InputStream inputStream = aVar.f28117a;
                 if (inputStream != null) {
                     try {
                         inputStream.close();
@@ -98,7 +98,7 @@ public final class a extends InputStream {
                         Logger.e("InputStreamWrapper", e4);
                     }
                 }
-                InputStream inputStream2 = aVar.f41808a;
+                InputStream inputStream2 = aVar.f28117a;
                 if (inputStream2 != null) {
                     try {
                         inputStream2.close();
@@ -116,7 +116,7 @@ public final class a extends InputStream {
                     Logger.e("InputStreamWrapper", e6);
                 }
             }
-            InputStream inputStream3 = aVar.f41808a;
+            InputStream inputStream3 = aVar.f28117a;
             if (inputStream3 != null) {
                 try {
                     inputStream3.close();
@@ -152,7 +152,7 @@ public final class a extends InputStream {
     public final void close() throws IOException {
         super.close();
         if (!this.f) {
-            if (this.d == null || this.e == null || this.f41808a == null) {
+            if (this.d == null || this.e == null || this.f28117a == null) {
                 return;
             }
             com.youzan.spiderman.a.c.a().a(new com.youzan.spiderman.a.a() { // from class: com.youzan.spiderman.d.a.1
@@ -176,7 +176,7 @@ public final class a extends InputStream {
         if (file != null) {
             file.delete();
         }
-        InputStream inputStream = this.f41808a;
+        InputStream inputStream = this.f28117a;
         if (inputStream != null) {
             inputStream.close();
         }
@@ -184,10 +184,10 @@ public final class a extends InputStream {
 
     @Override // java.io.InputStream
     public final int read() throws IOException {
-        if (this.f41808a == null) {
-            this.f41808a = a();
+        if (this.f28117a == null) {
+            this.f28117a = a();
         }
-        InputStream inputStream = this.f41808a;
+        InputStream inputStream = this.f28117a;
         if (inputStream == null) {
             this.f = true;
             Logger.e("InputStreamWrapper", "get input stream null, url:" + this.b.getUri(), new Object[0]);
@@ -213,10 +213,10 @@ public final class a extends InputStream {
 
     @Override // java.io.InputStream
     public final int read(byte[] bArr, int i, int i2) throws IOException {
-        if (this.f41808a == null) {
-            this.f41808a = a();
+        if (this.f28117a == null) {
+            this.f28117a = a();
         }
-        InputStream inputStream = this.f41808a;
+        InputStream inputStream = this.f28117a;
         if (inputStream == null) {
             this.f = true;
             Logger.e("InputStreamWrapper", "get input stream null, url:" + this.b.getUri(), new Object[0]);

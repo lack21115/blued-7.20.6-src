@@ -4,8 +4,8 @@ import android.os.SystemClock;
 import android.text.TextUtils;
 import com.amap.api.col.p0003sl.ju;
 import com.amap.api.col.p0003sl.kb;
-import com.amap.api.maps.AMapException;
-import com.umeng.analytics.pro.o;
+import com.amap.api.services.core.AMapException;
+import com.android.internal.content.NativeLibraryHelper;
 import java.io.IOException;
 import java.io.InterruptedIOException;
 import java.lang.ref.SoftReference;
@@ -14,6 +14,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.Proxy;
 import java.net.SocketException;
+import java.net.SocketOptions;
 import java.net.SocketTimeoutException;
 import java.net.URL;
 import java.net.URLEncoder;
@@ -41,13 +42,9 @@ import org.apache.http.conn.ConnectTimeoutException;
 public final class jy {
     private static SoftReference<SSLContext> k;
     private static SoftReference<jz> t;
-
-    /* renamed from: a  reason: collision with root package name */
-    private boolean f5241a;
+    private boolean a;
     private SSLContext b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private Proxy f5242c;
+    private Proxy c;
     private String g;
     private ju.a h;
     private d i;
@@ -68,13 +65,9 @@ public final class jy {
     /* renamed from: com.amap.api.col.3sl.jy$a */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/jy$a.class */
     public static final class a implements Cloneable, Comparable {
-
-        /* renamed from: a  reason: collision with root package name */
-        public int f5243a;
+        public int a;
         public String b;
-
-        /* renamed from: c  reason: collision with root package name */
-        public String f5244c;
+        public String c;
         public String d;
         public String e;
         public int f;
@@ -84,16 +77,16 @@ public final class jy {
         public volatile AtomicInteger j = new AtomicInteger(1);
 
         public a(c cVar) {
-            this.b = cVar.f5247c;
-            this.f5244c = cVar.e;
+            this.b = cVar.c;
+            this.c = cVar.e;
             this.e = cVar.d;
             this.f = cVar.m;
             this.g = cVar.n;
             this.h = cVar.b.a();
-            this.d = cVar.f5246a;
+            this.d = cVar.a;
             this.i = cVar.f;
             if (this.f == 10) {
-                this.f5243a = 0;
+                this.a = 0;
             }
         }
 
@@ -134,7 +127,7 @@ public final class jy {
                 } else {
                     str4 = str3 + "-#";
                 }
-                String str7 = (str4 + this.f5244c + "#") + this.g;
+                String str7 = (str4 + this.c + "#") + this.g;
                 String b = ht.b(jq.a(str7.getBytes(), "YXBtX25ldHdvcmtf".getBytes()));
                 StringBuilder sb = new StringBuilder("上报异常数据");
                 sb.append(str7);
@@ -149,34 +142,28 @@ public final class jy {
 
         @Override // java.lang.Comparable
         public final int compareTo(Object obj) {
-            return this.f5243a - ((a) obj).f5243a;
+            return this.a - ((a) obj).a;
         }
     }
 
     /* renamed from: com.amap.api.col.3sl.jy$b */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/jy$b.class */
     public static final class b {
-
-        /* renamed from: a  reason: collision with root package name */
-        public HttpURLConnection f5245a;
+        public HttpURLConnection a;
         public int b = this.b;
         public int b = this.b;
 
         public b(HttpURLConnection httpURLConnection) {
-            this.f5245a = httpURLConnection;
+            this.a = httpURLConnection;
         }
     }
 
     /* renamed from: com.amap.api.col.3sl.jy$c */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/jy$c.class */
     public static final class c implements Cloneable {
-
-        /* renamed from: a  reason: collision with root package name */
-        public String f5246a = "";
+        public String a = "";
         public kb.b b = kb.b.FIRST_NONDEGRADE;
-
-        /* renamed from: c  reason: collision with root package name */
-        public String f5247c = "";
+        public String c = "";
         public String d = "";
         public String e = "";
         public long f = 0;
@@ -184,8 +171,8 @@ public final class jy {
         public long h = 0;
         public long i = 0;
         public long j = 0;
-        public String k = "-";
-        public String l = "-";
+        public String k = NativeLibraryHelper.CLEAR_ABI_OVERRIDE;
+        public String l = NativeLibraryHelper.CLEAR_ABI_OVERRIDE;
         public int m = 0;
         public int n = 0;
 
@@ -202,10 +189,10 @@ public final class jy {
         protected final String b() {
             String str;
             String str2;
-            if (TextUtils.isEmpty(this.f5247c)) {
+            if (TextUtils.isEmpty(this.c)) {
                 str = "-#";
             } else {
-                str = this.f5247c + "#";
+                str = this.c + "#";
             }
             if (TextUtils.isEmpty(this.d)) {
                 str2 = str + "-#";
@@ -223,7 +210,7 @@ public final class jy {
         }
 
         public final String toString() {
-            return "RequestInfo{csid='" + this.f5246a + "', degradeType=" + this.b + ", serverIp='" + this.f5247c + "', path='" + this.d + "', hostname='" + this.e + "', totalTime=" + this.f + ", DNSTime=" + this.g + ", connectionTime=" + this.h + ", writeTime=" + this.i + ", readTime=" + this.j + ", serverTime='" + this.k + "', datasize='" + this.l + "', errorcode=" + this.m + ", errorcodeSub=" + this.n + '}';
+            return "RequestInfo{csid='" + this.a + "', degradeType=" + this.b + ", serverIp='" + this.c + "', path='" + this.d + "', hostname='" + this.e + "', totalTime=" + this.f + ", DNSTime=" + this.g + ", connectionTime=" + this.h + ", writeTime=" + this.i + ", readTime=" + this.j + ", serverTime='" + this.k + "', datasize='" + this.l + "', errorcode=" + this.m + ", errorcodeSub=" + this.n + '}';
         }
     }
 
@@ -231,13 +218,11 @@ public final class jy {
     /* renamed from: com.amap.api.col.3sl.jy$d */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/jy$d.class */
     public static final class d {
-
-        /* renamed from: a  reason: collision with root package name */
-        private Vector<e> f5248a;
+        private Vector<e> a;
         private volatile e b;
 
         private d() {
-            this.f5248a = new Vector<>();
+            this.a = new Vector<>();
             this.b = new e((byte) 0);
         }
 
@@ -252,13 +237,13 @@ public final class jy {
             int i = 0;
             while (true) {
                 int i2 = i;
-                if (i2 >= this.f5248a.size()) {
+                if (i2 >= this.a.size()) {
                     e eVar = new e((byte) 0);
                     eVar.b(str);
-                    this.f5248a.add(eVar);
+                    this.a.add(eVar);
                     return eVar;
                 }
-                e eVar2 = this.f5248a.get(i2);
+                e eVar2 = this.a.get(i2);
                 if (eVar2 != null && eVar2.a().equals(str)) {
                     return eVar2;
                 }
@@ -271,9 +256,7 @@ public final class jy {
     /* renamed from: com.amap.api.col.3sl.jy$e */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/jy$e.class */
     public static final class e implements HostnameVerifier {
-
-        /* renamed from: a  reason: collision with root package name */
-        private String f5249a;
+        private String a;
         private String b;
 
         private e() {
@@ -289,10 +272,10 @@ public final class jy {
 
         public final void a(String str) {
             String[] split;
-            if (TextUtils.isEmpty(this.f5249a) || !str.contains(":") || (split = str.split(":")) == null || split.length <= 0) {
-                this.f5249a = str;
+            if (TextUtils.isEmpty(this.a) || !str.contains(":") || (split = str.split(":")) == null || split.length <= 0) {
+                this.a = str;
             } else {
-                this.f5249a = split[0];
+                this.a = split[0];
             }
         }
 
@@ -303,7 +286,7 @@ public final class jy {
         @Override // javax.net.ssl.HostnameVerifier
         public final boolean verify(String str, SSLSession sSLSession) {
             HostnameVerifier defaultHostnameVerifier = HttpsURLConnection.getDefaultHostnameVerifier();
-            return !TextUtils.isEmpty(this.f5249a) ? this.f5249a.equals(str) : !TextUtils.isEmpty(this.b) ? defaultHostnameVerifier.verify(this.b, sSLSession) : defaultHostnameVerifier.verify(str, sSLSession);
+            return !TextUtils.isEmpty(this.a) ? this.a.equals(str) : !TextUtils.isEmpty(this.b) ? defaultHostnameVerifier.verify(this.b, sSLSession) : defaultHostnameVerifier.verify(str, sSLSession);
         }
     }
 
@@ -311,13 +294,9 @@ public final class jy {
     /* renamed from: com.amap.api.col.3sl.jy$f */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/jy$f.class */
     public final class f {
-
-        /* renamed from: a  reason: collision with root package name */
-        long f5250a = 0;
+        long a = 0;
         long b = 0;
-
-        /* renamed from: c  reason: collision with root package name */
-        c f5251c = new c();
+        c c = new c();
         a d;
         c e;
         String f;
@@ -327,32 +306,32 @@ public final class jy {
         }
 
         public final void a() {
-            this.f5251c.h = SystemClock.elapsedRealtime() - this.b;
+            this.c.h = SystemClock.elapsedRealtime() - this.b;
         }
 
         public final void a(int i) {
             "----errorcode-----".concat(String.valueOf(i));
             jy.b();
             try {
-                this.f5251c.f = SystemClock.elapsedRealtime() - this.f5250a;
-                this.f5251c.m = i;
-                if (this.f5251c.b.e()) {
-                    hp.a(false, this.f5251c.e);
+                this.c.f = SystemClock.elapsedRealtime() - this.a;
+                this.c.m = i;
+                if (this.c.b.e()) {
+                    hp.a(false, this.c.e);
                 }
-                boolean a2 = jy.this.a(this.f5251c.e);
-                if (a2) {
-                    if (jy.this.p && !TextUtils.isEmpty(jy.this.n) && this.f5251c.b.b()) {
+                boolean a = jy.this.a(this.c.e);
+                if (a) {
+                    if (jy.this.p && !TextUtils.isEmpty(jy.this.n) && this.c.b.b()) {
                         hp.d();
                     }
-                    if (this.f5251c.b.c()) {
-                        hp.a(this.f5251c.b.c(), this.f5251c.e);
+                    if (this.c.b.c()) {
+                        hp.a(this.c.b.c(), this.c.e);
                     }
                     hp.c(this.e);
                     hp.a(false, this.d);
-                    hp.b(this.f5251c);
+                    hp.b(this.c);
                 }
-                hp.a(this.g.toString(), this.f5251c.b.c(), true, a2);
-                new StringBuilder("!!!error-").append(this.f5251c.toString());
+                hp.a(this.g.toString(), this.c.b.c(), true, a);
+                new StringBuilder("!!!error-").append(this.c.toString());
                 jy.b();
             } catch (Throwable th) {
             }
@@ -360,20 +339,20 @@ public final class jy {
 
         public final void a(long j) {
             DecimalFormat decimalFormat = new DecimalFormat("0.00");
-            this.f5251c.l = decimalFormat.format(((float) j) / 1024.0f);
+            this.c.l = decimalFormat.format(((float) j) / 1024.0f);
         }
 
         public final void a(kb kbVar, URL url) {
             this.g = url;
-            this.f5251c.d = url.getPath();
-            this.f5251c.e = url.getHost();
+            this.c.d = url.getPath();
+            this.c.e = url.getHost();
             if (!TextUtils.isEmpty(jy.this.n) && kbVar.getDegradeType().b()) {
-                c cVar = this.f5251c;
-                cVar.f5247c = cVar.e.replace("[", "").replace("]", "");
-                this.f5251c.e = jy.this.n;
+                c cVar = this.c;
+                cVar.c = cVar.e.replace("[", "").replace("]", "");
+                this.c.e = jy.this.n;
             }
             if (kbVar.getDegradeType().b()) {
-                kbVar.setNon_degrade_final_Host(this.f5251c.e);
+                kbVar.setNon_degrade_final_Host(this.c.e);
             }
             if (kbVar.getDegradeType().d()) {
                 this.f = kbVar.getNon_degrade_final_Host();
@@ -383,49 +362,49 @@ public final class jy {
         public final void a(kc kcVar) {
             c clone;
             try {
-                this.f5251c.f = SystemClock.elapsedRealtime() - this.f5250a;
+                this.c.f = SystemClock.elapsedRealtime() - this.a;
                 if (kcVar != null) {
-                    kcVar.f = this.f5251c.b.c();
+                    kcVar.f = this.c.b.c();
                 }
-                if (this.f5251c.b.b() && this.f5251c.f > 10000) {
-                    hp.a(false, this.f5251c.e);
+                if (this.c.b.b() && this.c.f > 10000) {
+                    hp.a(false, this.c.e);
                 }
-                if (this.f5251c.b.d()) {
+                if (this.c.b.d()) {
                     hp.a(false, this.f);
                 }
-                boolean a2 = jy.this.a(this.f5251c.e);
-                if (a2) {
-                    hp.c(this.f5251c);
+                boolean a = jy.this.a(this.c.e);
+                if (a) {
+                    hp.c(this.c);
                     hp.a(true, this.d);
-                    if (this.f5251c.f > hp.e && (clone = this.f5251c.clone()) != null) {
+                    if (this.c.f > hp.e && (clone = this.c.clone()) != null) {
                         clone.m = 1;
                         hp.b(clone);
                         new StringBuilder("!!!finish&error-").append(clone.toString());
                         jy.b();
                     }
                 }
-                hp.a(this.g.toString(), this.f5251c.b.c(), false, a2);
-                new StringBuilder("!!!finish-").append(this.f5251c.toString());
+                hp.a(this.g.toString(), this.c.b.c(), false, a);
+                new StringBuilder("!!!finish-").append(this.c.toString());
                 jy.b();
             } catch (Throwable th) {
             }
         }
 
         public final void b() {
-            this.f5251c.i = SystemClock.elapsedRealtime() - this.b;
+            this.c.i = SystemClock.elapsedRealtime() - this.b;
         }
 
         public final void b(int i) {
-            this.f5251c.n = i;
+            this.c.n = i;
         }
 
         public final void c() {
-            this.f5251c.j = SystemClock.elapsedRealtime() - this.b;
+            this.c.j = SystemClock.elapsedRealtime() - this.b;
         }
 
         public final void d() {
-            c clone = this.f5251c.clone();
-            if (this.f5251c.f > hp.e) {
+            c clone = this.c.clone();
+            if (this.c.f > hp.e) {
                 clone.m = 1;
             }
             hp.a(clone);
@@ -436,7 +415,7 @@ public final class jy {
     public jy() {
         hp.e();
         try {
-            this.g = UUID.randomUUID().toString().replaceAll("-", "").toLowerCase();
+            this.g = UUID.randomUUID().toString().replaceAll(NativeLibraryHelper.CLEAR_ABI_OVERRIDE, "").toLowerCase();
         } catch (Throwable th) {
             it.a(th, "ht", "ic");
         }
@@ -447,13 +426,13 @@ public final class jy {
             return 4101;
         }
         if (exc instanceof SSLKeyException) {
-            return 4102;
+            return SocketOptions.SO_TIMEOUT;
         }
         if (exc instanceof SSLProtocolException) {
             return 4103;
         }
         if (exc instanceof SSLPeerUnverifiedException) {
-            return o.a.h;
+            return 4104;
         }
         if (exc instanceof ConnectException) {
             return 6101;
@@ -461,10 +440,7 @@ public final class jy {
         if (exc instanceof SocketException) {
             return 6102;
         }
-        if (exc instanceof ConnectTimeoutException) {
-            return 2101;
-        }
-        return exc instanceof SocketTimeoutException ? 2102 : 0;
+        return exc instanceof ConnectTimeoutException ? AMapException.CODE_AMAP_NEARBY_KEY_NOT_BIND : exc instanceof SocketTimeoutException ? 2102 : 0;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:151:0x0506, code lost:
@@ -563,8 +539,8 @@ public final class jy {
             stringBuffer.append(str);
             if (indexOf < 0) {
                 stringBuffer.append("?");
-            } else if (!str.endsWith("?") && !str.endsWith("&")) {
-                stringBuffer.append("&");
+            } else if (!str.endsWith("?") && !str.endsWith(com.alipay.sdk.sys.a.b)) {
+                stringBuffer.append(com.alipay.sdk.sys.a.b);
             }
             if (a2 != null) {
                 stringBuffer.append(a2);
@@ -599,7 +575,7 @@ public final class jy {
                     str = "";
                 }
                 if (sb.length() > 0) {
-                    sb.append("&");
+                    sb.append(com.alipay.sdk.sys.a.b);
                 }
                 sb.append(URLEncoder.encode(key));
                 sb.append("=");
@@ -633,14 +609,14 @@ public final class jy {
             httpURLConnection.addRequestProperty("lct", String.valueOf(hp.c(this.j)));
         }
         httpURLConnection.addRequestProperty("csid", this.g);
-        if (a(this.u.f5251c.e)) {
+        if (a(this.u.c.e)) {
             f fVar = this.u;
-            if (TextUtils.isEmpty(fVar.f5251c.f5247c)) {
+            if (TextUtils.isEmpty(fVar.c.c)) {
                 b2 = "";
             } else {
-                b2 = ht.b(jq.a(fVar.f5251c.f5247c.getBytes(), "YXBtX25ldHdvcmtf".getBytes()));
+                b2 = ht.b(jq.a(fVar.c.c.getBytes(), "YXBtX25ldHdvcmtf".getBytes()));
                 StringBuilder sb = new StringBuilder("上报本次请求serverIp:");
-                sb.append(fVar.f5251c.f5247c);
+                sb.append(fVar.c.c);
                 sb.append("加密后：");
                 sb.append(b2);
             }
@@ -811,12 +787,12 @@ public final class jy {
     private jz c() {
         try {
             if (t == null || t.get() == null) {
-                t = new SoftReference<>(new jz(hp.f5081c, this.b));
+                t = new SoftReference<>(new jz(hp.c, this.b));
             }
             jz jzVar = k != null ? t.get() : null;
             jz jzVar2 = jzVar;
             if (jzVar == null) {
-                jzVar2 = new jz(hp.f5081c, this.b);
+                jzVar2 = new jz(hp.c, this.b);
             }
             return jzVar2;
         } catch (Throwable th) {
@@ -828,11 +804,11 @@ public final class jy {
     private void d(kb kbVar) throws hn {
         this.i = new d((byte) 0);
         this.p = kbVar.isIPV6Request();
-        this.f5242c = kbVar.getProxy();
+        this.c = kbVar.getProxy();
         this.h = kbVar.getUrlConnectionImpl();
         this.l = kbVar.isBinary();
         this.j = kbVar.parseSdkNameFromRequest();
-        this.f5241a = hu.a().b(kbVar.isHttps());
+        this.a = hu.a().b(kbVar.isHttps());
         String b2 = kbVar.getDegradeType().b() ? kbVar.b() : kbVar.a();
         this.m = b2;
         this.m = jx.a(b2, this.j);
@@ -882,7 +858,7 @@ public final class jy {
             try {
                 d(kbVar);
                 this.m = a(this.m, kbVar.getParams());
-                httpURLConnection11 = a(kbVar, false, false).f5245a;
+                httpURLConnection11 = a(kbVar, false, false).a;
             } catch (hn e2) {
                 e = e2;
             } catch (ConnectException e3) {
@@ -953,7 +929,7 @@ public final class jy {
                 HttpURLConnection httpURLConnection16 = httpURLConnection10;
                 this.u.a(6);
                 HttpURLConnection httpURLConnection17 = httpURLConnection10;
-                throw new hn(AMapException.ERROR_CONNECTION);
+                throw new hn(com.amap.api.maps.AMapException.ERROR_CONNECTION);
             } catch (MalformedURLException e14) {
                 httpURLConnection3 = httpURLConnection11;
                 HttpURLConnection httpURLConnection18 = httpURLConnection3;
@@ -1004,7 +980,7 @@ public final class jy {
                 HttpURLConnection httpURLConnection34 = httpURLConnection4;
                 this.u.a(7);
                 HttpURLConnection httpURLConnection35 = httpURLConnection4;
-                throw new hn(AMapException.ERROR_UNKNOWN);
+                throw new hn(com.amap.api.maps.AMapException.ERROR_UNKNOWN);
             } catch (SocketException e20) {
                 e = e20;
                 httpURLConnection9 = httpURLConnection11;
@@ -1013,7 +989,7 @@ public final class jy {
                 HttpURLConnection httpURLConnection37 = httpURLConnection9;
                 this.u.a(6);
                 HttpURLConnection httpURLConnection38 = httpURLConnection9;
-                throw new hn(AMapException.ERROR_SOCKET);
+                throw new hn(com.amap.api.maps.AMapException.ERROR_SOCKET);
             } catch (IOException e21) {
                 httpURLConnection2 = httpURLConnection11;
                 HttpURLConnection httpURLConnection39 = httpURLConnection2;
@@ -1027,7 +1003,7 @@ public final class jy {
                 HttpURLConnection httpURLConnection41 = httpURLConnection;
                 th.printStackTrace();
                 HttpURLConnection httpURLConnection42 = httpURLConnection;
-                throw new hn(AMapException.ERROR_UNKNOWN);
+                throw new hn(com.amap.api.maps.AMapException.ERROR_UNKNOWN);
             }
         } catch (Throwable th5) {
             if (kbVar != 0) {
@@ -1142,7 +1118,7 @@ public final class jy {
                                         return b2;
                                     }
                                     b a3 = a((kb) kbVar, false, true);
-                                    HttpURLConnection httpURLConnection12 = a3.f5245a;
+                                    HttpURLConnection httpURLConnection12 = a3.a;
                                     this.u.b = SystemClock.elapsedRealtime();
                                     httpURLConnection12.connect();
                                     this.u.a();
@@ -1174,7 +1150,7 @@ public final class jy {
                                     HttpURLConnection httpURLConnection14 = httpURLConnection10;
                                     this.u.a(7);
                                     HttpURLConnection httpURLConnection15 = httpURLConnection10;
-                                    throw new hn(AMapException.ERROR_UNKNOWN);
+                                    throw new hn(com.amap.api.maps.AMapException.ERROR_UNKNOWN);
                                 } catch (UnknownHostException e3) {
                                     HttpURLConnection httpURLConnection16 = httpURLConnection9;
                                     this.u.a(9);
@@ -1203,14 +1179,14 @@ public final class jy {
                             HttpURLConnection httpURLConnection24 = httpURLConnection4;
                             this.u.a(6);
                             HttpURLConnection httpURLConnection25 = httpURLConnection4;
-                            throw new hn(AMapException.ERROR_SOCKET);
+                            throw new hn(com.amap.api.maps.AMapException.ERROR_SOCKET);
                         }
                     } catch (ConnectException e8) {
                         this.u.b(a(e8));
                         HttpURLConnection httpURLConnection26 = httpURLConnection7;
                         this.u.a(6);
                         HttpURLConnection httpURLConnection27 = httpURLConnection7;
-                        throw new hn(AMapException.ERROR_CONNECTION);
+                        throw new hn(com.amap.api.maps.AMapException.ERROR_CONNECTION);
                     } catch (SSLException e9) {
                         e9.printStackTrace();
                         HttpURLConnection httpURLConnection28 = httpURLConnection6;
@@ -1233,7 +1209,7 @@ public final class jy {
                     HttpURLConnection httpURLConnection34 = httpURLConnection;
                     this.u.a(9);
                     HttpURLConnection httpURLConnection35 = httpURLConnection;
-                    throw new hn(AMapException.ERROR_UNKNOWN);
+                    throw new hn(com.amap.api.maps.AMapException.ERROR_UNKNOWN);
                 }
             } catch (hn e11) {
                 if (!e11.i()) {

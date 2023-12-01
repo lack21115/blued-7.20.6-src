@@ -8,12 +8,12 @@ import java.io.File;
 class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f38991a = "ulucu_huidian";
+    private static final String f25300a = "ulucu_huidian";
     private static final String b = "database";
     private static Context d;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f38992c = File.separator;
+    private static final String f25301c = File.separator;
     private static File e = null;
 
     c() {
@@ -22,7 +22,7 @@ class c {
     public static File a() {
         if (e == null) {
             Context context = d;
-            e = a(context, b() + f38992c + "database");
+            e = a(context, b() + f25301c + "database");
         }
         return e;
     }
@@ -53,6 +53,6 @@ class c {
     }
 
     private static String b() {
-        return d != null ? "chuanglan" : f38991a;
+        return d != null ? "chuanglan" : f25300a;
     }
 }

@@ -45,7 +45,7 @@ public final class Detector {
         BitMatrix bitMatrix = blackMatrix;
         List<ResultPoint[]> list = detect;
         if (detect.isEmpty()) {
-            bitMatrix = blackMatrix.m8869clone();
+            bitMatrix = blackMatrix.m5820clone();
             bitMatrix.rotate180();
             list = detect(z, bitMatrix);
         }
@@ -124,7 +124,7 @@ public final class Detector {
                 } else {
                     i6 += iArr2[0] + iArr2[1];
                     int i9 = i8 - 1;
-                    System.arraycopy((Object) iArr2, 2, (Object) iArr2, 0, i9);
+                    System.arraycopy(iArr2, 2, iArr2, 0, i9);
                     iArr2[i9] = 0;
                     iArr2[i8] = 0;
                     i8--;

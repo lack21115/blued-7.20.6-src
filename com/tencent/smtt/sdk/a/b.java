@@ -6,11 +6,11 @@ import org.json.JSONObject;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f38823a;
+    private int f25132a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f38824c;
+    private String f25133c;
     private long d;
 
     private b() {
@@ -19,9 +19,9 @@ public class b {
     public static b a(JSONObject jSONObject) {
         if (jSONObject != null) {
             b bVar = new b();
-            bVar.f38823a = jSONObject.optInt("id", -1);
+            bVar.f25132a = jSONObject.optInt("id", -1);
             bVar.b = jSONObject.optInt("cmd_id", -1);
-            bVar.f38824c = jSONObject.optString("ext_params", "");
+            bVar.f25133c = jSONObject.optString("ext_params", "");
             bVar.d = jSONObject.optLong("expiration", 0L) * 1000;
             return bVar;
         }
@@ -29,7 +29,7 @@ public class b {
     }
 
     public int a() {
-        return this.f38823a;
+        return this.f25132a;
     }
 
     public int b() {
@@ -37,7 +37,7 @@ public class b {
     }
 
     public String c() {
-        return this.f38824c;
+        return this.f25133c;
     }
 
     public long d() {
@@ -49,6 +49,6 @@ public class b {
     }
 
     public String toString() {
-        return "[id=" + this.f38823a + ", cmd=" + this.b + ", extra='" + this.f38824c + "', expiration=" + a.a(this.d) + ']';
+        return "[id=" + this.f25132a + ", cmd=" + this.b + ", extra='" + this.f25133c + "', expiration=" + a.a(this.d) + ']';
     }
 }

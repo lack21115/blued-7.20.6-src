@@ -20,11 +20,11 @@ import com.soft.blued.utils.StringUtils;
 public class VIPCenterExpLvlRightAdapter extends BaseQuickAdapter<VIPCenterForJsonParse._privilege_list, BaseViewHolder> {
 
     /* renamed from: a  reason: collision with root package name */
-    public IRequestHost f33790a;
+    public IRequestHost f20099a;
     public int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public boolean f33791c;
+    public boolean f20100c;
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void a(ImageView imageView, View view) {
@@ -51,16 +51,16 @@ public class VIPCenterExpLvlRightAdapter extends BaseQuickAdapter<VIPCenterForJs
         if (baseViewHolder == null || _privilege_listVar == null) {
             return;
         }
-        final ImageView imageView = (ImageView) baseViewHolder.getView(2131364496);
+        final ImageView imageView = (ImageView) baseViewHolder.getView(R.id.img_cover);
         TextView textView = (TextView) baseViewHolder.getView(R.id.img_tag);
         TextView textView2 = (TextView) baseViewHolder.getView(2131372046);
-        ShapeTextView shapeTextView = (ShapeTextView) baseViewHolder.getView(R.id.tv_btm);
+        ShapeTextView view = baseViewHolder.getView(R.id.tv_btm);
         if (this.b == 2) {
-            shapeTextView.setTextColor(BluedSkinUtils.a(this.mContext, 2131099660));
+            view.setTextColor(BluedSkinUtils.a(this.mContext, 2131099660));
         } else {
-            shapeTextView.setTextColor(BluedSkinUtils.a(this.mContext, 2131099663));
+            view.setTextColor(BluedSkinUtils.a(this.mContext, 2131099663));
         }
-        ImageLoader.a(this.f33790a, _privilege_listVar.icon).a(imageView);
+        ImageLoader.a(this.f20099a, _privilege_listVar.icon).a(imageView);
         if (StringUtils.d(_privilege_listVar.corner)) {
             textView.setVisibility(8);
         } else {
@@ -74,30 +74,30 @@ public class VIPCenterExpLvlRightAdapter extends BaseQuickAdapter<VIPCenterForJs
             textView2.setVisibility(0);
         }
         if (StringUtils.d(_privilege_listVar.unit)) {
-            shapeTextView.setVisibility(8);
+            view.setVisibility(8);
         } else {
-            shapeTextView.setText(_privilege_listVar.unit);
-            shapeTextView.setVisibility(0);
+            view.setText(_privilege_listVar.unit);
+            view.setVisibility(0);
         }
-        if (this.f33791c) {
+        if (this.f20100c) {
             return;
         }
         imageView.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.adapter.-$$Lambda$VIPCenterExpLvlRightAdapter$FcgHoruNgFUuyJg8HvQPsdOuzsQ
             @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                VIPCenterExpLvlRightAdapter.this.a(_privilege_listVar, view);
+            public final void onClick(View view2) {
+                VIPCenterExpLvlRightAdapter.this.a(_privilege_listVar, view2);
             }
         });
         textView2.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.adapter.-$$Lambda$VIPCenterExpLvlRightAdapter$6-P_c2ChEF8VFVZrTYfBTS9Q9OI
             @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                VIPCenterExpLvlRightAdapter.b(ImageView.this, view);
+            public final void onClick(View view2) {
+                VIPCenterExpLvlRightAdapter.b(imageView, view2);
             }
         });
-        shapeTextView.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.adapter.-$$Lambda$VIPCenterExpLvlRightAdapter$jDQm9U1WkXWlw6KxnYPmoIugD_Q
+        view.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.adapter.-$$Lambda$VIPCenterExpLvlRightAdapter$jDQm9U1WkXWlw6KxnYPmoIugD_Q
             @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                VIPCenterExpLvlRightAdapter.a(ImageView.this, view);
+            public final void onClick(View view2) {
+                VIPCenterExpLvlRightAdapter.a(imageView, view2);
             }
         });
     }

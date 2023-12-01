@@ -8,16 +8,16 @@ import com.tencent.liteav.videobase.videobase.DisplayTarget;
 public final /* synthetic */ class gc implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final UGCVideoProcessor f40410a;
+    private final UGCVideoProcessor f26719a;
     private final DisplayTarget b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final GLConstants.GLScaleType f40411c;
+    private final GLConstants.GLScaleType f26720c;
 
     private gc(UGCVideoProcessor uGCVideoProcessor, DisplayTarget displayTarget, GLConstants.GLScaleType gLScaleType) {
-        this.f40410a = uGCVideoProcessor;
+        this.f26719a = uGCVideoProcessor;
         this.b = displayTarget;
-        this.f40411c = gLScaleType;
+        this.f26720c = gLScaleType;
     }
 
     public static Runnable a(UGCVideoProcessor uGCVideoProcessor, DisplayTarget displayTarget, GLConstants.GLScaleType gLScaleType) {
@@ -26,6 +26,6 @@ public final /* synthetic */ class gc implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        UGCVideoProcessor.lambda$setDisplayView$4(this.f40410a, this.b, this.f40411c);
+        UGCVideoProcessor.lambda$setDisplayView$4(this.f26719a, this.b, this.f26720c);
     }
 }

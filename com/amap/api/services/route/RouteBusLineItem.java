@@ -25,29 +25,25 @@ public class RouteBusLineItem extends BusLineItem implements Parcelable {
             return null;
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    private BusStationItem f5725a;
+    private BusStationItem a;
     private BusStationItem b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private List<LatLonPoint> f5726c;
+    private List<LatLonPoint> c;
     private int d;
     private List<BusStationItem> e;
     private float f;
 
     public RouteBusLineItem() {
-        this.f5726c = new ArrayList();
+        this.c = new ArrayList();
         this.e = new ArrayList();
     }
 
     public RouteBusLineItem(Parcel parcel) {
         super(parcel);
-        this.f5726c = new ArrayList();
+        this.c = new ArrayList();
         this.e = new ArrayList();
-        this.f5725a = (BusStationItem) parcel.readParcelable(BusStationItem.class.getClassLoader());
+        this.a = (BusStationItem) parcel.readParcelable(BusStationItem.class.getClassLoader());
         this.b = (BusStationItem) parcel.readParcelable(BusStationItem.class.getClassLoader());
-        this.f5726c = parcel.createTypedArrayList(LatLonPoint.CREATOR);
+        this.c = parcel.createTypedArrayList(LatLonPoint.CREATOR);
         this.d = parcel.readInt();
         this.e = parcel.createTypedArrayList(BusStationItem.CREATOR);
         this.f = parcel.readFloat();
@@ -73,8 +69,8 @@ public class RouteBusLineItem extends BusLineItem implements Parcelable {
             } else if (!busStationItem.equals(routeBusLineItem.b)) {
                 return false;
             }
-            BusStationItem busStationItem2 = this.f5725a;
-            return busStationItem2 == null ? routeBusLineItem.f5725a == null : busStationItem2.equals(routeBusLineItem.f5725a);
+            BusStationItem busStationItem2 = this.a;
+            return busStationItem2 == null ? routeBusLineItem.a == null : busStationItem2.equals(routeBusLineItem.a);
         }
         return false;
     }
@@ -84,7 +80,7 @@ public class RouteBusLineItem extends BusLineItem implements Parcelable {
     }
 
     public BusStationItem getDepartureBusStation() {
-        return this.f5725a;
+        return this.a;
     }
 
     public float getDuration() {
@@ -100,7 +96,7 @@ public class RouteBusLineItem extends BusLineItem implements Parcelable {
     }
 
     public List<LatLonPoint> getPolyline() {
-        return this.f5726c;
+        return this.c;
     }
 
     @Override // com.amap.api.services.busline.BusLineItem
@@ -109,7 +105,7 @@ public class RouteBusLineItem extends BusLineItem implements Parcelable {
         BusStationItem busStationItem = this.b;
         int i = 0;
         int hashCode2 = busStationItem == null ? 0 : busStationItem.hashCode();
-        BusStationItem busStationItem2 = this.f5725a;
+        BusStationItem busStationItem2 = this.a;
         if (busStationItem2 != null) {
             i = busStationItem2.hashCode();
         }
@@ -121,7 +117,7 @@ public class RouteBusLineItem extends BusLineItem implements Parcelable {
     }
 
     public void setDepartureBusStation(BusStationItem busStationItem) {
-        this.f5725a = busStationItem;
+        this.a = busStationItem;
     }
 
     public void setDuration(float f) {
@@ -137,15 +133,15 @@ public class RouteBusLineItem extends BusLineItem implements Parcelable {
     }
 
     public void setPolyline(List<LatLonPoint> list) {
-        this.f5726c = list;
+        this.c = list;
     }
 
     @Override // com.amap.api.services.busline.BusLineItem, android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
         super.writeToParcel(parcel, i);
-        parcel.writeParcelable(this.f5725a, i);
+        parcel.writeParcelable(this.a, i);
         parcel.writeParcelable(this.b, i);
-        parcel.writeTypedList(this.f5726c);
+        parcel.writeTypedList(this.c);
         parcel.writeInt(this.d);
         parcel.writeTypedList(this.e);
         parcel.writeFloat(this.f);

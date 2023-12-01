@@ -116,7 +116,7 @@ public final class EnumBiMap<K extends Enum<K>, V extends Enum<V>> extends Abstr
         return this.keyType;
     }
 
-    @Override // com.google.common.collect.AbstractBiMap, com.google.common.collect.ForwardingMap, java.util.Map
+    @Override // com.google.common.collect.AbstractBiMap, com.google.common.collect.ForwardingMap, java.util.Map, com.google.common.collect.BiMap
     public /* bridge */ /* synthetic */ void putAll(Map map) {
         super.putAll(map);
     }

@@ -52,11 +52,11 @@ public class a extends Activity implements NotifyCallback {
     protected int S;
 
     /* renamed from: a  reason: collision with root package name */
-    protected int[] f22932a;
+    protected int[] f9324a;
     protected int[] b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected AdContentData f22933c;
+    protected AdContentData f9325c;
     protected PPSBaseDialogContentView d;
     protected PPSBaseDialogContentView e;
     protected PPSBaseDialogContentView f;
@@ -71,12 +71,12 @@ public class a extends Activity implements NotifyCallback {
 
     /* renamed from: com.huawei.openalliance.ad.activity.a$a  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/huawei/openalliance/ad/activity/a$a.class */
-    public static class ViewTreeObserver$OnGlobalLayoutListenerC0429a implements ViewTreeObserver.OnGlobalLayoutListener {
+    public static class ViewTreeObserver$OnGlobalLayoutListenerC0259a implements ViewTreeObserver.OnGlobalLayoutListener {
         private final WeakReference<Context> Code;
         private final int[] I;
         private final WeakReference<View> V;
 
-        public ViewTreeObserver$OnGlobalLayoutListenerC0429a(View view, Context context, int[] iArr) {
+        public ViewTreeObserver$OnGlobalLayoutListenerC0259a(View view, Context context, int[] iArr) {
             this.Code = new WeakReference<>(context);
             this.V = new WeakReference<>(view);
             this.I = iArr == null ? null : Arrays.copyOf(iArr, iArr.length);
@@ -172,12 +172,12 @@ public class a extends Activity implements NotifyCallback {
 
     private void F() {
         int i;
-        if (Code(this.f22932a) || Code(this.b)) {
+        if (Code(this.f9324a) || Code(this.b)) {
             ge.I(n, "mAnchorViewLoc or mAnchorViewSize is unavailable");
             return;
         }
         boolean z = true;
-        if (this.f22932a[1] + (this.b[1] >> 1) > (this.D >> 1)) {
+        if (this.f9324a[1] + (this.b[1] >> 1) > (this.D >> 1)) {
             this.e.setVisibility(8);
             this.g.setVisibility(0);
             this.h.setVisibility(8);
@@ -253,15 +253,15 @@ public class a extends Activity implements NotifyCallback {
     }
 
     private void b() {
-        if (Code(this.f22932a) || Code(this.b)) {
+        if (Code(this.f9324a) || Code(this.b)) {
             ge.I(n, "mAnchorViewLoc or mAnchorViewSize is unavailable");
             return;
         }
         ViewGroup.LayoutParams layoutParams = this.k.getLayoutParams();
         if (layoutParams instanceof RelativeLayout.LayoutParams) {
             RelativeLayout.LayoutParams layoutParams2 = (RelativeLayout.LayoutParams) layoutParams;
-            layoutParams2.width = this.f22932a[0];
-            layoutParams2.height = this.f22932a[1];
+            layoutParams2.width = this.f9324a[0];
+            layoutParams2.height = this.f9324a[1];
             this.k.setLayoutParams(layoutParams2);
         }
         ViewGroup.LayoutParams layoutParams3 = this.l.getLayoutParams();
@@ -276,14 +276,14 @@ public class a extends Activity implements NotifyCallback {
     private void c() {
         ImageView imageView;
         float f;
-        if (Code(this.f22932a) || Code(this.b)) {
+        if (Code(this.f9324a) || Code(this.b)) {
             ge.I(n, "mAnchorViewLoc or mAnchorViewSize is unavailable");
             return;
         }
         int V2 = v.V(this, 36.0f);
         int i = this.S;
         int i2 = (this.F - i) - V2;
-        int i3 = (this.f22932a[0] + (this.b[0] >> 1)) - (V2 >> 1);
+        int i3 = (this.f9324a[0] + (this.b[0] >> 1)) - (V2 >> 1);
         if (i3 >= i) {
             i = i3;
         }
@@ -316,18 +316,18 @@ public class a extends Activity implements NotifyCallback {
     /* JADX INFO: Access modifiers changed from: protected */
     public boolean B() {
         try {
-            this.f22932a = getIntent().getIntArrayExtra(at.ao);
+            this.f9324a = getIntent().getIntArrayExtra(at.ao);
             this.b = getIntent().getIntArrayExtra(at.ap);
-            if (!Code(this.f22932a) && !Code(this.b)) {
+            if (!Code(this.f9324a) && !Code(this.b)) {
                 if (ay.I()) {
-                    this.f22932a[0] = (this.F - this.f22932a[0]) - this.b[0];
-                    ge.V(n, "rtl mAnchorViewLoc[x,y]= %d, %d", Integer.valueOf(this.f22932a[0]), Integer.valueOf(this.f22932a[1]));
+                    this.f9324a[0] = (this.F - this.f9324a[0]) - this.b[0];
+                    ge.V(n, "rtl mAnchorViewLoc[x,y]= %d, %d", Integer.valueOf(this.f9324a[0]), Integer.valueOf(this.f9324a[1]));
                 }
                 if (Build.VERSION.SDK_INT < 24 || !ay.Code((Activity) this)) {
                     return true;
                 }
                 int e = ay.e(this);
-                this.f22932a[1] = this.f22932a[1] - e;
+                this.f9324a[1] = this.f9324a[1] - e;
                 ge.Code(n, "windowing mode is freeform");
                 ge.Code(n, "initDevicesInfo dragBarHeight: %s", Integer.valueOf(e));
                 return true;

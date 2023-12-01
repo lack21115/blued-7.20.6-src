@@ -11,6 +11,7 @@ import android.os.Message;
 import android.os.Process;
 import android.text.TextUtils;
 import android.util.Log;
+import com.huawei.hms.ads.fw;
 import com.tencent.smtt.sdk.TbsDownloadConfig;
 import com.tencent.smtt.utils.FileUtil;
 import com.tencent.smtt.utils.TbsLog;
@@ -39,7 +40,7 @@ public class o {
     private static FileLock l = null;
 
     /* renamed from: a  reason: collision with root package name */
-    public static ThreadLocal<Integer> f38864a = new ThreadLocal<Integer>() { // from class: com.tencent.smtt.sdk.o.1
+    public static ThreadLocal<Integer> f25173a = new ThreadLocal<Integer>() { // from class: com.tencent.smtt.sdk.o.1
         @Override // java.lang.ThreadLocal
         /* renamed from: a */
         public Integer initialValue() {
@@ -51,7 +52,7 @@ public class o {
     static boolean b = false;
 
     /* renamed from: c  reason: collision with root package name */
-    static final FileFilter f38865c = new FileFilter() { // from class: com.tencent.smtt.sdk.o.2
+    static final FileFilter f25174c = new FileFilter() { // from class: com.tencent.smtt.sdk.o.2
         @Override // java.io.FileFilter
         public boolean accept(File file) {
             String name = file.getName();
@@ -206,7 +207,7 @@ public class o {
                     properties.load(bufferedInputStream);
                     BufferedOutputStream bufferedOutputStream2 = new BufferedOutputStream(new FileOutputStream(file2));
                     try {
-                        properties.setProperty("tbs_local_installation", "true");
+                        properties.setProperty("tbs_local_installation", fw.Code);
                         properties.store(bufferedOutputStream2, (String) null);
                         TbsLog.i("TbsInstaller", "TBS_LOCAL_INSTALLATION is set!", true);
                         try {
@@ -926,7 +927,7 @@ public class o {
             if (TbsShareManager.isThirdPartyApp(context)) {
                 TbsShareManager.writeCoreInfoForThirdPartyApp(context, m(context), true);
             }
-            f38864a.set(0);
+            f25173a.set(0);
             o = 0;
         } catch (Throwable th) {
             th.printStackTrace();
@@ -949,7 +950,7 @@ public class o {
             TbsShareManager.a(context);
             m.a(context).b(0, -1);
             m.a(context).a("tpatch_num", 0);
-            f38864a.set(0);
+            f25173a.set(0);
         } catch (Exception e) {
             e.printStackTrace();
             TbsLogReport tbsLogReport = TbsLogReport.getInstance(context);
@@ -978,7 +979,7 @@ public class o {
                     n(context);
                 }
             }
-            f38864a.set(0);
+            f25173a.set(0);
         } catch (Exception e) {
             e.printStackTrace();
             TbsLogReport tbsLogReport = TbsLogReport.getInstance(context);
@@ -1107,10 +1108,10 @@ public class o {
     }
 
     public int a(boolean z, Context context) {
-        if (z || f38864a.get().intValue() <= 0) {
-            f38864a.set(Integer.valueOf(i(context)));
+        if (z || f25173a.get().intValue() <= 0) {
+            f25173a.set(Integer.valueOf(i(context)));
         }
-        return f38864a.get().intValue();
+        return f25173a.get().intValue();
     }
 
     File a(Context context, int i2, boolean z) {
@@ -1260,6 +1261,7 @@ public class o {
         }
     }
 
+    /* JADX WARN: Type inference failed for: r0v7, types: [com.tencent.smtt.sdk.o$4] */
     public boolean a(final Context context, final Context context2) {
         synchronized (this) {
             TbsLog.i("TbsInstaller", "TbsInstaller--quickDexOptForThirdPartyApp");
@@ -1777,7 +1779,7 @@ public class o {
                         if (!isThirdPartyApp) {
                             FileUtil.b(QbSdk.getTbsFolderDir(context));
                         }
-                        f38864a.set(0);
+                        f25173a.set(0);
                         str = "322";
                     } else {
                         i3 = i4 + 1;
@@ -1997,8 +1999,8 @@ public class o {
                         b();
                         return 0;
                     }
-                    f38864a.set(Integer.valueOf(Integer.parseInt(property)));
-                    int intValue = f38864a.get().intValue();
+                    f25173a.set(Integer.valueOf(Integer.parseInt(property)));
+                    int intValue = f25173a.get().intValue();
                     try {
                         bufferedInputStream.close();
                     } catch (IOException e2) {

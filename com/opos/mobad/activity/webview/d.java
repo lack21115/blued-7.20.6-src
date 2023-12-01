@@ -6,21 +6,21 @@ import java.util.Map;
 public class d {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Map<String, Object> f25658a;
+    public final Map<String, Object> f11970a;
     public final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final boolean f25659c;
+    public final boolean f11971c;
     public final boolean d;
 
     public d(Map<String, Object> map, int i, boolean z, boolean z2) {
-        this.f25658a = map;
+        this.f11970a = map;
         this.b = i;
-        this.f25659c = z;
+        this.f11971c = z;
         this.d = z2;
     }
 
     public String toString() {
-        return "WebViewInitParams{, jsInterfaceMap=" + this.f25658a + ", actionType=" + this.b + '}';
+        return "WebViewInitParams{, jsInterfaceMap=" + this.f11970a + ", actionType=" + this.b + '}';
     }
 }

@@ -9,13 +9,13 @@ import java.lang.reflect.InvocationTargetException;
 public class o {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String[] f42152a = a();
+    public final String[] f28461a = a();
 
     /* loaded from: source-8829756-dex2jar.jar:com/zx/a/I8b7/o$a.class */
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final o f42153a = new o();
+        public static final o f28462a = new o();
     }
 
     @Java2C.Method2C

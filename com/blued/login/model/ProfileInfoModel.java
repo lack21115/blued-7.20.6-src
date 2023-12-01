@@ -1,6 +1,5 @@
 package com.blued.login.model;
 
-import com.blued.android.module.common.db.model.UserAccountsModel;
 import com.blued.das.login.LoginAndRegisterProtos;
 import java.io.Serializable;
 import kotlin.Metadata;
@@ -15,24 +14,24 @@ public final class ProfileInfoModel implements Serializable {
     private LoginAndRegisterProtos.Source m;
 
     /* renamed from: a  reason: collision with root package name */
-    private String f20561a = "";
+    private String f6955a = "";
     private String b = "";
 
     /* renamed from: c  reason: collision with root package name */
-    private String f20562c = "";
+    private String f6956c = "";
     private String d = "";
     private String e = "";
     private String f = "";
     private String g = "";
     private String h = "";
     private int l = 1;
-    private String n = UserAccountsModel.ACCOUNT_THREE_ONECLICK;
+    private String n = "onclick";
     private String o = "";
     private String p = "";
     private String q = "";
 
     public final String a() {
-        return this.f20561a;
+        return this.f6955a;
     }
 
     public final void a(int i) {
@@ -45,7 +44,7 @@ public final class ProfileInfoModel implements Serializable {
 
     public final void a(String str) {
         Intrinsics.e(str, "<set-?>");
-        this.f20561a = str;
+        this.f6955a = str;
     }
 
     public final String b() {
@@ -58,12 +57,12 @@ public final class ProfileInfoModel implements Serializable {
     }
 
     public final String c() {
-        return this.f20562c;
+        return this.f6956c;
     }
 
     public final void c(String str) {
         Intrinsics.e(str, "<set-?>");
-        this.f20562c = str;
+        this.f6956c = str;
     }
 
     public final String d() {

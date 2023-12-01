@@ -23,8 +23,8 @@ public class b extends a {
     private Bitmap x;
     private Bitmap y;
 
-    public b(Context context, a.InterfaceC0708a interfaceC0708a) {
-        super(context, interfaceC0708a, 1.6289593f);
+    public b(Context context, a.InterfaceC0538a interfaceC0538a) {
+        super(context, interfaceC0538a, 1.6289593f);
         this.w = null;
         this.x = null;
         this.y = null;
@@ -40,7 +40,7 @@ public class b extends a {
     }
 
     private void o() {
-        this.n = new TextView(this.f25896a);
+        this.n = new TextView(this.f12208a);
         this.n.setId(2);
         this.n.setTextColor(Color.parseColor("#333333"));
         this.n.setTextSize(1, m() * 16.0f);
@@ -53,7 +53,7 @@ public class b extends a {
     }
 
     private void p() {
-        com.opos.cmn.e.a.a.c cVar = new com.opos.cmn.e.a.a.c(this.f25896a, 6.66f);
+        com.opos.cmn.e.a.a.c cVar = new com.opos.cmn.e.a.a.c(this.f12208a, 6.66f);
         this.t = cVar;
         cVar.setId(3);
         this.t.setScaleType(ImageView.ScaleType.FIT_XY);
@@ -65,7 +65,7 @@ public class b extends a {
     }
 
     private void q() {
-        com.opos.cmn.e.a.a.c cVar = new com.opos.cmn.e.a.a.c(this.f25896a, 6.66f);
+        com.opos.cmn.e.a.a.c cVar = new com.opos.cmn.e.a.a.c(this.f12208a, 6.66f);
         this.u = cVar;
         cVar.setScaleType(ImageView.ScaleType.FIT_XY);
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(a(107.0f), a(70.0f));
@@ -76,7 +76,7 @@ public class b extends a {
     }
 
     private void r() {
-        com.opos.cmn.e.a.a.c cVar = new com.opos.cmn.e.a.a.c(this.f25896a, 6.66f);
+        com.opos.cmn.e.a.a.c cVar = new com.opos.cmn.e.a.a.c(this.f12208a, 6.66f);
         this.v = cVar;
         cVar.setScaleType(ImageView.ScaleType.FIT_XY);
         this.v.setId(4);

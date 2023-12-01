@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.os.Parcelable;
+import com.alipay.sdk.util.l;
 import com.amap.api.col.p0003sl.hx;
 import com.amap.api.services.core.AMapException;
 import com.amap.api.services.district.DistrictResult;
@@ -17,23 +18,19 @@ import java.util.HashMap;
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/gv.class */
 public final class gv implements IDistrictSearch {
     private static HashMap<Integer, DistrictResult> f;
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f5011a;
+    private Context a;
     private DistrictSearchQuery b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private DistrictSearch.OnDistrictSearchListener f5012c;
+    private DistrictSearch.OnDistrictSearchListener c;
     private DistrictSearchQuery d;
     private int e;
     private Handler g;
 
     public gv(Context context) throws AMapException {
-        hy a2 = hx.a(context, fd.a(false));
-        if (a2.f5127a != hx.c.SuccessCode) {
-            throw new AMapException(a2.b, 1, a2.b, a2.f5127a.a());
+        hy a = hx.a(context, fd.a(false));
+        if (a.a != hx.c.SuccessCode) {
+            throw new AMapException(a.b, 1, a.b, a.a.a());
         }
-        this.f5011a = context.getApplicationContext();
+        this.a = context.getApplicationContext();
         this.g = fp.a();
     }
 
@@ -71,20 +68,20 @@ public final class gv implements IDistrictSearch {
     public final DistrictResult searchDistrict() throws AMapException {
         try {
             DistrictResult districtResult = new DistrictResult();
-            fn.a(this.f5011a);
+            fn.a(this.a);
             if (!a()) {
                 this.b = new DistrictSearchQuery();
             }
-            districtResult.setQuery(this.b.m2455clone());
+            districtResult.setQuery(this.b.m8898clone());
             if (!this.b.weakEquals(this.d)) {
                 this.e = 0;
-                this.d = this.b.m2455clone();
+                this.d = this.b.m8898clone();
                 if (f != null) {
                     f.clear();
                 }
             }
             if (this.e == 0) {
-                DistrictResult d = new fg(this.f5011a, this.b.m2455clone()).d();
+                DistrictResult d = new fg(this.a, this.b.m8898clone()).d();
                 if (d == null) {
                     return d;
                 }
@@ -92,10 +89,10 @@ public final class gv implements IDistrictSearch {
                 a(d);
                 return d;
             }
-            DistrictResult a2 = a(this.b.getPageNum());
-            DistrictResult districtResult2 = a2;
-            if (a2 == null) {
-                DistrictResult d2 = new fg(this.f5011a, this.b.m2455clone()).d();
+            DistrictResult a = a(this.b.getPageNum());
+            DistrictResult districtResult2 = a;
+            if (a == null) {
+                DistrictResult d2 = new fg(this.a, this.b.m8898clone()).d();
                 districtResult2 = d2;
                 if (this.b != null) {
                     if (d2 == null) {
@@ -144,9 +141,9 @@ public final class gv implements IDistrictSearch {
                                 searchDistrict.setAMapException(new AMapException());
                             }
                             obtainMessage.arg1 = 4;
-                            obtainMessage.obj = gv.this.f5012c;
+                            obtainMessage.obj = gv.this.c;
                             Bundle bundle = new Bundle();
-                            bundle.putParcelable("result", searchDistrict);
+                            bundle.putParcelable(l.c, searchDistrict);
                             obtainMessage.setData(bundle);
                             if (gv.this.g != null) {
                                 gv.this.g.sendMessage(obtainMessage);
@@ -154,9 +151,9 @@ public final class gv implements IDistrictSearch {
                         } catch (AMapException e) {
                             districtResult.setAMapException(e);
                             obtainMessage.arg1 = 4;
-                            obtainMessage.obj = gv.this.f5012c;
+                            obtainMessage.obj = gv.this.c;
                             Bundle bundle2 = new Bundle();
-                            bundle2.putParcelable("result", districtResult);
+                            bundle2.putParcelable(l.c, districtResult);
                             obtainMessage.setData(bundle2);
                             if (gv.this.g != null) {
                                 gv.this.g.sendMessage(obtainMessage);
@@ -164,9 +161,9 @@ public final class gv implements IDistrictSearch {
                         } catch (Throwable th) {
                             fe.a(th, "DistrictSearch", "searchDistrictAnsyThrowable");
                             obtainMessage.arg1 = 4;
-                            obtainMessage.obj = gv.this.f5012c;
+                            obtainMessage.obj = gv.this.c;
                             Bundle bundle3 = new Bundle();
-                            bundle3.putParcelable("result", districtResult2);
+                            bundle3.putParcelable(l.c, districtResult2);
                             obtainMessage.setData(bundle3);
                             if (gv.this.g != null) {
                                 gv.this.g.sendMessage(obtainMessage);
@@ -174,9 +171,9 @@ public final class gv implements IDistrictSearch {
                         }
                     } catch (Throwable th2) {
                         obtainMessage.arg1 = 4;
-                        obtainMessage.obj = gv.this.f5012c;
+                        obtainMessage.obj = gv.this.c;
                         Bundle bundle4 = new Bundle();
-                        bundle4.putParcelable("result", parcelable);
+                        bundle4.putParcelable(l.c, parcelable);
                         obtainMessage.setData(bundle4);
                         if (gv.this.g != null) {
                             gv.this.g.sendMessage(obtainMessage);
@@ -192,7 +189,7 @@ public final class gv implements IDistrictSearch {
 
     @Override // com.amap.api.services.interfaces.IDistrictSearch
     public final void setOnDistrictSearchListener(DistrictSearch.OnDistrictSearchListener onDistrictSearchListener) {
-        this.f5012c = onDistrictSearchListener;
+        this.c = onDistrictSearchListener;
     }
 
     @Override // com.amap.api.services.interfaces.IDistrictSearch

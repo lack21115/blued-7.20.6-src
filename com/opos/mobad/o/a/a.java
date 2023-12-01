@@ -11,38 +11,38 @@ import com.opos.mobad.o.a.b.c;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f27025a;
+    private Context f13337a;
     private b b;
 
     /* renamed from: c  reason: collision with root package name */
-    private com.opos.mobad.o.a.b.a f27026c;
+    private com.opos.mobad.o.a.b.a f13338c;
     private com.opos.mobad.o.a.b.b d;
     private final String e = "提交成功，感谢您的反馈！";
     private c f = new c() { // from class: com.opos.mobad.o.a.a.2
         @Override // com.opos.mobad.o.a.b.c
         public void a() {
-            if (a.this.f27026c != null) {
-                a.this.f27026c.dismiss();
+            if (a.this.f13338c != null) {
+                a.this.f13338c.dismiss();
             }
         }
 
         @Override // com.opos.mobad.o.a.b.c
         public void a(int i) {
-            if (a.this.f27026c != null) {
-                a.this.f27026c.dismiss();
+            if (a.this.f13338c != null) {
+                a.this.f13338c.dismiss();
             }
             if (a.this.b != null) {
                 a.this.b.a(i);
             }
-            Toast.makeText(a.this.f27025a, "提交成功，感谢您的反馈！", 1).show();
+            Toast.makeText(a.this.f13337a, "提交成功，感谢您的反馈！", 1).show();
         }
     };
 
     public a(Context context, b bVar) {
-        this.f27025a = context.getApplicationContext();
+        this.f13337a = context.getApplicationContext();
         this.b = bVar;
         com.opos.mobad.o.a.b.a aVar = new com.opos.mobad.o.a.b.a(context);
-        this.f27026c = aVar;
+        this.f13338c = aVar;
         aVar.setOnDismissListener(new PopupWindow.OnDismissListener() { // from class: com.opos.mobad.o.a.a.1
             @Override // android.widget.PopupWindow.OnDismissListener
             public void onDismiss() {
@@ -54,11 +54,11 @@ public class a {
     }
 
     public void a() {
-        com.opos.cmn.an.f.a.b("FeedBackPresenter", "destroy mFeedBackPopWindow =" + this.f27026c);
-        com.opos.mobad.o.a.b.a aVar = this.f27026c;
+        com.opos.cmn.an.f.a.b("FeedBackPresenter", "destroy mFeedBackPopWindow =" + this.f13338c);
+        com.opos.mobad.o.a.b.a aVar = this.f13338c;
         if (aVar != null) {
             aVar.dismiss();
-            this.f27026c.setOnDismissListener(null);
+            this.f13338c.setOnDismissListener(null);
         }
         com.opos.mobad.o.a.b.b bVar = this.d;
         if (bVar != null) {
@@ -73,9 +73,9 @@ public class a {
                     if (this.d != null) {
                         this.d.b();
                     }
-                    com.opos.mobad.o.a.b.b bVar = new com.opos.mobad.o.a.b.b(this.f27025a, this.f);
+                    com.opos.mobad.o.a.b.b bVar = new com.opos.mobad.o.a.b.b(this.f13337a, this.f);
                     this.d = bVar;
-                    this.f27026c.a(bVar.a(), -1, -1, view);
+                    this.f13338c.a(bVar.a(), -1, -1, view);
                     return;
                 }
             } catch (Exception e) {

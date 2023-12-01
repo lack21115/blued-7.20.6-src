@@ -11,25 +11,19 @@ import java.util.List;
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/net/HttpManager.class */
 public class HttpManager {
     private static HttpManager b;
-
-    /* renamed from: a  reason: collision with root package name */
-    public final Builder f9662a;
+    public final Builder a;
 
     /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/net/HttpManager$Builder.class */
     public static class Builder {
-
-        /* renamed from: a  reason: collision with root package name */
-        private Context f9663a;
+        private Context a;
         private boolean b = false;
-
-        /* renamed from: c  reason: collision with root package name */
-        private DnsManager f9664c = null;
+        private DnsManager c = null;
         private boolean d = true;
         private boolean e = false;
         private List<String> f = null;
 
         public Builder(Context context) {
-            this.f9663a = context;
+            this.a = context;
         }
 
         public Builder a(DnsManager dnsManager) {
@@ -37,7 +31,7 @@ public class HttpManager {
         }
 
         public Builder a(DnsManager dnsManager, boolean z, boolean z2) {
-            this.f9664c = dnsManager;
+            this.c = dnsManager;
             this.d = z;
             this.e = z2;
             return this;
@@ -58,7 +52,7 @@ public class HttpManager {
     }
 
     private HttpManager(Builder builder) {
-        this.f9662a = builder;
+        this.a = builder;
         HttpsIPAccessUtils.a(builder.f);
         OkHttpUtils.a();
     }
@@ -72,7 +66,7 @@ public class HttpManager {
     }
 
     public static HttpRequestWrapper a(String str, HttpResponseHandler<?> httpResponseHandler, IRequestHost iRequestHost) {
-        if (b.f9662a.b) {
+        if (b.a.b) {
             Log.a("HttpManager", "get(), url: " + str);
         }
         HttpRequestWrapper httpRequestWrapper = new HttpRequestWrapper(HttpRequestWrapper.HttpType.Get, str);
@@ -81,7 +75,7 @@ public class HttpManager {
     }
 
     public static HttpRequestWrapper a(String str, String str2, String str3, HttpResponseHandler<?> httpResponseHandler) {
-        if (b.f9662a.b) {
+        if (b.a.b) {
             Log.a("HttpManager", "upload(), url: " + str + ", uploadFilePath: " + str2);
         }
         HttpRequestWrapper httpRequestWrapper = new HttpRequestWrapper(HttpRequestWrapper.HttpType.Post, str);
@@ -91,7 +85,7 @@ public class HttpManager {
 
     public static void a(IRequestHost iRequestHost) {
         if (iRequestHost != null) {
-            if (b.f9662a.b) {
+            if (b.a.b) {
                 Log.a("HttpManager", "cancelRequests(), activeHolder hashCode: ");
             }
             OkHttpUtils.a(iRequestHost);
@@ -115,7 +109,7 @@ public class HttpManager {
     }
 
     public static HttpRequestWrapper b(String str, HttpResponseHandler<?> httpResponseHandler, IRequestHost iRequestHost) {
-        if (b.f9662a.b) {
+        if (b.a.b) {
             Log.a("HttpManager", "post(), url: " + str);
         }
         HttpRequestWrapper httpRequestWrapper = new HttpRequestWrapper(HttpRequestWrapper.HttpType.Post, str);
@@ -124,19 +118,19 @@ public class HttpManager {
     }
 
     public static boolean c() {
-        return b.f9662a.b;
+        return b.a.b;
     }
 
     public static DnsManager d() {
-        return b.f9662a.f9664c;
+        return b.a.c;
     }
 
     public static boolean e() {
-        return b.f9662a.e;
+        return b.a.e;
     }
 
     public static Context getContext() {
-        return b.f9662a.f9663a;
+        return b.a.a;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

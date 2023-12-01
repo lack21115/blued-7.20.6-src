@@ -40,7 +40,7 @@ public class FragmentBreadCrumbs extends ViewGroup implements FragmentManager.On
     }
 
     public FragmentBreadCrumbs(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, R.attr.fragmentBreadCrumbsStyle);
+        this(context, attributeSet, 18219030);
     }
 
     public FragmentBreadCrumbs(Context context, AttributeSet attributeSet, int i) {
@@ -77,7 +77,7 @@ public class FragmentBreadCrumbs extends ViewGroup implements FragmentManager.On
         };
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.FragmentBreadCrumbs, i, i2);
         this.mGravity = obtainStyledAttributes.getInt(0, DEFAULT_GRAVITY);
-        this.mLayoutResId = obtainStyledAttributes.getResourceId(1, R.layout.fragment_bread_crumb_item);
+        this.mLayoutResId = obtainStyledAttributes.getResourceId(1, 17367121);
         this.mTextColor = obtainStyledAttributes.getColor(2, 0);
         obtainStyledAttributes.recycle();
     }
@@ -113,9 +113,8 @@ public class FragmentBreadCrumbs extends ViewGroup implements FragmentManager.On
         updateCrumbs();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z, int i, int i2, int i3, int i4) {
+    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         int measuredWidth;
         int measuredWidth2;
         if (getChildCount() == 0) {
@@ -151,9 +150,8 @@ public class FragmentBreadCrumbs extends ViewGroup implements FragmentManager.On
         childAt.layout(i8, i5, i9, (i6 + measuredHeight) - i7);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         int childCount = getChildCount();
         int i3 = 0;
         int i4 = 0;
@@ -181,7 +179,7 @@ public class FragmentBreadCrumbs extends ViewGroup implements FragmentManager.On
     public void setActivity(Activity activity) {
         this.mActivity = activity;
         this.mInflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        this.mContainer = (LinearLayout) this.mInflater.inflate(R.layout.fragment_bread_crumbs, (ViewGroup) this, false);
+        this.mContainer = (LinearLayout) this.mInflater.inflate(17367123, (ViewGroup) this, false);
         addView(this.mContainer);
         activity.getFragmentManager().addOnBackStackChangedListener(this);
         updateCrumbs();
@@ -237,12 +235,12 @@ public class FragmentBreadCrumbs extends ViewGroup implements FragmentManager.On
             }
             if (i2 >= i3) {
                 View inflate = this.mInflater.inflate(this.mLayoutResId, (ViewGroup) this, false);
-                TextView textView = (TextView) inflate.findViewById(16908310);
+                TextView textView = (TextView) inflate.findViewById(android.R.id.title);
                 textView.setText(preEntry.getBreadCrumbTitle());
                 textView.setTag(preEntry);
                 textView.setTextColor(this.mTextColor);
                 if (i2 == 0) {
-                    inflate.findViewById(R.id.left_icon).setVisibility(8);
+                    inflate.findViewById(16908338).setVisibility(8);
                 }
                 this.mContainer.addView(inflate);
                 textView.setOnClickListener(this.mOnClickListener);
@@ -266,10 +264,10 @@ public class FragmentBreadCrumbs extends ViewGroup implements FragmentManager.On
                 return;
             }
             View childAt = this.mContainer.getChildAt(i7);
-            childAt.findViewById(16908310).setEnabled(i7 < i - 1);
+            childAt.findViewById(android.R.id.title).setEnabled(i7 < i - 1);
             if (this.mMaxVisible > 0) {
                 childAt.setVisibility(i7 < i - this.mMaxVisible ? 8 : 0);
-                childAt.findViewById(R.id.left_icon).setVisibility((i7 <= i - this.mMaxVisible || i7 == 0) ? 8 : 0);
+                childAt.findViewById(16908338).setVisibility((i7 <= i - this.mMaxVisible || i7 == 0) ? 8 : 0);
             }
             i6 = i7 + 1;
         }

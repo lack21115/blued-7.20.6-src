@@ -8,11 +8,11 @@ import com.anythink.expressad.video.module.a.a.m;
 public class f {
 
     /* renamed from: a  reason: collision with root package name */
-    public final long f25680a;
+    public final long f11992a;
     public final String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final String f25681c;
+    public final String f11993c;
     public final boolean d;
     public final d e;
     public final boolean f;
@@ -23,11 +23,11 @@ public class f {
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private long f25682a;
+        private long f11994a;
         private String b;
 
         /* renamed from: c  reason: collision with root package name */
-        private String f25683c;
+        private String f11995c;
         private boolean d;
         private d e;
         private boolean f;
@@ -37,7 +37,7 @@ public class f {
         private e j;
 
         private a() {
-            this.f25682a = 5000L;
+            this.f11994a = 5000L;
             this.d = true;
             this.e = null;
             this.f = false;
@@ -47,7 +47,7 @@ public class f {
         }
 
         public a(Context context) {
-            this.f25682a = 5000L;
+            this.f11994a = 5000L;
             this.d = true;
             this.e = null;
             this.f = false;
@@ -61,7 +61,7 @@ public class f {
 
         public a a(long j) {
             if (j >= m.ag && j <= 5000) {
-                this.f25682a = j;
+                this.f11994a = j;
             }
             return this;
         }
@@ -99,7 +99,7 @@ public class f {
 
         public a b(String str) {
             if (!TextUtils.isEmpty(str)) {
-                this.f25683c = str;
+                this.f11995c = str;
             }
             return this;
         }
@@ -121,9 +121,9 @@ public class f {
     }
 
     public f(a aVar) {
-        this.f25680a = aVar.f25682a;
+        this.f11992a = aVar.f11994a;
         this.b = aVar.b;
-        this.f25681c = aVar.f25683c;
+        this.f11993c = aVar.f11995c;
         this.d = aVar.d;
         this.e = aVar.e;
         this.f = aVar.f;
@@ -134,12 +134,12 @@ public class f {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("SplashAdParams{fetchTimeout=");
-        sb.append(this.f25680a);
+        sb.append(this.f11992a);
         sb.append(", title='");
         sb.append(this.b);
         sb.append('\'');
         sb.append(", desc='");
-        sb.append(this.f25681c);
+        sb.append(this.f11993c);
         sb.append('\'');
         sb.append(", showPreLoadPage=");
         sb.append(this.d);

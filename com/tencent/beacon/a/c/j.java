@@ -12,7 +12,7 @@ import java.util.Map;
 public class j {
 
     /* renamed from: a  reason: collision with root package name */
-    private static boolean f34949a = true;
+    private static boolean f21258a = true;
 
     @Deprecated
     public static Qimei a(Context context) {
@@ -26,7 +26,7 @@ public class j {
     }
 
     public static void a() {
-        if (f34949a) {
+        if (f21258a) {
             try {
                 String f = c.d().f();
                 d(f);
@@ -71,7 +71,7 @@ public class j {
     }
 
     public static void a(boolean z) {
-        f34949a = z;
+        f21258a = z;
     }
 
     @Deprecated
@@ -115,7 +115,7 @@ public class j {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static boolean c(Context context, String str) {
-        if (f34949a) {
+        if (f21258a) {
             QimeiSDK.getInstance(str).setSdkName("beacon");
             return QimeiSDK.getInstance(str).init(context);
         }

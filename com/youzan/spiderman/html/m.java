@@ -14,23 +14,23 @@ import okhttp3.ResponseBody;
 public final class m {
 
     /* renamed from: a  reason: collision with root package name */
-    private l f41847a;
+    private l f28156a;
     private HtmlHeader b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Headers f41848c;
+    private Headers f28157c;
     private Response d;
     private ResponseBody e;
     private g f;
 
     public m(l lVar, Headers headers, Response response) {
-        this.f41847a = lVar;
+        this.f28156a = lVar;
         this.b = HtmlHeader.fromMapList(headers.toMultimap());
-        this.f41848c = headers;
+        this.f28157c = headers;
         this.d = response;
         ResponseBody body = response.body();
         this.e = body;
-        this.f = new g(System.currentTimeMillis(), this.f41847a.c(), this.f41847a.a(), null, OkHttpUtil.getContentCharset(body).name());
+        this.f = new g(System.currentTimeMillis(), this.f28156a.c(), this.f28156a.a(), null, OkHttpUtil.getContentCharset(body).name());
     }
 
     public final j a(e eVar) {
@@ -40,7 +40,7 @@ public final class m {
         if (responseBody == null || (byteStream = responseBody.byteStream()) == null) {
             return null;
         }
-        if ("gzip".equalsIgnoreCase(this.f41848c.get("Content-Encoding"))) {
+        if ("gzip".equalsIgnoreCase(this.f28157c.get("Content-Encoding"))) {
             try {
                 bufferedInputStream = new BufferedInputStream(new GZIPInputStream(byteStream));
             } catch (IOException e) {

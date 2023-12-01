@@ -27,9 +27,8 @@ public class SobotRCRelativeLayout extends RelativeLayout implements Checkable, 
         rCHelper.initAttrs(context, attributeSet);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void dispatchDraw(Canvas canvas) {
+    protected void dispatchDraw(Canvas canvas) {
         canvas.saveLayer(this.mRCHelper.mLayer, null, 31);
         super.dispatchDraw(canvas);
         this.mRCHelper.onClipDraw(canvas);
@@ -63,9 +62,8 @@ public class SobotRCRelativeLayout extends RelativeLayout implements Checkable, 
         canvas.restore();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void drawableStateChanged() {
+    protected void drawableStateChanged() {
         super.drawableStateChanged();
         this.mRCHelper.drawableStateChanged(this);
     }
@@ -124,9 +122,8 @@ public class SobotRCRelativeLayout extends RelativeLayout implements Checkable, 
         return this.mRCHelper.mRoundAsCircle;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onSizeChanged(int i, int i2, int i3, int i4) {
+    protected void onSizeChanged(int i, int i2, int i3, int i4) {
         super.onSizeChanged(i, i2, i3, i4);
         this.mRCHelper.onSizeChanged(this, i, i2);
     }

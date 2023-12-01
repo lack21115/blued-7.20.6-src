@@ -16,8 +16,8 @@ public final class t {
         if (com.anythink.core.common.a.a().a(str, aiVar) != null) {
             return true;
         }
-        com.anythink.core.common.e.m a2 = com.anythink.core.b.f.a().a(aiVar);
-        return (a2 == null || a2.a()) ? false : true;
+        com.anythink.core.common.e.m a = com.anythink.core.b.f.a().a(aiVar);
+        return (a == null || a.a()) ? false : true;
     }
 
     public static boolean a(List<ai> list) {

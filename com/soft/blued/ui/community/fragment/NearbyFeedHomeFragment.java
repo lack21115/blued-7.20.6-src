@@ -1,6 +1,7 @@
 package com.soft.blued.ui.community.fragment;
 
 import android.os.Bundle;
+import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import com.blued.android.core.utils.skin.BluedSkinUtils;
@@ -22,13 +23,11 @@ public class NearbyFeedHomeFragment extends NearbyFeedFragment<NearbyFeedPresent
         }
     }
 
-    @Override // com.blued.community.ui.square.fragment.NearbyFeedFragment, com.blued.android.framework.ui.mvp.MvpFragment
     public void a(Bundle bundle) {
         super.a(bundle);
         v();
     }
 
-    @Override // skin.support.observe.SkinObserver
     public void a(SkinObservable skinObservable, Object obj) {
         v();
     }
@@ -45,16 +44,15 @@ public class NearbyFeedHomeFragment extends NearbyFeedFragment<NearbyFeedPresent
         c(str);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment
     public String getSimpleRouterName() {
         return "A60";
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    /* JADX WARN: Multi-variable type inference failed */
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        if (HomeActivity.f30985c != null) {
-            ((NearbyViewModel) ViewModelProviders.of(HomeActivity.f30985c).get(NearbyViewModel.class)).e.observe(this, new Observer<Void>() { // from class: com.soft.blued.ui.community.fragment.NearbyFeedHomeFragment.1
+        if (HomeActivity.f17295c != null) {
+            ((NearbyViewModel) ViewModelProviders.of((FragmentActivity) HomeActivity.f17295c).get(NearbyViewModel.class)).e.observe(this, new Observer<Void>() { // from class: com.soft.blued.ui.community.fragment.NearbyFeedHomeFragment.1
                 @Override // androidx.lifecycle.Observer
                 /* renamed from: a */
                 public void onChanged(Void r4) {
@@ -66,19 +64,16 @@ public class NearbyFeedHomeFragment extends NearbyFeedFragment<NearbyFeedPresent
         BluedSkinUtils.a(this);
     }
 
-    @Override // com.blued.community.ui.square.fragment.NearbyFeedFragment, com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
         BluedSkinUtils.b(this);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroyView() {
         HomeTabClick.b("find", this);
         super.onDestroyView();
     }
 
-    @Override // com.blued.community.ui.square.fragment.NearbyFeedFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onResume() {
         if (getUserVisibleHint()) {
             HomeTabClick.a("find", this);
@@ -86,7 +81,6 @@ public class NearbyFeedHomeFragment extends NearbyFeedFragment<NearbyFeedPresent
         super.onResume();
     }
 
-    @Override // com.blued.community.ui.square.fragment.NearbyFeedFragment, com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void setUserVisibleHint(boolean z) {
         if (z) {
             HomeTabClick.a("find", this);

@@ -93,9 +93,9 @@ public final class ImageHeaderParserUtils {
             @Override // com.bumptech.glide.load.ImageHeaderParserUtils.OrientationReader
             public int a(ImageHeaderParser imageHeaderParser) throws IOException {
                 try {
-                    return imageHeaderParser.a(InputStream.this, arrayPool);
+                    return imageHeaderParser.a(inputStream2, arrayPool);
                 } finally {
-                    InputStream.this.reset();
+                    inputStream2.reset();
                 }
             }
         });
@@ -166,9 +166,9 @@ public final class ImageHeaderParserUtils {
             @Override // com.bumptech.glide.load.ImageHeaderParserUtils.TypeReader
             public ImageHeaderParser.ImageType getType(ImageHeaderParser imageHeaderParser) throws IOException {
                 try {
-                    return imageHeaderParser.getType(InputStream.this);
+                    return imageHeaderParser.getType(inputStream2);
                 } finally {
-                    InputStream.this.reset();
+                    inputStream2.reset();
                 }
             }
         });
@@ -178,7 +178,7 @@ public final class ImageHeaderParserUtils {
         return byteBuffer == null ? ImageHeaderParser.ImageType.UNKNOWN : a(list, new TypeReader() { // from class: com.bumptech.glide.load.ImageHeaderParserUtils.2
             @Override // com.bumptech.glide.load.ImageHeaderParserUtils.TypeReader
             public ImageHeaderParser.ImageType getType(ImageHeaderParser imageHeaderParser) throws IOException {
-                return imageHeaderParser.getType(ByteBuffer.this);
+                return imageHeaderParser.getType(byteBuffer);
             }
         });
     }

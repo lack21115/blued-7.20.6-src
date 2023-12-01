@@ -7,9 +7,7 @@ import java.util.Map;
 
 /* loaded from: source-4169892-dex2jar.jar:com/meizu/cloud/pushsdk/d/a/b.class */
 public class b implements a {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final String f24081a = b.class.getSimpleName();
+    private final String a = b.class.getSimpleName();
     private final HashMap<String, Object> b = new HashMap<>();
 
     public b(String str, Object obj) {
@@ -40,7 +38,7 @@ public class b implements a {
     @Override // com.meizu.cloud.pushsdk.d.a.a
     @Deprecated
     public void a(String str, String str2) {
-        com.meizu.cloud.pushsdk.d.f.c.c(this.f24081a, "Payload: add(String, String) method called - Doing nothing.", new Object[0]);
+        com.meizu.cloud.pushsdk.d.f.c.c(this.a, "Payload: add(String, String) method called - Doing nothing.", new Object[0]);
     }
 
     @Override // com.meizu.cloud.pushsdk.d.a.a
@@ -49,6 +47,6 @@ public class b implements a {
     }
 
     public String toString() {
-        return e.a((Map) this.b).toString();
+        return e.a(this.b).toString();
     }
 }

@@ -9,7 +9,7 @@ public class YYcollectorMode {
     private long next_jewel;
 
     /* renamed from: skin  reason: collision with root package name */
-    private SkinDTO f17633skin;
+    private SkinDTO f58skin;
     private String status;
 
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/model/YYcollectorMode$SkinDTO.class */
@@ -82,7 +82,7 @@ public class YYcollectorMode {
     }
 
     public SkinDTO getSkin() {
-        return this.f17633skin;
+        return this.f58skin;
     }
 
     public String getStatus() {
@@ -110,7 +110,7 @@ public class YYcollectorMode {
     }
 
     public void setSkin(SkinDTO skinDTO) {
-        this.f17633skin = skinDTO;
+        this.f58skin = skinDTO;
     }
 
     public void setStatus(String str) {

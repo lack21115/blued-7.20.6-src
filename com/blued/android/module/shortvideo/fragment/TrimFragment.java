@@ -34,9 +34,7 @@ import com.bytedance.applog.tracker.Tracker;
 public class TrimFragment extends ShortVideoBaseFragment<ITrimView, TrimPresenter> implements View.OnClickListener, ITrimBottomCallback, ITrimView {
     private static DeleteAutoCheckedListener q;
     private VideoView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private RelativeLayout f15744c;
+    private RelativeLayout c;
     private ImageView n;
     private Dialog o;
     private TrimNewBottomView p;
@@ -136,8 +134,8 @@ public class TrimFragment extends ShortVideoBaseFragment<ITrimView, TrimPresente
 
     @Override // com.blued.android.module.shortvideo.fragment.ShortVideoBaseFragment
     protected void b(Bundle bundle) {
-        this.f15744c = (RelativeLayout) this.m.findViewById(R.id.layoutTop);
-        StatusBarHelper.a(getActivity(), this.f15744c);
+        this.c = (RelativeLayout) this.m.findViewById(R.id.layoutTop);
+        StatusBarHelper.a((Activity) getActivity(), (View) this.c);
         this.n = (ImageView) this.m.findViewById(R.id.btnBack);
         this.p = (TrimNewBottomView) this.m.findViewById(R.id.stv_trim_bottom_v);
         this.b = (VideoView) this.m.findViewById(R.id.stv_trim_preview);
@@ -190,7 +188,7 @@ public class TrimFragment extends ShortVideoBaseFragment<ITrimView, TrimPresente
     @Override // com.blued.android.module.shortvideo.fragment.ShortVideoBaseFragment
     protected void h() {
         this.n.setOnClickListener(this);
-        StvViewUtils.e(getContext(), this.f15744c);
+        StvViewUtils.e(getContext(), this.c);
     }
 
     public void i() {
@@ -211,7 +209,7 @@ public class TrimFragment extends ShortVideoBaseFragment<ITrimView, TrimPresente
         }
     }
 
-    @Override // com.blued.android.module.shortvideo.fragment.ShortVideoBaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.shortvideo.fragment.ShortVideoBaseFragment
     public void onActivityResult(int i, int i2, Intent intent) {
         super.onActivityResult(i, i2, intent);
         if (i2 == -1 && i == 200 && getActivity() != null) {
@@ -235,7 +233,7 @@ public class TrimFragment extends ShortVideoBaseFragment<ITrimView, TrimPresente
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         if (this.m == null) {
             super.a(layoutInflater, R.layout.activity_stv_trim, viewGroup, bundle);
@@ -245,7 +243,7 @@ public class TrimFragment extends ShortVideoBaseFragment<ITrimView, TrimPresente
         return this.m;
     }
 
-    @Override // com.blued.android.module.shortvideo.fragment.ShortVideoBaseFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.shortvideo.fragment.ShortVideoBaseFragment, com.blued.android.core.ui.BaseFragment
     public void onDestroy() {
         super.onDestroy();
         TrimNewBottomView trimNewBottomView = this.p;
@@ -254,7 +252,7 @@ public class TrimFragment extends ShortVideoBaseFragment<ITrimView, TrimPresente
         }
     }
 
-    @Override // com.blued.android.module.shortvideo.fragment.ShortVideoBaseFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.shortvideo.fragment.ShortVideoBaseFragment, com.blued.android.core.ui.BaseFragment
     public void onPause() {
         super.onPause();
         TrimNewBottomView trimNewBottomView = this.p;
@@ -263,7 +261,7 @@ public class TrimFragment extends ShortVideoBaseFragment<ITrimView, TrimPresente
         }
     }
 
-    @Override // com.blued.android.module.shortvideo.fragment.ShortVideoBaseFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.shortvideo.fragment.ShortVideoBaseFragment, com.blued.android.core.ui.BaseFragment
     public void onResume() {
         super.onResume();
         TrimNewBottomView trimNewBottomView = this.p;
@@ -272,7 +270,7 @@ public class TrimFragment extends ShortVideoBaseFragment<ITrimView, TrimPresente
         }
     }
 
-    @Override // com.blued.android.module.shortvideo.fragment.ShortVideoBaseFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.shortvideo.fragment.ShortVideoBaseFragment, com.blued.android.core.ui.BaseFragment
     public void onSaveInstanceState(Bundle bundle) {
         super.onSaveInstanceState(bundle);
         if (bundle != null) {

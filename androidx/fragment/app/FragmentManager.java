@@ -41,7 +41,6 @@ import androidx.lifecycle.LifecycleEventObserver;
 import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.ViewModelStore;
 import androidx.lifecycle.ViewModelStoreOwner;
-import com.alipay.sdk.util.i;
 import com.igexin.push.core.b;
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
@@ -62,7 +61,7 @@ public abstract class FragmentManager implements FragmentResultOwner {
     public static final int POP_BACK_STACK_INCLUSIVE = 1;
 
     /* renamed from: a  reason: collision with root package name */
-    static boolean f2967a = true;
+    static boolean f2919a = true;
     private static boolean f = false;
     private ActivityResultLauncher<Intent> C;
     private ActivityResultLauncher<IntentSenderRequest> D;
@@ -117,7 +116,7 @@ public abstract class FragmentManager implements FragmentResultOwner {
     private final CopyOnWriteArrayList<FragmentOnAttachListener> u = new CopyOnWriteArrayList<>();
 
     /* renamed from: c  reason: collision with root package name */
-    int f2968c = -1;
+    int f2920c = -1;
     private FragmentFactory y = null;
     private FragmentFactory z = new FragmentFactory() { // from class: androidx.fragment.app.FragmentManager.3
         @Override // androidx.fragment.app.FragmentFactory
@@ -260,16 +259,16 @@ public abstract class FragmentManager implements FragmentResultOwner {
         };
 
         /* renamed from: a  reason: collision with root package name */
-        String f2982a;
+        String f2934a;
         int b;
 
         LaunchedFragmentInfo(Parcel parcel) {
-            this.f2982a = parcel.readString();
+            this.f2934a = parcel.readString();
             this.b = parcel.readInt();
         }
 
         LaunchedFragmentInfo(String str, int i) {
-            this.f2982a = str;
+            this.f2934a = str;
             this.b = i;
         }
 
@@ -280,7 +279,7 @@ public abstract class FragmentManager implements FragmentResultOwner {
 
         @Override // android.os.Parcelable
         public void writeToParcel(Parcel parcel, int i) {
-            parcel.writeString(this.f2982a);
+            parcel.writeString(this.f2934a);
             parcel.writeInt(this.b);
         }
     }
@@ -289,20 +288,20 @@ public abstract class FragmentManager implements FragmentResultOwner {
     static class LifecycleAwareResultListener implements FragmentResultListener {
 
         /* renamed from: a  reason: collision with root package name */
-        private final Lifecycle f2983a;
+        private final Lifecycle f2935a;
         private final FragmentResultListener b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final LifecycleEventObserver f2984c;
+        private final LifecycleEventObserver f2936c;
 
         LifecycleAwareResultListener(Lifecycle lifecycle, FragmentResultListener fragmentResultListener, LifecycleEventObserver lifecycleEventObserver) {
-            this.f2983a = lifecycle;
+            this.f2935a = lifecycle;
             this.b = fragmentResultListener;
-            this.f2984c = lifecycleEventObserver;
+            this.f2936c = lifecycleEventObserver;
         }
 
         public boolean isAtLeast(Lifecycle.State state) {
-            return this.f2983a.getCurrentState().isAtLeast(state);
+            return this.f2935a.getCurrentState().isAtLeast(state);
         }
 
         @Override // androidx.fragment.app.FragmentResultListener
@@ -311,7 +310,7 @@ public abstract class FragmentManager implements FragmentResultOwner {
         }
 
         public void removeObserver() {
-            this.f2983a.removeObserver(this.f2984c);
+            this.f2935a.removeObserver(this.f2936c);
         }
     }
 
@@ -330,22 +329,22 @@ public abstract class FragmentManager implements FragmentResultOwner {
     class PopBackStackState implements OpGenerator {
 
         /* renamed from: a  reason: collision with root package name */
-        final String f2985a;
+        final String f2937a;
         final int b;
 
         /* renamed from: c  reason: collision with root package name */
-        final int f2986c;
+        final int f2938c;
 
         PopBackStackState(String str, int i, int i2) {
-            this.f2985a = str;
+            this.f2937a = str;
             this.b = i;
-            this.f2986c = i2;
+            this.f2938c = i2;
         }
 
         @Override // androidx.fragment.app.FragmentManager.OpGenerator
         public boolean generateOps(ArrayList<BackStackRecord> arrayList, ArrayList<Boolean> arrayList2) {
-            if (FragmentManager.this.d == null || this.b >= 0 || this.f2985a != null || !FragmentManager.this.d.getChildFragmentManager().popBackStackImmediate()) {
-                return FragmentManager.this.a(arrayList, arrayList2, this.f2985a, this.b, this.f2986c);
+            if (FragmentManager.this.d == null || this.b >= 0 || this.f2937a != null || !FragmentManager.this.d.getChildFragmentManager().popBackStackImmediate()) {
+                return FragmentManager.this.a(arrayList, arrayList2, this.f2937a, this.b, this.f2938c);
             }
             return false;
         }
@@ -356,49 +355,49 @@ public abstract class FragmentManager implements FragmentResultOwner {
     public static class StartEnterTransitionListener implements Fragment.OnStartEnterTransitionListener {
 
         /* renamed from: a  reason: collision with root package name */
-        final boolean f2987a;
+        final boolean f2939a;
         final BackStackRecord b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f2988c;
+        private int f2940c;
 
         StartEnterTransitionListener(BackStackRecord backStackRecord, boolean z) {
-            this.f2987a = z;
+            this.f2939a = z;
             this.b = backStackRecord;
         }
 
         void a() {
-            boolean z = this.f2988c > 0;
-            for (Fragment fragment : this.b.f2900a.getFragments()) {
+            boolean z = this.f2940c > 0;
+            for (Fragment fragment : this.b.f2852a.getFragments()) {
                 fragment.setOnStartEnterTransitionListener(null);
                 if (z && fragment.isPostponed()) {
                     fragment.startPostponedEnterTransition();
                 }
             }
-            this.b.f2900a.a(this.b, this.f2987a, !z, true);
+            this.b.f2852a.a(this.b, this.f2939a, !z, true);
         }
 
         void b() {
-            this.b.f2900a.a(this.b, this.f2987a, false, false);
+            this.b.f2852a.a(this.b, this.f2939a, false, false);
         }
 
         public boolean isReady() {
-            return this.f2988c == 0;
+            return this.f2940c == 0;
         }
 
         @Override // androidx.fragment.app.Fragment.OnStartEnterTransitionListener
         public void onStartEnterTransition() {
-            int i = this.f2988c - 1;
-            this.f2988c = i;
+            int i = this.f2940c - 1;
+            this.f2940c = i;
             if (i != 0) {
                 return;
             }
-            this.b.f2900a.d();
+            this.b.f2852a.d();
         }
 
         @Override // androidx.fragment.app.Fragment.OnStartEnterTransitionListener
         public void startListening() {
-            this.f2988c++;
+            this.f2940c++;
         }
     }
 
@@ -436,7 +435,7 @@ public abstract class FragmentManager implements FragmentResultOwner {
     }
 
     private void G() {
-        if (f2967a) {
+        if (f2919a) {
             for (SpecialEffectsController specialEffectsController : I()) {
                 specialEffectsController.b();
             }
@@ -448,7 +447,7 @@ public abstract class FragmentManager implements FragmentResultOwner {
     }
 
     private void H() {
-        if (f2967a) {
+        if (f2919a) {
             for (SpecialEffectsController specialEffectsController : I()) {
                 specialEffectsController.d();
             }
@@ -606,7 +605,7 @@ public abstract class FragmentManager implements FragmentResultOwner {
                 return;
             }
             StartEnterTransitionListener startEnterTransitionListener = this.N.get(i3);
-            if (arrayList == null || startEnterTransitionListener.f2987a || (indexOf2 = arrayList.indexOf(startEnterTransitionListener.b)) == -1 || arrayList2 == null || !arrayList2.get(indexOf2).booleanValue()) {
+            if (arrayList == null || startEnterTransitionListener.f2939a || (indexOf2 = arrayList.indexOf(startEnterTransitionListener.b)) == -1 || arrayList2 == null || !arrayList2.get(indexOf2).booleanValue()) {
                 if (!startEnterTransitionListener.isReady()) {
                     size = i4;
                     i = i3;
@@ -620,7 +619,7 @@ public abstract class FragmentManager implements FragmentResultOwner {
                 this.N.remove(i3);
                 i = i3 - 1;
                 size = i4 - 1;
-                if (arrayList == null || startEnterTransitionListener.f2987a || (indexOf = arrayList.indexOf(startEnterTransitionListener.b)) == -1 || arrayList2 == null || !arrayList2.get(indexOf).booleanValue()) {
+                if (arrayList == null || startEnterTransitionListener.f2939a || (indexOf = arrayList.indexOf(startEnterTransitionListener.b)) == -1 || arrayList2 == null || !arrayList2.get(indexOf).booleanValue()) {
                     startEnterTransitionListener.a();
                 } else {
                     startEnterTransitionListener.b();
@@ -653,8 +652,8 @@ public abstract class FragmentManager implements FragmentResultOwner {
             z2 = z2 || backStackRecord.j;
         }
         this.M.clear();
-        if (!z && this.f2968c >= 1) {
-            if (f2967a) {
+        if (!z && this.f2920c >= 1) {
+            if (f2919a) {
                 int i5 = i;
                 while (true) {
                     int i6 = i5;
@@ -675,7 +674,7 @@ public abstract class FragmentManager implements FragmentResultOwner {
             }
         }
         b(arrayList, arrayList2, i, i2);
-        if (f2967a) {
+        if (f2919a) {
             boolean booleanValue = arrayList2.get(i2 - 1).booleanValue();
             int i7 = i;
             while (true) {
@@ -707,7 +706,7 @@ public abstract class FragmentManager implements FragmentResultOwner {
                 }
                 i7 = i8 + 1;
             }
-            a(this.f2968c, true);
+            a(this.f2920c, true);
             for (SpecialEffectsController specialEffectsController : a(arrayList, i, i2)) {
                 specialEffectsController.a(booleanValue);
                 specialEffectsController.a();
@@ -725,17 +724,17 @@ public abstract class FragmentManager implements FragmentResultOwner {
             if (i3 == i || !z) {
                 arrayList2 = arrayList2;
             } else {
-                if (this.f2968c >= 1) {
+                if (this.f2920c >= 1) {
                     FragmentTransition.a(this.v.getContext(), this.w, arrayList, arrayList2, i, i3, true, this.s);
                 }
                 arrayList2 = arrayList2;
-                a(this.f2968c, true);
+                a(this.f2920c, true);
             }
         }
         while (i < i2) {
             BackStackRecord backStackRecord3 = arrayList.get(i);
-            if (arrayList2.get(i).booleanValue() && backStackRecord3.f2901c >= 0) {
-                backStackRecord3.f2901c = -1;
+            if (arrayList2.get(i).booleanValue() && backStackRecord3.f2853c >= 0) {
+                backStackRecord3.f2853c = -1;
             }
             backStackRecord3.runOnCommitRunnables();
             i++;
@@ -785,7 +784,7 @@ public abstract class FragmentManager implements FragmentResultOwner {
     }
 
     private void b(ArraySet<Fragment> arraySet) {
-        int i = this.f2968c;
+        int i = this.f2920c;
         if (i < 1) {
             return;
         }
@@ -904,7 +903,7 @@ public abstract class FragmentManager implements FragmentResultOwner {
             this.h = true;
             this.i.a(i);
             a(i, false);
-            if (f2967a) {
+            if (f2919a) {
                 for (SpecialEffectsController specialEffectsController : I()) {
                     specialEffectsController.d();
                 }
@@ -951,7 +950,7 @@ public abstract class FragmentManager implements FragmentResultOwner {
     }
 
     public static void enableNewStateManager(boolean z) {
-        f2967a = z;
+        f2919a = z;
     }
 
     public static <F extends Fragment> F findFragment(View view) {
@@ -1107,9 +1106,9 @@ public abstract class FragmentManager implements FragmentResultOwner {
         if (this.v == null && i != -1) {
             throw new IllegalStateException("No activity");
         }
-        if (z || i != this.f2968c) {
-            this.f2968c = i;
-            if (f2967a) {
+        if (z || i != this.f2920c) {
+            this.f2920c = i;
+            if (f2919a) {
                 this.i.c();
             } else {
                 for (Fragment fragment : this.i.h()) {
@@ -1126,7 +1125,7 @@ public abstract class FragmentManager implements FragmentResultOwner {
                 }
             }
             D();
-            if (this.F && (fragmentHostCallback = this.v) != null && this.f2968c == 7) {
+            if (this.F && (fragmentHostCallback = this.v) != null && this.f2920c == 7) {
                 fragmentHostCallback.onSupportInvalidateOptionsMenu();
                 this.F = false;
             }
@@ -1149,11 +1148,11 @@ public abstract class FragmentManager implements FragmentResultOwner {
             return;
         }
         FragmentManagerState fragmentManagerState = (FragmentManagerState) parcelable;
-        if (fragmentManagerState.f2991a == null) {
+        if (fragmentManagerState.f2943a == null) {
             return;
         }
         this.i.b();
-        Iterator<FragmentState> it = fragmentManagerState.f2991a.iterator();
+        Iterator<FragmentState> it = fragmentManagerState.f2943a.iterator();
         while (it.hasNext()) {
             FragmentState next = it.next();
             if (next != null) {
@@ -1173,13 +1172,13 @@ public abstract class FragmentManager implements FragmentResultOwner {
                 }
                 fragmentStateManager.a(this.v.getContext().getClassLoader());
                 this.i.a(fragmentStateManager);
-                fragmentStateManager.a(this.f2968c);
+                fragmentStateManager.a(this.f2920c);
             }
         }
         for (Fragment fragment : this.O.b()) {
             if (!this.i.b(fragment.mWho)) {
                 if (a(2)) {
-                    Log.v("FragmentManager", "Discarding retained Fragment " + fragment + " that was not found in the set of active Fragments " + fragmentManagerState.f2991a);
+                    Log.v("FragmentManager", "Discarding retained Fragment " + fragment + " that was not found in the set of active Fragments " + fragmentManagerState.f2943a);
                 }
                 this.O.c(fragment);
                 fragment.mFragmentManager = this;
@@ -1191,17 +1190,17 @@ public abstract class FragmentManager implements FragmentResultOwner {
             }
         }
         this.i.a(fragmentManagerState.b);
-        if (fragmentManagerState.f2992c != null) {
-            this.b = new ArrayList<>(fragmentManagerState.f2992c.length);
+        if (fragmentManagerState.f2944c != null) {
+            this.b = new ArrayList<>(fragmentManagerState.f2944c.length);
             int i = 0;
             while (true) {
                 int i2 = i;
-                if (i2 >= fragmentManagerState.f2992c.length) {
+                if (i2 >= fragmentManagerState.f2944c.length) {
                     break;
                 }
-                BackStackRecord instantiate = fragmentManagerState.f2992c[i2].instantiate(this);
+                BackStackRecord instantiate = fragmentManagerState.f2944c[i2].instantiate(this);
                 if (a(2)) {
-                    Log.v("FragmentManager", "restoreAllState: back stack #" + i2 + " (index " + instantiate.f2901c + "): " + instantiate);
+                    Log.v("FragmentManager", "restoreAllState: back stack #" + i2 + " (index " + instantiate.f2853c + "): " + instantiate);
                     PrintWriter printWriter = new PrintWriter(new LogWriter("FragmentManager"));
                     instantiate.dump("  ", printWriter, false);
                     printWriter.close();
@@ -1262,11 +1261,11 @@ public abstract class FragmentManager implements FragmentResultOwner {
         ArrayList arrayList2 = new ArrayList(1);
         arrayList.add(backStackRecord);
         arrayList2.add(Boolean.valueOf(z));
-        if (z2 && this.f2968c >= 1) {
+        if (z2 && this.f2920c >= 1) {
             FragmentTransition.a(this.v.getContext(), this.w, arrayList, arrayList2, 0, 1, true, this.s);
         }
         if (z3) {
-            a(this.f2968c, true);
+            a(this.f2920c, true);
         }
         for (Fragment fragment : this.i.i()) {
             if (fragment != null && fragment.mView != null && fragment.mIsNewlyAdded && backStackRecord.b(fragment.mContainerId)) {
@@ -1440,7 +1439,7 @@ public abstract class FragmentManager implements FragmentResultOwner {
                         Log.w("FragmentManager", "No Activities were started for result for " + this);
                         return;
                     }
-                    String str3 = pollFirst.f2982a;
+                    String str3 = pollFirst.f2934a;
                     int i = pollFirst.b;
                     Fragment d = FragmentManager.this.i.d(str3);
                     if (d != null) {
@@ -1458,7 +1457,7 @@ public abstract class FragmentManager implements FragmentResultOwner {
                         Log.w("FragmentManager", "No IntentSenders were started for " + this);
                         return;
                     }
-                    String str3 = pollFirst.f2982a;
+                    String str3 = pollFirst.f2934a;
                     int i = pollFirst.b;
                     Fragment d = FragmentManager.this.i.d(str3);
                     if (d != null) {
@@ -1488,7 +1487,7 @@ public abstract class FragmentManager implements FragmentResultOwner {
                         Log.w("FragmentManager", "No permissions were requested for " + this);
                         return;
                     }
-                    String str3 = pollFirst.f2982a;
+                    String str3 = pollFirst.f2934a;
                     int i3 = pollFirst.b;
                     Fragment d = FragmentManager.this.i.d(str3);
                     if (d != null) {
@@ -1533,7 +1532,7 @@ public abstract class FragmentManager implements FragmentResultOwner {
                 return;
             }
             a2.mDeferStart = false;
-            if (f2967a) {
+            if (f2919a) {
                 fragmentStateManager.c();
             } else {
                 f(a2);
@@ -1544,7 +1543,7 @@ public abstract class FragmentManager implements FragmentResultOwner {
     /* JADX INFO: Access modifiers changed from: package-private */
     public boolean a(Menu menu) {
         boolean z = false;
-        if (this.f2968c < 1) {
+        if (this.f2920c < 1) {
             return false;
         }
         for (Fragment fragment : this.i.h()) {
@@ -1557,7 +1556,7 @@ public abstract class FragmentManager implements FragmentResultOwner {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public boolean a(Menu menu, MenuInflater menuInflater) {
-        if (this.f2968c < 1) {
+        if (this.f2920c < 1) {
             return false;
         }
         ArrayList<Fragment> arrayList = null;
@@ -1587,7 +1586,7 @@ public abstract class FragmentManager implements FragmentResultOwner {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public boolean a(MenuItem menuItem) {
-        if (this.f2968c < 1) {
+        if (this.f2920c < 1) {
             return false;
         }
         for (Fragment fragment : this.i.h()) {
@@ -1631,7 +1630,7 @@ public abstract class FragmentManager implements FragmentResultOwner {
                     break;
                 }
                 BackStackRecord backStackRecord = this.b.get(i3);
-                if ((str != null && str.equals(backStackRecord.getName())) || (i >= 0 && i == backStackRecord.f2901c)) {
+                if ((str != null && str.equals(backStackRecord.getName())) || (i >= 0 && i == backStackRecord.f2853c)) {
                     break;
                 }
                 size2 = i3;
@@ -1659,7 +1658,7 @@ public abstract class FragmentManager implements FragmentResultOwner {
                         break;
                     }
                     i5 = i6;
-                    if (i != backStackRecord2.f2901c) {
+                    if (i != backStackRecord2.f2853c) {
                         break;
                     }
                     i3 = i6;
@@ -1731,7 +1730,7 @@ public abstract class FragmentManager implements FragmentResultOwner {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void b(Menu menu) {
-        if (this.f2968c < 1) {
+        if (this.f2920c < 1) {
             return;
         }
         for (Fragment fragment : this.i.h()) {
@@ -1782,12 +1781,12 @@ public abstract class FragmentManager implements FragmentResultOwner {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public boolean b(int i) {
-        return this.f2968c >= i;
+        return this.f2920c >= i;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public boolean b(MenuItem menuItem) {
-        if (this.f2968c < 1) {
+        if (this.f2920c < 1) {
             return false;
         }
         for (Fragment fragment : this.i.h()) {
@@ -1942,7 +1941,7 @@ public abstract class FragmentManager implements FragmentResultOwner {
         }
         printWriter.print(str);
         printWriter.print("  mCurState=");
-        printWriter.print(this.f2968c);
+        printWriter.print(this.f2920c);
         printWriter.print(" mStateSaved=");
         printWriter.print(this.G);
         printWriter.print(" mStopped=");
@@ -1983,7 +1982,7 @@ public abstract class FragmentManager implements FragmentResultOwner {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void f(Fragment fragment) {
-        a(fragment, this.f2968c);
+        a(fragment, this.f2920c);
     }
 
     public Fragment findFragmentById(int i) {
@@ -2033,9 +2032,9 @@ public abstract class FragmentManager implements FragmentResultOwner {
             }
         }
         FragmentManagerState fragmentManagerState = new FragmentManagerState();
-        fragmentManagerState.f2991a = e;
+        fragmentManagerState.f2943a = e;
         fragmentManagerState.b = f2;
-        fragmentManagerState.f2992c = backStackStateArr;
+        fragmentManagerState.f2944c = backStackStateArr;
         fragmentManagerState.d = this.n.get();
         Fragment fragment = this.d;
         if (fragment != null) {
@@ -2051,7 +2050,7 @@ public abstract class FragmentManager implements FragmentResultOwner {
     public void g(Fragment fragment) {
         if (!this.i.b(fragment.mWho)) {
             if (a(3)) {
-                Log.d("FragmentManager", "Ignoring moving " + fragment + " to state " + this.f2968c + "since it is not added to " + this);
+                Log.d("FragmentManager", "Ignoring moving " + fragment + " to state " + this.f2920c + "since it is not added to " + this);
                 return;
             }
             return;
@@ -2132,7 +2131,7 @@ public abstract class FragmentManager implements FragmentResultOwner {
         }
         FragmentStateManager fragmentStateManager = new FragmentStateManager(this.t, this.i, fragment);
         fragmentStateManager.a(this.v.getContext().getClassLoader());
-        fragmentStateManager.a(this.f2968c);
+        fragmentStateManager.a(this.f2920c);
         return fragmentStateManager;
     }
 
@@ -2477,14 +2476,14 @@ public abstract class FragmentManager implements FragmentResultOwner {
             sb.append(fragment.getClass().getSimpleName());
             sb.append("{");
             sb.append(Integer.toHexString(System.identityHashCode(this.x)));
-            sb.append(i.d);
+            sb.append("}");
         } else {
             FragmentHostCallback<?> fragmentHostCallback = this.v;
             if (fragmentHostCallback != null) {
                 sb.append(fragmentHostCallback.getClass().getSimpleName());
                 sb.append("{");
                 sb.append(Integer.toHexString(System.identityHashCode(this.v)));
-                sb.append(i.d);
+                sb.append("}");
             } else {
                 sb.append(b.l);
             }

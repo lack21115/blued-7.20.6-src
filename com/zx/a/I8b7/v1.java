@@ -15,7 +15,7 @@ import javax.net.ssl.SSLSession;
 public class v1 implements HostnameVerifier {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final v1 f42218a = new v1();
+    public static final v1 f28527a = new v1();
     public static final Pattern b = Pattern.compile("([0-9a-fA-F]*:[0-9a-fA-F:.]*)|([\\d.]+)");
 
     public static List<String> a(X509Certificate x509Certificate, int i) {

@@ -5,14 +5,14 @@ import com.kwad.sdk.core.response.model.AdTemplate;
 
 /* loaded from: source-7994992-dex2jar.jar:com/kwad/components/ad/draw/a/a/a.class */
 public final class a {
-    private InterfaceC0466a cM;
+    private InterfaceC0296a cM;
     private b cN;
     private boolean cO = false;
     private AdTemplate mAdTemplate;
 
     /* renamed from: com.kwad.components.ad.draw.a.a.a$a  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/components/ad/draw/a/a/a$a.class */
-    public interface InterfaceC0466a {
+    public interface InterfaceC0296a {
         void ay();
     }
 
@@ -25,8 +25,8 @@ public final class a {
         this.mAdTemplate = adTemplate;
     }
 
-    public final void a(InterfaceC0466a interfaceC0466a) {
-        this.cM = interfaceC0466a;
+    public final void a(InterfaceC0296a interfaceC0296a) {
+        this.cM = interfaceC0296a;
     }
 
     public final void a(b bVar) {
@@ -34,7 +34,7 @@ public final class a {
     }
 
     public final void ax() {
-        InterfaceC0466a interfaceC0466a;
+        InterfaceC0296a interfaceC0296a;
         if (this.cO) {
             return;
         }
@@ -43,8 +43,8 @@ public final class a {
             return;
         }
         b bVar = this.cN;
-        if ((bVar == null || !bVar.az()) && (interfaceC0466a = this.cM) != null) {
-            interfaceC0466a.ay();
+        if ((bVar == null || !bVar.az()) && (interfaceC0296a = this.cM) != null) {
+            interfaceC0296a.ay();
         }
     }
 }

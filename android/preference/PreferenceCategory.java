@@ -1,5 +1,6 @@
 package android.preference;
 
+import android.R;
 import android.content.Context;
 import android.util.AttributeSet;
 
@@ -12,7 +13,7 @@ public class PreferenceCategory extends PreferenceGroup {
     }
 
     public PreferenceCategory(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, 16842892);
+        this(context, attributeSet, R.attr.preferenceCategoryStyle);
     }
 
     public PreferenceCategory(Context context, AttributeSet attributeSet, int i) {

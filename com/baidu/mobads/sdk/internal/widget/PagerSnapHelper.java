@@ -11,11 +11,11 @@ import androidx.recyclerview.widget.SnapHelper;
 public class PagerSnapHelper extends SnapHelper {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final int f9452a = 100;
+    private static final int f6612a = 100;
     private static final float b = 100.0f;
 
     /* renamed from: c  reason: collision with root package name */
-    private OrientationHelper f9453c;
+    private OrientationHelper f6613c;
     private OrientationHelper d;
     private RecyclerView e;
 
@@ -117,11 +117,11 @@ public class PagerSnapHelper extends SnapHelper {
     }
 
     private OrientationHelper c(RecyclerView.LayoutManager layoutManager) {
-        OrientationHelper orientationHelper = this.f9453c;
+        OrientationHelper orientationHelper = this.f6613c;
         if (orientationHelper == null || orientationHelper.getLayoutManager() != layoutManager) {
-            this.f9453c = OrientationHelper.createVerticalHelper(layoutManager);
+            this.f6613c = OrientationHelper.createVerticalHelper(layoutManager);
         }
-        return this.f9453c;
+        return this.f6613c;
     }
 
     private OrientationHelper d(RecyclerView.LayoutManager layoutManager) {

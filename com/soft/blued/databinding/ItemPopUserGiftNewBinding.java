@@ -7,11 +7,11 @@ import com.soft.blued.ui.msg.customview.GiftGivingOptionViewNew;
 public final class ItemPopUserGiftNewBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final GiftGivingOptionViewNew f29286a;
+    private final GiftGivingOptionViewNew f15596a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public GiftGivingOptionViewNew getRoot() {
-        return this.f29286a;
+        return this.f15596a;
     }
 }

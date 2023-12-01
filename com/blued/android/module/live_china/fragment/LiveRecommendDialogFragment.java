@@ -40,7 +40,6 @@ import com.blued.android.module.live_china.view.recommend.RecommendRefreshHeader
 import com.blued.das.live.LiveProtos;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
-import com.scwang.smartrefresh.layout.listener.OnMultiPurposeListener;
 import com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener;
 import java.util.ArrayList;
 import java.util.List;
@@ -48,13 +47,9 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveRecommendDialogFragment.class */
 public class LiveRecommendDialogFragment extends BaseDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public Context f13214a;
+    public Context a;
     public PlayingOnliveFragment b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private View f13215c;
+    private View c;
     private View d;
     private View e;
     private View f;
@@ -78,7 +73,7 @@ public class LiveRecommendDialogFragment extends BaseDialogFragment {
         this.n = 1;
         this.o = 20;
         this.t = 0;
-        this.f13214a = getContext();
+        this.a = getContext();
     }
 
     public LiveRecommendDialogFragment(Context context, PlayingOnliveFragment playingOnliveFragment) {
@@ -87,7 +82,7 @@ public class LiveRecommendDialogFragment extends BaseDialogFragment {
         this.n = 1;
         this.o = 20;
         this.t = 0;
-        this.f13214a = context;
+        this.a = context;
         this.b = playingOnliveFragment;
         atomicBoolean.set(false);
     }
@@ -98,7 +93,7 @@ public class LiveRecommendDialogFragment extends BaseDialogFragment {
         this.n = 1;
         this.o = 20;
         this.t = 0;
-        this.f13214a = context;
+        this.a = context;
         this.b = playingOnliveFragment;
         atomicBoolean.set(z);
     }
@@ -206,17 +201,15 @@ public class LiveRecommendDialogFragment extends BaseDialogFragment {
     }
 
     private void f() {
-        this.i.b(new RecommendRefreshHeader(this.f13214a));
-        this.i.a(new RecommendRefreshFooter(this.f13214a));
-        this.i.k(true);
-        this.i.b((OnMultiPurposeListener) new SimpleMultiPurposeListener() { // from class: com.blued.android.module.live_china.fragment.LiveRecommendDialogFragment.1
-            @Override // com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener, com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
+        this.i.a(new RecommendRefreshHeader(this.a));
+        this.i.a(new RecommendRefreshFooter(this.a));
+        this.i.d(true);
+        this.i.a(new SimpleMultiPurposeListener() { // from class: com.blued.android.module.live_china.fragment.LiveRecommendDialogFragment.1
             public void onLoadMore(RefreshLayout refreshLayout) {
                 LiveRecommendDialogFragment.a(LiveRecommendDialogFragment.this);
                 LiveRecommendDialogFragment.this.i();
             }
 
-            @Override // com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener, com.scwang.smartrefresh.layout.listener.OnRefreshListener
             public void onRefresh(RefreshLayout refreshLayout) {
                 LiveRecommendDialogFragment.this.n = 1;
                 LiveRecommendDialogFragment.this.i();
@@ -236,7 +229,6 @@ public class LiveRecommendDialogFragment extends BaseDialogFragment {
         });
         if (this.m.get()) {
             this.h.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: com.blued.android.module.live_china.fragment.LiveRecommendDialogFragment.2
-                @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
                 public void onScrollStateChanged(RecyclerView recyclerView, int i) {
                     super.onScrollStateChanged(recyclerView, i);
                     if (LiveRecommendDialogFragment.this.m.get() && i == 1) {
@@ -248,7 +240,7 @@ public class LiveRecommendDialogFragment extends BaseDialogFragment {
     }
 
     private void g() {
-        this.j = new LiveRecommendAdapter(this.f13214a, new LiveRecommendAdapter.LiveClickCallBack() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveRecommendDialogFragment$xQlGN6D2Xz52rxxr_jBvNOfTEjQ
+        this.j = new LiveRecommendAdapter(this.a, new LiveRecommendAdapter.LiveClickCallBack() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveRecommendDialogFragment$xQlGN6D2Xz52rxxr_jBvNOfTEjQ
             @Override // com.blued.android.module.live_china.adapter.LiveRecommendAdapter.LiveClickCallBack
             public final void addDesireSuccess(LiverecommendListData liverecommendListData) {
                 LiveRecommendDialogFragment.this.b(liverecommendListData);
@@ -290,7 +282,7 @@ public class LiveRecommendDialogFragment extends BaseDialogFragment {
                         LiveRecommendDialogFragment.this.j();
                         return;
                     }
-                    LiveRecommendDialogFragment.this.i.k(false);
+                    LiveRecommendDialogFragment.this.i.d(false);
                     LiveRecommendDialogFragment.this.i.i(true);
                 } else {
                     if (LiveRecommendDialogFragment.this.k == null) {
@@ -312,7 +304,7 @@ public class LiveRecommendDialogFragment extends BaseDialogFragment {
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 super.onUIFinish();
-                LiveRecommendDialogFragment.this.i.j();
+                LiveRecommendDialogFragment.this.i.g();
                 LiveRecommendDialogFragment.this.i.h();
             }
 
@@ -343,7 +335,7 @@ public class LiveRecommendDialogFragment extends BaseDialogFragment {
         InstantLog.a("live_room_slide");
         this.b.aT.setVisibility(8);
         LiveFloatManager.a().b(false);
-        if (!LiveDataListManager.a().a(this.f13214a, this.b.t, 0, "room_recommend")) {
+        if (!LiveDataListManager.a().a(this.a, this.b.t, 0, "room_recommend")) {
             LiveFloatManager.a().n();
         }
         this.b.T();
@@ -357,12 +349,12 @@ public class LiveRecommendDialogFragment extends BaseDialogFragment {
         view.setPivotX(view.getWidth());
         this.g.setPivotX(0.0f);
         this.r = new DecelerateInterpolator(2.0f);
-        this.f13215c.setOnTouchListener(new View.OnTouchListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveRecommendDialogFragment$kVS_IPDhWQgETAgz_jkxPB3ZvfQ
+        this.c.setOnTouchListener(new View.OnTouchListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveRecommendDialogFragment$kVS_IPDhWQgETAgz_jkxPB3ZvfQ
             @Override // android.view.View.OnTouchListener
             public final boolean onTouch(View view2, MotionEvent motionEvent) {
-                boolean a2;
-                a2 = LiveRecommendDialogFragment.this.a(view2, motionEvent);
-                return a2;
+                boolean a;
+                a = LiveRecommendDialogFragment.this.a(view2, motionEvent);
+                return a;
             }
         });
     }
@@ -379,7 +371,6 @@ public class LiveRecommendDialogFragment extends BaseDialogFragment {
         return true;
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public void dismiss() {
         this.m.set(false);
         if (getActivity() == null || getActivity().isFinishing() || getDialog() == null || !getDialog().isShowing()) {
@@ -388,7 +379,7 @@ public class LiveRecommendDialogFragment extends BaseDialogFragment {
         super.dismissAllowingStateLoss();
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onCreate(Bundle bundle) {
         if (bundle != null && d()) {
             bundle.remove("android:support:fragments");
@@ -396,13 +387,12 @@ public class LiveRecommendDialogFragment extends BaseDialogFragment {
         super.onCreate(bundle);
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
         int height;
-        this.f13214a = getActivity();
+        this.a = getActivity();
         View inflate = getActivity().getLayoutInflater().inflate(R.layout.dialog_live_recommend, (ViewGroup) null);
         int i = -1;
-        if (this.f13214a.getResources().getConfiguration().orientation == 1) {
+        if (this.a.getResources().getConfiguration().orientation == 1) {
             i = getActivity().getWindowManager().getDefaultDisplay().getWidth();
             height = -1;
         } else {
@@ -426,17 +416,17 @@ public class LiveRecommendDialogFragment extends BaseDialogFragment {
         return dialog;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(0));
         View inflate = layoutInflater.inflate(R.layout.dialog_live_recommend, viewGroup);
-        this.f13215c = inflate.findViewById(R.id.view_gesture);
+        this.c = inflate.findViewById(R.id.view_gesture);
         this.d = inflate.findViewById(R.id.rl_data_error);
         this.e = inflate.findViewById(R.id.iv_recommend_side);
         this.f = inflate.findViewById(R.id.rl_content);
         this.g = inflate.findViewById(R.id.rl_list_root);
-        this.h = (RecyclerView) inflate.findViewById(R.id.recycler_view);
-        this.i = (SmartRefreshLayout) inflate.findViewById(R.id.smart_refresh);
+        this.h = inflate.findViewById(R.id.recycler_view);
+        this.i = inflate.findViewById(R.id.smart_refresh);
         this.l = (ImageView) inflate.findViewById(R.id.img_live_recommend);
         ImageLoader.c(a(), "img_live_recommend.png").g(-1).f().a(this.l);
         f();
@@ -448,7 +438,6 @@ public class LiveRecommendDialogFragment extends BaseDialogFragment {
         return inflate;
     }
 
-    @Override // androidx.fragment.app.DialogFragment, androidx.fragment.app.Fragment
     public void onSaveInstanceState(Bundle bundle) {
         super.onSaveInstanceState(bundle);
         if (bundle == null || !d()) {
@@ -457,7 +446,7 @@ public class LiveRecommendDialogFragment extends BaseDialogFragment {
         bundle.remove("android:support:fragments");
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void show(FragmentManager fragmentManager, String str) {
         try {
             EventTrackLive.a(LiveProtos.Event.LIVE_RECOMMEND_FOR_YOU_PAGE_SHOW, LiveRoomManager.a().e(), LiveRoomManager.a().g());

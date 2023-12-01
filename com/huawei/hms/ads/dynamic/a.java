@@ -4,11 +4,11 @@ package com.huawei.hms.ads.dynamic;
 public interface a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f22459a = "content://com.huawei.hms";
+    public static final String f8851a = "content://com.huawei.hms";
     public static final String b = "DynamicLoader";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f22460c = "DynamicInstaller";
+    public static final String f8852c = "DynamicInstaller";
     public static final String d = "errcode";
     public static final String e = "resolution";
     public static final String f = "module_name";

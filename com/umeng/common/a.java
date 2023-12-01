@@ -13,11 +13,11 @@ import com.umeng.commonsdk.utils.UMUtils;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f40824a;
+    private static String f27133a;
     private static final String b = "umeng+";
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f40825c = "ek__id";
+    private static final String f27134c = "ek__id";
     private static final String d = "ek_key";
     private static String e = "";
     private static final String f = at.b().b(at.n);
@@ -75,7 +75,7 @@ public class a {
 
     public String a(String str) {
         try {
-            return TextUtils.isEmpty(f40824a) ? str : Base64.encodeToString(DataHelper.encrypt(str.getBytes(), f40824a.getBytes()), 0);
+            return TextUtils.isEmpty(f27133a) ? str : Base64.encodeToString(DataHelper.encrypt(str.getBytes(), f27133a.getBytes()), 0);
         } catch (Exception e2) {
             return null;
         }
@@ -83,19 +83,19 @@ public class a {
 
     public void a(Context context) {
         try {
-            if (TextUtils.isEmpty(f40824a)) {
-                String multiProcessSP = UMUtils.getMultiProcessSP(context, f40825c);
+            if (TextUtils.isEmpty(f27133a)) {
+                String multiProcessSP = UMUtils.getMultiProcessSP(context, f27134c);
                 if (!TextUtils.isEmpty(multiProcessSP)) {
                     e = c(multiProcessSP);
                     UMRTLog.e(UMRTLog.RTLOG_TAG, "--->>>> primaryKey: " + e);
                 }
                 SharedPreferences sharedPreferences = context.getApplicationContext().getSharedPreferences(f, 0);
                 if (sharedPreferences != null) {
-                    g = sharedPreferences.getString(f40825c, null);
+                    g = sharedPreferences.getString(f27134c, null);
                     UMRTLog.e(UMRTLog.RTLOG_TAG, "--->>> 子进程备份秘钥：主进程key: " + g);
                 }
-                f40824a = c(UMUtils.genId());
-                UMRTLog.e(UMRTLog.RTLOG_TAG, "--->>>> 正式秘钥：key: " + f40824a);
+                f27133a = c(UMUtils.genId());
+                UMRTLog.e(UMRTLog.RTLOG_TAG, "--->>>> 正式秘钥：key: " + f27133a);
             }
         } catch (Throwable th) {
         }
@@ -104,8 +104,8 @@ public class a {
     public String b(String str) {
         String str2 = null;
         try {
-            if (!TextUtils.isEmpty(f40824a)) {
-                str = new String(DataHelper.decrypt(Base64.decode(str.getBytes(), 0), f40824a.getBytes()));
+            if (!TextUtils.isEmpty(f27133a)) {
+                str = new String(DataHelper.decrypt(Base64.decode(str.getBytes(), 0), f27133a.getBytes()));
             }
             return str;
         } catch (Exception e2) {

@@ -7,20 +7,18 @@ public enum FileExtension {
     JSON(".json"),
     ZIP(".zip");
     
-
-    /* renamed from: c  reason: collision with root package name */
-    public final String f4394c;
+    public final String c;
 
     FileExtension(String str) {
-        this.f4394c = str;
+        this.c = str;
     }
 
     public String a() {
-        return a.e + this.f4394c;
+        return a.e + this.c;
     }
 
     @Override // java.lang.Enum
     public String toString() {
-        return this.f4394c;
+        return this.c;
     }
 }

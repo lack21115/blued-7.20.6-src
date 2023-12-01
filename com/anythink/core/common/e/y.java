@@ -4,12 +4,10 @@ import android.app.Activity;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/e/y.class */
 public abstract class y {
-
-    /* renamed from: c  reason: collision with root package name */
-    public i f6684c;
+    public i c;
 
     public final i a() {
-        return this.f6684c;
+        return this.c;
     }
 
     public abstract void a(Activity activity);

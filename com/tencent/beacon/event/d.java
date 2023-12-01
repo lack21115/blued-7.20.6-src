@@ -14,18 +14,18 @@ public class d implements com.tencent.beacon.a.a.d, h {
     private final com.tencent.beacon.event.a.a b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final g f35051c;
+    private final g f21360c;
     private final g d;
     private long e = 2000;
     private long f = 5000;
 
     /* renamed from: a  reason: collision with root package name */
-    private final Handler f35050a = com.tencent.beacon.a.b.a.a().a(3000);
+    private final Handler f21359a = com.tencent.beacon.a.b.a.a().a(3000);
 
     public d() {
         com.tencent.beacon.event.a.a a2 = com.tencent.beacon.event.a.a.a();
         this.b = a2;
-        this.f35051c = new g(2000, a2, true);
+        this.f21360c = new g(2000, a2, true);
         this.d = new g(1000, this.b, false);
         com.tencent.beacon.a.a.b.a().a(11, this);
         com.tencent.beacon.a.a.b.a().a(2, this);
@@ -55,13 +55,13 @@ public class d implements com.tencent.beacon.a.a.d, h {
 
     @Override // com.tencent.beacon.event.h
     public void a() {
-        com.tencent.beacon.a.b.a.a().a(2000, 0L, this.e, this.f35051c);
+        com.tencent.beacon.a.b.a.a().a(2000, 0L, this.e, this.f21360c);
         com.tencent.beacon.a.b.a.a().a(1000, 0L, this.f, this.d);
     }
 
     @Override // com.tencent.beacon.a.a.d
     public void a(com.tencent.beacon.a.a.c cVar) {
-        int i = cVar.f34920a;
+        int i = cVar.f21229a;
         if (i == 2) {
             Map map = (Map) cVar.b.get("d_m");
             if (map != null) {
@@ -104,16 +104,16 @@ public class d implements com.tencent.beacon.a.a.d, h {
     public void a(boolean z) {
         if (z) {
             this.d.run();
-            this.f35051c.run();
+            this.f21360c.run();
             return;
         }
         com.tencent.beacon.a.b.a.a().a(this.d);
-        com.tencent.beacon.a.b.a.a().a(this.f35051c);
+        com.tencent.beacon.a.b.a.a().a(this.f21360c);
     }
 
     @Override // com.tencent.beacon.event.h
     public boolean a(Runnable runnable) {
-        return this.f35050a.post(runnable);
+        return this.f21359a.post(runnable);
     }
 
     @Override // com.tencent.beacon.event.h

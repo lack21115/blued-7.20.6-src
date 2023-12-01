@@ -244,29 +244,29 @@ public interface IAccessibilityInteractionConnection extends IInterface {
             switch (i) {
                 case 1:
                     parcel.enforceInterface(DESCRIPTOR);
-                    findAccessibilityNodeInfoByAccessibilityId(parcel.readLong(), parcel.readInt() != 0 ? Region.CREATOR.createFromParcel(parcel) : null, parcel.readInt(), IAccessibilityInteractionConnectionCallback.Stub.asInterface(parcel.readStrongBinder()), parcel.readInt(), parcel.readInt(), parcel.readLong(), parcel.readInt() != 0 ? MagnificationSpec.CREATOR.createFromParcel(parcel) : null);
+                    findAccessibilityNodeInfoByAccessibilityId(parcel.readLong(), parcel.readInt() != 0 ? (Region) Region.CREATOR.createFromParcel(parcel) : null, parcel.readInt(), IAccessibilityInteractionConnectionCallback.Stub.asInterface(parcel.readStrongBinder()), parcel.readInt(), parcel.readInt(), parcel.readLong(), parcel.readInt() != 0 ? (MagnificationSpec) MagnificationSpec.CREATOR.createFromParcel(parcel) : null);
                     return true;
                 case 2:
                     parcel.enforceInterface(DESCRIPTOR);
-                    findAccessibilityNodeInfosByViewId(parcel.readLong(), parcel.readString(), parcel.readInt() != 0 ? Region.CREATOR.createFromParcel(parcel) : null, parcel.readInt(), IAccessibilityInteractionConnectionCallback.Stub.asInterface(parcel.readStrongBinder()), parcel.readInt(), parcel.readInt(), parcel.readLong(), parcel.readInt() != 0 ? MagnificationSpec.CREATOR.createFromParcel(parcel) : null);
+                    findAccessibilityNodeInfosByViewId(parcel.readLong(), parcel.readString(), parcel.readInt() != 0 ? (Region) Region.CREATOR.createFromParcel(parcel) : null, parcel.readInt(), IAccessibilityInteractionConnectionCallback.Stub.asInterface(parcel.readStrongBinder()), parcel.readInt(), parcel.readInt(), parcel.readLong(), parcel.readInt() != 0 ? (MagnificationSpec) MagnificationSpec.CREATOR.createFromParcel(parcel) : null);
                     return true;
                 case 3:
                     parcel.enforceInterface(DESCRIPTOR);
-                    findAccessibilityNodeInfosByText(parcel.readLong(), parcel.readString(), parcel.readInt() != 0 ? Region.CREATOR.createFromParcel(parcel) : null, parcel.readInt(), IAccessibilityInteractionConnectionCallback.Stub.asInterface(parcel.readStrongBinder()), parcel.readInt(), parcel.readInt(), parcel.readLong(), parcel.readInt() != 0 ? MagnificationSpec.CREATOR.createFromParcel(parcel) : null);
+                    findAccessibilityNodeInfosByText(parcel.readLong(), parcel.readString(), parcel.readInt() != 0 ? (Region) Region.CREATOR.createFromParcel(parcel) : null, parcel.readInt(), IAccessibilityInteractionConnectionCallback.Stub.asInterface(parcel.readStrongBinder()), parcel.readInt(), parcel.readInt(), parcel.readLong(), parcel.readInt() != 0 ? (MagnificationSpec) MagnificationSpec.CREATOR.createFromParcel(parcel) : null);
                     return true;
                 case 4:
                     parcel.enforceInterface(DESCRIPTOR);
-                    findFocus(parcel.readLong(), parcel.readInt(), parcel.readInt() != 0 ? Region.CREATOR.createFromParcel(parcel) : null, parcel.readInt(), IAccessibilityInteractionConnectionCallback.Stub.asInterface(parcel.readStrongBinder()), parcel.readInt(), parcel.readInt(), parcel.readLong(), parcel.readInt() != 0 ? MagnificationSpec.CREATOR.createFromParcel(parcel) : null);
+                    findFocus(parcel.readLong(), parcel.readInt(), parcel.readInt() != 0 ? (Region) Region.CREATOR.createFromParcel(parcel) : null, parcel.readInt(), IAccessibilityInteractionConnectionCallback.Stub.asInterface(parcel.readStrongBinder()), parcel.readInt(), parcel.readInt(), parcel.readLong(), parcel.readInt() != 0 ? (MagnificationSpec) MagnificationSpec.CREATOR.createFromParcel(parcel) : null);
                     return true;
                 case 5:
                     parcel.enforceInterface(DESCRIPTOR);
-                    focusSearch(parcel.readLong(), parcel.readInt(), parcel.readInt() != 0 ? Region.CREATOR.createFromParcel(parcel) : null, parcel.readInt(), IAccessibilityInteractionConnectionCallback.Stub.asInterface(parcel.readStrongBinder()), parcel.readInt(), parcel.readInt(), parcel.readLong(), parcel.readInt() != 0 ? MagnificationSpec.CREATOR.createFromParcel(parcel) : null);
+                    focusSearch(parcel.readLong(), parcel.readInt(), parcel.readInt() != 0 ? (Region) Region.CREATOR.createFromParcel(parcel) : null, parcel.readInt(), IAccessibilityInteractionConnectionCallback.Stub.asInterface(parcel.readStrongBinder()), parcel.readInt(), parcel.readInt(), parcel.readLong(), parcel.readInt() != 0 ? (MagnificationSpec) MagnificationSpec.CREATOR.createFromParcel(parcel) : null);
                     return true;
                 case 6:
                     parcel.enforceInterface(DESCRIPTOR);
-                    performAccessibilityAction(parcel.readLong(), parcel.readInt(), parcel.readInt() != 0 ? Bundle.CREATOR.createFromParcel(parcel) : null, parcel.readInt(), IAccessibilityInteractionConnectionCallback.Stub.asInterface(parcel.readStrongBinder()), parcel.readInt(), parcel.readInt(), parcel.readLong());
+                    performAccessibilityAction(parcel.readLong(), parcel.readInt(), parcel.readInt() != 0 ? (Bundle) Bundle.CREATOR.createFromParcel(parcel) : null, parcel.readInt(), IAccessibilityInteractionConnectionCallback.Stub.asInterface(parcel.readStrongBinder()), parcel.readInt(), parcel.readInt(), parcel.readLong());
                     return true;
-                case IBinder.INTERFACE_TRANSACTION /* 1598968902 */:
+                case 1598968902:
                     parcel2.writeString(DESCRIPTOR);
                     return true;
                 default:

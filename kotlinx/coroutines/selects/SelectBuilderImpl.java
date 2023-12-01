@@ -35,13 +35,9 @@ import kotlinx.coroutines.intrinsics.UndispatchedKt;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/selects/SelectBuilderImpl.class */
 public final class SelectBuilderImpl<R> extends LockFreeLinkedListHead implements Continuation<R>, CoroutineStackFrame, SelectBuilder<R>, SelectInstance<R> {
-
-    /* renamed from: a  reason: collision with root package name */
-    static final /* synthetic */ AtomicReferenceFieldUpdater f43590a = AtomicReferenceFieldUpdater.newUpdater(SelectBuilderImpl.class, Object.class, "_state");
+    static final /* synthetic */ AtomicReferenceFieldUpdater a = AtomicReferenceFieldUpdater.newUpdater(SelectBuilderImpl.class, Object.class, "_state");
     static final /* synthetic */ AtomicReferenceFieldUpdater b = AtomicReferenceFieldUpdater.newUpdater(SelectBuilderImpl.class, Object.class, "_result");
-
-    /* renamed from: c  reason: collision with root package name */
-    private final Continuation<R> f43591c;
+    private final Continuation<R> c;
     volatile /* synthetic */ Object _state = SelectKt.a();
     volatile /* synthetic */ Object _result = SelectKt.c();
     private volatile /* synthetic */ Object _parentHandle = null;
@@ -50,40 +46,36 @@ public final class SelectBuilderImpl<R> extends LockFreeLinkedListHead implement
     @Metadata
     /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/selects/SelectBuilderImpl$AtomicSelectOp.class */
     public static final class AtomicSelectOp extends AtomicOp<Object> {
-
-        /* renamed from: a  reason: collision with root package name */
-        public final SelectBuilderImpl<?> f43593a;
+        public final SelectBuilderImpl<?> a;
         public final AtomicDesc b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private final long f43594c = SelectKt.e().a();
+        private final long c = SelectKt.e().a();
 
         public AtomicSelectOp(SelectBuilderImpl<?> selectBuilderImpl, AtomicDesc atomicDesc) {
-            this.f43593a = selectBuilderImpl;
+            this.a = selectBuilderImpl;
             this.b = atomicDesc;
             this.b.a(this);
         }
 
         private final void d(Object obj) {
             boolean z = obj == null;
-            if (SelectBuilderImpl.f43590a.compareAndSet(this.f43593a, this, z ? null : SelectKt.a()) && z) {
-                this.f43593a.q();
+            if (SelectBuilderImpl.a.compareAndSet(this.a, this, z ? null : SelectKt.a()) && z) {
+                this.a.q();
             }
         }
 
         private final Object e() {
-            SelectBuilderImpl<?> selectBuilderImpl = this.f43593a;
+            SelectBuilderImpl<?> selectBuilderImpl = this.a;
             while (true) {
                 Object obj = selectBuilderImpl._state;
                 if (obj == this) {
                     return null;
                 }
                 if (obj instanceof OpDescriptor) {
-                    ((OpDescriptor) obj).c(this.f43593a);
+                    ((OpDescriptor) obj).c(this.a);
                 } else if (obj != SelectKt.a()) {
                     return SelectKt.b();
                 } else {
-                    if (SelectBuilderImpl.f43590a.compareAndSet(this.f43593a, SelectKt.a(), this)) {
+                    if (SelectBuilderImpl.a.compareAndSet(this.a, SelectKt.a(), this)) {
                         return null;
                     }
                 }
@@ -91,7 +83,7 @@ public final class SelectBuilderImpl<R> extends LockFreeLinkedListHead implement
         }
 
         private final void f() {
-            SelectBuilderImpl.f43590a.compareAndSet(this.f43593a, this, SelectKt.a());
+            SelectBuilderImpl.a.compareAndSet(this.a, this, SelectKt.a());
         }
 
         @Override // kotlinx.coroutines.internal.AtomicOp
@@ -118,7 +110,7 @@ public final class SelectBuilderImpl<R> extends LockFreeLinkedListHead implement
 
         @Override // kotlinx.coroutines.internal.AtomicOp
         public long c() {
-            return this.f43594c;
+            return this.c;
         }
 
         @Override // kotlinx.coroutines.internal.OpDescriptor
@@ -131,12 +123,10 @@ public final class SelectBuilderImpl<R> extends LockFreeLinkedListHead implement
     @Metadata
     /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/selects/SelectBuilderImpl$DisposeNode.class */
     public static final class DisposeNode extends LockFreeLinkedListNode {
-
-        /* renamed from: a  reason: collision with root package name */
-        public final DisposableHandle f43595a;
+        public final DisposableHandle a;
 
         public DisposeNode(DisposableHandle disposableHandle) {
-            this.f43595a = disposableHandle;
+            this.a = disposableHandle;
         }
     }
 
@@ -144,21 +134,19 @@ public final class SelectBuilderImpl<R> extends LockFreeLinkedListHead implement
     @Metadata
     /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/selects/SelectBuilderImpl$PairSelectOp.class */
     public static final class PairSelectOp extends OpDescriptor {
-
-        /* renamed from: a  reason: collision with root package name */
-        public final LockFreeLinkedListNode.PrepareOp f43596a;
+        public final LockFreeLinkedListNode.PrepareOp a;
 
         public PairSelectOp(LockFreeLinkedListNode.PrepareOp prepareOp) {
-            this.f43596a = prepareOp;
+            this.a = prepareOp;
         }
 
         @Override // kotlinx.coroutines.internal.OpDescriptor
         public Object c(Object obj) {
             if (obj != null) {
                 SelectBuilderImpl selectBuilderImpl = (SelectBuilderImpl) obj;
-                this.f43596a.a();
-                Object b = this.f43596a.d().b(null);
-                SelectBuilderImpl.f43590a.compareAndSet(selectBuilderImpl, this, b == null ? this.f43596a.f43542c : SelectKt.a());
+                this.a.a();
+                Object b = this.a.d().b(null);
+                SelectBuilderImpl.a.compareAndSet(selectBuilderImpl, this, b == null ? this.a.c : SelectKt.a());
                 return b;
             }
             throw new NullPointerException("null cannot be cast to non-null type kotlinx.coroutines.selects.SelectBuilderImpl<*>");
@@ -166,7 +154,7 @@ public final class SelectBuilderImpl<R> extends LockFreeLinkedListHead implement
 
         @Override // kotlinx.coroutines.internal.OpDescriptor
         public AtomicOp<?> d() {
-            return this.f43596a.d();
+            return this.a.d();
         }
     }
 
@@ -187,13 +175,13 @@ public final class SelectBuilderImpl<R> extends LockFreeLinkedListHead implement
         @Override // kotlin.jvm.functions.Function1
         public /* synthetic */ Unit invoke(Throwable th) {
             a(th);
-            return Unit.f42314a;
+            return Unit.a;
         }
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     public SelectBuilderImpl(Continuation<? super R> continuation) {
-        this.f43591c = continuation;
+        this.c = continuation;
     }
 
     private final void b(DisposableHandle disposableHandle) {
@@ -230,7 +218,7 @@ public final class SelectBuilderImpl<R> extends LockFreeLinkedListHead implement
                 return;
             }
             if (lockFreeLinkedListNode2 instanceof DisposeNode) {
-                ((DisposeNode) lockFreeLinkedListNode2).f43595a.dispose();
+                ((DisposeNode) lockFreeLinkedListNode2).a.dispose();
             }
             lockFreeLinkedListNode = lockFreeLinkedListNode2.j();
         }
@@ -248,24 +236,24 @@ public final class SelectBuilderImpl<R> extends LockFreeLinkedListHead implement
             if (obj == SelectKt.a()) {
                 if (prepareOp != null) {
                     PairSelectOp pairSelectOp = new PairSelectOp(prepareOp);
-                    if (f43590a.compareAndSet(this, SelectKt.a(), pairSelectOp)) {
-                        Object c2 = pairSelectOp.c(this);
-                        if (c2 != null) {
-                            return c2;
+                    if (a.compareAndSet(this, SelectKt.a(), pairSelectOp)) {
+                        Object c = pairSelectOp.c(this);
+                        if (c != null) {
+                            return c;
                         }
                     }
-                } else if (f43590a.compareAndSet(this, SelectKt.a(), null)) {
+                } else if (a.compareAndSet(this, SelectKt.a(), null)) {
                     break;
                 }
             } else if (!(obj instanceof OpDescriptor)) {
-                if (prepareOp != null && obj == prepareOp.f43542c) {
-                    return CancellableContinuationImplKt.f42786a;
+                if (prepareOp != null && obj == prepareOp.c) {
+                    return CancellableContinuationImplKt.a;
                 }
                 return null;
             } else {
                 if (prepareOp != null) {
                     AtomicOp<?> d = prepareOp.d();
-                    if ((d instanceof AtomicSelectOp) && ((AtomicSelectOp) d).f43593a == this) {
+                    if ((d instanceof AtomicSelectOp) && ((AtomicSelectOp) d).a == this) {
                         throw new IllegalStateException("Cannot use matching select clauses on the same object".toString());
                     }
                     if (d.a((OpDescriptor) obj)) {
@@ -276,7 +264,7 @@ public final class SelectBuilderImpl<R> extends LockFreeLinkedListHead implement
             }
         }
         q();
-        return CancellableContinuationImplKt.f42786a;
+        return CancellableContinuationImplKt.a;
     }
 
     @Override // kotlinx.coroutines.selects.SelectInstance
@@ -308,7 +296,7 @@ public final class SelectBuilderImpl<R> extends LockFreeLinkedListHead implement
         while (true) {
             Object obj = this._result;
             if (obj == SelectKt.c()) {
-                Continuation<R> continuation = this.f43591c;
+                Continuation<R> continuation = this.c;
                 if (b.compareAndSet(this, SelectKt.c(), new CompletedExceptionally((DebugKt.c() && (continuation instanceof CoroutineStackFrame)) ? StackTraceRecoveryKt.a(th, (CoroutineStackFrame) continuation) : th, false, 2, null))) {
                     return;
                 }
@@ -316,8 +304,8 @@ public final class SelectBuilderImpl<R> extends LockFreeLinkedListHead implement
                 throw new IllegalStateException("Already resumed");
             } else {
                 if (b.compareAndSet(this, IntrinsicsKt.a(), SelectKt.d())) {
-                    Continuation a2 = IntrinsicsKt.a(this.f43591c);
-                    Result.Companion companion = Result.f42293a;
+                    Continuation a2 = IntrinsicsKt.a(this.c);
+                    Result.Companion companion = Result.a;
                     a2.resumeWith(Result.f(ResultKt.a(th)));
                     return;
                 }
@@ -357,7 +345,7 @@ public final class SelectBuilderImpl<R> extends LockFreeLinkedListHead implement
         }
         if (obj2 != SelectKt.d()) {
             if (obj2 instanceof CompletedExceptionally) {
-                throw ((CompletedExceptionally) obj2).f42791a;
+                throw ((CompletedExceptionally) obj2).a;
             }
             return obj2;
         }
@@ -366,13 +354,13 @@ public final class SelectBuilderImpl<R> extends LockFreeLinkedListHead implement
 
     public final void b(Throwable th) {
         if (g()) {
-            Result.Companion companion = Result.f42293a;
+            Result.Companion companion = Result.a;
             resumeWith(Result.f(ResultKt.a(th)));
         } else if (th instanceof CancellationException) {
         } else {
             Object b2 = b();
             if (b2 instanceof CompletedExceptionally) {
-                Throwable th2 = ((CompletedExceptionally) b2).f42791a;
+                Throwable th2 = ((CompletedExceptionally) b2).a;
                 if (DebugKt.c()) {
                     th2 = StackTraceRecoveryKt.b(th2);
                 }
@@ -401,7 +389,7 @@ public final class SelectBuilderImpl<R> extends LockFreeLinkedListHead implement
     @Override // kotlinx.coroutines.selects.SelectInstance
     public boolean g() {
         Object a2 = a((LockFreeLinkedListNode.PrepareOp) null);
-        if (a2 == CancellableContinuationImplKt.f42786a) {
+        if (a2 == CancellableContinuationImplKt.a) {
             return true;
         }
         if (a2 == null) {
@@ -412,7 +400,7 @@ public final class SelectBuilderImpl<R> extends LockFreeLinkedListHead implement
 
     @Override // kotlin.coroutines.jvm.internal.CoroutineStackFrame
     public CoroutineStackFrame getCallerFrame() {
-        Continuation<R> continuation = this.f43591c;
+        Continuation<R> continuation = this.c;
         if (continuation instanceof CoroutineStackFrame) {
             return (CoroutineStackFrame) continuation;
         }
@@ -421,7 +409,7 @@ public final class SelectBuilderImpl<R> extends LockFreeLinkedListHead implement
 
     @Override // kotlin.coroutines.Continuation
     public CoroutineContext getContext() {
-        return this.f43591c.getContext();
+        return this.c.getContext();
     }
 
     @Override // kotlin.coroutines.jvm.internal.CoroutineStackFrame
@@ -445,16 +433,16 @@ public final class SelectBuilderImpl<R> extends LockFreeLinkedListHead implement
             } else {
                 if (b.compareAndSet(this, IntrinsicsKt.a(), SelectKt.d())) {
                     if (!Result.b(obj)) {
-                        this.f43591c.resumeWith(obj);
+                        this.c.resumeWith(obj);
                         return;
                     }
-                    Continuation<R> continuation = this.f43591c;
-                    Throwable c2 = Result.c(obj);
-                    Intrinsics.a((Object) c2);
-                    Result.Companion companion = Result.f42293a;
-                    Throwable th = c2;
+                    Continuation<R> continuation = this.c;
+                    Throwable c = Result.c(obj);
+                    Intrinsics.a((Object) c);
+                    Result.Companion companion = Result.a;
+                    Throwable th = c;
                     if (DebugKt.c()) {
-                        th = !(continuation instanceof CoroutineStackFrame) ? c2 : StackTraceRecoveryKt.a(c2, (CoroutineStackFrame) continuation);
+                        th = !(continuation instanceof CoroutineStackFrame) ? c : StackTraceRecoveryKt.a(c, (CoroutineStackFrame) continuation);
                     }
                     continuation.resumeWith(Result.f(ResultKt.a(th)));
                     return;

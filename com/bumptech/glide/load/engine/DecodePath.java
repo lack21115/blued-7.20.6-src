@@ -2,7 +2,6 @@ package com.bumptech.glide.load.engine;
 
 import android.util.Log;
 import androidx.core.util.Pools;
-import com.alipay.sdk.util.i;
 import com.bumptech.glide.load.Options;
 import com.bumptech.glide.load.ResourceDecoder;
 import com.bumptech.glide.load.data.DataRewinder;
@@ -16,11 +15,11 @@ import java.util.List;
 public class DecodePath<DataType, ResourceType, Transcode> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Class<DataType> f20760a;
+    private final Class<DataType> f7154a;
     private final List<? extends ResourceDecoder<DataType, ResourceType>> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final ResourceTranscoder<ResourceType, Transcode> f20761c;
+    private final ResourceTranscoder<ResourceType, Transcode> f7155c;
     private final Pools.Pool<List<Throwable>> d;
     private final String e;
 
@@ -31,11 +30,11 @@ public class DecodePath<DataType, ResourceType, Transcode> {
     }
 
     public DecodePath(Class<DataType> cls, Class<ResourceType> cls2, Class<Transcode> cls3, List<? extends ResourceDecoder<DataType, ResourceType>> list, ResourceTranscoder<ResourceType, Transcode> resourceTranscoder, Pools.Pool<List<Throwable>> pool) {
-        this.f20760a = cls;
+        this.f7154a = cls;
         this.b = list;
-        this.f20761c = resourceTranscoder;
+        this.f7155c = resourceTranscoder;
         this.d = pool;
-        this.e = "Failed DecodePath{" + cls.getSimpleName() + "->" + cls2.getSimpleName() + "->" + cls3.getSimpleName() + i.d;
+        this.e = "Failed DecodePath{" + cls.getSimpleName() + "->" + cls2.getSimpleName() + "->" + cls3.getSimpleName() + "}";
     }
 
     private Resource<ResourceType> a(DataRewinder<DataType> dataRewinder, int i, int i2, Options options) throws GlideException {
@@ -83,10 +82,10 @@ public class DecodePath<DataType, ResourceType, Transcode> {
     }
 
     public Resource<Transcode> a(DataRewinder<DataType> dataRewinder, int i, int i2, Options options, DecodeCallback<ResourceType> decodeCallback) throws GlideException {
-        return this.f20761c.a(decodeCallback.a(a(dataRewinder, i, i2, options)), options);
+        return this.f7155c.a(decodeCallback.a(a(dataRewinder, i, i2, options)), options);
     }
 
     public String toString() {
-        return "DecodePath{ dataClass=" + this.f20760a + ", decoders=" + this.b + ", transcoder=" + this.f20761c + '}';
+        return "DecodePath{ dataClass=" + this.f7154a + ", decoders=" + this.b + ", transcoder=" + this.f7155c + '}';
     }
 }

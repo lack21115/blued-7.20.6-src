@@ -4,8 +4,8 @@ import android.content.Context;
 import android.os.Build;
 import android.text.TextUtils;
 import android.util.Log;
+import com.alipay.sdk.sys.a;
 import com.amap.api.col.p0003sl.ia;
-import com.bun.miitmdid.core.Utils;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -36,13 +36,9 @@ import org.json.JSONObject;
 /* renamed from: com.amap.api.col.3sl.ib  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/ib.class */
 public final class ib {
-
-    /* renamed from: a  reason: collision with root package name */
-    static String f5138a;
+    static String a;
     private static final String[] b = {"arm64-v8a", "x86_64"};
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final String[] f5139c = {"arm", Utils.CPU_ABI_X86};
+    private static final String[] c = {"arm", "x86"};
 
     static {
         StringBuilder sb = new StringBuilder();
@@ -50,7 +46,7 @@ public final class ib {
         while (true) {
             int i2 = i;
             if (i2 >= 80) {
-                f5138a = sb.toString();
+                a = sb.toString();
                 return;
             } else {
                 sb.append("=");
@@ -180,7 +176,7 @@ public final class ib {
                     stringBuffer.append("=");
                     stringBuffer.append(entry.getValue());
                 } else {
-                    stringBuffer.append("&");
+                    stringBuffer.append(a.b);
                     stringBuffer.append(entry.getKey());
                     stringBuffer.append("=");
                     stringBuffer.append(entry.getValue());
@@ -329,7 +325,7 @@ public final class ib {
             StringBuilder sb = new StringBuilder();
             for (Map.Entry<String, String> entry : map.entrySet()) {
                 if (sb.length() > 0) {
-                    sb.append("&");
+                    sb.append(a.b);
                 }
                 sb.append(entry.getKey());
                 sb.append("=");
@@ -567,7 +563,7 @@ public final class ib {
         if (TextUtils.isEmpty(str)) {
             return "";
         }
-        String[] split = str.split("&");
+        String[] split = str.split(a.b);
         Arrays.sort(split);
         StringBuffer stringBuffer = new StringBuffer();
         int length = split.length;
@@ -578,7 +574,7 @@ public final class ib {
                 break;
             }
             stringBuffer.append(split[i2]);
-            stringBuffer.append("&");
+            stringBuffer.append(a.b);
             i = i2 + 1;
         }
         String stringBuffer2 = stringBuffer.toString();

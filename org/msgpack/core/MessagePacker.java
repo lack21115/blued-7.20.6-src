@@ -1,5 +1,6 @@
 package org.msgpack.core;
 
+import com.android.org.conscrypt.NativeCrypto;
 import java.io.Closeable;
 import java.io.Flushable;
 import java.io.IOException;
@@ -252,7 +253,7 @@ public class MessagePacker implements Closeable, Flushable {
     public MessagePacker packArrayHeader(int i) throws IOException {
         if (i >= 0) {
             if (i < 16) {
-                writeByte((byte) (i | (-112)));
+                writeByte((byte) (i | MessagePack.Code.FIXARRAY_PREFIX));
                 return this;
             } else if (i < 65536) {
                 writeByteAndShort((byte) -36, (short) i);
@@ -396,7 +397,7 @@ public class MessagePacker implements Closeable, Flushable {
         } else if (j < 128) {
             writeByte((byte) j);
             return this;
-        } else if (j < 65536) {
+        } else if (j < NativeCrypto.SSL_OP_NO_SESSION_RESUMPTION_ON_RENEGOTIATION) {
             if (j < 256) {
                 writeByteAndByte((byte) -52, (byte) j);
                 return this;

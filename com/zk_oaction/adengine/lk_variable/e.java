@@ -6,10 +6,10 @@ import org.xmlpull.v1.XmlPullParser;
 public class e {
 
     /* renamed from: a  reason: collision with root package name */
-    private com.zk_oaction.adengine.lk_sdk.c f42010a;
+    private com.zk_oaction.adengine.lk_sdk.c f28319a;
 
     public e(com.zk_oaction.adengine.lk_sdk.c cVar) {
-        this.f42010a = cVar;
+        this.f28319a = cVar;
     }
 
     public boolean a(XmlPullParser xmlPullParser, String str) {
@@ -24,9 +24,9 @@ public class e {
                         return true;
                     }
                 } else if (xmlPullParser.getName().equals("ContentProviderBinder")) {
-                    new a(this.f42010a).a(xmlPullParser, "ContentProviderBinder");
+                    new a(this.f28319a).a(xmlPullParser, "ContentProviderBinder");
                 } else if (xmlPullParser.getName().equals("SensorBinder")) {
-                    new b(this.f42010a).a(xmlPullParser, "SensorBinder");
+                    new b(this.f28319a).a(xmlPullParser, "SensorBinder");
                 }
             } catch (Exception e) {
                 e.printStackTrace();

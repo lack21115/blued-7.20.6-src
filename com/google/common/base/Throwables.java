@@ -151,12 +151,12 @@ public final class Throwables {
         return new AbstractList<StackTraceElement>() { // from class: com.google.common.base.Throwables.1
             @Override // java.util.AbstractList, java.util.List
             public StackTraceElement get(int i) {
-                return (StackTraceElement) Throwables.invokeAccessibleNonThrowingMethod(Throwables.getStackTraceElementMethod, Throwables.jla, Throwable.this, Integer.valueOf(i));
+                return (StackTraceElement) Throwables.invokeAccessibleNonThrowingMethod(Throwables.getStackTraceElementMethod, Throwables.jla, th, Integer.valueOf(i));
             }
 
             @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
             public int size() {
-                return ((Integer) Throwables.invokeAccessibleNonThrowingMethod(Throwables.getStackTraceDepthMethod, Throwables.jla, Throwable.this)).intValue();
+                return ((Integer) Throwables.invokeAccessibleNonThrowingMethod(Throwables.getStackTraceDepthMethod, Throwables.jla, th)).intValue();
             }
         };
     }

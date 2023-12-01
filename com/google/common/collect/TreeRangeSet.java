@@ -545,7 +545,7 @@ public class TreeRangeSet<C extends Comparable<?>> extends AbstractRangeSet<C> i
                         return null;
                     }
                     if (!cut.equals(this.restriction.lowerBound)) {
-                        Range<C> range = this.rangesByLowerBound.get(cut);
+                        Range range = (Range) this.rangesByLowerBound.get(cut);
                         if (range != null) {
                             return range.intersection(this.restriction);
                         }

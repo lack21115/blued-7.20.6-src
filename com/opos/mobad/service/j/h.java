@@ -4,14 +4,14 @@ package com.opos.mobad.service.j;
 public class h implements d<e> {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f27394a;
+    private int f13706a;
 
     public h(int i) {
-        this.f27394a = i;
+        this.f13706a = i;
     }
 
     @Override // com.opos.mobad.service.j.d
     public boolean a(e eVar) {
-        return eVar.b() >= this.f27394a;
+        return eVar.b() >= this.f13706a;
     }
 }

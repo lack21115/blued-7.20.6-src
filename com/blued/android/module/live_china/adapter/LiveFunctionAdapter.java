@@ -10,19 +10,16 @@ import com.blued.android.module.live_china.R;
 import com.blued.android.module.live_china.model.LiveFunctionModel;
 import com.chad.library.adapter.base.BaseMultiItemQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.google.android.material.badge.BadgeDrawable;
 import java.util.ArrayList;
 import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/adapter/LiveFunctionAdapter.class */
 public class LiveFunctionAdapter extends BaseMultiItemQuickAdapter<LiveFunctionModel, BaseViewHolder> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f11636a;
+    private Context a;
 
     public LiveFunctionAdapter(Context context) {
         super(new ArrayList());
-        this.f11636a = context;
+        this.a = context;
         addItemType(0, R.layout.live_multi_function_item_type_normal);
         addItemType(1, R.layout.live_multi_function_item_type_top_card);
     }
@@ -44,7 +41,7 @@ public class LiveFunctionAdapter extends BaseMultiItemQuickAdapter<LiveFunctionM
         imageView.setImageResource(liveFunctionModel.icon);
         QBadgeContainer qBadgeContainer = (QBadgeContainer) baseViewHolder.getView(R.id.ll_top_card_count);
         qBadgeContainer.a(imageView);
-        qBadgeContainer.d(BadgeDrawable.TOP_START);
+        qBadgeContainer.d(8388659);
         qBadgeContainer.a(8.0f, true);
         qBadgeContainer.a(liveFunctionModel.count);
         ((TextView) baseViewHolder.getView(R.id.tv_top_card_name)).setText(liveFunctionModel.name);
@@ -58,8 +55,8 @@ public class LiveFunctionAdapter extends BaseMultiItemQuickAdapter<LiveFunctionM
     }
 
     public LiveFunctionModel a(int i) {
-        List<T> data = getData();
-        if (data == 0) {
+        List data = getData();
+        if (data == null) {
             return null;
         }
         int i2 = 0;
@@ -75,11 +72,10 @@ public class LiveFunctionAdapter extends BaseMultiItemQuickAdapter<LiveFunctionM
         }
     }
 
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void addData(int i, LiveFunctionModel liveFunctionModel) {
-        List<T> data = getData();
-        if (data == 0) {
+        List data = getData();
+        if (data == null) {
             return;
         }
         if (i >= 0 && i < data.size()) {
@@ -92,7 +88,6 @@ public class LiveFunctionAdapter extends BaseMultiItemQuickAdapter<LiveFunctionM
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(BaseViewHolder baseViewHolder, LiveFunctionModel liveFunctionModel) {
         if (baseViewHolder != null) {

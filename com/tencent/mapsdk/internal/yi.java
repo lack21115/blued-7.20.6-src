@@ -133,11 +133,11 @@ public class yi extends gj implements TencentMap.OnCameraChangeListener {
         public final /* synthetic */ u4[] b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ GL10 f38134c;
+        public final /* synthetic */ GL10 f24443c;
 
         public a(u4[] u4VarArr, GL10 gl10) {
             this.b = u4VarArr;
-            this.f38134c = gl10;
+            this.f24443c = gl10;
         }
 
         @Override // com.tencent.map.tools.Callback
@@ -145,7 +145,7 @@ public class yi extends gj implements TencentMap.OnCameraChangeListener {
         public void callback(u4 u4Var) {
             if (u4Var instanceof v0) {
                 if (!TextUtils.equals(u4Var.getId(), yi.this.J)) {
-                    u4Var.a(this.f38134c);
+                    u4Var.a(this.f24443c);
                 } else if (u4Var.isVisible() || yi.this.H0) {
                     this.b[0] = u4Var;
                 } else {
@@ -159,16 +159,16 @@ public class yi extends gj implements TencentMap.OnCameraChangeListener {
     public class b implements ReturnCallback<Boolean, u4> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ float f38135a;
+        public final /* synthetic */ float f24444a;
         public final /* synthetic */ float b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ Object[] f38136c;
+        public final /* synthetic */ Object[] f24445c;
 
         public b(float f, float f2, Object[] objArr) {
-            this.f38135a = f;
+            this.f24444a = f;
             this.b = f2;
-            this.f38136c = objArr;
+            this.f24445c = objArr;
         }
 
         @Override // com.tencent.map.tools.ReturnCallback
@@ -178,10 +178,10 @@ public class yi extends gj implements TencentMap.OnCameraChangeListener {
                 w0 w0Var = (w0) u4Var;
                 r4 j = w0Var.x().j();
                 if (!w0Var.getId().equals(yi.this.J) && j != null && j.r()) {
-                    boolean onTap = j.onTap(this.f38135a, this.b);
-                    this.f38136c[0] = Boolean.valueOf(onTap);
+                    boolean onTap = j.onTap(this.f24444a, this.b);
+                    this.f24445c[0] = Boolean.valueOf(onTap);
                     if (onTap) {
-                        Object[] objArr = this.f38136c;
+                        Object[] objArr = this.f24445c;
                         objArr[1] = w0Var;
                         objArr[2] = j;
                         return Boolean.TRUE;
@@ -213,16 +213,16 @@ public class yi extends gj implements TencentMap.OnCameraChangeListener {
     public class d implements ReturnCallback<Boolean, u4> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ float f38137a;
+        public final /* synthetic */ float f24446a;
         public final /* synthetic */ float b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ String[] f38138c;
+        public final /* synthetic */ String[] f24447c;
 
         public d(float f, float f2, String[] strArr) {
-            this.f38137a = f;
+            this.f24446a = f;
             this.b = f2;
-            this.f38138c = strArr;
+            this.f24447c = strArr;
         }
 
         @Override // com.tencent.map.tools.ReturnCallback
@@ -231,8 +231,8 @@ public class yi extends gj implements TencentMap.OnCameraChangeListener {
             if (u4Var == null || !u4Var.isVisible()) {
                 return Boolean.FALSE;
             }
-            if ((u4Var instanceof w0) && u4Var.onTap(this.f38137a, this.b)) {
-                this.f38138c[0] = u4Var.getId();
+            if ((u4Var instanceof w0) && u4Var.onTap(this.f24446a, this.b)) {
+                this.f24447c[0] = u4Var.getId();
                 return Boolean.TRUE;
             }
             return Boolean.FALSE;
@@ -298,17 +298,17 @@ public class yi extends gj implements TencentMap.OnCameraChangeListener {
         public final /* synthetic */ boolean b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ List f38141c;
+        public final /* synthetic */ List f24450c;
 
         public g(boolean z, List list) {
             this.b = z;
-            this.f38141c = list;
+            this.f24450c = list;
         }
 
         @Override // java.lang.Runnable
         public void run() {
             for (d1 d1Var : yi.this.l1) {
-                d1Var.a(this.b, this.f38141c);
+                d1Var.a(this.b, this.f24450c);
             }
         }
     }
@@ -719,9 +719,9 @@ public class yi extends gj implements TencentMap.OnCameraChangeListener {
             return;
         }
         v5 v5Var = new v5();
-        v5Var.f38062a = 0;
+        v5Var.f24371a = 0;
         v5Var.b = this.Q0;
-        v5Var.f38063c = this.R0;
+        v5Var.f24372c = this.R0;
         for (c5 c5Var : this.S) {
             c5Var.a(v5Var);
         }
@@ -754,9 +754,9 @@ public class yi extends gj implements TencentMap.OnCameraChangeListener {
             return;
         }
         v5 v5Var = new v5();
-        v5Var.f38062a = 0;
+        v5Var.f24371a = 0;
         v5Var.b = this.Q0;
-        v5Var.f38063c = this.R0;
+        v5Var.f24372c = this.R0;
         for (c5 c5Var : this.S) {
             c5Var.a(v5Var);
         }
@@ -1132,7 +1132,7 @@ public class yi extends gj implements TencentMap.OnCameraChangeListener {
             return;
         }
         v5 v5Var = new v5();
-        v5Var.f38062a = 1;
+        v5Var.f24371a = 1;
         v5Var.d = getMap().V();
         v5Var.e = getMap().getProjection().a(new Point(0, this.a1 / 2), new Point(this.Z0, this.a1 / 2));
         for (c5 c5Var : this.S) {
@@ -1161,7 +1161,7 @@ public class yi extends gj implements TencentMap.OnCameraChangeListener {
     public void c(boolean z) {
         if (this.C0 != z) {
             v5 v5Var = new v5();
-            v5Var.f38062a = 2;
+            v5Var.f24371a = 2;
             for (c5 c5Var : this.S) {
                 c5Var.a(v5Var);
             }

@@ -222,7 +222,7 @@ public final class ImmutableSortedMap<K, V> extends ImmutableSortedMapFauxveride
                         }
 
                         public int compare(Map.Entry<K, V> entry, Map.Entry<K, V> entry2) {
-                            return Comparator.this.compare(entry.getKey(), entry2.getKey());
+                            return comparator.compare(entry.getKey(), entry2.getKey());
                         }
                     });
                     Object key2 = entryArr[0].getKey();
@@ -342,7 +342,7 @@ public final class ImmutableSortedMap<K, V> extends ImmutableSortedMapFauxveride
                 };
             }
 
-            @Override // com.google.common.collect.ImmutableSet, com.google.common.collect.ImmutableCollection, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+            @Override // com.google.common.collect.ImmutableSet, com.google.common.collect.ImmutableCollection, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set, com.google.common.collect.SortedIterable, java.util.NavigableSet
             public UnmodifiableIterator<Map.Entry<K, V>> iterator() {
                 return asList().iterator();
             }
@@ -419,7 +419,7 @@ public final class ImmutableSortedMap<K, V> extends ImmutableSortedMapFauxveride
         return this.valueList.get(indexOf);
     }
 
-    @Override // java.util.NavigableMap
+    @Override // java.util.NavigableMap, java.util.SortedMap
     public ImmutableSortedMap<K, V> headMap(K k) {
         return headMap((ImmutableSortedMap<K, V>) k, false);
     }
@@ -437,7 +437,7 @@ public final class ImmutableSortedMap<K, V> extends ImmutableSortedMapFauxveride
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // java.util.NavigableMap
+    @Override // java.util.NavigableMap, java.util.SortedMap
     public /* bridge */ /* synthetic */ SortedMap headMap(Object obj) {
         return headMap((ImmutableSortedMap<K, V>) obj);
     }
@@ -508,7 +508,7 @@ public final class ImmutableSortedMap<K, V> extends ImmutableSortedMapFauxveride
         return this.valueList.size();
     }
 
-    @Override // java.util.NavigableMap
+    @Override // java.util.NavigableMap, java.util.SortedMap
     public ImmutableSortedMap<K, V> subMap(K k, K k2) {
         return subMap((boolean) k, true, (boolean) k2, false);
     }
@@ -528,7 +528,7 @@ public final class ImmutableSortedMap<K, V> extends ImmutableSortedMapFauxveride
         return subMap((boolean) obj, z, (boolean) obj2, z2);
     }
 
-    @Override // java.util.NavigableMap
+    @Override // java.util.NavigableMap, java.util.SortedMap
     public ImmutableSortedMap<K, V> tailMap(K k) {
         return tailMap((ImmutableSortedMap<K, V>) k, true);
     }
@@ -546,7 +546,7 @@ public final class ImmutableSortedMap<K, V> extends ImmutableSortedMapFauxveride
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // java.util.NavigableMap
+    @Override // java.util.NavigableMap, java.util.SortedMap
     public /* bridge */ /* synthetic */ SortedMap tailMap(Object obj) {
         return tailMap((ImmutableSortedMap<K, V>) obj);
     }

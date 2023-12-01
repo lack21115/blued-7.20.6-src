@@ -12,17 +12,17 @@ import com.xiaomi.push.es;
 public class et implements es.a {
 
     /* renamed from: a  reason: collision with other field name */
-    protected Context f407a;
+    protected Context f360a;
 
     /* renamed from: a  reason: collision with other field name */
-    private PendingIntent f406a = null;
+    private PendingIntent f359a = null;
 
     /* renamed from: a  reason: collision with root package name */
-    private volatile long f41384a = 0;
+    private volatile long f27693a = 0;
 
     public et(Context context) {
-        this.f407a = null;
-        this.f407a = context;
+        this.f360a = null;
+        this.f360a = context;
     }
 
     private void a(AlarmManager alarmManager, long j, PendingIntent pendingIntent) {
@@ -35,38 +35,38 @@ public class et implements es.a {
 
     @Override // com.xiaomi.push.es.a
     public void a() {
-        if (this.f406a != null) {
+        if (this.f359a != null) {
             try {
-                ((AlarmManager) this.f407a.getSystemService("alarm")).cancel(this.f406a);
+                ((AlarmManager) this.f360a.getSystemService("alarm")).cancel(this.f359a);
             } catch (Exception e) {
             } catch (Throwable th) {
-                this.f406a = null;
+                this.f359a = null;
                 com.xiaomi.channel.commonutils.logger.b.c("[Alarm] unregister timer");
-                this.f41384a = 0L;
+                this.f27693a = 0L;
                 throw th;
             }
-            this.f406a = null;
+            this.f359a = null;
             com.xiaomi.channel.commonutils.logger.b.c("[Alarm] unregister timer");
-            this.f41384a = 0L;
+            this.f27693a = 0L;
         }
-        this.f41384a = 0L;
+        this.f27693a = 0L;
     }
 
     public void a(Intent intent, long j) {
-        AlarmManager alarmManager = (AlarmManager) this.f407a.getSystemService("alarm");
-        this.f406a = Build.VERSION.SDK_INT >= 31 ? PendingIntent.getBroadcast(this.f407a, 0, intent, 33554432) : PendingIntent.getBroadcast(this.f407a, 0, intent, 0);
-        if (Build.VERSION.SDK_INT >= 31 && !j.m12048a(this.f407a)) {
-            alarmManager.set(2, j, this.f406a);
+        AlarmManager alarmManager = (AlarmManager) this.f360a.getSystemService("alarm");
+        this.f359a = Build.VERSION.SDK_INT >= 31 ? PendingIntent.getBroadcast(this.f360a, 0, intent, 33554432) : PendingIntent.getBroadcast(this.f360a, 0, intent, 0);
+        if (Build.VERSION.SDK_INT >= 31 && !j.m8998a(this.f360a)) {
+            alarmManager.set(2, j, this.f359a);
         } else if (Build.VERSION.SDK_INT >= 23) {
-            bi.a((Object) alarmManager, "setExactAndAllowWhileIdle", 2, Long.valueOf(j), this.f406a);
+            bi.a((Object) alarmManager, "setExactAndAllowWhileIdle", 2, Long.valueOf(j), this.f359a);
         } else {
-            a(alarmManager, j, this.f406a);
+            a(alarmManager, j, this.f359a);
         }
         com.xiaomi.channel.commonutils.logger.b.c("[Alarm] register timer ".concat(String.valueOf(j)));
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:18:0x0051, code lost:
-        if (r7.f41384a < r0) goto L18;
+        if (r7.f27693a < r0) goto L18;
      */
     @Override // com.xiaomi.push.es.a
     /*
@@ -77,14 +77,14 @@ public class et implements es.a {
         /*
             r7 = this;
             r0 = r7
-            android.content.Context r0 = r0.f407a
+            android.content.Context r0 = r0.f360a
             com.xiaomi.push.service.o r0 = com.xiaomi.push.service.o.a(r0)
-            long r0 = r0.m12191a()
+            long r0 = r0.m9141a()
             r9 = r0
             r0 = r8
             if (r0 != 0) goto L19
             r0 = r7
-            long r0 = r0.f41384a
+            long r0 = r0.f27693a
             r1 = 0
             int r0 = (r0 > r1 ? 1 : (r0 == r1 ? 0 : -1))
             if (r0 != 0) goto L19
@@ -100,25 +100,25 @@ public class et implements es.a {
             r0 = r8
             if (r0 != 0) goto L57
             r0 = r7
-            long r0 = r0.f41384a
+            long r0 = r0.f27693a
             r1 = 0
             int r0 = (r0 > r1 ? 1 : (r0 == r1 ? 0 : -1))
             if (r0 != 0) goto L36
             goto L57
         L36:
             r0 = r7
-            long r0 = r0.f41384a
+            long r0 = r0.f27693a
             r1 = r11
             int r0 = (r0 > r1 ? 1 : (r0 == r1 ? 0 : -1))
             if (r0 > 0) goto L66
             r0 = r7
             r1 = r7
-            long r1 = r1.f41384a
+            long r1 = r1.f27693a
             r2 = r9
             long r1 = r1 + r2
-            r0.f41384a = r1
+            r0.f27693a = r1
             r0 = r7
-            long r0 = r0.f41384a
+            long r0 = r0.f27693a
             r1 = r11
             int r0 = (r0 > r1 ? 1 : (r0 == r1 ? 0 : -1))
             if (r0 >= 0) goto L66
@@ -135,7 +135,7 @@ public class et implements es.a {
             r1 = r11
             r2 = r9
             long r1 = r1 + r2
-            r0.f41384a = r1
+            r0.f27693a = r1
         L66:
             android.content.Intent r0 = new android.content.Intent
             r1 = r0
@@ -144,13 +144,13 @@ public class et implements es.a {
             r13 = r0
             r0 = r13
             r1 = r7
-            android.content.Context r1 = r1.f407a
+            android.content.Context r1 = r1.f360a
             java.lang.String r1 = r1.getPackageName()
             android.content.Intent r0 = r0.setPackage(r1)
             r0 = r7
             r1 = r13
             r2 = r7
-            long r2 = r2.f41384a
+            long r2 = r2.f27693a
             r0.a(r1, r2)
             return
         */
@@ -159,7 +159,7 @@ public class et implements es.a {
 
     @Override // com.xiaomi.push.es.a
     /* renamed from: a */
-    public boolean mo11732a() {
-        return this.f41384a != 0;
+    public boolean mo8682a() {
+        return this.f27693a != 0;
     }
 }

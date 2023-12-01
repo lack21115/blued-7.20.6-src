@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemAuthedUserBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final FrameLayout f29076a;
+    private final FrameLayout f15386a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f29076a;
+        return this.f15386a;
     }
 }

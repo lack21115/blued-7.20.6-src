@@ -8,7 +8,7 @@ import java.util.HashMap;
 public final class x extends com.vivo.push.o {
 
     /* renamed from: a  reason: collision with root package name */
-    private HashMap<String, String> f41057a;
+    private HashMap<String, String> f27366a;
     private long b;
 
     public x() {
@@ -21,26 +21,26 @@ public final class x extends com.vivo.push.o {
     }
 
     public final void a(HashMap<String, String> hashMap) {
-        this.f41057a = hashMap;
+        this.f27366a = hashMap;
     }
 
     @Override // com.vivo.push.o
     public final void c(com.vivo.push.a aVar) {
-        aVar.a("ReporterCommand.EXTRA_PARAMS", this.f41057a);
+        aVar.a("ReporterCommand.EXTRA_PARAMS", this.f27366a);
         aVar.a("ReporterCommand.EXTRA_REPORTER_TYPE", this.b);
     }
 
     public final void d() {
         String sb;
-        if (this.f41057a == null) {
+        if (this.f27366a == null) {
             sb = "reportParams is empty";
         } else {
             StringBuilder sb2 = new StringBuilder("report message reportType:");
             sb2.append(this.b);
             sb2.append(",msgId:");
-            String str = this.f41057a.get(IntentConstant.MESSAGE_ID);
+            String str = this.f27366a.get(IntentConstant.MESSAGE_ID);
             if (TextUtils.isEmpty(str)) {
-                str = this.f41057a.get("message_id");
+                str = this.f27366a.get("message_id");
             }
             sb2.append(str);
             sb = sb2.toString();
@@ -50,7 +50,7 @@ public final class x extends com.vivo.push.o {
 
     @Override // com.vivo.push.o
     public final void d(com.vivo.push.a aVar) {
-        this.f41057a = (HashMap) aVar.d("ReporterCommand.EXTRA_PARAMS");
+        this.f27366a = (HashMap) aVar.d("ReporterCommand.EXTRA_PARAMS");
         this.b = aVar.b("ReporterCommand.EXTRA_REPORTER_TYPE", this.b);
     }
 

@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
@@ -25,13 +26,9 @@ import com.jeremyliao.liveeventbus.LiveEventBus;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveHalfWebDialogFragment.class */
 public class LiveHalfWebDialogFragment extends BaseDialogFragment implements PopLiveActivityWebView.PopLiveWebEvent {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected View f12954a;
+    protected View a;
     public Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public PopLiveActivityWebView f12955c;
+    public PopLiveActivityWebView c;
     private ILiveWebDialog d;
     private String e;
     private int f;
@@ -60,11 +57,10 @@ public class LiveHalfWebDialogFragment extends BaseDialogFragment implements Pop
 
     private void h() {
         LiveEventBus.get("LIVE_WEB_PAGE_REFRESH", String.class).observe(this, new Observer<String>() { // from class: com.blued.android.module.live_china.fragment.LiveHalfWebDialogFragment.1
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(String str) {
-                if (LiveHalfWebDialogFragment.this.f12955c != null) {
-                    LiveHalfWebDialogFragment.this.f12955c.g();
+                if (LiveHalfWebDialogFragment.this.c != null) {
+                    LiveHalfWebDialogFragment.this.c.g();
                 }
             }
         });
@@ -74,7 +70,7 @@ public class LiveHalfWebDialogFragment extends BaseDialogFragment implements Pop
         if (hTMLNoticeModel == null || TextUtils.isEmpty(hTMLNoticeModel.html_msg) || TextUtils.isEmpty(hTMLNoticeModel.html_href)) {
             return;
         }
-        this.f12955c.setJsBridgeData(hTMLNoticeModel);
+        this.c.setJsBridgeData(hTMLNoticeModel);
     }
 
     @Override // com.blued.android.module.live_china.view.PopLiveActivityWebView.PopLiveWebEvent
@@ -93,7 +89,6 @@ public class LiveHalfWebDialogFragment extends BaseDialogFragment implements Pop
         return false;
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
         this.b = getActivity();
         g();
@@ -128,16 +123,16 @@ public class LiveHalfWebDialogFragment extends BaseDialogFragment implements Pop
         return dialog;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(0));
         View inflate = layoutInflater.inflate(e(), viewGroup);
-        this.f12954a = inflate;
+        this.a = inflate;
         PopLiveActivityWebView popLiveActivityWebView = (PopLiveActivityWebView) inflate.findViewById(R.id.live_activity_web_view);
-        this.f12955c = popLiveActivityWebView;
-        popLiveActivityWebView.a(this);
-        this.f12955c.setWebViewRadius(this.f);
-        this.f12955c.setPopLiveWebEvent(this);
+        this.c = popLiveActivityWebView;
+        popLiveActivityWebView.a((Fragment) this);
+        this.c.setWebViewRadius(this.f);
+        this.c.setPopLiveWebEvent(this);
         if (!TextUtils.isEmpty(this.e) && !this.e.contains("blued_mode=hide_nav")) {
             if (this.e.contains("?")) {
                 this.e += "&blued_mode=hide_nav";
@@ -145,26 +140,26 @@ public class LiveHalfWebDialogFragment extends BaseDialogFragment implements Pop
                 this.e += "?blued_mode=hide_nav";
             }
         }
-        this.f12955c.a(this.e, -1, false);
+        this.c.a(this.e, -1, false);
         ILiveWebDialog iLiveWebDialog = this.d;
         if (iLiveWebDialog != null) {
             iLiveWebDialog.a();
         }
-        return this.f12954a;
+        return this.a;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onDestroy() {
         super.onDestroy();
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onViewCreated(View view, Bundle bundle) {
         super.onViewCreated(view, bundle);
         h();
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void show(FragmentManager fragmentManager, String str) {
         try {
             ReflectionUtils.a(this, "mDismissed", false);

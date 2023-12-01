@@ -92,6 +92,7 @@ public class AppPrivacyPolicyActivity extends Activity {
                 return ("http".equals(scheme) || "https".equals(scheme)) ? false : true;
             }
 
+            @Override // android.webkit.WebViewClient
             public boolean onRenderProcessGone(WebView webView, RenderProcessGoneDetail renderProcessGoneDetail) {
                 if (Build.VERSION.SDK_INT < 26) {
                     return super.onRenderProcessGone(webView, renderProcessGoneDetail);
@@ -114,6 +115,7 @@ public class AppPrivacyPolicyActivity extends Activity {
                 return true;
             }
 
+            @Override // android.webkit.WebViewClient
             public boolean shouldOverrideUrlLoading(WebView webView, WebResourceRequest webResourceRequest) {
                 return mb(webResourceRequest.getUrl());
             }

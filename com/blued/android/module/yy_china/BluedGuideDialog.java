@@ -18,20 +18,14 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/BluedGuideDialog.class */
 public final class BluedGuideDialog extends PopupWindow {
-
-    /* renamed from: a  reason: collision with root package name */
-    private DialogGuideLayoutBinding f16099a;
+    private DialogGuideLayoutBinding a;
 
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/BluedGuideDialog$GuideBuilder.class */
     public static final class GuideBuilder {
-
-        /* renamed from: a  reason: collision with root package name */
-        private int f16100a;
+        private int a;
         private float b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private int f16101c;
+        private int c;
         private int d = R.drawable.icon_yy_create_room_mask_guide_top;
         private String e = "";
         private int f = R.color.color_1B1B1B;
@@ -41,7 +35,7 @@ public final class BluedGuideDialog extends PopupWindow {
         private int j = -1;
 
         public final int a() {
-            return this.f16100a;
+            return this.a;
         }
 
         public final void a(float f) {
@@ -49,7 +43,7 @@ public final class BluedGuideDialog extends PopupWindow {
         }
 
         public final void a(int i) {
-            this.f16100a = i;
+            this.a = i;
         }
 
         public final void a(String str) {
@@ -65,11 +59,11 @@ public final class BluedGuideDialog extends PopupWindow {
         }
 
         public final void b(int i) {
-            this.f16101c = i;
+            this.c = i;
         }
 
         public final int c() {
-            return this.f16101c;
+            return this.c;
         }
 
         public final void c(int i) {
@@ -129,38 +123,38 @@ public final class BluedGuideDialog extends PopupWindow {
     }
 
     private final void a(float f, int i) {
-        DialogGuideLayoutBinding dialogGuideLayoutBinding = this.f16099a;
+        DialogGuideLayoutBinding dialogGuideLayoutBinding = this.a;
         DialogGuideLayoutBinding dialogGuideLayoutBinding2 = dialogGuideLayoutBinding;
         if (dialogGuideLayoutBinding == null) {
             Intrinsics.c("mBinding");
             dialogGuideLayoutBinding2 = null;
         }
-        ViewGroup.LayoutParams layoutParams = dialogGuideLayoutBinding2.f16350a.getLayoutParams();
+        ConstraintLayout.LayoutParams layoutParams = dialogGuideLayoutBinding2.a.getLayoutParams();
         if (layoutParams == null) {
             throw new NullPointerException("null cannot be cast to non-null type androidx.constraintlayout.widget.ConstraintLayout.LayoutParams");
         }
-        ConstraintLayout.LayoutParams layoutParams2 = (ConstraintLayout.LayoutParams) layoutParams;
+        ConstraintLayout.LayoutParams layoutParams2 = layoutParams;
         if (i == 1) {
-            DialogGuideLayoutBinding dialogGuideLayoutBinding3 = this.f16099a;
+            DialogGuideLayoutBinding dialogGuideLayoutBinding3 = this.a;
             if (dialogGuideLayoutBinding3 == null) {
                 Intrinsics.c("mBinding");
                 dialogGuideLayoutBinding3 = null;
             }
-            layoutParams2.leftMargin = DensityUtils.a(dialogGuideLayoutBinding3.f16350a.getContext(), f);
+            layoutParams2.leftMargin = DensityUtils.a(dialogGuideLayoutBinding3.a.getContext(), f);
         } else if (i != 2) {
         } else {
-            DialogGuideLayoutBinding dialogGuideLayoutBinding4 = this.f16099a;
+            DialogGuideLayoutBinding dialogGuideLayoutBinding4 = this.a;
             if (dialogGuideLayoutBinding4 == null) {
                 Intrinsics.c("mBinding");
                 dialogGuideLayoutBinding4 = null;
             }
-            layoutParams2.rightMargin = DensityUtils.a(dialogGuideLayoutBinding4.f16350a.getContext(), f);
+            layoutParams2.rightMargin = DensityUtils.a(dialogGuideLayoutBinding4.a.getContext(), f);
         }
     }
 
     private final void a(int i) {
         ConstraintSet constraintSet = new ConstraintSet();
-        DialogGuideLayoutBinding dialogGuideLayoutBinding = this.f16099a;
+        DialogGuideLayoutBinding dialogGuideLayoutBinding = this.a;
         DialogGuideLayoutBinding dialogGuideLayoutBinding2 = dialogGuideLayoutBinding;
         if (dialogGuideLayoutBinding == null) {
             Intrinsics.c("mBinding");
@@ -180,7 +174,7 @@ public final class BluedGuideDialog extends PopupWindow {
             constraintSet.connect(R.id.img_guide_arrow, 3, R.id.tv_guide_message, 4);
             constraintSet.connect(R.id.img_guide_arrow, 1, R.id.tv_guide_message, 1);
         }
-        DialogGuideLayoutBinding dialogGuideLayoutBinding3 = this.f16099a;
+        DialogGuideLayoutBinding dialogGuideLayoutBinding3 = this.a;
         if (dialogGuideLayoutBinding3 == null) {
             Intrinsics.c("mBinding");
             dialogGuideLayoutBinding3 = null;
@@ -190,9 +184,9 @@ public final class BluedGuideDialog extends PopupWindow {
 
     private final void a(Context context) {
         View inflate = LayoutInflater.from(context).inflate(R.layout.dialog_guide_layout, (ViewGroup) null);
-        DialogGuideLayoutBinding a2 = DialogGuideLayoutBinding.a(inflate);
-        Intrinsics.c(a2, "bind(root)");
-        this.f16099a = a2;
+        DialogGuideLayoutBinding a = DialogGuideLayoutBinding.a(inflate);
+        Intrinsics.c(a, "bind(root)");
+        this.a = a;
         setContentView(inflate);
         setBackgroundDrawable(new ColorDrawable(0));
         setOutsideTouchable(true);
@@ -207,7 +201,7 @@ public final class BluedGuideDialog extends PopupWindow {
 
     private final void b(int i) {
         ConstraintSet constraintSet = new ConstraintSet();
-        DialogGuideLayoutBinding dialogGuideLayoutBinding = this.f16099a;
+        DialogGuideLayoutBinding dialogGuideLayoutBinding = this.a;
         DialogGuideLayoutBinding dialogGuideLayoutBinding2 = dialogGuideLayoutBinding;
         if (dialogGuideLayoutBinding == null) {
             Intrinsics.c("mBinding");
@@ -224,7 +218,7 @@ public final class BluedGuideDialog extends PopupWindow {
         } else if (i == 2) {
             constraintSet.connect(R.id.img_guide_arrow, 2, R.id.tv_guide_message, 2);
         }
-        DialogGuideLayoutBinding dialogGuideLayoutBinding3 = this.f16099a;
+        DialogGuideLayoutBinding dialogGuideLayoutBinding3 = this.a;
         if (dialogGuideLayoutBinding3 == null) {
             Intrinsics.c("mBinding");
             dialogGuideLayoutBinding3 = null;
@@ -235,14 +229,14 @@ public final class BluedGuideDialog extends PopupWindow {
     public final int a() {
         int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(1073741823, Integer.MIN_VALUE);
         int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(1073741823, Integer.MIN_VALUE);
-        DialogGuideLayoutBinding dialogGuideLayoutBinding = this.f16099a;
+        DialogGuideLayoutBinding dialogGuideLayoutBinding = this.a;
         DialogGuideLayoutBinding dialogGuideLayoutBinding2 = dialogGuideLayoutBinding;
         if (dialogGuideLayoutBinding == null) {
             Intrinsics.c("mBinding");
             dialogGuideLayoutBinding2 = null;
         }
         dialogGuideLayoutBinding2.getRoot().measure(makeMeasureSpec, makeMeasureSpec2);
-        DialogGuideLayoutBinding dialogGuideLayoutBinding3 = this.f16099a;
+        DialogGuideLayoutBinding dialogGuideLayoutBinding3 = this.a;
         if (dialogGuideLayoutBinding3 == null) {
             Intrinsics.c("mBinding");
             dialogGuideLayoutBinding3 = null;
@@ -254,35 +248,35 @@ public final class BluedGuideDialog extends PopupWindow {
         if (guideBuilder == null) {
             return;
         }
-        DialogGuideLayoutBinding dialogGuideLayoutBinding = this.f16099a;
+        DialogGuideLayoutBinding dialogGuideLayoutBinding = this.a;
         DialogGuideLayoutBinding dialogGuideLayoutBinding2 = dialogGuideLayoutBinding;
         if (dialogGuideLayoutBinding == null) {
             Intrinsics.c("mBinding");
             dialogGuideLayoutBinding2 = null;
         }
-        dialogGuideLayoutBinding2.f16350a.setBackgroundResource(guideBuilder.d());
-        DialogGuideLayoutBinding dialogGuideLayoutBinding3 = this.f16099a;
+        dialogGuideLayoutBinding2.a.setBackgroundResource(guideBuilder.d());
+        DialogGuideLayoutBinding dialogGuideLayoutBinding3 = this.a;
         DialogGuideLayoutBinding dialogGuideLayoutBinding4 = dialogGuideLayoutBinding3;
         if (dialogGuideLayoutBinding3 == null) {
             Intrinsics.c("mBinding");
             dialogGuideLayoutBinding4 = null;
         }
         ShapeHelper.b(dialogGuideLayoutBinding4.b, guideBuilder.f());
-        DialogGuideLayoutBinding dialogGuideLayoutBinding5 = this.f16099a;
+        DialogGuideLayoutBinding dialogGuideLayoutBinding5 = this.a;
         DialogGuideLayoutBinding dialogGuideLayoutBinding6 = dialogGuideLayoutBinding5;
         if (dialogGuideLayoutBinding5 == null) {
             Intrinsics.c("mBinding");
             dialogGuideLayoutBinding6 = null;
         }
         ShapeTextView shapeTextView = dialogGuideLayoutBinding6.b;
-        DialogGuideLayoutBinding dialogGuideLayoutBinding7 = this.f16099a;
+        DialogGuideLayoutBinding dialogGuideLayoutBinding7 = this.a;
         DialogGuideLayoutBinding dialogGuideLayoutBinding8 = dialogGuideLayoutBinding7;
         if (dialogGuideLayoutBinding7 == null) {
             Intrinsics.c("mBinding");
             dialogGuideLayoutBinding8 = null;
         }
         shapeTextView.setTextColor(dialogGuideLayoutBinding8.getRoot().getContext().getColor(guideBuilder.g()));
-        DialogGuideLayoutBinding dialogGuideLayoutBinding9 = this.f16099a;
+        DialogGuideLayoutBinding dialogGuideLayoutBinding9 = this.a;
         DialogGuideLayoutBinding dialogGuideLayoutBinding10 = dialogGuideLayoutBinding9;
         if (dialogGuideLayoutBinding9 == null) {
             Intrinsics.c("mBinding");
@@ -292,7 +286,7 @@ public final class BluedGuideDialog extends PopupWindow {
         a(guideBuilder.c());
         b(guideBuilder.a());
         a(guideBuilder.b(), guideBuilder.a());
-        DialogGuideLayoutBinding dialogGuideLayoutBinding11 = this.f16099a;
+        DialogGuideLayoutBinding dialogGuideLayoutBinding11 = this.a;
         DialogGuideLayoutBinding dialogGuideLayoutBinding12 = dialogGuideLayoutBinding11;
         if (dialogGuideLayoutBinding11 == null) {
             Intrinsics.c("mBinding");
@@ -300,7 +294,7 @@ public final class BluedGuideDialog extends PopupWindow {
         }
         dialogGuideLayoutBinding12.b.setText(guideBuilder.e());
         if (guideBuilder.i() > 0) {
-            DialogGuideLayoutBinding dialogGuideLayoutBinding13 = this.f16099a;
+            DialogGuideLayoutBinding dialogGuideLayoutBinding13 = this.a;
             DialogGuideLayoutBinding dialogGuideLayoutBinding14 = dialogGuideLayoutBinding13;
             if (dialogGuideLayoutBinding13 == null) {
                 Intrinsics.c("mBinding");
@@ -309,16 +303,16 @@ public final class BluedGuideDialog extends PopupWindow {
             dialogGuideLayoutBinding14.b.setMaxWidth(guideBuilder.i());
         }
         if (guideBuilder.j() > 0) {
-            DialogGuideLayoutBinding dialogGuideLayoutBinding15 = this.f16099a;
+            DialogGuideLayoutBinding dialogGuideLayoutBinding15 = this.a;
             if (dialogGuideLayoutBinding15 == null) {
                 Intrinsics.c("mBinding");
                 dialogGuideLayoutBinding15 = null;
             }
-            ViewGroup.LayoutParams layoutParams = dialogGuideLayoutBinding15.b.getLayoutParams();
+            ConstraintLayout.LayoutParams layoutParams = dialogGuideLayoutBinding15.b.getLayoutParams();
             if (layoutParams == null) {
                 throw new NullPointerException("null cannot be cast to non-null type androidx.constraintlayout.widget.ConstraintLayout.LayoutParams");
             }
-            ((ConstraintLayout.LayoutParams) layoutParams).height = guideBuilder.j();
+            layoutParams.height = guideBuilder.j();
         }
     }
 }

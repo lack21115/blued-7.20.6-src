@@ -6,9 +6,9 @@ import com.efs.sdk.base.http.HttpResponse;
 public final class c {
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f21766a = false;
+    public boolean f8160a = false;
     public boolean b = true;
 
     /* renamed from: c  reason: collision with root package name */
-    public HttpResponse f21767c = null;
+    public HttpResponse f8161c = null;
 }

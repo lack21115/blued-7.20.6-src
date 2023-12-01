@@ -4,28 +4,24 @@ import android.animation.Animator;
 import android.animation.ValueAnimator;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import com.tencent.ugc.UGCTransitionRules;
+import com.amap.api.maps.utils.SpatialRelationUtil;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.datatype.DatatypeConstants;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/same/loadingIndicator/BallSpinFadeLoaderIndicator.class */
 public class BallSpinFadeLoaderIndicator extends BaseIndicatorController {
-
-    /* renamed from: a  reason: collision with root package name */
-    float[] f14107a = {1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f};
+    float[] a = {1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f};
     int[] b = {255, 255, 255, 255, 255, 255, 255, 255};
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/same/loadingIndicator/BallSpinFadeLoaderIndicator$Point.class */
     public final class Point {
-
-        /* renamed from: a  reason: collision with root package name */
-        public float f14110a;
+        public float a;
         public float b;
 
         public Point(float f, float f2) {
-            this.f14110a = f;
+            this.a = f;
             this.b = f2;
         }
     }
@@ -38,7 +34,7 @@ public class BallSpinFadeLoaderIndicator extends BaseIndicatorController {
     @Override // com.blued.android.module.live_china.same.loadingIndicator.BaseIndicatorController
     public List<Animator> a() {
         ArrayList arrayList = new ArrayList();
-        int[] iArr = {0, 120, 240, 360, 480, 600, UGCTransitionRules.DEFAULT_IMAGE_WIDTH, 780, DatatypeConstants.MIN_TIMEZONE_OFFSET};
+        int[] iArr = {0, 120, 240, SpatialRelationUtil.A_CIRCLE_DEGREE, 480, 600, 720, 780, DatatypeConstants.MIN_TIMEZONE_OFFSET};
         int i = 0;
         while (true) {
             final int i2 = i;
@@ -52,7 +48,7 @@ public class BallSpinFadeLoaderIndicator extends BaseIndicatorController {
             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.blued.android.module.live_china.same.loadingIndicator.BallSpinFadeLoaderIndicator.1
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    BallSpinFadeLoaderIndicator.this.f14107a[i2] = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                    BallSpinFadeLoaderIndicator.this.a[i2] = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                     BallSpinFadeLoaderIndicator.this.e();
                 }
             });
@@ -77,7 +73,7 @@ public class BallSpinFadeLoaderIndicator extends BaseIndicatorController {
 
     @Override // com.blued.android.module.live_china.same.loadingIndicator.BaseIndicatorController
     public void a(Canvas canvas, Paint paint) {
-        float c2 = c() / 10;
+        float c = c() / 10;
         int i = 0;
         while (true) {
             int i2 = i;
@@ -85,12 +81,12 @@ public class BallSpinFadeLoaderIndicator extends BaseIndicatorController {
                 return;
             }
             canvas.save();
-            Point a2 = a(c(), d(), (c() / 2) - c2, 0.7853981633974483d * i2);
-            canvas.translate(a2.f14110a, a2.b);
-            float[] fArr = this.f14107a;
+            Point a = a(c(), d(), (c() / 2) - c, 0.7853981633974483d * i2);
+            canvas.translate(a.a, a.b);
+            float[] fArr = this.a;
             canvas.scale(fArr[i2], fArr[i2]);
             paint.setAlpha(this.b[i2]);
-            canvas.drawCircle(0.0f, 0.0f, c2, paint);
+            canvas.drawCircle(0.0f, 0.0f, c, paint);
             canvas.restore();
             i = i2 + 1;
         }

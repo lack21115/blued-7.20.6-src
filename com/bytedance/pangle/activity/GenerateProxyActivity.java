@@ -1027,6 +1027,7 @@ public abstract class GenerateProxyActivity extends Activity implements b {
         }
     }
 
+    @Override // android.view.Window.Callback
     public void onProvideKeyboardShortcuts(List list, Menu menu, int i) {
         GeneratePluginActivity generatePluginActivity = this.mTargetActivity;
         if (generatePluginActivity != null) {
@@ -1122,6 +1123,7 @@ public abstract class GenerateProxyActivity extends Activity implements b {
         return generatePluginActivity != null ? generatePluginActivity.onSearchRequested() : super.onSearchRequested();
     }
 
+    @Override // android.view.Window.Callback
     public boolean onSearchRequested(SearchEvent searchEvent) {
         GeneratePluginActivity generatePluginActivity = this.mTargetActivity;
         return generatePluginActivity != null ? generatePluginActivity.onSearchRequested(searchEvent) : super.onSearchRequested(searchEvent);
@@ -1257,6 +1259,7 @@ public abstract class GenerateProxyActivity extends Activity implements b {
         return generatePluginActivity != null ? generatePluginActivity.onWindowStartingActionMode(callback) : super.onWindowStartingActionMode(callback);
     }
 
+    @Override // android.view.Window.Callback
     public ActionMode onWindowStartingActionMode(ActionMode.Callback callback, int i) {
         GeneratePluginActivity generatePluginActivity = this.mTargetActivity;
         return generatePluginActivity != null ? generatePluginActivity.onWindowStartingActionMode(callback, i) : super.onWindowStartingActionMode(callback, i);

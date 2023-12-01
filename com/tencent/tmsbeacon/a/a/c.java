@@ -6,19 +6,19 @@ import java.util.Map;
 public final class c {
 
     /* renamed from: a  reason: collision with root package name */
-    public int f39460a;
+    public int f25769a;
     public Map<String, Object> b;
 
     public c(int i) {
-        this.f39460a = i;
+        this.f25769a = i;
     }
 
     public c(int i, Map<String, Object> map) {
-        this.f39460a = i;
+        this.f25769a = i;
         this.b = map;
     }
 
     public String toString() {
-        return "BusEvent{channel=" + this.f39460a + ", params=" + this.b + '}';
+        return "BusEvent{channel=" + this.f25769a + ", params=" + this.b + '}';
     }
 }

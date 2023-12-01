@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class LayoutVipPrivillegeBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final CardView f29441a;
+    private final CardView f15751a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public CardView getRoot() {
-        return this.f29441a;
+        return this.f15751a;
     }
 }

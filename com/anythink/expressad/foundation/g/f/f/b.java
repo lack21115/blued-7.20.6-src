@@ -8,24 +8,24 @@ import java.util.List;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private final int f7897a;
+    private final int f5057a;
     private final List<com.anythink.expressad.foundation.g.f.c.c> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final InputStream f7898c;
+    private final InputStream f5058c;
 
     public b(int i, List<com.anythink.expressad.foundation.g.f.c.c> list) {
         this(i, list, null);
     }
 
     public b(int i, List<com.anythink.expressad.foundation.g.f.c.c> list, InputStream inputStream) {
-        this.f7897a = i;
+        this.f5057a = i;
         this.b = list;
-        this.f7898c = inputStream;
+        this.f5058c = inputStream;
     }
 
     public final int a() {
-        return this.f7897a;
+        return this.f5057a;
     }
 
     public final List<com.anythink.expressad.foundation.g.f.c.c> b() {
@@ -33,6 +33,6 @@ public final class b {
     }
 
     public final InputStream c() {
-        return this.f7898c;
+        return this.f5058c;
     }
 }

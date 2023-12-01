@@ -48,12 +48,10 @@ public final class ReceiptGrpc {
             this.methodId = i;
         }
 
-        @Override // io.grpc.stub.ServerCalls.BidiStreamingMethod, io.grpc.stub.ServerCalls.StreamingRequestMethod, io.grpc.stub.ServerCalls.ClientStreamingMethod
         public StreamObserver<Req> invoke(StreamObserver<Resp> streamObserver) {
             throw new AssertionError();
         }
 
-        @Override // io.grpc.stub.ServerCalls.ServerStreamingMethod, io.grpc.stub.ServerCalls.UnaryRequestMethod, io.grpc.stub.ServerCalls.UnaryMethod
         public void invoke(Req req, StreamObserver<Resp> streamObserver) {
             int i = this.methodId;
             if (i == 0) {
@@ -79,12 +77,10 @@ public final class ReceiptGrpc {
         ReceiptBaseDescriptorSupplier() {
         }
 
-        @Override // io.grpc.protobuf.ProtoFileDescriptorSupplier
         public Descriptors.FileDescriptor getFileDescriptor() {
             return ReceiptOuterClass.getDescriptor();
         }
 
-        @Override // io.grpc.protobuf.ProtoServiceDescriptorSupplier
         public Descriptors.ServiceDescriptor getServiceDescriptor() {
             return getFileDescriptor().findServiceByName("Receipt");
         }
@@ -97,8 +93,8 @@ public final class ReceiptGrpc {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // io.grpc.stub.AbstractStub
-        public ReceiptBlockingStub build(Channel channel, CallOptions callOptions) {
+        /* renamed from: build */
+        public ReceiptBlockingStub m2502build(Channel channel, CallOptions callOptions) {
             return new ReceiptBlockingStub(channel, callOptions);
         }
 
@@ -141,8 +137,8 @@ public final class ReceiptGrpc {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // io.grpc.stub.AbstractStub
-        public ReceiptFutureStub build(Channel channel, CallOptions callOptions) {
+        /* renamed from: build */
+        public ReceiptFutureStub m2503build(Channel channel, CallOptions callOptions) {
             return new ReceiptFutureStub(channel, callOptions);
         }
 
@@ -212,7 +208,6 @@ public final class ReceiptGrpc {
             this.methodName = str;
         }
 
-        @Override // io.grpc.protobuf.ProtoMethodDescriptorSupplier
         public Descriptors.MethodDescriptor getMethodDescriptor() {
             return getServiceDescriptor().findMethodByName(this.methodName);
         }
@@ -225,8 +220,8 @@ public final class ReceiptGrpc {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // io.grpc.stub.AbstractStub
-        public ReceiptStub build(Channel channel, CallOptions callOptions) {
+        /* renamed from: build */
+        public ReceiptStub m2504build(Channel channel, CallOptions callOptions) {
             return new ReceiptStub(channel, callOptions);
         }
 
@@ -406,30 +401,27 @@ public final class ReceiptGrpc {
     }
 
     public static ReceiptBlockingStub newBlockingStub(Channel channel) {
-        return (ReceiptBlockingStub) ReceiptBlockingStub.newStub(new AbstractStub.StubFactory<ReceiptBlockingStub>() { // from class: com.blued.im.private_chat.ReceiptGrpc.2
-            /* JADX WARN: Can't rename method to resolve collision */
-            @Override // io.grpc.stub.AbstractStub.StubFactory
-            public ReceiptBlockingStub newStub(Channel channel2, CallOptions callOptions) {
+        return ReceiptBlockingStub.newStub(new AbstractStub.StubFactory<ReceiptBlockingStub>() { // from class: com.blued.im.private_chat.ReceiptGrpc.2
+            /* renamed from: newStub */
+            public ReceiptBlockingStub m2500newStub(Channel channel2, CallOptions callOptions) {
                 return new ReceiptBlockingStub(channel2, callOptions);
             }
         }, channel);
     }
 
     public static ReceiptFutureStub newFutureStub(Channel channel) {
-        return (ReceiptFutureStub) ReceiptFutureStub.newStub(new AbstractStub.StubFactory<ReceiptFutureStub>() { // from class: com.blued.im.private_chat.ReceiptGrpc.3
-            /* JADX WARN: Can't rename method to resolve collision */
-            @Override // io.grpc.stub.AbstractStub.StubFactory
-            public ReceiptFutureStub newStub(Channel channel2, CallOptions callOptions) {
+        return ReceiptFutureStub.newStub(new AbstractStub.StubFactory<ReceiptFutureStub>() { // from class: com.blued.im.private_chat.ReceiptGrpc.3
+            /* renamed from: newStub */
+            public ReceiptFutureStub m2501newStub(Channel channel2, CallOptions callOptions) {
                 return new ReceiptFutureStub(channel2, callOptions);
             }
         }, channel);
     }
 
     public static ReceiptStub newStub(Channel channel) {
-        return (ReceiptStub) ReceiptStub.newStub(new AbstractStub.StubFactory<ReceiptStub>() { // from class: com.blued.im.private_chat.ReceiptGrpc.1
-            /* JADX WARN: Can't rename method to resolve collision */
-            @Override // io.grpc.stub.AbstractStub.StubFactory
-            public ReceiptStub newStub(Channel channel2, CallOptions callOptions) {
+        return ReceiptStub.newStub(new AbstractStub.StubFactory<ReceiptStub>() { // from class: com.blued.im.private_chat.ReceiptGrpc.1
+            /* renamed from: newStub */
+            public ReceiptStub m2499newStub(Channel channel2, CallOptions callOptions) {
                 return new ReceiptStub(channel2, callOptions);
             }
         }, channel);

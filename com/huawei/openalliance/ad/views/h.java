@@ -11,35 +11,35 @@ public class h extends g {
     private float L;
 
     /* renamed from: a  reason: collision with root package name */
-    private Path f23046a;
+    private Path f9438a;
     private RectF b;
 
     /* renamed from: c  reason: collision with root package name */
-    private RectF f23047c;
+    private RectF f9439c;
     private Rect d;
     private float e;
 
     public h(Drawable drawable, int i, int i2) {
         super(drawable, i, i2);
-        this.f23046a = new Path();
+        this.f9438a = new Path();
         this.b = new RectF();
-        this.f23047c = new RectF();
+        this.f9439c = new RectF();
         I();
     }
 
     private void B(float f) {
-        this.f23046a.reset();
-        this.f23046a.addArc(this.b, 90.0f, 180.0f);
+        this.f9438a.reset();
+        this.f9438a.addArc(this.b, 90.0f, 180.0f);
         float f2 = this.d.right - this.e;
         if (Float.compare(Code(), V()) != 0) {
-            this.f23046a.addRect(this.e + this.d.left, this.d.top, f2, this.d.bottom, Path.Direction.CCW);
+            this.f9438a.addRect(this.e + this.d.left, this.d.top, f2, this.d.bottom, Path.Direction.CCW);
         }
         float f3 = 0.0f;
         if (Float.compare(Code(), 0.0f) != 0) {
             f3 = ((f - V()) / Code()) * this.e;
         }
-        this.f23047c.set(f2 - f3, this.d.top, f2 + f3, this.d.bottom);
-        this.f23046a.addArc(this.f23047c, 270.0f, 180.0f);
+        this.f9439c.set(f2 - f3, this.d.top, f2 + f3, this.d.bottom);
+        this.f9438a.addArc(this.f9439c, 270.0f, 180.0f);
     }
 
     private float C(float f) {
@@ -58,14 +58,14 @@ public class h extends g {
     }
 
     private void I(float f) {
-        this.f23046a.reset();
-        this.f23046a.addArc(this.b, 90.0f, 180.0f);
+        this.f9438a.reset();
+        this.f9438a.addArc(this.b, 90.0f, 180.0f);
         float f2 = 0.0f;
         if (Float.compare(Code(), 0.0f) != 0) {
             f2 = (f / Code()) * this.e;
         }
-        this.f23047c.set(this.d.left + f2, this.d.top, (this.d.left + this.d.height()) - f2, this.d.bottom);
-        this.f23046a.addArc(this.f23047c, 270.0f, -180.0f);
+        this.f9439c.set(this.d.left + f2, this.d.top, (this.d.left + this.d.height()) - f2, this.d.bottom);
+        this.f9438a.addArc(this.f9439c, 270.0f, -180.0f);
     }
 
     private void V(float f) {
@@ -73,9 +73,9 @@ public class h extends g {
     }
 
     private void Z(float f) {
-        this.f23046a.reset();
-        this.f23046a.addArc(this.b, 90.0f, 180.0f);
-        this.f23046a.addRect(this.d.left + this.e, this.d.top, (this.d.width() * f) + this.d.left, this.d.bottom, Path.Direction.CCW);
+        this.f9438a.reset();
+        this.f9438a.addArc(this.b, 90.0f, 180.0f);
+        this.f9438a.addRect(this.d.left + this.e, this.d.top, (this.d.width() * f) + this.d.left, this.d.bottom, Path.Direction.CCW);
     }
 
     protected float Code() {
@@ -107,7 +107,7 @@ public class h extends g {
         } else {
             B(f);
         }
-        return this.f23046a;
+        return this.f9438a;
     }
 
     @Override // com.huawei.openalliance.ad.views.g, android.graphics.drawable.Drawable

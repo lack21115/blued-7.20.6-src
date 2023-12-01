@@ -8,9 +8,7 @@ import java.util.List;
 
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/services/help/Inputtips.class */
 public final class Inputtips {
-
-    /* renamed from: a  reason: collision with root package name */
-    private IInputtipsSearch f5644a;
+    private IInputtipsSearch a;
 
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/services/help/Inputtips$InputtipsListener.class */
     public interface InputtipsListener {
@@ -18,10 +16,10 @@ public final class Inputtips {
     }
 
     public Inputtips(Context context, InputtipsListener inputtipsListener) throws AMapException {
-        this.f5644a = null;
+        this.a = null;
         if (0 == 0) {
             try {
-                this.f5644a = new gx(context, inputtipsListener);
+                this.a = new gx(context, inputtipsListener);
             } catch (Exception e) {
                 e.printStackTrace();
                 if (e instanceof AMapException) {
@@ -32,10 +30,10 @@ public final class Inputtips {
     }
 
     public Inputtips(Context context, InputtipsQuery inputtipsQuery) {
-        this.f5644a = null;
+        this.a = null;
         if (0 == 0) {
             try {
-                this.f5644a = new gx(context, inputtipsQuery);
+                this.a = new gx(context, inputtipsQuery);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -43,7 +41,7 @@ public final class Inputtips {
     }
 
     public final InputtipsQuery getQuery() {
-        IInputtipsSearch iInputtipsSearch = this.f5644a;
+        IInputtipsSearch iInputtipsSearch = this.a;
         if (iInputtipsSearch != null) {
             return iInputtipsSearch.getQuery();
         }
@@ -51,7 +49,7 @@ public final class Inputtips {
     }
 
     public final List<Tip> requestInputtips() throws AMapException {
-        IInputtipsSearch iInputtipsSearch = this.f5644a;
+        IInputtipsSearch iInputtipsSearch = this.a;
         if (iInputtipsSearch != null) {
             return iInputtipsSearch.requestInputtips();
         }
@@ -59,35 +57,35 @@ public final class Inputtips {
     }
 
     public final void requestInputtips(String str, String str2) throws AMapException {
-        IInputtipsSearch iInputtipsSearch = this.f5644a;
+        IInputtipsSearch iInputtipsSearch = this.a;
         if (iInputtipsSearch != null) {
             iInputtipsSearch.requestInputtips(str, str2);
         }
     }
 
     public final void requestInputtips(String str, String str2, String str3) throws AMapException {
-        IInputtipsSearch iInputtipsSearch = this.f5644a;
+        IInputtipsSearch iInputtipsSearch = this.a;
         if (iInputtipsSearch != null) {
             iInputtipsSearch.requestInputtips(str, str2, str3);
         }
     }
 
     public final void requestInputtipsAsyn() {
-        IInputtipsSearch iInputtipsSearch = this.f5644a;
+        IInputtipsSearch iInputtipsSearch = this.a;
         if (iInputtipsSearch != null) {
             iInputtipsSearch.requestInputtipsAsyn();
         }
     }
 
     public final void setInputtipsListener(InputtipsListener inputtipsListener) {
-        IInputtipsSearch iInputtipsSearch = this.f5644a;
+        IInputtipsSearch iInputtipsSearch = this.a;
         if (iInputtipsSearch != null) {
             iInputtipsSearch.setInputtipsListener(inputtipsListener);
         }
     }
 
     public final void setQuery(InputtipsQuery inputtipsQuery) {
-        IInputtipsSearch iInputtipsSearch = this.f5644a;
+        IInputtipsSearch iInputtipsSearch = this.a;
         if (iInputtipsSearch != null) {
             iInputtipsSearch.setQuery(inputtipsQuery);
         }

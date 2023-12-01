@@ -11,20 +11,16 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/DialogLiveConstellationInfoBinding.class */
 public final class DialogLiveConstellationInfoBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f11757a;
+    public final ImageView a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final SubsamplingScaleImageView f11758c;
+    public final SubsamplingScaleImageView c;
     private final ConstraintLayout d;
 
     private DialogLiveConstellationInfoBinding(ConstraintLayout constraintLayout, ImageView imageView, ImageView imageView2, SubsamplingScaleImageView subsamplingScaleImageView) {
         this.d = constraintLayout;
-        this.f11757a = imageView;
+        this.a = imageView;
         this.b = imageView2;
-        this.f11758c = subsamplingScaleImageView;
+        this.c = subsamplingScaleImageView;
     }
 
     public static DialogLiveConstellationInfoBinding a(LayoutInflater layoutInflater) {
@@ -59,7 +55,6 @@ public final class DialogLiveConstellationInfoBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.d;

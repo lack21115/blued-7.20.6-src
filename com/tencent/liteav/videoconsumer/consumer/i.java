@@ -6,11 +6,11 @@ import com.tencent.liteav.videobase.frame.PixelFrame;
 final /* synthetic */ class i implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final a f36704a;
+    private final a f23013a;
     private final PixelFrame b;
 
     private i(a aVar, PixelFrame pixelFrame) {
-        this.f36704a = aVar;
+        this.f23013a = aVar;
         this.b = pixelFrame;
     }
 
@@ -20,6 +20,6 @@ final /* synthetic */ class i implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        a.a(this.f36704a, this.b);
+        a.a(this.f23013a, this.b);
     }
 }

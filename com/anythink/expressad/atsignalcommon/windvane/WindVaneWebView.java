@@ -13,11 +13,11 @@ import com.anythink.expressad.foundation.h.t;
 public class WindVaneWebView extends BaseWebView {
 
     /* renamed from: a  reason: collision with root package name */
-    private Object f7098a;
+    private Object f4260a;
     private Object b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f7099c;
+    private String f4261c;
     private e d;
     protected o f;
     protected d g;
@@ -82,11 +82,11 @@ public class WindVaneWebView extends BaseWebView {
         if (this.j) {
             return;
         }
-        loadUrl(com.anythink.core.common.res.d.f6907a);
+        loadUrl("about:blank");
     }
 
     public String getCampaignId() {
-        return this.f7099c;
+        return this.f4261c;
     }
 
     public Object getJsObject(String str) {
@@ -102,7 +102,7 @@ public class WindVaneWebView extends BaseWebView {
     }
 
     public Object getObject() {
-        return this.f7098a;
+        return this.f4260a;
     }
 
     public String getRid() {
@@ -153,7 +153,7 @@ public class WindVaneWebView extends BaseWebView {
         try {
             removeAllViews();
             setDownloadListener(null);
-            this.f7098a = null;
+            this.f4260a = null;
             int j = t.j(getContext());
             if (j != 0) {
                 com.anythink.core.common.b.n.a().a(new Runnable() { // from class: com.anythink.expressad.atsignalcommon.windvane.WindVaneWebView.1
@@ -187,7 +187,7 @@ public class WindVaneWebView extends BaseWebView {
     }
 
     public void setCampaignId(String str) {
-        this.f7099c = str;
+        this.f4261c = str;
     }
 
     public void setMraidObject(Object obj) {
@@ -195,7 +195,7 @@ public class WindVaneWebView extends BaseWebView {
     }
 
     public void setObject(Object obj) {
-        this.f7098a = obj;
+        this.f4260a = obj;
     }
 
     public void setRid(String str) {

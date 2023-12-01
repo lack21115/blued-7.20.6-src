@@ -7,11 +7,11 @@ import java.lang.annotation.RetentionPolicy;
 public final class j {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f7304a = 0;
+    public static final int f4465a = 0;
     public static final int b = 1;
 
     /* renamed from: c  reason: collision with root package name */
-    public final int f7305c;
+    public final int f4466c;
     public final int d;
     public final long e;
     public final long f;
@@ -29,7 +29,7 @@ public final class j {
     }
 
     public j(int i, int i2, long j, long j2, long j3, com.anythink.expressad.exoplayer.m mVar, int i3, k[] kVarArr, int i4, long[] jArr, long[] jArr2) {
-        this.f7305c = i;
+        this.f4466c = i;
         this.d = i2;
         this.e = j;
         this.f = j2;

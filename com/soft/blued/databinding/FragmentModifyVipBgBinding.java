@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentModifyVipBgBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f28901a;
+    private final LinearLayout f15211a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f28901a;
+        return this.f15211a;
     }
 }

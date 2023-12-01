@@ -9,15 +9,15 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemMineVipBannerBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final LinearLayout f29243a;
+    public final LinearLayout f15553a;
     public final TextView b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final LinearLayout f29244c;
+    private final LinearLayout f15554c;
 
     private ItemMineVipBannerBinding(LinearLayout linearLayout, LinearLayout linearLayout2, TextView textView) {
-        this.f29244c = linearLayout;
-        this.f29243a = linearLayout2;
+        this.f15554c = linearLayout;
+        this.f15553a = linearLayout2;
         this.b = textView;
     }
 
@@ -39,6 +39,6 @@ public final class ItemMineVipBannerBinding implements ViewBinding {
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29244c;
+        return this.f15554c;
     }
 }

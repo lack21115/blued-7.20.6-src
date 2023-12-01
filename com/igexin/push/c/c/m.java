@@ -4,11 +4,11 @@ package com.igexin.push.c.c;
 public final class m extends c {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f23351a = 37;
+    public static final int f9743a = 37;
     public boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    public boolean f23352c;
+    public boolean f9744c;
     public String d;
     public String e;
     public long f;
@@ -33,7 +33,7 @@ public final class m extends c {
         if ((b & 128) != 0) {
             z = true;
         }
-        this.f23352c = z;
+        this.f9744c = z;
         if (z) {
             this.d = a(b);
             int b2 = com.igexin.c.a.b.g.b(bArr, 1);
@@ -57,7 +57,7 @@ public final class m extends c {
         int i3;
         byte b2 = this.b ? (byte) 64 : (byte) 0;
         byte[] bArr = null;
-        if (this.f23352c) {
+        if (this.f9744c) {
             byte b3 = (byte) (b2 | 128);
             try {
                 byte[] bytes = this.e.getBytes(this.d);
@@ -81,7 +81,7 @@ public final class m extends c {
         byte[] bArr2 = new byte[i2 + 8];
         bArr2[0] = b;
         int i4 = 1;
-        if (this.f23352c) {
+        if (this.f9744c) {
             i4 = com.igexin.c.a.b.g.b(i, bArr2, 1);
             if (bArr != null) {
                 i4 = com.igexin.c.a.b.g.a(bArr, bArr2, 2, i) + 2;

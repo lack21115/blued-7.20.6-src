@@ -5,16 +5,16 @@ package com.tencent.liteav.videoproducer.preprocessor;
 public final /* synthetic */ class o implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final h f37080a;
+    private final h f23389a;
     private final String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final boolean f37081c;
+    private final boolean f23390c;
 
     private o(h hVar, String str, boolean z) {
-        this.f37080a = hVar;
+        this.f23389a = hVar;
         this.b = str;
-        this.f37081c = z;
+        this.f23390c = z;
     }
 
     public static Runnable a(h hVar, String str, boolean z) {

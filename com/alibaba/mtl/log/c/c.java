@@ -2,6 +2,7 @@ package com.alibaba.mtl.log.c;
 
 import com.alibaba.mtl.log.e.i;
 import com.alibaba.mtl.log.e.r;
+import com.anythink.core.common.c.g;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -9,9 +10,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alibaba/mtl/log/c/c.class */
 public class c {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static c f4487a;
+    private static c a;
     private List<com.alibaba.mtl.log.model.a> l = new CopyOnWriteArrayList();
     private Runnable b = new Runnable() { // from class: com.alibaba.mtl.log.c.c.1
         @Override // java.lang.Runnable
@@ -46,7 +45,7 @@ public class c {
     public void H() {
         Calendar calendar = Calendar.getInstance();
         calendar.add(5, -3);
-        this.f33a.c("time", String.valueOf(calendar.getTimeInMillis()));
+        this.f33a.c(g.a.g, String.valueOf(calendar.getTimeInMillis()));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -58,10 +57,10 @@ public class c {
         c cVar;
         synchronized (c.class) {
             try {
-                if (f4487a == null) {
-                    f4487a = new c();
+                if (a == null) {
+                    a = new c();
                 }
-                cVar = f4487a;
+                cVar = a;
             } catch (Throwable th) {
                 throw th;
             }
@@ -81,7 +80,7 @@ public class c {
                     }
                 }
                 if (arrayList != null && arrayList.size() > 0) {
-                    this.f33a.mo2170a((List<com.alibaba.mtl.log.model.a>) arrayList);
+                    this.f33a.mo8613a((List<com.alibaba.mtl.log.model.a>) arrayList);
                 }
             } catch (Throwable th) {
             }

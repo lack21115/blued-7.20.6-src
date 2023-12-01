@@ -6,7 +6,6 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.os.Process;
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.beacon.a.d.a;
 import java.util.Date;
 
@@ -14,11 +13,11 @@ import java.util.Date;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f34937a;
+    public static String f21246a;
     public static int b = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    public static String f34938c = "";
+    public static String f21247c = "";
     public static boolean d = false;
     private static String e;
     private static boolean f = false;
@@ -29,10 +28,10 @@ public class b {
     private static boolean k = true;
 
     public static String a() {
-        if (f34937a == null) {
-            f34937a = e();
+        if (f21246a == null) {
+            f21246a = e();
         }
-        return f34937a;
+        return f21246a;
     }
 
     public static String a(Context context) {
@@ -241,16 +240,16 @@ public class b {
     }
 
     public static String d() {
-        if ("".equals(f34938c)) {
+        if ("".equals(f21247c)) {
             if (b == 0) {
                 b = Process.myPid();
             }
-            f34938c += b + BridgeUtil.UNDERLINE_STR;
-            String str = f34938c + new Date().getTime();
-            f34938c = str;
+            f21247c += b + "_";
+            String str = f21247c + new Date().getTime();
+            f21247c = str;
             return str;
         }
-        return f34938c;
+        return f21247c;
     }
 
     public static boolean d(Context context) {
@@ -328,7 +327,7 @@ public class b {
                 String string = a2.getString("APPVER_DENGTA", "");
                 String a3 = a();
                 if (string.isEmpty() || !string.equals(a3)) {
-                    a.SharedPreferences$EditorC0895a edit = a2.edit();
+                    a.SharedPreferences$EditorC0725a edit = a2.edit();
                     z = true;
                     if (com.tencent.beacon.base.util.b.a((SharedPreferences.Editor) edit)) {
                         edit.putString("APPVER_DENGTA", a3);
@@ -358,7 +357,7 @@ public class b {
                 String string = a2.getString("APPKEY_DENGTA", "");
                 String f2 = c.d().f();
                 if (TextUtils.isEmpty(string) || !f2.equals(string)) {
-                    a.SharedPreferences$EditorC0895a edit = a2.edit();
+                    a.SharedPreferences$EditorC0725a edit = a2.edit();
                     z = true;
                     if (com.tencent.beacon.base.util.b.a((SharedPreferences.Editor) edit)) {
                         edit.putString("APPKEY_DENGTA", f2);
@@ -396,7 +395,7 @@ public class b {
                 return;
             }
             f = true;
-            a.SharedPreferences$EditorC0895a edit = a2.edit();
+            a.SharedPreferences$EditorC0725a edit = a2.edit();
             if (com.tencent.beacon.base.util.b.a((SharedPreferences.Editor) edit)) {
                 edit.putString("APPVER_DENGTA", a3);
             }

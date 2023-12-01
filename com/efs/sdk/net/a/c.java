@@ -8,11 +8,11 @@ import java.util.Map;
 public final class c implements Serializable {
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f21844a = "callStart";
+    public static String f8237a = "callStart";
     public static String b = "callEnd";
 
     /* renamed from: c  reason: collision with root package name */
-    public static String f21845c = "callFailed";
+    public static String f8238c = "callFailed";
     public static String d = "dnsStart";
     public static String e = "dnsEnd";
     public static String f = "connectStart";

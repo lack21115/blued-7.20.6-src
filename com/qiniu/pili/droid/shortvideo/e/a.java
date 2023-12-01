@@ -12,11 +12,11 @@ import java.io.IOException;
 public class a implements MediaPlayer.OnCompletionListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private MediaPlayer f27637a;
+    private MediaPlayer f13949a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private AssetFileDescriptor f27638c;
+    private AssetFileDescriptor f13950c;
     private Handler g;
     private boolean d = true;
     private d e = new d(0, 0);
@@ -34,7 +34,7 @@ public class a implements MediaPlayer.OnCompletionListener {
     private void i() {
         long b = this.e.b();
         if (b > 0) {
-            if (b > this.f27637a.getDuration()) {
+            if (b > this.f13949a.getDuration()) {
                 h();
                 return;
             }
@@ -59,30 +59,30 @@ public class a implements MediaPlayer.OnCompletionListener {
     }
 
     private void j() {
-        if (this.f27637a != null) {
+        if (this.f13949a != null) {
             e.k.d("AudioPlayer", "media player already inited");
             return;
         }
         MediaPlayer mediaPlayer = new MediaPlayer();
-        this.f27637a = mediaPlayer;
+        this.f13949a = mediaPlayer;
         mediaPlayer.setOnCompletionListener(this);
         try {
             if (!g()) {
-                this.f27637a.setDataSource(this.b);
-            } else if (this.f27638c.getDeclaredLength() < 0) {
-                this.f27637a.setDataSource(this.f27638c.getFileDescriptor());
+                this.f13949a.setDataSource(this.b);
+            } else if (this.f13950c.getDeclaredLength() < 0) {
+                this.f13949a.setDataSource(this.f13950c.getFileDescriptor());
             } else {
-                this.f27637a.setDataSource(this.f27638c.getFileDescriptor(), this.f27638c.getStartOffset(), this.f27638c.getLength());
+                this.f13949a.setDataSource(this.f13950c.getFileDescriptor(), this.f13950c.getStartOffset(), this.f13950c.getLength());
             }
-            this.f27637a.prepare();
-            this.f27637a.setVolume(this.h, this.h);
+            this.f13949a.prepare();
+            this.f13949a.setVolume(this.h, this.h);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     public int a() {
-        MediaPlayer mediaPlayer = this.f27637a;
+        MediaPlayer mediaPlayer = this.f13949a;
         if (mediaPlayer == null) {
             e.k.d("AudioPlayer", "not playing !");
             return -1;
@@ -94,7 +94,7 @@ public class a implements MediaPlayer.OnCompletionListener {
     }
 
     public void a(float f) {
-        MediaPlayer mediaPlayer = this.f27637a;
+        MediaPlayer mediaPlayer = this.f13949a;
         if (mediaPlayer == null) {
             e.k.d("AudioPlayer", "not playing !");
             return;
@@ -107,14 +107,14 @@ public class a implements MediaPlayer.OnCompletionListener {
 
     public void a(long j) {
         e.k.c("AudioPlayer", "seekTo +");
-        if (this.f27637a == null) {
+        if (this.f13949a == null) {
             e.k.d("AudioPlayer", "not playing !");
             return;
         }
         if (Build.VERSION.SDK_INT < 26) {
-            this.f27637a.seekTo((int) j);
+            this.f13949a.seekTo((int) j);
         } else {
-            this.f27637a.seekTo((int) j, 3);
+            this.f13949a.seekTo((int) j, 3);
         }
         if (!this.f) {
             i();
@@ -124,14 +124,14 @@ public class a implements MediaPlayer.OnCompletionListener {
     }
 
     public void a(AssetFileDescriptor assetFileDescriptor) {
-        this.f27638c = assetFileDescriptor;
+        this.f13950c = assetFileDescriptor;
         this.b = null;
         j();
     }
 
     public void a(d dVar) {
         this.e = dVar;
-        MediaPlayer mediaPlayer = this.f27637a;
+        MediaPlayer mediaPlayer = this.f13949a;
         if (mediaPlayer == null || !mediaPlayer.isPlaying()) {
             return;
         }
@@ -140,7 +140,7 @@ public class a implements MediaPlayer.OnCompletionListener {
 
     public void a(String str) {
         this.b = str;
-        this.f27638c = null;
+        this.f13950c = null;
         j();
     }
 
@@ -151,12 +151,12 @@ public class a implements MediaPlayer.OnCompletionListener {
     public void b() {
         this.f = false;
         j();
-        this.f27637a.start();
+        this.f13949a.start();
         a(this.e.a());
     }
 
     public boolean c() {
-        MediaPlayer mediaPlayer = this.f27637a;
+        MediaPlayer mediaPlayer = this.f13949a;
         if (mediaPlayer != null) {
             return mediaPlayer.isPlaying();
         }
@@ -166,43 +166,43 @@ public class a implements MediaPlayer.OnCompletionListener {
     public void d() {
         e.k.c("AudioPlayer", "stop +");
         h();
-        MediaPlayer mediaPlayer = this.f27637a;
+        MediaPlayer mediaPlayer = this.f13949a;
         if (mediaPlayer == null) {
             return;
         }
         mediaPlayer.stop();
-        this.f27637a.release();
-        this.f27637a = null;
+        this.f13949a.release();
+        this.f13949a = null;
         e.k.c("AudioPlayer", "stop -");
     }
 
     public void e() {
         e.k.c("AudioPlayer", "pause +");
-        MediaPlayer mediaPlayer = this.f27637a;
+        MediaPlayer mediaPlayer = this.f13949a;
         if (mediaPlayer == null || !mediaPlayer.isPlaying()) {
             e.k.d("AudioPlayer", "not playing !");
             return;
         }
-        this.f27637a.pause();
+        this.f13949a.pause();
         this.f = true;
         e.k.c("AudioPlayer", "pause -");
     }
 
     public void f() {
         e.k.c("AudioPlayer", "resume +");
-        MediaPlayer mediaPlayer = this.f27637a;
+        MediaPlayer mediaPlayer = this.f13949a;
         if (mediaPlayer == null || mediaPlayer.isPlaying()) {
             e.k.d("AudioPlayer", "not in pause state !");
             return;
         }
-        this.f27637a.start();
+        this.f13949a.start();
         this.f = false;
         h();
         e.k.c("AudioPlayer", "resume -");
     }
 
     public boolean g() {
-        return this.f27638c != null;
+        return this.f13950c != null;
     }
 
     @Override // android.media.MediaPlayer.OnCompletionListener
@@ -211,11 +211,11 @@ public class a implements MediaPlayer.OnCompletionListener {
             this.f = true;
         } else if (this.f) {
         } else {
-            this.f27637a.start();
+            this.f13949a.start();
             if (Build.VERSION.SDK_INT < 26) {
-                this.f27637a.seekTo((int) this.e.a());
+                this.f13949a.seekTo((int) this.e.a());
             } else {
-                this.f27637a.seekTo((int) this.e.a(), 3);
+                this.f13949a.seekTo((int) this.e.a(), 3);
             }
         }
     }

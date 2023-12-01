@@ -17,9 +17,9 @@ public final class SystemPermissionAdapter extends BaseQuickAdapter<PermissionMo
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
-    public void convert(BaseViewHolder helper, PermissionModel item) {
-        Intrinsics.e(helper, "helper");
-        Intrinsics.e(item, "item");
-        helper.setText(2131372754, item.getTitle()).setText(2131371262, item.getDesc());
+    public void convert(BaseViewHolder baseViewHolder, PermissionModel permissionModel) {
+        Intrinsics.e(baseViewHolder, "helper");
+        Intrinsics.e(permissionModel, "item");
+        baseViewHolder.setText(2131372754, permissionModel.getTitle()).setText(R.id.tv_desc, permissionModel.getDesc());
     }
 }

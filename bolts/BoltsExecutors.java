@@ -10,46 +10,46 @@ import java.util.concurrent.ScheduledExecutorService;
 final class BoltsExecutors {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final BoltsExecutors f3683a = new BoltsExecutors();
+    private static final BoltsExecutors f3635a = new BoltsExecutors();
     private final ExecutorService b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final ScheduledExecutorService f3684c;
+    private final ScheduledExecutorService f3636c;
     private final Executor d;
 
     /* loaded from: source-8756600-dex2jar.jar:bolts/BoltsExecutors$ImmediateExecutor.class */
     static class ImmediateExecutor implements Executor {
 
         /* renamed from: a  reason: collision with root package name */
-        private ThreadLocal<Integer> f3685a;
+        private ThreadLocal<Integer> f3637a;
 
         private ImmediateExecutor() {
-            this.f3685a = new ThreadLocal<>();
+            this.f3637a = new ThreadLocal<>();
         }
 
         private int a() {
-            Integer num = this.f3685a.get();
+            Integer num = this.f3637a.get();
             Integer num2 = num;
             if (num == null) {
                 num2 = 0;
             }
             int intValue = num2.intValue() + 1;
-            this.f3685a.set(Integer.valueOf(intValue));
+            this.f3637a.set(Integer.valueOf(intValue));
             return intValue;
         }
 
         private int b() {
-            Integer num = this.f3685a.get();
+            Integer num = this.f3637a.get();
             Integer num2 = num;
             if (num == null) {
                 num2 = 0;
             }
             int intValue = num2.intValue() - 1;
             if (intValue == 0) {
-                this.f3685a.remove();
+                this.f3637a.remove();
                 return intValue;
             }
-            this.f3685a.set(Integer.valueOf(intValue));
+            this.f3637a.set(Integer.valueOf(intValue));
             return intValue;
         }
 
@@ -69,22 +69,22 @@ final class BoltsExecutors {
 
     private BoltsExecutors() {
         this.b = !d() ? Executors.newCachedThreadPool() : AndroidExecutors.a();
-        this.f3684c = Executors.newSingleThreadScheduledExecutor();
+        this.f3636c = Executors.newSingleThreadScheduledExecutor();
         this.d = new ImmediateExecutor();
     }
 
     public static ExecutorService a() {
-        return f3683a.b;
+        return f3635a.b;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static ScheduledExecutorService b() {
-        return f3683a.f3684c;
+        return f3635a.f3636c;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static Executor c() {
-        return f3683a.d;
+        return f3635a.d;
     }
 
     private static boolean d() {

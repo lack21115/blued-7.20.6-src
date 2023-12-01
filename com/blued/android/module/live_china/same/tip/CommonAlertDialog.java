@@ -25,7 +25,6 @@ import com.blued.android.module.live_china.R;
 import com.blued.android.module.live_china.same.tip.model.DialogWith6PW;
 import com.bytedance.applog.tracker.Tracker;
 import com.jungly.gridpasswordview.GridPasswordView;
-import com.jungly.gridpasswordview.imebugfixer.ImeDelBugFixedEditText;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/same/tip/CommonAlertDialog.class */
 public class CommonAlertDialog {
@@ -33,32 +32,28 @@ public class CommonAlertDialog {
     /* renamed from: com.blued.android.module.live_china.same.tip.CommonAlertDialog$4  reason: invalid class name */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/same/tip/CommonAlertDialog$4.class */
     class AnonymousClass4 implements DialogInterface.OnClickListener {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ String[] f14125a;
+        final /* synthetic */ String[] a;
         final /* synthetic */ TextOnClickListener b;
 
         @Override // android.content.DialogInterface.OnClickListener
         public void onClick(DialogInterface dialogInterface, int i) {
             Tracker.onClick(dialogInterface, i);
-            this.b.a(this.f14125a[i]);
+            this.b.a(this.a[i]);
         }
     }
 
     /* renamed from: com.blued.android.module.live_china.same.tip.CommonAlertDialog$5  reason: invalid class name */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/same/tip/CommonAlertDialog$5.class */
     class AnonymousClass5 implements View.OnClickListener {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ CustomDialog f14126a;
+        final /* synthetic */ CustomDialog a;
         final /* synthetic */ View.OnClickListener b;
 
         @Override // android.view.View.OnClickListener
         public void onClick(View view) {
             Tracker.onClick(view);
-            CustomDialog customDialog = this.f14126a;
+            CustomDialog customDialog = this.a;
             if (customDialog != null && customDialog.isShowing()) {
-                this.f14126a.dismiss();
+                this.a.dismiss();
             }
             View.OnClickListener onClickListener = this.b;
             if (onClickListener != null) {
@@ -70,17 +65,15 @@ public class CommonAlertDialog {
     /* renamed from: com.blued.android.module.live_china.same.tip.CommonAlertDialog$6  reason: invalid class name */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/same/tip/CommonAlertDialog$6.class */
     class AnonymousClass6 implements View.OnClickListener {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ CustomDialog f14127a;
+        final /* synthetic */ CustomDialog a;
         final /* synthetic */ View.OnClickListener b;
 
         @Override // android.view.View.OnClickListener
         public void onClick(View view) {
             Tracker.onClick(view);
-            CustomDialog customDialog = this.f14127a;
+            CustomDialog customDialog = this.a;
             if (customDialog != null && customDialog.isShowing()) {
-                this.f14127a.dismiss();
+                this.a.dismiss();
             }
             View.OnClickListener onClickListener = this.b;
             if (onClickListener != null) {
@@ -216,10 +209,10 @@ public class CommonAlertDialog {
     public static BluedAlertDialog a(Context context, int i, String str, String str2, View view, String str3, DialogInterface.OnClickListener onClickListener, String str4, DialogInterface.OnClickListener onClickListener2, DialogInterface.OnDismissListener onDismissListener, boolean z, int i2, int i3, boolean z2, boolean z3) {
         BluedAlertDialog.Builder builder = new BluedAlertDialog.Builder(context);
         builder.c(i).a(str).b(str2).a(view).a(str3, onClickListener).b(str4, onClickListener2).a(z).b(z2).a(onDismissListener).a(i2).b(i3);
-        BluedAlertDialog a2 = builder.a();
-        a2.setCanceledOnTouchOutside(z3);
-        a2.show();
-        return a2;
+        BluedAlertDialog a = builder.a();
+        a.setCanceledOnTouchOutside(z3);
+        a.show();
+        return a;
     }
 
     public static BluedAlertDialog a(Context context, String str, String str2, String str3, DialogInterface.OnClickListener onClickListener, DialogInterface.OnDismissListener onDismissListener, int i) {
@@ -256,10 +249,10 @@ public class CommonAlertDialog {
 
     public static DialogWith6PW a(Context context, String str, String str2, boolean z, final boolean z2, boolean z3, boolean z4, boolean z5, final PWDListener pWDListener, DialogInterface.OnCancelListener onCancelListener) {
         final DialogWith6PW dialogWith6PW = new DialogWith6PW();
-        View inflate = ((LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.item_dialog_6numpw, (ViewGroup) null);
+        View inflate = ((LayoutInflater) context.getSystemService("layout_inflater")).inflate(R.layout.item_dialog_6numpw, (ViewGroup) null);
         final TextView textView = (TextView) inflate.findViewById(R.id.tv_confirm);
-        GridPasswordView gridPasswordView = (GridPasswordView) inflate.findViewById(R.id.gpv_customUi);
-        ((ImeDelBugFixedEditText) gridPasswordView.findViewById(cn.blued.blued_third_library.R.id.inputView)).setImeOptions(33554432);
+        GridPasswordView findViewById = inflate.findViewById(R.id.gpv_customUi);
+        findViewById.findViewById(cn.blued.blued_third_library.R.id.inputView).setImeOptions(33554432);
         ViewGroup viewGroup = (ViewGroup) inflate.findViewById(R.id.vg_remember_check);
         final CheckBox checkBox = (CheckBox) inflate.findViewById(R.id.cbx_need_next);
         TextView textView2 = (TextView) inflate.findViewById(R.id.tv_title);
@@ -280,9 +273,9 @@ public class CommonAlertDialog {
             textView4.setText(str2);
         }
         if (z) {
-            gridPasswordView.setPasswordVisibility(true);
+            findViewById.setPasswordVisibility(true);
         } else {
-            gridPasswordView.setPasswordVisibility(false);
+            findViewById.setPasswordVisibility(false);
         }
         if (z4) {
             viewGroup.setVisibility(0);
@@ -290,8 +283,7 @@ public class CommonAlertDialog {
             viewGroup.setVisibility(8);
         }
         textView.setOnClickListener(null);
-        gridPasswordView.setOnPasswordChangedListener(new GridPasswordView.OnPasswordChangedListener() { // from class: com.blued.android.module.live_china.same.tip.CommonAlertDialog.3
-            @Override // com.jungly.gridpasswordview.GridPasswordView.OnPasswordChangedListener
+        findViewById.setOnPasswordChangedListener(new GridPasswordView.OnPasswordChangedListener() { // from class: com.blued.android.module.live_china.same.tip.CommonAlertDialog.3
             public void a(String str3) {
                 if (str3.length() < 6) {
                     TextView.this.setOnClickListener(null);
@@ -299,15 +291,14 @@ public class CommonAlertDialog {
                 }
             }
 
-            @Override // com.jungly.gridpasswordview.GridPasswordView.OnPasswordChangedListener
             public void b(final String str3) {
                 TextView.this.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.same.tip.CommonAlertDialog.3.1
                     @Override // android.view.View.OnClickListener
                     public void onClick(View view) {
                         Tracker.onClick(view);
                         pWDListener.a(str3, checkBox.isChecked(), dialogWith6PW);
-                        if (z2 && dialogWith6PW.f14128a != null && dialogWith6PW.f14128a.isShowing()) {
-                            dialogWith6PW.f14128a.dismiss();
+                        if (z2 && dialogWith6PW.a != null && dialogWith6PW.a.isShowing()) {
+                            dialogWith6PW.a.dismiss();
                         }
                     }
                 });
@@ -326,10 +317,10 @@ public class CommonAlertDialog {
         }
         create.setCanceledOnTouchOutside(z5);
         create.show();
-        dialogWith6PW.f14128a = create;
-        dialogWith6PW.b = gridPasswordView;
+        dialogWith6PW.a = create;
+        dialogWith6PW.b = findViewById;
         dialogWith6PW.d = textView4;
-        dialogWith6PW.f14129c = textView2;
+        dialogWith6PW.c = textView2;
         dialogWith6PW.e = (ScrollView) inflate.findViewById(R.id.scrollView);
         return dialogWith6PW;
     }

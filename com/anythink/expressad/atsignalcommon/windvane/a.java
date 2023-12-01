@@ -6,11 +6,11 @@ import com.anythink.expressad.atsignalcommon.b.c;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public WindVaneWebView f7101a;
+    public WindVaneWebView f4263a;
     public Object b;
 
     /* renamed from: c  reason: collision with root package name */
-    public c.f f7102c;
+    public c.f f4264c;
     public String d;
     public String e;
     public String f;

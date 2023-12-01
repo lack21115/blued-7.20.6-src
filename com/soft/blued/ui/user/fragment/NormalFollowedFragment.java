@@ -48,11 +48,10 @@ public class NormalFollowedFragment extends PreloadFragment {
     BluedUIHttpResponse j = new BluedUIHttpResponse<BluedEntity<BluedRecommendUsers, FollowedExtra>>(getFragmentActive()) { // from class: com.soft.blued.ui.user.fragment.NormalFollowedFragment.3
 
         /* renamed from: a  reason: collision with root package name */
-        int f33879a;
+        int f20188a;
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public boolean onUIFailure(int i, String str, String str2) {
-            this.f33879a = i;
+            this.f20188a = i;
             NormalFollowedFragment.this.w = true;
             if (NormalFollowedFragment.this.t != 1) {
                 NormalFollowedFragment.f(NormalFollowedFragment.this);
@@ -61,21 +60,20 @@ public class NormalFollowedFragment extends PreloadFragment {
             return true;
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIFinish() {
             NormalFollowedFragment.this.n.j();
             NormalFollowedFragment.this.n.q();
             if (TextUtils.equals(UserInfo.getInstance().getLoginUserInfo().uid, NormalFollowedFragment.this.x)) {
-                if (this.f33879a == 403903) {
+                if (this.f20188a == 403903) {
                     NormalFollowedFragment.this.s.a(new ArrayList());
                     NormalFollowedFragment.this.m.setNoDataImg(2131233647);
-                    NormalFollowedFragment.this.m.setNoDataStr(R.string.fans_list_hidden);
+                    NormalFollowedFragment.this.m.setNoDataStr((int) R.string.fans_list_hidden);
                 } else {
                     NormalFollowedFragment.this.m.setNoDataImg(2131233641);
                     if (UserInfo.getInstance().getLoginUserInfo().uid.equals(NormalFollowedFragment.this.x)) {
-                        NormalFollowedFragment.this.m.setNoDataStr(R.string.no_follows);
+                        NormalFollowedFragment.this.m.setNoDataStr((int) R.string.no_follows);
                     } else {
-                        NormalFollowedFragment.this.m.setNoDataStr(R.string.he_no_follows);
+                        NormalFollowedFragment.this.m.setNoDataStr((int) R.string.he_no_follows);
                     }
                 }
             }
@@ -83,7 +81,7 @@ public class NormalFollowedFragment extends PreloadFragment {
                 NormalFollowedFragment.this.w = false;
                 if (NormalFollowedFragment.this.s.getCount() != 0) {
                     NormalFollowedFragment.this.m.d();
-                } else if (this.f33879a == 403903) {
+                } else if (this.f20188a == 403903) {
                     NormalFollowedFragment.this.m.a();
                 } else {
                     NormalFollowedFragment.this.m.b();
@@ -100,7 +98,6 @@ public class NormalFollowedFragment extends PreloadFragment {
             NormalFollowedFragment.this.s.notifyDataSetChanged();
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIUpdate(BluedEntity<BluedRecommendUsers, FollowedExtra> bluedEntity) {
             if (bluedEntity != null) {
                 try {
@@ -117,7 +114,7 @@ public class NormalFollowedFragment extends PreloadFragment {
                         } else {
                             NormalFollowedFragment.this.s.b(bluedEntity.data);
                         }
-                        if (bluedEntity == null && bluedEntity.extra != null && bluedEntity.extra.count_repair == 1) {
+                        if (bluedEntity == null && bluedEntity.extra != null && ((FollowedExtra) bluedEntity.extra).count_repair == 1) {
                             NormalFollowedFragment.this.q.setVisibility(0);
                             return;
                         } else {
@@ -126,7 +123,7 @@ public class NormalFollowedFragment extends PreloadFragment {
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
-                    AppMethods.a((CharSequence) NormalFollowedFragment.this.k.getResources().getString(2131887272));
+                    AppMethods.a(NormalFollowedFragment.this.k.getResources().getString(2131887272));
                     if (NormalFollowedFragment.this.t != 1) {
                         NormalFollowedFragment.f(NormalFollowedFragment.this);
                         return;
@@ -143,7 +140,7 @@ public class NormalFollowedFragment extends PreloadFragment {
                 NormalFollowedFragment.this.n.p();
                 NormalFollowedFragment.this.n.j();
                 NormalFollowedFragment.this.n.q();
-                AppMethods.a((CharSequence) NormalFollowedFragment.this.k.getResources().getString(2131887275));
+                AppMethods.a(NormalFollowedFragment.this.k.getResources().getString(2131887275));
             }
             if (bluedEntity == null) {
             }
@@ -168,7 +165,7 @@ public class NormalFollowedFragment extends PreloadFragment {
         }
         if (!this.v && (i = this.t) != 1) {
             this.t = i - 1;
-            AppMethods.a((CharSequence) this.k.getResources().getString(2131887275));
+            AppMethods.a(this.k.getResources().getString(2131887275));
             this.n.j();
             this.n.q();
             return;
@@ -184,9 +181,9 @@ public class NormalFollowedFragment extends PreloadFragment {
 
     private void h() {
         this.r = LayoutInflater.from(this.k);
-        RenrenPullToRefreshListView renrenPullToRefreshListView = (RenrenPullToRefreshListView) this.l.findViewById(2131366898);
-        this.n = renrenPullToRefreshListView;
-        renrenPullToRefreshListView.setRefreshEnabled(true);
+        RenrenPullToRefreshListView findViewById = this.l.findViewById(R.id.list_view);
+        this.n = findViewById;
+        findViewById.setRefreshEnabled(true);
         ListView listView = (ListView) this.n.getRefreshableView();
         this.o = listView;
         listView.setClipToPadding(false);
@@ -199,13 +196,11 @@ public class NormalFollowedFragment extends PreloadFragment {
         this.s = recommendListAdapter;
         this.o.setAdapter((ListAdapter) recommendListAdapter);
         this.n.setOnPullDownListener(new RenrenPullToRefreshListView.OnPullDownListener() { // from class: com.soft.blued.ui.user.fragment.NormalFollowedFragment.1
-            @Override // com.blued.android.framework.view.pulltorefresh.RenrenPullToRefreshListView.OnPullDownListener
             public void a() {
                 NormalFollowedFragment.this.t = 1;
                 NormalFollowedFragment.this.a(false);
             }
 
-            @Override // com.blued.android.framework.view.pulltorefresh.RenrenPullToRefreshListView.OnPullDownListener
             public void b() {
                 NormalFollowedFragment.a(NormalFollowedFragment.this);
                 NormalFollowedFragment.this.a(false);
@@ -216,7 +211,7 @@ public class NormalFollowedFragment extends PreloadFragment {
     private void i() {
         View inflate = this.r.inflate(R.layout.layout_normal_followed_header, (ViewGroup) null, false);
         this.p = inflate;
-        this.q = (TextView) inflate.findViewById(2131372735);
+        this.q = (TextView) inflate.findViewById(R.id.tv_tip);
         String string = getContext().getString(R.string.normal_followed_clean_tip);
         this.q.setText(string);
         TypefaceUtils.a(getContext(), this.q, new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.NormalFollowedFragment.2
@@ -237,7 +232,6 @@ public class NormalFollowedFragment extends PreloadFragment {
         return !TextUtils.isEmpty(this.x) && this.x.equals(UserInfo.getInstance().getLoginUserInfo().getUid());
     }
 
-    @Override // com.blued.android.framework.activity.PreloadFragment
     public void a(View view) {
         this.l = view;
         FragmentActivity activity = getActivity();
@@ -253,20 +247,18 @@ public class NormalFollowedFragment extends PreloadFragment {
             this.x = getArguments().getString("uid");
         }
         if (UserInfo.getInstance().getLoginUserInfo().uid.equals(this.x)) {
-            this.m.setNoDataStr(R.string.no_follows);
+            this.m.setNoDataStr((int) R.string.no_follows);
         } else {
-            this.m.setNoDataStr(R.string.he_no_follows);
+            this.m.setNoDataStr((int) R.string.he_no_follows);
         }
         ((FrameLayout) this.l.findViewById(2131364048)).addView(this.m);
         h();
     }
 
-    @Override // com.blued.android.framework.activity.PreloadFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         return super.onCreateView(layoutInflater, viewGroup, bundle);
     }
 
-    @Override // com.blued.android.framework.activity.HomeTabFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onViewCreated(View view, Bundle bundle) {
         super.onViewCreated(view, bundle);
     }

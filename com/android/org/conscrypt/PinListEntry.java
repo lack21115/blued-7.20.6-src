@@ -15,7 +15,7 @@ public class PinListEntry {
     private final TrustedCertificateStore certStore;
 
     /* renamed from: cn  reason: collision with root package name */
-    private final String f5814cn;
+    private final String f48cn;
     private final boolean enforcing;
     private final Set<String> pinnedFingerprints = new HashSet();
 
@@ -28,7 +28,7 @@ public class PinListEntry {
         if (split.length < 3) {
             throw new PinEntryException("Received malformed pin entry");
         }
-        this.f5814cn = split[0];
+        this.f48cn = split[0];
         this.enforcing = enforcementValueFromString(split[1]);
         addPins((String[]) Arrays.copyOfRange(split, 2, split.length));
     }
@@ -79,7 +79,7 @@ public class PinListEntry {
     }
 
     private void logPinFailure(List<X509Certificate> list, boolean z) {
-        PinFailureLogger.log(this.f5814cn, z, this.enforcing, list);
+        PinFailureLogger.log(this.f48cn, z, this.enforcing, list);
     }
 
     private static void validatePin(String str) {
@@ -94,7 +94,7 @@ public class PinListEntry {
     }
 
     public String getCommonName() {
-        return this.f5814cn;
+        return this.f48cn;
     }
 
     public boolean getEnforcing() {

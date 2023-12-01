@@ -7,9 +7,7 @@ import java.util.Map;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/banner/a/a.class */
 public class a extends com.anythink.core.common.f<c> {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final String f5816a = g.C0100g.f6508c + a.class.getSimpleName();
+    public static final String a = g.C0060g.c + a.class.getSimpleName();
 
     private a(Context context, String str) {
         super(context, str);
@@ -80,6 +78,6 @@ public class a extends com.anythink.core.common.f<c> {
         cVar.a(context);
         cVar.d = i;
         cVar.g = map;
-        super.a(this.b, "2", this.f6687c, (String) cVar, aVar);
+        super.a(this.b, "2", this.c, (String) cVar, aVar);
     }
 }

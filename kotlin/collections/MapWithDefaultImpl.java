@@ -8,12 +8,10 @@ import kotlin.Metadata;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/collections/MapWithDefaultImpl.class */
 final class MapWithDefaultImpl<K, V> implements MapWithDefault<K, V> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Map<K, V> f42385a;
+    private final Map<K, V> a;
 
     public Map<K, V> a() {
-        return this.f42385a;
+        return this.a;
     }
 
     public int b() {

@@ -8,7 +8,7 @@ public class sc extends Thread {
     private rc b;
 
     /* renamed from: c  reason: collision with root package name */
-    private volatile boolean f38005c = false;
+    private volatile boolean f24314c = false;
     private volatile boolean d = false;
     private volatile boolean e = false;
 
@@ -38,7 +38,7 @@ public class sc extends Thread {
 
     public void c() {
         this.d = false;
-        this.f38005c = true;
+        this.f24314c = true;
         synchronized (this) {
             notifyAll();
         }
@@ -50,7 +50,7 @@ public class sc extends Thread {
 
     @Override // java.lang.Thread, java.lang.Runnable
     public void run() {
-        while (!this.f38005c) {
+        while (!this.f24314c) {
             boolean z = false;
             if (!this.d) {
                 z = d();

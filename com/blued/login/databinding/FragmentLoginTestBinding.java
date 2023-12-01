@@ -15,11 +15,11 @@ import com.blued.login.R;
 public final class FragmentLoginTestBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ImageView f20523a;
+    public final ImageView f6917a;
     public final CommonEdittextView b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final EditText f20524c;
+    public final EditText f6918c;
     public final EditText d;
     public final EditText e;
     public final EditText f;
@@ -36,9 +36,9 @@ public final class FragmentLoginTestBinding implements ViewBinding {
 
     private FragmentLoginTestBinding(LinearLayout linearLayout, ImageView imageView, CommonEdittextView commonEdittextView, EditText editText, EditText editText2, EditText editText3, EditText editText4, LinearLayout linearLayout2, LinearLayout linearLayout3, RecyclerView recyclerView, ToggleButton toggleButton, TextView textView, TextView textView2, TextView textView3, TextView textView4, TextView textView5) {
         this.p = linearLayout;
-        this.f20523a = imageView;
+        this.f6917a = imageView;
         this.b = commonEdittextView;
-        this.f20524c = editText;
+        this.f6918c = editText;
         this.d = editText2;
         this.e = editText3;
         this.f = editText4;
@@ -57,8 +57,8 @@ public final class FragmentLoginTestBinding implements ViewBinding {
         String str;
         ImageView imageView = (ImageView) view.findViewById(R.id.aariv_captcha);
         if (imageView != null) {
-            CommonEdittextView commonEdittextView = (CommonEdittextView) view.findViewById(R.id.cev_captcha);
-            if (commonEdittextView != null) {
+            CommonEdittextView findViewById = view.findViewById(R.id.cev_captcha);
+            if (findViewById != null) {
                 EditText editText = (EditText) view.findViewById(R.id.edt_account);
                 if (editText != null) {
                     EditText editText2 = (EditText) view.findViewById(R.id.edt_area_code);
@@ -85,7 +85,7 @@ public final class FragmentLoginTestBinding implements ViewBinding {
                                                             if (textView4 != null) {
                                                                 TextView textView5 = (TextView) view.findViewById(R.id.tv_phone_code_send);
                                                                 if (textView5 != null) {
-                                                                    return new FragmentLoginTestBinding((LinearLayout) view, imageView, commonEdittextView, editText, editText2, editText3, editText4, linearLayout, linearLayout2, recyclerView, toggleButton, textView, textView2, textView3, textView4, textView5);
+                                                                    return new FragmentLoginTestBinding((LinearLayout) view, imageView, findViewById, editText, editText2, editText3, editText4, linearLayout, linearLayout2, recyclerView, toggleButton, textView, textView2, textView3, textView4, textView5);
                                                                 }
                                                                 str = "tvPhoneCodeSend";
                                                             } else {

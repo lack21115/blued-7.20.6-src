@@ -1,7 +1,5 @@
 package java.util.concurrent;
 
-import com.anythink.expressad.d.a.b;
-
 /* loaded from: source-2895416-dex2jar.jar:java/util/concurrent/TimeUnit.class */
 public enum TimeUnit {
     NANOSECONDS { // from class: java.util.concurrent.TimeUnit.1
@@ -12,7 +10,7 @@ public enum TimeUnit {
 
         @Override // java.util.concurrent.TimeUnit
         int excessNanos(long j, long j2) {
-            return (int) (j - (1000000 * j2));
+            return (int) (j - (TimeUnit.C2 * j2));
         }
 
         @Override // java.util.concurrent.TimeUnit
@@ -32,7 +30,7 @@ public enum TimeUnit {
 
         @Override // java.util.concurrent.TimeUnit
         public long toMillis(long j) {
-            return j / 1000000;
+            return j / TimeUnit.C2;
         }
 
         @Override // java.util.concurrent.TimeUnit
@@ -47,7 +45,7 @@ public enum TimeUnit {
 
         @Override // java.util.concurrent.TimeUnit
         public long toSeconds(long j) {
-            return j / 1000000000;
+            return j / TimeUnit.C3;
         }
     },
     MICROSECONDS { // from class: java.util.concurrent.TimeUnit.2
@@ -58,7 +56,7 @@ public enum TimeUnit {
 
         @Override // java.util.concurrent.TimeUnit
         int excessNanos(long j, long j2) {
-            return (int) ((1000 * j) - (1000000 * j2));
+            return (int) ((1000 * j) - (TimeUnit.C2 * j2));
         }
 
         @Override // java.util.concurrent.TimeUnit
@@ -93,7 +91,7 @@ public enum TimeUnit {
 
         @Override // java.util.concurrent.TimeUnit
         public long toSeconds(long j) {
-            return j / 1000000;
+            return j / TimeUnit.C2;
         }
     },
     MILLISECONDS { // from class: java.util.concurrent.TimeUnit.3
@@ -134,7 +132,7 @@ public enum TimeUnit {
 
         @Override // java.util.concurrent.TimeUnit
         public long toNanos(long j) {
-            return x(j, 1000000L, 9223372036854L);
+            return x(j, TimeUnit.C2, 9223372036854L);
         }
 
         @Override // java.util.concurrent.TimeUnit
@@ -160,12 +158,12 @@ public enum TimeUnit {
 
         @Override // java.util.concurrent.TimeUnit
         public long toHours(long j) {
-            return j / b.P;
+            return j / 3600;
         }
 
         @Override // java.util.concurrent.TimeUnit
         public long toMicros(long j) {
-            return x(j, 1000000L, 9223372036854L);
+            return x(j, TimeUnit.C2, 9223372036854L);
         }
 
         @Override // java.util.concurrent.TimeUnit
@@ -180,7 +178,7 @@ public enum TimeUnit {
 
         @Override // java.util.concurrent.TimeUnit
         public long toNanos(long j) {
-            return x(j, 1000000000L, 9223372036L);
+            return x(j, TimeUnit.C3, 9223372036L);
         }
 
         @Override // java.util.concurrent.TimeUnit
@@ -277,7 +275,7 @@ public enum TimeUnit {
 
         @Override // java.util.concurrent.TimeUnit
         public long toSeconds(long j) {
-            return x(j, b.P, 2562047788015215L);
+            return x(j, 3600L, 2562047788015215L);
         }
     },
     DAYS { // from class: java.util.concurrent.TimeUnit.7

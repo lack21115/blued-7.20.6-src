@@ -1,6 +1,5 @@
 package java.io;
 
-import com.igexin.push.core.b;
 import java.util.Formatter;
 import java.util.Locale;
 
@@ -59,8 +58,8 @@ public class PrintWriter extends Writer {
     }
 
     @Override // java.io.Writer, java.lang.Appendable
-    public PrintWriter append(char c2) {
-        write(c2);
+    public PrintWriter append(char c) {
+        write(c);
         return this;
     }
 
@@ -68,7 +67,7 @@ public class PrintWriter extends Writer {
     public PrintWriter append(CharSequence charSequence) {
         CharSequence charSequence2 = charSequence;
         if (charSequence == null) {
-            charSequence2 = b.l;
+            charSequence2 = "null";
         }
         append(charSequence2, 0, charSequence2.length());
         return this;
@@ -78,7 +77,7 @@ public class PrintWriter extends Writer {
     public PrintWriter append(CharSequence charSequence, int i, int i2) {
         CharSequence charSequence2 = charSequence;
         if (charSequence == null) {
-            charSequence2 = b.l;
+            charSequence2 = "null";
         }
         String charSequence3 = charSequence2.subSequence(i, i2).toString();
         write(charSequence3, 0, charSequence3.length());
@@ -144,8 +143,8 @@ public class PrintWriter extends Writer {
         return this;
     }
 
-    public void print(char c2) {
-        print(String.valueOf(c2));
+    public void print(char c) {
+        print(String.valueOf(c));
     }
 
     public void print(double d) {
@@ -200,8 +199,8 @@ public class PrintWriter extends Writer {
         }
     }
 
-    public void println(char c2) {
-        println(String.valueOf(c2));
+    public void println(char c) {
+        println(String.valueOf(c));
     }
 
     public void println(double d) {

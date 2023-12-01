@@ -1,5 +1,6 @@
 package android.inputmethodservice;
 
+import android.R;
 import android.app.ActivityManager;
 import android.app.Dialog;
 import android.content.Context;
@@ -40,8 +41,6 @@ import android.view.inputmethod.InputMethodSubtype;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
-import android.widget.TextView;
-import com.android.internal.R;
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
 
@@ -107,7 +106,6 @@ public class InputMethodService extends AbstractInputMethodService {
     final Insets mTmpInsets = new Insets();
     final int[] mTmpLocation = new int[2];
     final ViewTreeObserver.OnComputeInternalInsetsListener mInsetsComputer = new ViewTreeObserver.OnComputeInternalInsetsListener() { // from class: android.inputmethodservice.InputMethodService.1
-        @Override // android.view.ViewTreeObserver.OnComputeInternalInsetsListener
         public void onComputeInternalInsets(ViewTreeObserver.InternalInsetsInfo internalInsetsInfo) {
             if (!InputMethodService.this.isExtractViewShown()) {
                 InputMethodService.this.onComputeInsets(InputMethodService.this.mTmpInsets);
@@ -390,34 +388,34 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     boolean doMovementKey(int i, KeyEvent keyEvent, int i2) {
-        TextView textView = this.mExtractEditText;
-        if (isExtractViewShown() && isInputViewShown() && textView != null) {
-            MovementMethod movementMethod = textView.getMovementMethod();
-            Layout layout = textView.getLayout();
+        ExtractEditText extractEditText = this.mExtractEditText;
+        if (isExtractViewShown() && isInputViewShown() && extractEditText != null) {
+            MovementMethod movementMethod = extractEditText.getMovementMethod();
+            Layout layout = extractEditText.getLayout();
             if (movementMethod != null && layout != null) {
                 if (i2 == -1) {
-                    if (movementMethod.onKeyDown(textView, textView.getText(), i, keyEvent)) {
+                    if (movementMethod.onKeyDown(extractEditText, extractEditText.getText(), i, keyEvent)) {
                         reportExtractedMovement(i, 1);
                         return true;
                     }
                 } else if (i2 == -2) {
-                    if (movementMethod.onKeyUp(textView, textView.getText(), i, keyEvent)) {
+                    if (movementMethod.onKeyUp(extractEditText, extractEditText.getText(), i, keyEvent)) {
                         return true;
                     }
-                } else if (movementMethod.onKeyOther(textView, textView.getText(), keyEvent)) {
+                } else if (movementMethod.onKeyOther(extractEditText, extractEditText.getText(), keyEvent)) {
                     reportExtractedMovement(i, i2);
                 } else {
                     KeyEvent changeAction = KeyEvent.changeAction(keyEvent, 0);
-                    if (movementMethod.onKeyDown(textView, textView.getText(), i, changeAction)) {
+                    if (movementMethod.onKeyDown(extractEditText, extractEditText.getText(), i, changeAction)) {
                         KeyEvent changeAction2 = KeyEvent.changeAction(keyEvent, 1);
-                        movementMethod.onKeyUp(textView, textView.getText(), i, changeAction2);
+                        movementMethod.onKeyUp(extractEditText, extractEditText.getText(), i, changeAction2);
                         while (true) {
                             i2--;
                             if (i2 <= 0) {
                                 break;
                             }
-                            movementMethod.onKeyDown(textView, textView.getText(), i, changeAction);
-                            movementMethod.onKeyUp(textView, textView.getText(), i, changeAction2);
+                            movementMethod.onKeyDown(extractEditText, extractEditText.getText(), i, changeAction);
+                            movementMethod.onKeyUp(extractEditText, extractEditText.getText(), i, changeAction2);
                         }
                         reportExtractedMovement(i, i2);
                     }
@@ -544,19 +542,19 @@ public class InputMethodService extends AbstractInputMethodService {
             case 1:
                 return null;
             case 2:
-                return getText(R.string.ime_action_go);
+                return getText(17040908);
             case 3:
-                return getText(R.string.ime_action_search);
+                return getText(17040909);
             case 4:
-                return getText(R.string.ime_action_send);
+                return getText(17040910);
             case 5:
-                return getText(R.string.ime_action_next);
+                return getText(17040911);
             case 6:
-                return getText(R.string.ime_action_done);
+                return getText(17040912);
             case 7:
-                return getText(R.string.ime_action_previous);
+                return getText(17040913);
             default:
-                return getText(R.string.ime_action_default);
+                return getText(17040914);
         }
     }
 
@@ -584,24 +582,24 @@ public class InputMethodService extends AbstractInputMethodService {
         this.mWindowCreated = false;
         this.mShowInputRequested = false;
         this.mShowInputForced = false;
-        this.mThemeAttrs = obtainStyledAttributes(android.R.styleable.InputMethodService);
-        this.mRootView = this.mInflater.inflate(R.layout.input_method, (ViewGroup) null);
+        this.mThemeAttrs = obtainStyledAttributes(R.styleable.InputMethodService);
+        this.mRootView = this.mInflater.inflate(17367131, (ViewGroup) null);
         this.mRootView.setSystemUiVisibility(768);
         this.mWindow.setContentView(this.mRootView);
         this.mRootView.getViewTreeObserver().addOnComputeInternalInsetsListener(this.mInsetsComputer);
         if (Settings.Global.getInt(getContentResolver(), Settings.Global.FANCY_IME_ANIMATIONS, 0) != 0) {
-            this.mWindow.getWindow().setWindowAnimations(R.style.Animation_InputMethodFancy);
+            this.mWindow.getWindow().setWindowAnimations(16974562);
         }
-        this.mFullscreenArea = (ViewGroup) this.mRootView.findViewById(R.id.fullscreenArea);
+        this.mFullscreenArea = (ViewGroup) this.mRootView.findViewById(16909072);
         this.mExtractViewHidden = false;
-        this.mExtractFrame = (FrameLayout) this.mRootView.findViewById(16908316);
+        this.mExtractFrame = (FrameLayout) this.mRootView.findViewById(R.id.extractArea);
         this.mExtractView = null;
         this.mExtractEditText = null;
         this.mExtractAccessories = null;
         this.mExtractAction = null;
         this.mFullscreenApplied = false;
-        this.mCandidatesFrame = (FrameLayout) this.mRootView.findViewById(16908317);
-        this.mInputFrame = (FrameLayout) this.mRootView.findViewById(16908318);
+        this.mCandidatesFrame = (FrameLayout) this.mRootView.findViewById(R.id.candidatesArea);
+        this.mInputFrame = (FrameLayout) this.mRootView.findViewById(R.id.inputArea);
         this.mInputView = null;
         this.mIsInputViewShown = false;
         this.mExtractFrame.setVisibility(8);
@@ -711,7 +709,7 @@ public class InputMethodService extends AbstractInputMethodService {
 
     @Override // android.app.Service
     public void onCreate() {
-        this.mTheme = Resources.selectSystemTheme(this.mTheme, getApplicationInfo().targetSdkVersion, 16973908, 16973951, 16974142, 16974142);
+        this.mTheme = Resources.selectSystemTheme(this.mTheme, getApplicationInfo().targetSdkVersion, R.style.Theme_InputMethod, R.style.Theme_Holo_InputMethod, R.style.Theme_DeviceDefault_InputMethod, R.style.Theme_DeviceDefault_InputMethod);
         super.setTheme(this.mTheme);
         super.onCreate();
         this.mImm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -729,7 +727,7 @@ public class InputMethodService extends AbstractInputMethodService {
     }
 
     public View onCreateExtractTextView() {
-        return this.mInflater.inflate(R.layout.input_method_extract_view, (ViewGroup) null);
+        return this.mInflater.inflate(17367132, (ViewGroup) null);
     }
 
     @Override // android.inputmethodservice.AbstractInputMethodService
@@ -1153,11 +1151,11 @@ public class InputMethodService extends AbstractInputMethodService {
             this.mExtractAction = null;
             return;
         }
-        this.mExtractEditText = (ExtractEditText) view.findViewById(16908325);
+        this.mExtractEditText = (ExtractEditText) view.findViewById(R.id.inputExtractEditText);
         this.mExtractEditText.setIME(this);
-        this.mExtractAction = (Button) view.findViewById(R.id.inputExtractAction);
+        this.mExtractAction = (Button) view.findViewById(16909074);
         if (this.mExtractAction != null) {
-            this.mExtractAccessories = (ViewGroup) view.findViewById(R.id.inputExtractAccessories);
+            this.mExtractAccessories = (ViewGroup) view.findViewById(16909073);
         }
         startExtractingText(false);
     }

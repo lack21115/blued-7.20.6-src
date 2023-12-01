@@ -10,7 +10,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 /* loaded from: source-7206380-dex2jar.jar:com/bytedance/sdk/openadsdk/ox/mb.class */
 public class mb {
     private static volatile mb ox;
-    private volatile ThreadPoolExecutor mb = new ThreadPoolExecutor(3, 3, 5, TimeUnit.SECONDS, new LinkedBlockingQueue(), new ThreadFactoryC0327mb(), new RejectedExecutionHandler() { // from class: com.bytedance.sdk.openadsdk.ox.mb.1
+    private volatile ThreadPoolExecutor mb = new ThreadPoolExecutor(3, 3, 5, TimeUnit.SECONDS, new LinkedBlockingQueue(), new ThreadFactoryC0157mb(), new RejectedExecutionHandler() { // from class: com.bytedance.sdk.openadsdk.ox.mb.1
         @Override // java.util.concurrent.RejectedExecutionHandler
         public void rejectedExecution(Runnable runnable, ThreadPoolExecutor threadPoolExecutor) {
             com.bytedance.sdk.openadsdk.api.mb.hj("TTThreadManager", "TTThreadManager rejectedExecution:  ");
@@ -19,16 +19,16 @@ public class mb {
 
     /* renamed from: com.bytedance.sdk.openadsdk.ox.mb$mb  reason: collision with other inner class name */
     /* loaded from: source-7206380-dex2jar.jar:com/bytedance/sdk/openadsdk/ox/mb$mb.class */
-    public static class ThreadFactoryC0327mb implements ThreadFactory {
+    public static class ThreadFactoryC0157mb implements ThreadFactory {
         private final String b;
         private final ThreadGroup mb;
         private final AtomicInteger ox;
 
-        ThreadFactoryC0327mb() {
+        ThreadFactoryC0157mb() {
             this("csj_g_pl_mgr");
         }
 
-        ThreadFactoryC0327mb(String str) {
+        ThreadFactoryC0157mb(String str) {
             this.ox = new AtomicInteger(1);
             this.mb = new ThreadGroup("csj_g_pl_mgr");
             this.b = str;

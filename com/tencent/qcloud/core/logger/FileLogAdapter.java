@@ -4,7 +4,6 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Message;
-import com.anythink.china.common.a.a;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -119,8 +118,8 @@ public class FileLogAdapter implements LogAdapter {
             }
         }
         File file = this.latestLogFile;
-        if (file == null || file.length() >= 3145728 || !isSameDay(this.latestLogFile.getName().replace(a.f, ""), j)) {
-            this.latestLogFile = new File(this.logRootDir + File.separator + formatDateString(j) + a.f);
+        if (file == null || file.length() >= 3145728 || !isSameDay(this.latestLogFile.getName().replace(".log", ""), j)) {
+            this.latestLogFile = new File(this.logRootDir + File.separator + formatDateString(j) + ".log");
             cleanFilesIfNecessary(listFiles);
             return this.latestLogFile;
         }

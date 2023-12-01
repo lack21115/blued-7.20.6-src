@@ -9,10 +9,10 @@ import android.content.IntentFilter;
 public final class d extends BroadcastReceiver {
 
     /* renamed from: a  reason: collision with root package name */
-    private com.oplus.log.f.d f24320a;
+    private com.oplus.log.f.d f10633a;
 
     public d(com.oplus.log.f.d dVar) {
-        this.f24320a = dVar;
+        this.f10633a = dVar;
     }
 
     public final void a(Context context) {
@@ -29,8 +29,8 @@ public final class d extends BroadcastReceiver {
         new Thread(new Runnable() { // from class: com.oplus.log.b.a.d.1
             @Override // java.lang.Runnable
             public final void run() {
-                if (d.this.f24320a != null) {
-                    d.this.f24320a.a(new com.oplus.log.b.b("Network_Info", com.oplus.log.d.c.a(), (byte) 4, null, null));
+                if (d.this.f10633a != null) {
+                    d.this.f10633a.a(new com.oplus.log.b.b("Network_Info", com.oplus.log.d.c.a(), (byte) 4, null, null));
                 }
             }
         }).start();

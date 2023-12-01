@@ -18,23 +18,21 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fitem/randomgift/FitemRandomGiftTask.class */
 public final class FitemRandomGiftTask extends FreedomItem {
     private ArrayList<RandomGiftItemTaskModel> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final ArrayList<FitemRandomGiftTaskItem> f12691c;
+    private final ArrayList<FitemRandomGiftTaskItem> c;
     private FreedomAdapter d;
 
     public FitemRandomGiftTask(ArrayList<RandomGiftItemTaskModel> datas) {
         Intrinsics.e(datas, "datas");
         this.b = datas;
-        this.f12691c = new ArrayList<>();
+        this.c = new ArrayList<>();
     }
 
     private final void e() {
-        RecyclerView recyclerView = (RecyclerView) this.f10935a.a(R.id.rv_list);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this.f10935a.f10931a.b));
-        this.d = new FreedomAdapter(this.f10935a.f10931a.b, this.f10935a.b, this.f12691c);
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(this.d);
+        RecyclerView a = this.a.a(R.id.rv_list);
+        a.setLayoutManager(new LinearLayoutManager(this.a.a.b));
+        this.d = new FreedomAdapter(this.a.a.b, this.a.b, this.c);
+        a.setItemAnimator(new DefaultItemAnimator());
+        a.setAdapter(this.d);
     }
 
     @Override // com.blued.android.module.common.utils.freedom.FreedomItem
@@ -46,11 +44,11 @@ public final class FitemRandomGiftTask extends FreedomItem {
     public void a(Context context, BaseViewHolder vh, List<FreedomItem> list, int i) {
         Intrinsics.e(vh, "vh");
         vh.a(R.id.tv_title, true);
-        this.f12691c.clear();
+        this.c.clear();
         ArrayList<RandomGiftItemTaskModel> arrayList = this.b;
         if (arrayList != null) {
             for (RandomGiftItemTaskModel randomGiftItemTaskModel : arrayList) {
-                this.f12691c.add(new FitemRandomGiftTaskItem(randomGiftItemTaskModel));
+                this.c.add(new FitemRandomGiftTaskItem(randomGiftItemTaskModel));
             }
         }
         e();

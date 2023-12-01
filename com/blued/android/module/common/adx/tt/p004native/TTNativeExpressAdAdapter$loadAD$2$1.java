@@ -20,13 +20,9 @@ import kotlinx.coroutines.CoroutineScope;
 /* renamed from: com.blued.android.module.common.adx.tt.native.TTNativeExpressAdAdapter$loadAD$2$1  reason: invalid package */
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/adx/tt/native/TTNativeExpressAdAdapter$loadAD$2$1.class */
 final class TTNativeExpressAdAdapter$loadAD$2$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
-
-    /* renamed from: a  reason: collision with root package name */
-    int f10596a;
+    int a;
     final /* synthetic */ TTNativeExpressAdAdapter b;
-
-    /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ CancellableContinuation<ADEvent> f10597c;
+    final /* synthetic */ CancellableContinuation<ADEvent> c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -34,27 +30,27 @@ final class TTNativeExpressAdAdapter$loadAD$2$1 extends SuspendLambda implements
     public TTNativeExpressAdAdapter$loadAD$2$1(TTNativeExpressAdAdapter tTNativeExpressAdAdapter, CancellableContinuation<? super ADEvent> cancellableContinuation, Continuation<? super TTNativeExpressAdAdapter$loadAD$2$1> continuation) {
         super(2, continuation);
         this.b = tTNativeExpressAdAdapter;
-        this.f10597c = cancellableContinuation;
+        this.c = cancellableContinuation;
     }
 
     @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-        return ((TTNativeExpressAdAdapter$loadAD$2$1) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+        return ((TTNativeExpressAdAdapter$loadAD$2$1) create(coroutineScope, continuation)).invokeSuspend(Unit.a);
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        return new TTNativeExpressAdAdapter$loadAD$2$1(this.b, this.f10597c, continuation);
+        return new TTNativeExpressAdAdapter$loadAD$2$1(this.b, this.c, continuation);
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         IntrinsicsKt.a();
-        if (this.f10596a == 0) {
+        if (this.a == 0) {
             ResultKt.a(obj);
             TTNativeExpressAdAdapter tTNativeExpressAdAdapter = this.b;
-            final CancellableContinuation<ADEvent> cancellableContinuation = this.f10597c;
+            final CancellableContinuation<ADEvent> cancellableContinuation = this.c;
             tTNativeExpressAdAdapter.a(new ADListener() { // from class: com.blued.android.module.common.adx.tt.native.TTNativeExpressAdAdapter$loadAD$2$1.1
                 @Override // com.blued.android.module.common.adx.base.ADListener
                 public void onADEvent(ADEvent aDEvent) {
@@ -71,13 +67,13 @@ final class TTNativeExpressAdAdapter$loadAD$2$1 extends SuspendLambda implements
                             @Override // kotlin.jvm.functions.Function1
                             public /* synthetic */ Unit invoke(Throwable th) {
                                 a(th);
-                                return Unit.f42314a;
+                                return Unit.a;
                             }
                         });
                     }
                 }
             });
-            return Unit.f42314a;
+            return Unit.a;
         }
         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
     }

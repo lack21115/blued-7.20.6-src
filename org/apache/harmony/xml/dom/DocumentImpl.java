@@ -96,16 +96,16 @@ public final class DocumentImpl extends InnerNodeImpl implements Document {
         }
     }
 
-    private static boolean isXMLIdentifierPart(char c2) {
-        if (isXMLIdentifierStart(c2)) {
+    private static boolean isXMLIdentifierPart(char c) {
+        if (isXMLIdentifierStart(c)) {
             return true;
         }
-        return (c2 >= '0' && c2 <= '9') || c2 == '-' || c2 == '.';
+        return (c >= '0' && c <= '9') || c == '-' || c == '.';
     }
 
-    private static boolean isXMLIdentifierStart(char c2) {
-        if (c2 < 'A' || c2 > 'Z') {
-            return (c2 >= 'a' && c2 <= 'z') || c2 == '_';
+    private static boolean isXMLIdentifierStart(char c) {
+        if (c < 'A' || c > 'Z') {
+            return (c >= 'a' && c <= 'z') || c == '_';
         }
         return true;
     }

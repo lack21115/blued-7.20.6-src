@@ -63,7 +63,7 @@ final class ProtobufArrayList<E> extends AbstractProtobufList<E> implements Rand
         this.modCount++;
     }
 
-    @Override // com.google.protobuf.AbstractProtobufList, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // com.google.protobuf.AbstractProtobufList, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
     public boolean add(E e) {
         ensureIsMutable();
         int i = this.size;

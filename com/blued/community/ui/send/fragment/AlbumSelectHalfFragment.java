@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.recyclerview.widget.RecyclerView;
 import com.blued.android.core.imagecache.RecyclingUtils;
 import com.blued.android.framework.utils.AppUtils;
 import com.blued.android.framework.utils.FileUtils;
@@ -60,7 +59,7 @@ public class AlbumSelectHalfFragment extends AlbumSelectFragment {
 
     @Override // com.blued.community.ui.send.fragment.AlbumSelectFragment
     protected void a(int i) {
-        AlbumSelectPreviewFragment.b(b(), this.f19947a, i, 1);
+        AlbumSelectPreviewFragment.b(b(), this.a, i, 1);
     }
 
     public void a(OnClosePageListener onClosePageListener) {
@@ -111,9 +110,9 @@ public class AlbumSelectHalfFragment extends AlbumSelectFragment {
                 childImageInfo.mImagePath = mediaInfo.imagePath;
             } else {
                 String e = RecyclingUtils.e("photo");
-                boolean a2 = FileUtils.a(mediaInfo.imgUri, e);
+                boolean a = FileUtils.a(mediaInfo.imgUri, e);
                 childImageInfo.mImagePath = e;
-                LogUtils.c("SaveSelectPhoto: " + e + " " + a2);
+                LogUtils.c("SaveSelectPhoto: " + e + " " + a);
             }
             childImageInfo.width = mediaInfo.width;
             childImageInfo.height = mediaInfo.height;
@@ -138,7 +137,7 @@ public class AlbumSelectHalfFragment extends AlbumSelectFragment {
         if (this.b != 0) {
             Bundle bundle2 = new Bundle();
             AlbumSelectInfo albumSelectInfo = new AlbumSelectInfo();
-            albumSelectInfo.a(this.d.f().getValue());
+            albumSelectInfo.a((AlbumSelectInfo) this.d.f().getValue());
             bundle2.putSerializable("serializeble_data", albumSelectInfo);
             ((AlbumBasePresenter) this.b).a(bundle2);
         }
@@ -161,7 +160,7 @@ public class AlbumSelectHalfFragment extends AlbumSelectFragment {
         return null;
     }
 
-    @Override // com.blued.android.module.media.selector.fragment.AlbumBaseFragment, com.blued.android.module.media.selector.fragment.MediaBaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.media.selector.fragment.AlbumBaseFragment, com.blued.android.module.media.selector.fragment.MediaBaseFragment
     public void onActivityResult(int i, int i2, Intent intent) {
         super.onActivityResult(i, i2, intent);
         if (intent != null) {
@@ -172,27 +171,26 @@ public class AlbumSelectHalfFragment extends AlbumSelectFragment {
             if (intent.getSerializableExtra("result_model") != null) {
                 this.d.g().setValue(intent);
             } else {
-                this.d.g().setValue(null);
+                this.d.g().setValue((Object) null);
             }
             c();
         }
     }
 
-    @Override // com.blued.android.module.media.selector.fragment.AlbumBaseFragment, com.blued.android.module.media.selector.fragment.MediaBaseFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.media.selector.fragment.AlbumBaseFragment, com.blued.android.module.media.selector.fragment.MediaBaseFragment, com.blued.android.core.ui.BaseFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         this.d = (SelectAlbumViewModel) new ViewModelProvider(getActivity().getViewModelStore(), new ViewModelProvider.AndroidViewModelFactory(getActivity().getApplication())).get(SelectAlbumViewModel.class);
     }
 
-    @Override // com.blued.community.ui.send.fragment.AlbumSelectFragment, com.blued.android.module.media.selector.fragment.AlbumBaseFragment, com.blued.android.module.media.selector.fragment.MediaBaseFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.community.ui.send.fragment.AlbumSelectFragment, com.blued.android.module.media.selector.fragment.AlbumBaseFragment, com.blued.android.module.media.selector.fragment.MediaBaseFragment, com.blued.android.core.ui.BaseFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         View onCreateView = super.onCreateView(layoutInflater, viewGroup, bundle);
         this.d.h().observe(getViewLifecycleOwner(), new Observer<String>() { // from class: com.blued.community.ui.send.fragment.AlbumSelectHalfFragment.1
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(String str) {
                 try {
-                    AlbumSelectHalfAdapter albumSelectHalfAdapter = (AlbumSelectHalfAdapter) ((RecyclerView) AlbumSelectHalfFragment.this.getView().findViewById(R.id.vr_gird_view)).getAdapter();
+                    AlbumSelectHalfAdapter albumSelectHalfAdapter = (AlbumSelectHalfAdapter) AlbumSelectHalfFragment.this.getView().findViewById(R.id.vr_gird_view).getAdapter();
                     List<MediaInfo> currentList = AlbumDataManager.getCurrentList();
                     int i = 0;
                     while (true) {

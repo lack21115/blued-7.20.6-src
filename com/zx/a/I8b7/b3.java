@@ -168,7 +168,7 @@ public class b3 extends c {
 
     public final void a(String str, byte[] bArr) throws Exception {
         ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(bArr);
-        File file = new File(t2.f42201a.getFilesDir().getAbsolutePath() + File.separator + "zx-core-" + str + ".zip");
+        File file = new File(t2.f28510a.getFilesDir().getAbsolutePath() + File.separator + "zx-core-" + str + ".zip");
         if (!file.createNewFile()) {
             throw new IOException("zx createNewFile exception");
         }
@@ -215,7 +215,7 @@ public class b3 extends c {
     public void d(int i) {
         if (i != t2.k) {
             t2.k = i;
-            b3 b3Var = u1.a.f42208a.f42207a;
+            b3 b3Var = u1.a.f28517a.f28516a;
             b3Var.a(3, t2.k + "", false);
             z1.a("syncId had changed refresh:" + i);
         }
@@ -622,7 +622,7 @@ public class b3 extends c {
             r1 = 0
             byte[] r0 = android.util.Base64.decode(r0, r1)     // Catch: java.lang.Throwable -> L60
             r10 = r0
-            java.security.SecureRandom r0 = com.zx.a.I8b7.k.f42141a     // Catch: java.lang.Throwable -> L60
+            java.security.SecureRandom r0 = com.zx.a.I8b7.k.f28450a     // Catch: java.lang.Throwable -> L60
             r11 = r0
             javax.crypto.spec.SecretKeySpec r0 = new javax.crypto.spec.SecretKeySpec     // Catch: java.lang.Throwable -> L60
             r1 = r0

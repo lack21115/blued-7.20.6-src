@@ -2,21 +2,17 @@ package com.anythink.core.common.e;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/e/ak.class */
 public final class ak {
-
-    /* renamed from: a  reason: collision with root package name */
-    int f6638a;
+    int a;
     int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    int f6639c;
+    int c;
     int d;
 
     public final int a() {
-        return this.f6638a;
+        return this.a;
     }
 
     public final void a(int i) {
-        this.f6638a = i;
+        this.a = i;
     }
 
     public final int b() {
@@ -28,11 +24,11 @@ public final class ak {
     }
 
     public final int c() {
-        return this.f6639c;
+        return this.c;
     }
 
     public final void c(int i) {
-        this.f6639c = i;
+        this.c = i;
     }
 
     public final int d() {

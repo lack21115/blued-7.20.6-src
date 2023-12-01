@@ -13,13 +13,9 @@ import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/FragmentPageLevelLayoutBinding.class */
 public final class FragmentPageLevelLayoutBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ConstraintLayout f16483a;
+    public final ConstraintLayout a;
     public final LinearLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final LinearLayout f16484c;
+    public final LinearLayout c;
     public final LinearLayout d;
     public final LinearLayout e;
     public final RecyclerView f;
@@ -33,9 +29,9 @@ public final class FragmentPageLevelLayoutBinding implements ViewBinding {
 
     private FragmentPageLevelLayoutBinding(ConstraintLayout constraintLayout, ConstraintLayout constraintLayout2, LinearLayout linearLayout, LinearLayout linearLayout2, LinearLayout linearLayout3, LinearLayout linearLayout4, RecyclerView recyclerView, SmartRefreshLayout smartRefreshLayout, TextView textView, TextView textView2, TextView textView3, TextView textView4, TextView textView5) {
         this.m = constraintLayout;
-        this.f16483a = constraintLayout2;
+        this.a = constraintLayout2;
         this.b = linearLayout;
-        this.f16484c = linearLayout2;
+        this.c = linearLayout2;
         this.d = linearLayout3;
         this.e = linearLayout4;
         this.f = recyclerView;
@@ -57,8 +53,8 @@ public final class FragmentPageLevelLayoutBinding implements ViewBinding {
 
     public static FragmentPageLevelLayoutBinding a(View view) {
         String str;
-        ConstraintLayout constraintLayout = (ConstraintLayout) view.findViewById(R.id.con_all);
-        if (constraintLayout != null) {
+        ConstraintLayout findViewById = view.findViewById(R.id.con_all);
+        if (findViewById != null) {
             LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.ll_pk);
             if (linearLayout != null) {
                 LinearLayout linearLayout2 = (LinearLayout) view.findViewById(R.id.ll_score);
@@ -67,10 +63,10 @@ public final class FragmentPageLevelLayoutBinding implements ViewBinding {
                     if (linearLayout3 != null) {
                         LinearLayout linearLayout4 = (LinearLayout) view.findViewById(R.id.ll_win_percent);
                         if (linearLayout4 != null) {
-                            RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rcv);
-                            if (recyclerView != null) {
-                                SmartRefreshLayout smartRefreshLayout = (SmartRefreshLayout) view.findViewById(R.id.refresh_layout);
-                                if (smartRefreshLayout != null) {
+                            RecyclerView findViewById2 = view.findViewById(R.id.rcv);
+                            if (findViewById2 != null) {
+                                SmartRefreshLayout findViewById3 = view.findViewById(R.id.refresh_layout);
+                                if (findViewById3 != null) {
                                     TextView textView = (TextView) view.findViewById(R.id.tv_level_title);
                                     if (textView != null) {
                                         TextView textView2 = (TextView) view.findViewById(R.id.tv_percent);
@@ -81,7 +77,7 @@ public final class FragmentPageLevelLayoutBinding implements ViewBinding {
                                                 if (textView4 != null) {
                                                     TextView textView5 = (TextView) view.findViewById(R.id.tv_win_times);
                                                     if (textView5 != null) {
-                                                        return new FragmentPageLevelLayoutBinding((ConstraintLayout) view, constraintLayout, linearLayout, linearLayout2, linearLayout3, linearLayout4, recyclerView, smartRefreshLayout, textView, textView2, textView3, textView4, textView5);
+                                                        return new FragmentPageLevelLayoutBinding((ConstraintLayout) view, findViewById, linearLayout, linearLayout2, linearLayout3, linearLayout4, findViewById2, findViewById3, textView, textView2, textView3, textView4, textView5);
                                                     }
                                                     str = "tvWinTimes";
                                                 } else {
@@ -120,7 +116,6 @@ public final class FragmentPageLevelLayoutBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.m;

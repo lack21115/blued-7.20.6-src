@@ -29,11 +29,11 @@ public class wf implements View.OnTouchListener {
     private static final double z = 0.001d;
 
     /* renamed from: a  reason: collision with root package name */
-    private boolean f38091a;
+    private boolean f24400a;
     private boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private long f38092c;
+    private long f24401c;
     private int d = 0;
     private final PointF e = new PointF();
     private final PointF f = new PointF();
@@ -55,11 +55,11 @@ public class wf implements View.OnTouchListener {
     public class b extends GestureDetector.SimpleOnGestureListener {
 
         /* renamed from: a  reason: collision with root package name */
-        private PointF f38093a;
+        private PointF f24402a;
         private boolean b;
 
         private b() {
-            this.f38093a = new PointF();
+            this.f24402a = new PointF();
             this.b = true;
         }
 
@@ -76,21 +76,21 @@ public class wf implements View.OnTouchListener {
             if (action == 0) {
                 this.b = true;
                 wf.this.m.setIsLongpressEnabled(false);
-                this.f38093a.set(motionEvent.getX(), motionEvent.getY());
+                this.f24402a.set(motionEvent.getX(), motionEvent.getY());
                 wf.this.n.c(x, y);
                 return true;
             } else if (action == 1) {
                 if (this.b) {
                     wf.this.n.onDoubleTap(x, y);
                 }
-                this.f38093a.set(0.0f, 0.0f);
+                this.f24402a.set(0.0f, 0.0f);
                 wf.this.m.setIsLongpressEnabled(true);
                 wf.this.n.a(x, y);
                 return true;
             } else if (action != 2) {
                 return true;
             } else {
-                PointF pointF = this.f38093a;
+                PointF pointF = this.f24402a;
                 float f = pointF.x;
                 float f2 = pointF.y;
                 if (Math.abs(x - f) > 10.0f || Math.abs(y - f2) > 10.0f) {
@@ -110,7 +110,7 @@ public class wf implements View.OnTouchListener {
 
         @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
         public void onLongPress(MotionEvent motionEvent) {
-            if (wf.this.f38091a) {
+            if (wf.this.f24400a) {
                 return;
             }
             wf.this.n.onLongPress(motionEvent.getX(), motionEvent.getY());
@@ -118,7 +118,7 @@ public class wf implements View.OnTouchListener {
 
         @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
         public boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f, float f2) {
-            if (wf.this.p != null && wf.this.p.get() != 0 && ((gj) wf.this.p.get()).Y()) {
+            if (wf.this.p != null && wf.this.p.get() != null && ((gj) wf.this.p.get()).Y()) {
                 double sqrt = Math.sqrt((f * f) + (f2 * f2));
                 if (motionEvent != null && (motionEvent.getX() < 0.0f || motionEvent.getY() < 0.0f)) {
                     return true;
@@ -379,8 +379,8 @@ public class wf implements View.OnTouchListener {
                         if (action == 5) {
                             this.l = System.currentTimeMillis();
                             this.d = 0;
-                            this.f38091a = true;
-                            this.f38092c = System.currentTimeMillis();
+                            this.f24400a = true;
+                            this.f24401c = System.currentTimeMillis();
                             this.b = false;
                             a(this.g, this.h, motionEvent);
                             this.n.b();
@@ -391,12 +391,12 @@ public class wf implements View.OnTouchListener {
                             return true;
                         }
                     }
-                } else if (this.f38091a && !this.b) {
+                } else if (this.f24400a && !this.b) {
                     long currentTimeMillis = System.currentTimeMillis();
-                    if (currentTimeMillis - this.f38092c < 8) {
+                    if (currentTimeMillis - this.f24401c < 8) {
                         return true;
                     }
-                    this.f38092c = currentTimeMillis;
+                    this.f24401c = currentTimeMillis;
                     a(this.e, this.f, motionEvent);
                     c();
                     return true;
@@ -411,10 +411,10 @@ public class wf implements View.OnTouchListener {
             this.n.onUp(motionEvent.getX(), motionEvent.getY());
         } else {
             this.l = 0L;
-            this.f38091a = false;
+            this.f24400a = false;
             this.n.onDown(motionEvent.getX(), motionEvent.getY());
         }
-        if (this.f38091a) {
+        if (this.f24400a) {
             return true;
         }
         this.m.onTouchEvent(motionEvent);

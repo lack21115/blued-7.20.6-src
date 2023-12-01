@@ -9,12 +9,10 @@ import java.util.concurrent.TimeUnit;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/im/grpc/IMThreadManager.class */
 public class IMThreadManager {
-
-    /* renamed from: a  reason: collision with root package name */
-    private ThreadPoolExecutor f11374a;
+    private ThreadPoolExecutor a;
 
     public IMThreadManager(int i, int i2) {
-        this.f11374a = null;
+        this.a = null;
         if (0 == 0) {
             ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(i, i2, 32767L, TimeUnit.SECONDS, new LinkedBlockingQueue(30), Executors.defaultThreadFactory(), new RejectedExecutionHandler() { // from class: com.blued.android.module.im.grpc.IMThreadManager.1
                 @Override // java.util.concurrent.RejectedExecutionHandler
@@ -22,14 +20,14 @@ public class IMThreadManager {
                     Log.i("rejectedExecution:", runnable.toString());
                 }
             });
-            this.f11374a = threadPoolExecutor;
+            this.a = threadPoolExecutor;
             threadPoolExecutor.allowCoreThreadTimeOut(true);
         }
     }
 
     public void a(Runnable runnable) {
         ThreadPoolExecutor threadPoolExecutor;
-        if (runnable == null || (threadPoolExecutor = this.f11374a) == null) {
+        if (runnable == null || (threadPoolExecutor = this.a) == null) {
             return;
         }
         try {

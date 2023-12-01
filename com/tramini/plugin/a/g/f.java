@@ -6,7 +6,7 @@ import java.security.MessageDigest;
 public final class f {
 
     /* renamed from: a  reason: collision with root package name */
-    private static char[] f40548a = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
+    private static char[] f26857a = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
 
     public static String a(String str) {
         try {
@@ -20,8 +20,8 @@ public final class f {
                 if (i2 >= digest.length) {
                     return sb.toString().toLowerCase();
                 }
-                sb.append(f40548a[(digest[i2] & 240) >>> 4]);
-                sb.append(f40548a[digest[i2] & 15]);
+                sb.append(f26857a[(digest[i2] & 240) >>> 4]);
+                sb.append(f26857a[digest[i2] & 15]);
                 i = i2 + 1;
             }
         } catch (Exception e) {

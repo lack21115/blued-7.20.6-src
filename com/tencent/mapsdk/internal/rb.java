@@ -17,20 +17,20 @@ public class rb implements RequestProcessor, ResponseProcessor {
     private static final boolean e = false;
 
     /* renamed from: a  reason: collision with root package name */
-    private HashMap<String, String> f37740a;
+    private HashMap<String, String> f24049a;
     private boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    public NetFlowEventModel f37741c;
+    public NetFlowEventModel f24050c;
 
     public rb() {
-        this.f37740a = new HashMap<>();
+        this.f24049a = new HashMap<>();
         this.b = false;
     }
 
     public rb(HashMap<String, String> hashMap) {
         HashMap<String, String> hashMap2 = new HashMap<>();
-        this.f37740a = hashMap2;
+        this.f24049a = hashMap2;
         this.b = false;
         hashMap2.putAll(hashMap);
     }
@@ -42,21 +42,21 @@ public class rb implements RequestProcessor, ResponseProcessor {
             return false;
         }
         String str2 = parse.getHost() + parse.getPath();
-        if (!this.f37740a.containsKey(str2)) {
-            Iterator<String> it = this.f37740a.keySet().iterator();
+        if (!this.f24049a.containsKey(str2)) {
+            Iterator<String> it = this.f24049a.keySet().iterator();
             while (true) {
                 if (!it.hasNext()) {
                     break;
                 }
                 String next = it.next();
                 if (str2.contains(next)) {
-                    this.f37741c.bizType = this.f37740a.get(next);
+                    this.f24050c.bizType = this.f24049a.get(next);
                     this.b = true;
                     break;
                 }
             }
         } else {
-            this.f37741c.bizType = this.f37740a.get(str2);
+            this.f24050c.bizType = this.f24049a.get(str2);
             this.b = true;
         }
         return this.b;
@@ -68,28 +68,28 @@ public class rb implements RequestProcessor, ResponseProcessor {
         byte[] bArr;
         double d2;
         NetFlowEventModel netFlowEventModel = new NetFlowEventModel();
-        this.f37741c = netFlowEventModel;
+        this.f24050c = netFlowEventModel;
         netFlowEventModel.url = netRequest.url;
         netFlowEventModel.uploadFlow = str.getBytes().length;
         if (netRequest.postData != null) {
-            this.f37741c.uploadFlow += bArr.length;
+            this.f24050c.uploadFlow += bArr.length;
         }
         for (Map.Entry<String, String> entry : netRequest.mapHeaders.entrySet()) {
-            this.f37741c.uploadFlow += entry.getKey().getBytes().length + entry.getValue().getBytes().length;
+            this.f24050c.uploadFlow += entry.getKey().getBytes().length + entry.getValue().getBytes().length;
         }
-        NetFlowEventModel netFlowEventModel2 = this.f37741c;
+        NetFlowEventModel netFlowEventModel2 = this.f24050c;
         netFlowEventModel2.uploadFlow = netFlowEventModel2.uploadFlow / 1000.0d;
         netFlowEventModel2.uploadFlow = Math.round(d2 * 1000.0d) / 1000.0d;
-        this.f37741c.uploadTime = System.currentTimeMillis();
+        this.f24050c.uploadTime = System.currentTimeMillis();
         if (a(netRequest.url)) {
             return;
         }
-        this.f37741c.bizType = "";
+        this.f24050c.bizType = "";
     }
 
     public void onResponse(NetResponse netResponse) throws Exception {
         if (netResponse.available()) {
-            NetFlowEventModel netFlowEventModel = this.f37741c;
+            NetFlowEventModel netFlowEventModel = this.f24050c;
             netFlowEventModel.errorCode = netResponse.statusCode;
             if (netResponse.errorCode != 0) {
                 byte[] bArr = netResponse.errorData;
@@ -110,8 +110,8 @@ public class rb implements RequestProcessor, ResponseProcessor {
             netFlowEventModel.downloadFlow = d2;
             netFlowEventModel.downloadFlow = Math.round(d2 * 1000.0d) / 1000.0d;
         } else {
-            this.f37741c.errorCode = -100;
+            this.f24050c.errorCode = -100;
         }
-        this.f37741c.downloadTime = System.currentTimeMillis();
+        this.f24050c.downloadTime = System.currentTimeMillis();
     }
 }

@@ -10,7 +10,6 @@ import com.bytedance.sdk.openadsdk.AdSlot;
 import com.bytedance.sdk.openadsdk.TTAdNative;
 import com.bytedance.sdk.openadsdk.TTAdSdk;
 import com.bytedance.sdk.openadsdk.TTNativeExpressAd;
-import com.cdo.oaps.ad.OapsKey;
 import com.qq.e.ads.nativ.ADSize;
 import com.qq.e.ads.nativ.NativeExpressADView;
 import java.util.List;
@@ -30,13 +29,9 @@ import kotlinx.coroutines.CoroutineScopeKt;
 /* renamed from: com.blued.android.module.common.adx.tt.native.TTNativeExpressAdAdapter  reason: invalid package */
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/adx/tt/native/TTNativeExpressAdAdapter.class */
 public final class TTNativeExpressAdAdapter extends BaseNativeExpressAd {
-
-    /* renamed from: a  reason: collision with root package name */
-    private BluedADExtra f10594a;
+    private BluedADExtra a;
     private ADSize b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private ADListener f10595c;
+    private ADListener c;
     private final Context d;
     private TTNativeExpressAdDataAdapter e;
     private final TTAdNative f;
@@ -47,9 +42,9 @@ public final class TTNativeExpressAdAdapter extends BaseNativeExpressAd {
         Intrinsics.e(adExtra, "adExtra");
         Intrinsics.e(adSize, "adSize");
         Intrinsics.e(listener, "listener");
-        this.f10594a = adExtra;
+        this.a = adExtra;
         this.b = adSize;
-        this.f10595c = listener;
+        this.c = listener;
         this.d = context;
         TTAdNative createAdNative = TTAdSdk.getAdManager().createAdNative(context);
         Intrinsics.c(createAdNative, "getAdManager().createAdNative(context)");
@@ -59,8 +54,7 @@ public final class TTNativeExpressAdAdapter extends BaseNativeExpressAd {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void a(final ADListener aDListener) {
-        this.f.loadNativeExpressAd(new AdSlot.Builder().setCodeId(this.f10594a.third_id).setAdCount(1).setExpressViewAcceptedSize(this.b.getWidth(), 0.0f).build(), new TTAdNative.NativeExpressAdListener() { // from class: com.blued.android.module.common.adx.tt.native.TTNativeExpressAdAdapter$loadExpressAd$1
-            @Override // com.bytedance.sdk.openadsdk.TTAdNative.NativeExpressAdListener, com.bytedance.sdk.openadsdk.common.CommonListener
+        this.f.loadNativeExpressAd(new AdSlot.Builder().setCodeId(this.a.third_id).setAdCount(1).setExpressViewAcceptedSize(this.b.getWidth(), 0.0f).build(), new TTAdNative.NativeExpressAdListener() { // from class: com.blued.android.module.common.adx.tt.native.TTNativeExpressAdAdapter$loadExpressAd$1
             public void onError(int i, String str) {
                 BluedADExtra e = TTNativeExpressAdAdapter.this.e();
                 e.errorMsg = i + " -- " + ((Object) str);
@@ -68,7 +62,6 @@ public final class TTNativeExpressAdAdapter extends BaseNativeExpressAd {
                 aDListener.onADEvent(new ADEvent(101, TTNativeExpressAdAdapter.this));
             }
 
-            @Override // com.bytedance.sdk.openadsdk.TTAdNative.NativeExpressAdListener
             public void onNativeExpressAdLoad(List<TTNativeExpressAd> list) {
                 Context context;
                 ADListener aDListener2;
@@ -86,11 +79,11 @@ public final class TTNativeExpressAdAdapter extends BaseNativeExpressAd {
                 context = TTNativeExpressAdAdapter.this.d;
                 TTNativeExpressAdDataAdapter tTNativeExpressAdDataAdapter = new TTNativeExpressAdDataAdapter(context, tTNativeExpressAd, TTNativeExpressAdAdapter.this.e());
                 TTNativeExpressAdAdapter.this.e = tTNativeExpressAdDataAdapter;
-                aDListener2 = TTNativeExpressAdAdapter.this.f10595c;
+                aDListener2 = TTNativeExpressAdAdapter.this.c;
                 tTNativeExpressAdDataAdapter.setAdListener(aDListener2);
                 try {
                     tTNativeExpressAdAdapter = TTNativeExpressAdAdapter.this;
-                    obj = tTNativeExpressAd.getMediaExtraInfo().get(OapsKey.KEY_PRICE);
+                    obj = tTNativeExpressAd.getMediaExtraInfo().get("price");
                 } catch (Exception e) {
                 }
                 if (obj == null) {
@@ -129,21 +122,21 @@ public final class TTNativeExpressAdAdapter extends BaseNativeExpressAd {
     @Override // com.blued.android.module.common.adx.base.BaseNativeExpressAd
     public void a(Map<String, ? extends Object> map) {
         Intrinsics.e(map, "map");
-        NativeExpressADView a2 = a();
-        if (a2 == null) {
+        NativeExpressADView a = a();
+        if (a == null) {
             return;
         }
-        a2.sendWinNotification(map);
+        a.sendWinNotification(map);
     }
 
     @Override // com.blued.android.module.common.adx.base.BaseNativeExpressAd
     public void b(Map<String, ? extends Object> map) {
         Intrinsics.e(map, "map");
-        NativeExpressADView a2 = a();
-        if (a2 == null) {
+        NativeExpressADView a = a();
+        if (a == null) {
             return;
         }
-        a2.sendLossNotification(map);
+        a.sendLossNotification(map);
     }
 
     @Override // com.blued.android.module.common.adx.base.IBaseAd
@@ -153,10 +146,10 @@ public final class TTNativeExpressAdAdapter extends BaseNativeExpressAd {
 
     @Override // com.blued.android.module.common.adx.base.IBaseAd
     public Map<String, Object> d() {
-        return MapsKt.a(TuplesKt.a("original_ad", this.f10594a));
+        return MapsKt.a(TuplesKt.a("original_ad", this.a));
     }
 
     public final BluedADExtra e() {
-        return this.f10594a;
+        return this.a;
     }
 }

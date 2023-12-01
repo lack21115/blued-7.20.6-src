@@ -13,13 +13,9 @@ import com.google.android.material.imageview.ShapeableImageView;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ItemConfessedTopBinding.class */
 public final class ItemConfessedTopBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final Group f16578a;
+    public final Group a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ShapeableImageView f16579c;
+    public final ShapeableImageView c;
     public final ImageView d;
     public final ShapeableImageView e;
     public final ImageView f;
@@ -37,9 +33,9 @@ public final class ItemConfessedTopBinding implements ViewBinding {
 
     private ItemConfessedTopBinding(ConstraintLayout constraintLayout, Group group, ImageView imageView, ShapeableImageView shapeableImageView, ImageView imageView2, ShapeableImageView shapeableImageView2, ImageView imageView3, ImageView imageView4, ImageView imageView5, YYLivingStreamView yYLivingStreamView, YYLivingStreamView yYLivingStreamView2, TextView textView, TextView textView2, TextView textView3, TextView textView4, ShapeTextView shapeTextView, TextView textView5) {
         this.q = constraintLayout;
-        this.f16578a = group;
+        this.a = group;
         this.b = imageView;
-        this.f16579c = shapeableImageView;
+        this.c = shapeableImageView;
         this.d = imageView2;
         this.e = shapeableImageView2;
         this.f = imageView3;
@@ -57,16 +53,16 @@ public final class ItemConfessedTopBinding implements ViewBinding {
 
     public static ItemConfessedTopBinding a(View view) {
         String str;
-        Group group = (Group) view.findViewById(R.id.gro);
-        if (group != null) {
+        Group findViewById = view.findViewById(R.id.gro);
+        if (findViewById != null) {
             ImageView imageView = (ImageView) view.findViewById(R.id.iv_bg_card);
             if (imageView != null) {
-                ShapeableImageView shapeableImageView = (ShapeableImageView) view.findViewById(R.id.iv_user_1);
-                if (shapeableImageView != null) {
+                ShapeableImageView findViewById2 = view.findViewById(R.id.iv_user_1);
+                if (findViewById2 != null) {
                     ImageView imageView2 = (ImageView) view.findViewById(R.id.iv_user_1_tag);
                     if (imageView2 != null) {
-                        ShapeableImageView shapeableImageView2 = (ShapeableImageView) view.findViewById(R.id.iv_user_2);
-                        if (shapeableImageView2 != null) {
+                        ShapeableImageView findViewById3 = view.findViewById(R.id.iv_user_2);
+                        if (findViewById3 != null) {
                             ImageView imageView3 = (ImageView) view.findViewById(R.id.iv_user_2_tag);
                             if (imageView3 != null) {
                                 ImageView imageView4 = (ImageView) view.findViewById(R.id.iv_yh_y);
@@ -89,7 +85,7 @@ public final class ItemConfessedTopBinding implements ViewBinding {
                                                                 if (shapeTextView != null) {
                                                                     TextView textView5 = (TextView) view.findViewById(R.id.tv_null);
                                                                     if (textView5 != null) {
-                                                                        return new ItemConfessedTopBinding((ConstraintLayout) view, group, imageView, shapeableImageView, imageView2, shapeableImageView2, imageView3, imageView4, imageView5, yYLivingStreamView, yYLivingStreamView2, textView, textView2, textView3, textView4, shapeTextView, textView5);
+                                                                        return new ItemConfessedTopBinding((ConstraintLayout) view, findViewById, imageView, findViewById2, imageView2, findViewById3, imageView3, imageView4, imageView5, yYLivingStreamView, yYLivingStreamView2, textView, textView2, textView3, textView4, shapeTextView, textView5);
                                                                     }
                                                                     str = "tvNull";
                                                                 } else {
@@ -140,7 +136,6 @@ public final class ItemConfessedTopBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.q;

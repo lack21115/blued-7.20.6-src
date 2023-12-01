@@ -67,7 +67,7 @@ class ClockFaceView extends RadialViewGroup implements ClockHandView.OnRotateLis
         this.clockHandView = (ClockHandView) findViewById(R.id.material_clock_hand);
         this.clockHandPadding = resources.getDimensionPixelSize(R.dimen.material_clock_hand_padding);
         ColorStateList colorStateList = this.textColor;
-        int colorForState = colorStateList.getColorForState(new int[]{16842913}, colorStateList.getDefaultColor());
+        int colorForState = colorStateList.getColorForState(new int[]{android.R.attr.state_selected}, colorStateList.getDefaultColor());
         this.gradientColors = new int[]{colorForState, colorForState, this.textColor.getDefaultColor()};
         this.clockHandView.addOnRotateListener(this);
         int defaultColor = AppCompatResources.getColorStateList(context, R.color.material_timepicker_clockface).getDefaultColor();

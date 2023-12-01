@@ -16,13 +16,11 @@ import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/adapter/LiveFansRecordMemberAdapter.class */
 public class LiveFansRecordMemberAdapter extends BaseQuickAdapter<LiveFansMemberModel, BaseViewHolder> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f11625a;
+    private Context a;
 
     public LiveFansRecordMemberAdapter(Context context) {
         super(R.layout.live_fans_record_member_item_view, new ArrayList());
-        this.f11625a = context;
+        this.a = context;
     }
 
     public int a() {
@@ -34,13 +32,12 @@ public class LiveFansRecordMemberAdapter extends BaseQuickAdapter<LiveFansMember
 
     public LiveFansMemberModel a(int i) {
         if (getData() != null && i < getData().size() && i >= 0) {
-            return getData().get(i);
+            return (LiveFansMemberModel) getData().get(i);
         }
         return null;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(BaseViewHolder baseViewHolder, LiveFansMemberModel liveFansMemberModel) {
         ImageLoader.a((IRequestHost) null, liveFansMemberModel.avatar).b(R.drawable.user_bg_round).c().a((ImageView) baseViewHolder.getView(R.id.avatar));

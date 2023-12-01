@@ -17,11 +17,11 @@ import com.opos.mobad.n.g.v;
 public class d extends RelativeLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    private v f26584a;
+    private v f12896a;
     private LinearLayout b;
 
     /* renamed from: c  reason: collision with root package name */
-    private TextView f26585c;
+    private TextView f12897c;
     private TextView d;
     private c e;
     private e f;
@@ -38,7 +38,7 @@ public class d extends RelativeLayout {
     private void a(Context context, boolean z) {
         setLayoutParams(new ViewGroup.LayoutParams(-1, com.opos.cmn.an.h.f.a.a(getContext(), 60.0f)));
         v a2 = v.a(context, "");
-        this.f26584a = a2;
+        this.f12896a = a2;
         a2.setId(View.generateViewId());
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(-2, -2);
         layoutParams.addRule(15);
@@ -49,8 +49,8 @@ public class d extends RelativeLayout {
         layoutParams2.addRule(15);
         layoutParams2.leftMargin = com.opos.cmn.an.h.f.a.a(getContext(), 10.0f);
         layoutParams2.rightMargin = com.opos.cmn.an.h.f.a.a(getContext(), 8.0f);
-        layoutParams2.addRule(0, this.f26584a.getId());
-        addView(this.f26584a, layoutParams);
+        layoutParams2.addRule(0, this.f12896a.getId());
+        addView(this.f12896a, layoutParams);
         addView(this.b, layoutParams2);
     }
 
@@ -75,12 +75,12 @@ public class d extends RelativeLayout {
             a(relativeLayout);
         }
         TextView textView = new TextView(getContext());
-        this.f26585c = textView;
+        this.f12897c = textView;
         textView.setTextColor(getResources().getColor(R.color.opos_mobad_title_color));
-        this.f26585c.setTextSize(1, 14.0f);
-        this.f26585c.setEllipsize(TextUtils.TruncateAt.valueOf("END"));
-        this.f26585c.setSingleLine(true);
-        TextPaint paint = this.f26585c.getPaint();
+        this.f12897c.setTextSize(1, 14.0f);
+        this.f12897c.setEllipsize(TextUtils.TruncateAt.valueOf("END"));
+        this.f12897c.setSingleLine(true);
+        TextPaint paint = this.f12897c.getPaint();
         paint.setStrokeWidth(1.0f);
         paint.setStyle(Paint.Style.FILL_AND_STROKE);
         RelativeLayout.LayoutParams layoutParams2 = new RelativeLayout.LayoutParams(-2, -2);
@@ -108,7 +108,7 @@ public class d extends RelativeLayout {
         this.e.setVisibility(8);
         relativeLayout2.addView(this.d, layoutParams4);
         relativeLayout2.addView(this.e, layoutParams5);
-        relativeLayout.addView(this.f26585c, layoutParams2);
+        relativeLayout.addView(this.f12897c, layoutParams2);
         this.b.addView(relativeLayout, layoutParams);
         this.b.addView(relativeLayout2, layoutParams3);
     }
@@ -117,35 +117,35 @@ public class d extends RelativeLayout {
         return new d(context, true);
     }
 
-    public void a(a.InterfaceC0708a interfaceC0708a) {
-        com.opos.cmn.an.f.a.b("BannerRightAreaView", "setListener " + interfaceC0708a);
-        this.f26584a.a(interfaceC0708a);
-        this.e.a(interfaceC0708a);
+    public void a(a.InterfaceC0538a interfaceC0538a) {
+        com.opos.cmn.an.f.a.b("BannerRightAreaView", "setListener " + interfaceC0538a);
+        this.f12896a.a(interfaceC0538a);
+        this.e.a(interfaceC0538a);
         e eVar = this.f;
         if (eVar != null) {
-            eVar.a(interfaceC0708a);
+            eVar.a(interfaceC0538a);
         }
     }
 
     public void a(com.opos.mobad.n.d.d dVar) {
         com.opos.mobad.n.d.a aVar = dVar.v;
-        if (aVar == null || TextUtils.isEmpty(aVar.f26626a) || TextUtils.isEmpty(aVar.b)) {
+        if (aVar == null || TextUtils.isEmpty(aVar.f12938a) || TextUtils.isEmpty(aVar.b)) {
             this.d.setVisibility(0);
             return;
         }
         c cVar = this.e;
         if (cVar != null) {
             cVar.setVisibility(0);
-            this.e.a(aVar.f26626a, aVar.b);
+            this.e.a(aVar.f12938a, aVar.b);
         }
     }
 
     public void a(String str, String str2, String str3) {
         if (!TextUtils.isEmpty(str)) {
-            this.f26584a.a(str);
+            this.f12896a.a(str);
         }
         if (!TextUtils.isEmpty(str2)) {
-            this.f26585c.setText(str2);
+            this.f12897c.setText(str2);
         }
         if (TextUtils.isEmpty(str3)) {
             return;

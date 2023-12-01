@@ -40,49 +40,42 @@ import kotlin.jvm.internal.Ref;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYKtvVoiceDialog.class */
 public final class YYKtvVoiceDialog extends BaseFullScreenDialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    private FragmentYyKtvVoiceBinding f17328a;
+    private FragmentYyKtvVoiceBinding a;
     private YYMsgKtvMusic b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private AudioEffectAdapter f17329c;
+    private AudioEffectAdapter c;
     private int d;
 
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYKtvVoiceDialog$AudioEffectAdapter.class */
     public final class AudioEffectAdapter extends BaseQuickAdapter<YYAudioEffectModel, BaseViewHolder> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ YYKtvVoiceDialog f17330a;
+        final /* synthetic */ YYKtvVoiceDialog a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public AudioEffectAdapter(YYKtvVoiceDialog this$0) {
-            super(R.layout.item_audio_effect_layout, null);
+            super(R.layout.item_audio_effect_layout, (List) null);
             Intrinsics.e(this$0, "this$0");
-            this.f17330a = this$0;
+            this.a = this$0;
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.chad.library.adapter.base.BaseQuickAdapter
         /* renamed from: a */
         public void convert(BaseViewHolder baseViewHolder, YYAudioEffectModel yYAudioEffectModel) {
             View view;
             ImageView imageView;
             String str = null;
-            ConstraintLayout constraintLayout = baseViewHolder == null ? null : (ConstraintLayout) baseViewHolder.getView(R.id.item_ll_root);
-            ViewGroup.LayoutParams layoutParams = constraintLayout == null ? null : constraintLayout.getLayoutParams();
+            ConstraintLayout view2 = baseViewHolder == null ? null : baseViewHolder.getView(R.id.item_ll_root);
+            ViewGroup.LayoutParams layoutParams = view2 == null ? null : view2.getLayoutParams();
             if (layoutParams == null) {
                 throw new NullPointerException("null cannot be cast to non-null type androidx.recyclerview.widget.RecyclerView.LayoutParams");
             }
-            RecyclerView.LayoutParams layoutParams2 = (RecyclerView.LayoutParams) layoutParams;
+            RecyclerView.LayoutParams layoutParams2 = layoutParams;
             Integer valueOf = baseViewHolder == null ? null : Integer.valueOf(baseViewHolder.getAdapterPosition());
             if (valueOf != null && valueOf.intValue() == 0) {
-                layoutParams2.rightMargin = DensityUtils.a(this.f17330a.getContext(), 8.0f);
+                layoutParams2.rightMargin = DensityUtils.a(this.a.getContext(), 8.0f);
                 layoutParams2.leftMargin = 0;
             } else {
-                layoutParams2.leftMargin = DensityUtils.a(this.f17330a.getContext(), 8.0f);
-                layoutParams2.rightMargin = DensityUtils.a(this.f17330a.getContext(), 8.0f);
+                layoutParams2.leftMargin = DensityUtils.a(this.a.getContext(), 8.0f);
+                layoutParams2.rightMargin = DensityUtils.a(this.a.getContext(), 8.0f);
             }
             TextView textView = baseViewHolder == null ? null : (TextView) baseViewHolder.getView(R.id.tv_effect_name);
             if (textView != null) {
@@ -105,7 +98,7 @@ public final class YYKtvVoiceDialog extends BaseFullScreenDialog {
     }
 
     private final void a(float f) {
-        FragmentYyKtvVoiceBinding fragmentYyKtvVoiceBinding = this.f17328a;
+        FragmentYyKtvVoiceBinding fragmentYyKtvVoiceBinding = this.a;
         TextView textView = fragmentYyKtvVoiceBinding == null ? null : fragmentYyKtvVoiceBinding.q;
         if (textView != null) {
             textView.setText(String.valueOf((int) f));
@@ -116,18 +109,18 @@ public final class YYKtvVoiceDialog extends BaseFullScreenDialog {
     }
 
     private final void a(int i) {
-        AudioEffectAdapter audioEffectAdapter = this.f17329c;
+        AudioEffectAdapter audioEffectAdapter = this.c;
         if (audioEffectAdapter == null) {
             return;
         }
-        YYAudioEffectModel item = audioEffectAdapter.getItem(i);
-        for (YYAudioEffectModel yYAudioEffectModel : audioEffectAdapter.getData()) {
-            yYAudioEffectModel.isChecked = false;
+        YYAudioEffectModel yYAudioEffectModel = (YYAudioEffectModel) audioEffectAdapter.getItem(i);
+        for (YYAudioEffectModel yYAudioEffectModel2 : audioEffectAdapter.getData()) {
+            yYAudioEffectModel2.isChecked = false;
         }
-        if (item != null) {
-            item.isChecked = true;
+        if (yYAudioEffectModel != null) {
+            yYAudioEffectModel.isChecked = true;
         }
-        AudioChannelManager.j().g(StringUtils.a(item == null ? null : item.effectId, 0));
+        AudioChannelManager.j().g(StringUtils.a(yYAudioEffectModel == null ? null : yYAudioEffectModel.effectId, 0));
         audioEffectAdapter.notifyDataSetChanged();
     }
 
@@ -154,12 +147,12 @@ public final class YYKtvVoiceDialog extends BaseFullScreenDialog {
         SeekBar seekBar2;
         ToggleButton toggleButton;
         Intrinsics.e(this$0, "this$0");
-        FragmentYyKtvVoiceBinding fragmentYyKtvVoiceBinding = this$0.f17328a;
-        if ((fragmentYyKtvVoiceBinding == null || (seekBar = fragmentYyKtvVoiceBinding.f16527a) == null || seekBar.getProgress() != 50) ? false : true) {
-            FragmentYyKtvVoiceBinding fragmentYyKtvVoiceBinding2 = this$0.f17328a;
+        FragmentYyKtvVoiceBinding fragmentYyKtvVoiceBinding = this$0.a;
+        if ((fragmentYyKtvVoiceBinding == null || (seekBar = fragmentYyKtvVoiceBinding.a) == null || seekBar.getProgress() != 50) ? false : true) {
+            FragmentYyKtvVoiceBinding fragmentYyKtvVoiceBinding2 = this$0.a;
             if (((fragmentYyKtvVoiceBinding2 == null || (seekBar2 = fragmentYyKtvVoiceBinding2.b) == null || seekBar2.getProgress() != 100) ? false : true) && AudioChannelManager.j().r() == 0) {
                 if (AudioChannelManager.j().q() == 0.0f) {
-                    FragmentYyKtvVoiceBinding fragmentYyKtvVoiceBinding3 = this$0.f17328a;
+                    FragmentYyKtvVoiceBinding fragmentYyKtvVoiceBinding3 = this$0.a;
                     if ((fragmentYyKtvVoiceBinding3 == null || (toggleButton = fragmentYyKtvVoiceBinding3.d) == null || toggleButton.isChecked()) ? false : true) {
                         ToastUtils.a("当前已是默认效果");
                         return;
@@ -167,20 +160,20 @@ public final class YYKtvVoiceDialog extends BaseFullScreenDialog {
                 }
             }
         }
-        FragmentYyKtvVoiceBinding fragmentYyKtvVoiceBinding4 = this$0.f17328a;
-        SeekBar seekBar3 = fragmentYyKtvVoiceBinding4 == null ? null : fragmentYyKtvVoiceBinding4.f16527a;
+        FragmentYyKtvVoiceBinding fragmentYyKtvVoiceBinding4 = this$0.a;
+        SeekBar seekBar3 = fragmentYyKtvVoiceBinding4 == null ? null : fragmentYyKtvVoiceBinding4.a;
         if (seekBar3 != null) {
             seekBar3.setProgress(50);
         }
         this$0.d = 100;
-        FragmentYyKtvVoiceBinding fragmentYyKtvVoiceBinding5 = this$0.f17328a;
+        FragmentYyKtvVoiceBinding fragmentYyKtvVoiceBinding5 = this$0.a;
         SeekBar seekBar4 = fragmentYyKtvVoiceBinding5 == null ? null : fragmentYyKtvVoiceBinding5.b;
         if (seekBar4 != null) {
             seekBar4.setProgress(this$0.d);
         }
         this$0.a(0);
         this$0.a(0.0f);
-        FragmentYyKtvVoiceBinding fragmentYyKtvVoiceBinding6 = this$0.f17328a;
+        FragmentYyKtvVoiceBinding fragmentYyKtvVoiceBinding6 = this$0.a;
         ToggleButton toggleButton2 = fragmentYyKtvVoiceBinding6 == null ? null : fragmentYyKtvVoiceBinding6.d;
         if (toggleButton2 != null) {
             toggleButton2.setChecked(false);
@@ -192,14 +185,14 @@ public final class YYKtvVoiceDialog extends BaseFullScreenDialog {
     public static final void c(YYKtvVoiceDialog this$0, View view) {
         TextView textView;
         Intrinsics.e(this$0, "this$0");
-        FragmentYyKtvVoiceBinding fragmentYyKtvVoiceBinding = this$0.f17328a;
+        FragmentYyKtvVoiceBinding fragmentYyKtvVoiceBinding = this$0.a;
         CharSequence charSequence = null;
         if (fragmentYyKtvVoiceBinding != null && (textView = fragmentYyKtvVoiceBinding.q) != null) {
             charSequence = textView.getText();
         }
-        float a2 = StringUtils.a(String.valueOf(charSequence), 0.0f) + 1.0f;
-        float f = a2;
-        if (a2 > 12.0f) {
+        float a = StringUtils.a(String.valueOf(charSequence), 0.0f) + 1.0f;
+        float f = a;
+        if (a > 12.0f) {
             f = 12.0f;
         }
         this$0.a(f);
@@ -209,14 +202,14 @@ public final class YYKtvVoiceDialog extends BaseFullScreenDialog {
     public static final void d(YYKtvVoiceDialog this$0, View view) {
         TextView textView;
         Intrinsics.e(this$0, "this$0");
-        FragmentYyKtvVoiceBinding fragmentYyKtvVoiceBinding = this$0.f17328a;
+        FragmentYyKtvVoiceBinding fragmentYyKtvVoiceBinding = this$0.a;
         CharSequence charSequence = null;
         if (fragmentYyKtvVoiceBinding != null && (textView = fragmentYyKtvVoiceBinding.q) != null) {
             charSequence = textView.getText();
         }
-        float a2 = StringUtils.a(String.valueOf(charSequence), 0.0f) - 1.0f;
-        float f = a2;
-        if (a2 < -12.0f) {
+        float a = StringUtils.a(String.valueOf(charSequence), 0.0f) - 1.0f;
+        float f = a;
+        if (a < -12.0f) {
             f = -12.0f;
         }
         this$0.a(f);
@@ -226,7 +219,7 @@ public final class YYKtvVoiceDialog extends BaseFullScreenDialog {
         ToggleButton toggleButton;
         ShapeTextView shapeTextView;
         View view;
-        FragmentYyKtvVoiceBinding fragmentYyKtvVoiceBinding = this.f17328a;
+        FragmentYyKtvVoiceBinding fragmentYyKtvVoiceBinding = this.a;
         if (fragmentYyKtvVoiceBinding != null && (view = fragmentYyKtvVoiceBinding.g) != null) {
             view.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYKtvVoiceDialog$YzlR37Fk3HNPY2GbwnZ1nnlm_NE
                 @Override // android.view.View.OnClickListener
@@ -235,7 +228,7 @@ public final class YYKtvVoiceDialog extends BaseFullScreenDialog {
                 }
             });
         }
-        FragmentYyKtvVoiceBinding fragmentYyKtvVoiceBinding2 = this.f17328a;
+        FragmentYyKtvVoiceBinding fragmentYyKtvVoiceBinding2 = this.a;
         if (fragmentYyKtvVoiceBinding2 != null && (shapeTextView = fragmentYyKtvVoiceBinding2.e) != null) {
             shapeTextView.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYKtvVoiceDialog$3n4pDwKfdPRhGieV9JFAk27yf_A
                 @Override // android.view.View.OnClickListener
@@ -244,12 +237,12 @@ public final class YYKtvVoiceDialog extends BaseFullScreenDialog {
                 }
             });
         }
-        FragmentYyKtvVoiceBinding fragmentYyKtvVoiceBinding3 = this.f17328a;
+        FragmentYyKtvVoiceBinding fragmentYyKtvVoiceBinding3 = this.a;
         ToggleButton toggleButton2 = fragmentYyKtvVoiceBinding3 == null ? null : fragmentYyKtvVoiceBinding3.d;
         if (toggleButton2 != null) {
             toggleButton2.setChecked(AudioChannelManager.j().p());
         }
-        FragmentYyKtvVoiceBinding fragmentYyKtvVoiceBinding4 = this.f17328a;
+        FragmentYyKtvVoiceBinding fragmentYyKtvVoiceBinding4 = this.a;
         if (fragmentYyKtvVoiceBinding4 != null && (toggleButton = fragmentYyKtvVoiceBinding4.d) != null) {
             toggleButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYKtvVoiceDialog$-72hc_vX7DAqvJSQtB_i0f_7M7M
                 @Override // android.widget.CompoundButton.OnCheckedChangeListener
@@ -268,14 +261,14 @@ public final class YYKtvVoiceDialog extends BaseFullScreenDialog {
         SeekBar seekBar;
         final Ref.BooleanRef booleanRef = new Ref.BooleanRef();
         YYMsgKtvMusic yYMsgKtvMusic = this.b;
-        booleanRef.f42538a = TextUtils.equals(r0, yYMsgKtvMusic == null ? null : yYMsgKtvMusic.isOriginal);
-        FragmentYyKtvVoiceBinding fragmentYyKtvVoiceBinding = this.f17328a;
-        SeekBar seekBar2 = fragmentYyKtvVoiceBinding == null ? null : fragmentYyKtvVoiceBinding.f16527a;
+        booleanRef.a = TextUtils.equals(r0, yYMsgKtvMusic == null ? null : yYMsgKtvMusic.isOriginal);
+        FragmentYyKtvVoiceBinding fragmentYyKtvVoiceBinding = this.a;
+        SeekBar seekBar2 = fragmentYyKtvVoiceBinding == null ? null : fragmentYyKtvVoiceBinding.a;
         if (seekBar2 != null) {
-            seekBar2.setProgress(booleanRef.f42538a ? AudioChannelManager.j().f() : AudioChannelManager.j().g());
+            seekBar2.setProgress(booleanRef.a ? AudioChannelManager.j().f() : AudioChannelManager.j().g());
         }
-        FragmentYyKtvVoiceBinding fragmentYyKtvVoiceBinding2 = this.f17328a;
-        if (fragmentYyKtvVoiceBinding2 == null || (seekBar = fragmentYyKtvVoiceBinding2.f16527a) == null) {
+        FragmentYyKtvVoiceBinding fragmentYyKtvVoiceBinding2 = this.a;
+        if (fragmentYyKtvVoiceBinding2 == null || (seekBar = fragmentYyKtvVoiceBinding2.a) == null) {
             return;
         }
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() { // from class: com.blued.android.module.yy_china.fragment.YYKtvVoiceDialog$initAccompany$1
@@ -286,7 +279,7 @@ public final class YYKtvVoiceDialog extends BaseFullScreenDialog {
                 if (yYMsgKtvMusic2 == null) {
                     return;
                 }
-                if (booleanRef.f42538a) {
+                if (booleanRef.a) {
                     AudioChannelManager.j().a(true, i);
                 } else {
                     AudioChannelManager.j().a(false, i);
@@ -306,31 +299,31 @@ public final class YYKtvVoiceDialog extends BaseFullScreenDialog {
 
     private final void h() {
         SeekBar seekBar;
-        if (YYRoomInfoManager.e().f17578a == null) {
-            YYRoomInfoManager.e().f17578a = new YYUserInfo();
-            YYRoomInfoManager.e().f17578a.setUid(YYRoomInfoManager.e().k());
-            YYRoomInfoManager.e().f17578a.setName(YYRoomInfoManager.e().l());
-            YYRoomInfoManager.e().f17578a.setAvatar(YYRoomInfoManager.e().m());
+        if (YYRoomInfoManager.e().a == null) {
+            YYRoomInfoManager.e().a = new YYUserInfo();
+            YYRoomInfoManager.e().a.setUid(YYRoomInfoManager.e().k());
+            YYRoomInfoManager.e().a.setName(YYRoomInfoManager.e().l());
+            YYRoomInfoManager.e().a.setAvatar(YYRoomInfoManager.e().m());
         }
-        int i = YYRoomInfoManager.e().f17578a.is_open_mic;
-        FragmentYyKtvVoiceBinding fragmentYyKtvVoiceBinding = this.f17328a;
+        int i = YYRoomInfoManager.e().a.is_open_mic;
+        FragmentYyKtvVoiceBinding fragmentYyKtvVoiceBinding = this.a;
         SeekBar seekBar2 = fragmentYyKtvVoiceBinding == null ? null : fragmentYyKtvVoiceBinding.b;
         if (seekBar2 != null) {
             seekBar2.setMax(100);
         }
-        FragmentYyKtvVoiceBinding fragmentYyKtvVoiceBinding2 = this.f17328a;
+        FragmentYyKtvVoiceBinding fragmentYyKtvVoiceBinding2 = this.a;
         SeekBar seekBar3 = fragmentYyKtvVoiceBinding2 == null ? null : fragmentYyKtvVoiceBinding2.b;
         if (seekBar3 != null) {
             seekBar3.setProgress(AudioChannelManager.j().h());
         }
-        FragmentYyKtvVoiceBinding fragmentYyKtvVoiceBinding3 = this.f17328a;
+        FragmentYyKtvVoiceBinding fragmentYyKtvVoiceBinding3 = this.a;
         if (fragmentYyKtvVoiceBinding3 == null || (seekBar = fragmentYyKtvVoiceBinding3.b) == null) {
             return;
         }
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() { // from class: com.blued.android.module.yy_china.fragment.YYKtvVoiceDialog$initVolume$1
             @Override // android.widget.SeekBar.OnSeekBarChangeListener
             public void onProgressChanged(SeekBar seekBar4, int i2, boolean z) {
-                YYUserInfo yYUserInfo = YYRoomInfoManager.e().f17578a;
+                YYUserInfo yYUserInfo = YYRoomInfoManager.e().a;
                 if (yYUserInfo != null && yYUserInfo.is_open_mic == 0) {
                     AudioChannelManager.j().f(i2);
                 } else {
@@ -350,29 +343,28 @@ public final class YYKtvVoiceDialog extends BaseFullScreenDialog {
     }
 
     private final void i() {
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        RecyclerView.LayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setOrientation(0);
-        FragmentYyKtvVoiceBinding fragmentYyKtvVoiceBinding = this.f17328a;
+        FragmentYyKtvVoiceBinding fragmentYyKtvVoiceBinding = this.a;
         RecyclerView recyclerView = fragmentYyKtvVoiceBinding == null ? null : fragmentYyKtvVoiceBinding.k;
         if (recyclerView != null) {
             recyclerView.setLayoutManager(linearLayoutManager);
         }
-        this.f17329c = new AudioEffectAdapter(this);
-        FragmentYyKtvVoiceBinding fragmentYyKtvVoiceBinding2 = this.f17328a;
+        this.c = new AudioEffectAdapter(this);
+        FragmentYyKtvVoiceBinding fragmentYyKtvVoiceBinding2 = this.a;
         RecyclerView recyclerView2 = fragmentYyKtvVoiceBinding2 == null ? null : fragmentYyKtvVoiceBinding2.k;
         if (recyclerView2 != null) {
-            recyclerView2.setAdapter(this.f17329c);
+            recyclerView2.setAdapter(this.c);
         }
-        AudioEffectAdapter audioEffectAdapter = this.f17329c;
+        AudioEffectAdapter audioEffectAdapter = this.c;
         if (audioEffectAdapter != null) {
             audioEffectAdapter.setNewData(k());
         }
-        AudioEffectAdapter audioEffectAdapter2 = this.f17329c;
+        AudioEffectAdapter audioEffectAdapter2 = this.c;
         if (audioEffectAdapter2 == null) {
             return;
         }
         audioEffectAdapter2.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYKtvVoiceDialog$92vJvM3Fe_Sxr8HsteMVcL9iEFA
-            @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemClickListener
             public final void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
                 YYKtvVoiceDialog.a(YYKtvVoiceDialog.this, baseQuickAdapter, view, i);
             }
@@ -382,12 +374,12 @@ public final class YYKtvVoiceDialog extends BaseFullScreenDialog {
     private final void j() {
         ImageView imageView;
         ImageView imageView2;
-        FragmentYyKtvVoiceBinding fragmentYyKtvVoiceBinding = this.f17328a;
+        FragmentYyKtvVoiceBinding fragmentYyKtvVoiceBinding = this.a;
         TextView textView = fragmentYyKtvVoiceBinding == null ? null : fragmentYyKtvVoiceBinding.q;
         if (textView != null) {
             textView.setText(String.valueOf((int) (AudioChannelManager.j().q() * 12)));
         }
-        FragmentYyKtvVoiceBinding fragmentYyKtvVoiceBinding2 = this.f17328a;
+        FragmentYyKtvVoiceBinding fragmentYyKtvVoiceBinding2 = this.a;
         if (fragmentYyKtvVoiceBinding2 != null && (imageView2 = fragmentYyKtvVoiceBinding2.f) != null) {
             imageView2.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYKtvVoiceDialog$1vUdBfKqTxkewQrX2bYhvlIG38w
                 @Override // android.view.View.OnClickListener
@@ -396,8 +388,8 @@ public final class YYKtvVoiceDialog extends BaseFullScreenDialog {
                 }
             });
         }
-        FragmentYyKtvVoiceBinding fragmentYyKtvVoiceBinding3 = this.f17328a;
-        if (fragmentYyKtvVoiceBinding3 == null || (imageView = fragmentYyKtvVoiceBinding3.f16528c) == null) {
+        FragmentYyKtvVoiceBinding fragmentYyKtvVoiceBinding3 = this.a;
+        if (fragmentYyKtvVoiceBinding3 == null || (imageView = fragmentYyKtvVoiceBinding3.c) == null) {
             return;
         }
         imageView.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYKtvVoiceDialog$_Ko7WoSYYLVj62zpz5dir8cojks
@@ -445,12 +437,12 @@ public final class YYKtvVoiceDialog extends BaseFullScreenDialog {
         return arrayList;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
         View inflate = inflater.inflate(R.layout.fragment_yy_ktv_voice, viewGroup, true);
         Intrinsics.c(inflate, "inflater.inflate(R.layou…v_voice, container, true)");
-        this.f17328a = FragmentYyKtvVoiceBinding.a(inflate);
+        this.a = FragmentYyKtvVoiceBinding.a(inflate);
         YYRoomModel b = YYRoomInfoManager.e().b();
         this.b = b == null ? null : b.music;
         f();

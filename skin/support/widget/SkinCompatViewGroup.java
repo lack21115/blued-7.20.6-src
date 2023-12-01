@@ -6,9 +6,7 @@ import android.view.ViewGroup;
 
 /* loaded from: source-3503164-dex2jar.jar:skin/support/widget/SkinCompatViewGroup.class */
 public abstract class SkinCompatViewGroup extends ViewGroup implements SkinCompatSupportable {
-
-    /* renamed from: a  reason: collision with root package name */
-    private SkinCompatBackgroundHelper f44293a;
+    private SkinCompatBackgroundHelper a;
 
     public SkinCompatViewGroup(Context context, AttributeSet attributeSet) {
         this(context, attributeSet, 0);
@@ -17,14 +15,14 @@ public abstract class SkinCompatViewGroup extends ViewGroup implements SkinCompa
     public SkinCompatViewGroup(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         SkinCompatBackgroundHelper skinCompatBackgroundHelper = new SkinCompatBackgroundHelper(this);
-        this.f44293a = skinCompatBackgroundHelper;
+        this.a = skinCompatBackgroundHelper;
         skinCompatBackgroundHelper.a(attributeSet, i);
     }
 
     @Override // android.view.View
     public void setBackgroundResource(int i) {
         super.setBackgroundResource(i);
-        SkinCompatBackgroundHelper skinCompatBackgroundHelper = this.f44293a;
+        SkinCompatBackgroundHelper skinCompatBackgroundHelper = this.a;
         if (skinCompatBackgroundHelper != null) {
             skinCompatBackgroundHelper.a(i);
         }

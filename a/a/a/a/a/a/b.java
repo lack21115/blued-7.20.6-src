@@ -14,10 +14,10 @@ import com.qiniu.pili.droid.streaming.core.PLDroidStreamingCore;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    public InterfaceC0000b f1214a;
+    public InterfaceC0000b f1166a;
 
     /* renamed from: c  reason: collision with root package name */
-    public AVCodecType f1215c;
+    public AVCodecType f1167c;
     public c.EnumC0001c d;
     public a.a.a.a.a.a.e.a e;
     public int f;
@@ -34,23 +34,23 @@ public class b {
     public static /* synthetic */ class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final /* synthetic */ int[] f1216a;
+        public static final /* synthetic */ int[] f1168a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x002f -> B:19:0x001f). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:9:0x002b -> B:15:0x0014). Please submit an issue!!! */
         static {
             int[] iArr = new int[c.EnumC0001c.values().length];
-            f1216a = iArr;
+            f1168a = iArr;
             try {
                 iArr[c.EnumC0001c.MPEG4.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f1216a[c.EnumC0001c.HLS.ordinal()] = 2;
+                f1168a[c.EnumC0001c.HLS.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f1216a[c.EnumC0001c.RTMP.ordinal()] = 3;
+                f1168a[c.EnumC0001c.RTMP.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
         }
@@ -84,7 +84,7 @@ public class b {
     }
 
     public b(Context context, InterfaceC0000b interfaceC0000b) {
-        this.f1214a = interfaceC0000b;
+        this.f1166a = interfaceC0000b;
     }
 
     public static c.EnumC0001c a(String str) {
@@ -119,7 +119,7 @@ public class b {
             return;
         }
         this.b = cVar;
-        this.f1214a.a(cVar, obj);
+        this.f1166a.a(cVar, obj);
     }
 
     public void a(a.a.a.a.a.a.e.a aVar) {
@@ -139,7 +139,7 @@ public class b {
     }
 
     public void a(AVCodecType aVCodecType) {
-        this.f1215c = aVCodecType;
+        this.f1167c = aVCodecType;
     }
 
     public void a(CameraStreamingSetting.PREVIEW_SIZE_RATIO preview_size_ratio) {
@@ -245,12 +245,12 @@ public class b {
     }
 
     public boolean k() {
-        AVCodecType aVCodecType = this.f1215c;
+        AVCodecType aVCodecType = this.f1167c;
         return aVCodecType == AVCodecType.SW_VIDEO_WITH_HW_AUDIO_CODEC || aVCodecType == AVCodecType.SW_VIDEO_WITH_SW_AUDIO_CODEC || aVCodecType == AVCodecType.SW_VIDEO_CODEC;
     }
 
     public boolean l() {
-        AVCodecType aVCodecType = this.f1215c;
+        AVCodecType aVCodecType = this.f1167c;
         return aVCodecType == AVCodecType.SW_VIDEO_WITH_SW_AUDIO_CODEC || aVCodecType == AVCodecType.SW_AUDIO_CODEC || aVCodecType == AVCodecType.HW_VIDEO_SURFACE_AS_INPUT_WITH_SW_AUDIO_CODEC;
     }
 
@@ -264,7 +264,7 @@ public class b {
 
     public PLDroidStreamingCore.AVOptions o() {
         PLDroidStreamingCore.AVOptions aVOptions = new PLDroidStreamingCore.AVOptions();
-        int i = a.f1216a[this.d.ordinal()];
+        int i = a.f1168a[this.d.ordinal()];
         if (i == 1) {
             aVOptions.outputFormatName = "mp4";
         } else if (i == 2) {

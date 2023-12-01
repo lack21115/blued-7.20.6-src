@@ -28,11 +28,11 @@ import java.util.Map;
 public final class BeaconReport {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile BeaconReport f35071a;
+    private static volatile BeaconReport f21380a;
     private static String b = "";
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f35072c;
+    private Context f21381c;
     private boolean d;
     private IBeaconImmediateReport e;
     private EventModule f;
@@ -52,7 +52,7 @@ public final class BeaconReport {
             }
             ModuleName moduleName = values[i2];
             try {
-                BeaconModule.f35077a.put(moduleName, d.f(moduleName.getClassName()));
+                BeaconModule.f21386a.put(moduleName, d.f(moduleName.getClassName()));
             } catch (Exception e) {
                 c.b("init Module error: " + e.getMessage(), new Object[0]);
                 c.a(e);
@@ -67,9 +67,9 @@ public final class BeaconReport {
                 this.f = (EventModule) com.tencent.beacon.a.c.c.d().a(ModuleName.EVENT);
                 return;
             }
-            BeaconModule beaconModule = BeaconModule.f35077a.get(values[i4]);
+            BeaconModule beaconModule = BeaconModule.f21386a.get(values[i4]);
             if (beaconModule != null) {
-                beaconModule.a(this.f35072c);
+                beaconModule.a(this.f21381c);
             }
             i3 = i4 + 1;
         }
@@ -85,8 +85,8 @@ public final class BeaconReport {
             com.tencent.beacon.e.b.a().b(beaconConfig.getRealtimeUploadNum());
             com.tencent.beacon.e.b.a().a(beaconConfig.getNormalUploadNum());
         }
-        com.tencent.beacon.base.net.c.c().a(this.f35072c, beaconConfig == null ? null : beaconConfig.getHttpAdapter());
-        com.tencent.beacon.a.d.a.a().a(this.f35072c);
+        com.tencent.beacon.base.net.c.c().a(this.f21381c, beaconConfig == null ? null : beaconConfig.getHttpAdapter());
+        com.tencent.beacon.a.d.a.a().a(this.f21381c);
         com.tencent.beacon.a.c.b.f();
         e.l().B();
     }
@@ -152,18 +152,18 @@ public final class BeaconReport {
     }
 
     public static BeaconReport getInstance() {
-        if (f35071a == null) {
+        if (f21380a == null) {
             synchronized (BeaconReport.class) {
                 try {
-                    if (f35071a == null) {
-                        f35071a = new BeaconReport();
+                    if (f21380a == null) {
+                        f21380a = new BeaconReport();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f35071a;
+        return f21380a;
     }
 
     public static String getSoPath() {
@@ -295,7 +295,7 @@ public final class BeaconReport {
         if (TextUtils.isEmpty(str)) {
             return;
         }
-        com.tencent.beacon.a.c.b.f34937a = str;
+        com.tencent.beacon.a.c.b.f21246a = str;
     }
 
     public void setChannelID(String str) {
@@ -406,7 +406,7 @@ public final class BeaconReport {
     }
 
     public void setStrictMode(boolean z) {
-        com.tencent.beacon.base.util.e.f35000a.set(z);
+        com.tencent.beacon.base.util.e.f21309a.set(z);
     }
 
     @Deprecated
@@ -441,13 +441,13 @@ public final class BeaconReport {
                 return;
             }
             Context applicationContext = context.getApplicationContext();
-            this.f35072c = applicationContext;
+            this.f21381c = applicationContext;
             com.tencent.beacon.base.util.e.a("ApplicationContext", applicationContext);
-            if (this.f35072c == null) {
+            if (this.f21381c == null) {
                 c.b("fail to start beacon, application context is null", new Object[0]);
                 return;
             }
-            com.tencent.beacon.a.c.c.d().a(this.f35072c);
+            com.tencent.beacon.a.c.c.d().a(this.f21381c);
             com.tencent.beacon.base.util.e.a(TbsCoreSettings.TBS_SETTINGS_APP_KEY, str);
             if (TextUtils.isEmpty(str)) {
                 c.b("fail to start beacon, appkey is empty", new Object[0]);
@@ -464,7 +464,7 @@ public final class BeaconReport {
                 }
             }
             e.a(z);
-            ((Application) this.f35072c).registerActivityLifecycleCallbacks(new com.tencent.beacon.b.a());
+            ((Application) this.f21381c).registerActivityLifecycleCallbacks(new com.tencent.beacon.b.a());
             c(beaconConfig);
             if (beaconConfig != null) {
                 d(beaconConfig);

@@ -99,7 +99,7 @@ public class ij extends View implements x1 {
         a();
     }
 
-    @Override // android.view.View
+    @Override // android.view.View, com.tencent.mapsdk.internal.x1
     public void onSizeChanged(int i, int i2, int i3, int i4) {
         yi yiVar = this.h;
         if (yiVar != null) {
@@ -130,7 +130,7 @@ public class ij extends View implements x1 {
         }
     }
 
-    @Override // android.view.View
+    @Override // android.view.View, com.tencent.mapsdk.internal.x1
     public boolean onTouchEvent(MotionEvent motionEvent) {
         return false;
     }

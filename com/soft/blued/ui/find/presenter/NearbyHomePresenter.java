@@ -37,6 +37,7 @@ import com.soft.blued.ui.home.HomeActivity;
 import com.soft.blued.ui.user.model.VipInvisibleSettingModel;
 import com.soft.blued.user.BluedConfig;
 import com.soft.blued.utils.BluedPreferences;
+import com.xiaomi.mipush.sdk.Constants;
 import java.util.List;
 
 /* loaded from: source-8303388-dex2jar.jar:com/soft/blued/ui/find/presenter/NearbyHomePresenter.class */
@@ -49,7 +50,7 @@ public class NearbyHomePresenter extends MvpPresenter {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void a(Rect rect) {
-        a("recommend_view_rect", (String) rect);
+        a("recommend_view_rect", rect);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -72,24 +73,22 @@ public class NearbyHomePresenter extends MvpPresenter {
     private void n() {
         ProfileHttpUtils.a(h(), new BluedUIHttpResponse<BluedEntityA<VipInvisibleSettingModel>>(g()) { // from class: com.soft.blued.ui.find.presenter.NearbyHomePresenter.10
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<VipInvisibleSettingModel> bluedEntityA) {
                 if (bluedEntityA == null || bluedEntityA.data == null || bluedEntityA.data.size() <= 0) {
                     return;
                 }
-                VipInvisibleSettingModel vipInvisibleSettingModel = bluedEntityA.data.get(0);
+                VipInvisibleSettingModel vipInvisibleSettingModel = (VipInvisibleSettingModel) bluedEntityA.data.get(0);
                 boolean z = vipInvisibleSettingModel.is_invisible_all == 1;
                 boolean z2 = vipInvisibleSettingModel.is_age_stealth == 1;
                 Boolean valueOf = Boolean.valueOf((vipInvisibleSettingModel.is_role_stealth == 1) || (vipInvisibleSettingModel.is_stealth_distance == 1) || z2 || z);
                 Log.v("drb", "--setDataToUI INVISIBLE_STATE:" + valueOf + " -- " + NearbyHomePresenter.this.g().isActive());
-                NearbyHomePresenter.this.a("invisible_state", (String) valueOf);
-                NearbyHomePresenter.this.a("map_avatar_location_state", (String) Boolean.valueOf(vipInvisibleSettingModel.avatar_location_status == 1), false);
+                NearbyHomePresenter.this.a("invisible_state", valueOf);
+                NearbyHomePresenter.this.a("map_avatar_location_state", (Object) Boolean.valueOf(vipInvisibleSettingModel.avatar_location_status == 1), false);
             }
         }, UserInfo.getInstance().getLoginUserInfo().getUid(), g());
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void a(FragmentActivity fragmentActivity, Bundle bundle, Bundle bundle2) {
         super.a(fragmentActivity, bundle, bundle2);
         this.j = BluedConfig.a().c(fragmentActivity);
@@ -107,7 +106,6 @@ public class NearbyHomePresenter extends MvpPresenter {
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void a(LifecycleOwner lifecycleOwner) {
         super.a(lifecycleOwner);
         LiveEventBus.get(EventBusConstant.KEY_EVENT_NEARBY_ACTIVITY, BluedADExtra.class).observe(lifecycleOwner, new Observer<BluedADExtra>() { // from class: com.soft.blued.ui.find.presenter.NearbyHomePresenter.1
@@ -115,7 +113,7 @@ public class NearbyHomePresenter extends MvpPresenter {
             /* renamed from: a */
             public void onChanged(BluedADExtra bluedADExtra) {
                 Log.v("drb", "KEY_EVENT_NEARBY_ACTIVITY onChanged");
-                NearbyHomePresenter.this.a(EventBusConstant.KEY_EVENT_NEARBY_ACTIVITY, (String) bluedADExtra, false);
+                NearbyHomePresenter.this.a(EventBusConstant.KEY_EVENT_NEARBY_ACTIVITY, (Object) bluedADExtra, false);
             }
         });
         LiveEventBus.get("INVISIBLE_DISTANCE", Boolean.class).observe(lifecycleOwner, new Observer<Boolean>() { // from class: com.soft.blued.ui.find.presenter.NearbyHomePresenter.2
@@ -123,7 +121,7 @@ public class NearbyHomePresenter extends MvpPresenter {
             /* renamed from: a */
             public void onChanged(Boolean bool) {
                 Log.v("drb", "onChanged:" + bool);
-                NearbyHomePresenter.this.a("invisible_state", (String) bool);
+                NearbyHomePresenter.this.a("invisible_state", bool);
             }
         });
         LiveEventBus.get(EventBusConstant.KEY_EVENT_IS_CLICK_ON_HEADER, Boolean.class).observe(lifecycleOwner, new Observer<Boolean>() { // from class: com.soft.blued.ui.find.presenter.NearbyHomePresenter.3
@@ -148,7 +146,7 @@ public class NearbyHomePresenter extends MvpPresenter {
                 String dY = BluedPreferences.dY();
                 boolean z = false;
                 if (!TextUtils.isEmpty(dY)) {
-                    String[] split = dY.split("-");
+                    String[] split = dY.split(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
                     int intValue = Integer.valueOf(split[0]).intValue();
                     int intValue2 = Integer.valueOf(split[1]).intValue();
                     z = NearbyHomePresenter.this.a(intValue, intValue2, intValue, intValue2);
@@ -163,7 +161,7 @@ public class NearbyHomePresenter extends MvpPresenter {
             @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(Boolean bool) {
-                NearbyHomePresenter.this.a("map_avatar_location_state", (String) bool);
+                NearbyHomePresenter.this.a("map_avatar_location_state", bool);
             }
         });
         LiveEventBus.get(EventBusConstant.KEY_EVENT_SHOW_GOLD_ANIMAITON, Boolean.class).observe(lifecycleOwner, new Observer<Boolean>() { // from class: com.soft.blued.ui.find.presenter.NearbyHomePresenter.7
@@ -177,7 +175,7 @@ public class NearbyHomePresenter extends MvpPresenter {
             @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(String str) {
-                NearbyHomePresenter.this.a("SHOW_RED_PACK_SIGN_TIP", str, false);
+                NearbyHomePresenter.this.a("SHOW_RED_PACK_SIGN_TIP", (Object) str, false);
             }
         });
         LiveEventBus.get(EventBusConstant.KEY_EVENT_FLASH_FREE_TIMES_TO_POST, Boolean.class).observe(lifecycleOwner, new Observer() { // from class: com.soft.blued.ui.find.presenter.-$$Lambda$NearbyHomePresenter$tEIY9S-PBDha9U8Wob2IhmkLobE
@@ -186,15 +184,15 @@ public class NearbyHomePresenter extends MvpPresenter {
                 NearbyHomePresenter.a((Boolean) obj);
             }
         });
-        if (HomeActivity.f30985c != null) {
-            NearbyViewModel nearbyViewModel = (NearbyViewModel) ViewModelProviders.of(HomeActivity.f30985c).get(NearbyViewModel.class);
-            nearbyViewModel.f30625a.observe(lifecycleOwner, new Observer() { // from class: com.soft.blued.ui.find.presenter.-$$Lambda$NearbyHomePresenter$roIZP6wkXK6_lRi5M8tLzXsLhi0
+        if (HomeActivity.f17295c != null) {
+            NearbyViewModel nearbyViewModel = (NearbyViewModel) ViewModelProviders.of((FragmentActivity) HomeActivity.f17295c).get(NearbyViewModel.class);
+            nearbyViewModel.f16935a.observe(lifecycleOwner, new Observer() { // from class: com.soft.blued.ui.find.presenter.-$$Lambda$NearbyHomePresenter$roIZP6wkXK6_lRi5M8tLzXsLhi0
                 @Override // androidx.lifecycle.Observer
                 public final void onChanged(Object obj) {
                     NearbyHomePresenter.this.a((Rect) obj);
                 }
             });
-            nearbyViewModel.f30626c.observe(lifecycleOwner, new Observer() { // from class: com.soft.blued.ui.find.presenter.-$$Lambda$NearbyHomePresenter$n4VmhW-EuZl7MShnZgzWl2MqDW8
+            nearbyViewModel.f16936c.observe(lifecycleOwner, new Observer() { // from class: com.soft.blued.ui.find.presenter.-$$Lambda$NearbyHomePresenter$n4VmhW-EuZl7MShnZgzWl2MqDW8
                 @Override // androidx.lifecycle.Observer
                 public final void onChanged(Object obj) {
                     NearbyHomePresenter.this.b((Void) obj);
@@ -207,7 +205,7 @@ public class NearbyHomePresenter extends MvpPresenter {
                 }
             });
         }
-        SelectCityViewModel selectCityViewModel = (SelectCityViewModel) new ViewModelProvider((ViewModelStoreOwner) h(), ViewModelProvider.AndroidViewModelFactory.getInstance((Application) AppInfo.d())).get(SelectCityViewModel.class);
+        SelectCityViewModel selectCityViewModel = new ViewModelProvider((ViewModelStoreOwner) h(), ViewModelProvider.AndroidViewModelFactory.getInstance((Application) AppInfo.d())).get(SelectCityViewModel.class);
         this.l = selectCityViewModel;
         selectCityViewModel.d().observe(lifecycleOwner, new Observer<String>() { // from class: com.soft.blued.ui.find.presenter.NearbyHomePresenter.9
             @Override // androidx.lifecycle.Observer
@@ -223,8 +221,8 @@ public class NearbyHomePresenter extends MvpPresenter {
                         }
                     }
                     NearbyHomePresenter.this.a("home_city_title", false);
-                    if (HomeActivity.f30985c != null) {
-                        ((NearbyViewModel) ViewModelProviders.of(HomeActivity.f30985c).get(NearbyViewModel.class)).e.postValue(null);
+                    if (HomeActivity.f17295c != null) {
+                        ((NearbyViewModel) ViewModelProviders.of((FragmentActivity) HomeActivity.f17295c).get(NearbyViewModel.class)).e.postValue(null);
                     }
                     EventTrackFeed.a(FeedProtos.Event.CITY_CHANGE, "");
                 }
@@ -235,18 +233,16 @@ public class NearbyHomePresenter extends MvpPresenter {
     public void a(IRequestHost iRequestHost) {
         FindHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<MapChanceEncounterStatusModel>>(iRequestHost) { // from class: com.soft.blued.ui.find.presenter.NearbyHomePresenter.12
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<MapChanceEncounterStatusModel> bluedEntityA) {
                 if (bluedEntityA == null || bluedEntityA.getSingleData() == null) {
                     return;
                 }
-                NearbyHomePresenter.this.a("REFRESH_MAP_ENTER_REMIND_STATUS", (String) bluedEntityA.getSingleData());
+                NearbyHomePresenter.this.a("REFRESH_MAP_ENTER_REMIND_STATUS", (MapChanceEncounterStatusModel) bluedEntityA.getSingleData());
             }
         }, iRequestHost, UserInfo.getInstance().getLoginUserInfo().uid, 1);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void a(IFetchDataListener iFetchDataListener) {
         Log.v("drb", "onFetchData---");
         n();
@@ -291,7 +287,6 @@ public class NearbyHomePresenter extends MvpPresenter {
         return z;
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void b(IFetchDataListener iFetchDataListener) {
     }
 
@@ -301,20 +296,19 @@ public class NearbyHomePresenter extends MvpPresenter {
         }
         FindHttpUtils.b(new BluedUIHttpResponse<BluedEntityA<CityLocation>>(g()) { // from class: com.soft.blued.ui.find.presenter.NearbyHomePresenter.11
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<CityLocation> bluedEntityA) {
                 if (bluedEntityA == null || !bluedEntityA.hasData()) {
                     return;
                 }
-                BluedPreferences.V(bluedEntityA.getSingleData().city_code);
+                BluedPreferences.V(((CityLocation) bluedEntityA.getSingleData()).city_code);
                 for (HomeTopTabModel homeTopTabModel : NearbyHomePresenter.this.j) {
                     if (homeTopTabModel.tab_id == 2) {
                         homeTopTabModel.tab_title = CityHelper.a().a(NearbyHomePresenter.this.h(), BluedPreferences.dd());
                     }
                 }
-                BluedPreferences.T(bluedEntityA.getSingleData().has_verify_mobile == 1);
-                BluedPreferences.U(bluedEntityA.getSingleData().has_used_mobile == 1);
+                BluedPreferences.T(((CityLocation) bluedEntityA.getSingleData()).has_verify_mobile == 1);
+                BluedPreferences.U(((CityLocation) bluedEntityA.getSingleData()).has_used_mobile == 1);
                 NearbyHomePresenter.this.a("home_city_title", false);
             }
         }, CityHelper.a().c(), CityHelper.a().e(), g());

@@ -11,20 +11,16 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ViewRedPackageBinding.class */
 public final class ViewRedPackageBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f16873a;
+    public final ImageView a;
     public final ShapeTextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ShapeTextView f16874c;
+    public final ShapeTextView c;
     private final ConstraintLayout d;
 
     private ViewRedPackageBinding(ConstraintLayout constraintLayout, ImageView imageView, ShapeTextView shapeTextView, ShapeTextView shapeTextView2) {
         this.d = constraintLayout;
-        this.f16873a = imageView;
+        this.a = imageView;
         this.b = shapeTextView;
-        this.f16874c = shapeTextView2;
+        this.c = shapeTextView2;
     }
 
     public static ViewRedPackageBinding a(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
@@ -55,7 +51,6 @@ public final class ViewRedPackageBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.d;

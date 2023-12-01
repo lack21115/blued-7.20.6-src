@@ -17,13 +17,10 @@ import com.airbnb.lottie.model.content.GradientStroke;
 import com.airbnb.lottie.model.content.GradientType;
 import com.airbnb.lottie.model.layer.BaseLayer;
 import com.airbnb.lottie.value.LottieValueCallback;
-import com.blued.das.live.LiveProtos;
 
 /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/animation/content/GradientStrokeContent.class */
 public class GradientStrokeContent extends BaseStrokeContent {
-
-    /* renamed from: c  reason: collision with root package name */
-    private final String f4280c;
+    private final String c;
     private final boolean d;
     private final LongSparseArray<LinearGradient> e;
     private final LongSparseArray<RadialGradient> f;
@@ -40,21 +37,21 @@ public class GradientStrokeContent extends BaseStrokeContent {
         this.e = new LongSparseArray<>();
         this.f = new LongSparseArray<>();
         this.g = new RectF();
-        this.f4280c = gradientStroke.a();
+        this.c = gradientStroke.a();
         this.h = gradientStroke.b();
         this.d = gradientStroke.m();
         this.i = (int) (lottieDrawable.r().e() / 32.0f);
-        BaseKeyframeAnimation<GradientColor, GradientColor> a2 = gradientStroke.c().a();
-        this.j = a2;
-        a2.a(this);
+        BaseKeyframeAnimation<GradientColor, GradientColor> a = gradientStroke.c().a();
+        this.j = a;
+        a.a(this);
         baseLayer.a(this.j);
-        BaseKeyframeAnimation<PointF, PointF> a3 = gradientStroke.e().a();
-        this.k = a3;
-        a3.a(this);
+        BaseKeyframeAnimation<PointF, PointF> a2 = gradientStroke.e().a();
+        this.k = a2;
+        a2.a(this);
         baseLayer.a(this.k);
-        BaseKeyframeAnimation<PointF, PointF> a4 = gradientStroke.f().a();
-        this.l = a4;
-        a4.a(this);
+        BaseKeyframeAnimation<PointF, PointF> a3 = gradientStroke.f().a();
+        this.l = a3;
+        a3.a(this);
         baseLayer.a(this.l);
     }
 
@@ -92,7 +89,7 @@ public class GradientStrokeContent extends BaseStrokeContent {
 
     private LinearGradient c() {
         long e = e();
-        LinearGradient linearGradient = this.e.get(e);
+        LinearGradient linearGradient = (LinearGradient) this.e.get(e);
         if (linearGradient != null) {
             return linearGradient;
         }
@@ -107,17 +104,17 @@ public class GradientStrokeContent extends BaseStrokeContent {
     private RadialGradient d() {
         int height;
         long e = e();
-        RadialGradient radialGradient = this.f.get(e);
+        RadialGradient radialGradient = (RadialGradient) this.f.get(e);
         if (radialGradient != null) {
             return radialGradient;
         }
         PointF g = this.k.g();
         PointF g2 = this.l.g();
         GradientColor g3 = this.j.g();
-        int[] a2 = a(g3.b());
-        float[] a3 = g3.a();
+        int[] a = a(g3.b());
+        float[] a2 = g3.a();
         int width = (int) (this.g.left + (this.g.width() / 2.0f) + g.x);
-        RadialGradient radialGradient2 = new RadialGradient(width, (int) (this.g.top + (this.g.height() / 2.0f) + g.y), (float) Math.hypot(((int) ((this.g.left + (this.g.width() / 2.0f)) + g2.x)) - width, ((int) ((this.g.top + (this.g.height() / 2.0f)) + g2.y)) - height), a2, a3, Shader.TileMode.CLAMP);
+        RadialGradient radialGradient2 = new RadialGradient(width, (int) (this.g.top + (this.g.height() / 2.0f) + g.y), (float) Math.hypot(((int) ((this.g.left + (this.g.width() / 2.0f)) + g2.x)) - width, ((int) ((this.g.top + (this.g.height() / 2.0f)) + g2.y)) - height), a, a2, Shader.TileMode.CLAMP);
         this.f.put(e, radialGradient2);
         return radialGradient2;
     }
@@ -126,7 +123,7 @@ public class GradientStrokeContent extends BaseStrokeContent {
         int round = Math.round(this.k.h() * this.i);
         int round2 = Math.round(this.l.h() * this.i);
         int round3 = Math.round(this.j.h() * this.i);
-        int i = round != 0 ? LiveProtos.Event.LIVE_END_PAGE_CLOSE_CLICK_VALUE * round : 17;
+        int i = round != 0 ? 527 * round : 17;
         int i2 = i;
         if (round2 != 0) {
             i2 = i * 31 * round2;
@@ -155,7 +152,7 @@ public class GradientStrokeContent extends BaseStrokeContent {
         if (t == LottieProperty.C) {
             if (lottieValueCallback == null) {
                 if (this.m != null) {
-                    this.f4268a.b(this.m);
+                    this.a.b(this.m);
                 }
                 this.m = null;
                 return;
@@ -163,12 +160,12 @@ public class GradientStrokeContent extends BaseStrokeContent {
             ValueCallbackKeyframeAnimation valueCallbackKeyframeAnimation = new ValueCallbackKeyframeAnimation(lottieValueCallback);
             this.m = valueCallbackKeyframeAnimation;
             valueCallbackKeyframeAnimation.a(this);
-            this.f4268a.a(this.m);
+            this.a.a(this.m);
         }
     }
 
     @Override // com.airbnb.lottie.animation.content.Content
     public String b() {
-        return this.f4280c;
+        return this.c;
     }
 }

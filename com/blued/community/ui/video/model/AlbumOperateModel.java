@@ -22,7 +22,7 @@ public class AlbumOperateModel {
             return;
         }
         if (albumSelectInfo.e() == AlbumDataManager.getMediaTypeVideo()) {
-            if (albumSelectInfo.c() == null || albumSelectInfo.c().size() <= 0 || (mediaInfo = albumSelectInfo.c().get(0)) == null) {
+            if (albumSelectInfo.c() == null || albumSelectInfo.c().size() <= 0 || (mediaInfo = (MediaInfo) albumSelectInfo.c().get(0)) == null) {
                 return;
             }
             ShortVideoProxy.e().a(baseFragment, mediaInfo.path, i, i2);

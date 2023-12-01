@@ -6,7 +6,7 @@ import android.content.Context;
 public final class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile d f26220a;
+    private static volatile d f12532a;
     private static final byte[] b = new byte[0];
 
     public static b a(Context context, a aVar) {
@@ -14,7 +14,7 @@ public final class c {
         if (context != null && aVar != null) {
             a();
             try {
-                bVar = f26220a.a(context.getApplicationContext(), aVar);
+                bVar = f12532a.a(context.getApplicationContext(), aVar);
             } catch (Exception e) {
                 com.opos.cmn.an.f.a.a("DownloadTool", "download", (Throwable) e);
             }
@@ -27,10 +27,10 @@ public final class c {
     }
 
     private static void a() {
-        if (f26220a == null) {
+        if (f12532a == null) {
             synchronized (b) {
-                if (f26220a == null) {
-                    f26220a = new com.opos.mobad.i.a.a();
+                if (f12532a == null) {
+                    f12532a = new com.opos.mobad.i.a.a();
                 }
             }
         }

@@ -341,7 +341,7 @@ public interface IImsService extends IInterface {
             switch (i) {
                 case 1:
                     parcel.enforceInterface(DESCRIPTOR);
-                    int open = open(parcel.readInt(), parcel.readInt(), parcel.readInt() != 0 ? PendingIntent.CREATOR.createFromParcel(parcel) : null, IImsRegistrationListener.Stub.asInterface(parcel.readStrongBinder()));
+                    int open = open(parcel.readInt(), parcel.readInt(), parcel.readInt() != 0 ? (PendingIntent) PendingIntent.CREATOR.createFromParcel(parcel) : null, IImsRegistrationListener.Stub.asInterface(parcel.readStrongBinder()));
                     parcel2.writeNoException();
                     parcel2.writeInt(open);
                     return true;
@@ -444,10 +444,10 @@ public interface IImsService extends IInterface {
                     return true;
                 case 14:
                     parcel.enforceInterface(DESCRIPTOR);
-                    setUiTTYMode(parcel.readInt(), parcel.readInt(), parcel.readInt() != 0 ? Message.CREATOR.createFromParcel(parcel) : null);
+                    setUiTTYMode(parcel.readInt(), parcel.readInt(), parcel.readInt() != 0 ? (Message) Message.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     return true;
-                case IBinder.INTERFACE_TRANSACTION /* 1598968902 */:
+                case 1598968902:
                     parcel2.writeString(DESCRIPTOR);
                     return true;
                 default:

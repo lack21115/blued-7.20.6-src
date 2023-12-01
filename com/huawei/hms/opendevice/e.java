@@ -17,11 +17,11 @@ import com.huawei.hms.utils.JsonUtil;
 public class e extends TaskApiCall<PushClient, Void> {
 
     /* renamed from: a  reason: collision with root package name */
-    private DeleteTokenReq f22812a;
+    private DeleteTokenReq f9204a;
 
     public e(String str, DeleteTokenReq deleteTokenReq, String str2) {
         super(str, JsonUtil.createJsonString(deleteTokenReq), str2);
-        this.f22812a = deleteTokenReq;
+        this.f9204a = deleteTokenReq;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -50,6 +50,6 @@ public class e extends TaskApiCall<PushClient, Void> {
 
     @Override // com.huawei.hms.common.internal.TaskApiCall
     public int getMinApkVersion() {
-        return this.f22812a.isMultiSender() ? 50004300 : 30000000;
+        return this.f9204a.isMultiSender() ? 50004300 : 30000000;
     }
 }

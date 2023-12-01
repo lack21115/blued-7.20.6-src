@@ -1,6 +1,7 @@
 package com.tencent.thumbplayer.g.e.a;
 
 import android.graphics.SurfaceTexture;
+import android.opengl.EGL14;
 import android.util.Log;
 import android.view.Surface;
 import com.tencent.thumbplayer.g.c.b;
@@ -14,11 +15,11 @@ import javax.microedition.khronos.egl.EGLSurface;
 public class a implements SurfaceTexture.OnFrameAvailableListener {
 
     /* renamed from: a  reason: collision with root package name */
-    EGL10 f39343a;
+    EGL10 f25652a;
     EGLDisplay b;
 
     /* renamed from: c  reason: collision with root package name */
-    EGLContext f39344c;
+    EGLContext f25653c;
     EGLSurface d;
     com.tencent.thumbplayer.g.c.b e;
     Surface f;
@@ -58,22 +59,22 @@ public class a implements SurfaceTexture.OnFrameAvailableListener {
 
     void a(int i, int i2) {
         EGL10 egl10 = (EGL10) EGLContext.getEGL();
-        this.f39343a = egl10;
+        this.f25652a = egl10;
         EGLDisplay eglGetDisplay = egl10.eglGetDisplay(EGL10.EGL_DEFAULT_DISPLAY);
         this.b = eglGetDisplay;
-        if (!this.f39343a.eglInitialize(eglGetDisplay, null)) {
+        if (!this.f25652a.eglInitialize(eglGetDisplay, null)) {
             throw new RuntimeException("unable to initialize EGL10");
         }
         EGLConfig[] eGLConfigArr = new EGLConfig[1];
-        if (!this.f39343a.eglChooseConfig(this.b, new int[]{12324, 8, 12323, 8, 12322, 8, 12339, 1, 12352, 4, 12344}, eGLConfigArr, 1, new int[1])) {
+        if (!this.f25652a.eglChooseConfig(this.b, new int[]{EGL14.EGL_RED_SIZE, 8, EGL14.EGL_GREEN_SIZE, 8, EGL14.EGL_BLUE_SIZE, 8, EGL14.EGL_SURFACE_TYPE, 1, EGL14.EGL_RENDERABLE_TYPE, 4, EGL14.EGL_NONE}, eGLConfigArr, 1, new int[1])) {
             throw new RuntimeException("unable to find RGB888+pbuffer EGL config");
         }
-        this.f39344c = this.f39343a.eglCreateContext(this.b, eGLConfigArr[0], EGL10.EGL_NO_CONTEXT, new int[]{12440, 2, 12344});
+        this.f25653c = this.f25652a.eglCreateContext(this.b, eGLConfigArr[0], EGL10.EGL_NO_CONTEXT, new int[]{12440, 2, EGL14.EGL_NONE});
         a("eglCreateContext");
-        if (this.f39344c == null) {
+        if (this.f25653c == null) {
             throw new RuntimeException("null context");
         }
-        this.d = this.f39343a.eglCreatePbufferSurface(this.b, eGLConfigArr[0], new int[]{12375, i, 12374, i2, 12344});
+        this.d = this.f25652a.eglCreatePbufferSurface(this.b, eGLConfigArr[0], new int[]{EGL14.EGL_WIDTH, i, EGL14.EGL_HEIGHT, i2, EGL14.EGL_NONE});
         a("eglCreatePbufferSurface");
         if (this.d == null) {
             throw new RuntimeException("surface was null");
@@ -85,7 +86,7 @@ public class a implements SurfaceTexture.OnFrameAvailableListener {
         boolean z2 = false;
         while (true) {
             z = z2;
-            int eglGetError = this.f39343a.eglGetError();
+            int eglGetError = this.f25652a.eglGetError();
             if (eglGetError == 12288) {
                 break;
             }
@@ -98,36 +99,36 @@ public class a implements SurfaceTexture.OnFrameAvailableListener {
     }
 
     public void b() {
-        EGL10 egl10 = this.f39343a;
+        EGL10 egl10 = this.f25652a;
         if (egl10 != null) {
-            if (egl10.eglGetCurrentContext().equals(this.f39344c)) {
-                EGL10 egl102 = this.f39343a;
+            if (egl10.eglGetCurrentContext().equals(this.f25653c)) {
+                EGL10 egl102 = this.f25652a;
                 EGLDisplay eGLDisplay = this.b;
                 EGLSurface eGLSurface = EGL10.EGL_NO_SURFACE;
                 egl102.eglMakeCurrent(eGLDisplay, eGLSurface, eGLSurface, EGL10.EGL_NO_CONTEXT);
             }
-            this.f39343a.eglDestroySurface(this.b, this.d);
-            this.f39343a.eglDestroyContext(this.b, this.f39344c);
+            this.f25652a.eglDestroySurface(this.b, this.d);
+            this.f25652a.eglDestroyContext(this.b, this.f25653c);
         }
         this.f.release();
         this.b = null;
-        this.f39344c = null;
+        this.f25653c = null;
         this.d = null;
-        this.f39343a = null;
+        this.f25652a = null;
         this.i = null;
         this.f = null;
         this.e = null;
     }
 
     public void c() {
-        if (this.f39343a == null) {
+        if (this.f25652a == null) {
             throw new RuntimeException("not configured for makeCurrent");
         }
         a("before makeCurrent");
-        EGL10 egl10 = this.f39343a;
+        EGL10 egl10 = this.f25652a;
         EGLDisplay eGLDisplay = this.b;
         EGLSurface eGLSurface = this.d;
-        if (!egl10.eglMakeCurrent(eGLDisplay, eGLSurface, eGLSurface, this.f39344c)) {
+        if (!egl10.eglMakeCurrent(eGLDisplay, eGLSurface, eGLSurface, this.f25653c)) {
             throw new RuntimeException("eglMakeCurrent failed");
         }
     }

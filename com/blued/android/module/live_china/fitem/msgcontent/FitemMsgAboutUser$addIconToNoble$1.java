@@ -21,13 +21,9 @@ import kotlin.jvm.internal.Lambda;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fitem/msgcontent/FitemMsgAboutUser$addIconToNoble$1.class */
 public final class FitemMsgAboutUser$addIconToNoble$1 extends Lambda implements Function1<DslSpannableStringBuilder, Unit> {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ FitemMsgAboutUser f12550a;
+    final /* synthetic */ FitemMsgAboutUser a;
     final /* synthetic */ int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ int f12551c;
+    final /* synthetic */ int c;
     final /* synthetic */ Context d;
     final /* synthetic */ TextView e;
     final /* synthetic */ LiveNobleModel f;
@@ -36,9 +32,9 @@ public final class FitemMsgAboutUser$addIconToNoble$1 extends Lambda implements 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public FitemMsgAboutUser$addIconToNoble$1(FitemMsgAboutUser fitemMsgAboutUser, int i, int i2, Context context, TextView textView, LiveNobleModel liveNobleModel) {
         super(1);
-        this.f12550a = fitemMsgAboutUser;
+        this.a = fitemMsgAboutUser;
         this.b = i;
-        this.f12551c = i2;
+        this.c = i2;
         this.d = context;
         this.e = textView;
         this.f = liveNobleModel;
@@ -50,7 +46,7 @@ public final class FitemMsgAboutUser$addIconToNoble$1 extends Lambda implements 
         Intrinsics.e(context, "$context");
         Intrinsics.e(tv, "$tv");
         Intrinsics.e(badgeModel, "$badgeModel");
-        FrameLayout frameLayout = (FrameLayout) this$0.f10935a.a(R.id.fl_icon_root);
+        FrameLayout frameLayout = (FrameLayout) this$0.a.a(R.id.fl_icon_root);
         if (frameLayout == null) {
             return;
         }
@@ -64,7 +60,7 @@ public final class FitemMsgAboutUser$addIconToNoble$1 extends Lambda implements 
         if (nameplate_img == null || nameplate_img.length() == 0) {
             return;
         }
-        IRequestHost iRequestHost = this$0.f10935a.b;
+        IRequestHost iRequestHost = this$0.a.b;
         String nameplate_img2 = badgeModel.getNameplate_img();
         Intrinsics.a((Object) nameplate_img2);
         ImageLoader.a(iRequestHost, nameplate_img2).g().g(-1).a(imageView);
@@ -74,10 +70,10 @@ public final class FitemMsgAboutUser$addIconToNoble$1 extends Lambda implements 
         int i;
         Intrinsics.e(buildSpannableString, "$this$buildSpannableString");
         ColorDrawable colorDrawable = new ColorDrawable();
-        i = this.f12550a.g;
+        i = this.a.g;
         final int i2 = this.b;
-        final int i3 = this.f12551c;
-        final FitemMsgAboutUser fitemMsgAboutUser = this.f12550a;
+        final int i3 = this.c;
+        final FitemMsgAboutUser fitemMsgAboutUser = this.a;
         final Context context = this.d;
         final TextView textView = this.e;
         final LiveNobleModel liveNobleModel = this.f;
@@ -92,6 +88,6 @@ public final class FitemMsgAboutUser$addIconToNoble$1 extends Lambda implements 
     @Override // kotlin.jvm.functions.Function1
     public /* synthetic */ Unit invoke(DslSpannableStringBuilder dslSpannableStringBuilder) {
         a(dslSpannableStringBuilder);
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

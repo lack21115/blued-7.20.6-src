@@ -9,22 +9,22 @@ import com.tencent.map.tools.net.processor.ResponseProcessor;
 public class vb implements RequestProcessor, ResponseProcessor {
 
     /* renamed from: a  reason: collision with root package name */
-    private final boolean f38069a;
+    private final boolean f24378a;
 
     public vb(boolean z) {
-        this.f38069a = z;
+        this.f24378a = z;
     }
 
     @Override // com.tencent.map.tools.net.processor.RequestProcessor
     public void onRequest(NetRequest netRequest) {
-        if (this.f38069a) {
+        if (this.f24378a) {
             na.c(ma.k, "REQ[" + netRequest.mRequestId + "][" + netRequest.mNetMethod.name() + "]: " + netRequest.toString());
         }
     }
 
     @Override // com.tencent.map.tools.net.processor.ResponseProcessor
     public void onResponse(NetResponse netResponse) {
-        if (this.f38069a) {
+        if (this.f24378a) {
             na.c(ma.k, "RESP[" + netResponse.mRequestId + "]: " + netResponse.toHumanString());
         }
     }

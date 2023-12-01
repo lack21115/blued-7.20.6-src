@@ -1,5 +1,6 @@
 package org.conscrypt;
 
+import com.blued.android.module.common.web.LoaderConstants;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -798,7 +799,7 @@ public class ConscryptFileDescriptorSocket extends OpenSSLSocketImpl implements 
                 transitionTo(2);
                 try {
                     try {
-                        Platform.closeGuardOpen(this.guard, "close");
+                        Platform.closeGuardOpen(this.guard, LoaderConstants.CLOSE);
                         this.ssl.initialize(getHostname(), this.channelIdPrivateKey);
                         if (getUseClientMode() && (cachedSession = clientSessionContext().getCachedSession(getHostnameOrIP(), getPort(), this.sslParameters)) != null) {
                             cachedSession.offerToResume(this.ssl);

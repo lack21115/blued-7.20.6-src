@@ -21,13 +21,13 @@ public abstract class EventLoopImplPlatform extends EventLoop {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public final void j() {
-        Thread a2 = a();
-        if (Thread.currentThread() != a2) {
-            AbstractTimeSource a3 = AbstractTimeSourceKt.a();
-            if (a3 == null) {
-                LockSupport.unpark(a2);
+        Thread a = a();
+        if (Thread.currentThread() != a) {
+            AbstractTimeSource a2 = AbstractTimeSourceKt.a();
+            if (a2 == null) {
+                LockSupport.unpark(a);
             } else {
-                a3.a(a2);
+                a2.a(a);
             }
         }
     }

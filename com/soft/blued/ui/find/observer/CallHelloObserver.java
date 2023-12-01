@@ -11,7 +11,7 @@ import java.util.Iterator;
 public class CallHelloObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    private static CallHelloObserver f30616a = new CallHelloObserver();
+    private static CallHelloObserver f16926a = new CallHelloObserver();
     private ArrayList<ICallHelloObserver> b = new ArrayList<>();
 
     /* loaded from: source-8303388-dex2jar.jar:com/soft/blued/ui/find/observer/CallHelloObserver$ICallHelloObserver.class */
@@ -27,7 +27,7 @@ public class CallHelloObserver {
     }
 
     public static CallHelloObserver a() {
-        return f30616a;
+        return f16926a;
     }
 
     public void a(int i) {

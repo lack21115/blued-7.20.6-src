@@ -6,9 +6,9 @@ import com.blued.android.chat.model.SessionModel;
 public class SearchSessionModel extends SessionModel {
 
     /* renamed from: a  reason: collision with root package name */
-    public int f33162a;
+    public int f19471a;
     public String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public long f33163c;
+    public long f19472c;
 }

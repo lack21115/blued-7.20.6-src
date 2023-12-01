@@ -4,11 +4,11 @@ package com.meizu.cloud.pushsdk.b;
 class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final char[] f23985a = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '/'};
+    private static final char[] f10374a = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '/'};
     private static final char b = (char) Integer.parseInt("00000011", 2);
 
     /* renamed from: c  reason: collision with root package name */
-    private static final char f23986c = (char) Integer.parseInt("00001111", 2);
+    private static final char f10375c = (char) Integer.parseInt("00001111", 2);
     private static final char d = (char) Integer.parseInt("00111111", 2);
     private final String e;
     private char[] f;
@@ -20,11 +20,11 @@ class d {
     }
 
     private void a() {
-        char[] cArr = new char[f23985a.length];
+        char[] cArr = new char[f10374a.length];
         int i = 0;
         this.g = this.e.charAt(0) % '\r';
         while (true) {
-            char[] cArr2 = f23985a;
+            char[] cArr2 = f10374a;
             if (i >= cArr2.length) {
                 this.f = cArr;
                 return;
@@ -56,13 +56,13 @@ class d {
                 if (i4 == length) {
                     sb.append(this.f[i3 >>> 2]);
                     sb.append(this.f[((i3 & b) << 4) | (i5 >>> 4)]);
-                    sb.append(this.f[(f23986c & i5) << 2]);
+                    sb.append(this.f[(f10375c & i5) << 2]);
                     str = "=";
                 } else {
                     int i6 = bArr[i4] & 255;
                     sb.append(this.f[i3 >>> 2]);
                     sb.append(this.f[((i3 & b) << 4) | (i5 >>> 4)]);
-                    sb.append(this.f[((i5 & f23986c) << 2) | (i6 >>> 6)]);
+                    sb.append(this.f[((i5 & f10375c) << 2) | (i6 >>> 6)]);
                     sb.append(this.f[d & i6]);
                     i = i4 + 1;
                 }

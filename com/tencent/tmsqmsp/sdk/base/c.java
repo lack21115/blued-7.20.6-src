@@ -6,12 +6,12 @@ import android.util.Log;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f39696a = "2g.outt";
+    private static String f26005a = "2g.outt";
     private static boolean b = false;
 
     public static void a(String str) {
         if (b) {
-            Log.d(f39696a, str);
+            Log.d(f26005a, str);
         }
     }
 
@@ -21,13 +21,13 @@ public class c {
 
     public static void b(String str) {
         if (b) {
-            Log.e(f39696a, str);
+            Log.e(f26005a, str);
         }
     }
 
     public static void c(String str) {
         if (b) {
-            Log.i(f39696a, str);
+            Log.i(f26005a, str);
         }
     }
 }

@@ -10,13 +10,11 @@ import com.blued.android.module.live_china.utils.LiveRoomHttpUtils;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/presenter/LiveRewardConfigPresenter.class */
 public class LiveRewardConfigPresenter {
-
-    /* renamed from: a  reason: collision with root package name */
-    private IRewardConfigView f14046a;
+    private IRewardConfigView a;
     private IRequestHost b;
 
     public LiveRewardConfigPresenter(IRewardConfigView iRewardConfigView, IRequestHost iRequestHost) {
-        this.f14046a = iRewardConfigView;
+        this.a = iRewardConfigView;
         this.b = iRequestHost;
     }
 
@@ -30,7 +28,7 @@ public class LiveRewardConfigPresenter {
                 if (bluedEntityA == null || bluedEntityA.data == null || bluedEntityA.data.size() <= 0) {
                     return;
                 }
-                LiveRewardConfigPresenter.this.f14046a.a(bluedEntityA.data.get(0));
+                LiveRewardConfigPresenter.this.a.a(bluedEntityA.data.get(0));
             }
 
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
@@ -41,7 +39,7 @@ public class LiveRewardConfigPresenter {
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 super.onUIStart();
-                LiveRewardConfigPresenter.this.f14046a.a();
+                LiveRewardConfigPresenter.this.a.a();
             }
         });
     }

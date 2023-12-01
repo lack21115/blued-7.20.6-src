@@ -6,11 +6,11 @@ import android.hardware.Camera;
 public class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private com.tencent.cloud.huiyansdkface.a.c.a f35452a;
+    private com.tencent.cloud.huiyansdkface.a.c.a f21761a;
     private a b;
 
     public d(com.tencent.cloud.huiyansdkface.a.c.a aVar, a aVar2) {
-        this.f35452a = aVar;
+        this.f21761a = aVar;
         this.b = aVar2;
     }
 
@@ -32,7 +32,7 @@ public class d {
         new h(a2, cVar).a(this.b);
         float d = a2.d();
         if (d >= 0.0f) {
-            this.f35452a.a(d / parameters.getMaxZoom());
+            this.f21761a.a(d / parameters.getMaxZoom());
         }
         a(a2, this.b.a().getParameters());
         return a2;

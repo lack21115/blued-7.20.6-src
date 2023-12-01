@@ -20,11 +20,11 @@ public class b implements Parcelable {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f21974a = "sdkconfig";
+    public static final String f8367a = "sdkconfig";
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f21975c;
+    private String f8368c;
     private String d;
     private String e;
     private String f;
@@ -37,19 +37,19 @@ public class b implements Parcelable {
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private String f21976a;
+        private String f8369a;
         private String b;
 
         /* renamed from: c  reason: collision with root package name */
-        private String f21977c;
+        private String f8370c;
         private String e;
         private String f;
         private c h;
-        private String d = "sdkconfig";
+        private String d = b.f8367a;
         private long g = 43200000;
 
         public a a(String str) {
-            this.f21976a = str;
+            this.f8369a = str;
             return this;
         }
 
@@ -59,7 +59,7 @@ public class b implements Parcelable {
         }
 
         public a c(String str) {
-            this.f21977c = str;
+            this.f8370c = str;
             return this;
         }
 
@@ -95,7 +95,7 @@ public class b implements Parcelable {
 
     protected b(Parcel parcel) {
         this.b = parcel.readString();
-        this.f21975c = parcel.readString();
+        this.f8368c = parcel.readString();
         this.d = parcel.readString();
         this.h = parcel.readString();
         this.f = parcel.readString();
@@ -105,9 +105,9 @@ public class b implements Parcelable {
     }
 
     private b(a aVar) {
-        this.b = aVar.f21976a;
-        this.f21975c = aVar.b;
-        this.d = aVar.f21977c;
+        this.b = aVar.f8369a;
+        this.f8368c = aVar.b;
+        this.d = aVar.f8370c;
         this.e = aVar.d;
         this.f = aVar.e;
         this.h = aVar.f;
@@ -124,11 +124,11 @@ public class b implements Parcelable {
     }
 
     public String b() {
-        return this.f21975c;
+        return this.f8368c;
     }
 
     public void b(String str) {
-        this.f21975c = str;
+        this.f8368c = str;
     }
 
     public String c() {
@@ -195,7 +195,7 @@ public class b implements Parcelable {
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeString(this.b);
-        parcel.writeString(this.f21975c);
+        parcel.writeString(this.f8368c);
         parcel.writeString(this.d);
         parcel.writeString(this.h);
         parcel.writeString(this.f);

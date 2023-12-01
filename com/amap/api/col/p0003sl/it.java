@@ -5,16 +5,12 @@ import java.lang.Thread;
 /* renamed from: com.amap.api.col.3sl.it  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/it.class */
 public class it {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected static it f5179a;
+    protected static it a;
     protected Thread.UncaughtExceptionHandler b;
-
-    /* renamed from: c  reason: collision with root package name */
-    protected boolean f5180c = true;
+    protected boolean c = true;
 
     public static void a(Throwable th, String str, String str2) {
-        it itVar = f5179a;
+        it itVar = a;
         if (itVar != null) {
             itVar.a(th, 1, str, str2);
         }

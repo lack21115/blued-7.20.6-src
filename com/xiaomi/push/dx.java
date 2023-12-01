@@ -11,16 +11,16 @@ public class dx {
     }
 
     private static void a(Context context, HashMap<String, String> hashMap) {
-        ef m11710a = eb.a(context).m11710a();
-        if (m11710a != null) {
-            m11710a.a(context, hashMap);
+        ef m8660a = eb.a(context).m8660a();
+        if (m8660a != null) {
+            m8660a.a(context, hashMap);
         }
     }
 
     private static void b(Context context, HashMap<String, String> hashMap) {
-        ef m11710a = eb.a(context).m11710a();
-        if (m11710a != null) {
-            m11710a.c(context, hashMap);
+        ef m8660a = eb.a(context).m8660a();
+        if (m8660a != null) {
+            m8660a.c(context, hashMap);
         }
     }
 
@@ -52,9 +52,9 @@ public class dx {
     }
 
     private static void c(Context context, HashMap<String, String> hashMap) {
-        ef m11710a = eb.a(context).m11710a();
-        if (m11710a != null) {
-            m11710a.b(context, hashMap);
+        ef m8660a = eb.a(context).m8660a();
+        if (m8660a != null) {
+            m8660a.b(context, hashMap);
         }
     }
 }

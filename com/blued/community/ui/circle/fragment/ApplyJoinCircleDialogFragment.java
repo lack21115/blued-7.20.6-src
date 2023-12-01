@@ -1,5 +1,6 @@
 package com.blued.community.ui.circle.fragment;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.os.Bundle;
 import android.text.Editable;
@@ -31,9 +32,7 @@ import com.bytedance.applog.tracker.Tracker;
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/circle/fragment/ApplyJoinCircleDialogFragment.class */
 public class ApplyJoinCircleDialogFragment extends CommonDialogFragment implements View.OnClickListener {
     private View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private TextView f19141c;
+    private TextView c;
     private ImageView d;
     private TextView e;
     private ShapeFrameLayout f;
@@ -122,7 +121,7 @@ public class ApplyJoinCircleDialogFragment extends CommonDialogFragment implemen
         }
         this.n = DialogUtils.a(getContext());
         this.b = view.findViewById(R.id.root_view);
-        this.f19141c = (TextView) view.findViewById(R.id.tv_title);
+        this.c = (TextView) view.findViewById(R.id.tv_title);
         this.d = (ImageView) view.findViewById(R.id.iv_header);
         this.e = (TextView) view.findViewById(R.id.tv_name);
         this.f = (ShapeFrameLayout) view.findViewById(R.id.sfl_apply);
@@ -177,9 +176,8 @@ public class ApplyJoinCircleDialogFragment extends CommonDialogFragment implemen
         return R.layout.dialog_apply_join_circle;
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public void dismiss() {
-        KeyboardUtils.a(getActivity());
+        KeyboardUtils.a((Activity) getActivity());
         super.dismiss();
     }
 
@@ -194,9 +192,9 @@ public class ApplyJoinCircleDialogFragment extends CommonDialogFragment implemen
             }
         } else if (id == R.id.tv_cancel) {
             dismiss();
-            KeyboardUtils.a(getActivity());
+            KeyboardUtils.a((Activity) getActivity());
         } else if (id == R.id.root_view) {
-            KeyboardUtils.a(getActivity());
+            KeyboardUtils.a((Activity) getActivity());
         }
     }
 }

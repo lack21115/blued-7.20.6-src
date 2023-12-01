@@ -1,6 +1,5 @@
 package com.android.internal.app;
 
-import android.content.Context;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.SystemClock;
@@ -15,13 +14,14 @@ import android.util.SparseArray;
 import android.util.TimeUtils;
 import com.alipay.sdk.util.i;
 import com.amap.api.col.p0003sl.iu;
+import com.android.internal.content.NativeLibraryHelper;
 import com.android.internal.telephony.PhoneConstants;
 import com.android.internal.util.GrowingArrayUtils;
-import com.baidu.mobads.sdk.api.IAdInterListener;
+import com.android.internal.util.cm.NavigationRingConstants;
+import com.android.internal.widget.LockPatternUtils;
+import com.anythink.core.common.b.g;
+import com.anythink.core.common.g.c;
 import com.blued.android.module.common.web.jsbridge.BridgeUtil;
-import com.huawei.hms.ads.jsb.constant.Constant;
-import com.tencent.open.SocialConstants;
-import com.umeng.commonsdk.framework.UMModuleRegister;
 import dalvik.system.VMRuntime;
 import java.io.IOException;
 import java.io.InputStream;
@@ -132,10 +132,10 @@ public final class ProcessStats implements Parcelable {
     static final String[] STATE_NAMES = {"Persist", "Top    ", "ImpFg  ", "ImpBg  ", "Backup ", "HeavyWt", "Service", "ServRst", "Receivr", "Home   ", "LastAct", "CchAct ", "CchCAct", "CchEmty"};
     public static final String[] ADJ_SCREEN_NAMES_CSV = {"off", "on"};
     public static final String[] ADJ_MEM_NAMES_CSV = {"norm", "mod", "low", "crit"};
-    public static final String[] STATE_NAMES_CSV = {"pers", Constant.MAP_KEY_TOP, "impfg", "impbg", Context.BACKUP_SERVICE, "heavy", "service", "service-rs", SocialConstants.PARAM_RECEIVER, "home", "lastact", "cch-activity", "cch-aclient", "cch-empty"};
+    public static final String[] STATE_NAMES_CSV = {"pers", "top", "impfg", "impbg", "backup", "heavy", "service", "service-rs", "receiver", NavigationRingConstants.ACTION_HOME, "lastact", "cch-activity", "cch-aclient", "cch-empty"};
     static final String[] ADJ_SCREEN_TAGS = {"0", "1"};
     static final String[] ADJ_MEM_TAGS = {"n", "m", "l", "c"};
-    static final String[] STATE_TAGS = {"p", "t", "f", "b", "u", IAdInterListener.AdReqParam.WIDTH, "s", "x", "r", "h", "l", "a", "c", iu.h};
+    static final String[] STATE_TAGS = {c.W, "t", iu.i, "b", "u", "w", "s", "x", g.o.o, iu.g, "l", "a", "c", iu.h};
     static int OFFSET_TYPE_SHIFT = 0;
     static int OFFSET_TYPE_MASK = 255;
     static int OFFSET_ARRAY_SHIFT = 8;
@@ -308,15 +308,15 @@ public final class ProcessStats implements Parcelable {
             if (this.numPss > 0) {
                 printWriter.print(" (");
                 ProcessStats.printSizeValue(printWriter, this.minPss * 1024);
-                printWriter.print("-");
+                printWriter.print(NativeLibraryHelper.CLEAR_ABI_OVERRIDE);
                 ProcessStats.printSizeValue(printWriter, this.avgPss * 1024);
-                printWriter.print("-");
+                printWriter.print(NativeLibraryHelper.CLEAR_ABI_OVERRIDE);
                 ProcessStats.printSizeValue(printWriter, this.maxPss * 1024);
                 printWriter.print(BridgeUtil.SPLIT_MARK);
                 ProcessStats.printSizeValue(printWriter, this.minUss * 1024);
-                printWriter.print("-");
+                printWriter.print(NativeLibraryHelper.CLEAR_ABI_OVERRIDE);
                 ProcessStats.printSizeValue(printWriter, this.avgUss * 1024);
-                printWriter.print("-");
+                printWriter.print(NativeLibraryHelper.CLEAR_ABI_OVERRIDE);
                 ProcessStats.printSizeValue(printWriter, this.maxUss * 1024);
                 if (z) {
                     printWriter.print(" over ");
@@ -496,7 +496,7 @@ public final class ProcessStats implements Parcelable {
 
         public void addPss(long j, long j2, boolean z, ArrayMap<String, ProcessStateHolder> arrayMap) {
             ensureNotDead();
-            if (!z && this.mLastPssState == this.mCurState && SystemClock.uptimeMillis() < this.mLastPssTime + 30000) {
+            if (!z && this.mLastPssState == this.mCurState && SystemClock.uptimeMillis() < this.mLastPssTime + LockPatternUtils.FAILED_ATTEMPT_TIMEOUT_MS) {
                 return;
             }
             this.mLastPssState = this.mCurState;
@@ -1525,7 +1525,7 @@ public final class ProcessStats implements Parcelable {
     }
 
     public static void dumpProcessListCsv(PrintWriter printWriter, ArrayList<ProcessState> arrayList, boolean z, int[] iArr, boolean z2, int[] iArr2, boolean z3, int[] iArr3, long j) {
-        printWriter.print(UMModuleRegister.PROCESS);
+        printWriter.print("process");
         printWriter.print(CSV_SEP);
         printWriter.print("uid");
         printWriter.print(CSV_SEP);
@@ -1641,9 +1641,9 @@ public final class ProcessStats implements Parcelable {
             printWriter.print(processState.mNumCachedKill);
             printWriter.print(" times from pss ");
             printSizeValue(printWriter, processState.mMinCachedKillPss * 1024);
-            printWriter.print("-");
+            printWriter.print(NativeLibraryHelper.CLEAR_ABI_OVERRIDE);
             printSizeValue(printWriter, processState.mAvgCachedKillPss * 1024);
-            printWriter.print("-");
+            printWriter.print(NativeLibraryHelper.CLEAR_ABI_OVERRIDE);
             printSizeValue(printWriter, processState.mMaxCachedKillPss * 1024);
             printWriter.println();
         }
@@ -2013,7 +2013,7 @@ public final class ProcessStats implements Parcelable {
                                 z2 = z;
                                 if (iArr2.length > 1) {
                                     if (z) {
-                                        printWriter.print("-");
+                                        printWriter.print(NativeLibraryHelper.CLEAR_ABI_OVERRIDE);
                                     }
                                     printMemLabelCsv(printWriter, iArr2[i4]);
                                     z2 = true;
@@ -2021,7 +2021,7 @@ public final class ProcessStats implements Parcelable {
                             }
                             if (iArr3 != null && iArr3.length > 1) {
                                 if (z2) {
-                                    printWriter.print("-");
+                                    printWriter.print(NativeLibraryHelper.CLEAR_ABI_OVERRIDE);
                                 }
                                 printWriter.print(STATE_NAMES_CSV[iArr3[i6]]);
                             }
@@ -2067,47 +2067,47 @@ public final class ProcessStats implements Parcelable {
         return sb.toString();
     }
 
-    private static void printMemLabel(PrintWriter printWriter, int i, char c2) {
+    private static void printMemLabel(PrintWriter printWriter, int i, char c) {
         switch (i) {
             case -1:
                 printWriter.print("    ");
-                if (c2 != 0) {
+                if (c != 0) {
                     printWriter.print(' ');
                     return;
                 }
                 return;
             case 0:
                 printWriter.print("Norm");
-                if (c2 != 0) {
-                    printWriter.print(c2);
+                if (c != 0) {
+                    printWriter.print(c);
                     return;
                 }
                 return;
             case 1:
                 printWriter.print("Mod ");
-                if (c2 != 0) {
-                    printWriter.print(c2);
+                if (c != 0) {
+                    printWriter.print(c);
                     return;
                 }
                 return;
             case 2:
                 printWriter.print("Low ");
-                if (c2 != 0) {
-                    printWriter.print(c2);
+                if (c != 0) {
+                    printWriter.print(c);
                     return;
                 }
                 return;
             case 3:
                 printWriter.print("Crit");
-                if (c2 != 0) {
-                    printWriter.print(c2);
+                if (c != 0) {
+                    printWriter.print(c);
                     return;
                 }
                 return;
             default:
                 printWriter.print("????");
-                if (c2 != 0) {
-                    printWriter.print(c2);
+                if (c != 0) {
+                    printWriter.print(c);
                     return;
                 }
                 return;

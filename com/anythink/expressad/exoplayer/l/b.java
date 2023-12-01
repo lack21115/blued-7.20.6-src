@@ -29,25 +29,25 @@ public final class b implements Parcelable {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f7693a;
+    public final int f4854a;
     public final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final int f7694c;
+    public final int f4855c;
     public final byte[] d;
     private int e;
 
     private b(int i, int i2, int i3, byte[] bArr) {
-        this.f7693a = i;
+        this.f4854a = i;
         this.b = i2;
-        this.f7694c = i3;
+        this.f4855c = i3;
         this.d = bArr;
     }
 
     b(Parcel parcel) {
-        this.f7693a = parcel.readInt();
+        this.f4854a = parcel.readInt();
         this.b = parcel.readInt();
-        this.f7694c = parcel.readInt();
+        this.f4855c = parcel.readInt();
         this.d = af.a(parcel) ? parcel.createByteArray() : null;
     }
 
@@ -64,23 +64,23 @@ public final class b implements Parcelable {
             return false;
         }
         b bVar = (b) obj;
-        return this.f7693a == bVar.f7693a && this.b == bVar.b && this.f7694c == bVar.f7694c && Arrays.equals(this.d, bVar.d);
+        return this.f4854a == bVar.f4854a && this.b == bVar.b && this.f4855c == bVar.f4855c && Arrays.equals(this.d, bVar.d);
     }
 
     public final int hashCode() {
         if (this.e == 0) {
-            this.e = ((((((this.f7693a + LiveProtos.Event.LIVE_END_PAGE_CLOSE_CLICK_VALUE) * 31) + this.b) * 31) + this.f7694c) * 31) + Arrays.hashCode(this.d);
+            this.e = ((((((this.f4854a + LiveProtos.Event.LIVE_END_PAGE_CLOSE_CLICK_VALUE) * 31) + this.b) * 31) + this.f4855c) * 31) + Arrays.hashCode(this.d);
         }
         return this.e;
     }
 
     public final String toString() {
         StringBuilder sb = new StringBuilder("ColorInfo(");
-        sb.append(this.f7693a);
+        sb.append(this.f4854a);
         sb.append(", ");
         sb.append(this.b);
         sb.append(", ");
-        sb.append(this.f7694c);
+        sb.append(this.f4855c);
         sb.append(", ");
         sb.append(this.d != null);
         sb.append(")");
@@ -89,9 +89,9 @@ public final class b implements Parcelable {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
-        parcel.writeInt(this.f7693a);
+        parcel.writeInt(this.f4854a);
         parcel.writeInt(this.b);
-        parcel.writeInt(this.f7694c);
+        parcel.writeInt(this.f4855c);
         af.a(parcel, this.d != null);
         byte[] bArr = this.d;
         if (bArr != null) {

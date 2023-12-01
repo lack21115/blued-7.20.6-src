@@ -12,7 +12,6 @@ import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.utils.skin.BluedSkinUtils;
 import com.blued.android.framework.utils.KeyboardUtils;
-import com.blued.android.framework.view.shape.ShapeTextView;
 import com.blued.android.module.common.db.model.SessionSettingModel;
 import com.blued.android.module.common.extensions.BluedViewExtKt;
 import com.blued.android.module.common.group.GroupInfoModel;
@@ -61,11 +60,11 @@ import kotlin.jvm.internal.Intrinsics;
 public final class SearchGlobalAdapter extends BaseMultiItemQuickAdapter<SearchGlobalInfo, BaseViewHolder> {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Companion f33156a = new Companion(null);
+    public static final Companion f19465a = new Companion(null);
     private final IRequestHost b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f33157c;
+    private String f19466c;
     private int d;
     private GuyProtos.SortType e;
     private HashMap<Integer, HashSet<String>> f;
@@ -82,11 +81,11 @@ public final class SearchGlobalAdapter extends BaseMultiItemQuickAdapter<SearchG
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public SearchGlobalAdapter(IRequestHost requestHost) {
+    public SearchGlobalAdapter(IRequestHost iRequestHost) {
         super(null);
-        Intrinsics.e(requestHost, "requestHost");
-        this.b = requestHost;
-        this.f33157c = "";
+        Intrinsics.e(iRequestHost, "requestHost");
+        this.b = iRequestHost;
+        this.f19466c = "";
         this.e = GuyProtos.SortType.COMPLEX_SORT;
         this.f = new HashMap<>();
         addItemType(0, R.layout.item_search_more);
@@ -118,90 +117,90 @@ public final class SearchGlobalAdapter extends BaseMultiItemQuickAdapter<SearchG
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(SearchGlobalAdapter this$0, GroupInfoModel group, View view) {
+    public static final void a(SearchGlobalAdapter searchGlobalAdapter, GroupInfoModel groupInfoModel, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        Intrinsics.e(group, "$group");
-        if (this$0.mContext instanceof Activity) {
-            Context context = this$0.mContext;
+        Intrinsics.e(searchGlobalAdapter, "this$0");
+        Intrinsics.e(groupInfoModel, "$group");
+        if (searchGlobalAdapter.mContext instanceof Activity) {
+            Context context = searchGlobalAdapter.mContext;
             if (context == null) {
                 throw new NullPointerException("null cannot be cast to non-null type android.app.Activity");
             }
             KeyboardUtils.a((Activity) context);
         }
-        GroupInfoFragment.a(this$0.mContext, String.valueOf(group.group_id), group, SocialNetWorkProtos.SourceType.UNKNOWN_SOURCE_TYPE);
-        SearchGlobalUtil.f33175a.b(this$0.f33157c);
-        if (this$0.d == 0) {
-            EventTrackGuy.b(GuyProtos.Event.SEARCH_ALL_FIRST_RESULT_GROUP_CLICK, this$0.f33157c, String.valueOf(group.group_id));
+        GroupInfoFragment.a(searchGlobalAdapter.mContext, String.valueOf(groupInfoModel.group_id), groupInfoModel, SocialNetWorkProtos.SourceType.UNKNOWN_SOURCE_TYPE);
+        SearchGlobalUtil.f19484a.b(searchGlobalAdapter.f19466c);
+        if (searchGlobalAdapter.d == 0) {
+            EventTrackGuy.b(GuyProtos.Event.SEARCH_ALL_FIRST_RESULT_GROUP_CLICK, searchGlobalAdapter.f19466c, String.valueOf(groupInfoModel.group_id));
         } else {
-            EventTrackGuy.b(GuyProtos.Event.SEARCH_ALL_SECOND_RESULT_GROUP_CLICK, this$0.f33157c, String.valueOf(group.group_id));
+            EventTrackGuy.b(GuyProtos.Event.SEARCH_ALL_SECOND_RESULT_GROUP_CLICK, searchGlobalAdapter.f19466c, String.valueOf(groupInfoModel.group_id));
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(SearchGlobalAdapter this$0, MyCircleModel item, View view) {
+    public static final void a(SearchGlobalAdapter searchGlobalAdapter, MyCircleModel myCircleModel, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        Intrinsics.e(item, "$item");
-        CircleDetailsFragment.a(this$0.mContext, item, CircleConstants.CIRCLE_FROM_PAGE.SEARCH_ALL_CIRCLE);
-        EventTrackGuy.b(GuyProtos.Event.SEARCH_ALL_FIRST_RESULT_CIRCLE_CLICK, this$0.f33157c, item.circle_id);
+        Intrinsics.e(searchGlobalAdapter, "this$0");
+        Intrinsics.e(myCircleModel, "$item");
+        CircleDetailsFragment.a(searchGlobalAdapter.mContext, myCircleModel, CircleConstants.CIRCLE_FROM_PAGE.z);
+        EventTrackGuy.b(GuyProtos.Event.SEARCH_ALL_FIRST_RESULT_CIRCLE_CLICK, searchGlobalAdapter.f19466c, myCircleModel.circle_id);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(SearchGlobalAdapter this$0, BluedTopic item, View view) {
+    public static final void a(SearchGlobalAdapter searchGlobalAdapter, BluedTopic bluedTopic, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        Intrinsics.e(item, "$item");
-        SuperTopicDetailFragment.a(this$0.mContext, item.super_did);
-        EventTrackGuy.b(GuyProtos.Event.SEARCH_ALL_FIRST_RESULT_TOPIC_CLICK, this$0.f33157c, item.super_did);
+        Intrinsics.e(searchGlobalAdapter, "this$0");
+        Intrinsics.e(bluedTopic, "$item");
+        SuperTopicDetailFragment.a(searchGlobalAdapter.mContext, bluedTopic.super_did);
+        EventTrackGuy.b(GuyProtos.Event.SEARCH_ALL_FIRST_RESULT_TOPIC_CLICK, searchGlobalAdapter.f19466c, bluedTopic.super_did);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(SearchGlobalAdapter this$0, SearchGlobalInfo.SearchUserModel user, BaseViewHolder helper, View view) {
+    public static final void a(SearchGlobalAdapter searchGlobalAdapter, SearchGlobalInfo.SearchUserModel searchUserModel, BaseViewHolder baseViewHolder, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        Intrinsics.e(user, "$user");
-        Intrinsics.e(helper, "$helper");
-        if (this$0.mContext instanceof Activity) {
-            Context context = this$0.mContext;
+        Intrinsics.e(searchGlobalAdapter, "this$0");
+        Intrinsics.e(searchUserModel, "$user");
+        Intrinsics.e(baseViewHolder, "$helper");
+        if (searchGlobalAdapter.mContext instanceof Activity) {
+            Context context = searchGlobalAdapter.mContext;
             if (context == null) {
                 throw new NullPointerException("null cannot be cast to non-null type android.app.Activity");
             }
             KeyboardUtils.a((Activity) context);
         }
-        FilterDialogFragment.f30190c = true;
-        UserInfoFragmentNew.a(this$0.mContext, user, "", helper.getView(2131364232));
-        SearchGlobalUtil.f33175a.b(this$0.f33157c);
-        if (this$0.d == 0) {
-            EventTrackGuy.a(GuyProtos.Event.SEARCH_ALL_FIRST_RESULT_USER_CLICK, this$0.f33157c, user.uid);
+        FilterDialogFragment.f16500c = true;
+        UserInfoFragmentNew.a(searchGlobalAdapter.mContext, searchUserModel, "", baseViewHolder.getView(2131364232));
+        SearchGlobalUtil.f19484a.b(searchGlobalAdapter.f19466c);
+        if (searchGlobalAdapter.d == 0) {
+            EventTrackGuy.a(GuyProtos.Event.SEARCH_ALL_FIRST_RESULT_USER_CLICK, searchGlobalAdapter.f19466c, searchUserModel.uid);
         } else {
-            EventTrackGuy.a(GuyProtos.Event.SEARCH_ALL_SECOND_RESULT_USER_CLICK, this$0.f33157c, user.uid, this$0.e);
+            EventTrackGuy.a(GuyProtos.Event.SEARCH_ALL_SECOND_RESULT_USER_CLICK, searchGlobalAdapter.f19466c, searchUserModel.uid, searchGlobalAdapter.e);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(SearchGlobalAdapter this$0, SearchSessionModel session, View view) {
+    public static final void a(SearchGlobalAdapter searchGlobalAdapter, SearchSessionModel searchSessionModel, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        Intrinsics.e(session, "$session");
-        if (this$0.mContext instanceof Activity) {
-            Context context = this$0.mContext;
+        Intrinsics.e(searchGlobalAdapter, "this$0");
+        Intrinsics.e(searchSessionModel, "$session");
+        if (searchGlobalAdapter.mContext instanceof Activity) {
+            Context context = searchGlobalAdapter.mContext;
             if (context == null) {
                 throw new NullPointerException("null cannot be cast to non-null type android.app.Activity");
             }
             KeyboardUtils.a((Activity) context);
         }
-        this$0.a(session);
-        SearchGlobalUtil.f33175a.b(this$0.f33157c);
-        if (this$0.d == 0) {
-            EventTrackGuy.a(GuyProtos.Event.SEARCH_ALL_FIRST_RESULT_MSG_CLICK, this$0.f33157c, String.valueOf(session.sessionId));
+        searchGlobalAdapter.a(searchSessionModel);
+        SearchGlobalUtil.f19484a.b(searchGlobalAdapter.f19466c);
+        if (searchGlobalAdapter.d == 0) {
+            EventTrackGuy.a(GuyProtos.Event.SEARCH_ALL_FIRST_RESULT_MSG_CLICK, searchGlobalAdapter.f19466c, String.valueOf(searchSessionModel.sessionId));
         } else {
-            EventTrackGuy.a(GuyProtos.Event.SEARCH_ALL_SECOND_RESULT_MSG_CLICK, this$0.f33157c, String.valueOf(session.sessionId));
+            EventTrackGuy.a(GuyProtos.Event.SEARCH_ALL_SECOND_RESULT_MSG_CLICK, searchGlobalAdapter.f19466c, String.valueOf(searchSessionModel.sessionId));
         }
     }
 
     private final void a(SearchSessionModel searchSessionModel) {
-        if (searchSessionModel.f33162a <= 1) {
+        if (searchSessionModel.f19471a <= 1) {
             if (searchSessionModel.sessionType == 2 && BluedPreferences.av()) {
                 a(searchSessionModel, true);
                 return;
@@ -211,7 +210,7 @@ public final class SearchGlobalAdapter extends BaseMultiItemQuickAdapter<SearchG
             }
         }
         Context context = this.mContext;
-        String str = this.f33157c;
+        String str = this.f19466c;
         SearchSessionModel searchSessionModel2 = searchSessionModel;
         SessionSettingBaseModel sessionSettingBaseModel = searchSessionModel.sessionSettingModel;
         if (sessionSettingBaseModel == null) {
@@ -223,7 +222,7 @@ public final class SearchGlobalAdapter extends BaseMultiItemQuickAdapter<SearchG
     private final void a(SearchSessionModel searchSessionModel, boolean z) {
         LogData logData = new LogData();
         logData.from = "none";
-        ChatHelperV4.a().a(this.mContext, searchSessionModel.sessionId, searchSessionModel.nickName, searchSessionModel.avatar, searchSessionModel.vBadge, searchSessionModel.vipGrade, searchSessionModel.vipAnnual, searchSessionModel.vipExpLvl, Intrinsics.a(searchSessionModel.lastMsgFromDistance, (Object) ""), z, searchSessionModel.sessionType == 3 ? 1 : 0, 0, logData, new MsgSourceEntity(MessageProtos.StrangerSource.UNKNOWN_STRANGER_SOURCE, ""), searchSessionModel.lastMsgId, searchSessionModel.lastMsgLocalId, false, false);
+        ChatHelperV4.a().a(this.mContext, searchSessionModel.sessionId, searchSessionModel.nickName, searchSessionModel.avatar, searchSessionModel.vBadge, searchSessionModel.vipGrade, searchSessionModel.vipAnnual, searchSessionModel.vipExpLvl, Intrinsics.a(searchSessionModel.lastMsgFromDistance, ""), z, searchSessionModel.sessionType == 3 ? 1 : 0, 0, logData, new MsgSourceEntity(MessageProtos.StrangerSource.UNKNOWN_STRANGER_SOURCE, ""), searchSessionModel.lastMsgId, searchSessionModel.lastMsgLocalId, false, false);
     }
 
     private final boolean a(int i, String str) {
@@ -242,7 +241,7 @@ public final class SearchGlobalAdapter extends BaseMultiItemQuickAdapter<SearchG
     }
 
     private final String b(int i) {
-        String string = i != 1 ? i != 2 ? i != 3 ? i != 4 ? i != 5 ? "" : this.mContext.getString(2131892304) : this.mContext.getString(2131886545) : this.mContext.getString(R.string.friend_global_search_group) : this.mContext.getString(R.string.friend_global_search_user) : this.mContext.getString(R.string.friend_global_search_chat);
+        String string = i != 1 ? i != 2 ? i != 3 ? i != 4 ? i != 5 ? "" : this.mContext.getString(R.string.topic) : this.mContext.getString(R.string.base) : this.mContext.getString(R.string.friend_global_search_group) : this.mContext.getString(R.string.friend_global_search_user) : this.mContext.getString(R.string.friend_global_search_chat);
         Intrinsics.c(string, "when (title_type) {\n    …\n        else -> \"\"\n    }");
         return string;
     }
@@ -252,14 +251,14 @@ public final class SearchGlobalAdapter extends BaseMultiItemQuickAdapter<SearchG
         if (f == null) {
             return;
         }
-        ImageLoader.a((IRequestHost) null, AvatarUtils.a(0, f.cover)).a(12.0f).b(2131102177).a((ImageView) baseViewHolder.getView(2131365082));
+        ImageLoader.a((IRequestHost) null, AvatarUtils.a(0, f.cover)).a(12.0f).b(2131102177).a((ImageView) baseViewHolder.getView(R.id.iv_avatar));
         View view = baseViewHolder.getView(2131372046);
         Intrinsics.c(view, "viewHolder.getView(R.id.tv_name)");
         UserRelationshipUtils.a(this.mContext, f.title, b(), (TextView) view);
         View view2 = baseViewHolder.getView(2131371259);
         Intrinsics.c(view2, "viewHolder.getView(R.id.tv_des)");
         UserRelationshipUtils.a(this.mContext, f.description, b(), (TextView) view2);
-        baseViewHolder.setText(2131372144, Intrinsics.a(CommonStringUtils.b(f.members_num), (Object) this.mContext.getString(2131890596))).itemView.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.search.adapter.-$$Lambda$SearchGlobalAdapter$S52jxMmyFcK7ZonHYd2KWS2eYBE
+        baseViewHolder.setText(R.id.tv_num, Intrinsics.a(CommonStringUtils.b(f.members_num), this.mContext.getString(R.string.members_count_part))).itemView.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.search.adapter.-$$Lambda$SearchGlobalAdapter$S52jxMmyFcK7ZonHYd2KWS2eYBE
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
                 SearchGlobalAdapter.a(SearchGlobalAdapter.this, f, view3);
@@ -277,10 +276,10 @@ public final class SearchGlobalAdapter extends BaseMultiItemQuickAdapter<SearchG
         if (g == null) {
             return;
         }
-        ImageLoader.a((IRequestHost) null, AvatarUtils.a(0, g.avatar)).a(12.0f).b(2131102177).a((ImageView) baseViewHolder.getView(2131365082));
+        ImageLoader.a((IRequestHost) null, AvatarUtils.a(0, g.avatar)).a(12.0f).b(2131102177).a((ImageView) baseViewHolder.getView(R.id.iv_avatar));
         UserRelationshipUtils.a(this.mContext, g.name, b(), (TextView) baseViewHolder.getView(2131372046));
         UserRelationshipUtils.a(this.mContext, g.description, b(), (TextView) baseViewHolder.getView(2131371259));
-        baseViewHolder.setText(2131372144, CommonStringUtils.b(g.ticktocks_total) + this.mContext.getString(2131892148) + ' ' + ((Object) CommonStringUtils.b(g.visited_total)) + this.mContext.getString(2131892155)).itemView.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.search.adapter.-$$Lambda$SearchGlobalAdapter$qsrMCTnF55HsQiLcap_9C89EYP0
+        baseViewHolder.setText(R.id.tv_num, CommonStringUtils.b(g.ticktocks_total) + this.mContext.getString(R.string.subject_feed_count) + ' ' + ((Object) CommonStringUtils.b(g.visited_total)) + this.mContext.getString(R.string.subject_visit_count)).itemView.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.search.adapter.-$$Lambda$SearchGlobalAdapter$qsrMCTnF55HsQiLcap_9C89EYP0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 SearchGlobalAdapter.a(SearchGlobalAdapter.this, g, view);
@@ -318,18 +317,18 @@ public final class SearchGlobalAdapter extends BaseMultiItemQuickAdapter<SearchG
         }
         ((TextView) baseViewHolder.getView(R.id.msg_friend_item_name)).setMaxWidth(BluedViewExtKt.a(120));
         TextView textView = (TextView) baseViewHolder.getView(R.id.msg_friend_item_content);
-        if (c2.f33162a <= 0) {
+        if (c2.f19471a <= 0) {
             if (TextUtils.isEmpty(c2.b)) {
                 baseViewHolder.setGone(R.id.msg_content_noread_root, true);
             }
             baseViewHolder.setText(R.id.msg_friend_item_content, "");
             baseViewHolder.setGone(R.id.msg_friend_item_status, true);
-        } else if (c2.f33162a > 1) {
-            baseViewHolder.setText(R.id.msg_friend_item_content, this.mContext.getResources().getString(R.string.chat_count, String.valueOf(c2.f33162a)));
+        } else if (c2.f19471a > 1) {
+            baseViewHolder.setText(R.id.msg_friend_item_content, this.mContext.getResources().getString(R.string.chat_count, String.valueOf(c2.f19471a)));
         } else {
             UserRelationshipUtils.a(this.mContext, StringUtils.a(StringUtils.a(c2.lastMsgContent, false, true, true, ""), (int) textView.getTextSize()).toString(), b(), textView);
         }
-        if (c2.lastMsgTime == 0 || c2.f33162a > 1) {
+        if (c2.lastMsgTime == 0 || c2.f19471a > 1) {
             baseViewHolder.setText(R.id.msg_friend_item_time, "");
         } else {
             baseViewHolder.setText(R.id.msg_friend_item_time, MsgCommonUtils.a(this.mContext, c2.lastMsgTime));
@@ -350,7 +349,7 @@ public final class SearchGlobalAdapter extends BaseMultiItemQuickAdapter<SearchG
             z = false;
         }
         baseViewHolder.setGone(R.id.tv_group_icon, z);
-        baseViewHolder.getView(2131364999).setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.search.adapter.-$$Lambda$SearchGlobalAdapter$OGv0FZvj7NvWAxsfx3FMsE2RcTk
+        baseViewHolder.getView(R.id.item_view).setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.search.adapter.-$$Lambda$SearchGlobalAdapter$OGv0FZvj7NvWAxsfx3FMsE2RcTk
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 SearchGlobalAdapter.a(SearchGlobalAdapter.this, c2, view);
@@ -371,13 +370,13 @@ public final class SearchGlobalAdapter extends BaseMultiItemQuickAdapter<SearchG
             }
         }
         SocialNetWorkProtos.Event event = SocialNetWorkProtos.Event.GROUP_DRAW;
-        List<GroupInfoModel.Label> list = e.label;
+        List list = e.label;
         SocialNetWorkProtos.SourceType sourceType = e.group_role == 1 ? SocialNetWorkProtos.SourceType.CREATE : SocialNetWorkProtos.SourceType.JOIN;
         EventTrackGroup.a(event, list, sourceType, e.group_id + "");
-        GroupUtil.a((ShapeTextView) baseViewHolder.getView(2131372839), e, true);
-        GroupUtil.b(a(), e.group_cover, (ImageView) baseViewHolder.getView(2131365477));
+        GroupUtil.a(baseViewHolder.getView(R.id.tv_type), e, true);
+        GroupUtil.b(a(), e.group_cover, (ImageView) baseViewHolder.getView(R.id.iv_header));
         GroupUtil.a((TextView) baseViewHolder.getView(R.id.tv_identity), e.group_role);
-        BaseViewHolder text = baseViewHolder.setText(2131371262, e.group_desc);
+        BaseViewHolder text = baseViewHolder.setText(R.id.tv_desc, e.group_desc);
         StringBuilder sb = new StringBuilder();
         sb.append(e.group_now_population);
         sb.append('/');
@@ -387,7 +386,7 @@ public final class SearchGlobalAdapter extends BaseMultiItemQuickAdapter<SearchG
         GroupUtil.a((TextView) baseViewHolder.getView(R.id.tv_frozen), e.group_role, e.group_status);
         if (!TextUtils.isEmpty(b())) {
             UserRelationshipUtils.a(this.mContext, e.group_title, b(), (TextView) baseViewHolder.getView(2131372046));
-            UserRelationshipUtils.a(this.mContext, e.group_desc, b(), (TextView) baseViewHolder.getView(2131371262));
+            UserRelationshipUtils.a(this.mContext, e.group_desc, b(), (TextView) baseViewHolder.getView(R.id.tv_desc));
         }
         baseViewHolder.getView(R.id.root_group).setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.search.adapter.-$$Lambda$SearchGlobalAdapter$APxifFgV-xAxbkyU6AprbWST5rA
             @Override // android.view.View.OnClickListener
@@ -421,9 +420,9 @@ public final class SearchGlobalAdapter extends BaseMultiItemQuickAdapter<SearchG
 
     private final void g(BaseViewHolder baseViewHolder, SearchGlobalInfo searchGlobalInfo) {
         baseViewHolder.setGone(2131366859, baseViewHolder.getAdapterPosition() != 0);
-        baseViewHolder.setVisible(2131371973, searchGlobalInfo.b());
+        baseViewHolder.setVisible(R.id.tv_more, searchGlobalInfo.b());
         baseViewHolder.setText(2131372754, b(searchGlobalInfo.a()));
-        baseViewHolder.addOnClickListener(2131371973);
+        baseViewHolder.addOnClickListener(R.id.tv_more);
     }
 
     public final IRequestHost a() {
@@ -442,33 +441,33 @@ public final class SearchGlobalAdapter extends BaseMultiItemQuickAdapter<SearchG
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
-    public void convert(BaseViewHolder helper, SearchGlobalInfo item) {
-        Intrinsics.e(helper, "helper");
-        Intrinsics.e(item, "item");
-        int type = item.getType();
+    public void convert(BaseViewHolder baseViewHolder, SearchGlobalInfo searchGlobalInfo) {
+        Intrinsics.e(baseViewHolder, "helper");
+        Intrinsics.e(searchGlobalInfo, "item");
+        int type = searchGlobalInfo.getType();
         if (type == 0) {
-            g(helper, item);
+            g(baseViewHolder, searchGlobalInfo);
         } else if (type == 1) {
-            d(helper, item);
+            d(baseViewHolder, searchGlobalInfo);
         } else if (type == 2) {
-            f(helper, item);
+            f(baseViewHolder, searchGlobalInfo);
         } else if (type == 3) {
-            e(helper, item);
+            e(baseViewHolder, searchGlobalInfo);
         } else if (type == 4) {
-            b(helper, item);
+            b(baseViewHolder, searchGlobalInfo);
         } else if (type != 5) {
         } else {
-            c(helper, item);
+            c(baseViewHolder, searchGlobalInfo);
         }
     }
 
     public final void a(String str) {
         Intrinsics.e(str, "<set-?>");
-        this.f33157c = str;
+        this.f19466c = str;
     }
 
     public final String b() {
-        return this.f33157c;
+        return this.f19466c;
     }
 
     public final int c() {

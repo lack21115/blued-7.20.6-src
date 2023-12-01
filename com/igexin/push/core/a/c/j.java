@@ -12,7 +12,7 @@ import org.json.JSONObject;
 public final class j implements PushMessageInterface {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23423a = com.igexin.push.config.c.f23373a;
+    private static final String f9815a = com.igexin.push.config.c.f9765a;
 
     @Override // com.igexin.push.extension.mod.PushMessageInterface
     public final boolean executeAction(PushTaskBean pushTaskBean, BaseActionBean baseActionBean) {
@@ -31,19 +31,19 @@ public final class j implements PushMessageInterface {
                 messageId = pushTaskBean.getMessageId();
                 str = pVar.getDoActionId();
             } else {
-                com.igexin.c.a.c.a.a(f23423a, "execute failed, activity not exist");
-                com.igexin.c.a.c.a.a(f23423a + "|execute failed, activity not exist", new Object[0]);
+                com.igexin.c.a.c.a.a(f9815a, "execute failed, activity not exist");
+                com.igexin.c.a.c.a.a(f9815a + "|execute failed, activity not exist", new Object[0]);
                 com.igexin.push.core.a.b.d();
                 id = pushTaskBean.getId();
                 messageId = pushTaskBean.getMessageId();
-                str = pVar.f23455a;
+                str = pVar.f9847a;
             }
             com.igexin.push.core.a.b.a(id, messageId, str);
             return true;
         } catch (Throwable th) {
             com.igexin.c.a.c.a.a(th);
             com.igexin.push.core.a.b.d();
-            com.igexin.push.core.a.b.a(pushTaskBean.getId(), pushTaskBean.getMessageId(), pVar.f23455a);
+            com.igexin.push.core.a.b.a(pushTaskBean.getId(), pushTaskBean.getMessageId(), pVar.f9847a);
             return true;
         }
     }
@@ -61,7 +61,7 @@ public final class j implements PushMessageInterface {
                 pVar.setActionId(jSONObject.getString("actionid"));
                 pVar.setDoActionId(jSONObject.getString(com.anythink.expressad.foundation.d.d.s));
                 pVar.b = optString;
-                pVar.f23455a = jSONObject.optString("do_failed");
+                pVar.f9847a = jSONObject.optString("do_failed");
                 return pVar;
             }
             return null;
@@ -81,15 +81,15 @@ public final class j implements PushMessageInterface {
             if (com.igexin.push.f.c.b(a2, com.igexin.push.core.e.l)) {
                 return PushMessageInterface.ActionPrepareState.success;
             }
-            com.igexin.c.a.c.a.a(f23423a, "execute failed, activity not exist");
-            com.igexin.c.a.c.a.a(f23423a + "|execute failed, activity not exist", new Object[0]);
+            com.igexin.c.a.c.a.a(f9815a, "execute failed, activity not exist");
+            com.igexin.c.a.c.a.a(f9815a + "|execute failed, activity not exist", new Object[0]);
             com.igexin.push.core.a.b.d();
-            com.igexin.push.core.a.b.a(pushTaskBean.getId(), pushTaskBean.getMessageId(), pVar.f23455a);
+            com.igexin.push.core.a.b.a(pushTaskBean.getId(), pushTaskBean.getMessageId(), pVar.f9847a);
             return PushMessageInterface.ActionPrepareState.stop;
         } catch (Throwable th) {
             com.igexin.c.a.c.a.a(th);
             com.igexin.push.core.a.b.d();
-            com.igexin.push.core.a.b.a(pushTaskBean.getId(), pushTaskBean.getMessageId(), pVar.f23455a);
+            com.igexin.push.core.a.b.a(pushTaskBean.getId(), pushTaskBean.getMessageId(), pVar.f9847a);
             return PushMessageInterface.ActionPrepareState.stop;
         }
     }

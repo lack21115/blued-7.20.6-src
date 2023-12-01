@@ -4,12 +4,12 @@ import android.content.Context;
 import android.media.TtmlUtils;
 import android.provider.Downloads;
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.google.common.net.HttpHeaders;
 import com.opos.acs.st.STManager;
 import com.opos.cmn.biz.ststrategy.entity.MetaEntity;
 import com.opos.cmn.biz.ststrategy.entity.STConfigEntity;
 import com.opos.cmn.biz.ststrategy.entity.StrategyEntity;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -30,11 +30,11 @@ import org.json.JSONObject;
 public final class h {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final byte[] f24473a = new byte[0];
+    private static final byte[] f10786a = new byte[0];
     private static final ReadWriteLock b = new ReentrantReadWriteLock();
 
     /* renamed from: c  reason: collision with root package name */
-    private static Timer f24474c = null;
+    private static Timer f10787c = null;
     private static final byte[] d = new byte[0];
     private static boolean e = false;
     private static boolean f = false;
@@ -53,7 +53,7 @@ public final class h {
         int i;
         com.opos.acs.st.b.c cVar = new com.opos.acs.st.b.c();
         cVar.b = str;
-        cVar.f24456c = map.get("adId");
+        cVar.f10769c = map.get("adId");
         cVar.d = a(context, str, map);
         if (map.get("parEvtId") != null) {
             cVar.h = map.get("parEvtId");
@@ -99,7 +99,7 @@ public final class h {
         }
         boolean z = cVar.j == 0;
         try {
-            d.a("Utils", "dataType=" + cVar.b + ",acsId=" + cVar.f24456c);
+            d.a("Utils", "dataType=" + cVar.b + ",acsId=" + cVar.f10769c);
             if (z && cVar.f != null) {
                 cVar.f = cVar.f.replace("sessionIdRpl", "1");
             }
@@ -164,16 +164,16 @@ public final class h {
                     i3 = -1;
                 }
             }
-            String substring = str3.substring(0, str3.indexOf(BridgeUtil.SPLIT_MARK));
+            String substring = str3.substring(0, str3.indexOf("/"));
             String str5 = map.get("area");
-            String substring2 = str3.substring(str3.indexOf(BridgeUtil.SPLIT_MARK));
+            String substring2 = str3.substring(str3.indexOf("/"));
             if (i3 < 0 || list == null || i3 >= list.size()) {
                 sb.append(substring);
             } else {
                 sb.append(list.get(i3));
             }
             if (str5 != null && !"".equals(str5.trim())) {
-                sb.append(BridgeUtil.SPLIT_MARK);
+                sb.append("/");
                 sb.append(str5);
             }
             if (!"".equals(substring2.trim())) {
@@ -227,10 +227,10 @@ public final class h {
             for (com.opos.acs.st.b.c cVar : list) {
                 if (cVar.j == 0) {
                     if (a(context, cVar.b, cVar.h)) {
-                        d.a("Utils", "dataType=" + cVar.b + ",acsId=" + cVar.f24456c + ",effective");
+                        d.a("Utils", "dataType=" + cVar.b + ",acsId=" + cVar.f10769c + ",effective");
                         replace = cVar.f.replace("sessionIdRpl", "1");
                     } else {
-                        d.a("Utils", "dataType=" + cVar.b + ",acsId=" + cVar.f24456c + "， not effective");
+                        d.a("Utils", "dataType=" + cVar.b + ",acsId=" + cVar.f10769c + "， not effective");
                         replace = cVar.f.replace("sessionIdRpl", "0");
                     }
                     cVar.f = replace;
@@ -320,11 +320,11 @@ public final class h {
         if (TextUtils.isEmpty(str)) {
             return null;
         }
-        String[] split = str.split(BridgeUtil.UNDERLINE_STR);
+        String[] split = str.split("_");
         if (split.length > 0) {
             try {
                 int parseInt = Integer.parseInt(split[0]);
-                return (parseInt + 1) + BridgeUtil.UNDERLINE_STR + str2;
+                return (parseInt + 1) + "_" + str2;
             } catch (Exception e2) {
                 com.opos.cmn.an.f.a.b("Utils", "getRetStr error", e2);
                 return null;
@@ -364,11 +364,11 @@ public final class h {
             try {
                 synchronized (d) {
                     d.b("lshxjtu", "cancelReportTimer isCancelTimering=" + f);
-                    if (f24474c != null && !f) {
+                    if (f10787c != null && !f) {
                         f = true;
                         d.b("lshxjtu", "cancelReportTimer really start!!!");
-                        f24474c.cancel();
-                        f24474c = null;
+                        f10787c.cancel();
+                        f10787c = null;
                     }
                     f = false;
                 }
@@ -379,10 +379,10 @@ public final class h {
     }
 
     public static void a(Context context, com.opos.acs.st.b.c cVar, int i, int i2) {
-        synchronized (f24473a) {
+        synchronized (f10786a) {
             if (i != 0) {
                 String a2 = a(context, cVar.b);
-                com.opos.acs.st.b.c a3 = com.opos.acs.st.a.b.a(context, cVar.b, cVar.f24456c, cVar.d);
+                com.opos.acs.st.b.c a3 = com.opos.acs.st.a.b.a(context, cVar.b, cVar.f10769c, cVar.d);
                 if (a3 == null) {
                     com.opos.acs.st.a.b.a(context, cVar);
                 } else {
@@ -532,7 +532,7 @@ public final class h {
                     long currentTimeMillis = System.currentTimeMillis();
                     com.opos.acs.st.b.a aVar = new com.opos.acs.st.b.a();
                     aVar.b = (map == null || (b2 = com.opos.acs.st.b.a.b(map)) == null) ? null : b2.toString();
-                    aVar.f24452c = currentTimeMillis;
+                    aVar.f10765c = currentTimeMillis;
                     aVar.d = currentTimeMillis;
                     com.opos.acs.st.a.c.a(context, aVar);
                     g.b(context, str);
@@ -654,7 +654,7 @@ public final class h {
                     if (b2 == null) {
                         com.opos.acs.st.b.b bVar = new com.opos.acs.st.b.b();
                         bVar.b = str;
-                        bVar.f24454c = map.get(STManager.KEY_AD_POS_ID);
+                        bVar.f10767c = map.get(STManager.KEY_AD_POS_ID);
                         if (metaEntity.immFlag != 0) {
                             bVar.d = 1;
                         } else if (metaEntity.judgePosids != null) {
@@ -665,8 +665,8 @@ public final class h {
                     } else if (b2.d == 0) {
                         if (metaEntity.immFlag != 0) {
                             b2.d = 1;
-                        } else if (b2.f24454c != null && (str2 = map.get(STManager.KEY_AD_POS_ID)) != null && !b2.f24454c.contains(str2)) {
-                            b2.f24454c += "|" + map.get(STManager.KEY_AD_POS_ID);
+                        } else if (b2.f10767c != null && (str2 = map.get(STManager.KEY_AD_POS_ID)) != null && !b2.f10767c.contains(str2)) {
+                            b2.f10767c += "|" + map.get(STManager.KEY_AD_POS_ID);
                         }
                         com.opos.acs.st.a.b.b(context, b2);
                         d.a("Utils", "updateStatBatchEntity:".concat(String.valueOf(b2)));
@@ -714,11 +714,11 @@ public final class h {
             b.readLock().unlock();
             d.a("Utils", "statBatchEntity=".concat(String.valueOf(b2)));
             if (b2 != null) {
-                if (b2.d == 1 || b2.f24454c == null || b(context, str) || (c2 = c(context, str)) == null || (list = c2.judgePosids) == null || list.size() == 0) {
+                if (b2.d == 1 || b2.f10767c == null || b(context, str) || (c2 = c(context, str)) == null || (list = c2.judgePosids) == null || list.size() == 0) {
                     return true;
                 }
-                d.a("Utils", "statBatchEntity.acsPosIds=" + b2.f24454c);
-                String[] split = b2.f24454c.split("\\|");
+                d.a("Utils", "statBatchEntity.acsPosIds=" + b2.f10767c);
+                String[] split = b2.f10767c.split("\\|");
                 int i = 0;
                 while (true) {
                     int i2 = i;
@@ -846,7 +846,7 @@ public final class h {
             return;
         }
         List<String> a2 = com.opos.acs.st.a.b.a(context);
-        synchronized (f24473a) {
+        synchronized (f10786a) {
             for (String str : b2.dataEntity.metaEntityMap.keySet()) {
                 if (a2 != null && a2.size() > 0) {
                     int i = 0;
@@ -911,7 +911,7 @@ public final class h {
                 int i11 = i10;
                 if (it.hasNext()) {
                     com.opos.acs.st.b.c next = it.next();
-                    numArr[i11] = Integer.valueOf(next.f24455a);
+                    numArr[i11] = Integer.valueOf(next.f10768a);
                     if (next.h != null && !arrayList.contains(next.h)) {
                         arrayList.add(next.h);
                     }
@@ -1019,13 +1019,13 @@ public final class h {
             try {
                 synchronized (d) {
                     StringBuilder sb = new StringBuilder("startReportTimer receive,reportTimer=");
-                    sb.append(f24474c == null ? com.igexin.push.core.b.l : f24474c);
+                    sb.append(f10787c == null ? com.igexin.push.core.b.l : f10787c);
                     sb.append(",startReportTimer=");
                     sb.append(b());
                     sb.append(",isStartTimering=");
                     sb.append(e);
                     d.b("lshxjtu", sb.toString());
-                    if (context != null && f24474c == null && b() && !e) {
+                    if (context != null && f10787c == null && b() && !e) {
                         e = true;
                         d.b("lshxjtu", "startReportTimer really start!");
                         StrategyEntity i = i(context);
@@ -1044,7 +1044,7 @@ public final class h {
                         d.a("Utils", "period=".concat(String.valueOf(j4)));
                         f fVar = new f(context, j, j2, j4);
                         Timer timer = new Timer();
-                        f24474c = timer;
+                        f10787c = timer;
                         timer.schedule(fVar, 0L, j4);
                     }
                     e = false;
@@ -1056,7 +1056,7 @@ public final class h {
     }
 
     private static String d() {
-        return UUID.randomUUID().toString() + "-" + System.currentTimeMillis();
+        return UUID.randomUUID().toString() + Constants.ACCEPT_TIME_SEPARATOR_SERVER + System.currentTimeMillis();
     }
 
     public static boolean d(Context context) {
@@ -1146,7 +1146,7 @@ public final class h {
         HashMap<String, String> hashMap = new HashMap<>();
         hashMap.put("Content-type", "application/json");
         hashMap.put(HttpHeaders.ACCEPT_CHARSET, "UTF-8");
-        hashMap.put("Connection", com.anythink.expressad.foundation.g.f.g.c.f7906c);
+        hashMap.put("Connection", com.anythink.expressad.foundation.g.f.g.c.f5066c);
         hashMap.put("Content-Encoding", "gzip");
         hashMap.put("Route-Data", com.opos.cmn.biz.a.e.a(context));
         return hashMap;

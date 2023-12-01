@@ -4,14 +4,12 @@ import java.io.OutputStream;
 
 /* loaded from: source-3503164-dex2jar.jar:mtopsdk/a/b/e.class */
 final class e extends d {
-
-    /* renamed from: a  reason: collision with root package name */
-    private /* synthetic */ String f43663a;
+    private /* synthetic */ String a;
     private /* synthetic */ byte[] b;
 
     @Override // mtopsdk.a.b.d
     public final String a() {
-        return this.f43663a;
+        return this.a;
     }
 
     @Override // mtopsdk.a.b.d

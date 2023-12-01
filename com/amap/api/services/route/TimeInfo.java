@@ -22,9 +22,7 @@ public class TimeInfo implements Parcelable {
             return null;
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    private long f5770a;
+    private long a;
     private List<TimeInfosElement> b;
 
     public TimeInfo() {
@@ -33,7 +31,7 @@ public class TimeInfo implements Parcelable {
 
     public TimeInfo(Parcel parcel) {
         this.b = new ArrayList();
-        this.f5770a = parcel.readInt();
+        this.a = parcel.readInt();
         this.b = parcel.createTypedArrayList(TimeInfosElement.CREATOR);
     }
 
@@ -47,7 +45,7 @@ public class TimeInfo implements Parcelable {
     }
 
     public long getStartTime() {
-        return this.f5770a;
+        return this.a;
     }
 
     public void setElements(List<TimeInfosElement> list) {
@@ -55,12 +53,12 @@ public class TimeInfo implements Parcelable {
     }
 
     public void setStartTime(long j) {
-        this.f5770a = j;
+        this.a = j;
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeLong(this.f5770a);
+        parcel.writeLong(this.a);
         parcel.writeTypedList(this.b);
     }
 }

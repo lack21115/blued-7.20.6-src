@@ -11,32 +11,32 @@ public class cc {
     public static final int e = 0;
 
     /* renamed from: a  reason: collision with root package name */
-    private int f37366a;
+    private int f23675a;
     private a<String> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Hashtable<String, Integer> f37367c = new Hashtable<>();
+    private Hashtable<String, Integer> f23676c = new Hashtable<>();
     private IntBuffer d;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/mapsdk/internal/cc$a.class */
     public static class a<E> {
 
         /* renamed from: a  reason: collision with root package name */
-        private int f37368a;
+        private int f23677a;
         private Object[] b;
         private int d = 0;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f37369c = 0;
+        private int f23678c = 0;
 
         public a(int i) {
-            this.f37368a = i;
+            this.f23677a = i;
             this.b = new Object[i];
         }
 
         private void e() {
             this.d = 0;
-            this.f37369c = 0;
+            this.f23678c = 0;
         }
 
         public void a() {
@@ -57,7 +57,7 @@ public class cc {
             if (c()) {
                 return false;
             }
-            int i = this.d % this.f37368a;
+            int i = this.d % this.f23677a;
             this.d = i;
             Object[] objArr = this.b;
             this.d = i + 1;
@@ -66,29 +66,29 @@ public class cc {
         }
 
         public boolean b() {
-            return this.d == this.f37369c;
+            return this.d == this.f23678c;
         }
 
         public boolean c() {
-            return (this.d + 1) % this.f37368a == this.f37369c;
+            return (this.d + 1) % this.f23677a == this.f23678c;
         }
 
         public E d() {
             if (b()) {
                 return null;
             }
-            int i = this.f37369c % this.f37368a;
-            this.f37369c = i;
+            int i = this.f23678c % this.f23677a;
+            this.f23678c = i;
             Object[] objArr = this.b;
             E e = (E) objArr[i];
             objArr[i] = null;
-            this.f37369c = i + 1;
+            this.f23678c = i + 1;
             return e;
         }
     }
 
     public cc(int i) {
-        this.f37366a = i;
+        this.f23675a = i;
         this.b = new a<>(i);
         a();
     }
@@ -96,7 +96,7 @@ public class cc {
     private void a() {
         synchronized (this) {
             if (this.d == null) {
-                ByteBuffer allocateDirect = ByteBuffer.allocateDirect(this.f37366a * 4);
+                ByteBuffer allocateDirect = ByteBuffer.allocateDirect(this.f23675a * 4);
                 allocateDirect.order(ByteOrder.nativeOrder());
                 this.d = allocateDirect.asIntBuffer();
             }
@@ -105,7 +105,7 @@ public class cc {
 
     public int a(String str) {
         synchronized (this) {
-            Integer num = this.f37367c.get(str);
+            Integer num = this.f23676c.get(str);
             if (num != null) {
                 return num.intValue();
             }
@@ -115,18 +115,18 @@ public class cc {
 
     public void a(String str, int i) {
         synchronized (this) {
-            if (this.f37367c.size() == this.f37366a) {
+            if (this.f23676c.size() == this.f23675a) {
                 a();
                 if (this.d == null) {
                     return;
                 }
-                Integer remove = this.f37367c.remove(this.b.d());
-                if (this.d.position() < this.f37366a) {
+                Integer remove = this.f23676c.remove(this.b.d());
+                if (this.d.position() < this.f23675a) {
                     this.d.put(remove.intValue());
                 }
             }
             this.b.a(str);
-            this.f37367c.put(str, Integer.valueOf(i));
+            this.f23676c.put(str, Integer.valueOf(i));
         }
     }
 
@@ -147,7 +147,7 @@ public class cc {
 
     public void b() {
         synchronized (this) {
-            this.f37367c.clear();
+            this.f23676c.clear();
             this.b.a();
             IntBuffer intBuffer = this.d;
             if (intBuffer != null) {
@@ -159,12 +159,12 @@ public class cc {
     public void b(GL10 gl10) {
         synchronized (this) {
             if (this.d != null) {
-                for (String str : this.f37367c.keySet()) {
-                    this.d.put(this.f37367c.get(str).intValue());
+                for (String str : this.f23676c.keySet()) {
+                    this.d.put(this.f23676c.get(str).intValue());
                 }
                 a(gl10);
             }
-            this.f37367c.clear();
+            this.f23676c.clear();
             this.b.a();
         }
     }

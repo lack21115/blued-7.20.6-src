@@ -7,9 +7,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/comparisons/NaturalOrderComparator.class */
 final class NaturalOrderComparator implements Comparator<Comparable<? super Object>> {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final NaturalOrderComparator f42441a = new NaturalOrderComparator();
+    public static final NaturalOrderComparator a = new NaturalOrderComparator();
 
     private NaturalOrderComparator() {
     }
@@ -23,6 +21,6 @@ final class NaturalOrderComparator implements Comparator<Comparable<? super Obje
     }
 
     public final Comparator<Comparable<Object>> reversed() {
-        return ReverseOrderComparator.f42442a;
+        return ReverseOrderComparator.a;
     }
 }

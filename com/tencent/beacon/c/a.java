@@ -12,11 +12,11 @@ import com.tencent.qmsp.sdk.u.U;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static boolean f35001a = false;
+    private static boolean f21310a = false;
     private static String b = "load_so";
 
     /* renamed from: c  reason: collision with root package name */
-    private static String f35002c = "load_so_version";
+    private static String f21311c = "load_so_version";
     private static String d = "beacon_so_beacon";
 
     private static int a(Context context) {
@@ -44,14 +44,14 @@ public class a {
                     a3 = "LOADERROR";
                 } else {
                     try {
-                        if (!f35001a) {
+                        if (!f21310a) {
                             a(context, a2 + 1);
                             c.d("[audit] load libBeacon.so success", new Object[0]);
-                            f35001a = true;
+                            f21310a = true;
                         }
                         a3 = U.a(context, i, activity, str);
                     } catch (UnsatisfiedLinkError e) {
-                        f35001a = true;
+                        f21310a = true;
                         a3 = U.a(context, i, activity, str);
                     }
                     a(context, 0);
@@ -76,7 +76,7 @@ public class a {
     private static void a(Context context, String str) {
         SharedPreferences.Editor edit = b(context).edit();
         if (com.tencent.beacon.base.util.b.a(edit)) {
-            edit.putString(f35002c, str).apply();
+            edit.putString(f21311c, str).apply();
         }
     }
 
@@ -91,6 +91,6 @@ public class a {
     }
 
     private static String c(Context context) {
-        return b(context).getString(f35002c, "");
+        return b(context).getString(f21311c, "");
     }
 }

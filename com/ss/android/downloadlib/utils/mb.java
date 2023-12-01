@@ -21,10 +21,10 @@ public class mb {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.ss.android.downloadlib.utils.mb$mb  reason: collision with other inner class name */
     /* loaded from: source-8457232-dex2jar.jar:com/ss/android/downloadlib/utils/mb$mb.class */
-    public static class C0880mb implements InvocationHandler {
+    public static class C0710mb implements InvocationHandler {
         private Object mb;
 
-        private C0880mb(Object obj) {
+        private C0710mb(Object obj) {
             this.mb = obj;
         }
 
@@ -53,7 +53,7 @@ public class mb {
             if (obj2 == null || (cls = Class.forName(IActivityManager.descriptor)) == null) {
                 return;
             }
-            declaredField2.set(obj, Proxy.newProxyInstance(Thread.currentThread().getContextClassLoader(), new Class[]{cls}, new C0880mb(obj2)));
+            declaredField2.set(obj, Proxy.newProxyInstance(Thread.currentThread().getContextClassLoader(), new Class[]{cls}, new C0710mb(obj2)));
         } catch (Throwable th) {
         }
     }

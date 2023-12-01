@@ -29,30 +29,30 @@ public class ComplianceInfo implements Parcelable {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    private String f25684a;
+    private String f11996a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Map<String, String> f25685c;
+    private Map<String, String> f11997c;
 
     private ComplianceInfo() {
     }
 
     public ComplianceInfo(String str, String str2) {
-        this.f25684a = str;
+        this.f11996a = str;
         this.b = str2;
     }
 
     public String a() {
-        return this.f25684a;
+        return this.f11996a;
     }
 
     public void a(String str) {
-        this.f25684a = str;
+        this.f11996a = str;
     }
 
     public void a(HashMap<String, String> hashMap) {
-        this.f25685c = hashMap;
+        this.f11997c = hashMap;
     }
 
     public String b() {
@@ -64,7 +64,7 @@ public class ComplianceInfo implements Parcelable {
     }
 
     public Map<String, String> c() {
-        return this.f25685c;
+        return this.f11997c;
     }
 
     @Override // android.os.Parcelable
@@ -73,13 +73,13 @@ public class ComplianceInfo implements Parcelable {
     }
 
     public String toString() {
-        return "ComplianceInfo{privacyUrl='" + this.f25684a + "', permissionUrl='" + this.b + "', permissionMap=" + this.f25685c + '}';
+        return "ComplianceInfo{privacyUrl='" + this.f11996a + "', permissionUrl='" + this.b + "', permissionMap=" + this.f11997c + '}';
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.f25684a);
+        parcel.writeString(this.f11996a);
         parcel.writeString(this.b);
-        parcel.writeMap(this.f25685c);
+        parcel.writeMap(this.f11997c);
     }
 }

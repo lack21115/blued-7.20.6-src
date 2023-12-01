@@ -18,7 +18,6 @@ import android.os.RemoteException;
 import android.os.UserHandle;
 import android.text.TextUtils;
 import android.util.Log;
-import com.android.internal.R;
 import com.anythink.expressad.foundation.g.b.b;
 import com.google.android.collect.Maps;
 import java.io.IOException;
@@ -187,9 +186,8 @@ public class AccountManager {
 
         public abstract void doWork() throws RemoteException;
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // java.util.concurrent.FutureTask
-        public void done() {
+        protected void done() {
             if (this.mCallback != null) {
                 AccountManager.this.postToHandler(this.mHandler, this.mCallback, this);
             }
@@ -306,11 +304,11 @@ public class AccountManager {
             try {
                 try {
                     if (l == null) {
-                        T t = get();
+                        T t = (T) get();
                         cancel(true);
                         return t;
                     }
-                    T t2 = get(l.longValue(), timeUnit);
+                    T t2 = (T) get(l.longValue(), timeUnit);
                     cancel(true);
                     return t2;
                 } catch (InterruptedException e) {
@@ -347,9 +345,8 @@ public class AccountManager {
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // java.util.concurrent.FutureTask
-        public void done() {
+        protected void done() {
             if (this.mCallback != null) {
                 postRunnableToHandler(new Runnable() { // from class: android.accounts.AccountManager.Future2Task.1
                     @Override // java.lang.Runnable
@@ -450,7 +447,7 @@ public class AccountManager {
                                 }
                             };
                             Intent intent = new Intent();
-                            ComponentName unflattenFromString = ComponentName.unflattenFromString(Resources.getSystem().getString(R.string.config_chooseAccountActivity));
+                            ComponentName unflattenFromString = ComponentName.unflattenFromString(Resources.getSystem().getString(17039621));
                             intent.setClassName(unflattenFromString.getPackageName(), unflattenFromString.getClassName());
                             intent.putExtra(AccountManager.KEY_ACCOUNTS, result);
                             intent.putExtra(AccountManager.KEY_ACCOUNT_MANAGER_RESPONSE, new AccountManagerResponse(stub));
@@ -535,14 +532,14 @@ public class AccountManager {
 
     public static AccountManager get(Context context) {
         if (context == null) {
-            throw new IllegalArgumentException(b.f7836a);
+            throw new IllegalArgumentException(b.f4996a);
         }
         return (AccountManager) context.getSystemService("account");
     }
 
     public static Intent newChooseAccountIntent(Account account, ArrayList<Account> arrayList, String[] strArr, boolean z, String str, String str2, String[] strArr2, Bundle bundle) {
         Intent intent = new Intent();
-        ComponentName unflattenFromString = ComponentName.unflattenFromString(Resources.getSystem().getString(R.string.config_chooseTypeAndAccountActivity));
+        ComponentName unflattenFromString = ComponentName.unflattenFromString(Resources.getSystem().getString(17039622));
         intent.setClassName(unflattenFromString.getPackageName(), unflattenFromString.getClassName());
         intent.putExtra("allowableAccounts", arrayList);
         intent.putExtra("allowableAccountTypes", strArr);

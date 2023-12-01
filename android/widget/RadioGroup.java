@@ -125,7 +125,7 @@ public class RadioGroup extends LinearLayout {
         super(context, attributeSet);
         this.mCheckedId = -1;
         this.mProtectFromCheckedChange = false;
-        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.RadioGroup, 16842878, 0);
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.RadioGroup, R.attr.radioButtonStyle, 0);
         int resourceId = obtainStyledAttributes.getResourceId(1, -1);
         if (resourceId != -1) {
             this.mCheckedId = resourceId;

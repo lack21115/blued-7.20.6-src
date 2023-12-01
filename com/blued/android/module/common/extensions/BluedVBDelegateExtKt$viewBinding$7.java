@@ -12,9 +12,7 @@ import kotlin.jvm.internal.Lambda;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/extensions/BluedVBDelegateExtKt$viewBinding$7.class */
 public final class BluedVBDelegateExtKt$viewBinding$7<P, V> extends Lambda implements Function1<P, V> {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ Function1<View, V> f10788a;
+    final /* synthetic */ Function1<View, V> a;
     final /* synthetic */ Function1<P, View> b;
 
     /* JADX WARN: Incorrect return type in method signature: (TP;)TV; */
@@ -22,6 +20,6 @@ public final class BluedVBDelegateExtKt$viewBinding$7<P, V> extends Lambda imple
     /* renamed from: a */
     public final ViewBinding invoke(BasePopupView popView) {
         Intrinsics.e(popView, "popView");
-        return (ViewBinding) this.f10788a.invoke(this.b.invoke(popView));
+        return (ViewBinding) this.a.invoke(this.b.invoke(popView));
     }
 }

@@ -1,7 +1,6 @@
 package com.tencent.tinker.loader;
 
 import android.content.Intent;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.tinker.loader.TinkerDexOptimizer;
 import com.tencent.tinker.loader.app.TinkerApplication;
 import com.tencent.tinker.loader.shareutil.ShareConstants;
@@ -70,13 +69,13 @@ public class TinkerDexLoader {
             }
             hashMap.put(ShareConstants.CLASS_N_APK_NAME, "");
         }
-        String str4 = str + BridgeUtil.SPLIT_MARK + "dex" + BridgeUtil.SPLIT_MARK;
+        String str4 = str + "/dex/";
         File file = new File(str4);
         if (!file.exists() || !file.isDirectory()) {
             ShareIntentUtil.setIntentReturnCode(intent, -9);
             return false;
         }
-        File file2 = new File(str + BridgeUtil.SPLIT_MARK + str2 + BridgeUtil.SPLIT_MARK);
+        File file2 = new File(str + "/" + str2 + "/");
         for (String str5 : hashMap.keySet()) {
             File file3 = new File(str4 + str5);
             if (!SharePatchFileUtil.isLegalFile(file3)) {
@@ -96,9 +95,9 @@ public class TinkerDexLoader {
     }
 
     private static void deleteOutOfDateOATFile(String str) {
-        SharePatchFileUtil.deleteDir(str + BridgeUtil.SPLIT_MARK + "odex" + BridgeUtil.SPLIT_MARK);
+        SharePatchFileUtil.deleteDir(str + "/odex/");
         if (ShareTinkerInternals.isAfterAndroidO()) {
-            SharePatchFileUtil.deleteDir(str + BridgeUtil.SPLIT_MARK + "dex" + BridgeUtil.SPLIT_MARK + ShareConstants.ANDROID_O_DEX_OPTIMIZE_PATH + BridgeUtil.SPLIT_MARK);
+            SharePatchFileUtil.deleteDir(str + "/dex/" + ShareConstants.ANDROID_O_DEX_OPTIMIZE_PATH + "/");
         }
     }
 
@@ -123,7 +122,7 @@ public class TinkerDexLoader {
             return false;
         }
         ShareTinkerLog.i(TAG, "classloader: " + classLoader.toString(), new Object[0]);
-        String str3 = str + BridgeUtil.SPLIT_MARK + "dex" + BridgeUtil.SPLIT_MARK;
+        String str3 = str + "/dex/";
         ArrayList arrayList = new ArrayList();
         Iterator<ShareDexDiffPatchInfo> it = LOAD_DEX_LIST.iterator();
         while (it.hasNext()) {
@@ -159,7 +158,7 @@ public class TinkerDexLoader {
             ShareTinkerLog.i(TAG, "verify dex file:" + file3.getPath() + " md5, use time: " + (System.currentTimeMillis() - currentTimeMillis2), new Object[0]);
             arrayList.add(file3);
         }
-        File file4 = new File(str + BridgeUtil.SPLIT_MARK + str2);
+        File file4 = new File(str + "/" + str2);
         if (z) {
             final boolean[] zArr = {true};
             final Throwable[] thArr = new Throwable[1];
@@ -167,7 +166,7 @@ public class TinkerDexLoader {
                 String currentInstructionSet = ShareTinkerInternals.getCurrentInstructionSet();
                 deleteOutOfDateOATFile(str);
                 ShareTinkerLog.w(TAG, "systemOTA, try parallel oat dexes, targetISA:" + currentInstructionSet, new Object[0]);
-                file = new File(str + BridgeUtil.SPLIT_MARK + "interpet");
+                file = new File(str + "/interpet");
                 TinkerDexOptimizer.optimizeAll(tinkerApplication, arrayList, file, true, tinkerApplication.isUseDelegateLastClassLoader(), currentInstructionSet, new TinkerDexOptimizer.ResultCallback() { // from class: com.tencent.tinker.loader.TinkerDexLoader.1
                     long start;
 

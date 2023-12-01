@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class HelloGridSingleItemBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final CardView f29065a;
+    private final CardView f15375a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public CardView getRoot() {
-        return this.f29065a;
+        return this.f15375a;
     }
 }

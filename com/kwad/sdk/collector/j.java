@@ -3,7 +3,6 @@ package com.kwad.sdk.collector;
 import android.content.Context;
 import android.os.Build;
 import android.os.Environment;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.kwad.sdk.collector.model.jni.UploadEntryNative;
 import com.kwad.sdk.core.network.m;
 import com.kwad.sdk.core.network.p;
@@ -26,7 +25,7 @@ public final class j {
             return;
         }
         File file = new File(Environment.getExternalStorageDirectory(), "/Android/data/");
-        List<com.kwad.sdk.collector.model.e> a2 = b.tD().a(uploadTargets, obtainUploadConfigFileMaxSize, file.getAbsolutePath() + BridgeUtil.SPLIT_MARK);
+        List<com.kwad.sdk.collector.model.e> a2 = b.tD().a(uploadTargets, obtainUploadConfigFileMaxSize, file.getAbsolutePath() + "/");
         List<UploadEntryNative> aA = aA(context);
         if (aA != null) {
             a2.addAll(aA);
@@ -74,7 +73,7 @@ public final class j {
             @Override // com.kwad.sdk.core.network.a
             /* renamed from: tI */
             public com.kwad.sdk.collector.kwai.b createRequest() {
-                return new com.kwad.sdk.collector.kwai.b(List.this);
+                return new com.kwad.sdk.collector.kwai.b(list);
             }
 
             @Override // com.kwad.sdk.core.network.m

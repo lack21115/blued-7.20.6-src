@@ -11,6 +11,7 @@ import android.widget.ToggleButton;
 import androidx.fragment.app.FragmentActivity;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.AppMethods;
+import com.blued.android.core.net.IRequestHost;
 import com.blued.android.framework.activity.PreloadFragment;
 import com.blued.android.framework.http.BluedHttpTools;
 import com.blued.android.framework.http.BluedUIHttpResponse;
@@ -56,7 +57,7 @@ public class MyVisitedFragment extends PreloadFragment {
         private void c(BluedEntityA<BluedBlackList.privacySettingEntity> bluedEntityA) {
             MyVisitedFragment myVisitedFragment = MyVisitedFragment.this;
             boolean z = false;
-            if (bluedEntityA.data.get(0).is_traceless_access == 1) {
+            if (((BluedBlackList.privacySettingEntity) bluedEntityA.data.get(0)).is_traceless_access == 1) {
                 z = true;
             }
             myVisitedFragment.q = z;
@@ -64,27 +65,23 @@ public class MyVisitedFragment extends PreloadFragment {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public BluedEntityA<BluedBlackList.privacySettingEntity> parseData(String str) {
-            return (BluedEntityA) super.parseData(str);
+            return super.parseData(str);
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public void onUICache(BluedEntityA<BluedBlackList.privacySettingEntity> bluedEntityA) {
             super.onUICache(bluedEntityA);
             c(bluedEntityA);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: b */
         public void onUIUpdate(BluedEntityA<BluedBlackList.privacySettingEntity> bluedEntityA) {
             c(bluedEntityA);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse, com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
         public void onFailure(Throwable th, int i, String str) {
             super.onFailure(th, i, str);
         }
@@ -92,9 +89,8 @@ public class MyVisitedFragment extends PreloadFragment {
     BluedUIHttpResponse j = new BluedUIHttpResponse<BluedEntityA<BluedMyVisitorList>>() { // from class: com.soft.blued.ui.find.fragment.MyVisitedFragment.6
 
         /* renamed from: a  reason: collision with root package name */
-        boolean f30372a;
+        boolean f16682a;
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public void onUIUpdate(BluedEntityA<BluedMyVisitorList> bluedEntityA) {
             if (bluedEntityA != null) {
@@ -117,7 +113,7 @@ public class MyVisitedFragment extends PreloadFragment {
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
-                    AppMethods.a((CharSequence) MyVisitedFragment.this.k.getResources().getString(2131887272));
+                    AppMethods.a(MyVisitedFragment.this.k.getResources().getString(2131887272));
                     if (MyVisitedFragment.this.t != 1) {
                         MyVisitedFragment.i(MyVisitedFragment.this);
                         return;
@@ -133,47 +129,44 @@ public class MyVisitedFragment extends PreloadFragment {
                 MyVisitedFragment.this.u = false;
             }
             MyVisitedFragment.this.m.p();
-            AppMethods.a((CharSequence) MyVisitedFragment.this.k.getResources().getString(2131887275));
+            AppMethods.a(MyVisitedFragment.this.k.getResources().getString(2131887275));
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public boolean onUIFailure(int i, String str) {
-            this.f30372a = true;
+            this.f16682a = true;
             if (MyVisitedFragment.this.t != 1) {
                 MyVisitedFragment.i(MyVisitedFragment.this);
             }
             return super.onUIFailure(i, str);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIFinish() {
             MyVisitedFragment.this.m.j();
             MyVisitedFragment.this.m.q();
             if (MyVisitedFragment.this.s.getCount() != 0) {
                 MyVisitedFragment.this.w.d();
-            } else if (this.f30372a) {
+            } else if (this.f16682a) {
                 MyVisitedFragment.this.w.b();
             } else {
                 MyVisitedFragment.this.w.a();
             }
             MyVisitedFragment.this.s.notifyDataSetChanged();
-            this.f30372a = false;
+            this.f16682a = false;
         }
     };
 
     /* JADX INFO: Access modifiers changed from: private */
     public void a(final boolean z) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("is_traceless_access", z ? "1" : "0");
         ProfileHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<Object>>(getFragmentActive()) { // from class: com.soft.blued.ui.find.fragment.MyVisitedFragment.5
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<Object> bluedEntityA) {
                 if (bluedEntityA == null) {
-                    AppMethods.a((CharSequence) AppInfo.d().getResources().getString(2131887272));
+                    AppMethods.a(AppInfo.d().getResources().getString(2131887272));
                     return;
                 }
-                AppMethods.a((CharSequence) AppInfo.d().getResources().getString(R.string.lock_pattern_success_set));
+                AppMethods.a(AppInfo.d().getResources().getString(R.string.lock_pattern_success_set));
                 if (z) {
                     BluedConfig.a().g().is_traceless_access = 1;
                 } else {
@@ -194,7 +187,7 @@ public class MyVisitedFragment extends PreloadFragment {
         }
         if (!this.u && (i = this.t) != 1) {
             this.t = i - 1;
-            AppMethods.a((CharSequence) this.k.getResources().getString(2131887275));
+            AppMethods.a(this.k.getResources().getString(2131887275));
             this.m.j();
             this.m.q();
             return;
@@ -219,9 +212,9 @@ public class MyVisitedFragment extends PreloadFragment {
 
     private void i() {
         this.r = LayoutInflater.from(this.k);
-        RenrenPullToRefreshListView renrenPullToRefreshListView = (RenrenPullToRefreshListView) this.l.findViewById(2131366898);
-        this.m = renrenPullToRefreshListView;
-        renrenPullToRefreshListView.setRefreshEnabled(true);
+        RenrenPullToRefreshListView findViewById = this.l.findViewById(R.id.list_view);
+        this.m = findViewById;
+        findViewById.setRefreshEnabled(true);
         ListView listView = (ListView) this.m.getRefreshableView();
         this.n = listView;
         listView.setClipToPadding(false);
@@ -254,17 +247,15 @@ public class MyVisitedFragment extends PreloadFragment {
         NoDataAndLoadFailView noDataAndLoadFailView = new NoDataAndLoadFailView(this.k);
         this.w = noDataAndLoadFailView;
         noDataAndLoadFailView.setNoDataImg(2131233632);
-        this.w.setNoDataStr(R.string.no_data_for_my_visited);
+        this.w.setNoDataStr((int) R.string.no_data_for_my_visited);
         this.n.setEmptyView(this.w);
         this.m.setOnPullDownListener(new RenrenPullToRefreshListView.OnPullDownListener() { // from class: com.soft.blued.ui.find.fragment.MyVisitedFragment.2
-            @Override // com.blued.android.framework.view.pulltorefresh.RenrenPullToRefreshListView.OnPullDownListener
             public void a() {
                 MyVisitedFragment.this.t = 1;
                 MyVisitedFragment.this.b(false);
                 MyVisitedFragment.this.h();
             }
 
-            @Override // com.blued.android.framework.view.pulltorefresh.RenrenPullToRefreshListView.OnPullDownListener
             public void b() {
                 MyVisitedFragment.d(MyVisitedFragment.this);
                 MyVisitedFragment.this.b(false);
@@ -277,17 +268,15 @@ public class MyVisitedFragment extends PreloadFragment {
     public void j() {
         PayHttpUtils.c(new BluedUIHttpResponse<BluedEntityA<VipUpgradeModel>>(getFragmentActive()) { // from class: com.soft.blued.ui.find.fragment.MyVisitedFragment.3
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<VipUpgradeModel> bluedEntityA) {
                 if (bluedEntityA == null || bluedEntityA.data == null || bluedEntityA.data.size() <= 0) {
                     PayUtils.a(MyVisitedFragment.this.k, 11, "visit_page_no_trace_visit");
                 } else {
-                    VipUpgradeDialogFragment.f34178a.a(MyVisitedFragment.this.getContext(), MyVisitedFragment.this.getParentFragmentManager(), bluedEntityA.data, 2, "visit_page_no_trace_visit", 11);
+                    VipUpgradeDialogFragment.f20487a.a(MyVisitedFragment.this.getContext(), MyVisitedFragment.this.getParentFragmentManager(), bluedEntityA.data, 2, "visit_page_no_trace_visit", 11);
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str, String str2) {
                 PayUtils.a(MyVisitedFragment.this.k, 11, "visit_page_no_trace_visit");
                 return true;
@@ -295,7 +284,6 @@ public class MyVisitedFragment extends PreloadFragment {
         }, getFragmentActive());
     }
 
-    @Override // com.blued.android.framework.activity.PreloadFragment
     public void a(View view) {
         FragmentActivity activity = getActivity();
         this.k = activity;
@@ -308,15 +296,13 @@ public class MyVisitedFragment extends PreloadFragment {
     }
 
     public void h() {
-        ProfileHttpUtils.a(this.k, this.x, UserInfo.getInstance().getLoginUserInfo().getUid(), getFragmentActive());
+        ProfileHttpUtils.a(this.k, this.x, UserInfo.getInstance().getLoginUserInfo().getUid(), (IRequestHost) getFragmentActive());
     }
 
-    @Override // com.blued.android.framework.activity.HomeTabFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onViewCreated(View view, Bundle bundle) {
         super.onViewCreated(view, bundle);
     }
 
-    @Override // com.blued.android.framework.activity.PreloadFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void setUserVisibleHint(boolean z) {
         RenrenPullToRefreshListView renrenPullToRefreshListView;
         super.setUserVisibleHint(z);

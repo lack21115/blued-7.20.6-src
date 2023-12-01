@@ -12,11 +12,11 @@ import java.util.Set;
 public class LruBitmapPool implements BitmapPool {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Bitmap.Config f20810a = Bitmap.Config.ARGB_8888;
+    private static final Bitmap.Config f7204a = Bitmap.Config.ARGB_8888;
     private final LruPoolStrategy b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final Set<Bitmap.Config> f20811c;
+    private final Set<Bitmap.Config> f7205c;
     private final long d;
     private final BitmapTracker e;
     private long f;
@@ -52,15 +52,15 @@ public class LruBitmapPool implements BitmapPool {
     static class ThrowingBitmapTracker implements BitmapTracker {
 
         /* renamed from: a  reason: collision with root package name */
-        private final Set<Bitmap> f20812a = Collections.synchronizedSet(new HashSet());
+        private final Set<Bitmap> f7206a = Collections.synchronizedSet(new HashSet());
 
         private ThrowingBitmapTracker() {
         }
 
         @Override // com.bumptech.glide.load.engine.bitmap_recycle.LruBitmapPool.BitmapTracker
         public void a(Bitmap bitmap) {
-            if (!this.f20812a.contains(bitmap)) {
-                this.f20812a.add(bitmap);
+            if (!this.f7206a.contains(bitmap)) {
+                this.f7206a.add(bitmap);
                 return;
             }
             throw new IllegalStateException("Can't add already added bitmap: " + bitmap + " [" + bitmap.getWidth() + "x" + bitmap.getHeight() + "]");
@@ -68,10 +68,10 @@ public class LruBitmapPool implements BitmapPool {
 
         @Override // com.bumptech.glide.load.engine.bitmap_recycle.LruBitmapPool.BitmapTracker
         public void b(Bitmap bitmap) {
-            if (!this.f20812a.contains(bitmap)) {
+            if (!this.f7206a.contains(bitmap)) {
                 throw new IllegalStateException("Cannot remove bitmap not in tracker");
             }
-            this.f20812a.remove(bitmap);
+            this.f7206a.remove(bitmap);
         }
     }
 
@@ -83,7 +83,7 @@ public class LruBitmapPool implements BitmapPool {
         this.d = j;
         this.f = j;
         this.b = lruPoolStrategy;
-        this.f20811c = set;
+        this.f7205c = set;
         this.e = new NullBitmapTracker();
     }
 
@@ -124,7 +124,7 @@ public class LruBitmapPool implements BitmapPool {
 
     private static Bitmap c(int i, int i2, Bitmap.Config config) {
         if (config == null) {
-            config = f20810a;
+            config = f7204a;
         }
         return Bitmap.createBitmap(i, i2, config);
     }
@@ -143,7 +143,7 @@ public class LruBitmapPool implements BitmapPool {
         Bitmap a2;
         synchronized (this) {
             a(config);
-            a2 = this.b.a(i, i2, config != null ? config : f20810a);
+            a2 = this.b.a(i, i2, config != null ? config : f7204a);
             if (a2 == null) {
                 if (Log.isLoggable("LruBitmapPool", 3)) {
                     Log.d("LruBitmapPool", "Missing bitmap=" + this.b.b(i, i2, config));
@@ -227,7 +227,7 @@ public class LruBitmapPool implements BitmapPool {
             if (bitmap.isRecycled()) {
                 throw new IllegalStateException("Cannot pool recycled bitmap");
             }
-            if (bitmap.isMutable() && this.b.c(bitmap) <= this.f && this.f20811c.contains(bitmap.getConfig())) {
+            if (bitmap.isMutable() && this.b.c(bitmap) <= this.f && this.f7205c.contains(bitmap.getConfig())) {
                 int c2 = this.b.c(bitmap);
                 this.b.a(bitmap);
                 this.e.a(bitmap);
@@ -241,7 +241,7 @@ public class LruBitmapPool implements BitmapPool {
                 return;
             }
             if (Log.isLoggable("LruBitmapPool", 2)) {
-                Log.v("LruBitmapPool", "Reject bitmap from pool, bitmap: " + this.b.b(bitmap) + ", is mutable: " + bitmap.isMutable() + ", is allowed config: " + this.f20811c.contains(bitmap.getConfig()));
+                Log.v("LruBitmapPool", "Reject bitmap from pool, bitmap: " + this.b.b(bitmap) + ", is mutable: " + bitmap.isMutable() + ", is allowed config: " + this.f7205c.contains(bitmap.getConfig()));
             }
             bitmap.recycle();
         }

@@ -12,13 +12,9 @@ import com.blued.android.framework.view.badgeview.DisplayUtil;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/MarqTextView.class */
 public class MarqTextView extends AppCompatTextView {
-
-    /* renamed from: a  reason: collision with root package name */
-    Runnable f14963a;
+    Runnable a;
     private float b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private float f14964c;
+    private float c;
     private float d;
     private float e;
     private int f;
@@ -33,7 +29,7 @@ public class MarqTextView extends AppCompatTextView {
         this.h = 0.0f;
         this.i = false;
         this.j = 0.0f;
-        this.f14963a = new Runnable() { // from class: com.blued.android.module.live_china.view.-$$Lambda$MarqTextView$k1_6OC-cZ0lktL-11mPwxTqBjYw
+        this.a = new Runnable() { // from class: com.blued.android.module.live_china.view.-$$Lambda$MarqTextView$k1_6OC-cZ0lktL-11mPwxTqBjYw
             @Override // java.lang.Runnable
             public final void run() {
                 MarqTextView.this.c();
@@ -47,7 +43,7 @@ public class MarqTextView extends AppCompatTextView {
         this.h = 0.0f;
         this.i = false;
         this.j = 0.0f;
-        this.f14963a = new Runnable() { // from class: com.blued.android.module.live_china.view.-$$Lambda$MarqTextView$k1_6OC-cZ0lktL-11mPwxTqBjYw
+        this.a = new Runnable() { // from class: com.blued.android.module.live_china.view.-$$Lambda$MarqTextView$k1_6OC-cZ0lktL-11mPwxTqBjYw
             @Override // java.lang.Runnable
             public final void run() {
                 MarqTextView.this.c();
@@ -60,8 +56,8 @@ public class MarqTextView extends AppCompatTextView {
             return;
         }
         this.i = true;
-        removeCallbacks(this.f14963a);
-        postDelayed(this.f14963a, 500L);
+        removeCallbacks(this.a);
+        postDelayed(this.a, 500L);
     }
 
     private void b() {
@@ -72,7 +68,7 @@ public class MarqTextView extends AppCompatTextView {
         paint.setColor(getCurrentTextColor());
         float measureText = paint.measureText(getText().toString());
         this.b = measureText;
-        this.f14964c = measureText / getText().length();
+        this.c = measureText / getText().length();
         Paint.FontMetrics fontMetrics = paint.getFontMetrics();
         this.d = Math.abs(fontMetrics.ascent) + Math.abs(fontMetrics.descent);
         this.e = Math.abs(fontMetrics.descent);
@@ -82,13 +78,11 @@ public class MarqTextView extends AppCompatTextView {
     public /* synthetic */ void c() {
         if (this.i) {
             invalidate();
-            postDelayed(this.f14963a, 25L);
+            postDelayed(this.a, 25L);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // android.widget.TextView, android.view.View
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         if (TextUtils.isEmpty(getText())) {
             return;
@@ -96,22 +90,18 @@ public class MarqTextView extends AppCompatTextView {
         a();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.i = false;
-        removeCallbacks(this.f14963a);
+        removeCallbacks(this.a);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // android.widget.TextView, android.view.View
-    public void onDraw(Canvas canvas) {
-        if (this.b <= 0.0f || this.f14964c == 0.0f) {
+    protected void onDraw(Canvas canvas) {
+        if (this.b <= 0.0f || this.c == 0.0f) {
             b();
         }
         float measuredWidth = ((getMeasuredWidth() - getPaddingLeft()) - getPaddingRight()) - DisplayUtil.a(getContext(), 6.0f);
-        if (this.b < measuredWidth || this.f14964c == 0.0f) {
+        if (this.b < measuredWidth || this.c == 0.0f) {
             super.onDraw(canvas);
             return;
         }
@@ -137,7 +127,6 @@ public class MarqTextView extends AppCompatTextView {
         this.g -= this.j;
     }
 
-    @Override // android.widget.TextView
     public void setText(CharSequence charSequence, TextView.BufferType bufferType) {
         super.setText(charSequence, bufferType);
         b();
@@ -145,19 +134,17 @@ public class MarqTextView extends AppCompatTextView {
     }
 
     public void setText(String str) {
-        super.setText((CharSequence) str);
+        super.setText(str);
         b();
         a();
     }
 
-    @Override // android.widget.TextView
     public void setTextSize(float f) {
         super.setTextSize(f);
         b();
         a();
     }
 
-    @Override // androidx.appcompat.widget.AppCompatTextView, android.widget.TextView
     public void setTextSize(int i, float f) {
         super.setTextSize(i, f);
         b();

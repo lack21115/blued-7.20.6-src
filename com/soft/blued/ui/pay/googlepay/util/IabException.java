@@ -4,7 +4,7 @@ package com.soft.blued.ui.pay.googlepay.util;
 public class IabException extends Exception {
 
     /* renamed from: a  reason: collision with root package name */
-    IabResult f32998a;
+    IabResult f19307a;
 
     public IabException(int i, String str) {
         this(new IabResult(i, str));
@@ -20,10 +20,10 @@ public class IabException extends Exception {
 
     public IabException(IabResult iabResult, Exception exc) {
         super(iabResult.a(), exc);
-        this.f32998a = iabResult;
+        this.f19307a = iabResult;
     }
 
     public IabResult a() {
-        return this.f32998a;
+        return this.f19307a;
     }
 }

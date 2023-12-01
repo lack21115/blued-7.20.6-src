@@ -7,10 +7,10 @@ import com.tencent.qimei.sdk.debug.IDebugger;
 public class a implements IDebugger {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f38402a;
+    public final String f24711a;
 
     public a(String str) {
-        this.f38402a = str;
+        this.f24711a = str;
     }
 
     @Override // com.tencent.qimei.sdk.debug.IDebugger
@@ -23,6 +23,6 @@ public class a implements IDebugger {
 
     @Override // com.tencent.qimei.sdk.debug.IDebugger
     public void setDebug(boolean z) {
-        b.f38341a = z;
+        b.f24650a = z;
     }
 }

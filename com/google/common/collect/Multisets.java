@@ -21,9 +21,8 @@ import org.checkerframework.checker.nullness.compatqual.NullableDecl;
 /* loaded from: source-8110460-dex2jar.jar:com/google/common/collect/Multisets.class */
 public final class Multisets {
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8110460-dex2jar.jar:com/google/common/collect/Multisets$AbstractEntry.class */
-    public static abstract class AbstractEntry<E> implements Multiset.Entry<E> {
+    static abstract class AbstractEntry<E> implements Multiset.Entry<E> {
         @Override // com.google.common.collect.Multiset.Entry
         public boolean equals(@NullableDecl Object obj) {
             boolean z = false;
@@ -92,7 +91,7 @@ public final class Multisets {
             return multiset().isEmpty();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+        @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
         public abstract Iterator<E> iterator();
 
         abstract Multiset<E> multiset();
@@ -102,7 +101,7 @@ public final class Multisets {
             return multiset().remove(obj, Integer.MAX_VALUE) > 0;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
         public int size() {
             return multiset().entrySet().size();
         }
@@ -204,7 +203,7 @@ public final class Multisets {
             throw new AssertionError("should never be called");
         }
 
-        @Override // com.google.common.collect.Multisets.ViewMultiset, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+        @Override // com.google.common.collect.Multisets.ViewMultiset, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, com.google.common.collect.Multiset
         public UnmodifiableIterator<E> iterator() {
             return Iterators.filter(this.unfiltered.iterator(), this.predicate);
         }
@@ -303,9 +302,8 @@ public final class Multisets {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8110460-dex2jar.jar:com/google/common/collect/Multisets$UnmodifiableMultiset.class */
-    public static class UnmodifiableMultiset<E> extends ForwardingMultiset<E> implements Serializable {
+    static class UnmodifiableMultiset<E> extends ForwardingMultiset<E> implements Serializable {
         private static final long serialVersionUID = 0;
         final Multiset<? extends E> delegate;
         @NullableDecl
@@ -323,12 +321,12 @@ public final class Multisets {
             throw new UnsupportedOperationException();
         }
 
-        @Override // com.google.common.collect.ForwardingCollection, java.util.Collection, java.util.Set
+        @Override // com.google.common.collect.ForwardingCollection, java.util.Collection, java.util.Queue
         public boolean add(E e) {
             throw new UnsupportedOperationException();
         }
 
-        @Override // com.google.common.collect.ForwardingCollection, java.util.Collection, java.util.Set
+        @Override // com.google.common.collect.ForwardingCollection, java.util.Collection
         public boolean addAll(Collection<? extends E> collection) {
             throw new UnsupportedOperationException();
         }
@@ -370,7 +368,7 @@ public final class Multisets {
             return set2;
         }
 
-        @Override // com.google.common.collect.ForwardingCollection, java.util.Collection, java.lang.Iterable
+        @Override // com.google.common.collect.ForwardingCollection, java.util.Collection, java.lang.Iterable, java.util.Set
         public Iterator<E> iterator() {
             return Iterators.unmodifiableIterator(this.delegate.iterator());
         }
@@ -411,7 +409,7 @@ public final class Multisets {
         private ViewMultiset() {
         }
 
-        @Override // com.google.common.collect.AbstractMultiset, java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // com.google.common.collect.AbstractMultiset, java.util.AbstractCollection, java.util.Collection
         public void clear() {
             elementSet().clear();
         }
@@ -421,12 +419,12 @@ public final class Multisets {
             return elementSet().size();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+        @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, com.google.common.collect.Multiset
         public Iterator<E> iterator() {
             return Multisets.iteratorImpl(this);
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection, com.google.common.collect.Multiset
         public int size() {
             return Multisets.linearTimeSizeImpl(this);
         }
@@ -500,7 +498,7 @@ public final class Multisets {
                 super();
             }
 
-            @Override // com.google.common.collect.Multisets.ViewMultiset, com.google.common.collect.AbstractMultiset, java.util.AbstractCollection, java.util.Collection, java.util.Set
+            @Override // com.google.common.collect.Multisets.ViewMultiset, com.google.common.collect.AbstractMultiset, java.util.AbstractCollection, java.util.Collection
             public void clear() {
                 throw new UnsupportedOperationException();
             }
@@ -790,7 +788,7 @@ public final class Multisets {
                 super();
             }
 
-            @Override // com.google.common.collect.AbstractMultiset, java.util.AbstractCollection, java.util.Collection, java.util.Set
+            @Override // com.google.common.collect.AbstractMultiset, java.util.AbstractCollection, java.util.Collection, com.google.common.collect.Multiset
             public boolean contains(@NullableDecl Object obj) {
                 return Multiset.this.contains(obj) || multiset2.contains(obj);
             }
@@ -835,12 +833,12 @@ public final class Multisets {
                 };
             }
 
-            @Override // com.google.common.collect.AbstractMultiset, java.util.AbstractCollection, java.util.Collection, java.util.Set
+            @Override // com.google.common.collect.AbstractMultiset, java.util.AbstractCollection, java.util.Collection
             public boolean isEmpty() {
                 return Multiset.this.isEmpty() && multiset2.isEmpty();
             }
 
-            @Override // com.google.common.collect.Multisets.ViewMultiset, java.util.AbstractCollection, java.util.Collection, java.util.List
+            @Override // com.google.common.collect.Multisets.ViewMultiset, java.util.AbstractCollection, java.util.Collection, com.google.common.collect.Multiset
             public int size() {
                 return IntMath.saturatedAdd(Multiset.this.size(), multiset2.size());
             }
@@ -856,7 +854,7 @@ public final class Multisets {
                 super();
             }
 
-            @Override // com.google.common.collect.AbstractMultiset, java.util.AbstractCollection, java.util.Collection, java.util.Set
+            @Override // com.google.common.collect.AbstractMultiset, java.util.AbstractCollection, java.util.Collection, com.google.common.collect.Multiset
             public boolean contains(@NullableDecl Object obj) {
                 return Multiset.this.contains(obj) || multiset2.contains(obj);
             }
@@ -901,7 +899,7 @@ public final class Multisets {
                 };
             }
 
-            @Override // com.google.common.collect.AbstractMultiset, java.util.AbstractCollection, java.util.Collection, java.util.Set
+            @Override // com.google.common.collect.AbstractMultiset, java.util.AbstractCollection, java.util.Collection
             public boolean isEmpty() {
                 return Multiset.this.isEmpty() && multiset2.isEmpty();
             }

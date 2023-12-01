@@ -1,7 +1,6 @@
 package com.bytedance.pangle.res.a;
 
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.bytedance.pangle.Zeus;
 import com.bytedance.pangle.log.ZeusLogger;
 import com.sensetime.stmobile.STMobileHumanActionNative;
@@ -158,7 +157,7 @@ public final class c {
                     while (true) {
                         int i16 = i15;
                         if (i16 < a3.b.length) {
-                            a2.put(a3.f21501a.intValue() + i16, a3.b[i16]);
+                            a2.put(a3.f7895a.intValue() + i16, a3.b[i16]);
                             i15 = i16 + 1;
                         }
                     }
@@ -244,7 +243,7 @@ public final class c {
                         int identifier = Zeus.getAppApplication().getResources().getIdentifier(str2.split(" ")[1], str2.split(" ")[0], Zeus.getAppApplication().getPackageName());
                         int i4 = identifier;
                         if (identifier == 0) {
-                            i4 = Zeus.getAppApplication().getResources().getIdentifier(str2.split(" ")[1].replaceAll(BridgeUtil.UNDERLINE_STR, "."), str2.split(" ")[0], Zeus.getAppApplication().getPackageName());
+                            i4 = Zeus.getAppApplication().getResources().getIdentifier(str2.split(" ")[1].replaceAll("_", "."), str2.split(" ")[0], Zeus.getAppApplication().getPackageName());
                         }
                         if (i4 == 0) {
                             ZeusLogger.w(ZeusLogger.TAG_INSTALL, "getIdentifier failed. resName is ".concat(String.valueOf(str2)));

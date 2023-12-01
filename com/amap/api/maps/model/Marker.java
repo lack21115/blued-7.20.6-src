@@ -31,9 +31,7 @@ public final class Marker extends BasePointOverlay {
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/maps/model/Marker$a.class */
     final class a implements Animation.AnimationListener {
         private final lc b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private final lc f5529c;
+        private final lc c;
 
         private a(final Animation.AnimationListener animationListener) {
             this.b = new lc() { // from class: com.amap.api.maps.model.Marker.a.1
@@ -48,7 +46,7 @@ public final class Marker extends BasePointOverlay {
                     }
                 }
             };
-            this.f5529c = new lc() { // from class: com.amap.api.maps.model.Marker.a.2
+            this.c = new lc() { // from class: com.amap.api.maps.model.Marker.a.2
                 @Override // com.amap.api.col.p0003sl.lc
                 public final void runTask() {
                     try {
@@ -68,7 +66,7 @@ public final class Marker extends BasePointOverlay {
 
         @Override // com.amap.api.maps.model.animation.Animation.AnimationListener
         public final void onAnimationEnd() {
-            du.a().a(this.f5529c);
+            du.a().a(this.c);
         }
 
         @Override // com.amap.api.maps.model.animation.Animation.AnimationListener

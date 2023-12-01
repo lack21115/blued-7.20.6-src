@@ -23,11 +23,11 @@ import java.util.concurrent.ConcurrentHashMap;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Object f21482a = new Object();
+    private static final Object f7876a = new Object();
     private static final Object b = new Object();
 
     /* renamed from: c  reason: collision with root package name */
-    private static final Object f21483c = new Object();
+    private static final Object f7877c = new Object();
     private static final Map<String, Boolean> d = new ConcurrentHashMap();
     private static final Map<String, d> e = new ConcurrentHashMap();
     private static c f;
@@ -42,7 +42,7 @@ public final class b {
                     call.setClassLoader(AbsServerManager.class.getClassLoader());
                     a aVar = (a) call.getParcelable("binder");
                     if (aVar != null) {
-                        iBinder = aVar.f21481a;
+                        iBinder = aVar.f7875a;
                         if (iBinder == null && iBinder.isBinderAlive()) {
                             try {
                                 final IBinder iBinder2 = iBinder;
@@ -50,7 +50,7 @@ public final class b {
                                 iBinder.linkToDeath(new IBinder.DeathRecipient() { // from class: com.bytedance.pangle.servermanager.b.1
                                     @Override // android.os.IBinder.DeathRecipient
                                     public final void binderDied() {
-                                        b.d.put(String.this, Boolean.FALSE);
+                                        b.d.put(str2, Boolean.FALSE);
                                         ZeusLogger.w(ZeusLogger.TAG_SERVER, "generateServerManager binderDied.");
                                         HashMap<ServiceConnection, HashSet<ComponentName>> hashMap = ServiceManagerNative.getInstance().process2ConnAndService.get(iBinder2);
                                         for (ServiceConnection serviceConnection : hashMap.keySet()) {
@@ -101,7 +101,7 @@ public final class b {
             f = null;
         }
         if (f == null) {
-            synchronized (f21483c) {
+            synchronized (f7877c) {
                 c cVar = (c) a("package", "main");
                 if (cVar == null) {
                     ZeusLogger.errReport(ZeusLogger.TAG_SERVER, "getPackageManager failed!!!");

@@ -13,6 +13,7 @@ public class ChineseCitiesHelper {
     private static volatile ChineseCitiesHelper instance;
     public List<ChineseCitiesList> citiesList = new ArrayList();
 
+    /* JADX WARN: Type inference failed for: r2v1, types: [com.blued.android.module.common.utils.cities.ChineseCitiesHelper$1] */
     public ChineseCitiesHelper() {
         StringBuilder sb = new StringBuilder();
         try {

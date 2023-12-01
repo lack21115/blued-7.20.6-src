@@ -12,13 +12,9 @@ import com.blued.android.module.yy_china.view.YYLivingStreamView;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ItemFullServiceSquareAchieBinding.class */
 public final class ItemFullServiceSquareAchieBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ConstraintLayout f16591a;
+    public final ConstraintLayout a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f16592c;
+    public final ImageView c;
     public final YYLivingStreamView d;
     public final TextView e;
     public final TextView f;
@@ -28,9 +24,9 @@ public final class ItemFullServiceSquareAchieBinding implements ViewBinding {
 
     private ItemFullServiceSquareAchieBinding(FrameLayout frameLayout, ConstraintLayout constraintLayout, ImageView imageView, ImageView imageView2, YYLivingStreamView yYLivingStreamView, TextView textView, TextView textView2, ShapeTextView shapeTextView, ShapeTextView shapeTextView2) {
         this.i = frameLayout;
-        this.f16591a = constraintLayout;
+        this.a = constraintLayout;
         this.b = imageView;
-        this.f16592c = imageView2;
+        this.c = imageView2;
         this.d = yYLivingStreamView;
         this.e = textView;
         this.f = textView2;
@@ -40,8 +36,8 @@ public final class ItemFullServiceSquareAchieBinding implements ViewBinding {
 
     public static ItemFullServiceSquareAchieBinding a(View view) {
         String str;
-        ConstraintLayout constraintLayout = (ConstraintLayout) view.findViewById(R.id.con_achie);
-        if (constraintLayout != null) {
+        ConstraintLayout findViewById = view.findViewById(R.id.con_achie);
+        if (findViewById != null) {
             ImageView imageView = (ImageView) view.findViewById(R.id.iv_achie_info);
             if (imageView != null) {
                 ImageView imageView2 = (ImageView) view.findViewById(R.id.iv_achie_user);
@@ -56,7 +52,7 @@ public final class ItemFullServiceSquareAchieBinding implements ViewBinding {
                                 if (shapeTextView != null) {
                                     ShapeTextView shapeTextView2 = (ShapeTextView) view.findViewById(R.id.tv_click_achie);
                                     if (shapeTextView2 != null) {
-                                        return new ItemFullServiceSquareAchieBinding((FrameLayout) view, constraintLayout, imageView, imageView2, yYLivingStreamView, textView, textView2, shapeTextView, shapeTextView2);
+                                        return new ItemFullServiceSquareAchieBinding((FrameLayout) view, findViewById, imageView, imageView2, yYLivingStreamView, textView, textView2, shapeTextView, shapeTextView2);
                                     }
                                     str = "tvClickAchie";
                                 } else {
@@ -83,7 +79,6 @@ public final class ItemFullServiceSquareAchieBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.i;

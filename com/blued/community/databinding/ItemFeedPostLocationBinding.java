@@ -11,20 +11,16 @@ import com.blued.community.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/databinding/ItemFeedPostLocationBinding.class */
 public final class ItemFeedPostLocationBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f18967a;
+    public final ImageView a;
     public final TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final TextView f18968c;
+    public final TextView c;
     private final LinearLayout d;
 
     private ItemFeedPostLocationBinding(LinearLayout linearLayout, ImageView imageView, TextView textView, TextView textView2) {
         this.d = linearLayout;
-        this.f18967a = imageView;
+        this.a = imageView;
         this.b = textView;
-        this.f18968c = textView2;
+        this.c = textView2;
     }
 
     public static ItemFeedPostLocationBinding a(LayoutInflater layoutInflater) {
@@ -59,7 +55,6 @@ public final class ItemFeedPostLocationBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
         return this.d;

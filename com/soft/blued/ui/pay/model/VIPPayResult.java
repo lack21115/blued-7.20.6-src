@@ -1,7 +1,6 @@
 package com.soft.blued.ui.pay.model;
 
 import com.blued.android.module.common.login.model.UserBasicModel;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.google.gson.annotations.SerializedName;
 import com.soft.blued.ui.msg.model.FuGiftModel;
 import java.util.List;
@@ -9,7 +8,7 @@ import java.util.List;
 /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/pay/model/VIPPayResult.class */
 public class VIPPayResult {
     public int activity_id;
-    @SerializedName(BridgeUtil.UNDERLINE_STR)
+    @SerializedName("_")
     public String encrypted;
     public String exchange_id;
     public _extra extra;

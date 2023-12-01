@@ -18,7 +18,7 @@ public class c {
     private static String b = c.class.getSimpleName();
 
     /* renamed from: a  reason: collision with root package name */
-    public static GtHttpClient f23595a = new GtHttpClient.Builder().addInterceptor(new LoggerInterceptor(com.igexin.c.a.c.a.a().f23251a)).addInterceptor(new Interceptor() { // from class: com.igexin.push.e.a.c.1
+    public static GtHttpClient f9987a = new GtHttpClient.Builder().addInterceptor(new LoggerInterceptor(com.igexin.c.a.c.a.a().f9643a)).addInterceptor(new Interceptor() { // from class: com.igexin.push.e.a.c.1
         @Override // com.getui.gtc.base.http.Interceptor
         public final Response intercept(Interceptor.Chain chain) throws IOException {
             if (GtcProvider.context() == null || NetworkUtil.isNetWorkAvailable(GtcProvider.context())) {
@@ -30,7 +30,7 @@ public class c {
 
     public static void a(String str, byte[] bArr, Call.Callback callback) {
         try {
-            f23595a.newCall(new Request.Builder().url(str).method("POST").cryptInterceptor(new GtRASCryptoInterceptor(com.igexin.push.a.j, com.igexin.push.a.k)).body(RequestBody.create(MediaType.parse("application/json; charset=utf-8"), bArr)).build()).enqueue(callback);
+            f9987a.newCall(new Request.Builder().url(str).method("POST").cryptInterceptor(new GtRASCryptoInterceptor(com.igexin.push.a.j, com.igexin.push.a.k)).body(RequestBody.create(MediaType.parse("application/json; charset=utf-8"), bArr)).build()).enqueue(callback);
         } catch (Throwable th) {
             com.igexin.c.a.c.a.a(th);
         }

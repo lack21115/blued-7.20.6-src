@@ -4,11 +4,11 @@ package com.tencent.ugc;
 final /* synthetic */ class h implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final TXVideoEditer f40429a;
+    private final TXVideoEditer f26738a;
     private final float b;
 
     private h(TXVideoEditer tXVideoEditer, float f) {
-        this.f40429a = tXVideoEditer;
+        this.f26738a = tXVideoEditer;
         this.b = f;
     }
 
@@ -18,6 +18,6 @@ final /* synthetic */ class h implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        TXVideoEditer.lambda$setBGMVolume$15(this.f40429a, this.b);
+        TXVideoEditer.lambda$setBGMVolume$15(this.f26738a, this.b);
     }
 }

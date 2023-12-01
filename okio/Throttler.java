@@ -94,7 +94,7 @@ public final class Throttler {
             this.waitByteCount = j2;
             this.maxByteCount = j3;
             notifyAll();
-            Unit unit = Unit.f42314a;
+            Unit unit = Unit.a;
         }
     }
 

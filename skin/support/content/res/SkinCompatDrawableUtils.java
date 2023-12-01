@@ -9,8 +9,9 @@ import android.graphics.drawable.ScaleDrawable;
 import android.os.Build;
 import skin.support.utils.SkinCompatVersionUtils;
 
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-3503164-dex2jar.jar:skin/support/content/res/SkinCompatDrawableUtils.class */
-class SkinCompatDrawableUtils {
+public class SkinCompatDrawableUtils {
     SkinCompatDrawableUtils() {
     }
 

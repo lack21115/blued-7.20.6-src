@@ -18,10 +18,10 @@ import java.util.concurrent.TimeUnit;
 public final class ThreadManager {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Handler f38283a;
+    private static Handler f24592a;
 
     /* renamed from: c  reason: collision with root package name */
-    private static Handler f38284c;
+    private static Handler f24593c;
     private static HandlerThread d;
     private static Handler e;
     private static HandlerThread f;
@@ -33,16 +33,16 @@ public final class ThreadManager {
     public static class SerialExecutor implements Executor {
 
         /* renamed from: a  reason: collision with root package name */
-        final Queue<Runnable> f38285a;
+        final Queue<Runnable> f24594a;
         Runnable b;
 
         private SerialExecutor() {
-            this.f38285a = new LinkedList();
+            this.f24594a = new LinkedList();
         }
 
         protected void a() {
             synchronized (this) {
-                Runnable poll = this.f38285a.poll();
+                Runnable poll = this.f24594a.poll();
                 this.b = poll;
                 if (poll != null) {
                     ThreadManager.NETWORK_EXECUTOR.execute(this.b);
@@ -53,7 +53,7 @@ public final class ThreadManager {
         @Override // java.util.concurrent.Executor
         public void execute(final Runnable runnable) {
             synchronized (this) {
-                this.f38285a.offer(new Runnable() { // from class: com.tencent.open.utils.ThreadManager.SerialExecutor.1
+                this.f24594a.offer(new Runnable() { // from class: com.tencent.open.utils.ThreadManager.SerialExecutor.1
                     @Override // java.lang.Runnable
                     public void run() {
                         try {
@@ -127,14 +127,14 @@ public final class ThreadManager {
     }
 
     public static Handler getMainHandler() {
-        if (f38283a == null) {
+        if (f24592a == null) {
             synchronized (b) {
-                if (f38283a == null) {
-                    f38283a = new Handler(Looper.getMainLooper());
+                if (f24592a == null) {
+                    f24592a = new Handler(Looper.getMainLooper());
                 }
             }
         }
-        return f38283a;
+        return f24592a;
     }
 
     public static Thread getSubThread() {
@@ -145,19 +145,19 @@ public final class ThreadManager {
     }
 
     public static Handler getSubThreadHandler() {
-        if (f38284c == null) {
+        if (f24593c == null) {
             synchronized (ThreadManager.class) {
                 try {
                     HandlerThread handlerThread = new HandlerThread("SDK_SUB");
                     d = handlerThread;
                     handlerThread.start();
-                    f38284c = new Handler(d.getLooper());
+                    f24593c = new Handler(d.getLooper());
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f38284c;
+        return f24593c;
     }
 
     public static Looper getSubThreadLooper() {

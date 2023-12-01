@@ -107,7 +107,7 @@ public final class PointerIcon implements Parcelable {
         if (systemIconStyleIndex == 0) {
             i2 = getSystemIconStyleIndex(1000);
         }
-        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(null, R.styleable.Pointer, R.attr.pointerStyle, 0);
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(null, R.styleable.Pointer, 18219048, 0);
         int resourceId = obtainStyledAttributes.getResourceId(i2, -1);
         obtainStyledAttributes.recycle();
         if (resourceId == -1) {

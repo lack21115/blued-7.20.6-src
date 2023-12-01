@@ -19,12 +19,8 @@ import java.util.List;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/view/wheel/widget/WheelView.class */
 public class WheelView extends View {
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final int[] f10357c = {-15658735, 11184810, 11184810};
-
-    /* renamed from: a  reason: collision with root package name */
-    boolean f10358a;
+    private static final int[] c = {-15658735, 11184810, 11184810};
+    boolean a;
     WheelScroller.ScrollingListener b;
     private int d;
     private int e;
@@ -49,7 +45,7 @@ public class WheelView extends View {
         this.d = 0;
         this.e = 5;
         this.f = 0;
-        this.f10358a = false;
+        this.a = false;
         this.p = new WheelRecycle(this);
         this.q = new LinkedList();
         this.r = new LinkedList();
@@ -113,7 +109,7 @@ public class WheelView extends View {
         this.d = 0;
         this.e = 5;
         this.f = 0;
-        this.f10358a = false;
+        this.a = false;
         this.p = new WheelRecycle(this);
         this.q = new LinkedList();
         this.r = new LinkedList();
@@ -200,13 +196,13 @@ public class WheelView extends View {
         int itemHeight = getItemHeight();
         int i5 = this.l / itemHeight;
         int i6 = this.d - i5;
-        int a2 = this.o.a();
+        int a = this.o.a();
         int i7 = this.l % itemHeight;
         int i8 = i7;
         if (Math.abs(i7) <= itemHeight / 2) {
             i8 = 0;
         }
-        if (this.f10358a && a2 > 0) {
+        if (this.a && a > 0) {
             if (i8 > 0) {
                 i4 = i6 - 1;
                 i2 = i5 + 1;
@@ -219,19 +215,19 @@ public class WheelView extends View {
                 }
             }
             while (i4 < 0) {
-                i4 += a2;
+                i4 += a;
             }
-            i3 = i4 % a2;
+            i3 = i4 % a;
         } else if (i6 < 0) {
             i2 = this.d;
             i3 = 0;
-        } else if (i6 >= a2) {
-            i2 = (this.d - a2) + 1;
-            i3 = a2 - 1;
+        } else if (i6 >= a) {
+            i2 = (this.d - a) + 1;
+            i3 = a - 1;
         } else if (i6 <= 0 || i8 <= 0) {
             i2 = i5;
             i3 = i6;
-            if (i6 < a2 - 1) {
+            if (i6 < a - 1) {
                 i2 = i5;
                 i3 = i6;
                 if (i8 < 0) {
@@ -296,7 +292,7 @@ public class WheelView extends View {
         if (wheelViewAdapter == null || wheelViewAdapter.a() <= 0) {
             return false;
         }
-        if (this.f10358a) {
+        if (this.a) {
             return true;
         }
         return i >= 0 && i < this.o.a();
@@ -307,13 +303,13 @@ public class WheelView extends View {
         if (wheelViewAdapter == null || wheelViewAdapter.a() == 0) {
             return null;
         }
-        int a2 = this.o.a();
+        int a = this.o.a();
         int i2 = i;
         if (c(i)) {
             while (i2 < 0) {
-                i2 += a2;
+                i2 += a;
             }
-            return this.o.a(i2 % a2, this.p.a(), this.m);
+            return this.o.a(i2 % a, this.p.a(), this.m);
         }
         return this.o.a(this.p.b(), this.m);
     }
@@ -323,10 +319,10 @@ public class WheelView extends View {
             this.g = getContext().getResources().getDrawable(R.drawable.horizontal_line);
         }
         if (this.h == null) {
-            this.h = new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, f10357c);
+            this.h = new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, c);
         }
         if (this.i == null) {
-            this.i = new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, f10357c);
+            this.i = new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, c);
         }
     }
 
@@ -339,9 +335,9 @@ public class WheelView extends View {
         ItemsRange itemsRange = getItemsRange();
         LinearLayout linearLayout = this.m;
         if (linearLayout != null) {
-            int a2 = this.p.a(linearLayout, this.n, itemsRange);
-            z = this.n != a2;
-            this.n = a2;
+            int a = this.p.a(linearLayout, this.n, itemsRange);
+            z = this.n != a;
+            this.n = a;
         } else {
             g();
             z = true;
@@ -511,7 +507,7 @@ public class WheelView extends View {
             if (r0 < r1) goto L45
         L2d:
             r0 = r4
-            boolean r0 = r0.f10358a
+            boolean r0 = r0.a
             if (r0 == 0) goto Lad
         L34:
             r0 = r5
@@ -542,7 +538,7 @@ public class WheelView extends View {
             r0 = r8
             r5 = r0
             r0 = r4
-            boolean r0 = r0.f10358a
+            boolean r0 = r0.a
             if (r0 == 0) goto L91
             r0 = r9
             r1 = r7
@@ -624,7 +620,7 @@ public class WheelView extends View {
     }
 
     public boolean c() {
-        return this.f10358a;
+        return this.a;
     }
 
     public int getCurrentItem() {
@@ -668,8 +664,8 @@ public class WheelView extends View {
         h();
         int c2 = c(size, mode);
         if (mode2 != 1073741824) {
-            int a2 = a(this.m);
-            size2 = mode2 == Integer.MIN_VALUE ? Math.min(a2, size2) : a2;
+            int a = a(this.m);
+            size2 = mode2 == Integer.MIN_VALUE ? Math.min(a, size2) : a;
         }
         setMeasuredDimension(c2, size2);
     }
@@ -699,7 +695,7 @@ public class WheelView extends View {
     }
 
     public void setCyclic(boolean z) {
-        this.f10358a = z;
+        this.a = z;
         a(false);
     }
 

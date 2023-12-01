@@ -1,7 +1,6 @@
 package com.baidu.mobads.sdk.internal;
 
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.open.SocialConstants;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,11 +12,11 @@ import org.json.JSONObject;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f9291a = "none";
+    public static final String f6451a = "none";
     public static final String b = "text";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f9292c = "static_image";
+    public static final String f6452c = "static_image";
     public static final String d = "gif";
     public static final String e = "rich_media";
     public static final String f = "html";
@@ -83,7 +82,7 @@ public class a {
                     if (!TextUtils.isEmpty(optString)) {
                         i4 = 0;
                         if (optString.startsWith("opt_style_")) {
-                            String[] split = optString.substring(10).split(BridgeUtil.UNDERLINE_STR);
+                            String[] split = optString.substring(10).split("_");
                             i4 = 0;
                             if (split != null) {
                                 i4 = 0;

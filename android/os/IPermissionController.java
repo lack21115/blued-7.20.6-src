@@ -8,8 +8,9 @@ public interface IPermissionController extends IInterface {
         private static final String DESCRIPTOR = "android.os.IPermissionController";
         static final int TRANSACTION_checkPermission_0 = 1;
 
+        /* JADX INFO: Access modifiers changed from: private */
         /* loaded from: source-9557208-dex2jar.jar:android/os/IPermissionController$Stub$Proxy.class */
-        private static class Proxy implements IPermissionController {
+        public static class Proxy implements IPermissionController {
             private IBinder mRemote;
 
             Proxy(IBinder iBinder) {

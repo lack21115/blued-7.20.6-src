@@ -25,13 +25,9 @@ public class AoiItem implements Parcelable {
             return a(i);
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f5626a;
+    private String a;
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f5627c;
+    private String c;
     private LatLonPoint d;
     private Float e;
 
@@ -39,9 +35,9 @@ public class AoiItem implements Parcelable {
     }
 
     public AoiItem(Parcel parcel) {
-        this.f5626a = parcel.readString();
+        this.a = parcel.readString();
         this.b = parcel.readString();
-        this.f5627c = parcel.readString();
+        this.c = parcel.readString();
         this.d = (LatLonPoint) parcel.readParcelable(LatLonPoint.class.getClassLoader());
         this.e = Float.valueOf(parcel.readFloat());
     }
@@ -52,7 +48,7 @@ public class AoiItem implements Parcelable {
     }
 
     public String getAdCode() {
-        return this.f5627c;
+        return this.c;
     }
 
     public Float getAoiArea() {
@@ -64,7 +60,7 @@ public class AoiItem implements Parcelable {
     }
 
     public String getAoiId() {
-        return this.f5626a;
+        return this.a;
     }
 
     public String getAoiName() {
@@ -72,7 +68,7 @@ public class AoiItem implements Parcelable {
     }
 
     public void setAdcode(String str) {
-        this.f5627c = str;
+        this.c = str;
     }
 
     public void setArea(Float f) {
@@ -80,7 +76,7 @@ public class AoiItem implements Parcelable {
     }
 
     public void setId(String str) {
-        this.f5626a = str;
+        this.a = str;
     }
 
     public void setLocation(LatLonPoint latLonPoint) {
@@ -93,9 +89,9 @@ public class AoiItem implements Parcelable {
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.f5626a);
+        parcel.writeString(this.a);
         parcel.writeString(this.b);
-        parcel.writeString(this.f5627c);
+        parcel.writeString(this.c);
         parcel.writeParcelable(this.d, i);
         parcel.writeFloat(this.e.floatValue());
     }

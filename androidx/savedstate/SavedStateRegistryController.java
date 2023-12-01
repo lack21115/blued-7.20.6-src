@@ -7,11 +7,11 @@ import androidx.lifecycle.Lifecycle;
 public final class SavedStateRegistryController {
 
     /* renamed from: a  reason: collision with root package name */
-    private final SavedStateRegistryOwner f3372a;
+    private final SavedStateRegistryOwner f3324a;
     private final SavedStateRegistry b = new SavedStateRegistry();
 
     private SavedStateRegistryController(SavedStateRegistryOwner savedStateRegistryOwner) {
-        this.f3372a = savedStateRegistryOwner;
+        this.f3324a = savedStateRegistryOwner;
     }
 
     public static SavedStateRegistryController create(SavedStateRegistryOwner savedStateRegistryOwner) {
@@ -23,11 +23,11 @@ public final class SavedStateRegistryController {
     }
 
     public void performRestore(Bundle bundle) {
-        Lifecycle lifecycle = this.f3372a.getLifecycle();
+        Lifecycle lifecycle = this.f3324a.getLifecycle();
         if (lifecycle.getCurrentState() != Lifecycle.State.INITIALIZED) {
             throw new IllegalStateException("Restarter must be created only during owner's initialization stage");
         }
-        lifecycle.addObserver(new Recreator(this.f3372a));
+        lifecycle.addObserver(new Recreator(this.f3324a));
         this.b.a(lifecycle, bundle);
     }
 

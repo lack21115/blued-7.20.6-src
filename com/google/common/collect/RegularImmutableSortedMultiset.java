@@ -102,7 +102,7 @@ public final class RegularImmutableSortedMultiset<E> extends ImmutableSortedMult
         return getEntry(this.length - 1);
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    @Override // java.util.AbstractCollection, java.util.Collection, com.google.common.collect.Multiset
     public int size() {
         long[] jArr = this.cumulativeCounts;
         int i = this.offset;

@@ -25,23 +25,19 @@ import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveRankBehalfRecordListDialogFragment.class */
 public class LiveRankBehalfRecordListDialogFragment extends BaseDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f13187a;
+    private Context a;
     private RecyclerView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private LiveRankBehalfRecordAdapter f13188c;
+    private LiveRankBehalfRecordAdapter c;
     private List<LiveRankBehalfRecordsModel> d;
 
     private void a(View view) {
-        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rv_behalf_rank);
-        this.b = recyclerView;
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        RecyclerView findViewById = view.findViewById(R.id.rv_behalf_rank);
+        this.b = findViewById;
+        findViewById.setLayoutManager(new LinearLayoutManager(getContext()));
         LiveRankBehalfRecordAdapter liveRankBehalfRecordAdapter = new LiveRankBehalfRecordAdapter(getContext(), a());
-        this.f13188c = liveRankBehalfRecordAdapter;
+        this.c = liveRankBehalfRecordAdapter;
         liveRankBehalfRecordAdapter.setNewData(this.d);
-        this.b.setAdapter(this.f13188c);
+        this.b.setAdapter(this.c);
         view.findViewById(R.id.iv_behalf_back).setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveRankBehalfRecordListDialogFragment$-i7uxcXjTw8ywVh1_eFnbrNL14Q
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
@@ -70,12 +66,11 @@ public class LiveRankBehalfRecordListDialogFragment extends BaseDialogFragment {
         this.d = list;
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
-        this.f13187a = getActivity();
+        this.a = getActivity();
         boolean C = LiveFloatManager.a().C();
         View inflate = getActivity().getLayoutInflater().inflate(R.layout.dialog_live_rank_behalf, (ViewGroup) null);
-        int a2 = DensityUtils.a(getActivity(), 360.0f);
+        int a = DensityUtils.a(getActivity(), 360.0f);
         Dialog dialog = new Dialog(getActivity(), R.style.transparentFrameWindowStyleLive);
         dialog.requestWindowFeature(1);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
@@ -89,7 +84,7 @@ public class LiveRankBehalfRecordListDialogFragment extends BaseDialogFragment {
         window.setWindowAnimations(C ? R.style.rank_menu_animstyle : R.style.main_menu_animstyle);
         WindowManager.LayoutParams attributes = window.getAttributes();
         attributes.x = 0;
-        attributes.y = height - a2;
+        attributes.y = height - a;
         attributes.width = C ? DensityUtils.a(getActivity(), 360.0f) : -1;
         attributes.height = C ? -1 : DensityUtils.a(getActivity(), 360.0f);
         attributes.gravity = 5;
@@ -97,7 +92,7 @@ public class LiveRankBehalfRecordListDialogFragment extends BaseDialogFragment {
         return dialog;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(0));
         View inflate = layoutInflater.inflate(R.layout.dialog_live_rank_behalf, viewGroup);
@@ -105,12 +100,12 @@ public class LiveRankBehalfRecordListDialogFragment extends BaseDialogFragment {
         return inflate;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onDestroy() {
         super.onDestroy();
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void show(FragmentManager fragmentManager, String str) {
         try {
             ReflectionUtils.a(this, "mDismissed", false);

@@ -21,21 +21,21 @@ public class a extends d.a {
     private static volatile a b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final HashMap<ComponentName, IBinder> f21488c = new HashMap<>();
+    private final HashMap<ComponentName, IBinder> f7882c = new HashMap<>();
     private final HashMap<ComponentName, b> d = new HashMap<>();
-    private final C0322a<Intent> e = new C0322a<>();
+    private final C0152a<Intent> e = new C0152a<>();
     private final HashMap<ComponentName, com.bytedance.pangle.service.a> f = new HashMap<>();
     private final HashSet<ComponentName> g = new HashSet<>();
     private final HashSet<ComponentName> h = new HashSet<>();
 
     /* renamed from: a  reason: collision with root package name */
-    private final Handler f21487a = new Handler(Looper.getMainLooper());
+    private final Handler f7881a = new Handler(Looper.getMainLooper());
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.bytedance.pangle.service.a.a$a  reason: collision with other inner class name */
     /* loaded from: source-7206380-dex2jar.jar:com/bytedance/pangle/service/a/a$a.class */
-    public final class C0322a<T> extends HashMap<f, T> {
-        C0322a() {
+    public final class C0152a<T> extends HashMap<f, T> {
+        C0152a() {
         }
 
         @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map
@@ -152,10 +152,10 @@ public class a extends d.a {
                 this.f.put(component, d);
             }
             com.bytedance.pangle.service.a aVar = this.f.get(component);
-            if (!this.f21488c.containsKey(component)) {
-                this.f21488c.put(component, aVar.onBind(intent));
+            if (!this.f7882c.containsKey(component)) {
+                this.f7882c.put(component, aVar.onBind(intent));
             }
-            IBinder iBinder = this.f21488c.get(component);
+            IBinder iBinder = this.f7882c.get(component);
             if (iBinder != null) {
                 if (!this.d.containsKey(component)) {
                     b bVar = new b();
@@ -252,7 +252,7 @@ public class a extends d.a {
     private void c(ComponentName componentName) {
         com.bytedance.pangle.service.a remove = this.f.remove(componentName);
         this.h.remove(componentName);
-        this.f21488c.remove(componentName);
+        this.f7882c.remove(componentName);
         this.g.remove(componentName);
         if (remove != null) {
             remove.onDestroy();
@@ -293,7 +293,7 @@ public class a extends d.a {
         if (Looper.myLooper() == Looper.getMainLooper()) {
             return c(intent, str);
         }
-        this.f21487a.post(new Runnable() { // from class: com.bytedance.pangle.service.a.a.1
+        this.f7881a.post(new Runnable() { // from class: com.bytedance.pangle.service.a.a.1
             @Override // java.lang.Runnable
             public final void run() {
                 a.this.c(intent, str);
@@ -307,7 +307,7 @@ public class a extends d.a {
         if (Looper.myLooper() == Looper.getMainLooper()) {
             b(fVar);
         } else {
-            this.f21487a.post(new Runnable() { // from class: com.bytedance.pangle.service.a.a.4
+            this.f7881a.post(new Runnable() { // from class: com.bytedance.pangle.service.a.a.4
                 @Override // java.lang.Runnable
                 public final void run() {
                     a.this.b(fVar);
@@ -331,7 +331,7 @@ public class a extends d.a {
         if (Looper.myLooper() == Looper.getMainLooper()) {
             return a(intent, fVar, str);
         }
-        this.f21487a.post(new Runnable() { // from class: com.bytedance.pangle.service.a.a.3
+        this.f7881a.post(new Runnable() { // from class: com.bytedance.pangle.service.a.a.3
             @Override // java.lang.Runnable
             public final void run() {
                 try {
@@ -355,7 +355,7 @@ public class a extends d.a {
             b().a(intent.getComponent());
             return true;
         }
-        this.f21487a.post(new Runnable() { // from class: com.bytedance.pangle.service.a.a.2
+        this.f7881a.post(new Runnable() { // from class: com.bytedance.pangle.service.a.a.2
             @Override // java.lang.Runnable
             public final void run() {
                 a.b().a(intent.getComponent());

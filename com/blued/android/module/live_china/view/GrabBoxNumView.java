@@ -12,17 +12,12 @@ import com.blued.android.core.AppInfo;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.net.IRequestHost;
 import com.blued.android.module.live_china.R;
-import com.igexin.push.config.c;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/GrabBoxNumView.class */
 public class GrabBoxNumView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private View f14279a;
+    private View a;
     private Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private LayoutInflater f14280c;
+    private LayoutInflater c;
     private TextView d;
     private ImageView e;
 
@@ -40,11 +35,11 @@ public class GrabBoxNumView extends FrameLayout {
 
     private void a() {
         LayoutInflater from = LayoutInflater.from(this.b);
-        this.f14280c = from;
+        this.c = from;
         View inflate = from.inflate(R.layout.grab_box_wandou_toast, (ViewGroup) this, true);
-        this.f14279a = inflate;
+        this.a = inflate;
         this.d = (TextView) inflate.findViewById(R.id.grab_box_num);
-        this.e = (ImageView) this.f14279a.findViewById(R.id.grab_box_icon);
+        this.e = (ImageView) this.a.findViewById(R.id.grab_box_icon);
         setVisibility(8);
     }
 
@@ -58,6 +53,6 @@ public class GrabBoxNumView extends FrameLayout {
             public void run() {
                 GrabBoxNumView.this.setVisibility(8);
             }
-        }, c.j);
+        }, 1500L);
     }
 }

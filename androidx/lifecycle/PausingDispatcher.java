@@ -11,17 +11,15 @@ import kotlinx.coroutines.Dispatchers;
 public final class PausingDispatcher extends CoroutineDispatcher {
     public final DispatchQueue dispatchQueue = new DispatchQueue();
 
-    @Override // kotlinx.coroutines.CoroutineDispatcher
-    public void dispatch(CoroutineContext context, Runnable block) {
-        Intrinsics.e(context, "context");
-        Intrinsics.e(block, "block");
-        this.dispatchQueue.dispatchAndEnqueue(context, block);
+    public void dispatch(CoroutineContext coroutineContext, Runnable runnable) {
+        Intrinsics.e(coroutineContext, "context");
+        Intrinsics.e(runnable, "block");
+        this.dispatchQueue.dispatchAndEnqueue(coroutineContext, runnable);
     }
 
-    @Override // kotlinx.coroutines.CoroutineDispatcher
-    public boolean isDispatchNeeded(CoroutineContext context) {
-        Intrinsics.e(context, "context");
-        if (Dispatchers.b().a().isDispatchNeeded(context)) {
+    public boolean isDispatchNeeded(CoroutineContext coroutineContext) {
+        Intrinsics.e(coroutineContext, "context");
+        if (Dispatchers.b().a().isDispatchNeeded(coroutineContext)) {
             return true;
         }
         return !this.dispatchQueue.canRun();

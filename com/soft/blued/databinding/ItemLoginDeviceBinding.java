@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemLoginDeviceBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ConstraintLayout f29219a;
+    private final ConstraintLayout f15529a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f29219a;
+        return this.f15529a;
     }
 }

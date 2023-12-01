@@ -36,8 +36,8 @@ public class TXCGPUGhostShadowFilter extends TXCGPUEffectFilterBase {
     public void onDraw(int i, d dVar, FloatBuffer floatBuffer, FloatBuffer floatBuffer2) {
         if (isInitialized()) {
             runPendingOnDrawTasks();
-            if (initParams(this.mGhostShadowParam, this.mOutputSize.f36340a, this.mOutputSize.b)) {
-                d a2 = this.mGLTexturePool.a(this.mOutputSize.f36340a, this.mOutputSize.b);
+            if (initParams(this.mGhostShadowParam, this.mOutputSize.f22649a, this.mOutputSize.b)) {
+                d a2 = this.mGLTexturePool.a(this.mOutputSize.f22649a, this.mOutputSize.b);
                 TXCSavePreFrameFilter tXCSavePreFrameFilter = this.mSavePreFrameFilter;
                 if (tXCSavePreFrameFilter != null) {
                     tXCSavePreFrameFilter.onDrawToTexture(i, a2, floatBuffer, floatBuffer2);

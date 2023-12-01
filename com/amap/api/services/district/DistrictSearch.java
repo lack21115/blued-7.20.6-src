@@ -7,9 +7,7 @@ import com.amap.api.services.interfaces.IDistrictSearch;
 
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/services/district/DistrictSearch.class */
 public class DistrictSearch {
-
-    /* renamed from: a  reason: collision with root package name */
-    private IDistrictSearch f5623a;
+    private IDistrictSearch a;
 
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/services/district/DistrictSearch$OnDistrictSearchListener.class */
     public interface OnDistrictSearchListener {
@@ -17,9 +15,9 @@ public class DistrictSearch {
     }
 
     public DistrictSearch(Context context) throws AMapException {
-        if (this.f5623a == null) {
+        if (this.a == null) {
             try {
-                this.f5623a = new gv(context);
+                this.a = new gv(context);
             } catch (Exception e) {
                 e.printStackTrace();
                 if (e instanceof AMapException) {
@@ -30,7 +28,7 @@ public class DistrictSearch {
     }
 
     public DistrictSearchQuery getQuery() {
-        IDistrictSearch iDistrictSearch = this.f5623a;
+        IDistrictSearch iDistrictSearch = this.a;
         if (iDistrictSearch != null) {
             return iDistrictSearch.getQuery();
         }
@@ -38,7 +36,7 @@ public class DistrictSearch {
     }
 
     public DistrictResult searchDistrict() throws AMapException {
-        IDistrictSearch iDistrictSearch = this.f5623a;
+        IDistrictSearch iDistrictSearch = this.a;
         if (iDistrictSearch != null) {
             return iDistrictSearch.searchDistrict();
         }
@@ -46,28 +44,28 @@ public class DistrictSearch {
     }
 
     public void searchDistrictAnsy() {
-        IDistrictSearch iDistrictSearch = this.f5623a;
+        IDistrictSearch iDistrictSearch = this.a;
         if (iDistrictSearch != null) {
             iDistrictSearch.searchDistrictAnsy();
         }
     }
 
     public void searchDistrictAsyn() {
-        IDistrictSearch iDistrictSearch = this.f5623a;
+        IDistrictSearch iDistrictSearch = this.a;
         if (iDistrictSearch != null) {
             iDistrictSearch.searchDistrictAsyn();
         }
     }
 
     public void setOnDistrictSearchListener(OnDistrictSearchListener onDistrictSearchListener) {
-        IDistrictSearch iDistrictSearch = this.f5623a;
+        IDistrictSearch iDistrictSearch = this.a;
         if (iDistrictSearch != null) {
             iDistrictSearch.setOnDistrictSearchListener(onDistrictSearchListener);
         }
     }
 
     public void setQuery(DistrictSearchQuery districtSearchQuery) {
-        IDistrictSearch iDistrictSearch = this.f5623a;
+        IDistrictSearch iDistrictSearch = this.a;
         if (iDistrictSearch != null) {
             iDistrictSearch.setQuery(districtSearchQuery);
         }

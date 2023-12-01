@@ -7,7 +7,7 @@ import java.util.HashMap;
 public final class b {
 
     /* renamed from: c  reason: collision with root package name */
-    g f21474c;
+    g f7868c;
     private final h i;
     private final byte[] j;
     private int[] l;
@@ -17,7 +17,7 @@ public final class b {
     private int q;
 
     /* renamed from: a  reason: collision with root package name */
-    HashMap<Integer, Integer> f21473a = new HashMap<>();
+    HashMap<Integer, Integer> f7867a = new HashMap<>();
     boolean b = false;
     private boolean k = false;
     private final a m = new a();
@@ -32,24 +32,24 @@ public final class b {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        int[] f21475a = new int[32];
+        int[] f7869a = new int[32];
         int b;
 
         /* renamed from: c  reason: collision with root package name */
-        int f21476c;
+        int f7870c;
 
         public final void a() {
             b();
             int i = this.b;
-            int[] iArr = this.f21475a;
+            int[] iArr = this.f7869a;
             iArr[i] = 0;
             iArr[i + 1] = 0;
             this.b = i + 2;
-            this.f21476c++;
+            this.f7870c++;
         }
 
         final void b() {
-            int[] iArr = this.f21475a;
+            int[] iArr = this.f7869a;
             int length = iArr.length;
             int i = this.b;
             int i2 = length - i;
@@ -57,8 +57,8 @@ public final class b {
                 return;
             }
             int[] iArr2 = new int[(iArr.length + i2) * 2];
-            System.arraycopy((Object) iArr, 0, (Object) iArr2, 0, i);
-            this.f21475a = iArr2;
+            System.arraycopy(iArr, 0, iArr2, 0, i);
+            this.f7869a = iArr2;
         }
     }
 
@@ -95,17 +95,17 @@ public final class b {
     public final void a() {
         if (this.k) {
             this.k = false;
-            this.f21474c = null;
+            this.f7868c = null;
             this.l = null;
             a aVar = this.m;
             aVar.b = 0;
-            aVar.f21476c = 0;
+            aVar.f7870c = 0;
             c();
         }
     }
 
     public final int b() {
-        if (this.f21474c != null) {
+        if (this.f7868c != null) {
             try {
                 d();
                 return this.o;

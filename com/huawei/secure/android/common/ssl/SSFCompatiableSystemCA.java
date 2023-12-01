@@ -22,11 +22,11 @@ public class SSFCompatiableSystemCA extends SSLSocketFactory {
     private static volatile SSFCompatiableSystemCA j = null;
 
     /* renamed from: a  reason: collision with root package name */
-    private SSLContext f23097a;
+    private SSLContext f9489a;
     private SSLSocket b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f23098c;
+    private Context f9490c;
     private String[] d;
     private X509TrustManager e;
     private String[] f;
@@ -34,7 +34,7 @@ public class SSFCompatiableSystemCA extends SSLSocketFactory {
     private String[] h;
 
     private SSFCompatiableSystemCA(Context context) throws NoSuchAlgorithmException, CertificateException, KeyStoreException, IOException, KeyManagementException {
-        this.f23097a = null;
+        this.f9489a = null;
         this.b = null;
         if (context == null) {
             g.b(i, "SecureSSLSocketFactory: context is null");
@@ -44,15 +44,15 @@ public class SSFCompatiableSystemCA extends SSLSocketFactory {
         setSslContext(SSLUtil.setSSLContext());
         SecureX509TrustManager sSFSecureX509SingleInstance = SSFSecureX509SingleInstance.getInstance(context);
         this.e = sSFSecureX509SingleInstance;
-        this.f23097a.init(null, new X509TrustManager[]{sSFSecureX509SingleInstance}, null);
+        this.f9489a.init(null, new X509TrustManager[]{sSFSecureX509SingleInstance}, null);
     }
 
     public SSFCompatiableSystemCA(X509TrustManager x509TrustManager) throws NoSuchAlgorithmException, KeyManagementException, IllegalArgumentException {
-        this.f23097a = null;
+        this.f9489a = null;
         this.b = null;
-        this.f23097a = SSLUtil.setSSLContext();
+        this.f9489a = SSLUtil.setSSLContext();
         setX509TrustManager(x509TrustManager);
-        this.f23097a.init(null, new X509TrustManager[]{x509TrustManager}, null);
+        this.f9489a.init(null, new X509TrustManager[]{x509TrustManager}, null);
     }
 
     private void a(Socket socket) {
@@ -116,7 +116,7 @@ public class SSFCompatiableSystemCA extends SSLSocketFactory {
                 }
             }
         }
-        if (j.f23098c == null && context != null) {
+        if (j.f9490c == null && context != null) {
             j.setContext(context);
         }
         return j;
@@ -125,7 +125,7 @@ public class SSFCompatiableSystemCA extends SSLSocketFactory {
     @Override // javax.net.SocketFactory
     public Socket createSocket(String str, int i2) throws IOException {
         g.c(i, "createSocket: host , port");
-        Socket createSocket = this.f23097a.getSocketFactory().createSocket(str, i2);
+        Socket createSocket = this.f9489a.getSocketFactory().createSocket(str, i2);
         if (createSocket instanceof SSLSocket) {
             a(createSocket);
             SSLSocket sSLSocket = (SSLSocket) createSocket;
@@ -153,7 +153,7 @@ public class SSFCompatiableSystemCA extends SSLSocketFactory {
     @Override // javax.net.ssl.SSLSocketFactory
     public Socket createSocket(Socket socket, String str, int i2, boolean z) throws IOException {
         g.c(i, "createSocket: s , host , port , autoClose");
-        Socket createSocket = this.f23097a.getSocketFactory().createSocket(socket, str, i2, z);
+        Socket createSocket = this.f9489a.getSocketFactory().createSocket(socket, str, i2, z);
         if (createSocket instanceof SSLSocket) {
             a(createSocket);
             SSLSocket sSLSocket = (SSLSocket) createSocket;
@@ -173,7 +173,7 @@ public class SSFCompatiableSystemCA extends SSLSocketFactory {
     }
 
     public Context getContext() {
-        return this.f23098c;
+        return this.f9490c;
     }
 
     @Override // javax.net.ssl.SSLSocketFactory
@@ -186,7 +186,7 @@ public class SSFCompatiableSystemCA extends SSLSocketFactory {
     }
 
     public SSLContext getSslContext() {
-        return this.f23097a;
+        return this.f9489a;
     }
 
     public SSLSocket getSslSocket() {
@@ -212,7 +212,7 @@ public class SSFCompatiableSystemCA extends SSLSocketFactory {
     }
 
     public void setContext(Context context) {
-        this.f23098c = context.getApplicationContext();
+        this.f9490c = context.getApplicationContext();
     }
 
     public void setProtocols(String[] strArr) {
@@ -220,7 +220,7 @@ public class SSFCompatiableSystemCA extends SSLSocketFactory {
     }
 
     public void setSslContext(SSLContext sSLContext) {
-        this.f23097a = sSLContext;
+        this.f9489a = sSLContext;
     }
 
     public void setWhiteCiphers(String[] strArr) {

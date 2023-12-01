@@ -2,6 +2,7 @@ package com.blued.android.core.utils.toast.config;
 
 import android.view.View;
 import android.widget.TextView;
+import com.android.internal.R;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/utils/toast/config/IToast.class */
 public interface IToast {
@@ -11,14 +12,14 @@ public interface IToast {
     public final /* synthetic */ class CC {
         public static TextView $default$a(IToast iToast, View view) {
             if (!(view instanceof TextView)) {
-                View findViewById = view.findViewById(16908299);
+                View findViewById = view.findViewById(R.id.message);
                 if (findViewById instanceof TextView) {
                     return (TextView) findViewById;
                 }
                 throw new IllegalArgumentException("You must include a TextView with an ID value of android.R.id.message");
             }
             if (view.getId() == -1) {
-                view.setId(16908299);
+                view.setId(R.id.message);
             } else if (view.getId() != 16908299) {
                 throw new IllegalArgumentException("You must set the ID value of TextView to android.R.id.message");
             }

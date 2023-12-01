@@ -16,19 +16,14 @@ import android.widget.FrameLayout;
 import androidx.core.content.res.ResourcesCompat;
 import com.blued.android.framework.R;
 import com.blued.android.framework.view.SuperToast.utils.BackgroundUtils;
-import com.google.android.material.badge.BadgeDrawable;
 import java.util.ArrayList;
 import java.util.Iterator;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/view/SuperToast/SuperActivityToast.class */
 public class SuperActivityToast extends SuperToast {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f10191a;
+    private Context a;
     private View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private ViewGroup f10192c;
+    private ViewGroup c;
     private Style d;
     private boolean e;
 
@@ -42,9 +37,9 @@ public class SuperActivityToast extends SuperToast {
         if (!(context instanceof Activity)) {
             throw new IllegalArgumentException("SuperActivityToast Context must be an Activity.");
         }
-        this.f10191a = context;
+        this.a = context;
         this.d = j();
-        this.f10192c = (ViewGroup) ((Activity) context).findViewById(16908290);
+        this.c = (ViewGroup) ((Activity) context).findViewById(16908290);
     }
 
     public SuperActivityToast(Context context, Style style) {
@@ -52,9 +47,9 @@ public class SuperActivityToast extends SuperToast {
         if (!(context instanceof Activity)) {
             throw new IllegalArgumentException("SuperActivityToast Context must be an Activity.");
         }
-        this.f10191a = context;
+        this.a = context;
         this.d = style;
-        this.f10192c = (ViewGroup) ((Activity) context).findViewById(16908290);
+        this.c = (ViewGroup) ((Activity) context).findViewById(16908290);
     }
 
     public static void a(Context context, Bundle bundle) {
@@ -114,9 +109,9 @@ public class SuperActivityToast extends SuperToast {
     @Override // com.blued.android.framework.view.SuperToast.SuperToast
     protected View a(Context context, LayoutInflater layoutInflater, int i) {
         if (context instanceof Activity) {
-            View a2 = a(context, layoutInflater);
-            this.b = a2;
-            return a2;
+            View a = a(context, layoutInflater);
+            this.b = a;
+            return a;
         }
         throw new IllegalArgumentException("SuperActivityToast Context must be an Activity.");
     }
@@ -132,9 +127,9 @@ public class SuperActivityToast extends SuperToast {
             this.d.h = BackgroundUtils.b(i);
             this.d.i = BackgroundUtils.b(i2);
         }
-        if ((this.f10191a.getResources().getConfiguration().screenLayout & 15) >= 3) {
+        if ((this.a.getResources().getConfiguration().screenLayout & 15) >= 3) {
             this.d.j = BackgroundUtils.b(i3);
-            this.d.g = BadgeDrawable.TOP_START;
+            this.d.g = 8388659;
         }
     }
 
@@ -148,7 +143,7 @@ public class SuperActivityToast extends SuperToast {
     }
 
     public ViewGroup d() {
-        return this.f10192c;
+        return this.c;
     }
 
     public void e() {
@@ -161,7 +156,7 @@ public class SuperActivityToast extends SuperToast {
         if (this.d.e != 3) {
             this.b.findViewById(R.id.divider).setBackgroundColor(this.d.D);
             if (this.d.E > 0) {
-                button.setCompoundDrawablesWithIntrinsicBounds(ResourcesCompat.getDrawable(this.f10191a.getResources(), this.d.E, this.f10191a.getTheme()), (Drawable) null, (Drawable) null, (Drawable) null);
+                button.setCompoundDrawablesWithIntrinsicBounds(ResourcesCompat.getDrawable(this.a.getResources(), this.d.E, this.a.getTheme()), (Drawable) null, (Drawable) null, (Drawable) null);
             }
         }
     }
@@ -183,16 +178,14 @@ public class SuperActivityToast extends SuperToast {
         this.b.setLayoutParams(layoutParams);
         if (this.d.y) {
             this.b.setOnTouchListener(new View.OnTouchListener() { // from class: com.blued.android.framework.view.SuperToast.SuperActivityToast.1
-
-                /* renamed from: a  reason: collision with root package name */
-                int f10193a;
+                int a;
 
                 @Override // android.view.View.OnTouchListener
                 public boolean onTouch(View view, MotionEvent motionEvent) {
-                    if (this.f10193a == 0 && motionEvent.getAction() == 0) {
+                    if (this.a == 0 && motionEvent.getAction() == 0) {
                         SuperActivityToast.this.o();
                     }
-                    this.f10193a++;
+                    this.a++;
                     return false;
                 }
             });

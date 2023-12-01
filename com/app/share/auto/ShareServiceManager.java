@@ -7,25 +7,25 @@ import java.util.ServiceLoader;
 public class ShareServiceManager {
 
     /* renamed from: a  reason: collision with root package name */
-    private static IShareService f9214a;
+    private static IShareService f6374a;
 
     public static IShareService a() {
         IShareService iShareService;
         synchronized (ShareServiceManager.class) {
             try {
-                if (f9214a != null && !(f9214a instanceof IShareService)) {
-                    return f9214a;
+                if (f6374a != null && !(f6374a instanceof IShareService)) {
+                    return f6374a;
                 }
                 Iterator it = ServiceLoader.load(IShareService.class).iterator();
                 do {
                     if (!it.hasNext()) {
                         IShareService iShareService2 = (IShareService) Class.forName("com.soft.blued.ui.share.auto.ShareServiceConfigImpl").newInstance();
-                        f9214a = iShareService2;
+                        f6374a = iShareService2;
                         return iShareService2;
                     }
                     iShareService = (IShareService) it.next();
                 } while (!"SHARE_MAIN".equals(iShareService.a()));
-                f9214a = iShareService;
+                f6374a = iShareService;
                 return iShareService;
             } catch (Throwable th) {
                 throw th;

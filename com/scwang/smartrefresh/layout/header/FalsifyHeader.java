@@ -19,7 +19,7 @@ import com.scwang.smartrefresh.layout.util.DensityUtil;
 public class FalsifyHeader extends InternalAbstract implements RefreshHeader {
 
     /* renamed from: a  reason: collision with root package name */
-    protected RefreshKernel f27987a;
+    protected RefreshKernel f14299a;
 
     public FalsifyHeader(Context context, AttributeSet attributeSet) {
         this(context, attributeSet, 0);
@@ -31,21 +31,20 @@ public class FalsifyHeader extends InternalAbstract implements RefreshHeader {
 
     @Override // com.scwang.smartrefresh.layout.internal.InternalAbstract, com.scwang.smartrefresh.layout.api.RefreshInternal
     public void a(RefreshKernel refreshKernel, int i, int i2) {
-        this.f27987a = refreshKernel;
+        this.f14299a = refreshKernel;
     }
 
     @Override // com.scwang.smartrefresh.layout.internal.InternalAbstract, com.scwang.smartrefresh.layout.api.RefreshInternal
     public void b(RefreshLayout refreshLayout, int i, int i2) {
-        RefreshKernel refreshKernel = this.f27987a;
+        RefreshKernel refreshKernel = this.f14299a;
         if (refreshKernel != null) {
             refreshKernel.a(RefreshState.None);
-            this.f27987a.a(RefreshState.RefreshFinish);
+            this.f14299a.a(RefreshState.RefreshFinish);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void dispatchDraw(Canvas canvas) {
+    protected void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
         if (isInEditMode()) {
             int a2 = DensityUtil.a(5.0f);

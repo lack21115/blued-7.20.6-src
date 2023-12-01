@@ -15,13 +15,9 @@ import java.util.ArrayList;
 /* renamed from: com.amap.api.col.3sl.gr  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/gr.class */
 public final class gr implements IBusLineSearch {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f4997a;
+    private Context a;
     private BusLineSearch.OnBusLineSearchListener b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private BusLineQuery f4998c;
+    private BusLineQuery c;
     private BusLineQuery d;
     private int e;
     private ArrayList<BusLineResult> f = new ArrayList<>();
@@ -29,14 +25,14 @@ public final class gr implements IBusLineSearch {
 
     public gr(Context context, BusLineQuery busLineQuery) throws AMapException {
         this.g = null;
-        hy a2 = hx.a(context, fd.a(false));
-        if (a2.f5127a != hx.c.SuccessCode) {
-            throw new AMapException(a2.b, 1, a2.b, a2.f5127a.a());
+        hy a = hx.a(context, fd.a(false));
+        if (a.a != hx.c.SuccessCode) {
+            throw new AMapException(a.b, 1, a.b, a.a.a());
         }
-        this.f4997a = context.getApplicationContext();
-        this.f4998c = busLineQuery;
+        this.a = context.getApplicationContext();
+        this.c = busLineQuery;
         if (busLineQuery != null) {
-            this.d = busLineQuery.m2441clone();
+            this.d = busLineQuery.m8884clone();
         }
         this.g = fp.a();
     }
@@ -54,14 +50,14 @@ public final class gr implements IBusLineSearch {
             this.f.add(null);
             i2 = i3 + 1;
         }
-        if (i < 0 || !a(this.f4998c.getPageNumber())) {
+        if (i < 0 || !a(this.c.getPageNumber())) {
             return;
         }
-        this.f.set(this.f4998c.getPageNumber(), busLineResult);
+        this.f.set(this.c.getPageNumber(), busLineResult);
     }
 
     private boolean a() {
-        BusLineQuery busLineQuery = this.f4998c;
+        BusLineQuery busLineQuery = this.c;
         return (busLineQuery == null || fe.a(busLineQuery.getQueryString())) ? false : true;
     }
 
@@ -78,32 +74,32 @@ public final class gr implements IBusLineSearch {
 
     @Override // com.amap.api.services.interfaces.IBusLineSearch
     public final BusLineQuery getQuery() {
-        return this.f4998c;
+        return this.c;
     }
 
     @Override // com.amap.api.services.interfaces.IBusLineSearch
     public final BusLineResult searchBusLine() throws AMapException {
         try {
-            fn.a(this.f4997a);
+            fn.a(this.a);
             if (this.d == null || !a()) {
                 throw new AMapException("无效的参数 - IllegalArgumentException");
             }
-            if (!this.f4998c.weakEquals(this.d)) {
-                this.d = this.f4998c.m2441clone();
+            if (!this.c.weakEquals(this.d)) {
+                this.d = this.c.m8884clone();
                 this.e = 0;
                 if (this.f != null) {
                     this.f.clear();
                 }
             }
             if (this.e == 0) {
-                BusLineResult busLineResult = (BusLineResult) new ez(this.f4997a, this.f4998c.m2441clone()).d();
+                BusLineResult busLineResult = (BusLineResult) new ez(this.a, this.c.m8884clone()).d();
                 a(busLineResult);
                 return busLineResult;
             }
-            BusLineResult b = b(this.f4998c.getPageNumber());
+            BusLineResult b = b(this.c.getPageNumber());
             if (b == null) {
-                BusLineResult busLineResult2 = (BusLineResult) new ez(this.f4997a, this.f4998c).d();
-                this.f.set(this.f4998c.getPageNumber(), busLineResult2);
+                BusLineResult busLineResult2 = (BusLineResult) new ez(this.a, this.c).d();
+                this.f.set(this.c.getPageNumber(), busLineResult2);
                 return busLineResult2;
             }
             return b;
@@ -126,7 +122,7 @@ public final class gr implements IBusLineSearch {
                         fp.a aVar = new fp.a();
                         obtainMessage.obj = aVar;
                         aVar.b = gr.this.b;
-                        aVar.f4961a = gr.this.searchBusLine();
+                        aVar.a = gr.this.searchBusLine();
                     } catch (AMapException e) {
                         obtainMessage.what = e.getErrorCode();
                     } finally {
@@ -146,10 +142,10 @@ public final class gr implements IBusLineSearch {
 
     @Override // com.amap.api.services.interfaces.IBusLineSearch
     public final void setQuery(BusLineQuery busLineQuery) {
-        if (this.f4998c.weakEquals(busLineQuery)) {
+        if (this.c.weakEquals(busLineQuery)) {
             return;
         }
-        this.f4998c = busLineQuery;
-        this.d = busLineQuery.m2441clone();
+        this.c = busLineQuery;
+        this.d = busLineQuery.m8884clone();
     }
 }

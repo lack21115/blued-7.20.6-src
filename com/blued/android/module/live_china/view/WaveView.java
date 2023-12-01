@@ -13,13 +13,9 @@ import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/WaveView.class */
 public class WaveView extends View {
-
-    /* renamed from: a  reason: collision with root package name */
-    private float f15308a;
+    private float a;
     private float b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private long f15309c;
+    private long c;
     private int d;
     private float e;
     private boolean f;
@@ -39,17 +35,17 @@ public class WaveView extends View {
         }
 
         int a() {
-            return (int) (255.0f - (WaveView.this.k.getInterpolation((b() - WaveView.this.f15308a) / (WaveView.this.b - WaveView.this.f15308a)) * 255.0f));
+            return (int) (255.0f - (WaveView.this.k.getInterpolation((b() - WaveView.this.a) / (WaveView.this.b - WaveView.this.a)) * 255.0f));
         }
 
         float b() {
-            return WaveView.this.f15308a + (WaveView.this.k.getInterpolation((((float) (System.currentTimeMillis() - this.b)) * 1.0f) / ((float) WaveView.this.f15309c)) * (WaveView.this.b - WaveView.this.f15308a));
+            return WaveView.this.a + (WaveView.this.k.getInterpolation((((float) (System.currentTimeMillis() - this.b)) * 1.0f) / ((float) WaveView.this.c)) * (WaveView.this.b - WaveView.this.a));
         }
     }
 
     public WaveView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f15309c = 2000L;
+        this.c = 2000L;
         this.d = 500;
         this.e = 0.85f;
         this.i = new ArrayList();
@@ -96,7 +92,7 @@ public class WaveView extends View {
         while (it.hasNext()) {
             Circle next = it.next();
             float b = next.b();
-            if (System.currentTimeMillis() - next.b < this.f15309c) {
+            if (System.currentTimeMillis() - next.b < this.c) {
                 this.l.setAlpha(next.a());
                 canvas.drawCircle(getWidth() / 2, getHeight() / 2, b, this.l);
             } else {
@@ -122,11 +118,11 @@ public class WaveView extends View {
     }
 
     public void setDuration(long j) {
-        this.f15309c = j;
+        this.c = j;
     }
 
     public void setInitialRadius(float f) {
-        this.f15308a = f;
+        this.a = f;
     }
 
     public void setInterpolator(Interpolator interpolator) {

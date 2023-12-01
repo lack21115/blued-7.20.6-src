@@ -7,9 +7,7 @@ import com.blued.android.module.external_sense_library.encoder.utils.EGLBase;
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/external_sense_library/encoder/utils/RenderHandler.class */
 public final class RenderHandler implements Runnable {
     private EGLContext b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private boolean f11251c;
+    private boolean c;
     private Object d;
     private boolean g;
     private boolean h;
@@ -17,22 +15,20 @@ public final class RenderHandler implements Runnable {
     private EGLBase j;
     private EGLBase.EglSurface k;
     private GLDrawer2D l;
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Object f11250a = new Object();
+    private final Object a = new Object();
     private int e = -1;
     private float[] f = new float[32];
 
     private final void b() {
         c();
-        EGLBase eGLBase = new EGLBase(this.b, false, this.f11251c);
+        EGLBase eGLBase = new EGLBase(this.b, false, this.c);
         this.j = eGLBase;
-        EGLBase.EglSurface a2 = eGLBase.a(this.d);
-        this.k = a2;
-        a2.a();
+        EGLBase.EglSurface a = eGLBase.a(this.d);
+        this.k = a;
+        a.a();
         this.l = new GLDrawer2D();
         this.d = null;
-        this.f11250a.notifyAll();
+        this.a.notifyAll();
     }
 
     private final void c() {
@@ -54,21 +50,21 @@ public final class RenderHandler implements Runnable {
     }
 
     public final void a() {
-        synchronized (this.f11250a) {
+        synchronized (this.a) {
             if (this.h) {
                 return;
             }
             this.h = true;
-            this.f11250a.notifyAll();
+            this.a.notifyAll();
             try {
-                this.f11250a.wait();
+                this.a.wait();
             } catch (InterruptedException e) {
             }
         }
     }
 
     public final void a(int i, float[] fArr, float[] fArr2) {
-        synchronized (this.f11250a) {
+        synchronized (this.a) {
             if (this.h) {
                 return;
             }
@@ -84,7 +80,7 @@ public final class RenderHandler implements Runnable {
                 System.arraycopy((Object) fArr2, 0, (Object) this.f, 16, 16);
             }
             this.i++;
-            this.f11250a.notifyAll();
+            this.a.notifyAll();
         }
     }
 
@@ -110,13 +106,13 @@ public final class RenderHandler implements Runnable {
         r5.k.b();
      */
     /* JADX WARN: Code restructure failed: missing block: B:34:0x00aa, code lost:
-        r0 = r5.f11250a;
+        r0 = r5.a;
      */
     /* JADX WARN: Code restructure failed: missing block: B:35:0x00b0, code lost:
         monitor-enter(r0);
      */
     /* JADX WARN: Code restructure failed: missing block: B:36:0x00b1, code lost:
-        r5.f11250a.wait();
+        r5.a.wait();
      */
     /* JADX WARN: Code restructure failed: missing block: B:38:0x00b9, code lost:
         monitor-exit(r0);

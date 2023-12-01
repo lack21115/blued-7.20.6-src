@@ -13,7 +13,7 @@ import com.anythink.core.common.b.n;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile b f8375a;
+    private static volatile b f5535a;
 
     private static Bitmap a(int i) {
         try {
@@ -25,7 +25,7 @@ public class b {
             createBitmap.eraseColor(Color.parseColor("#FFFFFF"));
             return createBitmap;
         } catch (Exception e) {
-            if (com.anythink.expressad.a.f6941a) {
+            if (com.anythink.expressad.a.f4103a) {
                 e.printStackTrace();
             }
             return null;
@@ -54,17 +54,17 @@ public class b {
     }
 
     public static b a() {
-        if (f8375a == null) {
+        if (f5535a == null) {
             synchronized (b.class) {
                 try {
-                    if (f8375a == null) {
-                        f8375a = new b();
+                    if (f5535a == null) {
+                        f5535a = new b();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f8375a;
+        return f5535a;
     }
 }

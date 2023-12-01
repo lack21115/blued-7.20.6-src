@@ -9,62 +9,50 @@ import io.grpc.Status;
 public abstract class ForwardingClientStreamTracer extends ClientStreamTracer {
     protected abstract ClientStreamTracer delegate();
 
-    @Override // io.grpc.ClientStreamTracer
     public void inboundHeaders() {
         delegate().inboundHeaders();
     }
 
-    @Override // io.grpc.StreamTracer
     public void inboundMessage(int i) {
         delegate().inboundMessage(i);
     }
 
-    @Override // io.grpc.StreamTracer
     public void inboundMessageRead(int i, long j, long j2) {
         delegate().inboundMessageRead(i, j, j2);
     }
 
-    @Override // io.grpc.ClientStreamTracer
     public void inboundTrailers(Metadata metadata) {
         delegate().inboundTrailers(metadata);
     }
 
-    @Override // io.grpc.StreamTracer
     public void inboundUncompressedSize(long j) {
         delegate().inboundUncompressedSize(j);
     }
 
-    @Override // io.grpc.StreamTracer
     public void inboundWireSize(long j) {
         delegate().inboundWireSize(j);
     }
 
-    @Override // io.grpc.ClientStreamTracer
     public void outboundHeaders() {
         delegate().outboundHeaders();
     }
 
-    @Override // io.grpc.StreamTracer
     public void outboundMessage(int i) {
         delegate().outboundMessage(i);
     }
 
-    @Override // io.grpc.StreamTracer
     public void outboundMessageSent(int i, long j, long j2) {
         delegate().outboundMessageSent(i, j, j2);
     }
 
-    @Override // io.grpc.StreamTracer
     public void outboundUncompressedSize(long j) {
         delegate().outboundUncompressedSize(j);
     }
 
-    @Override // io.grpc.StreamTracer
     public void outboundWireSize(long j) {
         delegate().outboundWireSize(j);
     }
 
-    @Override // io.grpc.StreamTracer
     public void streamClosed(Status status) {
         delegate().streamClosed(status);
     }

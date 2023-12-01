@@ -98,7 +98,6 @@ public final class DelayedClientTransport implements ManagedClientTransport {
         return pendingStream;
     }
 
-    @Override // io.grpc.InternalWithLogId
     public InternalLogId getLogId() {
         return this.logId;
     }
@@ -111,10 +110,9 @@ public final class DelayedClientTransport implements ManagedClientTransport {
         return size;
     }
 
-    @Override // io.grpc.InternalInstrumented
     public ListenableFuture<InternalChannelz.SocketStats> getStats() {
         SettableFuture create = SettableFuture.create();
-        create.set(null);
+        create.set((Object) null);
         return create;
     }
 

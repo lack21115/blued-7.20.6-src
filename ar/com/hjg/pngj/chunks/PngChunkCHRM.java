@@ -21,7 +21,7 @@ public class PngChunkCHRM extends PngChunkSingle {
 
     @Override // ar.com.hjg.pngj.chunks.PngChunk
     public void a(ChunkRaw chunkRaw) {
-        if (chunkRaw.f3659a != 32) {
+        if (chunkRaw.f3611a != 32) {
             throw new PngjException("bad chunk " + chunkRaw);
         }
         this.h = PngHelperInternal.a(PngHelperInternal.c(chunkRaw.d, 0));

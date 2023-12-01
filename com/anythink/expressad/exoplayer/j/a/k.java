@@ -11,11 +11,11 @@ import java.util.Map;
 public final class k {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Map<String, Object> f7569a = new HashMap();
+    private final Map<String, Object> f4730a = new HashMap();
     private final List<String> b = new ArrayList();
 
     private k a(String str, Object obj) {
-        this.f7569a.put((String) com.anythink.expressad.exoplayer.k.a.a(str), com.anythink.expressad.exoplayer.k.a.a(obj));
+        this.f4730a.put((String) com.anythink.expressad.exoplayer.k.a.a(str), com.anythink.expressad.exoplayer.k.a.a(obj));
         this.b.remove(str);
         return this;
     }
@@ -26,7 +26,7 @@ public final class k {
 
     public final k a(String str) {
         this.b.add(str);
-        this.f7569a.remove(str);
+        this.f4730a.remove(str);
         return this;
     }
 
@@ -43,7 +43,7 @@ public final class k {
     }
 
     public final Map<String, Object> b() {
-        HashMap hashMap = new HashMap(this.f7569a);
+        HashMap hashMap = new HashMap(this.f4730a);
         for (Map.Entry entry : hashMap.entrySet()) {
             Object value = entry.getValue();
             if (value instanceof byte[]) {

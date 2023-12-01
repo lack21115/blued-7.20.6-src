@@ -24,7 +24,7 @@ public final class d implements com.kwai.filedownloader.a.a {
     private SQLiteDatabase aGD;
 
     /* loaded from: source-7994992-dex2jar.jar:com/kwai/filedownloader/a/d$a.class */
-    public final class a implements a.InterfaceC0584a {
+    public final class a implements a.InterfaceC0414a {
         private final SparseArray<com.kwai.filedownloader.c.c> aGF;
         private b aGG;
         private final SparseArray<com.kwai.filedownloader.c.c> aGt;
@@ -40,7 +40,7 @@ public final class d implements com.kwai.filedownloader.a.a {
             this.aGu = sparseArray2;
         }
 
-        @Override // com.kwai.filedownloader.a.a.InterfaceC0584a
+        @Override // com.kwai.filedownloader.a.a.InterfaceC0414a
         public final void Hy() {
             b bVar = this.aGG;
             if (bVar != null) {
@@ -137,12 +137,12 @@ public final class d implements com.kwai.filedownloader.a.a {
             }
         }
 
-        @Override // com.kwai.filedownloader.a.a.InterfaceC0584a
+        @Override // com.kwai.filedownloader.a.a.InterfaceC0414a
         public final void a(int i, com.kwai.filedownloader.c.c cVar) {
             this.aGF.put(i, cVar);
         }
 
-        @Override // com.kwai.filedownloader.a.a.InterfaceC0584a
+        @Override // com.kwai.filedownloader.a.a.InterfaceC0414a
         public final void c(com.kwai.filedownloader.c.c cVar) {
             SparseArray<com.kwai.filedownloader.c.c> sparseArray = this.aGt;
             if (sparseArray != null) {
@@ -336,11 +336,11 @@ public final class d implements com.kwai.filedownloader.a.a {
     }
 
     @Override // com.kwai.filedownloader.a.a
-    public final a.InterfaceC0584a Hx() {
+    public final a.InterfaceC0414a Hx() {
         return new a(this);
     }
 
-    public final a.InterfaceC0584a a(SparseArray<com.kwai.filedownloader.c.c> sparseArray, SparseArray<List<com.kwai.filedownloader.c.a>> sparseArray2) {
+    public final a.InterfaceC0414a a(SparseArray<com.kwai.filedownloader.c.c> sparseArray, SparseArray<List<com.kwai.filedownloader.c.a>> sparseArray2) {
         return new a(sparseArray, sparseArray2);
     }
 

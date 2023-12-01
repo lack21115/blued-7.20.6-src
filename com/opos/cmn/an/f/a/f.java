@@ -6,12 +6,12 @@ import android.content.Context;
 public class f {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile boolean f24529a = false;
+    private static volatile boolean f10842a = false;
 
     public static void a(Context context, boolean z) {
         synchronized (f.class) {
             try {
-                f24529a = z;
+                f10842a = z;
             } catch (Throwable th) {
                 throw th;
             }
@@ -22,7 +22,7 @@ public class f {
         boolean z;
         synchronized (f.class) {
             try {
-                z = f24529a;
+                z = f10842a;
             } catch (Throwable th) {
                 throw th;
             }

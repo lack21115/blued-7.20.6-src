@@ -6,7 +6,7 @@ import android.animation.TimeInterpolator;
 public class Easing {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final EasingFunction f22058a = new EasingFunction() { // from class: com.github.mikephil.charting.animation.Easing.1
+    public static final EasingFunction f8451a = new EasingFunction() { // from class: com.github.mikephil.charting.animation.Easing.1
         @Override // com.github.mikephil.charting.animation.Easing.EasingFunction, android.animation.TimeInterpolator
         public float getInterpolation(float f2) {
             return f2;
@@ -20,7 +20,7 @@ public class Easing {
     };
 
     /* renamed from: c  reason: collision with root package name */
-    public static final EasingFunction f22059c = new EasingFunction() { // from class: com.github.mikephil.charting.animation.Easing.3
+    public static final EasingFunction f8452c = new EasingFunction() { // from class: com.github.mikephil.charting.animation.Easing.3
         @Override // com.github.mikephil.charting.animation.Easing.EasingFunction, android.animation.TimeInterpolator
         public float getInterpolation(float f2) {
             return (-f2) * (f2 - 2.0f);

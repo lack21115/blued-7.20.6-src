@@ -8,14 +8,11 @@ import com.jeremyliao.liveeventbus.LiveEventBus;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/view/LifecycleDialog.class */
 public class LifecycleDialog extends Dialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Observer<String> f10994a;
+    private Observer<String> a;
 
     public LifecycleDialog(Context context) {
         super(context);
-        this.f10994a = new Observer<String>() { // from class: com.blued.android.module.common.view.LifecycleDialog.1
-            @Override // androidx.lifecycle.Observer
+        this.a = new Observer<String>() { // from class: com.blued.android.module.common.view.LifecycleDialog.1
             /* renamed from: a */
             public void onChanged(String str) {
                 Logger.e("LifecycleDialog", "关闭 LifecycleDialog 。。。");
@@ -27,12 +24,12 @@ public class LifecycleDialog extends Dialog {
     @Override // android.app.Dialog, android.content.DialogInterface
     public void dismiss() {
         super.dismiss();
-        LiveEventBus.get("dialog_cancel_event", String.class).removeObserver(this.f10994a);
+        LiveEventBus.get("dialog_cancel_event", String.class).removeObserver(this.a);
     }
 
     @Override // android.app.Dialog
     public void show() {
         super.show();
-        LiveEventBus.get("dialog_cancel_event", String.class).observeForever(this.f10994a);
+        LiveEventBus.get("dialog_cancel_event", String.class).observeForever(this.a);
     }
 }

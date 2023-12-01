@@ -12,11 +12,11 @@ import java.util.Map;
 public class ZkViewSDK {
 
     /* renamed from: a  reason: collision with root package name */
-    private static ZkViewSDK f41164a;
+    private static ZkViewSDK f27473a;
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private e f41165c;
+    private e f27474c;
     private b d;
 
     /* loaded from: source-8829756-dex2jar.jar:com/wrapper_oaction/ZkViewSDK$Event.class */
@@ -53,9 +53,9 @@ public class ZkViewSDK {
         KEY_AD_IMAGE_LIST(c.W, c.D),
         KEY_INVERSE_FEEDBACK(c.X, c.A),
         KEY_REWARD_DESC(c.Y, c.A),
-        KEY_APP_INFO(c.f41167a, c.A),
+        KEY_APP_INFO(c.f27476a, c.A),
         KEY_APP_DEVELOPER(c.b, c.A),
-        KEY_APP_VERSION(c.f41168c, c.A),
+        KEY_APP_VERSION(c.f27477c, c.A),
         KEY_VIDEO_EXTERNAL(c.d, c.E),
         KEY_APP_DOWNLOAD_COUNT(c.e, c.A),
         KEY_APP_SIZE(c.f, c.A),
@@ -149,11 +149,11 @@ public class ZkViewSDK {
         public static String Y = "reward_desc";
 
         /* renamed from: a  reason: collision with root package name */
-        public static String f41167a = "app_info";
+        public static String f27476a = "app_info";
         public static String b = "app_developer";
 
         /* renamed from: c  reason: collision with root package name */
-        public static String f41168c = "app_version";
+        public static String f27477c = "app_version";
         public static String d = "video_external";
         public static String e = "app_download_count";
         public static String f = "app_size";
@@ -183,10 +183,10 @@ public class ZkViewSDK {
         ZkViewSDK zkViewSDK;
         synchronized (ZkViewSDK.class) {
             try {
-                if (f41164a == null) {
-                    f41164a = new ZkViewSDK();
+                if (f27473a == null) {
+                    f27473a = new ZkViewSDK();
                 }
-                zkViewSDK = f41164a;
+                zkViewSDK = f27473a;
             } catch (Throwable th) {
                 throw th;
             }
@@ -204,7 +204,7 @@ public class ZkViewSDK {
                 this.b = context.getApplicationContext();
             }
             e eVar = new e();
-            this.f41165c = eVar;
+            this.f27474c = eVar;
             eVar.a(this.b);
         } catch (Throwable th) {
         }
@@ -213,11 +213,11 @@ public class ZkViewSDK {
     public View a(Context context, String str, boolean z, HashMap<KEY, Object> hashMap, Map map, a aVar) {
         try {
             a(context);
-            if (this.f41165c != null) {
+            if (this.f27474c != null) {
                 StringBuilder sb = new StringBuilder();
                 sb.append(str);
                 sb.append("/fullscreen_match");
-                return new File(sb.toString()).exists() ? this.f41165c.b(str, 0, 0, z, hashMap, aVar, -1, map, 2) : this.f41165c.a(str, 0, 0, z, hashMap, aVar, -1, map, 1);
+                return new File(sb.toString()).exists() ? this.f27474c.b(str, 0, 0, z, hashMap, aVar, -1, map, 2) : this.f27474c.a(str, 0, 0, z, hashMap, aVar, -1, map, 1);
             }
             return null;
         } catch (Throwable th) {
@@ -230,21 +230,21 @@ public class ZkViewSDK {
     }
 
     public void a(View view) {
-        e eVar = this.f41165c;
+        e eVar = this.f27474c;
         if (eVar != null) {
             eVar.a(view);
         }
     }
 
     public void a(View view, HashMap<KEY, Object> hashMap) {
-        e eVar = this.f41165c;
+        e eVar = this.f27474c;
         if (eVar != null) {
             eVar.a(view, hashMap);
         }
     }
 
     public void a(View view, boolean z) {
-        e eVar = this.f41165c;
+        e eVar = this.f27474c;
         if (eVar != null) {
             eVar.a(view, z);
         }
@@ -264,7 +264,7 @@ public class ZkViewSDK {
             th = th;
         }
         try {
-            e eVar = this.f41165c;
+            e eVar = this.f27474c;
             if (eVar != null) {
                 return eVar.b(str, 0, 0, z, hashMap, aVar, -1, map, 2);
             }
@@ -280,14 +280,14 @@ public class ZkViewSDK {
     }
 
     public void b(View view) {
-        e eVar = this.f41165c;
+        e eVar = this.f27474c;
         if (eVar != null) {
             eVar.b(view);
         }
     }
 
     public void c(View view) {
-        e eVar = this.f41165c;
+        e eVar = this.f27474c;
         if (eVar != null) {
             eVar.c(view);
         }

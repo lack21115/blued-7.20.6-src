@@ -5,10 +5,10 @@ import android.graphics.Bitmap;
 import android.graphics.Point;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
-import com.amap.api.col.p0003sl.du;
-import com.amap.api.col.p0003sl.dw;
-import com.amap.api.col.p0003sl.iw;
-import com.amap.api.col.p0003sl.lc;
+import com.amap.api.col.3sl.du;
+import com.amap.api.col.3sl.dw;
+import com.amap.api.col.3sl.iw;
+import com.amap.api.col.3sl.lc;
 import com.amap.api.maps.AMap;
 import com.amap.api.maps.MapsInitializer;
 import com.amap.api.maps.model.BitmapDescriptor;
@@ -1314,7 +1314,6 @@ public class GLMapEngine implements IGLMapEngine, IAMapEngineCallback, NetworkSt
         this.aMapLoaderHashtable.put(Long.valueOf(aDataRequestParam.handler), aMapLoader);
         try {
             du.a().a(new lc() { // from class: com.autonavi.base.ae.gmap.GLMapEngine.1
-                @Override // com.amap.api.col.p0003sl.lc
                 public void runTask() {
                     try {
                         if (GLMapEngine.this.mRequestDestroy || aMapLoader == null) {

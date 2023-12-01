@@ -6,6 +6,7 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.text.TextUtils;
 import com.cdo.oaps.ad.wrapper.BaseWrapper;
+import com.huawei.openalliance.ad.constant.t;
 import com.tencent.cloud.huiyansdkface.R;
 import com.tencent.cloud.huiyansdkface.facelight.api.FaceVerifyConfig;
 import com.tencent.cloud.huiyansdkface.facelight.api.WbCloudFaceContant;
@@ -52,11 +53,11 @@ public class a {
     private com.tencent.cloud.huiyansdkface.facelight.b.a.b Z;
 
     /* renamed from: a  reason: collision with root package name */
-    com.tencent.cloud.huiyansdkface.facelight.ui.a.c f35603a;
+    com.tencent.cloud.huiyansdkface.facelight.ui.a.c f21912a;
     private YTFaceTracker b;
 
     /* renamed from: c  reason: collision with root package name */
-    private YTFaceTracker.TrackedFace[] f35604c;
+    private YTFaceTracker.TrackedFace[] f21913c;
     private volatile boolean e;
     private Context f;
     private FaceVerifyStatus h;
@@ -109,14 +110,14 @@ public class a {
                         Method dump skipped, instructions count: 557
                         To view this dump change 'Code comments level' option to 'DEBUG'
                     */
-                    throw new UnsupportedOperationException("Method not decompiled: com.tencent.cloud.huiyansdkface.facelight.process.a.AnonymousClass1.RunnableC09101.run():void");
+                    throw new UnsupportedOperationException("Method not decompiled: com.tencent.cloud.huiyansdkface.facelight.process.a.AnonymousClass1.RunnableC07401.run():void");
                 }
             });
         }
 
         @Override // com.tencent.cloud.huiyansdkface.facelight.process.b.a
         public void a(int i, String str, String str2) {
-            WLogger.w("FaceDetect", "YTPoseDetectInterface.poseDetect.onFailed: " + i + ";" + str + ";" + str2);
+            WLogger.w("FaceDetect", "YTPoseDetectInterface.poseDetect.onFailed: " + i + t.aE + str + t.aE + str2);
         }
 
         @Override // com.tencent.cloud.huiyansdkface.facelight.process.b.a
@@ -264,7 +265,7 @@ public class a {
         if ((b == 4 && d == 3 && e > 1) || b == 6 || b == 8 || b == 7 || b == 9 || a(b, d)) {
             return;
         }
-        final YTFaceTracker.TrackedFace[] trackedFaceArr = bVar.f35535a;
+        final YTFaceTracker.TrackedFace[] trackedFaceArr = bVar.f21844a;
         if (trackedFaceArr == null) {
             WLogger.i("FaceDetect", "faceStatus null");
             if (this.T) {
@@ -304,7 +305,7 @@ public class a {
         Rect a2 = a(trackedFaceArr[0]);
         if (b != 2 && b != 3) {
             if (b == 4) {
-                com.tencent.cloud.huiyansdkface.facelight.ui.a.c cVar2 = this.f35603a;
+                com.tencent.cloud.huiyansdkface.facelight.ui.a.c cVar2 = this.f21912a;
                 if (cVar2 == null) {
                     WLogger.e("FaceDetect", "mFaceLiveView null");
                     return;
@@ -320,7 +321,7 @@ public class a {
                     return;
                 }
             } else if (b == 5) {
-                com.tencent.cloud.huiyansdkface.facelight.ui.a.c cVar3 = this.f35603a;
+                com.tencent.cloud.huiyansdkface.facelight.ui.a.c cVar3 = this.f21912a;
                 if (cVar3 == null) {
                     WLogger.e("FaceDetect", "willExpress mFaceLiveView null");
                     return;
@@ -364,17 +365,17 @@ public class a {
                 return;
             }
         }
-        if (FaceVerifyConfig.getInstance().displayInfoInUI() && (cVar = this.f35603a) != null) {
+        if (FaceVerifyConfig.getInstance().displayInfoInUI() && (cVar = this.f21912a) != null) {
             cVar.a("p|y|r=" + trackedFaceArr[0].pitch + "|" + trackedFaceArr[0].yaw + "|" + trackedFaceArr[0].roll);
         }
-        com.tencent.cloud.huiyansdkface.facelight.ui.a.c cVar4 = this.f35603a;
+        com.tencent.cloud.huiyansdkface.facelight.ui.a.c cVar4 = this.f21912a;
         if (cVar4 == null) {
             WLogger.e("FaceDetect", "mFaceLiveView null");
             return;
         }
         RectF a3 = cVar4.a(a2);
-        this.f35603a.onUpdateRealFaceRect(a3);
-        RectF r = this.f35603a.r();
+        this.f21912a.onUpdateRealFaceRect(a3);
+        RectF r = this.f21912a.r();
         this.i = new RectF(r.left, r.top, r.right, r.bottom + 80.0f);
         this.j = r.width() * r.height();
         float width = a3.width() * a3.height();
@@ -397,7 +398,7 @@ public class a {
         WLogger.d("FaceDetect", sb.toString());
         if (FaceVerifyConfig.getInstance().displayInfoInUI()) {
             WLogger.d("FaceDetect", "displayInfoInUI");
-            com.tencent.cloud.huiyansdkface.facelight.ui.a.c cVar5 = this.f35603a;
+            com.tencent.cloud.huiyansdkface.facelight.ui.a.c cVar5 = this.f21912a;
             if (cVar5 != null) {
                 cVar5.b("percent=" + f);
             }
@@ -443,7 +444,7 @@ public class a {
                 com.tencent.cloud.huiyansdkface.facelight.c.b.b.a(new Runnable() { // from class: com.tencent.cloud.huiyansdkface.facelight.process.a.6
                     @Override // java.lang.Runnable
                     public void run() {
-                        b.a(trackedFaceArr[0].faceShape, trackedFaceArr[0].faceVisible, 5, bVar.b, bVar.f35536c, bVar.d, trackedFaceArr[0].pitch, trackedFaceArr[0].yaw, trackedFaceArr[0].roll, a.this.X, 1, a.this.t);
+                        b.a(trackedFaceArr[0].faceShape, trackedFaceArr[0].faceVisible, 5, bVar.b, bVar.f21845c, bVar.d, trackedFaceArr[0].pitch, trackedFaceArr[0].yaw, trackedFaceArr[0].roll, a.this.X, 1, a.this.t);
                     }
                 });
                 if (!this.k) {
@@ -570,7 +571,7 @@ public class a {
                     this.W = System.currentTimeMillis();
                 }
                 try {
-                    this.f35604c = this.b.track(0, this.d, i, i2, RotateSetting.getRotate(), false, null);
+                    this.f21913c = this.b.track(0, this.d, i, i2, RotateSetting.getRotate(), false, null);
                 } catch (Exception e) {
                     e.printStackTrace();
                     WLogger.e("FaceDetect", e.toString());
@@ -581,21 +582,21 @@ public class a {
                     this.V = true;
                     KycWaSDK.getInstance().trackCustomKVEvent(null, "facepage_first_yttrack", "track:" + currentTimeMillis, null);
                 }
-                YTFaceTracker.TrackedFace[] trackedFaceArr = this.f35604c;
+                YTFaceTracker.TrackedFace[] trackedFaceArr = this.f21913c;
                 if (trackedFaceArr == null || trackedFaceArr.length == 0) {
                     WLogger.w("FaceDetect", "face status is null");
-                    this.f35604c = null;
+                    this.f21913c = null;
                 }
-                YTFaceTracker.TrackedFace[] trackedFaceArr2 = this.f35604c;
+                YTFaceTracker.TrackedFace[] trackedFaceArr2 = this.f21913c;
                 if (trackedFaceArr2 != null) {
                     YTFaceTracker.TrackedFace[] a2 = com.tencent.cloud.huiyansdkface.facelight.c.b.a(trackedFaceArr2);
-                    this.f35604c = a2;
+                    this.f21913c = a2;
                     if (a2.length > 1) {
                         int i3 = Integer.MIN_VALUE;
                         int i4 = 0;
                         int i5 = 0;
                         while (true) {
-                            YTFaceTracker.TrackedFace[] trackedFaceArr3 = this.f35604c;
+                            YTFaceTracker.TrackedFace[] trackedFaceArr3 = this.f21913c;
                             if (i4 >= trackedFaceArr3.length) {
                                 break;
                             }
@@ -611,47 +612,47 @@ public class a {
                         }
                         if (i5 != 0) {
                             WLogger.i("FaceDetect", "Found max face id:" + i5);
-                            YTFaceTracker.TrackedFace[] trackedFaceArr4 = this.f35604c;
+                            YTFaceTracker.TrackedFace[] trackedFaceArr4 = this.f21913c;
                             trackedFaceArr4[0] = trackedFaceArr4[i5];
                         }
                     }
                     if (this.h.b() == 4) {
                         if (this.h.d() == 1) {
-                            b.a(this.f35604c[0].faceShape, this.f35604c[0].faceVisible, 5, bArr2, i, i2, this.f35604c[0].pitch, this.f35604c[0].yaw, this.f35604c[0].roll, this.X, 1, this.t);
+                            b.a(this.f21913c[0].faceShape, this.f21913c[0].faceVisible, 5, bArr2, i, i2, this.f21913c[0].pitch, this.f21913c[0].yaw, this.f21913c[0].roll, this.X, 1, this.t);
                         }
                         if (this.h.d() == 2) {
                             int c2 = this.h.c();
                             if (c2 == 2) {
                                 WLogger.d("FaceDetect", "blink nowTime=" + System.currentTimeMillis());
-                                b.a(this.f35604c[0].faceShape, this.f35604c[0].faceVisible, 1, bArr2, i, i2, this.f35604c[0].pitch, this.f35604c[0].yaw, this.f35604c[0].roll, this.X, 1, this.t);
+                                b.a(this.f21913c[0].faceShape, this.f21913c[0].faceVisible, 1, bArr2, i, i2, this.f21913c[0].pitch, this.f21913c[0].yaw, this.f21913c[0].roll, this.X, 1, this.t);
                             } else if (c2 == 3) {
                                 WLogger.d("FaceDetect", "openMouth nowTime=" + System.currentTimeMillis());
-                                b.a(this.f35604c[0].faceShape, this.f35604c[0].faceVisible, 2, bArr2, i, i2, this.f35604c[0].pitch, this.f35604c[0].yaw, this.f35604c[0].roll, this.X, 1, this.t);
+                                b.a(this.f21913c[0].faceShape, this.f21913c[0].faceVisible, 2, bArr2, i, i2, this.f21913c[0].pitch, this.f21913c[0].yaw, this.f21913c[0].roll, this.X, 1, this.t);
                             } else if (c2 == 1) {
                                 WLogger.d("FaceDetect", "shakeHead nowTime=" + System.currentTimeMillis());
-                                b.a(this.f35604c[0].faceShape, this.f35604c[0].faceVisible, 4, bArr2, i, i2, this.f35604c[0].pitch, this.f35604c[0].yaw, this.f35604c[0].roll, this.X, 1, this.t);
+                                b.a(this.f21913c[0].faceShape, this.f21913c[0].faceVisible, 4, bArr2, i, i2, this.f21913c[0].pitch, this.f21913c[0].yaw, this.f21913c[0].roll, this.X, 1, this.t);
                             }
                         }
                         if (this.h.d() == 3) {
                             if (this.h.e() == 1) {
                                 WLogger.d("FaceDetect", "REFLECT nowTime=" + System.currentTimeMillis());
-                                YTAGReflectLiveCheckInterface.pushImageData(bArr2, i, i2, System.currentTimeMillis(), RotateSetting.getRotate(), this.f35604c[0].faceShape, this.f35604c[0].pitch, this.f35604c[0].yaw, this.f35604c[0].roll);
+                                YTAGReflectLiveCheckInterface.pushImageData(bArr2, i, i2, System.currentTimeMillis(), RotateSetting.getRotate(), this.f21913c[0].faceShape, this.f21913c[0].pitch, this.f21913c[0].yaw, this.f21913c[0].roll);
                             }
                             if (this.g.e().x()) {
                                 if (YTPoseDetectJNIInterface.isRecordingDone()) {
                                     WLogger.d("FaceDetect", "poseDetect while reflect finished.");
                                 } else {
                                     WLogger.d("FaceDetect", "poseDetect while reflect.");
-                                    b.a(this.f35604c[0].faceShape, this.f35604c[0].faceVisible, 5, bArr2, i, i2, this.f35604c[0].pitch, this.f35604c[0].yaw, this.f35604c[0].roll, this.X, 1, this.t);
+                                    b.a(this.f21913c[0].faceShape, this.f21913c[0].faceVisible, 5, bArr2, i, i2, this.f21913c[0].pitch, this.f21913c[0].yaw, this.f21913c[0].roll, this.X, 1, this.t);
                                 }
                             }
                         }
                     }
                 }
                 com.tencent.cloud.huiyansdkface.facelight.b.a.b bVar = new com.tencent.cloud.huiyansdkface.facelight.b.a.b();
-                bVar.f35535a = this.f35604c;
+                bVar.f21844a = this.f21913c;
                 bVar.b = bArr2;
-                bVar.f35536c = i;
+                bVar.f21845c = i;
                 bVar.d = i2;
                 this.e = false;
                 return bVar;
@@ -670,25 +671,25 @@ public class a {
                 com.tencent.cloud.huiyansdkface.facelight.ui.a.c cVar;
                 Resources resources;
                 int i;
-                if (a.this.f35603a != null) {
-                    if ("custom".equals(a.this.g.x().J())) {
-                        a.this.f35603a.onUpdateTipTextColor(a.this.f.getResources().getColor(R.color.wbcf_custom_tips_text_error));
-                        cVar = a.this.f35603a;
+                if (a.this.f21912a != null) {
+                    if (WbCloudFaceContant.CUSTOM.equals(a.this.g.x().J())) {
+                        a.this.f21912a.onUpdateTipTextColor(a.this.f.getResources().getColor(R.color.wbcf_custom_tips_text_error));
+                        cVar = a.this.f21912a;
                         resources = a.this.f.getResources();
                         i = R.color.wbcf_custom_border_error;
                     } else if (WbCloudFaceContant.BLACK.equals(a.this.g.x().J())) {
-                        a.this.f35603a.onUpdateTipTextColor(a.this.f.getResources().getColor(R.color.wbcf_red));
-                        cVar = a.this.f35603a;
+                        a.this.f21912a.onUpdateTipTextColor(a.this.f.getResources().getColor(R.color.wbcf_red));
+                        cVar = a.this.f21912a;
                         resources = a.this.f.getResources();
                         i = R.color.wbcf_red;
                     } else {
-                        a.this.f35603a.onUpdateTipTextColor(a.this.f.getResources().getColor(R.color.wbcf_red_white));
-                        cVar = a.this.f35603a;
+                        a.this.f21912a.onUpdateTipTextColor(a.this.f.getResources().getColor(R.color.wbcf_red_white));
+                        cVar = a.this.f21912a;
                         resources = a.this.f.getResources();
                         i = R.color.wbcf_red_white;
                     }
                     cVar.onUpdateFaceBorder(resources.getColor(i));
-                    a.this.f35603a.onUpdateTip(str);
+                    a.this.f21912a.onUpdateTip(str);
                 }
             }
         });
@@ -739,27 +740,27 @@ public class a {
                     com.tencent.cloud.huiyansdkface.facelight.ui.a.c cVar2;
                     Resources resources2;
                     int i2;
-                    if (a.this.f35603a != null) {
+                    if (a.this.f21912a != null) {
                         if (WbCloudFaceContant.BLACK.equals(a.this.g.x().J())) {
-                            cVar2 = a.this.f35603a;
+                            cVar2 = a.this.f21912a;
                             resources2 = a.this.f.getResources();
                             i2 = R.color.wbcf_white;
                         } else if (!WbCloudFaceContant.WHITE.equals(a.this.g.x().J())) {
-                            if ("custom".equals(a.this.g.x().J())) {
-                                a.this.f35603a.onUpdateTipTextColor(a.this.f.getResources().getColor(R.color.wbcf_custom_tips_text));
-                                cVar = a.this.f35603a;
+                            if (WbCloudFaceContant.CUSTOM.equals(a.this.g.x().J())) {
+                                a.this.f21912a.onUpdateTipTextColor(a.this.f.getResources().getColor(R.color.wbcf_custom_tips_text));
+                                cVar = a.this.f21912a;
                                 resources = a.this.f.getResources();
                                 i = R.color.wbcf_custom_border;
                                 cVar.onUpdateFaceBorder(resources.getColor(i));
                             }
                             return;
                         } else {
-                            cVar2 = a.this.f35603a;
+                            cVar2 = a.this.f21912a;
                             resources2 = a.this.f.getResources();
                             i2 = R.color.wbcf_black_text;
                         }
                         cVar2.onUpdateTipTextColor(resources2.getColor(i2));
-                        cVar = a.this.f35603a;
+                        cVar = a.this.f21912a;
                         resources = a.this.f.getResources();
                         i = R.color.wbcf_sdk_base_blue;
                         cVar.onUpdateFaceBorder(resources.getColor(i));
@@ -824,7 +825,7 @@ public class a {
             dVar.a(null);
             return;
         }
-        YTFaceTracker.TrackedFace[] trackedFaceArr = bVar.f35535a;
+        YTFaceTracker.TrackedFace[] trackedFaceArr = bVar.f21844a;
         if (trackedFaceArr == null || trackedFaceArr.length <= 0) {
             WLogger.w("FaceDetect", "backupData faces is null,return!");
             KycWaSDK.getInstance().trackCustomKVEvent(this.f, "faceservice_push_backup_data", "backupData faces is null!", null);
@@ -845,7 +846,7 @@ public class a {
             dVar.a(null);
             return;
         }
-        WLogger.d("FaceDetect", "backupData shape:" + fArr.length + "," + fArr[0] + "," + bVar.f35536c + "x" + bVar.d);
+        WLogger.d("FaceDetect", "backupData shape:" + fArr.length + "," + fArr[0] + "," + bVar.f21845c + "x" + bVar.d);
         KycWaSDK kycWaSDK = KycWaSDK.getInstance();
         Context context = this.f;
         StringBuilder sb = new StringBuilder();
@@ -857,12 +858,12 @@ public class a {
             /* renamed from: a */
             public YTActRefData call() {
                 WLogger.i("FaceDetect", "pushBackupData enter");
-                YTFaceTracker.TrackedFace[] trackedFaceArr2 = bVar.f35535a;
+                YTFaceTracker.TrackedFace[] trackedFaceArr2 = bVar.f21844a;
                 WLogger.d("FaceDetect", "data.faces=" + trackedFaceArr2[0].faceShape.length);
                 YTActRefImage yTActRefImage = new YTActRefImage();
                 yTActRefImage.checksum = "";
                 yTActRefImage.xys = trackedFaceArr2[0].faceShape;
-                yTActRefImage.image = RotateSetting.rawCamDataToJpg(RotateSetting.getRotate(), bVar.b, bVar.f35536c, bVar.d, false);
+                yTActRefImage.image = RotateSetting.rawCamDataToJpg(RotateSetting.getRotate(), bVar.b, bVar.f21845c, bVar.d, false);
                 YTActRefData yTActRefData = new YTActRefData();
                 yTActRefData.best = yTActRefImage;
                 yTActRefData.eye = yTActRefImage;
@@ -879,7 +880,7 @@ public class a {
     }
 
     public void a(com.tencent.cloud.huiyansdkface.facelight.ui.a.c cVar) {
-        this.f35603a = cVar;
+        this.f21912a = cVar;
     }
 
     public void a(boolean z) {

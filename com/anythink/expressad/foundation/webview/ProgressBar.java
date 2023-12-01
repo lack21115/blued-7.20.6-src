@@ -32,7 +32,7 @@ public class ProgressBar extends View implements a {
     private Drawable G;
     private Drawable H;
     private boolean I;
-    private a.InterfaceC0149a J;
+    private a.InterfaceC0078a J;
     private Handler K;
     private boolean M;
     private boolean N;
@@ -202,36 +202,33 @@ public class ProgressBar extends View implements a {
     @Override // com.anythink.expressad.foundation.webview.a
     public void initResource(boolean z) {
         if (z || (this.H == null && this.E == null && this.F == null && this.G == null)) {
-            Drawable drawable = getResources().getDrawable(getResources().getIdentifier("anythink_cm_highlight", i.f7952c, com.anythink.expressad.foundation.b.a.b().a()));
+            Drawable drawable = getResources().getDrawable(getResources().getIdentifier("anythink_cm_highlight", i.f5112c, com.anythink.expressad.foundation.b.a.b().a()));
             this.H = drawable;
             if (drawable != null) {
                 drawable.setBounds(0, 0, drawable.getIntrinsicWidth(), this.H.getIntrinsicHeight());
             }
-            Drawable drawable2 = getResources().getDrawable(getResources().getIdentifier("anythink_cm_head", i.f7952c, com.anythink.expressad.foundation.b.a.b().a()));
+            Drawable drawable2 = getResources().getDrawable(getResources().getIdentifier("anythink_cm_head", i.f5112c, com.anythink.expressad.foundation.b.a.b().a()));
             this.E = drawable2;
             if (drawable2 != null) {
                 drawable2.setBounds(0, 0, drawable2.getIntrinsicWidth(), this.E.getIntrinsicHeight());
             }
-            this.F = getResources().getDrawable(getResources().getIdentifier("anythink_cm_tail", i.f7952c, com.anythink.expressad.foundation.b.a.b().a()));
-            this.G = getResources().getDrawable(getResources().getIdentifier("anythink_cm_end_animation", i.f7952c, com.anythink.expressad.foundation.b.a.b().a()));
+            this.F = getResources().getDrawable(getResources().getIdentifier("anythink_cm_tail", i.f5112c, com.anythink.expressad.foundation.b.a.b().a()));
+            this.G = getResources().getDrawable(getResources().getIdentifier("anythink_cm_end_animation", i.f5112c, com.anythink.expressad.foundation.b.a.b().a()));
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onLayout(boolean z, int i, int i2, int i3, int i4) {
+    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         super.onLayout(z, i, i2, i3, i4);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         super.onMeasure(i, i2);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onSizeChanged(int i, int i2, int i3, int i4) {
+    protected void onSizeChanged(int i, int i2, int i3, int i4) {
         super.onSizeChanged(i, i2, i3, i4);
         this.j = getMeasuredWidth();
     }
@@ -274,8 +271,8 @@ public class ProgressBar extends View implements a {
     }
 
     @Override // com.anythink.expressad.foundation.webview.a
-    public void setProgressBarListener(a.InterfaceC0149a interfaceC0149a) {
-        this.J = interfaceC0149a;
+    public void setProgressBarListener(a.InterfaceC0078a interfaceC0078a) {
+        this.J = interfaceC0078a;
     }
 
     @Override // com.anythink.expressad.foundation.webview.a
@@ -302,7 +299,7 @@ public class ProgressBar extends View implements a {
         }
     }
 
-    @Override // android.view.View
+    @Override // android.view.View, com.anythink.expressad.foundation.webview.a
     public void setVisibility(int i) {
         super.setVisibility(i);
     }

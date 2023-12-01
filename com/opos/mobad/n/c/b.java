@@ -17,11 +17,11 @@ import java.util.List;
 public class b extends FrameLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    private ViewPager f26597a;
+    private ViewPager f12909a;
     private TextView[] b;
 
     /* renamed from: c  reason: collision with root package name */
-    private ImageView[] f26598c;
+    private ImageView[] f12910c;
     private com.opos.mobad.c.b.c d;
     private boolean e;
     private int f;
@@ -32,16 +32,16 @@ public class b extends FrameLayout {
     public static class a extends PagerAdapter {
 
         /* renamed from: a  reason: collision with root package name */
-        private ImageView[] f26601a;
+        private ImageView[] f12913a;
 
         public a(ImageView[] imageViewArr) {
-            this.f26601a = imageViewArr;
+            this.f12913a = imageViewArr;
         }
 
         @Override // androidx.viewpager.widget.PagerAdapter
         public void destroyItem(ViewGroup viewGroup, int i, Object obj) {
             if (i >= 0) {
-                ImageView[] imageViewArr = this.f26601a;
+                ImageView[] imageViewArr = this.f12913a;
                 if (i < imageViewArr.length) {
                     viewGroup.removeView(imageViewArr[i]);
                 }
@@ -50,13 +50,13 @@ public class b extends FrameLayout {
 
         @Override // androidx.viewpager.widget.PagerAdapter
         public int getCount() {
-            return this.f26601a.length;
+            return this.f12913a.length;
         }
 
         @Override // androidx.viewpager.widget.PagerAdapter
         public Object instantiateItem(ViewGroup viewGroup, int i) {
             if (i >= 0) {
-                ImageView[] imageViewArr = this.f26601a;
+                ImageView[] imageViewArr = this.f12913a;
                 if (i < imageViewArr.length) {
                     ImageView imageView = imageViewArr[i];
                     viewGroup.addView(imageView);
@@ -82,31 +82,31 @@ public class b extends FrameLayout {
             @Override // java.lang.Runnable
             public void run() {
                 if (!b.this.e) {
-                    b.this.f26597a.setCurrentItem(b.this.f26597a.getCurrentItem() + 1);
+                    b.this.f12909a.setCurrentItem(b.this.f12909a.getCurrentItem() + 1);
                 }
                 b.this.d.a(b.this.f);
             }
         });
         this.b = new TextView[i];
-        this.f26598c = new ImageView[this.g + 2];
+        this.f12910c = new ImageView[this.g + 2];
         b(i);
     }
 
     private void b(int i) {
         ViewPager viewPager = new ViewPager(getContext());
-        this.f26597a = viewPager;
+        this.f12909a = viewPager;
         addView(viewPager, new FrameLayout.LayoutParams(-1, -1));
         int i2 = 0;
         while (true) {
             int i3 = i2;
             if (i3 >= i + 2) {
                 c(i);
-                this.f26597a.setAdapter(new a(this.f26598c));
-                this.f26597a.setCurrentItem(1, false);
-                this.f26597a.addOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: com.opos.mobad.n.c.b.2
+                this.f12909a.setAdapter(new a(this.f12910c));
+                this.f12909a.setCurrentItem(1, false);
+                this.f12909a.addOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: com.opos.mobad.n.c.b.2
 
                     /* renamed from: a  reason: collision with root package name */
-                    int f26600a = 0;
+                    int f12912a = 0;
 
                     private void a(int i4) {
                         int i5 = 0;
@@ -128,15 +128,15 @@ public class b extends FrameLayout {
                         if (i4 == 1 || i4 == 2) {
                             b.this.e = true;
                         } else if (i4 == 0) {
-                            int i6 = this.f26600a;
+                            int i6 = this.f12912a;
                             if (i6 != 0) {
                                 if (i6 == b.this.g + 1) {
-                                    viewPager2 = b.this.f26597a;
+                                    viewPager2 = b.this.f12909a;
                                     i5 = 1;
                                 }
                                 b.this.e = false;
                             }
-                            viewPager2 = b.this.f26597a;
+                            viewPager2 = b.this.f12909a;
                             i5 = b.this.g;
                             viewPager2.setCurrentItem(i5, false);
                             b.this.e = false;
@@ -160,7 +160,7 @@ public class b extends FrameLayout {
                             r4 = this;
                             r0 = r4
                             r1 = r5
-                            r0.f26600a = r1
+                            r0.f12912a = r1
                             java.lang.StringBuilder r0 = new java.lang.StringBuilder
                             r1 = r0
                             r1.<init>()
@@ -221,8 +221,8 @@ public class b extends FrameLayout {
                 });
                 return;
             }
-            this.f26598c[i3] = new ImageView(getContext());
-            this.f26598c[i3].setScaleType(ImageView.ScaleType.FIT_XY);
+            this.f12910c[i3] = new ImageView(getContext());
+            this.f12910c[i3].setScaleType(ImageView.ScaleType.FIT_XY);
             i2 = i3 + 1;
         }
     }
@@ -271,7 +271,7 @@ public class b extends FrameLayout {
         if (gVar == null) {
             return;
         }
-        ImageView[] imageViewArr = this.f26598c;
+        ImageView[] imageViewArr = this.f12910c;
         int length = imageViewArr.length;
         int i = 0;
         while (true) {
@@ -304,24 +304,23 @@ public class b extends FrameLayout {
             }
             Bitmap bitmap = list2.get(i3);
             if (bitmap != null) {
-                if (i3 == 0 && this.f26598c[this.g + 1].getDrawable() == null) {
-                    this.f26598c[this.g + 1].setImageBitmap(bitmap);
+                if (i3 == 0 && this.f12910c[this.g + 1].getDrawable() == null) {
+                    this.f12910c[this.g + 1].setImageBitmap(bitmap);
                 }
-                if (i3 == this.g && this.f26598c[0].getDrawable() == null) {
-                    this.f26598c[0].setImageBitmap(bitmap);
+                if (i3 == this.g && this.f12910c[0].getDrawable() == null) {
+                    this.f12910c[0].setImageBitmap(bitmap);
                 }
                 int i4 = i3 + 1;
-                if (this.f26598c[i4].getDrawable() == null) {
-                    this.f26598c[i4].setImageBitmap(bitmap);
+                if (this.f12910c[i4].getDrawable() == null) {
+                    this.f12910c[i4].setImageBitmap(bitmap);
                 }
             }
             i2 = i3 + 1;
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.d.a();
     }

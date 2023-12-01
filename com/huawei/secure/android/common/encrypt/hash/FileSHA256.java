@@ -15,10 +15,10 @@ import java.security.NoSuchAlgorithmException;
 public abstract class FileSHA256 {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final int f23065a = 8192;
+    private static final int f9457a = 8192;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f23066c = "FileSHA256";
+    private static final String f9458c = "FileSHA256";
     private static final String d = "";
     private static final String b = "SHA-256";
     private static final String[] e = {b, "SHA-384", "SHA-512"};
@@ -54,10 +54,10 @@ public abstract class FileSHA256 {
         MessageDigest messageDigest;
         boolean z;
         if (TextUtils.isEmpty(str) || !a(str)) {
-            b.b(f23066c, "algorithm is empty or not safe");
+            b.b(f9458c, "algorithm is empty or not safe");
             return "";
         } else if (!a(file)) {
-            b.b(f23066c, "file is not valid");
+            b.b(f9458c, "file is not valid");
             return "";
         } else {
             try {
@@ -96,7 +96,7 @@ public abstract class FileSHA256 {
                     return str2;
                 } catch (IOException e4) {
                     e = e4;
-                    String str3 = f23066c;
+                    String str3 = f9458c;
                     FileInputStream fileInputStream2 = fileInputStream;
                     StringBuilder sb = new StringBuilder();
                     FileInputStream fileInputStream3 = fileInputStream;
@@ -109,7 +109,7 @@ public abstract class FileSHA256 {
                     return null;
                 } catch (NoSuchAlgorithmException e5) {
                     e = e5;
-                    String str4 = f23066c;
+                    String str4 = f9458c;
                     FileInputStream fileInputStream6 = fileInputStream;
                     StringBuilder sb2 = new StringBuilder();
                     FileInputStream fileInputStream7 = fileInputStream;
@@ -151,7 +151,7 @@ public abstract class FileSHA256 {
                     }
                 }
             } catch (IOException | NoSuchAlgorithmException e2) {
-                b.b(f23066c, "inputstraem exception");
+                b.b(f9458c, "inputstraem exception");
                 a.a(inputStream);
                 return "";
             }
@@ -162,7 +162,7 @@ public abstract class FileSHA256 {
 
     public static boolean validateFileSHA(File file, String str, String str2) {
         if (TextUtils.isEmpty(str) || !a(str2)) {
-            b.b(f23066c, "hash value is null || algorithm is illegal");
+            b.b(f9458c, "hash value is null || algorithm is illegal");
             return false;
         }
         return str.equals(fileSHAEncrypt(file, str2));
@@ -177,7 +177,7 @@ public abstract class FileSHA256 {
 
     public static boolean validateInputStreamSHA(InputStream inputStream, String str, String str2) {
         if (TextUtils.isEmpty(str) || !a(str2)) {
-            b.b(f23066c, "hash value is null || algorithm is illegal");
+            b.b(f9458c, "hash value is null || algorithm is illegal");
             return false;
         }
         return str.equals(inputStreamSHAEncrypt(inputStream, str2));

@@ -14,33 +14,33 @@ import java.util.Map;
 public abstract class e extends h {
 
     /* renamed from: a  reason: collision with root package name */
-    private final SparseArray<Map<m, b>> f25429a = new SparseArray<>();
+    private final SparseArray<Map<m, b>> f11741a = new SparseArray<>();
     private final SparseBooleanArray b = new SparseBooleanArray();
 
     /* renamed from: c  reason: collision with root package name */
-    private int f25430c = 0;
+    private int f11742c = 0;
     private a d;
 
     /* loaded from: source-8303388-dex2jar.jar:com/opos/exoplayer/core/g/e$a.class */
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public final int f25431a;
+        public final int f11743a;
         private final int[] b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final m[] f25432c;
+        private final m[] f11744c;
         private final int[] d;
         private final int[][][] e;
         private final m f;
 
         a(int[] iArr, m[] mVarArr, int[] iArr2, int[][][] iArr3, m mVar) {
             this.b = iArr;
-            this.f25432c = mVarArr;
+            this.f11744c = mVarArr;
             this.e = iArr3;
             this.d = iArr2;
             this.f = mVar;
-            this.f25431a = mVarArr.length;
+            this.f11743a = mVarArr.length;
         }
     }
 
@@ -48,14 +48,14 @@ public abstract class e extends h {
     public static final class b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final f.a f25433a;
+        public final f.a f11745a;
         public final int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final int[] f25434c;
+        public final int[] f11746c;
 
         public f a(m mVar) {
-            return this.f25433a.b(mVar.a(this.b), this.f25434c);
+            return this.f11745a.b(mVar.a(this.b), this.f11746c);
         }
     }
 
@@ -65,7 +65,7 @@ public abstract class e extends h {
         for (int i2 = 0; i2 < tVarArr.length; i2++) {
             t tVar = tVarArr[i2];
             int i3 = 0;
-            while (i3 < lVar.f25309a) {
+            while (i3 < lVar.f11621a) {
                 int a2 = tVar.a(lVar.a(i3)) & 7;
                 int i4 = i;
                 if (a2 > i) {
@@ -120,11 +120,11 @@ public abstract class e extends h {
     }
 
     private static int[] a(t tVar, l lVar) {
-        int[] iArr = new int[lVar.f25309a];
+        int[] iArr = new int[lVar.f11621a];
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= lVar.f25309a) {
+            if (i2 >= lVar.f11621a) {
                 return iArr;
             }
             iArr[i2] = tVar.a(lVar.a(i2));
@@ -187,7 +187,7 @@ public abstract class e extends h {
             }
             l a3 = mVar.a(i4);
             int a4 = a(tVarArr, a3);
-            int[] a5 = a4 == tVarArr.length ? new int[a3.f25309a] : a(tVarArr[a4], a3);
+            int[] a5 = a4 == tVarArr.length ? new int[a3.f11621a] : a(tVarArr[a4], a3);
             int i5 = iArr[a4];
             lVarArr[a4][i5] = a3;
             r0[a4][i5] = a5;
@@ -222,7 +222,7 @@ public abstract class e extends h {
             } else {
                 m mVar3 = mVarArr[i10];
                 if (a(i10, mVar3)) {
-                    b bVar = this.f25429a.get(i10).get(mVar3);
+                    b bVar = this.f11741a.get(i10).get(mVar3);
                     if (bVar != null) {
                         fVar = bVar.a(mVar3);
                     }
@@ -238,10 +238,10 @@ public abstract class e extends h {
         while (true) {
             int i12 = i11;
             if (i12 >= tVarArr.length) {
-                a(tVarArr, mVarArr, r0, uVarArr, a6, this.f25430c);
+                a(tVarArr, mVarArr, r0, uVarArr, a6, this.f11742c);
                 return new i(mVar, a7, new g(a6), aVar, uVarArr);
             }
-            uVarArr[i12] = a7[i12] ? u.f25558a : null;
+            uVarArr[i12] = a7[i12] ? u.f11870a : null;
             i11 = i12 + 1;
         }
     }
@@ -252,7 +252,7 @@ public abstract class e extends h {
     }
 
     public final boolean a(int i, m mVar) {
-        Map<m, b> map = this.f25429a.get(i);
+        Map<m, b> map = this.f11741a.get(i);
         return map != null && map.containsKey(mVar);
     }
 

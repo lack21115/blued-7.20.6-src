@@ -1,7 +1,6 @@
 package android.os;
 
 import android.os.Parcelable;
-import com.alipay.sdk.util.i;
 
 /* loaded from: source-9557208-dex2jar.jar:android/os/PatternMatcher.class */
 public class PatternMatcher implements Parcelable {
@@ -177,7 +176,7 @@ public class PatternMatcher implements Parcelable {
                 str = "GLOB: ";
                 break;
         }
-        return "PatternMatcher{" + str + this.mPattern + i.d;
+        return "PatternMatcher{" + str + this.mPattern + "}";
     }
 
     @Override // android.os.Parcelable

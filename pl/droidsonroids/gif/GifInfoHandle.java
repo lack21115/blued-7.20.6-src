@@ -5,6 +5,7 @@ import android.content.res.AssetFileDescriptor;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.view.Surface;
+import com.anythink.core.common.b.g;
 import java.io.FileDescriptor;
 import java.io.IOException;
 import java.io.InputStream;
@@ -13,9 +14,7 @@ import java.nio.ByteBuffer;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-3503164-dex2jar.jar:pl/droidsonroids/gif/GifInfoHandle.class */
 public final class GifInfoHandle {
-
-    /* renamed from: a  reason: collision with root package name */
-    private volatile long f44140a;
+    private volatile long a;
 
     static {
         LibraryLoader.a(null);
@@ -28,7 +27,7 @@ public final class GifInfoHandle {
     /* JADX INFO: Access modifiers changed from: package-private */
     public GifInfoHandle(AssetFileDescriptor assetFileDescriptor) throws IOException {
         try {
-            this.f44140a = openFd(assetFileDescriptor.getFileDescriptor(), assetFileDescriptor.getStartOffset());
+            this.a = openFd(assetFileDescriptor.getFileDescriptor(), assetFileDescriptor.getStartOffset());
         } finally {
             try {
                 assetFileDescriptor.close();
@@ -39,7 +38,7 @@ public final class GifInfoHandle {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public GifInfoHandle(FileDescriptor fileDescriptor) throws GifIOException {
-        this.f44140a = openFd(fileDescriptor, 0L);
+        this.a = openFd(fileDescriptor, 0L);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -47,27 +46,27 @@ public final class GifInfoHandle {
         if (!inputStream.markSupported()) {
             throw new IllegalArgumentException("InputStream does not support marking");
         }
-        this.f44140a = openStream(inputStream);
+        this.a = openStream(inputStream);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public GifInfoHandle(String str) throws GifIOException {
-        this.f44140a = openFile(str);
+        this.a = openFile(str);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public GifInfoHandle(ByteBuffer byteBuffer) throws GifIOException {
-        this.f44140a = openDirectByteBuffer(byteBuffer);
+        this.a = openDirectByteBuffer(byteBuffer);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public GifInfoHandle(byte[] bArr) throws GifIOException {
-        this.f44140a = openByteArray(bArr);
+        this.a = openByteArray(bArr);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static GifInfoHandle a(ContentResolver contentResolver, Uri uri) throws IOException {
-        return ContentResolver.SCHEME_FILE.equals(uri.getScheme()) ? new GifInfoHandle(uri.getPath()) : new GifInfoHandle(contentResolver.openAssetFileDescriptor(uri, "r"));
+        return "file".equals(uri.getScheme()) ? new GifInfoHandle(uri.getPath()) : new GifInfoHandle(contentResolver.openAssetFileDescriptor(uri, g.o.o));
     }
 
     private static native void bindSurface(long j, Surface surface, long[] jArr);
@@ -142,9 +141,9 @@ public final class GifInfoHandle {
 
     private static native void seekToTime(long j, int i, Bitmap bitmap);
 
-    private static native void setLoopCount(long j, char c2);
+    private static native void setLoopCount(long j, char c);
 
-    private static native void setOptions(long j, char c2, boolean z);
+    private static native void setOptions(long j, char c, boolean z);
 
     private static native void setSpeedFactor(long j, float f);
 
@@ -156,7 +155,7 @@ public final class GifInfoHandle {
     public int a(long[] jArr, Bitmap bitmap) {
         int restoreSavedState;
         synchronized (this) {
-            restoreSavedState = restoreSavedState(this.f44140a, jArr, bitmap);
+            restoreSavedState = restoreSavedState(this.a, jArr, bitmap);
         }
         return restoreSavedState;
     }
@@ -165,7 +164,7 @@ public final class GifInfoHandle {
     public long a(Bitmap bitmap) {
         long renderFrame;
         synchronized (this) {
-            renderFrame = renderFrame(this.f44140a, bitmap);
+            renderFrame = renderFrame(this.a, bitmap);
         }
         return renderFrame;
     }
@@ -173,14 +172,14 @@ public final class GifInfoHandle {
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a() {
         synchronized (this) {
-            free(this.f44140a);
-            this.f44140a = 0L;
+            free(this.a);
+            this.a = 0L;
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public void a(char c2, boolean z) {
-        setOptions(this.f44140a, c2, z);
+    public void a(char c, boolean z) {
+        setOptions(this.a, c, z);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -193,27 +192,27 @@ public final class GifInfoHandle {
             f2 = 4.656613E-10f;
         }
         synchronized (this) {
-            setSpeedFactor(this.f44140a, f2);
+            setSpeedFactor(this.a, f2);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a(int i, Bitmap bitmap) {
         synchronized (this) {
-            seekToTime(this.f44140a, i, bitmap);
+            seekToTime(this.a, i, bitmap);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a(Surface surface, long[] jArr) {
-        bindSurface(this.f44140a, surface, jArr);
+        bindSurface(this.a, surface, jArr);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public long b() {
         long restoreRemainder;
         synchronized (this) {
-            restoreRemainder = restoreRemainder(this.f44140a);
+            restoreRemainder = restoreRemainder(this.a);
         }
         return restoreRemainder;
     }
@@ -221,7 +220,7 @@ public final class GifInfoHandle {
     /* JADX INFO: Access modifiers changed from: package-private */
     public void b(int i, Bitmap bitmap) {
         synchronized (this) {
-            seekToFrame(this.f44140a, i, bitmap);
+            seekToFrame(this.a, i, bitmap);
         }
     }
 
@@ -229,7 +228,7 @@ public final class GifInfoHandle {
     public boolean c() {
         boolean reset;
         synchronized (this) {
-            reset = reset(this.f44140a);
+            reset = reset(this.a);
         }
         return reset;
     }
@@ -237,7 +236,7 @@ public final class GifInfoHandle {
     /* JADX INFO: Access modifiers changed from: package-private */
     public void d() {
         synchronized (this) {
-            saveRemainder(this.f44140a);
+            saveRemainder(this.a);
         }
     }
 
@@ -245,7 +244,7 @@ public final class GifInfoHandle {
     public int e() {
         int loopCount;
         synchronized (this) {
-            loopCount = getLoopCount(this.f44140a);
+            loopCount = getLoopCount(this.a);
         }
         return loopCount;
     }
@@ -254,7 +253,7 @@ public final class GifInfoHandle {
     public int f() {
         int nativeErrorCode;
         synchronized (this) {
-            nativeErrorCode = getNativeErrorCode(this.f44140a);
+            nativeErrorCode = getNativeErrorCode(this.a);
         }
         return nativeErrorCode;
     }
@@ -271,7 +270,7 @@ public final class GifInfoHandle {
     public int g() {
         int duration;
         synchronized (this) {
-            duration = getDuration(this.f44140a);
+            duration = getDuration(this.a);
         }
         return duration;
     }
@@ -280,7 +279,7 @@ public final class GifInfoHandle {
     public int h() {
         int currentPosition;
         synchronized (this) {
-            currentPosition = getCurrentPosition(this.f44140a);
+            currentPosition = getCurrentPosition(this.a);
         }
         return currentPosition;
     }
@@ -289,7 +288,7 @@ public final class GifInfoHandle {
     public int i() {
         int currentFrameIndex;
         synchronized (this) {
-            currentFrameIndex = getCurrentFrameIndex(this.f44140a);
+            currentFrameIndex = getCurrentFrameIndex(this.a);
         }
         return currentFrameIndex;
     }
@@ -298,7 +297,7 @@ public final class GifInfoHandle {
     public int j() {
         int currentLoop;
         synchronized (this) {
-            currentLoop = getCurrentLoop(this.f44140a);
+            currentLoop = getCurrentLoop(this.a);
         }
         return currentLoop;
     }
@@ -307,7 +306,7 @@ public final class GifInfoHandle {
     public boolean k() {
         boolean z;
         synchronized (this) {
-            z = this.f44140a == 0;
+            z = this.a == 0;
         }
         return z;
     }
@@ -315,7 +314,7 @@ public final class GifInfoHandle {
     /* JADX INFO: Access modifiers changed from: package-private */
     public void l() {
         synchronized (this) {
-            postUnbindSurface(this.f44140a);
+            postUnbindSurface(this.a);
         }
     }
 
@@ -323,7 +322,7 @@ public final class GifInfoHandle {
     public long[] m() {
         long[] savedState;
         synchronized (this) {
-            savedState = getSavedState(this.f44140a);
+            savedState = getSavedState(this.a);
         }
         return savedState;
     }
@@ -332,7 +331,7 @@ public final class GifInfoHandle {
     public int n() {
         int width;
         synchronized (this) {
-            width = getWidth(this.f44140a);
+            width = getWidth(this.a);
         }
         return width;
     }
@@ -341,7 +340,7 @@ public final class GifInfoHandle {
     public int o() {
         int height;
         synchronized (this) {
-            height = getHeight(this.f44140a);
+            height = getHeight(this.a);
         }
         return height;
     }
@@ -350,7 +349,7 @@ public final class GifInfoHandle {
     public int p() {
         int numberOfFrames;
         synchronized (this) {
-            numberOfFrames = getNumberOfFrames(this.f44140a);
+            numberOfFrames = getNumberOfFrames(this.a);
         }
         return numberOfFrames;
     }
@@ -359,7 +358,7 @@ public final class GifInfoHandle {
     public boolean q() {
         boolean isOpaque;
         synchronized (this) {
-            isOpaque = isOpaque(this.f44140a);
+            isOpaque = isOpaque(this.a);
         }
         return isOpaque;
     }

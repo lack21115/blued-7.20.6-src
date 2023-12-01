@@ -8,7 +8,7 @@ import java.nio.ByteBuffer;
 public class bt {
 
     /* renamed from: a  reason: collision with root package name */
-    private final cp f40671a;
+    private final cp f26980a;
     private final dc b;
 
     public bt() {
@@ -18,7 +18,7 @@ public class bt {
     public bt(cr crVar) {
         dc dcVar = new dc();
         this.b = dcVar;
-        this.f40671a = crVar.a(dcVar);
+        this.f26980a = crVar.a(dcVar);
     }
 
     /* JADX WARN: Finally extract failed */
@@ -36,43 +36,43 @@ public class bt {
                                         if (b != 100) {
                                             if (b != 10) {
                                                 if (b == 11 && j.b == 11) {
-                                                    str = this.f40671a.z();
+                                                    str = this.f26980a.z();
                                                 }
                                             } else if (j.b == 10) {
-                                                str = Long.valueOf(this.f40671a.x());
+                                                str = Long.valueOf(this.f26980a.x());
                                             }
                                         } else if (j.b == 11) {
-                                            str = this.f40671a.A();
+                                            str = this.f26980a.A();
                                         }
                                     } else if (j.b == 8) {
-                                        str = Integer.valueOf(this.f40671a.w());
+                                        str = Integer.valueOf(this.f26980a.w());
                                     }
                                 } else if (j.b == 6) {
-                                    str = Short.valueOf(this.f40671a.v());
+                                    str = Short.valueOf(this.f26980a.v());
                                 }
                             } else if (j.b == 4) {
-                                str = Double.valueOf(this.f40671a.y());
+                                str = Double.valueOf(this.f26980a.y());
                             }
                         } else if (j.b == 3) {
-                            str = Byte.valueOf(this.f40671a.u());
+                            str = Byte.valueOf(this.f26980a.u());
                         }
                     } else if (j.b == 2) {
-                        str = Boolean.valueOf(this.f40671a.t());
+                        str = Boolean.valueOf(this.f26980a.t());
                     }
                     this.b.e();
-                    this.f40671a.B();
+                    this.f26980a.B();
                     return str;
                 }
                 str = null;
                 this.b.e();
-                this.f40671a.B();
+                this.f26980a.B();
                 return str;
             } catch (Exception e) {
                 throw new bw(e);
             }
         } catch (Throwable th) {
             this.b.e();
-            this.f40671a.B();
+            this.f26980a.B();
             throw th;
         }
     }
@@ -92,24 +92,24 @@ public class bt {
             bxVarArr2[i3] = bxVarArr[i2];
             i = i3;
         }
-        this.f40671a.j();
+        this.f26980a.j();
         ck ckVar = null;
         int i4 = 0;
         while (i4 < length) {
-            ck l = this.f40671a.l();
-            if (l.b == 0 || l.f40700c > bxVarArr2[i4].a()) {
+            ck l = this.f26980a.l();
+            if (l.b == 0 || l.f27009c > bxVarArr2[i4].a()) {
                 return null;
             }
-            if (l.f40700c != bxVarArr2[i4].a()) {
-                cs.a(this.f40671a, l.b);
-                this.f40671a.m();
+            if (l.f27009c != bxVarArr2[i4].a()) {
+                cs.a(this.f26980a, l.b);
+                this.f26980a.m();
                 ckVar = l;
             } else {
                 int i5 = i4 + 1;
                 i4 = i5;
                 ckVar = l;
                 if (i5 < length) {
-                    this.f40671a.j();
+                    this.f26980a.j();
                     i4 = i5;
                     ckVar = l;
                 }
@@ -130,12 +130,12 @@ public class bt {
         try {
             try {
                 a(bqVar, str.getBytes(str2));
-                this.f40671a.B();
+                this.f26980a.B();
             } catch (UnsupportedEncodingException e) {
                 throw new bw("JVM DOES NOT SUPPORT ENCODING: " + str2);
             }
         } catch (Throwable th) {
-            this.f40671a.B();
+            this.f26980a.B();
             throw th;
         }
     }
@@ -143,10 +143,10 @@ public class bt {
     public void a(bq bqVar, byte[] bArr) throws bw {
         try {
             this.b.a(bArr);
-            bqVar.read(this.f40671a);
+            bqVar.read(this.f26980a);
         } finally {
             this.b.e();
-            this.f40671a.B();
+            this.f26980a.B();
         }
     }
 
@@ -154,14 +154,14 @@ public class bt {
         try {
             try {
                 if (j(bArr, bxVar, bxVarArr) != null) {
-                    bqVar.read(this.f40671a);
+                    bqVar.read(this.f26980a);
                 }
             } catch (Exception e) {
                 throw new bw(e);
             }
         } finally {
             this.b.e();
-            this.f40671a.B();
+            this.f26980a.B();
         }
     }
 
@@ -199,20 +199,20 @@ public class bt {
         try {
             try {
                 if (j(bArr, bxVar, bxVarArr) != null) {
-                    this.f40671a.j();
-                    sh = Short.valueOf(this.f40671a.l().f40700c);
+                    this.f26980a.j();
+                    sh = Short.valueOf(this.f26980a.l().f27009c);
                 } else {
                     sh = null;
                 }
                 this.b.e();
-                this.f40671a.B();
+                this.f26980a.B();
                 return sh;
             } catch (Exception e) {
                 throw new bw(e);
             }
         } catch (Throwable th) {
             this.b.e();
-            this.f40671a.B();
+            this.f26980a.B();
             throw th;
         }
     }

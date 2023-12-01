@@ -12,13 +12,13 @@ import com.soft.blued.ui.group.model.BluedGroupLists;
 public class BluedShareUtils extends ShareUtils {
 
     /* renamed from: a  reason: collision with root package name */
-    private static BluedShareUtils f33694a;
+    private static BluedShareUtils f20003a;
 
     public static BluedShareUtils b() {
-        if (f33694a == null) {
-            f33694a = new BluedShareUtils();
+        if (f20003a == null) {
+            f20003a = new BluedShareUtils();
         }
-        return f33694a;
+        return f20003a;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -36,7 +36,7 @@ public class BluedShareUtils extends ShareUtils {
         shareEntity.shareBackLister = null;
         shareEntity.b = -1;
         shareEntity.shareFrom = 2;
-        shareEntity.f9215a = bluedGroupLists;
+        shareEntity.f6375a = bluedGroupLists;
         b(activity, shareEntity);
     }
 }

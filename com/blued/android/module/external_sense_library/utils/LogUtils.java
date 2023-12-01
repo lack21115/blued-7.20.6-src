@@ -6,13 +6,9 @@ import java.util.regex.Pattern;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/external_sense_library/utils/LogUtils.class */
 public class LogUtils {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final Pattern f11316a = Pattern.compile("GMT([-+]\\d{4})$");
+    private static final Pattern a = Pattern.compile("GMT([-+]\\d{4})$");
     private static Boolean b = null;
-
-    /* renamed from: c  reason: collision with root package name */
-    private static boolean f11317c = true;
+    private static boolean c = true;
 
     public static int a(String str, String str2, Object... objArr) {
         if (a(str, 2)) {

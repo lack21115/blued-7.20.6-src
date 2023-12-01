@@ -19,13 +19,9 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/shortvideo/adapter/ConfigAdapter.class */
 public class ConfigAdapter extends RecyclerView.Adapter<MyViewHolder> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final String f15687a = ConfigAdapter.class.getSimpleName();
+    private static final String a = ConfigAdapter.class.getSimpleName();
     private ConfigData b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private CommonModel f15688c;
+    private CommonModel c;
     private int d;
     private int e;
     private int f;
@@ -34,16 +30,14 @@ public class ConfigAdapter extends RecyclerView.Adapter<MyViewHolder> {
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/shortvideo/adapter/ConfigAdapter$MyViewHolder.class */
     public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private ImageView b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private TextView f15690c;
+        private TextView c;
         private int d;
 
         public MyViewHolder(View view) {
             super(view);
             view.setOnClickListener(this);
             this.b = (ImageView) view.findViewById(R.id.stv_config_item_image);
-            this.f15690c = (TextView) view.findViewById(R.id.stv_config_item_text);
+            this.c = (TextView) view.findViewById(R.id.stv_config_item_text);
         }
 
         public void a(int i, int i2, int i3, float f, boolean z) {
@@ -55,15 +49,15 @@ public class ConfigAdapter extends RecyclerView.Adapter<MyViewHolder> {
             this.b.setActivated(z);
             int i4 = this.d;
             if (i4 == 1) {
-                TextView textView = this.f15690c;
+                TextView textView = this.c;
                 if (!z) {
                     i3 = R.string.stv_config_close_beauty_name;
                 }
                 textView.setText(i3);
             } else if (i4 != 2) {
-                this.f15690c.setText(i3);
+                this.c.setText(i3);
             } else {
-                this.f15690c.setText(i3);
+                this.c.setText(i3);
                 if (i3 != ConfigAdapter.this.b.getDefaultFilterNameId()) {
                     StvViewUtils.g(this.itemView.getContext(), this.itemView);
                 }
@@ -82,9 +76,9 @@ public class ConfigAdapter extends RecyclerView.Adapter<MyViewHolder> {
             } else if (i == 1) {
                 boolean z = !this.b.isActivated();
                 if (z) {
-                    this.f15690c.setText(R.string.stv_config_open_beauty_name);
+                    this.c.setText(R.string.stv_config_open_beauty_name);
                 } else {
-                    this.f15690c.setText(R.string.stv_config_close_beauty_name);
+                    this.c.setText(R.string.stv_config_close_beauty_name);
                 }
                 this.b.setActivated(z);
                 ObserverMgr.a().a(EventType.VALUE.CONFIG_BEAUTY);
@@ -105,7 +99,7 @@ public class ConfigAdapter extends RecyclerView.Adapter<MyViewHolder> {
     }
 
     public ConfigAdapter(CommonModel commonModel) {
-        this.f15688c = commonModel;
+        this.c = commonModel;
         this.b = new ConfigData(commonModel);
     }
 
@@ -117,7 +111,6 @@ public class ConfigAdapter extends RecyclerView.Adapter<MyViewHolder> {
         return -1;
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     /* renamed from: a */
     public MyViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         return new MyViewHolder(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.config_view_item, viewGroup, false));
@@ -147,22 +140,20 @@ public class ConfigAdapter extends RecyclerView.Adapter<MyViewHolder> {
         }
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     /* renamed from: a */
     public void onBindViewHolder(MyViewHolder myViewHolder, int i) {
         if (this.b.ids.size() - 1 >= i) {
             myViewHolder.a(this.b.ids.get(i).intValue(), this.b.iconids.get(i).intValue(), this.b.nameids.get(i).intValue(), this.b.alphas.get(i).floatValue(), this.b.activateds.get(i).booleanValue());
             return;
         }
-        StvLogUtils.a(f15687a + "ConfigAdapter onBindViewHolder() (mData.ids.length-1)<position", new Object[0]);
+        StvLogUtils.a(a + "ConfigAdapter onBindViewHolder() (mData.ids.length-1)<position", new Object[0]);
     }
 
     public void b() {
-        FilterItem selectedFilter = (this.e == 4 && this.f == 3) ? this.f15688c.getSelectedFilter() : this.f15688c.getSelectedFilter();
-        notifyItemChanged((selectedFilter == null || selectedFilter.b() == null) ? this.b.setFilter(R.string.stv_config_filter_name, R.drawable.config_filter_icon) : this.b.setFilter(selectedFilter.b, selectedFilter.f15755c));
+        FilterItem selectedFilter = (this.e == 4 && this.f == 3) ? this.c.getSelectedFilter() : this.c.getSelectedFilter();
+        notifyItemChanged((selectedFilter == null || selectedFilter.b() == null) ? this.b.setFilter(R.string.stv_config_filter_name, R.drawable.config_filter_icon) : this.b.setFilter(selectedFilter.b, selectedFilter.c));
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     public int getItemCount() {
         ConfigData configData = this.b;
         if (configData != null) {

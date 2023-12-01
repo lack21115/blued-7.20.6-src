@@ -5,16 +5,16 @@ package com.tencent.liteav.videoconsumer.renderer;
 public final /* synthetic */ class d implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final a f36818a;
+    private final a f23127a;
     private final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final int f36819c;
+    private final int f23128c;
 
     private d(a aVar, int i, int i2) {
-        this.f36818a = aVar;
+        this.f23127a = aVar;
         this.b = i;
-        this.f36819c = i2;
+        this.f23128c = i2;
     }
 
     public static Runnable a(a aVar, int i, int i2) {
@@ -23,13 +23,13 @@ public final /* synthetic */ class d implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        a aVar = this.f36818a;
+        a aVar = this.f23127a;
         int i = this.b;
-        int i2 = this.f36819c;
-        aVar.d.f36340a = i;
+        int i2 = this.f23128c;
+        aVar.d.f22649a = i;
         aVar.d.b = i2;
-        if (aVar.f36813a != null) {
-            aVar.f36813a.a(aVar.b, aVar.d.f36340a, aVar.d.b, false);
+        if (aVar.f23122a != null) {
+            aVar.f23122a.a(aVar.b, aVar.d.f22649a, aVar.d.b, false);
         }
     }
 }

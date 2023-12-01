@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import androidx.fragment.app.FragmentManager;
+import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.module.common.utils.ImgURLMap;
@@ -20,9 +21,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYConfessedRankListDialog.class */
 public final class YYConfessedRankListDialog extends BaseFullScreenDialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    private DialogConfessedRankBinding f18102a;
+    private DialogConfessedRankBinding a;
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(View view) {
@@ -58,7 +57,7 @@ public final class YYConfessedRankListDialog extends BaseFullScreenDialog {
     }
 
     private final DialogConfessedRankBinding f() {
-        DialogConfessedRankBinding dialogConfessedRankBinding = this.f18102a;
+        DialogConfessedRankBinding dialogConfessedRankBinding = this.a;
         Intrinsics.a(dialogConfessedRankBinding);
         return dialogConfessedRankBinding;
     }
@@ -66,21 +65,18 @@ public final class YYConfessedRankListDialog extends BaseFullScreenDialog {
     private final void g() {
         FragmentManager childFragmentManager = getChildFragmentManager();
         Intrinsics.c(childFragmentManager, "childFragmentManager");
-        YYConfessedRankAdapter yYConfessedRankAdapter = new YYConfessedRankAdapter(childFragmentManager);
-        ImageLoader.a(a(), ImgURLMap.f10885a.a("yy_confessed_rank_list_url_bg")).a(f().e);
-        ImageLoader.a(a(), ImgURLMap.f10885a.a("yy_confessed_rank_list_url_top_bg")).a(f().g);
+        PagerAdapter yYConfessedRankAdapter = new YYConfessedRankAdapter(childFragmentManager);
+        ImageLoader.a(a(), ImgURLMap.a.a("yy_confessed_rank_list_url_bg")).a(f().e);
+        ImageLoader.a(a(), ImgURLMap.a.a("yy_confessed_rank_list_url_top_bg")).a(f().g);
         yYConfessedRankAdapter.a(1);
         f().k.setAdapter(yYConfessedRankAdapter);
         f().k.addOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: com.blued.android.module.yy_china.view.YYConfessedRankListDialog$initView$1
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageScrollStateChanged(int i) {
             }
 
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageScrolled(int i, float f, int i2) {
             }
 
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageSelected(int i) {
                 YYConfessedRankListDialog.this.a(i == 0);
             }
@@ -115,7 +111,7 @@ public final class YYConfessedRankListDialog extends BaseFullScreenDialog {
                 YYConfessedRankListDialog.d(YYConfessedRankListDialog.this, view);
             }
         });
-        f().f16311a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYConfessedRankListDialog$2xvOSEvmVG3SJ0iNdnn1Zv-VhI0
+        f().a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYConfessedRankListDialog$2xvOSEvmVG3SJ0iNdnn1Zv-VhI0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 YYConfessedRankListDialog.b(view);
@@ -129,20 +125,20 @@ public final class YYConfessedRankListDialog extends BaseFullScreenDialog {
             f().j.setTextColor(getResources().getColor(R.color.white));
             f().h.setVisibility(0);
             f().i.setTextColor(getResources().getColor(R.color.white_alpha70));
-            f().f16312c.setVisibility(8);
+            f().c.setVisibility(8);
             return;
         }
         f().j.setTextColor(getResources().getColor(R.color.white_alpha70));
         f().h.setVisibility(8);
         f().i.setTextColor(getResources().getColor(R.color.white));
-        f().f16312c.setVisibility(0);
+        f().c.setVisibility(0);
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
         View inflate = LayoutInflater.from(getContext()).inflate(R.layout.dialog_confessed_rank, (ViewGroup) null);
-        this.f18102a = DialogConfessedRankBinding.a(inflate);
+        this.a = DialogConfessedRankBinding.a(inflate);
         g();
         return inflate;
     }

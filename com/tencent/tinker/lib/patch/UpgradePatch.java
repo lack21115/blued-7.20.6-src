@@ -2,7 +2,6 @@ package com.tencent.tinker.lib.patch;
 
 import android.content.Context;
 import android.os.Build;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.tinker.lib.service.PatchResult;
 import com.tencent.tinker.lib.tinker.Tinker;
 import com.tencent.tinker.lib.util.UpgradePatchRetry;
@@ -76,9 +75,9 @@ public class UpgradePatch extends AbstractPatch {
                 }
                 sharePatchInfo = new SharePatchInfo(readAndCheckPropertyWithLock.oldVersion, md5, z, false, Build.FINGERPRINT, equals ? ShareConstants.CHANING_DEX_OPTIMIZE_PATH : readAndCheckPropertyWithLock.oatDir, false);
             }
-            String str3 = absolutePath + BridgeUtil.SPLIT_MARK + SharePatchFileUtil.getPatchVersionDirectory(md5);
+            String str3 = absolutePath + "/" + SharePatchFileUtil.getPatchVersionDirectory(md5);
             ShareTinkerLog.i(TAG, "UpgradePatch tryPatch:patchVersionDirectory:%s", str3);
-            File file2 = new File(str3 + BridgeUtil.SPLIT_MARK + SharePatchFileUtil.getPatchVersionFile(md5));
+            File file2 = new File(str3 + "/" + SharePatchFileUtil.getPatchVersionFile(md5));
             try {
                 if (!md5.equals(SharePatchFileUtil.getMD5(file2))) {
                     SharePatchFileUtil.copyFileUsingStream(file, file2);

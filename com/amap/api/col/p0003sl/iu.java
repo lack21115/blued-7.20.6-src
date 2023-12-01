@@ -10,13 +10,9 @@ import java.util.concurrent.RejectedExecutionException;
 /* renamed from: com.amap.api.col.3sl.iu  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/iu.class */
 public final class iu {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final String f5181a = "/a/";
+    public static final String a = "/a/";
     static final String b = "b";
-
-    /* renamed from: c  reason: collision with root package name */
-    static final String f5182c = "c";
+    static final String c = "c";
     static final String d = "d";
     public static String e = "s";
     public static final String f = "g";
@@ -56,11 +52,11 @@ public final class iu {
                 @Override // com.amap.api.col.p0003sl.lc
                 public final void runTask() {
                     try {
-                        ix.b(Context.this);
-                        ix.d(Context.this);
-                        ix.c(Context.this);
-                        kk.a(Context.this);
-                        ki.a(Context.this);
+                        ix.b(context);
+                        ix.d(context);
+                        ix.c(context);
+                        kk.a(context);
+                        ki.a(context);
                     } catch (RejectedExecutionException e2) {
                     } catch (Throwable th) {
                         iw.c(th, "Lg", "proL");
@@ -248,6 +244,6 @@ public final class iu {
     }
 
     public static String c(Context context, String str) {
-        return context.getFilesDir().getAbsolutePath() + f5181a + str;
+        return context.getFilesDir().getAbsolutePath() + a + str;
     }
 }

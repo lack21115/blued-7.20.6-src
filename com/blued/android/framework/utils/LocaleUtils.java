@@ -7,23 +7,17 @@ import android.os.Build;
 import android.os.LocaleList;
 import android.text.TextUtils;
 import android.util.Log;
-import com.anythink.expressad.video.dynview.a.a;
+import com.android.internal.content.NativeLibraryHelper;
 import com.blued.android.core.AppInfo;
 import com.google.gson.Gson;
-import com.igexin.push.f.o;
-import com.meizu.cloud.pushsdk.notification.model.AdvanceSetting;
 import java.util.Locale;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/utils/LocaleUtils.class */
 public class LocaleUtils {
     private static Locale b;
     private static LocaleList d;
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final String f10092a = LocaleUtils.class.getSimpleName();
-
-    /* renamed from: c  reason: collision with root package name */
-    private static Locale f10093c = Locale.SIMPLIFIED_CHINESE;
+    private static final String a = LocaleUtils.class.getSimpleName();
+    private static Locale c = Locale.SIMPLIFIED_CHINESE;
 
     private static String a(Locale locale) {
         Gson f = AppInfo.f();
@@ -52,7 +46,7 @@ public class LocaleUtils {
         if (f == null) {
             gson = new Gson();
         }
-        return (Locale) gson.fromJson(str, (Class<Object>) Locale.class);
+        return (Locale) gson.fromJson(str, Locale.class);
     }
 
     public static void a(Context context, Locale locale) {
@@ -73,29 +67,29 @@ public class LocaleUtils {
     }
 
     public static String b() {
-        String str = a.V;
+        String str = "zh";
         try {
             Locale c2 = c();
             Locale locale = c2;
             if (c2 == null) {
-                locale = f10093c;
+                locale = c;
             }
             String language = locale.getLanguage();
             String country = locale.getCountry();
-            if (a.V.equalsIgnoreCase(language)) {
-                country = ("tw".equalsIgnoreCase(country) || "hk".equalsIgnoreCase(country)) ? "tw" : AdvanceSetting.CLEAR_NOTIFICATION;
+            if ("zh".equalsIgnoreCase(language)) {
+                country = ("tw".equalsIgnoreCase(country) || "hk".equalsIgnoreCase(country)) ? "tw" : "cn";
             } else if ("en".equalsIgnoreCase(language)) {
-                country = o.f23663a;
+                country = "us";
                 str = "en";
             } else if ("id".equalsIgnoreCase(country)) {
                 str = "id";
             } else {
-                if (a.aa.equalsIgnoreCase(language)) {
+                if ("ar".equalsIgnoreCase(language)) {
                     country = "AR";
                 }
                 str = language;
             }
-            return str + "-" + country;
+            return str + NativeLibraryHelper.CLEAR_ABI_OVERRIDE + country;
         } catch (Exception e) {
             return "";
         }
@@ -157,17 +151,17 @@ public class LocaleUtils {
                     try {
                         b = a(AppInfo.d());
                     } catch (Exception e) {
-                        Log.i(f10092a, "read locale exception");
+                        Log.i(a, "read locale exception");
                         e.printStackTrace();
                     }
                 }
                 if (b == null || TextUtils.isEmpty(b.getLanguage())) {
                     b = b(AppInfo.d());
-                    Log.i(f10092a, "read locale from app locale follow resouce");
+                    Log.i(a, "read locale from app locale follow resouce");
                 }
                 if (b == null || TextUtils.isEmpty(b.getLanguage())) {
-                    b = f10093c;
-                    Log.i(f10092a, "read locale from app locale zh ch");
+                    b = c;
+                    Log.i(a, "read locale from app locale zh ch");
                 }
                 locale = b;
             } catch (Throwable th) {

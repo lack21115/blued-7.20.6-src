@@ -16,9 +16,7 @@ import com.blued.android.framework.R;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/view/pulltorefresh/ProgressWheel.class */
 public class ProgressWheel extends View {
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f10237c;
+    private int c;
     private int d;
     private int e;
     private final int f;
@@ -43,9 +41,7 @@ public class ProgressWheel extends View {
     private boolean y;
     private ProgressCallback z;
     private static final String b = ProgressWheel.class.getSimpleName();
-
-    /* renamed from: a  reason: collision with root package name */
-    public static boolean f10236a = false;
+    public static boolean a = false;
 
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/view/pulltorefresh/ProgressWheel$ProgressCallback.class */
     public interface ProgressCallback {
@@ -68,13 +64,9 @@ public class ProgressWheel extends View {
                 return new WheelSavedState[i];
             }
         };
-
-        /* renamed from: a  reason: collision with root package name */
-        float f10238a;
+        float a;
         float b;
-
-        /* renamed from: c  reason: collision with root package name */
-        boolean f10239c;
+        boolean c;
         float d;
         int e;
         int f;
@@ -86,9 +78,9 @@ public class ProgressWheel extends View {
 
         private WheelSavedState(Parcel parcel) {
             super(parcel);
-            this.f10238a = parcel.readFloat();
+            this.a = parcel.readFloat();
             this.b = parcel.readFloat();
-            this.f10239c = parcel.readByte() != 0;
+            this.c = parcel.readByte() != 0;
             this.d = parcel.readFloat();
             this.e = parcel.readInt();
             this.f = parcel.readInt();
@@ -106,9 +98,9 @@ public class ProgressWheel extends View {
         @Override // android.view.AbsSavedState, android.os.Parcelable
         public void writeToParcel(Parcel parcel, int i) {
             super.writeToParcel(parcel, i);
-            parcel.writeFloat(this.f10238a);
+            parcel.writeFloat(this.a);
             parcel.writeFloat(this.b);
-            parcel.writeByte(this.f10239c ? (byte) 1 : (byte) 0);
+            parcel.writeByte(this.c ? (byte) 1 : (byte) 0);
             parcel.writeFloat(this.d);
             parcel.writeInt(this.e);
             parcel.writeInt(this.f);
@@ -122,7 +114,7 @@ public class ProgressWheel extends View {
 
     public ProgressWheel(Context context) {
         super(context);
-        this.f10237c = 23;
+        this.c = 23;
         this.d = 3;
         this.e = 3;
         this.f = 36;
@@ -148,7 +140,7 @@ public class ProgressWheel extends View {
 
     public ProgressWheel(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f10237c = 23;
+        this.c = 23;
         this.d = 3;
         this.e = 3;
         this.f = 36;
@@ -191,7 +183,7 @@ public class ProgressWheel extends View {
             return;
         }
         int i4 = (i - paddingLeft) - paddingRight;
-        int min = Math.min(Math.min(i4, (i2 - paddingBottom) - paddingTop), (this.f10237c * 2) - (this.d * 2));
+        int min = Math.min(Math.min(i4, (i2 - paddingBottom) - paddingTop), (this.c * 2) - (this.d * 2));
         int i5 = ((i4 - min) / 2) + paddingLeft;
         int i6 = ((((i2 - paddingTop) - paddingBottom) - min) / 2) + paddingTop;
         int i7 = this.d;
@@ -226,8 +218,8 @@ public class ProgressWheel extends View {
         DisplayMetrics displayMetrics = getContext().getResources().getDisplayMetrics();
         this.d = (int) TypedValue.applyDimension(1, this.d, displayMetrics);
         this.e = (int) TypedValue.applyDimension(1, this.e, displayMetrics);
-        this.f10237c = (int) TypedValue.applyDimension(1, this.f10237c, displayMetrics);
-        this.f10237c = (int) typedArray.getDimension(R.styleable.ProgressWheel_matProg_circleRadius, this.f10237c);
+        this.c = (int) TypedValue.applyDimension(1, this.c, displayMetrics);
+        this.c = (int) typedArray.getDimension(R.styleable.ProgressWheel_matProg_circleRadius, this.c);
         this.h = typedArray.getBoolean(R.styleable.ProgressWheel_matProg_fillRadius, false);
         this.d = (int) typedArray.getDimension(R.styleable.ProgressWheel_matProg_barWidth, this.d);
         this.e = (int) typedArray.getDimension(R.styleable.ProgressWheel_matProg_rimWidth, this.e);
@@ -274,7 +266,7 @@ public class ProgressWheel extends View {
     }
 
     public int getCircleRadius() {
-        return this.f10237c;
+        return this.c;
     }
 
     public float getProgress() {
@@ -308,7 +300,7 @@ public class ProgressWheel extends View {
         boolean z = true;
         if (this.y) {
             z = true;
-            if (f10236a) {
+            if (a) {
                 long uptimeMillis = SystemClock.uptimeMillis() - this.u;
                 float f5 = (((float) uptimeMillis) * this.t) / 1000.0f;
                 a(uptimeMillis);
@@ -363,8 +355,8 @@ public class ProgressWheel extends View {
         int i3;
         int i4;
         super.onMeasure(i, i2);
-        int paddingLeft = this.f10237c + getPaddingLeft() + getPaddingRight();
-        int paddingTop = this.f10237c + getPaddingTop() + getPaddingBottom();
+        int paddingLeft = this.c + getPaddingLeft() + getPaddingRight();
+        int paddingTop = this.c + getPaddingTop() + getPaddingBottom();
         int mode = View.MeasureSpec.getMode(i);
         int size = View.MeasureSpec.getSize(i);
         int mode2 = View.MeasureSpec.getMode(i2);
@@ -396,15 +388,15 @@ public class ProgressWheel extends View {
         }
         WheelSavedState wheelSavedState = (WheelSavedState) parcelable;
         super.onRestoreInstanceState(wheelSavedState.getSuperState());
-        this.w = wheelSavedState.f10238a;
+        this.w = wheelSavedState.a;
         this.x = wheelSavedState.b;
-        this.y = wheelSavedState.f10239c;
+        this.y = wheelSavedState.c;
         this.t = wheelSavedState.d;
         this.d = wheelSavedState.e;
         this.o = wheelSavedState.f;
         this.e = wheelSavedState.g;
         this.p = wheelSavedState.h;
-        this.f10237c = wheelSavedState.i;
+        this.c = wheelSavedState.i;
         this.v = wheelSavedState.j;
         this.h = wheelSavedState.k;
         this.u = SystemClock.uptimeMillis();
@@ -413,15 +405,15 @@ public class ProgressWheel extends View {
     @Override // android.view.View
     public Parcelable onSaveInstanceState() {
         WheelSavedState wheelSavedState = new WheelSavedState(super.onSaveInstanceState());
-        wheelSavedState.f10238a = this.w;
+        wheelSavedState.a = this.w;
         wheelSavedState.b = this.x;
-        wheelSavedState.f10239c = this.y;
+        wheelSavedState.c = this.y;
         wheelSavedState.d = this.t;
         wheelSavedState.e = this.d;
         wheelSavedState.f = this.o;
         wheelSavedState.g = this.e;
         wheelSavedState.h = this.p;
-        wheelSavedState.i = this.f10237c;
+        wheelSavedState.i = this.c;
         wheelSavedState.j = this.v;
         wheelSavedState.k = this.h;
         return wheelSavedState;
@@ -471,7 +463,7 @@ public class ProgressWheel extends View {
     }
 
     public void setCircleRadius(int i) {
-        this.f10237c = i;
+        this.c = i;
         if (this.y) {
             return;
         }

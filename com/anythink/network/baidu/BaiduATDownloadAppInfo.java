@@ -23,42 +23,34 @@ public class BaiduATDownloadAppInfo extends ATAdAppInfo {
         this.appPackageName = nativeResponse.getAppPackage();
     }
 
-    @Override // com.anythink.core.api.ATAdAppInfo
     public String getAppDownloadCount() {
         return "";
     }
 
-    @Override // com.anythink.core.api.ATAdAppInfo
     public String getAppName() {
         return this.appName;
     }
 
-    @Override // com.anythink.core.api.ATAdAppInfo
     public String getAppPackageName() {
         return this.appPackageName;
     }
 
-    @Override // com.anythink.core.api.ATAdAppInfo
     public String getAppPermissonUrl() {
         return this.apppermissionLink;
     }
 
-    @Override // com.anythink.core.api.ATAdAppInfo
     public String getAppPrivacyUrl() {
         return this.appPrivacyLink;
     }
 
-    @Override // com.anythink.core.api.ATAdAppInfo
     public long getAppSize() {
         return this.appSize;
     }
 
-    @Override // com.anythink.core.api.ATAdAppInfo
     public String getAppVersion() {
         return this.appVersion;
     }
 
-    @Override // com.anythink.core.api.ATAdAppInfo
     public String getPublisher() {
         return this.publisher;
     }

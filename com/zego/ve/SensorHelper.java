@@ -249,7 +249,7 @@ public class SensorHelper implements SensorEventListener {
                     } else {
                         z2 = false;
                     }
-                    if (round <= -40) {
+                    if (round <= TILT_OVERHEAD_ENTER) {
                         this.mOverhead = true;
                     } else if (round >= -15) {
                         this.mOverhead = false;

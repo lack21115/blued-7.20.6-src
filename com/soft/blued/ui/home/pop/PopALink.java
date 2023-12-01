@@ -1,6 +1,5 @@
 package com.soft.blued.ui.home.pop;
 
-import android.content.Context;
 import android.view.View;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.net.IRequestHost;
@@ -22,22 +21,21 @@ import kotlin.text.StringsKt;
 public final class PopALink extends CenterPopupView {
 
     /* renamed from: c  reason: collision with root package name */
-    static final /* synthetic */ KProperty<Object>[] f31049c = {Reflection.a(new PropertyReference1Impl(PopALink.class, "vb", "getVb()Lcom/soft/blued/databinding/PopAlinkBinding;", 0))};
+    static final /* synthetic */ KProperty<Object>[] f17359c = {(KProperty) Reflection.a(new PropertyReference1Impl(PopALink.class, "vb", "getVb()Lcom/soft/blued/databinding/PopAlinkBinding;", 0))};
     private final ALinkActionModel d;
     private final ViewBindingProperty e;
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(PopALink this$0, View view) {
+    public static final void a(PopALink popALink, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.p();
+        Intrinsics.e(popALink, "this$0");
+        popALink.p();
     }
 
     private final PopAlinkBinding getVb() {
-        return (PopAlinkBinding) this.e.b(this, f31049c[0]);
+        return (PopAlinkBinding) this.e.b(this, f17359c[0]);
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.CenterPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
     public void b() {
         super.b();
         PopAlinkBinding vb = getVb();
@@ -50,14 +48,13 @@ public final class PopALink extends CenterPopupView {
                 PopALink.a(PopALink.this, view);
             }
         });
-        Context context = getContext();
+        IRequestHost context = getContext();
         if (context == null) {
             throw new NullPointerException("null cannot be cast to non-null type com.blued.android.core.net.IRequestHost");
         }
-        ImageLoader.a((IRequestHost) context, (String) StringsKt.b((CharSequence) getModel().getPopup_image(), new String[]{","}, false, 0, 6, (Object) null).get(0)).a(vb.f29504a);
+        ImageLoader.a(context, (String) StringsKt.b(getModel().getPopup_image(), new String[]{","}, false, 0, 6, (Object) null).get(0)).a(vb.f15814a);
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.CenterPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
     public int getImplLayoutId() {
         return R.layout.pop_alink;
     }

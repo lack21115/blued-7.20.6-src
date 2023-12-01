@@ -227,7 +227,7 @@ public final class Type extends GeneratedMessageV3 implements TypeOrBuilder {
         public Builder addOneofs(String str) {
             if (str != null) {
                 ensureOneofsIsMutable();
-                this.oneofs_.add((LazyStringList) str);
+                this.oneofs_.add(str);
                 onChanged();
                 return this;
             }
@@ -457,8 +457,8 @@ public final class Type extends GeneratedMessageV3 implements TypeOrBuilder {
 
         @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder mo2030clone() {
+            return (Builder) super.mo2030clone();
         }
 
         @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
@@ -533,7 +533,7 @@ public final class Type extends GeneratedMessageV3 implements TypeOrBuilder {
 
         @Override // com.google.protobuf.TypeOrBuilder
         public String getOneofs(int i) {
-            return this.oneofs_.get(i);
+            return (String) this.oneofs_.get(i);
         }
 
         @Override // com.google.protobuf.TypeOrBuilder
@@ -891,7 +891,7 @@ public final class Type extends GeneratedMessageV3 implements TypeOrBuilder {
         public Builder setOneofs(int i, String str) {
             if (str != null) {
                 ensureOneofsIsMutable();
-                this.oneofs_.set(i, (int) str);
+                this.oneofs_.set(i, str);
                 onChanged();
                 return this;
             }
@@ -985,6 +985,7 @@ public final class Type extends GeneratedMessageV3 implements TypeOrBuilder {
         this.syntax_ = 0;
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private Type(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
         this();
         SourceContext.Builder builder;
@@ -1017,7 +1018,7 @@ public final class Type extends GeneratedMessageV3 implements TypeOrBuilder {
                                 this.oneofs_ = new LazyStringArrayList();
                                 z5 = z2 | true;
                             }
-                            this.oneofs_.add((LazyStringList) readStringRequireUtf8);
+                            this.oneofs_.add(readStringRequireUtf8);
                             z2 = z5;
                         } else if (readTag == 34) {
                             boolean z6 = z2;
@@ -1223,7 +1224,7 @@ public final class Type extends GeneratedMessageV3 implements TypeOrBuilder {
 
     @Override // com.google.protobuf.TypeOrBuilder
     public String getOneofs(int i) {
-        return this.oneofs_.get(i);
+        return (String) this.oneofs_.get(i);
     }
 
     @Override // com.google.protobuf.TypeOrBuilder

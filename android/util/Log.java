@@ -2,8 +2,8 @@ package android.util;
 
 import com.android.internal.os.RuntimeInit;
 import com.android.internal.util.FastPrintWriter;
+import java.io.PrintWriter;
 import java.io.StringWriter;
-import java.io.Writer;
 import java.net.UnknownHostException;
 
 /* loaded from: source-9557208-dex2jar.jar:android/util/Log.class */
@@ -67,8 +67,8 @@ public final class Log {
             Throwable th3 = th2;
             if (th3 == null) {
                 StringWriter stringWriter = new StringWriter();
-                FastPrintWriter fastPrintWriter = new FastPrintWriter((Writer) stringWriter, false, 256);
-                th.printStackTrace(fastPrintWriter);
+                FastPrintWriter fastPrintWriter = new FastPrintWriter(stringWriter, false, 256);
+                th.printStackTrace((PrintWriter) fastPrintWriter);
                 fastPrintWriter.flush();
                 return stringWriter.toString();
             } else if (th3 instanceof UnknownHostException) {

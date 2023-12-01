@@ -4,6 +4,7 @@ import android.hardware.camera2.impl.CameraMetadataNative;
 import android.os.Handler;
 import android.util.Log;
 import com.baidu.mobads.sdk.internal.bw;
+import com.huawei.hms.framework.network.grs.GrsBaseInfo;
 
 /* loaded from: source-9557208-dex2jar.jar:android/hardware/camera2/legacy/CameraDeviceState.class */
 public class CameraDeviceState {
@@ -43,9 +44,9 @@ public class CameraDeviceState {
 
     private void doStateTransition(int i, final long j, final int i2) {
         if (i != this.mCurrentState) {
-            String str = "UNKNOWN";
+            String str = GrsBaseInfo.CountryCodeSource.UNKNOWN;
             if (i >= 0) {
-                str = "UNKNOWN";
+                str = GrsBaseInfo.CountryCodeSource.UNKNOWN;
                 if (i < sStateNames.length) {
                     str = sStateNames[i];
                 }

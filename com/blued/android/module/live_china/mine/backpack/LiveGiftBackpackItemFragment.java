@@ -106,7 +106,6 @@ public final class LiveGiftBackpackItemFragment extends BaseGiftBagRootFragment<
         }
     });
     private final Observer<LiveGiftModel> s = new Observer() { // from class: com.blued.android.module.live_china.mine.backpack.-$$Lambda$LiveGiftBackpackItemFragment$6xyLFEU-VZf3sUahEygBJTB2ToA
-        @Override // androidx.lifecycle.Observer
         public final void onChanged(Object obj) {
             LiveGiftBackpackItemFragment.a(LiveGiftBackpackItemFragment.this, (LiveGiftModel) obj);
         }
@@ -605,7 +604,7 @@ public final class LiveGiftBackpackItemFragment extends BaseGiftBagRootFragment<
         this.f.add(liveGiftPackageModel);
         b(this.f);
         a(this.f);
-        this.f13890a.setData(null);
+        this.a.setData(null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -662,7 +661,7 @@ public final class LiveGiftBackpackItemFragment extends BaseGiftBagRootFragment<
         this.f.add(liveGiftPackageModel);
         b(this.f);
         a(this.f);
-        this.f13890a.setData(null);
+        this.a.setData(null);
     }
 
     private final LinearLayout l() {
@@ -686,7 +685,7 @@ public final class LiveGiftBackpackItemFragment extends BaseGiftBagRootFragment<
     @Override // com.blued.android.module.live_china.mine.backpack.BaseGiftBagRootFragment
     protected BaseFragment a(CommonGiftPackageModel<?> commonGiftPackageModel, Bundle arg) {
         Intrinsics.e(arg, "arg");
-        return new LiveGiftBackpackParentFragment();
+        return (BaseFragment) new LiveGiftBackpackParentFragment();
     }
 
     @Override // com.blued.android.module.common.fragment.BaseViewPagerParentFragment
@@ -854,8 +853,8 @@ public final class LiveGiftBackpackItemFragment extends BaseGiftBagRootFragment<
     }
 
     public final void e(int i) {
-        if (this.f13890a != null) {
-            this.f13890a.a(i);
+        if (this.a != null) {
+            this.a.a(i);
         }
     }
 
@@ -930,7 +929,7 @@ public final class LiveGiftBackpackItemFragment extends BaseGiftBagRootFragment<
         if (arrayList2 != null) {
             b(arrayList2);
         }
-        CommonGiftTabView commonGiftTabView = this.f13890a;
+        CommonGiftTabView commonGiftTabView = this.a;
         if (commonGiftTabView == null) {
             throw new NullPointerException("null cannot be cast to non-null type com.blued.android.module.live_china.mine.backpack.LiveGiftBagItemTabView");
         }
@@ -966,25 +965,21 @@ public final class LiveGiftBackpackItemFragment extends BaseGiftBagRootFragment<
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroyView() {
         super.onDestroyView();
         LiveEventBus.get("live_use_prop_success", LiveGiftModel.class).removeObserver(this.s);
     }
 
-    @Override // com.blued.android.module.live_china.mine.backpack.BaseGiftBagRootFragment, com.blued.android.framework.ui.SimpleFragment
+    @Override // com.blued.android.module.live_china.mine.backpack.BaseGiftBagRootFragment
     public void onInitListener() {
         super.onInitListener();
         this.h.addOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: com.blued.android.module.live_china.mine.backpack.LiveGiftBackpackItemFragment$onInitListener$1
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageScrollStateChanged(int i) {
             }
 
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageScrolled(int i, float f, int i2) {
             }
 
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageSelected(int i) {
                 LiveGiftBackpackItemFragment.this.c(i);
                 LiveGiftBackpackItemFragment.this.d(i);
@@ -993,7 +988,7 @@ public final class LiveGiftBackpackItemFragment extends BaseGiftBagRootFragment<
         LiveEventBus.get("live_use_prop_success", LiveGiftModel.class).observeForever(this.s);
     }
 
-    @Override // com.blued.android.module.live_china.mine.backpack.BaseGiftBagRootFragment, com.blued.android.module.common.fragment.BaseViewPagerParentFragment, com.blued.android.framework.ui.SimpleFragment
+    @Override // com.blued.android.module.live_china.mine.backpack.BaseGiftBagRootFragment, com.blued.android.module.common.fragment.BaseViewPagerParentFragment
     public void onInitView() {
         super.onInitView();
         Bundle arguments = getArguments();
@@ -1019,7 +1014,7 @@ public final class LiveGiftBackpackItemFragment extends BaseGiftBagRootFragment<
         i();
     }
 
-    @Override // com.blued.android.module.live_china.mine.backpack.BaseGiftBagRootFragment, com.blued.android.framework.ui.SimpleFragment
+    @Override // com.blued.android.module.live_china.mine.backpack.BaseGiftBagRootFragment
     public int onSetRootViewId() {
         return LiveDataManager.a().f() ? R.layout.fragment_live_gift_backpack_item_layout_land : R.layout.fragment_live_gift_backpack_item_layout;
     }

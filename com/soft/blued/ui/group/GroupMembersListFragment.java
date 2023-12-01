@@ -15,6 +15,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import com.blued.android.core.AppMethods;
 import com.blued.android.core.BlueAppLocal;
+import com.blued.android.core.net.IRequestHost;
 import com.blued.android.framework.activity.keyboardpage.KeyBoardFragment;
 import com.blued.android.framework.activity.keyboardpage.KeyboardListenLinearLayout;
 import com.blued.android.framework.http.BluedUIHttpResponse;
@@ -25,7 +26,6 @@ import com.blued.android.framework.view.pulltorefresh.RenrenPullToRefreshListVie
 import com.blued.android.module.common.utils.DialogUtils;
 import com.blued.android.module.common.view.CommonTopTitleNoTrans;
 import com.blued.android.module.common.view.SearchView;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.blued.android.module.common.widget.menu.ActionSheet;
 import com.blued.android.module.common.widget.menu.CommonShowBottomWindow;
 import com.bytedance.applog.tracker.Tracker;
@@ -63,7 +63,7 @@ public class GroupMembersListFragment extends KeyBoardFragment implements View.O
     public Dialog b;
 
     /* renamed from: c  reason: collision with root package name */
-    public List<BluedGroupAllMembers> f30818c;
+    public List<BluedGroupAllMembers> f17128c;
     public List<BluedGroupAllMembers> l;
     public List<BluedGroupAllMembers> m;
     private KeyboardListenLinearLayout u;
@@ -82,21 +82,19 @@ public class GroupMembersListFragment extends KeyBoardFragment implements View.O
     private String S = "desc";
     public BluedUIHttpResponse r = new BluedUIHttpResponse<BluedEntityA<BluedGroupMemberForJson>>() { // from class: com.soft.blued.ui.group.GroupMembersListFragment.3
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public BluedEntityA<BluedGroupMemberForJson> parseData(String str) {
             Logger.a(GroupMembersListFragment.this.t, "onSuccess, content:", str);
-            return (BluedEntityA) super.parseData(str);
+            return super.parseData(str);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public void onUIUpdate(BluedEntityA<BluedGroupMemberForJson> bluedEntityA) {
             if (bluedEntityA != null) {
                 try {
                     if (GroupMembersListFragment.this.L) {
                         GroupMembersListFragment.this.C.p();
-                    } else if (bluedEntityA.extra != 0) {
+                    } else if (bluedEntityA.extra != null) {
                         GroupMembersListFragment.this.P = bluedEntityA.extra.hasmore;
                         if (GroupMembersListFragment.this.P == 1) {
                             GroupMembersListFragment.this.C.o();
@@ -116,13 +114,13 @@ public class GroupMembersListFragment extends KeyBoardFragment implements View.O
                     GroupMembersListFragment.this.A.clear();
                     GroupMembersListFragment.this.A.addAll(bluedEntityA.data);
                     GroupMembersListFragment.this.B.clear();
-                    GroupMembersListFragment.this.f30818c.clear();
+                    GroupMembersListFragment.this.f17128c.clear();
                     if (((BluedGroupMemberForJson) GroupMembersListFragment.this.A.get(0)).members != null) {
                         GroupMembersListFragment.this.B.addAll(((BluedGroupMemberForJson) GroupMembersListFragment.this.A.get(0)).members);
                     }
                     if (((BluedGroupMemberForJson) GroupMembersListFragment.this.A.get(0)).admins != null) {
-                        GroupMembersListFragment.this.f30818c.addAll(((BluedGroupMemberForJson) GroupMembersListFragment.this.A.get(0)).admins);
-                        GroupMembersListFragment.k = GroupMembersListFragment.this.f30818c.size();
+                        GroupMembersListFragment.this.f17128c.addAll(((BluedGroupMemberForJson) GroupMembersListFragment.this.A.get(0)).admins);
+                        GroupMembersListFragment.k = GroupMembersListFragment.this.f17128c.size();
                     }
                     GroupMembersListFragment.this.l.clear();
                     if (((BluedGroupMemberForJson) GroupMembersListFragment.this.A.get(0)).created != null) {
@@ -130,7 +128,7 @@ public class GroupMembersListFragment extends KeyBoardFragment implements View.O
                         GroupMembersListFragment.this.K = ((BluedGroupMemberForJson) GroupMembersListFragment.this.A.get(0)).created.uid;
                     }
                     if (((BluedGroupMemberForJson) GroupMembersListFragment.this.A.get(0)).admins != null) {
-                        GroupMembersListFragment.this.l.addAll(GroupMembersListFragment.this.f30818c);
+                        GroupMembersListFragment.this.l.addAll(GroupMembersListFragment.this.f17128c);
                     }
                     if (GroupMembersListFragment.o.equals("1") && GroupMembersListFragment.q.equals("0") && ((BluedGroupMemberForJson) GroupMembersListFragment.this.A.get(0)).self != null) {
                         GroupMembersListFragment.this.l.add(((BluedGroupMemberForJson) GroupMembersListFragment.this.A.get(0)).self);
@@ -187,7 +185,7 @@ public class GroupMembersListFragment extends KeyBoardFragment implements View.O
                     GroupMembersListFragment.this.E.a(GroupMembersListFragment.this.l);
                 } catch (Exception e) {
                     e.printStackTrace();
-                    AppMethods.a((CharSequence) GroupMembersListFragment.this.v.getResources().getString(2131887272));
+                    AppMethods.a(GroupMembersListFragment.this.v.getResources().getString(2131887272));
                     if (GroupMembersListFragment.this.Q != 1) {
                         GroupMembersListFragment.l(GroupMembersListFragment.this);
                     }
@@ -195,7 +193,6 @@ public class GroupMembersListFragment extends KeyBoardFragment implements View.O
             }
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse, com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
         public void onFailure(Throwable th, int i, String str) {
             if (GroupMembersListFragment.this.Q != 1) {
                 GroupMembersListFragment.l(GroupMembersListFragment.this);
@@ -204,7 +201,6 @@ public class GroupMembersListFragment extends KeyBoardFragment implements View.O
             Logger.a(GroupMembersListFragment.this.t, "onFailure, error:", th);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIFinish() {
             Logger.a(GroupMembersListFragment.this.t, "onUIFinish");
             GroupMembersListFragment.this.C.j();
@@ -213,14 +209,12 @@ public class GroupMembersListFragment extends KeyBoardFragment implements View.O
     };
     public BluedUIHttpResponse s = new BluedUIHttpResponse<BluedEntityA<Object>>() { // from class: com.soft.blued.ui.group.GroupMembersListFragment.4
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public BluedEntityA<Object> parseData(String str) {
             Logger.a(GroupMembersListFragment.this.t, "onSuccess, content:", str);
-            return (BluedEntityA) super.parseData(str);
+            return super.parseData(str);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public void onUIUpdate(BluedEntityA<Object> bluedEntityA) {
             if (bluedEntityA != null) {
@@ -253,7 +247,7 @@ public class GroupMembersListFragment extends KeyBoardFragment implements View.O
                             GroupMembersListFragment.this.h();
                         }
                         GroupMembersListFragment.this.x.setVisibility(8);
-                        GroupMembersListFragment.this.E.f30909a = false;
+                        GroupMembersListFragment.this.E.f17219a = false;
                         GroupMembersListFragment.this.z.setText(GroupMembersListFragment.this.v.getResources().getString(2131886885));
                         GroupMembersListFragment.this.E.notifyDataSetChanged();
                     }
@@ -263,19 +257,16 @@ public class GroupMembersListFragment extends KeyBoardFragment implements View.O
             }
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse, com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
         public void onFailure(Throwable th, int i, String str) {
             super.onFailure(th, i, str);
             Logger.a(GroupMembersListFragment.this.t, "onFailure, error:", th);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIFinish() {
             Logger.a(GroupMembersListFragment.this.t, "onUIFinish");
             DialogUtils.b(GroupMembersListFragment.this.b);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIStart() {
             DialogUtils.a(GroupMembersListFragment.this.b);
         }
@@ -286,11 +277,11 @@ public class GroupMembersListFragment extends KeyBoardFragment implements View.O
     public class CommonOnDoubleClick implements View.OnTouchListener {
 
         /* renamed from: a  reason: collision with root package name */
-        int f30826a = 0;
+        int f17136a = 0;
         int b = 0;
 
         /* renamed from: c  reason: collision with root package name */
-        int f30827c = 0;
+        int f17137c = 0;
 
         CommonOnDoubleClick() {
         }
@@ -305,20 +296,20 @@ public class GroupMembersListFragment extends KeyBoardFragment implements View.O
                 view.performClick();
                 return true;
             }
-            int i = this.f30826a + 1;
-            this.f30826a = i;
+            int i = this.f17136a + 1;
+            this.f17136a = i;
             if (i == 1) {
                 this.b = (int) System.currentTimeMillis();
                 return true;
             } else if (i == 2) {
                 int currentTimeMillis = (int) System.currentTimeMillis();
-                this.f30827c = currentTimeMillis;
+                this.f17137c = currentTimeMillis;
                 if (currentTimeMillis - this.b < 1000) {
                     GroupMembersListFragment.this.D.smoothScrollToPosition(0);
                 }
-                this.f30826a = 0;
+                this.f17136a = 0;
                 this.b = 0;
-                this.f30827c = 0;
+                this.f17137c = 0;
                 return true;
             } else {
                 return true;
@@ -332,7 +323,6 @@ public class GroupMembersListFragment extends KeyBoardFragment implements View.O
         private MyPullDownListener() {
         }
 
-        @Override // com.blued.android.framework.view.pulltorefresh.RenrenPullToRefreshListView.OnPullDownListener
         public void a() {
             GroupMembersListFragment.this.Q = 1;
             if (GroupMembersListFragment.this.L) {
@@ -342,7 +332,6 @@ public class GroupMembersListFragment extends KeyBoardFragment implements View.O
             }
         }
 
-        @Override // com.blued.android.framework.view.pulltorefresh.RenrenPullToRefreshListView.OnPullDownListener
         public void b() {
             GroupMembersListFragment.e(GroupMembersListFragment.this);
             if (GroupMembersListFragment.this.L || GroupMembersListFragment.this.P != 1) {
@@ -374,12 +363,12 @@ public class GroupMembersListFragment extends KeyBoardFragment implements View.O
         this.b = DialogUtils.a(this.v);
         this.A = new ArrayList();
         this.B = new ArrayList();
-        this.f30818c = new ArrayList();
+        this.f17128c = new ArrayList();
         this.l = new ArrayList();
         this.m = new ArrayList();
-        RenrenPullToRefreshListView renrenPullToRefreshListView = (RenrenPullToRefreshListView) this.u.findViewById(R.id.rptrlv_group_member_list);
-        this.C = renrenPullToRefreshListView;
-        renrenPullToRefreshListView.setRefreshEnabled(true);
+        RenrenPullToRefreshListView findViewById = this.u.findViewById((int) R.id.rptrlv_group_member_list);
+        this.C = findViewById;
+        findViewById.setRefreshEnabled(true);
         this.C.postDelayed(new Runnable() { // from class: com.soft.blued.ui.group.GroupMembersListFragment.1
             @Override // java.lang.Runnable
             public void run() {
@@ -391,9 +380,9 @@ public class GroupMembersListFragment extends KeyBoardFragment implements View.O
         this.D = listView;
         listView.setDivider(null);
         this.D.setSelector(new ColorDrawable(0));
-        this.x = (LinearLayout) this.u.findViewById(2131367859);
-        this.y = (TextView) this.u.findViewById(2131371941);
-        TextView textView = (TextView) this.u.findViewById(2131371940);
+        this.x = (LinearLayout) this.u.findViewById((int) R.id.ll_group_members_remove);
+        this.y = (TextView) this.u.findViewById((int) R.id.tv_members_remove_count);
+        TextView textView = (TextView) this.u.findViewById((int) R.id.tv_members_remove_confirm);
         this.z = textView;
         textView.setOnClickListener(this);
         Bundle arguments = getArguments();
@@ -408,7 +397,7 @@ public class GroupMembersListFragment extends KeyBoardFragment implements View.O
         this.O = arguments.getString("group_info_json");
         j.clear();
         TextView textView2 = this.y;
-        textView2.setText(" (" + j.size() + BridgeUtil.SPLIT_MARK + n + ") ");
+        textView2.setText(" (" + j.size() + "/" + n + ") ");
         this.E = new GroupMemberListAdapter(this.v, getFragmentActive(), this.m, this.y, this.z);
     }
 
@@ -419,25 +408,24 @@ public class GroupMembersListFragment extends KeyBoardFragment implements View.O
     }
 
     private void l() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.u.findViewById(2131370749);
-        commonTopTitleNoTrans.setCenterText(R.string.group_member_list);
-        commonTopTitleNoTrans.setRightImg(2131233917);
-        commonTopTitleNoTrans.setLeftClickListener(this);
-        commonTopTitleNoTrans.setRightClickListener(this);
-        ((TextView) commonTopTitleNoTrans.findViewById(2131363108)).setOnTouchListener(new CommonOnDoubleClick());
+        CommonTopTitleNoTrans findViewById = this.u.findViewById((int) R.id.top_title);
+        findViewById.setCenterText((int) R.string.group_member_list);
+        findViewById.setRightImg(2131233917);
+        findViewById.setLeftClickListener(this);
+        findViewById.setRightClickListener(this);
+        ((TextView) findViewById.findViewById(2131363108)).setOnTouchListener(new CommonOnDoubleClick());
     }
 
     private void m() {
         LayoutInflater layoutInflater = (LayoutInflater) this.v.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         this.M = layoutInflater;
-        SearchView searchView = (SearchView) layoutInflater.inflate(R.layout.search_layout, (ViewGroup) this.D, false);
-        this.N = searchView;
-        SearchEditText editView = searchView.getEditView();
+        SearchView inflate = layoutInflater.inflate(R.layout.search_layout, (ViewGroup) this.D, false);
+        this.N = inflate;
+        SearchEditText editView = inflate.getEditView();
         this.w = editView;
         editView.setHint(R.string.group_member_search);
         this.N.setDelaymillis(0L);
         this.N.setOnSearchInfoListener(new SearchView.OnSearchInfoListener() { // from class: com.soft.blued.ui.group.GroupMembersListFragment.2
-            @Override // com.blued.android.module.common.view.SearchView.OnSearchInfoListener
             public void a() {
                 KeyboardUtils.a(GroupMembersListFragment.this.getActivity());
                 GroupMembersListFragment.this.L = false;
@@ -445,7 +433,6 @@ public class GroupMembersListFragment extends KeyBoardFragment implements View.O
                 GroupMembersListFragment.this.E.notifyDataSetChanged();
             }
 
-            @Override // com.blued.android.module.common.view.SearchView.OnSearchInfoListener
             public void a(String str) {
                 if (StringUtils.d(str)) {
                     GroupMembersListFragment.this.h();
@@ -456,7 +443,6 @@ public class GroupMembersListFragment extends KeyBoardFragment implements View.O
                 GroupMembersListFragment.this.L = true;
             }
 
-            @Override // com.blued.android.module.common.view.SearchView.OnSearchInfoListener
             public void b() {
             }
         });
@@ -482,7 +468,6 @@ public class GroupMembersListFragment extends KeyBoardFragment implements View.O
         GroupHttpUtils.b(this.v, this.r, this.G, this.w.getText().toString(), "desc", getFragmentActive());
     }
 
-    @Override // com.blued.android.framework.activity.keyboardpage.KeyBoardFragment
     public void j_(int i) {
         SearchView searchView;
         if (i != -3) {
@@ -498,7 +483,6 @@ public class GroupMembersListFragment extends KeyBoardFragment implements View.O
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener
     public boolean onBackPressed() {
         getActivity().setResult(-1);
         getActivity().finish();
@@ -516,7 +500,6 @@ public class GroupMembersListFragment extends KeyBoardFragment implements View.O
             if (this.l.size() > 0) {
                 if (!o.equals("1")) {
                     CommonShowBottomWindow.a(getActivity(), this.J, new ActionSheet.ActionSheetListener() { // from class: com.soft.blued.ui.group.GroupMembersListFragment.7
-                        @Override // com.blued.android.module.common.widget.menu.ActionSheet.ActionSheetListener
                         public void a(ActionSheet actionSheet, int i) {
                             if (i == 0) {
                                 if (StringUtils.d(GroupMembersListFragment.this.G)) {
@@ -541,13 +524,11 @@ public class GroupMembersListFragment extends KeyBoardFragment implements View.O
                             }
                         }
 
-                        @Override // com.blued.android.module.common.widget.menu.ActionSheet.ActionSheetListener
                         public void a(ActionSheet actionSheet, boolean z) {
                         }
                     });
                 } else if (q.equals("1") || p.equals("1")) {
                     CommonShowBottomWindow.a(getActivity(), this.H, new ActionSheet.ActionSheetListener() { // from class: com.soft.blued.ui.group.GroupMembersListFragment.5
-                        @Override // com.blued.android.module.common.widget.menu.ActionSheet.ActionSheetListener
                         public void a(ActionSheet actionSheet, int i) {
                             if (i == 0) {
                                 if (StringUtils.d(GroupMembersListFragment.this.G)) {
@@ -576,19 +557,17 @@ public class GroupMembersListFragment extends KeyBoardFragment implements View.O
                             } else {
                                 GroupMembersListFragment.this.x.setVisibility(0);
                                 TextView textView = GroupMembersListFragment.this.y;
-                                textView.setText(" (" + GroupMembersListFragment.j.size() + BridgeUtil.SPLIT_MARK + GroupMembersListFragment.n + ") ");
-                                GroupMembersListFragment.this.E.f30909a = true;
+                                textView.setText(" (" + GroupMembersListFragment.j.size() + "/" + GroupMembersListFragment.n + ") ");
+                                GroupMembersListFragment.this.E.f17219a = true;
                                 GroupMembersListFragment.this.E.notifyDataSetChanged();
                             }
                         }
 
-                        @Override // com.blued.android.module.common.widget.menu.ActionSheet.ActionSheetListener
                         public void a(ActionSheet actionSheet, boolean z) {
                         }
                     });
                 } else {
                     CommonShowBottomWindow.a(getActivity(), this.J, new ActionSheet.ActionSheetListener() { // from class: com.soft.blued.ui.group.GroupMembersListFragment.6
-                        @Override // com.blued.android.module.common.widget.menu.ActionSheet.ActionSheetListener
                         public void a(ActionSheet actionSheet, int i) {
                             if (i == 0) {
                                 if (StringUtils.d(GroupMembersListFragment.this.G)) {
@@ -613,7 +592,6 @@ public class GroupMembersListFragment extends KeyBoardFragment implements View.O
                             }
                         }
 
-                        @Override // com.blued.android.module.common.widget.menu.ActionSheet.ActionSheetListener
                         public void a(ActionSheet actionSheet, boolean z) {
                         }
                     });
@@ -626,28 +604,26 @@ public class GroupMembersListFragment extends KeyBoardFragment implements View.O
             String[] strArr2 = (String[]) j.toArray(strArr);
             this.F = strArr2;
             if (strArr2.length != 0) {
-                GroupHttpUtils.a(getActivity(), this.s, this.G, this.F, getFragmentActive());
+                GroupHttpUtils.a((Context) getActivity(), this.s, this.G, this.F, (IRequestHost) getFragmentActive());
             } else {
                 this.x.setVisibility(8);
-                this.E.f30909a = false;
+                this.E.f17219a = false;
             }
             this.E.notifyDataSetChanged();
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.v = getActivity();
         KeyboardListenLinearLayout keyboardListenLinearLayout = this.u;
         if (keyboardListenLinearLayout == null) {
-            KeyboardListenLinearLayout keyboardListenLinearLayout2 = (KeyboardListenLinearLayout) layoutInflater.inflate(R.layout.fragment_group_members_list, viewGroup, false);
-            this.u = keyboardListenLinearLayout2;
-            super.a(keyboardListenLinearLayout2);
+            KeyboardListenLinearLayout inflate = layoutInflater.inflate(R.layout.fragment_group_members_list, viewGroup, false);
+            this.u = inflate;
+            super.a(inflate);
             k();
             m();
             l();

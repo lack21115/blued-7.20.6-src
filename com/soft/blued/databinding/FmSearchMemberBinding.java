@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FmSearchMemberBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f28765a;
+    private final LinearLayout f15075a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f28765a;
+        return this.f15075a;
     }
 }

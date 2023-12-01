@@ -9,7 +9,7 @@ import org.json.JSONObject;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f9328a = 0;
+    private int f6488a = 0;
     private List<a> b = new ArrayList();
 
     public static b a(String str) {
@@ -19,7 +19,7 @@ public class b {
         }
         try {
             JSONObject jSONObject = new JSONObject(str);
-            bVar.f9328a = jSONObject.optInt("n", 0);
+            bVar.f6488a = jSONObject.optInt("n", 0);
             bVar.b = a.a(jSONObject.optJSONArray("ad"));
             return bVar;
         } catch (Throwable th) {

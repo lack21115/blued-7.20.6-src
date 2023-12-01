@@ -31,7 +31,7 @@ public interface at {
     public static final String Z = "content";
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f22943a = "exception_id";
+    public static final String f9335a = "exception_id";
     public static final String aa = "remote_shared_pref_key";
     public static final String ab = "remote_shared_pref_value";
     public static final String ac = "slotid";
@@ -51,7 +51,7 @@ public interface at {
     public static final String aq = "sha256";
 
     /* renamed from: ar  reason: collision with root package name */
-    public static final String f22944ar = "source_package_name";
+    public static final String f9336ar = "source_package_name";
     public static final String as = "complainH5Title";
     public static final String at = "complainAddInfo";
     public static final String au = "why_this_ad_url";
@@ -60,7 +60,7 @@ public interface at {
     public static final String b = "sdk_version";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f22945c = "adPreloadIntv";
+    public static final String f9337c = "adPreloadIntv";
     public static final String d = "is_auto_download";
     public static final String e = "show_id";
     public static final String f = "ag_protocol_status";

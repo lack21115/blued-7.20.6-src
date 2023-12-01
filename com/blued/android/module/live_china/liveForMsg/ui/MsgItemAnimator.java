@@ -20,13 +20,9 @@ public class MsgItemAnimator extends SimpleItemAnimator {
     private ArrayList<RecyclerView.ViewHolder> k = new ArrayList<>();
     private ArrayList<MoveInfo> l = new ArrayList<>();
     private ArrayList<ChangeInfo> m = new ArrayList<>();
-
-    /* renamed from: a  reason: collision with root package name */
-    ArrayList<ArrayList<RecyclerView.ViewHolder>> f13545a = new ArrayList<>();
+    ArrayList<ArrayList<RecyclerView.ViewHolder>> a = new ArrayList<>();
     ArrayList<ArrayList<MoveInfo>> b = new ArrayList<>();
-
-    /* renamed from: c  reason: collision with root package name */
-    ArrayList<ArrayList<ChangeInfo>> f13546c = new ArrayList<>();
+    ArrayList<ArrayList<ChangeInfo>> c = new ArrayList<>();
     ArrayList<RecyclerView.ViewHolder> d = new ArrayList<>();
     ArrayList<RecyclerView.ViewHolder> e = new ArrayList<>();
     ArrayList<RecyclerView.ViewHolder> f = new ArrayList<>();
@@ -35,52 +31,44 @@ public class MsgItemAnimator extends SimpleItemAnimator {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/liveForMsg/ui/MsgItemAnimator$ChangeInfo.class */
     public static class ChangeInfo {
-
-        /* renamed from: a  reason: collision with root package name */
-        public RecyclerView.ViewHolder f13560a;
+        public RecyclerView.ViewHolder a;
         public RecyclerView.ViewHolder b;
-
-        /* renamed from: c  reason: collision with root package name */
-        public int f13561c;
+        public int c;
         public int d;
         public int e;
         public int f;
 
         private ChangeInfo(RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder viewHolder2) {
-            this.f13560a = viewHolder;
+            this.a = viewHolder;
             this.b = viewHolder2;
         }
 
         ChangeInfo(RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder viewHolder2, int i, int i2, int i3, int i4) {
             this(viewHolder, viewHolder2);
-            this.f13561c = i;
+            this.c = i;
             this.d = i2;
             this.e = i3;
             this.f = i4;
         }
 
         public String toString() {
-            return "ChangeInfo{oldHolder=" + this.f13560a + ", newHolder=" + this.b + ", fromX=" + this.f13561c + ", fromY=" + this.d + ", toX=" + this.e + ", toY=" + this.f + '}';
+            return "ChangeInfo{oldHolder=" + this.a + ", newHolder=" + this.b + ", fromX=" + this.c + ", fromY=" + this.d + ", toX=" + this.e + ", toY=" + this.f + '}';
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/liveForMsg/ui/MsgItemAnimator$MoveInfo.class */
     public static class MoveInfo {
-
-        /* renamed from: a  reason: collision with root package name */
-        public RecyclerView.ViewHolder f13562a;
+        public RecyclerView.ViewHolder a;
         public int b;
-
-        /* renamed from: c  reason: collision with root package name */
-        public int f13563c;
+        public int c;
         public int d;
         public int e;
 
         MoveInfo(RecyclerView.ViewHolder viewHolder, int i, int i2, int i3, int i4) {
-            this.f13562a = viewHolder;
+            this.a = viewHolder;
             this.b = i;
-            this.f13563c = i2;
+            this.c = i2;
             this.d = i3;
             this.e = i4;
         }
@@ -94,7 +82,7 @@ public class MsgItemAnimator extends SimpleItemAnimator {
                 return;
             }
             ChangeInfo changeInfo = list.get(i2);
-            if (a(changeInfo, viewHolder) && changeInfo.f13560a == null && changeInfo.b == null) {
+            if (a(changeInfo, viewHolder) && changeInfo.a == null && changeInfo.b == null) {
                 list.remove(changeInfo);
             }
             size = i2;
@@ -105,10 +93,10 @@ public class MsgItemAnimator extends SimpleItemAnimator {
         boolean z = false;
         if (changeInfo.b == viewHolder) {
             changeInfo.b = null;
-        } else if (changeInfo.f13560a != viewHolder) {
+        } else if (changeInfo.a != viewHolder) {
             return false;
         } else {
-            changeInfo.f13560a = null;
+            changeInfo.a = null;
             z = true;
         }
         viewHolder.itemView.setAlpha(1.0f);
@@ -119,8 +107,8 @@ public class MsgItemAnimator extends SimpleItemAnimator {
     }
 
     private void b(ChangeInfo changeInfo) {
-        if (changeInfo.f13560a != null) {
-            a(changeInfo, changeInfo.f13560a);
+        if (changeInfo.a != null) {
+            a(changeInfo, changeInfo.a);
         }
         if (changeInfo.b != null) {
             a(changeInfo, changeInfo.b);
@@ -237,7 +225,7 @@ public class MsgItemAnimator extends SimpleItemAnimator {
     }
 
     void a(final ChangeInfo changeInfo) {
-        RecyclerView.ViewHolder viewHolder = changeInfo.f13560a;
+        RecyclerView.ViewHolder viewHolder = changeInfo.a;
         View view = null;
         View view2 = viewHolder == null ? null : viewHolder.itemView;
         RecyclerView.ViewHolder viewHolder2 = changeInfo.b;
@@ -246,8 +234,8 @@ public class MsgItemAnimator extends SimpleItemAnimator {
         }
         if (view2 != null) {
             final ViewPropertyAnimator duration = view2.animate().setDuration(getChangeDuration());
-            this.g.add(changeInfo.f13560a);
-            duration.translationX(changeInfo.e - changeInfo.f13561c);
+            this.g.add(changeInfo.a);
+            duration.translationX(changeInfo.e - changeInfo.c);
             duration.translationY(changeInfo.f - changeInfo.d);
             final View view3 = view2;
             duration.alpha(0.0f).setListener(new AnimatorListenerAdapter() { // from class: com.blued.android.module.live_china.liveForMsg.ui.MsgItemAnimator.7
@@ -257,14 +245,14 @@ public class MsgItemAnimator extends SimpleItemAnimator {
                     view3.setAlpha(1.0f);
                     view3.setTranslationX(0.0f);
                     view3.setTranslationY(0.0f);
-                    MsgItemAnimator.this.dispatchChangeFinished(changeInfo.f13560a, true);
-                    MsgItemAnimator.this.g.remove(changeInfo.f13560a);
+                    MsgItemAnimator.this.dispatchChangeFinished(changeInfo.a, true);
+                    MsgItemAnimator.this.g.remove(changeInfo.a);
                     MsgItemAnimator.this.a();
                 }
 
                 @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                 public void onAnimationStart(Animator animator) {
-                    MsgItemAnimator.this.dispatchChangeStarting(changeInfo.f13560a, true);
+                    MsgItemAnimator.this.dispatchChangeStarting(changeInfo.a, true);
                 }
             }).start();
         }
@@ -304,7 +292,6 @@ public class MsgItemAnimator extends SimpleItemAnimator {
         }
     }
 
-    @Override // androidx.recyclerview.widget.SimpleItemAnimator
     public boolean animateAdd(RecyclerView.ViewHolder viewHolder) {
         d(viewHolder);
         viewHolder.itemView.setAlpha(1.0f);
@@ -316,7 +303,6 @@ public class MsgItemAnimator extends SimpleItemAnimator {
         return true;
     }
 
-    @Override // androidx.recyclerview.widget.SimpleItemAnimator
     public boolean animateChange(RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder viewHolder2, int i2, int i3, int i4, int i5) {
         if (viewHolder == viewHolder2) {
             return animateMove(viewHolder, i2, i3, i4, i5);
@@ -340,7 +326,6 @@ public class MsgItemAnimator extends SimpleItemAnimator {
         return true;
     }
 
-    @Override // androidx.recyclerview.widget.SimpleItemAnimator
     public boolean animateMove(RecyclerView.ViewHolder viewHolder, int i2, int i3, int i4, int i5) {
         View view = viewHolder.itemView;
         int translationX = i2 + ((int) viewHolder.itemView.getTranslationX());
@@ -362,19 +347,16 @@ public class MsgItemAnimator extends SimpleItemAnimator {
         return true;
     }
 
-    @Override // androidx.recyclerview.widget.SimpleItemAnimator
     public boolean animateRemove(RecyclerView.ViewHolder viewHolder) {
         d(viewHolder);
         this.j.add(viewHolder);
         return true;
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView.ItemAnimator
     public boolean canReuseUpdatedViewHolder(RecyclerView.ViewHolder viewHolder, List<Object> list) {
         return !list.isEmpty() || super.canReuseUpdatedViewHolder(viewHolder, list);
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView.ItemAnimator
     public void endAnimation(RecyclerView.ViewHolder viewHolder) {
         View view = viewHolder.itemView;
         view.animate().cancel();
@@ -384,7 +366,7 @@ public class MsgItemAnimator extends SimpleItemAnimator {
             if (i2 < 0) {
                 break;
             }
-            if (this.l.get(i2).f13562a == viewHolder) {
+            if (this.l.get(i2).a == viewHolder) {
                 view.setTranslationY(0.0f);
                 view.setTranslationX(0.0f);
                 dispatchMoveFinished(viewHolder);
@@ -401,16 +383,16 @@ public class MsgItemAnimator extends SimpleItemAnimator {
             view.setAlpha(1.0f);
             dispatchAddFinished(viewHolder);
         }
-        int size2 = this.f13546c.size();
+        int size2 = this.c.size();
         while (true) {
             int i3 = size2 - 1;
             if (i3 < 0) {
                 break;
             }
-            ArrayList<ChangeInfo> arrayList = this.f13546c.get(i3);
+            ArrayList<ChangeInfo> arrayList = this.c.get(i3);
             a(arrayList, viewHolder);
             if (arrayList.isEmpty()) {
-                this.f13546c.remove(i3);
+                this.c.remove(i3);
             }
             size2 = i3;
         }
@@ -426,7 +408,7 @@ public class MsgItemAnimator extends SimpleItemAnimator {
                 int i5 = size4 - 1;
                 if (i5 < 0) {
                     break;
-                } else if (arrayList2.get(i5).f13562a == viewHolder) {
+                } else if (arrayList2.get(i5).a == viewHolder) {
                     view.setTranslationY(0.0f);
                     view.setTranslationX(0.0f);
                     dispatchMoveFinished(viewHolder);
@@ -440,7 +422,7 @@ public class MsgItemAnimator extends SimpleItemAnimator {
             }
             size3 = i4;
         }
-        int size5 = this.f13545a.size();
+        int size5 = this.a.size();
         while (true) {
             int i6 = size5 - 1;
             if (i6 < 0) {
@@ -451,19 +433,18 @@ public class MsgItemAnimator extends SimpleItemAnimator {
                 a();
                 return;
             }
-            ArrayList<RecyclerView.ViewHolder> arrayList3 = this.f13545a.get(i6);
+            ArrayList<RecyclerView.ViewHolder> arrayList3 = this.a.get(i6);
             if (arrayList3.remove(viewHolder)) {
                 view.setAlpha(1.0f);
                 dispatchAddFinished(viewHolder);
                 if (arrayList3.isEmpty()) {
-                    this.f13545a.remove(i6);
+                    this.a.remove(i6);
                 }
             }
             size5 = i6;
         }
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView.ItemAnimator
     public void endAnimations() {
         int size = this.l.size();
         while (true) {
@@ -472,10 +453,10 @@ public class MsgItemAnimator extends SimpleItemAnimator {
                 break;
             }
             MoveInfo moveInfo = this.l.get(i2);
-            View view = moveInfo.f13562a.itemView;
+            View view = moveInfo.a.itemView;
             view.setTranslationY(0.0f);
             view.setTranslationX(0.0f);
-            dispatchMoveFinished(moveInfo.f13562a);
+            dispatchMoveFinished(moveInfo.a);
             this.l.remove(i2);
             size = i2;
         }
@@ -526,10 +507,10 @@ public class MsgItemAnimator extends SimpleItemAnimator {
                 int i7 = size6 - 1;
                 if (i7 >= 0) {
                     MoveInfo moveInfo2 = arrayList.get(i7);
-                    View view2 = moveInfo2.f13562a.itemView;
+                    View view2 = moveInfo2.a.itemView;
                     view2.setTranslationY(0.0f);
                     view2.setTranslationX(0.0f);
-                    dispatchMoveFinished(moveInfo2.f13562a);
+                    dispatchMoveFinished(moveInfo2.a);
                     arrayList.remove(i7);
                     if (arrayList.isEmpty()) {
                         this.b.remove(arrayList);
@@ -539,13 +520,13 @@ public class MsgItemAnimator extends SimpleItemAnimator {
             }
             size5 = i6;
         }
-        int size7 = this.f13545a.size();
+        int size7 = this.a.size();
         while (true) {
             int i8 = size7 - 1;
             if (i8 < 0) {
                 break;
             }
-            ArrayList<RecyclerView.ViewHolder> arrayList2 = this.f13545a.get(i8);
+            ArrayList<RecyclerView.ViewHolder> arrayList2 = this.a.get(i8);
             int size8 = arrayList2.size();
             while (true) {
                 int i9 = size8 - 1;
@@ -555,14 +536,14 @@ public class MsgItemAnimator extends SimpleItemAnimator {
                     dispatchAddFinished(viewHolder2);
                     arrayList2.remove(i9);
                     if (arrayList2.isEmpty()) {
-                        this.f13545a.remove(arrayList2);
+                        this.a.remove(arrayList2);
                     }
                     size8 = i9;
                 }
             }
             size7 = i8;
         }
-        int size9 = this.f13546c.size();
+        int size9 = this.c.size();
         while (true) {
             int i10 = size9 - 1;
             if (i10 < 0) {
@@ -573,14 +554,14 @@ public class MsgItemAnimator extends SimpleItemAnimator {
                 dispatchAnimationsFinished();
                 return;
             }
-            ArrayList<ChangeInfo> arrayList3 = this.f13546c.get(i10);
+            ArrayList<ChangeInfo> arrayList3 = this.c.get(i10);
             int size10 = arrayList3.size();
             while (true) {
                 int i11 = size10 - 1;
                 if (i11 >= 0) {
                     b(arrayList3.get(i11));
                     if (arrayList3.isEmpty()) {
-                        this.f13546c.remove(arrayList3);
+                        this.c.remove(arrayList3);
                     }
                     size10 = i11;
                 }
@@ -589,12 +570,10 @@ public class MsgItemAnimator extends SimpleItemAnimator {
         }
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView.ItemAnimator
     public boolean isRunning() {
-        return (this.k.isEmpty() && this.m.isEmpty() && this.l.isEmpty() && this.j.isEmpty() && this.e.isEmpty() && this.f.isEmpty() && this.d.isEmpty() && this.g.isEmpty() && this.b.isEmpty() && this.f13545a.isEmpty() && this.f13546c.isEmpty()) ? false : true;
+        return (this.k.isEmpty() && this.m.isEmpty() && this.l.isEmpty() && this.j.isEmpty() && this.e.isEmpty() && this.f.isEmpty() && this.d.isEmpty() && this.g.isEmpty() && this.b.isEmpty() && this.a.isEmpty() && this.c.isEmpty()) ? false : true;
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView.ItemAnimator
     public void runPendingAnimations() {
         boolean z = !this.j.isEmpty();
         boolean z2 = !this.l.isEmpty();
@@ -617,14 +596,14 @@ public class MsgItemAnimator extends SimpleItemAnimator {
                         Iterator it2 = arrayList.iterator();
                         while (it2.hasNext()) {
                             MoveInfo moveInfo = (MoveInfo) it2.next();
-                            MsgItemAnimator.this.a(moveInfo.f13562a, moveInfo.b, moveInfo.f13563c, moveInfo.d, moveInfo.e);
+                            MsgItemAnimator.this.a(moveInfo.a, moveInfo.b, moveInfo.c, moveInfo.d, moveInfo.e);
                         }
                         arrayList.clear();
                         MsgItemAnimator.this.b.remove(arrayList);
                     }
                 };
                 if (z) {
-                    ViewCompat.postOnAnimationDelayed(arrayList.get(0).f13562a.itemView, runnable, getRemoveDuration());
+                    ViewCompat.postOnAnimationDelayed(arrayList.get(0).a.itemView, runnable, getRemoveDuration());
                 } else {
                     runnable.run();
                 }
@@ -632,7 +611,7 @@ public class MsgItemAnimator extends SimpleItemAnimator {
             if (z3) {
                 final ArrayList<ChangeInfo> arrayList2 = new ArrayList<>();
                 arrayList2.addAll(this.m);
-                this.f13546c.add(arrayList2);
+                this.c.add(arrayList2);
                 this.m.clear();
                 Runnable runnable2 = new Runnable() { // from class: com.blued.android.module.live_china.liveForMsg.ui.MsgItemAnimator.2
                     @Override // java.lang.Runnable
@@ -642,11 +621,11 @@ public class MsgItemAnimator extends SimpleItemAnimator {
                             MsgItemAnimator.this.a((ChangeInfo) it2.next());
                         }
                         arrayList2.clear();
-                        MsgItemAnimator.this.f13546c.remove(arrayList2);
+                        MsgItemAnimator.this.c.remove(arrayList2);
                     }
                 };
                 if (z) {
-                    ViewCompat.postOnAnimationDelayed(arrayList2.get(0).f13560a.itemView, runnable2, getRemoveDuration());
+                    ViewCompat.postOnAnimationDelayed(arrayList2.get(0).a.itemView, runnable2, getRemoveDuration());
                 } else {
                     runnable2.run();
                 }
@@ -654,7 +633,7 @@ public class MsgItemAnimator extends SimpleItemAnimator {
             if (z4) {
                 final ArrayList<RecyclerView.ViewHolder> arrayList3 = new ArrayList<>();
                 arrayList3.addAll(this.k);
-                this.f13545a.add(arrayList3);
+                this.a.add(arrayList3);
                 this.k.clear();
                 Runnable runnable3 = new Runnable() { // from class: com.blued.android.module.live_china.liveForMsg.ui.MsgItemAnimator.3
                     @Override // java.lang.Runnable
@@ -664,7 +643,7 @@ public class MsgItemAnimator extends SimpleItemAnimator {
                             MsgItemAnimator.this.a((RecyclerView.ViewHolder) it2.next());
                         }
                         arrayList3.clear();
-                        MsgItemAnimator.this.f13545a.remove(arrayList3);
+                        MsgItemAnimator.this.a.remove(arrayList3);
                     }
                 };
                 if (!z && !z2 && !z3) {

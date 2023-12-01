@@ -6,9 +6,11 @@ import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.FragmentManager;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.module.common.utils.TimeAndDateUtils;
@@ -29,13 +31,9 @@ import kotlin.jvm.internal.Ref;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYExplorationView.class */
 public final class YYExplorationView extends ConstraintLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final YyExplorationViewBinding f18143a;
+    private final YyExplorationViewBinding a;
     private CountDownTimer b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final long f18144c;
+    private final long c;
     private BaseYYStudioFragment d;
     private String e;
 
@@ -55,10 +53,10 @@ public final class YYExplorationView extends ConstraintLayout {
     public YYExplorationView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         Intrinsics.e(context, "context");
-        YyExplorationViewBinding a2 = YyExplorationViewBinding.a(LayoutInflater.from(getContext()), this, true);
-        Intrinsics.c(a2, "inflate(LayoutInflater.from(context), this, true)");
-        this.f18143a = a2;
-        this.f18144c = 1000L;
+        YyExplorationViewBinding a = YyExplorationViewBinding.a(LayoutInflater.from(getContext()), (ViewGroup) this, true);
+        Intrinsics.c(a, "inflate(LayoutInflater.from(context), this, true)");
+        this.a = a;
+        this.c = 1000L;
         this.e = "";
         setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYExplorationView$ugY0JEizhvx222xTjfWK34eXGQc
             @Override // android.view.View.OnClickListener
@@ -99,29 +97,29 @@ public final class YYExplorationView extends ConstraintLayout {
             EventTrackYY.d(ChatRoomProtos.Event.YY_ROOM_STAR_SHOW, b.room_id, b.uid);
         }
         this$0.e = iMJsonContents98Model.getLink();
-        ImageLoader.a(baseYYStudioFragment.getFragmentActive(), iMJsonContents98Model.getIcon()).a(this$0.f18143a.b);
-        this$0.f18143a.d.setText(iMJsonContents98Model.getMultiple());
+        ImageLoader.a(baseYYStudioFragment.getFragmentActive(), iMJsonContents98Model.getIcon()).a(this$0.a.b);
+        this$0.a.d.setText(iMJsonContents98Model.getMultiple());
         final Ref.LongRef longRef = new Ref.LongRef();
-        longRef.f42544a = iMJsonContents98Model.getCountdown();
-        if (longRef.f42544a < this$0.f18144c) {
-            longRef.f42544a *= this$0.f18144c;
+        longRef.a = iMJsonContents98Model.getCountdown();
+        if (longRef.a < this$0.c) {
+            longRef.a *= this$0.c;
         }
-        TextView textView = this$0.f18143a.f16980c;
+        TextView textView = this$0.a.c;
         SimpleDateFormat simpleDateFormat = TimeAndDateUtils.k.get();
         Intrinsics.a(simpleDateFormat);
-        textView.setText(simpleDateFormat.format(Long.valueOf(longRef.f42544a)));
+        textView.setText(simpleDateFormat.format(Long.valueOf(longRef.a)));
         CountDownTimer countDownTimer = this$0.b;
         if (countDownTimer != null && countDownTimer != null) {
             countDownTimer.cancel();
         }
-        final long j = this$0.f18144c;
+        final long j = this$0.c;
         CountDownTimer countDownTimer2 = new CountDownTimer(this$0, j) { // from class: com.blued.android.module.yy_china.view.YYExplorationView$initData$1$2
             final /* synthetic */ YYExplorationView b;
 
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
-                super(Ref.LongRef.this.f42544a, j);
+                super(Ref.LongRef.this.a, j);
                 this.b = this$0;
             }
 
@@ -134,10 +132,10 @@ public final class YYExplorationView extends ConstraintLayout {
             public void onTick(long j2) {
                 YyExplorationViewBinding yyExplorationViewBinding;
                 long j3;
-                yyExplorationViewBinding = this.b.f18143a;
-                TextView textView2 = yyExplorationViewBinding.f16980c;
+                yyExplorationViewBinding = this.b.a;
+                TextView textView2 = yyExplorationViewBinding.c;
                 StringBuilder sb = new StringBuilder();
-                j3 = this.b.f18144c;
+                j3 = this.b.c;
                 sb.append(j2 / j3);
                 sb.append('s');
                 textView2.setText(sb.toString());
@@ -155,17 +153,14 @@ public final class YYExplorationView extends ConstraintLayout {
             return;
         }
         this.d = baseYYStudioFragment;
-        LiveEventBus.get("exploratory_period", IMJsonContents98Model.class).observe(baseYYStudioFragment, new Observer() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYExplorationView$nAUIES-lrs1rZpjZkUTeghYcTBU
-            @Override // androidx.lifecycle.Observer
+        LiveEventBus.get("exploratory_period", IMJsonContents98Model.class).observe((LifecycleOwner) baseYYStudioFragment, new Observer() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYExplorationView$nAUIES-lrs1rZpjZkUTeghYcTBU
             public final void onChanged(Object obj) {
                 YYExplorationView.a(YYExplorationView.this, baseYYStudioFragment, (IMJsonContents98Model) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // android.view.ViewGroup, android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         CountDownTimer countDownTimer = this.b;
         if (countDownTimer == null) {
@@ -174,7 +169,6 @@ public final class YYExplorationView extends ConstraintLayout {
         countDownTimer.cancel();
     }
 
-    @Override // android.view.View
     public void setVisibility(int i) {
         super.setVisibility(i);
         CountDownTimer countDownTimer = this.b;

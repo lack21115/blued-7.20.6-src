@@ -21,11 +21,11 @@ import kotlinx.coroutines.intrinsics.UndispatchedKt;
 public final class FlowCoroutineKt {
     public static final <R> Object a(Function2<? super CoroutineScope, ? super Continuation<? super R>, ? extends Object> function2, Continuation<? super R> continuation) {
         FlowCoroutine flowCoroutine = new FlowCoroutine(continuation.getContext(), continuation);
-        Object a2 = UndispatchedKt.a((ScopeCoroutine) flowCoroutine, flowCoroutine, (Function2<? super FlowCoroutine, ? super Continuation<? super T>, ? extends Object>) function2);
-        if (a2 == IntrinsicsKt.a()) {
+        Object a = UndispatchedKt.a((ScopeCoroutine) flowCoroutine, flowCoroutine, (Function2<? super FlowCoroutine, ? super Continuation<? super T>, ? extends Object>) function2);
+        if (a == IntrinsicsKt.a()) {
             DebugProbesKt.c(continuation);
         }
-        return a2;
+        return a;
     }
 
     public static final <T> ReceiveChannel<T> a(CoroutineScope coroutineScope, CoroutineContext coroutineContext, int i, Function2<? super ProducerScope<? super T>, ? super Continuation<? super Unit>, ? extends Object> function2) {

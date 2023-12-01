@@ -2,6 +2,7 @@ package com.kuaishou.weapon.p0;
 
 import android.content.Context;
 import android.text.TextUtils;
+import com.huawei.hms.framework.common.ContainerUtils;
 import org.json.JSONObject;
 
 /* loaded from: source-7994992-dex2jar.jar:com/kuaishou/weapon/p0/cf.class */
@@ -24,14 +25,14 @@ public class cf {
     public static void a(final Context context, String str, String str2, boolean z) {
         JSONObject jSONObject;
         try {
-            String str3 = ct.f23798a + ct.f;
+            String str3 = ct.f10190a + ct.f;
             String a2 = cu.a(context);
             String str4 = str3;
             if (!TextUtils.isEmpty(a2)) {
                 if (!ct.a() || str2 == null) {
                     str4 = str3 + "?" + a2;
                 } else {
-                    str4 = str3 + "?logId=" + str2 + "&" + a2;
+                    str4 = str3 + "?logId=" + str2 + ContainerUtils.FIELD_DELIMITER + a2;
                 }
             }
             if (TextUtils.isEmpty(str)) {

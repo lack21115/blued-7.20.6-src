@@ -17,11 +17,11 @@ import java.util.TreeSet;
 public final class m implements a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f7571a = "SimpleCache";
+    private static final String f4732a = "SimpleCache";
     private static final HashSet<File> b = new HashSet<>();
 
     /* renamed from: c  reason: collision with root package name */
-    private static boolean f7572c;
+    private static boolean f4733c;
     private final File d;
     private final d e;
     private final h f;
@@ -33,6 +33,7 @@ public final class m implements a {
         this(file, dVar, null, false);
     }
 
+    /* JADX WARN: Type inference failed for: r0v9, types: [com.anythink.expressad.exoplayer.j.a.m$1] */
     private m(File file, d dVar, h hVar) {
         if (!c(file)) {
             throw new IllegalStateException("Another SimpleCache instance uses the folder: ".concat(String.valueOf(file)));
@@ -64,11 +65,11 @@ public final class m implements a {
     }
 
     private void a(e eVar, boolean z) {
-        g b2 = this.f.b(eVar.f7557a);
+        g b2 = this.f.b(eVar.f4718a);
         if (b2 == null || !b2.a(eVar)) {
             return;
         }
-        this.h -= eVar.f7558c;
+        this.h -= eVar.f4719c;
         if (z) {
             try {
                 this.f.d(b2.b);
@@ -98,13 +99,13 @@ public final class m implements a {
                 try {
                     mVar.f.b();
                     return;
-                } catch (a.C0138a e) {
-                    Log.e(f7571a, "Storing index file failed", e);
+                } catch (a.C0067a e) {
+                    Log.e(f4732a, "Storing index file failed", e);
                     return;
                 }
             }
             File file = listFiles[i2];
-            if (!file.getName().equals(h.f7564a)) {
+            if (!file.getName().equals(h.f4725a)) {
                 n a2 = file.length() > 0 ? n.a(file, mVar.f) : null;
                 if (a2 != null) {
                     mVar.a(a2);
@@ -117,13 +118,13 @@ public final class m implements a {
     }
 
     private void a(n nVar) {
-        this.f.a(nVar.f7557a).a(nVar);
-        this.h += nVar.f7558c;
+        this.f.a(nVar.f4718a).a(nVar);
+        this.h += nVar.f4719c;
         b(nVar);
     }
 
     private void b(n nVar) {
-        ArrayList<a.b> arrayList = this.g.get(nVar.f7557a);
+        ArrayList<a.b> arrayList = this.g.get(nVar.f4718a);
         if (arrayList == null) {
             return;
         }
@@ -151,7 +152,7 @@ public final class m implements a {
     }
 
     private void c(e eVar) {
-        ArrayList<a.b> arrayList = this.g.get(eVar.f7557a);
+        ArrayList<a.b> arrayList = this.g.get(eVar.f4718a);
         if (arrayList == null) {
             return;
         }
@@ -167,7 +168,7 @@ public final class m implements a {
     }
 
     private void c(n nVar) {
-        ArrayList<a.b> arrayList = this.g.get(nVar.f7557a);
+        ArrayList<a.b> arrayList = this.g.get(nVar.f4718a);
         if (arrayList == null) {
             return;
         }
@@ -185,7 +186,7 @@ public final class m implements a {
     private static boolean c(File file) {
         synchronized (m.class) {
             try {
-                if (f7572c) {
+                if (f4733c) {
                     return true;
                 }
                 return b.add(file.getAbsoluteFile());
@@ -198,7 +199,7 @@ public final class m implements a {
     private static void d() {
         synchronized (m.class) {
             try {
-                f7572c = true;
+                f4733c = true;
                 b.clear();
             } catch (Throwable th) {
                 throw th;
@@ -209,7 +210,7 @@ public final class m implements a {
     private static void d(File file) {
         synchronized (m.class) {
             try {
-                if (!f7572c) {
+                if (!f4733c) {
                     b.remove(file.getAbsoluteFile());
                 }
             } catch (Throwable th) {
@@ -253,13 +254,13 @@ public final class m implements a {
                 try {
                     this.f.b();
                     return;
-                } catch (a.C0138a e) {
-                    Log.e(f7571a, "Storing index file failed", e);
+                } catch (a.C0067a e) {
+                    Log.e(f4732a, "Storing index file failed", e);
                     return;
                 }
             }
             File file = listFiles[i2];
-            if (!file.getName().equals(h.f7564a)) {
+            if (!file.getName().equals(h.f4725a)) {
                 n a2 = file.length() > 0 ? n.a(file, this.f) : null;
                 if (a2 != null) {
                     a(a2);
@@ -299,7 +300,7 @@ public final class m implements a {
                 return a2;
             }
             n b3 = this.f.b(str).b(a2);
-            ArrayList<a.b> arrayList = this.g.get(a2.f7557a);
+            ArrayList<a.b> arrayList = this.g.get(a2.f4718a);
             if (arrayList != null) {
                 int size = arrayList.size();
                 while (true) {
@@ -401,7 +402,7 @@ public final class m implements a {
     public final void a(e eVar) {
         synchronized (this) {
             com.anythink.expressad.exoplayer.k.a.b(!this.i);
-            g b2 = this.f.b(eVar.f7557a);
+            g b2 = this.f.b(eVar.f4718a);
             com.anythink.expressad.exoplayer.k.a.a(b2);
             com.anythink.expressad.exoplayer.k.a.b(b2.b());
             b2.a(false);
@@ -416,7 +417,7 @@ public final class m implements a {
             com.anythink.expressad.exoplayer.k.a.b(!this.i);
             n a2 = n.a(file, this.f);
             com.anythink.expressad.exoplayer.k.a.b(a2 != null);
-            g b2 = this.f.b(a2.f7557a);
+            g b2 = this.f.b(a2.f4718a);
             com.anythink.expressad.exoplayer.k.a.a(b2);
             com.anythink.expressad.exoplayer.k.a.b(b2.b());
             if (file.exists()) {
@@ -426,7 +427,7 @@ public final class m implements a {
                 }
                 long a3 = j.a(b2.a());
                 if (a3 != -1) {
-                    com.anythink.expressad.exoplayer.k.a.b(a2.b + a2.f7558c <= a3);
+                    com.anythink.expressad.exoplayer.k.a.b(a2.b + a2.f4719c <= a3);
                 }
                 a(a2);
                 this.f.b();
@@ -545,7 +546,7 @@ public final class m implements a {
                 this.d.mkdirs();
                 f();
             }
-            a2 = n.a(this.d, b2.f7563a, j, System.currentTimeMillis());
+            a2 = n.a(this.d, b2.f4724a, j, System.currentTimeMillis());
         }
         return a2;
     }

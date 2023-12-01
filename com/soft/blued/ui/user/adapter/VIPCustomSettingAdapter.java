@@ -22,11 +22,11 @@ import java.util.ArrayList;
 public class VIPCustomSettingAdapter extends BaseQuickAdapter<VIPCustomSettingBase, BaseViewHolder> {
 
     /* renamed from: a  reason: collision with root package name */
-    public Context f33794a;
+    public Context f20103a;
     public int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public int f33795c;
+    public int f20104c;
     public int d;
     public int e;
     public String f;
@@ -35,15 +35,15 @@ public class VIPCustomSettingAdapter extends BaseQuickAdapter<VIPCustomSettingBa
 
     public VIPCustomSettingAdapter(Context context, int i, String str, Drawable drawable, int i2, int i3) {
         super(i3, new ArrayList());
-        this.f33795c = 3;
-        this.f33794a = context;
+        this.f20104c = 3;
+        this.f20103a = context;
         this.e = i;
         this.f = str;
         this.g = drawable;
         this.h = i2;
         int i4 = context.getResources().getDisplayMetrics().widthPixels;
         this.d = i4;
-        this.b = (i4 - DensityUtils.a(this.f33794a, 36.0f)) / this.f33795c;
+        this.b = (i4 - DensityUtils.a(this.f20103a, 36.0f)) / this.f20104c;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -52,15 +52,15 @@ public class VIPCustomSettingAdapter extends BaseQuickAdapter<VIPCustomSettingBa
     public void convert(BaseViewHolder baseViewHolder, VIPCustomSettingBase vIPCustomSettingBase) {
         View view = baseViewHolder.getView(2131369461);
         GridLayoutManager.LayoutParams layoutParams = (GridLayoutManager.LayoutParams) view.getLayoutParams();
-        layoutParams.width = (AppInfo.l - DensityUtils.a(this.f33794a, 36.0f)) / 3;
+        layoutParams.width = (AppInfo.l - DensityUtils.a(this.f20103a, 36.0f)) / 3;
         int adapterPosition = baseViewHolder.getAdapterPosition();
         if (adapterPosition == 0 || adapterPosition == 1 || adapterPosition == 2) {
-            layoutParams.topMargin = DensityUtils.a(this.f33794a, 10.0f);
+            layoutParams.topMargin = DensityUtils.a(this.f20103a, 10.0f);
         } else {
-            layoutParams.topMargin = DensityUtils.a(this.f33794a, 0.0f);
+            layoutParams.topMargin = DensityUtils.a(this.f20103a, 0.0f);
         }
         view.setLayoutParams(layoutParams);
-        View view2 = baseViewHolder.getView(2131365126);
+        View view2 = baseViewHolder.getView(R.id.iv_bg);
         ConstraintLayout.LayoutParams layoutParams2 = (ConstraintLayout.LayoutParams) view2.getLayoutParams();
         layoutParams2.width = layoutParams.width;
         layoutParams2.height = layoutParams.width;
@@ -81,20 +81,20 @@ public class VIPCustomSettingAdapter extends BaseQuickAdapter<VIPCustomSettingBa
             ImageLoader.a((IRequestHost) null, vIPCustomSettingBase.front_cover).a((ImageView) baseViewHolder.getView(2131365518));
         }
         baseViewHolder.setText(2131372046, vIPCustomSettingBase.name);
-        baseViewHolder.setText(2131371262, vIPCustomSettingBase.corner_text);
+        baseViewHolder.setText(R.id.tv_desc, vIPCustomSettingBase.corner_text);
         if (vIPCustomSettingBase.is_termination == 1) {
             baseViewHolder.setVisible(R.id.tv_vip, false);
             baseViewHolder.setVisible(R.id.tv_time_limit, true);
         } else {
             if (vIPCustomSettingBase.isDefault) {
                 baseViewHolder.setVisible(R.id.tv_vip, false);
-                baseViewHolder.setVisible(2131371262, false);
+                baseViewHolder.setVisible(R.id.tv_desc, false);
             } else if (TextUtils.isEmpty(vIPCustomSettingBase.corner_text)) {
-                baseViewHolder.setVisible(2131371262, false);
+                baseViewHolder.setVisible(R.id.tv_desc, false);
                 baseViewHolder.setVisible(R.id.tv_vip, true);
             } else {
-                baseViewHolder.getView(2131371262).setBackground(NinePatchUtils.f10891a.a(R.drawable.icon_lv_9_bg));
-                baseViewHolder.setVisible(2131371262, true);
+                baseViewHolder.getView(R.id.tv_desc).setBackground(NinePatchUtils.a.a((int) R.drawable.icon_lv_9_bg));
+                baseViewHolder.setVisible(R.id.tv_desc, true);
                 baseViewHolder.setVisible(R.id.tv_vip, false);
             }
             baseViewHolder.setVisible(R.id.tv_time_limit, false);

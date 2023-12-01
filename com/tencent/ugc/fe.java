@@ -6,11 +6,11 @@ import com.tencent.liteav.videobase.frame.PixelFrame;
 final /* synthetic */ class fe implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final UGCSingleFilePixelFrameProvider f40378a;
+    private final UGCSingleFilePixelFrameProvider f26687a;
     private final PixelFrame b;
 
     private fe(UGCSingleFilePixelFrameProvider uGCSingleFilePixelFrameProvider, PixelFrame pixelFrame) {
-        this.f40378a = uGCSingleFilePixelFrameProvider;
+        this.f26687a = uGCSingleFilePixelFrameProvider;
         this.b = pixelFrame;
     }
 
@@ -20,6 +20,6 @@ final /* synthetic */ class fe implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        this.f40378a.onDecodeFrameInternal(this.b);
+        this.f26687a.onDecodeFrameInternal(this.b);
     }
 }

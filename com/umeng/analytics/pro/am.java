@@ -8,7 +8,6 @@ import com.umeng.commonsdk.statistics.common.HelperUtils;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.net.HttpURLConnection;
 import java.net.URL;
 import java.security.SecureRandom;
 import javax.net.ssl.HostnameVerifier;
@@ -20,11 +19,11 @@ import javax.net.ssl.SSLSession;
 public class am {
 
     /* renamed from: a  reason: collision with root package name */
-    private static HostnameVerifier f40623a;
+    private static HostnameVerifier f26932a;
 
     private static HostnameVerifier a() {
-        if (f40623a == null) {
-            f40623a = new HostnameVerifier() { // from class: com.umeng.analytics.pro.am.1
+        if (f26932a == null) {
+            f26932a = new HostnameVerifier() { // from class: com.umeng.analytics.pro.am.1
                 @Override // javax.net.ssl.HostnameVerifier
                 public boolean verify(String str, SSLSession sSLSession) {
                     if (TextUtils.isEmpty(str)) {
@@ -34,7 +33,7 @@ public class am {
                 }
             };
         }
-        return f40623a;
+        return f26932a;
     }
 
     private static HttpsURLConnection a(String str, String str2, byte[] bArr) {
@@ -113,7 +112,7 @@ public class am {
     public static void b(String str, byte[] bArr) {
         HttpsURLConnection httpsURLConnection;
         byte[] bArr2;
-        HttpURLConnection httpURLConnection = null;
+        HttpsURLConnection httpsURLConnection2 = null;
         try {
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
             try {
@@ -147,7 +146,7 @@ public class am {
             } catch (Throwable th3) {
                 if (0 != 0) {
                     try {
-                        httpURLConnection.disconnect();
+                        httpsURLConnection2.disconnect();
                     } catch (Throwable th4) {
                     }
                 }

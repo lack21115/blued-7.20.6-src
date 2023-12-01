@@ -6,7 +6,7 @@ import android.media.MediaCrypto;
 public final class k implements i {
 
     /* renamed from: a  reason: collision with root package name */
-    private final MediaCrypto f7263a;
+    private final MediaCrypto f4424a;
     private final boolean b;
 
     private k(MediaCrypto mediaCrypto) {
@@ -14,16 +14,16 @@ public final class k implements i {
     }
 
     public k(MediaCrypto mediaCrypto, boolean z) {
-        this.f7263a = (MediaCrypto) com.anythink.expressad.exoplayer.k.a.a(mediaCrypto);
+        this.f4424a = (MediaCrypto) com.anythink.expressad.exoplayer.k.a.a(mediaCrypto);
         this.b = z;
     }
 
     public final MediaCrypto a() {
-        return this.f7263a;
+        return this.f4424a;
     }
 
     @Override // com.anythink.expressad.exoplayer.d.i
     public final boolean a(String str) {
-        return !this.b && this.f7263a.requiresSecureDecoderComponent(str);
+        return !this.b && this.f4424a.requiresSecureDecoderComponent(str);
     }
 }

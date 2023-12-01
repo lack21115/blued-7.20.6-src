@@ -21,13 +21,9 @@ import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/HornView.class */
 public class HornView extends LinearLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f14310a;
+    private Context a;
     private LayoutInflater b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private View f14311c;
+    private View c;
     private ScrollTextView d;
     private View e;
     private ScrollTextView f;
@@ -37,7 +33,7 @@ public class HornView extends LinearLayout {
     public HornView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         this.g = new ArrayList();
-        this.f14310a = context;
+        this.a = context;
         b();
     }
 
@@ -72,7 +68,7 @@ public class HornView extends LinearLayout {
                 HornView.this.g.remove(liveHornModel);
                 if (HornView.this.g.size() <= 0) {
                     HornView.this.d.setVisibility(4);
-                    HornView.this.f14311c.startAnimation(alphaAnimation);
+                    HornView.this.c.startAnimation(alphaAnimation);
                     return;
                 }
                 LiveHornModel liveHornModel2 = (LiveHornModel) HornView.this.g.get(0);
@@ -81,14 +77,14 @@ public class HornView extends LinearLayout {
                     HornView.this.a(liveHornModel2);
                 } else if (liveHornModel2.type == 2) {
                     HornView.this.d.setVisibility(4);
-                    HornView.this.f14311c.startAnimation(alphaAnimation);
+                    HornView.this.c.startAnimation(alphaAnimation);
                 }
             }
         });
         alphaAnimation.setAnimationListener(new Animation.AnimationListener() { // from class: com.blued.android.module.live_china.view.HornView.4
             @Override // android.view.animation.Animation.AnimationListener
             public void onAnimationEnd(Animation animation) {
-                HornView.this.f14311c.setVisibility(4);
+                HornView.this.c.setVisibility(4);
                 HornView.this.h = false;
                 HornView.this.a();
             }
@@ -106,14 +102,14 @@ public class HornView extends LinearLayout {
     }
 
     private void b() {
-        LayoutInflater from = LayoutInflater.from(this.f14310a);
+        LayoutInflater from = LayoutInflater.from(this.a);
         this.b = from;
         View inflate = from.inflate(R.layout.live_horn_layout, (ViewGroup) this, true);
-        this.f14311c = inflate.findViewById(R.id.big_horn_layout);
+        this.c = inflate.findViewById(R.id.big_horn_layout);
         this.d = (ScrollTextView) inflate.findViewById(R.id.big_horn_text);
         this.e = inflate.findViewById(R.id.small_horn_layout);
         this.f = (ScrollTextView) inflate.findViewById(R.id.small_horn_text);
-        this.f14311c.setVisibility(4);
+        this.c.setVisibility(4);
         this.d.setVisibility(4);
         this.e.setVisibility(4);
         this.f.setVisibility(4);
@@ -220,8 +216,8 @@ public class HornView extends LinearLayout {
             }
         });
         if (liveHornModel.type == 1) {
-            this.f14311c.setVisibility(0);
-            this.f14311c.startAnimation(alphaAnimation);
+            this.c.setVisibility(0);
+            this.c.startAnimation(alphaAnimation);
         } else if (liveHornModel.type == 2) {
             this.e.setVisibility(0);
             this.e.startAnimation(alphaAnimation);

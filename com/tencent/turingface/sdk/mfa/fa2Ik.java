@@ -7,11 +7,11 @@ import java.util.Map;
 public final class fa2Ik extends ucT3w {
 
     /* renamed from: a  reason: collision with root package name */
-    public static Map<Integer, byte[]> f39950a = new HashMap();
+    public static Map<Integer, byte[]> f26259a = new HashMap();
     public static ShGzN b;
 
     /* renamed from: c  reason: collision with root package name */
-    public static DX7Nf f39951c;
+    public static DX7Nf f26260c;
     public static y8N3A d;
     public static Map<Integer, String> e;
     public static Map<Integer, String> f;
@@ -24,10 +24,13 @@ public final class fa2Ik extends ucT3w {
     public Map<Integer, String> m = null;
     public Map<Integer, String> n = null;
 
+    /* JADX WARN: Type inference failed for: r0v12, types: [java.util.Map<java.lang.Integer, java.lang.String>, java.util.HashMap] */
+    /* JADX WARN: Type inference failed for: r0v3, types: [java.util.HashMap, java.util.Map<java.lang.Integer, byte[]>] */
+    /* JADX WARN: Type inference failed for: r0v9, types: [java.util.Map<java.lang.Integer, java.lang.String>, java.util.HashMap] */
     static {
-        f39950a.put(0, new byte[]{0});
+        f26259a.put(0, new byte[]{0});
         b = new ShGzN();
-        f39951c = new DX7Nf();
+        f26260c = new DX7Nf();
         d = new y8N3A();
         e = new HashMap();
         e.put(0, "");
@@ -59,10 +62,10 @@ public final class fa2Ik extends ucT3w {
     @Override // com.tencent.turingface.sdk.mfa.ucT3w
     public final void a(nyvKz nyvkz) {
         this.g = nyvkz.a(this.g, 0, true);
-        this.h = (Map) nyvkz.a((nyvKz) f39950a, 1, true);
+        this.h = (Map) nyvkz.a((nyvKz) f26259a, 1, true);
         this.i = nyvkz.a(this.i, 2, true);
         this.j = (ShGzN) nyvkz.a((ucT3w) b, 3, true);
-        this.k = (DX7Nf) nyvkz.a((ucT3w) f39951c, 4, true);
+        this.k = (DX7Nf) nyvkz.a((ucT3w) f26260c, 4, true);
         this.l = (y8N3A) nyvkz.a((ucT3w) d, 5, false);
         this.m = (Map) nyvkz.a((nyvKz) e, 6, false);
         this.n = (Map) nyvkz.a((nyvKz) f, 7, false);

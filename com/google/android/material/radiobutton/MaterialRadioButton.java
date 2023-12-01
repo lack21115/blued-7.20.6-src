@@ -15,7 +15,7 @@ import com.google.android.material.theme.overlay.MaterialThemeOverlay;
 /* loaded from: source-8110460-dex2jar.jar:com/google/android/material/radiobutton/MaterialRadioButton.class */
 public class MaterialRadioButton extends AppCompatRadioButton {
     private static final int DEF_STYLE_RES = R.style.Widget_MaterialComponents_CompoundButton_RadioButton;
-    private static final int[][] ENABLED_CHECKED_STATES = {new int[]{16842910, 16842912}, new int[]{16842910, -16842912}, new int[]{-16842910, 16842912}, new int[]{-16842910, -16842912}};
+    private static final int[][] ENABLED_CHECKED_STATES = {new int[]{android.R.attr.state_enabled, android.R.attr.state_checked}, new int[]{android.R.attr.state_enabled, -16842912}, new int[]{-16842910, android.R.attr.state_checked}, new int[]{-16842910, -16842912}};
     private ColorStateList materialThemeColorsTintList;
     private boolean useMaterialThemeColors;
 
@@ -57,9 +57,8 @@ public class MaterialRadioButton extends AppCompatRadioButton {
         return this.useMaterialThemeColors;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.TextView, android.view.View
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         if (this.useMaterialThemeColors && CompoundButtonCompat.getButtonTintList(this) == null) {
             setUseMaterialThemeColors(true);

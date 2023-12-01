@@ -10,11 +10,11 @@ import java.util.HashMap;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f40816a = 101;
+    public static final int f27125a = 101;
     public static final int b = 102;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final int f40817c = 103;
+    public static final int f27126c = 103;
     public static final int d = 104;
     public static final int e = 105;
     public static final int f = 106;

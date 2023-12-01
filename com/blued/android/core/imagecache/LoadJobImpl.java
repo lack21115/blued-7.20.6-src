@@ -12,13 +12,9 @@ import java.util.concurrent.locks.ReentrantLock;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/imagecache/LoadJobImpl.class */
 public class LoadJobImpl extends LoadJob implements Runnable {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected LoadType f9586a = LoadType.DATA;
+    protected LoadType a = LoadType.DATA;
     protected final RecyclingImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    protected final String f9587c;
+    protected final String c;
     protected final String d;
     protected final LoadOptions e;
     protected final ImageLoadingListener f;
@@ -30,9 +26,7 @@ public class LoadJobImpl extends LoadJob implements Runnable {
     /* renamed from: com.blued.android.core.imagecache.LoadJobImpl$1  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/imagecache/LoadJobImpl$1.class */
     public static /* synthetic */ class AnonymousClass1 {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f9588a;
+        static final /* synthetic */ int[] a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:17:0x0059 -> B:33:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:19:0x005d -> B:43:0x001f). Please submit an issue!!! */
@@ -42,33 +36,33 @@ public class LoadJobImpl extends LoadJob implements Runnable {
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:27:0x006d -> B:41:0x004c). Please submit an issue!!! */
         static {
             int[] iArr = new int[RecyclingUtils.Scheme.values().length];
-            f9588a = iArr;
+            a = iArr;
             try {
                 iArr[RecyclingUtils.Scheme.HTTP.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f9588a[RecyclingUtils.Scheme.HTTPS.ordinal()] = 2;
+                a[RecyclingUtils.Scheme.HTTPS.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f9588a[RecyclingUtils.Scheme.FILE.ordinal()] = 3;
+                a[RecyclingUtils.Scheme.FILE.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f9588a[RecyclingUtils.Scheme.CONTENT.ordinal()] = 4;
+                a[RecyclingUtils.Scheme.CONTENT.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f9588a[RecyclingUtils.Scheme.ASSETS.ordinal()] = 5;
+                a[RecyclingUtils.Scheme.ASSETS.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
             try {
-                f9588a[RecyclingUtils.Scheme.DRAWABLE.ordinal()] = 6;
+                a[RecyclingUtils.Scheme.DRAWABLE.ordinal()] = 6;
             } catch (NoSuchFieldError e6) {
             }
             try {
-                f9588a[RecyclingUtils.Scheme.UNKNOWN.ordinal()] = 7;
+                a[RecyclingUtils.Scheme.UNKNOWN.ordinal()] = 7;
             } catch (NoSuchFieldError e7) {
             }
         }
@@ -96,7 +90,7 @@ public class LoadJobImpl extends LoadJob implements Runnable {
         this.d = str;
         this.e = loadOptions;
         this.f = imageLoadingListener;
-        this.f9587c = str2;
+        this.c = str2;
         this.i = ImageLoadEngine.a(str);
         if (AppMethods.b()) {
             this.g = new Handler();
@@ -162,12 +156,12 @@ public class LoadJobImpl extends LoadJob implements Runnable {
                     drawable = d;
                 } catch (LoadDrawableException e) {
                     e.printStackTrace();
-                    failType = e.f9585a;
+                    failType = e.a;
                     th = e.b;
                     c();
                 } catch (SwitchJobLoadType e2) {
-                    if (this.f9586a != LoadType.NET) {
-                        this.f9586a = LoadType.NET;
+                    if (this.a != LoadType.NET) {
+                        this.a = LoadType.NET;
                         ImageLoadEngine.a(this);
                         c();
                         return;
@@ -186,7 +180,7 @@ public class LoadJobImpl extends LoadJob implements Runnable {
                     }
                 }
                 if (drawable != null && (drawable instanceof IRecyclingDrawable)) {
-                    RecyclingImageLoader.a(this.f9587c, (IRecyclingDrawable) drawable);
+                    RecyclingImageLoader.a(this.c, (IRecyclingDrawable) drawable);
                 }
                 if (ImageLoadEngine.b(this)) {
                     ImageLoadEngine.c(this);

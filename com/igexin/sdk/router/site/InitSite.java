@@ -23,7 +23,7 @@ public class InitSite extends Site<JSONObject, JSONObject> {
         try {
             jSONObject.put("cid", e.A);
             jSONObject.put("deviceId", e.H);
-            jSONObject.put("userPushService", o.b(e.l, o.f23664c, ""));
+            jSONObject.put("userPushService", o.b(e.l, o.f10056c, ""));
             return jSONObject;
         } catch (JSONException e) {
             a.a(e);

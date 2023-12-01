@@ -15,18 +15,18 @@ public class NoTitleWebViewShowFragment extends WebViewShowInfoFragment {
         if (!str.contains("://")) {
             str2 = "http://" + str;
         }
-        this.f34480a = str2;
+        this.f20789a = str2;
         return this;
     }
 
     @Override // com.soft.blued.ui.web.WebViewShowInfoFragment
     public void a(String str, String str2) {
-        if (this.f34481c.a(this.f34480a, "")) {
+        if (this.f20790c.a(this.f20789a, "")) {
             return;
         }
         this.f.setVisibility(0);
         this.e.setVisibility(8);
-        this.f34481c.c().setVisibility(8);
+        this.f20790c.c().setVisibility(8);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -39,10 +39,10 @@ public class NoTitleWebViewShowFragment extends WebViewShowInfoFragment {
     }
 
     public void d() {
-        this.f34481c.b("");
+        this.f20790c.b("");
     }
 
-    @Override // com.soft.blued.ui.web.WebViewShowInfoFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.soft.blued.ui.web.WebViewShowInfoFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         return super.onCreateView(layoutInflater, viewGroup, bundle);
     }

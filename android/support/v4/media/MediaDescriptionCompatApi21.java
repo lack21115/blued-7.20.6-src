@@ -6,13 +6,11 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Parcel;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8756600-dex2jar.jar:android/support/v4/media/MediaDescriptionCompatApi21.class */
-public class MediaDescriptionCompatApi21 {
+class MediaDescriptionCompatApi21 {
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8756600-dex2jar.jar:android/support/v4/media/MediaDescriptionCompatApi21$Builder.class */
-    public static class Builder {
+    static class Builder {
         private Builder() {
         }
 

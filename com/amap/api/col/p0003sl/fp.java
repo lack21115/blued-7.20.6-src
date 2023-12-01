@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
+import com.amap.api.maps.model.MyLocationStyle;
 import com.amap.api.services.busline.BusLineResult;
 import com.amap.api.services.busline.BusLineSearch;
 import com.amap.api.services.busline.BusStationResult;
@@ -11,6 +12,7 @@ import com.amap.api.services.busline.BusStationSearch;
 import com.amap.api.services.cloud.CloudItemDetail;
 import com.amap.api.services.cloud.CloudResult;
 import com.amap.api.services.cloud.CloudSearch;
+import com.amap.api.services.core.AMapException;
 import com.amap.api.services.core.PoiItem;
 import com.amap.api.services.district.DistrictResult;
 import com.amap.api.services.district.DistrictSearch;
@@ -39,122 +41,95 @@ import com.amap.api.services.share.ShareSearch;
 import com.amap.api.services.weather.LocalWeatherForecastResult;
 import com.amap.api.services.weather.LocalWeatherLiveResult;
 import com.amap.api.services.weather.WeatherSearch;
-import com.tencent.rtmp.TXLiveConstants;
 import java.util.ArrayList;
 import java.util.List;
 
 /* renamed from: com.amap.api.col.3sl.fp  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/fp.class */
 public final class fp extends Handler {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static fp f4960a;
+    private static fp a;
 
     /* renamed from: com.amap.api.col.3sl.fp$a */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/fp$a.class */
     public static final class a {
-
-        /* renamed from: a  reason: collision with root package name */
-        public BusLineResult f4961a;
+        public BusLineResult a;
         public BusLineSearch.OnBusLineSearchListener b;
     }
 
     /* renamed from: com.amap.api.col.3sl.fp$b */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/fp$b.class */
     public static final class b {
-
-        /* renamed from: a  reason: collision with root package name */
-        public BusStationResult f4962a;
+        public BusStationResult a;
         public BusStationSearch.OnBusStationSearchListener b;
     }
 
     /* renamed from: com.amap.api.col.3sl.fp$c */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/fp$c.class */
     public static final class c {
-
-        /* renamed from: a  reason: collision with root package name */
-        public CloudItemDetail f4963a;
+        public CloudItemDetail a;
         public CloudSearch.OnCloudSearchListener b;
     }
 
     /* renamed from: com.amap.api.col.3sl.fp$d */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/fp$d.class */
     public static final class d {
-
-        /* renamed from: a  reason: collision with root package name */
-        public CloudResult f4964a;
+        public CloudResult a;
         public CloudSearch.OnCloudSearchListener b;
     }
 
     /* renamed from: com.amap.api.col.3sl.fp$e */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/fp$e.class */
     public static final class e {
-
-        /* renamed from: a  reason: collision with root package name */
-        public GeocodeResult f4965a;
+        public GeocodeResult a;
         public GeocodeSearch.OnGeocodeSearchListener b;
     }
 
     /* renamed from: com.amap.api.col.3sl.fp$f */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/fp$f.class */
     public static final class f {
-
-        /* renamed from: a  reason: collision with root package name */
-        public List<NearbySearch.NearbyListener> f4966a;
+        public List<NearbySearch.NearbyListener> a;
         public NearbySearchResult b;
     }
 
     /* renamed from: com.amap.api.col.3sl.fp$g */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/fp$g.class */
     public static final class g {
-
-        /* renamed from: a  reason: collision with root package name */
-        public PoiItem f4967a;
+        public PoiItem a;
         public PoiSearch.OnPoiSearchListener b;
     }
 
     /* renamed from: com.amap.api.col.3sl.fp$h */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/fp$h.class */
     public static final class h {
-
-        /* renamed from: a  reason: collision with root package name */
-        public PoiResult f4968a;
+        public PoiResult a;
         public PoiSearch.OnPoiSearchListener b;
     }
 
     /* renamed from: com.amap.api.col.3sl.fp$i */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/fp$i.class */
     public static final class i {
-
-        /* renamed from: a  reason: collision with root package name */
-        public RegeocodeResult f4969a;
+        public RegeocodeResult a;
         public GeocodeSearch.OnGeocodeSearchListener b;
     }
 
     /* renamed from: com.amap.api.col.3sl.fp$j */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/fp$j.class */
     public static final class j {
-
-        /* renamed from: a  reason: collision with root package name */
-        public RoutePOISearchResult f4970a;
+        public RoutePOISearchResult a;
         public RoutePOISearch.OnRoutePOISearchListener b;
     }
 
     /* renamed from: com.amap.api.col.3sl.fp$k */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/fp$k.class */
     public static final class k {
-
-        /* renamed from: a  reason: collision with root package name */
-        public LocalWeatherForecastResult f4971a;
+        public LocalWeatherForecastResult a;
         public WeatherSearch.OnWeatherSearchListener b;
     }
 
     /* renamed from: com.amap.api.col.3sl.fp$l */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/fp$l.class */
     public static final class l {
-
-        /* renamed from: a  reason: collision with root package name */
-        public LocalWeatherLiveResult f4972a;
+        public LocalWeatherLiveResult a;
         public WeatherSearch.OnWeatherSearchListener b;
     }
 
@@ -169,13 +144,13 @@ public final class fp extends Handler {
         fp fpVar;
         synchronized (fp.class) {
             try {
-                if (f4960a == null) {
+                if (a == null) {
                     if (Looper.myLooper() != null && Looper.myLooper() == Looper.getMainLooper()) {
-                        f4960a = new fp();
+                        a = new fp();
                     }
-                    f4960a = new fp(Looper.getMainLooper());
+                    a = new fp(Looper.getMainLooper());
                 }
-                fpVar = f4960a;
+                fpVar = a;
             } catch (Throwable th) {
                 throw th;
             }
@@ -191,7 +166,7 @@ public final class fp extends Handler {
             return;
         }
         switch (message.what) {
-            case 1100:
+            case AMapException.CODE_AMAP_ENGINE_RESPONSE_ERROR /* 1100 */:
                 onShareSearchListener.onPoiShareUrlSearched(string, i2);
                 return;
             case 1101:
@@ -200,13 +175,13 @@ public final class fp extends Handler {
             case 1102:
                 onShareSearchListener.onNaviShareUrlSearched(string, i2);
                 return;
-            case 1103:
+            case AMapException.CODE_AMAP_ENGINE_RETURN_TIMEOUT /* 1103 */:
                 onShareSearchListener.onBusRouteShareUrlSearched(string, i2);
                 return;
             case 1104:
                 onShareSearchListener.onDrivingRouteShareUrlSearched(string, i2);
                 return;
-            case TXLiveConstants.PUSH_WARNING_BEAUTYSURFACE_VIEW_INIT_FAIL /* 1105 */:
+            case 1105:
                 onShareSearchListener.onWalkRouteShareUrlSearched(string, i2);
                 return;
             default:
@@ -227,7 +202,7 @@ public final class fp extends Handler {
     private static void c(Message message) {
         List<NearbySearch.NearbyListener> list;
         f fVar = (f) message.obj;
-        if (fVar == null || (list = fVar.f4966a) == null || list.size() == 0) {
+        if (fVar == null || (list = fVar.a) == null || list.size() == 0) {
             return;
         }
         NearbySearchResult nearbySearchResult = message.what == 1000 ? fVar.b : null;
@@ -254,7 +229,7 @@ public final class fp extends Handler {
         }
         BusStationResult busStationResult = null;
         if (message.what == 1000) {
-            busStationResult = bVar.f4962a;
+            busStationResult = bVar.a;
         }
         onBusStationSearchListener.onBusStationSearched(busStationResult, message.what);
     }
@@ -268,13 +243,13 @@ public final class fp extends Handler {
             if (hVar == null || (onPoiSearchListener = hVar.b) == null || (data = message.getData()) == null) {
                 return;
             }
-            onPoiSearchListener.onPoiSearched(hVar.f4968a, data.getInt("errorCode"));
+            onPoiSearchListener.onPoiSearched(hVar.a, data.getInt(MyLocationStyle.ERROR_CODE));
         } else if (message.what != 602 || (gVar = (g) message.obj) == null) {
         } else {
             PoiSearch.OnPoiSearchListener onPoiSearchListener2 = gVar.b;
             Bundle data2 = message.getData();
             if (data2 != null) {
-                onPoiSearchListener2.onPoiItemSearched(gVar.f4967a, data2.getInt("errorCode"));
+                onPoiSearchListener2.onPoiItemSearched(gVar.a, data2.getInt(MyLocationStyle.ERROR_CODE));
             }
         }
     }
@@ -286,7 +261,7 @@ public final class fp extends Handler {
         }
         ArrayList arrayList = null;
         if (message.what == 1000) {
-            arrayList = message.getData().getParcelableArrayList("result");
+            arrayList = message.getData().getParcelableArrayList(com.alipay.sdk.util.l.c);
         }
         inputtipsListener.onGetInputtips(arrayList, message.what);
     }
@@ -300,10 +275,10 @@ public final class fp extends Handler {
             if (iVar == null || (onGeocodeSearchListener2 = iVar.b) == null) {
                 return;
             }
-            onGeocodeSearchListener2.onRegeocodeSearched(iVar.f4969a, message.arg2);
+            onGeocodeSearchListener2.onRegeocodeSearched(iVar.a, message.arg2);
         } else if (message.what != 200 || (eVar = (e) message.obj) == null || (onGeocodeSearchListener = eVar.b) == null) {
         } else {
-            onGeocodeSearchListener.onGeocodeSearched(eVar.f4965a, message.arg2);
+            onGeocodeSearchListener.onGeocodeSearched(eVar.a, message.arg2);
         }
     }
 
@@ -312,7 +287,7 @@ public final class fp extends Handler {
         if (onDistrictSearchListener == null) {
             return;
         }
-        onDistrictSearchListener.onDistrictSearched((DistrictResult) message.getData().getParcelable("result"));
+        onDistrictSearchListener.onDistrictSearched((DistrictResult) message.getData().getParcelable(com.alipay.sdk.util.l.c));
     }
 
     private static void j(Message message) {
@@ -323,7 +298,7 @@ public final class fp extends Handler {
         }
         BusLineResult busLineResult = null;
         if (message.what == 1000) {
-            busLineResult = aVar.f4961a;
+            busLineResult = aVar.a;
         }
         onBusLineSearchListener.onBusLineSearched(busLineResult, message.what);
     }
@@ -337,26 +312,26 @@ public final class fp extends Handler {
         if (message.what == 100) {
             Bundle data2 = message.getData();
             if (data2 != null) {
-                onRouteSearchListener.onBusRouteSearched((BusRouteResult) message.getData().getParcelable("result"), data2.getInt("errorCode"));
+                onRouteSearchListener.onBusRouteSearched((BusRouteResult) message.getData().getParcelable(com.alipay.sdk.util.l.c), data2.getInt(MyLocationStyle.ERROR_CODE));
             }
         } else if (message.what == 101) {
             Bundle data3 = message.getData();
             if (data3 != null) {
-                onRouteSearchListener.onDriveRouteSearched((DriveRouteResult) message.getData().getParcelable("result"), data3.getInt("errorCode"));
+                onRouteSearchListener.onDriveRouteSearched((DriveRouteResult) message.getData().getParcelable(com.alipay.sdk.util.l.c), data3.getInt(MyLocationStyle.ERROR_CODE));
             }
         } else if (message.what == 102) {
             Bundle data4 = message.getData();
             if (data4 != null) {
-                onRouteSearchListener.onWalkRouteSearched((WalkRouteResult) message.getData().getParcelable("result"), data4.getInt("errorCode"));
+                onRouteSearchListener.onWalkRouteSearched((WalkRouteResult) message.getData().getParcelable(com.alipay.sdk.util.l.c), data4.getInt(MyLocationStyle.ERROR_CODE));
             }
         } else if (message.what == 103) {
             Bundle data5 = message.getData();
             if (data5 != null) {
-                onRouteSearchListener.onRideRouteSearched((RideRouteResult) message.getData().getParcelable("result"), data5.getInt("errorCode"));
+                onRouteSearchListener.onRideRouteSearched((RideRouteResult) message.getData().getParcelable(com.alipay.sdk.util.l.c), data5.getInt(MyLocationStyle.ERROR_CODE));
             }
         } else if (message.what != 104 || (data = message.getData()) == null) {
         } else {
-            onRouteSearchListener.onRideRouteSearched((RideRouteResult) message.getData().getParcelable("result"), data.getInt("errorCode"));
+            onRouteSearchListener.onRideRouteSearched((RideRouteResult) message.getData().getParcelable(com.alipay.sdk.util.l.c), data.getInt(MyLocationStyle.ERROR_CODE));
         }
     }
 
@@ -366,7 +341,7 @@ public final class fp extends Handler {
         if (onRouteSearchListener == null || message.what != 101 || (data = message.getData()) == null) {
             return;
         }
-        onRouteSearchListener.onDriveRouteSearched((DriveRouteResultV2) message.getData().getParcelable("result"), data.getInt("errorCode"));
+        onRouteSearchListener.onDriveRouteSearched((DriveRouteResultV2) message.getData().getParcelable(com.alipay.sdk.util.l.c), data.getInt(MyLocationStyle.ERROR_CODE));
     }
 
     private static void m(Message message) {
@@ -375,7 +350,7 @@ public final class fp extends Handler {
         if (onTruckRouteSearchListener == null || message.what != 104 || (data = message.getData()) == null) {
             return;
         }
-        onTruckRouteSearchListener.onTruckRouteSearched((TruckRouteRestult) message.getData().getParcelable("result"), data.getInt("errorCode"));
+        onTruckRouteSearchListener.onTruckRouteSearched((TruckRouteRestult) message.getData().getParcelable(com.alipay.sdk.util.l.c), data.getInt(MyLocationStyle.ERROR_CODE));
     }
 
     private static void n(Message message) {
@@ -384,8 +359,8 @@ public final class fp extends Handler {
         if (onRoutePlanSearchListener == null || message.what != 105 || (data = message.getData()) == null) {
             return;
         }
-        int i2 = data.getInt("errorCode");
-        DriveRoutePlanResult driveRoutePlanResult = (DriveRoutePlanResult) message.getData().getParcelable("result");
+        int i2 = data.getInt(MyLocationStyle.ERROR_CODE);
+        DriveRoutePlanResult driveRoutePlanResult = (DriveRoutePlanResult) message.getData().getParcelable(com.alipay.sdk.util.l.c);
         if (onRoutePlanSearchListener != null) {
             onRoutePlanSearchListener.onDriveRoutePlanSearched(driveRoutePlanResult, i2);
         }
@@ -398,10 +373,10 @@ public final class fp extends Handler {
             if (dVar == null) {
                 return;
             }
-            dVar.b.onCloudSearched(dVar.f4964a, message.arg2);
+            dVar.b.onCloudSearched(dVar.a, message.arg2);
         } else if (message.what != 701 || (cVar = (c) message.obj) == null) {
         } else {
-            cVar.b.onCloudItemDetailSearched(cVar.f4963a, message.arg2);
+            cVar.b.onCloudItemDetailSearched(cVar.a, message.arg2);
         }
     }
 
@@ -416,10 +391,10 @@ public final class fp extends Handler {
             if (lVar == null || (onWeatherSearchListener2 = lVar.b) == null || (data2 = message.getData()) == null) {
                 return;
             }
-            onWeatherSearchListener2.onWeatherLiveSearched(lVar.f4972a, data2.getInt("errorCode"));
+            onWeatherSearchListener2.onWeatherLiveSearched(lVar.a, data2.getInt(MyLocationStyle.ERROR_CODE));
         } else if (message.what != 1302 || (kVar = (k) message.obj) == null || (onWeatherSearchListener = kVar.b) == null || (data = message.getData()) == null) {
         } else {
-            onWeatherSearchListener.onWeatherForecastSearched(kVar.f4971a, data.getInt("errorCode"));
+            onWeatherSearchListener.onWeatherForecastSearched(kVar.a, data.getInt(MyLocationStyle.ERROR_CODE));
         }
     }
 
@@ -430,7 +405,7 @@ public final class fp extends Handler {
         if (jVar == null || (onRoutePOISearchListener = jVar.b) == null || (data = message.getData()) == null) {
             return;
         }
-        onRoutePOISearchListener.onRoutePoiSearched(jVar.f4970a, data.getInt("errorCode"));
+        onRoutePOISearchListener.onRoutePoiSearched(jVar.a, data.getInt(MyLocationStyle.ERROR_CODE));
     }
 
     private static void r(Message message) {
@@ -439,7 +414,7 @@ public final class fp extends Handler {
         if (onDistanceSearchListener == null || message.what != 400 || (data = message.getData()) == null) {
             return;
         }
-        onDistanceSearchListener.onDistanceSearched((DistanceResult) message.getData().getParcelable("result"), data.getInt("errorCode"));
+        onDistanceSearchListener.onDistanceSearched((DistanceResult) message.getData().getParcelable(com.alipay.sdk.util.l.c), data.getInt(MyLocationStyle.ERROR_CODE));
     }
 
     @Override // android.os.Handler

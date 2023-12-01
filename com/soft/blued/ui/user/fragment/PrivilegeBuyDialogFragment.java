@@ -1,6 +1,5 @@
 package com.soft.blued.ui.user.fragment;
 
-import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
@@ -54,11 +53,11 @@ import java.util.List;
 public class PrivilegeBuyDialogFragment extends BaseFragment implements View.OnClickListener, VIPBuyResultObserver.IVIPBuyResultObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    public Context f33897a;
+    public Context f20206a;
     public View b;
 
     /* renamed from: c  reason: collision with root package name */
-    public View f33898c;
+    public View f20207c;
     public LayoutInflater d;
     private ImageView f;
     private List<PrivilegeDialogBuyOptionView> g;
@@ -79,7 +78,6 @@ public class PrivilegeBuyDialogFragment extends BaseFragment implements View.OnC
     private int v = -1;
     public BluedUIHttpResponse e = new BluedUIHttpResponse<BluedEntityA<PrivilegeBuyOptionForJsonParse>>(PrivilegeBuyDialogFragment.class.getName(), getFragmentActive()) { // from class: com.soft.blued.ui.user.fragment.PrivilegeBuyDialogFragment.4
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public void onUICache(BluedEntityA<PrivilegeBuyOptionForJsonParse> bluedEntityA) {
             super.onUICache(bluedEntityA);
@@ -87,7 +85,6 @@ public class PrivilegeBuyDialogFragment extends BaseFragment implements View.OnC
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: b */
         public void onUIUpdate(BluedEntityA<PrivilegeBuyOptionForJsonParse> bluedEntityA) {
             PrivilegeBuyDialogFragment.this.a(bluedEntityA);
@@ -96,18 +93,15 @@ public class PrivilegeBuyDialogFragment extends BaseFragment implements View.OnC
             }
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse, com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
         public void onSuccess(String str) {
             super.onSuccess(str);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIFinish() {
             super.onUIFinish();
             DialogUtils.b(PrivilegeBuyDialogFragment.this.k);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIStart() {
             DialogUtils.a(PrivilegeBuyDialogFragment.this.k);
             super.onUIStart();
@@ -149,6 +143,7 @@ public class PrivilegeBuyDialogFragment extends BaseFragment implements View.OnC
         }
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private void d() {
         LiveEventBus.get(EventBusConstant.KEY_EVENT_CALL_BUY_OPEN, Boolean.class).observe(this, new Observer<Boolean>() { // from class: com.soft.blued.ui.user.fragment.PrivilegeBuyDialogFragment.1
             /* JADX WARN: Code restructure failed: missing block: B:17:0x0055, code lost:
@@ -276,10 +271,10 @@ public class PrivilegeBuyDialogFragment extends BaseFragment implements View.OnC
     }
 
     private void e() {
-        String string = this.f33897a.getString(R.string.hello_agree);
-        String string2 = this.f33897a.getString(R.string.hello_service_agreement);
-        String string3 = this.f33897a.getString(R.string.hello_and);
-        String string4 = this.f33897a.getString(R.string.hello_spotlight_requirements);
+        String string = this.f20206a.getString(R.string.hello_agree);
+        String string2 = this.f20206a.getString(R.string.hello_service_agreement);
+        String string3 = this.f20206a.getString(R.string.hello_and);
+        String string4 = this.f20206a.getString(R.string.hello_spotlight_requirements);
         String str = string + string2 + string3 + string4;
         SpannableString spannableString = new SpannableString(str);
         this.r.setMovementMethod(LinkMovementMethod.getInstance());
@@ -291,7 +286,7 @@ public class PrivilegeBuyDialogFragment extends BaseFragment implements View.OnC
 
             @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
             public void updateDrawState(TextPaint textPaint) {
-                textPaint.setColor(PrivilegeBuyDialogFragment.this.f33897a.getResources().getColor(2131101766));
+                textPaint.setColor(PrivilegeBuyDialogFragment.this.f20206a.getResources().getColor(2131101766));
                 textPaint.setUnderlineText(false);
             }
         }, str.indexOf(string2), (string + string2).length(), 33);
@@ -303,7 +298,7 @@ public class PrivilegeBuyDialogFragment extends BaseFragment implements View.OnC
 
             @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
             public void updateDrawState(TextPaint textPaint) {
-                textPaint.setColor(PrivilegeBuyDialogFragment.this.f33897a.getResources().getColor(2131101766));
+                textPaint.setColor(PrivilegeBuyDialogFragment.this.f20206a.getResources().getColor(2131101766));
                 textPaint.setUnderlineText(false);
             }
         }, str.indexOf(string4), str.length(), 33);
@@ -332,25 +327,25 @@ public class PrivilegeBuyDialogFragment extends BaseFragment implements View.OnC
             for (PrivilegeBuyOptionForJsonParse.ProductBean productBean : this.j) {
                 productBean.showBeans = false;
             }
-            this.h.setText(this.f33897a.getResources().getString(R.string.hello_buy));
+            this.h.setText(this.f20206a.getResources().getString(R.string.hello_buy));
         } else if (i == 2) {
             this.t.setText(getContext().getString(R.string.pay_type_wechat));
             for (PrivilegeBuyOptionForJsonParse.ProductBean productBean2 : this.j) {
                 productBean2.showBeans = false;
             }
-            this.h.setText(this.f33897a.getResources().getString(R.string.hello_buy));
+            this.h.setText(this.f20206a.getResources().getString(R.string.hello_buy));
         } else if (i == 3) {
             this.t.setText(getContext().getString(R.string.pay_type_beans));
             for (PrivilegeBuyOptionForJsonParse.ProductBean productBean3 : this.j) {
                 productBean3.showBeans = true;
             }
-            this.h.setText(String.format(this.f33897a.getResources().getString(R.string.pay_beans), c().total_beans + ""));
+            this.h.setText(String.format(this.f20206a.getResources().getString(R.string.pay_beans), c().total_beans + ""));
         } else if (i == 4) {
             this.t.setText(getContext().getString(R.string.pay_platform_huabei));
             for (PrivilegeBuyOptionForJsonParse.ProductBean productBean4 : this.j) {
                 productBean4.showBeans = false;
             }
-            this.h.setText(this.f33897a.getResources().getString(R.string.hello_buy));
+            this.h.setText(this.f20206a.getResources().getString(R.string.hello_buy));
         }
         for (int i2 = 0; i2 < this.j.size(); i2++) {
             if (i2 < this.g.size()) {
@@ -431,10 +426,10 @@ public class PrivilegeBuyDialogFragment extends BaseFragment implements View.OnC
     }
 
     public void a() {
-        this.k = DialogUtils.a(this.f33897a);
+        this.k = DialogUtils.a(this.f20206a);
         this.j = new ArrayList();
         this.g = new ArrayList();
-        ImageView imageView = (ImageView) this.b.findViewById(2131364488);
+        ImageView imageView = (ImageView) this.b.findViewById(R.id.img_close);
         this.f = imageView;
         imageView.setOnClickListener(this);
         this.i = (FrameLayout) this.b.findViewById(R.id.fl_top);
@@ -466,7 +461,7 @@ public class PrivilegeBuyDialogFragment extends BaseFragment implements View.OnC
         this.q = (ImageView) this.b.findViewById(R.id.agreement_btn);
         this.r = (TextView) this.b.findViewById(R.id.agreement_text);
         this.q.setOnClickListener(this);
-        this.s = (ShapeRelativeLayout) this.b.findViewById(R.id.rl_pay_type);
+        this.s = this.b.findViewById(R.id.rl_pay_type);
         this.t = (TextView) this.b.findViewById(R.id.tv_pay_type);
         this.s.setOnClickListener(this);
         if (BluedPreferences.bC() != 0) {
@@ -496,7 +491,7 @@ public class PrivilegeBuyDialogFragment extends BaseFragment implements View.OnC
                 this.j.get(i).choosen = true;
                 i2 = 0;
                 if (this.u == 3) {
-                    this.h.setText(String.format(this.f33897a.getResources().getString(R.string.pay_beans), this.j.get(i).total_beans + ""));
+                    this.h.setText(String.format(this.f20206a.getResources().getString(R.string.pay_beans), this.j.get(i).total_beans + ""));
                     i2 = 0;
                 }
             }
@@ -538,7 +533,7 @@ public class PrivilegeBuyDialogFragment extends BaseFragment implements View.OnC
         } else {
             this.j = new ArrayList();
         }
-        this.j.addAll(bluedEntityA.getSingleData().product);
+        this.j.addAll(((PrivilegeBuyOptionForJsonParse) bluedEntityA.getSingleData()).product);
         g();
         int i = 0;
         while (true) {
@@ -557,7 +552,7 @@ public class PrivilegeBuyDialogFragment extends BaseFragment implements View.OnC
         if (!z) {
             a(1);
         }
-        PayPlatformDiscountModel._channel _channelVar = bluedEntityA.getSingleData().channel;
+        PayPlatformDiscountModel._channel _channelVar = ((PrivilegeBuyOptionForJsonParse) bluedEntityA.getSingleData()).channel;
         if (_channelVar != null) {
             if (_channelVar.alipay != null && _channelVar.alipay.is_choose == 1) {
                 this.u = 1;
@@ -573,18 +568,16 @@ public class PrivilegeBuyDialogFragment extends BaseFragment implements View.OnC
     public void b() {
         PayHttpUtils.b(new BluedUIHttpResponse<BluedEntityA<PayBeanDetail>>(getFragmentActive()) { // from class: com.soft.blued.ui.user.fragment.PrivilegeBuyDialogFragment.5
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<PayBeanDetail> bluedEntityA) {
                 PayBeanDetail payBeanDetail;
-                if (bluedEntityA == null || bluedEntityA.data == null || bluedEntityA.data.size() <= 0 || (payBeanDetail = bluedEntityA.data.get(0)) == null || payBeanDetail.is_support_beans != 1 || payBeanDetail.is_enough != 0) {
+                if (bluedEntityA == null || bluedEntityA.data == null || bluedEntityA.data.size() <= 0 || (payBeanDetail = (PayBeanDetail) bluedEntityA.data.get(0)) == null || payBeanDetail.is_support_beans != 1 || payBeanDetail.is_enough != 0) {
                     return;
                 }
                 PrivilegeBuyDialogFragment.this.u = 1;
                 PrivilegeBuyDialogFragment.this.g();
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str) {
                 return super.onUIFailure(i, str);
             }
@@ -630,7 +623,7 @@ public class PrivilegeBuyDialogFragment extends BaseFragment implements View.OnC
                 this.o.setChecked(false);
                 this.u = 2;
                 return;
-            case 2131364488:
+            case R.id.img_close /* 2131364488 */:
                 getActivity().finish();
                 return;
             case R.id.rl_pay_type /* 2131369368 */:
@@ -665,22 +658,20 @@ public class PrivilegeBuyDialogFragment extends BaseFragment implements View.OnC
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         FragmentActivity activity = getActivity();
-        this.f33897a = activity;
+        this.f20206a = activity;
         this.d = LayoutInflater.from(activity);
         if (this.b == null) {
             this.b = layoutInflater.inflate(R.layout.dialog_privilege_pay, viewGroup, false);
             a();
             d();
-            StatusBarHelper.a((Activity) getActivity(), false);
+            StatusBarHelper.a(getActivity(), false);
             VIPBuyResultObserver.a().a(this, getLifecycle());
         }
         return this.b;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
         ChatHttpUtils.a();

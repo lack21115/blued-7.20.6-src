@@ -40,11 +40,11 @@ import java.util.Locale;
 public class LanguageSelectFragment extends BaseFragment implements View.OnClickListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f33391a;
+    private Context f19700a;
     private View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private CommonTopTitleNoTrans f33392c;
+    private CommonTopTitleNoTrans f19701c;
     private Dialog d;
     private View f;
     private View g;
@@ -63,13 +63,13 @@ public class LanguageSelectFragment extends BaseFragment implements View.OnClick
     private boolean s = false;
 
     private void a() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.b.findViewById(2131370749);
-        this.f33392c = commonTopTitleNoTrans;
-        commonTopTitleNoTrans.setCenterText(getString(R.string.laguage_more));
-        this.f33392c.setRightText(R.string.save);
-        this.f33392c.setRightTextColor(2131101772);
-        this.f33392c.setLeftClickListener(this);
-        this.f33392c.setRightClickListener(this);
+        CommonTopTitleNoTrans findViewById = this.b.findViewById(R.id.top_title);
+        this.f19701c = findViewById;
+        findViewById.setCenterText(getString(R.string.laguage_more));
+        this.f19701c.setRightText((int) R.string.save);
+        this.f19701c.setRightTextColor(2131101772);
+        this.f19701c.setLeftClickListener(this);
+        this.f19701c.setRightClickListener(this);
     }
 
     private void a(int i) {
@@ -127,12 +127,12 @@ public class LanguageSelectFragment extends BaseFragment implements View.OnClick
     }
 
     public static void a(Context context) {
-        TerminalActivity.d(context, LanguageSelectFragment.class, null);
+        TerminalActivity.d(context, LanguageSelectFragment.class, (Bundle) null);
     }
 
     private void a(String str, String str2) {
         LocaleUtils.a(false);
-        LocaleUtils.a(this.f33391a, new Locale(str, str2));
+        LocaleUtils.a(this.f19700a, new Locale(str, str2));
         BluedConfig.a().d();
         b();
     }
@@ -140,20 +140,19 @@ public class LanguageSelectFragment extends BaseFragment implements View.OnClick
     private void b() {
         final long currentTimeMillis = System.currentTimeMillis();
         DialogUtils.a(this.d);
-        MineHttpUtils.e(this.f33391a, new BluedUIHttpResponse() { // from class: com.soft.blued.ui.setting.fragment.LanguageSelectFragment.1
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
+        MineHttpUtils.e(this.f19700a, new BluedUIHttpResponse() { // from class: com.soft.blued.ui.setting.fragment.LanguageSelectFragment.1
             public void onUIFinish() {
                 long currentTimeMillis2 = System.currentTimeMillis() - currentTimeMillis;
                 if (currentTimeMillis2 < m.ag) {
                     LanguageSelectFragment.this.r.postDelayed(new Runnable() { // from class: com.soft.blued.ui.setting.fragment.LanguageSelectFragment.1.1
                         @Override // java.lang.Runnable
                         public void run() {
-                            if (LanguageSelectFragment.this.f33391a != null) {
+                            if (LanguageSelectFragment.this.f19700a != null) {
                                 DialogUtils.b(LanguageSelectFragment.this.d);
                                 LocaleUtils.c(AppInfo.d());
-                                Intent intent = new Intent(LanguageSelectFragment.this.f33391a, HomeActivity.class);
+                                Intent intent = new Intent(LanguageSelectFragment.this.f19700a, HomeActivity.class);
                                 intent.setFlags(268468224);
-                                LanguageSelectFragment.this.f33391a.startActivity(intent);
+                                LanguageSelectFragment.this.f19700a.startActivity(intent);
                                 ChatManager.getInstance().initLanguage();
                                 LiveMsgSendManager.a().c();
                             }
@@ -163,15 +162,14 @@ public class LanguageSelectFragment extends BaseFragment implements View.OnClick
                 }
                 DialogUtils.b(LanguageSelectFragment.this.d);
                 LocaleUtils.c(AppInfo.d());
-                Intent intent = new Intent(LanguageSelectFragment.this.f33391a, HomeActivity.class);
+                Intent intent = new Intent(LanguageSelectFragment.this.f19700a, HomeActivity.class);
                 intent.setFlags(268468224);
-                LanguageSelectFragment.this.f33391a.startActivity(intent);
+                LanguageSelectFragment.this.f19700a.startActivity(intent);
                 ChatManager.getInstance().initLanguage();
                 IMManager.a().b();
                 LiveMsgSendManager.a().c();
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity bluedEntity) {
             }
         }, UserInfo.getInstance().getLoginUserInfo().getUid(), getFragmentActive());
@@ -179,7 +177,7 @@ public class LanguageSelectFragment extends BaseFragment implements View.OnClick
 
     private void c() {
         String str;
-        this.d = DialogUtils.a(this.f33391a);
+        this.d = DialogUtils.a(this.f19700a);
         this.j = (TextView) this.b.findViewById(R.id.tv_system);
         this.i = this.b.findViewById(R.id.tv_select_en);
         this.g = this.b.findViewById(R.id.tv_select_zhcn);
@@ -264,7 +262,6 @@ public class LanguageSelectFragment extends BaseFragment implements View.OnClick
         linearLayout4.setOnClickListener(this);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener
     public boolean onBackPressed() {
         getActivity().finish();
         return true;
@@ -284,7 +281,7 @@ public class LanguageSelectFragment extends BaseFragment implements View.OnClick
                     int i = this.p;
                     if (i == 1) {
                         LocaleUtils.a(true);
-                        LocaleUtils.a(this.f33391a, LocaleUtils.e());
+                        LocaleUtils.a(this.f19700a, LocaleUtils.e());
                         BluedConfig.a().d();
                         b();
                         return;
@@ -324,34 +321,33 @@ public class LanguageSelectFragment extends BaseFragment implements View.OnClick
                 this.p = 4;
                 a(4);
                 this.s = true;
-                this.f33392c.setRightTextColor(2131101766);
+                this.f19701c.setRightTextColor(2131101766);
                 return;
             case R.id.ll_system /* 2131368265 */:
                 this.p = 1;
                 a(1);
                 this.s = true;
-                this.f33392c.setRightTextColor(2131101766);
+                this.f19701c.setRightTextColor(2131101766);
                 return;
             case R.id.ll_zh_cn /* 2131368372 */:
                 this.p = 2;
                 a(2);
                 this.s = true;
-                this.f33392c.setRightTextColor(2131101766);
+                this.f19701c.setRightTextColor(2131101766);
                 return;
             case R.id.ll_zh_tw /* 2131368373 */:
                 this.p = 3;
                 a(3);
                 this.s = true;
-                this.f33392c.setRightTextColor(2131101766);
+                this.f19701c.setRightTextColor(2131101766);
                 return;
             default:
                 return;
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.f33391a = getActivity();
+        this.f19700a = getActivity();
         View view = this.b;
         if (view == null) {
             this.b = layoutInflater.inflate(R.layout.fragment_language_select, viewGroup, false);
@@ -363,7 +359,6 @@ public class LanguageSelectFragment extends BaseFragment implements View.OnClick
         return this.b;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
     }

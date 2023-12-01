@@ -7,25 +7,25 @@ import com.igexin.push.core.d;
 public class e implements com.igexin.push.e.b.c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile e f23617a;
+    private static volatile e f10009a;
     private String b = "ReDisplayTask";
 
     /* renamed from: c  reason: collision with root package name */
-    private volatile long f23618c = 0;
+    private volatile long f10010c = 0;
 
     public static e c() {
-        if (f23617a == null) {
+        if (f10009a == null) {
             synchronized (e.class) {
                 try {
-                    if (f23617a == null) {
-                        f23617a = new e();
+                    if (f10009a == null) {
+                        f10009a = new e();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f23617a;
+        return f10009a;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -69,19 +69,19 @@ public class e implements com.igexin.push.e.b.c {
 
     @Override // com.igexin.push.e.b.c
     public final boolean b() {
-        boolean z = System.currentTimeMillis() / 1000 >= this.f23618c;
-        com.igexin.c.a.c.a.a(this.b + " | ReDisplayTask isMatch =" + z + "， nextReDisplayTime =" + this.f23618c, new Object[0]);
+        boolean z = System.currentTimeMillis() / 1000 >= this.f10010c;
+        com.igexin.c.a.c.a.a(this.b + " | ReDisplayTask isMatch =" + z + "， nextReDisplayTime =" + this.f10010c, new Object[0]);
         return z;
     }
 
     public final void d() {
         Cursor cursor = null;
         try {
-            Cursor a2 = d.a.f23474a.i.a("message", new String[0], "status = '1' and notify_status = '1' and redisplay_freq != '0' and redisplay_num <= redisplay_freq  order by expect_redisplay_time asc limit 1");
+            Cursor a2 = d.a.f9866a.i.a("message", new String[0], "status = '1' and notify_status = '1' and redisplay_freq != '0' and redisplay_num <= redisplay_freq  order by expect_redisplay_time asc limit 1");
             if (a2 != null && a2.getCount() == 1 && a2.moveToFirst()) {
-                this.f23618c = a2.getLong(a2.getColumnIndex("expect_redisplay_time"));
+                this.f10010c = a2.getLong(a2.getColumnIndex("expect_redisplay_time"));
             } else {
-                this.f23618c = Long.MAX_VALUE;
+                this.f10010c = Long.MAX_VALUE;
             }
             cursor = a2;
             System.currentTimeMillis();

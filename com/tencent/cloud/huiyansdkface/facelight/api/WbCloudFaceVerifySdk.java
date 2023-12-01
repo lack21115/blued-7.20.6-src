@@ -14,7 +14,7 @@ import java.util.Map;
 public class WbCloudFaceVerifySdk {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile WbCloudFaceVerifySdk f35522a;
+    private static volatile WbCloudFaceVerifySdk f21831a;
     private d b = d.z();
 
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/cloud/huiyansdkface/facelight/api/WbCloudFaceVerifySdk$InputData.class */
@@ -67,18 +67,18 @@ public class WbCloudFaceVerifySdk {
     }
 
     public static WbCloudFaceVerifySdk getInstance() {
-        if (f35522a == null) {
+        if (f21831a == null) {
             synchronized (WbCloudFaceVerifySdk.class) {
                 try {
-                    if (f35522a == null) {
-                        f35522a = new WbCloudFaceVerifySdk();
+                    if (f21831a == null) {
+                        f21831a = new WbCloudFaceVerifySdk();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f35522a;
+        return f21831a;
     }
 
     public void initAdvSdk(Context context, Bundle bundle, WbCloudFaceVerifyLoginListener wbCloudFaceVerifyLoginListener) {

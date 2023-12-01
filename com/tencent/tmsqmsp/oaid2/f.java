@@ -13,18 +13,18 @@ public interface f extends IInterface {
 
         /* renamed from: com.tencent.tmsqmsp.oaid2.f$a$a  reason: collision with other inner class name */
         /* loaded from: source-8829756-dex2jar.jar:com/tencent/tmsqmsp/oaid2/f$a$a.class */
-        public static class C1036a implements f {
+        public static class C0866a implements f {
 
             /* renamed from: a  reason: collision with root package name */
-            public IBinder f39625a;
+            public IBinder f25934a;
 
-            public C1036a(IBinder iBinder) {
-                this.f39625a = iBinder;
+            public C0866a(IBinder iBinder) {
+                this.f25934a = iBinder;
             }
 
             @Override // android.os.IInterface
             public IBinder asBinder() {
-                return this.f39625a;
+                return this.f25934a;
             }
 
             /* JADX WARN: Code restructure failed: missing block: B:4:0x002c, code lost:
@@ -48,7 +48,7 @@ public interface f extends IInterface {
                     java.lang.String r1 = "com.asus.msa.SupplementaryDID.IDidAidlInterface"
                     r0.writeInterfaceToken(r1)     // Catch: java.lang.Throwable -> L32 java.lang.Exception -> L4d
                     r0 = r6
-                    android.os.IBinder r0 = r0.f39625a     // Catch: java.lang.Throwable -> L32 java.lang.Exception -> L4d
+                    android.os.IBinder r0 = r0.f25934a     // Catch: java.lang.Throwable -> L32 java.lang.Exception -> L4d
                     r1 = 1
                     r2 = r9
                     r3 = r10
@@ -84,7 +84,7 @@ public interface f extends IInterface {
                     r11 = move-exception
                     goto L40
                 */
-                throw new UnsupportedOperationException("Method not decompiled: com.tencent.tmsqmsp.oaid2.f.a.C1036a.b():boolean");
+                throw new UnsupportedOperationException("Method not decompiled: com.tencent.tmsqmsp.oaid2.f.a.C0866a.b():boolean");
             }
 
             @Override // com.tencent.tmsqmsp.oaid2.f
@@ -93,7 +93,7 @@ public interface f extends IInterface {
                 Parcel obtain2 = Parcel.obtain();
                 try {
                     obtain.writeInterfaceToken("com.asus.msa.SupplementaryDID.IDidAidlInterface");
-                    this.f39625a.transact(3, obtain, obtain2, 0);
+                    this.f25934a.transact(3, obtain, obtain2, 0);
                     obtain2.readException();
                     String readString = obtain2.readString();
                     obtain2.recycle();
@@ -112,7 +112,7 @@ public interface f extends IInterface {
                 Parcel obtain2 = Parcel.obtain();
                 try {
                     obtain.writeInterfaceToken("com.asus.msa.SupplementaryDID.IDidAidlInterface");
-                    this.f39625a.transact(5, obtain, obtain2, 0);
+                    this.f25934a.transact(5, obtain, obtain2, 0);
                     obtain2.readException();
                     String readString = obtain2.readString();
                     obtain2.recycle();
@@ -131,7 +131,7 @@ public interface f extends IInterface {
                 return null;
             }
             IInterface queryLocalInterface = iBinder.queryLocalInterface("com.asus.msa.SupplementaryDID.IDidAidlInterface");
-            return (queryLocalInterface == null || !(queryLocalInterface instanceof f)) ? new C1036a(iBinder) : (f) queryLocalInterface;
+            return (queryLocalInterface == null || !(queryLocalInterface instanceof f)) ? new C0866a(iBinder) : (f) queryLocalInterface;
         }
     }
 

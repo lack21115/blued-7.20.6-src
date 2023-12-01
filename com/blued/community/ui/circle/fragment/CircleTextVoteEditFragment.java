@@ -81,7 +81,7 @@ public class CircleTextVoteEditFragment extends MvpKeyBoardFragment<CircleTextVo
         this.k = (KeyboardListenLinearLayout) this.i.findViewById(R.id.keyboardRelativeLayout);
         this.l = (CommonTopTitleNoTrans) this.i.findViewById(R.id.title);
         this.m = (EditText) this.i.findViewById(R.id.edt_content);
-        this.n = (RecyclerView) this.i.findViewById(R.id.recycler_view);
+        this.n = this.i.findViewById(R.id.recycler_view);
         ShapeTextView shapeTextView = (ShapeTextView) this.i.findViewById(R.id.stv_add_option);
         this.o = shapeTextView;
         shapeTextView.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.circle.fragment.CircleTextVoteEditFragment.1
@@ -92,7 +92,7 @@ public class CircleTextVoteEditFragment extends MvpKeyBoardFragment<CircleTextVo
                     AppMethods.a((CharSequence) "最多选择10个选项");
                     return;
                 }
-                CircleTextVoteEditFragment.this.p.addData((CircleTextVoteEditAdapter) new CircleTextVote());
+                CircleTextVoteEditFragment.this.p.addData(new CircleTextVote());
                 CircleTextVoteEditFragment.this.z();
             }
         });
@@ -100,7 +100,6 @@ public class CircleTextVoteEditFragment extends MvpKeyBoardFragment<CircleTextVo
 
     private void w() {
         this.n.setLayoutManager(new LinearLayoutManager(getContext()) { // from class: com.blued.community.ui.circle.fragment.CircleTextVoteEditFragment.2
-            @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
             public boolean canScrollVertically() {
                 return false;
             }
@@ -109,7 +108,6 @@ public class CircleTextVoteEditFragment extends MvpKeyBoardFragment<CircleTextVo
         this.p = circleTextVoteEditAdapter;
         this.n.setAdapter(circleTextVoteEditAdapter);
         this.p.a(new CircleTextVoteEditAdapter.OnEditChangeListener() { // from class: com.blued.community.ui.circle.fragment.CircleTextVoteEditFragment.3
-            @Override // com.blued.community.widget.vote.text.adapter.CircleTextVoteEditAdapter.OnEditChangeListener
             public void a() {
                 CircleTextVoteEditFragment.this.z();
             }

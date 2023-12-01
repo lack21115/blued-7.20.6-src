@@ -7,17 +7,16 @@ import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-7994992-dex2jar.jar:com/huawei/agconnect/config/impl/j.class */
-public class j implements d {
+class j implements d {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Context f22338a;
+    private final Context f8730a;
     private final String b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public j(Context context, String str) {
-        this.f22338a = context;
+        this.f8730a = context;
         this.b = str;
     }
 
@@ -37,9 +36,9 @@ public class j implements d {
     public String a(String str, String str2) {
         int identifier;
         String a2 = a(str);
-        if (!TextUtils.isEmpty(a2) && (identifier = this.f22338a.getResources().getIdentifier(a2, "string", this.b)) != 0) {
+        if (!TextUtils.isEmpty(a2) && (identifier = this.f8730a.getResources().getIdentifier(a2, "string", this.b)) != 0) {
             try {
-                return this.f22338a.getResources().getString(identifier);
+                return this.f8730a.getResources().getString(identifier);
             } catch (Resources.NotFoundException e) {
                 return str2;
             }

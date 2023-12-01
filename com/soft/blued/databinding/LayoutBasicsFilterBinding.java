@@ -17,11 +17,11 @@ public final class LayoutBasicsFilterBinding implements ViewBinding {
     private final LinearLayout B;
 
     /* renamed from: a  reason: collision with root package name */
-    public final FilterCommonScrollSelectorView f29383a;
+    public final FilterCommonScrollSelectorView f15693a;
     public final FilterCommonScrollSelectorView b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final FilterCommonPhotoGridView f29384c;
+    public final FilterCommonPhotoGridView f15694c;
     public final FilterCommonPhotoGridView d;
     public final FilterCommonPhotoGridView e;
     public final RelativeLayout f;
@@ -48,9 +48,9 @@ public final class LayoutBasicsFilterBinding implements ViewBinding {
 
     private LayoutBasicsFilterBinding(LinearLayout linearLayout, FilterCommonScrollSelectorView filterCommonScrollSelectorView, FilterCommonScrollSelectorView filterCommonScrollSelectorView2, FilterCommonPhotoGridView filterCommonPhotoGridView, FilterCommonPhotoGridView filterCommonPhotoGridView2, FilterCommonPhotoGridView filterCommonPhotoGridView3, RelativeLayout relativeLayout, FilterCommonPhotoGridView filterCommonPhotoGridView4, FilterCommonScrollSelectorView filterCommonScrollSelectorView3, PhotoGridView photoGridView, PhotoGridView photoGridView2, PhotoGridView photoGridView3, ImageView imageView, LinearLayout linearLayout2, RelativeLayout relativeLayout2, TextView textView, TextView textView2, TextView textView3, TextView textView4, TextView textView5, TextView textView6, TextView textView7, TextView textView8, TextView textView9, TextView textView10, TextView textView11, TextView textView12, TextView textView13) {
         this.B = linearLayout;
-        this.f29383a = filterCommonScrollSelectorView;
+        this.f15693a = filterCommonScrollSelectorView;
         this.b = filterCommonScrollSelectorView2;
-        this.f29384c = filterCommonPhotoGridView;
+        this.f15694c = filterCommonPhotoGridView;
         this.d = filterCommonPhotoGridView2;
         this.e = filterCommonPhotoGridView3;
         this.f = relativeLayout;

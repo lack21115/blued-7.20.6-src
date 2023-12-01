@@ -1,5 +1,7 @@
 package okio;
 
+import com.android.internal.location.GpsNetInitiatedHandler;
+import com.android.org.conscrypt.NativeCrypto;
 import java.io.IOException;
 import java.io.InterruptedIOException;
 import java.util.concurrent.TimeUnit;
@@ -94,7 +96,7 @@ public class AsyncTimeout extends Timeout {
                     if (asyncTimeout2 == AsyncTimeout.head) {
                         AsyncTimeout.class.notify();
                     }
-                    Unit unit = Unit.f42314a;
+                    Unit unit = Unit.a;
                 } catch (Throwable th) {
                     throw th;
                 }
@@ -150,7 +152,7 @@ public class AsyncTimeout extends Timeout {
                             AsyncTimeout.head = null;
                             return;
                         }
-                        Unit unit = Unit.f42314a;
+                        Unit unit = Unit.a;
                     }
                     if (awaitTimeout$okio != null) {
                         awaitTimeout$okio.timedOut();
@@ -183,7 +185,7 @@ public class AsyncTimeout extends Timeout {
     }
 
     protected IOException newTimeoutException(IOException iOException) {
-        InterruptedIOException interruptedIOException = new InterruptedIOException("timeout");
+        InterruptedIOException interruptedIOException = new InterruptedIOException(GpsNetInitiatedHandler.NI_INTENT_KEY_TIMEOUT);
         if (iOException != null) {
             interruptedIOException.initCause(iOException);
         }
@@ -201,7 +203,7 @@ public class AsyncTimeout extends Timeout {
                 try {
                     try {
                         sink2.close();
-                        Unit unit = Unit.f42314a;
+                        Unit unit = Unit.a;
                         if (asyncTimeout.exit()) {
                             throw asyncTimeout.access$newTimeoutException(null);
                         }
@@ -226,7 +228,7 @@ public class AsyncTimeout extends Timeout {
                 try {
                     try {
                         sink2.flush();
-                        Unit unit = Unit.f42314a;
+                        Unit unit = Unit.a;
                         if (asyncTimeout.exit()) {
                             throw asyncTimeout.access$newTimeoutException(null);
                         }
@@ -266,7 +268,7 @@ public class AsyncTimeout extends Timeout {
                     Intrinsics.a(segment);
                     while (true) {
                         j2 = j3;
-                        if (j3 >= 65536) {
+                        if (j3 >= NativeCrypto.SSL_OP_NO_SESSION_RESUMPTION_ON_RENEGOTIATION) {
                             break;
                         }
                         j3 += segment.limit - segment.pos;
@@ -284,7 +286,7 @@ public class AsyncTimeout extends Timeout {
                     try {
                         try {
                             sink2.write(source, j2);
-                            Unit unit = Unit.f42314a;
+                            Unit unit = Unit.a;
                             if (asyncTimeout.exit()) {
                                 throw asyncTimeout.access$newTimeoutException(null);
                             }
@@ -316,7 +318,7 @@ public class AsyncTimeout extends Timeout {
                 try {
                     try {
                         source2.close();
-                        Unit unit = Unit.f42314a;
+                        Unit unit = Unit.a;
                         if (asyncTimeout.exit()) {
                             throw asyncTimeout.access$newTimeoutException(null);
                         }

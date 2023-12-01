@@ -21,16 +21,14 @@ public class Doorway implements Parcelable {
             return null;
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f5693a;
+    private String a;
     private LatLonPoint b;
 
     public Doorway() {
     }
 
     public Doorway(Parcel parcel) {
-        this.f5693a = parcel.readString();
+        this.a = parcel.readString();
         this.b = (LatLonPoint) parcel.readParcelable(LatLonPoint.class.getClassLoader());
     }
 
@@ -44,7 +42,7 @@ public class Doorway implements Parcelable {
     }
 
     public String getName() {
-        return this.f5693a;
+        return this.a;
     }
 
     public void setLatLonPoint(LatLonPoint latLonPoint) {
@@ -52,12 +50,12 @@ public class Doorway implements Parcelable {
     }
 
     public void setName(String str) {
-        this.f5693a = str;
+        this.a = str;
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.f5693a);
+        parcel.writeString(this.a);
         parcel.writeParcelable(this.b, i);
     }
 }

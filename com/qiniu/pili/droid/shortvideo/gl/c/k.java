@@ -7,7 +7,7 @@ import java.nio.ByteBuffer;
 public class k extends g {
 
     /* renamed from: a  reason: collision with root package name */
-    protected int f27721a;
+    protected int f14033a;
     protected int b;
 
     private boolean b(int i, int i2) {
@@ -24,7 +24,7 @@ public class k extends g {
     }
 
     private void t() {
-        this.f27721a = com.qiniu.pili.droid.shortvideo.f.d.e();
+        this.f14033a = com.qiniu.pili.droid.shortvideo.f.d.e();
     }
 
     public int a(int i) {
@@ -32,7 +32,7 @@ public class k extends g {
     }
 
     public int a(int i, float[] fArr, int i2, int i3) {
-        GLES20.glBindFramebuffer(36160, this.f27721a);
+        GLES20.glBindFramebuffer(36160, this.f14033a);
         GLES20.glFramebufferTexture2D(36160, 36064, 3553, i2, 0);
         GLES20.glClear(16384);
         a(i, fArr, i3);
@@ -68,10 +68,10 @@ public class k extends g {
     @Override // com.qiniu.pili.droid.shortvideo.gl.c.g
     public void f() {
         super.f();
-        int i = this.f27721a;
+        int i = this.f14033a;
         if (i != 0) {
             GLES20.glDeleteFramebuffers(1, new int[]{i}, 0);
-            this.f27721a = 0;
+            this.f14033a = 0;
         }
         h();
     }

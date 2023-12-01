@@ -11,6 +11,7 @@ import com.getui.gtc.e.c;
 import com.getui.gtc.e.d;
 import com.getui.gtc.h.c;
 import com.getui.gtc.server.ServerManager;
+import com.xiaomi.mipush.sdk.Constants;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -22,14 +23,14 @@ public final class b {
     public static String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public static String f21921c;
+    public static String f8314c;
     public static volatile String d;
     public static String e;
     public static String f;
     public static String g;
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f21920a = GtcProvider.context().getPackageName();
+    public static String f8313a = GtcProvider.context().getPackageName();
     private static final List<GtcIdCallback> j = new ArrayList();
     public static String h = com.igexin.push.a.k;
     public static String i = com.igexin.push.a.j;
@@ -39,9 +40,6 @@ public final class b {
         List asList2;
         List asList3;
         String str;
-        c cVar;
-        c cVar2;
-        c cVar3;
         try {
             ApplicationInfo applicationInfo = GtcProvider.context().getPackageManager().getApplicationInfo(GtcProvider.context().getPackageName(), 128);
             if (applicationInfo.metaData != null) {
@@ -83,11 +81,11 @@ public final class b {
                                             if (TextUtils.isEmpty(string6)) {
                                                 String string7 = applicationInfo.metaData.getString("GY_APP_ID");
                                                 if (!TextUtils.isEmpty(string7)) {
-                                                    f21920a = string7;
+                                                    f8313a = string7;
                                                 }
                                                 String string8 = applicationInfo.metaData.getString("com.sdk.plus.appid");
                                                 if (!TextUtils.isEmpty(string8)) {
-                                                    f21920a = string8;
+                                                    f8313a = string8;
                                                 }
                                             }
                                         }
@@ -97,7 +95,7 @@ public final class b {
                         }
                     }
                 }
-                f21920a = string6;
+                f8313a = string6;
             }
         } catch (Throwable th) {
             com.getui.gtc.i.c.a.b(th);
@@ -138,15 +136,13 @@ public final class b {
         hashMap.put("gtc.bs", asList3);
         ServerManager.addBuildInServerMap(hashMap);
         if (TextUtils.isEmpty(d)) {
-            cVar3 = c.a.f21997a;
-            d = cVar3.f21995a.f21999c;
+            d = c.a.a().f8388a.f8392c;
         }
         if (TextUtils.isEmpty(d)) {
-            if (TextUtils.isEmpty(f21921c)) {
-                cVar2 = c.a.f21997a;
-                f21921c = cVar2.f21995a.d;
+            if (TextUtils.isEmpty(f8314c)) {
+                f8314c = c.a.a().f8388a.d;
             }
-            if (TextUtils.isEmpty(f21921c)) {
+            if (TextUtils.isEmpty(f8314c)) {
                 if (TextUtils.isEmpty(b)) {
                     Context context = GtcProvider.context();
                     String a2 = com.getui.gtc.b.a.a(context);
@@ -161,17 +157,16 @@ public final class b {
                     sb.append("gtc_");
                     long currentTimeMillis = System.currentTimeMillis();
                     String packageName = GtcProvider.context().getPackageName();
-                    String a3 = com.getui.gtc.i.a.a.a(UUID.randomUUID().toString() + "-" + currentTimeMillis + "-" + packageName);
+                    String a3 = com.getui.gtc.i.a.a.a(UUID.randomUUID().toString() + Constants.ACCEPT_TIME_SEPARATOR_SERVER + currentTimeMillis + Constants.ACCEPT_TIME_SEPARATOR_SERVER + packageName);
                     sb.append(a3);
                     char charAt = a3.charAt(a3.length() - 1);
                     if (charAt < 16) {
                         sb.append("0");
                     }
                     sb.append(Integer.toHexString(charAt));
-                    f21921c = sb.toString();
-                    cVar = c.a.f21997a;
-                    d dVar = cVar.f21995a;
-                    String str3 = f21921c;
+                    f8314c = sb.toString();
+                    d dVar = c.a.a().f8388a;
+                    String str3 = f8314c;
                     if (dVar.a(9, str3)) {
                         dVar.d = str3;
                     }
@@ -181,7 +176,7 @@ public final class b {
                     a(str);
                 }
             }
-            str = f21921c;
+            str = f8314c;
             d = str;
             a(str);
         }
@@ -200,9 +195,8 @@ public final class b {
         com.getui.gtc.h.c.a(str, new c.a() { // from class: com.getui.gtc.c.b.1
             @Override // com.getui.gtc.h.c.a
             public final void a(String str2) {
-                com.getui.gtc.e.c cVar;
                 b.d = str2;
-                if (!TextUtils.equals(String.this, str2)) {
+                if (!TextUtils.equals(str, str2)) {
                     try {
                         Log.d("GTC", "gtcid changed to " + b.d);
                         for (GtcIdCallback gtcIdCallback : b.j) {
@@ -213,11 +207,10 @@ public final class b {
                     }
                 }
                 b.j.clear();
-                cVar = c.a.f21997a;
-                d dVar = cVar.f21995a;
+                d dVar = c.a.a().f8388a;
                 String str3 = b.d;
                 if (dVar.a(4, str3)) {
-                    dVar.f21999c = str3;
+                    dVar.f8392c = str3;
                 }
             }
         });

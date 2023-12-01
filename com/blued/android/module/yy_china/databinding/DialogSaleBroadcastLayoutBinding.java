@@ -10,14 +10,12 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/DialogSaleBroadcastLayoutBinding.class */
 public final class DialogSaleBroadcastLayoutBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final TextView f16406a;
+    public final TextView a;
     private final LinearLayout b;
 
     private DialogSaleBroadcastLayoutBinding(LinearLayout linearLayout, TextView textView) {
         this.b = linearLayout;
-        this.f16406a = textView;
+        this.a = textView;
     }
 
     public static DialogSaleBroadcastLayoutBinding a(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
@@ -36,7 +34,6 @@ public final class DialogSaleBroadcastLayoutBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat("tvContent"));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
         return this.b;

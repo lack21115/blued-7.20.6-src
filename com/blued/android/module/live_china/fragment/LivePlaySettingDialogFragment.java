@@ -16,14 +16,12 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LivePlaySettingDialogFragment.class */
 public class LivePlaySettingDialogFragment extends Dialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f13146a;
+    private Context a;
     private int b;
 
     public LivePlaySettingDialogFragment(Context context, int i) {
         super(context, R.style.transparentFrameWindowStyleLive);
-        this.f13146a = context;
+        this.a = context;
         this.b = i;
         a();
         b();
@@ -54,7 +52,7 @@ public class LivePlaySettingDialogFragment extends Dialog {
             }
         });
         ((TextView) findViewById(R.id.tv_title)).setText(this.b == 1 ? R.string.live_setting_dialog_background_title : R.string.live_setting_dialog_float_title);
-        String string = this.f13146a.getString(this.b == 1 ? R.string.live_setting_dialog_background_content : R.string.live_setting_dialog_float_content);
+        String string = this.a.getString(this.b == 1 ? R.string.live_setting_dialog_background_content : R.string.live_setting_dialog_float_content);
         SpannableString spannableString = new SpannableString(string);
         int length = string.length() - 15;
         int length2 = string.length() - 5;
@@ -88,7 +86,7 @@ public class LivePlaySettingDialogFragment extends Dialog {
         window.getDecorView().setBackgroundColor(0);
         window.setDimAmount(0.0f);
         window.setWindowAnimations(R.style.alpha_menu_animstyle);
-        View inflate = ((LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.dialog_live_play_setting, (ViewGroup) null);
+        View inflate = ((LayoutInflater) getContext().getSystemService("layout_inflater")).inflate(R.layout.dialog_live_play_setting, (ViewGroup) null);
         addContentView(inflate, new ViewGroup.LayoutParams(-1, -1));
         setContentView(inflate);
         getWindow().setLayout(-1, -1);

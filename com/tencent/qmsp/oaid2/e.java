@@ -9,16 +9,16 @@ import java.lang.reflect.InvocationTargetException;
 public class e {
 
     /* renamed from: a  reason: collision with root package name */
-    public static Context f38465a;
+    public static Context f24774a;
 
     public static Context a() {
         Context context;
         synchronized (e.class) {
             try {
-                if (f38465a == null) {
-                    f38465a = b();
+                if (f24774a == null) {
+                    f24774a = b();
                 }
-                context = f38465a;
+                context = f24774a;
             } catch (Throwable th) {
                 throw th;
             }

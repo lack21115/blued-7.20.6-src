@@ -225,8 +225,8 @@ public final class ClientProtos {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder mo2030clone() {
+                return (Builder) super.mo2030clone();
             }
 
             @Override // com.blued.das.client.ClientProtos.RequestOrBuilder
@@ -1221,8 +1221,8 @@ public final class ClientProtos {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder mo2030clone() {
+                return (Builder) super.mo2030clone();
             }
 
             @Override // com.blued.das.client.ClientProtos.RequestsOrBuilder
@@ -1932,8 +1932,8 @@ public final class ClientProtos {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder mo2030clone() {
+                return (Builder) super.mo2030clone();
             }
 
             @Override // com.blued.das.client.ClientProtos.ResponseOrBuilder

@@ -17,7 +17,7 @@ public class HorizontalBarBuffer extends BarBuffer {
         float f2;
         float f3;
         float H = iBarDataSet.H();
-        float f4 = this.f22061c;
+        float f4 = this.f8454c;
         float f5 = this.k / 2.0f;
         int i = 0;
         while (true) {

@@ -13,10 +13,10 @@ public class VideoLoadController {
     private static VideoLoadController b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Map<String, IVideoController> f34812c = new ArrayMap();
+    private Map<String, IVideoController> f21121c = new ArrayMap();
 
     /* renamed from: a  reason: collision with root package name */
-    protected final Set<String> f34811a = new HashSet();
+    protected final Set<String> f21120a = new HashSet();
 
     /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/utils/VideoLoadController$IVideoController.class */
     public interface IVideoController {
@@ -44,7 +44,7 @@ public class VideoLoadController {
 
     public static void a(final String str) {
         Logger.a("VideoLoadController", "loadVideo(), videoUrl:", str);
-        if (a().f34811a.contains(str)) {
+        if (a().f21120a.contains(str)) {
             return;
         }
         File c2 = FileUtils.c(str);
@@ -52,25 +52,22 @@ public class VideoLoadController {
             a().a(str, c2.getAbsolutePath());
             return;
         }
-        a().f34811a.add(str);
+        a().f21120a.add(str);
         FileUtils.a(str, new FileHttpResponseHandler() { // from class: com.soft.blued.utils.VideoLoadController.1
-            @Override // com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
             /* renamed from: a */
             public void onSuccess(File file) {
-                VideoLoadController.a().a(String.this, file.getAbsolutePath());
+                VideoLoadController.a().a(str, file.getAbsolutePath());
             }
 
-            @Override // com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
             /* renamed from: a */
             public void onFailure(Throwable th, int i, File file) {
                 super.onFailure(th, i, file);
-                VideoLoadController.a().c(String.this);
+                VideoLoadController.a().c(str);
             }
 
-            @Override // com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
             public void onProgress(int i, int i2) {
                 super.onProgress(i, i2);
-                VideoLoadController.a().a(String.this, i);
+                VideoLoadController.a().a(str, i);
             }
         });
     }
@@ -81,7 +78,7 @@ public class VideoLoadController {
             @Override // java.lang.Runnable
             public void run() {
                 Logger.a("VideoLoadController", "notifyVideoDownloadProgress(), percent:", Integer.valueOf(i), ", videoUrl:", str);
-                IVideoController iVideoController = (IVideoController) VideoLoadController.a().f34812c.get(str);
+                IVideoController iVideoController = (IVideoController) VideoLoadController.a().f21121c.get(str);
                 if (iVideoController != null) {
                     iVideoController.a(str, i);
                 } else {
@@ -93,7 +90,7 @@ public class VideoLoadController {
 
     public static void a(String str, IVideoController iVideoController) {
         Logger.a("VideoLoadController", "registerVideoController(), videoUrl:", str);
-        a().f34812c.put(str, iVideoController);
+        a().f21121c.put(str, iVideoController);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -103,8 +100,8 @@ public class VideoLoadController {
             public void run() {
                 Logger.a("VideoLoadController", "notifyVideoDownloadFinished(), videoUrl:", str);
                 VideoLoadController a2 = VideoLoadController.a();
-                a2.f34811a.remove(str);
-                IVideoController iVideoController = (IVideoController) a2.f34812c.get(str);
+                a2.f21120a.remove(str);
+                IVideoController iVideoController = (IVideoController) a2.f21121c.get(str);
                 if (iVideoController != null) {
                     iVideoController.a(str, str2);
                 } else {
@@ -125,8 +122,8 @@ public class VideoLoadController {
     public static void b(String str, IVideoController iVideoController) {
         Logger.a("VideoLoadController", "unregisterVideoController(), videoUrl:", str);
         VideoLoadController a2 = a();
-        if (a2.f34812c.get(str) == iVideoController) {
-            a2.f34812c.remove(str);
+        if (a2.f21121c.get(str) == iVideoController) {
+            a2.f21121c.remove(str);
         }
     }
 
@@ -137,12 +134,12 @@ public class VideoLoadController {
             public void run() {
                 Logger.a("VideoLoadController", "notifyVideoDownloadFailed(), videoUrl:", str);
                 VideoLoadController a2 = VideoLoadController.a();
-                a2.f34811a.remove(str);
+                a2.f21120a.remove(str);
                 File c2 = FileUtils.c(str);
                 if (c2 != null) {
                     c2.delete();
                 }
-                IVideoController iVideoController = (IVideoController) a2.f34812c.get(str);
+                IVideoController iVideoController = (IVideoController) a2.f21121c.get(str);
                 if (iVideoController != null) {
                     iVideoController.a(str);
                 } else {

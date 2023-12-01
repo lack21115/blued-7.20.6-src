@@ -8,13 +8,9 @@ import java.util.List;
 
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/maps/model/a.class */
 final class a {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final df f5540a;
+    private final df a;
     private final int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private List<WeightedLatLng> f5541c;
+    private List<WeightedLatLng> c;
     private List<a> d;
 
     private a(double d, double d2, double d3, double d4, int i) {
@@ -28,19 +24,19 @@ final class a {
 
     private a(df dfVar, int i) {
         this.d = null;
-        this.f5540a = dfVar;
+        this.a = dfVar;
         this.b = i;
     }
 
     private void a() {
         ArrayList arrayList = new ArrayList(4);
         this.d = arrayList;
-        arrayList.add(new a(this.f5540a.f4849a, this.f5540a.e, this.f5540a.b, this.f5540a.f, this.b + 1));
-        this.d.add(new a(this.f5540a.e, this.f5540a.f4850c, this.f5540a.b, this.f5540a.f, this.b + 1));
-        this.d.add(new a(this.f5540a.f4849a, this.f5540a.e, this.f5540a.f, this.f5540a.d, this.b + 1));
-        this.d.add(new a(this.f5540a.e, this.f5540a.f4850c, this.f5540a.f, this.f5540a.d, this.b + 1));
-        List<WeightedLatLng> list = this.f5541c;
-        this.f5541c = null;
+        arrayList.add(new a(this.a.a, this.a.e, this.a.b, this.a.f, this.b + 1));
+        this.d.add(new a(this.a.e, this.a.c, this.a.b, this.a.f, this.b + 1));
+        this.d.add(new a(this.a.a, this.a.e, this.a.f, this.a.d, this.b + 1));
+        this.d.add(new a(this.a.e, this.a.c, this.a.f, this.a.d, this.b + 1));
+        List<WeightedLatLng> list = this.c;
+        this.c = null;
         for (WeightedLatLng weightedLatLng : list) {
             a(weightedLatLng.getPoint().x, weightedLatLng.getPoint().y, weightedLatLng);
         }
@@ -48,21 +44,21 @@ final class a {
 
     private void a(double d, double d2, WeightedLatLng weightedLatLng) {
         if (this.d == null) {
-            if (this.f5541c == null) {
-                this.f5541c = new ArrayList();
+            if (this.c == null) {
+                this.c = new ArrayList();
             }
-            this.f5541c.add(weightedLatLng);
-            if (this.f5541c.size() <= 50 || this.b >= 40) {
+            this.c.add(weightedLatLng);
+            if (this.c.size() <= 50 || this.b >= 40) {
                 return;
             }
             a();
-        } else if (d2 < this.f5540a.f) {
-            if (d < this.f5540a.e) {
+        } else if (d2 < this.a.f) {
+            if (d < this.a.e) {
                 this.d.get(0).a(d, d2, weightedLatLng);
             } else {
                 this.d.get(1).a(d, d2, weightedLatLng);
             }
-        } else if (d < this.f5540a.e) {
+        } else if (d < this.a.e) {
             this.d.get(2).a(d, d2, weightedLatLng);
         } else {
             this.d.get(3).a(d, d2, weightedLatLng);
@@ -70,18 +66,18 @@ final class a {
     }
 
     private void a(df dfVar, Collection<WeightedLatLng> collection) {
-        if (this.f5540a.a(dfVar)) {
+        if (this.a.a(dfVar)) {
             List<a> list = this.d;
             if (list != null) {
                 for (a aVar : list) {
                     aVar.a(dfVar, collection);
                 }
-            } else if (this.f5541c != null) {
-                if (dfVar.b(this.f5540a)) {
-                    collection.addAll(this.f5541c);
+            } else if (this.c != null) {
+                if (dfVar.b(this.a)) {
+                    collection.addAll(this.c);
                     return;
                 }
-                for (WeightedLatLng weightedLatLng : this.f5541c) {
+                for (WeightedLatLng weightedLatLng : this.c) {
                     if (dfVar.a(weightedLatLng.getPoint())) {
                         collection.add(weightedLatLng);
                     }
@@ -100,7 +96,7 @@ final class a {
     /* JADX INFO: Access modifiers changed from: protected */
     public final void a(WeightedLatLng weightedLatLng) {
         DPoint point = weightedLatLng.getPoint();
-        if (this.f5540a.a(point.x, point.y)) {
+        if (this.a.a(point.x, point.y)) {
             a(point.x, point.y, weightedLatLng);
         }
     }

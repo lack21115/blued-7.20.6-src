@@ -17,13 +17,9 @@ import com.blued.das.live.LiveProtos;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/pkdared/PkDaredTextBarView.class */
 public class PkDaredTextBarView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private RelativeLayout f15421a;
+    private RelativeLayout a;
     private TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f15422c;
+    private String c;
     private String d;
 
     public PkDaredTextBarView(Context context) {
@@ -62,7 +58,7 @@ public class PkDaredTextBarView extends FrameLayout {
     }
 
     public void a() {
-        this.f15422c = "";
+        this.c = "";
         this.d = "";
         this.b.setText("");
         setTranslationY(0.0f);
@@ -72,9 +68,9 @@ public class PkDaredTextBarView extends FrameLayout {
 
     protected void a(Context context) {
         LayoutInflater.from(getContext()).inflate(R.layout.live_pk_dared_text_bar, this);
-        this.f15421a = (RelativeLayout) findViewById(R.id.rl_text_root);
+        this.a = (RelativeLayout) findViewById(R.id.rl_text_root);
         this.b = (TextView) findViewById(R.id.tv_text);
-        this.f15421a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.pkdared.-$$Lambda$PkDaredTextBarView$dJ_HTJ5GNgBOatx7pU-ix5iF48w
+        this.a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.pkdared.-$$Lambda$PkDaredTextBarView$dJ_HTJ5GNgBOatx7pU-ix5iF48w
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 PkDaredTextBarView.this.a(view);
@@ -84,12 +80,12 @@ public class PkDaredTextBarView extends FrameLayout {
 
     public void a(String str, String str2) {
         if (LiveRoomInfo.a().g() == LiveRoomManager.a().f()) {
-            this.f15422c = null;
+            this.c = null;
             this.d = null;
             setVisibility(8);
             return;
         }
-        this.f15422c = str;
+        this.c = str;
         this.d = str2;
         this.b.setText(str);
         EventTrackLive.a(LiveProtos.Event.LIVE_CHALLENGE_PK_EXPLAIN_SHOW, LiveRoomManager.a().e(), LiveRoomManager.a().p().profile.uid);
@@ -106,6 +102,6 @@ public class PkDaredTextBarView extends FrameLayout {
     }
 
     public boolean b() {
-        return !TextUtils.isEmpty(this.f15422c);
+        return !TextUtils.isEmpty(this.c);
     }
 }

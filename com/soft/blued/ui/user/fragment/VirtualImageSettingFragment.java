@@ -5,6 +5,8 @@ import android.app.Dialog;
 import android.content.DialogInterface;
 import android.view.View;
 import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.Fragment;
+import androidx.viewbinding.ViewBinding;
 import com.blued.android.core.utils.toast.ToastUtils;
 import com.blued.android.framework.http.BluedUIHttpResponse;
 import com.blued.android.framework.http.parser.BluedEntityA;
@@ -35,10 +37,10 @@ import kotlin.reflect.KProperty;
 @Metadata
 /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/user/fragment/VirtualImageSettingFragment.class */
 public final class VirtualImageSettingFragment extends MVIBaseFragment<EmptyMviViewModel> {
-    static final /* synthetic */ KProperty<Object>[] b = {Reflection.a(new PropertyReference1Impl(VirtualImageSettingFragment.class, "vb", "getVb()Lcom/soft/blued/databinding/FragmentVirtualImageSettingBinding;", 0))};
+    static final /* synthetic */ KProperty<Object>[] b = {(KProperty) Reflection.a(new PropertyReference1Impl(VirtualImageSettingFragment.class, "vb", "getVb()Lcom/soft/blued/databinding/FragmentVirtualImageSettingBinding;", 0))};
 
     /* renamed from: c  reason: collision with root package name */
-    private final ViewBindingProperty f34217c;
+    private final ViewBindingProperty f20526c;
     private final long d;
     private int e;
     private boolean f;
@@ -60,18 +62,18 @@ public final class VirtualImageSettingFragment extends MVIBaseFragment<EmptyMviV
     }
 
     public VirtualImageSettingFragment() {
-        super(R.layout.fragment_virtual_image_setting);
-        this.f34217c = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<VirtualImageSettingFragment, FragmentVirtualImageSettingBinding>() { // from class: com.soft.blued.ui.user.fragment.VirtualImageSettingFragment$special$$inlined$viewBindingFragment$default$1
-            @Override // kotlin.jvm.functions.Function1
+        super((int) R.layout.fragment_virtual_image_setting);
+        this.f20526c = ((Fragment) this) instanceof DialogFragment ? (ViewBindingProperty) new DialogFragmentViewBindingProperty(new Function1<VirtualImageSettingFragment, FragmentVirtualImageSettingBinding>() { // from class: com.soft.blued.ui.user.fragment.VirtualImageSettingFragment$special$$inlined$viewBindingFragment$default$1
+            /* JADX WARN: Incorrect types in method signature: (Lcom/soft/blued/ui/user/fragment/VirtualImageSettingFragment;)Lcom/soft/blued/databinding/FragmentVirtualImageSettingBinding; */
             /* renamed from: a */
-            public final FragmentVirtualImageSettingBinding invoke(VirtualImageSettingFragment fragment) {
+            public final ViewBinding invoke(Fragment fragment) {
                 Intrinsics.e(fragment, "fragment");
                 return FragmentVirtualImageSettingBinding.a(fragment.requireView());
             }
         }) : new FragmentViewBindingProperty(new Function1<VirtualImageSettingFragment, FragmentVirtualImageSettingBinding>() { // from class: com.soft.blued.ui.user.fragment.VirtualImageSettingFragment$special$$inlined$viewBindingFragment$default$2
-            @Override // kotlin.jvm.functions.Function1
+            /* JADX WARN: Incorrect types in method signature: (Lcom/soft/blued/ui/user/fragment/VirtualImageSettingFragment;)Lcom/soft/blued/databinding/FragmentVirtualImageSettingBinding; */
             /* renamed from: a */
-            public final FragmentVirtualImageSettingBinding invoke(VirtualImageSettingFragment fragment) {
+            public final ViewBinding invoke(Fragment fragment) {
                 Intrinsics.e(fragment, "fragment");
                 return FragmentVirtualImageSettingBinding.a(fragment.requireView());
             }
@@ -84,14 +86,12 @@ public final class VirtualImageSettingFragment extends MVIBaseFragment<EmptyMviV
         this.f = true;
         UserHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<Object>>() { // from class: com.soft.blued.ui.user.fragment.VirtualImageSettingFragment$setUserDisplay$1
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<Object> bluedEntityA) {
                 VirtualImageSettingFragment.this.f = false;
                 ToastUtils.a((int) R.string.user_virtual_image_switch_toast, 0);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i2, String str, String str2) {
                 VirtualImageSettingFragment.this.f = false;
                 ToastUtils.a(2131887272, 0);
@@ -114,13 +114,12 @@ public final class VirtualImageSettingFragment extends MVIBaseFragment<EmptyMviV
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(final VirtualImageSettingFragment this$0, DialogInterface dialogInterface, int i) {
+    public static final void a(final VirtualImageSettingFragment virtualImageSettingFragment, DialogInterface dialogInterface, int i) {
         Tracker.onClick(dialogInterface, i);
-        Intrinsics.e(this$0, "this$0");
-        this$0.a(PersonalProfileProtos.Event.PERSONAL_VIRTUAL_PAGE_DELETE_YES_CLICK);
+        Intrinsics.e(virtualImageSettingFragment, "this$0");
+        virtualImageSettingFragment.a(PersonalProfileProtos.Event.PERSONAL_VIRTUAL_PAGE_DELETE_YES_CLICK);
         UserHttpUtils.d(new BluedUIHttpResponse<BluedEntityA<Object>>() { // from class: com.soft.blued.ui.user.fragment.VirtualImageSettingFragment$showDeleteConfirmDialog$1$1
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<Object> bluedEntityA) {
                 VirtualImageSettingFragment.OnVirtualImageDeletedListener a2 = VirtualImageSettingFragment.this.a();
@@ -130,23 +129,22 @@ public final class VirtualImageSettingFragment extends MVIBaseFragment<EmptyMviV
                 a2.a();
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i2, String str, String str2) {
                 ToastUtils.a(2131887272, 0);
                 return true;
             }
-        }, this$0.getFragmentActive());
+        }, virtualImageSettingFragment.getFragmentActive());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(VirtualImageSettingFragment this$0, View view) {
+    public static final void a(VirtualImageSettingFragment virtualImageSettingFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        if (this$0.f || this$0.e != 2) {
+        Intrinsics.e(virtualImageSettingFragment, "this$0");
+        if (virtualImageSettingFragment.f || virtualImageSettingFragment.e != 2) {
             return;
         }
         EventTrackPersonalProfile.a(PersonalProfileProtos.Event.PERSONAL_VIRTUAL_PAGE_FIRST_VIRTUAL_CLICK);
-        b(this$0, false, 1, null);
+        b(virtualImageSettingFragment, false, 1, null);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -163,9 +161,9 @@ public final class VirtualImageSettingFragment extends MVIBaseFragment<EmptyMviV
             return;
         }
         this.e = 2;
-        b2.f29032c.setTextColor(getResources().getColor(2131100152));
+        b2.f15342c.setTextColor(getResources().getColor(R.color.color_BBBBBB));
         b2.d.setTextColor(getResources().getColor(2131102478));
-        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(b2.f29031a, "translationX", 0.0f, BluedViewExtKt.a(88.0f));
+        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(b2.f15341a, "translationX", 0.0f, BluedViewExtKt.a(88.0f));
         ofFloat.setDuration(this.d);
         ofFloat.start();
         if (z) {
@@ -174,15 +172,15 @@ public final class VirtualImageSettingFragment extends MVIBaseFragment<EmptyMviV
     }
 
     private final FragmentVirtualImageSettingBinding b() {
-        return (FragmentVirtualImageSettingBinding) this.f34217c.b(this, b[0]);
+        return (FragmentVirtualImageSettingBinding) this.f20526c.b(this, b[0]);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(VirtualImageSettingFragment this$0, DialogInterface dialogInterface, int i) {
+    public static final void b(VirtualImageSettingFragment virtualImageSettingFragment, DialogInterface dialogInterface, int i) {
         Tracker.onClick(dialogInterface, i);
-        Intrinsics.e(this$0, "this$0");
-        this$0.a(PersonalProfileProtos.Event.PERSONAL_VIRTUAL_PAGE_DELETE_NO_CLICK);
-        Dialog dialog = this$0.g;
+        Intrinsics.e(virtualImageSettingFragment, "this$0");
+        virtualImageSettingFragment.a(PersonalProfileProtos.Event.PERSONAL_VIRTUAL_PAGE_DELETE_NO_CLICK);
+        Dialog dialog = virtualImageSettingFragment.g;
         if (dialog == null) {
             return;
         }
@@ -190,14 +188,14 @@ public final class VirtualImageSettingFragment extends MVIBaseFragment<EmptyMviV
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(VirtualImageSettingFragment this$0, View view) {
+    public static final void b(VirtualImageSettingFragment virtualImageSettingFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        if (this$0.f || this$0.e != 1) {
+        Intrinsics.e(virtualImageSettingFragment, "this$0");
+        if (virtualImageSettingFragment.f || virtualImageSettingFragment.e != 1) {
             return;
         }
         EventTrackPersonalProfile.a(PersonalProfileProtos.Event.PERSONAL_VIRTUAL_PAGE_FIRST_BG_CLICK);
-        a(this$0, false, 1, null);
+        a(virtualImageSettingFragment, false, 1, null);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -214,9 +212,9 @@ public final class VirtualImageSettingFragment extends MVIBaseFragment<EmptyMviV
             return;
         }
         this.e = 1;
-        b2.d.setTextColor(getResources().getColor(2131100152));
-        b2.f29032c.setTextColor(getResources().getColor(2131102478));
-        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(b2.f29031a, "translationX", BluedViewExtKt.a(88.0f), 0.0f);
+        b2.d.setTextColor(getResources().getColor(R.color.color_BBBBBB));
+        b2.f15342c.setTextColor(getResources().getColor(2131102478));
+        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(b2.f15341a, "translationX", BluedViewExtKt.a(88.0f), 0.0f);
         ofFloat.setDuration(this.d);
         ofFloat.start();
         if (z) {
@@ -233,12 +231,12 @@ public final class VirtualImageSettingFragment extends MVIBaseFragment<EmptyMviV
         if (z) {
             return;
         }
-        BluedAlertDialog a2 = new BluedAlertDialog.Builder(getContext()).d(R.string.user_virtual_image_alert).e(R.string.user_virtual_image_alert_message).a(R.string.user_virtual_image_alert_delete, new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$VirtualImageSettingFragment$XQYBgCW4chp8OQFLPibI0HvcEtY
+        Dialog a2 = new BluedAlertDialog.Builder(getContext()).d((int) R.string.user_virtual_image_alert).e((int) R.string.user_virtual_image_alert_message).a((int) R.string.user_virtual_image_alert_delete, new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$VirtualImageSettingFragment$XQYBgCW4chp8OQFLPibI0HvcEtY
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
                 VirtualImageSettingFragment.a(VirtualImageSettingFragment.this, dialogInterface, i);
             }
-        }).f(2131101730).b(R.string.user_virtual_image_alert_cancel, new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$VirtualImageSettingFragment$sX47xNKPTaj48r5VhXHnx7DHtHE
+        }).f(2131101730).b((int) R.string.user_virtual_image_alert_cancel, new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$VirtualImageSettingFragment$sX47xNKPTaj48r5VhXHnx7DHtHE
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
                 VirtualImageSettingFragment.b(VirtualImageSettingFragment.this, dialogInterface, i);
@@ -252,11 +250,11 @@ public final class VirtualImageSettingFragment extends MVIBaseFragment<EmptyMviV
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void c(VirtualImageSettingFragment this$0, View view) {
+    public static final void c(VirtualImageSettingFragment virtualImageSettingFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.a(PersonalProfileProtos.Event.PERSONAL_VIRTUAL_PAGE_DELETE_CLICK);
-        this$0.c();
+        Intrinsics.e(virtualImageSettingFragment, "this$0");
+        virtualImageSettingFragment.a(PersonalProfileProtos.Event.PERSONAL_VIRTUAL_PAGE_DELETE_CLICK);
+        virtualImageSettingFragment.c();
     }
 
     public final OnVirtualImageDeletedListener a() {
@@ -275,7 +273,6 @@ public final class VirtualImageSettingFragment extends MVIBaseFragment<EmptyMviV
         this.j = virtualImageUtils;
     }
 
-    @Override // com.blued.android.module.common.base.mvi.MVIBaseFragment
     public void m() {
         FragmentVirtualImageSettingBinding b2 = b();
         if (b2 == null) {
@@ -286,7 +283,7 @@ public final class VirtualImageSettingFragment extends MVIBaseFragment<EmptyMviV
         } else {
             a(false);
         }
-        b2.f29032c.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$VirtualImageSettingFragment$jbGMhBXIu6P0K9uHaq0iujimRy4
+        b2.f15342c.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$VirtualImageSettingFragment$jbGMhBXIu6P0K9uHaq0iujimRy4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 VirtualImageSettingFragment.a(VirtualImageSettingFragment.this, view);
@@ -298,7 +295,7 @@ public final class VirtualImageSettingFragment extends MVIBaseFragment<EmptyMviV
                 VirtualImageSettingFragment.b(VirtualImageSettingFragment.this, view);
             }
         });
-        b2.b.setOnClickListener(new SingleClickProxy(new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$VirtualImageSettingFragment$_A03STSO5MPLnLpwfGVT7HrKvz4
+        b2.b.setOnClickListener((View.OnClickListener) new SingleClickProxy(new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$VirtualImageSettingFragment$_A03STSO5MPLnLpwfGVT7HrKvz4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 VirtualImageSettingFragment.c(VirtualImageSettingFragment.this, view);
@@ -306,11 +303,9 @@ public final class VirtualImageSettingFragment extends MVIBaseFragment<EmptyMviV
         }));
     }
 
-    @Override // com.blued.android.module.common.base.mvi.MVIBaseFragment
     public void o() {
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener
     public boolean onBackPressed() {
         OnBackPressedListener onBackPressedListener = this.h;
         if (onBackPressedListener == null) {

@@ -13,20 +13,20 @@ import java.util.Map;
 public class j implements i.b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f39394a = String.format("android %s", TPSystemInfo.getOsVersion());
+    private static final String f25703a = String.format("android %s", TPSystemInfo.getOsVersion());
 
     /* renamed from: c  reason: collision with root package name */
-    private static final Map<Integer, Integer> f39395c;
+    private static final Map<Integer, Integer> f25704c;
     private static final Map<Integer, Integer> d;
     private Context b;
 
     static {
         HashMap hashMap = new HashMap();
-        f39395c = hashMap;
+        f25704c = hashMap;
         hashMap.put(0, -1);
-        f39395c.put(1, 0);
-        f39395c.put(2, 3);
-        f39395c.put(3, 3);
+        f25704c.put(1, 0);
+        f25704c.put(2, 3);
+        f25704c.put(3, 3);
         HashMap hashMap2 = new HashMap();
         d = hashMap2;
         hashMap2.put(-1, -1);
@@ -56,7 +56,7 @@ public class j implements i.b {
     }
 
     public static int b(int i) {
-        Integer num = f39395c.get(Integer.valueOf(i));
+        Integer num = f25704c.get(Integer.valueOf(i));
         if (num == null) {
             return -1;
         }
@@ -74,7 +74,7 @@ public class j implements i.b {
         aVar.c(0);
         aVar.d(com.tencent.thumbplayer.utils.h.a(this.b));
         aVar.c(TPSystemInfo.getDeviceName());
-        aVar.d(f39394a);
+        aVar.d(f25703a);
         aVar.e(this.b.getPackageName());
         aVar.g(TPPlayerConfig.getAppVersionName(this.b));
         aVar.h("1.0.0");

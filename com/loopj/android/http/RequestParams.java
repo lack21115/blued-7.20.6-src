@@ -1,6 +1,7 @@
 package com.loopj.android.http;
 
 import android.util.Log;
+import com.huawei.hms.framework.common.ContainerUtils;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -78,7 +79,7 @@ public class RequestParams implements Serializable {
     public RequestParams(final String str, final String str2) {
         this(new HashMap<String, String>() { // from class: com.loopj.android.http.RequestParams.1
             {
-                put(String.this, str2);
+                put(str, str2);
             }
         });
     }
@@ -352,7 +353,7 @@ public class RequestParams implements Serializable {
         StringBuilder sb = new StringBuilder();
         for (Map.Entry<String, String> entry : this.urlParams.entrySet()) {
             if (sb.length() > 0) {
-                sb.append("&");
+                sb.append(ContainerUtils.FIELD_DELIMITER);
             }
             sb.append(entry.getKey());
             sb.append("=");
@@ -360,7 +361,7 @@ public class RequestParams implements Serializable {
         }
         for (Map.Entry<String, StreamWrapper> entry2 : this.streamParams.entrySet()) {
             if (sb.length() > 0) {
-                sb.append("&");
+                sb.append(ContainerUtils.FIELD_DELIMITER);
             }
             sb.append(entry2.getKey());
             sb.append("=");
@@ -368,7 +369,7 @@ public class RequestParams implements Serializable {
         }
         for (Map.Entry<String, FileWrapper> entry3 : this.fileParams.entrySet()) {
             if (sb.length() > 0) {
-                sb.append("&");
+                sb.append(ContainerUtils.FIELD_DELIMITER);
             }
             sb.append(entry3.getKey());
             sb.append("=");
@@ -376,7 +377,7 @@ public class RequestParams implements Serializable {
         }
         for (BasicNameValuePair basicNameValuePair : getParamsList(null, this.urlParamsWithObjects)) {
             if (sb.length() > 0) {
-                sb.append("&");
+                sb.append(ContainerUtils.FIELD_DELIMITER);
             }
             sb.append(basicNameValuePair.getName());
             sb.append("=");

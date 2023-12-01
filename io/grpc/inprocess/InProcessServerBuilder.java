@@ -50,7 +50,6 @@ public final class InProcessServerBuilder extends AbstractServerImplBuilder<InPr
         return this;
     }
 
-    @Override // io.grpc.ServerBuilder
     public InProcessServerBuilder maxInboundMetadataSize(int i) {
         Preconditions.checkArgument(i > 0, "maxInboundMetadataSize must be > 0");
         this.maxInboundMetadataSize = i;
@@ -62,7 +61,6 @@ public final class InProcessServerBuilder extends AbstractServerImplBuilder<InPr
         return this;
     }
 
-    @Override // io.grpc.ServerBuilder
     public InProcessServerBuilder useTransportSecurity(File file, File file2) {
         throw new UnsupportedOperationException("TLS not supported in InProcessServer");
     }

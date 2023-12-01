@@ -4,11 +4,11 @@ package com.anythink.expressad.exoplayer;
 public final class v {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final v f7740a = new v(1.0f);
+    public static final v f4901a = new v(1.0f);
     public final float b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final float f7741c;
+    public final float f4902c;
     public final boolean d;
     private final int e;
 
@@ -24,7 +24,7 @@ public final class v {
         com.anythink.expressad.exoplayer.k.a.a(f > 0.0f);
         com.anythink.expressad.exoplayer.k.a.a(f2 > 0.0f);
         this.b = f;
-        this.f7741c = f2;
+        this.f4902c = f2;
         this.d = z;
         this.e = Math.round(f * 1000.0f);
     }
@@ -41,7 +41,7 @@ public final class v {
             return false;
         }
         v vVar = (v) obj;
-        return this.b == vVar.b && this.f7741c == vVar.f7741c && this.d == vVar.d;
+        return this.b == vVar.b && this.f4902c == vVar.f4902c && this.d == vVar.d;
     }
 
     /* JADX WARN: Type inference failed for: r0v0, types: [java.lang.Throwable, java.lang.Runtime] */

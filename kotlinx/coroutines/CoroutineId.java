@@ -1,5 +1,6 @@
 package kotlinx.coroutines;
 
+import $r8;
 import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.coroutines.AbstractCoroutineContextElement;
@@ -11,9 +12,7 @@ import kotlin.text.StringsKt;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/CoroutineId.class */
 public final class CoroutineId extends AbstractCoroutineContextElement implements ThreadContextElement<String> {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Key f42798a = new Key(null);
+    public static final Key a = new Key(null);
     private final long b;
 
     @Metadata
@@ -28,7 +27,7 @@ public final class CoroutineId extends AbstractCoroutineContextElement implement
     }
 
     public CoroutineId(long j) {
-        super(f42798a);
+        super(a);
         this.b = j;
     }
 
@@ -40,7 +39,7 @@ public final class CoroutineId extends AbstractCoroutineContextElement implement
     /* renamed from: a */
     public String b(CoroutineContext coroutineContext) {
         String a2;
-        CoroutineName coroutineName = (CoroutineName) coroutineContext.get(CoroutineName.f42799a);
+        CoroutineName coroutineName = (CoroutineName) coroutineContext.get(CoroutineName.a);
         String str = "coroutine";
         if (coroutineName != null && (a2 = coroutineName.a()) != null) {
             str = a2;
@@ -61,7 +60,7 @@ public final class CoroutineId extends AbstractCoroutineContextElement implement
             sb.append(str);
             sb.append('#');
             sb.append(a());
-            Unit unit = Unit.f42314a;
+            Unit unit = Unit.a;
             String sb2 = sb.toString();
             Intrinsics.c(sb2, "StringBuilder(capacity).…builderAction).toString()");
             currentThread.setName(sb2);
@@ -83,7 +82,7 @@ public final class CoroutineId extends AbstractCoroutineContextElement implement
     }
 
     public int hashCode() {
-        return C$r8$backportedMethods$utility$Long$1$hashCode.hashCode(this.b);
+        return $r8.backportedMethods.utility.Long.1.hashCode.hashCode(this.b);
     }
 
     public String toString() {

@@ -1,5 +1,6 @@
 package com.anythink.expressad.foundation.f;
 
+import android.R;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Build;
@@ -18,11 +19,11 @@ import java.util.concurrent.ConcurrentHashMap;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    public static int f7817a = -2;
+    public static int f4977a = -2;
     public static int b = -2;
 
     /* renamed from: c  reason: collision with root package name */
-    public static volatile boolean f7818c = false;
+    public static volatile boolean f4978c = false;
     private final ConcurrentHashMap<String, com.anythink.expressad.foundation.f.a.a> d;
     private final RelativeLayout.LayoutParams e;
     private com.anythink.expressad.d.a f;
@@ -32,7 +33,7 @@ public final class b {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final b f7819a = new b((byte) 0);
+        private static final b f4979a = new b((byte) 0);
 
         a() {
         }
@@ -40,7 +41,7 @@ public final class b {
 
     private b() {
         this.d = new ConcurrentHashMap<>();
-        this.e = new RelativeLayout.LayoutParams(f7817a, b);
+        this.e = new RelativeLayout.LayoutParams(f4977a, b);
     }
 
     /* synthetic */ b(byte b2) {
@@ -149,7 +150,7 @@ public final class b {
     }
 
     public static b a() {
-        return a.f7819a;
+        return a.f4979a;
     }
 
     private void a(String str, int i, int i2, int i3, float f, float f2, float f3, String str2, String str3) {
@@ -252,7 +253,7 @@ public final class b {
         if (b()) {
             com.anythink.expressad.foundation.f.a.a a2 = a(str);
             if (aVar != null) {
-                a2.a(new a.C0144a(str, aVar));
+                a2.a(new a.C0073a(str, aVar));
             }
             FeedBackButton c2 = a2.c();
             if (c2 != null) {
@@ -271,7 +272,7 @@ public final class b {
                 if (a3 != null) {
                     viewGroup3 = viewGroup;
                     if (viewGroup == null) {
-                        viewGroup3 = (ViewGroup) a3.findViewById(16908290);
+                        viewGroup3 = (ViewGroup) a3.findViewById(R.id.content);
                     }
                 }
                 if (viewGroup3 != null) {
@@ -287,7 +288,7 @@ public final class b {
     }
 
     public final void a(String str, com.anythink.expressad.foundation.f.a aVar) {
-        a(str).a(new a.C0144a(str, aVar));
+        a(str).a(new a.C0073a(str, aVar));
     }
 
     public final void a(String str, FeedBackButton feedBackButton) {

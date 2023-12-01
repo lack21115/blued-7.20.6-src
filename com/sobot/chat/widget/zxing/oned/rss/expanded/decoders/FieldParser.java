@@ -6,9 +6,8 @@ import com.huawei.hms.support.hianalytics.HiAnalyticsConstant;
 import com.sobot.chat.widget.zxing.NotFoundException;
 import com.tencent.connect.common.Constants;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8303388-dex2jar.jar:com/sobot/chat/widget/zxing/oned/rss/expanded/decoders/FieldParser.class */
-public final class FieldParser {
+final class FieldParser {
     private static final Object[][] FOUR_DIGIT_DATA_LENGTH;
     private static final Object[][] THREE_DIGIT_DATA_LENGTH;
     private static final Object[][] THREE_DIGIT_PLUS_DIGIT_DATA_LENGTH;

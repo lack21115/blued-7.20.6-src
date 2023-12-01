@@ -14,12 +14,12 @@ import java.util.Map;
 public class HiAnalyticsUtils {
 
     /* renamed from: c  reason: collision with root package name */
-    public static final Object f22892c = new Object();
+    public static final Object f9284c = new Object();
     public static final Object d = new Object();
     public static HiAnalyticsUtils e;
 
     /* renamed from: a  reason: collision with root package name */
-    public int f22893a = 0;
+    public int f9285a = 0;
     public boolean b = c.a();
 
     public static LinkedHashMap<String, String> a(Map<String, String> map) {
@@ -34,7 +34,7 @@ public class HiAnalyticsUtils {
 
     public static HiAnalyticsUtils getInstance() {
         HiAnalyticsUtils hiAnalyticsUtils;
-        synchronized (f22892c) {
+        synchronized (f9284c) {
             if (e == null) {
                 e = new HiAnalyticsUtils();
             }
@@ -60,10 +60,10 @@ public class HiAnalyticsUtils {
 
     public final void a(Context context) {
         synchronized (d) {
-            if (this.f22893a < 60) {
-                this.f22893a++;
+            if (this.f9285a < 60) {
+                this.f9285a++;
             } else {
-                this.f22893a = 0;
+                this.f9285a = 0;
                 if (this.b) {
                     com.huawei.hms.stats.b.a(context, 0);
                     com.huawei.hms.stats.b.a(context, 1);

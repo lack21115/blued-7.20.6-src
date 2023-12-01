@@ -23,7 +23,7 @@ public class LineScalePulseOutIndicator extends LineScaleIndicator {
             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.blued.android.module.live_china.same.loadingIndicator.LineScalePulseOutIndicator.1
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    LineScalePulseOutIndicator.this.f14116a[i2] = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                    LineScalePulseOutIndicator.this.a[i2] = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                     LineScalePulseOutIndicator.this.e();
                 }
             });

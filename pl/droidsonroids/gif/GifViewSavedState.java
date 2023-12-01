@@ -21,18 +21,16 @@ public class GifViewSavedState extends View.BaseSavedState {
             return new GifViewSavedState[i];
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    final long[][] f44151a;
+    final long[][] a;
 
     /* JADX WARN: Type inference failed for: r1v3, types: [long[], long[][]] */
     private GifViewSavedState(Parcel parcel) {
         super(parcel);
-        this.f44151a = new long[parcel.readInt()];
+        this.a = new long[parcel.readInt()];
         int i = 0;
         while (true) {
             int i2 = i;
-            long[][] jArr = this.f44151a;
+            long[][] jArr = this.a;
             if (i2 >= jArr.length) {
                 return;
             }
@@ -45,7 +43,7 @@ public class GifViewSavedState extends View.BaseSavedState {
     /* JADX WARN: Type inference failed for: r0v2, types: [long[], long[][]] */
     public GifViewSavedState(Parcelable parcelable, long[] jArr) {
         super(parcelable);
-        this.f44151a = r0;
+        this.a = r0;
         ?? r0 = {jArr};
     }
 
@@ -53,7 +51,7 @@ public class GifViewSavedState extends View.BaseSavedState {
     /* JADX WARN: Type inference failed for: r1v3, types: [long[], long[][]] */
     public GifViewSavedState(Parcelable parcelable, Drawable... drawableArr) {
         super(parcelable);
-        this.f44151a = new long[drawableArr.length];
+        this.a = new long[drawableArr.length];
         int i = 0;
         while (true) {
             int i2 = i;
@@ -62,9 +60,9 @@ public class GifViewSavedState extends View.BaseSavedState {
             }
             Drawable drawable = drawableArr[i2];
             if (drawable instanceof GifDrawable) {
-                this.f44151a[i2] = ((GifDrawable) drawable).f.m();
+                this.a[i2] = ((GifDrawable) drawable).f.m();
             } else {
-                this.f44151a[i2] = null;
+                this.a[i2] = null;
             }
             i = i2 + 1;
         }
@@ -72,18 +70,18 @@ public class GifViewSavedState extends View.BaseSavedState {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a(Drawable drawable, int i) {
-        if (this.f44151a[i] == null || !(drawable instanceof GifDrawable)) {
+        if (this.a[i] == null || !(drawable instanceof GifDrawable)) {
             return;
         }
         GifDrawable gifDrawable = (GifDrawable) drawable;
-        gifDrawable.a(gifDrawable.f.a(this.f44151a[i], gifDrawable.e));
+        gifDrawable.a(gifDrawable.f.a(this.a[i], gifDrawable.e));
     }
 
     @Override // android.view.AbsSavedState, android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
         super.writeToParcel(parcel, i);
-        parcel.writeInt(this.f44151a.length);
-        long[][] jArr = this.f44151a;
+        parcel.writeInt(this.a.length);
+        long[][] jArr = this.a;
         int length = jArr.length;
         int i2 = 0;
         while (true) {

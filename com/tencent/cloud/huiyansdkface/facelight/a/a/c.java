@@ -24,11 +24,11 @@ import java.util.Properties;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private b f35512a = new b();
+    private b f21821a = new b();
     private CloudFaceCountDownTimer b;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f35513c;
+    private boolean f21822c;
 
     private String a(Context context) {
         WLogger.d("GetCdnInfo", "check local config is exist");
@@ -88,13 +88,13 @@ public class c {
     private void a(List<String> list, List<String> list2) {
         String str;
         WLogger.d("GetCdnInfo", "after appId set,check version and model is use Turing");
-        if (this.f35512a.G) {
+        if (this.f21821a.G) {
             if (list != null) {
                 String valueOf = String.valueOf(Build.VERSION.SDK_INT);
                 WLogger.d("GetCdnInfo", "versionList=" + list.toString().trim() + MttLoader.QQBROWSER_PARAMS_VERSION + valueOf);
                 if (list.contains(valueOf)) {
                     WLogger.d("GetCdnInfo", "match banTuringSdkVersionList! no use TuringSdk:osversion");
-                    this.f35512a.G = false;
+                    this.f21821a.G = false;
                     str = "osversion";
                 } else {
                     WLogger.d("GetCdnInfo", "dont match banTuringSdkVersionList list! ");
@@ -114,7 +114,7 @@ public class c {
                 return;
             }
             WLogger.d("GetCdnInfo", "match banTuringSdk list! ");
-            this.f35512a.G = false;
+            this.f21821a.G = false;
             str = "device";
         } else {
             WLogger.d("GetCdnInfo", "appId already false");
@@ -178,19 +178,19 @@ public class c {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void b(Context context) {
-        if (this.f35513c) {
+        if (this.f21822c) {
             WLogger.d("GetCdnInfo", "already init TuringSdk");
             return;
         }
-        this.f35513c = true;
-        if (!this.f35512a.G) {
+        this.f21822c = true;
+        if (!this.f21821a.G) {
             WLogger.d("GetCdnInfo", "no need to initTuringSdk");
             return;
         }
         WLogger.d("GetCdnInfo", "initTuringSdk");
         Param.appendTuringSdkInfo();
         d.a(context);
-        this.f35512a.H = true;
+        this.f21821a.H = true;
     }
 
     private WbUiTips c(String str) {
@@ -199,7 +199,7 @@ public class c {
     }
 
     public b a() {
-        return this.f35512a;
+        return this.f21821a;
     }
 
     public GetCdnGradeInfo.GetGradeInfoResponse a(String str) {
@@ -256,7 +256,7 @@ public class c {
                 KycWaSDK kycWaSDK = KycWaSDK.getInstance();
                 Context context2 = context;
                 c cVar = c.this;
-                kycWaSDK.trackCustomKVEvent(context2, "faceservice_cdn_response", "onSuccess", cVar.a(cVar.f35512a));
+                kycWaSDK.trackCustomKVEvent(context2, "faceservice_cdn_response", "onSuccess", cVar.a(cVar.f21821a));
                 aVar.a();
                 c.this.a(context, getGradeInfoResponse);
             }

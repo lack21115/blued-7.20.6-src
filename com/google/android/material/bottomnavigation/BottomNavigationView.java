@@ -117,9 +117,8 @@ public class BottomNavigationView extends NavigationBarView {
         return ((BottomNavigationMenuView) getMenuView()).isItemHorizontalTranslationEnabled();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         super.onMeasure(i, makeMinHeightSpec(i2));
     }
 

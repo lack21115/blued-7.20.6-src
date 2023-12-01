@@ -14,11 +14,11 @@ import java.util.HashMap;
 public class d3 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static PackageManager f42116a;
+    public static PackageManager f28425a;
     public static j1 b;
 
     /* renamed from: c  reason: collision with root package name */
-    public static HashMap<String, String> f42117c = new HashMap<>();
+    public static HashMap<String, String> f28426c = new HashMap<>();
 
     @Java2C.Method2C
     public static native String a();
@@ -38,7 +38,7 @@ public class d3 {
             return c(context).checkPermission(str, context.getPackageName()) == 0;
         } catch (Throwable th) {
             try {
-                z1.a.f42234a.f42233a.f42142a.a(4, null, null, th);
+                z1.a.f28543a.f28542a.f28451a.a(4, null, null, th);
                 return z;
             } catch (Throwable th2) {
                 th2.printStackTrace();
@@ -102,10 +102,10 @@ public class d3 {
     public static native String b(Context context);
 
     public static PackageManager c(Context context) {
-        if (f42116a == null) {
-            f42116a = context.getPackageManager();
+        if (f28425a == null) {
+            f28425a = context.getPackageManager();
         }
-        return f42116a;
+        return f28425a;
     }
 
     public static String c() {

@@ -8,25 +8,25 @@ import java.util.LinkedList;
 public class h0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final LinkedList<t1> f21225a = new LinkedList<>();
+    public final LinkedList<t1> f7619a = new LinkedList<>();
     public final LinkedList<String> b = new LinkedList<>();
 
     public int a(ArrayList<t1> arrayList) {
         int size;
-        synchronized (this.f21225a) {
-            size = this.f21225a.size();
-            arrayList.addAll(this.f21225a);
-            this.f21225a.clear();
+        synchronized (this.f7619a) {
+            size = this.f7619a.size();
+            arrayList.addAll(this.f7619a);
+            this.f7619a.clear();
         }
         return size;
     }
 
     public void a(t1 t1Var) {
-        synchronized (this.f21225a) {
-            if (this.f21225a.size() > 300) {
-                this.f21225a.poll();
+        synchronized (this.f7619a) {
+            if (this.f7619a.size() > 300) {
+                this.f7619a.poll();
             }
-            this.f21225a.add(t1Var);
+            this.f7619a.add(t1Var);
         }
     }
 

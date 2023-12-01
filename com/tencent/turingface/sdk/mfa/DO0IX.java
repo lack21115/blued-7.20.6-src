@@ -12,11 +12,11 @@ import java.util.concurrent.ConcurrentHashMap;
 public final class DO0IX {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final DO0IX f39867a = new DO0IX();
+    public static final DO0IX f26176a = new DO0IX();
     public static final Map<Integer, Integer> b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final Map<Integer, Integer> f39868c = new ConcurrentHashMap();
+    public final Map<Integer, Integer> f26177c = new ConcurrentHashMap();
     public final Map<Integer, Integer> d = new HashMap();
     public final Map<Integer, Integer> e = new HashMap();
     public final Object f = new Object();
@@ -44,7 +44,7 @@ public final class DO0IX {
         hashMap.put(139, 0);
         hashMap.put(10002, 0);
         hashMap.put(Integer.valueOf((int) GLMapStaticValue.AM_CALLBACK_INDOOR_NETWORK_ERR), 0);
-        int i = com.tencent.turingcam.oqKCa.f39831a;
+        int i = com.tencent.turingcam.oqKCa.f26140a;
         if (i == 105668) {
             hashMap.put(18, 0);
         } else if (i == 105928) {
@@ -74,11 +74,13 @@ public final class DO0IX {
         return j;
     }
 
+    /* JADX WARN: Type inference failed for: r0v39, types: [java.util.Map<java.lang.Integer, java.lang.Integer>, java.util.concurrent.ConcurrentHashMap] */
+    /* JADX WARN: Type inference failed for: r0v7, types: [java.util.Map<java.lang.Integer, java.lang.Integer>, java.util.concurrent.ConcurrentHashMap] */
     public final String a() {
         HashSet hashSet = new HashSet();
         synchronized (this.f) {
-            for (Integer num : this.f39868c.keySet()) {
-                if (this.f39868c.get(num).intValue() == 0) {
+            for (Integer num : this.f26177c.keySet()) {
+                if (((Integer) this.f26177c.get(num)).intValue() == 0) {
                     hashSet.add(num);
                 }
             }
@@ -95,11 +97,13 @@ public final class DO0IX {
         return sb.toString();
     }
 
+    /* JADX WARN: Type inference failed for: r0v1, types: [java.util.Map<java.lang.Integer, java.lang.Integer>, java.util.concurrent.ConcurrentHashMap] */
+    /* JADX WARN: Type inference failed for: r0v4, types: [java.util.Map<java.lang.Integer, java.lang.Integer>, java.util.concurrent.ConcurrentHashMap] */
     public final boolean a(int i) {
-        Integer num;
-        if (this.f39868c.containsKey(Integer.valueOf(i)) && (num = this.f39868c.get(Integer.valueOf(i))) != null) {
+        Object obj;
+        if (this.f26177c.containsKey(Integer.valueOf(i)) && (obj = this.f26177c.get(Integer.valueOf(i))) != null) {
             try {
-                return num.intValue() != 0;
+                return ((Integer) obj).intValue() != 0;
             } catch (Throwable th) {
                 return true;
             }
@@ -126,6 +130,17 @@ public final class DO0IX {
     /* JADX WARN: Code restructure failed: missing block: B:11:0x0030, code lost:
         if (r0 == null) goto L47;
      */
+    /* JADX WARN: Type inference failed for: r0v15, types: [java.util.Map<java.lang.Integer, java.lang.Integer>, java.util.concurrent.ConcurrentHashMap] */
+    /* JADX WARN: Type inference failed for: r0v17, types: [java.util.Map<java.lang.Integer, java.lang.Integer>, java.util.HashMap] */
+    /* JADX WARN: Type inference failed for: r0v23, types: [java.util.Map<java.lang.Integer, java.lang.Integer>, java.util.HashMap] */
+    /* JADX WARN: Type inference failed for: r0v33, types: [java.util.Map<java.lang.Integer, java.lang.Integer>, java.util.concurrent.ConcurrentHashMap] */
+    /* JADX WARN: Type inference failed for: r0v36, types: [java.util.Map<java.lang.Integer, java.lang.Integer>, java.util.concurrent.ConcurrentHashMap] */
+    /* JADX WARN: Type inference failed for: r0v45, types: [java.util.Map<java.lang.Integer, java.lang.Integer>, java.util.concurrent.ConcurrentHashMap] */
+    /* JADX WARN: Type inference failed for: r0v54, types: [java.util.Map<java.lang.Integer, java.lang.Integer>, java.util.concurrent.ConcurrentHashMap] */
+    /* JADX WARN: Type inference failed for: r0v7, types: [java.util.Map<java.lang.Integer, java.lang.Integer>, java.util.concurrent.ConcurrentHashMap] */
+    /* JADX WARN: Type inference failed for: r0v9, types: [java.util.Map<java.lang.Integer, java.lang.Integer>, java.util.concurrent.ConcurrentHashMap] */
+    /* JADX WARN: Type inference failed for: r2v5, types: [java.util.Map<java.lang.Integer, java.lang.Integer>, java.util.HashMap] */
+    /* JADX WARN: Type inference failed for: r2v8, types: [java.util.Map<java.lang.Integer, java.lang.Integer>, java.util.HashMap] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences
@@ -140,7 +155,7 @@ public final class DO0IX {
 
     public final void c(Context context) {
         try {
-            if (f39867a.a(context, uAnWx.f, this.g.b(), this.h.a(context, "501"), rBDKv.f39985a.a(context).f40002a, CFgXs.a())) {
+            if (f26176a.a(context, uAnWx.f, this.g.b(), this.h.a(context, "501"), rBDKv.f26294a.a(context).f26311a, CFgXs.a())) {
                 fenkF fenkf = this.h;
                 fenkf.getClass();
                 fenkf.a(context, "501", "" + System.currentTimeMillis(), true);

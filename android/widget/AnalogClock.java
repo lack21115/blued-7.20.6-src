@@ -51,7 +51,7 @@ public class AnalogClock extends View {
         this.mIntentReceiver = new BroadcastReceiver() { // from class: android.widget.AnalogClock.1
             @Override // android.content.BroadcastReceiver
             public void onReceive(Context context2, Intent intent) {
-                if (intent.getAction().equals(Intent.ACTION_TIMEZONE_CHANGED)) {
+                if (intent.getAction().equals("android.intent.action.TIMEZONE_CHANGED")) {
                     String stringExtra = intent.getStringExtra("time-zone");
                     AnalogClock.this.mCalendar = new Time(TimeZone.getTimeZone(stringExtra).getID());
                 }
@@ -99,9 +99,9 @@ public class AnalogClock extends View {
         if (!this.mAttached) {
             this.mAttached = true;
             IntentFilter intentFilter = new IntentFilter();
-            intentFilter.addAction(Intent.ACTION_TIME_TICK);
+            intentFilter.addAction("android.intent.action.TIME_TICK");
             intentFilter.addAction("android.intent.action.TIME_SET");
-            intentFilter.addAction(Intent.ACTION_TIMEZONE_CHANGED);
+            intentFilter.addAction("android.intent.action.TIMEZONE_CHANGED");
             getContext().registerReceiverAsUser(this.mIntentReceiver, Process.myUserHandle(), intentFilter, null, this.mHandler);
         }
         this.mCalendar = new Time();

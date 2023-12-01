@@ -13,19 +13,19 @@ import com.xiaomi.push.gz;
 public class TrafficProvider extends ContentProvider {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final UriMatcher f41563a;
+    private static final UriMatcher f27872a;
 
     /* renamed from: a  reason: collision with other field name */
-    public static final Uri f901a = Uri.parse("content://com.xiaomi.push.providers.TrafficProvider/traffic");
+    public static final Uri f854a = Uri.parse("content://com.xiaomi.push.providers.TrafficProvider/traffic");
 
     /* renamed from: a  reason: collision with other field name */
-    private SQLiteOpenHelper f902a;
+    private SQLiteOpenHelper f855a;
 
     static {
         UriMatcher uriMatcher = new UriMatcher(-1);
-        f41563a = uriMatcher;
+        f27872a = uriMatcher;
         uriMatcher.addURI("com.xiaomi.push.providers.TrafficProvider", d.F, 1);
-        f41563a.addURI("com.xiaomi.push.providers.TrafficProvider", "update_imsi", 2);
+        f27872a.addURI("com.xiaomi.push.providers.TrafficProvider", "update_imsi", 2);
     }
 
     @Override // android.content.ContentProvider
@@ -40,7 +40,7 @@ public class TrafficProvider extends ContentProvider {
 
     @Override // android.content.ContentProvider
     public String getType(Uri uri) {
-        if (f41563a.match(uri) == 1) {
+        if (f27872a.match(uri) == 1) {
             return "vnd.android.cursor.dir/vnd.xiaomi.push.traffic";
         }
         throw new IllegalArgumentException("Unknown URI ".concat(String.valueOf(uri)));
@@ -53,26 +53,26 @@ public class TrafficProvider extends ContentProvider {
 
     @Override // android.content.ContentProvider
     public boolean onCreate() {
-        this.f902a = new a(getContext());
+        this.f855a = new a(getContext());
         return true;
     }
 
     @Override // android.content.ContentProvider
     public Cursor query(Uri uri, String[] strArr, String str, String[] strArr2, String str2) {
         Cursor query;
-        synchronized (a.f903a) {
-            if (f41563a.match(uri) != 1) {
+        synchronized (a.f856a) {
+            if (f27872a.match(uri) != 1) {
                 throw new IllegalArgumentException("Unknown URI ".concat(String.valueOf(uri)));
             }
-            query = this.f902a.getReadableDatabase().query(d.F, strArr, str, strArr2, null, null, str2);
+            query = this.f855a.getReadableDatabase().query(d.F, strArr, str, strArr2, null, null, str2);
         }
         return query;
     }
 
     @Override // android.content.ContentProvider
     public int update(Uri uri, ContentValues contentValues, String str, String[] strArr) {
-        if (f41563a.match(uri) == 2 && contentValues != null && contentValues.containsKey("imsi")) {
-            gz.m11840a(contentValues.getAsString("imsi"));
+        if (f27872a.match(uri) == 2 && contentValues != null && contentValues.containsKey("imsi")) {
+            gz.m8790a(contentValues.getAsString("imsi"));
             return 0;
         }
         return 0;

@@ -25,22 +25,20 @@ public final class ReverseProtoWriter {
     private Buffer head = new Buffer();
     private final Buffer.UnsafeCursor cursor = new Buffer.UnsafeCursor();
     private byte[] array = EMPTY_ARRAY;
-    private final Lazy forwardBuffer$delegate = LazyKt.a(LazyThreadSafetyMode.NONE, new Function0<Buffer>() { // from class: com.squareup.wire.ReverseProtoWriter$forwardBuffer$2
-        @Override // kotlin.jvm.functions.Function0
+    private final Lazy forwardBuffer$delegate = LazyKt.a(LazyThreadSafetyMode.c, new Function0<Buffer>() { // from class: com.squareup.wire.ReverseProtoWriter$forwardBuffer$2
         public final Buffer invoke() {
             return new Buffer();
         }
     });
-    private final Lazy forwardWriter$delegate = LazyKt.a(LazyThreadSafetyMode.NONE, new Function0<ProtoWriter>() { // from class: com.squareup.wire.ReverseProtoWriter$forwardWriter$2
+    private final Lazy forwardWriter$delegate = LazyKt.a(LazyThreadSafetyMode.c, new Function0<ProtoWriter>() { // from class: com.squareup.wire.ReverseProtoWriter$forwardWriter$2
         /* JADX INFO: Access modifiers changed from: package-private */
         {
             super(0);
         }
 
-        /* JADX WARN: Can't rename method to resolve collision */
-        @Override // kotlin.jvm.functions.Function0
-        public final ProtoWriter invoke() {
-            Buffer forwardBuffer;
+        /* renamed from: invoke */
+        public final ProtoWriter m6703invoke() {
+            BufferedSink forwardBuffer;
             forwardBuffer = ReverseProtoWriter.this.getForwardBuffer();
             return new ProtoWriter(forwardBuffer);
         }
@@ -165,16 +163,16 @@ public final class ReverseProtoWriter {
         return ((int) this.tail.size()) + (this.array.length - this.arrayLimit);
     }
 
-    public final void writeBytes(ByteString value) {
-        Intrinsics.e(value, "value");
-        int size = value.size();
+    public final void writeBytes(ByteString byteString) {
+        Intrinsics.e(byteString, "value");
+        int size = byteString.size();
         while (size != 0) {
             require(1);
             int min = Math.min(this.arrayLimit, size);
             int i = this.arrayLimit - min;
             this.arrayLimit = i;
             size -= min;
-            value.copyInto(size, this.array, i, min);
+            byteString.copyInto(size, this.array, i, min);
         }
     }
 
@@ -212,9 +210,9 @@ public final class ReverseProtoWriter {
         bArr[i7 + 1] = (byte) ((j >>> 56) & 255);
     }
 
-    public final void writeForward$wire_runtime(Function1<? super ProtoWriter, Unit> block) throws IOException {
-        Intrinsics.e(block, "block");
-        block.invoke(getForwardWriter());
+    public final void writeForward$wire_runtime(Function1<? super ProtoWriter, Unit> function1) throws IOException {
+        Intrinsics.e(function1, "block");
+        function1.invoke(getForwardWriter());
         writeBytes(getForwardBuffer().readByteString());
     }
 
@@ -226,17 +224,17 @@ public final class ReverseProtoWriter {
         }
     }
 
-    public final void writeString(String value) {
+    public final void writeString(String str) {
         char charAt;
-        Intrinsics.e(value, "value");
-        int length = value.length() - 1;
+        Intrinsics.e(str, "value");
+        int length = str.length() - 1;
         while (true) {
             int i = length;
             if (i < 0) {
                 return;
             }
             int i2 = i - 1;
-            char charAt2 = value.charAt(i);
+            char charAt2 = str.charAt(i);
             if (charAt2 < 128) {
                 require(1);
                 int i3 = this.arrayLimit;
@@ -244,7 +242,7 @@ public final class ReverseProtoWriter {
                 int i4 = i3 - 1;
                 bArr[i4] = (byte) charAt2;
                 int max = Math.max(-1, i2 - i4);
-                while (i2 > max && (charAt = value.charAt(i2)) < 128) {
+                while (i2 > max && (charAt = str.charAt(i2)) < 128) {
                     i2--;
                     i4--;
                     bArr[i4] = (byte) charAt;
@@ -272,7 +270,7 @@ public final class ReverseProtoWriter {
                 this.arrayLimit = i9;
                 bArr3[i9] = (byte) ((charAt2 >> '\f') | 224);
             } else {
-                char charAt3 = i2 >= 0 ? value.charAt(i2) : (char) 65535;
+                char charAt3 = i2 >= 0 ? str.charAt(i2) : (char) 65535;
                 if (charAt3 <= 56319) {
                     boolean z = false;
                     if (56320 <= charAt2) {
@@ -315,10 +313,10 @@ public final class ReverseProtoWriter {
         writeVarint32(ProtoWriter.Companion.makeTag$wire_runtime(i, fieldEncoding));
     }
 
-    public final void writeTo(BufferedSink sink) throws IOException {
-        Intrinsics.e(sink, "sink");
+    public final void writeTo(BufferedSink bufferedSink) throws IOException {
+        Intrinsics.e(bufferedSink, "sink");
         emitCurrentSegment();
-        sink.writeAll(this.tail);
+        bufferedSink.writeAll(this.tail);
     }
 
     public final void writeVarint32(int i) {

@@ -13,13 +13,9 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/LiveRandomGiftLotteryDialogBinding.class */
 public final class LiveRandomGiftLotteryDialogBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final FrameLayout f12397a;
+    public final FrameLayout a;
     public final FrameLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f12398c;
+    public final ImageView c;
     public final ImageView d;
     public final ImageView e;
     public final SlopeLoadingView f;
@@ -31,9 +27,9 @@ public final class LiveRandomGiftLotteryDialogBinding implements ViewBinding {
 
     private LiveRandomGiftLotteryDialogBinding(FrameLayout frameLayout, FrameLayout frameLayout2, FrameLayout frameLayout3, ImageView imageView, ImageView imageView2, ImageView imageView3, SlopeLoadingView slopeLoadingView, ShapeTextView shapeTextView, TextView textView, ShapeTextView shapeTextView2, TextView textView2) {
         this.k = frameLayout;
-        this.f12397a = frameLayout2;
+        this.a = frameLayout2;
         this.b = frameLayout3;
-        this.f12398c = imageView;
+        this.c = imageView;
         this.d = imageView2;
         this.e = imageView3;
         this.f = slopeLoadingView;
@@ -110,7 +106,6 @@ public final class LiveRandomGiftLotteryDialogBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.k;

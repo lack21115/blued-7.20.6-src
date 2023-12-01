@@ -18,11 +18,11 @@ import com.soft.blued.R;
 public class ShadowFragment extends BaseFragment implements View.OnClickListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f33966a;
+    private Context f20275a;
     private View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private LinearLayout f33967c;
+    private LinearLayout f20276c;
     private TextView d;
     private TextView e;
     private LinearLayout f;
@@ -42,7 +42,7 @@ public class ShadowFragment extends BaseFragment implements View.OnClickListener
     private RelativeLayout t;
 
     private void a() {
-        this.f33967c = (LinearLayout) this.b.findViewById(R.id.shadow_price_layout);
+        this.f20276c = (LinearLayout) this.b.findViewById(R.id.shadow_price_layout);
         this.d = (TextView) this.b.findViewById(R.id.shadow_price);
         this.e = (TextView) this.b.findViewById(R.id.shadow_price_unit);
         this.f = (LinearLayout) this.b.findViewById(R.id.shadow_renew_layout);
@@ -68,10 +68,10 @@ public class ShadowFragment extends BaseFragment implements View.OnClickListener
     }
 
     private void b() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.b.findViewById(2131370749);
-        commonTopTitleNoTrans.setCenterText(getString(R.string.shadow_title));
-        commonTopTitleNoTrans.setLeftClickListener(this);
-        commonTopTitleNoTrans.getRightTextView().setVisibility(8);
+        CommonTopTitleNoTrans findViewById = this.b.findViewById(R.id.top_title);
+        findViewById.setCenterText(getString(R.string.shadow_title));
+        findViewById.setLeftClickListener(this);
+        findViewById.getRightTextView().setVisibility(8);
     }
 
     @Override // android.view.View.OnClickListener
@@ -83,9 +83,8 @@ public class ShadowFragment extends BaseFragment implements View.OnClickListener
         getActivity().finish();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.f33966a = getActivity();
+        this.f20275a = getActivity();
         View view = this.b;
         if (view == null) {
             this.b = layoutInflater.inflate(R.layout.fragment_shadow, viewGroup, false);

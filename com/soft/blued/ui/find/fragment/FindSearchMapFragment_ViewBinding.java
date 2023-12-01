@@ -43,7 +43,7 @@ public class FindSearchMapFragment_ViewBinding implements Unbinder {
         findSearchMapFragment.tvCurrentLocation = (ShapeTextView) Utils.a(view, R.id.tv_current_location, "field 'tvCurrentLocation'", ShapeTextView.class);
         findSearchMapFragment.llRefreshReturn = (LinearLayout) Utils.a(view, R.id.ll_refresh_return, "field 'llRefreshReturn'", LinearLayout.class);
         findSearchMapFragment.searchContent = (FrameLayout) Utils.a(view, R.id.search_content, "field 'searchContent'", FrameLayout.class);
-        findSearchMapFragment.ivLocation = (ImageView) Utils.a(view, 2131365585, "field 'ivLocation'", ImageView.class);
+        findSearchMapFragment.ivLocation = (ImageView) Utils.a(view, R.id.iv_location, "field 'ivLocation'", ImageView.class);
         findSearchMapFragment.tvTryMoveMap = (ShapeTextView) Utils.a(view, R.id.tv_try_move_map, "field 'tvTryMoveMap'", ShapeTextView.class);
         findSearchMapFragment.tvCancel = (TextView) Utils.a(view, 2131371051, "field 'tvCancel'", TextView.class);
         findSearchMapFragment.ivShadowPosition = (ImageView) Utils.a(view, R.id.iv_shadow_position, "field 'ivShadowPosition'", ImageView.class);
@@ -60,7 +60,7 @@ public class FindSearchMapFragment_ViewBinding implements Unbinder {
         findSearchMapFragment.tvChanceEncounterStatus = (TextView) Utils.a(view, R.id.tv_chance_encounter_status, "field 'tvChanceEncounterStatus'", TextView.class);
         findSearchMapFragment.toggleButtonChanceEncounter = (ToggleButton) Utils.a(view, R.id.tglbtn_chance_encounter, "field 'toggleButtonChanceEncounter'", ToggleButton.class);
         findSearchMapFragment.chanceEncounterRecyclerView = (RecyclerView) Utils.a(view, R.id.chance_encounter_recycler_view, "field 'chanceEncounterRecyclerView'", RecyclerView.class);
-        findSearchMapFragment.tvNoData = (TextView) Utils.a(view, 2131372092, "field 'tvNoData'", TextView.class);
+        findSearchMapFragment.tvNoData = (TextView) Utils.a(view, R.id.tv_no_data, "field 'tvNoData'", TextView.class);
         findSearchMapFragment.tvFirstFree = (TextView) Utils.a(view, R.id.tv_first_free, "field 'tvFirstFree'", TextView.class);
         findSearchMapFragment.chanceEncounterGuide = (FrameLayout) Utils.a(view, R.id.chance_encounter_guide, "field 'chanceEncounterGuide'", FrameLayout.class);
         findSearchMapFragment.llGuide4 = (LinearLayout) Utils.a(view, R.id.ll_guide_4, "field 'llGuide4'", LinearLayout.class);

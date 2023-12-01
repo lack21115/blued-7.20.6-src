@@ -203,7 +203,7 @@ public class LyricsUtils {
         a(lyricsLineInfo, paint, f, new ForeachListener() { // from class: com.ktv.method.lrc.utils.LyricsUtils.1
             @Override // com.ktv.method.lrc.utils.LyricsUtils.ForeachListener
             public void a(LyricsLineInfo lyricsLineInfo2) {
-                List.this.add(lyricsLineInfo2);
+                arrayList.add(lyricsLineInfo2);
             }
         });
         lyricsLineInfo.a(arrayList);

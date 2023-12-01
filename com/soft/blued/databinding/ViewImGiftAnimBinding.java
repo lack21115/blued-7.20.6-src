@@ -7,11 +7,11 @@ import com.soft.blued.ui.msg.customview.GiftPlayView;
 public final class ViewImGiftAnimBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final GiftPlayView f29623a;
+    private final GiftPlayView f15933a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public GiftPlayView getRoot() {
-        return this.f29623a;
+        return this.f15933a;
     }
 }

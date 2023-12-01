@@ -10,7 +10,6 @@ import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.OnLifecycleEvent;
 import com.amap.api.services.district.DistrictSearchQuery;
-import com.anythink.expressad.video.module.a.a.m;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.AppMethods;
 import com.blued.android.framework.http.BluedUIHttpResponse;
@@ -122,12 +121,12 @@ public class NearbyFeedPresenter extends MvpPresenter implements FeedRefreshObse
                         }
                         i3 = i4 + 1;
                     }
-                    String c2 = z2 ? i2 == 2 ? "feed_time_list_cache" : "feed_default_list_cache" : NearbyFeedPresenter.this.c(i2);
+                    String c = z2 ? i2 == 2 ? "feed_time_list_cache" : "feed_default_list_cache" : NearbyFeedPresenter.this.c(i2);
                     IFetchDataListener iFetchDataListener2 = iFetchDataListener;
                     if (iFetchDataListener2 != null) {
-                        iFetchDataListener2.a(c2, list);
+                        iFetchDataListener2.a(c, list);
                     } else {
-                        NearbyFeedPresenter.this.a(c2, (String) list);
+                        NearbyFeedPresenter.this.a(c, (String) list);
                     }
                     NearbyFeedPresenter.this.b(i2).hasMore = bluedEntity.hasMore();
                 }
@@ -148,7 +147,7 @@ public class NearbyFeedPresenter extends MvpPresenter implements FeedRefreshObse
                     NearbyFeedPresenter.this.b(i).page--;
                 }
                 if (z2 && NearbyFeedPresenter.this.b(i).page == 1) {
-                    CommunityManager.f19086a.a().c(false);
+                    CommunityManager.a.a().c(false);
                     CommunityPreferences.o(!CommunityPreferences.O().booleanValue());
                 }
                 IFetchDataListener iFetchDataListener2 = iFetchDataListener;
@@ -329,7 +328,6 @@ public class NearbyFeedPresenter extends MvpPresenter implements FeedRefreshObse
         super.a(lifecycleOwner);
         FeedMethods.a(lifecycleOwner, this.l);
         LiveEventBus.get("feed_delete", BluedIngSelfFeed.class).observe(lifecycleOwner, new Observer<BluedIngSelfFeed>() { // from class: com.blued.community.ui.square.presenter.NearbyFeedPresenter.1
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(BluedIngSelfFeed bluedIngSelfFeed) {
                 if (bluedIngSelfFeed == null) {
@@ -353,8 +351,8 @@ public class NearbyFeedPresenter extends MvpPresenter implements FeedRefreshObse
     @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void a(final IFetchDataListener iFetchDataListener) {
         if (this.t) {
-            if (CommunityManager.f19086a.a().b() && CommunityManager.f19086a.a().a() != null) {
-                this.k = CommunityManager.f19086a.a().a().predestined_person_feed_ttids;
+            if (CommunityManager.a.a().b() && CommunityManager.a.a().a() != null) {
+                this.k = CommunityManager.a.a().a().predestined_person_feed_ttids;
                 LogUtils.c("冒泡插入ID:" + this.k);
             }
             b(1).page = 1;
@@ -366,7 +364,7 @@ public class NearbyFeedPresenter extends MvpPresenter implements FeedRefreshObse
                     public final void run() {
                         NearbyFeedPresenter.this.e(iFetchDataListener);
                     }
-                }, m.ag);
+                }, 3000L);
             }
             this.t = false;
         } else {
@@ -391,7 +389,7 @@ public class NearbyFeedPresenter extends MvpPresenter implements FeedRefreshObse
             if (this.l == null || CircleMethods.a(bluedIngSelfFeed)) {
                 return;
             }
-            this.l.addData(0, (int) bluedIngSelfFeed);
+            this.l.addData(0, bluedIngSelfFeed);
             this.l.notifyDataSetChanged();
         }
     }
@@ -434,7 +432,7 @@ public class NearbyFeedPresenter extends MvpPresenter implements FeedRefreshObse
                     }
                 }
             }
-        }, 1, CommunityManager.f19086a.a().d(), g());
+        }, 1, CommunityManager.a.a().d(), g());
     }
 
     @Override // com.blued.android.framework.ui.mvp.MvpPresenter

@@ -34,10 +34,10 @@ import java.util.List;
 public class GroupUserInviteFragment extends BaseFragment implements View.OnClickListener, CommonTitleDoubleClickObserver.ITitleClickObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    public GroupUserInviteAdapter f30866a;
+    public GroupUserInviteAdapter f17176a;
 
     /* renamed from: c  reason: collision with root package name */
-    private RenrenPullToRefreshListView f30867c;
+    private RenrenPullToRefreshListView f17177c;
     private NoDataAndLoadFailView d;
     private ListView e;
     private List<BluedUserInviteList> f;
@@ -50,30 +50,29 @@ public class GroupUserInviteFragment extends BaseFragment implements View.OnClic
     public BluedUIHttpResponse b = new BluedUIHttpResponse<BluedEntityA<BluedUserInviteList>>() { // from class: com.soft.blued.ui.group.GroupUserInviteFragment.1
 
         /* renamed from: a  reason: collision with root package name */
-        boolean f30868a;
+        boolean f17178a;
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public void onUIUpdate(BluedEntityA<BluedUserInviteList> bluedEntityA) {
             try {
                 if (!bluedEntityA.hasData()) {
                     if (GroupUserInviteFragment.this.g == 1) {
                         GroupUserInviteFragment.this.f.clear();
-                        GroupUserInviteFragment.this.f30866a.notifyDataSetChanged();
+                        GroupUserInviteFragment.this.f17176a.notifyDataSetChanged();
                     }
                     if (GroupUserInviteFragment.this.g != 1) {
                         GroupUserInviteFragment.e(GroupUserInviteFragment.this);
                     }
-                    GroupUserInviteFragment.this.f30867c.p();
+                    GroupUserInviteFragment.this.f17177c.p();
                     return;
                 }
                 if (bluedEntityA.hasMore()) {
                     GroupUserInviteFragment.this.i = true;
-                    GroupUserInviteFragment.this.f30867c.o();
+                    GroupUserInviteFragment.this.f17177c.o();
                 } else {
                     GroupUserInviteFragment.this.i = false;
-                    GroupUserInviteFragment.this.f30867c.p();
+                    GroupUserInviteFragment.this.f17177c.p();
                 }
                 if (GroupUserInviteFragment.this.g == 1) {
                     GroupUserInviteFragment.this.f.clear();
@@ -83,7 +82,7 @@ public class GroupUserInviteFragment extends BaseFragment implements View.OnClic
                 while (true) {
                     int i2 = i;
                     if (i2 >= GroupUserInviteFragment.this.f.size()) {
-                        GroupUserInviteFragment.this.f30866a.notifyDataSetChanged();
+                        GroupUserInviteFragment.this.f17176a.notifyDataSetChanged();
                         return;
                     }
                     ((BluedUserInviteList) GroupUserInviteFragment.this.f.get(i2)).height = StringUtils.a(((BluedUserInviteList) GroupUserInviteFragment.this.f.get(i2)).height, BlueAppLocal.c(), false);
@@ -91,28 +90,26 @@ public class GroupUserInviteFragment extends BaseFragment implements View.OnClic
                     i = i2 + 1;
                 }
             } catch (Exception e) {
-                this.f30868a = true;
+                this.f17178a = true;
                 e.printStackTrace();
             }
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public boolean onUIFailure(int i, String str) {
-            this.f30868a = true;
+            this.f17178a = true;
             return super.onUIFailure(i, str);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIFinish() {
             super.onUIFinish();
-            GroupUserInviteFragment.this.f30867c.j();
-            GroupUserInviteFragment.this.f30867c.q();
-            if (GroupUserInviteFragment.this.f30866a.getCount() != 0) {
+            GroupUserInviteFragment.this.f17177c.j();
+            GroupUserInviteFragment.this.f17177c.q();
+            if (GroupUserInviteFragment.this.f17176a.getCount() != 0) {
                 GroupUserInviteFragment.this.d.d();
-            } else if (!this.f30868a) {
+            } else if (!this.f17178a) {
                 GroupUserInviteFragment.this.d.a();
             } else {
-                this.f30868a = false;
+                this.f17178a = false;
                 GroupUserInviteFragment.this.d.b();
             }
         }
@@ -128,13 +125,11 @@ public class GroupUserInviteFragment extends BaseFragment implements View.OnClic
         private MyPullDownListener() {
         }
 
-        @Override // com.blued.android.framework.view.pulltorefresh.RenrenPullToRefreshListView.OnPullDownListener
         public void a() {
             GroupUserInviteFragment.this.g = 1;
             GroupUserInviteFragment.this.a(false);
         }
 
-        @Override // com.blued.android.framework.view.pulltorefresh.RenrenPullToRefreshListView.OnPullDownListener
         public void b() {
             GroupUserInviteFragment.a(GroupUserInviteFragment.this);
             GroupUserInviteFragment.this.a(false);
@@ -164,7 +159,7 @@ public class GroupUserInviteFragment extends BaseFragment implements View.OnClic
         }
         if (!this.i && (i = this.g) != 1) {
             this.g = i - 1;
-            AppMethods.a((CharSequence) getResources().getString(2131887275));
+            AppMethods.a(getResources().getString(2131887275));
             return;
         }
         int i2 = this.l;
@@ -188,19 +183,19 @@ public class GroupUserInviteFragment extends BaseFragment implements View.OnClic
     }
 
     private void b() {
-        this.d = (NoDataAndLoadFailView) this.j.findViewById(R.id.ll_nodata_visited);
+        this.d = this.j.findViewById(R.id.ll_nodata_visited);
         this.f = new ArrayList();
-        RenrenPullToRefreshListView renrenPullToRefreshListView = (RenrenPullToRefreshListView) this.j.findViewById(R.id.group_visit_pullrefresh);
-        this.f30867c = renrenPullToRefreshListView;
-        ListView listView = (ListView) renrenPullToRefreshListView.getRefreshableView();
+        RenrenPullToRefreshListView findViewById = this.j.findViewById(R.id.group_visit_pullrefresh);
+        this.f17177c = findViewById;
+        ListView listView = (ListView) findViewById.getRefreshableView();
         this.e = listView;
         listView.setDivider(null);
         this.e.setSelector(new ColorDrawable(0));
-        this.f30867c.setRefreshEnabled(true);
-        this.f30867c.k();
-        this.f30867c.setOnPullDownListener(new MyPullDownListener());
+        this.f17177c.setRefreshEnabled(true);
+        this.f17177c.k();
+        this.f17177c.setOnPullDownListener(new MyPullDownListener());
         GroupUserInviteAdapter groupUserInviteAdapter = new GroupUserInviteAdapter(this.k, getFragmentActive(), this.f);
-        this.f30866a = groupUserInviteAdapter;
+        this.f17176a = groupUserInviteAdapter;
         this.e.setAdapter((ListAdapter) groupUserInviteAdapter);
     }
 
@@ -210,7 +205,6 @@ public class GroupUserInviteFragment extends BaseFragment implements View.OnClic
         return i;
     }
 
-    @Override // com.blued.android.module.common.observer.CommonTitleDoubleClickObserver.ITitleClickObserver
     public void a() {
         this.e.smoothScrollToPosition(0);
     }
@@ -219,7 +213,6 @@ public class GroupUserInviteFragment extends BaseFragment implements View.OnClic
         this.l = i;
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         super.onActivityResult(i, i2, intent);
     }
@@ -229,12 +222,10 @@ public class GroupUserInviteFragment extends BaseFragment implements View.OnClic
         Tracker.onClick(view);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.k = getActivity();
         View view = this.j;
@@ -249,7 +240,6 @@ public class GroupUserInviteFragment extends BaseFragment implements View.OnClic
         return this.j;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDetach() {
         CommonTitleDoubleClickObserver.a().b(this);
         super.onDetach();

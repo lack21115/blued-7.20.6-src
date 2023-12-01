@@ -7,13 +7,13 @@ import android.content.SharedPreferences;
 public class e {
 
     /* renamed from: a  reason: collision with root package name */
-    private SharedPreferences f41855a;
+    private SharedPreferences f28164a;
     private SharedPreferences.Editor b;
 
     public e(Context context) {
         try {
             SharedPreferences sharedPreferences = context.getSharedPreferences("kscfg_outdfp", 0);
-            this.f41855a = sharedPreferences;
+            this.f28164a = sharedPreferences;
             this.b = sharedPreferences.edit();
         } catch (Throwable th) {
             th.printStackTrace();
@@ -26,10 +26,10 @@ public class e {
     }
 
     public boolean a() {
-        return this.f41855a.getBoolean("xytk", true);
+        return this.f28164a.getBoolean("xytk", true);
     }
 
     public String b() {
-        return this.f41855a.getString("kwtk", "");
+        return this.f28164a.getString("kwtk", "");
     }
 }

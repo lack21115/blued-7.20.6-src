@@ -41,7 +41,7 @@ public abstract class BaseForeignCollection<T, ID> implements ForeignCollection<
         return true;
     }
 
-    @Override // com.j256.ormlite.dao.ForeignCollection, java.util.Collection, java.util.Set
+    @Override // com.j256.ormlite.dao.ForeignCollection, java.util.Collection
     public boolean add(T t) {
         try {
             return addElement(t);
@@ -50,7 +50,7 @@ public abstract class BaseForeignCollection<T, ID> implements ForeignCollection<
         }
     }
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     public boolean addAll(Collection<? extends T> collection) {
         boolean z = false;
         for (T t : collection) {
@@ -65,7 +65,7 @@ public abstract class BaseForeignCollection<T, ID> implements ForeignCollection<
         return z;
     }
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     public void clear() {
         if (this.dao == null) {
             return;
@@ -115,14 +115,14 @@ public abstract class BaseForeignCollection<T, ID> implements ForeignCollection<
         return dao.refresh(t);
     }
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     public abstract boolean remove(Object obj);
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     public abstract boolean removeAll(Collection<?> collection);
 
     /* JADX WARN: Finally extract failed */
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     public boolean retainAll(Collection<?> collection) {
         boolean z = false;
         if (this.dao == null) {

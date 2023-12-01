@@ -18,7 +18,7 @@ import java.util.Map;
 public final class Palette {
 
     /* renamed from: a  reason: collision with root package name */
-    static final Filter f3188a = new Filter() { // from class: androidx.palette.graphics.Palette.1
+    static final Filter f3140a = new Filter() { // from class: androidx.palette.graphics.Palette.1
         private boolean a(float[] fArr) {
             return fArr[2] <= 0.05f;
         }
@@ -49,7 +49,7 @@ public final class Palette {
     private final List<Swatch> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final List<Target> f3189c;
+    private final List<Target> f3141c;
     private final SparseBooleanArray e = new SparseBooleanArray();
     private final Map<Target, Swatch> d = new ArrayMap();
     private final Swatch f = b();
@@ -58,11 +58,11 @@ public final class Palette {
     public static final class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        private final List<Swatch> f3190a;
+        private final List<Swatch> f3142a;
         private final Bitmap b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final List<Target> f3191c = new ArrayList();
+        private final List<Target> f3143c = new ArrayList();
         private int d = 16;
         private int e = 12544;
         private int f = -1;
@@ -73,23 +73,23 @@ public final class Palette {
             if (bitmap == null || bitmap.isRecycled()) {
                 throw new IllegalArgumentException("Bitmap is not valid");
             }
-            this.g.add(Palette.f3188a);
+            this.g.add(Palette.f3140a);
             this.b = bitmap;
-            this.f3190a = null;
-            this.f3191c.add(Target.LIGHT_VIBRANT);
-            this.f3191c.add(Target.VIBRANT);
-            this.f3191c.add(Target.DARK_VIBRANT);
-            this.f3191c.add(Target.LIGHT_MUTED);
-            this.f3191c.add(Target.MUTED);
-            this.f3191c.add(Target.DARK_MUTED);
+            this.f3142a = null;
+            this.f3143c.add(Target.LIGHT_VIBRANT);
+            this.f3143c.add(Target.VIBRANT);
+            this.f3143c.add(Target.DARK_VIBRANT);
+            this.f3143c.add(Target.LIGHT_MUTED);
+            this.f3143c.add(Target.MUTED);
+            this.f3143c.add(Target.DARK_MUTED);
         }
 
         public Builder(List<Swatch> list) {
             if (list == null || list.isEmpty()) {
                 throw new IllegalArgumentException("List of Swatches is not valid");
             }
-            this.g.add(Palette.f3188a);
-            this.f3190a = list;
+            this.g.add(Palette.f3140a);
+            this.f3142a = list;
             this.b = null;
         }
 
@@ -111,7 +111,7 @@ public final class Palette {
                 if (i2 >= height2) {
                     return iArr2;
                 }
-                System.arraycopy((Object) iArr, ((this.h.top + i2) * width) + this.h.left, (Object) iArr2, i2 * width2, width2);
+                System.arraycopy(iArr, ((this.h.top + i2) * width) + this.h.left, iArr2, i2 * width2, width2);
                 i = i2 + 1;
             }
         }
@@ -147,8 +147,8 @@ public final class Palette {
         }
 
         public Builder addTarget(Target target) {
-            if (!this.f3191c.contains(target)) {
-                this.f3191c.add(target);
+            if (!this.f3143c.contains(target)) {
+                this.f3143c.add(target);
             }
             return this;
         }
@@ -164,7 +164,7 @@ public final class Palette {
         }
 
         public Builder clearTargets() {
-            List<Target> list = this.f3191c;
+            List<Target> list = this.f3143c;
             if (list != null) {
                 list.clear();
             }
@@ -225,12 +225,12 @@ public final class Palette {
                 }
                 list = colorCutQuantizer.a();
             } else {
-                list = this.f3190a;
+                list = this.f3142a;
                 if (list == null) {
                     throw new AssertionError();
                 }
             }
-            Palette palette = new Palette(list, this.f3191c);
+            Palette palette = new Palette(list, this.f3143c);
             palette.a();
             return palette;
         }
@@ -282,11 +282,11 @@ public final class Palette {
     public static final class Swatch {
 
         /* renamed from: a  reason: collision with root package name */
-        private final int f3193a;
+        private final int f3145a;
         private final int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final int f3194c;
+        private final int f3146c;
         private final int d;
         private final int e;
         private boolean f;
@@ -295,9 +295,9 @@ public final class Palette {
         private float[] i;
 
         public Swatch(int i, int i2) {
-            this.f3193a = Color.red(i);
+            this.f3145a = Color.red(i);
             this.b = Color.green(i);
-            this.f3194c = Color.blue(i);
+            this.f3146c = Color.blue(i);
             this.d = i;
             this.e = i2;
         }
@@ -347,7 +347,7 @@ public final class Palette {
             if (this.i == null) {
                 this.i = new float[3];
             }
-            ColorUtils.RGBToHSL(this.f3193a, this.b, this.f3194c, this.i);
+            ColorUtils.RGBToHSL(this.f3145a, this.b, this.f3146c, this.i);
             return this.i;
         }
 
@@ -375,7 +375,7 @@ public final class Palette {
 
     Palette(List<Swatch> list, List<Target> list2) {
         this.b = list;
-        this.f3189c = list2;
+        this.f3141c = list2;
     }
 
     private Swatch a(Target target) {
@@ -478,7 +478,7 @@ public final class Palette {
     }
 
     void a() {
-        int size = this.f3189c.size();
+        int size = this.f3141c.size();
         int i = 0;
         while (true) {
             int i2 = i;
@@ -486,7 +486,7 @@ public final class Palette {
                 this.e.clear();
                 return;
             }
-            Target target = this.f3189c.get(i2);
+            Target target = this.f3141c.get(i2);
             target.a();
             this.d.put(target, a(target));
             i = i2 + 1;
@@ -562,7 +562,7 @@ public final class Palette {
     }
 
     public List<Target> getTargets() {
-        return Collections.unmodifiableList(this.f3189c);
+        return Collections.unmodifiableList(this.f3141c);
     }
 
     public int getVibrantColor(int i) {

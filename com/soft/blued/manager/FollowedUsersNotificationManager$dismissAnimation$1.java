@@ -18,22 +18,22 @@ import kotlin.jvm.internal.Intrinsics;
 public final class FollowedUsersNotificationManager$dismissAnimation$1 implements Animation.AnimationListener {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ FrameLayout f29707a;
+    final /* synthetic */ FrameLayout f16017a;
     final /* synthetic */ View b;
 
     /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ FriendsNotificationExtra f29708c;
+    final /* synthetic */ FriendsNotificationExtra f16018c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public FollowedUsersNotificationManager$dismissAnimation$1(FrameLayout frameLayout, View view, FriendsNotificationExtra friendsNotificationExtra) {
-        this.f29707a = frameLayout;
+        this.f16017a = frameLayout;
         this.b = view;
-        this.f29708c = friendsNotificationExtra;
+        this.f16018c = friendsNotificationExtra;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(FrameLayout frameLayout, FriendsNotificationExtra friendsNotificationExtra) {
-        FollowedUsersNotificationManager.f29698a.a(frameLayout, friendsNotificationExtra);
+        FollowedUsersNotificationManager.f16008a.a(frameLayout, friendsNotificationExtra);
     }
 
     @Override // android.view.animation.Animation.AnimationListener
@@ -41,10 +41,10 @@ public final class FollowedUsersNotificationManager$dismissAnimation$1 implement
         SparseArray sparseArray;
         SparseArray sparseArray2;
         String str;
-        FollowedUsersNotificationManager.f29698a.a(this.f29707a, this.b);
-        if (this.f29708c != null) {
+        FollowedUsersNotificationManager.f16008a.a(this.f16017a, this.b);
+        if (this.f16018c != null) {
             sparseArray = FollowedUsersNotificationManager.d;
-            FrameLayout frameLayout = this.f29707a;
+            FrameLayout frameLayout = this.f16017a;
             FriendsNotificationExtra friendsNotificationExtra = (FriendsNotificationExtra) sparseArray.get(frameLayout != null ? frameLayout.hashCode() : 0);
             if (friendsNotificationExtra != null && !TextUtils.isEmpty(friendsNotificationExtra.notification_type)) {
                 String str2 = friendsNotificationExtra.notification_type;
@@ -75,19 +75,19 @@ public final class FollowedUsersNotificationManager$dismissAnimation$1 implement
                 EventTrackMessage.f(MessageProtos.Event.POPUP_BANNER_COVER, str, friendsNotificationExtra.notification_type);
             }
             sparseArray2 = FollowedUsersNotificationManager.d;
-            FrameLayout frameLayout2 = this.f29707a;
+            FrameLayout frameLayout2 = this.f16017a;
             int i = 0;
             if (frameLayout2 != null) {
                 i = frameLayout2.hashCode();
             }
             sparseArray2.remove(i);
-            Handler a2 = FollowedUsersNotificationManager.f29698a.a();
-            final FrameLayout frameLayout3 = this.f29707a;
-            final FriendsNotificationExtra friendsNotificationExtra2 = this.f29708c;
+            Handler a2 = FollowedUsersNotificationManager.f16008a.a();
+            final FrameLayout frameLayout3 = this.f16017a;
+            final FriendsNotificationExtra friendsNotificationExtra2 = this.f16018c;
             a2.postDelayed(new Runnable() { // from class: com.soft.blued.manager.-$$Lambda$FollowedUsersNotificationManager$dismissAnimation$1$6_gqVp6k_hTXtSH6nk-McdC_DbM
                 @Override // java.lang.Runnable
                 public final void run() {
-                    FollowedUsersNotificationManager$dismissAnimation$1.a(FrameLayout.this, friendsNotificationExtra2);
+                    FollowedUsersNotificationManager$dismissAnimation$1.a(frameLayout3, friendsNotificationExtra2);
                 }
             }, 50L);
         }

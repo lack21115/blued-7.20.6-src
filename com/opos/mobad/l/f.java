@@ -10,16 +10,16 @@ import java.util.concurrent.Callable;
 public abstract class f<T> extends g.a implements com.opos.mobad.ad.b {
 
     /* renamed from: a  reason: collision with root package name */
-    protected Handler f26297a;
+    protected Handler f12609a;
     private com.opos.mobad.ad.c.a<T> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private o f26298c = l.a();
+    private o f12610c = l.a();
     private p d;
 
     public f(com.opos.mobad.ad.c.a<T> aVar) {
         Handler handler = new Handler(Looper.getMainLooper());
-        this.f26297a = handler;
+        this.f12609a = handler;
         this.d = new p(handler, new Runnable() { // from class: com.opos.mobad.l.f.1
             @Override // java.lang.Runnable
             public void run() {
@@ -30,7 +30,7 @@ public abstract class f<T> extends g.a implements com.opos.mobad.ad.b {
     }
 
     private final void a(Callable<Boolean> callable) {
-        int a2 = this.f26298c.a(1, callable);
+        int a2 = this.f12610c.a(1, callable);
         com.opos.cmn.an.f.a.b("", "loadAd state=" + a2 + ",Ad =" + this);
         if (1 == a2) {
             return;
@@ -60,10 +60,10 @@ public abstract class f<T> extends g.a implements com.opos.mobad.ad.b {
 
     public final void a(final int i, final String str) {
         this.d.a();
-        this.f26297a.post(new Runnable() { // from class: com.opos.mobad.l.f.3
+        this.f12609a.post(new Runnable() { // from class: com.opos.mobad.l.f.3
             @Override // java.lang.Runnable
             public void run() {
-                int a2 = f.this.f26298c.a(1, 0);
+                int a2 = f.this.f12610c.a(1, 0);
                 com.opos.cmn.an.f.a.b("SyncStateController", "state=" + a2 + ",Ad = " + this);
                 if (5 == a2 || f.this.b == null) {
                     return;
@@ -94,7 +94,7 @@ public abstract class f<T> extends g.a implements com.opos.mobad.ad.b {
     public final void a(List<T> list) {
         com.opos.mobad.ad.c.a<T> aVar;
         this.d.a();
-        if (2 != this.f26298c.a(2) || (aVar = this.b) == null) {
+        if (2 != this.f12610c.a(2) || (aVar = this.b) == null) {
             return;
         }
         aVar.a(list);
@@ -102,7 +102,7 @@ public abstract class f<T> extends g.a implements com.opos.mobad.ad.b {
 
     public void b() {
         this.d.b();
-        this.f26298c.a(5);
+        this.f12610c.a(5);
     }
 
     protected abstract boolean b(String str);
@@ -118,7 +118,7 @@ public abstract class f<T> extends g.a implements com.opos.mobad.ad.b {
 
     @Override // com.opos.mobad.ad.b
     public int d() {
-        return this.f26298c.a();
+        return this.f12610c.a();
     }
 
     public boolean e() {
@@ -128,7 +128,7 @@ public abstract class f<T> extends g.a implements com.opos.mobad.ad.b {
     protected void h() {
         com.opos.mobad.ad.c.a<T> aVar;
         this.d.a();
-        int a2 = this.f26298c.a(6);
+        int a2 = this.f12610c.a(6);
         com.opos.cmn.an.f.a.b("SyncStateController", "onTimeout state=" + a2 + ",Ad = " + this);
         if (6 != a2 || (aVar = this.b) == null) {
             return;

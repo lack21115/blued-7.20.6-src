@@ -80,11 +80,11 @@ public interface ISpellCheckerService extends IInterface {
             switch (i) {
                 case 1:
                     parcel.enforceInterface(DESCRIPTOR);
-                    ISpellCheckerSession iSpellCheckerSession = getISpellCheckerSession(parcel.readString(), ISpellCheckerSessionListener.Stub.asInterface(parcel.readStrongBinder()), parcel.readInt() != 0 ? Bundle.CREATOR.createFromParcel(parcel) : null);
+                    ISpellCheckerSession iSpellCheckerSession = getISpellCheckerSession(parcel.readString(), ISpellCheckerSessionListener.Stub.asInterface(parcel.readStrongBinder()), parcel.readInt() != 0 ? (Bundle) Bundle.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     parcel2.writeStrongBinder(iSpellCheckerSession != null ? iSpellCheckerSession.asBinder() : null);
                     return true;
-                case IBinder.INTERFACE_TRANSACTION /* 1598968902 */:
+                case 1598968902:
                     parcel2.writeString(DESCRIPTOR);
                     return true;
                 default:

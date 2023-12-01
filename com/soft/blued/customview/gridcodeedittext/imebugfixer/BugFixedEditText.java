@@ -12,7 +12,7 @@ import android.widget.EditText;
 public class BugFixedEditText extends EditText {
 
     /* renamed from: a  reason: collision with root package name */
-    private OnDelKeyEventListener f28602a;
+    private OnDelKeyEventListener f14912a;
 
     /* loaded from: source-8303388-dex2jar.jar:com/soft/blued/customview/gridcodeedittext/imebugfixer/BugFixedEditText$OnDelKeyEventListener.class */
     public interface OnDelKeyEventListener {
@@ -32,8 +32,8 @@ public class BugFixedEditText extends EditText {
 
         @Override // android.view.inputmethod.InputConnectionWrapper, android.view.inputmethod.InputConnection
         public boolean sendKeyEvent(KeyEvent keyEvent) {
-            if (keyEvent.getAction() == 0 && keyEvent.getKeyCode() == 67 && BugFixedEditText.this.f28602a != null) {
-                BugFixedEditText.this.f28602a.a();
+            if (keyEvent.getAction() == 0 && keyEvent.getKeyCode() == 67 && BugFixedEditText.this.f14912a != null) {
+                BugFixedEditText.this.f14912a.a();
                 return true;
             }
             return super.sendKeyEvent(keyEvent);
@@ -58,6 +58,6 @@ public class BugFixedEditText extends EditText {
     }
 
     public void setDelKeyEventListener(OnDelKeyEventListener onDelKeyEventListener) {
-        this.f28602a = onDelKeyEventListener;
+        this.f14912a = onDelKeyEventListener;
     }
 }

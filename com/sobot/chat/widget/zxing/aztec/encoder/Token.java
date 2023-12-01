@@ -2,8 +2,9 @@ package com.sobot.chat.widget.zxing.aztec.encoder;
 
 import com.sobot.chat.widget.zxing.common.BitArray;
 
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8303388-dex2jar.jar:com/sobot/chat/widget/zxing/aztec/encoder/Token.class */
-abstract class Token {
+public abstract class Token {
     static final Token EMPTY = new SimpleToken(null, 0, 0);
     private final Token previous;
 

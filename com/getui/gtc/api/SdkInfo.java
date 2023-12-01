@@ -25,7 +25,7 @@ public class SdkInfo implements Parcelable {
     private String cid;
     private String moduleName;
     private String psUrl;
-    private List<a.C0351a> stubs;
+    private List<a.C0181a> stubs;
     private String version;
 
     /* loaded from: source-8110460-dex2jar.jar:com/getui/gtc/api/SdkInfo$Builder.class */
@@ -34,14 +34,14 @@ public class SdkInfo implements Parcelable {
         private String cid;
         private String moduleName;
         private String psUrl;
-        private List<a.C0351a> stubs = new ArrayList();
+        private List<a.C0181a> stubs = new ArrayList();
         private String version;
 
         public Builder addStub(String str, boolean z) {
-            a.C0351a c0351a = new a.C0351a();
-            c0351a.d = str;
-            c0351a.j = z;
-            this.stubs.add(c0351a);
+            a.C0181a c0181a = new a.C0181a();
+            c0181a.d = str;
+            c0181a.j = z;
+            this.stubs.add(c0181a);
             return this;
         }
 
@@ -83,7 +83,7 @@ public class SdkInfo implements Parcelable {
         this.psUrl = parcel.readString();
         ArrayList arrayList = new ArrayList();
         this.stubs = arrayList;
-        parcel.readTypedList(arrayList, a.C0351a.CREATOR);
+        parcel.readTypedList(arrayList, a.C0181a.CREATOR);
     }
 
     public SdkInfo(Builder builder) {
@@ -118,7 +118,7 @@ public class SdkInfo implements Parcelable {
         return this.psUrl;
     }
 
-    public List<a.C0351a> getStubs() {
+    public List<a.C0181a> getStubs() {
         return this.stubs;
     }
 
@@ -142,7 +142,7 @@ public class SdkInfo implements Parcelable {
         this.psUrl = str;
     }
 
-    public void setStubs(List<a.C0351a> list) {
+    public void setStubs(List<a.C0181a> list) {
         this.stubs = list;
     }
 

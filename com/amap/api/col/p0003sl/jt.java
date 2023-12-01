@@ -6,13 +6,11 @@ import java.util.Map;
 /* renamed from: com.amap.api.col.3sl.jt  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/jt.class */
 public final class jt extends kb {
-
-    /* renamed from: a  reason: collision with root package name */
-    private byte[] f5229a;
+    private byte[] a;
     private Map<String, String> b;
 
     public jt(byte[] bArr, Map<String, String> map) {
-        this.f5229a = bArr;
+        this.a = bArr;
         this.b = map;
         setDegradeAbility(kb.a.SINGLE);
         setHttpProtocol(kb.c.HTTPS);
@@ -20,7 +18,7 @@ public final class jt extends kb {
 
     @Override // com.amap.api.col.p0003sl.kb
     public final byte[] getEntityBytes() {
-        return this.f5229a;
+        return this.a;
     }
 
     @Override // com.amap.api.col.p0003sl.kb

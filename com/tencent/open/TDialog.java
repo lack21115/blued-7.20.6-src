@@ -1,5 +1,6 @@
 package com.tencent.open;
 
+import android.R;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -34,12 +35,12 @@ import org.json.JSONObject;
 public class TDialog extends b {
 
     /* renamed from: a  reason: collision with root package name */
-    static final FrameLayout.LayoutParams f38199a = new FrameLayout.LayoutParams(-1, -1);
+    static final FrameLayout.LayoutParams f24508a = new FrameLayout.LayoutParams(-1, -1);
     static Toast b = null;
     private static WeakReference<ProgressDialog> d;
 
     /* renamed from: c  reason: collision with root package name */
-    private WeakReference<Context> f38200c;
+    private WeakReference<Context> f24509c;
     private String e;
     private OnTimeListener f;
     private IUiListener g;
@@ -71,8 +72,8 @@ public class TDialog extends b {
         public void onReceivedError(WebView webView, int i, String str, String str2) {
             super.onReceivedError(webView, i, str, str2);
             TDialog.this.f.onError(new UiError(i, str, str2));
-            if (TDialog.this.f38200c != null && TDialog.this.f38200c.get() != 0) {
-                Toast.makeText((Context) TDialog.this.f38200c.get(), "网络连接异常或系统错误", 0).show();
+            if (TDialog.this.f24509c != null && TDialog.this.f24509c.get() != null) {
+                Toast.makeText((Context) TDialog.this.f24509c.get(), "网络连接异常或系统错误", 0).show();
             }
             TDialog.this.dismiss();
         }
@@ -80,7 +81,7 @@ public class TDialog extends b {
         @Override // android.webkit.WebViewClient
         public boolean shouldOverrideUrlLoading(WebView webView, String str) {
             f.a("openSDK_LOG.TDialog", "Redirect URL: " + str);
-            if (str.startsWith(ServerSetting.getInstance().getEnvUrl((Context) TDialog.this.f38200c.get(), ServerSetting.DEFAULT_REDIRECT_URI))) {
+            if (str.startsWith(ServerSetting.getInstance().getEnvUrl((Context) TDialog.this.f24509c.get(), ServerSetting.DEFAULT_REDIRECT_URI))) {
                 TDialog.this.f.onComplete(Util.parseUrlToJson(str));
                 if (TDialog.this.isShowing()) {
                     TDialog.this.dismiss();
@@ -105,10 +106,10 @@ public class TDialog extends b {
             } else {
                 Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(Uri.decode(str.substring(11))));
                 intent.addFlags(268435456);
-                if (TDialog.this.f38200c == null || TDialog.this.f38200c.get() == 0) {
+                if (TDialog.this.f24509c == null || TDialog.this.f24509c.get() == null) {
                     return true;
                 }
-                ((Context) TDialog.this.f38200c.get()).startActivity(intent);
+                ((Context) TDialog.this.f24509c.get()).startActivity(intent);
                 return true;
             }
         }
@@ -246,22 +247,22 @@ public class TDialog extends b {
             } else if (i == 2) {
                 this.mL.onCancel();
             } else if (i == 3) {
-                if (TDialog.this.f38200c == null || TDialog.this.f38200c.get() == 0) {
+                if (TDialog.this.f24509c == null || TDialog.this.f24509c.get() == null) {
                     return;
                 }
-                TDialog.c((Context) TDialog.this.f38200c.get(), (String) message.obj);
-            } else if (i != 5 || TDialog.this.f38200c == null || TDialog.this.f38200c.get() == 0) {
+                TDialog.c((Context) TDialog.this.f24509c.get(), (String) message.obj);
+            } else if (i != 5 || TDialog.this.f24509c == null || TDialog.this.f24509c.get() == null) {
             } else {
-                TDialog.d((Context) TDialog.this.f38200c.get(), (String) message.obj);
+                TDialog.d((Context) TDialog.this.f24509c.get(), (String) message.obj);
             }
         }
     }
 
     public TDialog(Context context, String str, String str2, IUiListener iUiListener, QQToken qQToken) {
-        super(context, 16973840);
+        super(context, R.style.Theme_Translucent_NoTitleBar);
         this.k = false;
         this.l = null;
-        this.f38200c = new WeakReference<>(context);
+        this.f24509c = new WeakReference<>(context);
         this.e = str2;
         this.f = new OnTimeListener(context, str, str2, qQToken.getAppId(), iUiListener);
         this.j = new THandler(this.f, context.getMainLooper());
@@ -270,12 +271,12 @@ public class TDialog extends b {
     }
 
     private void a() {
-        new TextView(this.f38200c.get()).setText("test");
+        new TextView(this.f24509c.get()).setText("test");
         FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-1, -1);
-        com.tencent.open.c.b bVar = new com.tencent.open.c.b(this.f38200c.get());
+        com.tencent.open.c.b bVar = new com.tencent.open.c.b(this.f24509c.get());
         this.i = bVar;
         bVar.setLayoutParams(layoutParams);
-        this.h = new FrameLayout(this.f38200c.get());
+        this.h = new FrameLayout(this.f24509c.get());
         layoutParams.gravity = 17;
         this.h.setLayoutParams(layoutParams);
         this.h.addView(this.i);
@@ -300,15 +301,15 @@ public class TDialog extends b {
         settings.setSupportZoom(true);
         settings.setRenderPriority(WebSettings.RenderPriority.HIGH);
         settings.setJavaScriptEnabled(true);
-        WeakReference<Context> weakReference = this.f38200c;
+        WeakReference<Context> weakReference = this.f24509c;
         if (weakReference != null && weakReference.get() != null) {
             settings.setDatabaseEnabled(true);
-            settings.setDatabasePath(this.f38200c.get().getApplicationContext().getDir("databases", 0).getPath());
+            settings.setDatabasePath(this.f24509c.get().getApplicationContext().getDir("databases", 0).getPath());
         }
         settings.setDomStorageEnabled(true);
         this.jsBridge.a(new JsListener(), "sdk_js_if");
         this.i.loadUrl(this.e);
-        this.i.setLayoutParams(f38199a);
+        this.i.setLayoutParams(f24508a);
         this.i.setVisibility(4);
         this.i.getSettings().setSavePassword(false);
     }

@@ -5,9 +5,9 @@ public class d {
     public boolean b;
 
     /* renamed from: a  reason: collision with root package name */
-    public String f4127a = "";
+    public String f4079a = "";
 
     /* renamed from: c  reason: collision with root package name */
-    public String f4128c = null;
+    public String f4080c = null;
     public String d = null;
 }

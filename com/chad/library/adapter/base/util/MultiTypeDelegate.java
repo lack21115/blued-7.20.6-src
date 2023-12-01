@@ -8,10 +8,10 @@ import java.util.List;
 public abstract class MultiTypeDelegate<T> {
 
     /* renamed from: a  reason: collision with root package name */
-    private SparseIntArray f21575a;
+    private SparseIntArray f7969a;
 
     public final int a(int i) {
-        return this.f21575a.get(i, -404);
+        return this.f7969a.get(i, -404);
     }
 
     protected abstract int a(T t);

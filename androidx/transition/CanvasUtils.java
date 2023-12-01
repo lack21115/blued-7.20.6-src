@@ -9,11 +9,11 @@ import java.lang.reflect.Method;
 class CanvasUtils {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Method f3407a;
+    private static Method f3359a;
     private static Method b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static boolean f3408c;
+    private static boolean f3360c;
 
     private CanvasUtils() {
     }
@@ -32,22 +32,22 @@ class CanvasUtils {
         } else if (Build.VERSION.SDK_INT == 28) {
             throw new IllegalStateException("This method doesn't work on Pie!");
         } else {
-            if (!f3408c) {
+            if (!f3360c) {
                 try {
                     Method declaredMethod = Canvas.class.getDeclaredMethod("insertReorderBarrier", new Class[0]);
-                    f3407a = declaredMethod;
+                    f3359a = declaredMethod;
                     declaredMethod.setAccessible(true);
                     Method declaredMethod2 = Canvas.class.getDeclaredMethod("insertInorderBarrier", new Class[0]);
                     b = declaredMethod2;
                     declaredMethod2.setAccessible(true);
                 } catch (NoSuchMethodException e) {
                 }
-                f3408c = true;
+                f3360c = true;
             }
             if (z) {
                 try {
-                    if (f3407a != null) {
-                        f3407a.invoke(canvas, new Object[0]);
+                    if (f3359a != null) {
+                        f3359a.invoke(canvas, new Object[0]);
                     }
                 } catch (IllegalAccessException e2) {
                     return;

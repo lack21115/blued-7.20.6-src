@@ -61,7 +61,7 @@ public class AlbumPreviewFragment extends AlbumPreviewBaseFragment {
         return true;
     }
 
-    @Override // com.blued.android.module.media.selector.fragment.AlbumPreviewBaseFragment, com.blued.android.module.media.selector.fragment.MediaBaseFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.media.selector.fragment.AlbumPreviewBaseFragment, com.blued.android.module.media.selector.fragment.MediaBaseFragment, com.blued.android.core.ui.BaseFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.d = new AlbumPreviewPresent();
         d();
@@ -69,7 +69,7 @@ public class AlbumPreviewFragment extends AlbumPreviewBaseFragment {
         return super.onCreateView(layoutInflater, viewGroup, bundle);
     }
 
-    @Override // com.blued.android.module.media.selector.fragment.AlbumPreviewBaseFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.media.selector.fragment.AlbumPreviewBaseFragment, com.blued.android.core.ui.BaseFragment
     public void onDestroyView() {
         ShortVideoProxy.e().b(getClass().getSimpleName());
         super.onDestroyView();

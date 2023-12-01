@@ -101,7 +101,7 @@ public final class UtilsKt {
 
     public static final void a(View view, Activity mContext) {
         Intrinsics.e(mContext, "mContext");
-        Object systemService = mContext.getSystemService(Context.INPUT_METHOD_SERVICE);
+        Object systemService = mContext.getSystemService("input_method");
         if (systemService == null) {
             throw new NullPointerException("null cannot be cast to non-null type android.view.inputmethod.InputMethodManager");
         }
@@ -146,8 +146,8 @@ public final class UtilsKt {
 
     public static final void a(RecyclerView recyclerView, boolean z, boolean z2) {
         Intrinsics.e(recyclerView, "<this>");
-        RecyclerView.LayoutManager layoutManager = recyclerView.getLayoutManager();
-        LinearLayoutManager linearLayoutManager = layoutManager instanceof LinearLayoutManager ? (LinearLayoutManager) layoutManager : null;
+        LinearLayoutManager layoutManager = recyclerView.getLayoutManager();
+        LinearLayoutManager linearLayoutManager = layoutManager instanceof LinearLayoutManager ? layoutManager : null;
         if (linearLayoutManager == null) {
             return;
         }
@@ -223,9 +223,9 @@ public final class UtilsKt {
 
     public static final boolean c(View view) {
         Intrinsics.e(view, "<this>");
-        boolean a2 = Intrinsics.a(view.getTag(R.id.view_not_hide), (Object) true);
-        if (a2 || !(view.getParent() instanceof ViewGroup)) {
-            return a2;
+        boolean a = Intrinsics.a(view.getTag(R.id.view_not_hide), (Object) true);
+        if (a || !(view.getParent() instanceof ViewGroup)) {
+            return a;
         }
         ViewParent parent = view.getParent();
         if (parent != null) {

@@ -37,9 +37,9 @@ public class ArraysKt___ArraysJvmKt extends ArraysKt__ArraysKt {
 
     public static final <T> List<T> a(T[] tArr) {
         Intrinsics.e(tArr, "<this>");
-        List<T> a2 = ArraysUtilJVM.a(tArr);
-        Intrinsics.c(a2, "asList(this)");
-        return a2;
+        List<T> a = ArraysUtilJVM.a(tArr);
+        Intrinsics.c(a, "asList(this)");
+        return a;
     }
 
     public static final <R> List<R> a(Object[] objArr, Class<R> klass) {

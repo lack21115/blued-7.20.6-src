@@ -50,6 +50,7 @@ import com.blued.android.framework.utils.LogUtils;
 import com.blued.android.framework.view.badgeview.DisplayUtil;
 import com.blued.android.framework.view.shape.ShapeTextView;
 import com.blued.android.module.common.model.CountModel;
+import com.blued.android.module.common.utils.click.IClickAgain;
 import com.blued.android.module.common.utils.click.SingleClickProxy;
 import com.blued.android.module.common.utils.freedom.BaseViewHolder;
 import com.blued.android.module.common.utils.freedom.FreedomAdapter;
@@ -97,7 +98,7 @@ public class LiveFragment extends MvpFragment<LivePresenter> implements View.OnC
     private Unbinder C;
 
     /* renamed from: a  reason: collision with root package name */
-    ImageView f31145a;
+    ImageView f17455a;
     public boolean b;
     @BindView
     View beauty_close;
@@ -105,7 +106,7 @@ public class LiveFragment extends MvpFragment<LivePresenter> implements View.OnC
     View beauty_open;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f31146c;
+    public String f17456c;
     public int d;
     @BindView
     View fl_floor;
@@ -225,15 +226,15 @@ public class LiveFragment extends MvpFragment<LivePresenter> implements View.OnC
     public class MyAdapter extends FragmentPagerAdapter {
 
         /* renamed from: a  reason: collision with root package name */
-        FragmentManager f31164a;
+        FragmentManager f17474a;
 
         /* renamed from: c  reason: collision with root package name */
-        private String[] f31165c;
+        private String[] f17475c;
 
         public MyAdapter(FragmentManager fragmentManager) {
             super(fragmentManager);
-            this.f31165c = LiveFragment.this.g.getResources().getStringArray(BluedConfig.a().P() ? 2130903094 : 2130903099);
-            this.f31164a = fragmentManager;
+            this.f17475c = LiveFragment.this.g.getResources().getStringArray(BluedConfig.a().P() ? 2130903094 : 2130903099);
+            this.f17474a = fragmentManager;
         }
 
         @Override // androidx.fragment.app.FragmentPagerAdapter, androidx.viewpager.widget.PagerAdapter
@@ -246,18 +247,20 @@ public class LiveFragment extends MvpFragment<LivePresenter> implements View.OnC
             return LiveFragment.this.e;
         }
 
+        /* JADX WARN: Type inference failed for: r0v15, types: [com.soft.blued.ui.live.fragment.LiveHomeFragment, androidx.fragment.app.Fragment] */
+        /* JADX WARN: Type inference failed for: r0v22, types: [androidx.fragment.app.Fragment, com.soft.blued.ui.live.fragment.LiveListFollowFragmentNew] */
         @Override // androidx.fragment.app.FragmentPagerAdapter
         public Fragment getItem(int i) {
             Bundle bundle = new Bundle();
             bundle.putString("live_pay_beans_details", LiveFragment.this.r);
             LiveFragment.this.r = "";
             if (i == 0) {
-                return BluedConfig.a().P() ? LiveTabFragmentNew.f13276a.a("11", "Nearby", UserFindResult.USER_SORT_BY.NEARBY, LiveFragment.this.r) : LiveRecommendFragment.a("12", 0, LiveFragment.this.r);
+                return BluedConfig.a().P() ? LiveTabFragmentNew.a.a("11", "Nearby", UserFindResult.USER_SORT_BY.NEARBY, LiveFragment.this.r) : LiveRecommendFragment.a("12", 0, LiveFragment.this.r);
             } else if (i != 1) {
                 if (i != 2) {
                     return null;
                 }
-                LiveListFollowFragmentNew liveListFollowFragmentNew = new LiveListFollowFragmentNew();
+                ?? liveListFollowFragmentNew = new LiveListFollowFragmentNew();
                 liveListFollowFragmentNew.setArguments(bundle);
                 return liveListFollowFragmentNew;
             } else if (BluedConfig.a().P()) {
@@ -265,7 +268,7 @@ public class LiveFragment extends MvpFragment<LivePresenter> implements View.OnC
                 liveMainFragment.setArguments(bundle);
                 return liveMainFragment;
             } else {
-                LiveHomeFragment liveHomeFragment = new LiveHomeFragment();
+                ?? liveHomeFragment = new LiveHomeFragment();
                 liveHomeFragment.setArguments(bundle);
                 return liveHomeFragment;
             }
@@ -273,7 +276,7 @@ public class LiveFragment extends MvpFragment<LivePresenter> implements View.OnC
 
         @Override // androidx.viewpager.widget.PagerAdapter
         public CharSequence getPageTitle(int i) {
-            return this.f31165c[i];
+            return this.f17475c[i];
         }
     }
 
@@ -313,7 +316,6 @@ public class LiveFragment extends MvpFragment<LivePresenter> implements View.OnC
 
     private void B() {
         LiveRoomHttpUtils.H(new BluedUIHttpResponse<BluedEntity<LivePersonalCollectionModel, BluedEntityBaseExtra>>(getFragmentActive()) { // from class: com.soft.blued.ui.live.fragment.LiveFragment.16
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity<LivePersonalCollectionModel, BluedEntityBaseExtra> bluedEntity) {
                 if (bluedEntity == null || !bluedEntity.hasData()) {
                     LiveFragment.this.mTitleLeft.setVisibility(8);
@@ -376,22 +378,22 @@ public class LiveFragment extends MvpFragment<LivePresenter> implements View.OnC
         this.mTitleBarRoot.getLocationInWindow(iArr);
         view.getLocationInWindow(r0);
         int[] iArr2 = {(int) (iArr2[0] + (view.getWidth() / 2.0f)), (int) (iArr2[1] + ((view.getHeight() - DensityUtils.a(this.g, 15.0f)) / 2.0f))};
-        this.f31145a = new ImageView(this.g);
+        this.f17455a = new ImageView(this.g);
         int a2 = DensityUtils.a(this.g, 34.0f);
         FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(a2, a2);
         float f = iArr2[0] - iArr[0];
         float f2 = a2 / 2.0f;
         layoutParams.leftMargin = (int) (f - f2);
         layoutParams.topMargin = (int) ((iArr2[1] - iArr[1]) - f2);
-        this.f31145a.setLayoutParams(layoutParams);
-        this.mTitleBarRoot.addView(this.f31145a);
-        ImageLoader.a(getFragmentActive(), liveBubble.image).b(2131237313).d(2131237313).c().a(this.f31145a);
+        this.f17455a.setLayoutParams(layoutParams);
+        this.mTitleBarRoot.addView(this.f17455a);
+        ImageLoader.a(getFragmentActive(), liveBubble.image).b((int) R.drawable.user_bg_round_border_white).d((int) R.drawable.user_bg_round_border_white).c().a(this.f17455a);
         view.setVisibility(8);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void a(Integer num) {
-        LiveRankDialogFragment.f14067a.a(getChildFragmentManager(), 1);
+        LiveRankDialogFragment.a.a(getChildFragmentManager(), 1);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -399,7 +401,7 @@ public class LiveFragment extends MvpFragment<LivePresenter> implements View.OnC
         if (getFragmentActive() == null || !getFragmentActive().isActive()) {
             return;
         }
-        j().m();
+        ((LivePresenter) j()).m();
     }
 
     private void b(int i) {
@@ -432,12 +434,13 @@ public class LiveFragment extends MvpFragment<LivePresenter> implements View.OnC
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void b(Integer num) {
-        LiveVipDialogFragment.f13281a.a(getChildFragmentManager(), 1);
+        LiveVipDialogFragment.a.a(getChildFragmentManager(), 1);
     }
 
     private void c() {
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private void d() {
         this.mFloatSpreadView.setFragment(this);
         this.mFloatSpreadView.a(true);
@@ -548,10 +551,10 @@ public class LiveFragment extends MvpFragment<LivePresenter> implements View.OnC
     }
 
     private void e() {
-        ImageView imageView = this.f31145a;
+        ImageView imageView = this.f17455a;
         if (imageView != null) {
             imageView.setVisibility(8);
-            this.f31145a = null;
+            this.f17455a = null;
         }
         boolean z = false;
         if (this.mTitleBarRoot != null) {
@@ -562,15 +565,15 @@ public class LiveFragment extends MvpFragment<LivePresenter> implements View.OnC
                 }
             }
         }
-        if (this.f31145a != null || z || this.s == 2) {
+        if (this.f17455a != null || z || this.s == 2) {
             return;
         }
-        j().n();
+        ((LivePresenter) j()).n();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void e(String str) {
-        j().a(true);
+        ((LivePresenter) j()).a(true);
     }
 
     private boolean v() {
@@ -589,7 +592,7 @@ public class LiveFragment extends MvpFragment<LivePresenter> implements View.OnC
 
     private void w() {
         if (StatusBarHelper.a()) {
-            this.mTitle.setPadding(0, StatusBarHelper.a((Context) getActivity()), 0, 0);
+            this.mTitle.setPadding(0, StatusBarHelper.a(getActivity()), 0, 0);
         }
         this.mTitleLeft.setVisibility(8);
         this.mTitleLeft.setOnClickListener(this);
@@ -600,7 +603,7 @@ public class LiveFragment extends MvpFragment<LivePresenter> implements View.OnC
                 LiveFragment.this.b(view);
             }
         });
-        this.mTitleRight.setOnClickListener(new SingleClickProxy(this, 2000L, null));
+        this.mTitleRight.setOnClickListener(new SingleClickProxy(this, 2000L, (IClickAgain) null));
         this.mRightNewDot.setVisibility(8);
         this.mTitle.post(new Runnable() { // from class: com.soft.blued.ui.live.fragment.LiveFragment.8
             @Override // java.lang.Runnable
@@ -615,25 +618,25 @@ public class LiveFragment extends MvpFragment<LivePresenter> implements View.OnC
 
     /* JADX INFO: Access modifiers changed from: private */
     public void x() {
-        if (this.f31145a != null) {
-            j().p();
-            this.f31145a.animate().translationY(this.f31145a.getHeight()).alpha(0.0f).setDuration(250L).setStartDelay(100L).setInterpolator(new AnticipateInterpolator(1.5f)).setListener(new AnimatorListenerAdapter() { // from class: com.soft.blued.ui.live.fragment.LiveFragment.9
+        if (this.f17455a != null) {
+            ((LivePresenter) j()).p();
+            this.f17455a.animate().translationY(this.f17455a.getHeight()).alpha(0.0f).setDuration(250L).setStartDelay(100L).setInterpolator(new AnticipateInterpolator(1.5f)).setListener(new AnimatorListenerAdapter() { // from class: com.soft.blued.ui.live.fragment.LiveFragment.9
                 @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                 public void onAnimationEnd(Animator animator) {
                     super.onAnimationEnd(animator);
-                    LiveFragment.this.f31145a.setVisibility(8);
-                    LiveFragment.this.f31145a = null;
+                    LiveFragment.this.f17455a.setVisibility(8);
+                    LiveFragment.this.f17455a = null;
                 }
             }).start();
             final TextView e = this.indicator.e(2);
             if (e.getVisibility() != 0) {
                 e.setAlpha(0.0f);
                 e.setVisibility(0);
-                e.setTranslationY(this.f31145a.getHeight());
+                e.setTranslationY(this.f17455a.getHeight());
                 e.post(new Runnable() { // from class: com.soft.blued.ui.live.fragment.-$$Lambda$LiveFragment$enLYbOciJJjDZXtxLUpOgeV0CGM
                     @Override // java.lang.Runnable
                     public final void run() {
-                        LiveFragment.a(View.this);
+                        LiveFragment.a(e);
                     }
                 });
             }
@@ -667,11 +670,10 @@ public class LiveFragment extends MvpFragment<LivePresenter> implements View.OnC
     }
 
     private void z() {
-        TerminalActivity.d(getContext(), RequestAnchorLiveListFragment.class, null);
+        TerminalActivity.d(getContext(), RequestAnchorLiveListFragment.class, (Bundle) null);
         EventTrackLive.a(LiveProtos.Event.LIVE_ANCHOR_PLEASE_MSG_CLICK);
     }
 
-    @Override // com.blued.android.module.live_china.observer.LiveListRefreshObserver.ILiveListRefreshObserver
     public void a() {
     }
 
@@ -693,7 +695,7 @@ public class LiveFragment extends MvpFragment<LivePresenter> implements View.OnC
         this.mViewPager.setCurrentItem(i);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
+    /* JADX WARN: Multi-variable type inference failed */
     public void a(Bundle bundle) {
         super.a(bundle);
         A();
@@ -729,7 +731,7 @@ public class LiveFragment extends MvpFragment<LivePresenter> implements View.OnC
     }
 
     public void a(Fragment fragment) {
-        j().a(true);
+        ((LivePresenter) j()).a(true);
     }
 
     @Override // com.soft.blued.ui.live.manager.LiveFloatRedBagViewScrollObserver.IFloatRedBagViewScrollObserver
@@ -803,7 +805,7 @@ public class LiveFragment extends MvpFragment<LivePresenter> implements View.OnC
     }
 
     public void a(final LiveBubble liveBubble) {
-        if (this.indicator == null || liveBubble == null || TextUtils.isEmpty(liveBubble.image) || this.f31145a != null || this.s == 2) {
+        if (this.indicator == null || liveBubble == null || TextUtils.isEmpty(liveBubble.image) || this.f17455a != null || this.s == 2) {
             return;
         }
         final TextView e = this.indicator.e(2);
@@ -813,10 +815,9 @@ public class LiveFragment extends MvpFragment<LivePresenter> implements View.OnC
                 LiveFragment.this.a(e, liveBubble);
             }
         });
-        j().o();
+        ((LivePresenter) j()).o();
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void a(String str, boolean z) {
         super.a(str, z);
     }
@@ -824,14 +825,14 @@ public class LiveFragment extends MvpFragment<LivePresenter> implements View.OnC
     public void a(boolean z, String str, int i) {
         if (this.o) {
             this.b = z;
-            this.f31146c = str;
+            this.f17456c = str;
             this.d = i;
             if (TextUtils.isEmpty(str)) {
                 this.mTitle.setAlpha(1.0f);
                 this.fl_floor.setVisibility(8);
             } else {
                 this.fl_floor.setVisibility(0);
-                ImageLoader.a(getFragmentActive(), str).b(R.drawable.live_icon_second_flow).a(this.second_floor);
+                ImageLoader.a(getFragmentActive(), str).b((int) R.drawable.live_icon_second_flow).a(this.second_floor);
             }
             a(0.0f, 0);
         }
@@ -851,7 +852,7 @@ public class LiveFragment extends MvpFragment<LivePresenter> implements View.OnC
     @Override // com.soft.blued.ui.home.HomeTabClick.TabClickListener
     public void c(String str) {
         if ("live".equals(str)) {
-            j().a(false);
+            ((LivePresenter) j()).a(false);
         }
     }
 
@@ -862,49 +863,43 @@ public class LiveFragment extends MvpFragment<LivePresenter> implements View.OnC
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public void f() {
         super.f();
         this.g = getActivity();
         c();
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public int g() {
         return R.layout.fragment_live;
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         if (this.o) {
             if (i2 == -1) {
                 if (i != 100) {
                     if (i == 10111 && !TextUtils.isEmpty(intent.getStringExtra("string_edit"))) {
                         LiveRoomHttpUtils.b(intent.getStringExtra("string_edit"), new BluedUIHttpResponse(getFragmentActive()) { // from class: com.soft.blued.ui.live.fragment.LiveFragment.11
-                            @Override // com.blued.android.framework.http.BluedUIHttpResponse
                             public boolean onUIFailure(int i3, String str) {
                                 LiveFragment.this.v = true;
                                 return super.onUIFailure(i3, str);
                             }
 
-                            @Override // com.blued.android.framework.http.BluedUIHttpResponse
                             public void onUIFinish() {
                                 if (LiveFragment.this.v.booleanValue()) {
                                     LiveFragment.this.v = false;
-                                    AppMethods.a((CharSequence) LiveFragment.this.g.getString(R.string.feedback_error));
+                                    AppMethods.a(LiveFragment.this.g.getString(R.string.feedback_error));
                                 }
                                 super.onUIFinish();
                             }
 
-                            @Override // com.blued.android.framework.http.BluedUIHttpResponse
                             public void onUIUpdate(BluedEntity bluedEntity) {
-                                AppMethods.a((CharSequence) LiveFragment.this.getString(2131886190));
+                                AppMethods.a(LiveFragment.this.getString(R.string.Live_feedback_success));
                             }
                         }, getFragmentActive());
                     }
                 } else if (intent != null && !"".equals(intent.toString()) && !TextUtils.isEmpty("string_edit")) {
                     String stringExtra = intent.getStringExtra("string_edit");
-                    j().a(intent.getStringExtra("feed_id"), stringExtra);
+                    ((LivePresenter) j()).a(intent.getStringExtra("feed_id"), stringExtra);
                 }
             }
             super.onActivityResult(i, i2, intent);
@@ -921,13 +916,12 @@ public class LiveFragment extends MvpFragment<LivePresenter> implements View.OnC
         } else if (id == 2131363126 && !ClickUtils.a(view.getId())) {
             EventTrackLive.a(LiveProtos.Event.LIVE_START_FROM_LIVELIST);
             InstantLog.a("live_start_from_livelist");
-            j().a(true);
+            ((LivePresenter) j()).a(true);
             this.mRightNewDot.setVisibility(8);
             ChatManager.getInstance().deleteSessionAndChatting((short) 1, 7L);
         }
     }
 
-    @Override // com.blued.android.module.common.utils.freedom.clickcallback.OnClickCallback
     public void onClick(View view, int i, BaseViewHolder baseViewHolder) {
         String str;
         LivePersonalCollectionModel livePersonalCollectionModel = this.z.get(i).b;
@@ -941,7 +935,6 @@ public class LiveFragment extends MvpFragment<LivePresenter> implements View.OnC
         EventTrackLive.e(LiveProtos.Event.LIVE_COLLECTION_BTN_CLICK, str);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
         HomeTabClick.b("live", this);
@@ -949,18 +942,16 @@ public class LiveFragment extends MvpFragment<LivePresenter> implements View.OnC
         LiveFloatRedBagViewScrollObserver.a().b(this);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onPause() {
         this.l = System.currentTimeMillis();
         super.onPause();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onResume() {
         super.onResume();
         if (this.l != 0) {
             if (System.currentTimeMillis() - this.l > 300000) {
-                j().a(false);
+                ((LivePresenter) j()).a(false);
             }
             this.l = 0L;
         }
@@ -973,7 +964,7 @@ public class LiveFragment extends MvpFragment<LivePresenter> implements View.OnC
                 textView.setText("99+");
             }
         }
-        j().m();
+        ((LivePresenter) j()).m();
         if (this.mViewPager.getCurrentItem() == 2) {
             this.mFloatSpreadView.setVisibility(8);
         } else {
@@ -981,7 +972,6 @@ public class LiveFragment extends MvpFragment<LivePresenter> implements View.OnC
         }
     }
 
-    @Override // com.blued.android.chat.listener.SingleSessionListener
     public void onSessionDataChanged(SessionModel sessionModel) {
         if (this.o) {
             Log.v("pk", "直播 sessionData.sessionType = " + ((int) sessionModel.sessionType) + " -- sessionId = " + sessionModel.sessionId);
@@ -1008,7 +998,6 @@ public class LiveFragment extends MvpFragment<LivePresenter> implements View.OnC
         }
     }
 
-    @Override // com.blued.android.chat.listener.SingleSessionListener
     public void onSessionRemoved(short s, long j) {
         Log.v("pk", "直播 onSessionRemoved sessionData.sessionType = " + ((int) s) + " -- sessionId = " + j);
         if (this.o) {
@@ -1035,7 +1024,6 @@ public class LiveFragment extends MvpFragment<LivePresenter> implements View.OnC
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onStart() {
         super.onStart();
         LiveListRefreshObserver.a().a(this);
@@ -1043,7 +1031,6 @@ public class LiveFragment extends MvpFragment<LivePresenter> implements View.OnC
         ChatHelperV4.a().g(this);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onStop() {
         super.onStop();
         LiveListRefreshObserver.a().b(this);
@@ -1051,12 +1038,10 @@ public class LiveFragment extends MvpFragment<LivePresenter> implements View.OnC
         ChatHelperV4.a().h(this);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public boolean q() {
         return true;
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void setUserVisibleHint(boolean z) {
         super.setUserVisibleHint(z);
         if (z) {

@@ -6,13 +6,9 @@ import java.lang.annotation.RetentionPolicy;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/community/ui/feed/manager/FeedConstants.class */
 public class FeedConstants {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final int f19821a = -237957239;
+    public static final int a = -237957239;
     public static FeedProtos.DetailFrom b = FeedProtos.DetailFrom.UNKNOWN_DETAIL_FROM;
-
-    /* renamed from: c  reason: collision with root package name */
-    public static int f19822c = 0;
+    public static int c = 0;
 
     /* loaded from: source-4169892-dex2jar.jar:com/blued/community/ui/feed/manager/FeedConstants$ADV_POP_ANIM_TYPE.class */
     public interface ADV_POP_ANIM_TYPE {

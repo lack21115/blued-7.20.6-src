@@ -35,7 +35,7 @@ public class ThreadLocalRandom extends Random {
 
     @Override // java.util.Random
     protected int next(int i) {
-        this.rnd = ((this.rnd * multiplier) + 11) & mask;
+        this.rnd = ((this.rnd * multiplier) + addend) & mask;
         return (int) (this.rnd >>> (48 - i));
     }
 

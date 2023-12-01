@@ -43,9 +43,8 @@ public final class AudioEntity extends Message<AudioEntity, Builder> {
             return this;
         }
 
-        /* JADX WARN: Can't rename method to resolve collision */
-        @Override // com.squareup.wire.Message.Builder
-        public AudioEntity build() {
+        /* renamed from: build */
+        public AudioEntity m10545build() {
             return new AudioEntity(this.audioKey, this.startFrame, this.endFrame, this.startTime, this.totalTime, super.buildUnknownFields());
         }
 
@@ -76,54 +75,51 @@ public final class AudioEntity extends Message<AudioEntity, Builder> {
             super(FieldEncoding.LENGTH_DELIMITED, AudioEntity.class);
         }
 
-        /* JADX WARN: Can't rename method to resolve collision */
-        @Override // com.squareup.wire.ProtoAdapter
-        public AudioEntity decode(ProtoReader protoReader) throws IOException {
+        /* renamed from: decode */
+        public AudioEntity m10546decode(ProtoReader protoReader) throws IOException {
             Builder builder = new Builder();
             long beginMessage = protoReader.beginMessage();
             while (true) {
                 int nextTag = protoReader.nextTag();
                 if (nextTag == -1) {
                     protoReader.endMessage(beginMessage);
-                    return builder.build();
+                    return builder.m10545build();
                 } else if (nextTag == 1) {
-                    builder.audioKey(ProtoAdapter.STRING.decode(protoReader));
+                    builder.audioKey((String) ProtoAdapter.STRING.decode(protoReader));
                 } else if (nextTag == 2) {
-                    builder.startFrame(ProtoAdapter.INT32.decode(protoReader));
+                    builder.startFrame((Integer) ProtoAdapter.INT32.decode(protoReader));
                 } else if (nextTag == 3) {
-                    builder.endFrame(ProtoAdapter.INT32.decode(protoReader));
+                    builder.endFrame((Integer) ProtoAdapter.INT32.decode(protoReader));
                 } else if (nextTag == 4) {
-                    builder.startTime(ProtoAdapter.INT32.decode(protoReader));
+                    builder.startTime((Integer) ProtoAdapter.INT32.decode(protoReader));
                 } else if (nextTag != 5) {
                     FieldEncoding peekFieldEncoding = protoReader.peekFieldEncoding();
                     builder.addUnknownField(nextTag, peekFieldEncoding, peekFieldEncoding.rawProtoAdapter().decode(protoReader));
                 } else {
-                    builder.totalTime(ProtoAdapter.INT32.decode(protoReader));
+                    builder.totalTime((Integer) ProtoAdapter.INT32.decode(protoReader));
                 }
             }
         }
 
-        @Override // com.squareup.wire.ProtoAdapter
         public void encode(ProtoWriter protoWriter, AudioEntity audioEntity) throws IOException {
             if (audioEntity.audioKey != null) {
-                ProtoAdapter.STRING.encodeWithTag(protoWriter, 1, (int) audioEntity.audioKey);
+                ProtoAdapter.STRING.encodeWithTag(protoWriter, 1, audioEntity.audioKey);
             }
             if (audioEntity.startFrame != null) {
-                ProtoAdapter.INT32.encodeWithTag(protoWriter, 2, (int) audioEntity.startFrame);
+                ProtoAdapter.INT32.encodeWithTag(protoWriter, 2, audioEntity.startFrame);
             }
             if (audioEntity.endFrame != null) {
-                ProtoAdapter.INT32.encodeWithTag(protoWriter, 3, (int) audioEntity.endFrame);
+                ProtoAdapter.INT32.encodeWithTag(protoWriter, 3, audioEntity.endFrame);
             }
             if (audioEntity.startTime != null) {
-                ProtoAdapter.INT32.encodeWithTag(protoWriter, 4, (int) audioEntity.startTime);
+                ProtoAdapter.INT32.encodeWithTag(protoWriter, 4, audioEntity.startTime);
             }
             if (audioEntity.totalTime != null) {
-                ProtoAdapter.INT32.encodeWithTag(protoWriter, 5, (int) audioEntity.totalTime);
+                ProtoAdapter.INT32.encodeWithTag(protoWriter, 5, audioEntity.totalTime);
             }
             protoWriter.writeBytes(audioEntity.unknownFields());
         }
 
-        @Override // com.squareup.wire.ProtoAdapter
         public int encodedSize(AudioEntity audioEntity) {
             int i = 0;
             int encodedSizeWithTag = audioEntity.audioKey != null ? ProtoAdapter.STRING.encodedSizeWithTag(1, audioEntity.audioKey) : 0;
@@ -136,11 +132,10 @@ public final class AudioEntity extends Message<AudioEntity, Builder> {
             return encodedSizeWithTag + encodedSizeWithTag2 + encodedSizeWithTag3 + encodedSizeWithTag4 + i + audioEntity.unknownFields().size();
         }
 
-        @Override // com.squareup.wire.ProtoAdapter
         public AudioEntity redact(AudioEntity audioEntity) {
-            Builder newBuilder = audioEntity.newBuilder();
-            newBuilder.clearUnknownFields();
-            return newBuilder.build();
+            Builder m10544newBuilder = audioEntity.m10544newBuilder();
+            m10544newBuilder.clearUnknownFields();
+            return m10544newBuilder.m10545build();
         }
     }
 
@@ -169,7 +164,7 @@ public final class AudioEntity extends Message<AudioEntity, Builder> {
     }
 
     public int hashCode() {
-        int i = this.hashCode;
+        int i = ((Message) this).hashCode;
         int i2 = i;
         if (i == 0) {
             int hashCode = unknownFields().hashCode();
@@ -187,14 +182,13 @@ public final class AudioEntity extends Message<AudioEntity, Builder> {
                 i3 = num4.hashCode();
             }
             i2 = (((((((((hashCode * 37) + hashCode2) * 37) + hashCode3) * 37) + hashCode4) * 37) + hashCode5) * 37) + i3;
-            this.hashCode = i2;
+            ((Message) this).hashCode = i2;
         }
         return i2;
     }
 
-    /* JADX WARN: Can't rename method to resolve collision */
-    @Override // com.squareup.wire.Message
-    public Builder newBuilder() {
+    /* renamed from: newBuilder */
+    public Builder m10544newBuilder() {
         Builder builder = new Builder();
         builder.audioKey = this.audioKey;
         builder.startFrame = this.startFrame;
@@ -205,7 +199,6 @@ public final class AudioEntity extends Message<AudioEntity, Builder> {
         return builder;
     }
 
-    @Override // com.squareup.wire.Message
     public String toString() {
         StringBuilder sb = new StringBuilder();
         if (this.audioKey != null) {

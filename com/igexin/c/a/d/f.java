@@ -25,7 +25,7 @@ public abstract class f extends b implements com.igexin.c.a.d.a.a, com.igexin.c.
     protected com.igexin.c.a.d.a.d O;
 
     /* renamed from: a  reason: collision with root package name */
-    private byte f23269a;
+    private byte f9661a;
     protected volatile boolean m;
     protected volatile boolean n;
     protected volatile boolean o;
@@ -53,11 +53,11 @@ public abstract class f extends b implements com.igexin.c.a.d.a.a, com.igexin.c.
     }
 
     private int A() {
-        return this.f23269a & 15;
+        return this.f9661a & 15;
     }
 
     private boolean B() {
-        byte b = this.f23269a;
+        byte b = this.f9661a;
         return (b >> 4) > (b & 15);
     }
 
@@ -84,8 +84,8 @@ public abstract class f extends b implements com.igexin.c.a.d.a.a, com.igexin.c.
         this.v = false;
         this.E = null;
         this.w = 0L;
-        byte b = this.f23269a;
-        this.f23269a = (byte) (b + ((b & 15) < 15 ? (byte) 1 : (byte) 0));
+        byte b = this.f9661a;
+        this.f9661a = (byte) (b + ((b & 15) < 15 ? (byte) 1 : (byte) 0));
         this.m = false;
         this.q = false;
         this.t = false;
@@ -183,8 +183,8 @@ public abstract class f extends b implements com.igexin.c.a.d.a.a, com.igexin.c.
         this.v = false;
         this.E = null;
         this.w = 0L;
-        byte b = this.f23269a;
-        this.f23269a = (byte) (b + ((b & 15) < 15 ? (byte) 1 : (byte) 0));
+        byte b = this.f9661a;
+        this.f9661a = (byte) (b + ((b & 15) < 15 ? (byte) 1 : (byte) 0));
         this.m = false;
         this.q = false;
         this.t = false;
@@ -270,9 +270,9 @@ public abstract class f extends b implements com.igexin.c.a.d.a.a, com.igexin.c.
     }
 
     public final void a(int i) {
-        byte b = (byte) (this.f23269a & 15);
-        this.f23269a = b;
-        this.f23269a = (byte) (((i & 15) << 4) | b);
+        byte b = (byte) (this.f9661a & 15);
+        this.f9661a = b;
+        this.f9661a = (byte) (((i & 15) << 4) | b);
     }
 
     public final void a(int i, com.igexin.c.a.d.a.g gVar) {
@@ -289,7 +289,7 @@ public abstract class f extends b implements com.igexin.c.a.d.a.a, com.igexin.c.
 
     public final void a(f fVar) {
         this.C = fVar.C;
-        this.f23269a = (byte) (fVar.f23269a & 240);
+        this.f9661a = (byte) (fVar.f9661a & 240);
         this.A = fVar.A;
         this.D = fVar.D;
         this.O = fVar.O;
@@ -348,7 +348,7 @@ public abstract class f extends b implements com.igexin.c.a.d.a.a, com.igexin.c.
     /* JADX INFO: Access modifiers changed from: protected */
     public final void o() {
         if (this.O != null) {
-            int i = d.a.f23261a;
+            int i = d.a.f9653a;
         }
     }
 }

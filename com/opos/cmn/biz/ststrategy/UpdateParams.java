@@ -10,22 +10,22 @@ public class UpdateParams {
     public static class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        private String f24691a;
+        private String f11003a;
 
         public UpdateParams build() {
-            if (TextUtils.isEmpty(this.f24691a)) {
+            if (TextUtils.isEmpty(this.f11003a)) {
                 throw new NullPointerException("update params can not be null!");
             }
             return new UpdateParams(this);
         }
 
         public Builder setPkgName(String str) {
-            this.f24691a = str;
+            this.f11003a = str;
             return this;
         }
     }
 
     private UpdateParams(Builder builder) {
-        this.pkgName = builder.f24691a;
+        this.pkgName = builder.f11003a;
     }
 }

@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.content.UndoManager;
 import android.content.UndoOperation;
 import android.content.UndoOwner;
-import android.content.pm.PackageManager;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -74,7 +73,6 @@ import com.android.internal.util.ArrayUtils;
 import com.android.internal.util.GrowingArrayUtils;
 import com.android.internal.view.menu.MenuBuilder;
 import com.android.internal.widget.EditableInputConnection;
-import com.anythink.expressad.video.module.a.a.m;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -165,7 +163,7 @@ public class Editor {
 
         @Override // android.widget.Editor.PinnedPopupWindow
         protected void createPopupWindow() {
-            this.mPopupWindow = new PopupWindow(Editor.this.mTextView.getContext(), (AttributeSet) null, 16843464);
+            this.mPopupWindow = new PopupWindow(Editor.this.mTextView.getContext(), (AttributeSet) null, (int) R.attr.textSelectHandleWindowStyle);
             this.mPopupWindow.setClippingEnabled(true);
         }
 
@@ -185,12 +183,12 @@ public class Editor {
             linearLayout.setOrientation(0);
             this.mContentView = linearLayout;
             this.mContentView.setBackgroundResource(R.drawable.text_edit_paste_window);
-            LayoutInflater layoutInflater = (LayoutInflater) Editor.this.mTextView.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            LayoutInflater layoutInflater = (LayoutInflater) Editor.this.mTextView.getContext().getSystemService("layout_inflater");
             ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(-2, -2);
             this.mPasteTextView = (TextView) layoutInflater.inflate(17367256, (ViewGroup) null);
             this.mPasteTextView.setLayoutParams(layoutParams);
             this.mContentView.addView(this.mPasteTextView);
-            this.mPasteTextView.setText(17039371);
+            this.mPasteTextView.setText(R.string.paste);
             this.mPasteTextView.setOnClickListener(this);
             this.mReplaceTextView = (TextView) layoutInflater.inflate(17367256, (ViewGroup) null);
             this.mReplaceTextView.setLayoutParams(layoutParams);
@@ -202,7 +200,7 @@ public class Editor {
         @Override // android.view.View.OnClickListener
         public void onClick(View view) {
             if (view == this.mPasteTextView && Editor.this.mTextView.canPaste()) {
-                Editor.this.mTextView.onTextContextMenuItem(16908322);
+                Editor.this.mTextView.onTextContextMenuItem(R.id.paste);
                 hide();
             } else if (view == this.mReplaceTextView) {
                 int selectionStart = (Editor.this.mTextView.getSelectionStart() + Editor.this.mTextView.getSelectionEnd()) / 2;
@@ -433,7 +431,7 @@ public class Editor {
 
         @Override // android.widget.Editor.PinnedPopupWindow
         protected void createPopupWindow() {
-            this.mPopupWindow = new PopupWindow(Editor.this.mTextView.getContext(), (AttributeSet) null, 16843464);
+            this.mPopupWindow = new PopupWindow(Editor.this.mTextView.getContext(), (AttributeSet) null, (int) R.attr.textSelectHandleWindowStyle);
             this.mPopupWindow.setInputMethodMode(2);
             this.mPopupWindow.setClippingEnabled(true);
         }
@@ -463,7 +461,7 @@ public class Editor {
             linearLayout.setOrientation(0);
             this.mContentView = linearLayout;
             this.mContentView.setBackgroundResource(R.drawable.text_edit_side_paste_window);
-            LayoutInflater layoutInflater = (LayoutInflater) Editor.this.mTextView.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            LayoutInflater layoutInflater = (LayoutInflater) Editor.this.mTextView.getContext().getSystemService("layout_inflater");
             ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(-2, -2);
             this.mDeleteTextView = (TextView) layoutInflater.inflate(17367256, (ViewGroup) null);
             this.mDeleteTextView.setLayoutParams(layoutParams);
@@ -572,7 +570,7 @@ public class Editor {
             this.mPreviousOffsets = new int[5];
             this.mPreviousOffsetIndex = 0;
             this.mNumberPreviousOffsets = 0;
-            this.mContainer = new PopupWindow(Editor.this.mTextView.getContext(), (AttributeSet) null, 16843464);
+            this.mContainer = new PopupWindow(Editor.this.mTextView.getContext(), (AttributeSet) null, (int) R.attr.textSelectHandleWindowStyle);
             this.mContainer.setSplitTouchEnabled(true);
             this.mContainer.setClippingEnabled(false);
             this.mContainer.setWindowLayoutType(1002);
@@ -1256,15 +1254,15 @@ public class Editor {
             actionMode.setTitle(Editor.this.mTextView.getContext().getString(R.string.textSelectionCABTitle));
             actionMode.setSubtitle((CharSequence) null);
             actionMode.setTitleOptionalHint(true);
-            menu.add(0, 16908319, 0, 17039373).setIcon(obtainStyledAttributes.getResourceId(3, 0)).setAlphabeticShortcut('a').setShowAsAction(6);
+            menu.add(0, R.id.selectAll, 0, R.string.selectAll).setIcon(obtainStyledAttributes.getResourceId(3, 0)).setAlphabeticShortcut('a').setShowAsAction(6);
             if (Editor.this.mTextView.canCut()) {
-                menu.add(0, 16908320, 0, 17039363).setIcon(obtainStyledAttributes.getResourceId(0, 0)).setAlphabeticShortcut('x').setShowAsAction(6);
+                menu.add(0, R.id.cut, 0, R.string.cut).setIcon(obtainStyledAttributes.getResourceId(0, 0)).setAlphabeticShortcut('x').setShowAsAction(6);
             }
             if (Editor.this.mTextView.canCopy()) {
-                menu.add(0, 16908321, 0, 17039361).setIcon(obtainStyledAttributes.getResourceId(1, 0)).setAlphabeticShortcut('c').setShowAsAction(6);
+                menu.add(0, R.id.copy, 0, R.string.copy).setIcon(obtainStyledAttributes.getResourceId(1, 0)).setAlphabeticShortcut('c').setShowAsAction(6);
             }
             if (Editor.this.mTextView.canPaste()) {
-                menu.add(0, 16908322, 0, 17039371).setIcon(obtainStyledAttributes.getResourceId(2, 0)).setAlphabeticShortcut('v').setShowAsAction(6);
+                menu.add(0, R.id.paste, 0, R.string.paste).setIcon(obtainStyledAttributes.getResourceId(2, 0)).setAlphabeticShortcut('v').setShowAsAction(6);
             }
             obtainStyledAttributes.recycle();
             if (Editor.this.mCustomSelectionActionModeCallback == null || Editor.this.mCustomSelectionActionModeCallback.onCreateActionMode(actionMode, menu)) {
@@ -1480,7 +1478,7 @@ public class Editor {
                     return;
                 case 5:
                 case 6:
-                    if (Editor.this.mTextView.getContext().getPackageManager().hasSystemFeature(PackageManager.FEATURE_TOUCHSCREEN_MULTITOUCH_DISTINCT)) {
+                    if (Editor.this.mTextView.getContext().getPackageManager().hasSystemFeature("android.hardware.touchscreen.multitouch.distinct")) {
                         updateMinAndMaxOffsets(motionEvent);
                         return;
                     }
@@ -1576,7 +1574,7 @@ public class Editor {
                 PendingIntent pendingIntent = easyEditSpan.getPendingIntent();
                 if (pendingIntent != null) {
                     Intent intent = new Intent();
-                    intent.putExtra(EasyEditSpan.EXTRA_TEXT_CHANGED_TYPE, i);
+                    intent.putExtra("android.text.style.EXTRA_TEXT_CHANGED_TYPE", i);
                     pendingIntent.send(Editor.this.mTextView.getContext(), 0, intent);
                 }
             } catch (PendingIntent.CanceledException e) {
@@ -1627,7 +1625,7 @@ public class Editor {
                 }
                 this.mPopupWindow.show();
                 Editor.this.mTextView.removeCallbacks(this.mHidePopup);
-                Editor.this.mTextView.postDelayed(this.mHidePopup, m.ag);
+                Editor.this.mTextView.postDelayed(this.mHidePopup, 3000L);
             }
         }
 
@@ -1692,7 +1690,7 @@ public class Editor {
             private LayoutInflater mInflater;
 
             private SuggestionAdapter() {
-                this.mInflater = (LayoutInflater) Editor.this.mTextView.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                this.mInflater = (LayoutInflater) Editor.this.mTextView.getContext().getSystemService("layout_inflater");
             }
 
             @Override // android.widget.Adapter
@@ -1740,7 +1738,7 @@ public class Editor {
 
             private SuggestionInfo() {
                 this.text = new SpannableStringBuilder();
-                this.highlightSpan = new TextAppearanceSpan(Editor.this.mTextView.getContext(), 16974104);
+                this.highlightSpan = new TextAppearanceSpan(Editor.this.mTextView.getContext(), R.style.TextAppearance_SuggestionHighlight);
             }
         }
 
@@ -1936,7 +1934,7 @@ public class Editor {
 
         @Override // android.widget.Editor.PinnedPopupWindow
         protected void createPopupWindow() {
-            this.mPopupWindow = new CustomPopupWindow(Editor.this.mTextView.getContext(), 16843635);
+            this.mPopupWindow = new CustomPopupWindow(Editor.this.mTextView.getContext(), R.attr.textSuggestionsWindowStyle);
             this.mPopupWindow.setInputMethodMode(2);
             this.mPopupWindow.setFocusable(true);
             this.mPopupWindow.setClippingEnabled(false);
@@ -2050,7 +2048,7 @@ public class Editor {
         boolean isDirty = true;
 
         public TextDisplayList(String str) {
-            this.displayList = RenderNode.create(str, null);
+            this.displayList = RenderNode.create(str, (View) null);
         }
 
         boolean needsRecord() {
@@ -2089,11 +2087,11 @@ public class Editor {
             super(parcel, classLoader);
             this.mRangeStart = parcel.readInt();
             this.mRangeEnd = parcel.readInt();
-            this.mOldText = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
+            this.mOldText = (CharSequence) TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
         }
 
         private void swapText() {
-            Editable editable = (Editable) getOwnerData().getText();
+            Editable editable = (Editable) ((TextView) getOwnerData()).getText();
             CharSequence subSequence = this.mRangeStart >= this.mRangeEnd ? null : editable.subSequence(this.mRangeStart, this.mRangeEnd);
             if (this.mOldText == null) {
                 editable.delete(this.mRangeStart, this.mRangeEnd);
@@ -2105,21 +2103,17 @@ public class Editor {
             this.mOldText = subSequence;
         }
 
-        @Override // android.content.UndoOperation
         public void commit() {
         }
 
-        @Override // android.content.UndoOperation
         public void redo() {
             swapText();
         }
 
-        @Override // android.content.UndoOperation
         public void undo() {
             swapText();
         }
 
-        @Override // android.os.Parcelable
         public void writeToParcel(Parcel parcel, int i) {
             parcel.writeInt(this.mRangeStart);
             parcel.writeInt(this.mRangeEnd);
@@ -2164,7 +2158,7 @@ public class Editor {
                     undoManager.endUpdate();
                     return null;
                 }
-                undoManager.commitState(null);
+                undoManager.commitState((UndoOwner) null);
                 undoManager.setUndoLabel("Edit text");
             }
             TextModifyOperation textModifyOperation2 = new TextModifyOperation(this.mEditor.mUndoOwner);
@@ -2341,7 +2335,7 @@ public class Editor {
                 }
                 renderNode.setLeftTopRightBottom(i9, lineTop, width, lineBottom);
             }
-            ((HardwareCanvas) canvas).drawRenderNode(renderNode, null, 0);
+            ((HardwareCanvas) canvas).drawRenderNode(renderNode, (Rect) null, 0);
             i2 = i5;
             i4++;
             i3 = i7;

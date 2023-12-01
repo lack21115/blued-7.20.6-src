@@ -2,13 +2,9 @@ package com.anythink.core.common.e;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/e/n.class */
 public final class n {
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f6669a;
+    private String a;
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f6670c;
+    private String c;
     private String d;
     private String e;
     private String f;
@@ -40,11 +36,11 @@ public final class n {
     }
 
     public final String b() {
-        return this.f6669a;
+        return this.a;
     }
 
     public final void b(String str) {
-        this.f6669a = str;
+        this.a = str;
     }
 
     public final String c() {
@@ -56,11 +52,11 @@ public final class n {
     }
 
     public final String d() {
-        return this.f6670c;
+        return this.c;
     }
 
     public final void d(String str) {
-        this.f6670c = str;
+        this.c = str;
     }
 
     public final void e(String str) {

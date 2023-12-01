@@ -4,11 +4,11 @@ package com.efs.sdk.base.core.d;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f21762a;
+    public String f8156a;
     public byte b;
 
     /* renamed from: c  reason: collision with root package name */
-    public int f21763c = 0;
+    public int f8157c = 0;
     public String d = "none";
     public int e = 1;
     long f = 0;
@@ -17,7 +17,7 @@ public final class a {
     /* JADX INFO: Access modifiers changed from: package-private */
     public a(String str, byte b) {
         this.b = (byte) 2;
-        this.f21762a = str;
+        this.f8156a = str;
         if (b <= 0 || 3 < b) {
             throw new IllegalArgumentException("log protocol flag invalid : ".concat(String.valueOf((int) b)));
         }

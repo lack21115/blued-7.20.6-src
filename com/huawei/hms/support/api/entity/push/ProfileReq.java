@@ -1,6 +1,5 @@
 package com.huawei.hms.support.api.entity.push;
 
-import com.alipay.sdk.util.i;
 import com.huawei.hms.core.aidl.IMessageEntity;
 import com.huawei.hms.core.aidl.annotation.Packed;
 
@@ -58,6 +57,6 @@ public class ProfileReq implements IMessageEntity {
     }
 
     public String toString() {
-        return getClass().getName() + "{ pkgName: " + this.pkgName + ",subjectId: " + this.subjectId + ",operation: " + this.operation + " type: " + this.type + i.d;
+        return getClass().getName() + "{ pkgName: " + this.pkgName + ",subjectId: " + this.subjectId + ",operation: " + this.operation + " type: " + this.type + "}";
     }
 }

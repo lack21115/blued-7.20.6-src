@@ -6,23 +6,23 @@ import android.content.Context;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile Context f27308a;
+    private static volatile Context f13620a;
     private static volatile Context b;
 
     public static Context a(Context context) {
-        if (f27308a != null) {
-            context = f27308a;
+        if (f13620a != null) {
+            context = f13620a;
         }
         return context;
     }
 
     public static void a() {
-        f27308a = null;
+        f13620a = null;
         b = null;
     }
 
     public static void a(Context context, Context context2) {
-        f27308a = context;
+        f13620a = context;
         b = context2;
     }
 

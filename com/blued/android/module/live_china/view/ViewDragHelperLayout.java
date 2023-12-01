@@ -12,13 +12,9 @@ import com.blued.android.module.player.media.observer.ScaleChangeObserver;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/ViewDragHelperLayout.class */
 public class ViewDragHelperLayout extends LinearLayout implements ScaleChangeObserver.IScaleChangeObserver {
-
-    /* renamed from: a  reason: collision with root package name */
-    private ViewDragHelper f15292a;
+    private ViewDragHelper a;
     private View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private View f15293c;
+    private View c;
     private int d;
     private Point e;
     private Point f;
@@ -49,18 +45,15 @@ public class ViewDragHelperLayout extends LinearLayout implements ScaleChangeObs
         this.f = new Point();
         this.m = true;
         this.d = getResources().getDisplayMetrics().heightPixels;
-        this.f15292a = ViewDragHelper.create(this, 1.0f, new ViewDragHelper.Callback() { // from class: com.blued.android.module.live_china.view.ViewDragHelperLayout.1
-            @Override // androidx.customview.widget.ViewDragHelper.Callback
+        this.a = ViewDragHelper.create(this, 1.0f, new ViewDragHelper.Callback() { // from class: com.blued.android.module.live_china.view.ViewDragHelperLayout.1
             public int clampViewPositionVertical(View view, int i, int i2) {
                 return i;
             }
 
-            @Override // androidx.customview.widget.ViewDragHelper.Callback
             public int getViewVerticalDragRange(View view) {
                 return ViewDragHelperLayout.this.getMeasuredHeight() - view.getMeasuredWidth();
             }
 
-            @Override // androidx.customview.widget.ViewDragHelper.Callback
             public void onViewDragStateChanged(int i) {
                 super.onViewDragStateChanged(i);
                 Logger.a("drb", "onViewDragStateChanged = ", Integer.valueOf(i));
@@ -83,7 +76,6 @@ public class ViewDragHelperLayout extends LinearLayout implements ScaleChangeObs
                 }
             }
 
-            @Override // androidx.customview.widget.ViewDragHelper.Callback
             public void onViewPositionChanged(View view, int i, int i2, int i3, int i4) {
                 ViewDragHelperLayout.this.l = i2;
                 Logger.a("drb", "mMainLeft = ", Integer.valueOf(ViewDragHelperLayout.this.l));
@@ -93,12 +85,11 @@ public class ViewDragHelperLayout extends LinearLayout implements ScaleChangeObs
                 }
             }
 
-            @Override // androidx.customview.widget.ViewDragHelper.Callback
             public void onViewReleased(View view, float f, float f2) {
                 boolean z = true;
                 if (view.getTop() <= 0) {
                     int i = (-view.getTop()) > (((-f2) > 2000.0f ? 1 : ((-f2) == 2000.0f ? 0 : -1)) > 0 ? 0 : (int) (((double) ViewDragHelperLayout.this.d) * 0.4d)) ? -ViewDragHelperLayout.this.d : ViewDragHelperLayout.this.e.y != 0 ? ViewDragHelperLayout.this.e.y : ViewDragHelperLayout.this.f.y != 0 ? ViewDragHelperLayout.this.f.y : ViewDragHelperLayout.this.e.y;
-                    ViewDragHelperLayout.this.f15292a.settleCapturedViewAt(view.getLeft(), i);
+                    ViewDragHelperLayout.this.a.settleCapturedViewAt(view.getLeft(), i);
                     ViewDragHelperLayout.this.invalidate();
                     if (ViewDragHelperLayout.this.e.y != 0) {
                         ViewDragHelperLayout viewDragHelperLayout = ViewDragHelperLayout.this;
@@ -117,7 +108,7 @@ public class ViewDragHelperLayout extends LinearLayout implements ScaleChangeObs
                     return;
                 }
                 int i2 = view.getTop() > ((f2 > 2000.0f ? 1 : (f2 == 2000.0f ? 0 : -1)) > 0 ? 0 : (int) (((double) ViewDragHelperLayout.this.d) * 0.6d)) ? ViewDragHelperLayout.this.d : ViewDragHelperLayout.this.e.y != 0 ? ViewDragHelperLayout.this.e.y : ViewDragHelperLayout.this.f.y != 0 ? ViewDragHelperLayout.this.f.y : ViewDragHelperLayout.this.e.y;
-                ViewDragHelperLayout.this.f15292a.settleCapturedViewAt(view.getLeft(), i2);
+                ViewDragHelperLayout.this.a.settleCapturedViewAt(view.getLeft(), i2);
                 ViewDragHelperLayout.this.invalidate();
                 if (ViewDragHelperLayout.this.e.y != 0) {
                     ViewDragHelperLayout viewDragHelperLayout4 = ViewDragHelperLayout.this;
@@ -144,7 +135,6 @@ public class ViewDragHelperLayout extends LinearLayout implements ScaleChangeObs
                 ViewDragHelperLayout.this.i = 1;
             }
 
-            @Override // androidx.customview.widget.ViewDragHelper.Callback
             public boolean tryCaptureView(View view, int i) {
                 return ViewDragHelperLayout.this.m;
             }
@@ -153,7 +143,7 @@ public class ViewDragHelperLayout extends LinearLayout implements ScaleChangeObs
 
     @Override // android.view.View
     public void computeScroll() {
-        if (this.f15292a.continueSettling(true)) {
+        if (this.a.continueSettling(true)) {
             invalidate();
         }
     }
@@ -177,12 +167,12 @@ public class ViewDragHelperLayout extends LinearLayout implements ScaleChangeObs
     public void onFinishInflate() {
         super.onFinishInflate();
         this.b = getChildAt(0);
-        this.f15293c = getChildAt(1);
+        this.c = getChildAt(1);
     }
 
     @Override // android.view.ViewGroup
     public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        boolean shouldInterceptTouchEvent = this.f15292a.shouldInterceptTouchEvent(motionEvent);
+        boolean shouldInterceptTouchEvent = this.a.shouldInterceptTouchEvent(motionEvent);
         Logger.a("drb", "onInterceptTouchEvent = ", Integer.valueOf(motionEvent.getAction()), "-- isIntercept = ", Boolean.valueOf(shouldInterceptTouchEvent));
         return shouldInterceptTouchEvent;
     }
@@ -193,10 +183,10 @@ public class ViewDragHelperLayout extends LinearLayout implements ScaleChangeObs
         super.onLayout(z, i, i2, i3, i4);
         this.e.x = this.b.getLeft();
         this.e.y = this.b.getTop();
-        View view = this.f15293c;
+        View view = this.c;
         if (view != null) {
             this.f.x = view.getLeft();
-            this.f.y = this.f15293c.getTop();
+            this.f.y = this.c.getTop();
         }
         int i5 = this.l;
         if (i5 >= 0) {
@@ -217,7 +207,7 @@ public class ViewDragHelperLayout extends LinearLayout implements ScaleChangeObs
     @Override // android.view.View
     public boolean onTouchEvent(MotionEvent motionEvent) {
         Logger.a("drb", "onTouchEvent = ", Integer.valueOf(motionEvent.getAction()));
-        this.f15292a.processTouchEvent(motionEvent);
+        this.a.processTouchEvent(motionEvent);
         return true;
     }
 

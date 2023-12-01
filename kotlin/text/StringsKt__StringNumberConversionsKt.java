@@ -39,8 +39,8 @@ public class StringsKt__StringNumberConversionsKt extends StringsKt__StringNumbe
             if (i4 >= length) {
                 return z ? Integer.valueOf(i2) : Integer.valueOf(-i2);
             }
-            int a2 = CharsKt.a(str.charAt(i4), i);
-            if (a2 < 0) {
+            int a = CharsKt.a(str.charAt(i4), i);
+            if (a < 0) {
                 return null;
             }
             int i7 = i6;
@@ -55,10 +55,10 @@ public class StringsKt__StringNumberConversionsKt extends StringsKt__StringNumbe
                 }
             }
             int i9 = i2 * i;
-            if (i9 < i3 + a2) {
+            if (i9 < i3 + a) {
                 return null;
             }
-            i2 = i9 - a2;
+            i2 = i9 - a;
             i4++;
             i5 = i7;
         }

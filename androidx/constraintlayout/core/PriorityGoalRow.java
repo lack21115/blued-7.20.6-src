@@ -17,7 +17,7 @@ public class PriorityGoalRow extends ArrayRow {
     class GoalVariableAccessor {
 
         /* renamed from: a  reason: collision with root package name */
-        SolverVariable f1994a;
+        SolverVariable f1946a;
         PriorityGoalRow b;
 
         public GoalVariableAccessor(PriorityGoalRow priorityGoalRow) {
@@ -31,10 +31,10 @@ public class PriorityGoalRow extends ArrayRow {
                 if (i2 >= 9) {
                     return;
                 }
-                float[] fArr = this.f1994a.f1997c;
-                fArr[i2] = fArr[i2] + solverVariable.f1997c[i2];
-                if (Math.abs(this.f1994a.f1997c[i2]) < 1.0E-4f) {
-                    this.f1994a.f1997c[i2] = 0.0f;
+                float[] fArr = this.f1946a.f1949c;
+                fArr[i2] = fArr[i2] + solverVariable.f1949c[i2];
+                if (Math.abs(this.f1946a.f1949c[i2]) < 1.0E-4f) {
+                    this.f1946a.f1949c[i2] = 0.0f;
                 }
                 i = i2 + 1;
             }
@@ -42,18 +42,18 @@ public class PriorityGoalRow extends ArrayRow {
 
         public boolean addToGoal(SolverVariable solverVariable, float f) {
             boolean z = true;
-            if (!this.f1994a.inGoal) {
+            if (!this.f1946a.inGoal) {
                 for (int i = 0; i < 9; i++) {
-                    float f2 = solverVariable.f1997c[i];
+                    float f2 = solverVariable.f1949c[i];
                     if (f2 != 0.0f) {
                         float f3 = f2 * f;
                         float f4 = f3;
                         if (Math.abs(f3) < 1.0E-4f) {
                             f4 = 0.0f;
                         }
-                        this.f1994a.f1997c[i] = f4;
+                        this.f1946a.f1949c[i] = f4;
                     } else {
-                        this.f1994a.f1997c[i] = 0.0f;
+                        this.f1946a.f1949c[i] = 0.0f;
                     }
                 }
                 return true;
@@ -64,24 +64,24 @@ public class PriorityGoalRow extends ArrayRow {
                 if (i3 >= 9) {
                     break;
                 }
-                float[] fArr = this.f1994a.f1997c;
-                fArr[i3] = fArr[i3] + (solverVariable.f1997c[i3] * f);
-                if (Math.abs(this.f1994a.f1997c[i3]) < 1.0E-4f) {
-                    this.f1994a.f1997c[i3] = 0.0f;
+                float[] fArr = this.f1946a.f1949c;
+                fArr[i3] = fArr[i3] + (solverVariable.f1949c[i3] * f);
+                if (Math.abs(this.f1946a.f1949c[i3]) < 1.0E-4f) {
+                    this.f1946a.f1949c[i3] = 0.0f;
                 } else {
                     z = false;
                 }
                 i2 = i3 + 1;
             }
             if (z) {
-                PriorityGoalRow.this.d(this.f1994a);
+                PriorityGoalRow.this.d(this.f1946a);
                 return false;
             }
             return false;
         }
 
         public void init(SolverVariable solverVariable) {
-            this.f1994a = solverVariable;
+            this.f1946a = solverVariable;
         }
 
         public final boolean isNegative() {
@@ -91,7 +91,7 @@ public class PriorityGoalRow extends ArrayRow {
                 if (i2 < 0) {
                     return false;
                 }
-                float f = this.f1994a.f1997c[i2];
+                float f = this.f1946a.f1949c[i2];
                 if (f > 0.0f) {
                     return false;
                 }
@@ -109,7 +109,7 @@ public class PriorityGoalRow extends ArrayRow {
                 if (i2 >= 9) {
                     return true;
                 }
-                if (this.f1994a.f1997c[i2] != 0.0f) {
+                if (this.f1946a.f1949c[i2] != 0.0f) {
                     return false;
                 }
                 i = i2 + 1;
@@ -123,8 +123,8 @@ public class PriorityGoalRow extends ArrayRow {
                 if (i2 < 0) {
                     return false;
                 }
-                float f = solverVariable.f1997c[i2];
-                float f2 = this.f1994a.f1997c[i2];
+                float f = solverVariable.f1949c[i2];
+                float f2 = this.f1946a.f1949c[i2];
                 if (f2 != f) {
                     return f2 < f;
                 }
@@ -133,13 +133,13 @@ public class PriorityGoalRow extends ArrayRow {
         }
 
         public void reset() {
-            Arrays.fill(this.f1994a.f1997c, 0.0f);
+            Arrays.fill(this.f1946a.f1949c, 0.0f);
         }
 
         public String toString() {
             String str = "[ ";
             String str2 = str;
-            if (this.f1994a != null) {
+            if (this.f1946a != null) {
                 int i = 0;
                 while (true) {
                     int i2 = i;
@@ -147,11 +147,11 @@ public class PriorityGoalRow extends ArrayRow {
                     if (i2 >= 9) {
                         break;
                     }
-                    str = str + this.f1994a.f1997c[i2] + " ";
+                    str = str + this.f1946a.f1949c[i2] + " ";
                     i = i2 + 1;
                 }
             }
-            return str2 + "] " + this.f1994a;
+            return str2 + "] " + this.f1946a;
         }
     }
 
@@ -241,7 +241,7 @@ public class PriorityGoalRow extends ArrayRow {
     public void addError(SolverVariable solverVariable) {
         this.f.init(solverVariable);
         this.f.reset();
-        solverVariable.f1997c[solverVariable.strength] = 1.0f;
+        solverVariable.f1949c[solverVariable.strength] = 1.0f;
         c(solverVariable);
     }
 
@@ -310,7 +310,7 @@ public class PriorityGoalRow extends ArrayRow {
 
     @Override // androidx.constraintlayout.core.ArrayRow, androidx.constraintlayout.core.LinearSystem.Row
     public void updateFromRow(LinearSystem linearSystem, ArrayRow arrayRow, boolean z) {
-        SolverVariable solverVariable = arrayRow.f1986a;
+        SolverVariable solverVariable = arrayRow.f1938a;
         if (solverVariable == null) {
             return;
         }

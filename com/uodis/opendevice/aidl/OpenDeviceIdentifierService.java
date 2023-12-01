@@ -35,7 +35,7 @@ public interface OpenDeviceIdentifierService extends IInterface {
         public static class Proxy implements OpenDeviceIdentifierService {
 
             /* renamed from: a  reason: collision with root package name */
-            public static OpenDeviceIdentifierService f41014a;
+            public static OpenDeviceIdentifierService f27323a;
             private IBinder b;
 
             @Override // com.uodis.opendevice.aidl.OpenDeviceIdentifierService
@@ -89,7 +89,7 @@ public interface OpenDeviceIdentifierService extends IInterface {
         }
 
         public static OpenDeviceIdentifierService c() {
-            return Proxy.f41014a;
+            return Proxy.f27323a;
         }
 
         /* JADX WARN: Type inference failed for: r0v0, types: [java.lang.Throwable, java.lang.Runtime] */

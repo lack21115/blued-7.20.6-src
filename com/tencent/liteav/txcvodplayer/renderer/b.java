@@ -7,11 +7,11 @@ import java.lang.ref.WeakReference;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    int f36562a;
+    int f22871a;
     int b;
 
     /* renamed from: c  reason: collision with root package name */
-    int f36563c;
+    int f22872c;
     int d = 0;
     private WeakReference<View> e;
     private int f;

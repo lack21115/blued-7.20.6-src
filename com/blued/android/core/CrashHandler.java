@@ -3,21 +3,16 @@ package com.blued.android.core;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Process;
-import com.huawei.hms.framework.common.hianalytics.CrashHianalyticsData;
 import java.lang.Thread;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/CrashHandler.class */
 public class CrashHandler implements Thread.UncaughtExceptionHandler {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f9490a;
+    private Context a;
     private CrashInfoInterface b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private Thread.UncaughtExceptionHandler f9491c;
+    private Thread.UncaughtExceptionHandler c;
 
     private boolean a() {
-        SharedPreferences sharedPreferences = this.f9490a.getSharedPreferences("bd_crash", 0);
+        SharedPreferences sharedPreferences = this.a.getSharedPreferences("bd_crash", 0);
         long j = sharedPreferences.getLong("crash_time", 0L);
         int i = sharedPreferences.getInt("crash_count", 0);
         long currentTimeMillis = System.currentTimeMillis();
@@ -51,7 +46,7 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
         if (crashInfoInterface != null) {
             crashInfoInterface.a(th);
         }
-        AppMethods.a(AppInfo.d(), th, AppMethods.a(CrashHianalyticsData.EVENT_ID_CRASH), this.b);
+        AppMethods.a(AppInfo.d(), th, AppMethods.a("crash"), this.b);
         try {
             Thread.sleep(1000L);
         } catch (Exception e) {
@@ -64,7 +59,7 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
     @Override // java.lang.Thread.UncaughtExceptionHandler
     public void uncaughtException(Thread thread, Throwable th) {
         Thread.UncaughtExceptionHandler uncaughtExceptionHandler;
-        if (a(th) || (uncaughtExceptionHandler = this.f9491c) == null) {
+        if (a(th) || (uncaughtExceptionHandler = this.c) == null) {
             System.exit(16);
         } else {
             uncaughtExceptionHandler.uncaughtException(thread, th);

@@ -14,38 +14,34 @@ import java.io.UnsupportedEncodingException;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/utils/FileCache.class */
 public class FileCache {
-
-    /* renamed from: a  reason: collision with root package name */
-    String f10080a;
+    String a;
     String b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/utils/FileCache$SingletonCreator.class */
     public static class SingletonCreator {
-
-        /* renamed from: a  reason: collision with root package name */
-        private static final FileCache f10081a = new FileCache();
+        private static final FileCache a = new FileCache();
 
         private SingletonCreator() {
         }
     }
 
     private FileCache() {
-        this.f10080a = null;
+        this.a = null;
         this.b = null;
         c();
     }
 
     public static String a(String str) {
-        String a2 = ProviderHolder.a().b().a();
+        String a = ProviderHolder.a().b().a();
         FileCache b = b();
-        return b.b(a2 + str);
+        return b.b(a + str);
     }
 
     public static void a(String str, String str2) {
-        String a2 = ProviderHolder.a().b().a();
+        String a = ProviderHolder.a().b().a();
         FileCache b = b();
-        b.b(a2 + str, str2);
+        b.b(a + str, str2);
     }
 
     public static boolean a() {
@@ -53,7 +49,7 @@ public class FileCache {
     }
 
     private static FileCache b() {
-        return SingletonCreator.f10081a;
+        return SingletonCreator.a;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -214,15 +210,15 @@ public class FileCache {
         if (externalFilesDir != null) {
             File file = new File(externalFilesDir, "filecache");
             if (file.exists() || file.mkdirs()) {
-                this.f10080a = file.getAbsolutePath();
+                this.a = file.getAbsolutePath();
             }
         }
         File filesDir = AppInfo.d().getFilesDir();
         if (filesDir != null) {
             File file2 = new File(filesDir, "filecache");
             if (file2.exists() || file2.mkdirs()) {
-                if (TextUtils.isEmpty(this.f10080a)) {
-                    this.f10080a = file2.getAbsolutePath();
+                if (TextUtils.isEmpty(this.a)) {
+                    this.a = file2.getAbsolutePath();
                 } else {
                     this.b = file2.getAbsolutePath();
                 }
@@ -247,7 +243,7 @@ public class FileCache {
         /*
             r4 = this;
             r0 = r4
-            java.lang.String r0 = r0.f10080a
+            java.lang.String r0 = r0.a
             boolean r0 = android.text.TextUtils.isEmpty(r0)
             if (r0 == 0) goto Lc
             r0 = 0
@@ -256,7 +252,7 @@ public class FileCache {
             java.io.File r0 = new java.io.File
             r1 = r0
             r2 = r4
-            java.lang.String r2 = r2.f10080a
+            java.lang.String r2 = r2.a
             r1.<init>(r2)
             r6 = r0
             r0 = r6
@@ -281,7 +277,7 @@ public class FileCache {
             java.lang.StringBuilder r0 = r0.append(r1)
             r0 = r5
             r1 = r4
-            java.lang.String r1 = r1.f10080a
+            java.lang.String r1 = r1.a
             java.lang.StringBuilder r0 = r0.append(r1)
             java.lang.String r0 = "FileCache"
             r1 = r5
@@ -294,7 +290,7 @@ public class FileCache {
             java.io.File r0 = new java.io.File
             r1 = r0
             r2 = r4
-            java.lang.String r2 = r2.f10080a
+            java.lang.String r2 = r2.a
             r1.<init>(r2)
             r6 = r0
             r0 = r6

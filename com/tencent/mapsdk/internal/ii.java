@@ -10,19 +10,19 @@ import com.tencent.tmsqmsp.oaid2.VendorManager;
 public final class ii {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f37558a = "TMS-Oaid";
+    private static final String f23867a = "TMS-Oaid";
     private static String b = "";
 
     /* renamed from: c  reason: collision with root package name */
-    private static boolean f37559c = true;
+    private static boolean f23868c = true;
     private static IVendorCallback d = new a();
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/mapsdk/internal/ii$a.class */
     public static final class a implements IVendorCallback {
         @Override // com.tencent.tmsqmsp.oaid2.IVendorCallback
         public void onResult(boolean z, String str, String str2) {
-            Log.e(ii.f37558a, "isSupport: " + z + " s: " + str + " oaid: " + str2);
-            boolean unused = ii.f37559c = z;
+            Log.e(ii.f23867a, "isSupport: " + z + " s: " + str + " oaid: " + str2);
+            boolean unused = ii.f23868c = z;
             if (z) {
                 String unused2 = ii.b = str2;
             }
@@ -30,8 +30,8 @@ public final class ii {
     }
 
     public static String a(Context context) {
-        if (f37559c) {
-            if (TextUtils.isEmpty(b) || !f37559c) {
+        if (f23868c) {
+            if (TextUtils.isEmpty(b) || !f23868c) {
                 try {
                     new VendorManager().getVendorInfo(context, d);
                 } catch (Exception e) {

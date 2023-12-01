@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentUserJobForModifyBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f28997a;
+    private final LinearLayout f15307a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f28997a;
+        return this.f15307a;
     }
 }

@@ -7,6 +7,7 @@ import android.util.Log;
 import com.anythink.expressad.exoplayer.j.s;
 import com.anythink.expressad.exoplayer.k.af;
 import com.google.common.net.HttpHeaders;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.EOFException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -26,7 +27,7 @@ import java.util.regex.Pattern;
 public final class p implements s {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f7597a = 8000;
+    public static final int f4758a = 8000;
     public static final int b = 8000;
     private static final String d = "DefaultHttpDataSource";
     private static final int e = 20;
@@ -103,7 +104,7 @@ public final class p implements s {
             httpURLConnection.setRequestProperty(entry2.getKey(), entry2.getValue());
         }
         if (j != 0 || j2 != -1) {
-            String str = "bytes=" + j + "-";
+            String str = "bytes=" + j + Constants.ACCEPT_TIME_SEPARATOR_SERVER;
             String str2 = str;
             if (j2 != -1) {
                 str2 = str + ((j + j2) - 1);
@@ -144,7 +145,7 @@ public final class p implements s {
     }
 
     private static void a(HttpURLConnection httpURLConnection, long j) {
-        if (af.f7632a == 19 || af.f7632a == 20) {
+        if (af.f4793a == 19 || af.f4793a == 20) {
             try {
                 InputStream inputStream = httpURLConnection.getInputStream();
                 if (j == -1) {
@@ -328,7 +329,7 @@ public final class p implements s {
         this.x = 0L;
         this.w = 0L;
         try {
-            URL url = new URL(kVar.f7584c.toString());
+            URL url = new URL(kVar.f4745c.toString());
             byte[] bArr = kVar.d;
             long j = kVar.f;
             long j2 = kVar.g;
@@ -416,10 +417,10 @@ public final class p implements s {
                 }
             } catch (IOException e3) {
                 j();
-                throw new s.c("Unable to connect to " + kVar.f7584c.toString(), e3, kVar);
+                throw new s.c("Unable to connect to " + kVar.f4745c.toString(), e3, kVar);
             }
         } catch (IOException e4) {
-            throw new s.c("Unable to connect to " + kVar.f7584c.toString(), e4, kVar);
+            throw new s.c("Unable to connect to " + kVar.f4745c.toString(), e4, kVar);
         }
     }
 

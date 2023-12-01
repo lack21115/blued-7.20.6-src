@@ -6,7 +6,7 @@ import android.content.res.Configuration;
 public class f implements com.anythink.expressad.video.signal.i {
 
     /* renamed from: a  reason: collision with root package name */
-    protected static final String f8517a = "js";
+    protected static final String f5677a = "js";
 
     @Override // com.anythink.expressad.video.signal.i
     public String a() {

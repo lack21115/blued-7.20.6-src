@@ -4,7 +4,6 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.os.Build;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.cdo.oaps.ad.OapsKey;
 import org.xmlpull.v1.XmlPullParser;
 
@@ -68,7 +67,7 @@ public class i extends b {
             this.V = new com.zk_oaction.adengine.lk_expression.a(this.t, "number", xmlPullParser.getAttributeValue(null, "number"), 0.0f, null, false);
             for (int i = 0; i < 10; i++) {
                 try {
-                    this.W[i] = this.t.a(this.T + BridgeUtil.UNDERLINE_STR + i + this.U, this, 3);
+                    this.W[i] = this.t.a(this.T + "_" + i + this.U, this, 3);
                 } catch (Exception e) {
                 }
             }
@@ -79,7 +78,7 @@ public class i extends b {
         return a(xmlPullParser, str);
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
+    @Override // android.view.View
     public void draw(Canvas canvas) {
         try {
             String str = "" + ((int) this.V.a());

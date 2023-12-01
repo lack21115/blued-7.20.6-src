@@ -1,6 +1,7 @@
 package com.tencent.mapsdk.internal;
 
 import android.util.Log;
+import com.kwad.components.offline.api.tk.model.report.TKDownloadReason;
 import com.tencent.map.tools.net.NetManager;
 import com.tencent.map.tools.net.NetResponse;
 import com.tencent.mapsdk.core.components.protocol.jce.conf.CSFileUpdateReq;
@@ -20,11 +21,11 @@ public class pf {
     private static final String g = "UTF-8";
 
     /* renamed from: a  reason: collision with root package name */
-    private WeakReference<rf> f37693a;
+    private WeakReference<rf> f24002a;
     private List<FileUpdateReq> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f37694c;
+    private String f24003c;
     private String d;
     private String e;
     private int f;
@@ -106,11 +107,11 @@ public class pf {
             case true:
             case true:
             case true:
-                return a(fileUpdateRsp, this.f37694c, false);
+                return a(fileUpdateRsp, this.f24003c, false);
             case true:
                 return a(fileUpdateRsp, this.d, true);
             case true:
-                return a(fileUpdateRsp, this.f37694c, true);
+                return a(fileUpdateRsp, this.f24003c, true);
             default:
                 return null;
         }
@@ -123,20 +124,20 @@ public class pf {
         String b = b(fileUpdateRsp.sName);
         File file = new File(str + b);
         s6.c a2 = a(b, fileUpdateRsp.sUpdateUrl, file);
-        na.c("net", "fileUpdateRsp.sName = " + fileUpdateRsp.sName);
+        na.c(TKDownloadReason.KSAD_TK_NET, "fileUpdateRsp.sName = " + fileUpdateRsp.sName);
         if (a2 != null) {
             a2.b = fileUpdateRsp.sName;
             return a2;
         }
         try {
             String a3 = wa.a(file);
-            na.c("net", "fileMd5 = " + a3);
+            na.c(TKDownloadReason.KSAD_TK_NET, "fileMd5 = " + a3);
             if (!fileUpdateRsp.sMd5.equals(a3)) {
                 s6.c cVar = new s6.c();
                 cVar.b = fileUpdateRsp.sName;
                 cVar.d = fileUpdateRsp.sMd5;
                 cVar.e = a3;
-                na.c("net", "error md5 1");
+                na.c(TKDownloadReason.KSAD_TK_NET, "error md5 1");
                 return cVar;
             }
             if (z) {
@@ -147,21 +148,21 @@ public class pf {
                     na.b(th.getMessage());
                     s6.c cVar2 = new s6.c();
                     cVar2.b = fileUpdateRsp.sName;
-                    na.c("net", "error unzip");
+                    na.c(TKDownloadReason.KSAD_TK_NET, "error unzip");
                     return cVar2;
                 }
             }
-            WeakReference<rf> weakReference = this.f37693a;
+            WeakReference<rf> weakReference = this.f24002a;
             if (weakReference == null || weakReference.get() == null) {
                 return null;
             }
-            this.f37693a.get().f37751a = true;
+            this.f24002a.get().f24060a = true;
             return null;
         } catch (Exception e) {
             na.b(e.getMessage());
             s6.c cVar3 = new s6.c();
             cVar3.b = fileUpdateRsp.sName;
-            na.c("net", "error md5 2 " + e.getMessage());
+            na.c(TKDownloadReason.KSAD_TK_NET, "error md5 2 " + e.getMessage());
             return cVar3;
         }
     }
@@ -284,14 +285,14 @@ public class pf {
                 StringBuilder sb = new StringBuilder();
                 sb.append("rsp = ");
                 sb.append(configFileUpdate != null ? Integer.valueOf(configFileUpdate.statusCode) : com.igexin.push.core.b.l);
-                na.c("net", sb.toString());
+                na.c(TKDownloadReason.KSAD_TK_NET, sb.toString());
                 return null;
             }
             m mVar = new m(bArr);
             mVar.a("UTF-8");
             SCFileUpdateRsp sCFileUpdateRsp = new SCFileUpdateRsp();
             sCFileUpdateRsp.readFrom(mVar);
-            na.c("net", "scrsp.iRet = " + sCFileUpdateRsp.iRet);
+            na.c(TKDownloadReason.KSAD_TK_NET, "scrsp.iRet = " + sCFileUpdateRsp.iRet);
             if (sCFileUpdateRsp.iRet == 0) {
                 return sCFileUpdateRsp.vItems;
             }
@@ -306,7 +307,7 @@ public class pf {
         rf rfVar;
         WeakReference<h1>[] c2;
         h1 h1Var;
-        WeakReference<rf> weakReference = this.f37693a;
+        WeakReference<rf> weakReference = this.f24002a;
         if (weakReference == null || (rfVar = weakReference.get()) == null || (c2 = rfVar.c()) == null) {
             return;
         }
@@ -321,7 +322,7 @@ public class pf {
                 if (w == null) {
                     return;
                 }
-                cVar.f37996c -= w.a();
+                cVar.f24305c -= w.a();
                 w.l().a(cVar);
             }
             i = i2 + 1;
@@ -330,13 +331,13 @@ public class pf {
 
     private String b(String str) {
         if (str.equals(k4.i)) {
-            return k4.f37583a;
+            return k4.f23892a;
         }
         if (str.equals(k4.l)) {
             return k4.b;
         }
         if (str.equals(k4.m)) {
-            return k4.f37584c;
+            return k4.f23893c;
         }
         if (str.equals(k4.n)) {
             return k4.e;
@@ -356,12 +357,12 @@ public class pf {
             return null;
         }
         this.b = cSFileUpdateReq.vItems;
-        this.f37694c = str;
+        this.f24003c = str;
         this.d = str2;
-        this.f37693a = new WeakReference<>(rfVar);
+        this.f24002a = new WeakReference<>(rfVar);
         this.e = str3;
         List<FileUpdateRsp> a2 = a(cSFileUpdateReq);
-        na.c("net", "rspList = " + a2);
+        na.c(TKDownloadReason.KSAD_TK_NET, "rspList = " + a2);
         if (a2 == null || a2.isEmpty()) {
             return null;
         }
@@ -375,10 +376,10 @@ public class pf {
                 } else {
                     a3.f = -1;
                 }
-                a3.f37996c = System.currentTimeMillis();
+                a3.f24305c = System.currentTimeMillis();
                 a(a3);
-                na.c("net", "fileUpdateRsp = " + fileUpdateRsp);
-                na.c("net", "failUpdate = " + a3);
+                na.c(TKDownloadReason.KSAD_TK_NET, "fileUpdateRsp = " + fileUpdateRsp);
+                na.c(TKDownloadReason.KSAD_TK_NET, "failUpdate = " + a3);
                 return null;
             }
             this.f--;

@@ -2,7 +2,6 @@ package com.soft.blued.ui.user.fragment;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
-import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -19,11 +18,15 @@ import android.widget.RelativeLayout;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.LifecycleOwner;
+import androidx.viewbinding.ViewBinding;
+import com.anythink.expressad.a;
 import com.blued.android.chat.utils.ChatHelper;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.image.ImageLoader;
+import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.ui.ActivityFragmentActive;
 import com.blued.android.core.ui.BaseFragmentActivity;
 import com.blued.android.core.ui.StatusBarHelper;
@@ -102,7 +105,7 @@ public final class VirtualImageFragment extends MVIBaseFragment<VirtualImageVM> 
     private final int o;
 
     /* renamed from: c  reason: collision with root package name */
-    static final /* synthetic */ KProperty<Object>[] f34183c = {Reflection.a(new PropertyReference1Impl(VirtualImageFragment.class, "vb", "getVb()Lcom/soft/blued/databinding/FmVirtualImageBinding;", 0))};
+    static final /* synthetic */ KProperty<Object>[] f20492c = {(KProperty) Reflection.a(new PropertyReference1Impl(VirtualImageFragment.class, "vb", "getVb()Lcom/soft/blued/databinding/FmVirtualImageBinding;", 0))};
     public static final Companion b = new Companion(null);
 
     @Metadata
@@ -147,18 +150,18 @@ public final class VirtualImageFragment extends MVIBaseFragment<VirtualImageVM> 
     }
 
     public VirtualImageFragment() {
-        super(R.layout.fm_virtual_image);
-        this.d = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<VirtualImageFragment, FmVirtualImageBinding>() { // from class: com.soft.blued.ui.user.fragment.VirtualImageFragment$special$$inlined$viewBindingFragment$default$1
-            @Override // kotlin.jvm.functions.Function1
+        super((int) R.layout.fm_virtual_image);
+        this.d = ((Fragment) this) instanceof DialogFragment ? (ViewBindingProperty) new DialogFragmentViewBindingProperty(new Function1<VirtualImageFragment, FmVirtualImageBinding>() { // from class: com.soft.blued.ui.user.fragment.VirtualImageFragment$special$$inlined$viewBindingFragment$default$1
+            /* JADX WARN: Incorrect types in method signature: (Lcom/soft/blued/ui/user/fragment/VirtualImageFragment;)Lcom/soft/blued/databinding/FmVirtualImageBinding; */
             /* renamed from: a */
-            public final FmVirtualImageBinding invoke(VirtualImageFragment fragment) {
+            public final ViewBinding invoke(Fragment fragment) {
                 Intrinsics.e(fragment, "fragment");
                 return FmVirtualImageBinding.a(fragment.requireView());
             }
         }) : new FragmentViewBindingProperty(new Function1<VirtualImageFragment, FmVirtualImageBinding>() { // from class: com.soft.blued.ui.user.fragment.VirtualImageFragment$special$$inlined$viewBindingFragment$default$2
-            @Override // kotlin.jvm.functions.Function1
+            /* JADX WARN: Incorrect types in method signature: (Lcom/soft/blued/ui/user/fragment/VirtualImageFragment;)Lcom/soft/blued/databinding/FmVirtualImageBinding; */
             /* renamed from: a */
-            public final FmVirtualImageBinding invoke(VirtualImageFragment fragment) {
+            public final ViewBinding invoke(Fragment fragment) {
                 Intrinsics.e(fragment, "fragment");
                 return FmVirtualImageBinding.a(fragment.requireView());
             }
@@ -190,29 +193,25 @@ public final class VirtualImageFragment extends MVIBaseFragment<VirtualImageVM> 
         imageView.setY(pointF.y - BluedViewExtKt.a(65));
         imageView.setVisibility(0);
         ImageLoader.c(getFragmentActive(), "anim_virtual_image_guide_nudge.png").f().a(new ImageLoader.OnAnimationStateListener() { // from class: com.soft.blued.ui.user.fragment.VirtualImageFragment$playDoubleTapAnim$1$1
-            @Override // com.blued.android.core.image.ImageLoader.OnAnimationStateListener
             public void a() {
             }
 
-            @Override // com.blued.android.core.image.ImageLoader.OnAnimationStateListener
             public void b() {
-                ImageView.this.setVisibility(8);
+                imageView.setVisibility(8);
             }
         }).a(imageView);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(final VirtualImageFragment this$0, View view) {
+    public static final void a(final VirtualImageFragment virtualImageFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
+        Intrinsics.e(virtualImageFragment, "this$0");
         EventTrackPersonalProfile.a(PersonalProfileProtos.Event.PERSONAL_VIRTUAL_PAGE_SHARE_CLICK);
         PermissionUtils.f(new PermissionCallbacks() { // from class: com.soft.blued.ui.user.fragment.VirtualImageFragment$initView$1$1$1
-            @Override // com.blued.android.framework.permission.PermissionCallbacks
             public void U_() {
                 VirtualImageFragment.this.p();
             }
 
-            @Override // com.blued.android.framework.permission.PermissionCallbacks
             public void a(String[] strArr) {
             }
         });
@@ -220,7 +219,7 @@ public final class VirtualImageFragment extends MVIBaseFragment<VirtualImageVM> 
 
     /* JADX INFO: Access modifiers changed from: private */
     public final FmVirtualImageBinding b() {
-        return (FmVirtualImageBinding) this.d.b(this, f34183c[0]);
+        return (FmVirtualImageBinding) this.d.b(this, f20492c[0]);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -234,7 +233,7 @@ public final class VirtualImageFragment extends MVIBaseFragment<VirtualImageVM> 
         BluedPreferences.a(this.j, currentTimeMillis);
         EventTrackPersonalProfile.b(PersonalProfileProtos.Event.PERSONAL_VIRTUAL_PAGE_CLICK, this.j);
         long a2 = StringUtils.a(this.j, 0L);
-        StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
+        StringCompanionObject stringCompanionObject = StringCompanionObject.a;
         String string = getString(i);
         Intrinsics.c(string, "getString(stringId)");
         String format = String.format(string, Arrays.copyOf(new Object[]{UserInfo.getInstance().getLoginUserInfo().name}, 1));
@@ -243,11 +242,11 @@ public final class VirtualImageFragment extends MVIBaseFragment<VirtualImageVM> 
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(VirtualImageFragment this$0, View view) {
+    public static final void b(VirtualImageFragment virtualImageFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
+        Intrinsics.e(virtualImageFragment, "this$0");
         EventTrackPersonalProfile.a(PersonalProfileProtos.Event.PERSONAL_VIRTUAL_PAGE_EDIT_CLICK);
-        this$0.d();
+        virtualImageFragment.d();
     }
 
     private final void c() {
@@ -255,15 +254,15 @@ public final class VirtualImageFragment extends MVIBaseFragment<VirtualImageVM> 
         if (b2 == null) {
             return;
         }
-        if (Intrinsics.a((Object) this.j, (Object) UserInfo.getInstance().getLoginUserInfo().uid)) {
+        if (Intrinsics.a(this.j, UserInfo.getInstance().getLoginUserInfo().uid)) {
             b2.b.setVisibility(8);
             b2.n.setVisibility(0);
-            b2.f28773c.setVisibility(0);
+            b2.f15083c.setVisibility(0);
             b2.e.setVisibility(0);
         } else {
             b2.b.setVisibility(0);
             b2.n.setVisibility(8);
-            b2.f28773c.setVisibility(8);
+            b2.f15083c.setVisibility(8);
             b2.e.setVisibility(8);
         }
         if (this.l) {
@@ -278,40 +277,38 @@ public final class VirtualImageFragment extends MVIBaseFragment<VirtualImageVM> 
             return;
         }
         XPopup.Builder a2 = new XPopup.Builder(context).a(new SimpleCallback() { // from class: com.soft.blued.ui.user.fragment.VirtualImageFragment$showGuidePop$1$1
-            @Override // com.blued.android.framework.ui.xpop.interfaces.SimpleCallback, com.blued.android.framework.ui.xpop.interfaces.XPopupCallback
-            public void c(BasePopupView popupView) {
-                Intrinsics.e(popupView, "popupView");
-                super.c(popupView);
+            public void c(BasePopupView basePopupView) {
+                Intrinsics.e(basePopupView, "popupView");
+                super.c(basePopupView);
             }
 
-            @Override // com.blued.android.framework.ui.xpop.interfaces.SimpleCallback, com.blued.android.framework.ui.xpop.interfaces.XPopupCallback
-            public void d(BasePopupView popupView) {
-                Intrinsics.e(popupView, "popupView");
-                super.d(popupView);
+            public void d(BasePopupView basePopupView) {
+                Intrinsics.e(basePopupView, "popupView");
+                super.d(basePopupView);
             }
         });
-        ActivityFragmentActive fragmentActive = getFragmentActive();
+        IRequestHost fragmentActive = getFragmentActive();
         Intrinsics.c(fragmentActive, "fragmentActive");
-        a2.a((BasePopupView) new VirtualImageDoubleTapGuide(context, i, fragmentActive)).h();
+        a2.a(new VirtualImageDoubleTapGuide(context, i, fragmentActive)).h();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void c(VirtualImageFragment this$0, View view) {
+    public static final void c(VirtualImageFragment virtualImageFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.onBackPressed();
+        Intrinsics.e(virtualImageFragment, "this$0");
+        virtualImageFragment.onBackPressed();
     }
 
     private final void d() {
         List<VirtualImageModel.CategoryModel> list = this.e;
         boolean z = false;
         if (list == null || list.isEmpty()) {
-            BluedStructureExtKt.a(this, VirtualImageAction.GetImageCategory.f34317a);
+            BluedStructureExtKt.a(this, VirtualImageAction.GetImageCategory.f20626a);
             return;
         }
         VirtualImageFragment virtualImageFragment = this;
-        BluedStructureExtKt.a(virtualImageFragment, VirtualImageAction.GetBeanCount.f34315a);
-        BluedStructureExtKt.a(virtualImageFragment, VirtualImageAction.GetMarketingPicture.f34318a);
+        BluedStructureExtKt.a(virtualImageFragment, VirtualImageAction.GetBeanCount.f20624a);
+        BluedStructureExtKt.a(virtualImageFragment, VirtualImageAction.GetMarketingPicture.f20627a);
         if (getContext() == null) {
             return;
         }
@@ -328,16 +325,16 @@ public final class VirtualImageFragment extends MVIBaseFragment<VirtualImageVM> 
                     if (frameLayout != null) {
                         frameLayout.setVisibility(0);
                     }
-                    VirtualImageFragment.this.getChildFragmentManager().beginTransaction().remove(virtualImageSelectFragment).commitAllowingStateLoss();
-                    FragmentActivity activity = virtualImageSelectFragment.getActivity();
+                    VirtualImageFragment.this.getChildFragmentManager().beginTransaction().remove((Fragment) virtualImageSelectFragment).commitAllowingStateLoss();
+                    BaseFragmentActivity activity = virtualImageSelectFragment.getActivity();
                     BaseFragmentActivity baseFragmentActivity = null;
                     if (activity instanceof BaseFragmentActivity) {
-                        baseFragmentActivity = (BaseFragmentActivity) activity;
+                        baseFragmentActivity = activity;
                     }
                     if (baseFragmentActivity == null) {
                         return;
                     }
-                    baseFragmentActivity.a((BaseFragmentActivity.IOnBackPressedListener) VirtualImageFragment.this);
+                    baseFragmentActivity.a(VirtualImageFragment.this);
                 }
             });
             List<VirtualImageModel.CategoryModel> list2 = this.e;
@@ -361,7 +358,7 @@ public final class VirtualImageFragment extends MVIBaseFragment<VirtualImageVM> 
         }
         VirtualImageSelectFragment virtualImageSelectFragment2 = this.h;
         if (virtualImageSelectFragment2 != null) {
-            getChildFragmentManager().beginTransaction().add(R.id.fl_select_goods_layout, virtualImageSelectFragment2, "virtualImageSelect").commitAllowingStateLoss();
+            getChildFragmentManager().beginTransaction().add(R.id.fl_select_goods_layout, (Fragment) virtualImageSelectFragment2, "virtualImageSelect").commitAllowingStateLoss();
         }
         FmVirtualImageBinding b2 = b();
         FrameLayout frameLayout = b2 == null ? null : b2.e;
@@ -372,10 +369,10 @@ public final class VirtualImageFragment extends MVIBaseFragment<VirtualImageVM> 
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void d(VirtualImageFragment this$0, View view) {
+    public static final void d(VirtualImageFragment virtualImageFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        BluedStructureExtKt.a(this$0, VirtualImageAction.GetImageCategory.f34317a);
+        Intrinsics.e(virtualImageFragment, "this$0");
+        BluedStructureExtKt.a(virtualImageFragment, VirtualImageAction.GetImageCategory.f20626a);
     }
 
     private final ImageCallBack e() {
@@ -399,10 +396,10 @@ public final class VirtualImageFragment extends MVIBaseFragment<VirtualImageVM> 
             }
 
             @Override // com.soft.blued.ui.user.fragment.VirtualImageFragment.ImageCallBack
-            public void a(int i, VirtualImageModel.ImageGoodsModel good) {
+            public void a(int i, VirtualImageModel.ImageGoodsModel imageGoodsModel) {
                 FmVirtualImageBinding b2;
                 VirtualImageUtils virtualImageUtils;
-                Intrinsics.e(good, "good");
+                Intrinsics.e(imageGoodsModel, "good");
                 b2 = VirtualImageFragment.this.b();
                 if (b2 == null) {
                     return;
@@ -413,18 +410,18 @@ public final class VirtualImageFragment extends MVIBaseFragment<VirtualImageVM> 
                 Intrinsics.c(frameLayout, "it.fmImage");
                 ActivityFragmentActive fragmentActive = virtualImageFragment.getFragmentActive();
                 Intrinsics.c(fragmentActive, "fragmentActive");
-                virtualImageUtils.selectedGood(good, frameLayout, fragmentActive);
+                virtualImageUtils.selectedGood(imageGoodsModel, frameLayout, (IRequestHost) fragmentActive);
             }
 
             @Override // com.soft.blued.ui.user.fragment.VirtualImageFragment.ImageCallBack
-            public void a(ImageView view, VirtualImageModel.ImageGoodsModel good) {
+            public void a(ImageView imageView, VirtualImageModel.ImageGoodsModel imageGoodsModel) {
                 VirtualImageUtils virtualImageUtils;
-                Intrinsics.e(view, "view");
-                Intrinsics.e(good, "good");
+                Intrinsics.e(imageView, a.B);
+                Intrinsics.e(imageGoodsModel, "good");
                 virtualImageUtils = VirtualImageFragment.this.g;
                 ActivityFragmentActive fragmentActive = VirtualImageFragment.this.getFragmentActive();
                 Intrinsics.c(fragmentActive, "fragmentActive");
-                virtualImageUtils.loadGoodIcon(view, good, fragmentActive);
+                virtualImageUtils.loadGoodIcon(imageView, imageGoodsModel, (IRequestHost) fragmentActive);
             }
 
             @Override // com.soft.blued.ui.user.fragment.VirtualImageFragment.ImageCallBack
@@ -442,18 +439,18 @@ public final class VirtualImageFragment extends MVIBaseFragment<VirtualImageVM> 
 
             @Override // com.soft.blued.ui.user.fragment.VirtualImageFragment.ImageCallBack
             public void c() {
-                BluedStructureExtKt.a(VirtualImageFragment.this, VirtualImageAction.GetImageCategory.f34317a);
+                BluedStructureExtKt.a(VirtualImageFragment.this, VirtualImageAction.GetImageCategory.f20626a);
             }
 
             @Override // com.soft.blued.ui.user.fragment.VirtualImageFragment.ImageCallBack
             public void d() {
-                BluedStructureExtKt.a(VirtualImageFragment.this, VirtualImageAction.GetBeanCount.f34315a);
+                BluedStructureExtKt.a(VirtualImageFragment.this, VirtualImageAction.GetBeanCount.f20624a);
             }
 
             @Override // com.soft.blued.ui.user.fragment.VirtualImageFragment.ImageCallBack
             public void e() {
                 VirtualImageFragment.this.k = 0;
-                BluedStructureExtKt.a(VirtualImageFragment.this, VirtualImageAction.GetImageCategory.f34317a);
+                BluedStructureExtKt.a(VirtualImageFragment.this, VirtualImageAction.GetImageCategory.f20626a);
                 VirtualImageFragment.BackListener a2 = VirtualImageFragment.this.a();
                 if (a2 == null) {
                     return;
@@ -464,10 +461,10 @@ public final class VirtualImageFragment extends MVIBaseFragment<VirtualImageVM> 
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void e(VirtualImageFragment this$0, View view) {
+    public static final void e(VirtualImageFragment virtualImageFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        b.a(this$0.getContext());
+        Intrinsics.e(virtualImageFragment, "this$0");
+        b.a(virtualImageFragment.getContext());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -479,7 +476,7 @@ public final class VirtualImageFragment extends MVIBaseFragment<VirtualImageVM> 
         }
         AnimatorSet animatorSet = new AnimatorSet();
         float a2 = ((AppInfo.m - BluedViewExtKt.a(320)) - BluedViewExtKt.a(40)) / BluedViewExtKt.a((int) LiveProtos.Event.LIVE_NOBLE_MSG_GO_CLICK_VALUE);
-        Log.e("xxx", Intrinsics.a("toSmallAnim scale=", (Object) Float.valueOf(a2)));
+        Log.e("xxx", Intrinsics.a("toSmallAnim scale=", Float.valueOf(a2)));
         ObjectAnimator ofFloat = ObjectAnimator.ofFloat(b2.g, "ScaleX", a2);
         ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(b2.g, "ScaleY", a2);
         ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat(b2.g, "translationY", BluedViewExtKt.a(-60));
@@ -531,7 +528,7 @@ public final class VirtualImageFragment extends MVIBaseFragment<VirtualImageVM> 
     }
 
     private final void i() {
-        if (Intrinsics.a((Object) this.j, (Object) UserInfo.getInstance().getLoginUserInfo().uid) || BluedPreferences.fq()) {
+        if (Intrinsics.a(this.j, UserInfo.getInstance().getLoginUserInfo().uid) || BluedPreferences.fq()) {
             return;
         }
         c(1);
@@ -539,9 +536,9 @@ public final class VirtualImageFragment extends MVIBaseFragment<VirtualImageVM> 
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void i(VirtualImageFragment this$0) {
-        Intrinsics.e(this$0, "this$0");
-        this$0.m = false;
+    public static final void i(VirtualImageFragment virtualImageFragment) {
+        Intrinsics.e(virtualImageFragment, "this$0");
+        virtualImageFragment.m = false;
     }
 
     private final void j() {
@@ -558,17 +555,16 @@ public final class VirtualImageFragment extends MVIBaseFragment<VirtualImageVM> 
                 super(1);
             }
 
-            public final void a(View it) {
-                Intrinsics.e(it, "it");
-                View.this.setVisibility(8);
+            public final void a(View view2) {
+                Intrinsics.e(view2, "it");
+                view.setVisibility(8);
                 this.c(2);
                 BluedPreferences.ae(true);
             }
 
-            @Override // kotlin.jvm.functions.Function1
-            public /* synthetic */ Unit invoke(View view2) {
-                a(view2);
-                return Unit.f42314a;
+            public /* synthetic */ Object invoke(Object obj) {
+                a((View) obj);
+                return Unit.a;
             }
         });
     }
@@ -605,7 +601,7 @@ public final class VirtualImageFragment extends MVIBaseFragment<VirtualImageVM> 
             relativeLayout.setVisibility(8);
         }
         FmVirtualImageBinding b3 = b();
-        ShapeRelativeLayout shapeRelativeLayout = b3 == null ? null : b3.f28773c;
+        ShapeRelativeLayout shapeRelativeLayout = b3 == null ? null : b3.f15083c;
         if (shapeRelativeLayout != null) {
             shapeRelativeLayout.setVisibility(8);
         }
@@ -633,7 +629,7 @@ public final class VirtualImageFragment extends MVIBaseFragment<VirtualImageVM> 
             frameLayout2.setVisibility(0);
         }
         bundle.putString("user_face", a3);
-        VirtualImageShareDialogFragment.Companion companion = VirtualImageShareDialogFragment.f34220a;
+        VirtualImageShareDialogFragment.Companion companion = VirtualImageShareDialogFragment.f20529a;
         FragmentActivity activity = getActivity();
         if (activity == null) {
             throw new NullPointerException("null cannot be cast to non-null type com.blued.android.core.ui.BaseFragmentActivity");
@@ -646,109 +642,104 @@ public final class VirtualImageFragment extends MVIBaseFragment<VirtualImageVM> 
         if (b2 == null) {
             return;
         }
-        View vHeader = b2.q;
-        Intrinsics.c(vHeader, "vHeader");
-        BluedViewExtKt.a(vHeader, new Function2<View, PointF, Unit>() { // from class: com.soft.blued.ui.user.fragment.VirtualImageFragment$initDoubleTapLayer$1$1
+        View view = b2.q;
+        Intrinsics.c(view, "vHeader");
+        BluedViewExtKt.a(view, new Function2<View, PointF, Unit>() { // from class: com.soft.blued.ui.user.fragment.VirtualImageFragment$initDoubleTapLayer$1$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(2);
             }
 
-            public final void a(View noName_0, PointF p) {
-                Intrinsics.e(noName_0, "$noName_0");
-                Intrinsics.e(p, "p");
-                VirtualImageFragment.this.a(p);
+            public final void a(View view2, PointF pointF) {
+                Intrinsics.e(view2, "$noName_0");
+                Intrinsics.e(pointF, "p");
+                VirtualImageFragment.this.a(pointF);
                 VirtualImageFragment.this.b((int) R.string.user_virtual_image_click_header);
             }
 
-            @Override // kotlin.jvm.functions.Function2
-            public /* synthetic */ Unit invoke(View view, PointF pointF) {
-                a(view, pointF);
-                return Unit.f42314a;
+            public /* synthetic */ Object invoke(Object obj, Object obj2) {
+                a((View) obj, (PointF) obj2);
+                return Unit.a;
             }
         });
-        View vUpperBody = b2.u;
-        Intrinsics.c(vUpperBody, "vUpperBody");
-        BluedViewExtKt.a(vUpperBody, new Function2<View, PointF, Unit>() { // from class: com.soft.blued.ui.user.fragment.VirtualImageFragment$initDoubleTapLayer$1$2
+        View view2 = b2.u;
+        Intrinsics.c(view2, "vUpperBody");
+        BluedViewExtKt.a(view2, new Function2<View, PointF, Unit>() { // from class: com.soft.blued.ui.user.fragment.VirtualImageFragment$initDoubleTapLayer$1$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(2);
             }
 
-            public final void a(View noName_0, PointF p) {
-                Intrinsics.e(noName_0, "$noName_0");
-                Intrinsics.e(p, "p");
-                VirtualImageFragment.this.a(p);
+            public final void a(View view3, PointF pointF) {
+                Intrinsics.e(view3, "$noName_0");
+                Intrinsics.e(pointF, "p");
+                VirtualImageFragment.this.a(pointF);
                 VirtualImageFragment.this.b((int) R.string.user_virtual_image_click_upper_body);
             }
 
-            @Override // kotlin.jvm.functions.Function2
-            public /* synthetic */ Unit invoke(View view, PointF pointF) {
-                a(view, pointF);
-                return Unit.f42314a;
+            public /* synthetic */ Object invoke(Object obj, Object obj2) {
+                a((View) obj, (PointF) obj2);
+                return Unit.a;
             }
         });
-        View vLowerBody = b2.s;
-        Intrinsics.c(vLowerBody, "vLowerBody");
-        BluedViewExtKt.a(vLowerBody, new Function2<View, PointF, Unit>() { // from class: com.soft.blued.ui.user.fragment.VirtualImageFragment$initDoubleTapLayer$1$3
+        View view3 = b2.s;
+        Intrinsics.c(view3, "vLowerBody");
+        BluedViewExtKt.a(view3, new Function2<View, PointF, Unit>() { // from class: com.soft.blued.ui.user.fragment.VirtualImageFragment$initDoubleTapLayer$1$3
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(2);
             }
 
-            public final void a(View noName_0, PointF p) {
-                Intrinsics.e(noName_0, "$noName_0");
-                Intrinsics.e(p, "p");
-                VirtualImageFragment.this.a(p);
+            public final void a(View view4, PointF pointF) {
+                Intrinsics.e(view4, "$noName_0");
+                Intrinsics.e(pointF, "p");
+                VirtualImageFragment.this.a(pointF);
                 VirtualImageFragment.this.b((int) R.string.user_virtual_image_click_lower_body);
             }
 
-            @Override // kotlin.jvm.functions.Function2
-            public /* synthetic */ Unit invoke(View view, PointF pointF) {
-                a(view, pointF);
-                return Unit.f42314a;
+            public /* synthetic */ Object invoke(Object obj, Object obj2) {
+                a((View) obj, (PointF) obj2);
+                return Unit.a;
             }
         });
-        View vLeftArm = b2.r;
-        Intrinsics.c(vLeftArm, "vLeftArm");
-        BluedViewExtKt.a(vLeftArm, new Function2<View, PointF, Unit>() { // from class: com.soft.blued.ui.user.fragment.VirtualImageFragment$initDoubleTapLayer$1$4
+        View view4 = b2.r;
+        Intrinsics.c(view4, "vLeftArm");
+        BluedViewExtKt.a(view4, new Function2<View, PointF, Unit>() { // from class: com.soft.blued.ui.user.fragment.VirtualImageFragment$initDoubleTapLayer$1$4
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(2);
             }
 
-            public final void a(View noName_0, PointF p) {
-                Intrinsics.e(noName_0, "$noName_0");
-                Intrinsics.e(p, "p");
-                VirtualImageFragment.this.a(p);
+            public final void a(View view5, PointF pointF) {
+                Intrinsics.e(view5, "$noName_0");
+                Intrinsics.e(pointF, "p");
+                VirtualImageFragment.this.a(pointF);
                 VirtualImageFragment.this.b((int) R.string.user_virtual_image_click_arm);
             }
 
-            @Override // kotlin.jvm.functions.Function2
-            public /* synthetic */ Unit invoke(View view, PointF pointF) {
-                a(view, pointF);
-                return Unit.f42314a;
+            public /* synthetic */ Object invoke(Object obj, Object obj2) {
+                a((View) obj, (PointF) obj2);
+                return Unit.a;
             }
         });
-        View vRightArm = b2.t;
-        Intrinsics.c(vRightArm, "vRightArm");
-        BluedViewExtKt.a(vRightArm, new Function2<View, PointF, Unit>() { // from class: com.soft.blued.ui.user.fragment.VirtualImageFragment$initDoubleTapLayer$1$5
+        View view5 = b2.t;
+        Intrinsics.c(view5, "vRightArm");
+        BluedViewExtKt.a(view5, new Function2<View, PointF, Unit>() { // from class: com.soft.blued.ui.user.fragment.VirtualImageFragment$initDoubleTapLayer$1$5
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(2);
             }
 
-            public final void a(View noName_0, PointF p) {
-                Intrinsics.e(noName_0, "$noName_0");
-                Intrinsics.e(p, "p");
-                VirtualImageFragment.this.a(p);
+            public final void a(View view6, PointF pointF) {
+                Intrinsics.e(view6, "$noName_0");
+                Intrinsics.e(pointF, "p");
+                VirtualImageFragment.this.a(pointF);
                 VirtualImageFragment.this.b((int) R.string.user_virtual_image_click_arm);
             }
 
-            @Override // kotlin.jvm.functions.Function2
-            public /* synthetic */ Unit invoke(View view, PointF pointF) {
-                a(view, pointF);
-                return Unit.f42314a;
+            public /* synthetic */ Object invoke(Object obj, Object obj2) {
+                a((View) obj, (PointF) obj2);
+                return Unit.a;
             }
         });
     }
@@ -762,7 +753,7 @@ public final class VirtualImageFragment extends MVIBaseFragment<VirtualImageVM> 
         String str = externalStoragePublicDirectory.getAbsolutePath() + ((Object) File.separator) + "blued";
         if (bitmap != null) {
             String valueOf = String.valueOf(System.currentTimeMillis());
-            if (Intrinsics.a((Object) Environment.MEDIA_MOUNTED, (Object) Environment.getExternalStorageState())) {
+            if (Intrinsics.a(Environment.MEDIA_MOUNTED, Environment.getExternalStorageState())) {
                 String str2 = str;
                 if (str == null) {
                     File externalStoragePublicDirectory2 = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
@@ -770,7 +761,7 @@ public final class VirtualImageFragment extends MVIBaseFragment<VirtualImageVM> 
                 }
                 String str3 = str2 + ((Object) File.separator) + valueOf;
                 if (Build.VERSION.SDK_INT >= 29 && !Environment.isExternalStorageLegacy()) {
-                    ImageUtils.a(bitmap, valueOf, Intrinsics.a(Environment.DIRECTORY_PICTURES, (Object) "/blued"), 100, false);
+                    ImageUtils.a(bitmap, valueOf, Intrinsics.a(Environment.DIRECTORY_PICTURES, "/blued"), 100, false);
                     return str3;
                 }
                 ImageUtils.b(bitmap, str3, 100, false);
@@ -794,9 +785,9 @@ public final class VirtualImageFragment extends MVIBaseFragment<VirtualImageVM> 
         FragmentActivity activity = getActivity();
         if (activity != null) {
             if (BluedSkinUtils.c()) {
-                StatusBarHelper.a((Activity) activity, true);
+                StatusBarHelper.a(activity, true);
             } else {
-                StatusBarHelper.a((Activity) activity, false);
+                StatusBarHelper.a(activity, false);
             }
         }
     }
@@ -817,7 +808,6 @@ public final class VirtualImageFragment extends MVIBaseFragment<VirtualImageVM> 
         }
     }
 
-    @Override // com.blued.android.module.common.base.mvi.MVIBaseFragment
     public void m() {
         int i = 0;
         if (BluedPreferences.ft()) {
@@ -826,17 +816,17 @@ public final class VirtualImageFragment extends MVIBaseFragment<VirtualImageVM> 
             BluedPreferences.fs();
         }
         EventTrackPersonalProfile.d(PersonalProfileProtos.Event.PERSONAL_VIRTUAL_PAGE_SHOW, this.j);
-        y().a(this.g);
+        ((VirtualImageVM) y()).a(this.g);
         FmVirtualImageBinding b2 = b();
         if (b2 != null) {
             ImageLoader.a(getFragmentActive(), (int) R.drawable.virtual_image_bg).a(b2.k);
-            b2.f28773c.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$VirtualImageFragment$icfvoJLPkocFkQhN_yIY9J48_T4
+            b2.f15083c.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$VirtualImageFragment$icfvoJLPkocFkQhN_yIY9J48_T4
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     VirtualImageFragment.a(VirtualImageFragment.this, view);
                 }
             });
-            b2.f28772a.setOnClickListener(new SingleClickProxy(new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$VirtualImageFragment$bH9SXSMEVb0fFAYwMlGaQgy1N3g
+            b2.f15082a.setOnClickListener((View.OnClickListener) new SingleClickProxy(new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$VirtualImageFragment$bH9SXSMEVb0fFAYwMlGaQgy1N3g
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     VirtualImageFragment.b(VirtualImageFragment.this, view);
@@ -849,7 +839,7 @@ public final class VirtualImageFragment extends MVIBaseFragment<VirtualImageVM> 
                 }
             });
             b2.l.setNoDataImg(2131233635);
-            b2.l.setNoDataStr(R.string.user_virtual_image_net_failed);
+            b2.l.setNoDataStr((int) R.string.user_virtual_image_net_failed);
             ShapeHelper.b(b2.l.getBtn(), 2131102203);
             Context context = getContext();
             if (context != null) {
@@ -871,30 +861,28 @@ public final class VirtualImageFragment extends MVIBaseFragment<VirtualImageVM> 
                 }
             });
             ConstraintLayout constraintLayout = b2.d;
-            if (Intrinsics.a((Object) this.j, (Object) UserInfo.getInstance().getLoginUserInfo().uid)) {
+            if (Intrinsics.a(this.j, UserInfo.getInstance().getLoginUserInfo().uid)) {
                 i = 8;
             } else {
                 q();
             }
             constraintLayout.setVisibility(i);
         }
-        if (Intrinsics.a((Object) this.j, (Object) UserInfo.getInstance().getLoginUserInfo().uid)) {
-            BluedStructureExtKt.a(this, VirtualImageAction.GetImageCategory.f34317a);
+        if (Intrinsics.a(this.j, UserInfo.getInstance().getLoginUserInfo().uid)) {
+            BluedStructureExtKt.a(this, VirtualImageAction.GetImageCategory.f20626a);
             return;
         }
-        String uid = this.j;
-        Intrinsics.c(uid, "uid");
-        BluedStructureExtKt.a(this, new VirtualImageAction.GetGuestImage(uid));
+        String str = this.j;
+        Intrinsics.c(str, "uid");
+        BluedStructureExtKt.a(this, new VirtualImageAction.GetGuestImage(str));
         j();
     }
 
-    @Override // com.blued.android.module.common.base.mvi.MVIBaseFragment
     public void o() {
         VirtualImageFragment virtualImageFragment = this;
         LifecycleOwner viewLifecycleOwner = getViewLifecycleOwner();
         Intrinsics.c(viewLifecycleOwner, "viewLifecycleOwner");
         BluedStructureExtKt.a(virtualImageFragment, viewLifecycleOwner, new MutablePropertyReference1Impl() { // from class: com.soft.blued.ui.user.fragment.VirtualImageFragment$liveDataObserver$1
-            @Override // kotlin.jvm.internal.MutablePropertyReference1Impl, kotlin.reflect.KProperty1
             public Object a(Object obj) {
                 return ((VirtualImageState) obj).getGuestGoodsList();
             }
@@ -904,10 +892,10 @@ public final class VirtualImageFragment extends MVIBaseFragment<VirtualImageVM> 
                 super(1);
             }
 
-            public final void a(List<VirtualImageModel.GuestImageGoodsModel> data) {
+            public final void a(List<VirtualImageModel.GuestImageGoodsModel> list) {
                 FmVirtualImageBinding b2;
                 VirtualImageUtils virtualImageUtils;
-                Intrinsics.e(data, "data");
+                Intrinsics.e(list, "data");
                 b2 = VirtualImageFragment.this.b();
                 if (b2 == null) {
                     return;
@@ -918,19 +906,17 @@ public final class VirtualImageFragment extends MVIBaseFragment<VirtualImageVM> 
                 Intrinsics.c(frameLayout, "it.fmImage");
                 ActivityFragmentActive fragmentActive = virtualImageFragment2.getFragmentActive();
                 Intrinsics.c(fragmentActive, "fragmentActive");
-                virtualImageUtils.initGuestImage(frameLayout, data, fragmentActive);
+                virtualImageUtils.initGuestImage(frameLayout, list, (IRequestHost) fragmentActive);
             }
 
-            @Override // kotlin.jvm.functions.Function1
-            public /* synthetic */ Unit invoke(List<? extends VirtualImageModel.GuestImageGoodsModel> list) {
-                a(list);
-                return Unit.f42314a;
+            public /* synthetic */ Object invoke(Object obj) {
+                a((List) obj);
+                return Unit.a;
             }
         });
         LifecycleOwner viewLifecycleOwner2 = getViewLifecycleOwner();
         Intrinsics.c(viewLifecycleOwner2, "viewLifecycleOwner");
         BluedStructureExtKt.a(virtualImageFragment, viewLifecycleOwner2, new MutablePropertyReference1Impl() { // from class: com.soft.blued.ui.user.fragment.VirtualImageFragment$liveDataObserver$3
-            @Override // kotlin.jvm.internal.MutablePropertyReference1Impl, kotlin.reflect.KProperty1
             public Object a(Object obj) {
                 return Integer.valueOf(((VirtualImageState) obj).getRedDot());
             }
@@ -949,16 +935,14 @@ public final class VirtualImageFragment extends MVIBaseFragment<VirtualImageVM> 
                 b2.o.setVisibility(i == 1 ? 0 : 8);
             }
 
-            @Override // kotlin.jvm.functions.Function1
-            public /* synthetic */ Unit invoke(Integer num) {
-                a(num.intValue());
-                return Unit.f42314a;
+            public /* synthetic */ Object invoke(Object obj) {
+                a(((Number) obj).intValue());
+                return Unit.a;
             }
         });
         LifecycleOwner viewLifecycleOwner3 = getViewLifecycleOwner();
         Intrinsics.c(viewLifecycleOwner3, "viewLifecycleOwner");
         BluedStructureExtKt.a(virtualImageFragment, viewLifecycleOwner3, new MutablePropertyReference1Impl() { // from class: com.soft.blued.ui.user.fragment.VirtualImageFragment$liveDataObserver$5
-            @Override // kotlin.jvm.internal.MutablePropertyReference1Impl, kotlin.reflect.KProperty1
             public Object a(Object obj) {
                 return ((VirtualImageState) obj).getAllCategoriesList();
             }
@@ -969,7 +953,7 @@ public final class VirtualImageFragment extends MVIBaseFragment<VirtualImageVM> 
             }
 
             /* JADX WARN: Code restructure failed: missing block: B:10:0x002d, code lost:
-                r0 = r3.f34197a.h;
+                r0 = r3.f20506a.h;
              */
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
@@ -1021,16 +1005,14 @@ public final class VirtualImageFragment extends MVIBaseFragment<VirtualImageVM> 
                 throw new UnsupportedOperationException("Method not decompiled: com.soft.blued.ui.user.fragment.VirtualImageFragment$liveDataObserver$6.a(java.util.List):void");
             }
 
-            @Override // kotlin.jvm.functions.Function1
-            public /* synthetic */ Unit invoke(List<? extends VirtualImageModel.CategoryModel> list) {
-                a(list);
-                return Unit.f42314a;
+            public /* synthetic */ Object invoke(Object obj) {
+                a((List) obj);
+                return Unit.a;
             }
         });
         LifecycleOwner viewLifecycleOwner4 = getViewLifecycleOwner();
         Intrinsics.c(viewLifecycleOwner4, "viewLifecycleOwner");
         BluedStructureExtKt.a(virtualImageFragment, viewLifecycleOwner4, new MutablePropertyReference1Impl() { // from class: com.soft.blued.ui.user.fragment.VirtualImageFragment$liveDataObserver$7
-            @Override // kotlin.jvm.internal.MutablePropertyReference1Impl, kotlin.reflect.KProperty1
             public Object a(Object obj) {
                 return ((VirtualImageState) obj).getAllPackageCategoriesList();
             }
@@ -1041,7 +1023,7 @@ public final class VirtualImageFragment extends MVIBaseFragment<VirtualImageVM> 
             }
 
             /* JADX WARN: Code restructure failed: missing block: B:10:0x002d, code lost:
-                r0 = r3.f34199a.h;
+                r0 = r3.f20508a.h;
              */
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
@@ -1093,15 +1075,13 @@ public final class VirtualImageFragment extends MVIBaseFragment<VirtualImageVM> 
                 throw new UnsupportedOperationException("Method not decompiled: com.soft.blued.ui.user.fragment.VirtualImageFragment$liveDataObserver$8.a(java.util.List):void");
             }
 
-            @Override // kotlin.jvm.functions.Function1
-            public /* synthetic */ Unit invoke(List<? extends VirtualImageModel.CategoryModel> list) {
-                a(list);
-                return Unit.f42314a;
+            public /* synthetic */ Object invoke(Object obj) {
+                a((List) obj);
+                return Unit.a;
             }
         });
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener
     public boolean onBackPressed() {
         if (this.m) {
             return true;
@@ -1122,7 +1102,6 @@ public final class VirtualImageFragment extends MVIBaseFragment<VirtualImageVM> 
         return true;
     }
 
-    @Override // com.blued.android.module.common.base.mvi.MVIBaseFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         try {
@@ -1147,12 +1126,11 @@ public final class VirtualImageFragment extends MVIBaseFragment<VirtualImageVM> 
         }
     }
 
-    @Override // com.blued.android.module.common.base.mvi.MVIBaseFragment
-    public void onEvent(UiEvent event) {
+    public void onEvent(UiEvent uiEvent) {
         VirtualImageSelectFragment virtualImageSelectFragment;
-        Intrinsics.e(event, "event");
-        if (event instanceof VirtualImageEvent.SaveEvent) {
-            if (!((VirtualImageEvent.SaveEvent) event).a()) {
+        Intrinsics.e(uiEvent, "event");
+        if (uiEvent instanceof VirtualImageEvent.SaveEvent) {
+            if (!((VirtualImageEvent.SaveEvent) uiEvent).a()) {
                 ToastUtils.b(getString(R.string.user_virtual_image_save_failed));
                 return;
             }
@@ -1162,20 +1140,20 @@ public final class VirtualImageFragment extends MVIBaseFragment<VirtualImageVM> 
                 virtualImageSelectFragment2.e();
             }
             this.g.updateRawGoodsIds();
-            BluedStructureExtKt.a(this, VirtualImageAction.GetImageCategory.f34317a);
-        } else if (event instanceof VirtualImageEvent.BeanCount) {
+            BluedStructureExtKt.a(this, VirtualImageAction.GetImageCategory.f20626a);
+        } else if (uiEvent instanceof VirtualImageEvent.BeanCount) {
             VirtualImageSelectFragment virtualImageSelectFragment3 = this.h;
             if (virtualImageSelectFragment3 == null) {
                 return;
             }
-            virtualImageSelectFragment3.a((int) ((VirtualImageEvent.BeanCount) event).a());
-        } else if (event instanceof VirtualImageEvent.ErrorEvent) {
+            virtualImageSelectFragment3.a((int) ((VirtualImageEvent.BeanCount) uiEvent).a());
+        } else if (uiEvent instanceof VirtualImageEvent.ErrorEvent) {
             n();
-        } else if (!(event instanceof VirtualImageEvent.GoodsEvent)) {
-            if (!(event instanceof VirtualImageEvent.MarketingPictureEvent) || (virtualImageSelectFragment = this.h) == null) {
+        } else if (!(uiEvent instanceof VirtualImageEvent.GoodsEvent)) {
+            if (!(uiEvent instanceof VirtualImageEvent.MarketingPictureEvent) || (virtualImageSelectFragment = this.h) == null) {
                 return;
             }
-            virtualImageSelectFragment.a(((VirtualImageEvent.MarketingPictureEvent) event).a());
+            virtualImageSelectFragment.a(((VirtualImageEvent.MarketingPictureEvent) uiEvent).a());
         } else {
             l();
             FmVirtualImageBinding b2 = b();
@@ -1185,10 +1163,10 @@ public final class VirtualImageFragment extends MVIBaseFragment<VirtualImageVM> 
             VirtualImageUtils virtualImageUtils = this.g;
             FrameLayout frameLayout = b2.g;
             Intrinsics.c(frameLayout, "it.fmImage");
-            List<VirtualImageModel.ImageGoodsModel> a2 = ((VirtualImageEvent.GoodsEvent) event).a();
+            List<VirtualImageModel.ImageGoodsModel> a2 = ((VirtualImageEvent.GoodsEvent) uiEvent).a();
             ActivityFragmentActive fragmentActive = getFragmentActive();
             Intrinsics.c(fragmentActive, "fragmentActive");
-            virtualImageUtils.initImage(frameLayout, a2, fragmentActive);
+            virtualImageUtils.initImage(frameLayout, a2, (IRequestHost) fragmentActive);
         }
     }
 }

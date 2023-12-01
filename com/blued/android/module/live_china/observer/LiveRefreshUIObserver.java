@@ -10,9 +10,7 @@ import java.util.Iterator;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/observer/LiveRefreshUIObserver.class */
 public class LiveRefreshUIObserver {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static LiveRefreshUIObserver f13948a = new LiveRefreshUIObserver();
+    private static LiveRefreshUIObserver a = new LiveRefreshUIObserver();
     private ArrayList<ILiveRefreshUIObserver> b = new ArrayList<>();
 
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/observer/LiveRefreshUIObserver$ILiveRefreshUIObserver.class */
@@ -118,7 +116,7 @@ public class LiveRefreshUIObserver {
     }
 
     public static LiveRefreshUIObserver a() {
-        return f13948a;
+        return a;
     }
 
     public void a(int i) {

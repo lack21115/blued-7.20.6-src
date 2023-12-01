@@ -12,39 +12,35 @@ import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/databinding/FragmentEventListBinding.class */
 public final class FragmentEventListBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final FloatFooterView f18854a;
+    public final FloatFooterView a;
     public final NoDataAndLoadFailView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final RecyclerView f18855c;
+    public final RecyclerView c;
     public final SmartRefreshLayout d;
     public final CommonTopTitleNoTrans e;
     private final ConstraintLayout f;
 
     private FragmentEventListBinding(ConstraintLayout constraintLayout, FloatFooterView floatFooterView, NoDataAndLoadFailView noDataAndLoadFailView, RecyclerView recyclerView, SmartRefreshLayout smartRefreshLayout, CommonTopTitleNoTrans commonTopTitleNoTrans) {
         this.f = constraintLayout;
-        this.f18854a = floatFooterView;
+        this.a = floatFooterView;
         this.b = noDataAndLoadFailView;
-        this.f18855c = recyclerView;
+        this.c = recyclerView;
         this.d = smartRefreshLayout;
         this.e = commonTopTitleNoTrans;
     }
 
     public static FragmentEventListBinding a(View view) {
         String str;
-        FloatFooterView floatFooterView = (FloatFooterView) view.findViewById(R.id.event_post);
-        if (floatFooterView != null) {
+        FloatFooterView findViewById = view.findViewById(R.id.event_post);
+        if (findViewById != null) {
             NoDataAndLoadFailView noDataAndLoadFailView = (NoDataAndLoadFailView) view.findViewById(R.id.noDataView);
             if (noDataAndLoadFailView != null) {
-                RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recycle_view);
-                if (recyclerView != null) {
-                    SmartRefreshLayout smartRefreshLayout = (SmartRefreshLayout) view.findViewById(R.id.refresh_layout);
-                    if (smartRefreshLayout != null) {
+                RecyclerView findViewById2 = view.findViewById(R.id.recycle_view);
+                if (findViewById2 != null) {
+                    SmartRefreshLayout findViewById3 = view.findViewById(R.id.refresh_layout);
+                    if (findViewById3 != null) {
                         CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) view.findViewById(R.id.title);
                         if (commonTopTitleNoTrans != null) {
-                            return new FragmentEventListBinding((ConstraintLayout) view, floatFooterView, noDataAndLoadFailView, recyclerView, smartRefreshLayout, commonTopTitleNoTrans);
+                            return new FragmentEventListBinding((ConstraintLayout) view, findViewById, noDataAndLoadFailView, findViewById2, findViewById3, commonTopTitleNoTrans);
                         }
                         str = "title";
                     } else {
@@ -62,7 +58,6 @@ public final class FragmentEventListBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.f;

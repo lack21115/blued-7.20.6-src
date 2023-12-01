@@ -3,6 +3,7 @@ package com.android.org.conscrypt;
 import com.android.org.conscrypt.NativeCrypto;
 import com.android.org.conscrypt.SSLParametersImpl;
 import com.android.org.conscrypt.util.Arrays;
+import com.blued.android.module.common.web.LoaderConstants;
 import dalvik.system.BlockGuard;
 import dalvik.system.CloseGuard;
 import java.io.FileDescriptor;
@@ -712,7 +713,7 @@ public class OpenSSLSocketImpl extends SSLSocket implements NativeCrypto.SSLHand
                     try {
                         long j = this.sslParameters.getSessionContext().sslCtxNativePointer;
                         this.sslNativePointer = NativeCrypto.SSL_new(j);
-                        this.guard.open("close");
+                        this.guard.open(LoaderConstants.CLOSE);
                         boolean enableSessionCreation = getEnableSessionCreation();
                         if (!enableSessionCreation) {
                             NativeCrypto.SSL_set_session_creation_enabled(this.sslNativePointer, enableSessionCreation);

@@ -7,10 +7,10 @@ import com.tencent.liteav.videobase.videobase.h;
 final /* synthetic */ class ai implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final VideoDecodeController f36754a;
+    private final VideoDecodeController f23063a;
 
     private ai(VideoDecodeController videoDecodeController) {
-        this.f36754a = videoDecodeController;
+        this.f23063a = videoDecodeController;
     }
 
     public static Runnable a(VideoDecodeController videoDecodeController) {
@@ -19,9 +19,9 @@ final /* synthetic */ class ai implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        VideoDecodeController videoDecodeController = this.f36754a;
-        LiteavLog.i(videoDecodeController.f36734a, "on decode failed, type: %s", videoDecodeController.f());
-        videoDecodeController.f36735c.r = true;
+        VideoDecodeController videoDecodeController = this.f23063a;
+        LiteavLog.i(videoDecodeController.f23043a, "on decode failed, type: %s", videoDecodeController.f());
+        videoDecodeController.f23044c.r = true;
         aw awVar = videoDecodeController.d;
         awVar.j++;
         awVar.b();

@@ -4,12 +4,12 @@ package com.huawei.secure.android.common.base;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final boolean f23055a = false;
+    public static final boolean f9447a = false;
     public static final String b = "com.huawei.secure.android.common.base";
     @Deprecated
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f23056c = "com.huawei.secure.android.common.base";
+    public static final String f9448c = "com.huawei.secure.android.common.base";
     public static final String d = "release";
     public static final String e = "";
     public static final int f = 10105310;

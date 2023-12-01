@@ -11,23 +11,23 @@ import java.util.concurrent.ConcurrentHashMap;
 public final class a {
 
     /* renamed from: c  reason: collision with root package name */
-    private static final List<String> f21933c = Arrays.asList("dim-2-1-21-5", "dim-2-1-21-3", "dim-2-1-21-2", "dim-2-1-21-1");
+    private static final List<String> f8326c = Arrays.asList("dim-2-1-21-5", "dim-2-1-21-3", "dim-2-1-21-2", "dim-2-1-21-1");
 
     /* renamed from: a  reason: collision with root package name */
-    public final Map<String, Long> f21934a;
+    public final Map<String, Long> f8327a;
     public final Map<String, f> b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.getui.gtc.dim.b.a$a  reason: collision with other inner class name */
     /* loaded from: source-8110460-dex2jar.jar:com/getui/gtc/dim/b/a$a.class */
-    public static final class C0344a {
+    public static final class C0174a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final a f21935a = new a((byte) 0);
+        private static final a f8328a = new a((byte) 0);
     }
 
     private a() {
-        this.f21934a = new HashMap();
+        this.f8327a = new HashMap();
         this.b = new ConcurrentHashMap();
     }
 
@@ -285,11 +285,11 @@ public final class a {
     }
 
     public static a a() {
-        return C0344a.f21935a;
+        return C0174a.f8328a;
     }
 
     public final void a(String str, Object obj) {
-        if (f21933c.contains(str)) {
+        if (f8326c.contains(str)) {
             com.getui.gtc.dim.e.b.a(str + " skip dim ram cache = " + obj);
         } else if (TextUtils.isEmpty(str)) {
         } else {

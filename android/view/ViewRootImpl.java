@@ -1,6 +1,5 @@
 package android.view;
 
-import android.Manifest;
 import android.animation.LayoutTransition;
 import android.app.ActivityManagerNative;
 import android.content.ClipDescription;
@@ -65,13 +64,13 @@ import com.android.internal.os.SomeArgs;
 import com.android.internal.policy.PolicyManager;
 import com.android.internal.view.BaseSurfaceHolder;
 import com.android.internal.view.RootViewSurfaceTaker;
-import com.igexin.push.core.b;
 import java.io.FileDescriptor;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.HashSet;
+import javax.microedition.khronos.opengles.GL10;
 
 /* loaded from: source-4181928-dex2jar.jar:android/view/ViewRootImpl.class */
 public final class ViewRootImpl implements ViewParent, View.AttachInfo.Callbacks, HardwareRenderer.HardwareDrawCallbacks {
@@ -546,8 +545,9 @@ public final class ViewRootImpl implements ViewParent, View.AttachInfo.Callbacks
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-4181928-dex2jar.jar:android/view/ViewRootImpl$EarlyPostImeInputStage.class */
-    final class EarlyPostImeInputStage extends InputStage {
+    public final class EarlyPostImeInputStage extends InputStage {
         public EarlyPostImeInputStage(InputStage inputStage) {
             super(inputStage);
         }
@@ -608,8 +608,9 @@ public final class ViewRootImpl implements ViewParent, View.AttachInfo.Callbacks
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-4181928-dex2jar.jar:android/view/ViewRootImpl$ImeInputStage.class */
-    final class ImeInputStage extends AsyncInputStage implements InputMethodManager.FinishedInputEventCallback {
+    public final class ImeInputStage extends AsyncInputStage implements InputMethodManager.FinishedInputEventCallback {
         public ImeInputStage(InputStage inputStage, String str) {
             super(inputStage, str);
         }
@@ -897,13 +898,13 @@ public final class ViewRootImpl implements ViewParent, View.AttachInfo.Callbacks
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-4181928-dex2jar.jar:android/view/ViewRootImpl$NativePostImeInputStage.class */
-    final class NativePostImeInputStage extends AsyncInputStage implements InputQueue.FinishedInputEventCallback {
+    public final class NativePostImeInputStage extends AsyncInputStage implements InputQueue.FinishedInputEventCallback {
         public NativePostImeInputStage(InputStage inputStage, String str) {
             super(inputStage, str);
         }
 
-        @Override // android.view.InputQueue.FinishedInputEventCallback
         public void onFinishedInputEvent(Object obj, boolean z) {
             QueuedInputEvent queuedInputEvent = (QueuedInputEvent) obj;
             if (z) {
@@ -924,13 +925,13 @@ public final class ViewRootImpl implements ViewParent, View.AttachInfo.Callbacks
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-4181928-dex2jar.jar:android/view/ViewRootImpl$NativePreImeInputStage.class */
-    final class NativePreImeInputStage extends AsyncInputStage implements InputQueue.FinishedInputEventCallback {
+    public final class NativePreImeInputStage extends AsyncInputStage implements InputQueue.FinishedInputEventCallback {
         public NativePreImeInputStage(InputStage inputStage, String str) {
             super(inputStage, str);
         }
 
-        @Override // android.view.InputQueue.FinishedInputEventCallback
         public void onFinishedInputEvent(Object obj, boolean z) {
             QueuedInputEvent queuedInputEvent = (QueuedInputEvent) obj;
             if (z) {
@@ -1129,8 +1130,9 @@ public final class ViewRootImpl implements ViewParent, View.AttachInfo.Callbacks
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-4181928-dex2jar.jar:android/view/ViewRootImpl$SyntheticInputStage.class */
-    final class SyntheticInputStage extends InputStage {
+    public final class SyntheticInputStage extends InputStage {
         private final SyntheticJoystickHandler mJoystick;
         private final SyntheticKeyboardHandler mKeyboard;
         private final SyntheticTouchNavigationHandler mTouchNavigation;
@@ -1358,7 +1360,7 @@ public final class ViewRootImpl implements ViewParent, View.AttachInfo.Callbacks
                 public void run() {
                     long uptimeMillis = SystemClock.uptimeMillis();
                     SyntheticTouchNavigationHandler.this.sendKeyDownOrRepeat(uptimeMillis, SyntheticTouchNavigationHandler.this.mPendingKeyCode, SyntheticTouchNavigationHandler.this.mPendingKeyMetaState);
-                    SyntheticTouchNavigationHandler.access$1332(SyntheticTouchNavigationHandler.this, 0.8f);
+                    SyntheticTouchNavigationHandler.access$1332(SyntheticTouchNavigationHandler.this, SyntheticTouchNavigationHandler.FLING_TICK_DECAY);
                     if (SyntheticTouchNavigationHandler.this.postFling(uptimeMillis)) {
                         return;
                     }
@@ -1553,8 +1555,8 @@ public final class ViewRootImpl implements ViewParent, View.AttachInfo.Callbacks
                             f2 = motionRange2.getRange() / 48.0f;
                         }
                         this.mConfigTickDistance = 12.0f * (f + f2) * 0.5f;
-                        this.mConfigMinFlingVelocity = 6.0f * this.mConfigTickDistance;
-                        this.mConfigMaxFlingVelocity = 20.0f * this.mConfigTickDistance;
+                        this.mConfigMinFlingVelocity = MIN_FLING_VELOCITY_TICKS_PER_SECOND * this.mConfigTickDistance;
+                        this.mConfigMaxFlingVelocity = MAX_FLING_VELOCITY_TICKS_PER_SECOND * this.mConfigTickDistance;
                     }
                 }
             }
@@ -1723,8 +1725,9 @@ public final class ViewRootImpl implements ViewParent, View.AttachInfo.Callbacks
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-4181928-dex2jar.jar:android/view/ViewRootImpl$TakenSurfaceHolder.class */
-    class TakenSurfaceHolder extends BaseSurfaceHolder {
+    public class TakenSurfaceHolder extends BaseSurfaceHolder {
         TakenSurfaceHolder() {
         }
 
@@ -1820,7 +1823,7 @@ public final class ViewRootImpl implements ViewParent, View.AttachInfo.Callbacks
                     if (f3 > 1.0f) {
                         f4 = f2 * f3;
                     }
-                    if (f4 >= 20.0f) {
+                    if (f4 >= MAX_ACCELERATION) {
                         f4 = 20.0f;
                     }
                     this.acceleration = f4;
@@ -1847,7 +1850,7 @@ public final class ViewRootImpl implements ViewParent, View.AttachInfo.Callbacks
                 int i2 = this.position >= 0.0f ? 1 : -1;
                 switch (this.step) {
                     case 0:
-                        if (Math.abs(this.position) < 0.5f) {
+                        if (Math.abs(this.position) < FIRST_MOVEMENT_THRESHOLD) {
                             break;
                         } else {
                             i += i2;
@@ -1870,7 +1873,7 @@ public final class ViewRootImpl implements ViewParent, View.AttachInfo.Callbacks
                             i += i2;
                             this.position -= i2 * 1.0f;
                             float f = this.acceleration * 1.1f;
-                            if (f >= 20.0f) {
+                            if (f >= MAX_ACCELERATION) {
                                 f = this.acceleration;
                             }
                             this.acceleration = f;
@@ -1904,8 +1907,9 @@ public final class ViewRootImpl implements ViewParent, View.AttachInfo.Callbacks
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-4181928-dex2jar.jar:android/view/ViewRootImpl$ViewPostImeInputStage.class */
-    final class ViewPostImeInputStage extends InputStage {
+    public final class ViewPostImeInputStage extends InputStage {
         public ViewPostImeInputStage(InputStage inputStage) {
             super(inputStage);
         }
@@ -1966,8 +1970,9 @@ public final class ViewRootImpl implements ViewParent, View.AttachInfo.Callbacks
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-4181928-dex2jar.jar:android/view/ViewRootImpl$ViewPreImeInputStage.class */
-    final class ViewPreImeInputStage extends InputStage {
+    public final class ViewPreImeInputStage extends InputStage {
         public ViewPreImeInputStage(InputStage inputStage) {
             super(inputStage);
         }
@@ -2264,7 +2269,6 @@ public final class ViewRootImpl implements ViewParent, View.AttachInfo.Callbacks
             }
         }
 
-        @Override // android.view.IWindow
         public void closeSystemDialogs(String str) {
             ViewRootImpl viewRootImpl = this.mViewAncestor.get();
             if (viewRootImpl != null) {
@@ -2272,7 +2276,6 @@ public final class ViewRootImpl implements ViewParent, View.AttachInfo.Callbacks
             }
         }
 
-        @Override // android.view.IWindow
         public void dispatchAppVisibility(boolean z) {
             ViewRootImpl viewRootImpl = this.mViewAncestor.get();
             if (viewRootImpl != null) {
@@ -2280,7 +2283,6 @@ public final class ViewRootImpl implements ViewParent, View.AttachInfo.Callbacks
             }
         }
 
-        @Override // android.view.IWindow
         public void dispatchDragEvent(DragEvent dragEvent) {
             ViewRootImpl viewRootImpl = this.mViewAncestor.get();
             if (viewRootImpl != null) {
@@ -2288,7 +2290,6 @@ public final class ViewRootImpl implements ViewParent, View.AttachInfo.Callbacks
             }
         }
 
-        @Override // android.view.IWindow
         public void dispatchGetNewSurface() {
             ViewRootImpl viewRootImpl = this.mViewAncestor.get();
             if (viewRootImpl != null) {
@@ -2296,7 +2297,6 @@ public final class ViewRootImpl implements ViewParent, View.AttachInfo.Callbacks
             }
         }
 
-        @Override // android.view.IWindow
         public void dispatchSystemUiVisibilityChanged(int i, int i2, int i3, int i4) {
             ViewRootImpl viewRootImpl = this.mViewAncestor.get();
             if (viewRootImpl != null) {
@@ -2304,17 +2304,15 @@ public final class ViewRootImpl implements ViewParent, View.AttachInfo.Callbacks
             }
         }
 
-        @Override // android.view.IWindow
         public void dispatchWallpaperCommand(String str, int i, int i2, int i3, Bundle bundle, boolean z) {
             if (z) {
                 try {
-                    this.mWindowSession.wallpaperCommandComplete(asBinder(), null);
+                    this.mWindowSession.wallpaperCommandComplete(asBinder(), (Bundle) null);
                 } catch (RemoteException e) {
                 }
             }
         }
 
-        @Override // android.view.IWindow
         public void dispatchWallpaperOffsets(float f, float f2, float f3, float f4, boolean z) {
             if (z) {
                 try {
@@ -2324,7 +2322,6 @@ public final class ViewRootImpl implements ViewParent, View.AttachInfo.Callbacks
             }
         }
 
-        @Override // android.view.IWindow
         public void dispatchWindowShown() {
             ViewRootImpl viewRootImpl = this.mViewAncestor.get();
             if (viewRootImpl != null) {
@@ -2332,7 +2329,6 @@ public final class ViewRootImpl implements ViewParent, View.AttachInfo.Callbacks
             }
         }
 
-        @Override // android.view.IWindow
         public void doneAnimating() {
             ViewRootImpl viewRootImpl = this.mViewAncestor.get();
             if (viewRootImpl != null) {
@@ -2340,7 +2336,6 @@ public final class ViewRootImpl implements ViewParent, View.AttachInfo.Callbacks
             }
         }
 
-        @Override // android.view.IWindow
         public void executeCommand(String str, String str2, ParcelFileDescriptor parcelFileDescriptor) {
             View view;
             ParcelFileDescriptor.AutoCloseOutputStream autoCloseOutputStream;
@@ -2348,7 +2343,7 @@ public final class ViewRootImpl implements ViewParent, View.AttachInfo.Callbacks
             if (viewRootImpl == null || (view = viewRootImpl.mView) == null) {
                 return;
             }
-            if (checkCallingPermission(Manifest.permission.DUMP) != 0) {
+            if (checkCallingPermission("android.permission.DUMP") != 0) {
                 throw new SecurityException("Insufficient permissions to invoke executeCommand() from pid=" + Binder.getCallingPid() + ", uid=" + Binder.getCallingUid());
             }
             ParcelFileDescriptor.AutoCloseOutputStream autoCloseOutputStream2 = null;
@@ -2397,7 +2392,6 @@ public final class ViewRootImpl implements ViewParent, View.AttachInfo.Callbacks
             }
         }
 
-        @Override // android.view.IWindow
         public void moved(int i, int i2) {
             ViewRootImpl viewRootImpl = this.mViewAncestor.get();
             if (viewRootImpl != null) {
@@ -2405,7 +2399,6 @@ public final class ViewRootImpl implements ViewParent, View.AttachInfo.Callbacks
             }
         }
 
-        @Override // android.view.IWindow
         public void resized(Rect rect, Rect rect2, Rect rect3, Rect rect4, Rect rect5, boolean z, Configuration configuration) {
             ViewRootImpl viewRootImpl = this.mViewAncestor.get();
             if (viewRootImpl != null) {
@@ -2413,7 +2406,6 @@ public final class ViewRootImpl implements ViewParent, View.AttachInfo.Callbacks
             }
         }
 
-        @Override // android.view.IWindow
         public void windowFocusChanged(boolean z, boolean z2) {
             ViewRootImpl viewRootImpl = this.mViewAncestor.get();
             if (viewRootImpl != null) {
@@ -2429,13 +2421,11 @@ public final class ViewRootImpl implements ViewParent, View.AttachInfo.Callbacks
             super(inputChannel, looper);
         }
 
-        @Override // android.view.InputEventReceiver
         public void dispose() {
             ViewRootImpl.this.unscheduleConsumeBatchedInput();
             super.dispose();
         }
 
-        @Override // android.view.InputEventReceiver
         public void onBatchedInputEventPending() {
             if (ViewRootImpl.this.mUnbufferedInputDispatch) {
                 super.onBatchedInputEventPending();
@@ -2444,7 +2434,6 @@ public final class ViewRootImpl implements ViewParent, View.AttachInfo.Callbacks
             }
         }
 
-        @Override // android.view.InputEventReceiver
         public void onInputEvent(InputEvent inputEvent) {
             ViewRootImpl.this.enqueueInputEvent(inputEvent, this, 0, true);
         }
@@ -2820,7 +2809,7 @@ public final class ViewRootImpl implements ViewParent, View.AttachInfo.Callbacks
         int childCount;
         printWriter.print(str);
         if (view == null) {
-            printWriter.println(b.l);
+            printWriter.println("null");
             return;
         }
         printWriter.println(view.toString());
@@ -3033,11 +3022,11 @@ public final class ViewRootImpl implements ViewParent, View.AttachInfo.Callbacks
     private int getImpliedSystemUiVisibility(WindowManager.LayoutParams layoutParams) {
         int i = 0;
         if ((layoutParams.flags & 67108864) != 0) {
-            i = 0 | 1280;
+            i = 0 | GL10.GL_INVALID_ENUM;
         }
         int i2 = i;
         if ((layoutParams.flags & 134217728) != 0) {
-            i2 = i | 768;
+            i2 = i | GL10.GL_SRC_COLOR;
         }
         return i2;
     }
@@ -4303,7 +4292,6 @@ public final class ViewRootImpl implements ViewParent, View.AttachInfo.Callbacks
         postSendWindowContentChangedCallback(view2, i);
     }
 
-    @Override // android.view.HardwareRenderer.HardwareDrawCallbacks
     public void onHardwarePostDraw(HardwareCanvas hardwareCanvas) {
         if (this.mResizeBuffer != null) {
             this.mResizePaint.setAlpha(this.mResizeAlpha);
@@ -4312,7 +4300,6 @@ public final class ViewRootImpl implements ViewParent, View.AttachInfo.Callbacks
         drawAccessibilityFocusedDrawableIfNeeded(hardwareCanvas);
     }
 
-    @Override // android.view.HardwareRenderer.HardwareDrawCallbacks
     public void onHardwarePreDraw(HardwareCanvas hardwareCanvas) {
         hardwareCanvas.translate(-this.mHardwareXOffset, -this.mHardwareYOffset);
     }
@@ -4759,7 +4746,7 @@ public final class ViewRootImpl implements ViewParent, View.AttachInfo.Callbacks
                     if (addToDisplay < 0) {
                         this.mAttachInfo.mRootView = null;
                         this.mAdded = false;
-                        this.mFallbackEventHandler.setView(null);
+                        this.mFallbackEventHandler.setView((View) null);
                         unscheduleTraversals();
                         setAccessibilityFocus(null, null);
                         switch (addToDisplay) {
@@ -4816,7 +4803,7 @@ public final class ViewRootImpl implements ViewParent, View.AttachInfo.Callbacks
                     this.mView = null;
                     this.mAttachInfo.mRootView = null;
                     this.mInputChannel = null;
-                    this.mFallbackEventHandler.setView(null);
+                    this.mFallbackEventHandler.setView((View) null);
                     unscheduleTraversals();
                     setAccessibilityFocus(null, null);
                     throw new RuntimeException("Adding window failed", e);

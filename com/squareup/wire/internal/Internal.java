@@ -11,13 +11,13 @@ import kotlin.Metadata;
 /* loaded from: source-8457232-dex2jar.jar:com/squareup/wire/internal/Internal.class */
 public final class Internal {
     /* renamed from: -redactElements  reason: not valid java name */
-    public static final <T> List<T> m9758redactElements(List<? extends T> list, ProtoAdapter<T> protoAdapter) {
-        return Internal__InternalKt.m9760redactElements(list, protoAdapter);
+    public static final <T> List<T> m6712redactElements(List<? extends T> list, ProtoAdapter<T> protoAdapter) {
+        return Internal__InternalKt.m6714redactElements(list, protoAdapter);
     }
 
     /* renamed from: -redactElements  reason: not valid java name */
-    public static final <K, V> Map<K, V> m9759redactElements(Map<K, ? extends V> map, ProtoAdapter<V> protoAdapter) {
-        return Internal__InternalKt.m9761redactElements(map, protoAdapter);
+    public static final <K, V> Map<K, V> m6713redactElements(Map<K, ? extends V> map, ProtoAdapter<V> protoAdapter) {
+        return Internal__InternalKt.m6715redactElements(map, protoAdapter);
     }
 
     public static final String boxedOneOfClassName(String str) {

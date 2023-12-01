@@ -20,18 +20,14 @@ import com.autonavi.base.amap.api.mapcore.infowindow.IInfoWindowAction;
 /* renamed from: com.amap.api.col.3sl.au  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/au.class */
 public final class au {
-
-    /* renamed from: c  reason: collision with root package name */
-    Context f4751c;
+    Context c;
     private View e;
     private TextView f;
     private TextView g;
     private IInfoWindowAction i;
     private IInfoWindowAction j;
     private BaseOverlay k;
-
-    /* renamed from: a  reason: collision with root package name */
-    AMap.InfoWindowAdapter f4750a = null;
+    AMap.InfoWindowAdapter a = null;
     AMap.CommonInfoWindowAdapter b = null;
     private boolean d = true;
     private Drawable h = null;
@@ -45,16 +41,16 @@ public final class au {
         public final View getInfoWindow(Marker marker) {
             try {
                 if (au.this.h == null) {
-                    au.this.h = dl.a(au.this.f4751c, "infowindow_bg.9.png");
+                    au.this.h = dl.a(au.this.c, "infowindow_bg.9.png");
                 }
                 if (au.this.e == null) {
-                    au.this.e = new LinearLayout(au.this.f4751c);
+                    au.this.e = new LinearLayout(au.this.c);
                     au.this.e.setBackground(au.this.h);
-                    au.this.f = new TextView(au.this.f4751c);
+                    au.this.f = new TextView(au.this.c);
                     au.this.f.setText(marker.getTitle());
-                    au.this.f.setTextColor(-16777216);
-                    au.this.g = new TextView(au.this.f4751c);
-                    au.this.g.setTextColor(-16777216);
+                    au.this.f.setTextColor(View.MEASURED_STATE_MASK);
+                    au.this.g = new TextView(au.this.c);
+                    au.this.g.setTextColor(View.MEASURED_STATE_MASK);
                     au.this.g.setText(marker.getSnippet());
                     ((LinearLayout) au.this.e).setOrientation(1);
                     ((LinearLayout) au.this.e).addView(au.this.f);
@@ -76,15 +72,15 @@ public final class au {
                 if (this.b == null) {
                     this.b = new InfoWindowParams();
                     if (au.this.h == null) {
-                        au.this.h = dl.a(au.this.f4751c, "infowindow_bg.9.png");
+                        au.this.h = dl.a(au.this.c, "infowindow_bg.9.png");
                     }
-                    au.this.e = new LinearLayout(au.this.f4751c);
+                    au.this.e = new LinearLayout(au.this.c);
                     au.this.e.setBackground(au.this.h);
-                    au.this.f = new TextView(au.this.f4751c);
+                    au.this.f = new TextView(au.this.c);
                     au.this.f.setText("标题");
-                    au.this.f.setTextColor(-16777216);
-                    au.this.g = new TextView(au.this.f4751c);
-                    au.this.g.setTextColor(-16777216);
+                    au.this.f.setTextColor(View.MEASURED_STATE_MASK);
+                    au.this.g = new TextView(au.this.c);
+                    au.this.g.setTextColor(View.MEASURED_STATE_MASK);
                     au.this.g.setText("内容");
                     ((LinearLayout) au.this.e).setOrientation(1);
                     ((LinearLayout) au.this.e).addView(au.this.f);
@@ -102,7 +98,7 @@ public final class au {
     };
 
     public au(Context context) {
-        this.f4751c = context;
+        this.c = context;
     }
 
     private static void a(View view, BasePointOverlay basePointOverlay) {
@@ -126,10 +122,10 @@ public final class au {
 
     private IInfoWindowAction d() {
         synchronized (this) {
-            if (this.f4750a != null) {
-                if (this.f4750a instanceof AMap.ImageInfoWindowAdapter) {
+            if (this.a != null) {
+                if (this.a instanceof AMap.ImageInfoWindowAdapter) {
                     return this.j;
-                } else if (this.f4750a instanceof AMap.MultiPositionInfoWindowAdapter) {
+                } else if (this.a instanceof AMap.MultiPositionInfoWindowAdapter) {
                     return this.j;
                 }
             }
@@ -142,7 +138,7 @@ public final class au {
 
     public final View a(BasePointOverlay basePointOverlay) {
         InfoWindowParams infoWindowParams;
-        AMap.InfoWindowAdapter infoWindowAdapter = this.f4750a;
+        AMap.InfoWindowAdapter infoWindowAdapter = this.a;
         if (infoWindowAdapter != null) {
             View infoWindow = infoWindowAdapter.getInfoWindow((Marker) basePointOverlay);
             a(infoWindow, basePointOverlay);
@@ -172,7 +168,7 @@ public final class au {
     public final void a(AMap.CommonInfoWindowAdapter commonInfoWindowAdapter) {
         synchronized (this) {
             this.b = commonInfoWindowAdapter;
-            this.f4750a = null;
+            this.a = null;
             if (commonInfoWindowAdapter == null) {
                 this.b = this.m;
                 this.d = true;
@@ -190,10 +186,10 @@ public final class au {
 
     public final void a(AMap.InfoWindowAdapter infoWindowAdapter) {
         synchronized (this) {
-            this.f4750a = infoWindowAdapter;
+            this.a = infoWindowAdapter;
             this.b = null;
             if (b(infoWindowAdapter)) {
-                this.f4750a = this.l;
+                this.a = this.l;
                 this.d = true;
             } else {
                 this.d = false;
@@ -259,7 +255,7 @@ public final class au {
 
     public final View b(BasePointOverlay basePointOverlay) {
         InfoWindowParams infoWindowParams;
-        AMap.InfoWindowAdapter infoWindowAdapter = this.f4750a;
+        AMap.InfoWindowAdapter infoWindowAdapter = this.a;
         if (infoWindowAdapter != null) {
             View infoContents = infoWindowAdapter.getInfoContents((Marker) basePointOverlay);
             a(infoContents, basePointOverlay);
@@ -296,7 +292,7 @@ public final class au {
 
     public final long c(BasePointOverlay basePointOverlay) {
         InfoWindowParams infoWindowParams;
-        AMap.InfoWindowAdapter infoWindowAdapter = this.f4750a;
+        AMap.InfoWindowAdapter infoWindowAdapter = this.a;
         if (infoWindowAdapter == null || !(infoWindowAdapter instanceof AMap.ImageInfoWindowAdapter)) {
             AMap.CommonInfoWindowAdapter commonInfoWindowAdapter = this.b;
             if (commonInfoWindowAdapter == null || (infoWindowParams = commonInfoWindowAdapter.getInfoWindowParams(basePointOverlay)) == null) {

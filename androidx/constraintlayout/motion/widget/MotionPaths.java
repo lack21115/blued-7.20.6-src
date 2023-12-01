@@ -16,11 +16,11 @@ public class MotionPaths implements Comparable<MotionPaths> {
     public static final String TAG = "MotionPaths";
 
     /* renamed from: a  reason: collision with root package name */
-    static String[] f2202a = {BrowserContract.Bookmarks.POSITION, "x", "y", "width", "height", "pathRotate"};
+    static String[] f2154a = {BrowserContract.Bookmarks.POSITION, "x", "y", "width", "height", "pathRotate"};
     Easing b;
 
     /* renamed from: c  reason: collision with root package name */
-    int f2203c;
+    int f2155c;
     float d;
     float e;
     float f;
@@ -40,7 +40,7 @@ public class MotionPaths implements Comparable<MotionPaths> {
     double[] t;
 
     public MotionPaths() {
-        this.f2203c = 0;
+        this.f2155c = 0;
         this.j = Float.NaN;
         this.k = Float.NaN;
         this.l = Key.UNSET;
@@ -54,7 +54,7 @@ public class MotionPaths implements Comparable<MotionPaths> {
     }
 
     public MotionPaths(int i, int i2, KeyPosition keyPosition, MotionPaths motionPaths, MotionPaths motionPaths2) {
-        this.f2203c = 0;
+        this.f2155c = 0;
         this.j = Float.NaN;
         this.k = Float.NaN;
         this.l = Key.UNSET;
@@ -384,9 +384,9 @@ public class MotionPaths implements Comparable<MotionPaths> {
     void a(int i, int i2, KeyPosition keyPosition, MotionPaths motionPaths, MotionPaths motionPaths2) {
         float min;
         float f;
-        float f2 = keyPosition.f2169a / 100.0f;
+        float f2 = keyPosition.f2121a / 100.0f;
         this.d = f2;
-        this.f2203c = keyPosition.h;
+        this.f2155c = keyPosition.h;
         this.q = keyPosition.o;
         float f3 = Float.isNaN(keyPosition.i) ? f2 : keyPosition.i;
         float f4 = Float.isNaN(keyPosition.j) ? f2 : keyPosition.j;
@@ -446,9 +446,9 @@ public class MotionPaths implements Comparable<MotionPaths> {
     void a(KeyPosition keyPosition, MotionPaths motionPaths, MotionPaths motionPaths2) {
         float f;
         float f2;
-        float f3 = keyPosition.f2169a / 100.0f;
+        float f3 = keyPosition.f2121a / 100.0f;
         this.d = f3;
-        this.f2203c = keyPosition.h;
+        this.f2155c = keyPosition.h;
         float f4 = Float.isNaN(keyPosition.i) ? f3 : keyPosition.i;
         float f5 = Float.isNaN(keyPosition.j) ? f3 : keyPosition.j;
         float f6 = motionPaths2.h;
@@ -590,7 +590,7 @@ public class MotionPaths implements Comparable<MotionPaths> {
         this.l = constraint.motion.mPathMotionArc;
         this.m = constraint.motion.mAnimateRelativeTo;
         this.j = constraint.motion.mPathRotate;
-        this.f2203c = constraint.motion.mDrawPath;
+        this.f2155c = constraint.motion.mDrawPath;
         this.r = constraint.motion.mAnimateCircleAngleTo;
         this.k = constraint.propertySet.mProgress;
         this.n = constraint.layout.circleAngle;
@@ -612,9 +612,9 @@ public class MotionPaths implements Comparable<MotionPaths> {
     }
 
     void b(int i, int i2, KeyPosition keyPosition, MotionPaths motionPaths, MotionPaths motionPaths2) {
-        float f = keyPosition.f2169a / 100.0f;
+        float f = keyPosition.f2121a / 100.0f;
         this.d = f;
-        this.f2203c = keyPosition.h;
+        this.f2155c = keyPosition.h;
         float f2 = Float.isNaN(keyPosition.i) ? f : keyPosition.i;
         float f3 = Float.isNaN(keyPosition.j) ? f : keyPosition.j;
         float f4 = motionPaths2.h;
@@ -653,9 +653,9 @@ public class MotionPaths implements Comparable<MotionPaths> {
         float f2;
         float f3;
         float f4;
-        float f5 = keyPosition.f2169a / 100.0f;
+        float f5 = keyPosition.f2121a / 100.0f;
         this.d = f5;
-        this.f2203c = keyPosition.h;
+        this.f2155c = keyPosition.h;
         float f6 = Float.isNaN(keyPosition.i) ? f5 : keyPosition.i;
         float f7 = Float.isNaN(keyPosition.j) ? f5 : keyPosition.j;
         float f8 = motionPaths2.h;

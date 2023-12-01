@@ -14,12 +14,12 @@ import android.os.Environment;
 import android.os.Looper;
 import android.text.TextUtils;
 import android.widget.Toast;
+import com.android.internal.util.cm.QSConstants;
 import com.blued.android.core.utils.ByteArrayPool;
 import com.blued.android.core.utils.Log;
 import com.blued.android.core.utils.PoolingByteArrayOutputStream;
 import com.blued.android.core.utils.toast.ToastUtils;
 import com.blued.android.module.common.web.jsbridge.BridgeUtil;
-import com.tencent.qcloud.core.util.IOUtils;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -35,20 +35,16 @@ import java.util.TimeZone;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/AppMethods.class */
 public class AppMethods {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static Toast f9488a;
+    private static Toast a;
 
     /* renamed from: com.blued.android.core.AppMethods$1  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/AppMethods$1.class */
     class AnonymousClass1 implements Runnable {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ CharSequence f9489a;
+        final /* synthetic */ CharSequence a;
 
         @Override // java.lang.Runnable
         public void run() {
-            Toast.makeText(AppInfo.d(), this.f9489a, 0).show();
+            Toast.makeText(AppInfo.d(), this.a, 0).show();
         }
     }
 
@@ -114,13 +110,13 @@ public class AppMethods {
         }
         PackageInfo packageInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), 1);
         if (packageInfo != null) {
-            printWriter.append((CharSequence) (IOUtils.LINE_SEPARATOR_WINDOWS + packageInfo.versionName));
+            printWriter.append((CharSequence) ("\r\n" + packageInfo.versionName));
             printWriter.append((CharSequence) ("\r\nversionCode=" + packageInfo.versionCode));
         }
         if (crashInfoInterface != null) {
             String b = crashInfoInterface.b();
             if (!TextUtils.isEmpty(b)) {
-                printWriter.append((CharSequence) (IOUtils.LINE_SEPARATOR_WINDOWS + b));
+                printWriter.append((CharSequence) ("\r\n" + b));
             }
         }
         String format = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss").format(Long.valueOf(System.currentTimeMillis()));
@@ -138,7 +134,7 @@ public class AppMethods {
             Field field = declaredFields[i2];
             try {
                 field.setAccessible(true);
-                printWriter.append((CharSequence) (IOUtils.LINE_SEPARATOR_WINDOWS + field.getName() + ": " + field.get(null)));
+                printWriter.append((CharSequence) ("\r\n" + field.getName() + ": " + field.get(null)));
             } catch (Exception e2) {
                 Log.a("logCrashOnFile", "Error while collect crash info", e2);
             }
@@ -202,7 +198,7 @@ public class AppMethods {
                             e2.printStackTrace();
                         }
                     }
-                    String str4 = IOUtils.LINE_SEPARATOR_WINDOWS + str;
+                    String str4 = "\r\n" + str;
                     FileOutputStream fileOutputStream = new FileOutputStream(file2, true);
                     try {
                         fileOutputStream.write(str4.getBytes());
@@ -224,7 +220,7 @@ public class AppMethods {
     }
 
     public static boolean a(Context context) {
-        NetworkInfo activeNetworkInfo = ((ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE)).getActiveNetworkInfo();
+        NetworkInfo activeNetworkInfo = ((ConnectivityManager) context.getSystemService("connectivity")).getActiveNetworkInfo();
         return activeNetworkInfo != null && activeNetworkInfo.getType() == 1;
     }
 
@@ -271,13 +267,13 @@ public class AppMethods {
             } else {
                 FileInputStream fileInputStream = new FileInputStream(str);
                 FileOutputStream fileOutputStream = new FileOutputStream(str2);
-                byte[] a2 = ByteArrayPool.f9730a.a(1024);
+                byte[] a2 = ByteArrayPool.a.a(1024);
                 while (true) {
                     int read = fileInputStream.read(a2);
                     if (read <= 0) {
                         fileInputStream.close();
                         fileOutputStream.close();
-                        ByteArrayPool.f9730a.a(a2);
+                        ByteArrayPool.a.a(a2);
                         return true;
                     }
                     fileOutputStream.write(a2, 0, read);
@@ -294,7 +290,7 @@ public class AppMethods {
     }
 
     public static byte[] a(InputStream inputStream, int i) throws IOException {
-        PoolingByteArrayOutputStream poolingByteArrayOutputStream = new PoolingByteArrayOutputStream(ByteArrayPool.f9730a, i);
+        PoolingByteArrayOutputStream poolingByteArrayOutputStream = new PoolingByteArrayOutputStream(ByteArrayPool.a, i);
         byte[] bArr = null;
         if (inputStream == null) {
             if (inputStream != null) {
@@ -304,12 +300,12 @@ public class AppMethods {
                     e.printStackTrace();
                 }
             }
-            ByteArrayPool.f9730a.a((byte[]) null);
+            ByteArrayPool.a.a((byte[]) null);
             poolingByteArrayOutputStream.close();
             return null;
         }
         try {
-            byte[] a2 = ByteArrayPool.f9730a.a(1024);
+            byte[] a2 = ByteArrayPool.a.a(1024);
             while (true) {
                 int read = inputStream.read(a2);
                 if (read == -1) {
@@ -326,7 +322,7 @@ public class AppMethods {
                     e2.printStackTrace();
                 }
             }
-            ByteArrayPool.f9730a.a(a2);
+            ByteArrayPool.a.a(a2);
             poolingByteArrayOutputStream.close();
             return byteArray;
         } catch (Throwable th) {
@@ -337,7 +333,7 @@ public class AppMethods {
                     e3.printStackTrace();
                 }
             }
-            ByteArrayPool.f9730a.a(bArr);
+            ByteArrayPool.a.a(bArr);
             poolingByteArrayOutputStream.close();
             throw th;
         }
@@ -473,7 +469,7 @@ public class AppMethods {
     }
 
     public static String d() {
-        File externalStoragePublicDirectory = Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED) ? Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) : null;
+        File externalStoragePublicDirectory = Environment.getExternalStorageState().equals("mounted") ? Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) : null;
         if (externalStoragePublicDirectory != null) {
             if (!externalStoragePublicDirectory.exists()) {
                 externalStoragePublicDirectory.mkdirs();
@@ -514,7 +510,7 @@ public class AppMethods {
     }
 
     public static String e() {
-        WifiManager wifiManager = (WifiManager) AppInfo.d().getApplicationContext().getSystemService("wifi");
+        WifiManager wifiManager = (WifiManager) AppInfo.d().getApplicationContext().getSystemService(QSConstants.TILE_WIFI);
         if (wifiManager != null) {
             try {
                 WifiInfo connectionInfo = wifiManager.getConnectionInfo();
@@ -528,7 +524,7 @@ public class AppMethods {
     }
 
     public static boolean f() {
-        return Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED);
+        return Environment.getExternalStorageState().equals("mounted");
     }
 
     public static String g() {

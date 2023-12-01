@@ -4,5 +4,5 @@ package a.a.a.a.a.d;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static long f1342a = 300000;
+    public static long f1294a = 300000;
 }

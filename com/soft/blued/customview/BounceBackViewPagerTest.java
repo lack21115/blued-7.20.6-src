@@ -12,18 +12,18 @@ import androidx.viewpager.widget.ViewPager;
 public class BounceBackViewPagerTest extends ViewPager {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f28365a;
+    private int f14675a;
     private Rect b;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f28366c;
+    private boolean f14676c;
     private float d;
 
     public BounceBackViewPagerTest(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f28365a = 0;
+        this.f14675a = 0;
         this.b = new Rect();
-        this.f28366c = true;
+        this.f14676c = true;
         this.d = 0.0f;
     }
 
@@ -38,7 +38,7 @@ public class BounceBackViewPagerTest extends ViewPager {
         if (this.b.isEmpty()) {
             this.b.set(getLeft(), getTop(), getRight(), getBottom());
         }
-        this.f28366c = false;
+        this.f14676c = false;
         int i = (int) (f * 0.5f);
         layout(getLeft() + i, getTop(), getRight() + i, getBottom());
     }
@@ -49,7 +49,7 @@ public class BounceBackViewPagerTest extends ViewPager {
         startAnimation(translateAnimation);
         layout(this.b.left, this.b.top, this.b.right, this.b.bottom);
         this.b.setEmpty();
-        this.f28366c = true;
+        this.f14676c = true;
     }
 
     @Override // androidx.viewpager.widget.ViewPager, android.view.ViewGroup, android.view.View
@@ -61,7 +61,7 @@ public class BounceBackViewPagerTest extends ViewPager {
     public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         if (motionEvent.getAction() == 0) {
             this.d = motionEvent.getX();
-            this.f28365a = getCurrentItem();
+            this.f14675a = getCurrentItem();
         }
         return super.onInterceptTouchEvent(motionEvent);
     }
@@ -80,22 +80,22 @@ public class BounceBackViewPagerTest extends ViewPager {
                     a(f);
                 } else if (f < -10.0f) {
                     a(f);
-                } else if (!this.f28366c) {
+                } else if (!this.f14676c) {
                     int i = (int) (f * 0.5f);
                     if (getLeft() + i != this.b.left) {
                         layout(getLeft() + i, getTop(), getRight() + i, getBottom());
                     }
                 }
             } else {
-                int i2 = this.f28365a;
+                int i2 = this.f14675a;
                 if (i2 == 0 || i2 == getAdapter().getCount() - 1) {
                     float x2 = motionEvent.getX();
                     float f2 = x2 - this.d;
                     this.d = x2;
-                    if (this.f28365a == 0) {
+                    if (this.f14675a == 0) {
                         if (f2 > 10.0f) {
                             a(f2);
-                        } else if (!this.f28366c) {
+                        } else if (!this.f14676c) {
                             int i3 = (int) (f2 * 0.5f);
                             if (getLeft() + i3 >= this.b.left) {
                                 layout(getLeft() + i3, getTop(), getRight() + i3, getBottom());
@@ -103,17 +103,17 @@ public class BounceBackViewPagerTest extends ViewPager {
                         }
                     } else if (f2 < -10.0f) {
                         a(f2);
-                    } else if (!this.f28366c) {
+                    } else if (!this.f14676c) {
                         int i4 = (int) (f2 * 0.5f);
                         if (getRight() + i4 <= this.b.right) {
                             layout(getLeft() + i4, getTop(), getRight() + i4, getBottom());
                         }
                     }
                 } else {
-                    this.f28366c = true;
+                    this.f14676c = true;
                 }
             }
-            if (!this.f28366c) {
+            if (!this.f14676c) {
                 return true;
             }
         }

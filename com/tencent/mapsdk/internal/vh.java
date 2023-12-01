@@ -25,11 +25,11 @@ public class vh {
     private OverSeaTileProvider l;
 
     /* renamed from: a  reason: collision with root package name */
-    private int f38077a = ci.e;
+    private int f24386a = ci.e;
     private int b = 1000;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f38078c = ci.g;
+    private int f24387c = ci.g;
     private int d = 0;
     private volatile boolean e = false;
     private int f = 0;
@@ -56,11 +56,11 @@ public class vh {
     public class b extends ca.i<Boolean> {
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ Context f38080c;
+        public final /* synthetic */ Context f24389c;
         public final /* synthetic */ OverSeaSource d;
 
         public b(Context context, OverSeaSource overSeaSource) {
-            this.f38080c = context;
+            this.f24389c = context;
             this.d = overSeaSource;
         }
 
@@ -68,7 +68,7 @@ public class vh {
         /* renamed from: a */
         public Boolean call() throws Exception {
             na.c(ma.h, "开始初始化配置");
-            String a2 = vh.this.a(this.f38080c, this.d);
+            String a2 = vh.this.a(this.f24389c, this.d);
             na.c(ma.h, "本地配置数据：" + a2);
             if (!f7.b(a2)) {
                 try {
@@ -80,7 +80,7 @@ public class vh {
                 vh vhVar = vh.this;
                 vhVar.a(vhVar.h);
             } else if (y9.c("4.5.9", "4.3.1", 3)) {
-                vh.this.b(this.f38080c);
+                vh.this.b(this.f24389c);
             }
             na.c(ma.h, "完成初始化配置");
             return null;
@@ -91,19 +91,19 @@ public class vh {
     public static /* synthetic */ class c {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final /* synthetic */ int[] f38081a;
+        public static final /* synthetic */ int[] f24390a;
 
         static {
             OverSeaSource.values();
             int[] iArr = new int[2];
-            f38081a = iArr;
+            f24390a = iArr;
             try {
                 OverSeaSource overSeaSource = OverSeaSource.DEFAULT;
                 iArr[0] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                int[] iArr2 = f38081a;
+                int[] iArr2 = f24390a;
                 OverSeaSource overSeaSource2 = OverSeaSource.SPARE;
                 iArr2[1] = 2;
             } catch (NoSuchFieldError e2) {
@@ -187,16 +187,16 @@ public class vh {
             bi b3 = b2.b();
             if (b3 != null) {
                 this.f = b3.b();
-                na.c(ma.h, "更新边界版本：" + this.f38078c);
+                na.c(ma.h, "更新边界版本：" + this.f24387c);
             }
         }
         ei c2 = c(b2);
         if (c2 != null) {
             this.b = c2.d();
-            this.f38077a = c2.c();
-            this.f38078c = c2.f();
+            this.f24386a = c2.c();
+            this.f24387c = c2.f();
             this.g = c2.e();
-            na.c(ma.h, "更新图源版本：" + this.f38078c);
+            na.c(ma.h, "更新图源版本：" + this.f24387c);
         }
         this.e = diVar.a() == 0;
     }
@@ -249,6 +249,7 @@ public class vh {
         return this.k;
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     public void b(Context context) {
         int[] iArr;
         lc a2 = lc.a(context);
@@ -353,9 +354,9 @@ public class vh {
             if (b3 != null) {
                 int f = b3.f();
                 int d = b3.d();
-                na.c(ma.h, "版本对比: old[" + this.f38078c + "]-new[" + f + "]");
+                na.c(ma.h, "版本对比: old[" + this.f24387c + "]-new[" + f + "]");
                 na.c(ma.h, "样式对比: old[" + this.b + "]-new[" + d + "]");
-                if (f != this.f38078c || d != this.b || a3 != this.f38077a) {
+                if (f != this.f24387c || d != this.b || a3 != this.f24386a) {
                     File a4 = a(context);
                     if (a4.exists()) {
                         ga.d(a4);

@@ -19,13 +19,9 @@ import java.util.Set;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/adapter/LiveActivityDotAdapter.class */
 public class LiveActivityDotAdapter extends BaseMultiItemQuickAdapter<LiveActivityItemModel, BaseViewHolder> {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected Context f11598a;
+    protected Context a;
     int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private RecyclerView f11599c;
+    private RecyclerView c;
     private int d;
     private Set<BaseViewHolder> e;
 
@@ -34,8 +30,8 @@ public class LiveActivityDotAdapter extends BaseMultiItemQuickAdapter<LiveActivi
         this.d = 0;
         this.e = new HashSet();
         this.b = -1;
-        this.f11598a = context;
-        this.f11599c = recyclerView;
+        this.a = context;
+        this.c = recyclerView;
         addItemType(0, R.layout.live_activity_dot_item);
         setNewData(list);
     }
@@ -45,33 +41,33 @@ public class LiveActivityDotAdapter extends BaseMultiItemQuickAdapter<LiveActivi
         ViewGroup.LayoutParams layoutParams = shapeTextView.getLayoutParams();
         ShapeModel shapeModel = new ShapeModel();
         if (this.d == i) {
-            layoutParams.width = DensityUtils.a(this.f11598a, 4.0f);
-            layoutParams.height = DensityUtils.a(this.f11598a, 4.0f);
-            shapeModel.H = DensityUtils.a(this.f11598a, 4.0f);
-            shapeModel.k = ContextCompat.getColor(this.f11598a, R.color.syc_dark_b);
+            layoutParams.width = DensityUtils.a(this.a, 4.0f);
+            layoutParams.height = DensityUtils.a(this.a, 4.0f);
+            shapeModel.H = DensityUtils.a(this.a, 4.0f);
+            shapeModel.k = ContextCompat.getColor(this.a, R.color.syc_dark_b);
         } else {
-            if (getData() == null || getData().size() <= 4 || !(this.f11599c.getLayoutManager() instanceof LinearLayoutManager)) {
-                layoutParams.width = DensityUtils.a(this.f11598a, 4.0f);
-                layoutParams.height = DensityUtils.a(this.f11598a, 4.0f);
-                shapeModel.H = DensityUtils.a(this.f11598a, 4.0f);
+            if (getData() == null || getData().size() <= 4 || !(this.c.getLayoutManager() instanceof LinearLayoutManager)) {
+                layoutParams.width = DensityUtils.a(this.a, 4.0f);
+                layoutParams.height = DensityUtils.a(this.a, 4.0f);
+                shapeModel.H = DensityUtils.a(this.a, 4.0f);
             } else {
-                LinearLayoutManager linearLayoutManager = (LinearLayoutManager) this.f11599c.getLayoutManager();
-                int findLastVisibleItemPosition = linearLayoutManager.findLastVisibleItemPosition();
-                if (i == linearLayoutManager.findFirstVisibleItemPosition()) {
-                    layoutParams.width = DensityUtils.a(this.f11598a, 3.0f);
-                    layoutParams.height = DensityUtils.a(this.f11598a, 3.0f);
-                    shapeModel.H = DensityUtils.a(this.f11598a, 3.0f);
+                LinearLayoutManager layoutManager = this.c.getLayoutManager();
+                int findLastVisibleItemPosition = layoutManager.findLastVisibleItemPosition();
+                if (i == layoutManager.findFirstVisibleItemPosition()) {
+                    layoutParams.width = DensityUtils.a(this.a, 3.0f);
+                    layoutParams.height = DensityUtils.a(this.a, 3.0f);
+                    shapeModel.H = DensityUtils.a(this.a, 3.0f);
                 } else if (i == findLastVisibleItemPosition) {
-                    layoutParams.width = DensityUtils.a(this.f11598a, 3.0f);
-                    layoutParams.height = DensityUtils.a(this.f11598a, 3.0f);
-                    shapeModel.H = DensityUtils.a(this.f11598a, 3.0f);
+                    layoutParams.width = DensityUtils.a(this.a, 3.0f);
+                    layoutParams.height = DensityUtils.a(this.a, 3.0f);
+                    shapeModel.H = DensityUtils.a(this.a, 3.0f);
                 } else {
-                    layoutParams.width = DensityUtils.a(this.f11598a, 4.0f);
-                    layoutParams.height = DensityUtils.a(this.f11598a, 4.0f);
-                    shapeModel.H = DensityUtils.a(this.f11598a, 4.0f);
+                    layoutParams.width = DensityUtils.a(this.a, 4.0f);
+                    layoutParams.height = DensityUtils.a(this.a, 4.0f);
+                    shapeModel.H = DensityUtils.a(this.a, 4.0f);
                 }
             }
-            shapeModel.k = ContextCompat.getColor(this.f11598a, R.color.syc_afffffff);
+            shapeModel.k = ContextCompat.getColor(this.a, R.color.syc_afffffff);
             shapeTextView.clearAnimation();
         }
         shapeTextView.setLayoutParams(layoutParams);
@@ -94,7 +90,7 @@ public class LiveActivityDotAdapter extends BaseMultiItemQuickAdapter<LiveActivi
 
     private void c() {
         int i;
-        if (this.f11599c != null) {
+        if (this.c != null) {
             int i2 = this.b;
             int i3 = this.d;
             if (i2 < i3) {
@@ -115,7 +111,7 @@ public class LiveActivityDotAdapter extends BaseMultiItemQuickAdapter<LiveActivi
                 i5 = getData().size() - 1;
             }
             Log.i("==cpp", "currentPositon:" + this.d + "  toPosition:" + i5);
-            this.f11599c.smoothScrollToPosition(i5);
+            this.c.smoothScrollToPosition(i5);
         }
     }
 
@@ -133,7 +129,6 @@ public class LiveActivityDotAdapter extends BaseMultiItemQuickAdapter<LiveActivi
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(BaseViewHolder baseViewHolder, LiveActivityItemModel liveActivityItemModel) {
         this.e.add(baseViewHolder);
@@ -151,9 +146,8 @@ public class LiveActivityDotAdapter extends BaseMultiItemQuickAdapter<LiveActivi
         this.d = i;
         this.e.clear();
         setNewData(list);
-        this.f11599c.scrollToPosition(i);
-        this.f11599c.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: com.blued.android.module.live_china.adapter.LiveActivityDotAdapter.1
-            @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
+        this.c.scrollToPosition(i);
+        this.c.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: com.blued.android.module.live_china.adapter.LiveActivityDotAdapter.1
             public void onScrollStateChanged(RecyclerView recyclerView, int i2) {
                 super.onScrollStateChanged(recyclerView, i2);
                 if (i2 == 0) {
@@ -161,12 +155,11 @@ public class LiveActivityDotAdapter extends BaseMultiItemQuickAdapter<LiveActivi
                 }
             }
 
-            @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
             public void onScrolled(RecyclerView recyclerView, int i2, int i3) {
                 super.onScrolled(recyclerView, i2, i3);
             }
         });
-        this.f11599c.postDelayed(new Runnable() { // from class: com.blued.android.module.live_china.adapter.LiveActivityDotAdapter.2
+        this.c.postDelayed(new Runnable() { // from class: com.blued.android.module.live_china.adapter.LiveActivityDotAdapter.2
             @Override // java.lang.Runnable
             public void run() {
                 LiveActivityDotAdapter.this.b();

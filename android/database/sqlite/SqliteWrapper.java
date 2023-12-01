@@ -7,7 +7,6 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.util.Log;
 import android.widget.Toast;
-import com.android.internal.R;
 
 /* loaded from: source-9557208-dex2jar.jar:android/database/sqlite/SqliteWrapper.class */
 public final class SqliteWrapper {
@@ -21,7 +20,7 @@ public final class SqliteWrapper {
         if (!isLowMemory(sQLiteException)) {
             throw sQLiteException;
         }
-        Toast.makeText(context, (int) R.string.low_memory, 0).show();
+        Toast.makeText(context, 17039802, 0).show();
     }
 
     public static int delete(Context context, ContentResolver contentResolver, Uri uri, String str, String[] strArr) {

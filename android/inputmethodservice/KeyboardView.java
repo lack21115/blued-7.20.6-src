@@ -1,5 +1,6 @@
 package android.inputmethodservice;
 
+import android.R;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
@@ -26,7 +27,6 @@ import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityManager;
 import android.widget.PopupWindow;
 import android.widget.TextView;
-import com.android.internal.R;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -126,7 +126,7 @@ public class KeyboardView extends View implements View.OnClickListener {
     private int mTapCount;
     private int mVerticalCorrection;
     private static final int[] KEY_DELETE = {-5};
-    private static final int[] LONG_PRESSABLE_STATE_SET = {16843324};
+    private static final int[] LONG_PRESSABLE_STATE_SET = {R.attr.state_long_pressable};
     private static final int LONGPRESS_TIMEOUT = ViewConfiguration.getLongPressTimeout();
     private static int MAX_NEARBY_KEYS = 12;
 
@@ -288,7 +288,7 @@ public class KeyboardView extends View implements View.OnClickListener {
     }
 
     public KeyboardView(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, R.attr.keyboardViewStyle);
+        this(context, attributeSet, 18219117);
     }
 
     public KeyboardView(Context context, AttributeSet attributeSet, int i) {
@@ -336,7 +336,7 @@ public class KeyboardView extends View implements View.OnClickListener {
                 }
             }
         };
-        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, android.R.styleable.KeyboardView, i, i2);
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.KeyboardView, i, i2);
         LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         int i3 = 0;
         int indexCount = obtainStyledAttributes.getIndexCount();
@@ -344,7 +344,7 @@ public class KeyboardView extends View implements View.OnClickListener {
         while (true) {
             int i5 = i4;
             if (i5 >= indexCount) {
-                this.mBackgroundDimAmount = this.mContext.obtainStyledAttributes(R.styleable.Theme).getFloat(2, 0.5f);
+                this.mBackgroundDimAmount = this.mContext.obtainStyledAttributes(com.android.internal.R.styleable.Theme).getFloat(2, 0.5f);
                 this.mPreviewPopup = new PopupWindow(context);
                 if (i3 != 0) {
                     this.mPreviewText = (TextView) layoutInflater.inflate(i3, (ViewGroup) null);
@@ -367,7 +367,7 @@ public class KeyboardView extends View implements View.OnClickListener {
                 this.mMiniKeyboardCache = new HashMap();
                 this.mKeyBackground.getPadding(this.mPadding);
                 this.mSwipeThreshold = (int) (500.0f * getResources().getDisplayMetrics().density);
-                this.mDisambiguateSwipe = getResources().getBoolean(R.bool.config_swipeDisambiguation);
+                this.mDisambiguateSwipe = getResources().getBoolean(17956946);
                 this.mAccessibilityManager = AccessibilityManager.getInstance(context);
                 this.mAudioManager = (AudioManager) context.getSystemService("audio");
                 resetMultiTap();
@@ -898,37 +898,37 @@ public class KeyboardView extends View implements View.OnClickListener {
             if (z || this.mAudioManager.isBluetoothA2dpOn() || this.mAudioManager.isWiredHeadsetOn()) {
                 switch (i2) {
                     case -6:
-                        string = this.mContext.getString(R.string.keyboardview_keycode_alt);
+                        string = this.mContext.getString(17040998);
                         break;
                     case -5:
-                        string = this.mContext.getString(R.string.keyboardview_keycode_delete);
+                        string = this.mContext.getString(17041000);
                         break;
                     case -4:
-                        string = this.mContext.getString(R.string.keyboardview_keycode_done);
+                        string = this.mContext.getString(17041001);
                         break;
                     case -3:
-                        string = this.mContext.getString(R.string.keyboardview_keycode_cancel);
+                        string = this.mContext.getString(17040999);
                         break;
                     case -2:
-                        string = this.mContext.getString(R.string.keyboardview_keycode_mode_change);
+                        string = this.mContext.getString(17041002);
                         break;
                     case -1:
-                        string = this.mContext.getString(R.string.keyboardview_keycode_shift);
+                        string = this.mContext.getString(17041003);
                         break;
                     case 10:
-                        string = this.mContext.getString(R.string.keyboardview_keycode_enter);
+                        string = this.mContext.getString(17041004);
                         break;
                     default:
                         string = String.valueOf((char) i2);
                         break;
                 }
             } else if (this.mHeadsetRequiredToHearPasswordsAnnounced) {
-                string = this.mContext.getString(R.string.keyboard_password_character_no_headset);
+                string = this.mContext.getString(17041012);
             } else {
                 if (i == 256) {
                     this.mHeadsetRequiredToHearPasswordsAnnounced = true;
                 }
-                string = this.mContext.getString(R.string.keyboard_headset_required_to_hear_password);
+                string = this.mContext.getString(17041011);
             }
             obtain.getText().add(string);
             this.mAccessibilityManager.sendAccessibilityEvent(obtain);
@@ -1147,8 +1147,8 @@ public class KeyboardView extends View implements View.OnClickListener {
             this.mMiniKeyboardContainer = this.mMiniKeyboardCache.get(key);
             if (this.mMiniKeyboardContainer == null) {
                 this.mMiniKeyboardContainer = ((LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(this.mPopupLayout, (ViewGroup) null);
-                this.mMiniKeyboard = (KeyboardView) this.mMiniKeyboardContainer.findViewById(16908326);
-                View findViewById = this.mMiniKeyboardContainer.findViewById(16908327);
+                this.mMiniKeyboard = (KeyboardView) this.mMiniKeyboardContainer.findViewById(R.id.keyboardView);
+                View findViewById = this.mMiniKeyboardContainer.findViewById(R.id.closeButton);
                 if (findViewById != null) {
                     findViewById.setOnClickListener(this);
                 }
@@ -1196,7 +1196,7 @@ public class KeyboardView extends View implements View.OnClickListener {
                 this.mMiniKeyboardContainer.measure(View.MeasureSpec.makeMeasureSpec(getWidth(), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(getHeight(), Integer.MIN_VALUE));
                 this.mMiniKeyboardCache.put(key, this.mMiniKeyboardContainer);
             } else {
-                this.mMiniKeyboard = (KeyboardView) this.mMiniKeyboardContainer.findViewById(16908326);
+                this.mMiniKeyboard = (KeyboardView) this.mMiniKeyboardContainer.findViewById(R.id.keyboardView);
             }
             getLocationInWindow(this.mCoordinates);
             this.mPopupX = key.x + this.mPaddingLeft;

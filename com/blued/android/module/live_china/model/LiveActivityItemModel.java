@@ -75,7 +75,6 @@ public class LiveActivityItemModel implements MultiItemEntity, Serializable, Com
         return z;
     }
 
-    @Override // com.chad.library.adapter.base.entity.MultiItemEntity
     public int getItemType() {
         return 0;
     }

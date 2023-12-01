@@ -13,9 +13,8 @@ public class ScheduledThreadPoolExecutorEnhance extends ScheduledThreadPoolExecu
         super(i, threadFactory);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // java.util.concurrent.ThreadPoolExecutor
-    public void beforeExecute(Thread thread, Runnable runnable) {
+    protected void beforeExecute(Thread thread, Runnable runnable) {
         if (runnable instanceof RunnableScheduledFutureEnhance) {
             String parentName = ((RunnableScheduledFutureEnhance) runnable).getParentName();
             int lastIndexOf = parentName.lastIndexOf(" -->");
@@ -34,15 +33,13 @@ public class ScheduledThreadPoolExecutorEnhance extends ScheduledThreadPoolExecu
         super.beforeExecute(thread, runnable);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // java.util.concurrent.ScheduledThreadPoolExecutor
-    public <V> RunnableScheduledFuture<V> decorateTask(Runnable runnable, RunnableScheduledFuture<V> runnableScheduledFuture) {
+    protected <V> RunnableScheduledFuture<V> decorateTask(Runnable runnable, RunnableScheduledFuture<V> runnableScheduledFuture) {
         return new RunnableScheduledFutureEnhance(super.decorateTask(runnable, runnableScheduledFuture));
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // java.util.concurrent.ScheduledThreadPoolExecutor
-    public <V> RunnableScheduledFuture<V> decorateTask(Callable<V> callable, RunnableScheduledFuture<V> runnableScheduledFuture) {
+    protected <V> RunnableScheduledFuture<V> decorateTask(Callable<V> callable, RunnableScheduledFuture<V> runnableScheduledFuture) {
         return new RunnableScheduledFutureEnhance(super.decorateTask(callable, runnableScheduledFuture));
     }
 }

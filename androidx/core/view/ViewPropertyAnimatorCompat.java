@@ -12,22 +12,22 @@ import java.lang.ref.WeakReference;
 public final class ViewPropertyAnimatorCompat {
 
     /* renamed from: a  reason: collision with root package name */
-    Runnable f2678a = null;
+    Runnable f2630a = null;
     Runnable b = null;
 
     /* renamed from: c  reason: collision with root package name */
-    int f2679c = -1;
+    int f2631c = -1;
     private WeakReference<View> d;
 
     /* loaded from: source-8756600-dex2jar.jar:androidx/core/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorListenerApi14.class */
     static class ViewPropertyAnimatorListenerApi14 implements ViewPropertyAnimatorListener {
 
         /* renamed from: a  reason: collision with root package name */
-        ViewPropertyAnimatorCompat f2684a;
+        ViewPropertyAnimatorCompat f2636a;
         boolean b;
 
         ViewPropertyAnimatorListenerApi14(ViewPropertyAnimatorCompat viewPropertyAnimatorCompat) {
-            this.f2684a = viewPropertyAnimatorCompat;
+            this.f2636a = viewPropertyAnimatorCompat;
         }
 
         @Override // androidx.core.view.ViewPropertyAnimatorListener
@@ -42,14 +42,14 @@ public final class ViewPropertyAnimatorCompat {
         @Override // androidx.core.view.ViewPropertyAnimatorListener
         public void onAnimationEnd(View view) {
             ViewPropertyAnimatorListener viewPropertyAnimatorListener = null;
-            if (this.f2684a.f2679c > -1) {
-                view.setLayerType(this.f2684a.f2679c, null);
-                this.f2684a.f2679c = -1;
+            if (this.f2636a.f2631c > -1) {
+                view.setLayerType(this.f2636a.f2631c, null);
+                this.f2636a.f2631c = -1;
             }
             if (Build.VERSION.SDK_INT >= 16 || !this.b) {
-                if (this.f2684a.b != null) {
-                    Runnable runnable = this.f2684a.b;
-                    this.f2684a.b = null;
+                if (this.f2636a.b != null) {
+                    Runnable runnable = this.f2636a.b;
+                    this.f2636a.b = null;
                     runnable.run();
                 }
                 Object tag = view.getTag(2113929216);
@@ -67,12 +67,12 @@ public final class ViewPropertyAnimatorCompat {
         public void onAnimationStart(View view) {
             this.b = false;
             ViewPropertyAnimatorListener viewPropertyAnimatorListener = null;
-            if (this.f2684a.f2679c > -1) {
+            if (this.f2636a.f2631c > -1) {
                 view.setLayerType(2, null);
             }
-            if (this.f2684a.f2678a != null) {
-                Runnable runnable = this.f2684a.f2678a;
-                this.f2684a.f2678a = null;
+            if (this.f2636a.f2630a != null) {
+                Runnable runnable = this.f2636a.f2630a;
+                this.f2636a.f2630a = null;
                 runnable.run();
             }
             Object tag = view.getTag(2113929216);
@@ -369,7 +369,7 @@ public final class ViewPropertyAnimatorCompat {
                 view.animate().withLayer();
                 return this;
             }
-            this.f2679c = view.getLayerType();
+            this.f2631c = view.getLayerType();
             a(view, new ViewPropertyAnimatorListenerApi14(this));
         }
         return this;
@@ -383,7 +383,7 @@ public final class ViewPropertyAnimatorCompat {
                 return this;
             }
             a(view, new ViewPropertyAnimatorListenerApi14(this));
-            this.f2678a = runnable;
+            this.f2630a = runnable;
         }
         return this;
     }

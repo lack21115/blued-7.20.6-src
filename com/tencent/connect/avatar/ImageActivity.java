@@ -27,6 +27,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.bytedance.applog.tracker.Tracker;
+import com.huawei.hms.framework.common.ContainerUtils;
 import com.j256.ormlite.stmt.query.SimpleComparison;
 import com.tencent.connect.UserInfo;
 import com.tencent.connect.auth.QQToken;
@@ -48,11 +49,11 @@ import org.json.JSONObject;
 public class ImageActivity extends Activity {
 
     /* renamed from: a  reason: collision with root package name */
-    RelativeLayout f36170a;
+    RelativeLayout f22479a;
     private QQToken b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f36171c;
+    private String f22480c;
     private Handler d;
     private c e;
     private Button f;
@@ -131,9 +132,9 @@ public class ImageActivity extends Activity {
             ImageActivity.this.a("10658", 0L);
             d.a().a(ImageActivity.this.b.getOpenId(), ImageActivity.this.b.getAppId(), Constants.VIA_SET_AVATAR_SUCCEED, "12", "3", "0");
             ImageActivity imageActivity = ImageActivity.this;
-            if (imageActivity.f36171c != null && !"".equals(ImageActivity.this.f36171c)) {
+            if (imageActivity.f22480c != null && !"".equals(ImageActivity.this.f22480c)) {
                 Intent intent = new Intent();
-                intent.setClassName(imageActivity, ImageActivity.this.f36171c);
+                intent.setClassName(imageActivity, ImageActivity.this.f22480c);
                 if (imageActivity.getPackageManager().resolveActivity(intent, 0) != null) {
                     imageActivity.startActivity(intent);
                 }
@@ -291,12 +292,12 @@ public class ImageActivity extends Activity {
         ViewGroup.LayoutParams layoutParams2 = new ViewGroup.LayoutParams(-1, -1);
         ViewGroup.LayoutParams layoutParams3 = new ViewGroup.LayoutParams(-2, -2);
         RelativeLayout relativeLayout = new RelativeLayout(this);
-        this.f36170a = relativeLayout;
+        this.f22479a = relativeLayout;
         relativeLayout.setLayoutParams(layoutParams);
-        this.f36170a.setBackgroundColor(-16777216);
+        this.f22479a.setBackgroundColor(-16777216);
         RelativeLayout relativeLayout2 = new RelativeLayout(this);
         relativeLayout2.setLayoutParams(layoutParams3);
-        this.f36170a.addView(relativeLayout2);
+        this.f22479a.addView(relativeLayout2);
         c cVar = new c(this);
         this.e = cVar;
         cVar.setLayoutParams(layoutParams2);
@@ -314,7 +315,7 @@ public class ImageActivity extends Activity {
         linearLayout.setLayoutParams(layoutParams5);
         linearLayout.setOrientation(0);
         linearLayout.setGravity(17);
-        this.f36170a.addView(linearLayout);
+        this.f22479a.addView(linearLayout);
         ImageView imageView = new ImageView(this);
         imageView.setLayoutParams(new LinearLayout.LayoutParams(com.tencent.connect.avatar.a.a(this, 24.0f), com.tencent.connect.avatar.a.a(this, 24.0f)));
         imageView.setImageDrawable(b("com.tencent.plus.logo.png"));
@@ -337,7 +338,7 @@ public class ImageActivity extends Activity {
         relativeLayout3.setBackgroundDrawable(b("com.tencent.plus.bar.png"));
         int a2 = com.tencent.connect.avatar.a.a(this, 10.0f);
         relativeLayout3.setPadding(a2, a2, a2, 0);
-        this.f36170a.addView(relativeLayout3);
+        this.f22479a.addView(relativeLayout3);
         a aVar = new a(this);
         int a3 = com.tencent.connect.avatar.a.a(this, 14.0f);
         int a4 = com.tencent.connect.avatar.a.a(this, 7.0f);
@@ -374,8 +375,8 @@ public class ImageActivity extends Activity {
         layoutParams10.addRule(15, -1);
         this.j.setLayoutParams(layoutParams10);
         this.j.setVisibility(8);
-        this.f36170a.addView(this.j);
-        return this.f36170a;
+        this.f22479a.addView(this.j);
+        return this.f22479a;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -432,10 +433,10 @@ public class ImageActivity extends Activity {
             this.e.setImageBitmap(a2);
             this.f.setOnClickListener(this.t);
             this.g.setOnClickListener(this.u);
-            this.f36170a.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() { // from class: com.tencent.connect.avatar.ImageActivity.1
+            this.f22479a.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() { // from class: com.tencent.connect.avatar.ImageActivity.1
                 @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
                 public void onGlobalLayout() {
-                    ImageActivity.this.f36170a.getViewTreeObserver().removeGlobalOnLayoutListener(this);
+                    ImageActivity.this.f22479a.getViewTreeObserver().removeGlobalOnLayoutListener(this);
                     ImageActivity imageActivity = ImageActivity.this;
                     imageActivity.q = imageActivity.h.a();
                     ImageActivity.this.e.a(ImageActivity.this.q);
@@ -512,7 +513,7 @@ public class ImageActivity extends Activity {
     }
 
     private String d(String str) {
-        return str.replaceAll("&gt;", SimpleComparison.GREATER_THAN_OPERATION).replaceAll("&lt;", SimpleComparison.LESS_THAN_OPERATION).replaceAll("&quot;", "\"").replaceAll("&#39;", "'").replaceAll("&amp;", "&");
+        return str.replaceAll("&gt;", SimpleComparison.GREATER_THAN_OPERATION).replaceAll("&lt;", SimpleComparison.LESS_THAN_OPERATION).replaceAll("&quot;", "\"").replaceAll("&#39;", "'").replaceAll("&amp;", ContainerUtils.FIELD_DELIMITER);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -555,7 +556,7 @@ public class ImageActivity extends Activity {
         this.d = new Handler();
         Bundle bundleExtra = getIntent().getBundleExtra(Constants.KEY_PARAMS);
         this.r = bundleExtra.getString("picture");
-        this.f36171c = bundleExtra.getString("return_activity");
+        this.f22480c = bundleExtra.getString("return_activity");
         String string = bundleExtra.getString("appid");
         String string2 = bundleExtra.getString("access_token");
         long j = bundleExtra.getLong("expires_in");

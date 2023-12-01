@@ -11,10 +11,10 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public class d implements b {
 
     /* renamed from: a  reason: collision with root package name */
-    private b f21623a;
+    private b f8017a;
 
     public void a(b bVar) {
-        this.f21623a = bVar;
+        this.f8017a = bVar;
     }
 
     @Override // com.cmic.gen.sdk.tencent.c.a.b
@@ -54,7 +54,7 @@ public class d implements b {
     }
 
     public void b(com.cmic.gen.sdk.tencent.c.c.c cVar, final com.cmic.gen.sdk.tencent.c.d.c cVar2, com.cmic.gen.sdk.tencent.a aVar) {
-        b bVar = this.f21623a;
+        b bVar = this.f8017a;
         if (bVar != null) {
             bVar.a(cVar, new com.cmic.gen.sdk.tencent.c.d.c() { // from class: com.cmic.gen.sdk.tencent.c.a.d.2
                 @Override // com.cmic.gen.sdk.tencent.c.d.c

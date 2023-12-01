@@ -15,11 +15,11 @@ import com.soft.blued.ui.user.adapter.CountryAdapter;
 public class AreaCodeSectionBar extends View {
 
     /* renamed from: a  reason: collision with root package name */
-    private String[] f31352a;
+    private String[] f17662a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f31353c;
+    private int f17663c;
     private ListView d;
     private AreaCodeIndexer e;
     private int f;
@@ -32,9 +32,9 @@ public class AreaCodeSectionBar extends View {
 
     public AreaCodeSectionBar(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f31352a = new String[0];
+        this.f17662a = new String[0];
         this.b = 10;
-        this.f31353c = 10 + 4;
+        this.f17663c = 10 + 4;
         this.h = context;
         a();
     }
@@ -44,9 +44,9 @@ public class AreaCodeSectionBar extends View {
     }
 
     private void a() {
-        this.f31352a = this.h.getResources().getStringArray(R.array.area_code_array);
+        this.f17662a = this.h.getResources().getStringArray(R.array.area_code_array);
         this.b = a(this.b, getContext());
-        this.f31353c = a(this.f31353c, getContext());
+        this.f17663c = a(this.f17663c, getContext());
         Paint paint = new Paint();
         this.g = paint;
         paint.setColor(BluedSkinUtils.a(this.h, 2131101528));
@@ -63,38 +63,36 @@ public class AreaCodeSectionBar extends View {
         this.e = countryAdapter;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         int i = 0;
         while (true) {
             int i2 = i;
-            String[] strArr = this.f31352a;
+            String[] strArr = this.f17662a;
             if (i2 >= strArr.length) {
                 super.onDraw(canvas);
                 return;
             }
             String valueOf = String.valueOf(strArr[i2]);
             float measuredWidth = getMeasuredWidth() / 2;
-            int i3 = this.f31353c;
+            int i3 = this.f17663c;
             canvas.drawText(valueOf, measuredWidth, i3 + (i2 * i3) + this.f, this.g);
             i = i2 + 1;
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         super.onMeasure(i, i2);
-        this.f = (getMeasuredHeight() / 2) - ((this.f31353c * this.f31352a.length) / 2);
+        this.f = (getMeasuredHeight() / 2) - ((this.f17663c * this.f17662a.length) / 2);
     }
 
     @Override // android.view.View
     public boolean onTouchEvent(MotionEvent motionEvent) {
         int i;
         int a2;
-        int y = (((int) motionEvent.getY()) - this.f) / this.f31353c;
-        String[] strArr = this.f31352a;
+        int y = (((int) motionEvent.getY()) - this.f) / this.f17663c;
+        String[] strArr = this.f17662a;
         if (y >= strArr.length) {
             i = strArr.length - 1;
         } else {
@@ -103,7 +101,7 @@ public class AreaCodeSectionBar extends View {
                 i = 0;
             }
         }
-        if ((motionEvent.getAction() == 0 || motionEvent.getAction() == 2) && (a2 = this.e.a(String.valueOf(this.f31352a[i]))) != -1) {
+        if ((motionEvent.getAction() == 0 || motionEvent.getAction() == 2) && (a2 = this.e.a(String.valueOf(this.f17662a[i]))) != -1) {
             this.d.setSelection(a2);
             return true;
         }

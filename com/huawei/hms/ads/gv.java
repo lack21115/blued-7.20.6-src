@@ -39,7 +39,7 @@ public abstract class gv implements gz {
     protected RewardVerifyConfig b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected int f22487c;
+    protected int f8879c;
     protected String d;
     protected Context e;
     private WeakReference<lh> i;
@@ -65,7 +65,7 @@ public abstract class gv implements gz {
     protected boolean D = false;
 
     /* renamed from: a  reason: collision with root package name */
-    protected DelayInfo f22486a = new DelayInfo();
+    protected DelayInfo f8878a = new DelayInfo();
     private boolean z = false;
 
     /* renamed from: com.huawei.hms.ads.gv$1  reason: invalid class name */
@@ -125,18 +125,18 @@ public abstract class gv implements gz {
 
             /* renamed from: com.huawei.hms.ads.gv$3$1$1  reason: invalid class name and collision with other inner class name */
             /* loaded from: source-7994992-dex2jar.jar:com/huawei/hms/ads/gv$3$1$1.class */
-            class RunnableC04031 implements Runnable {
+            class RunnableC02331 implements Runnable {
                 final /* synthetic */ long Code;
                 final /* synthetic */ CallResult V;
 
-                RunnableC04031(long j, CallResult callResult) {
+                RunnableC02331(long j, CallResult callResult) {
                     this.Code = j;
                     this.V = callResult;
                 }
 
                 @Override // java.lang.Runnable
                 public void run() {
-                    gv.this.f22486a.D(com.huawei.openalliance.ad.utils.v.Code() - this.Code);
+                    gv.this.f8878a.D(com.huawei.openalliance.ad.utils.v.Code() - this.Code);
                     gv.this.d = (String) this.V.getData();
                     AdContentData adContentData = (AdContentData) com.huawei.openalliance.ad.utils.z.V((String) this.V.getData(), AdContentData.class, new Class[0]);
                     if (adContentData != null) {
@@ -172,24 +172,24 @@ public abstract class gv implements gz {
             @Override // com.huawei.openalliance.ad.ipc.RemoteCallResultCallback
             public void onRemoteCallResult(String str, CallResult<String> callResult) {
                 ge.V("AdMediator", "onDownloaded");
-                gv.this.f22486a.Code(gv.this.w, System.currentTimeMillis());
+                gv.this.f8878a.Code(gv.this.w, System.currentTimeMillis());
                 synchronized (gv.this) {
                     ge.V("AdMediator", "onDownloaded, loadingTimeout:" + gv.this.l);
                     if (!gv.this.S) {
                         gv.this.S = true;
                     }
                     if (callResult.getCode() != 200) {
-                        gv.this.f22486a.V(Integer.valueOf(callResult.getCode()));
+                        gv.this.f8878a.V(Integer.valueOf(callResult.getCode()));
                     }
                     if (gv.this.l) {
-                        gv.this.f22486a.I(-2);
+                        gv.this.f8878a.I(-2);
                         gv.this.o = true;
                     } else {
                         gv.this.l = true;
                         com.huawei.openalliance.ad.utils.ba.Code(gv.this.p);
                         ge.V("AdMediator", "cancel loadTimeoutTask");
-                        gv.this.f22486a.Z(gv.this.w, System.currentTimeMillis());
-                        com.huawei.openalliance.ad.utils.ba.Code(new RunnableC04031(com.huawei.openalliance.ad.utils.v.Code(), callResult));
+                        gv.this.f8878a.Z(gv.this.w, System.currentTimeMillis());
+                        com.huawei.openalliance.ad.utils.ba.Code(new RunnableC02331(com.huawei.openalliance.ad.utils.v.Code(), callResult));
                     }
                     if (gv.this.o) {
                         gv.this.B((AdContentData) com.huawei.openalliance.ad.utils.z.V(callResult.getData(), AdContentData.class, new Class[0]));
@@ -248,7 +248,7 @@ public abstract class gv implements gz {
 
     public gv(lh lhVar) {
         this.i = new WeakReference<>(lhVar);
-        this.f22487c = lhVar.getAdType();
+        this.f8879c = lhVar.getAdType();
         Context applicationContext = lhVar.getContext().getApplicationContext();
         this.e = applicationContext;
         this.C = fk.Code(applicationContext);
@@ -259,9 +259,9 @@ public abstract class gv implements gz {
         if (this.S && this.o && this.e != null) {
             ge.V("AdMediator", "reportSplashCostTime");
             this.o = false;
-            this.f22486a.Code(c());
-            this.f22486a.V(this.w, this.F);
-            eh.Code(this.e, this.v, this.f22487c, adContentData, this.f22486a);
+            this.f8878a.Code(c());
+            this.f8878a.V(this.w, this.F);
+            eh.Code(this.e, this.v, this.f8879c, adContentData, this.f8878a);
         }
     }
 
@@ -306,7 +306,7 @@ public abstract class gv implements gz {
         if (adContentData == null) {
             adContentData2 = new AdContentData();
         }
-        adContentData2.d(this.f22487c);
+        adContentData2.d(this.f8879c);
         analysisEventReport.Code(adContentData2);
         analysisEventReport.Code(i);
         analysisEventReport.I(str);
@@ -464,7 +464,7 @@ public abstract class gv implements gz {
     /* JADX INFO: Access modifiers changed from: protected */
     public void B(int i) {
         this.o = true;
-        this.f22486a.I(i);
+        this.f8878a.I(i);
         B(this.B);
     }
 
@@ -761,7 +761,7 @@ public abstract class gv implements gz {
 
     @Override // com.huawei.hms.ads.gz
     public void S() {
-        this.f22486a.I(this.w, System.currentTimeMillis());
+        this.f8878a.I(this.w, System.currentTimeMillis());
     }
 
     public b V() {
@@ -918,7 +918,7 @@ public abstract class gv implements gz {
         }
         AdSlotParam adSlotParam = f.getAdSlotParam();
         if (adSlotParam != null) {
-            this.f22486a.Code(adSlotParam.Code());
+            this.f8878a.Code(adSlotParam.Code());
         }
         return adSlotParam;
     }
@@ -942,7 +942,7 @@ public abstract class gv implements gz {
         String B = com.huawei.openalliance.ad.utils.v.B();
         this.v = B;
         a2.V(B);
-        a2.Code(this.f22487c);
+        a2.Code(this.f8879c);
         Code(a2, splashAdReqParam);
     }
 

@@ -4,23 +4,23 @@ package com.zx.a.I8b7;
 public class j1 {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f42138a;
+    public String f28447a;
     public long b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f42139c;
+    public String f28448c;
     public long d;
     public long e;
 
     public j1(String str, long j, String str2, long j2, long j3) {
-        this.f42138a = "";
+        this.f28447a = "";
         this.b = 0L;
-        this.f42139c = "";
+        this.f28448c = "";
         this.d = 0L;
         this.e = 0L;
-        this.f42138a = str;
+        this.f28447a = str;
         this.b = j;
-        this.f42139c = str2;
+        this.f28448c = str2;
         this.d = j2;
         this.e = j3;
     }

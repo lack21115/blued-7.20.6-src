@@ -85,17 +85,17 @@ public class HexDump {
         }
     }
 
-    private static int toByte(char c2) {
-        if (c2 < '0' || c2 > '9') {
-            if (c2 < 'A' || c2 > 'F') {
-                if (c2 < 'a' || c2 > 'f') {
-                    throw new RuntimeException("Invalid hex char '" + c2 + "'");
+    private static int toByte(char c) {
+        if (c < '0' || c > '9') {
+            if (c < 'A' || c > 'F') {
+                if (c < 'a' || c > 'f') {
+                    throw new RuntimeException("Invalid hex char '" + c + "'");
                 }
-                return (c2 - 'a') + 10;
+                return (c - 'a') + 10;
             }
-            return (c2 - 'A') + 10;
+            return (c - 'A') + 10;
         }
-        return c2 - '0';
+        return c - '0';
     }
 
     public static byte[] toByteArray(byte b) {

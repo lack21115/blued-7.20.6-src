@@ -7,10 +7,10 @@ import com.xiaomi.push.service.i;
 public class aq implements i.b {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ ao f41211a;
+    final /* synthetic */ ao f27520a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public aq(ao aoVar) {
-        this.f41211a = aoVar;
+        this.f27520a = aoVar;
     }
 }

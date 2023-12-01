@@ -20,7 +20,7 @@ public class MotionConstrainedPoint implements Comparable<MotionConstrainedPoint
     public static final String TAG = "MotionPaths";
 
     /* renamed from: c  reason: collision with root package name */
-    static String[] f2177c = {BrowserContract.Bookmarks.POSITION, "x", "y", "width", "height", "pathRotate"};
+    static String[] f2129c = {BrowserContract.Bookmarks.POSITION, "x", "y", "width", "height", "pathRotate"};
     int b;
     private Easing t;
     private float v;
@@ -31,7 +31,7 @@ public class MotionConstrainedPoint implements Comparable<MotionConstrainedPoint
     private float h = 1.0f;
 
     /* renamed from: a  reason: collision with root package name */
-    int f2178a = 0;
+    int f2130a = 0;
     private boolean i = false;
     private float j = 0.0f;
     private float k = 0.0f;
@@ -74,11 +74,11 @@ public class MotionConstrainedPoint implements Comparable<MotionConstrainedPoint
         }
         int i = this.b;
         int i2 = motionConstrainedPoint.b;
-        if (i != i2 && this.f2178a == 0 && (i == 0 || i2 == 0)) {
+        if (i != i2 && this.f2130a == 0 && (i == 0 || i2 == 0)) {
             hashSet.add("alpha");
         }
         if (a(this.k, motionConstrainedPoint.k)) {
-            hashSet.add("rotation");
+            hashSet.add(Key.ROTATION);
         }
         if (!Float.isNaN(this.A) || !Float.isNaN(motionConstrainedPoint.A)) {
             hashSet.add("transitionPathRotate");
@@ -181,7 +181,7 @@ public class MotionConstrainedPoint implements Comparable<MotionConstrainedPoint
                     }
                     break;
                 case -40300674:
-                    if (str.equals("rotation")) {
+                    if (str.equals(Key.ROTATION)) {
                         z = true;
                         break;
                     }
@@ -293,9 +293,9 @@ public class MotionConstrainedPoint implements Comparable<MotionConstrainedPoint
     }
 
     public void applyParameters(ConstraintSet.Constraint constraint) {
-        this.f2178a = constraint.propertySet.mVisibilityMode;
+        this.f2130a = constraint.propertySet.mVisibilityMode;
         this.b = constraint.propertySet.visibility;
-        this.h = (constraint.propertySet.visibility == 0 || this.f2178a != 0) ? constraint.propertySet.alpha : 0.0f;
+        this.h = (constraint.propertySet.visibility == 0 || this.f2130a != 0) ? constraint.propertySet.alpha : 0.0f;
         this.i = constraint.transform.applyElevation;
         this.j = constraint.transform.elevation;
         this.k = constraint.transform.rotation;

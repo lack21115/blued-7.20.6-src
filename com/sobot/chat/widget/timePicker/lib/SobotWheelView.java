@@ -331,9 +331,8 @@ public class SobotWheelView extends View {
         this.isCenterLabel = bool.booleanValue();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         String contentText;
         if (this.adapter == null) {
             return;
@@ -484,9 +483,8 @@ public class SobotWheelView extends View {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         this.widthMeasureSpec = i;
         remeasure();
         setMeasuredDimension(this.measuredWidth, this.measuredHeight);

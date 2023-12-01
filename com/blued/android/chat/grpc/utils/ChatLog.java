@@ -2,7 +2,6 @@ package com.blued.android.chat.grpc.utils;
 
 import android.content.Context;
 import android.util.Log;
-import androidx.exifinterface.media.ExifInterface;
 import com.blued.android.chat.grpc.PrivateChatManager;
 import com.blued.android.chat.listener.ILogCallback;
 import java.io.BufferedWriter;
@@ -22,7 +21,7 @@ public final class ChatLog {
     public static final int ERROR = 6;
     public static final int INFO = 4;
     private static final String LOG_TIME_STAMP_FORMAT = "HH:mm:ss.SSS";
-    private static final String[] PRIORITY_DISPLAY_STRINGS = {"", "", ExifInterface.GPS_MEASUREMENT_INTERRUPTED, "D", "I", "W", ExifInterface.LONGITUDE_EAST, "A"};
+    private static final String[] PRIORITY_DISPLAY_STRINGS = {"", "", "V", "D", "I", "W", "E", "A"};
     public static final int VERBOSE = 2;
     public static final int WARN = 5;
     private static BufferedWriter sBufferedFileWriter;

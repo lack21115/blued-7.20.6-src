@@ -6,7 +6,7 @@ import android.content.Context;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static boolean f22268a;
+    public static boolean f8660a;
     public static boolean b;
 
     public static native Context a(Context context);

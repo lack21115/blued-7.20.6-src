@@ -158,9 +158,8 @@ public abstract class NativeMediaView extends AutoScaleSizeRelativeLayout {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onVisibilityChanged(View view, int i) {
+    protected void onVisibilityChanged(View view, int i) {
         super.onVisibilityChanged(view, i);
         he heVar = this.C;
         if (heVar != null) {

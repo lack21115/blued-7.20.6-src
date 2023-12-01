@@ -4,11 +4,11 @@ package com.tencent.liteav.audio.route;
 final /* synthetic */ class j implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final AudioRouteManager f36262a;
+    private final AudioRouteManager f22571a;
     private final boolean b;
 
     private j(AudioRouteManager audioRouteManager, boolean z) {
-        this.f36262a = audioRouteManager;
+        this.f22571a = audioRouteManager;
         this.b = z;
     }
 
@@ -18,6 +18,6 @@ final /* synthetic */ class j implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        this.f36262a.handleWiredHeadsetChangedInternal(this.b);
+        this.f22571a.handleWiredHeadsetChangedInternal(this.b);
     }
 }

@@ -24,7 +24,7 @@ public final class EventMemberVerifyFragment extends BaseListFragment<EventMembe
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(EventMemberVerifyFragment this$0, View view) {
         Intrinsics.e(this$0, "this$0");
-        ((EventMemberExamineViewModel) this$0.y()).dispatchAction(BaseListAction.RefreshData.f10668a);
+        ((EventMemberExamineViewModel) this$0.y()).dispatchAction(BaseListAction.RefreshData.a);
     }
 
     @Override // com.blued.android.module.common.base.mvi.BaseListFragment
@@ -44,34 +44,34 @@ public final class EventMemberVerifyFragment extends BaseListFragment<EventMembe
     @Override // com.blued.android.module.common.base.mvi.BaseListFragment, com.blued.android.module.common.base.mvi.MVIBaseFragment
     public void m() {
         super.m();
-        if (CommunityManager.f19086a.a().s()) {
-            RecyclerView a2 = a();
-            if (a2 != null) {
-                a2.setBackgroundResource(R.color.syc_151515);
+        if (CommunityManager.a.a().s()) {
+            RecyclerView a = a();
+            if (a != null) {
+                a.setBackgroundResource(R.color.syc_151515);
             }
         } else {
-            RecyclerView a3 = a();
-            if (a3 != null) {
-                a3.setBackgroundResource(R.color.white);
+            RecyclerView a2 = a();
+            if (a2 != null) {
+                a2.setBackgroundResource(R.color.white);
             }
         }
         CommonTopTitleNoTrans b = b();
         if (b != null) {
             b.setVisibility(8);
         }
+        NoDataAndLoadFailView c = c();
+        if (c != null) {
+            c.setNoDataStr(R.string.event_member_no_data);
+        }
         NoDataAndLoadFailView c2 = c();
         if (c2 != null) {
-            c2.setNoDataStr(R.string.event_member_no_data);
+            c2.setFailBtnVisibility(0);
         }
         NoDataAndLoadFailView c3 = c();
-        if (c3 != null) {
-            c3.setFailBtnVisibility(0);
-        }
-        NoDataAndLoadFailView c4 = c();
-        if (c4 == null) {
+        if (c3 == null) {
             return;
         }
-        c4.setFailBtnListener(new View.OnClickListener() { // from class: com.blued.community.ui.event.fragment.-$$Lambda$EventMemberVerifyFragment$WY6GjtJGGX5BOZAZhBRcq5yBnxM
+        c3.setFailBtnListener(new View.OnClickListener() { // from class: com.blued.community.ui.event.fragment.-$$Lambda$EventMemberVerifyFragment$WY6GjtJGGX5BOZAZhBRcq5yBnxM
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 EventMemberVerifyFragment.a(EventMemberVerifyFragment.this, view);

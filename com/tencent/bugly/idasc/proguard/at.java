@@ -17,7 +17,7 @@ public final class at {
     private static at D;
 
     /* renamed from: a  reason: collision with root package name */
-    public static int f35261a = 0;
+    public static int f21570a = 0;
     public static boolean b = false;
     public static int d = 2;
     public static boolean e = false;
@@ -39,7 +39,7 @@ public final class at {
     public boolean C = false;
 
     /* renamed from: c  reason: collision with root package name */
-    public final Context f35262c;
+    public final Context f21571c;
     public final as s;
     public final av t;
     public final NativeCrashHandler u;
@@ -50,9 +50,9 @@ public final class at {
     public aw z;
 
     private at(Context context, ak akVar, boolean z, BuglyStrategy.a aVar) {
-        f35261a = 1004;
+        f21570a = 1004;
         Context a2 = ap.a(context);
-        this.f35262c = a2;
+        this.f21571c = a2;
         this.v = ac.a();
         this.w = akVar;
         this.y = aVar;
@@ -102,7 +102,7 @@ public final class at {
         ak.a().a(new Thread() { // from class: com.tencent.bugly.idasc.proguard.at.4
             @Override // java.lang.Thread, java.lang.Runnable
             public final void run() {
-                if (!ap.a(at.this.f35262c, "local_crash_lock")) {
+                if (!ap.a(at.this.f21571c, "local_crash_lock")) {
                     al.c("Failed to lock file for uploading local crash.", new Object[0]);
                     return;
                 }
@@ -117,7 +117,7 @@ public final class at {
                     while (it.hasNext()) {
                         ag.b next = it.next();
                         if (next.b < ap.b() - 604800000) {
-                            al.c("sla local data is expired:%s", next.f35225c);
+                            al.c("sla local data is expired:%s", next.f21534c);
                             arrayList.add(next);
                             it.remove();
                         }
@@ -147,7 +147,7 @@ public final class at {
                     }
                     at.this.s.a(a4, 0L, false, false, false);
                 }
-                ap.b(at.this.f35262c, "local_crash_lock");
+                ap.b(at.this.f21571c, "local_crash_lock");
             }
         }, j2);
     }
@@ -229,7 +229,7 @@ public final class at {
     }
 
     public final boolean i() {
-        return this.x.f35277a.get();
+        return this.x.f21586a.get();
     }
 
     public final boolean j() {

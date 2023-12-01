@@ -2,8 +2,10 @@ package com.soft.blued.ui.mine.vm;
 
 import android.util.Log;
 import androidx.lifecycle.MutableLiveData;
+import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.ui.ActivityFragmentActive;
 import com.blued.android.framework.http.BluedUIHttpResponse;
+import com.blued.android.framework.http.parser.BluedEntity;
 import com.blued.android.framework.http.parser.BluedEntityA;
 import com.blued.android.module.common.base.mvvm.BaseViewModel;
 import com.blued.android.module.common.user.model.BluedLoginResult;
@@ -24,39 +26,42 @@ import kotlin.jvm.internal.Intrinsics;
 public final class MineViewModel extends BaseViewModel {
 
     /* renamed from: a  reason: collision with root package name */
-    private final MutableLiveData<MinePageModel> f31654a = new MutableLiveData<>();
+    private final MutableLiveData<MinePageModel> f17964a = new MutableLiveData<>();
     private final MutableLiveData<MinePageAdModel> b = new MutableLiveData<>();
 
     /* renamed from: c  reason: collision with root package name */
-    private final MutableLiveData<GroupGuideModel> f31655c = new MutableLiveData<>();
+    private final MutableLiveData<GroupGuideModel> f17965c = new MutableLiveData<>();
 
     private final void c(ActivityFragmentActive activityFragmentActive) {
-        MineHttpUtils.a(f(activityFragmentActive), activityFragmentActive);
+        MineHttpUtils.a(f(activityFragmentActive), (IRequestHost) activityFragmentActive);
     }
 
     private final void d(ActivityFragmentActive activityFragmentActive) {
-        MineHttpUtils.b(e(activityFragmentActive), activityFragmentActive);
+        MineHttpUtils.b(e(activityFragmentActive), (IRequestHost) activityFragmentActive);
     }
 
     private final BluedUIHttpResponse<?> e(final ActivityFragmentActive activityFragmentActive) {
-        return new BluedUIHttpResponse<BluedEntityA<MineAdModel>>(this) { // from class: com.soft.blued.ui.mine.vm.MineViewModel$getLaunchCallBack$1
+        return new BluedUIHttpResponse<BluedEntityA<MineAdModel>>(activityFragmentActive, this) { // from class: com.soft.blued.ui.mine.vm.MineViewModel$getLaunchCallBack$1
+
+            /* renamed from: a  reason: collision with root package name */
+            final /* synthetic */ ActivityFragmentActive f17968a;
             final /* synthetic */ MineViewModel b;
 
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
-                super(ActivityFragmentActive.this);
+                super((IRequestHost) activityFragmentActive);
+                this.f17968a = activityFragmentActive;
                 this.b = this;
             }
 
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<MineAdModel> bluedEntityA) {
                 if (bluedEntityA != null && bluedEntityA.hasData()) {
-                    MineAdModel singleData = bluedEntityA.getSingleData();
-                    if ((singleData == null ? null : singleData.get_10002()) != null) {
-                        List<MinePageAdModel> _10002 = singleData.get_10002();
+                    MineAdModel mineAdModel = (MineAdModel) bluedEntityA.getSingleData();
+                    if ((mineAdModel == null ? null : mineAdModel.get_10002()) != null) {
+                        List<MinePageAdModel> _10002 = mineAdModel.get_10002();
                         boolean z = true;
                         if (_10002 != null) {
                             z = _10002.isEmpty();
@@ -64,60 +69,60 @@ public final class MineViewModel extends BaseViewModel {
                         if (z) {
                             return;
                         }
-                        List<MinePageAdModel> _100022 = singleData.get_10002();
+                        List<MinePageAdModel> _100022 = mineAdModel.get_10002();
                         Intrinsics.a(_100022);
                         MinePageAdModel minePageAdModel = _100022.get(0);
                         this.b.e().setValue(minePageAdModel);
-                        Log.v("drb", Intrinsics.a("浮窗广告数据：", (Object) minePageAdModel));
+                        Log.v("drb", Intrinsics.a("浮窗广告数据：", minePageAdModel));
                     }
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish(boolean z) {
             }
         };
     }
 
     private final BluedUIHttpResponse<?> f(final ActivityFragmentActive activityFragmentActive) {
-        return new BluedUIHttpResponse<BluedEntityA<MinePageModel>>(this) { // from class: com.soft.blued.ui.mine.vm.MineViewModel$getCallBack$1
+        return new BluedUIHttpResponse<BluedEntityA<MinePageModel>>(activityFragmentActive, this) { // from class: com.soft.blued.ui.mine.vm.MineViewModel$getCallBack$1
+
+            /* renamed from: a  reason: collision with root package name */
+            final /* synthetic */ ActivityFragmentActive f17966a;
             final /* synthetic */ MineViewModel b;
 
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
-                super("mine_page", ActivityFragmentActive.this);
+                super("mine_page", (IRequestHost) activityFragmentActive);
+                this.f17966a = activityFragmentActive;
                 this.b = this;
             }
 
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public BluedEntityA<MinePageModel> parseData(String str) {
-                return (BluedEntityA) super.parseData(str);
+                return super.parseData(str);
             }
 
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUICache(BluedEntityA<MinePageModel> bluedEntityA) {
-                MinePageModel singleData;
-                super.onUICache(bluedEntityA);
-                UserInfoEntity userInfoEntity = (bluedEntityA == null || (singleData = bluedEntityA.getSingleData()) == null) ? null : singleData.user;
+                MinePageModel minePageModel;
+                super.onUICache((BluedEntity) bluedEntityA);
+                UserInfoEntity userInfoEntity = (bluedEntityA == null || (minePageModel = (MinePageModel) bluedEntityA.getSingleData()) == null) ? null : minePageModel.user;
                 if (userInfoEntity != null) {
                     userInfoEntity.visit_increase = null;
                 }
-                this.b.d().setValue(bluedEntityA == null ? null : bluedEntityA.getSingleData());
+                this.b.d().setValue(bluedEntityA == null ? null : (MinePageModel) bluedEntityA.getSingleData());
             }
 
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: b */
             public void onUIUpdate(BluedEntityA<MinePageModel> bluedEntityA) {
-                MinePageModel singleData;
+                MinePageModel minePageModel;
                 UserInfoEntity userInfoEntity;
                 BluedLoginResult loginUserInfo;
-                if (bluedEntityA != null && (singleData = bluedEntityA.getSingleData()) != null && (userInfoEntity = singleData.user) != null && (loginUserInfo = UserInfo.getInstance().getLoginUserInfo()) != null) {
+                if (bluedEntityA != null && (minePageModel = (MinePageModel) bluedEntityA.getSingleData()) != null && (userInfoEntity = minePageModel.user) != null && (loginUserInfo = UserInfo.getInstance().getLoginUserInfo()) != null) {
                     loginUserInfo.vip_grade = userInfoEntity.vip_grade;
                     loginUserInfo.expire_type = userInfoEntity.expire_type;
                     loginUserInfo.is_vip_annual = userInfoEntity.is_vip_annual;
@@ -143,37 +148,40 @@ public final class MineViewModel extends BaseViewModel {
                     loginUserInfo.avatar_audited = userInfoEntity.avatar_audited;
                     loginUserInfo.auditing_profile = userInfoEntity.auditing_profile;
                 }
-                this.b.d().setValue(bluedEntityA == null ? null : bluedEntityA.getSingleData());
+                this.b.d().setValue(bluedEntityA == null ? null : (MinePageModel) bluedEntityA.getSingleData());
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish(boolean z) {
                 this.b.a(z);
             }
         };
     }
 
-    public final void a(ActivityFragmentActive fragmentActive) {
-        Intrinsics.e(fragmentActive, "fragmentActive");
-        c(fragmentActive);
-        d(fragmentActive);
-        b(fragmentActive);
+    public final void a(ActivityFragmentActive activityFragmentActive) {
+        Intrinsics.e(activityFragmentActive, "fragmentActive");
+        c(activityFragmentActive);
+        d(activityFragmentActive);
+        b(activityFragmentActive);
     }
 
-    public final void b(final ActivityFragmentActive fragmentActive) {
-        Intrinsics.e(fragmentActive, "fragmentActive");
-        ChatHttpUtils.f(new BluedUIHttpResponse<BluedEntityA<GroupGuideModel>>(this) { // from class: com.soft.blued.ui.mine.vm.MineViewModel$getGroupGuideData$1
+    public final void b(final ActivityFragmentActive activityFragmentActive) {
+        Intrinsics.e(activityFragmentActive, "fragmentActive");
+        ChatHttpUtils.f(new BluedUIHttpResponse<BluedEntityA<GroupGuideModel>>(activityFragmentActive, this) { // from class: com.soft.blued.ui.mine.vm.MineViewModel$getGroupGuideData$1
+
+            /* renamed from: a  reason: collision with root package name */
+            final /* synthetic */ ActivityFragmentActive f17967a;
             final /* synthetic */ MineViewModel b;
 
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
-                super(ActivityFragmentActive.this);
+                super((IRequestHost) activityFragmentActive);
+                this.f17967a = activityFragmentActive;
                 this.b = this;
             }
 
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
+            /* JADX WARN: Type inference failed for: r1v1, types: [java.lang.Object] */
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<GroupGuideModel> bluedEntityA) {
                 if (bluedEntityA == null || bluedEntityA.getSingleData() == null) {
@@ -185,7 +193,7 @@ public final class MineViewModel extends BaseViewModel {
     }
 
     public final MutableLiveData<MinePageModel> d() {
-        return this.f31654a;
+        return this.f17964a;
     }
 
     public final MutableLiveData<MinePageAdModel> e() {
@@ -193,6 +201,6 @@ public final class MineViewModel extends BaseViewModel {
     }
 
     public final MutableLiveData<GroupGuideModel> f() {
-        return this.f31655c;
+        return this.f17965c;
     }
 }

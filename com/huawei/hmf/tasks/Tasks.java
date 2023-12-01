@@ -30,7 +30,7 @@ public class Tasks {
         }
         j.a aVar = new j.a();
         task.addOnSuccessListener(aVar).addOnFailureListener(aVar);
-        aVar.f22390a.await();
+        aVar.f8782a.await();
         return (TResult) j.a((Task<Object>) task);
     }
 
@@ -39,7 +39,7 @@ public class Tasks {
         if (!task.isComplete()) {
             j.a aVar = new j.a();
             task.addOnSuccessListener(aVar).addOnFailureListener(aVar);
-            if (!aVar.f22390a.await(j, timeUnit)) {
+            if (!aVar.f8782a.await(j, timeUnit)) {
                 throw new TimeoutException("Timed out waiting for Task");
             }
         }

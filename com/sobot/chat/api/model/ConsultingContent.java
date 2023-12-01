@@ -1,7 +1,6 @@
 package com.sobot.chat.api.model;
 
 import android.text.TextUtils;
-import com.alipay.sdk.util.i;
 import java.io.Serializable;
 
 /* loaded from: source-8303388-dex2jar.jar:com/sobot/chat/api/model/ConsultingContent.class */
@@ -115,6 +114,6 @@ public class ConsultingContent implements Serializable {
         if (!TextUtils.isEmpty(this.sobotGoodsImgUrl)) {
             str5 = "\"" + this.sobotGoodsImgUrl + "\"";
         }
-        return "{\"title\":" + str + ",\"url\":" + str2 + ",\"description\":" + str3 + ",\"label\":" + str4 + ",\"thumbnail\":" + str5 + i.d;
+        return "{\"title\":" + str + ",\"url\":" + str2 + ",\"description\":" + str3 + ",\"label\":" + str4 + ",\"thumbnail\":" + str5 + "}";
     }
 }

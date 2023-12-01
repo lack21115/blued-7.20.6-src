@@ -26,10 +26,10 @@ public class g {
     private boolean h;
 
     /* renamed from: a  reason: collision with root package name */
-    private final Object f34957a = new Object();
+    private final Object f21266a = new Object();
 
     /* renamed from: c  reason: collision with root package name */
-    private JSONObject f34958c = new JSONObject();
+    private JSONObject f21267c = new JSONObject();
 
     private g(File file) throws IOException {
         RandomAccessFile randomAccessFile = new RandomAccessFile(file, "rw");
@@ -100,8 +100,8 @@ public class g {
         Object obj;
         Object obj2 = null;
         try {
-            synchronized (this.f34957a) {
-                obj = this.f34958c.get(str);
+            synchronized (this.f21266a) {
+                obj = this.f21267c.get(str);
                 obj2 = obj;
             }
             return obj;
@@ -144,13 +144,13 @@ public class g {
             return;
         }
         try {
-            this.f34958c = new JSONObject(new String(b(a2), "ISO8859-1"));
+            this.f21267c = new JSONObject(new String(b(a2), "ISO8859-1"));
         } catch (Exception e) {
             com.tencent.beacon.base.util.c.a("[properties]", "init error" + e.getMessage(), new Object[0]);
             com.tencent.beacon.a.b.g e2 = com.tencent.beacon.a.b.g.e();
             e2.a("504", "[properties] init error! msg: " + e.getMessage() + ". file size: " + this.e, e);
         }
-        com.tencent.beacon.base.util.c.a("[properties]", "init json: " + this.f34958c.toString(), new Object[0]);
+        com.tencent.beacon.base.util.c.a("[properties]", "init json: " + this.f21267c.toString(), new Object[0]);
     }
 
     public <T> T a(String str, T t) {
@@ -175,8 +175,8 @@ public class g {
             }
             try {
                 HashSet hashSet2 = new HashSet();
-                synchronized (this.f34957a) {
-                    jSONObject = this.f34958c.getJSONObject(str);
+                synchronized (this.f21266a) {
+                    jSONObject = this.f21267c.getJSONObject(str);
                 }
                 if (jSONObject != null) {
                     Iterator<String> keys = jSONObject.keys();
@@ -196,14 +196,14 @@ public class g {
 
     public void a() {
         synchronized (this) {
-            this.f34958c = new JSONObject();
+            this.f21267c = new JSONObject();
             a(d());
         }
     }
 
     public boolean a(String str) {
-        synchronized (this.f34957a) {
-            Iterator<String> keys = this.f34958c.keys();
+        synchronized (this.f21266a) {
+            Iterator<String> keys = this.f21267c.keys();
             if (keys != null) {
                 while (keys.hasNext()) {
                     if (str.equals(keys.next())) {
@@ -216,14 +216,14 @@ public class g {
     }
 
     public Map<String, ?> b() {
-        synchronized (this.f34957a) {
-            if (this.f34958c != null) {
-                Iterator<String> keys = this.f34958c.keys();
+        synchronized (this.f21266a) {
+            if (this.f21267c != null) {
+                Iterator<String> keys = this.f21267c.keys();
                 HashMap hashMap = new HashMap();
                 while (keys.hasNext()) {
                     String next = keys.next();
                     try {
-                        hashMap.put(next, this.f34958c.get(next));
+                        hashMap.put(next, this.f21267c.get(next));
                     } catch (JSONException e) {
                         com.tencent.beacon.base.util.c.a(e);
                     }
@@ -236,8 +236,8 @@ public class g {
 
     public void b(String str) {
         synchronized (this) {
-            synchronized (this.f34957a) {
-                this.f34958c.remove(str);
+            synchronized (this.f21266a) {
+                this.f21267c.remove(str);
             }
             a(d());
         }
@@ -265,8 +265,8 @@ public class g {
                         return;
                     }
                 }
-                synchronized (this.f34957a) {
-                    this.f34958c.put(str, obj);
+                synchronized (this.f21266a) {
+                    this.f21267c.put(str, obj);
                 }
                 a(d());
             }

@@ -6,18 +6,18 @@ import com.anythink.expressad.out.e;
 public class d implements com.anythink.expressad.splash.b.d {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f8234a = "SplashShowListenerImpl";
+    private static final String f5394a = "SplashShowListenerImpl";
     private e b;
 
     /* renamed from: c  reason: collision with root package name */
-    private com.anythink.expressad.foundation.d.c f8235c;
+    private com.anythink.expressad.foundation.d.c f5395c;
     private boolean d;
     private c e;
 
     public d(c cVar, e eVar, double d, com.anythink.expressad.foundation.d.c cVar2) {
         this.e = cVar;
         this.b = eVar;
-        this.f8235c = cVar2;
+        this.f5395c = cVar2;
         this.d = a(d, cVar2);
     }
 
@@ -65,7 +65,7 @@ public class d implements com.anythink.expressad.splash.b.d {
     public final void a(String str) {
         c cVar = this.e;
         if (cVar != null) {
-            cVar.f8228a = false;
+            cVar.f5388a = false;
         }
         e eVar = this.b;
         if (eVar != null) {
@@ -81,7 +81,7 @@ public class d implements com.anythink.expressad.splash.b.d {
         }
         c cVar = this.e;
         if (cVar != null) {
-            cVar.f8228a = false;
+            cVar.f5388a = false;
         }
     }
 

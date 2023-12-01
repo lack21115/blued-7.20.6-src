@@ -4,11 +4,11 @@ package androidx.constraintlayout.core.motion.utils;
 public class StopLogicEngine implements StopEngine {
 
     /* renamed from: a  reason: collision with root package name */
-    private float f2062a;
+    private float f2014a;
     private float b;
 
     /* renamed from: c  reason: collision with root package name */
-    private float f2063c;
+    private float f2015c;
     private float d;
     private float e;
     private float f;
@@ -26,7 +26,7 @@ public class StopLogicEngine implements StopEngine {
         this.o = false;
         float f2 = this.d;
         if (f <= f2) {
-            float f3 = this.f2062a;
+            float f3 = this.f2014a;
             return (f3 * f) + ((((this.b - f3) * f) * f) / (f2 * 2.0f));
         }
         int i = this.j;
@@ -38,7 +38,7 @@ public class StopLogicEngine implements StopEngine {
         if (f4 < f5) {
             float f6 = this.g;
             float f7 = this.b;
-            return f6 + (f7 * f4) + ((((this.f2063c - f7) * f4) * f4) / (f5 * 2.0f));
+            return f6 + (f7 * f4) + ((((this.f2015c - f7) * f4) * f4) / (f5 * 2.0f));
         } else if (i == 2) {
             return this.h;
         } else {
@@ -49,7 +49,7 @@ public class StopLogicEngine implements StopEngine {
                 return this.i;
             }
             float f10 = this.h;
-            float f11 = this.f2063c;
+            float f11 = this.f2015c;
             return (f10 + (f11 * f8)) - (((f11 * f8) * f8) / (f9 * 2.0f));
         }
     }
@@ -60,7 +60,7 @@ public class StopLogicEngine implements StopEngine {
         if (f == 0.0f) {
             f6 = 1.0E-4f;
         }
-        this.f2062a = f6;
+        this.f2014a = f6;
         float f7 = f6 / f3;
         float f8 = (f7 * f6) / 2.0f;
         if (f6 < 0.0f) {
@@ -68,9 +68,9 @@ public class StopLogicEngine implements StopEngine {
             if (sqrt < f4) {
                 this.k = "backward accelerate, decelerate";
                 this.j = 2;
-                this.f2062a = f6;
+                this.f2014a = f6;
                 this.b = sqrt;
-                this.f2063c = 0.0f;
+                this.f2015c = 0.0f;
                 float f9 = (sqrt - f6) / f3;
                 this.d = f9;
                 this.e = sqrt / f3;
@@ -81,9 +81,9 @@ public class StopLogicEngine implements StopEngine {
             }
             this.k = "backward accelerate cruse decelerate";
             this.j = 3;
-            this.f2062a = f6;
+            this.f2014a = f6;
             this.b = f4;
-            this.f2063c = f4;
+            this.f2015c = f4;
             float f10 = (f4 - f6) / f3;
             this.d = f10;
             float f11 = f4 / f3;
@@ -97,7 +97,7 @@ public class StopLogicEngine implements StopEngine {
         } else if (f8 >= f2) {
             this.k = "hard stop";
             this.j = 1;
-            this.f2062a = f6;
+            this.f2014a = f6;
             this.b = 0.0f;
             this.g = f2;
             this.d = (2.0f * f2) / f6;
@@ -107,9 +107,9 @@ public class StopLogicEngine implements StopEngine {
             if (f15 + f7 < f5) {
                 this.k = "cruse decelerate";
                 this.j = 2;
-                this.f2062a = f6;
+                this.f2014a = f6;
                 this.b = f6;
-                this.f2063c = 0.0f;
+                this.f2015c = 0.0f;
                 this.g = f14;
                 this.h = f2;
                 this.d = f15;
@@ -124,9 +124,9 @@ public class StopLogicEngine implements StopEngine {
             if (sqrt2 < f4) {
                 this.k = "accelerate decelerate";
                 this.j = 2;
-                this.f2062a = f6;
+                this.f2014a = f6;
                 this.b = sqrt2;
-                this.f2063c = 0.0f;
+                this.f2015c = 0.0f;
                 this.d = f16;
                 this.e = f17;
                 this.g = ((f6 + sqrt2) * f16) / 2.0f;
@@ -135,9 +135,9 @@ public class StopLogicEngine implements StopEngine {
             }
             this.k = "accelerate cruse decelerate";
             this.j = 3;
-            this.f2062a = f6;
+            this.f2014a = f6;
             this.b = f4;
-            this.f2063c = f4;
+            this.f2015c = f4;
             float f18 = (f4 - f6) / f3;
             this.d = f18;
             float f19 = f4 / f3;
@@ -177,14 +177,14 @@ public class StopLogicEngine implements StopEngine {
         sb.append("  stages ");
         sb.append(this.j);
         sb.append("\n");
-        String str2 = sb.toString() + str + " dur " + this.d + " vel " + this.f2062a + " pos " + this.g + "\n";
+        String str2 = sb.toString() + str + " dur " + this.d + " vel " + this.f2014a + " pos " + this.g + "\n";
         String str3 = str2;
         if (this.j > 1) {
             str3 = str2 + str + " dur " + this.e + " vel " + this.b + " pos " + this.h + "\n";
         }
         String str4 = str3;
         if (this.j > 2) {
-            str4 = str3 + str + " dur " + this.f + " vel " + this.f2063c + " pos " + this.i + "\n";
+            str4 = str3 + str + " dur " + this.f + " vel " + this.f2015c + " pos " + this.i + "\n";
         }
         float f2 = this.d;
         if (f <= f2) {
@@ -223,7 +223,7 @@ public class StopLogicEngine implements StopEngine {
     public float getVelocity(float f) {
         float f2 = this.d;
         if (f <= f2) {
-            float f3 = this.f2062a;
+            float f3 = this.f2014a;
             return f3 + (((this.b - f3) * f) / f2);
         }
         int i = this.j;
@@ -234,14 +234,14 @@ public class StopLogicEngine implements StopEngine {
         float f5 = this.e;
         if (f4 < f5) {
             float f6 = this.b;
-            return f6 + (((this.f2063c - f6) * f4) / f5);
+            return f6 + (((this.f2015c - f6) * f4) / f5);
         } else if (i == 2) {
             return this.h;
         } else {
             float f7 = f4 - f5;
             float f8 = this.f;
             if (f7 < f8) {
-                float f9 = this.f2063c;
+                float f9 = this.f2015c;
                 return f9 - ((f7 * f9) / f8);
             }
             return this.i;

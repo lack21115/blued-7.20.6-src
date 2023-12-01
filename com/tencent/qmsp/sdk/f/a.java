@@ -9,20 +9,20 @@ import java.util.List;
 /* loaded from: source-8829756-dex2jar.jar:com/tencent/qmsp/sdk/f/a.class */
 public class a {
     private static a e = new a(102400);
-    protected static final Comparator<byte[]> f = new C0990a();
+    protected static final Comparator<byte[]> f = new C0820a();
 
     /* renamed from: a  reason: collision with root package name */
-    private List<byte[]> f38598a = new LinkedList();
+    private List<byte[]> f24907a = new LinkedList();
     private List<byte[]> b = new ArrayList(64);
 
     /* renamed from: c  reason: collision with root package name */
-    private int f38599c = 0;
+    private int f24908c = 0;
     private final int d;
 
     /* renamed from: com.tencent.qmsp.sdk.f.a$a  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/qmsp/sdk/f/a$a.class */
-    static final class C0990a implements Comparator<byte[]> {
-        C0990a() {
+    static final class C0820a implements Comparator<byte[]> {
+        C0820a() {
         }
 
         @Override // java.util.Comparator
@@ -42,10 +42,10 @@ public class a {
 
     private void b() {
         synchronized (this) {
-            while (this.f38599c > this.d) {
-                byte[] remove = this.f38598a.remove(0);
+            while (this.f24908c > this.d) {
+                byte[] remove = this.f24907a.remove(0);
                 this.b.remove(remove);
-                this.f38599c -= remove.length;
+                this.f24908c -= remove.length;
             }
         }
     }
@@ -54,14 +54,14 @@ public class a {
         synchronized (this) {
             if (bArr != null) {
                 if (bArr.length <= this.d) {
-                    this.f38598a.add(bArr);
+                    this.f24907a.add(bArr);
                     int binarySearch = Collections.binarySearch(this.b, bArr, f);
                     int i = binarySearch;
                     if (binarySearch < 0) {
                         i = (-binarySearch) - 1;
                     }
                     this.b.add(i, bArr);
-                    this.f38599c += bArr.length;
+                    this.f24908c += bArr.length;
                     b();
                 }
             }
@@ -78,9 +78,9 @@ public class a {
                 }
                 byte[] bArr = this.b.get(i3);
                 if (bArr.length >= i) {
-                    this.f38599c -= bArr.length;
+                    this.f24908c -= bArr.length;
                     this.b.remove(i3);
-                    this.f38598a.remove(bArr);
+                    this.f24907a.remove(bArr);
                     return bArr;
                 }
                 i2 = i3 + 1;

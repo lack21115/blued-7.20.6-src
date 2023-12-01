@@ -7,17 +7,13 @@ import com.airbnb.lottie.LottieComposition;
 public class LottieValueAnimator extends BaseLottieAnimator implements Choreographer.FrameCallback {
     private LottieComposition i;
     private float b = 1.0f;
-
-    /* renamed from: c  reason: collision with root package name */
-    private boolean f4413c = false;
+    private boolean c = false;
     private long d = 0;
     private float e = 0.0f;
     private int f = 0;
     private float g = -2.14748365E9f;
     private float h = 2.14748365E9f;
-
-    /* renamed from: a  reason: collision with root package name */
-    protected boolean f4412a = false;
+    protected boolean a = false;
 
     private float q() {
         LottieComposition lottieComposition = this.i;
@@ -92,7 +88,7 @@ public class LottieValueAnimator extends BaseLottieAnimator implements Choreogra
     protected void c(boolean z) {
         Choreographer.getInstance().removeFrameCallback(this);
         if (z) {
-            this.f4412a = false;
+            this.a = false;
         }
     }
 
@@ -124,16 +120,16 @@ public class LottieValueAnimator extends BaseLottieAnimator implements Choreogra
         }
         float f3 = f + f2;
         this.e = f3;
-        boolean c2 = MiscUtils.c(f3, m(), n());
+        boolean c = MiscUtils.c(f3, m(), n());
         this.e = MiscUtils.b(this.e, m(), n());
         this.d = j;
         c();
-        if (!c2) {
+        if (!c) {
             if (getRepeatCount() == -1 || this.f < getRepeatCount()) {
                 a();
                 this.f++;
                 if (getRepeatMode() == 2) {
-                    this.f4413c = !this.f4413c;
+                    this.c = !this.c;
                     g();
                 } else {
                     this.e = r() ? n() : m();
@@ -201,7 +197,7 @@ public class LottieValueAnimator extends BaseLottieAnimator implements Choreogra
     }
 
     public void i() {
-        this.f4412a = true;
+        this.a = true;
         a(r());
         a((int) (r() ? n() : m()));
         this.d = System.nanoTime();
@@ -211,7 +207,7 @@ public class LottieValueAnimator extends BaseLottieAnimator implements Choreogra
 
     @Override // android.animation.ValueAnimator, android.animation.Animator
     public boolean isRunning() {
-        return this.f4412a;
+        return this.a;
     }
 
     public void j() {
@@ -224,7 +220,7 @@ public class LottieValueAnimator extends BaseLottieAnimator implements Choreogra
     }
 
     public void l() {
-        this.f4412a = true;
+        this.a = true;
         o();
         this.d = System.nanoTime();
         if (r() && e() == m()) {
@@ -275,10 +271,10 @@ public class LottieValueAnimator extends BaseLottieAnimator implements Choreogra
     @Override // android.animation.ValueAnimator
     public void setRepeatMode(int i) {
         super.setRepeatMode(i);
-        if (i == 2 || !this.f4413c) {
+        if (i == 2 || !this.c) {
             return;
         }
-        this.f4413c = false;
+        this.c = false;
         g();
     }
 }

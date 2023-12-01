@@ -30,8 +30,8 @@ public final class ChannelFlowMerge<T> extends ChannelFlow<T> {
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // kotlinx.coroutines.flow.internal.ChannelFlow
     public Object a(ProducerScope<? super T> producerScope, Continuation<? super Unit> continuation) {
-        Object a2 = this.d.a(new ChannelFlowMerge$collectTo$$inlined$collect$1((Job) continuation.getContext().get(Job.C_), SemaphoreKt.a(this.e, 0, 2, null), producerScope, new SendingCollector(producerScope)), continuation);
-        return a2 == IntrinsicsKt.a() ? a2 : Unit.f42314a;
+        Object a = this.d.a(new ChannelFlowMerge$collectTo$$inlined$collect$1((Job) continuation.getContext().get(Job.C_), SemaphoreKt.a(this.e, 0, 2, null), producerScope, new SendingCollector(producerScope)), continuation);
+        return a == IntrinsicsKt.a() ? a : Unit.a;
     }
 
     @Override // kotlinx.coroutines.flow.internal.ChannelFlow
@@ -41,7 +41,7 @@ public final class ChannelFlowMerge<T> extends ChannelFlow<T> {
 
     @Override // kotlinx.coroutines.flow.internal.ChannelFlow
     public ReceiveChannel<T> a(CoroutineScope coroutineScope) {
-        return FlowCoroutineKt.a(coroutineScope, this.f43446a, this.b, b());
+        return FlowCoroutineKt.a(coroutineScope, this.a, this.b, b());
     }
 
     @Override // kotlinx.coroutines.flow.internal.ChannelFlow

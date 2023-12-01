@@ -17,13 +17,9 @@ import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view_model/LiveHostFinishDetailViewModel.class */
 public final class LiveHostFinishDetailViewModel extends BaseViewModel {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final MutableLiveData<List<LiveFinishData>> f15461a = new MutableLiveData<>();
+    private final MutableLiveData<List<LiveFinishData>> a = new MutableLiveData<>();
     private final MutableLiveData<LiveCloseInfoModel> b = new MutableLiveData<>();
-
-    /* renamed from: c  reason: collision with root package name */
-    private LiveFinishPageData f15462c = new LiveFinishPageData(1, true);
+    private LiveFinishPageData c = new LiveFinishPageData(1, true);
     private ArrayList<LiveFinishData> d = new ArrayList<>();
 
     @Metadata
@@ -33,9 +29,7 @@ public final class LiveHostFinishDetailViewModel extends BaseViewModel {
         @Metadata
         /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view_model/LiveHostFinishDetailViewModel$ApiState$ApiAudienceFrom.class */
         public static final class ApiAudienceFrom extends ApiState {
-
-            /* renamed from: a  reason: collision with root package name */
-            public static final ApiAudienceFrom f15463a = new ApiAudienceFrom();
+            public static final ApiAudienceFrom a = new ApiAudienceFrom();
 
             private ApiAudienceFrom() {
                 super(null);
@@ -45,9 +39,7 @@ public final class LiveHostFinishDetailViewModel extends BaseViewModel {
         @Metadata
         /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view_model/LiveHostFinishDetailViewModel$ApiState$ApiAudiences.class */
         public static final class ApiAudiences extends ApiState {
-
-            /* renamed from: a  reason: collision with root package name */
-            public static final ApiAudiences f15464a = new ApiAudiences();
+            public static final ApiAudiences a = new ApiAudiences();
 
             private ApiAudiences() {
                 super(null);
@@ -57,9 +49,7 @@ public final class LiveHostFinishDetailViewModel extends BaseViewModel {
         @Metadata
         /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view_model/LiveHostFinishDetailViewModel$ApiState$ApiComments.class */
         public static final class ApiComments extends ApiState {
-
-            /* renamed from: a  reason: collision with root package name */
-            public static final ApiComments f15465a = new ApiComments();
+            public static final ApiComments a = new ApiComments();
 
             private ApiComments() {
                 super(null);
@@ -69,9 +59,7 @@ public final class LiveHostFinishDetailViewModel extends BaseViewModel {
         @Metadata
         /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view_model/LiveHostFinishDetailViewModel$ApiState$ApiContributors.class */
         public static final class ApiContributors extends ApiState {
-
-            /* renamed from: a  reason: collision with root package name */
-            public static final ApiContributors f15466a = new ApiContributors();
+            public static final ApiContributors a = new ApiContributors();
 
             private ApiContributors() {
                 super(null);
@@ -81,9 +69,7 @@ public final class LiveHostFinishDetailViewModel extends BaseViewModel {
         @Metadata
         /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view_model/LiveHostFinishDetailViewModel$ApiState$ApiGiverFrom.class */
         public static final class ApiGiverFrom extends ApiState {
-
-            /* renamed from: a  reason: collision with root package name */
-            public static final ApiGiverFrom f15467a = new ApiGiverFrom();
+            public static final ApiGiverFrom a = new ApiGiverFrom();
 
             private ApiGiverFrom() {
                 super(null);
@@ -93,9 +79,7 @@ public final class LiveHostFinishDetailViewModel extends BaseViewModel {
         @Metadata
         /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view_model/LiveHostFinishDetailViewModel$ApiState$ApiLikes.class */
         public static final class ApiLikes extends ApiState {
-
-            /* renamed from: a  reason: collision with root package name */
-            public static final ApiLikes f15468a = new ApiLikes();
+            public static final ApiLikes a = new ApiLikes();
 
             private ApiLikes() {
                 super(null);
@@ -105,9 +89,7 @@ public final class LiveHostFinishDetailViewModel extends BaseViewModel {
         @Metadata
         /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view_model/LiveHostFinishDetailViewModel$ApiState$ApiNewFans.class */
         public static final class ApiNewFans extends ApiState {
-
-            /* renamed from: a  reason: collision with root package name */
-            public static final ApiNewFans f15469a = new ApiNewFans();
+            public static final ApiNewFans a = new ApiNewFans();
 
             private ApiNewFans() {
                 super(null);
@@ -117,9 +99,7 @@ public final class LiveHostFinishDetailViewModel extends BaseViewModel {
         @Metadata
         /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view_model/LiveHostFinishDetailViewModel$ApiState$ApiNewFollowers.class */
         public static final class ApiNewFollowers extends ApiState {
-
-            /* renamed from: a  reason: collision with root package name */
-            public static final ApiNewFollowers f15470a = new ApiNewFollowers();
+            public static final ApiNewFollowers a = new ApiNewFollowers();
 
             private ApiNewFollowers() {
                 super(null);
@@ -129,9 +109,7 @@ public final class LiveHostFinishDetailViewModel extends BaseViewModel {
         @Metadata
         /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view_model/LiveHostFinishDetailViewModel$ApiState$ApiStateInfo.class */
         public static final class ApiStateInfo extends ApiState {
-
-            /* renamed from: a  reason: collision with root package name */
-            public static final ApiStateInfo f15471a = new ApiStateInfo();
+            public static final ApiStateInfo a = new ApiStateInfo();
 
             private ApiStateInfo() {
                 super(null);
@@ -158,11 +136,11 @@ public final class LiveHostFinishDetailViewModel extends BaseViewModel {
     public final void a(List<LiveFinishData> data, boolean z) {
         Intrinsics.e(data, "data");
         c(z);
-        if (this.f15462c.getPage() == 1) {
+        if (this.c.getPage() == 1) {
             this.d.clear();
         }
         this.d.addAll(data);
-        this.f15461a.setValue(this.d);
+        this.a.setValue(this.d);
     }
 
     public final void b(ApiState apiState) {
@@ -171,7 +149,7 @@ public final class LiveHostFinishDetailViewModel extends BaseViewModel {
     }
 
     public final boolean c(boolean z) {
-        this.f15462c.setHasMore(z);
+        this.c.setHasMore(z);
         return z;
     }
 
@@ -180,36 +158,36 @@ public final class LiveHostFinishDetailViewModel extends BaseViewModel {
     }
 
     public final LiveFinishPageData e() {
-        return this.f15462c;
+        return this.c;
     }
 
     public final void f() {
         j();
-        this.f15461a.setValue(this.d);
+        this.a.setValue(this.d);
     }
 
     public final MutableLiveData<List<LiveFinishData>> g() {
-        return this.f15461a;
+        return this.a;
     }
 
     public final int h() {
-        this.f15462c.setPage(1);
-        this.f15462c.setHasMore(true);
-        return this.f15462c.getPage();
+        this.c.setPage(1);
+        this.c.setHasMore(true);
+        return this.c.getPage();
     }
 
     public final int i() {
-        LiveFinishPageData liveFinishPageData = this.f15462c;
+        LiveFinishPageData liveFinishPageData = this.c;
         liveFinishPageData.setPage(liveFinishPageData.getPage() + 1);
-        return this.f15462c.getPage();
+        return this.c.getPage();
     }
 
     public final int j() {
-        LiveFinishPageData liveFinishPageData = this.f15462c;
+        LiveFinishPageData liveFinishPageData = this.c;
         liveFinishPageData.setPage(liveFinishPageData.getPage() - 1);
-        if (this.f15462c.getPage() < 1) {
-            this.f15462c.setPage(1);
+        if (this.c.getPage() < 1) {
+            this.c.setPage(1);
         }
-        return this.f15462c.getPage();
+        return this.c.getPage();
     }
 }

@@ -7,11 +7,11 @@ import com.tencent.thumbplayer.api.composition.ITPMediaAssetExtraParam;
 public class d implements ITPMediaAsset {
 
     /* renamed from: a  reason: collision with root package name */
-    private ITPMediaAssetExtraParam f39221a;
+    private ITPMediaAssetExtraParam f25530a;
 
     @Override // com.tencent.thumbplayer.api.composition.ITPMediaAsset
     public ITPMediaAssetExtraParam getExtraParam() {
-        return this.f39221a;
+        return this.f25530a;
     }
 
     @Override // com.tencent.thumbplayer.api.composition.ITPMediaAsset
@@ -26,6 +26,6 @@ public class d implements ITPMediaAsset {
 
     @Override // com.tencent.thumbplayer.api.composition.ITPMediaAsset
     public void setExtraParam(ITPMediaAssetExtraParam iTPMediaAssetExtraParam) {
-        this.f39221a = iTPMediaAssetExtraParam;
+        this.f25530a = iTPMediaAssetExtraParam;
     }
 }

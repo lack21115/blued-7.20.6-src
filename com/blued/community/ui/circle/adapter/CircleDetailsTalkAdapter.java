@@ -47,8 +47,9 @@ public class CircleDetailsTalkAdapter extends CircleTalkAdapter {
         baseViewHolder.addOnClickListener(R.id.new_base_name);
     }
 
+    /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.blued.community.ui.circle.adapter.CircleTalkAdapter
-    protected void a(BaseViewHolder baseViewHolder, BluedIngSelfFeed bluedIngSelfFeed) {
+    public void a(BaseViewHolder baseViewHolder, BluedIngSelfFeed bluedIngSelfFeed) {
         if (baseViewHolder != null) {
             super.a(baseViewHolder, bluedIngSelfFeed);
             ImageLoader.a(this.b, bluedIngSelfFeed.user_avatar).b(R.drawable.user_bg_round).c().a((ImageView) baseViewHolder.getView(R.id.new_base_header));

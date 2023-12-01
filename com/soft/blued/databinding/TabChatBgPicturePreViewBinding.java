@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class TabChatBgPicturePreViewBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final RelativeLayout f29595a;
+    private final RelativeLayout f15905a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
-        return this.f29595a;
+        return this.f15905a;
     }
 }

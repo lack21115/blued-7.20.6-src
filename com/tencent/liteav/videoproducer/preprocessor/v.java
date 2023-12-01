@@ -4,11 +4,11 @@ package com.tencent.liteav.videoproducer.preprocessor;
 final /* synthetic */ class v implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final VideoPreprocessor f37091a;
+    private final VideoPreprocessor f23400a;
     private final int b;
 
     private v(VideoPreprocessor videoPreprocessor, int i) {
-        this.f37091a = videoPreprocessor;
+        this.f23400a = videoPreprocessor;
         this.b = i;
     }
 
@@ -18,6 +18,6 @@ final /* synthetic */ class v implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        this.f37091a.mPreprocessor.e.setHomeOrientation(this.b);
+        this.f23400a.mPreprocessor.e.setHomeOrientation(this.b);
     }
 }

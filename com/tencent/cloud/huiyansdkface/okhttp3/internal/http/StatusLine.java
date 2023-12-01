@@ -9,16 +9,16 @@ import java.net.ProtocolException;
 public final class StatusLine {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Protocol f35958a;
+    public final Protocol f22267a;
     public final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final String f35959c;
+    public final String f22268c;
 
     public StatusLine(Protocol protocol, int i, String str) {
-        this.f35958a = protocol;
+        this.f22267a = protocol;
         this.b = i;
-        this.f35959c = str;
+        this.f22268c = str;
     }
 
     public static StatusLine get(Response response) {
@@ -68,12 +68,12 @@ public final class StatusLine {
 
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(this.f35958a == Protocol.HTTP_1_0 ? "HTTP/1.0" : "HTTP/1.1");
+        sb.append(this.f22267a == Protocol.HTTP_1_0 ? "HTTP/1.0" : "HTTP/1.1");
         sb.append(' ');
         sb.append(this.b);
-        if (this.f35959c != null) {
+        if (this.f22268c != null) {
             sb.append(' ');
-            sb.append(this.f35959c);
+            sb.append(this.f22268c);
         }
         return sb.toString();
     }

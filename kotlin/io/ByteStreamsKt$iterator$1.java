@@ -8,23 +8,19 @@ import kotlin.collections.ByteIterator;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/io/ByteStreamsKt$iterator$1.class */
 public final class ByteStreamsKt$iterator$1 extends ByteIterator {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ BufferedInputStream f42483a;
+    final /* synthetic */ BufferedInputStream a;
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private boolean f42484c;
+    private boolean c;
     private boolean d;
 
     private final void b() {
-        if (this.f42484c || this.d) {
+        if (this.c || this.d) {
             return;
         }
-        int read = this.f42483a.read();
+        int read = this.a.read();
         this.b = read;
         boolean z = true;
-        this.f42484c = true;
+        this.c = true;
         if (read != -1) {
             z = false;
         }
@@ -38,7 +34,7 @@ public final class ByteStreamsKt$iterator$1 extends ByteIterator {
             throw new NoSuchElementException("Input stream is over.");
         }
         byte b = (byte) this.b;
-        this.f42484c = false;
+        this.c = false;
         return b;
     }
 

@@ -14,13 +14,9 @@ import java.util.Set;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/m.class */
 public final class m {
-
-    /* renamed from: a  reason: collision with root package name */
-    static final int f6855a = 1;
+    static final int a = 1;
     private static final String b = "InnerBroadcastManager";
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final boolean f6856c = false;
+    private static final boolean c = false;
     private static final Object i = new Object();
     private static m j;
     private final Context d;
@@ -32,13 +28,11 @@ public final class m {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/m$a.class */
     public static final class a {
-
-        /* renamed from: a  reason: collision with root package name */
-        final Intent f6858a;
+        final Intent a;
         final ArrayList<b> b;
 
         a(Intent intent, ArrayList<b> arrayList) {
-            this.f6858a = intent;
+            this.a = intent;
             this.b = arrayList;
         }
     }
@@ -46,17 +40,13 @@ public final class m {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/m$b.class */
     public static final class b {
-
-        /* renamed from: a  reason: collision with root package name */
-        final IntentFilter f6859a;
+        final IntentFilter a;
         final BroadcastReceiver b;
-
-        /* renamed from: c  reason: collision with root package name */
-        boolean f6860c;
+        boolean c;
         boolean d;
 
         b(IntentFilter intentFilter, BroadcastReceiver broadcastReceiver) {
-            this.f6859a = intentFilter;
+            this.a = intentFilter;
             this.b = broadcastReceiver;
         }
 
@@ -65,7 +55,7 @@ public final class m {
             sb.append("Receiver{");
             sb.append(this.b);
             sb.append(" filter=");
-            sb.append(this.f6859a);
+            sb.append(this.a);
             if (this.d) {
                 sb.append(" DEAD");
             }
@@ -130,7 +120,7 @@ public final class m {
                         if (i5 < size2) {
                             b bVar = aVar.b.get(i5);
                             if (!bVar.d) {
-                                bVar.b.onReceive(this.d, aVar.f6858a);
+                                bVar.b.onReceive(this.d, aVar.a);
                             }
                             i4 = i5 + 1;
                         }
@@ -156,8 +146,8 @@ public final class m {
                     int i3 = 0;
                     while (true) {
                         int i4 = i3;
-                        if (i4 < bVar.f6859a.countActions()) {
-                            String action = bVar.f6859a.getAction(i4);
+                        if (i4 < bVar.a.countActions()) {
+                            String action = bVar.a.getAction(i4);
                             ArrayList<b> arrayList = this.f.get(action);
                             if (arrayList != null) {
                                 int size2 = arrayList.size();
@@ -239,10 +229,10 @@ public final class m {
                     }
                     b bVar = arrayList.get(i3);
                     if (z) {
-                        Log.v("LocalBroadcastManager", "Matching against filter " + bVar.f6859a);
+                        Log.v("LocalBroadcastManager", "Matching against filter " + bVar.a);
                     }
-                    if (!bVar.f6860c) {
-                        IntentFilter intentFilter = bVar.f6859a;
+                    if (!bVar.c) {
+                        IntentFilter intentFilter = bVar.a;
                         ArrayList arrayList3 = arrayList2;
                         int match = intentFilter.match(action, resolveTypeIfNeeded, scheme, data, categories, "LocalBroadcastManager");
                         if (match >= 0) {
@@ -251,7 +241,7 @@ public final class m {
                             }
                             arrayList2 = arrayList3 == null ? new ArrayList() : arrayList3;
                             arrayList2.add(bVar);
-                            bVar.f6860c = true;
+                            bVar.c = true;
                         } else if (z) {
                             Log.v("LocalBroadcastManager", "  Filter did not match: ".concat(match != -4 ? match != -3 ? match != -2 ? match != -1 ? "unknown reason" : "type" : "data" : "action" : "category"));
                         }
@@ -267,7 +257,7 @@ public final class m {
                         if (i5 >= arrayList2.size()) {
                             break;
                         }
-                        ((b) arrayList2.get(i5)).f6860c = false;
+                        ((b) arrayList2.get(i5)).c = false;
                         i4 = i5 + 1;
                     }
                     this.g.add(new a(intent, arrayList2));

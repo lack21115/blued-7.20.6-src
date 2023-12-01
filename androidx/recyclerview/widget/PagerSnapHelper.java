@@ -40,7 +40,7 @@ public class PagerSnapHelper extends SnapHelper {
 
     private OrientationHelper getHorizontalHelper(RecyclerView.LayoutManager layoutManager) {
         OrientationHelper orientationHelper = this.mHorizontalHelper;
-        if (orientationHelper == null || orientationHelper.f3311a != layoutManager) {
+        if (orientationHelper == null || orientationHelper.f3263a != layoutManager) {
             this.mHorizontalHelper = OrientationHelper.createHorizontalHelper(layoutManager);
         }
         return this.mHorizontalHelper;
@@ -58,7 +58,7 @@ public class PagerSnapHelper extends SnapHelper {
 
     private OrientationHelper getVerticalHelper(RecyclerView.LayoutManager layoutManager) {
         OrientationHelper orientationHelper = this.mVerticalHelper;
-        if (orientationHelper == null || orientationHelper.f3311a != layoutManager) {
+        if (orientationHelper == null || orientationHelper.f3263a != layoutManager) {
             this.mVerticalHelper = OrientationHelper.createVerticalHelper(layoutManager);
         }
         return this.mVerticalHelper;

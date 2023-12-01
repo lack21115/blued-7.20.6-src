@@ -9,7 +9,7 @@ public class bi extends JsonComposer {
     @Json(name = "version")
 
     /* renamed from: a  reason: collision with root package name */
-    private int f37331a = 0;
+    private int f23640a = 0;
     @Json(name = OapsWrapper.KEY_PATH)
     private String b;
 
@@ -18,7 +18,7 @@ public class bi extends JsonComposer {
     }
 
     public void a(int i) {
-        this.f37331a = i;
+        this.f23640a = i;
     }
 
     public void a(String str) {
@@ -26,6 +26,6 @@ public class bi extends JsonComposer {
     }
 
     public int b() {
-        return this.f37331a;
+        return this.f23640a;
     }
 }

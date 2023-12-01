@@ -10,13 +10,9 @@ public class j {
     public static final int q = 2;
     public static final int s = 0;
     public static final int t = 2;
-
-    /* renamed from: a  reason: collision with root package name */
-    public int f5908a;
+    public int a;
     public int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public int f5909c;
+    public int c;
     public int d;
     public int e;
     public long f;
@@ -29,6 +25,6 @@ public class j {
     public int u;
 
     public String toString() {
-        return "VideoViewRecord{videoLength=" + this.f5908a + ", videoStartTime=" + this.b + ", videoEndTime=" + this.f5909c + ", isVideoPlayInStart=" + this.d + ", isVideoPlayInEnd=" + this.e + ", viodePlayScence=" + this.l + ", videoPlayType=" + this.o + ", videoPlayBehavior=" + this.r + ", videoPlayStatus=" + this.u + '}';
+        return "VideoViewRecord{videoLength=" + this.a + ", videoStartTime=" + this.b + ", videoEndTime=" + this.c + ", isVideoPlayInStart=" + this.d + ", isVideoPlayInEnd=" + this.e + ", viodePlayScence=" + this.l + ", videoPlayType=" + this.o + ", videoPlayBehavior=" + this.r + ", videoPlayStatus=" + this.u + '}';
     }
 }

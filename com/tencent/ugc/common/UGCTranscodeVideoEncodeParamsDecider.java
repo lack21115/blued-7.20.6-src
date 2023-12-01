@@ -33,26 +33,26 @@ public class UGCTranscodeVideoEncodeParamsDecider {
         int c2;
         int i;
         if (((float) nVar.c()) >= nVar2.c()) {
-            c2 = nVar2.f36340a;
+            c2 = nVar2.f22649a;
             i = (int) (c2 / nVar.c());
         } else {
             c2 = (int) (nVar2.b * nVar.c());
             i = nVar2.b;
         }
         n nVar3 = new n();
-        nVar3.f36340a = ((c2 + 15) / 16) * 16;
+        nVar3.f22649a = ((c2 + 15) / 16) * 16;
         nVar3.b = ((i + 15) / 16) * 16;
         LiteavLog.i(TAG, "origin= " + nVar + ", expectSize= " + nVar2 + ", outSize= " + nVar3);
         return nVar3;
     }
 
     private n adjustVideoOutSize(n nVar, n nVar2) {
-        if ((nVar.f36340a > nVar2.f36340a || nVar.b > nVar2.b) && (nVar.f36340a > nVar2.b || nVar.b > nVar2.f36340a)) {
+        if ((nVar.f22649a > nVar2.f22649a || nVar.b > nVar2.b) && (nVar.f22649a > nVar2.b || nVar.b > nVar2.f22649a)) {
             double c2 = nVar.c();
-            int min = nVar.f36340a >= nVar.b ? Math.min((int) (nVar2.f36340a * c2), nVar2.b) : Math.min((int) (nVar2.b * c2), nVar2.f36340a);
+            int min = nVar.f22649a >= nVar.b ? Math.min((int) (nVar2.f22649a * c2), nVar2.b) : Math.min((int) (nVar2.b * c2), nVar2.f22649a);
             int i = (((int) (min / c2)) + 15) / 16;
             n nVar3 = new n();
-            nVar3.f36340a = ((min + 15) / 16) * 16;
+            nVar3.f22649a = ((min + 15) / 16) * 16;
             nVar3.b = i * 16;
             LiteavLog.i(TAG, "adjustOutSize origin: " + nVar + ", expectSize: " + nVar2 + ", outSize: " + nVar3);
             return nVar3;
@@ -87,14 +87,14 @@ public class UGCTranscodeVideoEncodeParamsDecider {
         if (this.mEncodeRotation == Rotation.ROTATION_90 || this.mEncodeRotation == Rotation.ROTATION_270) {
             nVar.a();
         }
-        nVar.f36340a = ((nVar.f36340a + 15) / 16) * 16;
+        nVar.f22649a = ((nVar.f22649a + 15) / 16) * 16;
         nVar.b = ((nVar.b + 15) / 16) * 16;
         return nVar;
     }
 
     private int getDecidedVideoBitrate(n nVar) {
         if (this.mFullIFrame) {
-            return (nVar.f36340a >= 1280 || nVar.b >= 1280) ? 15000 : 24000;
+            return (nVar.f22649a >= 1280 || nVar.b >= 1280) ? 15000 : 24000;
         }
         int i = this.mEncodeBitrate;
         if (i != 0) {
@@ -151,7 +151,7 @@ public class UGCTranscodeVideoEncodeParamsDecider {
                 break;
             }
             n sizeFromMediaFormat = getSizeFromMediaFormat(it.next());
-            if (sizeFromMediaFormat.b > sizeFromMediaFormat.f36340a) {
+            if (sizeFromMediaFormat.b > sizeFromMediaFormat.f22649a) {
                 z = false;
                 break;
             }
@@ -168,7 +168,7 @@ public class UGCTranscodeVideoEncodeParamsDecider {
             return new n(0, 0);
         }
         n sizeFromMediaFormat = getSizeFromMediaFormat(mediaFormat);
-        if (sizeFromMediaFormat.f36340a != 0 && sizeFromMediaFormat.b != 0) {
+        if (sizeFromMediaFormat.f22649a != 0 && sizeFromMediaFormat.b != 0) {
             return this.mSourceType == UGCConstants.SourceType.VIDEO ? adjustVideoOutSize(sizeFromMediaFormat, this.mExpectSize) : adjustPictureOutSize(sizeFromMediaFormat, this.mExpectSize);
         }
         LiteavLog.i(TAG, "calculateGenerateSize origin: ".concat(String.valueOf(sizeFromMediaFormat)));
@@ -178,7 +178,7 @@ public class UGCTranscodeVideoEncodeParamsDecider {
     private n getSizeFromMediaFormat(MediaFormat mediaFormat) {
         int integer;
         n nVar = new n();
-        nVar.f36340a = mediaFormat.getInteger("width");
+        nVar.f22649a = mediaFormat.getInteger("width");
         nVar.b = mediaFormat.getInteger("height");
         if (LiteavSystemInfo.getSystemOSVersionInt() >= 23) {
             try {
@@ -206,7 +206,7 @@ public class UGCTranscodeVideoEncodeParamsDecider {
         videoEncodeParams.isTranscodingMode = true;
         videoEncodeParams.encoderProfile = this.mEncodeProfile;
         n decidedOutputSize = getDecidedOutputSize();
-        videoEncodeParams.width = decidedOutputSize.f36340a;
+        videoEncodeParams.width = decidedOutputSize.f22649a;
         videoEncodeParams.height = decidedOutputSize.b;
         videoEncodeParams.setFullIFrame(this.mFullIFrame);
         videoEncodeParams.gop = getDecidedGOP();
@@ -265,19 +265,19 @@ public class UGCTranscodeVideoEncodeParamsDecider {
         }
         this.mVideoCompress = i;
         if (i == 0) {
-            this.mExpectSize.f36340a = 360;
+            this.mExpectSize.f22649a = 360;
             this.mExpectSize.b = 640;
         } else if (i == 1) {
-            this.mExpectSize.f36340a = 480;
+            this.mExpectSize.f22649a = 480;
             this.mExpectSize.b = 640;
         } else if (i == 2) {
-            this.mExpectSize.f36340a = LiveProtos.Event.LIVE_BAG_CHAT_MARK_SHOW_VALUE;
+            this.mExpectSize.f22649a = LiveProtos.Event.LIVE_BAG_CHAT_MARK_SHOW_VALUE;
             this.mExpectSize.b = 960;
         } else if (i == 3) {
-            this.mExpectSize.f36340a = UGCTransitionRules.DEFAULT_IMAGE_WIDTH;
+            this.mExpectSize.f22649a = UGCTransitionRules.DEFAULT_IMAGE_WIDTH;
             this.mExpectSize.b = 1280;
         } else if (i == 4) {
-            this.mExpectSize.f36340a = 1080;
+            this.mExpectSize.f22649a = 1080;
             this.mExpectSize.b = WBConstants.SDK_NEW_PAY_VERSION;
         }
         LiteavLog.i(TAG, "setVideoCompress " + i + ", expectSize = " + this.mExpectSize);

@@ -1,7 +1,6 @@
 package com.kwad.sdk.core.report;
 
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.kwad.components.offline.api.core.api.ILoggerReporter;
 import com.kwad.sdk.commercial.model.HybridLoadMsg;
 import com.kwad.sdk.commercial.model.WebViewCommercialMsg;
@@ -81,8 +80,9 @@ public final class KSLoggerReporter {
         private String mEventId;
         private String mTag;
 
+        /* JADX INFO: Access modifiers changed from: package-private */
         /* loaded from: source-7994992-dex2jar.jar:com/kwad/sdk/core/report/KSLoggerReporter$b$a.class */
-        interface a {
+        public interface a {
             void a(b bVar);
         }
 
@@ -113,7 +113,7 @@ public final class KSLoggerReporter {
             if (adTemplate.mAdScene != null) {
                 this.aiA = KSLoggerReporter.bv(adTemplate.mAdScene.getAdStyle());
             }
-            b("creative_id", Long.valueOf(cl));
+            b(com.anythink.expressad.foundation.d.c.l, Long.valueOf(cl));
             b("llsid", Long.valueOf(bY));
             return this;
         }
@@ -431,7 +431,7 @@ public final class KSLoggerReporter {
     private static String cA(String str) {
         String str2;
         try {
-            String[] split = str.split(BridgeUtil.UNDERLINE_STR);
+            String[] split = str.split("_");
             StringBuilder sb = new StringBuilder();
             boolean z = false;
             for (String str3 : split) {

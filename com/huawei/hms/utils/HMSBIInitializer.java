@@ -24,11 +24,11 @@ public class HMSBIInitializer {
     public static HiAnalyticsInstance f;
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f22913a;
+    public final Context f9305a;
     public AtomicBoolean b = new AtomicBoolean(false);
 
     /* renamed from: c  reason: collision with root package name */
-    public boolean f22914c = c.a();
+    public boolean f9306c = c.a();
 
     /* loaded from: source-7994992-dex2jar.jar:com/huawei/hms/utils/HMSBIInitializer$a.class */
     public class a implements IQueryUrlCallBack {
@@ -44,12 +44,12 @@ public class HMSBIInitializer {
         @Override // com.huawei.hms.framework.network.grs.IQueryUrlCallBack
         public void onCallBackSuccess(String str) {
             if (!TextUtils.isEmpty(str)) {
-                if (HMSBIInitializer.this.f22914c) {
+                if (HMSBIInitializer.this.f9306c) {
                     HiAnalyticsConfig build = new HiAnalyticsConfig.Builder().setEnableImei(false).setEnableUDID(false).setEnableSN(false).setCollectURL(str).build();
-                    HiAnalyticsInstance unused = HMSBIInitializer.f = new HiAnalyticsInstance.Builder(HMSBIInitializer.this.f22913a).setOperConf(build).setMaintConf(new HiAnalyticsConfig.Builder().setEnableImei(false).setEnableUDID(false).setEnableSN(false).setCollectURL(str).build()).create(HiAnalyticsConstant.HA_SERVICE_TAG);
+                    HiAnalyticsInstance unused = HMSBIInitializer.f = new HiAnalyticsInstance.Builder(HMSBIInitializer.this.f9305a).setOperConf(build).setMaintConf(new HiAnalyticsConfig.Builder().setEnableImei(false).setEnableUDID(false).setEnableSN(false).setCollectURL(str).build()).create(HiAnalyticsConstant.HA_SERVICE_TAG);
                     HMSBIInitializer.f.setAppid("com.huawei.hwid");
                 } else {
-                    HmsHiAnalyticsUtils.init(HMSBIInitializer.this.f22913a, false, false, false, str, "com.huawei.hwid");
+                    HmsHiAnalyticsUtils.init(HMSBIInitializer.this.f9305a, false, false, false, str, "com.huawei.hwid");
                 }
                 HMSLog.i("HMSBIInitializer", "BI URL acquired successfully");
             }
@@ -75,7 +75,7 @@ public class HMSBIInitializer {
     }
 
     public HMSBIInitializer(Context context) {
-        this.f22913a = context;
+        this.f9305a = context;
     }
 
     public static HMSBIInitializer getInstance(Context context) {
@@ -96,7 +96,7 @@ public class HMSBIInitializer {
         HMSLog.i("HMSBIInitializer", "Start to query GRS");
         GrsBaseInfo grsBaseInfo = new GrsBaseInfo();
         grsBaseInfo.setIssueCountry(str);
-        new GrsClient(this.f22913a, grsBaseInfo).ayncGetGrsUrl("com.huawei.cloud.opensdkhianalytics", "ROOTV2", new a());
+        new GrsClient(this.f9305a, grsBaseInfo).ayncGetGrsUrl("com.huawei.cloud.opensdkhianalytics", "ROOTV2", new a());
     }
 
     public HiAnalyticsInstance getAnalyticsInstance() {
@@ -104,19 +104,19 @@ public class HMSBIInitializer {
     }
 
     public void initBI() {
-        boolean initFlag = !this.f22914c ? HmsHiAnalyticsUtils.getInitFlag() : HiAnalyticsManager.getInitFlag(HiAnalyticsConstant.HA_SERVICE_TAG);
+        boolean initFlag = !this.f9306c ? HmsHiAnalyticsUtils.getInitFlag() : HiAnalyticsManager.getInitFlag(HiAnalyticsConstant.HA_SERVICE_TAG);
         HMSLog.i("HMSBIInitializer", "Builder->biInitFlag :" + initFlag);
-        if (initFlag || com.huawei.hms.stats.a.c(this.f22913a)) {
+        if (initFlag || com.huawei.hms.stats.a.c(this.f9305a)) {
             return;
         }
         HMSLog.i("HMSBIInitializer", "Builder->biInitFlag : start initHaSDK");
         if (this.b.compareAndSet(false, true)) {
-            String issueCountryCode = GrsApp.getInstance().getIssueCountryCode(this.f22913a);
+            String issueCountryCode = GrsApp.getInstance().getIssueCountryCode(this.f9305a);
             String str = issueCountryCode;
             if (!TextUtils.isEmpty(issueCountryCode)) {
                 str = issueCountryCode.toUpperCase(Locale.ENGLISH);
             }
-            if (!"UNKNOWN".equalsIgnoreCase(str) && !TextUtils.isEmpty(str)) {
+            if (!GrsBaseInfo.CountryCodeSource.UNKNOWN.equalsIgnoreCase(str) && !TextUtils.isEmpty(str)) {
                 new b(this, null).execute(str);
                 return;
             }
@@ -126,6 +126,6 @@ public class HMSBIInitializer {
     }
 
     public boolean isInit() {
-        return !this.f22914c ? HmsHiAnalyticsUtils.getInitFlag() : HiAnalyticsManager.getInitFlag(HiAnalyticsConstant.HA_SERVICE_TAG);
+        return !this.f9306c ? HmsHiAnalyticsUtils.getInitFlag() : HiAnalyticsManager.getInitFlag(HiAnalyticsConstant.HA_SERVICE_TAG);
     }
 }

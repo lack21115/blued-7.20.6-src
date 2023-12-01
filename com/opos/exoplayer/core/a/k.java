@@ -11,12 +11,12 @@ final class k implements d {
     private boolean e;
     private int[] f;
     private boolean i;
-    private ByteBuffer g = f25014a;
-    private ByteBuffer h = f25014a;
+    private ByteBuffer g = f11326a;
+    private ByteBuffer h = f11326a;
     private int b = -1;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f25040c = -1;
+    private int f11352c = -1;
 
     @Override // com.opos.exoplayer.core.a.d
     public void a(ByteBuffer byteBuffer) {
@@ -66,10 +66,10 @@ final class k implements d {
         } else if (i3 != 2) {
             throw new d.a(i, i2, i3);
         } else {
-            if (!z && this.f25040c == i && this.b == i2) {
+            if (!z && this.f11352c == i && this.b == i2) {
                 return false;
             }
-            this.f25040c = i;
+            this.f11352c = i;
             this.b = i2;
             this.e = i2 != this.f.length;
             int i4 = 0;
@@ -102,7 +102,7 @@ final class k implements d {
 
     @Override // com.opos.exoplayer.core.a.d
     public int d() {
-        return this.f25040c;
+        return this.f11352c;
     }
 
     @Override // com.opos.exoplayer.core.a.d
@@ -113,27 +113,27 @@ final class k implements d {
     @Override // com.opos.exoplayer.core.a.d
     public ByteBuffer f() {
         ByteBuffer byteBuffer = this.h;
-        this.h = f25014a;
+        this.h = f11326a;
         return byteBuffer;
     }
 
     @Override // com.opos.exoplayer.core.a.d
     public boolean g() {
-        return this.i && this.h == f25014a;
+        return this.i && this.h == f11326a;
     }
 
     @Override // com.opos.exoplayer.core.a.d
     public void h() {
-        this.h = f25014a;
+        this.h = f11326a;
         this.i = false;
     }
 
     @Override // com.opos.exoplayer.core.a.d
     public void i() {
         h();
-        this.g = f25014a;
+        this.g = f11326a;
         this.b = -1;
-        this.f25040c = -1;
+        this.f11352c = -1;
         this.f = null;
         this.e = false;
     }

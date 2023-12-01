@@ -22,7 +22,6 @@ import com.blued.community.ui.circle.adapter.MyCircleTalkAdapter;
 import com.blued.community.ui.circle.model.MyCircleTalkModel;
 import com.bytedance.applog.tracker.Tracker;
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import java.util.Collection;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/circle/fragment/CircleMyRespondFragment.class */
 public class CircleMyRespondFragment extends PreloadFragment implements View.OnClickListener {
@@ -34,9 +33,7 @@ public class CircleMyRespondFragment extends PreloadFragment implements View.OnC
     private int p = 1;
     private boolean q = true;
     BluedUIHttpResponse n = new BluedUIHttpResponse<BluedEntity<MyCircleTalkModel, BluedEntityBaseExtra>>(getFragmentActive()) { // from class: com.blued.community.ui.circle.fragment.CircleMyRespondFragment.3
-
-        /* renamed from: a  reason: collision with root package name */
-        boolean f19229a = false;
+        boolean a = false;
 
         private void a(BluedEntity<MyCircleTalkModel, BluedEntityBaseExtra> bluedEntity, boolean z) {
             if (bluedEntity == null || bluedEntity.data == null) {
@@ -52,13 +49,13 @@ public class CircleMyRespondFragment extends PreloadFragment implements View.OnC
             if (CircleMyRespondFragment.this.p == 1) {
                 CircleMyRespondFragment.this.m.setNewData(bluedEntity.data);
             } else {
-                CircleMyRespondFragment.this.m.addData((Collection) bluedEntity.data);
+                CircleMyRespondFragment.this.m.addData(bluedEntity.data);
             }
         }
 
         @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public boolean onUIFailure(int i, String str) {
-            this.f19229a = true;
+            this.a = true;
             if (CircleMyRespondFragment.this.p != 1) {
                 CircleMyRespondFragment.c(CircleMyRespondFragment.this);
             }
@@ -69,12 +66,12 @@ public class CircleMyRespondFragment extends PreloadFragment implements View.OnC
         public void onUIFinish() {
             if (CircleMyRespondFragment.this.m.getItemCount() != 1) {
                 CircleMyRespondFragment.this.o.d();
-            } else if (this.f19229a) {
+            } else if (this.a) {
                 CircleMyRespondFragment.this.o.b();
             } else {
                 CircleMyRespondFragment.this.o.a();
             }
-            this.f19229a = false;
+            this.a = false;
             CircleMyRespondFragment.this.k.j();
             CircleMyRespondFragment.this.m.loadMoreComplete();
             if (CircleMyRespondFragment.this.q) {
@@ -120,7 +117,6 @@ public class CircleMyRespondFragment extends PreloadFragment implements View.OnC
         this.l.setLayoutManager(new GridLayoutManager(this.j, 1));
         this.m.setEnableLoadMore(true);
         this.m.setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() { // from class: com.blued.community.ui.circle.fragment.CircleMyRespondFragment.1
-            @Override // com.chad.library.adapter.base.BaseQuickAdapter.RequestLoadMoreListener
             public void onLoadMoreRequested() {
                 CircleMyRespondFragment.this.a(false);
             }
@@ -164,14 +160,14 @@ public class CircleMyRespondFragment extends PreloadFragment implements View.OnC
         }
     }
 
-    @Override // com.blued.android.framework.activity.PreloadFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.framework.activity.PreloadFragment, com.blued.android.core.ui.BaseFragment
     public void setUserVisibleHint(boolean z) {
         PullToRefreshRecyclerView pullToRefreshRecyclerView;
         super.setUserVisibleHint(z);
-        if (!z || this.f9777c || (pullToRefreshRecyclerView = this.k) == null) {
+        if (!z || this.c || (pullToRefreshRecyclerView = this.k) == null) {
             return;
         }
         pullToRefreshRecyclerView.k();
-        this.f9777c = true;
+        this.c = true;
     }
 }

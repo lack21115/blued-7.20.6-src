@@ -1,6 +1,7 @@
 package com.loopj.android.http;
 
 import android.util.Log;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -89,7 +90,7 @@ public abstract class RangeFileAsyncHttpResponseHandler extends FileAsyncHttpRes
         }
         if (this.current > 0) {
             this.append = true;
-            httpUriRequest.setHeader("Range", "bytes=" + this.current + "-");
+            httpUriRequest.setHeader("Range", "bytes=" + this.current + Constants.ACCEPT_TIME_SEPARATOR_SERVER);
         }
     }
 }

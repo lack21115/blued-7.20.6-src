@@ -16,7 +16,6 @@ public class UnreadMsgPop extends AttachPopupView {
         super(context);
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.AttachPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
     public void b() {
         super.b();
         if (!StringUtils.d(this.t)) {
@@ -33,12 +32,10 @@ public class UnreadMsgPop extends AttachPopupView {
         }, 5000L);
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.BasePopupView
     public int getImplLayoutId() {
         return R.layout.pop_unread_msg_guide;
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.BasePopupView, android.view.View
     public boolean onTouchEvent(MotionEvent motionEvent) {
         p();
         return false;

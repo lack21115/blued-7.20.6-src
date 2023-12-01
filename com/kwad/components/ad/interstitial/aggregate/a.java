@@ -17,12 +17,12 @@ public final class a extends PagerAdapter {
     private final com.kwad.components.ad.interstitial.d hU;
     private final boolean hV;
     private b hW;
-    private InterfaceC0480a hX;
+    private InterfaceC0310a hX;
     private final List<AdTemplate> mAdTemplateList = new ArrayList();
 
     /* renamed from: com.kwad.components.ad.interstitial.aggregate.a$a  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/components/ad/interstitial/aggregate/a$a.class */
-    public interface InterfaceC0480a {
+    public interface InterfaceC0310a {
         void cs();
     }
 
@@ -38,8 +38,8 @@ public final class a extends PagerAdapter {
         this.hV = com.kwad.sdk.core.response.a.a.bZ(com.kwad.sdk.core.response.a.d.cb(adTemplate)) != 1 ? false : true;
     }
 
-    public final void a(InterfaceC0480a interfaceC0480a) {
-        this.hX = interfaceC0480a;
+    public final void a(InterfaceC0310a interfaceC0310a) {
+        this.hX = interfaceC0310a;
     }
 
     public final void a(b bVar) {

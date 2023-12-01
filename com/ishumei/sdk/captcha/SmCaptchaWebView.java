@@ -17,7 +17,6 @@ import android.webkit.WebResourceResponse;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import com.anythink.core.common.res.d;
 import com.bytedance.applog.tracker.Tracker;
 import com.umeng.analytics.pro.bh;
 import java.net.URL;
@@ -26,7 +25,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Timer;
 import java.util.TimerTask;
-import java.util.jar.Pack200;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -65,13 +63,13 @@ public class SmCaptchaWebView extends WebView {
     /* loaded from: source-7994992-dex2jar.jar:com/ishumei/sdk/captcha/SmCaptchaWebView$O0000O000000oO.class */
     public class O0000O000000oO extends WebViewClient {
         private final Timer O0000O000000oO = new Timer();
-        private Handler O000O00000OoO = new HandlerC0461O0000O000000oO();
+        private Handler O000O00000OoO = new HandlerC0291O0000O000000oO();
         final /* synthetic */ SmOption O000O00000o0O;
 
         /* renamed from: com.ishumei.sdk.captcha.SmCaptchaWebView$O0000O000000oO$O0000O000000oO  reason: collision with other inner class name */
         /* loaded from: source-7994992-dex2jar.jar:com/ishumei/sdk/captcha/SmCaptchaWebView$O0000O000000oO$O0000O000000oO.class */
-        class HandlerC0461O0000O000000oO extends Handler {
-            HandlerC0461O0000O000000oO() {
+        class HandlerC0291O0000O000000oO extends Handler {
+            HandlerC0291O0000O000000oO() {
             }
 
             @Override // android.os.Handler
@@ -128,7 +126,7 @@ public class SmCaptchaWebView extends WebView {
                 SmCaptchaWebView.this.notifyWebLoadError(SmCaptchaWebView.SMCAPTCHA_WV_NETWORK_ERROR);
                 return;
             }
-            Tracker.loadUrl(SmCaptchaWebView.this, d.f6907a);
+            Tracker.loadUrl(SmCaptchaWebView.this, "about:blank");
             SmCaptchaWebView.this.reloadCaptcha();
         }
 
@@ -155,6 +153,7 @@ public class SmCaptchaWebView extends WebView {
             }
         }
 
+        @Override // android.webkit.WebViewClient
         public void onReceivedError(WebView webView, WebResourceRequest webResourceRequest, WebResourceError webResourceError) {
             super.onReceivedError(webView, webResourceRequest, webResourceError);
             if (Build.VERSION.SDK_INT >= 21) {
@@ -164,6 +163,7 @@ public class SmCaptchaWebView extends WebView {
             }
         }
 
+        @Override // android.webkit.WebViewClient
         public void onReceivedHttpError(WebView webView, WebResourceRequest webResourceRequest, WebResourceResponse webResourceResponse) {
             super.onReceivedHttpError(webView, webResourceRequest, webResourceResponse);
             if (Build.VERSION.SDK_INT >= 21) {
@@ -178,6 +178,7 @@ public class SmCaptchaWebView extends WebView {
             sslErrorHandler.cancel();
         }
 
+        @Override // android.webkit.WebViewClient
         public boolean shouldOverrideUrlLoading(WebView webView, WebResourceRequest webResourceRequest) {
             if (Build.VERSION.SDK_INT < 21 || !SmCaptchaWebView.this.dispatchPersonalSchemeUrl(webView, webResourceRequest.getUrl())) {
                 return super.shouldOverrideUrlLoading(webView, webResourceRequest);
@@ -389,7 +390,7 @@ public class SmCaptchaWebView extends WebView {
                 if (O000O00000OoO.O0000O000000oO(string, "onError")) {
                     notifyWebLoadError(jSONObject.getInt("code"));
                 } else if (O000O00000OoO.O0000O000000oO(string, "onSuccess")) {
-                    onSuccess(jSONObject.getString("rid"), jSONObject.getBoolean(Pack200.Packer.PASS));
+                    onSuccess(jSONObject.getString("rid"), jSONObject.getBoolean("pass"));
                 } else if (O000O00000OoO.O0000O000000oO(string, "onReady")) {
                     onReady();
                 }

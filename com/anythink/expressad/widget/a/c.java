@@ -24,11 +24,11 @@ import com.bytedance.applog.tracker.Tracker;
 public final class c extends Dialog {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f8789a = "ATFeedBackDialog";
+    private static final String f5949a = "ATFeedBackDialog";
     private b b;
 
     /* renamed from: c  reason: collision with root package name */
-    private TextView f8790c;
+    private TextView f5950c;
     private LinearLayout d;
     private Button e;
     private Button f;
@@ -109,16 +109,16 @@ public final class c extends Dialog {
         if (inflate != null) {
             setContentView(inflate);
             try {
-                this.f8790c = (TextView) inflate.findViewById(i.a(context, "anythink_video_common_alertview_titleview", "id"));
+                this.f5950c = (TextView) inflate.findViewById(i.a(context, "anythink_video_common_alertview_titleview", "id"));
             } catch (Exception e) {
-                o.a(f8789a, e.getMessage());
+                o.a(f5949a, e.getMessage());
             }
             try {
                 this.d = (LinearLayout) inflate.findViewById(i.a(context, "anythink_video_common_alertview_contentview", "id"));
                 this.e = (Button) inflate.findViewById(i.a(context, "anythink_video_common_alertview_confirm_button", "id"));
                 this.f = (Button) inflate.findViewById(i.a(context, "anythink_video_common_alertview_cancel_button", "id"));
             } catch (Exception e2) {
-                o.a(f8789a, e2.getMessage());
+                o.a(f5949a, e2.getMessage());
             }
         }
         setCanceledOnTouchOutside(false);
@@ -234,7 +234,7 @@ public final class c extends Dialog {
     }
 
     public final void a(String str) {
-        TextView textView = this.f8790c;
+        TextView textView = this.f5950c;
         if (textView != null) {
             textView.setText(str);
         }
@@ -287,7 +287,7 @@ public final class c extends Dialog {
             }
             getWindow().clearFlags(8);
         } catch (Exception e) {
-            o.d(f8789a, e.getMessage());
+            o.d(f5949a, e.getMessage());
             super.show();
         }
     }

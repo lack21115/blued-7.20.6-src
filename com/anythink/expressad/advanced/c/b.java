@@ -29,7 +29,7 @@ import org.json.JSONObject;
 public final class b {
 
     /* renamed from: c  reason: collision with root package name */
-    private com.anythink.expressad.foundation.d.c f7019c;
+    private com.anythink.expressad.foundation.d.c f4181c;
     private ATNativeAdvancedView d;
     private d e;
     private com.anythink.expressad.a.a f;
@@ -52,11 +52,11 @@ public final class b {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    public Handler f7018a = new Handler(Looper.getMainLooper()) { // from class: com.anythink.expressad.advanced.c.b.2
+    public Handler f4180a = new Handler(Looper.getMainLooper()) { // from class: com.anythink.expressad.advanced.c.b.2
         @Override // android.os.Handler
         public final void handleMessage(Message message) {
             super.handleMessage(message);
-            if (message.what == 2 && b.this.f7019c != null && b.this.f7019c.ay() && b.this.d != null) {
+            if (message.what == 2 && b.this.f4181c != null && b.this.f4181c.ay() && b.this.d != null) {
                 b.this.d.getAdvancedNativeWebview();
             }
         }
@@ -88,11 +88,11 @@ public final class b {
             try {
                 if (b.this.e != null) {
                     if (TextUtils.isEmpty(str)) {
-                        b.this.e.a(b.this.f7019c);
+                        b.this.e.a(b.this.f4181c);
                         d unused = b.this.e;
                         return;
                     }
-                    com.anythink.expressad.foundation.d.c b = com.anythink.expressad.foundation.d.c.b(com.anythink.expressad.foundation.d.c.a(b.this.f7019c));
+                    com.anythink.expressad.foundation.d.c b = com.anythink.expressad.foundation.d.c.b(com.anythink.expressad.foundation.d.c.a(b.this.f4181c));
                     b.p(str);
                     b.this.a(b);
                 }
@@ -137,10 +137,10 @@ public final class b {
     final class AnonymousClass4 implements com.anythink.expressad.foundation.f.a {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ ATNativeAdvancedView f7023a;
+        final /* synthetic */ ATNativeAdvancedView f4185a;
 
         AnonymousClass4(ATNativeAdvancedView aTNativeAdvancedView) {
-            this.f7023a = aTNativeAdvancedView;
+            this.f4185a = aTNativeAdvancedView;
         }
 
         @Override // com.anythink.expressad.foundation.f.a
@@ -159,7 +159,7 @@ public final class b {
             }
             String encodeToString = Base64.encodeToString(str.getBytes(), 2);
             j.a();
-            j.a((WebView) this.f7023a.getAdvancedNativeWebview(), AbsFeedBackForH5.f7096a, encodeToString);
+            j.a((WebView) this.f4185a.getAdvancedNativeWebview(), AbsFeedBackForH5.f4258a, encodeToString);
         }
 
         @Override // com.anythink.expressad.foundation.f.a
@@ -178,7 +178,7 @@ public final class b {
             }
             String encodeToString = Base64.encodeToString(str.getBytes(), 2);
             j.a();
-            j.a((WebView) this.f7023a.getAdvancedNativeWebview(), AbsFeedBackForH5.f7096a, encodeToString);
+            j.a((WebView) this.f4185a.getAdvancedNativeWebview(), AbsFeedBackForH5.f4258a, encodeToString);
         }
 
         @Override // com.anythink.expressad.foundation.f.a
@@ -197,7 +197,7 @@ public final class b {
             }
             String encodeToString = Base64.encodeToString(str.getBytes(), 2);
             j.a();
-            j.a((WebView) this.f7023a.getAdvancedNativeWebview(), AbsFeedBackForH5.f7096a, encodeToString);
+            j.a((WebView) this.f4185a.getAdvancedNativeWebview(), AbsFeedBackForH5.f4258a, encodeToString);
         }
     }
 
@@ -206,17 +206,17 @@ public final class b {
     final class AnonymousClass5 implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ com.anythink.expressad.foundation.d.c f7024a;
+        final /* synthetic */ com.anythink.expressad.foundation.d.c f4186a;
         final /* synthetic */ ATNativeAdvancedView b;
 
         AnonymousClass5(com.anythink.expressad.foundation.d.c cVar, ATNativeAdvancedView aTNativeAdvancedView) {
-            this.f7024a = cVar;
+            this.f4186a = cVar;
             this.b = aTNativeAdvancedView;
         }
 
         @Override // java.lang.Runnable
         public final void run() {
-            b.this.a(this.f7024a, this.b, false);
+            b.this.a(this.f4186a, this.b, false);
         }
     }
 
@@ -231,7 +231,7 @@ public final class b {
             this.j.setScaleType(ImageView.ScaleType.FIT_XY);
             RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) this.j.getLayoutParams();
             this.j.setLayoutParams(layoutParams == null ? new RelativeLayout.LayoutParams(t.b(g, 29.0f), t.b(g, 16.0f)) : layoutParams);
-            this.j.setImageResource(g.getResources().getIdentifier("anythink_native_advanced_close_icon", i.f7952c, com.anythink.expressad.foundation.b.a.b().a()));
+            this.j.setImageResource(g.getResources().getIdentifier("anythink_native_advanced_close_icon", i.f5112c, com.anythink.expressad.foundation.b.a.b().a()));
         }
     }
 
@@ -321,16 +321,16 @@ public final class b {
             layoutParams2 = new RelativeLayout.LayoutParams(t.b(g, 29.0f), t.b(g, 16.0f));
         }
         this.j.setLayoutParams(layoutParams2);
-        this.j.setImageResource(g.getResources().getIdentifier("anythink_native_advanced_close_icon", i.f7952c, com.anythink.expressad.foundation.b.a.b().a()));
+        this.j.setImageResource(g.getResources().getIdentifier("anythink_native_advanced_close_icon", i.f5112c, com.anythink.expressad.foundation.b.a.b().a()));
     }
 
     private void g() {
-        if (this.f7019c.V()) {
+        if (this.f4181c.V()) {
             return;
         }
         boolean z = true;
-        this.f7019c.c(true);
-        com.anythink.expressad.foundation.d.c cVar = this.f7019c;
+        this.f4181c.c(true);
+        com.anythink.expressad.foundation.d.c cVar = this.f4181c;
         if (cVar.s()) {
             z = false;
         } else {
@@ -371,8 +371,8 @@ public final class b {
     }
 
     public final String a() {
-        com.anythink.expressad.foundation.d.c cVar = this.f7019c;
-        return (cVar == null || cVar.Z() == null) ? "" : this.f7019c.Z();
+        com.anythink.expressad.foundation.d.c cVar = this.f4181c;
+        return (cVar == null || cVar.Z() == null) ? "" : this.f4181c.Z();
     }
 
     public final void a(com.anythink.expressad.advanced.d.c cVar) {
@@ -426,7 +426,7 @@ public final class b {
 
     public final void d() {
         ATNativeAdvancedWebview advancedNativeWebview;
-        if (this.d == null || com.anythink.expressad.foundation.f.b.f7818c || (advancedNativeWebview = this.d.getAdvancedNativeWebview()) == null || advancedNativeWebview.isDestroyed()) {
+        if (this.d == null || com.anythink.expressad.foundation.f.b.f4978c || (advancedNativeWebview = this.d.getAdvancedNativeWebview()) == null || advancedNativeWebview.isDestroyed()) {
             return;
         }
         NativeAdvancedJsUtils.sendEventToH5(advancedNativeWebview, NativeAdvancedJsUtils.b, "");
@@ -439,6 +439,6 @@ public final class b {
             return;
         }
         j.a();
-        j.a((WebView) advancedNativeWebview, NativeAdvancedJsUtils.f7046a, "");
+        j.a((WebView) advancedNativeWebview, NativeAdvancedJsUtils.f4208a, "");
     }
 }

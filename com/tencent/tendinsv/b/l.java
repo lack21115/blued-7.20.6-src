@@ -5,16 +5,15 @@ import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 
 /* loaded from: source-8829756-dex2jar.jar:com/tencent/tendinsv/b/l.class */
 public class l implements k {
 
     /* renamed from: a  reason: collision with root package name */
-    protected static boolean f39012a = false;
+    protected static boolean f25321a = false;
 
     /* renamed from: c  reason: collision with root package name */
-    private static String f39013c;
+    private static String f25322c;
     protected boolean b = false;
     private String d;
     private String e;
@@ -31,18 +30,18 @@ public class l implements k {
 
     @Override // com.tencent.tendinsv.b.k
     public String b(Context context) {
-        if (TextUtils.isEmpty(f39013c)) {
+        if (TextUtils.isEmpty(f25322c)) {
             try {
-                Cursor query = context.getContentResolver().query(Uri.parse("content://" + this.d + BridgeUtil.SPLIT_MARK + this.e), null, null, this.f, null);
+                Cursor query = context.getContentResolver().query(Uri.parse("content://" + this.d + "/" + this.e), null, null, this.f, null);
                 if (query != null) {
                     query.moveToFirst();
-                    f39013c = query.getString(query.getColumnIndex("value"));
+                    f25322c = query.getString(query.getColumnIndex("value"));
                 }
             } catch (Throwable th) {
-                f39013c = null;
+                f25322c = null;
             }
         }
-        return f39013c;
+        return f25322c;
     }
 
     @Override // com.tencent.tendinsv.b.k
@@ -50,7 +49,7 @@ public class l implements k {
         PackageManager packageManager;
         boolean z;
         if (this.b) {
-            return f39012a;
+            return f25321a;
         }
         if (context == null) {
             return false;
@@ -58,18 +57,18 @@ public class l implements k {
         try {
             packageManager = context.getPackageManager();
         } catch (Throwable th) {
-            f39012a = false;
+            f25321a = false;
         }
         if (packageManager != null && packageManager.resolveContentProvider(this.d, 0) != null) {
             z = true;
-            f39012a = z;
+            f25321a = z;
             this.b = true;
-            return f39012a;
+            return f25321a;
         }
         z = false;
-        f39012a = z;
+        f25321a = z;
         this.b = true;
-        return f39012a;
+        return f25321a;
     }
 
     @Override // com.tencent.tendinsv.b.k

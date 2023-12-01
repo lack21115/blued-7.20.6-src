@@ -4,11 +4,11 @@ package androidx.constraintlayout.core.parser;
 public class CLParser {
 
     /* renamed from: a  reason: collision with root package name */
-    static boolean f2077a = false;
+    static boolean f2029a = false;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f2078c = false;
+    private boolean f2030c = false;
     private int d;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -17,7 +17,7 @@ public class CLParser {
     public static /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f2079a;
+        static final /* synthetic */ int[] f2031a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:15:0x004d -> B:37:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:17:0x0051 -> B:33:0x001f). Please submit an issue!!! */
@@ -26,29 +26,29 @@ public class CLParser {
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:23:0x005d -> B:35:0x0040). Please submit an issue!!! */
         static {
             int[] iArr = new int[TYPE.values().length];
-            f2079a = iArr;
+            f2031a = iArr;
             try {
                 iArr[TYPE.OBJECT.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f2079a[TYPE.ARRAY.ordinal()] = 2;
+                f2031a[TYPE.ARRAY.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f2079a[TYPE.STRING.ordinal()] = 3;
+                f2031a[TYPE.STRING.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f2079a[TYPE.NUMBER.ordinal()] = 4;
+                f2031a[TYPE.NUMBER.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f2079a[TYPE.KEY.ordinal()] = 5;
+                f2031a[TYPE.KEY.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
             try {
-                f2079a[TYPE.TOKEN.ordinal()] = 6;
+                f2031a[TYPE.TOKEN.ordinal()] = 6;
             } catch (NoSuchFieldError e6) {
             }
         }
@@ -112,7 +112,7 @@ public class CLParser {
                                                 if (i2 < cArr.length) {
                                                     cLElement2 = cLElement;
                                                     if (cArr[i2] == '/') {
-                                                        this.f2078c = true;
+                                                        this.f2030c = true;
                                                         return cLElement;
                                                     }
                                                 }
@@ -156,10 +156,10 @@ public class CLParser {
     /* JADX WARN: Type inference failed for: r0v8, types: [androidx.constraintlayout.core.parser.CLElement] */
     private CLElement a(CLElement cLElement, int i, TYPE type, boolean z, char[] cArr) {
         CLObject allocate;
-        if (f2077a) {
+        if (f2029a) {
             System.out.println("CREATE " + type + " at " + cArr[i]);
         }
-        switch (AnonymousClass1.f2079a[type.ordinal()]) {
+        switch (AnonymousClass1.f2031a[type.ordinal()]) {
             case 1:
                 allocate = CLObject.allocate(cArr);
                 i++;

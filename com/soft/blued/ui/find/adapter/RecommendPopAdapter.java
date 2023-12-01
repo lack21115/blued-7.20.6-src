@@ -15,7 +15,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class RecommendPopAdapter extends BaseQuickAdapter<RecommendPopModel, BaseViewHolder> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Context f30129a;
+    private final Context f16439a;
     private OnSayHelloClickedListener b;
 
     @Metadata
@@ -25,23 +25,23 @@ public final class RecommendPopAdapter extends BaseQuickAdapter<RecommendPopMode
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public RecommendPopAdapter(Context mContext) {
+    public RecommendPopAdapter(Context context) {
         super((int) R.layout.item_nearby_people_recommend);
-        Intrinsics.e(mContext, "mContext");
-        this.f30129a = mContext;
+        Intrinsics.e(context, "mContext");
+        this.f16439a = context;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(RecommendPopModel item, RecommendPopAdapter this$0, BaseViewHolder helper, View view) {
+    public static final void a(RecommendPopModel recommendPopModel, RecommendPopAdapter recommendPopAdapter, BaseViewHolder baseViewHolder, View view) {
         OnSayHelloClickedListener onSayHelloClickedListener;
         Tracker.onClick(view);
-        Intrinsics.e(item, "$item");
-        Intrinsics.e(this$0, "this$0");
-        Intrinsics.e(helper, "$helper");
-        if (!item.getSayHelloEnable() || (onSayHelloClickedListener = this$0.b) == null) {
+        Intrinsics.e(recommendPopModel, "$item");
+        Intrinsics.e(recommendPopAdapter, "this$0");
+        Intrinsics.e(baseViewHolder, "$helper");
+        if (!recommendPopModel.getSayHelloEnable() || (onSayHelloClickedListener = recommendPopAdapter.b) == null) {
             return;
         }
-        onSayHelloClickedListener.a(helper.getLayoutPosition());
+        onSayHelloClickedListener.a(baseViewHolder.getLayoutPosition());
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

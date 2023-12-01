@@ -71,12 +71,12 @@ public abstract class AbstractDirectedNetworkConnections<N, E> implements Networ
 
             /* JADX WARN: Multi-variable type inference failed */
             /* JADX WARN: Type inference failed for: r0v15, types: [java.lang.Iterable] */
-            @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+            @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
             public UnmodifiableIterator<E> iterator() {
                 return Iterators.unmodifiableIterator((AbstractDirectedNetworkConnections.this.selfLoopCount == 0 ? Iterables.concat(AbstractDirectedNetworkConnections.this.inEdgeMap.keySet(), AbstractDirectedNetworkConnections.this.outEdgeMap.keySet()) : Sets.union(AbstractDirectedNetworkConnections.this.inEdgeMap.keySet(), AbstractDirectedNetworkConnections.this.outEdgeMap.keySet())).iterator());
             }
 
-            @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+            @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
             public int size() {
                 return IntMath.saturatedAdd(AbstractDirectedNetworkConnections.this.inEdgeMap.size(), AbstractDirectedNetworkConnections.this.outEdgeMap.size() - AbstractDirectedNetworkConnections.this.selfLoopCount);
             }

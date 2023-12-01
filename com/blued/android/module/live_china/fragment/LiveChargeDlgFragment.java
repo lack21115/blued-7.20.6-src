@@ -1,5 +1,6 @@
 package com.blued.android.module.live_china.fragment;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -15,6 +16,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.lifecycle.Observer;
+import com.android.ims.ImsReasonInfo;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.framework.http.BluedUIHttpResponse;
@@ -244,7 +246,7 @@ public class LiveChargeDlgFragment extends com.blued.android.module.common.fragm
         TranslateAnimation translateAnimation = new TranslateAnimation(1, 0.0f, 1, f * (-1.0f), 1, 0.0f, 1, f2 * (-1.0f));
         translateAnimation.setDuration(420L);
         translateAnimation.setRepeatMode(2);
-        translateAnimation.setStartOffset(i2 + 340);
+        translateAnimation.setStartOffset(i2 + ImsReasonInfo.CODE_SIP_NOT_ACCEPTABLE);
         this.u.get(i).startAnimation(translateAnimation);
     }
 
@@ -288,7 +290,7 @@ public class LiveChargeDlgFragment extends com.blued.android.module.common.fragm
             return;
         }
         this.S.set(false);
-        LiveRoomInfo.a().a(getActivity(), _pay_listVar, this.L ? "liveScreen" : "LiveFirstCharge");
+        LiveRoomInfo.a().a((Context) getActivity(), _pay_listVar, this.L ? "liveScreen" : "LiveFirstCharge");
         EventTrackLive.a(LiveProtos.Event.LIVE_FIRST_PAY_SKU_CLICK, this.K, (int) _pay_listVar.money);
     }
 
@@ -455,7 +457,6 @@ public class LiveChargeDlgFragment extends com.blued.android.module.common.fragm
             }
         });
         LiveEventBus.get(LiveEventBusUtil.d, PayResultEvent.class).observe(this, new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveChargeDlgFragment$pzijwh_NWy9ZRA-bGa-ozQQLLOk
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 LiveChargeDlgFragment.this.a((PayResultEvent) obj);
             }
@@ -878,8 +879,8 @@ public class LiveChargeDlgFragment extends com.blued.android.module.common.fragm
 
     @Override // com.blued.android.module.common.fragment.LiveBaseDialogFragment
     public void f() {
-        this.K = this.f10822c.getInt("from");
-        this.L = this.f10822c.getBoolean("isFromGuide");
+        this.K = this.c.getInt("from");
+        this.L = this.c.getBoolean("isFromGuide");
     }
 
     @Override // com.blued.android.module.common.fragment.LiveBaseDialogFragment
@@ -924,7 +925,7 @@ public class LiveChargeDlgFragment extends com.blued.android.module.common.fragm
         return false;
     }
 
-    @Override // com.blued.android.module.common.fragment.LiveBaseDialogFragment, com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.common.fragment.LiveBaseDialogFragment, com.blued.android.core.ui.BaseDialogFragment
     public void onViewCreated(View view, Bundle bundle) {
         super.onViewCreated(view, bundle);
         k();

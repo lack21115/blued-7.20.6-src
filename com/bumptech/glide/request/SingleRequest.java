@@ -24,7 +24,7 @@ import java.util.concurrent.Executor;
 public final class SingleRequest<R> implements Request, ResourceCallback, SizeReadyCallback {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final boolean f21048a = Log.isLoggable("Request", 2);
+    private static final boolean f7442a = Log.isLoggable("Request", 2);
     private int A;
     private int B;
     private boolean C;
@@ -32,7 +32,7 @@ public final class SingleRequest<R> implements Request, ResourceCallback, SizeRe
     private final String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final StateVerifier f21049c;
+    private final StateVerifier f7443c;
     private final Object d;
     private final RequestListener<R> e;
     private final RequestCoordinator f;
@@ -69,8 +69,8 @@ public final class SingleRequest<R> implements Request, ResourceCallback, SizeRe
     }
 
     private SingleRequest(Context context, GlideContext glideContext, Object obj, Object obj2, Class<R> cls, BaseRequestOptions<?> baseRequestOptions, int i, int i2, Priority priority, Target<R> target, RequestListener<R> requestListener, List<RequestListener<R>> list, RequestCoordinator requestCoordinator, Engine engine, TransitionFactory<? super R> transitionFactory, Executor executor) {
-        this.b = f21048a ? String.valueOf(super.hashCode()) : null;
-        this.f21049c = StateVerifier.a();
+        this.b = f7442a ? String.valueOf(super.hashCode()) : null;
+        this.f7443c = StateVerifier.a();
         this.d = obj;
         this.g = context;
         this.h = glideContext;
@@ -107,7 +107,7 @@ public final class SingleRequest<R> implements Request, ResourceCallback, SizeRe
 
     private void a(GlideException glideException, int i) {
         boolean z;
-        this.f21049c.b();
+        this.f7443c.b();
         synchronized (this.d) {
             glideException.a(this.D);
             int e = this.h.e();
@@ -181,7 +181,7 @@ public final class SingleRequest<R> implements Request, ResourceCallback, SizeRe
 
     private void i() {
         j();
-        this.f21049c.b();
+        this.f7443c.b();
         this.o.removeCallback(this);
         Engine.LoadStatus loadStatus = this.t;
         if (loadStatus != null) {
@@ -285,7 +285,7 @@ public final class SingleRequest<R> implements Request, ResourceCallback, SizeRe
     public void a() {
         synchronized (this.d) {
             j();
-            this.f21049c.b();
+            this.f7443c.b();
             this.u = LogTime.a();
             if (this.i == null) {
                 if (Util.a(this.l, this.m)) {
@@ -309,7 +309,7 @@ public final class SingleRequest<R> implements Request, ResourceCallback, SizeRe
                 if ((this.w == Status.RUNNING || this.w == Status.WAITING_FOR_SIZE) && q()) {
                     this.o.onLoadStarted(l());
                 }
-                if (f21048a) {
+                if (f7442a) {
                     a("finished run method in " + LogTime.a(this.u));
                 }
             }
@@ -320,12 +320,12 @@ public final class SingleRequest<R> implements Request, ResourceCallback, SizeRe
     @Override // com.bumptech.glide.request.target.SizeReadyCallback
     public void a(int i, int i2) {
         Object obj;
-        this.f21049c.b();
+        this.f7443c.b();
         Object obj2 = this.d;
         synchronized (obj2) {
             try {
                 try {
-                    if (f21048a) {
+                    if (f7442a) {
                         a("Got onSizeReady in " + LogTime.a(this.u));
                     }
                     if (this.w != Status.WAITING_FOR_SIZE) {
@@ -335,7 +335,7 @@ public final class SingleRequest<R> implements Request, ResourceCallback, SizeRe
                     float J = this.k.J();
                     this.A = a(i, J);
                     this.B = a(i2, J);
-                    if (f21048a) {
+                    if (f7442a) {
                         a("finished setup for calling load in " + LogTime.a(this.u));
                     }
                     try {
@@ -343,7 +343,7 @@ public final class SingleRequest<R> implements Request, ResourceCallback, SizeRe
                         if (this.w != Status.RUNNING) {
                             this.t = null;
                         }
-                        if (f21048a) {
+                        if (f7442a) {
                             StringBuilder sb = new StringBuilder();
                             sb.append("finished onSizeReady in ");
                             sb.append(LogTime.a(this.u));
@@ -452,7 +452,7 @@ public final class SingleRequest<R> implements Request, ResourceCallback, SizeRe
     public void b() {
         synchronized (this.d) {
             j();
-            this.f21049c.b();
+            this.f7443c.b();
             if (this.w == Status.CLEARED) {
                 return;
             }
@@ -522,7 +522,7 @@ public final class SingleRequest<R> implements Request, ResourceCallback, SizeRe
 
     @Override // com.bumptech.glide.request.ResourceCallback
     public Object h() {
-        this.f21049c.b();
+        this.f7443c.b();
         return this.d;
     }
 }

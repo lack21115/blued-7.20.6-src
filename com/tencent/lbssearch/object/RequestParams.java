@@ -2,6 +2,7 @@ package com.tencent.lbssearch.object;
 
 import android.content.ContentValues;
 import android.net.Uri;
+import com.huawei.hms.framework.common.ContainerUtils;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -33,11 +34,11 @@ public class RequestParams implements Serializable {
         public final /* synthetic */ String b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ String f36210c;
+        public final /* synthetic */ String f22519c;
 
         public a(String str, String str2) {
             this.b = str;
-            this.f36210c = str2;
+            this.f22519c = str2;
             put(str, str2);
         }
     }
@@ -230,7 +231,7 @@ public class RequestParams implements Serializable {
         StringBuilder sb = new StringBuilder();
         for (ContentValues contentValues : getParamsList()) {
             if (sb.length() > 0) {
-                sb.append("&");
+                sb.append(ContainerUtils.FIELD_DELIMITER);
             }
             for (Map.Entry<String, Object> entry : contentValues.valueSet()) {
                 sb.append(entry.getKey());

@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentReportTipBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f28951a;
+    private final LinearLayout f15261a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f28951a;
+        return this.f15261a;
     }
 }

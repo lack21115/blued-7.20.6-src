@@ -14,25 +14,25 @@ import com.soft.blued.utils.StringUtils;
 public class VisitorChartMarkerView extends MarkerView {
 
     /* renamed from: a  reason: collision with root package name */
-    private final TextView f30737a;
+    private final TextView f17047a;
     private final TextView b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f30738c;
+    private Context f17048c;
 
     public VisitorChartMarkerView(Context context, int i) {
         super(context, i);
-        this.f30738c = context;
-        this.f30737a = (TextView) findViewById(2131371242);
+        this.f17048c = context;
+        this.f17047a = (TextView) findViewById(R.id.tv_date);
         this.b = (TextView) findViewById(2131371196);
     }
 
     @Override // com.github.mikephil.charting.components.MarkerView, com.github.mikephil.charting.components.IMarker
     public void a(Entry entry, Highlight highlight) {
         VisitorCountExtra._history_track _history_trackVar = (VisitorCountExtra._history_track) entry.h();
-        this.f30737a.setText(_history_trackVar.date);
+        this.f17047a.setText(_history_trackVar.date);
         TextView textView = this.b;
-        textView.setText(StringUtils.a(String.valueOf(_history_trackVar.count)) + this.f30738c.getResources().getString(R.string.times));
+        textView.setText(StringUtils.a(String.valueOf(_history_trackVar.count)) + this.f17048c.getResources().getString(R.string.times));
         super.a(entry, highlight);
     }
 

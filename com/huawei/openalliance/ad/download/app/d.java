@@ -14,11 +14,11 @@ public class d {
     public static final String Z = "appInfo";
 
     /* renamed from: a  reason: collision with root package name */
-    static final String f22966a = "onDownloadDeleted";
+    static final String f9358a = "onDownloadDeleted";
     static final String b = "com.huawei.permission.app.DOWNLOAD";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f22967c = "huawei.intent.action.PENDINGINTENT";
+    public static final String f9359c = "huawei.intent.action.PENDINGINTENT";
     public static final String d = "pendingIntent";
     public static final String e = "pendingIntent.type";
     public static final String f = "task.pkg";

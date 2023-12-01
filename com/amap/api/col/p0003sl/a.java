@@ -12,6 +12,7 @@ import android.os.Message;
 import android.os.Parcelable;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.Window;
 import com.amap.api.fence.GeoFence;
 import com.amap.api.fence.GeoFenceListener;
 import com.amap.api.location.AMapLocation;
@@ -19,14 +20,11 @@ import com.amap.api.location.AMapLocationClient;
 import com.amap.api.location.AMapLocationClientOption;
 import com.amap.api.location.AMapLocationListener;
 import com.amap.api.location.DPoint;
+import com.amap.api.maps.model.MyLocationStyle;
 import com.amap.api.services.district.DistrictSearchQuery;
 import com.android.ims.ImsReasonInfo;
 import com.autonavi.aps.amapapi.utils.g;
 import com.autonavi.aps.amapapi.utils.i;
-import com.autonavi.base.amap.mapcore.tools.GLMapStaticValue;
-import com.huawei.openalliance.ad.constant.ao;
-import com.igexin.sdk.PushConsts;
-import com.umeng.analytics.pro.bh;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -37,12 +35,8 @@ import org.json.JSONObject;
 public final class a {
     private static boolean A = false;
     Context b;
-
-    /* renamed from: a  reason: collision with root package name */
-    g f4723a = null;
-
-    /* renamed from: c  reason: collision with root package name */
-    PendingIntent f4724c = null;
+    g a = null;
+    PendingIntent c = null;
     String d = null;
     GeoFenceListener e = null;
     private Object z = new Object();
@@ -51,7 +45,7 @@ public final class a {
     c h = null;
     Object i = new Object();
     Object j = new Object();
-    HandlerC0052a k = null;
+    HandlerC0012a k = null;
     b l = null;
     volatile boolean m = false;
     volatile boolean n = false;
@@ -93,7 +87,7 @@ public final class a {
                     Bundle bundle = new Bundle();
                     if (!a.this.m) {
                         a.this.b(7);
-                        bundle.putLong(bh.aX, 2000L);
+                        bundle.putLong("interval", 2000L);
                         a.this.a(8, bundle, 2000L);
                     }
                     a.this.v++;
@@ -112,8 +106,8 @@ public final class a {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.amap.api.col.3sl.a$a  reason: collision with other inner class name */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/a$a.class */
-    public final class HandlerC0052a extends Handler {
-        public HandlerC0052a(Looper looper) {
+    public final class HandlerC0012a extends Handler {
+        public HandlerC0012a(Looper looper) {
             super(looper);
         }
 
@@ -250,17 +244,17 @@ public final class a {
                             }
                             GeoFence next = it.next();
                             if (next.isAble()) {
-                                float a2 = i.a(dPoint, next.getCenter());
-                                if (a2 > next.getMinDis2Center() && a2 < next.getMaxDis2Center()) {
+                                float a = i.a(dPoint, next.getCenter());
+                                if (a > next.getMinDis2Center() && a < next.getMaxDis2Center()) {
                                     return 0.0f;
                                 }
                                 float f3 = f;
-                                if (a2 > next.getMaxDis2Center()) {
-                                    f3 = Math.min(f, a2 - next.getMaxDis2Center());
+                                if (a > next.getMaxDis2Center()) {
+                                    f3 = Math.min(f, a - next.getMaxDis2Center());
                                 }
                                 f = f3;
-                                if (a2 < next.getMinDis2Center()) {
-                                    f = Math.min(f3, next.getMinDis2Center() - a2);
+                                if (a < next.getMinDis2Center()) {
+                                    f = Math.min(f3, next.getMinDis2Center() - a);
                                 }
                             }
                         }
@@ -318,7 +312,7 @@ public final class a {
         }
         bundle.putString(GeoFence.BUNDLE_KEY_FENCEID, str3);
         bundle.putString(GeoFence.BUNDLE_KEY_CUSTOMID, str2);
-        bundle.putInt("event", i);
+        bundle.putInt(GeoFence.BUNDLE_KEY_FENCESTATUS, i);
         bundle.putInt(GeoFence.BUNDLE_KEY_LOCERRORCODE, i2);
         bundle.putParcelable(GeoFence.BUNDLE_KEY_FENCE, geoFence);
         return bundle;
@@ -359,11 +353,11 @@ public final class a {
         geoFence.setCenter(dPoint);
         geoFence.setPendingIntentAction(this.d);
         geoFence.setExpiration(-1L);
-        geoFence.setPendingIntent(this.f4724c);
+        geoFence.setPendingIntent(this.c);
         StringBuilder sb = new StringBuilder();
         sb.append(com.amap.api.col.p0003sl.c.a());
         geoFence.setFenceId(sb.toString());
-        g gVar = this.f4723a;
+        g gVar = this.a;
         if (gVar != null) {
             gVar.a(this.b, 2);
         }
@@ -536,17 +530,17 @@ public final class a {
         int i2;
         String str2;
         int i3;
-        String a2;
+        String a;
         Bundle bundle2 = new Bundle();
         try {
             ArrayList<? extends Parcelable> arrayList = new ArrayList<>();
             if (bundle == null || bundle.isEmpty()) {
-                str2 = "errorCode";
+                str2 = MyLocationStyle.ERROR_CODE;
                 i3 = 1;
             } else {
                 List<GeoFence> arrayList2 = new ArrayList<>();
                 String string = bundle.getString(GeoFence.BUNDLE_KEY_CUSTOMID);
-                String string2 = bundle.getString(ao.p);
+                String string2 = bundle.getString("keyWords");
                 String string3 = bundle.getString(DistrictSearchQuery.KEYWORDS_CITY);
                 String string4 = bundle.getString("poiType");
                 DPoint dPoint = (DPoint) bundle.getParcelable("centerPoint");
@@ -561,39 +555,39 @@ public final class a {
                         bundle3.putInt("activatesAction", this.f);
                         if (i == 1) {
                             bundle3.putFloat("fenceRadius", 1000.0f);
-                            a2 = this.p.a(this.b, "http://restsdk.amap.com/v3/place/text?", string2, string4, string3, String.valueOf(i4));
+                            a = this.p.a(this.b, "http://restsdk.amap.com/v3/place/text?", string2, string4, string3, String.valueOf(i4));
                         } else if (i != 2) {
-                            a2 = i != 3 ? null : this.p.a(this.b, "http://restsdk.amap.com/v3/config/district?", string2);
+                            a = i != 3 ? null : this.p.a(this.b, "http://restsdk.amap.com/v3/config/district?", string2);
                         } else {
                             double b2 = i.b(dPoint.getLatitude());
                             double b3 = i.b(dPoint.getLongitude());
                             int intValue = Float.valueOf(f).intValue();
                             bundle3.putFloat("fenceRadius", 200.0f);
-                            a2 = this.p.a(this.b, "http://restsdk.amap.com/v3/place/around?", string2, string4, String.valueOf(i4), String.valueOf(b2), String.valueOf(b3), String.valueOf(intValue));
+                            a = this.p.a(this.b, "http://restsdk.amap.com/v3/place/around?", string2, string4, String.valueOf(i4), String.valueOf(b2), String.valueOf(b3), String.valueOf(intValue));
                         }
-                        if (a2 != null) {
-                            int a3 = 1 == i ? com.amap.api.col.p0003sl.c.a(a2, arrayList2, bundle3) : 0;
+                        if (a != null) {
+                            int a2 = 1 == i ? com.amap.api.col.p0003sl.c.a(a, arrayList2, bundle3) : 0;
                             if (2 == i) {
-                                a3 = com.amap.api.col.p0003sl.c.b(a2, arrayList2, bundle3);
+                                a2 = com.amap.api.col.p0003sl.c.b(a, arrayList2, bundle3);
                             }
                             if (3 == i) {
-                                a3 = this.q.c(a2, arrayList2, bundle3);
+                                a2 = this.q.c(a, arrayList2, bundle3);
                             }
-                            if (a3 != 10000) {
-                                i3 = d(a3);
+                            if (a2 != 10000) {
+                                i3 = d(a2);
                             } else if (arrayList2.isEmpty()) {
                                 i3 = 16;
                             } else {
-                                int a4 = a(arrayList2);
-                                i3 = a4;
-                                if (a4 == 0) {
-                                    i2 = a4;
+                                int a3 = a(arrayList2);
+                                i3 = a3;
+                                if (a3 == 0) {
+                                    i2 = a3;
                                     try {
                                         arrayList.addAll(arrayList2);
-                                        i3 = a4;
+                                        i3 = a3;
                                     } catch (Throwable th) {
                                         th = th;
-                                        str = "errorCode";
+                                        str = MyLocationStyle.ERROR_CODE;
                                         try {
                                             com.autonavi.aps.amapapi.utils.b.a(th, "GeoFenceManager", "doAddGeoFenceNearby");
                                             bundle2.putInt(str, 8);
@@ -611,7 +605,7 @@ public final class a {
                         }
                     } catch (Throwable th2) {
                         th = th2;
-                        str = "errorCode";
+                        str = MyLocationStyle.ERROR_CODE;
                         i2 = 0;
                         com.autonavi.aps.amapapi.utils.b.a(th, "GeoFenceManager", "doAddGeoFenceNearby");
                         bundle2.putInt(str, 8);
@@ -624,7 +618,7 @@ public final class a {
                 bundle2.putString(GeoFence.BUNDLE_KEY_CUSTOMID, string);
                 i2 = i3;
                 bundle2.putParcelableArrayList("resultList", arrayList);
-                str2 = "errorCode";
+                str2 = MyLocationStyle.ERROR_CODE;
             }
         } catch (Throwable th3) {
             th = th3;
@@ -709,20 +703,20 @@ public final class a {
                                         break;
                                     case 10001:
                                     case 10002:
-                                    case PushConsts.GET_SDKONLINESTATE /* 10007 */:
-                                    case PushConsts.GET_SDKSERVICEPID /* 10008 */:
-                                    case PushConsts.SET_TAG_RESULT /* 10009 */:
+                                    case 10007:
+                                    case 10008:
+                                    case 10009:
                                     case 10012:
                                     case 10013:
                                         i2 = 7;
                                         break;
-                                    case GLMapStaticValue.AM_CALLBACK_INDOOR_NETWORK_ERR /* 10003 */:
+                                    case 10003:
                                     case ImsReasonInfo.CODE_CALL_DROP_IWLAN_TO_LTE_UNAVAILABLE /* 10004 */:
-                                    case PushConsts.CHECK_CLIENTID /* 10005 */:
-                                    case PushConsts.THIRDPART_FEEDBACK /* 10006 */:
+                                    case 10005:
+                                    case 10006:
                                     case 10010:
                                     case 10011:
-                                    case PushConsts.ACTION_NOTIFICATION_ENABLE /* 10014 */:
+                                    case 10014:
                                     case 10015:
                                     case 10016:
                                     case 10017:
@@ -730,12 +724,12 @@ public final class a {
                                         break;
                                     default:
                                         switch (i) {
-                                            case 20000:
-                                            case PushConsts.SETTAG_ERROR_COUNT /* 20001 */:
+                                            case Window.PROGRESS_SECONDARY_START /* 20000 */:
+                                            case 20001:
                                             case 20002:
                                                 i2 = 1;
                                                 break;
-                                            case PushConsts.SETTAG_ERROR_REPEAT /* 20003 */:
+                                            case 20003:
                                             default:
                                                 i2 = 8;
                                                 break;
@@ -781,7 +775,7 @@ public final class a {
             this.l = bVar;
             bVar.setPriority(5);
             this.l.start();
-            this.k = new HandlerC0052a(this.l.getLooper());
+            this.k = new HandlerC0012a(this.l.getLooper());
         } catch (Throwable th2) {
             com.autonavi.aps.amapapi.utils.b.a(th2, "GeoFenceManger", "init 2");
         }
@@ -793,15 +787,15 @@ public final class a {
             this.u.setLocationCacheEnable(true);
             this.u.setNeedAddress(false);
             this.r.setLocationListener(this.w);
-            if (this.f4723a == null) {
-                this.f4723a = new g();
+            if (this.a == null) {
+                this.a = new g();
             }
         } catch (Throwable th3) {
             com.autonavi.aps.amapapi.utils.b.a(th3, "GeoFenceManger", "initBase");
         }
         this.n = true;
         try {
-            if (this.d != null && this.f4724c == null) {
+            if (this.d != null && this.c == null) {
                 a(this.d);
             }
         } catch (Throwable th4) {
@@ -898,22 +892,22 @@ public final class a {
                 Intent intent = new Intent(str);
                 intent.setPackage(ho.c(this.b));
                 if (Build.VERSION.SDK_INT < 31 || this.b.getApplicationInfo().targetSdkVersion < 31) {
-                    this.f4724c = PendingIntent.getBroadcast(this.b, 0, intent, 0);
+                    this.c = PendingIntent.getBroadcast(this.b, 0, intent, 0);
                 } else {
-                    this.f4724c = PendingIntent.getBroadcast(this.b, 0, intent, 33554432);
+                    this.c = PendingIntent.getBroadcast(this.b, 0, intent, 33554432);
                 }
                 this.d = str;
                 if (this.g != null && !this.g.isEmpty()) {
                     Iterator<GeoFence> it = this.g.iterator();
                     while (it.hasNext()) {
                         GeoFence next = it.next();
-                        next.setPendingIntent(this.f4724c);
+                        next.setPendingIntent(this.c);
                         next.setPendingIntentAction(this.d);
                     }
                 }
             }
         }
-        return this.f4724c;
+        return this.c;
     }
 
     public final void a() {
@@ -1071,7 +1065,7 @@ public final class a {
         try {
             j();
             Bundle bundle = new Bundle();
-            bundle.putString(ao.p, str);
+            bundle.putString("keyWords", str);
             bundle.putString(GeoFence.BUNDLE_KEY_CUSTOMID, str2);
             a(4, bundle, 0L);
         } catch (Throwable th) {
@@ -1179,7 +1173,7 @@ public final class a {
                 i3 = 25;
             }
             Bundle bundle = new Bundle();
-            bundle.putString(ao.p, str);
+            bundle.putString("keyWords", str);
             bundle.putString("poiType", str2);
             bundle.putString(DistrictSearchQuery.KEYWORDS_CITY, str3);
             bundle.putInt("searchSize", i3);
@@ -1273,17 +1267,17 @@ public final class a {
                     str2 = bundle.getString(GeoFence.BUNDLE_KEY_CUSTOMID);
                     if (dPoint != null) {
                         if (dPoint.getLatitude() <= 90.0d && dPoint.getLatitude() >= -90.0d && dPoint.getLongitude() <= 180.0d && dPoint.getLongitude() >= -180.0d) {
-                            GeoFence a2 = a(bundle, false);
-                            int c2 = c(a2);
+                            GeoFence a = a(bundle, false);
+                            int c2 = c(a);
                             i = c2;
                             str = str2;
                             if (c2 == 0) {
-                                arrayList.add(a2);
+                                arrayList.add(a);
                                 i = c2;
                                 str = str2;
                             }
                             Bundle bundle2 = new Bundle();
-                            bundle2.putInt("errorCode", i);
+                            bundle2.putInt(MyLocationStyle.ERROR_CODE, i);
                             bundle2.putParcelableArrayList("resultList", arrayList);
                             bundle2.putString(GeoFence.BUNDLE_KEY_CUSTOMID, str);
                             a(1000, bundle2);
@@ -1291,7 +1285,7 @@ public final class a {
                         a("添加围栏失败", 1, "经纬度错误，传入的纬度：" + dPoint.getLatitude() + "传入的经度:" + dPoint.getLongitude(), new String[0]);
                         str = str2;
                         Bundle bundle22 = new Bundle();
-                        bundle22.putInt("errorCode", i);
+                        bundle22.putInt(MyLocationStyle.ERROR_CODE, i);
                         bundle22.putParcelableArrayList("resultList", arrayList);
                         bundle22.putString(GeoFence.BUNDLE_KEY_CUSTOMID, str);
                         a(1000, bundle22);
@@ -1300,7 +1294,7 @@ public final class a {
             }
             str = str2;
             Bundle bundle222 = new Bundle();
-            bundle222.putInt("errorCode", i);
+            bundle222.putInt(MyLocationStyle.ERROR_CODE, i);
             bundle222.putParcelableArrayList("resultList", arrayList);
             bundle222.putString(GeoFence.BUNDLE_KEY_CUSTOMID, str);
             a(1000, bundle222);
@@ -1313,7 +1307,7 @@ public final class a {
         try {
             synchronized (this.z) {
                 if (this.b != null) {
-                    if (this.f4724c == null && geoFence.getPendingIntent() == null) {
+                    if (this.c == null && geoFence.getPendingIntent() == null) {
                         return;
                     }
                     Intent intent = new Intent();
@@ -1325,7 +1319,7 @@ public final class a {
                     if (geoFence.getPendingIntent() != null) {
                         geoFence.getPendingIntent().send(this.b, 0, intent);
                     } else {
-                        this.f4724c.send(this.b, 0, intent);
+                        this.c.send(this.b, 0, intent);
                     }
                 }
             }
@@ -1359,14 +1353,14 @@ public final class a {
             this.l = null;
             this.p = null;
             synchronized (this.z) {
-                if (this.f4724c != null) {
-                    this.f4724c.cancel();
+                if (this.c != null) {
+                    this.c.cancel();
                 }
-                this.f4724c = null;
+                this.c = null;
             }
             l();
-            if (this.f4723a != null) {
-                this.f4723a.b(this.b);
+            if (this.a != null) {
+                this.a.b(this.b);
             }
             this.m = false;
             this.n = false;
@@ -1377,12 +1371,12 @@ public final class a {
         try {
             if (this.b != null) {
                 synchronized (this.z) {
-                    if (this.f4724c == null) {
+                    if (this.c == null) {
                         return;
                     }
                     Intent intent = new Intent();
                     intent.putExtras(a((GeoFence) null, (String) null, (String) null, 4, i));
-                    this.f4724c.send(this.b, 0, intent);
+                    this.c.send(this.b, 0, intent);
                 }
             }
         } catch (Throwable th) {
@@ -1406,11 +1400,11 @@ public final class a {
                         if (parcelableArrayList.size() <= 2) {
                             i = 1;
                         } else {
-                            GeoFence a2 = a(bundle, true);
-                            int c2 = c(a2);
+                            GeoFence a = a(bundle, true);
+                            int c2 = c(a);
                             i = c2;
                             if (c2 == 0) {
-                                arrayList.add(a2);
+                                arrayList.add(a);
                                 i = c2;
                             }
                         }
@@ -1419,7 +1413,7 @@ public final class a {
             }
             Bundle bundle2 = new Bundle();
             bundle2.putString(GeoFence.BUNDLE_KEY_CUSTOMID, str);
-            bundle2.putInt("errorCode", i);
+            bundle2.putInt(MyLocationStyle.ERROR_CODE, i);
             bundle2.putParcelableArrayList("resultList", arrayList);
             a(1000, bundle2);
         } catch (Throwable th) {
@@ -1447,23 +1441,23 @@ public final class a {
     final void e() {
         try {
             if (!this.y && i.a(this.s)) {
-                float a2 = a(this.s, this.g);
-                if (a2 == Float.MAX_VALUE) {
+                float a = a(this.s, this.g);
+                if (a == Float.MAX_VALUE) {
                     return;
                 }
-                if (a2 < 1000.0f) {
+                if (a < 1000.0f) {
                     b(7);
                     Bundle bundle = new Bundle();
-                    bundle.putLong(bh.aX, 2000L);
+                    bundle.putLong("interval", 2000L);
                     a(8, bundle, 500L);
-                } else if (a2 < 5000.0f) {
+                } else if (a < 5000.0f) {
                     o();
                     b(7);
                     a(7, (Bundle) null, 10000L);
                 } else {
                     o();
                     b(7);
-                    a(7, (Bundle) null, ((a2 - 4000.0f) / 100.0f) * 1000.0f);
+                    a(7, (Bundle) null, ((a - 4000.0f) / 100.0f) * 1000.0f);
                 }
             }
         } catch (Throwable th) {
@@ -1572,7 +1566,7 @@ public final class a {
                 if (bundle.isEmpty()) {
                     return;
                 }
-                int i = bundle.getInt("errorCode");
+                int i = bundle.getInt(MyLocationStyle.ERROR_CODE);
                 ArrayList parcelableArrayList = bundle.getParcelableArrayList("resultList");
                 ArrayList arrayList = parcelableArrayList;
                 if (parcelableArrayList == null) {
@@ -1606,7 +1600,7 @@ public final class a {
                 if (bundle != null) {
                     j = 2000;
                     if (!bundle.isEmpty()) {
-                        j = bundle.getLong(bh.aX, 2000L);
+                        j = bundle.getLong("interval", 2000L);
                     }
                 }
                 this.u.setOnceLocation(false);

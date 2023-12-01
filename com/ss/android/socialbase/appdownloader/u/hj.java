@@ -35,7 +35,7 @@ public class hj {
     }
 
     public static boolean h() {
-        return mb(r.f39113c);
+        return mb(r.f25422c);
     }
 
     public static String hj(String str) {
@@ -145,8 +145,8 @@ public class hj {
                                 } else if (x().toUpperCase().contains("NUBIA")) {
                                     h = "NUBIA";
                                     b = "cn.nubia.neostore";
-                                } else if (jb().toUpperCase().contains(r.f39113c)) {
-                                    h = r.f39113c;
+                                } else if (jb().toUpperCase().contains(r.f25422c)) {
+                                    h = r.f25422c;
                                     b = "com.meizu.mstore";
                                     u = jb();
                                 } else if (x().toUpperCase().contains("ONEPLUS")) {
@@ -187,7 +187,7 @@ public class hj {
                 b = t.W;
             }
         } else {
-            h = r.f39112a;
+            h = r.f25421a;
             b = "com.xiaomi.market";
             ko = u;
         }
@@ -223,7 +223,7 @@ public class hj {
     }
 
     public static boolean ox() {
-        return mb(r.f39112a);
+        return mb(r.f25421a);
     }
 
     public static boolean u() {

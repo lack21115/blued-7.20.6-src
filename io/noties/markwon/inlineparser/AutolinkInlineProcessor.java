@@ -1,5 +1,6 @@
 package io.noties.markwon.inlineparser;
 
+import android.webkit.WebView;
 import java.util.regex.Pattern;
 import org.commonmark.node.Link;
 import org.commonmark.node.Node;
@@ -15,7 +16,7 @@ public class AutolinkInlineProcessor extends InlineProcessor {
         String match = match(EMAIL_AUTOLINK);
         if (match != null) {
             String substring = match.substring(1, match.length() - 1);
-            Link link = new Link("mailto:" + substring, null);
+            Link link = new Link(WebView.SCHEME_MAILTO + substring, null);
             link.b(new Text(substring));
             return link;
         }

@@ -52,11 +52,11 @@ import java.util.List;
 public class LiveFollowItemAdapter extends BaseMultiItemQuickAdapter<BluedLiveListData, BaseViewHolder> implements LiveListAutoPlay {
 
     /* renamed from: a  reason: collision with root package name */
-    private BaseFragment f31067a;
+    private BaseFragment f17377a;
     private IRequestHost b;
 
     /* renamed from: c  reason: collision with root package name */
-    private HashSet<String> f31068c;
+    private HashSet<String> f17378c;
     private List<LiveRecommendModel> d;
     private LiveHorizontalRecommendAdapter e;
     private int f;
@@ -68,12 +68,12 @@ public class LiveFollowItemAdapter extends BaseMultiItemQuickAdapter<BluedLiveLi
 
     public LiveFollowItemAdapter(BaseFragment baseFragment) {
         super(new ArrayList());
-        this.f31068c = new HashSet<>();
+        this.f17378c = new HashSet<>();
         this.f = 0;
         this.h = 500;
         this.j = new ArrayList();
         this.k = true;
-        this.f31067a = baseFragment;
+        this.f17377a = baseFragment;
         this.b = baseFragment.getFragmentActive();
         this.mContext = baseFragment.getContext();
         addItemType(0, R.layout.item_live_follow_list_show);
@@ -91,7 +91,6 @@ public class LiveFollowItemAdapter extends BaseMultiItemQuickAdapter<BluedLiveLi
             return;
         }
         LiveHttpUtils.c(new BluedUIHttpResponse<BluedEntity<BluedEntityBaseExtra, RequestLiveExtra>>(this.b) { // from class: com.soft.blued.ui.live.adapter.LiveFollowItemAdapter.2
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str) {
                 if (i == 50002) {
                     ToastUtils.b("请打开通知权限，以免错过主播开播通知");
@@ -102,10 +101,9 @@ public class LiveFollowItemAdapter extends BaseMultiItemQuickAdapter<BluedLiveLi
                 return super.onUIFailure(i, str);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity<BluedEntityBaseExtra, RequestLiveExtra> bluedEntity) {
-                if (bluedEntity.extra != null && !TextUtils.isEmpty(bluedEntity.extra.lid)) {
-                    bluedLiveListData.lid = bluedEntity.extra.lid;
+                if (bluedEntity.extra != null && !TextUtils.isEmpty(((RequestLiveExtra) bluedEntity.extra).lid)) {
+                    bluedLiveListData.lid = ((RequestLiveExtra) bluedEntity.extra).lid;
                     bluedLiveListData.live_play = null;
                     LiveFollowItemAdapter.this.a(bluedLiveListData, false);
                     LiveFollowItemAdapter.this.mData.remove(bluedLiveListData);
@@ -117,7 +115,7 @@ public class LiveFollowItemAdapter extends BaseMultiItemQuickAdapter<BluedLiveLi
                     LiveEventBusUtil.b();
                     LiveFollowItemAdapter.this.notifyDataSetChanged();
                 } else if (bluedLiveListData.notify == 1 && bluedLiveListData.anchor != null && LiveDataManager.a().h()) {
-                    RequestAnchorLiveRewardFragment.a(LiveFollowItemAdapter.this.f31067a, bluedLiveListData.anchor.uid);
+                    RequestAnchorLiveRewardFragment.a(LiveFollowItemAdapter.this.f17377a, bluedLiveListData.anchor.uid);
                 } else {
                     ToastUtils.b("已经催过主播啦，请耐心等待开播");
                 }
@@ -144,20 +142,20 @@ public class LiveFollowItemAdapter extends BaseMultiItemQuickAdapter<BluedLiveLi
     }
 
     private void a(BaseViewHolder baseViewHolder) {
-        PullToRefreshRecyclerView pullToRefreshRecyclerView = (PullToRefreshRecyclerView) baseViewHolder.getView(R.id.live_recommend_hListView);
-        LinearLayout linearLayout = (LinearLayout) baseViewHolder.getView(2131369073);
-        View view = baseViewHolder.getView(R.id.view_top_line);
-        TextView textView = (TextView) baseViewHolder.getView(2131372385);
-        RecyclerView refreshableView = pullToRefreshRecyclerView.getRefreshableView();
+        PullToRefreshRecyclerView view = baseViewHolder.getView(R.id.live_recommend_hListView);
+        LinearLayout linearLayout = (LinearLayout) baseViewHolder.getView(R.id.recommend_linear_root);
+        View view2 = baseViewHolder.getView(R.id.view_top_line);
+        TextView textView = (TextView) baseViewHolder.getView(R.id.tv_recommend_tip);
+        RecyclerView recyclerView = (RecyclerView) view.getRefreshableView();
         this.e = new LiveHorizontalRecommendAdapter(this.b, this.mContext, 0);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.mContext);
         linearLayoutManager.setOrientation(0);
-        refreshableView.setLayoutManager(linearLayoutManager);
-        refreshableView.setAdapter(this.e);
+        recyclerView.setLayoutManager(linearLayoutManager);
+        recyclerView.setAdapter(this.e);
         this.e.setLoadMoreView(new RecommendLoadMoreView());
         BaseQuickAdapter.RequestLoadMoreListener requestLoadMoreListener = this.g;
         if (requestLoadMoreListener != null) {
-            this.e.setOnLoadMoreListener(requestLoadMoreListener, refreshableView);
+            this.e.setOnLoadMoreListener(requestLoadMoreListener, recyclerView);
         }
         int i = 0;
         while (true) {
@@ -166,23 +164,23 @@ public class LiveFollowItemAdapter extends BaseMultiItemQuickAdapter<BluedLiveLi
                 break;
             }
             LiveRecommendModel liveRecommendModel = this.d.get(i2);
-            if (!this.f31068c.contains(liveRecommendModel.uid)) {
+            if (!this.f17378c.contains(liveRecommendModel.uid)) {
                 this.e.addData((LiveHorizontalRecommendAdapter) liveRecommendModel);
-                this.f31068c.add(liveRecommendModel.uid);
+                this.f17378c.add(liveRecommendModel.uid);
             }
             i = i2 + 1;
         }
         this.e.notifyDataSetChanged();
         List<LiveRecommendModel> list = this.d;
         if (list == null || !list.isEmpty()) {
-            view.setVisibility(0);
+            view2.setVisibility(0);
             textView.setVisibility(0);
-            pullToRefreshRecyclerView.setVisibility(0);
+            view.setVisibility(0);
             return;
         }
-        view.setVisibility(8);
+        view2.setVisibility(8);
         textView.setVisibility(8);
-        pullToRefreshRecyclerView.setVisibility(8);
+        view.setVisibility(8);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -230,7 +228,7 @@ public class LiveFollowItemAdapter extends BaseMultiItemQuickAdapter<BluedLiveLi
 
     private void b(BaseViewHolder baseViewHolder, final BluedLiveListData bluedLiveListData) {
         ImageView imageView = (ImageView) baseViewHolder.getView(R.id.tv_live_follow_head);
-        ImageView imageView2 = (ImageView) baseViewHolder.getView(2131365231);
+        ImageView imageView2 = (ImageView) baseViewHolder.getView(R.id.iv_cover_box);
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) imageView.getLayoutParams();
         FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) imageView2.getLayoutParams();
         int i = layoutParams.height;
@@ -269,18 +267,18 @@ public class LiveFollowItemAdapter extends BaseMultiItemQuickAdapter<BluedLiveLi
             imageView3.setVisibility(8);
         }
         ((TextView) baseViewHolder.getView(R.id.tv_live_follow_name)).setText(TextUtils.isEmpty(bluedLiveListData.anchor.name) ? "" : bluedLiveListData.anchor.name);
-        LiveFansLevelView liveFansLevelView = (LiveFansLevelView) baseViewHolder.getView(R.id.live_fans_level);
-        liveFansLevelView.a(bluedLiveListData.in_fan_club, bluedLiveListData.fan_club_level, bluedLiveListData.fan_club_name, bluedLiveListData.fans_status);
+        LiveFansLevelView view = baseViewHolder.getView(R.id.live_fans_level);
+        view.a(bluedLiveListData.in_fan_club, bluedLiveListData.fan_club_level, bluedLiveListData.fan_club_name, bluedLiveListData.fans_status);
         if (!this.j.contains(bluedLiveListData.lid)) {
             this.j.add(bluedLiveListData.lid);
             if (bluedLiveListData.anchor != null) {
                 com.blued.android.module.live_china.utils.log.trackUtils.EventTrackLive.a(LiveProtos.Event.LIVE_ROOM_SHOW, "follow_list", bluedLiveListData.lid, bluedLiveListData.anchor.uid, bluedLiveListData.isPKStreamShow(), bluedLiveListData.weight, bluedLiveListData.cover_box_id);
             }
         }
-        liveFansLevelView.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.live.adapter.-$$Lambda$LiveFollowItemAdapter$scnrA6aNulZHul7vs6mu1J4tD1I
+        view.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.live.adapter.-$$Lambda$LiveFollowItemAdapter$scnrA6aNulZHul7vs6mu1J4tD1I
             @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                LiveFollowItemAdapter.this.c(bluedLiveListData, view);
+            public final void onClick(View view2) {
+                LiveFollowItemAdapter.this.c(bluedLiveListData, view2);
             }
         });
         if (bluedLiveListData.isPKStreamShow()) {
@@ -311,18 +309,18 @@ public class LiveFollowItemAdapter extends BaseMultiItemQuickAdapter<BluedLiveLi
         }
         int i5 = layoutParams.height;
         int i6 = layoutParams.width == i5 ? layoutParams.width : i5;
-        LiveAutoPlayView liveAutoPlayView = (LiveAutoPlayView) baseViewHolder.getView(2131363955);
-        liveAutoPlayView.setLayoutParams(new FrameLayout.LayoutParams(i6, i5));
+        LiveAutoPlayView view2 = baseViewHolder.getView(R.id.fl_video_view);
+        view2.setLayoutParams(new FrameLayout.LayoutParams(i6, i5));
         RecyclerView.LayoutParams layoutParams3 = (RecyclerView.LayoutParams) baseViewHolder.itemView.getLayoutParams();
         layoutParams3.height = i5;
         layoutParams3.width = i6;
         baseViewHolder.itemView.setLayoutParams(layoutParams3);
-        liveAutoPlayView.a(this, bluedLiveListData, "followed", i6, i5);
+        view2.a(this, bluedLiveListData, "followed", i6, i5);
         if (bluedLiveListData.positionReal == 0) {
             if (bluedLiveListData.link_type == 1 || bluedLiveListData.link_type == 2 || bluedLiveListData.link_type == 4 || bluedLiveListData.live_type != 0) {
                 this.i = null;
             } else {
-                this.i = liveAutoPlayView;
+                this.i = view2;
             }
         }
     }
@@ -349,9 +347,9 @@ public class LiveFollowItemAdapter extends BaseMultiItemQuickAdapter<BluedLiveLi
         }
         ImageView imageView = (ImageView) baseViewHolder.getView(R.id.tv_live_follow_head);
         TextView textView = (TextView) baseViewHolder.getView(R.id.tv_live_follow_name);
-        LiveFansLevelView liveFansLevelView = (LiveFansLevelView) baseViewHolder.getView(2131367459);
+        LiveFansLevelView view = baseViewHolder.getView(R.id.live_record_level);
         TextView textView2 = (TextView) baseViewHolder.getView(R.id.tv_live_follow_content);
-        View view = baseViewHolder.getView(R.id.live_follow_apply_for_live_layout);
+        View view2 = baseViewHolder.getView(R.id.live_follow_apply_for_live_layout);
         ImageView imageView2 = (ImageView) baseViewHolder.getView(R.id.live_follow_apply_for_live_iv);
         TextView textView3 = (TextView) baseViewHolder.getView(R.id.live_follow_apply_for_live_tv);
         ImageLoader.a(this.b, !TextUtils.isEmpty(bluedLiveListData.pic_url) ? bluedLiveListData.pic_url : bluedLiveListData.anchor.avatar).b(2131234804).a(imageView);
@@ -361,18 +359,18 @@ public class LiveFollowItemAdapter extends BaseMultiItemQuickAdapter<BluedLiveLi
             textView.setText(bluedLiveListData.anchor.name);
         }
         if (bluedLiveListData.in_fan_club == 1) {
-            liveFansLevelView.a(bluedLiveListData.in_fan_club, bluedLiveListData.fan_club_level, bluedLiveListData.fan_club_name, bluedLiveListData.fans_status);
-            liveFansLevelView.setVisibility(0);
+            view.a(bluedLiveListData.in_fan_club, bluedLiveListData.fan_club_level, bluedLiveListData.fan_club_name, bluedLiveListData.fans_status);
+            view.setVisibility(0);
         } else {
-            liveFansLevelView.setVisibility(8);
+            view.setVisibility(8);
         }
         String a2 = TimeAndDateUtils.a(this.mContext, bluedLiveListData.last_start_time * 1000);
         if (TextUtils.isEmpty(a2)) {
             textView2.setText("");
         } else {
-            textView2.setText(String.format(a(2131889735), a2));
+            textView2.setText(String.format(a(R.string.live_last_living), a2));
         }
-        view.setVisibility(0);
+        view2.setVisibility(0);
         if (bluedLiveListData.notify != 1) {
             imageView2.setImageResource(2131234675);
             textView3.setText("求开播");
@@ -384,25 +382,25 @@ public class LiveFollowItemAdapter extends BaseMultiItemQuickAdapter<BluedLiveLi
             textView3.setText("已催过");
             textView3.setTextColor(BluedSkinUtils.a(this.mContext, 2131102264));
         }
-        liveFansLevelView.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.live.adapter.-$$Lambda$LiveFollowItemAdapter$mHoG9G1kTyZVSVgOgjwf7GNlyTI
+        view.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.live.adapter.-$$Lambda$LiveFollowItemAdapter$mHoG9G1kTyZVSVgOgjwf7GNlyTI
             @Override // android.view.View.OnClickListener
-            public final void onClick(View view2) {
-                LiveFollowItemAdapter.this.b(bluedLiveListData, view2);
+            public final void onClick(View view3) {
+                LiveFollowItemAdapter.this.b(bluedLiveListData, view3);
             }
         });
-        view.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.live.adapter.-$$Lambda$LiveFollowItemAdapter$EG_jxJMfqYH89tT46JV-_xwvZC4
+        view2.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.live.adapter.-$$Lambda$LiveFollowItemAdapter$EG_jxJMfqYH89tT46JV-_xwvZC4
             @Override // android.view.View.OnClickListener
-            public final void onClick(View view2) {
-                LiveFollowItemAdapter.this.a(bluedLiveListData, view2);
+            public final void onClick(View view3) {
+                LiveFollowItemAdapter.this.a(bluedLiveListData, view3);
             }
         });
     }
 
     public List<BluedLiveListData> a() {
         ArrayList arrayList = new ArrayList();
-        for (BluedLiveListData bluedLiveListData : getData()) {
-            if (bluedLiveListData.isLivingForFollow() && bluedLiveListData.liveType == 0) {
-                arrayList.add(bluedLiveListData);
+        for (T t : getData()) {
+            if (t.isLivingForFollow() && t.liveType == 0) {
+                arrayList.add(t);
             }
         }
         return arrayList;
@@ -426,7 +424,7 @@ public class LiveFollowItemAdapter extends BaseMultiItemQuickAdapter<BluedLiveLi
             b(baseViewHolder, bluedLiveListData);
         } else {
             this.f = getData().indexOf(bluedLiveListData);
-            this.f31068c.clear();
+            this.f17378c.clear();
             this.d = bluedLiveListData.liveRecommendModelList;
             LiveHorizontalRecommendAdapter liveHorizontalRecommendAdapter = this.e;
             if (liveHorizontalRecommendAdapter != null) {
@@ -457,9 +455,9 @@ public class LiveFollowItemAdapter extends BaseMultiItemQuickAdapter<BluedLiveLi
 
     public List<BluedLiveListData> b() {
         ArrayList arrayList = new ArrayList();
-        for (BluedLiveListData bluedLiveListData : getData()) {
-            if (bluedLiveListData.liveType == 0) {
-                arrayList.add(bluedLiveListData);
+        for (T t : getData()) {
+            if (t.liveType == 0) {
+                arrayList.add(t);
             }
         }
         return arrayList;
@@ -479,9 +477,9 @@ public class LiveFollowItemAdapter extends BaseMultiItemQuickAdapter<BluedLiveLi
                     break;
                 }
                 LiveRecommendModel liveRecommendModel = list.get(i2);
-                if (!this.f31068c.contains(liveRecommendModel.uid)) {
+                if (!this.f17378c.contains(liveRecommendModel.uid)) {
                     this.e.getData().add(liveRecommendModel);
-                    this.f31068c.add(liveRecommendModel.uid);
+                    this.f17378c.add(liveRecommendModel.uid);
                 }
                 i = i2 + 1;
             }
@@ -504,7 +502,6 @@ public class LiveFollowItemAdapter extends BaseMultiItemQuickAdapter<BluedLiveLi
         }
     }
 
-    @Override // com.blued.android.module.live_china.view.LiveListAutoPlay
     public boolean c() {
         LiveAutoPlayView liveAutoPlayView = this.i;
         if (liveAutoPlayView == null || !liveAutoPlayView.e()) {

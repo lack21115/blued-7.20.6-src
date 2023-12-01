@@ -26,7 +26,7 @@ public final class FitemRandomGiftHostRecordItem extends FreedomItem {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(FitemRandomGiftHostRecordItem this$0, View view) {
         Intrinsics.e(this$0, "this$0");
-        BaseFragment baseFragment = (BaseFragment) this$0.f10935a.f10931a.a("BaseFragment", (String) null);
+        BaseFragment baseFragment = (BaseFragment) this$0.a.a.a("BaseFragment", (String) null);
         if (baseFragment == null) {
             return;
         }

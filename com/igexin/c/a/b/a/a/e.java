@@ -8,7 +8,7 @@ public final class e extends a {
     private static final String P = "GS-R";
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f23231a = -2035;
+    public static final int f9623a = -2035;
     private byte[] Q;
     protected h j;
     com.igexin.c.a.b.a.a.a.b k;
@@ -30,7 +30,7 @@ public final class e extends a {
         com.igexin.c.a.c.a.a(P, "rt dispose");
         com.igexin.c.a.c.a.a("GS-R|rt dispose", new Object[0]);
         if (this.k != null) {
-            if (this.g != a.EnumC0446a.b) {
+            if (this.g != a.EnumC0276a.b) {
                 this.k.a();
             } else if (!TextUtils.isEmpty(this.h)) {
                 this.k.a(new Exception(this.h));
@@ -57,11 +57,11 @@ public final class e extends a {
                     com.igexin.c.a.c.a.a(P, "read error data");
                     com.igexin.c.a.c.a.a("GS-R|read error data", new Object[0]);
                 }
-                this.g = a.EnumC0446a.f23220a;
+                this.g = a.EnumC0276a.f9612a;
             } catch (Throwable th) {
                 this.i = false;
-                if (this.g != a.EnumC0446a.f23221c) {
-                    this.g = a.EnumC0446a.b;
+                if (this.g != a.EnumC0276a.f9613c) {
+                    this.g = a.EnumC0276a.b;
                     this.h = (th.getMessage() == null || !th.getMessage().equals("read = -1, end of stream !")) ? th.toString() : "end of stream";
                 }
                 com.igexin.c.a.c.a.a(th);
@@ -84,6 +84,6 @@ public final class e extends a {
         boolean z = this.i;
         boolean z2 = this.f;
         this.i = false;
-        this.g = a.EnumC0446a.f23221c;
+        this.g = a.EnumC0276a.f9613c;
     }
 }

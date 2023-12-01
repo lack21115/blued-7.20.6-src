@@ -4,7 +4,6 @@ import android.content.Context;
 import android.os.Build;
 import android.os.StatFs;
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.tencentmap.mapsdk.maps.TencentMapOptions;
 import java.io.File;
 
@@ -15,11 +14,11 @@ public class mc {
     private static mc p;
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f37645a;
+    private Context f23954a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f37646c;
+    private String f23955c;
     private String d;
     private String e;
     private String f;
@@ -35,7 +34,7 @@ public class mc {
         if (context == null) {
             throw new Error("context can not be null");
         }
-        this.f37645a = context.getApplicationContext();
+        this.f23954a = context.getApplicationContext();
         a(tencentMapOptions);
         j();
         k();
@@ -106,31 +105,31 @@ public class mc {
     }
 
     private void j() {
-        this.i = this.f37645a.getFilesDir().getAbsolutePath();
+        this.i = this.f23954a.getFilesDir().getAbsolutePath();
         this.f = this.i + "/tencentMapSdk/config/";
         this.j = this.f + "temp/";
         this.g = this.i + "/tencentMapSdk/assets/";
         this.h = this.i + "/tencentMapSdk/dynamicAssets/";
-        Context context = this.f37645a;
+        Context context = this.f23954a;
         a(context, lc.a(context).d("sdkVersion"));
     }
 
     private void k() {
         String h = h();
-        String a2 = ga.a(this.f37645a);
+        String a2 = ga.a(this.f23954a);
         if (f7.b(a2)) {
             this.b = h + o;
         } else {
             this.b = h + o + a2;
         }
-        this.f37646c = this.b + BridgeUtil.SPLIT_MARK + "data/v4/render/";
+        this.f23955c = this.b + "/data/v4/render/";
         StringBuilder sb = new StringBuilder();
         sb.append(this.b);
         sb.append("/sat/");
         this.d = sb.toString();
-        this.e = this.f37646c + "closeRoadDatas/";
-        this.k = this.f37646c + "events/icons";
-        this.l = this.f37646c + "offlineMaps/";
+        this.e = this.f23955c + "closeRoadDatas/";
+        this.k = this.f23955c + "events/icons";
+        this.l = this.f23955c + "offlineMaps/";
     }
 
     public String a() {
@@ -163,7 +162,7 @@ public class mc {
     }
 
     public File c() {
-        return new File(this.b + BridgeUtil.SPLIT_MARK + "data/");
+        return new File(this.b + "/data/");
     }
 
     public String c(String str) {
@@ -178,8 +177,8 @@ public class mc {
     }
 
     public String d() {
-        ha.b(this.f37646c);
-        return this.f37646c;
+        ha.b(this.f23955c);
+        return this.f23955c;
     }
 
     public String d(String str) {
@@ -210,7 +209,7 @@ public class mc {
 
     public String h() {
         if (TextUtils.isEmpty(this.m)) {
-            Context context = this.f37645a;
+            Context context = this.f23954a;
             String a2 = a(context);
             String str = a2;
             if (b(a2) < 5) {

@@ -19,7 +19,7 @@ import java.util.Map;
 public abstract class SharedElementCallback {
 
     /* renamed from: a  reason: collision with root package name */
-    private Matrix f2399a;
+    private Matrix f2351a;
 
     /* loaded from: source-8756600-dex2jar.jar:androidx/core/app/SharedElementCallback$OnSharedElementsReadyListener.class */
     public interface OnSharedElementsReadyListener {
@@ -79,15 +79,15 @@ public abstract class SharedElementCallback {
                 float min = Math.min(1.0f, 1048576.0f / (round * round2));
                 int i = (int) (round * min);
                 int i2 = (int) (round2 * min);
-                if (this.f2399a == null) {
-                    this.f2399a = new Matrix();
+                if (this.f2351a == null) {
+                    this.f2351a = new Matrix();
                 }
-                this.f2399a.set(matrix);
-                this.f2399a.postTranslate(-rectF.left, -rectF.top);
-                this.f2399a.postScale(min, min);
+                this.f2351a.set(matrix);
+                this.f2351a.postTranslate(-rectF.left, -rectF.top);
+                this.f2351a.postScale(min, min);
                 bitmap = Bitmap.createBitmap(i, i2, Bitmap.Config.ARGB_8888);
                 Canvas canvas = new Canvas(bitmap);
-                canvas.concat(this.f2399a);
+                canvas.concat(this.f2351a);
                 view.draw(canvas);
             }
         }

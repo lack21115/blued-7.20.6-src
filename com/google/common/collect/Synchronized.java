@@ -118,7 +118,7 @@ public final class Synchronized {
             return equalsImpl;
         }
 
-        @Override // com.google.common.collect.Synchronized.SynchronizedCollection, java.util.Collection, java.lang.Iterable
+        @Override // com.google.common.collect.Synchronized.SynchronizedCollection, java.util.Collection, java.lang.Iterable, java.util.Set
         public Iterator<Map.Entry<K, Collection<V>>> iterator() {
             return new TransformedIterator<Map.Entry<K, Collection<V>>, Map.Entry<K, Collection<V>>>(super.iterator()) { // from class: com.google.common.collect.Synchronized.SynchronizedAsMapEntries.1
                 /* JADX INFO: Access modifiers changed from: package-private */
@@ -199,7 +199,7 @@ public final class Synchronized {
             super(collection, obj);
         }
 
-        @Override // com.google.common.collect.Synchronized.SynchronizedCollection, java.util.Collection, java.lang.Iterable
+        @Override // com.google.common.collect.Synchronized.SynchronizedCollection, java.util.Collection, java.lang.Iterable, java.util.Set
         public Iterator<Collection<V>> iterator() {
             return new TransformedIterator<Collection<V>, Collection<V>>(super.iterator()) { // from class: com.google.common.collect.Synchronized.SynchronizedAsMapValues.1
                 /* JADX INFO: Access modifiers changed from: package-private */
@@ -278,7 +278,7 @@ public final class Synchronized {
             super(collection, obj);
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public boolean add(E e) {
             boolean add;
             synchronized (this.mutex) {
@@ -287,7 +287,7 @@ public final class Synchronized {
             return add;
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public boolean addAll(Collection<? extends E> collection) {
             boolean addAll;
             synchronized (this.mutex) {
@@ -296,7 +296,7 @@ public final class Synchronized {
             return addAll;
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public void clear() {
             synchronized (this.mutex) {
                 delegate().clear();
@@ -325,7 +325,7 @@ public final class Synchronized {
             return (Collection) super.delegate();
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public boolean isEmpty() {
             boolean isEmpty;
             synchronized (this.mutex) {
@@ -362,7 +362,7 @@ public final class Synchronized {
             return retainAll;
         }
 
-        @Override // java.util.Collection, java.util.List
+        @Override // java.util.Collection
         public int size() {
             int size;
             synchronized (this.mutex) {
@@ -388,9 +388,8 @@ public final class Synchronized {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8110460-dex2jar.jar:com/google/common/collect/Synchronized$SynchronizedDeque.class */
-    public static final class SynchronizedDeque<E> extends SynchronizedQueue<E> implements Deque<E> {
+    static final class SynchronizedDeque<E> extends SynchronizedQueue<E> implements Deque<E> {
         private static final long serialVersionUID = 0;
 
         SynchronizedDeque(Deque<E> deque, @NullableDecl Object obj) {
@@ -643,7 +642,7 @@ public final class Synchronized {
             return (List) super.delegate();
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection, java.util.List
         public boolean equals(Object obj) {
             boolean equals;
             if (obj == this) {
@@ -664,7 +663,7 @@ public final class Synchronized {
             return e;
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection, java.util.List
         public int hashCode() {
             int hashCode;
             synchronized (this.mutex) {
@@ -729,9 +728,8 @@ public final class Synchronized {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8110460-dex2jar.jar:com/google/common/collect/Synchronized$SynchronizedListMultimap.class */
-    public static class SynchronizedListMultimap<K, V> extends SynchronizedMultimap<K, V> implements ListMultimap<K, V> {
+    static class SynchronizedListMultimap<K, V> extends SynchronizedMultimap<K, V> implements ListMultimap<K, V> {
         private static final long serialVersionUID = 0;
 
         SynchronizedListMultimap(ListMultimap<K, V> listMultimap, @NullableDecl Object obj) {
@@ -1216,7 +1214,7 @@ public final class Synchronized {
             return set;
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection, com.google.common.collect.Multiset
         public boolean equals(Object obj) {
             boolean equals;
             if (obj == this) {
@@ -1228,7 +1226,7 @@ public final class Synchronized {
             return equals;
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection, com.google.common.collect.Multiset
         public int hashCode() {
             int hashCode;
             synchronized (this.mutex) {
@@ -1664,7 +1662,7 @@ public final class Synchronized {
             return element;
         }
 
-        @Override // java.util.Queue, java.util.concurrent.BlockingQueue
+        @Override // java.util.Queue
         public boolean offer(E e) {
             boolean offer;
             synchronized (this.mutex) {
@@ -1950,9 +1948,8 @@ public final class Synchronized {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8110460-dex2jar.jar:com/google/common/collect/Synchronized$SynchronizedSortedSetMultimap.class */
-    public static class SynchronizedSortedSetMultimap<K, V> extends SynchronizedSetMultimap<K, V> implements SortedSetMultimap<K, V> {
+    static class SynchronizedSortedSetMultimap<K, V> extends SynchronizedSetMultimap<K, V> implements SortedSetMultimap<K, V> {
         private static final long serialVersionUID = 0;
 
         SynchronizedSortedSetMultimap(SortedSetMultimap<K, V> sortedSetMultimap, @NullableDecl Object obj) {

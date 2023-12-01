@@ -223,7 +223,6 @@ public class RetryInterceptor implements Interceptor {
         return null;
     }
 
-    @Override // okhttp3.Interceptor
     public Response intercept(Interceptor.Chain chain) throws IOException {
         Request request = chain.request();
         return processRequest(chain, request, (HttpTask) TaskManager.getInstance().get((String) request.tag()));

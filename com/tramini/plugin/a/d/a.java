@@ -1,6 +1,7 @@
 package com.tramini.plugin.a.d;
 
 import android.content.Context;
+import com.huawei.hms.support.hianalytics.HiAnalyticsConstant;
 import com.tramini.plugin.a.a.a;
 import com.tramini.plugin.a.g.f;
 import java.io.BufferedInputStream;
@@ -27,7 +28,7 @@ public abstract class a {
     private static final String b = a.class.getSimpleName();
 
     /* renamed from: a  reason: collision with root package name */
-    protected b f40510a;
+    protected b f26819a;
 
     public static InputStream a(HttpURLConnection httpURLConnection) {
         BufferedInputStream bufferedInputStream = null;
@@ -79,14 +80,14 @@ public abstract class a {
     protected abstract String a();
 
     public final void a(final int i, b bVar) {
-        this.f40510a = bVar;
+        this.f26819a = bVar;
         com.tramini.plugin.a.g.b.a.a().a(new com.tramini.plugin.a.g.b.b() { // from class: com.tramini.plugin.a.d.a.1
             @Override // com.tramini.plugin.a.g.b.b
             public final void a() {
                 HttpURLConnection httpURLConnection;
                 try {
-                    if (a.this.f40510a != null) {
-                        a.this.f40510a.a();
+                    if (a.this.f26819a != null) {
+                        a.this.f26819a.a();
                     }
                     HttpURLConnection httpURLConnection2 = null;
                     try {
@@ -228,13 +229,13 @@ public abstract class a {
                         th = th2;
                     }
                 } catch (Exception e17) {
-                    if (a.this.f40510a != null) {
-                        a.this.f40510a.b();
+                    if (a.this.f26819a != null) {
+                        a.this.f26819a.b();
                     }
                 } catch (OutOfMemoryError | StackOverflowError e18) {
                     System.gc();
-                    if (a.this.f40510a != null) {
-                        a.this.f40510a.b();
+                    if (a.this.f26819a != null) {
+                        a.this.f26819a.b();
                     }
                 }
             }
@@ -242,7 +243,7 @@ public abstract class a {
     }
 
     protected final void a(int i, Object obj) {
-        b bVar = this.f40510a;
+        b bVar = this.f26819a;
         if (bVar != null) {
             bVar.a(i, obj);
         }
@@ -263,8 +264,8 @@ public abstract class a {
             jSONObject.put("package_name", com.tramini.plugin.a.g.e.c(b2));
             jSONObject.put("app_vn", com.tramini.plugin.a.g.e.b(b2));
             jSONObject.put("app_vc", com.tramini.plugin.a.g.e.a(b2));
-            jSONObject.put("sdk_ver", "1.0.2");
-            jSONObject.put(com.anythink.core.common.g.c.ad, a.b.f40476a);
+            jSONObject.put(HiAnalyticsConstant.BI_KEY_SDK_VER, "1.0.2");
+            jSONObject.put("area_type", a.b.f26785a);
             return jSONObject;
         } catch (Exception e) {
             return jSONObject;
@@ -297,14 +298,14 @@ public abstract class a {
     public abstract boolean f();
 
     protected final void g() {
-        b bVar = this.f40510a;
+        b bVar = this.f26819a;
         if (bVar != null) {
             bVar.b();
         }
     }
 
     protected final void h() {
-        b bVar = this.f40510a;
+        b bVar = this.f26819a;
         if (bVar != null) {
             bVar.b();
         }

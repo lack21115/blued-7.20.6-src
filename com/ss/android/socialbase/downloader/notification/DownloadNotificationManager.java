@@ -90,18 +90,18 @@ public class DownloadNotificationManager {
     }
 
     public void clearNotification() {
-        SparseArray<AbsNotificationItem> m1029clone;
+        SparseArray<AbsNotificationItem> m1025clone;
         synchronized (this.notificationItemArray) {
-            m1029clone = this.notificationItemArray.m1029clone();
+            m1025clone = this.notificationItemArray.m1025clone();
             this.notificationItemArray.clear();
         }
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= m1029clone.size()) {
+            if (i2 >= m1025clone.size()) {
                 return;
             }
-            m1029clone.get(m1029clone.keyAt(i2)).cancel();
+            m1025clone.get(m1025clone.keyAt(i2)).cancel();
             i = i2 + 1;
         }
     }

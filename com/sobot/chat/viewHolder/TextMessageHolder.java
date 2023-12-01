@@ -13,6 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import com.bytedance.applog.tracker.Tracker;
+import com.huawei.hms.framework.common.ContainerUtils;
 import com.sobot.chat.adapter.SobotMsgAdapter;
 import com.sobot.chat.api.model.CommonModel;
 import com.sobot.chat.api.model.ZhiChiInitModeBase;
@@ -273,7 +274,7 @@ public class TextMessageHolder extends MessageHolderBase {
                 if (TextUtils.isEmpty(TextMessageHolder.this.msg.getText().toString())) {
                     return false;
                 }
-                ToastUtil.showCopyPopWindows(context, view, TextMessageHolder.this.msg.getText().toString().replace("&amp;", "&"), 30, 0);
+                ToastUtil.showCopyPopWindows(context, view, TextMessageHolder.this.msg.getText().toString().replace("&amp;", ContainerUtils.FIELD_DELIMITER), 30, 0);
                 return false;
             }
         });

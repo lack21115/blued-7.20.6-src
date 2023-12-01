@@ -28,13 +28,9 @@ import com.blued.das.live.LiveProtos;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/ScrollTextView.class */
 public class ScrollTextView extends LinearLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    public boolean f15242a;
+    public boolean a;
     private Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private LayoutInflater f15243c;
+    private LayoutInflater c;
     private ImageView d;
     private TextView e;
     private float f;
@@ -54,7 +50,7 @@ public class ScrollTextView extends LinearLayout {
         this.f = 0.0f;
         this.h = 0.0f;
         this.i = 0.0f;
-        this.f15242a = false;
+        this.a = false;
         this.b = context;
         c();
     }
@@ -64,7 +60,7 @@ public class ScrollTextView extends LinearLayout {
         this.f = 0.0f;
         this.h = 0.0f;
         this.i = 0.0f;
-        this.f15242a = false;
+        this.a = false;
         this.b = context;
         c();
     }
@@ -74,14 +70,14 @@ public class ScrollTextView extends LinearLayout {
         this.f = 0.0f;
         this.h = 0.0f;
         this.i = 0.0f;
-        this.f15242a = false;
+        this.a = false;
         this.b = context;
         c();
     }
 
     private void c() {
         LayoutInflater from = LayoutInflater.from(this.b);
-        this.f15243c = from;
+        this.c = from;
         View inflate = from.inflate(R.layout.scroll_text_layout, (ViewGroup) null);
         this.d = (ImageView) inflate.findViewById(R.id.scroll_icon);
         this.e = (TextView) inflate.findViewById(R.id.scroll_text);
@@ -90,7 +86,7 @@ public class ScrollTextView extends LinearLayout {
     }
 
     public void a() {
-        this.f15242a = true;
+        this.a = true;
         invalidate();
     }
 
@@ -125,7 +121,7 @@ public class ScrollTextView extends LinearLayout {
                 }
             }, indexOf, indexOf2, 33);
         }
-        CharSequence a2 = LiveRoomInfo.a().a(spannableString, "#ffef5f", new LiveRoomConstants.ClickAtLinkListener() { // from class: com.blued.android.module.live_china.view.ScrollTextView.2
+        CharSequence a = LiveRoomInfo.a().a(spannableString, "#ffef5f", new LiveRoomConstants.ClickAtLinkListener() { // from class: com.blued.android.module.live_china.view.ScrollTextView.2
             @Override // com.blued.android.module.live_china.constant.LiveRoomConstants.ClickAtLinkListener
             public void a(String str3, String str4) {
                 if (liveHornModel.type == 1) {
@@ -141,7 +137,7 @@ public class ScrollTextView extends LinearLayout {
                 }
             }
         });
-        this.e.setText(a2);
+        this.e.setText(a);
         if (liveHornModel.is_hongbao) {
             this.d.setImageResource(R.drawable.live_hongbao_horn_icon);
         } else if (liveHornModel.is_wifi) {
@@ -157,27 +153,27 @@ public class ScrollTextView extends LinearLayout {
             layoutParams.height = AppMethods.a(32);
             this.d.setLayoutParams(layoutParams);
             this.e.setTextSize(14.0f);
-            this.f = paint.measureText(a2.toString()) + AppMethods.a(32) + AppMethods.a(8);
+            this.f = paint.measureText(a.toString()) + AppMethods.a(32) + AppMethods.a(8);
         } else if (liveHornModel.type == 2) {
             ViewGroup.LayoutParams layoutParams2 = this.d.getLayoutParams();
             layoutParams2.width = AppMethods.a(18);
             layoutParams2.height = AppMethods.a(18);
             this.d.setLayoutParams(layoutParams2);
             this.e.setTextSize(12.0f);
-            this.f = paint.measureText(a2.toString()) + AppMethods.a(18) + AppMethods.a(8);
+            this.f = paint.measureText(a.toString()) + AppMethods.a(18) + AppMethods.a(8);
         }
         this.e.setMovementMethod(LinkMovementClickMethod.a());
     }
 
     public void b() {
-        this.f15242a = false;
+        this.a = false;
         invalidate();
     }
 
     @Override // android.widget.LinearLayout, android.view.View
     public void onDraw(Canvas canvas) {
         canvas.translate(this.h, 0.0f);
-        if (!this.f15242a) {
+        if (!this.a) {
             super.onDraw(canvas);
             return;
         }

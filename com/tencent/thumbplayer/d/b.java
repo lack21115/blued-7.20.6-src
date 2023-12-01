@@ -14,17 +14,17 @@ public class b {
         private long b = SystemClock.elapsedRealtime();
 
         /* renamed from: c  reason: collision with root package name */
-        private long f39282c = System.currentTimeMillis();
+        private long f25591c = System.currentTimeMillis();
 
         /* renamed from: a  reason: collision with root package name */
-        private int f39281a = -1;
+        private int f25590a = -1;
 
         public int a() {
-            return this.f39281a;
+            return this.f25590a;
         }
 
         protected void a(int i) {
-            this.f39281a = i;
+            this.f25590a = i;
         }
 
         public long b() {
@@ -32,14 +32,14 @@ public class b {
         }
 
         public long c() {
-            return this.f39282c;
+            return this.f25591c;
         }
     }
 
     /* renamed from: com.tencent.thumbplayer.d.b$b  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/thumbplayer/d/b$b.class */
-    public static class C1018b extends a {
-        public C1018b() {
+    public static class C0848b extends a {
+        public C0848b() {
             a(112);
         }
     }
@@ -55,7 +55,7 @@ public class b {
     public static class d extends a {
 
         /* renamed from: a  reason: collision with root package name */
-        private String f39283a;
+        private String f25592a;
         private String b;
 
         public d() {
@@ -63,7 +63,7 @@ public class b {
         }
 
         public void a(String str) {
-            this.f39283a = str;
+            this.f25592a = str;
         }
 
         public void b(String str) {
@@ -71,7 +71,7 @@ public class b {
         }
 
         public String d() {
-            return this.f39283a;
+            return this.f25592a;
         }
 
         public String e() {
@@ -83,18 +83,18 @@ public class b {
     public static class e extends a {
 
         /* renamed from: a  reason: collision with root package name */
-        private int f39284a;
+        private int f25593a;
 
         public e() {
             a(201);
         }
 
         public void b(int i) {
-            this.f39284a = i;
+            this.f25593a = i;
         }
 
         public int d() {
-            return this.f39284a;
+            return this.f25593a;
         }
     }
 
@@ -102,7 +102,7 @@ public class b {
     public static class f extends a {
 
         /* renamed from: a  reason: collision with root package name */
-        private String f39285a;
+        private String f25594a;
         private String b;
 
         public f() {
@@ -110,7 +110,7 @@ public class b {
         }
 
         public void a(String str) {
-            this.f39285a = str;
+            this.f25594a = str;
         }
 
         public void b(String str) {
@@ -118,7 +118,7 @@ public class b {
         }
 
         public String d() {
-            return this.f39285a;
+            return this.f25594a;
         }
     }
 
@@ -133,18 +133,18 @@ public class b {
     public static class h extends a {
 
         /* renamed from: a  reason: collision with root package name */
-        private TPDrmInfo f39286a;
+        private TPDrmInfo f25595a;
 
         public h() {
             a(116);
         }
 
         public void a(TPDrmInfo tPDrmInfo) {
-            this.f39286a = tPDrmInfo;
+            this.f25595a = tPDrmInfo;
         }
 
         public TPDrmInfo d() {
-            return this.f39286a;
+            return this.f25595a;
         }
     }
 
@@ -152,11 +152,11 @@ public class b {
     public static class i extends a {
 
         /* renamed from: a  reason: collision with root package name */
-        private int f39287a;
+        private int f25596a;
         private int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private TPGeneralPlayFlowParams f39288c;
+        private TPGeneralPlayFlowParams f25597c;
         private TPDynamicStatisticParams d;
 
         public i() {
@@ -168,11 +168,11 @@ public class b {
         }
 
         public void a(TPGeneralPlayFlowParams tPGeneralPlayFlowParams) {
-            this.f39288c = tPGeneralPlayFlowParams;
+            this.f25597c = tPGeneralPlayFlowParams;
         }
 
         public void b(int i) {
-            this.f39287a = i;
+            this.f25596a = i;
         }
 
         public void c(int i) {
@@ -180,7 +180,7 @@ public class b {
         }
 
         public int d() {
-            return this.f39287a;
+            return this.f25596a;
         }
 
         public int e() {
@@ -188,7 +188,7 @@ public class b {
         }
 
         public TPGeneralPlayFlowParams f() {
-            return this.f39288c;
+            return this.f25597c;
         }
 
         public TPDynamicStatisticParams g() {
@@ -214,7 +214,7 @@ public class b {
     public static class l extends a {
 
         /* renamed from: a  reason: collision with root package name */
-        private TPGeneralPlayFlowParams f39289a;
+        private TPGeneralPlayFlowParams f25598a;
         private TPDynamicStatisticParams b;
 
         public l() {
@@ -226,11 +226,11 @@ public class b {
         }
 
         public void a(TPGeneralPlayFlowParams tPGeneralPlayFlowParams) {
-            this.f39289a = tPGeneralPlayFlowParams;
+            this.f25598a = tPGeneralPlayFlowParams;
         }
 
         public TPGeneralPlayFlowParams d() {
-            return this.f39289a;
+            return this.f25598a;
         }
 
         public TPDynamicStatisticParams e() {
@@ -249,7 +249,7 @@ public class b {
     public static class n extends a {
 
         /* renamed from: a  reason: collision with root package name */
-        private TPGeneralPlayFlowParams f39290a;
+        private TPGeneralPlayFlowParams f25599a;
         private TPDynamicStatisticParams b;
 
         public n() {
@@ -261,11 +261,11 @@ public class b {
         }
 
         public void a(TPGeneralPlayFlowParams tPGeneralPlayFlowParams) {
-            this.f39290a = tPGeneralPlayFlowParams;
+            this.f25599a = tPGeneralPlayFlowParams;
         }
 
         public TPGeneralPlayFlowParams d() {
-            return this.f39290a;
+            return this.f25599a;
         }
 
         public TPDynamicStatisticParams e() {
@@ -277,7 +277,7 @@ public class b {
     public static class o extends a {
 
         /* renamed from: a  reason: collision with root package name */
-        private long f39291a;
+        private long f25600a;
         private int b;
 
         public o() {
@@ -285,7 +285,7 @@ public class b {
         }
 
         public void a(long j) {
-            this.f39291a = j;
+            this.f25600a = j;
         }
 
         public void b(int i) {
@@ -293,7 +293,7 @@ public class b {
         }
 
         public long d() {
-            return this.f39291a;
+            return this.f25600a;
         }
 
         public int e() {
@@ -305,18 +305,18 @@ public class b {
     public static class p extends a {
 
         /* renamed from: a  reason: collision with root package name */
-        private String f39292a = "";
+        private String f25601a = "";
 
         public p() {
             a(101);
         }
 
         public void a(String str) {
-            this.f39292a = str;
+            this.f25601a = str;
         }
 
         public String d() {
-            return this.f39292a;
+            return this.f25601a;
         }
     }
 
@@ -338,7 +338,7 @@ public class b {
     public static class s extends a {
 
         /* renamed from: a  reason: collision with root package name */
-        private int f39293a;
+        private int f25602a;
         private long b;
 
         public s() {
@@ -350,11 +350,11 @@ public class b {
         }
 
         public void b(int i) {
-            this.f39293a = i;
+            this.f25602a = i;
         }
 
         public int d() {
-            return this.f39293a;
+            return this.f25602a;
         }
 
         public long e() {
@@ -366,11 +366,11 @@ public class b {
     public static class t extends a {
 
         /* renamed from: a  reason: collision with root package name */
-        private int f39294a;
+        private int f25603a;
         private long b;
 
         /* renamed from: c  reason: collision with root package name */
-        private TPTrackInfo f39295c;
+        private TPTrackInfo f25604c;
 
         public t() {
             a(114);
@@ -381,15 +381,15 @@ public class b {
         }
 
         public void a(TPTrackInfo tPTrackInfo) {
-            this.f39295c = tPTrackInfo;
+            this.f25604c = tPTrackInfo;
         }
 
         public void b(int i) {
-            this.f39294a = i;
+            this.f25603a = i;
         }
 
         public int d() {
-            return this.f39294a;
+            return this.f25603a;
         }
 
         public long e() {
@@ -397,7 +397,7 @@ public class b {
         }
 
         public TPTrackInfo f() {
-            return this.f39295c;
+            return this.f25604c;
         }
     }
 
@@ -405,18 +405,18 @@ public class b {
     public static class u extends a {
 
         /* renamed from: a  reason: collision with root package name */
-        private String f39296a;
+        private String f25605a;
         private boolean b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f39297c;
+        private int f25606c;
 
         public u() {
             a(117);
         }
 
         public void a(String str) {
-            this.f39296a = str;
+            this.f25605a = str;
         }
 
         public void a(boolean z) {
@@ -424,11 +424,11 @@ public class b {
         }
 
         public void b(int i) {
-            this.f39297c = i;
+            this.f25606c = i;
         }
 
         public String d() {
-            return this.f39296a;
+            return this.f25605a;
         }
 
         public boolean e() {
@@ -436,7 +436,7 @@ public class b {
         }
 
         public int f() {
-            return this.f39297c;
+            return this.f25606c;
         }
     }
 
@@ -444,18 +444,18 @@ public class b {
     public static class v extends a {
 
         /* renamed from: a  reason: collision with root package name */
-        private float f39298a;
+        private float f25607a;
 
         public v() {
             a(113);
         }
 
         public void a(float f) {
-            this.f39298a = f;
+            this.f25607a = f;
         }
 
         public float d() {
-            return this.f39298a;
+            return this.f25607a;
         }
     }
 }

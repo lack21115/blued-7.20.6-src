@@ -23,26 +23,21 @@ import com.chad.library.adapter.base.BaseMultiItemQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Iterator;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/adapter/EndMemberAdapter.class */
 public class EndMemberAdapter extends BaseMultiItemQuickAdapter<YYUserInfo, BaseViewHolder> implements FollowStatusObserver {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final SmartRefreshLayout f16122a;
+    private final SmartRefreshLayout a;
     private final RankingView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private IRequestHost f16123c;
+    private IRequestHost c;
     private MvpFragment d;
     private BluedEntityA<YYUserInfo> e;
 
     public EndMemberAdapter(MvpFragment mvpFragment, SmartRefreshLayout smartRefreshLayout, RankingView rankingView) {
         super(new ArrayList());
         this.d = mvpFragment;
-        this.f16123c = mvpFragment.getFragmentActive();
-        this.f16122a = smartRefreshLayout;
+        this.c = mvpFragment.getFragmentActive();
+        this.a = smartRefreshLayout;
         addItemType(0, R.layout.item_end_member_layout);
         addItemType(1, R.layout.item_end_member_more_layout);
         this.b = rankingView;
@@ -60,11 +55,11 @@ public class EndMemberAdapter extends BaseMultiItemQuickAdapter<YYUserInfo, Base
                 arrayList.add(this.e.data.get(i2));
                 i = i2 + 1;
             }
-            addData((Collection) arrayList);
+            addData(arrayList);
             if (this.e.hasMore()) {
-                this.f16122a.l(true);
+                this.a.b(true);
             } else {
-                this.f16122a.l(false);
+                this.a.b(false);
             }
         }
     }
@@ -92,7 +87,6 @@ public class EndMemberAdapter extends BaseMultiItemQuickAdapter<YYUserInfo, Base
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(final BaseViewHolder baseViewHolder, final YYUserInfo yYUserInfo) {
         int itemType = yYUserInfo.getItemType();
@@ -121,7 +115,7 @@ public class EndMemberAdapter extends BaseMultiItemQuickAdapter<YYUserInfo, Base
         TextView textView = (TextView) baseViewHolder.getView(R.id.tv_member_name);
         TextView textView2 = (TextView) baseViewHolder.getView(R.id.tv_member_style);
         final ShapeTextView shapeTextView = (ShapeTextView) baseViewHolder.getView(R.id.tv_follow);
-        ImageLoader.a(this.f16123c, yYUserInfo.getAvatar()).b(R.drawable.user_bg_round).a(imageView);
+        ImageLoader.a(this.c, yYUserInfo.getAvatar()).b(R.drawable.user_bg_round).a(imageView);
         textView.setText(yYUserInfo.getName());
         textView2.setText(String.format(textView2.getResources().getString(R.string.yy_years_height_weight), yYUserInfo.age, yYUserInfo.height, yYUserInfo.weight, UserInfoHelper.a(textView2.getContext(), (TextView) null, yYUserInfo.role)));
         if (TextUtils.equals(yYUserInfo.getUid(), YYRoomInfoManager.e().k()) || TextUtils.equals(yYUserInfo.relationship, "8") || TextUtils.equals(yYUserInfo.relationship, "4")) {
@@ -138,9 +132,9 @@ public class EndMemberAdapter extends BaseMultiItemQuickAdapter<YYUserInfo, Base
                     YYObserverManager.a().a(EndMemberAdapter.this);
                 }
                 if (TextUtils.equals(yYUserInfo.relationship, "1") || TextUtils.equals(yYUserInfo.relationship, "3")) {
-                    YYRoomInfoManager.e().a(shapeTextView.getContext(), yYUserInfo.getUid(), "", EndMemberAdapter.this.f16123c);
+                    YYRoomInfoManager.e().a(shapeTextView.getContext(), yYUserInfo.getUid(), "", EndMemberAdapter.this.c);
                 } else {
-                    YYRoomInfoManager.e().b(shapeTextView.getContext(), yYUserInfo.getUid(), "", EndMemberAdapter.this.f16123c);
+                    YYRoomInfoManager.e().b(shapeTextView.getContext(), yYUserInfo.getUid(), "", EndMemberAdapter.this.c);
                 }
             }
         });
@@ -174,13 +168,11 @@ public class EndMemberAdapter extends BaseMultiItemQuickAdapter<YYUserInfo, Base
         notifyItemChanged(i);
     }
 
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter, androidx.recyclerview.widget.RecyclerView.Adapter
     public void onAttachedToRecyclerView(RecyclerView recyclerView) {
         super.onAttachedToRecyclerView(recyclerView);
         YYObserverManager.a().a(this);
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     public void onDetachedFromRecyclerView(RecyclerView recyclerView) {
         super.onDetachedFromRecyclerView(recyclerView);
         YYObserverManager.a().b(this);

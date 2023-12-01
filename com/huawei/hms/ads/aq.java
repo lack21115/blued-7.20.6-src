@@ -7,7 +7,7 @@ import com.huawei.openalliance.ad.ipc.RemoteCallResultCallback;
 /* loaded from: source-7994992-dex2jar.jar:com/huawei/hms/ads/aq.class */
 public class aq extends ap {
     public aq() {
-        super(ai.f22436a);
+        super(ai.f8828a);
     }
 
     @Override // com.huawei.hms.ads.af, com.huawei.hms.ads.ac

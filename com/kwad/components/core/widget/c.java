@@ -91,9 +91,8 @@ public final class c extends View implements bm.a {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public final void onAttachedToWindow() {
+    protected final void onAttachedToWindow() {
         super.onAttachedToWindow();
         com.kwad.sdk.core.d.b.d("EmptyView", "onAttachedToWindow:" + this);
         rs();
@@ -101,9 +100,8 @@ public final class c extends View implements bm.a {
         viewAttached();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public final void onDetachedFromWindow() {
+    protected final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         com.kwad.sdk.core.d.b.d("EmptyView", "onDetachedFromWindow" + this);
         rr();
@@ -131,9 +129,8 @@ public final class c extends View implements bm.a {
         com.kwad.sdk.core.d.b.d("EmptyView", "onWindowFocusChanged hasWindowFocus:" + z);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public final void onWindowVisibilityChanged(int i) {
+    protected final void onWindowVisibilityChanged(int i) {
         super.onWindowVisibilityChanged(i);
         com.kwad.sdk.core.d.b.d("EmptyView", "onWindowVisibilityChanged visibility:" + i);
     }

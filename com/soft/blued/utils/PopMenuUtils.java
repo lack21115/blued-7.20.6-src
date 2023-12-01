@@ -29,7 +29,7 @@ public class PopMenuUtils {
         View inflate = LayoutInflater.from(context).inflate(R.layout.item_hint_with_image_and_btn, (ViewGroup) null);
         final PopMenuFromCenter popMenuFromCenter = new PopMenuFromCenter(context, inflate);
         LinearLayout linearLayout = (LinearLayout) inflate.findViewById(2131367999);
-        TextView textView = (TextView) inflate.findViewById(2131371023);
+        TextView textView = (TextView) inflate.findViewById(R.id.tv_btn);
         ImageView imageView = (ImageView) inflate.findViewById(R.id.img_head);
         textView.setText(i3);
         ((TextView) inflate.findViewById(2131371186)).setText(i2);
@@ -44,7 +44,7 @@ public class PopMenuUtils {
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
-                View.OnClickListener.this.onClick(view);
+                onClickListener.onClick(view);
                 popMenuFromCenter.d();
             }
         });
@@ -56,9 +56,9 @@ public class PopMenuUtils {
         final PopMenuFromCenter popMenuFromCenter = new PopMenuFromCenter(context, inflate);
         popMenuFromCenter.a(dismissListner);
         LinearLayout linearLayout = (LinearLayout) inflate.findViewById(2131367999);
-        ImageView imageView = (ImageView) inflate.findViewById(2131364488);
+        ImageView imageView = (ImageView) inflate.findViewById(R.id.img_close);
         ImageView imageView2 = (ImageView) inflate.findViewById(R.id.img_status);
-        TextView textView = (TextView) inflate.findViewById(2131371023);
+        TextView textView = (TextView) inflate.findViewById(R.id.tv_btn);
         imageView.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.utils.-$$Lambda$PopMenuUtils$bj4aUTxjux6n2YyPdOn4b_YdUdU
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -78,7 +78,7 @@ public class PopMenuUtils {
             }
         });
         imageView2.setImageResource(R.drawable.icon_pay_result_success);
-        ((TextView) inflate.findViewById(2131372639)).setText(2131891365);
+        ((TextView) inflate.findViewById(R.id.tv_status)).setText(R.string.purchase_complete);
         textView.setText(R.string.go_setting);
         textView.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.utils.-$$Lambda$PopMenuUtils$cJSqLkNnLDffp_eWu_KTpye_NPY
             @Override // android.view.View.OnClickListener
@@ -123,7 +123,7 @@ public class PopMenuUtils {
                 activity = BluedApplicationLike.getForeActivity();
             }
             if (activity == null) {
-                AppMethods.a((CharSequence) context.getResources().getString(R.string.need_cellphone_asap));
+                AppMethods.a(context.getResources().getString(R.string.need_cellphone_asap));
                 return true;
             }
             EventTrackYY.a(ChatRoomProtos.Event.CHAT_ROOM_PHONE_BIND_SHOW);
@@ -132,7 +132,7 @@ public class PopMenuUtils {
                 public void onClick(View view) {
                     Tracker.onClick(view);
                     EventTrackYY.a(ChatRoomProtos.Event.CHAT_ROOM_PHONE_BIND_CONFIRM_CLICK);
-                    View.OnClickListener onClickListener2 = View.OnClickListener.this;
+                    View.OnClickListener onClickListener2 = onClickListener;
                     if (onClickListener2 != null) {
                         onClickListener2.onClick(view);
                     }

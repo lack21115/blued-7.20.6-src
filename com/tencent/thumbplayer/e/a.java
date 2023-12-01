@@ -6,18 +6,18 @@ import com.tencent.thumbplayer.utils.TPLogUtil;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f39300a;
+    private String f25609a;
     private b b;
 
     public a(b bVar) {
         this.b = bVar;
-        this.f39300a = bVar.a();
+        this.f25609a = bVar.a();
     }
 
     public a(b bVar, String str) {
         b bVar2 = new b(bVar, str);
         this.b = bVar2;
-        this.f39300a = bVar2.a();
+        this.f25609a = bVar2.a();
     }
 
     public b a() {
@@ -26,7 +26,7 @@ public class a {
 
     public void a(b bVar) {
         if (bVar == null) {
-            this.b = new b(this.f39300a);
+            this.b = new b(this.f25609a);
         } else {
             this.b = bVar;
         }

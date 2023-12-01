@@ -14,17 +14,17 @@ public class bj extends SQLiteOpenHelper {
     private static final Object b = new Object();
 
     /* renamed from: c  reason: collision with root package name */
-    private static bj f40661c;
+    private static bj f26970c;
     private static final String d = "CREATE TABLE IF NOT EXISTS stf(_id INTEGER PRIMARY KEY AUTOINCREMENT, _tp TEXT, _hd TEXT, _bd TEXT, _ts TEXT, _uuid TEXT, _re1 TEXT, _re2 TEXT)";
     private static final String e = "DROP TABLE IF EXISTS stf";
     private static final String f = "DELETE FROM stf WHERE _id IN( SELECT _id FROM stf ORDER BY _id LIMIT 1)";
 
     /* renamed from: a  reason: collision with root package name */
-    private final Context f40662a;
+    private final Context f26971a;
 
     private bj(Context context, String str, SQLiteDatabase.CursorFactory cursorFactory, int i) {
         super(context, str, cursorFactory, i);
-        this.f40662a = context;
+        this.f26971a = context;
     }
 
     public static final int a() {
@@ -34,10 +34,10 @@ public class bj extends SQLiteOpenHelper {
     public static bj a(Context context) {
         bj bjVar;
         synchronized (b) {
-            if (f40661c == null) {
-                f40661c = new bj(context, bl.b, null, 1);
+            if (f26970c == null) {
+                f26970c = new bj(context, bl.b, null, 1);
             }
-            bjVar = f40661c;
+            bjVar = f26970c;
         }
         return bjVar;
     }
@@ -242,7 +242,7 @@ public class bj extends SQLiteOpenHelper {
     }
 
     public boolean c() {
-        return !b(bl.f40666c);
+        return !b(bl.f26975c);
     }
 
     @Override // android.database.sqlite.SQLiteOpenHelper

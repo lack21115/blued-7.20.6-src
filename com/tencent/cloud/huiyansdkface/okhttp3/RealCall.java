@@ -23,11 +23,11 @@ import java.util.concurrent.TimeUnit;
 public final class RealCall implements Call {
 
     /* renamed from: a  reason: collision with root package name */
-    final OkHttpClient f35877a;
+    final OkHttpClient f22186a;
     final RetryAndFollowUpInterceptor b;
 
     /* renamed from: c  reason: collision with root package name */
-    final AsyncTimeout f35878c;
+    final AsyncTimeout f22187c;
     final Request d;
     final boolean e;
     private EventListener f;
@@ -38,7 +38,7 @@ public final class RealCall implements Call {
     public final class AsyncCall extends NamedRunnable {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ boolean f35880a = !RealCall.class.desiredAssertionStatus();
+        static final /* synthetic */ boolean f22189a = !RealCall.class.desiredAssertionStatus();
         private final Callback d;
 
         AsyncCall(Callback callback) {
@@ -53,7 +53,7 @@ public final class RealCall implements Call {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         public void a(ExecutorService executorService) {
-            if (!f35880a && Thread.holdsLock(RealCall.this.f35877a.dispatcher())) {
+            if (!f22189a && Thread.holdsLock(RealCall.this.f22186a.dispatcher())) {
                 throw new AssertionError();
             }
             try {
@@ -64,10 +64,10 @@ public final class RealCall implements Call {
                     interruptedIOException.initCause(e);
                     RealCall.this.f.callFailed(RealCall.this, interruptedIOException);
                     this.d.onFailure(RealCall.this, interruptedIOException);
-                    RealCall.this.f35877a.dispatcher().b(this);
+                    RealCall.this.f22186a.dispatcher().b(this);
                 }
             } catch (Throwable th) {
-                RealCall.this.f35877a.dispatcher().b(this);
+                RealCall.this.f22186a.dispatcher().b(this);
                 throw th;
             }
         }
@@ -80,13 +80,13 @@ public final class RealCall implements Call {
         @Override // com.tencent.cloud.huiyansdkface.okhttp3.internal.NamedRunnable
         public void execute() {
             Response d;
-            RealCall.this.f35878c.enter();
+            RealCall.this.f22187c.enter();
             boolean z = true;
             try {
                 try {
                     d = RealCall.this.d();
                 } finally {
-                    RealCall.this.f35877a.dispatcher().b(this);
+                    RealCall.this.f22186a.dispatcher().b(this);
                 }
             } catch (IOException e) {
                 e = e;
@@ -112,7 +112,7 @@ public final class RealCall implements Call {
     }
 
     private RealCall(OkHttpClient okHttpClient, Request request, boolean z) {
-        this.f35877a = okHttpClient;
+        this.f22186a = okHttpClient;
         this.d = request;
         this.e = z;
         this.b = new RetryAndFollowUpInterceptor(okHttpClient, z);
@@ -122,7 +122,7 @@ public final class RealCall implements Call {
                 RealCall.this.cancel();
             }
         };
-        this.f35878c = asyncTimeout;
+        this.f22187c = asyncTimeout;
         asyncTimeout.timeout(okHttpClient.callTimeoutMillis(), TimeUnit.MILLISECONDS);
     }
 
@@ -144,7 +144,7 @@ public final class RealCall implements Call {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public IOException a(IOException iOException) {
-        if (this.f35878c.exit()) {
+        if (this.f22187c.exit()) {
             InterruptedIOException interruptedIOException = new InterruptedIOException("timeout");
             if (iOException != null) {
                 interruptedIOException.initCause(iOException);
@@ -174,22 +174,22 @@ public final class RealCall implements Call {
 
     @Override // com.tencent.cloud.huiyansdkface.okhttp3.Call
     /* renamed from: clone */
-    public RealCall m10101clone() {
-        return a(this.f35877a, this.d, this.e);
+    public RealCall m7058clone() {
+        return a(this.f22186a, this.d, this.e);
     }
 
     Response d() throws IOException {
         ArrayList arrayList = new ArrayList();
-        arrayList.addAll(this.f35877a.interceptors());
+        arrayList.addAll(this.f22186a.interceptors());
         arrayList.add(this.b);
-        arrayList.add(new BridgeInterceptor(this.f35877a.cookieJar()));
-        arrayList.add(new CacheInterceptor(this.f35877a.a()));
-        arrayList.add(new ConnectInterceptor(this.f35877a));
+        arrayList.add(new BridgeInterceptor(this.f22186a.cookieJar()));
+        arrayList.add(new CacheInterceptor(this.f22186a.a()));
+        arrayList.add(new ConnectInterceptor(this.f22186a));
         if (!this.e) {
-            arrayList.addAll(this.f35877a.networkInterceptors());
+            arrayList.addAll(this.f22186a.networkInterceptors());
         }
         arrayList.add(new CallServerInterceptor(this.e));
-        return new RealInterceptorChain(arrayList, null, null, null, 0, this.d, this, this.f, this.f35877a.connectTimeoutMillis(), this.f35877a.readTimeoutMillis(), this.f35877a.writeTimeoutMillis()).proceed(this.d);
+        return new RealInterceptorChain(arrayList, null, null, null, 0, this.d, this, this.f, this.f22186a.connectTimeoutMillis(), this.f22186a.readTimeoutMillis(), this.f22186a.writeTimeoutMillis()).proceed(this.d);
     }
 
     @Override // com.tencent.cloud.huiyansdkface.okhttp3.Call
@@ -202,7 +202,7 @@ public final class RealCall implements Call {
         }
         e();
         this.f.callStart(this);
-        this.f35877a.dispatcher().a(new AsyncCall(callback));
+        this.f22186a.dispatcher().a(new AsyncCall(callback));
     }
 
     @Override // com.tencent.cloud.huiyansdkface.okhttp3.Call
@@ -214,16 +214,16 @@ public final class RealCall implements Call {
             this.g = true;
         }
         e();
-        this.f35878c.enter();
+        this.f22187c.enter();
         this.f.callStart(this);
         try {
             try {
-                this.f35877a.dispatcher().a(this);
+                this.f22186a.dispatcher().a(this);
                 Response d = d();
                 if (d == null) {
                     throw new IOException("Canceled");
                 }
-                this.f35877a.dispatcher().b(this);
+                this.f22186a.dispatcher().b(this);
                 return d;
             } catch (IOException e) {
                 IOException a2 = a(e);
@@ -231,7 +231,7 @@ public final class RealCall implements Call {
                 throw a2;
             }
         } catch (Throwable th) {
-            this.f35877a.dispatcher().b(this);
+            this.f22186a.dispatcher().b(this);
             throw th;
         }
     }
@@ -257,6 +257,6 @@ public final class RealCall implements Call {
 
     @Override // com.tencent.cloud.huiyansdkface.okhttp3.Call
     public Timeout timeout() {
-        return this.f35878c;
+        return this.f22187c;
     }
 }

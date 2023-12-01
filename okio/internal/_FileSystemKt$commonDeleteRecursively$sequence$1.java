@@ -40,24 +40,24 @@ public final class _FileSystemKt$commonDeleteRecursively$sequence$1 extends Rest
 
     @Override // kotlin.jvm.functions.Function2
     public final Object invoke(SequenceScope<? super Path> sequenceScope, Continuation<? super Unit> continuation) {
-        return ((_FileSystemKt$commonDeleteRecursively$sequence$1) create(sequenceScope, continuation)).invokeSuspend(Unit.f42314a);
+        return ((_FileSystemKt$commonDeleteRecursively$sequence$1) create(sequenceScope, continuation)).invokeSuspend(Unit.a);
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        Object a2 = IntrinsicsKt.a();
+        Object a = IntrinsicsKt.a();
         int i = this.label;
         if (i == 0) {
             ResultKt.a(obj);
             this.label = 1;
-            if (_FileSystemKt.collectRecursively((SequenceScope) this.L$0, this.$this_commonDeleteRecursively, new ArrayDeque(), this.$fileOrDirectory, false, true, this) == a2) {
-                return a2;
+            if (_FileSystemKt.collectRecursively((SequenceScope) this.L$0, this.$this_commonDeleteRecursively, new ArrayDeque(), this.$fileOrDirectory, false, true, this) == a) {
+                return a;
             }
         } else if (i != 1) {
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         } else {
             ResultKt.a(obj);
         }
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

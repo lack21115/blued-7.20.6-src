@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.view.Window;
 import android.view.WindowManager;
+import com.android.internal.R;
 
 /* renamed from: com.amap.api.col.3sl.eq  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/eq.class */
@@ -26,7 +27,7 @@ abstract class eq extends Dialog {
                 attributes.gravity = 80;
             }
             window.setAttributes(attributes);
-            window.setBackgroundDrawableResource(17170445);
+            window.setBackgroundDrawableResource(R.color.transparent);
         }
     }
 

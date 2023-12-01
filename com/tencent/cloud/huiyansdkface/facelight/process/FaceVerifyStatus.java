@@ -10,11 +10,11 @@ import com.tencent.cloud.huiyansdkface.normal.tools.WLogger;
 public class FaceVerifyStatus {
 
     /* renamed from: a  reason: collision with root package name */
-    private boolean f35599a = true;
+    private boolean f21908a = true;
     private com.tencent.cloud.huiyansdkface.facelight.process.b.d b;
 
     /* renamed from: c  reason: collision with root package name */
-    private volatile int f35600c;
+    private volatile int f21909c;
     private long d;
     private String e;
     private volatile int f;
@@ -54,8 +54,8 @@ public class FaceVerifyStatus {
     private void d(int i) {
         if (this.l == null) {
             WLogger.d("FaceVerifyStatus", "setCurrentType mActiveDetectInterface == null error!");
-        } else if (this.f35600c > 4) {
-            WLogger.e("FaceVerifyStatus", "curStatus=" + this.f35600c + ",no need to update act.");
+        } else if (this.f21909c > 4) {
+            WLogger.e("FaceVerifyStatus", "curStatus=" + this.f21909c + ",no need to update act.");
         } else {
             this.k = i;
             if (i == 1) {
@@ -88,19 +88,19 @@ public class FaceVerifyStatus {
     }
 
     public void a(boolean z) {
-        this.f35599a = z;
+        this.f21908a = z;
     }
 
     public int b() {
-        return this.f35600c;
+        return this.f21909c;
     }
 
     public void b(int i) {
         String str;
         if (this.b == null) {
             str = "setCurrentStep mInterface == null error!";
-        } else if (i != 2 || this.f35599a) {
-            this.f35600c = i;
+        } else if (i != 2 || this.f21908a) {
+            this.f21909c = i;
             WLogger.d("FaceVerifyStatus", "setCurrentStep = " + i + ", curThread=" + Thread.currentThread().getName());
             switch (i) {
                 case 1:
@@ -188,8 +188,8 @@ public class FaceVerifyStatus {
     public void c(int i) {
         if (this.g == null) {
             WLogger.d("FaceVerifyStatus", "setCurrentLiveCheck liveCheckProcess is null");
-        } else if (this.f35600c > 4) {
-            WLogger.e("FaceVerifyStatus", "curStatus=" + this.f35600c + ",no need to update live.");
+        } else if (this.f21909c > 4) {
+            WLogger.e("FaceVerifyStatus", "curStatus=" + this.f21909c + ",no need to update live.");
         } else {
             this.f = i;
             if (i == 1) {
@@ -240,7 +240,7 @@ public class FaceVerifyStatus {
                 FaceVerifyStatus faceVerifyStatus;
                 int i;
                 WLogger.d("FaceVerifyStatus", "checkNextLiveCheck");
-                if (FaceVerifyStatus.this.e == null || FaceVerifyStatus.this.f35600c != 4 || (length = FaceVerifyStatus.this.e.length()) == 0) {
+                if (FaceVerifyStatus.this.e == null || FaceVerifyStatus.this.f21909c != 4 || (length = FaceVerifyStatus.this.e.length()) == 0) {
                     return;
                 }
                 WLogger.i("FaceVerifyStatus", "liveIndex=" + FaceVerifyStatus.this.h + "; counts=" + length);
@@ -300,7 +300,7 @@ public class FaceVerifyStatus {
     }
 
     public void l() {
-        if (this.f35600c == 2 || !this.f35599a) {
+        if (this.f21909c == 2 || !this.f21908a) {
             return;
         }
         b(2);

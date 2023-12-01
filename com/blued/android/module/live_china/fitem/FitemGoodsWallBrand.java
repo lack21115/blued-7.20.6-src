@@ -51,9 +51,9 @@ public final class FitemGoodsWallBrand extends FreedomItem {
         Intrinsics.e(context, "context");
         Intrinsics.e(vh, "vh");
         vh.a(R.id.iv_avatar, this.b.getAvatar(), R.drawable.icon_desire_funders_default, true).a(R.id.iv_avatar_frame, this.b.getAvatar_frame(), true, -1).a(R.id.tv_name, (CharSequence) LiveCloakingUtil.a(this.b.getUsername(), this.b.is_hide())).a(R.id.tv_goods, (CharSequence) AppInfo.d().getString(R.string.live_goods_wall_brand_item_subtitle, Intrinsics.a("  ", (Object) this.b.getGoods_name()))).a(R.id.iv_goosd, this.b.getGoods_image()).a(R.id.tv_num, (CharSequence) String.valueOf(this.b.getGoods_count())).a(R.id.tv_name, true).a(R.id.tv_goods, true).a(R.id.tv_num_prefix, true).a(R.id.tv_num, true).b(R.id.tv_num_prefix, this.b.getGoods_count() > 1).b(R.id.tv_num, this.b.getGoods_count() > 1);
-        final View a2 = vh.a(R.id.iv_goosd);
-        a2.getScaleX();
-        a2.post(new Runnable() { // from class: com.blued.android.module.live_china.fitem.-$$Lambda$FitemGoodsWallBrand$7BDX4k8M2ILekjSKQW2YwpqbOP0
+        final View a = vh.a(R.id.iv_goosd);
+        a.getScaleX();
+        a.post(new Runnable() { // from class: com.blued.android.module.live_china.fitem.-$$Lambda$FitemGoodsWallBrand$7BDX4k8M2ILekjSKQW2YwpqbOP0
             @Override // java.lang.Runnable
             public final void run() {
                 FitemGoodsWallBrand.a(View.this);
@@ -61,7 +61,7 @@ public final class FitemGoodsWallBrand extends FreedomItem {
         });
         final SVGAImageView sVGAImageView = (SVGAImageView) vh.a(R.id.svga_bg);
         sVGAImageView.setMIsNeedOnDetachedFromWindow(false);
-        SVGAParser.a(SVGAParser.f15958a.b(), "live_bg_goods_wall_brand_back.svga", new SVGAParser.ParseCompletion() { // from class: com.blued.android.module.live_china.fitem.FitemGoodsWallBrand$initBindView$2
+        SVGAParser.a(SVGAParser.a.b(), "live_bg_goods_wall_brand_back.svga", new SVGAParser.ParseCompletion() { // from class: com.blued.android.module.live_china.fitem.FitemGoodsWallBrand$initBindView$2
             @Override // com.blued.android.module.svgaplayer.SVGAParser.ParseCompletion
             public void onComplete(SVGAVideoEntity videoItem) {
                 Intrinsics.e(videoItem, "videoItem");
@@ -73,7 +73,7 @@ public final class FitemGoodsWallBrand extends FreedomItem {
             public void onError() {
             }
         }, (SVGAParser.PlayCallback) null, 4, (Object) null);
-        vh.f10932c = new onViewRecycledCallback() { // from class: com.blued.android.module.live_china.fitem.FitemGoodsWallBrand$initBindView$3
+        vh.c = new onViewRecycledCallback() { // from class: com.blued.android.module.live_china.fitem.FitemGoodsWallBrand$initBindView$3
             @Override // com.blued.android.module.common.utils.freedom.clickcallback.onViewRecycledCallback
             public void a() {
                 SVGAImageView.this.e();

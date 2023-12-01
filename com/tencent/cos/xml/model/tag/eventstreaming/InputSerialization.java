@@ -1,7 +1,5 @@
 package com.tencent.cos.xml.model.tag.eventstreaming;
 
-import com.alipay.sdk.util.i;
-
 /* loaded from: source-8457232-dex2jar.jar:com/tencent/cos/xml/model/tag/eventstreaming/InputSerialization.class */
 public class InputSerialization {
     private String compressionType;
@@ -30,7 +28,7 @@ public class InputSerialization {
     }
 
     /* renamed from: clone */
-    public InputSerialization m10192clone() {
+    public InputSerialization m7149clone() {
         try {
             return (InputSerialization) super.clone();
         } catch (CloneNotSupportedException e) {
@@ -125,7 +123,7 @@ public class InputSerialization {
             sb.append("CompressionType: ");
             sb.append(getCompressionType());
         }
-        sb.append(i.d);
+        sb.append("}");
         return sb.toString();
     }
 

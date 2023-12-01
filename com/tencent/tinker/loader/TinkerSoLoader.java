@@ -1,7 +1,6 @@
 package com.tencent.tinker.loader;
 
 import android.content.Intent;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.tinker.loader.shareutil.ShareBsDiffPatchInfo;
 import com.tencent.tinker.loader.shareutil.ShareIntentUtil;
 import com.tencent.tinker.loader.shareutil.SharePatchFileUtil;
@@ -27,7 +26,7 @@ public class TinkerSoLoader {
         if (arrayList.isEmpty()) {
             return true;
         }
-        String str3 = str + BridgeUtil.SPLIT_MARK + "lib" + BridgeUtil.SPLIT_MARK;
+        String str3 = str + "/lib/";
         HashMap hashMap = new HashMap();
         Iterator it = arrayList.iterator();
         while (it.hasNext()) {
@@ -37,7 +36,7 @@ public class TinkerSoLoader {
                 ShareIntentUtil.setIntentReturnCode(intent, -8);
                 return false;
             }
-            hashMap.put(shareBsDiffPatchInfo.path + BridgeUtil.SPLIT_MARK + shareBsDiffPatchInfo.name, shareBsDiffPatchInfo.md5);
+            hashMap.put(shareBsDiffPatchInfo.path + "/" + shareBsDiffPatchInfo.name, shareBsDiffPatchInfo.md5);
         }
         File file = new File(str3);
         if (!file.exists() || !file.isDirectory()) {

@@ -1,52 +1,49 @@
 package androidx.emoji2.text;
 
 import android.content.res.AssetManager;
-import android.widget.ExpandableListView;
 import androidx.emoji2.text.flatbuffer.MetadataList;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8756600-dex2jar.jar:androidx/emoji2/text/MetadataListReader.class */
-public class MetadataListReader {
+class MetadataListReader {
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8756600-dex2jar.jar:androidx/emoji2/text/MetadataListReader$ByteBufferReader.class */
-    public static class ByteBufferReader implements OpenTypeReader {
+    static class ByteBufferReader implements OpenTypeReader {
 
         /* renamed from: a  reason: collision with root package name */
-        private final ByteBuffer f2838a;
+        private final ByteBuffer f2790a;
 
         ByteBufferReader(ByteBuffer byteBuffer) {
-            this.f2838a = byteBuffer;
+            this.f2790a = byteBuffer;
             byteBuffer.order(ByteOrder.BIG_ENDIAN);
         }
 
         @Override // androidx.emoji2.text.MetadataListReader.OpenTypeReader
         public long getPosition() {
-            return this.f2838a.position();
+            return this.f2790a.position();
         }
 
         @Override // androidx.emoji2.text.MetadataListReader.OpenTypeReader
         public int readTag() throws IOException {
-            return this.f2838a.getInt();
+            return this.f2790a.getInt();
         }
 
         @Override // androidx.emoji2.text.MetadataListReader.OpenTypeReader
         public long readUnsignedInt() throws IOException {
-            return MetadataListReader.a(this.f2838a.getInt());
+            return MetadataListReader.a(this.f2790a.getInt());
         }
 
         @Override // androidx.emoji2.text.MetadataListReader.OpenTypeReader
         public int readUnsignedShort() throws IOException {
-            return MetadataListReader.a(this.f2838a.getShort());
+            return MetadataListReader.a(this.f2790a.getShort());
         }
 
         @Override // androidx.emoji2.text.MetadataListReader.OpenTypeReader
         public void skip(int i) throws IOException {
-            ByteBuffer byteBuffer = this.f2838a;
+            ByteBuffer byteBuffer = this.f2790a;
             byteBuffer.position(byteBuffer.position() + i);
         }
     }
@@ -56,24 +53,24 @@ public class MetadataListReader {
     public static class InputStreamOpenTypeReader implements OpenTypeReader {
 
         /* renamed from: a  reason: collision with root package name */
-        private final byte[] f2839a;
+        private final byte[] f2791a;
         private final ByteBuffer b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final InputStream f2840c;
+        private final InputStream f2792c;
         private long d = 0;
 
         InputStreamOpenTypeReader(InputStream inputStream) {
-            this.f2840c = inputStream;
+            this.f2792c = inputStream;
             byte[] bArr = new byte[4];
-            this.f2839a = bArr;
+            this.f2791a = bArr;
             ByteBuffer wrap = ByteBuffer.wrap(bArr);
             this.b = wrap;
             wrap.order(ByteOrder.BIG_ENDIAN);
         }
 
         private void a(int i) throws IOException {
-            if (this.f2840c.read(this.f2839a, 0, i) != i) {
+            if (this.f2792c.read(this.f2791a, 0, i) != i) {
                 throw new IOException("read failed");
             }
             this.d += i;
@@ -108,7 +105,7 @@ public class MetadataListReader {
         @Override // androidx.emoji2.text.MetadataListReader.OpenTypeReader
         public void skip(int i) throws IOException {
             while (i > 0) {
-                int skip = (int) this.f2840c.skip(i);
+                int skip = (int) this.f2792c.skip(i);
                 if (skip < 1) {
                     throw new IOException("Skip didn't move at least 1 byte forward");
                 }
@@ -123,16 +120,16 @@ public class MetadataListReader {
     public static class OffsetInfo {
 
         /* renamed from: a  reason: collision with root package name */
-        private final long f2841a;
+        private final long f2793a;
         private final long b;
 
         OffsetInfo(long j, long j2) {
-            this.f2841a = j;
+            this.f2793a = j;
             this.b = j2;
         }
 
         long a() {
-            return this.f2841a;
+            return this.f2793a;
         }
 
         long b() {
@@ -165,7 +162,7 @@ public class MetadataListReader {
     }
 
     static long a(int i) {
-        return i & ExpandableListView.PACKED_POSITION_VALUE_NULL;
+        return i & 4294967295L;
     }
 
     private static OffsetInfo a(OpenTypeReader openTypeReader) throws IOException {

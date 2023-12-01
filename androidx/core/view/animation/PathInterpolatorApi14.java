@@ -8,7 +8,7 @@ import android.view.animation.Interpolator;
 class PathInterpolatorApi14 implements Interpolator {
 
     /* renamed from: a  reason: collision with root package name */
-    private final float[] f2733a;
+    private final float[] f2685a;
     private final float[] b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -26,7 +26,7 @@ class PathInterpolatorApi14 implements Interpolator {
         PathMeasure pathMeasure = new PathMeasure(path, false);
         float length = pathMeasure.getLength();
         int i = ((int) (length / 0.002f)) + 1;
-        this.f2733a = new float[i];
+        this.f2685a = new float[i];
         this.b = new float[i];
         float[] fArr = new float[2];
         int i2 = 0;
@@ -36,7 +36,7 @@ class PathInterpolatorApi14 implements Interpolator {
                 return;
             }
             pathMeasure.getPosTan((i3 * length) / (i - 1), fArr, null);
-            this.f2733a[i3] = fArr[0];
+            this.f2685a[i3] = fArr[0];
             this.b[i3] = fArr[1];
             i2 = i3 + 1;
         }
@@ -65,16 +65,16 @@ class PathInterpolatorApi14 implements Interpolator {
             return 1.0f;
         }
         int i = 0;
-        int length = this.f2733a.length - 1;
+        int length = this.f2685a.length - 1;
         while (length - i > 1) {
             int i2 = (i + length) / 2;
-            if (f < this.f2733a[i2]) {
+            if (f < this.f2685a[i2]) {
                 length = i2;
             } else {
                 i = i2;
             }
         }
-        float[] fArr = this.f2733a;
+        float[] fArr = this.f2685a;
         float f2 = fArr[length] - fArr[i];
         if (f2 == 0.0f) {
             return this.b[i];

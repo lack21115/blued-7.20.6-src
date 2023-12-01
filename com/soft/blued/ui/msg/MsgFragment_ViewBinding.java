@@ -16,7 +16,7 @@ public class MsgFragment_ViewBinding implements Unbinder {
 
     public MsgFragment_ViewBinding(MsgFragment msgFragment, View view) {
         this.b = msgFragment;
-        msgFragment.keyboardLayout = (TouchEnableKeyboardLinearLayout) Utils.a(view, 2131366091, "field 'keyboardLayout'", TouchEnableKeyboardLinearLayout.class);
+        msgFragment.keyboardLayout = (TouchEnableKeyboardLinearLayout) Utils.a(view, R.id.keyboardRelativeLayout, "field 'keyboardLayout'", TouchEnableKeyboardLinearLayout.class);
         msgFragment.cover_view = Utils.a(view, 2131363095, "field 'cover_view'");
         msgFragment.msg_filter_guide_iv = Utils.a(view, R.id.msg_filter_guide_iv, "field 'msg_filter_guide_iv'");
         msgFragment.msgFilterView = (MsgFilterView) Utils.a(view, R.id.msg_filter_view, "field 'msgFilterView'", MsgFilterView.class);

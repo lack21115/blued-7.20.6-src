@@ -29,13 +29,9 @@ import java.util.List;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYReportView.class */
 public class YYReportView extends LinearLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    BaseYYStudioFragment f18432a;
+    BaseYYStudioFragment a;
     EditText b;
-
-    /* renamed from: c  reason: collision with root package name */
-    ShapeTextView f18433c;
+    ShapeTextView c;
     public PopYyDialog d;
     private YYReportModel e;
     private int f;
@@ -58,11 +54,11 @@ public class YYReportView extends LinearLayout {
 
     private void a() {
         LayoutInflater.from(getContext()).inflate(R.layout.view_yy_report_layout, (ViewGroup) this, true);
-        this.f18433c = (ShapeTextView) findViewById(R.id.btn_report);
+        this.c = (ShapeTextView) findViewById(R.id.btn_report);
         EditText editText = (EditText) findViewById(R.id.et_report_view);
         this.b = editText;
         editText.setFilters(new InputFilter[]{new EnglishCharFilter(280)});
-        this.f18433c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.YYReportView.1
+        this.c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.YYReportView.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
@@ -113,19 +109,19 @@ public class YYReportView extends LinearLayout {
     }
 
     private void b() {
-        YYRoomHttpUtils.a(this.e.room_id, this.e.anchor, this.e.uid, this.e.reason, this.e.members, getCallback(), this.f18432a.getFragmentActive());
+        YYRoomHttpUtils.a(this.e.room_id, this.e.anchor, this.e.uid, this.e.reason, this.e.members, getCallback(), this.a.getFragmentActive());
     }
 
     private void c() {
-        YYRoomHttpUtils.a(this.e.room_id, this.e.anchor, this.e.reason, this.e.members, getCallback(), this.f18432a.getFragmentActive());
+        YYRoomHttpUtils.a(this.e.room_id, this.e.anchor, this.e.reason, this.e.members, getCallback(), this.a.getFragmentActive());
     }
 
     private void d() {
-        YYRoomHttpUtils.a(this.e.room_id, this.e.anchor, this.e.uid, this.e.reason, this.e.members, this.e.msg, getCallback(), this.f18432a.getFragmentActive());
+        YYRoomHttpUtils.a(this.e.room_id, this.e.anchor, this.e.uid, this.e.reason, this.e.members, this.e.msg, getCallback(), this.a.getFragmentActive());
     }
 
     private BluedUIHttpResponse getCallback() {
-        return new BluedUIHttpResponse(this.f18432a.getFragmentActive()) { // from class: com.blued.android.module.yy_china.view.YYReportView.3
+        return new BluedUIHttpResponse(this.a.getFragmentActive()) { // from class: com.blued.android.module.yy_china.view.YYReportView.3
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str) {
                 YYReportView.this.g = false;
@@ -144,7 +140,7 @@ public class YYReportView extends LinearLayout {
     }
 
     public void a(BaseYYStudioFragment baseYYStudioFragment, YYReportModel yYReportModel) {
-        this.f18432a = baseYYStudioFragment;
+        this.a = baseYYStudioFragment;
         this.e = yYReportModel;
         this.f = yYReportModel.reportType;
         baseYYStudioFragment.postDelaySafeRunOnUiThread(new Runnable() { // from class: com.blued.android.module.yy_china.view.YYReportView.2
@@ -153,7 +149,7 @@ public class YYReportView extends LinearLayout {
                 YYReportView.this.b.setFocusableInTouchMode(true);
                 YYReportView.this.b.setFocusable(true);
                 YYReportView.this.b.requestFocus();
-                ((InputMethodManager) YYReportView.this.getContext().getSystemService(Context.INPUT_METHOD_SERVICE)).showSoftInput(YYReportView.this.b, 0);
+                ((InputMethodManager) YYReportView.this.getContext().getSystemService("input_method")).showSoftInput(YYReportView.this.b, 0);
             }
         }, 300L);
     }

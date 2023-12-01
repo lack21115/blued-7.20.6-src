@@ -1,5 +1,6 @@
 package android.preference;
 
+import android.R;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -18,7 +19,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.android.internal.R;
 import com.android.internal.util.CharSequences;
 import java.util.ArrayList;
 import java.util.List;
@@ -106,7 +106,7 @@ public class Preference implements Comparable<Preference> {
     }
 
     public Preference(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, 16842894);
+        this(context, attributeSet, R.attr.preferenceStyle);
     }
 
     public Preference(Context context, AttributeSet attributeSet, int i) {
@@ -121,10 +121,10 @@ public class Preference implements Comparable<Preference> {
         this.mDependencyMet = true;
         this.mParentDependencyMet = true;
         this.mShouldDisableView = true;
-        this.mLayoutResId = R.layout.preference;
+        this.mLayoutResId = 17367182;
         this.mCanRecycleLayout = true;
         this.mContext = context;
-        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.Preference, i, i2);
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, com.android.internal.R.styleable.Preference, i, i2);
         int indexCount = obtainStyledAttributes.getIndexCount();
         while (true) {
             int i3 = indexCount - 1;
@@ -526,7 +526,7 @@ public class Preference implements Comparable<Preference> {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public void onBindView(View view) {
-        TextView textView = (TextView) view.findViewById(16908310);
+        TextView textView = (TextView) view.findViewById(R.id.title);
         if (textView != null) {
             CharSequence title = getTitle();
             if (TextUtils.isEmpty(title)) {
@@ -536,7 +536,7 @@ public class Preference implements Comparable<Preference> {
                 textView.setVisibility(0);
             }
         }
-        TextView textView2 = (TextView) view.findViewById(16908304);
+        TextView textView2 = (TextView) view.findViewById(R.id.summary);
         if (textView2 != null) {
             CharSequence summary = getSummary();
             if (TextUtils.isEmpty(summary)) {
@@ -546,7 +546,7 @@ public class Preference implements Comparable<Preference> {
                 textView2.setVisibility(0);
             }
         }
-        ImageView imageView = (ImageView) view.findViewById(16908294);
+        ImageView imageView = (ImageView) view.findViewById(R.id.icon);
         if (imageView != null) {
             if (this.mIconResId != 0 || this.mIcon != null) {
                 if (this.mIcon == null) {
@@ -558,7 +558,7 @@ public class Preference implements Comparable<Preference> {
             }
             imageView.setVisibility(this.mIcon != null ? 0 : 8);
         }
-        View findViewById = view.findViewById(R.id.icon_frame);
+        View findViewById = view.findViewById(16909146);
         if (findViewById != null) {
             findViewById.setVisibility(this.mIcon != null ? 0 : 8);
         }
@@ -574,7 +574,7 @@ public class Preference implements Comparable<Preference> {
     protected View onCreateView(ViewGroup viewGroup) {
         LayoutInflater layoutInflater = (LayoutInflater) this.mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View inflate = layoutInflater.inflate(this.mLayoutResId, viewGroup, false);
-        ViewGroup viewGroup2 = (ViewGroup) inflate.findViewById(16908312);
+        ViewGroup viewGroup2 = (ViewGroup) inflate.findViewById(R.id.widget_frame);
         if (viewGroup2 != null) {
             if (this.mWidgetLayoutResId == 0) {
                 viewGroup2.setVisibility(8);

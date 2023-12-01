@@ -13,7 +13,7 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 public final class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static ReentrantReadWriteLock f24450a = new ReentrantReadWriteLock();
+    private static ReentrantReadWriteLock f10763a = new ReentrantReadWriteLock();
 
     /* JADX WARN: Code restructure failed: missing block: B:15:0x006b, code lost:
         if (r4.isClosed() == false) goto L16;
@@ -40,7 +40,7 @@ public final class c {
         try {
             try {
                 SQLiteDatabase a2 = a.a(context);
-                f24450a.readLock().lock();
+                f10763a.readLock().lock();
                 cursor = a2.query("t_biz_entity", null, "EVENT_TIME>?", new String[]{String.valueOf(j)}, null, null, "UPDATE_TIME", String.valueOf(i));
                 ArrayList arrayList2 = null;
                 if (cursor != null) {
@@ -54,9 +54,9 @@ public final class c {
                                     do {
                                         try {
                                             com.opos.acs.st.b.a aVar = new com.opos.acs.st.b.a();
-                                            aVar.f24451a = cursor.getInt(cursor.getColumnIndex(STManager.REGION_OF_ID));
+                                            aVar.f10764a = cursor.getInt(cursor.getColumnIndex(STManager.REGION_OF_ID));
                                             aVar.b = com.opos.acs.st.b.a.b(context, cursor.getString(cursor.getColumnIndex("BIZ_DATA")));
-                                            aVar.f24452c = cursor.getLong(cursor.getColumnIndex("EVENT_TIME"));
+                                            aVar.f10765c = cursor.getLong(cursor.getColumnIndex("EVENT_TIME"));
                                             aVar.d = cursor.getLong(cursor.getColumnIndex("UPDATE_TIME"));
                                             arrayList3.add(aVar);
                                         } catch (Exception e) {
@@ -65,7 +65,7 @@ public final class c {
                                             e = e;
                                             cursor2 = cursor;
                                             com.opos.cmn.an.f.a.d("StBizUtils", "query all StBizEntity", e);
-                                            f24450a.readLock().unlock();
+                                            f10763a.readLock().unlock();
                                             if (cursor != null && !cursor.isClosed()) {
                                                 cursor.close();
                                             }
@@ -78,7 +78,7 @@ public final class c {
                         } catch (Throwable th) {
                             th = th;
                             cursor2 = cursor;
-                            f24450a.readLock().unlock();
+                            f10763a.readLock().unlock();
                             if (cursor2 != null && !cursor2.isClosed()) {
                                 cursor2.close();
                             }
@@ -89,7 +89,7 @@ public final class c {
                         arrayList = null;
                     }
                 }
-                f24450a.readLock().unlock();
+                f10763a.readLock().unlock();
                 arrayList = arrayList2;
                 if (cursor != null) {
                     arrayList = arrayList2;
@@ -115,15 +115,15 @@ public final class c {
                 try {
                     SQLiteDatabase a2 = a.a(context);
                     String concat = "EVENT_TIME < ".concat(String.valueOf(j));
-                    f24450a.writeLock().lock();
+                    f10763a.writeLock().lock();
                     a2.delete("t_biz_entity", concat, null);
                     com.opos.cmn.an.f.a.b("StBizUtils", "delete expired data from db!");
                 } catch (Exception e) {
                     com.opos.cmn.an.f.a.d("StBizUtils", "delete expired failed", e);
                 }
-                f24450a.writeLock().unlock();
+                f10763a.writeLock().unlock();
             } catch (Throwable th) {
-                f24450a.writeLock().unlock();
+                f10763a.writeLock().unlock();
                 throw th;
             }
         }
@@ -137,15 +137,15 @@ public final class c {
             try {
                 ContentValues d = d(context, aVar);
                 SQLiteDatabase a2 = a.a(context);
-                f24450a.writeLock().lock();
+                f10763a.writeLock().lock();
                 a2.insert("t_biz_entity", null, d);
                 com.opos.cmn.an.f.a.b("StBizUtils", "saved business data to db!");
             } catch (Exception e) {
                 com.opos.cmn.an.f.a.d("StBizUtils", "insert StBizEntity failed", e);
             }
-            f24450a.writeLock().unlock();
+            f10763a.writeLock().unlock();
         } catch (Throwable th) {
-            f24450a.writeLock().unlock();
+            f10763a.writeLock().unlock();
             throw th;
         }
     }
@@ -158,17 +158,17 @@ public final class c {
                 }
                 try {
                     aVar.d = System.currentTimeMillis();
-                    int i = aVar.f24451a;
+                    int i = aVar.f10764a;
                     ContentValues d = d(context, aVar);
                     SQLiteDatabase a2 = a.a(context);
-                    f24450a.writeLock().lock();
+                    f10763a.writeLock().lock();
                     a2.update("t_biz_entity", d, "ID = ? ", new String[]{String.valueOf(i)});
                 } catch (Exception e) {
                     com.opos.cmn.an.f.a.d("StBizUtils", "update StBizEntity failed", e);
                 }
-                f24450a.writeLock().unlock();
+                f10763a.writeLock().unlock();
             } catch (Throwable th) {
-                f24450a.writeLock().unlock();
+                f10763a.writeLock().unlock();
                 throw th;
             }
         }
@@ -181,16 +181,16 @@ public final class c {
         try {
             try {
                 SQLiteDatabase a2 = a.a(context);
-                int i = aVar.f24451a;
-                f24450a.writeLock().lock();
+                int i = aVar.f10764a;
+                f10763a.writeLock().lock();
                 a2.delete("t_biz_entity", "ID = ? ", new String[]{String.valueOf(i)});
                 com.opos.cmn.an.f.a.b("StBizUtils", "delete business data from db!");
             } catch (Exception e) {
                 com.opos.cmn.an.f.a.d("StBizUtils", "delete business failed", e);
             }
-            f24450a.writeLock().unlock();
+            f10763a.writeLock().unlock();
         } catch (Throwable th) {
-            f24450a.writeLock().unlock();
+            f10763a.writeLock().unlock();
             throw th;
         }
     }
@@ -198,7 +198,7 @@ public final class c {
     private static ContentValues d(Context context, com.opos.acs.st.b.a aVar) {
         ContentValues contentValues = new ContentValues();
         contentValues.put("BIZ_DATA", com.opos.acs.st.b.a.a(context, aVar.b));
-        contentValues.put("EVENT_TIME", Long.valueOf(aVar.f24452c));
+        contentValues.put("EVENT_TIME", Long.valueOf(aVar.f10765c));
         contentValues.put("UPDATE_TIME", Long.valueOf(aVar.d));
         return contentValues;
     }

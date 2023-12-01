@@ -7,9 +7,7 @@ import java.util.Iterator;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/observer/PkDaredObserver.class */
 public class PkDaredObserver {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static PkDaredObserver f13956a = new PkDaredObserver();
+    private static PkDaredObserver a = new PkDaredObserver();
     private ArrayList<IPkDaredObserver> b = new ArrayList<>();
 
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/observer/PkDaredObserver$IPkDaredObserver.class */
@@ -65,7 +63,7 @@ public class PkDaredObserver {
     }
 
     public static PkDaredObserver a() {
-        return f13956a;
+        return a;
     }
 
     public void a(int i) {

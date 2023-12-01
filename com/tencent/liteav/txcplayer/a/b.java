@@ -4,11 +4,11 @@ package com.tencent.liteav.txcplayer.a;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f36474a;
+    private static String f22783a;
     private static int b = -1;
 
     public static String a() {
-        return f36474a;
+        return f22783a;
     }
 
     public static void a(int i) {
@@ -16,7 +16,7 @@ public final class b {
     }
 
     public static void a(String str) {
-        f36474a = str;
+        f22783a = str;
     }
 
     public static int b() {

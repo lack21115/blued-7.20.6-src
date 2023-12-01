@@ -10,27 +10,24 @@ import com.blued.android.module.live.im.LiveIMConfig;
 import com.blued.android.statistics.BluedStatistics;
 import com.blued.android.statistics.util.NamedRunnable;
 import com.blued.das.apm.ApmProtos;
+import com.efs.sdk.base.Constants;
 import java.util.concurrent.TimeUnit;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/live/im/biz/LiveChat.class */
 public final class LiveChat {
-
-    /* renamed from: a  reason: collision with root package name */
-    private ChannelManager f11585a;
+    private ChannelManager a;
     private IMThreadManager b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/live/im/biz/LiveChat$SendLikeRunnable.class */
     public class SendLikeRunnable extends NamedRunnable {
         private LiveChatOuterClass.LiveLikeRequest b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private LiveIM.OnSendLikeFinishListener f11587c;
+        private LiveIM.OnSendLikeFinishListener c;
 
         public SendLikeRunnable(LiveChatOuterClass.LiveLikeRequest liveLikeRequest, LiveIM.OnSendLikeFinishListener onSendLikeFinishListener) {
             super(LiveIMConfig.a("send-like"));
             this.b = liveLikeRequest;
-            this.f11587c = onSendLikeFinishListener;
+            this.c = onSendLikeFinishListener;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:40:0x012c  */
@@ -52,14 +49,12 @@ public final class LiveChat {
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/live/im/biz/LiveChat$SendMessageRunnable.class */
     public class SendMessageRunnable extends NamedRunnable {
         private LiveChatOuterClass.LiveMsgRequest b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private LiveIM.OnSendMessageFinishListener f11589c;
+        private LiveIM.OnSendMessageFinishListener c;
 
         public SendMessageRunnable(LiveChatOuterClass.LiveMsgRequest liveMsgRequest, LiveIM.OnSendMessageFinishListener onSendMessageFinishListener) {
             super(LiveIMConfig.a("send-message"));
             this.b = liveMsgRequest;
-            this.f11589c = onSendMessageFinishListener;
+            this.c = onSendMessageFinishListener;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:46:0x016b  */
@@ -78,19 +73,19 @@ public final class LiveChat {
     }
 
     public LiveChat(ChannelManager channelManager, IMThreadManager iMThreadManager) {
-        this.f11585a = channelManager;
+        this.a = channelManager;
         this.b = iMThreadManager;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public LiveChatGrpc.LiveChatBlockingStub a() {
-        return (LiveChatGrpc.LiveChatBlockingStub) ((LiveChatGrpc.LiveChatBlockingStub) ((LiveChatGrpc.LiveChatBlockingStub) this.f11585a.a((ChannelManager) LiveChatGrpc.newBlockingStub(this.f11585a.d()))).withCompression("gzip")).withDeadlineAfter(30L, TimeUnit.SECONDS);
+        return (LiveChatGrpc.LiveChatBlockingStub) ((LiveChatGrpc.LiveChatBlockingStub) ((LiveChatGrpc.LiveChatBlockingStub) this.a.a((ChannelManager) LiveChatGrpc.newBlockingStub(this.a.d()))).withCompression(Constants.CP_GZIP)).withDeadlineAfter(30L, TimeUnit.SECONDS);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void a(String str, long j, int i, long j2, Exception exc) {
         long uptimeMillis = SystemClock.uptimeMillis() - j;
-        BluedStatistics.b().a(ApmProtos.GrpcRequestTypeProto.BUSINESS.LIVE_CHAT, str, i, uptimeMillis, j2 == 0 ? "" : String.valueOf(j2), exc, this.f11585a.a(), this.f11585a.b());
+        BluedStatistics.b().a(ApmProtos.GrpcRequestTypeProto.BUSINESS.LIVE_CHAT, str, i, uptimeMillis, j2 == 0 ? "" : String.valueOf(j2), exc, this.a.a(), this.a.b());
         if (LiveIMConfig.b()) {
             LiveIMConfig.a().a(">>send spendTime=", Long.valueOf(uptimeMillis));
         }
@@ -98,7 +93,7 @@ public final class LiveChat {
 
     public void a(LiveChatOuterClass.LiveLikeRequest liveLikeRequest, LiveIM.OnSendLikeFinishListener onSendLikeFinishListener) {
         IMThreadManager iMThreadManager;
-        if (this.f11585a == null || (iMThreadManager = this.b) == null || liveLikeRequest == null) {
+        if (this.a == null || (iMThreadManager = this.b) == null || liveLikeRequest == null) {
             return;
         }
         iMThreadManager.a(new SendLikeRunnable(liveLikeRequest, onSendLikeFinishListener));
@@ -106,7 +101,7 @@ public final class LiveChat {
 
     public void a(LiveChatOuterClass.LiveMsgRequest liveMsgRequest, LiveIM.OnSendMessageFinishListener onSendMessageFinishListener) {
         IMThreadManager iMThreadManager;
-        if (this.f11585a == null || (iMThreadManager = this.b) == null || liveMsgRequest == null) {
+        if (this.a == null || (iMThreadManager = this.b) == null || liveMsgRequest == null) {
             return;
         }
         iMThreadManager.a(new SendMessageRunnable(liveMsgRequest, onSendMessageFinishListener));

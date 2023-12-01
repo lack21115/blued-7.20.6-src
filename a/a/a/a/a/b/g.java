@@ -19,7 +19,7 @@ import java.util.List;
 public class g {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f1309a = a.a.a.a.a.e.h.a(120);
+    public static final int f1261a = a.a.a.a.a.e.h.a(120);
     public static final int b = a.a.a.a.a.e.h.a(120);
     public boolean d;
     public boolean e;
@@ -41,7 +41,7 @@ public class g {
     public CameraStreamingSetting v;
 
     /* renamed from: c  reason: collision with root package name */
-    public int f1310c = 0;
+    public int f1262c = 0;
     public Matrix g = new Matrix();
 
     /* loaded from: source-8756600-dex2jar.jar:a/a/a/a/a/b/g$a.class */
@@ -88,7 +88,7 @@ public class g {
     }
 
     public void a() {
-        this.f1310c = 0;
+        this.f1262c = 0;
     }
 
     public void a(int i) {
@@ -146,7 +146,7 @@ public class g {
     }
 
     public void b() {
-        this.f1310c = 0;
+        this.f1262c = 0;
         this.t.removeMessages(0);
         this.t.sendEmptyMessage(0);
         g();
@@ -157,7 +157,7 @@ public class g {
         int i4;
         int i5;
         if (this.d) {
-            if (this.n != null && ((i5 = this.f1310c) == 1 || i5 == 2 || i5 == 3)) {
+            if (this.n != null && ((i5 = this.f1262c) == 1 || i5 == 2 || i5 == 3)) {
                 l();
             }
             if (this.n == null) {
@@ -179,7 +179,7 @@ public class g {
                 layoutParams.gravity = 0;
                 this.h.requestLayout();
             } else {
-                i3 = f1309a;
+                i3 = f1261a;
                 i4 = b;
             }
             a(i3, i4, 1.0f, i, i2, i6, i7, this.n.get(0).rect);
@@ -196,14 +196,14 @@ public class g {
     }
 
     public void b(boolean z) {
-        if (this.f1310c == 1) {
+        if (this.f1262c == 1) {
             if (z) {
-                this.f1310c = 2;
+                this.f1262c = 2;
                 if (!"continuous-picture".equals(this.p)) {
                     this.u.d(1);
                 }
             } else {
-                this.f1310c = 3;
+                this.f1262c = 3;
             }
             g();
             if (this.n != null) {
@@ -270,7 +270,7 @@ public class g {
     }
 
     public final void d(boolean z) {
-        if (this.f1310c != 0) {
+        if (this.f1262c != 0) {
             return;
         }
         ViewGroup viewGroup = this.h;
@@ -315,7 +315,7 @@ public class g {
     public final void k() {
         a.a.a.a.a.e.e.g.a("FocusManager", "Start autofocus.");
         this.u.r();
-        this.f1310c = 1;
+        this.f1262c = 1;
         g();
         this.t.removeMessages(1);
     }
@@ -324,7 +324,7 @@ public class g {
         a.a.a.a.a.e.e.g.a("FocusManager", "Cancel autofocus.");
         n();
         this.u.s();
-        this.f1310c = 0;
+        this.f1262c = 0;
         o();
         this.t.removeMessages(1);
     }
@@ -374,8 +374,8 @@ public class g {
         }
         FocusIndicator focusIndicator = (FocusIndicator) viewGroup;
         a.a.a.a.a.e.e eVar = a.a.a.a.a.e.e.g;
-        eVar.c("FocusManager", "mState:" + this.f1310c);
-        int i = this.f1310c;
+        eVar.c("FocusManager", "mState:" + this.f1262c);
+        int i = this.f1262c;
         if (i == 0) {
             if (this.n == null) {
                 focusIndicator.clear();
@@ -387,7 +387,7 @@ public class g {
         } else if ("continuous-picture".equals(this.p)) {
             focusIndicator.showSuccess(false);
         } else {
-            int i2 = this.f1310c;
+            int i2 = this.f1262c;
             if (i2 == 2) {
                 focusIndicator.showSuccess(false);
             } else if (i2 == 3) {

@@ -13,7 +13,7 @@ import java.util.Map;
 public class ad {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final int f21515a = 0;
+    private static final int f7909a = 0;
     private static final int b = 1;
 
     private static int a(String str) {

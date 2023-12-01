@@ -10,9 +10,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/utils/LiveCountDownTimeUtils.class */
 public final class LiveCountDownTimeUtils {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f14158a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private static final Lazy<LiveCountDownTimeUtils> d = LazyKt.a(new Function0<LiveCountDownTimeUtils>() { // from class: com.blued.android.module.live_china.utils.LiveCountDownTimeUtils$Companion$INSTANCE$2
         @Override // kotlin.jvm.functions.Function0
         /* renamed from: a */
@@ -21,9 +19,7 @@ public final class LiveCountDownTimeUtils {
         }
     });
     private LiveCountDownTime b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private long f14159c = 1000;
+    private long c = 1000;
 
     @Metadata
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/utils/LiveCountDownTimeUtils$Companion.class */
@@ -55,13 +51,11 @@ public final class LiveCountDownTimeUtils {
     @Metadata
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/utils/LiveCountDownTimeUtils$LiveCountDownTime.class */
     public final class LiveCountDownTime extends CountDownTimer {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final CountDownFinishListener f14161a;
+        private final CountDownFinishListener a;
 
         @Override // android.os.CountDownTimer
         public void onFinish() {
-            CountDownFinishListener countDownFinishListener = this.f14161a;
+            CountDownFinishListener countDownFinishListener = this.a;
             if (countDownFinishListener == null) {
                 return;
             }
@@ -70,7 +64,7 @@ public final class LiveCountDownTimeUtils {
 
         @Override // android.os.CountDownTimer
         public void onTick(long j) {
-            CountDownFinishListener countDownFinishListener = this.f14161a;
+            CountDownFinishListener countDownFinishListener = this.a;
             if (countDownFinishListener == null) {
                 return;
             }

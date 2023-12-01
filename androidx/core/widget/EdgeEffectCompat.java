@@ -11,10 +11,11 @@ import androidx.core.os.BuildCompat;
 public final class EdgeEffectCompat {
 
     /* renamed from: a  reason: collision with root package name */
-    private EdgeEffect f2751a;
+    private EdgeEffect f2703a;
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8756600-dex2jar.jar:androidx/core/widget/EdgeEffectCompat$Api31Impl.class */
-    static class Api31Impl {
+    public static class Api31Impl {
         private Api31Impl() {
         }
 
@@ -46,7 +47,7 @@ public final class EdgeEffectCompat {
 
     @Deprecated
     public EdgeEffectCompat(Context context) {
-        this.f2751a = new EdgeEffect(context);
+        this.f2703a = new EdgeEffect(context);
     }
 
     public static EdgeEffect create(Context context, AttributeSet attributeSet) {
@@ -78,45 +79,45 @@ public final class EdgeEffectCompat {
 
     @Deprecated
     public boolean draw(Canvas canvas) {
-        return this.f2751a.draw(canvas);
+        return this.f2703a.draw(canvas);
     }
 
     @Deprecated
     public void finish() {
-        this.f2751a.finish();
+        this.f2703a.finish();
     }
 
     @Deprecated
     public boolean isFinished() {
-        return this.f2751a.isFinished();
+        return this.f2703a.isFinished();
     }
 
     @Deprecated
     public boolean onAbsorb(int i) {
-        this.f2751a.onAbsorb(i);
+        this.f2703a.onAbsorb(i);
         return true;
     }
 
     @Deprecated
     public boolean onPull(float f) {
-        this.f2751a.onPull(f);
+        this.f2703a.onPull(f);
         return true;
     }
 
     @Deprecated
     public boolean onPull(float f, float f2) {
-        onPull(this.f2751a, f, f2);
+        onPull(this.f2703a, f, f2);
         return true;
     }
 
     @Deprecated
     public boolean onRelease() {
-        this.f2751a.onRelease();
-        return this.f2751a.isFinished();
+        this.f2703a.onRelease();
+        return this.f2703a.isFinished();
     }
 
     @Deprecated
     public void setSize(int i, int i2) {
-        this.f2751a.setSize(i, i2);
+        this.f2703a.setSize(i, i2);
     }
 }

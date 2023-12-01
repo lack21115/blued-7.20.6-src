@@ -11,7 +11,7 @@ public class AndroidLame {
     public static /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f24273a;
+        static final /* synthetic */ int[] f10586a;
         static final /* synthetic */ int[] b;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:22:0x0076 -> B:46:0x0014). Please submit an issue!!! */
@@ -46,21 +46,21 @@ public class AndroidLame {
             } catch (NoSuchFieldError e5) {
             }
             int[] iArr2 = new int[LameBuilder.Mode.values().length];
-            f24273a = iArr2;
+            f10586a = iArr2;
             try {
                 iArr2[LameBuilder.Mode.STEREO.ordinal()] = 1;
             } catch (NoSuchFieldError e6) {
             }
             try {
-                f24273a[LameBuilder.Mode.JSTEREO.ordinal()] = 2;
+                f10586a[LameBuilder.Mode.JSTEREO.ordinal()] = 2;
             } catch (NoSuchFieldError e7) {
             }
             try {
-                f24273a[LameBuilder.Mode.MONO.ordinal()] = 3;
+                f10586a[LameBuilder.Mode.MONO.ordinal()] = 3;
             } catch (NoSuchFieldError e8) {
             }
             try {
-                f24273a[LameBuilder.Mode.DEFAULT.ordinal()] = 4;
+                f10586a[LameBuilder.Mode.DEFAULT.ordinal()] = 4;
             } catch (NoSuchFieldError e9) {
             }
         }
@@ -79,7 +79,7 @@ public class AndroidLame {
     }
 
     private static int a(LameBuilder.Mode mode) {
-        int i = AnonymousClass1.f24273a[mode.ordinal()];
+        int i = AnonymousClass1.f10586a[mode.ordinal()];
         int i2 = 1;
         if (i != 1) {
             if (i != 2) {
@@ -115,7 +115,7 @@ public class AndroidLame {
     }
 
     private void a(LameBuilder lameBuilder) {
-        initialize(lameBuilder.f24274a, lameBuilder.d, lameBuilder.b, lameBuilder.f24275c, lameBuilder.j, a(lameBuilder.k), a(lameBuilder.l), lameBuilder.e, lameBuilder.f, lameBuilder.g, lameBuilder.h, lameBuilder.i, lameBuilder.m, lameBuilder.n, lameBuilder.o, lameBuilder.q, lameBuilder.p);
+        initialize(lameBuilder.f10587a, lameBuilder.d, lameBuilder.b, lameBuilder.f10588c, lameBuilder.j, a(lameBuilder.k), a(lameBuilder.l), lameBuilder.e, lameBuilder.f, lameBuilder.g, lameBuilder.h, lameBuilder.i, lameBuilder.m, lameBuilder.n, lameBuilder.o, lameBuilder.q, lameBuilder.p);
     }
 
     private static native int encodeBufferInterleaved(short[] sArr, int i, byte[] bArr);

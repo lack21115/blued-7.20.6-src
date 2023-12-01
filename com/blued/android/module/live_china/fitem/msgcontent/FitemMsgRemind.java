@@ -50,7 +50,7 @@ public final class FitemMsgRemind extends FitemMsgBase {
 
     private final boolean f() {
         int i;
-        BaseViewHolder baseViewHolder = this.f10935a;
+        BaseViewHolder baseViewHolder = this.a;
         int i2 = R.id.iv_icon;
         short s = e().msgType;
         if (s == 103) {
@@ -68,10 +68,10 @@ public final class FitemMsgRemind extends FitemMsgBase {
 
     private final void g() {
         if (e().liveChatListFollowed) {
-            this.f10935a.itemView.setEnabled(false);
+            this.a.itemView.setEnabled(false);
             return;
         }
-        this.f10935a.itemView.setEnabled(false);
+        this.a.itemView.setEnabled(false);
         LiveSetDataObserver.a().l();
         InstantLog.a("live_follow_guide_click");
         LiveEventBus.get("live_msg_daily_task_complete").post(103);
@@ -92,7 +92,7 @@ public final class FitemMsgRemind extends FitemMsgBase {
     }
 
     private final void q() {
-        BaseFragment baseFragment = (BaseFragment) this.f10935a.f10931a.a("BaseFragment", (String) null);
+        BaseFragment baseFragment = (BaseFragment) this.a.a.a("BaseFragment", (String) null);
         if (baseFragment == null) {
             return;
         }

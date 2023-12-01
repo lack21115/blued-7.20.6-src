@@ -30,7 +30,7 @@ public class gg extends ze {
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public int f37491a;
+        public int f23800a;
         public int b;
     }
 
@@ -145,7 +145,7 @@ public class gg extends ze {
     public void J() {
         a aVar = this.K;
         if (aVar != null) {
-            aVar.f37491a = -1;
+            aVar.f23800a = -1;
             B();
         }
     }
@@ -191,7 +191,7 @@ public class gg extends ze {
     }
 
     public int[] U() {
-        return this.C.f38016c;
+        return this.C.f24325c;
     }
 
     public String[] V() {
@@ -319,7 +319,7 @@ public class gg extends ze {
         GeoPoint geoPoint2 = new GeoPoint(a2.bottom, a2.right);
         p5 a3 = t4Var.a(geoPoint);
         p5 a4 = t4Var.a(geoPoint2);
-        return new Rect((int) a3.b, (int) a3.f37683c, (int) a4.b, (int) a4.f37683c);
+        return new Rect((int) a3.b, (int) a3.f23992c, (int) a4.b, (int) a4.f23992c);
     }
 
     public final void b(int i) {
@@ -329,7 +329,7 @@ public class gg extends ze {
     public void b(int i, int i2) {
         a aVar = new a();
         this.K = aVar;
-        aVar.f37491a = i;
+        aVar.f23800a = i;
         aVar.b = i2;
         B();
     }
@@ -350,7 +350,7 @@ public class gg extends ze {
     public Rect c() {
         int i;
         Rect a2;
-        ArrayList<GeoPoint> arrayList = this.C.f38015a;
+        ArrayList<GeoPoint> arrayList = this.C.f24324a;
         if (arrayList != null && !arrayList.isEmpty() && (i = this.F) >= 0 && i < arrayList.size() && (a2 = a(arrayList.subList(this.F, arrayList.size()))) != null) {
             this.C.u = a2;
         }

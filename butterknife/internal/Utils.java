@@ -7,7 +7,7 @@ import android.view.View;
 public final class Utils {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final TypedValue f3731a = new TypedValue();
+    private static final TypedValue f3683a = new TypedValue();
 
     private Utils() {
         throw new AssertionError("No instances.");

@@ -10,17 +10,17 @@ import java.util.UUID;
 public class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile String f21797a = "";
+    private static volatile String f8191a = "";
 
     public static String a(Context context) {
-        if (TextUtils.isEmpty(f21797a)) {
+        if (TextUtils.isEmpty(f8191a)) {
             synchronized (d.class) {
                 try {
-                    if (TextUtils.isEmpty(f21797a)) {
+                    if (TextUtils.isEmpty(f8191a)) {
                         String b = b(context);
-                        f21797a = b;
+                        f8191a = b;
                         if (TextUtils.isEmpty(b)) {
-                            f21797a = c(context);
+                            f8191a = c(context);
                         }
                     }
                 } catch (Throwable th) {
@@ -28,7 +28,7 @@ public class d {
                 }
             }
         }
-        return f21797a;
+        return f8191a;
     }
 
     private static String b(Context context) {

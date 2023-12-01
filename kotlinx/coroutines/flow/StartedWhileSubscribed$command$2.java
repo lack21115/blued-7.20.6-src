@@ -14,9 +14,7 @@ import kotlin.jvm.functions.Function2;
 @DebugMetadata(b = "SharingStarted.kt", c = {}, d = "invokeSuspend", e = "kotlinx.coroutines.flow.StartedWhileSubscribed$command$2")
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/StartedWhileSubscribed$command$2.class */
 final class StartedWhileSubscribed$command$2 extends SuspendLambda implements Function2<SharingCommand, Continuation<? super Boolean>, Object> {
-
-    /* renamed from: a  reason: collision with root package name */
-    int f43431a;
+    int a;
     /* synthetic */ Object b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -27,7 +25,7 @@ final class StartedWhileSubscribed$command$2 extends SuspendLambda implements Fu
     @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(SharingCommand sharingCommand, Continuation<? super Boolean> continuation) {
-        return ((StartedWhileSubscribed$command$2) create(sharingCommand, continuation)).invokeSuspend(Unit.f42314a);
+        return ((StartedWhileSubscribed$command$2) create(sharingCommand, continuation)).invokeSuspend(Unit.a);
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -40,7 +38,7 @@ final class StartedWhileSubscribed$command$2 extends SuspendLambda implements Fu
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         IntrinsicsKt.a();
-        if (this.f43431a == 0) {
+        if (this.a == 0) {
             ResultKt.a(obj);
             return Boxing.a(((SharingCommand) this.b) != SharingCommand.START);
         }

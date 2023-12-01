@@ -18,17 +18,17 @@ public final class e extends FilterOutputStream {
     private static final ExecutorService b = Executors.newCachedThreadPool();
 
     /* renamed from: a  reason: collision with root package name */
-    private final Future<Void> f21836a;
+    private final Future<Void> f8229a;
 
     /* loaded from: source-8110460-dex2jar.jar:com/efs/sdk/net/a/a/e$a.class */
     static final class a implements Callable<Void> {
 
         /* renamed from: a  reason: collision with root package name */
-        private final InputStream f21837a;
+        private final InputStream f8230a;
         private final OutputStream b;
 
         public a(InputStream inputStream, OutputStream outputStream) {
-            this.f21837a = inputStream;
+            this.f8230a = inputStream;
             this.b = outputStream;
         }
 
@@ -36,7 +36,7 @@ public final class e extends FilterOutputStream {
         @Override // java.util.concurrent.Callable
         /* renamed from: a */
         public Void call() {
-            GZIPInputStream gZIPInputStream = new GZIPInputStream(this.f21837a);
+            GZIPInputStream gZIPInputStream = new GZIPInputStream(this.f8230a);
             try {
                 i.a(gZIPInputStream, this.b, new byte[1024]);
                 gZIPInputStream.close();
@@ -52,7 +52,7 @@ public final class e extends FilterOutputStream {
 
     private e(OutputStream outputStream, Future<Void> future) {
         super(outputStream);
-        this.f21836a = future;
+        this.f8229a = future;
     }
 
     public static e a(OutputStream outputStream) {
@@ -85,7 +85,7 @@ public final class e extends FilterOutputStream {
             }
         } finally {
             try {
-                a(this.f21836a);
+                a(this.f8229a);
             } catch (IOException e2) {
             }
         }

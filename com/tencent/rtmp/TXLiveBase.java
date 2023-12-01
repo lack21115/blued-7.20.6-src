@@ -22,15 +22,15 @@ public class TXLiveBase {
     static final class a implements o {
 
         /* renamed from: a  reason: collision with root package name */
-        private TXLiteAVExternalDecoderFactoryInterface f38660a;
+        private TXLiteAVExternalDecoderFactoryInterface f24969a;
 
         public a(TXLiteAVExternalDecoderFactoryInterface tXLiteAVExternalDecoderFactoryInterface) {
-            this.f38660a = tXLiteAVExternalDecoderFactoryInterface;
+            this.f24969a = tXLiteAVExternalDecoderFactoryInterface;
         }
 
         @Override // com.tencent.liteav.videoconsumer.decoder.o
         public final long a() {
-            long CreateHevcDecoder = this.f38660a.CreateHevcDecoder();
+            long CreateHevcDecoder = this.f24969a.CreateHevcDecoder();
             LiteavLog.i("ExternalDecoderWrapper", "Create external hevc decoder. decoder:".concat(String.valueOf(CreateHevcDecoder)));
             return CreateHevcDecoder;
         }
@@ -38,7 +38,7 @@ public class TXLiveBase {
         @Override // com.tencent.liteav.videoconsumer.decoder.o
         public final void a(long j) {
             LiteavLog.i("ExternalDecoderWrapper", "Destroy external hevc decoder. handler:".concat(String.valueOf(j)));
-            this.f38660a.DestroyHevcDecoder(j);
+            this.f24969a.DestroyHevcDecoder(j);
         }
     }
 

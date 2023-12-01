@@ -5,9 +5,7 @@ import com.blued.android.core.net.IRequestHost;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/ui/ActivityFragmentActive.class */
 public class ActivityFragmentActive implements IRequestHost {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static ActivityFragmentActive f9713a = new ActivityFragmentActive();
+    public static ActivityFragmentActive a = new ActivityFragmentActive();
     private Lifecycle b;
 
     private ActivityFragmentActive() {

@@ -5,12 +5,8 @@ import java.util.Set;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alibaba/mtl/appmonitor/d/b.class */
 public class b {
-
-    /* renamed from: a  reason: collision with root package name */
-    private a f4465a;
-
-    /* renamed from: c  reason: collision with root package name */
-    private Set<String> f4466c;
+    private a a;
+    private Set<String> c;
 
     /* loaded from: source-6737240-dex2jar.jar:com/alibaba/mtl/appmonitor/d/b$a.class */
     enum a {
@@ -22,7 +18,7 @@ public class b {
         if (TextUtils.isEmpty(str)) {
             return false;
         }
-        boolean contains = this.f4466c.contains(str);
-        return this.f4465a == a.IN ? contains : !contains;
+        boolean contains = this.c.contains(str);
+        return this.a == a.IN ? contains : !contains;
     }
 }

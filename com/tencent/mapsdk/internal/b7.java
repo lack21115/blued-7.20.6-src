@@ -18,7 +18,6 @@ import android.text.TextPaint;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.mapsdk.core.utils.cache.MemoryCache;
 import com.tencent.mapsdk.internal.m9;
 import java.io.ByteArrayOutputStream;
@@ -34,11 +33,11 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class b7 {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final int f37316a = 2048;
+    private static final int f23625a = 2048;
     private static final String b = "BitmapUtil";
 
     /* renamed from: c  reason: collision with root package name */
-    public static Paint f37317c;
+    public static Paint f23626c;
     private static byte[] d;
     public static a e;
 
@@ -47,12 +46,12 @@ public class b7 {
         private static final AtomicInteger b = new AtomicInteger();
 
         /* renamed from: a  reason: collision with root package name */
-        private final MemoryCache<v9> f37318a;
+        private final MemoryCache<v9> f23627a;
 
         /* renamed from: com.tencent.mapsdk.internal.b7$a$a  reason: collision with other inner class name */
         /* loaded from: source-8829756-dex2jar.jar:com/tencent/mapsdk/internal/b7$a$a.class */
-        public class C0950a implements m9.b<v9> {
-            public C0950a() {
+        public class C0780a implements m9.b<v9> {
+            public C0780a() {
             }
 
             @Override // com.tencent.mapsdk.internal.m9.b
@@ -62,7 +61,7 @@ public class b7 {
                     if (!v9Var.h() || e == null) {
                         return true;
                     }
-                    a.this.f37318a.remove(e);
+                    a.this.f23627a.remove(e);
                     return true;
                 }
                 return true;
@@ -74,13 +73,13 @@ public class b7 {
             if (y9.c("4.5.9", "4.4.6", 3)) {
                 ga.b(new File(b2, "BitmapDescriptorCache"), new File(b2, "bitmaps"));
             }
-            this.f37318a = (MemoryCache) q9.b(v9.class, new MemoryCache.a().a(i).a(new C0950a()));
+            this.f23627a = (MemoryCache) q9.b(v9.class, new MemoryCache.a().a(i).a(new C0780a()));
             c();
         }
 
         public Bitmap a(String str) {
             synchronized (this) {
-                v9 b2 = this.f37318a.g().b(str, v9.class);
+                v9 b2 = this.f23627a.g().b(str, v9.class);
                 if (b2 != null) {
                     return b2.d();
                 }
@@ -92,7 +91,7 @@ public class b7 {
             synchronized (this) {
                 AtomicInteger atomicInteger = b;
                 if (atomicInteger.get() <= 0 || atomicInteger.decrementAndGet() == 0) {
-                    this.f37318a.g().b();
+                    this.f23627a.g().b();
                 }
             }
         }
@@ -106,12 +105,12 @@ public class b7 {
         public void a(String str, v9 v9Var) {
             synchronized (this) {
                 na.a("BD", "putCache:" + str + " id:" + v9Var.e() + " bitmapData:" + v9Var);
-                v9 a2 = this.f37318a.a(str, v9.class);
+                v9 a2 = this.f23627a.a(str, v9.class);
                 if (a2 != null) {
                     na.a("BD", "getCache:" + str + " id:" + a2.e() + " recycle:" + a2.g() + " bitmapData:" + a2);
                 }
                 if (a2 == null || a2.g() || TextUtils.isEmpty(a2.e()) || !a2.e().equals(v9Var.e())) {
-                    this.f37318a.g().b(str, (String) v9Var);
+                    this.f23627a.g().b(str, (String) v9Var);
                     return;
                 }
                 na.a("BD", "same bitmap!!" + str);
@@ -126,12 +125,12 @@ public class b7 {
         public boolean b(String str) {
             boolean z;
             synchronized (this) {
-                v9 a2 = this.f37318a.a(str, v9.class);
+                v9 a2 = this.f23627a.a(str, v9.class);
                 if (a2 == null || !a2.h()) {
                     z = false;
                 } else {
                     na.a("BD", "remove:" + str + " bitmapData:" + a2);
-                    this.f37318a.remove(str);
+                    this.f23627a.remove(str);
                     z = true;
                 }
             }
@@ -149,7 +148,7 @@ public class b7 {
 
     static {
         Paint paint = new Paint();
-        f37317c = paint;
+        f23626c = paint;
         paint.setAntiAlias(true);
     }
 
@@ -175,7 +174,7 @@ public class b7 {
 
     /* JADX WARN: Multi-variable type inference failed */
     public static Bitmap a(Context context, String str) {
-        AutoCloseable autoCloseable;
+        InputStream inputStream;
         Throwable th;
         FileInputStream fileInputStream;
         String str2;
@@ -189,7 +188,7 @@ public class b7 {
                         return null;
                     }
                     if (str.trim().charAt(0) != '/') {
-                        str2 = context.getFilesDir() + BridgeUtil.SPLIT_MARK + str;
+                        str2 = context.getFilesDir() + "/" + str;
                     } else {
                         str2 = context.getFilesDir() + str;
                     }
@@ -212,10 +211,10 @@ public class b7 {
                     fileInputStream = null;
                 } catch (Throwable th2) {
                     th = th2;
-                    autoCloseable = null;
-                    if (autoCloseable != null) {
+                    inputStream = null;
+                    if (inputStream != null) {
                         try {
-                            autoCloseable.close();
+                            inputStream.close();
                         } catch (Exception e4) {
                         }
                     }
@@ -225,7 +224,7 @@ public class b7 {
                 return context;
             }
         } catch (Throwable th3) {
-            autoCloseable = context;
+            inputStream = context;
             th = th3;
         }
     }
@@ -278,7 +277,7 @@ public class b7 {
         a2.setDensity(bitmap.getDensity());
         Canvas canvas = new Canvas(a2);
         a2.eraseColor(0);
-        canvas.drawBitmap(bitmap, 0.0f, 0.0f, f37317c);
+        canvas.drawBitmap(bitmap, 0.0f, 0.0f, f23626c);
         return a2;
     }
 

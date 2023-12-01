@@ -35,7 +35,7 @@ public abstract class PlacementMediaView extends AutoScaleSizeRelativeLayout imp
     private r b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final Set<gu> f23033c;
+    private final Set<gu> f9425c;
     private int d;
     private long e;
     private long f;
@@ -47,7 +47,7 @@ public abstract class PlacementMediaView extends AutoScaleSizeRelativeLayout imp
 
     public PlacementMediaView(Context context) {
         super(context);
-        this.f23033c = new CopyOnWriteArraySet();
+        this.f9425c = new CopyOnWriteArraySet();
         this.d = 0;
         this.e = 0L;
         this.f = 0L;
@@ -85,7 +85,7 @@ public abstract class PlacementMediaView extends AutoScaleSizeRelativeLayout imp
 
     public PlacementMediaView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f23033c = new CopyOnWriteArraySet();
+        this.f9425c = new CopyOnWriteArraySet();
         this.d = 0;
         this.e = 0L;
         this.f = 0L;
@@ -123,7 +123,7 @@ public abstract class PlacementMediaView extends AutoScaleSizeRelativeLayout imp
 
     public PlacementMediaView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f23033c = new CopyOnWriteArraySet();
+        this.f9425c = new CopyOnWriteArraySet();
         this.d = 0;
         this.e = 0L;
         this.f = 0L;
@@ -178,7 +178,7 @@ public abstract class PlacementMediaView extends AutoScaleSizeRelativeLayout imp
             return;
         }
         this.i = true;
-        for (gu guVar : this.f23033c) {
+        for (gu guVar : this.f9425c) {
             guVar.Code(this.I, this.V, this.d);
         }
     }
@@ -188,7 +188,7 @@ public abstract class PlacementMediaView extends AutoScaleSizeRelativeLayout imp
         if (this.f <= 0 || this.j) {
             return;
         }
-        for (gu guVar : this.f23033c) {
+        for (gu guVar : this.f9425c) {
             String str = this.I;
             String str2 = this.V;
             int i = this.d;
@@ -197,7 +197,7 @@ public abstract class PlacementMediaView extends AutoScaleSizeRelativeLayout imp
     }
 
     private void c() {
-        for (gu guVar : this.f23033c) {
+        for (gu guVar : this.f9425c) {
             guVar.V(this.I, this.V, this.d);
         }
     }
@@ -205,7 +205,7 @@ public abstract class PlacementMediaView extends AutoScaleSizeRelativeLayout imp
     /* JADX INFO: Access modifiers changed from: private */
     public void d() {
         this.i = false;
-        for (gu guVar : this.f23033c) {
+        for (gu guVar : this.f9425c) {
             guVar.Z(this.I, this.V, this.d);
         }
     }
@@ -246,7 +246,7 @@ public abstract class PlacementMediaView extends AutoScaleSizeRelativeLayout imp
 
     public void Code(gu guVar) {
         if (guVar != null) {
-            this.f23033c.add(guVar);
+            this.f9425c.add(guVar);
         }
     }
 
@@ -280,7 +280,7 @@ public abstract class PlacementMediaView extends AutoScaleSizeRelativeLayout imp
     protected void D() {
         this.i = false;
         this.j = true;
-        for (gu guVar : this.f23033c) {
+        for (gu guVar : this.f9425c) {
             guVar.Code(this.I, this.V, 0, -1, -1);
         }
     }
@@ -306,7 +306,7 @@ public abstract class PlacementMediaView extends AutoScaleSizeRelativeLayout imp
 
     public void destroyView() {
         this.k.removeMessages(1);
-        this.f23033c.clear();
+        this.f9425c.clear();
         Code();
     }
 

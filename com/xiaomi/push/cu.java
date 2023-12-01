@@ -4,11 +4,11 @@ package com.xiaomi.push;
 class cu implements cs {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ ct f41320a;
+    final /* synthetic */ ct f27629a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public cu(ct ctVar) {
-        this.f41320a = ctVar;
+        this.f27629a = ctVar;
     }
 
     @Override // com.xiaomi.push.cs

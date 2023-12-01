@@ -6,13 +6,13 @@ import android.graphics.Rect;
 public final class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private Rect f36486a;
+    private Rect f22795a;
     private String b;
 
     public d(Rect rect, String str) {
-        this.f36486a = null;
+        this.f22795a = null;
         this.b = null;
-        this.f36486a = rect;
+        this.f22795a = rect;
         this.b = str;
     }
 }

@@ -1,5 +1,6 @@
 package android.app;
 
+import android.R;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -10,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.DatePicker;
-import com.android.internal.R;
 import java.util.Calendar;
 
 /* loaded from: source-9557208-dex2jar.jar:android/app/DatePickerDialog.class */
@@ -33,7 +33,6 @@ public class DatePickerDialog extends AlertDialog implements DialogInterface.OnC
         super(context, resolveDialogTheme(context, i));
         this.mTitleNeedsUpdate = true;
         this.mValidationCallback = new DatePicker.ValidationCallback() { // from class: android.app.DatePickerDialog.1
-            @Override // android.widget.DatePicker.ValidationCallback
             public void onValidationChanged(boolean z) {
                 Button button = DatePickerDialog.this.getButton(-1);
                 if (button != null) {
@@ -44,12 +43,12 @@ public class DatePickerDialog extends AlertDialog implements DialogInterface.OnC
         this.mDateSetListener = onDateSetListener;
         this.mCalendar = Calendar.getInstance();
         Context context2 = getContext();
-        View inflate = LayoutInflater.from(context2).inflate(R.layout.date_picker_dialog, (ViewGroup) null);
+        View inflate = LayoutInflater.from(context2).inflate(17367104, (ViewGroup) null);
         setView(inflate);
-        setButton(-1, context2.getString(17039370), this);
-        setButton(-2, context2.getString(17039360), this);
+        setButton(-1, context2.getString(R.string.ok), this);
+        setButton(-2, context2.getString(R.string.cancel), this);
         setButtonPanelLayoutHint(1);
-        this.mDatePicker = (DatePicker) inflate.findViewById(R.id.datePicker);
+        this.mDatePicker = (DatePicker) inflate.findViewById(16909030);
         this.mDatePicker.init(i2, i3, i4, this);
         this.mDatePicker.setValidationCallback(this.mValidationCallback);
     }
@@ -62,7 +61,7 @@ public class DatePickerDialog extends AlertDialog implements DialogInterface.OnC
         int i2 = i;
         if (i == 0) {
             TypedValue typedValue = new TypedValue();
-            context.getTheme().resolveAttribute(16843948, typedValue, true);
+            context.getTheme().resolveAttribute(R.attr.datePickerDialogTheme, typedValue, true);
             i2 = typedValue.resourceId;
         }
         return i2;
@@ -72,7 +71,7 @@ public class DatePickerDialog extends AlertDialog implements DialogInterface.OnC
         if (this.mDatePicker.getCalendarViewShown()) {
             if (this.mTitleNeedsUpdate) {
                 this.mTitleNeedsUpdate = false;
-                setTitle(R.string.date_picker_dialog_title);
+                setTitle(17040825);
                 return;
             }
             return;

@@ -23,7 +23,6 @@ import android.os.UserHandle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.KeyEvent;
-import com.android.internal.R;
 import java.lang.ref.WeakReference;
 import java.util.List;
 
@@ -641,7 +640,7 @@ public final class MediaSession {
         if (TextUtils.isEmpty(str)) {
             throw new IllegalArgumentException("tag cannot be null or empty");
         }
-        this.mMaxBitmapSize = context.getResources().getDimensionPixelSize(R.dimen.config_mediaMetadataBitmapMaxSize);
+        this.mMaxBitmapSize = context.getResources().getDimensionPixelSize(17104911);
         this.mCbStub = new CallbackStub(this);
         try {
             this.mBinder = ((MediaSessionManager) context.getSystemService(Context.MEDIA_SESSION_SERVICE)).createSession(this.mCbStub, str, i);

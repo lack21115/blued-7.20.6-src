@@ -13,18 +13,18 @@ public interface d extends IInterface {
 
         /* renamed from: com.tencent.qmsp.sdk.g.b.d$a$a  reason: collision with other inner class name */
         /* loaded from: source-8829756-dex2jar.jar:com/tencent/qmsp/sdk/g/b/d$a$a.class */
-        static class C0994a implements d {
+        static class C0824a implements d {
 
             /* renamed from: a  reason: collision with root package name */
-            private IBinder f38619a;
+            private IBinder f24928a;
 
-            C0994a(IBinder iBinder) {
-                this.f38619a = iBinder;
+            C0824a(IBinder iBinder) {
+                this.f24928a = iBinder;
             }
 
             @Override // android.os.IInterface
             public IBinder asBinder() {
-                return this.f38619a;
+                return this.f24928a;
             }
 
             @Override // com.tencent.qmsp.sdk.g.b.d
@@ -34,7 +34,7 @@ public interface d extends IInterface {
                 try {
                     obtain.writeInterfaceToken("com.uodis.opendevice.aidl.OpenDeviceIdentifierService");
                     boolean z = false;
-                    this.f38619a.transact(2, obtain, obtain2, 0);
+                    this.f24928a.transact(2, obtain, obtain2, 0);
                     obtain2.readException();
                     if (obtain2.readInt() != 0) {
                         z = true;
@@ -55,7 +55,7 @@ public interface d extends IInterface {
                 Parcel obtain2 = Parcel.obtain();
                 try {
                     obtain.writeInterfaceToken("com.uodis.opendevice.aidl.OpenDeviceIdentifierService");
-                    this.f38619a.transact(1, obtain, obtain2, 0);
+                    this.f24928a.transact(1, obtain, obtain2, 0);
                     obtain2.readException();
                     return obtain2.readString();
                 } finally {
@@ -70,7 +70,7 @@ public interface d extends IInterface {
                 return null;
             }
             IInterface queryLocalInterface = iBinder.queryLocalInterface("com.uodis.opendevice.aidl.OpenDeviceIdentifierService");
-            return (queryLocalInterface == null || !(queryLocalInterface instanceof d)) ? new C0994a(iBinder) : (d) queryLocalInterface;
+            return (queryLocalInterface == null || !(queryLocalInterface instanceof d)) ? new C0824a(iBinder) : (d) queryLocalInterface;
         }
     }
 

@@ -9,7 +9,6 @@ import android.view.animation.AnimationUtils;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
-import androidx.exifinterface.media.ExifInterface;
 import com.blued.android.core.AppInfo;
 import com.blued.android.framework.http.BluedUIHttpResponse;
 import com.blued.android.framework.http.parser.BluedEntity;
@@ -24,13 +23,9 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveMakeLoverStartView.class */
 public class LiveMakeLoverStartView implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    public View f14599a;
+    public View a;
     public View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public Context f14600c;
+    public Context c;
     private MyPopupWindow d;
     private LinearLayout e;
     private TextView f;
@@ -59,19 +54,17 @@ public class LiveMakeLoverStartView implements View.OnClickListener {
     /* renamed from: com.blued.android.module.live_china.view.LiveMakeLoverStartView$3  reason: invalid class name */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveMakeLoverStartView$3.class */
     class AnonymousClass3 extends CountDownTimer {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ LiveMakeLoverStartView f14601a;
+        final /* synthetic */ LiveMakeLoverStartView a;
 
         @Override // android.os.CountDownTimer
         public void onFinish() {
-            this.f14601a.e();
+            this.a.e();
         }
 
         @Override // android.os.CountDownTimer
         public void onTick(long j) {
-            TextView textView = this.f14601a.f;
-            textView.setText(((j / 1000) + 1) + ExifInterface.LATITUDE_SOUTH);
+            TextView textView = this.a.f;
+            textView.setText(((j / 1000) + 1) + "S");
         }
     }
 
@@ -146,9 +139,7 @@ public class LiveMakeLoverStartView implements View.OnClickListener {
 
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveMakeLoverStartView$MyPopupWindow.class */
     class MyPopupWindow extends PopupWindow {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ LiveMakeLoverStartView f14607a;
+        final /* synthetic */ LiveMakeLoverStartView a;
 
         public void a() {
             super.dismiss();
@@ -157,7 +148,7 @@ public class LiveMakeLoverStartView implements View.OnClickListener {
         @Override // android.widget.PopupWindow
         public void dismiss() {
             try {
-                this.f14607a.b();
+                this.a.b();
             } catch (Exception e) {
                 a();
             }
@@ -168,8 +159,8 @@ public class LiveMakeLoverStartView implements View.OnClickListener {
         AlphaAnimation alphaAnimation = new AlphaAnimation(0.5f, 0.0f);
         alphaAnimation.setDuration(300L);
         alphaAnimation.setFillAfter(true);
-        this.f14599a.startAnimation(alphaAnimation);
-        this.b.startAnimation(AnimationUtils.loadAnimation(this.f14600c, R.anim.push_bottom_out));
+        this.a.startAnimation(alphaAnimation);
+        this.b.startAnimation(AnimationUtils.loadAnimation(this.c, R.anim.push_bottom_out));
     }
 
     /* JADX INFO: Access modifiers changed from: private */

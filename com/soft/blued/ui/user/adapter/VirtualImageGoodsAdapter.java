@@ -25,12 +25,12 @@ import kotlin.jvm.internal.StringCompanionObject;
 public final class VirtualImageGoodsAdapter extends BaseQuickAdapter<VirtualImageModel.ImageGoodsModel, BaseViewHolder> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final VirtualImageFragment.ImageCallBack f33814a;
+    private final VirtualImageFragment.ImageCallBack f20123a;
     private int b;
 
     public VirtualImageGoodsAdapter(VirtualImageFragment.ImageCallBack imageCallBack) {
         super((int) R.layout.item_image_goods);
-        this.f33814a = imageCallBack;
+        this.f20123a = imageCallBack;
         this.b = 5;
     }
 
@@ -84,53 +84,53 @@ public final class VirtualImageGoodsAdapter extends BaseQuickAdapter<VirtualImag
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
-    public void convert(BaseViewHolder helper, VirtualImageModel.ImageGoodsModel item) {
+    public void convert(BaseViewHolder baseViewHolder, VirtualImageModel.ImageGoodsModel imageGoodsModel) {
         List<VirtualImageModel.Tags> tags;
-        Intrinsics.e(helper, "helper");
-        Intrinsics.e(item, "item");
-        ShapeConstraintLayout shapeConstraintLayout = (ShapeConstraintLayout) helper.getView(2131369459);
-        ImageView image = (ImageView) helper.getView(R.id.iv_goods_icon);
-        ShapeTextView tag = (ShapeTextView) helper.getView(2131372678);
-        ShapeTextView shapeTextView = (ShapeTextView) helper.getView(R.id.tv_days);
-        ImageView imageView = (ImageView) helper.getView(R.id.iv_bean);
-        TextView textView = (TextView) helper.getView(2131372285);
-        ViewGroup.LayoutParams layoutParams = shapeConstraintLayout.getLayoutParams();
-        ViewGroup.LayoutParams layoutParams2 = image.getLayoutParams();
-        VirtualImageFragment.ImageCallBack imageCallBack = this.f33814a;
+        Intrinsics.e(baseViewHolder, "helper");
+        Intrinsics.e(imageGoodsModel, "item");
+        ShapeHelper.ShapeView shapeView = (ShapeConstraintLayout) baseViewHolder.getView(2131369459);
+        ImageView imageView = (ImageView) baseViewHolder.getView(R.id.iv_goods_icon);
+        ShapeTextView shapeTextView = (ShapeTextView) baseViewHolder.getView(R.id.tv_tag);
+        ShapeTextView view = baseViewHolder.getView(R.id.tv_days);
+        ImageView imageView2 = (ImageView) baseViewHolder.getView(R.id.iv_bean);
+        TextView textView = (TextView) baseViewHolder.getView(R.id.tv_price);
+        ViewGroup.LayoutParams layoutParams = shapeView.getLayoutParams();
+        ViewGroup.LayoutParams layoutParams2 = imageView.getLayoutParams();
+        VirtualImageFragment.ImageCallBack imageCallBack = this.f20123a;
         if (imageCallBack != null) {
-            Intrinsics.c(image, "image");
-            imageCallBack.a(image, item);
+            Intrinsics.c(imageView, "image");
+            imageCallBack.a(imageView, imageGoodsModel);
         }
-        shapeTextView.setVisibility(8);
-        if (item.is_have() != 1 || item.getExpire_at() <= 0) {
-            VirtualImageModel.Extra extra = item.getExtra();
+        view.setVisibility(8);
+        if (imageGoodsModel.is_have() != 1 || imageGoodsModel.getExpire_at() <= 0) {
+            VirtualImageModel.Extra extra = imageGoodsModel.getExtra();
             if (extra != null && (tags = extra.getTags()) != null) {
-                Intrinsics.c(tag, "tag");
-                a(tag, tags);
+                Intrinsics.c(shapeTextView, "tag");
+                a(shapeTextView, tags);
             }
-            if (item.getDays() > 0) {
-                StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
+            if (imageGoodsModel.getDays() > 0) {
+                StringCompanionObject stringCompanionObject = StringCompanionObject.a;
                 String string = this.mContext.getString(R.string.user_virtual_image_days);
                 Intrinsics.c(string, "mContext.getString(R.str….user_virtual_image_days)");
-                String format = String.format(string, Arrays.copyOf(new Object[]{Integer.valueOf(item.getDays())}, 1));
+                String format = String.format(string, Arrays.copyOf(new Object[]{Integer.valueOf(imageGoodsModel.getDays())}, 1));
                 Intrinsics.c(format, "format(format, *args)");
-                shapeTextView.setText(format);
-                shapeTextView.setVisibility(0);
+                view.setText(format);
+                view.setVisibility(0);
             }
-            if (item.getBeans() == 0) {
+            if (imageGoodsModel.getBeans() == 0) {
                 textView.setText(this.mContext.getResources().getString(2131887695));
-                imageView.setVisibility(8);
-            } else if (item.is_have() == 1 && item.getExpire_at() == 0) {
+                imageView2.setVisibility(8);
+            } else if (imageGoodsModel.is_have() == 1 && imageGoodsModel.getExpire_at() == 0) {
                 textView.setText(this.mContext.getString(R.string.user_virtual_image_permanently));
-                imageView.setVisibility(8);
-            } else if (item.is_have() != 1) {
-                textView.setText(String.valueOf(item.getBeans()));
-                imageView.setVisibility(0);
+                imageView2.setVisibility(8);
+            } else if (imageGoodsModel.is_have() != 1) {
+                textView.setText(String.valueOf(imageGoodsModel.getBeans()));
+                imageView2.setVisibility(0);
             }
         } else {
-            int daysLeft = item.getDaysLeft();
+            int daysLeft = imageGoodsModel.getDaysLeft();
             if (daysLeft > 1) {
-                StringCompanionObject stringCompanionObject2 = StringCompanionObject.f42549a;
+                StringCompanionObject stringCompanionObject2 = StringCompanionObject.a;
                 String string2 = this.mContext.getString(R.string.user_virtual_image_time_remaining);
                 Intrinsics.c(string2, "mContext.getString(R.str…ual_image_time_remaining)");
                 String format2 = String.format(string2, Arrays.copyOf(new Object[]{Integer.valueOf(daysLeft)}, 1));
@@ -139,17 +139,17 @@ public final class VirtualImageGoodsAdapter extends BaseQuickAdapter<VirtualImag
             } else {
                 textView.setText(this.mContext.getString(R.string.user_virtual_image_last_day));
             }
-            imageView.setVisibility(8);
-            tag.setVisibility(8);
+            imageView2.setVisibility(8);
+            shapeTextView.setVisibility(8);
         }
-        if (item.getCurrent_use() == 1) {
-            ShapeConstraintLayout shapeConstraintLayout2 = shapeConstraintLayout;
-            ShapeHelper.d(shapeConstraintLayout2, 2131102203);
-            ShapeHelper.b(shapeConstraintLayout2, 2131102478);
+        if (imageGoodsModel.getCurrent_use() == 1) {
+            ShapeHelper.ShapeView shapeView2 = shapeView;
+            ShapeHelper.d(shapeView2, 2131102203);
+            ShapeHelper.b(shapeView2, 2131102478);
         } else {
-            ShapeConstraintLayout shapeConstraintLayout3 = shapeConstraintLayout;
-            ShapeHelper.d(shapeConstraintLayout3, 2131102388);
-            ShapeHelper.b(shapeConstraintLayout3, 2131101699);
+            ShapeHelper.ShapeView shapeView3 = shapeView;
+            ShapeHelper.d(shapeView3, 2131102388);
+            ShapeHelper.b(shapeView3, 2131101699);
         }
         if (this.b == 5) {
             layoutParams.width = ((AppInfo.l - BluedViewExtKt.a(16)) - (BluedViewExtKt.a(5) * 4)) / 5;
@@ -160,7 +160,7 @@ public final class VirtualImageGoodsAdapter extends BaseQuickAdapter<VirtualImag
         }
         layoutParams2.width = layoutParams.width - BluedViewExtKt.a(20);
         layoutParams2.height = layoutParams.width - BluedViewExtKt.a(20);
-        shapeConstraintLayout.setLayoutParams(layoutParams);
-        image.setLayoutParams(layoutParams2);
+        shapeView.setLayoutParams(layoutParams);
+        imageView.setLayoutParams(layoutParams2);
     }
 }

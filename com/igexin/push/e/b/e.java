@@ -11,22 +11,22 @@ public final class e extends f {
     public static final int b = -2147483641;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f23612c = "RNTT";
+    private static final String f10004c = "RNTT";
     private static e e;
 
     /* renamed from: a  reason: collision with root package name */
-    public long f23613a;
+    public long f10005a;
     private long f;
 
     private e() {
         super(com.igexin.push.config.c.g, (byte) 0);
         this.p = true;
         this.f = System.currentTimeMillis();
-        this.f23613a = SystemClock.elapsedRealtime();
+        this.f10005a = SystemClock.elapsedRealtime();
     }
 
     private void c(long j) {
-        this.f23613a = j;
+        this.f10005a = j;
     }
 
     public static e g() {
@@ -69,23 +69,23 @@ public final class e extends f {
             a(com.igexin.push.config.c.g, TimeUnit.MILLISECONDS);
         } else if (!com.igexin.push.f.c.f() && TextUtils.isEmpty(com.igexin.push.core.e.A)) {
             a(900000L, TimeUnit.MILLISECONDS);
-            com.igexin.c.a.c.a.a(f23612c, "date is error, set connect interval = 15min");
+            com.igexin.c.a.c.a.a(f10004c, "date is error, set connect interval = 15min");
             com.igexin.c.a.c.a.a("RNTT|date is error, set connect interval = 15min", new Object[0]);
         } else {
             com.igexin.c.a.c.a.a("RNTT reconnect timer task isOnline = false, try login...", new Object[0]);
             if (System.currentTimeMillis() - this.f < 2500) {
                 com.igexin.push.core.e.r++;
             }
-            if (com.igexin.push.core.e.r > 30 && Math.abs(SystemClock.elapsedRealtime() - this.f23613a) < 72000.0d) {
+            if (com.igexin.push.core.e.r > 30 && Math.abs(SystemClock.elapsedRealtime() - this.f10005a) < 72000.0d) {
                 com.igexin.push.core.e.f.a();
                 String str = com.igexin.push.core.e.A;
-                com.igexin.c.a.c.a.a(com.igexin.push.core.e.f.f23510a + "| found a duplicate cid " + com.igexin.push.core.e.A, new Object[0]);
+                com.igexin.c.a.c.a.a(com.igexin.push.core.e.f.f9902a + "| found a duplicate cid " + com.igexin.push.core.e.A, new Object[0]);
                 com.igexin.push.core.e.L = null;
                 com.igexin.push.core.e.f.d();
                 com.igexin.c.a.b.e.a().a((com.igexin.c.a.d.f) new f.AnonymousClass13(com.igexin.push.core.e.L), false, true);
                 com.igexin.push.core.e.f.a().b();
                 com.igexin.push.core.e.r = 0;
-                g().f23613a = SystemClock.elapsedRealtime();
+                g().f10005a = SystemClock.elapsedRealtime();
             }
             this.f = System.currentTimeMillis();
             k.a();

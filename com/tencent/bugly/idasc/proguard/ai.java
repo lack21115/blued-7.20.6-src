@@ -12,7 +12,7 @@ public final class ai {
     private static ai b;
 
     /* renamed from: a  reason: collision with root package name */
-    public ah f35228a;
+    public ah f21537a;
     private final Context d;
     private long f;
     private long g;
@@ -24,7 +24,7 @@ public final class ai {
     private int l = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    private final w f35229c = w.a();
+    private final w f21538c = w.a();
 
     private ai(Context context) {
         this.d = context;
@@ -213,7 +213,7 @@ public final class ai {
         long j2;
         long b2 = ap.b();
         int i = z ? 5 : 3;
-        List<y> a2 = this.f35229c.a(i);
+        List<y> a2 = this.f21538c.a(i);
         if (a2 == null || a2.size() <= 0) {
             j = z ? this.g : this.f;
         } else {
@@ -237,7 +237,7 @@ public final class ai {
             }
             j = j2;
             if (a2.size() > 0) {
-                this.f35229c.a(a2);
+                this.f21538c.a(a2);
                 j = j2;
             }
         }
@@ -255,11 +255,11 @@ public final class ai {
             y yVar = new y();
             yVar.b = i;
             yVar.e = j;
-            yVar.f35354c = "";
+            yVar.f21663c = "";
             yVar.d = "";
             yVar.g = new byte[0];
-            this.f35229c.b(i);
-            this.f35229c.a(yVar);
+            this.f21538c.b(i);
+            this.f21538c.a(yVar);
             al.c("[UploadManager] Uploading(ID:%d) time: %s", Integer.valueOf(i), ap.a(j));
         }
     }
@@ -286,11 +286,11 @@ public final class ai {
             y yVar = new y();
             yVar.b = i;
             yVar.e = ap.b();
-            yVar.f35354c = "";
+            yVar.f21663c = "";
             yVar.d = "";
             yVar.g = ap.c(j);
-            this.f35229c.b(i);
-            this.f35229c.a(yVar);
+            this.f21538c.b(i);
+            this.f21538c.a(yVar);
             if (z) {
                 this.g = j;
             } else {
@@ -301,7 +301,7 @@ public final class ai {
     }
 
     public final boolean b(int i) {
-        if (p.f35328c) {
+        if (p.f21637c) {
             al.c("Uploading frequency will not be checked if SDK is in debug mode.", new Object[0]);
             return true;
         }

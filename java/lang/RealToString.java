@@ -1,8 +1,5 @@
 package java.lang;
 
-import com.baidu.mobads.sdk.internal.ci;
-import com.sensetime.stmobile.STMobileHumanActionNative;
-import com.ss.android.socialbase.downloader.constants.DownloadErrorCode;
 import libcore.math.MathUtils;
 
 /* JADX INFO: Access modifiers changed from: package-private */
@@ -42,7 +39,7 @@ public final class RealToString {
             str = null;
             if (i3 == 0) {
                 if (z2) {
-                    str = z ? ci.d : "-0.0";
+                    str = z ? "0.0" : "-0.0";
                 } else {
                     str = null;
                     if (j2 == 1) {
@@ -56,21 +53,21 @@ public final class RealToString {
         }
         int i4 = 52;
         if (i3 == 0) {
-            int i5 = 1 - DownloadErrorCode.ERROR_TTNET_DOWNLOAD_API_NULL;
+            int i5 = 1 - 1075;
             long j3 = j2;
             while (true) {
                 j = j2;
                 i = i5;
                 i2 = i4;
-                if ((STMobileHumanActionNative.ST_MOBILE_HAND_THREE & j3) != 0) {
+                if ((4503599627370496L & j3) != 0) {
                     break;
                 }
                 j3 <<= 1;
                 i4--;
             }
         } else {
-            j = j2 | STMobileHumanActionNative.ST_MOBILE_HAND_THREE;
-            i = i3 - DownloadErrorCode.ERROR_TTNET_DOWNLOAD_API_NULL;
+            j = j2 | 4503599627370496L;
+            i = i3 - 1075;
             i2 = 52;
         }
         this.digitCount = 0;
@@ -307,7 +304,7 @@ public final class RealToString {
             if (i4 == 0) {
                 str = null;
                 if (z2) {
-                    str = z ? ci.d : "-0.0";
+                    str = z ? "0.0" : "-0.0";
                 }
             }
         }

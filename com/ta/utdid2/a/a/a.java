@@ -46,7 +46,7 @@ public class a {
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    private static byte[] m9880a(String str) {
+    private static byte[] m6835a(String str) {
         int length = str.length() / 2;
         byte[] bArr = new byte[length];
         int i = 0;
@@ -70,7 +70,7 @@ public class a {
 
     public static String b(String str) {
         try {
-            return new String(b(a(), m9880a(str)));
+            return new String(b(a(), m6835a(str)));
         } catch (Exception e) {
             return null;
         }

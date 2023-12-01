@@ -4,11 +4,11 @@ package com.umeng.commonsdk.vchannel;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f40969a = "https://pslog.umeng.com";
+    public static String f27278a = "https://pslog.umeng.com";
     public static String b = "https://pslog.umeng.com/";
 
     /* renamed from: c  reason: collision with root package name */
-    public static String f40970c = "explog";
+    public static String f27279c = "explog";
     public static final String d = "analytics";
     public static final String e = "ekv";
     public static final String f = "id";

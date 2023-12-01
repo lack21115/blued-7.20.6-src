@@ -8,6 +8,7 @@ import com.blued.android.statistics.grpc.StatThreadManager;
 import com.blued.android.statistics.util.NamedRunnable;
 import com.blued.das.client.ClientProtos;
 import com.blued.das.client.ReportServiceGrpc;
+import com.efs.sdk.base.Constants;
 import java.util.concurrent.TimeUnit;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/statistics/grpc/connect/ClientManager.class */
@@ -28,11 +29,11 @@ public final class ClientManager extends BaseManager<ClientProtos.Request> {
             if (StatConfig.m()) {
                 StatConfig.b().b("CLIENT start-request \n", this.b);
             }
-            ReportServiceGrpc.ReportServiceBlockingStub reportServiceBlockingStub = (ReportServiceGrpc.ReportServiceBlockingStub) ((ReportServiceGrpc.ReportServiceBlockingStub) ((ReportServiceGrpc.ReportServiceBlockingStub) ConnectManager.a(ReportServiceGrpc.newBlockingStub(ConnectManager.a()))).withCompression("gzip")).withDeadlineAfter(30L, TimeUnit.SECONDS);
+            ReportServiceGrpc.ReportServiceBlockingStub withDeadlineAfter = ConnectManager.a(ReportServiceGrpc.newBlockingStub(ConnectManager.a())).withCompression(Constants.CP_GZIP).withDeadlineAfter(30L, TimeUnit.SECONDS);
             ClientProtos.Response response2 = null;
             long uptimeMillis = SystemClock.uptimeMillis();
             try {
-                ClientProtos.Response batchReport = reportServiceBlockingStub.batchReport(this.b);
+                ClientProtos.Response batchReport = withDeadlineAfter.batchReport(this.b);
                 response = batchReport;
                 if (batchReport != null) {
                     response2 = batchReport;
@@ -56,9 +57,7 @@ public final class ClientManager extends BaseManager<ClientProtos.Request> {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/statistics/grpc/connect/ClientManager$InstanceHolder.class */
     public static class InstanceHolder {
-
-        /* renamed from: a  reason: collision with root package name */
-        private static final ClientManager f18717a = new ClientManager();
+        private static final ClientManager a = new ClientManager();
 
         private InstanceHolder() {
         }
@@ -68,7 +67,7 @@ public final class ClientManager extends BaseManager<ClientProtos.Request> {
     }
 
     public static ClientManager a() {
-        return InstanceHolder.f18717a;
+        return InstanceHolder.a;
     }
 
     @Override // com.blued.android.statistics.grpc.connect.BaseManager

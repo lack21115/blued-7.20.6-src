@@ -1,6 +1,5 @@
 package com.blued.android.module.common.db;
 
-import android.speech.tts.TextToSpeech;
 import android.text.TextUtils;
 import androidx.collection.ArrayMap;
 import com.blued.android.chat.data.SessionHeader;
@@ -19,13 +18,9 @@ import java.util.concurrent.Callable;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/db/SessionSettingDao.class */
 public class SessionSettingDao {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static String f10773a = "SessionSettingDao";
+    public static String a = "SessionSettingDao";
     private static SessionSettingDao b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private Dao<SessionSettingModel, Integer> f10774c;
+    private Dao<SessionSettingModel, Integer> c;
 
     public static SessionSettingDao a() {
         if (b == null) {
@@ -46,7 +41,7 @@ public class SessionSettingDao {
     public /* synthetic */ Void b(List list) throws Exception {
         Iterator it = list.iterator();
         while (it.hasNext()) {
-            this.f10774c.update((Dao<SessionSettingModel, Integer>) ((SessionSettingModel) ((SessionSettingBaseModel) it.next())));
+            this.c.update((SessionSettingModel) ((SessionSettingBaseModel) it.next()));
         }
         return null;
     }
@@ -57,7 +52,7 @@ public class SessionSettingDao {
             Logger.c("SessionSettingDao", "settingModels===" + list.size());
         }
         try {
-            this.f10774c.callBatchTasks(new Callable() { // from class: com.blued.android.module.common.db.-$$Lambda$SessionSettingDao$PS-8bCbAdE5F2ia28p5-dbGiGbI
+            this.c.callBatchTasks(new Callable() { // from class: com.blued.android.module.common.db.-$$Lambda$SessionSettingDao$PS-8bCbAdE5F2ia28p5-dbGiGbI
                 @Override // java.util.concurrent.Callable
                 public final Object call() {
                     Void b2;
@@ -69,12 +64,12 @@ public class SessionSettingDao {
         } catch (Exception e) {
             e.printStackTrace();
             if (AppInfo.m()) {
-                Logger.e(f10773a, "updateSessionSettingList-ERROR: " + e.toString());
+                Logger.e(a, "updateSessionSettingList-ERROR: " + e.toString());
             }
             i = -1;
         }
         if (AppInfo.m()) {
-            Logger.a(f10773a, "updateSessionSettingList result: " + i);
+            Logger.a(a, "updateSessionSettingList result: " + i);
         }
         return i;
     }
@@ -82,7 +77,7 @@ public class SessionSettingDao {
     public int a(Map<String, Object> map) {
         if (map != null) {
             try {
-                UpdateBuilder<SessionSettingModel, Integer> updateBuilder = b().updateBuilder();
+                UpdateBuilder updateBuilder = b().updateBuilder();
                 updateBuilder.where().and().eq("loadName", UserInfo.getInstance().getLoginUserInfo().getUid());
                 for (Map.Entry<String, Object> entry : map.entrySet()) {
                     String key = entry.getKey();
@@ -101,8 +96,8 @@ public class SessionSettingDao {
 
     public int a(short s, long j) {
         try {
-            DeleteBuilder<SessionSettingModel, Integer> deleteBuilder = b().deleteBuilder();
-            deleteBuilder.where().eq("loadName", UserInfo.getInstance().getLoginUserInfo().getUid()).and().eq(TextToSpeech.Engine.KEY_PARAM_SESSION_ID, Long.valueOf(j)).and().eq("sessionType", Short.valueOf(s)).and().ne("sessionType", (short) 3).and().ne("sessionType", (short) 1).and().ne(TextToSpeech.Engine.KEY_PARAM_SESSION_ID, 2).and().isNull("chatBgUri");
+            DeleteBuilder deleteBuilder = b().deleteBuilder();
+            deleteBuilder.where().eq("loadName", UserInfo.getInstance().getLoginUserInfo().getUid()).and().eq("sessionId", Long.valueOf(j)).and().eq("sessionType", Short.valueOf(s)).and().ne("sessionType", (short) 3).and().ne("sessionType", (short) 1).and().ne("sessionId", 2).and().isNull("chatBgUri");
             return deleteBuilder.delete();
         } catch (Exception e) {
             e.printStackTrace();
@@ -120,8 +115,8 @@ public class SessionSettingDao {
                     sessionSettingModel.updateValues(map);
                     return a(sessionSettingModel) != null ? 1 : -1;
                 }
-                UpdateBuilder<SessionSettingModel, Integer> updateBuilder = b().updateBuilder();
-                updateBuilder.where().eq("sessionType", Short.valueOf(s)).and().eq(TextToSpeech.Engine.KEY_PARAM_SESSION_ID, Long.valueOf(j)).and().eq("loadName", UserInfo.getInstance().getLoginUserInfo().getUid());
+                UpdateBuilder updateBuilder = b().updateBuilder();
+                updateBuilder.where().eq("sessionType", Short.valueOf(s)).and().eq("sessionId", Long.valueOf(j)).and().eq("loadName", UserInfo.getInstance().getLoginUserInfo().getUid());
                 for (Map.Entry<String, Object> entry : map.entrySet()) {
                     String key = entry.getKey();
                     if (!TextUtils.isEmpty(key)) {
@@ -139,9 +134,9 @@ public class SessionSettingDao {
 
     public SessionSettingModel a(int i, long j) {
         try {
-            List<SessionSettingModel> query = b().queryBuilder().where().eq("sessionType", Integer.valueOf(i)).and().eq(TextToSpeech.Engine.KEY_PARAM_SESSION_ID, Long.valueOf(j)).and().eq("loadName", UserInfo.getInstance().getLoginUserInfo().getUid()).query();
+            List query = b().queryBuilder().where().eq("sessionType", Integer.valueOf(i)).and().eq("sessionId", Long.valueOf(j)).and().eq("loadName", UserInfo.getInstance().getLoginUserInfo().getUid()).query();
             if (query.size() > 0) {
-                return query.get(0);
+                return (SessionSettingModel) query.get(0);
             }
             return null;
         } catch (Exception e) {
@@ -168,7 +163,7 @@ public class SessionSettingDao {
         if (sessionSettingModel != null) {
             try {
                 sessionSettingModel.setLoadName(Long.valueOf(UserInfo.getInstance().getLoginUserInfo().getUid()).longValue());
-                return b().update((Dao<SessionSettingModel, Integer>) sessionSettingModel);
+                return b().update(sessionSettingModel);
             } catch (Exception e) {
                 e.printStackTrace();
                 return -1;
@@ -179,8 +174,8 @@ public class SessionSettingDao {
 
     public int b(short s, long j) {
         try {
-            DeleteBuilder<SessionSettingModel, Integer> deleteBuilder = b().deleteBuilder();
-            deleteBuilder.where().eq("loadName", UserInfo.getInstance().getLoginUserInfo().getUid()).and().eq(TextToSpeech.Engine.KEY_PARAM_SESSION_ID, Long.valueOf(j)).and().eq("sessionType", Short.valueOf(s)).and().isNull("chatBgUri");
+            DeleteBuilder deleteBuilder = b().deleteBuilder();
+            deleteBuilder.where().eq("loadName", UserInfo.getInstance().getLoginUserInfo().getUid()).and().eq("sessionId", Long.valueOf(j)).and().eq("sessionType", Short.valueOf(s)).and().isNull("chatBgUri");
             return deleteBuilder.delete();
         } catch (Exception e) {
             e.printStackTrace();
@@ -190,13 +185,13 @@ public class SessionSettingDao {
 
     public Dao<SessionSettingModel, Integer> b() {
         try {
-            if (this.f10774c == null) {
-                this.f10774c = BluedBaseDataHelper.a().getDao(SessionSettingModel.class);
+            if (this.c == null) {
+                this.c = BluedBaseDataHelper.a().getDao(SessionSettingModel.class);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return this.f10774c;
+        return this.c;
     }
 
     public Map<String, SessionSettingModel> c() {
@@ -220,8 +215,8 @@ public class SessionSettingDao {
 
     public int d() {
         try {
-            DeleteBuilder<SessionSettingModel, Integer> deleteBuilder = b().deleteBuilder();
-            deleteBuilder.where().eq("loadName", UserInfo.getInstance().getLoginUserInfo().getUid()).and().ne("sessionType", (short) 3).and().ne("sessionType", (short) 1).and().ne(TextToSpeech.Engine.KEY_PARAM_SESSION_ID, 2).and().isNull("chatBgUri");
+            DeleteBuilder deleteBuilder = b().deleteBuilder();
+            deleteBuilder.where().eq("loadName", UserInfo.getInstance().getLoginUserInfo().getUid()).and().ne("sessionType", (short) 3).and().ne("sessionType", (short) 1).and().ne("sessionId", 2).and().isNull("chatBgUri");
             return deleteBuilder.delete();
         } catch (Exception e) {
             e.printStackTrace();

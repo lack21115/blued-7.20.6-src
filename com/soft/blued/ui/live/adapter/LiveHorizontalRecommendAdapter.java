@@ -30,11 +30,11 @@ import java.util.List;
 public class LiveHorizontalRecommendAdapter extends BaseQuickAdapter<LiveRecommendModel, BaseViewHolder> {
 
     /* renamed from: a  reason: collision with root package name */
-    public int f31075a;
+    public int f17385a;
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private IRequestHost f31076c;
+    private IRequestHost f17386c;
     private List<String> d;
 
     /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/live/adapter/LiveHorizontalRecommendAdapter$LIVE_RECOMMEND_FROM.class */
@@ -43,11 +43,11 @@ public class LiveHorizontalRecommendAdapter extends BaseQuickAdapter<LiveRecomme
 
     public LiveHorizontalRecommendAdapter(IRequestHost iRequestHost, Context context, int i) {
         super(R.layout.item_live_horizontal_recommend, null);
-        this.f31075a = 0;
+        this.f17385a = 0;
         this.d = new ArrayList();
         this.b = context;
-        this.f31076c = iRequestHost;
-        this.f31075a = i;
+        this.f17386c = iRequestHost;
+        this.f17385a = i;
     }
 
     public void a() {
@@ -69,20 +69,20 @@ public class LiveHorizontalRecommendAdapter extends BaseQuickAdapter<LiveRecomme
             }
             ImageView imageView = (ImageView) baseViewHolder.getView(R.id.img_head);
             if (!TextUtils.isEmpty(liveRecommendModel.avatar)) {
-                ImageLoader.a(this.f31076c, liveRecommendModel.avatar).a(imageView);
+                ImageLoader.a(this.f17386c, liveRecommendModel.avatar).a(imageView);
             }
             imageView.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.live.adapter.LiveHorizontalRecommendAdapter.1
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view) {
                     Tracker.onClick(view);
-                    int i = LiveHorizontalRecommendAdapter.this.f31075a;
+                    int i = LiveHorizontalRecommendAdapter.this.f17385a;
                     if (i == 0) {
                         InstantLog.b("live_followed_hori_recommend_click", liveRecommendModel.uid);
                     } else if (i == 1) {
                         InstantLog.b("square_live_click", liveRecommendModel.uid);
                     }
                     EventTrackLive.c(LiveProtos.Event.LIVE_ROOM_CLICK, "follow_maybe", liveRecommendModel.lid, liveRecommendModel.uid);
-                    String str = LiveHorizontalRecommendAdapter.this.f31075a == 1 ? liveRecommendModel.source : "live_followed_hori_recommend";
+                    String str = LiveHorizontalRecommendAdapter.this.f17385a == 1 ? liveRecommendModel.source : "live_followed_hori_recommend";
                     ArrayList arrayList = new ArrayList();
                     int i2 = 0;
                     while (true) {
@@ -98,16 +98,16 @@ public class LiveHorizontalRecommendAdapter extends BaseQuickAdapter<LiveRecomme
             });
             baseViewHolder.setText(2131372046, liveRecommendModel.name);
             if (liveRecommendModel.liveType == 1) {
-                baseViewHolder.setText(R.id.tv_live, 2131890339);
+                baseViewHolder.setText(R.id.tv_live, R.string.live_type_game);
             } else if (liveRecommendModel.link_type == 1) {
-                baseViewHolder.setText(R.id.tv_live, 2131890342);
+                baseViewHolder.setText(R.id.tv_live, R.string.live_type_pk);
             } else if (liveRecommendModel.link_type == 2) {
-                baseViewHolder.setText(R.id.tv_live, 2131890341);
+                baseViewHolder.setText(R.id.tv_live, R.string.live_type_multi);
             } else {
-                baseViewHolder.setText(R.id.tv_live, 2131890340);
+                baseViewHolder.setText(R.id.tv_live, R.string.live_type_live);
             }
             if (!liveRecommendModel.isShowed) {
-                int i = this.f31075a;
+                int i = this.f17385a;
                 if (i == 0) {
                     EventTrackLive.a(LiveProtos.Event.LIVE_FOLLOWED_HORI_RECOMMEND_SHOW, liveRecommendModel.uid);
                 } else if (i == 1) {
@@ -115,7 +115,7 @@ public class LiveHorizontalRecommendAdapter extends BaseQuickAdapter<LiveRecomme
                 }
                 liveRecommendModel.isShowed = true;
             }
-            baseViewHolder.setOnClickListener(2131364488, new View.OnClickListener() { // from class: com.soft.blued.ui.live.adapter.LiveHorizontalRecommendAdapter.2
+            baseViewHolder.setOnClickListener(R.id.img_close, new View.OnClickListener() { // from class: com.soft.blued.ui.live.adapter.LiveHorizontalRecommendAdapter.2
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view) {
                     Tracker.onClick(view);
@@ -136,7 +136,7 @@ public class LiveHorizontalRecommendAdapter extends BaseQuickAdapter<LiveRecomme
                     }
                     if (LiveRoomPreferences.A()) {
                         LiveRoomPreferences.B();
-                        AppMethods.a((CharSequence) LiveHorizontalRecommendAdapter.this.b.getString(2131890165));
+                        AppMethods.a(LiveHorizontalRecommendAdapter.this.b.getString(R.string.live_recommend_del));
                     }
                 }
             });

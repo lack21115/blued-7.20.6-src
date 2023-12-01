@@ -10,9 +10,7 @@ import kotlin.jvm.functions.Function2;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt__EmittersKt$onStart$$inlined$unsafeFlow$1.class */
 public final class FlowKt__EmittersKt$onStart$$inlined$unsafeFlow$1<T> implements Flow<T> {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ Function2 f43150a;
+    final /* synthetic */ Function2 a;
     final /* synthetic */ Flow b;
 
     @Metadata
@@ -20,9 +18,7 @@ public final class FlowKt__EmittersKt$onStart$$inlined$unsafeFlow$1<T> implement
     /* renamed from: kotlinx.coroutines.flow.FlowKt__EmittersKt$onStart$$inlined$unsafeFlow$1$1  reason: invalid class name */
     /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt__EmittersKt$onStart$$inlined$unsafeFlow$1$1.class */
     public static final class AnonymousClass1 extends ContinuationImpl {
-
-        /* renamed from: a  reason: collision with root package name */
-        /* synthetic */ Object f43151a;
+        /* synthetic */ Object a;
         int b;
         Object d;
         Object e;
@@ -34,7 +30,7 @@ public final class FlowKt__EmittersKt$onStart$$inlined$unsafeFlow$1<T> implement
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Object invokeSuspend(Object obj) {
-            this.f43151a = obj;
+            this.a = obj;
             this.b |= Integer.MIN_VALUE;
             return FlowKt__EmittersKt$onStart$$inlined$unsafeFlow$1.this.a(null, this);
         }

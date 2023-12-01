@@ -12,19 +12,19 @@ import java.util.Locale;
 final class LocaleListCompatWrapper implements LocaleListInterface {
 
     /* renamed from: c  reason: collision with root package name */
-    private static final Locale[] f2511c = new Locale[0];
+    private static final Locale[] f2463c = new Locale[0];
     private static final Locale d = new Locale("en", "XA");
     private static final Locale e = new Locale(a.aa, "XB");
     private static final Locale f = LocaleListCompat.a("en-Latn");
 
     /* renamed from: a  reason: collision with root package name */
-    private final Locale[] f2512a;
+    private final Locale[] f2464a;
     private final String b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public LocaleListCompatWrapper(Locale... localeArr) {
         if (localeArr.length == 0) {
-            this.f2512a = f2511c;
+            this.f2464a = f2463c;
             this.b = "";
             return;
         }
@@ -35,7 +35,7 @@ final class LocaleListCompatWrapper implements LocaleListInterface {
         while (true) {
             int i2 = i;
             if (i2 >= localeArr.length) {
-                this.f2512a = (Locale[]) arrayList.toArray(new Locale[arrayList.size()]);
+                this.f2464a = (Locale[]) arrayList.toArray(new Locale[arrayList.size()]);
                 this.b = sb.toString();
                 return;
             }
@@ -67,7 +67,7 @@ final class LocaleListCompatWrapper implements LocaleListInterface {
         /*
             r3 = this;
             r0 = r3
-            java.util.Locale[] r0 = r0.f2512a
+            java.util.Locale[] r0 = r0.f2464a
             r8 = r0
             r0 = r8
             int r0 = r0.length
@@ -167,7 +167,7 @@ final class LocaleListCompatWrapper implements LocaleListInterface {
         if (a2 == -1) {
             return null;
         }
-        return this.f2512a[a2];
+        return this.f2464a[a2];
     }
 
     private static boolean b(Locale locale) {
@@ -178,7 +178,7 @@ final class LocaleListCompatWrapper implements LocaleListInterface {
         int i = 0;
         while (true) {
             int i2 = i;
-            Locale[] localeArr = this.f2512a;
+            Locale[] localeArr = this.f2464a;
             if (i2 >= localeArr.length) {
                 return Integer.MAX_VALUE;
             }
@@ -196,14 +196,14 @@ final class LocaleListCompatWrapper implements LocaleListInterface {
         if (!(obj instanceof LocaleListCompatWrapper)) {
             return false;
         }
-        Locale[] localeArr = ((LocaleListCompatWrapper) obj).f2512a;
-        if (this.f2512a.length != localeArr.length) {
+        Locale[] localeArr = ((LocaleListCompatWrapper) obj).f2464a;
+        if (this.f2464a.length != localeArr.length) {
             return false;
         }
         int i = 0;
         while (true) {
             int i2 = i;
-            Locale[] localeArr2 = this.f2512a;
+            Locale[] localeArr2 = this.f2464a;
             if (i2 >= localeArr2.length) {
                 return true;
             }
@@ -217,7 +217,7 @@ final class LocaleListCompatWrapper implements LocaleListInterface {
     @Override // androidx.core.os.LocaleListInterface
     public Locale get(int i) {
         if (i >= 0) {
-            Locale[] localeArr = this.f2512a;
+            Locale[] localeArr = this.f2464a;
             if (i < localeArr.length) {
                 return localeArr[i];
             }
@@ -241,7 +241,7 @@ final class LocaleListCompatWrapper implements LocaleListInterface {
         int i2 = 0;
         while (true) {
             int i3 = i2;
-            Locale[] localeArr = this.f2512a;
+            Locale[] localeArr = this.f2464a;
             if (i3 >= localeArr.length) {
                 return i;
             }
@@ -255,7 +255,7 @@ final class LocaleListCompatWrapper implements LocaleListInterface {
         int i = 0;
         while (true) {
             int i2 = i;
-            Locale[] localeArr = this.f2512a;
+            Locale[] localeArr = this.f2464a;
             if (i2 >= localeArr.length) {
                 return -1;
             }
@@ -268,12 +268,12 @@ final class LocaleListCompatWrapper implements LocaleListInterface {
 
     @Override // androidx.core.os.LocaleListInterface
     public boolean isEmpty() {
-        return this.f2512a.length == 0;
+        return this.f2464a.length == 0;
     }
 
     @Override // androidx.core.os.LocaleListInterface
     public int size() {
-        return this.f2512a.length;
+        return this.f2464a.length;
     }
 
     @Override // androidx.core.os.LocaleListInterface
@@ -287,13 +287,13 @@ final class LocaleListCompatWrapper implements LocaleListInterface {
         int i = 0;
         while (true) {
             int i2 = i;
-            Locale[] localeArr = this.f2512a;
+            Locale[] localeArr = this.f2464a;
             if (i2 >= localeArr.length) {
                 sb.append("]");
                 return sb.toString();
             }
             sb.append(localeArr[i2]);
-            if (i2 < this.f2512a.length - 1) {
+            if (i2 < this.f2464a.length - 1) {
                 sb.append(',');
             }
             i = i2 + 1;

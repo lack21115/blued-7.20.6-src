@@ -13,17 +13,14 @@ import com.bumptech.glide.request.target.Target;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/image/apng/AnimationRequestListener.class */
 public class AnimationRequestListener implements RequestListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    private int f9511a;
+    private int a;
     private ImageLoader.OnAnimationStateListener b;
 
     public AnimationRequestListener(int i, ImageLoader.OnAnimationStateListener onAnimationStateListener) {
-        this.f9511a = i;
+        this.a = i;
         this.b = onAnimationStateListener;
     }
 
-    @Override // com.bumptech.glide.request.RequestListener
     public boolean onLoadFailed(GlideException glideException, Object obj, Target target, boolean z) {
         if (ImageLoader.a()) {
             Log.e("IMAGE", "animation : onLoadFailed");
@@ -32,7 +29,6 @@ public class AnimationRequestListener implements RequestListener {
         return false;
     }
 
-    @Override // com.bumptech.glide.request.RequestListener
     public boolean onResourceReady(Object obj, Object obj2, Target target, DataSource dataSource, boolean z) {
         if (ImageLoader.a()) {
             Log.e("IMAGE", "animation : onResourceReady");
@@ -40,7 +36,7 @@ public class AnimationRequestListener implements RequestListener {
         if (obj != null) {
             if (obj instanceof APNGDrawable) {
                 final APNGDrawable aPNGDrawable = (APNGDrawable) obj;
-                aPNGDrawable.a(this.f9511a);
+                aPNGDrawable.a(this.a);
                 if (ImageLoader.a()) {
                     Log.e("IMAGE", "animation : APNG @" + aPNGDrawable);
                 }
@@ -50,7 +46,6 @@ public class AnimationRequestListener implements RequestListener {
                     }
                     this.b.a();
                     aPNGDrawable.registerAnimationCallback(new Animatable2Compat.AnimationCallback() { // from class: com.blued.android.core.image.apng.AnimationRequestListener.1
-                        @Override // androidx.vectordrawable.graphics.drawable.Animatable2Compat.AnimationCallback
                         public void onAnimationEnd(Drawable drawable) {
                             if (ImageLoader.a()) {
                                 Log.e("IMAGE", "apng : onAnimationEnd @" + drawable);
@@ -61,7 +56,6 @@ public class AnimationRequestListener implements RequestListener {
                             }
                         }
 
-                        @Override // androidx.vectordrawable.graphics.drawable.Animatable2Compat.AnimationCallback
                         public void onAnimationStart(Drawable drawable) {
                         }
                     });
@@ -70,7 +64,7 @@ public class AnimationRequestListener implements RequestListener {
                 return false;
             } else if (obj instanceof GifDrawable) {
                 final GifDrawable gifDrawable = (GifDrawable) obj;
-                gifDrawable.a(this.f9511a);
+                gifDrawable.a(this.a);
                 if (ImageLoader.a()) {
                     Log.e("IMAGE", "animation : GIF @" + gifDrawable);
                 }
@@ -80,7 +74,6 @@ public class AnimationRequestListener implements RequestListener {
                     }
                     this.b.a();
                     gifDrawable.registerAnimationCallback(new Animatable2Compat.AnimationCallback() { // from class: com.blued.android.core.image.apng.AnimationRequestListener.2
-                        @Override // androidx.vectordrawable.graphics.drawable.Animatable2Compat.AnimationCallback
                         public void onAnimationEnd(Drawable drawable) {
                             if (ImageLoader.a()) {
                                 Log.e("IMAGE", "gif : onAnimationEnd @" + drawable);

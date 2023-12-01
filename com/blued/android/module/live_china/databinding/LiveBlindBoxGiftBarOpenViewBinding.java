@@ -11,13 +11,9 @@ import com.blued.android.module.live_china.view.LiveLuckyBagSlopeProgressView;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/LiveBlindBoxGiftBarOpenViewBinding.class */
 public final class LiveBlindBoxGiftBarOpenViewBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f12151a;
+    public final ImageView a;
     public final LiveLuckyBagSlopeProgressView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f12152c;
+    public final ImageView c;
     public final LinearLayout d;
     public final TextView e;
     public final TextView f;
@@ -28,9 +24,9 @@ public final class LiveBlindBoxGiftBarOpenViewBinding implements ViewBinding {
 
     private LiveBlindBoxGiftBarOpenViewBinding(RelativeLayout relativeLayout, ImageView imageView, LiveLuckyBagSlopeProgressView liveLuckyBagSlopeProgressView, ImageView imageView2, LinearLayout linearLayout, TextView textView, TextView textView2, TextView textView3, TextView textView4, TextView textView5) {
         this.j = relativeLayout;
-        this.f12151a = imageView;
+        this.a = imageView;
         this.b = liveLuckyBagSlopeProgressView;
-        this.f12152c = imageView2;
+        this.c = imageView2;
         this.d = linearLayout;
         this.e = textView;
         this.f = textView2;
@@ -89,7 +85,6 @@ public final class LiveBlindBoxGiftBarOpenViewBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
         return this.j;

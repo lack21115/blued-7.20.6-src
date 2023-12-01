@@ -17,11 +17,11 @@ import com.blued.android.framework.utils.DensityUtils;
 public class VerticalTextView extends AppCompatTextView {
 
     /* renamed from: a  reason: collision with root package name */
-    protected TextPaint f28535a;
+    protected TextPaint f14845a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private CharSequence f28536c;
+    private CharSequence f14846c;
     private Paint d;
     private Path e;
     private float f;
@@ -38,11 +38,11 @@ public class VerticalTextView extends AppCompatTextView {
 
     public VerticalTextView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f28536c = "左滑看更多";
+        this.f14846c = "左滑看更多";
         this.f = 0.0f;
         this.h = true;
         TextPaint textPaint = new TextPaint(1);
-        this.f28535a = textPaint;
+        this.f14845a = textPaint;
         textPaint.setAntiAlias(true);
         this.b = DensityUtils.a(context, 4.0f);
         this.g = DensityUtils.a(context, 8.0f);
@@ -70,9 +70,8 @@ public class VerticalTextView extends AppCompatTextView {
         return this.h;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.TextView, android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         int i;
         if (this.h) {
             this.e.reset();
@@ -80,13 +79,13 @@ public class VerticalTextView extends AppCompatTextView {
             this.e.quadTo(this.f, getHeight() / 2, getWidth(), getHeight());
             canvas.drawPath(this.e, this.d);
         }
-        this.f28535a.setTextSize(getTextSize());
-        this.f28535a.setColor(getCurrentTextColor());
-        this.f28535a.setTypeface(getTypeface());
-        CharSequence charSequence = this.f28536c;
+        this.f14845a.setTextSize(getTextSize());
+        this.f14845a.setColor(getCurrentTextColor());
+        this.f14845a.setTypeface(getTypeface());
+        CharSequence charSequence = this.f14846c;
         if (charSequence != null && !charSequence.toString().trim().equals("") && getLayout() != null) {
             Rect rect = new Rect();
-            this.f28535a.getTextBounds(charSequence.toString(), 0, charSequence.length(), rect);
+            this.f14845a.getTextBounds(charSequence.toString(), 0, charSequence.length(), rect);
             float lineLeft = getLayout().getLineLeft(0) + getPaddingLeft();
             float f = lineLeft;
             if (getCompoundDrawables()[0] != null) {
@@ -97,7 +96,7 @@ public class VerticalTextView extends AppCompatTextView {
             float baseline = getBaseline();
             float length = ((charSequence.length() - 1) * ((rect.bottom - rect.top) + this.b)) / 2;
             for (int i2 = 0; i2 < charSequence.length(); i2++) {
-                canvas.drawText(String.valueOf(charSequence.charAt(i2)), f + compoundDrawablePadding, (i2 * i) + (baseline - length), this.f28535a);
+                canvas.drawText(String.valueOf(charSequence.charAt(i2)), f + compoundDrawablePadding, (i2 * i) + (baseline - length), this.f14845a);
             }
         }
         super.onDraw(canvas);
@@ -109,7 +108,7 @@ public class VerticalTextView extends AppCompatTextView {
 
     @Override // android.widget.TextView
     public void setText(CharSequence charSequence, TextView.BufferType bufferType) {
-        this.f28536c = charSequence;
+        this.f14846c = charSequence;
         super.setText("", bufferType);
     }
 
@@ -117,7 +116,7 @@ public class VerticalTextView extends AppCompatTextView {
         if (TextUtils.isEmpty(charSequence)) {
             return;
         }
-        this.f28536c = charSequence;
+        this.f14846c = charSequence;
         invalidate();
     }
 }

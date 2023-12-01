@@ -56,7 +56,7 @@ public class TXVideoFragment extends BaseADVideoFragment implements RewardVideoA
 
     @Override // com.qq.e.ads.rewardvideo.RewardVideoADListener
     public void onADLoad() {
-        DialogUtils.b(this.f34513a);
+        DialogUtils.b(this.f20822a);
         i();
         if (this.i.getRewardAdType() == 0) {
             Log.d("drb", "eCPMLevel = " + this.i.getECPMLevel() + ", ECPM: " + this.i.getECPM() + " ,video duration = " + this.i.getVideoDuration());
@@ -77,7 +77,6 @@ public class TXVideoFragment extends BaseADVideoFragment implements RewardVideoA
         Log.i("drb", "onADShow");
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.g = getActivity();
         getActivity().overridePendingTransition(R.anim.activity_switch_none, R.anim.activity_switch_none);
@@ -85,7 +84,7 @@ public class TXVideoFragment extends BaseADVideoFragment implements RewardVideoA
         if (view == null) {
             this.h = layoutInflater.inflate(R.layout.fragment_ad_video, viewGroup, false);
             l();
-            DialogUtils.a(this.f34513a);
+            DialogUtils.a(this.f20822a);
         } else if (view.getParent() != null) {
             ((ViewGroup) this.h.getParent()).removeView(this.h);
         }

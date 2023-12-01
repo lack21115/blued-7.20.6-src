@@ -13,17 +13,18 @@ import com.sdk.tencent.base.api.ToolUtils;
 import com.tencent.tendinsv.a.b;
 import com.tencent.tendinsv.listener.LoginAuthCallbacks;
 import com.tencent.tendinsv.utils.t;
+import com.xiaomi.mipush.sdk.Constants;
 import org.json.JSONObject;
 
 /* loaded from: source-8829756-dex2jar.jar:com/tencent/tendinsv/tool/i.class */
 public class i {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile i f39064a;
+    private static volatile i f25373a;
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private LoginAuthCallbacks f39065c;
+    private LoginAuthCallbacks f25374c;
     private long d;
     private long e;
     private long f;
@@ -57,7 +58,7 @@ public class i {
                         if (jSONObject.has("token") && i3 == 103000) {
                             i.this.a("1", com.tencent.tendinsv.b.p, jSONObject.optString("token"), "", i.this.f, i.this.e, i.this.d);
                         } else if (i3 == 102101 || i3 == 102102 || i3 == 102103 || i3 == 200025 || i3 == 102507) {
-                            LoginAuthCallbacks loginAuthCallbacks2 = i.this.f39065c;
+                            LoginAuthCallbacks loginAuthCallbacks2 = i.this.f25374c;
                             i2 = 1007;
                             String str4 = "loginAuth()" + jSONObject.toString();
                             String b = com.tencent.tendinsv.utils.d.b(jSONObject);
@@ -69,7 +70,7 @@ public class i {
                             str2 = str4;
                             str3 = b;
                         } else if (i3 != 200020) {
-                            LoginAuthCallbacks loginAuthCallbacks3 = i.this.f39065c;
+                            LoginAuthCallbacks loginAuthCallbacks3 = i.this.f25374c;
                             i2 = 1003;
                             str2 = "loginAuth()" + jSONObject.toString();
                             str3 = com.tencent.tendinsv.utils.d.b(jSONObject);
@@ -80,7 +81,7 @@ public class i {
                             loginAuthCallbacks = loginAuthCallbacks3;
                         }
                     } else {
-                        LoginAuthCallbacks loginAuthCallbacks4 = i.this.f39065c;
+                        LoginAuthCallbacks loginAuthCallbacks4 = i.this.f25374c;
                         i2 = 1003;
                         i3 = 1003;
                         String str5 = "loginAuth()" + jSONObject.toString();
@@ -95,13 +96,13 @@ public class i {
                     }
                     loginAuthCallbacks.getTokenFailed(i2, i3, str2, str3, str, j, j2, j3);
                 } else {
-                    i.this.f39065c.getTokenFailed(1003, 1003, "jObj isEmpty", "jObj isEmpty", i.this.h, i.this.f, i.this.e, i.this.d);
+                    i.this.f25374c.getTokenFailed(1003, 1003, "jObj isEmpty", "jObj isEmpty", i.this.h, i.this.f, i.this.e, i.this.d);
                 }
                 i.this.i.quitAuthActivity();
             } catch (Exception e) {
                 e.printStackTrace();
                 com.tencent.tendinsv.utils.l.d(com.tencent.tendinsv.b.F, "mCMCCLoginMethod--Exception_e=", e);
-                i.this.f39065c.getTokenFailed(1014, 1014, "mCMCCLoginMethod--Exception_e=" + e, e.getClass().getSimpleName(), i.this.h, i.this.f, i.this.e, i.this.d);
+                i.this.f25374c.getTokenFailed(1014, 1014, "mCMCCLoginMethod--Exception_e=" + e, e.getClass().getSimpleName(), i.this.h, i.this.f, i.this.e, i.this.d);
                 i.this.i.quitAuthActivity();
             }
         }
@@ -111,18 +112,18 @@ public class i {
     }
 
     public static i a() {
-        if (f39064a == null) {
+        if (f25373a == null) {
             synchronized (i.class) {
                 try {
-                    if (f39064a == null) {
-                        f39064a = new i();
+                    if (f25373a == null) {
+                        f25373a = new i();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f39064a;
+        return f25373a;
     }
 
     private void a(String str, String str2, long j, long j2, long j3) {
@@ -145,7 +146,7 @@ public class i {
         } catch (Exception e) {
             e.printStackTrace();
             com.tencent.tendinsv.utils.l.d(com.tencent.tendinsv.b.F, "setOnClickListener--Exception_e=", e);
-            LoginAuthCallbacks loginAuthCallbacks = this.f39065c;
+            LoginAuthCallbacks loginAuthCallbacks = this.f25374c;
             loginAuthCallbacks.getTokenFailed(1014, 1014, "setOnClickListener--Exception_e=" + e, e.getClass().getSimpleName(), str2, j, j2, j3);
         }
     }
@@ -217,16 +218,16 @@ public class i {
             String encodeToString = Base64.encodeToString(com.tencent.tendinsv.utils.a.a(jSONObject.toString().getBytes("UTF_8"), a2.substring(0, 16), a2.substring(16)), 11);
             JSONObject jSONObject2 = new JSONObject();
             if (com.tencent.tendinsv.utils.d.b(b2) && "1".equals(b2)) {
-                str5 = "A" + str + b + "-" + encodeToString;
+                str5 = "A" + str + b + Constants.ACCEPT_TIME_SEPARATOR_SERVER + encodeToString;
             } else {
-                str5 = "A" + str + "-" + encodeToString;
+                str5 = "A" + str + Constants.ACCEPT_TIME_SEPARATOR_SERVER + encodeToString;
             }
             jSONObject2.put("token", str5);
-            this.f39065c.getTokenSuccessed(1000, 1000, jSONObject2.toString(), com.tencent.tendinsv.b.aw, j, j2, j3);
+            this.f25374c.getTokenSuccessed(1000, 1000, jSONObject2.toString(), com.tencent.tendinsv.b.aw, j, j2, j3);
         } catch (Exception e) {
             e.printStackTrace();
             com.tencent.tendinsv.utils.l.d(com.tencent.tendinsv.b.F, "getMobileNum--Exception_e=", e);
-            this.f39065c.getTokenFailed(1014, 1014, "getMobileNum--Exception_e=" + e, e.getClass().getSimpleName(), str2, j, j2, j3);
+            this.f25374c.getTokenFailed(1014, 1014, "getMobileNum--Exception_e=" + e, e.getClass().getSimpleName(), str2, j, j2, j3);
         }
     }
 }

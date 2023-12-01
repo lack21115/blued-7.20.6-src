@@ -1,5 +1,6 @@
 package android.appwidget;
 
+import android.R;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -26,7 +27,6 @@ import android.widget.FrameLayout;
 import android.widget.RemoteViews;
 import android.widget.RemoteViewsAdapter;
 import android.widget.TextView;
-import com.android.internal.R;
 import com.igexin.push.core.b;
 
 /* loaded from: source-9557208-dex2jar.jar:android/appwidget/AppWidgetHostView.class */
@@ -111,7 +111,7 @@ public class AppWidgetHostView extends FrameLayout {
     }
 
     public AppWidgetHostView(Context context) {
-        this(context, 17432576, 17432577);
+        this(context, R.anim.fade_in, R.anim.fade_out);
     }
 
     public AppWidgetHostView(Context context, int i, int i2) {
@@ -125,7 +125,7 @@ public class AppWidgetHostView extends FrameLayout {
     }
 
     public AppWidgetHostView(Context context, RemoteViews.OnClickHandler onClickHandler) {
-        this(context, 17432576, 17432577);
+        this(context, R.anim.fade_in, R.anim.fade_out);
         this.mOnClickHandler = onClickHandler;
     }
 
@@ -148,10 +148,10 @@ public class AppWidgetHostView extends FrameLayout {
         try {
             if (packageManager.getApplicationInfo(componentName.getPackageName(), 0).targetSdkVersion >= 14) {
                 Resources resources = context.getResources();
-                rect.left = resources.getDimensionPixelSize(R.dimen.default_app_widget_padding_left);
-                rect.right = resources.getDimensionPixelSize(R.dimen.default_app_widget_padding_right);
-                rect.top = resources.getDimensionPixelSize(R.dimen.default_app_widget_padding_top);
-                rect.bottom = resources.getDimensionPixelSize(R.dimen.default_app_widget_padding_bottom);
+                rect.left = resources.getDimensionPixelSize(17104973);
+                rect.right = resources.getDimensionPixelSize(17104975);
+                rect.top = resources.getDimensionPixelSize(17104974);
+                rect.bottom = resources.getDimensionPixelSize(17104976);
             }
             return rect;
         } catch (PackageManager.NameNotFoundException e) {
@@ -168,9 +168,8 @@ public class AppWidgetHostView extends FrameLayout {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void dispatchRestoreInstanceState(SparseArray<Parcelable> sparseArray) {
+    protected void dispatchRestoreInstanceState(SparseArray<Parcelable> sparseArray) {
         Parcelable parcelable = sparseArray.get(generateId());
         ParcelableSparseArray parcelableSparseArray = null;
         if (parcelable != null) {
@@ -190,17 +189,15 @@ public class AppWidgetHostView extends FrameLayout {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void dispatchSaveInstanceState(SparseArray<Parcelable> sparseArray) {
+    protected void dispatchSaveInstanceState(SparseArray<Parcelable> sparseArray) {
         ParcelableSparseArray parcelableSparseArray = new ParcelableSparseArray();
         super.dispatchSaveInstanceState(parcelableSparseArray);
         sparseArray.put(generateId(), parcelableSparseArray);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup
-    public boolean drawChild(Canvas canvas, View view, long j) {
+    protected boolean drawChild(Canvas canvas, View view, long j) {
         return super.drawChild(canvas, view, j);
     }
 
@@ -257,12 +254,12 @@ public class AppWidgetHostView extends FrameLayout {
 
     protected View getErrorView() {
         TextView textView = new TextView(this.mContext);
-        textView.setText(R.string.gadget_host_error_inflating);
+        textView.setText(17040907);
         textView.setBackgroundColor(Color.argb(127, 0, 0, 0));
         return textView;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
+    @Override // android.view.View
     public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
         accessibilityNodeInfo.setClassName(AppWidgetHostView.class.getName());
@@ -413,16 +410,16 @@ public class AppWidgetHostView extends FrameLayout {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void viewDataChanged(int i) {
-        View findViewById = findViewById(i);
+        RemoteViewsAdapter.RemoteAdapterConnectionCallback findViewById = findViewById(i);
         if (findViewById == null || !(findViewById instanceof AdapterView)) {
             return;
         }
-        AdapterView adapterView = (AdapterView) findViewById;
-        Adapter adapter = adapterView.getAdapter();
+        RemoteViewsAdapter.RemoteAdapterConnectionCallback remoteAdapterConnectionCallback = (AdapterView) findViewById;
+        Adapter adapter = remoteAdapterConnectionCallback.getAdapter();
         if (adapter instanceof BaseAdapter) {
             ((BaseAdapter) adapter).notifyDataSetChanged();
-        } else if (adapter == null && (adapterView instanceof RemoteViewsAdapter.RemoteAdapterConnectionCallback)) {
-            ((RemoteViewsAdapter.RemoteAdapterConnectionCallback) adapterView).deferNotifyDataSetChanged();
+        } else if (adapter == null && (remoteAdapterConnectionCallback instanceof RemoteViewsAdapter.RemoteAdapterConnectionCallback)) {
+            remoteAdapterConnectionCallback.deferNotifyDataSetChanged();
         }
     }
 }

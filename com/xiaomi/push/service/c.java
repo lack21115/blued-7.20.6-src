@@ -9,34 +9,34 @@ import com.xiaomi.push.service.XMPushService;
 public class c extends XMPushService.j {
 
     /* renamed from: a  reason: collision with root package name */
-    private XMPushService f41659a;
+    private XMPushService f27968a;
 
     /* renamed from: a  reason: collision with other field name */
-    private fj[] f1040a;
+    private fj[] f993a;
 
     public c(XMPushService xMPushService, fj[] fjVarArr) {
         super(4);
-        this.f41659a = null;
-        this.f41659a = xMPushService;
-        this.f1040a = fjVarArr;
+        this.f27968a = null;
+        this.f27968a = xMPushService;
+        this.f993a = fjVarArr;
     }
 
     @Override // com.xiaomi.push.service.XMPushService.j
     /* renamed from: a */
-    public String mo12102a() {
+    public String mo9052a() {
         return "batch send message.";
     }
 
     @Override // com.xiaomi.push.service.XMPushService.j
     /* renamed from: a */
-    public void mo11743a() {
+    public void mo8693a() {
         try {
-            if (this.f1040a != null) {
-                this.f41659a.a(this.f1040a);
+            if (this.f993a != null) {
+                this.f27968a.a(this.f993a);
             }
         } catch (gf e) {
             com.xiaomi.channel.commonutils.logger.b.a(e);
-            this.f41659a.a(10, e);
+            this.f27968a.a(10, e);
         }
     }
 }

@@ -21,27 +21,25 @@ import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ListAdapter;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import com.anythink.expressad.foundation.h.i;
-import com.anythink.expressad.video.module.a.a.m;
+import com.alipay.sdk.sys.a;
+import com.alipay.sdk.util.i;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.AppMethods;
 import com.blued.android.core.image.ImageFileLoader;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.imagecache.LoadOptions;
-import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.ui.StatusBarHelper;
 import com.blued.android.core.ui.TerminalActivity;
 import com.blued.android.core.utils.skin.BluedSkinUtils;
@@ -228,9 +226,7 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
     private ImageView ao;
     private ImageView ap;
     private TextView aq;
-
-    /* renamed from: ar  reason: collision with root package name */
-    private View f19737ar;
+    private View ar;
     private ImageView as;
     private TextView at;
     private ImageView au;
@@ -307,7 +303,7 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
     private View cm;
 
     /* renamed from: cn  reason: collision with root package name */
-    private AtChooseUserHelper f19738cn;
+    private AtChooseUserHelper f59cn;
     private FeedListAdapterForRecyclerView co;
     private FeedDetailsCommentListAdapter cp;
     private FeedDetailsLikeListAdapter cq;
@@ -337,7 +333,6 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
     private boolean cy = true;
     private boolean cz = true;
     private RecyclerView.OnScrollListener cA = new RecyclerView.OnScrollListener() { // from class: com.blued.community.ui.feed.fragment.FeedDetailsFragment.8
-        @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
         public void onScrollStateChanged(RecyclerView recyclerView, int i) {
             if (FeedDetailsFragment.this.co == null || FeedDetailsFragment.this.co.s == null) {
                 return;
@@ -345,7 +340,6 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
             FeedDetailsFragment.this.co.s.onScrollStateChanged(recyclerView, i);
         }
 
-        @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
         public void onScrolled(RecyclerView recyclerView, int i, int i2) {
             if (FeedDetailsFragment.this.co == null || FeedDetailsFragment.this.co.s == null) {
                 return;
@@ -355,18 +349,16 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
     };
     private TextWatcher cB = new TextWatcher() { // from class: com.blued.community.ui.feed.fragment.FeedDetailsFragment.13
         private int b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private int f19744c;
+        private int c;
         private String d;
         private String e;
 
         @Override // android.text.TextWatcher
         public void afterTextChanged(Editable editable) {
             this.b = FeedDetailsFragment.this.bR.getSelectionStart();
-            this.f19744c = FeedDetailsFragment.this.bR.getSelectionEnd();
+            this.c = FeedDetailsFragment.this.bR.getSelectionEnd();
             FeedDetailsFragment.this.bR.removeTextChangedListener(FeedDetailsFragment.this.cB);
-            if (!FeedDetailsFragment.this.f19738cn.a(FeedDetailsFragment.this, this.d, this.e, editable, this.f19744c)) {
+            if (!FeedDetailsFragment.this.f59cn.a(FeedDetailsFragment.this, this.d, this.e, editable, this.c)) {
                 FeedDetailsFragment.this.bR.setSelection(this.b);
             }
             FeedDetailsFragment.this.bR.addTextChangedListener(FeedDetailsFragment.this.cB);
@@ -405,12 +397,12 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
         this.o = (FollowStatusView) this.i.findViewById(R.id.bar_follow);
         this.p = (ImageView) this.i.findViewById(R.id.bar_more);
         this.q = (TextView) this.i.findViewById(R.id.bar_title);
-        this.r = (ConstraintLayout) this.i.findViewById(R.id.title_bar);
+        this.r = this.i.findViewById(R.id.title_bar);
         this.s = (ImageView) this.i.findViewById(R.id.iv_visible);
         this.t = (TextView) this.i.findViewById(R.id.tv_visible);
         this.u = (ImageView) this.i.findViewById(R.id.visible_menu_view);
         this.v = (ImageView) this.i.findViewById(R.id.img_promotion_bubble);
-        this.w = (ConstraintLayout) this.i.findViewById(R.id.feed_visible);
+        this.w = this.i.findViewById(R.id.feed_visible);
         this.x = (ImageView) this.i.findViewById(R.id.feed_dynamic_skin);
         this.y = (ImageView) this.i.findViewById(R.id.header_view);
         this.z = (ImageView) this.i.findViewById(R.id.img_live);
@@ -440,7 +432,7 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
         this.X = (ShapeFrameLayout) this.i.findViewById(R.id.dot_age_height_weight);
         this.Y = (TextView) this.i.findViewById(R.id.tv_age_height_weight);
         this.Z = (LinearLayout) this.i.findViewById(R.id.ll_distance_and_time);
-        this.aa = (ConstraintLayout) this.i.findViewById(R.id.feed_user_info);
+        this.aa = this.i.findViewById(R.id.feed_user_info);
         this.ab = (TextView) this.i.findViewById(R.id.feed_detail_user_ip_location);
         this.ac = this.i.findViewById(R.id.feed_interact_layout);
         this.ad = (TextView) this.i.findViewById(R.id.feed_interact_num_tv);
@@ -457,7 +449,7 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
         this.ao = (ImageView) this.i.findViewById(R.id.iv_score_4);
         this.ap = (ImageView) this.i.findViewById(R.id.iv_score_5);
         this.aq = (TextView) this.i.findViewById(R.id.tv_event_evaluate);
-        this.f19737ar = this.i.findViewById(R.id.layout_feed_event_card);
+        this.ar = this.i.findViewById(R.id.layout_feed_event_card);
         this.as = (ImageView) this.i.findViewById(R.id.iv_event_card_avatar);
         this.at = (TextView) this.i.findViewById(R.id.tv_event_card_name);
         this.au = (ImageView) this.i.findViewById(R.id.iv_event_card_owner);
@@ -465,13 +457,12 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
         this.aw = this.i.findViewById(R.id.layout_sub_owner_event);
         this.ax = this.i.findViewById(R.id.layout_more_event);
         this.ay = (TextView) this.i.findViewById(R.id.tv_more_event);
-        RecyclerView recyclerView = (RecyclerView) this.i.findViewById(R.id.rv_more_event);
-        this.az = recyclerView;
-        recyclerView.setLayoutManager(new LinearLayoutManager(this.cl, 0, false));
+        RecyclerView findViewById = this.i.findViewById(R.id.rv_more_event);
+        this.az = findViewById;
+        findViewById.setLayoutManager(new LinearLayoutManager(this.cl, 0, false));
         EventMoreAdapter eventMoreAdapter = new EventMoreAdapter(getFragmentActive());
         this.aA = eventMoreAdapter;
         eventMoreAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() { // from class: com.blued.community.ui.feed.fragment.FeedDetailsFragment.1
-            @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemChildClickListener
             public void onItemChildClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
                 EventDetailsModel eventDetailsModel = (EventDetailsModel) baseQuickAdapter.getItem(i);
                 FeedDetailsFragment.this.c(eventDetailsModel.id);
@@ -479,16 +470,16 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
             }
         });
         this.az.setAdapter(this.aA);
-        this.aB = (TextViewFixTouchForDynamic) this.i.findViewById(R.id.repost_content_view);
+        this.aB = this.i.findViewById(R.id.repost_content_view);
         this.aC = (RelativeLayout) this.i.findViewById(R.id.repost_layout);
-        this.aD = (TextViewFixTouchForDynamic) this.i.findViewById(R.id.content_view);
+        this.aD = this.i.findViewById(R.id.content_view);
         this.aE = (ImageView) this.i.findViewById(R.id.image_one);
         this.aF = (ShapeTextView) this.i.findViewById(R.id.stv_long_pic_icon);
-        this.aG = (CardView) this.i.findViewById(R.id.cv_image_one);
-        this.aH = (PhotoGridView) this.i.findViewById(R.id.image_two_four);
-        this.aI = (PhotoGridView) this.i.findViewById(R.id.image_other);
+        this.aG = this.i.findViewById(R.id.cv_image_one);
+        this.aH = this.i.findViewById(R.id.image_two_four);
+        this.aI = this.i.findViewById(R.id.image_other);
         this.aJ = (PLVideoPageView) this.i.findViewById(R.id.video_view);
-        this.aK = (CardView) this.i.findViewById(R.id.card_video);
+        this.aK = this.i.findViewById(R.id.card_video);
         this.aL = (ImageView) this.i.findViewById(R.id.img_web_share);
         this.aM = (LinearLayout) this.i.findViewById(R.id.view_share_corner);
         this.aN = (ShapeTextView) this.i.findViewById(R.id.view_circle_corner);
@@ -502,15 +493,15 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
         this.aV = (TextView) this.i.findViewById(R.id.forward_event_location);
         this.aW = (ShapeTextView) this.i.findViewById(R.id.stv_event_state);
         this.aX = (ImageView) this.i.findViewById(R.id.img_event_icon);
-        this.aY = (CardView) this.i.findViewById(R.id.cv_web_share);
-        this.aZ = (FeedVoteGroup) this.i.findViewById(R.id.feed_vote);
+        this.aY = this.i.findViewById(R.id.cv_web_share);
+        this.aZ = this.i.findViewById(R.id.feed_vote);
         this.ba = (ShapeLinearLayout) this.i.findViewById(R.id.ll_content_all);
         this.bb = (LinearLayout) this.i.findViewById(R.id.feed_info);
         this.bc = (ImageView) this.i.findViewById(R.id.location_icon);
         this.bd = (TextView) this.i.findViewById(R.id.location_text);
         this.be = (ShapeLinearLayout) this.i.findViewById(R.id.location_layout);
         this.bf = this.i.findViewById(R.id.feed_location);
-        this.bg = (ConstraintLayout) this.i.findViewById(R.id.feed);
+        this.bg = this.i.findViewById(R.id.feed);
         this.bh = (ScrollView) this.i.findViewById(R.id.sv_header);
         this.bi = (TextView) this.i.findViewById(R.id.zan_text);
         this.bj = (TextView) this.i.findViewById(R.id.zan_num_text);
@@ -527,12 +518,12 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
         this.bu = (ImageView) this.i.findViewById(R.id.iv_no_data);
         this.bv = (TextView) this.i.findViewById(R.id.tv_no_data);
         this.bw = (LinearLayout) this.i.findViewById(R.id.ll_no_data);
-        this.bx = (RecyclerView) this.i.findViewById(R.id.recycler_view);
+        this.bx = this.i.findViewById(R.id.recycler_view);
         this.by = (LinearLayout) this.i.findViewById(R.id.ll_more_comment);
         this.bz = this.i.findViewById(R.id.banner_line);
         this.bA = (FrameLayout) this.i.findViewById(R.id.fl_ad);
         this.bB = this.i.findViewById(R.id.similar_feed_layout);
-        this.bC = (RecyclerView) this.i.findViewById(R.id.similar_feed_rv);
+        this.bC = this.i.findViewById(R.id.similar_feed_rv);
         this.bC.setLayoutManager(new LinearLayoutManager(getContext()));
         FeedListAdapterForRecyclerView feedListAdapterForRecyclerView = new FeedListAdapterForRecyclerView(getContext(), this, this.bC, 14);
         this.bD = feedListAdapterForRecyclerView;
@@ -540,10 +531,10 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
         this.bC.setAdapter(this.bD);
         this.bE = this.i.findViewById(R.id.recommend_feed_layout);
         this.bF = (TextView) this.i.findViewById(R.id.tv_recommend);
-        this.bG = (RecyclerView) this.i.findViewById(R.id.rv_feed);
+        this.bG = this.i.findViewById(R.id.rv_feed);
         this.bH = this.i.findViewById(R.id.view_place);
         this.bI = (ConsecutiveScrollerLayout) this.i.findViewById(R.id.csl_view);
-        this.bJ = (SmartRefreshLayout) this.i.findViewById(R.id.refresh_layout);
+        this.bJ = this.i.findViewById(R.id.refresh_layout);
         this.bK = this.i.findViewById(R.id.keyboard_view);
         this.bL = (ImageView) this.i.findViewById(R.id.feed_comment_input_avatar);
         this.bM = this.i.findViewById(R.id.feed_comment_input_emotion_lo);
@@ -589,10 +580,10 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
     }
 
     private void B() {
-        View a2 = CommunityServiceManager.e().a(getContext());
-        this.cm = a2;
-        if (a2 != null) {
-            a2.setLayoutParams(new ViewGroup.LayoutParams(-1, -2));
+        View a = CommunityServiceManager.e().a(getContext());
+        this.cm = a;
+        if (a != null) {
+            a.setLayoutParams(new ViewGroup.LayoutParams(-1, -2));
             this.bA.addView(this.cm);
         }
     }
@@ -660,12 +651,12 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
-                KeyboardUtils.a(FeedDetailsFragment.this.getActivity());
+                KeyboardUtils.a((Activity) FeedDetailsFragment.this.getActivity());
             }
         });
         final List<EmoticonModel> e = EmotionManager.e();
         if (e.size() > 2) {
-            int identifier = getResources().getIdentifier(e.get(2).original, i.f7952c, this.cl.getPackageName());
+            int identifier = getResources().getIdentifier(e.get(2).original, "drawable", this.cl.getPackageName());
             if (identifier != 0) {
                 this.bP.setImageResource(identifier);
                 this.bP.setVisibility(0);
@@ -680,7 +671,7 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
             this.bP.setVisibility(8);
         }
         if (e.size() > 1) {
-            int identifier2 = getResources().getIdentifier(e.get(1).original, i.f7952c, this.cl.getPackageName());
+            int identifier2 = getResources().getIdentifier(e.get(1).original, "drawable", this.cl.getPackageName());
             if (identifier2 != 0) {
                 this.bO.setImageResource(identifier2);
                 this.bO.setVisibility(0);
@@ -695,7 +686,7 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
             this.bO.setVisibility(8);
         }
         if (e.size() > 0) {
-            int identifier3 = getResources().getIdentifier(e.get(0).original, i.f7952c, this.cl.getPackageName());
+            int identifier3 = getResources().getIdentifier(e.get(0).original, "drawable", this.cl.getPackageName());
             if (identifier3 != 0) {
                 this.bN.setImageResource(identifier3);
                 this.bN.setVisibility(0);
@@ -714,15 +705,15 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
         } else {
             this.bM.setVisibility(8);
         }
-        int c2 = (AppInfo.l - FeedMethods.c(206)) / 5;
-        int c3 = FeedMethods.c(27);
+        int c = (AppInfo.l - FeedMethods.c(206)) / 5;
+        int c2 = FeedMethods.c(27);
         this.bQ.removeAllViews();
         int min = Math.min(6, e.size());
         for (int i = 0; i < min; i++) {
             ImageView imageView = new ImageView(getContext());
-            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(c3, c3);
+            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(c2, c2);
             if (i != min - 1) {
-                layoutParams.rightMargin = c2;
+                layoutParams.rightMargin = c;
             }
             final EmoticonModel emoticonModel = e.get(i);
             imageView.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.feed.fragment.-$$Lambda$FeedDetailsFragment$KYH1qJFUnaDG8eQbKbPnXYmTVdg
@@ -731,13 +722,13 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
                     FeedDetailsFragment.this.a(emoticonModel, view);
                 }
             });
-            int identifier4 = getResources().getIdentifier(emoticonModel.original, i.f7952c, this.cl.getPackageName());
+            int identifier4 = getResources().getIdentifier(emoticonModel.original, "drawable", this.cl.getPackageName());
             if (identifier4 != 0) {
                 imageView.setImageResource(identifier4);
             }
             this.bQ.addView(imageView, layoutParams);
         }
-        if (CommunityManager.f19086a.a().s()) {
+        if (CommunityManager.a.a().s()) {
             this.ae.setImageResource(R.drawable.feed_interact_static_dark);
         } else {
             this.ae.setImageResource(R.drawable.feed_interact_static);
@@ -764,18 +755,16 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
     private void E() {
         this.bJ.setBackgroundColor(BluedSkinUtils.a(this.cl, R.color.syc_c));
         this.bJ.c(true);
-        this.bJ.l(true);
+        this.bJ.b(true);
         this.bu.setImageResource(R.drawable.icon_no_data_comment);
         this.bv.setText(R.string.load_more_loading);
         this.bw.setVisibility(8);
         this.bt.setVisibility(0);
         this.bJ.a(new OnRefreshLoadMoreListener() { // from class: com.blued.community.ui.feed.fragment.FeedDetailsFragment.5
-            @Override // com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
             public void onLoadMore(RefreshLayout refreshLayout) {
                 ((FeedDetailsPresenter) FeedDetailsFragment.this.j()).f();
             }
 
-            @Override // com.scwang.smartrefresh.layout.listener.OnRefreshListener
             public void onRefresh(RefreshLayout refreshLayout) {
                 ((FeedDetailsPresenter) FeedDetailsFragment.this.j()).e();
             }
@@ -895,7 +884,7 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
     }
 
     private void F() {
-        a(this.cj, this.ck, this.bR, this.ci);
+        a(this.cj, this.ck, (EditText) this.bR, this.ci);
         this.bY.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.feed.fragment.FeedDetailsFragment.9
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
@@ -955,7 +944,7 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
         if (((FeedDetailsPresenter) j()).p() != null) {
             EventTrackFeed.a(FeedProtos.Event.FEED_INTERACTIVE, ((FeedDetailsPresenter) j()).p().feed_id, FeedProtos.InteractiveType.COMMENT, FeedProtos.Location.FEED_DETAIL, ((FeedDetailsPresenter) j()).C(), ((FeedDetailsPresenter) j()).p().feed_uid);
         }
-        ((FeedDetailsPresenter) j()).d(this.f19738cn.b(obj));
+        ((FeedDetailsPresenter) j()).d(this.f59cn.b(obj));
         AppInfo.n().removeCallbacks(this.cD);
     }
 
@@ -963,8 +952,8 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
         if (((FeedDetailsPresenter) j()).t()) {
             this.aC.setVisibility(0);
             ShapeHelper.b(this.ba, R.color.syc_x);
-            int a2 = DensityUtils.a(this.cl, 10.0f);
-            this.ba.setPadding(a2, a2, a2, a2);
+            int a = DensityUtils.a(this.cl, 10.0f);
+            this.ba.setPadding(a, a, a, a);
         } else {
             this.aC.setVisibility(8);
             ShapeHelper.b(this.ba, R.color.transparent);
@@ -1013,8 +1002,8 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
 
     private void H(BluedIngSelfFeed bluedIngSelfFeed) {
         ShapeHelper.b(this.ba, R.color.syc_x);
-        int a2 = DensityUtils.a(this.cl, 10.0f);
-        this.ba.setPadding(a2, a2, a2, a2);
+        int a = DensityUtils.a(this.cl, 10.0f);
+        this.ba.setPadding(a, a, a, a);
         this.ba.setVisibility(0);
         if (TextUtils.isEmpty(bluedIngSelfFeed.feed_content)) {
             this.aC.setVisibility(8);
@@ -1022,9 +1011,9 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
             this.aC.setVisibility(0);
             a(this.aC, this.aB, ((FeedDetailsPresenter) j()).r().getFeedContent(), (String) null);
         }
-        CharSequence a3 = StringUtils.a(StringUtils.a(((FeedDetailsPresenter) j()).u().feed_limit_desc, (int) this.aD.getTextSize(), 0), true, new boolean[0]);
+        CharSequence a2 = StringUtils.a(StringUtils.a(((FeedDetailsPresenter) j()).u().feed_limit_desc, (int) this.aD.getTextSize(), 0), true, new boolean[0]);
         this.aD.setMaxLines(5);
-        this.aD.setExpandText(a3);
+        this.aD.setExpandText(a2);
         this.aD.setMovementMethod(LinkMovementClickMethod.a());
         this.aD.setVisibility(0);
     }
@@ -1230,11 +1219,11 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
         this.cs.b = R.drawable.defaultpicture;
         int i2 = i >> 1;
         this.cs.a(i2, i2);
-        int a2 = AppInfo.l - (DensityUtils.a(this.cl, 10.0f) * 2);
-        this.ct = a2;
-        this.cu = (int) (a2 * 1.5d);
-        this.cv = a2;
-        this.cw = (int) (a2 * 0.73d);
+        int a = AppInfo.l - (DensityUtils.a(this.cl, 10.0f) * 2);
+        this.ct = a;
+        this.cu = (int) (a * 1.5d);
+        this.cv = a;
+        this.cw = (int) (a * 0.73d);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1347,7 +1336,7 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
             this.cj.setVisibility(8);
         }
         this.bZ.setVisibility(0);
-        KeyboardUtils.a(getActivity());
+        KeyboardUtils.a((Activity) getActivity());
         this.bR.clearFocus();
         this.bM.setVisibility(0);
         this.bL.setVisibility(0);
@@ -1357,7 +1346,7 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
     public void Z() {
         LogUtils.c("showLikeGuide");
         AppInfo.n().removeCallbacks(this.cD);
-        ImageLoader.c(getFragmentActive(), CommunityManager.f19086a.a().s() ? "feed_detail_like_guide_dark.png" : "feed_detail_like_guide.png").g().g(2).a(this.bW);
+        ImageLoader.c(getFragmentActive(), CommunityManager.a.a().s() ? "feed_detail_like_guide_dark.png" : "feed_detail_like_guide.png").g().g(2).a(this.bW);
         this.bW.setVisibility(0);
         this.bU.setVisibility(8);
         CommunityPreferences.r();
@@ -1443,11 +1432,11 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
         if (TextUtils.isEmpty(str)) {
             textViewFixTouchForDynamic.setText(charSequence);
         } else {
-            textViewFixTouchForDynamic.setTag(FeedConstants.f19821a, str);
+            textViewFixTouchForDynamic.setTag(FeedConstants.a, str);
             ImageFileLoader.a(getFragmentActive()).a(str).a(new ImageFileLoader.OnLoadFileListener() { // from class: com.blued.community.ui.feed.fragment.-$$Lambda$FeedDetailsFragment$gNoVXoW6PpfTerLGGm0NEzKhoo0
                 @Override // com.blued.android.core.image.ImageFileLoader.OnLoadFileListener
                 public final void onUIFinish(File file, Exception exc) {
-                    FeedDetailsFragment.a(TextViewFixTouchForDynamic.this, charSequence, str, file, exc);
+                    FeedDetailsFragment.a(textViewFixTouchForDynamic, charSequence, str, file, exc);
                 }
             }).a();
         }
@@ -1457,10 +1446,10 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
             public boolean onLongClick(View view2) {
                 String charSequence2 = textViewFixTouchForDynamic.getText().toString();
                 if (Build.VERSION.SDK_INT < 11 || Build.VERSION.SDK_INT == 18) {
-                    ((ClipboardManager) FeedDetailsFragment.this.cl.getSystemService(Context.CLIPBOARD_SERVICE)).setText(RegExpUtils.a(charSequence2));
+                    ((ClipboardManager) FeedDetailsFragment.this.cl.getSystemService("clipboard")).setText(RegExpUtils.a(charSequence2));
                 } else {
                     try {
-                        ((android.content.ClipboardManager) FeedDetailsFragment.this.cl.getSystemService(Context.CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("simple text", RegExpUtils.a(charSequence2)));
+                        ((android.content.ClipboardManager) FeedDetailsFragment.this.cl.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("simple text", RegExpUtils.a(charSequence2)));
                     } catch (Exception e) {
                     }
                 }
@@ -1537,7 +1526,7 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
                 public void run() {
                     ((FeedDetailsPresenter) FeedDetailsFragment.this.j()).c(false);
                 }
-            }, m.ag);
+            }, 3000L);
         }
         V();
         if (z && x(bluedIngSelfFeed)) {
@@ -1559,13 +1548,13 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
             textViewFixTouchForDynamic.setText(charSequence);
             return;
         }
-        Bitmap a2 = ImageUtils.a(file, FeedMethods.c(36), FeedMethods.c(16));
+        Bitmap a = ImageUtils.a(file, FeedMethods.c(36), FeedMethods.c(16));
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("%subject_widget% " + ((Object) charSequence));
-        if (a2 == null || !TextUtils.equals(str, (String) textViewFixTouchForDynamic.getTag(FeedConstants.f19821a))) {
+        if (a == null || !TextUtils.equals(str, (String) textViewFixTouchForDynamic.getTag(FeedConstants.a))) {
             textViewFixTouchForDynamic.setText(charSequence);
             return;
         }
-        BitmapDrawable bitmapDrawable = new BitmapDrawable(a2);
+        BitmapDrawable bitmapDrawable = new BitmapDrawable(a);
         bitmapDrawable.setBounds(0, 0, FeedMethods.c(36), FeedMethods.c(16));
         spannableStringBuilder.setSpan(new VerticalCenterImageSpan(bitmapDrawable, 2), 0, 16, 33);
         textViewFixTouchForDynamic.setText(spannableStringBuilder);
@@ -1575,7 +1564,7 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
         EventLogData eventLogData = new EventLogData();
         eventLogData.setEventId(str);
         eventLogData.setSourcePage(sourcePage);
-        EventDetailsFragment.f19534a.a(this.cl, str, eventLogData);
+        EventDetailsFragment.a.a(this.cl, str, eventLogData);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1678,7 +1667,7 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
             this.bp.setTextColor(BluedSkinUtils.a(this.cl, R.color.syc_j));
             this.bx.setAdapter(this.cq);
             this.cq.notifyDataSetChanged();
-            if (this.cq.getData().size() <= 0 || !((FeedDetailsPresenter) j()).A().f19879a) {
+            if (this.cq.getData().size() <= 0 || !((FeedDetailsPresenter) j()).A().a) {
                 p();
             } else {
                 o();
@@ -1756,7 +1745,7 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
             this.bp.setTextColor(BluedSkinUtils.a(this.cl, R.color.syc_h));
             this.bx.setAdapter(this.cr);
             this.cr.notifyDataSetChanged();
-            if (this.cr.getData().size() <= 0 || !((FeedDetailsPresenter) j()).A().f19880c) {
+            if (this.cr.getData().size() <= 0 || !((FeedDetailsPresenter) j()).A().c) {
                 p();
             } else {
                 o();
@@ -1826,7 +1815,7 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
                     this.bv.setText(R.string.no_content_for_now);
                 }
                 this.bw.setVisibility(0);
-                if (!((FeedDetailsPresenter) j()).A().f19879a) {
+                if (!((FeedDetailsPresenter) j()).A().a) {
                     this.bt.setVisibility(8);
                     return;
                 }
@@ -1867,7 +1856,7 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
                     this.bv.setText(R.string.no_content_for_now);
                 }
                 this.bw.setVisibility(0);
-                if (!((FeedDetailsPresenter) j()).A().f19880c) {
+                if (!((FeedDetailsPresenter) j()).A().c) {
                     this.bt.setVisibility(8);
                     return;
                 }
@@ -1880,7 +1869,7 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void d(View view) {
         EventTrackFeed.a(FeedProtos.Event.HOT_FEED_ICON_CLICK, ((FeedDetailsPresenter) j()).p().feed_id, FeedProtos.FeedPage.HOT_FEED_DETAIL);
-        HotFeedFragment.f20141a.a(this.cl);
+        HotFeedFragment.a.a(this.cl);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -2059,7 +2048,7 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void g(BluedActionSheet bluedActionSheet) {
-        FeedMethods.b((FragmentActivity) this.cl, ((FeedDetailsPresenter) j()).p(), getFragmentActive());
+        FeedMethods.b(this.cl, ((FeedDetailsPresenter) j()).p(), getFragmentActive());
     }
 
     private void g(final BluedIngSelfFeed bluedIngSelfFeed) {
@@ -2099,7 +2088,7 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
 
     private void h(BluedIngSelfFeed bluedIngSelfFeed) {
         this.aI.setVisibility(0);
-        this.aI.setAdapter((ListAdapter) new FeedDetailsPhotoAdapter(this, getFragmentActive(), bluedIngSelfFeed, this.cs, this.bY, ((FeedDetailsPresenter) j()).z()));
+        this.aI.setAdapter(new FeedDetailsPhotoAdapter(this, getFragmentActive(), bluedIngSelfFeed, this.cs, this.bY, ((FeedDetailsPresenter) j()).z()));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -2113,12 +2102,12 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void i(BluedActionSheet bluedActionSheet) {
-        FeedMethods.a((FragmentActivity) this.cl, ((FeedDetailsPresenter) j()).p(), (IRequestHost) getFragmentActive());
+        FeedMethods.a(this.cl, ((FeedDetailsPresenter) j()).p(), getFragmentActive());
     }
 
     private void i(BluedIngSelfFeed bluedIngSelfFeed) {
         this.aH.setVisibility(0);
-        this.aH.setAdapter((ListAdapter) new FeedDetailsPhotoAdapter(this, getFragmentActive(), bluedIngSelfFeed, this.cs, this.bY, ((FeedDetailsPresenter) j()).z()));
+        this.aH.setAdapter(new FeedDetailsPhotoAdapter(this, getFragmentActive(), bluedIngSelfFeed, this.cs, this.bY, ((FeedDetailsPresenter) j()).z()));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -2145,25 +2134,25 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
             i = StringUtils.a(bluedIngSelfFeed.feed_pics_width[0], 0);
             i2 = StringUtils.a(bluedIngSelfFeed.feed_pics_height[0], 0);
         }
-        int[] a2 = com.blued.android.module.common.utils.ImageUtils.a(i, i2, this.ct, this.cu, this.cv, this.cw);
+        int[] a = com.blued.android.module.common.utils.ImageUtils.a(i, i2, this.ct, this.cu, this.cv, this.cw);
         ViewGroup.LayoutParams layoutParams = this.aE.getLayoutParams();
-        layoutParams.width = a2[0];
+        layoutParams.width = a[0];
         boolean z = true;
-        layoutParams.height = a2[1];
+        layoutParams.height = a[1];
         this.aE.setLayoutParams(layoutParams);
         String str = bluedIngSelfFeed.feed_pics[0];
         int i3 = layoutParams.width;
         if (i != i2) {
             z = false;
         }
-        String a3 = AvatarUtils.a(str, i3, z);
+        String a2 = AvatarUtils.a(str, i3, z);
         if (i2 > i * 3) {
             this.aF.setVisibility(0);
-            a3 = bluedIngSelfFeed.feed_pics[0] + bluedIngSelfFeed.getImageMogr(false);
+            a2 = bluedIngSelfFeed.feed_pics[0] + bluedIngSelfFeed.getImageMogr(false);
         } else {
             this.aF.setVisibility(8);
         }
-        ImageLoader.a(getFragmentActive(), a3).b(R.drawable.defaultpicture).b(R.drawable.defaultpicture).a(this.aE);
+        ImageLoader.a(getFragmentActive(), a2).b(R.drawable.defaultpicture).b(R.drawable.defaultpicture).a(this.aE);
         this.bY.setTag(bluedIngSelfFeed.feed_pics[0]);
         this.aE.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.feed.fragment.FeedDetailsFragment.38
             @Override // android.view.View.OnClickListener
@@ -2200,29 +2189,29 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
                 bluedIngSelfFeed.feed_videos_height = new String[]{"480"};
             }
             int i = 480;
-            int a2 = StringUtils.a(bluedIngSelfFeed.feed_videos_width[0], 480);
-            int a3 = StringUtils.a(bluedIngSelfFeed.feed_videos_height[0], 480);
-            if (a2 == 0 || a3 == 0) {
-                a3 = 480;
+            int a = StringUtils.a(bluedIngSelfFeed.feed_videos_width[0], 480);
+            int a2 = StringUtils.a(bluedIngSelfFeed.feed_videos_height[0], 480);
+            if (a == 0 || a2 == 0) {
+                a2 = 480;
             } else {
-                i = a2;
+                i = a;
             }
-            int a4 = AppInfo.l - AppMethods.a(18);
-            int i2 = (int) (a4 / (i / a3));
-            FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(a4, i2);
+            int a3 = AppInfo.l - AppMethods.a(18);
+            int i2 = (int) (a3 / (i / a2));
+            FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(a3, i2);
             layoutParams.gravity = 1;
             this.aJ.setLayoutParams(layoutParams);
             final String[] strArr = bluedIngSelfFeed.feed_videos;
             final String str = bluedIngSelfFeed.feed_video_size;
             VideoPlayConfig videoPlayConfig = new VideoPlayConfig();
-            videoPlayConfig.f15652a = bluedIngSelfFeed.feed_videos[0];
+            videoPlayConfig.a = bluedIngSelfFeed.feed_videos[0];
             videoPlayConfig.b = bluedIngSelfFeed.feed_videos[1];
-            videoPlayConfig.e = a4;
+            videoPlayConfig.e = a3;
             videoPlayConfig.f = i2;
             videoPlayConfig.a(i);
-            videoPlayConfig.b(a3);
+            videoPlayConfig.b(a2);
             try {
-                videoPlayConfig.f15653c = Integer.parseInt(bluedIngSelfFeed.feed_video_size);
+                videoPlayConfig.c = Integer.parseInt(bluedIngSelfFeed.feed_video_size);
             } catch (Exception e) {
                 Logger.b(FeedDetailsFragment.class.getSimpleName(), "setContentView() Integer.parseInt(feed.feed_video_size) Exception");
             }
@@ -2282,7 +2271,6 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
         this.aZ.a(getFragmentActive(), AvatarUtils.a(str), AvatarUtils.a(contentData.feed_pics[1]));
         this.aZ.a(contentData.ivoted, contentData.a_vote_count, contentData.vote_count, bluedIngSelfFeed.isRepost());
         this.aZ.setOnViewClickListener(new FeedVoteGroup.OnViewClickListener() { // from class: com.blued.community.ui.feed.fragment.FeedDetailsFragment.41
-            @Override // com.blued.community.widget.vote.picture.FeedVoteGroup.OnViewClickListener
             public void a(boolean z) {
                 contentData.is_vote = 1;
                 contentData.vote_count++;
@@ -2298,7 +2286,6 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
                 EventTrackVote.a(VoteProtos.Event.VOTE_FEED_CHOOSE_PHOTO_CLICK, contentData, z ? VoteProtos.PhotoOption.PHOTO_A : VoteProtos.PhotoOption.PHOTO_B, 2);
             }
 
-            @Override // com.blued.community.widget.vote.picture.FeedVoteGroup.OnViewClickListener
             public void b(boolean z) {
                 EventTrackVote.a(VoteProtos.Event.VOTE_FEED_ENLARGE_PHOTO_CLICK, contentData.feed_uid, contentData.feed_id);
                 ICommunityShowPageService b = CommunityServiceManager.b();
@@ -2320,8 +2307,8 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
         }
         if (bluedIngSelfFeed != null && bluedIngSelfFeed.is_url == 1 && bluedIngSelfFeed.feed_extras != null) {
             if (bluedIngSelfFeed.feed_extras.thumb != null && bluedIngSelfFeed.feed_extras.thumb.size() > 0) {
-                ImageLoader.a(getFragmentActive(), bluedIngSelfFeed.feed_extras.thumb.get(0).replace(";", "")).b(R.drawable.defaultpicture).a(this.aL);
-                this.bY.setTag(bluedIngSelfFeed.feed_extras.thumb.get(0).replace(";", ""));
+                ImageLoader.a(getFragmentActive(), bluedIngSelfFeed.feed_extras.thumb.get(0).replace(i.b, "")).b(R.drawable.defaultpicture).a(this.aL);
+                this.bY.setTag(bluedIngSelfFeed.feed_extras.thumb.get(0).replace(i.b, ""));
             }
             if (!TextUtils.isEmpty(bluedIngSelfFeed.feed_extras.title)) {
                 this.aO.setText(bluedIngSelfFeed.feed_extras.title);
@@ -2342,8 +2329,8 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
                 }
             });
             if (bluedIngSelfFeed.repost.feed_extras.thumb != null && bluedIngSelfFeed.repost.feed_extras.thumb.size() > 0) {
-                ImageLoader.a(getFragmentActive(), bluedIngSelfFeed.repost.feed_extras.thumb.get(0).replace(";", "")).b(R.drawable.defaultpicture).a(this.aL);
-                this.bY.setTag(bluedIngSelfFeed.repost.feed_extras.thumb.get(0).replace(";", ""));
+                ImageLoader.a(getFragmentActive(), bluedIngSelfFeed.repost.feed_extras.thumb.get(0).replace(i.b, "")).b(R.drawable.defaultpicture).a(this.aL);
+                this.bY.setTag(bluedIngSelfFeed.repost.feed_extras.thumb.get(0).replace(i.b, ""));
             }
             if (!TextUtils.isEmpty(bluedIngSelfFeed.repost.feed_extras.title)) {
                 this.aO.setText(bluedIngSelfFeed.repost.feed_extras.title);
@@ -2439,11 +2426,11 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
             this.be.setVisibility(8);
             z = false;
         }
-        if (!CommunityManager.f19086a.a().c(bluedIngSelfFeed.feed_uid) || bluedIngSelfFeed.is_bubble_ticktock == 1 || CommonStringUtils.a(bluedIngSelfFeed.tt_click_sum) <= 0) {
+        if (!CommunityManager.a.a().c(bluedIngSelfFeed.feed_uid) || bluedIngSelfFeed.is_bubble_ticktock == 1 || CommonStringUtils.a(bluedIngSelfFeed.tt_click_sum) <= 0) {
             this.af.setVisibility(8);
         } else {
             this.ag.setText(String.format(this.cl.getString(R.string.feed_mine_visit_num), DistanceUtils.a(this.cl, bluedIngSelfFeed.tt_click_sum)));
-            if (CommunityManager.f19086a.a().s()) {
+            if (CommunityManager.a.a().s()) {
                 this.ah.setImageResource(R.drawable.feed_mine_visit_icon_dark);
             } else {
                 this.ah.setImageResource(R.drawable.feed_mine_visit_icon);
@@ -2493,16 +2480,16 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
     }
 
     private void s(BluedIngSelfFeed bluedIngSelfFeed) {
-        LogData a2 = FeedMethods.a(bluedIngSelfFeed, 0);
-        a2.isFromFeedDetail = true;
-        CommRouteUtil.a(this, this.ae, bluedIngSelfFeed, a2);
+        LogData a = FeedMethods.a(bluedIngSelfFeed, 0);
+        a.isFromFeedDetail = true;
+        CommRouteUtil.a(this, this.ae, bluedIngSelfFeed, a);
         EventTrackFeed.b(FeedProtos.Event.MORE_EMOJI_PANEL_SHOW, bluedIngSelfFeed, FeedProtos.SourcePage.FEED_DETAIL_PAGE);
     }
 
     private void t(final BluedIngSelfFeed bluedIngSelfFeed) {
         if (bluedIngSelfFeed.activity_data == null) {
             this.ak.setVisibility(8);
-            this.f19737ar.setVisibility(8);
+            this.ar.setVisibility(8);
             return;
         }
         if (bluedIngSelfFeed.activity_data.activity_score > 0) {
@@ -2533,8 +2520,8 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
             textView.setText(this.cl.getString(R.string.feed_post_event_evaluate) + bluedIngSelfFeed.activity_data.activity_evaluate);
         }
         final FeedEventModel feedEventModel = bluedIngSelfFeed.activity_data;
-        this.f19737ar.setVisibility(0);
-        this.f19737ar.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.feed.fragment.-$$Lambda$FeedDetailsFragment$LrTBPT3wu5vaTvgf1qthxtP2Egc
+        this.ar.setVisibility(0);
+        this.ar.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.feed.fragment.-$$Lambda$FeedDetailsFragment$LrTBPT3wu5vaTvgf1qthxtP2Egc
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 FeedDetailsFragment.this.b(feedEventModel, view);
@@ -2583,9 +2570,9 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
                     if (str.endsWith("@")) {
                         bluedTopic.topicType = 1;
                         bluedTopic.super_did = str.split("@")[0];
-                    } else if (str.contains("&")) {
+                    } else if (str.contains(a.b)) {
                         bluedTopic.is_anonym = 1;
-                        bluedTopic.super_did = str.split("&")[0];
+                        bluedTopic.super_did = str.split(a.b)[0];
                     } else {
                         bluedTopic.is_anonym = 0;
                         bluedTopic.super_did = str;
@@ -2594,11 +2581,9 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
                     i = i2 + 1;
                 }
                 ViewUtils.a(this.cl, arrayList, this.ai, true, new ViewUtils.ITopicListener() { // from class: com.blued.community.ui.feed.fragment.FeedDetailsFragment.46
-                    @Override // com.blued.community.utils.ViewUtils.ITopicListener
                     public void a(View view) {
                     }
 
-                    @Override // com.blued.community.utils.ViewUtils.ITopicListener
                     public void a(BluedTopic bluedTopic2) {
                         EventTrackFeed.a(FeedProtos.Event.FEED_SUPER_TOPIC_ENTER_CLICK, bluedIngSelfFeed.feed_id, bluedIngSelfFeed.super_did, FeedProtos.FeedTopicPage.FEED_TOPIC_FEED_DETAIL);
                         if (bluedIngSelfFeed.super_topics_status == 0 && bluedTopic2.topicType != 1) {
@@ -2674,7 +2659,7 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
             this.bU.setVisibility(0);
             this.bW.setVisibility(8);
             if (z) {
-                this.bV.setTag(i.f);
+                this.bV.setTag("anim");
                 ImageLoader.c(getFragmentActive(), FeedMethods.e()).f().a(new ImageLoader.OnAnimationStateListener() { // from class: com.blued.community.ui.feed.fragment.FeedDetailsFragment.50
                     @Override // com.blued.android.core.image.ImageLoader.OnAnimationStateListener
                     public void a() {
@@ -2697,7 +2682,7 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
     }
 
     private boolean x(BluedIngSelfFeed bluedIngSelfFeed) {
-        boolean z = bluedIngSelfFeed != null && !((FeedDetailsPresenter) j()).h && !CommunityManager.f19086a.a().c(bluedIngSelfFeed.uid) && bluedIngSelfFeed.iliked == 0 && TimeAndDateUtils.a() >= CommunityPreferences.q() && CommunityPreferences.s() < 4;
+        boolean z = bluedIngSelfFeed != null && !((FeedDetailsPresenter) j()).h && !CommunityManager.a.a().c(bluedIngSelfFeed.uid) && bluedIngSelfFeed.iliked == 0 && TimeAndDateUtils.a() >= CommunityPreferences.q() && CommunityPreferences.s() < 4;
         if (this.cx) {
             ((FeedDetailsPresenter) j()).m = z;
         }
@@ -2787,7 +2772,7 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
         UserInfoHelper.a(this.cl, this.E, userBasicModel);
         UserInfoHelper.a(this.cl, this.n, userBasicModel);
         UserInfoHelper.a(this.G, userBasicModel, getFragmentActive());
-        final String a2 = FeedMethods.a(((FeedDetailsPresenter) j()).w(), bluedIngSelfFeed.is_vote);
+        final String a = FeedMethods.a(((FeedDetailsPresenter) j()).w(), bluedIngSelfFeed.is_vote);
         View.OnClickListener onClickListener = new View.OnClickListener() { // from class: com.blued.community.ui.feed.fragment.FeedDetailsFragment.51
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
@@ -2801,16 +2786,16 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
                 userBasicModel2.avatar = bluedIngSelfFeed.user_avatar;
                 userBasicModel2.is_show_vip_page = bluedIngSelfFeed.is_show_vip_page;
                 if (bluedIngSelfFeed.live > 0) {
-                    CommunityServiceManager.b().a(FeedDetailsFragment.this.cl, userBasicModel2, bluedIngSelfFeed.live, a2);
+                    CommunityServiceManager.b().a(FeedDetailsFragment.this.cl, userBasicModel2, bluedIngSelfFeed.live, a);
                     return;
                 }
                 EncryptTool.b(bluedIngSelfFeed.feed_id);
                 MessageProtos.StrangerSource strangerSource = bluedIngSelfFeed.in_promotion == 1 ? MessageProtos.StrangerSource.APPRECIATE_SUPER_EXPOSURE : MessageProtos.StrangerSource.FEED_DETAIL;
-                LogData a3 = FeedMethods.a(bluedIngSelfFeed, ((FeedDetailsPresenter) FeedDetailsFragment.this.j()).w());
-                a3.listMode = ((FeedDetailsPresenter) FeedDetailsFragment.this.j()).q().mode;
-                a3.strong_insert_data = ((FeedDetailsPresenter) FeedDetailsFragment.this.j()).q().strong_insert_data;
+                LogData a2 = FeedMethods.a(bluedIngSelfFeed, ((FeedDetailsPresenter) FeedDetailsFragment.this.j()).w());
+                a2.listMode = ((FeedDetailsPresenter) FeedDetailsFragment.this.j()).q().mode;
+                a2.strong_insert_data = ((FeedDetailsPresenter) FeedDetailsFragment.this.j()).q().strong_insert_data;
                 int id = view.getId();
-                CommunityServiceManager.b().a(FeedDetailsFragment.this.cl, userBasicModel2, a2, false, (View) ((id == R.id.header_view || id == R.id.name_view) ? FeedDetailsFragment.this.y : (id == R.id.bar_header || id == R.id.bar_name) ? FeedDetailsFragment.this.m : null), a3, strangerSource);
+                CommunityServiceManager.b().a(FeedDetailsFragment.this.cl, userBasicModel2, a, false, (View) ((id == R.id.header_view || id == R.id.name_view) ? FeedDetailsFragment.this.y : (id == R.id.bar_header || id == R.id.bar_name) ? FeedDetailsFragment.this.m : null), a2, strangerSource);
                 if (bluedIngSelfFeed.click_url == null || bluedIngSelfFeed.click_url.length <= 0) {
                     return;
                 }
@@ -2884,7 +2869,7 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
         super.a(bundle);
         Context context = getContext();
         this.cl = context;
-        this.f19738cn = new AtChooseUserHelper(context);
+        this.f59cn = new AtChooseUserHelper(context);
         A();
         P();
         N();
@@ -2915,9 +2900,9 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
         }
         View inflate = View.inflate(getContext(), R.layout.pop_super_exposure_guide, null);
         ((TextView) inflate.findViewById(R.id.tv_super_exposure_tips)).setText(bluedIngSelfFeed.recommendation);
-        BluedPopupWindow a2 = BluedPopupWindow.Builder.a((Activity) getContext(), inflate).a(true).a();
-        this.cC = a2;
-        a2.setOnDismissListener(new PopupWindow.OnDismissListener() { // from class: com.blued.community.ui.feed.fragment.FeedDetailsFragment.47
+        BluedPopupWindow a = BluedPopupWindow.Builder.a((Activity) getContext(), inflate).a(true).a();
+        this.cC = a;
+        a.setOnDismissListener(new PopupWindow.OnDismissListener() { // from class: com.blued.community.ui.feed.fragment.FeedDetailsFragment.47
             @Override // android.widget.PopupWindow.OnDismissListener
             public void onDismiss() {
                 FeedDetailsFragment.this.cC = null;
@@ -3051,7 +3036,7 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
                         bluedIngSelfFeed.getItemType();
                         FeedDetailsFragment feedDetailsFragment = FeedDetailsFragment.this;
                         feedDetailsFragment.a(bluedIngSelfFeed, feedDetailsFragment.cx);
-                        if (FeedDetailsFragment.this.cx && ((FeedDetailsPresenter) FeedDetailsFragment.this.j()).h && !CommunityManager.f19086a.a().c(bluedIngSelfFeed.uid)) {
+                        if (FeedDetailsFragment.this.cx && ((FeedDetailsPresenter) FeedDetailsFragment.this.j()).h && !CommunityManager.a.a().c(bluedIngSelfFeed.uid)) {
                             FeedDetailsFragment.this.cx = false;
                             if (((FeedDetailsPresenter) FeedDetailsFragment.this.j()).i) {
                                 FeedDetailsFragment.this.S();
@@ -3213,7 +3198,7 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
             z2 = false;
         }
         if (!z2 || z2) {
-            this.bJ.j();
+            this.bJ.g();
             this.bJ.h();
         }
         if (str.equals("_load_type_refresh_")) {
@@ -3251,10 +3236,10 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
     @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void o() {
         super.o();
-        this.bJ.l(true);
+        this.bJ.b(true);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public void onActivityCreated(Bundle bundle) {
         super.onActivityCreated(bundle);
         if (((FeedDetailsPresenter) j()).y() == 18) {
@@ -3267,13 +3252,12 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
         }
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         ShapeRelativeLayout shapeRelativeLayout;
         if (i2 == -1) {
             if (i != 100) {
                 if (i == 9090) {
-                    this.f19738cn.a(this.bR, intent, this.cB);
+                    this.f59cn.a(this.bR, intent, this.cB);
                     a(new Runnable() { // from class: com.blued.community.ui.feed.fragment.FeedDetailsFragment.55
                         @Override // java.lang.Runnable
                         public void run() {
@@ -3312,13 +3296,13 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment
     public void onDestroy() {
         super.onDestroy();
         AppInfo.n().removeCallbacks(this.cD);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onPause() {
         PLVideoPageView pLVideoPageView;
         super.onPause();
@@ -3329,7 +3313,7 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
         this.cp.d();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onResume() {
         PLVideoPageView pLVideoPageView;
         super.onResume();
@@ -3342,7 +3326,7 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
     @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void p() {
         super.p();
-        this.bJ.l(false);
+        this.bJ.b(false);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -3355,7 +3339,7 @@ public class FeedDetailsFragment extends MvpKeyBoardFragment<FeedDetailsPresente
     }
 
     public void w() {
-        if (CommunityManager.f19086a.a().c(((FeedDetailsPresenter) j()).p().feed_uid)) {
+        if (CommunityManager.a.a().c(((FeedDetailsPresenter) j()).p().feed_uid)) {
             this.bR.setHint("");
         } else if (((FeedDetailsPresenter) j()).i) {
             this.bR.setHint(FeedMethods.a(this.cl));

@@ -1,6 +1,5 @@
 package com.tencent.cos.xml.model.tag;
 
-import com.alipay.sdk.util.i;
 import java.util.List;
 
 /* loaded from: source-8457232-dex2jar.jar:com/tencent/cos/xml/model/tag/ListMultipartUploads.class */
@@ -23,7 +22,7 @@ public class ListMultipartUploads {
         public String prefix;
 
         public String toString() {
-            return "{CommonPrefixes:\nPrefix:" + this.prefix + "\n" + i.d;
+            return "{CommonPrefixes:\nPrefix:" + this.prefix + "\n}";
         }
     }
 
@@ -34,7 +33,7 @@ public class ListMultipartUploads {
         public String uin;
 
         public String toString() {
-            return "{Initiator:\nUin:" + this.uin + "\nId:" + this.id + "\nDisplayName:" + this.displayName + "\n" + i.d;
+            return "{Initiator:\nUin:" + this.uin + "\nId:" + this.id + "\nDisplayName:" + this.displayName + "\n}";
         }
     }
 
@@ -45,7 +44,7 @@ public class ListMultipartUploads {
         public String uid;
 
         public String toString() {
-            return "{Owner:\nUid:" + this.uid + "\nId:" + this.id + "\nDisplayName:" + this.displayName + "\n" + i.d;
+            return "{Owner:\nUid:" + this.uid + "\nId:" + this.id + "\nDisplayName:" + this.displayName + "\n}";
         }
     }
 
@@ -82,7 +81,7 @@ public class ListMultipartUploads {
             sb.append("Initiated:");
             sb.append(this.initiated);
             sb.append("\n");
-            sb.append(i.d);
+            sb.append("}");
             return sb.toString();
         }
     }
@@ -137,7 +136,7 @@ public class ListMultipartUploads {
                 }
             }
         }
-        sb.append(i.d);
+        sb.append("}");
         return sb.toString();
     }
 }

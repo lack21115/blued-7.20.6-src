@@ -6,9 +6,7 @@ import libcore.io.IoUtils;
 public class PipedInputStream extends InputStream {
     protected static final int PIPE_SIZE = 1024;
     protected byte[] buffer;
-
-    /* renamed from: in  reason: collision with root package name */
-    protected int f42257in;
+    protected int in;
     private boolean isClosed;
     boolean isConnected;
     private Thread lastReader;
@@ -16,11 +14,11 @@ public class PipedInputStream extends InputStream {
     protected int out;
 
     public PipedInputStream() {
-        this.f42257in = -1;
+        this.in = -1;
     }
 
     public PipedInputStream(int i) {
-        this.f42257in = -1;
+        this.in = -1;
         if (i <= 0) {
             throw new IllegalArgumentException("pipe size " + i + " too small");
         }
@@ -28,7 +26,7 @@ public class PipedInputStream extends InputStream {
     }
 
     public PipedInputStream(PipedOutputStream pipedOutputStream) throws IOException {
-        this.f42257in = -1;
+        this.in = -1;
         connect(pipedOutputStream);
     }
 
@@ -41,7 +39,7 @@ public class PipedInputStream extends InputStream {
     public int available() throws IOException {
         int length;
         synchronized (this) {
-            length = (this.buffer == null || this.f42257in == -1) ? 0 : this.f42257in <= this.out ? (this.buffer.length - this.out) + this.f42257in : this.f42257in - this.out;
+            length = (this.buffer == null || this.in == -1) ? 0 : this.in <= this.out ? (this.buffer.length - this.out) + this.in : this.in - this.out;
         }
         return length;
     }
@@ -118,7 +116,7 @@ public class PipedInputStream extends InputStream {
                 throw new IOException("Pipe is closed");
             }
             this.lastWriter = Thread.currentThread();
-            while (this.buffer != null && this.out == this.f42257in) {
+            while (this.buffer != null && this.out == this.in) {
                 try {
                     if (this.lastReader != null && !this.lastReader.isAlive()) {
                         throw new IOException("Pipe broken");
@@ -132,18 +130,18 @@ public class PipedInputStream extends InputStream {
             if (this.buffer == null) {
                 throw new IOException("Pipe is closed");
             }
-            if (this.f42257in == -1) {
-                this.f42257in = 0;
+            if (this.in == -1) {
+                this.in = 0;
             }
             if (this.lastReader != null && !this.lastReader.isAlive()) {
                 throw new IOException("Pipe broken");
             }
             byte[] bArr = this.buffer;
-            int i2 = this.f42257in;
-            this.f42257in = i2 + 1;
+            int i2 = this.in;
+            this.in = i2 + 1;
             bArr[i2] = (byte) i;
-            if (this.f42257in == this.buffer.length) {
-                this.f42257in = 0;
+            if (this.in == this.buffer.length) {
+                this.in = 0;
             }
             notifyAll();
         }

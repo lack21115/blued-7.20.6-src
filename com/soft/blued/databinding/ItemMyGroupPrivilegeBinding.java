@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemMyGroupPrivilegeBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ConstraintLayout f29259a;
+    private final ConstraintLayout f15569a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f29259a;
+        return this.f15569a;
     }
 }

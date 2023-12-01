@@ -5,15 +5,13 @@ import kotlin.Metadata;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/ranges/ClosedFloatRange.class */
 final class ClosedFloatRange implements ClosedFloatingPointRange<Float> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final float f42574a;
+    private final float a;
     private final float b;
 
     @Override // kotlin.ranges.ClosedRange
     /* renamed from: a */
     public Float getStart() {
-        return Float.valueOf(this.f42574a);
+        return Float.valueOf(this.a);
     }
 
     @Override // kotlin.ranges.ClosedRange
@@ -23,7 +21,7 @@ final class ClosedFloatRange implements ClosedFloatingPointRange<Float> {
     }
 
     public boolean c() {
-        return this.f42574a > this.b;
+        return this.a > this.b;
     }
 
     public boolean equals(Object obj) {
@@ -31,7 +29,7 @@ final class ClosedFloatRange implements ClosedFloatingPointRange<Float> {
         if (obj instanceof ClosedFloatRange) {
             if (!c() || !((ClosedFloatRange) obj).c()) {
                 ClosedFloatRange closedFloatRange = (ClosedFloatRange) obj;
-                if (this.f42574a == closedFloatRange.f42574a) {
+                if (this.a == closedFloatRange.a) {
                     if (this.b == closedFloatRange.b) {
                         return true;
                     }
@@ -47,10 +45,10 @@ final class ClosedFloatRange implements ClosedFloatingPointRange<Float> {
         if (c()) {
             return -1;
         }
-        return (Float.valueOf(this.f42574a).hashCode() * 31) + Float.valueOf(this.b).hashCode();
+        return (Float.valueOf(this.a).hashCode() * 31) + Float.valueOf(this.b).hashCode();
     }
 
     public String toString() {
-        return this.f42574a + ".." + this.b;
+        return this.a + ".." + this.b;
     }
 }

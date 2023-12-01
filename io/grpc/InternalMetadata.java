@@ -1,12 +1,13 @@
 package io.grpc;
 
+import com.anythink.expressad.exoplayer.b;
 import com.google.common.io.BaseEncoding;
 import io.grpc.Metadata;
 import java.nio.charset.Charset;
 
 /* loaded from: source-8829756-dex2jar.jar:io/grpc/InternalMetadata.class */
 public final class InternalMetadata {
-    public static final Charset US_ASCII = Charset.forName("US-ASCII");
+    public static final Charset US_ASCII = Charset.forName(b.i);
     public static final BaseEncoding BASE64_ENCODING_OMIT_PADDING = Metadata.BASE64_ENCODING_OMIT_PADDING;
 
     /* loaded from: source-8829756-dex2jar.jar:io/grpc/InternalMetadata$TrustedAsciiMarshaller.class */

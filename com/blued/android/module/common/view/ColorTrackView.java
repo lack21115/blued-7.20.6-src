@@ -13,13 +13,9 @@ import com.blued.android.module.common.R;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/view/ColorTrackView.class */
 public class ColorTrackView extends View {
-
-    /* renamed from: a  reason: collision with root package name */
-    private int f10965a;
+    private int a;
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f10966c;
+    private int c;
     private String d;
     private Paint e;
     private int f;
@@ -41,10 +37,10 @@ public class ColorTrackView extends View {
 
     public ColorTrackView(Context context) {
         super(context, null);
-        this.f10966c = 0;
+        this.c = 0;
         this.d = "张鸿洋";
         this.f = a(15.0f);
-        this.g = -16777216;
+        this.g = View.MEASURED_STATE_MASK;
         this.h = -65536;
         this.i = new Rect();
         this.m = false;
@@ -53,10 +49,10 @@ public class ColorTrackView extends View {
 
     public ColorTrackView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f10966c = 0;
+        this.c = 0;
         this.d = "张鸿洋";
         this.f = a(15.0f);
-        this.g = -16777216;
+        this.g = View.MEASURED_STATE_MASK;
         this.h = -65536;
         this.i = new Rect();
         this.m = false;
@@ -88,7 +84,7 @@ public class ColorTrackView extends View {
 
     private void a(Canvas canvas, int i) {
         int i2 = this.h;
-        int i3 = this.f10965a;
+        int i3 = this.a;
         a(canvas, i2, i3, (int) (i3 + (this.l * this.j)));
     }
 
@@ -100,7 +96,7 @@ public class ColorTrackView extends View {
         }
         canvas.save();
         canvas.clipRect(i2, 0, i3, getMeasuredHeight());
-        canvas.drawText(this.d, this.f10965a, (getMeasuredHeight() / 2) - ((this.e.descent() + this.e.ascent()) / 2.0f), this.e);
+        canvas.drawText(this.d, this.a, (getMeasuredHeight() / 2) - ((this.e.descent() + this.e.ascent()) / 2.0f), this.e);
         canvas.restore();
     }
 
@@ -127,7 +123,7 @@ public class ColorTrackView extends View {
 
     private void b(Canvas canvas, int i) {
         int i2 = this.g;
-        int i3 = this.f10965a;
+        int i3 = this.a;
         float f = i3;
         float f2 = this.l;
         int i4 = this.j;
@@ -142,13 +138,13 @@ public class ColorTrackView extends View {
         }
         canvas.save();
         canvas.clipRect(0, i2, getMeasuredWidth(), i3);
-        canvas.drawText(this.d, this.f10965a, (getMeasuredHeight() / 2) - ((this.e.descent() + this.e.ascent()) / 2.0f), this.e);
+        canvas.drawText(this.d, this.a, (getMeasuredHeight() / 2) - ((this.e.descent() + this.e.ascent()) / 2.0f), this.e);
         canvas.restore();
     }
 
     private void c(Canvas canvas, int i) {
         int i2 = this.h;
-        int i3 = this.f10965a;
+        int i3 = this.a;
         float f = i3;
         float f2 = this.l;
         int i4 = this.j;
@@ -157,7 +153,7 @@ public class ColorTrackView extends View {
 
     private void d(Canvas canvas, int i) {
         int i2 = this.g;
-        int i3 = this.f10965a;
+        int i3 = this.a;
         a(canvas, i2, i3, (int) (i3 + ((1.0f - this.l) * this.j)));
     }
 
@@ -212,9 +208,9 @@ public class ColorTrackView extends View {
     public void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         float f = this.l;
-        int i = (int) ((this.j * f) + this.f10965a);
+        int i = (int) ((this.j * f) + this.a);
         int i2 = (int) ((f * this.k) + this.b);
-        int i3 = this.f10966c;
+        int i3 = this.c;
         if (i3 == 0) {
             a(canvas, i);
             b(canvas, i);
@@ -235,7 +231,7 @@ public class ColorTrackView extends View {
     public void onMeasure(int i, int i2) {
         b();
         setMeasuredDimension(b(i), a(i2));
-        this.f10965a = (getMeasuredWidth() / 2) - (this.j / 2);
+        this.a = (getMeasuredWidth() / 2) - (this.j / 2);
         this.b = (getMeasuredHeight() / 2) - (this.k / 2);
     }
 
@@ -261,7 +257,7 @@ public class ColorTrackView extends View {
     }
 
     public void setDirection(int i) {
-        this.f10966c = i;
+        this.c = i;
     }
 
     public void setProgress(float f) {

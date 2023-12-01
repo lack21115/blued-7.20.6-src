@@ -35,14 +35,14 @@ public class v {
         return h1Var;
     }
 
-    public static C1138r b(String str, String str2) {
+    public static C0955r b(String str, String str2) {
         z.c("hmsSdk", "generate UploadData EventModelHandlerBase");
         y.d().a(str, str2);
         if (TextUtils.isEmpty(y.d().a())) {
             z.f("hmsSdk", "event chifer is empty");
             return null;
         }
-        return new C1138r(y.d().c());
+        return new C0955r(y.d().c());
     }
 
     public static Map<String, String> c(String str, String str2) {

@@ -28,28 +28,28 @@ public final class s {
         azL.put(Long.class, Long.TYPE);
         azL.put(Double.class, Double.TYPE);
         Map<Class<?>, Class<?>> map = azL;
-        Class<Boolean> cls = Boolean.TYPE;
+        Class<?> cls = Boolean.TYPE;
         map.put(cls, cls);
         Map<Class<?>, Class<?>> map2 = azL;
-        Class<Byte> cls2 = Byte.TYPE;
+        Class<?> cls2 = Byte.TYPE;
         map2.put(cls2, cls2);
         Map<Class<?>, Class<?>> map3 = azL;
-        Class<Character> cls3 = Character.TYPE;
+        Class<?> cls3 = Character.TYPE;
         map3.put(cls3, cls3);
         Map<Class<?>, Class<?>> map4 = azL;
-        Class<Short> cls4 = Short.TYPE;
+        Class<?> cls4 = Short.TYPE;
         map4.put(cls4, cls4);
         Map<Class<?>, Class<?>> map5 = azL;
-        Class<Integer> cls5 = Integer.TYPE;
+        Class<?> cls5 = Integer.TYPE;
         map5.put(cls5, cls5);
         Map<Class<?>, Class<?>> map6 = azL;
-        Class<Float> cls6 = Float.TYPE;
+        Class<?> cls6 = Float.TYPE;
         map6.put(cls6, cls6);
         Map<Class<?>, Class<?>> map7 = azL;
-        Class<Long> cls7 = Long.TYPE;
+        Class<?> cls7 = Long.TYPE;
         map7.put(cls7, cls7);
         Map<Class<?>, Class<?>> map8 = azL;
-        Class<Double> cls8 = Double.TYPE;
+        Class<?> cls8 = Double.TYPE;
         map8.put(cls8, cls8);
     }
 

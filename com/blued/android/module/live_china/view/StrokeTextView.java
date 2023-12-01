@@ -36,9 +36,7 @@ public class StrokeTextView extends AppCompatTextView {
         getPaint().setColor(i);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // android.widget.TextView, android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         TextPaint paint = getPaint();
         setTextColorUseReflection(-1);
         paint.setStrokeWidth(3.0f);

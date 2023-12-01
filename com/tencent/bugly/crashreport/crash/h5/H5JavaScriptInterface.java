@@ -17,11 +17,11 @@ import org.json.JSONObject;
 public class H5JavaScriptInterface {
 
     /* renamed from: a  reason: collision with root package name */
-    private static HashSet<Integer> f35174a = new HashSet<>();
+    private static HashSet<Integer> f21483a = new HashSet<>();
     private String b = null;
 
     /* renamed from: c  reason: collision with root package name */
-    private Thread f35175c = null;
+    private Thread f21484c = null;
     private String d = null;
     private Map<String, String> e = null;
 
@@ -36,16 +36,16 @@ public class H5JavaScriptInterface {
         try {
             JSONObject jSONObject = new JSONObject(str);
             a aVar = new a();
-            aVar.f35176a = jSONObject.getString("projectRoot");
-            if (aVar.f35176a == null) {
+            aVar.f21485a = jSONObject.getString("projectRoot");
+            if (aVar.f21485a == null) {
                 return null;
             }
             aVar.b = jSONObject.getString("context");
             if (aVar.b == null) {
                 return null;
             }
-            aVar.f35177c = jSONObject.getString("url");
-            if (aVar.f35177c == null) {
+            aVar.f21486c = jSONObject.getString("url");
+            if (aVar.f21486c == null) {
                 return null;
             }
             aVar.d = jSONObject.getString(TTDownloadField.TT_USERAGENT);
@@ -84,9 +84,9 @@ public class H5JavaScriptInterface {
                 return null;
             }
             x.a("H5 crash information is following: ", new Object[0]);
-            x.a("[projectRoot]: " + aVar.f35176a, new Object[0]);
+            x.a("[projectRoot]: " + aVar.f21485a, new Object[0]);
             x.a("[context]: " + aVar.b, new Object[0]);
-            x.a("[url]: " + aVar.f35177c, new Object[0]);
+            x.a("[url]: " + aVar.f21486c, new Object[0]);
             x.a("[userAgent]: " + aVar.d, new Object[0]);
             x.a("[language]: " + aVar.e, new Object[0]);
             x.a("[name]: " + aVar.f, new Object[0]);
@@ -107,13 +107,13 @@ public class H5JavaScriptInterface {
 
     public static H5JavaScriptInterface getInstance(CrashReport.WebViewInterface webViewInterface) {
         String str = null;
-        if (webViewInterface == null || f35174a.contains(Integer.valueOf(webViewInterface.hashCode()))) {
+        if (webViewInterface == null || f21483a.contains(Integer.valueOf(webViewInterface.hashCode()))) {
             return null;
         }
         H5JavaScriptInterface h5JavaScriptInterface = new H5JavaScriptInterface();
-        f35174a.add(Integer.valueOf(webViewInterface.hashCode()));
+        f21483a.add(Integer.valueOf(webViewInterface.hashCode()));
         Thread currentThread = Thread.currentThread();
-        h5JavaScriptInterface.f35175c = currentThread;
+        h5JavaScriptInterface.f21484c = currentThread;
         if (currentThread != null) {
             StringBuilder sb = new StringBuilder();
             sb.append("\n");
@@ -167,14 +167,14 @@ public class H5JavaScriptInterface {
         }
         LinkedHashMap linkedHashMap = new LinkedHashMap();
         LinkedHashMap linkedHashMap2 = new LinkedHashMap();
-        if (a3.f35176a != null) {
-            linkedHashMap2.put("[JS] projectRoot", a3.f35176a);
+        if (a3.f21485a != null) {
+            linkedHashMap2.put("[JS] projectRoot", a3.f21485a);
         }
         if (a3.b != null) {
             linkedHashMap2.put("[JS] context", a3.b);
         }
-        if (a3.f35177c != null) {
-            linkedHashMap2.put("[JS] url", a3.f35177c);
+        if (a3.f21486c != null) {
+            linkedHashMap2.put("[JS] url", a3.f21486c);
         }
         if (a3.d != null) {
             linkedHashMap2.put("[JS] userAgent", a3.d);
@@ -188,7 +188,7 @@ public class H5JavaScriptInterface {
         linkedHashMap.putAll(linkedHashMap2);
         linkedHashMap.putAll(this.e);
         linkedHashMap.put("Java Stack", this.d);
-        Thread thread = this.f35175c;
+        Thread thread = this.f21484c;
         if (a3 != null) {
             InnerApi.postH5CrashAsync(thread, a3.f, a3.g, a3.h, linkedHashMap);
         }

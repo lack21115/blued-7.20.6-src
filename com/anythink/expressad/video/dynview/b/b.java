@@ -7,27 +7,27 @@ import com.anythink.expressad.video.dynview.c;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile b f8353a;
+    private static volatile b f5513a;
 
     private b() {
     }
 
     public static b a() {
         b bVar;
-        if (f8353a == null) {
+        if (f5513a == null) {
             synchronized (b.class) {
                 try {
-                    if (f8353a == null) {
-                        f8353a = new b();
+                    if (f5513a == null) {
+                        f5513a = new b();
                     }
-                    bVar = f8353a;
+                    bVar = f5513a;
                 } catch (Throwable th) {
                     throw th;
                 }
             }
             return bVar;
         }
-        return f8353a;
+        return f5513a;
     }
 
     private static void a(View view) {
@@ -54,8 +54,8 @@ public class b {
     }
 
     public static void b() {
-        if (f8353a != null) {
-            f8353a = null;
+        if (f5513a != null) {
+            f5513a = null;
         }
     }
 

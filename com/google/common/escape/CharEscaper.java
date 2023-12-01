@@ -10,7 +10,7 @@ public abstract class CharEscaper extends Escaper {
         if (i2 >= 0) {
             char[] cArr2 = new char[i2];
             if (i > 0) {
-                System.arraycopy((Object) cArr, 0, (Object) cArr2, 0, i);
+                System.arraycopy(cArr, 0, cArr2, 0, i);
             }
             return cArr2;
         }
@@ -68,7 +68,7 @@ public abstract class CharEscaper extends Escaper {
                 }
                 i5 = i9;
                 if (length3 > 0) {
-                    System.arraycopy((Object) escape, 0, (Object) cArr, i9, length3);
+                    System.arraycopy(escape, 0, cArr, i9, length3);
                     i5 = i9 + length3;
                 }
                 i3 = i4 + 1;

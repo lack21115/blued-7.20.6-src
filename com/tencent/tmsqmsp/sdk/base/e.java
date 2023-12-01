@@ -9,116 +9,116 @@ import android.util.Base64;
 public class e implements IVendorCallback {
 
     /* renamed from: c  reason: collision with root package name */
-    private static boolean f39699c = false;
-    private static String d = com.tencent.tmsqmsp.sdk.c.b.f39705a + "b2FpZA";
-    private static String e = com.tencent.tmsqmsp.sdk.c.b.f39705a + "b2FpZA";
+    private static boolean f26008c = false;
+    private static String d = com.tencent.tmsqmsp.sdk.c.b.f26014a + "b2FpZA";
+    private static String e = com.tencent.tmsqmsp.sdk.c.b.f26014a + "b2FpZA";
     private static Context f = null;
 
     /* renamed from: a  reason: collision with root package name */
-    private b f39700a = null;
+    private b f26009a = null;
     private IVendorCallback b = null;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/tmsqmsp/sdk/base/e$a.class */
     public static /* synthetic */ class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final /* synthetic */ int[] f39701a;
+        public static final /* synthetic */ int[] f26010a;
 
         static {
             d.values();
             int[] iArr = new int[17];
-            f39701a = iArr;
+            f26010a = iArr;
             try {
                 d dVar = d.XIAOMI;
                 iArr[2] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                int[] iArr2 = f39701a;
+                int[] iArr2 = f26010a;
                 d dVar2 = d.BLACKSHARK;
                 iArr2[14] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                int[] iArr3 = f39701a;
+                int[] iArr3 = f26010a;
                 d dVar3 = d.VIVO;
                 iArr3[3] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                int[] iArr4 = f39701a;
+                int[] iArr4 = f26010a;
                 d dVar4 = d.HUA_WEI;
                 iArr4[1] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                int[] iArr5 = f39701a;
+                int[] iArr5 = f26010a;
                 d dVar5 = d.OPPO;
                 iArr5[4] = 5;
             } catch (NoSuchFieldError e5) {
             }
             try {
-                int[] iArr6 = f39701a;
+                int[] iArr6 = f26010a;
                 d dVar6 = d.ONEPLUS;
                 iArr6[13] = 6;
             } catch (NoSuchFieldError e6) {
             }
             try {
-                int[] iArr7 = f39701a;
+                int[] iArr7 = f26010a;
                 d dVar7 = d.MOTO;
                 iArr7[5] = 7;
             } catch (NoSuchFieldError e7) {
             }
             try {
-                int[] iArr8 = f39701a;
+                int[] iArr8 = f26010a;
                 d dVar8 = d.LENOVO;
                 iArr8[6] = 8;
             } catch (NoSuchFieldError e8) {
             }
             try {
-                int[] iArr9 = f39701a;
+                int[] iArr9 = f26010a;
                 d dVar9 = d.ASUS;
                 iArr9[7] = 9;
             } catch (NoSuchFieldError e9) {
             }
             try {
-                int[] iArr10 = f39701a;
+                int[] iArr10 = f26010a;
                 d dVar10 = d.SAMSUNG;
                 iArr10[8] = 10;
             } catch (NoSuchFieldError e10) {
             }
             try {
-                int[] iArr11 = f39701a;
+                int[] iArr11 = f26010a;
                 d dVar11 = d.MEIZU;
                 iArr11[9] = 11;
             } catch (NoSuchFieldError e11) {
             }
             try {
-                int[] iArr12 = f39701a;
+                int[] iArr12 = f26010a;
                 d dVar12 = d.ALPS;
                 iArr12[10] = 12;
             } catch (NoSuchFieldError e12) {
             }
             try {
-                int[] iArr13 = f39701a;
+                int[] iArr13 = f26010a;
                 d dVar13 = d.NUBIA;
                 iArr13[11] = 13;
             } catch (NoSuchFieldError e13) {
             }
             try {
-                int[] iArr14 = f39701a;
+                int[] iArr14 = f26010a;
                 d dVar14 = d.ZTE;
                 iArr14[12] = 14;
             } catch (NoSuchFieldError e14) {
             }
             try {
-                int[] iArr15 = f39701a;
+                int[] iArr15 = f26010a;
                 d dVar15 = d.FREEMEOS;
                 iArr15[15] = 15;
             } catch (NoSuchFieldError e15) {
             }
             try {
-                int[] iArr16 = f39701a;
+                int[] iArr16 = f26010a;
                 d dVar16 = d.SSUIOS;
                 iArr16[16] = 16;
             } catch (NoSuchFieldError e16) {
@@ -136,7 +136,7 @@ public class e implements IVendorCallback {
                 str2 = !TextUtils.isEmpty(string) ? new String(Base64.decode(string.getBytes("UTF-8"), 0)) : null;
                 if (i == 1) {
                     try {
-                        if (f39699c) {
+                        if (f26008c) {
                             SharedPreferences.Editor edit = sharedPreferences.edit();
                             String str4 = null;
                             if (!TextUtils.isEmpty(str)) {
@@ -172,7 +172,7 @@ public class e implements IVendorCallback {
     }
 
     public static void a(Context context, boolean z, boolean z2) {
-        f39699c = z;
+        f26008c = z;
         f = context;
         c.a(z2);
     }
@@ -203,7 +203,7 @@ public class e implements IVendorCallback {
         if (iVendorCallback != null) {
             iVendorCallback.onResult(z, str, str2);
         }
-        b bVar = this.f39700a;
+        b bVar = this.f26009a;
         if (bVar != null) {
             bVar.f();
         }

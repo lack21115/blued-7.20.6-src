@@ -10,17 +10,13 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ViewTakeOffMaskTimerBinding.class */
 public final class ViewTakeOffMaskTimerBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final TextView f16880a;
+    public final TextView a;
     public final TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final ConstraintLayout f16881c;
+    private final ConstraintLayout c;
 
     private ViewTakeOffMaskTimerBinding(ConstraintLayout constraintLayout, TextView textView, TextView textView2) {
-        this.f16881c = constraintLayout;
-        this.f16880a = textView;
+        this.c = constraintLayout;
+        this.a = textView;
         this.b = textView2;
     }
 
@@ -47,9 +43,8 @@ public final class ViewTakeOffMaskTimerBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f16881c;
+        return this.c;
     }
 }

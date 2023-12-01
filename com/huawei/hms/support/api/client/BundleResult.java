@@ -6,16 +6,16 @@ import android.os.Bundle;
 public class BundleResult {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f22881a;
+    private int f9273a;
     private Bundle b;
 
     public BundleResult(int i, Bundle bundle) {
-        this.f22881a = i;
+        this.f9273a = i;
         this.b = bundle;
     }
 
     public int getResultCode() {
-        return this.f22881a;
+        return this.f9273a;
     }
 
     public Bundle getRspBody() {
@@ -23,7 +23,7 @@ public class BundleResult {
     }
 
     public void setResultCode(int i) {
-        this.f22881a = i;
+        this.f9273a = i;
     }
 
     public void setRspBody(Bundle bundle) {

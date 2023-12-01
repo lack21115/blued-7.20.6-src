@@ -6,7 +6,7 @@ import android.content.Context;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f25808a = "FoldUtil";
+    private static String f12120a = "FoldUtil";
     private static int b = -1;
 
     public static boolean a(Context context) {

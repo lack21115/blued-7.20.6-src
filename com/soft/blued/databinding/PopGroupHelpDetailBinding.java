@@ -11,19 +11,19 @@ import com.soft.blued.R;
 public final class PopGroupHelpDetailBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ImageView f29529a;
+    public final ImageView f15839a;
     public final ImageView b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final ShapeTextView f29530c;
+    public final ShapeTextView f15840c;
     public final ShapeTextView d;
     private final LinearLayout e;
 
     private PopGroupHelpDetailBinding(LinearLayout linearLayout, ImageView imageView, ImageView imageView2, ShapeTextView shapeTextView, ShapeTextView shapeTextView2) {
         this.e = linearLayout;
-        this.f29529a = imageView;
+        this.f15839a = imageView;
         this.b = imageView2;
-        this.f29530c = shapeTextView;
+        this.f15840c = shapeTextView;
         this.d = shapeTextView2;
     }
 
@@ -31,13 +31,13 @@ public final class PopGroupHelpDetailBinding implements ViewBinding {
         String str;
         ImageView imageView = (ImageView) view.findViewById(2131365207);
         if (imageView != null) {
-            ImageView imageView2 = (ImageView) view.findViewById(2131365477);
+            ImageView imageView2 = (ImageView) view.findViewById(R.id.iv_header);
             if (imageView2 != null) {
-                ShapeTextView shapeTextView = (ShapeTextView) view.findViewById(R.id.tv_help);
-                if (shapeTextView != null) {
-                    ShapeTextView shapeTextView2 = (ShapeTextView) view.findViewById(2131372046);
-                    if (shapeTextView2 != null) {
-                        return new PopGroupHelpDetailBinding((LinearLayout) view, imageView, imageView2, shapeTextView, shapeTextView2);
+                ShapeTextView findViewById = view.findViewById(R.id.tv_help);
+                if (findViewById != null) {
+                    ShapeTextView findViewById2 = view.findViewById(2131372046);
+                    if (findViewById2 != null) {
+                        return new PopGroupHelpDetailBinding((LinearLayout) view, imageView, imageView2, findViewById, findViewById2);
                     }
                     str = "tvName";
                 } else {

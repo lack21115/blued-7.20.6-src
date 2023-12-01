@@ -6,21 +6,15 @@ import java.util.concurrent.Executors;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/china/common/a/a/a.class */
 public final class a {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final int f6295a = 1;
+    public static final int a = 1;
     public static final int b = 2;
-
-    /* renamed from: c  reason: collision with root package name */
-    private static a f6296c;
+    private static a c;
     private ExecutorService d;
 
     /* renamed from: com.anythink.china.common.a.a.a$1  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/china/common/a/a/a$1.class */
     final class AnonymousClass1 extends b {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ long f6297a = 0;
+        final /* synthetic */ long a = 0;
         final /* synthetic */ Runnable b;
 
         AnonymousClass1(Runnable runnable) {
@@ -31,7 +25,7 @@ public final class a {
         @Override // com.anythink.core.common.k.b.b
         public final void a() {
             try {
-                Thread.sleep(this.f6297a);
+                Thread.sleep(this.a);
             } catch (InterruptedException e) {
             }
             new StringBuilder("thread-").append(b());
@@ -45,14 +39,14 @@ public final class a {
     }
 
     public static a a() {
-        if (f6296c == null) {
-            f6296c = new a();
+        if (c == null) {
+            c = new a();
         }
-        return f6296c;
+        return c;
     }
 
     private static void a(a aVar) {
-        f6296c = aVar;
+        c = aVar;
     }
 
     private void a(Runnable runnable) {

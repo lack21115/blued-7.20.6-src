@@ -23,9 +23,9 @@ public abstract class a extends com.opos.mobad.cmn.a.c {
     }
 
     private void b() {
-        RelativeLayout relativeLayout = new RelativeLayout(this.f25896a);
+        RelativeLayout relativeLayout = new RelativeLayout(this.f12208a);
         this.i = relativeLayout;
-        relativeLayout.setLayoutParams(new RelativeLayout.LayoutParams(-1, com.opos.cmn.an.h.f.a.a(this.f25896a, 85.0f)));
+        relativeLayout.setLayoutParams(new RelativeLayout.LayoutParams(-1, com.opos.cmn.an.h.f.a.a(this.f12208a, 85.0f)));
         this.i.setVisibility(8);
     }
 

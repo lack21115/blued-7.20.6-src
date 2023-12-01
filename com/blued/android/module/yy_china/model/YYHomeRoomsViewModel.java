@@ -8,7 +8,6 @@ import com.blued.android.framework.http.BluedUIHttpResponse;
 import com.blued.android.framework.http.parser.BluedEntity;
 import com.blued.android.module.common.base.mvvm.BaseViewModel;
 import com.blued.android.module.yy_china.utils.YYRoomHttpUtils;
-import com.bytedance.sdk.openadsdk.live.TTLiveConstants;
 import java.util.List;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
@@ -17,12 +16,8 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/model/YYHomeRoomsViewModel.class */
 public final class YYHomeRoomsViewModel extends BaseViewModel {
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f17630c;
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f17629a = "0";
+    private String c;
+    private String a = "0";
     private final MutableLiveData<HomeRightMenuModels> d = new MutableLiveData<>();
     private final MutableLiveData<YYHomeExtraModel> e = new MutableLiveData<>();
     private final MutableLiveData<String> f = new MutableLiveData<>();
@@ -37,7 +32,7 @@ public final class YYHomeRoomsViewModel extends BaseViewModel {
         Intrinsics.c(string, "it.getString(\"type_id\", \"0\")");
         a(string);
         b(bundle.getString("from_source", ""));
-        c(bundle.getString(TTLiveConstants.ROOMID_KEY, ""));
+        c(bundle.getString("room_id", ""));
     }
 
     public final void a(final ActivityFragmentActive fragmentActive) {
@@ -78,7 +73,7 @@ public final class YYHomeRoomsViewModel extends BaseViewModel {
 
     public final void a(String str) {
         Intrinsics.e(str, "<set-?>");
-        this.f17629a = str;
+        this.a = str;
     }
 
     public final void b(String str) {
@@ -86,11 +81,11 @@ public final class YYHomeRoomsViewModel extends BaseViewModel {
     }
 
     public final void c(String str) {
-        this.f17630c = str;
+        this.c = str;
     }
 
     public final String d() {
-        return this.f17629a;
+        return this.a;
     }
 
     public final String e() {
@@ -98,7 +93,7 @@ public final class YYHomeRoomsViewModel extends BaseViewModel {
     }
 
     public final String f() {
-        return this.f17630c;
+        return this.c;
     }
 
     public final MutableLiveData<HomeRightMenuModels> g() {

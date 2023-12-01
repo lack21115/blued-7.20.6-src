@@ -23,15 +23,15 @@ public class LiveHomeFragment_ViewBinding implements Unbinder {
     public LiveHomeFragment_ViewBinding(LiveHomeFragment liveHomeFragment, View view) {
         this.b = liveHomeFragment;
         liveHomeFragment.swipe_view = (LiveHotPullToRefreshLayout) Utils.a(view, R.id.swipe_view, "field 'swipe_view'", LiveHotPullToRefreshLayout.class);
-        liveHomeFragment.ll_tab = Utils.a(view, 2131368267, "field 'll_tab'");
+        liveHomeFragment.ll_tab = Utils.a(view, R.id.ll_tab, "field 'll_tab'");
         liveHomeFragment.refreshLayout = (RefreshLayout) Utils.a(view, 2131369116, "field 'refreshLayout'", RefreshLayout.class);
-        liveHomeFragment.header = (CustomTwoLevelHeader) Utils.a(view, 2131364224, "field 'header'", CustomTwoLevelHeader.class);
-        liveHomeFragment.refresh_view = (TwoLevelRefreshView) Utils.a(view, 2131369121, "field 'refresh_view'", TwoLevelRefreshView.class);
-        liveHomeFragment.asvp_banner_hot_parent = (FrameLayout) Utils.a(view, 2131362322, "field 'asvp_banner_hot_parent'", FrameLayout.class);
-        liveHomeFragment.asvp_banner_hot_new = (AutoScrollViewPager) Utils.a(view, 2131362321, "field 'asvp_banner_hot_new'", AutoScrollViewPager.class);
+        liveHomeFragment.header = (CustomTwoLevelHeader) Utils.a(view, R.id.header, "field 'header'", CustomTwoLevelHeader.class);
+        liveHomeFragment.refresh_view = (TwoLevelRefreshView) Utils.a(view, R.id.refresh_view, "field 'refresh_view'", TwoLevelRefreshView.class);
+        liveHomeFragment.asvp_banner_hot_parent = (FrameLayout) Utils.a(view, R.id.asvp_banner_hot_parent, "field 'asvp_banner_hot_parent'", FrameLayout.class);
+        liveHomeFragment.asvp_banner_hot_new = (AutoScrollViewPager) Utils.a(view, R.id.asvp_banner_hot_new, "field 'asvp_banner_hot_new'", AutoScrollViewPager.class);
         liveHomeFragment.lpi_line = (LinePageIndicator) Utils.a(view, 2131368404, "field 'lpi_line'", LinePageIndicator.class);
         liveHomeFragment.live_banner = (FrameLayout) Utils.a(view, R.id.live_banner, "field 'live_banner'", FrameLayout.class);
-        liveHomeFragment.tv_living_count = (TextView) Utils.a(view, 2131371865, "field 'tv_living_count'", TextView.class);
+        liveHomeFragment.tv_living_count = (TextView) Utils.a(view, R.id.tv_living_count, "field 'tv_living_count'", TextView.class);
         liveHomeFragment.living_count = (ShapeLinearLayout) Utils.a(view, R.id.living_count, "field 'living_count'", ShapeLinearLayout.class);
         liveHomeFragment.main_live_new_viewpager = (ViewPager) Utils.a(view, R.id.main_live_new_viewpager, "field 'main_live_new_viewpager'", ViewPager.class);
         liveHomeFragment.recycle_view_cateroty = (RecyclerView) Utils.a(view, R.id.recycle_view_cateroty, "field 'recycle_view_cateroty'", RecyclerView.class);

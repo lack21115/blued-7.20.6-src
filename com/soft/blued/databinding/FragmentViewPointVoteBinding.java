@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentViewPointVoteBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final RelativeLayout f29013a;
+    private final RelativeLayout f15323a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
-        return this.f29013a;
+        return this.f15323a;
     }
 }

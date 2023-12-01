@@ -15,13 +15,9 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYApplyFinishFragment.class */
 public class YYApplyFinishFragment extends MvpFragment<MvpPresenter> implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    ImageView f17094a;
+    ImageView a;
     TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    ImageView f17095c;
+    ImageView c;
     TextView d;
     TextView e;
     ShapeTextView f;
@@ -48,8 +44,8 @@ public class YYApplyFinishFragment extends MvpFragment<MvpPresenter> implements 
         this.k = getArguments().getInt("apply_from", 0);
         this.f = (ShapeTextView) this.i.findViewById(R.id.tv_create);
         this.b = (TextView) this.i.findViewById(R.id.tv_title_text);
-        this.f17094a = (ImageView) this.i.findViewById(R.id.iv_back_img);
-        this.f17095c = (ImageView) this.i.findViewById(R.id.iv_status_img);
+        this.a = (ImageView) this.i.findViewById(R.id.iv_back_img);
+        this.c = (ImageView) this.i.findViewById(R.id.iv_status_img);
         this.d = (TextView) this.i.findViewById(R.id.tv_apply_status);
         this.e = (TextView) this.i.findViewById(R.id.tv_apply_content);
         int i = this.k;
@@ -63,25 +59,25 @@ public class YYApplyFinishFragment extends MvpFragment<MvpPresenter> implements 
             this.f.setVisibility(8);
         }
         this.f.setOnClickListener(this);
-        this.f17094a.setOnClickListener(this);
+        this.a.setOnClickListener(this);
         int i2 = this.g;
         if (i2 != 0) {
             if (i2 == 1) {
-                this.f17095c.setImageResource(R.drawable.icon_yy_apply_ok);
+                this.c.setImageResource(R.drawable.icon_yy_apply_ok);
                 this.d.setText(getResources().getString(R.string.yy_apply_state_ok));
                 this.e.setText(getResources().getString(R.string.yy_apply_ok_des));
                 return;
             } else if (i2 != 2) {
                 return;
             } else {
-                this.f17095c.setImageResource(R.drawable.icon_yy_apply_error);
+                this.c.setImageResource(R.drawable.icon_yy_apply_error);
                 this.d.setText(getResources().getString(R.string.yy_apply_state_error));
                 this.e.setText(getResources().getString(R.string.yy_apply_error_des));
                 return;
             }
         }
         this.d.setText(getResources().getString(R.string.yy_apply_state_ing));
-        this.f17095c.setImageResource(R.drawable.icon_yy_apply_ing);
+        this.c.setImageResource(R.drawable.icon_yy_apply_ing);
         int i3 = this.k;
         if (i3 == 1) {
             this.e.setText(getResources().getString(R.string.group_verify_process_hint));
@@ -97,7 +93,7 @@ public class YYApplyFinishFragment extends MvpFragment<MvpPresenter> implements 
         return R.layout.fragment_yy_apply_finish_layout;
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public void onActivityCreated(Bundle bundle) {
         super.onActivityCreated(bundle);
     }

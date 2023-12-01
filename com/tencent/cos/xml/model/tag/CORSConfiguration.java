@@ -1,6 +1,5 @@
 package com.tencent.cos.xml.model.tag;
 
-import com.alipay.sdk.util.i;
 import java.util.List;
 
 /* loaded from: source-8457232-dex2jar.jar:com/tencent/cos/xml/model/tag/CORSConfiguration.class */
@@ -57,7 +56,7 @@ public class CORSConfiguration {
             sb.append("MaxAgeSeconds:");
             sb.append(this.maxAgeSeconds);
             sb.append("\n");
-            sb.append(i.d);
+            sb.append("}");
             return sb.toString();
         }
     }
@@ -73,7 +72,7 @@ public class CORSConfiguration {
                 }
             }
         }
-        sb.append(i.d);
+        sb.append("}");
         return sb.toString();
     }
 }

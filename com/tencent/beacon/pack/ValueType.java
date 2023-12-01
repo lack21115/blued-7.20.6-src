@@ -1,5 +1,6 @@
 package com.tencent.beacon.pack;
 
+import com.huawei.hms.framework.network.grs.GrsBaseInfo;
 import java.io.Serializable;
 
 /* loaded from: source-8457232-dex2jar.jar:com/tencent/beacon/pack/ValueType.class */
@@ -11,7 +12,7 @@ public final class ValueType implements Serializable {
     private int value;
     public static final ValueType MAP = new ValueType(0, 0, "MAP");
     public static final ValueType BYTE = new ValueType(1, 1, "BYTE");
-    public static final ValueType UNKNOWN = new ValueType(2, 2, "UNKNOWN");
+    public static final ValueType UNKNOWN = new ValueType(2, 2, GrsBaseInfo.CountryCodeSource.UNKNOWN);
     private static ValueType[] values = new ValueType[3];
 
     private ValueType(int i, int i2, String str) {

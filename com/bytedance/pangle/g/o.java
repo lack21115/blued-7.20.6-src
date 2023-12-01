@@ -7,16 +7,15 @@ import java.lang.reflect.Method;
 import java.security.PublicKey;
 import java.util.Arrays;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-7206380-dex2jar.jar:com/bytedance/pangle/g/o.class */
-public final class o {
+final class o {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final o f21424a = new o(null, 0, null, null, null);
+    public static final o f7818a = new o(null, 0, null, null, null);
     public final Signature[] b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final int f21425c;
+    public final int f7819c;
     public final ArraySet<PublicKey> d;
     public final Signature[] e;
     public final int[] f;
@@ -27,7 +26,7 @@ public final class o {
 
     public o(Signature[] signatureArr, int i, ArraySet<PublicKey> arraySet, Signature[] signatureArr2, int[] iArr) {
         this.b = signatureArr;
-        this.f21425c = i;
+        this.f7819c = i;
         this.d = arraySet;
         this.e = signatureArr2;
         this.f = iArr;
@@ -88,7 +87,7 @@ public final class o {
         }
         if (obj instanceof o) {
             o oVar = (o) obj;
-            if (this.f21425c == oVar.f21425c && a(this.b, oVar.b)) {
+            if (this.f7819c == oVar.f7819c && a(this.b, oVar.b)) {
                 ArraySet<PublicKey> arraySet = this.d;
                 if (arraySet != null) {
                     if (!arraySet.equals(oVar.d)) {
@@ -106,7 +105,7 @@ public final class o {
 
     public final int hashCode() {
         int hashCode = Arrays.hashCode(this.b);
-        int i = this.f21425c;
+        int i = this.f7819c;
         ArraySet<PublicKey> arraySet = this.d;
         return (((((((hashCode * 31) + i) * 31) + (arraySet != null ? arraySet.hashCode() : 0)) * 31) + Arrays.hashCode(this.e)) * 31) + Arrays.hashCode(this.f);
     }

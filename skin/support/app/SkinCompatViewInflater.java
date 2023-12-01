@@ -7,7 +7,7 @@ import android.os.Build;
 import android.util.AttributeSet;
 import android.view.InflateException;
 import android.view.View;
-import com.anythink.expressad.a;
+import com.android.internal.R;
 import com.bytedance.applog.tracker.Tracker;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -20,30 +20,22 @@ import skin.support.view.ViewCompat;
 
 /* loaded from: source-3503164-dex2jar.jar:skin/support/app/SkinCompatViewInflater.class */
 public class SkinCompatViewInflater {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final Class<?>[] f44200a = {Context.class, AttributeSet.class};
-    private static final int[] b = {16843375};
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final String[] f44201c = {"android.widget.", "android.view.", "android.webkit."};
+    private static final Class<?>[] a = {Context.class, AttributeSet.class};
+    private static final int[] b = {R.attr.onClick};
+    private static final String[] c = {"android.widget.", "android.view.", "android.webkit."};
     private static final Map<String, Constructor<? extends View>> d = new ArrayMap();
     private final Object[] e = new Object[2];
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-3503164-dex2jar.jar:skin/support/app/SkinCompatViewInflater$DeclaredOnClickListener.class */
     public static class DeclaredOnClickListener implements View.OnClickListener {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final View f44202a;
+        private final View a;
         private final String b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private Method f44203c;
+        private Method c;
         private Context d;
 
         public DeclaredOnClickListener(View view, String str) {
-            this.f44202a = view;
+            this.a = view;
             this.b = str;
         }
 
@@ -54,7 +46,7 @@ public class SkinCompatViewInflater {
             while (context != null) {
                 try {
                     if (!context.isRestricted() && (method = context.getClass().getMethod(this.b, View.class)) != null) {
-                        this.f44203c = method;
+                        this.c = method;
                         this.d = context;
                         return;
                     }
@@ -62,22 +54,22 @@ public class SkinCompatViewInflater {
                 }
                 context = context instanceof ContextWrapper ? ((ContextWrapper) context).getBaseContext() : null;
             }
-            if (this.f44202a.getId() == -1) {
+            if (this.a.getId() == -1) {
                 str2 = "";
             } else {
-                str2 = " with id '" + this.f44202a.getContext().getResources().getResourceEntryName(id) + "'";
+                str2 = " with id '" + this.a.getContext().getResources().getResourceEntryName(id) + "'";
             }
-            throw new IllegalStateException("Could not find method " + this.b + "(View) in a parent or ancestor Context for android:onClick attribute defined on view " + this.f44202a.getClass() + str2);
+            throw new IllegalStateException("Could not find method " + this.b + "(View) in a parent or ancestor Context for android:onClick attribute defined on view " + this.a.getClass() + str2);
         }
 
         @Override // android.view.View.OnClickListener
         public void onClick(View view) {
             Tracker.onClick(view);
-            if (this.f44203c == null) {
-                a(this.f44202a.getContext(), this.b);
+            if (this.c == null) {
+                a(this.a.getContext(), this.b);
             }
             try {
-                this.f44203c.invoke(this.d, view);
+                this.c.invoke(this.d, view);
             } catch (IllegalAccessException e) {
                 throw new IllegalStateException("Could not execute non-public method for android:onClick", e);
             } catch (InvocationTargetException e2) {
@@ -98,7 +90,7 @@ public class SkinCompatViewInflater {
                 } else {
                     str3 = str;
                 }
-                constructor2 = classLoader.loadClass(str3).asSubclass(View.class).getConstructor(f44200a);
+                constructor2 = classLoader.loadClass(str3).asSubclass(View.class).getConstructor(a);
                 d.put(str, constructor2);
             } catch (Exception e) {
                 return null;
@@ -154,7 +146,7 @@ public class SkinCompatViewInflater {
 
     public View a(Context context, String str, AttributeSet attributeSet) {
         String str2 = str;
-        if (a.B.equals(str)) {
+        if ("view".equals(str)) {
             str2 = attributeSet.getAttributeValue(null, "class");
         }
         try {
@@ -170,13 +162,13 @@ public class SkinCompatViewInflater {
             int i = 0;
             while (true) {
                 int i2 = i;
-                if (i2 >= f44201c.length) {
+                if (i2 >= c.length) {
                     Object[] objArr2 = this.e;
                     objArr2[0] = null;
                     objArr2[1] = null;
                     return null;
                 }
-                View a3 = a(context, str2, f44201c[i2]);
+                View a3 = a(context, str2, c[i2]);
                 if (a3 != null) {
                     Object[] objArr3 = this.e;
                     objArr3[0] = null;

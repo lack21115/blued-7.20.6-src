@@ -22,9 +22,9 @@ public class e extends c {
 
     public e(MediaFormat mediaFormat, String str, boolean z, f.a aVar) {
         this.g = z;
-        this.k = aVar.f1271a;
+        this.k = aVar.f1223a;
         try {
-            this.f1229c = new MediaCodec.BufferInfo();
+            this.f1181c = new MediaCodec.BufferInfo();
             MediaCodec createEncoderByType = MediaCodec.createEncoderByType(str);
             this.b = createEncoderByType;
             createEncoderByType.configure(mediaFormat, null, null, 1);
@@ -45,14 +45,14 @@ public class e extends c {
     }
 
     public final void a(f.a aVar) {
-        a.a.a.a.a.a.b d = aVar.f1271a.d();
+        a.a.a.a.a.a.b d = aVar.f1223a.d();
         int a2 = d.a().a();
         int b = d.a().b();
         Point c2 = d.c();
         a.a.a.a.a.e.f b2 = d.b();
         ImageProcessor imageProcessor = new ImageProcessor();
         this.p = imageProcessor;
-        imageProcessor.initYUVProcessor(aVar.h, false, aVar.b, aVar.f1272c, c2.x, c2.y, b2.a(), b2.b(), a2, b, aVar.e, aVar.f, aVar.k, aVar.m);
+        imageProcessor.initYUVProcessor(aVar.h, false, aVar.b, aVar.f1224c, c2.x, c2.y, b2.a(), b2.b(), a2, b, aVar.e, aVar.f, aVar.k, aVar.m);
     }
 
     @Override // a.a.a.a.a.a.g.b

@@ -2,7 +2,6 @@ package android.bluetooth;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.alipay.sdk.util.i;
 
 /* loaded from: source-9557208-dex2jar.jar:android/bluetooth/BluetoothAudioConfig.class */
 public final class BluetoothAudioConfig implements Parcelable {
@@ -69,7 +68,7 @@ public final class BluetoothAudioConfig implements Parcelable {
     }
 
     public String toString() {
-        return "{mSampleRate:" + this.mSampleRate + ",mChannelConfig:" + this.mChannelConfig + ",mAudioFormat:" + this.mAudioFormat + i.d;
+        return "{mSampleRate:" + this.mSampleRate + ",mChannelConfig:" + this.mChannelConfig + ",mAudioFormat:" + this.mAudioFormat + "}";
     }
 
     @Override // android.os.Parcelable

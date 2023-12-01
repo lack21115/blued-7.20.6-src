@@ -15,7 +15,6 @@ import android.webkit.MimeTypeMap;
 import androidx.core.content.ContextCompat;
 import com.anythink.expressad.d.a.b;
 import com.baidu.mobads.sdk.api.IAdInterListener;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.kwad.sdk.api.core.KsAdSdkDynamicApi;
 import java.io.File;
 import java.io.IOException;
@@ -37,7 +36,7 @@ public class FileProvider extends ContentProvider {
     private static final String TAG_ROOT_PATH = "root-path";
     private PathStrategy mStrategy;
     private static final String[] COLUMNS = {"_display_name", "_size"};
-    private static final File DEVICE_ROOT = new File(BridgeUtil.SPLIT_MARK);
+    private static final File DEVICE_ROOT = new File("/");
     private static HashMap<String, PathStrategy> sCache = new HashMap<>();
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -111,13 +110,13 @@ public class FileProvider extends ContentProvider {
                     throw new IllegalArgumentException("Failed to find configured root that contains " + canonicalPath);
                 }
                 String path2 = entry.getValue().getPath();
-                boolean endsWith = path2.endsWith(BridgeUtil.SPLIT_MARK);
+                boolean endsWith = path2.endsWith("/");
                 int length = path2.length();
                 if (!endsWith) {
                     length++;
                 }
                 String substring = canonicalPath.substring(length);
-                return new Uri.Builder().scheme("content").authority(this.mAuthority).encodedPath(Uri.encode(entry.getKey()) + '/' + Uri.encode(substring, BridgeUtil.SPLIT_MARK)).build();
+                return new Uri.Builder().scheme("content").authority(this.mAuthority).encodedPath(Uri.encode(entry.getKey()) + '/' + Uri.encode(substring, "/")).build();
             } catch (IOException e) {
                 throw new IllegalArgumentException("Failed to resolve canonical path for " + file);
             }

@@ -6,19 +6,15 @@ import org.json.JSONObject;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-6737240-dex2jar.jar:cn/shuzilm/core/m.class */
 public final class m implements Runnable {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ Context f4186a;
+    final /* synthetic */ Context a;
     final /* synthetic */ String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ String f4187c;
+    final /* synthetic */ String c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public m(Context context, String str, String str2) {
-        this.f4186a = context;
+        this.a = context;
         this.b = str;
-        this.f4187c = str2;
+        this.c = str2;
     }
 
     @Override // java.lang.Runnable
@@ -34,13 +30,13 @@ public final class m implements Runnable {
             str = DUHelper.i;
             DUHelper.setConfig("apiKey", str);
             dUHelper = DUHelper.d;
-            Context context = this.f4186a;
+            Context context = this.a;
             jSONObject = DUHelper.l;
             dUHelper.a(context, jSONObject, this.b);
             dUHelper2 = DUHelper.d;
             jSONObject2 = DUHelper.k;
-            dUHelper2.a(jSONObject2, this.f4187c);
-            Context context2 = this.f4186a;
+            dUHelper2.a(jSONObject2, this.c);
+            Context context2 = this.a;
             jSONObject3 = DUHelper.l;
             String jSONObject5 = jSONObject3.toString();
             jSONObject4 = DUHelper.k;

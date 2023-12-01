@@ -3,18 +3,17 @@ package com.oplus.stdid.sdk;
 import android.content.Context;
 import android.os.Looper;
 import android.util.Log;
-import com.anythink.core.api.ErrorCode;
 import s_a.s_a.s_a.a.f;
 
 /* loaded from: source-8303388-dex2jar.jar:com/oplus/stdid/sdk/a.class */
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static boolean f24432a;
+    public static boolean f10745a;
     public static boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    public static boolean f24433c;
+    public static boolean f10746c;
 
     public static Context a(Context context) {
         Context context2 = context;
@@ -28,14 +27,14 @@ public class a {
     }
 
     public static boolean a() {
-        if (f24433c) {
-            if (!f24432a) {
-                Log.e("StdIDHelper", ErrorCode.networkError);
+        if (f10746c) {
+            if (!f10745a) {
+                Log.e("StdIDHelper", "1001");
             }
             return b;
         }
-        if (!s_a.s_a.s_a.a.d.f44181a) {
-            Log.e("IDHelper", ErrorCode.networkError);
+        if (!s_a.s_a.s_a.a.d.a) {
+            Log.e("IDHelper", "1001");
         }
         return s_a.s_a.s_a.a.d.b;
     }
@@ -58,10 +57,10 @@ public class a {
 
     public static boolean b() {
         String str;
-        if (!f24432a) {
-            str = ErrorCode.networkError;
+        if (!f10745a) {
+            str = "1001";
         } else if (!b) {
-            str = ErrorCode.serverError;
+            str = "1002";
         } else if (Looper.myLooper() != Looper.getMainLooper()) {
             return true;
         } else {
@@ -72,16 +71,16 @@ public class a {
     }
 
     public static String c(Context context) {
-        if (f24433c) {
-            b.a(ErrorCode.timeOutError);
+        if (f10746c) {
+            b.a("2001");
             return !b() ? "" : c.a().a(a(context), "GUID");
         }
-        f.a(ErrorCode.timeOutError);
+        f.a("2001");
         return !s_a.s_a.s_a.a.d.a() ? "" : s_a.s_a.s_a.a.b.a().a(s_a.s_a.s_a.a.d.a(context), "GUID");
     }
 
     public static boolean d(Context context) {
-        if (f24433c) {
+        if (f10746c) {
             b.a("2002");
             return false;
         }
@@ -93,20 +92,20 @@ public class a {
     }
 
     public static String e(Context context) {
-        if (f24433c) {
-            b.a(ErrorCode.outOfCapError);
+        if (f10746c) {
+            b.a("2003");
             return null;
         }
-        f.a(ErrorCode.outOfCapError);
+        f.a("2003");
         return !s_a.s_a.s_a.a.d.a() ? "" : s_a.s_a.s_a.a.b.a().a(s_a.s_a.s_a.a.d.a(context), "OUID");
     }
 
     public static String f(Context context) {
-        if (f24433c) {
-            b.a(ErrorCode.inPacingError);
+        if (f10746c) {
+            b.a("2004");
             return !b() ? "" : c.a().a(a(context), "DUID");
         }
-        f.a(ErrorCode.inPacingError);
+        f.a("2004");
         return !s_a.s_a.s_a.a.d.a() ? "" : s_a.s_a.s_a.a.b.a().a(s_a.s_a.s_a.a.d.a(context), "DUID");
     }
 }

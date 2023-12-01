@@ -122,7 +122,7 @@ public class KSLifecycleObserve {
                 @Override // android.app.Application.ActivityLifecycleCallbacks
                 public void onActivityPaused(Activity activity) {
                     try {
-                        if (KSLifecycleObserve.this.currentActivity != null && KSLifecycleObserve.this.currentActivity.get() != 0 && ((Activity) KSLifecycleObserve.this.currentActivity.get()).equals(activity)) {
+                        if (KSLifecycleObserve.this.currentActivity != null && KSLifecycleObserve.this.currentActivity.get() != null && ((Activity) KSLifecycleObserve.this.currentActivity.get()).equals(activity)) {
                             KSLifecycleObserve.this.currentActivity = null;
                         }
                         for (KSLifecycleListener kSLifecycleListener : KSLifecycleObserve.this.mListeners) {

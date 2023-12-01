@@ -19,7 +19,7 @@ public final class RepeatOnLifecycleKt {
             if (lifecycle.getCurrentState() != Lifecycle.State.DESTROYED && (a2 = CoroutineScopeKt.a(new RepeatOnLifecycleKt$repeatOnLifecycle$3(lifecycle, state, function2, null), continuation)) == IntrinsicsKt.a()) {
                 return a2;
             }
-            return Unit.f42314a;
+            return Unit.a;
         }
         throw new IllegalArgumentException("repeatOnLifecycle cannot start work with the INITIALIZED lifecycle state.".toString());
     }
@@ -28,6 +28,6 @@ public final class RepeatOnLifecycleKt {
         Lifecycle lifecycle = lifecycleOwner.getLifecycle();
         Intrinsics.c(lifecycle, "lifecycle");
         Object repeatOnLifecycle = repeatOnLifecycle(lifecycle, state, function2, continuation);
-        return repeatOnLifecycle == IntrinsicsKt.a() ? repeatOnLifecycle : Unit.f42314a;
+        return repeatOnLifecycle == IntrinsicsKt.a() ? repeatOnLifecycle : Unit.a;
     }
 }

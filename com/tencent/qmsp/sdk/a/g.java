@@ -6,7 +6,7 @@ import com.google.android.material.timepicker.TimeModel;
 public class g {
 
     /* renamed from: a  reason: collision with root package name */
-    private StringBuilder f38518a;
+    private StringBuilder f24827a;
     private boolean b;
 
     public g() {
@@ -19,13 +19,13 @@ public class g {
 
     private void b(String str) {
         if (this.b) {
-            this.f38518a.append(str);
+            this.f24827a.append(str);
         }
         this.b = true;
     }
 
     public g a() {
-        this.f38518a = new StringBuilder();
+        this.f24827a = new StringBuilder();
         this.b = false;
         return this;
     }
@@ -36,11 +36,11 @@ public class g {
 
     public g a(String str) {
         b();
-        this.f38518a.append(str.replace(',', ';'));
+        this.f24827a.append(str.replace(',', ';'));
         return this;
     }
 
     public String toString() {
-        return this.f38518a.toString();
+        return this.f24827a.toString();
     }
 }

@@ -1,5 +1,6 @@
 package com.youzan.jsbridge.dispatcher;
 
+import com.bytedance.applog.util.WebViewJsUtil;
 import com.youzan.jsbridge.event.NativeEvent;
 import com.youzan.jsbridge.method.JsMethod;
 import com.youzan.jsbridge.method.JsMethodCompat;
@@ -13,7 +14,7 @@ public abstract class BridgeTrigger {
     public void doCallback(Method method, String str, Object... objArr) {
         int length = objArr.length;
         StringBuilder sb = new StringBuilder();
-        sb.append("javascript:");
+        sb.append(WebViewJsUtil.JS_URL_PREFIX);
         if (method instanceof JsMethod) {
             sb.append("window.YouzanJSBridge && window.YouzanJSBridge.callbacks");
             sb.append(" && (typeof window.YouzanJSBridge.callbacks[\"");
@@ -56,7 +57,7 @@ public abstract class BridgeTrigger {
     public void doCallback(String str, Object... objArr) {
         int length = objArr.length;
         StringBuilder sb = new StringBuilder();
-        sb.append("javascript:");
+        sb.append(WebViewJsUtil.JS_URL_PREFIX);
         sb.append("window.YouzanJSBridge && window.YouzanJSBridge.callbacks");
         sb.append(" && (typeof window.YouzanJSBridge.callbacks[\"");
         sb.append(str);

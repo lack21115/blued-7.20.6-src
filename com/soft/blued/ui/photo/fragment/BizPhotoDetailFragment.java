@@ -1,6 +1,5 @@
 package com.soft.blued.ui.photo.fragment;
 
-import android.app.Activity;
 import android.graphics.RectF;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -54,41 +53,34 @@ public class BizPhotoDetailFragment extends PhotoDetailFragment implements Event
         return this.d.getAttacher().a();
     }
 
-    @Override // com.blued.android.module.player.media.observer.EventCallBackListener
     public void a(float f, float f2, float f3) {
     }
 
-    @Override // com.blued.android.module.player.media.observer.EventCallBackListener
     public void a(int i) {
         if (h()) {
-            this.f15555a.setScrollDisable(false);
+            this.a.setScrollDisable(false);
         }
     }
 
-    @Override // com.blued.android.module.player.media.observer.EventCallBackListener
     public void a(View view) {
     }
 
-    @Override // com.blued.android.module.player.media.observer.EventCallBackListener
     public void a(Object... objArr) {
     }
 
-    @Override // com.blued.android.module.media.selector.fragment.PhotoDetailFragment
     public String ah_() {
         int i = this.i;
         return i == 5 ? "!o.png" : i == 8 ? "" : "!original.png";
     }
 
-    @Override // com.blued.android.module.media.selector.fragment.PhotoDetailFragment
     public void ai_() {
         this.i = getArguments() != null ? getArguments().getInt("come_code") : 0;
         this.k = getArguments() != null ? getArguments().getString("key_feed_id") : "";
         this.l = getArguments() != null ? getArguments().getString("target_uid") : "";
-        StatusBarHelper.a((Activity) getActivity(), false);
+        StatusBarHelper.a(getActivity(), false);
         super.ai_();
     }
 
-    @Override // com.blued.android.module.media.selector.fragment.PhotoDetailFragment
     public void aj_() {
         if (!h()) {
             super.aj_();
@@ -104,55 +96,45 @@ public class BizPhotoDetailFragment extends PhotoDetailFragment implements Event
         }
         this.d.a(this.j, 0.0f, 0.0f, false);
         if (f()) {
-            this.f15555a.setScrollDisable(false);
+            this.a.setScrollDisable(false);
         }
     }
 
-    @Override // com.blued.android.module.player.media.observer.EventCallBackListener
     public void ak_() {
     }
 
-    @Override // com.blued.android.module.player.media.observer.EventCallBackListener
     public void al_() {
     }
 
-    @Override // com.blued.android.module.player.media.observer.EventCallBackListener
     public void am_() {
         if (getActivity() != null) {
             getActivity().finish();
         }
     }
 
-    @Override // com.blued.android.module.player.media.observer.EventCallBackListener
     public void b(View view) {
     }
 
-    @Override // com.blued.android.module.player.media.observer.EventCallBackListener
     public void b(Object... objArr) {
     }
 
-    @Override // com.blued.android.module.player.media.observer.EventCallBackListener
     public void d() {
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment
     public boolean isActivitySwipeBackEnable() {
         return false;
     }
 
-    @Override // com.blued.android.module.media.selector.fragment.PhotoDetailFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         EventCallbackObserver.a().a(this);
         return super.onCreateView(layoutInflater, viewGroup, bundle);
     }
 
-    @Override // com.blued.android.module.media.selector.fragment.PhotoDetailFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         EventCallbackObserver.a().b(this);
         super.onDestroy();
     }
 
-    @Override // com.blued.android.module.media.selector.fragment.PhotoDetailFragment, android.view.GestureDetector.OnDoubleTapListener
     public boolean onDoubleTap(MotionEvent motionEvent) {
         if (h()) {
             try {

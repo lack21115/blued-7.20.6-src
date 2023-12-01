@@ -8,11 +8,11 @@ import java.util.concurrent.Executors;
 public final class AsyncDifferConfig<T> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Executor f3214a;
+    private final Executor f3166a;
     private final Executor b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final DiffUtil.ItemCallback<T> f3215c;
+    private final DiffUtil.ItemCallback<T> f3167c;
 
     /* loaded from: source-8756600-dex2jar.jar:androidx/recyclerview/widget/AsyncDifferConfig$Builder.class */
     public static final class Builder<T> {
@@ -20,14 +20,14 @@ public final class AsyncDifferConfig<T> {
         private static Executor e = null;
 
         /* renamed from: a  reason: collision with root package name */
-        private Executor f3216a;
+        private Executor f3168a;
         private Executor b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final DiffUtil.ItemCallback<T> f3217c;
+        private final DiffUtil.ItemCallback<T> f3169c;
 
         public Builder(DiffUtil.ItemCallback<T> itemCallback) {
-            this.f3217c = itemCallback;
+            this.f3169c = itemCallback;
         }
 
         public AsyncDifferConfig<T> build() {
@@ -39,7 +39,7 @@ public final class AsyncDifferConfig<T> {
                 }
                 this.b = e;
             }
-            return new AsyncDifferConfig<>(this.f3216a, this.b, this.f3217c);
+            return new AsyncDifferConfig<>(this.f3168a, this.b, this.f3169c);
         }
 
         public Builder<T> setBackgroundThreadExecutor(Executor executor) {
@@ -48,15 +48,15 @@ public final class AsyncDifferConfig<T> {
         }
 
         public Builder<T> setMainThreadExecutor(Executor executor) {
-            this.f3216a = executor;
+            this.f3168a = executor;
             return this;
         }
     }
 
     AsyncDifferConfig(Executor executor, Executor executor2, DiffUtil.ItemCallback<T> itemCallback) {
-        this.f3214a = executor;
+        this.f3166a = executor;
         this.b = executor2;
-        this.f3215c = itemCallback;
+        this.f3167c = itemCallback;
     }
 
     public Executor getBackgroundThreadExecutor() {
@@ -64,10 +64,10 @@ public final class AsyncDifferConfig<T> {
     }
 
     public DiffUtil.ItemCallback<T> getDiffCallback() {
-        return this.f3215c;
+        return this.f3167c;
     }
 
     public Executor getMainThreadExecutor() {
-        return this.f3214a;
+        return this.f3166a;
     }
 }

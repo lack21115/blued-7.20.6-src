@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemSearchAllCircleBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final FrameLayout f29303a;
+    private final FrameLayout f15613a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f29303a;
+        return this.f15613a;
     }
 }

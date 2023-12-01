@@ -7,20 +7,16 @@ import java.util.concurrent.ConcurrentHashMap;
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/e/ad.class */
 public final class ad {
     private com.anythink.core.common.f b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private Map<String, Object> f6621c;
+    private Map<String, Object> c;
     private d d;
     private Map<String, String> e;
     private boolean f;
     private Map<String, String> h;
     private String g = "";
-
-    /* renamed from: a  reason: collision with root package name */
-    final Object f6620a = new Object();
+    final Object a = new Object();
 
     public final Object a() {
-        return this.f6620a;
+        return this.a;
     }
 
     public final String a(String str) {
@@ -43,10 +39,10 @@ public final class ad {
     }
 
     public final void a(String str, Object obj) {
-        if (this.f6621c == null) {
-            this.f6621c = new ConcurrentHashMap(2);
+        if (this.c == null) {
+            this.c = new ConcurrentHashMap(2);
         }
-        this.f6621c.put(str, obj);
+        this.c.put(str, obj);
     }
 
     public final void a(String str, String str2) {
@@ -57,7 +53,7 @@ public final class ad {
     }
 
     public final void a(Map<String, Object> map) {
-        this.f6621c = map;
+        this.c = map;
     }
 
     public final void a(boolean z) {
@@ -88,7 +84,7 @@ public final class ad {
     }
 
     public final Map<String, Object> c() {
-        return this.f6621c;
+        return this.c;
     }
 
     public final d d() {

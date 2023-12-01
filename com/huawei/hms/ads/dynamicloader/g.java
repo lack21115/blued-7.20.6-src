@@ -17,7 +17,7 @@ public final class g extends IDynamicLoader.Stub {
     public static String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f22472c = "DynamicLoader";
+    private static final String f8864c = "DynamicLoader";
     private static final String d = "version_strategy_type";
 
     private static IObjectWrapper a(Context context, Bundle bundle) throws RemoteException {
@@ -44,7 +44,7 @@ public final class g extends IDynamicLoader.Stub {
             throw new RemoteException("Get loading strategy failed.");
         } catch (j e) {
             aa.c("DynamicLoader", "LoaderException:" + e.getMessage());
-            Bundle bundle2 = e.f22475a;
+            Bundle bundle2 = e.f8867a;
             if (bundle2 != null) {
                 aa.c("DynamicLoader", "Get bundle from LoaderException.");
                 return ac.a(bundle2);

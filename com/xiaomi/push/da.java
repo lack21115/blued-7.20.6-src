@@ -4,7 +4,7 @@ package com.xiaomi.push;
 /* synthetic */ class da {
 
     /* renamed from: a  reason: collision with root package name */
-    static final /* synthetic */ int[] f41324a;
+    static final /* synthetic */ int[] f27633a;
 
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:27:0x0095 -> B:61:0x0014). Please submit an issue!!! */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:29:0x0099 -> B:55:0x001f). Please submit an issue!!! */
@@ -19,53 +19,53 @@ package com.xiaomi.push;
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:47:0x00bd -> B:69:0x0088). Please submit an issue!!! */
     static {
         int[] iArr = new int[hg.values().length];
-        f41324a = iArr;
+        f27633a = iArr;
         try {
             iArr[hg.Registration.ordinal()] = 1;
         } catch (NoSuchFieldError e) {
         }
         try {
-            f41324a[hg.UnRegistration.ordinal()] = 2;
+            f27633a[hg.UnRegistration.ordinal()] = 2;
         } catch (NoSuchFieldError e2) {
         }
         try {
-            f41324a[hg.Subscription.ordinal()] = 3;
+            f27633a[hg.Subscription.ordinal()] = 3;
         } catch (NoSuchFieldError e3) {
         }
         try {
-            f41324a[hg.UnSubscription.ordinal()] = 4;
+            f27633a[hg.UnSubscription.ordinal()] = 4;
         } catch (NoSuchFieldError e4) {
         }
         try {
-            f41324a[hg.SendMessage.ordinal()] = 5;
+            f27633a[hg.SendMessage.ordinal()] = 5;
         } catch (NoSuchFieldError e5) {
         }
         try {
-            f41324a[hg.AckMessage.ordinal()] = 6;
+            f27633a[hg.AckMessage.ordinal()] = 6;
         } catch (NoSuchFieldError e6) {
         }
         try {
-            f41324a[hg.SetConfig.ordinal()] = 7;
+            f27633a[hg.SetConfig.ordinal()] = 7;
         } catch (NoSuchFieldError e7) {
         }
         try {
-            f41324a[hg.ReportFeedback.ordinal()] = 8;
+            f27633a[hg.ReportFeedback.ordinal()] = 8;
         } catch (NoSuchFieldError e8) {
         }
         try {
-            f41324a[hg.MultiConnectionBroadcast.ordinal()] = 9;
+            f27633a[hg.MultiConnectionBroadcast.ordinal()] = 9;
         } catch (NoSuchFieldError e9) {
         }
         try {
-            f41324a[hg.MultiConnectionResult.ordinal()] = 10;
+            f27633a[hg.MultiConnectionResult.ordinal()] = 10;
         } catch (NoSuchFieldError e10) {
         }
         try {
-            f41324a[hg.Notification.ordinal()] = 11;
+            f27633a[hg.Notification.ordinal()] = 11;
         } catch (NoSuchFieldError e11) {
         }
         try {
-            f41324a[hg.Command.ordinal()] = 12;
+            f27633a[hg.Command.ordinal()] = 12;
         } catch (NoSuchFieldError e12) {
         }
     }

@@ -56,9 +56,10 @@ public final class MediaMetadata implements Parcelable {
     private static final String[] PREFERRED_URI_ORDER = {"android.media.metadata.DISPLAY_ICON_URI", "android.media.metadata.ART_URI", "android.media.metadata.ALBUM_ART_URI"};
     private static final ArrayMap<String, Integer> METADATA_KEYS_TYPE = new ArrayMap<>();
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: android.media.MediaMetadata$1  reason: invalid class name */
     /* loaded from: source-9557208-dex2jar.jar:android/media/MediaMetadata$1.class */
-    static final class AnonymousClass1 implements Parcelable.Creator<MediaMetadata> {
+    public static final class AnonymousClass1 implements Parcelable.Creator<MediaMetadata> {
         AnonymousClass1() {
         }
 

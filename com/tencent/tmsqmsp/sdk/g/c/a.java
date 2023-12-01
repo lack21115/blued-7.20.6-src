@@ -11,22 +11,22 @@ public interface a extends IInterface {
 
     /* renamed from: com.tencent.tmsqmsp.sdk.g.c.a$a  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/tmsqmsp/sdk/g/c/a$a.class */
-    public static abstract class AbstractBinderC1052a extends Binder implements a {
+    public static abstract class AbstractBinderC0882a extends Binder implements a {
 
         /* renamed from: com.tencent.tmsqmsp.sdk.g.c.a$a$a  reason: collision with other inner class name */
         /* loaded from: source-8829756-dex2jar.jar:com/tencent/tmsqmsp/sdk/g/c/a$a$a.class */
-        public static class C1053a implements a {
+        public static class C0883a implements a {
 
             /* renamed from: a  reason: collision with root package name */
-            private IBinder f39770a;
+            private IBinder f26079a;
 
-            public C1053a(IBinder iBinder) {
-                this.f39770a = iBinder;
+            public C0883a(IBinder iBinder) {
+                this.f26079a = iBinder;
             }
 
             @Override // android.os.IInterface
             public IBinder asBinder() {
-                return this.f39770a;
+                return this.f26079a;
             }
 
             @Override // com.tencent.tmsqmsp.sdk.g.c.a
@@ -36,7 +36,7 @@ public interface a extends IInterface {
                 try {
                     obtain.writeInterfaceToken("com.zui.deviceidservice.IDeviceidInterface");
                     obtain.writeString(str);
-                    this.f39770a.transact(5, obtain, obtain2, 0);
+                    this.f26079a.transact(5, obtain, obtain2, 0);
                     obtain2.readException();
                     String readString = obtain2.readString();
                     obtain2.recycle();
@@ -60,7 +60,7 @@ public interface a extends IInterface {
                 boolean z = false;
                 try {
                     obtain.writeInterfaceToken("com.zui.deviceidservice.IDeviceidInterface");
-                    this.f39770a.transact(3, obtain, obtain2, 0);
+                    this.f26079a.transact(3, obtain, obtain2, 0);
                     obtain2.readException();
                     if (obtain2.readInt() != 0) {
                         z = true;
@@ -82,7 +82,7 @@ public interface a extends IInterface {
                 Parcel obtain2 = Parcel.obtain();
                 try {
                     obtain.writeInterfaceToken("com.zui.deviceidservice.IDeviceidInterface");
-                    this.f39770a.transact(1, obtain, obtain2, 0);
+                    this.f26079a.transact(1, obtain, obtain2, 0);
                     obtain2.readException();
                     String readString = obtain2.readString();
                     obtain2.recycle();
@@ -105,7 +105,7 @@ public interface a extends IInterface {
                 return null;
             }
             IInterface queryLocalInterface = iBinder.queryLocalInterface("com.zui.deviceidservice.IDeviceidInterface");
-            return (queryLocalInterface == null || !(queryLocalInterface instanceof a)) ? new C1053a(iBinder) : (a) queryLocalInterface;
+            return (queryLocalInterface == null || !(queryLocalInterface instanceof a)) ? new C0883a(iBinder) : (a) queryLocalInterface;
         }
     }
 

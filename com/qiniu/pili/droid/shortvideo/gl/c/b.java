@@ -12,7 +12,7 @@ import java.util.List;
 public class b extends k {
 
     /* renamed from: c  reason: collision with root package name */
-    private int f27707c;
+    private int f14019c;
     private int d;
     private int e;
     private int f = -1;
@@ -60,7 +60,7 @@ public class b extends k {
 
     @Override // com.qiniu.pili.droid.shortvideo.gl.c.k, com.qiniu.pili.droid.shortvideo.gl.c.g
     public boolean a(int i, int i2) {
-        this.f27707c = i;
+        this.f14019c = i;
         this.d = i2;
         return super.a(i, i2);
     }
@@ -86,7 +86,7 @@ public class b extends k {
                 if (this.p.getWidth() > 0.0f && this.p.getHeight() > 0.0f) {
                     this.r.a(this.p.getWidth(), this.p.getHeight());
                 }
-                this.r.a(this.f27707c, this.d);
+                this.r.a(this.f14019c, this.d);
                 this.r.b();
                 com.qiniu.pili.droid.shortvideo.f.e.j.c("GifProcessor", "setup -");
                 return true;

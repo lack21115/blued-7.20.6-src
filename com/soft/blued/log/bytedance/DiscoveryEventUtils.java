@@ -7,7 +7,7 @@ import kotlin.Metadata;
 public final class DiscoveryEventUtils {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final DiscoveryEventUtils f29687a = new DiscoveryEventUtils();
+    public static final DiscoveryEventUtils f15997a = new DiscoveryEventUtils();
 
     private DiscoveryEventUtils() {
     }

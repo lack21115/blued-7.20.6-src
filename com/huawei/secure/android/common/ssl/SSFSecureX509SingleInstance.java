@@ -15,7 +15,7 @@ import java.security.cert.CertificateException;
 public class SSFSecureX509SingleInstance {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23099a = "SSFSecureX509SingleInstance";
+    private static final String f9491a = "SSFSecureX509SingleInstance";
     private static volatile SecureX509TrustManager b;
 
     private SSFSecureX509SingleInstance() {
@@ -30,10 +30,10 @@ public class SSFSecureX509SingleInstance {
                         if (b == null) {
                             InputStream filesBksIS = BksUtil.getFilesBksIS(context);
                             if (filesBksIS == null) {
-                                g.c(f23099a, "get assets bks");
+                                g.c(f9491a, "get assets bks");
                                 filesBksIS = context.getAssets().open("hmsrootcas.bks");
                             } else {
-                                g.c(f23099a, "get files bks");
+                                g.c(f9491a, "get files bks");
                             }
                             b = new SecureX509TrustManager(filesBksIS, "", true);
                             new e().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, context);
@@ -45,20 +45,20 @@ public class SSFSecureX509SingleInstance {
             }
             return b;
         }
-        throw new NullPointerException(com.anythink.expressad.foundation.g.b.b.f7836a);
+        throw new NullPointerException(com.anythink.expressad.foundation.g.b.b.f4996a);
     }
 
     public static void updateBks(InputStream inputStream) {
-        g.c(f23099a, "update bks");
+        g.c(f9491a, "update bks");
         long currentTimeMillis = System.currentTimeMillis();
         if (inputStream != null && b != null) {
             b = new SecureX509TrustManager(inputStream, "", true);
-            String str = f23099a;
+            String str = f9491a;
             g.a(str, "updateBks: new SecureX509TrustManager cost : " + (System.currentTimeMillis() - currentTimeMillis) + " ms");
             SSFCompatiableSystemCA.a(b);
             SASFCompatiableSystemCA.a(b);
         }
-        String str2 = f23099a;
+        String str2 = f9491a;
         g.a(str2, "update bks cost : " + (System.currentTimeMillis() - currentTimeMillis) + " ms");
     }
 }

@@ -11,7 +11,7 @@ import java.util.HashSet;
 public class af {
 
     /* renamed from: a  reason: collision with root package name */
-    private String[] f23717a = {"/sbin/.magisk/", "/sbin/.core/mirror", "/sbin/.core/img", "/sbin/.core/db-0/magisk.db"};
+    private String[] f10109a = {"/sbin/.magisk/", "/sbin/.core/mirror", "/sbin/.core/img", "/sbin/.core/db-0/magisk.db"};
 
     public int a() {
         File file = new File(String.format("/proc/%d/mounts", Integer.valueOf(Process.myPid())));
@@ -26,7 +26,7 @@ public class af {
                     fileInputStream.close();
                     return hashSet.size();
                 }
-                String[] strArr = this.f23717a;
+                String[] strArr = this.f10109a;
                 int length = strArr.length;
                 int i = 0;
                 while (true) {

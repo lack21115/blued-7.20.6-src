@@ -14,13 +14,9 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/shortvideo/view/EditBottomBaseView.class */
 public abstract class EditBottomBaseView extends RelativeLayout implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected TextView f15887a;
+    protected TextView a;
     protected TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    protected ViewGroup f15888c;
+    protected ViewGroup c;
     private ImageView d;
     private long e;
 
@@ -47,19 +43,19 @@ public abstract class EditBottomBaseView extends RelativeLayout implements View.
         TextView textView = (TextView) inflate.findViewById(R.id.stv_editor_bottom_save);
         this.b = textView;
         textView.setOnClickListener(this);
-        this.f15887a = (TextView) inflate.findViewById(R.id.stv_editor_bottom_title);
+        this.a = (TextView) inflate.findViewById(R.id.stv_editor_bottom_title);
         ViewGroup viewGroup = (ViewGroup) inflate.findViewById(R.id.stv_editor_bottom_content);
-        this.f15888c = viewGroup;
+        this.c = viewGroup;
         viewGroup.addView(getContentV(), new RelativeLayout.LayoutParams(-1, -2));
         if (g()) {
-            this.f15887a.setVisibility(0);
+            this.a.setVisibility(0);
             this.d.setVisibility(8);
             if (getTitleId() != -1) {
-                this.f15887a.setText(getTitleId());
+                this.a.setText(getTitleId());
             }
         } else {
             this.d.setVisibility(0);
-            this.f15887a.setVisibility(8);
+            this.a.setVisibility(8);
         }
         b();
         addView(inflate);

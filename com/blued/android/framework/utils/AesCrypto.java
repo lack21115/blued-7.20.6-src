@@ -9,21 +9,17 @@ import javax.crypto.spec.SecretKeySpec;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/utils/AesCrypto.class */
 public class AesCrypto {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final String f10063a = "df0b".toLowerCase();
+    public static final String a = "df0b".toLowerCase();
     public static final byte[] b = Base64.decode("VlEc5qsEDXWChrWJ0AzMXQ==", 2);
-
-    /* renamed from: c  reason: collision with root package name */
-    public static final byte[] f10064c = Base64.decode("MC8Lpxk9zqyuRPXMdO8rJQ==", 2);
+    public static final byte[] c = Base64.decode("MC8Lpxk9zqyuRPXMdO8rJQ==", 2);
     public static final byte[] d = a();
 
     public static String a(String str) throws Exception {
         byte[] a2 = a();
         String a3 = a(str, a2);
         String a4 = a(a2);
-        int parseInt = Integer.parseInt(f10063a.substring(0, 1), 16);
-        return f10063a + a3.substring(0, parseInt) + a4 + a3.substring(parseInt);
+        int parseInt = Integer.parseInt(a.substring(0, 1), 16);
+        return a + a3.substring(0, parseInt) + a4 + a3.substring(parseInt);
     }
 
     private static String a(String str, String str2, byte[] bArr) throws Exception {
@@ -89,7 +85,7 @@ public class AesCrypto {
     }
 
     public static String b(String str) throws Exception {
-        return b(str, f10063a, b);
+        return b(str, a, b);
     }
 
     private static String b(String str, String str2, byte[] bArr) throws Exception {
@@ -112,15 +108,15 @@ public class AesCrypto {
     }
 
     public static String c(String str) throws Exception {
-        return a(str, f10063a, b);
+        return a(str, a, b);
     }
 
     public static String d(String str) throws Exception {
-        return b(str, "4545", f10064c);
+        return b(str, "4545", c);
     }
 
     public static String e(String str) throws Exception {
-        return a(str, "4545", f10064c);
+        return a(str, "4545", c);
     }
 
     public static byte[] f(String str) {

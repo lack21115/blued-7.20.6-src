@@ -7,15 +7,15 @@ import java.util.ServiceLoader;
 public class LoginServiceManager {
 
     /* renamed from: a  reason: collision with root package name */
-    private static ILoginService f20503a;
+    private static ILoginService f6897a;
 
     public static ILoginService a() {
         ILoginService iLoginService;
         ILoginService iLoginService2;
         synchronized (LoginServiceManager.class) {
             try {
-                if (f20503a != null && !(f20503a instanceof LonginServiceDefaultImpl)) {
-                    return f20503a;
+                if (f6897a != null && !(f6897a instanceof LonginServiceDefaultImpl)) {
+                    return f6897a;
                 }
                 ServiceLoader load = ServiceLoader.load(ILoginService.class);
                 Iterator it = load.iterator();
@@ -25,7 +25,7 @@ public class LoginServiceManager {
                         do {
                             if (!it2.hasNext()) {
                                 ILoginService iLoginService3 = (ILoginService) Class.forName("com.soft.blued.ui.login_register.auto.LoginServiceImpl").newInstance();
-                                f20503a = iLoginService3;
+                                f6897a = iLoginService3;
                                 return iLoginService3;
                             }
                             iLoginService = (ILoginService) it2.next();
@@ -33,12 +33,12 @@ public class LoginServiceManager {
                                 break;
                             }
                         } while (!"CHATROOM".equals(iLoginService.a()));
-                        f20503a = iLoginService;
+                        f6897a = iLoginService;
                         return iLoginService;
                     }
                     iLoginService2 = (ILoginService) it.next();
                 } while (!"MAIN".equals(iLoginService2.a()));
-                f20503a = iLoginService2;
+                f6897a = iLoginService2;
                 return iLoginService2;
             } catch (Throwable th) {
                 throw th;

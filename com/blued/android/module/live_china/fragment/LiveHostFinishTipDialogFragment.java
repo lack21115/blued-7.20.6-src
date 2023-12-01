@@ -12,9 +12,7 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveHostFinishTipDialogFragment.class */
 public final class LiveHostFinishTipDialogFragment extends FullDialogFragment<LiveHostFinishTipDialogFragmentBinding> {
     public static final Companion b = new Companion(null);
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f12976c = "";
+    private String c = "";
     private String d = "";
 
     @Metadata
@@ -42,7 +40,7 @@ public final class LiveHostFinishTipDialogFragment extends FullDialogFragment<Li
 
     public final void a(String str) {
         Intrinsics.e(str, "<set-?>");
-        this.f12976c = str;
+        this.c = str;
     }
 
     public final void b(String str) {
@@ -66,15 +64,15 @@ public final class LiveHostFinishTipDialogFragment extends FullDialogFragment<Li
 
     @Override // com.blued.android.module.common.base.dialog.FullDialogFragment
     public void f() {
-        d().d.setText(this.f12976c);
+        d().d.setText(this.c);
         d().b.setText(this.d);
-        d().f12252c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveHostFinishTipDialogFragment$u7fEpvvskyWSntPHvmyrxFvIwjw
+        d().c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveHostFinishTipDialogFragment$u7fEpvvskyWSntPHvmyrxFvIwjw
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 LiveHostFinishTipDialogFragment.a(LiveHostFinishTipDialogFragment.this, view);
             }
         });
-        d().f12251a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveHostFinishTipDialogFragment$0OExNXHtJezHDlnEZ7mLXjo6crc
+        d().a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveHostFinishTipDialogFragment$0OExNXHtJezHDlnEZ7mLXjo6crc
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 LiveHostFinishTipDialogFragment.b(LiveHostFinishTipDialogFragment.this, view);

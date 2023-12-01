@@ -8,7 +8,7 @@ import okio.ByteString;
 public final class p extends com.heytap.nearx.a.a.b<p, a> {
 
     /* renamed from: c  reason: collision with root package name */
-    public static final com.heytap.nearx.a.a.e<p> f26357c = new b();
+    public static final com.heytap.nearx.a.a.e<p> f12669c = new b();
     public static final Integer d = 0;
     public static final Integer e = 0;
     public static final Long f = 0L;
@@ -32,7 +32,7 @@ public final class p extends com.heytap.nearx.a.a.b<p, a> {
     public static final class a extends b.a<p, a> {
 
         /* renamed from: c  reason: collision with root package name */
-        public String f26358c;
+        public String f12670c;
         public String d;
         public Integer e;
         public Integer f;
@@ -87,7 +87,7 @@ public final class p extends com.heytap.nearx.a.a.b<p, a> {
         }
 
         public a a(String str) {
-            this.f26358c = str;
+            this.f12670c = str;
             return this;
         }
 
@@ -110,9 +110,9 @@ public final class p extends com.heytap.nearx.a.a.b<p, a> {
             String str;
             Integer num;
             Integer num2;
-            String str2 = this.f26358c;
+            String str2 = this.f12670c;
             if (str2 == null || (str = this.d) == null || (num = this.e) == null || (num2 = this.f) == null) {
-                throw com.heytap.nearx.a.a.a.b.a(this.f26358c, "appId", this.d, "packageName", this.e, "platform", this.f, "sdkVerCode");
+                throw com.heytap.nearx.a.a.a.b.a(this.f12670c, "appId", this.d, "packageName", this.e, "platform", this.f, "sdkVerCode");
             }
             return new p(str2, str, num, num2, this.g, this.h, this.i, this.j, this.k, this.l, this.m, this.n, this.o, super.a());
         }
@@ -138,14 +138,14 @@ public final class p extends com.heytap.nearx.a.a.b<p, a> {
             int i = 0;
             int a6 = pVar.l != null ? com.heytap.nearx.a.a.e.i.a(5, (int) pVar.l) : 0;
             int a7 = pVar.m != null ? com.heytap.nearx.a.a.e.p.a(6, (int) pVar.m) : 0;
-            int a8 = pVar.n != null ? h.f26341c.a(7, (int) pVar.n) : 0;
-            int a9 = pVar.o != null ? m.f26351c.a(8, (int) pVar.o) : 0;
-            int a10 = pVar.p != null ? k.f26347c.a(9, (int) pVar.p) : 0;
-            int a11 = pVar.q != null ? x.f26373c.a(10, (int) pVar.q) : 0;
-            int a12 = pVar.r != null ? l.f26349c.a(11, (int) pVar.r) : 0;
+            int a8 = pVar.n != null ? h.f12653c.a(7, (int) pVar.n) : 0;
+            int a9 = pVar.o != null ? m.f12663c.a(8, (int) pVar.o) : 0;
+            int a10 = pVar.p != null ? k.f12659c.a(9, (int) pVar.p) : 0;
+            int a11 = pVar.q != null ? x.f12685c.a(10, (int) pVar.q) : 0;
+            int a12 = pVar.r != null ? l.f12661c.a(11, (int) pVar.r) : 0;
             int a13 = pVar.s != null ? com.heytap.nearx.a.a.e.i.a(12, (int) pVar.s) : 0;
             if (pVar.t != null) {
-                i = t.f26365c.a(13, (int) pVar.t);
+                i = t.f12677c.a(13, (int) pVar.t);
             }
             return a13 + a5 + a2 + a3 + a4 + a6 + a7 + a8 + a9 + a10 + a11 + a12 + i + pVar.a().size();
         }
@@ -163,25 +163,25 @@ public final class p extends com.heytap.nearx.a.a.b<p, a> {
                 com.heytap.nearx.a.a.e.p.a(gVar, 6, pVar.m);
             }
             if (pVar.n != null) {
-                h.f26341c.a(gVar, 7, pVar.n);
+                h.f12653c.a(gVar, 7, pVar.n);
             }
             if (pVar.o != null) {
-                m.f26351c.a(gVar, 8, pVar.o);
+                m.f12663c.a(gVar, 8, pVar.o);
             }
             if (pVar.p != null) {
-                k.f26347c.a(gVar, 9, pVar.p);
+                k.f12659c.a(gVar, 9, pVar.p);
             }
             if (pVar.q != null) {
-                x.f26373c.a(gVar, 10, pVar.q);
+                x.f12685c.a(gVar, 10, pVar.q);
             }
             if (pVar.r != null) {
-                l.f26349c.a(gVar, 11, pVar.r);
+                l.f12661c.a(gVar, 11, pVar.r);
             }
             if (pVar.s != null) {
                 com.heytap.nearx.a.a.e.i.a(gVar, 12, pVar.s);
             }
             if (pVar.t != null) {
-                t.f26365c.a(gVar, 13, pVar.t);
+                t.f12677c.a(gVar, 13, pVar.t);
             }
             gVar.a(pVar.a());
         }
@@ -217,25 +217,25 @@ public final class p extends com.heytap.nearx.a.a.b<p, a> {
                         aVar.c(com.heytap.nearx.a.a.e.p.a(fVar));
                         break;
                     case 7:
-                        aVar.a(h.f26341c.a(fVar));
+                        aVar.a(h.f12653c.a(fVar));
                         break;
                     case 8:
-                        aVar.a(m.f26351c.a(fVar));
+                        aVar.a(m.f12663c.a(fVar));
                         break;
                     case 9:
-                        aVar.a(k.f26347c.a(fVar));
+                        aVar.a(k.f12659c.a(fVar));
                         break;
                     case 10:
-                        aVar.a(x.f26373c.a(fVar));
+                        aVar.a(x.f12685c.a(fVar));
                         break;
                     case 11:
-                        aVar.a(l.f26349c.a(fVar));
+                        aVar.a(l.f12661c.a(fVar));
                         break;
                     case 12:
                         aVar.b(com.heytap.nearx.a.a.e.i.a(fVar));
                         break;
                     case 13:
-                        aVar.a(t.f26365c.a(fVar));
+                        aVar.a(t.f12677c.a(fVar));
                         break;
                     default:
                         com.heytap.nearx.a.a.a c2 = fVar.c();
@@ -247,7 +247,7 @@ public final class p extends com.heytap.nearx.a.a.b<p, a> {
     }
 
     public p(String str, String str2, Integer num, Integer num2, Long l, String str3, h hVar, m mVar, k kVar, x xVar, l lVar, Long l2, t tVar, ByteString byteString) {
-        super(f26357c, byteString);
+        super(f12669c, byteString);
         this.h = str;
         this.i = str2;
         this.j = num;

@@ -4,7 +4,7 @@ package com.vivo.push.b;
 public final class y extends com.vivo.push.o {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f41058a;
+    private String f27367a;
 
     public y() {
         super(2008);
@@ -12,17 +12,17 @@ public final class y extends com.vivo.push.o {
 
     public y(String str) {
         super(2008);
-        this.f41058a = str;
+        this.f27367a = str;
     }
 
     @Override // com.vivo.push.o
     public final void c(com.vivo.push.a aVar) {
-        aVar.a("package_name", this.f41058a);
+        aVar.a("package_name", this.f27367a);
     }
 
     @Override // com.vivo.push.o
     public final void d(com.vivo.push.a aVar) {
-        this.f41058a = aVar.a("package_name");
+        this.f27367a = aVar.a("package_name");
     }
 
     @Override // com.vivo.push.o

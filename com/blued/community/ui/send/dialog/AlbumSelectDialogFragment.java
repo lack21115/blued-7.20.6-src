@@ -46,13 +46,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/community/ui/send/dialog/AlbumSelectDialogFragment.class */
 public final class AlbumSelectDialogFragment extends BottomSheetDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f19909a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private final int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final int f19910c;
+    private final int c;
     private final int d;
     private final int e;
     private DialogAlbumSelectBinding f;
@@ -84,10 +80,10 @@ public final class AlbumSelectDialogFragment extends BottomSheetDialogFragment {
         public final AlbumSelectDialogFragment a(final FragmentActivity fragmentActivity, int i, int i2, int i3, int i4, boolean z) {
             Intrinsics.e(fragmentActivity, "fragmentActivity");
             final AlbumSelectDialogFragment albumSelectDialogFragment = new AlbumSelectDialogFragment();
-            Bundle a2 = AlbumSelectFragment.a(i, i2, i3, i4);
-            a2.putBoolean("show_peek", z);
-            albumSelectDialogFragment.setArguments(a2);
-            if (!CommunityServiceManager.a().b(fragmentActivity)) {
+            Bundle a = AlbumSelectFragment.a(i, i2, i3, i4);
+            a.putBoolean("show_peek", z);
+            albumSelectDialogFragment.setArguments(a);
+            if (!CommunityServiceManager.a().b((Context) fragmentActivity)) {
                 PermissionUtils.f(new PermissionCallbacks() { // from class: com.blued.community.ui.send.dialog.AlbumSelectDialogFragment$Companion$show$1
                     @Override // com.blued.android.framework.permission.PermissionCallbacks
                     public void U_() {
@@ -109,10 +105,10 @@ public final class AlbumSelectDialogFragment extends BottomSheetDialogFragment {
 
     public AlbumSelectDialogFragment() {
         int a2 = KeyboardUtils.a();
-        this.f19910c = a2 <= 0 ? DensityUtils.a(AppInfo.d(), 320.0f) : a2;
+        this.c = a2 <= 0 ? DensityUtils.a(AppInfo.d(), 320.0f) : a2;
         int a3 = DensityUtils.a(AppInfo.d(), 54.0f);
         this.d = a3;
-        this.e = this.f19910c + a3;
+        this.e = this.c + a3;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -302,7 +298,7 @@ public final class AlbumSelectDialogFragment extends BottomSheetDialogFragment {
                 Intrinsics.c("mViewModel");
                 selectAlbumViewModel = null;
             }
-            selectAlbumViewModel.e().setValue(Integer.valueOf(this.f19910c));
+            selectAlbumViewModel.e().setValue(Integer.valueOf(this.c));
         } else {
             BottomSheetBehavior<FrameLayout> bottomSheetBehavior3 = this.j;
             if (bottomSheetBehavior3 == null) {
@@ -410,13 +406,12 @@ public final class AlbumSelectDialogFragment extends BottomSheetDialogFragment {
         });
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityCreated(Bundle bundle) {
         super.onActivityCreated(bundle);
         i();
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         ViewModelStore viewModelStore = requireActivity().getViewModelStore();
@@ -437,7 +432,7 @@ public final class AlbumSelectDialogFragment extends BottomSheetDialogFragment {
         this.h = (FeedPostViewModel) new ViewModelProvider(viewModelStore2, companion2.getInstance((Application) d2)).get(FeedPostViewModel.class);
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
         DialogAlbumSelectBinding a2 = DialogAlbumSelectBinding.a(inflater, viewGroup, false);
@@ -446,7 +441,7 @@ public final class AlbumSelectDialogFragment extends BottomSheetDialogFragment {
         return a2.getRoot();
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onDestroyView() {
         super.onDestroyView();
         FragmentTransaction beginTransaction = getChildFragmentManager().beginTransaction();
@@ -460,7 +455,7 @@ public final class AlbumSelectDialogFragment extends BottomSheetDialogFragment {
         this.f = null;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, android.content.DialogInterface.OnDismissListener
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onDismiss(DialogInterface dialog) {
         Intrinsics.e(dialog, "dialog");
         SelectAlbumViewModel selectAlbumViewModel = this.g;
@@ -477,7 +472,7 @@ public final class AlbumSelectDialogFragment extends BottomSheetDialogFragment {
         super.onDismiss(dialog);
     }
 
-    @Override // com.blued.android.module.common.base.dialog.bottomsheet.BottomSheetDialogFragment, androidx.fragment.app.DialogFragment
+    @Override // com.blued.android.module.common.base.dialog.bottomsheet.BottomSheetDialogFragment
     public void setupDialog(Dialog dialog, int i) {
         Intrinsics.e(dialog, "dialog");
         super.setupDialog(dialog, i);
@@ -522,7 +517,7 @@ public final class AlbumSelectDialogFragment extends BottomSheetDialogFragment {
                     albumSelectDialogFragment.b(f2);
                     AlbumSelectDialogFragment.this.a(f * 0.6f);
                 } else {
-                    i2 = AlbumSelectDialogFragment.this.f19910c;
+                    i2 = AlbumSelectDialogFragment.this.c;
                     i3 = AlbumSelectDialogFragment.this.e;
                     int i4 = i2 + ((int) (i3 * f));
                     Logger.c("BottomSheetCallback", Intrinsics.a("height = ", (Object) Integer.valueOf(i4)));
@@ -608,7 +603,7 @@ public final class AlbumSelectDialogFragment extends BottomSheetDialogFragment {
         });
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void show(final FragmentManager manager, final String str) {
         Intrinsics.e(manager, "manager");
         DelayRepeatTaskUtils.a("AlbumSelectDialogFragmentShow", new Runnable() { // from class: com.blued.community.ui.send.dialog.-$$Lambda$AlbumSelectDialogFragment$_1VMZpBrM8A6Vea-Pe_1suT5ntQ

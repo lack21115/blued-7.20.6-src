@@ -26,7 +26,7 @@ public final class a {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.kwad.components.core.m.a$a  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/components/core/m/a$a.class */
-    public static final class C0526a {
+    public static final class C0356a {
         private static final a Oj = new a();
     }
 
@@ -42,7 +42,7 @@ public final class a {
     }
 
     public static a pb() {
-        return C0526a.Oj;
+        return C0356a.Oj;
     }
 
     public static q v(long j) {

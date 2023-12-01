@@ -13,13 +13,9 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ItemYyBadgeInfoBinding.class */
 public final class ItemYyBadgeInfoBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f16679a;
+    public final ImageView a;
     public final ShapeLinearLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final TextView f16680c;
+    public final TextView c;
     public final TextView d;
     public final TextView e;
     public final ShapeTextView f;
@@ -28,9 +24,9 @@ public final class ItemYyBadgeInfoBinding implements ViewBinding {
 
     private ItemYyBadgeInfoBinding(FrameLayout frameLayout, ImageView imageView, ShapeLinearLayout shapeLinearLayout, TextView textView, TextView textView2, TextView textView3, ShapeTextView shapeTextView, TextView textView4) {
         this.h = frameLayout;
-        this.f16679a = imageView;
+        this.a = imageView;
         this.b = shapeLinearLayout;
-        this.f16680c = textView;
+        this.c = textView;
         this.d = textView2;
         this.e = textView3;
         this.f = shapeTextView;
@@ -89,7 +85,6 @@ public final class ItemYyBadgeInfoBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.h;

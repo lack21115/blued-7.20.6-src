@@ -353,8 +353,8 @@ public final class Monitoring extends GeneratedMessageV3 implements MonitoringOr
 
         @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder mo2030clone() {
+            return (Builder) super.mo2030clone();
         }
 
         @Override // com.google.api.MonitoringOrBuilder
@@ -733,7 +733,7 @@ public final class Monitoring extends GeneratedMessageV3 implements MonitoringOr
             public Builder addMetrics(String str) {
                 if (str != null) {
                     ensureMetricsIsMutable();
-                    this.metrics_.add((LazyStringList) str);
+                    this.metrics_.add(str);
                     onChanged();
                     return this;
                 }
@@ -813,8 +813,8 @@ public final class Monitoring extends GeneratedMessageV3 implements MonitoringOr
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder mo2030clone() {
+                return (Builder) super.mo2030clone();
             }
 
             @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
@@ -829,7 +829,7 @@ public final class Monitoring extends GeneratedMessageV3 implements MonitoringOr
 
             @Override // com.google.api.Monitoring.MonitoringDestinationOrBuilder
             public String getMetrics(int i) {
-                return this.metrics_.get(i);
+                return (String) this.metrics_.get(i);
             }
 
             @Override // com.google.api.Monitoring.MonitoringDestinationOrBuilder
@@ -978,7 +978,7 @@ public final class Monitoring extends GeneratedMessageV3 implements MonitoringOr
             public Builder setMetrics(int i, String str) {
                 if (str != null) {
                     ensureMetricsIsMutable();
-                    this.metrics_.set(i, (int) str);
+                    this.metrics_.set(i, str);
                     onChanged();
                     return this;
                 }
@@ -1044,7 +1044,7 @@ public final class Monitoring extends GeneratedMessageV3 implements MonitoringOr
                                     this.metrics_ = new LazyStringArrayList();
                                     z4 = z2 | true;
                                 }
-                                this.metrics_.add((LazyStringList) readStringRequireUtf8);
+                                this.metrics_.add(readStringRequireUtf8);
                                 z2 = z4;
                             } else if (!parseUnknownField(codedInputStream, newBuilder, extensionRegistryLite, readTag)) {
                             }
@@ -1163,7 +1163,7 @@ public final class Monitoring extends GeneratedMessageV3 implements MonitoringOr
 
         @Override // com.google.api.Monitoring.MonitoringDestinationOrBuilder
         public String getMetrics(int i) {
-            return this.metrics_.get(i);
+            return (String) this.metrics_.get(i);
         }
 
         @Override // com.google.api.Monitoring.MonitoringDestinationOrBuilder
@@ -1318,6 +1318,7 @@ public final class Monitoring extends GeneratedMessageV3 implements MonitoringOr
         this.consumerDestinations_ = Collections.emptyList();
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private Monitoring(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
         this();
         if (extensionRegistryLite == null) {

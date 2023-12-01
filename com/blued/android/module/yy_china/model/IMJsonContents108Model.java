@@ -1,5 +1,6 @@
 package com.blued.android.module.yy_china.model;
 
+import $r8;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
@@ -10,7 +11,7 @@ public final class IMJsonContents108Model {
     private final long countdown_time;
 
     /* renamed from: skin  reason: collision with root package name */
-    private final YYEventsThemeModel f17614skin;
+    private final YYEventsThemeModel f54skin;
     private final int type;
 
     public IMJsonContents108Model(int i, long j, YYThemeActivityInfo activity_info, YYEventsThemeModel skin2) {
@@ -19,7 +20,7 @@ public final class IMJsonContents108Model {
         this.type = i;
         this.countdown_time = j;
         this.activity_info = activity_info;
-        this.f17614skin = skin2;
+        this.f54skin = skin2;
     }
 
     public static /* synthetic */ IMJsonContents108Model copy$default(IMJsonContents108Model iMJsonContents108Model, int i, long j, YYThemeActivityInfo yYThemeActivityInfo, YYEventsThemeModel yYEventsThemeModel, int i2, Object obj) {
@@ -33,7 +34,7 @@ public final class IMJsonContents108Model {
             yYThemeActivityInfo = iMJsonContents108Model.activity_info;
         }
         if ((i2 & 8) != 0) {
-            yYEventsThemeModel = iMJsonContents108Model.f17614skin;
+            yYEventsThemeModel = iMJsonContents108Model.f54skin;
         }
         return iMJsonContents108Model.copy(i, j, yYThemeActivityInfo, yYEventsThemeModel);
     }
@@ -51,7 +52,7 @@ public final class IMJsonContents108Model {
     }
 
     public final YYEventsThemeModel component4() {
-        return this.f17614skin;
+        return this.f54skin;
     }
 
     public final IMJsonContents108Model copy(int i, long j, YYThemeActivityInfo activity_info, YYEventsThemeModel skin2) {
@@ -66,7 +67,7 @@ public final class IMJsonContents108Model {
         }
         if (obj instanceof IMJsonContents108Model) {
             IMJsonContents108Model iMJsonContents108Model = (IMJsonContents108Model) obj;
-            return this.type == iMJsonContents108Model.type && this.countdown_time == iMJsonContents108Model.countdown_time && Intrinsics.a(this.activity_info, iMJsonContents108Model.activity_info) && Intrinsics.a(this.f17614skin, iMJsonContents108Model.f17614skin);
+            return this.type == iMJsonContents108Model.type && this.countdown_time == iMJsonContents108Model.countdown_time && Intrinsics.a(this.activity_info, iMJsonContents108Model.activity_info) && Intrinsics.a(this.f54skin, iMJsonContents108Model.f54skin);
         }
         return false;
     }
@@ -80,7 +81,7 @@ public final class IMJsonContents108Model {
     }
 
     public final YYEventsThemeModel getSkin() {
-        return this.f17614skin;
+        return this.f54skin;
     }
 
     public final int getType() {
@@ -88,10 +89,10 @@ public final class IMJsonContents108Model {
     }
 
     public int hashCode() {
-        return (((((this.type * 31) + C$r8$backportedMethods$utility$Long$1$hashCode.hashCode(this.countdown_time)) * 31) + this.activity_info.hashCode()) * 31) + this.f17614skin.hashCode();
+        return (((((this.type * 31) + $r8.backportedMethods.utility.Long.1.hashCode.hashCode(this.countdown_time)) * 31) + this.activity_info.hashCode()) * 31) + this.f54skin.hashCode();
     }
 
     public String toString() {
-        return "IMJsonContents108Model(type=" + this.type + ", countdown_time=" + this.countdown_time + ", activity_info=" + this.activity_info + ", skin=" + this.f17614skin + ')';
+        return "IMJsonContents108Model(type=" + this.type + ", countdown_time=" + this.countdown_time + ", activity_info=" + this.activity_info + ", skin=" + this.f54skin + ')';
     }
 }

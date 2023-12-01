@@ -1,5 +1,6 @@
 package androidx.appcompat.widget;
 
+import android.R;
 import android.app.SearchManager;
 import android.app.SearchableInfo;
 import android.content.ComponentName;
@@ -22,10 +23,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import androidx.appcompat.R;
 import androidx.core.content.ContextCompat;
 import androidx.cursoradapter.widget.ResourceCursorAdapter;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.bytedance.applog.tracker.Tracker;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -60,11 +59,11 @@ class SuggestionsAdapter extends ResourceCursorAdapter implements View.OnClickLi
         public final TextView mText2;
 
         public ChildViewCache(View view) {
-            this.mText1 = (TextView) view.findViewById(16908308);
-            this.mText2 = (TextView) view.findViewById(16908309);
-            this.mIcon1 = (ImageView) view.findViewById(16908295);
-            this.mIcon2 = (ImageView) view.findViewById(16908296);
-            this.mIconRefine = (ImageView) view.findViewById(R.id.edit_query);
+            this.mText1 = (TextView) view.findViewById(R.id.text1);
+            this.mText2 = (TextView) view.findViewById(R.id.text2);
+            this.mIcon1 = (ImageView) view.findViewById(R.id.icon1);
+            this.mIcon2 = (ImageView) view.findViewById(R.id.icon2);
+            this.mIconRefine = (ImageView) view.findViewById(androidx.appcompat.R.id.edit_query);
         }
     }
 
@@ -109,7 +108,7 @@ class SuggestionsAdapter extends ResourceCursorAdapter implements View.OnClickLi
                 }
                 try {
                     int parseInt = Integer.parseInt(str);
-                    String str2 = "android.resource://" + this.l.getPackageName() + BridgeUtil.SPLIT_MARK + parseInt;
+                    String str2 = "android.resource://" + this.l.getPackageName() + "/" + parseInt;
                     Drawable b = b(str2);
                     if (b != null) {
                         return b;
@@ -136,7 +135,7 @@ class SuggestionsAdapter extends ResourceCursorAdapter implements View.OnClickLi
     private CharSequence a(CharSequence charSequence) {
         if (this.q == null) {
             TypedValue typedValue = new TypedValue();
-            this.l.getTheme().resolveAttribute(R.attr.textColorSearchUrl, typedValue, true);
+            this.l.getTheme().resolveAttribute(androidx.appcompat.R.attr.textColorSearchUrl, typedValue, true);
             this.q = this.l.getResources().getColorStateList(typedValue.resourceId);
         }
         SpannableString spannableString = new SpannableString(charSequence);
@@ -458,7 +457,7 @@ class SuggestionsAdapter extends ResourceCursorAdapter implements View.OnClickLi
     public View newView(Context context, Cursor cursor, ViewGroup viewGroup) {
         View newView = super.newView(context, cursor, viewGroup);
         newView.setTag(new ChildViewCache(newView));
-        ((ImageView) newView.findViewById(R.id.edit_query)).setImageResource(this.n);
+        ((ImageView) newView.findViewById(androidx.appcompat.R.id.edit_query)).setImageResource(this.n);
         return newView;
     }
 

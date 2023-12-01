@@ -16,13 +16,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/community/ui/subject/fragment/MySubjectFragment.class */
 public final class MySubjectFragment extends BaseViewPagerParentFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    private CommonTopTitleNoTrans f20235a;
+    private CommonTopTitleNoTrans a;
     private CardView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private CardView f20236c;
+    private CardView c;
     private int d;
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -42,7 +38,7 @@ public final class MySubjectFragment extends BaseViewPagerParentFragment {
             if (cardView != null) {
                 cardView.setCardBackgroundColor(BluedSkinUtils.a(getContext(), R.color.syc_y));
             }
-            CardView cardView2 = this.f20236c;
+            CardView cardView2 = this.c;
             if (cardView2 == null) {
                 return;
             }
@@ -53,7 +49,7 @@ public final class MySubjectFragment extends BaseViewPagerParentFragment {
         if (cardView3 != null) {
             cardView3.setCardBackgroundColor(0);
         }
-        CardView cardView4 = this.f20236c;
+        CardView cardView4 = this.c;
         if (cardView4 == null) {
             return;
         }
@@ -88,14 +84,14 @@ public final class MySubjectFragment extends BaseViewPagerParentFragment {
 
     @Override // com.blued.android.module.common.fragment.BaseViewPagerParentFragment
     public BaseFragment b(int i) {
-        return i == 1 ? new FeedSubjectJoinedFragment() : new FeedSubjectAttentionFragment();
+        return i == 1 ? (BaseFragment) new FeedSubjectJoinedFragment() : (BaseFragment) new FeedSubjectAttentionFragment();
     }
 
-    @Override // com.blued.android.module.common.fragment.BaseViewPagerParentFragment, com.blued.android.framework.ui.SimpleFragment
+    @Override // com.blued.android.module.common.fragment.BaseViewPagerParentFragment
     public void onInitView() {
         super.onInitView();
         CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.rootView.findViewById(R.id.my_subject_title);
-        this.f20235a = commonTopTitleNoTrans;
+        this.a = commonTopTitleNoTrans;
         if (commonTopTitleNoTrans != null) {
             commonTopTitleNoTrans.setLeftClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.subject.fragment.-$$Lambda$MySubjectFragment$NUOiKJr4D2BtOyeQ-j7RFfWKnSA
                 @Override // android.view.View.OnClickListener
@@ -104,8 +100,8 @@ public final class MySubjectFragment extends BaseViewPagerParentFragment {
                 }
             });
         }
-        this.b = (CardView) this.rootView.findViewById(R.id.my_subject_tab_attention);
-        this.f20236c = (CardView) this.rootView.findViewById(R.id.emotion_mall_tab_mine);
+        this.b = this.rootView.findViewById(R.id.my_subject_tab_attention);
+        this.c = this.rootView.findViewById(R.id.emotion_mall_tab_mine);
         CardView cardView = this.b;
         if (cardView != null) {
             cardView.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.subject.fragment.-$$Lambda$MySubjectFragment$9Jx7rzwAvYv77Pq_0mIuqyn6y7s
@@ -115,7 +111,7 @@ public final class MySubjectFragment extends BaseViewPagerParentFragment {
                 }
             });
         }
-        CardView cardView2 = this.f20236c;
+        CardView cardView2 = this.c;
         if (cardView2 != null) {
             cardView2.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.subject.fragment.-$$Lambda$MySubjectFragment$7Ed4pfiAp9FzeJwLFWR5_83iBEk
                 @Override // android.view.View.OnClickListener
@@ -127,17 +123,14 @@ public final class MySubjectFragment extends BaseViewPagerParentFragment {
         ViewPager viewPager = this.h;
         if (viewPager != null) {
             viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: com.blued.community.ui.subject.fragment.MySubjectFragment$onInitView$4
-                @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
                 public void onPageScrollStateChanged(int i) {
                 }
 
-                @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
                 public void onPageScrolled(int i, float f, int i2) {
                     MySubjectFragment.this.d = i;
                     MySubjectFragment.this.b();
                 }
 
-                @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
                 public void onPageSelected(int i) {
                 }
             });
@@ -152,7 +145,7 @@ public final class MySubjectFragment extends BaseViewPagerParentFragment {
         b();
     }
 
-    @Override // com.blued.android.module.common.fragment.BaseViewPagerParentFragment, com.blued.android.framework.ui.SimpleFragment
+    @Override // com.blued.android.module.common.fragment.BaseViewPagerParentFragment
     public void onInitViewFinished() {
         super.onInitViewFinished();
         ViewPager viewPager = this.h;
@@ -162,13 +155,11 @@ public final class MySubjectFragment extends BaseViewPagerParentFragment {
         viewPager.setCurrentItem(this.d, false);
     }
 
-    @Override // com.blued.android.framework.ui.SimpleFragment
     public void onParseArguments() {
         super.onParseArguments();
         this.d = this.args.getInt("index");
     }
 
-    @Override // com.blued.android.framework.ui.SimpleFragment
     public int onSetRootViewId() {
         return R.layout.fragment_my_subject;
     }

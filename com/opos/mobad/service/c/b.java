@@ -8,26 +8,26 @@ import java.util.Map;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile b f27313a;
+    private static volatile b f13625a;
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private d f27314c;
+    private d f13626c;
     private a d;
 
     public static b a() {
         b bVar;
-        b bVar2 = f27313a;
+        b bVar2 = f13625a;
         if (bVar2 != null) {
             return bVar2;
         }
         synchronized (b.class) {
             try {
-                b bVar3 = f27313a;
+                b bVar3 = f13625a;
                 bVar = bVar3;
                 if (bVar3 == null) {
                     bVar = new b();
-                    f27313a = bVar;
+                    f13625a = bVar;
                 }
             } catch (Throwable th) {
                 throw th;
@@ -39,7 +39,7 @@ public class b {
     private void b() {
         com.opos.cmn.an.f.a.a("Dynamic-Controller", "start to pre load mat");
         if (this.d.a()) {
-            this.f27314c.a(this.d.b());
+            this.f13626c.a(this.d.b());
         } else {
             com.opos.cmn.an.f.a.a("Dynamic-Controller", "preload dynamic material but null map");
         }
@@ -58,7 +58,7 @@ public class b {
         } else if (com.opos.cmn.an.h.c.a.e(this.b)) {
             String b = this.d.b(i);
             if (!TextUtils.isEmpty(b)) {
-                this.f27314c.c(b);
+                this.f13626c.c(b);
                 return;
             }
             sb = new StringBuilder();
@@ -78,7 +78,7 @@ public class b {
     public void a(Context context) {
         Context applicationContext = context.getApplicationContext();
         this.b = applicationContext;
-        this.f27314c = new d(applicationContext);
+        this.f13626c = new d(applicationContext);
         this.d = new a();
     }
 
@@ -109,7 +109,7 @@ public class b {
             if (TextUtils.isEmpty(b)) {
                 com.opos.cmn.an.f.a.b("Dynamic-Controller", "checkDyTemplateFileExist = " + i + ", but null url");
                 return 2;
-            } else if (this.f27314c.a(b)) {
+            } else if (this.f13626c.a(b)) {
                 com.opos.cmn.an.f.a.b("Dynamic-Controller", "check select template = " + i);
                 return 0;
             } else {
@@ -126,7 +126,7 @@ public class b {
                 com.opos.cmn.an.f.a.b("Dynamic-Controller", "getFilePath = " + i + ", but null url");
                 return "";
             }
-            return this.f27314c.b(b);
+            return this.f13626c.b(b);
         }
         return "";
     }

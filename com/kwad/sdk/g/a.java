@@ -1,6 +1,6 @@
 package com.kwad.sdk.g;
 
-import com.alipay.sdk.widget.j;
+import com.huawei.hms.framework.common.ContainerUtils;
 import com.kwad.sdk.KsAdSDKImpl;
 import com.kwad.sdk.core.report.KSLoggerReporter;
 import com.kwad.sdk.service.ServiceProvider;
@@ -22,7 +22,7 @@ public final class a {
 
     /* renamed from: com.kwad.sdk.g.a$a  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/sdk/g/a$a.class */
-    public static class C0574a extends com.kwad.sdk.core.response.kwai.a {
+    public static class C0404a extends com.kwad.sdk.core.response.kwai.a {
         public long aud;
         public long aue;
         public long auf;
@@ -45,17 +45,17 @@ public final class a {
 
         /* JADX INFO: Access modifiers changed from: private */
         public static String a(b bVar) {
-            return "exit&" + bVar.aug + "&" + bVar.auh + "&" + bVar.aui + "&" + bVar.sdkVersion;
+            return "exit&" + bVar.aug + ContainerUtils.FIELD_DELIMITER + bVar.auh + ContainerUtils.FIELD_DELIMITER + bVar.aui + ContainerUtils.FIELD_DELIMITER + bVar.sdkVersion;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
         public static String c(String str, String str2, String str3, String str4) {
-            return str + "&" + str2 + "&" + str3 + "&" + str4 + "&" + KsAdSDKImpl.get().getSDKVersion();
+            return str + ContainerUtils.FIELD_DELIMITER + str2 + ContainerUtils.FIELD_DELIMITER + str3 + ContainerUtils.FIELD_DELIMITER + str4 + ContainerUtils.FIELD_DELIMITER + KsAdSDKImpl.get().getSDKVersion();
         }
 
         /* JADX INFO: Access modifiers changed from: private */
         public static b ee(String str) {
-            String[] split = str.split("&");
+            String[] split = str.split(ContainerUtils.FIELD_DELIMITER);
             b bVar = new b();
             bVar.aug = split[1];
             bVar.auh = split[2];
@@ -69,7 +69,7 @@ public final class a {
     public static void AZ() {
         synchronized (a.class) {
             try {
-                List<C0574a> Bb = Bb();
+                List<C0404a> Bb = Bb();
                 if (!Bb.isEmpty()) {
                     com.kwad.sdk.core.d.b.d("DynamicRunMonitor", "monitorInfoList:" + Bb);
                     JSONObject jSONObject = new JSONObject();
@@ -95,7 +95,7 @@ public final class a {
         aub.clear();
     }
 
-    private static List<C0574a> Bb() {
+    private static List<C0404a> Bb() {
         synchronized (a.class) {
             try {
                 ArrayList arrayList = new ArrayList();
@@ -112,15 +112,15 @@ public final class a {
                         Object obj2 = af.get(a2);
                         long longValue2 = longValue - (obj2 instanceof Long ? ((Long) obj2).longValue() : 0L);
                         long j = longValue2 > 0 ? longValue2 : 0L;
-                        C0574a c0574a = new C0574a();
-                        c0574a.aud = longValue;
-                        c0574a.aue = j;
-                        c0574a.auf = longValue2;
-                        c0574a.aug = ee.aug;
-                        c0574a.auh = ee.auh;
-                        c0574a.aui = ee.aui;
-                        c0574a.sdkVersion = ee.sdkVersion;
-                        arrayList.add(c0574a);
+                        C0404a c0404a = new C0404a();
+                        c0404a.aud = longValue;
+                        c0404a.aue = j;
+                        c0404a.auf = longValue2;
+                        c0404a.aug = ee.aug;
+                        c0404a.auh = ee.auh;
+                        c0404a.aui = ee.aui;
+                        c0404a.sdkVersion = ee.sdkVersion;
+                        arrayList.add(c0404a);
                         y.ae("dynamic_monitor_info", str);
                         y.ae("dynamic_monitor_info", a2);
                     }
@@ -185,7 +185,7 @@ public final class a {
     }
 
     public static void f(String str, String str2, String str3) {
-        b(j.o, str, str2, str3);
+        b("exit", str, str2, str3);
     }
 
     public static void report() {

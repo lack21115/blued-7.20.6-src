@@ -30,13 +30,9 @@ import com.bytedance.applog.tracker.Tracker;
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/activity/component/PrivacyPolicyView.class */
 public class PrivacyPolicyView extends RelativeLayout implements View.OnClickListener {
     private static String n = PrivacyPolicyView.class.getSimpleName();
-
-    /* renamed from: a  reason: collision with root package name */
-    ViewGroup f6332a;
+    ViewGroup a;
     LinearLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    LoadingView f6333c;
+    LoadingView c;
     TextView d;
     FrameLayout e;
     WebView f;
@@ -83,17 +79,17 @@ public class PrivacyPolicyView extends RelativeLayout implements View.OnClickLis
                 if (PrivacyPolicyView.this.l.equals(str)) {
                     if (PrivacyPolicyView.this.j) {
                         PrivacyPolicyView.this.b.setVisibility(4);
-                        PrivacyPolicyView.this.f6332a.setVisibility(0);
+                        PrivacyPolicyView.this.a.setVisibility(0);
                         PrivacyPolicyView.this.b.setVisibility(8);
-                        PrivacyPolicyView.this.f6333c.clearAnimation();
+                        PrivacyPolicyView.this.c.clearAnimation();
                         if (PrivacyPolicyView.this.m != null) {
                             PrivacyPolicyView.this.m.onPageLoadSuccess();
                         }
                     } else {
                         PrivacyPolicyView.this.b.setVisibility(0);
-                        PrivacyPolicyView.this.f6333c.clearAnimation();
+                        PrivacyPolicyView.this.c.clearAnimation();
                         PrivacyPolicyView.this.d.setVisibility(0);
-                        PrivacyPolicyView.this.f6332a.setVisibility(8);
+                        PrivacyPolicyView.this.a.setVisibility(8);
                         if (PrivacyPolicyView.this.m != null) {
                             PrivacyPolicyView.this.m.onPageLoadFail();
                         }
@@ -164,12 +160,12 @@ public class PrivacyPolicyView extends RelativeLayout implements View.OnClickLis
         this.j = true;
         this.k = false;
         LayoutInflater.from(getContext()).inflate(h.a(getContext(), "privace_policy_layout", "layout"), this);
-        this.f6332a = (ViewGroup) findViewById(h.a(getContext(), "policy_content_view", "id"));
+        this.a = (ViewGroup) findViewById(h.a(getContext(), "policy_content_view", "id"));
         this.b = (LinearLayout) findViewById(h.a(getContext(), "policy_loading_view", "id"));
-        this.f6333c = new LoadingView(getContext());
+        this.c = new LoadingView(getContext());
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(h.a(getContext(), 30.0f), h.a(getContext(), 30.0f));
         layoutParams.gravity = 1;
-        this.f6333c.setLayoutParams(layoutParams);
+        this.c.setLayoutParams(layoutParams);
         this.d = new TextView(getContext());
         LinearLayout.LayoutParams layoutParams2 = new LinearLayout.LayoutParams(-2, -2);
         layoutParams2.gravity = 1;
@@ -178,7 +174,7 @@ public class PrivacyPolicyView extends RelativeLayout implements View.OnClickLis
         this.d.setText("Page failed to load, please try again later.");
         this.d.setTextColor(-8947849);
         this.d.setTextSize(1, 12.0f);
-        this.b.addView(this.f6333c);
+        this.b.addView(this.c);
         this.b.addView(this.d);
         this.b.setOnClickListener(new AnonymousClass1());
         this.e = (FrameLayout) findViewById(h.a(getContext(), "policy_webview_area", "id"));
@@ -227,12 +223,12 @@ public class PrivacyPolicyView extends RelativeLayout implements View.OnClickLis
 
     private void b() {
         LayoutInflater.from(getContext()).inflate(h.a(getContext(), "privace_policy_layout", "layout"), this);
-        this.f6332a = (ViewGroup) findViewById(h.a(getContext(), "policy_content_view", "id"));
+        this.a = (ViewGroup) findViewById(h.a(getContext(), "policy_content_view", "id"));
         this.b = (LinearLayout) findViewById(h.a(getContext(), "policy_loading_view", "id"));
-        this.f6333c = new LoadingView(getContext());
+        this.c = new LoadingView(getContext());
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(h.a(getContext(), 30.0f), h.a(getContext(), 30.0f));
         layoutParams.gravity = 1;
-        this.f6333c.setLayoutParams(layoutParams);
+        this.c.setLayoutParams(layoutParams);
         this.d = new TextView(getContext());
         LinearLayout.LayoutParams layoutParams2 = new LinearLayout.LayoutParams(-2, -2);
         layoutParams2.gravity = 1;
@@ -241,7 +237,7 @@ public class PrivacyPolicyView extends RelativeLayout implements View.OnClickLis
         this.d.setText("Page failed to load, please try again later.");
         this.d.setTextColor(-8947849);
         this.d.setTextSize(1, 12.0f);
-        this.b.addView(this.f6333c);
+        this.b.addView(this.c);
         this.b.addView(this.d);
         this.b.setOnClickListener(new AnonymousClass1());
         this.e = (FrameLayout) findViewById(h.a(getContext(), "policy_webview_area", "id"));
@@ -312,8 +308,8 @@ public class PrivacyPolicyView extends RelativeLayout implements View.OnClickLis
     public void destory() {
         try {
             removeAllViews();
-            if (this.f6332a != null) {
-                this.f6332a.removeAllViews();
+            if (this.a != null) {
+                this.a.removeAllViews();
             }
             if (this.e != null) {
                 this.e.removeView(this.f);
@@ -337,9 +333,9 @@ public class PrivacyPolicyView extends RelativeLayout implements View.OnClickLis
         if (!h.a(getContext())) {
             this.j = false;
             this.b.setVisibility(0);
-            this.f6333c.clearAnimation();
+            this.c.clearAnimation();
             this.d.setVisibility(0);
-            this.f6332a.setVisibility(8);
+            this.a.setVisibility(8);
             a aVar = this.m;
             if (aVar != null) {
                 aVar.onPageLoadFail();
@@ -349,8 +345,8 @@ public class PrivacyPolicyView extends RelativeLayout implements View.OnClickLis
         }
         this.j = true;
         this.b.setVisibility(0);
-        this.f6333c.clearAnimation();
-        this.f6333c.startAnimation();
+        this.c.clearAnimation();
+        this.c.startAnimation();
         this.d.setVisibility(8);
         this.k = true;
         if (this.l.equals(this.f.getUrl())) {

@@ -9,11 +9,11 @@ import org.json.JSONObject;
 public class j {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final byte[] f4148a = {-30, -91, -67, -20, -69, -120, -30, -68, -113, -20, -99, -68};
+    public static final byte[] f4100a = {-30, -91, -67, -20, -69, -120, -30, -68, -113, -20, -99, -68};
     public static final byte[] b = {-30, -91, -67, -20, -69, -120, -19, -73, -101, -19, -79, -106, -17, -74, -120, -17, -78, -78};
 
     /* renamed from: c  reason: collision with root package name */
-    public static final byte[] f4149c = {-17, -103, -121, -17, -80, -98, -19, -86, -117, -29, -98, -109, -30, -91, -91};
+    public static final byte[] f4101c = {-17, -103, -121, -17, -80, -98, -19, -86, -117, -29, -98, -109, -30, -91, -91};
     public static final byte[] d = {-20, -99, -86, -19, -73, -101, -19, -79, -106, -30, -75, -108, -20, -124, -81};
     public static final byte[] e = {-19, -83, -79, -17, Byte.MIN_VALUE, -94, -19, -73, -101, -19, -79, -106, -20, -106, -96, -17, -74, -118, -17, -102, -91};
     public static final byte[] f = {89, 101, 105, 97, 111, 126, -30, -68, -113, -20, -99, -68, -17, -74, -120, -17, -78, -78};
@@ -71,7 +71,7 @@ public class j {
     }
 
     public static JSONObject c() {
-        return a(StCameraView.MEDIA_QUALITY_SORRY, cn.com.chinatelecom.account.api.a.d.a(f4148a));
+        return a(StCameraView.MEDIA_QUALITY_SORRY, cn.com.chinatelecom.account.api.a.d.a(f4100a));
     }
 
     public static JSONObject d() {

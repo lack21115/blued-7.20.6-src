@@ -20,9 +20,8 @@ public interface IPersistentDataBlockService extends IInterface {
         static final int TRANSACTION_wipe = 3;
         static final int TRANSACTION_write = 1;
 
-        /* JADX INFO: Access modifiers changed from: private */
         /* loaded from: source-9557208-dex2jar.jar:android/service/persistentdata/IPersistentDataBlockService$Stub$Proxy.class */
-        public static class Proxy implements IPersistentDataBlockService {
+        private static class Proxy implements IPersistentDataBlockService {
             private IBinder mRemote;
 
             Proxy(IBinder iBinder) {

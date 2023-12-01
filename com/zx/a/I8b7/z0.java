@@ -28,7 +28,7 @@ public class z0 implements Runnable {
     @Override // java.lang.Runnable
     public void run() {
         try {
-            u2.b.f42214a.b(new JSONObject(), new a(this), 2);
+            u2.b.f28523a.b(new JSONObject(), new a(this), 2);
         } catch (Throwable th) {
             z1.a(th);
         }

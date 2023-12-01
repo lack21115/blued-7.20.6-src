@@ -2,8 +2,8 @@ package com.amap.api.col.p0003sl;
 
 import android.content.Context;
 import android.util.Log;
+import com.android.internal.content.NativeLibraryHelper;
 import com.blued.android.module.common.web.jsbridge.BridgeUtil;
-import com.igexin.sdk.PushConsts;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -14,13 +14,9 @@ import org.json.JSONObject;
 /* renamed from: com.amap.api.col.3sl.hx  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/hx.class */
 public final class hx {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static volatile b f5114a = b.Unknow;
+    private static volatile b a = b.Unknow;
     private static volatile d b = d.Unknow;
-
-    /* renamed from: c  reason: collision with root package name */
-    private static volatile String f5115c = "";
+    private static volatile String c = "";
     private static volatile String d = "";
     private static volatile long e = -1;
     private static volatile a f = a.Unknow;
@@ -87,7 +83,7 @@ public final class hx {
         AgreeUnknowCode(555574),
         AgreeNotAgreeCode(555575),
         InvaildUserKeyCode(10001),
-        IllegalArgument(PushConsts.SETTAG_ERROR_COUNT);
+        IllegalArgument(20001);
         
         private final int j;
 
@@ -152,12 +148,12 @@ public final class hx {
                 if (z) {
                     hyVar2 = hyVar;
                     z2 = z;
-                    if (f5114a != b.DidContain) {
-                        if (f5114a == b.Unknow) {
+                    if (a != b.DidContain) {
+                        if (a == b.Unknow) {
                             hyVar2 = new hy(c.InfoUnknowCode, iaVar);
                         } else {
                             hyVar2 = hyVar;
-                            if (f5114a == b.NotContain) {
+                            if (a == b.NotContain) {
                                 hyVar2 = new hy(c.InfoNotContainCode, iaVar);
                             }
                         }
@@ -184,10 +180,10 @@ public final class hx {
                     k = j;
                     try {
                         final JSONObject jSONObject = new JSONObject();
-                        jSONObject.put("privacyInfo", f5114a.a());
+                        jSONObject.put("privacyInfo", a.a());
                         jSONObject.put("privacyShow", b.a());
                         jSONObject.put("showTime", e);
-                        jSONObject.put("show2SDK", f5115c);
+                        jSONObject.put("show2SDK", c);
                         jSONObject.put("show2SDKVer", d);
                         jSONObject.put("privacyAgree", f.a());
                         jSONObject.put("agreeTime", g);
@@ -224,11 +220,11 @@ public final class hx {
                     lb.a().a(new lc() { // from class: com.amap.api.col.3sl.hx.1
                         @Override // com.amap.api.col.p0003sl.lc
                         public final void runTask() {
-                            Iterator it = hx.b(hx.f(Context.this)).iterator();
+                            Iterator it = hx.b(hx.f(context)).iterator();
                             while (it.hasNext()) {
-                                hx.a(Context.this, ((File) it.next()).getName());
+                                hx.a(context, ((File) it.next()).getName());
                             }
-                            hx.b(Context.this);
+                            hx.b(context);
                         }
                     });
                 }
@@ -236,12 +232,12 @@ public final class hx {
                 String f2 = ho.f(context);
                 if (f2 == null || f2.length() <= 0) {
                     hyVar3 = new hy(c.InvaildUserKeyCode, iaVar);
-                    Log.e(iaVar.a(), String.format("获取apikey失败：\nerrorCode : %d\n原因：%s", Integer.valueOf(hyVar3.f5127a.a()), hyVar3.b));
+                    Log.e(iaVar.a(), String.format("获取apikey失败：\nerrorCode : %d\n原因：%s", Integer.valueOf(hyVar3.a.a()), hyVar3.b));
                 }
                 if (z3) {
                     hyVar3 = new hy(c.SuccessCode, iaVar);
                 } else {
-                    Log.e(iaVar.a(), String.format("隐私合规校验失败：\nerrorCode : %d\n原因：%s", Integer.valueOf(hyVar3.f5127a.a()), hyVar3.b));
+                    Log.e(iaVar.a(), String.format("隐私合规校验失败：\nerrorCode : %d\n原因：%s", Integer.valueOf(hyVar3.a.a()), hyVar3.b));
                 }
                 return hyVar3;
             } catch (Throwable th2) {
@@ -292,12 +288,12 @@ public final class hx {
                     bool = Boolean.TRUE;
                     b = dVar;
                 }
-                if (bVar != f5114a) {
+                if (bVar != a) {
                     bool = Boolean.TRUE;
-                    f5114a = bVar;
+                    a = bVar;
                 }
                 if (bool.booleanValue()) {
-                    f5115c = iaVar.a();
+                    c = iaVar.a();
                     d = iaVar.b();
                     long currentTimeMillis = System.currentTimeMillis();
                     e = currentTimeMillis;
@@ -425,7 +421,7 @@ public final class hx {
                 File next = it.next();
                 String name = next.getName();
                 if (name.endsWith("-privacy.data")) {
-                    String[] split = name.split("-");
+                    String[] split = name.split(NativeLibraryHelper.CLEAR_ABI_OVERRIDE);
                     if (split == null && split.length != 2) {
                         next.delete();
                     } else if (Long.parseLong(split[0]) <= 0) {
@@ -467,11 +463,11 @@ public final class hx {
         try {
             iy iyVar = new iy();
             iyVar.b = context;
-            iyVar.f5197a = jSONObject;
+            iyVar.a = jSONObject;
             new ju();
             kc a2 = ju.a(iyVar);
             if (a2 != null) {
-                JSONObject jSONObject2 = new JSONObject(ib.a(a2.f5264a));
+                JSONObject jSONObject2 = new JSONObject(ib.a(a2.a));
                 if (jSONObject2.has("status")) {
                     return jSONObject2.getInt("status") == 1;
                 }
@@ -495,7 +491,7 @@ public final class hx {
                     e(context);
                     l = true;
                 }
-                jj.a(context, "AMap.privacy.data", "AMap.privacy.data", String.format("%d&%d&%d&%s&%s&%d&%d&%s&%s&%d&%d", Integer.valueOf(f5114a.a()), Integer.valueOf(b.a()), Long.valueOf(e), f5115c, d, Integer.valueOf(f.a()), Long.valueOf(g), h, i, Long.valueOf(j), Long.valueOf(k)));
+                jj.a(context, "AMap.privacy.data", "AMap.privacy.data", String.format("%d&%d&%d&%s&%s&%d&%d&%s&%s&%d&%d", Integer.valueOf(a.a()), Integer.valueOf(b.a()), Long.valueOf(e), c, d, Integer.valueOf(f.a()), Long.valueOf(g), h, i, Long.valueOf(j), Long.valueOf(k)));
             } catch (Throwable th) {
                 throw th;
             }
@@ -516,12 +512,12 @@ public final class hx {
         if (str == null) {
             return;
         }
-        String[] split = str.split("&");
+        String[] split = str.split(com.alipay.sdk.sys.a.b);
         if (split.length != 11) {
             return;
         }
         try {
-            f5114a = b.a(Integer.parseInt(split[0]));
+            a = b.a(Integer.parseInt(split[0]));
             b = d.a(Integer.parseInt(split[1]));
             e = Long.parseLong(split[2]);
             d = split[3];

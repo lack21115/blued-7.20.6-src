@@ -15,11 +15,11 @@ import com.soft.blued.utils.AppUtils;
 public class GuideFragment extends BaseFragment {
 
     /* renamed from: a  reason: collision with root package name */
-    private View f34534a;
+    private View f20843a;
     private ViewPager b;
 
     /* renamed from: c  reason: collision with root package name */
-    private NewfeatureGuideAdapter f34535c;
+    private NewfeatureGuideAdapter f20844c;
 
     public static boolean a(Context context) {
         return a(context, false);
@@ -29,35 +29,31 @@ public class GuideFragment extends BaseFragment {
         return false;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment
     public boolean isActivitySwipeBackEnable() {
         return false;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener
     public boolean onBackPressed() {
         AppUtils.a(AppInfo.d());
         return false;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        View view = this.f34534a;
+        View view = this.f20843a;
         if (view == null) {
             View inflate = layoutInflater.inflate(R.layout.fragment_guide, viewGroup, false);
-            this.f34534a = inflate;
+            this.f20843a = inflate;
             this.b = (ViewPager) inflate.findViewById(R.id.new_feature_gallery);
         } else if (view.getParent() != null) {
-            ((ViewGroup) this.f34534a.getParent()).removeView(this.f34534a);
+            ((ViewGroup) this.f20843a.getParent()).removeView(this.f20843a);
         }
-        return this.f34534a;
+        return this.f20843a;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onViewCreated(View view, Bundle bundle) {
         super.onViewCreated(view, bundle);
         NewfeatureGuideAdapter newfeatureGuideAdapter = new NewfeatureGuideAdapter(getActivity(), this.b);
-        this.f34535c = newfeatureGuideAdapter;
+        this.f20844c = newfeatureGuideAdapter;
         this.b.setAdapter(newfeatureGuideAdapter);
     }
 }

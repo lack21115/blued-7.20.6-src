@@ -31,13 +31,9 @@ import java.util.concurrent.atomic.AtomicLong;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/msg/LiveMsgSendManager.class */
 public class LiveMsgSendManager {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static volatile LiveMsgSendManager f13939a;
+    private static volatile LiveMsgSendManager a;
     private ILiveMsgSender b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final AtomicLong f13940c = new AtomicLong(0);
+    private final AtomicLong c = new AtomicLong(0);
 
     private LiveMsgSendManager() {
     }
@@ -45,15 +41,15 @@ public class LiveMsgSendManager {
     public static LiveMsgSendManager a() {
         synchronized (LiveMsgSendManager.class) {
             try {
-                if (f13939a == null) {
-                    f13939a = new LiveMsgSendManager();
-                    f13939a.l();
+                if (a == null) {
+                    a = new LiveMsgSendManager();
+                    a.l();
                 }
             } catch (Throwable th) {
                 throw th;
             }
         }
-        return f13939a;
+        return a;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -173,8 +169,8 @@ public class LiveMsgSendManager {
 
     public void a(boolean z) {
         long elapsedRealtime = SystemClock.elapsedRealtime();
-        if (this.f13940c.get() == 0 || ((float) (elapsedRealtime - this.f13940c.get())) / 1000.0f >= 0.5d || (elapsedRealtime - this.f13940c.get()) / 1000 < 0) {
-            this.f13940c.set(elapsedRealtime);
+        if (this.c.get() == 0 || ((float) (elapsedRealtime - this.c.get())) / 1000.0f >= 0.5d || (elapsedRealtime - this.c.get()) / 1000 < 0) {
+            this.c.set(elapsedRealtime);
             this.b.a(z);
         }
     }

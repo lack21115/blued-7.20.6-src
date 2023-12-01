@@ -12,25 +12,25 @@ public final class ah extends com.vivo.push.l {
 
     @Override // com.vivo.push.l
     public final void a(com.vivo.push.o oVar) {
-        if (this.f41105a == null) {
+        if (this.f27414a == null) {
             com.vivo.push.util.p.d("SendCommandTask", "SendCommandTask " + oVar + " ; mContext is Null");
         } else if (oVar == null) {
             com.vivo.push.util.p.d("SendCommandTask", "SendCommandTask pushCommand is Null");
         } else {
-            com.vivo.push.model.b a2 = com.vivo.push.util.t.a(this.f41105a);
+            com.vivo.push.model.b a2 = com.vivo.push.util.t.a(this.f27414a);
             int b = oVar.b();
             if (b == 2009) {
-                com.vivo.push.util.p.a(ClientConfigManagerImpl.getInstance(this.f41105a).isDebug());
+                com.vivo.push.util.p.a(ClientConfigManagerImpl.getInstance(this.f27414a).isDebug());
                 if (com.vivo.push.util.p.a()) {
                     com.vivo.push.e.a().i();
                     com.vivo.push.util.b bVar = new com.vivo.push.util.b();
-                    bVar.a(this.f41105a, "com.vivo.push_preferences.hybridapptoken_v1");
+                    bVar.a(this.f27414a, "com.vivo.push_preferences.hybridapptoken_v1");
                     bVar.a();
                     com.vivo.push.util.b bVar2 = new com.vivo.push.util.b();
-                    bVar2.a(this.f41105a, "com.vivo.push_preferences.appconfig_v1");
+                    bVar2.a(this.f27414a, "com.vivo.push_preferences.appconfig_v1");
                     bVar2.a();
                     if (!com.vivo.push.e.a().e()) {
-                        ClientConfigManagerImpl.getInstance(this.f41105a).clearPush();
+                        ClientConfigManagerImpl.getInstance(this.f27414a).clearPush();
                     }
                 }
             } else if (b != 2011) {
@@ -53,7 +53,7 @@ public final class ah extends com.vivo.push.l {
                         break;
                 }
             } else {
-                com.vivo.push.util.p.a(ClientConfigManagerImpl.getInstance(this.f41105a).isDebug(((com.vivo.push.b.w) oVar).d()));
+                com.vivo.push.util.p.a(ClientConfigManagerImpl.getInstance(this.f27414a).isDebug(((com.vivo.push.b.w) oVar).d()));
             }
             if (a2 == null) {
                 com.vivo.push.util.p.d("SendCommandTask", "SendCommandTask " + oVar + " ; pushPkgInfo is Null");
@@ -70,7 +70,7 @@ public final class ah extends com.vivo.push.l {
                 eVar = new com.vivo.push.b.e();
                 com.vivo.push.util.p.d("SendCommandTask", "SendCommandTask " + eVar + " ; pkgName is InBlackList ");
             }
-            com.vivo.push.a.a.a(this.f41105a, a4, eVar);
+            com.vivo.push.a.a.a(this.f27414a, a4, eVar);
         }
     }
 }

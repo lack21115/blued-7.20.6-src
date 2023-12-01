@@ -8,11 +8,11 @@ import java.util.regex.Pattern;
 public class LogsUtil {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Pattern f23142a = Pattern.compile("[0-9]*[a-z|A-Z]*[一-龥]*");
+    private static final Pattern f9534a = Pattern.compile("[0-9]*[a-z|A-Z]*[一-龥]*");
     private static final char b = '*';
 
     /* renamed from: c  reason: collision with root package name */
-    private static final int f23143c = 2;
+    private static final int f9535c = 2;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-7994992-dex2jar.jar:com/huawei/secure/android/common/util/LogsUtil$a.class */
@@ -20,18 +20,18 @@ public class LogsUtil {
         private static final long d = 7129050843360571879L;
 
         /* renamed from: a  reason: collision with root package name */
-        private String f23144a;
+        private String f9536a;
         private Throwable b;
 
         /* renamed from: c  reason: collision with root package name */
-        private Throwable f23145c;
+        private Throwable f9537c;
 
         public a(Throwable th) {
-            this.f23145c = th;
+            this.f9537c = th;
         }
 
         public void a(String str) {
-            this.f23144a = str;
+            this.f9536a = str;
         }
 
         public void a(Throwable th) {
@@ -50,23 +50,23 @@ public class LogsUtil {
 
         @Override // java.lang.Throwable
         public String getMessage() {
-            return this.f23144a;
+            return this.f9536a;
         }
 
         @Override // java.lang.Throwable
         public String toString() {
-            Throwable th = this.f23145c;
+            Throwable th = this.f9537c;
             if (th == null) {
                 return "";
             }
             String name = th.getClass().getName();
             String str = name;
-            if (this.f23144a != null) {
+            if (this.f9536a != null) {
                 String str2 = name + ": ";
-                if (this.f23144a.startsWith(str2)) {
-                    return this.f23144a;
+                if (this.f9536a.startsWith(str2)) {
+                    return this.f9536a;
                 }
-                str = str2 + this.f23144a;
+                str = str2 + this.f9536a;
             }
             return str;
         }
@@ -87,7 +87,7 @@ public class LogsUtil {
             char charAt = str.charAt(i2);
             int i3 = i;
             char c2 = charAt;
-            if (f23142a.matcher(String.valueOf(charAt)).matches()) {
+            if (f9534a.matcher(String.valueOf(charAt)).matches()) {
                 if (i % 2 == 0) {
                     charAt = '*';
                 }

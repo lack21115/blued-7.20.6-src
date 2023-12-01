@@ -60,7 +60,6 @@ public final class FramedStream {
             }
         }
 
-        @Override // okio.Sink, java.io.Closeable, java.lang.AutoCloseable
         public void close() throws IOException {
             synchronized (FramedStream.this) {
                 if (this.closed) {
@@ -83,7 +82,6 @@ public final class FramedStream {
             }
         }
 
-        @Override // okio.Sink, java.io.Flushable
         public void flush() throws IOException {
             synchronized (FramedStream.this) {
                 FramedStream.this.checkOutNotClosed();
@@ -94,12 +92,10 @@ public final class FramedStream {
             }
         }
 
-        @Override // okio.Sink
         public Timeout timeout() {
             return FramedStream.this.writeTimeout;
         }
 
-        @Override // okio.Sink
         public void write(Buffer buffer, long j) throws IOException {
             this.sendBuffer.write(buffer, j);
             while (this.sendBuffer.size() >= 16384) {
@@ -145,7 +141,6 @@ public final class FramedStream {
             }
         }
 
-        @Override // okio.Source, java.io.Closeable, java.lang.AutoCloseable
         public void close() throws IOException {
             synchronized (FramedStream.this) {
                 this.closed = true;
@@ -155,7 +150,6 @@ public final class FramedStream {
             FramedStream.this.cancelStreamIfNecessary();
         }
 
-        @Override // okio.Source
         public long read(Buffer buffer, long j) throws IOException {
             if (j < 0) {
                 throw new IllegalArgumentException("byteCount < 0: " + j);
@@ -215,7 +209,6 @@ public final class FramedStream {
             }
         }
 
-        @Override // okio.Source
         public Timeout timeout() {
             return FramedStream.this.readTimeout;
         }
@@ -233,7 +226,6 @@ public final class FramedStream {
             }
         }
 
-        @Override // okio.AsyncTimeout
         public IOException newTimeoutException(IOException iOException) {
             SocketTimeoutException socketTimeoutException = new SocketTimeoutException("timeout");
             if (iOException != null) {
@@ -242,7 +234,6 @@ public final class FramedStream {
             return socketTimeoutException;
         }
 
-        @Override // okio.AsyncTimeout
         public void timedOut() {
             FramedStream.this.closeLater(ErrorCode.CANCEL);
         }

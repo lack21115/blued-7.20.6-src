@@ -7,8 +7,10 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.text.TextUtils;
 import android.webkit.WebView;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.bytedance.applog.tracker.Tracker;
+import com.bytedance.applog.util.WebViewJsUtil;
+import com.huawei.hms.ads.fw;
+import com.huawei.hms.framework.common.ContainerUtils;
 import com.huawei.hms.push.constant.RemoteMessageConst;
 import com.huawei.openalliance.ad.constant.bc;
 import com.opos.process.bridge.provider.ProcessBridgeProvider;
@@ -41,12 +43,12 @@ public class AppbarJsBridge {
     public static final int SHARE_WX = 3;
 
     /* renamed from: a  reason: collision with root package name */
-    private WebView f38305a;
+    private WebView f24614a;
     private Activity b;
 
     public AppbarJsBridge(Activity activity, WebView webView) {
         this.b = activity;
-        this.f38305a = webView;
+        this.f24614a = webView;
     }
 
     private void a(Uri uri, String str, int i, String str2) {
@@ -75,8 +77,8 @@ public class AppbarJsBridge {
     }
 
     public void callback(String str, String str2) {
-        if (this.f38305a != null) {
-            StringBuffer stringBuffer = new StringBuffer("javascript:");
+        if (this.f24614a != null) {
+            StringBuffer stringBuffer = new StringBuffer(WebViewJsUtil.JS_URL_PREFIX);
             stringBuffer.append("if(!!");
             stringBuffer.append(str);
             stringBuffer.append("){");
@@ -84,7 +86,7 @@ public class AppbarJsBridge {
             stringBuffer.append("(");
             stringBuffer.append(str2);
             stringBuffer.append(")}");
-            Tracker.loadUrl(this.f38305a, stringBuffer.toString());
+            Tracker.loadUrl(this.f24614a, stringBuffer.toString());
         }
     }
 
@@ -181,9 +183,9 @@ public class AppbarJsBridge {
                 StringBuilder sb = new StringBuilder();
                 sb.append(JS_BRIDGE_SCHEME);
                 sb.append(string);
-                sb.append(BridgeUtil.SPLIT_MARK);
+                sb.append("/");
                 sb.append(i3);
-                sb.append(BridgeUtil.SPLIT_MARK);
+                sb.append("/");
                 sb.append(!TextUtils.isEmpty(optString) ? optString : "");
                 sb.append("?");
                 if (jSONObject2 != null) {
@@ -194,7 +196,7 @@ public class AppbarJsBridge {
                         sb.append(next);
                         sb.append("=");
                         sb.append(Uri.encode(decode));
-                        sb.append("&");
+                        sb.append(ContainerUtils.FIELD_DELIMITER);
                     }
                 }
                 a(Uri.parse(sb.toString()), string, i3, optString);
@@ -226,7 +228,7 @@ public class AppbarJsBridge {
     public void pageControl(Uri uri, int i, String str, String str2) {
         f.a("openSDK_LOG.AppbarJsBridge", "-->pageControl : url = " + uri);
         int parseIntValue = Util.parseIntValue(uri.getQueryParameter("type"));
-        WebView webView = this.f38305a;
+        WebView webView = this.f24614a;
         if (webView != null) {
             if (parseIntValue == 1) {
                 webView.goBack();
@@ -240,7 +242,7 @@ public class AppbarJsBridge {
     }
 
     public void ready() {
-        response(READY_CALLBACK_FUNCTION_NAME, 1, null, "true");
+        response(READY_CALLBACK_FUNCTION_NAME, 1, null, fw.Code);
     }
 
     public void response(String str, int i, String str2, String str3) {
@@ -333,9 +335,9 @@ public class AppbarJsBridge {
         f.a("openSDK_LOG.AppbarJsBridge", "-->share : iconUrl = " + str3);
         f.a("openSDK_LOG.AppbarJsBridge", "-->share : jumpUrl = " + queryParameter4);
         ShareModel shareModel = new ShareModel();
-        shareModel.f38306a = queryParameter;
+        shareModel.f24615a = queryParameter;
         shareModel.b = queryParameter2;
-        shareModel.f38307c = str3;
+        shareModel.f24616c = str3;
         shareModel.d = queryParameter4;
         ((AppbarActivity) this.b).setShareModel(shareModel);
         int parseIntValue = Util.parseIntValue(uri.getQueryParameter("type"), 0);

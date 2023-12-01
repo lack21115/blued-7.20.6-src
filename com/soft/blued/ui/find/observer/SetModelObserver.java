@@ -7,7 +7,7 @@ import java.util.Iterator;
 public class SetModelObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    private static SetModelObserver f30629a = new SetModelObserver();
+    private static SetModelObserver f16939a = new SetModelObserver();
     private ArrayList<ISetModelObserver> b = new ArrayList<>();
 
     /* loaded from: source-8303388-dex2jar.jar:com/soft/blued/ui/find/observer/SetModelObserver$ISetModelObserver.class */
@@ -19,7 +19,7 @@ public class SetModelObserver {
     }
 
     public static SetModelObserver a() {
-        return f30629a;
+        return f16939a;
     }
 
     public void a(int i) {

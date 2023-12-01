@@ -23,7 +23,7 @@ public final class j {
     com.tencent.liteav.base.util.b b;
 
     /* renamed from: c  reason: collision with root package name */
-    final IVideoReporter f36706c;
+    final IVideoReporter f23015c;
     VideoRenderInterface d;
     VideoRenderInterface e;
     VideoDecodeController f;
@@ -33,7 +33,7 @@ public final class j {
     final com.tencent.liteav.videoconsumer.renderer.f w;
 
     /* renamed from: a  reason: collision with root package name */
-    String f36705a = "VideoConsumer";
+    String f23014a = "VideoConsumer";
     private VideoRenderListener A = new VideoRenderListener() { // from class: com.tencent.liteav.videoconsumer.consumer.j.1
         @Override // com.tencent.liteav.videoconsumer.renderer.VideoRenderListener
         public final void onRenderFrame(PixelFrame pixelFrame) {
@@ -80,13 +80,13 @@ public final class j {
                 int width = a2.getWidth();
                 int height = a2.getHeight();
                 if (jVar.r != width || jVar.s != height) {
-                    if (jVar.f36706c != null) {
-                        jVar.f36706c.updateStatus(com.tencent.liteav.videobase.videobase.i.STATUS_VIDEO_DECODER_WIDTH, Integer.valueOf(width));
-                        jVar.f36706c.updateStatus(com.tencent.liteav.videobase.videobase.i.STATUS_VIDEO_DECODER_HEIGHT, Integer.valueOf(height));
+                    if (jVar.f23015c != null) {
+                        jVar.f23015c.updateStatus(com.tencent.liteav.videobase.videobase.i.STATUS_VIDEO_DECODER_WIDTH, Integer.valueOf(width));
+                        jVar.f23015c.updateStatus(com.tencent.liteav.videobase.videobase.i.STATUS_VIDEO_DECODER_HEIGHT, Integer.valueOf(height));
                     }
                     jVar.r = width;
                     jVar.s = height;
-                    IVideoReporter iVideoReporter = jVar.f36706c;
+                    IVideoReporter iVideoReporter = jVar.f23015c;
                     h.b bVar = h.b.EVT_VIDEO_RENDER_RESOLUTION_CHANGE;
                     iVideoReporter.notifyEvent(bVar, "resolution change to " + width + "x" + height, new Object[0]);
                 }
@@ -142,16 +142,16 @@ public final class j {
     final com.tencent.liteav.videobase.utils.f o = new com.tencent.liteav.videobase.utils.f("VideoConsumer", 1000, new f.a(this) { // from class: com.tencent.liteav.videoconsumer.consumer.k
 
         /* renamed from: a  reason: collision with root package name */
-        private final j f36714a;
+        private final j f23023a;
 
         /* JADX INFO: Access modifiers changed from: package-private */
         {
-            this.f36714a = this;
+            this.f23023a = this;
         }
 
         @Override // com.tencent.liteav.videobase.utils.f.a
         public final void a(double d) {
-            this.f36714a.f36706c.updateStatus(com.tencent.liteav.videobase.videobase.i.STATUS_VIDEO_CONSUMER_RECEIVE_FPS, Double.valueOf(d));
+            this.f23023a.f23015c.updateStatus(com.tencent.liteav.videobase.videobase.i.STATUS_VIDEO_CONSUMER_RECEIVE_FPS, Double.valueOf(d));
         }
     });
 
@@ -167,9 +167,9 @@ public final class j {
     }
 
     public j(IVideoReporter iVideoReporter) {
-        this.f36706c = iVideoReporter;
-        this.f36705a += hashCode();
-        this.w = new com.tencent.liteav.videoconsumer.renderer.f(this.f36706c);
+        this.f23015c = iVideoReporter;
+        this.f23014a += hashCode();
+        this.w = new com.tencent.liteav.videoconsumer.renderer.f(this.f23015c);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -194,20 +194,20 @@ public final class j {
             int width = pixelFrame.getWidth();
             int height = pixelFrame.getHeight();
             fVar.b.a();
-            if (width != fVar.f36823c || height != fVar.d) {
-                fVar.f36823c = width;
+            if (width != fVar.f23132c || height != fVar.d) {
+                fVar.f23132c = width;
                 fVar.d = height;
-                fVar.f36822a.updateStatus(com.tencent.liteav.videobase.videobase.i.STATUS_VIDEO_RENDER_FRAME_WIDTH, Integer.valueOf(width));
-                fVar.f36822a.updateStatus(com.tencent.liteav.videobase.videobase.i.STATUS_VIDEO_RENDER_FRAME_HEIGHT, Integer.valueOf(height));
+                fVar.f23131a.updateStatus(com.tencent.liteav.videobase.videobase.i.STATUS_VIDEO_RENDER_FRAME_WIDTH, Integer.valueOf(width));
+                fVar.f23131a.updateStatus(com.tencent.liteav.videobase.videobase.i.STATUS_VIDEO_RENDER_FRAME_HEIGHT, Integer.valueOf(height));
             }
             if (!fVar.f) {
                 LiteavLog.i("VideoRenderStatistic", "rendered first frame!");
-                fVar.f36822a.notifyEvent(h.b.EVT_VIDEO_RENDER_FIRST_FRAME, "rendered first frame", new Object[0]);
+                fVar.f23131a.notifyEvent(h.b.EVT_VIDEO_RENDER_FIRST_FRAME, "rendered first frame", new Object[0]);
                 fVar.f = true;
             }
             long elapsedRealtime = SystemClock.elapsedRealtime();
-            fVar.f36822a.updateStatus(com.tencent.liteav.videobase.videobase.i.STATUS_VIDEO_RENDER_FRAME, 0);
-            fVar.f36822a.updateStatus(com.tencent.liteav.videobase.videobase.i.STATUS_VIDEO_FRAME_RENDER_PTS, Long.valueOf(timestamp));
+            fVar.f23131a.updateStatus(com.tencent.liteav.videobase.videobase.i.STATUS_VIDEO_RENDER_FRAME, 0);
+            fVar.f23131a.updateStatus(com.tencent.liteav.videobase.videobase.i.STATUS_VIDEO_FRAME_RENDER_PTS, Long.valueOf(timestamp));
             fVar.e.a(elapsedRealtime);
         }
     }
@@ -227,7 +227,7 @@ public final class j {
     public final void a(Runnable runnable, String str, boolean z) {
         com.tencent.liteav.base.util.b bVar = this.b;
         if (bVar == null) {
-            LiteavLog.w(this.f36705a, "ignore runnable: ".concat(String.valueOf(str)));
+            LiteavLog.w(this.f23014a, "ignore runnable: ".concat(String.valueOf(str)));
         } else if (z) {
             bVar.sendMessage(bVar.obtainMessage(1, 0, 0, runnable));
         } else {

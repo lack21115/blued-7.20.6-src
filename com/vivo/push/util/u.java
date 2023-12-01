@@ -13,7 +13,7 @@ import java.security.spec.X509EncodedKeySpec;
 public final class u {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f41145a = "RSA";
+    private static String f27454a = "RSA";
 
     public static String a(Key key) {
         return Base64.encodeToString(key.getEncoded(), 2);
@@ -21,7 +21,7 @@ public final class u {
 
     public static PublicKey a(String str) {
         try {
-            return KeyFactory.getInstance(f41145a).generatePublic(new X509EncodedKeySpec(Base64.decode(str, 2)));
+            return KeyFactory.getInstance(f27454a).generatePublic(new X509EncodedKeySpec(Base64.decode(str, 2)));
         } catch (NullPointerException e) {
             throw new Exception("公钥数据为空");
         } catch (NoSuchAlgorithmException e2) {

@@ -5,22 +5,18 @@ import java.io.Serializable;
 /* loaded from: source-3503164-dex2jar.jar:mtopsdk/mtop/util/Result.class */
 public class Result implements Serializable {
     private static final long serialVersionUID = 8852253200756618077L;
-
-    /* renamed from: a  reason: collision with root package name */
-    protected boolean f43794a;
+    protected boolean a;
     protected Object b;
-
-    /* renamed from: c  reason: collision with root package name */
-    protected String f43795c;
+    protected String c;
     protected String d;
     protected String e;
 
     public Result() {
-        this.f43794a = true;
+        this.a = true;
     }
 
     public Result(Object obj) {
-        this.f43794a = true;
+        this.a = true;
         this.b = obj;
     }
 
@@ -29,9 +25,9 @@ public class Result implements Serializable {
     }
 
     public Result(boolean z, String str, String str2, String str3) {
-        this.f43794a = true;
-        this.f43794a = z;
-        this.f43795c = str;
+        this.a = true;
+        this.a = z;
+        this.c = str;
         this.d = str2;
         this.e = str3;
     }
@@ -45,7 +41,7 @@ public class Result implements Serializable {
     }
 
     public void a(boolean z) {
-        this.f43794a = z;
+        this.a = z;
     }
 
     public String b() {
@@ -57,6 +53,6 @@ public class Result implements Serializable {
     }
 
     public boolean d() {
-        return this.f43794a;
+        return this.a;
     }
 }

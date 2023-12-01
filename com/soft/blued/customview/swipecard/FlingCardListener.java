@@ -13,11 +13,11 @@ import com.soft.blued.R;
 public class FlingCardListener implements View.OnTouchListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private final float f28657a;
+    private final float f14967a;
     private final float b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final int f28658c;
+    private final int f14968c;
     private final int d;
     private final int e;
     private final FlingListener f;
@@ -69,9 +69,9 @@ public class FlingCardListener implements View.OnTouchListener {
     public FlingCardListener(View view, Object obj, float f, FlingListener flingListener) {
         this.o = null;
         this.o = view;
-        this.f28657a = view.getX();
+        this.f14967a = view.getX();
         this.b = view.getY();
-        this.f28658c = view.getHeight();
+        this.f14968c = view.getHeight();
         int width = view.getWidth();
         this.d = width;
         this.h = width / 2.0f;
@@ -91,10 +91,10 @@ public class FlingCardListener implements View.OnTouchListener {
             this.f.a(1.0f, 1.0f);
             return false;
         } else {
-            float abs = Math.abs(this.j - this.f28657a);
+            float abs = Math.abs(this.j - this.f14967a);
             float abs2 = Math.abs(this.k - this.b);
             if (abs >= 4.0f || abs2 >= 4.0f) {
-                this.o.animate().setDuration(this.q).setInterpolator(new OvershootInterpolator(1.5f)).x(this.f28657a).y(this.b).rotation(0.0f).start();
+                this.o.animate().setDuration(this.q).setInterpolator(new OvershootInterpolator(1.5f)).x(this.f14967a).y(this.b).rotation(0.0f).start();
                 this.r = e();
                 this.o.postDelayed(this.s, 0L);
             } else {
@@ -109,7 +109,7 @@ public class FlingCardListener implements View.OnTouchListener {
     }
 
     private float e() {
-        float f = this.j - this.f28657a;
+        float f = this.j - this.f14967a;
         float abs = Math.abs(f) / 3.5f;
         return (f > 0.0f ? Math.min(abs, a()) : -Math.min(abs, a())) / a();
     }
@@ -128,7 +128,7 @@ public class FlingCardListener implements View.OnTouchListener {
         int intValue = this.o.getTag(R.id.current_index) == null ? 0 : ((Integer) this.o.getTag(R.id.current_index)).intValue();
         int intValue2 = this.o.getTag(R.id.total_szie) == null ? 0 : ((Integer) this.o.getTag(R.id.total_szie)).intValue();
         boolean z = false;
-        if (this.j - this.f28657a < (-a())) {
+        if (this.j - this.f14967a < (-a())) {
             z = false;
             if (intValue < intValue2 - 1) {
                 z = true;
@@ -140,7 +140,7 @@ public class FlingCardListener implements View.OnTouchListener {
     private boolean h() {
         int intValue = this.o.getTag(R.id.current_index) == null ? 0 : ((Integer) this.o.getTag(R.id.current_index)).intValue();
         boolean z = false;
-        if (this.j - this.f28657a > b()) {
+        if (this.j - this.f14967a > b()) {
             z = false;
             if (intValue >= 1) {
                 z = true;

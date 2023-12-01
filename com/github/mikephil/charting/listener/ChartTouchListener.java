@@ -10,11 +10,11 @@ import com.github.mikephil.charting.highlight.Highlight;
 public abstract class ChartTouchListener<T extends Chart<?>> extends GestureDetector.SimpleOnGestureListener implements View.OnTouchListener {
 
     /* renamed from: a  reason: collision with root package name */
-    protected ChartGesture f22159a = ChartGesture.NONE;
+    protected ChartGesture f8552a = ChartGesture.NONE;
     protected int b = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    protected Highlight f22160c;
+    protected Highlight f8553c;
     protected GestureDetector d;
     protected T e;
 
@@ -47,29 +47,29 @@ public abstract class ChartTouchListener<T extends Chart<?>> extends GestureDete
     public void a(MotionEvent motionEvent) {
         OnChartGestureListener onChartGestureListener = this.e.getOnChartGestureListener();
         if (onChartGestureListener != null) {
-            onChartGestureListener.a(motionEvent, this.f22159a);
+            onChartGestureListener.a(motionEvent, this.f8552a);
         }
     }
 
     public void a(Highlight highlight) {
-        this.f22160c = highlight;
+        this.f8553c = highlight;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     public void a(Highlight highlight, MotionEvent motionEvent) {
-        if (highlight == null || highlight.a(this.f22160c)) {
+        if (highlight == null || highlight.a(this.f8553c)) {
             this.e.a(null, true);
-            this.f22160c = null;
+            this.f8553c = null;
             return;
         }
         this.e.a(highlight, true);
-        this.f22160c = highlight;
+        this.f8553c = highlight;
     }
 
     public void b(MotionEvent motionEvent) {
         OnChartGestureListener onChartGestureListener = this.e.getOnChartGestureListener();
         if (onChartGestureListener != null) {
-            onChartGestureListener.b(motionEvent, this.f22159a);
+            onChartGestureListener.b(motionEvent, this.f8552a);
         }
     }
 }

@@ -4,19 +4,19 @@ package androidx.transition;
 class Styleable {
 
     /* renamed from: a  reason: collision with root package name */
-    static final int[] f3467a = {16842799, 16843740, 16843841, 16843842, 16843853, 16843854};
-    static final int[] b = {16843741, 16843742, 16843743};
+    static final int[] f3419a = {android.R.attr.targetClass, android.R.attr.targetId, android.R.attr.excludeId, android.R.attr.excludeClass, android.R.attr.targetName, android.R.attr.excludeName};
+    static final int[] b = {android.R.attr.fromScene, android.R.attr.toScene, android.R.attr.transition};
 
     /* renamed from: c  reason: collision with root package name */
-    static final int[] f3468c = {16843073, 16843160, 16843746, 16843855};
-    static final int[] d = {16843983};
-    static final int[] e = {16843900};
-    static final int[] f = {16843745};
-    static final int[] g = {16843964, 16843965};
-    static final int[] h = {16843824};
-    static final int[] i = {16843744};
-    static final int[] j = {16843901, 16843902, 16843903};
-    static final int[] k = {16843978};
+    static final int[] f3420c = {android.R.attr.interpolator, android.R.attr.duration, android.R.attr.startDelay, android.R.attr.matchOrder};
+    static final int[] d = {android.R.attr.resizeClip};
+    static final int[] e = {android.R.attr.transitionVisibilityMode};
+    static final int[] f = {android.R.attr.fadingMode};
+    static final int[] g = {android.R.attr.reparent, android.R.attr.reparentWithOverlay};
+    static final int[] h = {android.R.attr.slideEdge};
+    static final int[] i = {android.R.attr.transitionOrdering};
+    static final int[] j = {android.R.attr.minimumHorizontalAngle, android.R.attr.minimumVerticalAngle, android.R.attr.maximumAngle};
+    static final int[] k = {android.R.attr.patternPathData};
 
     /* loaded from: source-8756600-dex2jar.jar:androidx/transition/Styleable$ArcMotion.class */
     interface ArcMotion {

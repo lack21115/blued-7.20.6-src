@@ -20,11 +20,11 @@ import javax.net.ssl.SSLSocketFactory;
 public abstract class a {
 
     /* renamed from: a  reason: collision with root package name */
-    protected final Context f24083a;
+    protected final Context f10468a;
     protected final f b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected final int f24084c;
+    protected final int f10469c;
     protected final int d;
     protected final int e;
     protected final TimeUnit f;
@@ -44,16 +44,16 @@ public abstract class a {
 
     /* renamed from: com.meizu.cloud.pushsdk.d.b.a$a  reason: collision with other inner class name */
     /* loaded from: source-8110460-dex2jar.jar:com/meizu/cloud/pushsdk/d/b/a$a.class */
-    public static class C0608a {
+    public static class C0438a {
 
         /* renamed from: a  reason: collision with root package name */
-        protected final String f24085a;
+        protected final String f10470a;
         protected final Context b;
         protected SSLSocketFactory m;
         protected HostnameVerifier n;
 
         /* renamed from: c  reason: collision with root package name */
-        protected f f24086c = null;
+        protected f f10471c = null;
         protected d d = d.POST;
         protected b e = b.Single;
         protected h f = h.HTTPS;
@@ -65,62 +65,62 @@ public abstract class a {
         protected TimeUnit l = TimeUnit.SECONDS;
         protected com.meizu.cloud.pushsdk.c.c.a o = new com.meizu.cloud.pushsdk.c.c.e();
 
-        public C0608a(String str, Context context, Class<? extends a> cls) {
-            this.f24085a = str;
+        public C0438a(String str, Context context, Class<? extends a> cls) {
+            this.f10470a = str;
             this.b = context;
         }
 
-        public C0608a a(int i) {
+        public C0438a a(int i) {
             this.g = i;
             return this;
         }
 
-        public C0608a a(com.meizu.cloud.pushsdk.c.c.a aVar) {
+        public C0438a a(com.meizu.cloud.pushsdk.c.c.a aVar) {
             if (aVar != null) {
                 this.o = aVar;
-                String simpleName = C0608a.class.getSimpleName();
+                String simpleName = C0438a.class.getSimpleName();
                 com.meizu.cloud.pushsdk.d.f.c.c(simpleName, "set new call " + aVar, new Object[0]);
             }
             return this;
         }
 
-        public C0608a a(b bVar) {
+        public C0438a a(b bVar) {
             this.e = bVar;
             return this;
         }
 
-        public C0608a a(f fVar) {
-            this.f24086c = fVar;
+        public C0438a a(f fVar) {
+            this.f10471c = fVar;
             return this;
         }
 
-        public C0608a b(int i) {
+        public C0438a b(int i) {
             this.h = i;
             return this;
         }
 
-        public C0608a c(int i) {
+        public C0438a c(int i) {
             this.i = i;
             return this;
         }
     }
 
-    public a(C0608a c0608a) {
-        this.k = c0608a.d;
-        this.b = c0608a.f24086c;
-        this.f24083a = c0608a.b;
-        this.l = c0608a.e;
-        this.m = c0608a.f;
-        this.n = c0608a.m;
-        this.o = c0608a.n;
-        this.f24084c = c0608a.g;
-        this.d = c0608a.i;
-        this.e = c0608a.h;
-        this.q = c0608a.j;
-        this.r = c0608a.k;
-        this.p = c0608a.f24085a;
-        this.f = c0608a.l;
-        this.s = c0608a.o;
+    public a(C0438a c0438a) {
+        this.k = c0438a.d;
+        this.b = c0438a.f10471c;
+        this.f10468a = c0438a.b;
+        this.l = c0438a.e;
+        this.m = c0438a.f;
+        this.n = c0438a.m;
+        this.o = c0438a.n;
+        this.f10469c = c0438a.g;
+        this.d = c0438a.i;
+        this.e = c0438a.h;
+        this.q = c0438a.j;
+        this.r = c0438a.k;
+        this.p = c0438a.f10470a;
+        this.f = c0438a.l;
+        this.s = c0438a.o;
         c();
         com.meizu.cloud.pushsdk.d.f.c.c(this.h, "Emitter created successfully!", new Object[0]);
     }

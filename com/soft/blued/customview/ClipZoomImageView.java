@@ -37,42 +37,42 @@ public class ClipZoomImageView extends AppCompatImageView implements ScaleGestur
     private static final String b = ClipZoomImageView.class.getSimpleName();
 
     /* renamed from: a  reason: collision with root package name */
-    public static float f28392a = 4.0f;
+    public static float f14702a = 4.0f;
 
     /* renamed from: c  reason: collision with root package name */
-    private static float f28393c = 2.0f;
+    private static float f14703c = 2.0f;
 
     /* loaded from: source-8303388-dex2jar.jar:com/soft/blued/customview/ClipZoomImageView$AutoScaleRunnable.class */
     class AutoScaleRunnable implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ ClipZoomImageView f28395a;
+        final /* synthetic */ ClipZoomImageView f14705a;
         private float b;
 
         /* renamed from: c  reason: collision with root package name */
-        private float f28396c;
+        private float f14706c;
         private float d;
         private float e;
 
         @Override // java.lang.Runnable
         public void run() {
-            Matrix matrix = this.f28395a.h;
-            float f = this.f28396c;
+            Matrix matrix = this.f14705a.h;
+            float f = this.f14706c;
             matrix.postScale(f, f, this.d, this.e);
-            this.f28395a.b();
-            ClipZoomImageView clipZoomImageView = this.f28395a;
+            this.f14705a.b();
+            ClipZoomImageView clipZoomImageView = this.f14705a;
             clipZoomImageView.setImageMatrix(clipZoomImageView.h);
-            float scale = this.f28395a.getScale();
-            if ((this.f28396c > 1.0f && scale < this.b) || (this.f28396c < 1.0f && this.b < scale)) {
-                this.f28395a.postDelayed(this, 16L);
+            float scale = this.f14705a.getScale();
+            if ((this.f14706c > 1.0f && scale < this.b) || (this.f14706c < 1.0f && this.b < scale)) {
+                this.f14705a.postDelayed(this, 16L);
                 return;
             }
             float f2 = this.b / scale;
-            this.f28395a.h.postScale(f2, f2, this.d, this.e);
-            this.f28395a.b();
-            ClipZoomImageView clipZoomImageView2 = this.f28395a;
+            this.f14705a.h.postScale(f2, f2, this.d, this.e);
+            this.f14705a.b();
+            ClipZoomImageView clipZoomImageView2 = this.f14705a;
             clipZoomImageView2.setImageMatrix(clipZoomImageView2.h);
-            this.f28395a.j = false;
+            this.f14705a.j = false;
         }
     }
 
@@ -167,16 +167,14 @@ public class ClipZoomImageView extends AppCompatImageView implements ScaleGestur
         return this.f[0];
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.ImageView, android.view.View
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         getViewTreeObserver().addOnGlobalLayoutListener(this);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.ImageView, android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         getViewTreeObserver().removeGlobalOnLayoutListener(this);
     }
@@ -203,8 +201,8 @@ public class ClipZoomImageView extends AppCompatImageView implements ScaleGestur
             }
         }
         this.d = f;
-        f28393c = 2.0f * f;
-        f28392a = 4.0f * f;
+        f14703c = 2.0f * f;
+        f14702a = 4.0f * f;
         this.h.postTranslate((width - intrinsicWidth) / 2, (height - intrinsicHeight) / 2);
         this.h.postScale(f, f, getWidth() / 2, getHeight() / 2);
         setImageMatrix(this.h);
@@ -218,7 +216,7 @@ public class ClipZoomImageView extends AppCompatImageView implements ScaleGestur
         if (getDrawable() == null) {
             return true;
         }
-        if ((scale >= f28392a || scaleFactor <= 1.0f) && (scale <= this.d || scaleFactor >= 1.0f)) {
+        if ((scale >= f14702a || scaleFactor <= 1.0f) && (scale <= this.d || scaleFactor >= 1.0f)) {
             return true;
         }
         float f = this.d;
@@ -226,7 +224,7 @@ public class ClipZoomImageView extends AppCompatImageView implements ScaleGestur
         if (scaleFactor * scale < f) {
             f2 = f / scale;
         }
-        float f3 = f28392a;
+        float f3 = f14702a;
         float f4 = f2;
         if (f2 * scale > f3) {
             f4 = f3 / scale;

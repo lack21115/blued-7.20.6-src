@@ -15,7 +15,7 @@ public class AdCacheModel implements d {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile AdCacheModel f27109a;
+    private static volatile AdCacheModel f13421a;
     private b b;
 
     private AdCacheModel(Context context) {
@@ -24,18 +24,18 @@ public class AdCacheModel implements d {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final AdCacheModel b(Context context) {
-        if (f27109a == null) {
+        if (f13421a == null) {
             synchronized (AdCacheModel.class) {
                 try {
-                    if (f27109a == null) {
-                        f27109a = new AdCacheModel(context);
+                    if (f13421a == null) {
+                        f13421a = new AdCacheModel(context);
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f27109a;
+        return f13421a;
     }
 
     @BridgeMethod(a = 2)

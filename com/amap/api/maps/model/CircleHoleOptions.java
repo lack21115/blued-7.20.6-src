@@ -3,6 +3,7 @@ package com.amap.api.maps.model;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
+import com.anythink.core.common.g.c;
 
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/maps/model/CircleHoleOptions.class */
 public class CircleHoleOptions extends BaseHoleOptions implements Parcelable {
@@ -38,7 +39,7 @@ public class CircleHoleOptions extends BaseHoleOptions implements Parcelable {
         this.point = null;
         this.radius = 0.0d;
         Bundle readBundle = parcel.readBundle();
-        this.point = new LatLng(readBundle.getDouble("lat"), readBundle.getDouble("lng"));
+        this.point = new LatLng(readBundle.getDouble(c.B), readBundle.getDouble("lng"));
         this.radius = parcel.readDouble();
     }
 
@@ -70,7 +71,7 @@ public class CircleHoleOptions extends BaseHoleOptions implements Parcelable {
         Bundle bundle = new Bundle();
         LatLng latLng = this.point;
         if (latLng != null) {
-            bundle.putDouble("lat", latLng.latitude);
+            bundle.putDouble(c.B, latLng.latitude);
             bundle.putDouble("lng", this.point.longitude);
         }
         parcel.writeBundle(bundle);

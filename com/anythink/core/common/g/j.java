@@ -7,7 +7,8 @@ import com.anythink.core.api.ATAdConst;
 import com.anythink.core.api.AdError;
 import com.anythink.core.common.b.n;
 import com.anythink.core.common.s;
-import com.huawei.openalliance.ad.constant.t;
+import com.blued.android.chat.core.pack.ReqAckPackage;
+import com.efs.sdk.base.Constants;
 import java.util.HashMap;
 import java.util.Map;
 import org.json.JSONException;
@@ -15,14 +16,10 @@ import org.json.JSONObject;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/g/j.class */
 public class j extends a {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final String f6729a = "sdk_custom";
+    public static final String a = "sdk_custom";
     private static final String d = j.class.getSimpleName();
     long b;
-
-    /* renamed from: c  reason: collision with root package name */
-    long f6730c;
+    long c;
     private String e = n.a().r();
     private String f;
     private String g;
@@ -56,19 +53,19 @@ public class j extends a {
         try {
             JSONObject jSONObject = new JSONObject(trim);
             if (this.l != null) {
-                jSONObject.put(f6729a, new JSONObject(this.l));
+                jSONObject.put(a, new JSONObject(this.l));
             }
             trim = jSONObject.toString();
         } catch (Exception e) {
         }
-        com.anythink.core.common.j.c.a(t.j, this.g, this.b, System.currentTimeMillis(), SystemClock.elapsedRealtime() - this.f6730c);
+        com.anythink.core.common.j.c.a("placement", this.g, this.b, System.currentTimeMillis(), SystemClock.elapsedRealtime() - this.c);
         return trim;
     }
 
     @Override // com.anythink.core.common.g.a
     public final void a(int i, i iVar) {
         this.b = System.currentTimeMillis();
-        this.f6730c = SystemClock.elapsedRealtime();
+        this.c = SystemClock.elapsedRealtime();
         super.a(i, iVar);
     }
 
@@ -89,13 +86,13 @@ public class j extends a {
 
     @Override // com.anythink.core.common.g.a
     protected final void b(AdError adError) {
-        com.anythink.core.common.j.c.a(t.j, adError.getPlatformCode(), adError.getPlatformMSG(), (String) null, this.g, "", "");
+        com.anythink.core.common.j.c.a("placement", adError.getPlatformCode(), adError.getPlatformMSG(), (String) null, this.g, "", "");
     }
 
     @Override // com.anythink.core.common.g.a
     protected final Map<String, String> c() {
         HashMap hashMap = new HashMap();
-        hashMap.put("Accept-Encoding", "gzip");
+        hashMap.put("Accept-Encoding", Constants.CP_GZIP);
         hashMap.put("Content-Type", "application/json;charset=utf-8");
         return hashMap;
     }
@@ -117,7 +114,7 @@ public class j extends a {
         try {
             e.put("app_id", this.i);
             e.put("pl_id", this.g);
-            e.put("session_id", this.f);
+            e.put(ReqAckPackage.REQ_RESPONSE_KEY.SESSION_ID, this.f);
             e.put("nw_ver", com.anythink.core.common.k.d.h());
             e.put("exclude_myofferid", s.a().a(this.h));
             if (n.a().l() != null) {

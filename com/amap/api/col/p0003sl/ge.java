@@ -84,11 +84,11 @@ public final class ge extends ex<RegeocodeQuery, RegeocodeAddress> {
     }
 
     private static gc f() {
-        gb a2 = ga.a().a("regeo");
-        if (a2 == null) {
+        gb a = ga.a().a("regeo");
+        if (a == null) {
             return null;
         }
-        return (gc) a2;
+        return (gc) a;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -105,11 +105,11 @@ public final class ge extends ex<RegeocodeQuery, RegeocodeAddress> {
     @Override // com.amap.api.col.p0003sl.ew
     protected final ga.b e() {
         gc f = f();
-        double a2 = f != null ? f.a() : 0.0d;
+        double a = f != null ? f.a() : 0.0d;
         ga.b bVar = new ga.b();
-        bVar.f4984a = getURL() + a(false) + "language=" + ServiceSettings.getInstance().getLanguage();
+        bVar.a = getURL() + a(false) + "language=" + ServiceSettings.getInstance().getLanguage();
         if (this.b != 0 && ((RegeocodeQuery) this.b).getPoint() != null) {
-            bVar.b = new gc.a(((RegeocodeQuery) this.b).getPoint().getLatitude(), ((RegeocodeQuery) this.b).getPoint().getLongitude(), a2);
+            bVar.b = new gc.a(((RegeocodeQuery) this.b).getPoint().getLatitude(), ((RegeocodeQuery) this.b).getPoint().getLongitude(), a);
         }
         return bVar;
     }

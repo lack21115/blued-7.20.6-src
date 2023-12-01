@@ -14,11 +14,11 @@ import java.util.concurrent.TimeUnit;
 public final class a extends SystemAudioKit implements com.tencent.liteav.audio.earmonitor.a.b.a.e, r.a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final int f36222a = (int) TimeUnit.SECONDS.toMillis(1);
+    private static final int f22531a = (int) TimeUnit.SECONDS.toMillis(1);
     private final Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final Handler f36223c;
+    private final Handler f22532c;
     private com.tencent.liteav.audio.earmonitor.a.b.a.d d;
     private com.tencent.liteav.audio.earmonitor.a.b.a.c e;
     private r f;
@@ -29,7 +29,7 @@ public final class a extends SystemAudioKit implements com.tencent.liteav.audio.
     /* JADX INFO: Access modifiers changed from: package-private */
     public a(long j, Context context) {
         super(j);
-        this.f36223c = new Handler(Looper.getMainLooper());
+        this.f22532c = new Handler(Looper.getMainLooper());
         this.g = false;
         this.h = false;
         this.i = false;
@@ -82,10 +82,10 @@ public final class a extends SystemAudioKit implements com.tencent.liteav.audio.
     }
 
     private void a(Runnable runnable) {
-        if (Looper.myLooper() == this.f36223c.getLooper()) {
+        if (Looper.myLooper() == this.f22532c.getLooper()) {
             runnable.run();
         } else {
-            this.f36223c.post(runnable);
+            this.f22532c.post(runnable);
         }
     }
 
@@ -107,7 +107,7 @@ public final class a extends SystemAudioKit implements com.tencent.liteav.audio.
         if (aVar.f == null) {
             r rVar = new r(Looper.getMainLooper(), aVar);
             aVar.f = rVar;
-            rVar.a(0, f36222a);
+            rVar.a(0, f22531a);
         }
         aVar.b();
     }

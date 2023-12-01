@@ -14,7 +14,7 @@ public final class a {
 
     /* renamed from: com.tencent.thumbplayer.g.f.a$a  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/thumbplayer/g/f/a$a.class */
-    public enum EnumC1024a {
+    public enum EnumC0854a {
         ADAPTATION_WORKAROUND_MODE_NEVER,
         ADAPTATION_WORKAROUND_MODE_SAME_RESOLUTION,
         ADAPTATION_WORKAROUND_MODE_ALWAYS
@@ -28,17 +28,17 @@ public final class a {
         KEEP_CODEC_RESULT_YES_WITHOUT_RECONFIGURATION
     }
 
-    public static EnumC1024a a(String str) {
-        return (Build.VERSION.SDK_INT <= 25 && "OMX.Exynos.avc.dec.secure".equals(str) && (TPSystemInfo.getDeviceName().startsWith("SM-T585") || TPSystemInfo.getDeviceName().startsWith("SM-A510") || TPSystemInfo.getDeviceName().startsWith("SM-A520") || TPSystemInfo.getDeviceName().startsWith("SM-J700"))) ? EnumC1024a.ADAPTATION_WORKAROUND_MODE_ALWAYS : (Build.VERSION.SDK_INT >= 24 || !(("OMX.Nvidia.h264.decode".equals(str) || "OMX.Nvidia.h264.decode.secure".equals(str)) && ("flounder".equals(Build.DEVICE) || "flounder_lte".equals(Build.DEVICE) || "grouper".equals(Build.DEVICE) || "tilapia".equals(Build.DEVICE)))) ? EnumC1024a.ADAPTATION_WORKAROUND_MODE_NEVER : EnumC1024a.ADAPTATION_WORKAROUND_MODE_SAME_RESOLUTION;
+    public static EnumC0854a a(String str) {
+        return (Build.VERSION.SDK_INT <= 25 && "OMX.Exynos.avc.dec.secure".equals(str) && (TPSystemInfo.getDeviceName().startsWith("SM-T585") || TPSystemInfo.getDeviceName().startsWith("SM-A510") || TPSystemInfo.getDeviceName().startsWith("SM-A520") || TPSystemInfo.getDeviceName().startsWith("SM-J700"))) ? EnumC0854a.ADAPTATION_WORKAROUND_MODE_ALWAYS : (Build.VERSION.SDK_INT >= 24 || !(("OMX.Nvidia.h264.decode".equals(str) || "OMX.Nvidia.h264.decode.secure".equals(str)) && ("flounder".equals(Build.DEVICE) || "flounder_lte".equals(Build.DEVICE) || "grouper".equals(Build.DEVICE) || "tilapia".equals(Build.DEVICE)))) ? EnumC0854a.ADAPTATION_WORKAROUND_MODE_NEVER : EnumC0854a.ADAPTATION_WORKAROUND_MODE_SAME_RESOLUTION;
     }
 
     public static void a(e eVar, MediaFormat mediaFormat) {
         com.tencent.thumbplayer.g.f.b d = com.tencent.thumbplayer.g.a.a().d();
         int max = Math.max(d.b, eVar.b);
-        int max2 = Math.max(d.f39353c, eVar.f39327c);
-        if (d.f39352a) {
+        int max2 = Math.max(d.f25662c, eVar.f25636c);
+        if (d.f25661a) {
             d.b = max;
-            d.f39353c = max2;
+            d.f25662c = max2;
         }
         int max3 = Math.max(0, c.a(eVar.j, max, max2, false));
         if (com.tencent.thumbplayer.g.h.b.a()) {
@@ -63,10 +63,10 @@ public final class a {
         e eVar2 = fVar.e;
         if (fVar instanceof g) {
             if (TextUtils.equals(eVar2.j, eVar.j) && eVar2.d == eVar.d) {
-                if (fVar.f39329c) {
+                if (fVar.f25638c) {
                     return true;
                 }
-                return eVar2.b == eVar.b && eVar2.f39327c == eVar.f39327c;
+                return eVar2.b == eVar.b && eVar2.f25636c == eVar.f25636c;
             }
             return false;
         } else if (fVar instanceof com.tencent.thumbplayer.g.b.a) {

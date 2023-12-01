@@ -4,6 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
 import android.util.Log;
+import com.huawei.openalliance.ad.constant.t;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Objects;
@@ -103,7 +104,7 @@ public final class AudioAttributes implements Parcelable {
             audioAttributes.mSource = this.mSource;
             audioAttributes.mFlags = this.mFlags;
             audioAttributes.mTags = (HashSet) this.mTags.clone();
-            audioAttributes.mFormattedTags = TextUtils.join(";", this.mTags);
+            audioAttributes.mFormattedTags = TextUtils.join(t.aE, this.mTags);
             return audioAttributes;
         }
 
@@ -257,7 +258,7 @@ public final class AudioAttributes implements Parcelable {
         while (true) {
             int i = length - 1;
             if (i < 0) {
-                this.mFormattedTags = TextUtils.join(";", this.mTags);
+                this.mFormattedTags = TextUtils.join(t.aE, this.mTags);
                 return;
             } else {
                 this.mTags.add(readStringArray[i]);

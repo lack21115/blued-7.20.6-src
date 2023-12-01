@@ -17,21 +17,21 @@ public final class RelationshipStatus {
     private final String target_uid;
     private final String uid;
 
-    public RelationshipStatus(String id, String data_id, String uid, String target_uid, int i, int i2, int i3, int i4, String day, int i5) {
-        Intrinsics.e(id, "id");
-        Intrinsics.e(data_id, "data_id");
-        Intrinsics.e(uid, "uid");
-        Intrinsics.e(target_uid, "target_uid");
-        Intrinsics.e(day, "day");
-        this.id = id;
-        this.data_id = data_id;
-        this.uid = uid;
-        this.target_uid = target_uid;
+    public RelationshipStatus(String str, String str2, String str3, String str4, int i, int i2, int i3, int i4, String str5, int i5) {
+        Intrinsics.e(str, "id");
+        Intrinsics.e(str2, "data_id");
+        Intrinsics.e(str3, "uid");
+        Intrinsics.e(str4, "target_uid");
+        Intrinsics.e(str5, "day");
+        this.id = str;
+        this.data_id = str2;
+        this.uid = str3;
+        this.target_uid = str4;
         this.is_hidden = i;
         this.relation_id = i2;
         this.score = i3;
         this.status = i4;
-        this.day = day;
+        this.day = str5;
         this.confirm_score = i5;
     }
 
@@ -109,13 +109,13 @@ public final class RelationshipStatus {
         return this.day;
     }
 
-    public final RelationshipStatus copy(String id, String data_id, String uid, String target_uid, int i, int i2, int i3, int i4, String day, int i5) {
-        Intrinsics.e(id, "id");
-        Intrinsics.e(data_id, "data_id");
-        Intrinsics.e(uid, "uid");
-        Intrinsics.e(target_uid, "target_uid");
-        Intrinsics.e(day, "day");
-        return new RelationshipStatus(id, data_id, uid, target_uid, i, i2, i3, i4, day, i5);
+    public final RelationshipStatus copy(String str, String str2, String str3, String str4, int i, int i2, int i3, int i4, String str5, int i5) {
+        Intrinsics.e(str, "id");
+        Intrinsics.e(str2, "data_id");
+        Intrinsics.e(str3, "uid");
+        Intrinsics.e(str4, "target_uid");
+        Intrinsics.e(str5, "day");
+        return new RelationshipStatus(str, str2, str3, str4, i, i2, i3, i4, str5, i5);
     }
 
     public boolean equals(Object obj) {
@@ -124,7 +124,7 @@ public final class RelationshipStatus {
         }
         if (obj instanceof RelationshipStatus) {
             RelationshipStatus relationshipStatus = (RelationshipStatus) obj;
-            return Intrinsics.a((Object) this.id, (Object) relationshipStatus.id) && Intrinsics.a((Object) this.data_id, (Object) relationshipStatus.data_id) && Intrinsics.a((Object) this.uid, (Object) relationshipStatus.uid) && Intrinsics.a((Object) this.target_uid, (Object) relationshipStatus.target_uid) && this.is_hidden == relationshipStatus.is_hidden && this.relation_id == relationshipStatus.relation_id && this.score == relationshipStatus.score && this.status == relationshipStatus.status && Intrinsics.a((Object) this.day, (Object) relationshipStatus.day) && this.confirm_score == relationshipStatus.confirm_score;
+            return Intrinsics.a(this.id, relationshipStatus.id) && Intrinsics.a(this.data_id, relationshipStatus.data_id) && Intrinsics.a(this.uid, relationshipStatus.uid) && Intrinsics.a(this.target_uid, relationshipStatus.target_uid) && this.is_hidden == relationshipStatus.is_hidden && this.relation_id == relationshipStatus.relation_id && this.score == relationshipStatus.score && this.status == relationshipStatus.status && Intrinsics.a(this.day, relationshipStatus.day) && this.confirm_score == relationshipStatus.confirm_score;
         }
         return false;
     }

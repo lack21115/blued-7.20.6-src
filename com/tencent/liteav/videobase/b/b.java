@@ -12,19 +12,19 @@ import com.tencent.liteav.base.util.LiteavLog;
 
 /* loaded from: source-8457232-dex2jar.jar:com/tencent/liteav/videobase/b/b.class */
 public final class b implements h<EGLContext> {
-    private static final int[] h = {12324, 8, 12323, 8, 12322, 8, 12321, 8, 12325, 0, 12326, 0, 12352, 4, 12610, 1, 12344};
-    private static final int[] i = {12339, 1, 12324, 8, 12323, 8, 12322, 8, 12321, 8, 12325, 0, 12326, 0, 12352, 4, 12610, 1, 12344};
+    private static final int[] h = {EGL14.EGL_RED_SIZE, 8, EGL14.EGL_GREEN_SIZE, 8, EGL14.EGL_BLUE_SIZE, 8, EGL14.EGL_ALPHA_SIZE, 8, EGL14.EGL_DEPTH_SIZE, 0, EGL14.EGL_STENCIL_SIZE, 0, EGL14.EGL_RENDERABLE_TYPE, 4, 12610, 1, EGL14.EGL_NONE};
+    private static final int[] i = {EGL14.EGL_SURFACE_TYPE, 1, EGL14.EGL_RED_SIZE, 8, EGL14.EGL_GREEN_SIZE, 8, EGL14.EGL_BLUE_SIZE, 8, EGL14.EGL_ALPHA_SIZE, 8, EGL14.EGL_DEPTH_SIZE, 0, EGL14.EGL_STENCIL_SIZE, 0, EGL14.EGL_RENDERABLE_TYPE, 4, 12610, 1, EGL14.EGL_NONE};
     private final int d;
     private final int e;
     private EGLConfig f = null;
 
     /* renamed from: a  reason: collision with root package name */
-    public EGLDisplay f36589a = EGL14.EGL_NO_DISPLAY;
+    public EGLDisplay f22898a = EGL14.EGL_NO_DISPLAY;
     private EGLContext g = EGL14.EGL_NO_CONTEXT;
     public EGLSurface b = EGL14.EGL_NO_SURFACE;
 
     /* renamed from: c  reason: collision with root package name */
-    private final String f36590c = "EGL14Helper@" + hashCode();
+    private final String f22899c = "EGL14Helper@" + hashCode();
 
     private b(int i2, int i3) {
         this.d = i2;
@@ -36,7 +36,7 @@ public final class b implements h<EGLContext> {
         if (eGLContext == null) {
             eGLContext2 = EGL14.EGL_NO_CONTEXT;
         }
-        EGLContext eglCreateContext = EGL14.eglCreateContext(eGLDisplay, eGLConfig, eGLContext2, new int[]{12440, i2, 12344}, 0);
+        EGLContext eglCreateContext = EGL14.eglCreateContext(eGLDisplay, eGLConfig, eGLContext2, new int[]{12440, i2, EGL14.EGL_NONE}, 0);
         f();
         return eglCreateContext;
     }
@@ -46,44 +46,44 @@ public final class b implements h<EGLContext> {
         b bVar = new b(i2, i3);
         try {
             EGLDisplay eglGetDisplay = EGL14.eglGetDisplay(0);
-            bVar.f36589a = eglGetDisplay;
+            bVar.f22898a = eglGetDisplay;
             if (eglGetDisplay == EGL14.EGL_NO_DISPLAY) {
-                LiteavLog.e(bVar.f36590c, "unable to get EGL14 display");
+                LiteavLog.e(bVar.f22899c, "unable to get EGL14 display");
                 throw new g(0);
             }
             int[] iArr = new int[2];
-            if (!EGL14.eglInitialize(bVar.f36589a, iArr, 0, iArr, 1)) {
-                bVar.f36589a = null;
-                LiteavLog.e(bVar.f36590c, "unable to initialize EGL14");
+            if (!EGL14.eglInitialize(bVar.f22898a, iArr, 0, iArr, 1)) {
+                bVar.f22898a = null;
+                LiteavLog.e(bVar.f22899c, "unable to initialize EGL14");
                 throw new g(0);
             }
             EGLConfig[] eGLConfigArr = new EGLConfig[1];
-            if (EGL14.eglChooseConfig(bVar.f36589a, surface == null ? i : h, 0, eGLConfigArr, 0, 1, new int[1], 0)) {
+            if (EGL14.eglChooseConfig(bVar.f22898a, surface == null ? i : h, 0, eGLConfigArr, 0, 1, new int[1], 0)) {
                 bVar.f = eGLConfigArr[0];
                 if (LiteavSystemInfo.getSystemOSVersionInt() >= 18) {
                     try {
-                        bVar.g = a(bVar.f36589a, bVar.f, 2, eGLContext);
+                        bVar.g = a(bVar.f22898a, bVar.f, 2, eGLContext);
                     } catch (g e) {
-                        LiteavLog.i(bVar.f36590c, "failed to create EGLContext of OpenGL ES 2.0, try 3.0");
-                        bVar.g = a(bVar.f36589a, bVar.f, 3, eGLContext);
+                        LiteavLog.i(bVar.f22899c, "failed to create EGLContext of OpenGL ES 2.0, try 3.0");
+                        bVar.g = a(bVar.f22898a, bVar.f, 3, eGLContext);
                         i4 = 3;
                     }
                 } else {
-                    bVar.g = a(bVar.f36589a, bVar.f, 2, eGLContext);
+                    bVar.g = a(bVar.f22898a, bVar.f, 2, eGLContext);
                 }
                 i4 = 2;
-                LiteavLog.i(bVar.f36590c, "create eglContext " + bVar.g + " sharedContext: " + eGLContext + " version:" + i4);
+                LiteavLog.i(bVar.f22899c, "create eglContext " + bVar.g + " sharedContext: " + eGLContext + " version:" + i4);
                 if (surface == null) {
-                    bVar.b = EGL14.eglCreatePbufferSurface(bVar.f36589a, bVar.f, new int[]{12375, bVar.d, 12374, bVar.e, 12344}, 0);
+                    bVar.b = EGL14.eglCreatePbufferSurface(bVar.f22898a, bVar.f, new int[]{EGL14.EGL_WIDTH, bVar.d, EGL14.EGL_HEIGHT, bVar.e, EGL14.EGL_NONE}, 0);
                 } else {
                     try {
-                        bVar.b = EGL14.eglCreateWindowSurface(bVar.f36589a, bVar.f, surface, new int[]{12344}, 0);
+                        bVar.b = EGL14.eglCreateWindowSurface(bVar.f22898a, bVar.f, surface, new int[]{EGL14.EGL_NONE}, 0);
                     } catch (Exception e2) {
                         throw new g(EGL14.eglGetError(), "", e2);
                     }
                 }
                 f();
-                if (EGL14.eglMakeCurrent(bVar.f36589a, bVar.b, bVar.b, bVar.g)) {
+                if (EGL14.eglMakeCurrent(bVar.f22898a, bVar.b, bVar.b, bVar.g)) {
                     return bVar;
                 }
                 f();
@@ -106,7 +106,7 @@ public final class b implements h<EGLContext> {
     @Override // com.tencent.liteav.videobase.b.h
     public final void a() throws g {
         GLES20.glFinish();
-        if (EGL14.eglSwapBuffers(this.f36589a, this.b)) {
+        if (EGL14.eglSwapBuffers(this.f22898a, this.b)) {
             return;
         }
         f();
@@ -114,7 +114,7 @@ public final class b implements h<EGLContext> {
 
     @Override // com.tencent.liteav.videobase.b.h
     public final void b() throws g {
-        EGLDisplay eGLDisplay = this.f36589a;
+        EGLDisplay eGLDisplay = this.f22898a;
         EGLSurface eGLSurface = this.b;
         if (EGL14.eglMakeCurrent(eGLDisplay, eGLSurface, eGLSurface, this.g)) {
             return;
@@ -124,30 +124,30 @@ public final class b implements h<EGLContext> {
 
     @Override // com.tencent.liteav.videobase.b.h
     public final void c() {
-        if (this.f36589a != EGL14.EGL_NO_DISPLAY) {
-            EGLDisplay eGLDisplay = this.f36589a;
+        if (this.f22898a != EGL14.EGL_NO_DISPLAY) {
+            EGLDisplay eGLDisplay = this.f22898a;
             EGLSurface eGLSurface = EGL14.EGL_NO_SURFACE;
             EGL14.eglMakeCurrent(eGLDisplay, eGLSurface, eGLSurface, EGL14.EGL_NO_CONTEXT);
             if (this.b != EGL14.EGL_NO_SURFACE) {
-                EGL14.eglDestroySurface(this.f36589a, this.b);
+                EGL14.eglDestroySurface(this.f22898a, this.b);
                 this.b = EGL14.EGL_NO_SURFACE;
             }
             if (this.g != EGL14.EGL_NO_CONTEXT) {
-                String str = this.f36590c;
+                String str = this.f22899c;
                 LiteavLog.i(str, "destroy eglContext " + this.g);
-                EGL14.eglDestroyContext(this.f36589a, this.g);
+                EGL14.eglDestroyContext(this.f22898a, this.g);
                 this.g = EGL14.EGL_NO_CONTEXT;
             }
             EGL14.eglReleaseThread();
-            EGL14.eglTerminate(this.f36589a);
+            EGL14.eglTerminate(this.f22898a);
         }
-        this.f36589a = EGL14.EGL_NO_DISPLAY;
+        this.f22898a = EGL14.EGL_NO_DISPLAY;
     }
 
     @Override // com.tencent.liteav.videobase.b.h
     public final void d() {
-        if (this.f36589a != EGL14.EGL_NO_DISPLAY) {
-            EGLDisplay eGLDisplay = this.f36589a;
+        if (this.f22898a != EGL14.EGL_NO_DISPLAY) {
+            EGLDisplay eGLDisplay = this.f22898a;
             EGLSurface eGLSurface = EGL14.EGL_NO_SURFACE;
             EGL14.eglMakeCurrent(eGLDisplay, eGLSurface, eGLSurface, EGL14.EGL_NO_CONTEXT);
         }

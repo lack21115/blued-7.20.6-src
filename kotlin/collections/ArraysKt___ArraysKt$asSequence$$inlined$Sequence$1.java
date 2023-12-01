@@ -9,12 +9,10 @@ import kotlin.sequences.Sequence;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/collections/ArraysKt___ArraysKt$asSequence$$inlined$Sequence$1.class */
 public final class ArraysKt___ArraysKt$asSequence$$inlined$Sequence$1<T> implements Sequence<T> {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ Object[] f42353a;
+    final /* synthetic */ Object[] a;
 
     @Override // kotlin.sequences.Sequence
     public Iterator<T> iterator() {
-        return ArrayIteratorKt.a(this.f42353a);
+        return ArrayIteratorKt.a(this.a);
     }
 }

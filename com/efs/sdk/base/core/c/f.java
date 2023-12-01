@@ -13,17 +13,21 @@ public final class f {
     static FileLock b;
 
     /* renamed from: a */
-    volatile int f21742a;
+    volatile int f8136a;
 
     /* loaded from: source-7206380-dex2jar.jar:com/efs/sdk/base/core/c/f$a.class */
     public static final class a {
 
         /* renamed from: a */
-        private static final f f21744a = new f((byte) 0);
+        private static final f f8138a = new f((byte) 0);
+
+        public static /* synthetic */ f a() {
+            return f8138a;
+        }
     }
 
     private f() {
-        this.f21742a = 0;
+        this.f8136a = 0;
         a(ControllerCenter.getGlobalEnvStruct().mAppContext);
     }
 
@@ -34,7 +38,7 @@ public final class f {
     private void a(final Context context) {
         synchronized (this) {
             Log.w("efs.send_log", "tryFileLock start! ");
-            this.f21742a = 1;
+            this.f8136a = 1;
             new Thread(new Runnable() { // from class: com.efs.sdk.base.core.c.f.1
                 {
                     f.this = this;
@@ -57,10 +61,10 @@ public final class f {
                             f.b = lock;
                         } while (!lock.isValid());
                         Log.w("efs.send_log", "tryFileLock sendlock sucess! processname: " + ProcessUtil.getCurrentProcessName());
-                        f.this.f21742a = 2;
+                        f.this.f8136a = 2;
                     } catch (Exception e) {
                         Log.w("efs.send_log", "tryFileLock fail! " + e.getMessage());
-                        f.this.f21742a = 0;
+                        f.this.f8136a = 0;
                     }
                 }
             }).start();
@@ -68,10 +72,10 @@ public final class f {
     }
 
     public final boolean a() {
-        if (this.f21742a == 2) {
+        if (this.f8136a == 2) {
             return true;
         }
-        if (this.f21742a == 0) {
+        if (this.f8136a == 0) {
             a(ControllerCenter.getGlobalEnvStruct().mAppContext);
             return false;
         }

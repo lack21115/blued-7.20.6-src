@@ -2,8 +2,8 @@ package com.tencent.beacon.base.util;
 
 import android.content.SharedPreferences;
 import android.text.format.Time;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.beacon.a.b.g;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -29,11 +29,11 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Random f34995a = new Random();
+    private static final Random f21304a = new Random();
     private static final AtomicInteger b = new AtomicInteger(0);
 
     /* renamed from: c  reason: collision with root package name */
-    private static final SimpleDateFormat f34996c = new SimpleDateFormat("yyyy-MM-dd", Locale.US);
+    private static final SimpleDateFormat f21305c = new SimpleDateFormat("yyyy-MM-dd", Locale.US);
 
     public static int a(String str, int i, int i2, int i3) {
         int i4;
@@ -134,7 +134,7 @@ public class b {
         }
         StringWriter stringWriter = new StringWriter();
         th.printStackTrace(new PrintWriter(stringWriter));
-        String replace = (th.getMessage() + "\n" + stringWriter.getBuffer().toString()).replace("\t", " ").replace("\n", " ").replace("$", "-");
+        String replace = (th.getMessage() + "\n" + stringWriter.getBuffer().toString()).replace("\t", " ").replace("\n", " ").replace("$", Constants.ACCEPT_TIME_SEPARATOR_SERVER);
         String str = replace;
         if (replace.length() > 10240) {
             str = replace.substring(0, 10240);
@@ -348,8 +348,8 @@ public class b {
         com.tencent.beacon.a.c.c d = com.tencent.beacon.a.c.c.d();
         String f = d != null ? d.f() : "";
         String d2 = com.tencent.beacon.a.c.e.l().d();
-        int nextInt = f34995a.nextInt(2147473647);
-        return b(f + BridgeUtil.UNDERLINE_STR + d2 + BridgeUtil.UNDERLINE_STR + new Date().getTime() + BridgeUtil.UNDERLINE_STR + (nextInt + 1000));
+        int nextInt = f21304a.nextInt(2147473647);
+        return b(f + "_" + d2 + "_" + new Date().getTime() + "_" + (nextInt + 1000));
     }
 
     public static String b(String str) {

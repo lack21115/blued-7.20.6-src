@@ -5,13 +5,9 @@ import com.blued.android.core.AppInfo;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/manager/LivePlayExitTipManager.class */
 public class LivePlayExitTipManager {
-
-    /* renamed from: a  reason: collision with root package name */
-    private boolean f13667a = false;
+    private boolean a = false;
     private Handler b = new Handler();
-
-    /* renamed from: c  reason: collision with root package name */
-    private ExitTipTask f13668c = new ExitTipTask();
+    private ExitTipTask c = new ExitTipTask();
 
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/manager/LivePlayExitTipManager$ExitTipTask.class */
     class ExitTipTask implements Runnable {
@@ -20,17 +16,17 @@ public class LivePlayExitTipManager {
 
         @Override // java.lang.Runnable
         public void run() {
-            LivePlayExitTipManager.this.f13667a = true;
+            LivePlayExitTipManager.this.a = true;
         }
     }
 
     public void a() {
-        this.f13667a = false;
-        AppInfo.n().removeCallbacks(this.f13668c);
+        this.a = false;
+        AppInfo.n().removeCallbacks(this.c);
     }
 
     public void b() {
-        this.b.postDelayed(this.f13668c, 180000L);
+        this.b.postDelayed(this.c, 180000L);
     }
 
     public void c() {

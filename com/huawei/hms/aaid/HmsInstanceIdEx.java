@@ -29,23 +29,23 @@ public class HmsInstanceIdEx {
     public static final String TAG = "HmsInstanceIdEx";
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f22393a;
+    private Context f8785a;
     private PushPreferences b;
 
     /* renamed from: c  reason: collision with root package name */
-    private HuaweiApi<Api.ApiOptions.NoOptions> f22394c;
+    private HuaweiApi<Api.ApiOptions.NoOptions> f8786c;
 
     private HmsInstanceIdEx(Context context) {
         this.b = null;
-        this.f22393a = context;
+        this.f8785a = context;
         this.b = new PushPreferences(context, "aaid");
         Api api = new Api(HuaweiApiAvailability.HMS_API_NAME_PUSH);
         if (context instanceof Activity) {
-            this.f22394c = new HuaweiApi<>((Activity) context, (Api<Api.ApiOptions>) api, (Api.ApiOptions) null, (AbstractClientBuilder) new PushClientBuilder());
+            this.f8786c = new HuaweiApi<>((Activity) context, (Api<Api.ApiOptions>) api, (Api.ApiOptions) null, (AbstractClientBuilder) new PushClientBuilder());
         } else {
-            this.f22394c = new HuaweiApi<>(context, api, (Api.ApiOptions) null, new PushClientBuilder());
+            this.f8786c = new HuaweiApi<>(context, api, (Api.ApiOptions) null, new PushClientBuilder());
         }
-        this.f22394c.setKitSdkVersion(60700300);
+        this.f8786c.setKitSdkVersion(60700300);
     }
 
     private Task<TokenResult> a(Exception exc) {
@@ -118,7 +118,7 @@ public class HmsInstanceIdEx {
         if (ProxyCenter.getProxy() != null) {
             try {
                 HMSLog.i(TAG, "use proxy get token, please check HmsMessageService.onNewToken receive result.");
-                ProxyCenter.getProxy().getToken(this.f22393a, null, null);
+                ProxyCenter.getProxy().getToken(this.f8785a, null, null);
                 TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
                 taskCompletionSource.setResult(new TokenResult());
                 return taskCompletionSource.getTask();
@@ -128,18 +128,18 @@ public class HmsInstanceIdEx {
                 return a(ErrorEnum.ERROR_INTERNAL_ERROR.toApiException());
             }
         }
-        String a2 = h.a(this.f22393a, "push.gettoken");
+        String a2 = h.a(this.f8785a, "push.gettoken");
         try {
-            TokenReq b = b.b(this.f22393a, null, null);
-            b.setAaid(HmsInstanceId.getInstance(this.f22393a).getId());
-            return this.f22394c.doWrite(new f("push.gettoken", b, this.f22393a, a2));
+            TokenReq b = b.b(this.f8785a, null, null);
+            b.setAaid(HmsInstanceId.getInstance(this.f8785a).getId());
+            return this.f8786c.doWrite(new f("push.gettoken", b, this.f8785a, a2));
         } catch (RuntimeException e3) {
-            Context context = this.f22393a;
+            Context context = this.f8785a;
             ErrorEnum errorEnum = ErrorEnum.ERROR_INTERNAL_ERROR;
             h.a(context, "push.gettoken", a2, errorEnum);
             return a(errorEnum.toApiException());
         } catch (Exception e4) {
-            Context context2 = this.f22393a;
+            Context context2 = this.f8785a;
             ErrorEnum errorEnum2 = ErrorEnum.ERROR_INTERNAL_ERROR;
             h.a(context2, "push.gettoken", a2, errorEnum2);
             return a(errorEnum2.toApiException());

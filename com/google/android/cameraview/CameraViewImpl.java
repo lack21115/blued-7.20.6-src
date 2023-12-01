@@ -3,15 +3,13 @@ package com.google.android.cameraview;
 import android.view.View;
 import java.util.Set;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8110460-dex2jar.jar:com/google/android/cameraview/CameraViewImpl.class */
-public abstract class CameraViewImpl {
+abstract class CameraViewImpl {
     protected final Callback mCallback;
     protected final PreviewImpl mPreview;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8110460-dex2jar.jar:com/google/android/cameraview/CameraViewImpl$Callback.class */
-    public interface Callback {
+    interface Callback {
         void onCameraClosed();
 
         void onCameraOpened();

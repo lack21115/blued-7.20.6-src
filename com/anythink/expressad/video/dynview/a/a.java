@@ -30,7 +30,7 @@ public final class a {
     public static final String Z = "fr";
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f8347a = "anythink_reward_end_card_layout_landscape";
+    public static final String f5507a = "anythink_reward_end_card_layout_landscape";
     public static final String aa = "ar";
     public static final String ab = "ru";
     public static final String ac = "en";
@@ -39,7 +39,7 @@ public final class a {
     public static final String b = "anythink_reward_end_card_layout_portrait";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f8348c = "anythink_reward_layer_floor";
+    public static final String f5508c = "anythink_reward_layer_floor";
     public static final String d = "anythink_reward_layer_floor";
     public static final String e = "anythink_reward_layer_floor_302";
     public static final String f = "anythink_reward_layer_floor_802";

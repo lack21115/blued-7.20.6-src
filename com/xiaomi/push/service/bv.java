@@ -13,19 +13,19 @@ import java.util.List;
 public class bv {
 
     /* renamed from: a  reason: collision with root package name */
-    private static bv f41653a = new bv();
+    private static bv f27962a = new bv();
 
     /* renamed from: a  reason: collision with other field name */
-    private static String f1027a;
+    private static String f980a;
 
     /* renamed from: a  reason: collision with other field name */
-    private al.b f1028a;
+    private al.b f981a;
 
     /* renamed from: a  reason: collision with other field name */
-    private du.a f1029a;
+    private du.a f982a;
 
     /* renamed from: a  reason: collision with other field name */
-    private List<a> f1030a = new ArrayList();
+    private List<a> f983a = new ArrayList();
 
     /* loaded from: source-8829756-dex2jar.jar:com/xiaomi/push/service/bv$a.class */
     public static abstract class a {
@@ -40,27 +40,27 @@ public class bv {
     }
 
     public static bv a() {
-        return f41653a;
+        return f27962a;
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public static String m12168a() {
+    public static String m9118a() {
         String str;
         synchronized (bv.class) {
             try {
-                if (f1027a == null) {
-                    SharedPreferences sharedPreferences = com.xiaomi.push.r.m12066a().getSharedPreferences("XMPushServiceConfig", 0);
+                if (f980a == null) {
+                    SharedPreferences sharedPreferences = com.xiaomi.push.r.m9016a().getSharedPreferences("XMPushServiceConfig", 0);
                     String string = sharedPreferences.getString("DeviceUUID", null);
-                    f1027a = string;
+                    f980a = string;
                     if (string == null) {
-                        String a2 = com.xiaomi.push.i.a(com.xiaomi.push.r.m12066a(), false);
-                        f1027a = a2;
+                        String a2 = com.xiaomi.push.i.a(com.xiaomi.push.r.m9016a(), false);
+                        f980a = a2;
                         if (a2 != null) {
-                            sharedPreferences.edit().putString("DeviceUUID", f1027a).commit();
+                            sharedPreferences.edit().putString("DeviceUUID", f980a).commit();
                         }
                     }
                 }
-                str = f1027a;
+                str = f980a;
             } catch (Throwable th) {
                 throw th;
             }
@@ -69,17 +69,17 @@ public class bv {
     }
 
     private void b() {
-        if (this.f1029a == null) {
+        if (this.f982a == null) {
             d();
         }
     }
 
     private void c() {
-        if (this.f1028a != null) {
+        if (this.f981a != null) {
             return;
         }
         bw bwVar = new bw(this);
-        this.f1028a = bwVar;
+        this.f981a = bwVar;
         gx.a(bwVar);
     }
 
@@ -94,7 +94,7 @@ public class bv {
             r5 = this;
             java.io.BufferedInputStream r0 = new java.io.BufferedInputStream     // Catch: java.lang.Throwable -> L2a java.lang.Exception -> L30
             r1 = r0
-            android.content.Context r2 = com.xiaomi.push.r.m12066a()     // Catch: java.lang.Throwable -> L2a java.lang.Exception -> L30
+            android.content.Context r2 = com.xiaomi.push.r.m9016a()     // Catch: java.lang.Throwable -> L2a java.lang.Exception -> L30
             java.lang.String r3 = "XMCloudCfg"
             java.io.FileInputStream r2 = r2.openFileInput(r3)     // Catch: java.lang.Throwable -> L2a java.lang.Exception -> L30
             r1.<init>(r2)     // Catch: java.lang.Throwable -> L2a java.lang.Exception -> L30
@@ -105,7 +105,7 @@ public class bv {
             r1 = r6
             com.xiaomi.push.b r1 = com.xiaomi.push.b.a(r1)     // Catch: java.lang.Exception -> L26 java.lang.Throwable -> L6d
             com.xiaomi.push.du$a r1 = com.xiaomi.push.du.a.b(r1)     // Catch: java.lang.Exception -> L26 java.lang.Throwable -> L6d
-            r0.f1029a = r1     // Catch: java.lang.Exception -> L26 java.lang.Throwable -> L6d
+            r0.f982a = r1     // Catch: java.lang.Exception -> L26 java.lang.Throwable -> L6d
             r0 = r6
             r7 = r0
             r0 = r6
@@ -141,18 +141,18 @@ public class bv {
             r7 = r0
             r0 = r9
             java.lang.String r0 = r0.toString()     // Catch: java.lang.Throwable -> L6d
-            com.xiaomi.channel.commonutils.logger.b.m11394a(r0)     // Catch: java.lang.Throwable -> L6d
+            com.xiaomi.channel.commonutils.logger.b.m8344a(r0)     // Catch: java.lang.Throwable -> L6d
         L56:
             r0 = r6
             com.xiaomi.push.x.a(r0)
             r0 = r5
-            com.xiaomi.push.du$a r0 = r0.f1029a
+            com.xiaomi.push.du$a r0 = r0.f982a
             if (r0 != 0) goto L6c
             r0 = r5
             com.xiaomi.push.du$a r1 = new com.xiaomi.push.du$a
             r2 = r1
             r2.<init>()
-            r0.f1029a = r1
+            r0.f982a = r1
         L6c:
             return
         L6d:
@@ -169,23 +169,23 @@ public class bv {
     /* JADX INFO: Access modifiers changed from: private */
     public void e() {
         try {
-            if (this.f1029a != null) {
-                BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(com.xiaomi.push.r.m12066a().openFileOutput("XMCloudCfg", 0));
+            if (this.f982a != null) {
+                BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(com.xiaomi.push.r.m9016a().openFileOutput("XMCloudCfg", 0));
                 com.xiaomi.push.c a2 = com.xiaomi.push.c.a(bufferedOutputStream);
-                this.f1029a.a(a2);
-                a2.m11560a();
+                this.f982a.a(a2);
+                a2.m8510a();
                 bufferedOutputStream.close();
             }
         } catch (Exception e) {
-            com.xiaomi.channel.commonutils.logger.b.m11394a("save config failure: " + e.getMessage());
+            com.xiaomi.channel.commonutils.logger.b.m8344a("save config failure: " + e.getMessage());
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: a  reason: collision with other method in class */
-    public int m12171a() {
+    public int m9121a() {
         b();
-        du.a aVar = this.f1029a;
+        du.a aVar = this.f982a;
         if (aVar != null) {
             return aVar.c();
         }
@@ -193,27 +193,27 @@ public class bv {
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public du.a m12172a() {
+    public du.a m9122a() {
         b();
-        return this.f1029a;
+        return this.f982a;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: a  reason: collision with other method in class */
-    public void m12173a() {
+    public void m9123a() {
         synchronized (this) {
-            this.f1030a.clear();
+            this.f983a.clear();
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a(dv.b bVar) {
         a[] aVarArr;
-        if (bVar.m11653d() && bVar.d() > m12171a()) {
+        if (bVar.m8603d() && bVar.d() > m9121a()) {
             c();
         }
         synchronized (this) {
-            aVarArr = (a[]) this.f1030a.toArray(new a[this.f1030a.size()]);
+            aVarArr = (a[]) this.f983a.toArray(new a[this.f983a.size()]);
         }
         int length = aVarArr.length;
         int i = 0;
@@ -229,7 +229,7 @@ public class bv {
 
     public void a(a aVar) {
         synchronized (this) {
-            this.f1030a.add(aVar);
+            this.f983a.add(aVar);
         }
     }
 }

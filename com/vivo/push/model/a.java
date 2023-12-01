@@ -4,16 +4,16 @@ package com.vivo.push.model;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f41109a;
+    private String f27418a;
     private String b;
 
     public a(String str, String str2) {
-        this.f41109a = str;
+        this.f27418a = str;
         this.b = str2;
     }
 
     public final String a() {
-        return this.f41109a;
+        return this.f27418a;
     }
 
     public final String b() {
@@ -25,19 +25,19 @@ public final class a {
             return true;
         }
         if (obj != null && getClass() == obj.getClass()) {
-            String str = this.f41109a;
-            String str2 = ((a) obj).f41109a;
+            String str = this.f27418a;
+            String str2 = ((a) obj).f27418a;
             return str == null ? str2 == null : str.equals(str2);
         }
         return false;
     }
 
     public final int hashCode() {
-        String str = this.f41109a;
+        String str = this.f27418a;
         return (str == null ? 0 : str.hashCode()) + 31;
     }
 
     public final String toString() {
-        return "ConfigItem{mKey='" + this.f41109a + "', mValue='" + this.b + "'}";
+        return "ConfigItem{mKey='" + this.f27418a + "', mValue='" + this.b + "'}";
     }
 }

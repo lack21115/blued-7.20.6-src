@@ -2,14 +2,13 @@ package com.meizu.cloud.pushsdk.util;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.meizu.cloud.pushinternal.DebugLogger;
 import com.meizu.cloud.pushsdk.constants.PushConstants;
 
 /* loaded from: source-8303388-dex2jar.jar:com/meizu/cloud/pushsdk/util/b.class */
 public class b {
     public static String a(Context context, String str) {
-        return a(context, PushConstants.PUSH_ID_PREFERENCE_NAME, str + BridgeUtil.UNDERLINE_STR + PushConstants.KEY_PUSH_ID);
+        return a(context, PushConstants.PUSH_ID_PREFERENCE_NAME, str + "_" + PushConstants.KEY_PUSH_ID);
     }
 
     public static String a(Context context, String str, String str2) {
@@ -17,7 +16,7 @@ public class b {
     }
 
     public static void a(Context context, int i, String str) {
-        a(context, PushConstants.PUSH_ID_PREFERENCE_NAME, str + BridgeUtil.UNDERLINE_STR + PushConstants.KEY_PUSH_ID_EXPIRE_TIME, i);
+        a(context, PushConstants.PUSH_ID_PREFERENCE_NAME, str + "_" + PushConstants.KEY_PUSH_ID_EXPIRE_TIME, i);
     }
 
     public static void a(Context context, String str, int i) {
@@ -49,7 +48,7 @@ public class b {
     }
 
     public static int b(Context context, String str) {
-        return b(context, PushConstants.PUSH_ID_PREFERENCE_NAME, str + BridgeUtil.UNDERLINE_STR + PushConstants.KEY_PUSH_ID_EXPIRE_TIME);
+        return b(context, PushConstants.PUSH_ID_PREFERENCE_NAME, str + "_" + PushConstants.KEY_PUSH_ID_EXPIRE_TIME);
     }
 
     public static int b(Context context, String str, String str2) {
@@ -115,7 +114,7 @@ public class b {
     }
 
     public static void g(Context context, String str, String str2) {
-        a(context, PushConstants.PUSH_ID_PREFERENCE_NAME, str2 + BridgeUtil.UNDERLINE_STR + PushConstants.KEY_PUSH_ID, str);
+        a(context, PushConstants.PUSH_ID_PREFERENCE_NAME, str2 + "_" + PushConstants.KEY_PUSH_ID, str);
     }
 
     public static void h(Context context, String str, String str2) {

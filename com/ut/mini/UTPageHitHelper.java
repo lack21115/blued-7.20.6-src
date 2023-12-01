@@ -17,7 +17,7 @@ import java.util.Queue;
 public class UTPageHitHelper {
 
     /* renamed from: a  reason: collision with root package name */
-    private static UTPageHitHelper f41017a = new UTPageHitHelper();
+    private static UTPageHitHelper f27326a = new UTPageHitHelper();
     private boolean K = false;
     private Map<String, String> w = new HashMap();
     private Map<String, UTPageEventObject> x = new HashMap();
@@ -26,7 +26,7 @@ public class UTPageHitHelper {
     private String ah = null;
 
     /* renamed from: a  reason: collision with other field name */
-    private Queue<UTPageEventObject> f76a = new LinkedList();
+    private Queue<UTPageEventObject> f29a = new LinkedList();
     private Map<Object, String> z = new HashMap();
 
     /* loaded from: source-8829756-dex2jar.jar:com/ut/mini/UTPageHitHelper$UTPageEventObject.class */
@@ -35,12 +35,12 @@ public class UTPageHitHelper {
         private long A = 0;
 
         /* renamed from: a  reason: collision with root package name */
-        private Uri f41018a = null;
+        private Uri f27327a = null;
         private String ai = null;
         private String aj = null;
 
         /* renamed from: a  reason: collision with other field name */
-        private UTPageStatus f77a = null;
+        private UTPageStatus f30a = null;
         private boolean L = false;
         private boolean M = false;
         private boolean N = false;
@@ -59,7 +59,7 @@ public class UTPageHitHelper {
         }
 
         public UTPageStatus getPageStatus() {
-            return this.f77a;
+            return this.f30a;
         }
 
         public long getPageStayTimstamp() {
@@ -67,7 +67,7 @@ public class UTPageHitHelper {
         }
 
         public Uri getPageUrl() {
-            return this.f41018a;
+            return this.f27327a;
         }
 
         public String getRefPage() {
@@ -89,12 +89,12 @@ public class UTPageHitHelper {
         public void resetPropertiesWithoutSkipFlagAndH5Flag() {
             this.w = new HashMap();
             this.A = 0L;
-            this.f41018a = null;
+            this.f27327a = null;
             this.ai = null;
             this.aj = null;
-            UTPageStatus uTPageStatus = this.f77a;
+            UTPageStatus uTPageStatus = this.f30a;
             if (uTPageStatus == null || uTPageStatus != UTPageStatus.UT_H5_IN_WebView) {
-                this.f77a = null;
+                this.f30a = null;
             }
             this.L = false;
             this.N = false;
@@ -121,7 +121,7 @@ public class UTPageHitHelper {
         }
 
         public void setPageStatus(UTPageStatus uTPageStatus) {
-            this.f77a = uTPageStatus;
+            this.f30a = uTPageStatus;
         }
 
         public void setPageStayTimstamp(long j) {
@@ -129,7 +129,7 @@ public class UTPageHitHelper {
         }
 
         public void setPageUrl(Uri uri) {
-            this.f41018a = uri;
+            this.f27327a = uri;
         }
 
         public void setRefPage(String str) {
@@ -143,13 +143,13 @@ public class UTPageHitHelper {
 
     private UTPageEventObject a(Object obj) {
         synchronized (this) {
-            String m11327a = m11327a(obj);
-            if (this.x.containsKey(m11327a)) {
-                return this.x.get(m11327a);
+            String m8284a = m8284a(obj);
+            if (this.x.containsKey(m8284a)) {
+                return this.x.get(m8284a);
             }
             UTPageEventObject uTPageEventObject = new UTPageEventObject();
-            this.x.put(m11327a, uTPageEventObject);
-            uTPageEventObject.setCacheKey(m11327a);
+            this.x.put(m8284a, uTPageEventObject);
+            uTPageEventObject.setCacheKey(m8284a);
             return uTPageEventObject;
         }
     }
@@ -168,7 +168,7 @@ public class UTPageHitHelper {
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    private String m11327a(Object obj) {
+    private String m8284a(Object obj) {
         String simpleName = obj instanceof String ? (String) obj : obj.getClass().getSimpleName();
         int hashCode = obj.hashCode();
         return simpleName + hashCode;
@@ -201,33 +201,33 @@ public class UTPageHitHelper {
     }
 
     /* renamed from: b  reason: collision with other method in class */
-    private void m11328b(Object obj) {
+    private void m8285b(Object obj) {
         synchronized (this) {
-            String m11327a = m11327a(obj);
-            if (this.x.containsKey(m11327a)) {
-                this.x.remove(m11327a);
+            String m8284a = m8284a(obj);
+            if (this.x.containsKey(m8284a)) {
+                this.x.remove(m8284a);
             }
         }
     }
 
     public static UTPageHitHelper getInstance() {
-        return f41017a;
+        return f27326a;
     }
 
     void a(UTPageEventObject uTPageEventObject) {
         synchronized (this) {
             uTPageEventObject.resetPropertiesWithoutSkipFlagAndH5Flag();
-            if (!this.f76a.contains(uTPageEventObject)) {
-                this.f76a.add(uTPageEventObject);
+            if (!this.f29a.contains(uTPageEventObject)) {
+                this.f29a.add(uTPageEventObject);
             }
-            if (this.f76a.size() > 200) {
+            if (this.f29a.size() > 200) {
                 int i = 0;
                 while (true) {
                     int i2 = i;
                     if (i2 >= 100) {
                         break;
                     }
-                    UTPageEventObject poll = this.f76a.poll();
+                    UTPageEventObject poll = this.f29a.poll();
                     if (poll != null && this.x.containsKey(poll.getCacheKey())) {
                         this.x.remove(poll.getCacheKey());
                     }
@@ -239,7 +239,7 @@ public class UTPageHitHelper {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: a  reason: collision with other method in class */
-    public void m11329a(Object obj) {
+    public void m8286a(Object obj) {
         synchronized (this) {
             if (obj != null) {
                 UTPageEventObject a2 = a(obj);
@@ -254,8 +254,8 @@ public class UTPageHitHelper {
     public void a(Object obj, String str, boolean z) {
         synchronized (this) {
             if (obj != null) {
-                String m11327a = m11327a(obj);
-                if (m11327a != null && m11327a.equals(this.ag)) {
+                String m8284a = m8284a(obj);
+                if (m8284a != null && m8284a.equals(this.ag)) {
                     return;
                 }
                 if (this.ag != null) {
@@ -263,7 +263,7 @@ public class UTPageHitHelper {
                 }
                 UTPageEventObject a2 = a(obj);
                 if (!z && a2.isSkipPage()) {
-                    i.a("skip page[pageAppear]", "page name:" + obj.getClass().getSimpleName());
+                    i.a("skip page[pageAppear]", new String[]{"page name:" + obj.getClass().getSimpleName()});
                     return;
                 }
                 String h5Url = UTMIVariables.getInstance().getH5Url();
@@ -295,9 +295,9 @@ public class UTPageHitHelper {
                     }
                 }
                 this.y = null;
-                this.ag = m11327a(obj);
+                this.ag = m8284a(obj);
                 b(a2);
-                a(m11327a(obj), a2);
+                a(m8284a(obj), a2);
             } else {
                 i.a("pageAppear", "The page object should not be null");
             }
@@ -306,7 +306,7 @@ public class UTPageHitHelper {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: a  reason: collision with other method in class */
-    public boolean m11330a(Object obj) {
+    public boolean m8287a(Object obj) {
         synchronized (this) {
             if (obj != null) {
                 UTPageEventObject a2 = a(obj);

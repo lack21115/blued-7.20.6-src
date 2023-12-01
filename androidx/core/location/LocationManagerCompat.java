@@ -39,11 +39,11 @@ import java.util.function.Predicate;
 public final class LocationManagerCompat {
 
     /* renamed from: a  reason: collision with root package name */
-    static final WeakHashMap<LocationListener, List<WeakReference<LocationListenerTransport>>> f2487a = new WeakHashMap<>();
+    static final WeakHashMap<LocationListener, List<WeakReference<LocationListenerTransport>>> f2439a = new WeakHashMap<>();
     private static Field b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static Method f2488c;
+    private static Method f2440c;
     private static Method d;
 
     /* loaded from: source-8756600-dex2jar.jar:androidx/core/location/LocationManagerCompat$Api28Impl.class */
@@ -99,28 +99,28 @@ public final class LocationManagerCompat {
     static final class CancellableLocationListener implements LocationListener {
 
         /* renamed from: a  reason: collision with root package name */
-        Runnable f2490a;
+        Runnable f2442a;
         private final LocationManager b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final Executor f2491c;
+        private final Executor f2443c;
         private final Handler d = new Handler(Looper.getMainLooper());
         private Consumer<Location> e;
         private boolean f;
 
         CancellableLocationListener(LocationManager locationManager, Executor executor, Consumer<Location> consumer) {
             this.b = locationManager;
-            this.f2491c = executor;
+            this.f2443c = executor;
             this.e = consumer;
         }
 
         private void a() {
             this.e = null;
             this.b.removeUpdates(this);
-            Runnable runnable = this.f2490a;
+            Runnable runnable = this.f2442a;
             if (runnable != null) {
                 this.d.removeCallbacks(runnable);
-                this.f2490a = null;
+                this.f2442a = null;
             }
         }
 
@@ -142,7 +142,7 @@ public final class LocationManagerCompat {
                 }
                 this.f = true;
                 final Consumer<Location> consumer = this.e;
-                this.f2491c.execute(new Runnable() { // from class: androidx.core.location.-$$Lambda$LocationManagerCompat$CancellableLocationListener$xkqavk_dFSiHq_fL2T23gDmb5L0
+                this.f2443c.execute(new Runnable() { // from class: androidx.core.location.-$$Lambda$LocationManagerCompat$CancellableLocationListener$xkqavk_dFSiHq_fL2T23gDmb5L0
                     @Override // java.lang.Runnable
                     public final void run() {
                         Consumer.this.accept(location);
@@ -173,11 +173,11 @@ public final class LocationManagerCompat {
                 Runnable runnable = new Runnable() { // from class: androidx.core.location.LocationManagerCompat.CancellableLocationListener.1
                     @Override // java.lang.Runnable
                     public void run() {
-                        CancellableLocationListener.this.f2490a = null;
+                        CancellableLocationListener.this.f2442a = null;
                         CancellableLocationListener.this.onLocationChanged(null);
                     }
                 };
-                this.f2490a = runnable;
+                this.f2442a = runnable;
                 this.d.postDelayed(runnable, j);
             }
         }
@@ -188,7 +188,7 @@ public final class LocationManagerCompat {
     public static class GnssLazyLoader {
 
         /* renamed from: a  reason: collision with root package name */
-        static final SimpleArrayMap<Object, Object> f2493a = new SimpleArrayMap<>();
+        static final SimpleArrayMap<Object, Object> f2445a = new SimpleArrayMap<>();
 
         private GnssLazyLoader() {
         }
@@ -199,31 +199,31 @@ public final class LocationManagerCompat {
     public static class GnssStatusTransport extends GnssStatus.Callback {
 
         /* renamed from: a  reason: collision with root package name */
-        final GnssStatusCompat.Callback f2494a;
+        final GnssStatusCompat.Callback f2446a;
 
         GnssStatusTransport(GnssStatusCompat.Callback callback) {
             Preconditions.checkArgument(callback != null, "invalid null callback");
-            this.f2494a = callback;
+            this.f2446a = callback;
         }
 
         @Override // android.location.GnssStatus.Callback
         public void onFirstFix(int i) {
-            this.f2494a.onFirstFix(i);
+            this.f2446a.onFirstFix(i);
         }
 
         @Override // android.location.GnssStatus.Callback
         public void onSatelliteStatusChanged(GnssStatus gnssStatus) {
-            this.f2494a.onSatelliteStatusChanged(GnssStatusCompat.wrap(gnssStatus));
+            this.f2446a.onSatelliteStatusChanged(GnssStatusCompat.wrap(gnssStatus));
         }
 
         @Override // android.location.GnssStatus.Callback
         public void onStarted() {
-            this.f2494a.onStarted();
+            this.f2446a.onStarted();
         }
 
         @Override // android.location.GnssStatus.Callback
         public void onStopped() {
-            this.f2494a.onStopped();
+            this.f2446a.onStopped();
         }
     }
 
@@ -232,16 +232,16 @@ public final class LocationManagerCompat {
     public static class GpsStatusTransport implements GpsStatus.Listener {
 
         /* renamed from: a  reason: collision with root package name */
-        final GnssStatusCompat.Callback f2495a;
+        final GnssStatusCompat.Callback f2447a;
         volatile Executor b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final LocationManager f2496c;
+        private final LocationManager f2448c;
 
         GpsStatusTransport(LocationManager locationManager, GnssStatusCompat.Callback callback) {
             Preconditions.checkArgument(callback != null, "invalid null callback");
-            this.f2496c = locationManager;
-            this.f2495a = callback;
+            this.f2448c = locationManager;
+            this.f2447a = callback;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -249,7 +249,7 @@ public final class LocationManagerCompat {
             if (this.b != executor) {
                 return;
             }
-            this.f2495a.onStopped();
+            this.f2447a.onStopped();
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -257,7 +257,7 @@ public final class LocationManagerCompat {
             if (this.b != executor) {
                 return;
             }
-            this.f2495a.onFirstFix(i);
+            this.f2447a.onFirstFix(i);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -265,7 +265,7 @@ public final class LocationManagerCompat {
             if (this.b != executor) {
                 return;
             }
-            this.f2495a.onSatelliteStatusChanged(gnssStatusCompat);
+            this.f2447a.onSatelliteStatusChanged(gnssStatusCompat);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -273,7 +273,7 @@ public final class LocationManagerCompat {
             if (this.b != executor) {
                 return;
             }
-            this.f2495a.onStarted();
+            this.f2447a.onStarted();
         }
 
         @Override // android.location.GpsStatus.Listener
@@ -298,7 +298,7 @@ public final class LocationManagerCompat {
                     }
                 });
             } else if (i != 3) {
-                if (i == 4 && (gpsStatus = this.f2496c.getGpsStatus(null)) != null) {
+                if (i == 4 && (gpsStatus = this.f2448c.getGpsStatus(null)) != null) {
                     final GnssStatusCompat wrap = GnssStatusCompat.wrap(gpsStatus);
                     executor.execute(new Runnable() { // from class: androidx.core.location.-$$Lambda$LocationManagerCompat$GpsStatusTransport$aujm7bjwJtMuNWVDZIS2NiOn7vw
                         @Override // java.lang.Runnable
@@ -308,7 +308,7 @@ public final class LocationManagerCompat {
                     });
                 }
             } else {
-                GpsStatus gpsStatus2 = this.f2496c.getGpsStatus(null);
+                GpsStatus gpsStatus2 = this.f2448c.getGpsStatus(null);
                 if (gpsStatus2 != null) {
                     final int timeToFirstFix = gpsStatus2.getTimeToFirstFix();
                     executor.execute(new Runnable() { // from class: androidx.core.location.-$$Lambda$LocationManagerCompat$GpsStatusTransport$EGbl3DPznTOhaGSsRQ0Se9W86Uo
@@ -335,19 +335,19 @@ public final class LocationManagerCompat {
     static final class InlineHandlerExecutor implements Executor {
 
         /* renamed from: a  reason: collision with root package name */
-        private final Handler f2497a;
+        private final Handler f2449a;
 
         InlineHandlerExecutor(Handler handler) {
-            this.f2497a = (Handler) Preconditions.checkNotNull(handler);
+            this.f2449a = (Handler) Preconditions.checkNotNull(handler);
         }
 
         @Override // java.util.concurrent.Executor
         public void execute(Runnable runnable) {
-            if (Looper.myLooper() == this.f2497a.getLooper()) {
+            if (Looper.myLooper() == this.f2449a.getLooper()) {
                 runnable.run();
-            } else if (this.f2497a.post((Runnable) Preconditions.checkNotNull(runnable))) {
+            } else if (this.f2449a.post((Runnable) Preconditions.checkNotNull(runnable))) {
             } else {
-                throw new RejectedExecutionException(this.f2497a + " is shutting down");
+                throw new RejectedExecutionException(this.f2449a + " is shutting down");
             }
         }
     }
@@ -357,17 +357,17 @@ public final class LocationManagerCompat {
     public static class LocationListenerTransport implements LocationListener {
 
         /* renamed from: a  reason: collision with root package name */
-        volatile LocationListenerCompat f2498a;
+        volatile LocationListenerCompat f2450a;
         final Executor b;
 
         LocationListenerTransport(LocationListenerCompat locationListenerCompat, Executor executor) {
-            this.f2498a = (LocationListenerCompat) ObjectsCompat.requireNonNull(locationListenerCompat, "invalid null listener");
+            this.f2450a = (LocationListenerCompat) ObjectsCompat.requireNonNull(locationListenerCompat, "invalid null listener");
             this.b = executor;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void a(LocationListenerCompat locationListenerCompat, int i) {
-            if (this.f2498a != locationListenerCompat) {
+            if (this.f2450a != locationListenerCompat) {
                 return;
             }
             locationListenerCompat.onFlushComplete(i);
@@ -375,7 +375,7 @@ public final class LocationManagerCompat {
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void a(LocationListenerCompat locationListenerCompat, Location location) {
-            if (this.f2498a != locationListenerCompat) {
+            if (this.f2450a != locationListenerCompat) {
                 return;
             }
             locationListenerCompat.onLocationChanged(location);
@@ -383,7 +383,7 @@ public final class LocationManagerCompat {
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void a(LocationListenerCompat locationListenerCompat, String str) {
-            if (this.f2498a != locationListenerCompat) {
+            if (this.f2450a != locationListenerCompat) {
                 return;
             }
             locationListenerCompat.onProviderDisabled(str);
@@ -391,7 +391,7 @@ public final class LocationManagerCompat {
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void a(LocationListenerCompat locationListenerCompat, String str, int i, Bundle bundle) {
-            if (this.f2498a != locationListenerCompat) {
+            if (this.f2450a != locationListenerCompat) {
                 return;
             }
             locationListenerCompat.onStatusChanged(str, i, bundle);
@@ -399,7 +399,7 @@ public final class LocationManagerCompat {
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void a(LocationListenerCompat locationListenerCompat, List list) {
-            if (this.f2498a != locationListenerCompat) {
+            if (this.f2450a != locationListenerCompat) {
                 return;
             }
             locationListenerCompat.onLocationChanged(list);
@@ -407,12 +407,12 @@ public final class LocationManagerCompat {
 
         /* JADX INFO: Access modifiers changed from: private */
         public static /* synthetic */ boolean a(WeakReference weakReference) {
-            return weakReference.get() == 0;
+            return weakReference.get() == null;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void b(LocationListenerCompat locationListenerCompat, String str) {
-            if (this.f2498a != locationListenerCompat) {
+            if (this.f2450a != locationListenerCompat) {
                 return;
             }
             locationListenerCompat.onProviderEnabled(str);
@@ -420,11 +420,11 @@ public final class LocationManagerCompat {
 
         /* JADX INFO: Access modifiers changed from: private */
         public static /* synthetic */ boolean b(WeakReference weakReference) {
-            return weakReference.get() == 0;
+            return weakReference.get() == null;
         }
 
         public void onFlushComplete(final int i) {
-            final LocationListenerCompat locationListenerCompat = this.f2498a;
+            final LocationListenerCompat locationListenerCompat = this.f2450a;
             if (locationListenerCompat == null) {
                 return;
             }
@@ -438,7 +438,7 @@ public final class LocationManagerCompat {
 
         @Override // android.location.LocationListener
         public void onLocationChanged(final Location location) {
-            final LocationListenerCompat locationListenerCompat = this.f2498a;
+            final LocationListenerCompat locationListenerCompat = this.f2450a;
             if (locationListenerCompat == null) {
                 return;
             }
@@ -451,7 +451,7 @@ public final class LocationManagerCompat {
         }
 
         public void onLocationChanged(final List<Location> list) {
-            final LocationListenerCompat locationListenerCompat = this.f2498a;
+            final LocationListenerCompat locationListenerCompat = this.f2450a;
             if (locationListenerCompat == null) {
                 return;
             }
@@ -465,7 +465,7 @@ public final class LocationManagerCompat {
 
         @Override // android.location.LocationListener
         public void onProviderDisabled(final String str) {
-            final LocationListenerCompat locationListenerCompat = this.f2498a;
+            final LocationListenerCompat locationListenerCompat = this.f2450a;
             if (locationListenerCompat == null) {
                 return;
             }
@@ -479,7 +479,7 @@ public final class LocationManagerCompat {
 
         @Override // android.location.LocationListener
         public void onProviderEnabled(final String str) {
-            final LocationListenerCompat locationListenerCompat = this.f2498a;
+            final LocationListenerCompat locationListenerCompat = this.f2450a;
             if (locationListenerCompat == null) {
                 return;
             }
@@ -493,7 +493,7 @@ public final class LocationManagerCompat {
 
         @Override // android.location.LocationListener
         public void onStatusChanged(final String str, final int i, final Bundle bundle) {
-            final LocationListenerCompat locationListenerCompat = this.f2498a;
+            final LocationListenerCompat locationListenerCompat = this.f2450a;
             if (locationListenerCompat == null) {
                 return;
             }
@@ -507,7 +507,7 @@ public final class LocationManagerCompat {
 
         public void register() {
             ArrayList arrayList;
-            List<WeakReference<LocationListenerTransport>> list = LocationManagerCompat.f2487a.get(this.f2498a);
+            List<WeakReference<LocationListenerTransport>> list = LocationManagerCompat.f2439a.get(this.f2450a);
             if (list != null) {
                 if (Build.VERSION.SDK_INT < 24) {
                     Iterator<WeakReference<LocationListenerTransport>> it = list.iterator();
@@ -532,18 +532,18 @@ public final class LocationManagerCompat {
                 }
             } else {
                 arrayList = new ArrayList(1);
-                LocationManagerCompat.f2487a.put(this.f2498a, arrayList);
+                LocationManagerCompat.f2439a.put(this.f2450a, arrayList);
             }
             arrayList.add(new WeakReference<>(this));
         }
 
         public boolean unregister() {
-            LocationListenerCompat locationListenerCompat = this.f2498a;
+            LocationListenerCompat locationListenerCompat = this.f2450a;
             if (locationListenerCompat == null) {
                 return false;
             }
-            this.f2498a = null;
-            List<WeakReference<LocationListenerTransport>> list = LocationManagerCompat.f2487a.get(locationListenerCompat);
+            this.f2450a = null;
+            List<WeakReference<LocationListenerTransport>> list = LocationManagerCompat.f2439a.get(locationListenerCompat);
             if (list != null) {
                 if (Build.VERSION.SDK_INT >= 24) {
                     list.removeIf(new Predicate() { // from class: androidx.core.location.-$$Lambda$LocationManagerCompat$LocationListenerTransport$YO_NVm-iIeAOAHsk_sesNQKF4Vo
@@ -563,7 +563,7 @@ public final class LocationManagerCompat {
                     }
                 }
                 if (list.isEmpty()) {
-                    LocationManagerCompat.f2487a.remove(locationListenerCompat);
+                    LocationManagerCompat.f2439a.remove(locationListenerCompat);
                     return true;
                 }
                 return true;
@@ -577,12 +577,12 @@ public final class LocationManagerCompat {
     public static class PreRGnssStatusTransport extends GnssStatus.Callback {
 
         /* renamed from: a  reason: collision with root package name */
-        final GnssStatusCompat.Callback f2499a;
+        final GnssStatusCompat.Callback f2451a;
         volatile Executor b;
 
         PreRGnssStatusTransport(GnssStatusCompat.Callback callback) {
             Preconditions.checkArgument(callback != null, "invalid null callback");
-            this.f2499a = callback;
+            this.f2451a = callback;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -590,7 +590,7 @@ public final class LocationManagerCompat {
             if (this.b != executor) {
                 return;
             }
-            this.f2499a.onStopped();
+            this.f2451a.onStopped();
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -598,7 +598,7 @@ public final class LocationManagerCompat {
             if (this.b != executor) {
                 return;
             }
-            this.f2499a.onFirstFix(i);
+            this.f2451a.onFirstFix(i);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -606,7 +606,7 @@ public final class LocationManagerCompat {
             if (this.b != executor) {
                 return;
             }
-            this.f2499a.onSatelliteStatusChanged(GnssStatusCompat.wrap(gnssStatus));
+            this.f2451a.onSatelliteStatusChanged(GnssStatusCompat.wrap(gnssStatus));
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -614,7 +614,7 @@ public final class LocationManagerCompat {
             if (this.b != executor) {
                 return;
             }
-            this.f2499a.onStarted();
+            this.f2451a.onStarted();
         }
 
         @Override // android.location.GnssStatus.Callback
@@ -807,8 +807,8 @@ public final class LocationManagerCompat {
     }
 
     public static void removeUpdates(LocationManager locationManager, LocationListenerCompat locationListenerCompat) {
-        synchronized (f2487a) {
-            List<WeakReference<LocationListenerTransport>> remove = f2487a.remove(locationListenerCompat);
+        synchronized (f2439a) {
+            List<WeakReference<LocationListenerTransport>> remove = f2439a.remove(locationListenerCompat);
             if (remove != null) {
                 for (WeakReference<LocationListenerTransport> weakReference : remove) {
                     LocationListenerTransport locationListenerTransport = weakReference.get();
@@ -854,14 +854,14 @@ public final class LocationManagerCompat {
         }
         if (Build.VERSION.SDK_INT >= 30) {
             try {
-                if (f2488c == null) {
+                if (f2440c == null) {
                     Method declaredMethod = LocationManager.class.getDeclaredMethod("requestLocationUpdates", LocationRequest.class, Executor.class, LocationListener.class);
-                    f2488c = declaredMethod;
+                    f2440c = declaredMethod;
                     declaredMethod.setAccessible(true);
                 }
                 LocationRequest locationRequest = locationRequestCompat.toLocationRequest(str);
                 if (locationRequest != null) {
-                    f2488c.invoke(locationManager, locationRequest, executor, locationListenerCompat);
+                    f2440c.invoke(locationManager, locationRequest, executor, locationListenerCompat);
                     return;
                 }
             } catch (IllegalAccessException | NoSuchMethodException | UnsupportedOperationException | InvocationTargetException e) {
@@ -877,7 +877,7 @@ public final class LocationManagerCompat {
                 }
                 LocationRequest locationRequest2 = locationRequestCompat.toLocationRequest(str);
                 if (locationRequest2 != null) {
-                    synchronized (f2487a) {
+                    synchronized (f2439a) {
                         d.invoke(locationManager, locationRequest2, locationListenerTransport, Looper.getMainLooper());
                         locationListenerTransport.register();
                     }
@@ -886,7 +886,7 @@ public final class LocationManagerCompat {
             } catch (IllegalAccessException | NoSuchMethodException | UnsupportedOperationException | InvocationTargetException e2) {
             }
         }
-        synchronized (f2487a) {
+        synchronized (f2439a) {
             locationManager.requestLocationUpdates(str, locationRequestCompat.getIntervalMillis(), locationRequestCompat.getMinUpdateDistanceMeters(), locationListenerTransport, Looper.getMainLooper());
             locationListenerTransport.register();
         }
@@ -894,23 +894,23 @@ public final class LocationManagerCompat {
 
     public static void unregisterGnssStatusCallback(LocationManager locationManager, GnssStatusCompat.Callback callback) {
         if (Build.VERSION.SDK_INT >= 30) {
-            synchronized (GnssLazyLoader.f2493a) {
-                GnssStatus.Callback callback2 = (GnssStatusTransport) GnssLazyLoader.f2493a.remove(callback);
+            synchronized (GnssLazyLoader.f2445a) {
+                GnssStatus.Callback callback2 = (GnssStatusTransport) GnssLazyLoader.f2445a.remove(callback);
                 if (callback2 != null) {
                     locationManager.unregisterGnssStatusCallback(callback2);
                 }
             }
         } else if (Build.VERSION.SDK_INT >= 24) {
-            synchronized (GnssLazyLoader.f2493a) {
-                PreRGnssStatusTransport preRGnssStatusTransport = (PreRGnssStatusTransport) GnssLazyLoader.f2493a.remove(callback);
+            synchronized (GnssLazyLoader.f2445a) {
+                PreRGnssStatusTransport preRGnssStatusTransport = (PreRGnssStatusTransport) GnssLazyLoader.f2445a.remove(callback);
                 if (preRGnssStatusTransport != null) {
                     preRGnssStatusTransport.unregister();
                     locationManager.unregisterGnssStatusCallback(preRGnssStatusTransport);
                 }
             }
         } else {
-            synchronized (GnssLazyLoader.f2493a) {
-                GpsStatusTransport gpsStatusTransport = (GpsStatusTransport) GnssLazyLoader.f2493a.remove(callback);
+            synchronized (GnssLazyLoader.f2445a) {
+                GpsStatusTransport gpsStatusTransport = (GpsStatusTransport) GnssLazyLoader.f2445a.remove(callback);
                 if (gpsStatusTransport != null) {
                     gpsStatusTransport.unregister();
                     locationManager.removeGpsStatusListener(gpsStatusTransport);

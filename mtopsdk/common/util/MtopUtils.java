@@ -5,15 +5,13 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 /* loaded from: source-3503164-dex2jar.jar:mtopsdk/common/util/MtopUtils.class */
 public final class MtopUtils {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static AtomicInteger f43683a = new AtomicInteger();
+    private static AtomicInteger a = new AtomicInteger();
 
     private MtopUtils() {
     }
 
     public static int a() {
-        return f43683a.incrementAndGet() & Integer.MAX_VALUE;
+        return a.incrementAndGet() & Integer.MAX_VALUE;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:24:0x0075  */

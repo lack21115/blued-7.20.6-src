@@ -7,7 +7,7 @@ import java.util.Iterator;
 public class AlbumDownLoadObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    private static AlbumDownLoadObserver f33117a = new AlbumDownLoadObserver();
+    private static AlbumDownLoadObserver f19426a = new AlbumDownLoadObserver();
     private ArrayList<IAlbumDownLoadObserver> b = new ArrayList<>();
 
     /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/photo/observer/AlbumDownLoadObserver$IAlbumDownLoadObserver.class */
@@ -19,7 +19,7 @@ public class AlbumDownLoadObserver {
     }
 
     public static AlbumDownLoadObserver a() {
-        return f33117a;
+        return f19426a;
     }
 
     public void a(IAlbumDownLoadObserver iAlbumDownLoadObserver) {

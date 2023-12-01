@@ -14,7 +14,7 @@ public interface CoroutineContext {
     public static final class DefaultImpls {
         public static CoroutineContext a(CoroutineContext coroutineContext, CoroutineContext context) {
             Intrinsics.e(context, "context");
-            return context == EmptyCoroutineContext.f42457a ? coroutineContext : (CoroutineContext) context.fold(coroutineContext, new Function2<CoroutineContext, Element, CoroutineContext>() { // from class: kotlin.coroutines.CoroutineContext$plus$1
+            return context == EmptyCoroutineContext.a ? coroutineContext : (CoroutineContext) context.fold(coroutineContext, new Function2<CoroutineContext, Element, CoroutineContext>() { // from class: kotlin.coroutines.CoroutineContext$plus$1
                 @Override // kotlin.jvm.functions.Function2
                 /* renamed from: a */
                 public final CoroutineContext invoke(CoroutineContext acc, CoroutineContext.Element element) {
@@ -22,15 +22,15 @@ public interface CoroutineContext {
                     Intrinsics.e(acc, "acc");
                     Intrinsics.e(element, "element");
                     CoroutineContext minusKey = acc.minusKey(element.getKey());
-                    if (minusKey == EmptyCoroutineContext.f42457a) {
+                    if (minusKey == EmptyCoroutineContext.a) {
                         return element;
                     }
-                    ContinuationInterceptor continuationInterceptor = (ContinuationInterceptor) minusKey.get(ContinuationInterceptor.f42453a);
+                    ContinuationInterceptor continuationInterceptor = (ContinuationInterceptor) minusKey.get(ContinuationInterceptor.a);
                     if (continuationInterceptor == null) {
                         combinedContext = new CombinedContext(minusKey, element);
                     } else {
-                        CoroutineContext minusKey2 = minusKey.minusKey(ContinuationInterceptor.f42453a);
-                        combinedContext = minusKey2 == EmptyCoroutineContext.f42457a ? new CombinedContext(element, continuationInterceptor) : new CombinedContext(new CombinedContext(minusKey2, element), continuationInterceptor);
+                        CoroutineContext minusKey2 = minusKey.minusKey(ContinuationInterceptor.a);
+                        combinedContext = minusKey2 == EmptyCoroutineContext.a ? new CombinedContext(element, continuationInterceptor) : new CombinedContext(new CombinedContext(minusKey2, element), continuationInterceptor);
                     }
                     return combinedContext;
                 }
@@ -70,7 +70,7 @@ public interface CoroutineContext {
                 Intrinsics.e(key, "key");
                 Element element2 = element;
                 if (Intrinsics.a(element.getKey(), key)) {
-                    element2 = EmptyCoroutineContext.f42457a;
+                    element2 = EmptyCoroutineContext.a;
                 }
                 return element2;
             }

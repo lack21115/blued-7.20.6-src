@@ -7,11 +7,11 @@ import java.util.concurrent.TimeUnit;
 public final class b extends f {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f23607a = -2147483642;
+    public static final int f9999a = -2147483642;
     private static final String b = "HeartBeatTimerTask";
 
     /* renamed from: c  reason: collision with root package name */
-    private static b f23608c;
+    private static b f10000c;
 
     public b() {
         super(j.a().b(), (byte) 0);
@@ -19,10 +19,10 @@ public final class b extends f {
     }
 
     public static b g() {
-        if (f23608c == null) {
-            f23608c = new b();
+        if (f10000c == null) {
+            f10000c = new b();
         }
-        return f23608c;
+        return f10000c;
     }
 
     private static void p() {
@@ -46,7 +46,7 @@ public final class b extends f {
 
     @Override // com.igexin.c.a.d.a.e
     public final int c() {
-        return f23607a;
+        return f9999a;
     }
 
     @Override // com.igexin.c.a.d.f, com.igexin.c.a.d.a.f

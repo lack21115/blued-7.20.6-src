@@ -13,11 +13,11 @@ import java.lang.reflect.Method;
 public class q {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f39448a;
+    private String f25757a;
     private a b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Looper f39449c;
+    private Looper f25758c;
     private m d = new m();
     private Object e;
     private Class<?> f;
@@ -40,7 +40,7 @@ public class q {
     public static class b {
 
         /* renamed from: a  reason: collision with root package name */
-        Object f39451a;
+        Object f25760a;
         e b;
 
         private b() {
@@ -48,16 +48,16 @@ public class q {
     }
 
     public q(String str, Looper looper, Object obj) {
-        this.f39448a = str;
-        this.f39449c = looper;
-        this.b = new a(this.f39449c);
+        this.f25757a = str;
+        this.f25758c = looper;
+        this.b = new a(this.f25758c);
         this.e = obj;
         Class<?> cls = obj.getClass();
         this.f = cls;
         if (n.a(cls, 0)) {
             return;
         }
-        String str2 = this.f39448a;
+        String str2 = this.f25757a;
         TPLogUtil.e(str2, "Register " + this.f.getName() + " @ThreadSwitch method failed, version: 2.31.0.127");
         throw new RuntimeException("register @ThreadSwitch method failed, player can not work");
     }
@@ -65,7 +65,7 @@ public class q {
     private Object a(int i, int i2, int i3, Object obj, boolean z, boolean z2, long j) {
         e eVar = new e();
         b bVar = new b();
-        bVar.f39451a = obj;
+        bVar.f25760a = obj;
         bVar.b = eVar;
         b(i, i2, i3, bVar, z, z2, j);
         return eVar.a(500L);
@@ -103,7 +103,7 @@ public class q {
         e eVar = obj instanceof b ? ((b) obj).b : null;
         Method f = n.f(this.f, i);
         if (f == null) {
-            TPLogUtil.e(this.f39448a, "invokeMethod, handle method name is empty, msg:".concat(String.valueOf(i)));
+            TPLogUtil.e(this.f25757a, "invokeMethod, handle method name is empty, msg:".concat(String.valueOf(i)));
             if (eVar != null) {
                 eVar.a((Throwable) new RuntimeException("invokeMethod, handle method name is empty"));
                 return;
@@ -116,7 +116,7 @@ public class q {
                 eVar.a(invoke);
             }
         } catch (InvocationTargetException e) {
-            String str = this.f39448a;
+            String str = this.f25757a;
             TPLogUtil.e(str, "invokeMethod " + f.getName() + " has excecption: " + e.getTargetException().toString());
             if (eVar == null) {
                 return;
@@ -129,7 +129,7 @@ public class q {
                 eVar.a((Throwable) new IllegalStateException("invokeMethod " + f.getName() + " failed, state invalid", e.getCause()));
             }
         } catch (Exception e2) {
-            String str2 = this.f39448a;
+            String str2 = this.f25757a;
             TPLogUtil.e(str2, "invokeMethod " + f.getName() + " has excecption: " + e2.toString());
             if (eVar != null) {
                 eVar.a((Throwable) e2);
@@ -140,14 +140,14 @@ public class q {
     /* JADX INFO: Access modifiers changed from: private */
     public void a(Message message) {
         if (this.e == null) {
-            TPLogUtil.e(this.f39448a, "handle listener is null, return");
+            TPLogUtil.e(this.f25757a, "handle listener is null, return");
         } else {
             a(message.what, message.obj);
         }
     }
 
     private boolean a() {
-        return Looper.myLooper() == this.f39449c;
+        return Looper.myLooper() == this.f25758c;
     }
 
     private Object[] a(Object obj) {
@@ -156,7 +156,7 @@ public class q {
         }
         Object obj2 = obj;
         if (obj instanceof b) {
-            Object obj3 = ((b) obj).f39451a;
+            Object obj3 = ((b) obj).f25760a;
             obj2 = obj3;
             if (obj3 == null) {
                 return null;
@@ -170,16 +170,16 @@ public class q {
         StringBuilder sb;
         String str2;
         if (this.b == null) {
-            str = this.f39448a;
+            str = this.f25757a;
             sb = new StringBuilder();
             sb.append(a(i));
             str2 = " , send failed , handler null";
         } else if (z && obj == null) {
-            str = this.f39448a;
+            str = this.f25757a;
             sb = new StringBuilder();
             sb.append(a(i));
             str2 = ", send failed , params null";
-        } else if (this.f39449c.getThread().isAlive()) {
+        } else if (this.f25758c.getThread().isAlive()) {
             if (!a()) {
                 this.d.readLock().lock();
             }
@@ -199,7 +199,7 @@ public class q {
             this.d.readLock().unlock();
             return true;
         } else {
-            str = this.f39448a;
+            str = this.f25757a;
             sb = new StringBuilder();
             sb.append(a(i));
             str2 = ", send failed , thread had dead";
@@ -215,12 +215,12 @@ public class q {
 
     public Object b(String str, Object obj) {
         if (TextUtils.isEmpty(str)) {
-            TPLogUtil.e(this.f39448a, "dealThreadSwitch failed , methodName is null");
+            TPLogUtil.e(this.f25757a, "dealThreadSwitch failed , methodName is null");
             throw new RuntimeException("dealThreadSwitch failed , methodName is null");
         }
         int b2 = n.b(this.f, str, a(obj));
         if (b2 < 0) {
-            TPLogUtil.e(this.f39448a, "dealThreadSwitch failed , not match method:".concat(String.valueOf(str)));
+            TPLogUtil.e(this.f25757a, "dealThreadSwitch failed , not match method:".concat(String.valueOf(str)));
             throw new RuntimeException("dealThreadSwitch failed , not match method:".concat(String.valueOf(str)));
         }
         boolean d = n.d(this.f, b2);

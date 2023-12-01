@@ -34,7 +34,7 @@ public final class c {
 
     public static String a(SceneImpl sceneImpl) {
         SceneImpl.covert(sceneImpl);
-        final com.kwad.components.core.n.kwai.a pj = new a.C0527a().e(new com.kwad.components.core.n.kwai.b(sceneImpl)).a(new com.kwad.components.core.n.c()).pj();
+        final com.kwad.components.core.n.kwai.a pj = new a.C0357a().e(new com.kwad.components.core.n.kwai.b(sceneImpl)).a(new com.kwad.components.core.n.c()).pj();
         b bVar = (b) a(new com.kwad.sdk.e.c<b>() { // from class: com.kwad.components.ad.adbit.c.1
             /* JADX INFO: Access modifiers changed from: private */
             @Override // com.kwad.sdk.e.c
@@ -163,7 +163,7 @@ public final class c {
             @Override // java.lang.Runnable
             public final void run() {
                 try {
-                    JSONObject jSONObject = new JSONObject(String.this);
+                    JSONObject jSONObject = new JSONObject(bidResponse);
                     AdBitResultData adBitResultData = new AdBitResultData(aVar.JW.Ow);
                     adBitResultData.parseJson(jSONObject);
                     adBitResultData.setAdTemplateList(c.b(adBitResultData));
@@ -188,7 +188,7 @@ public final class c {
     }
 
     public static String getBidRequestTokenV2(KsScene ksScene) {
-        final com.kwad.components.core.n.kwai.a pj = new a.C0527a().e(new com.kwad.components.core.n.kwai.b(SceneImpl.covert(ksScene))).a(new com.kwad.components.core.n.c()).pj();
+        final com.kwad.components.core.n.kwai.a pj = new a.C0357a().e(new com.kwad.components.core.n.kwai.b(SceneImpl.covert(ksScene))).a(new com.kwad.components.core.n.c()).pj();
         com.kwad.components.ad.kwai.a aVar = (com.kwad.components.ad.kwai.a) a(new com.kwad.sdk.e.c<com.kwad.components.ad.kwai.a>() { // from class: com.kwad.components.ad.adbit.c.2
             /* JADX INFO: Access modifiers changed from: private */
             @Override // com.kwad.sdk.e.c

@@ -1,5 +1,6 @@
 package com.blued.community.ui.topic.fragment;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
@@ -42,25 +43,19 @@ import java.util.regex.Pattern;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/community/ui/topic/fragment/CreateSuperTopicFragment.class */
 public class CreateSuperTopicFragment extends BaseFragment implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    InputFilter f20252a = new InputFilter() { // from class: com.blued.community.ui.topic.fragment.CreateSuperTopicFragment.2
-
-        /* renamed from: a  reason: collision with root package name */
-        Pattern f20255a = Pattern.compile("[^a-zA-Z0-9\\u4E00-\\u9FA5_]");
+    InputFilter a = new InputFilter() { // from class: com.blued.community.ui.topic.fragment.CreateSuperTopicFragment.2
+        Pattern a = Pattern.compile("[^a-zA-Z0-9\\u4E00-\\u9FA5_]");
 
         @Override // android.text.InputFilter
         public CharSequence filter(CharSequence charSequence, int i, int i2, Spanned spanned, int i3, int i4) {
-            if (this.f20255a.matcher(charSequence).find()) {
+            if (this.a.matcher(charSequence).find()) {
                 return "";
             }
             return null;
         }
     };
     private Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private View f20253c;
+    private View c;
     private CommonTopTitleNoTrans d;
     private RelativeLayout e;
     private ImageView f;
@@ -70,7 +65,7 @@ public class CreateSuperTopicFragment extends BaseFragment implements View.OnCli
     private String j;
 
     private void a() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.f20253c.findViewById(R.id.title);
+        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.c.findViewById(R.id.title);
         this.d = commonTopTitleNoTrans;
         commonTopTitleNoTrans.setCenterText(R.string.create_super_topic);
         this.d.setRightText(R.string.community_next_step);
@@ -107,15 +102,15 @@ public class CreateSuperTopicFragment extends BaseFragment implements View.OnCli
     }
 
     private void b() {
-        this.e = (RelativeLayout) this.f20253c.findViewById(R.id.layout_avatar_tip);
-        this.f = (ImageView) this.f20253c.findViewById(R.id.img_avatar);
-        this.g = (ImageView) this.f20253c.findViewById(R.id.iv_delete);
-        this.h = (EditText) this.f20253c.findViewById(R.id.edt_name);
-        ShapeHelper.b((ShapeFrameLayout) this.f20253c.findViewById(R.id.fl_add_name), R.color.syc_x);
-        this.f20253c.findViewById(R.id.cl_parent).setOnClickListener(new SingleClickProxy(this));
+        this.e = (RelativeLayout) this.c.findViewById(R.id.layout_avatar_tip);
+        this.f = (ImageView) this.c.findViewById(R.id.img_avatar);
+        this.g = (ImageView) this.c.findViewById(R.id.iv_delete);
+        this.h = (EditText) this.c.findViewById(R.id.edt_name);
+        ShapeHelper.b((ShapeFrameLayout) this.c.findViewById(R.id.fl_add_name), R.color.syc_x);
+        this.c.findViewById(R.id.cl_parent).setOnClickListener(new SingleClickProxy(this));
         this.f.setOnClickListener(new SingleClickProxy(this));
         this.g.setOnClickListener(new SingleClickProxy(this));
-        this.h.setFilters(new InputFilter[]{this.f20252a, new InputFilter.LengthFilter(15)});
+        this.h.setFilters(new InputFilter[]{this.a, new InputFilter.LengthFilter(15)});
         this.h.addTextChangedListener(new TextWatcher() { // from class: com.blued.community.ui.topic.fragment.CreateSuperTopicFragment.1
             @Override // android.text.TextWatcher
             public void afterTextChanged(Editable editable) {
@@ -206,7 +201,6 @@ public class CreateSuperTopicFragment extends BaseFragment implements View.OnCli
         });
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         if (i2 == -1) {
             if (i != 177) {
@@ -235,7 +229,7 @@ public class CreateSuperTopicFragment extends BaseFragment implements View.OnCli
             EventTrackFeed.a(FeedProtos.Event.SUPER_TOPIC_CREATE_RETURN_BTN_CLICK);
             e();
         } else if (id == R.id.cl_parent) {
-            KeyboardUtils.a(getActivity());
+            KeyboardUtils.a((Activity) getActivity());
         } else if (id == R.id.img_avatar) {
             CommunityServiceManager.b().a(this, 13, 177);
         } else if (id == R.id.iv_delete) {
@@ -247,18 +241,18 @@ public class CreateSuperTopicFragment extends BaseFragment implements View.OnCli
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.b = getActivity();
-        View view = this.f20253c;
+        View view = this.c;
         if (view == null) {
-            this.f20253c = layoutInflater.inflate(R.layout.fragment_create_super_topic, viewGroup, false);
+            this.c = layoutInflater.inflate(R.layout.fragment_create_super_topic, viewGroup, false);
             this.i = DialogUtils.a(this.b);
             a();
             b();
         } else if (view.getParent() != null) {
-            ((ViewGroup) this.f20253c.getParent()).removeView(this.f20253c);
+            ((ViewGroup) this.c.getParent()).removeView(this.c);
         }
-        return this.f20253c;
+        return this.c;
     }
 }

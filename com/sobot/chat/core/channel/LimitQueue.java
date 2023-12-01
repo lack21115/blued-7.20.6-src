@@ -14,27 +14,27 @@ public class LimitQueue<E> implements Queue<E> {
         this.limit = i;
     }
 
-    @Override // java.util.Queue, java.util.Collection, java.util.Set
+    @Override // java.util.Queue, java.util.Collection
     public boolean add(E e) {
         return this.queue.add(e);
     }
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     public boolean addAll(Collection<? extends E> collection) {
         return this.queue.addAll(collection);
     }
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     public void clear() {
         this.queue.clear();
     }
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     public boolean contains(Object obj) {
         return this.queue.contains(obj);
     }
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     public boolean containsAll(Collection<?> collection) {
         return this.queue.containsAll(collection);
     }
@@ -56,7 +56,7 @@ public class LimitQueue<E> implements Queue<E> {
         return this.queue.indexOf(e);
     }
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     public boolean isEmpty() {
         return this.queue.size() == 0;
     }
@@ -66,7 +66,7 @@ public class LimitQueue<E> implements Queue<E> {
         return this.queue.iterator();
     }
 
-    @Override // java.util.Queue, java.util.concurrent.BlockingQueue
+    @Override // java.util.Queue
     public boolean offer(E e) {
         if (this.queue.size() >= this.limit) {
             this.queue.poll();
@@ -89,32 +89,32 @@ public class LimitQueue<E> implements Queue<E> {
         return this.queue.remove();
     }
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     public boolean remove(Object obj) {
         return this.queue.remove(obj);
     }
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     public boolean removeAll(Collection<?> collection) {
         return this.queue.removeAll(collection);
     }
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     public boolean retainAll(Collection<?> collection) {
         return this.queue.retainAll(collection);
     }
 
-    @Override // java.util.Collection, java.util.List
+    @Override // java.util.Collection
     public int size() {
         return this.queue.size();
     }
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     public Object[] toArray() {
         return this.queue.toArray();
     }
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     public <T> T[] toArray(T[] tArr) {
         return (T[]) this.queue.toArray(tArr);
     }

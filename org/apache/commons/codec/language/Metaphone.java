@@ -1,6 +1,5 @@
 package org.apache.commons.codec.language;
 
-import com.opos.acs.st.STManager;
 import java.util.Locale;
 import org.apache.commons.codec.EncoderException;
 import org.apache.commons.codec.StringEncoder;
@@ -16,13 +15,13 @@ public class Metaphone implements StringEncoder {
         return i2 + 1 == i;
     }
 
-    private boolean isNextChar(StringBuffer stringBuffer, int i, char c2) {
+    private boolean isNextChar(StringBuffer stringBuffer, int i, char c) {
         boolean z = false;
         if (i >= 0) {
             z = false;
             if (i < stringBuffer.length() - 1) {
                 z = false;
-                if (stringBuffer.charAt(i + 1) == c2) {
+                if (stringBuffer.charAt(i + 1) == c) {
                     z = true;
                 }
             }
@@ -30,13 +29,13 @@ public class Metaphone implements StringEncoder {
         return z;
     }
 
-    private boolean isPreviousChar(StringBuffer stringBuffer, int i, char c2) {
+    private boolean isPreviousChar(StringBuffer stringBuffer, int i, char c) {
         boolean z = false;
         if (i > 0) {
             z = false;
             if (i < stringBuffer.length()) {
                 z = false;
-                if (stringBuffer.charAt(i - 1) == c2) {
+                if (stringBuffer.charAt(i - 1) == c) {
                     z = true;
                 }
             }
@@ -89,16 +88,16 @@ public class Metaphone implements StringEncoder {
         StringBuffer stringBuffer = new StringBuffer(40);
         StringBuffer stringBuffer2 = new StringBuffer(10);
         int i3 = 0;
-        char c2 = charArray[0];
-        if (c2 != 'A') {
-            if (c2 == 'G' || c2 == 'K' || c2 == 'P') {
+        char c = charArray[0];
+        if (c != 'A') {
+            if (c == 'G' || c == 'K' || c == 'P') {
                 if (charArray[1] == 'N') {
                     stringBuffer.append(charArray, 1, charArray.length - 1);
                 } else {
                     stringBuffer.append(charArray);
                 }
-            } else if (c2 != 'W') {
-                if (c2 != 'X') {
+            } else if (c != 'W') {
+                if (c != 'X') {
                     stringBuffer.append(charArray);
                 } else {
                     charArray[0] = 'S';
@@ -289,7 +288,7 @@ public class Metaphone implements StringEncoder {
                     case 'T':
                         if (!regionMatch(stringBuffer, i3, "TIA") && !regionMatch(stringBuffer, i3, "TIO")) {
                             if (!regionMatch(stringBuffer, i3, "TCH")) {
-                                if (!regionMatch(stringBuffer, i3, STManager.REGION_OF_TH)) {
+                                if (!regionMatch(stringBuffer, i3, "TH")) {
                                     stringBuffer2.append('T');
                                     i = i3;
                                     break;

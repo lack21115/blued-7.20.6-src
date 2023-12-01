@@ -13,10 +13,10 @@ public abstract class uc<T extends vc> {
     public ri b;
 
     /* renamed from: a  reason: collision with root package name */
-    private int f38044a = 0;
+    private int f24353a = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    public SparseArray<tc<T>> f38045c = new SparseArray<>();
+    public SparseArray<tc<T>> f24354c = new SparseArray<>();
     public SparseArray<tc<T>> d = new SparseArray<>();
     public SparseArray<tc<T>> e = new SparseArray<>();
     public SparseArray<tc<T>> f = new SparseArray<>();
@@ -28,16 +28,16 @@ public abstract class uc<T extends vc> {
     public static class a implements TencentMap.IClickedObject {
 
         /* renamed from: a  reason: collision with root package name */
-        public LatLng f38046a;
+        public LatLng f24355a;
         public String b;
 
         /* renamed from: c  reason: collision with root package name */
-        public String f38047c;
+        public String f24356c;
 
         public a(LatLng latLng, String str, String str2) {
-            this.f38046a = latLng;
+            this.f24355a = latLng;
             this.b = str;
-            this.f38047c = str2;
+            this.f24356c = str2;
         }
 
         @Override // com.tencent.tencentmap.mapsdk.maps.TencentMap.IClickedObject
@@ -47,12 +47,12 @@ public abstract class uc<T extends vc> {
 
         @Override // com.tencent.tencentmap.mapsdk.maps.TencentMap.IClickedObject
         public String getName() {
-            return this.f38047c;
+            return this.f24356c;
         }
 
         @Override // com.tencent.tencentmap.mapsdk.maps.TencentMap.IClickedObject
         public LatLng getPosition() {
-            return this.f38046a;
+            return this.f24355a;
         }
     }
 
@@ -67,7 +67,7 @@ public abstract class uc<T extends vc> {
     public tc<T> a(int i) {
         tc<T> tcVar;
         synchronized (this) {
-            tcVar = this.f38045c.get(i);
+            tcVar = this.f24354c.get(i);
         }
         return tcVar;
     }
@@ -77,13 +77,13 @@ public abstract class uc<T extends vc> {
         synchronized (this) {
             b = b((uc<T>) t);
             while (true) {
-                SparseArray<tc<T>> sparseArray = this.f38045c;
-                int i = this.f38044a + 1;
-                this.f38044a = i;
+                SparseArray<tc<T>> sparseArray = this.f24354c;
+                int i = this.f24353a + 1;
+                this.f24353a = i;
                 if (sparseArray.get(i) == null) {
-                    int i2 = this.f38044a;
+                    int i2 = this.f24353a;
                     b.g = i2;
-                    this.f38045c.append(i2, b);
+                    this.f24354c.append(i2, b);
                     this.e.append(b.g, b);
                     this.b.m(true);
                 }
@@ -97,7 +97,7 @@ public abstract class uc<T extends vc> {
             this.i.clear();
             this.e.clear();
             this.g.clear();
-            this.f38045c.clear();
+            this.f24354c.clear();
         }
     }
 
@@ -108,13 +108,13 @@ public abstract class uc<T extends vc> {
     public void b(tc<T> tcVar) {
         synchronized (this) {
             a(tcVar);
-            if (this.f38045c.get(tcVar.g) == null) {
+            if (this.f24354c.get(tcVar.g) == null) {
                 return;
             }
             if (this.e.get(tcVar.g) == null) {
                 this.i.append(tcVar.g, tcVar);
             }
-            this.f38045c.remove(tcVar.g);
+            this.f24354c.remove(tcVar.g);
             this.e.remove(tcVar.g);
             this.g.remove(tcVar.g);
             this.b.m(true);
@@ -152,7 +152,7 @@ public abstract class uc<T extends vc> {
 
     public void c(tc<T> tcVar) {
         synchronized (this) {
-            if (this.f38045c.get(tcVar.g) == null) {
+            if (this.f24354c.get(tcVar.g) == null) {
                 return;
             }
             this.g.append(tcVar.g, tcVar);

@@ -4,11 +4,11 @@ package androidx.constraintlayout.core.motion;
 public class CustomAttribute {
 
     /* renamed from: a  reason: collision with root package name */
-    String f2002a;
+    String f1954a;
     boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f2003c;
+    private boolean f1955c;
     private AttributeType d;
     private int e;
     private float f;
@@ -21,7 +21,7 @@ public class CustomAttribute {
     public static /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f2004a;
+        static final /* synthetic */ int[] f1956a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:19:0x0065 -> B:41:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:21:0x0069 -> B:37:0x001f). Please submit an issue!!! */
@@ -32,37 +32,37 @@ public class CustomAttribute {
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:31:0x007d -> B:47:0x0058). Please submit an issue!!! */
         static {
             int[] iArr = new int[AttributeType.values().length];
-            f2004a = iArr;
+            f1956a = iArr;
             try {
                 iArr[AttributeType.REFERENCE_TYPE.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f2004a[AttributeType.BOOLEAN_TYPE.ordinal()] = 2;
+                f1956a[AttributeType.BOOLEAN_TYPE.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f2004a[AttributeType.STRING_TYPE.ordinal()] = 3;
+                f1956a[AttributeType.STRING_TYPE.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f2004a[AttributeType.COLOR_TYPE.ordinal()] = 4;
+                f1956a[AttributeType.COLOR_TYPE.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f2004a[AttributeType.COLOR_DRAWABLE_TYPE.ordinal()] = 5;
+                f1956a[AttributeType.COLOR_DRAWABLE_TYPE.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
             try {
-                f2004a[AttributeType.INT_TYPE.ordinal()] = 6;
+                f1956a[AttributeType.INT_TYPE.ordinal()] = 6;
             } catch (NoSuchFieldError e6) {
             }
             try {
-                f2004a[AttributeType.FLOAT_TYPE.ordinal()] = 7;
+                f1956a[AttributeType.FLOAT_TYPE.ordinal()] = 7;
             } catch (NoSuchFieldError e7) {
             }
             try {
-                f2004a[AttributeType.DIMENSION_TYPE.ordinal()] = 8;
+                f1956a[AttributeType.DIMENSION_TYPE.ordinal()] = 8;
             } catch (NoSuchFieldError e8) {
             }
         }
@@ -81,23 +81,23 @@ public class CustomAttribute {
     }
 
     public CustomAttribute(CustomAttribute customAttribute, Object obj) {
-        this.f2003c = false;
-        this.f2002a = customAttribute.f2002a;
+        this.f1955c = false;
+        this.f1954a = customAttribute.f1954a;
         this.d = customAttribute.d;
         setValue(obj);
     }
 
     public CustomAttribute(String str, AttributeType attributeType) {
-        this.f2003c = false;
-        this.f2002a = str;
+        this.f1955c = false;
+        this.f1954a = str;
         this.d = attributeType;
     }
 
     public CustomAttribute(String str, AttributeType attributeType, Object obj, boolean z) {
-        this.f2003c = false;
-        this.f2002a = str;
+        this.f1955c = false;
+        this.f1954a = str;
         this.d = attributeType;
-        this.f2003c = z;
+        this.f1955c = z;
         setValue(obj);
     }
 
@@ -142,7 +142,7 @@ public class CustomAttribute {
             if (this.d != customAttribute.d) {
                 return false;
             }
-            switch (AnonymousClass1.f2004a[this.d.ordinal()]) {
+            switch (AnonymousClass1.f1956a[this.d.ordinal()]) {
                 case 1:
                 case 6:
                     z = false;
@@ -194,7 +194,7 @@ public class CustomAttribute {
     }
 
     public float getValueToInterpolate() {
-        switch (AnonymousClass1.f2004a[this.d.ordinal()]) {
+        switch (AnonymousClass1.f1956a[this.d.ordinal()]) {
             case 2:
                 return this.b ? 1.0f : 0.0f;
             case 3:
@@ -214,7 +214,7 @@ public class CustomAttribute {
     }
 
     public void getValuesToInterpolate(float[] fArr) {
-        switch (AnonymousClass1.f2004a[this.d.ordinal()]) {
+        switch (AnonymousClass1.f1956a[this.d.ordinal()]) {
             case 2:
                 fArr[0] = this.b ? 1.0f : 0.0f;
                 return;
@@ -245,12 +245,12 @@ public class CustomAttribute {
     }
 
     public boolean isContinuous() {
-        int i = AnonymousClass1.f2004a[this.d.ordinal()];
+        int i = AnonymousClass1.f1956a[this.d.ordinal()];
         return (i == 1 || i == 2 || i == 3) ? false : true;
     }
 
     public int numberOfInterpolatedValues() {
-        int i = AnonymousClass1.f2004a[this.d.ordinal()];
+        int i = AnonymousClass1.f1956a[this.d.ordinal()];
         return (i == 4 || i == 5) ? 4 : 1;
     }
 
@@ -271,7 +271,7 @@ public class CustomAttribute {
     }
 
     public void setValue(Object obj) {
-        switch (AnonymousClass1.f2004a[this.d.ordinal()]) {
+        switch (AnonymousClass1.f1956a[this.d.ordinal()]) {
             case 1:
             case 6:
                 this.e = ((Integer) obj).intValue();
@@ -299,7 +299,7 @@ public class CustomAttribute {
 
     public void setValue(float[] fArr) {
         boolean z = true;
-        switch (AnonymousClass1.f2004a[this.d.ordinal()]) {
+        switch (AnonymousClass1.f1956a[this.d.ordinal()]) {
             case 1:
             case 6:
                 this.e = (int) fArr[0];

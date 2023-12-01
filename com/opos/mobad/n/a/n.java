@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.view.animation.Interpolator;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import androidx.constraintlayout.motion.widget.Key;
 import androidx.core.view.animation.PathInterpolatorCompat;
 import com.heytap.msp.mobad.api.R;
 
@@ -162,7 +163,7 @@ public class n {
         view.setPivotX(com.opos.cmn.an.h.f.a.a(context, 60.0f));
         view.setPivotY(com.opos.cmn.an.h.f.a.a(context, 60.0f));
         Interpolator create = PathInterpolatorCompat.create(0.33f, 0.0f, 0.67f, 1.0f);
-        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(view, "rotation", 0.0f, 0.0f);
+        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(view, Key.ROTATION, 0.0f, 0.0f);
         c cVar = new c();
         cVar.a(new j(create, 0.0f, 30.0f), 250L);
         cVar.a(new j(create, 30.0f, -25.0f), 217L);

@@ -9,10 +9,10 @@ import com.opos.mobad.d.a.d;
 public class h implements Runnable {
 
     /* renamed from: c  reason: collision with root package name */
-    private static Handler f25966c = new Handler(Looper.getMainLooper());
+    private static Handler f12278c = new Handler(Looper.getMainLooper());
 
     /* renamed from: a  reason: collision with root package name */
-    private Runnable f25967a;
+    private Runnable f12279a;
     private volatile long b = Long.MAX_VALUE;
     private int d;
 
@@ -25,18 +25,18 @@ public class h implements Runnable {
     }
 
     public void a(Runnable runnable, long j) {
-        if (this.f25967a != null) {
+        if (this.f12279a != null) {
             com.opos.cmn.an.f.a.b("TimeoutController", "start but is running");
             return;
         }
-        this.f25967a = runnable;
+        this.f12279a = runnable;
         long max = Math.max(0L, j);
         this.b = SystemClock.elapsedRealtime() + max;
-        f25966c.postDelayed(this, max);
+        f12278c.postDelayed(this, max);
     }
 
     public boolean a() {
-        return this.f25967a != null;
+        return this.f12279a != null;
     }
 
     public int b() {
@@ -48,15 +48,15 @@ public class h implements Runnable {
     }
 
     public void d() {
-        f25966c.removeCallbacks(this);
+        f12278c.removeCallbacks(this);
     }
 
     @Override // java.lang.Runnable
     public void run() {
         Runnable runnable;
-        if (SystemClock.elapsedRealtime() >= this.b && (runnable = this.f25967a) != null) {
+        if (SystemClock.elapsedRealtime() >= this.b && (runnable = this.f12279a) != null) {
             runnable.run();
-            this.f25967a = null;
+            this.f12279a = null;
         }
     }
 }

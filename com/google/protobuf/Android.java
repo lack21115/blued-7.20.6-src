@@ -1,8 +1,7 @@
 package com.google.protobuf;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8110460-dex2jar.jar:com/google/protobuf/Android.class */
-public final class Android {
+final class Android {
     private static final boolean IS_ROBOLECTRIC;
     private static final Class<?> MEMORY_CLASS = getClassForName("libcore.io.Memory");
 

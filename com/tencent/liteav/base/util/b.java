@@ -12,10 +12,10 @@ public final class b extends Handler {
     private static final long b = TimeUnit.SECONDS.toMillis(30);
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f36324a;
+    private final String f22633a;
 
     /* renamed from: c  reason: collision with root package name */
-    private final Handler f36325c;
+    private final Handler f22634c;
     private Runnable d;
 
     public b(Looper looper) {
@@ -24,25 +24,25 @@ public final class b extends Handler {
 
     public b(Looper looper, Handler.Callback callback) {
         super(looper, callback);
-        this.f36325c = new Handler(Looper.getMainLooper());
+        this.f22634c = new Handler(Looper.getMainLooper());
         this.d = new Runnable() { // from class: com.tencent.liteav.base.util.b.1
             @Override // java.lang.Runnable
             public final void run() {
-                LiteavLog.e(b.this.f36324a, "quit looper failed.");
+                LiteavLog.e(b.this.f22633a, "quit looper failed.");
             }
         };
         String str = "TXCHandler_" + hashCode();
-        this.f36324a = str;
+        this.f22633a = str;
         LiteavLog.i(str, "[" + Thread.currentThread().getName() + "]");
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ void a(b bVar, MessageQueue.IdleHandler idleHandler) {
         if (bVar.getLooper() == Looper.getMainLooper()) {
-            LiteavLog.e(bVar.f36324a, "try to quitLooper main looper!");
+            LiteavLog.e(bVar.f22633a, "try to quitLooper main looper!");
             return;
         }
-        LiteavLog.i(bVar.f36324a, "add idle handle.");
+        LiteavLog.i(bVar.f22633a, "add idle handle.");
         Looper.myQueue().addIdleHandler(idleHandler);
     }
 
@@ -54,13 +54,13 @@ public final class b extends Handler {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ boolean a(b bVar) {
-        LiteavLog.i(bVar.f36324a, "queue idle handle.");
+        LiteavLog.i(bVar.f22633a, "queue idle handle.");
         if (LiteavSystemInfo.getSystemOSVersionInt() >= 18) {
             bVar.getLooper().quitSafely();
         } else {
             bVar.getLooper().quit();
         }
-        bVar.f36325c.removeCallbacks(bVar.d);
+        bVar.f22634c.removeCallbacks(bVar.d);
         return false;
     }
 
@@ -72,7 +72,7 @@ public final class b extends Handler {
 
     public final void a() {
         post(f.a(this, e.a(this)));
-        this.f36325c.postDelayed(this.d, b);
+        this.f22634c.postDelayed(this.d, b);
     }
 
     public final boolean a(Runnable runnable) {

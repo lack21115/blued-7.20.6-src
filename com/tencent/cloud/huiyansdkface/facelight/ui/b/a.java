@@ -27,6 +27,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import com.anythink.expressad.video.module.a.a.m;
 import com.baidu.mobads.sdk.internal.bw;
+import com.huawei.openalliance.ad.constant.t;
 import com.sobot.chat.core.channel.Const;
 import com.tencent.cloud.huiyansdkface.R;
 import com.tencent.cloud.huiyansdkface.a.c.a.i;
@@ -91,7 +92,7 @@ import java.util.concurrent.Executors;
 public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.process.b.a, com.tencent.cloud.huiyansdkface.facelight.process.b.b, c, com.tencent.cloud.huiyansdkface.facelight.ui.a.c, com.tencent.cloud.huiyansdkface.facelight.ui.widget.a.b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f35687a = a.class.getSimpleName();
+    private static final String f21996a = a.class.getSimpleName();
     private RelativeLayout A;
     private TextView B;
     private PreviewFrameLayout C;
@@ -144,7 +145,7 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
     private com.tencent.cloud.huiyansdkface.facelight.ui.widget.a aq;
 
     /* renamed from: ar  reason: collision with root package name */
-    private com.tencent.cloud.huiyansdkface.facelight.ui.widget.a f35688ar;
+    private com.tencent.cloud.huiyansdkface.facelight.ui.widget.a f21997ar;
     private CloudFaceCountDownTimer as;
     private CloudFaceCountDownTimer at;
     private CloudFaceCountDownTimer au;
@@ -155,7 +156,7 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
     private CloudFaceCountDownTimer az;
 
     /* renamed from: c  reason: collision with root package name */
-    private com.tencent.cloud.huiyansdkface.facelight.ui.widget.c f35689c;
+    private com.tencent.cloud.huiyansdkface.facelight.ui.widget.c f21998c;
     private d d;
     private com.tencent.cloud.huiyansdkface.facelight.a.b.a e;
     private FaceVerifyStatus g;
@@ -209,7 +210,7 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
             String str;
             String str2;
             if (sensorEvent == null) {
-                str = a.f35687a;
+                str = a.f21996a;
                 str2 = "light event is null";
             } else if (sensorEvent.sensor != null) {
                 if (sensorEvent.sensor.getType() != 5) {
@@ -223,7 +224,7 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
                 a.this.aD = String.valueOf((int) f2);
                 return;
             } else {
-                str = a.f35687a;
+                str = a.f21996a;
                 str2 = "light event.sensor is null";
             }
             WLogger.e(str, str2);
@@ -239,7 +240,7 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
 
         @Override // com.tencent.cloud.huiyansdkface.facelight.common.CloudFaceCountDownTimer
         public void onFinish() {
-            WLogger.d(a.f35687a, "findface timeoutCdt end!");
+            WLogger.d(a.f21996a, "findface timeoutCdt end!");
             a.this.g.b(7);
         }
 
@@ -251,27 +252,27 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.tencent.cloud.huiyansdkface.facelight.ui.b.a$a  reason: collision with other inner class name */
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/cloud/huiyansdkface/facelight/ui/b/a$a.class */
-    public static final class C0915a implements SoundPool.OnLoadCompleteListener {
+    public static final class C0745a implements SoundPool.OnLoadCompleteListener {
 
         /* renamed from: a  reason: collision with root package name */
-        private int f35769a;
+        private int f22078a;
 
-        public C0915a(int i) {
-            this.f35769a = i;
+        public C0745a(int i) {
+            this.f22078a = i;
         }
 
         @Override // android.media.SoundPool.OnLoadCompleteListener
         public void onLoadComplete(SoundPool soundPool, int i, int i2) {
-            WLogger.d(a.f35687a, "PlayVoice BEGIN");
-            soundPool.play(this.f35769a, 1.0f, 1.0f, 1, 0, 1.0f);
+            WLogger.d(a.f21996a, "PlayVoice BEGIN");
+            soundPool.play(this.f22078a, 1.0f, 1.0f, 1, 0, 1.0f);
         }
     }
 
     private boolean A() {
-        WLogger.d(f35687a, "initYoutuTracker");
-        String str = f35687a;
+        WLogger.d(f21996a, "initYoutuTracker");
+        String str = f21996a;
         WLogger.i(str, "YT Detect version:" + YTFaceTracker.getVersion());
-        String str2 = f35687a;
+        String str2 = f21996a;
         a(str2, "YT Detect version:" + YTFaceTracker.getVersion());
         YTFaceTracker.setLoggerLevel(2);
         YTFaceTracker.setLoggerListener(new YTFaceTracker.IYtLoggerListener() { // from class: com.tencent.cloud.huiyansdkface.facelight.ui.b.a.12
@@ -285,20 +286,20 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
         String t = this.e.t();
         try {
             if (TextUtils.isEmpty(t)) {
-                WLogger.d(f35687a, "init from asset");
-                a(f35687a, "init tracker from asset");
+                WLogger.d(f21996a, "init from asset");
+                a(f21996a, "init tracker from asset");
                 this.l = new YTFaceTracker(this.aV.getAssets(), "models/face-tracker-v001", "yt_model_config.ini");
                 return true;
             }
-            String str3 = f35687a;
+            String str3 = f21996a;
             WLogger.d(str3, "init from filesystem,YTModelLoc=" + t);
-            String str4 = f35687a;
+            String str4 = f21996a;
             a(str4, "init tracker from filesystem,YTModelLoc=" + t);
             this.l = new YTFaceTracker(t, "yt_model_config.ini");
             return true;
         } catch (Exception e) {
             e.printStackTrace();
-            String str5 = f35687a;
+            String str5 = f21996a;
             WLogger.e(str5, "initYoutu exception:" + e.toString());
             KycWaSDK kycWaSDK = KycWaSDK.getInstance();
             Activity activity = getActivity();
@@ -308,10 +309,10 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
     }
 
     private boolean B() {
-        WLogger.d(f35687a, "initYoutuActionLiveness");
+        WLogger.d(f21996a, "initYoutuActionLiveness");
         int a2 = com.tencent.cloud.huiyansdkface.facelight.process.b.a();
         if (a2 != 0) {
-            String str = f35687a;
+            String str = f21996a;
             WLogger.e(str, "initYoutu ACTION exception:" + a2);
             return false;
         }
@@ -325,16 +326,16 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
             }
         });
         String version = YTPoseDetectJNIInterface.getVersion();
-        String str2 = f35687a;
+        String str2 = f21996a;
         WLogger.i(str2, "YTPose Version: " + version);
-        String str3 = f35687a;
+        String str3 = f21996a;
         a(str3, "YTPose Version: " + version);
         return true;
     }
 
     private void C() {
         if (this.f.contains("3")) {
-            WLogger.d(f35687a, "light live init");
+            WLogger.d(f21996a, "light live init");
             I();
             H();
         }
@@ -367,20 +368,20 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
     }
 
     private void F() {
-        WLogger.d(f35687a, "init FaceDetect!");
+        WLogger.d(f21996a, "init FaceDetect!");
         com.tencent.cloud.huiyansdkface.facelight.process.a aVar = new com.tencent.cloud.huiyansdkface.facelight.process.a(this.aV, this.l, new com.tencent.cloud.huiyansdkface.facelight.process.c.b() { // from class: com.tencent.cloud.huiyansdkface.facelight.ui.b.a.3
             @Override // com.tencent.cloud.huiyansdkface.facelight.process.c.b
             public void a() {
                 String str;
                 String str2;
                 if (a.this.g == null) {
-                    str = a.f35687a;
+                    str = a.f21996a;
                     str2 = "mFaceVerifyStatus is null,return";
                 } else if (a.this.g.b() >= 6) {
-                    str = a.f35687a;
+                    str = a.f21996a;
                     str2 = "already in upload,no need reset";
                 } else if (a.this.g.b() != 4 || a.this.g.d() != 3 || a.this.aE <= 1) {
-                    WLogger.d(a.f35687a, "onDetectNoFace");
+                    WLogger.d(a.f21996a, "onDetectNoFace");
                     if (a.this.g.b() == 5) {
                         KycWaSDK.getInstance().trackCustomKVEvent(a.this.getActivity(), "willpage_detect_intermediate", null, null);
                         a.this.u.setVisibility(8);
@@ -413,7 +414,7 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
                     }
                     return;
                 } else {
-                    str = a.f35687a;
+                    str = a.f21996a;
                     str2 = "mState=" + a.this.aE + ",no need reset";
                 }
                 WLogger.d(str, str2);
@@ -428,9 +429,9 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
         KycWaSDK kycWaSDK;
         Activity activity;
         String str;
-        WLogger.d(f35687a, "初始化相机配置");
+        WLogger.d(f21996a, "初始化相机配置");
         if (this.d.e().B()) {
-            WLogger.i(f35687a, "init turing preview");
+            WLogger.i(f21996a, "init turing preview");
             com.tencent.cloud.huiyansdkface.facelight.c.d.c a2 = com.tencent.cloud.huiyansdkface.facelight.c.d.d.a();
             this.ad = a2;
             e a3 = a2.a();
@@ -443,7 +444,7 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
             activity = getActivity();
             str = "facepage_turing_preview";
         } else {
-            WLogger.i(f35687a, "init system preview");
+            WLogger.i(f21996a, "init system preview");
             this.U.a((com.tencent.cloud.huiyansdkface.a.g.a) null);
             kycWaSDK = KycWaSDK.getInstance();
             activity = getActivity();
@@ -459,31 +460,31 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
         Sensor defaultSensor = sensorManager.getDefaultSensor(5);
         this.aC = defaultSensor;
         if (defaultSensor == null) {
-            WLogger.e(f35687a, "this phone does not have light sensor!");
+            WLogger.e(f21996a, "this phone does not have light sensor!");
             z = false;
         } else {
-            WLogger.d(f35687a, "this phone has light sensor!");
+            WLogger.d(f21996a, "this phone has light sensor!");
             z = true;
         }
         this.aA = z;
     }
 
     private void I() {
-        WLogger.d(f35687a, "initFaceLive");
+        WLogger.d(f21996a, "initFaceLive");
         YTAGReflectLiveCheckInterface.setReflectNotice(new com.tencent.cloud.huiyansdkface.facelight.process.c.a() { // from class: com.tencent.cloud.huiyansdkface.facelight.ui.b.a.11
             @Override // com.tencent.cloud.huiyansdkface.facelight.process.c.a
             public void a() {
                 ThreadOperate.runOnUiThread(new Runnable() { // from class: com.tencent.cloud.huiyansdkface.facelight.ui.b.a.11.1
                     @Override // java.lang.Runnable
                     public void run() {
-                        WLogger.d(a.f35687a, "onDelayCalc");
+                        WLogger.d(a.f21996a, "onDelayCalc");
                         if (a.this.aE == 1) {
                             a.this.h(2);
                             a.this.ab();
                             KycWaSDK.getInstance().trackCustomKVEvent(a.this.getActivity(), "facepage_reflect_delaycal", null, null);
                             return;
                         }
-                        String str = a.f35687a;
+                        String str = a.f21996a;
                         WLogger.w(str, "curLightState：" + a.this.aE + ",cant switch to STATE_DETECT_DELAY");
                     }
                 });
@@ -507,7 +508,7 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
 
             @Override // com.tencent.youtu.ytagreflectlivecheck.YTAGReflectLiveCheckInterface.b
             public void a(long j) {
-                String str = a.f35687a;
+                String str = a.f21996a;
                 WLogger.d(str, "on reflection start " + j);
                 KycWaSDK.getInstance().trackCustomKVEvent(a.this.getActivity(), "facepage_reflect_start", null, null);
             }
@@ -536,18 +537,18 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
 
     /* JADX INFO: Access modifiers changed from: private */
     public void K() {
-        String str = f35687a;
+        String str = f21996a;
         WLogger.d(str, "startReflect：" + Thread.currentThread().getName());
         YTAGReflectLiveCheckInterface.cancel();
         j(-1);
         String M = this.e.M();
-        String str2 = f35687a;
+        String str2 = f21996a;
         WLogger.d(str2, "colorData=" + M);
         int i = this.d.i();
-        String str3 = f35687a;
+        String str3 = f21996a;
         WLogger.w(str3, "start count=" + i);
         if (i > 0) {
-            String str4 = f35687a;
+            String str4 = f21996a;
             WLogger.w(str4, "多次start:" + i);
             KycWaSDK kycWaSDK = KycWaSDK.getInstance();
             Activity activity = getActivity();
@@ -561,18 +562,18 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
         YTAGReflectLiveCheckInterface.start(getActivity(), this.aI, RotateSetting.getRotate(), M, new YTAGReflectLiveCheckInterface.c() { // from class: com.tencent.cloud.huiyansdkface.facelight.ui.b.a.16
             @Override // com.tencent.youtu.ytagreflectlivecheck.YTAGReflectLiveCheckInterface.c
             public void a(int i2, String str5, String str6) {
-                String str7 = a.f35687a;
+                String str7 = a.f21996a;
                 WLogger.w(str7, "YTAGReflectLiveCheckInterface onFailed!result=" + i2 + ",message=" + str5 + ",tips=" + str6);
                 a.this.aH = null;
                 KycWaSDK kycWaSDK2 = KycWaSDK.getInstance();
                 Activity activity2 = a.this.getActivity();
-                kycWaSDK2.trackCustomKVEvent(activity2, "facepage_light_error", i2 + ";" + str5, null);
+                kycWaSDK2.trackCustomKVEvent(activity2, "facepage_light_error", i2 + t.aE + str5, null);
                 a.this.a(false, i2);
             }
 
             @Override // com.tencent.youtu.ytagreflectlivecheck.YTAGReflectLiveCheckInterface.c
             public void a(FullPack fullPack) {
-                WLogger.i(a.f35687a, "YTAGReflectLiveCheckInterface onSuccess!");
+                WLogger.i(a.f21996a, "YTAGReflectLiveCheckInterface onSuccess!");
                 a.this.aH = com.tencent.cloud.huiyansdkface.facelight.c.b.a(fullPack.AGin);
                 a.this.a(true, 0);
             }
@@ -581,21 +582,21 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
 
     /* JADX INFO: Access modifiers changed from: private */
     public void L() {
-        WLogger.d(f35687a, "checkRecordFile");
+        WLogger.d(f21996a, "checkRecordFile");
         YTImageInfo yTImageInfo = this.am;
         if (yTImageInfo == null || TextUtils.isEmpty(yTImageInfo.image)) {
-            WLogger.e(f35687a, "best image is null!");
+            WLogger.e(f21996a, "best image is null!");
             b(WbFaceInnerError.create(WbFaceError.WBFaceErrorDomainNativeProcess, WbFaceError.WBFaceErrorCodeNoBestPic, d(R.string.wbcf_light_get_pic_failed), "PIC_FILE_IO_FAILED,best image is null!"));
             return;
         }
-        WLogger.d(f35687a, "has liveImage");
+        WLogger.d(f21996a, "has liveImage");
         if (this.aL && this.aM) {
             byte[] videoByte = WeMediaManager.getInstance().getVideoByte();
             if (videoByte != null && videoByte.length != 0) {
-                String str = f35687a;
+                String str = f21996a;
                 WLogger.d(str, "checkRecordFile wbVideoSize=" + (videoByte.length / 1024));
                 if (videoByte.length < 50000) {
-                    WLogger.e(f35687a, "wbVideo is too small! ");
+                    WLogger.e(f21996a, "wbVideo is too small! ");
                     if (!this.e.s()) {
                         d(true);
                         return;
@@ -606,7 +607,7 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
                     d(false);
                     return;
                 } else {
-                    WLogger.e(f35687a, "REFLECTION MODE:The Record File Size is too big! ");
+                    WLogger.e(f21996a, "REFLECTION MODE:The Record File Size is too big! ");
                     if (!this.e.s()) {
                         d(true);
                         return;
@@ -615,14 +616,14 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
                     return;
                 }
             }
-            WLogger.e(f35687a, "mCamera.getMediaFile is null!");
+            WLogger.e(f21996a, "mCamera.getMediaFile is null!");
             if (this.e.s()) {
                 b(-10, "wbVideo Path is null!");
                 return;
             }
-            WLogger.e(f35687a, "wbVideo is null, upload a null file");
+            WLogger.e(f21996a, "wbVideo is null, upload a null file");
         } else {
-            WLogger.d(f35687a, "no need to upload wbVideo");
+            WLogger.d(f21996a, "no need to upload wbVideo");
             if (this.aL) {
                 WeMediaManager.getInstance().resetVideoByte();
             }
@@ -643,7 +644,7 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
 
     /* JADX INFO: Access modifiers changed from: private */
     public void N() {
-        WLogger.d(f35687a, "showWillRetryTip");
+        WLogger.d(f21996a, "showWillRetryTip");
         long as = this.d.e().as();
         if (this.az == null) {
             this.az = new CloudFaceCountDownTimer(as, as / 2) { // from class: com.tencent.cloud.huiyansdkface.facelight.ui.b.a.26
@@ -660,7 +661,7 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
                 }
             };
             if (this.B.getVisibility() != 0) {
-                WLogger.d(f35687a, "show willAnswerRetryTip.");
+                WLogger.d(f21996a, "show willAnswerRetryTip.");
                 this.A.setVisibility(0);
                 this.B.setVisibility(0);
                 this.az.start();
@@ -670,7 +671,7 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
 
     private void O() {
         if (this.aL) {
-            String str = f35687a;
+            String str = f21996a;
             WLogger.d(str, "start wbRecord:" + Thread.currentThread().getName());
             if (getActivity() != null) {
                 if (WeMediaManager.getInstance().createMediaCodec(this.aV, this.X, u(), v())) {
@@ -679,21 +680,21 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
                         public void onRecordFinish() {
                             String str2;
                             String str3;
-                            WLogger.d(a.f35687a, "onWbRecordFinish");
+                            WLogger.d(a.f21996a, "onWbRecordFinish");
                             a.this.g.c(true);
                             int d = a.this.g.d();
-                            String str4 = a.f35687a;
+                            String str4 = a.f21996a;
                             WLogger.d(str4, "curLiveCheck=" + d);
                             if (a.this.f.equals("1") && d == 1) {
                                 str3 = "=================end silentCheck======================";
                                 if (a.this.d.e().x() && !YTPoseDetectJNIInterface.isRecordingDone()) {
                                     return;
                                 }
-                                str2 = a.f35687a;
+                                str2 = a.f21996a;
                             } else if (!a.this.f.equals("2") || d != 2 || !a.this.g.i()) {
                                 return;
                             } else {
-                                str2 = a.f35687a;
+                                str2 = a.f21996a;
                                 str3 = "=================end actCheck======================";
                             }
                             WLogger.i(str2, str3);
@@ -701,7 +702,7 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
                         }
                     });
                 } else {
-                    WLogger.e(f35687a, "createMediaCodec failed, not record");
+                    WLogger.e(f21996a, "createMediaCodec failed, not record");
                 }
             }
         }
@@ -736,13 +737,13 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
 
     /* JADX INFO: Access modifiers changed from: private */
     public void Q() {
-        WLogger.d(f35687a, "finishActivity");
+        WLogger.d(f21996a, "finishActivity");
         if (getActivity() == null || getActivity().isFinishing()) {
-            String str = f35687a;
+            String str = f21996a;
             WLogger.d(str, "finishActivity:" + getActivity());
             return;
         }
-        String str2 = f35687a;
+        String str2 = f21996a;
         WLogger.d(str2, "finish activity StackTrace");
         getActivity().finish();
     }
@@ -757,7 +758,7 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
 
     /* JADX INFO: Access modifiers changed from: private */
     public void S() {
-        WLogger.d(f35687a, "clearState");
+        WLogger.d(f21996a, "clearState");
         T();
         if (this.z.getVisibility() != 8) {
             this.z.setVisibility(8);
@@ -780,7 +781,7 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
         }
         M();
         if (this.aL) {
-            WLogger.i(f35687a, "=================no face end record======================");
+            WLogger.i(f21996a, "=================no face end record======================");
             WeMediaManager.getInstance().stop(false);
             WeMediaManager.getInstance().resetVideoByte();
         }
@@ -812,7 +813,7 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
 
     private void U() {
         if (this.aA) {
-            WLogger.d(f35687a, "unregister light listener");
+            WLogger.d(f21996a, "unregister light listener");
             try {
                 this.aB.unregisterListener(this.ba);
             } catch (Exception e) {
@@ -838,14 +839,14 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
 
     /* JADX INFO: Access modifiers changed from: private */
     public void W() {
-        WLogger.i(f35687a, "getBestPicAndVideo");
+        WLogger.i(f21996a, "getBestPicAndVideo");
         com.tencent.cloud.huiyansdkface.facelight.process.b.a(new com.tencent.cloud.huiyansdkface.facelight.process.c.e() { // from class: com.tencent.cloud.huiyansdkface.facelight.ui.b.a.43
             @Override // com.tencent.cloud.huiyansdkface.facelight.process.c.e
             public void a(byte[][] bArr) {
-                WLogger.d(a.f35687a, "onReceiveVideoDatas");
+                WLogger.d(a.f21996a, "onReceiveVideoDatas");
                 a.this.aT = bArr;
                 if (a.this.aT == null || a.this.aT.length == 0) {
-                    WLogger.e(a.f35687a, "videoDatas is null!need Push backup data!");
+                    WLogger.e(a.f21996a, "videoDatas is null!need Push backup data!");
                     a.this.j.a(new com.tencent.cloud.huiyansdkface.facelight.process.c.d() { // from class: com.tencent.cloud.huiyansdkface.facelight.ui.b.a.43.1
                         @Override // com.tencent.cloud.huiyansdkface.facelight.process.c.d
                         public void a(YTActRefData yTActRefData) {
@@ -855,7 +856,7 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
                     });
                     return;
                 }
-                String str = a.f35687a;
+                String str = a.f21996a;
                 WLogger.d(str, "list num: " + a.this.aT.length);
                 Param.appendBestImgInfo("0");
                 a.this.X();
@@ -865,11 +866,11 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
 
     /* JADX INFO: Access modifiers changed from: private */
     public void X() {
-        WLogger.i(f35687a, "getActReflectData");
+        WLogger.i(f21996a, "getActReflectData");
         com.tencent.cloud.huiyansdkface.facelight.process.b.a(new com.tencent.cloud.huiyansdkface.facelight.process.c.d() { // from class: com.tencent.cloud.huiyansdkface.facelight.ui.b.a.44
             @Override // com.tencent.cloud.huiyansdkface.facelight.process.c.d
             public void a(YTActRefData yTActRefData) {
-                WLogger.d(a.f35687a, "onReceiveBestImg");
+                WLogger.d(a.f21996a, "onReceiveBestImg");
                 a.this.a(yTActRefData);
             }
         });
@@ -878,39 +879,39 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
     private void Y() {
         String str;
         String str2;
-        WLogger.i(f35687a, "checkPicsAndVideos");
+        WLogger.i(f21996a, "checkPicsAndVideos");
         if (!this.d.u()) {
-            WLogger.d(f35687a, "not record ytVideo,upload wbVideo");
+            WLogger.d(f21996a, "not record ytVideo,upload wbVideo");
             this.aM = true;
             L();
             return;
         }
         byte[][] bArr = this.aT;
         if (bArr == null) {
-            str = f35687a;
+            str = f21996a;
             str2 = "ytVideo is null,upload wbVideo";
         } else if (bArr == null || i(bArr.length)) {
             this.aX.submit(new Runnable() { // from class: com.tencent.cloud.huiyansdkface.facelight.ui.b.a.46
                 @Override // java.lang.Runnable
                 public void run() {
-                    WLogger.d(a.f35687a, "start encode");
+                    WLogger.d(a.f21996a, "start encode");
                     a.this.a(new com.tencent.cloud.huiyansdkface.facelight.process.c.c() { // from class: com.tencent.cloud.huiyansdkface.facelight.ui.b.a.46.1
                         @Override // com.tencent.cloud.huiyansdkface.facelight.process.c.c
                         public void a() {
-                            WLogger.d(a.f35687a, "onEncodeFinish");
+                            WLogger.d(a.f21996a, "onEncodeFinish");
                             a.this.b(false);
                         }
                     });
                 }
             });
-            WLogger.d(f35687a, "start encode ctd");
+            WLogger.d(f21996a, "start encode ctd");
             long Z = d.z().e().Z();
-            String str3 = f35687a;
+            String str3 = f21996a;
             WLogger.d(str3, "encodeTime=" + Z);
             this.ax = new CloudFaceCountDownTimer(Z, Z / 2) { // from class: com.tencent.cloud.huiyansdkface.facelight.ui.b.a.47
                 @Override // com.tencent.cloud.huiyansdkface.facelight.common.CloudFaceCountDownTimer
                 public void onFinish() {
-                    WLogger.d(a.f35687a, "upload cdt onFinish!");
+                    WLogger.d(a.f21996a, "upload cdt onFinish!");
                     a.this.b(true);
                 }
 
@@ -920,7 +921,7 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
             }.start();
             return;
         } else {
-            str = f35687a;
+            str = f21996a;
             str2 = "ytVideo not satisfied,upload wbVideo";
         }
         WLogger.d(str, str2);
@@ -936,7 +937,7 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
                 a.this.W.a(a.this.V, new f.a() { // from class: com.tencent.cloud.huiyansdkface.facelight.ui.b.a.50.1
                     @Override // com.tencent.cloud.huiyansdkface.a.f.a
                     public void a() {
-                        WLogger.i(a.f35687a, "switchCamera onFinish");
+                        WLogger.i(a.f21996a, "switchCamera onFinish");
                         KycWaSDK.getInstance().trackCustomKVEvent(a.this.getActivity(), "camera_switch_finished", null, null);
                     }
                 });
@@ -946,33 +947,33 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
 
     /* JADX INFO: Access modifiers changed from: private */
     public void a(int i, String str) {
-        String str2 = f35687a;
+        String str2 = f21996a;
         WLogger.i(str2, "checkIsNeedRetryCam：" + i + "," + str);
         if (this.d.e().E()) {
-            WLogger.i(f35687a, "Need Retry Cam");
+            WLogger.i(f21996a, "Need Retry Cam");
             if (!this.aJ) {
-                WLogger.i(f35687a, "first Retry Cam");
+                WLogger.i(f21996a, "first Retry Cam");
                 this.aJ = true;
                 KycWaSDK.getInstance().trackCustomKVEvent(getActivity(), "camera_has_retry", null, null);
                 Z();
                 return;
             }
-            WLogger.i(f35687a, "Already Retried!");
+            WLogger.i(f21996a, "Already Retried!");
             KycWaSDK.getInstance().trackCustomKVEvent(getActivity(), "camera_retry_failed", null, null);
         } else {
-            WLogger.i(f35687a, "No Need to Retry Cam");
+            WLogger.i(f21996a, "No Need to Retry Cam");
         }
         b(i, str);
     }
 
     private void a(int i, String str, String str2, String str3) {
         if (i > 1) {
-            String str4 = f35687a;
+            String str4 = f21996a;
             WLogger.e(str4, "encry Exception count=" + i + ",too many times，need alert");
             c(WbFaceInnerError.create(WbFaceError.WBFaceErrorDomainNativeProcess, str, str2, str3));
             return;
         }
-        String str5 = f35687a;
+        String str5 = f21996a;
         WLogger.d(str5, "encry Exception count=" + i + ",try again");
         g(true);
     }
@@ -993,7 +994,7 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
 
     /* JADX INFO: Access modifiers changed from: private */
     public void a(com.tencent.cloud.huiyansdkface.a.a.a.a aVar) {
-        String str = f35687a;
+        String str = f21996a;
         WLogger.d(str, "initCamera：" + aVar);
         com.tencent.cloud.huiyansdkface.a.e.d dVar = new com.tencent.cloud.huiyansdkface.a.e.d() { // from class: com.tencent.cloud.huiyansdkface.facelight.ui.b.a.4
             @Override // com.tencent.cloud.huiyansdkface.a.e.d
@@ -1013,8 +1014,8 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
                 }
             }
         };
-        WLogger.d(f35687a, "init CameraErrorCallback");
-        com.tencent.cloud.huiyansdkface.a.d a2 = new com.tencent.cloud.huiyansdkface.a.d(this.aV).a(aVar).a(this.U).a(new com.tencent.cloud.huiyansdkface.facelight.c.a.a().a()).a(com.tencent.cloud.huiyansdkface.facelight.b.a.f35532a).a(new com.tencent.cloud.huiyansdkface.a.b.a() { // from class: com.tencent.cloud.huiyansdkface.facelight.ui.b.a.5
+        WLogger.d(f21996a, "init CameraErrorCallback");
+        com.tencent.cloud.huiyansdkface.a.d a2 = new com.tencent.cloud.huiyansdkface.a.d(this.aV).a(aVar).a(this.U).a(new com.tencent.cloud.huiyansdkface.facelight.c.a.a().a()).a(com.tencent.cloud.huiyansdkface.facelight.b.a.f21841a).a(new com.tencent.cloud.huiyansdkface.a.b.a() { // from class: com.tencent.cloud.huiyansdkface.facelight.ui.b.a.5
             @Override // com.tencent.cloud.huiyansdkface.a.b.a
             public void a(com.tencent.cloud.huiyansdkface.a.b.c cVar) {
                 a aVar2;
@@ -1051,29 +1052,29 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
             }
         });
         if (Build.VERSION.SDK_INT < 21) {
-            WLogger.d(f35687a, "cam use main handler");
+            WLogger.d(f21996a, "cam use main handler");
             a2.a(true);
         }
         this.V = a2.a();
-        WLogger.d(f35687a, "初始化并注册相机适配器");
+        WLogger.d(f21996a, "初始化并注册相机适配器");
         this.Y = new com.tencent.cloud.huiyansdkface.a.a() { // from class: com.tencent.cloud.huiyansdkface.facelight.ui.b.a.7
             private Camera b;
 
             @Override // com.tencent.cloud.huiyansdkface.a.a, com.tencent.cloud.huiyansdkface.a.b
             public void a() {
                 super.a();
-                WLogger.d(a.f35687a, "camera closed!");
+                WLogger.d(a.f21996a, "camera closed!");
             }
 
             @Override // com.tencent.cloud.huiyansdkface.a.a, com.tencent.cloud.huiyansdkface.a.b
             public void a(com.tencent.cloud.huiyansdkface.a.c.a aVar2) {
                 super.a(aVar2);
-                WLogger.i(a.f35687a, "cam start preview");
+                WLogger.i(a.f21996a, "cam start preview");
                 ThreadOperate.runOnUiThread(new Runnable() { // from class: com.tencent.cloud.huiyansdkface.facelight.ui.b.a.7.1
                     @Override // java.lang.Runnable
                     public void run() {
                         if (a.this.d.e().v()) {
-                            WLogger.i(a.f35687a, "setCurrentStep(FaceVerifyStatus.Status.FINDFACE)");
+                            WLogger.i(a.f21996a, "setCurrentStep(FaceVerifyStatus.Status.FINDFACE)");
                             a.this.g.b(2);
                         }
                         a.this.s.setVisibility(0);
@@ -1095,7 +1096,7 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
             @Override // com.tencent.cloud.huiyansdkface.a.a, com.tencent.cloud.huiyansdkface.a.b
             public void a(com.tencent.cloud.huiyansdkface.a.c.a aVar2, com.tencent.cloud.huiyansdkface.a.c.d dVar2, com.tencent.cloud.huiyansdkface.a.a.a aVar3) {
                 super.a(aVar2, dVar2, aVar3);
-                String str2 = a.f35687a;
+                String str2 = a.f21996a;
                 WLogger.d(str2, "cameraOpened ,previewSize=" + aVar3.a().toString());
                 a.this.Z = aVar3.a().a();
                 a.this.aa = aVar3.a().b();
@@ -1106,24 +1107,24 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
                 Camera.getCameraInfo(a.this.X, cameraInfo);
                 a.this.ab = cameraInfo.facing;
                 a.this.ac = cameraInfo.orientation;
-                String str3 = a.f35687a;
+                String str3 = a.f21996a;
                 WLogger.d(str3, "cameraInfo.orientation =" + cameraInfo.orientation);
                 a.this.a(aVar4.a(), a.this.ac);
                 RotateSetting.calRotateTag(a.this.aV, a.this.X, cameraInfo.facing);
                 int rotate = RotateSetting.getRotate();
-                String str4 = a.f35687a;
+                String str4 = a.f21996a;
                 WLogger.d(str4, "cameraOpened ,rotate=" + rotate);
                 RotateSetting.setRotateInfo(rotate);
                 a.this.f(rotate);
                 if (a.this.d.u()) {
-                    WLogger.i(a.f35687a, "upload ytVideo");
+                    WLogger.i(a.f21996a, "upload ytVideo");
                     a.this.a(RotateSetting.getRotate(), a.this.Z, a.this.aa, 1);
                 } else {
-                    WLogger.d(a.f35687a, "cdn set no ytVideo,need wbVideo");
+                    WLogger.d(a.f21996a, "cdn set no ytVideo,need wbVideo");
                     a.this.aM = true;
                 }
                 a.this.af.a(a.this.Z, a.this.aa, RotateSetting.getRotate());
-                WLogger.d(a.f35687a, "start set previewSize");
+                WLogger.d(a.f21996a, "start set previewSize");
                 if (rotate >= 5) {
                     a.this.j.a(a.this.aa, a.this.Z, 0);
                 } else {
@@ -1132,7 +1133,7 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
                 a.this.s();
             }
         };
-        WLogger.d(f35687a, " mWeCamera.registerCameraListener");
+        WLogger.d(f21996a, " mWeCamera.registerCameraListener");
         this.V.a((com.tencent.cloud.huiyansdkface.a.b) this.Y);
     }
 
@@ -1142,7 +1143,7 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
             this.af.a(aVar);
         }
         if (this.g.b() == 0) {
-            WLogger.e(f35687a, "faceVerifyStatus current status not init!");
+            WLogger.e(f21996a, "faceVerifyStatus current status not init!");
             return;
         }
         if (this.g.b() == 2 || this.g.b() == 3 || this.g.b() == 4 || this.g.b() == 5) {
@@ -1164,11 +1165,11 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
         if (this.d.t()) {
             return;
         }
-        WLogger.d(f35687a, "successToResultPage");
+        WLogger.d(f21996a, "successToResultPage");
         WbFaceWillModeResult wbFaceWillModeResult = null;
         this.d.a(getActivity(), "0", (Properties) null);
         boolean z = getActivity() == null || getActivity().isFinishing();
-        WLogger.d(f35687a, "successToResultPage Activity is die?" + z);
+        WLogger.d(f21996a, "successToResultPage Activity is die?" + z);
         this.d.e(true);
         if (this.d.y() != null) {
             WbFaceVerifyResult wbFaceVerifyResult = new WbFaceVerifyResult();
@@ -1210,33 +1211,33 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
             aVar2.dismiss();
             this.aq = null;
         }
-        if (this.f35688ar == null) {
+        if (this.f21997ar == null) {
             com.tencent.cloud.huiyansdkface.facelight.ui.widget.a d = new com.tencent.cloud.huiyansdkface.facelight.ui.widget.a(getActivity()).a(b).c(this.d.f().kyc_try_again).d(this.d.f().kyc_cancel);
-            this.f35688ar = d;
+            this.f21997ar = d;
             d.getWindow().setBackgroundDrawableResource(R.color.wbcf_translucent_background);
-            this.f35688ar.a(new a.InterfaceC0916a() { // from class: com.tencent.cloud.huiyansdkface.facelight.ui.b.a.27
-                @Override // com.tencent.cloud.huiyansdkface.facelight.ui.widget.a.InterfaceC0916a
+            this.f21997ar.a(new a.InterfaceC0746a() { // from class: com.tencent.cloud.huiyansdkface.facelight.ui.b.a.27
+                @Override // com.tencent.cloud.huiyansdkface.facelight.ui.widget.a.InterfaceC0746a
                 public void a() {
-                    WLogger.d(a.f35687a, "restart will");
+                    WLogger.d(a.f21996a, "restart will");
                     a.this.g.b(2);
                 }
 
-                @Override // com.tencent.cloud.huiyansdkface.facelight.ui.widget.a.InterfaceC0916a
+                @Override // com.tencent.cloud.huiyansdkface.facelight.ui.widget.a.InterfaceC0746a
                 public void b() {
                     a.this.c(wbFaceInnerError);
                 }
             });
         }
-        this.f35688ar.show();
+        this.f21997ar.show();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void a(YTActRefData yTActRefData) {
-        WLogger.i(f35687a, "getBestPics");
+        WLogger.i(f21996a, "getBestPics");
         if (yTActRefData == null || yTActRefData.isEmpty()) {
-            WLogger.e(f35687a, "return ActReflectData is null empty!");
+            WLogger.e(f21996a, "return ActReflectData is null empty!");
         } else {
-            WLogger.d(f35687a, "getActReflectData!");
+            WLogger.d(f21996a, "getActReflectData!");
             com.tencent.cloud.huiyansdkface.facelight.b.a.a aVar = new com.tencent.cloud.huiyansdkface.facelight.b.a.a(yTActRefData.best.image, yTActRefData.best.xys, yTActRefData.best.checksum);
             com.tencent.cloud.huiyansdkface.facelight.b.a.a aVar2 = new com.tencent.cloud.huiyansdkface.facelight.b.a.a(yTActRefData.eye.image, yTActRefData.eye.xys, yTActRefData.eye.checksum);
             com.tencent.cloud.huiyansdkface.facelight.b.a.a aVar3 = new com.tencent.cloud.huiyansdkface.facelight.b.a.a(yTActRefData.mouth.image, yTActRefData.mouth.xys, yTActRefData.mouth.checksum);
@@ -1266,16 +1267,16 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
                         a.this.E.dismiss();
                         a.this.E = null;
                     }
-                    if (a.this.f35688ar != null) {
-                        a.this.f35688ar.dismiss();
-                        a.this.f35688ar = null;
+                    if (a.this.f21997ar != null) {
+                        a.this.f21997ar.dismiss();
+                        a.this.f21997ar = null;
                     }
                     a.this.aq = new com.tencent.cloud.huiyansdkface.facelight.ui.widget.a(a.this.getActivity()).a(a.this.d.f().kyc_internet_error).b(str).c(a.this.d.f().kyc_try_again).d(a.this.d.f().kyc_no_more);
                     a.this.aq.getWindow().setBackgroundDrawableResource(R.color.wbcf_translucent_background);
-                    a.this.aq.a(new a.InterfaceC0916a() { // from class: com.tencent.cloud.huiyansdkface.facelight.ui.b.a.37.1
-                        @Override // com.tencent.cloud.huiyansdkface.facelight.ui.widget.a.InterfaceC0916a
+                    a.this.aq.a(new a.InterfaceC0746a() { // from class: com.tencent.cloud.huiyansdkface.facelight.ui.b.a.37.1
+                        @Override // com.tencent.cloud.huiyansdkface.facelight.ui.widget.a.InterfaceC0746a
                         public void a() {
-                            WLogger.d(a.f35687a, "click try again");
+                            WLogger.d(a.f21996a, "click try again");
                             if (a.this.aq != null) {
                                 a.this.aq.dismiss();
                             }
@@ -1285,7 +1286,7 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
                             a.this.P();
                         }
 
-                        @Override // com.tencent.cloud.huiyansdkface.facelight.ui.widget.a.InterfaceC0916a
+                        @Override // com.tencent.cloud.huiyansdkface.facelight.ui.widget.a.InterfaceC0746a
                         public void b() {
                             KycWaSDK.getInstance().trackCustomKVEvent(a.this.getActivity(), "facepage_get_flash_res_quit", null, null);
                             a.this.b(str2, str3, str, str4);
@@ -1295,7 +1296,7 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
                 if (a.this.getActivity() == null || a.this.getActivity().isFinishing()) {
                     return;
                 }
-                WLogger.d(a.f35687a, "mDialog.show()");
+                WLogger.d(a.f21996a, "mDialog.show()");
                 a.this.aq.show();
             }
         });
@@ -1306,14 +1307,14 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
         ThreadOperate.runOnUiThread(new Runnable() { // from class: com.tencent.cloud.huiyansdkface.facelight.ui.b.a.17
             @Override // java.lang.Runnable
             public void run() {
-                WLogger.i(a.f35687a, "onReflectEnd");
+                WLogger.i(a.f21996a, "onReflectEnd");
                 a.this.h(3);
                 a.this.aF.setVisibility(8);
                 KycWaSDK.getInstance().trackCustomKVEvent(a.this.getActivity(), "facepage_reflect_end", null, null);
                 if (!z) {
                     Param.appendLightLocalInfo(i);
                 }
-                WLogger.d(a.f35687a, "onReflectEnd go to upload");
+                WLogger.d(a.f21996a, "onReflectEnd go to upload");
                 a.this.g.j();
             }
         });
@@ -1321,7 +1322,7 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
 
     /* JADX INFO: Access modifiers changed from: private */
     public void a(final boolean z, final FaceWillResult faceWillResult, final WbFaceInnerError wbFaceInnerError) {
-        String str = f35687a;
+        String str = f21996a;
         WLogger.d(str, "endLoading:" + z);
         com.tencent.cloud.huiyansdkface.facelight.ui.widget.a aVar = this.E;
         if (aVar != null) {
@@ -1348,14 +1349,14 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
         if (Build.VERSION.SDK_INT >= 17) {
             b(bArr);
         } else {
-            WLogger.e(f35687a, "android version is below 17! CANT BLUR!");
+            WLogger.e(f21996a, "android version is below 17! CANT BLUR!");
         }
         this.ag = true;
     }
 
     private String aa() {
         if (TextUtils.isEmpty(this.aD) || this.aD.equals("0")) {
-            WLogger.w(f35687a, "lightDiffLux is null/zero! set default value!");
+            WLogger.w(f21996a, "lightDiffLux is null/zero! set default value!");
             return String.valueOf(this.d.e().I());
         }
         return this.aD;
@@ -1373,7 +1374,7 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
             this.s.setTextColor(c(R.color.wbcf_black_text));
             textView = this.t;
             i = R.color.wbcf_guide_text;
-        } else if (!"custom".equals(this.e.J())) {
+        } else if (!WbCloudFaceContant.CUSTOM.equals(this.e.J())) {
             return;
         } else {
             this.s.setTextColor(c(R.color.wbcf_custom_tips_text));
@@ -1411,11 +1412,11 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
                     @Override // java.lang.Runnable
                     public void run() {
                         if (a.this.g.b() == 9) {
-                            WLogger.d(a.f35687a, "already finished!return!");
+                            WLogger.d(a.f21996a, "already finished!return!");
                             return;
                         }
                         a.this.N = file;
-                        WLogger.d(a.f35687a, "willVideo encode Ready to NEXT");
+                        WLogger.d(a.f21996a, "willVideo encode Ready to NEXT");
                         a.this.ag();
                     }
                 });
@@ -1427,30 +1428,30 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
     public void af() {
         String str;
         boolean z;
-        WLogger.i(f35687a, WbCloudFaceContant.CHECK_WILL_VIDEO);
+        WLogger.i(f21996a, WbCloudFaceContant.CHECK_WILL_VIDEO);
         if (this.N == null) {
-            WLogger.d(f35687a, "will video is null！");
+            WLogger.d(f21996a, "will video is null！");
             if (WbFaceModeProviders.isUseWillSdk() && this.e.o() && this.e.p()) {
                 str = "willVideo is null!";
                 b(-10, str);
             }
             W();
         } else if (this.e.p() && this.N.length() < 50000) {
-            WLogger.e(f35687a, "willVideo is too small! ");
+            WLogger.e(f21996a, "willVideo is too small! ");
             str = "willVideo is too small!" + this.N.length();
             b(-10, str);
         } else {
             if (this.e.r()) {
                 this.Q = this.N.getAbsolutePath();
-                WLogger.i(f35687a, "willVideoPath=" + this.Q);
-                WLogger.d(f35687a, "upload will video!");
+                WLogger.i(f21996a, "willVideoPath=" + this.Q);
+                WLogger.d(f21996a, "upload will video!");
                 z = true;
             } else if (!this.e.d()) {
                 this.Q = this.N.getAbsolutePath();
-                WLogger.i(f35687a, "willVideoPath=" + this.Q);
+                WLogger.i(f21996a, "willVideoPath=" + this.Q);
                 W();
             } else {
-                WLogger.d(f35687a, "just upload will video!");
+                WLogger.d(f21996a, "just upload will video!");
                 z = false;
             }
             h(z);
@@ -1462,19 +1463,19 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
         if (this.k == null) {
             return;
         }
-        String str = f35687a;
+        String str = f21996a;
         WLogger.d(str, "readyToNext:" + this.k.a());
         this.k.a(new Runnable() { // from class: com.tencent.cloud.huiyansdkface.facelight.ui.b.a.53
             @Override // java.lang.Runnable
             public void run() {
-                WLogger.d(a.f35687a, "Ready Go！");
+                WLogger.d(a.f21996a, "Ready Go！");
                 a.this.af();
             }
         });
     }
 
     private void b(float f) {
-        WLogger.d(f35687a, "setAppBrightness brightness=" + f);
+        WLogger.d(f21996a, "setAppBrightness brightness=" + f);
         if (getActivity() != null) {
             Window window = getActivity().getWindow();
             WindowManager.LayoutParams attributes = window.getAttributes();
@@ -1492,10 +1493,10 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
     }
 
     private void b(int i, String str) {
-        WLogger.i(f35687a, "processErrorMessage");
+        WLogger.i(f21996a, "processErrorMessage");
         this.T.a(i);
         this.T.a(str);
-        WLogger.e(f35687a, str);
+        WLogger.e(f21996a, str);
         a(this.T);
     }
 
@@ -1504,7 +1505,7 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
             @Override // java.lang.Runnable
             public void run() {
                 a.this.g.b(9);
-                WLogger.d(a.f35687a, "camera fail, need trans thread");
+                WLogger.d(a.f21996a, "camera fail, need trans thread");
                 a.this.c(wbFaceInnerError);
             }
         });
@@ -1512,7 +1513,7 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
 
     /* JADX INFO: Access modifiers changed from: private */
     public void b(String str, String str2, String str3, String str4) {
-        String str5 = f35687a;
+        String str5 = f21996a;
         WLogger.d(str5, "setCallbackAndFinished:" + str2 + "," + str4);
         this.g.b(9);
         this.d.e(true);
@@ -1543,17 +1544,17 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
             aVar2.dismiss();
             this.E = null;
         }
-        com.tencent.cloud.huiyansdkface.facelight.ui.widget.a aVar3 = this.f35688ar;
+        com.tencent.cloud.huiyansdkface.facelight.ui.widget.a aVar3 = this.f21997ar;
         if (aVar3 != null) {
             aVar3.dismiss();
-            this.f35688ar = null;
+            this.f21997ar = null;
         }
         Q();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void b(final boolean z) {
-        WLogger.d(f35687a, "checkEncodeFinished");
+        WLogger.d(f21996a, "checkEncodeFinished");
         ThreadOperate.runOnUiThread(new Runnable() { // from class: com.tencent.cloud.huiyansdkface.facelight.ui.b.a.20
             @Override // java.lang.Runnable
             public void run() {
@@ -1567,12 +1568,12 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
                     } else {
                         str = "mFaceVerifyStatus.getCurStatus()=" + a.this.g.b();
                     }
-                    WLogger.w(a.f35687a, str);
+                    WLogger.w(a.f21996a, str);
                     return;
                 }
-                WLogger.d(a.f35687a, "mFaceVerifyStatus.getCurStatus()=" + a.this.g.b());
+                WLogger.d(a.f21996a, "mFaceVerifyStatus.getCurStatus()=" + a.this.g.b());
                 if (z) {
-                    WLogger.d(a.f35687a, "onEncodeFinish timeout!");
+                    WLogger.d(a.f21996a, "onEncodeFinish timeout!");
                     a aVar = a.this;
                     if (!aVar.i(aVar.aP)) {
                         a.this.a(false);
@@ -1590,7 +1591,7 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
     private void b(byte[] bArr) {
         String str;
         String str2;
-        WLogger.d(f35687a, "showLastPic");
+        WLogger.d(f21996a, "showLastPic");
         byte[] rawCamDataToJpg = RotateSetting.rawCamDataToJpg(RotateSetting.getRotate(), bArr, this.Z, this.aa, true);
         Bitmap decodeByteArray = BitmapFactory.decodeByteArray(rawCamDataToJpg, 0, rawCamDataToJpg.length);
         if (decodeByteArray != null) {
@@ -1599,11 +1600,11 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
                 a(a2);
                 return;
             } else {
-                str = f35687a;
+                str = f21996a;
                 str2 = "showLastPic blur is null";
             }
         } else {
-            str = f35687a;
+            str = f21996a;
             str2 = "onPreviewFrame bitmap is null";
         }
         WLogger.e(str, str2);
@@ -1614,7 +1615,7 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
         if (this.d.t()) {
             return;
         }
-        WLogger.d(f35687a, "failToResultPage goToResultPage");
+        WLogger.d(f21996a, "failToResultPage goToResultPage");
         this.g.b(9);
         Properties properties = new Properties();
         properties.setProperty("errorDesc", wbFaceInnerError.toString());
@@ -1632,7 +1633,7 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
             if (getActivity() == null || getActivity().isFinishing()) {
                 z = true;
             }
-            WLogger.d(f35687a, "failToResultPage Activity is die?" + z);
+            WLogger.d(f21996a, "failToResultPage Activity is die?" + z);
             this.d.e(true);
             if (this.d.y() != null) {
                 WbFaceVerifyResult wbFaceVerifyResult2 = wbFaceInnerError.toWbFaceVerifyResult();
@@ -1668,11 +1669,11 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
     }
 
     private boolean c(String str) {
-        String str2 = f35687a;
+        String str2 = f21996a;
         WLogger.d(str2, "initYoutuReflectLiveness:" + YTAGReflectLiveCheckJNIInterface.FRVersion());
         int initModel = YTAGReflectLiveCheckInterface.initModel(str);
         if (initModel != 0) {
-            String str3 = f35687a;
+            String str3 = f21996a;
             WLogger.e(str3, "failed to init reflect sdk " + initModel);
             return false;
         }
@@ -1726,8 +1727,8 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
                 this.E = d;
                 d.getWindow().setBackgroundDrawableResource(R.color.wbcf_translucent_background);
             }
-            this.E.a(new a.InterfaceC0916a() { // from class: com.tencent.cloud.huiyansdkface.facelight.ui.b.a.40
-                @Override // com.tencent.cloud.huiyansdkface.facelight.ui.widget.a.InterfaceC0916a
+            this.E.a(new a.InterfaceC0746a() { // from class: com.tencent.cloud.huiyansdkface.facelight.ui.b.a.40
+                @Override // com.tencent.cloud.huiyansdkface.facelight.ui.widget.a.InterfaceC0746a
                 public void a() {
                     KycWaSDK kycWaSDK2;
                     Activity activity2;
@@ -1761,7 +1762,7 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
                     a.this.b(WbFaceError.WBFaceErrorDomainNativeProcess, WbFaceError.WBFaceErrorCodeUserCancle, "用户取消", str);
                 }
 
-                @Override // com.tencent.cloud.huiyansdkface.facelight.ui.widget.a.InterfaceC0916a
+                @Override // com.tencent.cloud.huiyansdkface.facelight.ui.widget.a.InterfaceC0746a
                 public void b() {
                     KycWaSDK kycWaSDK2;
                     Activity activity2;
@@ -1800,19 +1801,19 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
 
     private void d(boolean z) {
         if (this.g.b() == 9) {
-            WLogger.d(f35687a, "On finish Step,No more works!");
+            WLogger.d(f21996a, "On finish Step,No more works!");
             return;
         }
-        WLogger.d(f35687a, "startFaceUpload!");
+        WLogger.d(f21996a, "startFaceUpload!");
         this.d.a(true);
         KycWaSDK.getInstance().trackCustomKVEvent(getActivity(), "uploadpage_enter", null, null);
         if (this.e.l()) {
-            WLogger.d(f35687a, "simple sdk mode wrap");
+            WLogger.d(f21996a, "simple sdk mode wrap");
             g(z);
         } else if (!this.e.S()) {
             f(z);
         } else {
-            WLogger.d(f35687a, "cus sdk mode wrap");
+            WLogger.d(f21996a, "cus sdk mode wrap");
             e(z);
         }
     }
@@ -1824,10 +1825,10 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
 
     private void e(boolean z) {
         String str;
-        WLogger.d(f35687a, "startCusEncryAndReturn");
+        WLogger.d(f21996a, "startCusEncryAndReturn");
         String t = this.d.e().t();
         this.aG = new SelectData(Float.valueOf(aa()).floatValue());
-        String str2 = f35687a;
+        String str2 = f21996a;
         WLogger.d(str2, "selectData=" + this.aG.toString());
         FlashReq flashReq = new FlashReq();
         flashReq.colorData = this.e.M();
@@ -1837,7 +1838,7 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
         flashReq.eyeImage = this.an;
         flashReq.mouthImage = this.ao;
         CusRequestBody cusRequestBody = new CusRequestBody();
-        String str3 = f35687a;
+        String str3 = f21996a;
         WLogger.d(str3, "deviceInfo=" + cusRequestBody.deviceInfo);
         if ("1".equals(this.d.x().a())) {
             cusRequestBody.showAuth = "1";
@@ -1848,12 +1849,12 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
         cusRequestBody.transSwitch = "1";
         byte[] byteArray = this.aN.toByteArray();
         byte[] videoByte = WeMediaManager.getInstance().getVideoByte();
-        String str4 = f35687a;
+        String str4 = f21996a;
         StringBuilder sb = new StringBuilder();
         sb.append("ytVieo.len=");
         sb.append(byteArray == null ? com.igexin.push.core.b.l : Integer.valueOf(byteArray.length));
         WLogger.d(str4, sb.toString());
-        String str5 = f35687a;
+        String str5 = f21996a;
         StringBuilder sb2 = new StringBuilder();
         sb2.append("wbVieo.len=");
         sb2.append(videoByte == null ? com.igexin.push.core.b.l : Integer.valueOf(videoByte.length));
@@ -1862,7 +1863,7 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
             cusRequestBody.userVideoStr = Base64.encodeToString(byteArray, 0);
         } catch (Exception e) {
             e.printStackTrace();
-            String str6 = f35687a;
+            String str6 = f21996a;
             WLogger.w(str6, "返回base64 string exception：" + e.toString());
             KycWaSDK kycWaSDK = KycWaSDK.getInstance();
             Activity activity = getActivity();
@@ -1874,19 +1875,19 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
                 cusRequestBody.rotate = Param.getRolateInfo();
             } catch (Exception e2) {
                 e2.printStackTrace();
-                String str7 = f35687a;
+                String str7 = f21996a;
                 WLogger.w(str7, "返回base64 string exception：" + e2.toString());
                 KycWaSDK kycWaSDK2 = KycWaSDK.getInstance();
                 Activity activity2 = getActivity();
                 kycWaSDK2.trackCustomKVEvent(activity2, "facepage_encrypt_error", "视频编码失败,返回base64 string exception：" + e2.toString(), null);
             }
         }
-        String str8 = f35687a;
+        String str8 = f21996a;
         StringBuilder sb3 = new StringBuilder();
         sb3.append("param.userVideoStr=");
         sb3.append(cusRequestBody.userVideoStr == null ? com.igexin.push.core.b.l : Integer.valueOf(cusRequestBody.userVideoStr.length()));
         WLogger.d(str8, sb3.toString());
-        String str9 = f35687a;
+        String str9 = f21996a;
         StringBuilder sb4 = new StringBuilder();
         sb4.append("param.wbVideoStr=");
         sb4.append(cusRequestBody.wbVideoStr == null ? com.igexin.push.core.b.l : Integer.valueOf(cusRequestBody.wbVideoStr.length()));
@@ -1897,7 +1898,7 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
             str = WbCloudNetSecurityManger.base64Encry(false, new WeJson().toJson(cusRequestBody), generateAESKey);
         } catch (Exception e3) {
             e3.printStackTrace();
-            String str10 = f35687a;
+            String str10 = f21996a;
             WLogger.w(str10, "encry request failed:" + e3.toString());
             KycWaSDK kycWaSDK3 = KycWaSDK.getInstance();
             kycWaSDK3.trackCustomKVEvent(null, "faceservice_data_serialize_encry_fail", "encry GetFaceResult failed!" + e3.toString(), null);
@@ -1932,13 +1933,13 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
 
     /* JADX INFO: Access modifiers changed from: private */
     public void f(int i) {
-        com.tencent.cloud.huiyansdkface.facelight.process.b.a(i, new b.InterfaceC0912b() { // from class: com.tencent.cloud.huiyansdkface.facelight.ui.b.a.10
-            @Override // com.tencent.cloud.huiyansdkface.facelight.process.b.InterfaceC0912b
+        com.tencent.cloud.huiyansdkface.facelight.process.b.a(i, new b.InterfaceC0742b() { // from class: com.tencent.cloud.huiyansdkface.facelight.ui.b.a.10
+            @Override // com.tencent.cloud.huiyansdkface.facelight.process.b.InterfaceC0742b
             public void a() {
-                WLogger.d(a.f35687a, "start success!");
+                WLogger.d(a.f21996a, "start success!");
             }
 
-            @Override // com.tencent.cloud.huiyansdkface.facelight.process.b.InterfaceC0912b
+            @Override // com.tencent.cloud.huiyansdkface.facelight.process.b.InterfaceC0742b
             public void a(int i2, String str, String str2) {
             }
         });
@@ -1946,10 +1947,10 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
 
     private void f(boolean z) {
         if (this.g.b() == 9) {
-            WLogger.d(f35687a, "On finish Step,No more startNetworkUpload!");
+            WLogger.d(f21996a, "On finish Step,No more startNetworkUpload!");
             return;
         }
-        WLogger.d(f35687a, "startNetworkUpload");
+        WLogger.d(f21996a, "startNetworkUpload");
         this.i.a(z, aa(), this.aN.toByteArray(), this.aH, this.am, this.an, this.ao, this.H, this.O, this.P, this.L, this.M, new ProcessCallback<FaceWillResult>() { // from class: com.tencent.cloud.huiyansdkface.facelight.ui.b.a.35
             @Override // com.tencent.cloud.huiyansdkface.facelight.provider.ProcessCallback
             /* renamed from: a */
@@ -1969,7 +1970,7 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
             @Override // com.tencent.cloud.huiyansdkface.facelight.provider.ProcessCallback
             public void onUiNetworkRetryTip() {
                 if (a.this.y.getVisibility() != 0) {
-                    WLogger.d(a.f35687a, "show network bad tips.");
+                    WLogger.d(a.f21996a, "show network bad tips.");
                     a.this.y.setVisibility(0);
                 }
             }
@@ -1979,10 +1980,10 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
     /* JADX INFO: Access modifiers changed from: private */
     public void g(int i) {
         if (!this.d.v()) {
-            WLogger.d(f35687a, "DONT playActTipVoice");
+            WLogger.d(f21996a, "DONT playActTipVoice");
             return;
         }
-        WLogger.d(f35687a, "playActTipVoice");
+        WLogger.d(f21996a, "playActTipVoice");
         e(i);
     }
 
@@ -2006,7 +2007,7 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
 
     /* JADX INFO: Access modifiers changed from: private */
     public void h(int i) {
-        String str = f35687a;
+        String str = f21996a;
         WLogger.d(str, "updataLightState:cur=" + this.aE + ",update:" + i);
         this.aE = i;
         FaceVerifyStatus faceVerifyStatus = this.g;
@@ -2036,10 +2037,10 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
     /* JADX INFO: Access modifiers changed from: private */
     public boolean i(int i) {
         int ad = this.d.e().ad();
-        String str = f35687a;
+        String str = f21996a;
         WLogger.d(str, "action framesize:" + i + ",request num:" + ad);
         if (i < ad) {
-            WLogger.w(f35687a, "frame size < request,dont encode!");
+            WLogger.w(f21996a, "frame size < request,dont encode!");
             return false;
         }
         return true;
@@ -2065,21 +2066,21 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
 
     private void w() {
         com.tencent.cloud.huiyansdkface.facelight.ui.widget.c cVar = new com.tencent.cloud.huiyansdkface.facelight.ui.widget.c(this.aV);
-        this.f35689c = cVar;
+        this.f21998c = cVar;
         cVar.a(new com.tencent.cloud.huiyansdkface.facelight.c.b.f(this.d, getActivity(), this.g));
     }
 
     private void x() {
         String str;
         String str2;
-        WLogger.d(f35687a, "initUploadPrepare");
+        WLogger.d(f21996a, "initUploadPrepare");
         if (WbFaceModeProviders.isUseWillSdk() && this.e.o()) {
             this.k = new com.tencent.cloud.huiyansdkface.facelight.c.d(2);
-            str = f35687a;
+            str = f21996a;
             str2 = "uploadPrepare need 2 prepare";
         } else {
             this.k = new com.tencent.cloud.huiyansdkface.facelight.c.d(1);
-            str = f35687a;
+            str = f21996a;
             str2 = "uploadPrepare need 1 prepare";
         }
         WLogger.d(str, str2);
@@ -2087,23 +2088,23 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
 
     /* JADX INFO: Access modifiers changed from: private */
     public void y() {
-        WLogger.d(f35687a, "initWbVideoRecord");
+        WLogger.d(f21996a, "initWbVideoRecord");
         this.aL = false;
         int i = 25;
         if (this.e.m()) {
-            WLogger.d(f35687a, "record wbVideo");
+            WLogger.d(f21996a, "record wbVideo");
             this.aL = true;
             long W = this.d.e().W();
-            WLogger.i(f35687a, "record time=" + W);
+            WLogger.i(f21996a, "record time=" + W);
             if (W > 1000) {
-                WLogger.d(f35687a, "upload longer wbVideo!");
+                WLogger.d(f21996a, "upload longer wbVideo!");
                 this.aM = true;
             }
             float f = ((float) W) / 1000.0f;
             i = (int) (25 * f);
-            WLogger.d(f35687a, "num=" + f + ",maxFameNum=" + i);
+            WLogger.d(f21996a, "num=" + f + ",maxFameNum=" + i);
         } else {
-            WLogger.i(f35687a, "not record wbVideo");
+            WLogger.i(f21996a, "not record wbVideo");
         }
         if (this.aL) {
             WeMediaManager.getInstance().init(i);
@@ -2122,12 +2123,12 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
 
     @Override // com.tencent.cloud.huiyansdkface.facelight.ui.widget.a.b
     public void a(float f) {
-        WLogger.d(f35687a, "onFinishPath");
+        WLogger.d(f21996a, "onFinishPath");
         this.aZ = f;
-        String str = f35687a;
+        String str = f21996a;
         WLogger.d(str, "totalScale=" + f + "," + this.aZ);
         float width = this.D.getBorderRect().width();
-        String str2 = f35687a;
+        String str2 = f21996a;
         WLogger.d(str2, "w=" + width);
         this.C.setCamViewWidth(width);
         RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) this.p.getLayoutParams();
@@ -2190,7 +2191,7 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
             KycWaSDK kycWaSDK = KycWaSDK.getInstance();
             Activity activity = getActivity();
             kycWaSDK.trackCustomKVEvent(activity, "camera_file_size_error", "视频大小不满足要求：" + bVar.c(), null);
-            String str2 = f35687a;
+            String str2 = f21996a;
             WLogger.e(str2, "FILE_SIZE_ERROR," + bVar.c());
             create = WbFaceInnerError.create(WbFaceError.WBFaceErrorDomainNativeProcess, WbFaceError.WBFaceErrorCodeMediaFileError, "视频大小不满足要求，请清理内存或重启设备后重试。", "FILE_SIZE_ERROR," + bVar.c());
         } else if (b != -2 && b != -1) {
@@ -2198,7 +2199,7 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
             return;
         } else {
             if (this.S) {
-                String str3 = f35687a;
+                String str3 = f21996a;
                 WLogger.w(str3, "restart camera error:" + bVar.c());
                 KycWaSDK.getInstance().trackCustomKVEvent(getActivity(), "camera_restart_error", bVar.c(), null);
                 d = d(R.string.wbcf_open_camera_permission);
@@ -2206,7 +2207,7 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
                 str = "restart camera error,";
             } else {
                 KycWaSDK.getInstance().trackCustomKVEvent(getActivity(), "camera_init_failed", bVar.c(), null);
-                String str4 = f35687a;
+                String str4 = f21996a;
                 StringBuilder sb2 = new StringBuilder();
                 str = "open/preview failed,";
                 sb2.append("open/preview failed,");
@@ -2223,7 +2224,7 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
     }
 
     public void a(com.tencent.cloud.huiyansdkface.facelight.process.c.c cVar) {
-        WLogger.i(f35687a, "encodeVideo");
+        WLogger.i(f21996a, "encodeVideo");
         long currentTimeMillis = System.currentTimeMillis();
         int rotate = RotateSetting.getRotate();
         int u = u();
@@ -2232,14 +2233,14 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
             u = v();
             v = u();
         }
-        WLogger.d(f35687a, "收到视频上传通知，每帧width：" + u + " 每帧height: " + v);
+        WLogger.d(f21996a, "收到视频上传通知，每帧width：" + u + " 每帧height: " + v);
         this.aP = 0;
         for (int i = 0; i < this.aT.length; i++) {
             this.aO.queueFrameH264(new YuvImage(this.aT[i], 17, u, v, null));
             this.aO.encodeH264();
             this.aP++;
         }
-        WLogger.d(f35687a, "encode finish");
+        WLogger.d(f21996a, "encode finish");
         cVar.a();
         KycWaSDK.getInstance().trackCustomKVEvent(null, "facepage_ytvideo_encoder_finish", (System.currentTimeMillis() - currentTimeMillis) + "ms", null);
     }
@@ -2250,7 +2251,7 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
     }
 
     public void a(final boolean z) {
-        String str = f35687a;
+        String str = f21996a;
         WLogger.d(str, "stopEncode:" + Thread.currentThread());
         long currentTimeMillis = System.currentTimeMillis();
         this.aX.submit(new Runnable() { // from class: com.tencent.cloud.huiyansdkface.facelight.ui.b.a.49
@@ -2260,7 +2261,7 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
                 if (z) {
                     return;
                 }
-                WLogger.d(a.f35687a, "dont output,delete origin!");
+                WLogger.d(a.f21996a, "dont output,delete origin!");
                 a.this.aN.reset();
             }
         });
@@ -2283,7 +2284,7 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
             cloudFaceCountDownTimer2.cancel();
             this.av = null;
         }
-        WLogger.i(f35687a, "openMouth");
+        WLogger.i(f21996a, "openMouth");
         e(this.d.f().kyc_open_mouth);
         this.au = new CloudFaceCountDownTimer(15000L, m.ag) { // from class: com.tencent.cloud.huiyansdkface.facelight.ui.b.a.28
             @Override // com.tencent.cloud.huiyansdkface.facelight.common.CloudFaceCountDownTimer
@@ -2321,7 +2322,7 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
             cloudFaceCountDownTimer2.cancel();
             this.au = null;
         }
-        WLogger.i(f35687a, "shakeHead");
+        WLogger.i(f21996a, "shakeHead");
         e(this.d.f().kyc_shake_head);
         this.av = new CloudFaceCountDownTimer(15000L, m.ag) { // from class: com.tencent.cloud.huiyansdkface.facelight.ui.b.a.29
             @Override // com.tencent.cloud.huiyansdkface.facelight.common.CloudFaceCountDownTimer
@@ -2349,7 +2350,7 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
             cloudFaceCountDownTimer2.cancel();
             this.au = null;
         }
-        WLogger.i(f35687a, "wbcf_blinking");
+        WLogger.i(f21996a, "wbcf_blinking");
         e(this.d.f().kyc_blink);
         this.at = new CloudFaceCountDownTimer(15000L, m.ag) { // from class: com.tencent.cloud.huiyansdkface.facelight.ui.b.a.30
             @Override // com.tencent.cloud.huiyansdkface.facelight.common.CloudFaceCountDownTimer
@@ -2382,7 +2383,7 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
             cloudFaceCountDownTimer3.cancel();
             this.au = null;
         }
-        WLogger.i(f35687a, "actWaitRecordEnd");
+        WLogger.i(f21996a, "actWaitRecordEnd");
         e(this.d.f().kyc_confirming);
         return false;
     }
@@ -2391,16 +2392,16 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
         if (getActivity() == null) {
             return;
         }
-        WLogger.d(f35687a, "PlayVoice IN");
+        WLogger.d(f21996a, "PlayVoice IN");
         try {
             SoundPool soundPool = new SoundPool(1, 1, 1);
             this.n = soundPool;
             int load = soundPool.load(this.aV, i, 1);
             this.o = load;
-            this.n.setOnLoadCompleteListener(new C0915a(load));
+            this.n.setOnLoadCompleteListener(new C0745a(load));
         } catch (Exception e) {
             e.printStackTrace();
-            String str = f35687a;
+            String str = f21996a;
             WLogger.w(str, "playVoice exception:" + e.toString());
         }
     }
@@ -2409,10 +2410,10 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
     public boolean e() {
         HeadBorderView headBorderView;
         int i;
-        WLogger.i(f35687a, "=================start silentCheck======================");
+        WLogger.i(f21996a, "=================start silentCheck======================");
         KycWaSDK.getInstance().trackCustomKVEvent(getActivity(), "facepage_live_type", "silent", null);
         M();
-        if (this.e.J().equals("custom")) {
+        if (this.e.J().equals(WbCloudFaceContant.CUSTOM)) {
             headBorderView = this.D;
             i = R.color.wbcf_custom_border;
         } else {
@@ -2425,7 +2426,7 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
             this.s.setText(this.d.f().kyc_confirming);
             return false;
         }
-        WLogger.i(f35687a, "=================end silentCheck======================");
+        WLogger.i(f21996a, "=================end silentCheck======================");
         this.g.j();
         return false;
     }
@@ -2434,12 +2435,12 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
     public boolean f() {
         HeadBorderView headBorderView;
         int i;
-        WLogger.i(f35687a, "=================start actDetect======================");
+        WLogger.i(f21996a, "=================start actDetect======================");
         KycWaSDK.getInstance().trackCustomKVEvent(getActivity(), "facepage_live_type", SocialConstants.PARAM_ACT, null);
         j(20);
         this.g.b(true);
         M();
-        if (this.e.J().equals("custom")) {
+        if (this.e.J().equals(WbCloudFaceContant.CUSTOM)) {
             headBorderView = this.D;
             i = R.color.wbcf_custom_border;
         } else {
@@ -2456,10 +2457,10 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
     public boolean g() {
         HeadBorderView a2;
         int i;
-        WLogger.i(f35687a, "=================start faceLight======================");
+        WLogger.i(f21996a, "=================start faceLight======================");
         T();
         if (this.d.t()) {
-            WLogger.w(f35687a, "before light,already finishVerify,RETURN");
+            WLogger.w(f21996a, "before light,already finishVerify,RETURN");
             return false;
         }
         KycWaSDK.getInstance().trackCustomKVEvent(getActivity(), "facepage_live_type", "light", null);
@@ -2472,7 +2473,7 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
             this.w.setTextColor(c(R.color.wbcf_guide_text));
         }
         this.aF.setVisibility(0);
-        if (this.e.J().equals("custom")) {
+        if (this.e.J().equals(WbCloudFaceContant.CUSTOM)) {
             a2 = this.aF.a();
             i = R.color.wbcf_custom_border;
         } else {
@@ -2486,7 +2487,7 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
 
     @Override // com.tencent.cloud.huiyansdkface.facelight.process.b.c
     public void h() {
-        WLogger.i(f35687a, "=================start preview======================");
+        WLogger.i(f21996a, "=================start preview======================");
         if (!this.d.e().v()) {
             e(R.raw.wbcf_keep_face_in);
             this.s.setText(this.d.f().kyc_aim);
@@ -2494,12 +2495,12 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
         ab();
         this.t.setText(this.e.v());
         long Y = d.z().e().Y();
-        String str = f35687a;
+        String str = f21996a;
         WLogger.d(str, "verify back showTime=" + Y);
         this.aw = new CloudFaceCountDownTimer(Y, Y) { // from class: com.tencent.cloud.huiyansdkface.facelight.ui.b.a.21
             @Override // com.tencent.cloud.huiyansdkface.facelight.common.CloudFaceCountDownTimer
             public void onFinish() {
-                WLogger.d(a.f35687a, "verify back show!");
+                WLogger.d(a.f21996a, "verify back show!");
                 a.this.x.setVisibility(0);
             }
 
@@ -2511,7 +2512,7 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
 
     @Override // com.tencent.cloud.huiyansdkface.facelight.process.b.c
     public void i() {
-        WLogger.i(f35687a, "====================findFace====================");
+        WLogger.i(f21996a, "====================findFace====================");
         KycWaSDK.getInstance().trackCustomKVEvent(getActivity(), "facepage_predetect_enter", null, null);
         j(5);
         if (this.aL) {
@@ -2536,10 +2537,10 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
                 aVar3.dismiss();
                 this.E = null;
             }
-            com.tencent.cloud.huiyansdkface.facelight.ui.widget.a aVar4 = this.f35688ar;
+            com.tencent.cloud.huiyansdkface.facelight.ui.widget.a aVar4 = this.f21997ar;
             if (aVar4 != null) {
                 aVar4.dismiss();
-                this.f35688ar = null;
+                this.f21997ar = null;
             }
             String str = this.f;
             if (str == null || !str.contains("3")) {
@@ -2552,11 +2553,11 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
 
     @Override // com.tencent.cloud.huiyansdkface.facelight.process.b.c
     public void j() {
-        WLogger.i(f35687a, "====================Prepare start==========================");
+        WLogger.i(f21996a, "====================Prepare start==========================");
         this.s.setText("");
         KycWaSDK.getInstance().trackCustomKVEvent(getActivity(), "facepage_face_prepare", null, null);
         if (this.as != null) {
-            WLogger.d(f35687a, "Prepare cancel timeoutCdt");
+            WLogger.d(f21996a, "Prepare cancel timeoutCdt");
             this.as.cancel();
             this.as = null;
         }
@@ -2566,16 +2567,16 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
     public void k() {
         HeadBorderView headBorderView;
         int i;
-        WLogger.i(f35687a, "=================start liveCheck======================");
+        WLogger.i(f21996a, "=================start liveCheck======================");
         KycWaSDK.getInstance().trackCustomKVEvent(getActivity(), "facepage_detect_enter", null, this.al);
         if (this.as != null) {
-            WLogger.d(f35687a, "liveCheck cancel timeoutCdt");
+            WLogger.d(f21996a, "liveCheck cancel timeoutCdt");
             this.as.cancel();
             this.as = null;
         }
         O();
         M();
-        if (this.e.J().equals("custom")) {
+        if (this.e.J().equals(WbCloudFaceContant.CUSTOM)) {
             headBorderView = this.D;
             i = R.color.wbcf_custom_border;
         } else {
@@ -2605,7 +2606,7 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
 
     @Override // com.tencent.cloud.huiyansdkface.facelight.process.b.c
     public void m() {
-        WLogger.i(f35687a, "=================upload=================");
+        WLogger.i(f21996a, "=================upload=================");
         b(this.aU);
         ac();
         CloudFaceCountDownTimer cloudFaceCountDownTimer = this.aw;
@@ -2626,7 +2627,7 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
             }
         } else if (WbCloudFaceContant.WHITE.equals(J)) {
             this.D.a(c(R.color.wbcf_initial_border));
-        } else if ("custom".equals(J)) {
+        } else if (WbCloudFaceContant.CUSTOM.equals(J)) {
             this.D.c(c(R.color.wbcf_custom_initial_border));
         }
         this.C.b().setVisibility(0);
@@ -2634,7 +2635,7 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
         float f = this.D.getBorderRect().bottom;
         float height = this.D.getBorderRect().height();
         float bottom = this.C.getBottom() - f;
-        WLogger.d(f35687a, "top=" + top + ";bottom=" + f + ";height=" + height + ";init=" + bottom + ";end =" + height);
+        WLogger.d(f21996a, "top=" + top + ";bottom=" + f + ";height=" + height + ";init=" + bottom + ";end =" + height);
         this.C.b().setInitHeight(bottom);
         this.C.b().setEndHeight(height);
         com.tencent.cloud.huiyansdkface.facelight.c.d.c cVar = this.ad;
@@ -2642,29 +2643,29 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
         if (cVar != null) {
             i = 1000;
             if (cVar.b()) {
-                WLogger.d(f35687a, "upload need wait camToken.");
+                WLogger.d(f21996a, "upload need wait camToken.");
                 i = 1000 + this.d.e().F();
             }
         }
-        WLogger.d(f35687a, "final loading time=" + i);
+        WLogger.d(f21996a, "final loading time=" + i);
         this.C.b().a(i, 0.6f);
         Param.appendBlinkInfo(this.d.e().H());
         Param.appendGmInfo();
-        WLogger.d(f35687a, "upload Ready to NEXT");
+        WLogger.d(f21996a, "upload Ready to NEXT");
         ag();
     }
 
     @Override // com.tencent.cloud.huiyansdkface.facelight.process.b.c
     public void n() {
-        String str = f35687a;
+        String str = f21996a;
         WLogger.d(str, "outOfTime:" + this.al.toString());
         if (this.g.f()) {
-            WLogger.d(f35687a, "ActiveDetect outOfTime");
+            WLogger.d(f21996a, "ActiveDetect outOfTime");
             KycWaSDK.getInstance().trackCustomKVEvent(getActivity(), "facepage_exit_timeout", "动作检测超时", null);
             b(WbFaceError.WBFaceErrorDomainNativeProcess, WbFaceError.WBFaceErrorCodeActOutOfTime, "动作检测超时", "动作检测超时");
             return;
         }
-        WLogger.d(f35687a, "FindFace outOfTime");
+        WLogger.d(f21996a, "FindFace outOfTime");
         KycWaSDK.getInstance().trackCustomKVEvent(getActivity(), "facepage_exit_timeout", "预检测超时", this.al);
         b(WbFaceError.WBFaceErrorDomainNativeProcess, WbFaceError.WBFaceErrorCodeFindFaceOutOfTime, "人脸在框检测超时", "预检测人脸超时");
     }
@@ -2682,7 +2683,7 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
     @Override // android.app.Fragment, android.content.ComponentCallbacks
     public void onConfigurationChanged(Configuration configuration) {
         super.onConfigurationChanged(configuration);
-        WLogger.i(f35687a, "onConfigurationChanged");
+        WLogger.i(f21996a, "onConfigurationChanged");
         com.tencent.cloud.huiyansdkface.facelight.ui.widget.a aVar = this.aq;
         if (aVar != null) {
             aVar.dismiss();
@@ -2699,7 +2700,7 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
 
     @Override // android.app.Fragment
     public void onCreate(Bundle bundle) {
-        WLogger.d(f35687a, "onCreate");
+        WLogger.d(f21996a, "onCreate");
         super.onCreate(bundle);
         Context applicationContext = getActivity().getApplicationContext();
         this.aV = applicationContext;
@@ -2724,7 +2725,7 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
         this.i = new com.tencent.cloud.huiyansdkface.facelight.process.a.a(this.d, this.g);
         this.f = this.d.x().N();
         this.aU = R();
-        String str = f35687a;
+        String str = f21996a;
         WLogger.d(str, "sceen origin bright=" + this.aU + ",set full brightness");
         b(255.0f);
         w();
@@ -2744,22 +2745,22 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
     @Override // android.app.Fragment
     public void onDestroy() {
         super.onDestroy();
-        WLogger.i(f35687a, "onDestroy");
+        WLogger.i(f21996a, "onDestroy");
         M();
         WbFaceModeProviders.faceMode().onQuitFaceLivePage();
         YTFaceTracker.setLoggerListener(null);
         YTPoseDetectJNIInterface.setLoggerListener(null);
         YTAGReflectLiveCheckJNIInterface.setLoggerListener(null);
         if (this.j != null) {
-            WLogger.d(f35687a, "onDestroy release FaceDetect.");
+            WLogger.d(f21996a, "onDestroy release FaceDetect.");
             this.j.a();
         }
         com.tencent.cloud.huiyansdkface.facelight.c.b.b.a(new Runnable() { // from class: com.tencent.cloud.huiyansdkface.facelight.ui.b.a.19
             @Override // java.lang.Runnable
             public void run() {
                 if (a.this.l != null) {
-                    WLogger.d(a.f35687a, "yttracker destroy");
-                    a.this.a(a.f35687a, "yttracker destroy");
+                    WLogger.d(a.f21996a, "yttracker destroy");
+                    a.this.a(a.f21996a, "yttracker destroy");
                     a.this.l.destroy();
                     a.this.l = null;
                 }
@@ -2769,11 +2770,11 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
 
     @Override // com.tencent.cloud.huiyansdkface.facelight.ui.a.b, android.app.Fragment
     public void onPause() {
-        String str = f35687a;
+        String str = f21996a;
         WLogger.d(str, "onPause:" + this.d.b());
         super.onPause();
         M();
-        com.tencent.cloud.huiyansdkface.facelight.ui.widget.c cVar = this.f35689c;
+        com.tencent.cloud.huiyansdkface.facelight.ui.widget.c cVar = this.f21998c;
         if (cVar != null) {
             cVar.b();
         }
@@ -2784,15 +2785,15 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
     @Override // com.tencent.cloud.huiyansdkface.facelight.ui.a.b, android.app.Fragment
     public void onResume() {
         super.onResume();
-        WLogger.d(f35687a, "onResume");
+        WLogger.d(f21996a, "onResume");
         V();
-        com.tencent.cloud.huiyansdkface.facelight.ui.widget.c cVar = this.f35689c;
+        com.tencent.cloud.huiyansdkface.facelight.ui.widget.c cVar = this.f21998c;
         if (cVar != null) {
             cVar.a();
         }
         this.b.a(this.aV);
         if (this.aA) {
-            WLogger.d(f35687a, "register light listener");
+            WLogger.d(f21996a, "register light listener");
             try {
                 this.aB.registerListener(this.ba, this.aC, 2);
             } catch (Exception e) {
@@ -2800,24 +2801,24 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
             }
         }
         int b = this.g.b();
-        String str = f35687a;
+        String str = f21996a;
         WLogger.w(str, "status=" + b);
         if (b == 0) {
-            WLogger.d(f35687a, "init status,go to PREVIEW");
+            WLogger.d(f21996a, "init status,go to PREVIEW");
             this.g.b(1);
             return;
         }
-        String str2 = f35687a;
+        String str2 = f21996a;
         WLogger.w(str2, "already status=" + b + ",NO RESET");
     }
 
     @Override // android.app.Fragment
     public void onStart() {
-        WLogger.d(f35687a, "onStart()");
+        WLogger.d(f21996a, "onStart()");
         super.onStart();
         int b = this.g.b();
         if (b != 0 && b == 9) {
-            WLogger.e(f35687a, "already finished!");
+            WLogger.e(f21996a, "already finished!");
             return;
         }
         com.tencent.cloud.huiyansdkface.a.c cVar = this.V;
@@ -2829,11 +2830,11 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
     @Override // android.app.Fragment
     public void onStop() {
         e eVar;
-        String str = f35687a;
+        String str = f21996a;
         WLogger.i(str, "onStop:" + this.d.b());
         super.onStop();
         if (this.V != null) {
-            WLogger.d(f35687a, "stop mWeCamera");
+            WLogger.d(f21996a, "stop mWeCamera");
             this.V.d();
             this.V.b(this.Y);
             this.V.f();
@@ -2928,7 +2929,7 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
                 }
             };
             if (this.z.getVisibility() != 0) {
-                WLogger.d(f35687a, "show network bad tips.");
+                WLogger.d(f21996a, "show network bad tips.");
                 this.z.setVisibility(0);
                 this.ay.start();
             }
@@ -2967,7 +2968,7 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
 
     @Override // com.tencent.cloud.huiyansdkface.facelight.process.b.c
     public void p() {
-        WLogger.i(f35687a, "finished!");
+        WLogger.i(f21996a, "finished!");
         T();
         CloudFaceCountDownTimer cloudFaceCountDownTimer = this.ay;
         if (cloudFaceCountDownTimer != null) {
@@ -2980,7 +2981,7 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
             this.ay = null;
         }
         if (this.as != null) {
-            WLogger.d(f35687a, "finished cancel timeoutCdt");
+            WLogger.d(f21996a, "finished cancel timeoutCdt");
             this.as.cancel();
             this.as = null;
         }
@@ -3001,13 +3002,13 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
 
     @Override // com.tencent.cloud.huiyansdkface.facelight.ui.a.b
     public void q() {
-        WLogger.d(f35687a, "setFragmentView");
+        WLogger.d(f21996a, "setFragmentView");
         b(R.layout.wbcf_fragment_face_live);
         if (!this.m) {
-            WLogger.e(f35687a, "init yt failed! finish!");
+            WLogger.e(f21996a, "init yt failed! finish!");
             return;
         }
-        WLogger.d(f35687a, "init yt success,go to next!");
+        WLogger.d(f21996a, "init yt success,go to next!");
         D();
     }
 
@@ -3017,7 +3018,7 @@ public class a extends b implements com.tencent.cloud.huiyansdkface.facelight.pr
     }
 
     public void s() {
-        String str = f35687a;
+        String str = f21996a;
         WLogger.e(str, "setPreviewSize" + Thread.currentThread().getName());
         ThreadOperate.runOnUiThread(new Runnable() { // from class: com.tencent.cloud.huiyansdkface.facelight.ui.b.a.8
             @Override // java.lang.Runnable

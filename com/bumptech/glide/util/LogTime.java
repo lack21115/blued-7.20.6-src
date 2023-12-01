@@ -7,21 +7,21 @@ import android.os.SystemClock;
 public final class LogTime {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final double f21103a;
+    private static final double f7497a;
 
     static {
         double d = 1.0d;
         if (Build.VERSION.SDK_INT >= 17) {
             d = 1.0d / Math.pow(10.0d, 6.0d);
         }
-        f21103a = d;
+        f7497a = d;
     }
 
     private LogTime() {
     }
 
     public static double a(long j) {
-        return (a() - j) * f21103a;
+        return (a() - j) * f7497a;
     }
 
     public static long a() {

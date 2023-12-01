@@ -14,13 +14,9 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveRankListToolBarView.class */
 public class LiveRankListToolBarView extends FrameLayout implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f14892a;
+    private Context a;
     private LayoutInflater b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private LinearLayout f14893c;
+    private LinearLayout c;
     private FrameLayout d;
     private TextView e;
     private View f;
@@ -44,11 +40,11 @@ public class LiveRankListToolBarView extends FrameLayout implements View.OnClick
 
     public LiveRankListToolBarView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f14892a = context;
+        this.a = context;
         LayoutInflater from = LayoutInflater.from(context);
         this.b = from;
         from.inflate(R.layout.live_rank_list_tool_bar_view, this);
-        this.f14893c = (LinearLayout) findViewById(R.id.root_view);
+        this.c = (LinearLayout) findViewById(R.id.root_view);
         this.d = (FrameLayout) findViewById(R.id.layout1);
         this.e = (TextView) findViewById(R.id.text1);
         this.f = findViewById(R.id.view1);
@@ -62,13 +58,13 @@ public class LiveRankListToolBarView extends FrameLayout implements View.OnClick
 
     public void a() {
         if (LiveRoomManager.a().p().isShowHourRank) {
-            this.e.setText(this.f14892a.getString(R.string.live_ranking_hour));
+            this.e.setText(this.a.getString(R.string.live_ranking_hour));
         } else {
             this.d.setVisibility(8);
             setToolBtnSelect(1);
         }
         if (LiveRoomManager.a().Q()) {
-            this.h.setText(this.f14892a.getString(R.string.live_ranking_hit_list));
+            this.h.setText(this.a.getString(R.string.live_ranking_hit_list));
             return;
         }
         this.g.setVisibility(8);
@@ -100,14 +96,14 @@ public class LiveRankListToolBarView extends FrameLayout implements View.OnClick
     public void setToolBtnSelect(int i) {
         Log.v("pk", "setToolBtnSelect:" + i);
         if (i == 0) {
-            this.e.setTextColor(this.f14892a.getResources().getColor(R.color.syc_dark_0a0a0a));
+            this.e.setTextColor(this.a.getResources().getColor(R.color.syc_dark_0a0a0a));
             this.f.setVisibility(0);
-            this.h.setTextColor(this.f14892a.getResources().getColor(R.color.syc_dark_767676));
+            this.h.setTextColor(this.a.getResources().getColor(R.color.syc_dark_767676));
             this.i.setVisibility(8);
         } else if (i == 1) {
-            this.h.setTextColor(this.f14892a.getResources().getColor(R.color.syc_dark_0a0a0a));
+            this.h.setTextColor(this.a.getResources().getColor(R.color.syc_dark_0a0a0a));
             this.i.setVisibility(0);
-            this.e.setTextColor(this.f14892a.getResources().getColor(R.color.syc_dark_767676));
+            this.e.setTextColor(this.a.getResources().getColor(R.color.syc_dark_767676));
             this.f.setVisibility(8);
         }
     }

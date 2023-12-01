@@ -8,6 +8,7 @@ import com.android.okhttp.HostResolver;
 import com.android.okhttp.HttpHandler;
 import com.android.okhttp.HttpsHandler;
 import com.android.okhttp.OkHttpClient;
+import com.huawei.hms.ads.fw;
 import java.io.FileDescriptor;
 import java.io.IOException;
 import java.net.DatagramSocket;
@@ -25,7 +26,7 @@ import javax.net.SocketFactory;
 /* loaded from: source-9557208-dex2jar.jar:android/net/Network.class */
 public class Network implements Parcelable {
     public static final Parcelable.Creator<Network> CREATOR;
-    private static final boolean httpKeepAlive = Boolean.parseBoolean(System.getProperty("http.keepAlive", "true"));
+    private static final boolean httpKeepAlive = Boolean.parseBoolean(System.getProperty("http.keepAlive", fw.Code));
     private static final long httpKeepAliveDurationMs;
     private static final int httpMaxConnections;
     public final int netId;

@@ -34,7 +34,6 @@ public class WindowId implements Parcelable {
     /* loaded from: source-4181928-dex2jar.jar:android/view/WindowId$FocusObserver.class */
     public static abstract class FocusObserver {
         final IWindowFocusObserver.Stub mIObserver = new IWindowFocusObserver.Stub() { // from class: android.view.WindowId.FocusObserver.1
-            @Override // android.view.IWindowFocusObserver
             public void focusGained(IBinder iBinder) {
                 WindowId windowId;
                 synchronized (FocusObserver.this.mRegistrations) {
@@ -47,7 +46,6 @@ public class WindowId implements Parcelable {
                 }
             }
 
-            @Override // android.view.IWindowFocusObserver
             public void focusLost(IBinder iBinder) {
                 WindowId windowId;
                 synchronized (FocusObserver.this.mRegistrations) {

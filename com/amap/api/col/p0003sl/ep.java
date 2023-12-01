@@ -6,18 +6,13 @@ import android.view.View;
 import android.widget.TextView;
 import com.amap.api.maps.offlinemap.OfflineMapManager;
 import com.bytedance.applog.tracker.Tracker;
-import com.soft.blued.R;
 
 /* renamed from: com.amap.api.col.3sl.ep  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/ep.class */
 public final class ep extends eq implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    private OfflineMapManager f4932a;
+    private OfflineMapManager a;
     private View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private TextView f4933c;
+    private TextView c;
     private TextView d;
     private TextView e;
     private TextView f;
@@ -26,14 +21,14 @@ public final class ep extends eq implements View.OnClickListener {
 
     public ep(Context context, OfflineMapManager offlineMapManager) {
         super(context);
-        this.f4932a = offlineMapManager;
+        this.a = offlineMapManager;
     }
 
     @Override // com.amap.api.col.p0003sl.eq
     protected final void a() {
-        View a2 = ev.a(getContext(), (int) R.array.age_array_key_little);
-        this.b = a2;
-        setContentView(a2);
+        View a = ev.a(getContext(), 2130903041);
+        this.b = a;
+        setContentView(a);
         this.b.setOnClickListener(new View.OnClickListener() { // from class: com.amap.api.col.3sl.ep.1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -41,7 +36,7 @@ public final class ep extends eq implements View.OnClickListener {
                 ep.this.dismiss();
             }
         });
-        this.f4933c = (TextView) this.b.findViewById(2131165191);
+        this.c = (TextView) this.b.findViewById(2131165191);
         TextView textView = (TextView) this.b.findViewById(2131165192);
         this.d = textView;
         textView.setText("暂停下载");
@@ -53,7 +48,7 @@ public final class ep extends eq implements View.OnClickListener {
     }
 
     public final void a(int i, String str) {
-        this.f4933c.setText(str);
+        this.c.setText(str);
         if (i == 0) {
             this.d.setText("暂停下载");
             this.d.setVisibility(0);
@@ -92,17 +87,17 @@ public final class ep extends eq implements View.OnClickListener {
                 } else if (TextUtils.isEmpty(this.h)) {
                     return;
                 } else {
-                    this.f4932a.remove(this.h);
+                    this.a.remove(this.h);
                     dismiss();
                     return;
                 }
             }
             if (this.g == 0) {
                 this.d.setText("继续下载");
-                this.f4932a.pauseByName(this.h);
+                this.a.pauseByName(this.h);
             } else if (this.g == 3 || this.g == -1 || this.g == 101 || this.g == 102 || this.g == 103) {
                 this.d.setText("暂停下载");
-                this.f4932a.downloadByCityName(this.h);
+                this.a.downloadByCityName(this.h);
             }
             dismiss();
         } catch (Exception e) {

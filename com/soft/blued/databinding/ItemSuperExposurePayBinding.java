@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemSuperExposurePayBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final FrameLayout f29324a;
+    private final FrameLayout f15634a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f29324a;
+        return this.f15634a;
     }
 }

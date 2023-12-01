@@ -25,6 +25,7 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.Observer;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.AppMethods;
+import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.ui.BaseFragment;
 import com.blued.android.core.ui.TerminalActivity;
 import com.blued.android.core.utils.skin.BluedSkinUtils;
@@ -61,6 +62,7 @@ import com.soft.blued.ui.login_register.presenter.LoginWithTypePresenter;
 import com.soft.blued.ui.login_register.utils.LoginTool;
 import com.soft.blued.utils.BluedPreferences;
 import com.soft.blued.utils.StringUtils;
+import com.xiaomi.mipush.sdk.Constants;
 
 /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/login_register/View/LoginWithPhoneFragment.class */
 public class LoginWithPhoneFragment extends BaseFragment implements View.OnClickListener, LoginWithTypeContract.IView {
@@ -71,11 +73,11 @@ public class LoginWithPhoneFragment extends BaseFragment implements View.OnClick
     private Dialog E;
 
     /* renamed from: a  reason: collision with root package name */
-    public View f31507a;
+    public View f17817a;
     public ImageView b;
 
     /* renamed from: c  reason: collision with root package name */
-    public CommonEdittextView f31508c;
+    public CommonEdittextView f17818c;
     public CommonEdittextView d;
     public CommonEdittextView e;
     public ClearEditText f;
@@ -114,13 +116,13 @@ public class LoginWithPhoneFragment extends BaseFragment implements View.OnClick
             EventTrackLogin.a(LoginAndRegisterProtos.Event.AUTHCODE_RESEND_BTN_CLICK, LoginAndRegisterProtos.Source.UNKNOWN_SOURCE);
         }
         if (StringUtils.d(this.g.getText().toString())) {
-            AppMethods.a((CharSequence) AppInfo.d().getResources().getString(2131886704));
+            AppMethods.a(AppInfo.d().getResources().getString(2131886704));
         } else if (this.y) {
             j();
         } else if (this.x.isChecked()) {
             j();
         } else {
-            LoginTool.f31584a.a(this.x, this.A, this.o.findViewById(2131364005));
+            LoginTool.f17894a.a(this.x, this.A, this.o.findViewById(2131364005));
         }
     }
 
@@ -130,13 +132,14 @@ public class LoginWithPhoneFragment extends BaseFragment implements View.OnClick
         return bundle != null && bundle.containsKey("aliasUserId");
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private void m() {
         this.D = (ConstraintLayout) this.o.findViewById(R.id.cl_main);
-        this.A = LoginTool.f31584a.a(getContext());
+        this.A = LoginTool.f17894a.a(getContext());
         this.p = DialogUtils.a(this.m);
-        CommonEdittextView commonEdittextView = (CommonEdittextView) this.o.findViewById(2131362783);
-        this.e = commonEdittextView;
-        commonEdittextView.a();
+        CommonEdittextView findViewById = this.o.findViewById(2131362783);
+        this.e = findViewById;
+        findViewById.a();
         this.b = (ImageView) this.o.findViewById(2131361892);
         this.f = this.e.getEditText();
         TextView textView = (TextView) this.o.findViewById(R.id.tv_one_login_btn);
@@ -148,22 +151,22 @@ public class LoginWithPhoneFragment extends BaseFragment implements View.OnClick
                 Tracker.onClick(view);
             }
         });
-        CommonEdittextView commonEdittextView2 = (CommonEdittextView) this.o.findViewById(R.id.cev_password);
-        this.d = commonEdittextView2;
-        commonEdittextView2.a();
+        CommonEdittextView findViewById2 = this.o.findViewById(R.id.cev_password);
+        this.d = findViewById2;
+        findViewById2.a();
         ClearEditText editText = this.d.getEditText();
         this.h = editText;
         editText.setInputType(128);
         this.h.setTypeface(Typeface.DEFAULT);
         this.h.setTransformationMethod(new PasswordTransformationMethod());
-        CommonEdittextView commonEdittextView3 = (CommonEdittextView) this.o.findViewById(R.id.cev_mobile);
-        this.f31508c = commonEdittextView3;
-        commonEdittextView3.a();
-        ClearEditText editText2 = this.f31508c.getEditText();
+        CommonEdittextView findViewById3 = this.o.findViewById(R.id.cev_mobile);
+        this.f17818c = findViewById3;
+        findViewById3.a();
+        ClearEditText editText2 = this.f17818c.getEditText();
         this.g = editText2;
         editText2.setInputType(2);
-        this.f31507a = this.o.findViewById(2131367685);
-        this.i = this.f31508c.getAreaCodeText();
+        this.f17817a = this.o.findViewById(2131367685);
+        this.i = this.f17818c.getAreaCodeText();
         this.q = (TextView) this.o.findViewById(R.id.tv_login);
         this.j = this.o.findViewById(R.id.ll_phone_vcode);
         this.k = (TextView) this.o.findViewById(R.id.tv_vcode_desc);
@@ -194,7 +197,7 @@ public class LoginWithPhoneFragment extends BaseFragment implements View.OnClick
                 if (!z || LoginWithPhoneFragment.this.x.isChecked()) {
                     return;
                 }
-                LoginTool.f31584a.a(LoginWithPhoneFragment.this.x, LoginWithPhoneFragment.this.A, LoginWithPhoneFragment.this.o.findViewById(2131364005));
+                LoginTool.f17894a.a(LoginWithPhoneFragment.this.x, LoginWithPhoneFragment.this.A, LoginWithPhoneFragment.this.o.findViewById(2131364005));
             }
         });
         this.h.setOnFocusChangeListener(new View.OnFocusChangeListener() { // from class: com.soft.blued.ui.login_register.View.LoginWithPhoneFragment.4
@@ -204,19 +207,19 @@ public class LoginWithPhoneFragment extends BaseFragment implements View.OnClick
                 if (!z || LoginWithPhoneFragment.this.x.isChecked()) {
                     return;
                 }
-                LoginTool.f31584a.a(LoginWithPhoneFragment.this.x, LoginWithPhoneFragment.this.A, LoginWithPhoneFragment.this.o.findViewById(2131364005));
+                LoginTool.f17894a.a(LoginWithPhoneFragment.this.x, LoginWithPhoneFragment.this.A, LoginWithPhoneFragment.this.o.findViewById(2131364005));
             }
         });
-        ClearEditText clearEditText = (ClearEditText) this.o.findViewById(R.id.edt_phone_vcode);
-        this.l = clearEditText;
-        clearEditText.setOnFocusChangeListener(new View.OnFocusChangeListener() { // from class: com.soft.blued.ui.login_register.View.LoginWithPhoneFragment.5
+        ClearEditText findViewById4 = this.o.findViewById(R.id.edt_phone_vcode);
+        this.l = findViewById4;
+        findViewById4.setOnFocusChangeListener(new View.OnFocusChangeListener() { // from class: com.soft.blued.ui.login_register.View.LoginWithPhoneFragment.5
             @Override // android.view.View.OnFocusChangeListener
             public void onFocusChange(View view, boolean z) {
                 Tracker.onFocusChange(view, z);
                 if (!z || LoginWithPhoneFragment.this.x.isChecked()) {
                     return;
                 }
-                LoginTool.f31584a.a(LoginWithPhoneFragment.this.x, LoginWithPhoneFragment.this.A, LoginWithPhoneFragment.this.o.findViewById(2131364005));
+                LoginTool.f17894a.a(LoginWithPhoneFragment.this.x, LoginWithPhoneFragment.this.A, LoginWithPhoneFragment.this.o.findViewById(2131364005));
             }
         });
         this.l.setInputType(2);
@@ -237,7 +240,7 @@ public class LoginWithPhoneFragment extends BaseFragment implements View.OnClick
         this.t = new CountDownTimer(60000L, 1000L) { // from class: com.soft.blued.ui.login_register.View.LoginWithPhoneFragment.7
             @Override // android.os.CountDownTimer
             public void onFinish() {
-                if (TextUtils.isEmpty(LoginWithPhoneFragment.this.f31508c.getEditText().getText().toString())) {
+                if (TextUtils.isEmpty(LoginWithPhoneFragment.this.f17818c.getEditText().getText().toString())) {
                     LoginWithPhoneFragment.this.k.setTextColor(BluedSkinUtils.a(LoginWithPhoneFragment.this.m, 2131102264));
                 } else {
                     LoginWithPhoneFragment.this.k.setTextColor(BluedSkinUtils.a(LoginWithPhoneFragment.this.m, 2131101766));
@@ -254,19 +257,19 @@ public class LoginWithPhoneFragment extends BaseFragment implements View.OnClick
             }
         };
         this.x = (CheckBox) this.o.findViewById(2131364005).findViewById(2131362774);
-        LoginTool.f31584a.a(this.o, false);
+        LoginTool.f17894a.a(this.o, false);
         LiveEventBus.get(EventBusConstant.KEY_EVENT_LOGIN_CHECK, Boolean.class).observe(this, new Observer<Boolean>() { // from class: com.soft.blued.ui.login_register.View.LoginWithPhoneFragment.8
             @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(Boolean bool) {
                 if (bool.booleanValue()) {
-                    LoginTool.f31584a.a(LoginWithPhoneFragment.this.x, LoginWithPhoneFragment.this.A, LoginWithPhoneFragment.this.o.findViewById(2131364005));
+                    LoginTool.f17894a.a(LoginWithPhoneFragment.this.x, LoginWithPhoneFragment.this.A, LoginWithPhoneFragment.this.o.findViewById(2131364005));
                 }
             }
         });
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.o.findViewById(2131370694);
-        this.w = commonTopTitleNoTrans;
-        commonTopTitleNoTrans.setRightText(2131891264);
+        CommonTopTitleNoTrans findViewById5 = this.o.findViewById(2131370694);
+        this.w = findViewById5;
+        findViewById5.setRightText(2131891264);
         this.w.setRightTextColor(2131101766);
         this.w.getLeftImg().setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.login_register.View.LoginWithPhoneFragment.9
             @Override // android.view.View.OnClickListener
@@ -280,7 +283,7 @@ public class LoginWithPhoneFragment extends BaseFragment implements View.OnClick
             public void onClick(View view) {
                 Tracker.onClick(view);
                 if (!LoginWithPhoneFragment.this.x.isChecked()) {
-                    LoginTool.f31584a.a(LoginWithPhoneFragment.this.x, LoginWithPhoneFragment.this.A, LoginWithPhoneFragment.this.o.findViewById(2131364005));
+                    LoginTool.f17894a.a(LoginWithPhoneFragment.this.x, LoginWithPhoneFragment.this.A, LoginWithPhoneFragment.this.o.findViewById(2131364005));
                     return;
                 }
                 int i = 8;
@@ -289,7 +292,7 @@ public class LoginWithPhoneFragment extends BaseFragment implements View.OnClick
                     LoginWithPhoneFragment.this.w.setRightText(2131891263);
                     LoginWithPhoneFragment.this.d.setVisibility(8);
                     LoginWithPhoneFragment.this.j.setVisibility(0);
-                    View view2 = LoginWithPhoneFragment.this.f31507a;
+                    View view2 = LoginWithPhoneFragment.this.f17817a;
                     if (LoginWithPhoneFragment.this.v) {
                         i = 0;
                     }
@@ -300,7 +303,7 @@ public class LoginWithPhoneFragment extends BaseFragment implements View.OnClick
                 LoginWithPhoneFragment.this.w.setRightText(2131891264);
                 LoginWithPhoneFragment.this.d.setVisibility(0);
                 LoginWithPhoneFragment.this.j.setVisibility(8);
-                View view3 = LoginWithPhoneFragment.this.f31507a;
+                View view3 = LoginWithPhoneFragment.this.f17817a;
                 if (LoginWithPhoneFragment.this.u) {
                     i = 0;
                 }
@@ -318,7 +321,7 @@ public class LoginWithPhoneFragment extends BaseFragment implements View.OnClick
                 if (LoginWithPhoneFragment.this.C) {
                     LoginWithTypeContract.IPresenter iPresenter = LoginWithPhoneFragment.this.n;
                     Context context = LoginWithPhoneFragment.this.m;
-                    iPresenter.a(context, LoginWithPhoneFragment.this.i.getText().toString() + "-" + LoginWithPhoneFragment.this.g.getText().toString(), LoginWithPhoneFragment.this.f.getText().toString(), LoginWithPhoneFragment.this.l.getText().toString());
+                    iPresenter.a(context, LoginWithPhoneFragment.this.i.getText().toString() + Constants.ACCEPT_TIME_SEPARATOR_SERVER + LoginWithPhoneFragment.this.g.getText().toString(), LoginWithPhoneFragment.this.f.getText().toString(), LoginWithPhoneFragment.this.l.getText().toString());
                 }
             }
         }, 45000L);
@@ -385,10 +388,10 @@ public class LoginWithPhoneFragment extends BaseFragment implements View.OnClick
                 q();
             }
         }
-        if (l() || this.y || (a2 = UserAccountsVDao.a().a(1)) == null || StringUtils.d(a2.getUsername()) || !a2.getUsername().contains("-")) {
+        if (l() || this.y || (a2 = UserAccountsVDao.a().a(1)) == null || StringUtils.d(a2.getUsername()) || !a2.getUsername().contains(Constants.ACCEPT_TIME_SEPARATOR_SERVER)) {
             return;
         }
-        String[] split = a2.getUsername().split("-");
+        String[] split = a2.getUsername().split(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
         this.i.setText(split[0]);
         this.g.setText(split[1]);
         this.g.setSelection(split[1].length());
@@ -426,12 +429,12 @@ public class LoginWithPhoneFragment extends BaseFragment implements View.OnClick
     public void a(final String str, final String str2) {
         View inflate = LayoutInflater.from(this.m).inflate(R.layout.send_sms_dialog_custom, (ViewGroup) null);
         TextView textView = (TextView) inflate.findViewById(2131371186);
-        ShapeTextView shapeTextView = (ShapeTextView) inflate.findViewById(R.id.tv_to_send);
-        ShapeTextView shapeTextView2 = (ShapeTextView) inflate.findViewById(R.id.tv_sended);
+        ShapeTextView findViewById = inflate.findViewById(R.id.tv_to_send);
+        ShapeTextView findViewById2 = inflate.findViewById(R.id.tv_sended);
         ImageView imageView = (ImageView) inflate.findViewById(2131365207);
         this.E = new Dialog(this.m);
         textView.setText(this.m.getString(2131890478) + this.g.getText().toString() + this.m.getString(2131890483) + str + this.m.getString(2131890482) + str2 + this.m.getString(2131890485));
-        shapeTextView.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.login_register.View.LoginWithPhoneFragment.15
+        findViewById.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.login_register.View.LoginWithPhoneFragment.15
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
@@ -444,14 +447,14 @@ public class LoginWithPhoneFragment extends BaseFragment implements View.OnClick
                 }
             }
         });
-        shapeTextView2.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.login_register.View.LoginWithPhoneFragment.16
+        findViewById2.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.login_register.View.LoginWithPhoneFragment.16
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
                 EventTrackLoginAndRegister.a(LoginAndRegisterProtos.Event.USER_VERIFY_POP_DONE_CLICK);
                 LoginWithTypeContract.IPresenter iPresenter = LoginWithPhoneFragment.this.n;
                 LoginRegisterHttpUtils.PHONE_CODE_LOGIN_STAGE phone_code_login_stage = LoginRegisterHttpUtils.PHONE_CODE_LOGIN_STAGE.VERIFY_UP;
-                iPresenter.a(phone_code_login_stage, LoginWithPhoneFragment.this.i.getText().toString() + "-" + LoginWithPhoneFragment.this.g.getText().toString(), str, "");
+                iPresenter.a(phone_code_login_stage, LoginWithPhoneFragment.this.i.getText().toString() + Constants.ACCEPT_TIME_SEPARATOR_SERVER + LoginWithPhoneFragment.this.g.getText().toString(), str, "");
             }
         });
         imageView.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.login_register.View.LoginWithPhoneFragment.17
@@ -470,8 +473,8 @@ public class LoginWithPhoneFragment extends BaseFragment implements View.OnClick
 
     @Override // com.soft.blued.ui.login_register.Contract.LoginWithTypeContract.IView
     public void a(String str, boolean z) {
-        LoginRegisterTools.a(getFragmentActive(), this.b, str);
-        this.f31507a.setVisibility(0);
+        LoginRegisterTools.a((IRequestHost) getFragmentActive(), this.b, str);
+        this.f17817a.setVisibility(0);
         this.f.requestFocus();
         if (z) {
             this.u = true;
@@ -535,10 +538,10 @@ public class LoginWithPhoneFragment extends BaseFragment implements View.OnClick
 
     @Override // com.soft.blued.ui.login_register.Contract.LoginWithTypeContract.IView
     public void f() {
-        this.f31508c.getEditText().setText("");
+        this.f17818c.getEditText().setText("");
         this.l.setText("");
-        this.f31508c.getEditText().requestFocus();
-        KeyboardUtils.a(this.f31508c.getEditText().getContext(), this.f31508c.getEditText());
+        this.f17818c.getEditText().requestFocus();
+        KeyboardUtils.a(this.f17818c.getEditText().getContext(), this.f17818c.getEditText());
     }
 
     @Override // com.soft.blued.ui.login_register.Contract.LoginWithTypeContract.IView
@@ -555,12 +558,11 @@ public class LoginWithPhoneFragment extends BaseFragment implements View.OnClick
     }
 
     public void i() {
-        LoginRegisterHttpUtils.a(getFragmentActive(), new BluedUIHttpResponse<BluedEntityA<AppConfigModel>>(getFragmentActive()) { // from class: com.soft.blued.ui.login_register.View.LoginWithPhoneFragment.1
+        LoginRegisterHttpUtils.a((IRequestHost) getFragmentActive(), (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<AppConfigModel>>(getFragmentActive()) { // from class: com.soft.blued.ui.login_register.View.LoginWithPhoneFragment.1
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<AppConfigModel> bluedEntityA) {
-                if (bluedEntityA == null || !bluedEntityA.hasData() || bluedEntityA.getSingleData().oneclick == 1) {
+                if (bluedEntityA == null || !bluedEntityA.hasData() || ((AppConfigModel) bluedEntityA.getSingleData()).oneclick == 1) {
                     if (LoginWithPhoneFragment.this.l()) {
                         LoginWithPhoneFragment.this.r.setVisibility(8);
                     } else {
@@ -569,7 +571,6 @@ public class LoginWithPhoneFragment extends BaseFragment implements View.OnClick
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str) {
                 return true;
             }
@@ -580,11 +581,11 @@ public class LoginWithPhoneFragment extends BaseFragment implements View.OnClick
         if (this.y) {
             LoginWithTypeContract.IPresenter iPresenter = this.n;
             LoginRegisterHttpUtils.PHONE_CODE_LOGIN_STAGE phone_code_login_stage = LoginRegisterHttpUtils.PHONE_CODE_LOGIN_STAGE.IDENTIFY;
-            iPresenter.a(phone_code_login_stage, this.i.getText().toString() + "-" + this.g.getText().toString(), this.l.getText().toString());
+            iPresenter.a(phone_code_login_stage, this.i.getText().toString() + Constants.ACCEPT_TIME_SEPARATOR_SERVER + this.g.getText().toString(), this.l.getText().toString());
         } else {
             LoginWithTypeContract.IPresenter iPresenter2 = this.n;
             LoginRegisterHttpUtils.PHONE_CODE_LOGIN_STAGE phone_code_login_stage2 = LoginRegisterHttpUtils.PHONE_CODE_LOGIN_STAGE.IDENTIFY;
-            iPresenter2.a(phone_code_login_stage2, this.i.getText().toString() + "-" + this.g.getText().toString(), this.f.getText().toString(), this.l.getText().toString());
+            iPresenter2.a(phone_code_login_stage2, this.i.getText().toString() + Constants.ACCEPT_TIME_SEPARATOR_SERVER + this.g.getText().toString(), this.f.getText().toString(), this.l.getText().toString());
         }
         this.l.requestFocus();
         KeyboardUtils.a(this.l.getContext(), this.l);
@@ -594,7 +595,7 @@ public class LoginWithPhoneFragment extends BaseFragment implements View.OnClick
         if (this.m.getResources().getString(2131891263).equals(this.w.getRightTextView().getText().toString())) {
             if (StringUtils.d(this.g.getText().toString()) || StringUtils.d(this.l.getText().toString())) {
                 this.q.setEnabled(false);
-            } else if (this.f31507a.getVisibility() != 0) {
+            } else if (this.f17817a.getVisibility() != 0) {
                 this.q.setEnabled(true);
             } else if (StringUtils.d(this.f.getText().toString())) {
                 this.q.setEnabled(false);
@@ -603,7 +604,7 @@ public class LoginWithPhoneFragment extends BaseFragment implements View.OnClick
             }
         } else if (StringUtils.d(this.g.getText().toString()) || StringUtils.d(this.h.getText().toString())) {
             this.q.setEnabled(false);
-        } else if (this.f31507a.getVisibility() != 0) {
+        } else if (this.f17817a.getVisibility() != 0) {
             this.q.setEnabled(true);
         } else if (StringUtils.d(this.f.getText().toString())) {
             this.q.setEnabled(false);
@@ -612,7 +613,6 @@ public class LoginWithPhoneFragment extends BaseFragment implements View.OnClick
         }
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         super.onActivityResult(i, i2, intent);
         if (i == 100 && intent != null) {
@@ -620,15 +620,15 @@ public class LoginWithPhoneFragment extends BaseFragment implements View.OnClick
             if (StringUtils.d(stringExtra)) {
                 return;
             }
-            LoginConstants.f20505c = stringExtra;
+            LoginConstants.f6899c = stringExtra;
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener
     public boolean onBackPressed() {
         return this.z;
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     @Override // android.view.View.OnClickListener
     public void onClick(View view) {
         Tracker.onClick(view);
@@ -645,7 +645,7 @@ public class LoginWithPhoneFragment extends BaseFragment implements View.OnClick
             }
         } else if (id == 2131370914) {
             if (!this.x.isChecked()) {
-                LoginTool.f31584a.a(this.x, this.A, this.o.findViewById(2131364005));
+                LoginTool.f17894a.a(this.x, this.A, this.o.findViewById(2131364005));
                 return;
             }
             Bundle bundle = new Bundle();
@@ -656,37 +656,36 @@ public class LoginWithPhoneFragment extends BaseFragment implements View.OnClick
             KeyboardUtils.a(getActivity());
             EventTrackLoginAndRegister.a(LoginAndRegisterProtos.Event.AUTHCODE_CONFIRM_BTN_CLICK);
             if (!this.x.isChecked()) {
-                LoginTool.f31584a.a(this.x, this.A, this.o.findViewById(2131364005));
+                LoginTool.f17894a.a(this.x, this.A, this.o.findViewById(2131364005));
                 return;
             }
             BluedPreferences.aE();
             if (!this.m.getResources().getString(2131891263).equals(this.w.getRightTextView().getText().toString())) {
                 EventTrackLoginAndRegister.a(LoginAndRegisterProtos.Event.LOGIN_BTN_CLICK, LoginAndRegisterProtos.Source.PHONE);
                 if (StringUtils.d(this.g.getText().toString()) || StringUtils.d(this.h.getText().toString())) {
-                    AppMethods.a((CharSequence) AppInfo.d().getResources().getString(R.string.user_login_fail));
+                    AppMethods.a(AppInfo.d().getResources().getString(R.string.user_login_fail));
                     return;
                 }
                 LoginWithTypeContract.IPresenter iPresenter = this.n;
-                iPresenter.a("mobile", this.i.getText().toString() + "-" + this.g.getText().toString(), this.h.getText().toString(), this.n.d(), this.f.getText().toString());
+                iPresenter.a("mobile", this.i.getText().toString() + Constants.ACCEPT_TIME_SEPARATOR_SERVER + this.g.getText().toString(), this.h.getText().toString(), this.n.d(), this.f.getText().toString());
             } else if (StringUtils.d(this.g.getText().toString()) || StringUtils.d(this.l.getText().toString())) {
-                AppMethods.a((CharSequence) AppInfo.d().getResources().getString(2131891287));
+                AppMethods.a(AppInfo.d().getResources().getString(2131891287));
             } else {
                 if (this.y) {
                     LoginWithTypeContract.IPresenter iPresenter2 = this.n;
                     LoginRegisterHttpUtils.PHONE_CODE_LOGIN_STAGE phone_code_login_stage = LoginRegisterHttpUtils.PHONE_CODE_LOGIN_STAGE.VERIFY;
-                    iPresenter2.a(phone_code_login_stage, this.i.getText().toString() + "-" + this.g.getText().toString(), this.l.getText().toString());
+                    iPresenter2.a(phone_code_login_stage, this.i.getText().toString() + Constants.ACCEPT_TIME_SEPARATOR_SERVER + this.g.getText().toString(), this.l.getText().toString());
                 } else {
                     EventTrackLoginAndRegister.a(LoginAndRegisterProtos.Event.LOGIN_BTN_CLICK, LoginAndRegisterProtos.Source.PHONE);
                     LoginWithTypeContract.IPresenter iPresenter3 = this.n;
                     LoginRegisterHttpUtils.PHONE_CODE_LOGIN_STAGE phone_code_login_stage2 = LoginRegisterHttpUtils.PHONE_CODE_LOGIN_STAGE.VERIFY;
-                    iPresenter3.a(phone_code_login_stage2, this.i.getText().toString() + "-" + this.g.getText().toString(), this.f.getText().toString(), this.l.getText().toString());
+                    iPresenter3.a(phone_code_login_stage2, this.i.getText().toString() + Constants.ACCEPT_TIME_SEPARATOR_SERVER + this.g.getText().toString(), this.f.getText().toString(), this.l.getText().toString());
                 }
                 this.C = false;
             }
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         FragmentActivity activity = getActivity();
         this.m = activity;
@@ -704,7 +703,6 @@ public class LoginWithPhoneFragment extends BaseFragment implements View.OnClick
         return this.o;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
         a();
@@ -715,14 +713,13 @@ public class LoginWithPhoneFragment extends BaseFragment implements View.OnClick
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onResume() {
         super.onResume();
         if (TextUtils.isEmpty(SignInActivity.e) || TextUtils.isEmpty(SignInActivity.f)) {
-            if (this.i == null || StringUtils.d(LoginConstants.f20505c)) {
+            if (this.i == null || StringUtils.d(LoginConstants.f6899c)) {
                 return;
             }
-            this.i.setText(LoginConstants.f20505c);
+            this.i.setText(LoginConstants.f6899c);
             return;
         }
         this.i.setText(SignInActivity.f);
@@ -732,7 +729,6 @@ public class LoginWithPhoneFragment extends BaseFragment implements View.OnClick
         SignInActivity.f = null;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onViewCreated(View view, Bundle bundle) {
         super.onViewCreated(view, bundle);
         if (l()) {

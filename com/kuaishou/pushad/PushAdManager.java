@@ -135,14 +135,14 @@ public class PushAdManager implements PushAdView.PushAdListener, Runnable {
             return;
         }
         processingPush = true;
-        com.kwad.components.core.g.a.b(adTemplate.mAdScene, new a.InterfaceC0523a() { // from class: com.kuaishou.pushad.PushAdManager.1
-            @Override // com.kwad.components.core.g.a.InterfaceC0523a
+        com.kwad.components.core.g.a.b(adTemplate.mAdScene, new a.InterfaceC0353a() { // from class: com.kuaishou.pushad.PushAdManager.1
+            @Override // com.kwad.components.core.g.a.InterfaceC0353a
             public void onError(int i, String str) {
                 b.d(PushAdManager.TAG, "onError: " + str);
                 boolean unused = PushAdManager.processingPush = false;
             }
 
-            @Override // com.kwad.components.core.g.a.InterfaceC0523a
+            @Override // com.kwad.components.core.g.a.InterfaceC0353a
             public void onInnerAdLoad(List<c> list) {
                 b.d(PushAdManager.TAG, "onInnerAdLoad: " + list);
                 if (list == null || list.size() <= 0) {
@@ -159,7 +159,7 @@ public class PushAdManager implements PushAdView.PushAdListener, Runnable {
                 b.d(PushAdManager.TAG, "pushAdInfo templateId invalid");
             }
 
-            @Override // com.kwad.components.core.g.a.InterfaceC0523a
+            @Override // com.kwad.components.core.g.a.InterfaceC0353a
             public void onRequestResult(int i) {
             }
         });

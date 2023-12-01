@@ -9,19 +9,19 @@ import com.heytap.mcssdk.constant.IntentConstant;
 public abstract class o {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f41112a;
+    private int f27421a;
     private String b;
 
     public o(int i) {
-        this.f41112a = -1;
+        this.f27421a = -1;
         if (i < 0) {
             throw new IllegalArgumentException("PushCommand: the value of command must > 0.");
         }
-        this.f41112a = i;
+        this.f27421a = i;
     }
 
     private void e(a aVar) {
-        aVar.a(IntentConstant.COMMAND, this.f41112a);
+        aVar.a(IntentConstant.COMMAND, this.f27421a);
         aVar.a("client_pkgname", this.b);
         c(aVar);
     }
@@ -44,7 +44,7 @@ public abstract class o {
     }
 
     public final void a(a aVar) {
-        String a2 = p.a(this.f41112a);
+        String a2 = p.a(this.f27421a);
         String str = a2;
         if (a2 == null) {
             str = "";
@@ -58,7 +58,7 @@ public abstract class o {
     }
 
     public final int b() {
-        return this.f41112a;
+        return this.f27421a;
     }
 
     public final void b(Intent intent) {
@@ -67,7 +67,7 @@ public abstract class o {
             com.vivo.push.util.p.b("PushCommand", "bundleWapper is null");
             return;
         }
-        a2.a("method", this.f41112a);
+        a2.a("method", this.f27421a);
         e(a2);
         Bundle b = a2.b();
         if (b != null) {

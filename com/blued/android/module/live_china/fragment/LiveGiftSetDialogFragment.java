@@ -37,9 +37,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveGiftSetDialogFragment.class */
 public final class LiveGiftSetDialogFragment extends BaseDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f12907a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private final Lazy b = LazyKt.a(new Function0<FragmentLiveGiftSetViewBinding>() { // from class: com.blued.android.module.live_china.fragment.LiveGiftSetDialogFragment$vb$2
         /* JADX INFO: Access modifiers changed from: package-private */
         {
@@ -52,9 +50,7 @@ public final class LiveGiftSetDialogFragment extends BaseDialogFragment {
             return FragmentLiveGiftSetViewBinding.a(LayoutInflater.from(LiveGiftSetDialogFragment.this.getContext()));
         }
     });
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f12908c = "";
+    private String c = "";
     private int d;
     private LiveGiftSetModel e;
 
@@ -86,27 +82,23 @@ public final class LiveGiftSetDialogFragment extends BaseDialogFragment {
     @Metadata
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveGiftSetDialogFragment$MyAdapter.class */
     static final class MyAdapter extends FragmentStatePagerAdapter {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final Context f12909a;
+        private final Context a;
         private final ArrayList<LiveGiftSetTabModel> b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private LiveGiftSetModel f12910c;
+        private LiveGiftSetModel c;
         private int d;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public MyAdapter(Context context, FragmentManager fm) {
             super(fm, 1);
             Intrinsics.e(fm, "fm");
-            this.f12909a = context;
+            this.a = context;
             this.b = new ArrayList<>();
         }
 
         public final void a(List<LiveGiftSetTabModel> list, LiveGiftSetModel model, int i) {
             Intrinsics.e(model, "model");
             this.b.clear();
-            this.f12910c = model;
+            this.c = model;
             this.d = i;
             List<LiveGiftSetTabModel> list2 = list;
             if (list2 == null || list2.isEmpty()) {
@@ -118,20 +110,18 @@ public final class LiveGiftSetDialogFragment extends BaseDialogFragment {
         }
 
         public final Context getContext() {
-            return this.f12909a;
+            return this.a;
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public int getCount() {
             return this.b.size();
         }
 
-        @Override // androidx.fragment.app.FragmentStatePagerAdapter
         public Fragment getItem(int i) {
             LiveGiftSetItemFragment liveGiftSetItemFragment = new LiveGiftSetItemFragment();
             Bundle bundle = new Bundle();
             bundle.putString("id", this.b.get(i).getId());
-            LiveGiftSetModel liveGiftSetModel = this.f12910c;
+            LiveGiftSetModel liveGiftSetModel = this.c;
             if (liveGiftSetModel != null && this.d == i) {
                 bundle.putSerializable("data", liveGiftSetModel);
             }
@@ -139,7 +129,6 @@ public final class LiveGiftSetDialogFragment extends BaseDialogFragment {
             return liveGiftSetItemFragment;
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public CharSequence getPageTitle(int i) {
             return this.b.get(i).getName();
         }
@@ -151,7 +140,7 @@ public final class LiveGiftSetDialogFragment extends BaseDialogFragment {
     }
 
     private final void h() {
-        EventTrackLive.b(LiveProtos.Event.LIVE_SET_GIFT_PAGE_SHOW, LiveRoomManager.a().e(), LiveRoomManager.a().g(), this.f12908c);
+        EventTrackLive.b(LiveProtos.Event.LIVE_SET_GIFT_PAGE_SHOW, LiveRoomManager.a().e(), LiveRoomManager.a().g(), this.c);
         g().b.c();
         e();
     }
@@ -164,7 +153,7 @@ public final class LiveGiftSetDialogFragment extends BaseDialogFragment {
         String str;
         Intrinsics.e(model, "model");
         this.e = model;
-        this.f12908c = String.valueOf(model.getId());
+        this.c = String.valueOf(model.getId());
         LiveGiftSetInfoModel liveGiftSetInfoModel = new LiveGiftSetInfoModel();
         ArrayList<LiveGiftSetTabModel> all_name = model.getAll_name();
         if (all_name != null) {
@@ -187,12 +176,12 @@ public final class LiveGiftSetDialogFragment extends BaseDialogFragment {
         liveGiftSetInfoModel.setName(str);
         liveGiftSetInfoModel.setProgress(model.getProgress());
         liveGiftSetInfoModel.setExpire_time(model.getExpire_time());
-        g().b.a(liveGiftSetInfoModel, a(), this);
+        g().b.a(liveGiftSetInfoModel, a(), (Fragment) this);
     }
 
     public final void a(String str) {
         Intrinsics.e(str, "<set-?>");
-        this.f12908c = str;
+        this.c = str;
     }
 
     public final void a(String setId, String goodsId) {
@@ -202,18 +191,17 @@ public final class LiveGiftSetDialogFragment extends BaseDialogFragment {
     }
 
     public final String d() {
-        return this.f12908c;
+        return this.c;
     }
 
     public final void e() {
-        LiveRoomHttpUtils.q(this.f12908c, new LiveGiftSetDialogFragment$getAll$1(this, a()), a());
+        LiveRoomHttpUtils.q(this.c, new LiveGiftSetDialogFragment$getAll$1(this, a()), a());
     }
 
     public final void f() {
         g().b.b();
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
         Bundle arguments = getArguments();
         if (arguments != null) {
@@ -242,7 +230,6 @@ public final class LiveGiftSetDialogFragment extends BaseDialogFragment {
         return dialog;
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public void setupDialog(Dialog dialog, int i) {
         Intrinsics.e(dialog, "dialog");
         super.setupDialog(dialog, i);
@@ -254,13 +241,13 @@ public final class LiveGiftSetDialogFragment extends BaseDialogFragment {
         h();
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void show(FragmentManager manager, String str) {
         Intrinsics.e(manager, "manager");
         try {
             FragmentTransaction beginTransaction = manager.beginTransaction();
             Intrinsics.c(beginTransaction, "manager.beginTransaction()");
-            beginTransaction.add(this, str);
+            beginTransaction.add((Fragment) this, str);
             beginTransaction.commitAllowingStateLoss();
         } catch (Exception e) {
             super.show(manager, str);

@@ -25,15 +25,15 @@ public class LinkedListChannel<E> extends AbstractChannel<E> {
     public Object a(E e) {
         ReceiveOrClosed<?> b;
         do {
-            Object a2 = super.a((LinkedListChannel<E>) e);
-            if (a2 == AbstractChannelKt.b) {
+            Object a = super.a((LinkedListChannel<E>) e);
+            if (a == AbstractChannelKt.b) {
                 return AbstractChannelKt.b;
             }
-            if (a2 != AbstractChannelKt.f42882c) {
-                if (a2 instanceof Closed) {
-                    return a2;
+            if (a != AbstractChannelKt.c) {
+                if (a instanceof Closed) {
+                    return a;
                 }
-                throw new IllegalStateException(Intrinsics.a("Invalid offerInternal result ", a2).toString());
+                throw new IllegalStateException(Intrinsics.a("Invalid offerInternal result ", a).toString());
             }
             b = b((LinkedListChannel<E>) e);
             if (b == null) {
@@ -51,9 +51,9 @@ public class LinkedListChannel<E> extends AbstractChannel<E> {
             if (d()) {
                 symbol = super.a((LinkedListChannel<E>) e, selectInstance);
             } else {
-                Object a2 = selectInstance.a(c(e));
-                symbol = a2;
-                if (a2 == null) {
+                Object a = selectInstance.a(c(e));
+                symbol = a;
+                if (a == null) {
                     symbol = AbstractChannelKt.b;
                 }
             }
@@ -63,7 +63,7 @@ public class LinkedListChannel<E> extends AbstractChannel<E> {
             if (symbol == AbstractChannelKt.b) {
                 return AbstractChannelKt.b;
             }
-            if (symbol != AbstractChannelKt.f42882c && symbol != AtomicKt.b) {
+            if (symbol != AbstractChannelKt.c && symbol != AtomicKt.b) {
                 if (symbol instanceof Closed) {
                     return symbol;
                 }
@@ -81,7 +81,7 @@ public class LinkedListChannel<E> extends AbstractChannel<E> {
             Send send = (Send) obj;
             if (send instanceof AbstractSendChannel.SendBuffered) {
                 Function1<E, Unit> function1 = this.B_;
-                undeliveredElementException = function1 == null ? null : OnUndeliveredElementKt.a(function1, ((AbstractSendChannel.SendBuffered) send).f42885a, (UndeliveredElementException) null);
+                undeliveredElementException = function1 == null ? null : OnUndeliveredElementKt.a(function1, ((AbstractSendChannel.SendBuffered) send).a, (UndeliveredElementException) null);
             } else {
                 send.a(closed);
                 undeliveredElementException = null;
@@ -99,7 +99,7 @@ public class LinkedListChannel<E> extends AbstractChannel<E> {
                     Send send2 = (Send) arrayList.get(size);
                     if (send2 instanceof AbstractSendChannel.SendBuffered) {
                         Function1<E, Unit> function12 = this.B_;
-                        undeliveredElementException = function12 == null ? null : OnUndeliveredElementKt.a(function12, ((AbstractSendChannel.SendBuffered) send2).f42885a, undeliveredElementException);
+                        undeliveredElementException = function12 == null ? null : OnUndeliveredElementKt.a(function12, ((AbstractSendChannel.SendBuffered) send2).a, undeliveredElementException);
                     } else {
                         send2.a(closed);
                     }

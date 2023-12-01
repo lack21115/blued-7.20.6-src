@@ -4,23 +4,21 @@ import java.util.Arrays;
 
 /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/LottieResult.class */
 public final class LottieResult<V> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final V f4256a;
+    private final V a;
     private final Throwable b;
 
     public LottieResult(V v) {
-        this.f4256a = v;
+        this.a = v;
         this.b = null;
     }
 
     public LottieResult(Throwable th) {
         this.b = th;
-        this.f4256a = null;
+        this.a = null;
     }
 
     public V a() {
-        return this.f4256a;
+        return this.a;
     }
 
     public Throwable b() {

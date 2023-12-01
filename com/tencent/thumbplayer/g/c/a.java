@@ -7,10 +7,10 @@ import android.view.Surface;
 public final class a extends Surface {
 
     /* renamed from: a  reason: collision with root package name */
-    private final SurfaceTexture f39336a;
+    private final SurfaceTexture f25645a;
 
     public a(SurfaceTexture surfaceTexture) {
         super(surfaceTexture);
-        this.f39336a = surfaceTexture;
+        this.f25645a = surfaceTexture;
     }
 }

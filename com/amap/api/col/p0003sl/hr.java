@@ -3,7 +3,6 @@ package com.amap.api.col.p0003sl;
 import android.content.Context;
 import android.os.Build;
 import android.text.TextUtils;
-import com.tencent.mapsdk.internal.ma;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.security.InvalidKeyException;
@@ -23,13 +22,9 @@ public final class hr {
     /* renamed from: com.amap.api.col.3sl.hr$a */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/hr$a.class */
     public static final class a {
-
-        /* renamed from: a  reason: collision with root package name */
-        String f5097a;
+        String a;
         String b;
-
-        /* renamed from: c  reason: collision with root package name */
-        String f5098c;
+        String c;
         String d;
         String e;
         String f;
@@ -75,7 +70,7 @@ public final class hr {
             str = valueOf;
             return sb.toString();
         } catch (Throwable th) {
-            it.a(th, "CI", ma.g);
+            it.a(th, "CI", "TS");
             return str;
         }
     }
@@ -129,14 +124,14 @@ public final class hr {
 
     private static a b(Context context, boolean z, boolean z2) {
         a aVar = new a((byte) 0);
-        aVar.f5097a = hs.v(context);
+        aVar.a = hs.v(context);
         aVar.b = hs.k(context);
         String h = hs.h(context);
         String str = h;
         if (h == null) {
             str = "";
         }
-        aVar.f5098c = str;
+        aVar.c = str;
         aVar.d = ho.c(context);
         aVar.e = Build.MODEL;
         aVar.f = Build.MANUFACTURER;
@@ -215,9 +210,9 @@ public final class hr {
             byteArrayOutputStream = null;
         }
         try {
-            a(byteArrayOutputStream2, aVar.f5097a);
+            a(byteArrayOutputStream2, aVar.a);
             a(byteArrayOutputStream2, aVar.b);
-            a(byteArrayOutputStream2, aVar.f5098c);
+            a(byteArrayOutputStream2, aVar.c);
             a(byteArrayOutputStream2, aVar.d);
             a(byteArrayOutputStream2, aVar.e);
             a(byteArrayOutputStream2, aVar.f);

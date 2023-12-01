@@ -7,6 +7,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestManager;
 import com.bumptech.glide.manager.Lifecycle;
 import com.bumptech.glide.manager.RequestManagerTreeNode;
+import com.bumptech.glide.request.BaseRequestOptions;
 import com.bumptech.glide.request.RequestOptions;
 import java.io.File;
 
@@ -16,46 +17,39 @@ public class GlideRequests extends RequestManager {
         super(glide, lifecycle, requestManagerTreeNode, context);
     }
 
-    @Override // com.bumptech.glide.RequestManager
     /* renamed from: a */
     public GlideRequest<Bitmap> f() {
         return (GlideRequest) super.f();
     }
 
-    @Override // com.bumptech.glide.RequestManager
     /* renamed from: a */
     public <ResourceType> GlideRequest<ResourceType> b(Class<ResourceType> cls) {
-        return new GlideRequest<>(this.f20667a, this, cls, this.b);
+        return new GlideRequest<>(this.a, this, cls, this.b);
     }
 
-    @Override // com.bumptech.glide.RequestManager
     /* renamed from: a */
     public GlideRequest<Drawable> b(Integer num) {
         return (GlideRequest) super.b(num);
     }
 
-    @Override // com.bumptech.glide.RequestManager
     /* renamed from: a */
     public GlideRequest<Drawable> b(String str) {
         return (GlideRequest) super.b(str);
     }
 
-    @Override // com.bumptech.glide.RequestManager
     public void a(RequestOptions requestOptions) {
         if (requestOptions instanceof GlideOptions) {
             super.a(requestOptions);
         } else {
-            super.a(new GlideOptions().b(requestOptions));
+            super.a(new GlideOptions().b((BaseRequestOptions<?>) requestOptions));
         }
     }
 
-    @Override // com.bumptech.glide.RequestManager
     /* renamed from: b */
     public GlideRequest<Drawable> e() {
         return (GlideRequest) super.e();
     }
 
-    @Override // com.bumptech.glide.RequestManager
     /* renamed from: c */
     public GlideRequest<File> d() {
         return (GlideRequest) super.d();

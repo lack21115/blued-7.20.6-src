@@ -6,7 +6,7 @@ import java.util.concurrent.TimeUnit;
 public abstract class c implements com.igexin.c.a.d.a.g {
 
     /* renamed from: a  reason: collision with root package name */
-    protected boolean f23264a = true;
+    protected boolean f9656a = true;
 
     @Override // com.igexin.c.a.d.a.g
     public final boolean a(long j, f fVar) {
@@ -20,11 +20,11 @@ public abstract class c implements com.igexin.c.a.d.a.g {
 
     @Override // com.igexin.c.a.d.a.g
     public void b() {
-        this.f23264a = false;
+        this.f9656a = false;
     }
 
     @Override // com.igexin.c.a.d.a.g
     public final boolean d() {
-        return this.f23264a;
+        return this.f9656a;
     }
 }

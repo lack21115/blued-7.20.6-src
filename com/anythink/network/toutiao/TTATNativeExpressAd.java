@@ -18,11 +18,11 @@ public class TTATNativeExpressAd extends CustomNativeAd {
     private static final String h = TTATNativeExpressAd.class.getSimpleName();
 
     /* renamed from: a  reason: collision with root package name */
-    TTNativeExpressAd f9124a;
+    TTNativeExpressAd f6284a;
     Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    String f9125c;
+    String f6285c;
     double d;
     double e;
     boolean f = false;
@@ -71,7 +71,7 @@ public class TTATNativeExpressAd extends CustomNativeAd {
         @Override // com.bytedance.sdk.openadsdk.TTNativeExpressAd.ExpressAdInteractionListener
         public final void onAdShow(View view, int i) {
             Log.i(TTATNativeExpressAd.h, "onAdShow()");
-            TTATInitManager.getInstance().a(TTATNativeExpressAd.this.getShowId(), new WeakReference(TTATNativeExpressAd.this.f9124a));
+            TTATInitManager.getInstance().a(TTATNativeExpressAd.this.getShowId(), new WeakReference(TTATNativeExpressAd.this.f6284a));
             TTATNativeExpressAd.this.notifyAdImpression();
         }
 
@@ -86,18 +86,18 @@ public class TTATNativeExpressAd extends CustomNativeAd {
 
     public TTATNativeExpressAd(Context context, String str, TTNativeExpressAd tTNativeExpressAd, boolean z, boolean z2) {
         this.b = context.getApplicationContext();
-        this.f9125c = str;
-        this.f9124a = tTNativeExpressAd;
+        this.f6285c = str;
+        this.f6284a = tTNativeExpressAd;
         setNetworkInfoMap(tTNativeExpressAd.getMediaExtraInfo());
         setAdData(z);
-        TTNativeExpressAd tTNativeExpressAd2 = this.f9124a;
+        TTNativeExpressAd tTNativeExpressAd2 = this.f6284a;
         if (tTNativeExpressAd2 != null) {
             tTNativeExpressAd2.setExpressInteractionListener(new AnonymousClass4());
         }
     }
 
     private void a(Activity activity) {
-        TTNativeExpressAd tTNativeExpressAd = this.f9124a;
+        TTNativeExpressAd tTNativeExpressAd = this.f6284a;
         if (tTNativeExpressAd == null) {
             return;
         }
@@ -105,7 +105,7 @@ public class TTATNativeExpressAd extends CustomNativeAd {
     }
 
     private void b() {
-        TTNativeExpressAd tTNativeExpressAd = this.f9124a;
+        TTNativeExpressAd tTNativeExpressAd = this.f6284a;
         if (tTNativeExpressAd == null) {
             return;
         }
@@ -116,29 +116,29 @@ public class TTATNativeExpressAd extends CustomNativeAd {
     public void clear(View view) {
     }
 
-    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd, com.anythink.core.api.BaseAd
+    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd
     public void destroy() {
         Log.i(h, "destroy()");
         this.g = null;
-        TTNativeExpressAd tTNativeExpressAd = this.f9124a;
+        TTNativeExpressAd tTNativeExpressAd = this.f6284a;
         if (tTNativeExpressAd != null) {
             tTNativeExpressAd.setExpressInteractionListener((TTNativeExpressAd.AdInteractionListener) null);
-            this.f9124a.destroy();
-            this.f9124a = null;
+            this.f6284a.destroy();
+            this.f6284a = null;
         }
         this.b = null;
     }
 
-    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd, com.anythink.core.api.IATThirdPartyMaterial
+    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd
     public Bitmap getAdLogo() {
         return null;
     }
 
-    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd, com.anythink.nativead.unitgroup.a, com.anythink.core.api.IATThirdPartyMaterial
+    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd, com.anythink.nativead.unitgroup.a
     public View getAdMediaView(Object... objArr) {
         try {
-            if (this.g == null && this.f9124a != null) {
-                this.g = this.f9124a.getExpressAdView();
+            if (this.g == null && this.f6284a != null) {
+                this.g = this.f6284a.getExpressAdView();
             }
             return this.g;
         } catch (Exception e) {
@@ -146,7 +146,7 @@ public class TTATNativeExpressAd extends CustomNativeAd {
         }
     }
 
-    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd, com.anythink.core.api.IATThirdPartyMaterial
+    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd
     public double getVideoProgress() {
         return this.d;
     }
@@ -162,23 +162,23 @@ public class TTATNativeExpressAd extends CustomNativeAd {
             return;
         }
         Activity activity = (Activity) view.getContext();
-        TTNativeExpressAd tTNativeExpressAd = this.f9124a;
+        TTNativeExpressAd tTNativeExpressAd = this.f6284a;
         if (tTNativeExpressAd != null) {
             tTNativeExpressAd.setDislikeCallback(activity, new AnonymousClass3());
         }
     }
 
     public void setAdData(boolean z) {
-        this.f9124a.setCanInterruptVideoPlay(z);
-        int i = this.f9124a.getInteractionType() == 4 ? 1 : 0;
-        if (this.f9124a.getInteractionType() == 3) {
+        this.f6284a.setCanInterruptVideoPlay(z);
+        int i = this.f6284a.getInteractionType() == 4 ? 1 : 0;
+        if (this.f6284a.getInteractionType() == 3) {
             i = 3;
         }
-        if (this.f9124a.getInteractionType() == 2) {
+        if (this.f6284a.getInteractionType() == 2) {
             i = 2;
         }
         setNativeInteractionType(i);
-        this.f9124a.setVideoAdListener(new TTNativeExpressAd.ExpressVideoAdListener() { // from class: com.anythink.network.toutiao.TTATNativeExpressAd.1
+        this.f6284a.setVideoAdListener(new TTNativeExpressAd.ExpressVideoAdListener() { // from class: com.anythink.network.toutiao.TTATNativeExpressAd.1
             @Override // com.bytedance.sdk.openadsdk.TTNativeExpressAd.ExpressVideoAdListener
             public final void onClickRetry() {
             }
@@ -221,21 +221,21 @@ public class TTATNativeExpressAd extends CustomNativeAd {
             public final void onVideoLoad() {
             }
         });
-        this.f9124a.setDownloadListener(new TTAppDownloadListener() { // from class: com.anythink.network.toutiao.TTATNativeExpressAd.2
+        this.f6284a.setDownloadListener(new TTAppDownloadListener() { // from class: com.anythink.network.toutiao.TTATNativeExpressAd.2
             @Override // com.bytedance.sdk.openadsdk.TTAppDownloadListener
             public final void onDownloadActive(long j, long j2, String str, String str2) {
                 if (TTATNativeExpressAd.this.f) {
                     if (TTATNativeExpressAd.this.mDownloadListener == null || !(TTATNativeExpressAd.this.mDownloadListener instanceof CustomAdapterDownloadListener)) {
                         return;
                     }
-                    ((CustomAdapterDownloadListener) TTATNativeExpressAd.this.mDownloadListener).onDownloadUpdate(j, j2, str, str2);
+                    TTATNativeExpressAd.this.mDownloadListener.onDownloadUpdate(j, j2, str, str2);
                     return;
                 }
                 TTATNativeExpressAd.this.f = true;
                 if (TTATNativeExpressAd.this.mDownloadListener == null || !(TTATNativeExpressAd.this.mDownloadListener instanceof CustomAdapterDownloadListener)) {
                     return;
                 }
-                ((CustomAdapterDownloadListener) TTATNativeExpressAd.this.mDownloadListener).onDownloadStart(j, j2, str, str2);
+                TTATNativeExpressAd.this.mDownloadListener.onDownloadStart(j, j2, str, str2);
             }
 
             @Override // com.bytedance.sdk.openadsdk.TTAppDownloadListener
@@ -243,7 +243,7 @@ public class TTATNativeExpressAd extends CustomNativeAd {
                 if (TTATNativeExpressAd.this.mDownloadListener == null || !(TTATNativeExpressAd.this.mDownloadListener instanceof CustomAdapterDownloadListener)) {
                     return;
                 }
-                ((CustomAdapterDownloadListener) TTATNativeExpressAd.this.mDownloadListener).onDownloadFail(j, j2, str, str2);
+                TTATNativeExpressAd.this.mDownloadListener.onDownloadFail(j, j2, str, str2);
             }
 
             @Override // com.bytedance.sdk.openadsdk.TTAppDownloadListener
@@ -251,7 +251,7 @@ public class TTATNativeExpressAd extends CustomNativeAd {
                 if (TTATNativeExpressAd.this.mDownloadListener == null || !(TTATNativeExpressAd.this.mDownloadListener instanceof CustomAdapterDownloadListener)) {
                     return;
                 }
-                ((CustomAdapterDownloadListener) TTATNativeExpressAd.this.mDownloadListener).onDownloadFinish(j, str, str2);
+                TTATNativeExpressAd.this.mDownloadListener.onDownloadFinish(j, str, str2);
             }
 
             @Override // com.bytedance.sdk.openadsdk.TTAppDownloadListener
@@ -259,7 +259,7 @@ public class TTATNativeExpressAd extends CustomNativeAd {
                 if (TTATNativeExpressAd.this.mDownloadListener == null || !(TTATNativeExpressAd.this.mDownloadListener instanceof CustomAdapterDownloadListener)) {
                     return;
                 }
-                ((CustomAdapterDownloadListener) TTATNativeExpressAd.this.mDownloadListener).onDownloadPause(j, j2, str, str2);
+                TTATNativeExpressAd.this.mDownloadListener.onDownloadPause(j, j2, str, str2);
             }
 
             @Override // com.bytedance.sdk.openadsdk.TTAppDownloadListener
@@ -271,10 +271,10 @@ public class TTATNativeExpressAd extends CustomNativeAd {
                 if (TTATNativeExpressAd.this.mDownloadListener == null || !(TTATNativeExpressAd.this.mDownloadListener instanceof CustomAdapterDownloadListener)) {
                     return;
                 }
-                ((CustomAdapterDownloadListener) TTATNativeExpressAd.this.mDownloadListener).onInstalled(str, str2);
+                TTATNativeExpressAd.this.mDownloadListener.onInstalled(str, str2);
             }
         });
-        int imageMode = this.f9124a.getImageMode();
+        int imageMode = this.f6284a.getImageMode();
         if (imageMode != 2 && imageMode != 3 && imageMode != 4) {
             if (imageMode == 5 || imageMode == 15) {
                 this.mAdSourceType = "1";

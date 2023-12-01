@@ -22,13 +22,9 @@ public final class c {
     private static String w = "ofm_tid";
     private static String x = "ofm_firm_info";
     private static String y = "ofm_st_vt";
-
-    /* renamed from: a  reason: collision with root package name */
-    String f6420a = String.valueOf(hashCode());
+    String a = String.valueOf(hashCode());
     public Map<String, Object> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private boolean f6421c;
+    private boolean c;
     private int d;
     private int e;
     private long f;
@@ -100,7 +96,7 @@ public final class c {
         try {
             c cVar = new c();
             JSONObject jSONObject = new JSONObject(str);
-            cVar.f6421c = true;
+            cVar.c = true;
             cVar.d = jSONObject.optInt(v);
             cVar.b = h.c(jSONObject.optString(x));
             cVar.g = 1;
@@ -136,11 +132,11 @@ public final class c {
     }
 
     private String j() {
-        return this.f6420a;
+        return this.a;
     }
 
     private boolean k() {
-        return this.f6421c;
+        return this.c;
     }
 
     public final long a() {

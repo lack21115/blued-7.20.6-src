@@ -2,7 +2,7 @@ package com.ss.android.socialbase.appdownloader.ox;
 
 import android.os.Build;
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
+import com.huawei.openalliance.ad.constant.t;
 
 /* loaded from: source-8457232-dex2jar.jar:com/ss/android/socialbase/appdownloader/ox/mb.class */
 public class mb {
@@ -18,7 +18,7 @@ public class mb {
         }
         sb.append("AppDownloader");
         if (z2) {
-            sb.append(BridgeUtil.SPLIT_MARK);
+            sb.append("/");
             sb.append(Build.VERSION.RELEASE);
         }
         sb.append(" (Linux; U; Android");
@@ -27,7 +27,7 @@ public class mb {
             sb.append(Build.VERSION.RELEASE);
         }
         if (z || z3) {
-            sb.append(";");
+            sb.append(t.aE);
             if (z) {
                 sb.append(" ");
                 sb.append(Build.MODEL);

@@ -13,6 +13,7 @@ import android.text.style.StrikethroughSpan;
 import android.text.style.StyleSpan;
 import android.text.style.TypefaceSpan;
 import android.text.style.UnderlineSpan;
+import com.cdo.oaps.ad.OapsKey;
 import com.opos.exoplayer.core.f.h.c;
 import com.opos.exoplayer.core.i.m;
 import java.util.ArrayList;
@@ -27,11 +28,11 @@ import java.util.regex.Pattern;
 public final class d {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Pattern f25398a = Pattern.compile("^(\\S+)\\s+-->\\s+(\\S+)(.*)?$");
+    public static final Pattern f11710a = Pattern.compile("^(\\S+)\\s+-->\\s+(\\S+)(.*)?$");
     private static final Pattern b = Pattern.compile("(\\S+?):(\\S+)");
 
     /* renamed from: c  reason: collision with root package name */
-    private final StringBuilder f25399c = new StringBuilder();
+    private final StringBuilder f11711c = new StringBuilder();
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8303388-dex2jar.jar:com/opos/exoplayer/core/f/h/d$a.class */
@@ -39,17 +40,17 @@ public final class d {
         private static final String[] e = new String[0];
 
         /* renamed from: a  reason: collision with root package name */
-        public final String f25400a;
+        public final String f11712a;
         public final int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final String f25401c;
+        public final String f11713c;
         public final String[] d;
 
         private a(String str, int i, String str2, String[] strArr) {
             this.b = i;
-            this.f25400a = str;
-            this.f25401c = str2;
+            this.f11712a = str;
+            this.f11713c = str2;
             this.d = strArr;
         }
 
@@ -80,18 +81,18 @@ public final class d {
     public static final class b implements Comparable<b> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final int f25402a;
+        public final int f11714a;
         public final com.opos.exoplayer.core.f.h.b b;
 
         public b(int i, com.opos.exoplayer.core.f.h.b bVar) {
-            this.f25402a = i;
+            this.f11714a = i;
             this.b = bVar;
         }
 
         @Override // java.lang.Comparable
         /* renamed from: a */
         public int compareTo(b bVar) {
-            return this.f25402a - bVar.f25402a;
+            return this.f11714a - bVar.f11714a;
         }
     }
 
@@ -242,7 +243,7 @@ public final class d {
                     aVar.a(b(group2));
                 } else if (BrowserContract.Bookmarks.POSITION.equals(group)) {
                     c(group2, aVar);
-                } else if ("size".equals(group)) {
+                } else if (OapsKey.KEY_SIZE.equals(group)) {
                     aVar.c(f.b(group2));
                 } else {
                     com.opos.cmn.an.f.a.c("WebvttCueParser", "Unknown cue setting " + group + ":" + group2);
@@ -328,7 +329,7 @@ public final class d {
                                 if (!stack.isEmpty()) {
                                     a aVar2 = (a) stack.pop();
                                     a(str, aVar2, spannableStringBuilder, list, arrayList);
-                                    if (aVar2.f25400a.equals(d)) {
+                                    if (aVar2.f11712a.equals(d)) {
                                         i2 = a2;
                                         break;
                                     }
@@ -365,7 +366,7 @@ public final class d {
                 return;
             }
             com.opos.exoplayer.core.f.h.b bVar = list.get(i2);
-            int a2 = bVar.a(str, aVar.f25400a, aVar.d, aVar.f25401c);
+            int a2 = bVar.a(str, aVar.f11712a, aVar.d, aVar.f11713c);
             if (a2 > 0) {
                 list2.add(new b(a2, bVar));
             }
@@ -539,15 +540,15 @@ public final class d {
         if (z == null) {
             return false;
         }
-        Matcher matcher = f25398a.matcher(z);
+        Matcher matcher = f11710a.matcher(z);
         if (matcher.matches()) {
-            return a(null, matcher, mVar, aVar, this.f25399c, list);
+            return a(null, matcher, mVar, aVar, this.f11711c, list);
         }
         String z2 = mVar.z();
         if (z2 != null) {
-            Matcher matcher2 = f25398a.matcher(z2);
+            Matcher matcher2 = f11710a.matcher(z2);
             if (matcher2.matches()) {
-                return a(z.trim(), matcher2, mVar, aVar, this.f25399c, list);
+                return a(z.trim(), matcher2, mVar, aVar, this.f11711c, list);
             }
             return false;
         }

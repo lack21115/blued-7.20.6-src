@@ -29,18 +29,16 @@ public class ATNativeImageView extends ImageView {
         super(context, attributeSet, i);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void dispatchDraw(Canvas canvas) {
+    protected void dispatchDraw(Canvas canvas) {
         try {
             super.dispatchDraw(canvas);
         } catch (Throwable th) {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.ImageView, android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         try {
             super.onDraw(canvas);
         } catch (Throwable th) {
@@ -64,12 +62,10 @@ public class ATNativeImageView extends ImageView {
         this.mImageUrl = str;
         final WeakReference weakReference = new WeakReference(this);
         b.a(getContext()).a(new e(2, str), i, i2, new b.a() { // from class: com.anythink.nativead.api.ATNativeImageView.1
-            @Override // com.anythink.core.common.res.b.a
             public final void onFail(String str2, String str3) {
                 Log.e(ATNativeImageView.TAG, "load: image load fail:".concat(String.valueOf(str3)));
             }
 
-            @Override // com.anythink.core.common.res.b.a
             public final void onSuccess(String str2, Bitmap bitmap) {
                 ATNativeImageView aTNativeImageView = (ATNativeImageView) weakReference.get();
                 if (!TextUtils.equals(ATNativeImageView.this.mImageUrl, str2) || aTNativeImageView == null) {

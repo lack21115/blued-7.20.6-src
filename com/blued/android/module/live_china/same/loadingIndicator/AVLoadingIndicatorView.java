@@ -11,13 +11,9 @@ import com.blued.android.module.live_china.same.loadingIndicator.BaseIndicatorCo
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/same/loadingIndicator/AVLoadingIndicatorView.class */
 public class AVLoadingIndicatorView extends View {
-
-    /* renamed from: a  reason: collision with root package name */
-    int f14105a;
+    int a;
     int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    Paint f14106c;
+    Paint c;
     BaseIndicatorController d;
     private boolean e;
 
@@ -64,19 +60,19 @@ public class AVLoadingIndicatorView extends View {
 
     private void a(AttributeSet attributeSet, int i) {
         TypedArray obtainStyledAttributes = getContext().obtainStyledAttributes(attributeSet, R.styleable.AVLoadingIndicatorView);
-        this.f14105a = obtainStyledAttributes.getInt(R.styleable.AVLoadingIndicatorView_indicator, 0);
+        this.a = obtainStyledAttributes.getInt(R.styleable.AVLoadingIndicatorView_indicator, 0);
         this.b = obtainStyledAttributes.getColor(R.styleable.AVLoadingIndicatorView_indicator_color, -1);
         obtainStyledAttributes.recycle();
         Paint paint = new Paint();
-        this.f14106c = paint;
+        this.c = paint;
         paint.setColor(this.b);
-        this.f14106c.setStyle(Paint.Style.FILL);
-        this.f14106c.setAntiAlias(true);
+        this.c.setStyle(Paint.Style.FILL);
+        this.c.setAntiAlias(true);
         b();
     }
 
     private void b() {
-        switch (this.f14105a) {
+        switch (this.a) {
             case 0:
             case 1:
             case 2:
@@ -125,7 +121,7 @@ public class AVLoadingIndicatorView extends View {
     }
 
     void a(Canvas canvas) {
-        this.d.a(canvas, this.f14106c);
+        this.d.a(canvas, this.c);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

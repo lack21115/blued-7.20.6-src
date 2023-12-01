@@ -18,7 +18,6 @@ import com.google.protobuf.UnknownFieldSet;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
-import java.util.List;
 
 /* loaded from: source-6737240-dex2jar.jar:cn/irisgw/live/LeftBottomCommonMsg.class */
 public final class LeftBottomCommonMsg extends GeneratedMessageV3 implements LeftBottomCommonMsgOrBuilder {
@@ -44,8 +43,8 @@ public final class LeftBottomCommonMsg extends GeneratedMessageV3 implements Lef
     private byte memoizedIsInitialized;
     private static final LeftBottomCommonMsg DEFAULT_INSTANCE = new LeftBottomCommonMsg();
     private static final Parser<LeftBottomCommonMsg> PARSER = new AbstractParser<LeftBottomCommonMsg>() { // from class: cn.irisgw.live.LeftBottomCommonMsg.1
-        @Override // com.google.protobuf.Parser
-        public LeftBottomCommonMsg parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        /* renamed from: parsePartialFrom */
+        public LeftBottomCommonMsg m3852parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             return new LeftBottomCommonMsg(codedInputStream, extensionRegistryLite);
         }
     };
@@ -108,14 +107,14 @@ public final class LeftBottomCommonMsg extends GeneratedMessageV3 implements Lef
 
         public Builder addAllChatFrameBorderColor(Iterable<String> iterable) {
             ensureChatFrameBorderColorIsMutable();
-            AbstractMessageLite.Builder.addAll((Iterable) iterable, (List) this.chatFrameBorderColor_);
+            AbstractMessageLite.Builder.addAll(iterable, this.chatFrameBorderColor_);
             onChanged();
             return this;
         }
 
         public Builder addAllChatFrameFrameColor(Iterable<String> iterable) {
             ensureChatFrameFrameColorIsMutable();
-            AbstractMessageLite.Builder.addAll((Iterable) iterable, (List) this.chatFrameFrameColor_);
+            AbstractMessageLite.Builder.addAll(iterable, this.chatFrameFrameColor_);
             onChanged();
             return this;
         }
@@ -123,7 +122,7 @@ public final class LeftBottomCommonMsg extends GeneratedMessageV3 implements Lef
         public Builder addChatFrameBorderColor(String str) {
             if (str != null) {
                 ensureChatFrameBorderColorIsMutable();
-                this.chatFrameBorderColor_.add((LazyStringList) str);
+                this.chatFrameBorderColor_.add(str);
                 onChanged();
                 return this;
             }
@@ -144,7 +143,7 @@ public final class LeftBottomCommonMsg extends GeneratedMessageV3 implements Lef
         public Builder addChatFrameFrameColor(String str) {
             if (str != null) {
                 ensureChatFrameFrameColorIsMutable();
-                this.chatFrameFrameColor_.add((LazyStringList) str);
+                this.chatFrameFrameColor_.add(str);
                 onChanged();
                 return this;
             }
@@ -162,22 +161,22 @@ public final class LeftBottomCommonMsg extends GeneratedMessageV3 implements Lef
             throw null;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: addRepeatedField */
+        public Builder m3854addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.addRepeatedField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public LeftBottomCommonMsg build() {
-            LeftBottomCommonMsg buildPartial = buildPartial();
-            if (buildPartial.isInitialized()) {
-                return buildPartial;
+        /* renamed from: build */
+        public LeftBottomCommonMsg m3856build() {
+            LeftBottomCommonMsg m3858buildPartial = m3858buildPartial();
+            if (m3858buildPartial.isInitialized()) {
+                return m3858buildPartial;
             }
-            throw newUninitializedMessageException((Message) buildPartial);
+            throw newUninitializedMessageException(m3858buildPartial);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public LeftBottomCommonMsg buildPartial() {
+        /* renamed from: buildPartial */
+        public LeftBottomCommonMsg m3858buildPartial() {
             LeftBottomCommonMsg leftBottomCommonMsg = new LeftBottomCommonMsg(this);
             leftBottomCommonMsg.linkType_ = this.linkType_;
             leftBottomCommonMsg.link_ = this.link_;
@@ -200,8 +199,8 @@ public final class LeftBottomCommonMsg extends GeneratedMessageV3 implements Lef
             return leftBottomCommonMsg;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public Builder clear() {
+        /* renamed from: clear */
+        public Builder m3862clear() {
             super.clear();
             this.linkType_ = 0;
             this.link_ = "";
@@ -261,8 +260,8 @@ public final class LeftBottomCommonMsg extends GeneratedMessageV3 implements Lef
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+        /* renamed from: clearField */
+        public Builder m3864clearField(Descriptors.FieldDescriptor fieldDescriptor) {
             return (Builder) super.clearField(fieldDescriptor);
         }
 
@@ -278,15 +277,14 @@ public final class LeftBottomCommonMsg extends GeneratedMessageV3 implements Lef
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+        /* renamed from: clearOneof */
+        public Builder m3867clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
             return (Builder) super.clearOneof(oneofDescriptor);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder m3873clone() {
+            return (Builder) super.clone();
         }
 
         @Override // cn.irisgw.live.LeftBottomCommonMsgOrBuilder
@@ -302,7 +300,7 @@ public final class LeftBottomCommonMsg extends GeneratedMessageV3 implements Lef
 
         @Override // cn.irisgw.live.LeftBottomCommonMsgOrBuilder
         public String getChatFrameBorderColor(int i) {
-            return this.chatFrameBorderColor_.get(i);
+            return (String) this.chatFrameBorderColor_.get(i);
         }
 
         @Override // cn.irisgw.live.LeftBottomCommonMsgOrBuilder
@@ -316,7 +314,8 @@ public final class LeftBottomCommonMsg extends GeneratedMessageV3 implements Lef
         }
 
         @Override // cn.irisgw.live.LeftBottomCommonMsgOrBuilder
-        public ProtocolStringList getChatFrameBorderColorList() {
+        /* renamed from: getChatFrameBorderColorList */
+        public ProtocolStringList mo3843getChatFrameBorderColorList() {
             return this.chatFrameBorderColor_.getUnmodifiableView();
         }
 
@@ -338,7 +337,7 @@ public final class LeftBottomCommonMsg extends GeneratedMessageV3 implements Lef
 
         @Override // cn.irisgw.live.LeftBottomCommonMsgOrBuilder
         public String getChatFrameFrameColor(int i) {
-            return this.chatFrameFrameColor_.get(i);
+            return (String) this.chatFrameFrameColor_.get(i);
         }
 
         @Override // cn.irisgw.live.LeftBottomCommonMsgOrBuilder
@@ -352,7 +351,8 @@ public final class LeftBottomCommonMsg extends GeneratedMessageV3 implements Lef
         }
 
         @Override // cn.irisgw.live.LeftBottomCommonMsgOrBuilder
-        public ProtocolStringList getChatFrameFrameColorList() {
+        /* renamed from: getChatFrameFrameColorList */
+        public ProtocolStringList mo3844getChatFrameFrameColorList() {
             return this.chatFrameFrameColor_.getUnmodifiableView();
         }
 
@@ -405,12 +405,11 @@ public final class LeftBottomCommonMsg extends GeneratedMessageV3 implements Lef
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public LeftBottomCommonMsg getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public LeftBottomCommonMsg m3875getDefaultInstanceForType() {
             return LeftBottomCommonMsg.getDefaultInstance();
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
         public Descriptors.Descriptor getDescriptorForType() {
             return LiveConstants.internal_static_cn_irisgw_live_LeftBottomCommonMsg_descriptor;
         }
@@ -442,12 +441,10 @@ public final class LeftBottomCommonMsg extends GeneratedMessageV3 implements Lef
             return this.linkType_;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_LeftBottomCommonMsg_fieldAccessorTable.ensureFieldAccessorsInitialized(LeftBottomCommonMsg.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             return true;
         }
@@ -501,18 +498,18 @@ public final class LeftBottomCommonMsg extends GeneratedMessageV3 implements Lef
                 this.color_ = leftBottomCommonMsg.color_;
                 onChanged();
             }
-            mergeUnknownFields(leftBottomCommonMsg.unknownFields);
+            m3884mergeUnknownFields(leftBottomCommonMsg.unknownFields);
             onChanged();
             return this;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+        /* renamed from: mergeFrom */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
         */
-        public cn.irisgw.live.LeftBottomCommonMsg.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+        public cn.irisgw.live.LeftBottomCommonMsg.Builder m3881mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
             /*
                 r4 = this;
                 r0 = 0
@@ -557,11 +554,11 @@ public final class LeftBottomCommonMsg extends GeneratedMessageV3 implements Lef
                 r0 = r6
                 throw r0
             */
-            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.LeftBottomCommonMsg.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.LeftBottomCommonMsg$Builder");
+            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.LeftBottomCommonMsg.Builder.m3881mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.LeftBottomCommonMsg$Builder");
         }
 
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder mergeFrom(Message message) {
+        /* renamed from: mergeFrom */
+        public Builder m3880mergeFrom(Message message) {
             if (message instanceof LeftBottomCommonMsg) {
                 return mergeFrom((LeftBottomCommonMsg) message);
             }
@@ -569,8 +566,8 @@ public final class LeftBottomCommonMsg extends GeneratedMessageV3 implements Lef
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: mergeUnknownFields */
+        public final Builder m3884mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.mergeUnknownFields(unknownFieldSet);
         }
 
@@ -586,7 +583,7 @@ public final class LeftBottomCommonMsg extends GeneratedMessageV3 implements Lef
         public Builder setChatFrameBorderColor(int i, String str) {
             if (str != null) {
                 ensureChatFrameBorderColorIsMutable();
-                this.chatFrameBorderColor_.set(i, (int) str);
+                this.chatFrameBorderColor_.set(i, str);
                 onChanged();
                 return this;
             }
@@ -612,7 +609,7 @@ public final class LeftBottomCommonMsg extends GeneratedMessageV3 implements Lef
         public Builder setChatFrameFrameColor(int i, String str) {
             if (str != null) {
                 ensureChatFrameFrameColorIsMutable();
-                this.chatFrameFrameColor_.set(i, (int) str);
+                this.chatFrameFrameColor_.set(i, str);
                 onChanged();
                 return this;
             }
@@ -663,8 +660,8 @@ public final class LeftBottomCommonMsg extends GeneratedMessageV3 implements Lef
             throw null;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: setField */
+        public Builder m3886setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.setField(fieldDescriptor, obj);
         }
 
@@ -693,13 +690,13 @@ public final class LeftBottomCommonMsg extends GeneratedMessageV3 implements Lef
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+        /* renamed from: setRepeatedField */
+        public Builder m3888setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
             return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: setUnknownFields */
+        public final Builder m3890setUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.setUnknownFields(unknownFieldSet);
         }
     }
@@ -743,7 +740,7 @@ public final class LeftBottomCommonMsg extends GeneratedMessageV3 implements Lef
                                 this.chatFrameFrameColor_ = new LazyStringArrayList();
                                 z4 = z2 | true;
                             }
-                            this.chatFrameFrameColor_.add((LazyStringList) readStringRequireUtf8);
+                            this.chatFrameFrameColor_.add(readStringRequireUtf8);
                             z2 = z4;
                         } else if (readTag == 50) {
                             String readStringRequireUtf82 = codedInputStream.readStringRequireUtf8();
@@ -752,7 +749,7 @@ public final class LeftBottomCommonMsg extends GeneratedMessageV3 implements Lef
                                 this.chatFrameBorderColor_ = new LazyStringArrayList();
                                 z5 = z2 | true;
                             }
-                            this.chatFrameBorderColor_.add((LazyStringList) readStringRequireUtf82);
+                            this.chatFrameBorderColor_.add(readStringRequireUtf82);
                             z2 = z5;
                         } else if (readTag == 58) {
                             this.chatFrame_ = codedInputStream.readStringRequireUtf8();
@@ -764,10 +761,10 @@ public final class LeftBottomCommonMsg extends GeneratedMessageV3 implements Lef
                         }
                     }
                     z = true;
-                } catch (InvalidProtocolBufferException e) {
-                    throw e.setUnfinishedMessage(this);
-                } catch (IOException e2) {
-                    throw new InvalidProtocolBufferException(e2).setUnfinishedMessage(this);
+                } catch (IOException e) {
+                    throw new InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+                } catch (InvalidProtocolBufferException e2) {
+                    throw e2.setUnfinishedMessage(this);
                 }
             } catch (Throwable th) {
                 if (z3 & true) {
@@ -805,73 +802,72 @@ public final class LeftBottomCommonMsg extends GeneratedMessageV3 implements Lef
     }
 
     public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
+        return DEFAULT_INSTANCE.m3851toBuilder();
     }
 
     public static Builder newBuilder(LeftBottomCommonMsg leftBottomCommonMsg) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(leftBottomCommonMsg);
+        return DEFAULT_INSTANCE.m3851toBuilder().mergeFrom(leftBottomCommonMsg);
     }
 
     public static LeftBottomCommonMsg parseDelimitedFrom(InputStream inputStream) throws IOException {
-        return (LeftBottomCommonMsg) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
     }
 
     public static LeftBottomCommonMsg parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (LeftBottomCommonMsg) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static LeftBottomCommonMsg parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString);
+        return (LeftBottomCommonMsg) PARSER.parseFrom(byteString);
     }
 
     public static LeftBottomCommonMsg parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString, extensionRegistryLite);
+        return (LeftBottomCommonMsg) PARSER.parseFrom(byteString, extensionRegistryLite);
     }
 
     public static LeftBottomCommonMsg parseFrom(CodedInputStream codedInputStream) throws IOException {
-        return (LeftBottomCommonMsg) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
     }
 
     public static LeftBottomCommonMsg parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (LeftBottomCommonMsg) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
     }
 
     public static LeftBottomCommonMsg parseFrom(InputStream inputStream) throws IOException {
-        return (LeftBottomCommonMsg) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
     }
 
     public static LeftBottomCommonMsg parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (LeftBottomCommonMsg) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static LeftBottomCommonMsg parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer);
+        return (LeftBottomCommonMsg) PARSER.parseFrom(byteBuffer);
     }
 
     public static LeftBottomCommonMsg parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+        return (LeftBottomCommonMsg) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
     }
 
     public static LeftBottomCommonMsg parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr);
+        return (LeftBottomCommonMsg) PARSER.parseFrom(bArr);
     }
 
     public static LeftBottomCommonMsg parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr, extensionRegistryLite);
+        return (LeftBottomCommonMsg) PARSER.parseFrom(bArr, extensionRegistryLite);
     }
 
     public static Parser<LeftBottomCommonMsg> parser() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
         }
         if (obj instanceof LeftBottomCommonMsg) {
             LeftBottomCommonMsg leftBottomCommonMsg = (LeftBottomCommonMsg) obj;
-            return getLinkType() == leftBottomCommonMsg.getLinkType() && getLink().equals(leftBottomCommonMsg.getLink()) && getChatFrameColorType() == leftBottomCommonMsg.getChatFrameColorType() && getChatFrameGradientType() == leftBottomCommonMsg.getChatFrameGradientType() && getChatFrameFrameColorList().equals(leftBottomCommonMsg.getChatFrameFrameColorList()) && getChatFrameBorderColorList().equals(leftBottomCommonMsg.getChatFrameBorderColorList()) && getChatFrame().equals(leftBottomCommonMsg.getChatFrame()) && getChatFrameIcon().equals(leftBottomCommonMsg.getChatFrameIcon()) && getColor().equals(leftBottomCommonMsg.getColor()) && this.unknownFields.equals(leftBottomCommonMsg.unknownFields);
+            return getLinkType() == leftBottomCommonMsg.getLinkType() && getLink().equals(leftBottomCommonMsg.getLink()) && getChatFrameColorType() == leftBottomCommonMsg.getChatFrameColorType() && getChatFrameGradientType() == leftBottomCommonMsg.getChatFrameGradientType() && mo3844getChatFrameFrameColorList().equals(leftBottomCommonMsg.mo3844getChatFrameFrameColorList()) && mo3843getChatFrameBorderColorList().equals(leftBottomCommonMsg.mo3843getChatFrameBorderColorList()) && getChatFrame().equals(leftBottomCommonMsg.getChatFrame()) && getChatFrameIcon().equals(leftBottomCommonMsg.getChatFrameIcon()) && getColor().equals(leftBottomCommonMsg.getColor()) && this.unknownFields.equals(leftBottomCommonMsg.unknownFields);
         }
         return super.equals(obj);
     }
@@ -889,7 +885,7 @@ public final class LeftBottomCommonMsg extends GeneratedMessageV3 implements Lef
 
     @Override // cn.irisgw.live.LeftBottomCommonMsgOrBuilder
     public String getChatFrameBorderColor(int i) {
-        return this.chatFrameBorderColor_.get(i);
+        return (String) this.chatFrameBorderColor_.get(i);
     }
 
     @Override // cn.irisgw.live.LeftBottomCommonMsgOrBuilder
@@ -903,7 +899,8 @@ public final class LeftBottomCommonMsg extends GeneratedMessageV3 implements Lef
     }
 
     @Override // cn.irisgw.live.LeftBottomCommonMsgOrBuilder
-    public ProtocolStringList getChatFrameBorderColorList() {
+    /* renamed from: getChatFrameBorderColorList */
+    public ProtocolStringList mo3843getChatFrameBorderColorList() {
         return this.chatFrameBorderColor_;
     }
 
@@ -925,7 +922,7 @@ public final class LeftBottomCommonMsg extends GeneratedMessageV3 implements Lef
 
     @Override // cn.irisgw.live.LeftBottomCommonMsgOrBuilder
     public String getChatFrameFrameColor(int i) {
-        return this.chatFrameFrameColor_.get(i);
+        return (String) this.chatFrameFrameColor_.get(i);
     }
 
     @Override // cn.irisgw.live.LeftBottomCommonMsgOrBuilder
@@ -939,7 +936,8 @@ public final class LeftBottomCommonMsg extends GeneratedMessageV3 implements Lef
     }
 
     @Override // cn.irisgw.live.LeftBottomCommonMsgOrBuilder
-    public ProtocolStringList getChatFrameFrameColorList() {
+    /* renamed from: getChatFrameFrameColorList */
+    public ProtocolStringList mo3844getChatFrameFrameColorList() {
         return this.chatFrameFrameColor_;
     }
 
@@ -992,8 +990,8 @@ public final class LeftBottomCommonMsg extends GeneratedMessageV3 implements Lef
         return (ByteString) obj;
     }
 
-    @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-    public LeftBottomCommonMsg getDefaultInstanceForType() {
+    /* renamed from: getDefaultInstanceForType */
+    public LeftBottomCommonMsg m3846getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
     }
 
@@ -1024,12 +1022,10 @@ public final class LeftBottomCommonMsg extends GeneratedMessageV3 implements Lef
         return this.linkType_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
     public Parser<LeftBottomCommonMsg> getParserForType() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public int getSerializedSize() {
         int i = this.memoizedSize;
         if (i != -1) {
@@ -1055,7 +1051,7 @@ public final class LeftBottomCommonMsg extends GeneratedMessageV3 implements Lef
         for (int i9 = 0; i9 < this.chatFrameFrameColor_.size(); i9++) {
             i8 += computeStringSizeNoTag(this.chatFrameFrameColor_.getRaw(i9));
         }
-        int size = getChatFrameFrameColorList().size();
+        int size = mo3844getChatFrameFrameColorList().size();
         int i10 = 0;
         int i11 = 0;
         while (true) {
@@ -1066,7 +1062,7 @@ public final class LeftBottomCommonMsg extends GeneratedMessageV3 implements Lef
             i10 += computeStringSizeNoTag(this.chatFrameBorderColor_.getRaw(i12));
             i11 = i12 + 1;
         }
-        int size2 = i7 + i8 + (size * 1) + i10 + (getChatFrameBorderColorList().size() * 1);
+        int size2 = i7 + i8 + (size * 1) + i10 + (mo3843getChatFrameBorderColorList().size() * 1);
         int i13 = size2;
         if (!getChatFrameBytes().isEmpty()) {
             i13 = size2 + GeneratedMessageV3.computeStringSize(7, this.chatFrame_);
@@ -1084,12 +1080,10 @@ public final class LeftBottomCommonMsg extends GeneratedMessageV3 implements Lef
         return serializedSize;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
     public final UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public int hashCode() {
         if (this.memoizedHashCode != 0) {
             return this.memoizedHashCode;
@@ -1097,23 +1091,21 @@ public final class LeftBottomCommonMsg extends GeneratedMessageV3 implements Lef
         int hashCode = ((((((((((((((((779 + getDescriptor().hashCode()) * 37) + 1) * 53) + getLinkType()) * 37) + 2) * 53) + getLink().hashCode()) * 37) + 3) * 53) + getChatFrameColorType()) * 37) + 4) * 53) + getChatFrameGradientType();
         int i = hashCode;
         if (getChatFrameFrameColorCount() > 0) {
-            i = (((hashCode * 37) + 5) * 53) + getChatFrameFrameColorList().hashCode();
+            i = (((hashCode * 37) + 5) * 53) + mo3844getChatFrameFrameColorList().hashCode();
         }
         int i2 = i;
         if (getChatFrameBorderColorCount() > 0) {
-            i2 = (((i * 37) + 6) * 53) + getChatFrameBorderColorList().hashCode();
+            i2 = (((i * 37) + 6) * 53) + mo3843getChatFrameBorderColorList().hashCode();
         }
         int hashCode2 = (((((((((((((i2 * 37) + 7) * 53) + getChatFrame().hashCode()) * 37) + 8) * 53) + getChatFrameIcon().hashCode()) * 37) + 9) * 53) + getColor().hashCode()) * 29) + this.unknownFields.hashCode();
         this.memoizedHashCode = hashCode2;
         return hashCode2;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
         return LiveConstants.internal_static_cn_irisgw_live_LeftBottomCommonMsg_fieldAccessorTable.ensureFieldAccessorsInitialized(LeftBottomCommonMsg.class, Builder.class);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
     public final boolean isInitialized() {
         byte b = this.memoizedIsInitialized;
         if (b == 1) {
@@ -1126,28 +1118,26 @@ public final class LeftBottomCommonMsg extends GeneratedMessageV3 implements Lef
         return true;
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder newBuilderForType() {
+    /* renamed from: newBuilderForType */
+    public Builder m3849newBuilderForType() {
         return newBuilder();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.protobuf.GeneratedMessageV3
-    public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+    /* renamed from: newBuilderForType */
+    public Builder m3848newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
         return new Builder(builderParent);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
         return new LeftBottomCommonMsg();
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder toBuilder() {
+    /* renamed from: toBuilder */
+    public Builder m3851toBuilder() {
         return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
         int i;
         int i2 = this.linkType_;

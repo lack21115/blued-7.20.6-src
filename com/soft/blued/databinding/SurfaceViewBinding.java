@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class SurfaceViewBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final FrameLayout f29593a;
+    private final FrameLayout f15903a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f29593a;
+        return this.f15903a;
     }
 }

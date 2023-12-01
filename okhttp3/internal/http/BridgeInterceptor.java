@@ -1,7 +1,6 @@
 package okhttp3.internal.http;
 
-import com.anythink.expressad.foundation.g.f.g.c;
-import com.ss.android.socialbase.downloader.utils.DownloadUtils;
+import com.efs.sdk.base.Constants;
 import java.io.IOException;
 import java.util.List;
 import okhttp3.Cookie;
@@ -18,12 +17,10 @@ import okio.Okio;
 
 /* loaded from: source-3503164-dex2jar.jar:okhttp3/internal/http/BridgeInterceptor.class */
 public final class BridgeInterceptor implements Interceptor {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final CookieJar f43882a;
+    private final CookieJar a;
 
     public BridgeInterceptor(CookieJar cookieJar) {
-        this.f43882a = cookieJar;
+        this.a = cookieJar;
     }
 
     private String a(List<Cookie> list) {
@@ -61,7 +58,7 @@ public final class BridgeInterceptor implements Interceptor {
                 newBuilder.header("Content-Length", Long.toString(contentLength));
                 newBuilder.removeHeader("Transfer-Encoding");
             } else {
-                newBuilder.header("Transfer-Encoding", DownloadUtils.VALUE_CHUNKED);
+                newBuilder.header("Transfer-Encoding", "chunked");
                 newBuilder.removeHeader("Content-Length");
             }
         }
@@ -69,17 +66,17 @@ public final class BridgeInterceptor implements Interceptor {
             newBuilder.header("Host", Util.a(request.url(), false));
         }
         if (request.header("Connection") == null) {
-            newBuilder.header("Connection", c.f7906c);
+            newBuilder.header("Connection", "Keep-Alive");
         }
         boolean z = false;
         if (request.header("Accept-Encoding") == null) {
             z = false;
             if (request.header("Range") == null) {
                 z = true;
-                newBuilder.header("Accept-Encoding", "gzip");
+                newBuilder.header("Accept-Encoding", Constants.CP_GZIP);
             }
         }
-        List<Cookie> loadForRequest = this.f43882a.loadForRequest(request.url());
+        List<Cookie> loadForRequest = this.a.loadForRequest(request.url());
         if (!loadForRequest.isEmpty()) {
             newBuilder.header("Cookie", a(loadForRequest));
         }
@@ -87,9 +84,9 @@ public final class BridgeInterceptor implements Interceptor {
             newBuilder.header("User-Agent", Version.a());
         }
         Response proceed = chain.proceed(newBuilder.build());
-        HttpHeaders.a(this.f43882a, request.url(), proceed.headers());
+        HttpHeaders.a(this.a, request.url(), proceed.headers());
         Response.Builder request2 = proceed.newBuilder().request(request);
-        if (z && "gzip".equalsIgnoreCase(proceed.header("Content-Encoding")) && HttpHeaders.d(proceed)) {
+        if (z && Constants.CP_GZIP.equalsIgnoreCase(proceed.header("Content-Encoding")) && HttpHeaders.d(proceed)) {
             GzipSource gzipSource = new GzipSource(proceed.body().source());
             request2.headers(proceed.headers().newBuilder().removeAll("Content-Encoding").removeAll("Content-Length").build());
             request2.body(new RealResponseBody(proceed.header("Content-Type"), -1L, Okio.buffer(gzipSource)));

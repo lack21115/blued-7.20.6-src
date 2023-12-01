@@ -1,5 +1,6 @@
 package com.tencent.qcloud.core.util;
 
+import com.anythink.expressad.exoplayer.b;
 import java.io.UnsupportedEncodingException;
 
 /* loaded from: source-8829756-dex2jar.jar:com/tencent/qcloud/core/util/Base64Utils.class */
@@ -56,7 +57,7 @@ public class Base64Utils {
                     return bArr;
                 }
                 byte[] bArr2 = new byte[i2];
-                System.arraycopy((Object) bArr, 0, (Object) bArr2, 0, i2);
+                System.arraycopy(bArr, 0, bArr2, 0, i2);
                 return bArr2;
             }
             char charAt2 = str.charAt(i8);
@@ -164,7 +165,7 @@ public class Base64Utils {
             bArr3[i11 + 1] = 61;
         }
         try {
-            return new String(bArr3, "US-ASCII");
+            return new String(bArr3, b.i);
         } catch (UnsupportedEncodingException e) {
             throw new AssertionError(e);
         }

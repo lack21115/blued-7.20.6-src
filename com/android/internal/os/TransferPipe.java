@@ -32,7 +32,7 @@ public final class TransferPipe implements Runnable {
     }
 
     static void go(Caller caller, IInterface iInterface, FileDescriptor fileDescriptor, String str, String[] strArr) throws IOException, RemoteException {
-        go(caller, iInterface, fileDescriptor, str, strArr, 5000L);
+        go(caller, iInterface, fileDescriptor, str, strArr, DEFAULT_TIMEOUT);
     }
 
     static void go(Caller caller, IInterface iInterface, FileDescriptor fileDescriptor, String str, String[] strArr, long j) throws IOException, RemoteException {
@@ -54,7 +54,7 @@ public final class TransferPipe implements Runnable {
     }
 
     static void goDump(IBinder iBinder, FileDescriptor fileDescriptor, String[] strArr) throws IOException, RemoteException {
-        goDump(iBinder, fileDescriptor, strArr, 5000L);
+        goDump(iBinder, fileDescriptor, strArr, DEFAULT_TIMEOUT);
     }
 
     static void goDump(IBinder iBinder, FileDescriptor fileDescriptor, String[] strArr, long j) throws IOException, RemoteException {
@@ -94,7 +94,7 @@ public final class TransferPipe implements Runnable {
     }
 
     public void go(FileDescriptor fileDescriptor) throws IOException {
-        go(fileDescriptor, 5000L);
+        go(fileDescriptor, DEFAULT_TIMEOUT);
     }
 
     public void go(FileDescriptor fileDescriptor, long j) throws IOException {

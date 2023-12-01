@@ -12,13 +12,13 @@ import com.soft.blued.ui.user.model.VIPPrivilegeModel;
 public class VIPBuyTipsAdapter extends BaseQuickAdapter<VIPPrivilegeModel, BaseViewHolder> {
 
     /* renamed from: a  reason: collision with root package name */
-    private IRequestHost f33788a;
+    private IRequestHost f20097a;
 
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(BaseViewHolder baseViewHolder, VIPPrivilegeModel vIPPrivilegeModel) {
         baseViewHolder.setText(R.id.vip_buy_tip_name, vIPPrivilegeModel.name);
-        ImageLoader.a(this.f33788a, vIPPrivilegeModel.icon).b(2131237310).c().a((ImageView) baseViewHolder.getView(R.id.vip_buy_tip_view));
+        ImageLoader.a(this.f20097a, vIPPrivilegeModel.icon).b(2131237310).c().a((ImageView) baseViewHolder.getView(R.id.vip_buy_tip_view));
     }
 }

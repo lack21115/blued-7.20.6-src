@@ -9,8 +9,8 @@ import libcore.net.UriCodec;
 public class URLEncoder {
     static UriCodec ENCODER = new UriCodec() { // from class: java.net.URLEncoder.1
         @Override // libcore.net.UriCodec
-        protected boolean isRetained(char c2) {
-            return " .-*_".indexOf(c2) != -1;
+        protected boolean isRetained(char c) {
+            return " .-*_".indexOf(c) != -1;
         }
     };
 

@@ -10,18 +10,18 @@ import android.view.Surface;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    public int f1443a;
+    public int f1395a;
     public int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public int f1444c;
+    public int f1396c;
     public MediaProjection d;
     public VirtualDisplay e;
 
     public b(int i, int i2, int i3, MediaProjection mediaProjection) {
-        this.f1443a = i;
+        this.f1395a = i;
         this.b = i2;
-        this.f1444c = i3;
+        this.f1396c = i3;
         this.d = mediaProjection;
     }
 
@@ -38,7 +38,7 @@ public final class b {
     }
 
     public void a(Surface surface) {
-        this.e = this.d.createVirtualDisplay("ScreenRecorder-display", this.f1443a, this.b, this.f1444c, 16, surface, (VirtualDisplay.Callback) null, (Handler) null);
+        this.e = this.d.createVirtualDisplay("ScreenRecorder-display", this.f1395a, this.b, this.f1396c, 16, surface, (VirtualDisplay.Callback) null, (Handler) null);
         e eVar = e.g;
         eVar.c("ScreenRecorder", "created virtual display: " + this.e);
     }

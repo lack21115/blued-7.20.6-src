@@ -1,6 +1,7 @@
 package com.amap.api.col.p0003sl;
 
 import android.content.Context;
+import com.alipay.sdk.util.l;
 import com.amap.api.col.p0003sl.hp;
 import com.amap.api.maps.AMapException;
 import com.amap.api.maps.offlinemap.OfflineMapProvince;
@@ -54,10 +55,10 @@ public final class be extends bv<String, List<OfflineMapProvince>> {
             return null;
         }
         JSONObject optJSONObject = bVar.f.optJSONObject("015");
-        if (!optJSONObject.has("result")) {
+        if (!optJSONObject.has(l.c)) {
             JSONObject jSONObject = new JSONObject();
             try {
-                jSONObject.put("result", new JSONObject().put("offlinemap_with_province_vfour", optJSONObject));
+                jSONObject.put(l.c, new JSONObject().put("offlinemap_with_province_vfour", optJSONObject));
                 return jSONObject;
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -73,7 +74,7 @@ public final class be extends bv<String, List<OfflineMapProvince>> {
     @Override // com.amap.api.col.p0003sl.bv
     protected final Map<String, String> b() {
         Hashtable hashtable = new Hashtable(16);
-        hashtable.put("mapver", this.f4797a);
+        hashtable.put("mapver", this.a);
         return hashtable;
     }
 }

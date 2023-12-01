@@ -21,38 +21,38 @@ public interface IObjectWrapper extends IInterface {
     public static abstract class Stub extends Binder implements IObjectWrapper {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final String f22456a = "com.huawei.hms.ads.dynamic.IObjectWrapper";
+        private static final String f8848a = "com.huawei.hms.ads.dynamic.IObjectWrapper";
 
         /* loaded from: source-7994992-dex2jar.jar:com/huawei/hms/ads/dynamic/IObjectWrapper$Stub$Proxy.class */
         static class Proxy implements IObjectWrapper {
             public static IObjectWrapper sDefaultImpl;
 
             /* renamed from: a  reason: collision with root package name */
-            private IBinder f22457a;
+            private IBinder f8849a;
 
             Proxy(IBinder iBinder) {
-                this.f22457a = iBinder;
+                this.f8849a = iBinder;
             }
 
             @Override // android.os.IInterface
             public IBinder asBinder() {
-                return this.f22457a;
+                return this.f8849a;
             }
 
             public String getInterfaceDescriptor() {
-                return Stub.f22456a;
+                return Stub.f8848a;
             }
         }
 
         public Stub() {
-            attachInterface(this, f22456a);
+            attachInterface(this, f8848a);
         }
 
         public static IObjectWrapper asInterface(IBinder iBinder) {
             if (iBinder == null) {
                 return null;
             }
-            IInterface queryLocalInterface = iBinder.queryLocalInterface(f22456a);
+            IInterface queryLocalInterface = iBinder.queryLocalInterface(f8848a);
             return (queryLocalInterface == null || !(queryLocalInterface instanceof IObjectWrapper)) ? new Proxy(iBinder) : (IObjectWrapper) queryLocalInterface;
         }
 
@@ -81,7 +81,7 @@ public interface IObjectWrapper extends IInterface {
             if (i != 1598968902) {
                 return super.onTransact(i, parcel, parcel2, i2);
             }
-            parcel2.writeString(f22456a);
+            parcel2.writeString(f8848a);
             return true;
         }
     }

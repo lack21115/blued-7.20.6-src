@@ -17,13 +17,13 @@ import java.util.concurrent.TimeUnit;
 public final class Dispatcher {
 
     /* renamed from: a  reason: collision with root package name */
-    static final /* synthetic */ boolean f35846a = !Dispatcher.class.desiredAssertionStatus();
+    static final /* synthetic */ boolean f22155a = !Dispatcher.class.desiredAssertionStatus();
     private Runnable d;
     private ExecutorService e;
     private int b = 64;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f35847c = 5;
+    private int f22156c = 5;
     private final Deque<RealCall.AsyncCall> f = new ArrayDeque();
     private final Deque<RealCall.AsyncCall> g = new ArrayDeque();
     private final Deque<RealCall> h = new ArrayDeque();
@@ -52,7 +52,7 @@ public final class Dispatcher {
     private boolean a() {
         int i;
         boolean z;
-        if (f35846a || !Thread.holdsLock(this)) {
+        if (f22155a || !Thread.holdsLock(this)) {
             ArrayList arrayList = new ArrayList();
             synchronized (this) {
                 Iterator<RealCall.AsyncCall> it = this.f.iterator();
@@ -60,7 +60,7 @@ public final class Dispatcher {
                     RealCall.AsyncCall next = it.next();
                     if (this.g.size() >= this.b) {
                         break;
-                    } else if (c(next) < this.f35847c) {
+                    } else if (c(next) < this.f22156c) {
                         it.remove();
                         arrayList.add(next);
                         this.g.add(next);
@@ -148,7 +148,7 @@ public final class Dispatcher {
     public int getMaxRequestsPerHost() {
         int i;
         synchronized (this) {
-            i = this.f35847c;
+            i = this.f22156c;
         }
         return i;
     }
@@ -216,7 +216,7 @@ public final class Dispatcher {
     public void setMaxRequestsPerHost(int i) {
         if (i >= 1) {
             synchronized (this) {
-                this.f35847c = i;
+                this.f22156c = i;
             }
             a();
             return;

@@ -1,5 +1,7 @@
 package com.qiniu.pili.droid.shortvideo;
 
+import com.xiaomi.mipush.sdk.Constants;
+
 /* loaded from: source-8303388-dex2jar.jar:com/qiniu/pili/droid/shortvideo/PLSpeedTimeRange.class */
 public class PLSpeedTimeRange {
     private long mEndTimeMs;
@@ -33,6 +35,6 @@ public class PLSpeedTimeRange {
     }
 
     public String toString() {
-        return "speed : " + this.mSpeed + " time : [" + this.mStartTimeMs + "-" + this.mEndTimeMs + "]";
+        return "speed : " + this.mSpeed + " time : [" + this.mStartTimeMs + Constants.ACCEPT_TIME_SEPARATOR_SERVER + this.mEndTimeMs + "]";
     }
 }

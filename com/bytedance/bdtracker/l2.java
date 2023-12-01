@@ -4,10 +4,10 @@ package com.bytedance.bdtracker;
 public class l2 implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ m2 f21252a;
+    public final /* synthetic */ m2 f7646a;
 
     public l2(m2 m2Var) {
-        this.f21252a = m2Var;
+        this.f7646a = m2Var;
     }
 
     @Override // java.lang.Runnable
@@ -16,7 +16,7 @@ public class l2 implements Runnable {
         while (true) {
             try {
                 int i2 = i;
-                if (i2 >= this.f21252a.f21260a.size()) {
+                if (i2 >= this.f7646a.f7654a.size()) {
                     return;
                 }
                 int i3 = 0;
@@ -24,7 +24,7 @@ public class l2 implements Runnable {
                     int i4 = i3;
                     if (i4 < 6) {
                         try {
-                            this.f21252a.a(this.f21252a.f21260a.get(i2), new String[]{"openudid", "clientudid", "serial_number", "sim_serial_number", "udid", "device_id"}[i4]);
+                            this.f7646a.a(this.f7646a.f7654a.get(i2), new String[]{"openudid", "clientudid", "serial_number", "sim_serial_number", "udid", "device_id"}[i4]);
                         } catch (Exception e) {
                             z2.a(e);
                         }

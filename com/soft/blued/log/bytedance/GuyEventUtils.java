@@ -15,18 +15,18 @@ import org.json.JSONObject;
 public final class GuyEventUtils {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final GuyEventUtils f29688a = new GuyEventUtils();
+    public static final GuyEventUtils f15998a = new GuyEventUtils();
 
     private GuyEventUtils() {
     }
 
     @JvmStatic
-    public static final void a(int i, String couponId, int i2, int i3) {
-        Intrinsics.e(couponId, "couponId");
+    public static final void a(int i, String str, int i2, int i3) {
+        Intrinsics.e(str, "couponId");
         JSONObject jSONObject = new JSONObject();
         try {
             jSONObject.put("sku", i);
-            jSONObject.put("coupon_id", couponId);
+            jSONObject.put("coupon_id", str);
             jSONObject.put("strategy", i2);
             jSONObject.put("area", i3);
             ByteDanceLogUtils.a(SuperExposeProtos.Event.EXPOSE_BUY_PAGE_PAY_CLICK.name(), jSONObject);
@@ -36,32 +36,32 @@ public final class GuyEventUtils {
     }
 
     @JvmStatic
-    public static final void a(String event) {
-        Intrinsics.e(event, "event");
-        ByteDanceLogUtils.a(event);
+    public static final void a(String str) {
+        Intrinsics.e(str, "event");
+        ByteDanceLogUtils.a(str);
     }
 
     @JvmStatic
-    public static final void a(String event, String target_uid) {
-        Intrinsics.e(event, "event");
-        Intrinsics.e(target_uid, "target_uid");
+    public static final void a(String str, String str2) {
+        Intrinsics.e(str, "event");
+        Intrinsics.e(str2, "target_uid");
         JSONObject jSONObject = new JSONObject();
         try {
-            jSONObject.put("target_uid", target_uid);
-            ByteDanceLogUtils.a(event, jSONObject);
+            jSONObject.put("target_uid", str2);
+            ByteDanceLogUtils.a(str, jSONObject);
         } catch (JSONException e) {
             e.printStackTrace();
         }
     }
 
     @JvmStatic
-    public static final void a(String source, String show_type, int i) {
-        Intrinsics.e(source, "source");
-        Intrinsics.e(show_type, "show_type");
+    public static final void a(String str, String str2, int i) {
+        Intrinsics.e(str, "source");
+        Intrinsics.e(str2, "show_type");
         JSONObject jSONObject = new JSONObject();
         try {
-            jSONObject.put("source", source);
-            jSONObject.put("show_type", show_type);
+            jSONObject.put("source", str);
+            jSONObject.put("show_type", str2);
             jSONObject.put(l.d, i);
             ByteDanceLogUtils.a("NEARBY_FRIEND_DRAW_MAX_NUM", jSONObject);
         } catch (JSONException e) {
@@ -70,18 +70,18 @@ public final class GuyEventUtils {
     }
 
     @JvmStatic
-    public static final void a(String sort_type, String str, String show_type, boolean z, boolean z2, boolean z3, boolean z4) {
-        Intrinsics.e(sort_type, "sort_type");
-        Intrinsics.e(show_type, "show_type");
-        String str2 = str;
-        if (TextUtils.isEmpty(str)) {
-            str2 = "";
+    public static final void a(String str, String str2, String str3, boolean z, boolean z2, boolean z3, boolean z4) {
+        Intrinsics.e(str, "sort_type");
+        Intrinsics.e(str3, "show_type");
+        String str4 = str2;
+        if (TextUtils.isEmpty(str2)) {
+            str4 = "";
         }
         JSONObject jSONObject = new JSONObject();
         try {
-            jSONObject.put(com.anythink.core.common.l.ai, sort_type);
-            jSONObject.put("target_uid", str2);
-            jSONObject.put("show_type", show_type);
+            jSONObject.put("sort_type", str);
+            jSONObject.put("target_uid", str4);
+            jSONObject.put("show_type", str3);
             jSONObject.put("call", z);
             jSONObject.put("special", z2);
             jSONObject.put("yy", z3);
@@ -93,15 +93,15 @@ public final class GuyEventUtils {
     }
 
     @JvmStatic
-    public static final void b(String sort_type, String target_uid, String show_type, boolean z, boolean z2, boolean z3, boolean z4) {
-        Intrinsics.e(sort_type, "sort_type");
-        Intrinsics.e(target_uid, "target_uid");
-        Intrinsics.e(show_type, "show_type");
+    public static final void b(String str, String str2, String str3, boolean z, boolean z2, boolean z3, boolean z4) {
+        Intrinsics.e(str, "sort_type");
+        Intrinsics.e(str2, "target_uid");
+        Intrinsics.e(str3, "show_type");
         JSONObject jSONObject = new JSONObject();
         try {
-            jSONObject.put(com.anythink.core.common.l.ai, sort_type);
-            jSONObject.put("target_uid", target_uid);
-            jSONObject.put("show_type", show_type);
+            jSONObject.put("sort_type", str);
+            jSONObject.put("target_uid", str2);
+            jSONObject.put("show_type", str3);
             jSONObject.put("call", z);
             jSONObject.put("special", z2);
             jSONObject.put("yy", z3);

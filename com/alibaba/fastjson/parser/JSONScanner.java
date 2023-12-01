@@ -59,16 +59,16 @@ public final class JSONScanner extends JSONLexerBase {
         }
     }
 
-    static boolean checkDate(char c2, char c3, char c4, char c5, char c6, char c7, int i, int i2) {
-        if ((c2 == '1' || c2 == '2') && c3 >= '0' && c3 <= '9' && c4 >= '0' && c4 <= '9' && c5 >= '0' && c5 <= '9') {
-            if (c6 == '0') {
-                if (c7 < '1' || c7 > '9') {
+    static boolean checkDate(char c, char c2, char c3, char c4, char c5, char c6, int i, int i2) {
+        if ((c == '1' || c == '2') && c2 >= '0' && c2 <= '9' && c3 >= '0' && c3 <= '9' && c4 >= '0' && c4 <= '9') {
+            if (c5 == '0') {
+                if (c6 < '1' || c6 > '9') {
                     return false;
                 }
-            } else if (c6 != '1') {
+            } else if (c5 != '1') {
                 return false;
             } else {
-                if (c7 != '0' && c7 != '1' && c7 != '2') {
+                if (c6 != '0' && c6 != '1' && c6 != '2') {
                     return false;
                 }
             }
@@ -85,38 +85,38 @@ public final class JSONScanner extends JSONLexerBase {
         return false;
     }
 
-    private boolean checkTime(char c2, char c3, char c4, char c5, char c6, char c7) {
-        if (c2 == '0') {
-            if (c3 < '0' || c3 > '9') {
+    private boolean checkTime(char c, char c2, char c3, char c4, char c5, char c6) {
+        if (c == '0') {
+            if (c2 < '0' || c2 > '9') {
                 return false;
             }
-        } else if (c2 == '1') {
-            if (c3 < '0' || c3 > '9') {
+        } else if (c == '1') {
+            if (c2 < '0' || c2 > '9') {
                 return false;
             }
-        } else if (c2 != '2' || c3 < '0' || c3 > '4') {
+        } else if (c != '2' || c2 < '0' || c2 > '4') {
             return false;
         }
-        if (c4 < '0' || c4 > '5') {
-            if (c4 != '6' || c5 != '0') {
+        if (c3 < '0' || c3 > '5') {
+            if (c3 != '6' || c4 != '0') {
                 return false;
             }
-        } else if (c5 < '0' || c5 > '9') {
+        } else if (c4 < '0' || c4 > '9') {
             return false;
         }
-        return (c6 < '0' || c6 > '5') ? c6 == '6' && c7 == '0' : c7 >= '0' && c7 <= '9';
+        return (c5 < '0' || c5 > '5') ? c5 == '6' && c6 == '0' : c6 >= '0' && c6 <= '9';
     }
 
-    private void setCalendar(char c2, char c3, char c4, char c5, char c6, char c7, char c8, char c9) {
+    private void setCalendar(char c, char c2, char c3, char c4, char c5, char c6, char c7, char c8) {
         this.calendar = Calendar.getInstance(this.timeZone, this.locale);
-        int i = digits[c2];
-        int i2 = digits[c3];
-        int i3 = digits[c4];
-        int i4 = digits[c5];
-        int i5 = digits[c6];
-        int i6 = digits[c7];
-        int i7 = digits[c8];
-        int i8 = digits[c9];
+        int i = digits[c];
+        int i2 = digits[c2];
+        int i3 = digits[c3];
+        int i4 = digits[c4];
+        int i5 = digits[c5];
+        int i6 = digits[c6];
+        int i7 = digits[c7];
+        int i8 = digits[c8];
         this.calendar.set(1, (i * 1000) + (i2 * 100) + (i3 * 10) + i4);
         this.calendar.set(2, ((i5 * 10) + i6) - 1);
         this.calendar.set(5, (i7 * 10) + i8);
@@ -156,8 +156,8 @@ public final class JSONScanner extends JSONLexerBase {
     }
 
     @Override // com.alibaba.fastjson.parser.JSONLexerBase
-    public final int indexOf(char c2, int i) {
-        return this.text.indexOf(c2, i);
+    public final int indexOf(char c, int i) {
+        return this.text.indexOf(c, i);
     }
 
     @Override // com.alibaba.fastjson.parser.JSONLexerBase, com.alibaba.fastjson.parser.JSONLexer
@@ -351,7 +351,7 @@ public final class JSONScanner extends JSONLexerBase {
         char charAt;
         this.matchStat = 0;
         int i2 = this.bp;
-        char c2 = this.ch;
+        char c = this.ch;
         if (!charArrayCompare(this.text, this.bp, cArr)) {
             this.matchStat = -2;
             return 0;
@@ -411,7 +411,7 @@ public final class JSONScanner extends JSONLexerBase {
                     this.ch = charAt(i9);
                 } else if (charAt3 != 26) {
                     this.bp = i2;
-                    this.ch = c2;
+                    this.ch = c;
                     this.matchStat = -1;
                     return 0;
                 } else {
@@ -431,7 +431,7 @@ public final class JSONScanner extends JSONLexerBase {
         char charAt;
         this.matchStat = 0;
         int i2 = this.bp;
-        char c2 = this.ch;
+        char c = this.ch;
         if (!charArrayCompare(this.text, this.bp, cArr)) {
             this.matchStat = -2;
             return 0L;
@@ -441,7 +441,7 @@ public final class JSONScanner extends JSONLexerBase {
         char charAt2 = charAt(length);
         if (charAt2 < '0' || charAt2 > '9') {
             this.bp = i2;
-            this.ch = c2;
+            this.ch = c;
             this.matchStat = -1;
             return 0L;
         }
@@ -464,7 +464,7 @@ public final class JSONScanner extends JSONLexerBase {
         }
         if (j < 0) {
             this.bp = i2;
-            this.ch = c2;
+            this.ch = c;
             this.matchStat = -1;
             return 0L;
         } else if (charAt == ',') {
@@ -498,7 +498,7 @@ public final class JSONScanner extends JSONLexerBase {
                 this.ch = charAt(i8);
             } else if (charAt3 != 26) {
                 this.bp = i2;
-                this.ch = c2;
+                this.ch = c;
                 this.matchStat = -1;
                 return 0L;
             } else {
@@ -514,7 +514,7 @@ public final class JSONScanner extends JSONLexerBase {
         boolean z;
         this.matchStat = 0;
         int i = this.bp;
-        char c2 = this.ch;
+        char c = this.ch;
         if (!charArrayCompare(this.text, this.bp, cArr)) {
             this.matchStat = -2;
             return stringDefaultValue();
@@ -583,7 +583,7 @@ public final class JSONScanner extends JSONLexerBase {
                     this.ch = charAt(i10);
                 } else if (charAt2 != 26) {
                     this.bp = i;
-                    this.ch = c2;
+                    this.ch = c;
                     this.matchStat = -1;
                     return stringDefaultValue();
                 } else {
@@ -1038,22 +1038,22 @@ public final class JSONScanner extends JSONLexerBase {
         }
     }
 
-    protected void setTime(char c2, char c3, char c4, char c5, char c6, char c7) {
-        int i = digits[c2];
-        int i2 = digits[c3];
-        int i3 = digits[c4];
-        int i4 = digits[c5];
-        int i5 = digits[c6];
-        int i6 = digits[c7];
+    protected void setTime(char c, char c2, char c3, char c4, char c5, char c6) {
+        int i = digits[c];
+        int i2 = digits[c2];
+        int i3 = digits[c3];
+        int i4 = digits[c4];
+        int i5 = digits[c5];
+        int i6 = digits[c6];
         this.calendar.set(11, (i * 10) + i2);
         this.calendar.set(12, (i3 * 10) + i4);
         this.calendar.set(13, (i5 * 10) + i6);
     }
 
-    protected void setTimeZone(char c2, char c3, char c4) {
-        int i = ((digits[c3] * 10) + digits[c4]) * 3600 * 1000;
+    protected void setTimeZone(char c, char c2, char c3) {
+        int i = ((digits[c2] * 10) + digits[c3]) * 3600 * 1000;
         int i2 = i;
-        if (c2 == '-') {
+        if (c == '-') {
             i2 = -i;
         }
         if (this.calendar.getTimeZone().getRawOffset() != i2) {

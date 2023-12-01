@@ -19,24 +19,22 @@ import kotlinx.coroutines.selects.SelectKt;
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/channels/ConflatedChannel.class */
 public class ConflatedChannel<E> extends AbstractChannel<E> {
     private final ReentrantLock b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private Object f42995c;
+    private Object c;
 
     public ConflatedChannel(Function1<? super E, Unit> function1) {
         super(function1);
         this.b = new ReentrantLock();
-        this.f42995c = AbstractChannelKt.f42881a;
+        this.c = AbstractChannelKt.a;
     }
 
     private final UndeliveredElementException f(Object obj) {
         Function1<E, Unit> function1;
-        Object obj2 = this.f42995c;
+        Object obj2 = this.c;
         UndeliveredElementException undeliveredElementException = null;
-        if (obj2 != AbstractChannelKt.f42881a && (function1 = this.B_) != null) {
+        if (obj2 != AbstractChannelKt.a && (function1 = this.B_) != null) {
             undeliveredElementException = OnUndeliveredElementKt.a(function1, obj2, null, 2, null);
         }
-        this.f42995c = obj;
+        this.c = obj;
         return undeliveredElementException;
     }
 
@@ -44,28 +42,28 @@ public class ConflatedChannel<E> extends AbstractChannel<E> {
     @Override // kotlinx.coroutines.channels.AbstractSendChannel
     public Object a(E e) {
         ReceiveOrClosed<E> l;
-        Symbol a2;
+        Symbol a;
         ReentrantLock reentrantLock = this.b;
         reentrantLock.lock();
         try {
             Closed<?> r = r();
             if (r == null) {
-                if (this.f42995c == AbstractChannelKt.f42881a) {
+                if (this.c == AbstractChannelKt.a) {
                     do {
                         l = l();
                         if (l != null) {
                             if (l instanceof Closed) {
                                 return l;
                             }
-                            a2 = l.a(e, null);
+                            a = l.a(e, null);
                         }
-                    } while (a2 == null);
+                    } while (a == null);
                     if (DebugKt.a()) {
-                        if (!(a2 == CancellableContinuationImplKt.f42786a)) {
+                        if (!(a == CancellableContinuationImplKt.a)) {
                             throw new AssertionError();
                         }
                     }
-                    Unit unit = Unit.f42314a;
+                    Unit unit = Unit.a;
                     reentrantLock.unlock();
                     l.b(e);
                     return l.h();
@@ -90,25 +88,25 @@ public class ConflatedChannel<E> extends AbstractChannel<E> {
         try {
             Closed<?> r = r();
             if (r == null) {
-                if (this.f42995c == AbstractChannelKt.f42881a) {
+                if (this.c == AbstractChannelKt.a) {
                     while (true) {
                         AbstractSendChannel.TryOfferDesc<E> e2 = e(e);
-                        Object a2 = selectInstance.a(e2);
-                        if (a2 == null) {
+                        Object a = selectInstance.a(e2);
+                        if (a == null) {
                             ReceiveOrClosed<? super E> d = e2.d();
-                            Unit unit = Unit.f42314a;
+                            Unit unit = Unit.a;
                             reentrantLock.unlock();
                             Intrinsics.a(d);
                             ReceiveOrClosed<? super E> receiveOrClosed = d;
                             receiveOrClosed.b(e);
                             return receiveOrClosed.h();
-                        } else if (a2 == AbstractChannelKt.f42882c) {
+                        } else if (a == AbstractChannelKt.c) {
                             break;
-                        } else if (a2 != AtomicKt.b) {
-                            if (a2 != SelectKt.b() && !(a2 instanceof Closed)) {
-                                throw new IllegalStateException(Intrinsics.a("performAtomicTrySelect(describeTryOffer) returned ", a2).toString());
+                        } else if (a != AtomicKt.b) {
+                            if (a != SelectKt.b() && !(a instanceof Closed)) {
+                                throw new IllegalStateException(Intrinsics.a("performAtomicTrySelect(describeTryOffer) returned ", a).toString());
                             }
-                            return a2;
+                            return a;
                         }
                     }
                 }
@@ -132,7 +130,7 @@ public class ConflatedChannel<E> extends AbstractChannel<E> {
         ReentrantLock reentrantLock = this.b;
         reentrantLock.lock();
         try {
-            if (this.f42995c == AbstractChannelKt.f42881a) {
+            if (this.c == AbstractChannelKt.a) {
                 Object r = r();
                 Object obj = r;
                 if (r == null) {
@@ -141,9 +139,9 @@ public class ConflatedChannel<E> extends AbstractChannel<E> {
                 reentrantLock.unlock();
                 return obj;
             } else if (selectInstance.g()) {
-                Object obj2 = this.f42995c;
-                this.f42995c = AbstractChannelKt.f42881a;
-                Unit unit = Unit.f42314a;
+                Object obj2 = this.c;
+                this.c = AbstractChannelKt.a;
+                Unit unit = Unit.a;
                 return obj2;
             } else {
                 return SelectKt.b();
@@ -159,8 +157,8 @@ public class ConflatedChannel<E> extends AbstractChannel<E> {
         ReentrantLock reentrantLock = this.b;
         reentrantLock.lock();
         try {
-            UndeliveredElementException f = f(AbstractChannelKt.f42881a);
-            Unit unit = Unit.f42314a;
+            UndeliveredElementException f = f(AbstractChannelKt.a);
+            Unit unit = Unit.a;
             reentrantLock.unlock();
             super.a(z);
             if (f != null) {
@@ -192,7 +190,7 @@ public class ConflatedChannel<E> extends AbstractChannel<E> {
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // kotlinx.coroutines.channels.AbstractChannel
     public final boolean b() {
-        return this.f42995c == AbstractChannelKt.f42881a;
+        return this.c == AbstractChannelKt.a;
     }
 
     @Override // kotlinx.coroutines.channels.AbstractChannel
@@ -200,10 +198,10 @@ public class ConflatedChannel<E> extends AbstractChannel<E> {
         ReentrantLock reentrantLock = this.b;
         reentrantLock.lock();
         try {
-            if (this.f42995c != AbstractChannelKt.f42881a) {
-                Object obj = this.f42995c;
-                this.f42995c = AbstractChannelKt.f42881a;
-                Unit unit = Unit.f42314a;
+            if (this.c != AbstractChannelKt.a) {
+                Object obj = this.c;
+                this.c = AbstractChannelKt.a;
+                Unit unit = Unit.a;
                 return obj;
             }
             Object r = r();
@@ -231,6 +229,6 @@ public class ConflatedChannel<E> extends AbstractChannel<E> {
 
     @Override // kotlinx.coroutines.channels.AbstractSendChannel
     protected String w() {
-        return "(value=" + this.f42995c + ')';
+        return "(value=" + this.c + ')';
     }
 }

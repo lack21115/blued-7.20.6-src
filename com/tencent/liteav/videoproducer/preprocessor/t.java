@@ -6,11 +6,11 @@ import java.util.List;
 final /* synthetic */ class t implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final VideoPreprocessor f37089a;
+    private final VideoPreprocessor f23398a;
     private final List b;
 
     private t(VideoPreprocessor videoPreprocessor, List list) {
-        this.f37089a = videoPreprocessor;
+        this.f23398a = videoPreprocessor;
         this.b = list;
     }
 
@@ -20,6 +20,6 @@ final /* synthetic */ class t implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        VideoPreprocessor.lambda$setWatermarkList$11(this.f37089a, this.b);
+        VideoPreprocessor.lambda$setWatermarkList$11(this.f23398a, this.b);
     }
 }

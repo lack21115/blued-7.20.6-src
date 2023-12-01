@@ -2,6 +2,7 @@ package com.opos.cmn.e.a.b.a;
 
 import android.animation.ObjectAnimator;
 import android.view.View;
+import androidx.constraintlayout.motion.widget.Key;
 
 /* loaded from: source-8303388-dex2jar.jar:com/opos/cmn/e/a/b/a/b.class */
 public class b extends a {
@@ -14,7 +15,7 @@ public class b extends a {
 
     private void c() {
         try {
-            ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this.f24757a, "rotation", 0.0f, 360.0f);
+            ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this.f11069a, Key.ROTATION, 0.0f, 360.0f);
             this.b = ofFloat;
             ofFloat.setDuration(1000L);
             this.b.setRepeatMode(1);

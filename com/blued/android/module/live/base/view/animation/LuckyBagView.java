@@ -20,9 +20,7 @@ import com.blued.android.module.live.base.view.animation.LuckyBagView;
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/live/base/view/animation/LuckyBagView.class */
 public class LuckyBagView extends BaseLiveAnimationView {
     private Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f11509c;
+    private String c;
     private String d;
     private LayoutInflater e;
     private View f;
@@ -86,16 +84,16 @@ public class LuckyBagView extends BaseLiveAnimationView {
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator) {
                 super.onAnimationEnd(animator);
-                if (LuckyBagView.this.f11493a != null) {
-                    LuckyBagView.this.f11493a.b();
+                if (LuckyBagView.this.a != null) {
+                    LuckyBagView.this.a.b();
                 }
             }
 
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationStart(Animator animator) {
                 super.onAnimationStart(animator);
-                if (LuckyBagView.this.f11493a != null) {
-                    LuckyBagView.this.f11493a.a();
+                if (LuckyBagView.this.a != null) {
+                    LuckyBagView.this.a.a();
                 }
             }
         });
@@ -212,11 +210,11 @@ public class LuckyBagView extends BaseLiveAnimationView {
         if (!TextUtils.isEmpty(this.d)) {
             ImageLoader.a((IRequestHost) null, this.d).b(R.drawable.user_bg_round).a(this.h);
         }
-        ImageLoader.a((IRequestHost) null, this.f11509c).a(new AnonymousClass1(null)).a(this.i);
+        ImageLoader.a((IRequestHost) null, this.c).a(new AnonymousClass1(null)).a(this.i);
     }
 
     public void b(String str) {
-        this.f11509c = str;
+        this.c = str;
     }
 
     public void c(String str) {

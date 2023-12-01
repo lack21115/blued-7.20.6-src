@@ -16,7 +16,7 @@ import mtopsdk.mtop.util.MtopStatistics;
 public final class a extends Handler {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Handler f34910a;
+    private static Handler f21219a;
 
     private a(Looper looper) {
         super(looper);
@@ -26,10 +26,10 @@ public final class a extends Handler {
         Handler handler;
         synchronized (a.class) {
             try {
-                if (f34910a == null) {
-                    f34910a = new a(Looper.getMainLooper());
+                if (f21219a == null) {
+                    f21219a = new a(Looper.getMainLooper());
                 }
-                handler = f34910a;
+                handler = f21219a;
             } catch (Throwable th) {
                 throw th;
             }
@@ -64,7 +64,7 @@ public final class a extends Handler {
                 return;
             }
             TBSdkLog.b("mtop.rb-HandlerMgr", bVar.d.getSeqNo(), "onReceive: ON_DATA_RECEIVED.");
-            ((IRemoteProcessListener) bVar.f34911a).onDataReceived((MtopProgressEvent) bVar.b, bVar.d.getReqContext());
+            ((IRemoteProcessListener) bVar.f21220a).onDataReceived((MtopProgressEvent) bVar.b, bVar.d.getReqContext());
         } else if (i == 2) {
             b bVar2 = (b) message.obj;
             if (!a(bVar2)) {
@@ -72,7 +72,7 @@ public final class a extends Handler {
             }
             TBSdkLog.b("mtop.rb-HandlerMgr", bVar2.d.getSeqNo(), "onReceive: ON_HEADER.");
             try {
-                ((IRemoteProcessListener) bVar2.f34911a).onHeader((MtopHeaderEvent) bVar2.b, bVar2.d.getReqContext());
+                ((IRemoteProcessListener) bVar2.f21220a).onHeader((MtopHeaderEvent) bVar2.b, bVar2.d.getReqContext());
             } catch (Throwable th) {
                 TBSdkLog.b("mtop.rb-HandlerMgr", bVar2.d.getSeqNo(), "listener onHeader callback error.", th);
             }
@@ -104,9 +104,9 @@ public final class a extends Handler {
                 mtopStatistics = null;
                 rbStatisticData = null;
             }
-            bVar3.d.doFinish(bVar3.e, bVar3.f34912c);
+            bVar3.d.doFinish(bVar3.e, bVar3.f21221c);
             long currentTimeMillis2 = System.currentTimeMillis();
-            if (TBSdkLog.a(TBSdkLog.LogEnable.InfoEnable)) {
+            if (TBSdkLog.a(TBSdkLog.LogEnable.c)) {
                 StringBuilder sb = new StringBuilder();
                 sb.append("doFinishTime=");
                 sb.append(currentTimeMillis2 - currentTimeMillis);

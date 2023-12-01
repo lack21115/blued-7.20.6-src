@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import com.blued.android.core.AppMethods;
 import com.blued.android.core.image.ImageLoader;
@@ -30,34 +31,27 @@ import com.chad.library.adapter.base.BaseViewHolder;
 import com.jeremyliao.liveeventbus.LiveEventBus;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnRefreshLoadMoreListener;
-import java.util.Collection;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYConfessedUserListDialog.class */
 public final class YYConfessedUserListDialog extends BaseFullScreenDialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    private DialogConfessedUserListBinding f18105a;
+    private DialogConfessedUserListBinding a;
     private ConfessedOnClickUserListListener b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final ConfessedListUserAdapter f18106c = new ConfessedListUserAdapter(this);
+    private final ConfessedListUserAdapter c = new ConfessedListUserAdapter(this);
     private int d = 1;
 
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYConfessedUserListDialog$ConfessedListUserAdapter.class */
     public final class ConfessedListUserAdapter extends BaseQuickAdapter<ConfessedUserMode, BaseViewHolder> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ YYConfessedUserListDialog f18107a;
+        final /* synthetic */ YYConfessedUserListDialog a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public ConfessedListUserAdapter(YYConfessedUserListDialog this$0) {
             super(R.layout.item_confessed_user_list);
             Intrinsics.e(this$0, "this$0");
-            this.f18107a = this$0;
+            this.a = this$0;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -82,41 +76,40 @@ public final class YYConfessedUserListDialog extends BaseFullScreenDialog {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.chad.library.adapter.base.BaseQuickAdapter
         /* renamed from: a */
         public void convert(BaseViewHolder helper, final ConfessedUserMode item) {
             Intrinsics.e(helper, "helper");
             Intrinsics.e(item, "item");
-            ItemConfessedUserListBinding a2 = ItemConfessedUserListBinding.a(helper.itemView);
-            Intrinsics.c(a2, "bind(helper.itemView)");
-            YYRoomInfoManager.e().a(this.f18107a.a(), a2.b, item.getUid(), item.getAvatar());
-            a2.d.setText(YYRoomInfoManager.e().a(item.getUid(), item.getName()));
+            ItemConfessedUserListBinding a = ItemConfessedUserListBinding.a(helper.itemView);
+            Intrinsics.c(a, "bind(helper.itemView)");
+            YYRoomInfoManager.e().a(this.a.a(), (ImageView) a.b, item.getUid(), item.getAvatar());
+            a.d.setText(YYRoomInfoManager.e().a(item.getUid(), item.getName()));
             YYTextSpanComputer.Builder builder = new YYTextSpanComputer.Builder();
             if (item.getAnchor_level() > 0) {
-                Context context = this.f18107a.getContext();
+                Context context = this.a.getContext();
                 Intrinsics.a(context);
                 Drawable drawable = context.getResources().getDrawable(YYRoomInfoManager.e().b(item.getAnchor_level()));
                 drawable.setBounds(0, 0, AppMethods.a(32), AppMethods.a(16));
                 Intrinsics.c(drawable, "drawable");
                 builder.a(drawable).a(" ");
             }
-            a2.b.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYConfessedUserListDialog$ConfessedListUserAdapter$8qCKUDJajg8HC2Ib5HvGFIFOR3A
+            a.b.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYConfessedUserListDialog$ConfessedListUserAdapter$8qCKUDJajg8HC2Ib5HvGFIFOR3A
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     YYConfessedUserListDialog.ConfessedListUserAdapter.a(ConfessedUserMode.this, view);
                 }
             });
             if (item.getHonor_level() > 0) {
-                Context context2 = this.f18107a.getContext();
+                Context context2 = this.a.getContext();
                 Intrinsics.a(context2);
                 Drawable drawable2 = context2.getResources().getDrawable(YYRoomInfoManager.e().a(item.getHonor_level()));
                 drawable2.setBounds(0, 0, AppMethods.a(38), AppMethods.a(16));
                 Intrinsics.c(drawable2, "drawable");
                 builder.a(drawable2).a(" ");
             }
-            a2.f16581c.setText(builder.c().a());
-            ShapeTextView shapeTextView = a2.f16580a;
-            final YYConfessedUserListDialog yYConfessedUserListDialog = this.f18107a;
+            a.c.setText(builder.c().a());
+            ShapeTextView shapeTextView = a.a;
+            final YYConfessedUserListDialog yYConfessedUserListDialog = this.a;
             shapeTextView.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYConfessedUserListDialog$ConfessedListUserAdapter$kICaq_6UxbYU7DC9dK-3_yMFSOs
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -146,15 +139,15 @@ public final class YYConfessedUserListDialog extends BaseFullScreenDialog {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final DialogConfessedUserListBinding j() {
-        DialogConfessedUserListBinding dialogConfessedUserListBinding = this.f18105a;
+        DialogConfessedUserListBinding dialogConfessedUserListBinding = this.a;
         Intrinsics.a(dialogConfessedUserListBinding);
         return dialogConfessedUserListBinding;
     }
 
     private final void k() {
-        ImageLoader.a(a(), ImgURLMap.f10885a.a("yy_confessed_user_list_url_bg")).a(j().f16316c);
-        ImageLoader.a(a(), ImgURLMap.f10885a.a("yy_confessed_user_list_url_top_bg")).a(j().f);
-        ImageLoader.a(a(), ImgURLMap.f10885a.a("yy_confessed_user_list_url_btn_data_null")).a(j().e);
+        ImageLoader.a(a(), ImgURLMap.a.a("yy_confessed_user_list_url_bg")).a(j().c);
+        ImageLoader.a(a(), ImgURLMap.a.a("yy_confessed_user_list_url_top_bg")).a(j().f);
+        ImageLoader.a(a(), ImgURLMap.a.a("yy_confessed_user_list_url_btn_data_null")).a(j().e);
         j().d.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYConfessedUserListDialog$ZFyDXe1BfzFFGkJ6dxWK85NMdrc
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -168,15 +161,13 @@ public final class YYConfessedUserListDialog extends BaseFullScreenDialog {
             }
         });
         j().h.setLayoutManager(new LinearLayoutManager(getContext()));
-        j().h.setAdapter(this.f18106c);
+        j().h.setAdapter(this.c);
         j().i.a(new OnRefreshLoadMoreListener() { // from class: com.blued.android.module.yy_china.view.YYConfessedUserListDialog$initView$3
-            @Override // com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
             public void onLoadMore(RefreshLayout refreshLayout) {
                 Intrinsics.e(refreshLayout, "refreshLayout");
                 YYConfessedUserListDialog.this.i();
             }
 
-            @Override // com.scwang.smartrefresh.layout.listener.OnRefreshListener
             public void onRefresh(RefreshLayout refreshLayout) {
                 Intrinsics.e(refreshLayout, "refreshLayout");
                 YYConfessedUserListDialog.this.a(1);
@@ -200,7 +191,7 @@ public final class YYConfessedUserListDialog extends BaseFullScreenDialog {
     }
 
     public final ConfessedListUserAdapter g() {
-        return this.f18106c;
+        return this.c;
     }
 
     public final int h() {
@@ -213,8 +204,8 @@ public final class YYConfessedUserListDialog extends BaseFullScreenDialog {
         }
         String str = YYRoomInfoManager.e().b().room_id;
         int i = this.d;
-        final ActivityFragmentActive a2 = a();
-        YYRoomHttpUtils.h(str, i, new BluedUIHttpResponse<BluedEntityA<ConfessedUserGiftMode>>(a2) { // from class: com.blued.android.module.yy_china.view.YYConfessedUserListDialog$loadData$1
+        final ActivityFragmentActive a = a();
+        YYRoomHttpUtils.h(str, i, new BluedUIHttpResponse<BluedEntityA<ConfessedUserGiftMode>>(a) { // from class: com.blued.android.module.yy_china.view.YYConfessedUserListDialog$loadData$1
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
@@ -232,20 +223,20 @@ public final class YYConfessedUserListDialog extends BaseFullScreenDialog {
                         if (yYConfessedUserListDialog.h() == 1) {
                             yYConfessedUserListDialog.g().setNewData(singleData.getConfession_user());
                         } else {
-                            yYConfessedUserListDialog.g().addData((Collection) singleData.getConfession_user());
+                            yYConfessedUserListDialog.g().addData(singleData.getConfession_user());
                             j6 = yYConfessedUserListDialog.j();
                             j6.i.h();
                         }
                     }
                     if (bluedEntityA.hasMore()) {
                         j5 = yYConfessedUserListDialog.j();
-                        j5.i.l(true);
+                        j5.i.b(true);
                     } else {
                         j3 = yYConfessedUserListDialog.j();
-                        j3.i.l(false);
+                        j3.i.b(false);
                     }
                     j4 = yYConfessedUserListDialog.j();
-                    j4.i.j();
+                    j4.i.g();
                 }
                 if (YYConfessedUserListDialog.this.h() == 1 && (bluedEntityA == null || !bluedEntityA.hasData() || bluedEntityA.getSingleData().getConfession_user() == null || bluedEntityA.getSingleData().getConfession_user().size() == 0)) {
                     j2 = YYConfessedUserListDialog.this.j();
@@ -267,16 +258,16 @@ public final class YYConfessedUserListDialog extends BaseFullScreenDialog {
                     yYConfessedUserListDialog.a(yYConfessedUserListDialog.h() - 1);
                 }
                 j = YYConfessedUserListDialog.this.j();
-                j.i.j();
+                j.i.g();
             }
         }, a());
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
         View inflate = LayoutInflater.from(getContext()).inflate(R.layout.dialog_confessed_user_list, (ViewGroup) null);
-        this.f18105a = DialogConfessedUserListBinding.a(inflate);
+        this.a = DialogConfessedUserListBinding.a(inflate);
         k();
         return inflate;
     }

@@ -6,9 +6,9 @@ import com.efs.sdk.base.core.controller.ControllerCenter;
 public final class c {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f21776a = "https://errlog.umeng.com/api/crashsdk/logcollect";
+    public String f8170a = "https://errlog.umeng.com/api/crashsdk/logcollect";
     public String b = "28ef1713347d";
 
     /* renamed from: c  reason: collision with root package name */
-    public String f21777c = com.efs.sdk.base.core.util.d.a(ControllerCenter.getGlobalEnvStruct().mAppContext);
+    public String f8171c = com.efs.sdk.base.core.util.d.a(ControllerCenter.getGlobalEnvStruct().mAppContext);
 }

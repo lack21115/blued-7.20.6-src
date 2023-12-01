@@ -3,6 +3,7 @@ package androidx.dynamicanimation.animation;
 import android.os.Looper;
 import android.util.AndroidRuntimeException;
 import android.view.View;
+import androidx.constraintlayout.motion.widget.Key;
 import androidx.core.view.ViewCompat;
 import androidx.dynamicanimation.animation.AnimationHandler;
 import androidx.dynamicanimation.animation.DynamicAnimation;
@@ -17,11 +18,11 @@ public abstract class DynamicAnimation<T extends DynamicAnimation<T>> implements
     public static final float MIN_VISIBLE_CHANGE_SCALE = 0.002f;
 
     /* renamed from: a  reason: collision with root package name */
-    float f2801a;
+    float f2753a;
     float b;
 
     /* renamed from: c  reason: collision with root package name */
-    boolean f2802c;
+    boolean f2754c;
     final Object d;
     final FloatPropertyCompat e;
     boolean f;
@@ -86,7 +87,7 @@ public abstract class DynamicAnimation<T extends DynamicAnimation<T>> implements
             view.setScaleY(f);
         }
     };
-    public static final ViewProperty ROTATION = new ViewProperty("rotation") { // from class: androidx.dynamicanimation.animation.DynamicAnimation.6
+    public static final ViewProperty ROTATION = new ViewProperty(Key.ROTATION) { // from class: androidx.dynamicanimation.animation.DynamicAnimation.6
         @Override // androidx.dynamicanimation.animation.FloatPropertyCompat
         public float getValue(View view) {
             return view.getRotation();
@@ -190,7 +191,7 @@ public abstract class DynamicAnimation<T extends DynamicAnimation<T>> implements
     static class MassState {
 
         /* renamed from: a  reason: collision with root package name */
-        float f2804a;
+        float f2756a;
         float b;
     }
 
@@ -213,9 +214,9 @@ public abstract class DynamicAnimation<T extends DynamicAnimation<T>> implements
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public DynamicAnimation(final FloatValueHolder floatValueHolder) {
-        this.f2801a = 0.0f;
+        this.f2753a = 0.0f;
         this.b = Float.MAX_VALUE;
-        this.f2802c = false;
+        this.f2754c = false;
         this.f = false;
         this.g = Float.MAX_VALUE;
         this.h = -Float.MAX_VALUE;
@@ -239,9 +240,9 @@ public abstract class DynamicAnimation<T extends DynamicAnimation<T>> implements
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public <K> DynamicAnimation(K k, FloatPropertyCompat<K> floatPropertyCompat) {
-        this.f2801a = 0.0f;
+        this.f2753a = 0.0f;
         this.b = Float.MAX_VALUE;
-        this.f2802c = false;
+        this.f2754c = false;
         this.f = false;
         this.g = Float.MAX_VALUE;
         this.h = -Float.MAX_VALUE;
@@ -286,10 +287,10 @@ public abstract class DynamicAnimation<T extends DynamicAnimation<T>> implements
         this.f = false;
         AnimationHandler.getInstance().removeCallback(this);
         this.i = 0L;
-        this.f2802c = false;
+        this.f2754c = false;
         for (int i = 0; i < this.k.size(); i++) {
             if (this.k.get(i) != null) {
-                this.k.get(i).onAnimationEnd(this, z, this.b, this.f2801a);
+                this.k.get(i).onAnimationEnd(this, z, this.b, this.f2753a);
             }
         }
         a(this.k);
@@ -300,7 +301,7 @@ public abstract class DynamicAnimation<T extends DynamicAnimation<T>> implements
             return;
         }
         this.f = true;
-        if (!this.f2802c) {
+        if (!this.f2754c) {
             this.b = c();
         }
         float f = this.b;
@@ -329,7 +330,7 @@ public abstract class DynamicAnimation<T extends DynamicAnimation<T>> implements
                 return;
             }
             if (this.l.get(i2) != null) {
-                this.l.get(i2).onAnimationUpdate(this, this.b, this.f2801a);
+                this.l.get(i2).onAnimationUpdate(this, this.b, this.f2753a);
             }
             i = i2 + 1;
         }
@@ -425,12 +426,12 @@ public abstract class DynamicAnimation<T extends DynamicAnimation<T>> implements
 
     public T setStartValue(float f) {
         this.b = f;
-        this.f2802c = true;
+        this.f2754c = true;
         return this;
     }
 
     public T setStartVelocity(float f) {
-        this.f2801a = f;
+        this.f2753a = f;
         return this;
     }
 

@@ -11,7 +11,7 @@ public final class g extends f {
 
     @Override // com.tencent.thumbplayer.g.b.f
     public final a.b a(e eVar) {
-        return (!com.tencent.thumbplayer.g.f.a.a(this, eVar) || eVar.b > this.g.f39320a || eVar.f39327c > this.g.b || com.tencent.thumbplayer.g.h.c.a(this, eVar) > this.g.f39321c) ? a.b.KEEP_CODEC_RESULT_NO : eVar.a(this.e) ? a.b.KEEP_CODEC_RESULT_YES_WITHOUT_RECONFIGURATION : a.b.KEEP_CODEC_RESULT_YES_WITH_RECONFIGURATION;
+        return (!com.tencent.thumbplayer.g.f.a.a(this, eVar) || eVar.b > this.g.f25629a || eVar.f25636c > this.g.b || com.tencent.thumbplayer.g.h.c.a(this, eVar) > this.g.f25630c) ? a.b.KEEP_CODEC_RESULT_NO : eVar.a(this.e) ? a.b.KEEP_CODEC_RESULT_YES_WITHOUT_RECONFIGURATION : a.b.KEEP_CODEC_RESULT_YES_WITH_RECONFIGURATION;
     }
 
     @Override // com.tencent.thumbplayer.g.b.f

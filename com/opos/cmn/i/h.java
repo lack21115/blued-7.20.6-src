@@ -7,12 +7,12 @@ import com.cdo.oaps.ad.af;
 public class h {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f24977a = com.opos.cmn.an.a.b.a(com.cdo.oaps.ad.a.b);
+    public static final String f11289a = com.opos.cmn.an.a.b.a(com.cdo.oaps.ad.a.b);
 
     public static final int a(Context context) {
         String str = af.e;
         if (!com.opos.cmn.an.h.d.a.d(context, af.e)) {
-            str = f24977a;
+            str = f11289a;
         }
         return com.opos.cmn.an.h.d.a.b(context, str);
     }
@@ -20,7 +20,7 @@ public class h {
     public static final String b(Context context) {
         String str = af.e;
         if (!com.opos.cmn.an.h.d.a.d(context, af.e)) {
-            str = f24977a;
+            str = f11289a;
         }
         return com.opos.cmn.an.h.d.a.c(context, str);
     }

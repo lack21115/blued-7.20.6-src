@@ -10,7 +10,7 @@ import java.util.LinkedList;
 public final class j implements h {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Deque<PixelFrame> f36661a = new LinkedList();
+    private final Deque<PixelFrame> f22970a = new LinkedList();
     private int b;
 
     public j(int i) {
@@ -21,7 +21,7 @@ public final class j implements h {
     public final PixelFrame a() {
         PixelFrame pollFirst;
         synchronized (this) {
-            pollFirst = this.f36661a.pollFirst();
+            pollFirst = this.f22970a.pollFirst();
         }
         return pollFirst;
     }
@@ -31,8 +31,8 @@ public final class j implements h {
         PixelFrame removeFirst;
         pixelFrame.retain();
         synchronized (this) {
-            removeFirst = this.f36661a.size() >= this.b ? this.f36661a.removeFirst() : null;
-            this.f36661a.addLast(pixelFrame);
+            removeFirst = this.f22970a.size() >= this.b ? this.f22970a.removeFirst() : null;
+            this.f22970a.addLast(pixelFrame);
         }
         if (removeFirst != null) {
             removeFirst.release();
@@ -43,8 +43,8 @@ public final class j implements h {
     public final void b() {
         ArrayList arrayList;
         synchronized (this) {
-            arrayList = new ArrayList(this.f36661a);
-            this.f36661a.clear();
+            arrayList = new ArrayList(this.f22970a);
+            this.f22970a.clear();
         }
         LiteavLog.i("RingFrameQueue", "evictAll pixelFrame.");
         PixelFrame.releasePixelFrames(arrayList);
@@ -56,8 +56,8 @@ public final class j implements h {
             return false;
         }
         synchronized (this) {
-            if (this.f36661a.size() > 0) {
-                z = this.f36661a.removeFirstOccurrence(pixelFrame);
+            if (this.f22970a.size() > 0) {
+                z = this.f22970a.removeFirstOccurrence(pixelFrame);
             }
         }
         if (z) {
@@ -69,7 +69,7 @@ public final class j implements h {
     public final int c() {
         int size;
         synchronized (this) {
-            size = this.f36661a.size();
+            size = this.f22970a.size();
         }
         return size;
     }

@@ -14,6 +14,7 @@ import android.text.Spanned;
 import android.text.style.TextAppearanceSpan;
 import android.util.Log;
 import android.util.Pair;
+import com.android.internal.R;
 import java.util.Arrays;
 import java.util.WeakHashMap;
 
@@ -27,7 +28,7 @@ public class NotificationColorUtil {
     private final WeakHashMap<Bitmap, Pair<Boolean, Integer>> mGrayscaleBitmapCache = new WeakHashMap<>();
 
     private NotificationColorUtil(Context context) {
-        this.mGrayscaleIconMaxSize = context.getResources().getDimensionPixelSize(17104901);
+        this.mGrayscaleIconMaxSize = context.getResources().getDimensionPixelSize(R.dimen.notification_large_icon_width);
     }
 
     public static NotificationColorUtil getInstance(Context context) {
@@ -123,8 +124,8 @@ public class NotificationColorUtil {
         }
         synchronized (sLock) {
             Pair<Boolean, Integer> pair = this.mGrayscaleBitmapCache.get(bitmap);
-            if (pair != null && pair.second.intValue() == bitmap.getGenerationId()) {
-                return pair.first.booleanValue();
+            if (pair != null && ((Integer) pair.second).intValue() == bitmap.getGenerationId()) {
+                return ((Boolean) pair.first).booleanValue();
             }
             synchronized (this.mImageUtils) {
                 isGrayscale = this.mImageUtils.isGrayscale(bitmap);

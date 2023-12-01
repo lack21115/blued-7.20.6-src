@@ -16,13 +16,11 @@ import kotlinx.coroutines.MainCoroutineDispatcher;
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/internal/MissingMainCoroutineDispatcher.class */
 public final class MissingMainCoroutineDispatcher extends MainCoroutineDispatcher implements Delay {
     private final Throwable b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final String f43554c;
+    private final String c;
 
     public MissingMainCoroutineDispatcher(Throwable th, String str) {
         this.b = th;
-        this.f43554c = str;
+        this.c = str;
     }
 
     public /* synthetic */ MissingMainCoroutineDispatcher(Throwable th, String str, int i, DefaultConstructorMarker defaultConstructorMarker) {
@@ -34,7 +32,7 @@ public final class MissingMainCoroutineDispatcher extends MainCoroutineDispatche
             MainDispatchersKt.a();
             throw new KotlinNothingValueException();
         }
-        String str = this.f43554c;
+        String str = this.c;
         String str2 = "";
         if (str != null) {
             str2 = Intrinsics.a(". ", (Object) str);

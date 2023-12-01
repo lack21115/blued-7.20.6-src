@@ -13,11 +13,11 @@ import com.soft.blued.R;
 public final class FragmentLiveSettingBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final RelativeLayout f28875a;
+    public final RelativeLayout f15185a;
     public final ToggleButton b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final ToggleButton f28876c;
+    public final ToggleButton f15186c;
     public final ToggleButton d;
     public final ToggleButton e;
     public final ToggleButton f;
@@ -28,9 +28,9 @@ public final class FragmentLiveSettingBinding implements ViewBinding {
 
     private FragmentLiveSettingBinding(LinearLayout linearLayout, RelativeLayout relativeLayout, ToggleButton toggleButton, ToggleButton toggleButton2, ToggleButton toggleButton3, ToggleButton toggleButton4, ToggleButton toggleButton5, ToggleButton toggleButton6, CommonTopTitleNoTrans commonTopTitleNoTrans, TextView textView) {
         this.j = linearLayout;
-        this.f28875a = relativeLayout;
+        this.f15185a = relativeLayout;
         this.b = toggleButton;
-        this.f28876c = toggleButton2;
+        this.f15186c = toggleButton2;
         this.d = toggleButton3;
         this.e = toggleButton4;
         this.f = toggleButton5;
@@ -55,11 +55,11 @@ public final class FragmentLiveSettingBinding implements ViewBinding {
                             if (toggleButton5 != null) {
                                 ToggleButton toggleButton6 = (ToggleButton) view.findViewById(R.id.tglbtn_live_rank_cloaking);
                                 if (toggleButton6 != null) {
-                                    CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) view.findViewById(2131370749);
-                                    if (commonTopTitleNoTrans != null) {
+                                    CommonTopTitleNoTrans findViewById = view.findViewById(R.id.top_title);
+                                    if (findViewById != null) {
                                         TextView textView = (TextView) view.findViewById(R.id.tv_live_privilege);
                                         if (textView != null) {
-                                            return new FragmentLiveSettingBinding((LinearLayout) view, relativeLayout, toggleButton, toggleButton2, toggleButton3, toggleButton4, toggleButton5, toggleButton6, commonTopTitleNoTrans, textView);
+                                            return new FragmentLiveSettingBinding((LinearLayout) view, relativeLayout, toggleButton, toggleButton2, toggleButton3, toggleButton4, toggleButton5, toggleButton6, findViewById, textView);
                                         }
                                         str = "tvLivePrivilege";
                                     } else {

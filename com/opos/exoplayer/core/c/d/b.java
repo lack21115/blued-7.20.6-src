@@ -21,7 +21,7 @@ import java.util.UUID;
 public final class b implements com.opos.exoplayer.core.c.e {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final com.opos.exoplayer.core.c.h f25113a = new com.opos.exoplayer.core.c.h() { // from class: com.opos.exoplayer.core.c.d.b.1
+    public static final com.opos.exoplayer.core.c.h f11425a = new com.opos.exoplayer.core.c.h() { // from class: com.opos.exoplayer.core.c.d.b.1
         @Override // com.opos.exoplayer.core.c.h
         public com.opos.exoplayer.core.c.e[] a() {
             return new com.opos.exoplayer.core.c.e[]{new b()};
@@ -30,12 +30,12 @@ public final class b implements com.opos.exoplayer.core.c.e {
     private static final int b = u.f("seig");
 
     /* renamed from: c  reason: collision with root package name */
-    private static final byte[] f25114c = {-94, 57, 79, 82, 90, -101, 79, 20, -94, 68, 108, 66, 124, 100, -115, -12};
+    private static final byte[] f11426c = {-94, 57, 79, 82, 90, -101, 79, 20, -94, 68, 108, 66, 124, 100, -115, -12};
     private static final Format d = Format.a((String) null, o.ai, Long.MAX_VALUE);
     private int A;
     private long B;
     private long C;
-    private C0652b D;
+    private C0482b D;
     private int E;
     private int F;
     private int G;
@@ -48,7 +48,7 @@ public final class b implements com.opos.exoplayer.core.c.e {
     private final e f;
     private final List<Format> g;
     private final DrmInitData h;
-    private final SparseArray<C0652b> i;
+    private final SparseArray<C0482b> i;
     private final com.opos.exoplayer.core.i.m j;
     private final com.opos.exoplayer.core.i.m k;
     private final com.opos.exoplayer.core.i.m l;
@@ -72,11 +72,11 @@ public final class b implements com.opos.exoplayer.core.c.e {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public final long f25115a;
+        public final long f11427a;
         public final int b;
 
         public a(long j, int i) {
-            this.f25115a = j;
+            this.f11427a = j;
             this.b = i;
         }
     }
@@ -84,40 +84,40 @@ public final class b implements com.opos.exoplayer.core.c.e {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.opos.exoplayer.core.c.d.b$b  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/opos/exoplayer/core/c/d/b$b.class */
-    public static final class C0652b {
+    public static final class C0482b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final l f25116a = new l();
+        public final l f11428a = new l();
         public final n b;
 
         /* renamed from: c  reason: collision with root package name */
-        public e f25117c;
+        public e f11429c;
         public i d;
         public int e;
         public int f;
         public int g;
 
-        public C0652b(n nVar) {
+        public C0482b(n nVar) {
             this.b = nVar;
         }
 
         public void a() {
-            this.f25116a.a();
+            this.f11428a.a();
             this.e = 0;
             this.g = 0;
             this.f = 0;
         }
 
         public void a(e eVar, i iVar) {
-            this.f25117c = (e) com.opos.exoplayer.core.i.a.a(eVar);
+            this.f11429c = (e) com.opos.exoplayer.core.i.a.a(eVar);
             this.d = (i) com.opos.exoplayer.core.i.a.a(iVar);
             this.b.a(eVar.f);
             a();
         }
 
         public void a(DrmInitData drmInitData) {
-            f a2 = this.f25117c.a(this.f25116a.f25148a.f25143a);
-            this.b.a(this.f25117c.f.a(drmInitData.a(a2 != null ? a2.b : null)));
+            f a2 = this.f11429c.a(this.f11428a.f11460a.f11455a);
+            this.b.a(this.f11429c.f.a(drmInitData.a(a2 != null ? a2.b : null)));
         }
     }
 
@@ -149,7 +149,7 @@ public final class b implements com.opos.exoplayer.core.c.e {
         this.g = Collections.unmodifiableList(list);
         this.t = nVar;
         this.p = new com.opos.exoplayer.core.i.m(16);
-        this.j = new com.opos.exoplayer.core.i.m(com.opos.exoplayer.core.i.k.f25488a);
+        this.j = new com.opos.exoplayer.core.i.m(com.opos.exoplayer.core.i.k.f11800a);
         this.k = new com.opos.exoplayer.core.i.m(5);
         this.l = new com.opos.exoplayer.core.i.m();
         this.m = new com.opos.exoplayer.core.i.m(1);
@@ -163,11 +163,11 @@ public final class b implements com.opos.exoplayer.core.c.e {
         a();
     }
 
-    private int a(C0652b c0652b) {
+    private int a(C0482b c0482b) {
         com.opos.exoplayer.core.i.m mVar;
         int length;
-        l lVar = c0652b.f25116a;
-        f a2 = lVar.o != null ? lVar.o : c0652b.f25117c.a(lVar.f25148a.f25143a);
+        l lVar = c0482b.f11428a;
+        f a2 = lVar.o != null ? lVar.o : c0482b.f11429c.a(lVar.f11460a.f11455a);
         if (a2.d != 0) {
             com.opos.exoplayer.core.i.m mVar2 = lVar.q;
             length = a2.d;
@@ -178,10 +178,10 @@ public final class b implements com.opos.exoplayer.core.c.e {
             mVar = this.n;
             length = bArr.length;
         }
-        boolean z = lVar.n[c0652b.e];
-        this.m.f25496a[0] = (byte) ((z ? 128 : 0) | length);
+        boolean z = lVar.n[c0482b.e];
+        this.m.f11808a[0] = (byte) ((z ? 128 : 0) | length);
         this.m.c(0);
-        n nVar = c0652b.b;
+        n nVar = c0482b.b;
         nVar.a(this.m, 1);
         nVar.a(mVar, length);
         if (z) {
@@ -195,14 +195,14 @@ public final class b implements com.opos.exoplayer.core.c.e {
         return length + 1;
     }
 
-    private static int a(C0652b c0652b, int i, long j, int i2, com.opos.exoplayer.core.i.m mVar, int i3) {
+    private static int a(C0482b c0482b, int i, long j, int i2, com.opos.exoplayer.core.i.m mVar, int i3) {
         mVar.c(8);
         int b2 = g.b(mVar.o());
-        e eVar = c0652b.f25117c;
-        l lVar = c0652b.f25116a;
-        i iVar = lVar.f25148a;
+        e eVar = c0482b.f11429c;
+        l lVar = c0482b.f11428a;
+        i iVar = lVar.f11460a;
         lVar.h[i] = mVar.u();
-        lVar.g[i] = lVar.f25149c;
+        lVar.g[i] = lVar.f11461c;
         if ((b2 & 1) != 0) {
             long[] jArr = lVar.g;
             jArr[i] = jArr[i] + mVar.o();
@@ -222,7 +222,7 @@ public final class b implements com.opos.exoplayer.core.c.e {
             if (eVar.h.length == 1) {
                 j2 = 0;
                 if (eVar.h[0] == 0) {
-                    j2 = u.d(eVar.i[0], 1000L, eVar.f25125c);
+                    j2 = u.d(eVar.i[0], 1000L, eVar.f11437c);
                 }
             }
         }
@@ -232,14 +232,14 @@ public final class b implements com.opos.exoplayer.core.c.e {
         boolean[] zArr = lVar.l;
         boolean z6 = eVar.b == 2 && (i2 & 1) != 0;
         int i5 = i3 + lVar.h[i];
-        long j3 = eVar.f25125c;
+        long j3 = eVar.f11437c;
         if (i > 0) {
             j = lVar.s;
         }
         int i6 = i3;
         while (i6 < i5) {
             int u = z2 ? mVar.u() : iVar.b;
-            int u2 = z3 ? mVar.u() : iVar.f25144c;
+            int u2 = z3 ? mVar.u() : iVar.f11456c;
             int o = (i6 == 0 && z) ? i4 : z4 ? mVar.o() : iVar.d;
             if (z5) {
                 iArr2[i6] = (int) ((mVar.o() * 1000) / j3);
@@ -302,45 +302,45 @@ public final class b implements com.opos.exoplayer.core.c.e {
         }
     }
 
-    private static C0652b a(SparseArray<C0652b> sparseArray) {
+    private static C0482b a(SparseArray<C0482b> sparseArray) {
         long j;
         int size = sparseArray.size();
-        C0652b c0652b = null;
+        C0482b c0482b = null;
         long j2 = Long.MAX_VALUE;
         int i = 0;
         while (i < size) {
-            C0652b valueAt = sparseArray.valueAt(i);
-            if (valueAt.g == valueAt.f25116a.e) {
+            C0482b valueAt = sparseArray.valueAt(i);
+            if (valueAt.g == valueAt.f11428a.e) {
                 j = j2;
             } else {
-                long j3 = valueAt.f25116a.g[valueAt.g];
+                long j3 = valueAt.f11428a.g[valueAt.g];
                 j = j2;
                 if (j3 < j2) {
-                    c0652b = valueAt;
+                    c0482b = valueAt;
                     j = j3;
                 }
             }
             i++;
             j2 = j;
         }
-        return c0652b;
+        return c0482b;
     }
 
-    private static C0652b a(com.opos.exoplayer.core.i.m mVar, SparseArray<C0652b> sparseArray, int i) {
+    private static C0482b a(com.opos.exoplayer.core.i.m mVar, SparseArray<C0482b> sparseArray, int i) {
         mVar.c(8);
         int b2 = g.b(mVar.o());
-        C0652b c0652b = sparseArray.get((i & 8) == 0 ? mVar.o() : 0);
-        if (c0652b == null) {
+        C0482b c0482b = sparseArray.get((i & 8) == 0 ? mVar.o() : 0);
+        if (c0482b == null) {
             return null;
         }
         if ((b2 & 1) != 0) {
             long w = mVar.w();
-            c0652b.f25116a.f25149c = w;
-            c0652b.f25116a.d = w;
+            c0482b.f11428a.f11461c = w;
+            c0482b.f11428a.d = w;
         }
-        i iVar = c0652b.d;
-        c0652b.f25116a.f25148a = new i((b2 & 2) != 0 ? mVar.u() - 1 : iVar.f25143a, (b2 & 8) != 0 ? mVar.u() : iVar.b, (b2 & 16) != 0 ? mVar.u() : iVar.f25144c, (b2 & 32) != 0 ? mVar.u() : iVar.d);
-        return c0652b;
+        i iVar = c0482b.d;
+        c0482b.f11428a.f11460a = new i((b2 & 2) != 0 ? mVar.u() - 1 : iVar.f11455a, (b2 & 8) != 0 ? mVar.u() : iVar.b, (b2 & 16) != 0 ? mVar.u() : iVar.f11456c, (b2 & 32) != 0 ? mVar.u() : iVar.d);
+        return c0482b;
     }
 
     private static DrmInitData a(List<g.b> list) {
@@ -360,7 +360,7 @@ public final class b implements com.opos.exoplayer.core.c.e {
                 if (arrayList == null) {
                     arrayList3 = new ArrayList();
                 }
-                byte[] bArr = bVar.aQ.f25496a;
+                byte[] bArr = bVar.aQ.f11808a;
                 UUID a2 = d.a(bArr);
                 if (a2 == null) {
                     com.opos.cmn.an.f.a.c("FragmentedMp4Extractor", "Skipped pssh atom (failed to extract uuid)");
@@ -437,7 +437,7 @@ public final class b implements com.opos.exoplayer.core.c.e {
         }
     }
 
-    private static void a(g.a aVar, SparseArray<C0652b> sparseArray, int i, byte[] bArr) {
+    private static void a(g.a aVar, SparseArray<C0482b> sparseArray, int i, byte[] bArr) {
         int size = aVar.aS.size();
         int i2 = 0;
         while (true) {
@@ -453,7 +453,7 @@ public final class b implements com.opos.exoplayer.core.c.e {
         }
     }
 
-    private static void a(g.a aVar, C0652b c0652b, long j, int i) {
+    private static void a(g.a aVar, C0482b c0482b, long j, int i) {
         int i2;
         List<g.b> list = aVar.aR;
         int size = list.size();
@@ -483,10 +483,10 @@ public final class b implements com.opos.exoplayer.core.c.e {
             i4 = i6;
             i5 = i7;
         }
-        c0652b.g = 0;
-        c0652b.f = 0;
-        c0652b.e = 0;
-        c0652b.f25116a.a(i4, i2);
+        c0482b.g = 0;
+        c0482b.f = 0;
+        c0482b.e = 0;
+        c0482b.f11428a.a(i4, i2);
         int i8 = 0;
         int i9 = 0;
         int i10 = 0;
@@ -495,7 +495,7 @@ public final class b implements com.opos.exoplayer.core.c.e {
             int i11 = i8;
             int i12 = i9;
             if (bVar2.aP == g.z) {
-                i11 = a(c0652b, i9, j, i, bVar2.aQ, i8);
+                i11 = a(c0482b, i9, j, i, bVar2.aQ, i8);
                 i12 = i9 + 1;
             }
             i10++;
@@ -595,7 +595,7 @@ public final class b implements com.opos.exoplayer.core.c.e {
     private static void a(com.opos.exoplayer.core.i.m mVar, l lVar, byte[] bArr) {
         mVar.c(8);
         mVar.a(bArr, 0, 16);
-        if (Arrays.equals(bArr, f25114c)) {
+        if (Arrays.equals(bArr, f11426c)) {
             a(mVar, 16, lVar);
         }
     }
@@ -713,7 +713,7 @@ public final class b implements com.opos.exoplayer.core.c.e {
             while (true) {
                 int i2 = i;
                 if (i2 < length) {
-                    nVarArr[i2].a(removeFirst.f25115a + j, 1, removeFirst.b, this.A, null);
+                    nVarArr[i2].a(removeFirst.f11427a + j, 1, removeFirst.b, this.A, null);
                     i = i2 + 1;
                 }
             }
@@ -757,7 +757,7 @@ public final class b implements com.opos.exoplayer.core.c.e {
             if (aVar2.aP == g.D) {
                 e a2 = h.a(aVar2, aVar.d(g.C), j, drmInitData, (this.e & 16) != 0, false);
                 if (a2 != null) {
-                    sparseArray2.put(a2.f25124a, a2);
+                    sparseArray2.put(a2.f11436a, a2);
                 }
             }
             i3 = i4 + 1;
@@ -773,9 +773,9 @@ public final class b implements com.opos.exoplayer.core.c.e {
                     return;
                 }
                 e eVar = (e) sparseArray2.valueAt(i6);
-                C0652b c0652b = new C0652b(this.I.a(i6, eVar.b));
-                c0652b.a(eVar, (i) sparseArray.get(eVar.f25124a));
-                this.i.put(eVar.f25124a, c0652b);
+                C0482b c0482b = new C0482b(this.I.a(i6, eVar.b));
+                c0482b.a(eVar, (i) sparseArray.get(eVar.f11436a));
+                this.i.put(eVar.f11436a, c0482b);
                 this.B = Math.max(this.B, eVar.e);
                 i5 = i6 + 1;
             }
@@ -788,18 +788,18 @@ public final class b implements com.opos.exoplayer.core.c.e {
                     return;
                 }
                 e eVar2 = (e) sparseArray2.valueAt(i8);
-                this.i.get(eVar2.f25124a).a(eVar2, (i) sparseArray.get(eVar2.f25124a));
+                this.i.get(eVar2.f11436a).a(eVar2, (i) sparseArray.get(eVar2.f11436a));
                 i7 = i8 + 1;
             }
         }
     }
 
-    private static void b(g.a aVar, SparseArray<C0652b> sparseArray, int i, byte[] bArr) {
-        C0652b a2 = a(aVar.d(g.x).aQ, sparseArray, i);
+    private static void b(g.a aVar, SparseArray<C0482b> sparseArray, int i, byte[] bArr) {
+        C0482b a2 = a(aVar.d(g.x).aQ, sparseArray, i);
         if (a2 == null) {
             return;
         }
-        l lVar = a2.f25116a;
+        l lVar = a2.f11428a;
         long j = lVar.s;
         a2.a();
         long j2 = j;
@@ -810,7 +810,7 @@ public final class b implements com.opos.exoplayer.core.c.e {
             }
         }
         a(aVar, a2, j2, i);
-        f a3 = a2.f25117c.a(lVar.f25148a.f25143a);
+        f a3 = a2.f11429c.a(lVar.f11460a.f11455a);
         g.b d2 = aVar.d(g.ac);
         if (d2 != null) {
             a(a3, d2.aQ, lVar);
@@ -892,7 +892,7 @@ public final class b implements com.opos.exoplayer.core.c.e {
         int i = ((int) this.w) - this.x;
         com.opos.exoplayer.core.i.m mVar = this.y;
         if (mVar != null) {
-            fVar.b(mVar.f25496a, 8, i);
+            fVar.b(mVar.f11808a, 8, i);
             a(new g.b(this.v, this.y), fVar.c());
         } else {
             fVar.b(i);
@@ -907,26 +907,26 @@ public final class b implements com.opos.exoplayer.core.c.e {
 
     private void d(com.opos.exoplayer.core.c.f fVar) {
         int size = this.i.size();
-        C0652b c0652b = null;
+        C0482b c0482b = null;
         long j = Long.MAX_VALUE;
         int i = 0;
         while (i < size) {
-            l lVar = this.i.valueAt(i).f25116a;
-            C0652b c0652b2 = c0652b;
+            l lVar = this.i.valueAt(i).f11428a;
+            C0482b c0482b2 = c0482b;
             long j2 = j;
             if (lVar.r) {
-                c0652b2 = c0652b;
+                c0482b2 = c0482b;
                 j2 = j;
                 if (lVar.d < j) {
                     j2 = lVar.d;
-                    c0652b2 = this.i.valueAt(i);
+                    c0482b2 = this.i.valueAt(i);
                 }
             }
             i++;
-            c0652b = c0652b2;
+            c0482b = c0482b2;
             j = j2;
         }
-        if (c0652b == null) {
+        if (c0482b == null) {
             this.u = 3;
             return;
         }
@@ -935,7 +935,7 @@ public final class b implements com.opos.exoplayer.core.c.e {
             throw new com.opos.exoplayer.core.o("Offset to encryption data was negative.");
         }
         fVar.b(c2);
-        c0652b.f25116a.a(fVar);
+        c0482b.f11428a.a(fVar);
     }
 
     /* JADX WARN: Type inference failed for: r0v0, types: [java.lang.Throwable, java.lang.Runtime] */
@@ -984,9 +984,9 @@ public final class b implements com.opos.exoplayer.core.c.e {
         this.I = gVar;
         e eVar = this.f;
         if (eVar != null) {
-            C0652b c0652b = new C0652b(gVar.a(0, eVar.b));
-            c0652b.a(this.f, new i(0, 0, 0, 0));
-            this.i.put(0, c0652b);
+            C0482b c0482b = new C0482b(gVar.a(0, eVar.b));
+            c0482b.a(this.f, new i(0, 0, 0, 0));
+            this.i.put(0, c0482b);
             b();
             this.I.a();
         }

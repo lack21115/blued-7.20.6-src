@@ -7,6 +7,8 @@ import com.alibaba.mtl.appmonitor.model.MeasureValueSet;
 import com.alibaba.mtl.appmonitor.model.Metric;
 import com.alibaba.mtl.appmonitor.model.MetricRepo;
 import com.alibaba.mtl.log.e.i;
+import com.android.internal.util.cm.SpamFilter;
+import com.anythink.core.common.c.d;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -17,9 +19,7 @@ import org.json.JSONObject;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alibaba/mtl/appmonitor/a/g.class */
 public class g extends d {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Metric f4458a;
+    private Metric a;
     private Map<DimensionValueSet, a> j;
 
     /* loaded from: source-6737240-dex2jar.jar:com/alibaba/mtl/appmonitor/a/g$a.class */
@@ -34,7 +34,7 @@ public class g extends d {
         private MeasureValueSet a(MeasureValueSet measureValueSet) {
             List<Measure> measures;
             MeasureValueSet measureValueSet2 = (MeasureValueSet) com.alibaba.mtl.appmonitor.c.a.a().a(MeasureValueSet.class, new Object[0]);
-            if (g.this.f4458a != null && g.this.f4458a.getMeasureSet() != null && (measures = g.this.f4458a.getMeasureSet().getMeasures()) != null) {
+            if (g.this.a != null && g.this.a.getMeasureSet() != null && (measures = g.this.a.getMeasureSet().getMeasures()) != null) {
                 int size = measures.size();
                 int i = 0;
                 while (true) {
@@ -79,7 +79,7 @@ public class g extends d {
                         HashMap hashMap2 = new HashMap();
                         String key = entry.getKey();
                         MeasureValue value = entry.getValue();
-                        hashMap2.put("value", Double.valueOf(value.getValue()));
+                        hashMap2.put(d.a.d, Double.valueOf(value.getValue()));
                         if (value.getOffset() != null) {
                             hashMap2.put("offset", value.getOffset());
                         }
@@ -92,9 +92,9 @@ public class g extends d {
         }
 
         /* renamed from: a  reason: collision with other method in class */
-        public void m2141a(MeasureValueSet measureValueSet) {
+        public void m8584a(MeasureValueSet measureValueSet) {
             if (measureValueSet != null) {
-                if (g.this.f4458a != null && g.this.f4458a.isCommitDetail()) {
+                if (g.this.a != null && g.this.a.isCommitDetail()) {
                     this.b.add(a(measureValueSet));
                 } else if (this.b.isEmpty()) {
                     this.b.add(a(measureValueSet));
@@ -120,8 +120,8 @@ public class g extends d {
         synchronized (this) {
             a2 = super.a();
             try {
-                if (this.f4458a != null) {
-                    a2.put("isCommitDetail", String.valueOf(this.f4458a.isCommitDetail()));
+                if (this.a != null) {
+                    a2.put("isCommitDetail", String.valueOf(this.a.isCommitDetail()));
                 }
                 JSONArray jSONArray = (JSONArray) com.alibaba.mtl.appmonitor.c.a.a().a(com.alibaba.mtl.appmonitor.c.d.class, new Object[0]);
                 if (this.j != null) {
@@ -131,7 +131,7 @@ public class g extends d {
                         a value = entry.getValue();
                         int i = value.count;
                         int i2 = value.l;
-                        jSONObject.put("count", Integer.valueOf(i));
+                        jSONObject.put(SpamFilter.SpamContract.NotificationTable.COUNT, Integer.valueOf(i));
                         jSONObject.put("noise", Integer.valueOf(i2));
                         jSONObject.put("dimensions", key != null ? new JSONObject(key.getMap()) : "");
                         List<Map<String, Map<String, Double>>> a3 = value.a();
@@ -182,13 +182,13 @@ public class g extends d {
                 aVar = new a();
                 this.j.put(dimensionValueSet3, aVar);
             }
-            if (this.f4458a != null ? this.f4458a.valid(dimensionValueSet2, measureValueSet) : false) {
+            if (this.a != null ? this.a.valid(dimensionValueSet2, measureValueSet) : false) {
                 aVar.i();
-                aVar.m2141a(measureValueSet);
+                aVar.m8584a(measureValueSet);
             } else {
                 aVar.j();
-                if (this.f4458a.isCommitDetail()) {
-                    aVar.m2141a(measureValueSet);
+                if (this.a.isCommitDetail()) {
+                    aVar.m8584a(measureValueSet);
                 }
             }
             i.a("StatEvent", "entity  count:", Integer.valueOf(aVar.count), " noise:", Integer.valueOf(aVar.l));
@@ -199,7 +199,7 @@ public class g extends d {
     public void clean() {
         synchronized (this) {
             super.clean();
-            this.f4458a = null;
+            this.a = null;
             for (DimensionValueSet dimensionValueSet : this.j.keySet()) {
                 com.alibaba.mtl.appmonitor.c.a.a().a((com.alibaba.mtl.appmonitor.c.a) dimensionValueSet);
             }
@@ -213,6 +213,6 @@ public class g extends d {
         if (this.j == null) {
             this.j = new HashMap();
         }
-        this.f4458a = MetricRepo.getRepo().getMetric(this.o, this.p);
+        this.a = MetricRepo.getRepo().getMetric(this.o, this.p);
     }
 }

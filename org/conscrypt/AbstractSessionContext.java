@@ -1,6 +1,5 @@
 package org.conscrypt;
 
-import android.speech.tts.TextToSpeech;
 import java.util.Arrays;
 import java.util.Enumeration;
 import java.util.Iterator;
@@ -120,7 +119,7 @@ public abstract class AbstractSessionContext implements SSLSessionContext {
             }
             return nativeSslSession.toSSLSession();
         }
-        throw new NullPointerException(TextToSpeech.Engine.KEY_PARAM_SESSION_ID);
+        throw new NullPointerException("sessionId");
     }
 
     @Override // javax.net.ssl.SSLSessionContext

@@ -11,11 +11,11 @@ import java.lang.annotation.RetentionPolicy;
 public final class q {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f7670a = -1000;
+    public static final int f4831a = -1000;
     public static final int b = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final int f7671c = 1;
+    public static final int f4832c = 1;
     public static final int d = 2;
     public static final int e = 3;
     public static final int f = 4;
@@ -38,7 +38,7 @@ public final class q {
     }
 
     private static void a(Context context, String str, int i, int i2) {
-        if (af.f7632a >= 26) {
+        if (af.f4793a >= 26) {
             ((NotificationManager) context.getSystemService("notification")).createNotificationChannel(new NotificationChannel(str, context.getString(i), i2));
         }
     }

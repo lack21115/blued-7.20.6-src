@@ -16,11 +16,11 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public class i {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f8741a = "ending_page_source";
+    public static final String f5901a = "ending_page_source";
     public static final String b = "ending_page_save_time";
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f8742c = "H5DownLoadManager";
+    private static final String f5902c = "H5DownLoadManager";
     private static volatile i f;
     private CopyOnWriteArrayList<String> d;
     private ConcurrentMap<String, com.anythink.expressad.videocommon.b.d> e;
@@ -55,11 +55,11 @@ public class i {
     private i() {
         try {
             this.g = m.a();
-            this.h = j.a.f8748a;
+            this.h = j.a.f5908a;
             this.d = new CopyOnWriteArrayList<>();
             this.e = new ConcurrentHashMap();
         } catch (Throwable th) {
-            com.anythink.expressad.foundation.h.o.b(f8742c, th.getMessage(), th);
+            com.anythink.expressad.foundation.h.o.b(f5902c, th.getMessage(), th);
         }
     }
 
@@ -98,7 +98,7 @@ public class i {
             if (dVar != null) {
                 dVar.a(str, "downloadzip failed");
             }
-            if (com.anythink.expressad.a.f6941a) {
+            if (com.anythink.expressad.a.f4103a) {
                 e.printStackTrace();
             }
         }
@@ -106,8 +106,8 @@ public class i {
 
     private static void a(String str, String str2) {
         try {
-            com.anythink.expressad.foundation.h.o.b(f8742c, "sourceContent:".concat(String.valueOf(str)));
-            v.a(com.anythink.expressad.foundation.b.a.b().d(), f8741a.concat(String.valueOf(str2)), str);
+            com.anythink.expressad.foundation.h.o.b(f5902c, "sourceContent:".concat(String.valueOf(str)));
+            v.a(com.anythink.expressad.foundation.b.a.b().d(), f5901a.concat(String.valueOf(str2)), str);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -133,7 +133,7 @@ public class i {
             if (dVar != null) {
                 dVar.a(str, "downloadzip failed");
             }
-            if (com.anythink.expressad.a.f6941a) {
+            if (com.anythink.expressad.a.f4103a) {
                 e.printStackTrace();
             }
         }
@@ -141,12 +141,12 @@ public class i {
 
     private void c(final String str, final a aVar) {
         try {
-            com.anythink.expressad.foundation.h.o.d(f8742c, "download url:".concat(String.valueOf(str)));
+            com.anythink.expressad.foundation.h.o.d(f5902c, "download url:".concat(String.valueOf(str)));
             if (this.d.contains(str)) {
                 return;
             }
             this.d.add(str);
-            h.a.f8740a.a(new com.anythink.expressad.foundation.g.g.a() { // from class: com.anythink.expressad.videocommon.b.i.1
+            h.a.f5900a.a(new com.anythink.expressad.foundation.g.g.a() { // from class: com.anythink.expressad.videocommon.b.i.1
                 @Override // com.anythink.expressad.foundation.g.g.a
                 public final void a() {
                     if (TextUtils.isEmpty(i.this.h.b(str))) {
@@ -163,7 +163,7 @@ public class i {
                                         aVar.a(str, str2);
                                     }
                                 } catch (Exception e) {
-                                    if (com.anythink.expressad.a.f6941a) {
+                                    if (com.anythink.expressad.a.f4103a) {
                                         e.printStackTrace();
                                     }
                                     if (aVar != null) {
@@ -187,7 +187,7 @@ public class i {
                                         aVar.a(str2, "save file failed");
                                     }
                                 } catch (Exception e) {
-                                    if (com.anythink.expressad.a.f6941a) {
+                                    if (com.anythink.expressad.a.f4103a) {
                                         e.printStackTrace();
                                     }
                                     if (aVar != null) {
@@ -214,7 +214,7 @@ public class i {
                 }
             });
         } catch (Throwable th) {
-            if (com.anythink.expressad.a.f6941a) {
+            if (com.anythink.expressad.a.f4103a) {
                 th.printStackTrace();
             }
         }
@@ -231,7 +231,7 @@ public class i {
 
     private static String e(String str) {
         try {
-            Object b2 = v.b(com.anythink.expressad.foundation.b.a.b().d(), f8741a.concat(String.valueOf(str)), "");
+            Object b2 = v.b(com.anythink.expressad.foundation.b.a.b().d(), f5901a.concat(String.valueOf(str)), "");
             if (b2 == null || !(b2 instanceof String)) {
                 return null;
             }

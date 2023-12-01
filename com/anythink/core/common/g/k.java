@@ -10,17 +10,15 @@ import org.json.JSONObject;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/g/k.class */
 public final class k extends a {
-
-    /* renamed from: a  reason: collision with root package name */
-    w f6731a;
+    w a;
 
     public k(w wVar) {
-        this.f6731a = wVar;
+        this.a = wVar;
     }
 
     @Override // com.anythink.core.common.g.a
     protected final int a() {
-        return this.f6731a.b;
+        return this.a.b;
     }
 
     @Override // com.anythink.core.common.g.a
@@ -39,7 +37,7 @@ public final class k extends a {
 
     @Override // com.anythink.core.common.g.a
     protected final String b() {
-        return this.f6731a.d;
+        return this.a.d;
     }
 
     @Override // com.anythink.core.common.g.a
@@ -48,7 +46,7 @@ public final class k extends a {
 
     @Override // com.anythink.core.common.g.a
     protected final Map<String, String> c() {
-        String str = this.f6731a.f6681c;
+        String str = this.a.c;
         HashMap hashMap = new HashMap();
         try {
             JSONObject jSONObject = new JSONObject(str);

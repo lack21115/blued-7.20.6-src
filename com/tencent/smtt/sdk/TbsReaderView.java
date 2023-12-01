@@ -45,11 +45,11 @@ public class TbsReaderView extends FrameLayout {
     public static String gReaderPackVersion = "";
 
     /* renamed from: a  reason: collision with root package name */
-    Context f38786a;
+    Context f25095a;
     ReaderWizard b;
 
     /* renamed from: c  reason: collision with root package name */
-    Object f38787c;
+    Object f25096c;
     ReaderCallback d;
     ReaderCallback e;
 
@@ -102,16 +102,16 @@ public class TbsReaderView extends FrameLayout {
 
     public TbsReaderView(Context context, ReaderCallback readerCallback) throws RuntimeException {
         super(context.getApplicationContext());
-        this.f38786a = null;
+        this.f25095a = null;
         this.b = null;
-        this.f38787c = null;
+        this.f25096c = null;
         this.d = null;
         this.e = null;
         if (!(context instanceof Activity)) {
             throw new RuntimeException("error: unexpect context(none Activity)");
         }
         this.d = readerCallback;
-        this.f38786a = context;
+        this.f25095a = context;
         this.e = new ReaderCallback() { // from class: com.tencent.smtt.sdk.TbsReaderView.1
             @Override // com.tencent.smtt.sdk.TbsReaderView.ReaderCallback
             public void onCallBackAction(Integer num, Object obj, Object obj2) {
@@ -131,9 +131,9 @@ public class TbsReaderView extends FrameLayout {
                     if (intValue != 5030) {
                         switch (intValue) {
                             case 5008:
-                                if (!MttLoader.isBrowserInstalledEx(TbsReaderView.this.f38786a)) {
+                                if (!MttLoader.isBrowserInstalledEx(TbsReaderView.this.f25095a)) {
                                     num2 = 5011;
-                                    String resString = TbsReaderView.getResString(TbsReaderView.this.f38786a, ReaderCallback.READER_PLUGIN_RES_PDF_GUIDE);
+                                    String resString = TbsReaderView.getResString(TbsReaderView.this.f25095a, ReaderCallback.READER_PLUGIN_RES_PDF_GUIDE);
                                     bundle = new Bundle();
                                     bundle.putString("tip", resString);
                                     bundle.putString("statistics", TbsReaderView.READER_STATISTICS_COUNT_PDF_INTO_DOWNLOAD);
@@ -154,7 +154,7 @@ public class TbsReaderView extends FrameLayout {
                                         bundle4 = (Bundle) obj;
                                         str3 = bundle4.getString("docpath");
                                     }
-                                    QbSdk.startQBForDoc(TbsReaderView.this.f38786a, str3, 4, 0, "pdf", bundle4);
+                                    QbSdk.startQBForDoc(TbsReaderView.this.f25095a, str3, 4, 0, "pdf", bundle4);
                                     tbsReaderView = TbsReaderView.this;
                                     str = TbsReaderView.READER_STATISTICS_COUNT_PDF_INTO_BROWSER;
                                     tbsReaderView.userStatistics(str);
@@ -164,9 +164,9 @@ public class TbsReaderView extends FrameLayout {
                                     break;
                                 }
                             case 5009:
-                                if (!MttLoader.isBrowserInstalledEx(TbsReaderView.this.f38786a)) {
+                                if (!MttLoader.isBrowserInstalledEx(TbsReaderView.this.f25095a)) {
                                     num2 = 5011;
-                                    String resString2 = TbsReaderView.getResString(TbsReaderView.this.f38786a, 5021);
+                                    String resString2 = TbsReaderView.getResString(TbsReaderView.this.f25095a, 5021);
                                     bundle = new Bundle();
                                     bundle.putString("tip", resString2);
                                     bundle.putString("statistics", TbsReaderView.READER_STATISTICS_COUNT_PPT_INTO_DOWNLOAD);
@@ -187,7 +187,7 @@ public class TbsReaderView extends FrameLayout {
                                         bundle5 = (Bundle) obj;
                                         str3 = bundle5.getString("docpath");
                                     }
-                                    QbSdk.startQBForDoc(TbsReaderView.this.f38786a, str3, 4, 0, "", bundle5);
+                                    QbSdk.startQBForDoc(TbsReaderView.this.f25095a, str3, 4, 0, "", bundle5);
                                     tbsReaderView = TbsReaderView.this;
                                     str = TbsReaderView.READER_STATISTICS_COUNT_PPT_INTO_BROWSER;
                                     tbsReaderView.userStatistics(str);
@@ -197,9 +197,9 @@ public class TbsReaderView extends FrameLayout {
                                     break;
                                 }
                             case 5010:
-                                if (!MttLoader.isBrowserInstalledEx(TbsReaderView.this.f38786a)) {
+                                if (!MttLoader.isBrowserInstalledEx(TbsReaderView.this.f25095a)) {
                                     num2 = 5011;
-                                    String resString3 = TbsReaderView.getResString(TbsReaderView.this.f38786a, 5022);
+                                    String resString3 = TbsReaderView.getResString(TbsReaderView.this.f25095a, 5022);
                                     bundle = new Bundle();
                                     bundle.putString("tip", resString3);
                                     bundle.putString("statistics", TbsReaderView.READER_STATISTICS_COUNT_TXT_INTO_DOWNLOAD);
@@ -219,7 +219,7 @@ public class TbsReaderView extends FrameLayout {
                                         bundle2 = (Bundle) obj;
                                         str3 = bundle2.getString("docpath");
                                     }
-                                    QbSdk.startQBForDoc(TbsReaderView.this.f38786a, str3, 4, 0, "txt", bundle2);
+                                    QbSdk.startQBForDoc(TbsReaderView.this.f25095a, str3, 4, 0, "txt", bundle2);
                                     z = true;
                                     num3 = num;
                                     obj3 = obj;
@@ -244,13 +244,13 @@ public class TbsReaderView extends FrameLayout {
                             obj3 = obj;
                         }
                     }
-                } else if (MttLoader.isBrowserInstalledEx(TbsReaderView.this.f38786a)) {
+                } else if (MttLoader.isBrowserInstalledEx(TbsReaderView.this.f25095a)) {
                     Bundle bundle7 = null;
                     if (obj != null) {
                         bundle7 = (Bundle) obj;
                         str3 = bundle7.getString("docpath");
                     }
-                    QbSdk.startQBForDoc(TbsReaderView.this.f38786a, str3, 4, 0, "doc", bundle7);
+                    QbSdk.startQBForDoc(TbsReaderView.this.f25095a, str3, 4, 0, "doc", bundle7);
                     tbsReaderView = TbsReaderView.this;
                     str = TbsReaderView.READER_STATISTICS_COUNT_DOC_INTO_BROWSER;
                     tbsReaderView.userStatistics(str);
@@ -259,7 +259,7 @@ public class TbsReaderView extends FrameLayout {
                     obj3 = obj;
                 } else {
                     num2 = 5011;
-                    String resString4 = TbsReaderView.getResString(TbsReaderView.this.f38786a, ReaderCallback.READER_PLUGIN_RES_DOC_GUIDE);
+                    String resString4 = TbsReaderView.getResString(TbsReaderView.this.f25095a, ReaderCallback.READER_PLUGIN_RES_DOC_GUIDE);
                     bundle = new Bundle();
                     bundle.putString("tip", resString4);
                     bundle.putString("statistics", TbsReaderView.READER_STATISTICS_COUNT_DOC_INTO_DOWNLOAD);
@@ -321,11 +321,11 @@ public class TbsReaderView extends FrameLayout {
             if (this.b == null) {
                 this.b = new ReaderWizard(this.e);
             }
-            if (this.f38787c == null) {
-                this.f38787c = this.b.getTbsReader();
+            if (this.f25096c == null) {
+                this.f25096c = this.b.getTbsReader();
             }
-            if (this.f38787c != null) {
-                return this.b.initTbsReader(this.f38787c, this.f38786a);
+            if (this.f25096c != null) {
+                return this.b.initTbsReader(this.f25096c, this.f25095a);
             }
             return false;
         } catch (NullPointerException e) {
@@ -337,25 +337,25 @@ public class TbsReaderView extends FrameLayout {
     public void doCommand(Integer num, Object obj, Object obj2) {
         Object obj3;
         ReaderWizard readerWizard = this.b;
-        if (readerWizard == null || (obj3 = this.f38787c) == null) {
+        if (readerWizard == null || (obj3 = this.f25096c) == null) {
             return;
         }
         readerWizard.doCommand(obj3, num, obj, obj2);
     }
 
     public boolean downloadPlugin(String str) {
-        Object obj = this.f38787c;
+        Object obj = this.f25096c;
         if (obj == null) {
             Log.e(TAG, "downloadPlugin failed!");
             return false;
         }
-        return this.b.checkPlugin(obj, this.f38786a, str, true);
+        return this.b.checkPlugin(obj, this.f25095a, str, true);
     }
 
     public void onSizeChanged(int i, int i2) {
         Object obj;
         ReaderWizard readerWizard = this.b;
-        if (readerWizard == null || (obj = this.f38787c) == null) {
+        if (readerWizard == null || (obj = this.f25096c) == null) {
             return;
         }
         readerWizard.onSizeChanged(obj, i, i2);
@@ -364,32 +364,32 @@ public class TbsReaderView extends FrameLayout {
     public void onStop() {
         ReaderWizard readerWizard = this.b;
         if (readerWizard != null) {
-            readerWizard.destroy(this.f38787c);
-            this.f38787c = null;
+            readerWizard.destroy(this.f25096c);
+            this.f25096c = null;
         }
-        this.f38786a = null;
+        this.f25095a = null;
         f = false;
     }
 
     public void openFile(Bundle bundle) {
-        if (this.f38787c == null || bundle == null) {
+        if (this.f25096c == null || bundle == null) {
             Log.e(TAG, "init failed!");
             return;
         }
-        bundle.putBoolean("browser6.0", MttLoader.isBrowserInstalledEx(this.f38786a) | (!MttLoader.isBrowserInstalled(this.f38786a)));
-        bundle.putBoolean("browser6.1", MttLoader.isGreatBrowserVer(this.f38786a, 6101625L, 610000L) | (!MttLoader.isBrowserInstalled(this.f38786a)));
-        if (this.b.openFile(this.f38787c, this.f38786a, bundle, this)) {
+        bundle.putBoolean("browser6.0", MttLoader.isBrowserInstalledEx(this.f25095a) | (!MttLoader.isBrowserInstalled(this.f25095a)));
+        bundle.putBoolean("browser6.1", MttLoader.isGreatBrowserVer(this.f25095a, 6101625L, 610000L) | (!MttLoader.isBrowserInstalled(this.f25095a)));
+        if (this.b.openFile(this.f25096c, this.f25095a, bundle, this)) {
             return;
         }
         Log.e(TAG, "OpenFile failed!");
     }
 
     public boolean preOpen(String str, boolean z) {
-        if (!isSupportExt(this.f38786a, str)) {
+        if (!isSupportExt(this.f25095a, str)) {
             Log.e(TAG, "not supported by:" + str);
             return false;
         }
-        boolean a2 = a(this.f38786a);
+        boolean a2 = a(this.f25095a);
         boolean z2 = a2;
         if (a2) {
             boolean a3 = a();
@@ -398,10 +398,10 @@ public class TbsReaderView extends FrameLayout {
                 z2 = a3;
                 if (a3) {
                     boolean z3 = false;
-                    if (Apn.getApnType(this.f38786a) == 3) {
+                    if (Apn.getApnType(this.f25095a) == 3) {
                         z3 = true;
                     }
-                    z2 = this.b.checkPlugin(this.f38787c, this.f38786a, str, z3);
+                    z2 = this.b.checkPlugin(this.f25096c, this.f25095a, str, z3);
                 }
             }
         }
@@ -411,7 +411,7 @@ public class TbsReaderView extends FrameLayout {
     public void userStatistics(String str) {
         ReaderWizard readerWizard = this.b;
         if (readerWizard != null) {
-            readerWizard.userStatistics(this.f38787c, str);
+            readerWizard.userStatistics(this.f25096c, str);
         }
     }
 }

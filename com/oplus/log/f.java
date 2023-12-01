@@ -7,10 +7,10 @@ import android.util.Log;
 public final class f extends com.oplus.log.f.b {
 
     /* renamed from: a  reason: collision with root package name */
-    private final com.oplus.log.a.a f24367a;
+    private final com.oplus.log.a.a f10680a;
 
     public f(com.oplus.log.a.a aVar) {
-        this.f24367a = aVar;
+        this.f10680a = aVar;
     }
 
     @Override // com.oplus.log.f.b
@@ -19,7 +19,7 @@ public final class f extends com.oplus.log.f.b {
         if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
             return;
         }
-        if (a() != -1 && b >= a() && !TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2) && (aVar = this.f24367a) != null) {
+        if (a() != -1 && b >= a() && !TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2) && (aVar = this.f10680a) != null) {
             aVar.a(str, str2, b, c());
         }
         if (!z || b() == -1 || b < b()) {

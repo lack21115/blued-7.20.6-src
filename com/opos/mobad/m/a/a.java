@@ -5,10 +5,10 @@ import java.io.IOException;
 import okio.ByteString;
 
 /* loaded from: source-8303388-dex2jar.jar:com/opos/mobad/m/a/a.class */
-public final class a extends com.heytap.nearx.a.a.b<a, C0705a> {
+public final class a extends com.heytap.nearx.a.a.b<a, C0535a> {
 
     /* renamed from: c  reason: collision with root package name */
-    public static final com.heytap.nearx.a.a.e<a> f26327c = new b();
+    public static final com.heytap.nearx.a.a.e<a> f12639c = new b();
     public static final Integer d = 0;
     public static final Integer e = 0;
     public static final Integer f = 0;
@@ -21,38 +21,38 @@ public final class a extends com.heytap.nearx.a.a.b<a, C0705a> {
 
     /* renamed from: com.opos.mobad.m.a.a$a  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/opos/mobad/m/a/a$a.class */
-    public static final class C0705a extends b.a<a, C0705a> {
+    public static final class C0535a extends b.a<a, C0535a> {
 
         /* renamed from: c  reason: collision with root package name */
-        public Integer f26328c;
+        public Integer f12640c;
         public Integer d;
         public Integer e;
         public Integer f;
 
-        public C0705a a(Integer num) {
-            this.f26328c = num;
+        public C0535a a(Integer num) {
+            this.f12640c = num;
             return this;
         }
 
-        public C0705a b(Integer num) {
+        public C0535a b(Integer num) {
             this.d = num;
             return this;
         }
 
         public a b() {
-            Integer num = this.f26328c;
+            Integer num = this.f12640c;
             if (num != null) {
                 return new a(num, this.d, this.e, this.f, super.a());
             }
             throw com.heytap.nearx.a.a.a.b.a(num, "concurrentTimeout");
         }
 
-        public C0705a c(Integer num) {
+        public C0535a c(Integer num) {
             this.e = num;
             return this;
         }
 
-        public C0705a d(Integer num) {
+        public C0535a d(Integer num) {
             this.f = num;
             return this;
         }
@@ -94,31 +94,31 @@ public final class a extends com.heytap.nearx.a.a.b<a, C0705a> {
         @Override // com.heytap.nearx.a.a.e
         /* renamed from: b */
         public a a(com.heytap.nearx.a.a.f fVar) throws IOException {
-            C0705a c0705a = new C0705a();
+            C0535a c0535a = new C0535a();
             long a2 = fVar.a();
             while (true) {
                 int b = fVar.b();
                 if (b == -1) {
                     fVar.a(a2);
-                    return c0705a.b();
+                    return c0535a.b();
                 } else if (b == 1) {
-                    c0705a.a(com.heytap.nearx.a.a.e.d.a(fVar));
+                    c0535a.a(com.heytap.nearx.a.a.e.d.a(fVar));
                 } else if (b == 2) {
-                    c0705a.b(com.heytap.nearx.a.a.e.d.a(fVar));
+                    c0535a.b(com.heytap.nearx.a.a.e.d.a(fVar));
                 } else if (b == 3) {
-                    c0705a.c(com.heytap.nearx.a.a.e.d.a(fVar));
+                    c0535a.c(com.heytap.nearx.a.a.e.d.a(fVar));
                 } else if (b != 4) {
                     com.heytap.nearx.a.a.a c2 = fVar.c();
-                    c0705a.a(b, c2, c2.a().a(fVar));
+                    c0535a.a(b, c2, c2.a().a(fVar));
                 } else {
-                    c0705a.d(com.heytap.nearx.a.a.e.d.a(fVar));
+                    c0535a.d(com.heytap.nearx.a.a.e.d.a(fVar));
                 }
             }
         }
     }
 
     public a(Integer num, Integer num2, Integer num3, Integer num4, ByteString byteString) {
-        super(f26327c, byteString);
+        super(f12639c, byteString);
         this.h = num;
         this.i = num2;
         this.j = num3;

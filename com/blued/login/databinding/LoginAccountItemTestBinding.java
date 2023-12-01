@@ -7,11 +7,11 @@ import com.blued.android.framework.view.shape.ShapeFrameLayout;
 public final class LoginAccountItemTestBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ShapeFrameLayout f20525a;
+    private final ShapeFrameLayout f6919a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ShapeFrameLayout getRoot() {
-        return this.f20525a;
+        return this.f6919a;
     }
 }

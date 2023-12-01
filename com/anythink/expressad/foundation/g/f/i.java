@@ -13,10 +13,10 @@ import java.util.zip.GZIPInputStream;
 public abstract class i<T> implements Comparable<i<T>> {
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f7916c = i.class.getSimpleName();
+    private static final String f5076c = i.class.getSimpleName();
 
     /* renamed from: a  reason: collision with root package name */
-    protected ConcurrentHashMap<String, String> f7917a;
+    protected ConcurrentHashMap<String, String> f5077a;
     protected e<T> b;
     private final int d;
     private final String e;
@@ -30,11 +30,11 @@ public abstract class i<T> implements Comparable<i<T>> {
     public interface a {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final int f7918a = 0;
+        public static final int f5078a = 0;
         public static final int b = 1;
 
         /* renamed from: c  reason: collision with root package name */
-        public static final int f7919c = 2;
+        public static final int f5079c = 2;
         public static final int d = 3;
         public static final int e = 4;
         public static final int f = 5;
@@ -46,11 +46,11 @@ public abstract class i<T> implements Comparable<i<T>> {
     public final class b {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final int f7920a = 1;
+        public static final int f5080a = 1;
         public static final int b = 2;
 
         /* renamed from: c  reason: collision with root package name */
-        public static final int f7921c = 3;
+        public static final int f5081c = 3;
         public static final int d = 4;
 
         private b() {
@@ -58,7 +58,7 @@ public abstract class i<T> implements Comparable<i<T>> {
     }
 
     public i(int i, String str, e<T> eVar) {
-        this.f7917a = new ConcurrentHashMap<>();
+        this.f5077a = new ConcurrentHashMap<>();
         this.b = null;
         this.h = false;
         this.e = str;
@@ -68,7 +68,7 @@ public abstract class i<T> implements Comparable<i<T>> {
     }
 
     public i(String str) {
-        this.f7917a = new ConcurrentHashMap<>();
+        this.f5077a = new ConcurrentHashMap<>();
         this.b = null;
         this.h = false;
         this.e = str;
@@ -94,7 +94,7 @@ public abstract class i<T> implements Comparable<i<T>> {
     }
 
     private void a(String str) {
-        this.f7917a.remove(str);
+        this.f5077a.remove(str);
     }
 
     private static byte[] a(com.anythink.expressad.foundation.g.f.f.b bVar) {
@@ -127,7 +127,7 @@ public abstract class i<T> implements Comparable<i<T>> {
                             try {
                                 gZIPInputStream.close();
                             } catch (IOException e) {
-                                o.d(f7916c, e.getMessage());
+                                o.d(f5076c, e.getMessage());
                                 return byteArray;
                             }
                         }
@@ -141,7 +141,7 @@ public abstract class i<T> implements Comparable<i<T>> {
                             try {
                                 inputStream.close();
                             } catch (IOException e2) {
-                                o.d(f7916c, e2.getMessage());
+                                o.d(f5076c, e2.getMessage());
                                 throw th;
                             }
                         }
@@ -223,8 +223,8 @@ public abstract class i<T> implements Comparable<i<T>> {
     }
 
     public final void a(String str, String str2) {
-        this.f7917a.remove(str);
-        this.f7917a.put(str, str2);
+        this.f5077a.remove(str);
+        this.f5077a.put(str, str2);
     }
 
     public final void a(Map<String, String> map) {
@@ -276,7 +276,7 @@ public abstract class i<T> implements Comparable<i<T>> {
     }
 
     public final Map<String, String> g() {
-        return this.f7917a;
+        return this.f5077a;
     }
 
     public byte[] h() {

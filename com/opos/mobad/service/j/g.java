@@ -4,11 +4,11 @@ package com.opos.mobad.service.j;
 public class g<T> implements d<T> {
 
     /* renamed from: a  reason: collision with root package name */
-    private d<T> f27393a;
+    private d<T> f13705a;
     private boolean b = false;
 
     public g(d<T> dVar) {
-        this.f27393a = dVar;
+        this.f13705a = dVar;
     }
 
     @Override // com.opos.mobad.service.j.d
@@ -16,7 +16,7 @@ public class g<T> implements d<T> {
         if (this.b) {
             return false;
         }
-        boolean a2 = this.f27393a.a(t);
+        boolean a2 = this.f13705a.a(t);
         this.b = a2;
         return a2;
     }

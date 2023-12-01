@@ -15,25 +15,21 @@ import java.util.ArrayList;
 /* renamed from: com.amap.api.col.3sl.gs  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/gs.class */
 public final class gs implements IBusStationSearch {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f5000a;
+    private Context a;
     private BusStationSearch.OnBusStationSearchListener b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private BusStationQuery f5001c;
+    private BusStationQuery c;
     private BusStationQuery d;
     private ArrayList<BusStationResult> e = new ArrayList<>();
     private int f;
     private Handler g;
 
     public gs(Context context, BusStationQuery busStationQuery) throws AMapException {
-        hy a2 = hx.a(context, fd.a(false));
-        if (a2.f5127a != hx.c.SuccessCode) {
-            throw new AMapException(a2.b, 1, a2.b, a2.f5127a.a());
+        hy a = hx.a(context, fd.a(false));
+        if (a.a != hx.c.SuccessCode) {
+            throw new AMapException(a.b, 1, a.b, a.a.a());
         }
-        this.f5000a = context.getApplicationContext();
-        this.f5001c = busStationQuery;
+        this.a = context.getApplicationContext();
+        this.c = busStationQuery;
         this.g = fp.a();
     }
 
@@ -51,12 +47,12 @@ public final class gs implements IBusStationSearch {
             i2 = i3 + 1;
         }
         if (i > 0) {
-            this.e.set(this.f5001c.getPageNumber(), busStationResult);
+            this.e.set(this.c.getPageNumber(), busStationResult);
         }
     }
 
     private boolean a() {
-        BusStationQuery busStationQuery = this.f5001c;
+        BusStationQuery busStationQuery = this.c;
         return (busStationQuery == null || fe.a(busStationQuery.getQueryString())) ? false : true;
     }
 
@@ -73,31 +69,31 @@ public final class gs implements IBusStationSearch {
 
     @Override // com.amap.api.services.interfaces.IBusStationSearch
     public final BusStationQuery getQuery() {
-        return this.f5001c;
+        return this.c;
     }
 
     @Override // com.amap.api.services.interfaces.IBusStationSearch
     public final BusStationResult searchBusStation() throws AMapException {
         try {
-            fn.a(this.f5000a);
+            fn.a(this.a);
             if (a()) {
-                if (!this.f5001c.weakEquals(this.d)) {
-                    this.d = this.f5001c.m2444clone();
+                if (!this.c.weakEquals(this.d)) {
+                    this.d = this.c.m8887clone();
                     this.f = 0;
                     if (this.e != null) {
                         this.e.clear();
                     }
                 }
                 if (this.f == 0) {
-                    BusStationResult busStationResult = (BusStationResult) new ez(this.f5000a, this.f5001c).d();
+                    BusStationResult busStationResult = (BusStationResult) new ez(this.a, this.c).d();
                     this.f = busStationResult.getPageCount();
                     a(busStationResult);
                     return busStationResult;
                 }
-                BusStationResult b = b(this.f5001c.getPageNumber());
+                BusStationResult b = b(this.c.getPageNumber());
                 if (b == null) {
-                    BusStationResult busStationResult2 = (BusStationResult) new ez(this.f5000a, this.f5001c).d();
-                    this.e.set(this.f5001c.getPageNumber(), busStationResult2);
+                    BusStationResult busStationResult2 = (BusStationResult) new ez(this.a, this.c).d();
+                    this.e.set(this.c.getPageNumber(), busStationResult2);
                     return busStationResult2;
                 }
                 return b;
@@ -126,7 +122,7 @@ public final class gs implements IBusStationSearch {
                         obtainMessage.obj = bVar;
                         BusStationResult searchBusStation = gs.this.searchBusStation();
                         obtainMessage.what = 1000;
-                        bVar.f4962a = searchBusStation;
+                        bVar.a = searchBusStation;
                     } catch (AMapException e) {
                         obtainMessage.what = e.getErrorCode();
                     } finally {
@@ -146,9 +142,9 @@ public final class gs implements IBusStationSearch {
 
     @Override // com.amap.api.services.interfaces.IBusStationSearch
     public final void setQuery(BusStationQuery busStationQuery) {
-        if (busStationQuery.weakEquals(this.f5001c)) {
+        if (busStationQuery.weakEquals(this.c)) {
             return;
         }
-        this.f5001c = busStationQuery;
+        this.c = busStationQuery;
     }
 }

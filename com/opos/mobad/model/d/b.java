@@ -9,11 +9,11 @@ import java.util.concurrent.Callable;
 public abstract class b implements m {
 
     /* renamed from: a  reason: collision with root package name */
-    private m.a f26406a;
+    private m.a f12718a;
     private com.opos.mobad.l.o b = new o.a(1).a(1, 2, 8).a(2, 3, 4, 8).a(3, 5, 8).a(4, 8).a(5, 6, 7, 8).a(6, 8).a(7, 8).a();
 
     public b(m.a aVar) {
-        this.f26406a = aVar;
+        this.f12718a = aVar;
     }
 
     protected abstract void a();
@@ -22,7 +22,7 @@ public abstract class b implements m {
     public void a(AdData adData) {
         int a2 = this.b.a(4);
         if (a2 == 4) {
-            m.a aVar = this.f26406a;
+            m.a aVar = this.f12718a;
             if (aVar != null) {
                 aVar.a(adData);
             }
@@ -35,7 +35,7 @@ public abstract class b implements m {
     public boolean a(Callable<Boolean> callable) {
         int a2 = this.b.a(3, callable);
         if (a2 == 3) {
-            m.a aVar = this.f26406a;
+            m.a aVar = this.f12718a;
             if (aVar != null) {
                 aVar.a();
                 return true;
@@ -55,7 +55,7 @@ public abstract class b implements m {
     public void b(AdData adData) {
         int a2 = this.b.a(7);
         if (a2 == 7) {
-            m.a aVar = this.f26406a;
+            m.a aVar = this.f12718a;
             if (aVar != null) {
                 aVar.c(adData);
             }
@@ -68,7 +68,7 @@ public abstract class b implements m {
     public void c(AdData adData) {
         int a2 = this.b.a(6);
         if (a2 == 6) {
-            m.a aVar = this.f26406a;
+            m.a aVar = this.f12718a;
             if (aVar != null) {
                 aVar.b(adData);
             }
@@ -107,7 +107,7 @@ public abstract class b implements m {
     public boolean h() {
         int a2 = this.b.a(2, 3);
         if (a2 == 3) {
-            m.a aVar = this.f26406a;
+            m.a aVar = this.f12718a;
             if (aVar != null) {
                 aVar.a();
                 return true;

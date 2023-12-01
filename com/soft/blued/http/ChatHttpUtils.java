@@ -4,14 +4,12 @@ import android.app.Instrumentation;
 import android.content.Context;
 import android.provider.SearchIndexablesContract;
 import android.text.TextUtils;
-import com.alipay.sdk.util.i;
-import com.android.internal.inputmethod.InputMethodUtils;
 import com.baidu.mobads.sdk.api.IAdInterListener;
-import com.blued.android.chat.core.pack.ReqAckPackage;
 import com.blued.android.chat.model.ChattingModel;
 import com.blued.android.core.AppMethods;
 import com.blued.android.core.net.HttpManager;
 import com.blued.android.core.net.HttpRequestWrapper;
+import com.blued.android.core.net.HttpResponseHandler;
 import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.net.StringHttpResponseHandler;
 import com.blued.android.framework.http.BluedHttpTools;
@@ -21,7 +19,6 @@ import com.blued.android.framework.utils.LocaleUtils;
 import com.blued.android.module.chat.http.IModuleChatHttp;
 import com.blued.android.module.common.url.BluedHttpUrl;
 import com.blued.android.module.common.user.model.UserInfo;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.blued.android.module.common.widget.emoticon.manager.EmotionManager;
 import com.blued.community.utils.UserInfoUtils;
 import com.bytedance.sdk.openadsdk.live.TTLiveConstants;
@@ -64,7 +61,7 @@ public class ChatHttpUtils implements IModuleChatHttp {
                 return String.format(QiniuConstant.a(), obj, obj2);
             }
         } else {
-            obj = InputMethodUtils.SUBTYPE_MODE_VOICE;
+            obj = "voice";
         }
         obj2 = "0";
         return String.format(QiniuConstant.a(), obj, obj2);
@@ -74,15 +71,15 @@ public class ChatHttpUtils implements IModuleChatHttp {
         if (((int) ((System.currentTimeMillis() - BluedPreferences.eP()) / 86400000)) > 7 || BluedConfig.a().b().has_buy_call == 1) {
             return;
         }
-        Map<String, Object> b = BluedHttpTools.b();
+        Map b = BluedHttpTools.b();
         b.put("uid", UserInfo.getInstance().getLoginUserInfo().uid);
         HttpManager.b(BluedHttpUrl.q() + "/users/call/guide").b(BluedHttpTools.a(true)).a(BluedHttpTools.a(b)).h();
     }
 
     public static void a(int i, String str, BluedUIHttpResponse bluedUIHttpResponse) {
-        HttpRequestWrapper b = HttpManager.a(BluedHttpUrl.q() + "/blued/emotions/" + i, bluedUIHttpResponse, null).b(BluedHttpTools.a(true));
+        HttpRequestWrapper b = HttpManager.a(BluedHttpUrl.q() + "/blued/emotions/" + i, bluedUIHttpResponse, (IRequestHost) null).b(BluedHttpTools.a(true));
         if (i == 0) {
-            Map<String, String> a2 = BluedHttpTools.a();
+            Map a2 = BluedHttpTools.a();
             a2.put("name", str);
             b.a(a2);
         }
@@ -99,22 +96,21 @@ public class ChatHttpUtils implements IModuleChatHttp {
     }
 
     public static void a(final long j, List<String> list, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("tags", StringUtils.a(list));
         HttpManager.b(BluedHttpUrl.q() + "/users/message_pair/user_evaluation/" + j, new BluedUIHttpResponse<BluedEntityA<Object>>() { // from class: com.soft.blued.http.ChatHttpUtils.3
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<Object> bluedEntityA) {
                 AppMethods.d((int) R.string.date_today_impressions_submitted);
-                DateTodayManager.f32404a.g(j);
+                DateTodayManager.f18714a.g(j);
             }
         }, iRequestHost).a(BluedHttpTools.a(a2)).b(BluedHttpTools.a(true)).h();
     }
 
     public static void a(Context context, BluedUIHttpResponse bluedUIHttpResponse, String str, int i, String str2, String str3, IRequestHost iRequestHost) {
         String str4;
-        Map<String, Object> b = BluedHttpTools.b();
+        Map b = BluedHttpTools.b();
         b.put("reason", Integer.valueOf(i));
         b.put(TTLiveConstants.ROOMID_KEY, str2);
         try {
@@ -130,13 +126,13 @@ public class ChatHttpUtils implements IModuleChatHttp {
     }
 
     public static void a(Context context, BluedUIHttpResponse bluedUIHttpResponse, String str, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         HttpManager.a(BluedHttpUrl.q() + "/users/" + str + "/basic", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
     }
 
     public static void a(Context context, BluedUIHttpResponse bluedUIHttpResponse, String str, String[] strArr, int i, String str2, String str3, long j, int i2, String str4, String str5, String str6, int i3, IRequestHost iRequestHost) {
         String str7;
-        Map<String, Object> b = BluedHttpTools.b();
+        Map b = BluedHttpTools.b();
         b.put("reason", i2 + "");
         b.put("contents", str);
         b.put("lid", Long.valueOf(j));
@@ -221,10 +217,10 @@ public class ChatHttpUtils implements IModuleChatHttp {
                     str7 = BluedHttpUrl.q() + "/blued/newreport/activity/sign/create";
                     break;
                 default:
-                    str7 = BluedHttpUrl.q() + "/blued/newreport/" + str8 + BridgeUtil.SPLIT_MARK + str2;
+                    str7 = BluedHttpUrl.q() + "/blued/newreport/" + str8 + "/" + str2;
                     break;
             }
-            Map<String, String> a2 = BluedHttpTools.a();
+            Map a2 = BluedHttpTools.a();
             if (i != 2 || i == 5) {
                 a2.put("source", "ticktock");
             }
@@ -233,8 +229,8 @@ public class ChatHttpUtils implements IModuleChatHttp {
             }
             HttpManager.b(HttpUtils.a(a2, str7), bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(b)).h();
         }
-        str7 = BluedHttpUrl.q() + "/blued/newreport/" + str8 + BridgeUtil.SPLIT_MARK + str3 + BridgeUtil.SPLIT_MARK + str2;
-        Map<String, String> a22 = BluedHttpTools.a();
+        str7 = BluedHttpUrl.q() + "/blued/newreport/" + str8 + "/" + str3 + "/" + str2;
+        Map a22 = BluedHttpTools.a();
         if (i != 2) {
         }
         a22.put("source", "ticktock");
@@ -245,15 +241,15 @@ public class ChatHttpUtils implements IModuleChatHttp {
     }
 
     public static void a(BluedUIHttpResponse bluedUIHttpResponse) {
-        Map<String, Object> b = BluedHttpTools.b();
+        Map b = BluedHttpTools.b();
         b.put("uid", UserInfoUtils.c());
-        HttpManager.b(BluedHttpUrl.q() + "/push/getui/cid?http_method_override=DELETE", bluedUIHttpResponse, null).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(b)).h();
+        HttpManager.b(BluedHttpUrl.q() + "/push/getui/cid?http_method_override=DELETE", bluedUIHttpResponse, (IRequestHost) null).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(b)).h();
     }
 
     public static void a(BluedUIHttpResponse bluedUIHttpResponse, int i) {
-        Map<String, Object> b = BluedHttpTools.b();
+        Map b = BluedHttpTools.b();
         b.put("time", Integer.valueOf(i));
-        HttpManager.b(BluedHttpUrl.q() + "/live/sign-hongbao/watch-time", bluedUIHttpResponse, null).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(b)).h();
+        HttpManager.b(BluedHttpUrl.q() + "/live/sign-hongbao/watch-time", bluedUIHttpResponse, (IRequestHost) null).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(b)).h();
     }
 
     public static void a(BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
@@ -261,39 +257,39 @@ public class ChatHttpUtils implements IModuleChatHttp {
     }
 
     public static void a(BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost, long j) {
-        Map<String, Object> b = BluedHttpTools.b();
+        Map b = BluedHttpTools.b();
         b.put("location", "" + UserInfo.getInstance().getLoginUserInfo().getLatitude() + "," + UserInfo.getInstance().getLoginUserInfo().getLongitude());
         b.put("exclude_room_id", Long.valueOf(j));
         HttpManager.b(BluedHttpUrl.q() + "/users/chatroom/im/recommend", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(b)).h();
     }
 
     public static void a(BluedUIHttpResponse bluedUIHttpResponse, String str) {
-        Map<String, Object> b = BluedHttpTools.b();
+        Map b = BluedHttpTools.b();
         b.put("content", str);
-        HttpManager.b(BluedHttpUrl.r() + "/pay/validation/words", bluedUIHttpResponse, null).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(b)).h();
+        HttpManager.b(BluedHttpUrl.r() + "/pay/validation/words", bluedUIHttpResponse, (IRequestHost) null).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(b)).h();
     }
 
     public static void a(BluedUIHttpResponse bluedUIHttpResponse, String str, int i) {
-        Map<String, Object> b = BluedHttpTools.b();
+        Map b = BluedHttpTools.b();
         b.put("cid", str);
         b.put("uid", UserInfoUtils.c());
         b.put("huawei_icon", Integer.valueOf(i));
-        HttpManager.b(BluedHttpUrl.q() + "/push/getui/cid", bluedUIHttpResponse, null).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(b)).h();
+        HttpManager.b(BluedHttpUrl.q() + "/push/getui/cid", bluedUIHttpResponse, (IRequestHost) null).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(b)).h();
     }
 
     public static void a(BluedUIHttpResponse bluedUIHttpResponse, String str, int i, int i2, int i3, String str2, ChattingModel chattingModel) {
         String str3;
         String str4 = BluedHttpUrl.q() + "/users/" + str + "/reply";
-        Map<String, Object> b = BluedHttpTools.b();
+        Map b = BluedHttpTools.b();
         b.put("is_menu", Integer.valueOf(i));
         b.put("first_level", Integer.valueOf(i2));
         b.put("second_level", Integer.valueOf(i3));
         b.put("keyword", str2);
         if (chattingModel != null) {
-            b.put("user_id", Long.valueOf(UserInfo.getInstance().getLoginUserInfo().uid));
+            b.put(SearchIndexablesContract.RawData.COLUMN_USER_ID, Long.valueOf(UserInfo.getInstance().getLoginUserInfo().uid));
             b.put("from", Long.valueOf(chattingModel.fromId));
             b.put("to", Long.valueOf(chattingModel.toId));
-            b.put(ReqAckPackage.REQ_RESPONSE_KEY.SESSION_TYPE, Short.valueOf(chattingModel.sessionType));
+            b.put("session_type", Short.valueOf(chattingModel.sessionType));
             b.put("msg_type", Short.valueOf(chattingModel.msgType));
             b.put("local_id", Long.valueOf(chattingModel.msgLocalId));
             if (TextUtils.isEmpty(chattingModel.getMsgExtra())) {
@@ -301,9 +297,9 @@ public class ChatHttpUtils implements IModuleChatHttp {
             } else {
                 str3 = ",\"extra\":" + chattingModel.getMsgExtra();
             }
-            b.put("msg_body", "{ \"contents\":\"" + chattingModel.msgContent + "\"" + str3 + i.d);
+            b.put("msg_body", "{ \"contents\":\"" + chattingModel.msgContent + "\"" + str3 + "}");
         }
-        HttpManager.b(str4, bluedUIHttpResponse, null).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(b)).h();
+        HttpManager.b(str4, bluedUIHttpResponse, (IRequestHost) null).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(b)).h();
     }
 
     public static void a(BluedUIHttpResponse bluedUIHttpResponse, String str, long j) {
@@ -317,11 +313,11 @@ public class ChatHttpUtils implements IModuleChatHttp {
             j2 = j / 1000;
         }
         sb.append(j2);
-        HttpManager.a(sb.toString(), bluedUIHttpResponse, null).b(BluedHttpTools.a(true)).h();
+        HttpManager.a(sb.toString(), bluedUIHttpResponse, (IRequestHost) null).b(BluedHttpTools.a(true)).h();
     }
 
     public static void a(BluedUIHttpResponse bluedUIHttpResponse, String str, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("from", "auto");
         a2.put("to", LocaleUtils.b());
         a2.put("contents", str);
@@ -329,14 +325,14 @@ public class ChatHttpUtils implements IModuleChatHttp {
     }
 
     public static void a(BluedUIHttpResponse bluedUIHttpResponse, String str, String str2, int i, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put(SearchIndexablesContract.RawData.COLUMN_KEYWORDS, str2);
         HttpManager.a(BluedHttpUrl.q() + "/users/" + str + "/friends/search?page=" + i, bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
     }
 
     public static void a(BluedUIHttpResponse bluedUIHttpResponse, String str, String str2, ChattingModel chattingModel) {
         String str3 = BluedHttpUrl.q() + "/users/" + str + "/messages/attachments";
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("sessionType", ((int) chattingModel.sessionType) + "");
         if (chattingModel.msgType == 24) {
             a2.put("isBurn", "1");
@@ -350,13 +346,13 @@ public class ChatHttpUtils implements IModuleChatHttp {
     }
 
     public static void a(BluedUIHttpResponse bluedUIHttpResponse, List<String> list, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("uids", StringUtils.a(list));
         HttpManager.b(BluedHttpUrl.q() + "/users/social/status", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
     }
 
     public static void a(BluedUIHttpResponse bluedUIHttpResponse, String[] strArr, String[] strArr2, String str) {
-        Map<String, Object> b = BluedHttpTools.b();
+        Map b = BluedHttpTools.b();
         b.put("image", strArr);
         b.put("video", strArr2);
         b.put("action", str);
@@ -364,17 +360,16 @@ public class ChatHttpUtils implements IModuleChatHttp {
     }
 
     public static void a(String str, BluedUIHttpResponse bluedUIHttpResponse) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("name", str);
-        HttpManager.a(BluedHttpUrl.q() + "/blued/emotions", bluedUIHttpResponse, null).b(BluedHttpTools.a(true)).a(a2).h();
+        HttpManager.a(BluedHttpUrl.q() + "/blued/emotions", bluedUIHttpResponse, (IRequestHost) null).b(BluedHttpTools.a(true)).a(a2).h();
     }
 
     public static void a(String str, final String str2) {
-        Map<String, Object> b = BluedHttpTools.b();
+        Map b = BluedHttpTools.b();
         b.put("eid", str);
         HttpManager.b(BluedHttpUrl.q() + "/users/" + UserInfo.getInstance().getLoginUserInfo().getUid() + "/emotions?http_method_override=DELETE", new BluedUIHttpResponse<BluedEntityA<String>>(null) { // from class: com.soft.blued.http.ChatHttpUtils.1
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<String> bluedEntityA) {
                 if (bluedEntityA == null || bluedEntityA.code != 200) {
@@ -384,52 +379,51 @@ public class ChatHttpUtils implements IModuleChatHttp {
                 EmotionManager.d(str2);
                 LiveEventBus.get("EMOTION_RELOAD_DATA").post(true);
             }
-        }, null).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(b)).h();
+        }, (IRequestHost) null).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(b)).h();
     }
 
     public static void a(String str, String str2, BluedUIHttpResponse bluedUIHttpResponse) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put(WBPageConstants.ParamKey.PAGE, str2);
-        HttpManager.a(BluedHttpUrl.q() + "/users/poke/" + str, bluedUIHttpResponse, null).b(BluedHttpTools.a(true)).a(a2).h();
+        HttpManager.a(BluedHttpUrl.q() + "/users/poke/" + str, bluedUIHttpResponse, (IRequestHost) null).b(BluedHttpTools.a(true)).a(a2).h();
     }
 
     public static void a(String str, String str2, String str3, BluedUIHttpResponse bluedUIHttpResponse) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("id", str);
         a2.put("data_id", str2);
         a2.put("deal_with", str3);
-        HttpManager.b(BluedHttpUrl.q() + "/users/chatroom/userRelationship/dealWith", bluedUIHttpResponse, null).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        HttpManager.b(BluedHttpUrl.q() + "/users/chatroom/userRelationship/dealWith", bluedUIHttpResponse, (IRequestHost) null).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
     }
 
     public static void a(String str, List<String> list, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("tags", StringUtils.a(list));
         a2.put("title", str);
         HttpManager.b(BluedHttpUrl.q() + "/users/message_pair/functional_evaluation", new BluedUIHttpResponse<BluedEntityA<Object>>() { // from class: com.soft.blued.http.ChatHttpUtils.2
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<Object> bluedEntityA) {
                 AppMethods.d((int) R.string.date_today_satisfied_submitted);
-                DateTodayManager.f32404a.c(3);
+                DateTodayManager.f18714a.c(3);
             }
         }, iRequestHost).a(BluedHttpTools.a(a2)).b(BluedHttpTools.a(true)).h();
     }
 
     public static void a(List<String> list, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("tags", StringUtils.a(list));
-        HttpManager.b(BluedHttpUrl.q() + "/users/message_pair/making_friends_purpose", null, iRequestHost).a(BluedHttpTools.a(a2)).b(BluedHttpTools.a(true)).h();
+        HttpManager.b(BluedHttpUrl.q() + "/users/message_pair/making_friends_purpose", (HttpResponseHandler) null, iRequestHost).a(BluedHttpTools.a(a2)).b(BluedHttpTools.a(true)).h();
     }
 
     public static void b() {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("uid", UserInfo.getInstance().getLoginUserInfo().uid);
         HttpManager.b(BluedHttpUrl.q() + "/users/flash/give").b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
     }
 
     public static void b(BluedUIHttpResponse bluedUIHttpResponse) {
-        HttpManager.a(BluedHttpUrl.q() + "/blued/emotions/banners", bluedUIHttpResponse, null).b(BluedHttpTools.a(true)).h();
+        HttpManager.a(BluedHttpUrl.q() + "/blued/emotions/banners", bluedUIHttpResponse, (IRequestHost) null).b(BluedHttpTools.a(true)).h();
     }
 
     public static void b(BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
@@ -437,31 +431,31 @@ public class ChatHttpUtils implements IModuleChatHttp {
     }
 
     public static void b(BluedUIHttpResponse bluedUIHttpResponse, String str) {
-        Map<String, Object> b = BluedHttpTools.b();
+        Map b = BluedHttpTools.b();
         b.put("activity_id", str);
-        HttpManager.b(BluedHttpUrl.q() + "/blued/newreport/activity/feedback", bluedUIHttpResponse, null).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(b)).h();
+        HttpManager.b(BluedHttpUrl.q() + "/blued/newreport/activity/feedback", bluedUIHttpResponse, (IRequestHost) null).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(b)).h();
     }
 
     public static void b(BluedUIHttpResponse bluedUIHttpResponse, String str, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("uid", str);
         HttpManager.b(BluedHttpUrl.q() + "/users/stimulate/flash", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
     }
 
     public static void b(BluedUIHttpResponse bluedUIHttpResponse, List<String> list, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("group_ids", StringUtils.a(list));
         HttpManager.a(BluedHttpUrl.q() + "/groups/info_batch", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
     }
 
     public static void b(String str, BluedUIHttpResponse bluedUIHttpResponse) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("id", str);
-        HttpManager.a(BluedHttpUrl.q() + "/users/chatroom/userRelationship/info", bluedUIHttpResponse, null).b(BluedHttpTools.a(true)).a(a2).h();
+        HttpManager.a(BluedHttpUrl.q() + "/users/chatroom/userRelationship/info", bluedUIHttpResponse, (IRequestHost) null).b(BluedHttpTools.a(true)).a(a2).h();
     }
 
     public static void c(BluedUIHttpResponse bluedUIHttpResponse) {
-        HttpManager.a(BluedHttpUrl.q() + "/blued/emotions/recommend", bluedUIHttpResponse, null).b(BluedHttpTools.a(true)).h();
+        HttpManager.a(BluedHttpUrl.q() + "/blued/emotions/recommend", bluedUIHttpResponse, (IRequestHost) null).b(BluedHttpTools.a(true)).h();
     }
 
     public static void c(BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
@@ -469,13 +463,13 @@ public class ChatHttpUtils implements IModuleChatHttp {
     }
 
     public static void c(BluedUIHttpResponse bluedUIHttpResponse, String str, IRequestHost iRequestHost) {
-        Map<String, Object> b = BluedHttpTools.b();
+        Map b = BluedHttpTools.b();
         b.put("voice_name", str);
         HttpManager.b(BluedHttpUrl.q() + "/blued/voice/transform", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(b)).h();
     }
 
     public static void d(BluedUIHttpResponse bluedUIHttpResponse) {
-        HttpManager.a(BluedHttpUrl.q() + "/users/" + UserInfo.getInstance().getLoginUserInfo().getUid() + "/emotions", bluedUIHttpResponse, null).b(BluedHttpTools.a(true)).h();
+        HttpManager.a(BluedHttpUrl.q() + "/users/" + UserInfo.getInstance().getLoginUserInfo().getUid() + "/emotions", bluedUIHttpResponse, (IRequestHost) null).b(BluedHttpTools.a(true)).h();
     }
 
     public static void d(BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
@@ -487,7 +481,7 @@ public class ChatHttpUtils implements IModuleChatHttp {
     }
 
     public static void e(BluedUIHttpResponse bluedUIHttpResponse) {
-        HttpManager.a(BluedHttpUrl.q() + "/users/message_pair/config_message", bluedUIHttpResponse, null).b(BluedHttpTools.a(true)).h();
+        HttpManager.a(BluedHttpUrl.q() + "/users/message_pair/config_message", bluedUIHttpResponse, (IRequestHost) null).b(BluedHttpTools.a(true)).h();
     }
 
     public static void e(BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
@@ -499,17 +493,16 @@ public class ChatHttpUtils implements IModuleChatHttp {
     }
 
     public static void f(BluedUIHttpResponse bluedUIHttpResponse) {
-        HttpManager.a(BluedHttpUrl.q() + "/groups/bubble", bluedUIHttpResponse, null).b(BluedHttpTools.a(true)).h();
+        HttpManager.a(BluedHttpUrl.q() + "/groups/bubble", bluedUIHttpResponse, (IRequestHost) null).b(BluedHttpTools.a(true)).h();
     }
 
     public static void f(BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
         HttpManager.a(BluedHttpUrl.q() + "/users/message_pair/pair", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).h();
     }
 
-    @Override // com.blued.android.module.chat.http.IModuleChatHttp
     public void getChatRelationData(StringHttpResponseHandler stringHttpResponseHandler, Long[] lArr) {
-        Map<String, Object> b = BluedHttpTools.b();
+        Map b = BluedHttpTools.b();
         b.put("uid", lArr);
-        HttpManager.b(BluedHttpUrl.q() + "/users/" + UserInfo.getInstance().getLoginUserInfo().getUid() + "/chat/detail", stringHttpResponseHandler, null).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(b)).h();
+        HttpManager.b(BluedHttpUrl.q() + "/users/" + UserInfo.getInstance().getLoginUserInfo().getUid() + "/chat/detail", stringHttpResponseHandler, (IRequestHost) null).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(b)).h();
     }
 }

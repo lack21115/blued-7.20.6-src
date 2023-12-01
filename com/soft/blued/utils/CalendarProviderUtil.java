@@ -13,6 +13,7 @@ import com.blued.android.core.AppMethods;
 import com.blued.android.framework.permission.PermissionCallbacks;
 import com.blued.android.module.common.utils.PermissionUtils;
 import com.blued.das.guy.GuyProtos;
+import com.huawei.hms.ads.fw;
 import com.soft.blued.log.track.EventTrackGuy;
 import java.util.Calendar;
 import java.util.TimeZone;
@@ -21,11 +22,11 @@ import java.util.TimeZone;
 public class CalendarProviderUtil {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f34727a = "content://com.android.calendar/calendars";
+    private static String f21036a = "content://com.android.calendar/calendars";
     private static String b = "content://com.android.calendar/events";
 
     /* renamed from: c  reason: collision with root package name */
-    private static String f34728c = "content://com.android.calendar/reminders";
+    private static String f21037c = "content://com.android.calendar/reminders";
     private static String d = "BluedCalendars";
     private static String e = "BluedAccount";
     private static String f = "com.soft.blued";
@@ -36,15 +37,13 @@ public class CalendarProviderUtil {
     class AnonymousClass2 implements PermissionCallbacks {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ Context f34731a;
+        final /* synthetic */ Context f21040a;
         final /* synthetic */ String b;
 
-        @Override // com.blued.android.framework.permission.PermissionCallbacks
         public void U_() {
-            CalendarProviderUtil.a(this.f34731a, this.b);
+            CalendarProviderUtil.a(this.f21040a, this.b);
         }
 
-        @Override // com.blued.android.framework.permission.PermissionCallbacks
         public void a(String[] strArr) {
         }
     }
@@ -120,7 +119,6 @@ public class CalendarProviderUtil {
             }
         }
         PermissionUtils.a(new PermissionCallbacks() { // from class: com.soft.blued.utils.CalendarProviderUtil.1
-            @Override // com.blued.android.framework.permission.PermissionCallbacks
             public void U_() {
                 EventTrackGuy.b(GuyProtos.Event.CHECK_IN_REMIND_STATUS, true);
                 try {
@@ -129,7 +127,6 @@ public class CalendarProviderUtil {
                 }
             }
 
-            @Override // com.blued.android.framework.permission.PermissionCallbacks
             public void a(String[] strArr) {
                 EventTrackGuy.b(GuyProtos.Event.CHECK_IN_REMIND_STATUS, false);
             }
@@ -139,7 +136,7 @@ public class CalendarProviderUtil {
     public static void a(Context context, String str, String str2, long j, long j2, long j3, String str3) {
         if (context == null) {
             if (AppInfo.m()) {
-                AppMethods.a((CharSequence) "Error 1");
+                AppMethods.a("Error 1");
                 return;
             }
             return;
@@ -147,7 +144,7 @@ public class CalendarProviderUtil {
         int a2 = a(context);
         if (a2 < 0) {
             if (AppInfo.m()) {
-                AppMethods.a((CharSequence) "Error 2");
+                AppMethods.a("Error 2");
                 return;
             }
             return;
@@ -171,7 +168,7 @@ public class CalendarProviderUtil {
         Uri insert = context.getContentResolver().insert(Uri.parse(b), contentValues);
         if (insert == null) {
             if (AppInfo.m()) {
-                AppMethods.a((CharSequence) "Error 3");
+                AppMethods.a("Error 3");
                 return;
             }
             return;
@@ -180,13 +177,13 @@ public class CalendarProviderUtil {
         contentValues2.put("event_id", Long.valueOf(ContentUris.parseId(insert)));
         contentValues2.put("minutes", Long.valueOf(j3));
         contentValues2.put("method", (Integer) 1);
-        if (context.getContentResolver().insert(Uri.parse(f34728c), contentValues2) == null && AppInfo.m()) {
-            AppMethods.a((CharSequence) "Error 4");
+        if (context.getContentResolver().insert(Uri.parse(f21037c), contentValues2) == null && AppInfo.m()) {
+            AppMethods.a("Error 4");
         }
     }
 
     private static int b(Context context) {
-        Cursor query = context.getContentResolver().query(Uri.parse(f34727a), null, null, null, null);
+        Cursor query = context.getContentResolver().query(Uri.parse(f21036a), null, null, null, null);
         if (query == null) {
         }
         try {
@@ -224,7 +221,7 @@ public class CalendarProviderUtil {
         contentValues.put(CalendarContract.CalendarColumns.CALENDAR_TIME_ZONE, timeZone.getID());
         contentValues.put(CalendarContract.CalendarColumns.OWNER_ACCOUNT, e);
         contentValues.put(CalendarContract.CalendarColumns.CAN_ORGANIZER_RESPOND, (Integer) 0);
-        Uri insert = context.getContentResolver().insert(Uri.parse(f34727a).buildUpon().appendQueryParameter("caller_is_syncadapter", "true").appendQueryParameter("account_name", e).appendQueryParameter("account_type", f).build(), contentValues);
+        Uri insert = context.getContentResolver().insert(Uri.parse(f21036a).buildUpon().appendQueryParameter("caller_is_syncadapter", fw.Code).appendQueryParameter("account_name", e).appendQueryParameter("account_type", f).build(), contentValues);
         if (insert == null) {
             return -1L;
         }

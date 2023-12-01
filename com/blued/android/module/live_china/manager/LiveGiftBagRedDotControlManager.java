@@ -10,9 +10,7 @@ import kotlin.jvm.internal.TypeIntrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/manager/LiveGiftBagRedDotControlManager.class */
 public final class LiveGiftBagRedDotControlManager {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f13644a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private final HashMap<String, String> b = new HashMap<>();
 
     @Metadata
@@ -26,16 +24,14 @@ public final class LiveGiftBagRedDotControlManager {
         }
 
         public final LiveGiftBagRedDotControlManager a() {
-            return LiveRedDotControlManagerHelper.f13645a.a();
+            return LiveRedDotControlManagerHelper.a.a();
         }
     }
 
     @Metadata
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/manager/LiveGiftBagRedDotControlManager$LiveRedDotControlManagerHelper.class */
     public static final class LiveRedDotControlManagerHelper {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static final LiveRedDotControlManagerHelper f13645a = new LiveRedDotControlManagerHelper();
+        public static final LiveRedDotControlManagerHelper a = new LiveRedDotControlManagerHelper();
         private static final LiveGiftBagRedDotControlManager b = new LiveGiftBagRedDotControlManager();
 
         private LiveRedDotControlManagerHelper() {

@@ -4,7 +4,7 @@ package com.igexin.c.a.b;
 public abstract class d {
 
     /* renamed from: c  reason: collision with root package name */
-    protected String f23242c;
+    protected String f9634c;
     protected d d;
     protected d e;
     protected boolean f;
@@ -15,11 +15,11 @@ public abstract class d {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final int f23243a = 1;
+        public static final int f9635a = 1;
         public static final int b = 2;
 
         /* renamed from: c  reason: collision with root package name */
-        public static final int f23244c = 3;
+        public static final int f9636c = 3;
         private static final /* synthetic */ int[] d = {1, 2, 3};
 
         private a(String str, int i) {
@@ -31,16 +31,16 @@ public abstract class d {
     }
 
     private d(String str) {
-        this.f23242c = str;
+        this.f9634c = str;
     }
 
     public d(String str, byte b) {
-        this.f23242c = str;
+        this.f9634c = str;
         this.f = true;
     }
 
     private static int a() {
-        return a.f23244c;
+        return a.f9636c;
     }
 
     private static void a(d dVar, String str, String str2, d dVar2) {
@@ -50,7 +50,7 @@ public abstract class d {
         if (dVar != null) {
             d dVar3 = dVar.e;
             d dVar4 = dVar3;
-            if (dVar.f23242c.equals(str)) {
+            if (dVar.f9634c.equals(str)) {
                 dVar2.d = dVar;
                 dVar.e = dVar2;
                 dVar2.e = dVar3;
@@ -58,7 +58,7 @@ public abstract class d {
                     dVar3.d = dVar2;
                 }
             } else {
-                while (dVar4.e != null && !dVar4.f23242c.equals(str)) {
+                while (dVar4.e != null && !dVar4.f9634c.equals(str)) {
                     dVar4 = dVar4.e;
                 }
                 d dVar5 = dVar4.e;
@@ -73,7 +73,7 @@ public abstract class d {
                 }
             }
         }
-        dVar2.f23242c = str2;
+        dVar2.f9634c = str2;
     }
 
     private static void b(d dVar, String str, String str2, d dVar2) {
@@ -83,13 +83,13 @@ public abstract class d {
         if (dVar != null) {
             d dVar3 = dVar.d;
             d dVar4 = dVar3;
-            if (dVar.f23242c.equals(str)) {
+            if (dVar.f9634c.equals(str)) {
                 dVar.d = dVar2;
                 dVar2.e = dVar;
                 dVar2.d = dVar3;
                 dVar3.e = dVar2;
             } else {
-                while (dVar4.d != null && !dVar4.f23242c.equals(str)) {
+                while (dVar4.d != null && !dVar4.f9634c.equals(str)) {
                     dVar4 = dVar4.d;
                 }
                 d dVar5 = dVar4.d;
@@ -104,15 +104,15 @@ public abstract class d {
                 }
             }
         }
-        dVar2.f23242c = str2;
+        dVar2.f9634c = str2;
     }
 
     private static int c() {
-        return a.f23244c;
+        return a.f9636c;
     }
 
     private String d() {
-        return this.f23242c;
+        return this.f9634c;
     }
 
     public final Object a(f fVar, Object obj) throws Exception {

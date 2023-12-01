@@ -8,7 +8,6 @@ import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
 import com.anythink.core.common.k.h;
-import com.anythink.expressad.foundation.h.i;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/activity/component/LoadingView.class */
 public class LoadingView extends ImageView {
@@ -28,7 +27,7 @@ public class LoadingView extends ImageView {
     }
 
     private void a() {
-        setImageDrawable(getResources().getDrawable(h.a(getContext(), "core_loading", i.f7952c)));
+        setImageDrawable(getResources().getDrawable(h.a(getContext(), "core_loading", "drawable")));
         try {
             if (Build.VERSION.SDK_INT >= 19) {
                 setLayerType(2, null);

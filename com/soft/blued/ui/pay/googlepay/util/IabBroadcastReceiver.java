@@ -8,7 +8,7 @@ import android.content.Intent;
 public class IabBroadcastReceiver extends BroadcastReceiver {
 
     /* renamed from: a  reason: collision with root package name */
-    private final IabBroadcastListener f32997a;
+    private final IabBroadcastListener f19306a;
 
     /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/pay/googlepay/util/IabBroadcastReceiver$IabBroadcastListener.class */
     public interface IabBroadcastListener {
@@ -17,7 +17,7 @@ public class IabBroadcastReceiver extends BroadcastReceiver {
 
     @Override // android.content.BroadcastReceiver
     public void onReceive(Context context, Intent intent) {
-        IabBroadcastListener iabBroadcastListener = this.f32997a;
+        IabBroadcastListener iabBroadcastListener = this.f19306a;
         if (iabBroadcastListener != null) {
             iabBroadcastListener.a();
         }

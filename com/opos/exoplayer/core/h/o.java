@@ -6,11 +6,11 @@ import com.opos.exoplayer.core.h.q;
 public final class o extends q.a {
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f25462a;
+    private final String f11774a;
     private final t<? super g> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final int f25463c;
+    private final int f11775c;
     private final int d;
     private final boolean e;
 
@@ -19,9 +19,9 @@ public final class o extends q.a {
     }
 
     public o(String str, t<? super g> tVar, int i, int i2, boolean z) {
-        this.f25462a = str;
+        this.f11774a = str;
         this.b = tVar;
-        this.f25463c = i;
+        this.f11775c = i;
         this.d = i2;
         this.e = z;
     }
@@ -30,6 +30,6 @@ public final class o extends q.a {
     @Override // com.opos.exoplayer.core.h.q.a
     /* renamed from: a */
     public n b(q.f fVar) {
-        return new n(this.f25462a, null, this.b, this.f25463c, this.d, this.e, fVar);
+        return new n(this.f11774a, null, this.b, this.f11775c, this.d, this.e, fVar);
     }
 }

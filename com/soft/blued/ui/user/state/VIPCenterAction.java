@@ -13,7 +13,7 @@ public abstract class VIPCenterAction implements UiAction {
     public static final class GetVIPData extends VIPCenterAction {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final GetVIPData f34310a = new GetVIPData();
+        public static final GetVIPData f20619a = new GetVIPData();
 
         private GetVIPData() {
             super(null);

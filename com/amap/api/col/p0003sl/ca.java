@@ -3,13 +3,11 @@ package com.amap.api.col.p0003sl;
 /* renamed from: com.amap.api.col.3sl.ca  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/ca.class */
 public abstract class ca implements ce {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected int f4803a;
+    protected int a;
     protected aw b;
 
     public ca(int i, aw awVar) {
-        this.f4803a = i;
+        this.a = i;
         this.b = awVar;
     }
 
@@ -32,7 +30,7 @@ public abstract class ca implements ce {
     }
 
     public final int b() {
-        return this.f4803a;
+        return this.a;
     }
 
     public final void b(ca caVar) {

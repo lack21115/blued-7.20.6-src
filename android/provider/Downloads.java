@@ -2,7 +2,6 @@ package android.provider;
 
 import android.content.Context;
 import android.net.Uri;
-import com.alipay.security.mobile.module.http.model.c;
 
 /* loaded from: source-9557208-dex2jar.jar:android/provider/Downloads.class */
 public final class Downloads {
@@ -162,7 +161,7 @@ public final class Downloads {
                 case 199:
                     return "DEVICE_NOT_FOUND_ERROR";
                 case 200:
-                    return c.g;
+                    return "SUCCESS";
                 case 400:
                     return "BAD_REQUEST";
                 case 406:

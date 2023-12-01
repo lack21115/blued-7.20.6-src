@@ -12,18 +12,14 @@ import kotlin.jvm.functions.Function2;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt__TransformKt$onEach$$inlined$unsafeTransform$1.class */
 public final class FlowKt__TransformKt$onEach$$inlined$unsafeTransform$1<T> implements Flow<T> {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ Flow f43321a;
+    final /* synthetic */ Flow a;
     final /* synthetic */ Function2 b;
 
     @Metadata
     /* renamed from: kotlinx.coroutines.flow.FlowKt__TransformKt$onEach$$inlined$unsafeTransform$1$2  reason: invalid class name */
     /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt__TransformKt$onEach$$inlined$unsafeTransform$1$2.class */
     public static final class AnonymousClass2 implements FlowCollector<T> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ FlowCollector f43322a;
+        final /* synthetic */ FlowCollector a;
         final /* synthetic */ Function2 b;
 
         @Metadata
@@ -31,9 +27,7 @@ public final class FlowKt__TransformKt$onEach$$inlined$unsafeTransform$1<T> impl
         /* renamed from: kotlinx.coroutines.flow.FlowKt__TransformKt$onEach$$inlined$unsafeTransform$1$2$1  reason: invalid class name */
         /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt__TransformKt$onEach$$inlined$unsafeTransform$1$2$1.class */
         public static final class AnonymousClass1 extends ContinuationImpl {
-
-            /* renamed from: a  reason: collision with root package name */
-            /* synthetic */ Object f43323a;
+            /* synthetic */ Object a;
             int b;
             Object d;
             Object e;
@@ -44,14 +38,14 @@ public final class FlowKt__TransformKt$onEach$$inlined$unsafeTransform$1<T> impl
 
             @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
             public final Object invokeSuspend(Object obj) {
-                this.f43323a = obj;
+                this.a = obj;
                 this.b |= Integer.MIN_VALUE;
                 return AnonymousClass2.this.emit(null, this);
             }
         }
 
         public AnonymousClass2(FlowCollector flowCollector, Function2 function2) {
-            this.f43322a = flowCollector;
+            this.a = flowCollector;
             this.b = function2;
         }
 
@@ -74,7 +68,7 @@ public final class FlowKt__TransformKt$onEach$$inlined$unsafeTransform$1<T> impl
 
     @Override // kotlinx.coroutines.flow.Flow
     public Object a(FlowCollector flowCollector, Continuation continuation) {
-        Object a2 = this.f43321a.a(new AnonymousClass2(flowCollector, this.b), continuation);
-        return a2 == IntrinsicsKt.a() ? a2 : Unit.f42314a;
+        Object a = this.a.a(new AnonymousClass2(flowCollector, this.b), continuation);
+        return a == IntrinsicsKt.a() ? a : Unit.a;
     }
 }

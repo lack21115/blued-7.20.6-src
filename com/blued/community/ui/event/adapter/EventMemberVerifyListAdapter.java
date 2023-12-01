@@ -36,13 +36,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/event/adapter/EventMemberVerifyListAdapter.class */
 public final class EventMemberVerifyListAdapter extends BaseQuickAdapter<EventMemberModel, BaseViewHolder> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final FragmentManager f19510a;
+    private final FragmentManager a;
     private final IRequestHost b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final boolean f19511c;
+    private final boolean c;
     private final String d;
     private final int e;
 
@@ -52,16 +48,16 @@ public final class EventMemberVerifyListAdapter extends BaseQuickAdapter<EventMe
         Intrinsics.e(fragmentManager, "fragmentManager");
         Intrinsics.e(fragmentActive, "fragmentActive");
         Intrinsics.e(eventId, "eventId");
-        this.f19510a = fragmentManager;
+        this.a = fragmentManager;
         this.b = fragmentActive;
-        this.f19511c = z;
+        this.c = z;
         this.d = eventId;
         this.e = i;
     }
 
     private final String a(long j) {
         if (!TimeAndDateUtils.g(j)) {
-            SimpleDateFormat simpleDateFormat = TimeAndDateUtils.f10913a.get();
+            SimpleDateFormat simpleDateFormat = TimeAndDateUtils.a.get();
             if (simpleDateFormat == null) {
                 return null;
             }
@@ -123,12 +119,12 @@ public final class EventMemberVerifyListAdapter extends BaseQuickAdapter<EventMe
         EventLogData eventLogData = new EventLogData();
         eventLogData.setEventId(this.d);
         eventLogData.setUid(eventMemberModel.uid);
-        eventLogData.setSourcePage(this.f19511c ? FeedProtos.SourcePage.VERIFY_FINISH_PAGE : FeedProtos.SourcePage.TO_VERIFY_PAGE);
-        EventUserInfoDlgFragment.f19559a.a(this.f19510a, eventMemberModel.uid, this.d, eventLogData);
+        eventLogData.setSourcePage(this.c ? FeedProtos.SourcePage.VERIFY_FINISH_PAGE : FeedProtos.SourcePage.TO_VERIFY_PAGE);
+        EventUserInfoDlgFragment.a.a(this.a, eventMemberModel.uid, this.d, eventLogData);
     }
 
     private final void a(final boolean z, final EventMemberModel eventMemberModel, final BaseViewHolder baseViewHolder) {
-        EventHttpUtils eventHttpUtils = EventHttpUtils.f19079a;
+        EventHttpUtils eventHttpUtils = EventHttpUtils.a;
         BluedUIHttpResponse<BluedEntityA<Objects>> bluedUIHttpResponse = new BluedUIHttpResponse<BluedEntityA<Objects>>() { // from class: com.blued.community.ui.event.adapter.EventMemberVerifyListAdapter$examineUser$1
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -171,13 +167,12 @@ public final class EventMemberVerifyListAdapter extends BaseQuickAdapter<EventMe
                 EventMemberVerifyListAdapter.a(EventMemberVerifyListAdapter.this, eventMemberModel, baseViewHolder, dialogInterface, i);
             }
         }).f(R.color.syc_g).b(R.string.cancel, (DialogInterface.OnClickListener) null).g(R.color.syc_h).a(0);
-        BluedAlertDialog a2 = builder.a();
-        a2.setCanceledOnTouchOutside(false);
-        a2.show();
+        BluedAlertDialog a = builder.a();
+        a.setCanceledOnTouchOutside(false);
+        a.show();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(final BaseViewHolder helper, final EventMemberModel item) {
         Intrinsics.e(helper, "helper");
@@ -206,7 +201,7 @@ public final class EventMemberVerifyListAdapter extends BaseQuickAdapter<EventMe
             }
         });
         helper.setText(R.id.tv_event_time, Intrinsics.a("报名时间：", (Object) a(TimeAndDateUtils.j(item.create_time)))).setText(R.id.tv_member_distance, DistanceUtils.a(item.user_info.distance, BlueAppLocal.c(), false));
-        if (this.f19511c) {
+        if (this.c) {
             BaseViewHolder gone = helper.setGone(R.id.ll_manager_btn, false);
             int i = R.id.tv_signed;
             if (item.is_sign == 1) {
@@ -239,7 +234,7 @@ public final class EventMemberVerifyListAdapter extends BaseQuickAdapter<EventMe
             return;
         }
         shapeTextView.setText(this.mContext.getString(R.string.event_approved_btn));
-        if (CommunityManager.f19086a.a().s()) {
+        if (CommunityManager.a.a().s()) {
             ShapeTextView shapeTextView3 = shapeTextView;
             ShapeHelper.a((ShapeHelper.ShapeView) shapeTextView3, R.color.syc_454545);
             ShapeHelper.d(shapeTextView3, R.color.syc_dark_434343);

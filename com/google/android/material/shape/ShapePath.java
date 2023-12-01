@@ -43,9 +43,8 @@ public class ShapePath {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8110460-dex2jar.jar:com/google/android/material/shape/ShapePath$LineShadowOperation.class */
-    public static class LineShadowOperation extends ShadowCompatOperation {
+    static class LineShadowOperation extends ShadowCompatOperation {
         private final PathLineOperation operation;
         private final float startX;
         private final float startY;

@@ -8,6 +8,7 @@ import com.getui.gtc.base.crypt.CryptTools;
 import com.getui.gtc.base.log.ILogDestination;
 import com.igexin.push.f.e;
 import com.tencent.cos.xml.crypto.JceEncryptionConstants;
+import com.xiaomi.mipush.sdk.Constants;
 import com.youzan.androidsdk.tool.AppSigning;
 import java.io.DataOutputStream;
 import java.io.File;
@@ -33,11 +34,11 @@ public class a implements ILogDestination {
     private static Map<File, IvParameterSpec> f = new ConcurrentHashMap();
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f21909a = GtcProvider.context();
+    public final Context f8302a = GtcProvider.context();
 
     /* renamed from: c  reason: collision with root package name */
-    public String f21910c = this.f21909a.getPackageName() + "-" + new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date()) + com.anythink.china.common.a.a.f;
-    public File b = new File(this.f21909a.getExternalFilesDir(null), this.f21910c);
+    public String f8303c = this.f8302a.getPackageName() + Constants.ACCEPT_TIME_SEPARATOR_SERVER + new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date()) + ".log";
+    public File b = new File(this.f8302a.getExternalFilesDir(null), this.f8303c);
 
     private void a(final File file) {
         d.get(file).post(new Runnable() { // from class: com.getui.gtc.base.log.b.a.1
@@ -57,7 +58,7 @@ public class a implements ILogDestination {
                                 if (fileLock.isValid()) {
                                     dataOutputStream = new DataOutputStream(new FileOutputStream(file, true));
                                     try {
-                                        PublicKey parsePublicKey = CryptTools.parsePublicKey("RSA", e.f23642a);
+                                        PublicKey parsePublicKey = CryptTools.parsePublicKey("RSA", e.f10034a);
                                         SecretKey secretKey = (SecretKey) a.e.get(file);
                                         IvParameterSpec ivParameterSpec = (IvParameterSpec) a.f.get(file);
                                         byte[] encrypt = CryptTools.encrypt("RSA/ECB/OAEPWithSHA1AndMGF1Padding", parsePublicKey, secretKey.getEncoded());

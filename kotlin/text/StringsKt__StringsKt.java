@@ -1,6 +1,5 @@
 package kotlin.text;
 
-import com.tencent.qcloud.core.util.IOUtils;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -21,19 +20,19 @@ import kotlin.sequences.SequencesKt;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/text/StringsKt__StringsKt.class */
 public class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
-    public static final int a(CharSequence charSequence, char c2, int i, boolean z) {
+    public static final int a(CharSequence charSequence, char c, int i, boolean z) {
         Intrinsics.e(charSequence, "<this>");
-        return (z || !(charSequence instanceof String)) ? StringsKt.a(charSequence, new char[]{c2}, i, z) : ((String) charSequence).indexOf(c2, i);
+        return (z || !(charSequence instanceof String)) ? StringsKt.a(charSequence, new char[]{c}, i, z) : ((String) charSequence).indexOf(c, i);
     }
 
-    public static /* synthetic */ int a(CharSequence charSequence, char c2, int i, boolean z, int i2, Object obj) {
+    public static /* synthetic */ int a(CharSequence charSequence, char c, int i, boolean z, int i2, Object obj) {
         if ((i2 & 2) != 0) {
             i = 0;
         }
         if ((i2 & 4) != 0) {
             z = false;
         }
-        return StringsKt.a(charSequence, c2, i, z);
+        return StringsKt.a(charSequence, c, i, z);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:68:0x0061, code lost:
@@ -84,13 +83,13 @@ public class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
         if (!z && chars.length == 1 && (charSequence instanceof String)) {
             return ((String) charSequence).indexOf(ArraysKt.a(chars), i);
         }
-        int c2 = RangesKt.c(i, 0);
+        int c = RangesKt.c(i, 0);
         int e = StringsKt.e(charSequence);
-        if (c2 > e) {
+        if (c > e) {
             return -1;
         }
         while (true) {
-            char charAt = charSequence.charAt(c2);
+            char charAt = charSequence.charAt(c);
             int length = chars.length;
             int i2 = 0;
             while (true) {
@@ -106,16 +105,16 @@ public class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
                 }
             }
             if (z2) {
-                return c2;
+                return c;
             }
-            if (c2 == e) {
+            if (c == e) {
                 return -1;
             }
-            c2++;
+            c++;
         }
     }
 
-    public static final CharSequence a(CharSequence charSequence, int i, char c2) {
+    public static final CharSequence a(CharSequence charSequence, int i, char c) {
         Intrinsics.e(charSequence, "<this>");
         if (i < 0) {
             throw new IllegalArgumentException("Desired length " + i + " is less than zero.");
@@ -127,7 +126,7 @@ public class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
             int i2 = 1;
             if (1 <= length) {
                 while (true) {
-                    sb.append(c2);
+                    sb.append(c);
                     if (i2 == length) {
                         break;
                     }
@@ -160,28 +159,28 @@ public class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
         return charSequence.subSequence(range.getStart().intValue(), range.getEndInclusive().intValue() + 1).toString();
     }
 
-    public static final String a(String str, char c2, String missingDelimiterValue) {
+    public static final String a(String str, char c, String missingDelimiterValue) {
         Intrinsics.e(str, "<this>");
         Intrinsics.e(missingDelimiterValue, "missingDelimiterValue");
-        int a2 = StringsKt.a((CharSequence) str, c2, 0, false, 6, (Object) null);
-        if (a2 == -1) {
+        int a = StringsKt.a((CharSequence) str, c, 0, false, 6, (Object) null);
+        if (a == -1) {
             return missingDelimiterValue;
         }
-        String substring = str.substring(0, a2);
+        String substring = str.substring(0, a);
         Intrinsics.c(substring, "this as java.lang.String…ing(startIndex, endIndex)");
         return substring;
     }
 
-    public static /* synthetic */ String a(String str, char c2, String str2, int i, Object obj) {
+    public static /* synthetic */ String a(String str, char c, String str2, int i, Object obj) {
         if ((i & 2) != 0) {
             str2 = str;
         }
-        return StringsKt.a(str, c2, str2);
+        return StringsKt.a(str, c, str2);
     }
 
-    public static final String a(String str, int i, char c2) {
+    public static final String a(String str, int i, char c) {
         Intrinsics.e(str, "<this>");
-        return StringsKt.a((CharSequence) str, i, c2).toString();
+        return StringsKt.a((CharSequence) str, i, c).toString();
     }
 
     public static final String a(String str, CharSequence prefix) {
@@ -199,11 +198,11 @@ public class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
         Intrinsics.e(str, "<this>");
         Intrinsics.e(delimiter, "delimiter");
         Intrinsics.e(missingDelimiterValue, "missingDelimiterValue");
-        int a2 = StringsKt.a((CharSequence) str, delimiter, 0, false, 6, (Object) null);
-        if (a2 == -1) {
+        int a = StringsKt.a((CharSequence) str, delimiter, 0, false, 6, (Object) null);
+        if (a == -1) {
             return missingDelimiterValue;
         }
-        String substring = str.substring(0, a2);
+        String substring = str.substring(0, a);
         Intrinsics.c(substring, "this as java.lang.String…ing(startIndex, endIndex)");
         return substring;
     }
@@ -217,11 +216,11 @@ public class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
 
     private static final List<String> a(CharSequence charSequence, String str, boolean z, int i) {
         int length;
-        int a2;
+        int a;
         StringsKt.a(i);
         int i2 = 0;
-        int a3 = StringsKt.a(charSequence, str, 0, z);
-        if (a3 == -1 || i == 1) {
+        int a2 = StringsKt.a(charSequence, str, 0, z);
+        if (a2 == -1 || i == 1) {
             return CollectionsKt.a(charSequence.toString());
         }
         boolean z2 = i > 0;
@@ -230,24 +229,24 @@ public class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
             i3 = RangesKt.d(i, 10);
         }
         ArrayList arrayList = new ArrayList(i3);
-        int i4 = a3;
+        int i4 = a2;
         do {
             arrayList.add(charSequence.subSequence(i2, i4).toString());
             length = str.length() + i4;
             if (z2 && arrayList.size() == i - 1) {
                 break;
             }
-            a2 = StringsKt.a(charSequence, str, length, z);
+            a = StringsKt.a(charSequence, str, length, z);
             i2 = length;
-            i4 = a2;
-        } while (a2 != -1);
+            i4 = a;
+        } while (a != -1);
         arrayList.add(charSequence.subSequence(length, charSequence.length()).toString());
         return arrayList;
     }
 
     private static final Sequence<IntRange> a(CharSequence charSequence, String[] strArr, int i, final boolean z, int i2) {
         StringsKt.a(i2);
-        final List a2 = ArraysKt.a(strArr);
+        final List a = ArraysKt.a(strArr);
         return new DelimitedRangesSequence(charSequence, i, i2, new Function2<CharSequence, Integer, Pair<? extends Integer, ? extends Integer>>() { // from class: kotlin.text.StringsKt__StringsKt$rangesDelimitedBy$2
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -258,7 +257,7 @@ public class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
             public final Pair<Integer, Integer> a(CharSequence $receiver, int i3) {
                 Pair b;
                 Intrinsics.e($receiver, "$this$$receiver");
-                b = StringsKt__StringsKt.b($receiver, (Collection<String>) a2, i3, z, false);
+                b = StringsKt__StringsKt.b($receiver, (Collection<String>) a, i3, z, false);
                 if (b != null) {
                     return TuplesKt.a(b.a(), Integer.valueOf(((String) b.b()).length()));
                 }
@@ -320,16 +319,16 @@ public class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
         throw new IllegalArgumentException(("Limit must be non-negative, but was " + i).toString());
     }
 
-    public static final boolean a(CharSequence charSequence, char c2, boolean z) {
+    public static final boolean a(CharSequence charSequence, char c, boolean z) {
         Intrinsics.e(charSequence, "<this>");
-        return StringsKt.a(charSequence, c2, 0, z, 2, (Object) null) >= 0;
+        return StringsKt.a(charSequence, c, 0, z, 2, (Object) null) >= 0;
     }
 
-    public static /* synthetic */ boolean a(CharSequence charSequence, char c2, boolean z, int i, Object obj) {
+    public static /* synthetic */ boolean a(CharSequence charSequence, char c, boolean z, int i, Object obj) {
         if ((i & 2) != 0) {
             z = false;
         }
-        return StringsKt.a(charSequence, c2, z);
+        return StringsKt.a(charSequence, c, z);
     }
 
     public static final boolean a(CharSequence charSequence, int i, CharSequence other, int i2, int i3, boolean z) {
@@ -364,19 +363,19 @@ public class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
         return StringsKt.a(charSequence, charSequence2, z);
     }
 
-    public static final int b(CharSequence charSequence, char c2, int i, boolean z) {
+    public static final int b(CharSequence charSequence, char c, int i, boolean z) {
         Intrinsics.e(charSequence, "<this>");
-        return (z || !(charSequence instanceof String)) ? StringsKt.b(charSequence, new char[]{c2}, i, z) : ((String) charSequence).lastIndexOf(c2, i);
+        return (z || !(charSequence instanceof String)) ? StringsKt.b(charSequence, new char[]{c}, i, z) : ((String) charSequence).lastIndexOf(c, i);
     }
 
-    public static /* synthetic */ int b(CharSequence charSequence, char c2, int i, boolean z, int i2, Object obj) {
+    public static /* synthetic */ int b(CharSequence charSequence, char c, int i, boolean z, int i2, Object obj) {
         if ((i2 & 2) != 0) {
             i = StringsKt.e(charSequence);
         }
         if ((i2 & 4) != 0) {
             z = false;
         }
-        return StringsKt.b(charSequence, c2, i, z);
+        return StringsKt.b(charSequence, c, i, z);
     }
 
     public static final int b(CharSequence charSequence, String string, int i, boolean z) {
@@ -436,13 +435,13 @@ public class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
         int i = 0;
         boolean z = false;
         while (i <= length) {
-            boolean a2 = CharsKt.a(charSequence.charAt(!z ? i : length));
+            boolean a = CharsKt.a(charSequence.charAt(!z ? i : length));
             if (z) {
-                if (!a2) {
+                if (!a) {
                     break;
                 }
                 length--;
-            } else if (a2) {
+            } else if (a) {
                 i++;
             } else {
                 z = true;
@@ -451,34 +450,34 @@ public class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
         return charSequence.subSequence(i, length + 1);
     }
 
-    public static final String b(String str, char c2, String missingDelimiterValue) {
+    public static final String b(String str, char c, String missingDelimiterValue) {
         Intrinsics.e(str, "<this>");
         Intrinsics.e(missingDelimiterValue, "missingDelimiterValue");
-        int a2 = StringsKt.a((CharSequence) str, c2, 0, false, 6, (Object) null);
-        if (a2 == -1) {
+        int a = StringsKt.a((CharSequence) str, c, 0, false, 6, (Object) null);
+        if (a == -1) {
             return missingDelimiterValue;
         }
-        String substring = str.substring(a2 + 1, str.length());
+        String substring = str.substring(a + 1, str.length());
         Intrinsics.c(substring, "this as java.lang.String…ing(startIndex, endIndex)");
         return substring;
     }
 
-    public static /* synthetic */ String b(String str, char c2, String str2, int i, Object obj) {
+    public static /* synthetic */ String b(String str, char c, String str2, int i, Object obj) {
         if ((i & 2) != 0) {
             str2 = str;
         }
-        return StringsKt.b(str, c2, str2);
+        return StringsKt.b(str, c, str2);
     }
 
     public static final String b(String str, String delimiter, String missingDelimiterValue) {
         Intrinsics.e(str, "<this>");
         Intrinsics.e(delimiter, "delimiter");
         Intrinsics.e(missingDelimiterValue, "missingDelimiterValue");
-        int a2 = StringsKt.a((CharSequence) str, delimiter, 0, false, 6, (Object) null);
-        if (a2 == -1) {
+        int a = StringsKt.a((CharSequence) str, delimiter, 0, false, 6, (Object) null);
+        if (a == -1) {
             return missingDelimiterValue;
         }
-        String substring = str.substring(a2 + delimiter.length(), str.length());
+        String substring = str.substring(a + delimiter.length(), str.length());
         Intrinsics.c(substring, "this as java.lang.String…ing(startIndex, endIndex)");
         return substring;
     }
@@ -572,10 +571,10 @@ public class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
         return StringsKt.b(charSequence, charSequence2, z);
     }
 
-    public static final String c(String str, char c2, String missingDelimiterValue) {
+    public static final String c(String str, char c, String missingDelimiterValue) {
         Intrinsics.e(str, "<this>");
         Intrinsics.e(missingDelimiterValue, "missingDelimiterValue");
-        int b = StringsKt.b((CharSequence) str, c2, 0, false, 6, (Object) null);
+        int b = StringsKt.b((CharSequence) str, c, 0, false, 6, (Object) null);
         if (b == -1) {
             return missingDelimiterValue;
         }
@@ -584,11 +583,11 @@ public class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
         return substring;
     }
 
-    public static /* synthetic */ String c(String str, char c2, String str2, int i, Object obj) {
+    public static /* synthetic */ String c(String str, char c, String str2, int i, Object obj) {
         if ((i & 2) != 0) {
             str2 = str;
         }
-        return StringsKt.c(str, c2, str2);
+        return StringsKt.c(str, c, str2);
     }
 
     public static final CharIterator c(final CharSequence charSequence) {
@@ -636,7 +635,7 @@ public class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
 
     public static final Sequence<String> f(CharSequence charSequence) {
         Intrinsics.e(charSequence, "<this>");
-        return StringsKt.a(charSequence, new String[]{IOUtils.LINE_SEPARATOR_WINDOWS, "\n", "\r"}, false, 0, 6, (Object) null);
+        return StringsKt.a(charSequence, new String[]{"\r\n", "\n", "\r"}, false, 0, 6, (Object) null);
     }
 
     public static final List<String> g(CharSequence charSequence) {

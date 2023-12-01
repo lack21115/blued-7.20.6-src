@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemNearbyRecGroupBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29267a;
+    private final LinearLayout f15577a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29267a;
+        return this.f15577a;
     }
 }

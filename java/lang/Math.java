@@ -1,6 +1,5 @@
 package java.lang;
 
-import com.sensetime.stmobile.STMobileHumanActionNative;
 import java.util.Random;
 
 /* loaded from: source-2895416-dex2jar.jar:java/lang/Math.class */
@@ -281,7 +280,7 @@ public final class Math {
         }
         if (j2 <= -1023) {
             long j3 = 1023 + j2 + numberOfLeadingZeros;
-            j = abs(d) < Double.MIN_NORMAL ? shiftLongBits(4503599627370495L & doubleToLongBits, j3) : shiftLongBits((4503599627370495L & doubleToLongBits) | STMobileHumanActionNative.ST_MOBILE_HAND_THREE, j3 - 1);
+            j = abs(d) < Double.MIN_NORMAL ? shiftLongBits(4503599627370495L & doubleToLongBits, j3) : shiftLongBits((4503599627370495L & doubleToLongBits) | 4503599627370496L, j3 - 1);
         } else {
             j = abs(d) >= Double.MIN_NORMAL ? ((1023 + j2) << 52) | (4503599627370495L & doubleToLongBits) : ((1023 + j2) << 52) | ((doubleToLongBits << (numberOfLeadingZeros + 1)) & 4503599627370495L);
         }

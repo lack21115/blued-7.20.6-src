@@ -25,23 +25,20 @@ public final class EmittedSource$disposeNow$2 extends SuspendLambda implements F
         this.this$0 = emittedSource;
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
         return new EmittedSource$disposeNow$2(this.this$0, continuation);
     }
 
-    @Override // kotlin.jvm.functions.Function2
     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-        return ((EmittedSource$disposeNow$2) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+        return create(coroutineScope, continuation).invokeSuspend(Unit.a);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         IntrinsicsKt.a();
         if (this.label == 0) {
             ResultKt.a(obj);
             this.this$0.removeSource();
-            return Unit.f42314a;
+            return Unit.a;
         }
         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
     }

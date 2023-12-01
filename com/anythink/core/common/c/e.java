@@ -7,20 +7,14 @@ import java.util.List;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/c/e.class */
 public class e extends com.anythink.core.common.c.a<com.anythink.core.common.a.e> {
-
-    /* renamed from: c  reason: collision with root package name */
-    private static volatile e f6575c;
+    private static volatile e c;
     private final String b;
 
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/c/e$a.class */
     public static final class a {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static final String f6576a = "dsp_offer_install_record";
+        public static final String a = "dsp_offer_install_record";
         public static final String b = "dsp_id";
-
-        /* renamed from: c  reason: collision with root package name */
-        public static final String f6577c = "dsp_offer_id";
+        public static final String c = "dsp_offer_id";
         public static final String d = "package_name";
         public static final String e = "last_update_time";
         public static final String f = "CREATE TABLE IF NOT EXISTS dsp_offer_install_record(dsp_id TEXT ,dsp_offer_id TEXT ,package_name TEXT ,last_update_time INTEGER)";
@@ -32,18 +26,18 @@ public class e extends com.anythink.core.common.c.a<com.anythink.core.common.a.e
     }
 
     public static e a(b bVar) {
-        if (f6575c == null) {
+        if (c == null) {
             synchronized (e.class) {
                 try {
-                    if (f6575c == null) {
-                        f6575c = new e(bVar);
+                    if (c == null) {
+                        c = new e(bVar);
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f6575c;
+        return c;
     }
 
     private List<com.anythink.core.common.a.e> a(Cursor cursor) {
@@ -215,7 +209,7 @@ public class e extends com.anythink.core.common.c.a<com.anythink.core.common.a.e
                     sb2.append(eVar.b());
                     sb2.append(",packagename:");
                     sb2.append(eVar.c());
-                    return b().insert(a.f6576a, null, contentValues);
+                    return b().insert(a.a, null, contentValues);
                 } catch (Exception e) {
                 }
             }

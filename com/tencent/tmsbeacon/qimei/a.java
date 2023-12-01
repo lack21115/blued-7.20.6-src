@@ -11,11 +11,11 @@ import java.util.HashMap;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static a f39610a;
+    private static a f25919a;
     private String b = "";
 
     /* renamed from: c  reason: collision with root package name */
-    private Qimei f39611c;
+    private Qimei f25920c;
 
     private a() {
         d();
@@ -25,10 +25,10 @@ public class a {
         a aVar;
         synchronized (a.class) {
             try {
-                if (f39610a == null) {
-                    f39610a = new a();
+                if (f25919a == null) {
+                    f25919a = new a();
                 }
-                aVar = f39610a;
+                aVar = f25919a;
             } catch (Throwable th) {
                 throw th;
             }
@@ -38,7 +38,7 @@ public class a {
 
     private void d() {
         synchronized (this) {
-            this.f39611c = new Qimei();
+            this.f25920c = new Qimei();
             String a2 = e.a(com.tencent.tmsbeacon.a.c.c.d().c());
             if (!TextUtils.isEmpty(a2)) {
                 this.b = a2;
@@ -46,22 +46,22 @@ public class a {
             com.tencent.tmsbeacon.base.util.c.a("[qimei] final jceRequest qimeiJson: " + this.b, new Object[0]);
             HashMap<String, String> a3 = e.a(this.b);
             if (a3 != null) {
-                this.f39611c.b(a3.get("A3"));
-                this.f39611c.a(a3.get("A153"));
-                this.f39611c.a(a3);
-                com.tencent.tmsbeacon.base.util.c.a("[qimei] showQimei: " + this.f39611c.toString(), new Object[0]);
+                this.f25920c.b(a3.get("A3"));
+                this.f25920c.a(a3.get("A153"));
+                this.f25920c.a(a3);
+                com.tencent.tmsbeacon.base.util.c.a("[qimei] showQimei: " + this.f25920c.toString(), new Object[0]);
             }
         }
     }
 
     public void a(Qimei qimei) {
         synchronized (this) {
-            this.f39611c = qimei;
+            this.f25920c = qimei;
         }
     }
 
     public Qimei b() {
-        return this.f39611c;
+        return this.f25920c;
     }
 
     public QimeiPackage c() {

@@ -1,6 +1,5 @@
 package com.amap.api.maps.model;
 
-import android.graphics.Color;
 import android.graphics.Point;
 import com.autonavi.amap.mapcore.VirtualEarthProjection;
 import java.util.ArrayList;
@@ -12,8 +11,8 @@ public class BuildingOverlayOptions extends BaseOptions {
     private float zindex;
     private int buildingHeight = -1;
     private int buildingHeightScale = 1;
-    private int buildingTopColor = Color.GRAY;
-    private int buildingSideColor = Color.GRAY;
+    private int buildingTopColor = -7829368;
+    private int buildingSideColor = -7829368;
     private boolean isVisible = true;
     private List<LatLng> buildingLatlngs = new ArrayList();
 

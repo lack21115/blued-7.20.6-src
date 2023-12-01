@@ -1,7 +1,6 @@
 package mtopsdk.mtop.protocol.builder;
 
 import com.alipay.sdk.cons.b;
-import com.huawei.openalliance.ad.constant.t;
 import com.taobao.tao.remotebusiness.listener.c;
 import java.util.HashMap;
 import java.util.Map;
@@ -17,25 +16,23 @@ import mtopsdk.xstate.a;
 
 /* loaded from: source-3503164-dex2jar.jar:mtopsdk/mtop/protocol/builder/ProtocolParamBuilderImpl.class */
 public class ProtocolParamBuilderImpl implements ProtocolParamBuilder {
-
-    /* renamed from: a  reason: collision with root package name */
-    private c f43772a = null;
+    private c a = null;
     private SDKConfig b = SDKConfig.a();
 
     private Map a() {
         HashMap hashMap = new HashMap();
         hashMap.put("pv", "1.0");
-        String a2 = a.a("lat");
-        if (StringUtils.a(a2)) {
-            String a3 = a.a("lng");
-            if (StringUtils.a(a3)) {
-                hashMap.put("lat", a2);
-                hashMap.put("lng", a3);
+        String a = a.a(com.anythink.core.common.g.c.B);
+        if (StringUtils.a(a)) {
+            String a2 = a.a("lng");
+            if (StringUtils.a(a2)) {
+                hashMap.put(com.anythink.core.common.g.c.B, a);
+                hashMap.put("lng", a2);
             }
         }
         hashMap.put("t", String.valueOf(SDKUtils.a()));
         hashMap.put("sid", a.a("sid"));
-        hashMap.put(t.cN, a.a(t.cN));
+        hashMap.put("accessToken", a.a("accessToken"));
         hashMap.put(b.g, a.a(b.g));
         hashMap.put("x-features", String.valueOf(MtopFeatureManager.a()));
         return hashMap;
@@ -52,34 +49,34 @@ public class ProtocolParamBuilderImpl implements ProtocolParamBuilder {
         if (StringUtils.a(k)) {
             map.put("x-app-ver", k);
         }
-        String a2 = a.a("ua");
-        if (a2 != null) {
-            map.put("user-agent", a2);
+        String a = a.a("ua");
+        if (a != null) {
+            map.put("user-agent", a);
         }
     }
 
     private Map b(MtopProxy mtopProxy) {
         MtopRequest d = mtopProxy.d();
         MtopNetworkProp e = mtopProxy.e();
-        Map a2 = a();
-        a2.put("api", d.a().toLowerCase());
-        a2.put("v", d.b().toLowerCase());
-        a2.put("data", d.c());
-        a2.put("ttid", StringUtils.a(e.g) ? e.g : a.a("ttid"));
+        Map a = a();
+        a.put("api", d.a().toLowerCase());
+        a.put("v", d.b().toLowerCase());
+        a.put("data", d.c());
+        a.put("ttid", StringUtils.a(e.g) ? e.g : a.a("ttid"));
         String f = this.b.f();
-        a2.put("appKey", f);
-        a2.put("sid", a.a("sid"));
+        a.put("appKey", f);
+        a.put("sid", a.a("sid"));
         if (e.j >= 0) {
-            a2.get("t");
-            c cVar = this.f43772a;
+            a.get("t");
+            c cVar = this.a;
             int i = e.j;
-            a2.put("wua", cVar.a());
+            a.put("wua", cVar.a());
         }
-        String a3 = this.f43772a.a((HashMap) a2, f);
-        if (!StringUtils.b(a3)) {
-            a2.put("sign", a3);
-            a(mtopProxy, a2);
-            return a2;
+        String a2 = this.a.a((HashMap) a, f);
+        if (!StringUtils.b(a2)) {
+            a.put(com.anythink.core.common.g.c.Y, a2);
+            a(mtopProxy, a);
+            return a;
         }
         StringBuilder sb = new StringBuilder(128);
         sb.append("api=");
@@ -99,9 +96,9 @@ public class ProtocolParamBuilderImpl implements ProtocolParamBuilder {
             TBSdkLog.d("mtopsdk.ProtocolParamBuilderImpl", "[buildParams]mtopProxy or entrance is invalid.---" + mtopProxy);
             return null;
         }
-        c c2 = this.b.c();
-        this.f43772a = c2;
-        if (c2 == null) {
+        c c = this.b.c();
+        this.a = c;
+        if (c == null) {
             TBSdkLog.d("mtopsdk.ProtocolParamBuilderImpl", mtopProxy.h.g(), "ISign for SDKConfig.getInstance().getGlobalSign is null");
             return null;
         }

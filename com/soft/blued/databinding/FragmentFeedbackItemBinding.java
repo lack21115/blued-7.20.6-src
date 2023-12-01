@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentFeedbackItemBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ConstraintLayout f28821a;
+    private final ConstraintLayout f15131a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f28821a;
+        return this.f15131a;
     }
 }

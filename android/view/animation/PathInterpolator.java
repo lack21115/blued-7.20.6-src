@@ -46,7 +46,7 @@ public class PathInterpolator extends BaseInterpolator {
     }
 
     private void initPath(Path path) {
-        float[] approximate = path.approximate(0.002f);
+        float[] approximate = path.approximate(PRECISION);
         int length = approximate.length / 3;
         if (approximate[1] != 0.0f || approximate[2] != 0.0f || approximate[approximate.length - 2] != 1.0f || approximate[approximate.length - 1] != 1.0f) {
             throw new IllegalArgumentException("The Path must start at (0,0) and end at (1,1)");

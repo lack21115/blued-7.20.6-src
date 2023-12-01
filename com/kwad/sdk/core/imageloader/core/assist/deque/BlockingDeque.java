@@ -6,7 +6,7 @@ import java.util.concurrent.TimeUnit;
 
 /* loaded from: source-7994992-dex2jar.jar:com/kwad/sdk/core/imageloader/core/assist/deque/BlockingDeque.class */
 public interface BlockingDeque<E> extends Deque<E>, BlockingQueue<E> {
-    @Override // com.kwad.sdk.core.imageloader.core.assist.deque.Deque, java.util.Queue, java.util.Collection, java.util.Set
+    @Override // com.kwad.sdk.core.imageloader.core.assist.deque.Deque, java.util.Queue, java.util.Collection, java.util.concurrent.BlockingQueue
     boolean add(E e);
 
     @Override // com.kwad.sdk.core.imageloader.core.assist.deque.Deque
@@ -15,7 +15,7 @@ public interface BlockingDeque<E> extends Deque<E>, BlockingQueue<E> {
     @Override // com.kwad.sdk.core.imageloader.core.assist.deque.Deque
     void addLast(E e);
 
-    @Override // com.kwad.sdk.core.imageloader.core.assist.deque.Deque, java.util.Collection, java.util.Set
+    @Override // com.kwad.sdk.core.imageloader.core.assist.deque.Deque, java.util.Collection, java.util.concurrent.BlockingQueue
     boolean contains(Object obj);
 
     @Override // com.kwad.sdk.core.imageloader.core.assist.deque.Deque, java.util.Queue
@@ -66,7 +66,7 @@ public interface BlockingDeque<E> extends Deque<E>, BlockingQueue<E> {
     @Override // com.kwad.sdk.core.imageloader.core.assist.deque.Deque, java.util.Queue
     E remove();
 
-    @Override // com.kwad.sdk.core.imageloader.core.assist.deque.Deque, java.util.Collection, java.util.Set
+    @Override // com.kwad.sdk.core.imageloader.core.assist.deque.Deque, java.util.Collection, java.util.concurrent.BlockingQueue
     boolean remove(Object obj);
 
     @Override // com.kwad.sdk.core.imageloader.core.assist.deque.Deque
@@ -75,7 +75,7 @@ public interface BlockingDeque<E> extends Deque<E>, BlockingQueue<E> {
     @Override // com.kwad.sdk.core.imageloader.core.assist.deque.Deque
     boolean removeLastOccurrence(Object obj);
 
-    @Override // com.kwad.sdk.core.imageloader.core.assist.deque.Deque, java.util.Collection, java.util.List
+    @Override // com.kwad.sdk.core.imageloader.core.assist.deque.Deque, java.util.Collection
     int size();
 
     @Override // java.util.concurrent.BlockingQueue

@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class KGKTVScore {
 
     /* renamed from: a  reason: collision with root package name */
-    private boolean f40025a;
+    private boolean f26334a;
     private long mNativeInstance;
 
     static {
@@ -50,7 +50,7 @@ public class KGKTVScore {
 
     public final i a(int i, int i2, String str, String str2) {
         synchronized (this) {
-            if (this.f40025a) {
+            if (this.f26334a) {
                 return new i(-1, "KTVScore has release");
             }
             i iVar = new i(0, null);
@@ -84,7 +84,7 @@ public class KGKTVScore {
 
     public final ArrayList<TXSongScoreNoteItem> a() {
         synchronized (this) {
-            if (this.f40025a) {
+            if (this.f26334a) {
                 return null;
             }
             return _getPitchData();
@@ -93,7 +93,7 @@ public class KGKTVScore {
 
     public final void a(int i) {
         synchronized (this) {
-            if (!this.f40025a) {
+            if (!this.f26334a) {
                 _setPitch(i);
             }
         }
@@ -101,7 +101,7 @@ public class KGKTVScore {
 
     public final void a(byte[] bArr, int i, int i2) {
         synchronized (this) {
-            if (!this.f40025a) {
+            if (!this.f26334a) {
                 _process(bArr, i, i2);
             }
         }
@@ -109,7 +109,7 @@ public class KGKTVScore {
 
     public final int b() {
         synchronized (this) {
-            if (this.f40025a) {
+            if (this.f26334a) {
                 return -1;
             }
             return _immediatelyDisplay();
@@ -122,13 +122,13 @@ public class KGKTVScore {
             int[] iArr = new int[2];
             iArr[0] = 0;
             iArr[1] = 0;
-            if (!this.f40025a) {
+            if (!this.f26334a) {
                 iArr = _updateScore(i);
             }
             xVar = null;
             if (iArr != null) {
                 xVar = new x();
-                xVar.f40187a = iArr[0];
+                xVar.f26496a = iArr[0];
                 xVar.b = iArr[1];
             }
         }
@@ -145,7 +145,7 @@ public class KGKTVScore {
 
     public final int c() {
         synchronized (this) {
-            if (this.f40025a) {
+            if (this.f26334a) {
                 return -1;
             }
             return _calculateTotalScore();
@@ -154,7 +154,7 @@ public class KGKTVScore {
 
     public final int c(int i) {
         synchronized (this) {
-            if (this.f40025a) {
+            if (this.f26334a) {
                 return -1;
             }
             return _updateTotalScore(i);
@@ -163,7 +163,7 @@ public class KGKTVScore {
 
     public final void d() {
         synchronized (this) {
-            if (!this.f40025a) {
+            if (!this.f26334a) {
                 _reset();
             }
         }
@@ -171,7 +171,7 @@ public class KGKTVScore {
 
     public final void e() {
         synchronized (this) {
-            this.f40025a = true;
+            this.f26334a = true;
             _release();
         }
     }

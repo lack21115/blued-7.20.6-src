@@ -12,10 +12,10 @@ import android.os.Looper;
 import android.os.Message;
 import android.speech.tts.TextToSpeech;
 import android.text.TextUtils;
-import com.android.internal.telephony.PhoneConstants;
 import com.baidu.mobads.sdk.internal.ci;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
+import com.huawei.hms.framework.common.ContainerUtils;
 import com.tencent.tendinsv.a.b;
+import com.tencent.thumbplayer.api.TPErrorCode;
 import com.tencent.thumbplayer.api.TPPlayerMgr;
 import com.tencent.thumbplayer.api.report.ITPBusinessReportManager;
 import com.tencent.thumbplayer.api.report.TPDefaultReportInfo;
@@ -40,15 +40,15 @@ import org.json.JSONObject;
 public class b implements ITPBusinessReportManager, com.tencent.thumbplayer.tplayer.plugins.a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f39411a = String.format("Android %s", TPSystemInfo.getOsVersion());
+    private static final String f25720a = String.format("Android %s", TPSystemInfo.getOsVersion());
     private static String b = "";
 
     /* renamed from: c  reason: collision with root package name */
-    private static boolean f39412c = false;
+    private static boolean f25721c = false;
     private static com.tencent.thumbplayer.utils.c h = null;
     private Context I;
     private HandlerThread d;
-    private HandlerC1027b e;
+    private HandlerC0857b e;
     private final Object f = new Object();
     private boolean g = false;
     private TPDefaultReportInfo i = null;
@@ -116,8 +116,8 @@ public class b implements ITPBusinessReportManager, com.tencent.thumbplayer.tpla
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.tencent.thumbplayer.tplayer.plugins.report.b$b  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/thumbplayer/tplayer/plugins/report/b$b.class */
-    public class HandlerC1027b extends Handler {
-        HandlerC1027b(Looper looper) {
+    public class HandlerC0857b extends Handler {
+        HandlerC0857b(Looper looper) {
             super(looper);
         }
 
@@ -287,11 +287,11 @@ public class b implements ITPBusinessReportManager, com.tencent.thumbplayer.tpla
     public class e {
 
         /* renamed from: a  reason: collision with root package name */
-        long f39417a;
+        long f25726a;
         int b;
 
         /* renamed from: c  reason: collision with root package name */
-        long f39418c;
+        long f25727c;
         long d;
         int e;
         int f;
@@ -314,9 +314,9 @@ public class b implements ITPBusinessReportManager, com.tencent.thumbplayer.tpla
         ArrayList<f> w;
 
         private e() {
-            this.f39417a = 0L;
+            this.f25726a = 0L;
             this.b = 0;
-            this.f39418c = 0L;
+            this.f25727c = 0L;
             this.d = 0L;
             this.e = 0;
             this.f = 0;
@@ -340,9 +340,9 @@ public class b implements ITPBusinessReportManager, com.tencent.thumbplayer.tpla
         }
 
         void a() {
-            this.f39417a = 0L;
+            this.f25726a = 0L;
             this.b = 0;
-            this.f39418c = 0L;
+            this.f25727c = 0L;
             this.d = 0L;
             this.e = 0;
             this.f = 0;
@@ -371,16 +371,16 @@ public class b implements ITPBusinessReportManager, com.tencent.thumbplayer.tpla
     public class f {
 
         /* renamed from: a  reason: collision with root package name */
-        String f39419a;
+        String f25728a;
         String b;
 
         /* renamed from: c  reason: collision with root package name */
-        long f39420c = -1;
+        long f25729c = -1;
 
         f(String str, String str2) {
-            this.f39419a = "";
+            this.f25728a = "";
             this.b = "";
-            this.f39419a = str;
+            this.f25728a = str;
             this.b = str2;
         }
     }
@@ -411,7 +411,7 @@ public class b implements ITPBusinessReportManager, com.tencent.thumbplayer.tpla
         }
         TPReportParams.LiveExParam liveExParam = this.j.getLiveExParam();
         long a2 = a(map, "stime", System.currentTimeMillis());
-        liveExParam.getSyncFrameDurationInt = (int) (a2 - this.N.f39418c);
+        liveExParam.getSyncFrameDurationInt = (int) (a2 - this.N.f25727c);
         this.j.getFirstLoadParams().firstPacketReadTimeUnix = a2;
     }
 
@@ -461,7 +461,7 @@ public class b implements ITPBusinessReportManager, com.tencent.thumbplayer.tpla
             return;
         }
         int indexOf = this.N.r.indexOf("sid=");
-        int indexOf2 = this.N.r.indexOf("&", indexOf);
+        int indexOf2 = this.N.r.indexOf(ContainerUtils.FIELD_DELIMITER, indexOf);
         e eVar = this.N;
         eVar.v = indexOf2 >= 0 ? eVar.r.substring(indexOf + 4, indexOf2) : eVar.r.substring(indexOf + 4);
     }
@@ -699,7 +699,7 @@ public class b implements ITPBusinessReportManager, com.tencent.thumbplayer.tpla
 
     private void c() {
         this.d = o.a().a("TP-ReportThread");
-        this.e = new HandlerC1027b(this.d.getLooper());
+        this.e = new HandlerC0857b(this.d.getLooper());
         this.j = new TPReportParams();
         com.tencent.thumbplayer.utils.f.a(this.O);
         synchronized (b.class) {
@@ -707,10 +707,10 @@ public class b implements ITPBusinessReportManager, com.tencent.thumbplayer.tpla
                 if (h == null) {
                     h = new com.tencent.thumbplayer.utils.c(this.I, "TPReportCache");
                 }
-                if (!f39412c) {
-                    this.e.obtainMessage(4000).sendToTarget();
+                if (!f25721c) {
+                    this.e.obtainMessage(TPErrorCode.TP_ERROR_TYPE_DOWNLOAD_PROXY).sendToTarget();
                 }
-                f39412c = true;
+                f25721c = true;
             } catch (Throwable th) {
                 throw th;
             }
@@ -804,7 +804,7 @@ public class b implements ITPBusinessReportManager, com.tencent.thumbplayer.tpla
         if (map == null) {
             return;
         }
-        this.N.f39417a = System.currentTimeMillis();
+        this.N.f25726a = System.currentTimeMillis();
         long a2 = a(map, "stime", 0L);
         if (this.q > 0) {
             this.r += System.currentTimeMillis() - a2;
@@ -859,9 +859,9 @@ public class b implements ITPBusinessReportManager, com.tencent.thumbplayer.tpla
             this.r += a(map, "stime", System.currentTimeMillis()) - this.q;
             this.q = 0L;
         }
-        if (this.N.f39417a > 0) {
-            this.N.b += (int) (System.currentTimeMillis() - this.N.f39417a);
-            this.N.f39417a = 0L;
+        if (this.N.f25726a > 0) {
+            this.N.b += (int) (System.currentTimeMillis() - this.N.f25726a);
+            this.N.f25726a = 0L;
         }
     }
 
@@ -879,9 +879,9 @@ public class b implements ITPBusinessReportManager, com.tencent.thumbplayer.tpla
         playDoneParams.endTimeUnix = System.currentTimeMillis();
         playDoneParams.reasonInt = 2;
         playDoneParams.errCodeString = this.z;
-        if (this.N.f39417a > 0) {
-            this.N.b += (int) (System.currentTimeMillis() - this.N.f39417a);
-            this.N.f39417a = 0L;
+        if (this.N.f25726a > 0) {
+            this.N.b += (int) (System.currentTimeMillis() - this.N.f25726a);
+            this.N.f25726a = 0L;
         }
         if (this.q > 0) {
             this.r += playDoneParams.endTimeUnix - this.q;
@@ -915,9 +915,9 @@ public class b implements ITPBusinessReportManager, com.tencent.thumbplayer.tpla
             this.r += a(map, "etime", System.currentTimeMillis()) - this.q;
             this.q = 0L;
         }
-        if (this.N.f39417a > 0) {
-            this.N.b += (int) (System.currentTimeMillis() - this.N.f39417a);
-            this.N.f39417a = 0L;
+        if (this.N.f25726a > 0) {
+            this.N.b += (int) (System.currentTimeMillis() - this.N.f25726a);
+            this.N.f25726a = 0L;
         }
         map.put("reason", 1);
         q(map);
@@ -962,9 +962,9 @@ public class b implements ITPBusinessReportManager, com.tencent.thumbplayer.tpla
         if (map == null) {
             return;
         }
-        if (this.N.f39417a > 0) {
-            this.N.b += (int) (System.currentTimeMillis() - this.N.f39417a);
-            this.N.f39417a = 0L;
+        if (this.N.f25726a > 0) {
+            this.N.b += (int) (System.currentTimeMillis() - this.N.f25726a);
+            this.N.f25726a = 0L;
         }
         this.z = a(map, "code", "0");
         if (this.J == 1) {
@@ -1065,7 +1065,7 @@ public class b implements ITPBusinessReportManager, com.tencent.thumbplayer.tpla
         }
         if (TextUtils.isEmpty(b)) {
             int i = this.I.getResources().getDisplayMetrics().widthPixels;
-            String str = this.I.getResources().getDisplayMetrics().heightPixels + PhoneConstants.APN_TYPE_ALL + i;
+            String str = this.I.getResources().getDisplayMetrics().heightPixels + "*" + i;
             b = str;
             return str;
         }
@@ -1082,9 +1082,9 @@ public class b implements ITPBusinessReportManager, com.tencent.thumbplayer.tpla
         if (this.w) {
             return;
         }
-        if (this.N.f39417a > 0) {
-            this.N.b += (int) (System.currentTimeMillis() - this.N.f39417a);
-            this.N.f39417a = 0L;
+        if (this.N.f25726a > 0) {
+            this.N.b += (int) (System.currentTimeMillis() - this.N.f25726a);
+            this.N.f25726a = 0L;
         }
         this.N.g = a(map, "stime", System.currentTimeMillis());
         TPReportParams.BufferingOnceParams createBufferingOnceParams = this.j.createBufferingOnceParams();
@@ -1129,7 +1129,7 @@ public class b implements ITPBusinessReportManager, com.tencent.thumbplayer.tpla
         TPLogUtil.i("TPReportManager", "onBufferingEnd");
         this.x = false;
         if (!this.N.o) {
-            this.N.f39417a = System.currentTimeMillis();
+            this.N.f25726a = System.currentTimeMillis();
         }
         if (map == null) {
             return;
@@ -1215,9 +1215,9 @@ public class b implements ITPBusinessReportManager, com.tencent.thumbplayer.tpla
         if (this.w) {
             k(new com.tencent.thumbplayer.utils.g().a("etime", Long.valueOf(System.currentTimeMillis())).a());
         }
-        if (this.N.f39417a > 0) {
-            this.N.b += (int) (System.currentTimeMillis() - this.N.f39417a);
-            this.N.f39417a = 0L;
+        if (this.N.f25726a > 0) {
+            this.N.b += (int) (System.currentTimeMillis() - this.N.f25726a);
+            this.N.f25726a = 0L;
         }
         this.w = false;
         l lVar = new l();
@@ -1293,7 +1293,7 @@ public class b implements ITPBusinessReportManager, com.tencent.thumbplayer.tpla
         if (map == null) {
             return;
         }
-        this.C = UUID.randomUUID().toString() + System.nanoTime() + BridgeUtil.UNDERLINE_STR + TPPlayerConfig.getPlatform();
+        this.C = UUID.randomUUID().toString() + System.nanoTime() + "_" + TPPlayerConfig.getPlatform();
         this.z = a(map, "code", "0");
         TPDefaultReportInfo tPDefaultReportInfo = this.i;
         if (tPDefaultReportInfo != null) {
@@ -1337,9 +1337,9 @@ public class b implements ITPBusinessReportManager, com.tencent.thumbplayer.tpla
         Iterator<f> it = this.N.w.iterator();
         while (it.hasNext()) {
             f next = it.next();
-            if (!TextUtils.isEmpty(a3) && next.f39419a.equals(a3)) {
+            if (!TextUtils.isEmpty(a3) && next.f25728a.equals(a3)) {
                 loadSubtitleParams.subtitleUrlString = next.b;
-                next.f39420c = a2;
+                next.f25729c = a2;
                 return;
             }
         }
@@ -1357,7 +1357,7 @@ public class b implements ITPBusinessReportManager, com.tencent.thumbplayer.tpla
         }
         Iterator<f> it = this.N.w.iterator();
         while (it.hasNext()) {
-            if (it.next().f39420c == a2) {
+            if (it.next().f25729c == a2) {
                 TPReportParams.LoadSubtitleParams loadSubtitleParams = this.j.getLoadSubtitleParams();
                 loadSubtitleParams.endTimeUnix = a(map, "etime", 0L);
                 loadSubtitleParams.errCodeString = a(map, "code", "0");
@@ -1382,7 +1382,7 @@ public class b implements ITPBusinessReportManager, com.tencent.thumbplayer.tpla
         if (this.J == 1) {
             this.e.removeMessages(3000);
             e();
-            this.N.f39418c = 0L;
+            this.N.f25727c = 0L;
             this.N.d = 0L;
         }
     }
@@ -1399,7 +1399,7 @@ public class b implements ITPBusinessReportManager, com.tencent.thumbplayer.tpla
             this.K.a(30, new l());
             this.e.removeMessages(3000);
             this.e.sendEmptyMessageDelayed(3000, 60000L);
-            this.N.f39417a = System.currentTimeMillis();
+            this.N.f25726a = System.currentTimeMillis();
         }
     }
 

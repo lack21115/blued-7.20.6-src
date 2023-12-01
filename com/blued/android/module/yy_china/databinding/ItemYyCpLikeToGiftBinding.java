@@ -9,17 +9,13 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ItemYyCpLikeToGiftBinding.class */
 public final class ItemYyCpLikeToGiftBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ShapeTextView f16697a;
+    public final ShapeTextView a;
     public final TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final ConstraintLayout f16698c;
+    private final ConstraintLayout c;
 
     private ItemYyCpLikeToGiftBinding(ConstraintLayout constraintLayout, ShapeTextView shapeTextView, TextView textView) {
-        this.f16698c = constraintLayout;
-        this.f16697a = shapeTextView;
+        this.c = constraintLayout;
+        this.a = shapeTextView;
         this.b = textView;
     }
 
@@ -38,9 +34,8 @@ public final class ItemYyCpLikeToGiftBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f16698c;
+        return this.c;
     }
 }

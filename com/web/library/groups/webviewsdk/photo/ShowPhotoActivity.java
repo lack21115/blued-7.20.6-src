@@ -23,11 +23,11 @@ import java.util.List;
 public class ShowPhotoActivity extends Activity implements PhotoPagerAdapter.a {
 
     /* renamed from: a  reason: collision with root package name */
-    HackyViewPager f41160a;
+    HackyViewPager f27469a;
     List<String> b;
 
     /* renamed from: c  reason: collision with root package name */
-    int f41161c;
+    int f27470c;
     private final String[] d = {"android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.READ_EXTERNAL_STORAGE"};
 
     public static void a(Context context, List<String> list, int i, int i2) {
@@ -51,14 +51,14 @@ public class ShowPhotoActivity extends Activity implements PhotoPagerAdapter.a {
         e();
         PhotoPagerAdapter photoPagerAdapter = new PhotoPagerAdapter(this);
         photoPagerAdapter.getDataList().addAll(this.b);
-        this.f41160a.setAdapter(photoPagerAdapter);
-        this.f41160a.setCurrentItem(this.f41161c);
+        this.f27469a.setAdapter(photoPagerAdapter);
+        this.f27469a.setCurrentItem(this.f27470c);
     }
 
     private void e() {
-        this.f41160a = (HackyViewPager) findViewById(R.id.hackyViewPager);
+        this.f27469a = (HackyViewPager) findViewById(R.id.hackyViewPager);
         this.b = (List) getIntent().getSerializableExtra("imgUrlList");
-        this.f41161c = getIntent().getIntExtra(BrowserContract.Bookmarks.POSITION, 0);
+        this.f27470c = getIntent().getIntExtra(BrowserContract.Bookmarks.POSITION, 0);
     }
 
     @Override // com.web.library.groups.webviewsdk.photo.adapter.PhotoPagerAdapter.a

@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 public class SidePropagation extends VisibilityPropagation {
 
     /* renamed from: a  reason: collision with root package name */
-    private float f3464a = 3.0f;
+    private float f3416a = 3.0f;
     private int b = 80;
 
     /* JADX WARN: Code restructure failed: missing block: B:10:0x0026, code lost:
@@ -178,14 +178,14 @@ public class SidePropagation extends VisibilityPropagation {
         if (duration < 0) {
             j = 300;
         }
-        return Math.round((((float) (j * i)) / this.f3464a) * a2);
+        return Math.round((((float) (j * i)) / this.f3416a) * a2);
     }
 
     public void setPropagationSpeed(float f) {
         if (f == 0.0f) {
             throw new IllegalArgumentException("propagationSpeed may not be 0");
         }
-        this.f3464a = f;
+        this.f3416a = f;
     }
 
     public void setSide(int i) {

@@ -1,7 +1,8 @@
 package com.tencent.qcloud.core.util;
 
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
+import com.huawei.hms.framework.common.ContainerUtils;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.UnsupportedEncodingException;
 import java.net.ConnectException;
 import java.net.HttpRetryException;
@@ -26,7 +27,7 @@ public class QCloudHttpUtils {
         String str;
         LinkedHashMap linkedHashMap = new LinkedHashMap();
         if (url.getQuery() != null) {
-            String[] split = url.getQuery().split("&");
+            String[] split = url.getQuery().split(ContainerUtils.FIELD_DELIMITER);
             int length = split.length;
             int i = 0;
             while (true) {
@@ -61,7 +62,7 @@ public class QCloudHttpUtils {
         String str;
         LinkedHashMap linkedHashMap = new LinkedHashMap();
         if (url.getQuery() != null) {
-            String[] split = url.getQuery().split("&");
+            String[] split = url.getQuery().split(ContainerUtils.FIELD_DELIMITER);
             int length = split.length;
             int i = 0;
             while (true) {
@@ -104,8 +105,8 @@ public class QCloudHttpUtils {
             return null;
         }
         int lastIndexOf = str.lastIndexOf(" ");
-        int indexOf = str.indexOf("-");
-        int indexOf2 = str.indexOf(BridgeUtil.SPLIT_MARK);
+        int indexOf = str.indexOf(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
+        int indexOf2 = str.indexOf("/");
         if (lastIndexOf == -1 || indexOf == -1 || indexOf2 == -1) {
             return null;
         }
@@ -120,7 +121,7 @@ public class QCloudHttpUtils {
         boolean z = true;
         for (Map.Entry<String, String> entry : map.entrySet()) {
             if (!z) {
-                sb.append("&");
+                sb.append(ContainerUtils.FIELD_DELIMITER);
             }
             sb.append(entry.getKey() + "=" + entry.getValue());
             z = false;
@@ -181,8 +182,8 @@ public class QCloudHttpUtils {
             str2 = str;
             if (str.length() > 0) {
                 str2 = str;
-                if (!str.equals(BridgeUtil.SPLIT_MARK)) {
-                    String[] split = str.split(BridgeUtil.SPLIT_MARK);
+                if (!str.equals("/")) {
+                    String[] split = str.split("/");
                     int i = 0;
                     while (true) {
                         int i2 = i;
@@ -200,10 +201,10 @@ public class QCloudHttpUtils {
                             break;
                         }
                         sb.append(split[i4]);
-                        sb.append(BridgeUtil.SPLIT_MARK);
+                        sb.append("/");
                         i3 = i4 + 1;
                     }
-                    if (!str.endsWith(BridgeUtil.SPLIT_MARK)) {
+                    if (!str.endsWith("/")) {
                         sb.deleteCharAt(sb.length() - 1);
                     }
                     str2 = sb.toString();

@@ -13,7 +13,7 @@ final class b extends ScheduledThreadPoolExecutor {
     private static final AtomicLong b = new AtomicLong();
 
     /* renamed from: a  reason: collision with root package name */
-    InterfaceC0445b f23214a;
+    InterfaceC0275b f9606a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-7994992-dex2jar.jar:com/igexin/base/scheduler/b$a.class */
@@ -21,7 +21,7 @@ final class b extends ScheduledThreadPoolExecutor {
         private BaseTask b;
 
         /* renamed from: c  reason: collision with root package name */
-        private long f23216c;
+        private long f9608c;
         private volatile long d;
         private final long e;
         private final int f;
@@ -32,7 +32,7 @@ final class b extends ScheduledThreadPoolExecutor {
             this.d = b.a(b.this, baseTask.getInitDelay(), TimeUnit.MILLISECONDS);
             this.e = baseTask.getPeriod();
             this.f = baseTask.getTaskLevel();
-            this.f23216c = j;
+            this.f9608c = j;
         }
 
         @Override // java.lang.Comparable
@@ -62,7 +62,7 @@ final class b extends ScheduledThreadPoolExecutor {
                     if (i < 0) {
                         return 1;
                     }
-                    int i3 = ((this.f23216c - aVar.f23216c) > 0L ? 1 : ((this.f23216c - aVar.f23216c) == 0L ? 0 : -1));
+                    int i3 = ((this.f9608c - aVar.f9608c) > 0L ? 1 : ((this.f9608c - aVar.f9608c) == 0L ? 0 : -1));
                     if (i3 < 0) {
                         return -1;
                     }
@@ -127,7 +127,7 @@ final class b extends ScheduledThreadPoolExecutor {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.igexin.base.scheduler.b$b  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/igexin/base/scheduler/b$b.class */
-    public interface InterfaceC0445b {
+    public interface InterfaceC0275b {
         void a(BaseTask baseTask);
     }
 
@@ -168,9 +168,9 @@ final class b extends ScheduledThreadPoolExecutor {
     }
 
     static /* synthetic */ void a(b bVar, BaseTask baseTask) {
-        InterfaceC0445b interfaceC0445b = bVar.f23214a;
-        if (interfaceC0445b != null) {
-            interfaceC0445b.a(baseTask);
+        InterfaceC0275b interfaceC0275b = bVar.f9606a;
+        if (interfaceC0275b != null) {
+            interfaceC0275b.a(baseTask);
         }
     }
 

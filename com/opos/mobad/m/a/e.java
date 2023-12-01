@@ -9,7 +9,7 @@ import okio.ByteString;
 public final class e extends com.heytap.nearx.a.a.b<e, a> {
 
     /* renamed from: c  reason: collision with root package name */
-    public static final com.heytap.nearx.a.a.e<e> f26335c = new b();
+    public static final com.heytap.nearx.a.a.e<e> f12647c = new b();
     public static final c d = c.UNKNOWN;
     private static final long serialVersionUID = 0;
     public final c e;
@@ -27,7 +27,7 @@ public final class e extends com.heytap.nearx.a.a.b<e, a> {
     public static final class a extends b.a<e, a> {
 
         /* renamed from: c  reason: collision with root package name */
-        public c f26336c;
+        public c f12648c;
         public String d;
         public String e;
         public d f;
@@ -39,7 +39,7 @@ public final class e extends com.heytap.nearx.a.a.b<e, a> {
         public d l;
 
         public a a(c cVar) {
-            this.f26336c = cVar;
+            this.f12648c = cVar;
             return this;
         }
 
@@ -65,9 +65,9 @@ public final class e extends com.heytap.nearx.a.a.b<e, a> {
 
         public e b() {
             String str;
-            c cVar = this.f26336c;
+            c cVar = this.f12648c;
             if (cVar == null || (str = this.d) == null) {
-                throw com.heytap.nearx.a.a.a.b.a(this.f26336c, "channel", this.d, "appId");
+                throw com.heytap.nearx.a.a.a.b.a(this.f12648c, "channel", this.d, "appId");
             }
             return new e(cVar, str, this.e, this.f, this.g, this.h, this.i, this.j, this.k, this.l, super.a());
         }
@@ -110,14 +110,14 @@ public final class e extends com.heytap.nearx.a.a.b<e, a> {
             int a3 = com.heytap.nearx.a.a.e.p.a(2, (int) eVar.f);
             int i = 0;
             int a4 = eVar.g != null ? com.heytap.nearx.a.a.e.p.a(3, (int) eVar.g) : 0;
-            int a5 = eVar.h != null ? d.f26333c.a(4, (int) eVar.h) : 0;
-            int a6 = eVar.i != null ? d.f26333c.a(5, (int) eVar.i) : 0;
-            int a7 = eVar.j != null ? d.f26333c.a(6, (int) eVar.j) : 0;
-            int a8 = eVar.k != null ? d.f26333c.a(7, (int) eVar.k) : 0;
-            int a9 = eVar.l != null ? d.f26333c.a(8, (int) eVar.l) : 0;
-            int a10 = eVar.m != null ? d.f26333c.a(9, (int) eVar.m) : 0;
+            int a5 = eVar.h != null ? d.f12645c.a(4, (int) eVar.h) : 0;
+            int a6 = eVar.i != null ? d.f12645c.a(5, (int) eVar.i) : 0;
+            int a7 = eVar.j != null ? d.f12645c.a(6, (int) eVar.j) : 0;
+            int a8 = eVar.k != null ? d.f12645c.a(7, (int) eVar.k) : 0;
+            int a9 = eVar.l != null ? d.f12645c.a(8, (int) eVar.l) : 0;
+            int a10 = eVar.m != null ? d.f12645c.a(9, (int) eVar.m) : 0;
             if (eVar.n != null) {
-                i = d.f26333c.a(10, (int) eVar.n);
+                i = d.f12645c.a(10, (int) eVar.n);
             }
             return a10 + a3 + a2 + a4 + a5 + a6 + a7 + a8 + a9 + i + eVar.a().size();
         }
@@ -130,25 +130,25 @@ public final class e extends com.heytap.nearx.a.a.b<e, a> {
                 com.heytap.nearx.a.a.e.p.a(gVar, 3, eVar.g);
             }
             if (eVar.h != null) {
-                d.f26333c.a(gVar, 4, eVar.h);
+                d.f12645c.a(gVar, 4, eVar.h);
             }
             if (eVar.i != null) {
-                d.f26333c.a(gVar, 5, eVar.i);
+                d.f12645c.a(gVar, 5, eVar.i);
             }
             if (eVar.j != null) {
-                d.f26333c.a(gVar, 6, eVar.j);
+                d.f12645c.a(gVar, 6, eVar.j);
             }
             if (eVar.k != null) {
-                d.f26333c.a(gVar, 7, eVar.k);
+                d.f12645c.a(gVar, 7, eVar.k);
             }
             if (eVar.l != null) {
-                d.f26333c.a(gVar, 8, eVar.l);
+                d.f12645c.a(gVar, 8, eVar.l);
             }
             if (eVar.m != null) {
-                d.f26333c.a(gVar, 9, eVar.m);
+                d.f12645c.a(gVar, 9, eVar.m);
             }
             if (eVar.n != null) {
-                d.f26333c.a(gVar, 10, eVar.n);
+                d.f12645c.a(gVar, 10, eVar.n);
             }
             gVar.a(eVar.a());
         }
@@ -170,7 +170,7 @@ public final class e extends com.heytap.nearx.a.a.b<e, a> {
                             aVar.a(c.j.a(fVar));
                             break;
                         } catch (e.a e) {
-                            aVar.a(b, com.heytap.nearx.a.a.a.VARINT, Long.valueOf(e.f22263a));
+                            aVar.a(b, com.heytap.nearx.a.a.a.VARINT, Long.valueOf(e.f8655a));
                             break;
                         }
                     case 2:
@@ -180,25 +180,25 @@ public final class e extends com.heytap.nearx.a.a.b<e, a> {
                         aVar.b(com.heytap.nearx.a.a.e.p.a(fVar));
                         break;
                     case 4:
-                        aVar.a(d.f26333c.a(fVar));
+                        aVar.a(d.f12645c.a(fVar));
                         break;
                     case 5:
-                        aVar.b(d.f26333c.a(fVar));
+                        aVar.b(d.f12645c.a(fVar));
                         break;
                     case 6:
-                        aVar.c(d.f26333c.a(fVar));
+                        aVar.c(d.f12645c.a(fVar));
                         break;
                     case 7:
-                        aVar.d(d.f26333c.a(fVar));
+                        aVar.d(d.f12645c.a(fVar));
                         break;
                     case 8:
-                        aVar.e(d.f26333c.a(fVar));
+                        aVar.e(d.f12645c.a(fVar));
                         break;
                     case 9:
-                        aVar.f(d.f26333c.a(fVar));
+                        aVar.f(d.f12645c.a(fVar));
                         break;
                     case 10:
-                        aVar.g(d.f26333c.a(fVar));
+                        aVar.g(d.f12645c.a(fVar));
                         break;
                     default:
                         com.heytap.nearx.a.a.a c2 = fVar.c();
@@ -210,7 +210,7 @@ public final class e extends com.heytap.nearx.a.a.b<e, a> {
     }
 
     public e(c cVar, String str, String str2, d dVar, d dVar2, d dVar3, d dVar4, d dVar5, d dVar6, d dVar7, ByteString byteString) {
-        super(f26335c, byteString);
+        super(f12647c, byteString);
         this.e = cVar;
         this.f = str;
         this.g = str2;

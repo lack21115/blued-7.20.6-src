@@ -1,5 +1,6 @@
 package com.huawei.hms.activity;
 
+import android.R;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -31,16 +32,16 @@ public class BridgeActivity extends Activity {
     public static final int b = a("ro.build.hw_emui_api_level", 0);
 
     /* renamed from: a  reason: collision with root package name */
-    public IBridgeActivityDelegate f22398a;
+    public IBridgeActivityDelegate f8790a;
 
     /* loaded from: source-7994992-dex2jar.jar:com/huawei/hms/activity/BridgeActivity$a.class */
     public class a implements View.OnApplyWindowInsetsListener {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ ViewGroup f22399a;
+        public final /* synthetic */ ViewGroup f8791a;
 
         public a(BridgeActivity bridgeActivity, ViewGroup viewGroup) {
-            this.f22399a = viewGroup;
+            this.f8791a = viewGroup;
         }
 
         @Override // android.view.View.OnApplyWindowInsetsListener
@@ -51,8 +52,8 @@ public class BridgeActivity extends Activity {
                     HMSLog.i("BridgeActivity", "sideRegion is null");
                 } else {
                     Rect rect = (Rect) Class.forName("com.huawei.android.view.DisplaySideRegionEx").getMethod("getSafeInsets", new Class[0]).invoke(invoke, new Object[0]);
-                    if (this.f22399a != null) {
-                        this.f22399a.setPadding(rect.left, 0, rect.right, 0);
+                    if (this.f8791a != null) {
+                        this.f8791a.setPadding(rect.left, 0, rect.right, 0);
                     }
                 }
             } catch (ClassNotFoundException | IllegalAccessException | NoSuchMethodException | InvocationTargetException e) {
@@ -115,7 +116,7 @@ public class BridgeActivity extends Activity {
     }
 
     public final void a() {
-        View findViewById = getWindow().findViewById(16908290);
+        View findViewById = getWindow().findViewById(R.id.content);
         if (findViewById == null || !(findViewById instanceof ViewGroup)) {
             HMSLog.e("BridgeActivity", "rootView is null or not ViewGroup");
             return;
@@ -149,7 +150,7 @@ public class BridgeActivity extends Activity {
         }
         try {
             IBridgeActivityDelegate iBridgeActivityDelegate = (IBridgeActivityDelegate) Class.forName(stringExtra).asSubclass(IBridgeActivityDelegate.class).newInstance();
-            this.f22398a = iBridgeActivityDelegate;
+            this.f8790a = iBridgeActivityDelegate;
             try {
                 iBridgeActivityDelegate.onBridgeActivityCreate(this);
                 return true;
@@ -199,7 +200,7 @@ public class BridgeActivity extends Activity {
     public void onActivityResult(int i, int i2, Intent intent) {
         SafeIntent safeIntent = new SafeIntent(intent);
         super.onActivityResult(i, i2, safeIntent);
-        IBridgeActivityDelegate iBridgeActivityDelegate = this.f22398a;
+        IBridgeActivityDelegate iBridgeActivityDelegate = this.f8790a;
         if (iBridgeActivityDelegate == null || iBridgeActivityDelegate.onBridgeActivityResult(i, i2, safeIntent) || isFinishing()) {
             return;
         }
@@ -210,7 +211,7 @@ public class BridgeActivity extends Activity {
     @Override // android.app.Activity, android.content.ComponentCallbacks
     public void onConfigurationChanged(Configuration configuration) {
         super.onConfigurationChanged(configuration);
-        IBridgeActivityDelegate iBridgeActivityDelegate = this.f22398a;
+        IBridgeActivityDelegate iBridgeActivityDelegate = this.f8790a;
         if (iBridgeActivityDelegate != null) {
             iBridgeActivityDelegate.onBridgeConfigurationChanged();
         }
@@ -243,7 +244,7 @@ public class BridgeActivity extends Activity {
     @Override // android.app.Activity
     public void onDestroy() {
         super.onDestroy();
-        IBridgeActivityDelegate iBridgeActivityDelegate = this.f22398a;
+        IBridgeActivityDelegate iBridgeActivityDelegate = this.f8790a;
         if (iBridgeActivityDelegate != null) {
             iBridgeActivityDelegate.onBridgeActivityDestroy();
         }
@@ -252,7 +253,7 @@ public class BridgeActivity extends Activity {
 
     @Override // android.app.Activity, android.view.KeyEvent.Callback
     public boolean onKeyUp(int i, KeyEvent keyEvent) {
-        IBridgeActivityDelegate iBridgeActivityDelegate = this.f22398a;
+        IBridgeActivityDelegate iBridgeActivityDelegate = this.f8790a;
         if (iBridgeActivityDelegate != null) {
             iBridgeActivityDelegate.onKeyUp(i, keyEvent);
         }

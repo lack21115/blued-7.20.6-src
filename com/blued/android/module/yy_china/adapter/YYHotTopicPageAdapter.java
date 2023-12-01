@@ -1,6 +1,7 @@
 package com.blued.android.module.yy_china.adapter;
 
 import android.os.Bundle;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import com.blued.android.framework.utils.StringUtils;
 import com.blued.android.module.yy_china.fragment.YYHotTopicALlFragment;
@@ -19,7 +20,7 @@ public class YYHotTopicPageAdapter extends BaseFragmentPagerAdapter {
     }
 
     public void b(List<HotTopicModel> list) {
-        ArrayList arrayList = new ArrayList();
+        List<Fragment> arrayList = new ArrayList<>();
         for (HotTopicModel hotTopicModel : list) {
             Bundle bundle = new Bundle();
             bundle.putString("topic_type", hotTopicModel.getTopic_id() + "");
@@ -37,7 +38,6 @@ public class YYHotTopicPageAdapter extends BaseFragmentPagerAdapter {
         a(arrayList);
     }
 
-    @Override // androidx.viewpager.widget.PagerAdapter
     public CharSequence getPageTitle(int i) {
         return this.b.get(i).getTopic();
     }

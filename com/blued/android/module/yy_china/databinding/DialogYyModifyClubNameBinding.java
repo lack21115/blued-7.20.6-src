@@ -13,13 +13,9 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/DialogYyModifyClubNameBinding.class */
 public final class DialogYyModifyClubNameBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ShapeTextView f16438a;
+    public final ShapeTextView a;
     public final View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final AppCompatEditText f16439c;
+    public final AppCompatEditText c;
     public final FrameLayout d;
     public final FrameLayout e;
     public final ImageView f;
@@ -30,9 +26,9 @@ public final class DialogYyModifyClubNameBinding implements ViewBinding {
 
     private DialogYyModifyClubNameBinding(ConstraintLayout constraintLayout, ShapeTextView shapeTextView, View view, AppCompatEditText appCompatEditText, FrameLayout frameLayout, FrameLayout frameLayout2, ImageView imageView, ImageView imageView2, HollowView hollowView, TextView textView) {
         this.j = constraintLayout;
-        this.f16438a = shapeTextView;
+        this.a = shapeTextView;
         this.b = view;
-        this.f16439c = appCompatEditText;
+        this.c = appCompatEditText;
         this.d = frameLayout;
         this.e = frameLayout2;
         this.f = imageView;
@@ -47,8 +43,8 @@ public final class DialogYyModifyClubNameBinding implements ViewBinding {
         if (shapeTextView != null) {
             View findViewById = view.findViewById(R.id.cover_view);
             if (findViewById != null) {
-                AppCompatEditText appCompatEditText = (AppCompatEditText) view.findViewById(R.id.et_club_name);
-                if (appCompatEditText != null) {
+                AppCompatEditText findViewById2 = view.findViewById(R.id.et_club_name);
+                if (findViewById2 != null) {
                     FrameLayout frameLayout = (FrameLayout) view.findViewById(R.id.ff_background_view);
                     if (frameLayout != null) {
                         FrameLayout frameLayout2 = (FrameLayout) view.findViewById(R.id.fl_loading_view);
@@ -61,7 +57,7 @@ public final class DialogYyModifyClubNameBinding implements ViewBinding {
                                     if (hollowView != null) {
                                         TextView textView = (TextView) view.findViewById(R.id.tv_title_text);
                                         if (textView != null) {
-                                            return new DialogYyModifyClubNameBinding((ConstraintLayout) view, shapeTextView, findViewById, appCompatEditText, frameLayout, frameLayout2, imageView, imageView2, hollowView, textView);
+                                            return new DialogYyModifyClubNameBinding((ConstraintLayout) view, shapeTextView, findViewById, findViewById2, frameLayout, frameLayout2, imageView, imageView2, hollowView, textView);
                                         }
                                         str = "tvTitleText";
                                     } else {
@@ -91,7 +87,6 @@ public final class DialogYyModifyClubNameBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.j;

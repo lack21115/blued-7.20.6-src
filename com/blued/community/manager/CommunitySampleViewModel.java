@@ -36,7 +36,7 @@ public final class CommunitySampleViewModel extends BaseListViewModel<BluedIngSe
         final SafeContinuation safeContinuation2 = safeContinuation;
         LogUtils.c(Intrinsics.a("getSignFeedSet start, ", (Object) Boxing.a(Thread.currentThread().getId())));
         if (getMPage() > 1) {
-            Result.Companion companion = Result.f42293a;
+            Result.Companion companion = Result.a;
             safeContinuation2.resumeWith(Result.f(null));
         }
         FeedHttpUtils.a(new BluedUIHttpResponse<BluedEntity<BluedIngSelfFeed, SignFeedExtra>>() { // from class: com.blued.community.manager.CommunitySampleViewModel$getSignFeedSet$2$1
@@ -44,7 +44,7 @@ public final class CommunitySampleViewModel extends BaseListViewModel<BluedIngSe
             public void onUIFinish(boolean z) {
                 if (!z) {
                     Continuation<BluedEntity<BluedIngSelfFeed, SignFeedExtra>> continuation2 = safeContinuation2;
-                    Result.Companion companion2 = Result.f42293a;
+                    Result.Companion companion2 = Result.a;
                     continuation2.resumeWith(Result.f(null));
                 }
                 LogUtils.c(Intrinsics.a("getSignFeedSet end, ", (Object) Long.valueOf(Thread.currentThread().getId())));
@@ -55,20 +55,20 @@ public final class CommunitySampleViewModel extends BaseListViewModel<BluedIngSe
                 Intrinsics.e(parseData, "parseData");
                 if (parseData.extra != null) {
                     Continuation<BluedEntity<BluedIngSelfFeed, SignFeedExtra>> continuation2 = safeContinuation2;
-                    Result.Companion companion2 = Result.f42293a;
+                    Result.Companion companion2 = Result.a;
                     continuation2.resumeWith(Result.f(parseData));
                     return;
                 }
                 Continuation<BluedEntity<BluedIngSelfFeed, SignFeedExtra>> continuation3 = safeContinuation2;
-                Result.Companion companion3 = Result.f42293a;
+                Result.Companion companion3 = Result.a;
                 continuation3.resumeWith(Result.f(null));
             }
         }, 1, DistrictSearchQuery.KEYWORDS_CITY, CityHelper.a().c(), CityHelper.a().e(), "", "", (IRequestHost) null);
-        Object a2 = safeContinuation.a();
-        if (a2 == IntrinsicsKt.a()) {
+        Object a = safeContinuation.a();
+        if (a == IntrinsicsKt.a()) {
             DebugProbesKt.c(continuation);
         }
-        return a2;
+        return a;
     }
 
     private final void a() {
@@ -118,7 +118,7 @@ public final class CommunitySampleViewModel extends BaseListViewModel<BluedIngSe
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<BluedIngSelfFeed> bluedEntityA) {
                 Continuation<BluedEntityA<BluedIngSelfFeed>> continuation2 = safeContinuation2;
-                Result.Companion companion = Result.f42293a;
+                Result.Companion companion = Result.a;
                 continuation2.resumeWith(Result.f(bluedEntityA));
             }
 
@@ -127,17 +127,17 @@ public final class CommunitySampleViewModel extends BaseListViewModel<BluedIngSe
                 super.onUIFinish(z);
                 if (!z) {
                     Continuation<BluedEntityA<BluedIngSelfFeed>> continuation2 = safeContinuation2;
-                    Result.Companion companion = Result.f42293a;
+                    Result.Companion companion = Result.a;
                     continuation2.resumeWith(Result.f(null));
                 }
                 LogUtils.c(Intrinsics.a("getFeedList end, ", (Object) Long.valueOf(Thread.currentThread().getId())));
             }
         }, String.valueOf(getMPage()), String.valueOf(getMPageSize()), null);
-        Object a2 = safeContinuation.a();
-        if (a2 == IntrinsicsKt.a()) {
+        Object a = safeContinuation.a();
+        if (a == IntrinsicsKt.a()) {
             DebugProbesKt.c(continuation);
         }
-        return a2;
+        return a;
     }
 
     @Override // com.blued.android.module.common.base.mvi.BaseListViewModel

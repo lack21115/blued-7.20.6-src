@@ -19,7 +19,7 @@ import kotlin.jvm.internal.Intrinsics;
 public class LoginIndicator extends ShapeLinearLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f20598a;
+    private int f6992a;
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
     public LoginIndicator(Context context) {
@@ -49,13 +49,13 @@ public class LoginIndicator extends ShapeLinearLayout {
             if (i2 >= childCount) {
                 return;
             }
-            View childAt = getChildAt(i2);
+            ShapeTextView childAt = getChildAt(i2);
             if (childAt == null) {
                 throw new NullPointerException("null cannot be cast to non-null type com.blued.android.framework.view.shape.ShapeTextView");
             }
-            ShapeTextView shapeTextView = (ShapeTextView) childAt;
+            ShapeTextView shapeTextView = childAt;
             ShapeModel shapeModel = shapeTextView.getShapeModel();
-            if (i2 == this.f20598a) {
+            if (i2 == this.f6992a) {
                 shapeModel.k = ContextCompat.getColor(getContext(), R.color.syc_dark_b);
             } else {
                 shapeModel.k = ContextCompat.getColor(getContext(), R.color.login_lpi_unselected);
@@ -65,8 +65,8 @@ public class LoginIndicator extends ShapeLinearLayout {
         }
     }
 
-    public final void a(int i, ViewPager vp) {
-        Intrinsics.e(vp, "vp");
+    public final void a(int i, ViewPager viewPager) {
+        Intrinsics.e(viewPager, "vp");
         removeAllViews();
         int i2 = 0;
         while (i2 < i) {
@@ -80,9 +80,9 @@ public class LoginIndicator extends ShapeLinearLayout {
             marginLayoutParams.width = BluedViewExtKt.a(20);
             marginLayoutParams.height = BluedViewExtKt.a(6);
             marginLayoutParams.leftMargin = BluedViewExtKt.a(6);
-            addView(shapeTextView, marginLayoutParams);
+            addView((View) shapeTextView, marginLayoutParams);
         }
-        vp.addOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: com.blued.login.view.LoginIndicator$setTabList$1
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: com.blued.login.view.LoginIndicator$setTabList$1
             @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageScrollStateChanged(int i3) {
             }
@@ -93,7 +93,7 @@ public class LoginIndicator extends ShapeLinearLayout {
 
             @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageSelected(int i3) {
-                LoginIndicator.this.f20598a = i3;
+                LoginIndicator.this.f6992a = i3;
                 LoginIndicator.this.a();
             }
         });

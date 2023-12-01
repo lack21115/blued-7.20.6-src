@@ -6,9 +6,7 @@ import java.lang.ref.WeakReference;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/utils/swipeback/SwipeBackListenerActivityAdapter.class */
 public class SwipeBackListenerActivityAdapter implements SwipeBackLayout.SwipeListenerEx {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final WeakReference<Activity> f9747a;
+    private final WeakReference<Activity> a;
 
     @Override // com.blued.android.core.utils.swipeback.SwipeBackLayout.SwipeListener
     public void a() {
@@ -17,7 +15,7 @@ public class SwipeBackListenerActivityAdapter implements SwipeBackLayout.SwipeLi
     @Override // com.blued.android.core.utils.swipeback.SwipeBackLayout.SwipeListener
     public void a(int i) {
         Activity activity;
-        WeakReference<Activity> weakReference = this.f9747a;
+        WeakReference<Activity> weakReference = this.a;
         if (weakReference == null || (activity = weakReference.get()) == null) {
             return;
         }
@@ -35,7 +33,7 @@ public class SwipeBackListenerActivityAdapter implements SwipeBackLayout.SwipeLi
     @Override // com.blued.android.core.utils.swipeback.SwipeBackLayout.SwipeListenerEx
     public void b() {
         Activity activity;
-        WeakReference<Activity> weakReference = this.f9747a;
+        WeakReference<Activity> weakReference = this.a;
         if (weakReference == null || (activity = weakReference.get()) == null || activity.isFinishing()) {
             return;
         }

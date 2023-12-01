@@ -24,11 +24,11 @@ import java.util.List;
 public class GifDrawable extends Drawable implements Animatable, Animatable2Compat, GifFrameLoader.FrameCallback {
 
     /* renamed from: a  reason: collision with root package name */
-    private final GifState f20991a;
+    private final GifState f7385a;
     private boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f20992c;
+    private boolean f7386c;
     private boolean d;
     private boolean e;
     private int f;
@@ -43,10 +43,10 @@ public class GifDrawable extends Drawable implements Animatable, Animatable2Comp
     public static final class GifState extends Drawable.ConstantState {
 
         /* renamed from: a  reason: collision with root package name */
-        final GifFrameLoader f20993a;
+        final GifFrameLoader f7387a;
 
         GifState(GifFrameLoader gifFrameLoader) {
-            this.f20993a = gifFrameLoader;
+            this.f7387a = gifFrameLoader;
         }
 
         @Override // android.graphics.drawable.Drawable.ConstantState
@@ -72,7 +72,7 @@ public class GifDrawable extends Drawable implements Animatable, Animatable2Comp
     GifDrawable(GifState gifState) {
         this.e = true;
         this.g = -1;
-        this.f20991a = (GifState) Preconditions.a(gifState);
+        this.f7385a = (GifState) Preconditions.a(gifState);
     }
 
     private void h() {
@@ -81,19 +81,19 @@ public class GifDrawable extends Drawable implements Animatable, Animatable2Comp
 
     private void i() {
         Preconditions.a(!this.d, "You cannot start a recycled Drawable. Ensure thatyou clear any references to the Drawable when clearing the corresponding request.");
-        if (this.f20991a.f20993a.g() == 1) {
+        if (this.f7385a.f7387a.g() == 1) {
             invalidateSelf();
         } else if (this.b) {
         } else {
             this.b = true;
-            this.f20991a.f20993a.a(this);
+            this.f7385a.f7387a.a(this);
             invalidateSelf();
         }
     }
 
     private void j() {
         this.b = false;
-        this.f20991a.f20993a.b(this);
+        this.f7385a.f7387a.b(this);
     }
 
     private Rect k() {
@@ -132,7 +132,7 @@ public class GifDrawable extends Drawable implements Animatable, Animatable2Comp
     }
 
     public int a() {
-        return this.f20991a.f20993a.d();
+        return this.f7385a.f7387a.d();
     }
 
     public void a(int i) {
@@ -143,7 +143,7 @@ public class GifDrawable extends Drawable implements Animatable, Animatable2Comp
             this.g = i;
             return;
         }
-        int h = this.f20991a.f20993a.h();
+        int h = this.f7385a.f7387a.h();
         if (h == 0) {
             h = -1;
         }
@@ -151,15 +151,15 @@ public class GifDrawable extends Drawable implements Animatable, Animatable2Comp
     }
 
     public void a(Transformation<Bitmap> transformation, Bitmap bitmap) {
-        this.f20991a.f20993a.a(transformation, bitmap);
+        this.f7385a.f7387a.a(transformation, bitmap);
     }
 
     public Bitmap b() {
-        return this.f20991a.f20993a.a();
+        return this.f7385a.f7387a.a();
     }
 
     public ByteBuffer c() {
-        return this.f20991a.f20993a.f();
+        return this.f7385a.f7387a.f();
     }
 
     @Override // androidx.vectordrawable.graphics.drawable.Animatable2Compat
@@ -171,7 +171,7 @@ public class GifDrawable extends Drawable implements Animatable, Animatable2Comp
     }
 
     public int d() {
-        return this.f20991a.f20993a.g();
+        return this.f7385a.f7387a.g();
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -183,11 +183,11 @@ public class GifDrawable extends Drawable implements Animatable, Animatable2Comp
             Gravity.apply(119, getIntrinsicWidth(), getIntrinsicHeight(), getBounds(), k());
             this.h = false;
         }
-        canvas.drawBitmap(this.f20991a.f20993a.j(), (Rect) null, k(), l());
+        canvas.drawBitmap(this.f7385a.f7387a.j(), (Rect) null, k(), l());
     }
 
     public int e() {
-        return this.f20991a.f20993a.e();
+        return this.f7385a.f7387a.e();
     }
 
     @Override // com.bumptech.glide.load.resource.gif.GifFrameLoader.FrameCallback
@@ -211,22 +211,22 @@ public class GifDrawable extends Drawable implements Animatable, Animatable2Comp
 
     public void g() {
         this.d = true;
-        this.f20991a.f20993a.i();
+        this.f7385a.f7387a.i();
     }
 
     @Override // android.graphics.drawable.Drawable
     public Drawable.ConstantState getConstantState() {
-        return this.f20991a;
+        return this.f7385a;
     }
 
     @Override // android.graphics.drawable.Drawable
     public int getIntrinsicHeight() {
-        return this.f20991a.f20993a.c();
+        return this.f7385a.f7387a.c();
     }
 
     @Override // android.graphics.drawable.Drawable
     public int getIntrinsicWidth() {
-        return this.f20991a.f20993a.b();
+        return this.f7385a.f7387a.b();
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -273,7 +273,7 @@ public class GifDrawable extends Drawable implements Animatable, Animatable2Comp
         this.e = z;
         if (!z) {
             j();
-        } else if (this.f20992c) {
+        } else if (this.f7386c) {
             i();
         }
         return super.setVisible(z, z2);
@@ -281,7 +281,7 @@ public class GifDrawable extends Drawable implements Animatable, Animatable2Comp
 
     @Override // android.graphics.drawable.Animatable
     public void start() {
-        this.f20992c = true;
+        this.f7386c = true;
         h();
         if (this.e) {
             i();
@@ -290,7 +290,7 @@ public class GifDrawable extends Drawable implements Animatable, Animatable2Comp
 
     @Override // android.graphics.drawable.Animatable
     public void stop() {
-        this.f20992c = false;
+        this.f7386c = false;
         j();
     }
 

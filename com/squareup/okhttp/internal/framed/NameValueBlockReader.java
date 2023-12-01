@@ -20,7 +20,6 @@ class NameValueBlockReader {
 
     public NameValueBlockReader(BufferedSource bufferedSource) {
         InflaterSource inflaterSource = new InflaterSource(new ForwardingSource(bufferedSource) { // from class: com.squareup.okhttp.internal.framed.NameValueBlockReader.1
-            @Override // okio.ForwardingSource, okio.Source
             public long read(Buffer buffer, long j) throws IOException {
                 if (NameValueBlockReader.this.compressedLimit == 0) {
                     return -1L;

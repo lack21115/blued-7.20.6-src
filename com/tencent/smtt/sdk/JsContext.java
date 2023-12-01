@@ -10,11 +10,11 @@ import java.net.URL;
 public final class JsContext {
 
     /* renamed from: a  reason: collision with root package name */
-    private final JsVirtualMachine f38702a;
+    private final JsVirtualMachine f25011a;
     private final IX5JsContext b;
 
     /* renamed from: c  reason: collision with root package name */
-    private ExceptionHandler f38703c;
+    private ExceptionHandler f25012c;
     private String d;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/smtt/sdk/JsContext$ExceptionHandler.class */
@@ -30,7 +30,7 @@ public final class JsContext {
         if (jsVirtualMachine == null) {
             throw new IllegalArgumentException("The virtualMachine value can not be null");
         }
-        this.f38702a = jsVirtualMachine;
+        this.f25011a = jsVirtualMachine;
         IX5JsContext a2 = jsVirtualMachine.a();
         this.b = a2;
         try {
@@ -82,7 +82,7 @@ public final class JsContext {
     }
 
     public ExceptionHandler exceptionHandler() {
-        return this.f38703c;
+        return this.f25012c;
     }
 
     public byte[] getNativeBuffer(int i) {
@@ -104,7 +104,7 @@ public final class JsContext {
     public void setExceptionHandler(ExceptionHandler exceptionHandler) {
         IX5JsContext iX5JsContext;
         android.webkit.ValueCallback<IX5JsError> valueCallback;
-        this.f38703c = exceptionHandler;
+        this.f25012c = exceptionHandler;
         if (exceptionHandler == null) {
             iX5JsContext = this.b;
             valueCallback = null;
@@ -114,7 +114,7 @@ public final class JsContext {
                 @Override // android.webkit.ValueCallback
                 /* renamed from: a */
                 public void onReceiveValue(IX5JsError iX5JsError) {
-                    JsContext.this.f38703c.handleException(JsContext.this, new JsError(iX5JsError));
+                    JsContext.this.f25012c.handleException(JsContext.this, new JsError(iX5JsError));
                 }
             };
         }
@@ -135,6 +135,6 @@ public final class JsContext {
     }
 
     public JsVirtualMachine virtualMachine() {
-        return this.f38702a;
+        return this.f25011a;
     }
 }

@@ -7,16 +7,16 @@ import java.util.LinkedList;
 public class e {
 
     /* renamed from: a  reason: collision with root package name */
-    private final boolean f24096a;
+    private final boolean f10481a;
     private final i b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final LinkedList<Long> f24097c;
+    private final LinkedList<Long> f10482c;
 
     public e(boolean z, i iVar, LinkedList<Long> linkedList) {
-        this.f24096a = z;
+        this.f10481a = z;
         this.b = iVar;
-        this.f24097c = linkedList;
+        this.f10482c = linkedList;
     }
 
     public i a() {
@@ -24,10 +24,10 @@ public class e {
     }
 
     public LinkedList<Long> b() {
-        return this.f24097c;
+        return this.f10482c;
     }
 
     public boolean c() {
-        return this.f24096a;
+        return this.f10481a;
     }
 }

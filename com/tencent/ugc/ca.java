@@ -4,10 +4,10 @@ package com.tencent.ugc;
 final /* synthetic */ class ca implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final TXVideoJoiner f40283a;
+    private final TXVideoJoiner f26592a;
 
     private ca(TXVideoJoiner tXVideoJoiner) {
-        this.f40283a = tXVideoJoiner;
+        this.f26592a = tXVideoJoiner;
     }
 
     public static Runnable a(TXVideoJoiner tXVideoJoiner) {
@@ -16,6 +16,6 @@ final /* synthetic */ class ca implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        TXVideoJoiner.lambda$startPlay$3(this.f40283a);
+        TXVideoJoiner.lambda$startPlay$3(this.f26592a);
     }
 }

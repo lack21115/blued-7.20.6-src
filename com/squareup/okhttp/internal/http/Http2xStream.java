@@ -18,7 +18,6 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
-import javax.xml.transform.OutputKeys;
 import okio.ByteString;
 import okio.ForwardingSource;
 import okio.Okio;
@@ -37,7 +36,7 @@ public final class Http2xStream implements HttpStream {
     private static final ByteString PROXY_CONNECTION = ByteString.encodeUtf8(Headers.PROXY_CONNECTION);
     private static final ByteString TRANSFER_ENCODING = ByteString.encodeUtf8(Headers.TRANSFER_ENCODING);
     private static final ByteString TE = ByteString.encodeUtf8("te");
-    private static final ByteString ENCODING = ByteString.encodeUtf8(OutputKeys.ENCODING);
+    private static final ByteString ENCODING = ByteString.encodeUtf8("encoding");
     private static final ByteString UPGRADE = ByteString.encodeUtf8("upgrade");
     private static final List<ByteString> SPDY_3_SKIPPED_REQUEST_HEADERS = Util.immutableList(CONNECTION, HOST, KEEP_ALIVE, PROXY_CONNECTION, TRANSFER_ENCODING, Header.TARGET_METHOD, Header.TARGET_PATH, Header.TARGET_SCHEME, Header.TARGET_AUTHORITY, Header.TARGET_HOST, Header.VERSION);
     private static final List<ByteString> SPDY_3_SKIPPED_RESPONSE_HEADERS = Util.immutableList(CONNECTION, HOST, KEEP_ALIVE, PROXY_CONNECTION, TRANSFER_ENCODING);
@@ -50,7 +49,6 @@ public final class Http2xStream implements HttpStream {
             super(source);
         }
 
-        @Override // okio.ForwardingSource, okio.Source, java.io.Closeable, java.lang.AutoCloseable
         public void close() throws IOException {
             Http2xStream.this.streamAllocation.streamFinished(Http2xStream.this);
             super.close();

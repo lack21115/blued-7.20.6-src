@@ -11,22 +11,22 @@ import java.util.concurrent.Callable;
 public class IntentCallable implements Callable<Void> {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f22859a;
+    private Context f9251a;
     private Intent b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f22860c;
+    private String f9252c;
 
     public IntentCallable(Context context, Intent intent, String str) {
-        this.f22859a = context;
+        this.f9251a = context;
         this.b = intent;
-        this.f22860c = str;
+        this.f9252c = str;
     }
 
     @Override // java.util.concurrent.Callable
     public Void call() throws Exception {
-        this.f22859a.sendBroadcast(this.b);
-        PushBiUtil.reportExit(this.f22859a, PushNaming.SET_NOTIFY_FLAG, this.f22860c, ErrorEnum.SUCCESS);
+        this.f9251a.sendBroadcast(this.b);
+        PushBiUtil.reportExit(this.f9251a, PushNaming.SET_NOTIFY_FLAG, this.f9252c, ErrorEnum.SUCCESS);
         return null;
     }
 }

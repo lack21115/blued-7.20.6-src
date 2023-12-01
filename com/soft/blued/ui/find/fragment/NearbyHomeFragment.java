@@ -22,6 +22,7 @@ import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.viewpager.widget.ViewPager;
@@ -34,7 +35,7 @@ import com.blued.android.chat.listener.SingleSessionListener;
 import com.blued.android.chat.model.SessionModel;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.image.ImageLoader;
-import com.blued.android.core.ui.BaseFragmentActivity;
+import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.ui.StatusBarHelper;
 import com.blued.android.core.ui.TerminalActivity;
 import com.blued.android.core.utils.skin.BluedSkinUtils;
@@ -96,14 +97,14 @@ import skin.support.observe.SkinObservable;
 public class NearbyHomeFragment extends MvpFragment<NearbyHomePresenter> implements SingleSessionListener, BluedSkinObserver, AdFloatObserver.IAdFloatObserver, NearbyFindSetSelectedTab.INearbyFindSetSelectedTab {
 
     /* renamed from: a  reason: collision with root package name */
-    public static int f30392a;
+    public static int f16702a;
     @BindView
     BluedADConstraintLayout adConstraintLayout;
     @BindView
     ImageView adNearbyImg;
 
     /* renamed from: c  reason: collision with root package name */
-    private PopHolder f30393c;
+    private PopHolder f16703c;
     private Unbinder e;
     @BindView
     FrameLayout fl_floor;
@@ -178,7 +179,7 @@ public class NearbyHomeFragment extends MvpFragment<NearbyHomePresenter> impleme
 
         @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
         public void onPageSelected(int i) {
-            int i2 = NearbyHomeFragment.this.j().j.get(i).tab_id;
+            int i2 = ((NearbyHomePresenter) NearbyHomeFragment.this.j()).j.get(i).tab_id;
             if (i2 == 1) {
                 NearbyHomeFragment.this.mTitleRightMenu.setVisibility(0);
                 NearbyHomeFragment.this.mTitleRightText.setVisibility(8);
@@ -215,11 +216,11 @@ public class NearbyHomeFragment extends MvpFragment<NearbyHomePresenter> impleme
                     public void onClick(View view) {
                         Tracker.onClick(view);
                         InstantLog.a("my_group");
-                        TerminalActivity.d(NearbyHomeFragment.this.l, UserGroupListsFragment.class, null);
+                        TerminalActivity.d(NearbyHomeFragment.this.l, UserGroupListsFragment.class, (Bundle) null);
                     }
                 });
             }
-            NearbyHomeFragment.f30392a = NearbyHomeFragment.this.j().j.get(i).tab_id;
+            NearbyHomeFragment.f16702a = ((NearbyHomePresenter) NearbyHomeFragment.this.j()).j.get(i).tab_id;
         }
     };
     private int t = 0;
@@ -229,14 +230,14 @@ public class NearbyHomeFragment extends MvpFragment<NearbyHomePresenter> impleme
     class AnonymousClass24 implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ NearbyHomeFragment f30412a;
+        final /* synthetic */ NearbyHomeFragment f16722a;
 
         @Override // java.lang.Runnable
         public void run() {
-            if (!this.f30412a.getFragmentActive().isActive() || this.f30412a.nearbyActivityTip == null) {
+            if (!this.f16722a.getFragmentActive().isActive() || this.f16722a.nearbyActivityTip == null) {
                 return;
             }
-            this.f30412a.nearbyActivityTip.setVisibility(8);
+            this.f16722a.nearbyActivityTip.setVisibility(8);
             Log.v("drb", "showNearbyBubble GONE");
         }
     }
@@ -246,12 +247,12 @@ public class NearbyHomeFragment extends MvpFragment<NearbyHomePresenter> impleme
     class AnonymousClass25 implements View.OnClickListener {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ NearbyHomeFragment f30413a;
+        final /* synthetic */ NearbyHomeFragment f16723a;
 
         @Override // android.view.View.OnClickListener
         public void onClick(View view) {
             Tracker.onClick(view);
-            this.f30413a.adConstraintLayout.performClick();
+            this.f16723a.adConstraintLayout.performClick();
             EventTrackGuy.b(GuyProtos.Event.CHECK_IN_BUBBLE_CLICK);
         }
     }
@@ -313,8 +314,8 @@ public class NearbyHomeFragment extends MvpFragment<NearbyHomePresenter> impleme
             popHolder.ivFilterMode = (ImageView) Utils.a(view, R.id.iv_filter_mode, "field 'ivFilterMode'", ImageView.class);
             popHolder.tvFilterMode = (TextView) Utils.a(view, R.id.tv_filter_mode, "field 'tvFilterMode'", TextView.class);
             popHolder.llMap = (LinearLayout) Utils.a(view, R.id.ll_map, "field 'llMap'", LinearLayout.class);
-            popHolder.llSearch = (LinearLayout) Utils.a(view, 2131368218, "field 'llSearch'", LinearLayout.class);
-            popHolder.llList = (LinearLayout) Utils.a(view, 2131367968, "field 'llList'", LinearLayout.class);
+            popHolder.llSearch = (LinearLayout) Utils.a(view, R.id.ll_search, "field 'llSearch'", LinearLayout.class);
+            popHolder.llList = (LinearLayout) Utils.a(view, R.id.ll_list, "field 'llList'", LinearLayout.class);
             popHolder.llSplash = (LinearLayout) Utils.a(view, R.id.ll_splash, "field 'llSplash'", LinearLayout.class);
             popHolder.ivSplashToggle = (ImageView) Utils.a(view, R.id.iv_splash_toggle, "field 'ivSplashToggle'", ImageView.class);
             popHolder.llUETool = (LinearLayout) Utils.a(view, R.id.ll_uetool, "field 'llUETool'", LinearLayout.class);
@@ -385,17 +386,17 @@ public class NearbyHomeFragment extends MvpFragment<NearbyHomePresenter> impleme
         }
         LogUtils.c("tab顶切 点击：" + this.q.bubble_text + ", type:" + this.q.bubble_type);
         if (this.q.bubble_type == 1101 || this.q.bubble_type == 1102) {
-            CommunityManager.f19086a.a().a(true);
+            CommunityManager.a.a().a(true);
         }
         EventTrackFeed.a(FeedProtos.Event.CITY_TOP_BUBBLE_CLICK, this.q.bubble_type);
-        this.mViewPager.setCurrentItem(j().k);
-        this.r.onPageSelected(j().k);
+        this.mViewPager.setCurrentItem(((NearbyHomePresenter) j()).k);
+        this.r.onPageSelected(((NearbyHomePresenter) j()).k);
         this.q = null;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void C() {
-        this.indicatorTitle.d(j().k);
+        this.indicatorTitle.d(((NearbyHomePresenter) j()).k);
         c();
     }
 
@@ -406,15 +407,15 @@ public class NearbyHomeFragment extends MvpFragment<NearbyHomePresenter> impleme
         }
         ViewGroup viewGroup = (ViewGroup) LayoutInflater.from(context).inflate(R.layout.pop_nearby_people_right_menu, (ViewGroup) null);
         PopHolder popHolder = new PopHolder();
-        this.f30393c = popHolder;
+        this.f16703c = popHolder;
         Unbinder a2 = ButterKnife.a(popHolder, viewGroup);
         this.e = a2;
         this.d.add(a2);
         if (!BluedPreferences.dl()) {
-            this.f30393c.ivFilterDot.setVisibility(0);
+            this.f16703c.ivFilterDot.setVisibility(0);
         }
         if (BluedPreferences.en()) {
-            this.f30393c.ivMapDot.setVisibility(0);
+            this.f16703c.ivMapDot.setVisibility(0);
         }
         Log.v("drb", "initPop:");
         a((Boolean) false);
@@ -424,32 +425,32 @@ public class NearbyHomeFragment extends MvpFragment<NearbyHomePresenter> impleme
             @Override // com.soft.blued.customview.PopMenu.onShowListener
             public void a() {
                 EventTrackGuy.a(GuyProtos.Event.NEARBY_SETTINGS_BTN_CLICK);
-                if (NearbyHomeFragment.this.f30393c.ivFilterMode == null || NearbyHomeFragment.this.f30393c.tvFilterMode == null || NearbyHomeFragment.this.f30393c.ivListMode == null || NearbyHomeFragment.this.f30393c.tvListMode == null) {
+                if (NearbyHomeFragment.this.f16703c.ivFilterMode == null || NearbyHomeFragment.this.f16703c.tvFilterMode == null || NearbyHomeFragment.this.f16703c.ivListMode == null || NearbyHomeFragment.this.f16703c.tvListMode == null) {
                     return;
                 }
                 if (BluedPreferences.H()) {
-                    NearbyHomeFragment.this.f30393c.ivFilterMode.setImageDrawable(BluedSkinUtils.b(NearbyHomeFragment.this.l, R.drawable.icon_nearby_filter_on));
-                    NearbyHomeFragment.this.f30393c.tvFilterMode.setText(R.string.opened);
-                    NearbyHomeFragment.this.f30393c.tvFilterMode.setTextColor(BluedSkinUtils.a(NearbyHomeFragment.this.l, 2131102254));
+                    NearbyHomeFragment.this.f16703c.ivFilterMode.setImageDrawable(BluedSkinUtils.b(NearbyHomeFragment.this.l, (int) R.drawable.icon_nearby_filter_on));
+                    NearbyHomeFragment.this.f16703c.tvFilterMode.setText(R.string.opened);
+                    NearbyHomeFragment.this.f16703c.tvFilterMode.setTextColor(BluedSkinUtils.a(NearbyHomeFragment.this.l, 2131102254));
                 } else {
-                    NearbyHomeFragment.this.f30393c.ivFilterMode.setImageDrawable(BluedSkinUtils.b(NearbyHomeFragment.this.l, R.drawable.icon_nearby_filter_off));
-                    NearbyHomeFragment.this.f30393c.tvFilterMode.setText(R.string.closed);
-                    NearbyHomeFragment.this.f30393c.tvFilterMode.setTextColor(BluedSkinUtils.a(NearbyHomeFragment.this.l, 2131102263));
+                    NearbyHomeFragment.this.f16703c.ivFilterMode.setImageDrawable(BluedSkinUtils.b(NearbyHomeFragment.this.l, (int) R.drawable.icon_nearby_filter_off));
+                    NearbyHomeFragment.this.f16703c.tvFilterMode.setText(R.string.closed);
+                    NearbyHomeFragment.this.f16703c.tvFilterMode.setTextColor(BluedSkinUtils.a(NearbyHomeFragment.this.l, 2131102263));
                 }
                 if (BluedPreferences.J() == 0) {
-                    NearbyHomeFragment.this.f30393c.ivListMode.setImageDrawable(BluedSkinUtils.b(NearbyHomeFragment.this.l, R.drawable.icon_nearby_list_mode));
-                    NearbyHomeFragment.this.f30393c.tvListMode.setText(R.string.list_model);
+                    NearbyHomeFragment.this.f16703c.ivListMode.setImageDrawable(BluedSkinUtils.b(NearbyHomeFragment.this.l, (int) R.drawable.icon_nearby_list_mode));
+                    NearbyHomeFragment.this.f16703c.tvListMode.setText(R.string.list_model);
                 } else {
-                    NearbyHomeFragment.this.f30393c.ivListMode.setImageDrawable(BluedSkinUtils.b(NearbyHomeFragment.this.l, R.drawable.icon_nearby_grid_mode));
-                    NearbyHomeFragment.this.f30393c.tvListMode.setText(R.string.gird_model);
+                    NearbyHomeFragment.this.f16703c.ivListMode.setImageDrawable(BluedSkinUtils.b(NearbyHomeFragment.this.l, (int) R.drawable.icon_nearby_grid_mode));
+                    NearbyHomeFragment.this.f16703c.tvListMode.setText(R.string.gird_model);
                 }
                 if (BluedPreferences.E()) {
-                    NearbyHomeFragment.this.f30393c.llSplash.setVisibility(0);
-                    NearbyHomeFragment.this.f30393c.llSplashHome.setVisibility(0);
-                    if (AdTestManager.f34713a.a()) {
-                        NearbyHomeFragment.this.f30393c.ivSplashToggleHome.setImageResource(2131237259);
+                    NearbyHomeFragment.this.f16703c.llSplash.setVisibility(0);
+                    NearbyHomeFragment.this.f16703c.llSplashHome.setVisibility(0);
+                    if (AdTestManager.f21022a.a()) {
+                        NearbyHomeFragment.this.f16703c.ivSplashToggleHome.setImageResource(2131237259);
                     } else {
-                        NearbyHomeFragment.this.f30393c.ivSplashToggleHome.setImageResource(2131237258);
+                        NearbyHomeFragment.this.f16703c.ivSplashToggleHome.setImageResource(2131237258);
                     }
                 }
                 NearbyHomeFragment.this.E();
@@ -462,7 +463,7 @@ public class NearbyHomeFragment extends MvpFragment<NearbyHomePresenter> impleme
                 NearbyHomeFragment.this.z();
             }
         });
-        this.f30393c.llFilter.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.fragment.NearbyHomeFragment.5
+        this.f16703c.llFilter.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.fragment.NearbyHomeFragment.5
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
@@ -474,11 +475,11 @@ public class NearbyHomeFragment extends MvpFragment<NearbyHomePresenter> impleme
                         return;
                     }
                     BluedPreferences.dm();
-                    NearbyHomeFragment.this.f30393c.ivFilterDot.setVisibility(8);
+                    NearbyHomeFragment.this.f16703c.ivFilterDot.setVisibility(8);
                 }
             }
         });
-        this.f30393c.llCustomInvisible.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.fragment.NearbyHomeFragment.6
+        this.f16703c.llCustomInvisible.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.fragment.NearbyHomeFragment.6
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
@@ -487,8 +488,8 @@ public class NearbyHomeFragment extends MvpFragment<NearbyHomePresenter> impleme
                 EventTrackGuy.a(GuyProtos.Event.NEARBY_SETTINGS_HIDE_CLICK);
             }
         });
-        this.f30393c.llMap.setVisibility(8);
-        this.f30393c.llMap.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.fragment.NearbyHomeFragment.7
+        this.f16703c.llMap.setVisibility(8);
+        this.f16703c.llMap.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.fragment.NearbyHomeFragment.7
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
@@ -502,11 +503,11 @@ public class NearbyHomeFragment extends MvpFragment<NearbyHomePresenter> impleme
                 EventTrackGuy.c(event, z);
                 if (BluedPreferences.en()) {
                     BluedPreferences.eo();
-                    NearbyHomeFragment.this.f30393c.ivMapDot.setVisibility(8);
+                    NearbyHomeFragment.this.f16703c.ivMapDot.setVisibility(8);
                 }
             }
         });
-        this.f30393c.llSearch.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.fragment.NearbyHomeFragment.8
+        this.f16703c.llSearch.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.fragment.NearbyHomeFragment.8
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
@@ -514,38 +515,38 @@ public class NearbyHomeFragment extends MvpFragment<NearbyHomePresenter> impleme
                 SearchAllFragment.a(NearbyHomeFragment.this.l, 0);
             }
         });
-        this.f30393c.llList.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.fragment.NearbyHomeFragment.9
+        this.f16703c.llList.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.fragment.NearbyHomeFragment.9
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
                 NearbyHomeFragment.this.k.d();
-                if (HomeActivity.f30985c != null) {
-                    ((NearbyViewModel) ViewModelProviders.of(HomeActivity.f30985c).get(NearbyViewModel.class)).b.postValue(null);
+                if (HomeActivity.f17295c != null) {
+                    ((NearbyViewModel) ViewModelProviders.of((FragmentActivity) HomeActivity.f17295c).get(NearbyViewModel.class)).b.postValue(null);
                 }
             }
         });
-        this.f30393c.llSplash.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.fragment.NearbyHomeFragment.10
+        this.f16703c.llSplash.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.fragment.NearbyHomeFragment.10
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
                 BluedPreferences.b(!BluedPreferences.F());
                 if (!BluedPreferences.F()) {
-                    NearbyHomeFragment.this.f30393c.ivSplashToggle.setImageResource(2131237258);
+                    NearbyHomeFragment.this.f16703c.ivSplashToggle.setImageResource(2131237258);
                     return;
                 }
-                NearbyHomeFragment.this.f30393c.ivSplashToggle.setImageResource(2131237259);
+                NearbyHomeFragment.this.f16703c.ivSplashToggle.setImageResource(2131237259);
                 if (NearbyHomeFragment.this.x != null) {
                     NearbyHomeFragment.this.x.a(NearbyHomeFragment.this.x.a());
                 }
             }
         });
-        this.f30393c.llSplashHome.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.fragment.NearbyHomeFragment.11
+        this.f16703c.llSplashHome.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.fragment.NearbyHomeFragment.11
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
-                if (AdTestManager.f34713a.a()) {
-                    NearbyHomeFragment.this.f30393c.ivSplashToggleHome.setImageResource(2131237258);
-                    AdTestManager.f34713a.b().m();
+                if (AdTestManager.f21022a.a()) {
+                    NearbyHomeFragment.this.f16703c.ivSplashToggleHome.setImageResource(2131237258);
+                    AdTestManager.f21022a.b().m();
                     return;
                 }
                 TerminalActivity.d(NearbyHomeFragment.this.getActivity(), AdTestFragment.class, new Bundle());
@@ -557,16 +558,16 @@ public class NearbyHomeFragment extends MvpFragment<NearbyHomePresenter> impleme
     /* JADX INFO: Access modifiers changed from: private */
     public void E() {
         if (AppInfo.m()) {
-            this.f30393c.llUETool.setVisibility(0);
+            this.f16703c.llUETool.setVisibility(0);
             if (BluedPreferences.G()) {
-                this.f30393c.ivUEToolToggle.setImageResource(2131237259);
+                this.f16703c.ivUEToolToggle.setImageResource(2131237259);
             } else {
-                this.f30393c.ivUEToolToggle.setImageResource(2131237258);
+                this.f16703c.ivUEToolToggle.setImageResource(2131237258);
             }
         } else {
-            this.f30393c.llUETool.setVisibility(8);
+            this.f16703c.llUETool.setVisibility(8);
         }
-        this.f30393c.ivUEToolToggle.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.fragment.NearbyHomeFragment.12
+        this.f16703c.ivUEToolToggle.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.fragment.NearbyHomeFragment.12
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
@@ -577,24 +578,24 @@ public class NearbyHomeFragment extends MvpFragment<NearbyHomePresenter> impleme
                 BluedPreferences.c(!BluedPreferences.G());
                 if (BluedPreferences.G()) {
                     UETool.a();
-                    NearbyHomeFragment.this.f30393c.ivUEToolToggle.setImageResource(2131237259);
+                    NearbyHomeFragment.this.f16703c.ivUEToolToggle.setImageResource(2131237259);
                     return;
                 }
                 UETool.b();
-                NearbyHomeFragment.this.f30393c.ivUEToolToggle.setImageResource(2131237258);
+                NearbyHomeFragment.this.f16703c.ivUEToolToggle.setImageResource(2131237258);
             }
         });
     }
 
     private void F() {
         int i = 0;
-        this.tvMapTip.setBackground(NinePatchUtils.a(NinePatchUtils.GuideArrowPosition.LEFT, new int[0]));
-        this.tvSignDaysTip.setBackground(NinePatchUtils.a(NinePatchUtils.GuideArrowPosition.RIGHT, new int[0]));
+        this.tvMapTip.setBackground(NinePatchUtils.a(NinePatchUtils.GuideArrowPosition.a, new int[0]));
+        this.tvSignDaysTip.setBackground(NinePatchUtils.a(NinePatchUtils.GuideArrowPosition.c, new int[0]));
         if (this.g == null) {
-            this.g = new NearbyHomePagerAdapter(getChildFragmentManager(), j().j);
+            this.g = new NearbyHomePagerAdapter(getChildFragmentManager(), ((NearbyHomePresenter) j()).j);
         }
         this.mViewPager.setAdapter(this.g);
-        this.mViewPager.setOffscreenPageLimit(j().j.size());
+        this.mViewPager.setOffscreenPageLimit(((NearbyHomePresenter) j()).j.size());
         this.indicatorTitle.setViewPager(this.mViewPager);
         this.indicatorTitle.setOnPageChangeListener(this.r);
         this.mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: com.soft.blued.ui.find.fragment.NearbyHomeFragment.13
@@ -615,9 +616,9 @@ public class NearbyHomeFragment extends MvpFragment<NearbyHomePresenter> impleme
         });
         int o = BluedConfig.a().o();
         while (true) {
-            if (i >= j().j.size()) {
+            if (i >= ((NearbyHomePresenter) j()).j.size()) {
                 break;
-            } else if (o == j().j.get(i).tab_id) {
+            } else if (o == ((NearbyHomePresenter) j()).j.get(i).tab_id) {
                 this.mViewPager.setCurrentItem(i);
                 this.r.onPageSelected(i);
                 break;
@@ -633,6 +634,7 @@ public class NearbyHomeFragment extends MvpFragment<NearbyHomePresenter> impleme
         this.fl_floor.setLayoutParams(layoutParams);
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private void G() {
         if (this.x == null) {
             this.x = new SplashUtil(this);
@@ -652,19 +654,17 @@ public class NearbyHomeFragment extends MvpFragment<NearbyHomePresenter> impleme
     public void I() {
         VipInvisibleDialogFragment vipInvisibleDialogFragment = new VipInvisibleDialogFragment();
         vipInvisibleDialogFragment.b = this.l.getResources().getString(R.string.custom_invisible);
-        vipInvisibleDialogFragment.f34162c = "nearby_settings_hide";
+        vipInvisibleDialogFragment.f20471c = "nearby_settings_hide";
         vipInvisibleDialogFragment.show(getChildFragmentManager(), NearbyHomeFragment.class.getName());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void J() {
         PermissionUtils.c(new PermissionCallbacks() { // from class: com.soft.blued.ui.find.fragment.NearbyHomeFragment.15
-            @Override // com.blued.android.framework.permission.PermissionCallbacks
             public void U_() {
-                FindSearchMapFragment.a((BaseFragmentActivity) NearbyHomeFragment.this.getActivity(), 2);
+                FindSearchMapFragment.a(NearbyHomeFragment.this.getActivity(), 2);
             }
 
-            @Override // com.blued.android.framework.permission.PermissionCallbacks
             public void a(String[] strArr) {
             }
         });
@@ -675,18 +675,18 @@ public class NearbyHomeFragment extends MvpFragment<NearbyHomePresenter> impleme
         this.mTitleRightText.setVisibility(8);
         this.mTitleRightMenu.setVisibility(0);
         if (StatusBarHelper.a()) {
-            this.mTitle.setPadding(0, StatusBarHelper.a((Context) getActivity()), 0, 0);
+            this.mTitle.setPadding(0, StatusBarHelper.a(getActivity()), 0, 0);
         }
         if (BluedPreferences.dj()) {
             this.mTitleRightDot.setVisibility(0);
         }
         if (BluedPreferences.H()) {
-            this.mTitleRight.setImageDrawable(BluedSkinUtils.b(this.l, R.drawable.icon_title_filter_open));
+            this.mTitleRight.setImageDrawable(BluedSkinUtils.b(this.l, (int) R.drawable.icon_title_filter_open));
         } else {
-            this.mTitleRight.setImageDrawable(BluedSkinUtils.b(this.l, R.drawable.icon_title_filter_off));
+            this.mTitleRight.setImageDrawable(BluedSkinUtils.b(this.l, (int) R.drawable.icon_title_filter_off));
         }
         this.mTitleLeft.setVisibility(0);
-        this.mTitleLeft.setImageDrawable(BluedSkinUtils.b(this.l, R.drawable.icon_title_map_finder));
+        this.mTitleLeft.setImageDrawable(BluedSkinUtils.b(this.l, (int) R.drawable.icon_title_map_finder));
         if (BluedPreferences.eG()) {
             L();
         } else {
@@ -773,7 +773,7 @@ public class NearbyHomeFragment extends MvpFragment<NearbyHomePresenter> impleme
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void N() {
-        this.indicatorTitle.d(j().k);
+        this.indicatorTitle.d(((NearbyHomePresenter) j()).k);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -783,8 +783,8 @@ public class NearbyHomeFragment extends MvpFragment<NearbyHomePresenter> impleme
             return;
         }
         HomeTabBubble homeTabBubble = null;
-        if (HomeActivity.f30985c != null) {
-            homeTabBubble = HomeActivity.f30985c.h();
+        if (HomeActivity.f17295c != null) {
+            homeTabBubble = HomeActivity.f17295c.h();
         }
         a(homeTabBubble);
     }
@@ -795,7 +795,7 @@ public class NearbyHomeFragment extends MvpFragment<NearbyHomePresenter> impleme
         if (this.mViewPager.getCurrentItem() != i) {
             this.mViewPager.setCurrentItem(i);
         } else if (getFragmentManager() != null) {
-            SelectCityDialogFragment.f19926a.a(getFragmentManager());
+            SelectCityDialogFragment.a.a(getFragmentManager());
         }
     }
 
@@ -809,10 +809,10 @@ public class NearbyHomeFragment extends MvpFragment<NearbyHomePresenter> impleme
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void a(Object obj) {
-        if (CommunityManager.f19086a.a().f()) {
+        if (CommunityManager.a.a().f()) {
             this.p = true;
         } else {
-            NearbyGuideDlgFragment.f29801a.a(this);
+            NearbyGuideDlgFragment.f16111a.a(this);
         }
     }
 
@@ -840,8 +840,8 @@ public class NearbyHomeFragment extends MvpFragment<NearbyHomePresenter> impleme
             return;
         }
         int i2 = 0;
-        for (int i3 = 0; i3 < j().j.size(); i3++) {
-            if (j().j.get(i3).tab_id == 1) {
+        for (int i3 = 0; i3 < ((NearbyHomePresenter) j()).j.size(); i3++) {
+            if (((NearbyHomePresenter) j()).j.get(i3).tab_id == 1) {
                 i2 = i3;
             }
         }
@@ -878,8 +878,8 @@ public class NearbyHomeFragment extends MvpFragment<NearbyHomePresenter> impleme
             BluedPreferences.n();
         }
         LogUtils.c("bubble: " + homeTabBubble.bubble_text);
-        LogUtils.c("bubble: isShowAdFloat: " + CommunityManager.f19086a.a().f());
-        if (CommunityManager.f19086a.a().f()) {
+        LogUtils.c("bubble: isShowAdFloat: " + CommunityManager.a.a().f());
+        if (CommunityManager.a.a().f()) {
             this.o = homeTabBubble;
         } else {
             a(homeTabBubble);
@@ -888,7 +888,7 @@ public class NearbyHomeFragment extends MvpFragment<NearbyHomePresenter> impleme
 
     /* JADX INFO: Access modifiers changed from: private */
     public void c(int i) {
-        final int i2 = j().k;
+        final int i2 = ((NearbyHomePresenter) j()).k;
         Drawable b = BluedSkinUtils.b(this.l, 2131233901);
         b.setBounds(0, 0, b.getMinimumWidth(), b.getMinimumHeight());
         if (i2 == i) {
@@ -902,7 +902,7 @@ public class NearbyHomeFragment extends MvpFragment<NearbyHomePresenter> impleme
                 NearbyHomeFragment.this.a(i2, view);
             }
         });
-        if (j().j.get(i).tab_id != 2 || this.q == null) {
+        if (((NearbyHomePresenter) j()).j.get(i).tab_id != 2 || this.q == null) {
             return;
         }
         B();
@@ -958,7 +958,7 @@ public class NearbyHomeFragment extends MvpFragment<NearbyHomePresenter> impleme
         this.mViewPager.setIgnoreRect(rect);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
+    /* JADX WARN: Multi-variable type inference failed */
     public void a(Bundle bundle) {
         super.a(bundle);
         D();
@@ -1024,11 +1024,9 @@ public class NearbyHomeFragment extends MvpFragment<NearbyHomePresenter> impleme
             b(bluedADExtra);
         } else if (z2) {
             ImageLoader.a(getFragmentActive(), bluedADExtra.ads_apng).f().a(new ImageLoader.OnAnimationStateListener() { // from class: com.soft.blued.ui.find.fragment.NearbyHomeFragment.21
-                @Override // com.blued.android.core.image.ImageLoader.OnAnimationStateListener
                 public void a() {
                 }
 
-                @Override // com.blued.android.core.image.ImageLoader.OnAnimationStateListener
                 public void b() {
                     if (NearbyHomeFragment.this.getFragmentActive().isActive()) {
                         NearbyHomeFragment.this.b(bluedADExtra);
@@ -1037,11 +1035,9 @@ public class NearbyHomeFragment extends MvpFragment<NearbyHomePresenter> impleme
             }).a(this.adNearbyImg);
         } else if (z2) {
             ImageLoader.a(getFragmentActive(), bluedADExtra.ads_gif).h().a(new ImageLoader.OnAnimationStateListener() { // from class: com.soft.blued.ui.find.fragment.NearbyHomeFragment.22
-                @Override // com.blued.android.core.image.ImageLoader.OnAnimationStateListener
                 public void a() {
                 }
 
-                @Override // com.blued.android.core.image.ImageLoader.OnAnimationStateListener
                 public void b() {
                     if (NearbyHomeFragment.this.getFragmentActive().isActive()) {
                         NearbyHomeFragment.this.b(bluedADExtra);
@@ -1061,7 +1057,7 @@ public class NearbyHomeFragment extends MvpFragment<NearbyHomePresenter> impleme
         this.q = homeTabBubble;
         LogUtils.c("tab顶切 显示：" + this.q.bubble_text + ", type:" + this.q.bubble_type);
         this.viewCityNew.setText(homeTabBubble.bubble_text);
-        TextView e = this.indicatorTitle.e(j().k);
+        TextView e = this.indicatorTitle.e(((NearbyHomePresenter) j()).k);
         int[] iArr = new int[2];
         e.getLocationInWindow(iArr);
         RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) this.viewCityNew.getLayoutParams();
@@ -1069,12 +1065,12 @@ public class NearbyHomeFragment extends MvpFragment<NearbyHomePresenter> impleme
         layoutParams.topMargin = iArr[1] - DensityUtils.a(this.l, 13.0f);
         this.viewCityNew.setLayoutParams(layoutParams);
         if (homeTabBubble.bubble_type == 1101) {
-            if (CommunityManager.f19086a.a().s()) {
+            if (CommunityManager.a.a().s()) {
                 this.viewCityNew.setBackgroundResource(R.drawable.nearby_bubble_blue_bg_dark);
             } else {
                 this.viewCityNew.setBackgroundResource(R.drawable.nearby_bubble_blue_bg);
             }
-        } else if (CommunityManager.f19086a.a().s()) {
+        } else if (CommunityManager.a.a().s()) {
             this.viewCityNew.setBackgroundResource(R.drawable.nearby_bubble_red_bg_dark);
         } else {
             this.viewCityNew.setBackgroundResource(R.drawable.nearby_bubble_red_bg);
@@ -1087,20 +1083,20 @@ public class NearbyHomeFragment extends MvpFragment<NearbyHomePresenter> impleme
         });
         EventTrackFeed.a(FeedProtos.Event.CITY_TOP_BUBBLE_SHOW, homeTabBubble.bubble_type);
         this.m = true;
-        if (homeTabBubble.bubble_type != 1101 || CommunityManager.f19086a.a().a() == null || CommunityManager.f19086a.a().a().getDouble_click_feed_id() <= 0) {
+        if (homeTabBubble.bubble_type != 1101 || CommunityManager.a.a().a() == null || CommunityManager.a.a().a().getDouble_click_feed_id() <= 0) {
             str = null;
             i = 12;
             if (homeTabBubble.bubble_type == 1102) {
                 str = null;
                 i = 12;
-                if (CommunityManager.f19086a.a().a() != null) {
+                if (CommunityManager.a.a().a() != null) {
                     str = null;
                     i = 12;
-                    if (CommunityManager.f19086a.a().a().extra_bubble_img != null) {
-                        String str2 = CommunityManager.f19086a.a().a().extra_bubble_img;
+                    if (CommunityManager.a.a().a().extra_bubble_img != null) {
+                        String str2 = CommunityManager.a.a().a().extra_bubble_img;
                         str = str2;
                         i = 12;
-                        if (CommunityManager.f19086a.a().a().extra_bubble_type == 2) {
+                        if (CommunityManager.a.a().a().extra_bubble_type == 2) {
                             i = 4;
                             str = str2;
                         }
@@ -1108,11 +1104,11 @@ public class NearbyHomeFragment extends MvpFragment<NearbyHomePresenter> impleme
                 }
             }
         } else {
-            str = CommunityManager.f19086a.a().a().double_click_feed_avatar;
+            str = CommunityManager.a.a().a().double_click_feed_avatar;
             i = 12;
         }
         if (!TextUtils.isEmpty(str)) {
-            this.indicatorTitle.a(j().k, str, i);
+            this.indicatorTitle.a(((NearbyHomePresenter) j()).k, str, i);
             postDelaySafeRunOnUiThread(new Runnable() { // from class: com.soft.blued.ui.find.fragment.-$$Lambda$NearbyHomeFragment$jGiHMby0V8E3VrVQ8FgpWEdAK60
                 @Override // java.lang.Runnable
                 public final void run() {
@@ -1121,7 +1117,7 @@ public class NearbyHomeFragment extends MvpFragment<NearbyHomePresenter> impleme
             }, 5300L);
         }
         A();
-        CommunityManager.f19086a.a().j(true);
+        CommunityManager.a.a().j(true);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -1140,15 +1136,14 @@ public class NearbyHomeFragment extends MvpFragment<NearbyHomePresenter> impleme
     public void a(Boolean bool) {
         Log.v("drb", "--setInvisibleState:" + bool);
         if (bool.booleanValue()) {
-            this.f30393c.tvCustomInvisible.setText(R.string.opened);
-            this.f30393c.tvCustomInvisible.setTextColor(BluedSkinUtils.a(this.l, 2131102254));
+            this.f16703c.tvCustomInvisible.setText(R.string.opened);
+            this.f16703c.tvCustomInvisible.setTextColor(BluedSkinUtils.a(this.l, 2131102254));
             return;
         }
-        this.f30393c.tvCustomInvisible.setText(R.string.closed);
-        this.f30393c.tvCustomInvisible.setTextColor(BluedSkinUtils.a(this.l, 2131102263));
+        this.f16703c.tvCustomInvisible.setText(R.string.closed);
+        this.f16703c.tvCustomInvisible.setTextColor(BluedSkinUtils.a(this.l, 2131102263));
     }
 
-    @Override // skin.support.observe.SkinObserver
     public void a(SkinObservable skinObservable, Object obj) {
         if (this.mTitle == null || this.indicatorTitle == null) {
             return;
@@ -1193,7 +1188,7 @@ public class NearbyHomeFragment extends MvpFragment<NearbyHomePresenter> impleme
     public void ae_() {
         if (this.p) {
             this.p = false;
-            NearbyGuideDlgFragment.f29801a.a(this);
+            NearbyGuideDlgFragment.f16111a.a(this);
         }
         LogUtils.c("bubble: onAdFloatClose: ");
         if (this.o == null || !k() || getFragmentActive() == null || !getFragmentActive().isActive()) {
@@ -1205,7 +1200,6 @@ public class NearbyHomeFragment extends MvpFragment<NearbyHomePresenter> impleme
         this.o = null;
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public void af_() {
         super.af_();
         Unbinder unbinder = this.e;
@@ -1217,20 +1211,20 @@ public class NearbyHomeFragment extends MvpFragment<NearbyHomePresenter> impleme
     /* JADX INFO: Access modifiers changed from: protected */
     public void b(Boolean bool) {
         if (bool.booleanValue()) {
-            this.f30393c.avatarIsOpening.setVisibility(0);
-            this.f30393c.avatarIsOpening.setText(R.string.header_location_is_open);
-            this.f30393c.avatarIsOpening.setTextColor(BluedSkinUtils.a(this.l, 2131102263));
+            this.f16703c.avatarIsOpening.setVisibility(0);
+            this.f16703c.avatarIsOpening.setText(R.string.header_location_is_open);
+            this.f16703c.avatarIsOpening.setTextColor(BluedSkinUtils.a(this.l, 2131102263));
             return;
         }
-        this.f30393c.avatarIsOpening.setVisibility(8);
-        this.f30393c.avatarIsOpening.setText(R.string.header_location_is_open);
-        this.f30393c.avatarIsOpening.setTextColor(BluedSkinUtils.a(this.l, 2131102254));
+        this.f16703c.avatarIsOpening.setVisibility(8);
+        this.f16703c.avatarIsOpening.setText(R.string.header_location_is_open);
+        this.f16703c.avatarIsOpening.setTextColor(BluedSkinUtils.a(this.l, 2131102254));
     }
 
     public void c() {
         this.viewCityNew.setVisibility(8);
         this.m = false;
-        CommunityManager.f19086a.a().j(false);
+        CommunityManager.a.a().j(false);
     }
 
     public void c(String str) {
@@ -1262,12 +1256,10 @@ public class NearbyHomeFragment extends MvpFragment<NearbyHomePresenter> impleme
         this.tvTip.setVisibility(8);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public int g() {
         return R.layout.fragment_main_find;
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         super.onActivityResult(i, i2, intent);
         SplashUtil splashUtil = this.x;
@@ -1276,7 +1268,6 @@ public class NearbyHomeFragment extends MvpFragment<NearbyHomePresenter> impleme
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         this.l = getActivity();
@@ -1285,7 +1276,6 @@ public class NearbyHomeFragment extends MvpFragment<NearbyHomePresenter> impleme
         AdFloatObserver.a().a(this);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
         NearbyFindSetSelectedTab.a().b(this);
@@ -1293,14 +1283,12 @@ public class NearbyHomeFragment extends MvpFragment<NearbyHomePresenter> impleme
         AdFloatObserver.a().b(this);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onPause() {
         BluedPreferences.n();
-        BluedConfig.a().f34699a = false;
+        BluedConfig.a().f21008a = false;
         super.onPause();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onResume() {
         ShapeTextView shapeTextView;
         super.onResume();
@@ -1310,7 +1298,7 @@ public class NearbyHomeFragment extends MvpFragment<NearbyHomePresenter> impleme
             a(new Runnable() { // from class: com.soft.blued.ui.find.fragment.NearbyHomeFragment.26
                 @Override // java.lang.Runnable
                 public void run() {
-                    PrivacyClauseDialog.a(NearbyHomeFragment.this.l, NearbyHomeFragment.this.getFragmentActive());
+                    PrivacyClauseDialog.a(NearbyHomeFragment.this.l, (IRequestHost) NearbyHomeFragment.this.getFragmentActive());
                 }
             }, 1000L);
         }
@@ -1323,7 +1311,7 @@ public class NearbyHomeFragment extends MvpFragment<NearbyHomePresenter> impleme
         x();
         AppUtils.a(this.fl_floor);
         AppUtils.a(this.second_floor);
-        AppUtils.a(this.second_floor_ad_icon);
+        AppUtils.a((View) this.second_floor_ad_icon);
         AppUtils.a(this.layoutGoldGuide);
         AppUtils.a(this.mTitle);
         AppUtils.a(this.viewCityNew);
@@ -1333,7 +1321,6 @@ public class NearbyHomeFragment extends MvpFragment<NearbyHomePresenter> impleme
         AppUtils.a(this.tvMapTip);
     }
 
-    @Override // com.blued.android.chat.listener.SingleSessionListener
     public void onSessionDataChanged(SessionModel sessionModel) {
         if (sessionModel.sessionId == 4) {
             postSafeRunOnUiThread(new Runnable() { // from class: com.soft.blued.ui.find.fragment.NearbyHomeFragment.27
@@ -1345,21 +1332,17 @@ public class NearbyHomeFragment extends MvpFragment<NearbyHomePresenter> impleme
         }
     }
 
-    @Override // com.blued.android.chat.listener.SingleSessionListener
     public void onSessionRemoved(short s, long j) {
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onStart() {
         super.onStart();
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onStop() {
         super.onStop();
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public boolean q() {
         return true;
     }
@@ -1373,21 +1356,21 @@ public class NearbyHomeFragment extends MvpFragment<NearbyHomePresenter> impleme
     /* JADX INFO: Access modifiers changed from: protected */
     public void w() {
         if (BluedPreferences.H()) {
-            this.mTitleRight.setImageDrawable(BluedSkinUtils.b(this.l, R.drawable.icon_title_filter_open));
+            this.mTitleRight.setImageDrawable(BluedSkinUtils.b(this.l, (int) R.drawable.icon_title_filter_open));
         } else {
-            this.mTitleRight.setImageDrawable(BluedSkinUtils.b(this.l, R.drawable.icon_title_filter_off));
+            this.mTitleRight.setImageDrawable(BluedSkinUtils.b(this.l, (int) R.drawable.icon_title_filter_off));
         }
     }
 
     public void x() {
-        j().a(getFragmentActive());
+        ((NearbyHomePresenter) j()).a((IRequestHost) getFragmentActive());
     }
 
     public void y() {
-        AnimationUtils.a((View) this.ivGoldGuide1, 350.0f, 2, 800, 400L);
-        AnimationUtils.a((View) this.ivGoldGuide2, 350.0f, 2, 800, 200L);
-        AnimationUtils.a((View) this.ivGoldGuide3, 350.0f, 2, 800, 0L);
-        AnimationUtils.a((View) this.ivGoldGuide4, 350.0f, 2, 800, 80L);
-        AnimationUtils.a((View) this.ivGoldGuide5, 350.0f, 2, 800, 600L);
+        AnimationUtils.a(this.ivGoldGuide1, 350.0f, 2, 800, 400L);
+        AnimationUtils.a(this.ivGoldGuide2, 350.0f, 2, 800, 200L);
+        AnimationUtils.a(this.ivGoldGuide3, 350.0f, 2, 800, 0L);
+        AnimationUtils.a(this.ivGoldGuide4, 350.0f, 2, 800, 80L);
+        AnimationUtils.a(this.ivGoldGuide5, 350.0f, 2, 800, 600L);
     }
 }

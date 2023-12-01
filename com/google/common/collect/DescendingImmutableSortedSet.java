@@ -66,7 +66,7 @@ final class DescendingImmutableSortedSet<E> extends ImmutableSortedSet<E> {
         return this.forward.isPartialView();
     }
 
-    @Override // com.google.common.collect.ImmutableSortedSet, com.google.common.collect.ImmutableSet, com.google.common.collect.ImmutableCollection, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+    @Override // com.google.common.collect.ImmutableSortedSet, com.google.common.collect.ImmutableSet, com.google.common.collect.ImmutableCollection, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set, com.google.common.collect.SortedIterable, java.util.NavigableSet
     public UnmodifiableIterator<E> iterator() {
         return this.forward.descendingIterator();
     }
@@ -76,7 +76,7 @@ final class DescendingImmutableSortedSet<E> extends ImmutableSortedSet<E> {
         return this.forward.higher(e);
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
     public int size() {
         return this.forward.size();
     }

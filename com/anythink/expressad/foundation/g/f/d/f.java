@@ -15,7 +15,7 @@ import java.util.Map;
 public class f extends i<String> {
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f7888c = f.class.getSimpleName();
+    private static final String f5048c = f.class.getSimpleName();
     private Map<String, String> d;
     private com.anythink.expressad.foundation.g.f.c.b[] e;
     private String f;
@@ -32,7 +32,7 @@ public class f extends i<String> {
         try {
             return k.a(new String(cVar.b, com.anythink.expressad.foundation.g.f.g.e.a(cVar.d)), cVar);
         } catch (UnsupportedEncodingException e) {
-            o.d(f7888c, e.getMessage());
+            o.d(f5048c, e.getMessage());
             return k.a(new com.anythink.expressad.foundation.g.f.a.a(8, cVar));
         }
     }
@@ -94,7 +94,7 @@ public class f extends i<String> {
                     e.printStackTrace();
                 }
             } catch (IOException e2) {
-                o.d(f7888c, e2.getMessage());
+                o.d(f5048c, e2.getMessage());
                 this.b.a(new com.anythink.expressad.foundation.g.f.a.a(2, null));
                 try {
                     dataOutputStream.close();

@@ -3,8 +3,10 @@ package com.blued.login.fragment;
 import android.os.Bundle;
 import android.view.View;
 import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.LifecycleOwner;
+import androidx.viewbinding.ViewBinding;
 import com.blued.android.framework.permission.PermissionCallbacks;
 import com.blued.android.module.common.base.mvi.MVIBaseFragment;
 import com.blued.android.module.common.extensions.BluedStructureExtKt;
@@ -35,24 +37,24 @@ import kotlin.reflect.KProperty;
 @Metadata
 /* loaded from: source-7206380-dex2jar.jar:com/blued/login/fragment/IdentifyFaceFragment.class */
 public final class IdentifyFaceFragment extends MVIBaseFragment<IdentifyFaceVM> implements View.OnClickListener {
-    static final /* synthetic */ KProperty<Object>[] b = {Reflection.a(new PropertyReference1Impl(IdentifyFaceFragment.class, "vb", "getVb()Lcom/blued/login/databinding/FmIdentifyFaceBinding;", 0))};
+    static final /* synthetic */ KProperty<Object>[] b = {(KProperty) Reflection.a(new PropertyReference1Impl(IdentifyFaceFragment.class, "vb", "getVb()Lcom/blued/login/databinding/FmIdentifyFaceBinding;", 0))};
 
     /* renamed from: c  reason: collision with root package name */
-    private final ViewBindingProperty f20548c;
+    private final ViewBindingProperty f6942c;
 
     public IdentifyFaceFragment() {
         super(R.layout.fm_identify_face);
-        this.f20548c = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<IdentifyFaceFragment, FmIdentifyFaceBinding>() { // from class: com.blued.login.fragment.IdentifyFaceFragment$special$$inlined$viewBindingFragment$default$1
-            @Override // kotlin.jvm.functions.Function1
+        this.f6942c = ((Fragment) this) instanceof DialogFragment ? (ViewBindingProperty) new DialogFragmentViewBindingProperty(new Function1<IdentifyFaceFragment, FmIdentifyFaceBinding>() { // from class: com.blued.login.fragment.IdentifyFaceFragment$special$$inlined$viewBindingFragment$default$1
+            /* JADX WARN: Incorrect types in method signature: (Lcom/blued/login/fragment/IdentifyFaceFragment;)Lcom/blued/login/databinding/FmIdentifyFaceBinding; */
             /* renamed from: a */
-            public final FmIdentifyFaceBinding invoke(IdentifyFaceFragment fragment) {
+            public final ViewBinding invoke(Fragment fragment) {
                 Intrinsics.e(fragment, "fragment");
                 return FmIdentifyFaceBinding.a(fragment.requireView());
             }
         }) : new FragmentViewBindingProperty(new Function1<IdentifyFaceFragment, FmIdentifyFaceBinding>() { // from class: com.blued.login.fragment.IdentifyFaceFragment$special$$inlined$viewBindingFragment$default$2
-            @Override // kotlin.jvm.functions.Function1
+            /* JADX WARN: Incorrect types in method signature: (Lcom/blued/login/fragment/IdentifyFaceFragment;)Lcom/blued/login/databinding/FmIdentifyFaceBinding; */
             /* renamed from: a */
-            public final FmIdentifyFaceBinding invoke(IdentifyFaceFragment fragment) {
+            public final ViewBinding invoke(Fragment fragment) {
                 Intrinsics.e(fragment, "fragment");
                 return FmIdentifyFaceBinding.a(fragment.requireView());
             }
@@ -61,28 +63,26 @@ public final class IdentifyFaceFragment extends MVIBaseFragment<IdentifyFaceVM> 
 
     /* JADX INFO: Access modifiers changed from: private */
     public final FmIdentifyFaceBinding a() {
-        return (FmIdentifyFaceBinding) this.f20548c.b(this, b[0]);
+        return (FmIdentifyFaceBinding) this.f6942c.b(this, b[0]);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(IdentifyFaceFragment this$0, View view) {
-        Intrinsics.e(this$0, "this$0");
-        FragmentActivity activity = this$0.getActivity();
+    public static final void a(IdentifyFaceFragment identifyFaceFragment, View view) {
+        Intrinsics.e(identifyFaceFragment, "this$0");
+        FragmentActivity activity = identifyFaceFragment.getActivity();
         if (activity == null) {
             return;
         }
         activity.finish();
     }
 
-    @Override // com.blued.android.module.common.base.mvi.MVIBaseFragment
     public void a(boolean z, boolean z2) {
         super.a(z, z2);
         DialogUtils.b(t());
     }
 
-    @Override // com.blued.android.module.common.base.mvi.MVIBaseFragment
     public void m() {
-        y().a(getActivity());
+        ((IdentifyFaceVM) y()).a(getActivity());
         FmIdentifyFaceBinding a2 = a();
         if (a2 == null) {
             return;
@@ -93,23 +93,21 @@ public final class IdentifyFaceFragment extends MVIBaseFragment<IdentifyFaceVM> 
                 super(IdentifyFaceFragment.this);
             }
         });
-        a2.f20518c.setLeftClickListener(new View.OnClickListener() { // from class: com.blued.login.fragment.-$$Lambda$IdentifyFaceFragment$WQEa2SKvOTAhwXpcTeyi-Bh1eoo
+        a2.f6912c.setLeftClickListener(new View.OnClickListener() { // from class: com.blued.login.fragment.-$$Lambda$IdentifyFaceFragment$WQEa2SKvOTAhwXpcTeyi-Bh1eoo
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 IdentifyFaceFragment.a(IdentifyFaceFragment.this, view);
             }
         });
-        a2.f20518c.setCenterText(getString(R.string.login_adult_certification));
+        a2.f6912c.setCenterText(getString(R.string.login_adult_certification));
         a2.b.setHintText(R.string.login_input_hint_name);
-        a2.f20517a.setHintText(R.string.login_input_hint_id);
+        a2.f6911a.setHintText(R.string.login_input_hint_id);
     }
 
-    @Override // com.blued.android.module.common.base.mvi.MVIBaseFragment
     public void o() {
         LifecycleOwner viewLifecycleOwner = getViewLifecycleOwner();
         Intrinsics.c(viewLifecycleOwner, "viewLifecycleOwner");
         BluedStructureExtKt.a(this, viewLifecycleOwner, new MutablePropertyReference1Impl() { // from class: com.blued.login.fragment.IdentifyFaceFragment$liveDataObserver$1
-            @Override // kotlin.jvm.internal.MutablePropertyReference1Impl, kotlin.reflect.KProperty1
             public Object a(Object obj) {
                 return ((IdentifyFaceState) obj).getSucceed();
             }
@@ -130,50 +128,45 @@ public final class IdentifyFaceFragment extends MVIBaseFragment<IdentifyFaceVM> 
                 }
             }
 
-            @Override // kotlin.jvm.functions.Function1
-            public /* synthetic */ Unit invoke(Boolean bool) {
-                a(bool.booleanValue());
-                return Unit.f42314a;
+            public /* synthetic */ Object invoke(Object obj) {
+                a(((Boolean) obj).booleanValue());
+                return Unit.a;
             }
         });
     }
 
     @Override // android.view.View.OnClickListener
-    public void onClick(View v) {
-        Tracker.onClick(v);
-        Intrinsics.e(v, "v");
-        if (v.getId() == R.id.tv_identify) {
+    public void onClick(View view) {
+        Tracker.onClick(view);
+        Intrinsics.e(view, "v");
+        if (view.getId() == R.id.tv_identify) {
             EventTrackSettings.a(SettingsProtos.Event.UNDER_AGE_FACE_BTN_CLICK);
             PermissionUtils.b(new PermissionCallbacks() { // from class: com.blued.login.fragment.IdentifyFaceFragment$onClick$1
-                @Override // com.blued.android.framework.permission.PermissionCallbacks
                 public void U_() {
                     FmIdentifyFaceBinding a2;
                     a2 = IdentifyFaceFragment.this.a();
                     if (a2 == null) {
                         return;
                     }
-                    BluedStructureExtKt.a(IdentifyFaceFragment.this, new IdentifyFaceAction.VerifyCard(a2.b.getText().toString(), a2.f20517a.getText().toString()));
+                    BluedStructureExtKt.a(IdentifyFaceFragment.this, new IdentifyFaceAction.VerifyCard(a2.b.getText().toString(), a2.f6911a.getText().toString()));
                 }
 
-                @Override // com.blued.android.framework.permission.PermissionCallbacks
                 public void a(String[] strArr) {
                 }
             });
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
-    public void onSaveInstanceState(Bundle outState) {
-        Intrinsics.e(outState, "outState");
+    public void onSaveInstanceState(Bundle bundle) {
+        Intrinsics.e(bundle, "outState");
         FmIdentifyFaceBinding a2 = a();
         if (a2 == null) {
             return;
         }
-        outState.putString("name", a2.b.getText().toString());
-        outState.putString("card", a2.f20517a.getText().toString());
+        bundle.putString("name", a2.b.getText().toString());
+        bundle.putString("card", a2.f6911a.getText().toString());
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onViewStateRestored(Bundle bundle) {
         FmIdentifyFaceBinding a2;
         super.onViewStateRestored(bundle);
@@ -188,10 +181,9 @@ public final class IdentifyFaceFragment extends MVIBaseFragment<IdentifyFaceVM> 
         if (obj2 == null || !(obj2 instanceof String)) {
             return;
         }
-        a2.f20517a.getEditText().setText((CharSequence) obj2);
+        a2.f6911a.getEditText().setText((CharSequence) obj2);
     }
 
-    @Override // com.blued.android.module.common.base.mvi.MVIBaseFragment
     public void r() {
         super.r();
         DialogUtils.a(t());

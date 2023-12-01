@@ -16,13 +16,14 @@ import java.util.Set;
 public final class Recreator implements GenericLifecycleObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    private final SavedStateRegistryOwner f3367a;
+    private final SavedStateRegistryOwner f3319a;
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8756600-dex2jar.jar:androidx/savedstate/Recreator$SavedStateProvider.class */
-    static final class SavedStateProvider implements SavedStateRegistry.SavedStateProvider {
+    public static final class SavedStateProvider implements SavedStateRegistry.SavedStateProvider {
 
         /* renamed from: a  reason: collision with root package name */
-        final Set<String> f3368a = new HashSet();
+        final Set<String> f3320a = new HashSet();
 
         /* JADX INFO: Access modifiers changed from: package-private */
         public SavedStateProvider(SavedStateRegistry savedStateRegistry) {
@@ -31,20 +32,20 @@ public final class Recreator implements GenericLifecycleObserver {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         public void a(String str) {
-            this.f3368a.add(str);
+            this.f3320a.add(str);
         }
 
         @Override // androidx.savedstate.SavedStateRegistry.SavedStateProvider
         public Bundle saveState() {
             Bundle bundle = new Bundle();
-            bundle.putStringArrayList("classes_to_restore", new ArrayList<>(this.f3368a));
+            bundle.putStringArrayList("classes_to_restore", new ArrayList<>(this.f3320a));
             return bundle;
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public Recreator(SavedStateRegistryOwner savedStateRegistryOwner) {
-        this.f3367a = savedStateRegistryOwner;
+        this.f3319a = savedStateRegistryOwner;
     }
 
     private void a(String str) {
@@ -54,7 +55,7 @@ public final class Recreator implements GenericLifecycleObserver {
                 Constructor declaredConstructor = asSubclass.getDeclaredConstructor(new Class[0]);
                 declaredConstructor.setAccessible(true);
                 try {
-                    ((SavedStateRegistry.AutoRecreated) declaredConstructor.newInstance(new Object[0])).onRecreated(this.f3367a);
+                    ((SavedStateRegistry.AutoRecreated) declaredConstructor.newInstance(new Object[0])).onRecreated(this.f3319a);
                 } catch (Exception e) {
                     throw new RuntimeException("Failed to instantiate " + str, e);
                 }
@@ -72,7 +73,7 @@ public final class Recreator implements GenericLifecycleObserver {
             throw new AssertionError("Next event must be ON_CREATE");
         }
         lifecycleOwner.getLifecycle().removeObserver(this);
-        Bundle consumeRestoredStateForKey = this.f3367a.getSavedStateRegistry().consumeRestoredStateForKey("androidx.savedstate.Restarter");
+        Bundle consumeRestoredStateForKey = this.f3319a.getSavedStateRegistry().consumeRestoredStateForKey("androidx.savedstate.Restarter");
         if (consumeRestoredStateForKey == null) {
             return;
         }

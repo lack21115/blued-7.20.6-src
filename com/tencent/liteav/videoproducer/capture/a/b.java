@@ -8,13 +8,13 @@ import com.tencent.liteav.base.util.LiteavLog;
 public final /* synthetic */ class b implements Camera.AutoFocusCallback {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final b f36854a = new b();
+    private static final b f23163a = new b();
 
     private b() {
     }
 
     public static Camera.AutoFocusCallback a() {
-        return f36854a;
+        return f23163a;
     }
 
     @Override // android.hardware.Camera.AutoFocusCallback

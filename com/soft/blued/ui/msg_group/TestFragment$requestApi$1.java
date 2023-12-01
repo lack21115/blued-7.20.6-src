@@ -15,29 +15,27 @@ import kotlinx.coroutines.CoroutineScope;
 public final class TestFragment$requestApi$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
 
     /* renamed from: a  reason: collision with root package name */
-    Object f32623a;
+    Object f18932a;
     int b;
 
     /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ TestFragment f32624c;
+    final /* synthetic */ TestFragment f18933c;
     private /* synthetic */ Object d;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public TestFragment$requestApi$1(TestFragment testFragment, Continuation<? super TestFragment$requestApi$1> continuation) {
         super(2, continuation);
-        this.f32624c = testFragment;
+        this.f18933c = testFragment;
     }
 
-    @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-        return ((TestFragment$requestApi$1) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+        return create(coroutineScope, continuation).invokeSuspend(Unit.a);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        TestFragment$requestApi$1 testFragment$requestApi$1 = new TestFragment$requestApi$1(this.f32624c, continuation);
+        Continuation<Unit> testFragment$requestApi$1 = new TestFragment$requestApi$1(this.f18933c, continuation);
         testFragment$requestApi$1.d = obj;
         return testFragment$requestApi$1;
     }
@@ -45,7 +43,6 @@ public final class TestFragment$requestApi$1 extends SuspendLambda implements Fu
     /* JADX WARN: Removed duplicated region for block: B:29:0x017f  */
     /* JADX WARN: Removed duplicated region for block: B:33:0x01ae  */
     /* JADX WARN: Removed duplicated region for block: B:35:0x01b1  */
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences

@@ -4,11 +4,11 @@ package com.opos.mobad.i;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public final com.opos.cmn.func.b.b.d f26207a;
+    public final com.opos.cmn.func.b.b.d f12519a;
     public final String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final int f26208c;
+    public final int f12520c;
     public final String d;
     public final int e;
     public final String f;
@@ -16,17 +16,17 @@ public class a {
 
     /* renamed from: com.opos.mobad.i.a$a  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/opos/mobad/i/a$a.class */
-    public static class C0699a {
+    public static class C0529a {
 
         /* renamed from: a  reason: collision with root package name */
-        private com.opos.cmn.func.b.b.d f26209a;
+        private com.opos.cmn.func.b.b.d f12521a;
         private String b;
         private String d;
         private String f;
         private String g;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f26210c = -1;
+        private int f12522c = -1;
         private int e = 0;
 
         private boolean b(int i) {
@@ -43,28 +43,28 @@ public class a {
             return z;
         }
 
-        public C0699a a(int i) {
-            this.f26210c = i;
+        public C0529a a(int i) {
+            this.f12522c = i;
             return this;
         }
 
-        public C0699a a(com.opos.cmn.func.b.b.d dVar) {
-            this.f26209a = dVar;
+        public C0529a a(com.opos.cmn.func.b.b.d dVar) {
+            this.f12521a = dVar;
             return this;
         }
 
-        public C0699a a(String str) {
+        public C0529a a(String str) {
             this.b = str;
             return this;
         }
 
         public a a() throws Exception {
-            if (this.f26209a != null) {
-                if (b(this.f26210c)) {
-                    if (this.f26210c == 0 && com.opos.cmn.an.c.a.a(this.d)) {
+            if (this.f12521a != null) {
+                if (b(this.f12522c)) {
+                    if (this.f12522c == 0 && com.opos.cmn.an.c.a.a(this.d)) {
                         throw new NullPointerException("when saveType is SAVE_TYPE_OF_SDCARD.savePath can't be null.");
                     }
-                    int i = this.f26210c;
+                    int i = this.f12522c;
                     if ((1 == i || 2 == i) && com.opos.cmn.an.c.a.a(this.g)) {
                         throw new NullPointerException("when saveType is SAVE_TYPE_OF_APP_FILE or SAVE_TYPE_OF_APP_DIR_FILE.fileName can't be null.");
                     }
@@ -75,23 +75,23 @@ public class a {
             throw new NullPointerException("netRequest is null.");
         }
 
-        public C0699a b(String str) {
+        public C0529a b(String str) {
             this.d = str;
             return this;
         }
     }
 
-    public a(C0699a c0699a) {
-        this.f26207a = c0699a.f26209a;
-        this.b = c0699a.b;
-        this.f26208c = c0699a.f26210c;
-        this.d = c0699a.d;
-        this.e = c0699a.e;
-        this.f = c0699a.f;
-        this.g = c0699a.g;
+    public a(C0529a c0529a) {
+        this.f12519a = c0529a.f12521a;
+        this.b = c0529a.b;
+        this.f12520c = c0529a.f12522c;
+        this.d = c0529a.d;
+        this.e = c0529a.e;
+        this.f = c0529a.f;
+        this.g = c0529a.g;
     }
 
     public String toString() {
-        return "DownloadRequest{netRequest=" + this.f26207a + ", md5='" + this.b + "', saveType=" + this.f26208c + ", savePath='" + this.d + "', mode=" + this.e + ", dir='" + this.f + "', fileName='" + this.g + "'}";
+        return "DownloadRequest{netRequest=" + this.f12519a + ", md5='" + this.b + "', saveType=" + this.f12520c + ", savePath='" + this.d + "', mode=" + this.e + ", dir='" + this.f + "', fileName='" + this.g + "'}";
     }
 }

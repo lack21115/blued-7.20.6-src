@@ -23,7 +23,7 @@ public final class b implements OAuthListener {
         Log.d("MicroMsg.SDK.ListenerWrapper", String.format("onAuthFinish, errCode = %s, authCode = %s", oAuthErrCode.toString(), str));
         a.c(this.f);
         ArrayList<OAuthListener> arrayList = new ArrayList();
-        list = this.f.f38173c;
+        list = this.f.f24482c;
         arrayList.addAll(list);
         for (OAuthListener oAuthListener : arrayList) {
             oAuthListener.onAuthFinish(oAuthErrCode, str);
@@ -35,7 +35,7 @@ public final class b implements OAuthListener {
         List list;
         Log.d("MicroMsg.SDK.ListenerWrapper", "onAuthGotQrcode, qrcodeImgPath = " + str);
         ArrayList<OAuthListener> arrayList = new ArrayList();
-        list = this.f.f38173c;
+        list = this.f.f24482c;
         arrayList.addAll(list);
         for (OAuthListener oAuthListener : arrayList) {
             oAuthListener.onAuthGotQrcode(str, bArr);

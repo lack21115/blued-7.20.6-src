@@ -7,7 +7,6 @@ import android.content.pm.PackageInfo;
 import android.os.Build;
 import android.os.Process;
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.tmsbeacon.a.d.a;
 import java.util.Date;
 
@@ -15,11 +14,11 @@ import java.util.Date;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f39471a;
+    public static String f25780a;
     public static int b = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    public static String f39472c = "";
+    public static String f25781c = "";
     public static boolean d = false;
     private static String e;
     private static boolean f = false;
@@ -34,29 +33,29 @@ public class b {
         public final /* synthetic */ com.tencent.tmsbeacon.a.d.a b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ String f39473c;
+        public final /* synthetic */ String f25782c;
         public final /* synthetic */ long d;
 
         public a(com.tencent.tmsbeacon.a.d.a aVar, String str, long j) {
             this.b = aVar;
-            this.f39473c = str;
+            this.f25782c = str;
             this.d = j;
         }
 
         @Override // java.lang.Runnable
         public void run() {
-            a.SharedPreferences$EditorC1031a edit = this.b.edit();
+            a.SharedPreferences$EditorC0861a edit = this.b.edit();
             if (com.tencent.tmsbeacon.base.util.b.a((SharedPreferences.Editor) edit)) {
-                edit.putLong(this.f39473c, this.d);
+                edit.putLong(this.f25782c, this.d);
             }
         }
     }
 
     public static String a() {
-        if (f39471a == null) {
-            f39471a = e();
+        if (f25780a == null) {
+            f25780a = e();
         }
-        return f39471a;
+        return f25780a;
     }
 
     public static String a(Context context) {
@@ -309,16 +308,16 @@ public class b {
     }
 
     public static String d() {
-        if ("".equals(f39472c)) {
+        if ("".equals(f25781c)) {
             if (b == 0) {
                 b = Process.myPid();
             }
-            f39472c += b + BridgeUtil.UNDERLINE_STR;
-            String str = f39472c + new Date().getTime();
-            f39472c = str;
+            f25781c += b + "_";
+            String str = f25781c + new Date().getTime();
+            f25781c = str;
             return str;
         }
-        return f39472c;
+        return f25781c;
     }
 
     public static boolean d(Context context) {
@@ -333,7 +332,7 @@ public class b {
                 String string = a2.getString("APPVER_DENGTA", "");
                 String a3 = a();
                 if (string.isEmpty() || !string.equals(a3)) {
-                    a.SharedPreferences$EditorC1031a edit = a2.edit();
+                    a.SharedPreferences$EditorC0861a edit = a2.edit();
                     z = true;
                     if (com.tencent.tmsbeacon.base.util.b.a((SharedPreferences.Editor) edit)) {
                         edit.putString("APPVER_DENGTA", a3);
@@ -428,7 +427,7 @@ public class b {
                 String string = a2.getString("APPKEY_DENGTA", "");
                 String f2 = c.d().f();
                 if (TextUtils.isEmpty(string) || !f2.equals(string)) {
-                    a.SharedPreferences$EditorC1031a edit = a2.edit();
+                    a.SharedPreferences$EditorC0861a edit = a2.edit();
                     z = true;
                     if (com.tencent.tmsbeacon.base.util.b.a((SharedPreferences.Editor) edit)) {
                         edit.putString("APPKEY_DENGTA", f2);
@@ -455,7 +454,7 @@ public class b {
                 return;
             }
             f = true;
-            a.SharedPreferences$EditorC1031a edit = a2.edit();
+            a.SharedPreferences$EditorC0861a edit = a2.edit();
             if (com.tencent.tmsbeacon.base.util.b.a((SharedPreferences.Editor) edit)) {
                 edit.putString("APPVER_DENGTA", a3);
             }

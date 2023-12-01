@@ -14,11 +14,11 @@ import org.xmlpull.v1.XmlPullParser;
 public class a implements a.w {
 
     /* renamed from: a  reason: collision with root package name */
-    protected com.zk_oaction.adengine.lk_sdk.c f42014a;
+    protected com.zk_oaction.adengine.lk_sdk.c f28323a;
     public Paint b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f42015c;
+    private String f28324c;
     private com.zk_oaction.adengine.lk_expression.a d;
     private int e;
     private String f;
@@ -31,12 +31,12 @@ public class a implements a.w {
     private Handler n;
     private boolean p;
     private volatile boolean k = false;
-    private Runnable o = new RunnableC1113a();
+    private Runnable o = new RunnableC0943a();
 
     /* renamed from: com.zk_oaction.adengine.lk_view.a$a  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/zk_oaction/adengine/lk_view/a$a.class */
-    class RunnableC1113a implements Runnable {
-        RunnableC1113a() {
+    class RunnableC0943a implements Runnable {
+        RunnableC0943a() {
         }
 
         @Override // java.lang.Runnable
@@ -76,7 +76,7 @@ public class a implements a.w {
     }
 
     public a(com.zk_oaction.adengine.lk_sdk.c cVar) {
-        this.f42014a = cVar;
+        this.f28323a = cVar;
         cVar.h.add(this);
         HandlerThread handlerThread = new HandlerThread("brush_paint");
         this.m = handlerThread;
@@ -86,10 +86,10 @@ public class a implements a.w {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void a(int i) {
-        if (TextUtils.isEmpty(this.f42015c)) {
+        if (TextUtils.isEmpty(this.f28324c)) {
             return;
         }
-        this.f42014a.n.a(this.f42015c + ".wipe", "" + i);
+        this.f28323a.n.a(this.f28324c + ".wipe", "" + i);
     }
 
     public void a() {
@@ -135,9 +135,9 @@ public class a implements a.w {
 
     public boolean a(XmlPullParser xmlPullParser) {
         try {
-            this.f42015c = xmlPullParser.getAttributeValue(null, "name");
-            this.d = new com.zk_oaction.adengine.lk_expression.a(this.f42014a, "weight", xmlPullParser.getAttributeValue(null, "weight"), 0.0f, this, true);
-            this.g = new com.zk_oaction.adengine.lk_expression.a(this.f42014a, "clear_percent", xmlPullParser.getAttributeValue(null, "clear_percent"), 60.0f, this, false);
+            this.f28324c = xmlPullParser.getAttributeValue(null, "name");
+            this.d = new com.zk_oaction.adengine.lk_expression.a(this.f28323a, "weight", xmlPullParser.getAttributeValue(null, "weight"), 0.0f, this, true);
+            this.g = new com.zk_oaction.adengine.lk_expression.a(this.f28323a, "clear_percent", xmlPullParser.getAttributeValue(null, "clear_percent"), 60.0f, this, false);
             String attributeValue = xmlPullParser.getAttributeValue(null, "color");
             String attributeValue2 = xmlPullParser.getAttributeValue(null, "xfermode");
             if (!TextUtils.isEmpty(attributeValue)) {

@@ -9,6 +9,7 @@ import com.cdo.oaps.ad.OapsKey;
 import com.google.android.material.timepicker.TimeModel;
 import com.uc.crashsdk.JNIBridge;
 import com.umeng.analytics.pro.bh;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -20,11 +21,11 @@ import java.util.Map;
 public class h {
 
     /* renamed from: a  reason: collision with root package name */
-    static final /* synthetic */ boolean f40570a = !h.class.desiredAssertionStatus();
+    static final /* synthetic */ boolean f26879a = !h.class.desiredAssertionStatus();
     private static final Object b = new Object();
 
     /* renamed from: c  reason: collision with root package name */
-    private static final Map<String, String> f40571c = new HashMap();
+    private static final Map<String, String> f26880c = new HashMap();
     private static int d = 0;
     private static final Map<String, a> e = new HashMap();
     private static final Object f = new Object();
@@ -40,11 +41,11 @@ public class h {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        long f40572a = 0;
+        long f26881a = 0;
         int b = 0;
 
         /* renamed from: c  reason: collision with root package name */
-        Map<String, String> f40573c = new HashMap();
+        Map<String, String> f26882c = new HashMap();
         private String d;
         private boolean e;
         private boolean f;
@@ -62,7 +63,7 @@ public class h {
         }
 
         final String a(String str) {
-            return this.f40573c.get(str);
+            return this.f26882c.get(str);
         }
 
         final String a(boolean z, boolean z2, boolean z3) {
@@ -73,7 +74,7 @@ public class h {
             if (z) {
                 h.b(sb, "lt", "uc");
                 h.b(sb, "pre", com.uc.crashsdk.g.e());
-                h.b(sb, "pkg", com.uc.crashsdk.a.f40557a);
+                h.b(sb, "pkg", com.uc.crashsdk.a.f26866a);
                 h.b(sb, "rom", Build.VERSION.RELEASE);
                 h.b(sb, "brd", Build.BRAND);
                 h.b(sb, "model", Build.MODEL);
@@ -106,9 +107,9 @@ public class h {
                 sb.append("\n");
             }
             h.b(sb, "lt", this.d);
-            h.a(sb, this.f40573c);
+            h.a(sb, this.f26882c);
             if (this.e && !z2) {
-                long j = this.f40572a;
+                long j = this.f26881a;
                 if (j != 0) {
                     h.b(sb, "up", String.valueOf(j));
                 }
@@ -131,7 +132,7 @@ public class h {
         }
 
         final void a(String str, String str2) {
-            this.f40573c.put(str, str2);
+            this.f26882c.put(str, str2);
         }
 
         final boolean a(a aVar) {
@@ -139,7 +140,7 @@ public class h {
                 com.uc.crashsdk.a.a.a("crashsdk", String.format(Locale.US, "WaItem '%s' is not mergable!", this.d), null);
                 return false;
             }
-            for (String str : aVar.f40573c.keySet()) {
+            for (String str : aVar.f26882c.keySet()) {
                 if (str.startsWith("c_")) {
                     a(str, aVar.a(str));
                 } else {
@@ -186,10 +187,10 @@ public class h {
             }
             String str5 = this.d;
             if (str5 == null || str5.equals(str2)) {
-                this.f40572a = j;
+                this.f26881a = j;
                 this.b = i;
                 this.d = str2;
-                this.f40573c = hashMap;
+                this.f26882c = hashMap;
                 return true;
             }
             return false;
@@ -268,9 +269,9 @@ public class h {
     }
 
     private static void a(a aVar) {
-        synchronized (f40571c) {
-            for (String str : f40571c.keySet()) {
-                aVar.a(str, f40571c.get(str));
+        synchronized (f26880c) {
+            for (String str : f26880c.keySet()) {
+                aVar.a(str, f26880c.get(str));
             }
         }
     }
@@ -371,16 +372,16 @@ public class h {
 
     public static boolean a(String str, String str2) {
         try {
-            String str3 = "c_" + str.replaceAll("[^0-9a-zA-Z-_]", "-");
-            String replaceAll = g.a(str2) ? "" : str2.replaceAll("[`=]", "-");
-            synchronized (f40571c) {
-                if (f40571c.get(str3) == null) {
+            String str3 = "c_" + str.replaceAll("[^0-9a-zA-Z-_]", Constants.ACCEPT_TIME_SEPARATOR_SERVER);
+            String replaceAll = g.a(str2) ? "" : str2.replaceAll("[`=]", Constants.ACCEPT_TIME_SEPARATOR_SERVER);
+            synchronized (f26880c) {
+                if (f26880c.get(str3) == null) {
                     if (d >= 20) {
                         return false;
                     }
                     d++;
                 }
-                f40571c.put(str3, replaceAll);
+                f26880c.put(str3, replaceAll);
                 return true;
             }
         } catch (Throwable th) {
@@ -445,7 +446,7 @@ public class h {
     public static boolean b(int i2, Object[] objArr) {
         switch (i2) {
             case 351:
-                if (f40570a || objArr != null) {
+                if (f26879a || objArr != null) {
                     String str = (String) objArr[0];
                     int intValue = ((Integer) objArr[1]).intValue();
                     if (intValue == 1) {
@@ -488,17 +489,17 @@ public class h {
                 }
                 throw new AssertionError();
             case 352:
-                if (f40570a || objArr != null) {
+                if (f26879a || objArr != null) {
                     return d((String) objArr[0]);
                 }
                 throw new AssertionError();
             case 353:
-                if (f40570a || objArr != null) {
+                if (f26879a || objArr != null) {
                     return b((String) objArr[0], (String) objArr[1], ((Boolean) objArr[2]).booleanValue(), ((Boolean) objArr[3]).booleanValue());
                 }
                 throw new AssertionError();
             case 354:
-                if (f40570a || objArr != null) {
+                if (f26879a || objArr != null) {
                     File file2 = new File((String) objArr[0]);
                     boolean c3 = c(com.uc.crashsdk.e.q(), a((Iterable<a>) a(file2, "cst", 30), true, false).toString());
                     if (c3) {

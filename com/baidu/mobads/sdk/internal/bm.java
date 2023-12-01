@@ -7,7 +7,7 @@ public enum bm {
     
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f9347c = "msg";
+    public static final String f6507c = "msg";
     private int d;
     private String e;
 

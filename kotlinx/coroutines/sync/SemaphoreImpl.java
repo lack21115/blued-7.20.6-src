@@ -25,15 +25,11 @@ public final class SemaphoreImpl implements Semaphore {
     private final Function1<Throwable, Unit> g;
     private volatile /* synthetic */ Object head;
     private volatile /* synthetic */ Object tail;
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final /* synthetic */ AtomicReferenceFieldUpdater f43635c = AtomicReferenceFieldUpdater.newUpdater(SemaphoreImpl.class, Object.class, "head");
+    private static final /* synthetic */ AtomicReferenceFieldUpdater c = AtomicReferenceFieldUpdater.newUpdater(SemaphoreImpl.class, Object.class, "head");
     private static final /* synthetic */ AtomicLongFieldUpdater d = AtomicLongFieldUpdater.newUpdater(SemaphoreImpl.class, "deqIdx");
     private static final /* synthetic */ AtomicReferenceFieldUpdater e = AtomicReferenceFieldUpdater.newUpdater(SemaphoreImpl.class, Object.class, "tail");
     private static final /* synthetic */ AtomicLongFieldUpdater f = AtomicLongFieldUpdater.newUpdater(SemaphoreImpl.class, "enqIdx");
-
-    /* renamed from: a  reason: collision with root package name */
-    static final /* synthetic */ AtomicIntegerFieldUpdater f43634a = AtomicIntegerFieldUpdater.newUpdater(SemaphoreImpl.class, "_availablePermits");
+    static final /* synthetic */ AtomicIntegerFieldUpdater a = AtomicIntegerFieldUpdater.newUpdater(SemaphoreImpl.class, "_availablePermits");
 
     public SemaphoreImpl(int i, int i2) {
         this.b = i;
@@ -60,7 +56,7 @@ public final class SemaphoreImpl implements Semaphore {
             @Override // kotlin.jvm.functions.Function1
             public /* synthetic */ Unit invoke(Throwable th) {
                 a(th);
-                return Unit.f42314a;
+                return Unit.a;
             }
         };
     }
@@ -88,8 +84,8 @@ public final class SemaphoreImpl implements Semaphore {
         CancellableContinuationImpl cancellableContinuationImpl = a2;
         while (true) {
             if (!a((CancellableContinuation<? super Unit>) cancellableContinuationImpl)) {
-                if (f43634a.getAndDecrement(this) > 0) {
-                    cancellableContinuationImpl.a((CancellableContinuationImpl) Unit.f42314a, this.g);
+                if (a.getAndDecrement(this) > 0) {
+                    cancellableContinuationImpl.a((CancellableContinuationImpl) Unit.a, this.g);
                     break;
                 }
             } else {
@@ -100,7 +96,7 @@ public final class SemaphoreImpl implements Semaphore {
         if (h == IntrinsicsKt.a()) {
             DebugProbesKt.c(continuation);
         }
-        return h == IntrinsicsKt.a() ? h : Unit.f42314a;
+        return h == IntrinsicsKt.a() ? h : Unit.a;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:18:0x0088, code lost:
@@ -121,7 +117,7 @@ public final class SemaphoreImpl implements Semaphore {
     }
 
     private final boolean b(CancellableContinuation<? super Unit> cancellableContinuation) {
-        Object a2 = cancellableContinuation.a(Unit.f42314a, null, this.g);
+        Object a2 = cancellableContinuation.a(Unit.a, null, this.g);
         if (a2 == null) {
             return false;
         }
@@ -132,10 +128,10 @@ public final class SemaphoreImpl implements Semaphore {
     @Override // kotlinx.coroutines.sync.Semaphore
     public Object a(Continuation<? super Unit> continuation) {
         Object b;
-        if (f43634a.getAndDecrement(this) <= 0 && (b = b(continuation)) == IntrinsicsKt.a()) {
+        if (a.getAndDecrement(this) <= 0 && (b = b(continuation)) == IntrinsicsKt.a()) {
             return b;
         }
-        return Unit.f42314a;
+        return Unit.a;
     }
 
     @Override // kotlinx.coroutines.sync.Semaphore
@@ -145,7 +141,7 @@ public final class SemaphoreImpl implements Semaphore {
             if (!(i < this.b)) {
                 throw new IllegalStateException(Intrinsics.a("The number of released permits cannot be greater than ", (Object) Integer.valueOf(this.b)).toString());
             }
-            if (f43634a.compareAndSet(this, i, i + 1) && (i >= 0 || b())) {
+            if (a.compareAndSet(this, i, i + 1) && (i >= 0 || b())) {
                 return;
             }
         }

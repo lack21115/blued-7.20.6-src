@@ -158,7 +158,7 @@ public final class BitMatrix implements Cloneable {
     }
 
     /* renamed from: clone */
-    public BitMatrix m6854clone() {
+    public BitMatrix m3847clone() {
         return new BitMatrix(this.width, this.height, this.rowSize, (int[]) this.bits.clone());
     }
 
@@ -418,7 +418,7 @@ public final class BitMatrix implements Cloneable {
         int[] bitArray2 = bitArray.getBitArray();
         int[] iArr = this.bits;
         int i2 = this.rowSize;
-        System.arraycopy((Object) bitArray2, 0, (Object) iArr, i * i2, i2);
+        System.arraycopy(bitArray2, 0, iArr, i * i2, i2);
     }
 
     public String toString() {

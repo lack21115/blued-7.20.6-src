@@ -8,11 +8,11 @@ import com.umeng.commonsdk.config.FieldManager;
 public class j extends a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f40927a = "utdid";
+    private static final String f27236a = "utdid";
     private Context b;
 
     public j(Context context) {
-        super("utdid");
+        super(f27236a);
         this.b = context;
     }
 

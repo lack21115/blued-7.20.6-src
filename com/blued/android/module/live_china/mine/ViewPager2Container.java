@@ -2,7 +2,6 @@ package com.blued.android.module.live_china.mine;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.view.View;
 import android.view.ViewParent;
 import android.widget.RelativeLayout;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,13 +13,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/mine/ViewPager2Container.class */
 public final class ViewPager2Container extends RelativeLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private ViewPager2 f13879a;
+    private ViewPager2 a;
     private boolean b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f13880c;
+    private int c;
     private int d;
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
@@ -47,7 +42,7 @@ public final class ViewPager2Container extends RelativeLayout {
     }
 
     private final void a(int i, int i2, int i3) {
-        ViewPager2 viewPager2 = this.f13879a;
+        ViewPager2 viewPager2 = this.a;
         RecyclerView.Adapter adapter = null;
         if ((viewPager2 == null ? null : viewPager2.getAdapter()) == null) {
             return;
@@ -60,34 +55,34 @@ public final class ViewPager2Container extends RelativeLayout {
             }
             return;
         }
-        ViewPager2 viewPager22 = this.f13879a;
+        ViewPager2 viewPager22 = this.a;
         Integer valueOf = viewPager22 == null ? null : Integer.valueOf(viewPager22.getCurrentItem());
-        ViewPager2 viewPager23 = this.f13879a;
+        ViewPager2 viewPager23 = this.a;
         if (viewPager23 != null) {
             adapter = viewPager23.getAdapter();
         }
         Intrinsics.a(adapter);
         int itemCount = adapter.getItemCount();
-        if (valueOf != null && valueOf.intValue() == 0 && i - this.f13880c > 0) {
+        if (valueOf != null && valueOf.intValue() == 0 && i - this.c > 0) {
             getParent().requestDisallowInterceptTouchEvent(false);
             return;
         }
         ViewParent parent = getParent();
-        if (valueOf == null || valueOf.intValue() != itemCount - 1 || i - this.f13880c >= 0) {
+        if (valueOf == null || valueOf.intValue() != itemCount - 1 || i - this.c >= 0) {
             z = true;
         }
         parent.requestDisallowInterceptTouchEvent(z);
     }
 
     private final void b(int i, int i2, int i3) {
-        ViewPager2 viewPager2 = this.f13879a;
+        ViewPager2 viewPager2 = this.a;
         RecyclerView.Adapter adapter = null;
         if ((viewPager2 == null ? null : viewPager2.getAdapter()) == null) {
             return;
         }
-        ViewPager2 viewPager22 = this.f13879a;
+        ViewPager2 viewPager22 = this.a;
         Integer valueOf = viewPager22 == null ? null : Integer.valueOf(viewPager22.getCurrentItem());
-        ViewPager2 viewPager23 = this.f13879a;
+        ViewPager2 viewPager23 = this.a;
         if (viewPager23 != null) {
             adapter = viewPager23.getAdapter();
         }
@@ -120,14 +115,14 @@ public final class ViewPager2Container extends RelativeLayout {
             if (i2 >= childCount) {
                 break;
             }
-            View childAt = getChildAt(i2);
+            ViewPager2 childAt = getChildAt(i2);
             if (childAt instanceof ViewPager2) {
-                this.f13879a = (ViewPager2) childAt;
+                this.a = childAt;
                 break;
             }
             i = i2 + 1;
         }
-        if (this.f13879a == null) {
+        if (this.a == null) {
             throw new IllegalStateException("The root child of ViewPager2Container must contains a ViewPager2");
         }
     }

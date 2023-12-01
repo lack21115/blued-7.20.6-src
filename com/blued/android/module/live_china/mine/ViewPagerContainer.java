@@ -2,7 +2,6 @@ package com.blued.android.module.live_china.mine;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.view.View;
 import android.widget.RelativeLayout;
 import androidx.viewpager.widget.ViewPager;
 import kotlin.Metadata;
@@ -12,13 +11,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/mine/ViewPagerContainer.class */
 public final class ViewPagerContainer extends RelativeLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private ViewPager f13881a;
+    private ViewPager a;
     private boolean b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f13882c;
+    private int c;
     private int d;
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
@@ -70,14 +65,14 @@ public final class ViewPagerContainer extends RelativeLayout {
             if (i2 >= childCount) {
                 break;
             }
-            View childAt = getChildAt(i2);
+            ViewPager childAt = getChildAt(i2);
             if (childAt instanceof ViewPager) {
-                this.f13881a = (ViewPager) childAt;
+                this.a = childAt;
                 break;
             }
             i = i2 + 1;
         }
-        if (this.f13881a == null) {
+        if (this.a == null) {
             throw new IllegalStateException("The root child of ViewPager2Container must contains a ViewPager2");
         }
     }

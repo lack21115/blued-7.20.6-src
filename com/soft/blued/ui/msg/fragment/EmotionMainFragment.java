@@ -26,11 +26,11 @@ import java.util.List;
 public class EmotionMainFragment extends BaseViewPagerParentFragment {
 
     /* renamed from: a  reason: collision with root package name */
-    private CommonTopTitleNoTrans f32350a;
+    private CommonTopTitleNoTrans f18660a;
     private CardView b;
 
     /* renamed from: c  reason: collision with root package name */
-    private CardView f32351c;
+    private CardView f18661c;
     private int d = 0;
     private boolean e = false;
     private boolean f = false;
@@ -52,11 +52,11 @@ public class EmotionMainFragment extends BaseViewPagerParentFragment {
     public void b() {
         if (this.d == 0) {
             this.b.setCardBackgroundColor(BluedSkinUtils.a(getActivity(), 2131102361));
-            this.f32351c.setCardBackgroundColor(0);
+            this.f18661c.setCardBackgroundColor(0);
             return;
         }
         this.b.setCardBackgroundColor(0);
-        this.f32351c.setCardBackgroundColor(BluedSkinUtils.a(getActivity(), 2131102361));
+        this.f18661c.setCardBackgroundColor(BluedSkinUtils.a(getActivity(), 2131102361));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -71,37 +71,34 @@ public class EmotionMainFragment extends BaseViewPagerParentFragment {
         getActivity().finish();
     }
 
-    @Override // com.blued.android.module.common.fragment.BaseViewPagerParentFragment
     public void a() {
         this.j.add(new EmotionMallListFragment());
         this.j.add(new EmotionMineListFragment());
     }
 
-    @Override // com.blued.android.module.common.fragment.BaseViewPagerParentFragment
     public BaseFragment b(int i) {
         return i == 1 ? new EmotionMineListFragment() : new EmotionMallListFragment();
     }
 
-    @Override // com.blued.android.module.common.fragment.BaseViewPagerParentFragment, com.blued.android.framework.ui.SimpleFragment
     public void onInitView() {
         super.onInitView();
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.rootView.findViewById(R.id.emotion_mall_title);
-        this.f32350a = commonTopTitleNoTrans;
-        commonTopTitleNoTrans.setLeftClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.fragment.-$$Lambda$EmotionMainFragment$QFVO20coHA_2Tp8b4O_PX3OiyJo
+        CommonTopTitleNoTrans findViewById = this.rootView.findViewById(R.id.emotion_mall_title);
+        this.f18660a = findViewById;
+        findViewById.setLeftClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.fragment.-$$Lambda$EmotionMainFragment$QFVO20coHA_2Tp8b4O_PX3OiyJo
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 EmotionMainFragment.this.c(view);
             }
         });
         this.b = (CardView) this.rootView.findViewById(R.id.emotion_mall_tab_mall);
-        this.f32351c = (CardView) this.rootView.findViewById(2131363348);
+        this.f18661c = (CardView) this.rootView.findViewById(R.id.emotion_mall_tab_mine);
         this.b.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.fragment.-$$Lambda$EmotionMainFragment$Em7Q1eJlPykhBWCu916mjS0hnKo
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 EmotionMainFragment.this.b(view);
             }
         });
-        this.f32351c.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.fragment.-$$Lambda$EmotionMainFragment$HiAfed4tkIkFo0oIFpgLX7tjh0M
+        this.f18661c.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.fragment.-$$Lambda$EmotionMainFragment$HiAfed4tkIkFo0oIFpgLX7tjh0M
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 EmotionMainFragment.this.a(view);
@@ -125,20 +122,17 @@ public class EmotionMainFragment extends BaseViewPagerParentFragment {
         b();
     }
 
-    @Override // com.blued.android.module.common.fragment.BaseViewPagerParentFragment, com.blued.android.framework.ui.SimpleFragment
     public void onInitViewFinished() {
         super.onInitViewFinished();
         this.h.setCurrentItem(this.d, false);
     }
 
-    @Override // com.blued.android.framework.ui.SimpleFragment
     public void onLoadData() {
         super.onLoadData();
         EmotionDataManager.a().d();
         showLoading();
         ChatHttpUtils.d(new BluedUIHttpResponse<BluedEntityA<EmotionListItemModel>>(getFragmentActive()) { // from class: com.soft.blued.ui.msg.fragment.EmotionMainFragment.2
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<EmotionListItemModel> bluedEntityA) {
                 if (bluedEntityA != null && bluedEntityA.hasData()) {
@@ -151,12 +145,12 @@ public class EmotionMainFragment extends BaseViewPagerParentFragment {
                     }
                     if (EmotionMainFragment.this.f) {
                         for (EmotionListItemModel emotionListItemModel2 : EmotionDataManager.a().c()) {
-                            Iterator<EmotionListItemModel> it = bluedEntityA.data.iterator();
+                            Iterator it = bluedEntityA.data.iterator();
                             while (true) {
                                 if (it.hasNext()) {
-                                    EmotionListItemModel next = it.next();
-                                    if (StringUtils.a(next.code, emotionListItemModel2.code)) {
-                                        emotionListItemModel2.downloadState = next.downloadState;
+                                    EmotionListItemModel emotionListItemModel3 = (EmotionListItemModel) it.next();
+                                    if (StringUtils.a(emotionListItemModel3.code, emotionListItemModel2.code)) {
+                                        emotionListItemModel2.downloadState = emotionListItemModel3.downloadState;
                                         break;
                                     }
                                 }
@@ -170,7 +164,6 @@ public class EmotionMainFragment extends BaseViewPagerParentFragment {
                 EmotionMainFragment.this.e = true;
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 super.onUIFinish();
                 EmotionMainFragment.this.e = true;
@@ -182,7 +175,6 @@ public class EmotionMainFragment extends BaseViewPagerParentFragment {
         });
         ChatHttpUtils.c(new BluedUIHttpResponse<BluedEntityA<EmotionListItemModel>>(getFragmentActive()) { // from class: com.soft.blued.ui.msg.fragment.EmotionMainFragment.3
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<EmotionListItemModel> bluedEntityA) {
                 if (bluedEntityA != null && bluedEntityA.data != null) {
@@ -205,7 +197,6 @@ public class EmotionMainFragment extends BaseViewPagerParentFragment {
                 EmotionMainFragment.this.f = true;
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 super.onUIFinish();
                 EmotionMainFragment.this.f = true;
@@ -217,13 +208,11 @@ public class EmotionMainFragment extends BaseViewPagerParentFragment {
         });
     }
 
-    @Override // com.blued.android.framework.ui.SimpleFragment
     public void onParseArguments() {
         super.onParseArguments();
         this.d = this.args.getInt("index");
     }
 
-    @Override // com.blued.android.framework.ui.SimpleFragment
     public int onSetRootViewId() {
         return R.layout.fragment_emotion_main;
     }

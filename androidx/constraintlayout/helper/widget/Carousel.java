@@ -21,7 +21,7 @@ public class Carousel extends MotionHelper {
     private int C;
 
     /* renamed from: a  reason: collision with root package name */
-    int f2153a;
+    int f2105a;
     Runnable b;
     private Adapter d;
     private final ArrayList<View> e;
@@ -67,7 +67,7 @@ public class Carousel extends MotionHelper {
         this.A = 2.0f;
         this.B = -1;
         this.C = 200;
-        this.f2153a = -1;
+        this.f2105a = -1;
         this.b = new Runnable() { // from class: androidx.constraintlayout.helper.widget.Carousel.1
             @Override // java.lang.Runnable
             public void run() {
@@ -113,7 +113,7 @@ public class Carousel extends MotionHelper {
         this.A = 2.0f;
         this.B = -1;
         this.C = 200;
-        this.f2153a = -1;
+        this.f2105a = -1;
         this.b = new Runnable() { // from class: androidx.constraintlayout.helper.widget.Carousel.1
             @Override // java.lang.Runnable
             public void run() {
@@ -160,7 +160,7 @@ public class Carousel extends MotionHelper {
         this.A = 2.0f;
         this.B = -1;
         this.C = 200;
-        this.f2153a = -1;
+        this.f2105a = -1;
         this.b = new Runnable() { // from class: androidx.constraintlayout.helper.widget.Carousel.1
             @Override // java.lang.Runnable
             public void run() {
@@ -414,7 +414,7 @@ public class Carousel extends MotionHelper {
 
     @Override // androidx.constraintlayout.motion.widget.MotionHelper, androidx.constraintlayout.motion.widget.MotionLayout.TransitionListener
     public void onTransitionChange(MotionLayout motionLayout, int i, int i2, float f) {
-        this.f2153a = i;
+        this.f2105a = i;
     }
 
     @Override // androidx.constraintlayout.motion.widget.MotionHelper, androidx.constraintlayout.motion.widget.MotionLayout.TransitionListener

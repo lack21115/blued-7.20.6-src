@@ -7,13 +7,9 @@ import android.widget.FrameLayout;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/ui/OwnNativeAdView.class */
 public class OwnNativeAdView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    int f6141a;
+    int a;
     int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    int f6142c;
+    int c;
     int d;
     int e;
     int f;
@@ -42,12 +38,12 @@ public class OwnNativeAdView extends FrameLayout {
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
         int action = motionEvent.getAction();
         if (action == 0) {
-            this.f6141a = (int) motionEvent.getRawX();
+            this.a = (int) motionEvent.getRawX();
             this.b = (int) motionEvent.getRawY();
             this.e = (int) motionEvent.getX();
             this.f = (int) motionEvent.getY();
         } else if (action == 1 || action == 3) {
-            this.f6142c = (int) motionEvent.getRawX();
+            this.c = (int) motionEvent.getRawX();
             this.d = (int) motionEvent.getRawY();
             this.g = (int) motionEvent.getX();
             this.h = (int) motionEvent.getY();
@@ -57,9 +53,9 @@ public class OwnNativeAdView extends FrameLayout {
 
     public com.anythink.basead.c.a getAdClickRecord() {
         com.anythink.basead.c.a aVar = new com.anythink.basead.c.a();
-        aVar.f5890a = this.f6141a;
+        aVar.a = this.a;
         aVar.b = this.b;
-        aVar.f5891c = this.f6142c;
+        aVar.c = this.c;
         aVar.d = this.d;
         aVar.e = this.e;
         aVar.f = this.f;

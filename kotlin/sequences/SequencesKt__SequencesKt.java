@@ -11,7 +11,7 @@ import kotlin.jvm.internal.Intrinsics;
 public class SequencesKt__SequencesKt extends SequencesKt__SequencesJVMKt {
     public static final <T> Sequence<T> a(final T t, Function1<? super T, ? extends T> nextFunction) {
         Intrinsics.e(nextFunction, "nextFunction");
-        return t == null ? EmptySequence.f42623a : new GeneratorSequence(new Function0<T>() { // from class: kotlin.sequences.SequencesKt__SequencesKt$generateSequence$2
+        return t == null ? EmptySequence.a : new GeneratorSequence(new Function0<T>() { // from class: kotlin.sequences.SequencesKt__SequencesKt$generateSequence$2
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {

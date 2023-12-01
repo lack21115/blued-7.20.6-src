@@ -7,6 +7,7 @@ import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -32,17 +33,12 @@ import com.blued.community.ui.send.model.ChildImageInfo;
 import com.blued.community.view.ScalableImageView;
 import com.blued.das.client.vote.VoteProtos;
 import com.bytedance.applog.tracker.Tracker;
-import com.igexin.push.config.c;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/send/fragment/PictureVoteEditFragment.class */
 public class PictureVoteEditFragment extends BaseFragment implements View.OnClickListener, View.OnTouchListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f20036a;
+    private Context a;
     private View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private CommonTopTitleNoTrans f20037c;
+    private CommonTopTitleNoTrans c;
     private View d;
     private FrameLayout e;
     private ScalableImageView f;
@@ -67,9 +63,9 @@ public class PictureVoteEditFragment extends BaseFragment implements View.OnClic
 
     private void a() {
         CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.b.findViewById(R.id.title);
-        this.f20037c = commonTopTitleNoTrans;
+        this.c = commonTopTitleNoTrans;
         commonTopTitleNoTrans.setLeftClickListener(this);
-        this.f20037c.setRightClickListener(this);
+        this.c.setRightClickListener(this);
         d();
     }
 
@@ -84,7 +80,7 @@ public class PictureVoteEditFragment extends BaseFragment implements View.OnClic
     private void b() {
         this.d = this.b.findViewById(R.id.layout_voting_pic);
         this.e = (FrameLayout) this.b.findViewById(R.id.layout_vote_left);
-        this.f = (ScalableImageView) this.b.findViewById(R.id.siv_left);
+        this.f = this.b.findViewById(R.id.siv_left);
         this.g = (ImageView) this.b.findViewById(R.id.iv_add_left);
         this.h = (ImageView) this.b.findViewById(R.id.iv_delete_left);
         this.i = (ShapeTextView) this.b.findViewById(R.id.stv_check_box_left);
@@ -92,7 +88,7 @@ public class PictureVoteEditFragment extends BaseFragment implements View.OnClic
         this.h.setOnClickListener(this);
         this.f.setOnTouchListener(this);
         this.j = (FrameLayout) this.b.findViewById(R.id.layout_vote_right);
-        this.k = (ScalableImageView) this.b.findViewById(R.id.siv_right);
+        this.k = this.b.findViewById(R.id.siv_right);
         this.l = (ImageView) this.b.findViewById(R.id.iv_add_right);
         this.m = (ImageView) this.b.findViewById(R.id.iv_delete_right);
         this.n = (ShapeTextView) this.b.findViewById(R.id.stv_check_box_right);
@@ -156,9 +152,9 @@ public class PictureVoteEditFragment extends BaseFragment implements View.OnClic
 
     private void d() {
         if (this.u == null || this.v == null) {
-            this.f20037c.setRightTextColor(R.color.nafio_u);
+            this.c.setRightTextColor(R.color.nafio_u);
         } else {
-            this.f20037c.setRightTextColor(R.color.nafio_a);
+            this.c.setRightTextColor(R.color.nafio_a);
         }
     }
 
@@ -189,14 +185,14 @@ public class PictureVoteEditFragment extends BaseFragment implements View.OnClic
             getActivity().finish();
             return;
         }
-        Context context = this.f20036a;
-        CommonAlertDialog.a(context, context.getResources().getString(R.string.picture_voting_close), this.f20036a.getResources().getString(R.string.picture_voting_close_tip), this.f20036a.getResources().getString(R.string.common_ok), new DialogInterface.OnClickListener() { // from class: com.blued.community.ui.send.fragment.PictureVoteEditFragment.1
+        Context context = this.a;
+        CommonAlertDialog.a(context, context.getResources().getString(R.string.picture_voting_close), this.a.getResources().getString(R.string.picture_voting_close_tip), this.a.getResources().getString(R.string.common_ok), new DialogInterface.OnClickListener() { // from class: com.blued.community.ui.send.fragment.PictureVoteEditFragment.1
             @Override // android.content.DialogInterface.OnClickListener
             public void onClick(DialogInterface dialogInterface, int i) {
                 Tracker.onClick(dialogInterface, i);
                 PictureVoteEditFragment.this.getActivity().finish();
             }
-        }, this.f20036a.getResources().getString(R.string.cancel), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
+        }, this.a.getResources().getString(R.string.cancel), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
     }
 
     private void g() {
@@ -217,7 +213,7 @@ public class PictureVoteEditFragment extends BaseFragment implements View.OnClic
 
     private void h() {
         this.w = true;
-        int measuredWidth = this.e.getMeasuredWidth() + DensityUtils.a(this.f20036a, 3.0f);
+        int measuredWidth = this.e.getMeasuredWidth() + DensityUtils.a(this.a, 3.0f);
         int measuredHeight = this.e.getMeasuredHeight() / 2;
         ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this.e, "scaleX", 0.5f);
         ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(this.e, "scaleY", 0.5f);
@@ -263,7 +259,7 @@ public class PictureVoteEditFragment extends BaseFragment implements View.OnClic
         AnimatorSet animatorSet4 = new AnimatorSet();
         animatorSet4.play(ofFloat13).with(ofFloat14).with(ofFloat15).with(ofFloat16);
         animatorSet4.setDuration(500L);
-        animatorSet4.setStartDelay(c.j);
+        animatorSet4.setStartDelay(1500L);
         animatorSet4.start();
         animatorSet4.addListener(new AnimatorListenerAdapter() { // from class: com.blued.community.ui.send.fragment.PictureVoteEditFragment.2
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
@@ -307,7 +303,7 @@ public class PictureVoteEditFragment extends BaseFragment implements View.OnClic
             } else if (id == R.id.iv_delete_left) {
                 this.t = 0;
                 this.u = null;
-                this.f.setImageDrawable(null);
+                this.f.setImageDrawable((Drawable) null);
                 this.g.setVisibility(0);
                 this.h.setVisibility(8);
                 e();
@@ -323,7 +319,7 @@ public class PictureVoteEditFragment extends BaseFragment implements View.OnClic
             } else if (id == R.id.iv_delete_right) {
                 this.t = 0;
                 this.v = null;
-                this.k.setImageDrawable(null);
+                this.k.setImageDrawable((Drawable) null);
                 this.l.setVisibility(0);
                 this.m.setVisibility(8);
                 e();
@@ -364,9 +360,9 @@ public class PictureVoteEditFragment extends BaseFragment implements View.OnClic
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.f20036a = getActivity();
+        this.a = getActivity();
         View view = this.b;
         if (view == null) {
             this.b = layoutInflater.inflate(R.layout.fragment_picture_vote_edit, viewGroup, false);
@@ -379,13 +375,13 @@ public class PictureVoteEditFragment extends BaseFragment implements View.OnClic
         return this.b;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onDestroy() {
         super.onDestroy();
         SelectPhotoManager.a().c().clear();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onResume() {
         super.onResume();
         c();

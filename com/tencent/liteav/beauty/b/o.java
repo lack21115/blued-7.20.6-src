@@ -6,10 +6,10 @@ import android.graphics.Bitmap;
 public final class o {
 
     /* renamed from: a  reason: collision with root package name */
-    public Bitmap f36397a;
+    public Bitmap f22706a;
     public float b;
 
     /* renamed from: c  reason: collision with root package name */
-    public float f36398c;
+    public float f22707c;
     public float d;
 }

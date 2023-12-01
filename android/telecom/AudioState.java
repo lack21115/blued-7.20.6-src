@@ -2,6 +2,7 @@ package android.telecom;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import com.huawei.hms.framework.network.grs.GrsBaseInfo;
 import java.util.Locale;
 
 /* loaded from: source-9557208-dex2jar.jar:android/telecom/AudioState.class */
@@ -43,7 +44,7 @@ public final class AudioState implements Parcelable {
 
     public static String audioRouteToString(int i) {
         if (i == 0 || (i & (-16)) != 0) {
-            return "UNKNOWN";
+            return GrsBaseInfo.CountryCodeSource.UNKNOWN;
         }
         StringBuffer stringBuffer = new StringBuffer();
         if ((i & 1) == 1) {

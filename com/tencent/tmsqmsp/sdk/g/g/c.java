@@ -7,7 +7,7 @@ import com.tencent.tmsqmsp.sdk.base.IVendorCallback;
 public class c implements com.tencent.tmsqmsp.sdk.base.b {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f39792a = null;
+    private Context f26101a = null;
     private IVendorCallback b = null;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/tmsqmsp/sdk/g/g/c$a.class */
@@ -20,7 +20,7 @@ public class c implements com.tencent.tmsqmsp.sdk.base.b {
             try {
                 Thread.sleep(1000L);
                 if (c.this.b != null) {
-                    c.this.b.onResult(b.a(), b.a(c.this.f39792a), b.b(c.this.f39792a));
+                    c.this.b.onResult(b.a(), b.a(c.this.f26101a), b.b(c.this.f26101a));
                 }
             } catch (Exception e) {
                 if (c.this.b != null) {
@@ -38,7 +38,7 @@ public class c implements com.tencent.tmsqmsp.sdk.base.b {
 
     @Override // com.tencent.tmsqmsp.sdk.base.b
     public void a(Context context, IVendorCallback iVendorCallback) {
-        this.f39792a = context;
+        this.f26101a = context;
         this.b = iVendorCallback;
         b.c(context);
     }

@@ -33,11 +33,11 @@ import java.util.Arrays;
 public class ClausePermissionFragment extends BaseFragment {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f34521a;
+    private Context f20830a;
     private BluedAlertDialog b;
 
     /* renamed from: c  reason: collision with root package name */
-    private BluedAlertDialog f34522c;
+    private BluedAlertDialog f20831c;
     private View d;
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -51,7 +51,7 @@ public class ClausePermissionFragment extends BaseFragment {
             return;
         }
         CommonConstants.d = true;
-        TerminalActivity.d(context, ClausePermissionFragment.class, null);
+        TerminalActivity.d(context, ClausePermissionFragment.class, (Bundle) null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -92,9 +92,9 @@ public class ClausePermissionFragment extends BaseFragment {
                 FirstActivity.a(context, false);
             }
         }, 3);
-        this.f34522c = a2;
+        this.f20831c = a2;
         a2.a(false);
-        TextView h = this.f34522c.h();
+        TextView h = this.f20831c.h();
         h.setMovementMethod(LinkMovementClickMethod.a());
         h.setText(StringUtils.a(StringUtils.a(StringUtils.a(StringUtils.a(new SpannableStringBuilder(h.getText().toString()), Arrays.asList(getResources().getStringArray(2130903100)), 2131102254), getString(2131890427), new View.OnClickListener() { // from class: com.soft.blued.ui.welcome.ClausePermissionFragment.3
             @Override // android.view.View.OnClickListener
@@ -112,7 +112,7 @@ public class ClausePermissionFragment extends BaseFragment {
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
-                WebViewShowInfoFragment.show(ClausePermissionFragment.this.f34521a, H5Url.a(83), 0);
+                WebViewShowInfoFragment.show(ClausePermissionFragment.this.f20830a, H5Url.a(83), 0);
             }
         }));
     }
@@ -159,15 +159,13 @@ public class ClausePermissionFragment extends BaseFragment {
         }));
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment
     public boolean isActivitySwipeBackEnable() {
         return false;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         Context context = getContext();
-        this.f34521a = context;
+        this.f20830a = context;
         b(context);
         View view = this.d;
         if (view == null) {
@@ -179,17 +177,16 @@ public class ClausePermissionFragment extends BaseFragment {
         return this.d;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
-        BluedAlertDialog bluedAlertDialog = this.f34522c;
+        BluedAlertDialog bluedAlertDialog = this.f20831c;
         if (bluedAlertDialog != null && bluedAlertDialog.isShowing()) {
-            this.f34522c.dismiss();
+            this.f20831c.dismiss();
         }
         BluedAlertDialog bluedAlertDialog2 = this.b;
         if (bluedAlertDialog2 != null && bluedAlertDialog2.isShowing()) {
             this.b.dismiss();
         }
-        this.f34522c = null;
+        this.f20831c = null;
         this.b = null;
         super.onDestroy();
     }

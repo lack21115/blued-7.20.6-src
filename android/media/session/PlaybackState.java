@@ -5,7 +5,6 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.SystemClock;
 import android.text.TextUtils;
-import com.alipay.sdk.util.i;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -473,7 +472,7 @@ public final class PlaybackState implements Parcelable {
         sb.append(", custom actions=").append(this.mCustomActions);
         sb.append(", active item id=").append(this.mActiveItemId);
         sb.append(", error=").append(this.mErrorMessage);
-        sb.append(i.d);
+        sb.append("}");
         return sb.toString();
     }
 

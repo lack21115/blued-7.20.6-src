@@ -10,13 +10,9 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 @DebugMetadata(b = "TickerChannels.kt", c = {84, 88, 94, 96}, d = "fixedPeriodTicker", e = "kotlinx.coroutines.channels.TickerChannelsKt")
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/channels/TickerChannelsKt$fixedPeriodTicker$1.class */
 public final class TickerChannelsKt$fixedPeriodTicker$1 extends ContinuationImpl {
-
-    /* renamed from: a  reason: collision with root package name */
-    long f43007a;
+    long a;
     long b;
-
-    /* renamed from: c  reason: collision with root package name */
-    Object f43008c;
+    Object c;
     /* synthetic */ Object d;
     int e;
 
@@ -27,10 +23,10 @@ public final class TickerChannelsKt$fixedPeriodTicker$1 extends ContinuationImpl
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        Object c2;
+        Object c;
         this.d = obj;
         this.e |= Integer.MIN_VALUE;
-        c2 = TickerChannelsKt.c(0L, 0L, null, this);
-        return c2;
+        c = TickerChannelsKt.c(0L, 0L, null, this);
+        return c;
     }
 }

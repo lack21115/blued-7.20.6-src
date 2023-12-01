@@ -7,9 +7,9 @@ public abstract class AfterFilter implements SerializeFilter {
     private static final Character COMMA = ',';
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final char writeAfter(JSONSerializer jSONSerializer, Object obj, char c2) {
+    public final char writeAfter(JSONSerializer jSONSerializer, Object obj, char c) {
         serializerLocal.set(jSONSerializer);
-        seperatorLocal.set(Character.valueOf(c2));
+        seperatorLocal.set(Character.valueOf(c));
         writeAfter(obj);
         serializerLocal.set(null);
         return seperatorLocal.get().charValue();

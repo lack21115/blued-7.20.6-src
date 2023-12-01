@@ -1,8 +1,5 @@
 package java.io;
 
-import androidx.constraintlayout.core.motion.utils.TypedValues;
-import com.baidu.mobads.sdk.api.IAdInterListener;
-import com.tencent.lbssearch.object.param.Geo2AddressParam;
 import dalvik.system.VMStack;
 import java.io.EmulatedFields;
 import java.lang.reflect.Array;
@@ -47,7 +44,7 @@ public class ObjectInputStream extends InputStream implements ObjectInput, Objec
 
         public abstract byte get(String str, byte b) throws IOException, IllegalArgumentException;
 
-        public abstract char get(String str, char c2) throws IOException, IllegalArgumentException;
+        public abstract char get(String str, char c) throws IOException, IllegalArgumentException;
 
         public abstract double get(String str, double d) throws IOException, IllegalArgumentException;
 
@@ -77,14 +74,14 @@ public class ObjectInputStream extends InputStream implements ObjectInput, Objec
     }
 
     static {
-        PRIMITIVE_CLASSES.put(TypedValues.Custom.S_BOOLEAN, Boolean.TYPE);
+        PRIMITIVE_CLASSES.put("boolean", Boolean.TYPE);
         PRIMITIVE_CLASSES.put("byte", Byte.TYPE);
         PRIMITIVE_CLASSES.put("char", Character.TYPE);
         PRIMITIVE_CLASSES.put("double", Double.TYPE);
-        PRIMITIVE_CLASSES.put(TypedValues.Custom.S_FLOAT, Float.TYPE);
-        PRIMITIVE_CLASSES.put(IAdInterListener.AdProdType.PRODUCT_INTERSTITIAL, Integer.TYPE);
+        PRIMITIVE_CLASSES.put("float", Float.TYPE);
+        PRIMITIVE_CLASSES.put("int", Integer.TYPE);
         PRIMITIVE_CLASSES.put("long", Long.TYPE);
-        PRIMITIVE_CLASSES.put(Geo2AddressParam.PoiOptions.ADDRESS_FORMAT_SHORT, Short.TYPE);
+        PRIMITIVE_CLASSES.put("short", Short.TYPE);
         PRIMITIVE_CLASSES.put("void", Void.TYPE);
         bootstrapLoader = Object.class.getClassLoader();
         systemLoader = ClassLoader.getSystemClassLoader();
@@ -1270,8 +1267,7 @@ public class ObjectInputStream extends InputStream implements ObjectInput, Objec
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    public Class<?> resolveClass(ObjectStreamClass objectStreamClass) throws IOException, ClassNotFoundException {
+    protected Class<?> resolveClass(ObjectStreamClass objectStreamClass) throws IOException, ClassNotFoundException {
         Class<?> forClass = objectStreamClass.forClass();
         Class<?> cls = forClass;
         if (forClass == null) {

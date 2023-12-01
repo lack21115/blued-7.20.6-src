@@ -14,11 +14,11 @@ import java.util.Set;
 public class WeConfigLoader implements ConfigLoader {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f36121a;
+    private Context f22430a;
     private SharedPreferences b;
 
     /* renamed from: c  reason: collision with root package name */
-    private WeConfig f36122c;
+    private WeConfig f22431c;
     private boolean d = false;
     private boolean e = false;
     private boolean f = false;
@@ -51,9 +51,9 @@ public class WeConfigLoader implements ConfigLoader {
         if (TextUtils.isEmpty(str)) {
             throw new IllegalArgumentException("saveConfigName is empty");
         }
-        this.f36122c = weConfig;
+        this.f22431c = weConfig;
         Context applicationContext = context.getApplicationContext();
-        this.f36121a = applicationContext;
+        this.f22430a = applicationContext;
         this.b = applicationContext.getSharedPreferences("wehttp_config_save_" + str, 0);
     }
 
@@ -77,28 +77,28 @@ public class WeConfigLoader implements ConfigLoader {
             Object value = entry.getValue();
             if (key != null && value != null) {
                 if ("baseUrl".equals(key)) {
-                    this.f36122c.baseUrl((String) value);
+                    this.f22431c.baseUrl((String) value);
                 } else if ("certVerify".equals(key)) {
                     if (this.e) {
-                        this.f36122c.setCertVerify(((Boolean) value).booleanValue());
+                        this.f22431c.setCertVerify(((Boolean) value).booleanValue());
                     }
                 } else if ("pinList".equals(key)) {
                     if (this.e && (set = (Set) value) != null && !set.isEmpty()) {
                         for (String str : set) {
                             if (str.contains(":::")) {
                                 String[] split = str.split(":::");
-                                this.f36122c.addPin4Host(split[0], split[1]);
+                                this.f22431c.addPin4Host(split[0], split[1]);
                             }
                         }
                     }
                 } else if (key.startsWith("_header_")) {
                     if (this.f) {
-                        this.f36122c.header(key.substring(8), (String) value);
+                        this.f22431c.header(key.substring(8), (String) value);
                     }
                 } else if (!key.startsWith("_param_")) {
-                    a(key, value, this.f36122c);
+                    a(key, value, this.f22431c);
                 } else if (this.g) {
-                    this.f36122c.params(key.substring(7), (String) value);
+                    this.f22431c.params(key.substring(7), (String) value);
                 }
             }
         }
@@ -110,7 +110,7 @@ public class WeConfigLoader implements ConfigLoader {
         Map.Entry<String, String> next;
         Map.Entry<String, String> next2;
         SharedPreferences.Editor edit = this.b.edit();
-        String baseUrl = this.f36122c.getBaseUrl();
+        String baseUrl = this.f22431c.getBaseUrl();
         if (baseUrl != null) {
             edit.putString("baseUrl", baseUrl);
             i = 1;
@@ -119,13 +119,13 @@ public class WeConfigLoader implements ConfigLoader {
         }
         int i2 = i;
         if (this.e) {
-            boolean isCertVerify = this.f36122c.isCertVerify();
+            boolean isCertVerify = this.f22431c.isCertVerify();
             int i3 = i;
             if (isCertVerify) {
                 i3 = i + 1;
                 edit.putBoolean("certVerify", isCertVerify);
             }
-            List<Pin> pinList = this.f36122c.getPinList();
+            List<Pin> pinList = this.f22431c.getPinList();
             i2 = i3;
             if (pinList != null) {
                 i2 = i3;
@@ -146,7 +146,7 @@ public class WeConfigLoader implements ConfigLoader {
         }
         int i4 = i2;
         if (this.g) {
-            Map<String, String> params = this.f36122c.getParams();
+            Map<String, String> params = this.f22431c.getParams();
             i4 = i2;
             if (params != null) {
                 i4 = i2;
@@ -165,7 +165,7 @@ public class WeConfigLoader implements ConfigLoader {
         }
         int i5 = i4;
         if (this.f) {
-            Map<String, String> headers = this.f36122c.getHeaders();
+            Map<String, String> headers = this.f22431c.getHeaders();
             i5 = i4;
             if (headers != null) {
                 i5 = i4;
@@ -182,7 +182,7 @@ public class WeConfigLoader implements ConfigLoader {
                 }
             }
         }
-        Map<String, Object> a2 = a(this.f36122c);
+        Map<String, Object> a2 = a(this.f22431c);
         int i6 = i5;
         if (a2 != null) {
             i6 = i5;

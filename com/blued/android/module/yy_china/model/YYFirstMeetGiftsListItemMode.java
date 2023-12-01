@@ -126,7 +126,6 @@ public final class YYFirstMeetGiftsListItemMode implements MultiItemEntity {
         return this.itemTy;
     }
 
-    @Override // com.chad.library.adapter.base.entity.MultiItemEntity
     public int getItemType() {
         return this.itemTy;
     }

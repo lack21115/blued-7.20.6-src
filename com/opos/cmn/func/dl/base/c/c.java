@@ -11,11 +11,11 @@ import java.util.Map;
 public class c implements d {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f24902a = c.class.getSimpleName();
+    public static final String f11214a = c.class.getSimpleName();
     private com.opos.cmn.func.b.b.e b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Map<String, String> f24903c = new HashMap();
+    private Map<String, String> f11215c = new HashMap();
 
     /* loaded from: source-8303388-dex2jar.jar:com/opos/cmn/func/dl/base/c/c$a.class */
     public static final class a implements d.a {
@@ -29,17 +29,17 @@ public class c implements d {
     public final InputStream a() {
         com.opos.cmn.func.b.b.e eVar = this.b;
         if (eVar != null) {
-            return eVar.f24863c;
+            return eVar.f11175c;
         }
         return null;
     }
 
     @Override // com.opos.cmn.func.dl.base.c.d
     public final InputStream a(Context context, String str, b bVar) {
-        if (bVar.f24901a != null) {
-            this.f24903c.putAll(bVar.f24901a);
+        if (bVar.f11213a != null) {
+            this.f11215c.putAll(bVar.f11213a);
         }
-        this.b = com.opos.cmn.func.b.b.b.a().a(context, new d.a().b(str).a(this.f24903c).a("GET").a());
+        this.b = com.opos.cmn.func.b.b.b.a().a(context, new d.a().b(str).a(this.f11215c).a("GET").a());
         return a();
     }
 
@@ -51,7 +51,7 @@ public class c implements d {
 
     @Override // com.opos.cmn.func.dl.base.c.d
     public final void a(String str, String str2) {
-        this.f24903c.put(str, str2);
+        this.f11215c.put(str, str2);
     }
 
     @Override // com.opos.cmn.func.dl.base.c.d
@@ -72,7 +72,7 @@ public class c implements d {
     public final int d() {
         com.opos.cmn.func.b.b.e eVar = this.b;
         if (eVar != null) {
-            return eVar.f24862a;
+            return eVar.f11174a;
         }
         return -1;
     }

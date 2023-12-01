@@ -30,7 +30,6 @@ import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import com.anythink.expressad.foundation.h.i;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.AppMethods;
 import com.blued.android.core.image.ImageFileLoader;
@@ -114,7 +113,6 @@ import com.blued.community.widget.vote.text.view.CircleTextVoteView;
 import com.blued.das.client.feed.FeedProtos;
 import com.blued.das.message.MessageProtos;
 import com.bytedance.applog.tracker.Tracker;
-import com.cdo.oaps.ad.wrapper.BaseWrapper;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
@@ -198,18 +196,16 @@ public class CirclePostDetailsFragment extends MvpKeyBoardFragment<CirclePostDet
     };
     private TextWatcher aj = new TextWatcher() { // from class: com.blued.community.ui.circle.fragment.CirclePostDetailsFragment.33
         private int b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private int f19281c;
+        private int c;
         private String d;
         private String e;
 
         @Override // android.text.TextWatcher
         public void afterTextChanged(Editable editable) {
             this.b = CirclePostDetailsFragment.this.w.getSelectionStart();
-            this.f19281c = CirclePostDetailsFragment.this.w.getSelectionEnd();
+            this.c = CirclePostDetailsFragment.this.w.getSelectionEnd();
             CirclePostDetailsFragment.this.w.removeTextChangedListener(this);
-            if (!((CirclePostDetailsPresenter) CirclePostDetailsFragment.this.j()).n().isPrivateCircle() && !CirclePostDetailsFragment.this.aa.a(CirclePostDetailsFragment.this, this.d, this.e, editable, this.f19281c)) {
+            if (!((CirclePostDetailsPresenter) CirclePostDetailsFragment.this.j()).n().isPrivateCircle() && !CirclePostDetailsFragment.this.aa.a(CirclePostDetailsFragment.this, this.d, this.e, editable, this.c)) {
                 CirclePostDetailsFragment.this.w.setSelection(this.b);
             }
             CirclePostDetailsFragment.this.w.addTextChangedListener(this);
@@ -306,13 +302,9 @@ public class CirclePostDetailsFragment extends MvpKeyBoardFragment<CirclePostDet
 
     /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/circle/fragment/CirclePostDetailsFragment$HeaderHolder.class */
     public static class HeaderHolder {
-
-        /* renamed from: a  reason: collision with root package name */
-        ImageView f19290a;
+        ImageView a;
         ImageView b;
-
-        /* renamed from: c  reason: collision with root package name */
-        ImageView f19291c;
+        ImageView c;
         ImageView d;
         ImageView e;
         TextView f;
@@ -333,15 +325,15 @@ public class CirclePostDetailsFragment extends MvpKeyBoardFragment<CirclePostDet
             this.d = (ImageView) view.findViewById(R.id.header_view);
             this.e = (ImageView) view.findViewById(R.id.img_verify);
             this.f = (TextView) view.findViewById(R.id.tv_name);
-            this.f19290a = (ImageView) view.findViewById(R.id.iv_level);
+            this.a = (ImageView) view.findViewById(R.id.iv_level);
             this.b = (ImageView) view.findViewById(R.id.iv_anonymous);
-            this.f19291c = (ImageView) view.findViewById(R.id.img_blued_medal);
+            this.c = (ImageView) view.findViewById(R.id.img_blued_medal);
             this.g = (TextView) view.findViewById(R.id.tv_time);
             this.q = (RelativeLayout) view.findViewById(R.id.rl_content);
             this.h = (MarkdownView) view.findViewById(R.id.markdown_view);
-            this.j = (CardView) view.findViewById(R.id.card_video);
+            this.j = view.findViewById(R.id.card_video);
             this.i = (PLVideoPageView) view.findViewById(R.id.video_view);
-            this.k = (CircleTextVoteView) view.findViewById(R.id.circle_text_vote);
+            this.k = view.findViewById(R.id.circle_text_vote);
             this.l = (LinearLayout) view.findViewById(R.id.lay_circle_card);
             this.m = (ImageView) view.findViewById(R.id.iv_circle_header);
             this.n = (TextView) view.findViewById(R.id.tv_circle_name);
@@ -406,7 +398,7 @@ public class CirclePostDetailsFragment extends MvpKeyBoardFragment<CirclePostDet
                     ToastUtils.b(R.string.content_can_not_send_feed_in_circle);
                 }
             }
-        }, b, BaseWrapper.ENTER_ID_OAPS_ROAMING, getFragmentActive());
+        }, b, "33", getFragmentActive());
     }
 
     private void C() {
@@ -516,8 +508,8 @@ public class CirclePostDetailsFragment extends MvpKeyBoardFragment<CirclePostDet
             }
         });
         F();
-        final String a2 = AvatarUtils.a(1, UserInfoUtils.e());
-        ImageLoader.a(getFragmentActive(), a2).b(R.drawable.user_bg_round).d(R.drawable.user_bg_round).c().a(this.F);
+        final String a = AvatarUtils.a(1, UserInfoUtils.e());
+        ImageLoader.a(getFragmentActive(), a).b(R.drawable.user_bg_round).d(R.drawable.user_bg_round).c().a(this.F);
         this.H.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() { // from class: com.blued.community.ui.circle.fragment.CirclePostDetailsFragment.31
             @Override // android.widget.CompoundButton.OnCheckedChangeListener
             public void onCheckedChanged(CompoundButton compoundButton, boolean z) {
@@ -525,7 +517,7 @@ public class CirclePostDetailsFragment extends MvpKeyBoardFragment<CirclePostDet
                 if (z) {
                     ImageLoader.a(CirclePostDetailsFragment.this.getFragmentActive(), ((CirclePostDetailsPresenter) CirclePostDetailsFragment.this.j()).n().anonym_avatar).b(CircleMethods.a(CirclePostDetailsFragment.this.getContext(), ((CirclePostDetailsPresenter) CirclePostDetailsFragment.this.j()).s())).d(CircleMethods.a(CirclePostDetailsFragment.this.getContext(), ((CirclePostDetailsPresenter) CirclePostDetailsFragment.this.j()).s())).c().a(CirclePostDetailsFragment.this.F);
                 } else {
-                    ImageLoader.a(CirclePostDetailsFragment.this.getFragmentActive(), a2).b(R.drawable.user_bg_round).d(R.drawable.user_bg_round).c().a(CirclePostDetailsFragment.this.F);
+                    ImageLoader.a(CirclePostDetailsFragment.this.getFragmentActive(), a).b(R.drawable.user_bg_round).d(R.drawable.user_bg_round).c().a(CirclePostDetailsFragment.this.F);
                 }
             }
         });
@@ -567,7 +559,7 @@ public class CirclePostDetailsFragment extends MvpKeyBoardFragment<CirclePostDet
         this.w.setText((CharSequence) null);
         this.w.setHint(FeedMethods.a(getContext()));
         this.w.clearFocus();
-        KeyboardUtils.a(getActivity());
+        KeyboardUtils.a((Activity) getActivity());
         this.ac = null;
     }
 
@@ -578,16 +570,16 @@ public class CirclePostDetailsFragment extends MvpKeyBoardFragment<CirclePostDet
         }
         EventTrackFeed.a(FeedProtos.Event.CIRCLE_NOTE_COMMENT_GUIDE_SHOW, ((CirclePostDetailsPresenter) j()).n().feed_id, FeedProtos.NoteSource.NOTE_DETAIL_BOTTOM);
         View inflate = View.inflate(getContext(), R.layout.pop_circle_detail_input_guide, null);
-        final BluedPopupWindow a2 = BluedPopupWindow.Builder.a(getActivity(), inflate).a();
+        final BluedPopupWindow a = BluedPopupWindow.Builder.a((Activity) getActivity(), inflate).a();
         inflate.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.circle.fragment.CirclePostDetailsFragment.35
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
-                a2.dismiss();
+                a.dismiss();
                 EventTrackFeed.a(FeedProtos.Event.CIRCLE_NOTE_COMMENT_GUIDE_CLICK, ((CirclePostDetailsPresenter) CirclePostDetailsFragment.this.j()).n().feed_id, FeedProtos.NoteSource.NOTE_DETAIL_BOTTOM);
             }
         });
-        a2.a(this.w, 1, 0, 0, 0);
+        a.a(this.w, 1, 0, 0, 0);
         CommunityPreferences.b();
     }
 
@@ -648,10 +640,10 @@ public class CirclePostDetailsFragment extends MvpKeyBoardFragment<CirclePostDet
     public void a(TextView textView) {
         String charSequence = textView.getText().toString();
         if (Build.VERSION.SDK_INT < 11 || Build.VERSION.SDK_INT == 18) {
-            ((ClipboardManager) getContext().getSystemService(Context.CLIPBOARD_SERVICE)).setText(RegExpUtils.a(charSequence));
+            ((ClipboardManager) getContext().getSystemService("clipboard")).setText(RegExpUtils.a(charSequence));
         } else {
             try {
-                ((android.content.ClipboardManager) getContext().getSystemService(Context.CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("simple text", RegExpUtils.a(charSequence)));
+                ((android.content.ClipboardManager) getContext().getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("simple text", RegExpUtils.a(charSequence)));
             } catch (Exception e) {
             }
         }
@@ -665,7 +657,7 @@ public class CirclePostDetailsFragment extends MvpKeyBoardFragment<CirclePostDet
     }
 
     private void c(String str) {
-        this.w.setText(StringUtils.a(StringUtils.a(str, (int) this.w.getTextSize(), 3), true, true, true, null, true, "", ""));
+        this.w.setText(StringUtils.a(StringUtils.a(str, (int) this.w.getTextSize(), 3), true, true, true, (StringUtils.ClickAtLinkListener) null, true, "", ""));
         EditText editText = this.w;
         editText.setSelection(editText.length());
     }
@@ -693,7 +685,7 @@ public class CirclePostDetailsFragment extends MvpKeyBoardFragment<CirclePostDet
                     return;
                 }
                 UserBasicModel b = FeedMethods.b(bluedIngSelfFeed);
-                String a2 = CircleMethods.a(((CirclePostDetailsPresenter) CirclePostDetailsFragment.this.j()).r());
+                String a = CircleMethods.a(((CirclePostDetailsPresenter) CirclePostDetailsFragment.this.j()).r());
                 MessageProtos.StrangerSource b2 = CircleMethods.b(((CirclePostDetailsPresenter) CirclePostDetailsFragment.this.j()).r());
                 LogData logData = new LogData();
                 logData.circle_id = bluedIngSelfFeed.circle_id;
@@ -701,9 +693,9 @@ public class CirclePostDetailsFragment extends MvpKeyBoardFragment<CirclePostDet
                 logData.target_uid = bluedIngSelfFeed.feed_uid;
                 logData.activity_id = bluedIngSelfFeed.activity_id;
                 logData.listMode = CirclePostDetailsFragment.this.ae != null ? CirclePostDetailsFragment.this.ae.getMode() : "";
-                logData.from = a2;
-                logData.userFrom = a2;
-                CommunityServiceManager.b().a(CirclePostDetailsFragment.this.getContext(), b, a2, false, (View) CirclePostDetailsFragment.this.Z.d, logData, b2);
+                logData.from = a;
+                logData.userFrom = a;
+                CommunityServiceManager.b().a(CirclePostDetailsFragment.this.getContext(), b, a, false, (View) CirclePostDetailsFragment.this.Z.d, logData, b2);
             }
         };
         this.Z.d.setOnClickListener(onClickListener);
@@ -726,9 +718,9 @@ public class CirclePostDetailsFragment extends MvpKeyBoardFragment<CirclePostDet
         userBasicModel.is_hide_vip_look = bluedIngSelfFeed.is_hide_vip_look;
         userBasicModel.vip_exp_lvl = bluedIngSelfFeed.vip_exp_lvl;
         UserInfoHelper.a(getContext(), this.Z.f, userBasicModel);
-        CircleMethods.a(this.Z.f19290a, bluedIngSelfFeed.anchor_admin_level);
+        CircleMethods.a(this.Z.a, bluedIngSelfFeed.anchor_admin_level);
         this.Z.b.setVisibility(bluedIngSelfFeed.is_anonym == 1 ? 0 : 8);
-        UserInfoHelper.a(this.Z.f19291c, userBasicModel);
+        UserInfoHelper.a(this.Z.c, userBasicModel);
         EventTrackFeed.a(FeedProtos.Event.CIRCLE_NOTE_COMMENT_GUIDE_SHOW, bluedIngSelfFeed.feed_id, FeedProtos.NoteSource.NOTE_DETAIL_COMMENT_LIST);
         if (!TextUtils.isEmpty(bluedIngSelfFeed.feed_origin_content)) {
             this.Z.h.setVisibility(0);
@@ -826,33 +818,33 @@ public class CirclePostDetailsFragment extends MvpKeyBoardFragment<CirclePostDet
             bluedIngSelfFeed.feed_videos_width = new String[]{"480"};
             bluedIngSelfFeed.feed_videos_height = new String[]{"480"};
         }
-        int a2 = StringUtils.a(bluedIngSelfFeed.feed_videos_width[0], 480);
-        int a3 = StringUtils.a(bluedIngSelfFeed.feed_videos_height[0], 480);
-        if (a2 == 0 || a3 == 0) {
+        int a = StringUtils.a(bluedIngSelfFeed.feed_videos_width[0], 480);
+        int a2 = StringUtils.a(bluedIngSelfFeed.feed_videos_height[0], 480);
+        if (a == 0 || a2 == 0) {
+            a = 480;
             a2 = 480;
-            a3 = 480;
         }
-        int a4 = AppInfo.l - AppMethods.a(18);
-        int i = (int) (a4 / (a2 / a3));
-        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(a4, i);
+        int a3 = AppInfo.l - AppMethods.a(18);
+        int i = (int) (a3 / (a / a2));
+        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(a3, i);
         layoutParams.gravity = 1;
         this.Z.i.setLayoutParams(layoutParams);
         final String[] strArr = bluedIngSelfFeed.feed_videos;
         final String str = bluedIngSelfFeed.feed_video_size;
         VideoPlayConfig videoPlayConfig = new VideoPlayConfig();
-        videoPlayConfig.f15652a = bluedIngSelfFeed.feed_videos[0];
+        videoPlayConfig.a = bluedIngSelfFeed.feed_videos[0];
         videoPlayConfig.b = bluedIngSelfFeed.feed_videos[1];
-        videoPlayConfig.e = a4;
+        videoPlayConfig.e = a3;
         videoPlayConfig.f = i;
-        videoPlayConfig.a(a2);
-        videoPlayConfig.b(a3);
+        videoPlayConfig.a(a);
+        videoPlayConfig.b(a2);
         try {
-            videoPlayConfig.f15653c = Integer.parseInt(bluedIngSelfFeed.feed_video_size);
+            videoPlayConfig.c = Integer.parseInt(bluedIngSelfFeed.feed_video_size);
         } catch (Exception e) {
             Logger.b(CirclePostDetailsFragment.class.getSimpleName(), "setCircleVideo() Integer.parseInt(feed.feed_video_size) Exception");
         }
-        final int i2 = a2;
-        final int i3 = a3;
+        final int i2 = a;
+        final int i3 = a2;
         videoPlayConfig.g = new View.OnClickListener() { // from class: com.blued.community.ui.circle.fragment.CirclePostDetailsFragment.14
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
@@ -898,7 +890,6 @@ public class CirclePostDetailsFragment extends MvpKeyBoardFragment<CirclePostDet
         this.Z.k.setOptionList(bluedIngSelfFeed.option_count);
         this.Z.k.a(bluedIngSelfFeed.vote_count, bluedIngSelfFeed.ivoted);
         this.Z.k.setOnVoteListener(new CircleTextVoteView.OnVoteListener() { // from class: com.blued.community.ui.circle.fragment.CirclePostDetailsFragment.16
-            @Override // com.blued.community.widget.vote.text.view.CircleTextVoteView.OnVoteListener
             public void a(CircleTextVote circleTextVote, int i) {
                 ((CirclePostDetailsPresenter) CirclePostDetailsFragment.this.j()).a(i + 1);
             }
@@ -926,12 +917,12 @@ public class CirclePostDetailsFragment extends MvpKeyBoardFragment<CirclePostDet
     }
 
     private void y() {
-        this.m = (ConstraintLayout) this.i.findViewById(R.id.cl_title_bar);
-        this.n = (SmartRefreshLayout) this.i.findViewById(R.id.refresh_layout);
+        this.m = this.i.findViewById(R.id.cl_title_bar);
+        this.n = this.i.findViewById(R.id.refresh_layout);
         this.o = (TextView) this.i.findViewById(R.id.tv_circle_name);
         this.p = (ImageView) this.i.findViewById(R.id.iv_menu);
         this.q = (CircleJoinView) this.i.findViewById(R.id.cjv_join);
-        this.r = (RecyclerView) this.i.findViewById(R.id.comment_list);
+        this.r = this.i.findViewById(R.id.comment_list);
         this.s = (KeyboardListenLinearLayout) this.i.findViewById(R.id.keyboard_layout);
         this.t = this.i.findViewById(R.id.keyboard_view);
         this.u = this.i.findViewById(R.id.input_layout_up);
@@ -995,7 +986,7 @@ public class CirclePostDetailsFragment extends MvpKeyBoardFragment<CirclePostDet
             this.t.setOnTouchListener(new View.OnTouchListener() { // from class: com.blued.community.ui.circle.fragment.CirclePostDetailsFragment.34
                 @Override // android.view.View.OnTouchListener
                 public boolean onTouch(View view, MotionEvent motionEvent) {
-                    KeyboardUtils.a(CirclePostDetailsFragment.this.getActivity());
+                    KeyboardUtils.a((Activity) CirclePostDetailsFragment.this.getActivity());
                     if (CirclePostDetailsFragment.this.getFragmentActive().isActive() && CirclePostDetailsFragment.this.k()) {
                         CirclePostDetailsFragment.this.D.setVisibility(0);
                         CirclePostDetailsFragment.this.E.setVisibility(8);
@@ -1043,7 +1034,6 @@ public class CirclePostDetailsFragment extends MvpKeyBoardFragment<CirclePostDet
         layoutParams.height = StatusBarHelper.a(getContext());
         this.R.setLayoutParams(layoutParams);
         this.r.setLayoutManager(new LinearLayoutManager(getContext()) { // from class: com.blued.community.ui.circle.fragment.CirclePostDetailsFragment.2
-            @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
             public void onLayoutChildren(RecyclerView.Recycler recycler, RecyclerView.State state) {
                 try {
                     super.onLayoutChildren(recycler, state);
@@ -1071,14 +1061,13 @@ public class CirclePostDetailsFragment extends MvpKeyBoardFragment<CirclePostDet
             this.X.bindToRecyclerView(this.r);
         }
         this.X.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() { // from class: com.blued.community.ui.circle.fragment.CirclePostDetailsFragment.3
-            @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemChildClickListener
             public void onItemChildClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
                 FeedComment feedComment = (FeedComment) baseQuickAdapter.getItem(i);
                 int id = view.getId();
                 if (id == R.id.ll_reply || id == R.id.tv_reply_first || id == R.id.tv_reply_second) {
                     if (feedComment != null) {
-                        String a2 = AppUtils.a(R.string.reply_title);
-                        String format = String.format(a2, feedComment.comments_count + "");
+                        String a = AppUtils.a(R.string.reply_title);
+                        String format = String.format(a, feedComment.comments_count + "");
                         if (CirclePostDetailsFragment.this.X != null) {
                             CirclePostDetailsFragment.this.X.a();
                         }
@@ -1099,14 +1088,12 @@ public class CirclePostDetailsFragment extends MvpKeyBoardFragment<CirclePostDet
         });
         this.r.setAdapter(this.X);
         ViewUtils.b(this.r);
-        this.n.l(true);
+        this.n.b(true);
         this.n.a(new OnRefreshLoadMoreListener() { // from class: com.blued.community.ui.circle.fragment.CirclePostDetailsFragment.4
-            @Override // com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
             public void onLoadMore(RefreshLayout refreshLayout) {
                 ((CirclePostDetailsPresenter) CirclePostDetailsFragment.this.j()).f();
             }
 
-            @Override // com.scwang.smartrefresh.layout.listener.OnRefreshListener
             public void onRefresh(RefreshLayout refreshLayout) {
                 ((CirclePostDetailsPresenter) CirclePostDetailsFragment.this.j()).e();
             }
@@ -1129,14 +1116,13 @@ public class CirclePostDetailsFragment extends MvpKeyBoardFragment<CirclePostDet
                     AppMethods.a((CharSequence) CirclePostDetailsFragment.this.getResources().getString(R.string.toast_all_circle_mute));
                     return false;
                 } else {
-                    String c2 = TimeAndDateUtils.c(TimeAndDateUtils.c(((CirclePostDetailsPresenter) CirclePostDetailsFragment.this.j()).n().mute_time + ""));
-                    AppMethods.a((CharSequence) ("你已经被禁言， " + c2 + "自动解禁"));
+                    String c = TimeAndDateUtils.c(TimeAndDateUtils.c(((CirclePostDetailsPresenter) CirclePostDetailsFragment.this.j()).n().mute_time + ""));
+                    AppMethods.a((CharSequence) ("你已经被禁言， " + c + "自动解禁"));
                     return false;
                 }
             }
         });
         this.r.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: com.blued.community.ui.circle.fragment.CirclePostDetailsFragment.6
-            @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
             public void onScrolled(RecyclerView recyclerView, int i, int i2) {
                 super.onScrolled(recyclerView, i, i2);
                 CirclePostDetailsFragment.this.ad += i2;
@@ -1158,7 +1144,7 @@ public class CirclePostDetailsFragment extends MvpKeyBoardFragment<CirclePostDet
             this.I.setTag(null);
             this.I.setImageDrawable(BluedSkinUtils.b(getContext(), R.drawable.icon_feed_like));
         } else if (bluedIngSelfFeed.isPlayLikeAnim) {
-            this.I.setTag(i.f);
+            this.I.setTag("anim");
             ImageLoader.c(getFragmentActive(), FeedMethods.e()).f().a(new ImageLoader.OnAnimationStateListener() { // from class: com.blued.community.ui.circle.fragment.CirclePostDetailsFragment.18
                 @Override // com.blued.android.core.image.ImageLoader.OnAnimationStateListener
                 public void a() {
@@ -1210,7 +1196,7 @@ public class CirclePostDetailsFragment extends MvpKeyBoardFragment<CirclePostDet
 
     /* JADX INFO: Access modifiers changed from: protected */
     public void a(FeedComment feedComment) {
-        KeyboardUtils.a(getActivity());
+        KeyboardUtils.a((Activity) getActivity());
         this.X.getData().add(0, feedComment);
         CircleMainDetailCommentAdapter circleMainDetailCommentAdapter = this.X;
         circleMainDetailCommentAdapter.notifyItemInserted(circleMainDetailCommentAdapter.getHeaderLayoutCount());
@@ -1278,7 +1264,7 @@ public class CirclePostDetailsFragment extends MvpKeyBoardFragment<CirclePostDet
         } else if (!z2) {
         } else {
             this.Z.r.setVisibility(8);
-            this.n.j();
+            this.n.g();
             if (!z) {
                 this.Y.b();
             } else if (this.X.getData().size() == 0) {
@@ -1322,7 +1308,7 @@ public class CirclePostDetailsFragment extends MvpKeyBoardFragment<CirclePostDet
 
     /* JADX INFO: Access modifiers changed from: protected */
     public void b(FeedComment feedComment) {
-        KeyboardUtils.a(getActivity());
+        KeyboardUtils.a((Activity) getActivity());
         FeedComment feedComment2 = this.ac;
         if (feedComment2 != null) {
             this.X.a(feedComment, feedComment2.comment_id);
@@ -1367,10 +1353,9 @@ public class CirclePostDetailsFragment extends MvpKeyBoardFragment<CirclePostDet
     @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void o() {
         super.o();
-        this.n.l(true);
+        this.n.b(true);
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         if (i2 == -1) {
             if (i != 100) {
@@ -1443,7 +1428,7 @@ public class CirclePostDetailsFragment extends MvpKeyBoardFragment<CirclePostDet
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment
     public void onDestroy() {
         super.onDestroy();
         x();
@@ -1455,7 +1440,7 @@ public class CirclePostDetailsFragment extends MvpKeyBoardFragment<CirclePostDet
         this.Z.h.removeOnAttachStateChangeListener(this.l);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onPause() {
         super.onPause();
         HeaderHolder headerHolder = this.Z;
@@ -1465,7 +1450,7 @@ public class CirclePostDetailsFragment extends MvpKeyBoardFragment<CirclePostDet
         this.X.d();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onResume() {
         super.onResume();
         HeaderHolder headerHolder = this.Z;
@@ -1478,7 +1463,7 @@ public class CirclePostDetailsFragment extends MvpKeyBoardFragment<CirclePostDet
     @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void p() {
         super.p();
-        this.n.l(false);
+        this.n.b(false);
     }
 
     protected void v() {

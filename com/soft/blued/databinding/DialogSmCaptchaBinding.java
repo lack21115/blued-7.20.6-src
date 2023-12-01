@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class DialogSmCaptchaBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ConstraintLayout f28723a;
+    private final ConstraintLayout f15033a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f28723a;
+        return this.f15033a;
     }
 }

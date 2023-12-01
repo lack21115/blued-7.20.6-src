@@ -26,7 +26,7 @@ public class s extends a implements i {
     private transient com.huawei.openalliance.ad.inter.listeners.f S;
 
     /* renamed from: c  reason: collision with root package name */
-    private com.huawei.openalliance.ad.inter.listeners.g f22977c;
+    private com.huawei.openalliance.ad.inter.listeners.g f9369c;
     private int d;
     private boolean e;
     private boolean f;
@@ -50,7 +50,7 @@ public class s extends a implements i {
         intent.setPackage(com.huawei.openalliance.ad.utils.v.Z(activity));
         intent.putExtra("content_id", D());
         intent.putExtra("sdk_version", "13.4.61.304");
-        intent.putExtra("request_id", h_());
+        intent.putExtra(at.g, h_());
         intent.putExtra(at.i, this.d);
         intent.putExtra(at.j, this.e);
         intent.putExtra(at.e, o());
@@ -98,7 +98,7 @@ public class s extends a implements i {
         try {
             jSONObject.put("content_id", D());
             jSONObject.put("sdk_version", "13.4.61.304");
-            jSONObject.put("request_id", h_());
+            jSONObject.put(at.g, h_());
             jSONObject.put(at.i, this.d);
             jSONObject.put(at.j, this.e);
             jSONObject.put(at.e, o());
@@ -171,7 +171,7 @@ public class s extends a implements i {
     }
 
     public void Code(com.huawei.openalliance.ad.inter.listeners.g gVar) {
-        this.f22977c = gVar;
+        this.f9369c = gVar;
     }
 
     @Override // com.huawei.openalliance.ad.inter.data.a
@@ -180,7 +180,7 @@ public class s extends a implements i {
     }
 
     public com.huawei.openalliance.ad.inter.listeners.g I() {
-        return this.f22977c;
+        return this.f9369c;
     }
 
     public com.huawei.openalliance.ad.inter.listeners.f Q() {

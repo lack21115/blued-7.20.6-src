@@ -315,9 +315,8 @@ public final class c extends com.kwad.components.core.j.c<h> implements DialogIn
         notifyPageDismiss();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public final void onVisibilityChanged(View view, int i) {
+    protected final void onVisibilityChanged(View view, int i) {
         super.onVisibilityChanged(view, i);
     }
 

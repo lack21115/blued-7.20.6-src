@@ -75,16 +75,16 @@ public final class DualPivotQuicksort {
                 if (i5 > i2) {
                     return;
                 }
-                char c2 = cArr[i5];
+                char c = cArr[i5];
                 int i6 = i5;
                 while (true) {
                     i3 = i6 - 1;
-                    if (i3 >= i && c2 < cArr[i3]) {
+                    if (i3 >= i && c < cArr[i3]) {
                         cArr[i3 + 1] = cArr[i3];
                         i6 = i3;
                     }
                 }
-                cArr[i3 + 1] = c2;
+                cArr[i3 + 1] = c;
                 i4 = i5;
             }
         } else if ((i2 - i) + 1 <= 32768) {
@@ -97,8 +97,8 @@ public final class DualPivotQuicksort {
                 if (i8 > i2) {
                     break;
                 }
-                char c3 = cArr[i8];
-                iArr[c3] = iArr[c3] + 1;
+                char c2 = cArr[i8];
+                iArr[c2] = iArr[c2] + 1;
                 i7 = i8 + 1;
             }
             int i9 = 0;
@@ -503,73 +503,73 @@ public final class DualPivotQuicksort {
         int i8 = (i + i2) >>> 1;
         int i9 = i8 + i5;
         int i10 = i8 - i5;
-        char c2 = cArr[i6];
-        char c3 = cArr[i10];
-        char c4 = cArr[i8];
-        char c5 = cArr[i9];
-        char c6 = cArr[i7];
+        char c = cArr[i6];
+        char c2 = cArr[i10];
+        char c3 = cArr[i8];
+        char c4 = cArr[i9];
+        char c5 = cArr[i7];
+        char c6 = c;
         char c7 = c2;
-        char c8 = c3;
-        if (c2 > c3) {
-            c7 = c3;
-            c8 = c2;
+        if (c > c2) {
+            c6 = c2;
+            c7 = c;
         }
+        char c8 = c4;
         char c9 = c5;
+        if (c4 > c5) {
+            c8 = c5;
+            c9 = c4;
+        }
         char c10 = c6;
-        if (c5 > c6) {
-            c9 = c6;
-            c10 = c5;
+        char c11 = c3;
+        if (c6 > c3) {
+            c11 = c6;
+            c10 = c3;
         }
-        char c11 = c7;
-        char c12 = c4;
-        if (c7 > c4) {
-            c12 = c7;
-            c11 = c4;
+        char c12 = c7;
+        char c13 = c11;
+        if (c7 > c11) {
+            c12 = c11;
+            c13 = c7;
         }
-        char c13 = c8;
-        char c14 = c12;
-        if (c8 > c12) {
-            c13 = c12;
+        char c14 = c10;
+        char c15 = c8;
+        if (c10 > c8) {
+            c15 = c10;
             c14 = c8;
         }
-        char c15 = c11;
-        char c16 = c9;
-        if (c11 > c9) {
-            c16 = c11;
-            c15 = c9;
+        char c16 = c13;
+        char c17 = c15;
+        if (c13 > c15) {
+            c16 = c15;
+            c17 = c13;
         }
-        char c17 = c14;
-        char c18 = c16;
-        if (c14 > c16) {
-            c17 = c16;
-            c18 = c14;
+        char c18 = c12;
+        char c19 = c9;
+        if (c12 > c9) {
+            c19 = c12;
+            c18 = c9;
         }
-        char c19 = c13;
-        char c20 = c10;
-        if (c13 > c10) {
-            c20 = c13;
-            c19 = c10;
+        char c20 = c18;
+        char c21 = c16;
+        if (c18 > c16) {
+            c20 = c16;
+            c21 = c18;
         }
-        char c21 = c19;
         char c22 = c17;
-        if (c19 > c17) {
-            c21 = c17;
+        char c23 = c19;
+        if (c17 > c19) {
+            c23 = c17;
             c22 = c19;
         }
-        char c23 = c18;
-        char c24 = c20;
-        if (c18 > c20) {
-            c24 = c18;
-            c23 = c20;
-        }
-        cArr[i6] = c15;
-        cArr[i8] = c22;
-        cArr[i7] = c24;
+        cArr[i6] = c14;
+        cArr[i8] = c21;
+        cArr[i7] = c23;
         cArr[i10] = cArr[i];
         cArr[i9] = cArr[i2];
         int i11 = i + 1;
         int i12 = i2 - 1;
-        boolean z = c21 != c23;
+        boolean z = c20 != c22;
         if (z) {
             int i13 = i11;
             loop0: while (true) {
@@ -580,15 +580,15 @@ public final class DualPivotQuicksort {
                     i4 = i15;
                     break;
                 }
-                char c25 = cArr[i14];
-                if (c25 < c21) {
+                char c24 = cArr[i14];
+                if (c24 < c20) {
                     if (i14 != i11) {
                         cArr[i14] = cArr[i11];
-                        cArr[i11] = c25;
+                        cArr[i11] = c24;
                     }
                     i11++;
-                } else if (c25 > c23) {
-                    while (cArr[i12] > c23) {
+                } else if (c24 > c22) {
+                    while (cArr[i12] > c22) {
                         int i16 = i12 - 1;
                         if (i12 == i14) {
                             i4 = i11;
@@ -597,15 +597,15 @@ public final class DualPivotQuicksort {
                         }
                         i12 = i16;
                     }
-                    if (cArr[i12] < c21) {
+                    if (cArr[i12] < c20) {
                         cArr[i14] = cArr[i11];
                         cArr[i11] = cArr[i12];
-                        cArr[i12] = c25;
+                        cArr[i12] = c24;
                         i12--;
                         i11++;
                     } else {
                         cArr[i14] = cArr[i12];
-                        cArr[i12] = c25;
+                        cArr[i12] = c24;
                         i12--;
                     }
                 } else {
@@ -620,28 +620,28 @@ public final class DualPivotQuicksort {
                 if (i18 > i12) {
                     break;
                 }
-                char c26 = cArr[i18];
-                if (c26 != c21) {
+                char c25 = cArr[i18];
+                if (c25 != c20) {
                     int i19 = i12;
-                    if (c26 < c21) {
+                    if (c25 < c20) {
                         if (i18 != i11) {
                             cArr[i18] = cArr[i11];
-                            cArr[i11] = c26;
+                            cArr[i11] = c25;
                         }
                         i11++;
                     } else {
-                        while (cArr[i19] > c21) {
+                        while (cArr[i19] > c20) {
                             i19--;
                         }
-                        if (cArr[i19] < c21) {
+                        if (cArr[i19] < c20) {
                             cArr[i18] = cArr[i11];
                             cArr[i11] = cArr[i19];
-                            cArr[i19] = c26;
+                            cArr[i19] = c25;
                             i12 = i19 - 1;
                             i11++;
                         } else {
-                            cArr[i18] = c21;
-                            cArr[i19] = c26;
+                            cArr[i18] = c20;
+                            cArr[i19] = c25;
                             i12 = i19 - 1;
                         }
                     }
@@ -653,9 +653,9 @@ public final class DualPivotQuicksort {
             i4 = i20;
         }
         cArr[i] = cArr[i4 - 1];
-        cArr[i4 - 1] = c21;
+        cArr[i4 - 1] = c20;
         cArr[i2] = cArr[i3 + 1];
-        cArr[i3 + 1] = c23;
+        cArr[i3 + 1] = c22;
         doSort(cArr, i, i4 - 2);
         doSort(cArr, i3 + 2, i2);
         if (z) {
@@ -667,12 +667,12 @@ public final class DualPivotQuicksort {
                 if (i3 > i7) {
                     while (true) {
                         i21 = i3;
-                        if (cArr[i4] != c21) {
+                        if (cArr[i4] != c20) {
                             break;
                         }
                         i4++;
                     }
-                    while (cArr[i21] == c23) {
+                    while (cArr[i21] == c22) {
                         i21--;
                     }
                     int i23 = i4;
@@ -681,9 +681,9 @@ public final class DualPivotQuicksort {
                         if (i23 > i21) {
                             break;
                         }
-                        char c27 = cArr[i23];
-                        if (c27 == c23) {
-                            while (cArr[i21] == c23) {
+                        char c26 = cArr[i23];
+                        if (c26 == c22) {
+                            while (cArr[i21] == c22) {
                                 int i24 = i21 - 1;
                                 if (i21 == i23) {
                                     i21 = i24;
@@ -691,18 +691,18 @@ public final class DualPivotQuicksort {
                                 }
                                 i21 = i24;
                             }
-                            if (cArr[i21] == c21) {
+                            if (cArr[i21] == c20) {
                                 cArr[i23] = cArr[i22];
-                                cArr[i22] = c21;
+                                cArr[i22] = c20;
                                 i22++;
                             } else {
                                 cArr[i23] = cArr[i21];
                             }
-                            cArr[i21] = c23;
+                            cArr[i21] = c22;
                             i21--;
-                        } else if (c27 == c21) {
+                        } else if (c26 == c20) {
                             cArr[i23] = cArr[i22];
-                            cArr[i22] = c21;
+                            cArr[i22] = c20;
                             i22++;
                         }
                         i23++;

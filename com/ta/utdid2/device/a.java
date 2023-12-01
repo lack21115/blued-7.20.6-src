@@ -8,12 +8,12 @@ public class a {
     private String g = "";
 
     /* renamed from: a  reason: collision with root package name */
-    private long f34906a = 0;
+    private long f21215a = 0;
     private long b = 0;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public long a() {
-        return this.f34906a;
+        return this.f21215a;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -23,7 +23,7 @@ public class a {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void b(long j) {
-        this.f34906a = j;
+        this.f21215a = j;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

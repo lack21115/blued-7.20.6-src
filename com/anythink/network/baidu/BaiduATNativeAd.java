@@ -17,11 +17,11 @@ public class BaiduATNativeAd extends CustomNativeAd {
     private static final String e = BaiduATNativeAd.class.getSimpleName();
 
     /* renamed from: a  reason: collision with root package name */
-    protected NativeResponse f8874a;
+    protected NativeResponse f6034a;
     protected Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    BDImpressionTracker f8875c;
+    BDImpressionTracker f6035c;
     boolean d = true;
     private XNativeView f;
 
@@ -88,8 +88,8 @@ public class BaiduATNativeAd extends CustomNativeAd {
     public final void a(Context context, NativeResponse nativeResponse) {
         Context applicationContext = context.getApplicationContext();
         this.b = applicationContext;
-        this.f8875c = new BDImpressionTracker(applicationContext, 50);
-        this.f8874a = nativeResponse;
+        this.f6035c = new BDImpressionTracker(applicationContext, 50);
+        this.f6034a = nativeResponse;
         setData(nativeResponse);
     }
 
@@ -98,9 +98,9 @@ public class BaiduATNativeAd extends CustomNativeAd {
         b(view);
     }
 
-    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd, com.anythink.core.api.BaseAd
+    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd
     public void destroy() {
-        this.f8874a = null;
+        this.f6034a = null;
         XNativeView xNativeView = this.f;
         if (xNativeView != null) {
             xNativeView.setNativeItem(null);
@@ -108,23 +108,23 @@ public class BaiduATNativeAd extends CustomNativeAd {
             this.f = null;
         }
         this.b = null;
-        BDImpressionTracker bDImpressionTracker = this.f8875c;
+        BDImpressionTracker bDImpressionTracker = this.f6035c;
         if (bDImpressionTracker != null) {
             bDImpressionTracker.clear();
-            this.f8875c = null;
+            this.f6035c = null;
         }
     }
 
-    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd, com.anythink.nativead.unitgroup.a, com.anythink.core.api.IATThirdPartyMaterial
+    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd, com.anythink.nativead.unitgroup.a
     public View getAdMediaView(Object... objArr) {
-        NativeResponse nativeResponse = this.f8874a;
+        NativeResponse nativeResponse = this.f6034a;
         if (nativeResponse == null || nativeResponse.getMaterialType() != NativeResponse.MaterialType.VIDEO) {
             return null;
         }
         if (this.f == null) {
             XNativeView xNativeView = new XNativeView(this.b);
             this.f = xNativeView;
-            xNativeView.setNativeItem(this.f8874a);
+            xNativeView.setNativeItem(this.f6034a);
             this.f.setVideoMute(this.d);
             this.f.setNativeViewClickListener(new XNativeView.INativeViewClickListener() { // from class: com.anythink.network.baidu.BaiduATNativeAd.3
                 @Override // com.baidu.mobads.sdk.api.XNativeView.INativeViewClickListener
@@ -136,27 +136,27 @@ public class BaiduATNativeAd extends CustomNativeAd {
         return this.f;
     }
 
-    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd, com.anythink.core.api.IATThirdPartyMaterial
+    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd
     public int getMainImageHeight() {
-        NativeResponse nativeResponse = this.f8874a;
+        NativeResponse nativeResponse = this.f6034a;
         if (nativeResponse != null) {
             return nativeResponse.getMainPicHeight();
         }
         return 0;
     }
 
-    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd, com.anythink.core.api.IATThirdPartyMaterial
+    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd
     public int getMainImageWidth() {
-        NativeResponse nativeResponse = this.f8874a;
+        NativeResponse nativeResponse = this.f6034a;
         if (nativeResponse != null) {
             return nativeResponse.getMainPicWidth();
         }
         return 0;
     }
 
-    @Override // com.anythink.nativead.unitgroup.a, com.anythink.core.api.IATThirdPartyMaterial
+    @Override // com.anythink.nativead.unitgroup.a
     public View getShakeView(int i, int i2, final ATShakeViewListener aTShakeViewListener) {
-        NativeResponse nativeResponse = this.f8874a;
+        NativeResponse nativeResponse = this.f6034a;
         if (nativeResponse != null) {
             return nativeResponse.renderShakeView(i, i2, new NativeResponse.AdShakeViewListener() { // from class: com.anythink.network.baidu.BaiduATNativeAd.4
                 @Override // com.baidu.mobads.sdk.api.NativeResponse.AdShakeViewListener
@@ -173,7 +173,7 @@ public class BaiduATNativeAd extends CustomNativeAd {
 
     @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd
     public void impressionTrack(View view) {
-        NativeResponse nativeResponse = this.f8874a;
+        NativeResponse nativeResponse = this.f6034a;
         if (nativeResponse == null || view == null) {
             return;
         }
@@ -193,7 +193,7 @@ public class BaiduATNativeAd extends CustomNativeAd {
         /*
             r8 = this;
             r0 = r8
-            com.baidu.mobads.sdk.api.NativeResponse r0 = r0.f8874a
+            com.baidu.mobads.sdk.api.NativeResponse r0 = r0.f6034a
             if (r0 == 0) goto L60
             java.util.ArrayList r0 = new java.util.ArrayList
             r1 = r0
@@ -232,7 +232,7 @@ public class BaiduATNativeAd extends CustomNativeAd {
             r10 = r0
         L4c:
             r0 = r8
-            com.baidu.mobads.sdk.api.NativeResponse r0 = r0.f8874a
+            com.baidu.mobads.sdk.api.NativeResponse r0 = r0.f6034a
             r1 = r9
             r2 = r10
             r3 = r11
@@ -251,10 +251,10 @@ public class BaiduATNativeAd extends CustomNativeAd {
             r0.render()
         L6d:
             r0 = r8
-            com.anythink.network.baidu.impression.BDImpressionTracker r0 = r0.f8875c     // Catch: java.lang.Throwable -> L85
+            com.anythink.network.baidu.impression.BDImpressionTracker r0 = r0.f6035c     // Catch: java.lang.Throwable -> L85
             if (r0 == 0) goto L84
             r0 = r8
-            com.anythink.network.baidu.impression.BDImpressionTracker r0 = r0.f8875c     // Catch: java.lang.Throwable -> L85
+            com.anythink.network.baidu.impression.BDImpressionTracker r0 = r0.f6035c     // Catch: java.lang.Throwable -> L85
             r1 = r9
             com.anythink.network.baidu.BaiduATNativeAd$2 r2 = new com.anythink.network.baidu.BaiduATNativeAd$2     // Catch: java.lang.Throwable -> L85
             r3 = r2
@@ -315,7 +315,7 @@ public class BaiduATNativeAd extends CustomNativeAd {
         }
     }
 
-    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd, com.anythink.core.api.BaseAd
+    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd
     public void setVideoMute(boolean z) {
         this.d = z;
         XNativeView xNativeView = this.f;

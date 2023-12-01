@@ -23,14 +23,14 @@ public class MobclickAgent {
         
 
         /* renamed from: a  reason: collision with root package name */
-        private int f40597a;
+        private int f26906a;
 
         EScenarioType(int i) {
-            this.f40597a = i;
+            this.f26906a = i;
         }
 
         public int toValue() {
-            return this.f40597a;
+            return this.f26906a;
         }
     }
 
@@ -85,7 +85,7 @@ public class MobclickAgent {
 
     public static void onEvent(Context context, String str, Map<String, String> map) {
         if (map == null) {
-            UMLog.aq(j.f40755a, 0, "\\|");
+            UMLog.aq(j.f27064a, 0, "\\|");
         } else {
             b.a().a(context, str, new HashMap(map), -1L);
         }
@@ -93,7 +93,7 @@ public class MobclickAgent {
 
     public static void onEventObject(Context context, String str, Map<String, Object> map) {
         if (map == null) {
-            UMLog.aq(j.f40755a, 0, "\\|");
+            UMLog.aq(j.f27064a, 0, "\\|");
         } else {
             b.a().a(context, str, map, -1L);
         }

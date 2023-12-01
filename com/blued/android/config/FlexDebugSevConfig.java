@@ -17,27 +17,25 @@ import com.soft.blued.utils.BluedPreferences;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/config/FlexDebugSevConfig.class */
 public class FlexDebugSevConfig {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static volatile FlexDebugSevConfig f9483a;
+    private static volatile FlexDebugSevConfig a;
     private DebugSevConfigModel b = h();
 
     private FlexDebugSevConfig() {
     }
 
     public static FlexDebugSevConfig a() {
-        if (f9483a == null) {
+        if (a == null) {
             synchronized (FlexDebugSevConfig.class) {
                 try {
-                    if (f9483a == null) {
-                        f9483a = new FlexDebugSevConfig();
+                    if (a == null) {
+                        a = new FlexDebugSevConfig();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f9483a;
+        return a;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -63,7 +61,7 @@ public class FlexDebugSevConfig {
         String dX = BluedPreferences.dX();
         try {
             if (!TextUtils.isEmpty(dX)) {
-                return (DebugSevConfigModel) AppInfo.f().fromJson(dX, (Class<Object>) DebugSevConfigModel.class);
+                return (DebugSevConfigModel) AppInfo.f().fromJson(dX, DebugSevConfigModel.class);
             }
         } catch (Throwable th) {
             BluedStatistics.c().a("DEBUG_CONFIG_JSON_ERROR", 0L, -1, dX);
@@ -119,6 +117,6 @@ public class FlexDebugSevConfig {
     }
 
     public void f() {
-        f9483a = null;
+        a = null;
     }
 }

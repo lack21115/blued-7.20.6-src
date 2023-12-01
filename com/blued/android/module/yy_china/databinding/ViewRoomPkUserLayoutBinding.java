@@ -11,17 +11,13 @@ import com.blued.android.module.yy_china.view.YYBaseUserHeadView;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ViewRoomPkUserLayoutBinding.class */
 public final class ViewRoomPkUserLayoutBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ShapeTextView f16877a;
+    public final ShapeTextView a;
     public final YYBaseUserHeadView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final ConstraintLayout f16878c;
+    private final ConstraintLayout c;
 
     private ViewRoomPkUserLayoutBinding(ConstraintLayout constraintLayout, ShapeTextView shapeTextView, YYBaseUserHeadView yYBaseUserHeadView) {
-        this.f16878c = constraintLayout;
-        this.f16877a = shapeTextView;
+        this.c = constraintLayout;
+        this.a = shapeTextView;
         this.b = yYBaseUserHeadView;
     }
 
@@ -48,9 +44,8 @@ public final class ViewRoomPkUserLayoutBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f16878c;
+        return this.c;
     }
 }

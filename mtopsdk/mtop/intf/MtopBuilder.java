@@ -1,7 +1,6 @@
 package mtopsdk.mtop.intf;
 
 import android.os.Handler;
-import com.igexin.push.config.c;
 import java.util.HashMap;
 import java.util.Map;
 import mtopsdk.common.util.MtopUtils;
@@ -150,14 +149,13 @@ public class MtopBuilder {
         return this;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    public void mtopCommitStatData(boolean z) {
-        this.stat.f43790a = z;
+    protected void mtopCommitStatData(boolean z) {
+        this.stat.a = z;
     }
 
     public MtopBuilder protocol(ProtocolEnum protocolEnum) {
         if (protocolEnum != null) {
-            this.mtopProp.f43709a = protocolEnum;
+            this.mtopProp.a = protocolEnum;
         }
         return this;
     }
@@ -235,15 +233,15 @@ public class MtopBuilder {
         synchronized (createListenerProxy) {
             try {
                 if (createListenerProxy.b == null) {
-                    createListenerProxy.wait(c.l);
+                    createListenerProxy.wait(120000L);
                 }
             } catch (Exception e) {
                 TBSdkLog.b(TAG, "[apiCall] error", e);
             }
         }
         MtopResponse mtopResponse = createListenerProxy.b;
-        if (createListenerProxy.f43722c != null) {
-            this.requestContext = createListenerProxy.f43722c;
+        if (createListenerProxy.c != null) {
+            this.requestContext = createListenerProxy.c;
         }
         MtopResponse mtopResponse2 = mtopResponse;
         if (mtopResponse == null) {

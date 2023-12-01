@@ -57,7 +57,7 @@ class YearPickerView extends ListView implements AdapterView.OnItemClickListener
     }
 
     public YearPickerView(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, 16842868);
+        this(context, attributeSet, R.attr.listViewStyle);
     }
 
     public YearPickerView(Context context, AttributeSet attributeSet, int i) {

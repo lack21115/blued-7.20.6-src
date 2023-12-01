@@ -25,8 +25,8 @@ public final class IgnoreAnchorVoiceUpInviteExtra extends GeneratedMessageV3 imp
     private volatile Object name_;
     private static final IgnoreAnchorVoiceUpInviteExtra DEFAULT_INSTANCE = new IgnoreAnchorVoiceUpInviteExtra();
     private static final Parser<IgnoreAnchorVoiceUpInviteExtra> PARSER = new AbstractParser<IgnoreAnchorVoiceUpInviteExtra>() { // from class: cn.irisgw.live.IgnoreAnchorVoiceUpInviteExtra.1
-        @Override // com.google.protobuf.Parser
-        public IgnoreAnchorVoiceUpInviteExtra parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        /* renamed from: parsePartialFrom */
+        public IgnoreAnchorVoiceUpInviteExtra m3519parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             return new IgnoreAnchorVoiceUpInviteExtra(codedInputStream, extensionRegistryLite);
         }
     };
@@ -55,22 +55,22 @@ public final class IgnoreAnchorVoiceUpInviteExtra extends GeneratedMessageV3 imp
             boolean unused = IgnoreAnchorVoiceUpInviteExtra.alwaysUseFieldBuilders;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: addRepeatedField */
+        public Builder m3521addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.addRepeatedField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public IgnoreAnchorVoiceUpInviteExtra build() {
-            IgnoreAnchorVoiceUpInviteExtra buildPartial = buildPartial();
-            if (buildPartial.isInitialized()) {
-                return buildPartial;
+        /* renamed from: build */
+        public IgnoreAnchorVoiceUpInviteExtra m3523build() {
+            IgnoreAnchorVoiceUpInviteExtra m3525buildPartial = m3525buildPartial();
+            if (m3525buildPartial.isInitialized()) {
+                return m3525buildPartial;
             }
-            throw newUninitializedMessageException((Message) buildPartial);
+            throw newUninitializedMessageException(m3525buildPartial);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public IgnoreAnchorVoiceUpInviteExtra buildPartial() {
+        /* renamed from: buildPartial */
+        public IgnoreAnchorVoiceUpInviteExtra m3525buildPartial() {
             IgnoreAnchorVoiceUpInviteExtra ignoreAnchorVoiceUpInviteExtra = new IgnoreAnchorVoiceUpInviteExtra(this);
             ignoreAnchorVoiceUpInviteExtra.name_ = this.name_;
             ignoreAnchorVoiceUpInviteExtra.count_ = this.count_;
@@ -78,8 +78,8 @@ public final class IgnoreAnchorVoiceUpInviteExtra extends GeneratedMessageV3 imp
             return ignoreAnchorVoiceUpInviteExtra;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public Builder clear() {
+        /* renamed from: clear */
+        public Builder m3529clear() {
             super.clear();
             this.name_ = "";
             this.count_ = 0;
@@ -92,8 +92,8 @@ public final class IgnoreAnchorVoiceUpInviteExtra extends GeneratedMessageV3 imp
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+        /* renamed from: clearField */
+        public Builder m3531clearField(Descriptors.FieldDescriptor fieldDescriptor) {
             return (Builder) super.clearField(fieldDescriptor);
         }
 
@@ -103,15 +103,14 @@ public final class IgnoreAnchorVoiceUpInviteExtra extends GeneratedMessageV3 imp
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+        /* renamed from: clearOneof */
+        public Builder m3534clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
             return (Builder) super.clearOneof(oneofDescriptor);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder m3540clone() {
+            return (Builder) super.clone();
         }
 
         @Override // cn.irisgw.live.IgnoreAnchorVoiceUpInviteExtraOrBuilder
@@ -119,12 +118,11 @@ public final class IgnoreAnchorVoiceUpInviteExtra extends GeneratedMessageV3 imp
             return this.count_;
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public IgnoreAnchorVoiceUpInviteExtra getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public IgnoreAnchorVoiceUpInviteExtra m3542getDefaultInstanceForType() {
             return IgnoreAnchorVoiceUpInviteExtra.getDefaultInstance();
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
         public Descriptors.Descriptor getDescriptorForType() {
             return LiveConstants.internal_static_cn_irisgw_live_IgnoreAnchorVoiceUpInviteExtra_descriptor;
         }
@@ -151,12 +149,10 @@ public final class IgnoreAnchorVoiceUpInviteExtra extends GeneratedMessageV3 imp
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_IgnoreAnchorVoiceUpInviteExtra_fieldAccessorTable.ensureFieldAccessorsInitialized(IgnoreAnchorVoiceUpInviteExtra.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             return true;
         }
@@ -172,18 +168,18 @@ public final class IgnoreAnchorVoiceUpInviteExtra extends GeneratedMessageV3 imp
             if (ignoreAnchorVoiceUpInviteExtra.getCount() != 0) {
                 setCount(ignoreAnchorVoiceUpInviteExtra.getCount());
             }
-            mergeUnknownFields(ignoreAnchorVoiceUpInviteExtra.unknownFields);
+            m3551mergeUnknownFields(ignoreAnchorVoiceUpInviteExtra.unknownFields);
             onChanged();
             return this;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+        /* renamed from: mergeFrom */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
         */
-        public cn.irisgw.live.IgnoreAnchorVoiceUpInviteExtra.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+        public cn.irisgw.live.IgnoreAnchorVoiceUpInviteExtra.Builder m3548mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
             /*
                 r4 = this;
                 r0 = 0
@@ -228,11 +224,11 @@ public final class IgnoreAnchorVoiceUpInviteExtra extends GeneratedMessageV3 imp
                 r0 = r6
                 throw r0
             */
-            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.IgnoreAnchorVoiceUpInviteExtra.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.IgnoreAnchorVoiceUpInviteExtra$Builder");
+            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.IgnoreAnchorVoiceUpInviteExtra.Builder.m3548mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.IgnoreAnchorVoiceUpInviteExtra$Builder");
         }
 
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder mergeFrom(Message message) {
+        /* renamed from: mergeFrom */
+        public Builder m3547mergeFrom(Message message) {
             if (message instanceof IgnoreAnchorVoiceUpInviteExtra) {
                 return mergeFrom((IgnoreAnchorVoiceUpInviteExtra) message);
             }
@@ -240,8 +236,8 @@ public final class IgnoreAnchorVoiceUpInviteExtra extends GeneratedMessageV3 imp
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: mergeUnknownFields */
+        public final Builder m3551mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.mergeUnknownFields(unknownFieldSet);
         }
 
@@ -251,8 +247,8 @@ public final class IgnoreAnchorVoiceUpInviteExtra extends GeneratedMessageV3 imp
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: setField */
+        public Builder m3553setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.setField(fieldDescriptor, obj);
         }
 
@@ -275,13 +271,13 @@ public final class IgnoreAnchorVoiceUpInviteExtra extends GeneratedMessageV3 imp
             throw null;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+        /* renamed from: setRepeatedField */
+        public Builder m3555setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
             return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: setUnknownFields */
+        public final Builder m3557setUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.setUnknownFields(unknownFieldSet);
         }
     }
@@ -339,66 +335,65 @@ public final class IgnoreAnchorVoiceUpInviteExtra extends GeneratedMessageV3 imp
     }
 
     public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
+        return DEFAULT_INSTANCE.m3518toBuilder();
     }
 
     public static Builder newBuilder(IgnoreAnchorVoiceUpInviteExtra ignoreAnchorVoiceUpInviteExtra) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(ignoreAnchorVoiceUpInviteExtra);
+        return DEFAULT_INSTANCE.m3518toBuilder().mergeFrom(ignoreAnchorVoiceUpInviteExtra);
     }
 
     public static IgnoreAnchorVoiceUpInviteExtra parseDelimitedFrom(InputStream inputStream) throws IOException {
-        return (IgnoreAnchorVoiceUpInviteExtra) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
     }
 
     public static IgnoreAnchorVoiceUpInviteExtra parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (IgnoreAnchorVoiceUpInviteExtra) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static IgnoreAnchorVoiceUpInviteExtra parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString);
+        return (IgnoreAnchorVoiceUpInviteExtra) PARSER.parseFrom(byteString);
     }
 
     public static IgnoreAnchorVoiceUpInviteExtra parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString, extensionRegistryLite);
+        return (IgnoreAnchorVoiceUpInviteExtra) PARSER.parseFrom(byteString, extensionRegistryLite);
     }
 
     public static IgnoreAnchorVoiceUpInviteExtra parseFrom(CodedInputStream codedInputStream) throws IOException {
-        return (IgnoreAnchorVoiceUpInviteExtra) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
     }
 
     public static IgnoreAnchorVoiceUpInviteExtra parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (IgnoreAnchorVoiceUpInviteExtra) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
     }
 
     public static IgnoreAnchorVoiceUpInviteExtra parseFrom(InputStream inputStream) throws IOException {
-        return (IgnoreAnchorVoiceUpInviteExtra) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
     }
 
     public static IgnoreAnchorVoiceUpInviteExtra parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (IgnoreAnchorVoiceUpInviteExtra) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static IgnoreAnchorVoiceUpInviteExtra parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer);
+        return (IgnoreAnchorVoiceUpInviteExtra) PARSER.parseFrom(byteBuffer);
     }
 
     public static IgnoreAnchorVoiceUpInviteExtra parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+        return (IgnoreAnchorVoiceUpInviteExtra) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
     }
 
     public static IgnoreAnchorVoiceUpInviteExtra parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr);
+        return (IgnoreAnchorVoiceUpInviteExtra) PARSER.parseFrom(bArr);
     }
 
     public static IgnoreAnchorVoiceUpInviteExtra parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr, extensionRegistryLite);
+        return (IgnoreAnchorVoiceUpInviteExtra) PARSER.parseFrom(bArr, extensionRegistryLite);
     }
 
     public static Parser<IgnoreAnchorVoiceUpInviteExtra> parser() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
@@ -415,8 +410,8 @@ public final class IgnoreAnchorVoiceUpInviteExtra extends GeneratedMessageV3 imp
         return this.count_;
     }
 
-    @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-    public IgnoreAnchorVoiceUpInviteExtra getDefaultInstanceForType() {
+    /* renamed from: getDefaultInstanceForType */
+    public IgnoreAnchorVoiceUpInviteExtra m3513getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
     }
 
@@ -442,12 +437,10 @@ public final class IgnoreAnchorVoiceUpInviteExtra extends GeneratedMessageV3 imp
         return (ByteString) obj;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
     public Parser<IgnoreAnchorVoiceUpInviteExtra> getParserForType() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public int getSerializedSize() {
         int i = this.memoizedSize;
         if (i != -1) {
@@ -467,12 +460,10 @@ public final class IgnoreAnchorVoiceUpInviteExtra extends GeneratedMessageV3 imp
         return serializedSize;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
     public final UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public int hashCode() {
         if (this.memoizedHashCode != 0) {
             return this.memoizedHashCode;
@@ -482,12 +473,10 @@ public final class IgnoreAnchorVoiceUpInviteExtra extends GeneratedMessageV3 imp
         return hashCode;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
         return LiveConstants.internal_static_cn_irisgw_live_IgnoreAnchorVoiceUpInviteExtra_fieldAccessorTable.ensureFieldAccessorsInitialized(IgnoreAnchorVoiceUpInviteExtra.class, Builder.class);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
     public final boolean isInitialized() {
         byte b = this.memoizedIsInitialized;
         if (b == 1) {
@@ -500,28 +489,26 @@ public final class IgnoreAnchorVoiceUpInviteExtra extends GeneratedMessageV3 imp
         return true;
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder newBuilderForType() {
+    /* renamed from: newBuilderForType */
+    public Builder m3516newBuilderForType() {
         return newBuilder();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.protobuf.GeneratedMessageV3
-    public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+    /* renamed from: newBuilderForType */
+    public Builder m3515newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
         return new Builder(builderParent);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
         return new IgnoreAnchorVoiceUpInviteExtra();
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder toBuilder() {
+    /* renamed from: toBuilder */
+    public Builder m3518toBuilder() {
         return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
         if (!getNameBytes().isEmpty()) {
             GeneratedMessageV3.writeString(codedOutputStream, 1, this.name_);

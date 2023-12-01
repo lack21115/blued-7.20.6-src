@@ -13,11 +13,11 @@ public final class DefaultScheduler extends ExperimentalCoroutineDispatcher {
     private static final CoroutineDispatcher d;
 
     static {
-        int a2;
+        int a;
         DefaultScheduler defaultScheduler = new DefaultScheduler();
         b = defaultScheduler;
-        a2 = SystemPropsKt__SystemProps_commonKt.a("kotlinx.coroutines.io.parallelism", RangesKt.c(64, SystemPropsKt.a()), 0, 0, 12, (Object) null);
-        d = new LimitingDispatcher(defaultScheduler, a2, "Dispatchers.IO", 1);
+        a = SystemPropsKt__SystemProps_commonKt.a("kotlinx.coroutines.io.parallelism", RangesKt.c(64, SystemPropsKt.a()), 0, 0, 12, (Object) null);
+        d = new LimitingDispatcher(defaultScheduler, a, "Dispatchers.IO", 1);
     }
 
     private DefaultScheduler() {

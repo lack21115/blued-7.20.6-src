@@ -1,7 +1,6 @@
 package com.tencent.thumbplayer.core.common;
 
 import android.view.SurfaceControl;
-import com.android.internal.util.Protocol;
 import java.util.HashMap;
 
 /* loaded from: source-8829756-dex2jar.jar:com/tencent/thumbplayer/core/common/TPMediaCodecProfileLevel.class */
@@ -296,7 +295,7 @@ public final class TPMediaCodecProfileLevel {
         vp8LumaSampleMap.put(8, 8912896);
         HashMap<Integer, Integer> hashMap5 = new HashMap<>();
         av1LumaSampleMap = hashMap5;
-        hashMap5.put(1, Integer.valueOf((int) Protocol.BASE_WIFI_MONITOR));
+        hashMap5.put(1, 147456);
         av1LumaSampleMap.put(2, 278784);
         av1LumaSampleMap.put(4, 278784);
         av1LumaSampleMap.put(8, 278784);

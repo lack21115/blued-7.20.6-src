@@ -9,10 +9,10 @@ import android.view.DragEvent;
 public final class DragAndDropPermissionsCompat {
 
     /* renamed from: a  reason: collision with root package name */
-    private Object f2629a;
+    private Object f2581a;
 
     private DragAndDropPermissionsCompat(Object obj) {
-        this.f2629a = obj;
+        this.f2581a = obj;
     }
 
     public static DragAndDropPermissionsCompat request(Activity activity, DragEvent dragEvent) {
@@ -25,7 +25,7 @@ public final class DragAndDropPermissionsCompat {
 
     public void release() {
         if (Build.VERSION.SDK_INT >= 24) {
-            ((DragAndDropPermissions) this.f2629a).release();
+            ((DragAndDropPermissions) this.f2581a).release();
         }
     }
 }

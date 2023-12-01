@@ -1,7 +1,6 @@
 package com.tencent.cos.xml.utils;
 
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.cos.xml.common.ClientErrorCode;
 import com.tencent.cos.xml.exception.CosXmlClientException;
 import java.io.UnsupportedEncodingException;
@@ -15,7 +14,7 @@ public class URLEncodeUtils {
         }
         StringBuilder sb = new StringBuilder();
         try {
-            String[] split = str.split(BridgeUtil.SPLIT_MARK, -1);
+            String[] split = str.split("/", -1);
             int length = split.length;
             int i = 0;
             while (true) {
@@ -51,7 +50,7 @@ public class URLEncodeUtils {
                         }
                     }
                     if (i2 != length - 1) {
-                        sb.append(BridgeUtil.SPLIT_MARK);
+                        sb.append("/");
                     }
                 } else {
                     sb.append('/');

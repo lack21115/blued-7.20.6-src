@@ -6,11 +6,11 @@ import com.anythink.expressad.foundation.d.c;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f8185a;
+    private String f5345a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private c f8186c;
+    private c f5346c;
     private String d;
     private boolean e;
     private int f;
@@ -27,11 +27,11 @@ public class b {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private String f8187a;
+        private String f5347a;
         private String b;
 
         /* renamed from: c  reason: collision with root package name */
-        private c f8188c;
+        private c f5348c;
         private String d;
         private boolean e;
         private int f;
@@ -59,12 +59,12 @@ public class b {
         }
 
         public final a a(c cVar) {
-            this.f8188c = cVar;
+            this.f5348c = cVar;
             return this;
         }
 
         public final a a(String str) {
-            this.f8187a = str;
+            this.f5347a = str;
             return this;
         }
 
@@ -127,9 +127,9 @@ public class b {
         this.k = 10;
         this.l = 5;
         this.m = 1;
-        this.f8185a = aVar.f8187a;
+        this.f5345a = aVar.f5347a;
         this.b = aVar.b;
-        this.f8186c = aVar.f8188c;
+        this.f5346c = aVar.f5348c;
         this.d = aVar.d;
         this.e = aVar.e;
         this.f = aVar.f;
@@ -148,7 +148,7 @@ public class b {
     }
 
     public final String a() {
-        return this.f8185a;
+        return this.f5345a;
     }
 
     public final String b() {
@@ -156,7 +156,7 @@ public class b {
     }
 
     public final c c() {
-        return this.f8186c;
+        return this.f5346c;
     }
 
     public final boolean d() {

@@ -7,11 +7,11 @@ import com.blued.android.framework.view.shape.ShapeLinearLayout;
 public final class PopPushSwitchBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ShapeLinearLayout f29552a;
+    private final ShapeLinearLayout f15862a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ShapeLinearLayout getRoot() {
-        return this.f29552a;
+        return this.f15862a;
     }
 }

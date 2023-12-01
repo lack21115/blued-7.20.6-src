@@ -2,8 +2,7 @@ package com.blued.android.module.common.utils;
 
 import android.text.Editable;
 import android.text.TextUtils;
-import com.baidu.mobads.sdk.api.IAdInterListener;
-import com.baidu.mobads.sdk.internal.ci;
+import com.amap.api.col.p0003sl.iu;
 import com.blued.android.framework.utils.EncryptTool;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -12,9 +11,7 @@ import java.util.regex.Pattern;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/utils/CommonStringUtils.class */
 public class CommonStringUtils {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final Pattern f10877a = Pattern.compile("\\s*|\t|\r|\n");
+    private static final Pattern a = Pattern.compile("\\s*|\t|\r|\n");
 
     public static double a(String str, double d) {
         if (TextUtils.isEmpty(str)) {
@@ -73,11 +70,11 @@ public class CommonStringUtils {
     }
 
     public static String a(float f) {
-        DecimalFormat decimalFormat = new DecimalFormat(ci.d);
+        DecimalFormat decimalFormat = new DecimalFormat("0.0");
         if (f > 1.0E8f) {
             return decimalFormat.format(f / 1.0E8f) + "y";
         } else if (f > 99999.0f) {
-            return decimalFormat.format(f / 10000.0f) + IAdInterListener.AdReqParam.WIDTH;
+            return decimalFormat.format(f / 10000.0f) + "w";
         } else {
             return ((int) f) + "";
         }
@@ -123,9 +120,9 @@ public class CommonStringUtils {
         if (f > 1.0E8f) {
             return decimalFormat.format(f / 1.0E8f) + "y";
         } else if (f > 9999.0f) {
-            return decimalFormat.format(f / 10000.0f) + IAdInterListener.AdReqParam.WIDTH;
+            return decimalFormat.format(f / 10000.0f) + "w";
         } else if (f > 999.0f) {
-            return decimalFormat.format(f / 1000.0f) + "k";
+            return decimalFormat.format(f / 1000.0f) + iu.k;
         } else {
             return ((int) f) + "";
         }
@@ -166,7 +163,7 @@ public class CommonStringUtils {
         decimalFormat.setMaximumFractionDigits(2);
         decimalFormat.setGroupingSize(0);
         decimalFormat.setRoundingMode(RoundingMode.FLOOR);
-        return h(decimalFormat.format(d / 10000.0d)) + IAdInterListener.AdReqParam.WIDTH;
+        return h(decimalFormat.format(d / 10000.0d)) + "w";
     }
 
     public static String d(double d) {
@@ -177,7 +174,7 @@ public class CommonStringUtils {
             return ((int) d) + "";
         }
         DecimalFormat decimalFormat = new DecimalFormat("0.00");
-        return h(decimalFormat.format(d / 10000.0d)) + IAdInterListener.AdReqParam.WIDTH;
+        return h(decimalFormat.format(d / 10000.0d)) + "w";
     }
 
     public static String d(String str) {
@@ -223,7 +220,7 @@ public class CommonStringUtils {
     }
 
     public static String f(String str) {
-        return str != null ? f10877a.matcher(str).replaceAll("") : "";
+        return str != null ? a.matcher(str).replaceAll("") : "";
     }
 
     public static String g(String str) {

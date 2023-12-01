@@ -4,7 +4,9 @@ import com.blued.android.core.AppInfo;
 import com.blued.android.core.AppMethods;
 import com.blued.android.framework.http.parser.BluedEntity;
 import com.blued.android.framework.http.parser.BluedEntityA;
+import com.blued.android.framework.http.parser.BluedEntityBaseExtra;
 import com.blued.android.framework.utils.AesCrypto2;
+import com.blued.android.module.common.api.ApiState;
 import com.blued.android.module.common.api.BluedApiProxy;
 import com.blued.android.module.common.api.Error;
 import com.blued.android.module.common.api.Succeed;
@@ -35,11 +37,11 @@ import kotlinx.coroutines.CoroutineScope;
 final class FinishProfileVM$register$4 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
 
     /* renamed from: a  reason: collision with root package name */
-    int f20609a;
+    int f7003a;
     final /* synthetic */ HashMap<String, String> b;
 
     /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ ProfileInfoModel f20610c;
+    final /* synthetic */ ProfileInfoModel f7004c;
     final /* synthetic */ FinishProfileVM d;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -47,29 +49,26 @@ final class FinishProfileVM$register$4 extends SuspendLambda implements Function
     public FinishProfileVM$register$4(HashMap<String, String> hashMap, ProfileInfoModel profileInfoModel, FinishProfileVM finishProfileVM, Continuation<? super FinishProfileVM$register$4> continuation) {
         super(2, continuation);
         this.b = hashMap;
-        this.f20610c = profileInfoModel;
+        this.f7004c = profileInfoModel;
         this.d = finishProfileVM;
     }
 
-    @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-        return ((FinishProfileVM$register$4) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+        return create(coroutineScope, continuation).invokeSuspend(Unit.a);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        return new FinishProfileVM$register$4(this.b, this.f20610c, this.d, continuation);
+        return new FinishProfileVM$register$4(this.b, this.f7004c, this.d, continuation);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         Object a2 = IntrinsicsKt.a();
-        int i = this.f20609a;
+        int i = this.f7003a;
         if (i == 0) {
             ResultKt.a(obj);
-            this.f20609a = 1;
-            Object b = ((LoginService) BluedApiProxy.b().a(LoginService.class)).b(this.b, this);
+            this.f7003a = 1;
+            Object b = ((LoginService) BluedApiProxy.b().a(LoginService.class)).b(this.b, (Continuation) this);
             obj = b;
             if (b == a2) {
                 return a2;
@@ -80,20 +79,20 @@ final class FinishProfileVM$register$4 extends SuspendLambda implements Function
             ResultKt.a(obj);
         }
         BluedEntity bluedEntity = (BluedEntity) obj;
-        ProfileInfoModel profileInfoModel = this.f20610c;
+        ProfileInfoModel profileInfoModel = this.f7004c;
         FinishProfileVM finishProfileVM = this.d;
         if (bluedEntity.code == 200) {
             if (bluedEntity.hasData()) {
                 Object obj2 = bluedEntity.data.get(0);
-                S s = bluedEntity.extra;
+                BluedEntityBaseExtra bluedEntityBaseExtra = bluedEntity.extra;
                 bluedEntity.hasMore();
-                LoginAVConfigExtra loginAVConfigExtra = (LoginAVConfigExtra) s;
+                LoginAVConfigExtra loginAVConfigExtra = (LoginAVConfigExtra) bluedEntityBaseExtra;
                 BluedLoginResult bluedLoginResult = (BluedLoginResult) obj2;
                 if (bluedLoginResult != null) {
                     try {
                         Gson f = AppInfo.f();
                         BluedEntityA bluedEntityA = new BluedEntityA();
-                        bluedEntityA.data = CollectionsKt.d(bluedLoginResult);
+                        bluedEntityA.data = CollectionsKt.d(new BluedLoginResult[]{bluedLoginResult});
                         String json = f.toJson(bluedEntityA);
                         Intrinsics.c(json, "gson.toJson(bluedEntityA)");
                         profileInfoModel.n(json);
@@ -112,13 +111,13 @@ final class FinishProfileVM$register$4 extends SuspendLambda implements Function
                     }
                 }
             }
-            Succeed succeed = Succeed.f10631a;
+            ApiState apiState = Succeed.a;
         } else {
             int i2 = bluedEntity.code;
-            String message = bluedEntity.message;
-            Intrinsics.c(message, "message");
-            new Error(i2, message);
+            String str = bluedEntity.message;
+            Intrinsics.c(str, "message");
+            new Error(i2, str);
         }
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

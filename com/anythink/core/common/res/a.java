@@ -31,13 +31,9 @@ import java.util.concurrent.TimeUnit;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/res/a.class */
 public final class a implements Closeable {
-
-    /* renamed from: a  reason: collision with root package name */
-    static final String f6880a = "journal";
+    static final String a = "journal";
     static final String b = "journal.tmp";
-
-    /* renamed from: c  reason: collision with root package name */
-    static final String f6881c = "libcore.io.DiskLruCache";
+    static final String c = "libcore.io.DiskLruCache";
     static final String d = "1";
     static final long e = -1;
     private static final String f = "CLEAN";
@@ -79,21 +75,19 @@ public final class a implements Closeable {
 
     /* renamed from: com.anythink.core.common.res.a$a  reason: collision with other inner class name */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/res/a$a.class */
-    public final class C0106a {
+    public final class C0066a {
         private final b b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private boolean f6885c;
+        private boolean c;
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: com.anythink.core.common.res.a$a$a  reason: collision with other inner class name */
         /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/res/a$a$a.class */
-        public final class C0107a extends FilterOutputStream {
-            private C0107a(OutputStream outputStream) {
+        public final class C0067a extends FilterOutputStream {
+            private C0067a(OutputStream outputStream) {
                 super(outputStream);
             }
 
-            /* synthetic */ C0107a(C0106a c0106a, OutputStream outputStream, byte b) {
+            /* synthetic */ C0067a(C0066a c0066a, OutputStream outputStream, byte b) {
                 this(outputStream);
             }
 
@@ -102,7 +96,7 @@ public final class a implements Closeable {
                 try {
                     this.out.close();
                 } catch (IOException e) {
-                    C0106a.b(C0106a.this);
+                    C0066a.b(C0066a.this);
                 }
             }
 
@@ -111,7 +105,7 @@ public final class a implements Closeable {
                 try {
                     this.out.flush();
                 } catch (IOException e) {
-                    C0106a.b(C0106a.this);
+                    C0066a.b(C0066a.this);
                 }
             }
 
@@ -120,7 +114,7 @@ public final class a implements Closeable {
                 try {
                     this.out.write(i);
                 } catch (IOException e) {
-                    C0106a.b(C0106a.this);
+                    C0066a.b(C0066a.this);
                 }
             }
 
@@ -129,16 +123,16 @@ public final class a implements Closeable {
                 try {
                     this.out.write(bArr, i, i2);
                 } catch (IOException e) {
-                    C0106a.b(C0106a.this);
+                    C0066a.b(C0066a.this);
                 }
             }
         }
 
-        private C0106a(b bVar) {
+        private C0066a(b bVar) {
             this.b = bVar;
         }
 
-        /* synthetic */ C0106a(a aVar, b bVar, byte b) {
+        /* synthetic */ C0066a(a aVar, b bVar, byte b) {
             this(bVar);
         }
 
@@ -173,8 +167,8 @@ public final class a implements Closeable {
             }
         }
 
-        static /* synthetic */ boolean b(C0106a c0106a) {
-            c0106a.f6885c = true;
+        static /* synthetic */ boolean b(C0066a c0066a) {
+            c0066a.c = true;
             return true;
         }
 
@@ -187,18 +181,18 @@ public final class a implements Closeable {
         }
 
         public final OutputStream a(int i) {
-            C0107a c0107a;
+            C0067a c0067a;
             synchronized (a.this) {
                 if (this.b.e != this) {
                     throw new IllegalStateException();
                 }
-                c0107a = new C0107a(this, new FileOutputStream(this.b.b(i)), (byte) 0);
+                c0067a = new C0067a(this, new FileOutputStream(this.b.b(i)), (byte) 0);
             }
-            return c0107a;
+            return c0067a;
         }
 
         public final void a() {
-            if (!this.f6885c) {
+            if (!this.c) {
                 a.this.a(this, true);
                 return;
             }
@@ -215,16 +209,14 @@ public final class a implements Closeable {
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/res/a$b.class */
     public final class b {
         private final String b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private final long[] f6890c;
+        private final long[] c;
         private boolean d;
-        private C0106a e;
+        private C0066a e;
         private long f;
 
         private b(String str) {
             this.b = str;
-            this.f6890c = new long[a.this.q];
+            this.c = new long[a.this.q];
         }
 
         /* synthetic */ b(a aVar, String str, byte b) {
@@ -242,7 +234,7 @@ public final class a implements Closeable {
                     if (i2 >= strArr.length) {
                         return;
                     }
-                    bVar.f6890c[i2] = Long.parseLong(strArr[i2]);
+                    bVar.c[i2] = Long.parseLong(strArr[i2]);
                     i = i2 + 1;
                 } catch (NumberFormatException e) {
                     throw b(strArr);
@@ -261,7 +253,7 @@ public final class a implements Closeable {
                     if (i2 >= strArr.length) {
                         return;
                     }
-                    this.f6890c[i2] = Long.parseLong(strArr[i2]);
+                    this.c[i2] = Long.parseLong(strArr[i2]);
                     i = i2 + 1;
                 } catch (NumberFormatException e) {
                     throw b(strArr);
@@ -285,7 +277,7 @@ public final class a implements Closeable {
 
         public final String a() {
             StringBuilder sb = new StringBuilder();
-            long[] jArr = this.f6890c;
+            long[] jArr = this.c;
             int length = jArr.length;
             int i = 0;
             while (true) {
@@ -309,14 +301,12 @@ public final class a implements Closeable {
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/res/a$c.class */
     public final class c implements Closeable {
         private final String b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private final long f6893c;
+        private final long c;
         private final InputStream[] d;
 
         private c(String str, long j, InputStream[] inputStreamArr) {
             this.b = str;
-            this.f6893c = j;
+            this.c = j;
             this.d = inputStreamArr;
         }
 
@@ -328,8 +318,8 @@ public final class a implements Closeable {
             return a.a(this.d[i]);
         }
 
-        private C0106a b() {
-            return a.this.a(this.b, this.f6893c);
+        private C0066a b() {
+            return a.this.a(this.b, this.c);
         }
 
         public final InputStream a() {
@@ -354,13 +344,13 @@ public final class a implements Closeable {
 
     private a(File file, long j2) {
         this.l = file;
-        this.m = new File(file, f6880a);
+        this.m = new File(file, a);
         this.n = new File(file, b);
         this.p = j2;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public C0106a a(String str, long j2) {
+    public C0066a a(String str, long j2) {
         synchronized (this) {
             j();
             e(str);
@@ -372,12 +362,12 @@ public final class a implements Closeable {
                 } else if (bVar.e != null) {
                     return null;
                 }
-                C0106a c0106a = new C0106a(this, bVar, (byte) 0);
-                bVar.e = c0106a;
+                C0066a c0066a = new C0066a(this, bVar, (byte) 0);
+                bVar.e = c0066a;
                 Writer writer = this.s;
                 writer.write("DIRTY " + str + '\n');
                 this.s.flush();
-                return c0106a;
+                return c0066a;
             }
             return null;
         }
@@ -426,10 +416,10 @@ public final class a implements Closeable {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public void a(C0106a c0106a, boolean z) {
+    public void a(C0066a c0066a, boolean z) {
         synchronized (this) {
-            b bVar = c0106a.b;
-            if (bVar.e != c0106a) {
+            b bVar = c0066a.b;
+            if (bVar.e != c0066a) {
                 throw new IllegalStateException();
             }
             int i2 = 0;
@@ -443,7 +433,7 @@ public final class a implements Closeable {
                         if (i4 >= this.q) {
                             break;
                         } else if (!bVar.b(i4).exists()) {
-                            c0106a.b();
+                            c0066a.b();
                             throw new IllegalStateException("edit didn't create file ".concat(String.valueOf(i4)));
                         } else {
                             i3 = i4 + 1;
@@ -458,9 +448,9 @@ public final class a implements Closeable {
                 } else if (b2.exists()) {
                     File a2 = bVar.a(i2);
                     b2.renameTo(a2);
-                    long j2 = bVar.f6890c[i2];
+                    long j2 = bVar.c[i2];
                     long length = a2.length();
-                    bVar.f6890c[i2] = length;
+                    bVar.c[i2] = length;
                     this.r = (this.r - j2) + length;
                 }
                 i2++;
@@ -588,7 +578,7 @@ public final class a implements Closeable {
             b next = it.next();
             if (next.e == null) {
                 for (int i2 = 0; i2 < this.q; i2++) {
-                    this.r += next.f6890c[i2];
+                    this.r += next.c[i2];
                 }
             } else {
                 next.e = null;
@@ -614,7 +604,7 @@ public final class a implements Closeable {
                 this.s.close();
             }
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(this.n), 8192);
-            bufferedWriter.write(f6881c);
+            bufferedWriter.write(c);
             bufferedWriter.write("\n");
             bufferedWriter.write("1");
             bufferedWriter.write("\n");
@@ -654,7 +644,7 @@ public final class a implements Closeable {
         }
         if (!split[0].equals(f) || split.length != this.q + 2) {
             if (split[0].equals(g) && split.length == 2) {
-                bVar2.e = new C0106a(this, bVar2, (byte) 0);
+                bVar2.e = new C0066a(this, bVar2, (byte) 0);
                 return;
             } else if (!split[0].equals(i) || split.length != 2) {
                 throw new IOException("unexpected journal line: ".concat(String.valueOf(str)));
@@ -777,7 +767,7 @@ public final class a implements Closeable {
         }
     }
 
-    public final C0106a b(String str) {
+    public final C0066a b(String str) {
         return a(str, -1L);
     }
 
@@ -792,8 +782,8 @@ public final class a implements Closeable {
                     if (!a2.delete()) {
                         throw new IOException("failed to delete ".concat(String.valueOf(a2)));
                     }
-                    this.r -= bVar.f6890c[i2];
-                    bVar.f6890c[i2] = 0;
+                    this.r -= bVar.c[i2];
+                    bVar.c[i2] = 0;
                 }
                 this.u++;
                 this.s.append((CharSequence) ("REMOVE " + str + '\n'));

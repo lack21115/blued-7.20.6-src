@@ -42,7 +42,7 @@ public class ve extends we implements h8 {
         } else if (i == 2) {
             p5 p5Var = (p5) obj;
             this.i = (float) p5Var.b;
-            this.j = (float) p5Var.f37683c;
+            this.j = (float) p5Var.f23992c;
         } else if (i != 3) {
             if (i != 4) {
                 return;
@@ -51,7 +51,7 @@ public class ve extends we implements h8 {
         } else {
             p5 p5Var2 = (p5) obj;
             this.k = (float) p5Var2.b;
-            this.l = (float) p5Var2.f37683c;
+            this.l = (float) p5Var2.f23992c;
         }
     }
 

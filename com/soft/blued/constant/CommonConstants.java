@@ -4,11 +4,11 @@ package com.soft.blued.constant;
 public class CommonConstants {
 
     /* renamed from: a  reason: collision with root package name */
-    public static Boolean f28315a = false;
+    public static Boolean f14625a = false;
     public static Boolean b = false;
 
     /* renamed from: c  reason: collision with root package name */
-    public static boolean f28316c = false;
+    public static boolean f14626c = false;
     public static boolean d = false;
     public static boolean e = false;
 

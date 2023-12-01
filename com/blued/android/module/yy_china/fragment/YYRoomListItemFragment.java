@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import androidx.fragment.app.DialogFragment;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -28,7 +29,6 @@ import com.blued.android.module.yy_china.model.YYRoomExtraModel;
 import com.blued.android.module.yy_china.presenter.YYChatRoomsListItemViewModel;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.jeremyliao.liveeventbus.LiveEventBus;
-import java.util.Collection;
 import java.util.List;
 import kotlin.Metadata;
 import kotlin.jvm.functions.Function1;
@@ -40,13 +40,9 @@ import kotlin.reflect.KProperty;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYRoomListItemFragment.class */
 public final class YYRoomListItemFragment extends MVVMBaseFragment<YYChatRoomsListItemViewModel> {
-
-    /* renamed from: a  reason: collision with root package name */
-    static final /* synthetic */ KProperty<Object>[] f17437a = {Reflection.a(new PropertyReference1Impl(YYRoomListItemFragment.class, "vb", "getVb()Lcom/blued/android/module/yy_china/databinding/FragmentYyRoomListItemBinding;", 0))};
+    static final /* synthetic */ KProperty<Object>[] a = {Reflection.a(new PropertyReference1Impl(YYRoomListItemFragment.class, "vb", "getVb()Lcom/blued/android/module/yy_china/databinding/FragmentYyRoomListItemBinding;", 0))};
     private final ViewBindingProperty b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private OnCLickRoomItemToGoRoomListener f17438c;
+    private OnCLickRoomItemToGoRoomListener c;
     private YYRoomListsAdapter d;
     private YYRoomExtraModel e;
 
@@ -85,7 +81,7 @@ public final class YYRoomListItemFragment extends MVVMBaseFragment<YYChatRoomsLi
         YYRoomListsAdapter yYRoomListsAdapter = this.d;
         if (yYRoomListsAdapter != null) {
             Intrinsics.a(list);
-            yYRoomListsAdapter.addData((Collection) list);
+            yYRoomListsAdapter.addData(list);
         }
         LiveEventBus.get("refresh_or_loadmore_finish").post("");
     }
@@ -117,7 +113,7 @@ public final class YYRoomListItemFragment extends MVVMBaseFragment<YYChatRoomsLi
             }
         }
         FragmentYyRoomListItemBinding p = p();
-        if (p != null && (noDataAndLoadFailView = p.f16546a) != null) {
+        if (p != null && (noDataAndLoadFailView = p.a) != null) {
             noDataAndLoadFailView.d();
         }
         FragmentYyRoomListItemBinding p2 = p();
@@ -145,7 +141,7 @@ public final class YYRoomListItemFragment extends MVVMBaseFragment<YYChatRoomsLi
     public final void b(boolean z) {
         NoDataAndLoadFailView noDataAndLoadFailView;
         FragmentYyRoomListItemBinding p = p();
-        if (p != null && (noDataAndLoadFailView = p.f16546a) != null) {
+        if (p != null && (noDataAndLoadFailView = p.a) != null) {
             noDataAndLoadFailView.a();
         }
         FragmentYyRoomListItemBinding p2 = p();
@@ -183,11 +179,11 @@ public final class YYRoomListItemFragment extends MVVMBaseFragment<YYChatRoomsLi
     }
 
     private final FragmentYyRoomListItemBinding p() {
-        return (FragmentYyRoomListItemBinding) this.b.b(this, f17437a[0]);
+        return (FragmentYyRoomListItemBinding) this.b.b(this, a[0]);
     }
 
     public final void a(OnCLickRoomItemToGoRoomListener onCLickRoomItemToGoRoomListener) {
-        this.f17438c = onCLickRoomItemToGoRoomListener;
+        this.c = onCLickRoomItemToGoRoomListener;
     }
 
     public final void a(YYRoomExtraModel yYRoomExtraModel) {
@@ -205,14 +201,14 @@ public final class YYRoomListItemFragment extends MVVMBaseFragment<YYChatRoomsLi
         NoDataAndLoadFailView noDataAndLoadFailView;
         NoDataAndLoadFailView noDataAndLoadFailView2;
         FragmentYyRoomListItemBinding p = p();
-        if (p != null && (noDataAndLoadFailView2 = p.f16546a) != null) {
+        if (p != null && (noDataAndLoadFailView2 = p.a) != null) {
             noDataAndLoadFailView2.setNoDataStr(R.string.yy_no_rooms);
         }
         FragmentYyRoomListItemBinding p2 = p();
-        if (p2 != null && (noDataAndLoadFailView = p2.f16546a) != null) {
+        if (p2 != null && (noDataAndLoadFailView = p2.a) != null) {
             noDataAndLoadFailView.setBackgroundColorRes(R.color.transparent);
         }
-        final GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2);
+        final RecyclerView.LayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2);
         FragmentYyRoomListItemBinding p3 = p();
         RecyclerView recyclerView2 = p3 == null ? null : p3.b;
         if (recyclerView2 != null) {
@@ -224,7 +220,7 @@ public final class YYRoomListItemFragment extends MVVMBaseFragment<YYChatRoomsLi
         Intrinsics.a((Object) e);
         String f = j().f();
         Intrinsics.a((Object) f);
-        YYRoomListsAdapter yYRoomListsAdapter = new YYRoomListsAdapter(fragmentActive, e, f, this.f17438c);
+        YYRoomListsAdapter yYRoomListsAdapter = new YYRoomListsAdapter(fragmentActive, e, f, this.c);
         this.d = yYRoomListsAdapter;
         if (yYRoomListsAdapter != null) {
             yYRoomListsAdapter.setEnableLoadMore(false);
@@ -251,9 +247,7 @@ public final class YYRoomListItemFragment extends MVVMBaseFragment<YYChatRoomsLi
         if (p6 != null && (recyclerView = p6.b) != null) {
             recyclerView.addItemDecoration(new RecyclerView.ItemDecoration() { // from class: com.blued.android.module.yy_china.fragment.YYRoomListItemFragment$initView$1
                 private int b;
-
-                /* renamed from: c  reason: collision with root package name */
-                private int f17440c;
+                private int c;
                 private boolean d;
 
                 /* JADX INFO: Access modifiers changed from: package-private */
@@ -262,14 +256,12 @@ public final class YYRoomListItemFragment extends MVVMBaseFragment<YYChatRoomsLi
                 }
 
                 /* JADX WARN: Type inference failed for: r0v0, types: [java.lang.Throwable, java.lang.Runtime] */
-                @Override // androidx.recyclerview.widget.RecyclerView.ItemDecoration
                 public void getItemOffsets(Rect rect, View view, RecyclerView recyclerView4, RecyclerView.State state) {
                     throw new Runtime("d2j fail translate: java.lang.RuntimeException: can not merge I and Z\r\n\tat com.googlecode.dex2jar.ir.TypeClass.merge(TypeClass.java:100)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeRef.updateTypeClass(TypeTransformer.java:174)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeAnalyze.copyTypes(TypeTransformer.java:322)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeAnalyze.fixTypes(TypeTransformer.java:226)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeAnalyze.analyze(TypeTransformer.java:207)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer.transform(TypeTransformer.java:44)\r\n\tat com.googlecode.d2j.dex.Dex2jar$2.optimize(Dex2jar.java:162)\r\n\tat com.googlecode.d2j.dex.Dex2Asm.convertCode(Dex2Asm.java:414)\r\n\tat com.googlecode.d2j.dex.ExDex2Asm.convertCode(ExDex2Asm.java:42)\r\n\tat com.googlecode.d2j.dex.Dex2jar$2.convertCode(Dex2jar.java:128)\r\n\tat com.googlecode.d2j.dex.Dex2Asm.convertMethod(Dex2Asm.java:509)\r\n\tat com.googlecode.d2j.dex.Dex2Asm.convertClass(Dex2Asm.java:406)\r\n\tat com.googlecode.d2j.dex.Dex2Asm.convertDex(Dex2Asm.java:422)\r\n\tat com.googlecode.d2j.dex.Dex2jar.doTranslate(Dex2jar.java:172)\r\n\tat com.googlecode.d2j.dex.Dex2jar.to(Dex2jar.java:272)\r\n\tat com.googlecode.dex2jar.tools.Dex2jarCmd.doCommandLine(Dex2jarCmd.java:108)\r\n\tat com.googlecode.dex2jar.tools.BaseCmd.doMain(BaseCmd.java:288)\r\n\tat com.googlecode.dex2jar.tools.Dex2jarCmd.main(Dex2jarCmd.java:32)\r\n");
                 }
             });
         }
         gridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() { // from class: com.blued.android.module.yy_china.fragment.YYRoomListItemFragment$initView$2
-            @Override // androidx.recyclerview.widget.GridLayoutManager.SpanSizeLookup
             public int getSpanSize(int i) {
                 YYRoomListsAdapter yYRoomListsAdapter5;
                 yYRoomListsAdapter5 = YYRoomListItemFragment.this.d;
@@ -288,7 +280,6 @@ public final class YYRoomListItemFragment extends MVVMBaseFragment<YYChatRoomsLi
             return;
         }
         BaseQuickAdapter.RequestLoadMoreListener requestLoadMoreListener = new BaseQuickAdapter.RequestLoadMoreListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYRoomListItemFragment$z6xPiGb6c_56i8torraLNPxfusM
-            @Override // com.chad.library.adapter.base.BaseQuickAdapter.RequestLoadMoreListener
             public final void onLoadMoreRequested() {
                 YYRoomListItemFragment.b(YYRoomListItemFragment.this);
             }
@@ -300,8 +291,7 @@ public final class YYRoomListItemFragment extends MVVMBaseFragment<YYChatRoomsLi
     @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
     public void k() {
         super.k();
-        LiveEventBus.get("refresh_or_loadmore", String.class).observe(this, new Observer() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYRoomListItemFragment$xCP20vn5lK4UI4kFmRKOR_jCByw
-            @Override // androidx.lifecycle.Observer
+        LiveEventBus.get("refresh_or_loadmore", String.class).observe((LifecycleOwner) this, new Observer() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYRoomListItemFragment$xCP20vn5lK4UI4kFmRKOR_jCByw
             public final void onChanged(Object obj) {
                 YYRoomListItemFragment.a(YYRoomListItemFragment.this, (String) obj);
             }
@@ -310,25 +300,24 @@ public final class YYRoomListItemFragment extends MVVMBaseFragment<YYChatRoomsLi
 
     @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
     public void l() {
-        YYRoomListItemFragment yYRoomListItemFragment = this;
+        LifecycleOwner lifecycleOwner = (LifecycleOwner) this;
         YYChatRoomsListItemViewModel j = j();
-        LifecycleExtKt.a(yYRoomListItemFragment, j == null ? null : j.g(), new YYRoomListItemFragment$liveDataObserver$1(this));
+        LifecycleExtKt.a(lifecycleOwner, j == null ? null : j.g(), new YYRoomListItemFragment$liveDataObserver$1(this));
         YYChatRoomsListItemViewModel j2 = j();
-        LifecycleExtKt.a(yYRoomListItemFragment, j2 == null ? null : j2.h(), new YYRoomListItemFragment$liveDataObserver$2(this));
+        LifecycleExtKt.a(lifecycleOwner, j2 == null ? null : j2.h(), new YYRoomListItemFragment$liveDataObserver$2(this));
         YYChatRoomsListItemViewModel j3 = j();
-        LifecycleExtKt.a(yYRoomListItemFragment, j3 == null ? null : j3.j(), new YYRoomListItemFragment$liveDataObserver$3(this));
+        LifecycleExtKt.a(lifecycleOwner, j3 == null ? null : j3.j(), new YYRoomListItemFragment$liveDataObserver$3(this));
         YYChatRoomsListItemViewModel j4 = j();
-        LifecycleExtKt.a(yYRoomListItemFragment, j4 == null ? null : j4.k(), new YYRoomListItemFragment$liveDataObserver$4(this));
+        LifecycleExtKt.a(lifecycleOwner, j4 == null ? null : j4.k(), new YYRoomListItemFragment$liveDataObserver$4(this));
         YYChatRoomsListItemViewModel j5 = j();
-        LifecycleExtKt.a(yYRoomListItemFragment, j5 == null ? null : j5.i(), new YYRoomListItemFragment$liveDataObserver$5(this));
+        LifecycleExtKt.a(lifecycleOwner, j5 == null ? null : j5.i(), new YYRoomListItemFragment$liveDataObserver$5(this));
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityCreated(Bundle bundle) {
         super.onActivityCreated(bundle);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onPause() {
         super.onPause();
         YYRoomListsAdapter yYRoomListsAdapter = this.d;
@@ -338,7 +327,7 @@ public final class YYRoomListItemFragment extends MVVMBaseFragment<YYChatRoomsLi
         }
     }
 
-    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment, com.blued.android.core.ui.BaseFragment
     public void onResume() {
         super.onResume();
         YYChatRoomsListItemViewModel j = j();

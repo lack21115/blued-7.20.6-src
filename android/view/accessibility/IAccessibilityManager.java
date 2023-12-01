@@ -325,7 +325,7 @@ public interface IAccessibilityManager extends IInterface {
                     return true;
                 case 8:
                     parcel.enforceInterface(DESCRIPTOR);
-                    registerUiTestAutomationService(parcel.readStrongBinder(), IAccessibilityServiceClient.Stub.asInterface(parcel.readStrongBinder()), parcel.readInt() != 0 ? AccessibilityServiceInfo.CREATOR.createFromParcel(parcel) : null);
+                    registerUiTestAutomationService(parcel.readStrongBinder(), IAccessibilityServiceClient.Stub.asInterface(parcel.readStrongBinder()), parcel.readInt() != 0 ? (AccessibilityServiceInfo) AccessibilityServiceInfo.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     return true;
                 case 9:
@@ -335,7 +335,7 @@ public interface IAccessibilityManager extends IInterface {
                     return true;
                 case 10:
                     parcel.enforceInterface(DESCRIPTOR);
-                    temporaryEnableAccessibilityStateUntilKeyguardRemoved(parcel.readInt() != 0 ? ComponentName.CREATOR.createFromParcel(parcel) : null, parcel.readInt() != 0);
+                    temporaryEnableAccessibilityStateUntilKeyguardRemoved(parcel.readInt() != 0 ? (ComponentName) ComponentName.CREATOR.createFromParcel(parcel) : null, parcel.readInt() != 0);
                     parcel2.writeNoException();
                     return true;
                 case 11:
@@ -344,7 +344,7 @@ public interface IAccessibilityManager extends IInterface {
                     parcel2.writeNoException();
                     parcel2.writeStrongBinder(windowToken);
                     return true;
-                case IBinder.INTERFACE_TRANSACTION /* 1598968902 */:
+                case 1598968902:
                     parcel2.writeString(DESCRIPTOR);
                     return true;
                 default:

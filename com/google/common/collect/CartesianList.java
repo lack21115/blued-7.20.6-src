@@ -56,7 +56,7 @@ public final class CartesianList<E> extends AbstractList<List<E>> implements Ran
         return (i / this.axesSizeProduct[i2 + 1]) % this.axes.get(i2).size();
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public boolean contains(@NullableDecl Object obj) {
         return indexOf(obj) != -1;
     }

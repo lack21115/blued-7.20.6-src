@@ -9,16 +9,15 @@ import com.google.gson.reflect.TypeToken;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/external_sense_library/sticker/StickerUtils.class */
 public class StickerUtils {
+    private static final String a = "Blued_Sense_" + StickerUtils.class.getSimpleName();
 
-    /* renamed from: a  reason: collision with root package name */
-    private static final String f11278a = "Blued_Sense_" + StickerUtils.class.getSimpleName();
-
+    /* JADX WARN: Type inference failed for: r2v2, types: [com.blued.android.module.external_sense_library.sticker.StickerUtils$1] */
     public static StickerDataModel a() {
         String b = SenseLibSPMgr.a().b();
         if (TextUtils.isEmpty(b)) {
             return new StickerDataModel();
         }
-        String str = f11278a;
+        String str = a;
         LogUtils.b(str, "readStickerConfig:" + b, new Object[0]);
         return (StickerDataModel) AppInfo.f().fromJson(b, new TypeToken<StickerDataModel>() { // from class: com.blued.android.module.external_sense_library.sticker.StickerUtils.1
         }.getType());
@@ -26,18 +25,18 @@ public class StickerUtils {
 
     public static void a(StickerDataModel stickerDataModel) {
         if (stickerDataModel == null) {
-            LogUtils.b(f11278a, "stickerDataModel ==null", new Object[0]);
+            LogUtils.b(a, "stickerDataModel ==null", new Object[0]);
             return;
         }
         String json = AppInfo.f().toJson(stickerDataModel);
-        String str = f11278a;
+        String str = a;
         LogUtils.b(str, "writeStickerConfig:" + json, new Object[0]);
         SenseLibSPMgr.a().a(json);
     }
 
     public static void a(String str, String str2, String str3, int i) {
         if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
-            LogUtils.b(f11278a, "writeStickerConfig name == null || path == null", new Object[0]);
+            LogUtils.b(a, "writeStickerConfig name == null || path == null", new Object[0]);
             return;
         }
         StickerDataModel a2 = a();

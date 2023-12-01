@@ -15,7 +15,7 @@ public final class c extends Handler {
     static final /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f23223a;
+        static final /* synthetic */ int[] f9615a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:17:0x0052 -> B:39:0x0013). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:19:0x0056 -> B:35:0x001d). Please submit an issue!!! */
@@ -25,33 +25,33 @@ public final class c extends Handler {
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:27:0x0066 -> B:33:0x0046). Please submit an issue!!! */
         static {
             int[] iArr = new int[j.a().length];
-            f23223a = iArr;
+            f9615a = iArr;
             try {
                 iArr[j.d - 1] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f23223a[j.e - 1] = 2;
+                f9615a[j.e - 1] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f23223a[j.f23237c - 1] = 3;
+                f9615a[j.f9629c - 1] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f23223a[j.f - 1] = 4;
+                f9615a[j.f - 1] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f23223a[j.g - 1] = 5;
+                f9615a[j.g - 1] = 5;
             } catch (NoSuchFieldError e5) {
             }
             try {
-                f23223a[j.f23236a - 1] = 6;
+                f9615a[j.f9628a - 1] = 6;
             } catch (NoSuchFieldError e6) {
             }
             try {
-                f23223a[j.h - 1] = 7;
+                f9615a[j.h - 1] = 7;
             } catch (NoSuchFieldError e7) {
             }
         }
@@ -64,10 +64,10 @@ public final class c extends Handler {
     @Override // android.os.Handler
     public final void handleMessage(Message message) {
         try {
-            int i = AnonymousClass1.f23223a[j.a()[message.what] - 1];
+            int i = AnonymousClass1.f9615a[j.a()[message.what] - 1];
             if (i == 1) {
                 d a2 = d.a();
-                boolean z = (a2.f23224a == null || a2.f23224a.isClosed()) ? false : true;
+                boolean z = (a2.f9616a == null || a2.f9616a.isClosed()) ? false : true;
                 if (!z && a2.d == null) {
                     com.igexin.c.a.c.a.a("GS-M|disconnect = true, reconnect", new Object[0]);
                     a2.d = new b(new d.AnonymousClass1());
@@ -87,15 +87,15 @@ public final class c extends Handler {
             } else if (i == 5) {
                 d a4 = d.a();
                 a4.j();
-                if ((a4.d == null && a4.f23225c == null && a4.b == null) || a4.i()) {
+                if ((a4.d == null && a4.f9617c == null && a4.b == null) || a4.i()) {
                     a4.b();
                 } else {
                     a4.h();
                 }
             } else if (i == 6) {
                 d.a();
-                com.igexin.push.core.d unused = d.a.f23474a;
-                com.igexin.push.d.a.a(j.f23236a);
+                com.igexin.push.core.d unused = d.a.f9866a;
+                com.igexin.push.d.a.a(j.f9628a);
             } else if (i != 7) {
             } else {
                 d a5 = d.a();

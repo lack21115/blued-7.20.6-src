@@ -6,13 +6,9 @@ import kotlin.Metadata;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/DebugKt.class */
 public final class DebugKt {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final boolean f42803a = CoroutineId.class.desiredAssertionStatus();
+    private static final boolean a = CoroutineId.class.desiredAssertionStatus();
     private static final boolean b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final boolean f42804c;
+    private static final boolean c;
     private static final AtomicLong d;
 
     /* JADX WARN: Code restructure failed: missing block: B:13:0x003a, code lost:
@@ -32,7 +28,7 @@ public final class DebugKt {
         /*
             java.lang.Class<kotlinx.coroutines.CoroutineId> r0 = kotlinx.coroutines.CoroutineId.class
             boolean r0 = r0.desiredAssertionStatus()
-            kotlinx.coroutines.DebugKt.f42803a = r0
+            kotlinx.coroutines.DebugKt.a = r0
             java.lang.String r0 = "kotlinx.coroutines.debug"
             java.lang.String r0 = kotlinx.coroutines.internal.SystemPropsKt.a(r0)
             r9 = r0
@@ -124,7 +120,7 @@ public final class DebugKt {
             r7 = r0
         Lba:
             r0 = r7
-            kotlinx.coroutines.DebugKt.f42804c = r0
+            kotlinx.coroutines.DebugKt.c = r0
             java.util.concurrent.atomic.AtomicLong r0 = new java.util.concurrent.atomic.AtomicLong
             r1 = r0
             r2 = 0
@@ -132,11 +128,11 @@ public final class DebugKt {
             kotlinx.coroutines.DebugKt.d = r0
             return
         */
-        throw new UnsupportedOperationException("Method not decompiled: kotlinx.coroutines.DebugKt.m13030clinit():void");
+        throw new UnsupportedOperationException("Method not decompiled: kotlinx.coroutines.DebugKt.m11939clinit():void");
     }
 
     public static final boolean a() {
-        return f42803a;
+        return a;
     }
 
     public static final boolean b() {
@@ -144,7 +140,7 @@ public final class DebugKt {
     }
 
     public static final boolean c() {
-        return f42804c;
+        return c;
     }
 
     public static final AtomicLong d() {

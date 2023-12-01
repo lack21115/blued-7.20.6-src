@@ -3,9 +3,11 @@ package com.soft.blued.ui.msg_group.adapter;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import com.blued.android.core.net.IRequestHost;
 import com.blued.android.module.common.group.GroupMemberModel;
 import com.blued.android.module.common.log.oldtrack.LogData;
+import com.blued.android.module.common.login.model.UserBasicModel;
 import com.blued.android.module.common.user.model.UserInfo;
 import com.blued.das.message.MessageProtos;
 import com.bytedance.applog.tracker.Tracker;
@@ -22,12 +24,12 @@ public class GroupMemberAdapter extends RecommendListAdapter<GroupMemberModel> {
     public boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    public Set<String> f32633c;
+    public Set<String> f18942c;
     public int d;
 
     public GroupMemberAdapter(Context context, int i, int i2, IRequestHost iRequestHost) {
         super(context, i, iRequestHost);
-        this.f32633c = new HashSet();
+        this.f18942c = new HashSet();
         this.d = 3;
         this.d = i2;
     }
@@ -36,15 +38,15 @@ public class GroupMemberAdapter extends RecommendListAdapter<GroupMemberModel> {
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f30116a.size()) {
-                this.f32633c.clear();
+            if (i2 >= this.f16426a.size()) {
+                this.f18942c.clear();
                 this.b = false;
                 notifyDataSetChanged();
                 return;
             }
             int i3 = i2;
-            if (this.f32633c.contains(((GroupMemberModel) this.f30116a.get(i2)).uid)) {
-                this.f30116a.remove(i2);
+            if (this.f18942c.contains(((GroupMemberModel) this.f16426a.get(i2)).uid)) {
+                this.f16426a.remove(i2);
                 i3 = i2 - 1;
             }
             i = i3 + 1;
@@ -55,11 +57,11 @@ public class GroupMemberAdapter extends RecommendListAdapter<GroupMemberModel> {
     public View getView(int i, View view, ViewGroup viewGroup) {
         final View view2 = super.getView(i, view, viewGroup);
         final RecommendListAdapter.ViewHolder viewHolder = (RecommendListAdapter.ViewHolder) view2.getTag();
-        final GroupMemberModel groupMemberModel = (GroupMemberModel) this.f30116a.get(i);
-        GroupUtil.a(viewHolder.n, groupMemberModel.group_role);
+        final GroupMemberModel groupMemberModel = (GroupMemberModel) this.f16426a.get(i);
+        GroupUtil.a((TextView) viewHolder.n, groupMemberModel.group_role);
         viewHolder.p.setVisibility(8);
         if (this.b) {
-            viewHolder.o.setSelected(this.f32633c.contains(groupMemberModel.uid));
+            viewHolder.o.setSelected(this.f18942c.contains(groupMemberModel.uid));
             viewHolder.o.setVisibility(0);
             if ((this.d == 2 && groupMemberModel.group_role == 2) || groupMemberModel.uid.equals(UserInfo.getInstance().getLoginUserInfo().uid) || groupMemberModel.group_role == 1) {
                 viewHolder.o.setVisibility(4);
@@ -71,11 +73,11 @@ public class GroupMemberAdapter extends RecommendListAdapter<GroupMemberModel> {
                 public void onClick(View view3) {
                     Tracker.onClick(view3);
                     if (viewHolder.o.isSelected()) {
-                        GroupMemberAdapter.this.f32633c.remove(groupMemberModel.uid);
+                        GroupMemberAdapter.this.f18942c.remove(groupMemberModel.uid);
                         viewHolder.o.setSelected(false);
                         return;
                     }
-                    GroupMemberAdapter.this.f32633c.add(groupMemberModel.uid);
+                    GroupMemberAdapter.this.f18942c.add(groupMemberModel.uid);
                     viewHolder.o.setSelected(true);
                 }
             });
@@ -86,11 +88,11 @@ public class GroupMemberAdapter extends RecommendListAdapter<GroupMemberModel> {
                     viewHolder.o.performClick();
                 }
             });
-            viewHolder.f30124a.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg_group.adapter.GroupMemberAdapter.3
+            viewHolder.f16434a.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg_group.adapter.GroupMemberAdapter.3
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view3) {
                     Tracker.onClick(view3);
-                    UserInfoFragmentNew.a(view2.getContext(), groupMemberModel, "group_chatting", viewHolder.f30124a, (LogData) null, new MsgSourceEntity(MessageProtos.StrangerSource.GROUP_CHAT, ""));
+                    UserInfoFragmentNew.a(view2.getContext(), (UserBasicModel) groupMemberModel, "group_chatting", (View) viewHolder.f16434a, (LogData) null, new MsgSourceEntity(MessageProtos.StrangerSource.GROUP_CHAT, ""));
                 }
             });
         } else {

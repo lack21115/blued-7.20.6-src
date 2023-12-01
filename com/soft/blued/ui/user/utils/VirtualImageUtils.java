@@ -27,14 +27,16 @@ import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
 import kotlin.comparisons.ComparisonsKt;
+import kotlin.coroutines.CoroutineContext;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import kotlinx.coroutines.BuildersKt__Builders_commonKt;
-import kotlinx.coroutines.CompletableJob;
+import kotlinx.coroutines.BuildersKt;
 import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.CoroutineScopeKt;
+import kotlinx.coroutines.CoroutineStart;
 import kotlinx.coroutines.Dispatchers;
-import kotlinx.coroutines.JobKt__JobKt;
+import kotlinx.coroutines.Job;
+import kotlinx.coroutines.JobKt;
 
 @Metadata
 /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/user/utils/VirtualImageUtils.class */
@@ -71,21 +73,20 @@ public final class VirtualImageUtils {
             }
             final String path = new File(file, Md5.a(str)).getPath();
             ImageFileLoader.a((IRequestHost) null).b(str).a(new ImageFileLoader.OnLoadFileListener() { // from class: com.soft.blued.ui.user.utils.-$$Lambda$VirtualImageUtils$Companion$VY0Vct7JlYW83rNfSll-OI3gtL4
-                @Override // com.blued.android.core.image.ImageFileLoader.OnLoadFileListener
                 public final void onUIFinish(File file2, Exception exc) {
-                    VirtualImageUtils.Companion.a(File.this, str, path, file2, exc);
+                    VirtualImageUtils.Companion.a(file, str, path, file2, exc);
                 }
             }).a();
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public static final void a(File dir, String url, String str, File file, Exception exc) {
-            Intrinsics.e(dir, "$dir");
-            Intrinsics.e(url, "$url");
-            if (file == null || !file.exists()) {
-                FileDownloader.a(url, str, new VirtualImageUtils$Companion$downloadResources$2$1(str, url, dir), null);
+        public static final void a(File file, String str, String str2, File file2, Exception exc) {
+            Intrinsics.e(file, "$dir");
+            Intrinsics.e(str, "$url");
+            if (file2 == null || !file2.exists()) {
+                FileDownloader.a(str, str2, new VirtualImageUtils$Companion$downloadResources$2$1(str2, str, file), (IRequestHost) null);
             } else {
-                VirtualImageUtils.Companion.b(dir);
+                VirtualImageUtils.Companion.b(file);
             }
         }
 
@@ -94,7 +95,7 @@ public final class VirtualImageUtils {
             AppInfo.n().post(new Runnable() { // from class: com.soft.blued.ui.user.utils.-$$Lambda$VirtualImageUtils$Companion$BdpQDzLbsli3PvABcS67Qb70pMM
                 @Override // java.lang.Runnable
                 public final void run() {
-                    VirtualImageUtils.Companion.c(File.this);
+                    VirtualImageUtils.Companion.c(file);
                 }
             });
         }
@@ -118,25 +119,23 @@ public final class VirtualImageUtils {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public static final void c(File dir) {
-            Intrinsics.e(dir, "$dir");
-            VirtualImageUtils.Companion.a(dir);
+        public static final void c(File file) {
+            Intrinsics.e(file, "$dir");
+            VirtualImageUtils.Companion.a(file);
         }
 
         public final void a() {
-            CompletableJob a2;
             if (NetworkUtils.a()) {
                 return;
             }
-            a2 = JobKt__JobKt.a(null, 1, null);
-            CoroutineScope a3 = CoroutineScopeKt.a(a2.plus(Dispatchers.b()));
-            BuildersKt__Builders_commonKt.a(a3, null, null, new VirtualImageUtils$Companion$preLoadImages$1(a3, null), 3, null);
+            CoroutineScope a2 = CoroutineScopeKt.a(JobKt.a((Job) null, 1, (Object) null).plus(Dispatchers.b()));
+            BuildersKt.a(a2, (CoroutineContext) null, (CoroutineStart) null, new VirtualImageUtils$Companion$preLoadImages$1(a2, null), 3, (Object) null);
         }
 
-        public final void a(List<String> downloadFileList) {
+        public final void a(List<String> list) {
             File externalFilesDir;
-            Intrinsics.e(downloadFileList, "downloadFileList");
-            if (downloadFileList.size() <= 0 || (externalFilesDir = AppInfo.d().getExternalFilesDir("vi_res")) == null) {
+            Intrinsics.e(list, "downloadFileList");
+            if (list.size() <= 0 || (externalFilesDir = AppInfo.d().getExternalFilesDir("vi_res")) == null) {
                 return;
             }
             int i = 1;
@@ -203,9 +202,9 @@ public final class VirtualImageUtils {
         }
     }
 
-    public final void filterDynamicCategory(List<VirtualImageModel.CategoryModel> categoryList) {
-        Intrinsics.e(categoryList, "categoryList");
-        for (VirtualImageModel.CategoryModel categoryModel : categoryList) {
+    public final void filterDynamicCategory(List<VirtualImageModel.CategoryModel> list) {
+        Intrinsics.e(list, "categoryList");
+        for (VirtualImageModel.CategoryModel categoryModel : list) {
             if (categoryModel.getParent_id() != 0 && !this.dynamicCategoryMap.containsKey(Integer.valueOf(categoryModel.getParent_id()))) {
                 this.dynamicCategoryMap.put(Integer.valueOf(categoryModel.getParent_id()), 0);
             }
@@ -262,12 +261,12 @@ public final class VirtualImageUtils {
         return this.useGoodsInCatSet;
     }
 
-    public final void initGuestImage(FrameLayout parentView, List<VirtualImageModel.GuestImageGoodsModel> data, IRequestHost requestHost) {
-        Intrinsics.e(parentView, "parentView");
-        Intrinsics.e(data, "data");
-        Intrinsics.e(requestHost, "requestHost");
-        parentView.removeAllViews();
-        for (VirtualImageModel.GuestImageGoodsModel guestImageGoodsModel : CollectionsKt.a((Iterable) data, new Comparator() { // from class: com.soft.blued.ui.user.utils.VirtualImageUtils$initGuestImage$$inlined$sortedBy$1
+    public final void initGuestImage(FrameLayout frameLayout, List<VirtualImageModel.GuestImageGoodsModel> list, IRequestHost iRequestHost) {
+        Intrinsics.e(frameLayout, "parentView");
+        Intrinsics.e(list, "data");
+        Intrinsics.e(iRequestHost, "requestHost");
+        frameLayout.removeAllViews();
+        for (VirtualImageModel.GuestImageGoodsModel guestImageGoodsModel : CollectionsKt.a(list, new Comparator() { // from class: com.soft.blued.ui.user.utils.VirtualImageUtils$initGuestImage$$inlined$sortedBy$1
             @Override // java.util.Comparator
             public final int compare(T t, T t2) {
                 return ComparisonsKt.a(Float.valueOf(((VirtualImageModel.GuestImageGoodsModel) t).getBlock_code()), Float.valueOf(((VirtualImageModel.GuestImageGoodsModel) t2).getBlock_code()));
@@ -281,78 +280,78 @@ public final class VirtualImageUtils {
             VirtualImageModel.Resource resource = guestImageGoodsModel.getResource();
             sb.append((Object) (resource == null ? null : resource.getStatic()));
             Log.d(str, sb.toString());
-            ImageView imageView = new ImageView(parentView.getContext());
+            ImageView imageView = new ImageView(frameLayout.getContext());
             VirtualImageModel.ImageGoodsModel imageGoodsModel = new VirtualImageModel.ImageGoodsModel();
             VirtualImageModel.Resource resource2 = guestImageGoodsModel.getResource();
             if (resource2 != null) {
-                imageGoodsModel.setResource(CollectionsKt.d(resource2));
+                imageGoodsModel.setResource(CollectionsKt.d(new VirtualImageModel.Resource[]{resource2}));
             }
-            Unit unit = Unit.f42314a;
-            loadImage(imageView, imageGoodsModel, requestHost);
-            parentView.addView(imageView, new FrameLayout.LayoutParams(-1, -1));
+            Unit unit = Unit.a;
+            loadImage(imageView, imageGoodsModel, iRequestHost);
+            frameLayout.addView(imageView, new FrameLayout.LayoutParams(-1, -1));
         }
     }
 
-    public final void initImage(FrameLayout parentView, List<VirtualImageModel.ImageGoodsModel> data, IRequestHost requestHost) {
-        Intrinsics.e(parentView, "parentView");
-        Intrinsics.e(data, "data");
-        Intrinsics.e(requestHost, "requestHost");
-        parentView.removeAllViews();
+    public final void initImage(FrameLayout frameLayout, List<VirtualImageModel.ImageGoodsModel> list, IRequestHost iRequestHost) {
+        Intrinsics.e(frameLayout, "parentView");
+        Intrinsics.e(list, "data");
+        Intrinsics.e(iRequestHost, "requestHost");
+        frameLayout.removeAllViews();
         this.mCurrentImageLayer.clear();
-        this.mCurrentImageLayer.addAll(data);
-        for (VirtualImageModel.ImageGoodsModel imageGoodsModel : data) {
+        this.mCurrentImageLayer.addAll(list);
+        for (VirtualImageModel.ImageGoodsModel imageGoodsModel : list) {
             if (this.dynamicCategoryMap.containsKey(Integer.valueOf(imageGoodsModel.getCategory_id()))) {
                 this.dynamicCategoryMap.put(Integer.valueOf(imageGoodsModel.getCategory_id()), Integer.valueOf(imageGoodsModel.getCResourceId()));
             }
         }
-        for (VirtualImageModel.ImageGoodsModel imageGoodsModel2 : CollectionsKt.a((Iterable) data, new Comparator() { // from class: com.soft.blued.ui.user.utils.VirtualImageUtils$initImage$$inlined$sortedBy$1
+        for (VirtualImageModel.ImageGoodsModel imageGoodsModel2 : CollectionsKt.a(list, new Comparator() { // from class: com.soft.blued.ui.user.utils.VirtualImageUtils$initImage$$inlined$sortedBy$1
             @Override // java.util.Comparator
             public final int compare(T t, T t2) {
                 return ComparisonsKt.a(Float.valueOf(((VirtualImageModel.ImageGoodsModel) t).getBlock_code()), Float.valueOf(((VirtualImageModel.ImageGoodsModel) t2).getBlock_code()));
             }
         })) {
-            ImageView imageView = new ImageView(parentView.getContext());
+            ImageView imageView = new ImageView(frameLayout.getContext());
             imageView.setTag(Float.valueOf(imageGoodsModel2.getBlock_code()));
-            loadImage(imageView, imageGoodsModel2, requestHost);
-            parentView.addView(imageView, new FrameLayout.LayoutParams(-1, -1));
+            loadImage(imageView, imageGoodsModel2, iRequestHost);
+            frameLayout.addView(imageView, new FrameLayout.LayoutParams(-1, -1));
         }
         updateRawGoodsIds();
     }
 
-    public final void loadGoodIcon(ImageView imageView, VirtualImageModel.ImageGoodsModel good, IRequestHost requestHost) {
+    public final void loadGoodIcon(ImageView imageView, VirtualImageModel.ImageGoodsModel imageGoodsModel, IRequestHost iRequestHost) {
         Intrinsics.e(imageView, "imageView");
-        Intrinsics.e(good, "good");
-        Intrinsics.e(requestHost, "requestHost");
-        VirtualImageModel.Resource findImageUrlByBodyId = findImageUrlByBodyId(good);
+        Intrinsics.e(imageGoodsModel, "good");
+        Intrinsics.e(iRequestHost, "requestHost");
+        VirtualImageModel.Resource findImageUrlByBodyId = findImageUrlByBodyId(imageGoodsModel);
         if (findImageUrlByBodyId == null) {
             return;
         }
-        ImageLoader.a(requestHost, findImageUrlByBodyId.getIcon()).a(imageView);
+        ImageLoader.a(iRequestHost, findImageUrlByBodyId.getIcon()).a(imageView);
     }
 
-    public final void selectedGood(VirtualImageModel.ImageGoodsModel good, FrameLayout parentView, IRequestHost requestHost) {
+    public final void selectedGood(VirtualImageModel.ImageGoodsModel imageGoodsModel, FrameLayout frameLayout, IRequestHost iRequestHost) {
         int i;
         List<VirtualImageModel.Resource> resource;
-        Intrinsics.e(good, "good");
-        Intrinsics.e(parentView, "parentView");
-        Intrinsics.e(requestHost, "requestHost");
-        if (this.dynamicCategoryMap.containsKey(Integer.valueOf(good.getCategory_id()))) {
-            this.dynamicCategoryMap.put(Integer.valueOf(good.getCategory_id()), Integer.valueOf(good.getCResourceId()));
+        Intrinsics.e(imageGoodsModel, "good");
+        Intrinsics.e(frameLayout, "parentView");
+        Intrinsics.e(iRequestHost, "requestHost");
+        if (this.dynamicCategoryMap.containsKey(Integer.valueOf(imageGoodsModel.getCategory_id()))) {
+            this.dynamicCategoryMap.put(Integer.valueOf(imageGoodsModel.getCategory_id()), Integer.valueOf(imageGoodsModel.getCResourceId()));
         }
         int i2 = 0;
-        if (this.mCurrentImageLayer.contains(good)) {
-            int indexOf = this.mCurrentImageLayer.indexOf(good);
-            VirtualImageModel.ImageGoodsModel imageGoodsModel = this.mCurrentImageLayer.get(indexOf);
-            Intrinsics.c(imageGoodsModel, "mCurrentImageLayer[index]");
-            imageGoodsModel.setCurrent_use(0);
-            this.mCurrentImageLayer.set(indexOf, good);
-            for (View view : ViewGroupKt.getChildren(parentView)) {
+        if (this.mCurrentImageLayer.contains(imageGoodsModel)) {
+            int indexOf = this.mCurrentImageLayer.indexOf(imageGoodsModel);
+            VirtualImageModel.ImageGoodsModel imageGoodsModel2 = this.mCurrentImageLayer.get(indexOf);
+            Intrinsics.c(imageGoodsModel2, "mCurrentImageLayer[index]");
+            imageGoodsModel2.setCurrent_use(0);
+            this.mCurrentImageLayer.set(indexOf, imageGoodsModel);
+            for (View view : ViewGroupKt.getChildren(frameLayout)) {
                 Object tag = view.getTag();
                 if (tag == null) {
                     throw new NullPointerException("null cannot be cast to non-null type kotlin.Float");
                 }
-                if (((Float) tag).floatValue() == good.getBlock_code()) {
-                    loadImage((ImageView) view, good, requestHost);
+                if (((Float) tag).floatValue() == imageGoodsModel.getBlock_code()) {
+                    loadImage((ImageView) view, imageGoodsModel, iRequestHost);
                 }
             }
         } else {
@@ -362,27 +361,27 @@ public final class VirtualImageUtils {
                 i = size;
                 if (i2 >= size2) {
                     break;
-                } else if (good.getBlock_code() < this.mCurrentImageLayer.get(i2).getBlock_code()) {
+                } else if (imageGoodsModel.getBlock_code() < this.mCurrentImageLayer.get(i2).getBlock_code()) {
                     i = i2;
                     break;
                 } else {
                     i2++;
                 }
             }
-            this.mCurrentImageLayer.add(i, good);
-            ImageView imageView = new ImageView(parentView.getContext());
-            imageView.setTag(Float.valueOf(good.getBlock_code()));
-            loadImage(imageView, good, requestHost);
-            parentView.addView(imageView, i, new FrameLayout.LayoutParams(-1, -1));
+            this.mCurrentImageLayer.add(i, imageGoodsModel);
+            ImageView imageView = new ImageView(frameLayout.getContext());
+            imageView.setTag(Float.valueOf(imageGoodsModel.getBlock_code()));
+            loadImage(imageView, imageGoodsModel, iRequestHost);
+            frameLayout.addView(imageView, i, new FrameLayout.LayoutParams(-1, -1));
         }
-        good.setCurrent_use(1);
-        if (this.dynamicCategoryMap.containsKey(Integer.valueOf(good.getCategory_id()))) {
+        imageGoodsModel.setCurrent_use(1);
+        if (this.dynamicCategoryMap.containsKey(Integer.valueOf(imageGoodsModel.getCategory_id()))) {
             Iterator<VirtualImageModel.ImageGoodsModel> it = this.mCurrentImageLayer.iterator();
             while (it.hasNext()) {
-                VirtualImageModel.ImageGoodsModel layer = it.next();
-                if (!this.dynamicCategoryMap.containsKey(Integer.valueOf(layer.getCategory_id())) && (resource = layer.getResource()) != null && resource.size() > 1) {
-                    Intrinsics.c(layer, "layer");
-                    selectedGood(layer, parentView, requestHost);
+                VirtualImageModel.ImageGoodsModel next = it.next();
+                if (!this.dynamicCategoryMap.containsKey(Integer.valueOf(next.getCategory_id())) && (resource = next.getResource()) != null && resource.size() > 1) {
+                    Intrinsics.c(next, "layer");
+                    selectedGood(next, frameLayout, iRequestHost);
                 }
             }
         }

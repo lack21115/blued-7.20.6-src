@@ -9,11 +9,11 @@ import java.util.Comparator;
 public abstract class b implements f {
 
     /* renamed from: a  reason: collision with root package name */
-    protected final l f25419a;
+    protected final l f11731a;
     protected final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected final int[] f25420c;
+    protected final int[] f11732c;
     private final Format[] d;
     private final long[] e;
     private int f;
@@ -32,7 +32,7 @@ public abstract class b implements f {
 
     public b(l lVar, int... iArr) {
         com.opos.exoplayer.core.i.a.b(iArr.length > 0);
-        this.f25419a = (l) com.opos.exoplayer.core.i.a.a(lVar);
+        this.f11731a = (l) com.opos.exoplayer.core.i.a.a(lVar);
         int length = iArr.length;
         this.b = length;
         this.d = new Format[length];
@@ -46,7 +46,7 @@ public abstract class b implements f {
             i = i2 + 1;
         }
         Arrays.sort(this.d, new a());
-        this.f25420c = new int[this.b];
+        this.f11732c = new int[this.b];
         int i3 = 0;
         while (true) {
             int i4 = i3;
@@ -55,7 +55,7 @@ public abstract class b implements f {
                 this.e = new long[i5];
                 return;
             } else {
-                this.f25420c[i4] = lVar.a(this.d[i4]);
+                this.f11732c[i4] = lVar.a(this.d[i4]);
                 i3 = i4 + 1;
             }
         }
@@ -81,7 +81,7 @@ public abstract class b implements f {
 
     @Override // com.opos.exoplayer.core.g.f
     public final int b(int i) {
-        return this.f25420c[i];
+        return this.f11732c[i];
     }
 
     @Override // com.opos.exoplayer.core.g.f
@@ -90,12 +90,12 @@ public abstract class b implements f {
 
     @Override // com.opos.exoplayer.core.g.f
     public final l d() {
-        return this.f25419a;
+        return this.f11731a;
     }
 
     @Override // com.opos.exoplayer.core.g.f
     public final int e() {
-        return this.f25420c.length;
+        return this.f11732c.length;
     }
 
     public boolean equals(Object obj) {
@@ -108,8 +108,8 @@ public abstract class b implements f {
                 }
                 b bVar = (b) obj;
                 z = false;
-                if (this.f25419a == bVar.f25419a) {
-                    if (!Arrays.equals(this.f25420c, bVar.f25420c)) {
+                if (this.f11731a == bVar.f11731a) {
+                    if (!Arrays.equals(this.f11732c, bVar.f11732c)) {
                         return false;
                     }
                 }
@@ -127,7 +127,7 @@ public abstract class b implements f {
 
     public int hashCode() {
         if (this.f == 0) {
-            this.f = (System.identityHashCode(this.f25419a) * 31) + Arrays.hashCode(this.f25420c);
+            this.f = (System.identityHashCode(this.f11731a) * 31) + Arrays.hashCode(this.f11732c);
         }
         return this.f;
     }

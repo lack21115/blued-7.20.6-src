@@ -28,13 +28,9 @@ public final class DistrictItem implements Parcelable {
             return a(i);
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f5618a;
+    private String a;
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f5619c;
+    private String c;
     private LatLonPoint d;
     private String e;
     private List<DistrictItem> f;
@@ -48,9 +44,9 @@ public final class DistrictItem implements Parcelable {
     public DistrictItem(Parcel parcel) {
         this.f = new ArrayList();
         this.g = new String[0];
-        this.f5618a = parcel.readString();
+        this.a = parcel.readString();
         this.b = parcel.readString();
-        this.f5619c = parcel.readString();
+        this.c = parcel.readString();
         this.d = (LatLonPoint) parcel.readParcelable(LatLonPoint.class.getClassLoader());
         this.e = parcel.readString();
         this.f = parcel.createTypedArrayList(CREATOR);
@@ -62,8 +58,8 @@ public final class DistrictItem implements Parcelable {
     public DistrictItem(String str, String str2, String str3, LatLonPoint latLonPoint, String str4) {
         this.f = new ArrayList();
         this.g = new String[0];
-        this.f5619c = str;
-        this.f5618a = str2;
+        this.c = str;
+        this.a = str2;
         this.b = str3;
         this.d = latLonPoint;
         this.e = str4;
@@ -100,12 +96,12 @@ public final class DistrictItem implements Parcelable {
             } else if (!latLonPoint.equals(districtItem.d)) {
                 return false;
             }
-            String str2 = this.f5618a;
+            String str2 = this.a;
             if (str2 == null) {
-                if (districtItem.f5618a != null) {
+                if (districtItem.a != null) {
                     return false;
                 }
-            } else if (!str2.equals(districtItem.f5618a)) {
+            } else if (!str2.equals(districtItem.a)) {
                 return false;
             }
             if (Arrays.equals(this.g, districtItem.g)) {
@@ -125,8 +121,8 @@ public final class DistrictItem implements Parcelable {
                 } else if (!str3.equals(districtItem.e)) {
                     return false;
                 }
-                String str4 = this.f5619c;
-                return str4 == null ? districtItem.f5619c == null : str4.equals(districtItem.f5619c);
+                String str4 = this.c;
+                return str4 == null ? districtItem.c == null : str4.equals(districtItem.c);
             }
             return false;
         }
@@ -142,7 +138,7 @@ public final class DistrictItem implements Parcelable {
     }
 
     public final String getCitycode() {
-        return this.f5618a;
+        return this.a;
     }
 
     public final String getLevel() {
@@ -150,7 +146,7 @@ public final class DistrictItem implements Parcelable {
     }
 
     public final String getName() {
-        return this.f5619c;
+        return this.c;
     }
 
     public final List<DistrictItem> getSubDistrict() {
@@ -163,14 +159,14 @@ public final class DistrictItem implements Parcelable {
         int hashCode = str == null ? 0 : str.hashCode();
         LatLonPoint latLonPoint = this.d;
         int hashCode2 = latLonPoint == null ? 0 : latLonPoint.hashCode();
-        String str2 = this.f5618a;
+        String str2 = this.a;
         int hashCode3 = str2 == null ? 0 : str2.hashCode();
         int hashCode4 = Arrays.hashCode(this.g);
         List<DistrictItem> list = this.f;
         int hashCode5 = list == null ? 0 : list.hashCode();
         String str3 = this.e;
         int hashCode6 = str3 == null ? 0 : str3.hashCode();
-        String str4 = this.f5619c;
+        String str4 = this.c;
         if (str4 != null) {
             i = str4.hashCode();
         }
@@ -186,7 +182,7 @@ public final class DistrictItem implements Parcelable {
     }
 
     public final void setCitycode(String str) {
-        this.f5618a = str;
+        this.a = str;
     }
 
     public final void setDistrictBoundary(String[] strArr) {
@@ -198,7 +194,7 @@ public final class DistrictItem implements Parcelable {
     }
 
     public final void setName(String str) {
-        this.f5619c = str;
+        this.c = str;
     }
 
     public final void setSubDistrict(ArrayList<DistrictItem> arrayList) {
@@ -206,14 +202,14 @@ public final class DistrictItem implements Parcelable {
     }
 
     public final String toString() {
-        return "DistrictItem [mCitycode=" + this.f5618a + ", mAdcode=" + this.b + ", mName=" + this.f5619c + ", mCenter=" + this.d + ", mLevel=" + this.e + ", mDistricts=" + this.f + "]";
+        return "DistrictItem [mCitycode=" + this.a + ", mAdcode=" + this.b + ", mName=" + this.c + ", mCenter=" + this.d + ", mLevel=" + this.e + ", mDistricts=" + this.f + "]";
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.f5618a);
+        parcel.writeString(this.a);
         parcel.writeString(this.b);
-        parcel.writeString(this.f5619c);
+        parcel.writeString(this.c);
         parcel.writeParcelable(this.d, i);
         parcel.writeString(this.e);
         parcel.writeTypedList(this.f);

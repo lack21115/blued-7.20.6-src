@@ -9,7 +9,7 @@ import java.io.File;
 public final class d extends com.anythink.expressad.foundation.g.g.a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f7852a = "ImageWorker";
+    private static final String f5012a = "ImageWorker";
     private String e;
     private String f;
     private String g;
@@ -89,7 +89,7 @@ public final class d extends com.anythink.expressad.foundation.g.g.a {
                 public final void a(com.anythink.expressad.foundation.g.f.a.a aVar) {
                     d dVar = d.this;
                     String str = dVar.f;
-                    dVar.b(str, "load image from http faild because http return code: " + aVar.f7858a + ".image url is " + d.this.f);
+                    dVar.b(str, "load image from http faild because http return code: " + aVar.f5018a + ".image url is " + d.this.f);
                 }
 
                 @Override // com.anythink.expressad.foundation.g.f.f, com.anythink.expressad.foundation.g.f.e
@@ -100,7 +100,7 @@ public final class d extends com.anythink.expressad.foundation.g.g.a {
             });
         } catch (Exception e) {
             b(this.f, e.getMessage());
-            if (com.anythink.expressad.a.f6941a) {
+            if (com.anythink.expressad.a.f4103a) {
                 e.printStackTrace();
             }
         } catch (OutOfMemoryError e2) {

@@ -8,10 +8,10 @@ import com.tencent.tencentmap.mapsdk.maps.model.VectorHeatOverlayOptions;
 public class yc extends AggregationOverlayInfo implements vc {
 
     /* renamed from: a  reason: collision with root package name */
-    private AggregationOverlayProvider f38129a;
+    private AggregationOverlayProvider f24438a;
 
     public yc(AggregationOverlayProvider aggregationOverlayProvider) {
-        this.f38129a = aggregationOverlayProvider;
+        this.f24438a = aggregationOverlayProvider;
         this.mNodes = aggregationOverlayProvider.getNodes();
         this.mType = aggregationOverlayProvider.getType();
         this.mColors = aggregationOverlayProvider.getColors();
@@ -60,6 +60,6 @@ public class yc extends AggregationOverlayInfo implements vc {
     }
 
     public AggregationOverlayProvider a() {
-        return this.f38129a;
+        return this.f24438a;
     }
 }

@@ -8,11 +8,11 @@ import com.baidu.mobads.sdk.internal.bw;
 public class ab implements bw.c {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ z f9297a;
+    final /* synthetic */ z f6457a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public ab(z zVar) {
-        this.f9297a = zVar;
+        this.f6457a = zVar;
     }
 
     @Override // com.baidu.mobads.sdk.internal.bw.c
@@ -20,20 +20,20 @@ public class ab implements bw.c {
         IXAdContainerFactory iXAdContainerFactory;
         if (z) {
             try {
-                if (f.f9427a != null) {
-                    this.f9297a.b = f.f9427a.i();
-                    iXAdContainerFactory = this.f9297a.b;
+                if (f.f6587a != null) {
+                    this.f6457a.b = f.f6587a.i();
+                    iXAdContainerFactory = this.f6457a.b;
                     if (iXAdContainerFactory != null) {
-                        this.f9297a.k();
+                        this.f6457a.k();
                         return;
                     }
                 }
             } catch (Exception e) {
-                this.f9297a.a("加载dex异常");
+                this.f6457a.a("加载dex异常");
                 return;
             }
         }
-        f.f9427a = null;
-        this.f9297a.a("加载dex失败");
+        f.f6587a = null;
+        this.f6457a.a("加载dex失败");
     }
 }

@@ -4,6 +4,6 @@ package com.igexin.push.config;
 public final class h {
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f23380a = "none";
+    public static String f9772a = "none";
     public static final String b = "/sdcard/libs";
 }

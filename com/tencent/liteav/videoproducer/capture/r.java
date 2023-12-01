@@ -5,11 +5,11 @@ package com.tencent.liteav.videoproducer.capture;
 public final /* synthetic */ class r implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final CameraCaptureSingleton f36941a;
+    private final CameraCaptureSingleton f23250a;
     private final float b;
 
     private r(CameraCaptureSingleton cameraCaptureSingleton, float f) {
-        this.f36941a = cameraCaptureSingleton;
+        this.f23250a = cameraCaptureSingleton;
         this.b = f;
     }
 
@@ -19,6 +19,6 @@ public final /* synthetic */ class r implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        this.f36941a.setZoomInternal(this.b);
+        this.f23250a.setZoomInternal(this.b);
     }
 }

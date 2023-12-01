@@ -1,6 +1,7 @@
 package com.zx.a.I8b7;
 
 import android.text.TextUtils;
+import com.xiaomi.mipush.sdk.Constants;
 import com.zx.a.I8b7.t0;
 import com.zx.a.I8b7.u1;
 import java.util.UUID;
@@ -9,38 +10,38 @@ import java.util.UUID;
 public class x2 implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ a3 f42228a;
+    public final /* synthetic */ a3 f28537a;
 
     public x2(a3 a3Var) {
-        this.f42228a = a3Var;
+        this.f28537a = a3Var;
     }
 
     @Override // java.lang.Runnable
     public void run() {
-        t0 t0Var = t0.a.f42200a;
+        t0 t0Var = t0.a.f28509a;
         try {
-            t0Var.f42198a = System.currentTimeMillis();
-            t0Var.b = UUID.randomUUID().toString().replaceAll("-", "");
-            u1 u1Var = u1.a.f42208a;
-            String a2 = u1Var.f42207a.a(24);
+            t0Var.f28507a = System.currentTimeMillis();
+            t0Var.b = UUID.randomUUID().toString().replaceAll(Constants.ACCEPT_TIME_SEPARATOR_SERVER, "");
+            u1 u1Var = u1.a.f28517a;
+            String a2 = u1Var.f28516a.a(24);
             if (!TextUtils.isEmpty(a2)) {
-                t0Var.f42199c = Integer.parseInt(a2);
+                t0Var.f28508c = Integer.parseInt(a2);
             }
-            t0Var.f42199c++;
-            b3 b3Var = u1Var.f42207a;
+            t0Var.f28508c++;
+            b3 b3Var = u1Var.f28516a;
             b3Var.getClass();
-            u1Var.f42207a.a(24, t0Var.f42199c + "", true);
-            z1.a("process start pts:" + t0Var.f42198a + ", pid:" + t0Var.b + ", rc:" + t0Var.f42199c);
+            u1Var.f28516a.a(24, t0Var.f28508c + "", true);
+            z1.a("process start pts:" + t0Var.f28507a + ", pid:" + t0Var.b + ", rc:" + t0Var.f28508c);
         } catch (Throwable th) {
             z1.a(th);
         }
-        if (!this.f42228a.b.get()) {
+        if (!this.f28537a.b.get()) {
             throw new IllegalStateException("ZXSdkImpl not init, should init firstly");
         }
         try {
-            a3.a(this.f42228a);
+            a3.a(this.f28537a);
         } catch (Throwable th2) {
-            this.f42228a.f42101c.onMessage("MESSAGE_ON_ZXID_RECEIVED", n1.a(10000, th2.getMessage()));
+            this.f28537a.f28410c.onMessage("MESSAGE_ON_ZXID_RECEIVED", n1.a(10000, th2.getMessage()));
             StringBuilder sb = new StringBuilder();
             sb.append("ZXCore start failed: ");
             n2.a(th2, sb);

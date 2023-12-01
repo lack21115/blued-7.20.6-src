@@ -18,16 +18,16 @@ import java.util.WeakHashMap;
 final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    static final int f8909a = 50;
+    static final int f6069a = 50;
     private static int d = 1000;
     final ViewTreeObserver.OnPreDrawListener b;
 
     /* renamed from: c  reason: collision with root package name */
-    WeakReference<ViewTreeObserver> f8910c;
+    WeakReference<ViewTreeObserver> f6070c;
     private final ArrayList<View> e;
     private long f;
     private final Map<View, a> g;
-    private final C0173b h;
+    private final C0102b h;
     private d i;
     private final c j;
     private final Handler k;
@@ -38,11 +38,11 @@ final class b {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        int f8912a;
+        int f6072a;
         int b;
 
         /* renamed from: c  reason: collision with root package name */
-        long f8913c;
+        long f6073c;
         View d;
         Integer e;
 
@@ -53,18 +53,18 @@ final class b {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.anythink.network.baidu.impression.b$b  reason: collision with other inner class name */
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/network/baidu/impression/b$b.class */
-    public static final class C0173b {
+    public static final class C0102b {
 
         /* renamed from: a  reason: collision with root package name */
-        private final Rect f8914a = new Rect();
+        private final Rect f6074a = new Rect();
 
         private static boolean a(long j, int i) {
             return SystemClock.uptimeMillis() - j >= ((long) i);
         }
 
         final boolean a(View view, View view2, int i, Integer num) {
-            if (view2 != null && view2.getVisibility() == 0 && view.getParent() != null && view2.getWindowVisibility() == 0 && view2.getGlobalVisibleRect(this.f8914a)) {
-                long height = this.f8914a.height() * this.f8914a.width();
+            if (view2 != null && view2.getVisibility() == 0 && view.getParent() != null && view2.getWindowVisibility() == 0 && view2.getGlobalVisibleRect(this.f6074a)) {
+                long height = this.f6074a.height() * this.f6074a.width();
                 long height2 = view2.getHeight() * view2.getWidth();
                 if (height2 <= 0) {
                     return false;
@@ -80,7 +80,7 @@ final class b {
     public final class c implements Runnable {
 
         /* renamed from: c  reason: collision with root package name */
-        private final ArrayList<View> f8916c = new ArrayList<>();
+        private final ArrayList<View> f6076c = new ArrayList<>();
         private final ArrayList<View> b = new ArrayList<>();
 
         c() {
@@ -91,21 +91,21 @@ final class b {
             b.a(b.this);
             for (Map.Entry entry : b.this.g.entrySet()) {
                 View view = (View) entry.getKey();
-                int i = ((a) entry.getValue()).f8912a;
+                int i = ((a) entry.getValue()).f6072a;
                 int i2 = ((a) entry.getValue()).b;
                 Integer num = ((a) entry.getValue()).e;
                 View view2 = ((a) entry.getValue()).d;
                 if (b.this.h.a(view2, view, i, num)) {
                     this.b.add(view);
                 } else if (!b.this.h.a(view2, view, i2, null)) {
-                    this.f8916c.add(view);
+                    this.f6076c.add(view);
                 }
             }
             if (b.this.i != null) {
-                b.this.i.onVisibilityChanged(this.b, this.f8916c);
+                b.this.i.onVisibilityChanged(this.b, this.f6076c);
             }
             this.b.clear();
-            this.f8916c.clear();
+            this.f6076c.clear();
         }
     }
 
@@ -115,18 +115,18 @@ final class b {
     }
 
     public b(Context context) {
-        this(context, new WeakHashMap(10), new C0173b(), new Handler(Looper.getMainLooper()));
+        this(context, new WeakHashMap(10), new C0102b(), new Handler(Looper.getMainLooper()));
     }
 
     public b(Context context, int i) {
-        this(context, new WeakHashMap(10), new C0173b(), new Handler(Looper.getMainLooper()));
+        this(context, new WeakHashMap(10), new C0102b(), new Handler(Looper.getMainLooper()));
         d = i;
     }
 
-    private b(Context context, Map<View, a> map, C0173b c0173b, Handler handler) {
+    private b(Context context, Map<View, a> map, C0102b c0102b, Handler handler) {
         this.f = 0L;
         this.g = map;
-        this.h = c0173b;
+        this.h = c0102b;
         this.k = handler;
         this.j = new c();
         this.e = new ArrayList<>(50);
@@ -137,13 +137,13 @@ final class b {
                 return true;
             }
         };
-        this.f8910c = new WeakReference<>(null);
+        this.f6070c = new WeakReference<>(null);
         a(context, null);
     }
 
     private void a(long j) {
         for (Map.Entry<View, a> entry : this.g.entrySet()) {
-            if (entry.getValue().f8913c < j) {
+            if (entry.getValue().f6073c < j) {
                 this.e.add(entry.getKey());
             }
         }
@@ -156,11 +156,11 @@ final class b {
 
     private void a(Context context, View view) {
         View topmostView;
-        ViewTreeObserver viewTreeObserver = this.f8910c.get();
+        ViewTreeObserver viewTreeObserver = this.f6070c.get();
         if ((viewTreeObserver == null || !viewTreeObserver.isAlive()) && (topmostView = BDViews.getTopmostView(context, view)) != null) {
             ViewTreeObserver viewTreeObserver2 = topmostView.getViewTreeObserver();
             if (viewTreeObserver2.isAlive()) {
-                this.f8910c = new WeakReference<>(viewTreeObserver2);
+                this.f6070c = new WeakReference<>(viewTreeObserver2);
                 viewTreeObserver2.addOnPreDrawListener(this.b);
             }
         }
@@ -204,9 +204,9 @@ final class b {
             }
             int min = Math.min(i2, i);
             aVar2.d = view;
-            aVar2.f8912a = i;
+            aVar2.f6072a = i;
             aVar2.b = min;
-            aVar2.f8913c = this.f;
+            aVar2.f6073c = this.f;
             aVar2.e = num;
             long j = this.f + 1;
             this.f = j;
@@ -225,11 +225,11 @@ final class b {
     /* JADX INFO: Access modifiers changed from: package-private */
     public final void b() {
         a();
-        ViewTreeObserver viewTreeObserver = this.f8910c.get();
+        ViewTreeObserver viewTreeObserver = this.f6070c.get();
         if (viewTreeObserver != null && viewTreeObserver.isAlive()) {
             viewTreeObserver.removeOnPreDrawListener(this.b);
         }
-        this.f8910c.clear();
+        this.f6070c.clear();
         this.i = null;
     }
 

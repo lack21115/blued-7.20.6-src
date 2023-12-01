@@ -30,11 +30,11 @@ import java.util.Locale;
 public class ClassicsHeader extends InternalClassics<ClassicsHeader> implements RefreshHeader {
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f27984a;
+    public static String f14296a;
     public static String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public static String f27985c;
+    public static String f14297c;
     public static String d;
     public static String e;
     public static String f;
@@ -60,7 +60,7 @@ public class ClassicsHeader extends InternalClassics<ClassicsHeader> implements 
     static /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f27986a;
+        static final /* synthetic */ int[] f14298a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:17:0x0059 -> B:33:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:19:0x005d -> B:43:0x001f). Please submit an issue!!! */
@@ -70,33 +70,33 @@ public class ClassicsHeader extends InternalClassics<ClassicsHeader> implements 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:27:0x006d -> B:41:0x004c). Please submit an issue!!! */
         static {
             int[] iArr = new int[RefreshState.values().length];
-            f27986a = iArr;
+            f14298a = iArr;
             try {
                 iArr[RefreshState.None.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f27986a[RefreshState.PullDownToRefresh.ordinal()] = 2;
+                f14298a[RefreshState.PullDownToRefresh.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f27986a[RefreshState.Refreshing.ordinal()] = 3;
+                f14298a[RefreshState.Refreshing.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f27986a[RefreshState.RefreshReleased.ordinal()] = 4;
+                f14298a[RefreshState.RefreshReleased.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f27986a[RefreshState.ReleaseToRefresh.ordinal()] = 5;
+                f14298a[RefreshState.ReleaseToRefresh.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
             try {
-                f27986a[RefreshState.ReleaseToTwoLevel.ordinal()] = 6;
+                f14298a[RefreshState.ReleaseToTwoLevel.ordinal()] = 6;
             } catch (NoSuchFieldError e6) {
             }
             try {
-                f27986a[RefreshState.Loading.ordinal()] = 7;
+                f14298a[RefreshState.Loading.ordinal()] = 7;
             } catch (NoSuchFieldError e7) {
             }
         }
@@ -183,7 +183,7 @@ public class ClassicsHeader extends InternalClassics<ClassicsHeader> implements 
         if (obtainStyledAttributes.hasValue(R.styleable.ClassicsHeader_srlTextPulling)) {
             this.o = obtainStyledAttributes.getString(R.styleable.ClassicsHeader_srlTextPulling);
         } else {
-            String str = f27984a;
+            String str = f14296a;
             if (str != null) {
                 this.o = str;
             } else {
@@ -193,7 +193,7 @@ public class ClassicsHeader extends InternalClassics<ClassicsHeader> implements 
         if (obtainStyledAttributes.hasValue(R.styleable.ClassicsHeader_srlTextLoading)) {
             this.q = obtainStyledAttributes.getString(R.styleable.ClassicsHeader_srlTextLoading);
         } else {
-            String str2 = f27985c;
+            String str2 = f14297c;
             if (str2 != null) {
                 this.q = str2;
             } else {
@@ -314,7 +314,7 @@ public class ClassicsHeader extends InternalClassics<ClassicsHeader> implements 
         ImageView imageView = this.A;
         TextView textView = this.k;
         int i = 8;
-        switch (AnonymousClass1.f27986a[refreshState2.ordinal()]) {
+        switch (AnonymousClass1.f14298a[refreshState2.ordinal()]) {
             case 1:
                 if (this.n) {
                     i = 0;

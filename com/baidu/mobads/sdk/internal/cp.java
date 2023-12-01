@@ -15,7 +15,7 @@ import org.json.JSONObject;
 public class cp extends bf {
 
     /* renamed from: a  reason: collision with root package name */
-    private RelativeLayout f9397a;
+    private RelativeLayout f6557a;
     private String q;
     private boolean r;
     private AdViewListener s;
@@ -27,7 +27,7 @@ public class cp extends bf {
     public cp(AdView adView, Context context, RelativeLayout relativeLayout, String str, boolean z) {
         super(context);
         this.v = adView;
-        this.f9397a = relativeLayout;
+        this.f6557a = relativeLayout;
         this.q = str;
         this.r = z;
     }
@@ -45,7 +45,7 @@ public class cp extends bf {
             JSONObject jSONObject3 = new JSONObject();
             jSONObject3.put(IAdInterListener.AdReqParam.PROD, "banner");
             this.k.createProdHandler(jSONObject3);
-            this.k.setAdContainer(this.f9397a);
+            this.k.setAdContainer(this.f6557a);
             n();
             jSONObject.put(IAdInterListener.AdReqParam.PROD, "banner");
             jSONObject.put(IAdInterListener.AdReqParam.APID, this.q);

@@ -33,6 +33,7 @@ import com.blued.das.live.LiveProtos;
 import com.bytedance.applog.tracker.Tracker;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
+import com.soft.blued.R;
 import com.soft.blued.log.InstantLog;
 import com.soft.blued.log.track.EventTrackLive;
 import com.soft.blued.ui.live.LiveRoomInfoChannel;
@@ -50,11 +51,11 @@ import kotlin.text.StringsKt;
 public final class LiveFollowRecommendAdapter extends BaseQuickAdapter<LiveRecommendModel, BaseViewHolder> implements LiveListAutoPlay {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f31071a;
+    private Context f17381a;
     private IRequestHost b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final int f31072c;
+    private final int f17382c;
     private String d;
     private LiveAutoPlayView e;
     private boolean f;
@@ -63,11 +64,11 @@ public final class LiveFollowRecommendAdapter extends BaseQuickAdapter<LiveRecom
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public LiveFollowRecommendAdapter(Context context, IRequestHost iRequestHost) {
-        super(2131559794);
+        super((int) R.layout.item_live_follow_recommend_user);
         Intrinsics.e(context, "context");
-        this.f31071a = context;
+        this.f17381a = context;
         this.b = iRequestHost;
-        this.f31072c = 2;
+        this.f17382c = 2;
         this.d = "";
         this.g = new HashSet<>();
         this.h = new ArrayList();
@@ -75,16 +76,14 @@ public final class LiveFollowRecommendAdapter extends BaseQuickAdapter<LiveRecom
 
     private final void a(final View view, final LiveRecommendModel liveRecommendModel) {
         LiveRoomInfo.a().a(this.mContext, new LiveUserRelationshipUtils.IAddOrRemoveAttentionDone() { // from class: com.soft.blued.ui.live.adapter.LiveFollowRecommendAdapter$addUserFollow$1
-            @Override // com.blued.android.module.live.base.utils.LiveUserRelationshipUtils.IAddOrRemoveAttentionDone
             public void Q_() {
             }
 
-            @Override // com.blued.android.module.live.base.utils.LiveUserRelationshipUtils.IAddOrRemoveAttentionDone
             public void a(String str) {
                 if (str == null) {
                     return;
                 }
-                LiveRecommendModel liveRecommendModel2 = LiveRecommendModel.this;
+                LiveRecommendModel liveRecommendModel2 = liveRecommendModel;
                 View view2 = view;
                 liveRecommendModel2.followed = Integer.parseInt(str);
                 if (view2 == null) {
@@ -93,89 +92,86 @@ public final class LiveFollowRecommendAdapter extends BaseQuickAdapter<LiveRecom
                 view2.setVisibility(8);
             }
 
-            @Override // com.blued.android.module.live.base.utils.LiveUserRelationshipUtils.IAddOrRemoveAttentionDone
             public void b(String str) {
             }
 
-            @Override // com.blued.android.module.live.base.utils.LiveUserRelationshipUtils.IAddOrRemoveAttentionDone
             public void c() {
             }
 
-            @Override // com.blued.android.module.live.base.utils.LiveUserRelationshipUtils.IAddOrRemoveAttentionDone
             public void d() {
             }
         }, liveRecommendModel.uid, "", this.b);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(ImageSize size, LiveFollowRecommendAdapter this$0, Ref.ObjectRef ivTopLeft, LiveRecommendModel item, BaseViewHolder baseViewHolder, File file, Exception exc) {
-        Intrinsics.e(size, "$size");
-        Intrinsics.e(this$0, "this$0");
-        Intrinsics.e(ivTopLeft, "$ivTopLeft");
-        Intrinsics.e(item, "$item");
+    public static final void a(ImageSize imageSize, LiveFollowRecommendAdapter liveFollowRecommendAdapter, Ref.ObjectRef objectRef, LiveRecommendModel liveRecommendModel, BaseViewHolder baseViewHolder, File file, Exception exc) {
+        Intrinsics.e(imageSize, "$size");
+        Intrinsics.e(liveFollowRecommendAdapter, "this$0");
+        Intrinsics.e(objectRef, "$ivTopLeft");
+        Intrinsics.e(liveRecommendModel, "$item");
         if (file == null || !file.exists()) {
             return;
         }
-        int a2 = size.a();
-        int b = size.b();
-        int a3 = DensityUtils.a(this$0.mContext, 20.0f);
+        int a2 = imageSize.a();
+        int b = imageSize.b();
+        int a3 = DensityUtils.a(liveFollowRecommendAdapter.mContext, 20.0f);
         int i = b > 0 ? (a2 * a3) / b : 0;
-        ViewGroup.LayoutParams layoutParams = ((ImageView) ivTopLeft.f42545a).getLayoutParams();
+        ViewGroup.LayoutParams layoutParams = ((ImageView) objectRef.a).getLayoutParams();
         if (layoutParams == null) {
             throw new NullPointerException("null cannot be cast to non-null type android.widget.FrameLayout.LayoutParams");
         }
         FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) layoutParams;
         layoutParams2.width = i;
         layoutParams2.height = a3;
-        ((ImageView) ivTopLeft.f42545a).setLayoutParams(layoutParams2);
-        String str = item.anchor_tag;
+        ((ImageView) objectRef.a).setLayoutParams(layoutParams2);
+        String str = liveRecommendModel.anchor_tag;
         Intrinsics.c(str, "item.anchor_tag");
         if (StringsKt.b(str, ".gif", false, 2, (Object) null)) {
-            ImageLoader.a(this$0.b, item.anchor_tag).h().a((ImageView) ivTopLeft.f42545a);
+            ImageLoader.a(liveFollowRecommendAdapter.b, liveRecommendModel.anchor_tag).h().a((ImageView) objectRef.a);
         } else {
-            String str2 = item.anchor_tag;
+            String str2 = liveRecommendModel.anchor_tag;
             Intrinsics.c(str2, "item.anchor_tag");
             if (StringsKt.b(str2, ".png", false, 2, (Object) null)) {
-                ImageLoader.a(this$0.b, item.anchor_tag).e(baseViewHolder.hashCode()).g(-1).a((ImageView) ivTopLeft.f42545a);
+                ImageLoader.a(liveFollowRecommendAdapter.b, liveRecommendModel.anchor_tag).e(baseViewHolder.hashCode()).g(-1).a((ImageView) objectRef.a);
             } else {
-                ImageLoader.a(this$0.b, item.anchor_tag).a((ImageView) ivTopLeft.f42545a);
+                ImageLoader.a(liveFollowRecommendAdapter.b, liveRecommendModel.anchor_tag).a((ImageView) objectRef.a);
             }
         }
-        baseViewHolder.setGone(2131365973, true);
+        baseViewHolder.setGone(R.id.iv_top_left, true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(LiveRecommendModel item, LiveFollowRecommendAdapter this$0, View view) {
+    public static final void a(LiveRecommendModel liveRecommendModel, LiveFollowRecommendAdapter liveFollowRecommendAdapter, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(item, "$item");
-        Intrinsics.e(this$0, "this$0");
-        String str = item.uid;
-        String str2 = item.lid;
+        Intrinsics.e(liveRecommendModel, "$item");
+        Intrinsics.e(liveFollowRecommendAdapter, "this$0");
+        String str = liveRecommendModel.uid;
+        String str2 = liveRecommendModel.lid;
         ArrayList arrayList = new ArrayList();
-        int size = this$0.mData.size();
+        int size = liveFollowRecommendAdapter.mData.size();
         int i = 0;
         while (true) {
             int i2 = i;
             if (i2 >= size) {
                 break;
             }
-            arrayList.add(new LiveRoomData(StringUtils.a(((LiveRecommendModel) this$0.mData.get(i2)).lid, 0L), ((LiveRecommendModel) this$0.mData.get(i2)).liveType == 1 ? 1 : 0, "live_followed_grid_recommend", ((LiveRecommendModel) this$0.mData.get(i2)).uid, ((LiveRecommendModel) this$0.mData.get(i2)).name, ((LiveRecommendModel) this$0.mData.get(i2)).avatar, ((LiveRecommendModel) this$0.mData.get(i2)).vbadge));
+            arrayList.add(new LiveRoomData(StringUtils.a(((LiveRecommendModel) liveFollowRecommendAdapter.mData.get(i2)).lid, 0L), ((LiveRecommendModel) liveFollowRecommendAdapter.mData.get(i2)).liveType == 1 ? 1 : 0, "live_followed_grid_recommend", ((LiveRecommendModel) liveFollowRecommendAdapter.mData.get(i2)).uid, ((LiveRecommendModel) liveFollowRecommendAdapter.mData.get(i2)).name, ((LiveRecommendModel) liveFollowRecommendAdapter.mData.get(i2)).avatar, ((LiveRecommendModel) liveFollowRecommendAdapter.mData.get(i2)).vbadge));
             i = i2 + 1;
         }
-        LiveRoomInfoChannel.a(this$0.mContext, new LiveRoomData(StringUtils.a(str2, 0L), item.liveType == 1 ? 1 : 0, "live_followed_grid_recommend", str, item.name, item.avatar, item.vbadge), -1, arrayList);
-        EventTrackLive.c(LiveProtos.Event.LIVE_ROOM_CLICK, "follow_default", item.lid, item.uid);
-        EventTrackLive.a(LiveProtos.Event.LIVE_FOLLOWED_GRID_RECOMMEND_CLICK, item.lid, item.uid);
-        InstantLog.b("live_followed_grid_recommend_click", item.uid);
+        LiveRoomInfoChannel.a(liveFollowRecommendAdapter.mContext, new LiveRoomData(StringUtils.a(str2, 0L), liveRecommendModel.liveType == 1 ? 1 : 0, "live_followed_grid_recommend", str, liveRecommendModel.name, liveRecommendModel.avatar, liveRecommendModel.vbadge), -1, arrayList);
+        EventTrackLive.c(LiveProtos.Event.LIVE_ROOM_CLICK, "follow_default", liveRecommendModel.lid, liveRecommendModel.uid);
+        EventTrackLive.a(LiveProtos.Event.LIVE_FOLLOWED_GRID_RECOMMEND_CLICK, liveRecommendModel.lid, liveRecommendModel.uid);
+        InstantLog.b("live_followed_grid_recommend_click", liveRecommendModel.uid);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(LiveRecommendModel item, LiveFollowRecommendAdapter this$0, ShapeTextView tvFollowAnchor, View view) {
+    public static final void a(LiveRecommendModel liveRecommendModel, LiveFollowRecommendAdapter liveFollowRecommendAdapter, ShapeTextView shapeTextView, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(item, "$item");
-        Intrinsics.e(this$0, "this$0");
-        Intrinsics.e(tvFollowAnchor, "$tvFollowAnchor");
-        EventTrackLive.a(LiveProtos.Event.LIVE_FOLLOW_PAGE_MAYBE_LIKE_ROOM_FOLLOW, item.lid, item.uid);
-        this$0.a(tvFollowAnchor, item);
+        Intrinsics.e(liveRecommendModel, "$item");
+        Intrinsics.e(liveFollowRecommendAdapter, "this$0");
+        Intrinsics.e(shapeTextView, "$tvFollowAnchor");
+        EventTrackLive.a(LiveProtos.Event.LIVE_FOLLOW_PAGE_MAYBE_LIKE_ROOM_FOLLOW, liveRecommendModel.lid, liveRecommendModel.uid);
+        liveFollowRecommendAdapter.a((View) shapeTextView, liveRecommendModel);
     }
 
     private final void f() {
@@ -193,7 +189,6 @@ public final class LiveFollowRecommendAdapter extends BaseQuickAdapter<LiveRecom
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    /* JADX WARN: Type inference failed for: r0v138, types: [T, android.widget.ImageView, java.lang.Object] */
     @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(final BaseViewHolder baseViewHolder, final LiveRecommendModel liveRecommendModel) {
@@ -209,19 +204,19 @@ public final class LiveFollowRecommendAdapter extends BaseQuickAdapter<LiveRecom
             throw new NullPointerException("null cannot be cast to non-null type androidx.recyclerview.widget.GridLayoutManager.LayoutParams");
         }
         GridLayoutManager.LayoutParams layoutParams2 = (GridLayoutManager.LayoutParams) layoutParams;
-        layoutParams2.width = (AppInfo.l - DensityUtils.a(getContext(), 12.0f)) / this.f31072c;
+        layoutParams2.width = (AppInfo.l - DensityUtils.a(getContext(), 12.0f)) / this.f17382c;
         layoutParams2.height = layoutParams2.width;
         frameLayout.setLayoutParams(layoutParams2);
         CardView cardView = a2.b;
         Intrinsics.c(cardView, "binding.aarivCoverLayout");
-        ImageView imageView = a2.f12028a;
+        ImageView imageView = a2.a;
         Intrinsics.c(imageView, "binding.aarivCover");
         TextView textView = a2.i;
         Intrinsics.c(textView, "binding.tvUsername");
-        LiveAutoPlayView liveAutoPlayView = a2.f12029c;
+        LiveAutoPlayView liveAutoPlayView = a2.c;
         Intrinsics.c(liveAutoPlayView, "binding.flVideoView");
-        final ShapeTextView shapeTextView = a2.h;
-        Intrinsics.c(shapeTextView, "binding.tvFollowAnchor");
+        final View view = a2.h;
+        Intrinsics.c(view, "binding.tvFollowAnchor");
         BluedLiveListData bluedLiveListData = new BluedLiveListData();
         DensityUtils.a(getContext(), 4.5f);
         int a3 = DensityUtils.a(getContext(), 4.5f);
@@ -260,14 +255,14 @@ public final class LiveFollowRecommendAdapter extends BaseQuickAdapter<LiveRecom
         bluedLiveListData.link_type = liveRecommendModel.link_type;
         bluedLiveListData.live_play = liveRecommendModel.livePlay;
         if (liveRecommendModel.followed == 1) {
-            BluedViewExKt.a(shapeTextView);
+            BluedViewExKt.a(view);
         } else {
-            BluedViewExKt.b(shapeTextView);
+            BluedViewExKt.b(view);
         }
-        shapeTextView.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.live.adapter.-$$Lambda$LiveFollowRecommendAdapter$edO1-uF8Rg_9Sh7xeAicURJjZFg
+        view.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.live.adapter.-$$Lambda$LiveFollowRecommendAdapter$edO1-uF8Rg_9Sh7xeAicURJjZFg
             @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                LiveFollowRecommendAdapter.a(LiveRecommendModel.this, this, shapeTextView, view);
+            public final void onClick(View view2) {
+                LiveFollowRecommendAdapter.a(liveRecommendModel, this, view, view2);
             }
         });
         liveAutoPlayView.a(this, bluedLiveListData, this.d, layoutParams2.width, layoutParams2.height);
@@ -286,14 +281,13 @@ public final class LiveFollowRecommendAdapter extends BaseQuickAdapter<LiveRecom
         BluedViewExKt.a(imageView2);
         if (!TextUtils.isEmpty(liveRecommendModel.anchor_tag)) {
             final Ref.ObjectRef objectRef = new Ref.ObjectRef();
-            ?? r0 = a2.e;
-            Intrinsics.c(r0, "binding.ivTopLeft");
-            objectRef.f42545a = r0;
+            ImageView imageView3 = a2.e;
+            Intrinsics.c(imageView3, "binding.ivTopLeft");
+            objectRef.a = imageView3;
             final ImageSize imageSize = new ImageSize();
             ImageFileLoader.a(a()).a(liveRecommendModel.anchor_tag).a(imageSize).a(new ImageFileLoader.OnLoadFileListener() { // from class: com.soft.blued.ui.live.adapter.-$$Lambda$LiveFollowRecommendAdapter$4d4JjfqnPfDa8NdBC8H0Z0enFg8
-                @Override // com.blued.android.core.image.ImageFileLoader.OnLoadFileListener
                 public final void onUIFinish(File file, Exception exc) {
-                    LiveFollowRecommendAdapter.a(ImageSize.this, this, objectRef, liveRecommendModel, baseViewHolder, file, exc);
+                    LiveFollowRecommendAdapter.a(imageSize, this, objectRef, liveRecommendModel, baseViewHolder, file, exc);
                 }
             }).a();
         }
@@ -305,9 +299,9 @@ public final class LiveFollowRecommendAdapter extends BaseQuickAdapter<LiveRecom
         if (liveRecommendModel.level > 0) {
             LiveUtils.a(getContext(), a2.f, liveRecommendModel.level, false);
         } else {
-            ImageView imageView3 = a2.f;
-            Intrinsics.c(imageView3, "binding.liveRecordLevel");
-            BluedViewExKt.a(imageView3);
+            ImageView imageView4 = a2.f;
+            Intrinsics.c(imageView4, "binding.liveRecordLevel");
+            BluedViewExKt.a(imageView4);
         }
         int i2 = liveRecommendModel.screen_pattern;
         String str2 = liveRecommendModel.avatar;
@@ -317,8 +311,8 @@ public final class LiveFollowRecommendAdapter extends BaseQuickAdapter<LiveRecom
         new LiveRoomData(StringUtils.a(str4, 0L), i2, this.d, liveRecommendModel.uid, str5, str2, liveRecommendModel.vbadge).live_url = liveRecommendModel.livePlay;
         imageView.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.live.adapter.-$$Lambda$LiveFollowRecommendAdapter$CK0ZIchRniF5EIg1odIKvrzlLuU
             @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                LiveFollowRecommendAdapter.a(LiveRecommendModel.this, this, view);
+            public final void onClick(View view2) {
+                LiveFollowRecommendAdapter.a(liveRecommendModel, this, view2);
             }
         });
     }
@@ -355,7 +349,6 @@ public final class LiveFollowRecommendAdapter extends BaseQuickAdapter<LiveRecom
         }
     }
 
-    @Override // com.blued.android.module.live_china.view.LiveListAutoPlay
     public boolean c() {
         LiveAutoPlayView liveAutoPlayView = this.e;
         if (liveAutoPlayView != null) {
@@ -387,6 +380,6 @@ public final class LiveFollowRecommendAdapter extends BaseQuickAdapter<LiveRecom
     }
 
     public final Context getContext() {
-        return this.f31071a;
+        return this.f17381a;
     }
 }

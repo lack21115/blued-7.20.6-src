@@ -28,7 +28,7 @@ import javax.crypto.spec.SecretKeySpec;
 public class k {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final SecureRandom f42141a = new SecureRandom();
+    public static final SecureRandom f28450a = new SecureRandom();
 
     public static String a(String str, String str2) {
         if (TextUtils.isEmpty(str)) {
@@ -82,7 +82,7 @@ public class k {
             mac.init(new SecretKeySpec(str.getBytes(StandardCharsets.UTF_8), "HmacSHA256"));
             byte[] doFinal = mac.doFinal(bArr);
             byte[] bArr2 = new byte[16];
-            System.arraycopy((Object) doFinal, 0, (Object) bArr2, 0, 16);
+            System.arraycopy(doFinal, 0, bArr2, 0, 16);
             return new SecretKeySpec(bArr2, "AES");
         } catch (Exception e) {
             z1.a(e);
@@ -92,7 +92,7 @@ public class k {
 
     public static byte[] a(String str, SecretKey secretKey, String str2) throws Exception {
         byte[] bArr = new byte[12];
-        f42141a.nextBytes(bArr);
+        f28450a.nextBytes(bArr);
         Cipher cipher = Cipher.getInstance("AES/GCM/NoPadding");
         cipher.init(1, secretKey, new GCMParameterSpec(128, bArr));
         cipher.updateAAD(str2.getBytes(StandardCharsets.UTF_8));

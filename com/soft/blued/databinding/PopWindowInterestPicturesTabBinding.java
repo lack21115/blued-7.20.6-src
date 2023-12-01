@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class PopWindowInterestPicturesTabBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ConstraintLayout f29569a;
+    private final ConstraintLayout f15879a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f29569a;
+        return this.f15879a;
     }
 }

@@ -14,13 +14,9 @@ import java.util.Locale;
 
 /* loaded from: source-4181928-dex2jar.jar:com/mokee/google/OfflineNumber.class */
 public class OfflineNumber {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static PhoneNumberOfflineGeocoder f24218a;
+    private static PhoneNumberOfflineGeocoder a;
     private static String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private static PhoneNumberUtil f24219c;
+    private static PhoneNumberUtil c;
     public static int d;
     private static final String e;
 
@@ -29,7 +25,6 @@ public class OfflineNumber {
         a() {
         }
 
-        @Override // android.location.CountryListener
         public void onCountryDetected(Country country) {
             OfflineNumber.b = country.getCountryIso();
         }
@@ -200,7 +195,7 @@ public class OfflineNumber {
             r5 = r0
             goto L4b
         */
-        throw new UnsupportedOperationException("Method not decompiled: com.mokee.google.OfflineNumber.m8046clinit():void");
+        throw new UnsupportedOperationException("Method not decompiled: com.mokee.google.OfflineNumber.m11269clinit():void");
     }
 
     private static Phonenumber.PhoneNumber a(String str, String str2) {
@@ -215,10 +210,10 @@ public class OfflineNumber {
         PhoneNumberOfflineGeocoder phoneNumberOfflineGeocoder;
         synchronized (OfflineNumber.class) {
             try {
-                if (f24218a == null) {
-                    f24218a = PhoneNumberOfflineGeocoder.getInstance();
+                if (a == null) {
+                    a = PhoneNumberOfflineGeocoder.getInstance();
                 }
-                phoneNumberOfflineGeocoder = f24218a;
+                phoneNumberOfflineGeocoder = a;
             } catch (Throwable th) {
                 throw th;
             }
@@ -230,10 +225,10 @@ public class OfflineNumber {
         PhoneNumberUtil phoneNumberUtil;
         synchronized (OfflineNumber.class) {
             try {
-                if (f24219c == null) {
-                    f24219c = PhoneNumberUtil.getInstance();
+                if (c == null) {
+                    c = PhoneNumberUtil.getInstance();
                 }
-                phoneNumberUtil = f24219c;
+                phoneNumberUtil = c;
             } catch (Throwable th) {
                 throw th;
             }

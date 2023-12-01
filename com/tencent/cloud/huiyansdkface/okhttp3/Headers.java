@@ -17,13 +17,13 @@ import java.util.TreeSet;
 public final class Headers {
 
     /* renamed from: a  reason: collision with root package name */
-    private final String[] f35857a;
+    private final String[] f22166a;
 
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/cloud/huiyansdkface/okhttp3/Headers$Builder.class */
     public static final class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        final List<String> f35858a = new ArrayList(20);
+        final List<String> f22167a = new ArrayList(20);
 
         /* JADX INFO: Access modifiers changed from: package-private */
         public Builder a(String str) {
@@ -33,8 +33,8 @@ public final class Headers {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         public Builder a(String str, String str2) {
-            this.f35858a.add(str);
-            this.f35858a.add(str2.trim());
+            this.f22167a.add(str);
+            this.f22167a.add(str2.trim());
             return this;
         }
 
@@ -83,14 +83,14 @@ public final class Headers {
         }
 
         public String get(String str) {
-            int size = this.f35858a.size();
+            int size = this.f22167a.size();
             while (true) {
                 int i = size - 2;
                 if (i < 0) {
                     return null;
                 }
-                if (str.equalsIgnoreCase(this.f35858a.get(i))) {
-                    return this.f35858a.get(i + 1);
+                if (str.equalsIgnoreCase(this.f22167a.get(i))) {
+                    return this.f22167a.get(i + 1);
                 }
                 size = i;
             }
@@ -100,13 +100,13 @@ public final class Headers {
             int i = 0;
             while (true) {
                 int i2 = i;
-                if (i2 >= this.f35858a.size()) {
+                if (i2 >= this.f22167a.size()) {
                     return this;
                 }
                 int i3 = i2;
-                if (str.equalsIgnoreCase(this.f35858a.get(i2))) {
-                    this.f35858a.remove(i2);
-                    this.f35858a.remove(i2);
+                if (str.equalsIgnoreCase(this.f22167a.get(i2))) {
+                    this.f22167a.remove(i2);
+                    this.f22167a.remove(i2);
                     i3 = i2 - 2;
                 }
                 i = i3 + 2;
@@ -131,11 +131,11 @@ public final class Headers {
     }
 
     Headers(Builder builder) {
-        this.f35857a = (String[]) builder.f35858a.toArray(new String[builder.f35858a.size()]);
+        this.f22166a = (String[]) builder.f22167a.toArray(new String[builder.f22167a.size()]);
     }
 
     private Headers(String[] strArr) {
-        this.f35857a = strArr;
+        this.f22166a = strArr;
     }
 
     private static String a(String[] strArr, String str) {
@@ -319,7 +319,7 @@ public final class Headers {
     }
 
     public long byteCount() {
-        String[] strArr = this.f35857a;
+        String[] strArr = this.f22166a;
         long length = strArr.length * 2;
         int length2 = strArr.length;
         int i = 0;
@@ -328,17 +328,17 @@ public final class Headers {
             if (i2 >= length2) {
                 return length;
             }
-            length += this.f35857a[i2].length();
+            length += this.f22166a[i2].length();
             i = i2 + 1;
         }
     }
 
     public boolean equals(Object obj) {
-        return (obj instanceof Headers) && Arrays.equals(((Headers) obj).f35857a, this.f35857a);
+        return (obj instanceof Headers) && Arrays.equals(((Headers) obj).f22166a, this.f22166a);
     }
 
     public String get(String str) {
-        return a(this.f35857a, str);
+        return a(this.f22166a, str);
     }
 
     public Date getDate(String str) {
@@ -350,11 +350,11 @@ public final class Headers {
     }
 
     public int hashCode() {
-        return Arrays.hashCode(this.f35857a);
+        return Arrays.hashCode(this.f22166a);
     }
 
     public String name(int i) {
-        return this.f35857a[i * 2];
+        return this.f22166a[i * 2];
     }
 
     public Set<String> names() {
@@ -373,12 +373,12 @@ public final class Headers {
 
     public Builder newBuilder() {
         Builder builder = new Builder();
-        Collections.addAll(builder.f35858a, this.f35857a);
+        Collections.addAll(builder.f22167a, this.f22166a);
         return builder;
     }
 
     public int size() {
-        return this.f35857a.length / 2;
+        return this.f22166a.length / 2;
     }
 
     public Map<String, List<String>> toMultimap() {
@@ -420,7 +420,7 @@ public final class Headers {
     }
 
     public String value(int i) {
-        return this.f35857a[(i * 2) + 1];
+        return this.f22166a[(i * 2) + 1];
     }
 
     public List<String> values(String str) {

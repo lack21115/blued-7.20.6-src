@@ -108,30 +108,30 @@ public abstract class UriCodec {
                 byteArrayOutputStream.reset();
                 i2 = i;
             } else {
-                char c2 = charAt;
+                char c = charAt;
                 if (z) {
-                    c2 = charAt;
+                    c = charAt;
                     if (charAt == '+') {
-                        c2 = ' ';
+                        c = ' ';
                     }
                 }
-                sb.append(c2);
+                sb.append(c);
                 i2 = i3 + 1;
             }
         }
     }
 
-    private static int hexToInt(char c2) {
-        if ('0' > c2 || c2 > '9') {
-            if ('a' > c2 || c2 > 'f') {
-                if ('A' > c2 || c2 > 'F') {
+    private static int hexToInt(char c) {
+        if ('0' > c || c > '9') {
+            if ('a' > c || c > 'f') {
+                if ('A' > c || c > 'F') {
                     return -1;
                 }
-                return (c2 - 'A') + 10;
+                return (c - 'A') + 10;
             }
-            return (c2 - 'a') + 10;
+            return (c - 'a') + 10;
         }
-        return c2 - '0';
+        return c - '0';
     }
 
     public static void validateSimple(String str, String str2) throws URISyntaxException {
@@ -163,7 +163,7 @@ public abstract class UriCodec {
         return sb.toString();
     }
 
-    protected abstract boolean isRetained(char c2);
+    protected abstract boolean isRetained(char c);
 
     public final String validate(String str, int i, int i2, String str2) throws URISyntaxException {
         int i3;

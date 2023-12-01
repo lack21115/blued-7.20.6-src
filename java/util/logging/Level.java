@@ -4,6 +4,7 @@ import dalvik.system.VMStack;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.Serializable;
+import java.net.HttpURLConnection;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -27,7 +28,7 @@ public class Level implements Serializable {
     public static final Level INFO = new Level("INFO", 800);
     public static final Level CONFIG = new Level("CONFIG", 700);
     public static final Level FINE = new Level("FINE", 500);
-    public static final Level FINER = new Level("FINER", 400);
+    public static final Level FINER = new Level("FINER", HttpURLConnection.HTTP_BAD_REQUEST);
     public static final Level FINEST = new Level("FINEST", 300);
     public static final Level ALL = new Level(Rule.ALL, Integer.MIN_VALUE);
 

@@ -3,8 +3,8 @@ package com.tencent.mapsdk.internal;
 import android.text.Spanned;
 import android.text.TextUtils;
 import android.util.Log;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.mapsdk.core.utils.cache.DiskCache;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.File;
 import java.io.RandomAccessFile;
 
@@ -12,7 +12,7 @@ import java.io.RandomAccessFile;
 public class ng implements DiskCache.b {
 
     /* renamed from: a  reason: collision with root package name */
-    private final int f37671a = 128;
+    private final int f23980a = 128;
     private String b;
 
     public ng(String str) {
@@ -41,9 +41,9 @@ public class ng implements DiskCache.b {
         sb.append(i5 / 10);
         sb.append(File.separatorChar);
         sb.append(i3);
-        sb.append(BridgeUtil.UNDERLINE_STR);
+        sb.append("_");
         sb.append(i4);
-        sb.append(BridgeUtil.UNDERLINE_STR);
+        sb.append("_");
         sb.append(i5);
         return sb.toString();
     }
@@ -67,7 +67,7 @@ public class ng implements DiskCache.b {
     }
 
     private int[] a(String str) {
-        String[] split = str.split("-");
+        String[] split = str.split(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
         if (split.length < 3) {
             return null;
         }

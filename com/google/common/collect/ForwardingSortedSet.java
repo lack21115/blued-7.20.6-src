@@ -27,7 +27,7 @@ public abstract class ForwardingSortedSet<E> extends ForwardingSet<E> implements
         return delegate().first();
     }
 
-    @Override // java.util.SortedSet, java.util.NavigableSet
+    @Override // java.util.SortedSet
     public SortedSet<E> headSet(E e) {
         return delegate().headSet(e);
     }
@@ -70,12 +70,12 @@ public abstract class ForwardingSortedSet<E> extends ForwardingSet<E> implements
         return tailSet(e).headSet(e2);
     }
 
-    @Override // java.util.SortedSet, java.util.NavigableSet
+    @Override // java.util.SortedSet
     public SortedSet<E> subSet(E e, E e2) {
         return delegate().subSet(e, e2);
     }
 
-    @Override // java.util.SortedSet, java.util.NavigableSet
+    @Override // java.util.SortedSet
     public SortedSet<E> tailSet(E e) {
         return delegate().tailSet(e);
     }

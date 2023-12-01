@@ -7,11 +7,11 @@ import java.io.Closeable;
 public final class b implements Closeable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final StrictMode.ThreadPolicy f36281a;
+    private final StrictMode.ThreadPolicy f22590a;
     private final StrictMode.VmPolicy b;
 
     private b(StrictMode.ThreadPolicy threadPolicy) {
-        this.f36281a = threadPolicy;
+        this.f22590a = threadPolicy;
         this.b = null;
     }
 
@@ -25,7 +25,7 @@ public final class b implements Closeable {
 
     @Override // java.io.Closeable, java.lang.AutoCloseable
     public final void close() {
-        StrictMode.ThreadPolicy threadPolicy = this.f36281a;
+        StrictMode.ThreadPolicy threadPolicy = this.f22590a;
         if (threadPolicy != null) {
             StrictMode.setThreadPolicy(threadPolicy);
         }

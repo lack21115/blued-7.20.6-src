@@ -14,11 +14,11 @@ public final class g extends m {
     static Map<String, String> l = null;
 
     /* renamed from: a  reason: collision with root package name */
-    public short f35320a = 0;
+    public short f21629a = 0;
     public byte b = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    public int f35321c = 0;
+    public int f21630c = 0;
     public int d = 0;
     public String e = null;
     public String f = null;
@@ -27,9 +27,9 @@ public final class g extends m {
     @Override // com.tencent.bugly.idasc.proguard.m
     public final void a(k kVar) {
         try {
-            this.f35320a = kVar.a(this.f35320a, 1, true);
+            this.f21629a = kVar.a(this.f21629a, 1, true);
             this.b = kVar.a(this.b, 2, true);
-            this.f35321c = kVar.a(this.f35321c, 3, true);
+            this.f21630c = kVar.a(this.f21630c, 3, true);
             this.d = kVar.a(this.d, 4, true);
             this.e = kVar.b(5, true);
             this.f = kVar.b(6, true);
@@ -60,9 +60,9 @@ public final class g extends m {
 
     @Override // com.tencent.bugly.idasc.proguard.m
     public final void a(l lVar) {
-        lVar.a(this.f35320a, 1);
+        lVar.a(this.f21629a, 1);
         lVar.a(this.b, 2);
-        lVar.a(this.f35321c, 3);
+        lVar.a(this.f21630c, 3);
         lVar.a(this.d, 4);
         lVar.a(this.e, 5);
         lVar.a(this.f, 6);
@@ -75,9 +75,9 @@ public final class g extends m {
     @Override // com.tencent.bugly.idasc.proguard.m
     public final void a(StringBuilder sb, int i) {
         i iVar = new i(sb, i);
-        iVar.a(this.f35320a, "iVersion");
+        iVar.a(this.f21629a, "iVersion");
         iVar.a(this.b, "cPacketType");
-        iVar.a(this.f35321c, "iMessageType");
+        iVar.a(this.f21630c, "iMessageType");
         iVar.a(this.d, "iRequestId");
         iVar.a(this.e, "sServantName");
         iVar.a(this.f, "sFuncName");
@@ -100,6 +100,6 @@ public final class g extends m {
 
     public final boolean equals(Object obj) {
         g gVar = (g) obj;
-        return n.a(1, (int) gVar.f35320a) && n.a(1, (int) gVar.b) && n.a(1, gVar.f35321c) && n.a(1, gVar.d) && n.a((Object) 1, (Object) gVar.e) && n.a((Object) 1, (Object) gVar.f) && n.a((Object) 1, (Object) gVar.g) && n.a(1, gVar.h) && n.a((Object) 1, (Object) gVar.i) && n.a((Object) 1, (Object) gVar.j);
+        return n.a(1, (int) gVar.f21629a) && n.a(1, (int) gVar.b) && n.a(1, gVar.f21630c) && n.a(1, gVar.d) && n.a((Object) 1, (Object) gVar.e) && n.a((Object) 1, (Object) gVar.f) && n.a((Object) 1, (Object) gVar.g) && n.a(1, gVar.h) && n.a((Object) 1, (Object) gVar.i) && n.a((Object) 1, (Object) gVar.j);
     }
 }

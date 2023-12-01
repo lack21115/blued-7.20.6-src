@@ -11,17 +11,17 @@ public interface f {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private final Handler f25577a;
+        private final Handler f11889a;
         private final f b;
 
         public a(Handler handler, f fVar) {
-            this.f25577a = fVar != null ? (Handler) com.opos.exoplayer.core.i.a.a(handler) : null;
+            this.f11889a = fVar != null ? (Handler) com.opos.exoplayer.core.i.a.a(handler) : null;
             this.b = fVar;
         }
 
         public void a(final int i, final int i2, final int i3, final float f) {
             if (this.b != null) {
-                this.f25577a.post(new Runnable() { // from class: com.opos.exoplayer.core.video.f.a.5
+                this.f11889a.post(new Runnable() { // from class: com.opos.exoplayer.core.video.f.a.5
                     @Override // java.lang.Runnable
                     public void run() {
                         a.this.b.a(i, i2, i3, f);
@@ -32,7 +32,7 @@ public interface f {
 
         public void a(final int i, final long j) {
             if (this.b != null) {
-                this.f25577a.post(new Runnable() { // from class: com.opos.exoplayer.core.video.f.a.4
+                this.f11889a.post(new Runnable() { // from class: com.opos.exoplayer.core.video.f.a.4
                     @Override // java.lang.Runnable
                     public void run() {
                         a.this.b.a(i, j);
@@ -43,7 +43,7 @@ public interface f {
 
         public void a(final Surface surface) {
             if (this.b != null) {
-                this.f25577a.post(new Runnable() { // from class: com.opos.exoplayer.core.video.f.a.6
+                this.f11889a.post(new Runnable() { // from class: com.opos.exoplayer.core.video.f.a.6
                     @Override // java.lang.Runnable
                     public void run() {
                         a.this.b.a(surface);
@@ -54,7 +54,7 @@ public interface f {
 
         public void a(final Format format) {
             if (this.b != null) {
-                this.f25577a.post(new Runnable() { // from class: com.opos.exoplayer.core.video.f.a.3
+                this.f11889a.post(new Runnable() { // from class: com.opos.exoplayer.core.video.f.a.3
                     @Override // java.lang.Runnable
                     public void run() {
                         a.this.b.a(format);
@@ -65,7 +65,7 @@ public interface f {
 
         public void a(final com.opos.exoplayer.core.b.d dVar) {
             if (this.b != null) {
-                this.f25577a.post(new Runnable() { // from class: com.opos.exoplayer.core.video.f.a.1
+                this.f11889a.post(new Runnable() { // from class: com.opos.exoplayer.core.video.f.a.1
                     @Override // java.lang.Runnable
                     public void run() {
                         a.this.b.a(dVar);
@@ -76,7 +76,7 @@ public interface f {
 
         public void a(final String str, final long j, final long j2) {
             if (this.b != null) {
-                this.f25577a.post(new Runnable() { // from class: com.opos.exoplayer.core.video.f.a.2
+                this.f11889a.post(new Runnable() { // from class: com.opos.exoplayer.core.video.f.a.2
                     @Override // java.lang.Runnable
                     public void run() {
                         a.this.b.a(str, j, j2);
@@ -87,7 +87,7 @@ public interface f {
 
         public void b(final com.opos.exoplayer.core.b.d dVar) {
             if (this.b != null) {
-                this.f25577a.post(new Runnable() { // from class: com.opos.exoplayer.core.video.f.a.7
+                this.f11889a.post(new Runnable() { // from class: com.opos.exoplayer.core.video.f.a.7
                     @Override // java.lang.Runnable
                     public void run() {
                         dVar.a();

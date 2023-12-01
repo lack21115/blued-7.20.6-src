@@ -23,11 +23,11 @@ import java.util.List;
 public class VIPItemRoundAdapter extends BaseQuickAdapter<VIPBuyOption, BaseViewHolder> {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f33798a;
+    private Context f20107a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private onGoodClick f33799c;
+    private onGoodClick f20108c;
 
     /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/user/adapter/VIPItemRoundAdapter$onGoodClick.class */
     public interface onGoodClick {
@@ -36,7 +36,7 @@ public class VIPItemRoundAdapter extends BaseQuickAdapter<VIPBuyOption, BaseView
 
     public VIPItemRoundAdapter(Context context, int i) {
         super(R.layout.item_vip_pay_option_new, new ArrayList());
-        this.f33798a = context;
+        this.f20107a = context;
         this.b = i;
     }
 
@@ -54,7 +54,7 @@ public class VIPItemRoundAdapter extends BaseQuickAdapter<VIPBuyOption, BaseView
         }
         vIPBuyOption.choosen = true;
         notifyDataSetChanged();
-        onGoodClick ongoodclick = this.f33799c;
+        onGoodClick ongoodclick = this.f20108c;
         if (ongoodclick != null) {
             ongoodclick.onclick(vIPBuyOption);
         }
@@ -87,7 +87,7 @@ public class VIPItemRoundAdapter extends BaseQuickAdapter<VIPBuyOption, BaseView
             }
             ((VIPBuyOption) this.mData.get(i)).choosen = true;
             notifyDataSetChanged();
-            onGoodClick ongoodclick = this.f33799c;
+            onGoodClick ongoodclick = this.f20108c;
             if (ongoodclick != null) {
                 ongoodclick.onclick((VIPBuyOption) this.mData.get(i));
             }
@@ -106,7 +106,7 @@ public class VIPItemRoundAdapter extends BaseQuickAdapter<VIPBuyOption, BaseView
             TextView textView3 = (TextView) baseViewHolder.getView(R.id.tv_amount);
             TextView textView4 = (TextView) baseViewHolder.getView(R.id.tv_org_amount);
             TextView textView5 = (TextView) baseViewHolder.getView(R.id.tv_amount_per_month);
-            ShapeTextView shapeTextView = (ShapeTextView) baseViewHolder.getView(2131372678);
+            ShapeTextView view = baseViewHolder.getView(R.id.tv_tag);
             TextView textView6 = (TextView) baseViewHolder.getView(R.id.tv_favourate);
             ConstraintLayout.LayoutParams layoutParams = (ConstraintLayout.LayoutParams) constraintLayout.getLayoutParams();
             if (baseViewHolder.getAdapterPosition() == 0) {
@@ -129,52 +129,52 @@ public class VIPItemRoundAdapter extends BaseQuickAdapter<VIPBuyOption, BaseView
                 DecimalFormat decimalFormat = new DecimalFormat("#.##");
                 textView5.setText("￥" + decimalFormat.format(vIPBuyOption.money / vIPBuyOption.month) + this.mContext.getResources().getString(R.string.per_month));
                 if (StringUtils.d(vIPBuyOption.item.tag)) {
-                    shapeTextView.setVisibility(4);
+                    view.setVisibility(4);
                 } else {
-                    shapeTextView.setText(vIPBuyOption.item.tag);
-                    shapeTextView.setVisibility(0);
+                    view.setText(vIPBuyOption.item.tag);
+                    view.setVisibility(0);
                 }
                 constraintLayout.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.adapter.-$$Lambda$VIPItemRoundAdapter$sUKEEkegxGoPU0RRN-k9v95Ai9I
                     @Override // android.view.View.OnClickListener
-                    public final void onClick(View view) {
-                        VIPItemRoundAdapter.this.a(vIPBuyOption, view);
+                    public final void onClick(View view2) {
+                        VIPItemRoundAdapter.this.a(vIPBuyOption, view2);
                     }
                 });
                 boolean z = textView6.getVisibility() == 0;
                 if (vIPBuyOption.choosen) {
                     if (z) {
                         if (this.b == 2) {
-                            constraintLayout.setBackground(BluedSkinUtils.b(this.mContext, R.drawable.shape_buy_svip_item_choosed_3_corner_radius));
+                            constraintLayout.setBackground(BluedSkinUtils.b(this.mContext, (int) R.drawable.shape_buy_svip_item_choosed_3_corner_radius));
                         } else {
-                            constraintLayout.setBackground(BluedSkinUtils.b(this.mContext, R.drawable.shape_buy_vip_item_choosed_3_corner_radius));
+                            constraintLayout.setBackground(BluedSkinUtils.b(this.mContext, (int) R.drawable.shape_buy_vip_item_choosed_3_corner_radius));
                         }
                     } else if (this.b == 2) {
-                        constraintLayout.setBackground(BluedSkinUtils.b(this.mContext, R.drawable.shape_buy_svip_item_choosed));
+                        constraintLayout.setBackground(BluedSkinUtils.b(this.mContext, (int) R.drawable.shape_buy_svip_item_choosed));
                     } else {
-                        constraintLayout.setBackground(BluedSkinUtils.b(this.mContext, R.drawable.shape_buy_vip_item_choosed));
+                        constraintLayout.setBackground(BluedSkinUtils.b(this.mContext, (int) R.drawable.shape_buy_vip_item_choosed));
                     }
                 } else if (z) {
-                    constraintLayout.setBackground(BluedSkinUtils.b(this.mContext, R.drawable.shape_buy_unchoosed_3_cornor_radius));
+                    constraintLayout.setBackground(BluedSkinUtils.b(this.mContext, (int) R.drawable.shape_buy_unchoosed_3_cornor_radius));
                 } else {
-                    constraintLayout.setBackground(BluedSkinUtils.b(this.mContext, R.drawable.shape_buy_unchoosed));
+                    constraintLayout.setBackground(BluedSkinUtils.b(this.mContext, (int) R.drawable.shape_buy_unchoosed));
                 }
                 if (this.b == 2) {
                     textView2.setTextColor(this.mContext.getResources().getColor(2131099658));
                     textView3.setTextColor(this.mContext.getResources().getColor(2131099658));
-                    ShapeHelper.a((ShapeHelper.ShapeView) shapeTextView, 2131099658);
-                    ShapeHelper.b(shapeTextView, 2131099659);
+                    ShapeHelper.a(view, 2131099658);
+                    ShapeHelper.b(view, 2131099659);
                     return;
                 }
                 textView2.setTextColor(this.mContext.getResources().getColor(2131099663));
                 textView3.setTextColor(this.mContext.getResources().getColor(2131099663));
-                ShapeHelper.a((ShapeHelper.ShapeView) shapeTextView, 2131099663);
-                ShapeHelper.b(shapeTextView, 2131099661);
+                ShapeHelper.a(view, 2131099663);
+                ShapeHelper.b(view, 2131099661);
             }
         }
     }
 
     public void a(onGoodClick ongoodclick) {
-        this.f33799c = ongoodclick;
+        this.f20108c = ongoodclick;
     }
 
     public void a(List<VIPBuyOption> list) {

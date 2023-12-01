@@ -29,34 +29,34 @@ public class tf {
     private static final String h = "layer-infos";
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f38024a;
+    private Context f24333a;
     private pg b;
     private SharedPreferences d;
 
     /* renamed from: c  reason: collision with root package name */
-    private List<uf> f38025c = new ArrayList();
+    private List<uf> f24334c = new ArrayList();
     private Set<b> e = new HashSet();
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/mapsdk/internal/tf$a.class */
     public class a extends UrlTileProvider {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ uf f38026a;
+        public final /* synthetic */ uf f24335a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public a(int i, int i2, uf ufVar) {
             super(i, i2);
-            this.f38026a = ufVar;
+            this.f24335a = ufVar;
         }
 
         @Override // com.tencent.tencentmap.mapsdk.maps.model.UrlTileProvider
         public URL getTileUrl(int i, int i2, int i3) {
-            uf ufVar = this.f38026a;
-            if (i3 > ufVar.f38050c || i3 < ufVar.d) {
+            uf ufVar = this.f24335a;
+            if (i3 > ufVar.f24359c || i3 < ufVar.d) {
                 return null;
             }
             try {
-                return new URL(this.f38026a.a(i, i2, i3));
+                return new URL(this.f24335a.a(i, i2, i3));
             } catch (MalformedURLException e) {
                 e.printStackTrace();
                 return null;
@@ -70,7 +70,7 @@ public class tf {
         private static final String e = "version";
 
         /* renamed from: a  reason: collision with root package name */
-        private String f38027a;
+        private String f24336a;
         private String b;
 
         private b() {
@@ -86,12 +86,12 @@ public class tf {
             }
             if (obj instanceof b) {
                 b bVar = (b) obj;
-                String str = this.f38027a;
+                String str = this.f24336a;
                 if (str != null) {
-                    if (!str.equals(bVar.f38027a)) {
+                    if (!str.equals(bVar.f24336a)) {
                         return false;
                     }
-                } else if (bVar.f38027a != null) {
+                } else if (bVar.f24336a != null) {
                     return false;
                 }
                 String str2 = this.b;
@@ -102,7 +102,7 @@ public class tf {
         }
 
         public int hashCode() {
-            String str = this.f38027a;
+            String str = this.f24336a;
             int i = 0;
             int hashCode = str != null ? str.hashCode() : 0;
             String str2 = this.b;
@@ -115,7 +115,7 @@ public class tf {
         @Override // com.tencent.map.tools.json.JsonParser
         public void parse(JSONObject jSONObject) {
             if (jSONObject != null) {
-                this.f38027a = jSONObject.optString("id");
+                this.f24336a = jSONObject.optString("id");
                 this.b = jSONObject.optString("version");
             }
         }
@@ -124,7 +124,7 @@ public class tf {
         public JSONObject toJson() {
             JSONObject jSONObject = new JSONObject();
             try {
-                jSONObject.put("id", this.f38027a);
+                jSONObject.put("id", this.f24336a);
                 jSONObject.put("version", this.b);
                 return jSONObject;
             } catch (JSONException e2) {
@@ -135,7 +135,7 @@ public class tf {
     }
 
     public tf(Context context, pg pgVar, q1.b bVar) {
-        this.f38024a = context;
+        this.f24333a = context;
         this.b = pgVar;
         this.d = ia.a(context, "custom-layer." + bVar.c());
         a();
@@ -145,8 +145,8 @@ public class tf {
         if (TextUtils.isEmpty(str)) {
             return null;
         }
-        for (uf ufVar : this.f38025c) {
-            if (ufVar != null && str.equals(ufVar.f38049a)) {
+        for (uf ufVar : this.f24334c) {
+            if (ufVar != null && str.equals(ufVar.f24358a)) {
                 return ufVar;
             }
         }
@@ -187,12 +187,12 @@ public class tf {
         String str = "custom_layer_" + xa.a(customLayerOptions.getLayerId());
         tileOverlayOptions.diskCacheDir(str);
         uf a2 = a(customLayerOptions.getLayerId());
-        ra.b(ma.f37642a, "cache_dir", (Object) str);
+        ra.b(ma.f23951a, "cache_dir", (Object) str);
         if (a2 != null) {
-            ra.b(ma.f37642a, "version", (Object) a2.b);
-            ra.b(ma.f37642a, "minZoom", Integer.valueOf(a2.d));
-            ra.b(ma.f37642a, "maxZoom", Integer.valueOf(a2.f38050c));
-            ra.b(ma.f37642a, "layerId", (Object) a2.f38049a);
+            ra.b(ma.f23951a, "version", (Object) a2.b);
+            ra.b(ma.f23951a, "minZoom", Integer.valueOf(a2.d));
+            ra.b(ma.f23951a, "maxZoom", Integer.valueOf(a2.f24359c));
+            ra.b(ma.f23951a, "layerId", (Object) a2.f24358a);
             tileOverlayOptions.tileProvider(new a(256, 256, a2));
             tileOverlayOptions.versionInfo(a2.b);
         }
@@ -202,9 +202,9 @@ public class tf {
     private void b() {
         boolean z;
         boolean z2 = false;
-        if (!this.e.isEmpty() || this.f38025c.isEmpty()) {
+        if (!this.e.isEmpty() || this.f24334c.isEmpty()) {
             z2 = false;
-            for (uf ufVar : this.f38025c) {
+            for (uf ufVar : this.f24334c) {
                 Iterator<b> it = this.e.iterator();
                 while (true) {
                     if (!it.hasNext()) {
@@ -212,7 +212,7 @@ public class tf {
                         break;
                     }
                     b next = it.next();
-                    if (next.f38027a.equals(ufVar.f38049a)) {
+                    if (next.f24336a.equals(ufVar.f24358a)) {
                         if (!next.b.equalsIgnoreCase(ufVar.b)) {
                             ufVar.h = true;
                             next.b = ufVar.b;
@@ -222,16 +222,16 @@ public class tf {
                 }
                 if (!z) {
                     b bVar = new b(this, null);
-                    bVar.f38027a = ufVar.f38049a;
+                    bVar.f24336a = ufVar.f24358a;
                     bVar.b = ufVar.b;
                     this.e.add(bVar);
                     z2 = true;
                 }
             }
         } else {
-            for (uf ufVar2 : this.f38025c) {
+            for (uf ufVar2 : this.f24334c) {
                 b bVar2 = new b(this, null);
-                bVar2.f38027a = ufVar2.f38049a;
+                bVar2.f24336a = ufVar2.f24358a;
                 bVar2.b = ufVar2.b;
                 this.e.add(bVar2);
                 z2 = true;
@@ -244,7 +244,7 @@ public class tf {
 
     public CustomLayer a(CustomLayerOptions customLayerOptions) {
         if (this.b != null) {
-            ra.d(ma.f37642a, "添加个性化图层[" + customLayerOptions.getLayerId() + "]");
+            ra.d(ma.f23951a, "添加个性化图层[" + customLayerOptions.getLayerId() + "]");
             kg b2 = this.b.b(b(customLayerOptions));
             uf a2 = a(customLayerOptions.getLayerId());
             if (b2 != null && a2 != null) {
@@ -252,10 +252,10 @@ public class tf {
                     b2.reload();
                     a2.h = false;
                 }
-                b2.b(a2.d, a2.f38050c);
+                b2.b(a2.d, a2.f24359c);
             }
             this.b.b().w().q().b();
-            ra.j(ma.f37642a);
+            ra.j(ma.f23951a);
             return new u0(b2);
         }
         return null;
@@ -265,8 +265,8 @@ public class tf {
         if (sfVar == null || !sfVar.b()) {
             return;
         }
-        this.f38025c.clear();
-        this.f38025c.addAll(sfVar.a());
+        this.f24334c.clear();
+        this.f24334c.addAll(sfVar.a());
         b();
     }
 }

@@ -4,18 +4,18 @@ package com.tencent.cloud.huiyansdkface.a.e;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private com.tencent.cloud.huiyansdkface.a.a.a.d f35477a;
+    private com.tencent.cloud.huiyansdkface.a.a.a.d f21786a;
     private byte[] b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f35478c;
+    private int f21787c;
     private int d;
     private com.tencent.cloud.huiyansdkface.a.a.a.a e;
 
     public a(com.tencent.cloud.huiyansdkface.a.a.a.d dVar, byte[] bArr, int i, int i2, com.tencent.cloud.huiyansdkface.a.a.a.a aVar) {
-        this.f35477a = dVar;
+        this.f21786a = dVar;
         this.b = bArr;
-        this.f35478c = i2;
+        this.f21787c = i2;
         this.d = i;
         this.e = aVar;
     }
@@ -25,7 +25,7 @@ public class a {
     }
 
     public com.tencent.cloud.huiyansdkface.a.a.a.d b() {
-        return this.f35477a;
+        return this.f21786a;
     }
 
     public byte[] c() {

@@ -15,13 +15,9 @@ import com.google.android.material.appbar.CollapsingToolbarLayout;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/databinding/FragmentFeedPostSignStateBinding.class */
 public final class FragmentFeedPostSignStateBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final AppBarLayout f18878a;
+    public final AppBarLayout a;
     public final CollapsingToolbarLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final TextView f18879c;
+    public final TextView c;
     public final PhotoGridView d;
     public final LinearLayout e;
     public final ImageView f;
@@ -34,9 +30,9 @@ public final class FragmentFeedPostSignStateBinding implements ViewBinding {
 
     private FragmentFeedPostSignStateBinding(CoordinatorLayout coordinatorLayout, AppBarLayout appBarLayout, CollapsingToolbarLayout collapsingToolbarLayout, TextView textView, PhotoGridView photoGridView, LinearLayout linearLayout, ImageView imageView, LinearLayout linearLayout2, LinearLayout linearLayout3, HoleRelativeLayout holeRelativeLayout, ImageView imageView2, NestedScrollView nestedScrollView) {
         this.l = coordinatorLayout;
-        this.f18878a = appBarLayout;
+        this.a = appBarLayout;
         this.b = collapsingToolbarLayout;
-        this.f18879c = textView;
+        this.c = textView;
         this.d = photoGridView;
         this.e = linearLayout;
         this.f = imageView;
@@ -49,14 +45,14 @@ public final class FragmentFeedPostSignStateBinding implements ViewBinding {
 
     public static FragmentFeedPostSignStateBinding a(View view) {
         String str;
-        AppBarLayout appBarLayout = (AppBarLayout) view.findViewById(R.id.appbar);
-        if (appBarLayout != null) {
-            CollapsingToolbarLayout collapsingToolbarLayout = (CollapsingToolbarLayout) view.findViewById(R.id.ctl_test_bar);
-            if (collapsingToolbarLayout != null) {
+        AppBarLayout findViewById = view.findViewById(R.id.appbar);
+        if (findViewById != null) {
+            CollapsingToolbarLayout findViewById2 = view.findViewById(R.id.ctl_test_bar);
+            if (findViewById2 != null) {
                 TextView textView = (TextView) view.findViewById(R.id.feed_bubble_state_guide_confirm);
                 if (textView != null) {
-                    PhotoGridView photoGridView = (PhotoGridView) view.findViewById(R.id.feed_post_sign_state_gv);
-                    if (photoGridView != null) {
+                    PhotoGridView findViewById3 = view.findViewById(R.id.feed_post_sign_state_gv);
+                    if (findViewById3 != null) {
                         LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.feed_post_tips_layout);
                         if (linearLayout != null) {
                             ImageView imageView = (ImageView) view.findViewById(R.id.feed_post_title_close);
@@ -69,9 +65,9 @@ public final class FragmentFeedPostSignStateBinding implements ViewBinding {
                                         if (holeRelativeLayout != null) {
                                             ImageView imageView2 = (ImageView) view.findViewById(R.id.guide_triangle);
                                             if (imageView2 != null) {
-                                                NestedScrollView nestedScrollView = (NestedScrollView) view.findViewById(R.id.nestedScrollView);
-                                                if (nestedScrollView != null) {
-                                                    return new FragmentFeedPostSignStateBinding((CoordinatorLayout) view, appBarLayout, collapsingToolbarLayout, textView, photoGridView, linearLayout, imageView, linearLayout2, linearLayout3, holeRelativeLayout, imageView2, nestedScrollView);
+                                                NestedScrollView findViewById4 = view.findViewById(R.id.nestedScrollView);
+                                                if (findViewById4 != null) {
+                                                    return new FragmentFeedPostSignStateBinding((CoordinatorLayout) view, findViewById, findViewById2, textView, findViewById3, linearLayout, imageView, linearLayout2, linearLayout3, holeRelativeLayout, imageView2, findViewById4);
                                                 }
                                                 str = "nestedScrollView";
                                             } else {
@@ -107,7 +103,6 @@ public final class FragmentFeedPostSignStateBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public CoordinatorLayout getRoot() {
         return this.l;

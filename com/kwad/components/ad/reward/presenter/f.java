@@ -5,7 +5,7 @@ import com.kwad.sdk.core.response.model.AdTemplate;
 import java.util.List;
 
 /* loaded from: source-7994992-dex2jar.jar:com/kwad/components/ad/reward/presenter/f.class */
-public final class f extends a implements a.InterfaceC0523a {
+public final class f extends a implements a.InterfaceC0353a {
     private AdTemplate mAdTemplate;
 
     @Override // com.kwad.components.ad.reward.presenter.a, com.kwad.sdk.mvp.Presenter
@@ -20,17 +20,17 @@ public final class f extends a implements a.InterfaceC0523a {
         com.kwad.components.core.g.a.a(this.mAdTemplate.mAdScene, this);
     }
 
-    @Override // com.kwad.components.core.g.a.InterfaceC0523a
+    @Override // com.kwad.components.core.g.a.InterfaceC0353a
     public final void onError(int i, String str) {
-        List<a.InterfaceC0523a> fQ = this.qt.fQ();
+        List<a.InterfaceC0353a> fQ = this.qt.fQ();
         if (fQ != null) {
-            for (a.InterfaceC0523a interfaceC0523a : fQ) {
-                interfaceC0523a.onError(i, str);
+            for (a.InterfaceC0353a interfaceC0353a : fQ) {
+                interfaceC0353a.onError(i, str);
             }
         }
     }
 
-    @Override // com.kwad.components.core.g.a.InterfaceC0523a
+    @Override // com.kwad.components.core.g.a.InterfaceC0353a
     public final void onInnerAdLoad(List<com.kwad.components.core.g.c> list) {
         if (list == null || list.size() == 0) {
             return;
@@ -38,23 +38,23 @@ public final class f extends a implements a.InterfaceC0523a {
         com.kwad.sdk.core.d.b.d("RewardInnerAdLoadPresenter", "onInnerAdLoad: " + list.size());
         AdTemplate adTemplate = list.get(0).getAdTemplate();
         boolean aZ = com.kwad.sdk.core.response.a.b.aZ(adTemplate);
-        List<a.InterfaceC0523a> fQ = this.qt.fQ();
+        List<a.InterfaceC0353a> fQ = this.qt.fQ();
         if (aZ) {
             com.kwad.sdk.core.c.a.c(com.kwad.sdk.core.response.a.b.aW(adTemplate), com.kwad.sdk.core.response.a.b.aX(adTemplate));
             if (fQ != null) {
-                for (a.InterfaceC0523a interfaceC0523a : fQ) {
-                    interfaceC0523a.onInnerAdLoad(list);
+                for (a.InterfaceC0353a interfaceC0353a : fQ) {
+                    interfaceC0353a.onInnerAdLoad(list);
                 }
             }
         }
     }
 
-    @Override // com.kwad.components.core.g.a.InterfaceC0523a
+    @Override // com.kwad.components.core.g.a.InterfaceC0353a
     public final void onRequestResult(int i) {
-        List<a.InterfaceC0523a> fQ = this.qt.fQ();
+        List<a.InterfaceC0353a> fQ = this.qt.fQ();
         if (fQ != null) {
-            for (a.InterfaceC0523a interfaceC0523a : fQ) {
-                interfaceC0523a.onRequestResult(i);
+            for (a.InterfaceC0353a interfaceC0353a : fQ) {
+                interfaceC0353a.onRequestResult(i);
             }
         }
     }

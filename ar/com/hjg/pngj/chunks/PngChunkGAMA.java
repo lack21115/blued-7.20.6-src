@@ -14,7 +14,7 @@ public class PngChunkGAMA extends PngChunkSingle {
 
     @Override // ar.com.hjg.pngj.chunks.PngChunk
     public void a(ChunkRaw chunkRaw) {
-        if (chunkRaw.f3659a == 4) {
+        if (chunkRaw.f3611a == 4) {
             this.h = PngHelperInternal.c(chunkRaw.d, 0) / 100000.0d;
             return;
         }

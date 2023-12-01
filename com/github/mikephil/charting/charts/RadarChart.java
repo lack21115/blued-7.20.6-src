@@ -17,7 +17,7 @@ import com.github.mikephil.charting.utils.Utils;
 public class RadarChart extends PieRadarChartBase<RadarData> {
 
     /* renamed from: a  reason: collision with root package name */
-    protected YAxisRendererRadarChart f22082a;
+    protected YAxisRendererRadarChart f8475a;
     protected XAxisRendererRadarChart b;
     private float e;
     private float f;
@@ -77,7 +77,7 @@ public class RadarChart extends PieRadarChartBase<RadarData> {
         this.e = Utils.a(1.5f);
         this.f = Utils.a(0.75f);
         this.O = new RadarChartRenderer(this, this.R, this.Q);
-        this.f22082a = new YAxisRendererRadarChart(this.Q, this.l, this);
+        this.f8475a = new YAxisRendererRadarChart(this.Q, this.l, this);
         this.b = new XAxisRendererRadarChart(this.Q, this.H, this);
         this.P = new RadarHighlighter(this);
     }
@@ -163,7 +163,7 @@ public class RadarChart extends PieRadarChartBase<RadarData> {
             return;
         }
         b();
-        this.f22082a.a(this.l.u, this.l.t, this.l.G());
+        this.f8475a.a(this.l.u, this.l.t, this.l.G());
         this.b.a(this.H.u, this.H.t, false);
         if (this.K != null && !this.K.c()) {
             this.N.a(this.C);
@@ -186,16 +186,16 @@ public class RadarChart extends PieRadarChartBase<RadarData> {
             this.O.c(canvas);
         }
         if (this.l.z() && this.l.n()) {
-            this.f22082a.e(canvas);
+            this.f8475a.e(canvas);
         }
         this.O.a(canvas);
         if (x()) {
             this.O.a(canvas, this.S);
         }
         if (this.l.z() && !this.l.n()) {
-            this.f22082a.e(canvas);
+            this.f8475a.e(canvas);
         }
-        this.f22082a.a(canvas);
+        this.f8475a.a(canvas);
         this.O.b(canvas);
         this.N.a(canvas);
         b(canvas);

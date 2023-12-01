@@ -1,6 +1,7 @@
 package com.tencent.lbssearch.object.param;
 
 import android.text.TextUtils;
+import com.huawei.openalliance.ad.constant.t;
 import com.tencent.lbssearch.object.RequestParams;
 import com.tencent.tencentmap.mapsdk.maps.model.LatLng;
 
@@ -102,7 +103,7 @@ public class Geo2AddressParam implements ParamObject {
                 sb.append(";category=");
                 sb.append(sb2.toString());
             }
-            if (sb.indexOf(";") == 0) {
+            if (sb.indexOf(t.aE) == 0) {
                 sb.delete(0, 1);
             }
             return sb.toString();

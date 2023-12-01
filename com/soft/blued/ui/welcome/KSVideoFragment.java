@@ -115,7 +115,7 @@ public class KSVideoFragment extends BaseADVideoFragment {
             public void onRewardVideoAdLoad(List<KsRewardVideoAd> list) {
                 Log.e("drb", "Callback --> onRewardVideoAdLoad time: " + (System.currentTimeMillis() - currentTimeMillis));
                 KSVideoFragment.this.a(list);
-                DialogUtils.b(KSVideoFragment.this.f34513a);
+                DialogUtils.b(KSVideoFragment.this.f20822a);
                 KSVideoFragment.this.i();
             }
 
@@ -126,7 +126,6 @@ public class KSVideoFragment extends BaseADVideoFragment {
         });
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.g = getActivity();
         getActivity().overridePendingTransition(R.anim.activity_switch_none, R.anim.activity_switch_none);
@@ -134,7 +133,7 @@ public class KSVideoFragment extends BaseADVideoFragment {
         if (view == null) {
             this.h = layoutInflater.inflate(R.layout.fragment_ad_video, viewGroup, false);
             l();
-            DialogUtils.a(this.f34513a);
+            DialogUtils.a(this.f20822a);
         } else if (view.getParent() != null) {
             ((ViewGroup) this.h.getParent()).removeView(this.h);
         }

@@ -12,11 +12,11 @@ import com.soft.blued.customview.FilterScrollView;
 public final class FragmentFilterNewBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final LinearLayout f28822a;
+    public final LinearLayout f15132a;
     public final View b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final ImageView f28823c;
+    public final ImageView f15133c;
     public final ImageView d;
     public final LinearLayout e;
     public final LinearLayout f;
@@ -27,9 +27,9 @@ public final class FragmentFilterNewBinding implements ViewBinding {
 
     private FragmentFilterNewBinding(ShapeConstraintLayout shapeConstraintLayout, LinearLayout linearLayout, View view, ImageView imageView, ImageView imageView2, LinearLayout linearLayout2, LinearLayout linearLayout3, ImageView imageView3, FilterScrollView filterScrollView, ShapeConstraintLayout shapeConstraintLayout2) {
         this.j = shapeConstraintLayout;
-        this.f28822a = linearLayout;
+        this.f15132a = linearLayout;
         this.b = view;
-        this.f28823c = imageView;
+        this.f15133c = imageView;
         this.d = imageView2;
         this.e = linearLayout2;
         this.f = linearLayout3;
@@ -54,11 +54,11 @@ public final class FragmentFilterNewBinding implements ViewBinding {
                             if (linearLayout3 != null) {
                                 ImageView imageView3 = (ImageView) view.findViewById(R.id.sbt_fiter_onoff);
                                 if (imageView3 != null) {
-                                    FilterScrollView filterScrollView = (FilterScrollView) view.findViewById(2131369645);
+                                    FilterScrollView filterScrollView = (FilterScrollView) view.findViewById(R.id.scroll_view);
                                     if (filterScrollView != null) {
-                                        ShapeConstraintLayout shapeConstraintLayout = (ShapeConstraintLayout) view.findViewById(2131370699);
-                                        if (shapeConstraintLayout != null) {
-                                            return new FragmentFilterNewBinding((ShapeConstraintLayout) view, linearLayout, findViewById, imageView, imageView2, linearLayout2, linearLayout3, imageView3, filterScrollView, shapeConstraintLayout);
+                                        ShapeConstraintLayout findViewById2 = view.findViewById(2131370699);
+                                        if (findViewById2 != null) {
+                                            return new FragmentFilterNewBinding((ShapeConstraintLayout) view, linearLayout, findViewById, imageView, imageView2, linearLayout2, linearLayout3, imageView3, filterScrollView, findViewById2);
                                         }
                                         str = "titleBar";
                                     } else {

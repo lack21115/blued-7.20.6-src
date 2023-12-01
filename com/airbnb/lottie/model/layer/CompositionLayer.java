@@ -27,20 +27,18 @@ public class CompositionLayer extends BaseLayer {
     /* renamed from: com.airbnb.lottie.model.layer.CompositionLayer$1  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/model/layer/CompositionLayer$1.class */
     static /* synthetic */ class AnonymousClass1 {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f4383a;
+        static final /* synthetic */ int[] a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:7:0x0020 -> B:11:0x0014). Please submit an issue!!! */
         static {
             int[] iArr = new int[Layer.MatteType.values().length];
-            f4383a = iArr;
+            a = iArr;
             try {
                 iArr[Layer.MatteType.ADD.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f4383a[Layer.MatteType.INVERT.ordinal()] = 2;
+                a[Layer.MatteType.INVERT.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
         }
@@ -55,9 +53,9 @@ public class CompositionLayer extends BaseLayer {
         this.h = new RectF();
         AnimatableFloatValue u = layer.u();
         if (u != null) {
-            BaseKeyframeAnimation<Float, Float> a2 = u.a();
-            this.e = a2;
-            a(a2);
+            BaseKeyframeAnimation<Float, Float> a = u.a();
+            this.e = a;
+            a(a);
             this.e.a(this);
         } else {
             this.e = null;
@@ -70,17 +68,17 @@ public class CompositionLayer extends BaseLayer {
                 break;
             }
             Layer layer2 = list.get(size);
-            BaseLayer a3 = BaseLayer.a(layer2, lottieDrawable, lottieComposition);
-            if (a3 != null) {
-                longSparseArray.put(a3.c().e(), a3);
+            BaseLayer a2 = BaseLayer.a(layer2, lottieDrawable, lottieComposition);
+            if (a2 != null) {
+                longSparseArray.put(a2.c().e(), a2);
                 if (baseLayer2 != null) {
-                    baseLayer2.a(a3);
+                    baseLayer2.a(a2);
                     baseLayer2 = null;
                 } else {
-                    this.f.add(0, a3);
-                    int i2 = AnonymousClass1.f4383a[layer2.l().ordinal()];
+                    this.f.add(0, a2);
+                    int i2 = AnonymousClass1.a[layer2.l().ordinal()];
                     if (i2 == 1 || i2 == 2) {
-                        baseLayer2 = a3;
+                        baseLayer2 = a2;
                     }
                 }
             }
@@ -101,17 +99,17 @@ public class CompositionLayer extends BaseLayer {
             f = (this.e.g().floatValue() * 1000.0f) / this.b.r().e();
         }
         float f2 = f;
-        if (this.f4380c.b() != 0.0f) {
-            f2 = f / this.f4380c.b();
+        if (this.c.b() != 0.0f) {
+            f2 = f / this.c.b();
         }
-        float c2 = this.f4380c.c();
+        float c = this.c.c();
         int size = this.f.size();
         while (true) {
             int i = size - 1;
             if (i < 0) {
                 return;
             }
-            this.f.get(i).a(f2 - c2);
+            this.f.get(i).a(f2 - c);
             size = i;
         }
     }
@@ -126,7 +124,7 @@ public class CompositionLayer extends BaseLayer {
                 return;
             }
             this.g.set(0.0f, 0.0f, 0.0f, 0.0f);
-            this.f.get(i).a(this.g, this.f4379a, true);
+            this.f.get(i).a(this.g, this.a, true);
             rectF.union(this.g);
             size = i;
         }
@@ -150,7 +148,7 @@ public class CompositionLayer extends BaseLayer {
     void b(Canvas canvas, Matrix matrix, int i) {
         L.a("CompositionLayer#draw");
         canvas.save();
-        this.h.set(0.0f, 0.0f, this.f4380c.h(), this.f4380c.i());
+        this.h.set(0.0f, 0.0f, this.c.h(), this.c.i());
         matrix.mapRect(this.h);
         int size = this.f.size();
         while (true) {

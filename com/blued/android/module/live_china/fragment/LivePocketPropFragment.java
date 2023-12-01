@@ -10,7 +10,6 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -47,14 +46,10 @@ import kotlin.jvm.internal.StringCompanionObject;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LivePocketPropFragment.class */
 public final class LivePocketPropFragment extends BaseFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f13156a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private DialogLivePocketPropsBinding b;
     private LivePocketModel d;
-
-    /* renamed from: c  reason: collision with root package name */
-    private List<LivePocketModel> f13157c = new ArrayList();
+    private List<LivePocketModel> c = new ArrayList();
     private final int e = 4;
 
     @Metadata
@@ -71,15 +66,13 @@ public final class LivePocketPropFragment extends BaseFragment {
     @Metadata
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LivePocketPropFragment$LivePocketPropAdapter.class */
     public final class LivePocketPropAdapter extends CommonRecycleAdapter<LivePocketModel> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ LivePocketPropFragment f13158a;
+        final /* synthetic */ LivePocketPropFragment a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public LivePocketPropAdapter(LivePocketPropFragment this$0) {
             super(this$0.getContext());
             Intrinsics.e(this$0, "this$0");
-            this.f13158a = this$0;
+            this.a = this$0;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -102,7 +95,7 @@ public final class LivePocketPropFragment extends BaseFragment {
         public static final boolean a(LivePocketPropFragment this$0, LivePocketModel item, View view) {
             Intrinsics.e(this$0, "this$0");
             Intrinsics.e(item, "$item");
-            LivePropsDesDialogFragment.Companion companion = LivePropsDesDialogFragment.f13165a;
+            LivePropsDesDialogFragment.Companion companion = LivePropsDesDialogFragment.a;
             FragmentManager childFragmentManager = this$0.getChildFragmentManager();
             Intrinsics.c(childFragmentManager, "childFragmentManager");
             companion.a(childFragmentManager, item);
@@ -122,11 +115,11 @@ public final class LivePocketPropFragment extends BaseFragment {
             }
             ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) layoutParams;
             if (item.getLine_num() == 0) {
-                marginLayoutParams.topMargin = DensityUtils.a(this.f13158a.getContext(), 12.0f);
+                marginLayoutParams.topMargin = DensityUtils.a(this.a.getContext(), 12.0f);
             } else {
-                marginLayoutParams.topMargin = DensityUtils.a(this.f13158a.getContext(), 6.0f);
+                marginLayoutParams.topMargin = DensityUtils.a(this.a.getContext(), 6.0f);
             }
-            ImageLoader.a(this.f13158a.getFragmentActive(), item.getImage()).a((ImageView) helper.a(R.id.iv_icon));
+            ImageLoader.a(this.a.getFragmentActive(), item.getImage()).a((ImageView) helper.a(R.id.iv_icon));
             ((TextView) helper.a(R.id.tv_name)).setText(item.getName());
             helper.b(R.id.tv_num, item.getCount() > 1 ? 0 : 8).a(R.id.tv_num, item.getCount() > 1000000 ? "100W+" : item.getCount() == 1000000 ? "100W" : String.valueOf(item.getCount()));
             if (item.getExpire_time() == -1) {
@@ -134,7 +127,7 @@ public final class LivePocketPropFragment extends BaseFragment {
                 helper.a(R.id.tv_time, AppInfo.d().getString(R.string.live_pocket_forver));
                 helper.a(R.id.tv_time, AppInfo.d().getResources().getColor(R.color.syc_dark_66FFFFFF));
             } else {
-                SimpleDateFormat simpleDateFormat = TimeAndDateUtils.f10914c.get();
+                SimpleDateFormat simpleDateFormat = TimeAndDateUtils.c.get();
                 if (TextUtils.equals(simpleDateFormat == null ? null : simpleDateFormat.format(new Date(item.getExpire_time() * 1000)), "23:59:59")) {
                     SimpleDateFormat simpleDateFormat2 = TimeAndDateUtils.m.get();
                     format = simpleDateFormat2 == null ? null : simpleDateFormat2.format(new Date(item.getExpire_time() * 1000));
@@ -148,7 +141,7 @@ public final class LivePocketPropFragment extends BaseFragment {
                 }
                 helper.b(R.id.tv_time, 0);
                 int i2 = R.id.tv_time;
-                StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
+                StringCompanionObject stringCompanionObject = StringCompanionObject.a;
                 String string = AppInfo.d().getString(R.string.live_pocket_exp_over);
                 Intrinsics.c(string, "getAppContext().getStrin…ing.live_pocket_exp_over)");
                 String format2 = String.format(string, Arrays.copyOf(new Object[]{str}, 1));
@@ -160,33 +153,33 @@ public final class LivePocketPropFragment extends BaseFragment {
                 helper.b(R.id.view_select_1, 0);
                 helper.b(R.id.view_select_2, 0);
                 helper.b(R.id.view_unselect, 8);
-                this.f13158a.a(item);
+                this.a.a(item);
             } else {
                 helper.b(R.id.view_select_1, 8);
                 helper.b(R.id.view_select_2, 8);
                 helper.b(R.id.view_unselect, 0);
             }
-            View a2 = helper.a(R.id.view_root);
-            if (a2 != null) {
-                final LivePocketPropFragment livePocketPropFragment = this.f13158a;
-                a2.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LivePocketPropFragment$LivePocketPropAdapter$26-zl86uPyyzITAVRapmfhJzmAU
+            View a = helper.a(R.id.view_root);
+            if (a != null) {
+                final LivePocketPropFragment livePocketPropFragment = this.a;
+                a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LivePocketPropFragment$LivePocketPropAdapter$26-zl86uPyyzITAVRapmfhJzmAU
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
                         LivePocketPropFragment.LivePocketPropAdapter.a(LivePocketPropFragment.LivePocketPropAdapter.this, livePocketPropFragment, item, view);
                     }
                 });
             }
-            View a3 = helper.a(R.id.view_root);
-            if (a3 == null) {
+            View a2 = helper.a(R.id.view_root);
+            if (a2 == null) {
                 return;
             }
-            final LivePocketPropFragment livePocketPropFragment2 = this.f13158a;
-            a3.setOnLongClickListener(new View.OnLongClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LivePocketPropFragment$LivePocketPropAdapter$7ps31drj6LZo67pqdPRq11mR-2k
+            final LivePocketPropFragment livePocketPropFragment2 = this.a;
+            a2.setOnLongClickListener(new View.OnLongClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LivePocketPropFragment$LivePocketPropAdapter$7ps31drj6LZo67pqdPRq11mR-2k
                 @Override // android.view.View.OnLongClickListener
                 public final boolean onLongClick(View view) {
-                    boolean a4;
-                    a4 = LivePocketPropFragment.LivePocketPropAdapter.a(LivePocketPropFragment.this, item, view);
-                    return a4;
+                    boolean a3;
+                    a3 = LivePocketPropFragment.LivePocketPropAdapter.a(LivePocketPropFragment.this, item, view);
+                    return a3;
                 }
             });
         }
@@ -228,11 +221,11 @@ public final class LivePocketPropFragment extends BaseFragment {
                     AppMethods.a((CharSequence) bluedEntityA.message);
                 }
                 if (LivePocketPropFragment.this.getParentFragment() instanceof LivePocketDialogFragment) {
-                    Fragment parentFragment = LivePocketPropFragment.this.getParentFragment();
+                    LivePocketDialogFragment parentFragment = LivePocketPropFragment.this.getParentFragment();
                     if (parentFragment == null) {
                         throw new NullPointerException("null cannot be cast to non-null type com.blued.android.module.live_china.fragment.LivePocketDialogFragment");
                     }
-                    ((LivePocketDialogFragment) parentFragment).g();
+                    parentFragment.g();
                 }
             }
         });
@@ -250,13 +243,13 @@ public final class LivePocketPropFragment extends BaseFragment {
             }
             List<LivePocketModel> in_use = ((LivePocketExtraModel) serializable).getIn_use();
             if (in_use != null) {
-                this.f13157c.addAll(in_use);
+                this.c.addAll(in_use);
             }
         }
-        List<LivePocketModel> list = this.f13157c;
+        List<LivePocketModel> list = this.c;
         if (list == null || list.size() == 0) {
             DialogLivePocketPropsBinding dialogLivePocketPropsBinding = this.b;
-            LinearLayout linearLayout = dialogLivePocketPropsBinding == null ? null : dialogLivePocketPropsBinding.f11805a;
+            LinearLayout linearLayout = dialogLivePocketPropsBinding == null ? null : dialogLivePocketPropsBinding.a;
             if (linearLayout != null) {
                 linearLayout.setVisibility(0);
             }
@@ -270,7 +263,7 @@ public final class LivePocketPropFragment extends BaseFragment {
         }
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = new ArrayList();
-        for (LivePocketModel livePocketModel : this.f13157c) {
+        for (LivePocketModel livePocketModel : this.c) {
             if (arrayList2.size() == this.e || arrayList2.size() == 0) {
                 arrayList2 = new ArrayList();
                 arrayList2.add(livePocketModel);
@@ -302,7 +295,7 @@ public final class LivePocketPropFragment extends BaseFragment {
             }
         }
         DialogLivePocketPropsBinding dialogLivePocketPropsBinding3 = this.b;
-        LinearLayout linearLayout3 = dialogLivePocketPropsBinding3 == null ? null : dialogLivePocketPropsBinding3.f11805a;
+        LinearLayout linearLayout3 = dialogLivePocketPropsBinding3 == null ? null : dialogLivePocketPropsBinding3.a;
         if (linearLayout3 != null) {
             linearLayout3.setVisibility(8);
         }
@@ -313,13 +306,13 @@ public final class LivePocketPropFragment extends BaseFragment {
         }
         LivePocketPropAdapter livePocketPropAdapter = new LivePocketPropAdapter(this);
         DialogLivePocketPropsBinding dialogLivePocketPropsBinding5 = this.b;
-        RecyclerView recyclerView2 = dialogLivePocketPropsBinding5 == null ? null : dialogLivePocketPropsBinding5.f11806c;
+        RecyclerView recyclerView2 = dialogLivePocketPropsBinding5 == null ? null : dialogLivePocketPropsBinding5.c;
         if (recyclerView2 != null) {
             recyclerView2.setAdapter(livePocketPropAdapter);
         }
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), this.e);
+        RecyclerView.LayoutManager gridLayoutManager = new GridLayoutManager(getContext(), this.e);
         DialogLivePocketPropsBinding dialogLivePocketPropsBinding6 = this.b;
-        if (dialogLivePocketPropsBinding6 != null && (recyclerView = dialogLivePocketPropsBinding6.f11806c) != null) {
+        if (dialogLivePocketPropsBinding6 != null && (recyclerView = dialogLivePocketPropsBinding6.c) != null) {
             recyclerView.setLayoutManager(gridLayoutManager);
         }
         SpacesItemDecoration spacesItemDecoration = new SpacesItemDecoration(DensityUtils.a(getContext(), 3.0f), 0, DensityUtils.a(getContext(), 3.0f), 0);
@@ -327,8 +320,8 @@ public final class LivePocketPropFragment extends BaseFragment {
         spacesItemDecoration.a(5);
         DialogLivePocketPropsBinding dialogLivePocketPropsBinding7 = this.b;
         Intrinsics.a(dialogLivePocketPropsBinding7);
-        dialogLivePocketPropsBinding7.f11806c.addItemDecoration(spacesItemDecoration);
-        livePocketPropAdapter.setDataAndNotify(this.f13157c);
+        dialogLivePocketPropsBinding7.c.addItemDecoration(spacesItemDecoration);
+        livePocketPropAdapter.setDataAndNotify(this.c);
         DialogLivePocketPropsBinding dialogLivePocketPropsBinding8 = this.b;
         if (dialogLivePocketPropsBinding8 == null || (shapeTextView = dialogLivePocketPropsBinding8.d) == null) {
             return;
@@ -345,12 +338,12 @@ public final class LivePocketPropFragment extends BaseFragment {
         this.d = livePocketModel;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         FrameLayout root;
         FrameLayout root2;

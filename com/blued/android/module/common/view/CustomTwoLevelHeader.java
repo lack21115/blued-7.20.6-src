@@ -8,9 +8,7 @@ import com.scwang.smartrefresh.layout.header.TwoLevelHeader;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/view/CustomTwoLevelHeader.class */
 public class CustomTwoLevelHeader extends TwoLevelHeader {
-
-    /* renamed from: a  reason: collision with root package name */
-    RefreshState f10980a;
+    RefreshState a;
     RefreshLayout b;
     private boolean o;
 
@@ -28,17 +26,16 @@ public class CustomTwoLevelHeader extends TwoLevelHeader {
         this.o = true;
         RefreshLayout refreshLayout = this.b;
         if (refreshLayout != null) {
-            a(refreshLayout, this.f10980a, RefreshState.TwoLevelReleased);
+            a(refreshLayout, this.a, RefreshState.i);
         }
     }
 
-    @Override // com.scwang.smartrefresh.layout.header.TwoLevelHeader, com.scwang.smartrefresh.layout.internal.InternalAbstract, com.scwang.smartrefresh.layout.listener.OnStateChangedListener
     public void a(RefreshLayout refreshLayout, RefreshState refreshState, RefreshState refreshState2) {
-        this.f10980a = refreshState;
+        this.a = refreshState;
         if (refreshLayout != null) {
             this.b = refreshLayout;
         }
-        if (refreshState2 != RefreshState.TwoLevelReleased || this.o) {
+        if (refreshState2 != RefreshState.i || this.o) {
             super.a(refreshLayout, refreshState, refreshState2);
         }
         this.o = false;

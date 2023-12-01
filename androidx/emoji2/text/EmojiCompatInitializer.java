@@ -32,17 +32,17 @@ public class EmojiCompatInitializer implements Initializer<Boolean> {
     public static class BackgroundDefaultLoader implements EmojiCompat.MetadataRepoLoader {
 
         /* renamed from: a  reason: collision with root package name */
-        private final Context f2822a;
+        private final Context f2774a;
 
         BackgroundDefaultLoader(Context context) {
-            this.f2822a = context.getApplicationContext();
+            this.f2774a = context.getApplicationContext();
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: a */
         public void b(final EmojiCompat.MetadataRepoLoaderCallback metadataRepoLoaderCallback, final ThreadPoolExecutor threadPoolExecutor) {
             try {
-                FontRequestEmojiCompatConfig create = DefaultEmojiCompatConfig.create(this.f2822a);
+                FontRequestEmojiCompatConfig create = DefaultEmojiCompatConfig.create(this.f2774a);
                 if (create == null) {
                     throw new RuntimeException("EmojiCompat font provider not available on this device.");
                 }

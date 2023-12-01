@@ -11,22 +11,18 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/DialogLiveConstellationHonourBinding.class */
 public final class DialogLiveConstellationHonourBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final FrameLayout f11755a;
+    public final FrameLayout a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f11756c;
+    public final ImageView c;
     public final FrameLayout d;
     public final RecyclerView e;
     private final FrameLayout f;
 
     private DialogLiveConstellationHonourBinding(FrameLayout frameLayout, FrameLayout frameLayout2, ImageView imageView, ImageView imageView2, FrameLayout frameLayout3, RecyclerView recyclerView) {
         this.f = frameLayout;
-        this.f11755a = frameLayout2;
+        this.a = frameLayout2;
         this.b = imageView;
-        this.f11756c = imageView2;
+        this.c = imageView2;
         this.d = frameLayout3;
         this.e = recyclerView;
     }
@@ -53,9 +49,9 @@ public final class DialogLiveConstellationHonourBinding implements ViewBinding {
                 if (imageView2 != null) {
                     FrameLayout frameLayout2 = (FrameLayout) view.findViewById(R.id.ll_default);
                     if (frameLayout2 != null) {
-                        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recycler_spoken);
-                        if (recyclerView != null) {
-                            return new DialogLiveConstellationHonourBinding((FrameLayout) view, frameLayout, imageView, imageView2, frameLayout2, recyclerView);
+                        RecyclerView findViewById = view.findViewById(R.id.recycler_spoken);
+                        if (findViewById != null) {
+                            return new DialogLiveConstellationHonourBinding((FrameLayout) view, frameLayout, imageView, imageView2, frameLayout2, findViewById);
                         }
                         str = "recyclerSpoken";
                     } else {
@@ -73,7 +69,6 @@ public final class DialogLiveConstellationHonourBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.f;

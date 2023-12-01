@@ -6,12 +6,13 @@ import android.net.NetworkInfo;
 import android.os.Build;
 import android.telephony.TelephonyManager;
 import com.efs.sdk.base.core.util.NetworkUtil;
+import com.huawei.hms.framework.network.grs.GrsBaseInfo;
 
 /* loaded from: source-8303388-dex2jar.jar:com/opos/cmn/an/h/c/a.class */
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static ConnectivityManager f24561a;
+    private static ConnectivityManager f10874a;
     private static TelephonyManager b;
 
     public static TelephonyManager a(Context context) {
@@ -64,15 +65,15 @@ public final class a {
             case 20:
                 return "NR";
             default:
-                return "UNKNOWN";
+                return GrsBaseInfo.CountryCodeSource.UNKNOWN;
         }
     }
 
     public static ConnectivityManager b(Context context) {
-        if (f24561a == null && context != null) {
-            f24561a = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        if (f10874a == null && context != null) {
+            f10874a = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         }
-        return f24561a;
+        return f10874a;
     }
 
     public static boolean c(Context context) {

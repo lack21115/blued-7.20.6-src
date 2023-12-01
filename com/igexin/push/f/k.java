@@ -12,14 +12,14 @@ import java.lang.reflect.Method;
 public final class k {
 
     /* renamed from: a  reason: collision with root package name */
-    private static int f23658a = Integer.MIN_VALUE;
+    private static int f10050a = Integer.MIN_VALUE;
     private static String b = "GT_PM";
 
     /* renamed from: c  reason: collision with root package name */
-    private static Object f23659c;
+    private static Object f10051c;
 
     private static int a() {
-        int i = f23658a;
+        int i = f10050a;
         if (i != Integer.MIN_VALUE) {
             return i;
         }
@@ -31,7 +31,7 @@ public final class k {
             Method declaredMethod = cls.getDeclaredMethod(new String(Base64.decode("Z2V0VXNlcklk", 0)), Integer.TYPE);
             declaredMethod.setAccessible(true);
             int intValue = ((Integer) declaredMethod.invoke(cls, Integer.valueOf(Process.myUid()))).intValue();
-            f23658a = intValue;
+            f10050a = intValue;
             return intValue;
         } catch (Throwable th) {
             th.getMessage();
@@ -49,11 +49,11 @@ public final class k {
 
     private static PackageInfo a(String str, int i) {
         try {
-            if (f23659c == null) {
-                f23659c = Class.forName(new String(Base64.decode("YW5kcm9pZC5hcHAuQWN0aXZpdHlUaHJlYWQ=", 0))).getMethod(new String(Base64.decode("Z2V0UGFja2FnZU1hbmFnZXI=", 0)), new Class[0]).invoke(null, new Object[0]);
+            if (f10051c == null) {
+                f10051c = Class.forName(new String(Base64.decode("YW5kcm9pZC5hcHAuQWN0aXZpdHlUaHJlYWQ=", 0))).getMethod(new String(Base64.decode("Z2V0UGFja2FnZU1hbmFnZXI=", 0)), new Class[0]).invoke(null, new Object[0]);
             }
             String str2 = new String(Base64.decode("Z2V0UGFja2FnZUluZm8=", 0));
-            return (PackageInfo) (Build.VERSION.SDK_INT >= 16 ? f23659c.getClass().getMethod(str2, String.class, Integer.TYPE, Integer.TYPE).invoke(f23659c, str, 0, Integer.valueOf(i)) : f23659c.getClass().getMethod(str2, String.class, Integer.TYPE).invoke(f23659c, str, 0));
+            return (PackageInfo) (Build.VERSION.SDK_INT >= 16 ? f10051c.getClass().getMethod(str2, String.class, Integer.TYPE, Integer.TYPE).invoke(f10051c, str, 0, Integer.valueOf(i)) : f10051c.getClass().getMethod(str2, String.class, Integer.TYPE).invoke(f10051c, str, 0));
         } catch (Throwable th) {
             th.getMessage();
             return null;

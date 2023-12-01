@@ -37,11 +37,11 @@ import com.soft.blued.utils.StringUtils;
 public class AccountAndSafetyFragment extends BaseFragment implements View.OnClickListener, AccountAndSafetyContract.IView {
 
     /* renamed from: a  reason: collision with root package name */
-    private View f33318a;
+    private View f19627a;
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private AccountAndSafetyContract.IPresenter f33319c;
+    private AccountAndSafetyContract.IPresenter f19628c;
     private Dialog d;
     private TextView e;
     private TextView f;
@@ -56,25 +56,25 @@ public class AccountAndSafetyFragment extends BaseFragment implements View.OnCli
     private String o;
 
     public static void a(Context context) {
-        TerminalActivity.d(context, AccountAndSafetyFragment.class, null);
+        TerminalActivity.d(context, AccountAndSafetyFragment.class, (Bundle) null);
     }
 
     private void c() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.f33318a.findViewById(2131370749);
-        this.n = commonTopTitleNoTrans;
-        commonTopTitleNoTrans.a();
+        CommonTopTitleNoTrans findViewById = this.f19627a.findViewById(R.id.top_title);
+        this.n = findViewById;
+        findViewById.a();
         this.n.setLeftImg(2131233902);
         this.n.setCenterText(getString(R.string.account_and_safety));
         this.n.setLeftClickListener(this);
-        this.h = (LinearLayout) this.f33318a.findViewById(R.id.ll_modify_pwd);
-        this.i = (LinearLayout) this.f33318a.findViewById(R.id.ll_binding_mail);
-        this.j = (LinearLayout) this.f33318a.findViewById(R.id.ll_binding_wechat);
-        this.k = (LinearLayout) this.f33318a.findViewById(R.id.ll_remove_account);
-        this.l = (LinearLayout) this.f33318a.findViewById(R.id.ll_login_protection);
-        this.m = (LinearLayout) this.f33318a.findViewById(R.id.ll_binding_cellphone);
-        this.e = (TextView) this.f33318a.findViewById(R.id.tv_binding_mail_status);
-        this.f = (TextView) this.f33318a.findViewById(R.id.tv_binding_wechat_status);
-        this.g = (TextView) this.f33318a.findViewById(R.id.tv_login_protection_status);
+        this.h = (LinearLayout) this.f19627a.findViewById(R.id.ll_modify_pwd);
+        this.i = (LinearLayout) this.f19627a.findViewById(R.id.ll_binding_mail);
+        this.j = (LinearLayout) this.f19627a.findViewById(R.id.ll_binding_wechat);
+        this.k = (LinearLayout) this.f19627a.findViewById(R.id.ll_remove_account);
+        this.l = (LinearLayout) this.f19627a.findViewById(R.id.ll_login_protection);
+        this.m = (LinearLayout) this.f19627a.findViewById(R.id.ll_binding_cellphone);
+        this.e = (TextView) this.f19627a.findViewById(R.id.tv_binding_mail_status);
+        this.f = (TextView) this.f19627a.findViewById(R.id.tv_binding_wechat_status);
+        this.g = (TextView) this.f19627a.findViewById(R.id.tv_login_protection_status);
         this.d = DialogUtils.a(this.b);
         this.h.setOnClickListener(this);
         this.i.setOnClickListener(this);
@@ -98,11 +98,11 @@ public class AccountAndSafetyFragment extends BaseFragment implements View.OnCli
     public void a(String str) {
         this.o = str;
         if (TextUtils.isEmpty(str)) {
-            this.f.setText(2131892385);
+            this.f.setText(R.string.unbinded);
             this.f.setTextColor(getActivity().getResources().getColor(2131101201));
             return;
         }
-        this.f.setText(2131886121);
+        this.f.setText(R.string.Live_applyHost_beBindinged);
         this.f.setTextColor(getActivity().getResources().getColor(2131101206));
     }
 
@@ -114,14 +114,14 @@ public class AccountAndSafetyFragment extends BaseFragment implements View.OnCli
     @Override // com.soft.blued.ui.setting.Contract.AccountAndSafetyContract.IView
     public void b(String str) {
         if (TextUtils.isEmpty(str)) {
-            this.e.setText(2131892385);
+            this.e.setText(R.string.unbinded);
             this.e.setTextColor(getActivity().getResources().getColor(2131101201));
             return;
         }
         if (BlueAppLocal.d()) {
             this.e.setText(str);
         } else {
-            this.e.setText(ChatManager.context.getString(2131886121));
+            this.e.setText(ChatManager.context.getString(R.string.Live_applyHost_beBindinged));
         }
         this.e.setTextColor(getActivity().getResources().getColor(2131101206));
     }
@@ -145,7 +145,7 @@ public class AccountAndSafetyFragment extends BaseFragment implements View.OnCli
                 String d = LoginRegisterTools.d();
                 Bundle bundle = new Bundle();
                 bundle.putString(LoginRegisterTools.f, d);
-                bundle.putInt(LoginRegisterTools.f31399a, 0);
+                bundle.putInt(LoginRegisterTools.f17709a, 0);
                 if (!TextUtils.isEmpty(d)) {
                     TerminalActivity.d(this.b, LinkMobileSuccessFragment.class, bundle);
                     return;
@@ -159,13 +159,13 @@ public class AccountAndSafetyFragment extends BaseFragment implements View.OnCli
                         @Override // android.view.View.OnClickListener
                         public void onClick(View view2) {
                             Tracker.onClick(view2);
-                            AccountAndSafetyFragment.this.f33319c.c();
+                            AccountAndSafetyFragment.this.f19628c.c();
                         }
                     }, (View.OnClickListener) null);
                 } else if (Util.isClientAvailable(ChatManager.context, "com.tencent.mm")) {
-                    this.f33319c.b();
+                    this.f19628c.b();
                 } else {
-                    AppMethods.a((CharSequence) getString(2131892807));
+                    AppMethods.a(getString(2131892807));
                 }
                 if (TextUtils.isEmpty(this.o)) {
                     InstantLog.a("unbound_wechat");
@@ -182,7 +182,7 @@ public class AccountAndSafetyFragment extends BaseFragment implements View.OnCli
                 return;
             case R.id.ll_modify_pwd /* 2131368033 */:
                 EventTrackSettings.a(SettingsProtos.Event.PWD_SETTINGS_CLICK);
-                TerminalActivity.d(this.b, PasswordSettingFragment.class, null);
+                TerminalActivity.d(this.b, PasswordSettingFragment.class, (Bundle) null);
                 return;
             case R.id.ll_remove_account /* 2131368184 */:
                 EventTrackSettings.a(SettingsProtos.Event.CANCEL_ACCOUNT_BTN_CLICK);
@@ -193,24 +193,22 @@ public class AccountAndSafetyFragment extends BaseFragment implements View.OnCli
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.b = getActivity();
-        View view = this.f33318a;
+        View view = this.f19627a;
         if (view == null) {
-            this.f33318a = layoutInflater.inflate(R.layout.fragment_account_and_safety, viewGroup, false);
-            this.f33319c = new AccountAndSafetyPresenter(this.b, this, getFragmentActive());
+            this.f19627a = layoutInflater.inflate(R.layout.fragment_account_and_safety, viewGroup, false);
+            this.f19628c = new AccountAndSafetyPresenter(this.b, this, getFragmentActive());
             c();
         } else {
-            ((ViewGroup) view.getParent()).removeView(this.f33318a);
+            ((ViewGroup) view.getParent()).removeView(this.f19627a);
         }
-        return this.f33318a;
+        return this.f19627a;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onStart() {
         super.onStart();
-        this.f33319c.ar_();
+        this.f19628c.ar_();
         if (BluedPreferences.bs()) {
             this.g.setText(getResources().getString(R.string.opened));
             this.g.setTextColor(getResources().getColor(2131101206));

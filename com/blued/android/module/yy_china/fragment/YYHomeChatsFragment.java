@@ -1,12 +1,15 @@
 package com.blued.android.module.yy_china.fragment;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.os.Message;
 import android.text.TextUtils;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -14,8 +17,8 @@ import android.widget.TextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.DialogFragment;
-import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
@@ -91,13 +94,9 @@ import kotlin.text.StringsKt;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYHomeChatsFragment.class */
 public final class YYHomeChatsFragment extends MVVMBaseFragment<YYHomeChatsViewModel> implements View.OnClickListener, OnCLickRoomItemToGoRoomListener, OnClickHintFragmentLister {
-
-    /* renamed from: a  reason: collision with root package name */
-    static final /* synthetic */ KProperty<Object>[] f17273a = {Reflection.a(new PropertyReference1Impl(YYHomeChatsFragment.class, "vb", "getVb()Lcom/blued/android/module/yy_china/databinding/FragmentYyHomeChatsBinding;", 0))};
+    static final /* synthetic */ KProperty<Object>[] a = {Reflection.a(new PropertyReference1Impl(YYHomeChatsFragment.class, "vb", "getVb()Lcom/blued/android/module/yy_china/databinding/FragmentYyHomeChatsBinding;", 0))};
     private GuideHandler b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private YYRoomExtraModel f17274c;
+    private YYRoomExtraModel c;
     private List<HomeThemeModel> d;
     private YYLiveState e;
     private boolean f;
@@ -116,22 +115,20 @@ public final class YYHomeChatsFragment extends MVVMBaseFragment<YYHomeChatsViewM
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYHomeChatsFragment$GuideHandler.class */
     public static final class GuideHandler extends Handler {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final WeakReference<YYHomeChatsFragment> f17275a;
+        private final WeakReference<YYHomeChatsFragment> a;
 
         public GuideHandler(YYHomeChatsFragment yYHomeChatsFragment) {
-            this.f17275a = new WeakReference<>(yYHomeChatsFragment);
+            this.a = new WeakReference<>(yYHomeChatsFragment);
         }
 
         @Override // android.os.Handler
         public void handleMessage(Message msg) {
             ActivityFragmentActive fragmentActive;
-            YYHomeChatsViewModel a2;
+            YYHomeChatsViewModel a;
             FragmentYyHomeChatsBinding u;
             Intrinsics.e(msg, "msg");
             super.handleMessage(msg);
-            if (this.f17275a.get() == null) {
+            if (this.a.get() == null) {
                 removeMessages(msg.what);
                 return;
             }
@@ -139,29 +136,29 @@ public final class YYHomeChatsFragment extends MVVMBaseFragment<YYHomeChatsViewM
             switch (msg.what) {
                 case 1:
                     removeMessages(1);
-                    YYHomeChatsFragment yYHomeChatsFragment = this.f17275a.get();
+                    YYHomeChatsFragment yYHomeChatsFragment = this.a.get();
                     if (yYHomeChatsFragment == null || (fragmentActive = yYHomeChatsFragment.getFragmentActive()) == null) {
                         return;
                     }
-                    YYHomeChatsFragment yYHomeChatsFragment2 = this.f17275a.get();
+                    YYHomeChatsFragment yYHomeChatsFragment2 = this.a.get();
                     if (yYHomeChatsFragment2 != null) {
                         yYHomeChatsFragment2.m = -10000;
                     }
-                    YYHomeChatsFragment yYHomeChatsFragment3 = this.f17275a.get();
-                    if (yYHomeChatsFragment3 == null || (a2 = yYHomeChatsFragment3.a()) == null) {
+                    YYHomeChatsFragment yYHomeChatsFragment3 = this.a.get();
+                    if (yYHomeChatsFragment3 == null || (a = yYHomeChatsFragment3.a()) == null) {
                         return;
                     }
-                    a2.e(fragmentActive);
+                    a.e(fragmentActive);
                     return;
                 case 2:
-                    YYHomeChatsFragment yYHomeChatsFragment4 = this.f17275a.get();
+                    YYHomeChatsFragment yYHomeChatsFragment4 = this.a.get();
                     if (yYHomeChatsFragment4 == null) {
                         return;
                     }
                     yYHomeChatsFragment4.s();
                     return;
                 case 3:
-                    YYHomeChatsFragment yYHomeChatsFragment5 = this.f17275a.get();
+                    YYHomeChatsFragment yYHomeChatsFragment5 = this.a.get();
                     FrameLayout frameLayout = null;
                     if (yYHomeChatsFragment5 != null && (u = yYHomeChatsFragment5.u()) != null) {
                         frameLayout = u.f;
@@ -172,7 +169,7 @@ public final class YYHomeChatsFragment extends MVVMBaseFragment<YYHomeChatsViewM
                     frameLayout.setClickable(false);
                     return;
                 case 4:
-                    YYHomeChatsFragment yYHomeChatsFragment6 = this.f17275a.get();
+                    YYHomeChatsFragment yYHomeChatsFragment6 = this.a.get();
                     if (yYHomeChatsFragment6 == null) {
                         return;
                     }
@@ -183,7 +180,7 @@ public final class YYHomeChatsFragment extends MVVMBaseFragment<YYHomeChatsViewM
                     yYHomeChatsFragment6.b(z2);
                     return;
                 case 5:
-                    YYHomeChatsFragment yYHomeChatsFragment7 = this.f17275a.get();
+                    YYHomeChatsFragment yYHomeChatsFragment7 = this.a.get();
                     if (yYHomeChatsFragment7 == null) {
                         return;
                     }
@@ -193,14 +190,14 @@ public final class YYHomeChatsFragment extends MVVMBaseFragment<YYHomeChatsViewM
                     yYHomeChatsFragment7.c(z);
                     return;
                 case 6:
-                    YYHomeChatsFragment yYHomeChatsFragment8 = this.f17275a.get();
+                    YYHomeChatsFragment yYHomeChatsFragment8 = this.a.get();
                     if (yYHomeChatsFragment8 == null) {
                         return;
                     }
                     yYHomeChatsFragment8.v();
                     return;
                 case 7:
-                    YYHomeChatsFragment yYHomeChatsFragment9 = this.f17275a.get();
+                    YYHomeChatsFragment yYHomeChatsFragment9 = this.a.get();
                     if (yYHomeChatsFragment9 == null) {
                         return;
                     }
@@ -444,7 +441,7 @@ public final class YYHomeChatsFragment extends MVVMBaseFragment<YYHomeChatsViewM
         TextView textView2;
         ImageView imageView3;
         ImageView imageView4;
-        this.f17274c = yYRoomExtraModel;
+        this.c = yYRoomExtraModel;
         if (yYRoomExtraModel.is_hall_anchor == 1) {
             FragmentYyHomeChatsBinding u = u();
             ImageView imageView5 = u == null ? null : u.h;
@@ -564,11 +561,11 @@ public final class YYHomeChatsFragment extends MVVMBaseFragment<YYHomeChatsViewM
 
     private final void a(String str, int i) {
         Intrinsics.a((Object) str);
-        YYCreateRoomFragment.f17181a.a(this, str, this.f, i);
+        YYCreateRoomFragment.a.a(this, str, this.f, i);
     }
 
     private final void a(String str, final int i, final SVGAImageView sVGAImageView) {
-        SVGAParser b = SVGAParser.f15958a.b();
+        SVGAParser b = SVGAParser.a.b();
         String lowerCase = str.toLowerCase(Locale.ROOT);
         Intrinsics.c(lowerCase, "this as java.lang.String).toLowerCase(Locale.ROOT)");
         if (StringsKt.b(lowerCase, "png", false, 2, (Object) null)) {
@@ -611,7 +608,7 @@ public final class YYHomeChatsFragment extends MVVMBaseFragment<YYHomeChatsViewM
             ToastUtils.b("房间名不能为空");
         } else {
             EventTrackYY.f(ChatRoomProtos.Event.CHAT_ROOM_CREATE_CONFIRM_CLICK, str, i == 1 ? str2 : "8", str4, j().e());
-            FragmentActivity activity = getActivity();
+            Activity activity = getActivity();
             if (activity == null) {
                 return;
             }
@@ -649,18 +646,15 @@ public final class YYHomeChatsFragment extends MVVMBaseFragment<YYHomeChatsViewM
             FragmentYyHomeChatsBinding u2 = u();
             if (u2 != null && (viewPager = u2.r) != null) {
                 viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: com.blued.android.module.yy_china.fragment.YYHomeChatsFragment$initRoomPager$1
-                    @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
                     public void onPageScrollStateChanged(int i2) {
                     }
 
-                    @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
                     public void onPageScrolled(int i2, float f, int i3) {
                     }
 
                     /* JADX WARN: Code restructure failed: missing block: B:59:0x0129, code lost:
                         r0 = r5.b;
                      */
-                    @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
                     /*
                         Code decompiled incorrectly, please refer to instructions dump.
                         To view partially-correct code enable 'Show inconsistent code' option in preferences
@@ -678,9 +672,8 @@ public final class YYHomeChatsFragment extends MVVMBaseFragment<YYHomeChatsViewM
             if (u3 != null && (yYHomeThemeTabView = u3.u) != null) {
                 yYHomeThemeTabView.a(new RecyclerView.OnScrollListener() { // from class: com.blued.android.module.yy_china.fragment.YYHomeChatsFragment$initRoomPager$2
                     /* JADX WARN: Code restructure failed: missing block: B:6:0x0021, code lost:
-                        r0 = r5.f17279a.b;
+                        r0 = r5.a.b;
                      */
-                    @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
                     /*
                         Code decompiled incorrectly, please refer to instructions dump.
                         To view partially-correct code enable 'Show inconsistent code' option in preferences
@@ -725,7 +718,7 @@ public final class YYHomeChatsFragment extends MVVMBaseFragment<YYHomeChatsViewM
         }
         YYRoomChatsPagerAdapter yYRoomChatsPagerAdapter = this.j;
         if (yYRoomChatsPagerAdapter != null) {
-            yYRoomChatsPagerAdapter.a(this.f17274c);
+            yYRoomChatsPagerAdapter.a(this.c);
         }
         YYRoomChatsPagerAdapter yYRoomChatsPagerAdapter2 = this.j;
         if (yYRoomChatsPagerAdapter2 != null) {
@@ -768,7 +761,7 @@ public final class YYHomeChatsFragment extends MVVMBaseFragment<YYHomeChatsViewM
 
     private final void b(YYLiveState yYLiveState) {
         this.e = yYLiveState;
-        YYCodeOfConductKoDialogFragment.Companion companion = YYCodeOfConductKoDialogFragment.f17160a;
+        YYCodeOfConductKoDialogFragment.Companion companion = YYCodeOfConductKoDialogFragment.a;
         FragmentManager childFragmentManager = getChildFragmentManager();
         Intrinsics.c(childFragmentManager, "childFragmentManager");
         companion.a(childFragmentManager).a(this);
@@ -959,14 +952,14 @@ public final class YYHomeChatsFragment extends MVVMBaseFragment<YYHomeChatsViewM
         ViewPager viewPager;
         ConstraintLayout constraintLayout;
         Intrinsics.e(this$0, "this$0");
-        ConstraintLayout.LayoutParams layoutParams = new ConstraintLayout.LayoutParams(AppInfo.d().getResources().getDimensionPixelOffset(R.dimen.dp_170), AppInfo.d().getResources().getDimensionPixelOffset(R.dimen.dp_35));
-        layoutParams.topMargin = new int[2][1];
-        layoutParams.leftMargin = 10;
+        ViewGroup.LayoutParams layoutParams = new ConstraintLayout.LayoutParams(AppInfo.d().getResources().getDimensionPixelOffset(R.dimen.dp_170), AppInfo.d().getResources().getDimensionPixelOffset(R.dimen.dp_35));
+        ((ConstraintLayout.LayoutParams) layoutParams).topMargin = new int[2][1];
+        ((ConstraintLayout.LayoutParams) layoutParams).leftMargin = 10;
         FragmentYyHomeChatsBinding u = this$0.u();
         Integer valueOf = (u == null || (viewPager = u.r) == null) ? null : Integer.valueOf(viewPager.getId());
         Intrinsics.a(valueOf);
-        layoutParams.topToTop = valueOf.intValue();
-        layoutParams.leftToLeft = 0;
+        ((ConstraintLayout.LayoutParams) layoutParams).topToTop = valueOf.intValue();
+        ((ConstraintLayout.LayoutParams) layoutParams).leftToLeft = 0;
         FragmentYyHomeChatsBinding u2 = this$0.u();
         ConstraintLayout constraintLayout2 = u2 == null ? null : u2.e;
         if (constraintLayout2 != null) {
@@ -985,13 +978,13 @@ public final class YYHomeChatsFragment extends MVVMBaseFragment<YYHomeChatsViewM
 
     /* JADX INFO: Access modifiers changed from: private */
     public final FragmentYyHomeChatsBinding u() {
-        return (FragmentYyHomeChatsBinding) this.l.b(this, f17273a[0]);
+        return (FragmentYyHomeChatsBinding) this.l.b(this, a[0]);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void v() {
         FragmentYyHomeChatsBinding u = u();
-        YYHomeCradAniView yYHomeCradAniView = u == null ? null : u.f16502a;
+        YYHomeCradAniView yYHomeCradAniView = u == null ? null : u.a;
         if (yYHomeCradAniView == null) {
             return;
         }
@@ -1064,8 +1057,7 @@ public final class YYHomeChatsFragment extends MVVMBaseFragment<YYHomeChatsViewM
     public void k() {
         super.k();
         EventTrackYY.e(ChatRoomProtos.Event.CHAT_ROOM_ENTER_CLICK, "", "", "", j().e());
-        LiveEventBus.get("create_entertainment_room", String.class).observe(this, new Observer() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYHomeChatsFragment$gdwBxlvxkdq6WKiSHVvzaoB4KOQ
-            @Override // androidx.lifecycle.Observer
+        LiveEventBus.get("create_entertainment_room", String.class).observe((LifecycleOwner) this, new Observer() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYHomeChatsFragment$gdwBxlvxkdq6WKiSHVvzaoB4KOQ
             public final void onChanged(Object obj) {
                 YYHomeChatsFragment.a(YYHomeChatsFragment.this, (String) obj);
             }
@@ -1074,24 +1066,23 @@ public final class YYHomeChatsFragment extends MVVMBaseFragment<YYHomeChatsViewM
 
     @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
     public void l() {
-        YYHomeChatsFragment yYHomeChatsFragment = this;
-        LifecycleExtKt.a(yYHomeChatsFragment, j().g(), new YYHomeChatsFragment$liveDataObserver$1(this));
-        LifecycleExtKt.a(yYHomeChatsFragment, j().f(), new YYHomeChatsFragment$liveDataObserver$2(this));
-        LifecycleExtKt.a(yYHomeChatsFragment, j().h(), new YYHomeChatsFragment$liveDataObserver$3(this));
-        LifecycleExtKt.a(yYHomeChatsFragment, j().k(), new YYHomeChatsFragment$liveDataObserver$4(this));
-        LifecycleExtKt.a(yYHomeChatsFragment, j().n(), new YYHomeChatsFragment$liveDataObserver$5(this));
-        LifecycleExtKt.a(yYHomeChatsFragment, j().l(), new YYHomeChatsFragment$liveDataObserver$6(this));
-        LifecycleExtKt.a(yYHomeChatsFragment, j().o(), new YYHomeChatsFragment$liveDataObserver$7(this));
-        LifecycleExtKt.a(yYHomeChatsFragment, j().m(), new YYHomeChatsFragment$liveDataObserver$8(this));
-        LifecycleExtKt.a(yYHomeChatsFragment, j().p(), new YYHomeChatsFragment$liveDataObserver$9(this));
+        LifecycleOwner lifecycleOwner = (LifecycleOwner) this;
+        LifecycleExtKt.a(lifecycleOwner, j().g(), new YYHomeChatsFragment$liveDataObserver$1(this));
+        LifecycleExtKt.a(lifecycleOwner, j().f(), new YYHomeChatsFragment$liveDataObserver$2(this));
+        LifecycleExtKt.a(lifecycleOwner, j().h(), new YYHomeChatsFragment$liveDataObserver$3(this));
+        LifecycleExtKt.a(lifecycleOwner, j().k(), new YYHomeChatsFragment$liveDataObserver$4(this));
+        LifecycleExtKt.a(lifecycleOwner, j().n(), new YYHomeChatsFragment$liveDataObserver$5(this));
+        LifecycleExtKt.a(lifecycleOwner, j().l(), new YYHomeChatsFragment$liveDataObserver$6(this));
+        LifecycleExtKt.a(lifecycleOwner, j().o(), new YYHomeChatsFragment$liveDataObserver$7(this));
+        LifecycleExtKt.a(lifecycleOwner, j().m(), new YYHomeChatsFragment$liveDataObserver$8(this));
+        LifecycleExtKt.a(lifecycleOwner, j().p(), new YYHomeChatsFragment$liveDataObserver$9(this));
         GuideHandler guideHandler = this.b;
         if (guideHandler != null) {
             guideHandler.sendEmptyMessageDelayed(1, 20000L);
         }
-        YYNewUserGiftDialog.f18336a.a(this);
+        YYNewUserGiftDialog.a.a(this);
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         super.onActivityResult(i, i2, intent);
         if (i2 == 0) {
@@ -1132,7 +1123,7 @@ public final class YYHomeChatsFragment extends MVVMBaseFragment<YYHomeChatsViewM
         throw new UnsupportedOperationException("Method not decompiled: com.blued.android.module.yy_china.fragment.YYHomeChatsFragment.onClick(android.view.View):void");
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onDestroy() {
         super.onDestroy();
         YYRoomChatsPagerAdapter yYRoomChatsPagerAdapter = this.j;
@@ -1146,10 +1137,10 @@ public final class YYHomeChatsFragment extends MVVMBaseFragment<YYHomeChatsViewM
             }
             this.b = null;
         }
-        YYChatRoomsListFragment.f17120a.a("");
+        YYChatRoomsListFragment.a.a("");
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onPause() {
         HomeRotationView homeRotationView;
         super.onPause();
@@ -1160,7 +1151,7 @@ public final class YYHomeChatsFragment extends MVVMBaseFragment<YYHomeChatsViewM
         homeRotationView.b();
     }
 
-    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment, com.blued.android.core.ui.BaseFragment
     public void onResume() {
         HomeRotationView homeRotationView;
         super.onResume();
@@ -1199,7 +1190,6 @@ public final class YYHomeChatsFragment extends MVVMBaseFragment<YYHomeChatsViewM
         builder.setAllCornerSizes(getResources().getDimensionPixelOffset(R.dimen.dp_7));
         final float dimensionPixelOffset = getResources().getDimensionPixelOffset(R.dimen.dp_7);
         builder.setTopEdge(new TriangleEdgeTreatment(dimensionPixelOffset) { // from class: com.blued.android.module.yy_china.fragment.YYHomeChatsFragment$addMyGuide$shapeAppearanceModel3$1$1
-            @Override // com.google.android.material.shape.TriangleEdgeTreatment, com.google.android.material.shape.EdgeTreatment
             public void getEdgePath(float f, float f2, float f3, ShapePath shapePath) {
                 Intrinsics.e(shapePath, "shapePath");
                 super.getEdgePath(f, YYHomeChatsFragment.this.getResources().getDimensionPixelOffset(R.dimen.dp_15), f3, shapePath);
@@ -1207,7 +1197,7 @@ public final class YYHomeChatsFragment extends MVVMBaseFragment<YYHomeChatsViewM
         });
         ShapeAppearanceModel build = builder.build();
         Intrinsics.c(build, "builder().apply {\n      …     })\n        }.build()");
-        MaterialShapeDrawable materialShapeDrawable = new MaterialShapeDrawable(build);
+        Drawable materialShapeDrawable = new MaterialShapeDrawable(build);
         materialShapeDrawable.setTint(ContextCompat.getColor(requireContext(), R.color.syc_474D55));
         materialShapeDrawable.setPaintStyle(Paint.Style.FILL);
         TextView textView = new TextView(getContext());

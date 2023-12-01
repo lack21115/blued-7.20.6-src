@@ -24,7 +24,7 @@ public class v implements Cloneable {
     private int b = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    private b f38056c = new b();
+    private b f24365c = new b();
     private Rect d = new Rect();
     private GeoPoint n = new GeoPoint();
     private p5 r = new p5();
@@ -33,12 +33,12 @@ public class v implements Cloneable {
     public static /* synthetic */ class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final /* synthetic */ int[] f38057a;
+        public static final /* synthetic */ int[] f24366a;
 
         static {
             z5.values();
             int[] iArr = new int[3];
-            f38057a = iArr;
+            f24366a = iArr;
             try {
                 z5 z5Var = z5.SCALE_LEVEL_CHANGED;
                 iArr[2] = 1;
@@ -67,7 +67,7 @@ public class v implements Cloneable {
         private int g;
 
         /* renamed from: c  reason: collision with root package name */
-        private float f38058c = 4.0f;
+        private float f24367c = 4.0f;
         private float b = 3.0517578E-5f;
         private int e = 20;
         private int d = 3;
@@ -105,7 +105,7 @@ public class v implements Cloneable {
 
         public void b(b bVar) {
             this.b = bVar.b;
-            this.f38058c = bVar.f38058c;
+            this.f24367c = bVar.f24367c;
             this.d = bVar.d;
             this.e = bVar.e;
             this.f = bVar.f;
@@ -168,22 +168,22 @@ public class v implements Cloneable {
     public static class c {
 
         /* renamed from: a  reason: collision with root package name */
-        private float f38059a;
+        private float f24368a;
         private float b;
 
         public c(float f, float f2) {
-            this.f38059a = 0.0f;
+            this.f24368a = 0.0f;
             this.b = 0.0f;
-            this.f38059a = f;
+            this.f24368a = f;
             this.b = f2;
         }
 
         public float a() {
-            return this.f38059a;
+            return this.f24368a;
         }
 
         public void a(float f, float f2) {
-            this.f38059a = f;
+            this.f24368a = f;
             this.b = f2;
         }
 
@@ -250,7 +250,7 @@ public class v implements Cloneable {
     }
 
     public float a(int i) {
-        return this.f38056c.a(i);
+        return this.f24365c.a(i);
     }
 
     public GeoPoint a() {
@@ -275,7 +275,7 @@ public class v implements Cloneable {
 
     public void a(v vVar) {
         this.b = vVar.b;
-        this.f38056c.b(vVar.f38056c);
+        this.f24365c.b(vVar.f24365c);
         this.d.set(vVar.d);
         this.e = vVar.e;
         this.f = vVar.f;
@@ -289,7 +289,7 @@ public class v implements Cloneable {
         this.n.setGeoPoint(vVar.n);
         p5 p5Var = this.r;
         p5 p5Var2 = vVar.r;
-        p5Var.e(p5Var2.b, p5Var2.f37683c);
+        p5Var.e(p5Var2.b, p5Var2.f23992c);
         this.o = vVar.o;
     }
 
@@ -349,7 +349,7 @@ public class v implements Cloneable {
         this.n.setLatitudeE6(i9);
         this.n.setLongitudeE6(i10);
         p5 a2 = y.a(this, this.n);
-        a(a2.b, a2.f37683c);
+        a(a2.b, a2.f23992c);
         this.q.a(this.n, z);
         return z2;
     }
@@ -404,7 +404,7 @@ public class v implements Cloneable {
     }
 
     public float c() {
-        return this.f38056c.a();
+        return this.f24365c.a();
     }
 
     public boolean c(int i) {
@@ -429,10 +429,10 @@ public class v implements Cloneable {
     public Object clone() throws CloneNotSupportedException {
         v vVar = (v) super.clone();
         vVar.d = new Rect(this.d);
-        vVar.f38056c = (b) this.f38056c.clone();
+        vVar.f24365c = (b) this.f24365c.clone();
         vVar.n = new GeoPoint(this.n);
         p5 p5Var = this.r;
-        vVar.r = new p5(p5Var.b, p5Var.f37683c);
+        vVar.r = new p5(p5Var.b, p5Var.f23992c);
         return vVar;
     }
 
@@ -441,7 +441,7 @@ public class v implements Cloneable {
     }
 
     public void d(int i) {
-        this.f38056c.b(i);
+        this.f24365c.b(i);
     }
 
     public double e() {
@@ -449,17 +449,17 @@ public class v implements Cloneable {
     }
 
     public void e(float f) {
-        this.f38056c.a(f);
+        this.f24365c.a(f);
     }
 
     public void e(int i) {
-        this.f38056c.c(i);
+        this.f24365c.c(i);
     }
 
     public boolean equals(Object obj) {
         if (obj instanceof v) {
             v vVar = (v) obj;
-            return vVar.n.equals(this.n) && vVar.f38056c.equals(this.f38056c) && vVar.b == this.b;
+            return vVar.n.equals(this.n) && vVar.f24365c.equals(this.f24365c) && vVar.b == this.b;
         }
         return false;
     }
@@ -485,19 +485,19 @@ public class v implements Cloneable {
     }
 
     public boolean f(int i) {
-        return g(this.f38056c.a(i)) == z5.SCALE_LEVEL_CHANGED;
+        return g(this.f24365c.a(i)) == z5.SCALE_LEVEL_CHANGED;
     }
 
     public int g() {
-        return this.f38056c.b();
+        return this.f24365c.b();
     }
 
     public z5 g(float f) {
         float f2;
         int i;
         z5 z5Var = z5.NO_CHANGED;
-        float f3 = this.f38056c.f();
-        int g = this.f38056c.g();
+        float f3 = this.f24365c.f();
+        int g = this.f24365c.g();
         ri riVar = this.q;
         if (riVar != null) {
             riVar.a(f, false);
@@ -507,22 +507,22 @@ public class v implements Cloneable {
             f2 = f3;
             i = g;
         }
-        this.f38056c.a(i, f2);
+        this.f24365c.a(i, f2);
         if (i != g) {
             z5Var = z5.SCALE_LEVEL_CHANGED;
         } else if (f2 != f3) {
             z5Var = z5.SCALE_CHANGED;
         }
         if (z5Var.ordinal() == 2) {
-            g(this.f38056c.g());
+            g(this.f24365c.g());
         }
         p5 a2 = y.a(this, a());
-        this.r.e(a2.b, a2.f37683c);
+        this.r.e(a2.b, a2.f23992c);
         return z5Var;
     }
 
     public int h() {
-        return this.f38056c.c();
+        return this.f24365c.c();
     }
 
     public z5 h(float f) {
@@ -530,7 +530,7 @@ public class v implements Cloneable {
         if (riVar != null) {
             riVar.a(f);
         }
-        this.f38056c.b(f);
+        this.f24365c.b(f);
         return z5.SCALE_LEVEL_CHANGED;
     }
 
@@ -539,7 +539,7 @@ public class v implements Cloneable {
     }
 
     public float i() {
-        return this.f38056c.d();
+        return this.f24365c.d();
     }
 
     public float i(float f) {
@@ -562,7 +562,7 @@ public class v implements Cloneable {
     }
 
     public int j() {
-        return this.f38056c.e();
+        return this.f24365c.e();
     }
 
     public double k() {
@@ -586,11 +586,11 @@ public class v implements Cloneable {
     }
 
     public float p() {
-        return this.f38056c.f();
+        return this.f24365c.f();
     }
 
     public int q() {
-        return this.f38056c.g();
+        return this.f24365c.g();
     }
 
     public Rect r() {
@@ -611,7 +611,7 @@ public class v implements Cloneable {
         sb.append("mapParam: ");
         sb.append("center:" + a2.toString() + " ");
         sb.append("mode:" + this.b + " ");
-        sb.append("mapScale:" + this.f38056c.toString() + " ");
+        sb.append("mapScale:" + this.f24365c.toString() + " ");
         StringBuilder sb2 = new StringBuilder();
         sb2.append("screenRect:");
         Rect rect = this.o;
@@ -634,7 +634,7 @@ public class v implements Cloneable {
     }
 
     public float x() {
-        return d(this.f38056c.f);
+        return d(this.f24365c.f);
     }
 
     public byte[] y() {
@@ -653,9 +653,9 @@ public class v implements Cloneable {
         } else if (D != p()) {
             this.p.h().a(z5.SCALE_CHANGED);
         }
-        if (this.f38056c != null) {
+        if (this.f24365c != null) {
             b(D);
-            this.f38056c.a(E, D);
+            this.f24365c.a(E, D);
         }
         this.b = this.q.B();
     }

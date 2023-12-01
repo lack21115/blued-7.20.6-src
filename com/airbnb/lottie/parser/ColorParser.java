@@ -7,9 +7,7 @@ import java.io.IOException;
 
 /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/parser/ColorParser.class */
 public class ColorParser implements ValueParser<Integer> {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final ColorParser f4398a = new ColorParser();
+    public static final ColorParser a = new ColorParser();
 
     private ColorParser() {
     }

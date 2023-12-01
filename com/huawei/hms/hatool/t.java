@@ -1,6 +1,7 @@
 package com.huawei.hms.hatool;
 
 import android.text.TextUtils;
+import com.xiaomi.mipush.sdk.Constants;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -9,30 +10,30 @@ import java.util.UUID;
 public class t {
 
     /* renamed from: a  reason: collision with root package name */
-    public List<q> f22792a;
+    public List<q> f9184a;
     public String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f22793c;
+    public String f9185c;
     public String d;
 
     public t(List<q> list, String str, String str2, String str3) {
-        this.f22792a = list;
+        this.f9184a = list;
         this.b = str;
-        this.f22793c = str2;
+        this.f9185c = str2;
         this.d = str3;
     }
 
     public void a() {
-        if (!"_default_config_tag".equals(this.f22793c)) {
-            a(this.f22792a, this.f22793c, this.b);
+        if (!"_default_config_tag".equals(this.f9185c)) {
+            a(this.f9184a, this.f9185c, this.b);
             return;
         }
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = new ArrayList();
         ArrayList arrayList3 = new ArrayList();
         ArrayList arrayList4 = new ArrayList();
-        for (q qVar : this.f22792a) {
+        for (q qVar : this.f9184a) {
             String c2 = qVar.c();
             if (TextUtils.isEmpty(c2) || "oper".equals(c2)) {
                 arrayList4.add(qVar);
@@ -63,7 +64,7 @@ public class t {
             }
             int i3 = i2 * 500;
             List<q> subList = list.subList(i3, Math.min(list.size(), i3 + 500));
-            String replace = UUID.randomUUID().toString().replace("-", "");
+            String replace = UUID.randomUUID().toString().replace(Constants.ACCEPT_TIME_SEPARATOR_SERVER, "");
             long currentTimeMillis = System.currentTimeMillis();
             long b = c.b(str2, str);
             ArrayList arrayList = new ArrayList();

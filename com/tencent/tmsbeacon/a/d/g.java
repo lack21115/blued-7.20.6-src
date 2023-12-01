@@ -29,10 +29,10 @@ public class g {
     private boolean h;
 
     /* renamed from: a  reason: collision with root package name */
-    private final Object f39486a = new Object();
+    private final Object f25795a = new Object();
 
     /* renamed from: c  reason: collision with root package name */
-    private JSONObject f39487c = new JSONObject();
+    private JSONObject f25796c = new JSONObject();
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/tmsbeacon/a/d/g$a.class */
     public class a implements Runnable {
@@ -42,8 +42,8 @@ public class g {
         @Override // java.lang.Runnable
         public void run() {
             try {
-                synchronized (g.this.f39486a) {
-                    byte[] a2 = g.a(g.this.f39487c.toString().getBytes("ISO8859-1"));
+                synchronized (g.this.f25795a) {
+                    byte[] a2 = g.a(g.this.f25796c.toString().getBytes("ISO8859-1"));
                     if (a2 == null) {
                         return;
                     }
@@ -255,8 +255,8 @@ public class g {
         Object obj;
         Object obj2 = null;
         try {
-            synchronized (this.f39486a) {
-                obj = this.f39487c.get(str);
+            synchronized (this.f25795a) {
+                obj = this.f25796c.get(str);
                 obj2 = obj;
             }
             return obj;
@@ -299,13 +299,13 @@ public class g {
             return;
         }
         try {
-            this.f39487c = new JSONObject(new String(b(a2), "ISO8859-1"));
+            this.f25796c = new JSONObject(new String(b(a2), "ISO8859-1"));
         } catch (Exception e) {
             com.tencent.tmsbeacon.base.util.c.a("[properties]", "init error" + e.getMessage(), new Object[0]);
             com.tencent.tmsbeacon.a.b.d b2 = com.tencent.tmsbeacon.a.b.d.b();
             b2.a("504", "[properties] init error! msg: " + e.getMessage() + ". file size: " + this.e, e);
         }
-        com.tencent.tmsbeacon.base.util.c.a("[properties]", "init json: " + this.f39487c.toString(), new Object[0]);
+        com.tencent.tmsbeacon.base.util.c.a("[properties]", "init json: " + this.f25796c.toString(), new Object[0]);
     }
 
     public <T> T a(String str, T t) {
@@ -330,8 +330,8 @@ public class g {
             }
             try {
                 HashSet hashSet2 = new HashSet();
-                synchronized (this.f39486a) {
-                    jSONObject = this.f39487c.getJSONObject(str);
+                synchronized (this.f25795a) {
+                    jSONObject = this.f25796c.getJSONObject(str);
                 }
                 if (jSONObject != null) {
                     Iterator<String> keys = jSONObject.keys();
@@ -351,14 +351,14 @@ public class g {
 
     public void a() {
         synchronized (this) {
-            this.f39487c = new JSONObject();
+            this.f25796c = new JSONObject();
             a(e());
         }
     }
 
     public boolean a(String str) {
-        synchronized (this.f39486a) {
-            Iterator<String> keys = this.f39487c.keys();
+        synchronized (this.f25795a) {
+            Iterator<String> keys = this.f25796c.keys();
             if (keys != null) {
                 while (keys.hasNext()) {
                     if (str.equals(keys.next())) {
@@ -371,15 +371,15 @@ public class g {
     }
 
     public Map<String, ?> b() {
-        synchronized (this.f39486a) {
-            JSONObject jSONObject = this.f39487c;
+        synchronized (this.f25795a) {
+            JSONObject jSONObject = this.f25796c;
             if (jSONObject != null) {
                 Iterator<String> keys = jSONObject.keys();
                 HashMap hashMap = new HashMap();
                 while (keys.hasNext()) {
                     String next = keys.next();
                     try {
-                        hashMap.put(next, this.f39487c.get(next));
+                        hashMap.put(next, this.f25796c.get(next));
                     } catch (JSONException e) {
                         com.tencent.tmsbeacon.base.util.c.a(e);
                     }
@@ -392,8 +392,8 @@ public class g {
 
     public void b(String str) {
         synchronized (this) {
-            synchronized (this.f39486a) {
-                this.f39487c.remove(str);
+            synchronized (this.f25795a) {
+                this.f25796c.remove(str);
             }
             a(e());
         }
@@ -421,8 +421,8 @@ public class g {
                         return;
                     }
                 }
-                synchronized (this.f39486a) {
-                    this.f39487c.put(str, obj);
+                synchronized (this.f25795a) {
+                    this.f25796c.put(str, obj);
                 }
                 a(e());
             }
@@ -458,7 +458,7 @@ public class g {
 
     public void c() {
         FileLock lock;
-        synchronized (this.f39486a) {
+        synchronized (this.f25795a) {
             FileLock fileLock = null;
             try {
                 try {
@@ -468,7 +468,7 @@ public class g {
                     MappedByteBuffer map = fileChannel.map(FileChannel.MapMode.READ_WRITE, 0L, fileChannel.size());
                     this.d = map;
                     fileLock = lock;
-                    this.f39487c = new JSONObject(new String(b(a(map)), "ISO8859-1"));
+                    this.f25796c = new JSONObject(new String(b(a(map)), "ISO8859-1"));
                 } catch (Exception e) {
                     if (!this.h) {
                         StringBuilder sb = new StringBuilder();

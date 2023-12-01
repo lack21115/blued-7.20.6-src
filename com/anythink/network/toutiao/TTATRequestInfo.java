@@ -9,23 +9,21 @@ import java.util.Map;
 public class TTATRequestInfo extends ATMediationRequestInfo {
 
     /* renamed from: a  reason: collision with root package name */
-    HashMap<String, Object> f9134a;
+    HashMap<String, Object> f6294a;
 
     public TTATRequestInfo(String str, String str2, boolean z) {
         this.networkFirmId = 15;
         HashMap<String, Object> hashMap = new HashMap<>();
-        this.f9134a = hashMap;
+        this.f6294a = hashMap;
         hashMap.put("app_id", str);
-        this.f9134a.put("slot_id", str2);
-        this.f9134a.put("personalized_template", z ? "1" : "0");
+        this.f6294a.put("slot_id", str2);
+        this.f6294a.put("personalized_template", z ? "1" : "0");
     }
 
-    @Override // com.anythink.core.api.ATMediationRequestInfo
     public Map<String, Object> getRequestParamMap() {
-        return this.f9134a;
+        return this.f6294a;
     }
 
-    @Override // com.anythink.core.api.ATMediationRequestInfo
     public void setFormat(String str) {
         if ((str.hashCode() == 52 && str.equals("4")) ? false : true) {
             return;

@@ -13,13 +13,9 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveRecordLevelToolBarView.class */
 public class LiveRecordLevelToolBarView extends FrameLayout implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f14909a;
+    private Context a;
     private LayoutInflater b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private LinearLayout f14910c;
+    private LinearLayout c;
     private FrameLayout d;
     private TextView e;
     private View f;
@@ -43,11 +39,11 @@ public class LiveRecordLevelToolBarView extends FrameLayout implements View.OnCl
 
     public LiveRecordLevelToolBarView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f14909a = context;
+        this.a = context;
         LayoutInflater from = LayoutInflater.from(context);
         this.b = from;
         from.inflate(R.layout.live_record_level_tool_bar_view, this);
-        this.f14910c = (LinearLayout) findViewById(R.id.root_view);
+        this.c = (LinearLayout) findViewById(R.id.root_view);
         this.d = (FrameLayout) findViewById(R.id.layout1);
         this.e = (TextView) findViewById(R.id.text1);
         this.f = findViewById(R.id.view1);
@@ -94,14 +90,14 @@ public class LiveRecordLevelToolBarView extends FrameLayout implements View.OnCl
     public void setToolBtnSelect(int i) {
         Log.v("pk", "setToolBtnSelect:" + i);
         if (i == 0) {
-            this.e.setTextColor(this.f14909a.getResources().getColor(R.color.syc_h));
+            this.e.setTextColor(this.a.getResources().getColor(R.color.syc_h));
             this.f.setVisibility(0);
-            this.h.setTextColor(this.f14909a.getResources().getColor(R.color.syc_k));
+            this.h.setTextColor(this.a.getResources().getColor(R.color.syc_k));
             this.i.setVisibility(8);
         } else if (i == 1) {
-            this.e.setTextColor(this.f14909a.getResources().getColor(R.color.syc_k));
+            this.e.setTextColor(this.a.getResources().getColor(R.color.syc_k));
             this.f.setVisibility(8);
-            this.h.setTextColor(this.f14909a.getResources().getColor(R.color.syc_h));
+            this.h.setTextColor(this.a.getResources().getColor(R.color.syc_h));
             this.i.setVisibility(0);
         }
     }

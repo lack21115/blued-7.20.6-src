@@ -6,13 +6,11 @@ import java.util.Map;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/urlroute/BluedUrlParser.class */
 public class BluedUrlParser {
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f10062a;
+    private String a;
     private Map<String, String> b;
 
     private BluedUrlParser(String str) {
-        this.f10062a = str;
+        this.a = str;
     }
 
     public static BluedUrlParser a(String str) {
@@ -27,16 +25,16 @@ public class BluedUrlParser {
             if (!BluedURIRouter.a().a(parse.getScheme()) && !BluedURIRouter.a().b(parse.getHost())) {
                 return null;
             }
-            Map<String, String> a2 = BluedUrlUtils.a(str);
-            if (a2 == null || a2.size() <= 0) {
+            Map<String, String> a = BluedUrlUtils.a(str);
+            if (a == null || a.size() <= 0) {
                 return null;
             }
-            String str2 = a2.get("action");
+            String str2 = a.get("action");
             if (TextUtils.isEmpty(str2)) {
                 return null;
             }
             BluedUrlParser bluedUrlParser = new BluedUrlParser(str2);
-            bluedUrlParser.a(a2);
+            bluedUrlParser.a(a);
             return bluedUrlParser;
         } catch (Exception e) {
             e.printStackTrace();
@@ -45,7 +43,7 @@ public class BluedUrlParser {
     }
 
     public String a() {
-        return this.f10062a;
+        return this.a;
     }
 
     public void a(Map<String, String> map) {

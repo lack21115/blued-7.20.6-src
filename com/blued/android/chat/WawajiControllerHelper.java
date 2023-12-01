@@ -1,11 +1,9 @@
 package com.blued.android.chat;
 
 import android.os.Handler;
-import com.baidu.mobads.sdk.internal.bw;
 import com.blued.android.chat.core.utils.Log;
 import com.blued.android.chat.core.worker.chat.WawajiControllerChat;
 import com.blued.android.chat.utils.MsgPackHelper;
-import com.igexin.push.core.b;
 import java.util.List;
 import java.util.Map;
 
@@ -64,7 +62,7 @@ public class WawajiControllerHelper implements WawajiControllerChat.IWawajiContr
         public static WawajiControllerConfig parseData(Map<String, Object> map) {
             WawajiControllerConfig wawajiControllerConfig = new WawajiControllerConfig();
             wawajiControllerConfig.play_maxtime = MsgPackHelper.getIntValue(map, "play_maxtime");
-            wawajiControllerConfig.success = MsgPackHelper.getIntValue(map, bw.o);
+            wawajiControllerConfig.success = MsgPackHelper.getIntValue(map, "success");
             wawajiControllerConfig.u_talon = MsgPackHelper.getIntValue(map, "u_talon");
             wawajiControllerConfig.at_talon = MsgPackHelper.getIntValue(map, "at_talon");
             wawajiControllerConfig.m_talon = MsgPackHelper.getIntValue(map, "m_talon");
@@ -181,7 +179,7 @@ public class WawajiControllerHelper implements WawajiControllerChat.IWawajiContr
             sb.append(", operationUid:");
             sb.append(j);
             sb.append(", need_playingUid:");
-            sb.append(this.playingData == null ? b.l : Long.valueOf(this.playingData.playerUid));
+            sb.append(this.playingData == null ? "null" : Long.valueOf(this.playingData.playerUid));
             notifyDebugTips(sb.toString());
             checkGamePlaying();
             return false;

@@ -1,5 +1,6 @@
 package android.preference;
 
+import android.R;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
@@ -17,7 +18,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import com.android.internal.R;
 
 /* loaded from: source-9557208-dex2jar.jar:android/preference/DialogPreference.class */
 public abstract class DialogPreference extends Preference implements DialogInterface.OnClickListener, DialogInterface.OnDismissListener, PreferenceManager.OnActivityDestroyListener {
@@ -75,7 +75,7 @@ public abstract class DialogPreference extends Preference implements DialogInter
     }
 
     public DialogPreference(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, 16842897);
+        this(context, attributeSet, R.attr.dialogPreferenceStyle);
     }
 
     public DialogPreference(Context context, AttributeSet attributeSet, int i) {
@@ -84,7 +84,7 @@ public abstract class DialogPreference extends Preference implements DialogInter
 
     public DialogPreference(Context context, AttributeSet attributeSet, int i, int i2) {
         super(context, attributeSet, i, i2);
-        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.DialogPreference, i, i2);
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, com.android.internal.R.styleable.DialogPreference, i, i2);
         this.mDialogTitle = obtainStyledAttributes.getString(0);
         if (this.mDialogTitle == null) {
             this.mDialogTitle = getTitle();
@@ -159,7 +159,7 @@ public abstract class DialogPreference extends Preference implements DialogInter
 
     /* JADX INFO: Access modifiers changed from: protected */
     public void onBindDialogView(View view) {
-        View findViewById = view.findViewById(16908299);
+        View findViewById = view.findViewById(R.id.message);
         if (findViewById != null) {
             CharSequence dialogMessage = getDialogMessage();
             int i = 8;

@@ -105,7 +105,7 @@ public final class b extends com.kwad.components.ad.reward.presenter.a implement
     public final void onClick(View view) {
         Tracker.onClick(view);
         if (view == this.gO) {
-            com.kwad.components.core.d.b.a.a(new a.C0519a(view.getContext()).I(this.mAdTemplate).b(this.mApkDownloadHelper).ao(40).an(1).ao(false).ap(this.qt.fF()).ap(1).a(new a.b() { // from class: com.kwad.components.ad.fullscreen.b.kwai.b.4
+            com.kwad.components.core.d.b.a.a(new a.C0349a(view.getContext()).I(this.mAdTemplate).b(this.mApkDownloadHelper).ao(40).an(1).ao(false).ap(this.qt.fF()).ap(1).a(new a.b() { // from class: com.kwad.components.ad.fullscreen.b.kwai.b.4
                 @Override // com.kwad.components.core.d.b.a.b
                 public final void onAdClicked() {
                     b.this.notifyAdClick();

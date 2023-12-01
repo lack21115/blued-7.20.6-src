@@ -26,13 +26,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveBackgroundMusicFragment.class */
 public final class LiveBackgroundMusicFragment extends BaseFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    private BlackMusicListener f12716a;
+    private BlackMusicListener a;
     private final Lazy b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private BackgroundMusicView f12717c;
+    private BackgroundMusicView c;
     private LiveBackgroundMusicFragment$defaultCallBack$1 d;
 
     public LiveBackgroundMusicFragment() {
@@ -41,7 +37,7 @@ public final class LiveBackgroundMusicFragment extends BaseFragment {
 
     /* JADX WARN: Type inference failed for: r1v4, types: [com.blued.android.module.live_china.fragment.LiveBackgroundMusicFragment$defaultCallBack$1] */
     public LiveBackgroundMusicFragment(BlackMusicListener blackMusicListener) {
-        this.f12716a = blackMusicListener;
+        this.a = blackMusicListener;
         this.b = LazyKt.a(new Function0<FragmentLiveBackgroundMusicBinding>() { // from class: com.blued.android.module.live_china.fragment.LiveBackgroundMusicFragment$vb$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
@@ -135,17 +131,17 @@ public final class LiveBackgroundMusicFragment extends BaseFragment {
     }
 
     public final void a() {
-        if (this.f12716a == null) {
-            this.f12716a = this.d;
+        if (this.a == null) {
+            this.a = this.d;
         }
         if (getContext() != null) {
-            YYMusicManager.f11418a.c().a(true, LiveRoomManager.a().c(), LiveRoomManager.a().b());
+            YYMusicManager.a.c().a(true, LiveRoomManager.a().c(), LiveRoomManager.a().b());
             Context requireContext = requireContext();
             Intrinsics.c(requireContext, "requireContext()");
-            BlackMusicListener blackMusicListener = this.f12716a;
+            BlackMusicListener blackMusicListener = this.a;
             Intrinsics.a(blackMusicListener);
             BackgroundMusicView backgroundMusicView = new BackgroundMusicView(requireContext, blackMusicListener, this, getFragmentActive());
-            this.f12717c = backgroundMusicView;
+            this.c = backgroundMusicView;
             if (backgroundMusicView != null) {
                 backgroundMusicView.setDissListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveBackgroundMusicFragment$8OyT0_BIsN8PtXLELCvjXkRGSZ8
                     @Override // android.view.View.OnClickListener
@@ -154,13 +150,13 @@ public final class LiveBackgroundMusicFragment extends BaseFragment {
                     }
                 });
             }
-            d().f11917a.removeAllViews();
-            d().f11917a.addView(this.f12717c, -1, -1);
-            BackgroundMusicView backgroundMusicView2 = this.f12717c;
+            d().a.removeAllViews();
+            d().a.addView(this.c, -1, -1);
+            BackgroundMusicView backgroundMusicView2 = this.c;
             if (backgroundMusicView2 != null) {
                 backgroundMusicView2.a();
             }
-            BackgroundMusicView backgroundMusicView3 = this.f12717c;
+            BackgroundMusicView backgroundMusicView3 = this.c;
             if (backgroundMusicView3 == null) {
                 return;
             }
@@ -191,7 +187,7 @@ public final class LiveBackgroundMusicFragment extends BaseFragment {
         return false;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
         if (d().getRoot().getParent() instanceof ViewGroup) {
@@ -205,13 +201,13 @@ public final class LiveBackgroundMusicFragment extends BaseFragment {
         return d().getRoot();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onDestroy() {
         super.onDestroy();
-        BackgroundMusicView backgroundMusicView = this.f12717c;
+        BackgroundMusicView backgroundMusicView = this.c;
         if (backgroundMusicView != null) {
             backgroundMusicView.f();
         }
-        this.f12717c = null;
+        this.c = null;
     }
 }

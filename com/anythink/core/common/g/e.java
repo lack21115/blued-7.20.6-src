@@ -3,6 +3,7 @@ package com.anythink.core.common.g;
 import android.content.Context;
 import com.anythink.core.api.AdError;
 import com.anythink.core.common.b.n;
+import com.efs.sdk.base.Constants;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.ArrayList;
@@ -45,7 +46,7 @@ public final class e extends a {
     @Override // com.anythink.core.common.g.a
     protected final Map<String, String> c() {
         HashMap hashMap = new HashMap();
-        hashMap.put("Content-Encoding", "gzip");
+        hashMap.put("Content-Encoding", Constants.CP_GZIP);
         hashMap.put("Content-Type", "application/json;charset=utf-8");
         return hashMap;
     }
@@ -76,23 +77,23 @@ public final class e extends a {
     @Override // com.anythink.core.common.g.a
     public final String g() {
         HashMap hashMap = new HashMap();
-        String a2 = com.anythink.core.common.k.c.a(e().toString());
+        String a = com.anythink.core.common.k.c.a(e().toString());
         hashMap.put(c.O, "1.0");
-        hashMap.put("p", a2);
+        hashMap.put(c.W, a);
         ArrayList<String> arrayList = new ArrayList(hashMap.size());
         arrayList.addAll(hashMap.keySet());
         Collections.sort(arrayList);
         StringBuilder sb = new StringBuilder();
         for (String str : arrayList) {
             if (sb.length() > 0) {
-                sb.append("&");
+                sb.append(com.alipay.sdk.sys.a.b);
             }
             sb.append(str);
             sb.append("=");
             sb.append(hashMap.get(str));
         }
         try {
-            hashMap.put("sign", URLEncoder.encode(com.anythink.core.common.k.f.c(n.a().q() + sb.toString()), "utf-8"));
+            hashMap.put(c.Y, URLEncoder.encode(com.anythink.core.common.k.f.c(n.a().q() + sb.toString()), "utf-8"));
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }

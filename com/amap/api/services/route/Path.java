@@ -23,23 +23,19 @@ public class Path implements Parcelable {
             return null;
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    private float f5715a;
+    private float a;
     private long b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private List<LatLonPoint> f5716c;
+    private List<LatLonPoint> c;
 
     public Path() {
-        this.f5716c = new ArrayList();
+        this.c = new ArrayList();
     }
 
     public Path(Parcel parcel) {
-        this.f5716c = new ArrayList();
-        this.f5715a = parcel.readFloat();
+        this.c = new ArrayList();
+        this.a = parcel.readFloat();
         this.b = parcel.readLong();
-        this.f5716c = parcel.createTypedArrayList(LatLonPoint.CREATOR);
+        this.c = parcel.createTypedArrayList(LatLonPoint.CREATOR);
     }
 
     @Override // android.os.Parcelable
@@ -48,7 +44,7 @@ public class Path implements Parcelable {
     }
 
     public float getDistance() {
-        return this.f5715a;
+        return this.a;
     }
 
     public long getDuration() {
@@ -56,11 +52,11 @@ public class Path implements Parcelable {
     }
 
     public List<LatLonPoint> getPolyline() {
-        return this.f5716c;
+        return this.c;
     }
 
     public void setDistance(float f) {
-        this.f5715a = f;
+        this.a = f;
     }
 
     public void setDuration(long j) {
@@ -68,13 +64,13 @@ public class Path implements Parcelable {
     }
 
     public void setPolyline(List<LatLonPoint> list) {
-        this.f5716c = list;
+        this.c = list;
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeFloat(this.f5715a);
+        parcel.writeFloat(this.a);
         parcel.writeLong(this.b);
-        parcel.writeTypedList(this.f5716c);
+        parcel.writeTypedList(this.c);
     }
 }

@@ -1,8 +1,8 @@
 package com.efs.sdk.base.core.config.a;
 
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.efs.sdk.base.core.util.Log;
 import com.igexin.assist.sdk.AssistPushConsts;
+import com.kwad.components.offline.api.tk.model.report.TKDownloadReason;
 import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -15,7 +15,7 @@ import org.json.JSONObject;
 public final class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final SimpleDateFormat f21755a = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss", Locale.CHINA);
+    private static final SimpleDateFormat f8149a = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss", Locale.CHINA);
 
     private static void a(Map<String, String> map, JSONArray jSONArray) {
         int i = 0;
@@ -31,14 +31,14 @@ public final class d {
                     Object opt = jSONObject.opt("set");
                     if (optString != null && opt != null) {
                         String optString2 = jSONObject.optString("lt", null);
-                        String optString3 = jSONObject.optString("net", null);
+                        String optString3 = jSONObject.optString(TKDownloadReason.KSAD_TK_NET, null);
                         String str = optString;
                         if (optString2 != null) {
-                            str = optString + BridgeUtil.UNDERLINE_STR + optString2;
+                            str = optString + "_" + optString2;
                         }
                         String str2 = str;
                         if (optString3 != null) {
-                            str2 = str + BridgeUtil.UNDERLINE_STR + optString3;
+                            str2 = str + "_" + optString3;
                         }
                         map.put(str2, String.valueOf(opt));
                     }
@@ -87,7 +87,7 @@ public final class d {
                 }
             }
             bVar.a(hashMap);
-            bVar.f21749a = i;
+            bVar.f8143a = i;
             return true;
         } catch (Throwable th) {
             Log.e("efs.config", "parseConfig error, data is ".concat(String.valueOf(str)), th);

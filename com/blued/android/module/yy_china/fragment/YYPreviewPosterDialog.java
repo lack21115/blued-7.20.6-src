@@ -36,13 +36,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYPreviewPosterDialog.class */
 public final class YYPreviewPosterDialog extends BaseFullScreenDialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    private DialogPreviewPosterBinding f17390a;
+    private DialogPreviewPosterBinding a;
     private AchievementAdapter b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private List<YYShareAchievementModel> f17391c;
+    private List<YYShareAchievementModel> c;
     private List<YYThemeRankList> d;
     private YYThemeActivityInfo e;
     private YYEventsThemeModel f;
@@ -57,53 +53,53 @@ public final class YYPreviewPosterDialog extends BaseFullScreenDialog {
         if (yYEventsThemeModel == null) {
             return;
         }
-        ImageWrapper a2 = ImageLoader.a(a(), yYEventsThemeModel.getPreview_bg()).a(12.0f);
-        DialogPreviewPosterBinding dialogPreviewPosterBinding = this.f17390a;
+        ImageWrapper a = ImageLoader.a(a(), yYEventsThemeModel.getPreview_bg()).a(12.0f);
+        DialogPreviewPosterBinding dialogPreviewPosterBinding = this.a;
         DialogPreviewPosterBinding dialogPreviewPosterBinding2 = dialogPreviewPosterBinding;
         if (dialogPreviewPosterBinding == null) {
             Intrinsics.c("mBinding");
             dialogPreviewPosterBinding2 = null;
         }
-        a2.a(dialogPreviewPosterBinding2.i);
-        ImageWrapper a3 = ImageLoader.a(a(), yYEventsThemeModel.getWinner_first());
-        DialogPreviewPosterBinding dialogPreviewPosterBinding3 = this.f17390a;
+        a.a(dialogPreviewPosterBinding2.i);
+        ImageWrapper a2 = ImageLoader.a(a(), yYEventsThemeModel.getWinner_first());
+        DialogPreviewPosterBinding dialogPreviewPosterBinding3 = this.a;
         DialogPreviewPosterBinding dialogPreviewPosterBinding4 = dialogPreviewPosterBinding3;
         if (dialogPreviewPosterBinding3 == null) {
             Intrinsics.c("mBinding");
             dialogPreviewPosterBinding4 = null;
         }
-        a3.a(dialogPreviewPosterBinding4.f);
-        ImageWrapper a4 = ImageLoader.a(a(), yYEventsThemeModel.getWinner_second());
-        DialogPreviewPosterBinding dialogPreviewPosterBinding5 = this.f17390a;
+        a2.a(dialogPreviewPosterBinding4.f);
+        ImageWrapper a3 = ImageLoader.a(a(), yYEventsThemeModel.getWinner_second());
+        DialogPreviewPosterBinding dialogPreviewPosterBinding5 = this.a;
         DialogPreviewPosterBinding dialogPreviewPosterBinding6 = dialogPreviewPosterBinding5;
         if (dialogPreviewPosterBinding5 == null) {
             Intrinsics.c("mBinding");
             dialogPreviewPosterBinding6 = null;
         }
-        a4.a(dialogPreviewPosterBinding6.g);
-        ImageWrapper a5 = ImageLoader.a(a(), yYEventsThemeModel.getWinner_third());
-        DialogPreviewPosterBinding dialogPreviewPosterBinding7 = this.f17390a;
+        a3.a(dialogPreviewPosterBinding6.g);
+        ImageWrapper a4 = ImageLoader.a(a(), yYEventsThemeModel.getWinner_third());
+        DialogPreviewPosterBinding dialogPreviewPosterBinding7 = this.a;
         DialogPreviewPosterBinding dialogPreviewPosterBinding8 = dialogPreviewPosterBinding7;
         if (dialogPreviewPosterBinding7 == null) {
             Intrinsics.c("mBinding");
             dialogPreviewPosterBinding8 = null;
         }
-        a5.a(dialogPreviewPosterBinding8.h);
-        ImageWrapper a6 = ImageLoader.a(a(), yYEventsThemeModel.getThanks_giving_icon());
-        DialogPreviewPosterBinding dialogPreviewPosterBinding9 = this.f17390a;
+        a4.a(dialogPreviewPosterBinding8.h);
+        ImageWrapper a5 = ImageLoader.a(a(), yYEventsThemeModel.getThanks_giving_icon());
+        DialogPreviewPosterBinding dialogPreviewPosterBinding9 = this.a;
         DialogPreviewPosterBinding dialogPreviewPosterBinding10 = dialogPreviewPosterBinding9;
         if (dialogPreviewPosterBinding9 == null) {
             Intrinsics.c("mBinding");
             dialogPreviewPosterBinding10 = null;
         }
-        a6.a(dialogPreviewPosterBinding10.j);
-        ImageWrapper a7 = ImageLoader.a(a(), yYEventsThemeModel.getActivity_end_icon());
-        DialogPreviewPosterBinding dialogPreviewPosterBinding11 = this.f17390a;
+        a5.a(dialogPreviewPosterBinding10.j);
+        ImageWrapper a6 = ImageLoader.a(a(), yYEventsThemeModel.getActivity_end_icon());
+        DialogPreviewPosterBinding dialogPreviewPosterBinding11 = this.a;
         if (dialogPreviewPosterBinding11 == null) {
             Intrinsics.c("mBinding");
             dialogPreviewPosterBinding11 = null;
         }
-        a7.a(dialogPreviewPosterBinding11.e);
+        a6.a(dialogPreviewPosterBinding11.e);
         g();
     }
 
@@ -116,14 +112,14 @@ public final class YYPreviewPosterDialog extends BaseFullScreenDialog {
     private final void a(List<YYThemeRankList> list) {
         List<YYThemeRankList> list2 = list;
         if (list2 == null || list2.isEmpty()) {
-            DialogPreviewPosterBinding dialogPreviewPosterBinding = this.f17390a;
+            DialogPreviewPosterBinding dialogPreviewPosterBinding = this.a;
             DialogPreviewPosterBinding dialogPreviewPosterBinding2 = dialogPreviewPosterBinding;
             if (dialogPreviewPosterBinding == null) {
                 Intrinsics.c("mBinding");
                 dialogPreviewPosterBinding2 = null;
             }
             dialogPreviewPosterBinding2.q.setVisibility(8);
-            DialogPreviewPosterBinding dialogPreviewPosterBinding3 = this.f17390a;
+            DialogPreviewPosterBinding dialogPreviewPosterBinding3 = this.a;
             if (dialogPreviewPosterBinding3 == null) {
                 Intrinsics.c("mBinding");
                 dialogPreviewPosterBinding3 = null;
@@ -140,7 +136,7 @@ public final class YYPreviewPosterDialog extends BaseFullScreenDialog {
             }
             YYThemeRankList yYThemeRankList = list.get(i2);
             if (i2 == 0) {
-                DialogPreviewPosterBinding dialogPreviewPosterBinding4 = this.f17390a;
+                DialogPreviewPosterBinding dialogPreviewPosterBinding4 = this.a;
                 DialogPreviewPosterBinding dialogPreviewPosterBinding5 = dialogPreviewPosterBinding4;
                 if (dialogPreviewPosterBinding4 == null) {
                     Intrinsics.c("mBinding");
@@ -148,7 +144,7 @@ public final class YYPreviewPosterDialog extends BaseFullScreenDialog {
                 }
                 TextView textView = dialogPreviewPosterBinding5.t;
                 Intrinsics.c(textView, "mBinding.tvFirstName");
-                DialogPreviewPosterBinding dialogPreviewPosterBinding6 = this.f17390a;
+                DialogPreviewPosterBinding dialogPreviewPosterBinding6 = this.a;
                 DialogPreviewPosterBinding dialogPreviewPosterBinding7 = dialogPreviewPosterBinding6;
                 if (dialogPreviewPosterBinding6 == null) {
                     Intrinsics.c("mBinding");
@@ -156,8 +152,8 @@ public final class YYPreviewPosterDialog extends BaseFullScreenDialog {
                 }
                 ShapeableImageView shapeableImageView = dialogPreviewPosterBinding7.k;
                 Intrinsics.c(shapeableImageView, "mBinding.imgUser1");
-                ShapeableImageView shapeableImageView2 = shapeableImageView;
-                DialogPreviewPosterBinding dialogPreviewPosterBinding8 = this.f17390a;
+                ImageView imageView = (ImageView) shapeableImageView;
+                DialogPreviewPosterBinding dialogPreviewPosterBinding8 = this.a;
                 DialogPreviewPosterBinding dialogPreviewPosterBinding9 = dialogPreviewPosterBinding8;
                 if (dialogPreviewPosterBinding8 == null) {
                     Intrinsics.c("mBinding");
@@ -165,9 +161,9 @@ public final class YYPreviewPosterDialog extends BaseFullScreenDialog {
                 }
                 TextView textView2 = dialogPreviewPosterBinding9.u;
                 Intrinsics.c(textView2, "mBinding.tvFirstUnit");
-                a(yYThemeRankList, textView, shapeableImageView2, textView2);
+                a(yYThemeRankList, textView, imageView, textView2);
             } else if (i2 == 1) {
-                DialogPreviewPosterBinding dialogPreviewPosterBinding10 = this.f17390a;
+                DialogPreviewPosterBinding dialogPreviewPosterBinding10 = this.a;
                 DialogPreviewPosterBinding dialogPreviewPosterBinding11 = dialogPreviewPosterBinding10;
                 if (dialogPreviewPosterBinding10 == null) {
                     Intrinsics.c("mBinding");
@@ -175,16 +171,16 @@ public final class YYPreviewPosterDialog extends BaseFullScreenDialog {
                 }
                 TextView textView3 = dialogPreviewPosterBinding11.w;
                 Intrinsics.c(textView3, "mBinding.tvSecondName");
-                DialogPreviewPosterBinding dialogPreviewPosterBinding12 = this.f17390a;
+                DialogPreviewPosterBinding dialogPreviewPosterBinding12 = this.a;
                 DialogPreviewPosterBinding dialogPreviewPosterBinding13 = dialogPreviewPosterBinding12;
                 if (dialogPreviewPosterBinding12 == null) {
                     Intrinsics.c("mBinding");
                     dialogPreviewPosterBinding13 = null;
                 }
-                ShapeableImageView shapeableImageView3 = dialogPreviewPosterBinding13.l;
-                Intrinsics.c(shapeableImageView3, "mBinding.imgUser2");
-                ShapeableImageView shapeableImageView4 = shapeableImageView3;
-                DialogPreviewPosterBinding dialogPreviewPosterBinding14 = this.f17390a;
+                ShapeableImageView shapeableImageView2 = dialogPreviewPosterBinding13.l;
+                Intrinsics.c(shapeableImageView2, "mBinding.imgUser2");
+                ImageView imageView2 = (ImageView) shapeableImageView2;
+                DialogPreviewPosterBinding dialogPreviewPosterBinding14 = this.a;
                 DialogPreviewPosterBinding dialogPreviewPosterBinding15 = dialogPreviewPosterBinding14;
                 if (dialogPreviewPosterBinding14 == null) {
                     Intrinsics.c("mBinding");
@@ -192,9 +188,9 @@ public final class YYPreviewPosterDialog extends BaseFullScreenDialog {
                 }
                 TextView textView4 = dialogPreviewPosterBinding15.x;
                 Intrinsics.c(textView4, "mBinding.tvSecondUnit");
-                a(yYThemeRankList, textView3, shapeableImageView4, textView4);
+                a(yYThemeRankList, textView3, imageView2, textView4);
             } else if (i2 == 2) {
-                DialogPreviewPosterBinding dialogPreviewPosterBinding16 = this.f17390a;
+                DialogPreviewPosterBinding dialogPreviewPosterBinding16 = this.a;
                 DialogPreviewPosterBinding dialogPreviewPosterBinding17 = dialogPreviewPosterBinding16;
                 if (dialogPreviewPosterBinding16 == null) {
                     Intrinsics.c("mBinding");
@@ -202,16 +198,16 @@ public final class YYPreviewPosterDialog extends BaseFullScreenDialog {
                 }
                 TextView textView5 = dialogPreviewPosterBinding17.y;
                 Intrinsics.c(textView5, "mBinding.tvThirdName");
-                DialogPreviewPosterBinding dialogPreviewPosterBinding18 = this.f17390a;
+                DialogPreviewPosterBinding dialogPreviewPosterBinding18 = this.a;
                 DialogPreviewPosterBinding dialogPreviewPosterBinding19 = dialogPreviewPosterBinding18;
                 if (dialogPreviewPosterBinding18 == null) {
                     Intrinsics.c("mBinding");
                     dialogPreviewPosterBinding19 = null;
                 }
-                ShapeableImageView shapeableImageView5 = dialogPreviewPosterBinding19.m;
-                Intrinsics.c(shapeableImageView5, "mBinding.imgUser3");
-                ShapeableImageView shapeableImageView6 = shapeableImageView5;
-                DialogPreviewPosterBinding dialogPreviewPosterBinding20 = this.f17390a;
+                ShapeableImageView shapeableImageView3 = dialogPreviewPosterBinding19.m;
+                Intrinsics.c(shapeableImageView3, "mBinding.imgUser3");
+                ImageView imageView3 = (ImageView) shapeableImageView3;
+                DialogPreviewPosterBinding dialogPreviewPosterBinding20 = this.a;
                 DialogPreviewPosterBinding dialogPreviewPosterBinding21 = dialogPreviewPosterBinding20;
                 if (dialogPreviewPosterBinding20 == null) {
                     Intrinsics.c("mBinding");
@@ -219,7 +215,7 @@ public final class YYPreviewPosterDialog extends BaseFullScreenDialog {
                 }
                 TextView textView6 = dialogPreviewPosterBinding21.z;
                 Intrinsics.c(textView6, "mBinding.tvThirdUnit");
-                a(yYThemeRankList, textView5, shapeableImageView6, textView6);
+                a(yYThemeRankList, textView5, imageView3, textView6);
             }
             i = i2 + 1;
         }
@@ -240,8 +236,8 @@ public final class YYPreviewPosterDialog extends BaseFullScreenDialog {
     }
 
     private final void f() {
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2);
-        List<YYShareAchievementModel> list = this.f17391c;
+        RecyclerView.LayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2);
+        List<YYShareAchievementModel> list = this.c;
         GridLayoutManager gridLayoutManager2 = gridLayoutManager;
         if (list != null) {
             Integer valueOf = list == null ? null : Integer.valueOf(list.size());
@@ -249,28 +245,28 @@ public final class YYPreviewPosterDialog extends BaseFullScreenDialog {
             gridLayoutManager2 = gridLayoutManager;
             if (valueOf.intValue() <= 1) {
                 GridLayoutManager gridLayoutManager3 = new GridLayoutManager(getContext(), 1);
-                DialogPreviewPosterBinding dialogPreviewPosterBinding = this.f17390a;
+                DialogPreviewPosterBinding dialogPreviewPosterBinding = this.a;
                 DialogPreviewPosterBinding dialogPreviewPosterBinding2 = dialogPreviewPosterBinding;
                 if (dialogPreviewPosterBinding == null) {
                     Intrinsics.c("mBinding");
                     dialogPreviewPosterBinding2 = null;
                 }
                 dialogPreviewPosterBinding2.n.setVisibility(4);
-                DialogPreviewPosterBinding dialogPreviewPosterBinding3 = this.f17390a;
+                DialogPreviewPosterBinding dialogPreviewPosterBinding3 = this.a;
                 DialogPreviewPosterBinding dialogPreviewPosterBinding4 = dialogPreviewPosterBinding3;
                 if (dialogPreviewPosterBinding3 == null) {
                     Intrinsics.c("mBinding");
                     dialogPreviewPosterBinding4 = null;
                 }
-                ViewGroup.LayoutParams layoutParams = dialogPreviewPosterBinding4.r.getLayoutParams();
+                ConstraintLayout.LayoutParams layoutParams = dialogPreviewPosterBinding4.r.getLayoutParams();
                 if (layoutParams == null) {
                     throw new NullPointerException("null cannot be cast to non-null type androidx.constraintlayout.widget.ConstraintLayout.LayoutParams");
                 }
-                ((ConstraintLayout.LayoutParams) layoutParams).width = -2;
+                layoutParams.width = -2;
                 gridLayoutManager2 = gridLayoutManager3;
             }
         }
-        DialogPreviewPosterBinding dialogPreviewPosterBinding5 = this.f17390a;
+        DialogPreviewPosterBinding dialogPreviewPosterBinding5 = this.a;
         DialogPreviewPosterBinding dialogPreviewPosterBinding6 = dialogPreviewPosterBinding5;
         if (dialogPreviewPosterBinding5 == null) {
             Intrinsics.c("mBinding");
@@ -278,30 +274,30 @@ public final class YYPreviewPosterDialog extends BaseFullScreenDialog {
         }
         dialogPreviewPosterBinding6.r.setLayoutManager(gridLayoutManager2);
         this.b = new AchievementAdapter();
-        DialogPreviewPosterBinding dialogPreviewPosterBinding7 = this.f17390a;
+        DialogPreviewPosterBinding dialogPreviewPosterBinding7 = this.a;
         DialogPreviewPosterBinding dialogPreviewPosterBinding8 = dialogPreviewPosterBinding7;
         if (dialogPreviewPosterBinding7 == null) {
             Intrinsics.c("mBinding");
             dialogPreviewPosterBinding8 = null;
         }
         RecyclerView recyclerView = dialogPreviewPosterBinding8.r;
-        AchievementAdapter achievementAdapter = this.b;
-        AchievementAdapter achievementAdapter2 = achievementAdapter;
-        if (achievementAdapter == null) {
+        RecyclerView.Adapter adapter = this.b;
+        AchievementAdapter achievementAdapter = adapter;
+        if (adapter == null) {
+            Intrinsics.c("mAdapter");
+            achievementAdapter = null;
+        }
+        recyclerView.setAdapter(achievementAdapter);
+        AchievementAdapter achievementAdapter2 = this.b;
+        if (achievementAdapter2 == null) {
             Intrinsics.c("mAdapter");
             achievementAdapter2 = null;
         }
-        recyclerView.setAdapter(achievementAdapter2);
-        AchievementAdapter achievementAdapter3 = this.b;
-        if (achievementAdapter3 == null) {
-            Intrinsics.c("mAdapter");
-            achievementAdapter3 = null;
-        }
-        achievementAdapter3.setNewData(this.f17391c);
+        achievementAdapter2.setNewData(this.c);
     }
 
     private final void g() {
-        DialogPreviewPosterBinding dialogPreviewPosterBinding = this.f17390a;
+        DialogPreviewPosterBinding dialogPreviewPosterBinding = this.a;
         DialogPreviewPosterBinding dialogPreviewPosterBinding2 = dialogPreviewPosterBinding;
         if (dialogPreviewPosterBinding == null) {
             Intrinsics.c("mBinding");
@@ -320,7 +316,7 @@ public final class YYPreviewPosterDialog extends BaseFullScreenDialog {
                 outline.setRoundRect(0, 0, view.getWidth(), view.getHeight(), DensityUtils.a(yYPreviewPosterDialog.getContext(), 12.0f));
             }
         });
-        DialogPreviewPosterBinding dialogPreviewPosterBinding3 = this.f17390a;
+        DialogPreviewPosterBinding dialogPreviewPosterBinding3 = this.a;
         if (dialogPreviewPosterBinding3 == null) {
             Intrinsics.c("mBinding");
             dialogPreviewPosterBinding3 = null;
@@ -329,45 +325,45 @@ public final class YYPreviewPosterDialog extends BaseFullScreenDialog {
     }
 
     private final void h() {
-        DialogPreviewPosterBinding dialogPreviewPosterBinding = this.f17390a;
+        DialogPreviewPosterBinding dialogPreviewPosterBinding = this.a;
         DialogPreviewPosterBinding dialogPreviewPosterBinding2 = dialogPreviewPosterBinding;
         if (dialogPreviewPosterBinding == null) {
             Intrinsics.c("mBinding");
             dialogPreviewPosterBinding2 = null;
         }
-        Bitmap a2 = BitmapUtils.a(dialogPreviewPosterBinding2.p, Bitmap.Config.ARGB_8888);
+        Bitmap a = BitmapUtils.a(dialogPreviewPosterBinding2.p, Bitmap.Config.ARGB_8888);
         StringBuilder sb = new StringBuilder();
         FragmentActivity activity = getActivity();
         sb.append(activity == null ? null : activity.getFilesDir());
         sb.append('/');
         sb.append(System.currentTimeMillis());
         sb.append(".png");
-        YYRoomInfoManager.e().c().a(getContext(), "", BitmapUtils.a(sb.toString(), a2, 100, true).getPath());
+        YYRoomInfoManager.e().c().a(getContext(), "", BitmapUtils.a(sb.toString(), a, 100, true).getPath());
     }
 
     public final void a(List<YYShareAchievementModel> list, YYThemeActivityInfo yYThemeActivityInfo, List<YYThemeRankList> list2, YYEventsThemeModel yYEventsThemeModel) {
-        this.f17391c = list;
+        this.c = list;
         this.e = yYThemeActivityInfo;
         this.d = list2;
         this.f = yYEventsThemeModel;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
         View inflate = LayoutInflater.from(getContext()).inflate(R.layout.dialog_preview_poster, (ViewGroup) null);
-        DialogPreviewPosterBinding a2 = DialogPreviewPosterBinding.a(inflate);
-        Intrinsics.c(a2, "bind(view)");
-        this.f17390a = a2;
+        DialogPreviewPosterBinding a = DialogPreviewPosterBinding.a(inflate);
+        Intrinsics.c(a, "bind(view)");
+        this.a = a;
         YYThemeActivityInfo yYThemeActivityInfo = this.e;
         if (yYThemeActivityInfo != null) {
-            DialogPreviewPosterBinding dialogPreviewPosterBinding = a2;
-            if (a2 == null) {
+            DialogPreviewPosterBinding dialogPreviewPosterBinding = a;
+            if (a == null) {
                 Intrinsics.c("mBinding");
                 dialogPreviewPosterBinding = null;
             }
             dialogPreviewPosterBinding.A.setText(yYThemeActivityInfo.getName());
-            DialogPreviewPosterBinding dialogPreviewPosterBinding2 = this.f17390a;
+            DialogPreviewPosterBinding dialogPreviewPosterBinding2 = this.a;
             if (dialogPreviewPosterBinding2 == null) {
                 Intrinsics.c("mBinding");
                 dialogPreviewPosterBinding2 = null;
@@ -380,11 +376,11 @@ public final class YYPreviewPosterDialog extends BaseFullScreenDialog {
         return inflate;
     }
 
-    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment
     public void onViewCreated(View view, Bundle bundle) {
         Intrinsics.e(view, "view");
         super.onViewCreated(view, bundle);
-        DialogPreviewPosterBinding dialogPreviewPosterBinding = this.f17390a;
+        DialogPreviewPosterBinding dialogPreviewPosterBinding = this.a;
         DialogPreviewPosterBinding dialogPreviewPosterBinding2 = dialogPreviewPosterBinding;
         if (dialogPreviewPosterBinding == null) {
             Intrinsics.c("mBinding");
@@ -396,24 +392,24 @@ public final class YYPreviewPosterDialog extends BaseFullScreenDialog {
                 YYPreviewPosterDialog.a(YYPreviewPosterDialog.this, view2);
             }
         });
-        DialogPreviewPosterBinding dialogPreviewPosterBinding3 = this.f17390a;
+        DialogPreviewPosterBinding dialogPreviewPosterBinding3 = this.a;
         DialogPreviewPosterBinding dialogPreviewPosterBinding4 = dialogPreviewPosterBinding3;
         if (dialogPreviewPosterBinding3 == null) {
             Intrinsics.c("mBinding");
             dialogPreviewPosterBinding4 = null;
         }
-        dialogPreviewPosterBinding4.f16379a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYPreviewPosterDialog$VrGDQ7QtnRX83ml11030Yeed9og
+        dialogPreviewPosterBinding4.a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYPreviewPosterDialog$VrGDQ7QtnRX83ml11030Yeed9og
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 YYPreviewPosterDialog.b(YYPreviewPosterDialog.this, view2);
             }
         });
-        DialogPreviewPosterBinding dialogPreviewPosterBinding5 = this.f17390a;
+        DialogPreviewPosterBinding dialogPreviewPosterBinding5 = this.a;
         if (dialogPreviewPosterBinding5 == null) {
             Intrinsics.c("mBinding");
             dialogPreviewPosterBinding5 = null;
         }
-        dialogPreviewPosterBinding5.f16380c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYPreviewPosterDialog$2u5Oo-C2yMorK8sB3WpAL8Ed6eA
+        dialogPreviewPosterBinding5.c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYPreviewPosterDialog$2u5Oo-C2yMorK8sB3WpAL8Ed6eA
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 YYPreviewPosterDialog.c(YYPreviewPosterDialog.this, view2);

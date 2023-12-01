@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
+import android.widget.AbsListView;
 import android.widget.LinearLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -33,11 +34,11 @@ import java.util.List;
 public class LiveListHotFragment extends MvpFragment<LiveListHotPresenter> implements LiveListPositionObserver.ILiveListPositionObserver, LiveTabNewObserver.ILiveTabRefreshObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    public Context f31201a;
+    public Context f17511a;
     public LiveListAdapter b;
 
     /* renamed from: c  reason: collision with root package name */
-    public PauseOnScrollListener f31202c;
+    public PauseOnScrollListener f17512c;
     private String d = "0";
     private int e = 0;
     private boolean f = true;
@@ -51,7 +52,7 @@ public class LiveListHotFragment extends MvpFragment<LiveListHotPresenter> imple
 
     private void A() {
         if (this.grid_view.getLayoutManager() == null) {
-            GridLayoutManager gridLayoutManager = new GridLayoutManager(this.f31201a, 6);
+            GridLayoutManager gridLayoutManager = new GridLayoutManager(this.f17511a, 6);
             this.grid_view.setLayoutManager(gridLayoutManager);
             gridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() { // from class: com.soft.blued.ui.live.fragment.LiveListHotFragment.4
                 /* JADX WARN: Code restructure failed: missing block: B:9:0x0032, code lost:
@@ -112,7 +113,7 @@ public class LiveListHotFragment extends MvpFragment<LiveListHotPresenter> imple
 
     private void b(List<BluedLiveListData> list) {
         if (list != null) {
-            this.b.a(((Boolean) TypeUtils.a(Boolean.valueOf(j().o()))).booleanValue());
+            this.b.a(((Boolean) TypeUtils.a(Boolean.valueOf(((LiveListHotPresenter) j()).o()))).booleanValue());
             this.b.setNewData(list);
         }
         if (this.b.getData().size() > 0) {
@@ -126,7 +127,7 @@ public class LiveListHotFragment extends MvpFragment<LiveListHotPresenter> imple
     }
 
     private void y() {
-        this.f31202c = new PauseOnScrollListener(false, true);
+        this.f17512c = new PauseOnScrollListener(false, true);
     }
 
     private void z() {
@@ -134,7 +135,7 @@ public class LiveListHotFragment extends MvpFragment<LiveListHotPresenter> imple
         this.refresh_view.b((OnMultiPurposeListener) new SimpleMultiPurposeListener() { // from class: com.soft.blued.ui.live.fragment.LiveListHotFragment.1
             @Override // com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener, com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
             public void onLoadMore(RefreshLayout refreshLayout) {
-                LiveListHotFragment.this.j().f();
+                ((LiveListHotPresenter) LiveListHotFragment.this.j()).f();
             }
 
             @Override // com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener, com.scwang.smartrefresh.layout.listener.OnRefreshListener
@@ -146,7 +147,7 @@ public class LiveListHotFragment extends MvpFragment<LiveListHotPresenter> imple
             public void onScrollStateChanged(RecyclerView recyclerView, int i) {
                 super.onScrollStateChanged(recyclerView, i);
                 if (LiveListHotFragment.this.g) {
-                    LiveListHotFragment.this.f31202c.onScrollStateChanged(null, i);
+                    LiveListHotFragment.this.f17512c.onScrollStateChanged((AbsListView) null, i);
                     if (i == 0) {
                         if (LiveListHotFragment.this.b != null) {
                             LiveListHotFragment.this.b.c(false);
@@ -166,7 +167,7 @@ public class LiveListHotFragment extends MvpFragment<LiveListHotPresenter> imple
                 LiveHotViewScrollObserver.a().a(recyclerView, i, i2);
             }
         });
-        LiveListAdapter liveListAdapter = new LiveListAdapter(getFragmentActive(), this.f31201a, true, 1, this.d);
+        LiveListAdapter liveListAdapter = new LiveListAdapter(getFragmentActive(), this.f17511a, true, 1, this.d);
         this.b = liveListAdapter;
         this.grid_view.setAdapter(liveListAdapter);
         postDelaySafeRunOnUiThread(new Runnable() { // from class: com.soft.blued.ui.live.fragment.LiveListHotFragment.3
@@ -177,7 +178,6 @@ public class LiveListHotFragment extends MvpFragment<LiveListHotPresenter> imple
         }, 300L);
     }
 
-    @Override // com.blued.android.module.live_china.observer.LiveListPositionObserver.ILiveListPositionObserver
     public void a(int i, long j) {
         int i2;
         Logger.a("rrb", "notifyLiveListPosition = ", Integer.valueOf(i), "-- sessionId = ", Long.valueOf(j));
@@ -209,7 +209,6 @@ public class LiveListHotFragment extends MvpFragment<LiveListHotPresenter> imple
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public void a(Bundle bundle) {
         super.a(bundle);
         z();
@@ -218,7 +217,6 @@ public class LiveListHotFragment extends MvpFragment<LiveListHotPresenter> imple
         this.g = true;
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void a(String str, boolean z) {
         super.a(str, z);
         Log.i("xpm", "dismissDataLoading");
@@ -235,7 +233,6 @@ public class LiveListHotFragment extends MvpFragment<LiveListHotPresenter> imple
         b(list);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public void af_() {
         super.af_();
         this.g = false;
@@ -243,7 +240,6 @@ public class LiveListHotFragment extends MvpFragment<LiveListHotPresenter> imple
         LiveListPositionObserver.a().b(this);
     }
 
-    @Override // com.blued.android.module.live_china.observer.LiveTabNewObserver.ILiveTabRefreshObserver
     public void ag_() {
         if (this.g && this.grid_view.getLayoutManager() != null) {
             this.grid_view.getLayoutManager().scrollToPosition(0);
@@ -259,47 +255,40 @@ public class LiveListHotFragment extends MvpFragment<LiveListHotPresenter> imple
         this.refresh_view.l(true);
     }
 
-    @Override // com.blued.android.module.live_china.observer.LiveTabNewObserver.ILiveTabRefreshObserver
     public void d() {
         if (this.f) {
             Log.i("xpm", "notifyLiveDataRefresh");
-            j().e();
+            ((LiveListHotPresenter) j()).e();
         }
     }
 
-    @Override // com.blued.android.module.live_china.observer.LiveTabNewObserver.ILiveTabRefreshObserver
     public void e() {
         if (this.g && !this.grid_view.canScrollVertically(-1)) {
             this.grid_view.stopScroll();
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public int g() {
         return R.layout.fragment_live_list_tabpage;
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void g_(String str) {
         super.g_(str);
         Log.i("xpm", "showDataLoading");
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void o() {
         super.o();
         Log.i("xpm", "enableLoadMore");
         c();
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        this.f31201a = getContext();
+        this.f17511a = getContext();
         y();
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
         this.g = false;
@@ -307,19 +296,16 @@ public class LiveListHotFragment extends MvpFragment<LiveListHotPresenter> imple
         LiveListPositionObserver.a().b(this);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void p() {
         super.p();
         Log.i("xpm", "disableLoadMore");
         v();
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public boolean q() {
         return true;
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void setUserVisibleHint(boolean z) {
         super.setUserVisibleHint(z);
         this.f = z;

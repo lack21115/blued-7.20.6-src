@@ -16,7 +16,6 @@ import com.blued.android.module.common.url.BluedHttpUrl;
 import com.blued.android.module.live.base.manager.YYMusicManager;
 import com.blued.android.module.live.base.music.model.YYKtvMusicExtra;
 import com.blued.android.module.live.base.music.model.YYKtvMusicModel;
-import com.tencent.txcopyrightedmedia.TXCopyrightedMedia;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -26,13 +25,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/live/base/music/YYBackgroundItemViewModel.class */
 public final class YYBackgroundItemViewModel extends BaseViewModel {
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f11434a;
+    private String a;
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f11435c;
+    private int c;
     private boolean d;
     private String e;
     private String f;
@@ -104,7 +99,7 @@ public final class YYBackgroundItemViewModel extends BaseViewModel {
             a(str, o(), bluedUIHttpResponse, activityFragmentActive);
             return;
         }
-        String str2 = this.f11434a;
+        String str2 = this.a;
         if (str2 == null) {
             return;
         }
@@ -122,7 +117,7 @@ public final class YYBackgroundItemViewModel extends BaseViewModel {
         }
         a(bundle.getString("sheetId", "0"));
         this.b = bundle.getString("collectId", "");
-        this.f11435c = bundle.getInt("isPersonal", 0);
+        this.c = bundle.getInt("isPersonal", 0);
         c(bundle.getBoolean("searchPage", false));
         b(bundle.getString("roomId", ""));
     }
@@ -131,14 +126,14 @@ public final class YYBackgroundItemViewModel extends BaseViewModel {
         Intrinsics.e(fragmentActive, "fragmentActive");
         if (this.d && !TextUtils.isEmpty(this.e)) {
             a(true, fragmentActive);
-        } else if (TextUtils.isEmpty(this.f11434a)) {
+        } else if (TextUtils.isEmpty(this.a)) {
         } else {
             a(false, fragmentActive);
         }
     }
 
     public final void a(String str) {
-        this.f11434a = str;
+        this.a = str;
     }
 
     public final void a(String str, ActivityFragmentActive fragmentActive) {
@@ -154,37 +149,37 @@ public final class YYBackgroundItemViewModel extends BaseViewModel {
     public final void a(String keyword, String token, BluedUIHttpResponse<?> bluedUIHttpResponse, ActivityFragmentActive activityFragmentActive) {
         Intrinsics.e(keyword, "keyword");
         Intrinsics.e(token, "token");
-        String a2 = Intrinsics.a(BluedHttpUrl.q(), (Object) "/users/chatroom/ktv/search");
+        String a = Intrinsics.a(BluedHttpUrl.q(), (Object) "/users/chatroom/ktv/search");
         Map<String, String> params = BluedHttpTools.a();
         Intrinsics.c(params, "params");
         params.put("KeyWord", keyword);
         params.put("ScrollToken", token);
         params.put("is_background", "1");
-        if (YYMusicManager.f11418a.c().c()) {
+        if (YYMusicManager.a.c().c()) {
             params.put("source_type", "1");
-            params.put("live_submitted_uid", YYMusicManager.f11418a.c().d());
-            params.put("live_submitted_room_id", YYMusicManager.f11418a.c().e());
+            params.put("live_submitted_uid", YYMusicManager.a.c().d());
+            params.put("live_submitted_room_id", YYMusicManager.a.c().e());
         }
-        HttpManager.a(a2, bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(params).h();
+        HttpManager.a(a, bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(params).h();
     }
 
     public final void a(String PlaylistId, String token, String RoomId, BluedUIHttpResponse<?> bluedUIHttpResponse, ActivityFragmentActive activityFragmentActive) {
         Intrinsics.e(PlaylistId, "PlaylistId");
         Intrinsics.e(token, "token");
         Intrinsics.e(RoomId, "RoomId");
-        String a2 = Intrinsics.a(BluedHttpUrl.q(), (Object) "/users/chatroom/ktv/musiclist");
+        String a = Intrinsics.a(BluedHttpUrl.q(), (Object) "/users/chatroom/ktv/musiclist");
         Map<String, String> params = BluedHttpTools.a();
         Intrinsics.c(params, "params");
         params.put("PlaylistId", PlaylistId);
         params.put("ScrollToken", token);
-        params.put(TXCopyrightedMedia.EXT_INFO_ROOM_ID, RoomId);
+        params.put("RoomId", RoomId);
         params.put("is_background", "1");
-        if (YYMusicManager.f11418a.c().c()) {
+        if (YYMusicManager.a.c().c()) {
             params.put("source_type", "1");
-            params.put("live_submitted_uid", YYMusicManager.f11418a.c().d());
-            params.put("live_submitted_room_id", YYMusicManager.f11418a.c().e());
+            params.put("live_submitted_uid", YYMusicManager.a.c().d());
+            params.put("live_submitted_room_id", YYMusicManager.a.c().e());
         }
-        HttpManager.a(a2, bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(params).h();
+        HttpManager.a(a, bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(params).h();
     }
 
     public final void b(ActivityFragmentActive fragmentActive) {
@@ -192,7 +187,7 @@ public final class YYBackgroundItemViewModel extends BaseViewModel {
         this.o = "";
         if (this.d && !TextUtils.isEmpty(this.e)) {
             a(true, fragmentActive);
-        } else if (TextUtils.isEmpty(this.f11434a)) {
+        } else if (TextUtils.isEmpty(this.a)) {
         } else {
             a(false, fragmentActive);
         }
@@ -212,7 +207,7 @@ public final class YYBackgroundItemViewModel extends BaseViewModel {
     }
 
     public final String d() {
-        return this.f11434a;
+        return this.a;
     }
 
     public final boolean e() {

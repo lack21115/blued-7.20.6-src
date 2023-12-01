@@ -17,11 +17,11 @@ import com.soft.blued.ui.user.views.VipGradeProgress;
 public final class FragmentVipLevelPrivilegeBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final FrameLayout f29025a;
+    public final FrameLayout f15335a;
     public final LinearLayout b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final ImageView f29026c;
+    public final ImageView f15336c;
     public final ImageView d;
     public final ImageView e;
     public final ImageView f;
@@ -43,9 +43,9 @@ public final class FragmentVipLevelPrivilegeBinding implements ViewBinding {
 
     private FragmentVipLevelPrivilegeBinding(FrameLayout frameLayout, FrameLayout frameLayout2, LinearLayout linearLayout, ImageView imageView, ImageView imageView2, ImageView imageView3, ImageView imageView4, ImageView imageView5, ImageView imageView6, ImageView imageView7, VipGradeProgress vipGradeProgress, ShapeLinearLayout shapeLinearLayout, RecyclerView recyclerView, HorizontalScrollView horizontalScrollView, CommonTopTitleNoTrans commonTopTitleNoTrans, TextView textView, TextView textView2, TextView textView3, TextView textView4, TextView textView5, TextView textView6) {
         this.u = frameLayout;
-        this.f29025a = frameLayout2;
+        this.f15335a = frameLayout2;
         this.b = linearLayout;
-        this.f29026c = imageView;
+        this.f15336c = imageView;
         this.d = imageView2;
         this.e = imageView3;
         this.f = imageView4;
@@ -69,9 +69,9 @@ public final class FragmentVipLevelPrivilegeBinding implements ViewBinding {
         String str;
         FrameLayout frameLayout = (FrameLayout) view.findViewById(R.id.buy_btn);
         if (frameLayout != null) {
-            LinearLayout linearLayout = (LinearLayout) view.findViewById(2131364224);
+            LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.header);
             if (linearLayout != null) {
-                ImageView imageView = (ImageView) view.findViewById(2131365126);
+                ImageView imageView = (ImageView) view.findViewById(R.id.iv_bg);
                 if (imageView != null) {
                     ImageView imageView2 = (ImageView) view.findViewById(R.id.iv_buy_btn);
                     if (imageView2 != null) {
@@ -79,35 +79,35 @@ public final class FragmentVipLevelPrivilegeBinding implements ViewBinding {
                         if (imageView3 != null) {
                             ImageView imageView4 = (ImageView) view.findViewById(R.id.iv_header_bg);
                             if (imageView4 != null) {
-                                ImageView imageView5 = (ImageView) view.findViewById(2131365773);
+                                ImageView imageView5 = (ImageView) view.findViewById(R.id.iv_question);
                                 if (imageView5 != null) {
-                                    ImageView imageView6 = (ImageView) view.findViewById(2131366006);
+                                    ImageView imageView6 = (ImageView) view.findViewById(R.id.iv_user_avatar);
                                     if (imageView6 != null) {
                                         ImageView imageView7 = (ImageView) view.findViewById(R.id.iv_vip_gradle);
                                         if (imageView7 != null) {
-                                            VipGradeProgress vipGradeProgress = (VipGradeProgress) view.findViewById(2131368972);
+                                            VipGradeProgress vipGradeProgress = (VipGradeProgress) view.findViewById(R.id.progress);
                                             if (vipGradeProgress != null) {
-                                                ShapeLinearLayout shapeLinearLayout = (ShapeLinearLayout) view.findViewById(R.id.recycler_parent_view);
-                                                if (shapeLinearLayout != null) {
+                                                ShapeLinearLayout findViewById = view.findViewById(R.id.recycler_parent_view);
+                                                if (findViewById != null) {
                                                     RecyclerView recyclerView = (RecyclerView) view.findViewById(2131369105);
                                                     if (recyclerView != null) {
-                                                        HorizontalScrollView horizontalScrollView = (HorizontalScrollView) view.findViewById(2131369645);
+                                                        HorizontalScrollView horizontalScrollView = (HorizontalScrollView) view.findViewById(R.id.scroll_view);
                                                         if (horizontalScrollView != null) {
-                                                            CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) view.findViewById(2131370694);
-                                                            if (commonTopTitleNoTrans != null) {
+                                                            CommonTopTitleNoTrans findViewById2 = view.findViewById(2131370694);
+                                                            if (findViewById2 != null) {
                                                                 TextView textView = (TextView) view.findViewById(R.id.tv_buy_btn);
                                                                 if (textView != null) {
                                                                     TextView textView2 = (TextView) view.findViewById(R.id.tv_current_exp);
                                                                     if (textView2 != null) {
-                                                                        TextView textView3 = (TextView) view.findViewById(2131372302);
+                                                                        TextView textView3 = (TextView) view.findViewById(R.id.tv_privilege_title);
                                                                         if (textView3 != null) {
                                                                             TextView textView4 = (TextView) view.findViewById(R.id.tv_today_exp);
                                                                             if (textView4 != null) {
                                                                                 TextView textView5 = (TextView) view.findViewById(R.id.tv_upgrade_need_exp);
                                                                                 if (textView5 != null) {
-                                                                                    TextView textView6 = (TextView) view.findViewById(2131372879);
+                                                                                    TextView textView6 = (TextView) view.findViewById(R.id.tv_user_name);
                                                                                     if (textView6 != null) {
-                                                                                        return new FragmentVipLevelPrivilegeBinding((FrameLayout) view, frameLayout, linearLayout, imageView, imageView2, imageView3, imageView4, imageView5, imageView6, imageView7, vipGradeProgress, shapeLinearLayout, recyclerView, horizontalScrollView, commonTopTitleNoTrans, textView, textView2, textView3, textView4, textView5, textView6);
+                                                                                        return new FragmentVipLevelPrivilegeBinding((FrameLayout) view, frameLayout, linearLayout, imageView, imageView2, imageView3, imageView4, imageView5, imageView6, imageView7, vipGradeProgress, findViewById, recyclerView, horizontalScrollView, findViewById2, textView, textView2, textView3, textView4, textView5, textView6);
                                                                                     }
                                                                                     str = "tvUserName";
                                                                                 } else {

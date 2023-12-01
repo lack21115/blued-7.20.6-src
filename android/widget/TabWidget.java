@@ -24,15 +24,13 @@ public class TabWidget extends LinearLayout implements View.OnFocusChangeListene
     private OnTabSelectionChanged mSelectionChangedListener;
     private boolean mStripMoved;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-4181928-dex2jar.jar:android/widget/TabWidget$OnTabSelectionChanged.class */
-    public interface OnTabSelectionChanged {
+    interface OnTabSelectionChanged {
         void onTabSelectionChanged(int i, boolean z);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: source-4181928-dex2jar.jar:android/widget/TabWidget$TabClickListener.class */
-    public class TabClickListener implements View.OnClickListener {
+    private class TabClickListener implements View.OnClickListener {
         private final int mTabIndex;
 
         private TabClickListener(int i) {
@@ -50,7 +48,7 @@ public class TabWidget extends LinearLayout implements View.OnFocusChangeListene
     }
 
     public TabWidget(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, 16842883);
+        this(context, attributeSet, R.attr.tabWidgetStyle);
     }
 
     public TabWidget(Context context, AttributeSet attributeSet, int i) {

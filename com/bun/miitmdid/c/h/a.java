@@ -7,7 +7,7 @@ import android.net.Uri;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Uri f21145a = Uri.parse("content://cn.nubia.identity/identity");
+    private static Uri f7539a = Uri.parse("content://cn.nubia.identity/identity");
 
     public static native String a(Context context);
 

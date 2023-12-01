@@ -241,7 +241,7 @@ public final class n {
                                 throw th;
                             }
                         }
-                        Iterator<E> it = hashSet.iterator();
+                        Iterator it = hashSet.iterator();
                         while (true) {
                             z = z2;
                             if (!it.hasNext()) {

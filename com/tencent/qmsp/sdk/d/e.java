@@ -15,22 +15,22 @@ import java.security.spec.X509EncodedKeySpec;
 public class e {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final byte[] f38594a = {8, 89, -108, 70, 3, 26, 39, -38, 6, 67, -94, 103, 29, 18, 117, -82, 1, 65, -106, 98, 15, 10, 66, -36, 4, 36, -108, 110, 15, 31, 84, -33, 44, 65, -104, 98, 41, 10, 83, -48, 63, 32, -108, 73, 5, 42, 66, -52, 43, 96, -67, 83, 13, 51, 34, -18, 52, 73, -65, 118, 10, 54, 92, -12, 116, 105, -71, 105, 13, 21, 124, -10, 3, 114, -87, 97, 43, 15, 118, -54, 35, 63, -93, 101, 0, 48, 66, -55, 17, 33, -22, 108, 11, 99, 81, -54, 43, 36, -21, 99, 120, 104, 66, -46, 6, 88, -126, 85, 27, 61, 33, -86, 52, 105, -76, 99, 8, 14, 86, -19, 18, 37, -8, 18, 126, 12, 83, -88, 22, 113, -80, 98, 40, 63, 109, -16, 48, 118, -68, 72, 45, 24, 86, -25, 35, 88, -28, 106, 123, 33, 114, -45, 117, 81, -94, 111, 3, 60, 120, -86, 110, 123, -28, 105, 101, 52, 94, -19, 31, 97, -67, 104, 3, 41, 117, -84, 51, 82, -65, 86, 6, 57, 60, -86, 124, 115, -89, 23, 30, 11, 60, -39, 52, 67, -125, 66, 36, 41, 60, -7, 20, 69, -80, 111, 120, 41, 89, -10, 47, 103, -102, 100, 15, 10, 86, -33};
+    private static final byte[] f24903a = {8, 89, -108, 70, 3, 26, 39, -38, 6, 67, -94, 103, 29, 18, 117, -82, 1, 65, -106, 98, 15, 10, 66, -36, 4, 36, -108, 110, 15, 31, 84, -33, 44, 65, -104, 98, 41, 10, 83, -48, 63, 32, -108, 73, 5, 42, 66, -52, 43, 96, -67, 83, 13, 51, 34, -18, 52, 73, -65, 118, 10, 54, 92, -12, 116, 105, -71, 105, 13, 21, 124, -10, 3, 114, -87, 97, 43, 15, 118, -54, 35, 63, -93, 101, 0, 48, 66, -55, 17, 33, -22, 108, 11, 99, 81, -54, 43, 36, -21, 99, 120, 104, 66, -46, 6, 88, -126, 85, 27, 61, 33, -86, 52, 105, -76, 99, 8, 14, 86, -19, 18, 37, -8, 18, 126, 12, 83, -88, 22, 113, -80, 98, 40, 63, 109, -16, 48, 118, -68, 72, 45, 24, 86, -25, 35, 88, -28, 106, 123, 33, 114, -45, 117, 81, -94, 111, 3, 60, 120, -86, 110, 123, -28, 105, 101, 52, 94, -19, 31, 97, -67, 104, 3, 41, 117, -84, 51, 82, -65, 86, 6, 57, 60, -86, 124, 115, -89, 23, 30, 11, 60, -39, 52, 67, -125, 66, 36, 41, 60, -7, 20, 69, -80, 111, 120, 41, 89, -10, 47, 103, -102, 100, 15, 10, 86, -33};
     private static final byte[] b = {8, 84, -26, 87, 39, 47, Byte.MAX_VALUE, -49, 22, 81};
 
     /* renamed from: c  reason: collision with root package name */
-    private static final byte[] f38595c = {23, 67, -110};
+    private static final byte[] f24904c = {23, 67, -110};
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/qmsp/sdk/d/e$b.class */
     public static class b {
 
         /* renamed from: a  reason: collision with root package name */
-        public int f38596a;
+        public int f24905a;
         public int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public int f38597c;
+        public int f24906c;
         public byte[] d;
 
         private b() {
@@ -40,13 +40,13 @@ public class e {
     public static b a(DataInputStream dataInputStream) {
         b bVar = new b();
         try {
-            bVar.f38596a = dataInputStream.readInt();
+            bVar.f24905a = dataInputStream.readInt();
             bVar.b = dataInputStream.readInt();
-            bVar.f38597c = dataInputStream.readInt();
-            if (bVar.f38597c <= 0 || bVar.f38597c > 256) {
+            bVar.f24906c = dataInputStream.readInt();
+            if (bVar.f24906c <= 0 || bVar.f24906c > 256) {
                 return null;
             }
-            bVar.d = new byte[bVar.f38597c];
+            bVar.d = new byte[bVar.f24906c];
             dataInputStream.read(bVar.d);
             return bVar;
         } catch (IOException e) {
@@ -58,10 +58,10 @@ public class e {
     private static PublicKey a(String str) {
         String str2 = str;
         if (str == null) {
-            str2 = h.a(f38594a);
+            str2 = h.a(f24903a);
         }
         try {
-            return KeyFactory.getInstance(h.a(f38595c)).generatePublic(new X509EncodedKeySpec(Base64.decode(str2, 0)));
+            return KeyFactory.getInstance(h.a(f24904c)).generatePublic(new X509EncodedKeySpec(Base64.decode(str2, 0)));
         } catch (Exception e) {
             e.printStackTrace();
             return null;

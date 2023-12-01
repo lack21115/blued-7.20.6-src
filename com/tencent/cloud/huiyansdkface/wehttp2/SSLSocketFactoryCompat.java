@@ -14,7 +14,7 @@ import javax.net.ssl.SSLSocketFactory;
 public class SSLSocketFactoryCompat extends SSLSocketFactory {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String[] f36108a = {"TLSv1.2"};
+    private static final String[] f22417a = {"TLSv1.2"};
     private final SSLSocketFactory b;
 
     public SSLSocketFactoryCompat() throws KeyManagementException, NoSuchAlgorithmException {
@@ -32,7 +32,7 @@ public class SSLSocketFactoryCompat extends SSLSocketFactory {
 
     private Socket a(Socket socket) {
         if (Build.VERSION.SDK_INT >= 16 && Build.VERSION.SDK_INT < 20 && (socket instanceof SSLSocket)) {
-            ((SSLSocket) socket).setEnabledProtocols(f36108a);
+            ((SSLSocket) socket).setEnabledProtocols(f22417a);
         }
         return socket;
     }

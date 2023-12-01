@@ -8,24 +8,24 @@ import com.opos.exoplayer.core.drm.DrmInitData;
 public final class l implements h {
 
     /* renamed from: a  reason: collision with root package name */
-    private final com.opos.exoplayer.core.i.m f25210a = new com.opos.exoplayer.core.i.m(10);
+    private final com.opos.exoplayer.core.i.m f11522a = new com.opos.exoplayer.core.i.m(10);
     private com.opos.exoplayer.core.c.n b;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f25211c;
+    private boolean f11523c;
     private long d;
     private int e;
     private int f;
 
     @Override // com.opos.exoplayer.core.c.f.h
     public void a() {
-        this.f25211c = false;
+        this.f11523c = false;
     }
 
     @Override // com.opos.exoplayer.core.c.f.h
     public void a(long j, boolean z) {
         if (z) {
-            this.f25211c = true;
+            this.f11523c = true;
             this.d = j;
             this.e = 0;
             this.f = 0;
@@ -42,21 +42,21 @@ public final class l implements h {
 
     @Override // com.opos.exoplayer.core.c.f.h
     public void a(com.opos.exoplayer.core.i.m mVar) {
-        if (this.f25211c) {
+        if (this.f11523c) {
             int b = mVar.b();
             int i = this.f;
             if (i < 10) {
                 int min = Math.min(b, 10 - i);
-                System.arraycopy((Object) mVar.f25496a, mVar.d(), (Object) this.f25210a.f25496a, this.f, min);
+                System.arraycopy(mVar.f11808a, mVar.d(), this.f11522a.f11808a, this.f, min);
                 if (min + this.f == 10) {
-                    this.f25210a.c(0);
-                    if (73 != this.f25210a.g() || 68 != this.f25210a.g() || 51 != this.f25210a.g()) {
+                    this.f11522a.c(0);
+                    if (73 != this.f11522a.g() || 68 != this.f11522a.g() || 51 != this.f11522a.g()) {
                         com.opos.cmn.an.f.a.c("Id3Reader", "Discarding invalid ID3 tag");
-                        this.f25211c = false;
+                        this.f11523c = false;
                         return;
                     }
-                    this.f25210a.d(3);
-                    this.e = this.f25210a.t() + 10;
+                    this.f11522a.d(3);
+                    this.e = this.f11522a.t() + 10;
                 }
             }
             int min2 = Math.min(b, this.e - this.f);
@@ -68,9 +68,9 @@ public final class l implements h {
     @Override // com.opos.exoplayer.core.c.f.h
     public void b() {
         int i;
-        if (this.f25211c && (i = this.e) != 0 && this.f == i) {
+        if (this.f11523c && (i = this.e) != 0 && this.f == i) {
             this.b.a(this.d, 1, i, 0, null);
-            this.f25211c = false;
+            this.f11523c = false;
         }
     }
 }

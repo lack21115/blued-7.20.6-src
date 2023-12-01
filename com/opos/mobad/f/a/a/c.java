@@ -13,11 +13,11 @@ import java.util.concurrent.TimeUnit;
 public class c<T extends n> extends com.opos.mobad.l.j implements m, n, o {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f26022a;
+    private String f12334a;
     private T b;
 
     /* renamed from: c  reason: collision with root package name */
-    private volatile T f26023c;
+    private volatile T f12335c;
     private volatile boolean d;
     private volatile boolean g;
     private a<T> h;
@@ -36,7 +36,7 @@ public class c<T extends n> extends com.opos.mobad.l.j implements m, n, o {
         super(null);
         this.d = false;
         this.g = false;
-        this.f26022a = str;
+        this.f12334a = str;
         this.i = i;
         this.h = aVar;
         this.b = q();
@@ -68,7 +68,7 @@ public class c<T extends n> extends com.opos.mobad.l.j implements m, n, o {
         int i2 = 0;
         int i3 = 0;
         for (e.a aVar2 : arrayList) {
-            if (1 == aVar2.f27301a) {
+            if (1 == aVar2.f13613a) {
                 aVar = aVar2;
             }
             i2 = aVar2.d;
@@ -84,14 +84,14 @@ public class c<T extends n> extends com.opos.mobad.l.j implements m, n, o {
     }
 
     private boolean a(e.b bVar) {
-        for (e.a aVar : bVar.f27303a) {
+        for (e.a aVar : bVar.f13615a) {
             if (aVar != null) {
-                int a2 = this.h.a(aVar.f27301a);
+                int a2 = this.h.a(aVar.f13613a);
                 if (a2 != 0 && 2 != a2 && 3 != a2) {
-                    com.opos.cmn.an.f.a.b("dispatcherW", "has channel not init " + aVar.f27301a);
+                    com.opos.cmn.an.f.a.b("dispatcherW", "has channel not init " + aVar.f13613a);
                     return false;
                 }
-                com.opos.cmn.an.f.a.b("dispatcherW", "has channel init " + aVar.f27301a);
+                com.opos.cmn.an.f.a.b("dispatcherW", "has channel init " + aVar.f13613a);
             }
         }
         return true;
@@ -103,17 +103,17 @@ public class c<T extends n> extends com.opos.mobad.l.j implements m, n, o {
             return null;
         }
         e.b bVar2 = bVar;
-        if (bVar.f27303a != null) {
-            if (bVar.f27303a.size() <= 0) {
+        if (bVar.f13615a != null) {
+            if (bVar.f13615a.size() <= 0) {
                 return bVar;
             }
             ArrayList arrayList = new ArrayList();
-            for (e.a aVar : bVar.f27303a) {
-                if (aVar != null && this.h.a(aVar.f27301a) == 0) {
+            for (e.a aVar : bVar.f13615a) {
+                if (aVar != null && this.h.a(aVar.f13613a) == 0) {
                     arrayList.add(aVar);
                 }
             }
-            bVar2 = new e.b(arrayList, bVar.e, bVar.b, bVar.f27304c, bVar.d);
+            bVar2 = new e.b(arrayList, bVar.e, bVar.b, bVar.f13616c, bVar.d);
         }
         return bVar2;
     }
@@ -128,19 +128,19 @@ public class c<T extends n> extends com.opos.mobad.l.j implements m, n, o {
         synchronized (this) {
             com.opos.cmn.an.f.a.b("dispatcherW", "initDispatcher:" + this.g + "," + this.d, bVar);
             if (!this.g && !this.d) {
-                if (bVar.f27303a != null && bVar.f27303a.size() > 0) {
+                if (bVar.f13615a != null && bVar.f13615a.size() > 0) {
                     if (1 != bVar.e) {
-                        e.a a3 = a(bVar.f27303a, this.f26022a, bVar.f27304c);
-                        com.opos.cmn.an.f.a.b("dispatcherW", "create ssp:", this.f26022a, bVar.f27303a, a3);
-                        a2 = this.h.a(bVar.f27303a, a3, bVar.d, bVar.e);
+                        e.a a3 = a(bVar.f13615a, this.f12334a, bVar.f13616c);
+                        com.opos.cmn.an.f.a.b("dispatcherW", "create ssp:", this.f12334a, bVar.f13615a, a3);
+                        a2 = this.h.a(bVar.f13615a, a3, bVar.d, bVar.e);
                     } else {
-                        e.a a4 = a(this.f26022a, bVar.f27303a, bVar.b, bVar.f27304c);
-                        com.opos.cmn.an.f.a.b("dispatcherW", "create serial:", this.f26022a, bVar.f27303a, a4);
-                        a2 = this.h.a(bVar.f27303a, a4, bVar.d);
+                        e.a a4 = a(this.f12334a, bVar.f13615a, bVar.b, bVar.f13616c);
+                        com.opos.cmn.an.f.a.b("dispatcherW", "create serial:", this.f12334a, bVar.f13615a, a4);
+                        a2 = this.h.a(bVar.f13615a, a4, bVar.d);
                     }
                     this.d = true;
                     com.opos.cmn.an.f.a.b("dispatcherW", "dispatcher succ");
-                    this.f26023c = a2;
+                    this.f12335c = a2;
                     if (this.g) {
                         a2.b();
                     }
@@ -152,12 +152,12 @@ public class c<T extends n> extends com.opos.mobad.l.j implements m, n, o {
     }
 
     private void c(String str, int i) {
-        if (this.f26023c != null) {
+        if (this.f12335c != null) {
             com.opos.cmn.an.f.a.b("dispatcherW", "reset to target");
             T t = this.b;
-            this.b = this.f26023c;
+            this.b = this.f12335c;
             t.b();
-            this.f26023c = null;
+            this.f12335c = null;
         }
         this.b.a(str, i);
     }
@@ -189,13 +189,13 @@ public class c<T extends n> extends com.opos.mobad.l.j implements m, n, o {
     }
 
     private T q() {
-        return this.h.a(new ArrayList(), c(this.f26022a), 0L);
+        return this.h.a(new ArrayList(), c(this.f12334a), 0L);
     }
 
     public e.b a(long j) {
         e.b bVar;
         long elapsedRealtime = SystemClock.elapsedRealtime();
-        e.b a2 = com.opos.mobad.service.f.b().a(this.f26022a, true);
+        e.b a2 = com.opos.mobad.service.f.b().a(this.f12334a, true);
         com.opos.cmn.an.f.a.b("dispatcherW", "channelStrategy = " + a2);
         if (a2 == null || !a(a2)) {
             if (j > 0) {
@@ -205,7 +205,7 @@ public class c<T extends n> extends com.opos.mobad.l.j implements m, n, o {
                     if (i2 >= 10) {
                         return b(a2);
                     }
-                    a2 = com.opos.mobad.service.f.b().a(this.f26022a, true);
+                    a2 = com.opos.mobad.service.f.b().a(this.f12334a, true);
                     if (a2 != null) {
                         bVar = a2;
                         if (a(a2)) {
@@ -252,8 +252,8 @@ public class c<T extends n> extends com.opos.mobad.l.j implements m, n, o {
         if (t != null) {
             t.b();
         }
-        if (this.f26023c != null) {
-            this.f26023c.b();
+        if (this.f12335c != null) {
+            this.f12335c.b();
         }
     }
 
@@ -284,7 +284,7 @@ public class c<T extends n> extends com.opos.mobad.l.j implements m, n, o {
                                 b = (e.b) futureTask.get(c.this.i, TimeUnit.MILLISECONDS);
                             } catch (Exception e) {
                                 com.opos.cmn.an.f.a.b("dispatcherW", "init timeout");
-                                b = c.this.b(com.opos.mobad.service.f.b().a(c.this.f26022a, true));
+                                b = c.this.b(com.opos.mobad.service.f.b().a(c.this.f12334a, true));
                             }
                             if (b != null) {
                                 c.this.c(b);

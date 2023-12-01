@@ -66,14 +66,14 @@ public final class FeedItemSayHelloGuideView extends LinearLayout {
             throw new NullPointerException("null cannot be cast to non-null type android.view.View");
         }
         this.bgView = findViewById;
-        View findViewById2 = inflate.findViewById(R.id.item_feed_say_hello_guide_ly);
+        ShapeLinearLayout findViewById2 = inflate.findViewById(R.id.item_feed_say_hello_guide_ly);
         if (findViewById2 == null) {
             throw new NullPointerException("null cannot be cast to non-null type com.blued.android.framework.view.shape.ShapeLinearLayout");
         }
-        this.layoutContent = (ShapeLinearLayout) findViewById2;
+        this.layoutContent = findViewById2;
         this.ivIcon = (ImageView) inflate.findViewById(R.id.item_feed_say_hello_guide_iv);
         this.tvContent = (TextView) inflate.findViewById(R.id.item_feed_say_hello_guide_tv);
-        if (CommunityManager.f19086a.a().s()) {
+        if (CommunityManager.a.a().s()) {
             View view = this.bgView;
             if (view != null) {
                 view.setBackgroundResource(R.drawable.item_feed_say_hello_guide_bg_dark);
@@ -84,10 +84,10 @@ public final class FeedItemSayHelloGuideView extends LinearLayout {
                 view2.setBackgroundResource(R.drawable.item_feed_say_hello_guide_bg);
             }
         }
-        inflate.setOnClickListener(new SingleClickProxy(new View.OnClickListener() { // from class: com.blued.community.view.-$$Lambda$FeedItemSayHelloGuideView$FGRlDU4gfgTH-BQLf8rcBQqz8uM
+        inflate.setOnClickListener((View.OnClickListener) new SingleClickProxy(new View.OnClickListener() { // from class: com.blued.community.view.-$$Lambda$FeedItemSayHelloGuideView$FGRlDU4gfgTH-BQLf8rcBQqz8uM
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
-                FeedItemSayHelloGuideView.m5147initView$lambda0(FeedItemSayHelloGuideView.this, view3);
+                FeedItemSayHelloGuideView.m2060initView$lambda0(FeedItemSayHelloGuideView.this, view3);
             }
         }));
         removeAllViews();
@@ -96,9 +96,9 @@ public final class FeedItemSayHelloGuideView extends LinearLayout {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: initView$lambda-0  reason: not valid java name */
-    public static final void m5147initView$lambda0(FeedItemSayHelloGuideView this$0, View view) {
-        Intrinsics.e(this$0, "this$0");
-        this$0.onClickContent();
+    public static final void m2060initView$lambda0(FeedItemSayHelloGuideView feedItemSayHelloGuideView, View view) {
+        Intrinsics.e(feedItemSayHelloGuideView, "this$0");
+        feedItemSayHelloGuideView.onClickContent();
     }
 
     private final void onClickContent() {
@@ -107,7 +107,7 @@ public final class FeedItemSayHelloGuideView extends LinearLayout {
     private final void refreshViews() {
         int i;
         String str;
-        if (CommunityManager.f19086a.a().s()) {
+        if (CommunityManager.a.a().s()) {
             View view = this.bgView;
             if (view != null) {
                 view.setBackgroundResource(R.drawable.item_feed_say_hello_guide_bg_dark);
@@ -180,7 +180,7 @@ public final class FeedItemSayHelloGuideView extends LinearLayout {
     public final void setFeedData(BluedIngSelfFeed bluedIngSelfFeed) {
         if (bluedIngSelfFeed == null) {
             setVisibility(8);
-        } else if (CommunityManager.f19086a.a().c(bluedIngSelfFeed.feed_uid)) {
+        } else if (CommunityManager.a.a().c(bluedIngSelfFeed.feed_uid)) {
             setVisibility(8);
         } else {
             this.model = bluedIngSelfFeed;

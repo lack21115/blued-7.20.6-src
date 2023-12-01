@@ -187,7 +187,7 @@ public abstract class SobotBaseFragment extends Fragment {
     }
 
     public int getResDrawableId(String str) {
-        return ResourceUtils.getIdByName(getSobotActivity(), i.f7952c, str);
+        return ResourceUtils.getIdByName(getSobotActivity(), i.f5112c, str);
     }
 
     public int getResId(String str) {

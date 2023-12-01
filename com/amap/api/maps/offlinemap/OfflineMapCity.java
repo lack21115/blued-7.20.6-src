@@ -24,34 +24,30 @@ public class OfflineMapCity extends City {
             return a(i);
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f5555a;
+    private String a;
     private long b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f5556c;
+    private int c;
     private String d;
     private int e;
 
     public OfflineMapCity() {
-        this.f5555a = "";
+        this.a = "";
         this.b = 0L;
-        this.f5556c = 6;
+        this.c = 6;
         this.d = "";
         this.e = 0;
     }
 
     public OfflineMapCity(Parcel parcel) {
         super(parcel);
-        this.f5555a = "";
+        this.a = "";
         this.b = 0L;
-        this.f5556c = 6;
+        this.c = 6;
         this.d = "";
         this.e = 0;
-        this.f5555a = parcel.readString();
+        this.a = parcel.readString();
         this.b = parcel.readLong();
-        this.f5556c = parcel.readInt();
+        this.c = parcel.readInt();
         this.d = parcel.readString();
         this.e = parcel.readInt();
     }
@@ -66,11 +62,11 @@ public class OfflineMapCity extends City {
     }
 
     public int getState() {
-        return this.f5556c;
+        return this.c;
     }
 
     public String getUrl() {
-        return this.f5555a;
+        return this.a;
     }
 
     public String getVersion() {
@@ -90,11 +86,11 @@ public class OfflineMapCity extends City {
     }
 
     public void setState(int i) {
-        this.f5556c = i;
+        this.c = i;
     }
 
     public void setUrl(String str) {
-        this.f5555a = str;
+        this.a = str;
     }
 
     public void setVersion(String str) {
@@ -104,9 +100,9 @@ public class OfflineMapCity extends City {
     @Override // com.amap.api.maps.offlinemap.City, android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
         super.writeToParcel(parcel, i);
-        parcel.writeString(this.f5555a);
+        parcel.writeString(this.a);
         parcel.writeLong(this.b);
-        parcel.writeInt(this.f5556c);
+        parcel.writeInt(this.c);
         parcel.writeString(this.d);
         parcel.writeInt(this.e);
     }

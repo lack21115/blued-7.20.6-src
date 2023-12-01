@@ -26,10 +26,10 @@ public class m extends b {
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public int f39398a;
+        public int f25707a;
         public long b;
 
         /* renamed from: c  reason: collision with root package name */
-        public TPTrackInfo f39399c;
+        public TPTrackInfo f25708c;
     }
 }

@@ -4,7 +4,6 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
-import com.android.internal.telephony.PhoneConstants;
 import com.huawei.openalliance.ad.views.PPSSplashView;
 import com.huawei.openalliance.ad.views.SplashLinkedVideoView;
 
@@ -23,7 +22,7 @@ public class i {
         float x = motionEvent.getX();
         float y = motionEvent.getY();
         sb.append(width);
-        sb.append(PhoneConstants.APN_TYPE_ALL);
+        sb.append("*");
         sb.append(height);
         return new com.huawei.openalliance.ad.inter.data.m(Integer.valueOf((int) x), Integer.valueOf((int) y), sb.toString());
     }
@@ -63,7 +62,7 @@ public class i {
                 int width = viewGroup2.getWidth();
                 int height = viewGroup2.getHeight();
                 sb.append(width);
-                sb.append(PhoneConstants.APN_TYPE_ALL);
+                sb.append("*");
                 sb.append(height);
                 return new com.huawei.openalliance.ad.inter.data.m(Integer.valueOf((int) f), Integer.valueOf((int) f2), sb.toString());
             }

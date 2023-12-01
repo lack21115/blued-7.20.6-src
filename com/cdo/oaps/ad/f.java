@@ -6,10 +6,10 @@ import com.tencent.qcloud.core.util.IOUtils;
 public class f {
 
     /* renamed from: a  reason: collision with root package name */
-    static final int f21527a = 255;
+    static final int f7921a = 255;
 
     /* renamed from: c  reason: collision with root package name */
-    static final int f21528c = 76;
+    static final int f7922c = 76;
     static final int d = 8;
     static final int e = 4;
     static final int f = 64;
@@ -204,7 +204,7 @@ public class f {
             int i19 = i11 + 4;
             if (z && i19 == i14) {
                 byte[] bArr4 = b;
-                System.arraycopy((Object) bArr4, 0, (Object) bArr2, i19, bArr4.length);
+                System.arraycopy(bArr4, 0, bArr2, i19, bArr4.length);
                 i5 = i12 + 1;
                 byte[] bArr5 = b;
                 int length2 = bArr5.length;
@@ -256,7 +256,7 @@ public class f {
         }
         if (z && i12 < i2) {
             byte[] bArr8 = b;
-            System.arraycopy((Object) bArr8, 0, (Object) bArr2, i3 - bArr8.length, bArr8.length);
+            System.arraycopy(bArr8, 0, bArr2, i3 - bArr8.length, bArr8.length);
         }
         return bArr2;
     }
@@ -269,7 +269,7 @@ public class f {
             int i4 = i3;
             if (i2 >= bArr.length) {
                 byte[] bArr3 = new byte[i4];
-                System.arraycopy((Object) bArr2, 0, (Object) bArr3, 0, i4);
+                System.arraycopy(bArr2, 0, bArr3, 0, i4);
                 return bArr3;
             }
             int i5 = i4;
@@ -290,7 +290,7 @@ public class f {
             int i4 = i3;
             if (i2 >= bArr.length) {
                 byte[] bArr3 = new byte[i4];
-                System.arraycopy((Object) bArr2, 0, (Object) bArr3, 0, i4);
+                System.arraycopy(bArr2, 0, bArr3, 0, i4);
                 return bArr3;
             }
             byte b2 = bArr[i2];

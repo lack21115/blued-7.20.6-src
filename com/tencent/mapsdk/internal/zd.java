@@ -7,7 +7,7 @@ import com.tencent.mapsdk.engine.jni.models.IconImageInfo;
 public interface zd {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f38161a = "compass.png";
+    public static final String f24470a = "compass.png";
     public static final String b = "compass_dark.png";
 
     String a(GeoPoint geoPoint);

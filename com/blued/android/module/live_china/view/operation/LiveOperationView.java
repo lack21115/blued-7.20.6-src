@@ -20,7 +20,6 @@ import com.blued.android.module.live_china.view.GrabBoxView;
 import com.blued.android.module.live_china.view.GrabRewardView;
 import com.blued.android.module.live_china.view.LiveWishCourtView;
 import com.blued.android.module.live_china.view.WishingWellView;
-import com.meizu.cloud.pushsdk.constants.PushConstants;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -40,13 +39,9 @@ import kotlin.jvm.internal.TypeIntrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/operation/LiveOperationView.class */
 public final class LiveOperationView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Context f15353a;
+    private final Context a;
     private final Lazy b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private ArrayList<LiveRoomOperationModel> f15354c;
+    private ArrayList<LiveRoomOperationModel> c;
     private HashMap<Integer, Object> d;
     private BaseFragment e;
     private ArrayList<LiveRoomOperationModel> f;
@@ -74,7 +69,7 @@ public final class LiveOperationView extends FrameLayout {
     public LiveOperationView(Context mContext, AttributeSet attributeSet, int i) {
         super(mContext, attributeSet, i);
         Intrinsics.e(mContext, "mContext");
-        this.f15353a = mContext;
+        this.a = mContext;
         this.b = LazyKt.a(new Function0<LiveOperationViewBinding>() { // from class: com.blued.android.module.live_china.view.operation.LiveOperationView$vb$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
@@ -84,12 +79,12 @@ public final class LiveOperationView extends FrameLayout {
             @Override // kotlin.jvm.functions.Function0
             /* renamed from: a */
             public final LiveOperationViewBinding invoke() {
-                LiveOperationViewBinding a2 = LiveOperationViewBinding.a(LayoutInflater.from(LiveOperationView.this.getMContext()).inflate(R.layout.live_operation_view, LiveOperationView.this));
-                Intrinsics.c(a2, "bind(\n            Layout…ion_view, this)\n        )");
-                return a2;
+                LiveOperationViewBinding a = LiveOperationViewBinding.a(LayoutInflater.from(LiveOperationView.this.getMContext()).inflate(R.layout.live_operation_view, LiveOperationView.this));
+                Intrinsics.c(a, "bind(\n            Layout…ion_view, this)\n        )");
+                return a;
             }
         });
-        this.f15354c = new ArrayList<>();
+        this.c = new ArrayList<>();
         this.d = new HashMap<>();
         this.f = new ArrayList<>();
         this.k = new DecelerateInterpolator(2.0f);
@@ -149,13 +144,13 @@ public final class LiveOperationView extends FrameLayout {
     public static final void a(LiveOperationView this$0, ValueAnimator animation) {
         Intrinsics.e(this$0, "this$0");
         Intrinsics.e(animation, "animation");
-        ViewGroup.LayoutParams layoutParams = this$0.getVb().f12313a.getLayoutParams();
+        ViewGroup.LayoutParams layoutParams = this$0.getVb().a.getLayoutParams();
         Object animatedValue = animation.getAnimatedValue();
         if (animatedValue == null) {
             throw new NullPointerException("null cannot be cast to non-null type kotlin.Int");
         }
         layoutParams.width = ((Integer) animatedValue).intValue();
-        this$0.getVb().f12313a.setLayoutParams(this$0.getVb().f12313a.getLayoutParams());
+        this$0.getVb().a.setLayoutParams(this$0.getVb().a.getLayoutParams());
     }
 
     private final void b(LiveRoomOperationModel liveRoomOperationModel) {
@@ -176,7 +171,7 @@ public final class LiveOperationView extends FrameLayout {
     }
 
     private final void c() {
-        Iterator<LiveRoomOperationModel> it = this.f15354c.iterator();
+        Iterator<LiveRoomOperationModel> it = this.c.iterator();
         while (it.hasNext()) {
             LiveRoomOperationModel it2 = it.next();
             if (it2.getStatus() == 1 && it2.getDesc_type() != 1) {
@@ -191,7 +186,7 @@ public final class LiveOperationView extends FrameLayout {
                 public final void run() {
                     LiveOperationView.e(LiveOperationView.this);
                 }
-            }, this.m + ((long) PushConstants.DOWN_LOAD_LARGE_ICON_ERROR));
+            }, this.m + 2300);
         }
     }
 
@@ -215,7 +210,7 @@ public final class LiveOperationView extends FrameLayout {
         LiveOperationDescView liveOperationDescView = getVb().b;
         BaseFragment baseFragment = this.e;
         liveOperationDescView.a(baseFragment == null ? null : baseFragment.getFragmentActive(), liveRoomOperationModel);
-        getVb().f12314c.animate().translationY(-DensityUtils.a(getContext(), 45.0f)).setInterpolator(this.k).setDuration(this.m).start();
+        getVb().c.animate().translationY(-DensityUtils.a(getContext(), 45.0f)).setInterpolator(this.k).setDuration(this.m).start();
         getVb().b.animate().translationY(0.0f).setInterpolator(this.k).setDuration(this.m).setListener(new LiveOperationView$startShowDesc$1$1(this)).start();
     }
 
@@ -227,9 +222,9 @@ public final class LiveOperationView extends FrameLayout {
             TypeIntrinsics.c(arrayList).remove(this.h);
         }
         a(this.m);
-        int a2 = DensityUtils.a(getContext(), 45.0f);
-        getVb().f12314c.animate().translationY(0.0f).setDuration(this.m).start();
-        getVb().b.animate().translationY(a2).setDuration(this.m).setListener(new LiveOperationView$goBackToList$1(this)).start();
+        int a = DensityUtils.a(getContext(), 45.0f);
+        getVb().c.animate().translationY(0.0f).setDuration(this.m).start();
+        getVb().b.animate().translationY(a).setDuration(this.m).setListener(new LiveOperationView$goBackToList$1(this)).start();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -259,7 +254,7 @@ public final class LiveOperationView extends FrameLayout {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: setData$lambda-3$lambda-2  reason: not valid java name */
-    public static final void m4301setData$lambda3$lambda2(LiveOperationView this$0) {
+    public static final void m10379setData$lambda3$lambda2(LiveOperationView this$0) {
         Intrinsics.e(this$0, "this$0");
         for (Map.Entry<Integer, Object> entry : this$0.d.entrySet()) {
             this$0.a(entry.getKey().intValue(), entry.getValue());
@@ -305,7 +300,7 @@ public final class LiveOperationView extends FrameLayout {
     }
 
     public final void a(int i) {
-        getVb().f12314c.b(i);
+        getVb().c.b(i);
         a();
         ArrayList<LiveRoomOperationModel> arrayList = this.f;
         if (arrayList == null || arrayList.isEmpty()) {
@@ -322,7 +317,7 @@ public final class LiveOperationView extends FrameLayout {
         LiveRoomOperationModel liveRoomOperationModel2;
         boolean z;
         LiveRoomOperationModel liveRoomOperationModel3;
-        ArrayList<LiveRoomOperationModel> arrayList = this.f15354c;
+        ArrayList<LiveRoomOperationModel> arrayList = this.c;
         if ((arrayList == null ? null : Boolean.valueOf(arrayList.isEmpty())).booleanValue()) {
             this.d.put(Integer.valueOf(i), obj);
         } else if (obj == null) {
@@ -341,44 +336,44 @@ public final class LiveOperationView extends FrameLayout {
                     return;
                 }
             }
-            LiveOperationListView liveOperationListView = getVb().f12314c;
-            OperationChildView a2 = liveOperationListView.a(i);
-            if (a2 != null) {
-                if ((a2.getView() instanceof OperationChildDefaultView) && z2) {
-                    LiveRoomOperationModel model = a2.getModel();
+            LiveOperationListView liveOperationListView = getVb().c;
+            OperationChildView a = liveOperationListView.a(i);
+            if (a != null) {
+                if ((a.getView() instanceof OperationChildDefaultView) && z2) {
+                    LiveRoomOperationModel model = a.getModel();
                     LiveRoomOperationModel liveRoomOperationModel5 = (LiveRoomOperationModel) obj;
                     z = b(model, liveRoomOperationModel5);
-                    a2.setModel(a(a2.getModel(), liveRoomOperationModel5));
-                    liveRoomOperationModel3 = a2.getModel();
-                    if (liveRoomOperationModel3 != null && a2.b(liveRoomOperationModel3)) {
-                        a2.c();
+                    a.setModel(a(a.getModel(), liveRoomOperationModel5));
+                    liveRoomOperationModel3 = a.getModel();
+                    if (liveRoomOperationModel3 != null && a.b(liveRoomOperationModel3)) {
+                        a.c();
                     }
                 } else {
                     z = false;
                     liveRoomOperationModel3 = null;
                 }
-                if ((a2.getView() instanceof GrabRewardView) && a2.b(obj)) {
-                    a2.c();
+                if ((a.getView() instanceof GrabRewardView) && a.b(obj)) {
+                    a.c();
                 }
-                if ((a2.getView() instanceof WishingWellView) && a2.b(obj)) {
-                    a2.c();
+                if ((a.getView() instanceof WishingWellView) && a.b(obj)) {
+                    a.c();
                 }
-                if ((a2.getView() instanceof GrabBoxView) && a2.b(obj)) {
-                    a2.c();
+                if ((a.getView() instanceof GrabBoxView) && a.b(obj)) {
+                    a.c();
                 }
                 liveRoomOperationModel2 = liveRoomOperationModel3;
                 z3 = z;
-                if (a2.getView() instanceof LiveWishCourtView) {
+                if (a.getView() instanceof LiveWishCourtView) {
                     liveRoomOperationModel2 = liveRoomOperationModel3;
                     z3 = z;
-                    if (a2.b(obj)) {
-                        a2.c();
+                    if (a.b(obj)) {
+                        a.c();
                         liveRoomOperationModel2 = liveRoomOperationModel3;
                         z3 = z;
                     }
                 }
             } else {
-                Iterator<LiveRoomOperationModel> it = this.f15354c.iterator();
+                Iterator<LiveRoomOperationModel> it = this.c.iterator();
                 while (true) {
                     liveRoomOperationModel = null;
                     if (!it.hasNext()) {
@@ -463,7 +458,7 @@ public final class LiveOperationView extends FrameLayout {
     public final void a(boolean z) {
         LiveOperationListView liveOperationListView;
         LiveOperationViewBinding vb = getVb();
-        if (vb == null || (liveOperationListView = vb.f12314c) == null) {
+        if (vb == null || (liveOperationListView = vb.c) == null) {
             return;
         }
         liveOperationListView.a(z);
@@ -473,7 +468,7 @@ public final class LiveOperationView extends FrameLayout {
         if (this.g) {
             return DensityUtils.a(getContext(), 130.0f);
         }
-        int showChildCount = getVb().f12314c.getShowChildCount();
+        int showChildCount = getVb().c.getShowChildCount();
         if (showChildCount != 0) {
             return showChildCount != 1 ? showChildCount != 2 ? DensityUtils.a(getContext(), 130.0f) : DensityUtils.a(getContext(), 87.5f) : DensityUtils.a(getContext(), 45.0f);
         }
@@ -481,7 +476,7 @@ public final class LiveOperationView extends FrameLayout {
     }
 
     public final LiveRoomOperationModel b(int i) {
-        ArrayList<LiveRoomOperationModel> arrayList = this.f15354c;
+        ArrayList<LiveRoomOperationModel> arrayList = this.c;
         if (arrayList == null) {
             return null;
         }
@@ -502,7 +497,7 @@ public final class LiveOperationView extends FrameLayout {
     }
 
     public final Context getMContext() {
-        return this.f15353a;
+        return this.a;
     }
 
     public final void setCurrentShowDesc(LiveRoomOperationModel liveRoomOperationModel) {
@@ -522,9 +517,9 @@ public final class LiveOperationView extends FrameLayout {
         if (data.isEmpty()) {
             return;
         }
-        this.f15354c.clear();
-        this.f15354c.addAll(a(data));
-        getVb().f12314c.a(this.e, this.j, this.f15354c);
+        this.c.clear();
+        this.c.addAll(a(data));
+        getVb().c.a(this.e, this.j, this.c);
         a();
         c();
         HashMap<Integer, Object> hashMap = this.d;
@@ -534,7 +529,7 @@ public final class LiveOperationView extends FrameLayout {
         AppInfo.n().postDelayed(new Runnable() { // from class: com.blued.android.module.live_china.view.operation.-$$Lambda$LiveOperationView$BP4qrvdJOnlYpJ1AOHcTRCY3O_8
             @Override // java.lang.Runnable
             public final void run() {
-                LiveOperationView.m4301setData$lambda3$lambda2(LiveOperationView.this);
+                LiveOperationView.m10379setData$lambda3$lambda2(LiveOperationView.this);
             }
         }, 100L);
     }

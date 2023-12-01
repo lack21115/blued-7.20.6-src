@@ -5,10 +5,10 @@ package com.tencent.ugc;
 public final /* synthetic */ class cm implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final UGCImageProvider f40296a;
+    private final UGCImageProvider f26605a;
 
     private cm(UGCImageProvider uGCImageProvider) {
-        this.f40296a = uGCImageProvider;
+        this.f26605a = uGCImageProvider;
     }
 
     public static Runnable a(UGCImageProvider uGCImageProvider) {
@@ -17,6 +17,6 @@ public final /* synthetic */ class cm implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        UGCImageProvider.lambda$start$2(this.f40296a);
+        UGCImageProvider.lambda$start$2(this.f26605a);
     }
 }

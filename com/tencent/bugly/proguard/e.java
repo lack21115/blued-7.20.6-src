@@ -4,7 +4,7 @@ package com.tencent.bugly.proguard;
 public final class e {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final char[] f35382a = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
+    private static final char[] f21691a = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
 
     public static String a(byte[] bArr) {
         if (bArr == null || bArr.length == 0) {
@@ -19,7 +19,7 @@ public final class e {
             }
             byte b = bArr[i2];
             int i3 = i2 * 2;
-            char[] cArr2 = f35382a;
+            char[] cArr2 = f21691a;
             cArr[i3 + 1] = cArr2[b & 15];
             cArr[i3] = cArr2[((byte) (b >>> 4)) & 15];
             i = i2 + 1;

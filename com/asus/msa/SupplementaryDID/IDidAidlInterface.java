@@ -15,10 +15,10 @@ public interface IDidAidlInterface extends IInterface {
         public static class Proxy implements IDidAidlInterface {
 
             /* renamed from: a  reason: collision with root package name */
-            public IBinder f9217a;
+            public IBinder f6377a;
 
             public Proxy(IBinder iBinder) {
-                this.f9217a = iBinder;
+                this.f6377a = iBinder;
             }
 
             @Override // com.asus.msa.SupplementaryDID.IDidAidlInterface

@@ -150,7 +150,7 @@ public class ye extends ze<h0> implements fe, h0 {
         p5 a3 = t4Var.a(geoPoint2);
         p5 a4 = t4Var.a(geoPoint3);
         p5 a5 = t4Var.a(geoPoint4);
-        return new Rect((int) Math.min(Math.min(a2.b, a3.b), Math.min(a4.b, a5.b)), (int) Math.min(Math.min(a2.f37683c, a3.f37683c), Math.min(a4.f37683c, a5.f37683c)), (int) Math.max(Math.max(a2.b, a3.b), Math.max(a4.b, a5.b)), (int) Math.max(Math.max(a2.f37683c, a3.f37683c), Math.max(a4.f37683c, a5.f37683c)));
+        return new Rect((int) Math.min(Math.min(a2.b, a3.b), Math.min(a4.b, a5.b)), (int) Math.min(Math.min(a2.f23992c, a3.f23992c), Math.min(a4.f23992c, a5.f23992c)), (int) Math.max(Math.max(a2.b, a3.b), Math.max(a4.b, a5.b)), (int) Math.max(Math.max(a2.f23992c, a3.f23992c), Math.max(a4.f23992c, a5.f23992c)));
     }
 
     @Override // com.tencent.tencentmap.mapsdk.maps.model.Circle

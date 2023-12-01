@@ -8,36 +8,32 @@ import java.util.Vector;
 public final class in {
     private static int b = 100;
     private static int d = 10000;
-
-    /* renamed from: a  reason: collision with root package name */
-    private Vector<ik> f5167a;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f5168c;
+    private Vector<ik> a;
+    private int c;
     private int e;
 
     public in() {
-        this.f5168c = b;
+        this.c = b;
         this.e = 0;
-        this.f5168c = 10;
-        this.f5167a = new Vector<>();
+        this.c = 10;
+        this.a = new Vector<>();
     }
 
     public in(byte b2) {
-        this.f5168c = b;
+        this.c = b;
         this.e = 0;
-        this.f5167a = new Vector<>();
+        this.a = new Vector<>();
     }
 
     public final Vector<ik> a() {
-        return this.f5167a;
+        return this.a;
     }
 
     public final void a(ik ikVar) {
         synchronized (this) {
             if (ikVar != null) {
                 if (!TextUtils.isEmpty(ikVar.b())) {
-                    this.f5167a.add(ikVar);
+                    this.a.add(ikVar);
                     this.e += ikVar.b().getBytes().length;
                 }
             }
@@ -49,7 +45,7 @@ public final class in {
             if (str == null) {
                 return false;
             }
-            if (this.f5167a.size() >= this.f5168c) {
+            if (this.a.size() >= this.c) {
                 return true;
             }
             return this.e + str.getBytes().length > d;
@@ -58,7 +54,7 @@ public final class in {
 
     public final void b() {
         synchronized (this) {
-            this.f5167a.clear();
+            this.a.clear();
             this.e = 0;
         }
     }

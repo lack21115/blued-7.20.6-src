@@ -29,13 +29,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYGiftWallInfoDialog.class */
 public final class YYGiftWallInfoDialog extends BaseFullScreenDialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    private DialogGiftwallInfoBinding f18202a;
+    private DialogGiftwallInfoBinding a;
     private YYUserInfo b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private YYGoodsWallMode f18203c;
+    private YYGoodsWallMode c;
     private boolean d;
     private View.OnClickListener e;
 
@@ -63,7 +59,7 @@ public final class YYGiftWallInfoDialog extends BaseFullScreenDialog {
             onClickListener.onClick(view);
         }
         this$0.dismissAllowingStateLoss();
-        YYGoodsWallMode yYGoodsWallMode = this$0.f18203c;
+        YYGoodsWallMode yYGoodsWallMode = this$0.c;
         Intrinsics.a(yYGoodsWallMode);
         String goods_id = yYGoodsWallMode.getGoods_id();
         YYUserInfo yYUserInfo = this$0.b;
@@ -78,7 +74,7 @@ public final class YYGiftWallInfoDialog extends BaseFullScreenDialog {
     }
 
     private final DialogGiftwallInfoBinding h() {
-        DialogGiftwallInfoBinding dialogGiftwallInfoBinding = this.f18202a;
+        DialogGiftwallInfoBinding dialogGiftwallInfoBinding = this.a;
         Intrinsics.a(dialogGiftwallInfoBinding);
         return dialogGiftwallInfoBinding;
     }
@@ -102,7 +98,7 @@ public final class YYGiftWallInfoDialog extends BaseFullScreenDialog {
                 YYGiftWallInfoDialog.b(YYGiftWallInfoDialog.this, view);
             }
         });
-        YYGoodsWallMode yYGoodsWallMode = this.f18203c;
+        YYGoodsWallMode yYGoodsWallMode = this.c;
         if (yYGoodsWallMode == null) {
             return;
         }
@@ -144,7 +140,7 @@ public final class YYGiftWallInfoDialog extends BaseFullScreenDialog {
                 h().v.setVisibility(0);
                 h().y.setVisibility(0);
                 h().n.setVisibility(0);
-                h().f16348a.setVisibility(0);
+                h().a.setVisibility(0);
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
                 SpannableString spannableString = new SpannableString(String.valueOf(yYGoodsWallMode.getLight()));
                 spannableString.setSpan(new ForegroundColorSpan(Color.parseColor("#00E0AB")), 0, spannableString.length(), 0);
@@ -209,7 +205,7 @@ public final class YYGiftWallInfoDialog extends BaseFullScreenDialog {
     }
 
     public final void a(YYGoodsWallMode yYGoodsWallMode) {
-        this.f18203c = yYGoodsWallMode;
+        this.c = yYGoodsWallMode;
     }
 
     public final void a(YYUserInfo yYUserInfo) {
@@ -228,10 +224,10 @@ public final class YYGiftWallInfoDialog extends BaseFullScreenDialog {
         return this.d;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
-        this.f18202a = DialogGiftwallInfoBinding.a(inflater.inflate(R.layout.dialog_giftwall_info, viewGroup, true));
+        this.a = DialogGiftwallInfoBinding.a(inflater.inflate(R.layout.dialog_giftwall_info, viewGroup, true));
         i();
         return h().getRoot();
     }

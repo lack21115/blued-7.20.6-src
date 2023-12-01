@@ -8,23 +8,23 @@ import android.net.ConnectivityManager;
 import android.net.Proxy;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
-import android.net.wifi.WifiSsid;
 import android.os.Build;
 import android.text.TextUtils;
+import com.amap.api.services.geocoder.GeocodeSearch;
+import com.android.internal.util.cm.QSConstants;
+import com.blued.android.module.yy_china.model.YYGiftPackageModel;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/china/b/b.class */
 public final class b {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final String[] f6273a = {"/su", "/su/bin/su", "/sbin/su", "/data/local/xbin/su", "/data/local/bin/su", "/data/local/su", "/system/xbin/su", "/system/bin/su", "/system/sd/xbin/su", "/system/bin/failsafe/su", "/system/bin/cufsdosck", "/system/xbin/cufsdosck", "/system/bin/cufsmgr", "/system/xbin/cufsmgr", "/system/bin/cufaevdd", "/system/xbin/cufaevdd", "/system/bin/conbb", "/system/xbin/conbb"};
+    private static final String[] a = {"/su", "/su/bin/su", "/sbin/su", "/data/local/xbin/su", "/data/local/bin/su", "/data/local/su", "/system/xbin/su", "/system/bin/su", "/system/sd/xbin/su", "/system/bin/failsafe/su", "/system/bin/cufsdosck", "/system/xbin/cufsdosck", "/system/bin/cufsmgr", "/system/xbin/cufsmgr", "/system/bin/cufaevdd", "/system/xbin/cufaevdd", "/system/bin/conbb", "/system/xbin/conbb"};
 
     public static String a() {
         boolean z;
         try {
-            String[] strArr = f6273a;
+            String[] strArr = a;
             int length = strArr.length;
             int i = 0;
             while (true) {
@@ -58,7 +58,7 @@ public final class b {
                 String property = System.getProperty("http.proxyHost");
                 String property2 = System.getProperty("http.proxyPort");
                 if (property2 == null) {
-                    property2 = "-1";
+                    property2 = YYGiftPackageModel.YY_GIFT_BAG_TYPE_ID;
                 }
                 port = Integer.parseInt(property2);
                 str = property;
@@ -217,20 +217,20 @@ public final class b {
     }
 
     private static boolean d(Context context) {
-        boolean isProviderEnabled = ((LocationManager) context.getApplicationContext().getSystemService("location")).isProviderEnabled("gps");
+        boolean isProviderEnabled = ((LocationManager) context.getApplicationContext().getSystemService(QSConstants.TILE_LOCATION)).isProviderEnabled(GeocodeSearch.GPS);
         PackageManager packageManager = context.getApplicationContext().getPackageManager();
         return isProviderEnabled && (packageManager.checkPermission("android.permission.ACCESS_FINE_LOCATION", context.getPackageName()) == 0 || packageManager.checkPermission("android.permission.ACCESS_COARSE_LOCATION", context.getPackageName()) == 0);
     }
 
     private static String e(Context context) {
         try {
-            WifiInfo connectionInfo = ((WifiManager) context.getApplicationContext().getSystemService("wifi")).getConnectionInfo();
+            WifiInfo connectionInfo = ((WifiManager) context.getApplicationContext().getSystemService(QSConstants.TILE_WIFI)).getConnectionInfo();
             String ssid = connectionInfo == null ? "" : connectionInfo.getSSID();
             String str = ssid;
-            if (WifiSsid.NONE.equalsIgnoreCase(ssid)) {
-                str = ((ConnectivityManager) context.getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE)).getActiveNetworkInfo().getExtraInfo();
+            if ("<unknown ssid>".equalsIgnoreCase(ssid)) {
+                str = ((ConnectivityManager) context.getApplicationContext().getSystemService("connectivity")).getActiveNetworkInfo().getExtraInfo();
             }
-            return WifiSsid.NONE.equalsIgnoreCase(str) ? "" : str;
+            return "<unknown ssid>".equalsIgnoreCase(str) ? "" : str;
         } catch (Throwable th) {
             return "";
         }

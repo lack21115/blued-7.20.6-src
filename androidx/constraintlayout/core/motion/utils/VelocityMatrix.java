@@ -5,11 +5,11 @@ public class VelocityMatrix {
     private static String g = "VelocityMatrix";
 
     /* renamed from: a  reason: collision with root package name */
-    float f2069a;
+    float f2021a;
     float b;
 
     /* renamed from: c  reason: collision with root package name */
-    float f2070c;
+    float f2022c;
     float d;
     float e;
     float f;
@@ -19,9 +19,9 @@ public class VelocityMatrix {
         float f4 = fArr[1];
         float f5 = (f - 0.5f) * 2.0f;
         float f6 = (f2 - 0.5f) * 2.0f;
-        float f7 = this.f2070c;
+        float f7 = this.f2022c;
         float f8 = this.d;
-        float f9 = this.f2069a;
+        float f9 = this.f2021a;
         float f10 = this.b;
         float radians = (float) Math.toRadians(this.f);
         float radians2 = (float) Math.toRadians(this.e);
@@ -36,9 +36,9 @@ public class VelocityMatrix {
     public void clear() {
         this.e = 0.0f;
         this.d = 0.0f;
-        this.f2070c = 0.0f;
+        this.f2022c = 0.0f;
         this.b = 0.0f;
-        this.f2069a = 0.0f;
+        this.f2021a = 0.0f;
     }
 
     public void setRotationVelocity(KeyCycleOscillator keyCycleOscillator, float f) {
@@ -56,7 +56,7 @@ public class VelocityMatrix {
 
     public void setScaleVelocity(KeyCycleOscillator keyCycleOscillator, KeyCycleOscillator keyCycleOscillator2, float f) {
         if (keyCycleOscillator != null) {
-            this.f2069a = keyCycleOscillator.getSlope(f);
+            this.f2021a = keyCycleOscillator.getSlope(f);
         }
         if (keyCycleOscillator2 != null) {
             this.b = keyCycleOscillator2.getSlope(f);
@@ -65,7 +65,7 @@ public class VelocityMatrix {
 
     public void setScaleVelocity(SplineSet splineSet, SplineSet splineSet2, float f) {
         if (splineSet != null) {
-            this.f2069a = splineSet.getSlope(f);
+            this.f2021a = splineSet.getSlope(f);
         }
         if (splineSet2 != null) {
             this.b = splineSet2.getSlope(f);
@@ -74,7 +74,7 @@ public class VelocityMatrix {
 
     public void setTranslationVelocity(KeyCycleOscillator keyCycleOscillator, KeyCycleOscillator keyCycleOscillator2, float f) {
         if (keyCycleOscillator != null) {
-            this.f2070c = keyCycleOscillator.getSlope(f);
+            this.f2022c = keyCycleOscillator.getSlope(f);
         }
         if (keyCycleOscillator2 != null) {
             this.d = keyCycleOscillator2.getSlope(f);
@@ -83,7 +83,7 @@ public class VelocityMatrix {
 
     public void setTranslationVelocity(SplineSet splineSet, SplineSet splineSet2, float f) {
         if (splineSet != null) {
-            this.f2070c = splineSet.getSlope(f);
+            this.f2022c = splineSet.getSlope(f);
         }
         if (splineSet2 != null) {
             this.d = splineSet2.getSlope(f);

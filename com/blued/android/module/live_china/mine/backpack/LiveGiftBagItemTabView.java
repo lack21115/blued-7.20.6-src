@@ -26,9 +26,7 @@ public final class LiveGiftBagItemTabView extends CommonGiftTabView<LiveGiftPack
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/mine/backpack/LiveGiftBagItemTabView$LiveGiftTabAdapter.class */
     public final class LiveGiftTabAdapter extends CommonGiftTabView<LiveGiftPackageModel>.GiftTabAdapter {
         final /* synthetic */ LiveGiftBagItemTabView b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private final Context f13927c;
+        private final Context c;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public LiveGiftTabAdapter(LiveGiftBagItemTabView this$0, Context context) {
@@ -36,7 +34,7 @@ public final class LiveGiftBagItemTabView extends CommonGiftTabView<LiveGiftPack
             Intrinsics.e(this$0, "this$0");
             Intrinsics.e(context, "context");
             this.b = this$0;
-            this.f13927c = context;
+            this.c = context;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -81,9 +79,9 @@ public final class LiveGiftBagItemTabView extends CommonGiftTabView<LiveGiftPack
             }
             rootView.setShapeModel(shapeModel);
             viewHolder.b(R.id.live_gift_tab_item_dot, liveGiftPackageModel.hasNew ? 0 : 8);
-            View a2 = viewHolder.a();
+            View a = viewHolder.a();
             final LiveGiftBagItemTabView liveGiftBagItemTabView = this.b;
-            a2.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.mine.backpack.-$$Lambda$LiveGiftBagItemTabView$LiveGiftTabAdapter$Sz5icYUAfdnTvZPacT8N0ZBCSl4
+            a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.mine.backpack.-$$Lambda$LiveGiftBagItemTabView$LiveGiftTabAdapter$Sz5icYUAfdnTvZPacT8N0ZBCSl4
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     LiveGiftBagItemTabView.LiveGiftTabAdapter.a(LiveGiftBagItemTabView.this, i, this, view);
@@ -92,7 +90,7 @@ public final class LiveGiftBagItemTabView extends CommonGiftTabView<LiveGiftPack
         }
 
         public final Context getContext() {
-            return this.f13927c;
+            return this.c;
         }
     }
 
@@ -116,7 +114,7 @@ public final class LiveGiftBagItemTabView extends CommonGiftTabView<LiveGiftPack
 
     @Override // com.blued.android.module.common.view.CommonGiftTabView
     public CommonGiftTabView<LiveGiftPackageModel>.GiftTabAdapter a() {
-        Context mContext = this.f10971a;
+        Context mContext = this.a;
         Intrinsics.c(mContext, "mContext");
         return new LiveGiftTabAdapter(this, mContext);
     }

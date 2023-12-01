@@ -6,12 +6,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-7206380-dex2jar.jar:com/bumptech/glide/load/engine/bitmap_recycle/GroupedLinkedMap.class */
-public class GroupedLinkedMap<K extends Poolable, V> {
+class GroupedLinkedMap<K extends Poolable, V> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinkedEntry<K, V> f20803a = new LinkedEntry<>();
+    private final LinkedEntry<K, V> f7197a = new LinkedEntry<>();
     private final Map<K, LinkedEntry<K, V>> b = new HashMap();
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -19,11 +18,11 @@ public class GroupedLinkedMap<K extends Poolable, V> {
     public static class LinkedEntry<K, V> {
 
         /* renamed from: a  reason: collision with root package name */
-        final K f20804a;
+        final K f7198a;
         LinkedEntry<K, V> b;
 
         /* renamed from: c  reason: collision with root package name */
-        LinkedEntry<K, V> f20805c;
+        LinkedEntry<K, V> f7199c;
         private List<V> d;
 
         LinkedEntry() {
@@ -31,9 +30,9 @@ public class GroupedLinkedMap<K extends Poolable, V> {
         }
 
         LinkedEntry(K k) {
-            this.f20805c = this;
+            this.f7199c = this;
             this.b = this;
-            this.f20804a = k;
+            this.f7198a = k;
         }
 
         public V a() {
@@ -62,33 +61,33 @@ public class GroupedLinkedMap<K extends Poolable, V> {
 
     private void a(LinkedEntry<K, V> linkedEntry) {
         d(linkedEntry);
-        linkedEntry.f20805c = this.f20803a;
-        linkedEntry.b = this.f20803a.b;
+        linkedEntry.f7199c = this.f7197a;
+        linkedEntry.b = this.f7197a.b;
         c(linkedEntry);
     }
 
     private void b(LinkedEntry<K, V> linkedEntry) {
         d(linkedEntry);
-        linkedEntry.f20805c = this.f20803a.f20805c;
-        linkedEntry.b = this.f20803a;
+        linkedEntry.f7199c = this.f7197a.f7199c;
+        linkedEntry.b = this.f7197a;
         c(linkedEntry);
     }
 
     private static <K, V> void c(LinkedEntry<K, V> linkedEntry) {
-        linkedEntry.b.f20805c = linkedEntry;
-        linkedEntry.f20805c.b = linkedEntry;
+        linkedEntry.b.f7199c = linkedEntry;
+        linkedEntry.f7199c.b = linkedEntry;
     }
 
     private static <K, V> void d(LinkedEntry<K, V> linkedEntry) {
-        linkedEntry.f20805c.b = linkedEntry.b;
-        linkedEntry.b.f20805c = linkedEntry.f20805c;
+        linkedEntry.f7199c.b = linkedEntry.b;
+        linkedEntry.b.f7199c = linkedEntry.f7199c;
     }
 
     public V a() {
-        LinkedEntry linkedEntry = this.f20803a.f20805c;
+        LinkedEntry linkedEntry = this.f7197a.f7199c;
         while (true) {
             LinkedEntry linkedEntry2 = linkedEntry;
-            if (linkedEntry2.equals(this.f20803a)) {
+            if (linkedEntry2.equals(this.f7197a)) {
                 return null;
             }
             V v = (V) linkedEntry2.a();
@@ -96,9 +95,9 @@ public class GroupedLinkedMap<K extends Poolable, V> {
                 return v;
             }
             d(linkedEntry2);
-            this.b.remove(linkedEntry2.f20804a);
-            ((Poolable) linkedEntry2.f20804a).a();
-            linkedEntry = linkedEntry2.f20805c;
+            this.b.remove(linkedEntry2.f7198a);
+            ((Poolable) linkedEntry2.f7198a).a();
+            linkedEntry = linkedEntry2.f7199c;
         }
     }
 
@@ -135,10 +134,10 @@ public class GroupedLinkedMap<K extends Poolable, V> {
     public String toString() {
         StringBuilder sb = new StringBuilder("GroupedLinkedMap( ");
         boolean z = false;
-        for (LinkedEntry<K, V> linkedEntry = this.f20803a.b; !linkedEntry.equals(this.f20803a); linkedEntry = linkedEntry.b) {
+        for (LinkedEntry<K, V> linkedEntry = this.f7197a.b; !linkedEntry.equals(this.f7197a); linkedEntry = linkedEntry.b) {
             z = true;
             sb.append('{');
-            sb.append(linkedEntry.f20804a);
+            sb.append(linkedEntry.f7198a);
             sb.append(':');
             sb.append(linkedEntry.b());
             sb.append("}, ");

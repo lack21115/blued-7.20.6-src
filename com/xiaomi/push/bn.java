@@ -32,7 +32,7 @@ public class bn {
         }
         try {
             MessageDigest messageDigest = MessageDigest.getInstance("MD5");
-            messageDigest.update(m11549a(str));
+            messageDigest.update(m8499a(str));
             return String.format("%1$032X", new BigInteger(1, messageDigest.digest()));
         } catch (NoSuchAlgorithmException e) {
             return str;
@@ -208,7 +208,7 @@ public class bn {
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public static boolean m11548a(String str) {
+    public static boolean m8498a(String str) {
         if (str == null) {
             return true;
         }
@@ -227,7 +227,7 @@ public class bn {
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public static byte[] m11549a(String str) {
+    public static byte[] m8499a(String str) {
         try {
             return str.getBytes("UTF-8");
         } catch (UnsupportedEncodingException e) {
@@ -239,7 +239,7 @@ public class bn {
         if (str != null) {
             try {
                 MessageDigest messageDigest = MessageDigest.getInstance(AppSigning.SHA1);
-                messageDigest.update(m11549a(str));
+                messageDigest.update(m8499a(str));
                 return String.format("%1$032X", new BigInteger(1, messageDigest.digest()));
             } catch (NoSuchAlgorithmException e) {
                 return str;

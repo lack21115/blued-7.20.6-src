@@ -302,7 +302,7 @@ public class WatermarkProcessor {
             }
             o oVar = list.get(i2);
             o oVar2 = list2.get(i2);
-            if (!oVar.f36397a.equals(oVar2.f36397a) || Math.abs(oVar.b - oVar2.b) > 1.0E-5d || Math.abs(oVar.f36398c - oVar2.f36398c) > 1.0E-5d || Math.abs(oVar.d - oVar2.d) > 1.0E-5d) {
+            if (!oVar.f22706a.equals(oVar2.f22706a) || Math.abs(oVar.b - oVar2.b) > 1.0E-5d || Math.abs(oVar.f22707c - oVar2.f22707c) > 1.0E-5d || Math.abs(oVar.d - oVar2.d) > 1.0E-5d) {
                 return false;
             }
             i = i2 + 1;
@@ -318,9 +318,9 @@ public class WatermarkProcessor {
 
     private o newWaterMarkTag(Bitmap bitmap, TXVideoEditConstants.TXRect tXRect) {
         o oVar = new o();
-        oVar.f36397a = bitmap;
+        oVar.f22706a = bitmap;
         oVar.b = tXRect.x;
-        oVar.f36398c = tXRect.y;
+        oVar.f22707c = tXRect.y;
         oVar.d = tXRect.width;
         return oVar;
     }

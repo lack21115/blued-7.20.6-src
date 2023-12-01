@@ -6,16 +6,16 @@ import com.tencent.liteav.videobase.common.EncodedVideoFrame;
 final /* synthetic */ class t implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final p f37035a;
+    private final p f23344a;
     private final EncodedVideoFrame b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final boolean f37036c;
+    private final boolean f23345c;
 
     private t(p pVar, EncodedVideoFrame encodedVideoFrame, boolean z) {
-        this.f37035a = pVar;
+        this.f23344a = pVar;
         this.b = encodedVideoFrame;
-        this.f37036c = z;
+        this.f23345c = z;
     }
 
     public static Runnable a(p pVar, EncodedVideoFrame encodedVideoFrame, boolean z) {
@@ -24,6 +24,6 @@ final /* synthetic */ class t implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        p.a(this.f37035a, this.b, this.f37036c);
+        p.a(this.f23344a, this.b, this.f23345c);
     }
 }

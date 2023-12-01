@@ -11,13 +11,9 @@ import com.tencent.rtmp.TXVodPlayer;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/player/audio/TXVodAudioPlayer.class */
 public class TXVodAudioPlayer implements IAudioPlayer, ITXVodPlayListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static int f15624a = 0;
+    private static int a = 0;
     private static boolean b = true;
-
-    /* renamed from: c  reason: collision with root package name */
-    private TXVodPlayer f15625c;
+    private TXVodPlayer c;
     private TXVodPlayConfig d;
     private IAudioPlayer.OnPreparedListener e;
     private IAudioPlayer.OnCompletionListener f;
@@ -32,12 +28,12 @@ public class TXVodAudioPlayer implements IAudioPlayer, ITXVodPlayListener {
 
     private void c() {
         TXVodPlayer tXVodPlayer = new TXVodPlayer(AppInfo.d());
-        this.f15625c = tXVodPlayer;
+        this.c = tXVodPlayer;
         tXVodPlayer.setRequestAudioFocus(b);
         TXVodPlayConfig tXVodPlayConfig = new TXVodPlayConfig();
         this.d = tXVodPlayConfig;
         tXVodPlayConfig.setProgressInterval(1000);
-        this.d.setMaxBufferSize(f15624a);
+        this.d.setMaxBufferSize(a);
         this.j = false;
     }
 
@@ -46,11 +42,11 @@ public class TXVodAudioPlayer implements IAudioPlayer, ITXVodPlayListener {
             Log.d("TXVodAudioPlayer", "play url can not empty!");
             return false;
         }
-        this.f15625c.setVodListener(this);
-        this.f15625c.enableHardwareDecode(false);
-        this.f15625c.setConfig(this.d);
-        this.f15625c.setAutoPlay(true);
-        if (this.f15625c.startPlay(this.h) != 0) {
+        this.c.setVodListener(this);
+        this.c.enableHardwareDecode(false);
+        this.c.setConfig(this.d);
+        this.c.setAutoPlay(true);
+        if (this.c.startPlay(this.h) != 0) {
             return false;
         }
         this.i = System.currentTimeMillis();
@@ -59,20 +55,20 @@ public class TXVodAudioPlayer implements IAudioPlayer, ITXVodPlayListener {
     }
 
     private void e() {
-        TXVodPlayer tXVodPlayer = this.f15625c;
+        TXVodPlayer tXVodPlayer = this.c;
         if (tXVodPlayer != null) {
-            tXVodPlayer.setVodListener(null);
-            this.f15625c.stopPlay(true);
+            tXVodPlayer.setVodListener((ITXVodPlayListener) null);
+            this.c.stopPlay(true);
         }
         this.j = false;
     }
 
     private void f() {
-        TXVodPlayer tXVodPlayer = this.f15625c;
+        TXVodPlayer tXVodPlayer = this.c;
         if (tXVodPlayer == null || !this.j || tXVodPlayer.isPlaying()) {
             return;
         }
-        this.f15625c.resume();
+        this.c.resume();
     }
 
     @Override // com.blued.android.module.player.audio.IAudioPlayer
@@ -94,7 +90,7 @@ public class TXVodAudioPlayer implements IAudioPlayer, ITXVodPlayListener {
 
     @Override // com.blued.android.module.player.audio.IAudioPlayer
     public IAudioPlayer a(boolean z) {
-        TXVodPlayer tXVodPlayer = this.f15625c;
+        TXVodPlayer tXVodPlayer = this.c;
         if (tXVodPlayer != null) {
             tXVodPlayer.setLoop(z);
         }
@@ -107,11 +103,9 @@ public class TXVodAudioPlayer implements IAudioPlayer, ITXVodPlayListener {
         e();
     }
 
-    @Override // com.tencent.rtmp.ITXVodPlayListener
     public void onNetStatus(TXVodPlayer tXVodPlayer, Bundle bundle) {
     }
 
-    @Override // com.tencent.rtmp.ITXVodPlayListener
     public void onPlayEvent(TXVodPlayer tXVodPlayer, int i, Bundle bundle) {
         IAudioPlayer.OnErrorListener onErrorListener;
         if (i == 2014) {

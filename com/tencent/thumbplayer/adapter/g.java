@@ -14,14 +14,14 @@ import com.tencent.thumbplayer.api.TPVideoFrameBuffer;
 import com.tencent.thumbplayer.utils.TPLogUtil;
 
 /* loaded from: source-8829756-dex2jar.jar:com/tencent/thumbplayer/adapter/g.class */
-public class g implements c.a, c.b, c.InterfaceC1013c, c.d, c.e, c.f, c.g, c.h, c.i, c.j, c.k, c.l, c.m, c.n, c.o, c.p {
+public class g implements c.a, c.b, c.InterfaceC0843c, c.d, c.e, c.f, c.g, c.h, c.i, c.j, c.k, c.l, c.m, c.n, c.o, c.p {
 
     /* renamed from: a  reason: collision with root package name */
-    private c.i f39205a;
-    private c.InterfaceC1013c b;
+    private c.i f25514a;
+    private c.InterfaceC0843c b;
 
     /* renamed from: c  reason: collision with root package name */
-    private c.h f39206c;
+    private c.h f25515c;
     private c.f d;
     private c.j e;
     private c.p f;
@@ -40,96 +40,96 @@ public class g implements c.a, c.b, c.InterfaceC1013c, c.d, c.e, c.f, c.g, c.h, 
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/thumbplayer/adapter/g$a.class */
-    public static class a implements c.a, c.b, c.InterfaceC1013c, c.d, c.e, c.f, c.g, c.h, c.i, c.j, c.k, c.l, c.m, c.n, c.o, c.p {
+    public static class a implements c.a, c.b, c.InterfaceC0843c, c.d, c.e, c.f, c.g, c.h, c.i, c.j, c.k, c.l, c.m, c.n, c.o, c.p {
 
         /* renamed from: a  reason: collision with root package name */
-        private String f39207a;
+        private String f25516a;
 
         public a(String str) {
-            this.f39207a = str;
+            this.f25516a = str;
         }
 
         @Override // com.tencent.thumbplayer.adapter.a.c.o
         public TPPostProcessFrameBuffer a(TPPostProcessFrameBuffer tPPostProcessFrameBuffer) {
-            TPLogUtil.i(this.f39207a, " empty base listener , notify , onVideoProcessFrameOut");
+            TPLogUtil.i(this.f25516a, " empty base listener , notify , onVideoProcessFrameOut");
             return null;
         }
 
         @Override // com.tencent.thumbplayer.adapter.a.c.d
         public TPRemoteSdpInfo a(String str, int i) {
-            TPLogUtil.i(this.f39207a, " empty base listener , notify , onSdpExchange");
+            TPLogUtil.i(this.f25516a, " empty base listener , notify , onSdpExchange");
             return null;
         }
 
         @Override // com.tencent.thumbplayer.adapter.a.c.i
         public void a() {
-            TPLogUtil.i(this.f39207a, " empty base listener , notify , onPrepared");
+            TPLogUtil.i(this.f25516a, " empty base listener , notify , onPrepared");
         }
 
         @Override // com.tencent.thumbplayer.adapter.a.c.f
         public void a(int i, int i2, long j, long j2) {
-            TPLogUtil.i(this.f39207a, " empty base listener , notify , onError");
+            TPLogUtil.i(this.f25516a, " empty base listener , notify , onError");
         }
 
         @Override // com.tencent.thumbplayer.adapter.a.c.h
         public void a(int i, long j, long j2, Object obj) {
-            TPLogUtil.i(this.f39207a, " empty base listener , notify , onInfo");
+            TPLogUtil.i(this.f25516a, " empty base listener , notify , onInfo");
         }
 
         @Override // com.tencent.thumbplayer.adapter.a.c.p
         public void a(long j, long j2) {
-            TPLogUtil.i(this.f39207a, " empty base listener , notify , onVideoSizeChanged");
+            TPLogUtil.i(this.f25516a, " empty base listener , notify , onVideoSizeChanged");
         }
 
         @Override // com.tencent.thumbplayer.adapter.a.c.a
         public void a(TPAudioFrameBuffer tPAudioFrameBuffer) {
-            TPLogUtil.i(this.f39207a, " empty base listener , notify , onAudioFrameOut");
+            TPLogUtil.i(this.f25516a, " empty base listener , notify , onAudioFrameOut");
         }
 
         @Override // com.tencent.thumbplayer.adapter.a.c.g
         public void a(TPDrmInfo tPDrmInfo) {
-            TPLogUtil.i(this.f39207a, " empty base listener , notify , onEventRecord");
+            TPLogUtil.i(this.f25516a, " empty base listener , notify , onEventRecord");
         }
 
         @Override // com.tencent.thumbplayer.adapter.a.c.e
         public void a(TPPlayerDetailInfo tPPlayerDetailInfo) {
-            TPLogUtil.i(this.f39207a, " empty base listener , notify , onDetailInfo");
+            TPLogUtil.i(this.f25516a, " empty base listener , notify , onDetailInfo");
         }
 
         @Override // com.tencent.thumbplayer.adapter.a.c.l
         public void a(TPSubtitleData tPSubtitleData) {
-            TPLogUtil.i(this.f39207a, " empty base listener , notify , onSubtitleData");
+            TPLogUtil.i(this.f25516a, " empty base listener , notify , onSubtitleData");
         }
 
         @Override // com.tencent.thumbplayer.adapter.a.c.m
         public void a(TPSubtitleFrameBuffer tPSubtitleFrameBuffer) {
-            TPLogUtil.i(this.f39207a, " empty base listener , notify , TPSubtitleFrameBuffer");
+            TPLogUtil.i(this.f25516a, " empty base listener , notify , TPSubtitleFrameBuffer");
         }
 
         @Override // com.tencent.thumbplayer.adapter.a.c.n
         public void a(TPVideoFrameBuffer tPVideoFrameBuffer) {
-            TPLogUtil.i(this.f39207a, " empty base listener , notify , onVideoFrameOut");
+            TPLogUtil.i(this.f25516a, " empty base listener , notify , onVideoFrameOut");
         }
 
         @Override // com.tencent.thumbplayer.adapter.a.c.b
         public TPPostProcessFrameBuffer b(TPPostProcessFrameBuffer tPPostProcessFrameBuffer) {
-            TPLogUtil.i(this.f39207a, " empty base listener , notify , onAudioProcessFrameOut");
+            TPLogUtil.i(this.f25516a, " empty base listener , notify , onAudioProcessFrameOut");
             return null;
         }
 
-        @Override // com.tencent.thumbplayer.adapter.a.c.InterfaceC1013c
+        @Override // com.tencent.thumbplayer.adapter.a.c.InterfaceC0843c
         public void b() {
-            TPLogUtil.i(this.f39207a, " empty base listener , notify , onCompletion");
+            TPLogUtil.i(this.f25516a, " empty base listener , notify , onCompletion");
         }
 
         @Override // com.tencent.thumbplayer.adapter.a.c.k
         public void b(int i, int i2) {
-            TPLogUtil.i(this.f39207a, " empty base listener , notify , onStateChange");
+            TPLogUtil.i(this.f25516a, " empty base listener , notify , onStateChange");
         }
 
         @Override // com.tencent.thumbplayer.adapter.a.c.j
         public void c() {
-            TPLogUtil.i(this.f39207a, " empty base listener , notify , onSeekComplete");
+            TPLogUtil.i(this.f25516a, " empty base listener , notify , onSeekComplete");
         }
     }
 
@@ -137,9 +137,9 @@ public class g implements c.a, c.b, c.InterfaceC1013c, c.d, c.e, c.f, c.g, c.h, 
         a(str);
         a aVar = new a(this.r);
         this.q = aVar;
-        this.f39205a = aVar;
+        this.f25514a = aVar;
         this.b = aVar;
-        this.f39206c = aVar;
+        this.f25515c = aVar;
         this.d = aVar;
         this.e = aVar;
         this.f = aVar;
@@ -167,7 +167,7 @@ public class g implements c.a, c.b, c.InterfaceC1013c, c.d, c.e, c.f, c.g, c.h, 
 
     @Override // com.tencent.thumbplayer.adapter.a.c.i
     public void a() {
-        this.f39205a.a();
+        this.f25514a.a();
     }
 
     @Override // com.tencent.thumbplayer.adapter.a.c.f
@@ -177,7 +177,7 @@ public class g implements c.a, c.b, c.InterfaceC1013c, c.d, c.e, c.f, c.g, c.h, 
 
     @Override // com.tencent.thumbplayer.adapter.a.c.h
     public void a(int i, long j, long j2, Object obj) {
-        this.f39206c.a(i, j, j2, obj);
+        this.f25515c.a(i, j, j2, obj);
     }
 
     @Override // com.tencent.thumbplayer.adapter.a.c.p
@@ -201,9 +201,9 @@ public class g implements c.a, c.b, c.InterfaceC1013c, c.d, c.e, c.f, c.g, c.h, 
         this.l = aVar;
     }
 
-    public void a(c.InterfaceC1013c interfaceC1013c) {
-        a aVar = interfaceC1013c;
-        if (interfaceC1013c == null) {
+    public void a(c.InterfaceC0843c interfaceC0843c) {
+        a aVar = interfaceC0843c;
+        if (interfaceC0843c == null) {
             aVar = this.q;
         }
         this.b = aVar;
@@ -246,7 +246,7 @@ public class g implements c.a, c.b, c.InterfaceC1013c, c.d, c.e, c.f, c.g, c.h, 
         if (hVar == null) {
             aVar = this.q;
         }
-        this.f39206c = aVar;
+        this.f25515c = aVar;
     }
 
     public void a(c.i iVar) {
@@ -254,7 +254,7 @@ public class g implements c.a, c.b, c.InterfaceC1013c, c.d, c.e, c.f, c.g, c.h, 
         if (iVar == null) {
             aVar = this.q;
         }
-        this.f39205a = aVar;
+        this.f25514a = aVar;
     }
 
     public void a(c.j jVar) {
@@ -351,7 +351,7 @@ public class g implements c.a, c.b, c.InterfaceC1013c, c.d, c.e, c.f, c.g, c.h, 
         this.r = str2;
         a aVar = this.q;
         if (aVar != null) {
-            aVar.f39207a = this.r;
+            aVar.f25516a = this.r;
         }
     }
 
@@ -360,7 +360,7 @@ public class g implements c.a, c.b, c.InterfaceC1013c, c.d, c.e, c.f, c.g, c.h, 
         return this.l.b(tPPostProcessFrameBuffer);
     }
 
-    @Override // com.tencent.thumbplayer.adapter.a.c.InterfaceC1013c
+    @Override // com.tencent.thumbplayer.adapter.a.c.InterfaceC0843c
     public void b() {
         this.b.b();
     }
@@ -377,9 +377,9 @@ public class g implements c.a, c.b, c.InterfaceC1013c, c.d, c.e, c.f, c.g, c.h, 
 
     public void d() {
         a aVar = this.q;
-        this.f39205a = aVar;
+        this.f25514a = aVar;
         this.b = aVar;
-        this.f39206c = aVar;
+        this.f25515c = aVar;
         this.d = aVar;
         this.e = aVar;
         this.f = aVar;

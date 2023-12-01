@@ -4,11 +4,11 @@ package com.opos.cmn.func.dl.base.a.a;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public int f24879a;
+    public int f11191a;
     public int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public int f24880c;
+    public int f11192c;
     public long d;
     public byte[] e = new byte[4096];
     a f;

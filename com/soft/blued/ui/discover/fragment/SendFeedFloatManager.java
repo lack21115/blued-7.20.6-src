@@ -45,10 +45,10 @@ public class SendFeedFloatManager implements FeedRefreshObserver.IFeedRefreshObs
     public static volatile SendFeedFloatManager i;
 
     /* renamed from: a  reason: collision with root package name */
-    public Context f29810a;
+    public Context f16120a;
 
     /* renamed from: c  reason: collision with root package name */
-    public View f29811c;
+    public View f16121c;
     public int d;
     public CircleProgressView e;
     public TextView f;
@@ -106,27 +106,27 @@ public class SendFeedFloatManager implements FeedRefreshObserver.IFeedRefreshObs
                 @Override // java.lang.Runnable
                 public void run() {
                     FeedRefreshObserver.a().a(SendFeedFloatManager.this);
-                    SendFeedFloatManager.this.f29810a = AppInfo.d();
+                    SendFeedFloatManager.this.f16120a = AppInfo.d();
                     SendFeedFloatManager.this.f();
-                    SendFeedFloatManager.this.f29811c = LayoutInflater.from(SendFeedFloatManager.this.f29810a).inflate(R.layout.layout_send_feed_float, (ViewGroup) null);
-                    LinearLayout linearLayout = (LinearLayout) SendFeedFloatManager.this.f29811c.findViewById(R.id.ll_float);
+                    SendFeedFloatManager.this.f16121c = LayoutInflater.from(SendFeedFloatManager.this.f16120a).inflate(R.layout.layout_send_feed_float, (ViewGroup) null);
+                    LinearLayout linearLayout = (LinearLayout) SendFeedFloatManager.this.f16121c.findViewById(R.id.ll_float);
                     LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) linearLayout.getLayoutParams();
-                    int[] a2 = ShineVideoListAdapter.a(SendFeedFloatManager.this.f29810a);
+                    int[] a2 = ShineVideoListAdapter.a(SendFeedFloatManager.this.f16120a);
                     layoutParams.width = (int) (a2[0] * 0.4d);
                     layoutParams.height = (int) (a2[1] * 0.4d);
                     linearLayout.setLayoutParams(layoutParams);
                     SendFeedFloatManager sendFeedFloatManager = SendFeedFloatManager.this;
-                    sendFeedFloatManager.e = (CircleProgressView) sendFeedFloatManager.f29811c.findViewById(R.id.pb_circle_progress);
+                    sendFeedFloatManager.e = sendFeedFloatManager.f16121c.findViewById(R.id.pb_circle_progress);
                     SendFeedFloatManager.this.e.setValue(0.0f);
-                    SendFeedFloatManager.this.e.setBarColor(SendFeedFloatManager.this.f29810a.getResources().getColor(2131100467));
-                    SendFeedFloatManager.this.e.setRimWidth(DensityUtils.a(SendFeedFloatManager.this.f29810a, 2.5f));
-                    SendFeedFloatManager.this.e.setRimColor(SendFeedFloatManager.this.f29810a.getResources().getColor(2131099824));
-                    SendFeedFloatManager.this.e.setBarWidth(DensityUtils.a(SendFeedFloatManager.this.f29810a, 2.5f));
+                    SendFeedFloatManager.this.e.setBarColor(new int[]{SendFeedFloatManager.this.f16120a.getResources().getColor(R.color.flash_video_yellow)});
+                    SendFeedFloatManager.this.e.setRimWidth(DensityUtils.a(SendFeedFloatManager.this.f16120a, 2.5f));
+                    SendFeedFloatManager.this.e.setRimColor(SendFeedFloatManager.this.f16120a.getResources().getColor(2131099824));
+                    SendFeedFloatManager.this.e.setBarWidth(DensityUtils.a(SendFeedFloatManager.this.f16120a, 2.5f));
                     SendFeedFloatManager sendFeedFloatManager2 = SendFeedFloatManager.this;
-                    sendFeedFloatManager2.f = (TextView) sendFeedFloatManager2.f29811c.findViewById(2131372318);
+                    sendFeedFloatManager2.f = (TextView) sendFeedFloatManager2.f16121c.findViewById(R.id.tv_progress);
                     SendFeedFloatManager sendFeedFloatManager3 = SendFeedFloatManager.this;
-                    sendFeedFloatManager3.g = (TextView) sendFeedFloatManager3.f29811c.findViewById(R.id.tv_left_count);
-                    SendFeedFloatManager.this.f29811c.findViewById(2131362555).setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.discover.fragment.SendFeedFloatManager.3.1
+                    sendFeedFloatManager3.g = (TextView) sendFeedFloatManager3.f16121c.findViewById(R.id.tv_left_count);
+                    SendFeedFloatManager.this.f16121c.findViewById(R.id.btn_close).setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.discover.fragment.SendFeedFloatManager.3.1
                         @Override // android.view.View.OnClickListener
                         public void onClick(View view) {
                             Tracker.onClick(view);
@@ -144,8 +144,8 @@ public class SendFeedFloatManager implements FeedRefreshObserver.IFeedRefreshObs
             if (this.b || AppInfo.g()) {
                 return;
             }
-            this.f29811c.setAlpha(1.0f);
-            this.k.addView(this.f29811c, this.j);
+            this.f16121c.setAlpha(1.0f);
+            this.k.addView(this.f16121c, this.j);
             this.b = true;
             AlphaAnimation alphaAnimation = new AlphaAnimation(0.0f, 1.0f);
             ScaleAnimation scaleAnimation = new ScaleAnimation(0.0f, 1.0f, 0.0f, 1.0f, 1, 0.5f, 1, 0.5f);
@@ -154,7 +154,7 @@ public class SendFeedFloatManager implements FeedRefreshObserver.IFeedRefreshObs
             animationSet.addAnimation(alphaAnimation);
             animationSet.addAnimation(scaleAnimation);
             animationSet.setInterpolator(new CubicInterpolator(0.66f, 0.01f, 0.34f, 1.0f));
-            this.f29811c.startAnimation(animationSet);
+            this.f16121c.startAnimation(animationSet);
             this.e.setValue(0.0f);
         } catch (Exception e) {
             e.printStackTrace();
@@ -203,13 +203,12 @@ public class SendFeedFloatManager implements FeedRefreshObserver.IFeedRefreshObs
                     AppInfo.d().startActivity(intent);
                 } else {
                     b();
-                    AppMethods.d(2131889566);
+                    AppMethods.d((int) R.string.live_float_toast);
                 }
             }
         }
     }
 
-    @Override // com.blued.community.ui.send.observer.FeedRefreshObserver.IFeedRefreshObserver
     public void a(Object obj, int i2) {
         if (obj != null) {
             if (obj instanceof BluedIngSelfFeed) {
@@ -249,8 +248,8 @@ public class SendFeedFloatManager implements FeedRefreshObserver.IFeedRefreshObs
         if (((obj instanceof BluedIngSelfFeed) && (bluedIngSelfFeed = (BluedIngSelfFeed) obj) != null && bluedIngSelfFeed.is_bubble_ticktock == 1) || FeedSendManager.a() == null || FeedSendManager.a().d() == null || FeedSendManager.a().d().size() <= 0) {
             return;
         }
-        int progress = FeedSendManager.a().d().get(0).getProgress();
-        this.e.setBarColor(this.f29810a.getResources().getColor(2131100467));
+        int progress = ((NewFeedModel) FeedSendManager.a().d().get(0)).getProgress();
+        this.e.setBarColor(new int[]{this.f16120a.getResources().getColor(R.color.flash_video_yellow)});
         this.e.a(progress, 200L);
         this.f.setText(progress + "%");
         int e = FeedSendManager.a().e() - FeedSendManager.a().h();
@@ -258,7 +257,7 @@ public class SendFeedFloatManager implements FeedRefreshObserver.IFeedRefreshObs
         if (e < 1) {
             i2 = 1;
         }
-        this.g.setText(String.format(this.f29810a.getResources().getString(2131889111), i2 + ""));
+        this.g.setText(String.format(this.f16120a.getResources().getString(R.string.left_to_send), i2 + ""));
     }
 
     public void c() {
@@ -274,7 +273,7 @@ public class SendFeedFloatManager implements FeedRefreshObserver.IFeedRefreshObs
                         SendFeedFloatManager.this.j.y = DensityUtils.a(AppInfo.d(), 52.0f);
                         if (SendFeedFloatManager.this.b) {
                             try {
-                                SendFeedFloatManager.this.k.updateViewLayout(SendFeedFloatManager.this.f29811c, SendFeedFloatManager.this.j);
+                                SendFeedFloatManager.this.k.updateViewLayout(SendFeedFloatManager.this.f16121c, SendFeedFloatManager.this.j);
                             } catch (Exception e) {
                             }
                         }
@@ -309,7 +308,7 @@ public class SendFeedFloatManager implements FeedRefreshObserver.IFeedRefreshObs
                 public void run() {
                     try {
                         if (SendFeedFloatManager.this.b) {
-                            SendFeedFloatManager.this.k.removeView(SendFeedFloatManager.this.f29811c);
+                            SendFeedFloatManager.this.k.removeView(SendFeedFloatManager.this.f16121c);
                             SendFeedFloatManager.this.b = false;
                         }
                     } catch (Exception e) {

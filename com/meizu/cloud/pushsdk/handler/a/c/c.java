@@ -21,30 +21,30 @@ public class c implements Parcelable {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    private MessageV3 f24141a;
+    private MessageV3 f10526a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f24142c;
+    private int f10527c;
     private int d;
 
     protected c(Parcel parcel) {
-        this.f24141a = (MessageV3) parcel.readParcelable(MessageV3.class.getClassLoader());
+        this.f10526a = (MessageV3) parcel.readParcelable(MessageV3.class.getClassLoader());
         this.b = parcel.readString();
-        this.f24142c = parcel.readInt();
+        this.f10527c = parcel.readInt();
         this.d = parcel.readInt();
     }
 
     public c(MessageV3 messageV3) {
-        this.f24141a = messageV3;
+        this.f10526a = messageV3;
     }
 
     public MessageV3 a() {
-        return this.f24141a;
+        return this.f10526a;
     }
 
     public void a(int i) {
-        this.f24142c = i;
+        this.f10527c = i;
     }
 
     public void a(String str) {
@@ -52,7 +52,7 @@ public class c implements Parcelable {
     }
 
     public int b() {
-        return this.f24142c;
+        return this.f10527c;
     }
 
     public void b(int i) {
@@ -69,14 +69,14 @@ public class c implements Parcelable {
     }
 
     public String toString() {
-        return "NotificationState{messageV3=" + this.f24141a + ", notificationPkg='" + this.b + "', notificationId='" + this.f24142c + "', state='" + this.d + "'}";
+        return "NotificationState{messageV3=" + this.f10526a + ", notificationPkg='" + this.b + "', notificationId='" + this.f10527c + "', state='" + this.d + "'}";
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeParcelable(this.f24141a, i);
+        parcel.writeParcelable(this.f10526a, i);
         parcel.writeString(this.b);
-        parcel.writeInt(this.f24142c);
+        parcel.writeInt(this.f10527c);
         parcel.writeInt(this.d);
     }
 }

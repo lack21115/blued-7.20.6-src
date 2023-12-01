@@ -104,7 +104,7 @@ public class DrawCardH5 extends FrameLayout implements View.OnClickListener {
     public void onClick(View view) {
         Tracker.onClick(view);
         if (view != this.dC) {
-            com.kwad.components.core.d.b.a.a(new a.C0519a(getContext()).I(this.mAdTemplate).a(new a.b() { // from class: com.kwad.components.ad.draw.view.playcard.DrawCardH5.1
+            com.kwad.components.core.d.b.a.a(new a.C0349a(getContext()).I(this.mAdTemplate).a(new a.b() { // from class: com.kwad.components.ad.draw.view.playcard.DrawCardH5.1
                 @Override // com.kwad.components.core.d.b.a.b
                 public final void onAdClicked() {
                     if (DrawCardH5.this.dB != null) {

@@ -11,9 +11,7 @@ import android.provider.DrmStore;
 import android.provider.MediaStore;
 import android.provider.Settings;
 import android.util.Log;
-import com.android.internal.R;
 import com.android.internal.database.SortCursor;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
@@ -212,7 +210,7 @@ public class RingtoneManager {
             return 0;
         }
         String uri2 = uri.toString();
-        if (!uri2.startsWith(Settings.System.DEFAULT_RINGTONE_URI.toString()) || (parseInt = Integer.parseInt(uri2.substring(uri2.lastIndexOf(BridgeUtil.UNDERLINE_STR) + 1))) <= 0 || parseInt > 3) {
+        if (!uri2.startsWith(Settings.System.DEFAULT_RINGTONE_URI.toString()) || (parseInt = Integer.parseInt(uri2.substring(uri2.lastIndexOf("_") + 1))) <= 0 || parseInt > 3) {
             return -1;
         }
         return parseInt - 1;
@@ -222,7 +220,7 @@ public class RingtoneManager {
         if (i < 0 || i >= 3) {
             return null;
         }
-        return i == 0 ? Settings.System.DEFAULT_RINGTONE_URI : Uri.parse(Settings.System.DEFAULT_RINGTONE_URI.toString() + BridgeUtil.UNDERLINE_STR + (i + 1));
+        return i == 0 ? Settings.System.DEFAULT_RINGTONE_URI : Uri.parse(Settings.System.DEFAULT_RINGTONE_URI.toString() + "_" + (i + 1));
     }
 
     public static int getDefaultType(Uri uri) {
@@ -256,7 +254,7 @@ public class RingtoneManager {
     }
 
     private String getExcludedExternalStorageDir() {
-        if (this.mContext.getResources().getBoolean(R.bool.config_excludeRingtonesFromRemovableStorage)) {
+        if (this.mContext.getResources().getBoolean(17957057)) {
             File secondaryStorageDirectory = Environment.getSecondaryStorageDirectory();
             if (Environment.isExternalStorageEmulated(secondaryStorageDirectory)) {
                 return null;

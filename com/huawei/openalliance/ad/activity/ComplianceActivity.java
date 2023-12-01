@@ -43,7 +43,7 @@ public class ComplianceActivity extends a {
             view.getLocationOnScreen(iArr2);
             int measuredWidth = view.getMeasuredWidth();
             int measuredHeight = view.getMeasuredHeight();
-            view.getViewTreeObserver().addOnGlobalLayoutListener(new a.ViewTreeObserver$OnGlobalLayoutListenerC0429a(view, context, iArr2));
+            view.getViewTreeObserver().addOnGlobalLayoutListener(new a.ViewTreeObserver$OnGlobalLayoutListenerC0259a(view, context, iArr2));
             Code(context, iArr, new int[]{measuredWidth, measuredHeight}, adContentData, z);
         } catch (Throwable th) {
             ge.I(n, "start Activity error: %s", th.getClass().getSimpleName());
@@ -140,7 +140,7 @@ public class ComplianceActivity extends a {
     @Override // com.huawei.openalliance.ad.activity.a
     public void I() {
         C();
-        this.f.Code(this.f22932a, this.b);
+        this.f.Code(this.f9324a, this.b);
         this.f.setShowWhyThisAd(this.q);
         this.f.setAdContentData(this.r);
     }

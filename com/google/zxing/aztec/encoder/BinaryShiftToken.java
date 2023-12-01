@@ -3,9 +3,8 @@ package com.google.zxing.aztec.encoder;
 import com.google.zxing.common.BitArray;
 import com.j256.ormlite.stmt.query.SimpleComparison;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-7994992-dex2jar.jar:com/google/zxing/aztec/encoder/BinaryShiftToken.class */
-public final class BinaryShiftToken extends Token {
+final class BinaryShiftToken extends Token {
     private final short binaryShiftByteCount;
     private final short binaryShiftStart;
 

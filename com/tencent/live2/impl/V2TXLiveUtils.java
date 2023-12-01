@@ -1,6 +1,7 @@
 package com.tencent.live2.impl;
 
 import android.text.TextUtils;
+import com.huawei.hms.framework.common.ContainerUtils;
 import com.tencent.liteav.basic.log.TXCLog;
 import com.tencent.live2.V2TXLiveDef;
 
@@ -16,7 +17,7 @@ public class V2TXLiveUtils {
     public static final /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f37188a;
+        static final /* synthetic */ int[] f23497a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:27:0x0095 -> B:61:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:29:0x0099 -> B:55:0x001f). Please submit an issue!!! */
@@ -31,53 +32,53 @@ public class V2TXLiveUtils {
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:47:0x00bd -> B:69:0x0088). Please submit an issue!!! */
         static {
             int[] iArr = new int[V2TXLiveDef.V2TXLiveVideoResolution.values().length];
-            f37188a = iArr;
+            f23497a = iArr;
             try {
                 iArr[V2TXLiveDef.V2TXLiveVideoResolution.V2TXLiveVideoResolution160x160.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f37188a[V2TXLiveDef.V2TXLiveVideoResolution.V2TXLiveVideoResolution270x270.ordinal()] = 2;
+                f23497a[V2TXLiveDef.V2TXLiveVideoResolution.V2TXLiveVideoResolution270x270.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f37188a[V2TXLiveDef.V2TXLiveVideoResolution.V2TXLiveVideoResolution480x480.ordinal()] = 3;
+                f23497a[V2TXLiveDef.V2TXLiveVideoResolution.V2TXLiveVideoResolution480x480.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f37188a[V2TXLiveDef.V2TXLiveVideoResolution.V2TXLiveVideoResolution320x240.ordinal()] = 4;
+                f23497a[V2TXLiveDef.V2TXLiveVideoResolution.V2TXLiveVideoResolution320x240.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f37188a[V2TXLiveDef.V2TXLiveVideoResolution.V2TXLiveVideoResolution480x360.ordinal()] = 5;
+                f23497a[V2TXLiveDef.V2TXLiveVideoResolution.V2TXLiveVideoResolution480x360.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
             try {
-                f37188a[V2TXLiveDef.V2TXLiveVideoResolution.V2TXLiveVideoResolution640x480.ordinal()] = 6;
+                f23497a[V2TXLiveDef.V2TXLiveVideoResolution.V2TXLiveVideoResolution640x480.ordinal()] = 6;
             } catch (NoSuchFieldError e6) {
             }
             try {
-                f37188a[V2TXLiveDef.V2TXLiveVideoResolution.V2TXLiveVideoResolution320x180.ordinal()] = 7;
+                f23497a[V2TXLiveDef.V2TXLiveVideoResolution.V2TXLiveVideoResolution320x180.ordinal()] = 7;
             } catch (NoSuchFieldError e7) {
             }
             try {
-                f37188a[V2TXLiveDef.V2TXLiveVideoResolution.V2TXLiveVideoResolution480x270.ordinal()] = 8;
+                f23497a[V2TXLiveDef.V2TXLiveVideoResolution.V2TXLiveVideoResolution480x270.ordinal()] = 8;
             } catch (NoSuchFieldError e8) {
             }
             try {
-                f37188a[V2TXLiveDef.V2TXLiveVideoResolution.V2TXLiveVideoResolution640x360.ordinal()] = 9;
+                f23497a[V2TXLiveDef.V2TXLiveVideoResolution.V2TXLiveVideoResolution640x360.ordinal()] = 9;
             } catch (NoSuchFieldError e9) {
             }
             try {
-                f37188a[V2TXLiveDef.V2TXLiveVideoResolution.V2TXLiveVideoResolution960x540.ordinal()] = 10;
+                f23497a[V2TXLiveDef.V2TXLiveVideoResolution.V2TXLiveVideoResolution960x540.ordinal()] = 10;
             } catch (NoSuchFieldError e10) {
             }
             try {
-                f37188a[V2TXLiveDef.V2TXLiveVideoResolution.V2TXLiveVideoResolution1280x720.ordinal()] = 11;
+                f23497a[V2TXLiveDef.V2TXLiveVideoResolution.V2TXLiveVideoResolution1280x720.ordinal()] = 11;
             } catch (NoSuchFieldError e11) {
             }
             try {
-                f37188a[V2TXLiveDef.V2TXLiveVideoResolution.V2TXLiveVideoResolution1920x1080.ordinal()] = 12;
+                f23497a[V2TXLiveDef.V2TXLiveVideoResolution.V2TXLiveVideoResolution1920x1080.ordinal()] = 12;
             } catch (NoSuchFieldError e12) {
             }
         }
@@ -87,11 +88,11 @@ public class V2TXLiveUtils {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public int f37189a;
+        public int f23498a;
         public int b;
 
         public a(int i, int i2) {
-            this.f37189a = i;
+            this.f23498a = i;
             this.b = i2;
         }
     }
@@ -99,7 +100,7 @@ public class V2TXLiveUtils {
     public static a getBitrateByResolution(V2TXLiveDef.V2TXLiveVideoResolution v2TXLiveVideoResolution) {
         int i = 600;
         int i2 = 900;
-        switch (AnonymousClass1.f37188a[v2TXLiveVideoResolution.ordinal()]) {
+        switch (AnonymousClass1.f23497a[v2TXLiveVideoResolution.ordinal()]) {
             case 1:
                 i = 100;
                 i2 = 150;
@@ -183,7 +184,7 @@ public class V2TXLiveUtils {
                     int indexOf = str.indexOf(strArr[i]);
                     str3 = str;
                     if (indexOf != -1) {
-                        int indexOf2 = str.indexOf("&", indexOf);
+                        int indexOf2 = str.indexOf(ContainerUtils.FIELD_DELIMITER, indexOf);
                         if (indexOf2 == -1) {
                             str3 = str.substring(0, indexOf);
                         } else {

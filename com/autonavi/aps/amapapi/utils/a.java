@@ -4,12 +4,12 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.text.TextUtils;
-import com.amap.api.col.p0003sl.hp;
-import com.amap.api.col.p0003sl.ia;
-import com.amap.api.col.p0003sl.ib;
-import com.amap.api.col.p0003sl.iw;
-import com.amap.api.col.p0003sl.ki;
-import com.amap.api.col.p0003sl.kk;
+import com.amap.api.col.3sl.hp;
+import com.amap.api.col.3sl.ia;
+import com.amap.api.col.3sl.ib;
+import com.amap.api.col.3sl.iw;
+import com.amap.api.col.3sl.ki;
+import com.amap.api.col.3sl.kk;
 import java.util.ArrayList;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -39,14 +39,14 @@ public final class a {
     private static int B = 80;
 
     /* renamed from: a  reason: collision with root package name */
-    static long f9275a = 3600000;
+    static long f6435a = 3600000;
     private static boolean C = false;
     private static boolean D = true;
     private static boolean E = false;
     public static volatile long b = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    static boolean f9276c = true;
+    static boolean f6436c = true;
     private static boolean F = true;
     private static long G = -1;
     private static boolean H = true;
@@ -67,7 +67,6 @@ public final class a {
         }
         h = true;
         hp.a(context, b.c(), b.d(), new hp.a() { // from class: com.autonavi.aps.amapapi.utils.a.1
-            @Override // com.amap.api.col.p0003sl.hp.a
             public final void a(hp.b bVar) {
                 a.a(Context.this, bVar);
             }
@@ -79,7 +78,7 @@ public final class a {
             JSONObject optJSONObject = jSONObject.optJSONObject("13S");
             if (optJSONObject != null) {
                 long optInt = optJSONObject.optInt("at", 123) * 60 * 1000;
-                f9275a = optInt;
+                f6435a = optInt;
                 h.a(editor, "13S_at", optInt);
                 d(optJSONObject, editor);
                 try {
@@ -115,10 +114,10 @@ public final class a {
         try {
             hp.b.a aVar = bVar.g;
             if (aVar != null) {
-                boolean z2 = aVar.f5086a;
+                boolean z2 = aVar.a;
                 i = z2;
                 h.a(editor, "exception", z2);
-                JSONObject jSONObject = aVar.f5087c;
+                JSONObject jSONObject = aVar.c;
                 if (jSONObject != null) {
                     j = jSONObject.optInt("fn", j);
                     int optInt = jSONObject.optInt("mpn", k);
@@ -298,7 +297,7 @@ public final class a {
             b.a(th3, "AuthUtil", "loadLastAbleState p3");
         }
         try {
-            f9276c = h.a(context, "pref", com.anythink.expressad.video.dynview.a.a.Z, f9276c);
+            f6436c = h.a(context, "pref", com.anythink.expressad.video.dynview.a.a.Z, f6436c);
         } catch (Throwable th4) {
             b.a(th4, "AuthUtil", "loadLastAbleState p4");
         }
@@ -336,7 +335,7 @@ public final class a {
         }
         try {
             b = i.b();
-            f9275a = h.a(context, "pref", "13S_at", f9275a);
+            f6435a = h.a(context, "pref", "13S_at", f6435a);
             D = h.a(context, "pref", "13S_nla", D);
             A = h.a(context, "pref", "13J_able", A);
             B = h.a(context, "pref", "13J_c", B);
@@ -356,10 +355,10 @@ public final class a {
             boolean a4 = h.a(context, "pref", "197a", false);
             String a5 = h.a(context, "pref", "197dv", "");
             String a6 = h.a(context, "pref", "197tv", "");
-            if (a4 && b.f9278a.equals(a5)) {
+            if (a4 && b.f6438a.equals(a5)) {
                 for (String str : b.b) {
                     if (str.equals(a6)) {
-                        b.f9278a = a6;
+                        b.f6438a = a6;
                     }
                 }
             }
@@ -378,7 +377,7 @@ public final class a {
                 boolean a2 = hp.a(jSONObject2.optString("able"), false);
                 h.a(editor, "197a", a2);
                 if (a2) {
-                    h.a(editor, "197dv", jSONObject2.optString("sv", ""));
+                    h.a(editor, "197dv", jSONObject2.optString(com.anythink.expressad.foundation.g.a.Z, ""));
                     h.a(editor, "197tv", jSONObject2.optString("tv", ""));
                     return;
                 }
@@ -432,7 +431,7 @@ public final class a {
         }
         try {
             boolean a2 = hp.a(jSONObject.optString("re"), true);
-            f9276c = a2;
+            f6436c = a2;
             h.a(editor, com.anythink.expressad.video.dynview.a.a.Z, a2);
         } catch (Throwable th) {
             b.a(th, "AuthUtil", "checkReLocationAble");
@@ -522,7 +521,7 @@ public final class a {
                 J = a2;
                 h.a(editor, "ok9", a2);
                 if (a2) {
-                    String optString = optJSONObject.optString(com.alipay.sdk.app.statistic.c.d);
+                    String optString = optJSONObject.optString("auth");
                     String optString2 = optJSONObject.optString("ht");
                     M = optString2;
                     h.a(editor, "ok11", optString2);
@@ -557,7 +556,7 @@ public final class a {
     }
 
     public static boolean l() {
-        return f9276c;
+        return f6436c;
     }
 
     public static boolean m() {

@@ -2,6 +2,7 @@ package com.cdo.oaps.ad;
 
 import android.net.Uri;
 import android.text.TextUtils;
+import com.huawei.hms.framework.common.ContainerUtils;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
@@ -71,7 +72,7 @@ public class OapsParser {
             sb.append("?");
             for (Map.Entry<String, Object> entry : params.entrySet()) {
                 if (sb.charAt(sb.length() - 1) != '?') {
-                    sb.append("&");
+                    sb.append(ContainerUtils.FIELD_DELIMITER);
                 }
                 sb.append(entry.getKey());
                 sb.append("=");

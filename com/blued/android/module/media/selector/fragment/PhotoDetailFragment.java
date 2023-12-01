@@ -3,6 +3,7 @@ package com.blued.android.module.media.selector.fragment;
 import android.app.Activity;
 import android.graphics.PorterDuff;
 import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.TypedValue;
@@ -34,13 +35,9 @@ import java.io.File;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/media/selector/fragment/PhotoDetailFragment.class */
 public class PhotoDetailFragment extends BaseFragment implements GestureDetector.OnDoubleTapListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected ViewDragHelperLayout f15555a;
+    protected ViewDragHelperLayout a;
     protected FrameLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    protected FrameLayout f15556c;
+    protected FrameLayout c;
     protected PhotoView d;
     protected ProgressBar e;
     protected LoadOptions f;
@@ -84,15 +81,13 @@ public class PhotoDetailFragment extends BaseFragment implements GestureDetector
     /* renamed from: com.blued.android.module.media.selector.fragment.PhotoDetailFragment$3  reason: invalid class name */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/media/selector/fragment/PhotoDetailFragment$3.class */
     public class AnonymousClass3 extends ImageLoadResult {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ String f15559a;
+        final /* synthetic */ String a;
         final /* synthetic */ String b;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         AnonymousClass3(IRequestHost iRequestHost, String str, String str2) {
             super(iRequestHost);
-            this.f15559a = str;
+            this.a = str;
             this.b = str2;
         }
 
@@ -143,7 +138,7 @@ public class PhotoDetailFragment extends BaseFragment implements GestureDetector
         public void a(int i, Exception exc) {
             PhotoDetailFragment.this.g();
             AppMethods.d(R.string.foudation_media_load_fail);
-            ImageFileLoader.a(PhotoDetailFragment.this.getFragmentActive()).a(this.f15559a).a(new ImageFileLoader.OnLoadFileListener() { // from class: com.blued.android.module.media.selector.fragment.-$$Lambda$PhotoDetailFragment$3$kX_qZw44nbAU114Ns1BYDdXX-GU
+            ImageFileLoader.a(PhotoDetailFragment.this.getFragmentActive()).a(this.a).a(new ImageFileLoader.OnLoadFileListener() { // from class: com.blued.android.module.media.selector.fragment.-$$Lambda$PhotoDetailFragment$3$kX_qZw44nbAU114Ns1BYDdXX-GU
                 @Override // com.blued.android.core.image.ImageFileLoader.OnLoadFileListener
                 public final void onUIFinish(File file, Exception exc2) {
                     PhotoDetailFragment.AnonymousClass3.this.b(file, exc2);
@@ -186,13 +181,13 @@ public class PhotoDetailFragment extends BaseFragment implements GestureDetector
     }
 
     private void a() {
-        this.f15555a = (ViewDragHelperLayout) this.i.findViewById(R.id.view_drag_layout);
+        this.a = (ViewDragHelperLayout) this.i.findViewById(R.id.view_drag_layout);
         this.e = (ProgressBar) this.i.findViewById(R.id.loading_view);
         new TypedValue();
         this.e.getIndeterminateDrawable().setColorFilter(getContext().getResources().getColor(R.color.colorAccent), PorterDuff.Mode.SRC_ATOP);
-        this.d = (PhotoView) this.i.findViewById(R.id.photo_preview);
+        this.d = this.i.findViewById(R.id.photo_preview);
         this.b = (FrameLayout) this.i.findViewById(R.id.top_title);
-        this.f15556c = (FrameLayout) this.i.findViewById(R.id.bottom_tab);
+        this.c = (FrameLayout) this.i.findViewById(R.id.bottom_tab);
         GetConfigCallback getConfigCallback = this.m;
         if (getConfigCallback != null) {
             this.d.setScaleType(getConfigCallback.c());
@@ -203,32 +198,31 @@ public class PhotoDetailFragment extends BaseFragment implements GestureDetector
                 this.b.setVisibility(8);
             }
             if (this.m.b() != null) {
-                this.f15556c.addView(this.m.b(), new FrameLayout.LayoutParams(-1, -2));
-                this.f15556c.setVisibility(0);
+                this.c.addView(this.m.b(), new FrameLayout.LayoutParams(-1, -2));
+                this.c.setVisibility(0);
             } else {
-                this.f15556c.setVisibility(8);
+                this.c.setVisibility(8);
             }
         } else {
             this.d.setScaleType(ImageView.ScaleType.FIT_CENTER);
             this.b.setVisibility(8);
-            this.f15556c.setVisibility(8);
+            this.c.setVisibility(8);
         }
         this.d.setZoomTransitionDuration(200);
         PhotoView photoView = this.d;
         photoView.setMediumScale(photoView.getMinimumScale() + 0.001f);
         if (this.j) {
-            this.f15555a.setClickable(true);
+            this.a.setClickable(true);
             this.d.setMaximumScale(5.0f);
-            this.f15555a.setScrollDisable(this.k);
+            this.a.setScrollDisable(this.k);
             this.d.setOnScaleChangeListener(new OnScaleChangedListener() { // from class: com.blued.android.module.media.selector.fragment.PhotoDetailFragment.1
-                @Override // com.github.chrisbanes.photoview.OnScaleChangedListener
                 public void a(float f, float f2, float f3) {
                     EventCallbackObserver.a().a(f, f2, f3);
                     if (PhotoDetailFragment.this.k) {
                         if (((int) PhotoDetailFragment.this.d.getScale()) > PhotoDetailFragment.this.l) {
-                            PhotoDetailFragment.this.f15555a.setScrollDisable(false);
+                            PhotoDetailFragment.this.a.setScrollDisable(false);
                         } else {
-                            PhotoDetailFragment.this.f15555a.setScrollDisable(true);
+                            PhotoDetailFragment.this.a.setScrollDisable(true);
                         }
                     }
                 }
@@ -236,17 +230,17 @@ public class PhotoDetailFragment extends BaseFragment implements GestureDetector
             this.d.setOnDoubleTapListener(this);
         } else {
             this.k = false;
-            this.f15555a.setClickable(false);
+            this.a.setClickable(false);
             this.d.setZoomable(false);
         }
         if (this.k) {
-            this.f15555a.setOnLayoutStateListener(this.h);
+            this.a.setOnLayoutStateListener(this.h);
         }
     }
 
     private void a(String str, String str2) {
         e();
-        ImageLoader.a(getFragmentActive(), str).e().a(str2).d(R.drawable.album_load_failed_icon).a(new AnonymousClass3(getFragmentActive(), str2, str)).a(this.d);
+        ImageLoader.a(getFragmentActive(), str).e().a(str2).d(R.drawable.album_load_failed_icon).a(new AnonymousClass3(getFragmentActive(), str2, str)).a((ImageView) this.d);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -262,12 +256,12 @@ public class PhotoDetailFragment extends BaseFragment implements GestureDetector
 
     private void h() {
         if (TextUtils.isEmpty(this.g)) {
-            ImageLoader.a(getFragmentActive(), R.drawable.user_bg_round).a(this.d);
+            ImageLoader.a(getFragmentActive(), R.drawable.user_bg_round).a((ImageView) this.d);
         } else if (!this.g.toLowerCase().contains("http://") && !this.g.toLowerCase().contains("https://")) {
             if (this.g.toLowerCase().startsWith("content://")) {
-                ImageLoader.b(getFragmentActive(), this.g).a(this.d);
+                ImageLoader.b(getFragmentActive(), this.g).a((ImageView) this.d);
             } else {
-                ImageLoader.d(getFragmentActive(), this.g).a(this.d);
+                ImageLoader.d(getFragmentActive(), this.g).a((ImageView) this.d);
             }
         } else {
             String str = new String(this.g);
@@ -315,27 +309,27 @@ public class PhotoDetailFragment extends BaseFragment implements GestureDetector
     }
 
     public void aj_() {
-        RectF a2;
+        RectF a;
         float f;
         float width;
         float f2;
         PhotoView photoView = this.d;
-        if (photoView == null || photoView.getAttacher() == null || (a2 = this.d.getAttacher().a()) == null) {
+        if (photoView == null || photoView.getAttacher() == null || (a = this.d.getAttacher().a()) == null) {
             return;
         }
-        float width2 = a2.width();
-        float height = a2.height();
+        float width2 = a.width();
+        float height = a.height();
         if (width2 > height) {
             if (width2 > height * 3.0f) {
                 f = AppInfo.m - DensityUtils.a(getActivity());
-                width = a2.height();
+                width = a.height();
                 f2 = f / width;
             }
             f2 = 0.0f;
         } else {
             if (height > width2 * 3.0f) {
                 f = AppInfo.l;
-                width = a2.width();
+                width = a.width();
                 f2 = f / width;
             }
             f2 = 0.0f;
@@ -364,7 +358,6 @@ public class PhotoDetailFragment extends BaseFragment implements GestureDetector
         }
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityCreated(Bundle bundle) {
         super.onActivityCreated(bundle);
         h();
@@ -376,7 +369,7 @@ public class PhotoDetailFragment extends BaseFragment implements GestureDetector
         return true;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         View view = this.i;
         if (view == null) {
@@ -391,13 +384,13 @@ public class PhotoDetailFragment extends BaseFragment implements GestureDetector
         return this.i;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onDestroy() {
         super.onDestroy();
         PhotoView photoView = this.d;
         if (photoView != null) {
-            ImageLoader.a((IRequestHost) null, photoView);
-            this.d.setImageDrawable(null);
+            ImageLoader.a((IRequestHost) null, (ImageView) photoView);
+            this.d.setImageDrawable((Drawable) null);
         }
     }
 
@@ -423,7 +416,7 @@ public class PhotoDetailFragment extends BaseFragment implements GestureDetector
         return false;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onPause() {
         super.onPause();
         if (this.d.getVisibility() != 0 || this.d.getAttacher() == null) {
@@ -433,10 +426,10 @@ public class PhotoDetailFragment extends BaseFragment implements GestureDetector
         photoView.a(photoView.getMinimumScale(), true);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onResume() {
         super.onResume();
-        ViewDragHelperLayout viewDragHelperLayout = this.f15555a;
+        ViewDragHelperLayout viewDragHelperLayout = this.a;
         if (viewDragHelperLayout != null) {
             viewDragHelperLayout.setScrollDisable(this.k);
         }
@@ -449,16 +442,16 @@ public class PhotoDetailFragment extends BaseFragment implements GestureDetector
         float y = motionEvent.getY();
         if (displayRect != null) {
             if (displayRect.contains(x, y)) {
-                EventCallbackObserver.a().a(this.d);
+                EventCallbackObserver.a().a((View) this.d);
                 return true;
             }
-            EventCallbackObserver.a().b(this.d);
+            EventCallbackObserver.a().b((View) this.d);
             return false;
         }
         return false;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void setUserVisibleHint(boolean z) {
         super.setUserVisibleHint(z);
         if (this.n) {
@@ -468,7 +461,7 @@ public class PhotoDetailFragment extends BaseFragment implements GestureDetector
             } else {
                 PhotoView photoView = this.d;
                 photoView.a(photoView.getMinimumScale(), true);
-                this.f15555a.setScrollDisable(this.k);
+                this.a.setScrollDisable(this.k);
             }
         }
     }

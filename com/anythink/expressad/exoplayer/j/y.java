@@ -14,11 +14,11 @@ import java.io.InputStream;
 public final class y implements h {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f7618a = "rawresource";
+    public static final String f4779a = "rawresource";
     private final Resources b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final aa<? super y> f7619c;
+    private final aa<? super y> f4780c;
     private Uri d;
     private AssetFileDescriptor e;
     private InputStream f;
@@ -42,7 +42,7 @@ public final class y implements h {
 
     public y(Context context, aa<? super y> aaVar) {
         this.b = context.getResources();
-        this.f7619c = aaVar;
+        this.f4780c = aaVar;
     }
 
     private static Uri a(int i) {
@@ -76,7 +76,7 @@ public final class y implements h {
         if (j2 != -1) {
             this.g = j2 - read;
         }
-        aa<? super y> aaVar = this.f7619c;
+        aa<? super y> aaVar = this.f4780c;
         if (aaVar != null) {
             aaVar.a(read);
         }
@@ -86,9 +86,9 @@ public final class y implements h {
     @Override // com.anythink.expressad.exoplayer.j.h
     public final long a(k kVar) {
         try {
-            Uri uri = kVar.f7584c;
+            Uri uri = kVar.f4745c;
             this.d = uri;
-            if (TextUtils.equals(f7618a, uri.getScheme())) {
+            if (TextUtils.equals(f4779a, uri.getScheme())) {
                 try {
                     this.e = this.b.openRawResourceFd(Integer.parseInt(this.d.getLastPathSegment()));
                     FileInputStream fileInputStream = new FileInputStream(this.e.getFileDescriptor());
@@ -106,7 +106,7 @@ public final class y implements h {
                             this.g = j;
                         }
                         this.h = true;
-                        aa<? super y> aaVar = this.f7619c;
+                        aa<? super y> aaVar = this.f4780c;
                         if (aaVar != null) {
                             aaVar.b();
                         }
@@ -149,7 +149,7 @@ public final class y implements h {
                     this.e = null;
                     if (this.h) {
                         this.h = false;
-                        aa<? super y> aaVar = this.f7619c;
+                        aa<? super y> aaVar = this.f4780c;
                         if (aaVar != null) {
                             aaVar.c();
                         }
@@ -168,7 +168,7 @@ public final class y implements h {
                     this.e = null;
                     if (this.h) {
                         this.h = false;
-                        aa<? super y> aaVar2 = this.f7619c;
+                        aa<? super y> aaVar2 = this.f4780c;
                         if (aaVar2 != null) {
                             aaVar2.c();
                         }
@@ -181,7 +181,7 @@ public final class y implements h {
                 this.e = null;
                 if (this.h) {
                     this.h = false;
-                    aa<? super y> aaVar3 = this.f7619c;
+                    aa<? super y> aaVar3 = this.f4780c;
                     if (aaVar3 != null) {
                         aaVar3.c();
                     }

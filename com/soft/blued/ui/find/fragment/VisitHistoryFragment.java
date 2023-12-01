@@ -23,11 +23,11 @@ import com.soft.blued.ui.find.observer.VisitRecordSelectedTabObserver;
 public class VisitHistoryFragment extends BaseFragment implements VisitRecordSelectedTabObserver.IVisitRecordSelectedTabObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f30551a;
+    private Context f16861a;
     private View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private ViewPager f30552c;
+    private ViewPager f16862c;
     private MyVisitorFragment d;
     private MyVisitedFragment e;
     private BaseFragment[] f;
@@ -53,7 +53,7 @@ public class VisitHistoryFragment extends BaseFragment implements VisitRecordSel
 
         public MyAdapter(FragmentManager fragmentManager) {
             super(fragmentManager);
-            this.b = new String[]{VisitHistoryFragment.this.f30551a.getResources().getString(R.string.come_to_visit), VisitHistoryFragment.this.f30551a.getResources().getString(R.string.look_up)};
+            this.b = new String[]{VisitHistoryFragment.this.f16861a.getResources().getString(R.string.come_to_visit), VisitHistoryFragment.this.f16861a.getResources().getString(R.string.look_up)};
         }
 
         @Override // androidx.fragment.app.FragmentPagerAdapter, androidx.viewpager.widget.PagerAdapter
@@ -84,24 +84,24 @@ public class VisitHistoryFragment extends BaseFragment implements VisitRecordSel
     }
 
     private void a() {
-        this.f30552c = (ViewPager) this.b.findViewById(R.id.main_find_viewpager);
-        this.f30552c.setAdapter(new MyAdapter(getChildFragmentManager()));
-        TabPageIndicatorWithDot tabPageIndicatorWithDot = (TabPageIndicatorWithDot) this.b.findViewById(2131373299);
-        tabPageIndicatorWithDot.setViewPager(this.f30552c);
+        this.f16862c = (ViewPager) this.b.findViewById(R.id.main_find_viewpager);
+        this.f16862c.setAdapter(new MyAdapter(getChildFragmentManager()));
+        TabPageIndicatorWithDot tabPageIndicatorWithDot = (TabPageIndicatorWithDot) this.b.findViewById(R.id.vp_indicator);
+        tabPageIndicatorWithDot.setViewPager(this.f16862c);
         tabPageIndicatorWithDot.setOnPageChangeListener(this.h);
     }
 
     public static void a(Context context) {
-        TerminalActivity.d(context, VisitHistoryFragment.class, null);
+        TerminalActivity.d(context, VisitHistoryFragment.class, (Bundle) null);
     }
 
     private void b() {
         ImageView imageView = (ImageView) this.b.findViewById(2131363120);
         ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) imageView.getLayoutParams();
-        marginLayoutParams.width = DensityUtils.a(this.f30551a, 24.0f);
+        marginLayoutParams.width = DensityUtils.a(this.f16861a, 24.0f);
         marginLayoutParams.height = marginLayoutParams.width;
         imageView.setLayoutParams(marginLayoutParams);
-        imageView.setImageDrawable(BluedSkinUtils.b(this.f30551a, 2131233902));
+        imageView.setImageDrawable(BluedSkinUtils.b(this.f16861a, 2131233902));
         imageView.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.fragment.VisitHistoryFragment.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
@@ -110,12 +110,12 @@ public class VisitHistoryFragment extends BaseFragment implements VisitRecordSel
             }
         });
         this.b.findViewById(2131363126).setVisibility(8);
-        this.b.findViewById(2131363135).setVisibility(8);
+        this.b.findViewById(R.id.ctt_right_text).setVisibility(8);
     }
 
     private void c() {
         this.d = new MyVisitorFragment();
-        MyVisitedFragment myVisitedFragment = new MyVisitedFragment();
+        BaseFragment myVisitedFragment = new MyVisitedFragment();
         this.e = myVisitedFragment;
         this.f = r0;
         BaseFragment[] baseFragmentArr = {this.d, myVisitedFragment};
@@ -123,8 +123,8 @@ public class VisitHistoryFragment extends BaseFragment implements VisitRecordSel
 
     @Override // com.soft.blued.ui.find.observer.VisitRecordSelectedTabObserver.IVisitRecordSelectedTabObserver
     public void a(int i) {
-        if (i < this.f30552c.getAdapter().getCount()) {
-            this.f30552c.setCurrentItem(i);
+        if (i < this.f16862c.getAdapter().getCount()) {
+            this.f16862c.setCurrentItem(i);
         }
     }
 
@@ -132,9 +132,8 @@ public class VisitHistoryFragment extends BaseFragment implements VisitRecordSel
         super.finalize();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.f30551a = getActivity();
+        this.f16861a = getActivity();
         View view = this.b;
         if (view == null) {
             this.b = layoutInflater.inflate(R.layout.fragment_visit_history, viewGroup, false);
@@ -148,13 +147,11 @@ public class VisitHistoryFragment extends BaseFragment implements VisitRecordSel
         return this.b;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
         VisitRecordSelectedTabObserver.a().b(this);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onViewCreated(View view, Bundle bundle) {
         super.onViewCreated(view, bundle);
     }

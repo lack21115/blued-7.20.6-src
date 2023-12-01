@@ -16,7 +16,7 @@ public class dc extends bf {
     private BaiduNativeAdPlacement B;
 
     /* renamed from: a  reason: collision with root package name */
-    a f9413a;
+    a f6573a;
     private String q;
     private String r;
     private int s;
@@ -34,7 +34,7 @@ public class dc extends bf {
         this.w = 1;
         this.x = 1;
         this.z = false;
-        this.f9413a = null;
+        this.f6573a = null;
         this.A = false;
         this.u = baiduNativeH5AdView;
         this.r = baiduNativeH5AdView.getAdPlacement().getApId();

@@ -6,11 +6,11 @@ import android.util.Log;
 public class e {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final e f27672a = new e("");
+    public static final e f13984a = new e("");
     public static final e b = new e("Pili-System");
 
     /* renamed from: c  reason: collision with root package name */
-    public static final e f27673c = new e("Pili-SCREEN");
+    public static final e f13985c = new e("Pili-SCREEN");
     public static final e d = new e("Pili-Record");
     public static final e e = new e("Pili-Editor");
     public static final e f = new e("Pili-Capture");

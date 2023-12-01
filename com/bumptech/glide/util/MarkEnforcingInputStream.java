@@ -8,15 +8,15 @@ import java.io.InputStream;
 public class MarkEnforcingInputStream extends FilterInputStream {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f21106a;
+    private int f7500a;
 
     public MarkEnforcingInputStream(InputStream inputStream) {
         super(inputStream);
-        this.f21106a = Integer.MIN_VALUE;
+        this.f7500a = Integer.MIN_VALUE;
     }
 
     private long a(long j) {
-        int i = this.f21106a;
+        int i = this.f7500a;
         if (i == 0) {
             return -1L;
         }
@@ -31,16 +31,16 @@ public class MarkEnforcingInputStream extends FilterInputStream {
     }
 
     private void b(long j) {
-        int i = this.f21106a;
+        int i = this.f7500a;
         if (i == Integer.MIN_VALUE || j == -1) {
             return;
         }
-        this.f21106a = (int) (i - j);
+        this.f7500a = (int) (i - j);
     }
 
     @Override // java.io.FilterInputStream, java.io.InputStream
     public int available() throws IOException {
-        int i = this.f21106a;
+        int i = this.f7500a;
         return i == Integer.MIN_VALUE ? super.available() : Math.min(i, super.available());
     }
 
@@ -48,7 +48,7 @@ public class MarkEnforcingInputStream extends FilterInputStream {
     public void mark(int i) {
         synchronized (this) {
             super.mark(i);
-            this.f21106a = i;
+            this.f7500a = i;
         }
     }
 
@@ -77,7 +77,7 @@ public class MarkEnforcingInputStream extends FilterInputStream {
     public void reset() throws IOException {
         synchronized (this) {
             super.reset();
-            this.f21106a = Integer.MIN_VALUE;
+            this.f7500a = Integer.MIN_VALUE;
         }
     }
 

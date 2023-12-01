@@ -277,8 +277,8 @@ public class CtAuth {
     }
 
     public void setDomainName(String str, String str2, String str3) {
-        g.f4145a = str;
+        g.f4097a = str;
         g.b = str2;
-        g.f4146c = str3;
+        g.f4098c = str3;
     }
 }

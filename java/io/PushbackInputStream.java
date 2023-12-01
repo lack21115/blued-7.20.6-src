@@ -31,14 +31,14 @@ public class PushbackInputStream extends FilterInputStream {
         if (this.buf == null) {
             throw new IOException();
         }
-        return (this.buf.length - this.pos) + this.f42254in.available();
+        return (this.buf.length - this.pos) + this.in.available();
     }
 
     @Override // java.io.FilterInputStream, java.io.InputStream, java.io.Closeable, java.lang.AutoCloseable
     public void close() throws IOException {
-        if (this.f42254in != null) {
-            this.f42254in.close();
-            this.f42254in = null;
+        if (this.in != null) {
+            this.in.close();
+            this.in = null;
             this.buf = null;
         }
     }
@@ -63,7 +63,7 @@ public class PushbackInputStream extends FilterInputStream {
             this.pos = i + 1;
             return bArr[i] & 255;
         }
-        return this.f42254in.read();
+        return this.in.read();
     }
 
     @Override // java.io.FilterInputStream, java.io.InputStream
@@ -86,7 +86,7 @@ public class PushbackInputStream extends FilterInputStream {
         if (i3 == i2) {
             return i2;
         }
-        int read = this.f42254in.read(bArr, i5, i2 - i4);
+        int read = this.in.read(bArr, i5, i2 - i4);
         return read > 0 ? read + i4 : i4 == 0 ? read : i4;
     }
 
@@ -97,7 +97,7 @@ public class PushbackInputStream extends FilterInputStream {
 
     @Override // java.io.FilterInputStream, java.io.InputStream
     public long skip(long j) throws IOException {
-        if (this.f42254in == null) {
+        if (this.in == null) {
             throw streamClosed();
         }
         if (j <= 0) {
@@ -110,7 +110,7 @@ public class PushbackInputStream extends FilterInputStream {
         }
         int i2 = i;
         if (i < j) {
-            i2 = (int) (i + this.f42254in.skip(j - i));
+            i2 = (int) (i + this.in.skip(j - i));
         }
         return i2;
     }

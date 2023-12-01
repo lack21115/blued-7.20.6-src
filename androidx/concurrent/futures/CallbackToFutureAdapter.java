@@ -14,30 +14,30 @@ public final class CallbackToFutureAdapter {
     public static final class Completer<T> {
 
         /* renamed from: a  reason: collision with root package name */
-        Object f1980a;
+        Object f1932a;
         SafeFuture<T> b;
 
         /* renamed from: c  reason: collision with root package name */
-        private ResolvableFuture<Void> f1981c = ResolvableFuture.create();
+        private ResolvableFuture<Void> f1933c = ResolvableFuture.create();
         private boolean d;
 
         Completer() {
         }
 
         private void b() {
-            this.f1980a = null;
+            this.f1932a = null;
             this.b = null;
-            this.f1981c = null;
+            this.f1933c = null;
         }
 
         void a() {
-            this.f1980a = null;
+            this.f1932a = null;
             this.b = null;
-            this.f1981c.set(null);
+            this.f1933c.set(null);
         }
 
         public void addCancellationListener(Runnable runnable, Executor executor) {
-            ResolvableFuture<Void> resolvableFuture = this.f1981c;
+            ResolvableFuture<Void> resolvableFuture = this.f1933c;
             if (resolvableFuture != null) {
                 resolvableFuture.addListener(runnable, executor);
             }
@@ -47,9 +47,9 @@ public final class CallbackToFutureAdapter {
             ResolvableFuture<Void> resolvableFuture;
             SafeFuture<T> safeFuture = this.b;
             if (safeFuture != null && !safeFuture.isDone()) {
-                safeFuture.a((Throwable) new FutureGarbageCollectedException("The completer object was garbage collected - this future would otherwise never complete. The tag was: " + this.f1980a));
+                safeFuture.a((Throwable) new FutureGarbageCollectedException("The completer object was garbage collected - this future would otherwise never complete. The tag was: " + this.f1932a));
             }
-            if (this.d || (resolvableFuture = this.f1981c) == null) {
+            if (this.d || (resolvableFuture = this.f1933c) == null) {
                 return;
             }
             resolvableFuture.set(null);
@@ -119,20 +119,20 @@ public final class CallbackToFutureAdapter {
     public static final class SafeFuture<T> implements ListenableFuture<T> {
 
         /* renamed from: a  reason: collision with root package name */
-        final WeakReference<Completer<T>> f1982a;
+        final WeakReference<Completer<T>> f1934a;
         private final AbstractResolvableFuture<T> b = new AbstractResolvableFuture<T>() { // from class: androidx.concurrent.futures.CallbackToFutureAdapter.SafeFuture.1
             @Override // androidx.concurrent.futures.AbstractResolvableFuture
             protected String c() {
-                Completer<T> completer = SafeFuture.this.f1982a.get();
+                Completer<T> completer = SafeFuture.this.f1934a.get();
                 if (completer == null) {
                     return "Completer object has been garbage collected, future will fail soon";
                 }
-                return "tag=[" + completer.f1980a + "]";
+                return "tag=[" + completer.f1932a + "]";
             }
         };
 
         SafeFuture(Completer<T> completer) {
-            this.f1982a = new WeakReference<>(completer);
+            this.f1934a = new WeakReference<>(completer);
         }
 
         boolean a(T t) {
@@ -154,7 +154,7 @@ public final class CallbackToFutureAdapter {
 
         @Override // java.util.concurrent.Future
         public boolean cancel(boolean z) {
-            Completer<T> completer = this.f1982a.get();
+            Completer<T> completer = this.f1934a.get();
             boolean cancel = this.b.cancel(z);
             if (cancel && completer != null) {
                 completer.a();
@@ -194,11 +194,11 @@ public final class CallbackToFutureAdapter {
         Completer<T> completer = new Completer<>();
         SafeFuture<T> safeFuture = new SafeFuture<>(completer);
         completer.b = safeFuture;
-        completer.f1980a = resolver.getClass();
+        completer.f1932a = resolver.getClass();
         try {
             Object attachCompleter = resolver.attachCompleter(completer);
             if (attachCompleter != null) {
-                completer.f1980a = attachCompleter;
+                completer.f1932a = attachCompleter;
                 return safeFuture;
             }
         } catch (Exception e) {

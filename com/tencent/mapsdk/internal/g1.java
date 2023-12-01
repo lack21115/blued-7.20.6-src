@@ -20,11 +20,11 @@ import com.tencent.tencentmap.mapsdk.maps.model.MyLocationStyle;
 public class g1 implements i0 {
 
     /* renamed from: a  reason: collision with root package name */
-    private a0 f37453a;
+    private a0 f23762a;
     private LocationSource.OnLocationChangedListener b;
 
     /* renamed from: c  reason: collision with root package name */
-    private LocationSource f37454c = null;
+    private LocationSource f23763c = null;
     private boolean d = false;
     private Circle e = null;
     private TencentMap.OnMyLocationChangeListener f = null;
@@ -67,10 +67,10 @@ public class g1 implements i0 {
     }
 
     public g1(rc rcVar, a0 a0Var) {
-        this.f37453a = null;
+        this.f23762a = null;
         this.b = null;
         this.l = rcVar;
-        this.f37453a = a0Var;
+        this.f23762a = a0Var;
         this.b = h();
     }
 
@@ -142,16 +142,16 @@ public class g1 implements i0 {
         } else if (myLocationType != 2) {
             if (myLocationType != 3) {
                 this.l.a(location.getBearing());
-                a0 a0Var = this.f37453a;
+                a0 a0Var = this.f23762a;
                 if (a0Var != null) {
                     a0Var.a(CameraUpdateFactory.newLatLng(latLng));
                     return;
                 }
                 return;
             }
-            a0 a0Var2 = this.f37453a;
+            a0 a0Var2 = this.f23762a;
             if (a0Var2 != null) {
-                this.f37453a.a(CameraUpdateFactory.rotateTo(location.getBearing(), a0Var2.b().tilt));
+                this.f23762a.a(CameraUpdateFactory.rotateTo(location.getBearing(), a0Var2.b().tilt));
             }
         }
     }
@@ -229,7 +229,7 @@ public class g1 implements i0 {
         if (circle != null) {
             circle.setVisible(true);
         }
-        LocationSource locationSource = this.f37454c;
+        LocationSource locationSource = this.f23763c;
         if (locationSource != null) {
             locationSource.activate(this.b);
         }
@@ -250,7 +250,7 @@ public class g1 implements i0 {
             this.l.o(true);
             this.m = 0;
             this.b = null;
-            LocationSource locationSource = this.f37454c;
+            LocationSource locationSource = this.f23763c;
             if (locationSource != null) {
                 locationSource.deactivate();
             }
@@ -264,7 +264,7 @@ public class g1 implements i0 {
 
     public void e() {
         c();
-        this.f37453a = null;
+        this.f23762a = null;
     }
 
     public BitmapDescriptor g() {
@@ -281,7 +281,7 @@ public class g1 implements i0 {
 
     @Override // com.tencent.mapsdk.internal.i0
     public void setLocationSource(LocationSource locationSource) {
-        this.f37454c = locationSource;
+        this.f23763c = locationSource;
         if (!this.d || locationSource == null) {
             return;
         }

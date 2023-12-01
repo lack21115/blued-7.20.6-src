@@ -21,13 +21,9 @@ public final class b {
     public static final int G = 33;
     public static final int H = 34;
     public static final int I = 35;
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final int f5830a = 1;
+    public static final int a = 1;
     public static final int b = 2;
-
-    /* renamed from: c  reason: collision with root package name */
-    public static final int f5831c = 3;
+    public static final int c = 3;
     public static final int d = 4;
     public static final int e = 5;
     public static final int f = 6;
@@ -64,9 +60,9 @@ public final class b {
                     s sVar = (s) iVar3;
                     boolean a2 = iVar3.k() != null ? b.a(i2, com.anythink.core.common.e.i.this.k()) : false;
                     if (i2 == 8) {
-                        new com.anythink.basead.g.c(sVar.P(), iVar2.f5906a, a2).a(0, (com.anythink.core.common.g.i) null);
+                        new com.anythink.basead.g.c(sVar.P(), iVar2.a, a2).a(0, (com.anythink.core.common.g.i) null);
                     }
-                    com.anythink.basead.g.b bVar = new com.anythink.basead.g.b(i2, sVar, iVar2.f5906a);
+                    com.anythink.basead.g.b bVar = new com.anythink.basead.g.b(i2, sVar, iVar2.a);
                     bVar.b(iVar2.b);
                     bVar.a(0, (com.anythink.core.common.g.i) null);
                 } else {
@@ -145,7 +141,7 @@ public final class b {
     public static boolean a(Context context, com.anythink.core.common.e.j jVar, final com.anythink.core.common.e.i iVar, com.anythink.basead.c.d dVar, String str, com.anythink.core.common.f.b bVar) {
         try {
             IExHandler b2 = n.a().b();
-            String str2 = (dVar == null || TextUtils.isEmpty(dVar.f5896c)) ? "" : dVar.f5896c;
+            String str2 = (dVar == null || TextUtils.isEmpty(dVar.c)) ? "" : dVar.c;
             if (b2 != null) {
                 final Context applicationContext = context.getApplicationContext();
                 b2.handleOfferClick(applicationContext, jVar, iVar, str, str2, new Runnable() { // from class: com.anythink.basead.a.b.1

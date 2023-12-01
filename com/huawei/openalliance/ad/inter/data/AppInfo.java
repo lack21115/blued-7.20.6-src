@@ -11,6 +11,7 @@ import com.huawei.openalliance.ad.utils.au;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -200,7 +201,9 @@ public class AppInfo implements Serializable {
                 arrayList.add(new PermissionEntity(au.V(permission.Code()), 1));
             }
             this.permissions = new ArrayList();
-            for (Map.Entry entry : arrayMap.entrySet()) {
+            Iterator it = arrayMap.entrySet().iterator();
+            while (it.hasNext()) {
+                Map.Entry entry = (Map.Entry) it.next();
                 this.permissions.add(new PermissionEntity(au.V((String) entry.getKey()), 0));
                 this.permissions.addAll((Collection) entry.getValue());
             }

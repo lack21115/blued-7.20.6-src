@@ -1,18 +1,18 @@
 package mtopsdk.mtop.domain;
 
 import com.alipay.sdk.cons.b;
-import com.huawei.openalliance.ad.constant.t;
+import com.anythink.core.common.g.c;
 
 /* loaded from: source-3503164-dex2jar.jar:mtopsdk/mtop/domain/MtopHeaderFieldEnum.class */
 public enum MtopHeaderFieldEnum {
-    ACT("x-act", t.cN),
+    ACT("x-act", "accessToken"),
     WUAT("x-wuat", "wua"),
     SID("x-sid", "sid"),
     TIME("x-t", "t"),
     APPKEY("x-appkey", "appKey"),
     TTID("x-ttid", "ttid"),
     UTDID("x-utdid", b.g),
-    SIGN("x-sign", "sign"),
+    SIGN("x-sign", c.Y),
     NQ("x-nq", "nq"),
     NETTYPE("x-nettype", "netType"),
     PV("x-pv", "pv"),

@@ -66,7 +66,7 @@ public class MediaRouteControllerDialog extends Dialog {
     public MediaRouteControllerDialog(Context context, int i) {
         super(context, i);
         this.mVolumeControlEnabled = true;
-        this.mRouter = (MediaRouter) context.getSystemService(Context.MEDIA_ROUTER_SERVICE);
+        this.mRouter = (MediaRouter) context.getSystemService("media_router");
         this.mCallback = new MediaRouterCallback();
         this.mRoute = this.mRouter.getSelectedRoute();
     }
@@ -138,9 +138,8 @@ public class MediaRouteControllerDialog extends Dialog {
         update();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.app.Dialog
-    public void onCreate(Bundle bundle) {
+    protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         getWindow().requestFeature(3);
         setContentView(R.layout.media_route_controller_dialog);

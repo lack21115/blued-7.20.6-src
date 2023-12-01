@@ -75,8 +75,8 @@ public abstract class CharsetEncoder {
         return this.averageBytesPerChar;
     }
 
-    public boolean canEncode(char c2) {
-        return canEncode(CharBuffer.wrap(new char[]{c2}));
+    public boolean canEncode(char c) {
+        return canEncode(CharBuffer.wrap(new char[]{c}));
     }
 
     public boolean canEncode(CharSequence charSequence) {

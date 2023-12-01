@@ -28,7 +28,7 @@ public abstract class UnsafeAllocator {
                 @Override // com.google.gson.internal.UnsafeAllocator
                 public <T> T newInstance(Class<T> cls2) throws Exception {
                     assertInstantiable(cls2);
-                    return (T) Method.this.invoke(obj, cls2);
+                    return (T) method.invoke(obj, cls2);
                 }
             };
         } catch (Exception e) {
@@ -42,7 +42,7 @@ public abstract class UnsafeAllocator {
                     @Override // com.google.gson.internal.UnsafeAllocator
                     public <T> T newInstance(Class<T> cls2) throws Exception {
                         assertInstantiable(cls2);
-                        return (T) Method.this.invoke(null, cls2, Integer.valueOf(intValue));
+                        return (T) declaredMethod2.invoke(null, cls2, Integer.valueOf(intValue));
                     }
                 };
             } catch (Exception e2) {
@@ -53,7 +53,7 @@ public abstract class UnsafeAllocator {
                         @Override // com.google.gson.internal.UnsafeAllocator
                         public <T> T newInstance(Class<T> cls2) throws Exception {
                             assertInstantiable(cls2);
-                            return (T) Method.this.invoke(null, cls2, Object.class);
+                            return (T) declaredMethod3.invoke(null, cls2, Object.class);
                         }
                     };
                 } catch (Exception e3) {

@@ -6,11 +6,11 @@ import android.opengl.GLES20;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f1319a;
+    public final int f1271a;
     public final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final int f1320c;
+    public final int f1272c;
     public int d;
     public int e;
 
@@ -19,14 +19,14 @@ public class c {
             case 6407:
             case 6408:
             case 6409:
-                this.f1320c = i;
+                this.f1272c = i;
                 this.b = a.a.a.a.a.a.h.f.a(3553);
                 this.d = 0;
                 this.e = 0;
                 int[] iArr = new int[1];
                 GLES20.glGenFramebuffers(1, iArr, 0);
                 int i2 = iArr[0];
-                this.f1319a = i2;
+                this.f1271a = i2;
                 GLES20.glBindFramebuffer(36160, i2);
                 a.a.a.a.a.a.h.f.a("Generate framebuffer");
                 GLES20.glFramebufferTexture2D(36160, 36064, 3553, this.b, 0);
@@ -39,7 +39,7 @@ public class c {
     }
 
     public int a() {
-        return this.f1319a;
+        return this.f1271a;
     }
 
     public void a(int i, int i2) {
@@ -49,11 +49,11 @@ public class c {
         } else {
             this.d = i;
             this.e = i2;
-            GLES20.glBindFramebuffer(36160, this.f1319a);
+            GLES20.glBindFramebuffer(36160, this.f1271a);
             a.a.a.a.a.a.h.f.a("glBindFramebuffer");
             GLES20.glActiveTexture(33984);
             GLES20.glBindTexture(3553, this.b);
-            int i3 = this.f1320c;
+            int i3 = this.f1272c;
             GLES20.glTexImage2D(3553, 0, i3, i, i2, 0, i3, 5121, null);
             int glCheckFramebufferStatus = GLES20.glCheckFramebufferStatus(36160);
             if (glCheckFramebufferStatus == 36053) {
@@ -67,7 +67,7 @@ public class c {
 
     public void b() {
         GLES20.glDeleteTextures(1, new int[]{this.b}, 0);
-        GLES20.glDeleteFramebuffers(1, new int[]{this.f1319a}, 0);
+        GLES20.glDeleteFramebuffers(1, new int[]{this.f1271a}, 0);
         this.d = 0;
         this.e = 0;
     }

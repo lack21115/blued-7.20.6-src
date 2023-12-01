@@ -9,7 +9,7 @@ public interface a {
 
     /* renamed from: com.tencent.thumbplayer.adapter.a.a.a$a  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/thumbplayer/adapter/a/a/a$a.class */
-    public interface InterfaceC1010a {
+    public interface InterfaceC0840a {
         void a(e eVar);
 
         void a(TPSubtitleFrame tPSubtitleFrame);
@@ -38,10 +38,10 @@ public interface a {
     public static class e {
 
         /* renamed from: a  reason: collision with root package name */
-        String f39136a;
+        String f25445a;
 
         public e(String str) {
-            this.f39136a = str;
+            this.f25445a = str;
         }
     }
 
@@ -49,7 +49,7 @@ public interface a {
 
     void a(int i);
 
-    void a(InterfaceC1010a interfaceC1010a);
+    void a(InterfaceC0840a interfaceC0840a);
 
     void a(b bVar);
 

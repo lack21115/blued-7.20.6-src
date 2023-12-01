@@ -38,13 +38,13 @@ public class QSConstants {
     public static final String TILE_WIFI = "wifi";
 
     static {
-        TILES_AVAILABLE.add("wifi");
+        TILES_AVAILABLE.add(TILE_WIFI);
         TILES_AVAILABLE.add(TILE_BLUETOOTH);
-        TILES_AVAILABLE.add("cell");
+        TILES_AVAILABLE.add(TILE_CELLULAR);
         TILES_AVAILABLE.add("airplane");
-        TILES_AVAILABLE.add("rotation");
+        TILES_AVAILABLE.add(TILE_ROTATION);
         TILES_AVAILABLE.add(TILE_FLASHLIGHT);
-        TILES_AVAILABLE.add("location");
+        TILES_AVAILABLE.add(TILE_LOCATION);
         TILES_AVAILABLE.add(TILE_CAST);
         TILES_AVAILABLE.add(TILE_INVERSION);
         TILES_AVAILABLE.add(TILE_HOTSPOT);
@@ -56,9 +56,9 @@ public class QSConstants {
         TILES_AVAILABLE.add(TILE_PROFILES);
         TILES_AVAILABLE.add(TILE_PERFORMANCE);
         TILES_AVAILABLE.add(TILE_ADB_NETWORK);
-        TILES_AVAILABLE.add("nfc");
+        TILES_AVAILABLE.add(TILE_NFC);
         TILES_AVAILABLE.add(TILE_COMPASS);
-        TILES_AVAILABLE.add("lockscreen");
+        TILES_AVAILABLE.add(TILE_LOCKSCREEN);
         TILES_AVAILABLE.add(TILE_LTE);
         TILES_AVAILABLE.add(TILE_VISUALIZER);
         TILES_AVAILABLE.add(TILE_VOLUME);

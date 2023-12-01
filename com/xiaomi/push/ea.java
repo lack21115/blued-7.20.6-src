@@ -4,31 +4,31 @@ package com.xiaomi.push;
 public class ea {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f41367a;
+    private int f27676a;
 
     /* renamed from: a  reason: collision with other field name */
-    private String f379a;
+    private String f332a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f41368c;
+    private String f27677c;
     private String d;
 
     public int a() {
-        return this.f41367a;
+        return this.f27676a;
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public String m11708a() {
-        return this.f379a;
+    public String m8658a() {
+        return this.f332a;
     }
 
     public void a(int i) {
-        this.f41367a = i;
+        this.f27676a = i;
     }
 
     public void a(String str) {
-        this.f379a = str;
+        this.f332a = str;
     }
 
     public String b() {
@@ -40,11 +40,11 @@ public class ea {
     }
 
     public String c() {
-        return this.f41368c;
+        return this.f27677c;
     }
 
     public void c(String str) {
-        this.f41368c = str;
+        this.f27677c = str;
     }
 
     public String d() {

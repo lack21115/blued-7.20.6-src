@@ -11,13 +11,11 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LivePlanetAreaView$blinkWinning$1.class */
 public final class LivePlanetAreaView$blinkWinning$1 implements ImageLoader.OnAnimationStateListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ LivePlanetAreaView f14860a;
+    final /* synthetic */ LivePlanetAreaView a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public LivePlanetAreaView$blinkWinning$1(LivePlanetAreaView livePlanetAreaView) {
-        this.f14860a = livePlanetAreaView;
+        this.a = livePlanetAreaView;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -32,7 +30,7 @@ public final class LivePlanetAreaView$blinkWinning$1 implements ImageLoader.OnAn
 
     @Override // com.blued.android.core.image.ImageLoader.OnAnimationStateListener
     public void a() {
-        this.f14860a.b(1);
+        this.a.b(1);
     }
 
     @Override // com.blued.android.core.image.ImageLoader.OnAnimationStateListener
@@ -41,21 +39,21 @@ public final class LivePlanetAreaView$blinkWinning$1 implements ImageLoader.OnAn
         LivePlanetAreaItemBinding livePlanetAreaItemBinding2;
         IRequestHost iRequestHost;
         LivePlanetAreaItemBinding livePlanetAreaItemBinding3;
-        livePlanetAreaItemBinding = this.f14860a.i;
+        livePlanetAreaItemBinding = this.a.i;
         ImageView imageView = livePlanetAreaItemBinding.i;
         Intrinsics.c(imageView, "vb.ivLotteryBorderJack");
         BluedViewExKt.b(imageView);
-        livePlanetAreaItemBinding2 = this.f14860a.i;
+        livePlanetAreaItemBinding2 = this.a.i;
         ImageView imageView2 = livePlanetAreaItemBinding2.i;
-        final LivePlanetAreaView livePlanetAreaView = this.f14860a;
+        final LivePlanetAreaView livePlanetAreaView = this.a;
         imageView2.post(new Runnable() { // from class: com.blued.android.module.live_china.view.-$$Lambda$LivePlanetAreaView$blinkWinning$1$aA11goUAUYzfYOirMcuq6oLoQfs
             @Override // java.lang.Runnable
             public final void run() {
                 LivePlanetAreaView$blinkWinning$1.a(LivePlanetAreaView.this);
             }
         });
-        iRequestHost = this.f14860a.b;
-        ImageWrapper a2 = ImageLoader.c(iRequestHost, "live_planet_winning_flow.png").g().g(-1).a(new ImageLoader.OnAnimationStateListener() { // from class: com.blued.android.module.live_china.view.LivePlanetAreaView$blinkWinning$1$onAnimationEnd$2
+        iRequestHost = this.a.b;
+        ImageWrapper a = ImageLoader.c(iRequestHost, "live_planet_winning_flow.png").g().g(-1).a(new ImageLoader.OnAnimationStateListener() { // from class: com.blued.android.module.live_china.view.LivePlanetAreaView$blinkWinning$1$onAnimationEnd$2
             @Override // com.blued.android.core.image.ImageLoader.OnAnimationStateListener
             public void a() {
             }
@@ -64,7 +62,7 @@ public final class LivePlanetAreaView$blinkWinning$1 implements ImageLoader.OnAn
             public void b() {
             }
         });
-        livePlanetAreaItemBinding3 = this.f14860a.i;
-        a2.a(livePlanetAreaItemBinding3.i);
+        livePlanetAreaItemBinding3 = this.a.i;
+        a.a(livePlanetAreaItemBinding3.i);
     }
 }

@@ -25,11 +25,11 @@ public final class RemoteInput {
     public static final int SOURCE_FREE_FORM_INPUT = 0;
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f2391a;
+    private final String f2343a;
     private final CharSequence b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final CharSequence[] f2392c;
+    private final CharSequence[] f2344c;
     private final boolean d;
     private final int e;
     private final Bundle f;
@@ -39,13 +39,13 @@ public final class RemoteInput {
     public static final class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        private final String f2393a;
+        private final String f2345a;
         private CharSequence d;
         private CharSequence[] e;
         private final Set<String> b = new HashSet();
 
         /* renamed from: c  reason: collision with root package name */
-        private final Bundle f2394c = new Bundle();
+        private final Bundle f2346c = new Bundle();
         private boolean f = true;
         private int g = 0;
 
@@ -53,22 +53,22 @@ public final class RemoteInput {
             if (str == null) {
                 throw new IllegalArgumentException("Result key can't be null");
             }
-            this.f2393a = str;
+            this.f2345a = str;
         }
 
         public Builder addExtras(Bundle bundle) {
             if (bundle != null) {
-                this.f2394c.putAll(bundle);
+                this.f2346c.putAll(bundle);
             }
             return this;
         }
 
         public RemoteInput build() {
-            return new RemoteInput(this.f2393a, this.d, this.e, this.f, this.g, this.f2394c, this.b);
+            return new RemoteInput(this.f2345a, this.d, this.e, this.f, this.g, this.f2346c, this.b);
         }
 
         public Bundle getExtras() {
-            return this.f2394c;
+            return this.f2346c;
         }
 
         public Builder setAllowDataType(String str, boolean z) {
@@ -113,9 +113,9 @@ public final class RemoteInput {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public RemoteInput(String str, CharSequence charSequence, CharSequence[] charSequenceArr, boolean z, int i, Bundle bundle, Set<String> set) {
-        this.f2391a = str;
+        this.f2343a = str;
         this.b = charSequence;
-        this.f2392c = charSequenceArr;
+        this.f2344c = charSequenceArr;
         this.d = z;
         this.e = i;
         this.f = bundle;
@@ -338,7 +338,7 @@ public final class RemoteInput {
     }
 
     public CharSequence[] getChoices() {
-        return this.f2392c;
+        return this.f2344c;
     }
 
     public int getEditChoicesBeforeSending() {
@@ -354,7 +354,7 @@ public final class RemoteInput {
     }
 
     public String getResultKey() {
-        return this.f2391a;
+        return this.f2343a;
     }
 
     public boolean isDataOnly() {

@@ -4,18 +4,18 @@ package com.bytedance.bdtracker;
 public abstract class f3<T> {
 
     /* renamed from: a  reason: collision with root package name */
-    public volatile T f21218a;
+    public volatile T f7612a;
 
     public abstract T a(Object... objArr);
 
     public final T b(Object... objArr) {
-        if (this.f21218a == null) {
+        if (this.f7612a == null) {
             synchronized (this) {
-                if (this.f21218a == null) {
-                    this.f21218a = a(objArr);
+                if (this.f7612a == null) {
+                    this.f7612a = a(objArr);
                 }
             }
         }
-        return this.f21218a;
+        return this.f7612a;
     }
 }

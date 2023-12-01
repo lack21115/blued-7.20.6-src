@@ -2,13 +2,12 @@ package com.airbnb.lottie.parser;
 
 import android.util.JsonReader;
 import com.airbnb.lottie.model.DocumentData;
+import com.amap.api.col.p0003sl.iu;
 import java.io.IOException;
 
 /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/parser/DocumentDataParser.class */
 public class DocumentDataParser implements ValueParser<DocumentData> {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final DocumentDataParser f4399a = new DocumentDataParser();
+    public static final DocumentDataParser a = new DocumentDataParser();
 
     private DocumentDataParser() {
     }
@@ -69,10 +68,10 @@ public class DocumentDataParser implements ValueParser<DocumentData> {
                     } else if (nextName.equals("fc")) {
                         z2 = true;
                     }
-                } else if (nextName.equals("j")) {
+                } else if (nextName.equals(iu.j)) {
                     z2 = true;
                 }
-            } else if (nextName.equals("f")) {
+            } else if (nextName.equals(iu.i)) {
                 z2 = true;
             }
             switch (z2) {

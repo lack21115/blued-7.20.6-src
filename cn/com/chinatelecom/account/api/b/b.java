@@ -23,11 +23,11 @@ public class b {
     private static final String f = b.class.getSimpleName();
 
     /* renamed from: a  reason: collision with root package name */
-    public static final byte[] f4093a = {122, 99, 122, 102};
+    public static final byte[] f4045a = {122, 99, 122, 102};
     public static final byte[] b = {44, 104, 120, 99, 109, 75, 122, 122, 55};
 
     /* renamed from: c  reason: collision with root package name */
-    public static final byte[] f4094c = {44, 121, 126, 55};
+    public static final byte[] f4046c = {44, 121, 126, 55};
     public static final byte[] d = {44, 104, 126, 55};
     public static final byte[] e = {44, 107, Byte.MAX_VALUE, 126, 98, 94, 115, 122, 111, 55};
 
@@ -42,7 +42,7 @@ public class b {
             aVar.a(CtSetting.getConnTimeout(null));
             aVar.b(CtSetting.getReadTimeout(null));
             HashMap hashMap = new HashMap();
-            hashMap.put(d.a(f4093a), Helper.dnprecohdjs());
+            hashMap.put(d.a(f4045a), Helper.dnprecohdjs());
             aVar.a(hashMap);
             JSONObject a2 = cn.com.chinatelecom.account.api.e.a.a(context, new cn.com.chinatelecom.account.api.d.b(context).a(str2, "", 0, aVar.a()), str, network, true, str3);
             f.b(str3, a2, str2);
@@ -106,7 +106,7 @@ public class b {
                 synchronized (this) {
                     if (!c()) {
                         a(true);
-                        b.this.a((int) StCameraView.MEDIA_QUALITY_SORRY, d.a(j.f4148a), str3, 0L, "", aVar);
+                        b.this.a((int) StCameraView.MEDIA_QUALITY_SORRY, d.a(j.f4100a), str3, 0L, "", aVar);
                     }
                 }
                 if (network != null) {
@@ -170,7 +170,7 @@ public class b {
                         return;
                     }
                     b.this.a();
-                    b.this.a((int) StCameraView.MEDIA_QUALITY_SORRY, d.a(j.f4148a), a2, j, "", aVar);
+                    b.this.a((int) StCameraView.MEDIA_QUALITY_SORRY, d.a(j.f4100a), a2, j, "", aVar);
                 }
             });
             return;
@@ -195,7 +195,7 @@ public class b {
                 if (j2 > 100) {
                     b.this.a(context, str, str2, network, j2, a2, "preCodeByJs", aVar);
                 } else {
-                    b.this.a((int) StCameraView.MEDIA_QUALITY_SORRY, d.a(j.f4148a), a2, j, "", aVar);
+                    b.this.a((int) StCameraView.MEDIA_QUALITY_SORRY, d.a(j.f4100a), a2, j, "", aVar);
                 }
             }
         }, str2);

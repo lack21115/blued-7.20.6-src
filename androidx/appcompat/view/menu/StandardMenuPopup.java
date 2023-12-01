@@ -24,10 +24,10 @@ final class StandardMenuPopup extends MenuPopup implements View.OnKeyListener, A
     private static final int e = R.layout.abc_popup_menu_item_layout;
 
     /* renamed from: a  reason: collision with root package name */
-    final MenuPopupWindow f1692a;
+    final MenuPopupWindow f1644a;
 
     /* renamed from: c  reason: collision with root package name */
-    View f1693c;
+    View f1645c;
     ViewTreeObserver d;
     private final Context f;
     private final MenuBuilder g;
@@ -46,14 +46,14 @@ final class StandardMenuPopup extends MenuPopup implements View.OnKeyListener, A
     final ViewTreeObserver.OnGlobalLayoutListener b = new ViewTreeObserver.OnGlobalLayoutListener() { // from class: androidx.appcompat.view.menu.StandardMenuPopup.1
         @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
         public void onGlobalLayout() {
-            if (!StandardMenuPopup.this.isShowing() || StandardMenuPopup.this.f1692a.isModal()) {
+            if (!StandardMenuPopup.this.isShowing() || StandardMenuPopup.this.f1644a.isModal()) {
                 return;
             }
-            View view = StandardMenuPopup.this.f1693c;
+            View view = StandardMenuPopup.this.f1645c;
             if (view == null || !view.isShown()) {
                 StandardMenuPopup.this.dismiss();
             } else {
-                StandardMenuPopup.this.f1692a.show();
+                StandardMenuPopup.this.f1644a.show();
             }
         }
     };
@@ -85,7 +85,7 @@ final class StandardMenuPopup extends MenuPopup implements View.OnKeyListener, A
         Resources resources = context.getResources();
         this.j = Math.max(resources.getDisplayMetrics().widthPixels / 2, resources.getDimensionPixelSize(R.dimen.abc_config_prefDialogWidth));
         this.o = view;
-        this.f1692a = new MenuPopupWindow(this.f, null, this.k, this.l);
+        this.f1644a = new MenuPopupWindow(this.f, null, this.k, this.l);
         menuBuilder.addMenuPresenter(this, context);
     }
 
@@ -97,11 +97,11 @@ final class StandardMenuPopup extends MenuPopup implements View.OnKeyListener, A
         if (this.q || (view = this.o) == null) {
             return false;
         }
-        this.f1693c = view;
-        this.f1692a.setOnDismissListener(this);
-        this.f1692a.setOnItemClickListener(this);
-        this.f1692a.setModal(true);
-        View view2 = this.f1693c;
+        this.f1645c = view;
+        this.f1644a.setOnDismissListener(this);
+        this.f1644a.setOnItemClickListener(this);
+        this.f1644a.setModal(true);
+        View view2 = this.f1645c;
         boolean z = this.d == null;
         ViewTreeObserver viewTreeObserver = view2.getViewTreeObserver();
         this.d = viewTreeObserver;
@@ -109,29 +109,29 @@ final class StandardMenuPopup extends MenuPopup implements View.OnKeyListener, A
             viewTreeObserver.addOnGlobalLayoutListener(this.b);
         }
         view2.addOnAttachStateChangeListener(this.m);
-        this.f1692a.setAnchorView(view2);
-        this.f1692a.setDropDownGravity(this.t);
+        this.f1644a.setAnchorView(view2);
+        this.f1644a.setDropDownGravity(this.t);
         if (!this.r) {
             this.s = a(this.h, null, this.f, this.j);
             this.r = true;
         }
-        this.f1692a.setContentWidth(this.s);
-        this.f1692a.setInputMethodMode(2);
-        this.f1692a.setEpicenterBounds(getEpicenterBounds());
-        this.f1692a.show();
-        ListView listView = this.f1692a.getListView();
+        this.f1644a.setContentWidth(this.s);
+        this.f1644a.setInputMethodMode(2);
+        this.f1644a.setEpicenterBounds(getEpicenterBounds());
+        this.f1644a.show();
+        ListView listView = this.f1644a.getListView();
         listView.setOnKeyListener(this);
         if (this.u && this.g.getHeaderTitle() != null) {
             FrameLayout frameLayout = (FrameLayout) LayoutInflater.from(this.f).inflate(R.layout.abc_popup_menu_header_item_layout, (ViewGroup) listView, false);
-            TextView textView = (TextView) frameLayout.findViewById(16908310);
+            TextView textView = (TextView) frameLayout.findViewById(android.R.id.title);
             if (textView != null) {
                 textView.setText(this.g.getHeaderTitle());
             }
             frameLayout.setEnabled(false);
             listView.addHeaderView(frameLayout, null, false);
         }
-        this.f1692a.setAdapter(this.h);
-        this.f1692a.show();
+        this.f1644a.setAdapter(this.h);
+        this.f1644a.show();
         return true;
     }
 
@@ -142,7 +142,7 @@ final class StandardMenuPopup extends MenuPopup implements View.OnKeyListener, A
     @Override // androidx.appcompat.view.menu.ShowableListMenu
     public void dismiss() {
         if (isShowing()) {
-            this.f1692a.dismiss();
+            this.f1644a.dismiss();
         }
     }
 
@@ -153,12 +153,12 @@ final class StandardMenuPopup extends MenuPopup implements View.OnKeyListener, A
 
     @Override // androidx.appcompat.view.menu.ShowableListMenu
     public ListView getListView() {
-        return this.f1692a.getListView();
+        return this.f1644a.getListView();
     }
 
     @Override // androidx.appcompat.view.menu.ShowableListMenu
     public boolean isShowing() {
-        return !this.q && this.f1692a.isShowing();
+        return !this.q && this.f1644a.isShowing();
     }
 
     @Override // androidx.appcompat.view.menu.MenuPresenter
@@ -180,12 +180,12 @@ final class StandardMenuPopup extends MenuPopup implements View.OnKeyListener, A
         ViewTreeObserver viewTreeObserver = this.d;
         if (viewTreeObserver != null) {
             if (!viewTreeObserver.isAlive()) {
-                this.d = this.f1693c.getViewTreeObserver();
+                this.d = this.f1645c.getViewTreeObserver();
             }
             this.d.removeGlobalOnLayoutListener(this.b);
             this.d = null;
         }
-        this.f1693c.removeOnAttachStateChangeListener(this.m);
+        this.f1645c.removeOnAttachStateChangeListener(this.m);
         PopupWindow.OnDismissListener onDismissListener = this.n;
         if (onDismissListener != null) {
             onDismissListener.onDismiss();
@@ -213,14 +213,14 @@ final class StandardMenuPopup extends MenuPopup implements View.OnKeyListener, A
     @Override // androidx.appcompat.view.menu.MenuPresenter
     public boolean onSubMenuSelected(SubMenuBuilder subMenuBuilder) {
         if (subMenuBuilder.hasVisibleItems()) {
-            MenuPopupHelper menuPopupHelper = new MenuPopupHelper(this.f, subMenuBuilder, this.f1693c, this.i, this.k, this.l);
+            MenuPopupHelper menuPopupHelper = new MenuPopupHelper(this.f, subMenuBuilder, this.f1645c, this.i, this.k, this.l);
             menuPopupHelper.setPresenterCallback(this.p);
             menuPopupHelper.setForceShowIcon(MenuPopup.a(subMenuBuilder));
             menuPopupHelper.setOnDismissListener(this.n);
             this.n = null;
             this.g.close(false);
-            int horizontalOffset = this.f1692a.getHorizontalOffset();
-            int verticalOffset = this.f1692a.getVerticalOffset();
+            int horizontalOffset = this.f1644a.getHorizontalOffset();
+            int verticalOffset = this.f1644a.getVerticalOffset();
             int i = horizontalOffset;
             if ((Gravity.getAbsoluteGravity(this.t, ViewCompat.getLayoutDirection(this.o)) & 7) == 5) {
                 i = horizontalOffset + this.o.getWidth();
@@ -260,7 +260,7 @@ final class StandardMenuPopup extends MenuPopup implements View.OnKeyListener, A
 
     @Override // androidx.appcompat.view.menu.MenuPopup
     public void setHorizontalOffset(int i) {
-        this.f1692a.setHorizontalOffset(i);
+        this.f1644a.setHorizontalOffset(i);
     }
 
     @Override // androidx.appcompat.view.menu.MenuPopup
@@ -275,7 +275,7 @@ final class StandardMenuPopup extends MenuPopup implements View.OnKeyListener, A
 
     @Override // androidx.appcompat.view.menu.MenuPopup
     public void setVerticalOffset(int i) {
-        this.f1692a.setVerticalOffset(i);
+        this.f1644a.setVerticalOffset(i);
     }
 
     @Override // androidx.appcompat.view.menu.ShowableListMenu

@@ -68,9 +68,8 @@ public class ATNativeAdView extends FrameLayout {
         return this.mIsInWindow;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         this.mIsInWindow = true;
         if (getVisibility() == 0) {
@@ -78,16 +77,14 @@ public class ATNativeAdView extends FrameLayout {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.mIsInWindow = false;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onVisibilityChanged(View view, int i) {
+    protected void onVisibilityChanged(View view, int i) {
         super.onVisibilityChanged(view, i);
         if (i == 0 && getVisibility() == 0) {
             callbackImpression();

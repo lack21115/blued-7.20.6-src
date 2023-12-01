@@ -14,13 +14,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveBattlePassAwardClickPopShadeView.class */
 public final class LiveBattlePassAwardClickPopShadeView extends View {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Context f14384a;
+    private final Context a;
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f14385c;
+    private int c;
     private int d;
     private int e;
     private int f;
@@ -34,7 +30,7 @@ public final class LiveBattlePassAwardClickPopShadeView extends View {
         super(mContext);
         Intrinsics.e(mContext, "mContext");
         Intrinsics.e(atView, "atView");
-        this.f14384a = mContext;
+        this.a = mContext;
         this.h = DensityUtils.a(getContext(), 6.0f);
         this.i = new Paint();
         this.j = new Paint();
@@ -49,22 +45,22 @@ public final class LiveBattlePassAwardClickPopShadeView extends View {
         this.j.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.XOR));
         int[] iArr = new int[2];
         atView.getLocationOnScreen(iArr);
-        int a2 = DensityUtils.a(this.f14384a, 87.0f);
-        this.d = iArr[0] - ((a2 - atView.getWidth()) / 2);
-        this.e = iArr[1] - ((a2 - atView.getHeight()) / 2);
-        this.f = a2;
-        this.g = a2;
-        this.h = a2 / 2;
+        int a = DensityUtils.a(this.a, 87.0f);
+        this.d = iArr[0] - ((a - atView.getWidth()) / 2);
+        this.e = iArr[1] - ((a - atView.getHeight()) / 2);
+        this.f = a;
+        this.g = a;
+        this.h = a / 2;
     }
 
     private final void a(int i, int i2) {
         this.b = i;
-        this.f14385c = i2;
+        this.c = i2;
         invalidate();
     }
 
     private final void a(Canvas canvas) {
-        RectF rectF = new RectF(0.0f, 0.0f, this.b, this.f14385c);
+        RectF rectF = new RectF(0.0f, 0.0f, this.b, this.c);
         if (canvas == null) {
             return;
         }
@@ -87,7 +83,7 @@ public final class LiveBattlePassAwardClickPopShadeView extends View {
     }
 
     public final Context getMContext() {
-        return this.f14384a;
+        return this.a;
     }
 
     public final Paint getShadePaint() {

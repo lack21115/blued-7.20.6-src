@@ -12,7 +12,7 @@ public final class f {
     static /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f26206a;
+        static final /* synthetic */ int[] f12518a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:13:0x0041 -> B:27:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:15:0x0045 -> B:25:0x001f). Please submit an issue!!! */
@@ -20,25 +20,25 @@ public final class f {
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:19:0x004d -> B:29:0x0035). Please submit an issue!!! */
         static {
             int[] iArr = new int[com.opos.mobad.cmn.a.b.a.values().length];
-            f26206a = iArr;
+            f12518a = iArr;
             try {
                 iArr[com.opos.mobad.cmn.a.b.a.NonClickBt.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f26206a[com.opos.mobad.cmn.a.b.a.ClickBt.ordinal()] = 2;
+                f12518a[com.opos.mobad.cmn.a.b.a.ClickBt.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f26206a[com.opos.mobad.cmn.a.b.a.Video.ordinal()] = 3;
+                f12518a[com.opos.mobad.cmn.a.b.a.Video.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f26206a[com.opos.mobad.cmn.a.b.a.FloatLayerClickBt.ordinal()] = 4;
+                f12518a[com.opos.mobad.cmn.a.b.a.FloatLayerClickBt.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f26206a[com.opos.mobad.cmn.a.b.a.FloatLayerNonClickBt.ordinal()] = 5;
+                f12518a[com.opos.mobad.cmn.a.b.a.FloatLayerNonClickBt.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
         }
@@ -121,7 +121,7 @@ public final class f {
             r6 = r0
             r0 = r3
             if (r0 == 0) goto L87
-            int[] r0 = com.opos.mobad.h.f.AnonymousClass1.f26206a
+            int[] r0 = com.opos.mobad.h.f.AnonymousClass1.f12518a
             r1 = r4
             int r1 = r1.ordinal()
             r0 = r0[r1]

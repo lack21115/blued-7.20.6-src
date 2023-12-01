@@ -10,7 +10,7 @@ import android.net.NetworkInfo;
 public class NetworkStateChangeReceiver28020 extends BroadcastReceiver {
 
     /* renamed from: a  reason: collision with root package name */
-    private long f42237a;
+    private long f28545a;
     private Context b;
 
     private int a(NetworkInfo networkInfo) {
@@ -74,7 +74,7 @@ public class NetworkStateChangeReceiver28020 extends BroadcastReceiver {
                 i = a(networkInfo);
                 str = networkInfo2;
             }
-            onNetTypeChanged(this.f42237a, i, str);
+            onNetTypeChanged(this.f28545a, i, str);
         }
     }
 }

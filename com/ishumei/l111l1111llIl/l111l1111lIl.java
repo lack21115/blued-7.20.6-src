@@ -6,7 +6,6 @@ import android.os.Environment;
 import android.text.TextUtils;
 import android.util.Base64;
 import android.util.Patterns;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.ishumei.l1111l111111Il.l111l1111llIl;
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
@@ -122,7 +121,7 @@ public final class l111l1111lIl {
                             l1111l111111Il((Closeable) bufferedReader2);
                             return arrayList;
                         } else if (!l111l1111lI1l.l1111l111111Il(readLine)) {
-                            Iterator<E> it = hashSet.iterator();
+                            Iterator it = hashSet.iterator();
                             if (i == 0) {
                                 while (it.hasNext()) {
                                     String str = (String) it.next();
@@ -355,7 +354,7 @@ public final class l111l1111lIl {
 
     public static boolean l1111l111111Il(String str) {
         try {
-            return new File(Environment.getExternalStorageDirectory() + BridgeUtil.SPLIT_MARK + str).exists();
+            return new File(Environment.getExternalStorageDirectory() + "/" + str).exists();
         } catch (Exception e) {
             return false;
         }
@@ -578,7 +577,7 @@ public final class l111l1111lIl {
                             break;
                         }
                         String str = list[i3];
-                        Iterator<E> it = hashSet.iterator();
+                        Iterator it = hashSet.iterator();
                         if (i == 0) {
                             while (it.hasNext()) {
                                 String str2 = (String) it.next();

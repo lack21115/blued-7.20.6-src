@@ -5,11 +5,11 @@ package com.tencent.liteav.videoproducer.preprocessor;
 public final /* synthetic */ class i implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final h f37072a;
+    private final h f23381a;
     private final com.tencent.liteav.videobase.a.a b;
 
     private i(h hVar, com.tencent.liteav.videobase.a.a aVar) {
-        this.f37072a = hVar;
+        this.f23381a = hVar;
         this.b = aVar;
     }
 
@@ -19,7 +19,7 @@ public final /* synthetic */ class i implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        h hVar = this.f37072a;
+        h hVar = this.f23381a;
         hVar.o = this.b;
         hVar.b();
     }

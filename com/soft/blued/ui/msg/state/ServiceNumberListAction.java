@@ -13,7 +13,7 @@ public abstract class ServiceNumberListAction implements UiAction {
     public static final class RefreshNewMsg extends ServiceNumberListAction {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final RefreshNewMsg f32598a = new RefreshNewMsg();
+        public static final RefreshNewMsg f18907a = new RefreshNewMsg();
 
         private RefreshNewMsg() {
             super(null);

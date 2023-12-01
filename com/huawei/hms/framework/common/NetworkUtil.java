@@ -161,7 +161,7 @@ public class NetworkUtil {
                 AccessController.doPrivileged(new PrivilegedAction() { // from class: com.huawei.hms.framework.common.NetworkUtil.1
                     @Override // java.security.PrivilegedAction
                     public Object run() {
-                        Method.this.setAccessible(true);
+                        declaredMethod.setAccessible(true);
                         return null;
                     }
                 });

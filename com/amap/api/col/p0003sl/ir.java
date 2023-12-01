@@ -2,8 +2,6 @@ package com.amap.api.col.p0003sl;
 
 import android.os.Build;
 import android.text.TextUtils;
-import com.igexin.assist.control.xiaomi.XmSystemUtils;
-import com.tencent.thumbplayer.core.common.TPSystemInfo;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -16,19 +14,17 @@ import java.util.regex.Pattern;
 /* renamed from: com.amap.api.col.3sl.ir  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/ir.class */
 public final class ir {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static volatile iq f5177a;
+    private static volatile iq a;
     private static Properties b = b();
 
     private ir() {
     }
 
     public static iq a() {
-        if (f5177a == null) {
+        if (a == null) {
             synchronized (ir.class) {
                 try {
-                    if (f5177a == null) {
+                    if (a == null) {
                         try {
                             iq a2 = a(Build.MANUFACTURER);
                             if ("".equals(a2.a())) {
@@ -44,7 +40,7 @@ public final class ir {
                                     }
                                 }
                             }
-                            f5177a = a2;
+                            a = a2;
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
@@ -54,7 +50,7 @@ public final class ir {
                 }
             }
         }
-        return f5177a;
+        return a;
     }
 
     private static iq a(String str) {
@@ -139,7 +135,7 @@ public final class ir {
     }
 
     private static boolean a(iq iqVar) {
-        if (TextUtils.isEmpty(b(XmSystemUtils.KEY_VERSION_MIUI))) {
+        if (TextUtils.isEmpty(b("ro.miui.ui.version.name"))) {
             return false;
         }
         String b2 = b("ro.build.version.incremental");
@@ -301,7 +297,7 @@ public final class ir {
 
     private static boolean k(iq iqVar) {
         if ("android-google".equals(b("ro.com.google.clientidbase"))) {
-            String b2 = b(TPSystemInfo.KEY_PROPERTY_VERSION_RELEASE);
+            String b2 = b("ro.build.version.release");
             iqVar.a(Build.VERSION.SDK_INT);
             iqVar.b(b2);
             return true;

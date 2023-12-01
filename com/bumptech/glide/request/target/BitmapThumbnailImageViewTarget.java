@@ -11,6 +11,6 @@ public class BitmapThumbnailImageViewTarget extends ThumbnailImageViewTarget<Bit
     @Override // com.bumptech.glide.request.target.ThumbnailImageViewTarget
     /* renamed from: a */
     public Drawable b(Bitmap bitmap) {
-        return new BitmapDrawable(((ImageView) this.f21072a).getResources(), bitmap);
+        return new BitmapDrawable(((ImageView) this.f7466a).getResources(), bitmap);
     }
 }

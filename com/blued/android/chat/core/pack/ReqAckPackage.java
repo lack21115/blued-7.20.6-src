@@ -1,7 +1,6 @@
 package com.blued.android.chat.core.pack;
 
 import android.text.TextUtils;
-import com.baidu.mobads.sdk.internal.bw;
 import com.blued.android.chat.data.PackageAckResult;
 import com.blued.android.chat.utils.BytesUtils;
 import com.blued.android.chat.utils.MsgPackHelper;
@@ -98,7 +97,7 @@ public class ReqAckPackage extends BaseAckPackage {
         String str2 = ReqBasePackage.reqTypeToString(this.reqType) + ", ";
         switch (this.error) {
             case 0:
-                str = str2 + bw.o;
+                str = str2 + "success";
                 break;
             case 1:
                 str = str2 + "没有权限直播";

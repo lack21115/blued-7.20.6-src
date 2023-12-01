@@ -10,10 +10,10 @@ public class c extends SSLSocketFactory {
     private static final String[] b = {"TLSv1.1", "TLSv1.2"};
 
     /* renamed from: a  reason: collision with root package name */
-    final SSLSocketFactory f41000a;
+    final SSLSocketFactory f27309a;
 
     public c(SSLSocketFactory sSLSocketFactory) {
-        this.f41000a = sSLSocketFactory;
+        this.f27309a = sSLSocketFactory;
     }
 
     private Socket a(Socket socket) {
@@ -25,36 +25,36 @@ public class c extends SSLSocketFactory {
 
     @Override // javax.net.SocketFactory
     public Socket createSocket(String str, int i) {
-        return a(this.f41000a.createSocket(str, i));
+        return a(this.f27309a.createSocket(str, i));
     }
 
     @Override // javax.net.SocketFactory
     public Socket createSocket(String str, int i, InetAddress inetAddress, int i2) {
-        return a(this.f41000a.createSocket(str, i, inetAddress, i2));
+        return a(this.f27309a.createSocket(str, i, inetAddress, i2));
     }
 
     @Override // javax.net.SocketFactory
     public Socket createSocket(InetAddress inetAddress, int i) {
-        return a(this.f41000a.createSocket(inetAddress, i));
+        return a(this.f27309a.createSocket(inetAddress, i));
     }
 
     @Override // javax.net.SocketFactory
     public Socket createSocket(InetAddress inetAddress, int i, InetAddress inetAddress2, int i2) {
-        return a(this.f41000a.createSocket(inetAddress, i, inetAddress2, i2));
+        return a(this.f27309a.createSocket(inetAddress, i, inetAddress2, i2));
     }
 
     @Override // javax.net.ssl.SSLSocketFactory
     public Socket createSocket(Socket socket, String str, int i, boolean z) {
-        return a(this.f41000a.createSocket(socket, str, i, z));
+        return a(this.f27309a.createSocket(socket, str, i, z));
     }
 
     @Override // javax.net.ssl.SSLSocketFactory
     public String[] getDefaultCipherSuites() {
-        return this.f41000a.getDefaultCipherSuites();
+        return this.f27309a.getDefaultCipherSuites();
     }
 
     @Override // javax.net.ssl.SSLSocketFactory
     public String[] getSupportedCipherSuites() {
-        return this.f41000a.getSupportedCipherSuites();
+        return this.f27309a.getSupportedCipherSuites();
     }
 }

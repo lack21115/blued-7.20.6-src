@@ -37,11 +37,11 @@ import java.util.Map;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f24727a;
+    private Context f11039a;
     private Map<String, Object> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f24728c;
+    private boolean f11040c;
     private WebView d;
     private RelativeLayout e;
     private RelativeLayout f;
@@ -54,11 +54,11 @@ public class b {
     private boolean k = false;
 
     public b(Context context, com.opos.cmn.biz.web.b.a.b bVar) {
-        this.f24727a = context;
+        this.f11039a = context;
         this.b = bVar.b;
-        this.l = bVar.f24721a;
+        this.l = bVar.f11033a;
         this.m = bVar.d;
-        this.f24728c = bVar.f24722c;
+        this.f11040c = bVar.f11034c;
         f();
         k();
     }
@@ -69,8 +69,8 @@ public class b {
             try {
                 if (this.m != null) {
                     this.m.a(sslErrorHandler, sslError);
-                } else if (this.f24727a instanceof Activity) {
-                    AlertDialog.Builder builder = new AlertDialog.Builder(this.f24727a);
+                } else if (this.f11039a instanceof Activity) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(this.f11039a);
                     builder.setMessage("SSL证书验证错误，是否继续？");
                     builder.setPositiveButton("继续", new DialogInterface.OnClickListener() { // from class: com.opos.cmn.biz.web.b.b.b.b.5
                         @Override // android.content.DialogInterface.OnClickListener
@@ -134,12 +134,12 @@ public class b {
             r1 = 268435456(0x10000000, float:2.5243549E-29)
             android.content.Intent r0 = r0.addFlags(r1)     // Catch: java.lang.Exception -> L4e
             r0 = r5
-            android.content.Context r0 = r0.f24727a     // Catch: java.lang.Exception -> L4e
+            android.content.Context r0 = r0.f11039a     // Catch: java.lang.Exception -> L4e
             r1 = r8
             boolean r0 = com.opos.cmn.an.h.d.a.a(r0, r1)     // Catch: java.lang.Exception -> L4e
             if (r0 == 0) goto L57
             r0 = r5
-            android.content.Context r0 = r0.f24727a     // Catch: java.lang.Exception -> L4e
+            android.content.Context r0 = r0.f11039a     // Catch: java.lang.Exception -> L4e
             r1 = r8
             r0.startActivity(r1)     // Catch: java.lang.Exception -> L4e
             r0 = 1
@@ -189,13 +189,13 @@ public class b {
     }
 
     private void f() {
-        RelativeLayout relativeLayout = new RelativeLayout(this.f24727a);
+        RelativeLayout relativeLayout = new RelativeLayout(this.f11039a);
         this.e = relativeLayout;
         relativeLayout.setLayoutParams(new RelativeLayout.LayoutParams(-1, -1));
         this.e.setFitsSystemWindows(true);
         View g = g();
         this.e.addView(g);
-        if (!this.f24728c) {
+        if (!this.f11040c) {
             g.setVisibility(8);
         }
         h();
@@ -204,30 +204,30 @@ public class b {
     }
 
     private View g() {
-        LinearLayout linearLayout = new LinearLayout(this.f24727a);
+        LinearLayout linearLayout = new LinearLayout(this.f11039a);
         linearLayout.setId(1);
-        linearLayout.setLayoutParams(new LinearLayout.LayoutParams(-1, com.opos.cmn.an.h.f.a.a(this.f24727a, 43.33f)));
-        if (com.opos.cmn.biz.web.b.b.a.a.b(this.f24727a)) {
+        linearLayout.setLayoutParams(new LinearLayout.LayoutParams(-1, com.opos.cmn.an.h.f.a.a(this.f11039a, 43.33f)));
+        if (com.opos.cmn.biz.web.b.b.a.a.b(this.f11039a)) {
             linearLayout.setBackgroundColor(Color.parseColor("#F5EEEEEE"));
         } else {
-            com.opos.cmn.biz.web.b.b.a.a.a(linearLayout, com.opos.cmn.an.d.a.a.c(this.f24727a, "o_cmn_biz_ui_web_title_bar_bg.9.png"));
+            com.opos.cmn.biz.web.b.b.a.a.a(linearLayout, com.opos.cmn.an.d.a.a.c(this.f11039a, "o_cmn_biz_ui_web_title_bar_bg.9.png"));
         }
-        this.h = new TextView(this.f24727a);
-        Drawable c2 = com.opos.cmn.an.d.a.a.c(this.f24727a, "o_cmn_biz_ui_web_close_bn.png");
-        c2.setBounds(0, 0, com.opos.cmn.an.h.f.a.a(this.f24727a, 26.0f), com.opos.cmn.an.h.f.a.a(this.f24727a, 24.0f));
+        this.h = new TextView(this.f11039a);
+        Drawable c2 = com.opos.cmn.an.d.a.a.c(this.f11039a, "o_cmn_biz_ui_web_close_bn.png");
+        c2.setBounds(0, 0, com.opos.cmn.an.h.f.a.a(this.f11039a, 26.0f), com.opos.cmn.an.h.f.a.a(this.f11039a, 24.0f));
         this.h.setCompoundDrawables(c2, null, null, null);
         this.h.setGravity(17);
         this.h.setTextSize(2, 15.0f);
         this.h.setTextColor(Color.parseColor("#2ac795"));
-        this.h.setCompoundDrawablePadding(com.opos.cmn.an.h.f.a.a(this.f24727a, 2.0f));
+        this.h.setCompoundDrawablePadding(com.opos.cmn.an.h.f.a.a(this.f11039a, 2.0f));
         this.h.setText("返回");
-        linearLayout.addView(this.h, new LinearLayout.LayoutParams(-2, com.opos.cmn.an.h.f.a.a(this.f24727a, 43.33f)));
+        linearLayout.addView(this.h, new LinearLayout.LayoutParams(-2, com.opos.cmn.an.h.f.a.a(this.f11039a, 43.33f)));
         return linearLayout;
     }
 
     private void h() {
-        this.f = new RelativeLayout(this.f24727a);
-        WebView webView = new WebView(this.f24727a);
+        this.f = new RelativeLayout(this.f11039a);
+        WebView webView = new WebView(this.f11039a);
         this.d = webView;
         this.f.addView(webView, new RelativeLayout.LayoutParams(-1, -1));
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(-1, -1);
@@ -236,17 +236,17 @@ public class b {
     }
 
     private void i() {
-        RelativeLayout relativeLayout = new RelativeLayout(this.f24727a);
+        RelativeLayout relativeLayout = new RelativeLayout(this.f11039a);
         this.g = relativeLayout;
         relativeLayout.setVisibility(8);
         this.g.setGravity(17);
-        ImageView imageView = new ImageView(this.f24727a);
+        ImageView imageView = new ImageView(this.f11039a);
         imageView.setId(2);
-        imageView.setImageDrawable(com.opos.cmn.an.d.a.a.c(this.f24727a, "o_cmn_biz_ui_web_err_tag_img.png"));
-        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(this.f24727a, 39.33f), com.opos.cmn.an.h.f.a.a(this.f24727a, 40.0f));
+        imageView.setImageDrawable(com.opos.cmn.an.d.a.a.c(this.f11039a, "o_cmn_biz_ui_web_err_tag_img.png"));
+        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(this.f11039a, 39.33f), com.opos.cmn.an.h.f.a.a(this.f11039a, 40.0f));
         layoutParams.addRule(14, -1);
         this.g.addView(imageView, layoutParams);
-        TextView textView = new TextView(this.f24727a);
+        TextView textView = new TextView(this.f11039a);
         textView.setId(3);
         textView.setText("网络繁忙，请刷新");
         textView.setTextSize(2, 14.0f);
@@ -254,17 +254,17 @@ public class b {
         RelativeLayout.LayoutParams layoutParams2 = new RelativeLayout.LayoutParams(-2, -2);
         layoutParams2.addRule(14, -1);
         layoutParams2.addRule(3, 2);
-        layoutParams2.topMargin = com.opos.cmn.an.h.f.a.a(this.f24727a, 15.0f);
+        layoutParams2.topMargin = com.opos.cmn.an.h.f.a.a(this.f11039a, 15.0f);
         this.g.addView(textView, layoutParams2);
-        a aVar = new a(this.f24727a, "o_cmn_biz_ui_web_err_refresh_normal_img.png", "o_cmn_biz_ui_web_err_refresh_press_img.png");
+        a aVar = new a(this.f11039a, "o_cmn_biz_ui_web_err_refresh_normal_img.png", "o_cmn_biz_ui_web_err_refresh_press_img.png");
         aVar.setGravity(17);
         aVar.setText("刷新");
         aVar.setTextSize(2, 12.0f);
         aVar.setTextColor(Color.parseColor("#36ae9e"));
-        RelativeLayout.LayoutParams layoutParams3 = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(this.f24727a, 52.67f), com.opos.cmn.an.h.f.a.a(this.f24727a, 23.33f));
+        RelativeLayout.LayoutParams layoutParams3 = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(this.f11039a, 52.67f), com.opos.cmn.an.h.f.a.a(this.f11039a, 23.33f));
         layoutParams3.addRule(14, -1);
         layoutParams3.addRule(3, 3);
-        layoutParams3.topMargin = com.opos.cmn.an.h.f.a.a(this.f24727a, 37.67f);
+        layoutParams3.topMargin = com.opos.cmn.an.h.f.a.a(this.f11039a, 37.67f);
         aVar.setOnClickListener(new View.OnClickListener() { // from class: com.opos.cmn.biz.web.b.b.b.b.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
@@ -280,13 +280,13 @@ public class b {
     }
 
     private void j() {
-        ProgressBar progressBar = new ProgressBar(this.f24727a);
+        ProgressBar progressBar = new ProgressBar(this.f11039a);
         this.i = progressBar;
         com.opos.cmn.biz.web.b.b.a.a.a(progressBar, "mOnlyIndeterminate", new Boolean(false));
         this.i.setIndeterminate(false);
         this.i.setProgressDrawable(new ClipDrawable(new ColorDrawable(Color.parseColor("#33cc9c")), 3, 1));
         this.i.setBackgroundColor(Color.parseColor("#cfcfcf"));
-        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(-1, com.opos.cmn.an.h.f.a.a(this.f24727a, 1.33f));
+        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(-1, com.opos.cmn.an.h.f.a.a(this.f11039a, 1.33f));
         layoutParams.addRule(3, 1);
         this.e.addView(this.i, layoutParams);
     }
@@ -333,7 +333,7 @@ public class b {
         settings.setRenderPriority(WebSettings.RenderPriority.HIGH);
         settings.setDomStorageEnabled(true);
         settings.setDatabaseEnabled(true);
-        settings.setDatabasePath(this.f24727a.getApplicationContext().getDir(WebParameter.PATH_DATABASE, 0).getPath());
+        settings.setDatabasePath(this.f11039a.getApplicationContext().getDir(WebParameter.PATH_DATABASE, 0).getPath());
         settings.setCacheMode(-1);
         settings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.NARROW_COLUMNS);
         settings.setUseWideViewPort(true);
@@ -444,6 +444,7 @@ public class b {
                 b.this.a(sslErrorHandler, sslError);
             }
 
+            @Override // android.webkit.WebViewClient
             public boolean onRenderProcessGone(WebView webView, RenderProcessGoneDetail renderProcessGoneDetail) {
                 if (Build.VERSION.SDK_INT >= 26) {
                     com.opos.cmn.an.f.a.d("WebWidgetImpl", "onRenderProcessGone WebView rendering process killed to reclaim memory. Recreating...");
@@ -545,7 +546,7 @@ public class b {
                 relativeLayout.removeAllViews();
                 this.e = null;
             }
-            this.f24727a = null;
+            this.f11039a = null;
         }
     }
 

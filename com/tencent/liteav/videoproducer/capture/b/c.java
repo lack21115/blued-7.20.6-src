@@ -7,13 +7,13 @@ import java.util.Comparator;
 public final /* synthetic */ class c implements Comparator {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final c f36902a = new c();
+    private static final c f23211a = new c();
 
     private c() {
     }
 
     public static Comparator a() {
-        return f36902a;
+        return f23211a;
     }
 
     @Override // java.util.Comparator

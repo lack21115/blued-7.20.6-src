@@ -1,6 +1,6 @@
 package com.autonavi.base.ae.gmap;
 
-import com.amap.api.col.p0003sl.ae;
+import com.amap.api.col.3sl.ae;
 import com.amap.api.maps.interfaces.IGlOverlayLayer;
 import com.amap.api.maps.model.BitmapDescriptor;
 import com.amap.api.maps.model.BitmapDescriptorFactory;

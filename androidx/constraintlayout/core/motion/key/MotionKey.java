@@ -22,7 +22,7 @@ public abstract class MotionKey implements TypedValues {
     public static final String VISIBILITY = "visibility";
 
     /* renamed from: a  reason: collision with root package name */
-    int f2017a;
+    int f1969a;
     String b;
     public HashMap<String, CustomVariable> mCustom;
     public int mFramePosition;
@@ -31,7 +31,7 @@ public abstract class MotionKey implements TypedValues {
     public MotionKey() {
         int i = UNSET;
         this.mFramePosition = i;
-        this.f2017a = i;
+        this.f1969a = i;
         this.b = null;
     }
 
@@ -49,11 +49,11 @@ public abstract class MotionKey implements TypedValues {
 
     @Override // 
     /* renamed from: clone */
-    public abstract MotionKey mo1293clone();
+    public abstract MotionKey mo1156clone();
 
     public MotionKey copy(MotionKey motionKey) {
         this.mFramePosition = motionKey.mFramePosition;
-        this.f2017a = motionKey.f2017a;
+        this.f1969a = motionKey.f1969a;
         this.b = motionKey.b;
         this.mType = motionKey.mType;
         return this;
@@ -117,7 +117,7 @@ public abstract class MotionKey implements TypedValues {
     }
 
     public MotionKey setViewId(int i) {
-        this.f2017a = i;
+        this.f1969a = i;
         return this;
     }
 }

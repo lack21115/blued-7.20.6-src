@@ -16,7 +16,8 @@ import android.webkit.WebView;
 import com.android.internal.telephony.PhoneConstants;
 import com.anythink.core.api.ATAdConst;
 import com.anythink.core.common.b.g;
-import com.opos.acs.st.utils.ErrorContants;
+import com.anythink.core.common.k.g;
+import com.blued.android.module.yy_china.model.YYGiftPackageModel;
 import java.math.BigDecimal;
 import java.util.Locale;
 import java.util.Map;
@@ -28,13 +29,9 @@ import org.json.JSONObject;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/k/d.class */
 public final class d {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static String f6803a;
+    public static String a;
     public static String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public static String f6804c;
+    public static String c;
     public static String d = "";
     static String e;
     private static String f;
@@ -101,23 +98,23 @@ public final class d {
     public static void a(int i2, String str) {
         synchronized (d.class) {
             try {
-                if (TextUtils.isEmpty(f6803a)) {
+                if (TextUtils.isEmpty(a)) {
                     try {
                         JSONObject jSONObject = new JSONObject();
                         jSONObject.put(String.valueOf(i2), str);
-                        f6803a = jSONObject.toString();
+                        a = jSONObject.toString();
                         return;
                     } catch (Exception e2) {
                         return;
                     }
                 }
                 try {
-                    JSONObject jSONObject2 = new JSONObject(f6803a);
+                    JSONObject jSONObject2 = new JSONObject(a);
                     if (jSONObject2.has(String.valueOf(i2))) {
                         return;
                     }
                     jSONObject2.put(String.valueOf(i2), str);
-                    f6803a = jSONObject2.toString();
+                    a = jSONObject2.toString();
                 } catch (Exception e3) {
                 }
             } catch (Throwable th) {
@@ -140,9 +137,9 @@ public final class d {
             f(context);
             c();
             n(context);
-            f6803a = p.b(context, com.anythink.core.common.b.g.o, g.o.e, "");
-            if (h.a("android.permission.READ_PHONE_STATE", context)) {
-                String simOperator = ((TelephonyManager) context.getSystemService("phone")).getSimOperator();
+            a = p.b(context, com.anythink.core.common.b.g.o, g.o.e, "");
+            if (h.a(com.anythink.china.common.d.a, context)) {
+                String simOperator = ((TelephonyManager) context.getSystemService(PhoneConstants.PHONE_KEY)).getSimOperator();
                 if (!h.b(simOperator) || simOperator.length() <= 3) {
                     return;
                 }
@@ -416,9 +413,9 @@ public final class d {
     }
 
     public static JSONObject h() {
-        if (!TextUtils.isEmpty(f6803a)) {
+        if (!TextUtils.isEmpty(a)) {
             try {
-                return new JSONObject(f6803a);
+                return new JSONObject(a);
             } catch (Exception e2) {
             }
         }
@@ -629,20 +626,20 @@ public final class d {
         try {
             if (com.anythink.core.common.b.p.a(com.anythink.core.common.b.n.a().g()).b()) {
                 if (context == null) {
-                    return "-1";
+                    return YYGiftPackageModel.YY_GIFT_BAG_TYPE_ID;
                 }
                 try {
-                    ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+                    ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService("connectivity");
                     if (connectivityManager == null || !h.a("android.permission.ACCESS_NETWORK_STATE", context) || (activeNetworkInfo = connectivityManager.getActiveNetworkInfo()) == null) {
-                        return "-1";
+                        return YYGiftPackageModel.YY_GIFT_BAG_TYPE_ID;
                     }
                     int i2 = 1;
                     if (activeNetworkInfo.getType() == 1) {
-                        return ErrorContants.NET_NO_CALLBACK;
+                        return "-2";
                     }
-                    TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService("phone");
+                    TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService(PhoneConstants.PHONE_KEY);
                     if (telephonyManager == null) {
-                        return "-1";
+                        return YYGiftPackageModel.YY_GIFT_BAG_TYPE_ID;
                     }
                     int networkType = telephonyManager.getNetworkType();
                     StringBuilder sb = new StringBuilder();
@@ -679,7 +676,7 @@ public final class d {
                     return sb.toString();
                 } catch (Exception e2) {
                     e2.printStackTrace();
-                    return "-1";
+                    return YYGiftPackageModel.YY_GIFT_BAG_TYPE_ID;
                 }
             }
             return "";
@@ -701,7 +698,7 @@ public final class d {
             return q;
         }
         try {
-            String str2 = context.getPackageManager().getPackageInfo("com.android.vending", 0).versionName;
+            String str2 = context.getPackageManager().getPackageInfo(g.a.a, 0).versionName;
             q = str2;
             if (str2 == null) {
                 q = "";
@@ -717,13 +714,13 @@ public final class d {
         if (com.anythink.core.common.b.n.a().b() == null) {
             return "";
         }
-        if (TextUtils.isEmpty(f6804c)) {
-            WindowManager windowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+        if (TextUtils.isEmpty(c)) {
+            WindowManager windowManager = (WindowManager) context.getSystemService("window");
             DisplayMetrics displayMetrics = new DisplayMetrics();
             windowManager.getDefaultDisplay().getMetrics(displayMetrics);
-            f6804c = String.valueOf(displayMetrics.density);
+            c = String.valueOf(displayMetrics.density);
         }
-        return f6804c;
+        return c;
     }
 
     public static void p(Context context) {
@@ -862,10 +859,10 @@ public final class d {
                         try {
                             Class<?> cls = Class.forName("com.google.android.gms.ads.identifier.AdvertisingIdClient");
                             Class<?> cls2 = Class.forName("com.google.android.gms.ads.identifier.AdvertisingIdClient$Info");
-                            strArr[0] = (String) cls2.getMethod("getId", new Class[0]).invoke(cls.getMethod("getAdvertisingIdInfo", Context.class).invoke(null, Context.this), new Object[0]);
+                            strArr[0] = (String) cls2.getMethod("getId", new Class[0]).invoke(cls.getMethod("getAdvertisingIdInfo", Context.class).invoke(null, context), new Object[0]);
                         } catch (Throwable th) {
                             try {
-                                strArr[0] = new com.anythink.core.common.b.c().a(Context.this).a();
+                                strArr[0] = new com.anythink.core.common.b.c().a(context).a();
                             } catch (Exception e2) {
                             }
                         }
@@ -925,14 +922,14 @@ public final class d {
             return -1;
         }
         try {
-            ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+            ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService("connectivity");
             if (connectivityManager == null || !h.a("android.permission.ACCESS_NETWORK_STATE", context) || (activeNetworkInfo = connectivityManager.getActiveNetworkInfo()) == null) {
                 return -1;
             }
             if (activeNetworkInfo.getType() == 1) {
                 return -2;
             }
-            TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService("phone");
+            TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService(PhoneConstants.PHONE_KEY);
             if (telephonyManager == null) {
                 return -1;
             }
@@ -944,6 +941,6 @@ public final class d {
     }
 
     private static void w(Context context) {
-        f6803a = p.b(context, com.anythink.core.common.b.g.o, g.o.e, "");
+        a = p.b(context, com.anythink.core.common.b.g.o, g.o.e, "");
     }
 }

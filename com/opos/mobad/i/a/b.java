@@ -8,19 +8,19 @@ import java.io.FileOutputStream;
 public class b extends Thread {
 
     /* renamed from: a  reason: collision with root package name */
-    private File f26211a;
+    private File f12523a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private c[] f26212c;
+    private c[] f12524c;
     private volatile boolean d = false;
 
     public b(File file, int i, c[] cVarArr) {
         setName("download_monitor_" + file.getName());
         setPriority(5);
-        this.f26211a = file;
+        this.f12523a = file;
         this.b = i;
-        this.f26212c = cVarArr;
+        this.f12524c = cVarArr;
     }
 
     private void a(File file, int i, c[] cVarArr) {
@@ -60,12 +60,12 @@ public class b extends Thread {
     public void run() {
         StringBuilder sb;
         com.opos.cmn.an.f.a.b("DownloadMonitorThread", "DownloadMonitorThread start running.");
-        e eVar = new e(this.f26211a);
+        e eVar = new e(this.f12523a);
         try {
             try {
                 if (eVar.a()) {
                     while (!this.d) {
-                        a(this.f26211a, this.b, this.f26212c);
+                        a(this.f12523a, this.b, this.f12524c);
                         try {
                             sleep(500L);
                         } catch (InterruptedException e) {
@@ -83,12 +83,12 @@ public class b extends Thread {
                 sb = new StringBuilder();
             }
             sb.append("posInfoFile releaseFileLock success.");
-            sb.append(this.f26211a);
+            sb.append(this.f12523a);
             com.opos.cmn.an.f.a.b("DownloadMonitorThread", sb.toString());
         } catch (Throwable th) {
             com.opos.cmn.an.f.a.b("DownloadMonitorThread", "DownloadMonitorThread end running.");
             eVar.b();
-            com.opos.cmn.an.f.a.b("DownloadMonitorThread", "posInfoFile releaseFileLock success." + this.f26211a);
+            com.opos.cmn.an.f.a.b("DownloadMonitorThread", "posInfoFile releaseFileLock success." + this.f12523a);
             throw th;
         }
     }

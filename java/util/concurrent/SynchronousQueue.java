@@ -601,16 +601,16 @@ public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQue
         objectOutputStream.defaultWriteObject();
     }
 
-    @Override // java.util.AbstractQueue, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractQueue, java.util.AbstractCollection, java.util.Collection
     public void clear() {
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean contains(Object obj) {
         return false;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean containsAll(Collection<?> collection) {
         return collection.isEmpty();
     }
@@ -657,7 +657,7 @@ public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQue
         return i2;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean isEmpty() {
         return true;
     }
@@ -724,22 +724,22 @@ public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQue
         return 0;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean remove(Object obj) {
         return false;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean removeAll(Collection<?> collection) {
         return false;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean retainAll(Collection<?> collection) {
         return false;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    @Override // java.util.AbstractCollection, java.util.Collection
     public int size() {
         return 0;
     }
@@ -754,12 +754,12 @@ public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQue
         throw new InterruptedException();
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public Object[] toArray() {
         return new Object[0];
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public <T> T[] toArray(T[] tArr) {
         if (tArr.length > 0) {
             tArr[0] = null;

@@ -7,27 +7,27 @@ import java.util.HashMap;
 public class e {
 
     /* renamed from: a  reason: collision with root package name */
-    private c f21981a;
+    private c f8374a;
 
     /* loaded from: source-8110460-dex2jar.jar:com/getui/gtc/dyc/e$a.class */
     static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static e f21982a = new e();
+        private static e f8375a = new e();
     }
 
     private e() {
-        this.f21981a = c.a();
+        this.f8374a = c.a();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static e a() {
-        return a.f21982a;
+        return a.f8375a;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public h a(String str) {
-        return this.f21981a.a(str);
+        return this.f8374a.a(str);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -35,11 +35,11 @@ public class e {
         if (hVar2 == null) {
             return false;
         }
-        return this.f21981a.a(str, hVar2);
+        return this.f8374a.a(str, hVar2);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public HashMap<String, h> c() {
-        return this.f21981a.c();
+        return this.f8374a.c();
     }
 }

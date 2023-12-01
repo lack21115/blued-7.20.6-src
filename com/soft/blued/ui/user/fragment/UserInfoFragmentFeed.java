@@ -27,11 +27,11 @@ import java.util.List;
 public class UserInfoFragmentFeed extends BaseFragment implements View.OnClickListener {
 
     /* renamed from: a  reason: collision with root package name */
-    public Context f34003a;
+    public Context f20312a;
     public View b;
 
     /* renamed from: c  reason: collision with root package name */
-    public ShapeTextView f34004c;
+    public ShapeTextView f20313c;
     public List<String> d;
     public CustomViewPager e;
     public MyAdapter f;
@@ -70,10 +70,10 @@ public class UserInfoFragmentFeed extends BaseFragment implements View.OnClickLi
     }
 
     private void a() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.b.findViewById(2131370749);
-        commonTopTitleNoTrans.setCenterText(getString(2131888129));
-        commonTopTitleNoTrans.setLeftClickListener(this);
-        commonTopTitleNoTrans.a();
+        CommonTopTitleNoTrans findViewById = this.b.findViewById(R.id.top_title);
+        findViewById.setCenterText(getString(R.string.find_feed));
+        findViewById.setLeftClickListener(this);
+        findViewById.a();
     }
 
     private void a(int i) {
@@ -86,7 +86,7 @@ public class UserInfoFragmentFeed extends BaseFragment implements View.OnClickLi
 
     private void b() {
         this.d = new ArrayList();
-        String[] stringArray = this.f34003a.getResources().getStringArray(R.array.user_feed_title);
+        String[] stringArray = this.f20312a.getResources().getStringArray(R.array.user_feed_title);
         int length = stringArray.length;
         int i = 0;
         while (true) {
@@ -105,16 +105,16 @@ public class UserInfoFragmentFeed extends BaseFragment implements View.OnClickLi
     }
 
     private void c() {
-        ShapeTextView shapeTextView = (ShapeTextView) this.b.findViewById(R.id.feed_bg);
-        this.f34004c = shapeTextView;
-        ShapeHelper.b(shapeTextView, 2131102360);
+        ShapeTextView findViewById = this.b.findViewById(R.id.feed_bg);
+        this.f20313c = findViewById;
+        ShapeHelper.b(findViewById, 2131102360);
         this.e = (CustomViewPager) this.b.findViewById(2131373100);
         MyAdapter myAdapter = new MyAdapter(getChildFragmentManager());
         this.f = myAdapter;
         this.e.setAdapter(myAdapter);
-        PageTabLayout pageTabLayout = (PageTabLayout) this.b.findViewById(2131370555);
-        this.g = pageTabLayout;
-        pageTabLayout.setupWithViewPager(this.e);
+        PageTabLayout findViewById2 = this.b.findViewById(R.id.tablayout);
+        this.g = findViewById2;
+        findViewById2.setupWithViewPager(this.e);
         this.e.addOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: com.soft.blued.ui.user.fragment.UserInfoFragmentFeed.1
             @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageScrollStateChanged(int i) {
@@ -138,10 +138,10 @@ public class UserInfoFragmentFeed extends BaseFragment implements View.OnClickLi
             if (i2 >= this.d.size()) {
                 break;
             }
-            View inflate = LayoutInflater.from(this.f34003a).inflate(R.layout.item_tab_with_new, (ViewGroup) null);
-            ShapeTextView shapeTextView2 = (ShapeTextView) inflate.findViewById(2131369782);
-            ShapeHelper.a((ShapeHelper.ShapeView) shapeTextView2, 2131102254);
-            shapeTextView2.setText(this.d.get(i2));
+            View inflate = LayoutInflater.from(this.f20312a).inflate(R.layout.item_tab_with_new, (ViewGroup) null);
+            ShapeTextView findViewById3 = inflate.findViewById(R.id.shape_tv);
+            ShapeHelper.a(findViewById3, 2131102254);
+            findViewById3.setText(this.d.get(i2));
             this.g.a(i2).a(inflate);
             i = i2 + 1;
         }
@@ -159,9 +159,8 @@ public class UserInfoFragmentFeed extends BaseFragment implements View.OnClickLi
         getActivity().finish();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.f34003a = getActivity();
+        this.f20312a = getActivity();
         View view = this.b;
         if (view == null) {
             this.b = layoutInflater.inflate(R.layout.fragment_userinfo_my_feed, viewGroup, false);

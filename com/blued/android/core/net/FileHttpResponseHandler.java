@@ -1,6 +1,5 @@
 package com.blued.android.core.net;
 
-import android.content.ContentResolver;
 import java.io.File;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/net/FileHttpResponseHandler.class */
@@ -15,7 +14,7 @@ public abstract class FileHttpResponseHandler extends HttpResponseHandler<File> 
 
     @Override // com.blued.android.core.net.http.AbstractHttpResponseHandler
     public String getResponseType() {
-        return ContentResolver.SCHEME_FILE;
+        return "file";
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

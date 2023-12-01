@@ -4,7 +4,7 @@ package ar.com.hjg.pngj;
 public class ImageLineInt implements IImageLine, IImageLineArray {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ImageInfo f3643a;
+    public final ImageInfo f3595a;
     protected final int[] b;
 
     public static IImageLineFactory<ImageLineInt> a() {
@@ -13,6 +13,6 @@ public class ImageLineInt implements IImageLine, IImageLineArray {
     }
 
     public String toString() {
-        return " cols=" + this.f3643a.f3638a + " bpc=" + this.f3643a.f3639c + " size=" + this.b.length;
+        return " cols=" + this.f3595a.f3590a + " bpc=" + this.f3595a.f3591c + " size=" + this.b.length;
     }
 }

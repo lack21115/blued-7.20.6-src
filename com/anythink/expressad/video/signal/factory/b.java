@@ -71,10 +71,10 @@ public class b extends a {
         if (this.i == null) {
             return super.getActivityProxy();
         }
-        if (this.f8714a == null) {
-            this.f8714a = new h(this.i);
+        if (this.f5874a == null) {
+            this.f5874a = new h(this.i);
         }
-        return this.f8714a;
+        return this.f5874a;
     }
 
     @Override // com.anythink.expressad.video.signal.factory.a, com.anythink.expressad.video.signal.factory.IJSFactory
@@ -143,9 +143,9 @@ public class b extends a {
         if (this.j == null) {
             return super.getJSVideoModule();
         }
-        if (this.f8715c == null) {
-            this.f8715c = new n(this.j);
+        if (this.f5875c == null) {
+            this.f5875c = new n(this.j);
         }
-        return this.f8715c;
+        return this.f5875c;
     }
 }

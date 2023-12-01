@@ -12,7 +12,7 @@ import java.util.WeakHashMap;
 public final class c implements Application.ActivityLifecycleCallbacks {
 
     /* renamed from: a  reason: collision with root package name */
-    private boolean f40576a = false;
+    private boolean f26885a = false;
     private boolean b = false;
 
     private void a(int i) {
@@ -37,9 +37,9 @@ public final class c implements Application.ActivityLifecycleCallbacks {
                 }
             }
         }
-        if (this.f40576a != z) {
+        if (this.f26885a != z) {
             b.b(z);
-            this.f40576a = z;
+            this.f26885a = z;
         }
         weakHashMap = b.ab;
         boolean isEmpty = weakHashMap.isEmpty();

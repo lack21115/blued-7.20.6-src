@@ -13,11 +13,11 @@ import java.nio.ByteBuffer;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public MediaExtractor f1375a;
+    public MediaExtractor f1327a;
     public MediaCodec b;
 
     /* renamed from: c  reason: collision with root package name */
-    public MediaFormat f1376c;
+    public MediaFormat f1328c;
     public ByteBuffer d;
     public int e;
     public long f;
@@ -53,7 +53,7 @@ public class a {
     }
 
     public void a(long j) {
-        this.f1375a.seekTo(j, 0);
+        this.f1327a.seekTo(j, 0);
     }
 
     public void a(OnAudioMixListener onAudioMixListener) {
@@ -63,10 +63,10 @@ public class a {
     public boolean a(String str, boolean z) throws IOException {
         this.h = z;
         MediaExtractor mediaExtractor = new MediaExtractor();
-        this.f1375a = mediaExtractor;
+        this.f1327a = mediaExtractor;
         mediaExtractor.setDataSource(str);
         MediaFormat i = i();
-        this.f1376c = i;
+        this.f1328c = i;
         if (i == null) {
             e eVar = e.j;
             eVar.e("AudioDecoder", "cannot find audio track in " + str);
@@ -89,11 +89,11 @@ public class a {
     }
 
     public int c() {
-        return this.f1376c == null ? -1 : 16;
+        return this.f1328c == null ? -1 : 16;
     }
 
     public int d() {
-        MediaFormat mediaFormat = this.f1376c;
+        MediaFormat mediaFormat = this.f1328c;
         if (mediaFormat == null) {
             return -1;
         }
@@ -101,7 +101,7 @@ public class a {
     }
 
     public int e() {
-        MediaFormat mediaFormat = this.f1376c;
+        MediaFormat mediaFormat = this.f1328c;
         if (mediaFormat == null) {
             return -1;
         }
@@ -112,13 +112,13 @@ public class a {
         while (true) {
             int dequeueInputBuffer = this.b.dequeueInputBuffer(1000L);
             if (dequeueInputBuffer >= 0) {
-                int readSampleData = this.f1375a.readSampleData(this.b.getInputBuffers()[dequeueInputBuffer], 0);
+                int readSampleData = this.f1327a.readSampleData(this.b.getInputBuffers()[dequeueInputBuffer], 0);
                 int i = readSampleData;
                 if (readSampleData < 0) {
                     i = readSampleData;
                     if (this.h) {
-                        this.f1375a.seekTo(0L, 0);
-                        i = this.f1375a.readSampleData(this.b.getInputBuffers()[dequeueInputBuffer], 0);
+                        this.f1327a.seekTo(0L, 0);
+                        i = this.f1327a.readSampleData(this.b.getInputBuffers()[dequeueInputBuffer], 0);
                     }
                 }
                 if (i < 0) {
@@ -127,13 +127,13 @@ public class a {
                     return null;
                 }
                 this.i = false;
-                long sampleTime = this.f1375a.getSampleTime();
+                long sampleTime = this.f1327a.getSampleTime();
                 if (this.j != null && Math.abs(sampleTime - this.g) > 1000000) {
                     this.j.onProgress(sampleTime, this.f);
                     this.g = sampleTime;
                 }
                 this.b.queueInputBuffer(dequeueInputBuffer, 0, i, sampleTime, 0);
-                this.f1375a.advance();
+                this.f1327a.advance();
                 e eVar = e.j;
                 eVar.b("AudioDecoder", "input: index = " + dequeueInputBuffer + ", sample size = " + i);
                 MediaCodec.BufferInfo bufferInfo = new MediaCodec.BufferInfo();
@@ -173,16 +173,16 @@ public class a {
             this.b.release();
             this.b = null;
         }
-        this.f1376c = null;
-        MediaExtractor mediaExtractor = this.f1375a;
+        this.f1328c = null;
+        MediaExtractor mediaExtractor = this.f1327a;
         if (mediaExtractor != null) {
             mediaExtractor.release();
-            this.f1375a = null;
+            this.f1327a = null;
         }
     }
 
     public final MediaFormat i() {
-        int trackCount = this.f1375a.getTrackCount();
+        int trackCount = this.f1327a.getTrackCount();
         e eVar = e.j;
         eVar.c("AudioDecoder", "tracks count :" + trackCount);
         int i = 0;
@@ -191,11 +191,11 @@ public class a {
             if (i2 >= trackCount) {
                 return null;
             }
-            MediaFormat trackFormat = this.f1375a.getTrackFormat(i2);
+            MediaFormat trackFormat = this.f1327a.getTrackFormat(i2);
             if (trackFormat.getString(MediaFormat.KEY_MIME).startsWith("audio")) {
                 e eVar2 = e.j;
                 eVar2.c("AudioDecoder", "selected track:" + i2);
-                this.f1375a.selectTrack(i2);
+                this.f1327a.selectTrack(i2);
                 return trackFormat;
             }
             i = i2 + 1;
@@ -203,14 +203,14 @@ public class a {
     }
 
     public final MediaCodec j() {
-        String string = this.f1376c.getString(MediaFormat.KEY_MIME);
-        int integer = this.f1376c.getInteger(MediaFormat.KEY_SAMPLE_RATE);
-        int integer2 = this.f1376c.getInteger(MediaFormat.KEY_CHANNEL_COUNT);
+        String string = this.f1328c.getString(MediaFormat.KEY_MIME);
+        int integer = this.f1328c.getInteger(MediaFormat.KEY_SAMPLE_RATE);
+        int integer2 = this.f1328c.getInteger(MediaFormat.KEY_CHANNEL_COUNT);
         e eVar = e.j;
         eVar.c("AudioDecoder", "mime:" + string + " sampleRate:" + integer + " channels:" + integer2);
         try {
             MediaCodec createDecoderByType = MediaCodec.createDecoderByType(string);
-            createDecoderByType.configure(this.f1376c, null, null, 0);
+            createDecoderByType.configure(this.f1328c, null, null, 0);
             createDecoderByType.start();
             return createDecoderByType;
         } catch (Exception e) {

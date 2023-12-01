@@ -19,24 +19,24 @@ import org.json.JSONObject;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static a f21642a;
+    private static a f8036a;
 
     private a() {
     }
 
     public static a a() {
-        if (f21642a == null) {
+        if (f8036a == null) {
             synchronized (a.class) {
                 try {
-                    if (f21642a == null) {
-                        f21642a = new a();
+                    if (f8036a == null) {
+                        f8036a = new a();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f21642a;
+        return f8036a;
     }
 
     private void a(final c cVar, final d dVar, final com.cmic.gen.sdk.tencent.a aVar) {
@@ -122,7 +122,7 @@ public class a {
             cVar.a("defendEOF", "0");
         } else {
             e eVar = new e();
-            eVar.a(aVar.a(b.a.f21612a));
+            eVar.a(aVar.a(b.a.f8006a));
             eVar.b(aVar.a(b.a.b));
             eVar.a(hVar);
             eVar.a(false);
@@ -132,9 +132,9 @@ public class a {
             if (aVar.b("use2048PublicKey", false)) {
                 com.cmic.gen.sdk.tencent.e.c.a("BaseRequest", "使用2对应的编码");
                 eVar.b("2");
-                a2 = i.a().b(aVar.a(b.a.f21612a));
+                a2 = i.a().b(aVar.a(b.a.f8006a));
             } else {
-                a2 = i.a().a(aVar.a(b.a.f21612a));
+                a2 = i.a().a(aVar.a(b.a.f8006a));
             }
             eVar.c(a2);
             cVar = new b(str2, eVar, "POST", aVar.b("traceId"));

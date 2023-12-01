@@ -8,11 +8,11 @@ import java.util.concurrent.ScheduledExecutorService;
 public class BeaconConfig {
 
     /* renamed from: a  reason: collision with root package name */
-    private final int f35063a;
+    private final int f21372a;
     private final boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final boolean f35064c;
+    private final boolean f21373c;
     private final long d;
     private final long e;
     private final int f;
@@ -45,11 +45,11 @@ public class BeaconConfig {
         private String l;
 
         /* renamed from: a  reason: collision with root package name */
-        private int f35065a = 10000;
+        private int f21374a = 10000;
         private boolean b = true;
 
         /* renamed from: c  reason: collision with root package name */
-        private boolean f35066c = true;
+        private boolean f21375c = true;
         private boolean e = true;
         private long g = 2000;
         private long h = 5000;
@@ -77,7 +77,7 @@ public class BeaconConfig {
         }
 
         public Builder bidEnable(boolean z) {
-            this.f35066c = z;
+            this.f21375c = z;
             return this;
         }
 
@@ -96,7 +96,7 @@ public class BeaconConfig {
         }
 
         public Builder maxDBCount(int i) {
-            this.f35065a = i;
+            this.f21374a = i;
             return this;
         }
 
@@ -222,9 +222,9 @@ public class BeaconConfig {
     }
 
     public BeaconConfig(Builder builder) {
-        this.f35063a = builder.f35065a;
+        this.f21372a = builder.f21374a;
         this.b = builder.b;
-        this.f35064c = builder.f35066c;
+        this.f21373c = builder.f21375c;
         this.d = builder.g;
         this.e = builder.h;
         this.f = builder.i;
@@ -283,7 +283,7 @@ public class BeaconConfig {
     }
 
     public int getMaxDBCount() {
-        return this.f35063a;
+        return this.f21372a;
     }
 
     public String getMeid() {
@@ -331,7 +331,7 @@ public class BeaconConfig {
     }
 
     public boolean isBidEnable() {
-        return this.f35064c;
+        return this.f21373c;
     }
 
     public boolean isEnableQmsp() {
@@ -359,6 +359,6 @@ public class BeaconConfig {
     }
 
     public String toString() {
-        return "BeaconConfig{maxDBCount=" + this.f35063a + ", auditEnable=" + this.b + ", bidEnable=" + this.f35064c + ", realtimePollingTime=" + this.d + ", normalPollingTIme=" + this.e + ", normalUploadNum=" + this.g + ", realtimeUploadNum=" + this.f + ", httpAdapter=" + this.i + ", uploadHost='" + this.j + "', configHost='" + this.k + "', forceEnableAtta=" + this.l + ", enableQmsp=" + this.m + ", pagePathEnable=" + this.n + ", androidID='" + this.o + "', imei='" + this.p + "', imei2='" + this.q + "', imsi='" + this.r + "', meid='" + this.s + "', model='" + this.t + "', mac='" + this.u + "', wifiMacAddress='" + this.v + "', wifiSSID='" + this.w + "', oaid='" + this.x + "', needInitQ='" + this.y + "'}";
+        return "BeaconConfig{maxDBCount=" + this.f21372a + ", auditEnable=" + this.b + ", bidEnable=" + this.f21373c + ", realtimePollingTime=" + this.d + ", normalPollingTIme=" + this.e + ", normalUploadNum=" + this.g + ", realtimeUploadNum=" + this.f + ", httpAdapter=" + this.i + ", uploadHost='" + this.j + "', configHost='" + this.k + "', forceEnableAtta=" + this.l + ", enableQmsp=" + this.m + ", pagePathEnable=" + this.n + ", androidID='" + this.o + "', imei='" + this.p + "', imei2='" + this.q + "', imsi='" + this.r + "', meid='" + this.s + "', model='" + this.t + "', mac='" + this.u + "', wifiMacAddress='" + this.v + "', wifiSSID='" + this.w + "', oaid='" + this.x + "', needInitQ='" + this.y + "'}";
     }
 }

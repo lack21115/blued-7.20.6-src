@@ -6,7 +6,8 @@ import com.airbnb.lottie.LottieComposition;
 import com.airbnb.lottie.model.animatable.AnimatableFloatValue;
 import com.airbnb.lottie.model.animatable.AnimatableValue;
 import com.airbnb.lottie.model.content.PolystarShape;
-import com.umeng.analytics.pro.bh;
+import com.anythink.core.common.b.g;
+import com.anythink.core.common.g.c;
 import java.io.IOException;
 
 /* JADX INFO: Access modifiers changed from: package-private */
@@ -32,12 +33,12 @@ public class PolystarShapeParser {
             String nextName = jsonReader.nextName();
             int hashCode = nextName.hashCode();
             if (hashCode == 112) {
-                if (nextName.equals("p")) {
+                if (nextName.equals(c.W)) {
                     z = true;
                 }
                 z = true;
             } else if (hashCode == 114) {
-                if (nextName.equals("r")) {
+                if (nextName.equals(g.o.o)) {
                     z = true;
                 }
                 z = true;
@@ -72,7 +73,7 @@ public class PolystarShapeParser {
                 }
                 z = true;
             } else if (hashCode != 3555) {
-                if (hashCode == 3556 && nextName.equals(bh.x)) {
+                if (hashCode == 3556 && nextName.equals("os")) {
                     z = true;
                 }
                 z = true;

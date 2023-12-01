@@ -43,7 +43,7 @@ import java.util.Date;
 public class VIPBuyFragment extends BaseFragment implements VIPBuyOnBackPressedObserver.IVIPBuyOnBackPressedObserver, VIPBuyResultObserver.IVIPBuyResultObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    public Context f34109a;
+    public Context f20418a;
     public View b;
     private CommonTopTitleNoTrans d;
     private ShapeTextView e;
@@ -65,7 +65,7 @@ public class VIPBuyFragment extends BaseFragment implements VIPBuyOnBackPressedO
     private boolean u = false;
 
     /* renamed from: c  reason: collision with root package name */
-    String[] f34110c = null;
+    String[] f20419c = null;
 
     /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/user/fragment/VIPBuyFragment$MyAdapter.class */
     public class MyAdapter extends FragmentPagerAdapter {
@@ -96,12 +96,12 @@ public class VIPBuyFragment extends BaseFragment implements VIPBuyOnBackPressedO
 
         @Override // androidx.viewpager.widget.PagerAdapter
         public CharSequence getPageTitle(int i) {
-            return i < VIPBuyFragment.this.f34110c.length ? VIPBuyFragment.this.f34110c[i] : VIPBuyFragment.this.f34110c[VIPBuyFragment.this.f34110c.length - 1];
+            return i < VIPBuyFragment.this.f20419c.length ? VIPBuyFragment.this.f20419c[i] : VIPBuyFragment.this.f20419c[VIPBuyFragment.this.f20419c.length - 1];
         }
     }
 
     private void a(int i) {
-        ((TextView) this.f.a(i).a().findViewById(2131371294)).setVisibility(0);
+        ((TextView) this.f.a(i).a().findViewById(R.id.tv_dot)).setVisibility(0);
     }
 
     public static void a(Context context, int i, String str, int i2, VipProtos.FromType fromType, boolean z, boolean z2, boolean z3, int i3) {
@@ -138,7 +138,7 @@ public class VIPBuyFragment extends BaseFragment implements VIPBuyOnBackPressedO
             }
         }
         if (this.u) {
-            LiveEventBus.get(LiveEventBusConstant.f11377c).post(null);
+            LiveEventBus.get(LiveEventBusConstant.c).post(null);
         } else {
             c();
         }
@@ -151,6 +151,7 @@ public class VIPBuyFragment extends BaseFragment implements VIPBuyOnBackPressedO
         }
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private void b() {
         LiveEventBus.get(LiveEventBusConstant.b, Boolean.class).observe(this, new Observer<Boolean>() { // from class: com.soft.blued.ui.user.fragment.VIPBuyFragment.1
             @Override // androidx.lifecycle.Observer
@@ -172,12 +173,12 @@ public class VIPBuyFragment extends BaseFragment implements VIPBuyOnBackPressedO
 
     /* JADX INFO: Access modifiers changed from: private */
     public void b(int i) {
-        ((TextView) this.f.a(i).a().findViewById(2131371294)).setVisibility(8);
+        ((TextView) this.f.a(i).a().findViewById(R.id.tv_dot)).setVisibility(8);
     }
 
     private void b(VIPBuyTipsModel vIPBuyTipsModel) {
         this.u = true;
-        PopVipCancelBuyTipsDialogFragment.f34378a.a(this.f34109a, (BaseFragmentActivity) getActivity(), vIPBuyTipsModel, this.q);
+        PopVipCancelBuyTipsDialogFragment.f20687a.a(this.f20418a, (BaseFragmentActivity) getActivity(), vIPBuyTipsModel, this.q);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -188,18 +189,17 @@ public class VIPBuyFragment extends BaseFragment implements VIPBuyOnBackPressedO
     }
 
     private void d() {
-        this.f34110c = new String[]{this.f34109a.getResources().getString(R.string.svip), this.f34109a.getResources().getString(R.string.vip)};
+        this.f20419c = new String[]{this.f20418a.getResources().getString(R.string.svip), this.f20418a.getResources().getString(R.string.vip)};
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void e() {
         BluedUIHttpResponse<BluedEntityA<VIPBuyTipsModel>> bluedUIHttpResponse = new BluedUIHttpResponse<BluedEntityA<VIPBuyTipsModel>>() { // from class: com.soft.blued.ui.user.fragment.VIPBuyFragment.4
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<VIPBuyTipsModel> bluedEntityA) {
                 VIPBuyTipsModel vIPBuyTipsModel;
-                if (bluedEntityA == null || (vIPBuyTipsModel = bluedEntityA.data.get(0)) == null) {
+                if (bluedEntityA == null || (vIPBuyTipsModel = (VIPBuyTipsModel) bluedEntityA.data.get(0)) == null) {
                     return;
                 }
                 VIPBuyFragment.this.a(vIPBuyTipsModel);
@@ -213,9 +213,9 @@ public class VIPBuyFragment extends BaseFragment implements VIPBuyOnBackPressedO
     }
 
     public void a() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.b.findViewById(2131370694);
-        this.d = commonTopTitleNoTrans;
-        commonTopTitleNoTrans.setLeftClickListener(new SingleClickProxy(new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.VIPBuyFragment.2
+        CommonTopTitleNoTrans findViewById = this.b.findViewById(2131370694);
+        this.d = findViewById;
+        findViewById.setLeftClickListener(new SingleClickProxy(new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.VIPBuyFragment.2
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
@@ -224,11 +224,11 @@ public class VIPBuyFragment extends BaseFragment implements VIPBuyOnBackPressedO
             }
         }));
         this.d.a();
-        this.d.setCenterText(R.string.vip_pay);
-        this.f = (PageTabLayout) this.b.findViewById(2131370555);
-        ShapeTextView shapeTextView = (ShapeTextView) this.b.findViewById(2131370550);
-        this.e = shapeTextView;
-        ShapeHelper.b(shapeTextView, 2131101796);
+        this.d.setCenterText((int) R.string.vip_pay);
+        this.f = this.b.findViewById(R.id.tablayout);
+        ShapeTextView findViewById2 = this.b.findViewById(R.id.tab_layout);
+        this.e = findViewById2;
+        ShapeHelper.b(findViewById2, 2131101796);
         this.g = (ViewPager) this.b.findViewById(R.id.vp_vip);
         this.h = new VIPBuyOptionListFragment();
         Bundle bundle = new Bundle();
@@ -277,13 +277,13 @@ public class VIPBuyFragment extends BaseFragment implements VIPBuyOnBackPressedO
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f34110c.length) {
+            if (i2 >= this.f20419c.length) {
                 break;
             }
-            View inflate = LayoutInflater.from(this.f34109a).inflate(R.layout.item_tab_with_dot, (ViewGroup) null);
-            ShapeTextView shapeTextView2 = (ShapeTextView) inflate.findViewById(2131372754);
-            ShapeHelper.a((ShapeHelper.ShapeView) shapeTextView2, 2131102254);
-            shapeTextView2.setText(this.f34110c[i2]);
+            View inflate = LayoutInflater.from(this.f20418a).inflate(R.layout.item_tab_with_dot, (ViewGroup) null);
+            ShapeTextView findViewById3 = inflate.findViewById(2131372754);
+            ShapeHelper.a(findViewById3, 2131102254);
+            findViewById3.setText(this.f20419c[i2]);
             this.f.a(i2).a(inflate);
             i = i2 + 1;
         }
@@ -306,15 +306,14 @@ public class VIPBuyFragment extends BaseFragment implements VIPBuyOnBackPressedO
         }, 500L);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener
+    @Override // com.soft.blued.ui.user.observer.VIPBuyOnBackPressedObserver.IVIPBuyOnBackPressedObserver
     public boolean onBackPressed() {
         e();
         return true;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.f34109a = getActivity();
+        this.f20418a = getActivity();
         View view = this.b;
         if (view == null) {
             this.b = layoutInflater.inflate(R.layout.fragment_vip_buy, viewGroup, false);
@@ -341,12 +340,10 @@ public class VIPBuyFragment extends BaseFragment implements VIPBuyOnBackPressedO
         return this.b;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroyView() {
         UserHttpUtils.a();
         super.onDestroyView();

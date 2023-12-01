@@ -10,7 +10,6 @@ import com.anythink.core.common.b.j;
 import com.anythink.core.common.b.n;
 import com.anythink.core.common.e.e;
 import com.anythink.core.common.g.i;
-import com.huawei.openalliance.ad.constant.at;
 import java.util.Map;
 import org.json.JSONObject;
 
@@ -30,7 +29,7 @@ public final class d implements com.anythink.core.common.f.c {
                 JSONObject jSONObject = new JSONObject();
                 jSONObject.put("pl_id", eVar.W());
                 jSONObject.put("req_id", eVar.X());
-                jSONObject.put(at.e, eVar.l());
+                jSONObject.put("show_id", eVar.l());
                 jSONObject.put("unit_id", eVar.x());
                 jSONObject.put("nw_firm_id", eVar.H());
                 jSONObject.put("scenario_id", eVar.C);
@@ -48,7 +47,7 @@ public final class d implements com.anythink.core.common.f.c {
             JSONObject jSONObject2 = new JSONObject();
             jSONObject2.put("pl_id", eVar.W());
             jSONObject2.put("req_id", eVar.X());
-            jSONObject2.put(at.e, eVar.l());
+            jSONObject2.put("show_id", eVar.l());
             jSONObject2.put("unit_id", eVar.x());
             jSONObject2.put("nw_firm_id", eVar.H());
             jSONObject2.put("scenario_id", eVar.C);
@@ -86,14 +85,14 @@ public final class d implements com.anythink.core.common.f.c {
                         }
                     }
                     final String W = eVar.W();
-                    com.anythink.core.c.d a2 = com.anythink.core.c.e.a(n.a().g()).a(W);
-                    JSONObject jSONObject = new JSONObject(a.a(a2.u()));
+                    com.anythink.core.c.d a = com.anythink.core.c.e.a(n.a().g()).a(W);
+                    JSONObject jSONObject = new JSONObject(a.a(a.u()));
                     int optInt = jSONObject.optInt("a");
-                    b a3 = a.a(jSONObject.optString("b"), d.b(j, j3, eVar, aTBaseAdAdapter));
-                    if (TextUtils.isEmpty(a3.a())) {
-                        com.anythink.core.common.j.c.a(eVar, a2, "", a3.b());
+                    b a2 = a.a(jSONObject.optString("b"), d.b(j, j3, eVar, aTBaseAdAdapter));
+                    if (TextUtils.isEmpty(a2.a())) {
+                        com.anythink.core.common.j.c.a(eVar, a, "", a2.b());
                     } else {
-                        new c(n.a().g(), optInt, a3.a(), eVar, a2).a(0, new i() { // from class: com.anythink.core.common.h.d.1.1
+                        new c(n.a().g(), optInt, a2.a(), eVar, a).a(0, new i() { // from class: com.anythink.core.common.h.d.1.1
                             @Override // com.anythink.core.common.g.i
                             public final void onLoadCanceled(int i) {
                             }

@@ -9,6 +9,7 @@ import android.graphics.RectF;
 import android.graphics.Shader;
 import android.graphics.drawable.GradientDrawable;
 import android.util.AttributeSet;
+import android.view.View;
 import android.widget.FrameLayout;
 import com.blued.android.core.AppInfo;
 import com.blued.android.framework.view.badgeview.DisplayUtil;
@@ -21,13 +22,9 @@ public class LiveMsgBgFrameLayout extends FrameLayout {
     private int[] B;
     private int[] C;
     private int[] D;
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f14608a;
+    private Context a;
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f14609c;
+    private int c;
     private int[] d;
     private int[] e;
     private Paint f;
@@ -67,14 +64,14 @@ public class LiveMsgBgFrameLayout extends FrameLayout {
         this.h = GradientDrawable.Orientation.LEFT_RIGHT;
         this.j = true;
         this.l = new RectF();
-        this.f14608a = context;
+        this.a = context;
         a();
     }
 
     private void a() {
         this.i = AppInfo.d().getResources().getColor(R.color.trans_black_seven);
-        this.f14609c = DisplayUtil.a(this.f14608a, 14.0f);
-        this.b = DisplayUtil.a(this.f14608a, 1.0f);
+        this.c = DisplayUtil.a(this.a, 14.0f);
+        this.b = DisplayUtil.a(this.a, 1.0f);
         this.f.setStyle(Paint.Style.STROKE);
         this.f.setAntiAlias(true);
         this.f.setDither(true);
@@ -234,11 +231,11 @@ public class LiveMsgBgFrameLayout extends FrameLayout {
                 } else if (this.n == null) {
                     this.n = new LinearGradient(0.0f, 0.0f, getMeasuredWidth(), 0.0f, this.e, (float[]) null, Shader.TileMode.REPEAT);
                 }
-                this.k.setColor(this.e[0] | (-16777216));
+                this.k.setColor(this.e[0] | View.MEASURED_STATE_MASK);
             }
             this.k.setShader(this.n);
             RectF rectF2 = this.l;
-            int i = this.f14609c;
+            int i = this.c;
             canvas.drawRoundRect(rectF2, i - 1, i - 1, this.k);
             RectF rectF3 = this.g;
             float f2 = this.b * 0.5f;
@@ -254,7 +251,7 @@ public class LiveMsgBgFrameLayout extends FrameLayout {
                 this.f.setColor(iArr2[0]);
                 this.m = null;
             } else {
-                this.f.setColor(iArr2[0] | (-16777216));
+                this.f.setColor(iArr2[0] | View.MEASURED_STATE_MASK);
                 if (this.h == GradientDrawable.Orientation.TOP_BOTTOM) {
                     if (this.m == null) {
                         this.m = new LinearGradient(0.0f, 0.0f, 0.0f, getMeasuredHeight(), this.d, (float[]) null, Shader.TileMode.REPEAT);
@@ -265,7 +262,7 @@ public class LiveMsgBgFrameLayout extends FrameLayout {
             }
             this.f.setShader(this.m);
             RectF rectF4 = this.g;
-            int i2 = this.f14609c;
+            int i2 = this.c;
             canvas.drawRoundRect(rectF4, i2, i2, this.f);
         }
     }

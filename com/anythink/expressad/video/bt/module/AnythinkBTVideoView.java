@@ -61,11 +61,11 @@ public class AnythinkBTVideoView extends BTBaseView {
     public static final class a extends DefaultVideoPlayerStatusListener {
 
         /* renamed from: a  reason: collision with root package name */
-        private AnythinkBTVideoView f8330a;
+        private AnythinkBTVideoView f5490a;
         private WebView b;
 
         /* renamed from: c  reason: collision with root package name */
-        private String f8331c;
+        private String f5491c;
         private String d;
         private int e;
         private int f;
@@ -78,10 +78,10 @@ public class AnythinkBTVideoView extends BTBaseView {
         private boolean m = false;
 
         public a(AnythinkBTVideoView anythinkBTVideoView, WebView webView) {
-            this.f8330a = anythinkBTVideoView;
+            this.f5490a = anythinkBTVideoView;
             this.b = webView;
-            this.f8331c = anythinkBTVideoView.d;
-            this.d = anythinkBTVideoView.f8336c;
+            this.f5491c = anythinkBTVideoView.d;
+            this.d = anythinkBTVideoView.f5496c;
         }
 
         private int a() {
@@ -89,7 +89,7 @@ public class AnythinkBTVideoView extends BTBaseView {
         }
 
         private void b() {
-            this.f8330a = null;
+            this.f5490a = null;
             this.b = null;
             boolean unused = AnythinkBTVideoView.H = false;
         }
@@ -116,7 +116,7 @@ public class AnythinkBTVideoView extends BTBaseView {
                     try {
                         JSONObject jSONObject = new JSONObject();
                         jSONObject.put("code", BTBaseView.n);
-                        jSONObject.put("id", this.f8331c);
+                        jSONObject.put("id", this.f5491c);
                         jSONObject.put("data", new JSONObject());
                         j.a();
                         j.a(this.b, "onPlayerTimeout", Base64.encodeToString(jSONObject.toString().getBytes(), 2));
@@ -133,21 +133,21 @@ public class AnythinkBTVideoView extends BTBaseView {
         @Override // com.anythink.expressad.playercommon.DefaultVideoPlayerStatusListener, com.anythink.expressad.playercommon.VideoPlayerStatusListener
         public final void onPlayCompleted() {
             super.onPlayCompleted();
-            if (this.f8330a.b == null) {
-                this.f8330a.s.setText("0");
-            } else if (this.f8330a.b.i() > 0) {
-                this.f8330a.s.setText(i.a(n.a().g(), "anythink_reward_video_view_reward_time_complete", "string"));
+            if (this.f5490a.b == null) {
+                this.f5490a.s.setText("0");
+            } else if (this.f5490a.b.i() > 0) {
+                this.f5490a.s.setText(i.a(n.a().g(), "anythink_reward_video_view_reward_time_complete", "string"));
             } else {
-                this.f8330a.s.setText("0");
+                this.f5490a.s.setText("0");
             }
-            this.f8330a.q.setClickable(false);
+            this.f5490a.q.setClickable(false);
             WebView webView = this.b;
             if (webView != null) {
-                BTBaseView.a(webView, "onPlayerFinish", this.f8331c);
+                BTBaseView.a(webView, "onPlayerFinish", this.f5491c);
             }
             this.e = this.f;
             boolean unused = AnythinkBTVideoView.H = true;
-            this.f8330a.stop();
+            this.f5490a.stop();
         }
 
         @Override // com.anythink.expressad.playercommon.DefaultVideoPlayerStatusListener, com.anythink.expressad.playercommon.VideoPlayerStatusListener
@@ -157,10 +157,10 @@ public class AnythinkBTVideoView extends BTBaseView {
                 try {
                     JSONObject jSONObject = new JSONObject();
                     jSONObject.put("code", BTBaseView.o);
-                    jSONObject.put("id", this.f8331c);
+                    jSONObject.put("id", this.f5491c);
                     JSONObject jSONObject2 = new JSONObject();
                     jSONObject2.put("error", str);
-                    jSONObject2.put("id", this.f8331c);
+                    jSONObject2.put("id", this.f5491c);
                     jSONObject.put("data", jSONObject2);
                     j.a();
                     j.a(this.b, "onPlayerFailed", Base64.encodeToString(jSONObject.toString().getBytes(), 2));
@@ -195,10 +195,10 @@ public class AnythinkBTVideoView extends BTBaseView {
         public final void onPlayStarted(int i) {
             super.onPlayStarted(i);
             if (!this.g) {
-                this.f8330a.M.setMax(i);
+                this.f5490a.M.setMax(i);
                 WebView webView = this.b;
                 if (webView != null) {
-                    BTBaseView.a(webView, "onPlayerPlay", this.f8331c);
+                    BTBaseView.a(webView, "onPlayerPlay", this.f5491c);
                 }
                 this.g = true;
             }
@@ -208,10 +208,10 @@ public class AnythinkBTVideoView extends BTBaseView {
         @Override // com.anythink.expressad.playercommon.DefaultVideoPlayerStatusListener, com.anythink.expressad.playercommon.VideoPlayerStatusListener
         public final void onVideoDownloadResume() {
             String str;
-            if (this.f8330a.b.w() == 94 || this.f8330a.b.w() == 287) {
-                str = this.f8330a.b.Z() + this.f8330a.b.aZ() + this.f8330a.b.S();
+            if (this.f5490a.b.w() == 94 || this.f5490a.b.w() == 287) {
+                str = this.f5490a.b.Z() + this.f5490a.b.aZ() + this.f5490a.b.S();
             } else {
-                str = this.f8330a.b.aZ() + this.f8330a.b.S() + this.f8330a.b.B();
+                str = this.f5490a.b.aZ() + this.f5490a.b.S() + this.f5490a.b.B();
             }
             c a2 = e.a().a(this.d, str);
             if (a2 != null) {
@@ -254,7 +254,7 @@ public class AnythinkBTVideoView extends BTBaseView {
         if (cVar != null && cVar.ao() != -1) {
             return cVar.ao();
         }
-        return com.anythink.expressad.videocommon.e.c.a().a(com.anythink.expressad.foundation.b.a.b().e(), this.f8336c, false).v();
+        return com.anythink.expressad.videocommon.e.c.a().a(com.anythink.expressad.foundation.b.a.b().e(), this.f5496c, false).v();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -296,7 +296,7 @@ public class AnythinkBTVideoView extends BTBaseView {
         } else {
             str = this.b.aZ() + this.b.S() + this.b.B();
         }
-        c a2 = e.a().a(this.f8336c, str);
+        c a2 = e.a().a(this.f5496c, str);
         if (a2 != null) {
             this.w = a2;
         }
@@ -351,7 +351,7 @@ public class AnythinkBTVideoView extends BTBaseView {
     }
 
     private int f() {
-        return com.anythink.expressad.videocommon.e.c.a().a(com.anythink.expressad.foundation.b.a.b().e(), this.f8336c, false).x();
+        return com.anythink.expressad.videocommon.e.c.a().a(com.anythink.expressad.foundation.b.a.b().e(), this.f5496c, false).x();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -434,13 +434,12 @@ public class AnythinkBTVideoView extends BTBaseView {
         H = false;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         if (!this.K) {
             com.anythink.expressad.video.bt.a.c.a();
-            this.E = com.anythink.expressad.video.bt.a.c.e(this.f8336c);
+            this.E = com.anythink.expressad.video.bt.a.c.e(this.f5496c);
         }
         View view = this.t;
         if (view != null) {
@@ -454,11 +453,11 @@ public class AnythinkBTVideoView extends BTBaseView {
         if (textView != null) {
             textView.setVisibility(this.x == 0 ? 8 : 0);
             if (this.s.getVisibility() == 0 && b.a().b()) {
-                this.b.l(this.f8336c);
+                this.b.l(this.f5496c);
                 b a2 = b.a();
-                a2.a(this.f8336c + "_1", this.b);
+                a2.a(this.f5496c + "_1", this.b);
                 b a3 = b.a();
-                a3.a(this.f8336c + "_1", this.u);
+                a3.a(this.f5496c + "_1", this.u);
             }
         }
     }
@@ -606,7 +605,7 @@ public class AnythinkBTVideoView extends BTBaseView {
         } else {
             str = this.b.aZ() + this.b.S() + this.b.B();
         }
-        c a2 = e.a().a(this.f8336c, str);
+        c a2 = e.a().a(this.f5496c, str);
         if (a2 != null) {
             this.w = a2;
         }
@@ -616,7 +615,7 @@ public class AnythinkBTVideoView extends BTBaseView {
             a aVar = new a(this, this.v);
             this.A = aVar;
             com.anythink.expressad.foundation.d.c cVar = this.b;
-            aVar.a(cVar != null ? cVar.ao() != -1 ? cVar.ao() : com.anythink.expressad.videocommon.e.c.a().a(com.anythink.expressad.foundation.b.a.b().e(), this.f8336c, false).v() : com.anythink.expressad.videocommon.e.c.a().a(com.anythink.expressad.foundation.b.a.b().e(), this.f8336c, false).v(), com.anythink.expressad.videocommon.e.c.a().a(com.anythink.expressad.foundation.b.a.b().e(), this.f8336c, false).x());
+            aVar.a(cVar != null ? cVar.ao() != -1 ? cVar.ao() : com.anythink.expressad.videocommon.e.c.a().a(com.anythink.expressad.foundation.b.a.b().e(), this.f5496c, false).v() : com.anythink.expressad.videocommon.e.c.a().a(com.anythink.expressad.foundation.b.a.b().e(), this.f5496c, false).v(), com.anythink.expressad.videocommon.e.c.a().a(com.anythink.expressad.foundation.b.a.b().e(), this.f5496c, false).x());
             this.q.setDesk(false);
             this.q.initBufferIngParam(this.C);
             this.q.initVFPData(this.G, this.b.S(), this.b.ao(), this.A);
@@ -647,11 +646,11 @@ public class AnythinkBTVideoView extends BTBaseView {
     public void setCampaign(com.anythink.expressad.foundation.d.c cVar) {
         super.setCampaign(cVar);
         if (cVar == null || cVar.i() <= 0) {
-            this.s.setBackgroundResource(i.a(n.a().g(), "anythink_reward_shape_progress", i.f7952c));
+            this.s.setBackgroundResource(i.a(n.a().g(), "anythink_reward_shape_progress", i.f5112c));
             this.s.setWidth(t.b(n.a().g(), 30.0f));
             return;
         }
-        this.s.setBackgroundResource(i.a(n.a().g(), "anythink_reward_video_time_count_num_bg", i.f7952c));
+        this.s.setBackgroundResource(i.a(n.a().g(), "anythink_reward_video_time_count_num_bg", i.f5112c));
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(-2, t.b(n.a().g(), 30.0f));
         int b = t.b(n.a().g(), 5.0f);
         layoutParams.setMargins(b, 0, 0, 0);

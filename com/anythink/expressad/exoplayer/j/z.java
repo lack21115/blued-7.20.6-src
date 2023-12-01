@@ -6,15 +6,15 @@ import android.net.Uri;
 public final class z implements h {
 
     /* renamed from: a  reason: collision with root package name */
-    private final h f7620a;
+    private final h f4781a;
     private final g b;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f7621c;
+    private boolean f4782c;
     private long d;
 
     public z(h hVar, g gVar) {
-        this.f7620a = (h) com.anythink.expressad.exoplayer.k.a.a(hVar);
+        this.f4781a = (h) com.anythink.expressad.exoplayer.k.a.a(hVar);
         this.b = (g) com.anythink.expressad.exoplayer.k.a.a(gVar);
     }
 
@@ -23,7 +23,7 @@ public final class z implements h {
         if (this.d == 0) {
             return -1;
         }
-        int a2 = this.f7620a.a(bArr, i, i2);
+        int a2 = this.f4781a.a(bArr, i, i2);
         if (a2 > 0) {
             this.b.a(bArr, i, a2);
             long j = this.d;
@@ -36,7 +36,7 @@ public final class z implements h {
 
     @Override // com.anythink.expressad.exoplayer.j.h
     public final long a(k kVar) {
-        long a2 = this.f7620a.a(kVar);
+        long a2 = this.f4781a.a(kVar);
         this.d = a2;
         if (a2 == 0) {
             return 0L;
@@ -45,26 +45,26 @@ public final class z implements h {
         if (kVar.g == -1) {
             kVar2 = kVar;
             if (this.d != -1) {
-                kVar2 = new k(kVar.f7584c, kVar.e, kVar.f, this.d, kVar.h, kVar.i);
+                kVar2 = new k(kVar.f4745c, kVar.e, kVar.f, this.d, kVar.h, kVar.i);
             }
         }
-        this.f7621c = true;
+        this.f4782c = true;
         this.b.a(kVar2);
         return this.d;
     }
 
     @Override // com.anythink.expressad.exoplayer.j.h
     public final Uri a() {
-        return this.f7620a.a();
+        return this.f4781a.a();
     }
 
     @Override // com.anythink.expressad.exoplayer.j.h
     public final void b() {
         try {
-            this.f7620a.b();
+            this.f4781a.b();
         } finally {
-            if (this.f7621c) {
-                this.f7621c = false;
+            if (this.f4782c) {
+                this.f4782c = false;
                 this.b.a();
             }
         }

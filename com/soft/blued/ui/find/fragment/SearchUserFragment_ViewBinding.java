@@ -18,7 +18,7 @@ public class SearchUserFragment_ViewBinding implements Unbinder {
         searchUserFragment.titleView = (CommonTopTitleNoTrans) Utils.a(view, R.id.titleView, "field 'titleView'", CommonTopTitleNoTrans.class);
         searchUserFragment.userList = (RecyclerView) Utils.a(view, R.id.userList, "field 'userList'", RecyclerView.class);
         searchUserFragment.llSearchEmpty = (LinearLayout) Utils.a(view, R.id.ll_search_empty, "field 'llSearchEmpty'", LinearLayout.class);
-        searchUserFragment.refreshLayout = (SmartRefreshLayout) Utils.a(view, 2131369119, "field 'refreshLayout'", SmartRefreshLayout.class);
+        searchUserFragment.refreshLayout = (SmartRefreshLayout) Utils.a(view, R.id.refresh_layout, "field 'refreshLayout'", SmartRefreshLayout.class);
     }
 
     @Override // butterknife.Unbinder

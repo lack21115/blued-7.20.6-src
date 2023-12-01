@@ -7,13 +7,12 @@ import com.bumptech.glide.util.Preconditions;
 import java.security.MessageDigest;
 import java.util.Map;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-7206380-dex2jar.jar:com/bumptech/glide/load/engine/EngineKey.class */
-public class EngineKey implements Key {
+class EngineKey implements Key {
     private final Object b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final int f20781c;
+    private final int f7175c;
     private final int d;
     private final Class<?> e;
     private final Class<?> f;
@@ -26,7 +25,7 @@ public class EngineKey implements Key {
     public EngineKey(Object obj, Key key, int i, int i2, Map<Class<?>, Transformation<?>> map, Class<?> cls, Class<?> cls2, Options options) {
         this.b = Preconditions.a(obj);
         this.g = (Key) Preconditions.a(key, "Signature must not be null");
-        this.f20781c = i;
+        this.f7175c = i;
         this.d = i2;
         this.h = (Map) Preconditions.a(map);
         this.e = (Class) Preconditions.a(cls, "Resource class must not be null");
@@ -51,7 +50,7 @@ public class EngineKey implements Key {
                     z = false;
                     if (this.d == engineKey.d) {
                         z = false;
-                        if (this.f20781c == engineKey.f20781c) {
+                        if (this.f7175c == engineKey.f7175c) {
                             z = false;
                             if (this.h.equals(engineKey.h)) {
                                 z = false;
@@ -80,7 +79,7 @@ public class EngineKey implements Key {
             this.j = hashCode;
             int hashCode2 = (hashCode * 31) + this.g.hashCode();
             this.j = hashCode2;
-            int i = (hashCode2 * 31) + this.f20781c;
+            int i = (hashCode2 * 31) + this.f7175c;
             this.j = i;
             int i2 = (i * 31) + this.d;
             this.j = i2;
@@ -96,6 +95,6 @@ public class EngineKey implements Key {
     }
 
     public String toString() {
-        return "EngineKey{model=" + this.b + ", width=" + this.f20781c + ", height=" + this.d + ", resourceClass=" + this.e + ", transcodeClass=" + this.f + ", signature=" + this.g + ", hashCode=" + this.j + ", transformations=" + this.h + ", options=" + this.i + '}';
+        return "EngineKey{model=" + this.b + ", width=" + this.f7175c + ", height=" + this.d + ", resourceClass=" + this.e + ", transcodeClass=" + this.f + ", signature=" + this.g + ", hashCode=" + this.j + ", transformations=" + this.h + ", options=" + this.i + '}';
     }
 }

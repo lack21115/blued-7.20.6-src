@@ -1,12 +1,12 @@
 package android.app;
 
+import android.R;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
-import com.android.internal.R;
 
 /* loaded from: source-9557208-dex2jar.jar:android/app/ListActivity.class */
 public class ListActivity extends Activity {
@@ -31,7 +31,7 @@ public class ListActivity extends Activity {
         if (this.mList != null) {
             return;
         }
-        setContentView(R.layout.list_content_simple);
+        setContentView(17367140);
     }
 
     public ListAdapter getListAdapter() {
@@ -54,8 +54,8 @@ public class ListActivity extends Activity {
     @Override // android.app.Activity, android.view.Window.Callback
     public void onContentChanged() {
         super.onContentChanged();
-        View findViewById = findViewById(16908292);
-        this.mList = (ListView) findViewById(16908298);
+        View findViewById = findViewById(R.id.empty);
+        this.mList = (ListView) findViewById(R.id.list);
         if (this.mList == null) {
             throw new RuntimeException("Your content must have a ListView whose id attribute is 'android.R.id.list'");
         }

@@ -36,9 +36,8 @@ public class ResizeableLayout extends RelativeLayout {
         this.mWidth = 0;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.RelativeLayout, android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z, int i, int i2, int i3, int i4) {
+    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         SizeChangeListener sizeChangeListener = this.mSizeChangeListener;
         if (sizeChangeListener != null) {
             sizeChangeListener.onSizeChanged(getWidth(), getHeight(), this.mWidth, this.mHeight);

@@ -7,6 +7,7 @@ import android.widget.ListView;
 import androidx.lifecycle.Observer;
 import com.blued.android.core.AppMethods;
 import com.blued.android.core.net.FileHttpResponseHandler;
+import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.net.http.FileDownloader;
 import com.blued.android.framework.http.BluedUIHttpResponse;
 import com.blued.android.framework.http.parser.BluedEntityA;
@@ -29,11 +30,11 @@ import java.util.Iterator;
 public abstract class EmotionBaseListFragment extends SimpleFragment {
 
     /* renamed from: a  reason: collision with root package name */
-    protected View f32336a;
+    protected View f18646a;
     protected ListView b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected EmotionListAdapter f32337c;
+    protected EmotionListAdapter f18647c;
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void a(Boolean bool) {
@@ -55,13 +56,12 @@ public abstract class EmotionBaseListFragment extends SimpleFragment {
         LogUtils.c("addEmotion: " + emotionListItemModel.name);
         ChatHttpUtils.a(emotionListItemModel.code, new BluedUIHttpResponse<BluedEntityA<EmotionDownloadModel>>(getFragmentActive()) { // from class: com.soft.blued.ui.msg.fragment.EmotionBaseListFragment.2
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<EmotionDownloadModel> bluedEntityA) {
                 if (bluedEntityA == null || bluedEntityA.getSingleData() == null) {
                     return;
                 }
-                String str = bluedEntityA.getSingleData().download;
+                String str = ((EmotionDownloadModel) bluedEntityA.getSingleData()).download;
                 if (TextUtils.isEmpty(str)) {
                     return;
                 }
@@ -93,7 +93,6 @@ public abstract class EmotionBaseListFragment extends SimpleFragment {
         LogUtils.c("filePath: " + str2);
         new EmoticonModel().url_original = "file://" + str2;
         FileDownloader.a(emotionListItemModel.downloadUrl, str2, new FileHttpResponseHandler() { // from class: com.soft.blued.ui.msg.fragment.EmotionBaseListFragment.3
-            @Override // com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
             /* renamed from: a */
             public void onSuccess(File file) {
                 EmotionManager.a(str2);
@@ -112,15 +111,13 @@ public abstract class EmotionBaseListFragment extends SimpleFragment {
                 LiveEventBus.get("EMOTION_RELOAD_DATA").post(true);
             }
 
-            @Override // com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
             /* renamed from: a */
             public void onFailure(Throwable th, int i, File file) {
             }
 
-            @Override // com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
             public void onFinish() {
             }
-        }, null);
+        }, (IRequestHost) null);
     }
 
     public void d(EmotionListItemModel emotionListItemModel) {
@@ -132,6 +129,7 @@ public abstract class EmotionBaseListFragment extends SimpleFragment {
         ChatHttpUtils.a(b, emotionListItemModel.code);
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     @Override // com.blued.android.framework.ui.SimpleFragment
     public void onInitListener() {
         super.onInitListener();
@@ -143,18 +141,20 @@ public abstract class EmotionBaseListFragment extends SimpleFragment {
         });
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r0v3, types: [android.widget.ListAdapter, com.soft.blued.ui.msg.fragment.EmotionListAdapter] */
     @Override // com.blued.android.framework.ui.SimpleFragment
     public void onInitView() {
         super.onInitView();
-        this.f32336a = this.rootView.findViewById(R.id.emotion_list_banner_layout);
+        this.f18646a = this.rootView.findViewById(R.id.emotion_list_banner_layout);
         this.b = (ListView) this.rootView.findViewById(R.id.emotion_list_lv);
-        EmotionListAdapter emotionListAdapter = new EmotionListAdapter(R.layout.item_emotion_layout, new EmotionListAdapter.EmotionAdapterListener() { // from class: com.soft.blued.ui.msg.fragment.EmotionBaseListFragment.1
+        ?? emotionListAdapter = new EmotionListAdapter(R.layout.item_emotion_layout, new EmotionListAdapter.EmotionAdapterListener() { // from class: com.soft.blued.ui.msg.fragment.EmotionBaseListFragment.1
             @Override // com.soft.blued.ui.msg.fragment.EmotionListAdapter.EmotionAdapterListener
             public void a(EmotionListItemModel emotionListItemModel) {
                 EmotionBaseListFragment.this.a(emotionListItemModel);
             }
         });
-        this.f32337c = emotionListAdapter;
+        this.f18647c = emotionListAdapter;
         this.b.setAdapter((ListAdapter) emotionListAdapter);
     }
 

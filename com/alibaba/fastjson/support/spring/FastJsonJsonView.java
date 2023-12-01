@@ -2,7 +2,6 @@ package com.alibaba.fastjson.support.spring;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
-import com.google.common.net.HttpHeaders;
 import java.io.ByteArrayOutputStream;
 import java.nio.charset.Charset;
 import java.util.HashMap;
@@ -27,7 +26,7 @@ public class FastJsonJsonView extends AbstractView {
     private boolean extractValueFromSingleKeyModel = false;
 
     public FastJsonJsonView() {
-        setContentType("application/json");
+        setContentType(DEFAULT_CONTENT_TYPE);
         setExposePathVariables(false);
     }
 
@@ -64,7 +63,7 @@ public class FastJsonJsonView extends AbstractView {
         setResponseContentType(httpServletRequest, httpServletResponse);
         httpServletResponse.setCharacterEncoding(UTF8.name());
         if (this.disableCaching) {
-            httpServletResponse.addHeader(HttpHeaders.PRAGMA, "no-cache");
+            httpServletResponse.addHeader("Pragma", "no-cache");
             httpServletResponse.addHeader("Cache-Control", "no-cache, no-store, max-age=0");
             httpServletResponse.addDateHeader("Expires", 1L);
         }

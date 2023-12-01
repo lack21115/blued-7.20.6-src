@@ -1,6 +1,5 @@
 package okio.internal;
 
-import android.content.ContentResolver;
 import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -103,7 +102,7 @@ public final class ResourceFileSystem extends FileSystem {
 
         public final Pair<FileSystem, Path> toFileRoot(URL url) {
             Intrinsics.e(url, "<this>");
-            if (Intrinsics.a((Object) url.getProtocol(), (Object) ContentResolver.SCHEME_FILE)) {
+            if (Intrinsics.a((Object) url.getProtocol(), (Object) "file")) {
                 return TuplesKt.a(FileSystem.SYSTEM, Path.Companion.get$default(Path.Companion, new File(url.toURI()), false, 1, (Object) null));
             }
             return null;
@@ -205,11 +204,11 @@ public final class ResourceFileSystem extends FileSystem {
         LinkedHashSet linkedHashSet = new LinkedHashSet();
         boolean z = false;
         for (Pair<FileSystem, Path> pair : getRoots()) {
-            FileSystem c2 = pair.c();
+            FileSystem c = pair.c();
             Path d = pair.d();
             try {
                 LinkedHashSet linkedHashSet2 = linkedHashSet;
-                List<Path> list = c2.list(d.resolve(relativePath));
+                List<Path> list = c.list(d.resolve(relativePath));
                 ArrayList arrayList = new ArrayList();
                 for (Path path : list) {
                     if (Companion.keepPath(path)) {
@@ -245,9 +244,9 @@ public final class ResourceFileSystem extends FileSystem {
                 break;
             }
             Pair<FileSystem, Path> next = it.next();
-            FileSystem c2 = next.c();
+            FileSystem c = next.c();
             Path d = next.d();
-            List<Path> listOrNull = c2.listOrNull(d.resolve(relativePath));
+            List<Path> listOrNull = c.listOrNull(d.resolve(relativePath));
             if (listOrNull != null) {
                 List<Path> list = listOrNull;
                 ArrayList arrayList2 = new ArrayList();

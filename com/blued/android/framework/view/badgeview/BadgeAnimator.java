@@ -13,21 +13,15 @@ import java.util.Random;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/view/badgeview/BadgeAnimator.class */
 public class BadgeAnimator extends ValueAnimator {
-
-    /* renamed from: a  reason: collision with root package name */
-    private BitmapFragment[][] f10200a;
+    private BitmapFragment[][] a;
     private WeakReference<QBadgeView> b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/view/badgeview/BadgeAnimator$BitmapFragment.class */
     public class BitmapFragment {
-
-        /* renamed from: a  reason: collision with root package name */
-        Random f10203a;
+        Random a;
         float b;
-
-        /* renamed from: c  reason: collision with root package name */
-        float f10204c;
+        float c;
         float d;
         int e;
         int f;
@@ -38,14 +32,14 @@ public class BadgeAnimator extends ValueAnimator {
             this.g = paint;
             paint.setAntiAlias(true);
             this.g.setStyle(Paint.Style.FILL);
-            this.f10203a = new Random();
+            this.a = new Random();
         }
 
         public void a(float f, Canvas canvas) {
             this.g.setColor(this.e);
-            this.b += this.f10203a.nextInt(this.f) * 0.1f * (this.f10203a.nextFloat() - 0.5f);
-            float nextInt = this.f10204c + (this.f10203a.nextInt(this.f) * 0.1f * (this.f10203a.nextFloat() - 0.5f));
-            this.f10204c = nextInt;
+            this.b += this.a.nextInt(this.f) * 0.1f * (this.a.nextFloat() - 0.5f);
+            float nextInt = this.c + (this.a.nextInt(this.f) * 0.1f * (this.a.nextFloat() - 0.5f));
+            this.c = nextInt;
             float f2 = this.b;
             float f3 = this.d;
             canvas.drawCircle(f2, nextInt, f3 - (f * f3), this.g);
@@ -56,7 +50,7 @@ public class BadgeAnimator extends ValueAnimator {
         this.b = new WeakReference<>(qBadgeView);
         setFloatValues(0.0f, 1.0f);
         setDuration(500L);
-        this.f10200a = a(bitmap, pointF);
+        this.a = a(bitmap, pointF);
         addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.blued.android.framework.view.badgeview.BadgeAnimator.1
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public void onAnimationUpdate(ValueAnimator valueAnimator) {
@@ -108,7 +102,7 @@ public class BadgeAnimator extends ValueAnimator {
                     float f4 = i2 * min;
                     bitmapFragment.e = bitmap.getPixel(i5, (int) f4);
                     bitmapFragment.b = f3 + (f - width2);
-                    bitmapFragment.f10204c = f4 + (f2 - height2);
+                    bitmapFragment.c = f4 + (f2 - height2);
                     bitmapFragment.d = min;
                     bitmapFragment.f = Math.max(width, height);
                     bitmapFragmentArr[i2][i4] = bitmapFragment;
@@ -123,13 +117,13 @@ public class BadgeAnimator extends ValueAnimator {
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f10200a.length) {
+            if (i2 >= this.a.length) {
                 return;
             }
             int i3 = 0;
             while (true) {
                 int i4 = i3;
-                BitmapFragment[][] bitmapFragmentArr = this.f10200a;
+                BitmapFragment[][] bitmapFragmentArr = this.a;
                 if (i4 < bitmapFragmentArr[i2].length) {
                     bitmapFragmentArr[i2][i4].a(Float.parseFloat(getAnimatedValue().toString()), canvas);
                     i3 = i4 + 1;

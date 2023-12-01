@@ -28,9 +28,7 @@ public final class l {
     public static final String X = "i_sw";
     public static final String Y = "sp_ps";
     public static final String Z = "s2s_sw";
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final int f6829a = 1;
+    public static final int a = 1;
     public static final String aa = "rtcb_hbecpm";
     public static final String ab = "show_req";
     public static final String ac = "ad_type";
@@ -46,9 +44,7 @@ public final class l {
     public static final String am = "s_pty";
     public static final String an = "nw_cur";
     public static final int b = 2;
-
-    /* renamed from: c  reason: collision with root package name */
-    public static final int f6830c = -1;
+    public static final int c = -1;
     public static final int d = 0;
     public static final int e = 1;
     public static final int f = 2;

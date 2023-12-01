@@ -16,6 +16,7 @@ import android.security.KeyChain;
 import android.text.TextUtils;
 import android.util.Xml;
 import com.cdo.oaps.ad.OapsWrapper;
+import com.huawei.hms.ads.fw;
 import com.ss.android.socialbase.downloader.constants.DBDefinition;
 import com.tencent.open.SocialConstants;
 import com.tencent.tinker.loader.shareutil.SharePatchFileUtil;
@@ -142,7 +143,7 @@ public final class IncrementComponentManager {
                     activityInfo.parentActivityName = context.getPackageName() + str2;
                 }
             } else if ("exported".equals(str)) {
-                activityInfo.exported = "true".equalsIgnoreCase(str2);
+                activityInfo.exported = fw.Code.equalsIgnoreCase(str2);
             } else if ("launchMode".equals(str)) {
                 activityInfo.launchMode = parseLaunchMode(str2);
             } else if ("theme".equals(str)) {
@@ -156,55 +157,55 @@ public final class IncrementComponentManager {
             } else if ("taskAffinity".equals(str)) {
                 activityInfo.taskAffinity = str2;
             } else if ("multiprocess".equals(str)) {
-                if ("true".equalsIgnoreCase(str2)) {
+                if (fw.Code.equalsIgnoreCase(str2)) {
                     activityInfo.flags |= 1;
                 } else {
                     activityInfo.flags &= -2;
                 }
             } else if ("finishOnTaskLaunch".equals(str)) {
-                if ("true".equalsIgnoreCase(str2)) {
+                if (fw.Code.equalsIgnoreCase(str2)) {
                     activityInfo.flags |= 2;
                 } else {
                     activityInfo.flags &= -3;
                 }
             } else if ("clearTaskOnLaunch".equals(str)) {
-                if ("true".equalsIgnoreCase(str2)) {
+                if (fw.Code.equalsIgnoreCase(str2)) {
                     activityInfo.flags |= 4;
                 } else {
                     activityInfo.flags &= -5;
                 }
             } else if ("noHistory".equals(str)) {
-                if ("true".equalsIgnoreCase(str2)) {
+                if (fw.Code.equalsIgnoreCase(str2)) {
                     activityInfo.flags |= 128;
                 } else {
                     activityInfo.flags &= -129;
                 }
             } else if ("alwaysRetainTaskState".equals(str)) {
-                if ("true".equalsIgnoreCase(str2)) {
+                if (fw.Code.equalsIgnoreCase(str2)) {
                     activityInfo.flags |= 8;
                 } else {
                     activityInfo.flags &= -9;
                 }
             } else if ("stateNotNeeded".equals(str)) {
-                if ("true".equalsIgnoreCase(str2)) {
+                if (fw.Code.equalsIgnoreCase(str2)) {
                     activityInfo.flags |= 16;
                 } else {
                     activityInfo.flags &= -17;
                 }
             } else if ("excludeFromRecents".equals(str)) {
-                if ("true".equalsIgnoreCase(str2)) {
+                if (fw.Code.equalsIgnoreCase(str2)) {
                     activityInfo.flags |= 32;
                 } else {
                     activityInfo.flags &= -33;
                 }
             } else if ("allowTaskReparenting".equals(str)) {
-                if ("true".equalsIgnoreCase(str2)) {
+                if (fw.Code.equalsIgnoreCase(str2)) {
                     activityInfo.flags |= 64;
                 } else {
                     activityInfo.flags &= -65;
                 }
             } else if ("finishOnCloseSystemDialogs".equals(str)) {
-                if ("true".equalsIgnoreCase(str2)) {
+                if (fw.Code.equalsIgnoreCase(str2)) {
                     activityInfo.flags |= 256;
                 } else {
                     activityInfo.flags &= -257;
@@ -212,7 +213,7 @@ public final class IncrementComponentManager {
             } else if ("showOnLockScreen".equals(str) || "showForAllUsers".equals(str)) {
                 if (Build.VERSION.SDK_INT >= 23) {
                     int valueOfStaticIntField = ShareReflectUtil.getValueOfStaticIntField(ActivityInfo.class, "FLAG_SHOW_FOR_ALL_USERS", 0);
-                    if ("true".equalsIgnoreCase(str2)) {
+                    if (fw.Code.equalsIgnoreCase(str2)) {
                         activityInfo.flags = valueOfStaticIntField | activityInfo.flags;
                     } else {
                         activityInfo.flags = valueOfStaticIntField & activityInfo.flags;
@@ -220,7 +221,7 @@ public final class IncrementComponentManager {
                 }
             } else if ("immersive".equals(str)) {
                 if (Build.VERSION.SDK_INT >= 18) {
-                    if ("true".equalsIgnoreCase(str2)) {
+                    if (fw.Code.equalsIgnoreCase(str2)) {
                         activityInfo.flags |= 2048;
                     } else {
                         activityInfo.flags &= -2049;
@@ -228,7 +229,7 @@ public final class IncrementComponentManager {
                 }
             } else if ("hardwareAccelerated".equals(str)) {
                 if (Build.VERSION.SDK_INT >= 11) {
-                    if ("true".equalsIgnoreCase(str2)) {
+                    if (fw.Code.equalsIgnoreCase(str2)) {
                         activityInfo.flags |= 512;
                     } else {
                         activityInfo.flags &= -513;
@@ -252,14 +253,14 @@ public final class IncrementComponentManager {
                 }
             } else if ("allowEmbedded".equals(str)) {
                 int valueOfStaticIntField2 = ShareReflectUtil.getValueOfStaticIntField(ActivityInfo.class, "FLAG_ALLOW_EMBEDDED", 0);
-                if ("true".equalsIgnoreCase(str2)) {
+                if (fw.Code.equalsIgnoreCase(str2)) {
                     activityInfo.flags = valueOfStaticIntField2 | activityInfo.flags;
                 } else {
                     activityInfo.flags = valueOfStaticIntField2 & activityInfo.flags;
                 }
             } else if ("autoRemoveFromRecents".equals(str)) {
                 if (Build.VERSION.SDK_INT >= 21) {
-                    if ("true".equalsIgnoreCase(str2)) {
+                    if (fw.Code.equalsIgnoreCase(str2)) {
                         activityInfo.flags |= 8192;
                     } else {
                         activityInfo.flags &= -8193;
@@ -267,7 +268,7 @@ public final class IncrementComponentManager {
                 }
             } else if ("relinquishTaskIdentity".equals(str)) {
                 if (Build.VERSION.SDK_INT >= 21) {
-                    if ("true".equalsIgnoreCase(str2)) {
+                    if (fw.Code.equalsIgnoreCase(str2)) {
                         activityInfo.flags |= 4096;
                     } else {
                         activityInfo.flags &= -4097;
@@ -275,7 +276,7 @@ public final class IncrementComponentManager {
                 }
             } else if ("resumeWhilePausing".equals(str)) {
                 if (Build.VERSION.SDK_INT >= 21) {
-                    if ("true".equalsIgnoreCase(str2)) {
+                    if (fw.Code.equalsIgnoreCase(str2)) {
                         activityInfo.flags |= 16384;
                     } else {
                         activityInfo.flags &= -16385;
@@ -485,7 +486,7 @@ public final class IncrementComponentManager {
                 String attributeValue2 = xmlPullParser.getAttributeValue(null, "autoVerify");
                 if (!TextUtils.isEmpty(attributeValue2)) {
                     try {
-                        ShareReflectUtil.findMethod((Class<?>) IntentFilter.class, "setAutoVerify", (Class<?>[]) new Class[]{Boolean.TYPE}).invoke(intentFilter, Boolean.valueOf("true".equalsIgnoreCase(attributeValue2)));
+                        ShareReflectUtil.findMethod((Class<?>) IntentFilter.class, "setAutoVerify", (Class<?>[]) new Class[]{Boolean.TYPE}).invoke(intentFilter, Boolean.valueOf(fw.Code.equalsIgnoreCase(attributeValue2)));
                     } catch (Throwable th) {
                     }
                 }

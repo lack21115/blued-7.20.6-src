@@ -8,16 +8,14 @@ import kotlin.jvm.internal.markers.KMappedMarker;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/sequences/SequencesKt___SequencesKt$asIterable$$inlined$Iterable$1.class */
 public final class SequencesKt___SequencesKt$asIterable$$inlined$Iterable$1<T> implements Iterable<T>, KMappedMarker {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ Sequence f42659a;
+    final /* synthetic */ Sequence a;
 
     public SequencesKt___SequencesKt$asIterable$$inlined$Iterable$1(Sequence sequence) {
-        this.f42659a = sequence;
+        this.a = sequence;
     }
 
     @Override // java.lang.Iterable
     public Iterator<T> iterator() {
-        return this.f42659a.iterator();
+        return this.a.iterator();
     }
 }

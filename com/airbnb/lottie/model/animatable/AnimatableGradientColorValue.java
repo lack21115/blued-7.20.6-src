@@ -14,7 +14,7 @@ public class AnimatableGradientColorValue extends BaseAnimatableValue<GradientCo
 
     @Override // com.airbnb.lottie.model.animatable.AnimatableValue
     public BaseKeyframeAnimation<GradientColor, GradientColor> a() {
-        return new GradientColorKeyframeAnimation(this.f4334a);
+        return new GradientColorKeyframeAnimation(this.a);
     }
 
     @Override // com.airbnb.lottie.model.animatable.BaseAnimatableValue, com.airbnb.lottie.model.animatable.AnimatableValue

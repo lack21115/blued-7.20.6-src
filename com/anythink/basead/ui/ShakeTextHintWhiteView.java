@@ -29,7 +29,7 @@ public class ShakeTextHintWhiteView extends BaseShakeView {
         setOrientation(0);
         setGravity(17);
         LayoutInflater.from(getContext()).inflate(h.a(getContext(), "myoffer_shake_text_hint_white", "layout"), (ViewGroup) this, true);
-        int a2 = h.a(getContext(), 4.0f);
-        setPadding(a2, a2, a2, a2);
+        int a = h.a(getContext(), 4.0f);
+        setPadding(a, a, a, a);
     }
 }

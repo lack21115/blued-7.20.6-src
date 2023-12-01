@@ -32,9 +32,9 @@ public final class fr extends ex<NearbySearch.NearbyQuery, NearbySearchResult> {
             if (this.l.getType() != 1) {
                 z = false;
             }
-            ArrayList<NearbyInfo> a2 = fm.a(jSONObject, z);
+            ArrayList<NearbyInfo> a = fm.a(jSONObject, z);
             NearbySearchResult nearbySearchResult = new NearbySearchResult();
-            nearbySearchResult.setNearbyInfoList(a2);
+            nearbySearchResult.setNearbyInfoList(a);
             return nearbySearchResult;
         } catch (JSONException e) {
             fe.a(e, "NearbySearchHandler", "paseJSON");

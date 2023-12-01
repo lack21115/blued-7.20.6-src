@@ -3,8 +3,8 @@ package android.net.wifi.p2p.nsd;
 import android.net.wifi.p2p.WifiP2pDevice;
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.alipay.security.mobile.module.http.model.c;
 import com.blued.das.live.LiveProtos;
+import com.huawei.hms.framework.network.grs.GrsBaseInfo;
 import java.io.ByteArrayInputStream;
 import java.io.DataInputStream;
 import java.io.IOException;
@@ -57,7 +57,7 @@ public class WifiP2pServiceResponse implements Parcelable {
         public static String toString(int i) {
             switch (i) {
                 case 0:
-                    return c.g;
+                    return "SUCCESS";
                 case 1:
                     return "SERVICE_PROTOCOL_NOT_AVAILABLE";
                 case 2:
@@ -65,7 +65,7 @@ public class WifiP2pServiceResponse implements Parcelable {
                 case 3:
                     return "BAD_REQUEST";
                 default:
-                    return "UNKNOWN";
+                    return GrsBaseInfo.CountryCodeSource.UNKNOWN;
             }
         }
     }

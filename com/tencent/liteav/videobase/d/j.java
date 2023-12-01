@@ -6,7 +6,7 @@ import android.opengl.GLES20;
 public class j extends com.tencent.liteav.videobase.a.b {
 
     /* renamed from: a  reason: collision with root package name */
-    int f36625a;
+    int f22934a;
     int b;
 
     public j(String str, String str2) {
@@ -16,7 +16,7 @@ public class j extends com.tencent.liteav.videobase.a.b {
     @Override // com.tencent.liteav.videobase.a.b
     public void onInit(com.tencent.liteav.videobase.frame.e eVar) {
         super.onInit(eVar);
-        this.f36625a = GLES20.glGetUniformLocation(getProgramId(), "width");
+        this.f22934a = GLES20.glGetUniformLocation(getProgramId(), "width");
         this.b = GLES20.glGetUniformLocation(getProgramId(), "height");
     }
 

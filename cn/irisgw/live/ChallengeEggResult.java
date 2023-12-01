@@ -47,8 +47,8 @@ public final class ChallengeEggResult extends GeneratedMessageV3 implements Chal
     private int uid_;
     private static final ChallengeEggResult DEFAULT_INSTANCE = new ChallengeEggResult();
     private static final Parser<ChallengeEggResult> PARSER = new AbstractParser<ChallengeEggResult>() { // from class: cn.irisgw.live.ChallengeEggResult.1
-        @Override // com.google.protobuf.Parser
-        public ChallengeEggResult parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        /* renamed from: parsePartialFrom */
+        public ChallengeEggResult m860parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             return new ChallengeEggResult(codedInputStream, extensionRegistryLite);
         }
     };
@@ -95,22 +95,22 @@ public final class ChallengeEggResult extends GeneratedMessageV3 implements Chal
             boolean unused = ChallengeEggResult.alwaysUseFieldBuilders;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: addRepeatedField */
+        public Builder m862addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.addRepeatedField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public ChallengeEggResult build() {
-            ChallengeEggResult buildPartial = buildPartial();
-            if (buildPartial.isInitialized()) {
-                return buildPartial;
+        /* renamed from: build */
+        public ChallengeEggResult m864build() {
+            ChallengeEggResult m866buildPartial = m866buildPartial();
+            if (m866buildPartial.isInitialized()) {
+                return m866buildPartial;
             }
-            throw newUninitializedMessageException((Message) buildPartial);
+            throw newUninitializedMessageException(m866buildPartial);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public ChallengeEggResult buildPartial() {
+        /* renamed from: buildPartial */
+        public ChallengeEggResult m866buildPartial() {
             ChallengeEggResult challengeEggResult = new ChallengeEggResult(this);
             challengeEggResult.resultProp_ = this.resultProp_;
             challengeEggResult.name_ = this.name_;
@@ -128,8 +128,8 @@ public final class ChallengeEggResult extends GeneratedMessageV3 implements Chal
             return challengeEggResult;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public Builder clear() {
+        /* renamed from: clear */
+        public Builder m870clear() {
             super.clear();
             this.resultProp_ = 0;
             this.name_ = "";
@@ -152,8 +152,8 @@ public final class ChallengeEggResult extends GeneratedMessageV3 implements Chal
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+        /* renamed from: clearField */
+        public Builder m872clearField(Descriptors.FieldDescriptor fieldDescriptor) {
             return (Builder) super.clearField(fieldDescriptor);
         }
 
@@ -187,8 +187,8 @@ public final class ChallengeEggResult extends GeneratedMessageV3 implements Chal
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+        /* renamed from: clearOneof */
+        public Builder m875clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
             return (Builder) super.clearOneof(oneofDescriptor);
         }
 
@@ -228,10 +228,9 @@ public final class ChallengeEggResult extends GeneratedMessageV3 implements Chal
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder m881clone() {
+            return (Builder) super.clone();
         }
 
         @Override // cn.irisgw.live.ChallengeEggResultOrBuilder
@@ -239,12 +238,11 @@ public final class ChallengeEggResult extends GeneratedMessageV3 implements Chal
             return this.countdown_;
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public ChallengeEggResult getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public ChallengeEggResult m883getDefaultInstanceForType() {
             return ChallengeEggResult.getDefaultInstance();
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
         public Descriptors.Descriptor getDescriptorForType() {
             return LiveConstants.internal_static_cn_irisgw_live_ChallengeEggResult_descriptor;
         }
@@ -375,12 +373,10 @@ public final class ChallengeEggResult extends GeneratedMessageV3 implements Chal
             return this.uid_;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_ChallengeEggResult_fieldAccessorTable.ensureFieldAccessorsInitialized(ChallengeEggResult.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             return true;
         }
@@ -428,18 +424,18 @@ public final class ChallengeEggResult extends GeneratedMessageV3 implements Chal
             if (challengeEggResult.getPropResultDisplayCountdown() != 0) {
                 setPropResultDisplayCountdown(challengeEggResult.getPropResultDisplayCountdown());
             }
-            mergeUnknownFields(challengeEggResult.unknownFields);
+            m892mergeUnknownFields(challengeEggResult.unknownFields);
             onChanged();
             return this;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+        /* renamed from: mergeFrom */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
         */
-        public cn.irisgw.live.ChallengeEggResult.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+        public cn.irisgw.live.ChallengeEggResult.Builder m889mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
             /*
                 r4 = this;
                 r0 = 0
@@ -484,11 +480,11 @@ public final class ChallengeEggResult extends GeneratedMessageV3 implements Chal
                 r0 = r6
                 throw r0
             */
-            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.ChallengeEggResult.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.ChallengeEggResult$Builder");
+            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.ChallengeEggResult.Builder.m889mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.ChallengeEggResult$Builder");
         }
 
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder mergeFrom(Message message) {
+        /* renamed from: mergeFrom */
+        public Builder m888mergeFrom(Message message) {
             if (message instanceof ChallengeEggResult) {
                 return mergeFrom((ChallengeEggResult) message);
             }
@@ -496,8 +492,8 @@ public final class ChallengeEggResult extends GeneratedMessageV3 implements Chal
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: mergeUnknownFields */
+        public final Builder m892mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.mergeUnknownFields(unknownFieldSet);
         }
 
@@ -507,8 +503,8 @@ public final class ChallengeEggResult extends GeneratedMessageV3 implements Chal
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: setField */
+        public Builder m894setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.setField(fieldDescriptor, obj);
         }
 
@@ -599,8 +595,8 @@ public final class ChallengeEggResult extends GeneratedMessageV3 implements Chal
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+        /* renamed from: setRepeatedField */
+        public Builder m896setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
             return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
         }
 
@@ -640,8 +636,8 @@ public final class ChallengeEggResult extends GeneratedMessageV3 implements Chal
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: setUnknownFields */
+        public final Builder m898setUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.setUnknownFields(unknownFieldSet);
         }
     }
@@ -658,9 +654,8 @@ public final class ChallengeEggResult extends GeneratedMessageV3 implements Chal
         public static final int Target_VALUE = 2;
         private final int value;
         private static final Internal.EnumLiteMap<ChallengeEggResultType> internalValueMap = new Internal.EnumLiteMap<ChallengeEggResultType>() { // from class: cn.irisgw.live.ChallengeEggResult.ChallengeEggResultType.1
-            /* JADX WARN: Can't rename method to resolve collision */
-            @Override // com.google.protobuf.Internal.EnumLiteMap
-            public ChallengeEggResultType findValueByNumber(int i) {
+            /* renamed from: findValueByNumber */
+            public ChallengeEggResultType m900findValueByNumber(int i) {
                 return ChallengeEggResultType.forNumber(i);
             }
         };
@@ -684,7 +679,7 @@ public final class ChallengeEggResult extends GeneratedMessageV3 implements Chal
         }
 
         public static final Descriptors.EnumDescriptor getDescriptor() {
-            return ChallengeEggResult.getDescriptor().getEnumTypes().get(0);
+            return (Descriptors.EnumDescriptor) ChallengeEggResult.getDescriptor().getEnumTypes().get(0);
         }
 
         public static Internal.EnumLiteMap<ChallengeEggResultType> internalGetValueMap() {
@@ -703,12 +698,10 @@ public final class ChallengeEggResult extends GeneratedMessageV3 implements Chal
             throw new IllegalArgumentException("EnumValueDescriptor is not for this type.");
         }
 
-        @Override // com.google.protobuf.ProtocolMessageEnum
         public final Descriptors.EnumDescriptor getDescriptorForType() {
             return getDescriptor();
         }
 
-        @Override // com.google.protobuf.ProtocolMessageEnum, com.google.protobuf.Internal.EnumLite
         public final int getNumber() {
             if (this != UNRECOGNIZED) {
                 return this.value;
@@ -716,10 +709,9 @@ public final class ChallengeEggResult extends GeneratedMessageV3 implements Chal
             throw new IllegalArgumentException("Can't get the number of an unknown enum value.");
         }
 
-        @Override // com.google.protobuf.ProtocolMessageEnum
         public final Descriptors.EnumValueDescriptor getValueDescriptor() {
             if (this != UNRECOGNIZED) {
-                return getDescriptor().getValues().get(ordinal());
+                return (Descriptors.EnumValueDescriptor) getDescriptor().getValues().get(ordinal());
             }
             throw new IllegalStateException("Can't get the descriptor of an unrecognized enum value.");
         }
@@ -818,66 +810,65 @@ public final class ChallengeEggResult extends GeneratedMessageV3 implements Chal
     }
 
     public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
+        return DEFAULT_INSTANCE.m859toBuilder();
     }
 
     public static Builder newBuilder(ChallengeEggResult challengeEggResult) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(challengeEggResult);
+        return DEFAULT_INSTANCE.m859toBuilder().mergeFrom(challengeEggResult);
     }
 
     public static ChallengeEggResult parseDelimitedFrom(InputStream inputStream) throws IOException {
-        return (ChallengeEggResult) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
     }
 
     public static ChallengeEggResult parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (ChallengeEggResult) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static ChallengeEggResult parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString);
+        return (ChallengeEggResult) PARSER.parseFrom(byteString);
     }
 
     public static ChallengeEggResult parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString, extensionRegistryLite);
+        return (ChallengeEggResult) PARSER.parseFrom(byteString, extensionRegistryLite);
     }
 
     public static ChallengeEggResult parseFrom(CodedInputStream codedInputStream) throws IOException {
-        return (ChallengeEggResult) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
     }
 
     public static ChallengeEggResult parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (ChallengeEggResult) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
     }
 
     public static ChallengeEggResult parseFrom(InputStream inputStream) throws IOException {
-        return (ChallengeEggResult) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
     }
 
     public static ChallengeEggResult parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (ChallengeEggResult) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static ChallengeEggResult parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer);
+        return (ChallengeEggResult) PARSER.parseFrom(byteBuffer);
     }
 
     public static ChallengeEggResult parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+        return (ChallengeEggResult) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
     }
 
     public static ChallengeEggResult parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr);
+        return (ChallengeEggResult) PARSER.parseFrom(bArr);
     }
 
     public static ChallengeEggResult parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr, extensionRegistryLite);
+        return (ChallengeEggResult) PARSER.parseFrom(bArr, extensionRegistryLite);
     }
 
     public static Parser<ChallengeEggResult> parser() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
@@ -894,8 +885,8 @@ public final class ChallengeEggResult extends GeneratedMessageV3 implements Chal
         return this.countdown_;
     }
 
-    @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-    public ChallengeEggResult getDefaultInstanceForType() {
+    /* renamed from: getDefaultInstanceForType */
+    public ChallengeEggResult m854getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
     }
 
@@ -941,7 +932,6 @@ public final class ChallengeEggResult extends GeneratedMessageV3 implements Chal
         return (ByteString) obj;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
     public Parser<ChallengeEggResult> getParserForType() {
         return PARSER;
     }
@@ -1010,7 +1000,6 @@ public final class ChallengeEggResult extends GeneratedMessageV3 implements Chal
         return this.resultProp_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public int getSerializedSize() {
         int i = this.memoizedSize;
         if (i != -1) {
@@ -1096,12 +1085,10 @@ public final class ChallengeEggResult extends GeneratedMessageV3 implements Chal
         return this.uid_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
     public final UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public int hashCode() {
         if (this.memoizedHashCode != 0) {
             return this.memoizedHashCode;
@@ -1111,12 +1098,10 @@ public final class ChallengeEggResult extends GeneratedMessageV3 implements Chal
         return hashCode;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
         return LiveConstants.internal_static_cn_irisgw_live_ChallengeEggResult_fieldAccessorTable.ensureFieldAccessorsInitialized(ChallengeEggResult.class, Builder.class);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
     public final boolean isInitialized() {
         byte b = this.memoizedIsInitialized;
         if (b == 1) {
@@ -1129,28 +1114,26 @@ public final class ChallengeEggResult extends GeneratedMessageV3 implements Chal
         return true;
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder newBuilderForType() {
+    /* renamed from: newBuilderForType */
+    public Builder m857newBuilderForType() {
         return newBuilder();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.protobuf.GeneratedMessageV3
-    public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+    /* renamed from: newBuilderForType */
+    public Builder m856newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
         return new Builder(builderParent);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
         return new ChallengeEggResult();
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder toBuilder() {
+    /* renamed from: toBuilder */
+    public Builder m859toBuilder() {
         return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
         if (this.resultProp_ != Prop.NONE_PROP.getNumber()) {
             codedOutputStream.writeEnum(1, this.resultProp_);

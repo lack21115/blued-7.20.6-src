@@ -8,10 +8,10 @@ final class p implements f {
     private int b = -1;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f7213c = -1;
+    private int f4374c = -1;
     private int d = 0;
-    private ByteBuffer e = f7181a;
-    private ByteBuffer f = f7181a;
+    private ByteBuffer e = f4342a;
+    private ByteBuffer f = f4342a;
     private boolean g;
 
     /* JADX WARN: Removed duplicated region for block: B:15:0x0052  */
@@ -41,11 +41,11 @@ final class p implements f {
     @Override // com.anythink.expressad.exoplayer.b.f
     public final boolean a(int i, int i2, int i3) {
         if (i3 == 3 || i3 == 2 || i3 == Integer.MIN_VALUE || i3 == 1073741824) {
-            if (this.b == i && this.f7213c == i2 && this.d == i3) {
+            if (this.b == i && this.f4374c == i2 && this.d == i3) {
                 return false;
             }
             this.b = i;
-            this.f7213c = i2;
+            this.f4374c = i2;
             this.d = i3;
             return true;
         }
@@ -54,7 +54,7 @@ final class p implements f {
 
     @Override // com.anythink.expressad.exoplayer.b.f
     public final int b() {
-        return this.f7213c;
+        return this.f4374c;
     }
 
     @Override // com.anythink.expressad.exoplayer.b.f
@@ -75,18 +75,18 @@ final class p implements f {
     @Override // com.anythink.expressad.exoplayer.b.f
     public final ByteBuffer f() {
         ByteBuffer byteBuffer = this.f;
-        this.f = f7181a;
+        this.f = f4342a;
         return byteBuffer;
     }
 
     @Override // com.anythink.expressad.exoplayer.b.f
     public final boolean g() {
-        return this.g && this.f == f7181a;
+        return this.g && this.f == f4342a;
     }
 
     @Override // com.anythink.expressad.exoplayer.b.f
     public final void h() {
-        this.f = f7181a;
+        this.f = f4342a;
         this.g = false;
     }
 
@@ -94,8 +94,8 @@ final class p implements f {
     public final void i() {
         h();
         this.b = -1;
-        this.f7213c = -1;
+        this.f4374c = -1;
         this.d = 0;
-        this.e = f7181a;
+        this.e = f4342a;
     }
 }

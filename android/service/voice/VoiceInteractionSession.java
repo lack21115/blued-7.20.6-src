@@ -30,6 +30,7 @@ import com.android.internal.app.IVoiceInteractorCallback;
 import com.android.internal.app.IVoiceInteractorRequest;
 import com.android.internal.os.HandlerCaller;
 import com.android.internal.os.SomeArgs;
+import com.tencent.rtmp.TXLiveConstants;
 import java.lang.ref.WeakReference;
 
 /* loaded from: source-9557208-dex2jar.jar:android/service/voice/VoiceInteractionSession.class */
@@ -98,7 +99,6 @@ public abstract class VoiceInteractionSession implements KeyEvent.Callback {
         MyCallbacks() {
         }
 
-        @Override // com.android.internal.os.HandlerCaller.Callback
         public void executeMessage(Message message) {
             switch (message.what) {
                 case 1:
@@ -162,7 +162,6 @@ public abstract class VoiceInteractionSession implements KeyEvent.Callback {
     public static class Request {
         final IVoiceInteractorCallback mCallback;
         final IVoiceInteractorRequest mInterface = new IVoiceInteractorRequest.Stub() { // from class: android.service.voice.VoiceInteractionSession.Request.1
-            @Override // com.android.internal.app.IVoiceInteractorRequest
             public void cancel() throws RemoteException {
                 VoiceInteractionSession voiceInteractionSession = Request.this.mSession.get();
                 if (voiceInteractionSession != null) {
@@ -249,35 +248,30 @@ public abstract class VoiceInteractionSession implements KeyEvent.Callback {
         this.mTmpLocation = new int[2];
         this.mWeakRef = new WeakReference<>(this);
         this.mInteractor = new IVoiceInteractor.Stub() { // from class: android.service.voice.VoiceInteractionSession.1
-            @Override // com.android.internal.app.IVoiceInteractor
             public IVoiceInteractorRequest startAbortVoice(String str, IVoiceInteractorCallback iVoiceInteractorCallback, CharSequence charSequence, Bundle bundle) {
                 Request newRequest = VoiceInteractionSession.this.newRequest(iVoiceInteractorCallback);
                 VoiceInteractionSession.this.mHandlerCaller.sendMessage(VoiceInteractionSession.this.mHandlerCaller.obtainMessageOOOO(3, new Caller(str, Binder.getCallingUid()), newRequest, charSequence, bundle));
                 return newRequest.mInterface;
             }
 
-            @Override // com.android.internal.app.IVoiceInteractor
             public IVoiceInteractorRequest startCommand(String str, IVoiceInteractorCallback iVoiceInteractorCallback, String str2, Bundle bundle) {
                 Request newRequest = VoiceInteractionSession.this.newRequest(iVoiceInteractorCallback);
                 VoiceInteractionSession.this.mHandlerCaller.sendMessage(VoiceInteractionSession.this.mHandlerCaller.obtainMessageOOOO(4, new Caller(str, Binder.getCallingUid()), newRequest, str2, bundle));
                 return newRequest.mInterface;
             }
 
-            @Override // com.android.internal.app.IVoiceInteractor
             public IVoiceInteractorRequest startCompleteVoice(String str, IVoiceInteractorCallback iVoiceInteractorCallback, CharSequence charSequence, Bundle bundle) {
                 Request newRequest = VoiceInteractionSession.this.newRequest(iVoiceInteractorCallback);
                 VoiceInteractionSession.this.mHandlerCaller.sendMessage(VoiceInteractionSession.this.mHandlerCaller.obtainMessageOOOO(2, new Caller(str, Binder.getCallingUid()), newRequest, charSequence, bundle));
                 return newRequest.mInterface;
             }
 
-            @Override // com.android.internal.app.IVoiceInteractor
             public IVoiceInteractorRequest startConfirmation(String str, IVoiceInteractorCallback iVoiceInteractorCallback, CharSequence charSequence, Bundle bundle) {
                 Request newRequest = VoiceInteractionSession.this.newRequest(iVoiceInteractorCallback);
                 VoiceInteractionSession.this.mHandlerCaller.sendMessage(VoiceInteractionSession.this.mHandlerCaller.obtainMessageOOOO(1, new Caller(str, Binder.getCallingUid()), newRequest, charSequence, bundle));
                 return newRequest.mInterface;
             }
 
-            @Override // com.android.internal.app.IVoiceInteractor
             public boolean[] supportsCommands(String str, String[] strArr) {
                 SomeArgs sendMessageAndWait = VoiceInteractionSession.this.mHandlerCaller.sendMessageAndWait(VoiceInteractionSession.this.mHandlerCaller.obtainMessageIOO(5, 0, new Caller(str, Binder.getCallingUid()), strArr));
                 if (sendMessageAndWait != null) {
@@ -311,7 +305,6 @@ public abstract class VoiceInteractionSession implements KeyEvent.Callback {
         };
         this.mCallbacks = new MyCallbacks();
         this.mInsetsComputer = new ViewTreeObserver.OnComputeInternalInsetsListener() { // from class: android.service.voice.VoiceInteractionSession.3
-            @Override // android.view.ViewTreeObserver.OnComputeInternalInsetsListener
             public void onComputeInternalInsets(ViewTreeObserver.InternalInsetsInfo internalInsetsInfo) {
                 VoiceInteractionSession.this.onComputeInsets(VoiceInteractionSession.this.mTmpInsets);
                 internalInsetsInfo.contentInsets.set(VoiceInteractionSession.this.mTmpInsets.contentInsets);
@@ -373,11 +366,11 @@ public abstract class VoiceInteractionSession implements KeyEvent.Callback {
     void initViews() {
         this.mInitialized = true;
         this.mThemeAttrs = this.mContext.obtainStyledAttributes(R.styleable.VoiceInteractionSession);
-        this.mRootView = this.mInflater.inflate(com.android.internal.R.layout.voice_interaction_session, (ViewGroup) null);
+        this.mRootView = this.mInflater.inflate(17367274, (ViewGroup) null);
         this.mRootView.setSystemUiVisibility(768);
         this.mWindow.setContentView(this.mRootView);
         this.mRootView.getViewTreeObserver().addOnComputeInternalInsetsListener(this.mInsetsComputer);
-        this.mContentFrame = (FrameLayout) this.mRootView.findViewById(16908290);
+        this.mContentFrame = (FrameLayout) this.mRootView.findViewById(R.id.content);
     }
 
     Request newRequest(IVoiceInteractorCallback iVoiceInteractorCallback) {
@@ -424,7 +417,7 @@ public abstract class VoiceInteractionSession implements KeyEvent.Callback {
     public void onCreate(Bundle bundle) {
         this.mTheme = this.mTheme != 0 ? this.mTheme : 16974989;
         this.mInflater = (LayoutInflater) this.mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        this.mWindow = new SoftInputWindow(this.mContext, TAG, this.mTheme, this.mCallbacks, this, this.mDispatcherState, 2031, 48, true);
+        this.mWindow = new SoftInputWindow(this.mContext, TAG, this.mTheme, this.mCallbacks, this, this.mDispatcherState, TXLiveConstants.PLAY_EVT_GET_FLVSESSIONKEY, 48, true);
         this.mWindow.getWindow().addFlags(16777216);
         initViews();
         this.mWindow.getWindow().setLayout(-1, -2);

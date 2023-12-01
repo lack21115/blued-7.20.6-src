@@ -17,19 +17,19 @@ import org.json.JSONObject;
 public class av {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f9322a = "bqt_ad_tag";
+    public static final String f6482a = "bqt_ad_tag";
 
     /* renamed from: c  reason: collision with root package name */
-    private static final a[] f9323c = new a[0];
+    private static final a[] f6483c = new a[0];
     private static final Map<String, a> d = new HashMap();
-    static volatile a[] b = f9323c;
+    static volatile a[] b = f6483c;
     private static final a e = new aw();
 
     /* loaded from: source-8756600-dex2jar.jar:com/baidu/mobads/sdk/internal/av$a.class */
     public static abstract class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private final ThreadLocal<String> f9324a = new ThreadLocal<>();
+        private final ThreadLocal<String> f6484a = new ThreadLocal<>();
 
         private void b(int i, Throwable th, String str) {
             String str2;
@@ -148,9 +148,9 @@ public class av {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         public String b() {
-            String str = this.f9324a.get();
+            String str = this.f6484a.get();
             if (str != null) {
-                this.f9324a.remove();
+                this.f6484a.remove();
             }
             return str;
         }
@@ -246,7 +246,7 @@ public class av {
 
     public static void a() {
         try {
-            i("local");
+            i(at.f6479a);
             i("debug");
         } catch (Throwable th) {
         }
@@ -297,7 +297,7 @@ public class av {
     public static void a(boolean z) {
         try {
             a();
-            if (ci.f9380a) {
+            if (ci.f6540a) {
                 a((a) new at());
             } else if (z) {
                 a((a) new as());
@@ -343,7 +343,7 @@ public class av {
             if (i2 >= length) {
                 return e;
             }
-            aVarArr[i2].f9324a.set(f9322a);
+            aVarArr[i2].f6484a.set(f6482a);
             i = i2 + 1;
         }
     }
@@ -367,7 +367,7 @@ public class av {
     public static void d() {
         synchronized (d) {
             d.clear();
-            b = f9323c;
+            b = f6483c;
         }
     }
 
@@ -448,7 +448,7 @@ public class av {
             if (i2 >= length) {
                 return e;
             }
-            aVarArr[i2].f9324a.set(str);
+            aVarArr[i2].f6484a.set(str);
             i = i2 + 1;
         }
     }

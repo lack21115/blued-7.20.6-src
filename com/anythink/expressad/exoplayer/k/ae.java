@@ -1,17 +1,16 @@
 package com.anythink.expressad.exoplayer.k;
 
 import android.net.Uri;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 
 /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/exoplayer/k/ae.class */
 public final class ae {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final int f7630a = 4;
+    private static final int f4791a = 4;
     private static final int b = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final int f7631c = 1;
+    private static final int f4792c = 1;
     private static final int d = 2;
     private static final int e = 3;
 
@@ -108,7 +107,7 @@ public final class ae {
                 sb.delete(i8, i3);
                 i4 = i3 - i8;
             } else if (i6 == i8 + 2 && sb.charAt(i8) == '.' && sb.charAt(i9) == '.') {
-                i8 = sb.lastIndexOf(BridgeUtil.SPLIT_MARK, i8 - 2) + 1;
+                i8 = sb.lastIndexOf("/", i8 - 2) + 1;
                 int i10 = i8 > i5 ? i8 : i5;
                 sb.delete(i10, i3);
                 i4 = i3 - i10;

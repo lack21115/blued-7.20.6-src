@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemMyGroupHeaderHorizontalBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final FrameLayout f29258a;
+    private final FrameLayout f15568a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f29258a;
+        return this.f15568a;
     }
 }

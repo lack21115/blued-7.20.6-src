@@ -6,10 +6,10 @@ import android.media.AudioTimestamp;
 import android.media.AudioTrack;
 import android.os.ConditionVariable;
 import android.os.SystemClock;
-import android.widget.ExpandableListView;
 import com.opos.exoplayer.core.a.f;
 import com.opos.exoplayer.core.i.u;
 import com.opos.exoplayer.core.p;
+import com.tencent.thumbplayer.api.TPErrorCode;
 import java.lang.reflect.Method;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
@@ -20,7 +20,7 @@ import java.util.ArrayList;
 public final class g implements f {
 
     /* renamed from: a  reason: collision with root package name */
-    public static boolean f25026a = false;
+    public static boolean f11338a = false;
     public static boolean b = false;
     private long A;
     private p B;
@@ -63,7 +63,7 @@ public final class g implements f {
     private long am;
 
     /* renamed from: c  reason: collision with root package name */
-    private final com.opos.exoplayer.core.a.c f25027c;
+    private final com.opos.exoplayer.core.a.c f11339c;
     private final boolean d;
     private final k e;
     private final o f;
@@ -100,11 +100,11 @@ public final class g implements f {
     public static class b {
 
         /* renamed from: a  reason: collision with root package name */
-        protected AudioTrack f25030a;
+        protected AudioTrack f11342a;
         private boolean b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f25031c;
+        private int f11343c;
         private long d;
         private long e;
         private long f;
@@ -120,18 +120,18 @@ public final class g implements f {
             if (this.g != com.anythink.expressad.exoplayer.b.b) {
                 return;
             }
-            this.f25030a.pause();
+            this.f11342a.pause();
         }
 
         public void a(long j) {
             this.i = b();
             this.g = SystemClock.elapsedRealtime() * 1000;
             this.j = j;
-            this.f25030a.stop();
+            this.f11342a.stop();
         }
 
         public void a(AudioTrack audioTrack, boolean z) {
-            this.f25030a = audioTrack;
+            this.f11342a = audioTrack;
             this.b = z;
             this.g = com.anythink.expressad.exoplayer.b.b;
             this.h = com.anythink.expressad.exoplayer.b.b;
@@ -139,19 +139,19 @@ public final class g implements f {
             this.e = 0L;
             this.f = 0L;
             if (audioTrack != null) {
-                this.f25031c = audioTrack.getSampleRate();
+                this.f11343c = audioTrack.getSampleRate();
             }
         }
 
         public long b() {
             if (this.g != com.anythink.expressad.exoplayer.b.b) {
-                return Math.min(this.j, ((((SystemClock.elapsedRealtime() * 1000) - this.g) * this.f25031c) / 1000000) + this.i);
+                return Math.min(this.j, ((((SystemClock.elapsedRealtime() * 1000) - this.g) * this.f11343c) / 1000000) + this.i);
             }
-            int playState = this.f25030a.getPlayState();
+            int playState = this.f11342a.getPlayState();
             if (playState == 1) {
                 return 0L;
             }
-            long playbackHeadPosition = ExpandableListView.PACKED_POSITION_VALUE_NULL & this.f25030a.getPlaybackHeadPosition();
+            long playbackHeadPosition = 4294967295L & this.f11342a.getPlaybackHeadPosition();
             long j = playbackHeadPosition;
             if (this.b) {
                 if (playState == 2 && playbackHeadPosition == 0) {
@@ -159,7 +159,7 @@ public final class g implements f {
                 }
                 j = playbackHeadPosition + this.f;
             }
-            if (u.f25510a <= 28) {
+            if (u.f11822a <= 28) {
                 if (j == 0 && this.d > 0 && playState == 3) {
                     if (this.h == com.anythink.expressad.exoplayer.b.b) {
                         this.h = SystemClock.elapsedRealtime();
@@ -180,7 +180,7 @@ public final class g implements f {
         }
 
         public long c() {
-            return (b() * 1000000) / this.f25031c;
+            return (b() * 1000000) / this.f11343c;
         }
 
         public boolean d() {
@@ -201,7 +201,7 @@ public final class g implements f {
         private final AudioTimestamp b;
 
         /* renamed from: c  reason: collision with root package name */
-        private long f25032c;
+        private long f11344c;
         private long d;
         private long e;
 
@@ -213,21 +213,21 @@ public final class g implements f {
         @Override // com.opos.exoplayer.core.a.g.b
         public void a(AudioTrack audioTrack, boolean z) {
             super.a(audioTrack, z);
-            this.f25032c = 0L;
+            this.f11344c = 0L;
             this.d = 0L;
             this.e = 0L;
         }
 
         @Override // com.opos.exoplayer.core.a.g.b
         public boolean d() {
-            boolean timestamp = this.f25030a.getTimestamp(this.b);
+            boolean timestamp = this.f11342a.getTimestamp(this.b);
             if (timestamp) {
                 long j = this.b.framePosition;
                 if (this.d > j) {
-                    this.f25032c++;
+                    this.f11344c++;
                 }
                 this.d = j;
-                this.e = j + (this.f25032c << 32);
+                this.e = j + (this.f11344c << 32);
             }
             return timestamp;
         }
@@ -248,16 +248,16 @@ public final class g implements f {
     public static final class d {
 
         /* renamed from: a  reason: collision with root package name */
-        private final p f25033a;
+        private final p f11345a;
         private final long b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final long f25034c;
+        private final long f11346c;
 
         private d(p pVar, long j, long j2) {
-            this.f25033a = pVar;
+            this.f11345a = pVar;
             this.b = j;
-            this.f25034c = j2;
+            this.f11346c = j2;
         }
     }
 
@@ -266,16 +266,16 @@ public final class g implements f {
     }
 
     public g(com.opos.exoplayer.core.a.c cVar, com.opos.exoplayer.core.a.d[] dVarArr, boolean z) {
-        this.f25027c = cVar;
+        this.f11339c = cVar;
         this.d = z;
         this.j = new ConditionVariable(true);
-        if (u.f25510a >= 18) {
+        if (u.f11822a >= 18) {
             try {
                 this.N = AudioTrack.class.getMethod("getLatency", null);
             } catch (NoSuchMethodException e) {
             }
         }
-        this.l = u.f25510a >= 19 ? new c() : new b();
+        this.l = u.f11822a >= 19 ? new c() : new b();
         this.e = new k();
         this.f = new o();
         this.g = new j();
@@ -291,9 +291,9 @@ public final class g implements f {
         this.k = new long[10];
         this.Z = 1.0f;
         this.V = 0;
-        this.w = com.opos.exoplayer.core.a.b.f25008a;
+        this.w = com.opos.exoplayer.core.a.b.f11320a;
         this.aj = 0;
-        this.C = p.f25554a;
+        this.C = p.f11866a;
         this.ag = -1;
         this.aa = new com.opos.exoplayer.core.a.d[0];
         this.ab = new ByteBuffer[0];
@@ -366,7 +366,7 @@ public final class g implements f {
             } else {
                 byteBuffer = this.ac;
                 if (byteBuffer == null) {
-                    byteBuffer = com.opos.exoplayer.core.a.d.f25014a;
+                    byteBuffer = com.opos.exoplayer.core.a.d.f11326a;
                 }
             }
             if (i2 == length) {
@@ -394,10 +394,10 @@ public final class g implements f {
     private long b(long j) {
         long a2;
         long j2;
-        while (!this.m.isEmpty() && j >= this.m.getFirst().f25034c) {
+        while (!this.m.isEmpty() && j >= this.m.getFirst().f11346c) {
             d remove = this.m.remove();
-            this.C = remove.f25033a;
-            this.E = remove.f25034c;
+            this.C = remove.f11345a;
+            this.E = remove.f11346c;
             this.D = remove.b - this.W;
         }
         if (this.C.b == 1.0f) {
@@ -426,7 +426,7 @@ public final class g implements f {
                 com.opos.exoplayer.core.i.a.a(byteBuffer2 == byteBuffer);
             } else {
                 this.ad = byteBuffer;
-                if (u.f25510a < 21) {
+                if (u.f11822a < 21) {
                     int remaining = byteBuffer.remaining();
                     byte[] bArr = this.ae;
                     if (bArr == null || bArr.length < remaining) {
@@ -439,7 +439,7 @@ public final class g implements f {
                 }
             }
             int remaining2 = byteBuffer.remaining();
-            if (u.f25510a < 21) {
+            if (u.f11822a < 21) {
                 int b2 = this.z - ((int) (this.S - (this.l.b() * this.R)));
                 if (b2 > 0) {
                     int write = this.p.write(this.ae, this.af, Math.min(remaining2, b2));
@@ -477,7 +477,7 @@ public final class g implements f {
     }
 
     private AudioTrack c(int i) {
-        return new AudioTrack(3, 4000, 4, 2, 2, 0, i);
+        return new AudioTrack(3, TPErrorCode.TP_ERROR_TYPE_DOWNLOAD_PROXY, 4, 2, 2, 0, i);
     }
 
     private long d(long j) {
@@ -532,7 +532,7 @@ public final class g implements f {
         a(this.C);
         k();
         int audioSessionId = this.p.getAudioSessionId();
-        if (f25026a && u.f25510a < 21) {
+        if (f11338a && u.f11822a < 21) {
             AudioTrack audioTrack = this.o;
             if (audioTrack != null && audioSessionId != audioTrack.getAudioSessionId()) {
                 o();
@@ -658,7 +658,7 @@ public final class g implements f {
 
     private void n() {
         if (r()) {
-            if (u.f25510a >= 21) {
+            if (u.f11822a >= 21) {
                 a(this.p, this.Z);
             } else {
                 b(this.p, this.Z);
@@ -666,6 +666,7 @@ public final class g implements f {
         }
     }
 
+    /* JADX WARN: Type inference failed for: r0v4, types: [com.opos.exoplayer.core.a.g$2] */
     private void o() {
         final AudioTrack audioTrack = this.o;
         if (audioTrack == null) {
@@ -777,7 +778,7 @@ public final class g implements f {
     }
 
     private boolean v() {
-        if (u.f25510a < 23) {
+        if (u.f11822a < 23) {
             int i = this.v;
             return i == 5 || i == 6;
         }
@@ -791,7 +792,7 @@ public final class g implements f {
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:17:0x0082 -> B:14:0x006d). Please submit an issue!!! */
     private AudioTrack x() {
         AudioTrack audioTrack;
-        if (u.f25510a >= 21) {
+        if (u.f11822a >= 21) {
             audioTrack = y();
         } else {
             int d2 = u.d(this.w.d);
@@ -847,14 +848,14 @@ public final class g implements f {
     @Override // com.opos.exoplayer.core.a.f
     public p a(p pVar) {
         if (r() && !this.y) {
-            p pVar2 = p.f25554a;
+            p pVar2 = p.f11866a;
             this.C = pVar2;
             return pVar2;
         }
-        p pVar3 = new p(this.g.a(pVar.b), this.g.b(pVar.f25555c));
+        p pVar3 = new p(this.g.a(pVar.b), this.g.b(pVar.f11867c));
         p pVar4 = this.B;
         if (pVar4 == null) {
-            pVar4 = !this.m.isEmpty() ? this.m.getLast().f25033a : this.C;
+            pVar4 = !this.m.isEmpty() ? this.m.getLast().f11345a : this.C;
         }
         if (!pVar3.equals(pVar4)) {
             if (r()) {
@@ -922,9 +923,9 @@ public final class g implements f {
     @Override // com.opos.exoplayer.core.a.f
     public boolean a(int i) {
         if (d(i)) {
-            return i != 4 || u.f25510a >= 21;
+            return i != 4 || u.f11822a >= 21;
         }
-        com.opos.exoplayer.core.a.c cVar = this.f25027c;
+        com.opos.exoplayer.core.a.c cVar = this.f11339c;
         return cVar != null && cVar.a(i);
     }
 
@@ -1022,7 +1023,7 @@ public final class g implements f {
 
     @Override // com.opos.exoplayer.core.a.f
     public void b(int i) {
-        com.opos.exoplayer.core.i.a.b(u.f25510a >= 21);
+        com.opos.exoplayer.core.i.a.b(u.f11822a >= 21);
         if (this.ak && this.aj == i) {
             return;
         }
@@ -1079,6 +1080,7 @@ public final class g implements f {
         }
     }
 
+    /* JADX WARN: Type inference failed for: r0v42, types: [com.opos.exoplayer.core.a.g$1] */
     @Override // com.opos.exoplayer.core.a.f
     public void i() {
         if (r()) {
@@ -1092,7 +1094,7 @@ public final class g implements f {
                 this.C = pVar;
                 this.B = null;
             } else if (!this.m.isEmpty()) {
-                this.C = this.m.getLast().f25033a;
+                this.C = this.m.getLast().f11345a;
             }
             this.m.clear();
             this.D = 0L;

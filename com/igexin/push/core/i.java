@@ -11,7 +11,7 @@ import com.igexin.push.core.d;
 public class i extends BroadcastReceiver {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f23559a = "GTReceiver";
+    public static final String f9951a = "GTReceiver";
     private static volatile i b;
 
     private i() {
@@ -82,6 +82,6 @@ public class i extends BroadcastReceiver {
         Message obtain = Message.obtain();
         obtain.what = "com.igexin.action.notification.click".equals(intent.getAction()) ? b.M : b.N;
         obtain.obj = intent;
-        d.a.f23474a.a(obtain);
+        d.a.f9866a.a(obtain);
     }
 }

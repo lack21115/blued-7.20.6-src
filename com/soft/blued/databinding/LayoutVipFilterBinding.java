@@ -15,11 +15,11 @@ import com.soft.blued.ui.find.view.FilterCommonScrollSelectorView;
 public final class LayoutVipFilterBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ExpandLinearLayout f29438a;
+    public final ExpandLinearLayout f15748a;
     public final FilterCommonScrollSelectorView b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final FilterCommonScrollSelectorView f29439c;
+    public final FilterCommonScrollSelectorView f15749c;
     public final PhotoGridView d;
     public final PhotoGridView e;
     public final ImageView f;
@@ -31,9 +31,9 @@ public final class LayoutVipFilterBinding implements ViewBinding {
 
     private LayoutVipFilterBinding(LinearLayout linearLayout, ExpandLinearLayout expandLinearLayout, FilterCommonScrollSelectorView filterCommonScrollSelectorView, FilterCommonScrollSelectorView filterCommonScrollSelectorView2, PhotoGridView photoGridView, PhotoGridView photoGridView2, ImageView imageView, RelativeLayout relativeLayout, TextView textView, TextView textView2, TextView textView3) {
         this.k = linearLayout;
-        this.f29438a = expandLinearLayout;
+        this.f15748a = expandLinearLayout;
         this.b = filterCommonScrollSelectorView;
-        this.f29439c = filterCommonScrollSelectorView2;
+        this.f15749c = filterCommonScrollSelectorView2;
         this.d = photoGridView;
         this.e = photoGridView2;
         this.f = imageView;

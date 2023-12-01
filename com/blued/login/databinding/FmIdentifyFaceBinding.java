@@ -12,33 +12,33 @@ import com.blued.login.R;
 public final class FmIdentifyFaceBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final CommonEdittextView f20517a;
+    public final CommonEdittextView f6911a;
     public final CommonEdittextView b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final CommonTopTitleNoTrans f20518c;
+    public final CommonTopTitleNoTrans f6912c;
     public final ShapeTextView d;
     private final LinearLayout e;
 
     private FmIdentifyFaceBinding(LinearLayout linearLayout, CommonEdittextView commonEdittextView, CommonEdittextView commonEdittextView2, CommonTopTitleNoTrans commonTopTitleNoTrans, ShapeTextView shapeTextView) {
         this.e = linearLayout;
-        this.f20517a = commonEdittextView;
+        this.f6911a = commonEdittextView;
         this.b = commonEdittextView2;
-        this.f20518c = commonTopTitleNoTrans;
+        this.f6912c = commonTopTitleNoTrans;
         this.d = shapeTextView;
     }
 
     public static FmIdentifyFaceBinding a(View view) {
         String str;
-        CommonEdittextView commonEdittextView = (CommonEdittextView) view.findViewById(R.id.et_card);
-        if (commonEdittextView != null) {
-            CommonEdittextView commonEdittextView2 = (CommonEdittextView) view.findViewById(R.id.et_name);
-            if (commonEdittextView2 != null) {
-                CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) view.findViewById(R.id.title);
-                if (commonTopTitleNoTrans != null) {
-                    ShapeTextView shapeTextView = (ShapeTextView) view.findViewById(R.id.tv_identify);
-                    if (shapeTextView != null) {
-                        return new FmIdentifyFaceBinding((LinearLayout) view, commonEdittextView, commonEdittextView2, commonTopTitleNoTrans, shapeTextView);
+        CommonEdittextView findViewById = view.findViewById(R.id.et_card);
+        if (findViewById != null) {
+            CommonEdittextView findViewById2 = view.findViewById(R.id.et_name);
+            if (findViewById2 != null) {
+                CommonTopTitleNoTrans findViewById3 = view.findViewById(R.id.title);
+                if (findViewById3 != null) {
+                    ShapeTextView findViewById4 = view.findViewById(R.id.tv_identify);
+                    if (findViewById4 != null) {
+                        return new FmIdentifyFaceBinding((LinearLayout) view, findViewById, findViewById2, findViewById3, findViewById4);
                     }
                     str = "tvIdentify";
                 } else {

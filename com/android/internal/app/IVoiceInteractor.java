@@ -22,9 +22,8 @@ public interface IVoiceInteractor extends IInterface {
         static final int TRANSACTION_startConfirmation = 1;
         static final int TRANSACTION_supportsCommands = 5;
 
-        /* JADX INFO: Access modifiers changed from: private */
         /* loaded from: source-4181928-dex2jar.jar:com/android/internal/app/IVoiceInteractor$Stub$Proxy.class */
-        public static class Proxy implements IVoiceInteractor {
+        private static class Proxy implements IVoiceInteractor {
             private IBinder mRemote;
 
             Proxy(IBinder iBinder) {
@@ -191,7 +190,7 @@ public interface IVoiceInteractor extends IInterface {
             switch (i) {
                 case 1:
                     parcel.enforceInterface(DESCRIPTOR);
-                    IVoiceInteractorRequest startConfirmation = startConfirmation(parcel.readString(), IVoiceInteractorCallback.Stub.asInterface(parcel.readStrongBinder()), parcel.readInt() != 0 ? TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel) : null, parcel.readInt() != 0 ? Bundle.CREATOR.createFromParcel(parcel) : null);
+                    IVoiceInteractorRequest startConfirmation = startConfirmation(parcel.readString(), IVoiceInteractorCallback.Stub.asInterface(parcel.readStrongBinder()), parcel.readInt() != 0 ? (CharSequence) TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel) : null, parcel.readInt() != 0 ? (Bundle) Bundle.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     IBinder iBinder = null;
                     if (startConfirmation != null) {
@@ -201,7 +200,7 @@ public interface IVoiceInteractor extends IInterface {
                     return true;
                 case 2:
                     parcel.enforceInterface(DESCRIPTOR);
-                    IVoiceInteractorRequest startCompleteVoice = startCompleteVoice(parcel.readString(), IVoiceInteractorCallback.Stub.asInterface(parcel.readStrongBinder()), parcel.readInt() != 0 ? TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel) : null, parcel.readInt() != 0 ? Bundle.CREATOR.createFromParcel(parcel) : null);
+                    IVoiceInteractorRequest startCompleteVoice = startCompleteVoice(parcel.readString(), IVoiceInteractorCallback.Stub.asInterface(parcel.readStrongBinder()), parcel.readInt() != 0 ? (CharSequence) TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel) : null, parcel.readInt() != 0 ? (Bundle) Bundle.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     IBinder iBinder2 = null;
                     if (startCompleteVoice != null) {
@@ -211,7 +210,7 @@ public interface IVoiceInteractor extends IInterface {
                     return true;
                 case 3:
                     parcel.enforceInterface(DESCRIPTOR);
-                    IVoiceInteractorRequest startAbortVoice = startAbortVoice(parcel.readString(), IVoiceInteractorCallback.Stub.asInterface(parcel.readStrongBinder()), parcel.readInt() != 0 ? TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel) : null, parcel.readInt() != 0 ? Bundle.CREATOR.createFromParcel(parcel) : null);
+                    IVoiceInteractorRequest startAbortVoice = startAbortVoice(parcel.readString(), IVoiceInteractorCallback.Stub.asInterface(parcel.readStrongBinder()), parcel.readInt() != 0 ? (CharSequence) TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel) : null, parcel.readInt() != 0 ? (Bundle) Bundle.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     IBinder iBinder3 = null;
                     if (startAbortVoice != null) {
@@ -221,7 +220,7 @@ public interface IVoiceInteractor extends IInterface {
                     return true;
                 case 4:
                     parcel.enforceInterface(DESCRIPTOR);
-                    IVoiceInteractorRequest startCommand = startCommand(parcel.readString(), IVoiceInteractorCallback.Stub.asInterface(parcel.readStrongBinder()), parcel.readString(), parcel.readInt() != 0 ? Bundle.CREATOR.createFromParcel(parcel) : null);
+                    IVoiceInteractorRequest startCommand = startCommand(parcel.readString(), IVoiceInteractorCallback.Stub.asInterface(parcel.readStrongBinder()), parcel.readString(), parcel.readInt() != 0 ? (Bundle) Bundle.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     IBinder iBinder4 = null;
                     if (startCommand != null) {
@@ -235,7 +234,7 @@ public interface IVoiceInteractor extends IInterface {
                     parcel2.writeNoException();
                     parcel2.writeBooleanArray(supportsCommands);
                     return true;
-                case IBinder.INTERFACE_TRANSACTION /* 1598968902 */:
+                case 1598968902:
                     parcel2.writeString(DESCRIPTOR);
                     return true;
                 default:

@@ -8,7 +8,7 @@ public class b {
     public static final String b = "UTF-8";
 
     /* renamed from: a  reason: collision with root package name */
-    final b f28220a = this;
+    final b f14531a = this;
 
     public static String a(byte[] bArr, String str) {
         if (bArr != null) {
@@ -41,7 +41,7 @@ public class b {
                 byte[] bArr = new byte[a2.length + 2];
                 bArr[0] = 1;
                 bArr[1] = 1;
-                System.arraycopy((Object) a2, 0, (Object) bArr, 2, a2.length);
+                System.arraycopy(a2, 0, bArr, 2, a2.length);
                 return bArr;
             } catch (Exception e) {
                 e.printStackTrace();
@@ -58,7 +58,7 @@ public class b {
                 byte[] bArr = new byte[a2.length + 2];
                 bArr[0] = 1;
                 bArr[1] = 0;
-                System.arraycopy((Object) a2, 0, (Object) bArr, 2, a2.length);
+                System.arraycopy(a2, 0, bArr, 2, a2.length);
                 return bArr;
             } catch (Exception e) {
                 e.printStackTrace();
@@ -75,7 +75,7 @@ public class b {
                 byte[] bArr = new byte[a2.length + 2];
                 bArr[0] = 1;
                 bArr[1] = 3;
-                System.arraycopy((Object) a2, 0, (Object) bArr, 2, a2.length);
+                System.arraycopy(a2, 0, bArr, 2, a2.length);
                 return bArr;
             } catch (Exception e) {
                 e.printStackTrace();
@@ -92,7 +92,7 @@ public class b {
                 byte[] bArr = new byte[a2.length + 2];
                 bArr[0] = 1;
                 bArr[1] = 2;
-                System.arraycopy((Object) a2, 0, (Object) bArr, 2, a2.length);
+                System.arraycopy(a2, 0, bArr, 2, a2.length);
                 return bArr;
             } catch (Exception e) {
                 e.printStackTrace();

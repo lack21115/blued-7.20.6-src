@@ -24,7 +24,7 @@ import org.json.JSONObject;
 public final class m {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23577a = "PushController";
+    private static final String f9969a = "PushController";
     private static m b;
 
     private m() {
@@ -53,7 +53,7 @@ public final class m {
 
     public static void a(int i, int i2) {
         com.igexin.push.config.d.b = i;
-        com.igexin.push.config.d.f23376c = i2;
+        com.igexin.push.config.d.f9768c = i2;
         com.igexin.push.config.a.a().b();
         com.igexin.push.e.f.c().d();
     }
@@ -211,7 +211,7 @@ public final class m {
                             jSONObject.put("action", "set_tag");
                             jSONObject.put("id", String.valueOf(currentTimeMillis));
                             jSONObject.put("cid", e.A);
-                            jSONObject.put("appid", e.f23495a);
+                            jSONObject.put("appid", e.f9887a);
                             jSONObject.put("tags", URLEncoder.encode(string2, "utf-8"));
                             jSONObject.put("sn", string3);
                         } catch (Exception e) {
@@ -221,7 +221,7 @@ public final class m {
                         String jSONObject2 = jSONObject.toString();
                         com.igexin.push.core.e.e.a().b(new com.igexin.push.core.b.l(currentTimeMillis, jSONObject2, (byte) 2, e.u ? currentTimeMillis : 0L));
                         o oVar = new o();
-                        oVar.f23334c = 128;
+                        oVar.f9726c = 128;
                         oVar.e = b.K;
                         oVar.f = jSONObject2;
                         d.a.a().h.a("C-" + e.A, oVar, false);
@@ -258,13 +258,13 @@ public final class m {
                             jSONObject3.put("action", "sendmessage");
                             jSONObject3.put("id", String.valueOf(currentTimeMillis2));
                             jSONObject3.put("cid", e.A);
-                            jSONObject3.put("appid", e.f23495a);
+                            jSONObject3.put("appid", e.f9887a);
                             jSONObject3.put("taskid", string4);
                             jSONObject3.put("extraData", Base64.encodeToString(byteArray, 0));
                             String jSONObject4 = jSONObject3.toString();
                             com.igexin.push.core.e.e.a().b(new com.igexin.push.core.b.l(currentTimeMillis2, jSONObject4, (byte) 6, currentTimeMillis2));
                             com.igexin.push.c.c.b bVar = new com.igexin.push.c.c.b();
-                            bVar.f23334c = 128;
+                            bVar.f9726c = 128;
                             bVar.b = (int) currentTimeMillis2;
                             bVar.e = e.A;
                             bVar.f = jSONObject4;
@@ -330,7 +330,7 @@ public final class m {
                     PushTaskBean pushTaskBean = new PushTaskBean();
                     pushTaskBean.setTaskId(string5);
                     pushTaskBean.setMessageId(string6);
-                    pushTaskBean.setAppid(e.f23495a);
+                    pushTaskBean.setAppid(e.f9887a);
                     FeedbackImpl.getInstance().feedbackMessageAction(pushTaskBean, string7);
                     e.am++;
                     e.al.put(str, Long.valueOf(currentTimeMillis3));
@@ -353,7 +353,7 @@ public final class m {
                 com.igexin.c.a.c.a.a("PushController|onPushManagerMessage bindAlias...", new Object[0]);
                 if (TextUtils.isEmpty(e.A)) {
                     com.igexin.c.a.c.a.d.a().a("bindAlias : " + string8 + ", failed, has not get clientid");
-                    l.a().b(string9, com.anythink.basead.c.f.n);
+                    l.a().b(string9, "30005");
                     return;
                 }
                 long currentTimeMillis4 = System.currentTimeMillis();
@@ -381,7 +381,7 @@ public final class m {
                 }
                 com.igexin.c.a.c.a.a("PushController|bindAlias times exceed", new Object[0]);
                 com.igexin.c.a.c.a.d.a().a("bindAlias : " + string8 + ", failed, , the number of calls per day cannot exceed 100");
-                l.a().b(string9, com.anythink.basead.c.f.l);
+                l.a().b(string9, "30003");
                 return;
             case true:
                 String string10 = bundle.getString("alias");
@@ -390,7 +390,7 @@ public final class m {
                 com.igexin.c.a.c.a.a("PushController|onPushManagerMessage unbindAlias...", new Object[0]);
                 if (TextUtils.isEmpty(e.A)) {
                     com.igexin.c.a.c.a.d.a().a("unbindAlias : " + string10 + ", failed, has not get clientid");
-                    l.a().c(string11, com.anythink.basead.c.f.n);
+                    l.a().c(string11, "30005");
                     return;
                 } else if (z8 && TextUtils.isEmpty(e.A)) {
                     return;
@@ -417,7 +417,7 @@ public final class m {
                     }
                     com.igexin.c.a.c.a.a("PushController|unbindAlias times exceed", new Object[0]);
                     com.igexin.c.a.c.a.d.a().a("unbindAlias : " + string10 + ", failed, , the number of calls per day cannot exceed 100");
-                    l.a().c(string11, com.anythink.basead.c.f.l);
+                    l.a().c(string11, "30003");
                     return;
                 }
             case true:
@@ -442,7 +442,7 @@ public final class m {
                             PushTaskBean pushTaskBean2 = new PushTaskBean();
                             pushTaskBean2.setTaskId("getuiapplinkup");
                             pushTaskBean2.setMessageId(queryParameter);
-                            pushTaskBean2.setAppid(e.f23495a);
+                            pushTaskBean2.setAppid(e.f9887a);
                             FeedbackImpl.getInstance().feedbackMessageAction(pushTaskBean2, PushConsts.SEND_MESSAGE_ERROR);
                             return;
                         }
@@ -496,7 +496,7 @@ public final class m {
                 if (TextUtils.isEmpty(e.A)) {
                     return;
                 }
-                if (System.currentTimeMillis() - e.f23497c < com.igexin.push.config.d.f23375a * 1000 && e.d != null) {
+                if (System.currentTimeMillis() - e.f9889c < com.igexin.push.config.d.f9767a * 1000 && e.d != null) {
                     String str4 = e.d;
                     com.igexin.c.a.c.a.a("PushController|query tag already cache, tag = " + e.d, new Object[0]);
                     l.a().a(string13, "0", e.d);
@@ -509,7 +509,7 @@ public final class m {
                         jSONObject5.put("action", "query_tag");
                         jSONObject5.put("id", String.valueOf(currentTimeMillis6));
                         jSONObject5.put("cid", e.A);
-                        jSONObject5.put("appid", e.f23495a);
+                        jSONObject5.put("appid", e.f9887a);
                         jSONObject5.put("sn", string13);
                     } catch (Exception e4) {
                         com.igexin.c.a.c.a.a(e4);
@@ -517,13 +517,13 @@ public final class m {
                     String jSONObject6 = jSONObject5.toString();
                     com.igexin.push.core.e.e.a().b(new com.igexin.push.core.b.l(currentTimeMillis6, jSONObject6, (byte) 11, currentTimeMillis6));
                     o oVar2 = new o();
-                    oVar2.f23334c = 128;
+                    oVar2.f9726c = 128;
                     oVar2.e = b.K;
                     oVar2.f = jSONObject6;
                     d.a.a().h.a("C-" + e.A, oVar2, false);
                     com.igexin.push.core.e.f a3 = com.igexin.push.core.e.f.a();
-                    if (e.f23497c != currentTimeMillis6) {
-                        e.f23497c = currentTimeMillis6;
+                    if (e.f9889c != currentTimeMillis6) {
+                        e.f9889c = currentTimeMillis6;
                         com.igexin.c.a.b.e.a().a((com.igexin.c.a.d.f) new f.AnonymousClass20(), false, true);
                     }
                     com.igexin.c.a.c.a.a("PushController｜queryTag", new Object[0]);
@@ -543,7 +543,7 @@ public final class m {
                         if (!string14.equals(e.I)) {
                             com.igexin.push.core.e.f.a().b(string14);
                             if (e.u) {
-                                com.igexin.c.a.c.a.b(f23577a, "online, send addphoneinfo");
+                                com.igexin.c.a.c.a.b(f9969a, "online, send addphoneinfo");
                                 com.igexin.push.core.a.b.d().i();
                             }
                         }
@@ -579,7 +579,7 @@ public final class m {
                     PushTaskBean pushTaskBean = new PushTaskBean();
                     pushTaskBean.setTaskId("getuiapplinkup");
                     pushTaskBean.setMessageId(queryParameter);
-                    pushTaskBean.setAppid(e.f23495a);
+                    pushTaskBean.setAppid(e.f9887a);
                     FeedbackImpl.getInstance().feedbackMessageAction(pushTaskBean, PushConsts.SEND_MESSAGE_ERROR);
                     return;
                 }
@@ -605,7 +605,7 @@ public final class m {
                 jSONObject.put("action", "set_tag");
                 jSONObject.put("id", String.valueOf(currentTimeMillis));
                 jSONObject.put("cid", e.A);
-                jSONObject.put("appid", e.f23495a);
+                jSONObject.put("appid", e.f9887a);
                 jSONObject.put("tags", URLEncoder.encode(str, "utf-8"));
                 jSONObject.put("sn", str2);
             } catch (Exception e) {
@@ -615,7 +615,7 @@ public final class m {
             String jSONObject2 = jSONObject.toString();
             com.igexin.push.core.e.e.a().b(new com.igexin.push.core.b.l(currentTimeMillis, jSONObject2, (byte) 2, e.u ? currentTimeMillis : 0L));
             o oVar = new o();
-            oVar.f23334c = 128;
+            oVar.f9726c = 128;
             oVar.e = b.K;
             oVar.f = jSONObject2;
             com.igexin.push.d.a aVar = d.a.a().h;
@@ -630,7 +630,7 @@ public final class m {
         if (TextUtils.isEmpty(e.A)) {
             com.igexin.c.a.c.a.d a2 = com.igexin.c.a.c.a.d.a();
             a2.a("unbindAlias : " + str + ", failed, has not get clientid");
-            l.a().c(str2, com.anythink.basead.c.f.n);
+            l.a().c(str2, "30005");
         } else if (z && TextUtils.isEmpty(e.A)) {
         } else {
             long currentTimeMillis = System.currentTimeMillis();
@@ -656,7 +656,7 @@ public final class m {
             com.igexin.c.a.c.a.a("PushController|unbindAlias times exceed", new Object[0]);
             com.igexin.c.a.c.a.d a3 = com.igexin.c.a.c.a.d.a();
             a3.a("unbindAlias : " + str + ", failed, , the number of calls per day cannot exceed 100");
-            l.a().c(str2, com.anythink.basead.c.f.l);
+            l.a().c(str2, "30003");
         }
     }
 
@@ -673,7 +673,7 @@ public final class m {
                 jSONObject.put("action", str3);
                 jSONObject.put("id", String.valueOf(currentTimeMillis));
                 jSONObject.put("cid", e.A);
-                jSONObject.put("appid", e.f23495a);
+                jSONObject.put("appid", e.f9887a);
                 jSONObject.put("alias", str);
                 jSONObject.put("sn", str2);
                 if (z) {
@@ -685,7 +685,7 @@ public final class m {
             String jSONObject2 = jSONObject.toString();
             com.igexin.push.core.e.e.a().b(new com.igexin.push.core.b.l(currentTimeMillis, jSONObject2, b2, e.u ? currentTimeMillis : 0L));
             o oVar = new o();
-            oVar.f23334c = 128;
+            oVar.f9726c = 128;
             oVar.e = b.K;
             oVar.f = jSONObject2;
             com.igexin.push.d.a aVar = d.a.a().h;
@@ -704,13 +704,13 @@ public final class m {
                 jSONObject.put("action", "sendmessage");
                 jSONObject.put("id", String.valueOf(currentTimeMillis));
                 jSONObject.put("cid", e.A);
-                jSONObject.put("appid", e.f23495a);
+                jSONObject.put("appid", e.f9887a);
                 jSONObject.put("taskid", str);
                 jSONObject.put("extraData", Base64.encodeToString(bArr, 0));
                 String jSONObject2 = jSONObject.toString();
                 com.igexin.push.core.e.e.a().b(new com.igexin.push.core.b.l(currentTimeMillis, jSONObject2, (byte) 6, currentTimeMillis));
                 com.igexin.push.c.c.b bVar = new com.igexin.push.c.c.b();
-                bVar.f23334c = 128;
+                bVar.f9726c = 128;
                 bVar.b = (int) currentTimeMillis;
                 bVar.e = e.A;
                 bVar.f = jSONObject2;
@@ -737,7 +737,7 @@ public final class m {
         if (TextUtils.isEmpty(e.A)) {
             return;
         }
-        if (System.currentTimeMillis() - e.f23497c < com.igexin.push.config.d.f23375a * 1000 && e.d != null) {
+        if (System.currentTimeMillis() - e.f9889c < com.igexin.push.config.d.f9767a * 1000 && e.d != null) {
             String str2 = e.d;
             com.igexin.c.a.c.a.a("PushController|query tag already cache, tag = " + e.d, new Object[0]);
             l.a().a(str, "0", e.d);
@@ -750,7 +750,7 @@ public final class m {
                 jSONObject.put("action", "query_tag");
                 jSONObject.put("id", String.valueOf(currentTimeMillis));
                 jSONObject.put("cid", e.A);
-                jSONObject.put("appid", e.f23495a);
+                jSONObject.put("appid", e.f9887a);
                 jSONObject.put("sn", str);
             } catch (Exception e) {
                 com.igexin.c.a.c.a.a(e);
@@ -758,14 +758,14 @@ public final class m {
             String jSONObject2 = jSONObject.toString();
             com.igexin.push.core.e.e.a().b(new com.igexin.push.core.b.l(currentTimeMillis, jSONObject2, (byte) 11, currentTimeMillis));
             o oVar = new o();
-            oVar.f23334c = 128;
+            oVar.f9726c = 128;
             oVar.e = b.K;
             oVar.f = jSONObject2;
             com.igexin.push.d.a aVar = d.a.a().h;
             aVar.a("C-" + e.A, oVar, false);
             com.igexin.push.core.e.f a2 = com.igexin.push.core.e.f.a();
-            if (e.f23497c != currentTimeMillis) {
-                e.f23497c = currentTimeMillis;
+            if (e.f9889c != currentTimeMillis) {
+                e.f9889c = currentTimeMillis;
                 com.igexin.c.a.b.e.a().a((com.igexin.c.a.d.f) new f.AnonymousClass20(), false, true);
             }
             com.igexin.c.a.c.a.a("PushController｜queryTag", new Object[0]);
@@ -778,7 +778,7 @@ public final class m {
         if (TextUtils.isEmpty(e.A)) {
             com.igexin.c.a.c.a.d a2 = com.igexin.c.a.c.a.d.a();
             a2.a("bindAlias : " + str + ", failed, has not get clientid");
-            l.a().b(str2, com.anythink.basead.c.f.n);
+            l.a().b(str2, "30005");
             return;
         }
         long currentTimeMillis = System.currentTimeMillis();
@@ -807,6 +807,6 @@ public final class m {
         com.igexin.c.a.c.a.a("PushController|bindAlias times exceed", new Object[0]);
         com.igexin.c.a.c.a.d a3 = com.igexin.c.a.c.a.d.a();
         a3.a("bindAlias : " + str + ", failed, , the number of calls per day cannot exceed 100");
-        l.a().b(str2, com.anythink.basead.c.f.l);
+        l.a().b(str2, "30003");
     }
 }

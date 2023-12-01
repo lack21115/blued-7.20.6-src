@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentClausePermissionBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final FrameLayout f28798a;
+    private final FrameLayout f15108a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f28798a;
+        return this.f15108a;
     }
 }

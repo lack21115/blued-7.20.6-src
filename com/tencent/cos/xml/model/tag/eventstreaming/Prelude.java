@@ -1,6 +1,5 @@
 package com.tencent.cos.xml.model.tag.eventstreaming;
 
-import android.widget.ExpandableListView;
 import com.sensetime.stmobile.STMobileHumanActionNative;
 import java.nio.ByteBuffer;
 import java.util.zip.CRC32;
@@ -46,7 +45,7 @@ final class Prelude {
     }
 
     private static long intToUnsignedLong(int i) {
-        return i & ExpandableListView.PACKED_POSITION_VALUE_NULL;
+        return i & 4294967295L;
     }
 
     private static int toIntExact(long j) {

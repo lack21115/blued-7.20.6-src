@@ -20,14 +20,12 @@ import java.util.ArrayList;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/liveForMsg/data/LiveMsgPeopleAdapter.class */
 public class LiveMsgPeopleAdapter extends BaseQuickAdapter<ProfileData, BaseViewHolder> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f13540a;
+    private Context a;
     private Boolean b;
 
     public LiveMsgPeopleAdapter(Context context) {
         super(R.layout.item_live_msg_people, new ArrayList());
-        this.f13540a = context;
+        this.a = context;
     }
 
     private void b() {
@@ -57,7 +55,6 @@ public class LiveMsgPeopleAdapter extends BaseQuickAdapter<ProfileData, BaseView
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(BaseViewHolder baseViewHolder, final ProfileData profileData) {
         ImageView imageView = (ImageView) baseViewHolder.getView(R.id.live_user_avatar_decorate);

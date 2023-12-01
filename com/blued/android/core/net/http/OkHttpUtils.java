@@ -2,6 +2,7 @@ package com.blued.android.core.net.http;
 
 import android.os.Build;
 import android.text.TextUtils;
+import com.anythink.core.common.g.g;
 import com.blued.android.core.net.BinaryHttpResponseHandler;
 import com.blued.android.core.net.FileHttpResponseHandler;
 import com.blued.android.core.net.HttpRequestWrapper;
@@ -9,8 +10,6 @@ import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.net.exception.OkHttpException;
 import com.blued.android.core.net.http.ssl.HttpsIPAccessUtils;
 import com.blued.android.core.utils.Log;
-import com.google.common.net.HttpHeaders;
-import com.tencent.ugc.common.UGCConstants;
 import java.io.IOException;
 import java.lang.ref.WeakReference;
 import java.util.LinkedList;
@@ -25,13 +24,11 @@ import okhttp3.Response;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/net/http/OkHttpUtils.class */
 public class OkHttpUtils {
-
-    /* renamed from: a  reason: collision with root package name */
-    static OkHttpClient f9687a;
+    static OkHttpClient a;
     private static final WeakHashMap<IRequestHost, List<WeakReference<Call>>> b = new WeakHashMap<>();
 
     public static void a() {
-        if (f9687a == null) {
+        if (a == null) {
             int i = 4;
             if (Runtime.getRuntime().availableProcessors() > 4) {
                 i = Runtime.getRuntime().availableProcessors();
@@ -42,7 +39,7 @@ public class OkHttpUtils {
             dispatcher.setMaxRequests(i);
             OkHttpClient.Builder dispatcher2 = new OkHttpClient.Builder().dns(SyncOkHttpDns.a()).dispatcher(dispatcher);
             HttpsIPAccessUtils.a(dispatcher2);
-            f9687a = dispatcher2.build();
+            a = dispatcher2.build();
         }
     }
 
@@ -90,7 +87,7 @@ public class OkHttpUtils {
             }
             try {
                 binaryHttpResponseHandler.sendStartMessage();
-                Response execute = f9687a.newCall(new Request.Builder().url(str).build()).execute();
+                Response execute = a.newCall(new Request.Builder().url(str).build()).execute();
                 if (!Thread.currentThread().isInterrupted()) {
                     binaryHttpResponseHandler.sendResponseMessage(str, execute);
                 }
@@ -99,7 +96,7 @@ public class OkHttpUtils {
                 binaryHttpResponseHandler.sendFailureMessage(str, e, StatusCode.a(e), null);
             } catch (Exception e2) {
                 e2.printStackTrace();
-                binaryHttpResponseHandler.sendFailureMessage(str, e2, UGCConstants.ERR_BGM_UNSUPPORT_SYSTEM, null);
+                binaryHttpResponseHandler.sendFailureMessage(str, e2, -2001, null);
             } catch (OutOfMemoryError e3) {
                 e3.printStackTrace();
                 binaryHttpResponseHandler.sendFailureMessage(str, e3, -3001, null);
@@ -112,13 +109,13 @@ public class OkHttpUtils {
     public static void a(final String str, final String str2, final FileHttpResponseHandler fileHttpResponseHandler, final IRequestHost iRequestHost) throws OkHttpException {
         if (TextUtils.isEmpty(str)) {
             if (fileHttpResponseHandler != null) {
-                fileHttpResponseHandler.sendFailureMessage(str, new Exception("url is empty"), -1002, null);
+                fileHttpResponseHandler.sendFailureMessage(str, new Exception("url is empty"), g.c, null);
             }
         } else if (Base64ImageUrlDownloader.a(str)) {
             Base64ImageUrlDownloader.a(str, str2, fileHttpResponseHandler, iRequestHost);
         } else {
             try {
-                f9687a.newCall(new Request.Builder().url(str).addHeader(HttpHeaders.ACCEPT, "image/webp, */*").build()).enqueue(new Callback() { // from class: com.blued.android.core.net.http.OkHttpUtils.1
+                a.newCall(new Request.Builder().url(str).addHeader("Accept", "image/webp, */*").build()).enqueue(new Callback() { // from class: com.blued.android.core.net.http.OkHttpUtils.1
                     @Override // okhttp3.Callback
                     public void onFailure(Call call, IOException iOException) {
                         FileHttpResponseHandler fileHttpResponseHandler2 = FileHttpResponseHandler.this;
@@ -135,7 +132,7 @@ public class OkHttpUtils {
             } catch (Exception e) {
                 e.printStackTrace();
                 if (fileHttpResponseHandler != null) {
-                    fileHttpResponseHandler.sendFailureMessage(str, e, UGCConstants.ERR_BGM_UNSUPPORT_SYSTEM, null);
+                    fileHttpResponseHandler.sendFailureMessage(str, e, -2001, null);
                 }
             }
         }
@@ -147,7 +144,7 @@ public class OkHttpUtils {
             execute = null;
         } else {
             try {
-                execute = f9687a.newCall(new Request.Builder().url(str).addHeader(HttpHeaders.ACCEPT, "image/webp, */*").build()).execute();
+                execute = a.newCall(new Request.Builder().url(str).addHeader("Accept", "image/webp, */*").build()).execute();
             } catch (IOException e) {
                 Log.e("HttpManager", "okHttp failed, exception:" + e);
                 throw new OkHttpException(e);

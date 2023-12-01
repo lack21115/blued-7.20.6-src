@@ -54,7 +54,7 @@ public class CipherLiteInputStream extends SdkFilterInputStream {
             return -1;
         }
         this.bufout = null;
-        int read = this.f42254in.read(this.bufin);
+        int read = this.in.read(this.bufin);
         int i = 0;
         if (read != -1) {
             byte[] update = this.cipherLite.update(this.bufin, 0, read);
@@ -98,7 +98,7 @@ public class CipherLiteInputStream extends SdkFilterInputStream {
 
     @Override // com.tencent.cos.xml.crypto.SdkFilterInputStream, java.io.FilterInputStream, java.io.InputStream, java.io.Closeable, java.lang.AutoCloseable
     public void close() throws IOException {
-        this.f42254in.close();
+        this.in.close();
         if (!this.multipart && !COSCryptoScheme.isAesGcm(this.cipherLite.getCipherAlgorithm())) {
             try {
                 this.cipherLite.doFinal();
@@ -113,14 +113,14 @@ public class CipherLiteInputStream extends SdkFilterInputStream {
     @Override // com.tencent.cos.xml.crypto.SdkFilterInputStream, java.io.FilterInputStream, java.io.InputStream
     public void mark(int i) {
         abortIfNeeded();
-        this.f42254in.mark(i);
+        this.in.mark(i);
         this.cipherLite.mark();
     }
 
     @Override // com.tencent.cos.xml.crypto.SdkFilterInputStream, java.io.FilterInputStream, java.io.InputStream
     public boolean markSupported() {
         abortIfNeeded();
-        return this.f42254in.markSupported() && this.cipherLite.markSupported();
+        return this.in.markSupported() && this.cipherLite.markSupported();
     }
 
     @Override // com.tencent.cos.xml.crypto.SdkFilterInputStream, java.io.FilterInputStream, java.io.InputStream
@@ -147,7 +147,7 @@ public class CipherLiteInputStream extends SdkFilterInputStream {
         return bArr[i2] & 255;
     }
 
-    @Override // java.io.InputStream
+    @Override // java.io.FilterInputStream, java.io.InputStream
     public int read(byte[] bArr) throws IOException {
         return read(bArr, 0, bArr.length);
     }
@@ -177,7 +177,7 @@ public class CipherLiteInputStream extends SdkFilterInputStream {
         if (i2 >= i4) {
             i2 = i4;
         }
-        System.arraycopy((Object) this.bufout, this.curr_pos, (Object) bArr, i, i2);
+        System.arraycopy(this.bufout, this.curr_pos, bArr, i, i2);
         this.curr_pos += i2;
         return i2;
     }
@@ -190,7 +190,7 @@ public class CipherLiteInputStream extends SdkFilterInputStream {
     @Override // com.tencent.cos.xml.crypto.SdkFilterInputStream, java.io.FilterInputStream, java.io.InputStream
     public void reset() throws IOException {
         abortIfNeeded();
-        this.f42254in.reset();
+        this.in.reset();
         this.cipherLite.reset();
         resetInternal();
     }

@@ -16,8 +16,10 @@ import android.view.animation.AnticipateInterpolator;
 import android.view.animation.OvershootInterpolator;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -63,9 +65,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveRandomGiftDialog.class */
 public final class LiveRandomGiftDialog extends BaseDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f13167a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private FreedomAdapter e;
     private LinearLayoutManager f;
     private RandomGiftDialogDataModel g;
@@ -83,9 +83,7 @@ public final class LiveRandomGiftDialog extends BaseDialogFragment {
             return DialogLiveRandomGiftBinding.a(LayoutInflater.from(LiveRandomGiftDialog.this.getContext()));
         }
     });
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f13168c = "";
+    private String c = "";
     private final ArrayList<FreedomItem> d = new ArrayList<>();
     private final String j = "@\\(word:([\\s\\S]*?)\\)";
     private Pattern k = Pattern.compile("@\\(word:([\\s\\S]*?)\\)");
@@ -163,7 +161,7 @@ public final class LiveRandomGiftDialog extends BaseDialogFragment {
         Intrinsics.e(this$0, "this$0");
         EventTrackLive.a(LiveProtos.Event.LIVE_USER_RANDOM_GIFT_PAGE_LOTTERY_FAST_CLICK, LiveRoomManager.a().e(), LiveRoomManager.a().g());
         if (this$0.h) {
-            this$0.d().f11810c.smoothScrollToPosition(i);
+            this$0.d().c.smoothScrollToPosition(i);
         }
     }
 
@@ -214,14 +212,14 @@ public final class LiveRandomGiftDialog extends BaseDialogFragment {
         this.d.add(new FitemRandomGiftHostLottery(randomGiftHostDialogDataModel));
         String alert_url = randomGiftHostDialogDataModel.getAlert_url();
         if (alert_url == null || alert_url.length() == 0) {
-            ImageView imageView = d().f11809a;
+            ImageView imageView = d().a;
             Intrinsics.c(imageView, "vb.ivInfo");
             BluedViewExKt.a(imageView);
         } else {
-            ImageView imageView2 = d().f11809a;
+            ImageView imageView2 = d().a;
             Intrinsics.c(imageView2, "vb.ivInfo");
             BluedViewExKt.b(imageView2);
-            d().f11809a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveRandomGiftDialog$J5Sb5MNEpPBwOqgZ4Xz7dpVbUSc
+            d().a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveRandomGiftDialog$J5Sb5MNEpPBwOqgZ4Xz7dpVbUSc
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     LiveRandomGiftDialog.c(LiveRandomGiftDialog.this, view);
@@ -278,7 +276,7 @@ public final class LiveRandomGiftDialog extends BaseDialogFragment {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void b(LiveRandomGiftDialog this$0, View view) {
         Intrinsics.e(this$0, "this$0");
-        LiveRandomGiftInfoDialog.Companion companion = LiveRandomGiftInfoDialog.f13177a;
+        LiveRandomGiftInfoDialog.Companion companion = LiveRandomGiftInfoDialog.a;
         RandomGiftDialogDataModel randomGiftDialogDataModel = this$0.g;
         RandomGiftDialogDataModel randomGiftDialogDataModel2 = randomGiftDialogDataModel;
         if (randomGiftDialogDataModel == null) {
@@ -294,7 +292,7 @@ public final class LiveRandomGiftDialog extends BaseDialogFragment {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void c(LiveRandomGiftDialog this$0, View view) {
         Intrinsics.e(this$0, "this$0");
-        LiveRandomGiftInfoDialog.Companion companion = LiveRandomGiftInfoDialog.f13177a;
+        LiveRandomGiftInfoDialog.Companion companion = LiveRandomGiftInfoDialog.a;
         RandomGiftHostDialogDataModel randomGiftHostDialogDataModel = this$0.i;
         RandomGiftHostDialogDataModel randomGiftHostDialogDataModel2 = randomGiftHostDialogDataModel;
         if (randomGiftHostDialogDataModel == null) {
@@ -323,12 +321,12 @@ public final class LiveRandomGiftDialog extends BaseDialogFragment {
         this.e = new FreedomAdapter(getContext(), a(), this.d);
         this.f = new LinearLayoutManager(getContext());
         DialogLiveRandomGiftBinding d = d();
-        RecyclerView recyclerView = d == null ? null : d.f11810c;
+        RecyclerView recyclerView = d == null ? null : d.c;
         if (recyclerView != null) {
             recyclerView.setLayoutManager(this.f);
         }
         DialogLiveRandomGiftBinding d2 = d();
-        RecyclerView recyclerView2 = d2 == null ? null : d2.f11810c;
+        RecyclerView recyclerView2 = d2 == null ? null : d2.c;
         if (recyclerView2 != null) {
             recyclerView2.setItemAnimator(new DefaultItemAnimator());
         }
@@ -337,7 +335,7 @@ public final class LiveRandomGiftDialog extends BaseDialogFragment {
             freedomAdapter2.b("FragmentManager", getChildFragmentManager());
         }
         DialogLiveRandomGiftBinding d3 = d();
-        RecyclerView recyclerView3 = d3 == null ? null : d3.f11810c;
+        RecyclerView recyclerView3 = d3 == null ? null : d3.c;
         if (recyclerView3 == null) {
             return;
         }
@@ -345,7 +343,7 @@ public final class LiveRandomGiftDialog extends BaseDialogFragment {
     }
 
     private final void f() {
-        String str = this.f13168c;
+        String str = this.c;
         final ActivityFragmentActive a2 = a();
         LiveRoomHttpUtils.r(str, new BluedUIHttpResponse<BluedEntityA<RandomGiftDialogDataModel>>(a2) { // from class: com.blued.android.module.live_china.fragment.LiveRandomGiftDialog$getDataToPlaying$1
             /* JADX INFO: Access modifiers changed from: protected */
@@ -439,7 +437,6 @@ public final class LiveRandomGiftDialog extends BaseDialogFragment {
         }, a());
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
         int a2 = DensityUtils.a(getContext(), 626.0f);
         Dialog dialog = new Dialog(requireActivity(), R.style.transparentFrameWindowStyleLive);
@@ -462,7 +459,6 @@ public final class LiveRandomGiftDialog extends BaseDialogFragment {
         return dialog;
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public void setupDialog(Dialog dialog, int i) {
         Intrinsics.e(dialog, "dialog");
         super.setupDialog(dialog, i);
@@ -476,7 +472,7 @@ public final class LiveRandomGiftDialog extends BaseDialogFragment {
         if (arguments != null) {
             String string = arguments.getString("goods_id", "");
             Intrinsics.c(string, "it.getString(\"goods_id\", \"\")");
-            this.f13168c = string;
+            this.c = string;
         }
         d().d.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveRandomGiftDialog$vk2YAjza4JZQbBpfAvQsoHAmJ2o
             @Override // android.view.View.OnClickListener
@@ -484,7 +480,7 @@ public final class LiveRandomGiftDialog extends BaseDialogFragment {
                 LiveRandomGiftDialog.a(LiveRandomGiftDialog.this, view);
             }
         });
-        String str = this.f13168c;
+        String str = this.c;
         if (str == null || str.length() == 0) {
             z = true;
         }
@@ -492,8 +488,7 @@ public final class LiveRandomGiftDialog extends BaseDialogFragment {
             h();
             return;
         }
-        LiveEventBus.get(LiveEventBusUtil.Q, Integer.TYPE).observe(this, new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveRandomGiftDialog$OeYzeWIAAMzwno99TbGaNUbd-i0
-            @Override // androidx.lifecycle.Observer
+        LiveEventBus.get(LiveEventBusUtil.Q, Integer.TYPE).observe((LifecycleOwner) this, new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveRandomGiftDialog$OeYzeWIAAMzwno99TbGaNUbd-i0
             public final void onChanged(Object obj) {
                 LiveRandomGiftDialog.a(LiveRandomGiftDialog.this, (Integer) obj);
             }
@@ -501,13 +496,13 @@ public final class LiveRandomGiftDialog extends BaseDialogFragment {
         f();
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void show(FragmentManager manager, String str) {
         Intrinsics.e(manager, "manager");
         try {
             FragmentTransaction beginTransaction = manager.beginTransaction();
             Intrinsics.c(beginTransaction, "manager.beginTransaction()");
-            beginTransaction.add(this, str);
+            beginTransaction.add((Fragment) this, str);
             beginTransaction.commitAllowingStateLoss();
         } catch (Exception e) {
             super.show(manager, str);

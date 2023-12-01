@@ -14,14 +14,14 @@ public class a extends f {
     public static final int g = -2147483639;
 
     /* renamed from: c  reason: collision with root package name */
-    protected SQLiteDatabase f23287c;
+    protected SQLiteDatabase f9679c;
     protected Cursor d;
     List<com.igexin.push.core.e.a> e;
     boolean f;
     private static final String h = a.class.getName();
 
     /* renamed from: a  reason: collision with root package name */
-    public static int f23286a = 0;
+    public static int f9678a = 0;
 
     public a() {
         super(1);
@@ -39,17 +39,17 @@ public class a extends f {
     @Override // com.igexin.c.a.d.f, com.igexin.c.a.d.a.f
     public final void b_() throws Exception {
         super.b_();
-        SQLiteDatabase writableDatabase = d.a.f23474a.i.getWritableDatabase();
-        this.f23287c = writableDatabase;
+        SQLiteDatabase writableDatabase = d.a.f9866a.i.getWritableDatabase();
+        this.f9679c = writableDatabase;
         writableDatabase.setVersion(7);
         for (com.igexin.push.core.e.a aVar : this.e) {
-            aVar.a(this.f23287c);
+            aVar.a(this.f9679c);
         }
         for (com.igexin.push.core.e.a aVar2 : this.e) {
             if (this.f) {
-                aVar2.c(this.f23287c);
+                aVar2.c(this.f9679c);
             } else {
-                aVar2.b(this.f23287c);
+                aVar2.b(this.f9679c);
             }
         }
         e.a().a(new c());

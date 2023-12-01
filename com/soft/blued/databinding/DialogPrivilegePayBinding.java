@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class DialogPrivilegePayBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final FrameLayout f28715a;
+    private final FrameLayout f15025a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f28715a;
+        return this.f15025a;
     }
 }

@@ -27,7 +27,7 @@ public class hn {
             jSONObject.put(com.huawei.openalliance.ad.constant.at.C, adContentData.az());
             jSONObject.put(com.huawei.openalliance.ad.constant.at.ac, adContentData.C());
             jSONObject.put(com.huawei.openalliance.ad.constant.at.S, adContentData.aA());
-            jSONObject.put(com.huawei.openalliance.ad.constant.at.f22943a, str);
+            jSONObject.put(com.huawei.openalliance.ad.constant.at.f9335a, str);
             jSONObject.put("action", str2);
             com.huawei.openalliance.ad.ipc.g.V(context).Code(C, jSONObject.toString(), remoteCallResultCallback, cls);
         } catch (JSONException e) {

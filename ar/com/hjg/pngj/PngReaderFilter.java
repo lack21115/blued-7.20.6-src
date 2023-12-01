@@ -7,7 +7,7 @@ import java.io.IOException;
 public class PngReaderFilter extends FilterInputStream {
 
     /* renamed from: a  reason: collision with root package name */
-    private ChunkSeqReaderPng f3649a;
+    private ChunkSeqReaderPng f3601a;
 
     /* renamed from: ar.com.hjg.pngj.PngReaderFilter$1  reason: invalid class name */
     /* loaded from: source-8756600-dex2jar.jar:ar/com/hjg/pngj/PngReaderFilter$1.class */
@@ -32,23 +32,23 @@ public class PngReaderFilter extends FilterInputStream {
     @Override // java.io.FilterInputStream, java.io.InputStream, java.io.Closeable, java.lang.AutoCloseable
     public void close() throws IOException {
         super.close();
-        this.f3649a.d();
+        this.f3601a.d();
     }
 
     @Override // java.io.FilterInputStream, java.io.InputStream
     public int read() throws IOException {
         int read = super.read();
         if (read > 0) {
-            this.f3649a.b(new byte[]{(byte) read}, 0, 1);
+            this.f3601a.b(new byte[]{(byte) read}, 0, 1);
         }
         return read;
     }
 
-    @Override // java.io.InputStream
+    @Override // java.io.FilterInputStream, java.io.InputStream
     public int read(byte[] bArr) throws IOException {
         int read = super.read(bArr);
         if (read > 0) {
-            this.f3649a.b(bArr, 0, read);
+            this.f3601a.b(bArr, 0, read);
         }
         return read;
     }
@@ -57,7 +57,7 @@ public class PngReaderFilter extends FilterInputStream {
     public int read(byte[] bArr, int i, int i2) throws IOException {
         int read = super.read(bArr, i, i2);
         if (read > 0) {
-            this.f3649a.b(bArr, i, read);
+            this.f3601a.b(bArr, i, read);
         }
         return read;
     }

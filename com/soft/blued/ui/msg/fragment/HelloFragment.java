@@ -54,10 +54,10 @@ import java.util.Collection;
 public class HelloFragment extends BaseFragment implements View.OnClickListener, CallHelloObserver.ICallHelloObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    public NoDataAndLoadFailView f32366a;
+    public NoDataAndLoadFailView f18676a;
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f32367c;
+    private Context f18677c;
     private View d;
     private CommonTopTitleNoTrans e;
     private LinearLayout f;
@@ -79,20 +79,18 @@ public class HelloFragment extends BaseFragment implements View.OnClickListener,
     public BluedUIHttpResponse b = new BluedUIHttpResponse<BluedEntity<UserFindResult, HelloDataExtra>>(getFragmentActive()) { // from class: com.soft.blued.ui.msg.fragment.HelloFragment.5
 
         /* renamed from: a  reason: collision with root package name */
-        boolean f32373a = false;
+        boolean f18683a = false;
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public boolean onUIFailure(int i, String str) {
-            this.f32373a = true;
+            this.f18683a = true;
             return super.onUIFailure(i, str);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIFinish() {
             if (HelloFragment.this.n == null) {
                 HelloFragment.this.a(0);
             }
-            if (!this.f32373a) {
+            if (!this.f18683a) {
                 if (HelloFragment.this.r) {
                     HelloFragment.this.n.setEnableLoadMore(true);
                 } else {
@@ -100,32 +98,30 @@ public class HelloFragment extends BaseFragment implements View.OnClickListener,
                     HelloFragment.this.n.setEnableLoadMore(false);
                 }
                 if (HelloFragment.this.n.getItemCount() == 0) {
-                    HelloFragment.this.f32366a.a();
+                    HelloFragment.this.f18676a.a();
                 }
             } else if (HelloFragment.this.n.getItemCount() == 0) {
-                HelloFragment.this.f32366a.b();
+                HelloFragment.this.f18676a.b();
             }
             HelloFragment.this.n.notifyDataSetChanged();
             HelloFragment.this.l.j();
             HelloFragment.this.n.loadMoreComplete();
-            this.f32373a = false;
+            this.f18683a = false;
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIStart() {
             super.onUIStart();
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIUpdate(BluedEntity<UserFindResult, HelloDataExtra> bluedEntity) {
             if (bluedEntity != null) {
                 if (bluedEntity.extra != null) {
-                    HelloFragment.this.a(bluedEntity.extra.table_type);
+                    HelloFragment.this.a(((HelloDataExtra) bluedEntity.extra).table_type);
                 }
                 HelloFragment.this.r = bluedEntity.hasMore();
                 if (!bluedEntity.hasData()) {
                     HelloFragment.this.n.setNewData(null);
-                    HelloFragment.this.f32366a.a();
+                    HelloFragment.this.f18676a.a();
                     return;
                 }
                 if (HelloFragment.this.p == 1) {
@@ -133,12 +129,11 @@ public class HelloFragment extends BaseFragment implements View.OnClickListener,
                 } else {
                     HelloFragment.this.n.addData((Collection<? extends UserFindResult>) bluedEntity.data);
                 }
-                HelloFragment.this.f32366a.d();
+                HelloFragment.this.f18676a.d();
                 HelloFragment.this.n.notifyDataSetChanged();
             }
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public BluedEntity<UserFindResult, HelloDataExtra> parseData(String str) {
             BluedEntity<UserFindResult, HelloDataExtra> parseData = super.parseData(str);
             if (parseData != null) {
@@ -148,8 +143,8 @@ public class HelloFragment extends BaseFragment implements View.OnClickListener,
                     if (i2 >= parseData.data.size()) {
                         break;
                     }
-                    parseData.data.get(i2).distance = DistanceUtils.a(parseData.data.get(i2).distance, BlueAppLocal.c(), false);
-                    parseData.data.get(i2).last_operate = TimeAndDateUtils.a(HelloFragment.this.f32367c, TimeAndDateUtils.c(parseData.data.get(i2).last_operate));
+                    ((UserFindResult) parseData.data.get(i2)).distance = DistanceUtils.a(((UserFindResult) parseData.data.get(i2)).distance, BlueAppLocal.c(), false);
+                    ((UserFindResult) parseData.data.get(i2)).last_operate = TimeAndDateUtils.a(HelloFragment.this.f18677c, TimeAndDateUtils.c(((UserFindResult) parseData.data.get(i2)).last_operate));
                     i = i2 + 1;
                 }
             }
@@ -185,14 +180,14 @@ public class HelloFragment extends BaseFragment implements View.OnClickListener,
         Log.v("drb", "initAdapter:" + i);
         if (this.n == null) {
             this.n = new PeopleHelloQuickAdapter(new ArrayList(), getActivity(), getFragmentActive(), "msg_hello_detail", this.m, this);
-            GridLayoutManager gridLayoutManager = new GridLayoutManager(this.f32367c, 3);
+            GridLayoutManager gridLayoutManager = new GridLayoutManager(this.f18677c, 3);
             this.l.getLayoutParams();
             ConstraintLayout.LayoutParams layoutParams = (ConstraintLayout.LayoutParams) this.l.getLayoutParams();
-            layoutParams.leftMargin = DensityUtils.a(this.f32367c, 3.0f);
+            layoutParams.leftMargin = DensityUtils.a(this.f18677c, 3.0f);
             layoutParams.rightMargin = 0;
             this.l.setLayoutParams(layoutParams);
             this.m.setLayoutManager(gridLayoutManager);
-            this.n.setEmptyView(this.f32366a);
+            this.n.setEmptyView((View) this.f18676a);
             this.n.a("intelligent".equals(this.s) ? MessageProtos.SortType.AI_SORT_TYPE : MessageProtos.SortType.DISTANCE_SORT_TYPE);
             this.n.setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() { // from class: com.soft.blued.ui.msg.fragment.HelloFragment.3
                 @Override // com.chad.library.adapter.base.BaseQuickAdapter.RequestLoadMoreListener
@@ -221,10 +216,10 @@ public class HelloFragment extends BaseFragment implements View.OnClickListener,
             this.p = 1;
         }
         if (this.u) {
-            UserHttpUtils.a(this.f32367c, this.b, this.p + "", this.q + "", this.s, this.t, "", getFragmentActive());
+            UserHttpUtils.a(this.f18677c, this.b, this.p + "", this.q + "", this.s, this.t, "", getFragmentActive());
             return;
         }
-        UserHttpUtils.a(this.f32367c, this.b, this.p + "", this.q + "", "", "", "", getFragmentActive());
+        UserHttpUtils.a(this.f18677c, this.b, this.p + "", this.q + "", "", "", "", getFragmentActive());
     }
 
     static /* synthetic */ int b(HelloFragment helloFragment) {
@@ -257,34 +252,34 @@ public class HelloFragment extends BaseFragment implements View.OnClickListener,
                     return;
                 }
             }
-            CallHelloManager.a().a(this.f32367c, getFragmentActive(), 8);
+            CallHelloManager.a().a(this.f18677c, (IRequestHost) getFragmentActive(), 8);
         } else if (callMeStatusData.free_count != 0) {
             this.o.setBtnText(R.string.free_call);
         } else if (callMeStatusData.pay_count == 0) {
             this.o.setBtnText(R.string.open_call);
         } else {
             FloatFooterView floatFooterView = this.o;
-            floatFooterView.setBtnText(this.f32367c.getString(R.string.open_call_x) + " X " + callMeStatusData.pay_count);
+            floatFooterView.setBtnText(this.f18677c.getString(R.string.open_call_x) + " X " + callMeStatusData.pay_count);
         }
     }
 
     private void c() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.d.findViewById(2131370749);
-        this.e = commonTopTitleNoTrans;
-        commonTopTitleNoTrans.a();
+        CommonTopTitleNoTrans findViewById = this.d.findViewById(R.id.top_title);
+        this.e = findViewById;
+        findViewById.a();
         this.e.setLeftImg(2131233902);
         this.e.setLeftClickListener(this);
-        this.e.setCenterText(R.string.hello_ing_title);
+        this.e.setCenterText((int) R.string.hello_ing_title);
     }
 
     private void d() {
         this.f = (LinearLayout) this.d.findViewById(R.id.layout_filter);
-        ShapeTextView shapeTextView = (ShapeTextView) this.d.findViewById(R.id.tv_sort_left);
-        this.g = shapeTextView;
-        shapeTextView.setOnClickListener(this);
-        ShapeTextView shapeTextView2 = (ShapeTextView) this.d.findViewById(R.id.tv_sort_right);
-        this.h = shapeTextView2;
-        shapeTextView2.setOnClickListener(this);
+        ShapeTextView findViewById = this.d.findViewById(R.id.tv_sort_left);
+        this.g = findViewById;
+        findViewById.setOnClickListener(this);
+        ShapeTextView findViewById2 = this.d.findViewById(R.id.tv_sort_right);
+        this.h = findViewById2;
+        findViewById2.setOnClickListener(this);
         LinearLayout linearLayout = (LinearLayout) this.d.findViewById(R.id.btn_filter);
         this.i = linearLayout;
         linearLayout.setOnClickListener(this);
@@ -307,7 +302,7 @@ public class HelloFragment extends BaseFragment implements View.OnClickListener,
         floatFooterView.setOnBtnClickListener(new FloatFooterView.OnBtnClickListener() { // from class: com.soft.blued.ui.msg.fragment.HelloFragment.1
             @Override // com.blued.community.view.FloatFooterView.OnBtnClickListener
             public void onPostFeedClick() {
-                CallHelloManager.a().a(HelloFragment.this.f32367c, HelloFragment.this.getFragmentActive(), 8, new CallHelloManager.ToOpenListener() { // from class: com.soft.blued.ui.msg.fragment.HelloFragment.1.1
+                CallHelloManager.a().a(HelloFragment.this.f18677c, (IRequestHost) HelloFragment.this.getFragmentActive(), 8, new CallHelloManager.ToOpenListener() { // from class: com.soft.blued.ui.msg.fragment.HelloFragment.1.1
                     @Override // com.soft.blued.ui.find.manager.CallHelloManager.ToOpenListener
                     public void done(boolean z) {
                         if (z) {
@@ -357,15 +352,15 @@ public class HelloFragment extends BaseFragment implements View.OnClickListener,
     }
 
     private void g() {
-        ShapeHelper.a((ShapeHelper.ShapeView) this.g, 2131102254);
-        ShapeHelper.a((ShapeHelper.ShapeView) this.h, 2131102263);
+        ShapeHelper.a(this.g, 2131102254);
+        ShapeHelper.a(this.h, 2131102263);
         this.s = "intelligent";
         BluedPreferences.Z("intelligent");
     }
 
     private void h() {
-        ShapeHelper.a((ShapeHelper.ShapeView) this.h, 2131102254);
-        ShapeHelper.a((ShapeHelper.ShapeView) this.g, 2131102263);
+        ShapeHelper.a(this.h, 2131102254);
+        ShapeHelper.a(this.g, 2131102263);
         this.s = "distance";
         BluedPreferences.Z("distance");
     }
@@ -380,34 +375,33 @@ public class HelloFragment extends BaseFragment implements View.OnClickListener,
     }
 
     private void j() {
-        this.j.setTextColor(BluedSkinUtils.a(this.f32367c, 2131102254));
-        this.k.setImageDrawable(BluedSkinUtils.b(this.f32367c, R.drawable.icon_nearby_filter_off));
+        this.j.setTextColor(BluedSkinUtils.a(this.f18677c, 2131102254));
+        this.k.setImageDrawable(BluedSkinUtils.b(this.f18677c, (int) R.drawable.icon_nearby_filter_off));
     }
 
     private void k() {
-        this.j.setTextColor(BluedSkinUtils.a(this.f32367c, 2131101766));
-        this.k.setImageDrawable(BluedSkinUtils.b(this.f32367c, R.drawable.icon_nearby_filter_on));
+        this.j.setTextColor(BluedSkinUtils.a(this.f18677c, 2131101766));
+        this.k.setImageDrawable(BluedSkinUtils.b(this.f18677c, (int) R.drawable.icon_nearby_filter_on));
     }
 
     private void l() {
-        NoDataAndLoadFailView noDataAndLoadFailView = new NoDataAndLoadFailView(this.f32367c);
-        this.f32366a = noDataAndLoadFailView;
-        noDataAndLoadFailView.setNoDataStr(R.string.people_search_no_data_tip);
-        this.f32366a.setNoDataImg(2131233637);
-        this.f32366a.d();
-        PullToRefreshRecyclerView pullToRefreshRecyclerView = (PullToRefreshRecyclerView) this.d.findViewById(2131364131);
-        this.l = pullToRefreshRecyclerView;
-        this.m = pullToRefreshRecyclerView.getRefreshableView();
+        NoDataAndLoadFailView noDataAndLoadFailView = new NoDataAndLoadFailView(this.f18677c);
+        this.f18676a = noDataAndLoadFailView;
+        noDataAndLoadFailView.setNoDataStr((int) R.string.people_search_no_data_tip);
+        this.f18676a.setNoDataImg(2131233637);
+        this.f18676a.d();
+        PullToRefreshRecyclerView findViewById = this.d.findViewById(R.id.grid_view);
+        this.l = findViewById;
+        this.m = (RecyclerView) findViewById.getRefreshableView();
         this.l.setRefreshEnabled(true);
         this.l.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener<RecyclerView>() { // from class: com.soft.blued.ui.msg.fragment.HelloFragment.2
-            @Override // com.blued.android.framework.view.pulltorefresh.PullToRefreshBase.OnRefreshListener
             public void onRefresh(PullToRefreshBase<RecyclerView> pullToRefreshBase) {
                 HelloFragment.this.a(true);
             }
         });
         this.m.addOnScrollListener(this.v);
         this.l.k();
-        CallHelloManager.a().a(this.f32367c, getFragmentActive(), 8, (CallHelloManager.ToOpenListener) null);
+        CallHelloManager.a().a(this.f18677c, (IRequestHost) getFragmentActive(), 8, (CallHelloManager.ToOpenListener) null);
     }
 
     public String a() {
@@ -473,12 +467,11 @@ public class HelloFragment extends BaseFragment implements View.OnClickListener,
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         View view = this.d;
         if (view == null) {
             this.d = layoutInflater.inflate(R.layout.fragment_hello, viewGroup, false);
-            this.f32367c = getActivity();
+            this.f18677c = getActivity();
             b();
             c();
             d();

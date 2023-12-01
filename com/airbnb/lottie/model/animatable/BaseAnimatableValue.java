@@ -7,9 +7,7 @@ import java.util.List;
 
 /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/model/animatable/BaseAnimatableValue.class */
 abstract class BaseAnimatableValue<V, O> implements AnimatableValue<V, O> {
-
-    /* renamed from: a  reason: collision with root package name */
-    final List<Keyframe<V>> f4334a;
+    final List<Keyframe<V>> a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public BaseAnimatableValue(V v) {
@@ -18,11 +16,11 @@ abstract class BaseAnimatableValue<V, O> implements AnimatableValue<V, O> {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public BaseAnimatableValue(List<Keyframe<V>> list) {
-        this.f4334a = list;
+        this.a = list;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:7:0x0031, code lost:
-        if (r3.f4334a.get(0).e() != false) goto L10;
+        if (r3.a.get(0).e() != false) goto L10;
      */
     @Override // com.airbnb.lottie.model.animatable.AnimatableValue
     /*
@@ -33,7 +31,7 @@ abstract class BaseAnimatableValue<V, O> implements AnimatableValue<V, O> {
         /*
             r3 = this;
             r0 = r3
-            java.util.List<com.airbnb.lottie.value.Keyframe<V>> r0 = r0.f4334a
+            java.util.List<com.airbnb.lottie.value.Keyframe<V>> r0 = r0.a
             boolean r0 = r0.isEmpty()
             r4 = r0
             r0 = 0
@@ -43,14 +41,14 @@ abstract class BaseAnimatableValue<V, O> implements AnimatableValue<V, O> {
             r0 = r5
             r4 = r0
             r0 = r3
-            java.util.List<com.airbnb.lottie.value.Keyframe<V>> r0 = r0.f4334a
+            java.util.List<com.airbnb.lottie.value.Keyframe<V>> r0 = r0.a
             int r0 = r0.size()
             r1 = 1
             if (r0 != r1) goto L36
             r0 = r5
             r4 = r0
             r0 = r3
-            java.util.List<com.airbnb.lottie.value.Keyframe<V>> r0 = r0.f4334a
+            java.util.List<com.airbnb.lottie.value.Keyframe<V>> r0 = r0.a
             r1 = 0
             java.lang.Object r0 = r0.get(r1)
             com.airbnb.lottie.value.Keyframe r0 = (com.airbnb.lottie.value.Keyframe) r0
@@ -68,14 +66,14 @@ abstract class BaseAnimatableValue<V, O> implements AnimatableValue<V, O> {
 
     @Override // com.airbnb.lottie.model.animatable.AnimatableValue
     public List<Keyframe<V>> c() {
-        return this.f4334a;
+        return this.a;
     }
 
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        if (!this.f4334a.isEmpty()) {
+        if (!this.a.isEmpty()) {
             sb.append("values=");
-            sb.append(Arrays.toString(this.f4334a.toArray()));
+            sb.append(Arrays.toString(this.a.toArray()));
         }
         return sb.toString();
     }

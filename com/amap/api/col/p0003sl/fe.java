@@ -1,11 +1,12 @@
 package com.amap.api.col.p0003sl;
 
 import android.text.TextUtils;
+import android.view.Window;
+import com.alipay.sdk.util.i;
 import com.amap.api.services.core.AMapException;
 import com.amap.api.services.core.LatLonPoint;
 import com.android.ims.ImsReasonInfo;
-import com.autonavi.base.amap.mapcore.tools.GLMapStaticValue;
-import com.igexin.sdk.PushConsts;
+import com.anythink.core.common.b.g;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.text.ParseException;
@@ -61,9 +62,9 @@ public final class fe {
         if (latLonPoint == null) {
             return "";
         }
-        double a2 = a(latLonPoint.getLongitude());
-        double a3 = a(latLonPoint.getLatitude());
-        return a2 + "," + a3;
+        double a = a(latLonPoint.getLongitude());
+        double a2 = a(latLonPoint.getLatitude());
+        return a + "," + a2;
     }
 
     public static String a(Date date) {
@@ -71,7 +72,7 @@ public final class fe {
     }
 
     public static String a(List<LatLonPoint> list) {
-        return a(list, ";");
+        return a(list, i.b);
     }
 
     public static String a(List<LatLonPoint> list, String str) {
@@ -88,11 +89,11 @@ public final class fe {
             }
             LatLonPoint latLonPoint = list.get(i2);
             if (latLonPoint != null) {
-                double a2 = a(latLonPoint.getLongitude());
-                double a3 = a(latLonPoint.getLatitude());
-                stringBuffer.append(a2);
+                double a = a(latLonPoint.getLongitude());
+                double a2 = a(latLonPoint.getLatitude());
+                stringBuffer.append(a);
                 stringBuffer.append(",");
-                stringBuffer.append(a3);
+                stringBuffer.append(a2);
                 stringBuffer.append(str);
             }
             i = i2 + 1;
@@ -117,19 +118,19 @@ public final class fe {
                     throw new AMapException(AMapException.AMAP_INVALID_USER_KEY, 2, str);
                 case 10002:
                     throw new AMapException(AMapException.AMAP_SERVICE_NOT_AVAILBALE, 2, str);
-                case GLMapStaticValue.AM_CALLBACK_INDOOR_NETWORK_ERR /* 10003 */:
+                case 10003:
                     throw new AMapException(AMapException.AMAP_DAILY_QUERY_OVER_LIMIT, 2, str);
                 case ImsReasonInfo.CODE_CALL_DROP_IWLAN_TO_LTE_UNAVAILABLE /* 10004 */:
                     throw new AMapException(AMapException.AMAP_ACCESS_TOO_FREQUENT, 2, str);
-                case PushConsts.CHECK_CLIENTID /* 10005 */:
+                case 10005:
                     throw new AMapException(AMapException.AMAP_INVALID_USER_IP, 2, str);
-                case PushConsts.THIRDPART_FEEDBACK /* 10006 */:
+                case 10006:
                     throw new AMapException(AMapException.AMAP_INVALID_USER_DOMAIN, 2, str);
-                case PushConsts.GET_SDKONLINESTATE /* 10007 */:
+                case 10007:
                     throw new AMapException("用户签名未通过", 2, str);
-                case PushConsts.GET_SDKSERVICEPID /* 10008 */:
+                case 10008:
                     throw new AMapException(AMapException.AMAP_INVALID_USER_SCODE, 2, str);
-                case PushConsts.SET_TAG_RESULT /* 10009 */:
+                case 10009:
                     throw new AMapException(AMapException.AMAP_USERKEY_PLAT_NOMATCH, 2, str);
                 case 10010:
                     throw new AMapException(AMapException.AMAP_IP_QUERY_OVER_LIMIT, 2, str);
@@ -141,13 +142,13 @@ public final class fe {
                     throw new AMapException(AMapException.AMAP_USER_KEY_RECYCLED, 2, str);
                 default:
                     switch (i) {
-                        case 20000:
+                        case Window.PROGRESS_SECONDARY_START /* 20000 */:
                             throw new AMapException(AMapException.AMAP_SERVICE_INVALID_PARAMS, 2, str);
-                        case PushConsts.SETTAG_ERROR_COUNT /* 20001 */:
+                        case 20001:
                             throw new AMapException(AMapException.AMAP_SERVICE_MISSING_REQUIRED_PARAMS, 2, str);
                         case 20002:
                             throw new AMapException(AMapException.AMAP_SERVICE_ILLEGAL_REQUEST, 2, str);
-                        case PushConsts.SETTAG_ERROR_REPEAT /* 20003 */:
+                        case 20003:
                             throw new AMapException(AMapException.AMAP_SERVICE_UNKNOWN_ERROR, 2, str);
                         default:
                             switch (i) {
@@ -163,11 +164,11 @@ public final class fe {
                                     switch (i) {
                                         case 30000:
                                             throw new AMapException(AMapException.AMAP_ENGINE_RESPONSE_ERROR, 2, str);
-                                        case PushConsts.ALIAS_ERROR_FREQUENCY /* 30001 */:
+                                        case 30001:
                                             throw new AMapException(AMapException.AMAP_ENGINE_RESPONSE_DATA_ERROR, 2, str);
-                                        case PushConsts.ALIAS_OPERATE_PARAM_ERROR /* 30002 */:
+                                        case 30002:
                                             throw new AMapException(AMapException.AMAP_ENGINE_CONNECT_TIMEOUT, 2, str);
-                                        case PushConsts.ALIAS_REQUEST_FILTER /* 30003 */:
+                                        case 30003:
                                             throw new AMapException(AMapException.AMAP_ENGINE_RETURN_TIMEOUT, 2, str);
                                         default:
                                             switch (i) {
@@ -261,7 +262,7 @@ public final class fe {
                     }
                     a(jSONObject.getInt("infocode"), jSONObject.getString("info"));
                 }
-                int optInt = jSONObject.optInt("code");
+                int optInt = jSONObject.optInt(g.c.b);
                 if (optInt == 0) {
                     return;
                 }

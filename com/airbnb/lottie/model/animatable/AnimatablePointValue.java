@@ -14,7 +14,7 @@ public class AnimatablePointValue extends BaseAnimatableValue<PointF, PointF> {
 
     @Override // com.airbnb.lottie.model.animatable.AnimatableValue
     public BaseKeyframeAnimation<PointF, PointF> a() {
-        return new PointKeyframeAnimation(this.f4334a);
+        return new PointKeyframeAnimation(this.a);
     }
 
     @Override // com.airbnb.lottie.model.animatable.BaseAnimatableValue, com.airbnb.lottie.model.animatable.AnimatableValue

@@ -6,17 +6,13 @@ import java.util.List;
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/a/b.class */
 public class b {
     private static volatile b b;
-
-    /* renamed from: a  reason: collision with root package name */
-    final String f6446a = b.class.getName();
-
-    /* renamed from: c  reason: collision with root package name */
-    private com.anythink.core.common.c.f f6447c;
+    final String a = b.class.getName();
+    private com.anythink.core.common.c.f c;
     private com.anythink.core.common.c.e d;
 
     private b() {
         if (n.a().g() != null) {
-            this.f6447c = com.anythink.core.common.c.f.a(com.anythink.core.common.c.c.a(n.a().g()));
+            this.c = com.anythink.core.common.c.f.a(com.anythink.core.common.c.c.a(n.a().g()));
             this.d = com.anythink.core.common.c.e.a(com.anythink.core.common.c.c.a(n.a().g()));
         }
     }
@@ -37,7 +33,7 @@ public class b {
     }
 
     public final List<d> a(int i) {
-        return this.f6447c.a(i);
+        return this.c.a(i);
     }
 
     public final void a(final com.anythink.core.common.e.g gVar) {
@@ -47,11 +43,11 @@ public class b {
             @Override // java.lang.Runnable
             public final void run() {
                 f fVar = new f();
-                fVar.f6452a = gVar.T();
+                fVar.a = gVar.T();
                 fVar.b = gVar.U();
-                fVar.f6454c = gVar.V();
+                fVar.c = gVar.V();
                 fVar.d = 0;
-                b.this.f6447c.a(fVar);
+                b.this.c.a(fVar);
             }
         });
     }
@@ -65,7 +61,7 @@ public class b {
         n.b(new Runnable() { // from class: com.anythink.core.common.a.b.3
             @Override // java.lang.Runnable
             public final void run() {
-                b.this.f6447c.c();
+                b.this.c.c();
             }
         });
     }
@@ -77,11 +73,11 @@ public class b {
             @Override // java.lang.Runnable
             public final void run() {
                 f fVar = new f();
-                fVar.f6452a = gVar.T();
+                fVar.a = gVar.T();
                 fVar.b = gVar.U();
-                fVar.f6454c = gVar.V();
+                fVar.c = gVar.V();
                 fVar.d = 1;
-                b.this.f6447c.b(fVar);
+                b.this.c.b(fVar);
             }
         });
     }
@@ -98,9 +94,9 @@ public class b {
                 public final void run() {
                     new StringBuilder("insertDspOfferInstallRecord dspOfferId:").append(gVar.U());
                     e eVar = new e();
-                    eVar.f6452a = gVar.T();
+                    eVar.a = gVar.T();
                     eVar.b = gVar.U();
-                    eVar.f6453c = gVar.B();
+                    eVar.c = gVar.B();
                     b.this.d.a(eVar);
                 }
             });

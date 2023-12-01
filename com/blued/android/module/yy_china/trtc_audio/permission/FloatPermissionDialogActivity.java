@@ -45,9 +45,8 @@ public class FloatPermissionDialogActivity extends BaseActivity {
         overridePendingTransition(0, 0);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.app.Activity
-    public void onActivityResult(int i, int i2, Intent intent) {
+    protected void onActivityResult(int i, int i2, Intent intent) {
         super.onActivityResult(i, i2, intent);
         if (i == 1) {
             if (Build.VERSION.SDK_INT >= 23) {
@@ -98,7 +97,7 @@ public class FloatPermissionDialogActivity extends BaseActivity {
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view) {
                     Tracker.onClick(view);
-                    Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+                    Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
                     intent.setData(Uri.fromParts("package", FloatPermissionDialogActivity.this.getPackageName(), null));
                     FloatPermissionDialogActivity.this.startActivity(intent);
                     FloatPermissionDialogActivity.this.c();

@@ -1,5 +1,6 @@
 package kotlinx.coroutines.flow;
 
+import com.android.ims.ImsReasonInfo;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -12,16 +13,12 @@ import kotlinx.coroutines.channels.ProducerScope;
 import kotlinx.coroutines.flow.internal.NullSurrogateKt;
 
 @Metadata
-@DebugMetadata(b = "Delay.kt", c = {352}, d = "invokeSuspend", e = "kotlinx.coroutines.flow.FlowKt__DelayKt$debounceInternal$1$values$1")
+@DebugMetadata(b = "Delay.kt", c = {ImsReasonInfo.CODE_SIP_SERVER_NOT_IMPLEMENTED}, d = "invokeSuspend", e = "kotlinx.coroutines.flow.FlowKt__DelayKt$debounceInternal$1$values$1")
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt__DelayKt$debounceInternal$1$values$1.class */
 final class FlowKt__DelayKt$debounceInternal$1$values$1 extends SuspendLambda implements Function2<ProducerScope<? super Object>, Continuation<? super Unit>, Object> {
-
-    /* renamed from: a  reason: collision with root package name */
-    int f43128a;
+    int a;
     final /* synthetic */ Flow<T> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private /* synthetic */ Object f43129c;
+    private /* synthetic */ Object c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -34,24 +31,24 @@ final class FlowKt__DelayKt$debounceInternal$1$values$1 extends SuspendLambda im
     @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(ProducerScope<Object> producerScope, Continuation<? super Unit> continuation) {
-        return ((FlowKt__DelayKt$debounceInternal$1$values$1) create(producerScope, continuation)).invokeSuspend(Unit.f42314a);
+        return ((FlowKt__DelayKt$debounceInternal$1$values$1) create(producerScope, continuation)).invokeSuspend(Unit.a);
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
         FlowKt__DelayKt$debounceInternal$1$values$1 flowKt__DelayKt$debounceInternal$1$values$1 = new FlowKt__DelayKt$debounceInternal$1$values$1(this.b, continuation);
-        flowKt__DelayKt$debounceInternal$1$values$1.f43129c = obj;
+        flowKt__DelayKt$debounceInternal$1$values$1.c = obj;
         return flowKt__DelayKt$debounceInternal$1$values$1;
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        Object a2 = IntrinsicsKt.a();
-        int i = this.f43128a;
+        Object a = IntrinsicsKt.a();
+        int i = this.a;
         if (i == 0) {
             ResultKt.a(obj);
-            final ProducerScope producerScope = (ProducerScope) this.f43129c;
-            this.f43128a = 1;
+            final ProducerScope producerScope = (ProducerScope) this.c;
+            this.a = 1;
             if (this.b.a(new FlowCollector<T>() { // from class: kotlinx.coroutines.flow.FlowKt__DelayKt$debounceInternal$1$values$1$invokeSuspend$$inlined$collect$1
                 /* JADX WARN: Multi-variable type inference failed */
                 /* JADX WARN: Type inference failed for: r0v9, types: [kotlinx.coroutines.internal.Symbol] */
@@ -60,19 +57,19 @@ final class FlowKt__DelayKt$debounceInternal$1$values$1 extends SuspendLambda im
                     ProducerScope producerScope2 = ProducerScope.this;
                     T t2 = t;
                     if (t == null) {
-                        t2 = NullSurrogateKt.f43498a;
+                        t2 = NullSurrogateKt.a;
                     }
-                    Object a3 = producerScope2.a(t2, continuation);
-                    return a3 == IntrinsicsKt.a() ? a3 : Unit.f42314a;
+                    Object a2 = producerScope2.a(t2, continuation);
+                    return a2 == IntrinsicsKt.a() ? a2 : Unit.a;
                 }
-            }, this) == a2) {
-                return a2;
+            }, this) == a) {
+                return a;
             }
         } else if (i != 1) {
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         } else {
             ResultKt.a(obj);
         }
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

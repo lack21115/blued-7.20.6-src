@@ -6,18 +6,18 @@ import com.tencent.smtt.export.external.jscore.interfaces.IX5JsError;
 public class JsError {
 
     /* renamed from: a  reason: collision with root package name */
-    private final IX5JsError f38706a;
+    private final IX5JsError f25015a;
 
     /* JADX INFO: Access modifiers changed from: protected */
     public JsError(IX5JsError iX5JsError) {
-        this.f38706a = iX5JsError;
+        this.f25015a = iX5JsError;
     }
 
     public String getMessage() {
-        return this.f38706a.getMessage();
+        return this.f25015a.getMessage();
     }
 
     public String getStack() {
-        return this.f38706a.getStack();
+        return this.f25015a.getStack();
     }
 }

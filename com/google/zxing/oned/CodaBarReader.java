@@ -49,7 +49,7 @@ public final class CodaBarReader extends OneDReader {
         this.counterLength = i3;
         if (i3 >= iArr.length) {
             int[] iArr2 = new int[i3 << 1];
-            System.arraycopy((Object) iArr, 0, (Object) iArr2, 0, i3);
+            System.arraycopy(iArr, 0, iArr2, 0, i3);
             this.counters = iArr2;
         }
     }

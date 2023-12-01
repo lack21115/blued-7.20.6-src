@@ -2,13 +2,11 @@ package com.amap.api.services.route;
 
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/services/route/Navi.class */
 public class Navi {
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f5714a;
+    private String a;
     private String b;
 
     public String getAction() {
-        return this.f5714a;
+        return this.a;
     }
 
     public String getAssistantAction() {
@@ -16,7 +14,7 @@ public class Navi {
     }
 
     public void setAction(String str) {
-        this.f5714a = str;
+        this.a = str;
     }
 
     public void setAssistantAction(String str) {

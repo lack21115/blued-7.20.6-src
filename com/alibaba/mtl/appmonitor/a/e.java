@@ -18,16 +18,12 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alibaba/mtl/appmonitor/a/e.class */
 public class e {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static e f4454a;
+    private static e a;
 
     /* renamed from: a  reason: collision with other field name */
     private AtomicInteger f19a = new AtomicInteger(0);
     private AtomicInteger b = new AtomicInteger(0);
-
-    /* renamed from: c  reason: collision with root package name */
-    private AtomicInteger f4455c = new AtomicInteger(0);
+    private AtomicInteger c = new AtomicInteger(0);
     private Map<UTDimensionValueSet, MetricValueSet> h = new ConcurrentHashMap();
     private Map<String, c> g = new ConcurrentHashMap();
 
@@ -55,10 +51,10 @@ public class e {
         e eVar;
         synchronized (e.class) {
             try {
-                if (f4454a == null) {
-                    f4454a = new e();
+                if (a == null) {
+                    a = new e();
                 }
-                eVar = f4454a;
+                eVar = a;
             } catch (Throwable th) {
                 throw th;
             }
@@ -90,7 +86,7 @@ public class e {
         if (incrementAndGet >= fVar.b()) {
             i.a("EventRepo", fVar.toString(), " event size exceed trigger count.");
             atomicInteger.set(0);
-            m2137a(fVar.m2139a());
+            m8580a(fVar.m8582a());
         }
     }
 
@@ -102,7 +98,7 @@ public class e {
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public Map<UTDimensionValueSet, List<d>> m2136a(int i) {
+    public Map<UTDimensionValueSet, List<d>> m8579a(int i) {
         HashMap hashMap = new HashMap();
         synchronized (this.h) {
             ArrayList arrayList = new ArrayList(this.h.keySet());
@@ -124,12 +120,12 @@ public class e {
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public void m2137a(int i) {
-        final Map<UTDimensionValueSet, List<d>> m2136a = m2136a(i);
+    public void m8580a(int i) {
+        final Map<UTDimensionValueSet, List<d>> m8579a = m8579a(i);
         r.a().b(new Runnable() { // from class: com.alibaba.mtl.appmonitor.a.e.1
             @Override // java.lang.Runnable
             public void run() {
-                com.alibaba.mtl.appmonitor.f.c.b(m2136a);
+                com.alibaba.mtl.appmonitor.f.c.b(m8579a);
             }
         });
     }
@@ -153,7 +149,7 @@ public class e {
             gVar.a(dimensionValueSet, measureValueSet);
             com.alibaba.mtl.appmonitor.f.c.a(a2, gVar);
         }
-        a(f.a(i), this.f4455c);
+        a(f.a(i), this.c);
     }
 
     public void a(int i, String str, String str2, String str3) {
@@ -246,14 +242,14 @@ public class e {
 
     public void a(String str, String str2, boolean z) {
         c cVar = this.g.get(str);
-        if (cVar == null || !cVar.m2135a(str2)) {
+        if (cVar == null || !cVar.m8578a(str2)) {
             return;
         }
         this.g.remove(str);
         if (z) {
             b(cVar.o, cVar.p);
         }
-        a(cVar.e, cVar.o, cVar.p, cVar.m2134a(), cVar.a());
+        a(cVar.e, cVar.o, cVar.p, cVar.m8577a(), cVar.a());
         com.alibaba.mtl.appmonitor.c.a.a().a((com.alibaba.mtl.appmonitor.c.a) cVar);
     }
 

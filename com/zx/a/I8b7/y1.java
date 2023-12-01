@@ -11,22 +11,22 @@ import org.json.JSONObject;
 public class y1 extends p0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ConcurrentHashMap<String, LinkedList<ZXIDChangedListener>> f42231a = new ConcurrentHashMap<>();
+    public final ConcurrentHashMap<String, LinkedList<ZXIDChangedListener>> f28540a = new ConcurrentHashMap<>();
 
     @Override // com.zx.a.I8b7.p0
     public void a(String str) {
         try {
             JSONObject jSONObject = new JSONObject(str);
             int i = jSONObject.getInt("code");
-            for (String str2 : this.f42231a.keySet()) {
-                Iterator<ZXIDChangedListener> it = this.f42231a.get(str2).iterator();
+            for (String str2 : this.f28540a.keySet()) {
+                Iterator<ZXIDChangedListener> it = this.f28540a.get(str2).iterator();
                 while (it.hasNext()) {
                     ZXIDChangedListener next = it.next();
                     if (i == 0) {
                         next.onChange(a(str2, jSONObject.getString("data")));
                     }
                 }
-                this.f42231a.remove(str2);
+                this.f28540a.remove(str2);
             }
         } catch (JSONException e) {
             e.printStackTrace();

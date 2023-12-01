@@ -1,9 +1,9 @@
 package java.util;
 
-import com.huawei.openalliance.ad.constant.bc;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectStreamField;
+import java.net.HttpURLConnection;
 
 /* loaded from: source-2895416-dex2jar.jar:java/util/SimpleTimeZone.class */
 public class SimpleTimeZone extends TimeZone {
@@ -14,7 +14,7 @@ public class SimpleTimeZone extends TimeZone {
     public static final int STANDARD_TIME = 1;
     public static final int UTC_TIME = 2;
     public static final int WALL_TIME = 0;
-    private static final ObjectStreamField[] serialPersistentFields = {new ObjectStreamField("dstSavings", Integer.TYPE), new ObjectStreamField("endDay", Integer.TYPE), new ObjectStreamField("endDayOfWeek", Integer.TYPE), new ObjectStreamField(bc.e.Z, Integer.TYPE), new ObjectStreamField("endMonth", Integer.TYPE), new ObjectStreamField("endTime", Integer.TYPE), new ObjectStreamField("monthLength", byte[].class), new ObjectStreamField("rawOffset", Integer.TYPE), new ObjectStreamField("serialVersionOnStream", Integer.TYPE), new ObjectStreamField("startDay", Integer.TYPE), new ObjectStreamField("startDayOfWeek", Integer.TYPE), new ObjectStreamField("startMode", Integer.TYPE), new ObjectStreamField("startMonth", Integer.TYPE), new ObjectStreamField("startTime", Integer.TYPE), new ObjectStreamField("startYear", Integer.TYPE), new ObjectStreamField("useDaylight", Boolean.TYPE)};
+    private static final ObjectStreamField[] serialPersistentFields = {new ObjectStreamField("dstSavings", Integer.TYPE), new ObjectStreamField("endDay", Integer.TYPE), new ObjectStreamField("endDayOfWeek", Integer.TYPE), new ObjectStreamField("endMode", Integer.TYPE), new ObjectStreamField("endMonth", Integer.TYPE), new ObjectStreamField("endTime", Integer.TYPE), new ObjectStreamField("monthLength", byte[].class), new ObjectStreamField("rawOffset", Integer.TYPE), new ObjectStreamField("serialVersionOnStream", Integer.TYPE), new ObjectStreamField("startDay", Integer.TYPE), new ObjectStreamField("startDayOfWeek", Integer.TYPE), new ObjectStreamField("startMode", Integer.TYPE), new ObjectStreamField("startMonth", Integer.TYPE), new ObjectStreamField("startTime", Integer.TYPE), new ObjectStreamField("startYear", Integer.TYPE), new ObjectStreamField("useDaylight", Boolean.TYPE)};
     private static final long serialVersionUID = -403250971215465050L;
     private int dstSavings;
     private int endDay;
@@ -32,13 +32,13 @@ public class SimpleTimeZone extends TimeZone {
     private boolean useDaylight;
 
     public SimpleTimeZone(int i, String str) {
-        this.dstSavings = 3600000;
+        this.dstSavings = Grego.MILLIS_PER_HOUR;
         setID(str);
         this.rawOffset = i;
     }
 
     public SimpleTimeZone(int i, String str, int i2, int i3, int i4, int i5, int i6, int i7, int i8, int i9) {
-        this(i, str, i2, i3, i4, i5, i6, i7, i8, i9, 3600000);
+        this(i, str, i2, i3, i4, i5, i6, i7, i8, i9, Grego.MILLIS_PER_HOUR);
     }
 
     public SimpleTimeZone(int i, String str, int i2, int i3, int i4, int i5, int i6, int i7, int i8, int i9, int i10) {
@@ -87,7 +87,7 @@ public class SimpleTimeZone extends TimeZone {
         if (i <= 1582) {
             return i % 4 == 0;
         } else if (i % 4 == 0) {
-            return i % 100 != 0 || i % 400 == 0;
+            return i % 100 != 0 || i % HttpURLConnection.HTTP_BAD_REQUEST == 0;
         } else {
             return false;
         }
@@ -130,7 +130,7 @@ public class SimpleTimeZone extends TimeZone {
         }
         this.dstSavings = readFields.get("dstSavings", 0);
         if (this.useDaylight) {
-            this.endMode = readFields.get(bc.e.Z, 0);
+            this.endMode = readFields.get("endMode", 0);
             this.startMode = readFields.get("startMode", 0);
             int readInt = objectInputStream.readInt();
             byte[] bArr = new byte[readInt];

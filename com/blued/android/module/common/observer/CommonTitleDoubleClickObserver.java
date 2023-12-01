@@ -5,9 +5,7 @@ import java.util.Iterator;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/observer/CommonTitleDoubleClickObserver.class */
 public class CommonTitleDoubleClickObserver {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static CommonTitleDoubleClickObserver f10824a = new CommonTitleDoubleClickObserver();
+    private static CommonTitleDoubleClickObserver a = new CommonTitleDoubleClickObserver();
     private ArrayList<ITitleClickObserver> b = new ArrayList<>();
 
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/observer/CommonTitleDoubleClickObserver$ITitleClickObserver.class */
@@ -19,7 +17,7 @@ public class CommonTitleDoubleClickObserver {
     }
 
     public static CommonTitleDoubleClickObserver a() {
-        return f10824a;
+        return a;
     }
 
     public void a(ITitleClickObserver iTitleClickObserver) {

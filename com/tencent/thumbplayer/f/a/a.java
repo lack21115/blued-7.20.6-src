@@ -18,14 +18,14 @@ import com.tencent.thumbplayer.utils.TPLogUtil;
 public class a implements ITPRichMediaAsyncRequester {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ITPNativeRichMediaAsyncRequester f39303a;
+    private final ITPNativeRichMediaAsyncRequester f25612a;
 
     /* renamed from: com.tencent.thumbplayer.f.a.a$a  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/thumbplayer/f/a/a$a.class */
-    class C1020a implements ITPNativeRichMediaAsyncRequesterListener {
+    class C0850a implements ITPNativeRichMediaAsyncRequesterListener {
         private final ITPRichMediaAsyncRequesterListener b;
 
-        public C1020a(ITPRichMediaAsyncRequesterListener iTPRichMediaAsyncRequesterListener) {
+        public C0850a(ITPRichMediaAsyncRequesterListener iTPRichMediaAsyncRequesterListener) {
             this.b = iTPRichMediaAsyncRequesterListener;
         }
 
@@ -51,7 +51,7 @@ public class a implements ITPRichMediaAsyncRequester {
     }
 
     public a(Context context) {
-        this.f39303a = new TPNativeRichMediaAsyncRequester(context);
+        this.f25612a = new TPNativeRichMediaAsyncRequester(context);
     }
 
     private TPRichMediaFeature[] a(TPNativeRichMediaFeature[] tPNativeRichMediaFeatureArr) {
@@ -87,32 +87,32 @@ public class a implements ITPRichMediaAsyncRequester {
 
     @Override // com.tencent.thumbplayer.api.richmedia.ITPRichMediaAsyncRequester
     public void cancelRequest(int i) {
-        this.f39303a.cancelRequest(i);
+        this.f25612a.cancelRequest(i);
     }
 
     @Override // com.tencent.thumbplayer.api.richmedia.ITPRichMediaAsyncRequester
     public TPRichMediaFeature[] getFeatures() {
-        return a(this.f39303a.getFeatures());
+        return a(this.f25612a.getFeatures());
     }
 
     @Override // com.tencent.thumbplayer.api.richmedia.ITPRichMediaAsyncRequester
     public void prepareAsync() {
-        this.f39303a.prepareAsync();
+        this.f25612a.prepareAsync();
     }
 
     @Override // com.tencent.thumbplayer.api.richmedia.ITPRichMediaAsyncRequester
     public void release() {
-        this.f39303a.release();
+        this.f25612a.release();
     }
 
     @Override // com.tencent.thumbplayer.api.richmedia.ITPRichMediaAsyncRequester
     public int requestFeatureDataAsyncAtTimeMs(int i, long j) {
-        return this.f39303a.requestFeatureDataAsyncAtTimeMs(i, j);
+        return this.f25612a.requestFeatureDataAsyncAtTimeMs(i, j);
     }
 
     @Override // com.tencent.thumbplayer.api.richmedia.ITPRichMediaAsyncRequester
     public int requestFeatureDataAsyncAtTimeMsArray(int i, long[] jArr) {
-        return this.f39303a.requestFeatureDataAsyncAtTimeMsArray(i, jArr);
+        return this.f25612a.requestFeatureDataAsyncAtTimeMsArray(i, jArr);
     }
 
     @Override // com.tencent.thumbplayer.api.richmedia.ITPRichMediaAsyncRequester
@@ -121,7 +121,7 @@ public class a implements ITPRichMediaAsyncRequester {
             TPLogUtil.w("TPRichMediaAsyncRequester", "requestFeatureDataAsyncAtTimeRange, timeRange == null");
             return -1;
         }
-        return this.f39303a.requestFeatureDataAsyncAtTimeRange(i, new TPNativeTimeRange(tPTimeRange.getStartTimeMs(), tPTimeRange.getEndTimeMs()));
+        return this.f25612a.requestFeatureDataAsyncAtTimeRange(i, new TPNativeTimeRange(tPTimeRange.getStartTimeMs(), tPTimeRange.getEndTimeMs()));
     }
 
     @Override // com.tencent.thumbplayer.api.richmedia.ITPRichMediaAsyncRequester
@@ -131,16 +131,16 @@ public class a implements ITPRichMediaAsyncRequester {
             TPLogUtil.w("TPRichMediaAsyncRequester", "requestFeatureDataAsyncAtTimeRanges, toNativeTimeRanges return empty array");
             return -1;
         }
-        return this.f39303a.requestFeatureDataAsyncAtTimeRanges(i, a2);
+        return this.f25612a.requestFeatureDataAsyncAtTimeRanges(i, a2);
     }
 
     @Override // com.tencent.thumbplayer.api.richmedia.ITPRichMediaAsyncRequester
     public void setRequesterListener(ITPRichMediaAsyncRequesterListener iTPRichMediaAsyncRequesterListener) {
-        this.f39303a.setRequesterListener(new C1020a(iTPRichMediaAsyncRequesterListener));
+        this.f25612a.setRequesterListener(new C0850a(iTPRichMediaAsyncRequesterListener));
     }
 
     @Override // com.tencent.thumbplayer.api.richmedia.ITPRichMediaAsyncRequester
     public void setRichMediaSource(String str) {
-        this.f39303a.setRichMediaSource(str);
+        this.f25612a.setRichMediaSource(str);
     }
 }

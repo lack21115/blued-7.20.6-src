@@ -1,17 +1,16 @@
 package com.tencent.txcopyrightedmedia.impl.utils;
 
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 
 /* loaded from: source-8829756-dex2jar.jar:com/tencent/txcopyrightedmedia/impl/utils/j.class */
 public final class j {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f40104a;
+    public String f26413a;
     public int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f40105c;
+    public String f26414c;
 
     public j() {
         c();
@@ -50,22 +49,22 @@ public final class j {
                 strArr[i3] = "default";
             }
             sb.append(strArr[i3]);
-            sb.append(BridgeUtil.SPLIT_MARK);
+            sb.append("/");
             i2 = i3 + 1;
         }
     }
 
     private void c() {
-        this.f40104a = aj.e();
+        this.f26413a = aj.e();
         this.b = 0;
-        this.f40105c = null;
+        this.f26414c = null;
     }
 
     public final String a() {
-        return a(new String[]{this.f40104a, a(this.b), this.f40105c}, new String[]{"audio/unset", com.anythink.expressad.d.a.b.ax, null});
+        return a(new String[]{this.f26413a, a(this.b), this.f26414c}, new String[]{"audio/unset", com.anythink.expressad.d.a.b.ax, null});
     }
 
     public final String b() {
-        return a(new String[]{this.f40104a, a(this.b)}, new String[]{"audio/unset", com.anythink.expressad.d.a.b.ax});
+        return a(new String[]{this.f26413a, a(this.b)}, new String[]{"audio/unset", com.anythink.expressad.d.a.b.ax});
     }
 }

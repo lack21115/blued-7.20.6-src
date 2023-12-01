@@ -30,7 +30,7 @@ import java.util.Map;
 public class ActivityCompat extends ContextCompat {
 
     /* renamed from: a  reason: collision with root package name */
-    private static PermissionCompatDelegate f2310a;
+    private static PermissionCompatDelegate f2262a;
 
     /* loaded from: source-8756600-dex2jar.jar:androidx/core/app/ActivityCompat$Api30Impl.class */
     static class Api30Impl {
@@ -74,44 +74,44 @@ public class ActivityCompat extends ContextCompat {
     public static class SharedElementCallback21Impl extends android.app.SharedElementCallback {
 
         /* renamed from: a  reason: collision with root package name */
-        private final SharedElementCallback f2314a;
+        private final SharedElementCallback f2266a;
 
         SharedElementCallback21Impl(SharedElementCallback sharedElementCallback) {
-            this.f2314a = sharedElementCallback;
+            this.f2266a = sharedElementCallback;
         }
 
         @Override // android.app.SharedElementCallback
         public Parcelable onCaptureSharedElementSnapshot(View view, Matrix matrix, RectF rectF) {
-            return this.f2314a.onCaptureSharedElementSnapshot(view, matrix, rectF);
+            return this.f2266a.onCaptureSharedElementSnapshot(view, matrix, rectF);
         }
 
         @Override // android.app.SharedElementCallback
         public View onCreateSnapshotView(Context context, Parcelable parcelable) {
-            return this.f2314a.onCreateSnapshotView(context, parcelable);
+            return this.f2266a.onCreateSnapshotView(context, parcelable);
         }
 
         @Override // android.app.SharedElementCallback
         public void onMapSharedElements(List<String> list, Map<String, View> map) {
-            this.f2314a.onMapSharedElements(list, map);
+            this.f2266a.onMapSharedElements(list, map);
         }
 
         @Override // android.app.SharedElementCallback
         public void onRejectSharedElements(List<View> list) {
-            this.f2314a.onRejectSharedElements(list);
+            this.f2266a.onRejectSharedElements(list);
         }
 
         @Override // android.app.SharedElementCallback
         public void onSharedElementEnd(List<String> list, List<View> list2, List<View> list3) {
-            this.f2314a.onSharedElementEnd(list, list2, list3);
+            this.f2266a.onSharedElementEnd(list, list2, list3);
         }
 
         @Override // android.app.SharedElementCallback
         public void onSharedElementStart(List<String> list, List<View> list2, List<View> list3) {
-            this.f2314a.onSharedElementStart(list, list2, list3);
+            this.f2266a.onSharedElementStart(list, list2, list3);
         }
 
         public void onSharedElementsArrived(List<String> list, List<View> list2, final SharedElementCallback.OnSharedElementsReadyListener onSharedElementsReadyListener) {
-            this.f2314a.onSharedElementsArrived(list, list2, new SharedElementCallback.OnSharedElementsReadyListener() { // from class: androidx.core.app.ActivityCompat.SharedElementCallback21Impl.1
+            this.f2266a.onSharedElementsArrived(list, list2, new SharedElementCallback.OnSharedElementsReadyListener() { // from class: androidx.core.app.ActivityCompat.SharedElementCallback21Impl.1
                 @Override // androidx.core.app.SharedElementCallback.OnSharedElementsReadyListener
                 public void onSharedElementsReady() {
                     onSharedElementsReadyListener.onSharedElementsReady();
@@ -140,7 +140,7 @@ public class ActivityCompat extends ContextCompat {
     }
 
     public static PermissionCompatDelegate getPermissionCompatDelegate() {
-        return f2310a;
+        return f2262a;
     }
 
     public static Uri getReferrer(Activity activity) {
@@ -199,7 +199,7 @@ public class ActivityCompat extends ContextCompat {
     }
 
     public static void requestPermissions(final Activity activity, final String[] strArr, final int i) {
-        PermissionCompatDelegate permissionCompatDelegate = f2310a;
+        PermissionCompatDelegate permissionCompatDelegate = f2262a;
         if (permissionCompatDelegate != null && permissionCompatDelegate.requestPermissions(activity, strArr, i)) {
             return;
         }
@@ -277,7 +277,7 @@ public class ActivityCompat extends ContextCompat {
     }
 
     public static void setPermissionCompatDelegate(PermissionCompatDelegate permissionCompatDelegate) {
-        f2310a = permissionCompatDelegate;
+        f2262a = permissionCompatDelegate;
     }
 
     public static boolean shouldShowRequestPermissionRationale(Activity activity, String str) {

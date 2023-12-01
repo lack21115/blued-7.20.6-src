@@ -4,11 +4,11 @@ package com.umeng.analytics.pro;
 public class de extends bw {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f40721a = 0;
+    public static final int f27030a = 0;
     public static final int b = 1;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final int f40722c = 2;
+    public static final int f27031c = 2;
     public static final int d = 3;
     public static final int e = 4;
     private static final long g = 1;

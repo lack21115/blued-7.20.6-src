@@ -35,7 +35,7 @@ public class jp extends hg<le> implements kb {
             i = 0;
         }
         ge.V("PPSLinkedVideoViewPresenter", "buildLinkedAdConfig, duration: %s, set progress from LinkedSplash view:%s ", Integer.valueOf(this.B.C().I()), Integer.valueOf(i));
-        map.put(com.huawei.openalliance.ad.constant.at.q, this.B.C().h() ? "true" : "false");
+        map.put(com.huawei.openalliance.ad.constant.at.q, this.B.C().h() ? fw.Code : "false");
         map.put(com.huawei.openalliance.ad.constant.at.p, this.B.C().a());
         map.put(com.huawei.openalliance.ad.constant.at.o, String.valueOf(i));
         map.put(com.huawei.openalliance.ad.constant.at.r, this.B.T());

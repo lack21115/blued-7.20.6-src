@@ -10,12 +10,12 @@ public class p7 {
     private boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f37685c;
+    private boolean f23994c;
     private boolean e;
     private boolean f;
 
     /* renamed from: a  reason: collision with root package name */
-    public long f37684a = com.igexin.push.config.c.j;
+    public long f23993a = com.igexin.push.config.c.j;
     public long d = 0;
     private Interpolator g = new LinearInterpolator();
     public a h = null;
@@ -69,10 +69,10 @@ public class p7 {
             this.b = true;
         }
         long b2 = b();
-        float f = ((float) (b2 - this.d)) / ((float) this.f37684a);
+        float f = ((float) (b2 - this.d)) / ((float) this.f23993a);
         float f2 = f;
         if (f > 1.0f) {
-            if (this.f37685c) {
+            if (this.f23994c) {
                 this.d = b2;
             } else {
                 this.b = false;
@@ -91,7 +91,7 @@ public class p7 {
     }
 
     public void a(long j) {
-        this.f37684a = j;
+        this.f23993a = j;
     }
 
     public void a(Interpolator interpolator) {
@@ -107,11 +107,11 @@ public class p7 {
     }
 
     public boolean a(boolean z) {
-        if (this.f37684a <= 0 || this.e) {
+        if (this.f23993a <= 0 || this.e) {
             return false;
         }
         this.e = true;
-        this.f37685c = z;
+        this.f23994c = z;
         return true;
     }
 
@@ -131,7 +131,7 @@ public class p7 {
     }
 
     public boolean e() {
-        return this.f37685c;
+        return this.f23994c;
     }
 
     public boolean f() {

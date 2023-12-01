@@ -1,5 +1,6 @@
 package androidx.appcompat.app;
 
+import android.R;
 import android.app.Activity;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
@@ -14,7 +15,7 @@ import java.lang.reflect.Method;
 class ActionBarDrawerToggleHoneycomb {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final int[] f1537a = {16843531};
+    private static final int[] f1489a = {R.attr.homeAsUpIndicator};
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8756600-dex2jar.jar:androidx/appcompat/app/ActionBarDrawerToggleHoneycomb$SetIndicatorInfo.class */
@@ -28,7 +29,7 @@ class ActionBarDrawerToggleHoneycomb {
                 this.setHomeAsUpIndicator = android.app.ActionBar.class.getDeclaredMethod("setHomeAsUpIndicator", Drawable.class);
                 this.setHomeActionContentDescription = android.app.ActionBar.class.getDeclaredMethod("setHomeActionContentDescription", Integer.TYPE);
             } catch (NoSuchMethodException e) {
-                View findViewById = activity.findViewById(16908332);
+                View findViewById = activity.findViewById(R.id.home);
                 if (findViewById == null) {
                     return;
                 }
@@ -49,7 +50,7 @@ class ActionBarDrawerToggleHoneycomb {
     }
 
     public static Drawable getThemeUpIndicator(Activity activity) {
-        TypedArray obtainStyledAttributes = activity.obtainStyledAttributes(f1537a);
+        TypedArray obtainStyledAttributes = activity.obtainStyledAttributes(f1489a);
         Drawable drawable = obtainStyledAttributes.getDrawable(0);
         obtainStyledAttributes.recycle();
         return drawable;

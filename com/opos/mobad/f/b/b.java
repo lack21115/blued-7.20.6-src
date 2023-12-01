@@ -6,10 +6,10 @@ import android.app.Activity;
 public class b extends h<Activity, com.opos.mobad.ad.a.b> {
 
     /* renamed from: c  reason: collision with root package name */
-    public final boolean f26131c;
+    public final boolean f12443c;
 
     public b(Activity activity, String str, int i, boolean z, com.opos.mobad.ad.a.b bVar) {
         super(activity, str, i, bVar);
-        this.f26131c = z;
+        this.f12443c = z;
     }
 }

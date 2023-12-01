@@ -12,11 +12,11 @@ public final class DateTodayFunctionEvaluationModel {
     private final List<String> tags;
     private final String title;
 
-    public DateTodayFunctionEvaluationModel(String title, String icon, List<String> list) {
-        Intrinsics.e(title, "title");
-        Intrinsics.e(icon, "icon");
-        this.title = title;
-        this.icon = icon;
+    public DateTodayFunctionEvaluationModel(String str, String str2, List<String> list) {
+        Intrinsics.e(str, "title");
+        Intrinsics.e(str2, "icon");
+        this.title = str;
+        this.icon = str2;
         this.tags = list;
     }
 
@@ -49,10 +49,10 @@ public final class DateTodayFunctionEvaluationModel {
         return this.tags;
     }
 
-    public final DateTodayFunctionEvaluationModel copy(String title, String icon, List<String> list) {
-        Intrinsics.e(title, "title");
-        Intrinsics.e(icon, "icon");
-        return new DateTodayFunctionEvaluationModel(title, icon, list);
+    public final DateTodayFunctionEvaluationModel copy(String str, String str2, List<String> list) {
+        Intrinsics.e(str, "title");
+        Intrinsics.e(str2, "icon");
+        return new DateTodayFunctionEvaluationModel(str, str2, list);
     }
 
     public boolean equals(Object obj) {
@@ -61,7 +61,7 @@ public final class DateTodayFunctionEvaluationModel {
         }
         if (obj instanceof DateTodayFunctionEvaluationModel) {
             DateTodayFunctionEvaluationModel dateTodayFunctionEvaluationModel = (DateTodayFunctionEvaluationModel) obj;
-            return Intrinsics.a((Object) this.title, (Object) dateTodayFunctionEvaluationModel.title) && Intrinsics.a((Object) this.icon, (Object) dateTodayFunctionEvaluationModel.icon) && Intrinsics.a(this.tags, dateTodayFunctionEvaluationModel.tags);
+            return Intrinsics.a(this.title, dateTodayFunctionEvaluationModel.title) && Intrinsics.a(this.icon, dateTodayFunctionEvaluationModel.icon) && Intrinsics.a(this.tags, dateTodayFunctionEvaluationModel.tags);
         }
         return false;
     }

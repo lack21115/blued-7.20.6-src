@@ -7,7 +7,7 @@ import java.util.Iterator;
 public class ADDownloadObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    private static ADDownloadObserver f34665a = new ADDownloadObserver();
+    private static ADDownloadObserver f20974a = new ADDownloadObserver();
     private ArrayList<IADDownloadObserver> b = new ArrayList<>();
 
     /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/welcome/observer/ADDownloadObserver$IADDownloadObserver.class */
@@ -19,7 +19,7 @@ public class ADDownloadObserver {
     }
 
     public static ADDownloadObserver a() {
-        return f34665a;
+        return f20974a;
     }
 
     public void a(IADDownloadObserver iADDownloadObserver) {

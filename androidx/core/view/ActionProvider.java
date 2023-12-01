@@ -10,11 +10,11 @@ import android.view.View;
 public abstract class ActionProvider {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Context f2616a;
+    private final Context f2568a;
     private SubUiVisibilityListener b;
 
     /* renamed from: c  reason: collision with root package name */
-    private VisibilityListener f2617c;
+    private VisibilityListener f2569c;
 
     /* loaded from: source-8756600-dex2jar.jar:androidx/core/view/ActionProvider$SubUiVisibilityListener.class */
     public interface SubUiVisibilityListener {
@@ -27,11 +27,11 @@ public abstract class ActionProvider {
     }
 
     public ActionProvider(Context context) {
-        this.f2616a = context;
+        this.f2568a = context;
     }
 
     public Context getContext() {
-        return this.f2616a;
+        return this.f2568a;
     }
 
     public boolean hasSubMenu() {
@@ -60,14 +60,14 @@ public abstract class ActionProvider {
     }
 
     public void refreshVisibility() {
-        if (this.f2617c == null || !overridesItemVisibility()) {
+        if (this.f2569c == null || !overridesItemVisibility()) {
             return;
         }
-        this.f2617c.onActionProviderVisibilityChanged(isVisible());
+        this.f2569c.onActionProviderVisibilityChanged(isVisible());
     }
 
     public void reset() {
-        this.f2617c = null;
+        this.f2569c = null;
         this.b = null;
     }
 
@@ -76,10 +76,10 @@ public abstract class ActionProvider {
     }
 
     public void setVisibilityListener(VisibilityListener visibilityListener) {
-        if (this.f2617c != null && visibilityListener != null) {
+        if (this.f2569c != null && visibilityListener != null) {
             Log.w("ActionProvider(support)", "setVisibilityListener: Setting a new ActionProvider.VisibilityListener when one is already set. Are you reusing this " + getClass().getSimpleName() + " instance while it is still in use somewhere else?");
         }
-        this.f2617c = visibilityListener;
+        this.f2569c = visibilityListener;
     }
 
     public void subUiVisibilityChanged(boolean z) {

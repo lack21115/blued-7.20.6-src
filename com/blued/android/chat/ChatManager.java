@@ -42,6 +42,7 @@ import com.blued.android.chat.model.SessionSettingBaseModel;
 import com.blued.android.chat.utils.DeviceInfo;
 import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.qiniu.android.dns.DnsManager;
+import io.grpc.internal.GrpcUtil;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -75,7 +76,7 @@ public class ChatManager {
     public static boolean debugByteData = false;
     public static String chatHostAddr = "h3.blued.cn";
     public static int chatHostPort = 8080;
-    public static int chatBackupPort = 443;
+    public static int chatBackupPort = GrpcUtil.DEFAULT_PORT_SSL;
     public static DnsManager dnsManager = null;
     public static boolean isDnsManagerPrior = false;
     public static boolean isSSL = false;

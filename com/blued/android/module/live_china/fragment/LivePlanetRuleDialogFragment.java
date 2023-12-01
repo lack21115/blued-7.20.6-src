@@ -32,9 +32,7 @@ import kotlin.jvm.internal.Ref;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LivePlanetRuleDialogFragment.class */
 public final class LivePlanetRuleDialogFragment extends BaseDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f13141a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private final Lazy b = LazyKt.a(new Function0<FragmentLivePlanetRuleBinding>() { // from class: com.blued.android.module.live_china.fragment.LivePlanetRuleDialogFragment$vb$2
         /* JADX INFO: Access modifiers changed from: package-private */
         {
@@ -47,9 +45,7 @@ public final class LivePlanetRuleDialogFragment extends BaseDialogFragment {
             return FragmentLivePlanetRuleBinding.a(LayoutInflater.from(LivePlanetRuleDialogFragment.this.getContext()));
         }
     });
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f13142c = "";
+    private String c = "";
 
     @Metadata
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LivePlanetRuleDialogFragment$Companion.class */
@@ -85,9 +81,9 @@ public final class LivePlanetRuleDialogFragment extends BaseDialogFragment {
     public static final void b(final LivePlanetRuleDialogFragment this$0) {
         Intrinsics.e(this$0, "this$0");
         final Ref.IntRef intRef = new Ref.IntRef();
-        intRef.f42543a = this$0.e().b.getWidth();
+        intRef.a = this$0.e().b.getWidth();
         final ImageSize imageSize = new ImageSize();
-        ImageFileLoader.a(this$0.a()).a(this$0.f13142c).a(imageSize).a(new ImageFileLoader.OnLoadFileListener() { // from class: com.blued.android.module.live_china.fragment.LivePlanetRuleDialogFragment$getData$1$1
+        ImageFileLoader.a(this$0.a()).a(this$0.c).a(imageSize).a(new ImageFileLoader.OnLoadFileListener() { // from class: com.blued.android.module.live_china.fragment.LivePlanetRuleDialogFragment$getData$1$1
             @Override // com.blued.android.core.image.ImageFileLoader.OnLoadFileListener
             public void onUIFinish(File file, Exception exc) {
                 FragmentLivePlanetRuleBinding e;
@@ -99,10 +95,10 @@ public final class LivePlanetRuleDialogFragment extends BaseDialogFragment {
                 e.b.setZoomEnabled(false);
                 float a2 = imageSize.a();
                 float f = 1.0f;
-                if (intRef.f42543a > 0) {
+                if (intRef.a > 0) {
                     f = 1.0f;
                     if (a2 > 0.0f) {
-                        f = (intRef.f42543a * 1.0f) / a2;
+                        f = (intRef.a * 1.0f) / a2;
                     }
                 }
                 e2 = LivePlanetRuleDialogFragment.this.e();
@@ -123,7 +119,7 @@ public final class LivePlanetRuleDialogFragment extends BaseDialogFragment {
                 LivePlanetRuleDialogFragment.b(LivePlanetRuleDialogFragment.this);
             }
         });
-        e().f11966a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LivePlanetRuleDialogFragment$IoGRi65ssa9lBYdBYRMloIQKXmM
+        e().a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LivePlanetRuleDialogFragment$IoGRi65ssa9lBYdBYRMloIQKXmM
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 LivePlanetRuleDialogFragment.a(LivePlanetRuleDialogFragment.this, view);
@@ -133,7 +129,7 @@ public final class LivePlanetRuleDialogFragment extends BaseDialogFragment {
 
     public final void a(String str) {
         Intrinsics.e(str, "<set-?>");
-        this.f13142c = str;
+        this.c = str;
     }
 
     public final void d() {
@@ -146,7 +142,6 @@ public final class LivePlanetRuleDialogFragment extends BaseDialogFragment {
         }
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
         int a2 = DensityUtils.a(getContext(), 520.0f);
         Dialog dialog = new Dialog(requireActivity(), R.style.transparentFrameWindowStyleLive);
@@ -164,7 +159,6 @@ public final class LivePlanetRuleDialogFragment extends BaseDialogFragment {
         return dialog;
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public void setupDialog(Dialog dialog, int i) {
         Intrinsics.e(dialog, "dialog");
         super.setupDialog(dialog, i);
@@ -182,13 +176,13 @@ public final class LivePlanetRuleDialogFragment extends BaseDialogFragment {
         f();
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void show(FragmentManager manager, String str) {
         Intrinsics.e(manager, "manager");
         try {
             FragmentTransaction beginTransaction = manager.beginTransaction();
             Intrinsics.c(beginTransaction, "manager.beginTransaction()");
-            beginTransaction.add(this, str);
+            beginTransaction.add((Fragment) this, str);
             beginTransaction.commitAllowingStateLoss();
         } catch (Exception e) {
             super.show(manager, str);

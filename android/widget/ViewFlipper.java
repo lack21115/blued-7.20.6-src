@@ -43,7 +43,7 @@ public class ViewFlipper extends ViewAnimator {
             @Override // android.content.BroadcastReceiver
             public void onReceive(Context context2, Intent intent) {
                 String action = intent.getAction();
-                if (Intent.ACTION_SCREEN_OFF.equals(action)) {
+                if ("android.intent.action.SCREEN_OFF".equals(action)) {
                     ViewFlipper.this.mUserPresent = false;
                     ViewFlipper.this.updateRunning();
                 } else if ("android.intent.action.USER_PRESENT".equals(action)) {
@@ -76,7 +76,7 @@ public class ViewFlipper extends ViewAnimator {
             @Override // android.content.BroadcastReceiver
             public void onReceive(Context context2, Intent intent) {
                 String action = intent.getAction();
-                if (Intent.ACTION_SCREEN_OFF.equals(action)) {
+                if ("android.intent.action.SCREEN_OFF".equals(action)) {
                     ViewFlipper.this.mUserPresent = false;
                     ViewFlipper.this.updateRunning();
                 } else if ("android.intent.action.USER_PRESENT".equals(action)) {
@@ -133,7 +133,7 @@ public class ViewFlipper extends ViewAnimator {
     public void onAttachedToWindow() {
         super.onAttachedToWindow();
         IntentFilter intentFilter = new IntentFilter();
-        intentFilter.addAction(Intent.ACTION_SCREEN_OFF);
+        intentFilter.addAction("android.intent.action.SCREEN_OFF");
         intentFilter.addAction("android.intent.action.USER_PRESENT");
         getContext().registerReceiverAsUser(this.mReceiver, Process.myUserHandle(), intentFilter, null, this.mHandler);
         if (this.mAutoStart) {

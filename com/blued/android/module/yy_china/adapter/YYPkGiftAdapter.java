@@ -18,22 +18,19 @@ import java.util.List;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/adapter/YYPkGiftAdapter.class */
 public class YYPkGiftAdapter extends BaseQuickAdapter<YYPkGiftModel, BaseViewHolder> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private int f16207a;
+    private int a;
     private int b;
 
     public YYPkGiftAdapter(Context context) {
         super(R.layout.view_yy_pk_gift);
-        this.f16207a = 0;
+        this.a = 0;
         this.b = 0;
-        int a2 = AppInfo.l - DensityUtils.a(context, 30.0f);
-        this.f16207a = a2;
-        this.b = (int) (a2 * 0.203d);
+        int a = AppInfo.l - DensityUtils.a(context, 30.0f);
+        this.a = a;
+        this.b = (int) (a * 0.203d);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(BaseViewHolder baseViewHolder, YYPkGiftModel yYPkGiftModel) {
         ImageView imageView = (ImageView) baseViewHolder.getView(R.id.iv_pk_gift_layout);
@@ -46,9 +43,9 @@ public class YYPkGiftAdapter extends BaseQuickAdapter<YYPkGiftModel, BaseViewHol
             return;
         }
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) imageView.getLayoutParams();
-        layoutParams.width = this.f16207a;
+        layoutParams.width = this.a;
         layoutParams.height = this.b;
-        Logger.e("YYPkGiftAdapter", "bgWidth: " + this.f16207a + " , bgHeight: " + this.b);
+        Logger.e("YYPkGiftAdapter", "bgWidth: " + this.a + " , bgHeight: " + this.b);
         imageView.setImageResource(yYPkGiftModel.selected ? R.drawable.icon_yy_selected_pk_bg : R.drawable.icon_yy_normal_pk_bg);
         int i = 0;
         while (true) {

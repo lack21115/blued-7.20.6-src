@@ -12,25 +12,25 @@ import java.util.Map;
 final class v implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ Context f41087a;
+    final /* synthetic */ Context f27396a;
     final /* synthetic */ Map b;
 
     /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ u f41088c;
+    final /* synthetic */ u f27397c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public v(u uVar, Context context, Map map) {
-        this.f41088c = uVar;
-        this.f41087a = context;
+        this.f27397c = uVar;
+        this.f27396a = context;
         this.b = map;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         ComponentName componentName;
-        String packageName = this.f41087a.getPackageName();
+        String packageName = this.f27396a.getPackageName();
         try {
-            List<ActivityManager.RunningTaskInfo> runningTasks = ((ActivityManager) this.f41087a.getSystemService("activity")).getRunningTasks(100);
+            List<ActivityManager.RunningTaskInfo> runningTasks = ((ActivityManager) this.f27396a.getSystemService("activity")).getRunningTasks(100);
             if (runningTasks != null) {
                 Iterator<ActivityManager.RunningTaskInfo> it = runningTasks.iterator();
                 do {
@@ -43,19 +43,19 @@ final class v implements Runnable {
                 intent.setComponent(componentName);
                 intent.setFlags(335544320);
                 u.b(intent, this.b);
-                this.f41087a.startActivity(intent);
+                this.f27396a.startActivity(intent);
                 return;
             }
         } catch (Exception e) {
             com.vivo.push.util.p.a("OnNotificationClickTask", "start recentIntent is error", e);
         }
-        Intent launchIntentForPackage = this.f41087a.getPackageManager().getLaunchIntentForPackage(this.f41087a.getPackageName());
+        Intent launchIntentForPackage = this.f27396a.getPackageManager().getLaunchIntentForPackage(this.f27396a.getPackageName());
         if (launchIntentForPackage == null) {
             com.vivo.push.util.p.a("OnNotificationClickTask", "LaunchIntent is null");
             return;
         }
         launchIntentForPackage.setFlags(268435456);
         u.b(launchIntentForPackage, this.b);
-        this.f41087a.startActivity(launchIntentForPackage);
+        this.f27396a.startActivity(launchIntentForPackage);
     }
 }

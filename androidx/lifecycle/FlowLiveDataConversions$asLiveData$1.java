@@ -28,23 +28,20 @@ final class FlowLiveDataConversions$asLiveData$1<T> extends SuspendLambda implem
         this.$this_asLiveData = flow;
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        FlowLiveDataConversions$asLiveData$1 flowLiveDataConversions$asLiveData$1 = new FlowLiveDataConversions$asLiveData$1(this.$this_asLiveData, continuation);
+        Continuation<Unit> flowLiveDataConversions$asLiveData$1 = new FlowLiveDataConversions$asLiveData$1<>(this.$this_asLiveData, continuation);
         flowLiveDataConversions$asLiveData$1.L$0 = obj;
         return flowLiveDataConversions$asLiveData$1;
     }
 
     public final Object invoke(LiveDataScope<T> liveDataScope, Continuation<? super Unit> continuation) {
-        return ((FlowLiveDataConversions$asLiveData$1) create(liveDataScope, continuation)).invokeSuspend(Unit.f42314a);
+        return create(liveDataScope, continuation).invokeSuspend(Unit.a);
     }
 
-    @Override // kotlin.jvm.functions.Function2
-    public /* bridge */ /* synthetic */ Object invoke(Object obj, Continuation<? super Unit> continuation) {
-        return invoke((LiveDataScope) ((LiveDataScope) obj), continuation);
+    public /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
+        return invoke((LiveDataScope) ((LiveDataScope) obj), (Continuation) obj2);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         Object a2 = IntrinsicsKt.a();
         int i = this.label;
@@ -52,13 +49,12 @@ final class FlowLiveDataConversions$asLiveData$1<T> extends SuspendLambda implem
             ResultKt.a(obj);
             final LiveDataScope liveDataScope = (LiveDataScope) this.L$0;
             this.label = 1;
-            if (this.$this_asLiveData.a((FlowCollector) ((FlowCollector<T>) new FlowCollector<T>() { // from class: androidx.lifecycle.FlowLiveDataConversions$asLiveData$1$invokeSuspend$$inlined$collect$1
-                @Override // kotlinx.coroutines.flow.FlowCollector
+            if (this.$this_asLiveData.a(new FlowCollector<T>() { // from class: androidx.lifecycle.FlowLiveDataConversions$asLiveData$1$invokeSuspend$$inlined$collect$1
                 public Object emit(T t, Continuation<? super Unit> continuation) {
                     Object emit = LiveDataScope.this.emit(t, continuation);
-                    return emit == IntrinsicsKt.a() ? emit : Unit.f42314a;
+                    return emit == IntrinsicsKt.a() ? emit : Unit.a;
                 }
-            }), this) == a2) {
+            }, (Continuation) this) == a2) {
                 return a2;
             }
         } else if (i != 1) {
@@ -66,6 +62,6 @@ final class FlowLiveDataConversions$asLiveData$1<T> extends SuspendLambda implem
         } else {
             ResultKt.a(obj);
         }
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

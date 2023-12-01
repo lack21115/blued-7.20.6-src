@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class UserinfoAlbumItemBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final CardView f29608a;
+    private final CardView f15918a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public CardView getRoot() {
-        return this.f29608a;
+        return this.f15918a;
     }
 }

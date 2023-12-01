@@ -7,10 +7,10 @@ import com.bumptech.glide.load.engine.Resource;
 public class UnitTranscoder<Z> implements ResourceTranscoder<Z, Z> {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final UnitTranscoder<?> f21010a = new UnitTranscoder<>();
+    private static final UnitTranscoder<?> f7404a = new UnitTranscoder<>();
 
     public static <Z> ResourceTranscoder<Z, Z> a() {
-        return f21010a;
+        return f7404a;
     }
 
     @Override // com.bumptech.glide.load.resource.transcode.ResourceTranscoder

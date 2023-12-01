@@ -7,7 +7,6 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/io/ExceptionsKt.class */
 public final class ExceptionsKt {
-    /* JADX INFO: Access modifiers changed from: private */
     public static final String b(File file, File file2, String str) {
         StringBuilder sb = new StringBuilder(file.toString());
         if (file2 != null) {

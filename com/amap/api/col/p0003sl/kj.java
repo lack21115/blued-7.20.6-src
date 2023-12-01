@@ -7,13 +7,9 @@ import java.io.ByteArrayOutputStream;
 /* renamed from: com.amap.api.col.3sl.kj  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/kj.class */
 public final class kj {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f5276a;
+    private Context a;
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f5277c;
+    private String c;
     private String d;
     private String e;
 
@@ -21,8 +17,8 @@ public final class kj {
         if (TextUtils.isEmpty(str3) || str3.length() > 256) {
             throw new hn("无效的参数 - IllegalArgumentException");
         }
-        this.f5276a = context.getApplicationContext();
-        this.f5277c = str;
+        this.a = context.getApplicationContext();
+        this.c = str;
         this.d = str2;
         this.b = str3;
     }
@@ -32,9 +28,9 @@ public final class kj {
     }
 
     private byte[] b(String str) {
-        byte[] a2;
-        if (!TextUtils.isEmpty(str) && (a2 = ib.a(this.e)) != null) {
-            return ib.a(a2.length);
+        byte[] a;
+        if (!TextUtils.isEmpty(str) && (a = ib.a(this.e)) != null) {
+            return ib.a(a.length);
         }
         return new byte[]{0, 0};
     }
@@ -59,10 +55,10 @@ public final class kj {
                 th = th2;
             }
             try {
-                ib.a(byteArrayOutputStream, this.f5277c);
+                ib.a(byteArrayOutputStream, this.c);
                 ib.a(byteArrayOutputStream, this.d);
                 ib.a(byteArrayOutputStream, this.b);
-                ib.a(byteArrayOutputStream, String.valueOf(hs.o(this.f5276a)));
+                ib.a(byteArrayOutputStream, String.valueOf(hs.o(this.a)));
                 try {
                     i = (int) (System.currentTimeMillis() / 1000);
                 } catch (Throwable th3) {

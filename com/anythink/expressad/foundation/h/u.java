@@ -10,7 +10,7 @@ import java.io.ObjectOutputStream;
 public final class u {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f7978a = "SerializeTools";
+    private static final String f5138a = "SerializeTools";
 
     private static Object a(String str) {
         try {
@@ -21,7 +21,7 @@ public final class u {
             byteArrayInputStream.close();
             return readObject;
         } catch (Exception e) {
-            o.b(f7978a, "Exception", e);
+            o.b(f5138a, "Exception", e);
             return null;
         }
     }
@@ -36,7 +36,7 @@ public final class u {
             objectOutputStream.close();
             return new String(byteArray, "ISO-8859-1");
         } catch (IOException e) {
-            o.b(f7978a, "IOException", e);
+            o.b(f5138a, "IOException", e);
             return "";
         }
     }

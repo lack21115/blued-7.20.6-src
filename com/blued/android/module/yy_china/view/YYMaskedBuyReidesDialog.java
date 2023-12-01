@@ -24,17 +24,13 @@ import kotlin.jvm.internal.StringCompanionObject;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYMaskedBuyReidesDialog.class */
 public final class YYMaskedBuyReidesDialog extends BaseFullScreenDialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final String f18296a;
+    private final String a;
     private DialogYyMaskedUseInfoRedisBinding b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private View.OnClickListener f18297c;
+    private View.OnClickListener c;
     private boolean d = true;
 
     public YYMaskedBuyReidesDialog(String str) {
-        this.f18296a = str;
+        this.a = str;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -63,7 +59,7 @@ public final class YYMaskedBuyReidesDialog extends BaseFullScreenDialog {
         if (this$0.d) {
             SharedPreferencesUtils.b().edit().putBoolean("YYMaskedBuyReidesDialog", true).apply();
         }
-        View.OnClickListener onClickListener = this$0.f18297c;
+        View.OnClickListener onClickListener = this$0.c;
         if (onClickListener != null) {
             onClickListener.onClick(null);
         }
@@ -86,7 +82,7 @@ public final class YYMaskedBuyReidesDialog extends BaseFullScreenDialog {
     private final void h() {
         VeiledRoomInfoMode veiledRoomInfoMode;
         YYGiftModel goods_info;
-        g().f16435c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYMaskedBuyReidesDialog$5TDcb1Yau9CHLJA0BvTHkCEirYc
+        g().c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYMaskedBuyReidesDialog$5TDcb1Yau9CHLJA0BvTHkCEirYc
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 YYMaskedBuyReidesDialog.a(YYMaskedBuyReidesDialog.this, view);
@@ -98,7 +94,7 @@ public final class YYMaskedBuyReidesDialog extends BaseFullScreenDialog {
                 YYMaskedBuyReidesDialog.a(view);
             }
         });
-        g().f16434a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYMaskedBuyReidesDialog$hJyDbSqEFIY3vOxPHM_jvkX1xDE
+        g().a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYMaskedBuyReidesDialog$hJyDbSqEFIY3vOxPHM_jvkX1xDE
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 YYMaskedBuyReidesDialog.b(YYMaskedBuyReidesDialog.this, view);
@@ -119,7 +115,7 @@ public final class YYMaskedBuyReidesDialog extends BaseFullScreenDialog {
         YYRoomModel b = YYRoomInfoManager.e().b();
         if (b != null && b.mMaskedVeiledRoominfo != null) {
             TextView textView = g().f;
-            StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
+            StringCompanionObject stringCompanionObject = StringCompanionObject.a;
             Resources resources = getResources();
             int i = R.string.use_masked_guide;
             YYRoomModel b2 = YYRoomInfoManager.e().b();
@@ -145,14 +141,14 @@ public final class YYMaskedBuyReidesDialog extends BaseFullScreenDialog {
     }
 
     public final void a(View.OnClickListener onClickListener) {
-        this.f18297c = onClickListener;
+        this.c = onClickListener;
     }
 
     public final String f() {
-        return this.f18296a;
+        return this.a;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
         View inflate = inflater.inflate(R.layout.dialog_yy_masked_use_info_redis, viewGroup, true);

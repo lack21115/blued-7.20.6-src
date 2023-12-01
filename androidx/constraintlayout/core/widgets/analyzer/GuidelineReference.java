@@ -56,11 +56,11 @@ public class GuidelineReference extends WidgetRun {
             if (relativeBegin != -1) {
                 this.start.g.add(this.b.mParent.horizontalRun.start);
                 this.b.mParent.horizontalRun.start.f.add(this.start);
-                this.start.f2136c = relativeBegin;
+                this.start.f2088c = relativeBegin;
             } else if (relativeEnd != -1) {
                 this.start.g.add(this.b.mParent.horizontalRun.end);
                 this.b.mParent.horizontalRun.end.f.add(this.start);
-                this.start.f2136c = -relativeEnd;
+                this.start.f2088c = -relativeEnd;
             } else {
                 this.start.delegateToWidgetRun = true;
                 this.start.g.add(this.b.mParent.horizontalRun.end);
@@ -73,11 +73,11 @@ public class GuidelineReference extends WidgetRun {
         if (relativeBegin != -1) {
             this.start.g.add(this.b.mParent.verticalRun.start);
             this.b.mParent.verticalRun.start.f.add(this.start);
-            this.start.f2136c = relativeBegin;
+            this.start.f2088c = relativeBegin;
         } else if (relativeEnd != -1) {
             this.start.g.add(this.b.mParent.verticalRun.end);
             this.b.mParent.verticalRun.end.f.add(this.start);
-            this.start.f2136c = -relativeEnd;
+            this.start.f2088c = -relativeEnd;
         } else {
             this.start.delegateToWidgetRun = true;
             this.start.g.add(this.b.mParent.verticalRun.end);

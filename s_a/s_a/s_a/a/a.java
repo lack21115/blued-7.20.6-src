@@ -9,7 +9,8 @@ import android.security.keystore.KeyGenParameterSpec;
 import android.util.Base64;
 import android.util.Log;
 import android.util.Pair;
-import com.youzan.androidsdk.tool.AppSigning;
+import com.anythink.core.common.b.g;
+import com.blued.android.chat.grpc.backup.MsgBackupManager;
 import java.io.UnsupportedEncodingException;
 import java.security.KeyStore;
 import java.security.MessageDigest;
@@ -25,11 +26,11 @@ public class a {
     public static Pair<String, String> a(String str, byte[] bArr) {
         try {
             Cipher cipher = Cipher.getInstance("AES/GCM/NoPadding");
-            SecretKey c2 = c(str);
-            if (c2 == null) {
+            SecretKey c = c(str);
+            if (c == null) {
                 return null;
             }
-            cipher.init(1, c2);
+            cipher.init(1, c);
             return new Pair<>(Base64.encodeToString(cipher.doFinal(bArr), 2), Base64.encodeToString(cipher.getIV(), 2));
         } catch (Exception e) {
             StringBuilder sb = new StringBuilder();
@@ -62,10 +63,10 @@ public class a {
                 return null;
             }
             Signature signature = signatureArr[i2];
-            if (AppSigning.SHA1.equals(str2)) {
+            if ("SHA1".equals(str2)) {
                 byte[] byteArray = signature.toByteArray();
                 try {
-                    MessageDigest messageDigest = MessageDigest.getInstance(AppSigning.SHA1);
+                    MessageDigest messageDigest = MessageDigest.getInstance("SHA1");
                     if (messageDigest == null) {
                         return null;
                     }
@@ -104,9 +105,9 @@ public class a {
                     String string2 = sharedPreferences.getString("GUID_IV", null);
                     if (string != null && j != 0 && string2 != null) {
                         try {
-                            byte[] a2 = a("StdIdAppKey", string, string2);
-                            if (a2 != null) {
-                                hashMap.put("GUID", new e(new String(a2, "ISO-8859-1"), j));
+                            byte[] a = a("StdIdAppKey", string, string2);
+                            if (a != null) {
+                                hashMap.put("GUID", new e(new String(a, "ISO-8859-1"), j));
                             }
                         } catch (UnsupportedEncodingException e) {
                             Log.e("IDHelper", e.getMessage() != null ? e.getMessage() : e.getLocalizedMessage());
@@ -119,9 +120,9 @@ public class a {
                     String string4 = sharedPreferences.getString("APID_IV", null);
                     if (string3 != null && j2 != 0 && string4 != null) {
                         try {
-                            byte[] a3 = a("StdIdAppKey", string3, string4);
-                            if (a3 != null) {
-                                hashMap.put("APID", new e(new String(a3, "ISO-8859-1"), j2));
+                            byte[] a2 = a("StdIdAppKey", string3, string4);
+                            if (a2 != null) {
+                                hashMap.put("APID", new e(new String(a2, "ISO-8859-1"), j2));
                             }
                         } catch (UnsupportedEncodingException e2) {
                             Log.e("IDHelper", e2.getMessage() != null ? e2.getMessage() : e2.getLocalizedMessage());
@@ -154,7 +155,7 @@ public class a {
             e eVar = hashMap.get(str);
             str2 = "";
             if (eVar.a(str)) {
-                str2 = eVar.f44182a;
+                str2 = eVar.a;
             }
         }
         return str2;
@@ -187,7 +188,7 @@ public class a {
     }
 
     public static boolean a(Context context, String str) {
-        return Build.VERSION.SDK_INT > 29 || b(context, "android").equals(b(context, str));
+        return Build.VERSION.SDK_INT > 29 || b(context, MsgBackupManager.PLATFORM_ANDROID).equals(b(context, str));
     }
 
     public static byte[] a(String str, String str2, String str3) {
@@ -196,11 +197,11 @@ public class a {
             byte[] decode2 = Base64.decode(str3, 2);
             Cipher cipher = Cipher.getInstance("AES/GCM/NoPadding");
             GCMParameterSpec gCMParameterSpec = new GCMParameterSpec(128, decode2);
-            SecretKey c2 = c(str);
-            if (c2 == null) {
+            SecretKey c = c(str);
+            if (c == null) {
                 return null;
             }
-            cipher.init(2, c2, gCMParameterSpec);
+            cipher.init(2, c, gCMParameterSpec);
             return cipher.doFinal(decode);
         } catch (Exception e) {
             StringBuilder sb = new StringBuilder();
@@ -266,7 +267,10 @@ public class a {
         }
         if (!z) {
             if (!z) {
-                return (z || z) ? 7200000L : 0L;
+                if (z || z) {
+                    return g.e.a;
+                }
+                return 0L;
             }
             return 86400000L;
         }

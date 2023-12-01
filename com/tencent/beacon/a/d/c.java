@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class c extends SQLiteOpenHelper {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f34954a;
+    private String f21263a;
 
     /* JADX WARN: Illegal instructions before constructor call */
     /*
@@ -44,7 +44,7 @@ public class c extends SQLiteOpenHelper {
             r0.<init>(r1, r2, r3, r4)
             r0 = r6
             java.lang.String r1 = ""
-            r0.f34954a = r1
+            r0.f21263a = r1
             java.lang.String r0 = "[DB]"
             r1 = 0
             java.lang.String r2 = "DBOpenHelper construc."
@@ -64,7 +64,7 @@ public class c extends SQLiteOpenHelper {
             r0 = r6
             r1 = r8
             java.lang.String r1 = r1.toString()
-            r0.f34954a = r1
+            r0.f21263a = r1
             return
         */
         throw new UnsupportedOperationException("Method not decompiled: com.tencent.beacon.a.d.c.<init>(java.lang.String):void");
@@ -125,7 +125,7 @@ public class c extends SQLiteOpenHelper {
             return;
         }
         com.tencent.beacon.base.util.c.e("[db] drop all fail try deleted file,may next time will success!", new Object[0]);
-        File databasePath = com.tencent.beacon.a.c.c.d().c().getDatabasePath(this.f34954a);
+        File databasePath = com.tencent.beacon.a.c.c.d().c().getDatabasePath(this.f21263a);
         if (databasePath == null || !databasePath.canWrite()) {
             return;
         }
@@ -143,7 +143,7 @@ public class c extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sQLiteDatabase) {
         com.tencent.beacon.base.util.c.a("[DB]", 0, "DBOpenHelper onCreate.", new Object[0]);
         try {
-            for (String str : b.f34953a) {
+            for (String str : b.f21262a) {
                 sQLiteDatabase.execSQL(str);
             }
         } catch (SQLException e) {
@@ -156,13 +156,13 @@ public class c extends SQLiteOpenHelper {
 
     @Override // android.database.sqlite.SQLiteOpenHelper
     public void onDowngrade(SQLiteDatabase sQLiteDatabase, int i, int i2) {
-        com.tencent.beacon.base.util.c.a("[DB]", 0, "[db] Downgrade a db  [%s] from v %d to  v%d , deleted all tables!", this.f34954a, Integer.valueOf(i), Integer.valueOf(i2));
+        com.tencent.beacon.base.util.c.a("[DB]", 0, "[db] Downgrade a db  [%s] from v %d to  v%d , deleted all tables!", this.f21263a, Integer.valueOf(i), Integer.valueOf(i2));
         b(sQLiteDatabase);
     }
 
     @Override // android.database.sqlite.SQLiteOpenHelper
     public void onUpgrade(SQLiteDatabase sQLiteDatabase, int i, int i2) {
-        com.tencent.beacon.base.util.c.a("[DB]", 0, "[db] Upgrade a db  [%s] from v %d to v %d , deleted all tables!", this.f34954a, Integer.valueOf(i), Integer.valueOf(i2));
+        com.tencent.beacon.base.util.c.a("[DB]", 0, "[db] Upgrade a db  [%s] from v %d to v %d , deleted all tables!", this.f21263a, Integer.valueOf(i), Integer.valueOf(i2));
         b(sQLiteDatabase);
     }
 }

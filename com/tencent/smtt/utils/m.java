@@ -14,10 +14,10 @@ import java.util.Properties;
 public class m {
 
     /* renamed from: c  reason: collision with root package name */
-    private static m f38967c;
+    private static m f25276c;
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f38968a;
+    private Context f25277a;
     private File b = null;
     private String d = "https://log.tbs.qq.com/ajax?c=pu&v=2&k=";
     private String e = "https://log.tbs.qq.com/ajax?c=pu&tk=";
@@ -29,9 +29,9 @@ public class m {
     private String k = "https://tbsrecovery.imtt.qq.com/getconfig";
 
     private m(Context context) {
-        this.f38968a = null;
+        this.f25277a = null;
         TbsLog.w("TbsCommonConfig", "TbsCommonConfig constructing...");
-        this.f38968a = context.getApplicationContext();
+        this.f25277a = context.getApplicationContext();
         h();
     }
 
@@ -39,7 +39,7 @@ public class m {
         m mVar;
         synchronized (m.class) {
             try {
-                mVar = f38967c;
+                mVar = f25276c;
             } catch (Throwable th) {
                 throw th;
             }
@@ -51,10 +51,10 @@ public class m {
         m mVar;
         synchronized (m.class) {
             try {
-                if (f38967c == null) {
-                    f38967c = new m(context);
+                if (f25276c == null) {
+                    f25276c = new m(context);
                 }
-                mVar = f38967c;
+                mVar = f25276c;
             } catch (Throwable th) {
                 throw th;
             }
@@ -141,20 +141,20 @@ public class m {
         File file2;
         try {
             if (this.b == null) {
-                String str = this.f38968a.getApplicationContext().getApplicationInfo().packageName;
+                String str = this.f25277a.getApplicationContext().getApplicationInfo().packageName;
                 if (TextUtils.isEmpty(str)) {
-                    file2 = new File(FileUtil.a(this.f38968a, 8));
+                    file2 = new File(FileUtil.a(this.f25277a, 8));
                 } else {
                     boolean z = true;
-                    boolean z2 = this.f38968a.getPackageManager().checkPermission("android.permission.READ_EXTERNAL_STORAGE", str) == 0;
-                    if (this.f38968a.getPackageManager().checkPermission("android.permission.WRITE_EXTERNAL_STORAGE", str) != 0) {
+                    boolean z2 = this.f25277a.getPackageManager().checkPermission("android.permission.READ_EXTERNAL_STORAGE", str) == 0;
+                    if (this.f25277a.getPackageManager().checkPermission("android.permission.WRITE_EXTERNAL_STORAGE", str) != 0) {
                         z = false;
                     }
                     if (z2 || z) {
                         TbsLog.i("TbsCommonConfig", "no permission,use sdcard default folder");
-                        file2 = new File(FileUtil.a(this.f38968a, 5));
+                        file2 = new File(FileUtil.a(this.f25277a, 5));
                     } else {
-                        file2 = new File(FileUtil.a(this.f38968a, 8));
+                        file2 = new File(FileUtil.a(this.f25277a, 8));
                     }
                 }
                 this.b = file2;

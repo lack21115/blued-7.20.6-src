@@ -1,6 +1,5 @@
 package com.blued.android.module.live_china.utils;
 
-import com.baidu.mobads.sdk.api.IAdInterListener;
 import java.text.DecimalFormat;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
@@ -8,9 +7,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/utils/LiveNumFormatUtil.class */
 public final class LiveNumFormatUtil {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final LiveNumFormatUtil f14186a = new LiveNumFormatUtil();
+    public static final LiveNumFormatUtil a = new LiveNumFormatUtil();
 
     private LiveNumFormatUtil() {
     }
@@ -49,6 +46,6 @@ public final class LiveNumFormatUtil {
         Intrinsics.c(s, "s");
         String substring = s.substring(0, i);
         Intrinsics.c(substring, "this as java.lang.String…ing(startIndex, endIndex)");
-        return Intrinsics.a(substring, (Object) IAdInterListener.AdReqParam.WIDTH);
+        return Intrinsics.a(substring, (Object) "w");
     }
 }

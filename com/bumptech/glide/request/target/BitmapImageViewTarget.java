@@ -12,6 +12,6 @@ public class BitmapImageViewTarget extends ImageViewTarget<Bitmap> {
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.bumptech.glide.request.target.ImageViewTarget
     public void a(Bitmap bitmap) {
-        ((ImageView) this.f21072a).setImageBitmap(bitmap);
+        ((ImageView) this.f7466a).setImageBitmap(bitmap);
     }
 }

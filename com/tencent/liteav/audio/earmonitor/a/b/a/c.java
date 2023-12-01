@@ -13,24 +13,24 @@ import com.zego.ve.HwAudioKit;
 public final class c extends com.tencent.liteav.audio.earmonitor.a.b.a.a {
 
     /* renamed from: a  reason: collision with root package name */
-    Context f36228a;
+    Context f22537a;
     b b;
     com.tencent.liteav.audio.earmonitor.a.a.b d;
 
     /* renamed from: c  reason: collision with root package name */
-    boolean f36229c = false;
+    boolean f22538c = false;
     IBinder e = null;
     private ServiceConnection g = new ServiceConnection() { // from class: com.tencent.liteav.audio.earmonitor.a.b.a.c.1
         @Override // android.content.ServiceConnection
         public final void onServiceConnected(ComponentName componentName, IBinder iBinder) {
             c.this.d = b.a.a(iBinder);
             if (c.this.d != null) {
-                c.this.f36229c = true;
+                c.this.f22538c = true;
                 c.this.b.a(1000);
                 c cVar = c.this;
-                String packageName = cVar.f36228a.getPackageName();
+                String packageName = cVar.f22537a.getPackageName();
                 try {
-                    if (cVar.d != null && cVar.f36229c) {
+                    if (cVar.d != null && cVar.f22538c) {
                         cVar.d.a(packageName);
                     }
                 } catch (RemoteException e) {
@@ -42,7 +42,7 @@ public final class c extends com.tencent.liteav.audio.earmonitor.a.b.a.a {
 
         @Override // android.content.ServiceConnection
         public final void onServiceDisconnected(ComponentName componentName) {
-            c.this.f36229c = false;
+            c.this.f22538c = false;
             if (c.this.b != null) {
                 c.this.b.a(1001);
             }
@@ -75,7 +75,7 @@ public final class c extends com.tencent.liteav.audio.earmonitor.a.b.a.a {
     public c(Context context) {
         this.b = null;
         this.b = b.a();
-        this.f36228a = context;
+        this.f22537a = context;
     }
 
     static /* synthetic */ void a(c cVar, IBinder iBinder) {
@@ -95,7 +95,7 @@ public final class c extends com.tencent.liteav.audio.earmonitor.a.b.a.a {
             return HwAudioKit.PARAME_VALUE_ERROR;
         }
         try {
-            if (this.d == null || !this.f36229c) {
+            if (this.d == null || !this.f22538c) {
                 return -2;
             }
             return this.d.a(aVar.mParameName, i);
@@ -107,7 +107,7 @@ public final class c extends com.tencent.liteav.audio.earmonitor.a.b.a.a {
 
     public final int a(boolean z) {
         try {
-            if (this.d == null || !this.f36229c) {
+            if (this.d == null || !this.f22538c) {
                 return -2;
             }
             return this.d.a(z);
@@ -118,9 +118,9 @@ public final class c extends com.tencent.liteav.audio.earmonitor.a.b.a.a {
     }
 
     public final void a() {
-        if (this.f36229c) {
-            this.f36229c = false;
-            b.a(this.f36228a, this.g);
+        if (this.f22538c) {
+            this.f22538c = false;
+            b.a(this.f22537a, this.g);
         }
     }
 
@@ -131,7 +131,7 @@ public final class c extends com.tencent.liteav.audio.earmonitor.a.b.a.a {
         }
         if (!b.a(context)) {
             this.b.a(2);
-        } else if (this.b == null || this.f36229c) {
+        } else if (this.b == null || this.f22538c) {
         } else {
             b.a(context, this.g, "com.huawei.multimedia.audioengine.HwAudioKaraokeFeatureService");
         }

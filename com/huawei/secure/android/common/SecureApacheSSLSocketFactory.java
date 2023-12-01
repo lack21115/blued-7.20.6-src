@@ -26,10 +26,10 @@ public class SecureApacheSSLSocketFactory extends SSLSocketFactory {
     public static final X509HostnameVerifier STRICT_HOSTNAME_VERIFIER = new StrictHostnameVerifier();
 
     /* renamed from: c  reason: collision with root package name */
-    private static volatile SecureApacheSSLSocketFactory f23050c = null;
+    private static volatile SecureApacheSSLSocketFactory f9442c = null;
 
     /* renamed from: a  reason: collision with root package name */
-    private SSLContext f23051a;
+    private SSLContext f9443a;
     private Context b;
 
     private SecureApacheSSLSocketFactory(KeyStore keyStore) throws NoSuchAlgorithmException, KeyManagementException, KeyStoreException, UnrecoverableKeyException {
@@ -39,15 +39,15 @@ public class SecureApacheSSLSocketFactory extends SSLSocketFactory {
     private SecureApacheSSLSocketFactory(KeyStore keyStore, Context context) throws NoSuchAlgorithmException, KeyManagementException, KeyStoreException, UnrecoverableKeyException, CertificateException, IOException, IllegalAccessException {
         super(keyStore);
         this.b = context;
-        this.f23051a = SSLUtil.setSSLContext();
-        this.f23051a.init(null, new X509TrustManager[]{new SecureX509TrustManager(this.b)}, null);
+        this.f9443a = SSLUtil.setSSLContext();
+        this.f9443a.init(null, new X509TrustManager[]{new SecureX509TrustManager(this.b)}, null);
     }
 
     @Deprecated
     public SecureApacheSSLSocketFactory(KeyStore keyStore, InputStream inputStream, String str) throws NoSuchAlgorithmException, KeyManagementException, KeyStoreException, UnrecoverableKeyException, CertificateException, IOException {
         super(keyStore);
-        this.f23051a = SSLUtil.setSSLContext();
-        this.f23051a.init(null, new X509TrustManager[]{new HiCloudX509TrustManager(inputStream, str)}, null);
+        this.f9443a = SSLUtil.setSSLContext();
+        this.f9443a.init(null, new X509TrustManager[]{new HiCloudX509TrustManager(inputStream, str)}, null);
     }
 
     private void a(Socket socket) {
@@ -58,30 +58,30 @@ public class SecureApacheSSLSocketFactory extends SSLSocketFactory {
 
     @Deprecated
     public static SecureApacheSSLSocketFactory getInstance(KeyStore keyStore, Context context) throws NoSuchAlgorithmException, KeyManagementException, KeyStoreException, UnrecoverableKeyException, CertificateException, IOException, IllegalAccessException {
-        if (f23050c == null) {
+        if (f9442c == null) {
             synchronized (SecureApacheSSLSocketFactory.class) {
                 try {
-                    if (f23050c == null) {
-                        f23050c = new SecureApacheSSLSocketFactory(keyStore, context);
+                    if (f9442c == null) {
+                        f9442c = new SecureApacheSSLSocketFactory(keyStore, context);
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f23050c;
+        return f9442c;
     }
 
     @Override // org.apache.http.conn.ssl.SSLSocketFactory, org.apache.http.conn.scheme.SocketFactory
     public Socket createSocket() throws IOException {
-        Socket createSocket = this.f23051a.getSocketFactory().createSocket();
+        Socket createSocket = this.f9443a.getSocketFactory().createSocket();
         a(createSocket);
         return createSocket;
     }
 
     @Override // org.apache.http.conn.ssl.SSLSocketFactory, org.apache.http.conn.scheme.LayeredSocketFactory
     public Socket createSocket(Socket socket, String str, int i, boolean z) throws IOException {
-        Socket createSocket = this.f23051a.getSocketFactory().createSocket(socket, str, i, z);
+        Socket createSocket = this.f9443a.getSocketFactory().createSocket(socket, str, i, z);
         a(createSocket);
         return createSocket;
     }

@@ -9,25 +9,25 @@ import java.io.UnsupportedEncodingException;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/chat/grpc/utils/ProtobufUtils.class */
 public class ProtobufUtils {
-    private static int digitValue(char c2) {
-        if ('0' > c2 || c2 > '9') {
-            return (('a' > c2 || c2 > 'z') ? c2 - 'A' : c2 - 'a') + 10;
+    private static int digitValue(char c) {
+        if ('0' > c || c > '9') {
+            return (('a' > c || c > 'z') ? c - 'A' : c - 'a') + 10;
         }
-        return c2 - '0';
+        return c - '0';
     }
 
-    private static boolean isHex(char c2) {
-        if ('0' > c2 || c2 > '9') {
-            if ('a' > c2 || c2 > 'f') {
-                return 'A' <= c2 && c2 <= 'F';
+    private static boolean isHex(char c) {
+        if ('0' > c || c > '9') {
+            if ('a' > c || c > 'f') {
+                return 'A' <= c && c <= 'F';
             }
             return true;
         }
         return true;
     }
 
-    private static boolean isOctal(char c2) {
-        return '0' <= c2 && c2 <= '7';
+    private static boolean isOctal(char c) {
+        return '0' <= c && c <= '7';
     }
 
     public static <T> T json2pb(String str, Message.Builder builder) throws InvalidProtocolBufferException {

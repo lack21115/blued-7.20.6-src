@@ -2,6 +2,7 @@ package com.oplus.quickgame.sdk.hall.b;
 
 import android.net.Uri;
 import android.text.TextUtils;
+import com.huawei.hms.framework.common.ContainerUtils;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.HashMap;
@@ -37,7 +38,7 @@ public class a {
             sb.append("?");
             for (Map.Entry<String, Object> entry : a2.entrySet()) {
                 if (sb.charAt(sb.length() - 1) != '?') {
-                    sb.append("&");
+                    sb.append(ContainerUtils.FIELD_DELIMITER);
                 }
                 sb.append(entry.getKey());
                 sb.append("=");

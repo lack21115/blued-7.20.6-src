@@ -12,9 +12,7 @@ public final class AddressBookParsedResult extends ParsedResult {
     private final String[] names;
     private final String[] nicknames;
     private final String note;
-
-    /* renamed from: org  reason: collision with root package name */
-    private final String f28238org;
+    private final String org;
     private final String[] phoneNumbers;
     private final String[] phoneTypes;
     private final String pronunciation;
@@ -43,7 +41,7 @@ public final class AddressBookParsedResult extends ParsedResult {
         this.note = str3;
         this.addresses = strArr7;
         this.addressTypes = strArr8;
-        this.f28238org = str4;
+        this.org = str4;
         this.birthday = str5;
         this.title = str6;
         this.urls = strArr9;
@@ -73,7 +71,7 @@ public final class AddressBookParsedResult extends ParsedResult {
         maybeAppend(this.nicknames, sb);
         maybeAppend(this.pronunciation, sb);
         maybeAppend(this.title, sb);
-        maybeAppend(this.f28238org, sb);
+        maybeAppend(this.org, sb);
         maybeAppend(this.addresses, sb);
         maybeAppend(this.phoneNumbers, sb);
         maybeAppend(this.emails, sb);
@@ -114,7 +112,7 @@ public final class AddressBookParsedResult extends ParsedResult {
     }
 
     public String getOrg() {
-        return this.f28238org;
+        return this.org;
     }
 
     public String[] getPhoneNumbers() {

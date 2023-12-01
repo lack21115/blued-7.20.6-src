@@ -9,13 +9,11 @@ import kotlin.collections.CollectionsKt;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/sequences/SequencesKt___SequencesKt$sorted$1.class */
 public final class SequencesKt___SequencesKt$sorted$1<T> implements Sequence<T> {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ Sequence<T> f42689a;
+    final /* synthetic */ Sequence<T> a;
 
     @Override // kotlin.sequences.Sequence
     public Iterator<T> iterator() {
-        List e = SequencesKt.e(this.f42689a);
+        List e = SequencesKt.e(this.a);
         CollectionsKt.d(e);
         return e.iterator();
     }

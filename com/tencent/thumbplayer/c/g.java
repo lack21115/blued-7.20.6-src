@@ -18,11 +18,11 @@ import java.util.Map;
 public class g implements ITPPreloadProxy {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f39259a;
+    private Context f25568a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private ITPDownloadProxy f39260c;
+    private ITPDownloadProxy f25569c;
     private boolean f = false;
     private a d = new a();
     private ITPPreloadProxy.IPreloadListener e = new f("TPPreloadProxyImpl");
@@ -74,7 +74,7 @@ public class g implements ITPPreloadProxy {
     }
 
     public g(Context context, int i) {
-        this.f39259a = context;
+        this.f25568a = context;
         this.b = i;
         a();
     }
@@ -94,32 +94,32 @@ public class g implements ITPPreloadProxy {
                 int i3 = i;
                 ITPDownloadProxy a3 = a2.a();
                 int i4 = i;
-                this.f39260c = a3;
+                this.f25569c = a3;
                 int i5 = i;
                 a3.setLogListener(this.d);
                 int i6 = i;
-                this.f39260c.setUserData(TPDownloadProxyEnum.USER_IS_VIP, Boolean.valueOf(TPPlayerConfig.isUserIsVip()));
+                this.f25569c.setUserData(TPDownloadProxyEnum.USER_IS_VIP, Boolean.valueOf(TPPlayerConfig.isUserIsVip()));
                 int i7 = i;
                 if (!TextUtils.isEmpty(TPPlayerConfig.getUserUin())) {
                     int i8 = i;
-                    this.f39260c.setUserData(TPDownloadProxyEnum.USER_UIN, TPPlayerConfig.getUserUin());
+                    this.f25569c.setUserData(TPDownloadProxyEnum.USER_UIN, TPPlayerConfig.getUserUin());
                 }
                 int i9 = i;
-                if (!TextUtils.isEmpty(TPPlayerConfig.getAppVersionName(this.f39259a))) {
+                if (!TextUtils.isEmpty(TPPlayerConfig.getAppVersionName(this.f25568a))) {
                     int i10 = i;
-                    this.f39260c.setUserData("app_version_name", TPPlayerConfig.getAppVersionName(this.f39259a));
+                    this.f25569c.setUserData("app_version_name", TPPlayerConfig.getAppVersionName(this.f25568a));
                 }
                 int i11 = i;
-                if (TPPlayerConfig.getBuildNumber(this.f39259a) != -1) {
+                if (TPPlayerConfig.getBuildNumber(this.f25568a) != -1) {
                     int i12 = i;
-                    this.f39260c.setUserData("app_version_code", String.valueOf(TPPlayerConfig.getBuildNumber(this.f39259a)));
+                    this.f25569c.setUserData("app_version_code", String.valueOf(TPPlayerConfig.getBuildNumber(this.f25568a)));
                 }
                 int i13 = i;
-                this.f39260c.setUserData(TPDownloadProxyEnum.USER_UPC, TPPlayerConfig.getUserUpc());
+                this.f25569c.setUserData(TPDownloadProxyEnum.USER_UPC, TPPlayerConfig.getUserUpc());
                 int i14 = i;
-                this.f39260c.setUserData(TPDownloadProxyEnum.USER_UPC_STATE, Integer.valueOf(TPPlayerConfig.getUserUpcState()));
+                this.f25569c.setUserData(TPDownloadProxyEnum.USER_UPC_STATE, Integer.valueOf(TPPlayerConfig.getUserUpcState()));
                 int i15 = i;
-                this.f39260c.setUserData(TPDownloadProxyEnum.USER_EXTERNAL_NETWORK_IP, TPPlayerConfig.getOutNetIp());
+                this.f25569c.setUserData(TPDownloadProxyEnum.USER_EXTERNAL_NETWORK_IP, TPPlayerConfig.getOutNetIp());
                 i2 = i;
                 this.f = true;
                 return;
@@ -136,14 +136,14 @@ public class g implements ITPPreloadProxy {
 
     @Override // com.tencent.thumbplayer.api.proxy.ITPPreloadProxy
     public boolean isAvailable() {
-        return this.f39260c != null && this.f;
+        return this.f25569c != null && this.f;
     }
 
     @Override // com.tencent.thumbplayer.api.proxy.ITPPreloadProxy
     public void pushEvent(int i) {
         if (isAvailable()) {
             try {
-                this.f39260c.pushEvent(i);
+                this.f25569c.pushEvent(i);
             } catch (Throwable th) {
                 TPLogUtil.e("TPPreloadProxyImpl", th);
             }
@@ -173,7 +173,7 @@ public class g implements ITPPreloadProxy {
                 return -1;
             }
         }
-        int startClipPreload = this.f39260c.startClipPreload(str, arrayList.size(), this.d);
+        int startClipPreload = this.f25569c.startClipPreload(str, arrayList.size(), this.d);
         if (startClipPreload <= 0) {
             TPLogUtil.e("TPPreloadProxyImpl", "[startClipPreload] Fail to start clip preload: invalid preload ID.");
             stopPreload(startClipPreload);
@@ -185,7 +185,7 @@ public class g implements ITPPreloadProxy {
             int i2 = i;
             if (!it.hasNext()) {
                 try {
-                    this.f39260c.startTask(startClipPreload);
+                    this.f25569c.startTask(startClipPreload);
                     return startClipPreload;
                 } catch (Throwable th) {
                     TPLogUtil.e("TPPreloadProxyImpl", "[startClipPreload] Fail to start task: " + th.toString());
@@ -194,7 +194,7 @@ public class g implements ITPPreloadProxy {
                 }
             }
             TPDownloadParamData next = it.next();
-            if (!this.f39260c.setClipInfo(startClipPreload, i2, next.getDownloadFileID(), k.a(next.getUrl(), next, null))) {
+            if (!this.f25569c.setClipInfo(startClipPreload, i2, next.getDownloadFileID(), k.a(next.getUrl(), next, null))) {
                 TPLogUtil.e("TPPreloadProxyImpl", "[startClipPreload] Fail to set clip info.");
                 stopPreload(startClipPreload);
                 return -1;
@@ -218,7 +218,7 @@ public class g implements ITPPreloadProxy {
         }
         if (tPDownloadParamData != null) {
             try {
-                return this.f39260c.startPreload(str, k.a(null, tPDownloadParamData, map), this.d);
+                return this.f25569c.startPreload(str, k.a(null, tPDownloadParamData, map), this.d);
             } catch (Throwable th) {
                 TPLogUtil.e("TPPreloadProxyImpl", th);
                 return -1;
@@ -229,7 +229,7 @@ public class g implements ITPPreloadProxy {
 
     @Override // com.tencent.thumbplayer.api.proxy.ITPPreloadProxy
     public void stopPreload(int i) {
-        ITPDownloadProxy iTPDownloadProxy = this.f39260c;
+        ITPDownloadProxy iTPDownloadProxy = this.f25569c;
         if (iTPDownloadProxy == null) {
             return;
         }

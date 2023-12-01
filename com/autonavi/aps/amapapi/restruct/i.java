@@ -13,7 +13,7 @@ import android.os.Handler;
 import android.os.SystemClock;
 import android.provider.Settings;
 import android.text.TextUtils;
-import com.amap.api.col.p0003sl.mq;
+import com.amap.api.col.3sl.mq;
 import com.umeng.analytics.pro.bh;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -32,7 +32,7 @@ public final class i {
     private com.autonavi.aps.amapapi.c E;
 
     /* renamed from: a  reason: collision with root package name */
-    WifiManager f9257a;
+    WifiManager f6417a;
     Context i;
     h t;
     public static HashMap<String, Long> w = new HashMap<>(36);
@@ -42,7 +42,7 @@ public final class i {
     ArrayList<mq> b = new ArrayList<>();
 
     /* renamed from: c  reason: collision with root package name */
-    ArrayList<mq> f9258c = new ArrayList<>();
+    ArrayList<mq> f6418c = new ArrayList<>();
     boolean j = false;
     StringBuilder k = null;
     boolean l = true;
@@ -61,7 +61,7 @@ public final class i {
     volatile boolean B = false;
 
     public i(Context context, WifiManager wifiManager, Handler handler) {
-        this.f9257a = wifiManager;
+        this.f6417a = wifiManager;
         this.i = context;
         h hVar = new h(context, "wifiAgee", handler);
         this.t = hVar;
@@ -71,7 +71,7 @@ public final class i {
     private void A() {
         try {
             if (com.autonavi.aps.amapapi.utils.i.c(this.i, "EYW5kcm9pZC5wZXJtaXNzaW9uLkFDQ0VTU19XSUZJX1NUQVRF")) {
-                this.r = this.f9257a.isWifiEnabled();
+                this.r = this.f6417a.isWifiEnabled();
             }
         } catch (Throwable th) {
         }
@@ -127,7 +127,7 @@ public final class i {
         this.p.clear();
         if (this.s && z) {
             try {
-                this.f9258c.clear();
+                this.f6418c.clear();
             } catch (Throwable th) {
             }
         }
@@ -143,16 +143,16 @@ public final class i {
             if (mqVar.h) {
                 this.v = mqVar.f;
             }
-            if (com.autonavi.aps.amapapi.utils.i.a(mqVar != null ? mq.a(mqVar.f5387a) : "") && (size <= 20 || a(mqVar.f5388c))) {
+            if (com.autonavi.aps.amapapi.utils.i.a(mqVar != null ? mq.a(mqVar.a) : "") && (size <= 20 || a(mqVar.c))) {
                 if (this.s && z) {
-                    this.f9258c.add(mqVar);
+                    this.f6418c.add(mqVar);
                 }
                 if (TextUtils.isEmpty(mqVar.b)) {
                     mqVar.b = "unkwn";
                 } else if (!WifiSsid.NONE.equals(mqVar.b)) {
                     mqVar.b = String.valueOf(i2);
                 }
-                this.p.put(Integer.valueOf((mqVar.f5388c * 25) + i2), mqVar);
+                this.p.put(Integer.valueOf((mqVar.c * 25) + i2), mqVar);
             }
             i = i2 + 1;
         }
@@ -169,10 +169,10 @@ public final class i {
 
     private List<mq> r() {
         List<ScanResult> list;
-        if (this.f9257a != null) {
+        if (this.f6417a != null) {
             try {
                 if (com.autonavi.aps.amapapi.utils.i.c(this.i, "EYW5kcm9pZC5wZXJtaXNzaW9uLkFDQ0VTU19XSUZJX1NUQVRF")) {
-                    list = this.f9257a.getScanResults();
+                    list = this.f6417a.getScanResults();
                 } else {
                     com.autonavi.aps.amapapi.utils.b.a(new Exception("gst_n_aws"), "OPENSDK_WMW", "gsr_n_aws");
                     list = null;
@@ -211,8 +211,8 @@ public final class i {
                         mqVar.b = scanResult2.SSID;
                         mqVar.d = scanResult2.frequency;
                         mqVar.e = scanResult2.timestamp;
-                        mqVar.f5387a = mq.a(scanResult2.BSSID);
-                        mqVar.f5388c = (short) scanResult2.level;
+                        mqVar.a = mq.a(scanResult2.BSSID);
+                        mqVar.c = (short) scanResult2.level;
                         if (Build.VERSION.SDK_INT >= 17) {
                             mqVar.g = (short) ((SystemClock.elapsedRealtime() - (scanResult2.timestamp / 1000)) / 1000);
                             if (mqVar.g < 0) {
@@ -239,7 +239,7 @@ public final class i {
     }
 
     private int s() {
-        WifiManager wifiManager = this.f9257a;
+        WifiManager wifiManager = this.f6417a;
         if (wifiManager != null) {
             return wifiManager.getWifiState();
         }
@@ -261,14 +261,14 @@ public final class i {
                     return false;
                 }
             }
-            if (this.f9257a != null) {
+            if (this.f6417a != null) {
                 d = com.autonavi.aps.amapapi.utils.i.b();
                 int i = y;
                 if (i < 2) {
                     y = i + 1;
                 }
                 if (com.autonavi.aps.amapapi.utils.i.c(this.i, "WYW5kcm9pZC5wZXJtaXNzaW9uLkNIQU5HRV9XSUZJX1NUQVRF")) {
-                    return this.f9257a.startScan();
+                    return this.f6417a.startScan();
                 }
                 com.autonavi.aps.amapapi.utils.b.a(new Exception("n_cws"), "OPENSDK_WMW", "wfs_n_cws");
                 return false;
@@ -286,7 +286,7 @@ public final class i {
     }
 
     private boolean v() {
-        if (this.f9257a == null) {
+        if (this.f6417a == null) {
             return false;
         }
         return com.autonavi.aps.amapapi.utils.i.g(this.i);
@@ -343,7 +343,7 @@ public final class i {
 
     private void z() {
         try {
-            if (this.f9257a == null) {
+            if (this.f6417a == null) {
                 return;
             }
             int s = s();
@@ -360,9 +360,9 @@ public final class i {
     public final ArrayList<mq> a() {
         if (this.s) {
             b(true);
-            return this.f9258c;
+            return this.f6418c;
         }
-        return this.f9258c;
+        return this.f6418c;
     }
 
     public final void a(com.autonavi.aps.amapapi.c cVar) {
@@ -371,7 +371,7 @@ public final class i {
 
     public final void a(boolean z) {
         Context context = this.i;
-        if (!com.autonavi.aps.amapapi.utils.a.m() || !this.n || this.f9257a == null || context == null || !z || com.autonavi.aps.amapapi.utils.i.c() <= 17) {
+        if (!com.autonavi.aps.amapapi.utils.a.m() || !this.n || this.f6417a == null || context == null || !z || com.autonavi.aps.amapapi.utils.i.c() <= 17) {
             return;
         }
         ContentResolver contentResolver = context.getContentResolver();
@@ -437,9 +437,9 @@ public final class i {
 
     public final WifiInfo c() {
         try {
-            if (this.f9257a != null) {
+            if (this.f6417a != null) {
                 if (com.autonavi.aps.amapapi.utils.i.c(this.i, "EYW5kcm9pZC5wZXJtaXNzaW9uLkFDQ0VTU19XSUZJX1NUQVRF")) {
-                    return this.f9257a.getConnectionInfo();
+                    return this.f6417a.getConnectionInfo();
                 }
                 com.autonavi.aps.amapapi.utils.b.a(new Exception("gci_n_aws"), "OPENSDK_WMW", "gci_n_aws");
                 return null;
@@ -499,13 +499,13 @@ public final class i {
     }
 
     public final void i() {
-        if (this.f9257a != null && com.autonavi.aps.amapapi.utils.i.b() - g > 4900) {
+        if (this.f6417a != null && com.autonavi.aps.amapapi.utils.i.b() - g > 4900) {
             g = com.autonavi.aps.amapapi.utils.i.b();
         }
     }
 
     public final void j() {
-        if (this.f9257a == null) {
+        if (this.f6417a == null) {
             return;
         }
         this.B = true;
@@ -542,7 +542,7 @@ public final class i {
         boolean z = false;
         boolean z2 = false;
         while (i < size) {
-            String a2 = mq.a(this.b.get(i).f5387a);
+            String a2 = mq.a(this.b.get(i).a);
             boolean z3 = z;
             if (!this.m) {
                 z3 = z;

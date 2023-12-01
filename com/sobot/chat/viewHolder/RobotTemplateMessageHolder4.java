@@ -8,7 +8,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.anythink.expressad.foundation.h.i;
-import com.blued.android.chat.data.MsgType;
 import com.bytedance.applog.tracker.Tracker;
 import com.sobot.chat.activity.WebViewActivity;
 import com.sobot.chat.api.model.SobotMultiDiaRespInfo;
@@ -93,7 +92,7 @@ public class RobotTemplateMessageHolder4 extends MessageHolderBase {
                 HtmlTools.getInstance(context).setRichText(this.sobot_template4_temp_title, multiMsgTitle.replaceAll("\n", "<br/>"), getLinkTextColor());
                 this.sobot_ll_content.setVisibility(0);
             }
-            if (MsgType.UID_GROUP_AT_ALL.equals(multiDiaRespInfo.getRetCode())) {
+            if ("000000".equals(multiDiaRespInfo.getRetCode())) {
                 List<Map<String, String>> interfaceRetList = multiDiaRespInfo.getInterfaceRetList();
                 if (interfaceRetList == null || interfaceRetList.size() <= 0) {
                     this.sobot_template4_title.setText(multiDiaRespInfo.getAnswerStrip());
@@ -106,7 +105,7 @@ public class RobotTemplateMessageHolder4 extends MessageHolderBase {
                         if (TextUtils.isEmpty(map.get("thumbnail"))) {
                             this.sobot_template4_thumbnail.setVisibility(8);
                         } else {
-                            SobotBitmapUtil.display(context, map.get("thumbnail"), this.sobot_template4_thumbnail, ResourceUtils.getIdByName(context, i.f7952c, "sobot_bg_default_long_pic"), ResourceUtils.getIdByName(context, i.f7952c, "sobot_bg_default_long_pic"));
+                            SobotBitmapUtil.display(context, map.get("thumbnail"), this.sobot_template4_thumbnail, ResourceUtils.getIdByName(context, i.f5112c, "sobot_bg_default_long_pic"), ResourceUtils.getIdByName(context, i.f5112c, "sobot_bg_default_long_pic"));
                             this.sobot_template4_thumbnail.setVisibility(0);
                         }
                         this.sobot_template4_summary.setText(map.get("summary"));

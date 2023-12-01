@@ -557,8 +557,8 @@ public final class ChatRoomProtos {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder mo2030clone() {
+                return (Builder) super.mo2030clone();
             }
 
             @Override // com.blued.das.client.chatroom.ChatRoomProtos.ChatRoomProtoOrBuilder
@@ -4213,7 +4213,7 @@ public final class ChatRoomProtos {
                 case 285:
                 case 287:
                 case 288:
-                case 443:
+                case LIVE_CHALLENGE_PK_EXPLAIN_CLICK_VALUE:
                 default:
                     return null;
                 case 26:

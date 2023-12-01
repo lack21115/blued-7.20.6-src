@@ -6,25 +6,25 @@ import java.util.concurrent.Callable;
 public final class e<T> implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final c f24594a = new c();
+    private static final c f10907a = new c();
     private static final b b = new b();
 
     /* renamed from: c  reason: collision with root package name */
-    private Runnable f24595c;
+    private Runnable f10908c;
     private Callable<T> d;
     private d<T, Throwable> e;
 
     public e(f<T, Throwable> fVar) {
-        this.f24595c = fVar.e;
+        this.f10908c = fVar.e;
         this.d = fVar.f;
-        this.e = new d<>(fVar.d == com.opos.cmn.an.j.a.a.MAIN ? f24594a : b, fVar.f24597c, fVar.f24596a, fVar.b);
+        this.e = new d<>(fVar.d == com.opos.cmn.an.j.a.a.MAIN ? f10907a : b, fVar.f10910c, fVar.f10909a, fVar.b);
     }
 
     @Override // java.lang.Runnable
     public void run() {
         try {
-            if (this.f24595c != null) {
-                this.f24595c.run();
+            if (this.f10908c != null) {
+                this.f10908c.run();
             } else if (this.d != null) {
                 this.e.b((d<T, Throwable>) this.d.call());
             }

@@ -41,7 +41,7 @@ import java.util.zip.ZipOutputStream;
 public final class ap {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Map<String, String> f35250a;
+    private static Map<String, String> f21559a;
 
     public static Context a(Context context) {
         Context applicationContext;
@@ -279,15 +279,15 @@ public final class ap {
             return "";
         }
         try {
-            if (f35250a == null) {
-                f35250a = new HashMap();
+            if (f21559a == null) {
+                f21559a = new HashMap();
             }
-            if (f35250a.containsKey(str)) {
-                return f35250a.get(str);
+            if (f21559a.containsKey(str)) {
+                return f21559a.get(str);
             }
             String systemProperty = NativeCrashHandler.getInstance().getSystemProperty(str);
             if (!TextUtils.isEmpty(systemProperty) && !systemProperty.equals(bc.b.S)) {
-                f35250a.put(str, systemProperty);
+                f21559a.put(str, systemProperty);
             }
             return systemProperty;
         } catch (Throwable th) {
@@ -472,8 +472,8 @@ public final class ap {
             i2 = i3 + 1;
         }
         for (i = 0; i < arrayList.size(); i++) {
-            bundle.putString("pluginVal" + i + "plugInId", ((PlugInBean) arrayList2.get(i)).f35194a);
-            bundle.putString("pluginVal" + i + "plugInUUID", ((PlugInBean) arrayList2.get(i)).f35195c);
+            bundle.putString("pluginVal" + i + "plugInId", ((PlugInBean) arrayList2.get(i)).f21503a);
+            bundle.putString("pluginVal" + i + "plugInUUID", ((PlugInBean) arrayList2.get(i)).f21504c);
             bundle.putString("pluginVal" + i + "plugInVersion", ((PlugInBean) arrayList2.get(i)).b);
         }
         parcel.writeBundle(bundle);

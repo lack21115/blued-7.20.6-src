@@ -7,16 +7,14 @@ import java.io.File;
 /* renamed from: com.amap.api.col.3sl.dq  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/dq.class */
 public final class dq {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static boolean f4865a = new File("/system/framework/amap.jar").exists();
+    private static boolean a = new File("/system/framework/amap.jar").exists();
 
     public static AssetManager a(Context context) {
         if (context == null) {
             return null;
         }
         AssetManager assets = context.getAssets();
-        if (f4865a) {
+        if (a) {
             try {
                 assets.getClass().getDeclaredMethod("addAssetPath", String.class).invoke(assets, "/system/framework/amap.jar");
                 return assets;

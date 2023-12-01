@@ -17,6 +17,7 @@ import android.os.ParcelFileDescriptor;
 import android.provider.Contacts;
 import android.util.Log;
 import com.anythink.expressad.d.a.b;
+import com.huawei.hms.ads.fw;
 import com.huawei.openalliance.ad.constant.ax;
 import com.oplus.quickgame.sdk.hall.Constant;
 import com.umeng.commonsdk.framework.UMModuleRegister;
@@ -246,7 +247,7 @@ public final class MediaStore {
                 }
 
                 public static final boolean moveItem(ContentResolver contentResolver, long j, int i, int i2) {
-                    Uri build = getContentUri(Constant.Param.KEY_RPK_EXTERNAL, j).buildUpon().appendEncodedPath(String.valueOf(i)).appendQueryParameter("move", "true").build();
+                    Uri build = getContentUri(Constant.Param.KEY_RPK_EXTERNAL, j).buildUpon().appendEncodedPath(String.valueOf(i)).appendQueryParameter("move", fw.Code).build();
                     ContentValues contentValues = new ContentValues();
                     contentValues.put("play_order", Integer.valueOf(i2));
                     return contentResolver.update(build, contentValues, null, null) != 0;

@@ -8,11 +8,11 @@ import java.util.Map;
 public class StrategyWrapper extends IDWrapper {
 
     /* renamed from: a  reason: collision with root package name */
-    final String f21524a;
+    final String f7918a;
 
     protected StrategyWrapper(Map<String, Object> map) {
         super(map);
-        this.f21524a = "tab";
+        this.f7918a = "tab";
     }
 
     public static StrategyWrapper wrapper(Map<String, Object> map) {

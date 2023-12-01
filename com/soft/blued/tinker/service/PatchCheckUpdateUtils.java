@@ -2,6 +2,7 @@ package com.soft.blued.tinker.service;
 
 import android.text.TextUtils;
 import com.blued.android.core.AppInfo;
+import com.blued.android.core.net.StringHttpResponseHandler;
 import com.blued.android.framework.download.DownloadManager;
 import com.blued.android.framework.download.OnFileDownloadListener;
 import com.blued.android.framework.download.model.DownloadBaseInfo;
@@ -22,20 +23,17 @@ import java.io.File;
 /* loaded from: source-8303388-dex2jar.jar:com/soft/blued/tinker/service/PatchCheckUpdateUtils.class */
 public class PatchCheckUpdateUtils {
     public static void a() {
-        AppHttpUtils.a(TinkerTools.a(), AppInfo.f9487c, new BluedUIHttpResponse<BluedEntity<TinkerModel, TinkerExtra>>() { // from class: com.soft.blued.tinker.service.PatchCheckUpdateUtils.1
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
+        AppHttpUtils.a(TinkerTools.a(), AppInfo.c, (StringHttpResponseHandler) new BluedUIHttpResponse<BluedEntity<TinkerModel, TinkerExtra>>() { // from class: com.soft.blued.tinker.service.PatchCheckUpdateUtils.1
             public boolean onUIFailure(int i, String str) {
                 return true;
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(final BluedEntity<TinkerModel, TinkerExtra> bluedEntity) {
                 Logger.b("PTH", "patch check update request success");
                 if (bluedEntity == null || !bluedEntity.hasData()) {
                     Logger.b("PTH", "patch has no data");
                 } else {
                     ThreadManager.a().a(new ThreadExecutor("checkPatchResult") { // from class: com.soft.blued.tinker.service.PatchCheckUpdateUtils.1.1
-                        @Override // com.blued.android.framework.pool.ThreadExecutor
                         public void execute() {
                             PatchCheckUpdateUtils.b(bluedEntity);
                         }
@@ -47,7 +45,7 @@ public class PatchCheckUpdateUtils {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static void b(BluedEntity<TinkerModel, TinkerExtra> bluedEntity) {
-        if (bluedEntity.extra != null && bluedEntity.extra.f29778a == 1) {
+        if (bluedEntity.extra != null && ((TinkerExtra) bluedEntity.extra).f16088a == 1) {
             Logger.b("PTH", "patch check update need roll back");
             Tinker.with(AppInfo.d()).cleanPatch();
             return;
@@ -65,16 +63,13 @@ public class PatchCheckUpdateUtils {
             Logger.b("PTH", "downloadDirs sub:" + a2);
             if (!TextUtils.isEmpty(a2) && !TextUtils.isEmpty(d)) {
                 DownloadManager.a().a(downloadBaseInfo, new File(a2, d).getAbsolutePath(), new OnFileDownloadListener() { // from class: com.soft.blued.tinker.service.PatchCheckUpdateUtils.2
-                    @Override // com.blued.android.framework.download.OnFileDownloadListener
                     public void a(DownloadBaseInfo downloadBaseInfo2) {
                         Logger.b("PTH", "patch download start");
                     }
 
-                    @Override // com.blued.android.framework.download.OnFileDownloadListener
                     public void a(DownloadBaseInfo downloadBaseInfo2, int i, int i2) {
                     }
 
-                    @Override // com.blued.android.framework.download.OnFileDownloadListener
                     public void a(DownloadBaseInfo downloadBaseInfo2, String str) {
                         Logger.b("PTH", "patch file download success");
                         if (downloadBaseInfo2 == null || TextUtils.isEmpty(str) || !new File(str).exists()) {
@@ -84,7 +79,6 @@ public class PatchCheckUpdateUtils {
                         TinkerInstaller.onReceiveUpgradePatch(AppInfo.d(), str);
                     }
 
-                    @Override // com.blued.android.framework.download.OnFileDownloadListener
                     public void b(DownloadBaseInfo downloadBaseInfo2) {
                         Logger.b("PTH", "patch download failure");
                     }

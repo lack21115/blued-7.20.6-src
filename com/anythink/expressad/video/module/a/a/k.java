@@ -13,7 +13,7 @@ public class k extends f {
     public static final int V = 2;
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f8510a = 1;
+    public static final int f5670a = 1;
     private static final String ag = "camp_position";
     protected boolean W;
     protected com.anythink.expressad.foundation.d.c X;

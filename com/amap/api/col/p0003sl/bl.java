@@ -7,26 +7,24 @@ import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 /* renamed from: com.amap.api.col.3sl.bl  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/bl.class */
 public class bl implements iz {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static volatile bl f4783a;
+    private static volatile bl a;
 
     private bl() {
     }
 
     public static bl a() {
-        if (f4783a == null) {
+        if (a == null) {
             synchronized (bl.class) {
                 try {
-                    if (f4783a == null) {
-                        f4783a = new bl();
+                    if (a == null) {
+                        a = new bl();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f4783a;
+        return a;
     }
 
     @Override // com.amap.api.col.p0003sl.iz

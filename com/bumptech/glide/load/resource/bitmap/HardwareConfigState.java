@@ -10,7 +10,7 @@ import java.io.File;
 public final class HardwareConfigState {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final File f20956a = new File("/proc/self/fd");
+    private static final File f7350a = new File("/proc/self/fd");
     private static volatile HardwareConfigState b;
     private final int d;
     private final int e;
@@ -18,7 +18,7 @@ public final class HardwareConfigState {
     private boolean g = true;
 
     /* renamed from: c  reason: collision with root package name */
-    private final boolean f20957c = b();
+    private final boolean f7351c = b();
 
     HardwareConfigState() {
         if (Build.VERSION.SDK_INT >= 28) {
@@ -126,7 +126,7 @@ public final class HardwareConfigState {
             this.f = i;
             if (i >= 50) {
                 this.f = 0;
-                int length = f20956a.list().length;
+                int length = f7350a.list().length;
                 if (length >= this.d) {
                     z2 = false;
                 }
@@ -154,7 +154,7 @@ public final class HardwareConfigState {
         boolean z3 = false;
         if (z) {
             z3 = false;
-            if (this.f20957c) {
+            if (this.f7351c) {
                 z3 = false;
                 if (Build.VERSION.SDK_INT >= 26) {
                     if (z2) {

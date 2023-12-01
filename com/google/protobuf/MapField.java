@@ -69,43 +69,43 @@ public class MapField<K, V> implements MutabilityOracle {
                 this.delegate = collection;
             }
 
-            @Override // java.util.Collection, java.util.Set
+            @Override // java.util.Collection
             public boolean add(E e) {
                 throw new UnsupportedOperationException();
             }
 
-            @Override // java.util.Collection, java.util.Set
+            @Override // java.util.Collection
             public boolean addAll(Collection<? extends E> collection) {
                 throw new UnsupportedOperationException();
             }
 
-            @Override // java.util.Collection, java.util.Set
+            @Override // java.util.Collection
             public void clear() {
                 this.mutabilityOracle.ensureMutable();
                 this.delegate.clear();
             }
 
-            @Override // java.util.Collection, java.util.Set
+            @Override // java.util.Collection
             public boolean contains(Object obj) {
                 return this.delegate.contains(obj);
             }
 
-            @Override // java.util.Collection, java.util.Set
+            @Override // java.util.Collection
             public boolean containsAll(Collection<?> collection) {
                 return this.delegate.containsAll(collection);
             }
 
-            @Override // java.util.Collection, java.util.Set
+            @Override // java.util.Collection
             public boolean equals(Object obj) {
                 return this.delegate.equals(obj);
             }
 
-            @Override // java.util.Collection, java.util.Set
+            @Override // java.util.Collection
             public int hashCode() {
                 return this.delegate.hashCode();
             }
 
-            @Override // java.util.Collection, java.util.Set
+            @Override // java.util.Collection
             public boolean isEmpty() {
                 return this.delegate.isEmpty();
             }
@@ -115,35 +115,35 @@ public class MapField<K, V> implements MutabilityOracle {
                 return new MutatabilityAwareIterator(this.mutabilityOracle, this.delegate.iterator());
             }
 
-            @Override // java.util.Collection, java.util.Set
+            @Override // java.util.Collection
             public boolean remove(Object obj) {
                 this.mutabilityOracle.ensureMutable();
                 return this.delegate.remove(obj);
             }
 
-            @Override // java.util.Collection, java.util.Set
+            @Override // java.util.Collection
             public boolean removeAll(Collection<?> collection) {
                 this.mutabilityOracle.ensureMutable();
                 return this.delegate.removeAll(collection);
             }
 
-            @Override // java.util.Collection, java.util.Set
+            @Override // java.util.Collection
             public boolean retainAll(Collection<?> collection) {
                 this.mutabilityOracle.ensureMutable();
                 return this.delegate.retainAll(collection);
             }
 
-            @Override // java.util.Collection, java.util.List
+            @Override // java.util.Collection
             public int size() {
                 return this.delegate.size();
             }
 
-            @Override // java.util.Collection, java.util.Set
+            @Override // java.util.Collection
             public Object[] toArray() {
                 return this.delegate.toArray();
             }
 
-            @Override // java.util.Collection, java.util.Set
+            @Override // java.util.Collection
             public <T> T[] toArray(T[] tArr) {
                 return (T[]) this.delegate.toArray(tArr);
             }
@@ -203,45 +203,45 @@ public class MapField<K, V> implements MutabilityOracle {
                 this.delegate = set;
             }
 
-            @Override // java.util.Set
+            @Override // java.util.Set, java.util.Collection
             public boolean add(E e) {
                 this.mutabilityOracle.ensureMutable();
                 return this.delegate.add(e);
             }
 
-            @Override // java.util.Set
+            @Override // java.util.Set, java.util.Collection
             public boolean addAll(Collection<? extends E> collection) {
                 this.mutabilityOracle.ensureMutable();
                 return this.delegate.addAll(collection);
             }
 
-            @Override // java.util.Set
+            @Override // java.util.Set, java.util.Collection
             public void clear() {
                 this.mutabilityOracle.ensureMutable();
                 this.delegate.clear();
             }
 
-            @Override // java.util.Set
+            @Override // java.util.Set, java.util.Collection
             public boolean contains(Object obj) {
                 return this.delegate.contains(obj);
             }
 
-            @Override // java.util.Set
+            @Override // java.util.Set, java.util.Collection
             public boolean containsAll(Collection<?> collection) {
                 return this.delegate.containsAll(collection);
             }
 
-            @Override // java.util.Set
+            @Override // java.util.Set, java.util.Collection
             public boolean equals(Object obj) {
                 return this.delegate.equals(obj);
             }
 
-            @Override // java.util.Set
+            @Override // java.util.Set, java.util.Collection
             public int hashCode() {
                 return this.delegate.hashCode();
             }
 
-            @Override // java.util.Set
+            @Override // java.util.Set, java.util.Collection
             public boolean isEmpty() {
                 return this.delegate.isEmpty();
             }
@@ -251,35 +251,35 @@ public class MapField<K, V> implements MutabilityOracle {
                 return new MutatabilityAwareIterator(this.mutabilityOracle, this.delegate.iterator());
             }
 
-            @Override // java.util.Set
+            @Override // java.util.Set, java.util.Collection
             public boolean remove(Object obj) {
                 this.mutabilityOracle.ensureMutable();
                 return this.delegate.remove(obj);
             }
 
-            @Override // java.util.Set
+            @Override // java.util.Set, java.util.Collection
             public boolean removeAll(Collection<?> collection) {
                 this.mutabilityOracle.ensureMutable();
                 return this.delegate.removeAll(collection);
             }
 
-            @Override // java.util.Set
+            @Override // java.util.Set, java.util.Collection
             public boolean retainAll(Collection<?> collection) {
                 this.mutabilityOracle.ensureMutable();
                 return this.delegate.retainAll(collection);
             }
 
-            @Override // java.util.Set, java.util.Collection, java.util.List
+            @Override // java.util.Set, java.util.Collection
             public int size() {
                 return this.delegate.size();
             }
 
-            @Override // java.util.Set
+            @Override // java.util.Set, java.util.Collection
             public Object[] toArray() {
                 return this.delegate.toArray();
             }
 
-            @Override // java.util.Set
+            @Override // java.util.Set, java.util.Collection
             public <T> T[] toArray(T[] tArr) {
                 return (T[]) this.delegate.toArray(tArr);
             }

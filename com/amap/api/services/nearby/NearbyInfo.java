@@ -4,13 +4,9 @@ import com.amap.api.services.core.LatLonPoint;
 
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/services/nearby/NearbyInfo.class */
 public class NearbyInfo {
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f5649a;
+    private String a;
     private LatLonPoint b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private long f5650c;
+    private long c;
     private int d;
     private int e;
 
@@ -27,11 +23,11 @@ public class NearbyInfo {
     }
 
     public long getTimeStamp() {
-        return this.f5650c;
+        return this.c;
     }
 
     public String getUserID() {
-        return this.f5649a;
+        return this.a;
     }
 
     public void setDistance(int i) {
@@ -47,10 +43,10 @@ public class NearbyInfo {
     }
 
     public void setTimeStamp(long j) {
-        this.f5650c = j;
+        this.c = j;
     }
 
     public void setUserID(String str) {
-        this.f5649a = str;
+        this.a = str;
     }
 }

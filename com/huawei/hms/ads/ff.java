@@ -20,7 +20,7 @@ public class ff {
     }
 
     public int Code() {
-        return this.Code.Code(this.V, 12375);
+        return this.Code.Code(this.V, EGL14.EGL_WIDTH);
     }
 
     public void I() {
@@ -28,7 +28,7 @@ public class ff {
     }
 
     public int V() {
-        return this.Code.Code(this.V, 12374);
+        return this.Code.Code(this.V, EGL14.EGL_HEIGHT);
     }
 
     public void Z() {

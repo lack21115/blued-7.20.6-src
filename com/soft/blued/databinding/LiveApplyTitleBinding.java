@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class LiveApplyTitleBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final RelativeLayout f29447a;
+    private final RelativeLayout f15757a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
-        return this.f29447a;
+        return this.f15757a;
     }
 }

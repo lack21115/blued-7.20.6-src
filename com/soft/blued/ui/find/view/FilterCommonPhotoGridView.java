@@ -22,11 +22,11 @@ import kotlin.jvm.internal.Intrinsics;
 public final class FilterCommonPhotoGridView extends LinearLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f30679a;
+    private Context f16989a;
     private LayoutFilterCommonPhotoGridViewBinding b;
 
     /* renamed from: c  reason: collision with root package name */
-    private FilterSelectorOpenTwoLevelListener f30680c;
+    private FilterSelectorOpenTwoLevelListener f16990c;
     private boolean d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -34,7 +34,7 @@ public final class FilterCommonPhotoGridView extends LinearLayout {
         super(context);
         Intrinsics.e(context, "context");
         this.d = true;
-        this.f30679a = context;
+        this.f16989a = context;
         a(null);
     }
 
@@ -44,7 +44,7 @@ public final class FilterCommonPhotoGridView extends LinearLayout {
         Intrinsics.e(context, "context");
         Intrinsics.e(attributeSet, "attributeSet");
         this.d = true;
-        this.f30679a = context;
+        this.f16989a = context;
         a(attributeSet);
     }
 
@@ -54,12 +54,12 @@ public final class FilterCommonPhotoGridView extends LinearLayout {
         Intrinsics.e(context, "context");
         Intrinsics.e(attributeSet, "attributeSet");
         this.d = true;
-        this.f30679a = context;
+        this.f16989a = context;
         a(attributeSet);
     }
 
     private final void a(AttributeSet attributeSet) {
-        Context context = this.f30679a;
+        Context context = this.f16989a;
         if (context == null) {
             return;
         }
@@ -84,11 +84,11 @@ public final class FilterCommonPhotoGridView extends LinearLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(FilterCommonPhotoGridView this$0, View view) {
+    public static final void a(FilterCommonPhotoGridView filterCommonPhotoGridView, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        if (this$0.d) {
-            this$0.c();
+        Intrinsics.e(filterCommonPhotoGridView, "this$0");
+        if (filterCommonPhotoGridView.d) {
+            filterCommonPhotoGridView.c();
         }
     }
 
@@ -112,7 +112,7 @@ public final class FilterCommonPhotoGridView extends LinearLayout {
         TextView textView2;
         TextView textView3;
         TextView textView4;
-        Context context = this.f30679a;
+        Context context = this.f16989a;
         if (context == null) {
             return;
         }
@@ -150,14 +150,14 @@ public final class FilterCommonPhotoGridView extends LinearLayout {
 
     private final void setTagArrow(boolean z) {
         LayoutFilterCommonPhotoGridViewBinding layoutFilterCommonPhotoGridViewBinding;
-        Context context = this.f30679a;
+        Context context = this.f16989a;
         if (context == null || (layoutFilterCommonPhotoGridViewBinding = this.b) == null) {
             return;
         }
         if (z) {
-            layoutFilterCommonPhotoGridViewBinding.f29390c.setImageDrawable(context.getDrawable(R.drawable.icon_arrow_up_filter));
+            layoutFilterCommonPhotoGridViewBinding.f15700c.setImageDrawable(context.getDrawable(R.drawable.icon_arrow_up_filter));
         } else {
-            layoutFilterCommonPhotoGridViewBinding.f29390c.setImageDrawable(context.getDrawable(R.drawable.icon_arrow_down_filter));
+            layoutFilterCommonPhotoGridViewBinding.f15700c.setImageDrawable(context.getDrawable(R.drawable.icon_arrow_down_filter));
         }
     }
 
@@ -176,7 +176,7 @@ public final class FilterCommonPhotoGridView extends LinearLayout {
     }
 
     public final FilterSelectorOpenTwoLevelListener getOpenTwoLevelListener() {
-        return this.f30680c;
+        return this.f16990c;
     }
 
     public final PhotoGridView getPhotoGridView() {
@@ -184,7 +184,7 @@ public final class FilterCommonPhotoGridView extends LinearLayout {
         if (layoutFilterCommonPhotoGridViewBinding == null) {
             return null;
         }
-        return layoutFilterCommonPhotoGridViewBinding.f29389a;
+        return layoutFilterCommonPhotoGridViewBinding.f15699a;
     }
 
     public final PhotoGridView getPhotoGridView2() {
@@ -195,8 +195,8 @@ public final class FilterCommonPhotoGridView extends LinearLayout {
         return layoutFilterCommonPhotoGridViewBinding.b;
     }
 
-    public final void setGridViewTitle(String title) {
-        Intrinsics.e(title, "title");
+    public final void setGridViewTitle(String str) {
+        Intrinsics.e(str, "title");
         LayoutFilterCommonPhotoGridViewBinding layoutFilterCommonPhotoGridViewBinding = this.b;
         TextView textView = layoutFilterCommonPhotoGridViewBinding == null ? null : layoutFilterCommonPhotoGridViewBinding.f;
         if (textView != null) {
@@ -207,11 +207,11 @@ public final class FilterCommonPhotoGridView extends LinearLayout {
         if (textView2 == null) {
             return;
         }
-        textView2.setText(title);
+        textView2.setText(str);
     }
 
-    public final void setGridViewTitle2(String title) {
-        Intrinsics.e(title, "title");
+    public final void setGridViewTitle2(String str) {
+        Intrinsics.e(str, "title");
         LayoutFilterCommonPhotoGridViewBinding layoutFilterCommonPhotoGridViewBinding = this.b;
         TextView textView = layoutFilterCommonPhotoGridViewBinding == null ? null : layoutFilterCommonPhotoGridViewBinding.g;
         if (textView != null) {
@@ -222,17 +222,17 @@ public final class FilterCommonPhotoGridView extends LinearLayout {
         if (textView2 == null) {
             return;
         }
-        textView2.setText(title);
+        textView2.setText(str);
     }
 
-    public final void setLeftText(String text) {
-        Intrinsics.e(text, "text");
+    public final void setLeftText(String str) {
+        Intrinsics.e(str, "text");
         LayoutFilterCommonPhotoGridViewBinding layoutFilterCommonPhotoGridViewBinding = this.b;
         TextView textView = layoutFilterCommonPhotoGridViewBinding == null ? null : layoutFilterCommonPhotoGridViewBinding.h;
         if (textView == null) {
             return;
         }
-        textView.setText(text);
+        textView.setText(str);
     }
 
     public final void setNeedClickShowTwoLevel(boolean z) {
@@ -240,17 +240,17 @@ public final class FilterCommonPhotoGridView extends LinearLayout {
     }
 
     public final void setOpenTwoLevelListener(FilterSelectorOpenTwoLevelListener filterSelectorOpenTwoLevelListener) {
-        this.f30680c = filterSelectorOpenTwoLevelListener;
+        this.f16990c = filterSelectorOpenTwoLevelListener;
     }
 
-    public final void setRightText(String text) {
-        Intrinsics.e(text, "text");
+    public final void setRightText(String str) {
+        Intrinsics.e(str, "text");
         LayoutFilterCommonPhotoGridViewBinding layoutFilterCommonPhotoGridViewBinding = this.b;
         TextView textView = layoutFilterCommonPhotoGridViewBinding == null ? null : layoutFilterCommonPhotoGridViewBinding.i;
         if (textView == null) {
             return;
         }
-        textView.setText(text);
+        textView.setText(str);
     }
 
     public final void setRightTextColor(int i) {

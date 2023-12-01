@@ -6,7 +6,7 @@ import android.content.Context;
 public class WebViewDatabase {
 
     /* renamed from: a  reason: collision with root package name */
-    private static WebViewDatabase f38817a;
+    private static WebViewDatabase f25126a;
     private Context b;
 
     protected WebViewDatabase(Context context) {
@@ -17,10 +17,10 @@ public class WebViewDatabase {
         WebViewDatabase webViewDatabase;
         synchronized (WebViewDatabase.class) {
             try {
-                if (f38817a == null) {
-                    f38817a = new WebViewDatabase(context);
+                if (f25126a == null) {
+                    f25126a = new WebViewDatabase(context);
                 }
-                webViewDatabase = f38817a;
+                webViewDatabase = f25126a;
             } catch (Throwable th) {
                 throw th;
             }

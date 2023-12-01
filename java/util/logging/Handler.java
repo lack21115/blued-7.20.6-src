@@ -1,6 +1,5 @@
 package java.util.logging;
 
-import android.os.BatteryManager;
 import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
@@ -80,7 +79,7 @@ public abstract class Handler {
             try {
                 this.level = Level.parse(property2);
             } catch (Exception e2) {
-                printInvalidPropMessage(BatteryManager.EXTRA_LEVEL, property2, e2);
+                printInvalidPropMessage("level", property2, e2);
                 this.level = Level.parse(str);
             }
         } else {

@@ -10,7 +10,7 @@ import com.airbnb.lottie.model.content.GradientStroke;
 import com.airbnb.lottie.model.content.GradientType;
 import com.airbnb.lottie.model.content.ShapeStroke;
 import com.amap.api.col.p0003sl.iu;
-import com.baidu.mobads.sdk.api.IAdInterListener;
+import com.anythink.core.common.g.c;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -59,7 +59,7 @@ public class GradientStrokeParser {
                 }
                 z = true;
             } else if (hashCode == 103) {
-                if (nextName.equals("g")) {
+                if (nextName.equals(iu.f)) {
                     z = true;
                 }
                 z = true;
@@ -69,7 +69,7 @@ public class GradientStrokeParser {
                 }
                 z = true;
             } else if (hashCode == 119) {
-                if (nextName.equals(IAdInterListener.AdReqParam.WIDTH)) {
+                if (nextName.equals("w")) {
                     z = true;
                 }
                 z = true;
@@ -125,12 +125,12 @@ public class GradientStrokeParser {
                         String nextName2 = jsonReader.nextName();
                         int hashCode2 = nextName2.hashCode();
                         if (hashCode2 != 107) {
-                            if (hashCode2 == 112 && nextName2.equals("p")) {
+                            if (hashCode2 == 112 && nextName2.equals(c.W)) {
                                 z2 = false;
                             }
                             z2 = true;
                         } else {
-                            if (nextName2.equals("k")) {
+                            if (nextName2.equals(iu.k)) {
                                 z2 = true;
                             }
                             z2 = true;
@@ -249,7 +249,7 @@ public class GradientStrokeParser {
                         } else {
                             if (!str2.equals("d")) {
                                 animatableFloatValue3 = animatableFloatValue6;
-                                if (str2.equals("g")) {
+                                if (str2.equals(iu.f)) {
                                 }
                             }
                             lottieComposition.a(true);

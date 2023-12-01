@@ -167,10 +167,10 @@ public class ZCSobotApi {
                     if (list == null || list.size() <= 0) {
                         return;
                     }
-                    List.this.addAll(list);
+                    arrayList.addAll(list);
                     SobotNoReadLeaveReplyListener sobotNoReadLeaveReplyListener2 = sobotNoReadLeaveReplyListener;
                     if (sobotNoReadLeaveReplyListener2 != null) {
-                        sobotNoReadLeaveReplyListener2.onNoReadLeaveReplyListener(List.this);
+                        sobotNoReadLeaveReplyListener2.onNoReadLeaveReplyListener(arrayList);
                     }
                 }
             });
@@ -735,13 +735,13 @@ public class ZCSobotApi {
 
                     @Override // com.sobot.chat.core.HttpUtils.FileCallBack
                     public void onResponse(File file2) {
-                        if (a.aa.equals(String.this)) {
+                        if (a.aa.equals(str)) {
                             SharedPreferencesUtil.saveObject(context, "SobotLanguage", new Locale(a.aa));
                         }
-                        if ("he".equals(String.this)) {
+                        if ("he".equals(str)) {
                             SharedPreferencesUtil.saveObject(context, "SobotLanguage", new Locale("iw"));
                         }
-                        SharedPreferencesUtil.saveStringData(context, ZhiChiConstant.SOBOT_USER_SETTTINNG_LANGUAGE, String.this);
+                        SharedPreferencesUtil.saveStringData(context, ZhiChiConstant.SOBOT_USER_SETTTINNG_LANGUAGE, str);
                         SharedPreferencesUtil.saveStringData(context, ZhiChiConstant.SOBOT_LANGUAGE_STRING_PATH, str3);
                         SharedPreferencesUtil.saveBooleanData(context, "sobot_use_language", true);
                         LogUtils.i(" 国际化语言包保存路径:" + file2.getPath());

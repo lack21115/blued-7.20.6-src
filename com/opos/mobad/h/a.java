@@ -17,11 +17,11 @@ public abstract class a implements com.opos.mobad.model.c.a {
     private static Map<String, Long> l = new ConcurrentHashMap();
 
     /* renamed from: a  reason: collision with root package name */
-    protected Context f26159a;
+    protected Context f12471a;
     protected String b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected n f26160c;
+    protected n f12472c;
     protected boolean d;
     protected com.opos.mobad.cmn.a.a g;
     protected a.b h;
@@ -31,10 +31,10 @@ public abstract class a implements com.opos.mobad.model.c.a {
 
     public a(Context context, String str, com.opos.mobad.cmn.a.d dVar) {
         Context a2 = com.opos.mobad.service.b.a(context);
-        this.f26159a = a2;
+        this.f12471a = a2;
         this.b = str;
-        this.f26160c = new g(a2, com.opos.mobad.model.b.a(context).a());
-        this.g = new com.opos.mobad.cmn.a.a(this.f26159a, str, dVar);
+        this.f12472c = new g(a2, com.opos.mobad.model.b.a(context).a());
+        this.g = new com.opos.mobad.cmn.a.a(this.f12471a, str, dVar);
         a.b a3 = com.opos.mobad.cmn.a.b.f.a(context, (View) null);
         this.h = a3;
         this.g.a(a3);
@@ -42,7 +42,7 @@ public abstract class a implements com.opos.mobad.model.c.a {
     }
 
     private void a() {
-        com.opos.mobad.cmn.service.pkginstall.c.a().a(this.f26159a);
+        com.opos.mobad.cmn.service.pkginstall.c.a().a(this.f12471a);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -57,7 +57,7 @@ public abstract class a implements com.opos.mobad.model.c.a {
                 if (materialData == null || materialData.n() == null || materialData.n().size() <= 0) {
                     return;
                 }
-                com.opos.mobad.service.g.b.a(this.f26159a, materialData.n());
+                com.opos.mobad.service.g.b.a(this.f12471a, materialData.n());
             } catch (Exception e) {
                 com.opos.cmn.an.f.a.a("InterBaseAd", "", (Throwable) e);
             }
@@ -70,7 +70,7 @@ public abstract class a implements com.opos.mobad.model.c.a {
                 MaterialData materialData = adItemData.i().get(0);
                 if (materialData != null) {
                     this.g.a(adItemData);
-                    com.opos.mobad.cmn.a.b.d.a(this.f26159a, this.b, adItemData, materialData, z, map);
+                    com.opos.mobad.cmn.a.b.d.a(this.f12471a, this.b, adItemData, materialData, z, map);
                 }
             } catch (Exception e) {
                 com.opos.cmn.an.f.a.a("InterBaseAd", "", (Throwable) e);

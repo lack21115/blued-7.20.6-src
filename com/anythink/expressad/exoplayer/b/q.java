@@ -11,7 +11,7 @@ public final class q implements f {
     private static final long b = 150000;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final long f7214c = 20000;
+    private static final long f4375c = 20000;
     private static final short d = 1024;
     private static final byte e = 4;
     private static final int f = 0;
@@ -25,8 +25,8 @@ public final class q implements f {
     private int t;
     private boolean u;
     private long v;
-    private ByteBuffer m = f7181a;
-    private ByteBuffer n = f7181a;
+    private ByteBuffer m = f4342a;
+    private ByteBuffer n = f4342a;
     private int i = -1;
     private int j = -1;
     private byte[] p = new byte[0];
@@ -55,7 +55,7 @@ public final class q implements f {
     private void a(ByteBuffer byteBuffer, byte[] bArr, int i) {
         int min = Math.min(byteBuffer.remaining(), this.t);
         int i2 = this.t - min;
-        System.arraycopy((Object) bArr, i - i2, (Object) this.q, 0, i2);
+        System.arraycopy(bArr, i - i2, this.q, 0, i2);
         byteBuffer.position(byteBuffer.limit() - min);
         byteBuffer.get(this.q, i2, min);
     }
@@ -325,13 +325,13 @@ public final class q implements f {
     @Override // com.anythink.expressad.exoplayer.b.f
     public final ByteBuffer f() {
         ByteBuffer byteBuffer = this.n;
-        this.n = f7181a;
+        this.n = f4342a;
         return byteBuffer;
     }
 
     @Override // com.anythink.expressad.exoplayer.b.f
     public final boolean g() {
-        return this.o && this.n == f7181a;
+        return this.o && this.n == f4342a;
     }
 
     @Override // com.anythink.expressad.exoplayer.b.f
@@ -341,14 +341,14 @@ public final class q implements f {
             if (this.p.length != a2) {
                 this.p = new byte[a2];
             }
-            int a3 = a(f7214c) * this.k;
+            int a3 = a(f4375c) * this.k;
             this.t = a3;
             if (this.q.length != a3) {
                 this.q = new byte[a3];
             }
         }
         this.r = 0;
-        this.n = f7181a;
+        this.n = f4342a;
         this.o = false;
         this.v = 0L;
         this.s = 0;
@@ -359,7 +359,7 @@ public final class q implements f {
     public final void i() {
         this.l = false;
         h();
-        this.m = f7181a;
+        this.m = f4342a;
         this.i = -1;
         this.j = -1;
         this.t = 0;

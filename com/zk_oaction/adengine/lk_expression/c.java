@@ -9,11 +9,11 @@ import java.util.ArrayList;
 public class c implements a.w, f {
 
     /* renamed from: a  reason: collision with root package name */
-    private com.zk_oaction.adengine.lk_sdk.c f41922a;
+    private com.zk_oaction.adengine.lk_sdk.c f28231a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f41923c;
+    private String f28232c;
     private b d;
     private int e;
     private ArrayList<com.zk_oaction.adengine.lk_expression.a> f;
@@ -40,11 +40,11 @@ public class c implements a.w, f {
     }
 
     public c(com.zk_oaction.adengine.lk_sdk.c cVar, String str, b bVar) {
-        this.f41922a = cVar;
+        this.f28231a = cVar;
         this.b = str;
         this.d = bVar;
         if (str.isEmpty()) {
-            this.f41923c = "";
+            this.f28232c = "";
         } else {
             char charAt = str.charAt(0);
             if (str.startsWith("ifelse")) {
@@ -57,19 +57,19 @@ public class c implements a.w, f {
                     this.g = new ArrayList<>();
                     int size = a2.size();
                     for (int i = 0; i < size - 1; i += 2) {
-                        this.f.add(new com.zk_oaction.adengine.lk_expression.a(this.f41922a, null, a2.get(i), 0.0f, this, false));
+                        this.f.add(new com.zk_oaction.adengine.lk_expression.a(this.f28231a, null, a2.get(i), 0.0f, this, false));
                         String str2 = a2.get(i + 1);
                         if (str2.contains("'")) {
                             this.g.add(str2.substring(1, str2.length() - 1));
                         } else {
-                            this.g.add(new c(this.f41922a, str2, this.k));
+                            this.g.add(new c(this.f28231a, str2, this.k));
                         }
                     }
                     String str3 = a2.get(a2.size() - 1);
                     if (str3.contains("'")) {
                         this.g.add(str3.substring(1, str3.length() - 1));
                     } else {
-                        this.g.add(new c(this.f41922a, str3, this.k));
+                        this.g.add(new c(this.f28231a, str3, this.k));
                     }
                 }
             } else if (str.contains("+")) {
@@ -77,18 +77,18 @@ public class c implements a.w, f {
                 this.j = a(str.replace(" ", "").replace("+", Constants.WAVE_SEPARATOR));
             } else if (charAt == '\'') {
                 this.e = 1;
-                this.f41923c = str.substring(1, str.length() - 1);
+                this.f28232c = str.substring(1, str.length() - 1);
             } else if (charAt == '#' || charAt == '@') {
                 this.e = 0;
                 String substring2 = str.substring(1);
                 this.b = substring2;
-                this.f41922a.a(substring2, this);
+                this.f28231a.a(substring2, this);
             } else if (str.contains("#")) {
                 this.e = 3;
-                this.i = new com.zk_oaction.adengine.lk_expression.a(this.f41922a, null, str, 0.0f, this, false);
+                this.i = new com.zk_oaction.adengine.lk_expression.a(this.f28231a, null, str, 0.0f, this, false);
             } else {
                 this.e = 1;
-                this.f41923c = str;
+                this.f28232c = str;
             }
         }
         this.h = true;
@@ -104,7 +104,7 @@ public class c implements a.w, f {
             if (i2 >= split.length) {
                 return arrayList;
             }
-            arrayList.add(new c(this.f41922a, split[i2], this.k));
+            arrayList.add(new c(this.f28231a, split[i2], this.k));
             i = i2 + 1;
         }
     }
@@ -143,7 +143,7 @@ public class c implements a.w, f {
         L23:
             r0 = r3
             java.lang.String r1 = ""
-            r0.f41923c = r1
+            r0.f28232c = r1
             r0 = r3
             java.util.ArrayList<com.zk_oaction.adengine.lk_expression.c> r0 = r0.j
             java.util.Iterator r0 = r0.iterator()
@@ -162,7 +162,7 @@ public class c implements a.w, f {
             r7 = r0
             r0 = r7
             r1 = r3
-            java.lang.String r1 = r1.f41923c
+            java.lang.String r1 = r1.f28232c
             java.lang.StringBuilder r0 = r0.append(r1)
             r0 = r7
             r1 = r6
@@ -171,7 +171,7 @@ public class c implements a.w, f {
             r0 = r3
             r1 = r7
             java.lang.String r1 = r1.toString()
-            r0.f41923c = r1
+            r0.f28232c = r1
             goto L31
         L6d:
             java.lang.StringBuilder r0 = new java.lang.StringBuilder
@@ -197,7 +197,7 @@ public class c implements a.w, f {
             goto Lac
         L98:
             r0 = r3
-            com.zk_oaction.adengine.lk_sdk.c r0 = r0.f41922a
+            com.zk_oaction.adengine.lk_sdk.c r0 = r0.f28231a
             com.zk_oaction.adengine.lk_variable.g r0 = r0.n
             r1 = r3
             java.lang.String r1 = r1.b
@@ -206,14 +206,14 @@ public class c implements a.w, f {
         La7:
             r0 = r3
             r1 = r5
-            r0.f41923c = r1
+            r0.f28232c = r1
         Lac:
             r0 = r3
-            java.lang.String r0 = r0.f41923c
+            java.lang.String r0 = r0.f28232c
             if (r0 != 0) goto Lb9
             r0 = r3
             java.lang.String r1 = ""
-            r0.f41923c = r1
+            r0.f28232c = r1
         Lb9:
             r0 = r3
             com.zk_oaction.adengine.lk_expression.c$b r0 = r0.d
@@ -222,7 +222,7 @@ public class c implements a.w, f {
             if (r0 == 0) goto Lcc
             r0 = r5
             r1 = r3
-            java.lang.String r1 = r1.f41923c
+            java.lang.String r1 = r1.f28232c
             r0.h_(r1)
         Lcc:
             return
@@ -233,7 +233,7 @@ public class c implements a.w, f {
     private void c() {
         int size = this.f.size();
         Object obj = this.g.get(size - 1);
-        this.f41923c = obj instanceof String ? (String) obj : ((c) obj).a();
+        this.f28232c = obj instanceof String ? (String) obj : ((c) obj).a();
         int i = 0;
         while (true) {
             int i2 = i;
@@ -242,7 +242,7 @@ public class c implements a.w, f {
             }
             if (this.f.get(i2).a() != 0.0f) {
                 Object obj2 = this.g.get(i2);
-                this.f41923c = obj2 instanceof String ? (String) obj2 : ((c) obj2).a();
+                this.f28232c = obj2 instanceof String ? (String) obj2 : ((c) obj2).a();
                 return;
             }
             i = i2 + 1;
@@ -250,7 +250,7 @@ public class c implements a.w, f {
     }
 
     public String a() {
-        String str = this.f41923c;
+        String str = this.f28232c;
         String str2 = str;
         if (str == null) {
             str2 = "";

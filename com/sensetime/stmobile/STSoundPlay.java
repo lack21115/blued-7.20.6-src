@@ -4,6 +4,7 @@ import android.content.Context;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.util.Log;
+import com.huawei.openalliance.ad.constant.t;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -71,7 +72,7 @@ public class STSoundPlay {
         @Override // android.media.MediaPlayer.OnErrorListener
         public boolean onError(MediaPlayer mediaPlayer, int i, int i2) {
             String str = STSoundPlay.TAG;
-            Log.e(str, "MediaPlayer error: " + i + ";" + i2);
+            Log.e(str, "MediaPlayer error: " + i + t.aE + i2);
             return true;
         }
     };

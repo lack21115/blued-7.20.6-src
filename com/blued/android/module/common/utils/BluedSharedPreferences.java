@@ -13,14 +13,10 @@ import java.util.HashMap;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/utils/BluedSharedPreferences.class */
 public class BluedSharedPreferences {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static HashMap<String, BluedSharedPreferences> f10868a = new HashMap<>();
+    private static HashMap<String, BluedSharedPreferences> a = new HashMap<>();
     private static boolean b = true;
     private static boolean g = false;
-
-    /* renamed from: c  reason: collision with root package name */
-    private MMKV f10869c;
+    private MMKV c;
     private MMKV d;
     private SharedPreferences e;
     private SharedPreferences.Editor f;
@@ -32,8 +28,8 @@ public class BluedSharedPreferences {
 
         public Editor a(String str) {
             if (BluedSharedPreferences.b) {
-                if (BluedSharedPreferences.this.f10869c != null) {
-                    BluedSharedPreferences.this.f10869c.removeValueForKey(str);
+                if (BluedSharedPreferences.this.c != null) {
+                    BluedSharedPreferences.this.c.removeValueForKey(str);
                     return this;
                 }
             } else if (BluedSharedPreferences.this.f != null) {
@@ -44,8 +40,8 @@ public class BluedSharedPreferences {
 
         public Editor a(String str, float f) {
             if (BluedSharedPreferences.b) {
-                if (BluedSharedPreferences.this.f10869c != null) {
-                    BluedSharedPreferences.this.f10869c.encode(str, f);
+                if (BluedSharedPreferences.this.c != null) {
+                    BluedSharedPreferences.this.c.encode(str, f);
                     return this;
                 }
             } else if (BluedSharedPreferences.this.f != null) {
@@ -56,8 +52,8 @@ public class BluedSharedPreferences {
 
         public Editor a(String str, int i) {
             if (BluedSharedPreferences.b) {
-                if (BluedSharedPreferences.this.f10869c != null) {
-                    BluedSharedPreferences.this.f10869c.encode(str, i);
+                if (BluedSharedPreferences.this.c != null) {
+                    BluedSharedPreferences.this.c.encode(str, i);
                     return this;
                 }
             } else if (BluedSharedPreferences.this.f != null) {
@@ -68,8 +64,8 @@ public class BluedSharedPreferences {
 
         public Editor a(String str, long j) {
             if (BluedSharedPreferences.b) {
-                if (BluedSharedPreferences.this.f10869c != null) {
-                    BluedSharedPreferences.this.f10869c.encode(str, j);
+                if (BluedSharedPreferences.this.c != null) {
+                    BluedSharedPreferences.this.c.encode(str, j);
                     return this;
                 }
             } else if (BluedSharedPreferences.this.f != null) {
@@ -80,8 +76,8 @@ public class BluedSharedPreferences {
 
         public Editor a(String str, String str2) {
             if (BluedSharedPreferences.b) {
-                if (BluedSharedPreferences.this.f10869c != null) {
-                    BluedSharedPreferences.this.f10869c.encode(str, str2);
+                if (BluedSharedPreferences.this.c != null) {
+                    BluedSharedPreferences.this.c.encode(str, str2);
                     return this;
                 }
             } else if (BluedSharedPreferences.this.f != null) {
@@ -92,8 +88,8 @@ public class BluedSharedPreferences {
 
         public Editor a(String str, boolean z) {
             if (BluedSharedPreferences.b) {
-                if (BluedSharedPreferences.this.f10869c != null) {
-                    BluedSharedPreferences.this.f10869c.encode(str, z);
+                if (BluedSharedPreferences.this.c != null) {
+                    BluedSharedPreferences.this.c.encode(str, z);
                     return this;
                 }
             } else if (BluedSharedPreferences.this.f != null) {
@@ -120,14 +116,14 @@ public class BluedSharedPreferences {
     private BluedSharedPreferences(Context context, String str, int i) {
         if (b) {
             try {
-                this.f10869c = MMKV.mmkvWithID(str);
+                this.c = MMKV.mmkvWithID(str);
                 this.d = MMKV.defaultMMKV();
             } catch (IllegalArgumentException e) {
                 String message = e.getMessage();
                 if (!TextUtils.isEmpty(message) && message.contains("Opening a multi-process MMKV")) {
                     try {
-                        this.f10869c = MMKV.mmkvWithID(str, 2);
-                        this.d = MMKV.defaultMMKV(2, null);
+                        this.c = MMKV.mmkvWithID(str, 2);
+                        this.d = MMKV.defaultMMKV(2, (String) null);
                     } catch (Throwable th) {
                         BluedStatistics.c().b("MMKV", 0L, 102, str);
                         return;
@@ -148,7 +144,7 @@ public class BluedSharedPreferences {
             if (mmkv == null || mmkv.contains(str)) {
                 return;
             }
-            this.f10869c.importFromSharedPreferences(d.getSharedPreferences(str, i));
+            this.c.importFromSharedPreferences(d.getSharedPreferences(str, i));
             this.d.encode(str, true);
             Logger.b("BluedSharedPreferences", "transform SP-" + str + " to MMKV");
         }
@@ -160,11 +156,11 @@ public class BluedSharedPreferences {
     }
 
     private static BluedSharedPreferences a(Context context, String str, int i) {
-        if (f10868a.containsKey(str)) {
-            return f10868a.get(str);
+        if (a.containsKey(str)) {
+            return a.get(str);
         }
         BluedSharedPreferences bluedSharedPreferences = new BluedSharedPreferences(context, str, i);
-        f10868a.put(str, bluedSharedPreferences);
+        a.put(str, bluedSharedPreferences);
         return bluedSharedPreferences;
     }
 
@@ -200,7 +196,7 @@ public class BluedSharedPreferences {
 
     public float a(String str, float f) {
         if (b) {
-            MMKV mmkv = this.f10869c;
+            MMKV mmkv = this.c;
             if (mmkv != null) {
                 return mmkv.getFloat(str, f);
             }
@@ -215,7 +211,7 @@ public class BluedSharedPreferences {
 
     public long a(String str, long j) {
         if (b) {
-            MMKV mmkv = this.f10869c;
+            MMKV mmkv = this.c;
             if (mmkv != null) {
                 return mmkv.getLong(str, j);
             }
@@ -230,7 +226,7 @@ public class BluedSharedPreferences {
 
     public String a(String str, String str2) {
         if (b) {
-            MMKV mmkv = this.f10869c;
+            MMKV mmkv = this.c;
             if (mmkv != null) {
                 return mmkv.getString(str, str2);
             }
@@ -245,7 +241,7 @@ public class BluedSharedPreferences {
 
     public boolean a(String str, boolean z) {
         if (b) {
-            MMKV mmkv = this.f10869c;
+            MMKV mmkv = this.c;
             if (mmkv != null) {
                 return mmkv.getBoolean(str, z);
             }
@@ -260,7 +256,7 @@ public class BluedSharedPreferences {
 
     public int b(String str, int i) {
         if (b) {
-            MMKV mmkv = this.f10869c;
+            MMKV mmkv = this.c;
             if (mmkv != null) {
                 return mmkv.getInt(str, i);
             }
@@ -275,7 +271,7 @@ public class BluedSharedPreferences {
 
     public boolean b(String str) {
         if (b) {
-            MMKV mmkv = this.f10869c;
+            MMKV mmkv = this.c;
             if (mmkv != null) {
                 return mmkv.containsKey(str);
             }

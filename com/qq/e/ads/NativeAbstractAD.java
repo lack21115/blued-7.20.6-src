@@ -28,7 +28,7 @@ public abstract class NativeAbstractAD<T extends ADI> extends AbstractAD<T> {
 
     public void setDownAPPConfirmPolicy(DownAPPConfirmPolicy downAPPConfirmPolicy) {
         this.b = downAPPConfirmPolicy;
-        T t = this.f27851a;
+        T t = this.f14163a;
         if (t == 0 || downAPPConfirmPolicy == null) {
             return;
         }

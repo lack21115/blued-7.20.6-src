@@ -1,5 +1,6 @@
 package com.opos.mobad.o.d;
 
+import android.R;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
@@ -22,17 +23,17 @@ public class e {
     public static final class a extends RelativeLayout {
 
         /* renamed from: a  reason: collision with root package name */
-        private LinearLayout f27103a;
+        private LinearLayout f13415a;
         private TextView b;
 
         /* renamed from: c  reason: collision with root package name */
-        private Context f27104c;
+        private Context f13416c;
         private b d;
         private d e;
 
         public a(Context context) {
             super(context);
-            this.f27104c = com.opos.mobad.service.b.a(context.getApplicationContext());
+            this.f13416c = com.opos.mobad.service.b.a(context.getApplicationContext());
             b();
         }
 
@@ -51,19 +52,19 @@ public class e {
             this.e = a2;
             View b = a2.b();
             RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(-1, -1);
-            layoutParams.addRule(3, this.f27103a.getId());
+            layoutParams.addRule(3, this.f13415a.getId());
             addView(b, layoutParams);
         }
 
         private void b() {
             setBackgroundColor(-1);
-            LinearLayout linearLayout = new LinearLayout(this.f27104c);
-            this.f27103a = linearLayout;
+            LinearLayout linearLayout = new LinearLayout(this.f13416c);
+            this.f13415a = linearLayout;
             linearLayout.setId(View.generateViewId());
-            this.f27103a.setOrientation(0);
-            TextView textView = new TextView(this.f27104c);
-            this.b = new TextView(this.f27104c);
-            textView.setBackground(com.opos.cmn.an.d.a.a.c(this.f27104c, "opos_module_biz_ui_cmn_privacy_web_close_bn.png"));
+            this.f13415a.setOrientation(0);
+            TextView textView = new TextView(this.f13416c);
+            this.b = new TextView(this.f13416c);
+            textView.setBackground(com.opos.cmn.an.d.a.a.c(this.f13416c, "opos_module_biz_ui_cmn_privacy_web_close_bn.png"));
             textView.setOnClickListener(new View.OnClickListener() { // from class: com.opos.mobad.o.d.e.a.1
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view) {
@@ -73,20 +74,20 @@ public class e {
                     }
                 }
             });
-            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(this.f27104c, 16.58f), com.opos.cmn.an.h.f.a.a(this.f27104c, 12.73f));
+            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(this.f13416c, 16.58f), com.opos.cmn.an.h.f.a.a(this.f13416c, 12.73f));
             layoutParams.gravity = 16;
-            layoutParams.leftMargin = com.opos.cmn.an.h.f.a.a(this.f27104c, 23.71f);
-            layoutParams.rightMargin = com.opos.cmn.an.h.f.a.a(this.f27104c, 18.71f);
-            this.f27103a.addView(textView, layoutParams);
+            layoutParams.leftMargin = com.opos.cmn.an.h.f.a.a(this.f13416c, 23.71f);
+            layoutParams.rightMargin = com.opos.cmn.an.h.f.a.a(this.f13416c, 18.71f);
+            this.f13415a.addView(textView, layoutParams);
             this.b.setGravity(8388627);
             this.b.setTextSize(1, 16.0f);
             this.b.setTextColor(-16777216);
             LinearLayout.LayoutParams layoutParams2 = new LinearLayout.LayoutParams(-2, -2);
             layoutParams2.gravity = 16;
-            this.f27103a.addView(this.b, layoutParams2);
-            RelativeLayout.LayoutParams layoutParams3 = new RelativeLayout.LayoutParams(-1, com.opos.cmn.an.h.f.a.a(this.f27104c, 50.0f));
+            this.f13415a.addView(this.b, layoutParams2);
+            RelativeLayout.LayoutParams layoutParams3 = new RelativeLayout.LayoutParams(-1, com.opos.cmn.an.h.f.a.a(this.f13416c, 50.0f));
             layoutParams3.addRule(10);
-            addView(this.f27103a, layoutParams3);
+            addView(this.f13415a, layoutParams3);
         }
 
         public void a() {
@@ -132,7 +133,7 @@ public class e {
     }
 
     public static Dialog a(Activity activity, String str, String str2, Map<String, String> map, final b bVar) {
-        final com.opos.cmn.e.a.b.f.a aVar = new com.opos.cmn.e.a.b.f.a(activity, 16973830, new a.C0634a().a(16973830).a(false).b(false).a());
+        final com.opos.cmn.e.a.b.f.a aVar = new com.opos.cmn.e.a.b.f.a(activity, R.style.Theme_NoTitleBar, new a.C0464a().a(R.style.Theme_NoTitleBar).a(false).b(false).a());
         final a aVar2 = new a(activity);
         aVar2.a(new b() { // from class: com.opos.mobad.o.d.e.1
             @Override // com.opos.mobad.o.d.e.b

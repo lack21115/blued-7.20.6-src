@@ -3,19 +3,16 @@ package com.alipay.sdk.tid;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.text.TextUtils;
+import com.alipay.sdk.app.OpenAuthTask;
 import com.alipay.sdk.util.c;
 import java.util.Random;
 import org.json.JSONObject;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alipay/sdk/tid/b.class */
 public class b {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final String f4654a = "alipay_tid_storage";
+    public static final String a = "alipay_tid_storage";
     public static final String b = "tidinfo";
-
-    /* renamed from: c  reason: collision with root package name */
-    public static final String f4655c = "upgraded_from_db";
+    public static final String c = "upgraded_from_db";
     public static final String d = "tid";
     public static final String e = "client_key";
     public static final String f = "timestamp";
@@ -214,13 +211,13 @@ public class b {
         this.l = System.currentTimeMillis();
         this.m = n();
         this.n = n();
-        a.b(f4654a, b);
+        a.b(a, b);
     }
 
     private String n() {
         String hexString = Long.toHexString(System.currentTimeMillis());
         Random random = new Random();
-        return hexString + (random.nextInt(9000) + 1000);
+        return hexString + (random.nextInt(OpenAuthTask.OK) + 1000);
     }
 
     private void o() {
@@ -231,10 +228,10 @@ public class b {
             JSONObject jSONObject = new JSONObject();
             jSONObject.put("tid", this.j);
             jSONObject.put(e, this.k);
-            jSONObject.put("timestamp", this.l);
+            jSONObject.put(f, this.l);
             jSONObject.put(g, this.m);
             jSONObject.put(h, this.n);
-            a.a(f4654a, b, jSONObject.toString(), true);
+            a.a(a, b, jSONObject.toString(), true);
         } catch (Exception e2) {
             c.a(e2);
         }

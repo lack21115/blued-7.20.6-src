@@ -345,7 +345,7 @@ public class CommonUtils {
     }
 
     public static int getResDrawableId(Context context, String str) {
-        return ResourceUtils.getIdByName(context, i.f7952c, str);
+        return ResourceUtils.getIdByName(context, i.f5112c, str);
     }
 
     public static int getResId(Context context, String str) {

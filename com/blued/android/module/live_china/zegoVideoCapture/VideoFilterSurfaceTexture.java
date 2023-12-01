@@ -2,7 +2,6 @@ package com.blued.android.module.live_china.zegoVideoCapture;
 
 import android.content.Context;
 import android.graphics.SurfaceTexture;
-import android.opengl.GLES11Ext;
 import android.opengl.GLES20;
 import android.os.Build;
 import android.os.Handler;
@@ -14,7 +13,6 @@ import com.blued.android.module.external_sense_library.display.STGLRender;
 import com.blued.android.module.external_sense_library.glutils.GlUtil;
 import com.blued.android.module.live_china.zegoVideoCapture.ve_gl.EglBase;
 import com.blued.android.module.live_china.zegoVideoCapture.ve_gl.EglBase14;
-import com.uc.crashsdk.export.LogType;
 import com.zego.zegoavkit2.videofilter.ZegoVideoFilter;
 import java.nio.ByteBuffer;
 import java.util.concurrent.CountDownLatch;
@@ -23,12 +21,8 @@ import java.util.concurrent.CountDownLatch;
 public class VideoFilterSurfaceTexture extends ZegoVideoFilter implements SurfaceTexture.OnFrameAvailableListener {
     private ISenseTimeProcessor b;
     private ByteBuffer r;
-
-    /* renamed from: a  reason: collision with root package name */
-    private ZegoVideoFilter.Client f15490a = null;
-
-    /* renamed from: c  reason: collision with root package name */
-    private HandlerThread f15491c = null;
+    private ZegoVideoFilter.Client a = null;
+    private HandlerThread c = null;
     private volatile Handler d = null;
     private EglBase e = null;
     private EglBase f = null;
@@ -136,18 +130,17 @@ public class VideoFilterSurfaceTexture extends ZegoVideoFilter implements Surfac
         this.p = false;
     }
 
-    @Override // com.zego.zegoavkit2.videofilter.ZegoVideoFilter
     public void allocateAndStart(ZegoVideoFilter.Client client) {
         STGLRender sTGLRender = this.q;
         if (sTGLRender != null) {
             sTGLRender.destroyFrameBuffers();
         }
         this.q = new STGLRender(false);
-        this.f15490a = client;
+        this.a = client;
         HandlerThread handlerThread = new HandlerThread("video-filter");
-        this.f15491c = handlerThread;
+        this.c = handlerThread;
         handlerThread.start();
-        this.d = new Handler(this.f15491c.getLooper());
+        this.d = new Handler(this.c.getLooper());
         this.g = 0;
         this.h = 0;
         final CountDownLatch countDownLatch = new CountDownLatch(1);
@@ -159,7 +152,7 @@ public class VideoFilterSurfaceTexture extends ZegoVideoFilter implements Surfac
                     VideoFilterSurfaceTexture.this.e.a();
                     VideoFilterSurfaceTexture.this.e.f();
                     VideoFilterSurfaceTexture.this.s = false;
-                    VideoFilterSurfaceTexture.this.l = GlUtil.a((int) GLES11Ext.GL_TEXTURE_EXTERNAL_OES);
+                    VideoFilterSurfaceTexture.this.l = GlUtil.a(36197);
                     VideoFilterSurfaceTexture.this.k = new SurfaceTexture(VideoFilterSurfaceTexture.this.l);
                     VideoFilterSurfaceTexture.this.k.setOnFrameAvailableListener(VideoFilterSurfaceTexture.this);
                     VideoFilterSurfaceTexture.this.k.detachFromGLContext();
@@ -184,18 +177,17 @@ public class VideoFilterSurfaceTexture extends ZegoVideoFilter implements Surfac
         this.p = false;
     }
 
-    @Override // com.zego.zegoavkit2.videofilter.ZegoVideoFilter
     public int dequeueInputBuffer(final int i, final int i2, int i3) {
         if (!this.s && i3 == i * 4) {
             if (this.g == i && this.h == i2) {
                 return 0;
             }
-            if (this.f15490a.dequeueInputBuffer(i, i2, i3) < 0) {
+            if (this.a.dequeueInputBuffer(i, i2, i3) < 0) {
                 return -1;
             }
             this.g = i;
             this.h = i2;
-            final SurfaceTexture surfaceTexture = this.f15490a.getSurfaceTexture();
+            final SurfaceTexture surfaceTexture = this.a.getSurfaceTexture();
             final CountDownLatch countDownLatch = new CountDownLatch(1);
             this.d.post(new Runnable() { // from class: com.blued.android.module.live_china.zegoVideoCapture.VideoFilterSurfaceTexture.3
                 @Override // java.lang.Runnable
@@ -216,12 +208,10 @@ public class VideoFilterSurfaceTexture extends ZegoVideoFilter implements Surfac
         return -1;
     }
 
-    @Override // com.zego.zegoavkit2.videofilter.ZegoVideoFilter
     public ByteBuffer getInputBuffer(int i) {
         return null;
     }
 
-    @Override // com.zego.zegoavkit2.videofilter.ZegoVideoFilter
     public SurfaceTexture getSurfaceTexture() {
         return this.k;
     }
@@ -233,9 +223,9 @@ public class VideoFilterSurfaceTexture extends ZegoVideoFilter implements Surfac
         }
         this.f.f();
         if (this.m == 0) {
-            int a2 = GlUtil.a((int) GLES11Ext.GL_TEXTURE_EXTERNAL_OES);
-            this.m = a2;
-            surfaceTexture.attachToGLContext(a2);
+            int a = GlUtil.a(36197);
+            this.m = a;
+            surfaceTexture.attachToGLContext(a);
         }
         SurfaceTexture surfaceTexture2 = this.k;
         if (surfaceTexture2 == null || this.p) {
@@ -247,7 +237,7 @@ public class VideoFilterSurfaceTexture extends ZegoVideoFilter implements Surfac
             this.r = ByteBuffer.allocate(this.h * this.g * 4);
         }
         GLES20.glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
-        GLES20.glClear(LogType.UNEXP_RESTART);
+        GLES20.glClear(16640);
         this.r.rewind();
         int preProcess = this.q.preProcess(this.m, this.r);
         this.b.handlePreviewFrame(this.r.array(), this.i, this.j, 0);
@@ -264,15 +254,12 @@ public class VideoFilterSurfaceTexture extends ZegoVideoFilter implements Surfac
         }
     }
 
-    @Override // com.zego.zegoavkit2.videofilter.ZegoVideoFilter
     public void onProcessCallback(int i, int i2, int i3, long j) {
     }
 
-    @Override // com.zego.zegoavkit2.videofilter.ZegoVideoFilter
     public void queueInputBuffer(int i, int i2, int i3, int i4, long j) {
     }
 
-    @Override // com.zego.zegoavkit2.videofilter.ZegoVideoFilter
     public void stopAndDeAllocate() {
         this.p = true;
         final CountDownLatch countDownLatch = new CountDownLatch(1);
@@ -290,13 +277,12 @@ public class VideoFilterSurfaceTexture extends ZegoVideoFilter implements Surfac
             e.printStackTrace();
         }
         this.d = null;
-        this.f15491c.quit();
-        this.f15491c = null;
-        this.f15490a.destroy();
-        this.f15490a = null;
+        this.c.quit();
+        this.c = null;
+        this.a.destroy();
+        this.a = null;
     }
 
-    @Override // com.zego.zegoavkit2.videofilter.ZegoVideoFilter
     public int supportBufferType() {
         return 8;
     }

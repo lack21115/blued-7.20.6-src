@@ -7,10 +7,10 @@ import android.os.Looper;
 public abstract class e implements Runnable {
 
     /* renamed from: c  reason: collision with root package name */
-    private static Handler f4120c = new Handler(Looper.getMainLooper());
+    private static Handler f4072c = new Handler(Looper.getMainLooper());
 
     /* renamed from: a  reason: collision with root package name */
-    private boolean f4121a = false;
+    private boolean f4073a = false;
     private long b;
     private a d;
 
@@ -19,15 +19,15 @@ public abstract class e implements Runnable {
     public static class a implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        private e f4122a;
+        private e f4074a;
 
         public a(e eVar) {
-            this.f4122a = eVar;
+            this.f4074a = eVar;
         }
 
         @Override // java.lang.Runnable
         public void run() {
-            e eVar = this.f4122a;
+            e eVar = this.f4074a;
             if (eVar != null) {
                 eVar.b();
             }
@@ -44,26 +44,26 @@ public abstract class e implements Runnable {
     private void e() {
         a aVar = new a(this);
         this.d = aVar;
-        f4120c.postDelayed(aVar, this.b);
+        f4072c.postDelayed(aVar, this.b);
     }
 
     public abstract void a();
 
     public void a(boolean z) {
-        this.f4121a = z;
+        this.f4073a = z;
     }
 
     public void b() {
     }
 
     public boolean c() {
-        return this.f4121a;
+        return this.f4073a;
     }
 
     public void d() {
         try {
             if (this.d != null) {
-                f4120c.removeCallbacks(this.d);
+                f4072c.removeCallbacks(this.d);
             }
         } catch (Throwable th) {
             th.printStackTrace();

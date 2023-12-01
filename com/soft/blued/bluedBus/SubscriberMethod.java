@@ -6,5 +6,5 @@ import java.lang.reflect.Method;
 public class SubscriberMethod {
 
     /* renamed from: a  reason: collision with root package name */
-    public Method f28305a;
+    public Method f14615a;
 }

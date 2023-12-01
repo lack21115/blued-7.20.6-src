@@ -2,12 +2,13 @@ package com.autonavi.base.ae.gmap.bean;
 
 import android.os.Build;
 import android.text.TextUtils;
-import com.amap.api.col.p0003sl.du;
-import com.amap.api.col.p0003sl.lc;
+import com.amap.api.col.3sl.du;
+import com.amap.api.col.3sl.lc;
 import com.amap.api.maps.interfaces.IGlOverlayLayer;
 import com.amap.api.maps.model.Tile;
 import com.amap.api.maps.model.TileOverlaySource;
 import com.amap.api.maps.model.TileProvider;
+import com.xiaomi.mipush.sdk.Constants;
 import java.lang.ref.WeakReference;
 import java.util.HashMap;
 import java.util.List;
@@ -38,7 +39,7 @@ public class TileProviderInner {
     }
 
     private String createKey(int i, int i2, int i3, long j) {
-        return i + " " + i2 + " " + i3 + "-" + j;
+        return i + " " + i2 + " " + i3 + Constants.ACCEPT_TIME_SEPARATOR_SERVER + j;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -87,7 +88,6 @@ public class TileProviderInner {
     public void getTile(final TileSourceReq tileSourceReq, final TileReqTaskHandle tileReqTaskHandle) {
         final String createKey = createKey(tileSourceReq.x, tileSourceReq.y, tileSourceReq.zoom, tileReqTaskHandle.nativeObj);
         lc lcVar = new lc() { // from class: com.autonavi.base.ae.gmap.bean.TileProviderInner.1
-            @Override // com.amap.api.col.p0003sl.lc
             public void runTask() {
                 try {
                     synchronized (TileProviderInner.this.reqTaskHandleHashMap) {

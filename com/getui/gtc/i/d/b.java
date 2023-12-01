@@ -10,7 +10,7 @@ public final class b {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final b f22037a = new b((byte) 0);
+        private static final b f8430a = new b((byte) 0);
     }
 
     private b() {

@@ -29,16 +29,12 @@ public abstract class FrameSeqDecoder<R extends Reader, W extends Writer> {
     private ByteBufferLoader g;
     private int h;
     private RenderListener j;
-
-    /* renamed from: a  reason: collision with root package name */
-    protected List<Frame> f9527a = new ArrayList();
+    protected List<Frame> a = new ArrayList();
     protected int b = -1;
     private Integer i = null;
     private AtomicBoolean k = new AtomicBoolean(true);
     private Runnable m = null;
-
-    /* renamed from: c  reason: collision with root package name */
-    protected int f9528c = 1;
+    protected int c = 1;
     protected Map<Bitmap, Canvas> d = new WeakHashMap();
     private W o = d();
     private R p = null;
@@ -70,7 +66,7 @@ public abstract class FrameSeqDecoder<R extends Reader, W extends Writer> {
     }
 
     private int a() {
-        List<Frame> list = this.f9527a;
+        List<Frame> list = this.a;
         if (list == null) {
             return 0;
         }
@@ -82,7 +78,7 @@ public abstract class FrameSeqDecoder<R extends Reader, W extends Writer> {
         this.f = rect;
         int width = rect.width();
         int height = rect.height();
-        int i = this.f9528c;
+        int i = this.c;
         this.e = ByteBuffer.allocate((((width * height) / (i * i)) + 1) * 4);
         if (this.o == null) {
             this.o = d();
@@ -93,7 +89,7 @@ public abstract class FrameSeqDecoder<R extends Reader, W extends Writer> {
         if (i < 0 || i >= a()) {
             return null;
         }
-        return this.f9527a.get(i);
+        return this.a.get(i);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -136,7 +132,7 @@ public abstract class FrameSeqDecoder<R extends Reader, W extends Writer> {
     public void n() {
         FrameDecoderExecutor.a().a(this.m);
         this.m = null;
-        List<Frame> list = this.f9527a;
+        List<Frame> list = this.a;
         if (list != null) {
             list.clear();
         }
@@ -270,9 +266,9 @@ public abstract class FrameSeqDecoder<R extends Reader, W extends Writer> {
     protected abstract Rect b(R r) throws IOException;
 
     public void b(int i, int i2) {
-        int c2 = c(i, i2);
-        if (c2 != this.f9528c) {
-            this.f9528c = c2;
+        int c = c(i, i2);
+        if (c != this.c) {
+            this.c = c;
             final boolean i3 = i();
             FrameDecoderExecutor.a().a(this.m);
             FrameDecoderExecutor.a().b(new Runnable() { // from class: com.blued.android.core.image.apng.decode.FrameSeqDecoder.4
@@ -415,7 +411,7 @@ public abstract class FrameSeqDecoder<R extends Reader, W extends Writer> {
     public void h() {
         this.g.a().clear();
         this.g = null;
-        this.f9527a = null;
+        this.a = null;
         this.d = null;
         this.j = null;
     }
@@ -431,6 +427,6 @@ public abstract class FrameSeqDecoder<R extends Reader, W extends Writer> {
     }
 
     public int k() {
-        return this.f9528c;
+        return this.c;
     }
 }

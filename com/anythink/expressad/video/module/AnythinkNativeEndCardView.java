@@ -139,7 +139,7 @@ public class AnythinkNativeEndCardView extends AnythinkBaseView implements f {
             }
             try {
                 float width = (bitmap.getWidth() * 1.0f) / bitmap.getHeight();
-                int b = t.b(AnythinkNativeEndCardView.this.f8440a, 12.0f);
+                int b = t.b(AnythinkNativeEndCardView.this.f5600a, 12.0f);
                 int i = (int) (b * width);
                 AnythinkNativeEndCardView.this.y.getLayoutParams().height = b;
                 AnythinkNativeEndCardView.this.y.getLayoutParams().width = i;
@@ -160,16 +160,16 @@ public class AnythinkNativeEndCardView extends AnythinkBaseView implements f {
     public final class AnonymousClass12 implements View.OnClickListener {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ String f8467a;
+        final /* synthetic */ String f5627a;
 
         AnonymousClass12(String str) {
-            this.f8467a = str;
+            this.f5627a = str;
         }
 
         @Override // android.view.View.OnClickListener
         public final void onClick(View view) {
             Tracker.onClick(view);
-            l.b(AnythinkNativeEndCardView.this.f8440a, this.f8467a);
+            l.b(AnythinkNativeEndCardView.this.f5600a, this.f5627a);
         }
     }
 
@@ -389,12 +389,12 @@ public class AnythinkNativeEndCardView extends AnythinkBaseView implements f {
         int findLayout = findLayout(str);
         if (findLayout > 0) {
             if (isLandscape()) {
-                ViewGroup viewGroup = (ViewGroup) this.f8441c.inflate(findLayout, (ViewGroup) null);
+                ViewGroup viewGroup = (ViewGroup) this.f5601c.inflate(findLayout, (ViewGroup) null);
                 this.s = viewGroup;
                 addView(viewGroup);
                 b = b(this.s);
             } else {
-                ViewGroup viewGroup2 = (ViewGroup) this.f8441c.inflate(findLayout, (ViewGroup) null);
+                ViewGroup viewGroup2 = (ViewGroup) this.f5601c.inflate(findLayout, (ViewGroup) null);
                 this.r = viewGroup2;
                 addView(viewGroup2);
                 b = b(this.r);
@@ -406,12 +406,12 @@ public class AnythinkNativeEndCardView extends AnythinkBaseView implements f {
 
     private boolean b(int i) {
         if (isLandscape()) {
-            ViewGroup viewGroup = (ViewGroup) this.f8441c.inflate(i, (ViewGroup) null);
+            ViewGroup viewGroup = (ViewGroup) this.f5601c.inflate(i, (ViewGroup) null);
             this.s = viewGroup;
             addView(viewGroup);
             return b(this.s);
         }
-        ViewGroup viewGroup2 = (ViewGroup) this.f8441c.inflate(i, (ViewGroup) null);
+        ViewGroup viewGroup2 = (ViewGroup) this.f5601c.inflate(i, (ViewGroup) null);
         this.r = viewGroup2;
         addView(viewGroup2);
         return b(this.r);
@@ -493,8 +493,8 @@ public class AnythinkNativeEndCardView extends AnythinkBaseView implements f {
 
     private void f() {
         ImageView imageView;
-        com.anythink.expressad.foundation.g.d.b.a(this.f8440a.getApplicationContext()).a(this.b.be(), new AnonymousClass10());
-        com.anythink.expressad.foundation.g.d.b.a(this.f8440a.getApplicationContext()).a(this.b.bd(), new j(this.x, t.b(n.a().g(), 8.0f)));
+        com.anythink.expressad.foundation.g.d.b.a(this.f5600a.getApplicationContext()).a(this.b.be(), new AnonymousClass10());
+        com.anythink.expressad.foundation.g.d.b.a(this.f5600a.getApplicationContext()).a(this.b.bd(), new j(this.x, t.b(n.a().g(), 8.0f)));
         this.B.setText(this.b.bb());
         TextView textView = this.W;
         if (textView != null) {
@@ -525,7 +525,7 @@ public class AnythinkNativeEndCardView extends AnythinkBaseView implements f {
         if (!TextUtils.isEmpty(this.b.I()) && this.b.I().contains("alecfc=1")) {
             this.J = true;
         }
-        com.anythink.expressad.foundation.g.d.b.a(this.f8440a.getApplicationContext()).a(TextUtils.isEmpty(this.b.aE()) ? com.anythink.expressad.a.ab : this.b.aE(), new AnonymousClass11());
+        com.anythink.expressad.foundation.g.d.b.a(this.f5600a.getApplicationContext()).a(TextUtils.isEmpty(this.b.aE()) ? com.anythink.expressad.a.ab : this.b.aE(), new AnonymousClass11());
         com.anythink.expressad.foundation.b.a.b().e();
         com.anythink.expressad.d.b.a();
         com.anythink.expressad.d.a b = com.anythink.expressad.d.b.b();
@@ -753,7 +753,7 @@ public class AnythinkNativeEndCardView extends AnythinkBaseView implements f {
     public Bitmap blurBitmap(Bitmap bitmap) {
         try {
             Bitmap createBitmap = Bitmap.createBitmap(bitmap.getWidth(), bitmap.getHeight(), Bitmap.Config.ARGB_4444);
-            RenderScript create = RenderScript.create(this.f8440a.getApplicationContext());
+            RenderScript create = RenderScript.create(this.f5600a.getApplicationContext());
             ScriptIntrinsicBlur create2 = ScriptIntrinsicBlur.create(create, Element.U8_4(create));
             Allocation createFromBitmap = Allocation.createFromBitmap(create, bitmap);
             Allocation createFromBitmap2 = Allocation.createFromBitmap(create, createBitmap);
@@ -843,9 +843,8 @@ public class AnythinkNativeEndCardView extends AnythinkBaseView implements f {
         this.e.a(110, "");
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         if (this.G == null) {
             this.G = new Runnable() { // from class: com.anythink.expressad.video.module.AnythinkNativeEndCardView.1
@@ -959,9 +958,8 @@ public class AnythinkNativeEndCardView extends AnythinkBaseView implements f {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         Runnable runnable = this.G;
         if (runnable != null) {
@@ -1000,8 +998,8 @@ public class AnythinkNativeEndCardView extends AnythinkBaseView implements f {
             if (this.b == null || !this.f) {
                 return;
             }
-            com.anythink.expressad.foundation.g.d.b.a(this.f8440a.getApplicationContext()).a(this.b.be(), new AnonymousClass10());
-            com.anythink.expressad.foundation.g.d.b.a(this.f8440a.getApplicationContext()).a(this.b.bd(), new j(this.x, t.b(n.a().g(), 8.0f)));
+            com.anythink.expressad.foundation.g.d.b.a(this.f5600a.getApplicationContext()).a(this.b.be(), new AnonymousClass10());
+            com.anythink.expressad.foundation.g.d.b.a(this.f5600a.getApplicationContext()).a(this.b.bd(), new j(this.x, t.b(n.a().g(), 8.0f)));
             this.B.setText(this.b.bb());
             if (this.W != null) {
                 this.W.setText(this.b.cU);
@@ -1027,7 +1025,7 @@ public class AnythinkNativeEndCardView extends AnythinkBaseView implements f {
             if (!TextUtils.isEmpty(this.b.I()) && this.b.I().contains("alecfc=1")) {
                 this.J = true;
             }
-            com.anythink.expressad.foundation.g.d.b.a(this.f8440a.getApplicationContext()).a(TextUtils.isEmpty(this.b.aE()) ? com.anythink.expressad.a.ab : this.b.aE(), new AnonymousClass11());
+            com.anythink.expressad.foundation.g.d.b.a(this.f5600a.getApplicationContext()).a(TextUtils.isEmpty(this.b.aE()) ? com.anythink.expressad.a.ab : this.b.aE(), new AnonymousClass11());
             com.anythink.expressad.foundation.b.a.b().e();
             com.anythink.expressad.d.b.a();
             com.anythink.expressad.d.a b = com.anythink.expressad.d.b.b();

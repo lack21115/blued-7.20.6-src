@@ -9,13 +9,9 @@ import java.util.Map;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/live/base/manager/LiveDataManager.class */
 public class LiveDataManager {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static volatile LiveDataManager f11416a;
+    private static volatile LiveDataManager a;
     private long b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f11417c;
+    private String c;
     private long d;
     private BasePayRemaining e;
     private final Map<String, List<CommonGiftPackageModel>> f = new HashMap();
@@ -29,18 +25,18 @@ public class LiveDataManager {
     }
 
     public static LiveDataManager a() {
-        if (f11416a == null) {
+        if (a == null) {
             synchronized (LiveDataManager.class) {
                 try {
-                    if (f11416a == null) {
-                        f11416a = new LiveDataManager();
+                    if (a == null) {
+                        a = new LiveDataManager();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f11416a;
+        return a;
     }
 
     private void b(long j) {
@@ -53,7 +49,7 @@ public class LiveDataManager {
 
     public void a(long j) {
         this.b = j;
-        this.f11417c = String.valueOf(j);
+        this.c = String.valueOf(j);
     }
 
     public void a(BasePayRemaining basePayRemaining) {
@@ -92,7 +88,7 @@ public class LiveDataManager {
 
     public void b() {
         this.b = 0L;
-        this.f11417c = "";
+        this.c = "";
         this.g = false;
     }
 
@@ -105,7 +101,7 @@ public class LiveDataManager {
     }
 
     public String c() {
-        return this.f11417c;
+        return this.c;
     }
 
     public void c(boolean z) {

@@ -14,37 +14,34 @@ import com.soft.blued.ui.find.fragment.HomeGuideFragment;
 public class GuideItemFragment extends BaseFragment {
 
     /* renamed from: a  reason: collision with root package name */
-    private View f30325a;
+    private View f16635a;
     private ImageView b;
 
     /* renamed from: c  reason: collision with root package name */
-    private TextView f30326c;
+    private TextView f16636c;
     private TextView d;
     private HomeGuideFragment.GuideBean e;
 
     private void a() {
-        this.b = (ImageView) this.f30325a.findViewById(R.id.iv_guide);
-        this.f30326c = (TextView) this.f30325a.findViewById(2131372754);
-        this.d = (TextView) this.f30325a.findViewById(2131371262);
+        this.b = (ImageView) this.f16635a.findViewById(R.id.iv_guide);
+        this.f16636c = (TextView) this.f16635a.findViewById(2131372754);
+        this.d = (TextView) this.f16635a.findViewById(R.id.tv_desc);
         HomeGuideFragment.GuideBean guideBean = this.e;
         if (guideBean != null) {
-            this.b.setImageResource(guideBean.f30345a);
-            this.f30326c.setText(this.e.b);
-            this.d.setText(this.e.f30346c);
+            this.b.setImageResource(guideBean.f16655a);
+            this.f16636c.setText(this.e.b);
+            this.d.setText(this.e.f16656c);
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment
     public boolean isActivitySwipeBackEnable() {
         return false;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener
     public boolean onBackPressed() {
         return true;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         if (getArguments() != null) {
@@ -52,10 +49,9 @@ public class GuideItemFragment extends BaseFragment {
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.f30325a = layoutInflater.inflate(R.layout.pager_item_home_guide, (ViewGroup) null);
+        this.f16635a = layoutInflater.inflate(R.layout.pager_item_home_guide, (ViewGroup) null);
         a();
-        return this.f30325a;
+        return this.f16635a;
     }
 }

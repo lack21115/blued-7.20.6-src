@@ -12,11 +12,11 @@ import java.util.List;
 public class AdapterHelper implements OpReorderer.Callback {
 
     /* renamed from: a  reason: collision with root package name */
-    final ArrayList<UpdateOp> f3209a;
+    final ArrayList<UpdateOp> f3161a;
     final ArrayList<UpdateOp> b;
 
     /* renamed from: c  reason: collision with root package name */
-    final Callback f3210c;
+    final Callback f3162c;
     Runnable d;
     final boolean e;
     final OpReorderer f;
@@ -48,22 +48,22 @@ public class AdapterHelper implements OpReorderer.Callback {
     public static class UpdateOp {
 
         /* renamed from: a  reason: collision with root package name */
-        int f3211a;
+        int f3163a;
         int b;
 
         /* renamed from: c  reason: collision with root package name */
-        Object f3212c;
+        Object f3164c;
         int d;
 
         UpdateOp(int i, int i2, int i3, Object obj) {
-            this.f3211a = i;
+            this.f3163a = i;
             this.b = i2;
             this.d = i3;
-            this.f3212c = obj;
+            this.f3164c = obj;
         }
 
         String a() {
-            int i = this.f3211a;
+            int i = this.f3163a;
             return i != 1 ? i != 2 ? i != 4 ? i != 8 ? "??" : "mv" : "up" : t.w : "add";
         }
 
@@ -75,26 +75,26 @@ public class AdapterHelper implements OpReorderer.Callback {
                 return false;
             }
             UpdateOp updateOp = (UpdateOp) obj;
-            int i = this.f3211a;
-            if (i != updateOp.f3211a) {
+            int i = this.f3163a;
+            if (i != updateOp.f3163a) {
                 return false;
             }
             if (i == 8 && Math.abs(this.d - this.b) == 1 && this.d == updateOp.b && this.b == updateOp.d) {
                 return true;
             }
             if (this.d == updateOp.d && this.b == updateOp.b) {
-                Object obj2 = this.f3212c;
-                return obj2 != null ? obj2.equals(updateOp.f3212c) : updateOp.f3212c == null;
+                Object obj2 = this.f3164c;
+                return obj2 != null ? obj2.equals(updateOp.f3164c) : updateOp.f3164c == null;
             }
             return false;
         }
 
         public int hashCode() {
-            return (((this.f3211a * 31) + this.b) * 31) + this.d;
+            return (((this.f3163a * 31) + this.b) * 31) + this.d;
         }
 
         public String toString() {
-            return Integer.toHexString(System.identityHashCode(this)) + "[" + a() + ",s:" + this.b + "c:" + this.d + ",p:" + this.f3212c + "]";
+            return Integer.toHexString(System.identityHashCode(this)) + "[" + a() + ",s:" + this.b + "c:" + this.d + ",p:" + this.f3164c + "]";
         }
     }
 
@@ -105,10 +105,10 @@ public class AdapterHelper implements OpReorderer.Callback {
 
     AdapterHelper(Callback callback, boolean z) {
         this.g = new Pools.SimplePool(30);
-        this.f3209a = new ArrayList<>();
+        this.f3161a = new ArrayList<>();
         this.b = new ArrayList<>();
         this.h = 0;
-        this.f3210c = callback;
+        this.f3162c = callback;
         this.e = z;
         this.f = new OpReorderer(this);
     }
@@ -132,7 +132,7 @@ public class AdapterHelper implements OpReorderer.Callback {
             if (i5 >= i4) {
                 break;
             }
-            if (this.f3210c.findViewHolder(i5) != null || c(i5)) {
+            if (this.f3162c.findViewHolder(i5) != null || c(i5)) {
                 if (z3) {
                     z = false;
                 } else {
@@ -187,11 +187,11 @@ public class AdapterHelper implements OpReorderer.Callback {
             if (i6 >= i4 + i5) {
                 break;
             }
-            if (this.f3210c.findViewHolder(i6) != null || c(i6)) {
+            if (this.f3162c.findViewHolder(i6) != null || c(i6)) {
                 int i8 = i3;
                 i2 = i;
                 if (!z2) {
-                    d(obtainUpdateOp(4, i3, i, updateOp.f3212c));
+                    d(obtainUpdateOp(4, i3, i, updateOp.f3164c));
                     i8 = i6;
                     i2 = 0;
                 }
@@ -201,7 +201,7 @@ public class AdapterHelper implements OpReorderer.Callback {
                 int i9 = i3;
                 int i10 = i;
                 if (z2) {
-                    f(obtainUpdateOp(4, i3, i, updateOp.f3212c));
+                    f(obtainUpdateOp(4, i3, i, updateOp.f3164c));
                     i9 = i6;
                     i10 = 0;
                 }
@@ -215,7 +215,7 @@ public class AdapterHelper implements OpReorderer.Callback {
         }
         UpdateOp updateOp2 = updateOp;
         if (i != updateOp.d) {
-            Object obj = updateOp.f3212c;
+            Object obj = updateOp.f3164c;
             recycleUpdateOp(updateOp);
             updateOp2 = obtainUpdateOp(4, i3, i, obj);
         }
@@ -253,7 +253,7 @@ public class AdapterHelper implements OpReorderer.Callback {
             androidx.recyclerview.widget.AdapterHelper$UpdateOp r0 = (androidx.recyclerview.widget.AdapterHelper.UpdateOp) r0
             r12 = r0
             r0 = r12
-            int r0 = r0.f3211a
+            int r0 = r0.f3163a
             r1 = 8
             if (r0 != r1) goto L3a
             r0 = r5
@@ -269,7 +269,7 @@ public class AdapterHelper implements OpReorderer.Callback {
             return r0
         L3a:
             r0 = r12
-            int r0 = r0.f3211a
+            int r0 = r0.f3163a
             r1 = 1
             if (r0 != r1) goto L75
             r0 = r12
@@ -328,7 +328,7 @@ public class AdapterHelper implements OpReorderer.Callback {
                 break;
             }
             UpdateOp updateOp = this.b.get(i6);
-            if (updateOp.f3211a == 8) {
+            if (updateOp.f3163a == 8) {
                 if (updateOp.b < updateOp.d) {
                     i4 = updateOp.b;
                     i5 = updateOp.d;
@@ -368,11 +368,11 @@ public class AdapterHelper implements OpReorderer.Callback {
                     i = i3 - 1;
                 }
             } else if (updateOp.b <= i3) {
-                if (updateOp.f3211a == 1) {
+                if (updateOp.f3163a == 1) {
                     i = i3 - updateOp.d;
                 } else {
                     i = i3;
-                    if (updateOp.f3211a == 2) {
+                    if (updateOp.f3163a == 2) {
                         i = i3 + updateOp.d;
                     }
                 }
@@ -395,7 +395,7 @@ public class AdapterHelper implements OpReorderer.Callback {
                 return i3;
             }
             UpdateOp updateOp2 = this.b.get(i7);
-            if (updateOp2.f3211a == 8) {
+            if (updateOp2.f3163a == 8) {
                 if (updateOp2.d == updateOp2.b || updateOp2.d < 0) {
                     this.b.remove(i7);
                     recycleUpdateOp(updateOp2);
@@ -410,12 +410,12 @@ public class AdapterHelper implements OpReorderer.Callback {
 
     private void d(UpdateOp updateOp) {
         int i;
-        if (updateOp.f3211a == 1 || updateOp.f3211a == 8) {
+        if (updateOp.f3163a == 1 || updateOp.f3163a == 8) {
             throw new IllegalArgumentException("should not dispatch add or move for pre layout");
         }
-        int d = d(updateOp.b, updateOp.f3211a);
+        int d = d(updateOp.b, updateOp.f3163a);
         int i2 = updateOp.b;
-        int i3 = updateOp.f3211a;
+        int i3 = updateOp.f3163a;
         if (i3 == 2) {
             i = 0;
         } else if (i3 != 4) {
@@ -425,16 +425,16 @@ public class AdapterHelper implements OpReorderer.Callback {
         }
         int i4 = 1;
         for (int i5 = 1; i5 < updateOp.d; i5++) {
-            int d2 = d(updateOp.b + (i * i5), updateOp.f3211a);
-            int i6 = updateOp.f3211a;
+            int d2 = d(updateOp.b + (i * i5), updateOp.f3163a);
+            int i6 = updateOp.f3163a;
             if (i6 == 2 ? d2 == d : i6 == 4 && d2 == d + 1) {
                 i4++;
             } else {
-                UpdateOp obtainUpdateOp = obtainUpdateOp(updateOp.f3211a, d, i4, updateOp.f3212c);
+                UpdateOp obtainUpdateOp = obtainUpdateOp(updateOp.f3163a, d, i4, updateOp.f3164c);
                 a(obtainUpdateOp, i2);
                 recycleUpdateOp(obtainUpdateOp);
                 int i7 = i2;
-                if (updateOp.f3211a == 4) {
+                if (updateOp.f3163a == 4) {
                     i7 = i2 + i4;
                 }
                 i4 = 1;
@@ -442,10 +442,10 @@ public class AdapterHelper implements OpReorderer.Callback {
                 d = d2;
             }
         }
-        Object obj = updateOp.f3212c;
+        Object obj = updateOp.f3164c;
         recycleUpdateOp(updateOp);
         if (i4 > 0) {
-            UpdateOp obtainUpdateOp2 = obtainUpdateOp(updateOp.f3211a, d, i4, obj);
+            UpdateOp obtainUpdateOp2 = obtainUpdateOp(updateOp.f3163a, d, i4, obj);
             a(obtainUpdateOp2, i2);
             recycleUpdateOp(obtainUpdateOp2);
         }
@@ -457,15 +457,15 @@ public class AdapterHelper implements OpReorderer.Callback {
 
     private void f(UpdateOp updateOp) {
         this.b.add(updateOp);
-        int i = updateOp.f3211a;
+        int i = updateOp.f3163a;
         if (i == 1) {
-            this.f3210c.offsetPositionsForAdd(updateOp.b, updateOp.d);
+            this.f3162c.offsetPositionsForAdd(updateOp.b, updateOp.d);
         } else if (i == 2) {
-            this.f3210c.offsetPositionsForRemovingLaidOutOrNewView(updateOp.b, updateOp.d);
+            this.f3162c.offsetPositionsForRemovingLaidOutOrNewView(updateOp.b, updateOp.d);
         } else if (i == 4) {
-            this.f3210c.markViewHoldersUpdated(updateOp.b, updateOp.d, updateOp.f3212c);
+            this.f3162c.markViewHoldersUpdated(updateOp.b, updateOp.d, updateOp.f3164c);
         } else if (i == 8) {
-            this.f3210c.offsetPositionsForMove(updateOp.b, updateOp.d);
+            this.f3162c.offsetPositionsForMove(updateOp.b, updateOp.d);
         } else {
             throw new IllegalArgumentException("Unknown update op type for " + updateOp);
         }
@@ -481,13 +481,13 @@ public class AdapterHelper implements OpReorderer.Callback {
                 return i5;
             }
             UpdateOp updateOp = this.b.get(i4);
-            if (updateOp.f3211a != 8) {
+            if (updateOp.f3163a != 8) {
                 i = i5;
                 if (updateOp.b > i5) {
                     continue;
-                } else if (updateOp.f3211a != 2) {
+                } else if (updateOp.f3163a != 2) {
                     i = i5;
-                    if (updateOp.f3211a == 1) {
+                    if (updateOp.f3163a == 1) {
                         i = i5 + updateOp.d;
                     }
                 } else if (i5 < updateOp.b + updateOp.d) {
@@ -513,20 +513,20 @@ public class AdapterHelper implements OpReorderer.Callback {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a() {
-        a(this.f3209a);
+        a(this.f3161a);
         a(this.b);
         this.h = 0;
     }
 
     void a(UpdateOp updateOp, int i) {
-        this.f3210c.onDispatchFirstPass(updateOp);
-        int i2 = updateOp.f3211a;
+        this.f3162c.onDispatchFirstPass(updateOp);
+        int i2 = updateOp.f3163a;
         if (i2 == 2) {
-            this.f3210c.offsetPositionsForRemovingInvisible(i, updateOp.d);
+            this.f3162c.offsetPositionsForRemovingInvisible(i, updateOp.d);
         } else if (i2 != 4) {
             throw new IllegalArgumentException("only remove and update ops can be dispatched in first pass");
         } else {
-            this.f3210c.markViewHoldersUpdated(i, updateOp.d, updateOp.f3212c);
+            this.f3162c.markViewHoldersUpdated(i, updateOp.d, updateOp.f3164c);
         }
     }
 
@@ -557,9 +557,9 @@ public class AdapterHelper implements OpReorderer.Callback {
             return false;
         }
         if (i3 == 1) {
-            this.f3209a.add(obtainUpdateOp(8, i, i2, null));
+            this.f3161a.add(obtainUpdateOp(8, i, i2, null));
             this.h |= 8;
-            if (this.f3209a.size() == 1) {
+            if (this.f3161a.size() == 1) {
                 z = true;
             }
             return z;
@@ -573,16 +573,16 @@ public class AdapterHelper implements OpReorderer.Callback {
         if (i2 < 1) {
             return false;
         }
-        this.f3209a.add(obtainUpdateOp(4, i, i2, obj));
+        this.f3161a.add(obtainUpdateOp(4, i, i2, obj));
         this.h |= 4;
-        if (this.f3209a.size() == 1) {
+        if (this.f3161a.size() == 1) {
             z = true;
         }
         return z;
     }
 
     public int applyPendingUpdatesToPosition(int i) {
-        int size = this.f3209a.size();
+        int size = this.f3161a.size();
         int i2 = 0;
         while (true) {
             int i3 = i2;
@@ -590,8 +590,8 @@ public class AdapterHelper implements OpReorderer.Callback {
             if (i3 >= size) {
                 return i4;
             }
-            UpdateOp updateOp = this.f3209a.get(i3);
-            int i5 = updateOp.f3211a;
+            UpdateOp updateOp = this.f3161a.get(i3);
+            int i5 = updateOp.f3163a;
             if (i5 == 1) {
                 i = i4;
                 if (updateOp.b <= i4) {
@@ -631,17 +631,17 @@ public class AdapterHelper implements OpReorderer.Callback {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void b() {
-        this.f.a(this.f3209a);
-        int size = this.f3209a.size();
+        this.f.a(this.f3161a);
+        int size = this.f3161a.size();
         int i = 0;
         while (true) {
             int i2 = i;
             if (i2 >= size) {
-                this.f3209a.clear();
+                this.f3161a.clear();
                 return;
             }
-            UpdateOp updateOp = this.f3209a.get(i2);
-            int i3 = updateOp.f3211a;
+            UpdateOp updateOp = this.f3161a.get(i2);
+            int i3 = updateOp.f3163a;
             if (i3 == 1) {
                 e(updateOp);
             } else if (i3 == 2) {
@@ -665,9 +665,9 @@ public class AdapterHelper implements OpReorderer.Callback {
         if (i2 < 1) {
             return false;
         }
-        this.f3209a.add(obtainUpdateOp(1, i, i2, null));
+        this.f3161a.add(obtainUpdateOp(1, i, i2, null));
         this.h |= 1;
-        if (this.f3209a.size() == 1) {
+        if (this.f3161a.size() == 1) {
             z = true;
         }
         return z;
@@ -684,7 +684,7 @@ public class AdapterHelper implements OpReorderer.Callback {
                 this.h = 0;
                 return;
             }
-            this.f3210c.onDispatchSecondPass(this.b.get(i2));
+            this.f3162c.onDispatchSecondPass(this.b.get(i2));
             i = i2 + 1;
         }
     }
@@ -695,9 +695,9 @@ public class AdapterHelper implements OpReorderer.Callback {
         if (i2 < 1) {
             return false;
         }
-        this.f3209a.add(obtainUpdateOp(2, i, i2, null));
+        this.f3161a.add(obtainUpdateOp(2, i, i2, null));
         this.h |= 2;
-        if (this.f3209a.size() == 1) {
+        if (this.f3161a.size() == 1) {
             z = true;
         }
         return z;
@@ -705,35 +705,35 @@ public class AdapterHelper implements OpReorderer.Callback {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public boolean d() {
-        return this.f3209a.size() > 0;
+        return this.f3161a.size() > 0;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void e() {
         c();
-        int size = this.f3209a.size();
+        int size = this.f3161a.size();
         int i = 0;
         while (true) {
             int i2 = i;
             if (i2 >= size) {
-                a(this.f3209a);
+                a(this.f3161a);
                 this.h = 0;
                 return;
             }
-            UpdateOp updateOp = this.f3209a.get(i2);
-            int i3 = updateOp.f3211a;
+            UpdateOp updateOp = this.f3161a.get(i2);
+            int i3 = updateOp.f3163a;
             if (i3 == 1) {
-                this.f3210c.onDispatchSecondPass(updateOp);
-                this.f3210c.offsetPositionsForAdd(updateOp.b, updateOp.d);
+                this.f3162c.onDispatchSecondPass(updateOp);
+                this.f3162c.offsetPositionsForAdd(updateOp.b, updateOp.d);
             } else if (i3 == 2) {
-                this.f3210c.onDispatchSecondPass(updateOp);
-                this.f3210c.offsetPositionsForRemovingInvisible(updateOp.b, updateOp.d);
+                this.f3162c.onDispatchSecondPass(updateOp);
+                this.f3162c.offsetPositionsForRemovingInvisible(updateOp.b, updateOp.d);
             } else if (i3 == 4) {
-                this.f3210c.onDispatchSecondPass(updateOp);
-                this.f3210c.markViewHoldersUpdated(updateOp.b, updateOp.d, updateOp.f3212c);
+                this.f3162c.onDispatchSecondPass(updateOp);
+                this.f3162c.markViewHoldersUpdated(updateOp.b, updateOp.d, updateOp.f3164c);
             } else if (i3 == 8) {
-                this.f3210c.onDispatchSecondPass(updateOp);
-                this.f3210c.offsetPositionsForMove(updateOp.b, updateOp.d);
+                this.f3162c.onDispatchSecondPass(updateOp);
+                this.f3162c.offsetPositionsForMove(updateOp.b, updateOp.d);
             }
             Runnable runnable = this.d;
             if (runnable != null) {
@@ -745,7 +745,7 @@ public class AdapterHelper implements OpReorderer.Callback {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public boolean f() {
-        return (this.b.isEmpty() || this.f3209a.isEmpty()) ? false : true;
+        return (this.b.isEmpty() || this.f3161a.isEmpty()) ? false : true;
     }
 
     @Override // androidx.recyclerview.widget.OpReorderer.Callback
@@ -754,10 +754,10 @@ public class AdapterHelper implements OpReorderer.Callback {
         if (acquire == null) {
             return new UpdateOp(i, i2, i3, obj);
         }
-        acquire.f3211a = i;
+        acquire.f3163a = i;
         acquire.b = i2;
         acquire.d = i3;
-        acquire.f3212c = obj;
+        acquire.f3164c = obj;
         return acquire;
     }
 
@@ -766,7 +766,7 @@ public class AdapterHelper implements OpReorderer.Callback {
         if (this.e) {
             return;
         }
-        updateOp.f3212c = null;
+        updateOp.f3164c = null;
         this.g.release(updateOp);
     }
 }

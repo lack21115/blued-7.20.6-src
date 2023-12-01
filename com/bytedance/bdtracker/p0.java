@@ -7,27 +7,27 @@ import android.content.Context;
 public class p0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public volatile r2 f21283a;
+    public volatile r2 f7677a;
     public Account b;
 
     /* renamed from: c  reason: collision with root package name */
-    public s1 f21284c;
+    public s1 f7678c;
 
     public r2 a(Context context, m0 m0Var) {
-        if (this.f21283a == null) {
+        if (this.f7677a == null) {
             synchronized (p0.class) {
                 try {
-                    if (this.f21283a == null) {
+                    if (this.f7677a == null) {
                         if (context == null) {
                             throw new IllegalArgumentException("context == null");
                         }
-                        if (this.f21284c == null) {
-                            this.f21284c = new s1(context);
+                        if (this.f7678c == null) {
+                            this.f7678c = new s1(context);
                         }
-                        if (this.f21283a == null) {
-                            this.f21283a = new n2(context, m0Var, this.f21284c);
+                        if (this.f7677a == null) {
+                            this.f7677a = new n2(context, m0Var, this.f7678c);
                             if (this.b != null) {
-                                ((n2) this.f21283a).a(this.b);
+                                ((n2) this.f7677a).a(this.b);
                             }
                         }
                     }
@@ -36,6 +36,6 @@ public class p0 {
                 }
             }
         }
-        return this.f21283a;
+        return this.f7677a;
     }
 }

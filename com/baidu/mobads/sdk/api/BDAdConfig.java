@@ -150,7 +150,7 @@ public class BDAdConfig {
 
     public static void clearMemoryCache() {
         try {
-            z.a().c().onTaskDistribute(az.f9327c, null);
+            z.a().c().onTaskDistribute(az.f6487c, null);
         } catch (Throwable th) {
             th.printStackTrace();
         }
@@ -197,7 +197,7 @@ public class BDAdConfig {
                 IXAdContainerFactory c2 = z.a().c();
                 if (c2 != null) {
                     c2.initConfig(BDAdConfig.this.mConfigObj);
-                    c2.onTaskDistribute(az.f9326a, MobadsPermissionSettings.getPermissionInfo());
+                    c2.onTaskDistribute(az.f6486a, MobadsPermissionSettings.getPermissionInfo());
                 }
                 if (BDAdConfig.this.mBDAdInitListener != null) {
                     BDAdConfig.this.mBDAdInitListener.success();

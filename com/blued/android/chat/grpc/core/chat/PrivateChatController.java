@@ -40,9 +40,9 @@ public class PrivateChatController extends BaseWorker implements MsgConsumer {
     public boolean consumeMsg(Any any) {
         if (any.is(PrivateChatOuterClass.Receive.class)) {
             try {
-                PrivateChatOuterClass.Receive receive = (PrivateChatOuterClass.Receive) any.unpack(PrivateChatOuterClass.Receive.class);
-                if (receive != null) {
-                    ChatManager.getInstance().onReceiveMsgFromGRPC(MsgConverter.convertReceiveMsg(receive), receive.getIsRead(), receive.getIsDeleted());
+                PrivateChatOuterClass.Receive unpack = any.unpack(PrivateChatOuterClass.Receive.class);
+                if (unpack != null) {
+                    ChatManager.getInstance().onReceiveMsgFromGRPC(MsgConverter.convertReceiveMsg(unpack), unpack.getIsRead(), unpack.getIsDeleted());
                     return true;
                 }
                 return true;

@@ -89,15 +89,15 @@ public class TXVodDownloadManager {
 
     @Deprecated
     public void setDownloadPath(String str) {
-        this.mManagerImpl.f38672a.setDownloadPath(str);
+        this.mManagerImpl.f24981a.setDownloadPath(str);
     }
 
     public void setHeaders(Map<String, String> map) {
-        this.mManagerImpl.f38672a.setHeaders(map);
+        this.mManagerImpl.f24981a.setHeaders(map);
     }
 
     public void setListener(ITXVodDownloadListener iTXVodDownloadListener) {
-        this.mManagerImpl.f38673c = iTXVodDownloadListener;
+        this.mManagerImpl.f24982c = iTXVodDownloadListener;
     }
 
     public TXVodDownloadMediaInfo startDownload(TXVodDownloadDataSource tXVodDownloadDataSource) {
@@ -124,8 +124,8 @@ public class TXVodDownloadManager {
                 synchronized (bVar.b) {
                     bVar.b.remove(cVar);
                 }
-                if (bVar.f38673c != null) {
-                    bVar.f38673c.onDownloadError(cVar, TXVodDownloadManager.DOWNLOAD_AUTH_FAILED, str);
+                if (bVar.f24982c != null) {
+                    bVar.f24982c.onDownloadError(cVar, TXVodDownloadManager.DOWNLOAD_AUTH_FAILED, str);
                 }
             }
 
@@ -136,8 +136,8 @@ public class TXVodDownloadManager {
                     synchronized (bVar.b) {
                         bVar.b.remove(cVar);
                     }
-                    if (bVar.f38673c != null) {
-                        bVar.f38673c.onDownloadStop(cVar);
+                    if (bVar.f24982c != null) {
+                        bVar.f24982c.onDownloadStop(cVar);
                     }
                     LiteavLog.w("TXVodDownloadManagerImpl", "Download task canceled");
                     return;
@@ -186,7 +186,7 @@ public class TXVodDownloadManager {
                 LiteavLog.w("TXVodDownloadManagerImpl", "stop download not start task");
                 return;
             }
-            bVar.f38672a.stop(tXVodDownloadMediaInfo.getTaskId());
+            bVar.f24981a.stop(tXVodDownloadMediaInfo.getTaskId());
             LiteavLog.d("TXVodDownloadManagerImpl", "stop download " + tXVodDownloadMediaInfo.getUrl());
         }
     }

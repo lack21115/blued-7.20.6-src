@@ -18,7 +18,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class TypefaceCompatBaseImpl {
 
     /* renamed from: a  reason: collision with root package name */
-    private ConcurrentHashMap<Long, FontResourcesParserCompat.FontFamilyFilesResourceEntry> f2464a = new ConcurrentHashMap<>();
+    private ConcurrentHashMap<Long, FontResourcesParserCompat.FontFamilyFilesResourceEntry> f2416a = new ConcurrentHashMap<>();
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8756600-dex2jar.jar:androidx/core/graphics/TypefaceCompatBaseImpl$StyleExtractor.class */
@@ -71,7 +71,7 @@ public class TypefaceCompatBaseImpl {
     private void a(Typeface typeface, FontResourcesParserCompat.FontFamilyFilesResourceEntry fontFamilyFilesResourceEntry) {
         long b = b(typeface);
         if (b != 0) {
-            this.f2464a.put(Long.valueOf(b), fontFamilyFilesResourceEntry);
+            this.f2416a.put(Long.valueOf(b), fontFamilyFilesResourceEntry);
         }
     }
 
@@ -121,7 +121,7 @@ public class TypefaceCompatBaseImpl {
         if (b == 0) {
             return null;
         }
-        return this.f2464a.get(Long.valueOf(b));
+        return this.f2416a.get(Long.valueOf(b));
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

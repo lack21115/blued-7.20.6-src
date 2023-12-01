@@ -11,8 +11,8 @@ public class RectShape extends Shape {
 
     @Override // android.graphics.drawable.shapes.Shape
     /* renamed from: clone */
-    public RectShape mo346clone() throws CloneNotSupportedException {
-        RectShape rectShape = (RectShape) super.mo346clone();
+    public RectShape mo343clone() throws CloneNotSupportedException {
+        RectShape rectShape = (RectShape) super.mo343clone();
         rectShape.mRect = new RectF(this.mRect);
         return rectShape;
     }

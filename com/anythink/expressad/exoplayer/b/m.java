@@ -1,6 +1,8 @@
 package com.anythink.expressad.exoplayer.b;
 
+import android.bluetooth.BluetoothClass;
 import android.media.AudioSystem;
+import android.opengl.GLES11;
 import android.opengl.GLES30;
 import android.text.format.DateUtils;
 import com.sina.weibo.sdk.constant.WBConstants;
@@ -11,11 +13,11 @@ import java.util.Arrays;
 public final class m {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final int f7209a = 2147385345;
+    private static final int f4370a = 2147385345;
     private static final int b = 536864768;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final int f7210c = -25230976;
+    private static final int f4371c = -25230976;
     private static final int d = -14745368;
     private static final byte e = Byte.MAX_VALUE;
     private static final byte f = 31;
@@ -23,7 +25,7 @@ public final class m {
     private static final byte h = -1;
     private static final int[] i = {1, 2, 2, 2, 2, 3, 3, 4, 4, 5, 6, 6, 6, 7, 8, 8};
     private static final int[] j = {-1, 8000, 16000, 32000, -1, -1, 11025, 22050, 44100, -1, -1, 12000, 24000, 48000, -1, -1};
-    private static final int[] k = {64, 112, 128, 192, 224, 256, 384, 448, 512, 640, 768, AudioSystem.DEVICE_OUT_ALL_A2DP, 1024, 1152, 1280, 1536, WBConstants.SDK_NEW_PAY_VERSION, 2048, 2304, DateUtils.FORMAT_NO_NOON_MIDNIGHT, 2688, 2816, 2823, 2944, 3072, 3840, 4096, GLES30.GL_COLOR, 7680};
+    private static final int[] k = {64, 112, 128, 192, 224, 256, 384, 448, 512, 640, 768, AudioSystem.DEVICE_OUT_ALL_A2DP, 1024, 1152, 1280, BluetoothClass.Device.Major.IMAGING, WBConstants.SDK_NEW_PAY_VERSION, 2048, 2304, DateUtils.FORMAT_NO_NOON_MIDNIGHT, 2688, GLES11.GL_CURRENT_COLOR, 2823, 2944, 3072, 3840, 4096, GLES30.GL_COLOR, 7680};
 
     private m() {
     }
@@ -126,7 +128,7 @@ public final class m {
     }
 
     private static boolean a(int i2) {
-        return i2 == f7209a || i2 == f7210c || i2 == b || i2 == d;
+        return i2 == f4370a || i2 == f4371c || i2 == b || i2 == d;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:16:0x00a7  */

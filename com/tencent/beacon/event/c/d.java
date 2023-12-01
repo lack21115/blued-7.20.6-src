@@ -17,7 +17,7 @@ import java.util.Map;
 /* loaded from: source-8457232-dex2jar.jar:com/tencent/beacon/event/c/d.class */
 public final class d {
     public static int a(EventType eventType) {
-        int i = c.f35044a[eventType.ordinal()];
+        int i = c.f21353a[eventType.ordinal()];
         int i2 = 3;
         if (i == 3 || i == 4) {
             i2 = 1;
@@ -131,7 +131,7 @@ public final class d {
 
     public static String b(String str) {
         if (TextUtils.isEmpty(str)) {
-            if (com.tencent.beacon.base.util.e.f35000a.get()) {
+            if (com.tencent.beacon.base.util.e.f21309a.get()) {
                 com.tencent.beacon.a.b.g.e().a("101", "eventCode == null");
                 com.tencent.beacon.base.util.e.a("eventCode == null");
                 return "";

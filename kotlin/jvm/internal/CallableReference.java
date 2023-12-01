@@ -15,7 +15,7 @@ import kotlin.reflect.KVisibility;
 
 /* loaded from: source-3503164-dex2jar.jar:kotlin/jvm/internal/CallableReference.class */
 public abstract class CallableReference implements Serializable, KCallable {
-    public static final Object NO_RECEIVER = NoReceiver.f42526a;
+    public static final Object NO_RECEIVER = NoReceiver.a;
     private final boolean isTopLevel;
     private final String name;
     private final Class owner;
@@ -25,15 +25,13 @@ public abstract class CallableReference implements Serializable, KCallable {
 
     /* loaded from: source-3503164-dex2jar.jar:kotlin/jvm/internal/CallableReference$NoReceiver.class */
     static class NoReceiver implements Serializable {
-
-        /* renamed from: a  reason: collision with root package name */
-        private static final NoReceiver f42526a = new NoReceiver();
+        private static final NoReceiver a = new NoReceiver();
 
         private NoReceiver() {
         }
 
         private Object readResolve() throws ObjectStreamException {
-            return f42526a;
+            return a;
         }
     }
 
@@ -85,6 +83,7 @@ public abstract class CallableReference implements Serializable, KCallable {
         return this.receiver;
     }
 
+    @Override // kotlin.reflect.KCallable
     public String getName() {
         return this.name;
     }

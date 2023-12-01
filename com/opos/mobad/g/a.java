@@ -17,11 +17,11 @@ import java.util.concurrent.Callable;
 public class a extends d {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f26146a;
+    private Context f12458a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private a.C0707a f26147c;
+    private a.C0537a f12459c;
     private int d;
     private int g;
     private b h;
@@ -31,7 +31,7 @@ public class a extends d {
         this.d = 0;
         this.g = 0;
         Context applicationContext = activity.getApplicationContext();
-        this.f26146a = applicationContext;
+        this.f12458a = applicationContext;
         this.b = str;
         this.h = new b(applicationContext, str, dVar, hVar, new b.a() { // from class: com.opos.mobad.g.a.1
             @Override // com.opos.mobad.g.b.a
@@ -65,11 +65,11 @@ public class a extends d {
 
     @Override // com.opos.mobad.l.k
     public boolean b(Activity activity) {
-        a.C0707a c0707a = this.f26147c;
-        if (c0707a == null) {
+        a.C0537a c0537a = this.f12459c;
+        if (c0537a == null) {
             com.opos.cmn.an.f.a.b("InterInterstitialVideoAd", "show but data null");
-        } else if (c0707a == null || c0707a.f26482a.a() != 1) {
-            return this.h.a(this.f26147c, this.g, new a.b() { // from class: com.opos.mobad.g.a.2
+        } else if (c0537a == null || c0537a.f12794a.a() != 1) {
+            return this.h.a(this.f12459c, this.g, new a.b() { // from class: com.opos.mobad.g.a.2
                 @Override // com.opos.mobad.cmn.a.a.a.b
                 public void a(int i, String str) {
                     a.this.c(i, str);
@@ -81,7 +81,7 @@ public class a extends d {
                 }
             });
         } else {
-            com.opos.mobad.service.a.a().a(this.b, 2, this.f26147c.b.f(), this.f26147c.b.b(), this.f26147c.f26483c.aa(), this.f26147c.b.a(), this.f26147c.b.J());
+            com.opos.mobad.service.a.a().a(this.b, 2, this.f12459c.b.f(), this.f12459c.b.b(), this.f12459c.f12795c.aa(), this.f12459c.b.a(), this.f12459c.b.J());
         }
         c(-1, com.opos.cmn.a.a(-1));
         return false;
@@ -96,16 +96,16 @@ public class a extends d {
     public boolean b(String str, int i) {
         this.d = 0;
         this.g = 0;
-        com.opos.mobad.model.b.a(this.f26146a.getApplicationContext()).a(this.f26146a, this.b, 2, str, i, new b.a() { // from class: com.opos.mobad.g.a.3
+        com.opos.mobad.model.b.a(this.f12458a.getApplicationContext()).a(this.f12458a, this.b, 2, str, i, new b.a() { // from class: com.opos.mobad.g.a.3
             @Override // com.opos.mobad.model.b.a
-            public void a(final int i2, final a.C0707a c0707a) {
-                if (c0707a.f26483c.d() == 12 || c0707a.f26483c.d() == 14) {
+            public void a(final int i2, final a.C0537a c0537a) {
+                if (c0537a.f12795c.d() == 12 || c0537a.f12795c.d() == 14) {
                     a.this.c(new Callable<Boolean>() { // from class: com.opos.mobad.g.a.3.1
                         @Override // java.util.concurrent.Callable
                         /* renamed from: a */
                         public Boolean call() throws Exception {
                             com.opos.cmn.an.f.a.b("InterInterstitialVideoAd", " call load succ");
-                            a.this.f26147c = c0707a;
+                            a.this.f12459c = c0537a;
                             a.this.d = i2;
                             return true;
                         }
@@ -138,13 +138,13 @@ public class a extends d {
 
     @Override // com.opos.mobad.ad.g.a, com.opos.mobad.ad.g
     public int f() {
-        a.C0707a c0707a;
-        return (!e() || (c0707a = this.f26147c) == null) ? super.f() : c0707a.b.X();
+        a.C0537a c0537a;
+        return (!e() || (c0537a = this.f12459c) == null) ? super.f() : c0537a.b.X();
     }
 
     @Override // com.opos.mobad.ad.g.a, com.opos.mobad.ad.g
     public int g() {
-        a.C0707a c0707a;
-        return (!e() || (c0707a = this.f26147c) == null) ? super.g() : c0707a.b.Y();
+        a.C0537a c0537a;
+        return (!e() || (c0537a = this.f12459c) == null) ? super.g() : c0537a.b.Y();
     }
 }

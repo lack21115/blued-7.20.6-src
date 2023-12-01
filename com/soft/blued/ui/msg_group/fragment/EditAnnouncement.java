@@ -19,10 +19,10 @@ public final class EditAnnouncement extends CommonWriteTextFragment {
     private String k = "";
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(EditAnnouncement this$0, DialogInterface dialogInterface, int i) {
+    public static final void a(EditAnnouncement editAnnouncement, DialogInterface dialogInterface, int i) {
         Tracker.onClick(dialogInterface, i);
-        Intrinsics.e(this$0, "this$0");
-        this$0.a(0);
+        Intrinsics.e(editAnnouncement, "this$0");
+        editAnnouncement.a(0);
     }
 
     private final void b() {
@@ -35,10 +35,10 @@ public final class EditAnnouncement extends CommonWriteTextFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(EditAnnouncement this$0, DialogInterface dialogInterface, int i) {
+    public static final void b(EditAnnouncement editAnnouncement, DialogInterface dialogInterface, int i) {
         Tracker.onClick(dialogInterface, i);
-        Intrinsics.e(this$0, "this$0");
-        this$0.a(-1);
+        Intrinsics.e(editAnnouncement, "this$0");
+        editAnnouncement.a(-1);
     }
 
     private final void c() {
@@ -47,14 +47,14 @@ public final class EditAnnouncement extends CommonWriteTextFragment {
             public final void onClick(DialogInterface dialogInterface, int i) {
                 EditAnnouncement.b(EditAnnouncement.this, dialogInterface, i);
             }
-        }, getString(2131887258), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
+        }, getString(R.string.common_cancel), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void c(EditAnnouncement this$0, DialogInterface dialogInterface, int i) {
+    public static final void c(EditAnnouncement editAnnouncement, DialogInterface dialogInterface, int i) {
         Tracker.onClick(dialogInterface, i);
-        Intrinsics.e(this$0, "this$0");
-        this$0.a(-1);
+        Intrinsics.e(editAnnouncement, "this$0");
+        editAnnouncement.a(-1);
     }
 
     private final void d() {
@@ -63,22 +63,21 @@ public final class EditAnnouncement extends CommonWriteTextFragment {
             public final void onClick(DialogInterface dialogInterface, int i) {
                 EditAnnouncement.c(EditAnnouncement.this, dialogInterface, i);
             }
-        }, getString(2131887258), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
+        }, getString(R.string.common_cancel), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityCreated(Bundle bundle) {
         super.onActivityCreated(bundle);
         this.k = this.d.getText().toString();
     }
 
     @Override // com.soft.blued.fragment.CommonWriteTextFragment, android.view.View.OnClickListener
-    public void onClick(View v) {
-        Intrinsics.e(v, "v");
-        int id = v.getId();
+    public void onClick(View view) {
+        Intrinsics.e(view, "v");
+        int id = view.getId();
         boolean z = false;
         if (id == 2131363120) {
-            if (Intrinsics.a((Object) this.k, (Object) this.d.getText().toString())) {
+            if (Intrinsics.a(this.k, this.d.getText().toString())) {
                 a(0);
             } else {
                 b();
@@ -97,12 +96,12 @@ public final class EditAnnouncement extends CommonWriteTextFragment {
                     return;
                 }
             }
-            StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
-            String string = this.f29642a.getResources().getString(R.string.max_input_limit);
+            StringCompanionObject stringCompanionObject = StringCompanionObject.a;
+            String string = this.f15952a.getResources().getString(R.string.max_input_limit);
             Intrinsics.c(string, "mContext.resources.getSt…R.string.max_input_limit)");
             String format = String.format(string, Arrays.copyOf(new Object[]{this.b + ""}, 1));
             Intrinsics.c(format, "format(format, *args)");
-            AppMethods.a((CharSequence) format);
+            AppMethods.a(format);
         }
     }
 }

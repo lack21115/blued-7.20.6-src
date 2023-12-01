@@ -26,7 +26,7 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
-import com.baidu.mobads.sdk.api.IAdInterListener;
+import com.android.ims.ImsConferenceState;
 import com.blued.ad.ADConstants;
 import com.blued.android.chat.core.pack.ReqAckPackage;
 import com.blued.android.core.AppInfo;
@@ -89,6 +89,7 @@ import com.blued.das.profile.PersonalProfileProtos;
 import com.blued.das.vip.VipProtos;
 import com.bytedance.applog.tracker.Tracker;
 import com.jeremyliao.liveeventbus.LiveEventBus;
+import com.mokee.volley.DefaultRetryPolicy;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -96,61 +97,53 @@ import java.util.Random;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/community/ui/feed/manager/FeedMethods.class */
 public class FeedMethods {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static int f19823a = -1;
+    public static int a = -1;
     public static ArrayMap<String, String> b = new ArrayMap<>();
-
-    /* renamed from: c  reason: collision with root package name */
-    private static int f19824c = 2500;
+    private static int c = DefaultRetryPolicy.DEFAULT_TIMEOUT_MS;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.blued.community.ui.feed.manager.FeedMethods$14  reason: invalid class name */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/community/ui/feed/manager/FeedMethods$14.class */
     public class AnonymousClass14 implements ActionSheet.ActionSheetListener {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ FragmentActivity f19830a;
+        final /* synthetic */ FragmentActivity a;
         final /* synthetic */ int[] b;
-
-        /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ BluedIngSelfFeed f19831c;
+        final /* synthetic */ BluedIngSelfFeed c;
         final /* synthetic */ IRequestHost d;
 
         AnonymousClass14(FragmentActivity fragmentActivity, int[] iArr, BluedIngSelfFeed bluedIngSelfFeed, IRequestHost iRequestHost) {
-            this.f19830a = fragmentActivity;
+            this.a = fragmentActivity;
             this.b = iArr;
-            this.f19831c = bluedIngSelfFeed;
+            this.c = bluedIngSelfFeed;
             this.d = iRequestHost;
         }
 
         @Override // com.blued.android.module.common.widget.menu.ActionSheet.ActionSheetListener
         public void a(ActionSheet actionSheet, final int i) {
-            FragmentActivity fragmentActivity = this.f19830a;
-            CommonAlertDialog.a(fragmentActivity, (String) null, fragmentActivity.getResources().getString(R.string.feed_confirm_edit_read_auth_hint), this.f19830a.getResources().getString(R.string.feed_confirm_edit), new DialogInterface.OnClickListener() { // from class: com.blued.community.ui.feed.manager.FeedMethods.14.1
+            FragmentActivity fragmentActivity = this.a;
+            CommonAlertDialog.a((Context) fragmentActivity, (String) null, fragmentActivity.getResources().getString(R.string.feed_confirm_edit_read_auth_hint), this.a.getResources().getString(R.string.feed_confirm_edit), new DialogInterface.OnClickListener() { // from class: com.blued.community.ui.feed.manager.FeedMethods.14.1
                 @Override // android.content.DialogInterface.OnClickListener
                 public void onClick(DialogInterface dialogInterface, int i2) {
                     Tracker.onClick(dialogInterface, i2);
                     final int i3 = AnonymousClass14.this.b[i];
-                    final Dialog a2 = DialogUtils.a(AnonymousClass14.this.f19830a);
-                    FeedHttpUtils.b(AnonymousClass14.this.f19831c.feed_id, i3, new BluedUIHttpResponse<BluedEntity>() { // from class: com.blued.community.ui.feed.manager.FeedMethods.14.1.1
+                    final Dialog a = DialogUtils.a((Context) AnonymousClass14.this.a);
+                    FeedHttpUtils.b(AnonymousClass14.this.c.feed_id, i3, new BluedUIHttpResponse<BluedEntity>() { // from class: com.blued.community.ui.feed.manager.FeedMethods.14.1.1
                         @Override // com.blued.android.framework.http.BluedUIHttpResponse
                         public void onUIFinish() {
                             super.onUIFinish();
-                            DialogUtils.b(a2);
+                            DialogUtils.b(a);
                         }
 
                         @Override // com.blued.android.framework.http.BluedUIHttpResponse
                         public void onUIStart() {
                             super.onUIStart();
-                            DialogUtils.a(a2);
+                            DialogUtils.a(a);
                         }
 
                         @Override // com.blued.android.framework.http.BluedUIHttpResponse
                         public void onUIUpdate(BluedEntity bluedEntity) {
-                            AppMethods.a((CharSequence) AnonymousClass14.this.f19830a.getResources().getString(R.string.community_done));
-                            AnonymousClass14.this.f19831c.reading_scope = i3;
-                            LiveEventBus.get("feed_read_setting").post(AnonymousClass14.this.f19831c);
+                            AppMethods.a((CharSequence) AnonymousClass14.this.a.getResources().getString(R.string.community_done));
+                            AnonymousClass14.this.c.reading_scope = i3;
+                            LiveEventBus.get("feed_read_setting").post(AnonymousClass14.this.c);
                         }
                     }, AnonymousClass14.this.d);
                 }
@@ -165,13 +158,9 @@ public class FeedMethods {
     /* renamed from: com.blued.community.ui.feed.manager.FeedMethods$16  reason: invalid class name */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/community/ui/feed/manager/FeedMethods$16.class */
     class AnonymousClass16 implements ADClosePopOptionsHelper.ADOptionsListener {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ String f19839a;
+        final /* synthetic */ String a;
         final /* synthetic */ int b;
-
-        /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ String f19840c;
+        final /* synthetic */ String c;
         final /* synthetic */ int d;
         final /* synthetic */ Context e;
         final /* synthetic */ ADConstants.AD_POSITION f;
@@ -183,13 +172,13 @@ public class FeedMethods {
 
         @Override // com.blued.android.module.common.utils.ADClosePopOptionsHelper.ADOptionsListener
         public void b() {
-            EventTrackFeed.a(FeedProtos.Event.CITY_AD_CLOSE_OPEN_VIP_CLICK, this.f19839a, this.b, this.f19840c, this.d);
+            EventTrackFeed.a(FeedProtos.Event.CITY_AD_CLOSE_OPEN_VIP_CLICK, this.a, this.b, this.c, this.d);
             CommunityServiceManager.b().a(this.e, 2, this.f, 27, VipProtos.FromType.UNKNOWN_FROM);
         }
 
         @Override // com.blued.android.module.common.utils.ADClosePopOptionsHelper.ADOptionsListener
         public void c() {
-            EventTrackFeed.a(FeedProtos.Event.CITY_AD_CLOSE_TRUE_CLICK, this.f19839a, this.b, this.f19840c, this.d);
+            EventTrackFeed.a(FeedProtos.Event.CITY_AD_CLOSE_TRUE_CLICK, this.a, this.b, this.c, this.d);
         }
 
         @Override // com.blued.android.module.common.utils.ADClosePopOptionsHelper.ADOptionsListener
@@ -210,22 +199,18 @@ public class FeedMethods {
 
     /* loaded from: source-4169892-dex2jar.jar:com/blued/community/ui/feed/manager/FeedMethods$UserNameClickSpan.class */
     public static class UserNameClickSpan extends ClickableSpan {
-
-        /* renamed from: a  reason: collision with root package name */
-        Context f19863a;
+        Context a;
         String b;
-
-        /* renamed from: c  reason: collision with root package name */
-        String f19864c;
+        String c;
         String d;
         String e;
         String f;
         int g;
 
         public UserNameClickSpan(Context context, String str, String str2, String str3, String str4, String str5, int i) {
-            this.f19863a = context;
+            this.a = context;
             this.b = str;
-            this.f19864c = str2;
+            this.c = str2;
             this.d = str3;
             this.e = str4;
             this.f = str5;
@@ -235,21 +220,21 @@ public class FeedMethods {
         @Override // android.text.style.ClickableSpan
         public void onClick(View view) {
             Selection.removeSelection((Spannable) ((TextView) view).getText());
-            if (!StringUtils.c(this.f19864c)) {
+            if (!StringUtils.c(this.c)) {
                 AppMethods.d(R.string.circle_anonymous_not_to_user_info);
-            } else if (TextUtils.isEmpty(this.f19864c)) {
-                CommunityServiceManager.b().b(this.f19863a, this.d, this.f);
+            } else if (TextUtils.isEmpty(this.c)) {
+                CommunityServiceManager.b().b(this.a, this.d, this.f);
             } else {
-                CommunityServiceManager.b().a(this.f19863a, this.f19864c, this.f);
+                CommunityServiceManager.b().a(this.a, this.c, this.f);
             }
         }
 
         @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
         public void updateDrawState(TextPaint textPaint) {
             if (this.g == 0) {
-                this.g = BluedSkinUtils.a(this.f19863a, R.color.syc_h);
+                this.g = BluedSkinUtils.a(this.a, R.color.syc_h);
             }
-            textPaint.setColor(BluedSkinUtils.a(this.f19863a, this.g));
+            textPaint.setColor(BluedSkinUtils.a(this.a, this.g));
             textPaint.setUnderlineText(false);
         }
     }
@@ -365,7 +350,7 @@ public class FeedMethods {
         StringBuilder sb = new StringBuilder();
         sb.append((Object) spannableStringBuilder);
         sb.append("");
-        return TextUtils.isEmpty(sb.toString()) ? "" : StringUtils.a(StringUtils.a(StringUtils.a(spannableStringBuilder, i, 1), true, true, false, null, true, "", a(i2, 0)), true, new boolean[0]);
+        return TextUtils.isEmpty(sb.toString()) ? "" : StringUtils.a(StringUtils.a(StringUtils.a(spannableStringBuilder, i, 1), true, true, false, (StringUtils.ClickAtLinkListener) null, true, "", a(i2, 0)), true, new boolean[0]);
     }
 
     public static CharSequence a(Context context, int i, FeedComment feedComment, int i2, int i3, int i4) {
@@ -387,7 +372,7 @@ public class FeedMethods {
         StringBuilder sb = new StringBuilder();
         sb.append((Object) spannableStringBuilder);
         sb.append("");
-        return TextUtils.isEmpty(sb.toString()) ? "" : StringUtils.a(StringUtils.a(StringUtils.a(spannableStringBuilder, i, 1), true, true, false, null, true, "", a(i3, 0)), true, new boolean[0]);
+        return TextUtils.isEmpty(sb.toString()) ? "" : StringUtils.a(StringUtils.a(StringUtils.a(spannableStringBuilder, i, 1), true, true, false, (StringUtils.ClickAtLinkListener) null, true, "", a(i3, 0)), true, new boolean[0]);
     }
 
     public static String a(int i, int i2) {
@@ -612,14 +597,12 @@ public class FeedMethods {
     public static void a(final Context context, final BluedIngSelfFeed bluedIngSelfFeed, IRequestHost iRequestHost) {
         CommunityServiceManager.d().a(PersonalProfileProtos.Event.PERSONAL_PROFILE_FEED_MORE_TOP_CLICK, bluedIngSelfFeed.feed_id);
         FeedHttpUtils.a(new BluedUIHttpResponse() { // from class: com.blued.community.ui.feed.manager.FeedMethods.18
-
-            /* renamed from: c  reason: collision with root package name */
-            private boolean f19844c = false;
+            private boolean c = false;
 
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str) {
                 if (i == 4031201) {
-                    this.f19844c = true;
+                    this.c = true;
                     return true;
                 }
                 return super.onUIFailure(i, str);
@@ -627,12 +610,12 @@ public class FeedMethods {
 
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
-                if (!this.f19844c || context == null) {
+                if (!this.c || context == null) {
                     CommunityServiceManager.d().b("feed_stay_top_click", 1);
                 } else {
                     CommunityServiceManager.e().b(context, 9, "feed_stay_top");
                     CommunityServiceManager.d().b("feed_stay_top_click", 0);
-                    this.f19844c = false;
+                    this.c = false;
                 }
                 super.onUIFinish();
             }
@@ -739,7 +722,6 @@ public class FeedMethods {
             return;
         }
         LiveEventBus.get("feed_delete", BluedIngSelfFeed.class).observe(lifecycleOwner, new Observer<BluedIngSelfFeed>() { // from class: com.blued.community.ui.feed.manager.FeedMethods.1
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(BluedIngSelfFeed bluedIngSelfFeed) {
                 if (bluedIngSelfFeed == null) {
@@ -749,7 +731,6 @@ public class FeedMethods {
             }
         });
         LiveEventBus.get("feed_comment_setting", BluedIngSelfFeed.class).observe(lifecycleOwner, new Observer<BluedIngSelfFeed>() { // from class: com.blued.community.ui.feed.manager.FeedMethods.2
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(BluedIngSelfFeed bluedIngSelfFeed) {
                 if (bluedIngSelfFeed == null) {
@@ -759,7 +740,6 @@ public class FeedMethods {
             }
         });
         LiveEventBus.get("feed_read_setting", BluedIngSelfFeed.class).observe(lifecycleOwner, new Observer<BluedIngSelfFeed>() { // from class: com.blued.community.ui.feed.manager.FeedMethods.3
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(BluedIngSelfFeed bluedIngSelfFeed) {
                 if (bluedIngSelfFeed == null) {
@@ -769,7 +749,6 @@ public class FeedMethods {
             }
         });
         LiveEventBus.get("feed_like_change", BluedIngSelfFeed.class).observe(lifecycleOwner, new Observer<BluedIngSelfFeed>() { // from class: com.blued.community.ui.feed.manager.FeedMethods.4
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(BluedIngSelfFeed bluedIngSelfFeed) {
                 if (bluedIngSelfFeed == null) {
@@ -779,7 +758,6 @@ public class FeedMethods {
             }
         });
         LiveEventBus.get("feed_add_comment", FeedComment.class).observe(lifecycleOwner, new Observer<FeedComment>() { // from class: com.blued.community.ui.feed.manager.FeedMethods.5
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(FeedComment feedComment) {
                 if (feedComment == null) {
@@ -789,7 +767,6 @@ public class FeedMethods {
             }
         });
         LiveEventBus.get("feed_delete_comment", FeedComment.class).observe(lifecycleOwner, new Observer<FeedComment>() { // from class: com.blued.community.ui.feed.manager.FeedMethods.6
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(FeedComment feedComment) {
                 if (feedComment == null) {
@@ -799,7 +776,6 @@ public class FeedMethods {
             }
         });
         LiveEventBus.get("feed_add_repost", FeedRepost.class).observe(lifecycleOwner, new Observer<FeedRepost>() { // from class: com.blued.community.ui.feed.manager.FeedMethods.7
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(FeedRepost feedRepost) {
                 if (feedRepost == null) {
@@ -809,7 +785,6 @@ public class FeedMethods {
             }
         });
         LiveEventBus.get("feed_delete_repost", String.class).observe(lifecycleOwner, new Observer<String>() { // from class: com.blued.community.ui.feed.manager.FeedMethods.8
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(String str) {
                 if (str == null) {
@@ -819,7 +794,6 @@ public class FeedMethods {
             }
         });
         LiveEventBus.get("feed_relation_ship", UserBasicModel.class).observe(lifecycleOwner, new Observer<UserBasicModel>() { // from class: com.blued.community.ui.feed.manager.FeedMethods.9
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(UserBasicModel userBasicModel) {
                 if (userBasicModel == null) {
@@ -829,7 +803,6 @@ public class FeedMethods {
             }
         });
         LiveEventBus.get("feed_vote_change", BluedIngSelfFeed.class).observe(lifecycleOwner, new Observer<BluedIngSelfFeed>() { // from class: com.blued.community.ui.feed.manager.FeedMethods.10
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(BluedIngSelfFeed bluedIngSelfFeed) {
                 if (bluedIngSelfFeed == null) {
@@ -839,28 +812,24 @@ public class FeedMethods {
             }
         });
         LiveEventBus.get("feed_dynamic_skin", Integer.class).observe(lifecycleOwner, new Observer<Integer>() { // from class: com.blued.community.ui.feed.manager.FeedMethods.11
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(Integer num) {
                 IFeedDataObserver.this.c(num.intValue());
             }
         });
         LiveEventBus.get("feed_avatar_widget", Integer.class).observe(lifecycleOwner, new Observer<Integer>() { // from class: com.blued.community.ui.feed.manager.FeedMethods.12
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(Integer num) {
                 IFeedDataObserver.this.d(num.intValue());
             }
         });
         LiveEventBus.get("feed_topping", BluedIngSelfFeed.class).observe(lifecycleOwner, new Observer<BluedIngSelfFeed>() { // from class: com.blued.community.ui.feed.manager.FeedMethods.13
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(BluedIngSelfFeed bluedIngSelfFeed) {
                 IFeedDataObserver.this.d(bluedIngSelfFeed.feed_id, bluedIngSelfFeed.feed_views);
             }
         });
         LiveEventBus.get("EVENT_BUS_FEED_INTERACT", BusFeedInteractModel.class).observe(lifecycleOwner, new Observer() { // from class: com.blued.community.ui.feed.manager.-$$Lambda$FeedMethods$3_8Fx5vuGb2QQ21HlVcQkgTB1CI
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 FeedMethods.a(IFeedDataObserver.this, (BusFeedInteractModel) obj);
             }
@@ -1005,7 +974,7 @@ public class FeedMethods {
             builder.a(ActionSheetDefaultItem.a().a(context.getString(R.string.feed_visible)).a(!bluedIngSelfFeed.isAnonymous()).b(new BluedActionSheet.OnClickActionSheetListener() { // from class: com.blued.community.ui.feed.manager.-$$Lambda$FeedMethods$bJUr86LiirUBCiCWJ73E3OXtBdg
                 @Override // com.blued.android.module.common.widget.menu.BluedActionSheet.OnClickActionSheetListener
                 public final void onClickActionSheet(BluedActionSheet bluedActionSheet) {
-                    FeedMethods.c(Context.this, bluedIngSelfFeed, iRequestHost, bluedActionSheet);
+                    FeedMethods.c(context, bluedIngSelfFeed, iRequestHost, bluedActionSheet);
                 }
             }));
             if (bluedIngSelfFeed.can_promotion == 1) {
@@ -1020,7 +989,7 @@ public class FeedMethods {
                 builder.a(context.getString(R.string.comment_setting), new BluedActionSheet.OnClickActionSheetListener() { // from class: com.blued.community.ui.feed.manager.-$$Lambda$FeedMethods$W2NhIDP6caYiYeDtp_VaIndybjg
                     @Override // com.blued.android.module.common.widget.menu.BluedActionSheet.OnClickActionSheetListener
                     public final void onClickActionSheet(BluedActionSheet bluedActionSheet) {
-                        FeedMethods.b(Context.this, bluedIngSelfFeed, iRequestHost, bluedActionSheet);
+                        FeedMethods.b(context, bluedIngSelfFeed, iRequestHost, bluedActionSheet);
                     }
                 });
             }
@@ -1029,7 +998,7 @@ public class FeedMethods {
                     builder.a(ActionSheetDefaultItem.a().a(context.getString(R.string.sticky_feed)).b(R.drawable.common_icon_vip).b(new BluedActionSheet.OnClickActionSheetListener() { // from class: com.blued.community.ui.feed.manager.-$$Lambda$FeedMethods$fqA2hEL2D2_HtRNkLgs3TKFM0tY
                         @Override // com.blued.android.module.common.widget.menu.BluedActionSheet.OnClickActionSheetListener
                         public final void onClickActionSheet(BluedActionSheet bluedActionSheet) {
-                            FeedMethods.a(Context.this, bluedIngSelfFeed, iRequestHost);
+                            FeedMethods.a(context, bluedIngSelfFeed, iRequestHost);
                         }
                     }));
                 } else {
@@ -1052,7 +1021,7 @@ public class FeedMethods {
             builder.a(context.getString(R.string.delete), new BluedActionSheet.OnClickActionSheetListener() { // from class: com.blued.community.ui.feed.manager.-$$Lambda$FeedMethods$MruS1-jkImdW7aGSAlXmZDdAc3U
                 @Override // com.blued.android.module.common.widget.menu.BluedActionSheet.OnClickActionSheetListener
                 public final void onClickActionSheet(BluedActionSheet bluedActionSheet) {
-                    FeedMethods.b(Context.this, bluedIngSelfFeed, feedListAdapterForRecyclerView, i2, iRequestHost);
+                    FeedMethods.b(context, bluedIngSelfFeed, feedListAdapterForRecyclerView, i2, iRequestHost);
                 }
             });
         } else {
@@ -1125,7 +1094,7 @@ public class FeedMethods {
             builder.a(ActionSheetDefaultItem.a().a(bluedIngSelfFeed.allow_join == 1 ? context.getString(R.string.circle_join) : context.getString(R.string.circle_apply_join)).a(R.color.syc_m).b(new BluedActionSheet.OnClickActionSheetListener() { // from class: com.blued.community.ui.feed.manager.-$$Lambda$FeedMethods$vuvRCYpDCu4wtrbKrny2OFwf9c8
                 @Override // com.blued.android.module.common.widget.menu.BluedActionSheet.OnClickActionSheetListener
                 public final void onClickActionSheet(BluedActionSheet bluedActionSheet) {
-                    FeedMethods.a(Context.this, bluedIngSelfFeed, i, circleJoinView, textView, "", iRequestHost);
+                    FeedMethods.a(context, bluedIngSelfFeed, i, circleJoinView, textView, "", iRequestHost);
                 }
             }));
         }
@@ -1341,7 +1310,7 @@ public class FeedMethods {
         StringBuilder sb = new StringBuilder();
         sb.append((Object) spannableStringBuilder);
         sb.append("");
-        return TextUtils.isEmpty(sb.toString()) ? "" : StringUtils.a(StringUtils.a(StringUtils.a(spannableStringBuilder, i, 1), true, true, false, null, true, "", a(i2, 0)), true, new boolean[0]);
+        return TextUtils.isEmpty(sb.toString()) ? "" : StringUtils.a(StringUtils.a(StringUtils.a(spannableStringBuilder, i, 1), true, true, false, (StringUtils.ClickAtLinkListener) null, true, "", a(i2, 0)), true, new boolean[0]);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1352,7 +1321,7 @@ public class FeedMethods {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void b(int i, BluedIngSelfFeed bluedIngSelfFeed, String str, FeedListAdapterForRecyclerView feedListAdapterForRecyclerView, int i2, BluedActionSheet bluedActionSheet) {
-        EventTrackFeed.a(EventTrackFeed.f(i), bluedIngSelfFeed.circle_id, bluedIngSelfFeed.feed_id, IAdInterListener.AdProdType.PRODUCT_FEEDS, bluedIngSelfFeed.feed_uid, str);
+        EventTrackFeed.a(EventTrackFeed.f(i), bluedIngSelfFeed.circle_id, bluedIngSelfFeed.feed_id, "feed", bluedIngSelfFeed.feed_uid, str);
         if (bluedIngSelfFeed.is_unliked_url_visited) {
             return;
         }
@@ -1375,7 +1344,7 @@ public class FeedMethods {
             @Override // android.content.DialogInterface.OnClickListener
             public void onClick(DialogInterface dialogInterface, int i2) {
                 Tracker.onClick(dialogInterface, i2);
-                FeedMethods.c(Context.this, bluedIngSelfFeed, feedListAdapterForRecyclerView, i, iRequestHost);
+                FeedMethods.c(context, bluedIngSelfFeed, feedListAdapterForRecyclerView, i, iRequestHost);
             }
         }, context.getResources().getString(R.string.feed_wait_edit), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
     }
@@ -1402,7 +1371,7 @@ public class FeedMethods {
             public void a(ActionSheet actionSheet, int i4) {
                 final int a2 = CommonStringUtils.a(stringArray2[i4]);
                 EventTrackFeed.c(FeedProtos.Event.FEED_SETTING_COMMENT_CLICK, bluedIngSelfFeed.feed_id, a2);
-                final Dialog a3 = DialogUtils.a(fragmentActivity);
+                final Dialog a3 = DialogUtils.a((Context) fragmentActivity);
                 FeedHttpUtils.a(bluedIngSelfFeed.feed_id, a2, new BluedUIHttpResponse<BluedEntity>() { // from class: com.blued.community.ui.feed.manager.FeedMethods.15.1
                     @Override // com.blued.android.framework.http.BluedUIHttpResponse, com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
                     public void onFailure(Throwable th, int i5, String str) {
@@ -1540,12 +1509,12 @@ public class FeedMethods {
         StringBuilder sb = new StringBuilder();
         sb.append((Object) spannableStringBuilder);
         sb.append("");
-        return TextUtils.isEmpty(sb.toString()) ? "" : StringUtils.a(StringUtils.a(StringUtils.a(spannableStringBuilder, i, 1), true, true, false, null, true, "", a(i2, 0)), true, new boolean[0]);
+        return TextUtils.isEmpty(sb.toString()) ? "" : StringUtils.a(StringUtils.a(StringUtils.a(spannableStringBuilder, i, 1), true, true, false, (StringUtils.ClickAtLinkListener) null, true, "", a(i2, 0)), true, new boolean[0]);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void c(int i, BluedIngSelfFeed bluedIngSelfFeed, String str, FeedListAdapterForRecyclerView feedListAdapterForRecyclerView, int i2, BluedActionSheet bluedActionSheet) {
-        EventTrackFeed.a(EventTrackFeed.f(i), bluedIngSelfFeed.circle_id, bluedIngSelfFeed.feed_id, "user", bluedIngSelfFeed.feed_uid, str);
+        EventTrackFeed.a(EventTrackFeed.f(i), bluedIngSelfFeed.circle_id, bluedIngSelfFeed.feed_id, ImsConferenceState.USER, bluedIngSelfFeed.feed_uid, str);
         if (bluedIngSelfFeed.isIs_unliked_users_url_visited) {
             return;
         }
@@ -1648,8 +1617,8 @@ public class FeedMethods {
         int nextInt = new Random().nextInt(t.size());
         while (true) {
             int i = nextInt;
-            if (f19823a != i) {
-                f19823a = i;
+            if (a != i) {
+                a = i;
                 return t.get(i);
             }
             nextInt = new Random().nextInt(t.size());

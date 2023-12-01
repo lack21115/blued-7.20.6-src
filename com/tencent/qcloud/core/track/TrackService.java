@@ -1,7 +1,6 @@
 package com.tencent.qcloud.core.track;
 
 import android.content.Context;
-import com.alipay.sdk.util.i;
 import com.tencent.beacon.event.open.BeaconConfig;
 import com.tencent.beacon.event.open.BeaconEvent;
 import com.tencent.beacon.event.open.BeaconReport;
@@ -81,7 +80,7 @@ public class TrackService {
                 for (String str4 : map.keySet()) {
                     sb.append(str4 + "=" + map.get(str4) + ", ");
                 }
-                sb.delete(sb.length() - 2, sb.length()).append(i.d);
+                sb.delete(sb.length() - 2, sb.length()).append("}");
                 QCloudLogger.i(TAG, "eventCode: %s, params: %s => result{ eventID: %s, errorCode: %d, errorMsg: %s}", str2, sb, Long.valueOf(report.eventID), Integer.valueOf(report.errorCode), report.errMsg);
             }
         }

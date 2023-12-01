@@ -21,7 +21,6 @@ import com.blued.android.framework.http.parser.BluedEntity;
 import com.blued.android.framework.http.parser.BluedEntityA;
 import com.blued.android.module.common.utils.DialogUtils;
 import com.blued.android.module.common.view.CommonTopTitleNoTrans;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.bytedance.applog.tracker.Tracker;
 import com.soft.blued.R;
 import com.soft.blued.http.GroupHttpUtils;
@@ -36,11 +35,11 @@ public class GroupAdminSetFragment extends BaseFragment implements View.OnClickL
     public static String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public static String f30755c;
+    public static String f17065c;
     public static String d;
 
     /* renamed from: a  reason: collision with root package name */
-    public List<BluedGroupAdminLists> f30756a;
+    public List<BluedGroupAdminLists> f17066a;
     private View h;
     private Context i;
     private ListView j;
@@ -55,29 +54,28 @@ public class GroupAdminSetFragment extends BaseFragment implements View.OnClickL
     private String g = GroupAdminSetFragment.class.getSimpleName();
     public BluedUIHttpResponse e = new BluedUIHttpResponse<BluedEntityA<BluedGroupAdminLists>>() { // from class: com.soft.blued.ui.group.GroupAdminSetFragment.1
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public void onUIUpdate(BluedEntityA<BluedGroupAdminLists> bluedEntityA) {
             if (bluedEntityA != null) {
                 try {
                     if (bluedEntityA.data != null) {
                         GroupAdminSetFragment.this.j.setVisibility(0);
-                        GroupAdminSetFragment.this.f30756a.clear();
-                        GroupAdminSetFragment.this.f30756a.addAll(bluedEntityA.data);
+                        GroupAdminSetFragment.this.f17066a.clear();
+                        GroupAdminSetFragment.this.f17066a.addAll(bluedEntityA.data);
                         int i = 0;
                         while (true) {
                             int i2 = i;
-                            if (i2 >= GroupAdminSetFragment.this.f30756a.size()) {
+                            if (i2 >= GroupAdminSetFragment.this.f17066a.size()) {
                                 break;
                             }
-                            GroupAdminSetFragment.this.f30756a.get(i2).users_height = StringUtils.a(GroupAdminSetFragment.this.f30756a.get(i2).users_height, BlueAppLocal.c(), false);
-                            GroupAdminSetFragment.this.f30756a.get(i2).users_weight = StringUtils.b(GroupAdminSetFragment.this.f30756a.get(i2).users_weight, BlueAppLocal.c(), false);
+                            GroupAdminSetFragment.this.f17066a.get(i2).users_height = StringUtils.a(GroupAdminSetFragment.this.f17066a.get(i2).users_height, BlueAppLocal.c(), false);
+                            GroupAdminSetFragment.this.f17066a.get(i2).users_weight = StringUtils.b(GroupAdminSetFragment.this.f17066a.get(i2).users_weight, BlueAppLocal.c(), false);
                             i = i2 + 1;
                         }
                         GroupAdminSetFragment.this.k.notifyDataSetChanged();
                         TextView textView = GroupAdminSetFragment.this.q;
-                        textView.setText("(" + GroupAdminSetFragment.this.f30756a.size() + BridgeUtil.SPLIT_MARK + GroupAdminSetFragment.f30755c + ")");
-                        if (GroupAdminSetFragment.this.f30756a.size() == StringUtils.c(GroupAdminSetFragment.f30755c)) {
+                        textView.setText("(" + GroupAdminSetFragment.this.f17066a.size() + "/" + GroupAdminSetFragment.f17065c + ")");
+                        if (GroupAdminSetFragment.this.f17066a.size() == StringUtils.c(GroupAdminSetFragment.f17065c)) {
                             GroupAdminSetFragment.this.m.setClickable(false);
                             GroupAdminSetFragment.this.n.setImageResource(R.drawable.icon_group_add_admin_blue);
                             GroupAdminSetFragment.this.o.setTextColor(GroupAdminSetFragment.this.getResources().getColor(2131100461));
@@ -89,35 +87,30 @@ public class GroupAdminSetFragment extends BaseFragment implements View.OnClickL
             }
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIFinish() {
             super.onUIFinish();
             DialogUtils.b(GroupAdminSetFragment.this.l);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIStart() {
             super.onUIStart();
             DialogUtils.a(GroupAdminSetFragment.this.l);
         }
     };
     public BluedUIHttpResponse f = new BluedUIHttpResponse<BluedEntity>() { // from class: com.soft.blued.ui.group.GroupAdminSetFragment.2
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIFinish() {
             super.onUIFinish();
             DialogUtils.b(GroupAdminSetFragment.this.l);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIStart() {
             super.onUIStart();
             DialogUtils.a(GroupAdminSetFragment.this.l);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIUpdate(BluedEntity bluedEntity) {
             AppMethods.d((int) R.string.group_admin_add_success);
-            if (GroupAdminSetFragment.this.k.f30894a) {
+            if (GroupAdminSetFragment.this.k.f17204a) {
                 GroupAdminSetFragment.this.r.setRightText(GroupAdminSetFragment.this.getString(R.string.done));
             } else {
                 GroupAdminSetFragment.this.r.setRightText(GroupAdminSetFragment.this.getString(R.string.group_admins_edit));
@@ -127,9 +120,9 @@ public class GroupAdminSetFragment extends BaseFragment implements View.OnClickL
     };
 
     private void c() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.h.findViewById(2131370749);
-        this.r = commonTopTitleNoTrans;
-        commonTopTitleNoTrans.a();
+        CommonTopTitleNoTrans findViewById = this.h.findViewById(R.id.top_title);
+        this.r = findViewById;
+        findViewById.a();
         this.r.setCenterText(getString(R.string.group_admin));
         if (!StringUtils.d(d)) {
             if (d.equals("0")) {
@@ -151,16 +144,16 @@ public class GroupAdminSetFragment extends BaseFragment implements View.OnClickL
         this.m.setOnClickListener(this);
         this.p = (LinearLayout) this.h.findViewById(R.id.ll_group_admin);
         this.q = (TextView) this.h.findViewById(R.id.tv_group_admin_count);
-        this.f30756a = new ArrayList();
+        this.f17066a = new ArrayList();
         this.j = (ListView) this.h.findViewById(R.id.lv_group_admins);
         TextView textView = this.q;
-        textView.setText("(" + d + BridgeUtil.SPLIT_MARK + f30755c + ")");
-        if (!StringUtils.d(f30755c) && d.equals(f30755c)) {
+        textView.setText("(" + d + "/" + f17065c + ")");
+        if (!StringUtils.d(f17065c) && d.equals(f17065c)) {
             this.m.setClickable(false);
             this.n.setImageResource(R.drawable.icon_group_add_admin_gray);
             this.o.setTextColor(getResources().getColor(2131100461));
         }
-        this.k = new GroupAdminSetAdapter(this.i, this.f30756a, this.j, this.q, this.m, this.n, this.o, this.r.findViewById(2131363126), getFragmentActive());
+        this.k = new GroupAdminSetAdapter(this.i, this.f17066a, this.j, this.q, this.m, this.n, this.o, this.r.findViewById(2131363126), getFragmentActive());
         this.j.addFooterView(inflate);
         this.j.setAdapter((ListAdapter) this.k);
     }
@@ -176,7 +169,7 @@ public class GroupAdminSetFragment extends BaseFragment implements View.OnClickL
             return;
         }
         b = arguments.getString("gid");
-        f30755c = arguments.getString("admin_total");
+        f17065c = arguments.getString("admin_total");
         d = arguments.getString("admin_amount");
     }
 
@@ -187,7 +180,6 @@ public class GroupAdminSetFragment extends BaseFragment implements View.OnClickL
         GroupHttpUtils.h(this.i, this.e, b, getFragmentActive());
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         if (i2 == -1 && i == 100 && intent != null && !StringUtils.d(intent.getStringExtra("uid"))) {
             GroupHttpUtils.g(this.i, this.f, b, intent.getStringExtra("uid"), getFragmentActive());
@@ -195,12 +187,12 @@ public class GroupAdminSetFragment extends BaseFragment implements View.OnClickL
         super.onActivityResult(i, i2, intent);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener
     public boolean onBackPressed() {
         e();
         return super.onBackPressed();
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     @Override // android.view.View.OnClickListener
     public void onClick(View view) {
         Tracker.onClick(view);
@@ -211,7 +203,7 @@ public class GroupAdminSetFragment extends BaseFragment implements View.OnClickL
             if (id != 2131367845) {
                 return;
             }
-            if (this.f30756a.size() == StringUtils.a(f30755c, 0)) {
+            if (this.f17066a.size() == StringUtils.a(f17065c, 0)) {
                 this.m.setClickable(false);
                 return;
             }
@@ -221,12 +213,12 @@ public class GroupAdminSetFragment extends BaseFragment implements View.OnClickL
         } else {
             String charSequence = ((TextView) this.r.findViewById(2131363126)).getText().toString();
             if (!StringUtils.d(charSequence) && charSequence.equals(getResources().getString(R.string.group_admins_edit))) {
-                this.k.f30894a = true;
+                this.k.f17204a = true;
                 this.r.setRightText(getString(R.string.done));
                 this.n.setImageResource(R.drawable.icon_group_add_admin_gray);
                 this.o.setTextColor(getResources().getColor(2131100461));
             } else if (!StringUtils.d(charSequence) && charSequence.equals(getResources().getString(R.string.done))) {
-                this.k.f30894a = false;
+                this.k.f17204a = false;
                 this.r.setRightText(getString(R.string.group_admins_edit));
                 this.n.setImageResource(R.drawable.icon_group_add_admin_blue);
                 this.o.setTextColor(getResources().getColor(2131100275));
@@ -235,12 +227,10 @@ public class GroupAdminSetFragment extends BaseFragment implements View.OnClickL
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.i = getActivity();
         View view = this.h;

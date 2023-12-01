@@ -27,7 +27,7 @@ public final class TimeoutKt {
     }
 
     private static final <U, T extends U> Object a(TimeoutCoroutine<U, ? super T> timeoutCoroutine, Function2<? super CoroutineScope, ? super Continuation<? super T>, ? extends Object> function2) {
-        JobKt.a(timeoutCoroutine, DelayKt.a(timeoutCoroutine.f43559c.getContext()).a(timeoutCoroutine.b, timeoutCoroutine, timeoutCoroutine.getContext()));
+        JobKt.a(timeoutCoroutine, DelayKt.a(timeoutCoroutine.c.getContext()).a(timeoutCoroutine.b, timeoutCoroutine, timeoutCoroutine.getContext()));
         return UndispatchedKt.b((ScopeCoroutine) timeoutCoroutine, timeoutCoroutine, (Function2<? super TimeoutCoroutine<U, ? super T>, ? super Continuation<? super T>, ? extends Object>) function2);
     }
 

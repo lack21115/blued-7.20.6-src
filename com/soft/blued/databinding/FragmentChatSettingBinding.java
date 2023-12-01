@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentChatSettingBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f28794a;
+    private final LinearLayout f15104a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f28794a;
+        return this.f15104a;
     }
 }

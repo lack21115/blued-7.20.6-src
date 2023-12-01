@@ -4,7 +4,6 @@ import android.text.TextUtils;
 import com.blued.android.framework.pool.ThreadExecutor;
 import com.blued.android.framework.pool.ThreadManager;
 import com.blued.android.framework.utils.Logger;
-import com.j256.ormlite.stmt.query.SimpleComparison;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -22,7 +21,7 @@ public class HtmlUtils {
         String substring;
         int lastIndexOf;
         Logger.c("HttpUtils", "html===========" + str);
-        return (TextUtils.isEmpty(str) || (indexOf = str.indexOf("</title>")) < 0 || (lastIndexOf = (substring = str.substring(0, indexOf)).lastIndexOf(SimpleComparison.GREATER_THAN_OPERATION)) < 0) ? "" : substring.substring(lastIndexOf + 1, substring.length());
+        return (TextUtils.isEmpty(str) || (indexOf = str.indexOf("</title>")) < 0 || (lastIndexOf = (substring = str.substring(0, indexOf)).lastIndexOf(">")) < 0) ? "" : substring.substring(lastIndexOf + 1, substring.length());
     }
 
     public static void a(final String str, final HtmlCallback htmlCallback) {

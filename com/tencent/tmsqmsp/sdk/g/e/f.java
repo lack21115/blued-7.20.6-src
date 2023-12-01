@@ -7,21 +7,21 @@ import com.tencent.tmsqmsp.sdk.base.IVendorCallback;
 public class f implements com.tencent.tmsqmsp.sdk.base.b {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f39788a;
+    private Context f26097a;
 
     @Override // com.tencent.tmsqmsp.sdk.base.b
     public String a() {
-        return d.b(this.f39788a);
+        return d.b(this.f26097a);
     }
 
     @Override // com.tencent.tmsqmsp.sdk.base.b
     public void a(Context context, IVendorCallback iVendorCallback) {
-        this.f39788a = context;
+        this.f26097a = context;
     }
 
     @Override // com.tencent.tmsqmsp.sdk.base.b
     public String b() {
-        return d.a(this.f39788a);
+        return d.a(this.f26097a);
     }
 
     @Override // com.tencent.tmsqmsp.sdk.base.b

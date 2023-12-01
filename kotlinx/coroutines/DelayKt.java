@@ -14,7 +14,7 @@ import kotlin.time.Duration;
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/DelayKt.class */
 public final class DelayKt {
     public static final long a(long j) {
-        if (Duration.a(j, Duration.f42762a.a()) > 0) {
+        if (Duration.a(j, Duration.a.a()) > 0) {
             return RangesKt.a(Duration.p(j), 1L);
         }
         return 0L;
@@ -22,7 +22,7 @@ public final class DelayKt {
 
     public static final Object a(long j, Continuation<? super Unit> continuation) {
         if (j <= 0) {
-            return Unit.f42314a;
+            return Unit.a;
         }
         CancellableContinuationImpl cancellableContinuationImpl = new CancellableContinuationImpl(IntrinsicsKt.a(continuation), 1);
         cancellableContinuationImpl.e();
@@ -34,7 +34,7 @@ public final class DelayKt {
         if (h == IntrinsicsKt.a()) {
             DebugProbesKt.c(continuation);
         }
-        return h == IntrinsicsKt.a() ? h : Unit.f42314a;
+        return h == IntrinsicsKt.a() ? h : Unit.a;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0041  */
@@ -73,7 +73,7 @@ public final class DelayKt {
             r5 = r0
         L2f:
             r0 = r5
-            java.lang.Object r0 = r0.f42807a
+            java.lang.Object r0 = r0.a
             r8 = r0
             java.lang.Object r0 = kotlin.coroutines.intrinsics.IntrinsicsKt.a()
             r7 = r0
@@ -139,7 +139,7 @@ public final class DelayKt {
     }
 
     public static final Delay a(CoroutineContext coroutineContext) {
-        CoroutineContext.Element element = coroutineContext.get(ContinuationInterceptor.f42453a);
+        CoroutineContext.Element element = coroutineContext.get(ContinuationInterceptor.a);
         Delay delay = element instanceof Delay ? (Delay) element : null;
         Delay delay2 = delay;
         if (delay == null) {

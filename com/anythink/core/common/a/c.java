@@ -2,12 +2,12 @@ package com.anythink.core.common.a;
 
 import android.text.TextUtils;
 import com.anythink.basead.b.a;
+import com.anythink.core.api.ATAdConst;
 import com.anythink.core.common.b.g;
 import com.anythink.core.common.e.ab;
 import com.anythink.core.common.e.ac;
 import com.anythink.core.common.e.k;
 import com.anythink.core.common.l;
-import com.anythink.expressad.foundation.d.r;
 import org.json.JSONObject;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/a/c.class */
@@ -26,15 +26,15 @@ public final class c {
             gVar.b(str);
             gVar.j(optJSONObject2.optString(l.ad));
             gVar.k(optJSONObject2.optString("c_id"));
-            gVar.w(optJSONObject2.optString("pkg"));
+            gVar.w(optJSONObject2.optString(a.C0030a.A));
             gVar.l(optJSONObject2.optString("title"));
-            gVar.m(optJSONObject2.optString("desc"));
-            gVar.f(optJSONObject2.optInt(com.anythink.expressad.foundation.d.c.Y));
+            gVar.m(optJSONObject2.optString(a.C0030a.f));
+            gVar.f(optJSONObject2.optInt("rating"));
             gVar.n(optJSONObject2.optString("icon_u"));
             gVar.p(optJSONObject2.optString("full_u"));
             gVar.d(optJSONObject2.optInt("unit_type"));
             gVar.q(optJSONObject2.optString("tp_logo_u"));
-            gVar.r(optJSONObject2.optString(a.C0070a.k));
+            gVar.r(optJSONObject2.optString(a.C0030a.k));
             gVar.s(optJSONObject2.optString("video_u"));
             gVar.d(optJSONObject2.optInt("video_l"));
             gVar.J(optJSONObject2.optString("video_r"));
@@ -55,7 +55,7 @@ public final class c {
                 }
             } catch (Throwable th) {
             }
-            gVar.N(optJSONObject2.optString("app_name"));
+            gVar.N(optJSONObject2.optString(ATAdConst.KEY.APP_NAME));
             gVar.y(optJSONObject2.optString("publisher"));
             gVar.z(optJSONObject2.optString("app_version"));
             gVar.A(optJSONObject2.optString("privacy"));
@@ -82,12 +82,12 @@ public final class c {
             }
             gVar.H(optJSONObject2.optString("dsp_id", ""));
             gVar.I(optJSONObject2.optString("dsp_oid", ""));
-            gVar.h(optJSONObject2.optInt(com.anythink.expressad.foundation.d.c.T, -1));
+            gVar.h(optJSONObject2.optInt("fca", -1));
             gVar.i(optJSONObject2.optInt("install_sw", -1));
             gVar.C(optJSONObject2.optString("wv_ctrl"));
             gVar.b(optJSONObject2.optInt("adp_type"));
             gVar.e(optJSONObject2.optString("offer_html"));
-            gVar.f(optJSONObject2.optString(r.ab));
+            gVar.f(optJSONObject2.optString("offer_url"));
             gVar.c(optJSONObject2.optString("wx_username"));
             gVar.d(optJSONObject2.optString("wx_path"));
             return gVar;

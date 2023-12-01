@@ -11,20 +11,16 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ItemKtvPrizeViewBinding.class */
 public final class ItemKtvPrizeViewBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final TextView f16624a;
+    public final TextView a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final TextView f16625c;
+    public final TextView c;
     private final ConstraintLayout d;
 
     private ItemKtvPrizeViewBinding(ConstraintLayout constraintLayout, TextView textView, ImageView imageView, TextView textView2) {
         this.d = constraintLayout;
-        this.f16624a = textView;
+        this.a = textView;
         this.b = imageView;
-        this.f16625c = textView2;
+        this.c = textView2;
     }
 
     public static ItemKtvPrizeViewBinding a(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
@@ -55,7 +51,6 @@ public final class ItemKtvPrizeViewBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.d;

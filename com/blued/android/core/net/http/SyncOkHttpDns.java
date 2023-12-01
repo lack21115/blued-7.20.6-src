@@ -10,15 +10,13 @@ import okhttp3.Dns;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/net/http/SyncOkHttpDns.class */
 public class SyncOkHttpDns implements Dns {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static SyncOkHttpDns f9697a;
+    private static SyncOkHttpDns a;
 
     public static SyncOkHttpDns a() {
-        if (f9697a == null) {
-            f9697a = new SyncOkHttpDns();
+        if (a == null) {
+            a = new SyncOkHttpDns();
         }
-        return f9697a;
+        return a;
     }
 
     @Override // okhttp3.Dns

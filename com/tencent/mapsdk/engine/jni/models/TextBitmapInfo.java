@@ -14,15 +14,15 @@ public class TextBitmapInfo {
 
     public void fill(byte[] bArr) {
         Arrays.fill(this.mData, (byte) 0);
-        System.arraycopy((Object) bArr, 0, (Object) this.mData, 0, 4);
+        System.arraycopy(bArr, 0, this.mData, 0, 4);
         this.density = gc.d(this.mData);
-        System.arraycopy((Object) bArr, 4, (Object) this.mData, 0, 4);
+        System.arraycopy(bArr, 4, this.mData, 0, 4);
         this.width = gc.e(this.mData);
-        System.arraycopy((Object) bArr, 8, (Object) this.mData, 0, 4);
+        System.arraycopy(bArr, 8, this.mData, 0, 4);
         this.height = gc.e(this.mData);
-        System.arraycopy((Object) bArr, 12, (Object) this.mData, 0, 4);
+        System.arraycopy(bArr, 12, this.mData, 0, 4);
         this.pitch = gc.e(this.mData);
-        System.arraycopy((Object) bArr, 16, (Object) this.mData, 0, 1);
+        System.arraycopy(bArr, 16, this.mData, 0, 1);
         this.bold = gc.b(this.mData);
     }
 }

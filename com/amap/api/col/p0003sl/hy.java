@@ -5,17 +5,13 @@ import com.amap.api.col.p0003sl.hx;
 /* renamed from: com.amap.api.col.3sl.hy  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/hy.class */
 public final class hy {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final hx.c f5127a;
+    public final hx.c a;
     public final String b;
 
     /* renamed from: com.amap.api.col.3sl.hy$1  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/hy$1.class */
     static final /* synthetic */ class AnonymousClass1 {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f5128a;
+        static final /* synthetic */ int[] a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:21:0x0071 -> B:49:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:23:0x0075 -> B:45:0x001f). Please submit an issue!!! */
@@ -27,41 +23,41 @@ public final class hy {
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:35:0x008d -> B:51:0x0064). Please submit an issue!!! */
         static {
             int[] iArr = new int[hx.c.values().length];
-            f5128a = iArr;
+            a = iArr;
             try {
                 iArr[hx.c.ShowUnknowCode.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f5128a[hx.c.ShowNoShowCode.ordinal()] = 2;
+                a[hx.c.ShowNoShowCode.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f5128a[hx.c.InfoUnknowCode.ordinal()] = 3;
+                a[hx.c.InfoUnknowCode.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f5128a[hx.c.InfoNotContainCode.ordinal()] = 4;
+                a[hx.c.InfoNotContainCode.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f5128a[hx.c.AgreeUnknowCode.ordinal()] = 5;
+                a[hx.c.AgreeUnknowCode.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
             try {
-                f5128a[hx.c.AgreeNotAgreeCode.ordinal()] = 6;
+                a[hx.c.AgreeNotAgreeCode.ordinal()] = 6;
             } catch (NoSuchFieldError e6) {
             }
             try {
-                f5128a[hx.c.InvaildUserKeyCode.ordinal()] = 7;
+                a[hx.c.InvaildUserKeyCode.ordinal()] = 7;
             } catch (NoSuchFieldError e7) {
             }
             try {
-                f5128a[hx.c.IllegalArgument.ordinal()] = 8;
+                a[hx.c.IllegalArgument.ordinal()] = 8;
             } catch (NoSuchFieldError e8) {
             }
             try {
-                f5128a[hx.c.SuccessCode.ordinal()] = 9;
+                a[hx.c.SuccessCode.ordinal()] = 9;
             } catch (NoSuchFieldError e9) {
             }
         }
@@ -70,8 +66,8 @@ public final class hy {
     /* JADX INFO: Access modifiers changed from: package-private */
     public hy(hx.c cVar, ia iaVar) {
         String format;
-        this.f5127a = cVar;
-        switch (AnonymousClass1.f5128a[cVar.ordinal()]) {
+        this.a = cVar;
+        switch (AnonymousClass1.a[cVar.ordinal()]) {
             case 1:
                 format = String.format("***确保调用SDK任何接口前先调用更新隐私合规updatePrivacyShow、updatePrivacyAgree两个接口并且参数值都为true，若未正确设置有崩溃风险***\n使用%s SDK 功能前请设置隐私权政策是否弹窗告知用户", iaVar.a());
                 break;

@@ -6,7 +6,6 @@ import com.alibaba.fastjson.parser.JSONLexer;
 import com.alibaba.fastjson.parser.JSONReaderScanner;
 import com.alibaba.fastjson.util.IOUtils;
 import com.alibaba.fastjson.util.TypeUtils;
-import com.anythink.expressad.foundation.g.b.b;
 import java.io.Closeable;
 import java.io.Reader;
 import java.lang.reflect.Type;
@@ -152,14 +151,14 @@ public class JSONReader implements Closeable {
                     return i != 15;
             }
         }
-        throw new JSONException(b.f7836a);
+        throw new JSONException("context is null");
     }
 
     public int peek() {
         if (this.context != null) {
             return this.parser.lexer.token();
         }
-        throw new JSONException(b.f7836a);
+        throw new JSONException("context is null");
     }
 
     public Integer readInteger() {

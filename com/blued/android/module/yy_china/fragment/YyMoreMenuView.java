@@ -17,28 +17,24 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YyMoreMenuView.class */
 public final class YyMoreMenuView extends BaseFullScreenDialog implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    private DialogYyMoreMenuBinding f17495a;
+    private DialogYyMoreMenuBinding a;
     private View.OnClickListener b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private BaseYYStudioFragment f17496c;
+    private BaseYYStudioFragment c;
 
     private final void f() {
         ImageView imageView;
         YYMoreMenuView yYMoreMenuView;
         YYMoreMenuView yYMoreMenuView2;
-        DialogYyMoreMenuBinding dialogYyMoreMenuBinding = this.f17495a;
+        DialogYyMoreMenuBinding dialogYyMoreMenuBinding = this.a;
         if (dialogYyMoreMenuBinding != null && (yYMoreMenuView2 = dialogYyMoreMenuBinding.b) != null) {
-            yYMoreMenuView2.a(this.f17496c, getResources().getString(R.string.yy_leave_room));
+            yYMoreMenuView2.a(this.c, getResources().getString(R.string.yy_leave_room));
         }
-        DialogYyMoreMenuBinding dialogYyMoreMenuBinding2 = this.f17495a;
+        DialogYyMoreMenuBinding dialogYyMoreMenuBinding2 = this.a;
         if (dialogYyMoreMenuBinding2 != null && (yYMoreMenuView = dialogYyMoreMenuBinding2.b) != null) {
             yYMoreMenuView.setShutdownLisenter(this.b);
         }
-        DialogYyMoreMenuBinding dialogYyMoreMenuBinding3 = this.f17495a;
-        if (dialogYyMoreMenuBinding3 == null || (imageView = dialogYyMoreMenuBinding3.f16440a) == null) {
+        DialogYyMoreMenuBinding dialogYyMoreMenuBinding3 = this.a;
+        if (dialogYyMoreMenuBinding3 == null || (imageView = dialogYyMoreMenuBinding3.a) == null) {
             return;
         }
         imageView.setOnClickListener(this);
@@ -47,7 +43,7 @@ public final class YyMoreMenuView extends BaseFullScreenDialog implements View.O
     public final void a(BaseYYStudioFragment fragment, View.OnClickListener lisenter) {
         Intrinsics.e(fragment, "fragment");
         Intrinsics.e(lisenter, "lisenter");
-        this.f17496c = fragment;
+        this.c = fragment;
         this.b = lisenter;
     }
 
@@ -57,7 +53,6 @@ public final class YyMoreMenuView extends BaseFullScreenDialog implements View.O
         dismiss();
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
         Dialog onCreateDialog = super.onCreateDialog(bundle);
         Intrinsics.c(onCreateDialog, "super.onCreateDialog(savedInstanceState)");
@@ -69,12 +64,12 @@ public final class YyMoreMenuView extends BaseFullScreenDialog implements View.O
         return onCreateDialog;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
-        this.f17495a = DialogYyMoreMenuBinding.a(inflater, viewGroup, false);
+        this.a = DialogYyMoreMenuBinding.a(inflater, viewGroup, false);
         f();
-        DialogYyMoreMenuBinding dialogYyMoreMenuBinding = this.f17495a;
+        DialogYyMoreMenuBinding dialogYyMoreMenuBinding = this.a;
         return dialogYyMoreMenuBinding == null ? null : dialogYyMoreMenuBinding.getRoot();
     }
 }

@@ -18,11 +18,11 @@ public class e<E extends f> {
     private static final String i = "ScheduleQueue";
 
     /* renamed from: a  reason: collision with root package name */
-    final transient ReentrantLock f23267a;
+    final transient ReentrantLock f9659a;
     final transient Condition b;
 
     /* renamed from: c  reason: collision with root package name */
-    final TreeSet<E> f23268c;
+    final TreeSet<E> f9660c;
     final AtomicInteger d;
     int e;
     g f;
@@ -31,17 +31,17 @@ public class e<E extends f> {
 
     public e(Comparator<? super E> comparator, g gVar) {
         ReentrantLock reentrantLock = new ReentrantLock();
-        this.f23267a = reentrantLock;
+        this.f9659a = reentrantLock;
         this.b = reentrantLock.newCondition();
         this.d = new AtomicInteger(0);
         this.g = new AtomicLong(-1L);
-        this.f23268c = new TreeSet<>(comparator);
+        this.f9660c = new TreeSet<>(comparator);
         this.f = gVar;
     }
 
     private E b() {
         try {
-            return this.f23268c.first();
+            return this.f9660c.first();
         } catch (NoSuchElementException e) {
             return null;
         }
@@ -52,7 +52,7 @@ public class e<E extends f> {
         if (b == null) {
             return null;
         }
-        if (this.f23268c.remove(b)) {
+        if (this.f9660c.remove(b)) {
             return b;
         }
         com.igexin.c.a.c.a.a(i, "Queue Poll Error@");
@@ -60,7 +60,7 @@ public class e<E extends f> {
     }
 
     private E d() {
-        ReentrantLock reentrantLock = this.f23267a;
+        ReentrantLock reentrantLock = this.f9659a;
         reentrantLock.lock();
         try {
             E b = b();
@@ -89,28 +89,28 @@ public class e<E extends f> {
     }
 
     private boolean e() {
-        ReentrantLock reentrantLock = this.f23267a;
+        ReentrantLock reentrantLock = this.f9659a;
         reentrantLock.lock();
         try {
-            return this.f23268c.isEmpty();
+            return this.f9660c.isEmpty();
         } finally {
             reentrantLock.unlock();
         }
     }
 
     private void f() {
-        this.f23268c.clear();
+        this.f9660c.clear();
     }
 
     public final int a(E e, long j, TimeUnit timeUnit) {
-        ReentrantLock reentrantLock = this.f23267a;
+        ReentrantLock reentrantLock = this.f9659a;
         reentrantLock.lock();
         try {
-            if (!this.f23268c.contains(e)) {
+            if (!this.f9660c.contains(e)) {
                 reentrantLock.unlock();
                 return -1;
             }
-            this.f23268c.remove(e);
+            this.f9660c.remove(e);
             e.w = System.currentTimeMillis() + TimeUnit.MILLISECONDS.convert(j, timeUnit);
             e.getClass().getSimpleName();
             e.hashCode();
@@ -125,7 +125,7 @@ public class e<E extends f> {
     }
 
     public final E a() throws InterruptedException {
-        ReentrantLock reentrantLock = this.f23267a;
+        ReentrantLock reentrantLock = this.f9659a;
         reentrantLock.lockInterruptibly();
         while (true) {
             try {
@@ -175,7 +175,7 @@ public class e<E extends f> {
         if (e == null) {
             return false;
         }
-        ReentrantLock reentrantLock = this.f23267a;
+        ReentrantLock reentrantLock = this.f9659a;
         reentrantLock.lock();
         try {
             try {
@@ -183,14 +183,14 @@ public class e<E extends f> {
                 int i2 = this.e + 1;
                 this.e = i2;
                 e.x = i2;
-                if (!this.f23268c.add(e)) {
+                if (!this.f9660c.add(e)) {
                     e.x--;
                     reentrantLock.unlock();
                     return false;
                 }
                 e.N++;
                 e.N &= 1090519038;
-                if (b == null || this.f23268c.comparator().compare(e, b) < 0) {
+                if (b == null || this.f9660c.comparator().compare(e, b) < 0) {
                     this.b.signalAll();
                 }
                 reentrantLock.unlock();
@@ -211,12 +211,12 @@ public class e<E extends f> {
         if (cls == null) {
             return false;
         }
-        ReentrantLock reentrantLock = this.f23267a;
+        ReentrantLock reentrantLock = this.f9659a;
         reentrantLock.lock();
         try {
             ArrayList arrayList = new ArrayList();
             cls.getName();
-            Iterator<E> it = this.f23268c.iterator();
+            Iterator<E> it = this.f9660c.iterator();
             while (it.hasNext()) {
                 E next = it.next();
                 if (next.getClass() == cls) {
@@ -225,7 +225,7 @@ public class e<E extends f> {
             }
             cls.getName();
             arrayList.size();
-            this.f23268c.removeAll(arrayList);
+            this.f9660c.removeAll(arrayList);
             reentrantLock.unlock();
             return true;
         } catch (Throwable th) {
@@ -235,10 +235,10 @@ public class e<E extends f> {
     }
 
     public final boolean b(E e) {
-        ReentrantLock reentrantLock = this.f23267a;
+        ReentrantLock reentrantLock = this.f9659a;
         reentrantLock.lock();
         try {
-            if (this.f23268c.contains(e) && this.f23268c.remove(e)) {
+            if (this.f9660c.contains(e) && this.f9660c.remove(e)) {
                 return a((e<E>) e);
             }
             reentrantLock.unlock();
@@ -252,11 +252,11 @@ public class e<E extends f> {
         if (e == null) {
             return false;
         }
-        ReentrantLock reentrantLock = this.f23267a;
+        ReentrantLock reentrantLock = this.f9659a;
         reentrantLock.lock();
         try {
             e.getClass().getName();
-            if (!this.f23268c.contains(e) || !this.f23268c.remove(e)) {
+            if (!this.f9660c.contains(e) || !this.f9660c.remove(e)) {
                 reentrantLock.unlock();
                 return false;
             }

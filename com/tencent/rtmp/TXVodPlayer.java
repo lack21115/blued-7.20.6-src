@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.HandlerThread;
 import android.text.TextUtils;
 import android.view.Surface;
+import com.huawei.hms.framework.common.ContainerUtils;
 import com.tencent.liteav.base.util.LiteavLog;
 import com.tencent.liteav.base.util.TimeUtil;
 import com.tencent.liteav.txcplayer.a.b;
@@ -52,21 +53,21 @@ public class TXVodPlayer {
                 aVar.r = new c(aVar);
                 c cVar = aVar.r;
                 synchronized (cVar) {
-                    if (cVar.f36564a != null) {
+                    if (cVar.f22873a != null) {
                         LiteavLog.w("VodRenderer", "VodRenderer is initialized!");
                     } else {
                         LiteavLog.i("VodRenderer", "initialize VodRenderer");
                         HandlerThread handlerThread = new HandlerThread("VodRenderer_" + cVar.hashCode());
                         handlerThread.start();
-                        cVar.f36564a = new com.tencent.liteav.base.util.b(handlerThread.getLooper());
+                        cVar.f22873a = new com.tencent.liteav.base.util.b(handlerThread.getLooper());
                         cVar.a(j.a(cVar), ContentResolver.SYNC_EXTRAS_INITIALIZE);
                     }
                 }
             }
             TXCVodVideoView tXCVodVideoView = aVar.d;
             tXCVodVideoView.f = obj;
-            if (tXCVodVideoView.f36491c != null) {
-                tXCVodVideoView.f36491c.attachTRTC(obj);
+            if (tXCVodVideoView.f22800c != null) {
+                tXCVodVideoView.f22800c.attachTRTC(obj);
             }
         }
     }
@@ -82,15 +83,15 @@ public class TXVodPlayer {
                 @Override // java.lang.Runnable
                 public final void run() {
                     LiteavLog.i("VodRenderer", "uninitialize VodRenderer");
-                    if (cVar.f36565c != null) {
-                        cVar.f36565c.setDisplayView(null, false);
+                    if (cVar.f22874c != null) {
+                        cVar.f22874c.setDisplayView(null, false);
                         c.d(cVar);
                     }
                     c.e(cVar);
                     cVar.a();
                     synchronized (cVar) {
-                        if (cVar.f36564a != null) {
-                            cVar.f36564a.a();
+                        if (cVar.f22873a != null) {
+                            cVar.f22873a.a();
                             c.g(cVar);
                         }
                     }
@@ -102,8 +103,8 @@ public class TXVodPlayer {
         aVar.b();
         TXCVodVideoView tXCVodVideoView = aVar.d;
         tXCVodVideoView.f = null;
-        if (tXCVodVideoView.f36491c != null) {
-            tXCVodVideoView.f36491c.detachTRTC();
+        if (tXCVodVideoView.f22800c != null) {
+            tXCVodVideoView.f22800c.detachTRTC();
         }
     }
 
@@ -145,9 +146,9 @@ public class TXVodPlayer {
             while (it.hasNext()) {
                 com.tencent.liteav.txcplayer.d.a next = it.next();
                 TXBitrateItem tXBitrateItem = new TXBitrateItem();
-                tXBitrateItem.index = next.f36478a;
+                tXBitrateItem.index = next.f22787a;
                 tXBitrateItem.width = next.b;
-                tXBitrateItem.height = next.f36479c;
+                tXBitrateItem.height = next.f22788c;
                 tXBitrateItem.bitrate = next.d;
                 arrayList.add(tXBitrateItem);
             }
@@ -165,7 +166,7 @@ public class TXVodPlayer {
 
     public boolean isPlaying() {
         TXCVodVideoView tXCVodVideoView = this.mPlayer.d;
-        return tXCVodVideoView.c() && tXCVodVideoView.f36491c.isPlaying() && tXCVodVideoView.f36490a != 4;
+        return tXCVodVideoView.c() && tXCVodVideoView.f22800c.isPlaying() && tXCVodVideoView.f22799a != 4;
     }
 
     public void pause() {
@@ -176,11 +177,11 @@ public class TXVodPlayer {
         LiteavLog.i("TXCVodVideoView", "pause vod=" + tXCVodVideoView.hashCode());
         if (tXCVodVideoView.c()) {
             try {
-                tXCVodVideoView.f36491c.pause();
+                tXCVodVideoView.f22800c.pause();
             } catch (Exception e) {
                 LiteavLog.e("TXCVodVideoView", "pause exception: " + e.getMessage());
             }
-            tXCVodVideoView.f36490a = 4;
+            tXCVodVideoView.f22799a = 4;
         }
         if (aVar.e != null) {
             com.tencent.liteav.txcvodplayer.a.a aVar2 = aVar.e;
@@ -211,7 +212,7 @@ public class TXVodPlayer {
             com.tencent.liteav.txcvodplayer.a.a aVar2 = aVar.e;
             aVar2.d = System.currentTimeMillis();
             if (aVar2.g) {
-                aVar2.f36508c = aVar2.d;
+                aVar2.f22817c = aVar2.d;
                 aVar2.g = false;
             }
             LiteavLog.i("TXCVodPlayCollection", "resume " + aVar2.d);
@@ -278,7 +279,7 @@ public class TXVodPlayer {
     @Deprecated
     public void setPlayListener(ITXLivePlayListener iTXLivePlayListener) {
         LiteavLog.i(TAG, "setPlayListener=" + iTXLivePlayListener + " player=" + hashCode());
-        this.mPlayer.f36212a = iTXLivePlayListener;
+        this.mPlayer.f22521a = iTXLivePlayListener;
     }
 
     public void setPlayerView(TextureRenderView textureRenderView) {
@@ -322,7 +323,7 @@ public class TXVodPlayer {
         LiteavLog.i(TAG, "setStringOption key=" + str + " value=" + obj + "player=" + hashCode());
         TXCVodVideoView tXCVodVideoView = this.mPlayer.d;
         if (!TextUtils.isEmpty(str) && TextUtils.equals(str, "PARAM_SUPER_RESOLUTION_TYPE") && (obj instanceof Integer)) {
-            RenderProcessService.getInstance().updateRenderProcessMode(tXCVodVideoView.f36491c, ((Integer) obj).intValue());
+            RenderProcessService.getInstance().updateRenderProcessMode(tXCVodVideoView.f22800c, ((Integer) obj).intValue());
         }
     }
 
@@ -341,7 +342,7 @@ public class TXVodPlayer {
     public void setVodListener(ITXVodPlayListener iTXVodPlayListener) {
         LiteavLog.i(TAG, "setVodListener=" + iTXVodPlayListener + " player=" + hashCode());
         com.tencent.liteav.a aVar = this.mPlayer;
-        aVar.f36213c = new WeakReference<>(this);
+        aVar.f22522c = new WeakReference<>(this);
         aVar.b = iTXVodPlayListener;
     }
 
@@ -359,7 +360,7 @@ public class TXVodPlayer {
         aVar.l.put("TXC_DRM_ENABLE", Boolean.FALSE);
         aVar.a((String) null, (String) null);
         aVar.o = new d();
-        aVar.o.f36534c = tXPlayerAuthBuilder.isHttps();
+        aVar.o.f22843c = tXPlayerAuthBuilder.isHttps();
         aVar.o.a(new e() { // from class: com.tencent.liteav.a.1
             @Override // com.tencent.liteav.txcvodplayer.b.e
             public final void a(d dVar) {
@@ -432,7 +433,7 @@ public class TXVodPlayer {
                 @Override // com.tencent.liteav.txcvodplayer.b.c.a
                 public final void a(com.tencent.liteav.txcvodplayer.b.c cVar, TXPlayInfoParams tXPlayInfoParams2) {
                     String str;
-                    List<c.C0934c> list;
+                    List<c.C0764c> list;
                     String str2;
                     LiteavLog.i(TXVodPlayer.TAG, "onSuccess: protocol params = " + tXPlayInfoParams2.toString());
                     if (a.this.j) {
@@ -446,11 +447,11 @@ public class TXVodPlayer {
                             LiteavLog.i("PlayInfoProtocolV4Storage", "clean cacheDir is empty");
                         } else {
                             long currentTimeMillis = System.currentTimeMillis() / 3600000;
-                            if (a2.f36544c <= 0 || currentTimeMillis - a2.f36544c >= 24) {
-                                a2.f36544c = currentTimeMillis;
+                            if (a2.f22853c <= 0 || currentTimeMillis - a2.f22853c >= 24) {
+                                a2.f22853c = currentTimeMillis;
                                 com.tencent.liteav.txcplayer.a.a.a().execute(com.tencent.liteav.txcvodplayer.c.d.a(a2, a3, currentTimeMillis));
                             } else {
-                                LiteavLog.i("PlayInfoProtocolV4Storage", "clean mLastCacheCleanTime: " + a2.f36544c + " not more than 24h");
+                                LiteavLog.i("PlayInfoProtocolV4Storage", "clean mLastCacheCleanTime: " + a2.f22853c + " not more than 24h");
                             }
                         }
                     } else {
@@ -468,7 +469,7 @@ public class TXVodPlayer {
                             if (TextUtils.isEmpty(query)) {
                                 str = "";
                             } else {
-                                str = query + "&";
+                                str = query + ContainerUtils.FIELD_DELIMITER;
                             }
                             String d = cVar.d();
                             String str3 = d;
@@ -505,21 +506,21 @@ public class TXVodPlayer {
                     bundle.putLong("EVT_UTC_TIME", TimeUtil.b());
                     bundle.putString("EVT_MSG", "Requested file information successfully");
                     bundle.putString("EVT_PLAY_URL", a.this.E);
-                    bundle.putString("EVT_PLAY_COVER_URL", cVar.b != null ? cVar.b.f36518c : cVar.f36521c != null ? cVar.f36521c.d() : null);
-                    bundle.putString("EVT_PLAY_NAME", cVar.b != null ? cVar.b.f36517a : cVar.f36521c != null ? cVar.f36521c.g() : null);
-                    bundle.putString("EVT_PLAY_DESCRIPTION", cVar.b != null ? cVar.b.b : cVar.f36521c != null ? cVar.f36521c.h() : null);
+                    bundle.putString("EVT_PLAY_COVER_URL", cVar.b != null ? cVar.b.f22827c : cVar.f22830c != null ? cVar.f22830c.d() : null);
+                    bundle.putString("EVT_PLAY_NAME", cVar.b != null ? cVar.b.f22826a : cVar.f22830c != null ? cVar.f22830c.g() : null);
+                    bundle.putString("EVT_PLAY_DESCRIPTION", cVar.b != null ? cVar.b.b : cVar.f22830c != null ? cVar.f22830c.h() : null);
                     bundle.putInt("EVT_PLAY_DURATION", cVar.c());
-                    c.b i = cVar.b != null ? cVar.b.j : cVar.f36521c != null ? cVar.f36521c.i() : null;
+                    c.b i = cVar.b != null ? cVar.b.j : cVar.f22830c != null ? cVar.f22830c.i() : null;
                     if (i != null) {
                         bundle.putString(TXVodConstants.EVT_IMAGESPRIT_WEBVTTURL, i.b);
-                        bundle.putStringArrayList(TXVodConstants.EVT_IMAGESPRIT_IMAGEURL_LIST, i.f36529a);
+                        bundle.putStringArrayList(TXVodConstants.EVT_IMAGESPRIT_IMAGEURL_LIST, i.f22838a);
                     }
                     if (cVar.b != null) {
                         list = cVar.b.k;
                     } else {
                         list = null;
-                        if (cVar.f36521c != null) {
-                            list = cVar.f36521c.j();
+                        if (cVar.f22830c != null) {
+                            list = cVar.f22830c.j();
                         }
                     }
                     if (list != null && !list.isEmpty()) {
@@ -531,7 +532,7 @@ public class TXVodPlayer {
                             if (i3 >= list.size()) {
                                 break;
                             }
-                            arrayList.add(list.get(i3).f36530a);
+                            arrayList.add(list.get(i3).f22839a);
                             fArr[i3] = list.get(i3).b;
                             i2 = i3 + 1;
                         }

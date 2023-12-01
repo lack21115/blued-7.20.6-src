@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemLocationHeaderBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final RelativeLayout f29217a;
+    private final RelativeLayout f15527a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
-        return this.f29217a;
+        return this.f15527a;
     }
 }

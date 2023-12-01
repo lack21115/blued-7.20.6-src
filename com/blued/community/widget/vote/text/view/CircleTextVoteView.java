@@ -21,11 +21,11 @@ import java.util.List;
 public class CircleTextVoteView extends FrameLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    private View f20496a;
+    private View f6890a;
     private TextView b;
 
     /* renamed from: c  reason: collision with root package name */
-    private RecyclerView f20497c;
+    private RecyclerView f6891c;
     private TextView d;
     private ShapeTextView e;
     private CircleTextVoteViewAdapter f;
@@ -51,12 +51,12 @@ public class CircleTextVoteView extends FrameLayout {
 
     private void a(Context context) {
         View inflate = LayoutInflater.from(context).inflate(R.layout.view_circle_text_vote, this);
-        this.f20496a = inflate;
+        this.f6890a = inflate;
         this.b = (TextView) inflate.findViewById(R.id.tv_title);
-        this.f20497c = (RecyclerView) this.f20496a.findViewById(R.id.recycler_view);
-        this.d = (TextView) this.f20496a.findViewById(R.id.tv_count);
-        this.e = (ShapeTextView) this.f20496a.findViewById(R.id.stv_vote_ok);
-        this.f20497c.setLayoutManager(new LinearLayoutManager(context) { // from class: com.blued.community.widget.vote.text.view.CircleTextVoteView.1
+        this.f6891c = (RecyclerView) this.f6890a.findViewById(R.id.recycler_view);
+        this.d = (TextView) this.f6890a.findViewById(R.id.tv_count);
+        this.e = this.f6890a.findViewById(R.id.stv_vote_ok);
+        this.f6891c.setLayoutManager(new LinearLayoutManager(context) { // from class: com.blued.community.widget.vote.text.view.CircleTextVoteView.1
             @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
             public boolean canScrollVertically() {
                 return false;
@@ -64,7 +64,7 @@ public class CircleTextVoteView extends FrameLayout {
         });
         CircleTextVoteViewAdapter circleTextVoteViewAdapter = new CircleTextVoteViewAdapter();
         this.f = circleTextVoteViewAdapter;
-        this.f20497c.setAdapter(circleTextVoteViewAdapter);
+        this.f6891c.setAdapter(circleTextVoteViewAdapter);
     }
 
     public void a(final int i, int i2) {
@@ -106,7 +106,7 @@ public class CircleTextVoteView extends FrameLayout {
                         public void onClick(View view2) {
                             Tracker.onClick(view2);
                             if (CircleTextVoteView.this.g != null) {
-                                CircleTextVoteView.this.e.setOnClickListener(null);
+                                CircleTextVoteView.this.e.setOnClickListener((View.OnClickListener) null);
                                 CircleTextVoteView.this.e.setEnabled(false);
                                 CircleTextVoteView.this.e.setAlpha(0.3f);
                                 CircleTextVoteView.this.e.setText(R.string.circle_text_vote_voted);

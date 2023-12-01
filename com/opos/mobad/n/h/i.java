@@ -13,7 +13,7 @@ import com.heytap.msp.mobad.api.R;
 public class i extends RelativeLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    private a f26976a;
+    private a f13288a;
 
     /* loaded from: source-8303388-dex2jar.jar:com/opos/mobad/n/h/i$a.class */
     public interface a {
@@ -62,8 +62,8 @@ public class i extends RelativeLayout {
         com.opos.mobad.n.c.g gVar = new com.opos.mobad.n.c.g() { // from class: com.opos.mobad.n.h.i.1
             @Override // com.opos.mobad.n.c.g
             public void a(View view, int[] iArr) {
-                if (i.this.f26976a != null) {
-                    i.this.f26976a.a(view, iArr);
+                if (i.this.f13288a != null) {
+                    i.this.f13288a.a(view, iArr);
                 }
             }
         };
@@ -79,6 +79,6 @@ public class i extends RelativeLayout {
     }
 
     public void a(a aVar) {
-        this.f26976a = aVar;
+        this.f13288a = aVar;
     }
 }

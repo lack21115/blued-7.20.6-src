@@ -51,9 +51,7 @@ public final class LiveOnlineNobleUserFragment extends MvpFragment<LiveOnLineUse
             return new LiveOnlineUserAdapter(requireContext, fragmentActive, true);
         }
     });
-
-    /* renamed from: c  reason: collision with root package name */
-    private final Lazy f13075c = LazyKt.a(LazyThreadSafetyMode.NONE, new Function0<LayoutOnlineNobleUserHeadViewBinding>() { // from class: com.blued.android.module.live_china.fragment.LiveOnlineNobleUserFragment$nobleUserHeadViewBinding$2
+    private final Lazy c = LazyKt.a(LazyThreadSafetyMode.NONE, new Function0<LayoutOnlineNobleUserHeadViewBinding>() { // from class: com.blued.android.module.live_china.fragment.LiveOnlineNobleUserFragment$nobleUserHeadViewBinding$2
         /* JADX INFO: Access modifiers changed from: package-private */
         {
             super(0);
@@ -150,7 +148,7 @@ public final class LiveOnlineNobleUserFragment extends MvpFragment<LiveOnLineUse
     }
 
     private final LayoutOnlineNobleUserHeadViewBinding t() {
-        return (LayoutOnlineNobleUserHeadViewBinding) this.f13075c.getValue();
+        return (LayoutOnlineNobleUserHeadViewBinding) this.c.getValue();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -171,29 +169,26 @@ public final class LiveOnlineNobleUserFragment extends MvpFragment<LiveOnLineUse
                 LiveOnlineNobleUserFragment.a(view);
             }
         });
-        u.f12108c.l(false);
-        u.f12108c.i();
-        u.f12108c.a(new OnRefreshListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveOnlineNobleUserFragment$kK_77mKA4zJNYYbLxWrMu8kZaX4
-            @Override // com.scwang.smartrefresh.layout.listener.OnRefreshListener
+        u.c.b(false);
+        u.c.i();
+        u.c.a(new OnRefreshListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveOnlineNobleUserFragment$kK_77mKA4zJNYYbLxWrMu8kZaX4
             public final void onRefresh(RefreshLayout refreshLayout) {
                 LiveOnlineNobleUserFragment.a(LiveOnlineNobleUserFragment.this, refreshLayout);
             }
         });
         b().setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveOnlineNobleUserFragment$OwFzbTRiik9fpwNV50fvMuzrL_Q
-            @Override // com.chad.library.adapter.base.BaseQuickAdapter.RequestLoadMoreListener
             public final void onLoadMoreRequested() {
                 LiveOnlineNobleUserFragment.d(LiveOnlineNobleUserFragment.this);
             }
         }, u.b);
         b().setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveOnlineNobleUserFragment$U2-H1-sYq1nlSwjJRq_Y449O5TQ
-            @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemClickListener
             public final void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
                 LiveOnlineNobleUserFragment.a(LiveOnlineNobleUserFragment.this, baseQuickAdapter, view, i);
             }
         });
     }
 
-    @Override // com.blued.android.module.ui.mvp.fragment.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.ui.mvp.fragment.MvpFragment, com.blued.android.core.ui.BaseFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
         a();

@@ -1,6 +1,7 @@
 package com.amap.api.col.p0003sl;
 
 import android.content.Context;
+import com.alipay.sdk.util.i;
 import com.amap.api.col.p0003sl.ga;
 import com.amap.api.col.p0003sl.gc;
 import com.amap.api.services.core.AMapException;
@@ -9,6 +10,7 @@ import com.amap.api.services.core.PoiItem;
 import com.amap.api.services.core.ServiceSettings;
 import com.amap.api.services.core.SuggestionCity;
 import com.amap.api.services.poisearch.PoiResult;
+import com.android.internal.util.cm.SpamFilter;
 import java.util.ArrayList;
 import java.util.List;
 import org.json.JSONException;
@@ -37,10 +39,10 @@ public final class fv extends ft<fy, PoiResult> {
         if (((fy) this.b).b != null) {
             if (((fy) this.b).b.getShape().equals("Bound")) {
                 if (z) {
-                    double a2 = fe.a(((fy) this.b).b.getCenter().getLongitude());
-                    double a3 = fe.a(((fy) this.b).b.getCenter().getLatitude());
+                    double a = fe.a(((fy) this.b).b.getCenter().getLongitude());
+                    double a2 = fe.a(((fy) this.b).b.getCenter().getLatitude());
                     sb.append("&location=");
-                    sb.append(a2 + "," + a3);
+                    sb.append(a + "," + a2);
                 }
                 sb.append("&radius=");
                 sb.append(((fy) this.b).b.getRange());
@@ -49,72 +51,72 @@ public final class fv extends ft<fy, PoiResult> {
             } else if (((fy) this.b).b.getShape().equals("Rectangle")) {
                 LatLonPoint lowerLeft = ((fy) this.b).b.getLowerLeft();
                 LatLonPoint upperRight = ((fy) this.b).b.getUpperRight();
-                double a4 = fe.a(lowerLeft.getLatitude());
-                double a5 = fe.a(lowerLeft.getLongitude());
-                double a6 = fe.a(upperRight.getLatitude());
-                double a7 = fe.a(upperRight.getLongitude());
-                sb.append("&polygon=" + a5 + "," + a4 + ";" + a7 + "," + a6);
+                double a3 = fe.a(lowerLeft.getLatitude());
+                double a4 = fe.a(lowerLeft.getLongitude());
+                double a5 = fe.a(upperRight.getLatitude());
+                double a6 = fe.a(upperRight.getLongitude());
+                sb.append("&polygon=" + a4 + "," + a3 + i.b + a6 + "," + a5);
             } else if (((fy) this.b).b.getShape().equals("Polygon") && (polyGonList = ((fy) this.b).b.getPolyGonList()) != null && polyGonList.size() > 0) {
                 sb.append("&polygon=" + fe.a(polyGonList));
             }
         }
-        String city = ((fy) this.b).f4976a.getCity();
+        String city = ((fy) this.b).a.getCity();
         if (!c(city)) {
             String b = b(city);
             sb.append("&city=");
             sb.append(b);
         }
-        String b2 = b(((fy) this.b).f4976a.getQueryString());
+        String b2 = b(((fy) this.b).a.getQueryString());
         if (!c(b2)) {
             sb.append("&keywords=");
             sb.append(b2);
         }
         sb.append("&offset=");
-        sb.append(((fy) this.b).f4976a.getPageSize());
+        sb.append(((fy) this.b).a.getPageSize());
         sb.append("&page=");
-        sb.append(((fy) this.b).f4976a.getPageNum());
-        String building = ((fy) this.b).f4976a.getBuilding();
+        sb.append(((fy) this.b).a.getPageNum());
+        String building = ((fy) this.b).a.getBuilding();
         if (building != null && building.trim().length() > 0) {
             sb.append("&building=");
-            sb.append(((fy) this.b).f4976a.getBuilding());
+            sb.append(((fy) this.b).a.getBuilding());
         }
-        String b3 = b(((fy) this.b).f4976a.getCategory());
+        String b3 = b(((fy) this.b).a.getCategory());
         if (!c(b3)) {
             sb.append("&types=");
             sb.append(b3);
         }
-        if (c(((fy) this.b).f4976a.getExtensions())) {
+        if (c(((fy) this.b).a.getExtensions())) {
             sb.append("&extensions=base");
         } else {
             sb.append("&extensions=");
-            sb.append(((fy) this.b).f4976a.getExtensions());
+            sb.append(((fy) this.b).a.getExtensions());
         }
         sb.append("&key=");
         sb.append(ho.f(this.i));
-        if (((fy) this.b).f4976a.getCityLimit()) {
+        if (((fy) this.b).a.getCityLimit()) {
             sb.append("&citylimit=true");
         } else {
             sb.append("&citylimit=false");
         }
-        if (((fy) this.b).f4976a.isRequireSubPois()) {
+        if (((fy) this.b).a.isRequireSubPois()) {
             sb.append("&children=1");
         } else {
             sb.append("&children=0");
         }
         if (this.l) {
-            if (((fy) this.b).f4976a.isSpecial()) {
+            if (((fy) this.b).a.isSpecial()) {
                 sb.append("&special=1");
             } else {
                 sb.append("&special=0");
             }
         }
-        if (((fy) this.b).b == null && ((fy) this.b).f4976a.getLocation() != null) {
+        if (((fy) this.b).b == null && ((fy) this.b).a.getLocation() != null) {
             sb.append("&sortrule=");
-            sb.append(b(((fy) this.b).f4976a.isDistanceSort()));
-            double a8 = fe.a(((fy) this.b).f4976a.getLocation().getLongitude());
-            double a9 = fe.a(((fy) this.b).f4976a.getLocation().getLatitude());
+            sb.append(b(((fy) this.b).a.isDistanceSort()));
+            double a7 = fe.a(((fy) this.b).a.getLocation().getLongitude());
+            double a8 = fe.a(((fy) this.b).a.getLocation().getLatitude());
             sb.append("&location=");
-            sb.append(a8 + "," + a9);
+            sb.append(a7 + "," + a8);
         }
         return sb.toString();
     }
@@ -132,11 +134,11 @@ public final class fv extends ft<fy, PoiResult> {
         JSONObject optJSONObject;
         ArrayList<PoiItem> arrayList2 = new ArrayList<>();
         if (str == null) {
-            return PoiResult.createPagedResult(((fy) this.b).f4976a, ((fy) this.b).b, this.m, this.n, ((fy) this.b).f4976a.getPageSize(), this.k, arrayList2);
+            return PoiResult.createPagedResult(((fy) this.b).a, ((fy) this.b).b, this.m, this.n, ((fy) this.b).a.getPageSize(), this.k, arrayList2);
         }
         try {
             jSONObject = new JSONObject(str);
-            this.k = jSONObject.optInt("count");
+            this.k = jSONObject.optInt(SpamFilter.SpamContract.NotificationTable.COUNT);
             arrayList = fm.c(jSONObject);
         } catch (JSONException e) {
             fe.a(e, "PoiSearchKeywordHandler", "paseJSONJSONException");
@@ -148,17 +150,17 @@ public final class fv extends ft<fy, PoiResult> {
         if (jSONObject.has("suggestion") && (optJSONObject = jSONObject.optJSONObject("suggestion")) != null) {
             this.n = fm.a(optJSONObject);
             this.m = fm.b(optJSONObject);
-            return PoiResult.createPagedResult(((fy) this.b).f4976a, ((fy) this.b).b, this.m, this.n, ((fy) this.b).f4976a.getPageSize(), this.k, arrayList);
+            return PoiResult.createPagedResult(((fy) this.b).a, ((fy) this.b).b, this.m, this.n, ((fy) this.b).a.getPageSize(), this.k, arrayList);
         }
-        return PoiResult.createPagedResult(((fy) this.b).f4976a, ((fy) this.b).b, this.m, this.n, ((fy) this.b).f4976a.getPageSize(), this.k, arrayList);
+        return PoiResult.createPagedResult(((fy) this.b).a, ((fy) this.b).b, this.m, this.n, ((fy) this.b).a.getPageSize(), this.k, arrayList);
     }
 
     private static gc f() {
-        gb a2 = ga.a().a("regeo");
-        if (a2 == null) {
+        gb a = ga.a().a("regeo");
+        if (a == null) {
             return null;
         }
-        return (gc) a2;
+        return (gc) a;
     }
 
     @Override // com.amap.api.col.p0003sl.ex, com.amap.api.col.p0003sl.ew
@@ -175,13 +177,13 @@ public final class fv extends ft<fy, PoiResult> {
             if (f != null) {
                 d = f.a();
             }
-            bVar.f4984a = getURL() + a(false) + "language=" + ServiceSettings.getInstance().getLanguage();
+            bVar.a = getURL() + a(false) + "language=" + ServiceSettings.getInstance().getLanguage();
             if (((fy) this.b).b.getShape().equals("Bound")) {
                 bVar.b = new gc.a(fe.a(((fy) this.b).b.getCenter().getLatitude()), fe.a(((fy) this.b).b.getCenter().getLongitude()), d);
                 return bVar;
             }
         } else {
-            bVar.f4984a = getURL() + c() + "language=" + ServiceSettings.getInstance().getLanguage();
+            bVar.a = getURL() + c() + "language=" + ServiceSettings.getInstance().getLanguage();
         }
         return bVar;
     }

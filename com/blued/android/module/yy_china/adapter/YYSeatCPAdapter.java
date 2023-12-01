@@ -41,26 +41,22 @@ import java.util.Set;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/adapter/YYSeatCPAdapter.class */
 public abstract class YYSeatCPAdapter extends BaseConnectingAdapter<YYSeatMemberModel, BaseViewHolder> implements View.OnClickListener, SeatChangedObserver {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected BaseYYStudioFragment f16234a;
+    protected BaseYYStudioFragment a;
     protected YYStepModel b;
-
-    /* renamed from: c  reason: collision with root package name */
-    protected YYRoomModel f16235c;
+    protected YYRoomModel c;
     protected ArrayList<YYStepModel> d;
     protected HashMap<Integer, YYMemberCPView> e;
 
     public YYSeatCPAdapter(Context context, BaseYYStudioFragment baseYYStudioFragment) {
         super(null);
-        this.f16234a = baseYYStudioFragment;
+        this.a = baseYYStudioFragment;
         this.mContext = context;
         this.e = new HashMap<>();
         g();
     }
 
     private void a(int i) {
-        YYRoomHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<YYCPStepModel>>(this.f16234a.getFragmentActive()) { // from class: com.blued.android.module.yy_china.adapter.YYSeatCPAdapter.2
+        YYRoomHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<YYCPStepModel>>(this.a.getFragmentActive()) { // from class: com.blued.android.module.yy_china.adapter.YYSeatCPAdapter.2
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
@@ -71,12 +67,12 @@ public abstract class YYSeatCPAdapter extends BaseConnectingAdapter<YYSeatMember
                 YYCPStepModel yYCPStepModel = new YYCPStepModel();
                 yYCPStepModel.present_step = bluedEntityA.getSingleData().present_step;
                 yYCPStepModel.next_step = bluedEntityA.getSingleData().next_step;
-                if (YYSeatCPAdapter.this.f16235c != null) {
-                    YYSeatCPAdapter.this.f16235c.setCPPresentStep(yYCPStepModel.present_step);
-                    YYSeatCPAdapter.this.f16235c.setCPNextStep(yYCPStepModel.next_step);
+                if (YYSeatCPAdapter.this.c != null) {
+                    YYSeatCPAdapter.this.c.setCPPresentStep(yYCPStepModel.present_step);
+                    YYSeatCPAdapter.this.c.setCPNextStep(yYCPStepModel.next_step);
                 }
             }
-        }, this.f16235c.room_id, i, this.f16234a.getFragmentActive());
+        }, this.c.room_id, i, this.a.getFragmentActive());
     }
 
     private void a(int i, YYSeatMemberModel yYSeatMemberModel) {
@@ -95,12 +91,12 @@ public abstract class YYSeatCPAdapter extends BaseConnectingAdapter<YYSeatMember
                 YYSeatCPAdapter.this.a(str);
             }
         });
-        yYMemberCPView.a(yYSeatMemberModel, this.f16234a);
+        yYMemberCPView.a(yYSeatMemberModel, this.a);
         yYMemberCPView.a(yYSeatMemberModel);
     }
 
     private void a(String str, final YYSeatMemberModel yYSeatMemberModel) {
-        YYRoomHttpUtils.c(new BluedUIHttpResponse<BluedEntityA<CpRoomChooseMode>>(this.f16234a.getFragmentActive()) { // from class: com.blued.android.module.yy_china.adapter.YYSeatCPAdapter.3
+        YYRoomHttpUtils.c(new BluedUIHttpResponse<BluedEntityA<CpRoomChooseMode>>(this.a.getFragmentActive()) { // from class: com.blued.android.module.yy_china.adapter.YYSeatCPAdapter.3
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
@@ -136,7 +132,7 @@ public abstract class YYSeatCPAdapter extends BaseConnectingAdapter<YYSeatMember
                     i = i2 + 1;
                 }
             }
-        }, str, yYSeatMemberModel.getUid(), this.f16234a.getFragmentActive());
+        }, str, yYSeatMemberModel.getUid(), this.a.getFragmentActive());
     }
 
     private void b(int i) {
@@ -178,7 +174,7 @@ public abstract class YYSeatCPAdapter extends BaseConnectingAdapter<YYSeatMember
         if (stringArray == null || stringArray.length <= 0) {
             return null;
         }
-        this.f16235c = YYRoomInfoManager.e().b();
+        this.c = YYRoomInfoManager.e().b();
         int i = 0;
         while (true) {
             int i2 = i;
@@ -191,11 +187,11 @@ public abstract class YYSeatCPAdapter extends BaseConnectingAdapter<YYSeatMember
             yYStepModel.name = str;
             yYStepModel.isChecked = false;
             yYStepModel.isLastOne = i2 == stringArray.length - 1;
-            YYRoomModel yYRoomModel = this.f16235c;
+            YYRoomModel yYRoomModel = this.c;
             if (yYRoomModel != null) {
                 if (i2 < yYRoomModel.getCPPresentStep()) {
                     yYStepModel.isChecked = true;
-                } else if (i2 == this.f16235c.getCPPresentStep()) {
+                } else if (i2 == this.c.getCPPresentStep()) {
                     yYStepModel.isChecked = true;
                     this.b = yYStepModel;
                 }
@@ -217,28 +213,28 @@ public abstract class YYSeatCPAdapter extends BaseConnectingAdapter<YYSeatMember
 
     /* JADX INFO: Access modifiers changed from: protected */
     public void a() {
-        YYRoomModel yYRoomModel = this.f16235c;
-        if (yYRoomModel == null || yYRoomModel.mics == null || this.f16235c.mics.isEmpty()) {
+        YYRoomModel yYRoomModel = this.c;
+        if (yYRoomModel == null || yYRoomModel.mics == null || this.c.mics.isEmpty()) {
             return;
         }
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f16235c.mics.size()) {
+            if (i2 >= this.c.mics.size()) {
                 return;
             }
-            b(i2, this.f16235c.mics.get(i2));
+            b(i2, this.c.mics.get(i2));
             i = i2 + 1;
         }
     }
 
     @Override // com.blued.android.module.yy_china.observer.SeatChangedObserver
     public void a(int i, int i2) {
-        YYRoomModel yYRoomModel = this.f16235c;
-        if (yYRoomModel == null || yYRoomModel.mics == null || this.f16235c.mics.isEmpty() || i >= this.f16235c.mics.size()) {
+        YYRoomModel yYRoomModel = this.c;
+        if (yYRoomModel == null || yYRoomModel.mics == null || this.c.mics.isEmpty() || i >= this.c.mics.size()) {
             return;
         }
-        YYSeatMemberModel yYSeatMemberModel = this.f16235c.mics.get(i);
+        YYSeatMemberModel yYSeatMemberModel = this.c.mics.get(i);
         if (i2 == 1) {
             yYSeatMemberModel.position_status = -1;
         } else {
@@ -248,7 +244,7 @@ public abstract class YYSeatCPAdapter extends BaseConnectingAdapter<YYSeatMember
         if (yYMemberCPView == null) {
             return;
         }
-        yYMemberCPView.a(yYSeatMemberModel, this.f16234a);
+        yYMemberCPView.a(yYSeatMemberModel, this.a);
     }
 
     @Override // com.blued.android.module.yy_china.adapter.BaseConnectingAdapter
@@ -258,12 +254,12 @@ public abstract class YYSeatCPAdapter extends BaseConnectingAdapter<YYSeatMember
 
     /* JADX INFO: Access modifiers changed from: protected */
     public void a(int i, View view) {
-        YYRoomModel yYRoomModel = this.f16235c;
-        if (yYRoomModel == null || yYRoomModel.mics == null || this.f16235c.mics.isEmpty() || i > this.f16235c.mics.size() - 1 || i < 0) {
+        YYRoomModel yYRoomModel = this.c;
+        if (yYRoomModel == null || yYRoomModel.mics == null || this.c.mics.isEmpty() || i > this.c.mics.size() - 1 || i < 0) {
             return;
         }
-        YYSeatMemberModel yYSeatMemberModel = this.f16235c.mics.get(i);
-        this.f16234a.a(view, yYSeatMemberModel, yYSeatMemberModel.mic_position);
+        YYSeatMemberModel yYSeatMemberModel = this.c.mics.get(i);
+        this.a.a(view, yYSeatMemberModel, yYSeatMemberModel.mic_position);
     }
 
     @Override // com.blued.android.module.yy_china.adapter.BaseConnectingAdapter
@@ -272,23 +268,23 @@ public abstract class YYSeatCPAdapter extends BaseConnectingAdapter<YYSeatMember
         if (yYMemberCPView == null) {
             return;
         }
-        yYMemberCPView.a(this.f16234a.getFragmentActive(), str, str2, yYImModel);
+        yYMemberCPView.a(this.a.getFragmentActive(), str, str2, yYImModel);
     }
 
     @Override // com.blued.android.module.yy_china.adapter.BaseConnectingAdapter
     public void a(YYBaseUserHeadView.GetViewX_Y_W_H getViewX_Y_W_H, String str) {
         YYMemberCPView yYMemberCPView;
-        YYRoomModel yYRoomModel = this.f16235c;
-        if (yYRoomModel == null || yYRoomModel.mics == null || this.f16235c.mics.isEmpty()) {
+        YYRoomModel yYRoomModel = this.c;
+        if (yYRoomModel == null || yYRoomModel.mics == null || this.c.mics.isEmpty()) {
             return;
         }
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f16235c.mics.size()) {
+            if (i2 >= this.c.mics.size()) {
                 return;
             }
-            if (StringUtils.a(str, this.f16235c.mics.get(i2).getUid()) && (yYMemberCPView = this.e.get(Integer.valueOf(i2))) != null) {
+            if (StringUtils.a(str, this.c.mics.get(i2).getUid()) && (yYMemberCPView = this.e.get(Integer.valueOf(i2))) != null) {
                 yYMemberCPView.a(getViewX_Y_W_H);
             }
             i = i2 + 1;
@@ -296,17 +292,17 @@ public abstract class YYSeatCPAdapter extends BaseConnectingAdapter<YYSeatMember
     }
 
     public void a(String str) {
-        YYRoomModel yYRoomModel = this.f16235c;
-        if (yYRoomModel == null || yYRoomModel.mics == null || this.f16235c.mics.isEmpty()) {
+        YYRoomModel yYRoomModel = this.c;
+        if (yYRoomModel == null || yYRoomModel.mics == null || this.c.mics.isEmpty()) {
             return;
         }
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f16235c.mics.size()) {
+            if (i2 >= this.c.mics.size()) {
                 return;
             }
-            YYSeatMemberModel yYSeatMemberModel = this.f16235c.mics.get(i2);
+            YYSeatMemberModel yYSeatMemberModel = this.c.mics.get(i2);
             if (b(yYSeatMemberModel) && i2 != 0) {
                 yYSeatMemberModel.isSelected = false;
                 if (TextUtils.equals(str, yYSeatMemberModel.getUid())) {
@@ -323,17 +319,18 @@ public abstract class YYSeatCPAdapter extends BaseConnectingAdapter<YYSeatMember
         }
     }
 
+    /* JADX WARN: Type inference failed for: r0v0, types: [com.blued.android.module.yy_china.view.TakeOffMaskTimerView, android.view.View] */
     public void a(String str, long j) {
         int i;
-        TakeOffMaskTimerView takeOffMaskTimerView = new TakeOffMaskTimerView(this.f16234a.getContext());
+        ?? takeOffMaskTimerView = new TakeOffMaskTimerView(this.a.getContext());
         takeOffMaskTimerView.a(d(), str, j);
         int i2 = 0;
         while (true) {
             i = i2;
-            if (i >= this.f16235c.mics.size()) {
+            if (i >= this.c.mics.size()) {
                 i = -1;
                 break;
-            } else if (TextUtils.equals(this.f16235c.mics.get(i).getUid(), str)) {
+            } else if (TextUtils.equals(this.c.mics.get(i).getUid(), str)) {
                 break;
             } else {
                 i2 = i + 1;
@@ -347,23 +344,23 @@ public abstract class YYSeatCPAdapter extends BaseConnectingAdapter<YYSeatMember
         layoutParams.topToTop = yYMemberCPView.getId();
         layoutParams.rightToRight = yYMemberCPView.getId();
         layoutParams.leftToLeft = yYMemberCPView.getId();
-        layoutParams.topMargin = DensityUtils.a(this.f16234a.getContext(), 53.0f);
-        d().addView(takeOffMaskTimerView, layoutParams);
+        layoutParams.topMargin = DensityUtils.a(this.a.getContext(), 53.0f);
+        d().addView((View) takeOffMaskTimerView, layoutParams);
     }
 
     @Override // com.blued.android.module.yy_china.adapter.BaseConnectingAdapter
     public void a(String str, String str2) {
-        YYRoomModel yYRoomModel = this.f16235c;
-        if (yYRoomModel == null || yYRoomModel.mics == null || this.f16235c.mics.isEmpty()) {
+        YYRoomModel yYRoomModel = this.c;
+        if (yYRoomModel == null || yYRoomModel.mics == null || this.c.mics.isEmpty()) {
             return;
         }
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f16235c.mics.size()) {
+            if (i2 >= this.c.mics.size()) {
                 return;
             }
-            YYSeatMemberModel yYSeatMemberModel = this.f16235c.mics.get(i2);
+            YYSeatMemberModel yYSeatMemberModel = this.c.mics.get(i2);
             if (TextUtils.equals(yYSeatMemberModel.getUid(), str)) {
                 yYSeatMemberModel.chat_anchor = str2;
                 b(i2, yYSeatMemberModel);
@@ -375,34 +372,34 @@ public abstract class YYSeatCPAdapter extends BaseConnectingAdapter<YYSeatMember
 
     @Override // com.blued.android.module.yy_china.adapter.BaseConnectingAdapter
     public void a(List<BlindPublishModel> list) {
-        YYRoomModel yYRoomModel = this.f16235c;
-        if (yYRoomModel == null || yYRoomModel.mics == null || this.f16235c.mics.isEmpty()) {
+        YYRoomModel yYRoomModel = this.c;
+        if (yYRoomModel == null || yYRoomModel.mics == null || this.c.mics.isEmpty()) {
             return;
         }
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f16235c.mics.size()) {
+            if (i2 >= this.c.mics.size()) {
                 return;
             }
-            a(i2, this.f16235c.mics.get(i2));
+            a(i2, this.c.mics.get(i2));
             i = i2 + 1;
         }
     }
 
     @Override // com.blued.android.module.yy_china.adapter.BaseConnectingAdapter
     public void a(Set<String> set) {
-        YYRoomModel yYRoomModel = this.f16235c;
-        if (yYRoomModel == null || yYRoomModel.mics == null || this.f16235c.mics.isEmpty()) {
+        YYRoomModel yYRoomModel = this.c;
+        if (yYRoomModel == null || yYRoomModel.mics == null || this.c.mics.isEmpty()) {
             return;
         }
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f16235c.mics.size()) {
+            if (i2 >= this.c.mics.size()) {
                 return;
             }
-            YYSeatMemberModel yYSeatMemberModel = this.f16235c.mics.get(i2);
+            YYSeatMemberModel yYSeatMemberModel = this.c.mics.get(i2);
             if (yYSeatMemberModel.is_open_mic != 0) {
                 if (set == null || set.isEmpty() || !set.contains(yYSeatMemberModel.getUid())) {
                     yYSeatMemberModel.is_open_mic = 1;
@@ -439,17 +436,17 @@ public abstract class YYSeatCPAdapter extends BaseConnectingAdapter<YYSeatMember
 
     @Override // com.blued.android.module.yy_china.adapter.BaseConnectingAdapter
     public void c() {
-        YYRoomModel yYRoomModel = this.f16235c;
-        if (yYRoomModel == null || yYRoomModel.mics == null || this.f16235c.mics.isEmpty()) {
+        YYRoomModel yYRoomModel = this.c;
+        if (yYRoomModel == null || yYRoomModel.mics == null || this.c.mics.isEmpty()) {
             return;
         }
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f16235c.mics.size()) {
+            if (i2 >= this.c.mics.size()) {
                 return;
             }
-            YYSeatMemberModel yYSeatMemberModel = this.f16235c.mics.get(i2);
+            YYSeatMemberModel yYSeatMemberModel = this.c.mics.get(i2);
             yYSeatMemberModel.likeNum = "";
             yYSeatMemberModel.isSelected = false;
             a(i2, yYSeatMemberModel);
@@ -463,7 +460,6 @@ public abstract class YYSeatCPAdapter extends BaseConnectingAdapter<YYSeatMember
 
     public abstract int f();
 
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter, androidx.recyclerview.widget.RecyclerView.Adapter
     public void onAttachedToRecyclerView(RecyclerView recyclerView) {
         super.onAttachedToRecyclerView(recyclerView);
         Logger.e("observer", "YYConnectingAdapter onAttachedToRecyclerView ...");
@@ -475,41 +471,40 @@ public abstract class YYSeatCPAdapter extends BaseConnectingAdapter<YYSeatMember
         YYRoomModel yYRoomModel;
         Tracker.onClick(view);
         if (view.getId() == R.id.member_cp_0) {
-            a(0, this.e.get(0));
+            a(0, (View) this.e.get(0));
         } else if (view.getId() == R.id.member_cp_1) {
-            a(1, this.e.get(1));
+            a(1, (View) this.e.get(1));
         } else if (view.getId() == R.id.member_cp_2) {
-            a(2, this.e.get(2));
+            a(2, (View) this.e.get(2));
         } else if (view.getId() == R.id.member_cp_3) {
-            a(3, this.e.get(3));
+            a(3, (View) this.e.get(3));
         } else if (view.getId() == R.id.member_cp_4) {
-            a(4, this.e.get(4));
+            a(4, (View) this.e.get(4));
         } else if (view.getId() == R.id.member_cp_5) {
-            a(5, this.e.get(5));
+            a(5, (View) this.e.get(5));
         } else if (view.getId() == R.id.member_cp_6) {
-            a(6, this.e.get(6));
+            a(6, (View) this.e.get(6));
         } else if (view.getId() == R.id.member_cp_7) {
-            a(7, this.e.get(7));
+            a(7, (View) this.e.get(7));
         } else if (view.getId() == R.id.member_cp_8) {
-            a(8, this.e.get(8));
+            a(8, (View) this.e.get(8));
         } else if (view.getId() == R.id.tv_action) {
-            if (this.f16235c == null) {
+            if (this.c == null) {
                 return;
             }
-            EventTrackYY.a(ChatRoomProtos.Event.CHAT_ROOM_CP_MATCH_START, this.f16235c.room_id, this.f16235c.uid, this.f16235c.getCPNextStep());
-            a(this.f16235c.getCPNextStep());
-        } else if (view.getId() == R.id.btn_selected && (yYRoomModel = this.f16235c) != null && yYRoomModel.mics != null && !this.f16235c.mics.isEmpty()) {
-            for (int i = 0; i < this.f16235c.mics.size(); i++) {
-                YYSeatMemberModel yYSeatMemberModel = this.f16235c.mics.get(i);
+            EventTrackYY.a(ChatRoomProtos.Event.CHAT_ROOM_CP_MATCH_START, this.c.room_id, this.c.uid, this.c.getCPNextStep());
+            a(this.c.getCPNextStep());
+        } else if (view.getId() == R.id.btn_selected && (yYRoomModel = this.c) != null && yYRoomModel.mics != null && !this.c.mics.isEmpty()) {
+            for (int i = 0; i < this.c.mics.size(); i++) {
+                YYSeatMemberModel yYSeatMemberModel = this.c.mics.get(i);
                 if (b(yYSeatMemberModel) && i != 0 && yYSeatMemberModel.isSelected) {
-                    a(this.f16235c.room_id, yYSeatMemberModel);
+                    a(this.c.room_id, yYSeatMemberModel);
                     return;
                 }
             }
         }
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     public void onDetachedFromRecyclerView(RecyclerView recyclerView) {
         super.onDetachedFromRecyclerView(recyclerView);
         Logger.e("observer", "YYConnectingAdapter onDetachedFromRecyclerView ...");
@@ -521,7 +516,6 @@ public abstract class YYSeatCPAdapter extends BaseConnectingAdapter<YYSeatMember
         b.clearEmojiAndSendMessage();
     }
 
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     public void setNewData(List<YYSeatMemberModel> list) {
         ArrayList arrayList = new ArrayList();
         YYSeatMemberModel yYSeatMemberModel = new YYSeatMemberModel();

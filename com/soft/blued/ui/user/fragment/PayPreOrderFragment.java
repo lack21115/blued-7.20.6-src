@@ -1,6 +1,5 @@
 package com.soft.blued.ui.user.fragment;
 
-import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
@@ -26,10 +25,10 @@ import com.soft.blued.utils.BluedPreferences;
 public class PayPreOrderFragment extends BaseFragment implements VIPBuyResultObserver.IVIPBuyResultObserver {
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f33885c = PayPreOrderFragment.class.getSimpleName();
+    private static final String f20194c = PayPreOrderFragment.class.getSimpleName();
 
     /* renamed from: a  reason: collision with root package name */
-    public Context f33886a;
+    public Context f20195a;
     public View b;
     private PayUtils d;
     private ProgressBar e;
@@ -129,7 +128,7 @@ public class PayPreOrderFragment extends BaseFragment implements VIPBuyResultObs
                 PayPreOrderFragment.this.a(view);
             }
         });
-        NormalPayTypeChoosePop.a(this.f33886a, new NormalPayTypeChoosePop.iChoosePayResultListener() { // from class: com.soft.blued.ui.user.fragment.PayPreOrderFragment.1
+        NormalPayTypeChoosePop.a(this.f20195a, new NormalPayTypeChoosePop.iChoosePayResultListener() { // from class: com.soft.blued.ui.user.fragment.PayPreOrderFragment.1
             @Override // com.soft.blued.ui.msg.pop.NormalPayTypeChoosePop.iChoosePayResultListener
             public void a() {
             }
@@ -160,7 +159,7 @@ public class PayPreOrderFragment extends BaseFragment implements VIPBuyResultObs
         if (i != 1) {
             if (i == 2) {
                 if (this.f.wx_contract == 1 && this.l == 0 && z) {
-                    PayAutoChargeActivity.a(this.f33886a, this.f, this.h, this.i, this.k, this.n, this.o, "");
+                    PayAutoChargeActivity.a(this.f20195a, this.f, this.h, this.i, this.k, this.n, this.o, "");
                     return;
                 }
                 PayUtils payUtils = this.d;
@@ -172,7 +171,7 @@ public class PayPreOrderFragment extends BaseFragment implements VIPBuyResultObs
             }
         }
         if (this.f.alipay_contract == 1 && this.l == 0 && z) {
-            PayAutoChargeActivity.a(this.f33886a, this.f, this.h, this.i, this.k, this.n, this.o, "");
+            PayAutoChargeActivity.a(this.f20195a, this.f, this.h, this.i, this.k, this.n, this.o, "");
             return;
         }
         PayUtils payUtils2 = this.d;
@@ -181,15 +180,13 @@ public class PayPreOrderFragment extends BaseFragment implements VIPBuyResultObs
         payUtils2.a(i2, goodsOptionBasic2, goodsOptionBasic2.vip_grade);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener
     public boolean onBackPressed() {
         getActivity().finish();
         return super.onBackPressed();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.f33886a = getActivity();
+        this.f20195a = getActivity();
         getActivity().overridePendingTransition(R.anim.no_anim, R.anim.no_anim);
         if (this.b == null) {
             this.b = layoutInflater.inflate(R.layout.dialog_vip_pay_pre_order, viewGroup, false);
@@ -202,20 +199,19 @@ public class PayPreOrderFragment extends BaseFragment implements VIPBuyResultObs
                 this.k = getArguments().getString("KEY_DETAIL");
                 this.l = getArguments().getInt("KEY_COUPON_ID");
                 this.n = getArguments().getInt("KEY_PAY_PLAT_FORM");
-                this.m = (LiveChargeCouponModel) getArguments().getSerializable("coupon_model");
+                this.m = getArguments().getSerializable("coupon_model");
                 this.o = getArguments().getInt("KEY_PAY_ENTRUST", 0);
             }
             PayUtils payUtils = new PayUtils(getActivity(), this.g, getFragmentActive());
             this.d = payUtils;
             payUtils.a(this.h, this.i, this.j, this.k, this.l, this.m);
             a();
-            StatusBarHelper.a((Activity) getActivity(), false);
+            StatusBarHelper.a(getActivity(), false);
             VIPBuyResultObserver.a().a(this, getLifecycle());
         }
         return this.b;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
     }

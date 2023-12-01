@@ -12,7 +12,7 @@ import java.util.List;
 public class e {
 
     /* renamed from: a  reason: collision with root package name */
-    private dd f9426a;
+    private dd f6586a;
     private String b;
 
     /* loaded from: source-8756600-dex2jar.jar:com/baidu/mobads/sdk/internal/e$a.class */
@@ -42,21 +42,21 @@ public class e {
     }
 
     public e(Context context, a aVar, dd ddVar) {
-        this.f9426a = ddVar;
+        this.f6586a = ddVar;
         ddVar.a(aVar);
     }
 
     public e(Context context, String str, BaiduNativeManager.EntryAdListener entryAdListener, boolean z, int i) {
         dd ddVar = new dd(context, str, IAdInterListener.AdProdType.PRODUCT_SONES, z, i);
-        this.f9426a = ddVar;
+        this.f6586a = ddVar;
         ddVar.a(entryAdListener);
     }
 
     public e(Context context, String str, BaiduNativeManager.ExpressAdListener expressAdListener, boolean z, int i) {
         dd ddVar = new dd(context, str, IAdInterListener.AdProdType.PRODUCT_FEEDS, z, i);
-        this.f9426a = ddVar;
+        this.f6586a = ddVar;
         ddVar.a(expressAdListener);
-        this.f9426a.a(1);
+        this.f6586a.a(1);
     }
 
     public e(Context context, String str, a aVar, boolean z, int i) {
@@ -66,61 +66,61 @@ public class e {
     public e(Context context, String str, a aVar, boolean z, int i, String str2) {
         if (!TextUtils.isEmpty(str2)) {
             if (str2.equals(IAdInterListener.AdProdType.PRODUCT_INSITE)) {
-                this.f9426a = new dd(context, str, IAdInterListener.AdProdType.PRODUCT_INSITE, z, i);
+                this.f6586a = new dd(context, str, IAdInterListener.AdProdType.PRODUCT_INSITE, z, i);
             } else if (str2.equals(IAdInterListener.AdProdType.PRODUCT_SUG)) {
-                this.f9426a = new dd(context, str, IAdInterListener.AdProdType.PRODUCT_SUG, z, i);
+                this.f6586a = new dd(context, str, IAdInterListener.AdProdType.PRODUCT_SUG, z, i);
             } else if (str2.equals(IAdInterListener.AdProdType.PRODUCT_PREROLL)) {
-                this.f9426a = new dd(context, str, "video", z, i);
+                this.f6586a = new dd(context, str, "video", z, i);
             } else {
-                this.f9426a = new dd(context, str, IAdInterListener.AdProdType.PRODUCT_FEEDS, z, i);
+                this.f6586a = new dd(context, str, IAdInterListener.AdProdType.PRODUCT_FEEDS, z, i);
             }
         }
-        this.f9426a.a(aVar);
+        this.f6586a.a(aVar);
     }
 
     public String a(RequestParameters requestParameters) {
-        if (this.f9426a != null) {
+        if (this.f6586a != null) {
             RequestParameters requestParameters2 = requestParameters;
             if (requestParameters == null) {
                 requestParameters2 = new RequestParameters.Builder().build();
             }
-            this.f9426a.g(this.b);
-            this.f9426a.a(requestParameters2);
-            return this.f9426a.m();
+            this.f6586a.g(this.b);
+            this.f6586a.a(requestParameters2);
+            return this.f6586a.m();
         }
         return null;
     }
 
     public void a() {
-        dd ddVar = this.f9426a;
+        dd ddVar = this.f6586a;
         if (ddVar != null) {
             ddVar.e();
         }
     }
 
     public void a(int i) {
-        dd ddVar = this.f9426a;
+        dd ddVar = this.f6586a;
         if (ddVar != null) {
             ddVar.p = i;
         }
     }
 
     public void a(b bVar) {
-        dd ddVar = this.f9426a;
+        dd ddVar = this.f6586a;
         if (ddVar != null) {
             ddVar.a(bVar);
         }
     }
 
     public void a(String str) {
-        dd ddVar = this.f9426a;
+        dd ddVar = this.f6586a;
         if (ddVar != null) {
             ddVar.b(str);
         }
     }
 
     public void a(boolean z) {
-        dd ddVar = this.f9426a;
+        dd ddVar = this.f6586a;
         if (ddVar != null) {
             ddVar.c(z);
         }
@@ -135,12 +135,12 @@ public class e {
         if (requestParameters == null) {
             requestParameters2 = new RequestParameters.Builder().build();
         }
-        dd ddVar = this.f9426a;
+        dd ddVar = this.f6586a;
         if (ddVar != null) {
             ddVar.g(this.b);
         }
-        this.f9426a.a(requestParameters2);
-        this.f9426a.a();
+        this.f6586a.a(requestParameters2);
+        this.f6586a.a();
     }
 
     public void b(String str) {

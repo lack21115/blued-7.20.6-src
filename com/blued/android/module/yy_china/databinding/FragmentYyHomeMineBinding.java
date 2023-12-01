@@ -9,18 +9,13 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import com.blued.android.module.yy_china.R;
-import com.cdo.oaps.ad.OapsKey;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/FragmentYyHomeMineBinding.class */
 public final class FragmentYyHomeMineBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final FrameLayout f16504a;
+    public final FrameLayout a;
     public final FrameLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final View f16505c;
+    public final View c;
     public final ImageView d;
     public final ImageView e;
     public final LinearLayout f;
@@ -39,9 +34,9 @@ public final class FragmentYyHomeMineBinding implements ViewBinding {
 
     private FragmentYyHomeMineBinding(FrameLayout frameLayout, FrameLayout frameLayout2, FrameLayout frameLayout3, View view, ImageView imageView, ImageView imageView2, LinearLayout linearLayout, LinearLayout linearLayout2, LinearLayout linearLayout3, SmartRefreshLayout smartRefreshLayout, RelativeLayout relativeLayout, RelativeLayout relativeLayout2, RecyclerView recyclerView, RecyclerView recyclerView2, TextView textView, TextView textView2, TextView textView3, TextView textView4) {
         this.r = frameLayout;
-        this.f16504a = frameLayout2;
+        this.a = frameLayout2;
         this.b = frameLayout3;
-        this.f16505c = view;
+        this.c = view;
         this.d = imageView;
         this.e = imageView2;
         this.f = linearLayout;
@@ -76,16 +71,16 @@ public final class FragmentYyHomeMineBinding implements ViewBinding {
                                 if (linearLayout2 != null) {
                                     LinearLayout linearLayout3 = (LinearLayout) view.findViewById(R.id.ll_history_flexible);
                                     if (linearLayout3 != null) {
-                                        SmartRefreshLayout smartRefreshLayout = (SmartRefreshLayout) view.findViewById(R.id.ref);
-                                        if (smartRefreshLayout != null) {
+                                        SmartRefreshLayout findViewById2 = view.findViewById(R.id.ref);
+                                        if (findViewById2 != null) {
                                             RelativeLayout relativeLayout = (RelativeLayout) view.findViewById(R.id.rl_follow);
                                             if (relativeLayout != null) {
                                                 RelativeLayout relativeLayout2 = (RelativeLayout) view.findViewById(R.id.rl_history);
                                                 if (relativeLayout2 != null) {
-                                                    RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rv_follow_list);
-                                                    if (recyclerView != null) {
-                                                        RecyclerView recyclerView2 = (RecyclerView) view.findViewById(R.id.rv_history_list);
-                                                        if (recyclerView2 != null) {
+                                                    RecyclerView findViewById3 = view.findViewById(R.id.rv_follow_list);
+                                                    if (findViewById3 != null) {
+                                                        RecyclerView findViewById4 = view.findViewById(R.id.rv_history_list);
+                                                        if (findViewById4 != null) {
                                                             TextView textView = (TextView) view.findViewById(R.id.tv_follow_empty);
                                                             if (textView != null) {
                                                                 TextView textView2 = (TextView) view.findViewById(R.id.tv_follow_flexible);
@@ -94,7 +89,7 @@ public final class FragmentYyHomeMineBinding implements ViewBinding {
                                                                     if (textView3 != null) {
                                                                         TextView textView4 = (TextView) view.findViewById(R.id.tv_history_flexible);
                                                                         if (textView4 != null) {
-                                                                            return new FragmentYyHomeMineBinding((FrameLayout) view, frameLayout, frameLayout2, findViewById, imageView, imageView2, linearLayout, linearLayout2, linearLayout3, smartRefreshLayout, relativeLayout, relativeLayout2, recyclerView, recyclerView2, textView, textView2, textView3, textView4);
+                                                                            return new FragmentYyHomeMineBinding((FrameLayout) view, frameLayout, frameLayout2, findViewById, imageView, imageView2, linearLayout, linearLayout2, linearLayout3, findViewById2, relativeLayout, relativeLayout2, findViewById3, findViewById4, textView, textView2, textView3, textView4);
                                                                         }
                                                                         str = "tvHistoryFlexible";
                                                                     } else {
@@ -119,7 +114,7 @@ public final class FragmentYyHomeMineBinding implements ViewBinding {
                                                 str = "rlFollow";
                                             }
                                         } else {
-                                            str = OapsKey.KEY_REF;
+                                            str = "ref";
                                         }
                                     } else {
                                         str = "llHistoryFlexible";
@@ -148,7 +143,6 @@ public final class FragmentYyHomeMineBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.r;

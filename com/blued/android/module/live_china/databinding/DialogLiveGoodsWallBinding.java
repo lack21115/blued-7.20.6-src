@@ -11,21 +11,17 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/DialogLiveGoodsWallBinding.class */
 public final class DialogLiveGoodsWallBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final TabPageIndicatorWithDot f11771a;
+    public final TabPageIndicatorWithDot a;
     public final View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final View f11772c;
+    public final View c;
     public final ViewPager d;
     private final FrameLayout e;
 
     private DialogLiveGoodsWallBinding(FrameLayout frameLayout, TabPageIndicatorWithDot tabPageIndicatorWithDot, View view, View view2, ViewPager viewPager) {
         this.e = frameLayout;
-        this.f11771a = tabPageIndicatorWithDot;
+        this.a = tabPageIndicatorWithDot;
         this.b = view;
-        this.f11772c = view2;
+        this.c = view2;
         this.d = viewPager;
     }
 
@@ -49,9 +45,9 @@ public final class DialogLiveGoodsWallBinding implements ViewBinding {
             if (findViewById != null) {
                 View findViewById2 = view.findViewById(R.id.view_bg_top_wall);
                 if (findViewById2 != null) {
-                    ViewPager viewPager = (ViewPager) view.findViewById(R.id.view_pager);
-                    if (viewPager != null) {
-                        return new DialogLiveGoodsWallBinding((FrameLayout) view, tabPageIndicatorWithDot, findViewById, findViewById2, viewPager);
+                    ViewPager findViewById3 = view.findViewById(R.id.view_pager);
+                    if (findViewById3 != null) {
+                        return new DialogLiveGoodsWallBinding((FrameLayout) view, tabPageIndicatorWithDot, findViewById, findViewById2, findViewById3);
                     }
                     str = "viewPager";
                 } else {
@@ -66,7 +62,6 @@ public final class DialogLiveGoodsWallBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.e;

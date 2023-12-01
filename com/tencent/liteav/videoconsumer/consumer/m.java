@@ -8,11 +8,11 @@ import com.tencent.liteav.videoconsumer.renderer.VideoRenderInterface;
 final /* synthetic */ class m implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final j f36716a;
+    private final j f23025a;
     private final GLConstants.GLScaleType b;
 
     private m(j jVar, GLConstants.GLScaleType gLScaleType) {
-        this.f36716a = jVar;
+        this.f23025a = jVar;
         this.b = gLScaleType;
     }
 
@@ -22,9 +22,9 @@ final /* synthetic */ class m implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        j jVar = this.f36716a;
+        j jVar = this.f23025a;
         GLConstants.GLScaleType gLScaleType = this.b;
-        LiteavLog.i(jVar.f36705a, "setScaleType: ".concat(String.valueOf(gLScaleType)));
+        LiteavLog.i(jVar.f23014a, "setScaleType: ".concat(String.valueOf(gLScaleType)));
         jVar.j = gLScaleType;
         for (VideoRenderInterface videoRenderInterface : jVar.a()) {
             if (videoRenderInterface != null) {

@@ -1,7 +1,9 @@
 package com.zk_oaction.adengine.lk_view;
 
 import android.text.TextUtils;
+import androidx.constraintlayout.motion.widget.Key;
 import com.baidu.mobads.sdk.api.IAdInterListener;
+import com.huawei.hms.ads.fw;
 import com.zk_oaction.adengine.lk_expression.a;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -16,11 +18,11 @@ public class f implements a.w, com.zk_oaction.adengine.lk_sdk.interfaces.b, com.
     private f D;
 
     /* renamed from: a  reason: collision with root package name */
-    protected com.zk_oaction.adengine.lk_sdk.c f42054a;
+    protected com.zk_oaction.adengine.lk_sdk.c f28363a;
     protected String b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected com.zk_oaction.adengine.lk_expression.a f42055c;
+    protected com.zk_oaction.adengine.lk_expression.a f28364c;
     protected com.zk_oaction.adengine.lk_expression.a d;
     protected com.zk_oaction.adengine.lk_expression.a e;
     protected com.zk_oaction.adengine.lk_expression.a f;
@@ -113,8 +115,8 @@ public class f implements a.w, com.zk_oaction.adengine.lk_sdk.interfaces.b, com.
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.zk_oaction.adengine.lk_view.f$f  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/zk_oaction/adengine/lk_view/f$f.class */
-    public class C1117f implements com.zk_oaction.adengine.lk_sdk.interfaces.c<XmlPullParser, Void> {
-        C1117f() {
+    public class C0947f implements com.zk_oaction.adengine.lk_sdk.interfaces.c<XmlPullParser, Void> {
+        C0947f() {
         }
 
         @Override // com.zk_oaction.adengine.lk_sdk.interfaces.c
@@ -177,7 +179,7 @@ public class f implements a.w, com.zk_oaction.adengine.lk_sdk.interfaces.b, com.
     }
 
     public f(com.zk_oaction.adengine.lk_sdk.c cVar) {
-        this.f42054a = cVar;
+        this.f28363a = cVar;
         a();
     }
 
@@ -185,13 +187,13 @@ public class f implements a.w, com.zk_oaction.adengine.lk_sdk.interfaces.b, com.
         gVar.setTag(this.l);
         gVar.a(this);
         if (gVar.e() != null) {
-            this.f42054a.p.put(gVar.e(), gVar);
+            this.f28363a.p.put(gVar.e(), gVar);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void a(XmlPullParser xmlPullParser) {
-        com.zk_oaction.adengine.lk_view.g gVar = new com.zk_oaction.adengine.lk_view.g(this.f42054a);
+        com.zk_oaction.adengine.lk_view.g gVar = new com.zk_oaction.adengine.lk_view.g(this.f28363a);
         if (gVar.b(xmlPullParser, "Image")) {
             if (this.v.a() == 1.0f && TextUtils.isEmpty(gVar.o())) {
                 b(gVar);
@@ -207,47 +209,47 @@ public class f implements a.w, com.zk_oaction.adengine.lk_sdk.interfaces.b, com.
 
     /* JADX INFO: Access modifiers changed from: private */
     public void b(XmlPullParser xmlPullParser) {
-        com.zk_oaction.adengine.lk_view.e eVar = new com.zk_oaction.adengine.lk_view.e(this.f42054a);
+        com.zk_oaction.adengine.lk_view.e eVar = new com.zk_oaction.adengine.lk_view.e(this.f28363a);
         if (eVar.b(xmlPullParser, "Frame")) {
             eVar.setTag(this.l);
             eVar.a(this);
             if (eVar.e() != null) {
-                this.f42054a.p.put(eVar.e(), eVar);
+                this.f28363a.p.put(eVar.e(), eVar);
             }
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void c(XmlPullParser xmlPullParser) {
-        m mVar = new m(this.f42054a);
+        m mVar = new m(this.f28363a);
         if (mVar.b(xmlPullParser, "Text")) {
             mVar.setTag(this.l);
             mVar.a(this);
             if (mVar.e() != null) {
-                this.f42054a.p.put(mVar.e(), mVar);
+                this.f28363a.p.put(mVar.e(), mVar);
             }
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void d(XmlPullParser xmlPullParser) {
-        com.zk_oaction.adengine.lk_view.i iVar = new com.zk_oaction.adengine.lk_view.i(this.f42054a);
+        com.zk_oaction.adengine.lk_view.i iVar = new com.zk_oaction.adengine.lk_view.i(this.f28363a);
         if (iVar.b(xmlPullParser, "ImageNumber")) {
             iVar.setTag(this.l);
             iVar.a(this);
             if (iVar.e() != null) {
-                this.f42054a.p.put(iVar.e(), iVar);
+                this.f28363a.p.put(iVar.e(), iVar);
             }
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void e(XmlPullParser xmlPullParser) {
-        com.zk_oaction.adengine.lk_unlock.b bVar = new com.zk_oaction.adengine.lk_unlock.b(this.f42054a);
+        com.zk_oaction.adengine.lk_unlock.b bVar = new com.zk_oaction.adengine.lk_unlock.b(this.f28363a);
         if (bVar.a(xmlPullParser, "Slider")) {
-            this.f42054a.q.add(bVar);
+            this.f28363a.q.add(bVar);
             if (bVar.e() != null) {
-                this.f42054a.p.put(bVar.e(), bVar);
+                this.f28363a.p.put(bVar.e(), bVar);
             }
             this.q.add(bVar);
         }
@@ -255,24 +257,24 @@ public class f implements a.w, com.zk_oaction.adengine.lk_sdk.interfaces.b, com.
 
     /* JADX INFO: Access modifiers changed from: private */
     public void f(XmlPullParser xmlPullParser) {
-        com.zk_oaction.adengine.lk_command.a aVar = new com.zk_oaction.adengine.lk_command.a(this.f42054a);
+        com.zk_oaction.adengine.lk_command.a aVar = new com.zk_oaction.adengine.lk_command.a(this.f28363a);
         aVar.a(this);
         if (aVar.a(xmlPullParser, "Button")) {
-            this.f42054a.q.add(aVar);
+            this.f28363a.q.add(aVar);
             if (aVar.e() != null) {
-                this.f42054a.p.put(aVar.e(), aVar);
+                this.f28363a.p.put(aVar.e(), aVar);
             }
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void g(XmlPullParser xmlPullParser) {
-        f fVar = new f(this.f42054a);
+        f fVar = new f(this.f28363a);
         fVar.a(this.l);
         if (fVar.a(xmlPullParser, "Group")) {
             fVar.a(this);
             if (fVar.e() != null) {
-                this.f42054a.p.put(fVar.e(), fVar);
+                this.f28363a.p.put(fVar.e(), fVar);
             }
         }
     }
@@ -281,7 +283,7 @@ public class f implements a.w, com.zk_oaction.adengine.lk_sdk.interfaces.b, com.
     public void h(XmlPullParser xmlPullParser) {
         com.zk_oaction.adengine.lk_animation.d dVar = new com.zk_oaction.adengine.lk_animation.d(this);
         if (dVar.a(xmlPullParser)) {
-            this.f42054a.a(dVar);
+            this.f28363a.a(dVar);
             this.o.add(dVar);
         }
     }
@@ -290,7 +292,7 @@ public class f implements a.w, com.zk_oaction.adengine.lk_sdk.interfaces.b, com.
     public void i(XmlPullParser xmlPullParser) {
         com.zk_oaction.adengine.lk_animation.a aVar = new com.zk_oaction.adengine.lk_animation.a(this);
         if (aVar.a(xmlPullParser)) {
-            this.f42054a.a(aVar);
+            this.f28363a.a(aVar);
             this.o.add(aVar);
         }
     }
@@ -299,7 +301,7 @@ public class f implements a.w, com.zk_oaction.adengine.lk_sdk.interfaces.b, com.
     public void j(XmlPullParser xmlPullParser) {
         com.zk_oaction.adengine.lk_animation.e eVar = new com.zk_oaction.adengine.lk_animation.e(this);
         if (eVar.a(xmlPullParser)) {
-            this.f42054a.a(eVar);
+            this.f28363a.a(eVar);
             this.o.add(eVar);
         }
     }
@@ -311,7 +313,7 @@ public class f implements a.w, com.zk_oaction.adengine.lk_sdk.interfaces.b, com.
         this.n.put("Frame", new c());
         this.n.put("Text", new d());
         this.n.put("ImageNumber", new e());
-        this.n.put("Slider", new C1117f());
+        this.n.put("Slider", new C0947f());
         this.n.put("Button", new g());
         this.n.put("Group", new h());
         this.n.put("PositionAnimation", new i());
@@ -412,7 +414,7 @@ public class f implements a.w, com.zk_oaction.adengine.lk_sdk.interfaces.b, com.
                 f();
                 Iterator<com.zk_oaction.adengine.lk_unlock.b> it3 = this.q.iterator();
                 while (it3.hasNext()) {
-                    it3.next().a("true");
+                    it3.next().a(fw.Code);
                 }
             } else {
                 g();
@@ -422,7 +424,7 @@ public class f implements a.w, com.zk_oaction.adengine.lk_sdk.interfaces.b, com.
                 }
             }
             if (this.b != null) {
-                this.f42054a.a(this.b + ".visibility", "" + q());
+                this.f28363a.a(this.b + ".visibility", "" + q());
             }
         }
     }
@@ -430,33 +432,33 @@ public class f implements a.w, com.zk_oaction.adengine.lk_sdk.interfaces.b, com.
     public boolean a(XmlPullParser xmlPullParser, String str) {
         try {
             this.b = xmlPullParser.getAttributeValue(null, "name");
-            this.f42055c = new com.zk_oaction.adengine.lk_expression.a(this.f42054a, "x", xmlPullParser.getAttributeValue(null, "x"), 0.0f, null, true);
-            this.d = new com.zk_oaction.adengine.lk_expression.a(this.f42054a, "y", xmlPullParser.getAttributeValue(null, "y"), 0.0f, null, true);
+            this.f28364c = new com.zk_oaction.adengine.lk_expression.a(this.f28363a, "x", xmlPullParser.getAttributeValue(null, "x"), 0.0f, null, true);
+            this.d = new com.zk_oaction.adengine.lk_expression.a(this.f28363a, "y", xmlPullParser.getAttributeValue(null, "y"), 0.0f, null, true);
             String attributeValue = xmlPullParser.getAttributeValue(null, IAdInterListener.AdReqParam.WIDTH);
             String str2 = attributeValue;
             if (attributeValue == null) {
                 str2 = xmlPullParser.getAttributeValue(null, "width");
             }
-            this.e = new com.zk_oaction.adengine.lk_expression.a(this.f42054a, "width", str2, 0.0f, null, true);
+            this.e = new com.zk_oaction.adengine.lk_expression.a(this.f28363a, "width", str2, 0.0f, null, true);
             String attributeValue2 = xmlPullParser.getAttributeValue(null, "h");
             String str3 = attributeValue2;
             if (attributeValue2 == null) {
                 str3 = xmlPullParser.getAttributeValue(null, "height");
             }
-            this.f = new com.zk_oaction.adengine.lk_expression.a(this.f42054a, "height", str3, 0.0f, null, true);
-            this.g = new com.zk_oaction.adengine.lk_expression.a(this.f42054a, "alpha", xmlPullParser.getAttributeValue(null, "alpha"), 255.0f, null, false);
-            String attributeValue3 = xmlPullParser.getAttributeValue(null, "rotation");
+            this.f = new com.zk_oaction.adengine.lk_expression.a(this.f28363a, "height", str3, 0.0f, null, true);
+            this.g = new com.zk_oaction.adengine.lk_expression.a(this.f28363a, "alpha", xmlPullParser.getAttributeValue(null, "alpha"), 255.0f, null, false);
+            String attributeValue3 = xmlPullParser.getAttributeValue(null, Key.ROTATION);
             String str4 = attributeValue3;
             if (attributeValue3 == null) {
                 str4 = xmlPullParser.getAttributeValue(null, "angle");
             }
-            this.s = new com.zk_oaction.adengine.lk_expression.a(this.f42054a, "rotation", str4, 0.0f, null, false);
-            this.t = new com.zk_oaction.adengine.lk_expression.a(this.f42054a, "rotationX", xmlPullParser.getAttributeValue(null, "rotationX"), 0.0f, null, false);
-            this.u = new com.zk_oaction.adengine.lk_expression.a(this.f42054a, "rotationY", xmlPullParser.getAttributeValue(null, "rotationY"), 0.0f, null, false);
-            this.p = new com.zk_oaction.adengine.lk_expression.a(this.f42054a, "active", xmlPullParser.getAttributeValue(null, "active"), 1.0f, null, false).a();
-            this.h = new com.zk_oaction.adengine.lk_expression.a(this.f42054a, "visibility", xmlPullParser.getAttributeValue(null, "visibility"), 1.0f, null, false);
-            this.v = new com.zk_oaction.adengine.lk_expression.a(this.f42054a, "layered", xmlPullParser.getAttributeValue(null, "layered"), 0.0f, null, false);
-            this.i = new com.zk_oaction.adengine.lk_expression.a(this.f42054a, "clip", xmlPullParser.getAttributeValue(null, "clip"), 0.0f, null, false);
+            this.s = new com.zk_oaction.adengine.lk_expression.a(this.f28363a, Key.ROTATION, str4, 0.0f, null, false);
+            this.t = new com.zk_oaction.adengine.lk_expression.a(this.f28363a, "rotationX", xmlPullParser.getAttributeValue(null, "rotationX"), 0.0f, null, false);
+            this.u = new com.zk_oaction.adengine.lk_expression.a(this.f28363a, "rotationY", xmlPullParser.getAttributeValue(null, "rotationY"), 0.0f, null, false);
+            this.p = new com.zk_oaction.adengine.lk_expression.a(this.f28363a, "active", xmlPullParser.getAttributeValue(null, "active"), 1.0f, null, false).a();
+            this.h = new com.zk_oaction.adengine.lk_expression.a(this.f28363a, "visibility", xmlPullParser.getAttributeValue(null, "visibility"), 1.0f, null, false);
+            this.v = new com.zk_oaction.adengine.lk_expression.a(this.f28363a, "layered", xmlPullParser.getAttributeValue(null, "layered"), 0.0f, null, false);
+            this.i = new com.zk_oaction.adengine.lk_expression.a(this.f28363a, "clip", xmlPullParser.getAttributeValue(null, "clip"), 0.0f, null, false);
             while (true) {
                 int next = xmlPullParser.next();
                 if (next == 1) {
@@ -480,7 +482,7 @@ public class f implements a.w, com.zk_oaction.adengine.lk_sdk.interfaces.b, com.
 
     @Override // com.zk_oaction.adengine.lk_sdk.interfaces.b
     public com.zk_oaction.adengine.lk_sdk.c b() {
-        return this.f42054a;
+        return this.f28363a;
     }
 
     @Override // com.zk_oaction.adengine.lk_sdk.interfaces.b
@@ -488,7 +490,7 @@ public class f implements a.w, com.zk_oaction.adengine.lk_sdk.interfaces.b, com.
         this.A = f;
         Iterator<com.zk_oaction.adengine.lk_sdk.interfaces.b> it = this.k.iterator();
         while (it.hasNext()) {
-            it.next().d("rotation");
+            it.next().d(Key.ROTATION);
         }
     }
 
@@ -502,7 +504,7 @@ public class f implements a.w, com.zk_oaction.adengine.lk_sdk.interfaces.b, com.
     }
 
     public void c() {
-        this.f42055c.a(this);
+        this.f28364c.a(this);
         this.d.a(this);
         this.e.a(this);
         this.f.a(this);
@@ -632,7 +634,7 @@ public class f implements a.w, com.zk_oaction.adengine.lk_sdk.interfaces.b, com.
 
     public float i() {
         f fVar = this.D;
-        return (fVar != null ? fVar.i() : 0.0f) + this.f42055c.a() + this.x + this.w;
+        return (fVar != null ? fVar.i() : 0.0f) + this.f28364c.a() + this.x + this.w;
     }
 
     public float j() {

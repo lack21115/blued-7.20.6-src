@@ -6,18 +6,18 @@ import com.zx.sdk.api.ZXIDListener;
 public class a2 implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ String f42099a;
+    public final /* synthetic */ String f28408a;
     public final /* synthetic */ ZXIDListener b;
 
     public a2(e2 e2Var, String str, ZXIDListener zXIDListener) {
-        this.f42099a = str;
+        this.f28408a = str;
         this.b = zXIDListener;
     }
 
     @Override // java.lang.Runnable
     public void run() {
         try {
-            e2.a().a(this.f42099a, this.b);
+            e2.a().a(this.f28408a, this.b);
         } catch (Throwable th) {
             ZXIDListener zXIDListener = this.b;
             if (zXIDListener != null) {

@@ -10,17 +10,13 @@ import kotlin.jvm.internal.markers.KMappedMarker;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/io/LinesSequence$iterator$1.class */
 public final class LinesSequence$iterator$1 implements Iterator<String>, KMappedMarker {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ LinesSequence f42506a;
+    final /* synthetic */ LinesSequence a;
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private boolean f42507c;
+    private boolean c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public LinesSequence$iterator$1(LinesSequence linesSequence) {
-        this.f42506a = linesSequence;
+        this.a = linesSequence;
     }
 
     @Override // java.util.Iterator
@@ -38,12 +34,12 @@ public final class LinesSequence$iterator$1 implements Iterator<String>, KMapped
     @Override // java.util.Iterator
     public boolean hasNext() {
         BufferedReader bufferedReader;
-        if (this.b == null && !this.f42507c) {
-            bufferedReader = this.f42506a.f42505a;
+        if (this.b == null && !this.c) {
+            bufferedReader = this.a.a;
             String readLine = bufferedReader.readLine();
             this.b = readLine;
             if (readLine == null) {
-                this.f42507c = true;
+                this.c = true;
             }
         }
         return this.b != null;

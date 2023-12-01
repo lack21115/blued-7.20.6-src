@@ -15,11 +15,11 @@ public class GifHeader {
     int l;
 
     /* renamed from: a  reason: collision with root package name */
-    int[] f20687a = null;
+    int[] f7081a = null;
     int b = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    int f20688c = 0;
+    int f7082c = 0;
     final List<GifFrame> e = new ArrayList();
     int m = -1;
 
@@ -32,7 +32,7 @@ public class GifHeader {
     }
 
     public int c() {
-        return this.f20688c;
+        return this.f7082c;
     }
 
     public int d() {

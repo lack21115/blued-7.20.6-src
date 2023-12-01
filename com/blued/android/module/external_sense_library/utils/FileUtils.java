@@ -5,9 +5,8 @@ import android.content.res.AssetManager;
 import android.os.Build;
 import android.os.Environment;
 import android.text.TextUtils;
+import com.android.internal.telephony.RILConstants;
 import com.blued.android.module.external_sense_library.config.BluedFilterType;
-import com.huawei.openalliance.ad.utils.p;
-import com.igexin.assist.util.AssistUtils;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -26,7 +25,7 @@ public class FileUtils {
     public static File a(int i) {
         File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM), "Camera");
         if (!file.exists() && !file.mkdirs()) {
-            LogUtils.d(p.Code, "failed to create directory", new Object[0]);
+            LogUtils.d("FileUtil", "failed to create directory", new Object[0]);
             return null;
         }
         String format = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.CHINESE).format(new Date());
@@ -73,11 +72,11 @@ public class FileUtils {
     }
 
     public static boolean a(Context context, String str, String str2) {
-        String a2 = a(context, str2 + File.separator + str);
-        if (a2 == null) {
+        String a = a(context, str2 + File.separator + str);
+        if (a == null) {
             return true;
         }
-        File file = new File(a2);
+        File file = new File(a);
         if (file.exists()) {
             return true;
         }
@@ -118,9 +117,9 @@ public class FileUtils {
                     }
                     FileInputStream fileInputStream = new FileInputStream(file);
                     FileOutputStream fileOutputStream = new FileOutputStream(file2);
-                    byte[] bArr = new byte[1026];
+                    byte[] bArr = new byte[RILConstants.RIL_UNSOL_CDMA_OTA_PROVISION_STATUS];
                     while (true) {
-                        int read = fileInputStream.read(bArr, 0, 1026);
+                        int read = fileInputStream.read(bArr, 0, RILConstants.RIL_UNSOL_CDMA_OTA_PROVISION_STATUS);
                         if (read == -1) {
                             break;
                         }
@@ -141,13 +140,13 @@ public class FileUtils {
         String[] strArr;
         File externalFilesDir;
         String str2;
-        BluedFilterType.FILER a2;
+        BluedFilterType.FILER a;
         HashMap hashMap = new HashMap();
         if (context == null) {
             return hashMap;
         }
         try {
-            if (Build.VERSION.SDK_INT == 22 && Build.MANUFACTURER.toLowerCase().contains(AssistUtils.BRAND_OPPO)) {
+            if (Build.VERSION.SDK_INT == 22 && Build.MANUFACTURER.toLowerCase().contains("oppo")) {
                 strArr = new String[1];
                 strArr[0] = str;
             } else {
@@ -193,8 +192,8 @@ public class FileUtils {
                     String name = listFiles[i3].getName();
                     String absolutePath = listFiles[i3].getAbsolutePath();
                     listFiles[i3].getPath();
-                    if (name.trim().toLowerCase().endsWith(".model") && name.indexOf("filter") != -1 && (a2 = FilterUitls.a(name)) != null) {
-                        hashMap.put(a2, absolutePath);
+                    if (name.trim().toLowerCase().endsWith(".model") && name.indexOf("filter") != -1 && (a = FilterUitls.a(name)) != null) {
+                        hashMap.put(a, absolutePath);
                     }
                 }
             }
@@ -206,7 +205,7 @@ public class FileUtils {
         String[] list;
         ArrayList arrayList = new ArrayList();
         try {
-            if (Build.VERSION.SDK_INT == 22 && Build.MANUFACTURER.toLowerCase().contains(AssistUtils.BRAND_OPPO)) {
+            if (Build.VERSION.SDK_INT == 22 && Build.MANUFACTURER.toLowerCase().contains("oppo")) {
                 list = new String[1];
                 list[0] = str;
             } else {

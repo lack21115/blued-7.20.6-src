@@ -58,7 +58,7 @@ public final class Graphs {
         @Override // com.google.common.graph.ForwardingGraph, com.google.common.graph.AbstractGraph, com.google.common.graph.AbstractBaseGraph, com.google.common.graph.BaseGraph
         public Set<EndpointPair<N>> incidentEdges(N n) {
             return new IncidentEdgeSet<N>(this, n) { // from class: com.google.common.graph.Graphs.TransposedGraph.1
-                @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+                @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
                 public Iterator<EndpointPair<N>> iterator() {
                     return Iterators.transform(TransposedGraph.this.delegate().incidentEdges(this.node).iterator(), new Function<EndpointPair<N>, EndpointPair<N>>() { // from class: com.google.common.graph.Graphs.TransposedGraph.1.1
                         public EndpointPair<N> apply(EndpointPair<N> endpointPair) {

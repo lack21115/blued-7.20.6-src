@@ -6,13 +6,13 @@ import com.tencent.liteav.sdk.common.LicenseChecker;
 final /* synthetic */ class a implements LicenseChecker.b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final a f40213a = new a();
+    private static final a f26522a = new a();
 
     private a() {
     }
 
     public static LicenseChecker.b a() {
-        return f40213a;
+        return f26522a;
     }
 
     @Override // com.tencent.liteav.sdk.common.LicenseChecker.b

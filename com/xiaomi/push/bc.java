@@ -4,13 +4,13 @@ package com.xiaomi.push;
 class bc implements as {
     @Override // com.xiaomi.push.as
     /* renamed from: a */
-    public String mo11508a() {
+    public String mo8458a() {
         return null;
     }
 
     @Override // com.xiaomi.push.as
     /* renamed from: a */
-    public boolean mo11509a() {
+    public boolean mo8459a() {
         return false;
     }
 }

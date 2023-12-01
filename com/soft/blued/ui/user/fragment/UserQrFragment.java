@@ -16,6 +16,7 @@ import android.widget.TextView;
 import com.blued.android.core.BlueAppLocal;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.net.BinaryHttpResponseHandler;
+import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.ui.BaseFragment;
 import com.blued.android.framework.utils.ImageUtils;
 import com.blued.android.module.common.login.model.UserBasicModel;
@@ -25,7 +26,6 @@ import com.blued.android.module.common.utils.BitmapUtils;
 import com.blued.android.module.common.utils.DialogUtils;
 import com.blued.android.module.common.utils.area.AreaUtils;
 import com.blued.android.module.common.view.CommonTopTitleNoTrans;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.blued.android.module.common.widget.menu.ActionSheet;
 import com.blued.android.module.common.widget.menu.CommonShowBottomWindow;
 import com.bytedance.applog.tracker.Tracker;
@@ -40,11 +40,11 @@ import java.io.File;
 public class UserQrFragment extends BaseFragment {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f34065a;
+    private Context f20374a;
     private View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private ImageView f34066c;
+    private ImageView f20375c;
     private ImageView d;
     private Dialog e;
     private RelativeLayout f;
@@ -57,21 +57,21 @@ public class UserQrFragment extends BaseFragment {
     }
 
     private void a() {
-        this.e = DialogUtils.a(this.f34065a);
+        this.e = DialogUtils.a(this.f20374a);
         this.f = (RelativeLayout) this.b.findViewById(R.id.sava_view);
-        this.f34066c = (ImageView) this.b.findViewById(R.id.my_qr_img);
+        this.f20375c = (ImageView) this.b.findViewById(R.id.my_qr_img);
         this.d = (ImageView) this.b.findViewById(2131364726);
-        this.f34066c.setOnLongClickListener(new View.OnLongClickListener() { // from class: com.soft.blued.ui.user.fragment.UserQrFragment.1
+        this.f20375c.setOnLongClickListener(new View.OnLongClickListener() { // from class: com.soft.blued.ui.user.fragment.UserQrFragment.1
             @Override // android.view.View.OnLongClickListener
             public boolean onLongClick(View view) {
                 UserQrFragment.this.b();
                 return false;
             }
         });
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.b.findViewById(2131370749);
-        commonTopTitleNoTrans.a();
-        commonTopTitleNoTrans.setCenterText(getString(R.string.qr_card));
-        commonTopTitleNoTrans.setLeftClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.UserQrFragment.2
+        CommonTopTitleNoTrans findViewById = this.b.findViewById(R.id.top_title);
+        findViewById.a();
+        findViewById.setCenterText(getString(R.string.qr_card));
+        findViewById.setLeftClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.UserQrFragment.2
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
@@ -79,9 +79,9 @@ public class UserQrFragment extends BaseFragment {
             }
         });
         ImageLoader.a(getFragmentActive(), AvatarUtils.a(0, UserInfo.getInstance().getLoginUserInfo().getAvatar())).b(2131237310).c().a((ImageView) this.b.findViewById(2131364232));
-        String str = getActivity().getFilesDir() + BridgeUtil.SPLIT_MARK + UserInfo.getInstance().getLoginUserInfo().getUid() + ".bmp";
+        String str = getActivity().getFilesDir() + "/" + UserInfo.getInstance().getLoginUserInfo().getUid() + ".bmp";
         if (new File(str).exists()) {
-            this.f34066c.setImageBitmap(BitmapUtils.a(str));
+            this.f20375c.setImageBitmap(BitmapUtils.a(str));
         }
         TextView textView = (TextView) this.b.findViewById(R.id.qr_tv_my_name);
         textView.setText(UserInfo.getInstance().getLoginUserInfo().getName());
@@ -89,18 +89,17 @@ public class UserQrFragment extends BaseFragment {
         userBasicModel.vip_grade = UserInfo.getInstance().getLoginUserInfo().vip_grade;
         userBasicModel.is_vip_annual = UserInfo.getInstance().getLoginUserInfo().is_vip_annual;
         userBasicModel.is_hide_vip_look = BluedConfig.a().h().is_hide_vip_look;
-        UserRelationshipUtils.a(this.f34065a, textView, userBasicModel);
+        UserRelationshipUtils.a(this.f20374a, textView, userBasicModel);
         UserRelationshipUtils.a(this.d, userBasicModel);
         TextView textView2 = (TextView) this.b.findViewById(R.id.qr_tv_my_description);
         textView2.setText(AreaUtils.getAreaTxt(UserInfo.getInstance().getLoginUserInfo().getCity_settled(), BlueAppLocal.c()));
         userBasicModel.is_hide_city_settled = UserInfo.getInstance().getLoginUserInfo().is_hide_city_settled;
-        TypefaceUtils.b(this.f34065a, textView2, userBasicModel.is_hide_city_settled, 1);
+        TypefaceUtils.b(this.f20374a, textView2, userBasicModel.is_hide_city_settled, 1);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void b() {
         CommonShowBottomWindow.a(getActivity(), new String[]{getActivity().getString(R.string.qr_save)}, new ActionSheet.ActionSheetListener() { // from class: com.soft.blued.ui.user.fragment.UserQrFragment.3
-            @Override // com.blued.android.module.common.widget.menu.ActionSheet.ActionSheetListener
             public void a(ActionSheet actionSheet, int i) {
                 if (i != 0) {
                     return;
@@ -109,45 +108,39 @@ public class UserQrFragment extends BaseFragment {
                 ImageUtils.a(userQrFragment.a(userQrFragment.f));
             }
 
-            @Override // com.blued.android.module.common.widget.menu.ActionSheet.ActionSheetListener
             public void a(ActionSheet actionSheet, boolean z) {
             }
         });
     }
 
     private void c() {
-        UserHttpUtils.a(this.f34065a, new BinaryHttpResponseHandler(true) { // from class: com.soft.blued.ui.user.fragment.UserQrFragment.4
-            @Override // com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
+        UserHttpUtils.a(this.f20374a, new BinaryHttpResponseHandler(true) { // from class: com.soft.blued.ui.user.fragment.UserQrFragment.4
             /* renamed from: a */
             public void onFailure(Throwable th, int i, byte[] bArr) {
                 super.onFailure(th, i, bArr);
             }
 
-            @Override // com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
             /* renamed from: a */
             public void onSuccess(byte[] bArr) {
                 Bitmap decodeByteArray = BitmapFactory.decodeByteArray(bArr, 0, bArr.length);
-                UserQrFragment.this.f34066c.setImageBitmap(BitmapFactory.decodeByteArray(bArr, 0, bArr.length));
-                BitmapUtils.a(UserQrFragment.this.getActivity().getFilesDir() + BridgeUtil.SPLIT_MARK + UserInfo.getInstance().getLoginUserInfo().getUid() + ".bmp", decodeByteArray, 100, true);
+                UserQrFragment.this.f20375c.setImageBitmap(BitmapFactory.decodeByteArray(bArr, 0, bArr.length));
+                BitmapUtils.a(UserQrFragment.this.getActivity().getFilesDir() + "/" + UserInfo.getInstance().getLoginUserInfo().getUid() + ".bmp", decodeByteArray, 100, true);
             }
 
-            @Override // com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
             public void onFinish() {
                 super.onFinish();
                 DialogUtils.b(UserQrFragment.this.e);
             }
 
-            @Override // com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
             public void onStart() {
                 super.onStart();
                 DialogUtils.a(UserQrFragment.this.e);
             }
-        }, getFragmentActive());
+        }, (IRequestHost) getFragmentActive());
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.f34065a = getActivity();
+        this.f20374a = getActivity();
         View view = this.b;
         if (view == null) {
             View inflate = layoutInflater.inflate(R.layout.fragment_my_qr, viewGroup, false);

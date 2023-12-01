@@ -125,14 +125,14 @@ public class MessageDeframer implements Deframer, Closeable {
         @Override // java.io.FilterInputStream, java.io.InputStream
         public void mark(int i) {
             synchronized (this) {
-                this.f42254in.mark(i);
+                this.in.mark(i);
                 this.mark = this.count;
             }
         }
 
         @Override // java.io.FilterInputStream, java.io.InputStream
         public int read() throws IOException {
-            int read = this.f42254in.read();
+            int read = this.in.read();
             if (read != -1) {
                 this.count++;
             }
@@ -143,7 +143,7 @@ public class MessageDeframer implements Deframer, Closeable {
 
         @Override // java.io.FilterInputStream, java.io.InputStream
         public int read(byte[] bArr, int i, int i2) throws IOException {
-            int read = this.f42254in.read(bArr, i, i2);
+            int read = this.in.read(bArr, i, i2);
             if (read != -1) {
                 this.count += read;
             }
@@ -155,20 +155,20 @@ public class MessageDeframer implements Deframer, Closeable {
         @Override // java.io.FilterInputStream, java.io.InputStream
         public void reset() throws IOException {
             synchronized (this) {
-                if (!this.f42254in.markSupported()) {
+                if (!this.in.markSupported()) {
                     throw new IOException("Mark not supported");
                 }
                 if (this.mark == -1) {
                     throw new IOException("Mark not set");
                 }
-                this.f42254in.reset();
+                this.in.reset();
                 this.count = this.mark;
             }
         }
 
         @Override // java.io.FilterInputStream, java.io.InputStream
         public long skip(long j) throws IOException {
-            long skip = this.f42254in.skip(j);
+            long skip = this.in.skip(j);
             this.count += skip;
             verifySize();
             reportCount();

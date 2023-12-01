@@ -10,6 +10,7 @@ import android.provider.ContactsContract;
 import androidx.core.content.PermissionChecker;
 import c.t.m.g.d3;
 import c.t.m.g.j3;
+import com.huawei.hms.framework.common.ContainerUtils;
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -25,7 +26,7 @@ public class s3 extends d2 {
     public a d;
 
     /* renamed from: c  reason: collision with root package name */
-    public SimpleDateFormat f3974c = t2.b("HHmmss");
+    public SimpleDateFormat f3926c = t2.b("HHmmss");
     public boolean e = false;
     public final ConcurrentHashMap<String, Integer> f = new ConcurrentHashMap<>();
 
@@ -33,20 +34,20 @@ public class s3 extends d2 {
     public class a extends Handler {
 
         /* renamed from: a  reason: collision with root package name */
-        public StringBuffer f3975a;
+        public StringBuffer f3927a;
         public long b;
 
         public a(Looper looper) {
             super(looper);
-            this.f3975a = new StringBuffer(18432);
+            this.f3927a = new StringBuffer(18432);
         }
 
         public void a() {
-            StringBuffer stringBuffer = this.f3975a;
+            StringBuffer stringBuffer = this.f3927a;
             stringBuffer.append('$');
-            stringBuffer.append(s3.this.f3974c.format(new Date()) + ",LOC,shutdown");
-            String stringBuffer2 = this.f3975a.toString();
-            this.f3975a.setLength(0);
+            stringBuffer.append(s3.this.f3926c.format(new Date()) + ",LOC,shutdown");
+            String stringBuffer2 = this.f3927a.toString();
+            this.f3927a.setLength(0);
             s3.this.a(stringBuffer2, true);
             c3.b(s3.this.d);
         }
@@ -56,14 +57,14 @@ public class s3 extends d2 {
                 case 101:
                     removeMessages(101);
                     this.b = System.currentTimeMillis();
-                    String stringBuffer = this.f3975a.toString();
-                    this.f3975a.setLength(0);
-                    StringBuffer stringBuffer2 = this.f3975a;
+                    String stringBuffer = this.f3927a.toString();
+                    this.f3927a.setLength(0);
+                    StringBuffer stringBuffer2 = this.f3927a;
                     stringBuffer2.append("LOC_CORE");
                     stringBuffer2.append(',');
                     stringBuffer2.append(s3.i());
                     if (!m3.a(stringBuffer)) {
-                        this.f3975a.append(stringBuffer);
+                        this.f3927a.append(stringBuffer);
                     }
                     s3.this.b("SYSTEM", s3.j());
                     removeMessages(102);
@@ -78,22 +79,22 @@ public class s3 extends d2 {
                     s3Var2.b("PERMISSION", s3Var2.a(q2.a()));
                     return;
                 case 103:
-                    StringBuffer stringBuffer3 = this.f3975a;
+                    StringBuffer stringBuffer3 = this.f3927a;
                     stringBuffer3.append('$');
                     stringBuffer3.append((String) message.obj);
-                    if (this.f3975a.length() < 18432 && System.currentTimeMillis() - this.b < 180000) {
+                    if (this.f3927a.length() < 18432 && System.currentTimeMillis() - this.b < 180000) {
                         return;
                     }
-                    s3.this.a(this.f3975a.toString(), false);
-                    this.f3975a.setLength(0);
+                    s3.this.a(this.f3927a.toString(), false);
+                    this.f3927a.setLength(0);
                     c3.b(s3.this.d, 101);
                     return;
                 case 104:
                     s3.this.a("", true);
                     return;
                 case 105:
-                    s3.this.a(this.f3975a.toString(), false);
-                    this.f3975a.setLength(0);
+                    s3.this.a(this.f3927a.toString(), false);
+                    this.f3927a.setLength(0);
                     c3.b(s3.this.d, 101);
                     return;
                 default:
@@ -114,23 +115,23 @@ public class s3 extends d2 {
     public class b implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        public byte[] f3977a;
+        public byte[] f3929a;
         public boolean b;
 
         /* loaded from: source-8756600-dex2jar.jar:c/t/m/g/s3$b$a.class */
         public class a implements d3.c {
 
             /* renamed from: a  reason: collision with root package name */
-            public final /* synthetic */ boolean f3979a;
+            public final /* synthetic */ boolean f3931a;
             public final /* synthetic */ byte[] b;
 
             /* renamed from: c  reason: collision with root package name */
-            public final /* synthetic */ boolean[] f3980c;
+            public final /* synthetic */ boolean[] f3932c;
 
             public a(b bVar, boolean z, byte[] bArr, boolean[] zArr) {
-                this.f3979a = z;
+                this.f3931a = z;
                 this.b = bArr;
-                this.f3980c = zArr;
+                this.f3932c = zArr;
             }
 
             @Override // c.t.m.g.d3.c
@@ -143,11 +144,11 @@ public class s3 extends d2 {
                     StringBuilder sb = new StringBuilder();
                     sb.append("mllc_");
                     sb.append(System.currentTimeMillis());
-                    sb.append(this.f3979a ? ".enc2" : ".enc");
+                    sb.append(this.f3931a ? ".enc2" : ".enc");
                     z2.a(new File(file, sb.toString()), this.b, true);
                 } catch (Throwable th) {
                 }
-                this.f3980c[0] = false;
+                this.f3932c[0] = false;
             }
 
             @Override // c.t.m.g.d3.c
@@ -157,7 +158,7 @@ public class s3 extends d2 {
 
         public b(byte[] bArr, boolean z) {
             this.b = false;
-            this.f3977a = bArr;
+            this.f3929a = bArr;
             this.b = z;
         }
 
@@ -247,8 +248,8 @@ public class s3 extends d2 {
 
         @Override // java.lang.Runnable
         public void run() {
-            if (!m3.a(this.f3977a)) {
-                a(this.f3977a, true, true);
+            if (!m3.a(this.f3929a)) {
+                a(this.f3929a, true, true);
             }
             if (!this.b || s3.j.get()) {
                 return;
@@ -337,7 +338,7 @@ public class s3 extends d2 {
                 i2 = -1;
             }
         }
-        return Build.VERSION.SDK_INT + "&" + i3 + "&" + i2 + "&" + y5.a().a(context);
+        return Build.VERSION.SDK_INT + ContainerUtils.FIELD_DELIMITER + i3 + ContainerUtils.FIELD_DELIMITER + i2 + ContainerUtils.FIELD_DELIMITER + y5.a().a(context);
     }
 
     public final void a(String str, boolean z) {
@@ -382,7 +383,7 @@ public class s3 extends d2 {
             return;
         }
         Message obtainMessage = aVar.obtainMessage(103);
-        obtainMessage.obj = this.f3974c.format(new Date()) + "," + str + "," + str2;
+        obtainMessage.obj = this.f3926c.format(new Date()) + "," + str + "," + str2;
         obtainMessage.sendToTarget();
     }
 

@@ -5,7 +5,6 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import com.android.internal.R;
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
 
@@ -262,7 +261,7 @@ public class DialogFragment extends Fragment implements DialogInterface.OnCancel
     public void setStyle(int i, int i2) {
         this.mStyle = i;
         if (this.mStyle == 2 || this.mStyle == 3) {
-            this.mTheme = R.style.Theme_DeviceDefault_Dialog_NoFrame;
+            this.mTheme = 16974991;
         }
         if (i2 != 0) {
             this.mTheme = i2;

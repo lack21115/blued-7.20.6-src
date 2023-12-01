@@ -4,15 +4,15 @@ package com.anythink.expressad.foundation.d;
 public final class o {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f7799a;
+    private int f4959a;
     private int b;
 
     private int a() {
-        return this.f7799a;
+        return this.f4959a;
     }
 
     private void a(int i) {
-        this.f7799a = i;
+        this.f4959a = i;
     }
 
     private int b() {

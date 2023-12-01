@@ -1,6 +1,6 @@
 package com.amap.api.col.p0003sl;
 
-import com.sobot.network.http.model.SobotProgress;
+import javax.xml.transform.OutputKeys;
 
 @jb(a = "update_item")
 /* renamed from: com.amap.api.col.3sl.bk  reason: invalid package */
@@ -13,18 +13,14 @@ public class bk {
     @jc(a = "mState", b = 2)
     public int l;
     @jc(a = "title", b = 6)
-
-    /* renamed from: a  reason: collision with root package name */
-    protected String f4781a = null;
+    protected String a = null;
     @jc(a = "url", b = 6)
     protected String b = null;
     @jc(a = "mAdcode", b = 6)
-
-    /* renamed from: c  reason: collision with root package name */
-    protected String f4782c = null;
-    @jc(a = SobotProgress.FILE_NAME, b = 6)
+    protected String c = null;
+    @jc(a = "fileName", b = 6)
     protected String d = null;
-    @jc(a = "version", b = 6)
+    @jc(a = OutputKeys.VERSION, b = 6)
     protected String e = "";
     @jc(a = "lLocalLength", b = 5)
     protected long f = 0;
@@ -46,11 +42,11 @@ public class bk {
     }
 
     public final String c() {
-        return this.f4781a;
+        return this.a;
     }
 
     public final void c(String str) {
-        this.f4782c = str;
+        this.c = str;
     }
 
     public final String d() {
@@ -62,7 +58,7 @@ public class bk {
     }
 
     public final String e() {
-        return this.f4782c;
+        return this.c;
     }
 
     public final String f() {

@@ -10,11 +10,11 @@ public class s5 {
     public static final int f = 1;
 
     /* renamed from: a  reason: collision with root package name */
-    private int f37991a;
+    private int f24300a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private JSONArray f37992c;
+    private JSONArray f24301c;
     private String[] d;
 
     public s5() {
@@ -23,9 +23,9 @@ public class s5 {
 
     public s5(int i, int i2, JSONArray jSONArray) {
         this.d = new String[0];
-        this.f37991a = i;
+        this.f24300a = i;
         this.b = i2;
-        this.f37992c = jSONArray;
+        this.f24301c = jSONArray;
         if (jSONArray == null) {
             this.d = null;
             return;
@@ -39,7 +39,7 @@ public class s5 {
                 return;
             }
             try {
-                this.d[i4] = this.f37992c.getString(i4);
+                this.d[i4] = this.f24301c.getString(i4);
                 i3 = i4 + 1;
             } catch (JSONException e2) {
                 this.d = null;
@@ -50,7 +50,7 @@ public class s5 {
     }
 
     public JSONArray a() {
-        return this.f37992c;
+        return this.f24301c;
     }
 
     public String[] b() {
@@ -58,7 +58,7 @@ public class s5 {
     }
 
     public int c() {
-        return this.f37991a;
+        return this.f24300a;
     }
 
     public int d() {
@@ -66,7 +66,7 @@ public class s5 {
     }
 
     public boolean e() {
-        return this.f37991a == 1;
+        return this.f24300a == 1;
     }
 
     public boolean f() {
@@ -76,11 +76,11 @@ public class s5 {
     public String toString() {
         StringBuffer stringBuffer = new StringBuffer("IndoorAuth{");
         stringBuffer.append("mEnabled=");
-        stringBuffer.append(this.f37991a);
+        stringBuffer.append(this.f24300a);
         stringBuffer.append(", mType=");
         stringBuffer.append(this.b);
         stringBuffer.append(", mBuildingJsonArray=");
-        stringBuffer.append(this.f37992c);
+        stringBuffer.append(this.f24301c);
         stringBuffer.append('}');
         return stringBuffer.toString();
     }

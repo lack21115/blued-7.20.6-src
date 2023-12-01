@@ -11,12 +11,12 @@ public final class SplashModel {
     private String msg;
     private SplashEntity splashEntity;
 
-    public SplashModel(boolean z, int i, String msg) {
-        Intrinsics.e(msg, "msg");
+    public SplashModel(boolean z, int i, String str) {
+        Intrinsics.e(str, "msg");
         this.msg = "";
         this.isSuccess = z;
         this.code = i;
-        this.msg = msg;
+        this.msg = str;
     }
 
     public SplashModel(boolean z, SplashEntity splashEntity) {

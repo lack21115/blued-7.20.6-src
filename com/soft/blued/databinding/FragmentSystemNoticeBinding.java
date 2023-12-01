@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentSystemNoticeBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final RelativeLayout f28985a;
+    private final RelativeLayout f15295a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
-        return this.f28985a;
+        return this.f15295a;
     }
 }

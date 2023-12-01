@@ -6,7 +6,7 @@ import android.webkit.URLUtil;
 public class UrlUtil {
 
     /* renamed from: a  reason: collision with root package name */
-    static final String f23155a = "file:///android_res/";
+    static final String f9547a = "file:///android_res/";
 
     public static boolean isAboutUrl(String str) {
         return URLUtil.isAboutUrl(str);
@@ -45,7 +45,7 @@ public class UrlUtil {
     }
 
     public static boolean isResourceUrl(String str) {
-        return str != null && str.startsWith(f23155a);
+        return str != null && str.startsWith(f9547a);
     }
 
     public static boolean isValidUrl(String str) {

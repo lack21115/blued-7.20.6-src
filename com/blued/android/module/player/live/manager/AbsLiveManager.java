@@ -4,12 +4,10 @@ import com.blued.android.module.player.txplayer.view.BlLiveView;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/player/live/manager/AbsLiveManager.class */
 abstract class AbsLiveManager {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected OnMediaPlayerListener f15626a;
+    protected OnMediaPlayerListener a;
 
     public void a(OnMediaPlayerListener onMediaPlayerListener) {
-        this.f15626a = onMediaPlayerListener;
+        this.a = onMediaPlayerListener;
     }
 
     public void a(String str, BlLiveView blLiveView) throws Exception {

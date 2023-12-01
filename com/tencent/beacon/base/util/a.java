@@ -6,15 +6,15 @@ import android.os.Build;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f34994a;
+    private static String f21303a;
 
     public static String a() {
-        String str = f34994a;
+        String str = f21303a;
         if (str != null) {
             return str;
         }
         try {
-            f34994a = (String) Class.forName("android.app.ActivityThread").getDeclaredMethod(Build.VERSION.SDK_INT >= 18 ? "currentProcessName" : "currentPackageName", new Class[0]).invoke(null, new Object[0]);
+            f21303a = (String) Class.forName("android.app.ActivityThread").getDeclaredMethod(Build.VERSION.SDK_INT >= 18 ? "currentProcessName" : "currentPackageName", new Class[0]).invoke(null, new Object[0]);
             return "";
         } catch (Throwable th) {
             c.a(th);

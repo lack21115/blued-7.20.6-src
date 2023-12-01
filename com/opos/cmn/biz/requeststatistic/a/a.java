@@ -6,19 +6,19 @@ import android.os.SystemClock;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private b f24673a;
+    private b f10985a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f24674c;
+    private int f10986c;
     private volatile long d;
     private volatile long e;
-    private InterfaceC0631a f;
+    private InterfaceC0461a f;
     private Object g;
 
     /* renamed from: com.opos.cmn.biz.requeststatistic.a.a$a  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/opos/cmn/biz/requeststatistic/a/a$a.class */
-    public interface InterfaceC0631a {
+    public interface InterfaceC0461a {
         void a();
 
         void b();
@@ -26,7 +26,7 @@ public final class a {
 
     /* loaded from: source-8303388-dex2jar.jar:com/opos/cmn/biz/requeststatistic/a/a$b.class */
     public interface b {
-        void a(InterfaceC0631a interfaceC0631a);
+        void a(InterfaceC0461a interfaceC0461a);
     }
 
     public a(b bVar) {
@@ -37,15 +37,15 @@ public final class a {
         this.d = -1L;
         this.e = -1L;
         this.g = new Object();
-        this.f24673a = bVar;
+        this.f10985a = bVar;
         this.b = Integer.MAX_VALUE;
-        this.f24674c = i;
+        this.f10986c = i;
     }
 
-    static /* synthetic */ void a(a aVar, InterfaceC0631a interfaceC0631a) {
-        if (interfaceC0631a == aVar.f) {
+    static /* synthetic */ void a(a aVar, InterfaceC0461a interfaceC0461a) {
+        if (interfaceC0461a == aVar.f) {
             synchronized (aVar.g) {
-                if (aVar.f == interfaceC0631a) {
+                if (aVar.f == interfaceC0461a) {
                     aVar.d = -1L;
                     aVar.e = SystemClock.elapsedRealtime();
                     aVar.f = null;
@@ -56,24 +56,24 @@ public final class a {
 
     public final void a() {
         if (this.d <= 0 || this.b <= SystemClock.elapsedRealtime() - this.d) {
-            if (this.e <= 0 || this.f24674c <= SystemClock.elapsedRealtime() - this.e) {
+            if (this.e <= 0 || this.f10986c <= SystemClock.elapsedRealtime() - this.e) {
                 synchronized (this.g) {
-                    if ((this.d <= 0 || this.b <= SystemClock.elapsedRealtime() - this.d) && (this.e <= 0 || this.f24674c <= SystemClock.elapsedRealtime() - this.e)) {
+                    if ((this.d <= 0 || this.b <= SystemClock.elapsedRealtime() - this.d) && (this.e <= 0 || this.f10986c <= SystemClock.elapsedRealtime() - this.e)) {
                         this.d = SystemClock.elapsedRealtime();
                         this.e = -1L;
-                        InterfaceC0631a interfaceC0631a = new InterfaceC0631a() { // from class: com.opos.cmn.biz.requeststatistic.a.a.1
-                            @Override // com.opos.cmn.biz.requeststatistic.a.a.InterfaceC0631a
+                        InterfaceC0461a interfaceC0461a = new InterfaceC0461a() { // from class: com.opos.cmn.biz.requeststatistic.a.a.1
+                            @Override // com.opos.cmn.biz.requeststatistic.a.a.InterfaceC0461a
                             public final void a() {
                                 a.a(a.this, this);
                             }
 
-                            @Override // com.opos.cmn.biz.requeststatistic.a.a.InterfaceC0631a
+                            @Override // com.opos.cmn.biz.requeststatistic.a.a.InterfaceC0461a
                             public final void b() {
                                 a.a(a.this, this);
                             }
                         };
-                        this.f = interfaceC0631a;
-                        this.f24673a.a(interfaceC0631a);
+                        this.f = interfaceC0461a;
+                        this.f10985a.a(interfaceC0461a);
                     }
                 }
             }

@@ -10,9 +10,7 @@ import java.util.Random;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/china/common/d.class */
 public final class d {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final String f6316a = "android.permission.READ_PHONE_STATE";
+    public static final String a = "android.permission.READ_PHONE_STATE";
     public static final String b = "android.permission.WRITE_EXTERNAL_STORAGE";
 
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/china/common/d$a.class */

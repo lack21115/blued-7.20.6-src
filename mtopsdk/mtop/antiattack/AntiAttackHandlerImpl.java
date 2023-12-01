@@ -10,27 +10,25 @@ public class AntiAttackHandlerImpl implements AntiAttackHandler {
     /* renamed from: mtopsdk.mtop.antiattack.AntiAttackHandlerImpl$1  reason: invalid class name */
     /* loaded from: source-3503164-dex2jar.jar:mtopsdk/mtop/antiattack/AntiAttackHandlerImpl$1.class */
     final class AnonymousClass1 implements Runnable {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ String f43697a;
+        final /* synthetic */ String a;
 
         @Override // java.lang.Runnable
         public final void run() {
             try {
-                Result a2 = AntiAttackUtil.a(this.f43697a);
+                Result a = AntiAttackUtil.a(this.a);
                 boolean z = true;
-                if (a2 != null) {
+                if (a != null) {
                     z = true;
-                    if (a2.d()) {
-                        CheckCodeDO checkCodeDO = (CheckCodeDO) a2.a();
-                        if (checkCodeDO == null || !checkCodeDO.a() || MtopProxyBase.f43696c == null) {
+                    if (a.d()) {
+                        CheckCodeDO checkCodeDO = (CheckCodeDO) a.a();
+                        if (checkCodeDO == null || !checkCodeDO.a() || MtopProxyBase.c == null) {
                             StringBuilder sb = new StringBuilder("[callCheckCodeValidateListener] invalid checkcodeDO or checkCodeValidateListener,checkCodeDO=");
                             sb.append(checkCodeDO);
                             TBSdkLog.d("mtopsdk.AntiAttackHandlerImpl", sb.toString());
                             z = true;
                         } else {
                             z = false;
-                            MtopProxyBase.f43696c.a(checkCodeDO);
+                            MtopProxyBase.c.a(checkCodeDO);
                         }
                     }
                 }

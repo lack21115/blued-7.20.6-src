@@ -10,20 +10,16 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/FragmentLiveBattleShopBinding.class */
 public final class FragmentLiveBattleShopBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ProgressBar f11918a;
+    public final ProgressBar a;
     public final FrameLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final FrameLayout f11919c;
+    public final FrameLayout c;
     private final FrameLayout d;
 
     private FragmentLiveBattleShopBinding(FrameLayout frameLayout, ProgressBar progressBar, FrameLayout frameLayout2, FrameLayout frameLayout3) {
         this.d = frameLayout;
-        this.f11918a = progressBar;
+        this.a = progressBar;
         this.b = frameLayout2;
-        this.f11919c = frameLayout3;
+        this.c = frameLayout3;
     }
 
     public static FragmentLiveBattleShopBinding a(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
@@ -54,7 +50,6 @@ public final class FragmentLiveBattleShopBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.d;

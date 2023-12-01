@@ -33,7 +33,7 @@ public final class o {
     public static final String Z = "application/ttml+xml";
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f7660a = "video";
+    public static final String f4821a = "video";
     public static final String aa = "application/x-quicktime-tx3g";
     public static final String ab = "application/x-mp4-vtt";
     public static final String ac = "application/x-mp4-cea-608";
@@ -49,7 +49,7 @@ public final class o {
     public static final String b = "audio";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f7661c = "text";
+    public static final String f4822c = "text";
     public static final String d = "application";
     public static final String e = "video/mp4";
     public static final String f = "video/webm";
@@ -79,16 +79,16 @@ public final class o {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public final String f7662a;
+        public final String f4823a;
         public final String b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final int f7663c;
+        public final int f4824c;
 
         public a(String str, String str2, int i) {
-            this.f7662a = str;
+            this.f4823a = str;
             this.b = str2;
-            this.f7663c = i;
+            this.f4824c = i;
         }
     }
 
@@ -161,7 +161,7 @@ public final class o {
             int i4 = i3;
             if (i4 >= size) {
                 break;
-            } else if (str.equals(al.get(i4).f7662a)) {
+            } else if (str.equals(al.get(i4).f4823a)) {
                 al.remove(i4);
                 break;
             } else {
@@ -235,7 +235,7 @@ public final class o {
             for (int i2 = 0; i2 < size; i2++) {
                 a aVar = al.get(i2);
                 if (trim.startsWith(aVar.b)) {
-                    return aVar.f7662a;
+                    return aVar.f4823a;
                 }
             }
             return null;
@@ -266,8 +266,8 @@ public final class o {
                 return -1;
             }
             a aVar = al.get(i3);
-            if (str.equals(aVar.f7662a)) {
-                return aVar.f7663c;
+            if (str.equals(aVar.f4823a)) {
+                return aVar.f4824c;
             }
             i2 = i3 + 1;
         }
@@ -411,7 +411,7 @@ public final class o {
             }
             a aVar = al.get(i3);
             if (str.startsWith(aVar.b)) {
-                return aVar.f7662a;
+                return aVar.f4823a;
             }
             i2 = i3 + 1;
         }
@@ -426,8 +426,8 @@ public final class o {
                 return -1;
             }
             a aVar = al.get(i3);
-            if (str.equals(aVar.f7662a)) {
-                return aVar.f7663c;
+            if (str.equals(aVar.f4823a)) {
+                return aVar.f4824c;
             }
             i2 = i3 + 1;
         }

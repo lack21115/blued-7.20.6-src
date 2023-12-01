@@ -67,13 +67,9 @@ import kotlin.jvm.internal.StringCompanionObject;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveMultiPKItemView.class */
 public final class LiveMultiPKItemView extends FrameLayout implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f14634a;
+    private Context a;
     private boolean b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private LiveInviteUserModel f14635c;
+    private LiveInviteUserModel c;
     private final Lazy d;
     private Runnable e;
     private boolean f;
@@ -96,7 +92,7 @@ public final class LiveMultiPKItemView extends FrameLayout implements View.OnCli
     public LiveMultiPKItemView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         Intrinsics.e(context, "context");
-        this.f14635c = new LiveInviteUserModel();
+        this.c = new LiveInviteUserModel();
         this.d = LazyKt.a(LazyThreadSafetyMode.NONE, new Function0<LiveMultiConnectionItemViewBinding>() { // from class: com.blued.android.module.live_china.view.LiveMultiPKItemView$viewBinding$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
@@ -121,9 +117,9 @@ public final class LiveMultiPKItemView extends FrameLayout implements View.OnCli
                     }
                     LiveMultiPKItemView liveMultiPKItemView = LiveMultiPKItemView.this;
                     LiveMultiConnectionItemViewBinding viewBinding = liveMultiPKItemView.getViewBinding();
-                    CardView cardView = viewBinding == null ? null : viewBinding.j;
+                    View view = viewBinding == null ? null : viewBinding.j;
                     LiveMultiConnectionItemViewBinding viewBinding2 = LiveMultiPKItemView.this.getViewBinding();
-                    liveMultiPKItemView.a(cardView, viewBinding2 == null ? null : viewBinding2.l, LiveMultiPKItemView.this.getItem());
+                    liveMultiPKItemView.a(view, viewBinding2 == null ? null : viewBinding2.l, LiveMultiPKItemView.this.getItem());
                 }
             }
         };
@@ -133,7 +129,7 @@ public final class LiveMultiPKItemView extends FrameLayout implements View.OnCli
                 LiveMultiPKItemView.d(LiveMultiPKItemView.this);
             }
         };
-        this.f14634a = context;
+        this.a = context;
     }
 
     private final String a(double d) {
@@ -163,7 +159,7 @@ public final class LiveMultiPKItemView extends FrameLayout implements View.OnCli
                 LiveMultiPKItemView.e(LiveMultiPKItemView.this, view);
             }
         });
-        EventTrackLive.g(LiveProtos.Event.LIVE_PK_USER_VOICE_ICON_SHOW, LiveRoomManager.a().e(), LiveRoomManager.a().g(), this$0.f14635c.uid, this$0.f14635c.lid);
+        EventTrackLive.g(LiveProtos.Event.LIVE_PK_USER_VOICE_ICON_SHOW, LiveRoomManager.a().e(), LiveRoomManager.a().g(), this$0.c.uid, this$0.c.lid);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -178,7 +174,7 @@ public final class LiveMultiPKItemView extends FrameLayout implements View.OnCli
             public void a(String relation) {
                 Intrinsics.e(relation, "relation");
                 LiveMultiConnectionItemViewBinding viewBinding = LiveMultiPKItemView.this.getViewBinding();
-                (viewBinding == null ? null : viewBinding.f12288c).setVisibility(8);
+                (viewBinding == null ? null : viewBinding.c).setVisibility(8);
                 LiveMultiPKItemView.this.e();
                 RelationInfo relationInfo = new RelationInfo();
                 relationInfo.setUid(LiveMultiPKItemView.this.getItem().uid);
@@ -198,18 +194,18 @@ public final class LiveMultiPKItemView extends FrameLayout implements View.OnCli
             @Override // com.blued.android.module.live.base.utils.LiveUserRelationshipUtils.IAddOrRemoveAttentionDone
             public void d() {
             }
-        }, this$0.f14635c.uid, "", (IRequestHost) null);
+        }, this$0.c.uid, "", (IRequestHost) null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(LiveMultiPKItemView this$0, Ref.BooleanRef record, View view) {
         Intrinsics.e(this$0, "this$0");
         Intrinsics.e(record, "$record");
-        if (TextUtils.equals(LiveRoomManager.a().g(), this$0.f14635c.uid)) {
+        if (TextUtils.equals(LiveRoomManager.a().g(), this$0.c.uid)) {
             return;
         }
-        if (record.f42538a) {
-            LiveSetDataObserver.a().a(this$0.f14635c.uid, 2);
+        if (record.a) {
+            LiveSetDataObserver.a().a(this$0.c.uid, 2);
             return;
         }
         ArrayList arrayList = new ArrayList();
@@ -218,13 +214,13 @@ public final class LiveMultiPKItemView extends FrameLayout implements View.OnCli
             Intrinsics.c(g, "getInstance().anchorIdStr");
             arrayList.add(g);
         }
-        if (!TextUtils.isEmpty(this$0.f14635c.uid)) {
-            String str = this$0.f14635c.uid;
+        if (!TextUtils.isEmpty(this$0.c.uid)) {
+            String str = this$0.c.uid;
             Intrinsics.c(str, "item.uid");
             arrayList.add(str);
         }
         LiveRoomManager.a().a(arrayList);
-        LiveRoomData liveRoomData = new LiveRoomData(StringUtils.a(this$0.f14635c.lid, 0L), 0, LiveFloatManager.a().D(), this$0.f14635c.uid, "", "", 0);
+        LiveRoomData liveRoomData = new LiveRoomData(StringUtils.a(this$0.c.lid, 0L), 0, LiveFloatManager.a().D(), this$0.c.uid, "", "", 0);
         liveRoomData.link_type = 5;
         LiveSetDataObserver.a().a(liveRoomData);
     }
@@ -236,9 +232,9 @@ public final class LiveMultiPKItemView extends FrameLayout implements View.OnCli
     /* JADX INFO: Access modifiers changed from: private */
     public static final void b(LiveMultiPKItemView this$0, View view) {
         Intrinsics.e(this$0, "this$0");
-        LiveInviteUserModel liveInviteUserModel = this$0.f14635c;
+        LiveInviteUserModel liveInviteUserModel = this$0.c;
         liveInviteUserModel.voice_disable = liveInviteUserModel.voice_disable == 0 ? 1 : 0;
-        int i = this$0.f14635c.voice_disable;
+        int i = this$0.c.voice_disable;
         ImageView imageView = null;
         if (i == 0) {
             LiveMultiConnectionItemViewBinding viewBinding = this$0.getViewBinding();
@@ -250,8 +246,8 @@ public final class LiveMultiPKItemView extends FrameLayout implements View.OnCli
             }
             imageView.setImageResource(R.drawable.live_icon_pk_voice_close);
         }
-        this$0.a(this$0.f14635c, true);
-        EventTrackLive.q(this$0.f14635c.voice_disable == 0 ? LiveProtos.Event.LIVE_PK_VOICE_ICON_OPEN : LiveProtos.Event.LIVE_PK_VOICE_ICON_CLOSE, LiveRoomManager.a().e(), this$0.f14635c.uid, this$0.f14635c.lid);
+        this$0.a(this$0.c, true);
+        EventTrackLive.q(this$0.c.voice_disable == 0 ? LiveProtos.Event.LIVE_PK_VOICE_ICON_OPEN : LiveProtos.Event.LIVE_PK_VOICE_ICON_CLOSE, LiveRoomManager.a().e(), this$0.c.uid, this$0.c.lid);
     }
 
     private final void c(int i, int i2) {
@@ -279,10 +275,10 @@ public final class LiveMultiPKItemView extends FrameLayout implements View.OnCli
     /* JADX INFO: Access modifiers changed from: private */
     public static final void c(LiveMultiPKItemView this$0, View view) {
         Intrinsics.e(this$0, "this$0");
-        StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
-        String a2 = PermissionUtils.a(R.string.live_mute_audio_playing_close_other);
-        Intrinsics.c(a2, "getString(R.string.live_…udio_playing_close_other)");
-        String format = String.format(a2, Arrays.copyOf(new Object[]{this$0.f14635c.name}, 1));
+        StringCompanionObject stringCompanionObject = StringCompanionObject.a;
+        String a = PermissionUtils.a(R.string.live_mute_audio_playing_close_other);
+        Intrinsics.c(a, "getString(R.string.live_…udio_playing_close_other)");
+        String format = String.format(a, Arrays.copyOf(new Object[]{this$0.c.name}, 1));
         Intrinsics.c(format, "format(format, *args)");
         ToastUtils.a(format, 0);
     }
@@ -296,47 +292,47 @@ public final class LiveMultiPKItemView extends FrameLayout implements View.OnCli
     /* JADX INFO: Access modifiers changed from: private */
     public static final void d(LiveMultiPKItemView this$0, View view) {
         Intrinsics.e(this$0, "this$0");
-        if (this$0.f14635c.isGroup()) {
+        if (this$0.c.isGroup()) {
             EventTrackLive.a(LiveProtos.Event.LIVE_PK_MORE_SCORE_BTN_CLICK, LiveRoomManager.a().e(), LiveRoomManager.a().g());
         } else {
             EventTrackLive.a(LiveProtos.Event.LIVE_PK_SCORE_BTN_CLICK, LiveRoomManager.a().e(), LiveRoomManager.a().g());
         }
-        if (((int) this$0.f14635c.score) == 0) {
-            if (TextUtils.equals(this$0.f14635c.uid, LiveRoomManager.a().g())) {
+        if (((int) this$0.c.score) == 0) {
+            if (TextUtils.equals(this$0.c.uid, LiveRoomManager.a().g())) {
                 LiveRefreshUIObserver.a().j();
                 return;
             }
             return;
         }
         LivePkBannerModel livePkBannerModel = new LivePkBannerModel();
-        if (this$0.f14635c.result == 1) {
+        if (this$0.c.result == 1) {
             livePkBannerModel.pk_state = 2;
-        } else if (this$0.f14635c.result == 2) {
+        } else if (this$0.c.result == 2) {
             livePkBannerModel.pk_state = 1;
         } else {
             livePkBannerModel.pk_state = 0;
         }
-        livePkBannerModel.lid = this$0.f14635c.lid;
-        livePkBannerModel.name = this$0.f14635c.name;
-        livePkBannerModel.fromGroup = this$0.f14635c.isGroup();
+        livePkBannerModel.lid = this$0.c.lid;
+        livePkBannerModel.name = this$0.c.name;
+        livePkBannerModel.fromGroup = this$0.c.isGroup();
         LiveEventBus.get("live_multi_pk_rank").post(livePkBannerModel);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void e(LiveMultiPKItemView this$0, View view) {
         Intrinsics.e(this$0, "this$0");
-        StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
-        String a2 = PermissionUtils.a(R.string.live_mute_audio_playing_close_other);
-        Intrinsics.c(a2, "getString(R.string.live_…udio_playing_close_other)");
-        String format = String.format(a2, Arrays.copyOf(new Object[]{this$0.f14635c.name}, 1));
+        StringCompanionObject stringCompanionObject = StringCompanionObject.a;
+        String a = PermissionUtils.a(R.string.live_mute_audio_playing_close_other);
+        Intrinsics.c(a, "getString(R.string.live_…udio_playing_close_other)");
+        String format = String.format(a, Arrays.copyOf(new Object[]{this$0.c.name}, 1));
         Intrinsics.c(format, "format(format, *args)");
         ToastUtils.a(format, 0);
-        EventTrackLive.g(LiveProtos.Event.LIVE_PK_USER_VOICE_ICON_CLICK, LiveRoomManager.a().e(), LiveRoomManager.a().g(), this$0.f14635c.uid, this$0.f14635c.lid);
+        EventTrackLive.g(LiveProtos.Event.LIVE_PK_USER_VOICE_ICON_CLICK, LiveRoomManager.a().e(), LiveRoomManager.a().g(), this$0.c.uid, this$0.c.lid);
     }
 
     private final void f() {
         TextView textView = getViewBinding().s;
-        LiveInviteUserModel liveInviteUserModel = this.f14635c;
+        LiveInviteUserModel liveInviteUserModel = this.c;
         Intrinsics.a(liveInviteUserModel);
         textView.setText(b(liveInviteUserModel.win_streak));
         TranslateAnimation translateAnimation = new TranslateAnimation(1, 0.0f, 1, 0.0f, 1, 0.0f, 1, this.f ? -1.0f : 1.0f);
@@ -432,7 +428,7 @@ public final class LiveMultiPKItemView extends FrameLayout implements View.OnCli
 
     private final void i() {
         TextView textView = getViewBinding().q;
-        LiveInviteUserModel liveInviteUserModel = this.f14635c;
+        LiveInviteUserModel liveInviteUserModel = this.c;
         Intrinsics.a(liveInviteUserModel);
         textView.setText(a(liveInviteUserModel.score));
         TranslateAnimation translateAnimation = new TranslateAnimation(1, 0.0f, 1, 0.0f, 1, 0.0f, 1, -1.0f);
@@ -470,17 +466,17 @@ public final class LiveMultiPKItemView extends FrameLayout implements View.OnCli
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: setPkData$lambda-5  reason: not valid java name */
-    public static final void m4229setPkData$lambda5(View view) {
+    public static final void m10307setPkData$lambda5(View view) {
         LiveSetDataObserver.a().b(LiveRoomInfo.a().G(), 25);
     }
 
     public final void a() {
-        if (this.f14635c.isGroup()) {
+        if (this.c.isGroup()) {
             ShapeModel shapeModel = new ShapeModel();
             ShapeModel shapeModel2 = new ShapeModel();
             shapeModel2.H = DensityUtils.a(getContext(), 30.0f);
             shapeModel.H = DensityUtils.a(getContext(), 30.0f);
-            if (this.f14635c.isMyGroup()) {
+            if (this.c.isMyGroup()) {
                 shapeModel2.t = ContextCompat.getColor(getContext(), R.color.syc_dark_664081FF);
                 shapeModel2.v = ContextCompat.getColor(getContext(), R.color.syc_dark_2D80FF);
                 shapeModel.t = ContextCompat.getColor(getContext(), R.color.syc_dark_003E68B8);
@@ -521,9 +517,9 @@ public final class LiveMultiPKItemView extends FrameLayout implements View.OnCli
             throw new NullPointerException("null cannot be cast to non-null type android.view.ViewGroup.MarginLayoutParams");
         }
         ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) layoutParams;
-        LiveInviteUserModel liveInviteUserModel = this.f14635c;
+        LiveInviteUserModel liveInviteUserModel = this.c;
         Intrinsics.a(liveInviteUserModel);
-        if (!TextUtils.equals(liveInviteUserModel.uid, LiveRoomManager.a().g()) || this.f14635c.win_streak > 0) {
+        if (!TextUtils.equals(liveInviteUserModel.uid, LiveRoomManager.a().g()) || this.c.win_streak > 0) {
             marginLayoutParams.bottomMargin = DensityUtils.a(AppInfo.d(), 30.5f);
         } else {
             marginLayoutParams.bottomMargin = DensityUtils.a(AppInfo.d(), 7.5f);
@@ -534,15 +530,15 @@ public final class LiveMultiPKItemView extends FrameLayout implements View.OnCli
         ShapeModel shapeModel4 = new ShapeModel();
         shapeModel3.H = DensityUtils.a(getContext(), 20.0f);
         shapeModel4.H = DensityUtils.a(getContext(), 20.0f);
-        if (this.f14635c.win_streak > 0) {
-            if (!this.f14635c.isGroup()) {
+        if (this.c.win_streak > 0) {
+            if (!this.c.isGroup()) {
                 shapeModel4.t = ContextCompat.getColor(getContext(), R.color.syc_dark_66DB19D3);
                 shapeModel4.v = ContextCompat.getColor(getContext(), R.color.syc_dark_DB19D3);
                 shapeModel3.t = ContextCompat.getColor(getContext(), R.color.syc_dark_008C379F);
                 shapeModel3.v = ContextCompat.getColor(getContext(), R.color.syc_dark_8C379F);
                 LiveMultiConnectionItemViewBinding viewBinding14 = getViewBinding();
                 (viewBinding14 == null ? null : viewBinding14.h).setImageResource(R.drawable.live_multi_streak_icon);
-            } else if (this.f14635c.isMyGroup()) {
+            } else if (this.c.isMyGroup()) {
                 shapeModel4.t = ContextCompat.getColor(getContext(), R.color.syc_dark_664081FF);
                 shapeModel4.v = ContextCompat.getColor(getContext(), R.color.syc_dark_2D80FF);
                 shapeModel3.t = ContextCompat.getColor(getContext(), R.color.syc_dark_003E68B8);
@@ -560,26 +556,26 @@ public final class LiveMultiPKItemView extends FrameLayout implements View.OnCli
             LiveMultiConnectionItemViewBinding viewBinding17 = getViewBinding();
             (viewBinding17 == null ? null : viewBinding17.b).setShapeModel(shapeModel4);
             LiveMultiConnectionItemViewBinding viewBinding18 = getViewBinding();
-            (viewBinding18 == null ? null : viewBinding18.f12287a).setShapeModel(shapeModel3);
+            (viewBinding18 == null ? null : viewBinding18.a).setShapeModel(shapeModel3);
         }
     }
 
     public final void a(double d, int i) {
         Log.i("xpz", "updatePkScore:" + d + " rank:" + i);
-        LiveInviteUserModel liveInviteUserModel = this.f14635c;
+        LiveInviteUserModel liveInviteUserModel = this.c;
         if (liveInviteUserModel == null) {
             return;
         }
         Intrinsics.a(liveInviteUserModel);
         liveInviteUserModel.score = d;
-        LiveInviteUserModel liveInviteUserModel2 = this.f14635c;
+        LiveInviteUserModel liveInviteUserModel2 = this.c;
         Intrinsics.a(liveInviteUserModel2);
         liveInviteUserModel2.rank = i;
         ShapeModel shapeModel = new ShapeModel();
         shapeModel.H = DensityUtils.a(getContext(), 20.0f);
-        if (StringUtils.a(this.f14635c.my_group_id, 0) == 0) {
+        if (StringUtils.a(this.c.my_group_id, 0) == 0) {
             shapeModel.q = DensityUtils.a(getContext(), 0.5f);
-            LiveInviteUserModel liveInviteUserModel3 = this.f14635c;
+            LiveInviteUserModel liveInviteUserModel3 = this.c;
             Intrinsics.a(liveInviteUserModel3);
             if (liveInviteUserModel3.rank == 1) {
                 shapeModel.k = ContextCompat.getColor(getContext(), R.color.syc_dark_85774F01);
@@ -587,7 +583,7 @@ public final class LiveMultiPKItemView extends FrameLayout implements View.OnCli
                 LiveMultiConnectionItemViewBinding viewBinding = getViewBinding();
                 (viewBinding == null ? null : viewBinding.d).setImageResource(R.drawable.live_multi_rank_1);
             } else {
-                LiveInviteUserModel liveInviteUserModel4 = this.f14635c;
+                LiveInviteUserModel liveInviteUserModel4 = this.c;
                 Intrinsics.a(liveInviteUserModel4);
                 if (liveInviteUserModel4.rank == 2) {
                     shapeModel.k = ContextCompat.getColor(getContext(), R.color.syc_dark_66000000);
@@ -595,7 +591,7 @@ public final class LiveMultiPKItemView extends FrameLayout implements View.OnCli
                     LiveMultiConnectionItemViewBinding viewBinding2 = getViewBinding();
                     (viewBinding2 == null ? null : viewBinding2.d).setImageResource(R.drawable.live_multi_rank_2);
                 } else {
-                    LiveInviteUserModel liveInviteUserModel5 = this.f14635c;
+                    LiveInviteUserModel liveInviteUserModel5 = this.c;
                     Intrinsics.a(liveInviteUserModel5);
                     if (liveInviteUserModel5.rank == 3) {
                         shapeModel.k = ContextCompat.getColor(getContext(), R.color.syc_dark_66000000);
@@ -603,7 +599,7 @@ public final class LiveMultiPKItemView extends FrameLayout implements View.OnCli
                         LiveMultiConnectionItemViewBinding viewBinding3 = getViewBinding();
                         (viewBinding3 == null ? null : viewBinding3.d).setImageResource(R.drawable.live_multi_rank_3);
                     } else {
-                        LiveInviteUserModel liveInviteUserModel6 = this.f14635c;
+                        LiveInviteUserModel liveInviteUserModel6 = this.c;
                         Intrinsics.a(liveInviteUserModel6);
                         if (liveInviteUserModel6.rank == 4) {
                             shapeModel.k = ContextCompat.getColor(getContext(), R.color.syc_dark_66000000);
@@ -619,7 +615,7 @@ public final class LiveMultiPKItemView extends FrameLayout implements View.OnCli
                     }
                 }
             }
-            LiveInviteUserModel liveInviteUserModel7 = this.f14635c;
+            LiveInviteUserModel liveInviteUserModel7 = this.c;
             Intrinsics.a(liveInviteUserModel7);
             if (((int) liveInviteUserModel7.score) == 0) {
                 LiveMultiConnectionItemViewBinding viewBinding6 = getViewBinding();
@@ -627,7 +623,7 @@ public final class LiveMultiPKItemView extends FrameLayout implements View.OnCli
             }
         } else {
             shapeModel.q = DensityUtils.a(getContext(), 0.5f);
-            if (StringUtils.a(this.f14635c.group_id, 0) == StringUtils.a(this.f14635c.my_group_id, 0)) {
+            if (StringUtils.a(this.c.group_id, 0) == StringUtils.a(this.c.my_group_id, 0)) {
                 shapeModel.t = ContextCompat.getColor(getContext(), R.color.syc_dark_2D80FF);
                 shapeModel.v = ContextCompat.getColor(getContext(), R.color.syc_dark_664081FF);
                 LiveMultiConnectionItemViewBinding viewBinding7 = getViewBinding();
@@ -646,23 +642,23 @@ public final class LiveMultiPKItemView extends FrameLayout implements View.OnCli
         }
         LiveMultiConnectionItemViewBinding viewBinding10 = getViewBinding();
         if ((viewBinding10 == null ? null : viewBinding10.k).getVisibility() == 0) {
-            if (this.f14635c.scoreChanged) {
+            if (this.c.scoreChanged) {
                 i();
                 return;
             }
             LiveMultiConnectionItemViewBinding viewBinding11 = getViewBinding();
             TextView textView = viewBinding11 == null ? null : viewBinding11.p;
-            LiveInviteUserModel liveInviteUserModel8 = this.f14635c;
+            LiveInviteUserModel liveInviteUserModel8 = this.c;
             Intrinsics.a(liveInviteUserModel8);
             textView.setText(a(liveInviteUserModel8.score));
             return;
         }
-        if (this.f14635c.isGroup()) {
+        if (this.c.isGroup()) {
             EventTrackLive.a(LiveProtos.Event.LIVE_PK_MORE_SCORE_BTN_SHOW, LiveRoomManager.a().e(), LiveRoomManager.a().g());
         }
         LiveMultiConnectionItemViewBinding viewBinding12 = getViewBinding();
         TextView textView2 = viewBinding12 == null ? null : viewBinding12.p;
-        LiveInviteUserModel liveInviteUserModel9 = this.f14635c;
+        LiveInviteUserModel liveInviteUserModel9 = this.c;
         Intrinsics.a(liveInviteUserModel9);
         textView2.setText(a(liveInviteUserModel9.score));
         LiveMultiConnectionItemViewBinding viewBinding13 = getViewBinding();
@@ -676,11 +672,11 @@ public final class LiveMultiPKItemView extends FrameLayout implements View.OnCli
         if (layoutParams == null) {
             throw new NullPointerException("null cannot be cast to non-null type android.view.ViewGroup.MarginLayoutParams");
         }
-        objectRef.f42545a = (ViewGroup.MarginLayoutParams) layoutParams;
-        ((ViewGroup.MarginLayoutParams) objectRef.f42545a).width = 0;
-        ((ViewGroup.MarginLayoutParams) objectRef.f42545a).height = 0;
-        ((ViewGroup.MarginLayoutParams) objectRef.f42545a).leftMargin = DensityUtils.a(AppInfo.d(), 31.5f) - (((ViewGroup.MarginLayoutParams) objectRef.f42545a).width / 2);
-        getViewBinding().g.setLayoutParams((ViewGroup.LayoutParams) objectRef.f42545a);
+        objectRef.a = (ViewGroup.MarginLayoutParams) layoutParams;
+        ((ViewGroup.MarginLayoutParams) objectRef.a).width = 0;
+        ((ViewGroup.MarginLayoutParams) objectRef.a).height = 0;
+        ((ViewGroup.MarginLayoutParams) objectRef.a).leftMargin = DensityUtils.a(AppInfo.d(), 31.5f) - (((ViewGroup.MarginLayoutParams) objectRef.a).width / 2);
+        getViewBinding().g.setLayoutParams((ViewGroup.LayoutParams) objectRef.a);
         if (i == 1) {
             getViewBinding().g.setImageResource(R.drawable.live_multi_pk_fail);
         } else if (i != 2) {
@@ -700,11 +696,11 @@ public final class LiveMultiPKItemView extends FrameLayout implements View.OnCli
                     throw new NullPointerException("null cannot be cast to non-null type kotlin.Int");
                 }
                 int intValue = ((Integer) animatedValue).intValue();
-                objectRef.f42545a.width = intValue;
-                objectRef.f42545a.height = intValue;
-                objectRef.f42545a.leftMargin = DensityUtils.a(AppInfo.d(), 26.5f) - (objectRef.f42545a.width / 2);
-                objectRef.f42545a.bottomMargin = DensityUtils.a(AppInfo.d(), 52.5f) - (objectRef.f42545a.height / 2);
-                this.getViewBinding().g.setLayoutParams(objectRef.f42545a);
+                objectRef.a.width = intValue;
+                objectRef.a.height = intValue;
+                objectRef.a.leftMargin = DensityUtils.a(AppInfo.d(), 26.5f) - (objectRef.a.width / 2);
+                objectRef.a.bottomMargin = DensityUtils.a(AppInfo.d(), 52.5f) - (objectRef.a.height / 2);
+                this.getViewBinding().g.setLayoutParams(objectRef.a);
             }
         });
         ofInt.start();
@@ -712,7 +708,7 @@ public final class LiveMultiPKItemView extends FrameLayout implements View.OnCli
 
     public final void a(int i, int i2) {
         Log.i("xpz", "updateWinStreak");
-        LiveInviteUserModel liveInviteUserModel = this.f14635c;
+        LiveInviteUserModel liveInviteUserModel = this.c;
         if (liveInviteUserModel == null) {
             return;
         }
@@ -737,8 +733,8 @@ public final class LiveMultiPKItemView extends FrameLayout implements View.OnCli
         AlphaAnimation alphaAnimation2 = new AlphaAnimation(!liveInviteUserModel.show_btm ? 0.0f : 1.0f, !liveInviteUserModel.show_btm ? 1.0f : 0.0f);
         alphaAnimation.setDuration(160L);
         alphaAnimation2.setDuration(160L);
-        Rotate3dAnimation rotate3dAnimation = new Rotate3dAnimation(liveInviteUserModel.show_btm ? -270.0f : 0.0f, liveInviteUserModel.show_btm ? -360.0f : -90.0f, width, height, 0.0f, Rotate3dAnimation.f11720a, true);
-        Rotate3dAnimation rotate3dAnimation2 = new Rotate3dAnimation(!liveInviteUserModel.show_btm ? -270.0f : 0.0f, !liveInviteUserModel.show_btm ? -360.0f : -90.0f, width, height, 0.0f, Rotate3dAnimation.f11720a, true);
+        Rotate3dAnimation rotate3dAnimation = new Rotate3dAnimation(liveInviteUserModel.show_btm ? -270.0f : 0.0f, liveInviteUserModel.show_btm ? -360.0f : -90.0f, width, height, 0.0f, Rotate3dAnimation.a, true);
+        Rotate3dAnimation rotate3dAnimation2 = new Rotate3dAnimation(!liveInviteUserModel.show_btm ? -270.0f : 0.0f, !liveInviteUserModel.show_btm ? -360.0f : -90.0f, width, height, 0.0f, Rotate3dAnimation.a, true);
         rotate3dAnimation.setDuration(160L);
         rotate3dAnimation2.setDuration(160L);
         animationSet.addAnimation(alphaAnimation);
@@ -882,7 +878,7 @@ public final class LiveMultiPKItemView extends FrameLayout implements View.OnCli
                     }
                 });
             }
-            LiveInviteUserModel liveInviteUserModel = this.f14635c;
+            LiveInviteUserModel liveInviteUserModel = this.c;
             if (liveInviteUserModel == null) {
                 return;
             }
@@ -898,7 +894,7 @@ public final class LiveMultiPKItemView extends FrameLayout implements View.OnCli
                 }
             });
         }
-        LiveInviteUserModel liveInviteUserModel2 = this.f14635c;
+        LiveInviteUserModel liveInviteUserModel2 = this.c;
         if (liveInviteUserModel2 == null) {
             return;
         }
@@ -907,8 +903,8 @@ public final class LiveMultiPKItemView extends FrameLayout implements View.OnCli
 
     public final void b() {
         c();
-        this.f14635c.status = 0;
-        if (TextUtils.equals(this.f14635c.uid, LiveRoomManager.a().g())) {
+        this.c.status = 0;
+        if (TextUtils.equals(this.c.uid, LiveRoomManager.a().g())) {
             LiveMultiConnectionItemViewBinding viewBinding = getViewBinding();
             (viewBinding == null ? null : viewBinding.l).setVisibility(8);
         } else {
@@ -927,7 +923,7 @@ public final class LiveMultiPKItemView extends FrameLayout implements View.OnCli
             ImageView imageView = viewBinding6 == null ? null : viewBinding6.f;
             Intrinsics.c(imageView, "viewBinding?.ivPkVoiceSwitch");
             BluedViewExKt.a(imageView);
-            this.f14635c.voice_disable = 0;
+            this.c.voice_disable = 0;
             return;
         }
         LiveMultiConnectionItemViewBinding viewBinding7 = getViewBinding();
@@ -936,13 +932,13 @@ public final class LiveMultiPKItemView extends FrameLayout implements View.OnCli
         BluedViewExKt.a(imageView2);
         LiveMultiConnectionItemViewBinding viewBinding8 = getViewBinding();
         (viewBinding8 == null ? null : viewBinding8.f).setImageResource(R.drawable.live_icon_pk_voice_open);
-        this.f14635c.voice_disable = 0;
-        a(this.f14635c, false);
+        this.c.voice_disable = 0;
+        a(this.c, false);
     }
 
     public final void b(int i, int i2) {
         Log.i("xpz", "setResult");
-        LiveInviteUserModel liveInviteUserModel = this.f14635c;
+        LiveInviteUserModel liveInviteUserModel = this.c;
         Intrinsics.a(liveInviteUserModel);
         liveInviteUserModel.animing = false;
         a(i, i2);
@@ -962,7 +958,7 @@ public final class LiveMultiPKItemView extends FrameLayout implements View.OnCli
 
     public final void c() {
         removeCallbacks(this.e);
-        LiveInviteUserModel liveInviteUserModel = this.f14635c;
+        LiveInviteUserModel liveInviteUserModel = this.c;
         if (liveInviteUserModel == null) {
             return;
         }
@@ -971,14 +967,14 @@ public final class LiveMultiPKItemView extends FrameLayout implements View.OnCli
 
     public final void d() {
         c();
-        LiveInviteUserModel liveInviteUserModel = this.f14635c;
+        LiveInviteUserModel liveInviteUserModel = this.c;
         Intrinsics.a(liveInviteUserModel);
         boolean z = false;
         ShapeLinearLayout shapeLinearLayout = null;
         if (TextUtils.equals(liveInviteUserModel.uid, LiveRoomManager.a().g())) {
             LiveMultiConnectionItemViewBinding viewBinding = getViewBinding();
             (viewBinding == null ? null : viewBinding.l).setVisibility(8);
-            LiveInviteUserModel liveInviteUserModel2 = this.f14635c;
+            LiveInviteUserModel liveInviteUserModel2 = this.c;
             Intrinsics.a(liveInviteUserModel2);
             if (liveInviteUserModel2.win_streak > 0) {
                 LiveMultiConnectionItemViewBinding viewBinding2 = getViewBinding();
@@ -989,7 +985,7 @@ public final class LiveMultiPKItemView extends FrameLayout implements View.OnCli
             (viewBinding3 == null ? null : viewBinding3.j).setVisibility(8);
             return;
         }
-        LiveInviteUserModel liveInviteUserModel3 = this.f14635c;
+        LiveInviteUserModel liveInviteUserModel3 = this.c;
         Intrinsics.a(liveInviteUserModel3);
         if (liveInviteUserModel3.win_streak <= 0) {
             LiveMultiConnectionItemViewBinding viewBinding4 = getViewBinding();
@@ -998,7 +994,7 @@ public final class LiveMultiPKItemView extends FrameLayout implements View.OnCli
             (viewBinding5 == null ? null : viewBinding5.j).setVisibility(8);
             return;
         }
-        LiveInviteUserModel liveInviteUserModel4 = this.f14635c;
+        LiveInviteUserModel liveInviteUserModel4 = this.c;
         if (liveInviteUserModel4 != null) {
             LiveMultiConnectionItemViewBinding viewBinding6 = getViewBinding();
             if (viewBinding6 != null) {
@@ -1016,7 +1012,7 @@ public final class LiveMultiPKItemView extends FrameLayout implements View.OnCli
         TextView textView;
         LiveMultiConnectionItemViewBinding viewBinding = getViewBinding();
         TextView textView2 = null;
-        boolean z = (viewBinding == null ? null : viewBinding.f12288c).getVisibility() == 0;
+        boolean z = (viewBinding == null ? null : viewBinding.c).getVisibility() == 0;
         LiveMultiConnectionItemViewBinding viewBinding2 = getViewBinding();
         ViewGroup.LayoutParams layoutParams = (viewBinding2 == null || (textView = viewBinding2.o) == null) ? null : textView.getLayoutParams();
         if (layoutParams instanceof ViewGroup.MarginLayoutParams) {
@@ -1037,11 +1033,11 @@ public final class LiveMultiPKItemView extends FrameLayout implements View.OnCli
     }
 
     public final LiveInviteUserModel getItem() {
-        return this.f14635c;
+        return this.c;
     }
 
     public final Context getMContext() {
-        return this.f14634a;
+        return this.a;
     }
 
     public final Runnable getRotateRunnable() {
@@ -1093,7 +1089,7 @@ public final class LiveMultiPKItemView extends FrameLayout implements View.OnCli
     public final void setData(LiveInviteUserModel model) {
         TextView textView;
         Intrinsics.e(model, "model");
-        this.f14635c = model;
+        this.c = model;
         c();
         try {
             LiveMultiConnectionItemViewBinding viewBinding = getViewBinding();
@@ -1107,9 +1103,9 @@ public final class LiveMultiPKItemView extends FrameLayout implements View.OnCli
         (viewBinding3 == null ? null : viewBinding3.n).setVisibility(8);
         LiveMultiConnectionItemViewBinding viewBinding4 = getViewBinding();
         if (viewBinding4 != null && (textView = viewBinding4.o) != null) {
-            textView.setText(this.f14635c.name);
+            textView.setText(this.c.name);
         }
-        if (TextUtils.equals(this.f14635c.uid, LiveRoomManager.a().g())) {
+        if (TextUtils.equals(this.c.uid, LiveRoomManager.a().g())) {
             LiveMultiConnectionItemViewBinding viewBinding5 = getViewBinding();
             (viewBinding5 == null ? null : viewBinding5.l).setVisibility(8);
         } else {
@@ -1117,7 +1113,7 @@ public final class LiveMultiPKItemView extends FrameLayout implements View.OnCli
             (viewBinding6 == null ? null : viewBinding6.l).setVisibility(0);
         }
         final Ref.BooleanRef booleanRef = new Ref.BooleanRef();
-        booleanRef.f42538a = TextUtils.equals(LiveRoomInfo.a().f(), LiveRoomManager.a().g());
+        booleanRef.a = TextUtils.equals(LiveRoomInfo.a().f(), LiveRoomManager.a().g());
         setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.-$$Lambda$LiveMultiPKItemView$lisdY6R5YN3JYVHDr8DttKdrgC8
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -1125,44 +1121,44 @@ public final class LiveMultiPKItemView extends FrameLayout implements View.OnCli
             }
         });
         LiveMultiConnectionItemViewBinding viewBinding7 = getViewBinding();
-        (viewBinding7 == null ? null : viewBinding7.f12288c).setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.-$$Lambda$LiveMultiPKItemView$0CrdiSWR6l4JmKfUJd0pjsbQiiw
+        (viewBinding7 == null ? null : viewBinding7.c).setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.-$$Lambda$LiveMultiPKItemView$0CrdiSWR6l4JmKfUJd0pjsbQiiw
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 LiveMultiPKItemView.a(LiveMultiPKItemView.this, view);
             }
         });
-        String str = this.f14635c.uid;
+        String str = this.c.uid;
         LiveMultiConnectionItemViewBinding viewBinding8 = getViewBinding();
-        a(str, viewBinding8 == null ? null : viewBinding8.f12288c, (IRequestHost) null);
+        a(str, viewBinding8 == null ? null : viewBinding8.c, (IRequestHost) null);
     }
 
     public final void setItem(LiveInviteUserModel liveInviteUserModel) {
         Intrinsics.e(liveInviteUserModel, "<set-?>");
-        this.f14635c = liveInviteUserModel;
+        this.c = liveInviteUserModel;
     }
 
     public final void setMContext(Context context) {
-        this.f14634a = context;
+        this.a = context;
     }
 
     public final void setPkData(LiveInviteUserModel model) {
         CardView cardView;
         ShapeLinearLayout shapeLinearLayout;
         Intrinsics.e(model, "model");
-        this.f14635c = model;
+        this.c = model;
         Log.i("xpz", Intrinsics.a("setPkData:", (Object) model.uid));
         c();
         LiveMultiConnectionItemViewBinding viewBinding = getViewBinding();
         (viewBinding == null ? null : viewBinding.d).setVisibility(0);
         LiveMultiConnectionItemViewBinding viewBinding2 = getViewBinding();
         (viewBinding2 == null ? null : viewBinding2.e).setVisibility(8);
-        if (this.f14635c.voice_disable == -1 || TextUtils.equals(this.f14635c.uid, LiveRoomInfo.a().f())) {
+        if (this.c.voice_disable == -1 || TextUtils.equals(this.c.uid, LiveRoomInfo.a().f())) {
             LiveMultiConnectionItemViewBinding viewBinding3 = getViewBinding();
             ImageView imageView = viewBinding3 == null ? null : viewBinding3.f;
             Intrinsics.c(imageView, "viewBinding?.ivPkVoiceSwitch");
             BluedViewExKt.a(imageView);
         } else if (TextUtils.equals(LiveRoomInfo.a().f(), LiveRoomManager.a().g())) {
-            int i = this.f14635c.voice_disable;
+            int i = this.c.voice_disable;
             if (i == 0) {
                 LiveMultiConnectionItemViewBinding viewBinding4 = getViewBinding();
                 (viewBinding4 == null ? null : viewBinding4.f).setImageResource(R.drawable.live_icon_pk_voice_open);
@@ -1181,8 +1177,8 @@ public final class LiveMultiPKItemView extends FrameLayout implements View.OnCli
                     LiveMultiPKItemView.b(LiveMultiPKItemView.this, view);
                 }
             });
-            EventTrackLive.q(LiveProtos.Event.LIVE_PK_VOICE_ICON_SHOW, LiveRoomManager.a().e(), this.f14635c.uid, this.f14635c.lid);
-        } else if (this.f14635c.voice_disable == 1) {
+            EventTrackLive.q(LiveProtos.Event.LIVE_PK_VOICE_ICON_SHOW, LiveRoomManager.a().e(), this.c.uid, this.c.lid);
+        } else if (this.c.voice_disable == 1) {
             LiveMultiConnectionItemViewBinding viewBinding8 = getViewBinding();
             (viewBinding8 == null ? null : viewBinding8.f).setImageResource(R.drawable.live_icon_pk_voice_close);
             LiveMultiConnectionItemViewBinding viewBinding9 = getViewBinding();
@@ -1204,8 +1200,8 @@ public final class LiveMultiPKItemView extends FrameLayout implements View.OnCli
             BluedViewExKt.a(imageView4);
         }
         a();
-        a(-1, this.f14635c.win_streak);
-        a(this.f14635c.score, this.f14635c.rank);
+        a(-1, this.c.win_streak);
+        a(this.c.score, this.c.rank);
         LiveMultiConnectionItemViewBinding viewBinding12 = getViewBinding();
         if (viewBinding12 != null && (shapeLinearLayout = viewBinding12.k) != null) {
             shapeLinearLayout.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.-$$Lambda$LiveMultiPKItemView$_X-2UT71MgTBGLUhGP1qV2kkXcE
@@ -1222,7 +1218,7 @@ public final class LiveMultiPKItemView extends FrameLayout implements View.OnCli
         cardView.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.-$$Lambda$LiveMultiPKItemView$Cn9hE6nvUM8GnApiB2Tw4D_Nybs
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                LiveMultiPKItemView.m4229setPkData$lambda5(view);
+                LiveMultiPKItemView.m10307setPkData$lambda5(view);
             }
         });
     }
@@ -1232,11 +1228,11 @@ public final class LiveMultiPKItemView extends FrameLayout implements View.OnCli
         ImageView imageView = null;
         if (TextUtils.equals(str2, "1") || TextUtils.equals(str2, "3")) {
             LiveMultiConnectionItemViewBinding viewBinding = getViewBinding();
-            (viewBinding == null ? null : viewBinding.f12288c).setVisibility(8);
+            (viewBinding == null ? null : viewBinding.c).setVisibility(8);
         } else {
             LiveMultiConnectionItemViewBinding viewBinding2 = getViewBinding();
             if (viewBinding2 != null) {
-                imageView = viewBinding2.f12288c;
+                imageView = viewBinding2.c;
             }
             imageView.setVisibility(0);
         }

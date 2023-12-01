@@ -98,7 +98,7 @@ public final class a extends com.kwad.components.ad.reward.presenter.a implement
             }
             return;
         }
-        this.qt.f23926pl = true;
+        this.qt.pl = true;
         if (!com.kwad.components.ad.reward.j.q(this.mAdTemplate)) {
             notifyRewardVerify();
             ie();
@@ -119,7 +119,7 @@ public final class a extends com.kwad.components.ad.reward.presenter.a implement
             return;
         }
         this.uz.setText(uD[1]);
-        m7647if();
+        m4640if();
     }
 
     static /* synthetic */ boolean a(a aVar, boolean z) {
@@ -181,7 +181,7 @@ public final class a extends com.kwad.components.ad.reward.presenter.a implement
     }
 
     /* renamed from: if  reason: not valid java name */
-    private void m7647if() {
+    private void m4640if() {
         if (this.qt.mAdRewardStepListener != null) {
             this.qt.mAdRewardStepListener.fo();
         }
@@ -239,7 +239,7 @@ public final class a extends com.kwad.components.ad.reward.presenter.a implement
     public final void onClick(View view) {
         Tracker.onClick(view);
         if (view == this.uA || view == this.uB) {
-            com.kwad.components.core.d.b.a.a(new a.C0519a(view.getContext()).I(this.mAdTemplate).b(this.mApkDownloadHelper).ap(2).q(this.qt.oN.getPlayDuration()).a(new a.b() { // from class: com.kwad.components.ad.reward.presenter.platdetail.kwai.a.7
+            com.kwad.components.core.d.b.a.a(new a.C0349a(view.getContext()).I(this.mAdTemplate).b(this.mApkDownloadHelper).ap(2).q(this.qt.oN.getPlayDuration()).a(new a.b() { // from class: com.kwad.components.ad.reward.presenter.platdetail.kwai.a.7
                 @Override // com.kwad.components.core.d.b.a.b
                 public final void onAdClicked() {
                     a.this.notifyAdClick();

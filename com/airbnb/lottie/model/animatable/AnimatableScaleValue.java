@@ -22,7 +22,7 @@ public class AnimatableScaleValue extends BaseAnimatableValue<ScaleXY, ScaleXY> 
 
     @Override // com.airbnb.lottie.model.animatable.AnimatableValue
     public BaseKeyframeAnimation<ScaleXY, ScaleXY> a() {
-        return new ScaleKeyframeAnimation(this.f4334a);
+        return new ScaleKeyframeAnimation(this.a);
     }
 
     @Override // com.airbnb.lottie.model.animatable.BaseAnimatableValue, com.airbnb.lottie.model.animatable.AnimatableValue

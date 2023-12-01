@@ -60,15 +60,15 @@ public final class YYRedEnvRoomsFragment extends BaseListFragment<YYRedEnvRoomsV
     /* JADX INFO: Access modifiers changed from: private */
     public static final void b(YYRedEnvRoomsFragment this$0, View view) {
         Intrinsics.e(this$0, "this$0");
-        ((YYRedEnvRoomsViewModel) this$0.y()).dispatchAction(BaseListAction.RefreshData.f10668a);
+        ((YYRedEnvRoomsViewModel) this$0.y()).dispatchAction(BaseListAction.RefreshData.a);
     }
 
     @Override // com.blued.android.module.common.base.mvi.BaseListFragment
     /* renamed from: C */
     public YYRedEnvRoomAdapter i() {
-        FragmentActivity activity = getActivity();
+        BaseFragmentActivity activity = getActivity();
         if (activity != null) {
-            return new YYRedEnvRoomAdapter((BaseFragmentActivity) activity);
+            return new YYRedEnvRoomAdapter(activity);
         }
         throw new NullPointerException("null cannot be cast to non-null type com.blued.android.core.ui.BaseFragmentActivity");
     }
@@ -84,7 +84,7 @@ public final class YYRedEnvRoomsFragment extends BaseListFragment<YYRedEnvRoomsV
         CommonTopTitleNoTrans b2;
         super.m();
         if (StatusBarHelper.a() && (b2 = b()) != null) {
-            b2.setPadding(0, StatusBarHelper.a((Context) getActivity()), 0, 0);
+            b2.setPadding(0, StatusBarHelper.a(getActivity()), 0, 0);
         }
         CommonTopTitleNoTrans b3 = b();
         if (b3 != null) {
@@ -98,17 +98,17 @@ public final class YYRedEnvRoomsFragment extends BaseListFragment<YYRedEnvRoomsV
         if (b5 != null) {
             b5.setLeftImgDrawable(BluedSkinUtils.b(getContext(), R.drawable.icon_title_back));
         }
+        NoDataAndLoadFailView c = c();
+        if (c != null) {
+            c.setNoDataStr(R.string.yy_no_data);
+        }
         NoDataAndLoadFailView c2 = c();
         if (c2 != null) {
-            c2.setNoDataStr(R.string.yy_no_data);
+            c2.setFailBtnVisibility(8);
         }
         NoDataAndLoadFailView c3 = c();
         if (c3 != null) {
-            c3.setFailBtnVisibility(8);
-        }
-        NoDataAndLoadFailView c4 = c();
-        if (c4 != null) {
-            c4.setNoDataBtnListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYRedEnvRoomsFragment$DUKRQBscLUp71gF_0uLBy3qeBHk
+            c3.setNoDataBtnListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYRedEnvRoomsFragment$DUKRQBscLUp71gF_0uLBy3qeBHk
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     YYRedEnvRoomsFragment.a(YYRedEnvRoomsFragment.this, view);
@@ -121,23 +121,23 @@ public final class YYRedEnvRoomsFragment extends BaseListFragment<YYRedEnvRoomsV
         }
         Context context = getContext();
         if (context != null) {
-            NoDataAndLoadFailView c5 = c();
+            NoDataAndLoadFailView c4 = c();
             ShapeTextView shapeTextView = null;
-            ShapeModel shapeModel = (c5 == null || (btn = c5.getBtn()) == null) ? null : btn.getShapeModel();
+            ShapeModel shapeModel = (c4 == null || (btn = c4.getBtn()) == null) ? null : btn.getShapeModel();
             if (shapeModel != null) {
                 shapeModel.b = ContextCompat.getColor(context, R.color.syc_dark_b);
             }
-            NoDataAndLoadFailView c6 = c();
-            if (c6 != null) {
-                shapeTextView = c6.getBtn();
+            NoDataAndLoadFailView c5 = c();
+            if (c5 != null) {
+                shapeTextView = c5.getBtn();
             }
             if (shapeTextView != null) {
                 shapeTextView.setShapeModel(shapeModel);
             }
         }
-        NoDataAndLoadFailView c7 = c();
-        if (c7 != null) {
-            c7.setFailBtnListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYRedEnvRoomsFragment$Q24zK73RB-jDjirS9sT9w9YkCh0
+        NoDataAndLoadFailView c6 = c();
+        if (c6 != null) {
+            c6.setFailBtnListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYRedEnvRoomsFragment$Q24zK73RB-jDjirS9sT9w9YkCh0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     YYRedEnvRoomsFragment.b(YYRedEnvRoomsFragment.this, view);

@@ -7,18 +7,18 @@ import java.util.ArrayList;
 public class i {
 
     /* renamed from: a  reason: collision with root package name */
-    private ArrayList<Boolean> f27683a = new ArrayList<>();
+    private ArrayList<Boolean> f13995a = new ArrayList<>();
     private ArrayList<ByteBuffer> b = new ArrayList<>();
 
     public ByteBuffer a(int i) {
-        if (i < 0 || i >= this.f27683a.size()) {
+        if (i < 0 || i >= this.f13995a.size()) {
             return null;
         }
         return this.b.get(i);
     }
 
     public void a() {
-        this.f27683a.clear();
+        this.f13995a.clear();
         this.b.clear();
     }
 
@@ -29,7 +29,7 @@ public class i {
             if (i4 >= i2) {
                 return;
             }
-            this.f27683a.add(false);
+            this.f13995a.add(false);
             this.b.add(ByteBuffer.allocate(i));
             i3 = i4 + 1;
         }
@@ -39,11 +39,11 @@ public class i {
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f27683a.size()) {
+            if (i2 >= this.f13995a.size()) {
                 return -1;
             }
-            if (!this.f27683a.get(i2).booleanValue()) {
-                this.f27683a.set(i2, true);
+            if (!this.f13995a.get(i2).booleanValue()) {
+                this.f13995a.set(i2, true);
                 return i2;
             }
             i = i2 + 1;
@@ -51,10 +51,10 @@ public class i {
     }
 
     public void b(int i) {
-        if (i < 0 || i >= this.f27683a.size()) {
+        if (i < 0 || i >= this.f13995a.size()) {
             return;
         }
-        this.f27683a.set(i, false);
+        this.f13995a.set(i, false);
         this.b.get(i).clear();
     }
 }

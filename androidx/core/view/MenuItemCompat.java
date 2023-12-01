@@ -148,7 +148,7 @@ public final class MenuItemCompat {
 
     public static void setContentDescription(MenuItem menuItem, CharSequence charSequence) {
         if (menuItem instanceof SupportMenuItem) {
-            ((SupportMenuItem) menuItem).mo1228setContentDescription(charSequence);
+            ((SupportMenuItem) menuItem).mo1090setContentDescription(charSequence);
         } else if (Build.VERSION.SDK_INT >= 26) {
             menuItem.setContentDescription(charSequence);
         }
@@ -208,7 +208,7 @@ public final class MenuItemCompat {
 
     public static void setTooltipText(MenuItem menuItem, CharSequence charSequence) {
         if (menuItem instanceof SupportMenuItem) {
-            ((SupportMenuItem) menuItem).mo1229setTooltipText(charSequence);
+            ((SupportMenuItem) menuItem).mo1091setTooltipText(charSequence);
         } else if (Build.VERSION.SDK_INT >= 26) {
             menuItem.setTooltipText(charSequence);
         }

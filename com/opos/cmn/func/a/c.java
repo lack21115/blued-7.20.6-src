@@ -4,7 +4,7 @@ package com.opos.cmn.func.a;
 public final class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static d f24811a;
+    private static d f11123a;
     private static final byte[] b = new byte[0];
 
     /* JADX WARN: Removed duplicated region for block: B:13:0x003d  */
@@ -21,7 +21,7 @@ public final class c {
             r0 = r5
             if (r0 == 0) goto L25
             a()
-            com.opos.cmn.func.a.d r0 = com.opos.cmn.func.a.c.f24811a     // Catch: java.lang.Exception -> L1c
+            com.opos.cmn.func.a.d r0 = com.opos.cmn.func.a.c.f11123a     // Catch: java.lang.Exception -> L1c
             r1 = r4
             android.content.Context r1 = r1.getApplicationContext()     // Catch: java.lang.Exception -> L1c
             r2 = r5
@@ -85,10 +85,10 @@ public final class c {
     }
 
     private static void a() {
-        if (f24811a == null) {
+        if (f11123a == null) {
             synchronized (b) {
-                if (f24811a == null) {
-                    f24811a = new com.opos.cmn.func.a.a.a();
+                if (f11123a == null) {
+                    f11123a = new com.opos.cmn.func.a.a.a();
                 }
             }
         }

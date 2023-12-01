@@ -20,8 +20,8 @@ import java.nio.ByteBuffer;
 public final class HongbaoRefundExtra extends GeneratedMessageV3 implements HongbaoRefundExtraOrBuilder {
     private static final HongbaoRefundExtra DEFAULT_INSTANCE = new HongbaoRefundExtra();
     private static final Parser<HongbaoRefundExtra> PARSER = new AbstractParser<HongbaoRefundExtra>() { // from class: cn.irisgw.live.HongbaoRefundExtra.1
-        @Override // com.google.protobuf.Parser
-        public HongbaoRefundExtra parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        /* renamed from: parsePartialFrom */
+        public HongbaoRefundExtra m3331parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             return new HongbaoRefundExtra(codedInputStream, extensionRegistryLite);
         }
     };
@@ -51,63 +51,61 @@ public final class HongbaoRefundExtra extends GeneratedMessageV3 implements Hong
             boolean unused = HongbaoRefundExtra.alwaysUseFieldBuilders;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: addRepeatedField */
+        public Builder m3333addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.addRepeatedField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public HongbaoRefundExtra build() {
-            HongbaoRefundExtra buildPartial = buildPartial();
-            if (buildPartial.isInitialized()) {
-                return buildPartial;
+        /* renamed from: build */
+        public HongbaoRefundExtra m3335build() {
+            HongbaoRefundExtra m3337buildPartial = m3337buildPartial();
+            if (m3337buildPartial.isInitialized()) {
+                return m3337buildPartial;
             }
-            throw newUninitializedMessageException((Message) buildPartial);
+            throw newUninitializedMessageException(m3337buildPartial);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public HongbaoRefundExtra buildPartial() {
+        /* renamed from: buildPartial */
+        public HongbaoRefundExtra m3337buildPartial() {
             HongbaoRefundExtra hongbaoRefundExtra = new HongbaoRefundExtra(this);
             hongbaoRefundExtra.refundBeans_ = this.refundBeans_;
             onBuilt();
             return hongbaoRefundExtra;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public Builder clear() {
+        /* renamed from: clear */
+        public Builder m3341clear() {
             super.clear();
-            this.refundBeans_ = 0L;
+            this.refundBeans_ = HongbaoRefundExtra.serialVersionUID;
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+        /* renamed from: clearField */
+        public Builder m3343clearField(Descriptors.FieldDescriptor fieldDescriptor) {
             return (Builder) super.clearField(fieldDescriptor);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+        /* renamed from: clearOneof */
+        public Builder m3346clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
             return (Builder) super.clearOneof(oneofDescriptor);
         }
 
         public Builder clearRefundBeans() {
-            this.refundBeans_ = 0L;
+            this.refundBeans_ = HongbaoRefundExtra.serialVersionUID;
             onChanged();
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder m3352clone() {
+            return (Builder) super.clone();
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public HongbaoRefundExtra getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public HongbaoRefundExtra m3354getDefaultInstanceForType() {
             return HongbaoRefundExtra.getDefaultInstance();
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
         public Descriptors.Descriptor getDescriptorForType() {
             return LiveConstants.internal_static_cn_irisgw_live_HongbaoRefundExtra_descriptor;
         }
@@ -117,12 +115,10 @@ public final class HongbaoRefundExtra extends GeneratedMessageV3 implements Hong
             return this.refundBeans_;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_HongbaoRefundExtra_fieldAccessorTable.ensureFieldAccessorsInitialized(HongbaoRefundExtra.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             return true;
         }
@@ -131,21 +127,21 @@ public final class HongbaoRefundExtra extends GeneratedMessageV3 implements Hong
             if (hongbaoRefundExtra == HongbaoRefundExtra.getDefaultInstance()) {
                 return this;
             }
-            if (hongbaoRefundExtra.getRefundBeans() != 0) {
+            if (hongbaoRefundExtra.getRefundBeans() != HongbaoRefundExtra.serialVersionUID) {
                 setRefundBeans(hongbaoRefundExtra.getRefundBeans());
             }
-            mergeUnknownFields(hongbaoRefundExtra.unknownFields);
+            m3363mergeUnknownFields(hongbaoRefundExtra.unknownFields);
             onChanged();
             return this;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+        /* renamed from: mergeFrom */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
         */
-        public cn.irisgw.live.HongbaoRefundExtra.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+        public cn.irisgw.live.HongbaoRefundExtra.Builder m3360mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
             /*
                 r4 = this;
                 r0 = 0
@@ -190,11 +186,11 @@ public final class HongbaoRefundExtra extends GeneratedMessageV3 implements Hong
                 r0 = r6
                 throw r0
             */
-            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.HongbaoRefundExtra.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.HongbaoRefundExtra$Builder");
+            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.HongbaoRefundExtra.Builder.m3360mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.HongbaoRefundExtra$Builder");
         }
 
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder mergeFrom(Message message) {
+        /* renamed from: mergeFrom */
+        public Builder m3359mergeFrom(Message message) {
             if (message instanceof HongbaoRefundExtra) {
                 return mergeFrom((HongbaoRefundExtra) message);
             }
@@ -202,13 +198,13 @@ public final class HongbaoRefundExtra extends GeneratedMessageV3 implements Hong
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: mergeUnknownFields */
+        public final Builder m3363mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.mergeUnknownFields(unknownFieldSet);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: setField */
+        public Builder m3365setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.setField(fieldDescriptor, obj);
         }
 
@@ -218,13 +214,13 @@ public final class HongbaoRefundExtra extends GeneratedMessageV3 implements Hong
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+        /* renamed from: setRepeatedField */
+        public Builder m3367setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
             return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: setUnknownFields */
+        public final Builder m3369setUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.setUnknownFields(unknownFieldSet);
         }
     }
@@ -251,10 +247,10 @@ public final class HongbaoRefundExtra extends GeneratedMessageV3 implements Hong
                         }
                     }
                     z = true;
-                } catch (InvalidProtocolBufferException e) {
-                    throw e.setUnfinishedMessage(this);
-                } catch (IOException e2) {
-                    throw new InvalidProtocolBufferException(e2).setUnfinishedMessage(this);
+                } catch (IOException e) {
+                    throw new InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+                } catch (InvalidProtocolBufferException e2) {
+                    throw e2.setUnfinishedMessage(this);
                 }
             } finally {
                 this.unknownFields = newBuilder.build();
@@ -277,66 +273,65 @@ public final class HongbaoRefundExtra extends GeneratedMessageV3 implements Hong
     }
 
     public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
+        return DEFAULT_INSTANCE.m3330toBuilder();
     }
 
     public static Builder newBuilder(HongbaoRefundExtra hongbaoRefundExtra) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(hongbaoRefundExtra);
+        return DEFAULT_INSTANCE.m3330toBuilder().mergeFrom(hongbaoRefundExtra);
     }
 
     public static HongbaoRefundExtra parseDelimitedFrom(InputStream inputStream) throws IOException {
-        return (HongbaoRefundExtra) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
     }
 
     public static HongbaoRefundExtra parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (HongbaoRefundExtra) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static HongbaoRefundExtra parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString);
+        return (HongbaoRefundExtra) PARSER.parseFrom(byteString);
     }
 
     public static HongbaoRefundExtra parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString, extensionRegistryLite);
+        return (HongbaoRefundExtra) PARSER.parseFrom(byteString, extensionRegistryLite);
     }
 
     public static HongbaoRefundExtra parseFrom(CodedInputStream codedInputStream) throws IOException {
-        return (HongbaoRefundExtra) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
     }
 
     public static HongbaoRefundExtra parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (HongbaoRefundExtra) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
     }
 
     public static HongbaoRefundExtra parseFrom(InputStream inputStream) throws IOException {
-        return (HongbaoRefundExtra) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
     }
 
     public static HongbaoRefundExtra parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (HongbaoRefundExtra) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static HongbaoRefundExtra parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer);
+        return (HongbaoRefundExtra) PARSER.parseFrom(byteBuffer);
     }
 
     public static HongbaoRefundExtra parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+        return (HongbaoRefundExtra) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
     }
 
     public static HongbaoRefundExtra parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr);
+        return (HongbaoRefundExtra) PARSER.parseFrom(bArr);
     }
 
     public static HongbaoRefundExtra parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr, extensionRegistryLite);
+        return (HongbaoRefundExtra) PARSER.parseFrom(bArr, extensionRegistryLite);
     }
 
     public static Parser<HongbaoRefundExtra> parser() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
@@ -348,12 +343,11 @@ public final class HongbaoRefundExtra extends GeneratedMessageV3 implements Hong
         return super.equals(obj);
     }
 
-    @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-    public HongbaoRefundExtra getDefaultInstanceForType() {
+    /* renamed from: getDefaultInstanceForType */
+    public HongbaoRefundExtra m3325getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
     public Parser<HongbaoRefundExtra> getParserForType() {
         return PARSER;
     }
@@ -363,7 +357,6 @@ public final class HongbaoRefundExtra extends GeneratedMessageV3 implements Hong
         return this.refundBeans_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public int getSerializedSize() {
         int i = this.memoizedSize;
         if (i != -1) {
@@ -371,7 +364,7 @@ public final class HongbaoRefundExtra extends GeneratedMessageV3 implements Hong
         }
         int i2 = 0;
         long j = this.refundBeans_;
-        if (j != 0) {
+        if (j != serialVersionUID) {
             i2 = 0 + CodedOutputStream.computeUInt64Size(1, j);
         }
         int serializedSize = i2 + this.unknownFields.getSerializedSize();
@@ -379,12 +372,10 @@ public final class HongbaoRefundExtra extends GeneratedMessageV3 implements Hong
         return serializedSize;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
     public final UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public int hashCode() {
         if (this.memoizedHashCode != 0) {
             return this.memoizedHashCode;
@@ -394,12 +385,10 @@ public final class HongbaoRefundExtra extends GeneratedMessageV3 implements Hong
         return hashCode;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
         return LiveConstants.internal_static_cn_irisgw_live_HongbaoRefundExtra_fieldAccessorTable.ensureFieldAccessorsInitialized(HongbaoRefundExtra.class, Builder.class);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
     public final boolean isInitialized() {
         byte b = this.memoizedIsInitialized;
         if (b == 1) {
@@ -412,31 +401,29 @@ public final class HongbaoRefundExtra extends GeneratedMessageV3 implements Hong
         return true;
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder newBuilderForType() {
+    /* renamed from: newBuilderForType */
+    public Builder m3328newBuilderForType() {
         return newBuilder();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.protobuf.GeneratedMessageV3
-    public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+    /* renamed from: newBuilderForType */
+    public Builder m3327newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
         return new Builder(builderParent);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
         return new HongbaoRefundExtra();
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder toBuilder() {
+    /* renamed from: toBuilder */
+    public Builder m3330toBuilder() {
         return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
         long j = this.refundBeans_;
-        if (j != 0) {
+        if (j != serialVersionUID) {
             codedOutputStream.writeUInt64(1, j);
         }
         this.unknownFields.writeTo(codedOutputStream);

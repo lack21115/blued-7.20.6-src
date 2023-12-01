@@ -7,21 +7,21 @@ import com.ss.android.socialbase.downloader.constants.MonitorConstants;
 public class x2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static volatile Object f21336a;
+    public static volatile Object f7730a;
 
     public final Object a() {
-        if (f21336a == null) {
+        if (f7730a == null) {
             synchronized (x2.class) {
                 try {
-                    if (f21336a == null) {
-                        f21336a = Class.forName("android.os.SystemProperties").newInstance();
+                    if (f7730a == null) {
+                        f7730a = Class.forName("android.os.SystemProperties").newInstance();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f21336a;
+        return f7730a;
     }
 
     public String a(String str) {

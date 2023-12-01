@@ -14,11 +14,11 @@ import com.soft.blued.R;
 public final class LayoutAdMiniAppDialogBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ImageView f29380a;
+    public final ImageView f15690a;
     public final ImageView b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final ShapeTextView f29381c;
+    public final ShapeTextView f15691c;
     public final TextView d;
     public final ShapeTextView e;
     public final TextView f;
@@ -26,9 +26,9 @@ public final class LayoutAdMiniAppDialogBinding implements ViewBinding {
 
     private LayoutAdMiniAppDialogBinding(LinearLayout linearLayout, ImageView imageView, ImageView imageView2, ShapeTextView shapeTextView, TextView textView, ShapeTextView shapeTextView2, TextView textView2) {
         this.g = linearLayout;
-        this.f29380a = imageView;
+        this.f15690a = imageView;
         this.b = imageView2;
-        this.f29381c = shapeTextView;
+        this.f15691c = shapeTextView;
         this.d = textView;
         this.e = shapeTextView2;
         this.f = textView2;
@@ -48,19 +48,19 @@ public final class LayoutAdMiniAppDialogBinding implements ViewBinding {
 
     public static LayoutAdMiniAppDialogBinding a(View view) {
         String str;
-        ImageView imageView = (ImageView) view.findViewById(2131365208);
+        ImageView imageView = (ImageView) view.findViewById(R.id.iv_close_btn);
         if (imageView != null) {
             ImageView imageView2 = (ImageView) view.findViewById(R.id.iv_mini_app_icon);
             if (imageView2 != null) {
-                ShapeTextView shapeTextView = (ShapeTextView) view.findViewById(R.id.tv_mini_app_cancel);
-                if (shapeTextView != null) {
+                ShapeTextView findViewById = view.findViewById(R.id.tv_mini_app_cancel);
+                if (findViewById != null) {
                     TextView textView = (TextView) view.findViewById(R.id.tv_mini_app_des);
                     if (textView != null) {
-                        ShapeTextView shapeTextView2 = (ShapeTextView) view.findViewById(R.id.tv_mini_app_sure);
-                        if (shapeTextView2 != null) {
+                        ShapeTextView findViewById2 = view.findViewById(R.id.tv_mini_app_sure);
+                        if (findViewById2 != null) {
                             TextView textView2 = (TextView) view.findViewById(R.id.tv_mini_app_title);
                             if (textView2 != null) {
-                                return new LayoutAdMiniAppDialogBinding((LinearLayout) view, imageView, imageView2, shapeTextView, textView, shapeTextView2, textView2);
+                                return new LayoutAdMiniAppDialogBinding((LinearLayout) view, imageView, imageView2, findViewById, textView, findViewById2, textView2);
                             }
                             str = "tvMiniAppTitle";
                         } else {

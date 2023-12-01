@@ -10,13 +10,9 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 @DebugMetadata(b = "Reduce.kt", c = {183}, d = "first", e = "kotlinx.coroutines.flow.FlowKt__ReduceKt")
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt__ReduceKt$first$3.class */
 public final class FlowKt__ReduceKt$first$3<T> extends ContinuationImpl {
-
-    /* renamed from: a  reason: collision with root package name */
-    Object f43259a;
+    Object a;
     Object b;
-
-    /* renamed from: c  reason: collision with root package name */
-    Object f43260c;
+    Object c;
     /* synthetic */ Object d;
     int e;
 

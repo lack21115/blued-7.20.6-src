@@ -28,7 +28,7 @@ public abstract class a implements e, f {
     public Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected AdItemData f27042c;
+    protected AdItemData f13354c;
     protected FrameLayout d;
     protected RelativeLayout e;
     protected ProgressBar f;

@@ -53,7 +53,7 @@ public class ScrimInsetsFrameLayout extends FrameLayout {
         });
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
+    @Override // android.view.View
     public void draw(Canvas canvas) {
         super.draw(canvas);
         int width = getWidth();

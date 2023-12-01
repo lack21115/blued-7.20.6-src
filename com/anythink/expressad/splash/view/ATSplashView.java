@@ -20,6 +20,7 @@ import com.anythink.expressad.foundation.h.o;
 import com.anythink.expressad.foundation.h.t;
 import com.anythink.expressad.splash.js.SplashJSBridgeImpl;
 import com.anythink.expressad.splash.js.SplashJsUtils;
+import com.huawei.hms.ads.fw;
 import java.util.HashMap;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -28,11 +29,11 @@ import org.json.JSONObject;
 public class ATSplashView extends RelativeLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    protected static final String f8270a = "webviewshow";
+    protected static final String f5430a = "webviewshow";
     protected static final String b = "updateCountdown";
 
     /* renamed from: c  reason: collision with root package name */
-    private static String f8271c = "ATSplashView";
+    private static String f5431c = "ATSplashView";
     private int d;
     private ATSplashWebview e;
     private ViewGroup f;
@@ -172,10 +173,10 @@ public class ATSplashView extends RelativeLayout {
                 @Override // java.lang.Runnable
                 public final void run() {
                     try {
-                        o.a(ATSplashView.f8271c, ATSplashView.f8270a);
+                        o.a(ATSplashView.f5431c, ATSplashView.f5430a);
                         int[] iArr = new int[2];
                         ATSplashView.this.e.getLocationOnScreen(iArr);
-                        String str = ATSplashView.f8271c;
+                        String str = ATSplashView.f5431c;
                         o.d(str, "coordinate:" + iArr[0] + "--" + iArr[1]);
                         JSONObject jSONObject = new JSONObject();
                         jSONObject.put("startX", t.a(n.a().g(), (float) iArr[0]));
@@ -186,7 +187,7 @@ public class ATSplashView extends RelativeLayout {
                         ATSplashView.transInfoForMraid(ATSplashView.this.e, iArr2[0], iArr2[1], ATSplashView.this.e.getWidth(), ATSplashView.this.e.getHeight());
                         String encodeToString = Base64.encodeToString(jSONObject2.toString().getBytes(), 2);
                         j.a();
-                        j.a((WebView) ATSplashView.this.e, ATSplashView.f8270a, encodeToString);
+                        j.a((WebView) ATSplashView.this.e, ATSplashView.f5430a, encodeToString);
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -196,21 +197,21 @@ public class ATSplashView extends RelativeLayout {
     }
 
     public static void transInfoForMraid(WebView webView, int i, int i2, int i3, int i4) {
-        o.d(f8271c, "transInfoForMraid");
+        o.d(f5431c, "transInfoForMraid");
         try {
             int i5 = n.a().g().getResources().getConfiguration().orientation;
             JSONObject jSONObject = new JSONObject();
             jSONObject.put("orientation", i5 == 2 ? Camera.Parameters.SCENE_MODE_LANDSCAPE : i5 == 1 ? Camera.Parameters.SCENE_MODE_PORTRAIT : "undefined");
-            jSONObject.put(TvContract.Channels.COLUMN_LOCKED, "true");
+            jSONObject.put(TvContract.Channels.COLUMN_LOCKED, fw.Code);
             float e = k.e(n.a().g());
             float f = k.f(n.a().g());
             HashMap g = k.g(n.a().g());
             int intValue = ((Integer) g.get("width")).intValue();
             int intValue2 = ((Integer) g.get("height")).intValue();
             HashMap hashMap = new HashMap();
-            hashMap.put(CallMraidJS.f7085a, "Interstitial");
+            hashMap.put(CallMraidJS.f4247a, CallMraidJS.j);
             hashMap.put("state", "default");
-            hashMap.put(CallMraidJS.f7086c, "true");
+            hashMap.put(CallMraidJS.f4248c, fw.Code);
             hashMap.put(CallMraidJS.d, jSONObject);
             float f2 = i;
             float f3 = i2;
@@ -223,7 +224,7 @@ public class ATSplashView extends RelativeLayout {
             CallMraidJS.getInstance().fireChangeEventForPropertys(webView, hashMap);
             CallMraidJS.getInstance().fireReadyEvent(webView);
         } catch (Throwable th) {
-            o.b(f8271c, "transInfoForMraid", th);
+            o.b(f5431c, "transInfoForMraid", th);
         }
     }
 
@@ -293,16 +294,14 @@ public class ATSplashView extends RelativeLayout {
         return this.k;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         this.p = true;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onConfigurationChanged(Configuration configuration) {
+    protected void onConfigurationChanged(Configuration configuration) {
         super.onConfigurationChanged(configuration);
         b();
     }

@@ -6,9 +6,7 @@ import java.io.InputStream;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/image/apng/io/StreamReader.class */
 public class StreamReader extends FilterInputStream implements Reader {
-
-    /* renamed from: a  reason: collision with root package name */
-    private int f9552a;
+    private int a;
 
     public StreamReader(InputStream inputStream) {
         super(inputStream);
@@ -20,13 +18,13 @@ public class StreamReader extends FilterInputStream implements Reader {
 
     @Override // com.blued.android.core.image.apng.io.Reader
     public int b() {
-        return this.f9552a;
+        return this.a;
     }
 
     @Override // com.blued.android.core.image.apng.io.Reader
     public byte n_() throws IOException {
         byte read = (byte) read();
-        this.f9552a++;
+        this.a++;
         return read;
     }
 
@@ -38,7 +36,7 @@ public class StreamReader extends FilterInputStream implements Reader {
     @Override // java.io.FilterInputStream, java.io.InputStream
     public int read(byte[] bArr, int i, int i2) throws IOException {
         int read = super.read(bArr, i, i2);
-        this.f9552a += Math.max(0, read);
+        this.a += Math.max(0, read);
         return read;
     }
 
@@ -46,14 +44,14 @@ public class StreamReader extends FilterInputStream implements Reader {
     public void reset() throws IOException {
         synchronized (this) {
             super.reset();
-            this.f9552a = 0;
+            this.a = 0;
         }
     }
 
     @Override // java.io.FilterInputStream, java.io.InputStream
     public long skip(long j) throws IOException {
         long skip = super.skip(j);
-        this.f9552a = (int) (this.f9552a + skip);
+        this.a = (int) (this.a + skip);
         return skip;
     }
 }

@@ -78,6 +78,6 @@ public final class n extends e {
     public final n a(int i2) {
         com.anythink.expressad.exoplayer.k.a.b(this.d);
         long currentTimeMillis = System.currentTimeMillis();
-        return new n(this.f7557a, this.b, this.f7558c, currentTimeMillis, a(this.e.getParentFile(), i2, this.b, currentTimeMillis));
+        return new n(this.f4718a, this.b, this.f4719c, currentTimeMillis, a(this.e.getParentFile(), i2, this.b, currentTimeMillis));
     }
 }

@@ -1,7 +1,5 @@
 package androidx.core.content;
 
-import com.android.internal.telephony.PhoneConstants;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.util.ArrayList;
 
 /* loaded from: source-8756600-dex2jar.jar:androidx/core/content/MimeTypeFilter.class */
@@ -17,8 +15,8 @@ public final class MimeTypeFilter {
             if (strArr.length != 2) {
                 return false;
             }
-            if (PhoneConstants.APN_TYPE_ALL.equals(strArr2[0]) || strArr2[0].equals(strArr[0])) {
-                return PhoneConstants.APN_TYPE_ALL.equals(strArr2[1]) || strArr2[1].equals(strArr[1]);
+            if ("*".equals(strArr2[0]) || strArr2[0].equals(strArr[0])) {
+                return "*".equals(strArr2[1]) || strArr2[1].equals(strArr[1]);
             }
             return false;
         }
@@ -29,7 +27,7 @@ public final class MimeTypeFilter {
         if (str == null) {
             return null;
         }
-        String[] split = str.split(BridgeUtil.SPLIT_MARK);
+        String[] split = str.split("/");
         int length = strArr.length;
         int i = 0;
         while (true) {
@@ -38,7 +36,7 @@ public final class MimeTypeFilter {
                 return null;
             }
             String str2 = strArr[i2];
-            if (a(split, str2.split(BridgeUtil.SPLIT_MARK))) {
+            if (a(split, str2.split("/"))) {
                 return str2;
             }
             i = i2 + 1;
@@ -49,7 +47,7 @@ public final class MimeTypeFilter {
         if (strArr == null) {
             return null;
         }
-        String[] split = str.split(BridgeUtil.SPLIT_MARK);
+        String[] split = str.split("/");
         int length = strArr.length;
         int i = 0;
         while (true) {
@@ -58,7 +56,7 @@ public final class MimeTypeFilter {
                 return null;
             }
             String str2 = strArr[i2];
-            if (a(str2.split(BridgeUtil.SPLIT_MARK), split)) {
+            if (a(str2.split("/"), split)) {
                 return str2;
             }
             i = i2 + 1;
@@ -69,7 +67,7 @@ public final class MimeTypeFilter {
         if (str == null) {
             return false;
         }
-        return a(str.split(BridgeUtil.SPLIT_MARK), str2.split(BridgeUtil.SPLIT_MARK));
+        return a(str.split("/"), str2.split("/"));
     }
 
     public static String[] matchesMany(String[] strArr, String str) {
@@ -77,9 +75,9 @@ public final class MimeTypeFilter {
             return new String[0];
         }
         ArrayList arrayList = new ArrayList();
-        String[] split = str.split(BridgeUtil.SPLIT_MARK);
+        String[] split = str.split("/");
         for (String str2 : strArr) {
-            if (a(str2.split(BridgeUtil.SPLIT_MARK), split)) {
+            if (a(str2.split("/"), split)) {
                 arrayList.add(str2);
             }
         }

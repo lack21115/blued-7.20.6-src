@@ -32,7 +32,7 @@ import org.json.JSONObject;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f21369a;
+    private static String f7763a;
     private static Map<String, Integer> b;
 
     static {
@@ -45,7 +45,7 @@ public final class b {
         b.put(Utils.CPU_ABI_X86, 32);
         b.put("mips64", 64);
         b.put("mips", 32);
-        f21369a = c();
+        f7763a = c();
     }
 
     public static com.bytedance.pangle.util.e<Boolean, Map<String, List<ZipEntry>>> a(File file) {
@@ -62,7 +62,7 @@ public final class b {
                         a2 = true;
                         ZeusLogger.i(ZeusLogger.TAG_SO, "NativeLibHelper isPluginApkMatchHostAbi [true] soEntries empty, ".concat(String.valueOf(file)));
                     } else {
-                        a2 = a(hashMap, f21369a);
+                        a2 = a(hashMap, f7763a);
                         if (a2) {
                             ZeusLogger.i(ZeusLogger.TAG_SO, "NativeLibHelper isPluginApkMatchHostAbi [" + a2 + "], " + file);
                         } else {
@@ -115,12 +115,12 @@ public final class b {
     }
 
     public static String a() {
-        String str = f21369a;
+        String str = f7763a;
         if (str != null) {
             return str;
         }
         String c2 = c();
-        f21369a = c2;
+        f7763a = c2;
         return c2;
     }
 
@@ -177,7 +177,7 @@ public final class b {
             if (!nextElement.isDirectory() && !nextElement.getName().contains("../") && nextElement.getName().startsWith("lib/") && compile.matcher(nextElement.getName()).matches() && (split = nextElement.getName().split(File.separator)) != null && split.length >= 2) {
                 String str = split[split.length - 2];
                 if (b.containsKey(str)) {
-                    if (hashMap.get(str) == 0) {
+                    if (hashMap.get(str) == null) {
                         hashMap.put(str, new LinkedList());
                     }
                     ((List) hashMap.get(str)).add(nextElement);
@@ -233,7 +233,7 @@ public final class b {
             } else {
                 a2 = map;
             }
-            boolean a3 = a(a2, f21369a);
+            boolean a3 = a(a2, f7763a);
             ZeusLogger.i(ZeusLogger.TAG_SO, "NativeLibHelper copyNativeLib pre-verify-matchHostAbi[" + a3 + "], pkg=" + str);
             if (a3) {
                 LinkedList<ZipEntry> linkedList = null;
@@ -241,7 +241,7 @@ public final class b {
                     if (!a2.isEmpty()) {
                         linkedList = new LinkedList();
                         HashSet hashSet = new HashSet();
-                        String str4 = f21369a;
+                        String str4 = f7763a;
                         switch (str4.hashCode()) {
                             case -1073971299:
                                 if (str4.equals("mips64")) {

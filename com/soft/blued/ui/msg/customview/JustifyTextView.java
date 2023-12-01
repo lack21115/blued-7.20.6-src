@@ -1,5 +1,6 @@
 package com.soft.blued.ui.msg.customview;
 
+import android.R;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
@@ -16,11 +17,11 @@ import java.util.List;
 public class JustifyTextView extends AppCompatTextView {
 
     /* renamed from: a  reason: collision with root package name */
-    private float f32299a;
+    private float f18609a;
     private float b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f32300c;
+    private int f18610c;
     private List<String> d;
     private List<Integer> e;
     private Align f;
@@ -69,7 +70,7 @@ public class JustifyTextView extends AppCompatTextView {
         this.l = 0;
         this.m = false;
         setTextIsSelectable(false);
-        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, new int[]{16843287, 16843288});
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, new int[]{R.attr.lineSpacingExtra, R.attr.lineSpacingMultiplier});
         this.i = obtainStyledAttributes.getDimensionPixelSize(0, 0);
         this.h = obtainStyledAttributes.getFloat(1, 1.0f);
         this.l = getPaddingBottom();
@@ -99,7 +100,7 @@ public class JustifyTextView extends AppCompatTextView {
             this.d.add("\n");
             return;
         }
-        int measureText = (int) (this.f32300c / paint.measureText("中"));
+        int measureText = (int) (this.f18610c / paint.measureText("中"));
         int i2 = measureText + 1;
         int i3 = 0;
         StringBuilder sb2 = new StringBuilder(str.substring(0, Math.min(i2, str.length())));
@@ -108,7 +109,7 @@ public class JustifyTextView extends AppCompatTextView {
             if (i2 >= str.length()) {
                 break;
             }
-            if (paint.measureText(str.substring(i3, i2 + 1)) > this.f32300c) {
+            if (paint.measureText(str.substring(i3, i2 + 1)) > this.f18610c) {
                 this.d.add(sb2.toString());
                 sb = new StringBuilder();
                 if (str.length() - i2 <= measureText) {
@@ -141,23 +142,22 @@ public class JustifyTextView extends AppCompatTextView {
         this.j = textView.getMeasuredHeight();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.TextView, android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         float f;
         TextPaint paint = getPaint();
         paint.setColor(getCurrentTextColor());
         paint.drawableState = getDrawableState();
-        this.f32300c = getMeasuredWidth();
+        this.f18610c = getMeasuredWidth();
         Paint.FontMetrics fontMetrics = paint.getFontMetrics();
         float textSize = getTextSize() - (((fontMetrics.bottom - fontMetrics.descent) + fontMetrics.ascent) - fontMetrics.top);
         float f2 = textSize;
         if ((getGravity() & 4096) == 0) {
-            f2 = textSize + ((this.f32299a - textSize) / 2.0f);
+            f2 = textSize + ((this.f18609a - textSize) / 2.0f);
         }
         int paddingTop = getPaddingTop();
         int paddingLeft = getPaddingLeft();
-        this.f32300c = (this.f32300c - paddingLeft) - getPaddingRight();
+        this.f18610c = (this.f18610c - paddingLeft) - getPaddingRight();
         int i = 0;
         while (true) {
             int i2 = i;
@@ -165,10 +165,10 @@ public class JustifyTextView extends AppCompatTextView {
                 return;
             }
             float f3 = i2;
-            float f4 = this.f32299a;
+            float f4 = this.f18609a;
             String str = this.d.get(i2);
             float f5 = paddingLeft;
-            float measureText = this.f32300c - paint.measureText(str);
+            float measureText = this.f18610c - paint.measureText(str);
             float length = measureText / (str.length() - 1);
             float f6 = f5;
             if (this.e.contains(Integer.valueOf(i2))) {
@@ -204,7 +204,7 @@ public class JustifyTextView extends AppCompatTextView {
         if (!this.g) {
             return;
         }
-        this.f32300c = getMeasuredWidth();
+        this.f18610c = getMeasuredWidth();
         String charSequence = getText().toString();
         TextPaint paint = getPaint();
         this.d.clear();
@@ -217,7 +217,7 @@ public class JustifyTextView extends AppCompatTextView {
             if (i6 >= length) {
                 a(charSequence, paint.getTextSize(), (getMeasuredWidth() - getPaddingLeft()) - getPaddingRight());
                 float f = (this.j * 1.0f) / this.k;
-                this.f32299a = f;
+                this.f18609a = f;
                 float f2 = ((this.h - 1.0f) * f) + this.i;
                 this.b = f2;
                 this.m = true;

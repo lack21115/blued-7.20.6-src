@@ -14,16 +14,16 @@ import java.util.List;
 public class y extends RelativeLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f26940a;
+    private int f13252a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private com.opos.mobad.n.c.a f26941c;
-    private a.InterfaceC0708a d;
+    private com.opos.mobad.n.c.a f13253c;
+    private a.InterfaceC0538a d;
 
     public y(Context context, int i, int i2, boolean z, boolean z2) {
         super(context);
-        this.f26940a = i == 0 ? 256 : i;
+        this.f13252a = i == 0 ? 256 : i;
         this.b = i2 == 0 ? 168 : i2;
         a(z, z2);
     }
@@ -33,8 +33,8 @@ public class y extends RelativeLayout {
     }
 
     private void a(com.opos.mobad.n.d.g gVar, com.opos.mobad.c.a aVar, final boolean z, final List<Bitmap> list) {
-        aVar.a(gVar.f26633a, gVar.b, this.f26940a, this.b, new a.InterfaceC0676a() { // from class: com.opos.mobad.n.g.y.1
-            @Override // com.opos.mobad.c.a.InterfaceC0676a
+        aVar.a(gVar.f12945a, gVar.b, this.f13252a, this.b, new a.InterfaceC0506a() { // from class: com.opos.mobad.n.g.y.1
+            @Override // com.opos.mobad.c.a.InterfaceC0506a
             public void a(int i, final Bitmap bitmap) {
                 if (z) {
                     return;
@@ -57,7 +57,7 @@ public class y extends RelativeLayout {
                             return;
                         }
                         list.add(bitmap);
-                        y.this.f26941c.a(list);
+                        y.this.f13253c.a(list);
                     }
                 });
             }
@@ -65,21 +65,21 @@ public class y extends RelativeLayout {
     }
 
     private void a(boolean z, boolean z2) {
-        int a2 = com.opos.cmn.an.h.f.a.a(getContext(), this.f26940a);
+        int a2 = com.opos.cmn.an.h.f.a.a(getContext(), this.f13252a);
         int a3 = com.opos.cmn.an.h.f.a.a(getContext(), this.b);
         setLayoutParams(new ViewGroup.LayoutParams(a2, a3));
-        this.f26941c = z2 ? com.opos.mobad.n.c.a.b(getContext(), 3, z) : com.opos.mobad.n.c.a.a(getContext(), 3, z);
-        addView(this.f26941c, new RelativeLayout.LayoutParams(a2, a3));
+        this.f13253c = z2 ? com.opos.mobad.n.c.a.b(getContext(), 3, z) : com.opos.mobad.n.c.a.a(getContext(), 3, z);
+        addView(this.f13253c, new RelativeLayout.LayoutParams(a2, a3));
     }
 
     public static y b(Context context, int i, int i2, boolean z) {
         return new y(context, i, i2, z, true);
     }
 
-    public void a(a.InterfaceC0708a interfaceC0708a) {
-        com.opos.cmn.an.f.a.b("BlockListImgView", "setListener " + interfaceC0708a);
-        this.d = interfaceC0708a;
-        this.f26941c.a(new com.opos.mobad.n.c.g() { // from class: com.opos.mobad.n.g.y.2
+    public void a(a.InterfaceC0538a interfaceC0538a) {
+        com.opos.cmn.an.f.a.b("BlockListImgView", "setListener " + interfaceC0538a);
+        this.d = interfaceC0538a;
+        this.f13253c.a(new com.opos.mobad.n.c.g() { // from class: com.opos.mobad.n.g.y.2
             @Override // com.opos.mobad.n.c.g
             public void a(View view, int[] iArr) {
                 if (y.this.d != null) {
@@ -98,7 +98,7 @@ public class y extends RelativeLayout {
         while (true) {
             int i3 = i2;
             if (i3 >= Math.min(dVar.g.size(), 3)) {
-                this.f26941c.a(i);
+                this.f13253c.a(i);
                 return;
             }
             com.opos.mobad.n.d.g gVar = dVar.g.get(i3);

@@ -376,12 +376,12 @@ public class PriorityBlockingQueue<E> extends AbstractQueue<E> implements Blocki
         }
     }
 
-    @Override // java.util.AbstractQueue, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractQueue, java.util.AbstractCollection, java.util.Collection
     public boolean add(E e) {
         return offer(e);
     }
 
-    @Override // java.util.AbstractQueue, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractQueue, java.util.AbstractCollection, java.util.Collection
     public void clear() {
         ReentrantLock reentrantLock = this.lock;
         reentrantLock.lock();
@@ -407,7 +407,7 @@ public class PriorityBlockingQueue<E> extends AbstractQueue<E> implements Blocki
         return this.comparator;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean contains(Object obj) {
         ReentrantLock reentrantLock = this.lock;
         reentrantLock.lock();
@@ -556,7 +556,7 @@ public class PriorityBlockingQueue<E> extends AbstractQueue<E> implements Blocki
         return Integer.MAX_VALUE;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean remove(Object obj) {
         ReentrantLock reentrantLock = this.lock;
         reentrantLock.lock();
@@ -630,7 +630,7 @@ public class PriorityBlockingQueue<E> extends AbstractQueue<E> implements Blocki
         throw new UnsupportedOperationException("Method not decompiled: java.util.concurrent.PriorityBlockingQueue.removeEQ(java.lang.Object):void");
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    @Override // java.util.AbstractCollection, java.util.Collection
     public int size() {
         ReentrantLock reentrantLock = this.lock;
         reentrantLock.lock();
@@ -658,7 +658,7 @@ public class PriorityBlockingQueue<E> extends AbstractQueue<E> implements Blocki
         }
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public Object[] toArray() {
         ReentrantLock reentrantLock = this.lock;
         reentrantLock.lock();
@@ -669,7 +669,7 @@ public class PriorityBlockingQueue<E> extends AbstractQueue<E> implements Blocki
         }
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public <T> T[] toArray(T[] tArr) {
         ReentrantLock reentrantLock = this.lock;
         reentrantLock.lock();

@@ -46,10 +46,10 @@ public class l1 implements c5, d1, i5, l0, m5 {
                 return;
             }
             v5 v5Var = (v5) obj;
-            int i = v5Var.f38062a;
+            int i = v5Var.f24371a;
             if (i == 0) {
                 if (l1.this.g != null) {
-                    l1.this.g.a(v5Var.b, v5Var.f38063c);
+                    l1.this.g.a(v5Var.b, v5Var.f24372c);
                 }
             } else if (i == 1) {
                 if (l1.this.h != null) {
@@ -57,9 +57,9 @@ public class l1 implements c5, d1, i5, l0, m5 {
                 }
             } else if (i != 3 || c7.D != 1) {
                 if (i == 2 && l1.this.isCompassEnabled()) {
-                    l1.this.f.getMap().c(l1.this.f.getMapContext().d(v5Var.g) ? zd.b : zd.f38161a);
+                    l1.this.f.getMap().c(l1.this.f.getMapContext().d(v5Var.g) ? zd.b : zd.f24470a);
                 }
-            } else if (TextUtils.equals(mi.f37650c, ConstantsAPI.Token.WX_TOKEN_PLATFORMID_VALUE) || l1.this.d == null) {
+            } else if (TextUtils.equals(mi.f23959c, ConstantsAPI.Token.WX_TOKEN_PLATFORMID_VALUE) || l1.this.d == null) {
             } else {
                 if (l1.this.j == null) {
                     l1 l1Var = l1.this;
@@ -87,31 +87,31 @@ public class l1 implements c5, d1, i5, l0, m5 {
     public static /* synthetic */ class c {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final /* synthetic */ int[] f37605a;
+        public static final /* synthetic */ int[] f23914a;
 
         static {
             p4.b.values();
             int[] iArr = new int[6];
-            f37605a = iArr;
+            f23914a = iArr;
             try {
                 p4.b bVar = p4.b.LEFT_TOP;
                 iArr[3] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                int[] iArr2 = f37605a;
+                int[] iArr2 = f23914a;
                 p4.b bVar2 = p4.b.LEFT_BOTTOM;
                 iArr2[0] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                int[] iArr3 = f37605a;
+                int[] iArr3 = f23914a;
                 p4.b bVar3 = p4.b.RIGHT_BOTTOM;
                 iArr3[2] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                int[] iArr4 = f37605a;
+                int[] iArr4 = f23914a;
                 p4.b bVar4 = p4.b.RIGHT_TOP;
                 iArr4[5] = 4;
             } catch (NoSuchFieldError e4) {
@@ -172,7 +172,7 @@ public class l1 implements c5, d1, i5, l0, m5 {
         this.m.putInt(q, i);
         e();
         v5 v5Var = new v5();
-        v5Var.f38062a = 2;
+        v5Var.f24371a = 2;
         v5Var.g = i;
         a(v5Var);
     }
@@ -266,7 +266,7 @@ public class l1 implements c5, d1, i5, l0, m5 {
     @Override // com.tencent.mapsdk.internal.c5
     public void a(v5 v5Var) {
         int i;
-        if (v5Var == null || (i = v5Var.f38062a) == -1) {
+        if (v5Var == null || (i = v5Var.f24371a) == -1) {
             return;
         }
         this.p.sendMessage(this.p.obtainMessage(i, v5Var));

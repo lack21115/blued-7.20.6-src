@@ -19,11 +19,11 @@ import org.json.JSONArray;
 public final class d {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f23484a = "grp.prop";
+    public static final String f9876a = "grp.prop";
     public static final String b = "c";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f23485c = "i";
+    public static final String f9877c = "i";
     public static final String d = "p";
     public static final String e = "s";
     public static final String f = "t145gt";
@@ -55,10 +55,10 @@ public final class d {
     public final class AnonymousClass4 extends com.igexin.push.core.g.a<RandomAccessFile> {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ String f23490a;
+        final /* synthetic */ String f9882a;
 
         public AnonymousClass4(String str) {
-            this.f23490a = str;
+            this.f9882a = str;
         }
 
         /* renamed from: a  reason: avoid collision after fix types in other method */
@@ -66,7 +66,7 @@ public final class d {
             if (d.this.b()) {
                 d.this.a(randomAccessFile);
             }
-            d.this.l.remove(this.f23490a);
+            d.this.l.remove(this.f9882a);
             try {
                 randomAccessFile.setLength(0L);
                 for (Map.Entry entry : d.this.l.entrySet()) {
@@ -84,7 +84,7 @@ public final class d {
             if (d.this.b()) {
                 d.this.a(randomAccessFile2);
             }
-            d.this.l.remove(this.f23490a);
+            d.this.l.remove(this.f9882a);
             try {
                 randomAccessFile2.setLength(0L);
                 for (Map.Entry entry : d.this.l.entrySet()) {

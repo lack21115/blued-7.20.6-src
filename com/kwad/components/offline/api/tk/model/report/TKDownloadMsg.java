@@ -2,6 +2,7 @@ package com.kwad.components.offline.api.tk.model.report;
 
 import com.kwad.components.offline.api.core.model.BaseOfflineCompoJsonParse;
 import com.kwad.components.offline.api.core.utils.JsonHelper;
+import com.ss.android.socialbase.downloader.constants.MonitorConstants;
 import java.io.Serializable;
 import org.json.JSONObject;
 
@@ -47,7 +48,7 @@ public class TKDownloadMsg extends BaseOfflineCompoJsonParse<TKDownloadMsg> impl
         if (jSONObject.opt("version_code") == JSONObject.NULL) {
             tKDownloadMsg.versionCode = "";
         }
-        tKDownloadMsg.retryCount = jSONObject.optInt("retry_count");
+        tKDownloadMsg.retryCount = jSONObject.optInt(MonitorConstants.EXTRA_DOWNLOAD_RETRY_COUNT);
         tKDownloadMsg.loadingTimes = jSONObject.optInt("loading_times");
         tKDownloadMsg.offlineSource = jSONObject.optInt("offline_source");
         tKDownloadMsg.soSource = jSONObject.optInt("so_source");
@@ -158,7 +159,7 @@ public class TKDownloadMsg extends BaseOfflineCompoJsonParse<TKDownloadMsg> impl
         }
         int i2 = tKDownloadMsg.retryCount;
         if (i2 != 0) {
-            JsonHelper.putValue(jSONObject2, "retry_count", i2);
+            JsonHelper.putValue(jSONObject2, MonitorConstants.EXTRA_DOWNLOAD_RETRY_COUNT, i2);
         }
         int i3 = tKDownloadMsg.loadingTimes;
         if (i3 != 0) {

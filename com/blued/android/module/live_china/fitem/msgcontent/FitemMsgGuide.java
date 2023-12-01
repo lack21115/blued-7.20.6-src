@@ -1,7 +1,6 @@
 package com.blued.android.module.live_china.fitem.msgcontent;
 
 import android.content.Context;
-import android.os.BatteryManager;
 import android.view.View;
 import com.blued.android.module.common.utils.freedom.BaseViewHolder;
 import com.blued.android.module.common.utils.freedom.FreedomItem;
@@ -21,22 +20,20 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fitem/msgcontent/FitemMsgGuide.class */
 public final class FitemMsgGuide extends FitemMsgBase {
     private final LiveChattingModel b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f12576c;
+    private String c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public FitemMsgGuide(LiveChattingModel msg) {
         super(msg);
         Intrinsics.e(msg, "msg");
         this.b = msg;
-        this.f12576c = "";
+        this.c = "";
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(FitemMsgGuide this$0, View view) {
         Intrinsics.e(this$0, "this$0");
-        String str = this$0.f12576c;
+        String str = this$0.c;
         switch (str.hashCode()) {
             case 49494:
                 if (str.equals(LiveGuideType.GUIDE_TYPE_FIRST_RECHARGE)) {
@@ -48,7 +45,7 @@ public final class FitemMsgGuide extends FitemMsgBase {
             case 49495:
                 if (str.equals(LiveGuideType.GUIDE_TYPE_BEG_GIFT)) {
                     LiveRefreshUIObserver.a().j();
-                    EventTrackLive.o(LiveProtos.Event.LIVE_SCREEN_GUIDE_CLICK, LiveRoomManager.a().e(), LiveRoomManager.a().g(), BatteryManager.EXTRA_PRESENT);
+                    EventTrackLive.o(LiveProtos.Event.LIVE_SCREEN_GUIDE_CLICK, LiveRoomManager.a().e(), LiveRoomManager.a().g(), "present");
                     return;
                 }
                 return;
@@ -87,9 +84,9 @@ public final class FitemMsgGuide extends FitemMsgBase {
             if (obj == null) {
                 throw new NullPointerException("null cannot be cast to non-null type kotlin.String");
             }
-            this.f12576c = (String) obj;
+            this.c = (String) obj;
         }
-        String str = this.f12576c;
+        String str = this.c;
         if (str == null || str.length() == 0) {
             View view = vh.itemView;
             Intrinsics.c(view, "vh.itemView");
@@ -102,7 +99,7 @@ public final class FitemMsgGuide extends FitemMsgBase {
                 FitemMsgGuide.a(FitemMsgGuide.this, view2);
             }
         });
-        String str2 = this.f12576c;
+        String str2 = this.c;
         switch (str2.hashCode()) {
             case 49494:
                 if (str2.equals(LiveGuideType.GUIDE_TYPE_FIRST_RECHARGE)) {
@@ -112,7 +109,7 @@ public final class FitemMsgGuide extends FitemMsgBase {
                 return;
             case 49495:
                 if (str2.equals(LiveGuideType.GUIDE_TYPE_BEG_GIFT)) {
-                    EventTrackLive.o(LiveProtos.Event.LIVE_SCREEN_GUIDE_SHOW, LiveRoomManager.a().e(), LiveRoomManager.a().g(), BatteryManager.EXTRA_PRESENT);
+                    EventTrackLive.o(LiveProtos.Event.LIVE_SCREEN_GUIDE_SHOW, LiveRoomManager.a().e(), LiveRoomManager.a().g(), "present");
                     return;
                 }
                 return;
@@ -140,6 +137,6 @@ public final class FitemMsgGuide extends FitemMsgBase {
     }
 
     public final String f() {
-        return this.f12576c;
+        return this.c;
     }
 }

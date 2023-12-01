@@ -1,7 +1,6 @@
 package com.anythink.expressad.exoplayer.g.b;
 
 import android.util.Log;
-import android.widget.ExpandableListView;
 import com.anythink.expressad.exoplayer.k.af;
 import com.anythink.expressad.exoplayer.k.s;
 import com.huawei.openalliance.ad.constant.ax;
@@ -9,13 +8,12 @@ import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Locale;
-import org.apache.commons.codec.CharEncoding;
 
 /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/exoplayer/g/b/g.class */
 public final class g implements com.anythink.expressad.exoplayer.g.b {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final a f7354a = new a() { // from class: com.anythink.expressad.exoplayer.g.b.g.1
+    public static final a f4515a = new a() { // from class: com.anythink.expressad.exoplayer.g.b.g.1
         @Override // com.anythink.expressad.exoplayer.g.b.g.a
         public final boolean a(int i2, int i3, int i4, int i5, int i6) {
             return false;
@@ -24,7 +22,7 @@ public final class g implements com.anythink.expressad.exoplayer.g.b {
     public static final int b = af.f("ID3");
 
     /* renamed from: c  reason: collision with root package name */
-    public static final int f7355c = 10;
+    public static final int f4516c = 10;
     private static final String d = "Id3Decoder";
     private static final int e = 128;
     private static final int f = 64;
@@ -49,16 +47,16 @@ public final class g implements com.anythink.expressad.exoplayer.g.b {
     static final class b {
 
         /* renamed from: a  reason: collision with root package name */
-        private final int f7356a;
+        private final int f4517a;
         private final boolean b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final int f7357c;
+        private final int f4518c;
 
         public b(int i, boolean z, int i2) {
-            this.f7356a = i;
+            this.f4517a = i;
             this.b = z;
-            this.f7357c = i2;
+            this.f4518c = i2;
         }
     }
 
@@ -132,17 +130,17 @@ public final class g implements com.anythink.expressad.exoplayer.g.b {
 
     private static c a(s sVar, int i2, int i3, boolean z, int i4, a aVar) {
         int c2 = sVar.c();
-        int b2 = b(sVar.f7674a, c2);
-        String str = new String(sVar.f7674a, c2, b2 - c2, "ISO-8859-1");
+        int b2 = b(sVar.f4835a, c2);
+        String str = new String(sVar.f4835a, c2, b2 - c2, "ISO-8859-1");
         sVar.c(b2 + 1);
         int i5 = sVar.i();
         int i6 = sVar.i();
         long h2 = sVar.h();
-        if (h2 == ExpandableListView.PACKED_POSITION_VALUE_NULL) {
+        if (h2 == 4294967295L) {
             h2 = -1;
         }
         long h3 = sVar.h();
-        if (h3 == ExpandableListView.PACKED_POSITION_VALUE_NULL) {
+        if (h3 == 4294967295L) {
             h3 = -1;
         }
         ArrayList arrayList = new ArrayList();
@@ -497,7 +495,7 @@ public final class g implements com.anythink.expressad.exoplayer.g.b {
     }
 
     private static String a(int i2) {
-        return i2 != 1 ? i2 != 2 ? i2 != 3 ? "ISO-8859-1" : "UTF-8" : CharEncoding.UTF_16BE : "UTF-16";
+        return i2 != 1 ? i2 != 2 ? i2 != 3 ? "ISO-8859-1" : "UTF-8" : "UTF-16BE" : com.anythink.expressad.exoplayer.b.k;
     }
 
     private static String a(int i2, int i3, int i4, int i5, int i6) {
@@ -546,8 +544,8 @@ public final class g implements com.anythink.expressad.exoplayer.g.b {
 
     private static d b(s sVar, int i2, int i3, boolean z, int i4, a aVar) {
         int c2 = sVar.c();
-        int b2 = b(sVar.f7674a, c2);
-        String str = new String(sVar.f7674a, c2, b2 - c2, "ISO-8859-1");
+        int b2 = b(sVar.f4835a, c2);
+        String str = new String(sVar.f4835a, c2, b2 - c2, "ISO-8859-1");
         sVar.c(b2 + 1);
         int d2 = sVar.d();
         boolean z2 = (d2 & 2) != 0;
@@ -556,8 +554,8 @@ public final class g implements com.anythink.expressad.exoplayer.g.b {
         String[] strArr = new String[d3];
         for (int i5 = 0; i5 < d3; i5++) {
             int c3 = sVar.c();
-            int b3 = b(sVar.f7674a, c3);
-            strArr[i5] = new String(sVar.f7674a, c3, b3 - c3, "ISO-8859-1");
+            int b3 = b(sVar.f4835a, c3);
+            strArr[i5] = new String(sVar.f4835a, c3, b3 - c3, "ISO-8859-1");
             sVar.c(b3 + 1);
         }
         ArrayList arrayList = new ArrayList();
@@ -645,7 +643,7 @@ public final class g implements com.anythink.expressad.exoplayer.g.b {
     }
 
     private static int f(s sVar, int i2) {
-        byte[] bArr = sVar.f7674a;
+        byte[] bArr = sVar.f4835a;
         int c2 = sVar.c();
         while (true) {
             int i3 = c2 + 1;
@@ -656,7 +654,7 @@ public final class g implements com.anythink.expressad.exoplayer.g.b {
             if ((bArr[c2] & 255) == 255) {
                 i4 = i2;
                 if (bArr[i3] == 0) {
-                    System.arraycopy((Object) bArr, c2 + 2, (Object) bArr, i3, (i2 - c2) - 2);
+                    System.arraycopy(bArr, c2 + 2, bArr, i3, (i2 - c2) - 2);
                     i4 = i2 - 1;
                 }
             }

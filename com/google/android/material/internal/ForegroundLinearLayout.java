@@ -76,9 +76,8 @@ public class ForegroundLinearLayout extends LinearLayoutCompat {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void drawableStateChanged() {
+    protected void drawableStateChanged() {
         super.drawableStateChanged();
         Drawable drawable = this.foreground;
         if (drawable == null || !drawable.isStateful()) {
@@ -87,10 +86,12 @@ public class ForegroundLinearLayout extends LinearLayoutCompat {
         this.foreground.setState(getDrawableState());
     }
 
+    @Override // android.view.View
     public Drawable getForeground() {
         return this.foreground;
     }
 
+    @Override // android.view.View
     public int getForegroundGravity() {
         return this.foregroundGravity;
     }
@@ -110,13 +111,13 @@ public class ForegroundLinearLayout extends LinearLayoutCompat {
         this.foregroundBoundsChanged = z | this.foregroundBoundsChanged;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onSizeChanged(int i, int i2, int i3, int i4) {
+    protected void onSizeChanged(int i, int i2, int i3, int i4) {
         super.onSizeChanged(i, i2, i3, i4);
         this.foregroundBoundsChanged = true;
     }
 
+    @Override // android.view.View
     public void setForeground(Drawable drawable) {
         Drawable drawable2 = this.foreground;
         if (drawable2 != drawable) {
@@ -142,6 +143,7 @@ public class ForegroundLinearLayout extends LinearLayoutCompat {
         }
     }
 
+    @Override // android.view.View
     public void setForegroundGravity(int i) {
         if (this.foregroundGravity != i) {
             int i2 = i;
@@ -160,9 +162,8 @@ public class ForegroundLinearLayout extends LinearLayoutCompat {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public boolean verifyDrawable(Drawable drawable) {
+    protected boolean verifyDrawable(Drawable drawable) {
         return super.verifyDrawable(drawable) || drawable == this.foreground;
     }
 }

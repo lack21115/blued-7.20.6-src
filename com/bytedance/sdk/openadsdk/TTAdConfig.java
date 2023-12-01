@@ -13,7 +13,7 @@ public final class TTAdConfig implements AdConfig {
     private String hj;
 
     /* renamed from: io  reason: collision with root package name */
-    private int f21511io;
+    private int f7905io;
     private boolean jb;
     private boolean je;
     private boolean ko;
@@ -33,7 +33,7 @@ public final class TTAdConfig implements AdConfig {
         private String hj;
 
         /* renamed from: io  reason: collision with root package name */
-        private int f21512io;
+        private int f7906io;
         private TTCustomController lc;
         private ITTLiveTokenInjectionAuth m;
         private String mb;
@@ -94,7 +94,7 @@ public final class TTAdConfig implements AdConfig {
             tTAdConfig.setNeedClearTaskReset(this.nk);
             tTAdConfig.setAsyncInit(this.o);
             tTAdConfig.setCustomController(this.lc);
-            tTAdConfig.setThemeStatus(this.f21512io);
+            tTAdConfig.setThemeStatus(this.f7906io);
             tTAdConfig.setExtra("plugin_update_conf", Integer.valueOf(this.e));
             tTAdConfig.setExtra(TTAdConstant.KEY_AGE_GROUP, Integer.valueOf(this.l));
             tTAdConfig.setInjectionAuth(this.m);
@@ -157,7 +157,7 @@ public final class TTAdConfig implements AdConfig {
         }
 
         public Builder themeStatus(int i) {
-            this.f21512io = i;
+            this.f7906io = i;
             return this;
         }
 
@@ -262,7 +262,7 @@ public final class TTAdConfig implements AdConfig {
     }
 
     public int getThemeStatus() {
-        return this.f21511io;
+        return this.f7905io;
     }
 
     @Override // com.bytedance.sdk.openadsdk.AdConfig
@@ -379,7 +379,7 @@ public final class TTAdConfig implements AdConfig {
     }
 
     public void setThemeStatus(int i) {
-        this.f21511io = i;
+        this.f7905io = i;
     }
 
     public void setTitleBarTheme(int i) {

@@ -1,16 +1,15 @@
 package com.blued.android.core.utils.toast;
 
+import com.blued.android.chat.grpc.backup.MsgBackupManager;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/utils/toast/NotificationServiceProxy.class */
 final class NotificationServiceProxy implements InvocationHandler {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Object f9752a;
+    private final Object a;
 
     public NotificationServiceProxy(Object obj) {
-        this.f9752a = obj;
+        this.a = obj;
     }
 
     @Override // java.lang.reflect.InvocationHandler
@@ -35,8 +34,8 @@ final class NotificationServiceProxy implements InvocationHandler {
             z = true;
         }
         if (!z || z || z) {
-            objArr[0] = "android";
+            objArr[0] = MsgBackupManager.PLATFORM_ANDROID;
         }
-        return method.invoke(this.f9752a, objArr);
+        return method.invoke(this.a, objArr);
     }
 }

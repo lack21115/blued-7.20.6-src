@@ -71,7 +71,7 @@ public class cz {
             iq.a(icVar, bArr);
             a(str, context, icVar, bArr.length);
         } catch (iw e) {
-            com.xiaomi.channel.commonutils.logger.b.m11394a("fail to convert bytes to container");
+            com.xiaomi.channel.commonutils.logger.b.m8344a("fail to convert bytes to container");
         }
     }
 }

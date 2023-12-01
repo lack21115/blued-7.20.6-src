@@ -9,12 +9,10 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/collections/MutableMapWithDefaultImpl.class */
 final class MutableMapWithDefaultImpl<K, V> implements MutableMapWithDefault<K, V> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Map<K, V> f42388a;
+    private final Map<K, V> a;
 
     public Map<K, V> a() {
-        return this.f42388a;
+        return this.a;
     }
 
     public int b() {

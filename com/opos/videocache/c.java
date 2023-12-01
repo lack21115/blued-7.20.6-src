@@ -19,11 +19,11 @@ import java.util.concurrent.Executors;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Object f27435a;
+    private final Object f13747a;
     private final ExecutorService b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final Map<String, o> f27436c;
+    private final Map<String, o> f13748c;
     private final ServerSocket d;
     private final int e;
     private final Thread f;
@@ -34,11 +34,11 @@ public class c {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private File f27437a;
+        private File f13749a;
         private com.opos.videocache.c.b d;
 
         /* renamed from: c  reason: collision with root package name */
-        private com.opos.videocache.a.a f27438c = new com.opos.videocache.a.g(536870912);
+        private com.opos.videocache.a.a f13750c = new com.opos.videocache.a.g(536870912);
         private com.opos.videocache.a.c b = new com.opos.videocache.a.e();
         private com.opos.videocache.b.b e = new com.opos.videocache.b.a();
 
@@ -47,17 +47,17 @@ public class c {
         }
 
         private l b() {
-            File file = this.f27437a;
-            return file == null ? new k(this.b, this.f27438c, this.d, this.e) : new l(file, this.b, this.f27438c, this.d, this.e);
+            File file = this.f13749a;
+            return file == null ? new k(this.b, this.f13750c, this.d, this.e) : new l(file, this.b, this.f13750c, this.d, this.e);
         }
 
         public a a(int i) {
-            this.f27438c = new com.opos.videocache.a.f(i);
+            this.f13750c = new com.opos.videocache.a.f(i);
             return this;
         }
 
         public a a(long j) {
-            this.f27438c = new com.opos.videocache.a.g(j);
+            this.f13750c = new com.opos.videocache.a.g(j);
             return this;
         }
 
@@ -93,10 +93,10 @@ public class c {
 
     /* renamed from: com.opos.videocache.c$c  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/opos/videocache/c$c.class */
-    final class RunnableC0739c implements Runnable {
+    final class RunnableC0569c implements Runnable {
         private final CountDownLatch b;
 
-        public RunnableC0739c(CountDownLatch countDownLatch) {
+        public RunnableC0569c(CountDownLatch countDownLatch) {
             this.b = countDownLatch;
         }
 
@@ -108,9 +108,9 @@ public class c {
     }
 
     private c(l lVar) {
-        this.f27435a = new Object();
+        this.f13747a = new Object();
         this.b = Executors.newFixedThreadPool(8);
-        this.f27436c = new ConcurrentHashMap();
+        this.f13748c = new ConcurrentHashMap();
         this.g = (l) f.a(lVar);
         try {
             ServerSocket serverSocket = new ServerSocket(0, 8, InetAddress.getByName("127.0.0.1"));
@@ -119,7 +119,7 @@ public class c {
             this.e = localPort;
             p.a("127.0.0.1", localPort);
             CountDownLatch countDownLatch = new CountDownLatch(1);
-            Thread thread = new Thread(new RunnableC0739c(countDownLatch));
+            Thread thread = new Thread(new RunnableC0569c(countDownLatch));
             this.f = thread;
             thread.start();
             countDownLatch.await();
@@ -133,7 +133,7 @@ public class c {
 
     private void a(File file) {
         try {
-            this.g.f27447c.a(file);
+            this.g.f13759c.a(file);
         } catch (IOException e) {
             com.opos.cmn.an.f.a.d("HttpProxyCacheServer", "Error touching file " + file, e);
         }
@@ -150,7 +150,7 @@ public class c {
             try {
                 m a2 = m.a(socket.getInputStream());
                 com.opos.cmn.an.f.a.b("HttpProxyCacheServer", "Request to cache proxy:" + a2);
-                String c2 = h.c(a2.f27448a);
+                String c2 = h.c(a2.f13760a);
                 if (this.h.a(c2)) {
                     this.h.a(socket);
                 } else {
@@ -209,9 +209,9 @@ public class c {
 
     private int c() {
         int i;
-        synchronized (this.f27435a) {
+        synchronized (this.f13747a) {
             i = 0;
-            for (o oVar : this.f27436c.values()) {
+            for (o oVar : this.f13748c.values()) {
                 i += oVar.a();
             }
         }
@@ -252,12 +252,12 @@ public class c {
 
     private o e(String str) {
         o oVar;
-        synchronized (this.f27435a) {
-            o oVar2 = this.f27436c.get(str);
+        synchronized (this.f13747a) {
+            o oVar2 = this.f13748c.get(str);
             oVar = oVar2;
             if (oVar2 == null) {
                 oVar = new o(str, this.g);
-                this.f27436c.put(str, oVar);
+                this.f13748c.put(str, oVar);
             }
         }
         return oVar;

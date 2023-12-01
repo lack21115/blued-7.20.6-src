@@ -19,12 +19,12 @@ class MediaBrowserServiceCompatApi21 {
     static class BrowserRoot {
 
         /* renamed from: a  reason: collision with root package name */
-        final String f3155a;
+        final String f3107a;
         final Bundle b;
 
         /* JADX INFO: Access modifiers changed from: package-private */
         public BrowserRoot(String str, Bundle bundle) {
-            this.f3155a = str;
+            this.f3107a = str;
             this.b = bundle;
         }
     }
@@ -33,27 +33,27 @@ class MediaBrowserServiceCompatApi21 {
     static class MediaBrowserServiceAdaptor extends MediaBrowserService {
 
         /* renamed from: a  reason: collision with root package name */
-        final ServiceCompatProxy f3156a;
+        final ServiceCompatProxy f3108a;
 
         /* JADX INFO: Access modifiers changed from: package-private */
         public MediaBrowserServiceAdaptor(Context context, ServiceCompatProxy serviceCompatProxy) {
             attachBaseContext(context);
-            this.f3156a = serviceCompatProxy;
+            this.f3108a = serviceCompatProxy;
         }
 
         @Override // android.service.media.MediaBrowserService
         public MediaBrowserService.BrowserRoot onGetRoot(String str, int i, Bundle bundle) {
             MediaSessionCompat.ensureClassLoader(bundle);
-            BrowserRoot onGetRoot = this.f3156a.onGetRoot(str, i, bundle == null ? null : new Bundle(bundle));
+            BrowserRoot onGetRoot = this.f3108a.onGetRoot(str, i, bundle == null ? null : new Bundle(bundle));
             if (onGetRoot == null) {
                 return null;
             }
-            return new MediaBrowserService.BrowserRoot(onGetRoot.f3155a, onGetRoot.b);
+            return new MediaBrowserService.BrowserRoot(onGetRoot.f3107a, onGetRoot.b);
         }
 
         @Override // android.service.media.MediaBrowserService
         public void onLoadChildren(String str, MediaBrowserService.Result<List<MediaBrowser.MediaItem>> result) {
-            this.f3156a.onLoadChildren(str, new ResultWrapper<>(result));
+            this.f3108a.onLoadChildren(str, new ResultWrapper<>(result));
         }
     }
 
@@ -61,11 +61,11 @@ class MediaBrowserServiceCompatApi21 {
     static class ResultWrapper<T> {
 
         /* renamed from: a  reason: collision with root package name */
-        MediaBrowserService.Result f3157a;
+        MediaBrowserService.Result f3109a;
 
         /* JADX INFO: Access modifiers changed from: package-private */
         public ResultWrapper(MediaBrowserService.Result result) {
-            this.f3157a = result;
+            this.f3109a = result;
         }
 
         List<MediaBrowser.MediaItem> a(List<Parcel> list) {
@@ -82,18 +82,18 @@ class MediaBrowserServiceCompatApi21 {
         }
 
         public void detach() {
-            this.f3157a.detach();
+            this.f3109a.detach();
         }
 
         public void sendResult(T t) {
             if (t instanceof List) {
-                this.f3157a.sendResult(a((List) t));
+                this.f3109a.sendResult(a((List) t));
             } else if (!(t instanceof Parcel)) {
-                this.f3157a.sendResult(null);
+                this.f3109a.sendResult(null);
             } else {
                 Parcel parcel = (Parcel) t;
                 parcel.setDataPosition(0);
-                this.f3157a.sendResult(MediaBrowser.MediaItem.CREATOR.createFromParcel(parcel));
+                this.f3109a.sendResult(MediaBrowser.MediaItem.CREATOR.createFromParcel(parcel));
                 parcel.recycle();
             }
         }

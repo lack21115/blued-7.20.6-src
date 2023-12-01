@@ -25,18 +25,18 @@ import java.io.File;
 public class ai implements com.opos.mobad.n.a {
 
     /* renamed from: a  reason: collision with root package name */
-    private com.opos.mobad.n.c.j f26788a;
+    private com.opos.mobad.n.c.j f13100a;
     private RelativeLayout b;
 
     /* renamed from: c  reason: collision with root package name */
-    private RelativeLayout f26789c;
+    private RelativeLayout f13101c;
     private TextView d;
     private TextView e;
     private com.opos.mobad.c.d.a f;
     private final int g;
     private final int h;
     private Context i;
-    private a.InterfaceC0708a j;
+    private a.InterfaceC0538a j;
     private com.opos.mobad.n.d.d l;
     private volatile int m = 0;
     private com.opos.mobad.n.c.g n = new com.opos.mobad.n.c.g() { // from class: com.opos.mobad.n.g.ai.5
@@ -71,7 +71,7 @@ public class ai implements com.opos.mobad.n.a {
 
     private void a(RelativeLayout relativeLayout, com.opos.mobad.n.d.d dVar) {
         Context context = this.i;
-        ImageView fVar = new com.opos.mobad.n.c.f(context, com.opos.cmn.an.h.f.a.a(context, 6.0f));
+        com.opos.mobad.n.c.f fVar = new com.opos.mobad.n.c.f(context, com.opos.cmn.an.h.f.a.a(context, 6.0f));
         fVar.setId(View.generateViewId());
         fVar.setScaleType(ImageView.ScaleType.FIT_XY);
         a(fVar);
@@ -119,7 +119,7 @@ public class ai implements com.opos.mobad.n.a {
             f = 105.75f;
         }
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(a2, com.opos.cmn.an.h.f.a.a(context, f));
-        layoutParams.addRule(2, this.f26789c.getId());
+        layoutParams.addRule(2, this.f13101c.getId());
         layoutParams.addRule(14);
         layoutParams.bottomMargin = com.opos.cmn.an.h.f.a.a(this.i, 13.5f);
         this.b.addView(relativeLayout, layoutParams);
@@ -130,11 +130,11 @@ public class ai implements com.opos.mobad.n.a {
         if (ajVar == null) {
             ajVar2 = aj.a(this.i);
         }
-        com.opos.mobad.n.c.j jVar = new com.opos.mobad.n.c.j(this.i, new j.a(ajVar2.f26797a, ajVar2.b, f));
-        this.f26788a = jVar;
+        com.opos.mobad.n.c.j jVar = new com.opos.mobad.n.c.j(this.i, new j.a(ajVar2.f13109a, ajVar2.b, f));
+        this.f13100a = jVar;
         jVar.setVisibility(4);
         if (Build.VERSION.SDK_INT >= 29) {
-            this.f26788a.setForceDarkAllowed(false);
+            this.f13100a.setForceDarkAllowed(false);
         }
         this.b = new RelativeLayout(this.i);
         GradientDrawable gradientDrawable = new GradientDrawable();
@@ -142,9 +142,9 @@ public class ai implements com.opos.mobad.n.a {
         gradientDrawable.setColor(-1);
         this.b.setBackground(gradientDrawable);
         this.b.setVisibility(4);
-        this.f26788a.addView(this.b, new ViewGroup.LayoutParams(-1, -1));
+        this.f13100a.addView(this.b, new ViewGroup.LayoutParams(-1, -1));
         RelativeLayout relativeLayout = new RelativeLayout(this.i);
-        this.f26789c = relativeLayout;
+        this.f13101c = relativeLayout;
         relativeLayout.setId(View.generateViewId());
         TextView textView = new TextView(this.i);
         this.d = textView;
@@ -170,7 +170,7 @@ public class ai implements com.opos.mobad.n.a {
         };
         this.d.setOnClickListener(gVar);
         this.d.setOnTouchListener(gVar);
-        this.f26789c.addView(this.d, layoutParams);
+        this.f13101c.addView(this.d, layoutParams);
         TextView textView2 = new TextView(this.i);
         this.e = textView2;
         textView2.setTextSize(0, com.opos.cmn.an.h.f.a.a(this.i, 13.5f));
@@ -182,12 +182,12 @@ public class ai implements com.opos.mobad.n.a {
         a(this.e);
         RelativeLayout.LayoutParams layoutParams2 = new RelativeLayout.LayoutParams(-2, -1);
         layoutParams2.addRule(15);
-        this.f26789c.addView(this.e, layoutParams2);
+        this.f13101c.addView(this.e, layoutParams2);
         RelativeLayout.LayoutParams layoutParams3 = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(this.i, 324.0f), com.opos.cmn.an.h.f.a.a(this.i, 31.5f));
         layoutParams3.addRule(14);
         layoutParams3.addRule(12);
         layoutParams3.bottomMargin = com.opos.cmn.an.h.f.a.a(this.i, 13.5f);
-        this.b.addView(this.f26789c, layoutParams3);
+        this.b.addView(this.f13101c, layoutParams3);
         TextView textView3 = new TextView(this.i);
         textView3.setBackground(this.i.getResources().getDrawable(R.drawable.opos_mobad_close_bn));
         int a2 = com.opos.cmn.an.h.f.a.a(this.i, 14.32f);
@@ -219,18 +219,18 @@ public class ai implements com.opos.mobad.n.a {
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(0, -1);
         layoutParams.weight = 1.0f;
         Context context = this.i;
-        ImageView fVar = new com.opos.mobad.n.c.f(context, com.opos.cmn.an.h.f.a.a(context, 6.0f));
+        com.opos.mobad.n.c.f fVar = new com.opos.mobad.n.c.f(context, com.opos.cmn.an.h.f.a.a(context, 6.0f));
         fVar.setScaleType(ImageView.ScaleType.FIT_XY);
         linearLayout.addView(fVar, layoutParams);
         LinearLayout.LayoutParams layoutParams2 = new LinearLayout.LayoutParams(0, -1);
         layoutParams2.weight = 1.0f;
         layoutParams2.leftMargin = com.opos.cmn.an.h.f.a.a(this.i, 6.75f);
         Context context2 = this.i;
-        ImageView fVar2 = new com.opos.mobad.n.c.f(context2, com.opos.cmn.an.h.f.a.a(context2, 6.0f));
+        com.opos.mobad.n.c.f fVar2 = new com.opos.mobad.n.c.f(context2, com.opos.cmn.an.h.f.a.a(context2, 6.0f));
         fVar2.setScaleType(ImageView.ScaleType.FIT_XY);
         linearLayout.addView(fVar2, layoutParams2);
         Context context3 = this.i;
-        ImageView fVar3 = new com.opos.mobad.n.c.f(context3, com.opos.cmn.an.h.f.a.a(context3, 6.0f));
+        com.opos.mobad.n.c.f fVar3 = new com.opos.mobad.n.c.f(context3, com.opos.cmn.an.h.f.a.a(context3, 6.0f));
         fVar3.setScaleType(ImageView.ScaleType.FIT_XY);
         linearLayout.addView(fVar3, layoutParams2);
         int a2 = com.opos.cmn.an.h.f.a.a(this.i, 103.5f);
@@ -266,7 +266,7 @@ public class ai implements com.opos.mobad.n.a {
 
     private void c(RelativeLayout relativeLayout, com.opos.mobad.n.d.d dVar) {
         Context context = this.i;
-        ImageView fVar = new com.opos.mobad.n.c.f(context, com.opos.cmn.an.h.f.a.a(context, 6.0f));
+        com.opos.mobad.n.c.f fVar = new com.opos.mobad.n.c.f(context, com.opos.cmn.an.h.f.a.a(context, 6.0f));
         fVar.setScaleType(ImageView.ScaleType.FIT_XY);
         fVar.setId(View.generateViewId());
         a(fVar);
@@ -300,8 +300,8 @@ public class ai implements com.opos.mobad.n.a {
     private void f() {
         com.opos.mobad.c.d.a aVar = new com.opos.mobad.c.d.a(this.i);
         this.f = aVar;
-        aVar.a(new a.InterfaceC0678a() { // from class: com.opos.mobad.n.g.ai.3
-            @Override // com.opos.mobad.c.d.a.InterfaceC0678a
+        aVar.a(new a.InterfaceC0508a() { // from class: com.opos.mobad.n.g.ai.3
+            @Override // com.opos.mobad.c.d.a.InterfaceC0508a
             public void a(boolean z) {
                 if (ai.this.m == 4) {
                     com.opos.cmn.an.f.a.b("NativeTemplateView", "has destroy");
@@ -326,11 +326,11 @@ public class ai implements com.opos.mobad.n.a {
         if (this.m == 1) {
             this.m = 3;
             com.opos.cmn.an.f.a.b("NativeTemplateView", "NT onWindowVisibility");
-            a.InterfaceC0708a interfaceC0708a = this.j;
-            if (interfaceC0708a != null) {
-                interfaceC0708a.b();
+            a.InterfaceC0538a interfaceC0538a = this.j;
+            if (interfaceC0538a != null) {
+                interfaceC0538a.b();
             }
-            this.f.a((a.InterfaceC0678a) null);
+            this.f.a((a.InterfaceC0508a) null);
         }
     }
 
@@ -351,8 +351,8 @@ public class ai implements com.opos.mobad.n.a {
                         if (ai.this.m == 4) {
                             return;
                         }
-                        if (new File(gVar.f26633a).exists()) {
-                            final Bitmap a2 = com.opos.cmn.an.d.c.a.a(gVar.f26633a, i, i2);
+                        if (new File(gVar.f12945a).exists()) {
+                            final Bitmap a2 = com.opos.cmn.an.d.c.a.a(gVar.f12945a, i, i2);
                             if (a2 != null && !a2.isRecycled()) {
                                 ai.this.k.post(new Runnable() { // from class: com.opos.mobad.n.g.ai.4.1
                                     @Override // java.lang.Runnable
@@ -384,8 +384,8 @@ public class ai implements com.opos.mobad.n.a {
     }
 
     @Override // com.opos.mobad.n.a
-    public void a(a.InterfaceC0708a interfaceC0708a) {
-        this.j = interfaceC0708a;
+    public void a(a.InterfaceC0538a interfaceC0538a) {
+        this.j = interfaceC0538a;
     }
 
     @Override // com.opos.mobad.n.a
@@ -400,7 +400,7 @@ public class ai implements com.opos.mobad.n.a {
             this.l = a2;
             RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(this.i, 46.62f), com.opos.cmn.an.h.f.a.a(this.i, 18.0f));
             layoutParams.addRule(15);
-            View a3 = com.opos.mobad.n.e.a(a2, this.f26789c, layoutParams);
+            View a3 = com.opos.mobad.n.e.a(a2, this.f13101c, layoutParams);
             a3.setId(View.generateViewId());
             a(a3);
             RelativeLayout.LayoutParams layoutParams2 = (RelativeLayout.LayoutParams) this.e.getLayoutParams();
@@ -409,7 +409,7 @@ public class ai implements com.opos.mobad.n.a {
             this.d.setText(a2.l);
             this.e.setText(a2.f);
             a(a2);
-            this.f26788a.setVisibility(0);
+            this.f13100a.setVisibility(0);
             this.b.setVisibility(0);
             g();
         }
@@ -421,13 +421,13 @@ public class ai implements com.opos.mobad.n.a {
 
     @Override // com.opos.mobad.n.a
     public View c() {
-        return this.f26788a;
+        return this.f13100a;
     }
 
     @Override // com.opos.mobad.n.a
     public void d() {
-        this.f26788a.removeAllViews();
-        this.f26788a.setVisibility(8);
+        this.f13100a.removeAllViews();
+        this.f13100a.setVisibility(8);
         this.m = 4;
     }
 

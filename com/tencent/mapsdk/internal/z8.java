@@ -32,7 +32,7 @@ public class z8 extends k8 {
     public static final int z = 1;
 
     /* renamed from: c  reason: collision with root package name */
-    public long f38147c;
+    public long f24456c;
     private long i;
     public v8[] s;
     public HashMap<Integer, v8> t;
@@ -307,7 +307,7 @@ public class z8 extends k8 {
         long j2 = j - this.i;
         long j3 = this.n;
         if (j2 > j3) {
-            this.f38147c = j - (j2 - j3);
+            this.f24456c = j - (j2 - j3);
             this.j = 1;
             return true;
         }
@@ -376,7 +376,7 @@ public class z8 extends k8 {
             return;
         }
         long uptimeMillis = SystemClock.uptimeMillis();
-        this.f38147c = uptimeMillis - (this.m - (uptimeMillis - this.f38147c));
+        this.f24456c = uptimeMillis - (this.m - (uptimeMillis - this.f24456c));
     }
 
     @Override // com.tencent.mapsdk.internal.k8
@@ -629,7 +629,7 @@ public class z8 extends k8 {
             this.d = j;
             this.j = 2;
         }
-        this.f38147c = uptimeMillis - j;
+        this.f24456c = uptimeMillis - j;
         c(uptimeMillis);
     }
 
@@ -694,7 +694,7 @@ public class z8 extends k8 {
         if (this.j == 0) {
             return 0L;
         }
-        return SystemClock.uptimeMillis() - this.f38147c;
+        return SystemClock.uptimeMillis() - this.f24456c;
     }
 
     public Interpolator x() {

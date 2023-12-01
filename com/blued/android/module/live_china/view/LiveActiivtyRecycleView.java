@@ -15,7 +15,6 @@ public class LiveActiivtyRecycleView extends RecyclerView {
         super(context, attributeSet);
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView, android.view.View
     public boolean onTouchEvent(MotionEvent motionEvent) {
         return false;
     }

@@ -195,7 +195,7 @@ public final class LinkedHashMultimap<K, V> extends LinkedHashMultimapGwtSeriali
             return this.firstEntry;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+        @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
         public Iterator<V> iterator() {
             return new Iterator<V>() { // from class: com.google.common.collect.LinkedHashMultimap.ValueSet.1
                 int expectedModCount;
@@ -276,7 +276,7 @@ public final class LinkedHashMultimap<K, V> extends LinkedHashMultimapGwtSeriali
             this.firstEntry = valueSetLink;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
         public int size() {
             return this.size;
         }

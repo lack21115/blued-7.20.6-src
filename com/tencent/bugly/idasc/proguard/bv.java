@@ -11,19 +11,19 @@ public final class bv extends m implements Cloneable {
     static Map<String, String> g;
 
     /* renamed from: a  reason: collision with root package name */
-    public byte f35315a = 0;
+    public byte f21624a = 0;
     public String b = "";
 
     /* renamed from: c  reason: collision with root package name */
-    public String f35316c = "";
+    public String f21625c = "";
     public ArrayList<bu> d = null;
     public Map<String, String> e = null;
 
     @Override // com.tencent.bugly.idasc.proguard.m
     public final void a(k kVar) {
-        this.f35315a = kVar.a(this.f35315a, 0, true);
+        this.f21624a = kVar.a(this.f21624a, 0, true);
         this.b = kVar.b(1, false);
-        this.f35316c = kVar.b(2, false);
+        this.f21625c = kVar.b(2, false);
         if (f == null) {
             f = new ArrayList<>();
             f.add(new bu());
@@ -39,12 +39,12 @@ public final class bv extends m implements Cloneable {
 
     @Override // com.tencent.bugly.idasc.proguard.m
     public final void a(l lVar) {
-        lVar.a(this.f35315a, 0);
+        lVar.a(this.f21624a, 0);
         String str = this.b;
         if (str != null) {
             lVar.a(str, 1);
         }
-        String str2 = this.f35316c;
+        String str2 = this.f21625c;
         if (str2 != null) {
             lVar.a(str2, 2);
         }

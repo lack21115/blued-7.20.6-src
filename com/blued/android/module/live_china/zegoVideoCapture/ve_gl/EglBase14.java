@@ -11,6 +11,7 @@ import android.os.Build;
 import android.util.Log;
 import android.view.Surface;
 import com.blued.android.module.live_china.zegoVideoCapture.ve_gl.EglBase;
+import javax.microedition.khronos.egl.EGL10;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/zegoVideoCapture/ve_gl/EglBase14.class */
 public final class EglBase14 extends EglBase {
@@ -22,21 +23,19 @@ public final class EglBase14 extends EglBase {
 
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/zegoVideoCapture/ve_gl/EglBase14$Context.class */
     public static class Context extends EglBase.Context {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final EGLContext f15500a;
+        private final EGLContext a;
 
         public Context(EGLContext eGLContext) {
-            this.f15500a = eGLContext;
+            this.a = eGLContext;
         }
     }
 
     public EglBase14(Context context, int[] iArr) {
         EGLDisplay l = l();
         this.l = l;
-        EGLConfig a2 = a(l, iArr);
-        this.k = a2;
-        this.j = a(context, this.l, a2);
+        EGLConfig a = a(l, iArr);
+        this.k = a;
+        this.j = a(context, this.l, a);
     }
 
     private static EGLConfig a(EGLDisplay eGLDisplay, int[] iArr) {
@@ -60,13 +59,13 @@ public final class EglBase14 extends EglBase {
 
     private static EGLContext a(Context context, EGLDisplay eGLDisplay, EGLConfig eGLConfig) {
         EGLContext eglCreateContext;
-        if (context != null && context.f15500a == EGL14.EGL_NO_CONTEXT) {
+        if (context != null && context.a == EGL14.EGL_NO_CONTEXT) {
             Log.e("EglBase14", "Invalid sharedContext");
             return null;
         }
-        EGLContext eGLContext = context == null ? EGL14.EGL_NO_CONTEXT : context.f15500a;
-        synchronized (EglBase.f15497c) {
-            eglCreateContext = EGL14.eglCreateContext(eGLDisplay, eGLConfig, eGLContext, new int[]{12440, 2, 12344}, 0);
+        EGLContext eGLContext = context == null ? EGL14.EGL_NO_CONTEXT : context.a;
+        synchronized (EglBase.c) {
+            eglCreateContext = EGL14.eglCreateContext(eGLDisplay, eGLConfig, eGLContext, new int[]{12440, 2, EGL10.EGL_NONE}, 0);
         }
         if (eglCreateContext == EGL14.EGL_NO_CONTEXT) {
             Log.e("EglBase14", "Failed to create EGL context: 0x" + Integer.toHexString(EGL14.eglGetError()));
@@ -85,7 +84,7 @@ public final class EglBase14 extends EglBase {
             this.b = true;
             return;
         }
-        this.m = EGL14.eglCreateWindowSurface(this.l, this.k, obj, new int[]{12344}, 0);
+        this.m = EGL14.eglCreateWindowSurface(this.l, this.k, obj, new int[]{EGL10.EGL_NONE}, 0);
         int eglGetError = EGL14.eglGetError();
         if (this.m == EGL14.EGL_NO_SURFACE || eglGetError != 12288) {
             this.b = true;
@@ -132,7 +131,7 @@ public final class EglBase14 extends EglBase {
             this.b = true;
             return;
         }
-        this.m = EGL14.eglCreatePbufferSurface(this.l, this.k, new int[]{12375, i2, 12374, i3, 12344}, 0);
+        this.m = EGL14.eglCreatePbufferSurface(this.l, this.k, new int[]{EGL10.EGL_WIDTH, i2, EGL10.EGL_HEIGHT, i3, EGL10.EGL_NONE}, 0);
         int eglGetError = EGL14.eglGetError();
         if (this.m == EGL14.EGL_NO_SURFACE || eglGetError != 12288) {
             this.b = true;
@@ -146,7 +145,7 @@ public final class EglBase14 extends EglBase {
             Log.e("EglBase14", "No EGLSurface - can't swap buffers");
             return;
         }
-        synchronized (EglBase.f15497c) {
+        synchronized (EglBase.c) {
             EGLExt.eglPresentationTimeANDROID(this.l, this.m, j);
             EGL14.eglSwapBuffers(this.l, this.m);
         }
@@ -195,9 +194,9 @@ public final class EglBase14 extends EglBase {
             Log.e("EglBase14", "No EGLSurface - can't make current");
             return;
         }
-        synchronized (EglBase.f15497c) {
+        synchronized (EglBase.c) {
             EGLContext eglGetCurrentContext = EGL14.eglGetCurrentContext();
-            EGLSurface eglGetCurrentSurface = EGL14.eglGetCurrentSurface(12377);
+            EGLSurface eglGetCurrentSurface = EGL14.eglGetCurrentSurface(EGL10.EGL_DRAW);
             if (eglGetCurrentContext == this.j && eglGetCurrentSurface == this.m) {
                 return;
             }
@@ -211,7 +210,7 @@ public final class EglBase14 extends EglBase {
 
     @Override // com.blued.android.module.live_china.zegoVideoCapture.ve_gl.EglBase
     public void g() {
-        synchronized (EglBase.f15497c) {
+        synchronized (EglBase.c) {
             if (EGL14.eglMakeCurrent(this.l, EGL14.EGL_NO_SURFACE, EGL14.EGL_NO_SURFACE, EGL14.EGL_NO_CONTEXT)) {
                 return;
             }
@@ -228,7 +227,7 @@ public final class EglBase14 extends EglBase {
             Log.e("EglBase14", "No EGLSurface - can't swap buffers");
             return;
         }
-        synchronized (EglBase.f15497c) {
+        synchronized (EglBase.c) {
             EGL14.eglSwapBuffers(this.l, this.m);
         }
     }

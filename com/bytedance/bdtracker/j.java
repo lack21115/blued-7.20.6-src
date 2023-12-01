@@ -1,5 +1,6 @@
 package com.bytedance.bdtracker;
 
+import android.drm.DrmInfoRequest;
 import java.util.Locale;
 import kotlin.Metadata;
 import kotlin.TypeCastException;
@@ -19,7 +20,7 @@ public final class j extends l {
     public String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f21234c;
+    public String f7628c;
     public String d;
     public String e;
     public String f;
@@ -54,7 +55,7 @@ public final class j extends l {
     public JSONObject a() {
         JSONObject jSONObject = new JSONObject();
         jSONObject.put("name", this.b);
-        jSONObject.put("utm_campaign", this.f21234c);
+        jSONObject.put("utm_campaign", this.f7628c);
         jSONObject.put("utm_source", this.d);
         jSONObject.put("utm_medium", this.e);
         jSONObject.put("utm_content", this.f);
@@ -71,13 +72,13 @@ public final class j extends l {
         jSONObject.put("deeplink_value", this.q);
         jSONObject.put("tr_site_id", this.r);
         jSONObject.put("tr_site_name", this.s);
-        jSONObject.put("account_id", this.t);
+        jSONObject.put(DrmInfoRequest.ACCOUNT_ID, this.t);
         jSONObject.put("account_name", this.u);
         jSONObject.put("campaign_id", this.v);
         jSONObject.put("campaign_name", this.w);
         jSONObject.put("ad_id", this.x);
         jSONObject.put("ad_name", this.y);
-        jSONObject.put("creative_id", this.z);
+        jSONObject.put(com.anythink.expressad.foundation.d.c.l, this.z);
         jSONObject.put("creative_name", this.A);
         jSONObject.put("tr_install_type", this.B);
         jSONObject.put("touch_type", this.C);
@@ -100,7 +101,7 @@ public final class j extends l {
     public void a(JSONObject jSONObject) {
         if (jSONObject != null) {
             this.b = jSONObject.optString("name", null);
-            this.f21234c = jSONObject.optString("utm_campaign", null);
+            this.f7628c = jSONObject.optString("utm_campaign", null);
             this.d = jSONObject.optString("utm_source", null);
             this.e = jSONObject.optString("utm_medium", null);
             this.f = jSONObject.optString("utm_content", null);
@@ -117,18 +118,18 @@ public final class j extends l {
             this.q = jSONObject.optString("deeplink_value", null);
             this.r = jSONObject.optString("tr_site_id", null);
             this.s = jSONObject.optString("tr_site_name", null);
-            this.t = jSONObject.optString("account_id", null);
+            this.t = jSONObject.optString(DrmInfoRequest.ACCOUNT_ID, null);
             this.u = jSONObject.optString("account_name", null);
             this.v = jSONObject.optString("campaign_id", null);
             this.w = jSONObject.optString("campaign_name", null);
             this.x = jSONObject.optString("ad_id", null);
             this.y = jSONObject.optString("ad_name", null);
-            this.z = jSONObject.optString("creative_id", null);
+            this.z = jSONObject.optString(com.anythink.expressad.foundation.d.c.l, null);
             this.A = jSONObject.optString("creative_name", null);
             this.B = jSONObject.optString("tr_install_type", null);
             this.C = jSONObject.optString("touch_type", null);
             this.D = jSONObject.optString("touch_timestamp", null);
-            this.E = Intrinsics.a((Object) jSONObject.optString("activation_type"), (Object) "promotion") ? a.PROMOTION : a.ORGANIC;
+            this.E = Intrinsics.a(jSONObject.optString("activation_type"), "promotion") ? a.PROMOTION : a.ORGANIC;
             this.F = jSONObject.optString("activation_timestamp", null);
             this.G = jSONObject.optBoolean("is_first_launch");
         }

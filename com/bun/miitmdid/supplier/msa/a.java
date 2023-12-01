@@ -7,11 +7,11 @@ import com.bun.lib.c;
 public class a extends AsyncTask<Void, Void, Boolean> {
 
     /* renamed from: a  reason: collision with root package name */
-    public c f21163a;
+    public c f7557a;
     public com.bun.miitmdid.c.e.a b;
 
     public a(c cVar, com.bun.miitmdid.c.e.a aVar) {
-        this.f21163a = cVar;
+        this.f7557a = cVar;
         this.b = aVar;
     }
 

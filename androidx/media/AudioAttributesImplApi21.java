@@ -11,10 +11,10 @@ import java.lang.reflect.Method;
 class AudioAttributesImplApi21 implements AudioAttributesImpl {
 
     /* renamed from: c  reason: collision with root package name */
-    static Method f3104c;
+    static Method f3056c;
 
     /* renamed from: a  reason: collision with root package name */
-    AudioAttributes f3105a;
+    AudioAttributes f3057a;
     int b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -30,16 +30,16 @@ class AudioAttributesImplApi21 implements AudioAttributesImpl {
     /* JADX INFO: Access modifiers changed from: package-private */
     public AudioAttributesImplApi21(AudioAttributes audioAttributes, int i) {
         this.b = -1;
-        this.f3105a = audioAttributes;
+        this.f3057a = audioAttributes;
         this.b = i;
     }
 
     static Method a() {
         try {
-            if (f3104c == null) {
-                f3104c = AudioAttributes.class.getMethod("toLegacyStreamType", AudioAttributes.class);
+            if (f3056c == null) {
+                f3056c = AudioAttributes.class.getMethod("toLegacyStreamType", AudioAttributes.class);
             }
-            return f3104c;
+            return f3056c;
         } catch (NoSuchMethodException e) {
             return null;
         }
@@ -55,24 +55,24 @@ class AudioAttributesImplApi21 implements AudioAttributesImpl {
 
     public boolean equals(Object obj) {
         if (obj instanceof AudioAttributesImplApi21) {
-            return this.f3105a.equals(((AudioAttributesImplApi21) obj).f3105a);
+            return this.f3057a.equals(((AudioAttributesImplApi21) obj).f3057a);
         }
         return false;
     }
 
     @Override // androidx.media.AudioAttributesImpl
     public Object getAudioAttributes() {
-        return this.f3105a;
+        return this.f3057a;
     }
 
     @Override // androidx.media.AudioAttributesImpl
     public int getContentType() {
-        return this.f3105a.getContentType();
+        return this.f3057a.getContentType();
     }
 
     @Override // androidx.media.AudioAttributesImpl
     public int getFlags() {
-        return this.f3105a.getFlags();
+        return this.f3057a.getFlags();
     }
 
     @Override // androidx.media.AudioAttributesImpl
@@ -87,7 +87,7 @@ class AudioAttributesImplApi21 implements AudioAttributesImpl {
             return -1;
         }
         try {
-            return ((Integer) a2.invoke(null, this.f3105a)).intValue();
+            return ((Integer) a2.invoke(null, this.f3057a)).intValue();
         } catch (IllegalAccessException | InvocationTargetException e) {
             Log.w("AudioAttributesCompat21", "getLegacyStreamType() failed on API: " + Build.VERSION.SDK_INT, e);
             return -1;
@@ -101,22 +101,22 @@ class AudioAttributesImplApi21 implements AudioAttributesImpl {
 
     @Override // androidx.media.AudioAttributesImpl
     public int getUsage() {
-        return this.f3105a.getUsage();
+        return this.f3057a.getUsage();
     }
 
     @Override // androidx.media.AudioAttributesImpl
     public int getVolumeControlStream() {
-        return Build.VERSION.SDK_INT >= 26 ? this.f3105a.getVolumeControlStream() : AudioAttributesCompat.a(true, getFlags(), getUsage());
+        return Build.VERSION.SDK_INT >= 26 ? this.f3057a.getVolumeControlStream() : AudioAttributesCompat.a(true, getFlags(), getUsage());
     }
 
     public int hashCode() {
-        return this.f3105a.hashCode();
+        return this.f3057a.hashCode();
     }
 
     @Override // androidx.media.AudioAttributesImpl
     public Bundle toBundle() {
         Bundle bundle = new Bundle();
-        bundle.putParcelable("androidx.media.audio_attrs.FRAMEWORKS", this.f3105a);
+        bundle.putParcelable("androidx.media.audio_attrs.FRAMEWORKS", this.f3057a);
         int i = this.b;
         if (i != -1) {
             bundle.putInt("androidx.media.audio_attrs.LEGACY_STREAM_TYPE", i);
@@ -125,6 +125,6 @@ class AudioAttributesImplApi21 implements AudioAttributesImpl {
     }
 
     public String toString() {
-        return "AudioAttributesCompat: audioattributes=" + this.f3105a;
+        return "AudioAttributesCompat: audioattributes=" + this.f3057a;
     }
 }

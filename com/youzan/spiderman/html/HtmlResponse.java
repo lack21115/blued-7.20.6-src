@@ -10,16 +10,16 @@ import java.util.Map;
 public class HtmlResponse {
 
     /* renamed from: a  reason: collision with root package name */
-    private Map<String, List<String>> f41820a;
+    private Map<String, List<String>> f28129a;
     private byte[] b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f41821c;
+    private String f28130c;
 
     public HtmlResponse(Map<String, List<String>> map, byte[] bArr, String str) {
-        this.f41820a = map;
+        this.f28129a = map;
         this.b = bArr;
-        this.f41821c = str;
+        this.f28130c = str;
     }
 
     public ByteArrayInputStream getContentStream() {
@@ -27,11 +27,11 @@ public class HtmlResponse {
     }
 
     public String getEncoding() {
-        return this.f41821c;
+        return this.f28130c;
     }
 
     public Map<String, List<String>> getHeader() {
-        return this.f41820a;
+        return this.f28129a;
     }
 
     public String getMimeType() {
@@ -40,21 +40,21 @@ public class HtmlResponse {
 
     public List<String> getResponseHeader(String str) {
         if (str != null) {
-            return this.f41820a.get(str);
+            return this.f28129a.get(str);
         }
         return null;
     }
 
     public Map<String, String> getTransferHeader() {
-        return HtmlHeader.transferHeaderMapList(this.f41820a);
+        return HtmlHeader.transferHeaderMapList(this.f28129a);
     }
 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("\nheader:  ");
-        sb.append(JsonUtil.toJson(this.f41820a));
+        sb.append(JsonUtil.toJson(this.f28129a));
         sb.append("\nencoding:  ");
-        sb.append(this.f41821c);
+        sb.append(this.f28130c);
         sb.append("\nhtml:  ");
         sb.append(this.b);
         sb.append(", size:" + this.b.length);

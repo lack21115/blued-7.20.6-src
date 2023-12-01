@@ -17,20 +17,20 @@ public interface b {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public final long f7154a;
+        public final long f4315a;
         public final ae b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final int f7155c;
+        public final int f4316c;
         public final s.a d;
         public final long e;
         public final long f;
         public final long g;
 
         public a(long j, ae aeVar, int i, s.a aVar, long j2, long j3, long j4) {
-            this.f7154a = j;
+            this.f4315a = j;
             this.b = aeVar;
-            this.f7155c = i;
+            this.f4316c = i;
             this.d = aVar;
             this.e = j2;
             this.f = j3;

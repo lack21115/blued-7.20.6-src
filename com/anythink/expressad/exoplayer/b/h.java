@@ -7,7 +7,7 @@ import java.nio.ByteBuffer;
 public interface h {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final long f7191a = Long.MIN_VALUE;
+    public static final long f4352a = Long.MIN_VALUE;
 
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/exoplayer/b/h$a.class */
     public static final class a extends Exception {
@@ -24,11 +24,11 @@ public interface h {
     public static final class b extends Exception {
 
         /* renamed from: a  reason: collision with root package name */
-        public final int f7192a;
+        public final int f4353a;
 
         public b(int i, int i2, int i3, int i4) {
             super("AudioTrack init failed: " + i + ", Config(" + i2 + ", " + i3 + ", " + i4 + ")");
-            this.f7192a = i;
+            this.f4353a = i;
         }
     }
 
@@ -45,11 +45,11 @@ public interface h {
     public static final class d extends Exception {
 
         /* renamed from: a  reason: collision with root package name */
-        public final int f7193a;
+        public final int f4354a;
 
         public d(int i) {
             super("AudioTrack write failed: ".concat(String.valueOf(i)));
-            this.f7193a = i;
+            this.f4354a = i;
         }
     }
 

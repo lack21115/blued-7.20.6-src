@@ -19,10 +19,10 @@ public class cj {
     private static final String Z = "com.huawei.fastapp";
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f22948a = "com.hicloud.browser";
+    private static final String f9340a = "com.hicloud.browser";
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f22949c = "com.android.browser";
+    private static final String f9341c = "com.android.browser";
     private static final String e = "com.hihonor.browser";
     private static final Map<String, List<String>> g;
     private static final String h = "com.petal.litegames";

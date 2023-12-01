@@ -4,7 +4,7 @@ package com.tencent.liteav.base.util;
 public final class n {
 
     /* renamed from: a  reason: collision with root package name */
-    public int f36340a;
+    public int f22649a;
     public int b;
 
     public n() {
@@ -12,7 +12,7 @@ public final class n {
     }
 
     public n(int i, int i2) {
-        this.f36340a = i;
+        this.f22649a = i;
         this.b = i2;
     }
 
@@ -21,39 +21,39 @@ public final class n {
     }
 
     public final void a() {
-        int i = this.f36340a;
-        this.f36340a = this.b;
+        int i = this.f22649a;
+        this.f22649a = this.b;
         this.b = i;
     }
 
     public final void a(int i, int i2) {
-        this.f36340a = i;
+        this.f22649a = i;
         this.b = i2;
     }
 
     public final void a(n nVar) {
         if (nVar != null) {
-            this.f36340a = nVar.f36340a;
+            this.f22649a = nVar.f22649a;
             this.b = nVar.b;
             return;
         }
-        this.f36340a = 0;
+        this.f22649a = 0;
         this.b = 0;
     }
 
     public final int b() {
         if (d()) {
-            return this.f36340a * this.b;
+            return this.f22649a * this.b;
         }
         return 0;
     }
 
     public final double c() {
-        return (this.f36340a * 1.0d) / this.b;
+        return (this.f22649a * 1.0d) / this.b;
     }
 
     public final boolean d() {
-        return this.f36340a > 0 && this.b > 0;
+        return this.f22649a > 0 && this.b > 0;
     }
 
     public final boolean equals(Object obj) {
@@ -62,16 +62,16 @@ public final class n {
         }
         if (obj instanceof n) {
             n nVar = (n) obj;
-            return nVar.f36340a == this.f36340a && nVar.b == this.b;
+            return nVar.f22649a == this.f22649a && nVar.b == this.b;
         }
         return false;
     }
 
     public final int hashCode() {
-        return (this.f36340a * 32713) + this.b;
+        return (this.f22649a * 32713) + this.b;
     }
 
     public final String toString() {
-        return "Size(" + this.f36340a + ", " + this.b + ")";
+        return "Size(" + this.f22649a + ", " + this.b + ")";
     }
 }

@@ -1,6 +1,7 @@
 package com.kwad.components.core.b;
 
 import com.kwad.sdk.core.response.model.AdTemplate;
+import com.xiaomi.mipush.sdk.Constants;
 import java.lang.ref.WeakReference;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -12,13 +13,13 @@ public class f {
     private static String G(AdTemplate adTemplate) {
         long bU = com.kwad.sdk.core.response.a.d.bU(adTemplate);
         long cl = com.kwad.sdk.core.response.a.d.cl(adTemplate);
-        return bU + "-" + cl;
+        return bU + Constants.ACCEPT_TIME_SEPARATOR_SERVER + cl;
     }
 
     private static String b(g gVar) {
         String ml = gVar.ml();
         String mr = gVar.mr();
-        return ml + "-" + mr;
+        return ml + Constants.ACCEPT_TIME_SEPARATOR_SERVER + mr;
     }
 
     public static f mk() {

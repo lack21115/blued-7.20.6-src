@@ -21,13 +21,9 @@ import com.blued.android.core.utils.skin.listener.BluedSkinLoaderListener;
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/ui/AppLifecycleCallbacks.class */
 public class AppLifecycleCallbacks implements Application.ActivityLifecycleCallbacks, LifecycleObserver {
     private static String b = "";
-
-    /* renamed from: c  reason: collision with root package name */
-    private static boolean f9715c = false;
+    private static boolean c = false;
     private static boolean d = false;
-
-    /* renamed from: a  reason: collision with root package name */
-    private Activity f9716a;
+    private Activity a;
 
     public AppLifecycleCallbacks(Application application) {
         application.registerActivityLifecycleCallbacks(this);
@@ -35,12 +31,12 @@ public class AppLifecycleCallbacks implements Application.ActivityLifecycleCallb
     }
 
     private void a(Activity activity) {
-        boolean a2;
+        boolean a;
         if (activity != null && BluedSkinUtils.a()) {
             Log.e("AppLifecycleCallbacks", "changeSkin ... ");
-            if (Build.VERSION.SDK_INT >= 29 && BluedSkinPreferences.a() && BluedSkinPreferences.b() != (a2 = BluedSkinUtils.a(activity))) {
-                BluedSkinPreferences.b(a2);
-                if (a2) {
+            if (Build.VERSION.SDK_INT >= 29 && BluedSkinPreferences.a() && BluedSkinPreferences.b() != (a = BluedSkinUtils.a(activity))) {
+                BluedSkinPreferences.b(a);
+                if (a) {
                     b(activity);
                 } else {
                     BluedSkinUtils.b();
@@ -54,7 +50,7 @@ public class AppLifecycleCallbacks implements Application.ActivityLifecycleCallb
             return;
         }
         b = str;
-        f9715c = false;
+        c = false;
     }
 
     private void b(final Activity activity) {
@@ -91,7 +87,7 @@ public class AppLifecycleCallbacks implements Application.ActivityLifecycleCallb
 
     @Override // android.app.Application.ActivityLifecycleCallbacks
     public void onActivityResumed(Activity activity) {
-        this.f9716a = activity;
+        this.a = activity;
         RecyclingImageLoader.c();
     }
 
@@ -102,12 +98,12 @@ public class AppLifecycleCallbacks implements Application.ActivityLifecycleCallb
     @Override // android.app.Application.ActivityLifecycleCallbacks
     public void onActivityStarted(Activity activity) {
         Log.e("AppLifecycleCallbacks", "onActivityStarted:" + activity.getClass().getName());
-        this.f9716a = activity;
-        if (activity.getClass().getName().equals(b) || f9715c) {
+        this.a = activity;
+        if (activity.getClass().getName().equals(b) || c) {
             onAppStart();
             return;
         }
-        f9715c = true;
+        c = true;
         onAppStart();
     }
 
@@ -123,11 +119,11 @@ public class AppLifecycleCallbacks implements Application.ActivityLifecycleCallb
     @OnLifecycleEvent(Lifecycle.Event.ON_START)
     public void onAppStart() {
         Log.e("AppLifecycleCallbacks", "-- onAppStart : " + d);
-        Activity activity = this.f9716a;
+        Activity activity = this.a;
         if ((activity == null || !activity.getClass().getName().equals(b)) && !d) {
             d = true;
             Log.e("AppLifecycleCallbacks", "-- setAppInForeground");
-            AppInfo.a(this.f9716a);
+            AppInfo.a(this.a);
         }
     }
 
@@ -139,6 +135,6 @@ public class AppLifecycleCallbacks implements Application.ActivityLifecycleCallb
             Log.e("AppLifecycleCallbacks", "-- setAppInBackground");
             AppInfo.h();
         }
-        this.f9716a = null;
+        this.a = null;
     }
 }

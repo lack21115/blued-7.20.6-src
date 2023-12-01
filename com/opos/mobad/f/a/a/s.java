@@ -9,14 +9,14 @@ import java.util.Map;
 public class s {
 
     /* renamed from: a  reason: collision with root package name */
-    private HashMap<Integer, e.a> f26051a = new HashMap<>();
+    private HashMap<Integer, e.a> f12363a = new HashMap<>();
 
     public s(List<e.a> list) {
         if (list == null || list.size() <= 0) {
             return;
         }
         for (e.a aVar : list) {
-            this.f26051a.put(Integer.valueOf(aVar.f27301a), aVar);
+            this.f12363a.put(Integer.valueOf(aVar.f13613a), aVar);
         }
     }
 
@@ -51,7 +51,7 @@ public class s {
                     int f = t.f();
                     int i3 = f;
                     if (f <= 0) {
-                        e.a aVar2 = this.f26051a.get(entry.getKey());
+                        e.a aVar2 = this.f12363a.get(entry.getKey());
                         i3 = f;
                         if (aVar2 != null) {
                             i3 = aVar2.g;
@@ -74,7 +74,7 @@ public class s {
             aVar = null;
             if (i != -1) {
                 a(i, hashMap);
-                aVar = this.f26051a.get(Integer.valueOf(i));
+                aVar = this.f12363a.get(Integer.valueOf(i));
             }
         }
         return aVar;

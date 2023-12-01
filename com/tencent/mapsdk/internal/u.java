@@ -16,10 +16,10 @@ public final class u implements ji, ki, li {
     private s b;
 
     /* renamed from: a  reason: collision with root package name */
-    private ki f38033a = new a();
+    private ki f24342a = new a();
 
     /* renamed from: c  reason: collision with root package name */
-    private ji f38034c = new b();
+    private ji f24343c = new b();
     private li d = new c();
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/mapsdk/internal/u$a.class */
@@ -135,7 +135,7 @@ public final class u implements ji, ki, li {
         public final /* synthetic */ Context b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ String f38038c;
+        public final /* synthetic */ String f24347c;
         public final /* synthetic */ Handler d;
         public final /* synthetic */ Callback e;
 
@@ -155,14 +155,14 @@ public final class u implements ji, ki, li {
 
         public d(Context context, String str, Handler handler, Callback callback) {
             this.b = context;
-            this.f38038c = str;
+            this.f24347c = str;
             this.d = handler;
             this.e = callback;
         }
 
         @Override // java.lang.Runnable
         public void run() {
-            u.this.init(this.b, this.f38038c);
+            u.this.init(this.b, this.f24347c);
             this.d.post(new a());
         }
     }
@@ -176,42 +176,42 @@ public final class u implements ji, ki, li {
 
     @Override // com.tencent.mapsdk.internal.ki
     public int a() {
-        return this.f38033a.a();
+        return this.f24342a.a();
     }
 
     @Override // com.tencent.mapsdk.internal.ki
     public Class a(String str) {
-        return this.f38033a.a(str);
+        return this.f24342a.a(str);
     }
 
     @Override // com.tencent.mapsdk.internal.ki
     public <T> Class<? extends T> a(String str, Class<T> cls) {
-        return this.f38033a.a(str, cls);
+        return this.f24342a.a(str, cls);
     }
 
     @Override // com.tencent.mapsdk.internal.ki
     public Object a(Class cls, String str, Class[] clsArr, Object[] objArr) {
-        return this.f38033a.a(cls, str, clsArr, objArr);
+        return this.f24342a.a(cls, str, clsArr, objArr);
     }
 
     @Override // com.tencent.mapsdk.internal.ki
     public <T> T a(Class<T> cls, Object... objArr) {
-        return (T) this.f38033a.a(cls, objArr);
+        return (T) this.f24342a.a(cls, objArr);
     }
 
     @Override // com.tencent.mapsdk.internal.ki
     public Object a(Object obj, String str, Class[] clsArr, Object[] objArr) {
-        return this.f38033a.a(obj, str, clsArr, objArr);
+        return this.f24342a.a(obj, str, clsArr, objArr);
     }
 
     @Override // com.tencent.mapsdk.internal.ki
     public Object a(Object obj, String str, Object... objArr) {
-        return this.f38033a.a(obj, str, objArr);
+        return this.f24342a.a(obj, str, objArr);
     }
 
     @Override // com.tencent.mapsdk.internal.ji
     public void a(int i, Map<String, String> map) {
-        this.f38034c.a(i, map);
+        this.f24343c.a(i, map);
     }
 
     public void a(Context context, String str, Callback<Void> callback) {
@@ -220,28 +220,28 @@ public final class u implements ji, ki, li {
 
     @Override // com.tencent.mapsdk.internal.ki
     public ClassLoader b() {
-        return this.f38033a.b();
+        return this.f24342a.b();
     }
 
     @Override // com.tencent.mapsdk.internal.ki
     public Object b(String str) {
-        return this.f38033a.b(str);
+        return this.f24342a.b(str);
     }
 
     @Override // com.tencent.mapsdk.internal.ki
     public File c() {
-        return this.f38033a.c();
+        return this.f24342a.c();
     }
 
     @Override // com.tencent.mapsdk.internal.mi.a
     public void close() {
-        this.f38033a.close();
-        this.f38034c.close();
+        this.f24342a.close();
+        this.f24343c.close();
         this.d.close();
     }
 
     public File e() {
-        return this.f38033a.c();
+        return this.f24342a.c();
     }
 
     public s f() {
@@ -254,21 +254,21 @@ public final class u implements ji, ki, li {
         if (!mi.p.isEmpty()) {
             for (mi.b bVar : mi.p) {
                 String str2 = "com.tencent.mapsdk." + bVar.b;
-                ki b2 = Util.findClass(str2, u.class.getClassLoader()) != null ? this.f38033a.b(str2) : null;
+                ki b2 = Util.findClass(str2, u.class.getClassLoader()) != null ? this.f24342a.b(str2) : null;
                 if (b2 instanceof mi.a) {
                     b2.init(context, str);
                 }
                 if (b2 instanceof ki) {
-                    this.f38033a = b2;
+                    this.f24342a = b2;
                 } else if (b2 instanceof li) {
                     this.d = b2;
                 } else if (b2 instanceof ji) {
-                    this.f38034c = b2;
+                    this.f24343c = b2;
                 }
             }
         }
-        this.f38033a.a();
-        this.b = (s) this.f38033a.b("com.tencent.mapsdk.core.MapDelegateFactoryImpl");
+        this.f24342a.a();
+        this.b = (s) this.f24342a.b("com.tencent.mapsdk.core.MapDelegateFactoryImpl");
     }
 
     @Override // com.tencent.mapsdk.internal.li

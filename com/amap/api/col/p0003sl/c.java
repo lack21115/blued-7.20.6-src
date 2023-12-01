@@ -1,11 +1,11 @@
 package com.amap.api.col.p0003sl;
 
 import android.os.Bundle;
-import android.telecom.PhoneAccount;
 import com.amap.api.fence.DistrictItem;
 import com.amap.api.fence.GeoFence;
 import com.amap.api.fence.PoiItem;
 import com.amap.api.location.DPoint;
+import com.android.internal.util.cm.QSConstants;
 import com.autonavi.aps.amapapi.utils.i;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,9 +15,7 @@ import org.json.JSONObject;
 /* renamed from: com.amap.api.col.3sl.c  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/c.class */
 public final class c {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static long f4802a;
+    private static long a;
 
     private static double a(DPoint dPoint, DPoint dPoint2, DPoint dPoint3) {
         double longitude;
@@ -69,7 +67,7 @@ public final class c {
                         poiItem.setPoiType(jSONObject2.optString("type"));
                         poiItem.setTypeCode(jSONObject2.optString("typecode"));
                         poiItem.setAddress(jSONObject2.optString("address"));
-                        String optString = jSONObject2.optString("location");
+                        String optString = jSONObject2.optString(QSConstants.TILE_LOCATION);
                         if (optString != null) {
                             String[] split = optString.split(",");
                             poiItem.setLongitude(Double.parseDouble(split[0]));
@@ -82,7 +80,7 @@ public final class c {
                             geoFence.setPointList(arrayList);
                             geoFence.setCenter(dPoint);
                         }
-                        poiItem.setTel(jSONObject2.optString(PhoneAccount.SCHEME_TEL));
+                        poiItem.setTel(jSONObject2.optString("tel"));
                         poiItem.setProvince(jSONObject2.optString("pname"));
                         poiItem.setCity(jSONObject2.optString("cityname"));
                         poiItem.setAdname(jSONObject2.optString("adname"));
@@ -116,12 +114,12 @@ public final class c {
         synchronized (c.class) {
             try {
                 long b = i.b();
-                if (b > f4802a) {
-                    f4802a = b;
+                if (b > a) {
+                    a = b;
                 } else {
-                    f4802a++;
+                    a++;
                 }
-                j = f4802a;
+                j = a;
             } finally {
             }
         }
@@ -232,7 +230,7 @@ public final class c {
                                 districtItem.setAdcode(optString2);
                                 districtItem.setDistrictName(optString3);
                                 String str6 = optString3;
-                                String[] split3 = str5.split(";");
+                                String[] split3 = str5.split(com.alipay.sdk.util.i.b);
                                 int i5 = 0;
                                 while (true) {
                                     int i6 = i5;

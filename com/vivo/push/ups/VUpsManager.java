@@ -11,11 +11,11 @@ public class VUpsManager {
     static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static VUpsManager f41122a = new VUpsManager();
+        private static VUpsManager f27431a = new VUpsManager();
     }
 
     public static VUpsManager getInstance() {
-        return a.f41122a;
+        return a.f27431a;
     }
 
     public void onCommandResult(Context context, Bundle bundle) {

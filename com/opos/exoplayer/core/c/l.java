@@ -7,7 +7,7 @@ public interface l {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public final m f25250a;
+        public final m f11562a;
         public final m b;
 
         public a(m mVar) {
@@ -15,7 +15,7 @@ public interface l {
         }
 
         public a(m mVar, m mVar2) {
-            this.f25250a = (m) com.opos.exoplayer.core.i.a.a(mVar);
+            this.f11562a = (m) com.opos.exoplayer.core.i.a.a(mVar);
             this.b = (m) com.opos.exoplayer.core.i.a.a(mVar2);
         }
 
@@ -29,7 +29,7 @@ public interface l {
                     }
                     a aVar = (a) obj;
                     z = false;
-                    if (this.f25250a.equals(aVar.f25250a)) {
+                    if (this.f11562a.equals(aVar.f11562a)) {
                         if (!this.b.equals(aVar.b)) {
                             return false;
                         }
@@ -42,15 +42,15 @@ public interface l {
         }
 
         public int hashCode() {
-            return (this.f25250a.hashCode() * 31) + this.b.hashCode();
+            return (this.f11562a.hashCode() * 31) + this.b.hashCode();
         }
 
         public String toString() {
             String str;
             StringBuilder sb = new StringBuilder();
             sb.append("[");
-            sb.append(this.f25250a);
-            if (this.f25250a.equals(this.b)) {
+            sb.append(this.f11562a);
+            if (this.f11562a.equals(this.b)) {
                 str = "";
             } else {
                 str = ", " + this.b;
@@ -65,7 +65,7 @@ public interface l {
     public static final class b implements l {
 
         /* renamed from: a  reason: collision with root package name */
-        private final long f25251a;
+        private final long f11563a;
         private final a b;
 
         public b(long j) {
@@ -73,8 +73,8 @@ public interface l {
         }
 
         public b(long j, long j2) {
-            this.f25251a = j;
-            this.b = new a(j2 == 0 ? m.f25252a : new m(0L, j2));
+            this.f11563a = j;
+            this.b = new a(j2 == 0 ? m.f11564a : new m(0L, j2));
         }
 
         @Override // com.opos.exoplayer.core.c.l
@@ -84,7 +84,7 @@ public interface l {
 
         @Override // com.opos.exoplayer.core.c.l
         public long b() {
-            return this.f25251a;
+            return this.f11563a;
         }
 
         @Override // com.opos.exoplayer.core.c.l

@@ -62,7 +62,7 @@ public class EditVolumeView extends EditBottomBaseView implements SeekBar.OnSeek
 
     @Override // com.blued.android.module.shortvideo.view.EditBottomBaseView
     protected void b() {
-        StvViewUtils.a(this.f15888c, 30, 46, 30, 60);
+        StvViewUtils.a(this.c, 30, 46, 30, 60);
     }
 
     @Override // com.blued.android.module.shortvideo.view.EditBottomBaseView

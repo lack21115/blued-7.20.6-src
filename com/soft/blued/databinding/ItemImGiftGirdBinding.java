@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemImGiftGirdBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final RecyclerView f29203a;
+    private final RecyclerView f15513a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RecyclerView getRoot() {
-        return this.f29203a;
+        return this.f15513a;
     }
 }

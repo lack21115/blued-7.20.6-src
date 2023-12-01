@@ -2,6 +2,7 @@ package java.net;
 
 import android.system.ErrnoException;
 import android.system.OsConstants;
+import com.blued.android.module.common.web.LoaderConstants;
 import dalvik.system.CloseGuard;
 import java.io.FileDescriptor;
 import java.io.IOException;
@@ -88,7 +89,7 @@ public class PlainSocketImpl extends SocketImpl {
         this.guard = CloseGuard.get();
         this.fd = fileDescriptor;
         if (fileDescriptor.valid()) {
-            this.guard.open("close");
+            this.guard.open(LoaderConstants.CLOSE);
         }
     }
 
@@ -100,7 +101,7 @@ public class PlainSocketImpl extends SocketImpl {
         this.address = inetAddress;
         this.port = i2;
         if (fileDescriptor.valid()) {
-            this.guard.open("close");
+            this.guard.open(LoaderConstants.CLOSE);
         }
     }
 
@@ -260,7 +261,7 @@ public class PlainSocketImpl extends SocketImpl {
             socketImpl.fd.setInt$(Libcore.os.accept(this.fd, inetSocketAddress).getInt$());
             socketImpl.address = inetSocketAddress.getAddress();
             socketImpl.port = inetSocketAddress.getPort();
-            socketImpl.setOption(4102, 0);
+            socketImpl.setOption(SocketOptions.SO_TIMEOUT, 0);
             socketImpl.localport = IoBridge.getSocketLocalPort(socketImpl.fd);
         } catch (ErrnoException e) {
             if (e.errno != OsConstants.EAGAIN) {

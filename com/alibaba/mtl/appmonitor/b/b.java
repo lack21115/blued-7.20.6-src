@@ -7,8 +7,7 @@ import com.alibaba.mtl.appmonitor.a.h;
 import com.alibaba.mtl.appmonitor.c.d;
 import com.alibaba.mtl.appmonitor.c.e;
 import com.alibaba.mtl.appmonitor.f.c;
-import com.bytedance.sdk.openadsdk.downloadnew.core.TTDownloadField;
-import com.sina.weibo.sdk.constant.WBPageConstants;
+import com.amap.api.maps.model.MyLocationStyle;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -49,16 +48,16 @@ public class b {
                 return jSONObject;
             }
         }
-        jSONObject.put(WBPageConstants.ParamKey.PAGE, "APPMONITOR");
+        jSONObject.put("page", "APPMONITOR");
         jSONObject.put("monitorPoint", "sdk-exception");
         jSONObject.put("arg", th.getClass().getSimpleName());
         jSONObject.put("successCount", 0);
         jSONObject.put("failCount", 1);
         ArrayList arrayList = new ArrayList();
-        String a2 = a(th);
-        if (a2 != null) {
+        String a = a(th);
+        if (a != null) {
             JSONObject jSONObject2 = (JSONObject) com.alibaba.mtl.appmonitor.c.a.a().a(e.class, new Object[0]);
-            jSONObject2.put("errorCode", a2);
+            jSONObject2.put(MyLocationStyle.ERROR_CODE, a);
             jSONObject2.put("errorCount", 1);
             arrayList.add(jSONObject2);
         }
@@ -67,17 +66,17 @@ public class b {
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public static void m2143a(Context context, Throwable th) {
+    public static void m8586a(Context context, Throwable th) {
         if (th != null) {
             try {
                 h hVar = (h) com.alibaba.mtl.appmonitor.c.a.a().a(h.class, new Object[0]);
-                hVar.e = f.ALARM.m2139a();
+                hVar.e = f.ALARM.m8582a();
                 HashMap hashMap = new HashMap();
-                hashMap.put(TTDownloadField.TT_META, SdkMeta.getSDKMetaData());
+                hashMap.put("meta", SdkMeta.getSDKMetaData());
                 d dVar = (d) com.alibaba.mtl.appmonitor.c.a.a().a(d.class, new Object[0]);
                 dVar.put(a(context, th));
                 hashMap.put("data", dVar);
-                hVar.k.put(f.ALARM.m2140a(), new JSONObject(hashMap).toString());
+                hVar.k.put(f.ALARM.m8583a(), new JSONObject(hashMap).toString());
                 hVar.v = "APPMONITOR";
                 hVar.w = "sdk-exception";
                 c.a(hVar);
@@ -89,7 +88,7 @@ public class b {
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public static void m2144a(Throwable th) {
-        m2143a((Context) null, th);
+    public static void m8587a(Throwable th) {
+        m8586a((Context) null, th);
     }
 }

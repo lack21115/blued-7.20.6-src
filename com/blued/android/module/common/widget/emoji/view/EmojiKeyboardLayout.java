@@ -1,6 +1,7 @@
 package com.blued.android.module.common.widget.emoji.view;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,13 +31,9 @@ import java.util.List;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/widget/emoji/view/EmojiKeyboardLayout.class */
 public class EmojiKeyboardLayout extends LinearLayout implements EmojiMainFragment.OnMainEmojiClickedListener, RecentEmojiFragment.OnRecentEmojiClickedListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final int f11154a = R.color.black;
+    public static final int a = R.color.black;
     public static final int b = R.color.black;
-
-    /* renamed from: c  reason: collision with root package name */
-    public static final int f11155c = R.color.white;
+    public static final int c = R.color.white;
     public static final int d = R.color.white;
     private ViewPager e;
     private LinearLayout f;
@@ -63,18 +60,16 @@ public class EmojiKeyboardLayout extends LinearLayout implements EmojiMainFragme
             super(fragmentManager);
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public int getCount() {
             return EmojiKeyboardLayout.this.h.size();
         }
 
-        @Override // androidx.fragment.app.FragmentPagerAdapter
         public Fragment getItem(int i) {
             FragmentEntity fragmentEntity = (FragmentEntity) EmojiKeyboardLayout.this.h.get(i);
-            Fragment instantiate = Fragment.instantiate(EmojiKeyboardLayout.this.getContext(), fragmentEntity.f11160a.getName(), null);
+            Fragment instantiate = Fragment.instantiate(EmojiKeyboardLayout.this.getContext(), fragmentEntity.a.getName(), (Bundle) null);
             if (instantiate instanceof EmojiMainFragment) {
                 EmojiMainFragment emojiMainFragment = (EmojiMainFragment) instantiate;
-                emojiMainFragment.a(fragmentEntity.f11161c);
+                emojiMainFragment.a(fragmentEntity.c);
                 emojiMainFragment.a(EmojiKeyboardLayout.this);
                 return instantiate;
             }
@@ -91,17 +86,13 @@ public class EmojiKeyboardLayout extends LinearLayout implements EmojiMainFragme
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/widget/emoji/view/EmojiKeyboardLayout$FragmentEntity.class */
     public static class FragmentEntity {
-
-        /* renamed from: a  reason: collision with root package name */
-        public Class<?> f11160a;
+        public Class<?> a;
         public Collection<Emoji> b;
-
-        /* renamed from: c  reason: collision with root package name */
-        public List<Emoji> f11161c;
+        public List<Emoji> c;
 
         public FragmentEntity(Class<?> cls, List<Emoji> list, Collection<Emoji> collection) {
-            this.f11160a = cls;
-            this.f11161c = list;
+            this.a = cls;
+            this.c = list;
             this.b = collection;
         }
     }
@@ -150,21 +141,21 @@ public class EmojiKeyboardLayout extends LinearLayout implements EmojiMainFragme
         View inflate = View.inflate(getContext(), R.layout.layout_emoji_keyboard, null);
         this.g = inflate;
         addView(inflate, layoutParams);
-        this.e = (ViewPager) findViewById(R.id.fragment_emoji_keyboard_pager);
+        this.e = findViewById(R.id.fragment_emoji_keyboard_pager);
         LinearLayout linearLayout = (LinearLayout) findViewById(R.id.fragment_emoji_keyboard_tab);
         this.f = linearLayout;
         linearLayout.getChildAt(0).setSelected(true);
         ArrayList arrayList = new ArrayList();
         this.h = arrayList;
         arrayList.add(new FragmentEntity(RecentEmojiFragment.class, null, this.k.a()));
-        this.h.add(new FragmentEntity(EmojiMainFragment.class, Arrays.asList(PeopleCategory.f11120a), null));
-        this.h.add(new FragmentEntity(EmojiMainFragment.class, Arrays.asList(NatureCategory.f11118a), null));
-        this.h.add(new FragmentEntity(EmojiMainFragment.class, Arrays.asList(FoodsCategory.f11117a), null));
-        this.h.add(new FragmentEntity(EmojiMainFragment.class, Arrays.asList(ActivityCategory.f11115a), null));
-        this.h.add(new FragmentEntity(EmojiMainFragment.class, Arrays.asList(PlacesCategory.f11121a), null));
-        this.h.add(new FragmentEntity(EmojiMainFragment.class, Arrays.asList(ObjectsCategory.f11119a), null));
-        this.h.add(new FragmentEntity(EmojiMainFragment.class, Arrays.asList(SymbolsCategory.f11122a), null));
-        this.h.add(new FragmentEntity(EmojiMainFragment.class, Arrays.asList(FlagsCategory.f11116a), null));
+        this.h.add(new FragmentEntity(EmojiMainFragment.class, Arrays.asList(PeopleCategory.a), null));
+        this.h.add(new FragmentEntity(EmojiMainFragment.class, Arrays.asList(NatureCategory.a), null));
+        this.h.add(new FragmentEntity(EmojiMainFragment.class, Arrays.asList(FoodsCategory.a), null));
+        this.h.add(new FragmentEntity(EmojiMainFragment.class, Arrays.asList(ActivityCategory.a), null));
+        this.h.add(new FragmentEntity(EmojiMainFragment.class, Arrays.asList(PlacesCategory.a), null));
+        this.h.add(new FragmentEntity(EmojiMainFragment.class, Arrays.asList(ObjectsCategory.a), null));
+        this.h.add(new FragmentEntity(EmojiMainFragment.class, Arrays.asList(SymbolsCategory.a), null));
+        this.h.add(new FragmentEntity(EmojiMainFragment.class, Arrays.asList(FlagsCategory.a), null));
         FragmentManager fragmentManager = this.l;
         if (fragmentManager != null) {
             this.m = new EmojiPagerAdapter(fragmentManager);
@@ -174,15 +165,12 @@ public class EmojiKeyboardLayout extends LinearLayout implements EmojiMainFragme
             viewPager.setAdapter(emojiPagerAdapter);
         }
         this.e.addOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: com.blued.android.module.common.widget.emoji.view.EmojiKeyboardLayout.2
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageScrollStateChanged(int i) {
             }
 
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageScrolled(int i, float f, int i2) {
             }
 
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageSelected(int i) {
                 ((ViewGroup) EmojiKeyboardLayout.this.f.getChildAt(i)).getChildAt(0).setSelected(true);
                 ((ViewGroup) EmojiKeyboardLayout.this.f.getChildAt(i)).getChildAt(0).setBackgroundResource(R.drawable.emoji_circle_bg);
@@ -270,13 +258,13 @@ public class EmojiKeyboardLayout extends LinearLayout implements EmojiMainFragme
             public void run() {
                 int i2;
                 int i3;
-                int i4 = EmojiKeyboardLayout.f11154a;
+                int i4 = EmojiKeyboardLayout.a;
                 int i5 = EmojiKeyboardLayout.b;
                 if (i != 2) {
-                    i2 = EmojiKeyboardLayout.f11154a;
+                    i2 = EmojiKeyboardLayout.a;
                     i3 = EmojiKeyboardLayout.b;
                 } else {
-                    i2 = EmojiKeyboardLayout.f11155c;
+                    i2 = EmojiKeyboardLayout.c;
                     i3 = EmojiKeyboardLayout.d;
                 }
                 if (EmojiKeyboardLayout.this.e != null) {

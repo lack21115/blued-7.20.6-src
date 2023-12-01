@@ -17,11 +17,11 @@ import kotlin.sequences.SequenceScope;
 public final class ViewGroupKt$descendants$1 extends RestrictedSuspendLambda implements Function2<SequenceScope<? super View>, Continuation<? super Unit>, Object> {
 
     /* renamed from: a  reason: collision with root package name */
-    Object f2665a;
+    Object f2617a;
     Object b;
 
     /* renamed from: c  reason: collision with root package name */
-    int f2666c;
+    int f2618c;
     int d;
     int e;
     final /* synthetic */ ViewGroup f;
@@ -34,16 +34,14 @@ public final class ViewGroupKt$descendants$1 extends RestrictedSuspendLambda imp
         this.f = viewGroup;
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        ViewGroupKt$descendants$1 viewGroupKt$descendants$1 = new ViewGroupKt$descendants$1(this.f, continuation);
+        Continuation<Unit> viewGroupKt$descendants$1 = new ViewGroupKt$descendants$1(this.f, continuation);
         viewGroupKt$descendants$1.g = obj;
         return viewGroupKt$descendants$1;
     }
 
-    @Override // kotlin.jvm.functions.Function2
     public final Object invoke(SequenceScope<? super View> sequenceScope, Continuation<? super Unit> continuation) {
-        return ((ViewGroupKt$descendants$1) create(sequenceScope, continuation)).invokeSuspend(Unit.f42314a);
+        return create(sequenceScope, continuation).invokeSuspend(Unit.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:30:0x015c, code lost:
@@ -53,7 +51,6 @@ public final class ViewGroupKt$descendants$1 extends RestrictedSuspendLambda imp
     /* JADX WARN: Removed duplicated region for block: B:28:0x014e  */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:26:0x012a -> B:27:0x0138). Please submit an issue!!! */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:28:0x014e -> B:29:0x0153). Please submit an issue!!! */
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences

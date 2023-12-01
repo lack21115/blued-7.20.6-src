@@ -27,8 +27,8 @@ public final class CloseLiveExtra extends GeneratedMessageV3 implements CloseLiv
     private byte memoizedIsInitialized;
     private static final CloseLiveExtra DEFAULT_INSTANCE = new CloseLiveExtra();
     private static final Parser<CloseLiveExtra> PARSER = new AbstractParser<CloseLiveExtra>() { // from class: cn.irisgw.live.CloseLiveExtra.1
-        @Override // com.google.protobuf.Parser
-        public CloseLiveExtra parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        /* renamed from: parsePartialFrom */
+        public CloseLiveExtra m1432parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             return new CloseLiveExtra(codedInputStream, extensionRegistryLite);
         }
     };
@@ -63,22 +63,22 @@ public final class CloseLiveExtra extends GeneratedMessageV3 implements CloseLiv
             boolean unused = CloseLiveExtra.alwaysUseFieldBuilders;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: addRepeatedField */
+        public Builder m1434addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.addRepeatedField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public CloseLiveExtra build() {
-            CloseLiveExtra buildPartial = buildPartial();
-            if (buildPartial.isInitialized()) {
-                return buildPartial;
+        /* renamed from: build */
+        public CloseLiveExtra m1436build() {
+            CloseLiveExtra m1438buildPartial = m1438buildPartial();
+            if (m1438buildPartial.isInitialized()) {
+                return m1438buildPartial;
             }
-            throw newUninitializedMessageException((Message) buildPartial);
+            throw newUninitializedMessageException(m1438buildPartial);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public CloseLiveExtra buildPartial() {
+        /* renamed from: buildPartial */
+        public CloseLiveExtra m1438buildPartial() {
             CloseLiveExtra closeLiveExtra = new CloseLiveExtra(this);
             SingleFieldBuilderV3<KickInfo, KickInfo.Builder, KickInfoOrBuilder> singleFieldBuilderV3 = this.kickInfoBuilder_;
             if (singleFieldBuilderV3 == null) {
@@ -90,8 +90,8 @@ public final class CloseLiveExtra extends GeneratedMessageV3 implements CloseLiv
             return closeLiveExtra;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public Builder clear() {
+        /* renamed from: clear */
+        public Builder m1442clear() {
             super.clear();
             if (this.kickInfoBuilder_ == null) {
                 this.kickInfo_ = null;
@@ -102,8 +102,8 @@ public final class CloseLiveExtra extends GeneratedMessageV3 implements CloseLiv
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+        /* renamed from: clearField */
+        public Builder m1444clearField(Descriptors.FieldDescriptor fieldDescriptor) {
             return (Builder) super.clearField(fieldDescriptor);
         }
 
@@ -118,23 +118,21 @@ public final class CloseLiveExtra extends GeneratedMessageV3 implements CloseLiv
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+        /* renamed from: clearOneof */
+        public Builder m1447clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
             return (Builder) super.clearOneof(oneofDescriptor);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder m1453clone() {
+            return (Builder) super.clone();
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public CloseLiveExtra getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public CloseLiveExtra m1455getDefaultInstanceForType() {
             return CloseLiveExtra.getDefaultInstance();
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
         public Descriptors.Descriptor getDescriptorForType() {
             return LiveConstants.internal_static_cn_irisgw_live_CloseLiveExtra_descriptor;
         }
@@ -162,7 +160,7 @@ public final class CloseLiveExtra extends GeneratedMessageV3 implements CloseLiv
         public KickInfoOrBuilder getKickInfoOrBuilder() {
             SingleFieldBuilderV3<KickInfo, KickInfo.Builder, KickInfoOrBuilder> singleFieldBuilderV3 = this.kickInfoBuilder_;
             if (singleFieldBuilderV3 != null) {
-                return singleFieldBuilderV3.getMessageOrBuilder();
+                return (KickInfoOrBuilder) singleFieldBuilderV3.getMessageOrBuilder();
             }
             KickInfo kickInfo = this.kickInfo_;
             KickInfo kickInfo2 = kickInfo;
@@ -177,12 +175,10 @@ public final class CloseLiveExtra extends GeneratedMessageV3 implements CloseLiv
             return (this.kickInfoBuilder_ == null && this.kickInfo_ == null) ? false : true;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_CloseLiveExtra_fieldAccessorTable.ensureFieldAccessorsInitialized(CloseLiveExtra.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             return true;
         }
@@ -194,18 +190,18 @@ public final class CloseLiveExtra extends GeneratedMessageV3 implements CloseLiv
             if (closeLiveExtra.hasKickInfo()) {
                 mergeKickInfo(closeLiveExtra.getKickInfo());
             }
-            mergeUnknownFields(closeLiveExtra.unknownFields);
+            m1464mergeUnknownFields(closeLiveExtra.unknownFields);
             onChanged();
             return this;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+        /* renamed from: mergeFrom */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
         */
-        public cn.irisgw.live.CloseLiveExtra.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+        public cn.irisgw.live.CloseLiveExtra.Builder m1461mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
             /*
                 r4 = this;
                 r0 = 0
@@ -250,11 +246,11 @@ public final class CloseLiveExtra extends GeneratedMessageV3 implements CloseLiv
                 r0 = r6
                 throw r0
             */
-            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.CloseLiveExtra.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.CloseLiveExtra$Builder");
+            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.CloseLiveExtra.Builder.m1461mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.CloseLiveExtra$Builder");
         }
 
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder mergeFrom(Message message) {
+        /* renamed from: mergeFrom */
+        public Builder m1460mergeFrom(Message message) {
             if (message instanceof CloseLiveExtra) {
                 return mergeFrom((CloseLiveExtra) message);
             }
@@ -270,7 +266,7 @@ public final class CloseLiveExtra extends GeneratedMessageV3 implements CloseLiv
             }
             KickInfo kickInfo2 = this.kickInfo_;
             if (kickInfo2 != null) {
-                this.kickInfo_ = KickInfo.newBuilder(kickInfo2).mergeFrom(kickInfo).buildPartial();
+                this.kickInfo_ = KickInfo.newBuilder(kickInfo2).mergeFrom(kickInfo).m1485buildPartial();
             } else {
                 this.kickInfo_ = kickInfo;
             }
@@ -278,23 +274,23 @@ public final class CloseLiveExtra extends GeneratedMessageV3 implements CloseLiv
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: mergeUnknownFields */
+        public final Builder m1464mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.mergeUnknownFields(unknownFieldSet);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: setField */
+        public Builder m1466setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.setField(fieldDescriptor, obj);
         }
 
         public Builder setKickInfo(KickInfo.Builder builder) {
             SingleFieldBuilderV3<KickInfo, KickInfo.Builder, KickInfoOrBuilder> singleFieldBuilderV3 = this.kickInfoBuilder_;
             if (singleFieldBuilderV3 != null) {
-                singleFieldBuilderV3.setMessage(builder.build());
+                singleFieldBuilderV3.setMessage(builder.m1483build());
                 return this;
             }
-            this.kickInfo_ = builder.build();
+            this.kickInfo_ = builder.m1483build();
             onChanged();
             return this;
         }
@@ -313,13 +309,13 @@ public final class CloseLiveExtra extends GeneratedMessageV3 implements CloseLiv
             }
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+        /* renamed from: setRepeatedField */
+        public Builder m1468setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
             return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: setUnknownFields */
+        public final Builder m1470setUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.setUnknownFields(unknownFieldSet);
         }
     }
@@ -338,8 +334,8 @@ public final class CloseLiveExtra extends GeneratedMessageV3 implements CloseLiv
         private volatile Object title_;
         private static final KickInfo DEFAULT_INSTANCE = new KickInfo();
         private static final Parser<KickInfo> PARSER = new AbstractParser<KickInfo>() { // from class: cn.irisgw.live.CloseLiveExtra.KickInfo.1
-            @Override // com.google.protobuf.Parser
-            public KickInfo parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+            /* renamed from: parsePartialFrom */
+            public KickInfo m1479parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
                 return new KickInfo(codedInputStream, extensionRegistryLite);
             }
         };
@@ -376,22 +372,22 @@ public final class CloseLiveExtra extends GeneratedMessageV3 implements CloseLiv
                 boolean unused = KickInfo.alwaysUseFieldBuilders;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: addRepeatedField */
+            public Builder m1481addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.addRepeatedField(fieldDescriptor, obj);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public KickInfo build() {
-                KickInfo buildPartial = buildPartial();
-                if (buildPartial.isInitialized()) {
-                    return buildPartial;
+            /* renamed from: build */
+            public KickInfo m1483build() {
+                KickInfo m1485buildPartial = m1485buildPartial();
+                if (m1485buildPartial.isInitialized()) {
+                    return m1485buildPartial;
                 }
-                throw newUninitializedMessageException((Message) buildPartial);
+                throw newUninitializedMessageException(m1485buildPartial);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public KickInfo buildPartial() {
+            /* renamed from: buildPartial */
+            public KickInfo m1485buildPartial() {
                 KickInfo kickInfo = new KickInfo(this);
                 kickInfo.title_ = this.title_;
                 kickInfo.message_ = this.message_;
@@ -401,8 +397,8 @@ public final class CloseLiveExtra extends GeneratedMessageV3 implements CloseLiv
                 return kickInfo;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public Builder clear() {
+            /* renamed from: clear */
+            public Builder m1489clear() {
                 super.clear();
                 this.title_ = "";
                 this.message_ = "";
@@ -417,8 +413,8 @@ public final class CloseLiveExtra extends GeneratedMessageV3 implements CloseLiv
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+            /* renamed from: clearField */
+            public Builder m1491clearField(Descriptors.FieldDescriptor fieldDescriptor) {
                 return (Builder) super.clearField(fieldDescriptor);
             }
 
@@ -428,8 +424,8 @@ public final class CloseLiveExtra extends GeneratedMessageV3 implements CloseLiv
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+            /* renamed from: clearOneof */
+            public Builder m1494clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
                 return (Builder) super.clearOneof(oneofDescriptor);
             }
 
@@ -445,10 +441,9 @@ public final class CloseLiveExtra extends GeneratedMessageV3 implements CloseLiv
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder m1500clone() {
+                return (Builder) super.clone();
             }
 
             @Override // cn.irisgw.live.CloseLiveExtra.KickInfoOrBuilder
@@ -473,12 +468,11 @@ public final class CloseLiveExtra extends GeneratedMessageV3 implements CloseLiv
                 return (ByteString) obj;
             }
 
-            @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-            public KickInfo getDefaultInstanceForType() {
+            /* renamed from: getDefaultInstanceForType */
+            public KickInfo m1502getDefaultInstanceForType() {
                 return KickInfo.getDefaultInstance();
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
             public Descriptors.Descriptor getDescriptorForType() {
                 return LiveConstants.internal_static_cn_irisgw_live_CloseLiveExtra_KickInfo_descriptor;
             }
@@ -542,12 +536,10 @@ public final class CloseLiveExtra extends GeneratedMessageV3 implements CloseLiv
                 return (ByteString) obj;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder
             public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
                 return LiveConstants.internal_static_cn_irisgw_live_CloseLiveExtra_KickInfo_fieldAccessorTable.ensureFieldAccessorsInitialized(KickInfo.class, Builder.class);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
             public final boolean isInitialized() {
                 return true;
             }
@@ -571,18 +563,18 @@ public final class CloseLiveExtra extends GeneratedMessageV3 implements CloseLiv
                 if (kickInfo.reason_ != 0) {
                     setReasonValue(kickInfo.getReasonValue());
                 }
-                mergeUnknownFields(kickInfo.unknownFields);
+                m1511mergeUnknownFields(kickInfo.unknownFields);
                 onChanged();
                 return this;
             }
 
             /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+            /* renamed from: mergeFrom */
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
                 To view partially-correct code enable 'Show inconsistent code' option in preferences
             */
-            public cn.irisgw.live.CloseLiveExtra.KickInfo.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+            public cn.irisgw.live.CloseLiveExtra.KickInfo.Builder m1508mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
                 /*
                     r4 = this;
                     r0 = 0
@@ -627,11 +619,11 @@ public final class CloseLiveExtra extends GeneratedMessageV3 implements CloseLiv
                     r0 = r6
                     throw r0
                 */
-                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.CloseLiveExtra.KickInfo.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.CloseLiveExtra$KickInfo$Builder");
+                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.CloseLiveExtra.KickInfo.Builder.m1508mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.CloseLiveExtra$KickInfo$Builder");
             }
 
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder mergeFrom(Message message) {
+            /* renamed from: mergeFrom */
+            public Builder m1507mergeFrom(Message message) {
                 if (message instanceof KickInfo) {
                     return mergeFrom((KickInfo) message);
                 }
@@ -639,8 +631,8 @@ public final class CloseLiveExtra extends GeneratedMessageV3 implements CloseLiv
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: mergeUnknownFields */
+            public final Builder m1511mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.mergeUnknownFields(unknownFieldSet);
             }
 
@@ -663,8 +655,8 @@ public final class CloseLiveExtra extends GeneratedMessageV3 implements CloseLiv
                 throw null;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: setField */
+            public Builder m1513setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.setField(fieldDescriptor, obj);
             }
 
@@ -702,8 +694,8 @@ public final class CloseLiveExtra extends GeneratedMessageV3 implements CloseLiv
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+            /* renamed from: setRepeatedField */
+            public Builder m1515setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
                 return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
             }
 
@@ -726,8 +718,8 @@ public final class CloseLiveExtra extends GeneratedMessageV3 implements CloseLiv
                 throw null;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: setUnknownFields */
+            public final Builder m1517setUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.setUnknownFields(unknownFieldSet);
             }
         }
@@ -790,66 +782,65 @@ public final class CloseLiveExtra extends GeneratedMessageV3 implements CloseLiv
         }
 
         public static Builder newBuilder() {
-            return DEFAULT_INSTANCE.toBuilder();
+            return DEFAULT_INSTANCE.m1478toBuilder();
         }
 
         public static Builder newBuilder(KickInfo kickInfo) {
-            return DEFAULT_INSTANCE.toBuilder().mergeFrom(kickInfo);
+            return DEFAULT_INSTANCE.m1478toBuilder().mergeFrom(kickInfo);
         }
 
         public static KickInfo parseDelimitedFrom(InputStream inputStream) throws IOException {
-            return (KickInfo) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
         }
 
         public static KickInfo parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (KickInfo) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static KickInfo parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString);
+            return (KickInfo) PARSER.parseFrom(byteString);
         }
 
         public static KickInfo parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString, extensionRegistryLite);
+            return (KickInfo) PARSER.parseFrom(byteString, extensionRegistryLite);
         }
 
         public static KickInfo parseFrom(CodedInputStream codedInputStream) throws IOException {
-            return (KickInfo) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
         }
 
         public static KickInfo parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (KickInfo) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
         }
 
         public static KickInfo parseFrom(InputStream inputStream) throws IOException {
-            return (KickInfo) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
         }
 
         public static KickInfo parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (KickInfo) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static KickInfo parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer);
+            return (KickInfo) PARSER.parseFrom(byteBuffer);
         }
 
         public static KickInfo parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+            return (KickInfo) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
         }
 
         public static KickInfo parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr);
+            return (KickInfo) PARSER.parseFrom(bArr);
         }
 
         public static KickInfo parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr, extensionRegistryLite);
+            return (KickInfo) PARSER.parseFrom(bArr, extensionRegistryLite);
         }
 
         public static Parser<KickInfo> parser() {
             return PARSER;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public boolean equals(Object obj) {
             if (obj == this) {
                 return true;
@@ -883,8 +874,8 @@ public final class CloseLiveExtra extends GeneratedMessageV3 implements CloseLiv
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public KickInfo getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public KickInfo m1473getDefaultInstanceForType() {
             return DEFAULT_INSTANCE;
         }
 
@@ -910,7 +901,6 @@ public final class CloseLiveExtra extends GeneratedMessageV3 implements CloseLiv
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
         public Parser<KickInfo> getParserForType() {
             return PARSER;
         }
@@ -930,7 +920,6 @@ public final class CloseLiveExtra extends GeneratedMessageV3 implements CloseLiv
             return this.reason_;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public int getSerializedSize() {
             int i = this.memoizedSize;
             if (i != -1) {
@@ -979,12 +968,10 @@ public final class CloseLiveExtra extends GeneratedMessageV3 implements CloseLiv
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
         public final UnknownFieldSet getUnknownFields() {
             return this.unknownFields;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public int hashCode() {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
@@ -994,12 +981,10 @@ public final class CloseLiveExtra extends GeneratedMessageV3 implements CloseLiv
             return hashCode;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_CloseLiveExtra_KickInfo_fieldAccessorTable.ensureFieldAccessorsInitialized(KickInfo.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte b = this.memoizedIsInitialized;
             if (b == 1) {
@@ -1012,28 +997,26 @@ public final class CloseLiveExtra extends GeneratedMessageV3 implements CloseLiv
             return true;
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder newBuilderForType() {
+        /* renamed from: newBuilderForType */
+        public Builder m1476newBuilderForType() {
             return newBuilder();
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.google.protobuf.GeneratedMessageV3
-        public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+        /* renamed from: newBuilderForType */
+        public Builder m1475newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
             return new Builder(builderParent);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
             return new KickInfo();
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder toBuilder() {
+        /* renamed from: toBuilder */
+        public Builder m1478toBuilder() {
             return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
             if (!getTitleBytes().isEmpty()) {
                 GeneratedMessageV3.writeString(codedOutputStream, 1, this.title_);
@@ -1084,9 +1067,8 @@ public final class CloseLiveExtra extends GeneratedMessageV3 implements CloseLiv
         public static final int System_VALUE = 3;
         private final int value;
         private static final Internal.EnumLiteMap<Reason> internalValueMap = new Internal.EnumLiteMap<Reason>() { // from class: cn.irisgw.live.CloseLiveExtra.Reason.1
-            /* JADX WARN: Can't rename method to resolve collision */
-            @Override // com.google.protobuf.Internal.EnumLiteMap
-            public Reason findValueByNumber(int i) {
+            /* renamed from: findValueByNumber */
+            public Reason m1519findValueByNumber(int i) {
                 return Reason.forNumber(i);
             }
         };
@@ -1113,7 +1095,7 @@ public final class CloseLiveExtra extends GeneratedMessageV3 implements CloseLiv
         }
 
         public static final Descriptors.EnumDescriptor getDescriptor() {
-            return CloseLiveExtra.getDescriptor().getEnumTypes().get(0);
+            return (Descriptors.EnumDescriptor) CloseLiveExtra.getDescriptor().getEnumTypes().get(0);
         }
 
         public static Internal.EnumLiteMap<Reason> internalGetValueMap() {
@@ -1132,12 +1114,10 @@ public final class CloseLiveExtra extends GeneratedMessageV3 implements CloseLiv
             throw new IllegalArgumentException("EnumValueDescriptor is not for this type.");
         }
 
-        @Override // com.google.protobuf.ProtocolMessageEnum
         public final Descriptors.EnumDescriptor getDescriptorForType() {
             return getDescriptor();
         }
 
-        @Override // com.google.protobuf.ProtocolMessageEnum, com.google.protobuf.Internal.EnumLite
         public final int getNumber() {
             if (this != UNRECOGNIZED) {
                 return this.value;
@@ -1145,10 +1125,9 @@ public final class CloseLiveExtra extends GeneratedMessageV3 implements CloseLiv
             throw new IllegalArgumentException("Can't get the number of an unknown enum value.");
         }
 
-        @Override // com.google.protobuf.ProtocolMessageEnum
         public final Descriptors.EnumValueDescriptor getValueDescriptor() {
             if (this != UNRECOGNIZED) {
-                return getDescriptor().getValues().get(ordinal());
+                return (Descriptors.EnumValueDescriptor) getDescriptor().getValues().get(ordinal());
             }
             throw new IllegalStateException("Can't get the descriptor of an unrecognized enum value.");
         }
@@ -1172,12 +1151,12 @@ public final class CloseLiveExtra extends GeneratedMessageV3 implements CloseLiv
                         int readTag = codedInputStream.readTag();
                         if (readTag != 0) {
                             if (readTag == 10) {
-                                KickInfo.Builder builder = this.kickInfo_ != null ? this.kickInfo_.toBuilder() : null;
-                                KickInfo kickInfo = (KickInfo) codedInputStream.readMessage(KickInfo.parser(), extensionRegistryLite);
-                                this.kickInfo_ = kickInfo;
-                                if (builder != null) {
-                                    builder.mergeFrom(kickInfo);
-                                    this.kickInfo_ = builder.buildPartial();
+                                KickInfo.Builder m1478toBuilder = this.kickInfo_ != null ? this.kickInfo_.m1478toBuilder() : null;
+                                KickInfo readMessage = codedInputStream.readMessage(KickInfo.parser(), extensionRegistryLite);
+                                this.kickInfo_ = readMessage;
+                                if (m1478toBuilder != null) {
+                                    m1478toBuilder.mergeFrom(readMessage);
+                                    this.kickInfo_ = m1478toBuilder.m1485buildPartial();
                                 }
                             } else if (!parseUnknownField(codedInputStream, newBuilder, extensionRegistryLite, readTag)) {
                             }
@@ -1210,66 +1189,65 @@ public final class CloseLiveExtra extends GeneratedMessageV3 implements CloseLiv
     }
 
     public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
+        return DEFAULT_INSTANCE.m1431toBuilder();
     }
 
     public static Builder newBuilder(CloseLiveExtra closeLiveExtra) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(closeLiveExtra);
+        return DEFAULT_INSTANCE.m1431toBuilder().mergeFrom(closeLiveExtra);
     }
 
     public static CloseLiveExtra parseDelimitedFrom(InputStream inputStream) throws IOException {
-        return (CloseLiveExtra) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
     }
 
     public static CloseLiveExtra parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (CloseLiveExtra) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static CloseLiveExtra parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString);
+        return (CloseLiveExtra) PARSER.parseFrom(byteString);
     }
 
     public static CloseLiveExtra parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString, extensionRegistryLite);
+        return (CloseLiveExtra) PARSER.parseFrom(byteString, extensionRegistryLite);
     }
 
     public static CloseLiveExtra parseFrom(CodedInputStream codedInputStream) throws IOException {
-        return (CloseLiveExtra) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
     }
 
     public static CloseLiveExtra parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (CloseLiveExtra) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
     }
 
     public static CloseLiveExtra parseFrom(InputStream inputStream) throws IOException {
-        return (CloseLiveExtra) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
     }
 
     public static CloseLiveExtra parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (CloseLiveExtra) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static CloseLiveExtra parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer);
+        return (CloseLiveExtra) PARSER.parseFrom(byteBuffer);
     }
 
     public static CloseLiveExtra parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+        return (CloseLiveExtra) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
     }
 
     public static CloseLiveExtra parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr);
+        return (CloseLiveExtra) PARSER.parseFrom(bArr);
     }
 
     public static CloseLiveExtra parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr, extensionRegistryLite);
+        return (CloseLiveExtra) PARSER.parseFrom(bArr, extensionRegistryLite);
     }
 
     public static Parser<CloseLiveExtra> parser() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
@@ -1284,8 +1262,8 @@ public final class CloseLiveExtra extends GeneratedMessageV3 implements CloseLiv
         return super.equals(obj);
     }
 
-    @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-    public CloseLiveExtra getDefaultInstanceForType() {
+    /* renamed from: getDefaultInstanceForType */
+    public CloseLiveExtra m1426getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
     }
 
@@ -1304,12 +1282,10 @@ public final class CloseLiveExtra extends GeneratedMessageV3 implements CloseLiv
         return getKickInfo();
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
     public Parser<CloseLiveExtra> getParserForType() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public int getSerializedSize() {
         int i = this.memoizedSize;
         if (i != -1) {
@@ -1324,7 +1300,6 @@ public final class CloseLiveExtra extends GeneratedMessageV3 implements CloseLiv
         return serializedSize;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
     public final UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
     }
@@ -1334,7 +1309,6 @@ public final class CloseLiveExtra extends GeneratedMessageV3 implements CloseLiv
         return this.kickInfo_ != null;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public int hashCode() {
         if (this.memoizedHashCode != 0) {
             return this.memoizedHashCode;
@@ -1349,12 +1323,10 @@ public final class CloseLiveExtra extends GeneratedMessageV3 implements CloseLiv
         return hashCode2;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
         return LiveConstants.internal_static_cn_irisgw_live_CloseLiveExtra_fieldAccessorTable.ensureFieldAccessorsInitialized(CloseLiveExtra.class, Builder.class);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
     public final boolean isInitialized() {
         byte b = this.memoizedIsInitialized;
         if (b == 1) {
@@ -1367,28 +1339,26 @@ public final class CloseLiveExtra extends GeneratedMessageV3 implements CloseLiv
         return true;
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder newBuilderForType() {
+    /* renamed from: newBuilderForType */
+    public Builder m1429newBuilderForType() {
         return newBuilder();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.protobuf.GeneratedMessageV3
-    public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+    /* renamed from: newBuilderForType */
+    public Builder m1428newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
         return new Builder(builderParent);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
         return new CloseLiveExtra();
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder toBuilder() {
+    /* renamed from: toBuilder */
+    public Builder m1431toBuilder() {
         return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
         if (this.kickInfo_ != null) {
             codedOutputStream.writeMessage(1, getKickInfo());

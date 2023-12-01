@@ -8,20 +8,20 @@ public final class e {
     @SerializedName("ignore_resource")
 
     /* renamed from: a  reason: collision with root package name */
-    private List<String> f41750a;
+    private List<String> f28059a;
     @SerializedName("enable_cache")
     private boolean b = true;
     @SerializedName("ignore_extension")
 
     /* renamed from: c  reason: collision with root package name */
-    private List<String> f41751c;
+    private List<String> f28060c;
 
     public final List<String> a() {
-        return this.f41750a;
+        return this.f28059a;
     }
 
     public final void a(List<String> list) {
-        this.f41750a = null;
+        this.f28059a = null;
     }
 
     public final void a(boolean z) {
@@ -29,7 +29,7 @@ public final class e {
     }
 
     public final void b(List<String> list) {
-        this.f41751c = null;
+        this.f28060c = null;
     }
 
     public final boolean b() {
@@ -37,6 +37,6 @@ public final class e {
     }
 
     public final List<String> c() {
-        return this.f41751c;
+        return this.f28060c;
     }
 }

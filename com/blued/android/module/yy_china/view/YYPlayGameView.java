@@ -28,13 +28,9 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYPlayGameView.class */
 public class YYPlayGameView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private BaseYYStudioFragment f18370a;
+    private BaseYYStudioFragment a;
     private TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private TextView f18371c;
+    private TextView c;
     private ImageView d;
     private TextView e;
     private LinearLayout f;
@@ -60,7 +56,7 @@ public class YYPlayGameView extends FrameLayout {
     private void a() {
         LayoutInflater.from(getContext()).inflate(R.layout.view_yy_play_game_layout, (ViewGroup) this, true);
         this.b = (TextView) findViewById(R.id.tv_game_title);
-        this.f18371c = (TextView) findViewById(R.id.tv_game_name);
+        this.c = (TextView) findViewById(R.id.tv_game_name);
         this.d = (ImageView) findViewById(R.id.iv_game_img);
         this.e = (TextView) findViewById(R.id.tv_join_game);
         this.f = (LinearLayout) findViewById(R.id.ll_data_view);
@@ -91,7 +87,7 @@ public class YYPlayGameView extends FrameLayout {
         yYAudienceModel.setAvatar(YYRoomInfoManager.e().m());
         yYImModel.source_profile = yYAudienceModel;
         yYImModel.setMsgExtra(AppInfo.f().toJson(yYMsgEmojiExtra));
-        this.f18370a.a(YYRoomInfoManager.e().k(), yYMsgEmojiExtra.apng, yYImModel);
+        this.a.a(YYRoomInfoManager.e().k(), yYMsgEmojiExtra.apng, yYImModel);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -99,7 +95,7 @@ public class YYPlayGameView extends FrameLayout {
         if (this.h == null || TextUtils.isEmpty(this.i)) {
             return;
         }
-        YYRoomHttpUtils.o(this.h.room_id, this.i, new BluedUIHttpResponse<BluedEntityA<YYMsgEmojiExtra>>(this.f18370a.getFragmentActive()) { // from class: com.blued.android.module.yy_china.view.YYPlayGameView.4
+        YYRoomHttpUtils.o(this.h.room_id, this.i, new BluedUIHttpResponse<BluedEntityA<YYMsgEmojiExtra>>(this.a.getFragmentActive()) { // from class: com.blued.android.module.yy_china.view.YYPlayGameView.4
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
@@ -113,11 +109,11 @@ public class YYPlayGameView extends FrameLayout {
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish(boolean z) {
                 super.onUIFinish(z);
-                if (YYPlayGameView.this.f18370a != null) {
-                    YYPlayGameView.this.f18370a.y();
+                if (YYPlayGameView.this.a != null) {
+                    YYPlayGameView.this.a.y();
                 }
             }
-        }, this.f18370a.getFragmentActive());
+        }, this.a.getFragmentActive());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -126,7 +122,7 @@ public class YYPlayGameView extends FrameLayout {
         if (yYRoomModel == null) {
             return;
         }
-        YYRoomHttpUtils.K(yYRoomModel.room_id, new BluedUIHttpResponse<BluedEntityA<YYEmojiModel>>(this.f18370a.getFragmentActive()) { // from class: com.blued.android.module.yy_china.view.YYPlayGameView.3
+        YYRoomHttpUtils.K(yYRoomModel.room_id, new BluedUIHttpResponse<BluedEntityA<YYEmojiModel>>(this.a.getFragmentActive()) { // from class: com.blued.android.module.yy_china.view.YYPlayGameView.3
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
@@ -139,9 +135,9 @@ public class YYPlayGameView extends FrameLayout {
                 YYPlayGameView.this.f.setVisibility(0);
                 YYPlayGameView.this.g.setVisibility(8);
                 YYPlayGameView.this.i = bluedEntityA.getSingleData().id;
-                ImageLoader.a(YYPlayGameView.this.f18370a.getFragmentActive(), bluedEntityA.getSingleData().pic).b(R.drawable.defaultpicture).a(YYPlayGameView.this.d);
+                ImageLoader.a(YYPlayGameView.this.a.getFragmentActive(), bluedEntityA.getSingleData().pic).b(R.drawable.defaultpicture).a(YYPlayGameView.this.d);
                 YYPlayGameView.this.b.setText(String.format(YYPlayGameView.this.getResources().getString(R.string.yy_game_title), bluedEntityA.getSingleData().name));
-                YYPlayGameView.this.f18371c.setText(bluedEntityA.getSingleData().name);
+                YYPlayGameView.this.c.setText(bluedEntityA.getSingleData().name);
             }
 
             @Override // com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
@@ -155,11 +151,11 @@ public class YYPlayGameView extends FrameLayout {
                     }
                 });
             }
-        }, this.f18370a.getFragmentActive());
+        }, this.a.getFragmentActive());
     }
 
     public void a(BaseYYStudioFragment baseYYStudioFragment) {
-        this.f18370a = baseYYStudioFragment;
+        this.a = baseYYStudioFragment;
         this.h = YYRoomInfoManager.e().b();
         getGameInfo();
     }

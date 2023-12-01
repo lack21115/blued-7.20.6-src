@@ -19,29 +19,29 @@ import com.tencent.thumbplayer.tplayer.plugins.c;
 public class b implements com.tencent.thumbplayer.f.a {
 
     /* renamed from: a  reason: collision with root package name */
-    private ITPNativeRichMediaProcessor f39305a;
+    private ITPNativeRichMediaProcessor f25614a;
     private a b;
 
     /* renamed from: c  reason: collision with root package name */
-    private C1022b f39306c;
+    private C0852b f25615c;
     private c d;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/thumbplayer/f/b$a.class */
     class a implements ITPNativeRichMediaInnerProcessorCallback {
-        private a.InterfaceC1019a b;
+        private a.InterfaceC0849a b;
 
         a() {
         }
 
-        public void a(a.InterfaceC1019a interfaceC1019a) {
-            this.b = interfaceC1019a;
+        public void a(a.InterfaceC0849a interfaceC0849a) {
+            this.b = interfaceC0849a;
         }
 
         @Override // com.tencent.thumbplayer.core.richmedia.ITPNativeRichMediaInnerProcessorCallback
         public long onGetCurrentPositionMs(ITPNativeRichMediaProcessor iTPNativeRichMediaProcessor) {
-            a.InterfaceC1019a interfaceC1019a = this.b;
-            if (interfaceC1019a != null) {
-                long a2 = interfaceC1019a.a(b.this);
+            a.InterfaceC0849a interfaceC0849a = this.b;
+            if (interfaceC0849a != null) {
+                long a2 = interfaceC0849a.a(b.this);
                 b.this.a(311, (int) a2, 0, null, null);
                 return a2;
             }
@@ -51,10 +51,10 @@ public class b implements com.tencent.thumbplayer.f.a {
 
     /* renamed from: com.tencent.thumbplayer.f.b$b  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/thumbplayer/f/b$b.class */
-    class C1022b implements ITPNativeRichMediaProcessorCallback {
+    class C0852b implements ITPNativeRichMediaProcessorCallback {
         private ITPRichMediaSynchronizerListener b;
 
-        C1022b() {
+        C0852b() {
         }
 
         public void a(ITPRichMediaSynchronizerListener iTPRichMediaSynchronizerListener) {
@@ -124,13 +124,13 @@ public class b implements com.tencent.thumbplayer.f.a {
     }
 
     public b(Context context) {
-        this.f39305a = new TPNativeRichMediaProcessor(context);
+        this.f25614a = new TPNativeRichMediaProcessor(context);
         a aVar = new a();
         this.b = aVar;
-        this.f39305a.setInnerProcessorCallback(aVar);
-        C1022b c1022b = new C1022b();
-        this.f39306c = c1022b;
-        this.f39305a.setProcessorCallback(c1022b);
+        this.f25614a.setInnerProcessorCallback(aVar);
+        C0852b c0852b = new C0852b();
+        this.f25615c = c0852b;
+        this.f25614a.setProcessorCallback(c0852b);
         c cVar = new c();
         this.d = cVar;
         cVar.a(new com.tencent.thumbplayer.f.b.a());
@@ -143,37 +143,37 @@ public class b implements com.tencent.thumbplayer.f.a {
 
     @Override // com.tencent.thumbplayer.f.a
     public void a(float f) {
-        this.f39305a.setPlaybackRate(f);
+        this.f25614a.setPlaybackRate(f);
     }
 
     @Override // com.tencent.thumbplayer.f.a
     public void a(long j) {
-        this.f39305a.seek(j);
+        this.f25614a.seek(j);
     }
 
     @Override // com.tencent.thumbplayer.f.a
-    public void a(a.InterfaceC1019a interfaceC1019a) {
-        this.b.a(interfaceC1019a);
+    public void a(a.InterfaceC0849a interfaceC0849a) {
+        this.b.a(interfaceC0849a);
     }
 
     @Override // com.tencent.thumbplayer.api.richmedia.ITPRichMediaSynchronizer
     public void deselectFeatureAsync(int i) {
-        this.f39305a.deselectFeatureAsync(i);
+        this.f25614a.deselectFeatureAsync(i);
         a(304, i, 0, null, null);
     }
 
     protected void finalize() {
-        this.f39305a.setInnerProcessorCallback(null);
-        this.f39305a.setProcessorCallback(null);
-        this.f39305a.release();
-        this.f39306c.a(null);
+        this.f25614a.setInnerProcessorCallback(null);
+        this.f25614a.setProcessorCallback(null);
+        this.f25614a.release();
+        this.f25615c.a(null);
         this.b.a(null);
         super.finalize();
     }
 
     @Override // com.tencent.thumbplayer.api.richmedia.ITPRichMediaSynchronizer
     public TPRichMediaFeature[] getFeatures() {
-        TPNativeRichMediaFeature[] features = this.f39305a.getFeatures();
+        TPNativeRichMediaFeature[] features = this.f25614a.getFeatures();
         if (features == null) {
             return new TPRichMediaFeature[0];
         }
@@ -186,16 +186,16 @@ public class b implements com.tencent.thumbplayer.f.a {
 
     @Override // com.tencent.thumbplayer.api.richmedia.ITPRichMediaSynchronizer
     public void prepareAsync() {
-        this.f39305a.prepareAsync();
+        this.f25614a.prepareAsync();
         a(300, 0, 0, null, null);
     }
 
     @Override // com.tencent.thumbplayer.api.richmedia.ITPRichMediaSynchronizer
     public void release() {
-        this.f39305a.setInnerProcessorCallback(null);
-        this.f39305a.setProcessorCallback(null);
-        this.f39305a.release();
-        this.f39306c.a(null);
+        this.f25614a.setInnerProcessorCallback(null);
+        this.f25614a.setProcessorCallback(null);
+        this.f25614a.release();
+        this.f25615c.a(null);
         this.b.a(null);
         a(307, 0, 0, null, null);
         this.d.c();
@@ -203,7 +203,7 @@ public class b implements com.tencent.thumbplayer.f.a {
 
     @Override // com.tencent.thumbplayer.api.richmedia.ITPRichMediaSynchronizer
     public void reset() {
-        this.f39305a.reset();
+        this.f25614a.reset();
         a(306, 0, 0, null, null);
     }
 
@@ -211,18 +211,18 @@ public class b implements com.tencent.thumbplayer.f.a {
     public void selectFeatureAsync(int i, TPRichMediaRequestExtraInfo tPRichMediaRequestExtraInfo) {
         TPNativeRichMediaRequestExtraInfo tPNativeRichMediaRequestExtraInfo = new TPNativeRichMediaRequestExtraInfo();
         tPNativeRichMediaRequestExtraInfo.setActOnOptional(tPRichMediaRequestExtraInfo.getActOnOption());
-        this.f39305a.selectFeatureAsync(i, tPNativeRichMediaRequestExtraInfo);
+        this.f25614a.selectFeatureAsync(i, tPNativeRichMediaRequestExtraInfo);
         a(302, i, 0, null, null);
     }
 
     @Override // com.tencent.thumbplayer.api.richmedia.ITPRichMediaSynchronizer
     public void setListener(ITPRichMediaSynchronizerListener iTPRichMediaSynchronizerListener) {
-        this.f39306c.a(iTPRichMediaSynchronizerListener);
+        this.f25615c.a(iTPRichMediaSynchronizerListener);
     }
 
     @Override // com.tencent.thumbplayer.api.richmedia.ITPRichMediaSynchronizer
     public void setRichMediaSource(String str) {
-        this.f39305a.setRichMediaSource(str);
+        this.f25614a.setRichMediaSource(str);
         a(309, 0, 0, str, null);
     }
 }

@@ -8,11 +8,11 @@ import com.tencent.beacon.base.net.call.Callback;
 public class d implements Callback<BResponse> {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ e f34927a;
+    final /* synthetic */ e f21236a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public d(e eVar) {
-        this.f34927a = eVar;
+        this.f21236a = eVar;
     }
 
     @Override // com.tencent.beacon.base.net.call.Callback

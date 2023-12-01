@@ -6,25 +6,25 @@ import com.j256.ormlite.stmt.query.SimpleComparison;
 public class iz {
 
     /* renamed from: a  reason: collision with root package name */
-    public final byte f41543a;
+    public final byte f27852a;
 
     /* renamed from: a  reason: collision with other field name */
-    public final String f886a;
+    public final String f839a;
 
     /* renamed from: a  reason: collision with other field name */
-    public final short f887a;
+    public final short f840a;
 
     public iz() {
         this("", (byte) 0, (short) 0);
     }
 
     public iz(String str, byte b, short s) {
-        this.f886a = str;
-        this.f41543a = b;
-        this.f887a = s;
+        this.f839a = str;
+        this.f27852a = b;
+        this.f840a = s;
     }
 
     public String toString() {
-        return "<TField name:'" + this.f886a + "' type:" + ((int) this.f41543a) + " field-id:" + ((int) this.f887a) + SimpleComparison.GREATER_THAN_OPERATION;
+        return "<TField name:'" + this.f839a + "' type:" + ((int) this.f27852a) + " field-id:" + ((int) this.f840a) + SimpleComparison.GREATER_THAN_OPERATION;
     }
 }

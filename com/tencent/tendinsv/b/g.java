@@ -6,43 +6,43 @@ import com.tencent.tendinsv.utils.r;
 public class g {
 
     /* renamed from: a  reason: collision with root package name */
-    private static int f39006a;
+    private static int f25315a;
 
     public static k a(String str) {
         if (str.equals("SAMSUNG")) {
-            f39006a = 10;
+            f25315a = 10;
         }
         if (str.equals("XIAOMI")) {
-            f39006a = 5;
+            f25315a = 5;
         }
         if (str.equals("BLACKSHARK")) {
-            f39006a = 4;
+            f25315a = 4;
         }
         if (str.equals("IQOO")) {
-            f39006a = 1;
+            f25315a = 1;
         }
         if (str.equals(r.d)) {
-            f39006a = 0;
+            f25315a = 0;
         }
         if (str.equals(r.f)) {
-            f39006a = 2;
+            f25315a = 2;
         }
         if (str.equals("HONOR")) {
-            f39006a = 6;
+            f25315a = 6;
         }
         if (str.equals("MEIZU")) {
-            f39006a = 9;
+            f25315a = 9;
         }
         if (str.equals("REDMI")) {
-            f39006a = 3;
+            f25315a = 3;
         }
         if (str.equals("HUA_WEI")) {
-            f39006a = 7;
+            f25315a = 7;
         }
         if (str.equals("HUAWEI")) {
-            f39006a = 8;
+            f25315a = 8;
         }
-        switch (f39006a) {
+        switch (f25315a) {
             case 0:
                 return new j();
             case 1:

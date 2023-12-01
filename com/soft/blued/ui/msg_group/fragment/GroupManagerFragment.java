@@ -28,7 +28,7 @@ import com.soft.blued.utils.RecyclerViewUtil;
 public class GroupManagerFragment extends MvpFragment<GroupManagerPresenter> {
 
     /* renamed from: a  reason: collision with root package name */
-    private GroupManagerDetailAdapter f32744a;
+    private GroupManagerDetailAdapter f19053a;
     @BindView
     RecyclerView admin_list;
     @BindView
@@ -36,25 +36,25 @@ public class GroupManagerFragment extends MvpFragment<GroupManagerPresenter> {
     @BindView
     CommonTopTitleNoTrans title;
 
+    /* JADX WARN: Multi-variable type inference failed */
     private void b() {
         LiveEventBus.get("set_manager", GroupMemberModel.class).observe(this, new Observer<GroupMemberModel>() { // from class: com.soft.blued.ui.msg_group.fragment.GroupManagerFragment.4
             @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(GroupMemberModel groupMemberModel) {
-                if (GroupManagerFragment.this.j().m() == null || GroupManagerFragment.this.f32744a == null || GroupManagerFragment.this.f32744a.getItemCount() <= 0) {
+                if (((GroupManagerPresenter) GroupManagerFragment.this.j()).m() == null || GroupManagerFragment.this.f19053a == null || GroupManagerFragment.this.f19053a.getItemCount() <= 0) {
                     return;
                 }
-                if (GroupManagerFragment.this.f32744a.getData().size() == GroupManagerFragment.this.j().m().group_max_admin) {
-                    GroupManagerFragment.this.f32744a.getData().set(GroupManagerFragment.this.f32744a.getItemCount() - 1, groupMemberModel);
+                if (GroupManagerFragment.this.f19053a.getData().size() == ((GroupManagerPresenter) GroupManagerFragment.this.j()).m().group_max_admin) {
+                    GroupManagerFragment.this.f19053a.getData().set(GroupManagerFragment.this.f19053a.getItemCount() - 1, groupMemberModel);
                 } else {
-                    GroupManagerFragment.this.f32744a.getData().add(GroupManagerFragment.this.f32744a.getItemCount() - 1, groupMemberModel);
+                    GroupManagerFragment.this.f19053a.getData().add(GroupManagerFragment.this.f19053a.getItemCount() - 1, groupMemberModel);
                 }
-                GroupManagerFragment.this.f32744a.notifyDataSetChanged();
+                GroupManagerFragment.this.f19053a.notifyDataSetChanged();
             }
         });
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public void a(Bundle bundle) {
         super.a(bundle);
         this.title.setCenterText(getString(R.string.group_admin_list));
@@ -71,31 +71,31 @@ public class GroupManagerFragment extends MvpFragment<GroupManagerPresenter> {
     public void a(GroupInfoModel groupInfoModel) {
         if (groupInfoModel != null) {
             TranslationAnimHintView.HintInfo hintInfo = new TranslationAnimHintView.HintInfo();
-            hintInfo.f11074a = 11;
+            hintInfo.a = 11;
             String string = getString(R.string.group_max_admin);
             hintInfo.b = String.format(string, groupInfoModel.group_max_admin + "");
             this.hintView.a(hintInfo);
             RecyclerViewUtil.a(this.admin_list);
-            this.f32744a = new GroupManagerDetailAdapter(groupInfoModel.admin, getFragmentActive());
+            this.f19053a = new GroupManagerDetailAdapter(groupInfoModel.admin, getFragmentActive());
             this.admin_list.setLayoutManager(new LinearLayoutManager(getContext()));
-            this.admin_list.setAdapter(this.f32744a);
-            this.f32744a.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() { // from class: com.soft.blued.ui.msg_group.fragment.GroupManagerFragment.1
+            this.admin_list.setAdapter(this.f19053a);
+            this.f19053a.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() { // from class: com.soft.blued.ui.msg_group.fragment.GroupManagerFragment.1
                 @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemClickListener
                 public void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
-                    GroupManagerFragment.this.j().a((UserBasicModel) baseQuickAdapter.getData().get(i));
+                    ((GroupManagerPresenter) GroupManagerFragment.this.j()).a((UserBasicModel) baseQuickAdapter.getData().get(i));
                 }
             });
-            this.f32744a.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() { // from class: com.soft.blued.ui.msg_group.fragment.GroupManagerFragment.2
+            this.f19053a.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() { // from class: com.soft.blued.ui.msg_group.fragment.GroupManagerFragment.2
                 @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemChildClickListener
                 public void onItemChildClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
                     UserBasicModel userBasicModel = (UserBasicModel) baseQuickAdapter.getData().get(i);
                     int id = view.getId();
                     if (id == 2131362715) {
-                        GroupManagerFragment.this.j().d(userBasicModel.uid);
+                        ((GroupManagerPresenter) GroupManagerFragment.this.j()).d(userBasicModel.uid);
                     } else if (id != 2131365504) {
                     } else {
                         if ("0".equals(userBasicModel.uid)) {
-                            GroupManagerFragment.this.j().a((UserBasicModel) baseQuickAdapter.getData().get(i));
+                            ((GroupManagerPresenter) GroupManagerFragment.this.j()).a((UserBasicModel) baseQuickAdapter.getData().get(i));
                         } else {
                             UserInfoFragmentNew.a(GroupManagerFragment.this.getContext(), (UserBasicModel) baseQuickAdapter.getData().get(i), "group_chatting", view, (LogData) null, new MsgSourceEntity(MessageProtos.StrangerSource.UNKNOWN_STRANGER_SOURCE, ""));
                         }
@@ -105,14 +105,12 @@ public class GroupManagerFragment extends MvpFragment<GroupManagerPresenter> {
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public int g() {
         return R.layout.fm_group_manager_list;
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
-        j().n();
+        ((GroupManagerPresenter) j()).n();
     }
 }

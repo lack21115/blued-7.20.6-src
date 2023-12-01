@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.os.Build;
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
+import com.heytap.mcssdk.constant.Constants;
 import com.igexin.push.config.SDKUrlConfig;
 import com.igexin.push.extension.mod.PushTaskBean;
 import com.igexin.push.f.o;
@@ -34,7 +34,7 @@ public class e {
     public static String Z;
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f23495a = "";
+    public static String f9887a = "";
     public static int aA = 0;
     public static byte[] aB;
     public static long aH = 0;
@@ -56,7 +56,7 @@ public class e {
     public static String aq;
 
     /* renamed from: ar  reason: collision with root package name */
-    public static String f23496ar;
+    public static String f9888ar;
     public static String as;
     public static String at;
     public static String au;
@@ -68,7 +68,7 @@ public class e {
     public static String b = "";
 
     /* renamed from: c  reason: collision with root package name */
-    public static long f23497c = 0;
+    public static long f9889c = 0;
     public static String d;
     public static String e;
     public static String f = "";
@@ -110,8 +110,8 @@ public class e {
     public static String aC = null;
     public static int aD = 3600;
     public static boolean aE = false;
-    public static long aF = 7200000;
-    public static long aG = 7200000;
+    public static long aF = Constants.MILLS_OF_WATCH_DOG;
+    public static long aG = Constants.MILLS_OF_WATCH_DOG;
     public static String aI = "oppo r9";
     public static int aJ = 200;
     public static String aK = "";
@@ -164,7 +164,7 @@ public class e {
             com.igexin.c.a.c.a.a("CoreRuntimeInfo|parseManifests failed", new Object[0]);
             throw new IllegalArgumentException("parseManifests failed");
         }
-        ad = com.igexin.c.b.a.b(f23495a + context.getPackageName()).getBytes();
+        ad = com.igexin.c.b.a.b(f9887a + context.getPackageName()).getBytes();
         com.igexin.push.f.j.a();
         com.igexin.push.config.e.a();
         a();
@@ -221,7 +221,7 @@ public class e {
     }
 
     public static ClassLoader b(String str) {
-        String str2 = str.split(BridgeUtil.UNDERLINE_STR)[0];
+        String str2 = str.split("_")[0];
         if (o.containsKey(str2)) {
             return o.get(str2);
         }
@@ -270,7 +270,7 @@ public class e {
                         com.igexin.c.a.c.a.a("CoreRuntimeInfo|getui sdk init error, missing parm #####", new Object[0]);
                         return false;
                     }
-                    f23495a = str3;
+                    f9887a = str3;
                     f = SDKUrlConfig.getLocation();
                     z2 = true;
                 }

@@ -15,7 +15,7 @@ public final class JsonReader implements Closeable {
     private static final String TRUE = "true";
 
     /* renamed from: in  reason: collision with root package name */
-    private final Reader f1477in;
+    private final Reader f1429in;
     private String name;
     private boolean skipping;
     private JsonToken token;
@@ -86,7 +86,7 @@ public final class JsonReader implements Closeable {
         if (reader == null) {
             throw new NullPointerException("in == null");
         }
-        this.f1477in = reader;
+        this.f1429in = reader;
     }
 
     private JsonToken advance() throws IOException {
@@ -172,7 +172,7 @@ public final class JsonReader implements Closeable {
         }
         this.pos = 0;
         do {
-            int read = this.f1477in.read(this.buffer, this.limit, this.buffer.length - this.limit);
+            int read = this.f1429in.read(this.buffer, this.limit, this.buffer.length - this.limit);
             if (read == -1) {
                 return false;
             }
@@ -633,7 +633,7 @@ public final class JsonReader implements Closeable {
         this.token = null;
         this.stack.clear();
         this.stack.add(JsonScope.CLOSED);
-        this.f1477in.close();
+        this.f1429in.close();
     }
 
     public void endArray() throws IOException {

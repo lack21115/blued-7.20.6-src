@@ -15,13 +15,9 @@ import com.blued.android.module.live_china.view.LiveConnectPKUserItemView;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/LiveConnectPkViewBinding.class */
 public final class LiveConnectPkViewBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ShapeTextView f12163a;
+    public final ShapeTextView a;
     public final ShapeFrameLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final CardView f12164c;
+    public final CardView c;
     public final ImageView d;
     public final ImageView e;
     public final LinearLayout f;
@@ -43,9 +39,9 @@ public final class LiveConnectPkViewBinding implements ViewBinding {
 
     private LiveConnectPkViewBinding(FrameLayout frameLayout, ShapeTextView shapeTextView, ShapeFrameLayout shapeFrameLayout, CardView cardView, ImageView imageView, ImageView imageView2, LinearLayout linearLayout, LinearLayout linearLayout2, ProgressBar progressBar, TextView textView, TextView textView2, TextView textView3, TextView textView4, LiveConnectPKUserItemView liveConnectPKUserItemView, LiveConnectPKUserItemView liveConnectPKUserItemView2, LiveConnectPKUserItemView liveConnectPKUserItemView3, LiveConnectPKUserItemView liveConnectPKUserItemView4, View view, ShapeTextView shapeTextView2, ShapeTextView shapeTextView3, View view2) {
         this.u = frameLayout;
-        this.f12163a = shapeTextView;
+        this.a = shapeTextView;
         this.b = shapeFrameLayout;
-        this.f12164c = cardView;
+        this.c = cardView;
         this.d = imageView;
         this.e = imageView2;
         this.f = linearLayout;
@@ -71,8 +67,8 @@ public final class LiveConnectPkViewBinding implements ViewBinding {
         if (shapeTextView != null) {
             ShapeFrameLayout shapeFrameLayout = (ShapeFrameLayout) view.findViewById(R.id.content_layout);
             if (shapeFrameLayout != null) {
-                CardView cardView = (CardView) view.findViewById(R.id.cv_tab_root);
-                if (cardView != null) {
+                CardView findViewById = view.findViewById(R.id.cv_tab_root);
+                if (findViewById != null) {
                     ImageView imageView = (ImageView) view.findViewById(R.id.iv_pk);
                     if (imageView != null) {
                         ImageView imageView2 = (ImageView) view.findViewById(R.id.iv_pk_cloak);
@@ -99,15 +95,15 @@ public final class LiveConnectPkViewBinding implements ViewBinding {
                                                                 if (liveConnectPKUserItemView3 != null) {
                                                                     LiveConnectPKUserItemView liveConnectPKUserItemView4 = (LiveConnectPKUserItemView) view.findViewById(R.id.user_4);
                                                                     if (liveConnectPKUserItemView4 != null) {
-                                                                        View findViewById = view.findViewById(R.id.view_carry);
-                                                                        if (findViewById != null) {
+                                                                        View findViewById2 = view.findViewById(R.id.view_carry);
+                                                                        if (findViewById2 != null) {
                                                                             ShapeTextView shapeTextView2 = (ShapeTextView) view.findViewById(R.id.view_cursor);
                                                                             if (shapeTextView2 != null) {
                                                                                 ShapeTextView shapeTextView3 = (ShapeTextView) view.findViewById(R.id.view_dot);
                                                                                 if (shapeTextView3 != null) {
-                                                                                    View findViewById2 = view.findViewById(R.id.view_pk_icon_left);
-                                                                                    if (findViewById2 != null) {
-                                                                                        return new LiveConnectPkViewBinding((FrameLayout) view, shapeTextView, shapeFrameLayout, cardView, imageView, imageView2, linearLayout, linearLayout2, progressBar, textView, textView2, textView3, textView4, liveConnectPKUserItemView, liveConnectPKUserItemView2, liveConnectPKUserItemView3, liveConnectPKUserItemView4, findViewById, shapeTextView2, shapeTextView3, findViewById2);
+                                                                                    View findViewById3 = view.findViewById(R.id.view_pk_icon_left);
+                                                                                    if (findViewById3 != null) {
+                                                                                        return new LiveConnectPkViewBinding((FrameLayout) view, shapeTextView, shapeFrameLayout, findViewById, imageView, imageView2, linearLayout, linearLayout2, progressBar, textView, textView2, textView3, textView4, liveConnectPKUserItemView, liveConnectPKUserItemView2, liveConnectPKUserItemView3, liveConnectPKUserItemView4, findViewById2, shapeTextView2, shapeTextView3, findViewById3);
                                                                                     }
                                                                                     str = "viewPkIconLeft";
                                                                                 } else {
@@ -170,7 +166,6 @@ public final class LiveConnectPkViewBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.u;

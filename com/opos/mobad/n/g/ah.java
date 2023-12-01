@@ -13,11 +13,11 @@ import com.opos.mobad.n.g.ad;
 public class ah extends RelativeLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    private TextView f26785a;
+    private TextView f13097a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private a.InterfaceC0708a f26786c;
+    private a.InterfaceC0538a f13098c;
     private ad.a d;
 
     public ah(Context context) {
@@ -31,27 +31,27 @@ public class ah extends RelativeLayout {
     }
 
     private void a() {
-        this.f26785a = new TextView(getContext());
+        this.f13097a = new TextView(getContext());
         com.opos.mobad.n.c.g gVar = new com.opos.mobad.n.c.g() { // from class: com.opos.mobad.n.g.ah.1
             @Override // com.opos.mobad.n.c.g
             public void a(View view, int[] iArr) {
-                if (ah.this.f26786c != null) {
+                if (ah.this.f13098c != null) {
                     ah.this.b();
-                    a.InterfaceC0708a interfaceC0708a = ah.this.f26786c;
+                    a.InterfaceC0538a interfaceC0538a = ah.this.f13098c;
                     boolean z = true;
                     if (ah.this.b != 1) {
                         z = false;
                     }
-                    interfaceC0708a.a(view, iArr, z);
+                    interfaceC0538a.a(view, iArr, z);
                 }
             }
         };
-        this.f26785a.setOnClickListener(gVar);
-        this.f26785a.setOnTouchListener(gVar);
-        this.f26785a.setBackground(getContext().getResources().getDrawable(R.drawable.opos_mobad_drawable_block_sound_off));
+        this.f13097a.setOnClickListener(gVar);
+        this.f13097a.setOnTouchListener(gVar);
+        this.f13097a.setBackground(getContext().getResources().getDrawable(R.drawable.opos_mobad_drawable_block_sound_off));
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(getContext(), 16.0f), com.opos.cmn.an.h.f.a.a(getContext(), 16.0f));
         layoutParams.rightMargin = com.opos.cmn.an.h.f.a.a(getContext(), 10.0f);
-        addView(this.f26785a, layoutParams);
+        addView(this.f13097a, layoutParams);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -74,7 +74,7 @@ public class ah extends RelativeLayout {
     private void b(int i) {
         Resources resources;
         int i2;
-        TextView textView = this.f26785a;
+        TextView textView = this.f13097a;
         if (textView == null || this.b == i) {
             return;
         }
@@ -96,8 +96,8 @@ public class ah extends RelativeLayout {
         b(i);
     }
 
-    public void a(a.InterfaceC0708a interfaceC0708a) {
-        this.f26786c = interfaceC0708a;
+    public void a(a.InterfaceC0538a interfaceC0538a) {
+        this.f13098c = interfaceC0538a;
     }
 
     public void a(ad.a aVar) {

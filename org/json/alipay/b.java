@@ -7,9 +7,7 @@ import java.util.Map;
 
 /* loaded from: source-3503164-dex2jar.jar:org/json/alipay/b.class */
 public class b {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Object f44095a = new a((byte) 0);
+    public static final Object a = new a((byte) 0);
     private Map b;
 
     /* loaded from: source-3503164-dex2jar.jar:org/json/alipay/b$a.class */
@@ -30,7 +28,7 @@ public class b {
         }
 
         public final String toString() {
-            return com.igexin.push.core.b.l;
+            return "null";
         }
     }
 
@@ -52,21 +50,21 @@ public class b {
             throw cVar.a("A JSONObject text must begin with '{'");
         }
         while (true) {
-            char c2 = cVar.c();
-            if (c2 == 0) {
+            char c = cVar.c();
+            if (c == 0) {
                 throw cVar.a("A JSONObject text must end with '}'");
             }
-            if (c2 == '}') {
+            if (c == '}') {
                 return;
             }
             cVar.a();
             String obj = cVar.d().toString();
-            char c3 = cVar.c();
-            if (c3 == '=') {
+            char c2 = cVar.c();
+            if (c2 == '=') {
                 if (cVar.b() != '>') {
                     cVar.a();
                 }
-            } else if (c3 != ':') {
+            } else if (c2 != ':') {
                 throw cVar.a("Expected a ':' after a key");
             }
             Object d = cVar.d();
@@ -79,9 +77,9 @@ public class b {
             } else {
                 this.b.remove(obj);
             }
-            char c4 = cVar.c();
-            if (c4 != ',' && c4 != ';') {
-                if (c4 != '}') {
+            char c3 = cVar.c();
+            if (c3 != ',' && c3 != ';') {
+                if (c3 != '}') {
                     throw cVar.a("Expected a ',' or '}'");
                 }
                 return;
@@ -96,7 +94,7 @@ public class b {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static String a(Object obj) {
         if (obj == null || obj.equals(null)) {
-            return com.igexin.push.core.b.l;
+            return "null";
         }
         if (!(obj instanceof Number)) {
             return ((obj instanceof Boolean) || (obj instanceof b) || (obj instanceof org.json.alipay.a)) ? obj.toString() : obj instanceof Map ? new b((Map) obj).toString() : obj instanceof Collection ? new org.json.alipay.a((Collection) obj).toString() : obj.getClass().isArray() ? new org.json.alipay.a(obj).toString() : c(obj.toString());

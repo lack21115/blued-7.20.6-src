@@ -9,18 +9,13 @@ import com.alipay.apmobilesecuritysdk.e.i;
 import com.alipay.apmobilesecuritysdk.otherid.UmidSdkWrapper;
 import com.alipay.apmobilesecuritysdk.otherid.UtdidWrapper;
 import com.alipay.sdk.cons.b;
-import com.huawei.openalliance.ad.constant.ao;
 import java.util.HashMap;
 import java.util.Map;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alipay/apmobilesecuritysdk/face/APSecuritySdk.class */
 public class APSecuritySdk {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static APSecuritySdk f4561a;
-
-    /* renamed from: c  reason: collision with root package name */
-    private static Object f4562c = new Object();
+    private static APSecuritySdk a;
+    private static Object c = new Object();
     private Context b;
 
     /* loaded from: source-6737240-dex2jar.jar:com/alipay/apmobilesecuritysdk/face/APSecuritySdk$InitResultListener.class */
@@ -44,14 +39,14 @@ public class APSecuritySdk {
     }
 
     public static APSecuritySdk getInstance(Context context) {
-        if (f4561a == null) {
-            synchronized (f4562c) {
-                if (f4561a == null) {
-                    f4561a = new APSecuritySdk(context);
+        if (a == null) {
+            synchronized (c) {
+                if (a == null) {
+                    a = new APSecuritySdk(context);
                 }
             }
         }
-        return f4561a;
+        return a;
     }
 
     public static String getUtdid(Context context) {
@@ -107,7 +102,7 @@ public class APSecuritySdk {
         }
         String a2 = com.alipay.security.mobile.module.a.a.a(map, b.g, "");
         String a3 = com.alipay.security.mobile.module.a.a.a(map, "tid", "");
-        String a4 = com.alipay.security.mobile.module.a.a.a(map, ao.q, "");
+        String a4 = com.alipay.security.mobile.module.a.a.a(map, "userId", "");
         String str = a2;
         if (com.alipay.security.mobile.module.a.a.a(a2)) {
             str = UtdidWrapper.getUtdid(this.b);
@@ -115,7 +110,7 @@ public class APSecuritySdk {
         final HashMap hashMap = new HashMap();
         hashMap.put(b.g, str);
         hashMap.put("tid", a3);
-        hashMap.put(ao.q, a4);
+        hashMap.put("userId", a4);
         hashMap.put("appName", "");
         hashMap.put("appKeyClient", "");
         hashMap.put("appchannel", "");

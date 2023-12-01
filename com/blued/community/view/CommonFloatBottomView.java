@@ -68,19 +68,19 @@ public final class CommonFloatBottomView extends FrameLayout {
         if (frameLayout == null) {
             return;
         }
-        frameLayout.setOnClickListener(new SingleClickProxy(new View.OnClickListener() { // from class: com.blued.community.view.-$$Lambda$CommonFloatBottomView$rLo6jh5cVYh7hnisKhDaOm2oXjc
+        frameLayout.setOnClickListener((View.OnClickListener) new SingleClickProxy(new View.OnClickListener() { // from class: com.blued.community.view.-$$Lambda$CommonFloatBottomView$rLo6jh5cVYh7hnisKhDaOm2oXjc
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CommonFloatBottomView.m5142initView$lambda0(CommonFloatBottomView.this, view);
+                CommonFloatBottomView.m2055initView$lambda0(CommonFloatBottomView.this, view);
             }
         }));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: initView$lambda-0  reason: not valid java name */
-    public static final void m5142initView$lambda0(CommonFloatBottomView this$0, View view) {
-        Intrinsics.e(this$0, "this$0");
-        this$0.onClickContent();
+    public static final void m2055initView$lambda0(CommonFloatBottomView commonFloatBottomView, View view) {
+        Intrinsics.e(commonFloatBottomView, "this$0");
+        commonFloatBottomView.onClickContent();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -95,7 +95,7 @@ public final class CommonFloatBottomView extends FrameLayout {
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.blued.community.view.-$$Lambda$CommonFloatBottomView$IbZnt168LEHess1K0gGOddqJD-M
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                CommonFloatBottomView.m5144playImageButtonClickAnimator$lambda2(CommonFloatBottomView.this, valueAnimator);
+                CommonFloatBottomView.m2057playImageButtonClickAnimator$lambda2(CommonFloatBottomView.this, valueAnimator);
             }
         });
         ValueAnimator ofFloat2 = ObjectAnimator.ofFloat(0.7f, 1.0f);
@@ -103,7 +103,7 @@ public final class CommonFloatBottomView extends FrameLayout {
         ofFloat2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.blued.community.view.-$$Lambda$CommonFloatBottomView$ypfZCIJn226Aq34Ns4cYdahnBzc
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                CommonFloatBottomView.m5145playImageButtonClickAnimator$lambda3(CommonFloatBottomView.this, valueAnimator);
+                CommonFloatBottomView.m2058playImageButtonClickAnimator$lambda3(CommonFloatBottomView.this, valueAnimator);
             }
         });
         ofFloat2.setInterpolator(new AccelerateDecelerateInterpolator());
@@ -114,18 +114,18 @@ public final class CommonFloatBottomView extends FrameLayout {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: playImageButtonClickAnimator$lambda-2  reason: not valid java name */
-    public static final void m5144playImageButtonClickAnimator$lambda2(CommonFloatBottomView this$0, ValueAnimator valueAnimator) {
-        Intrinsics.e(this$0, "this$0");
+    public static final void m2057playImageButtonClickAnimator$lambda2(CommonFloatBottomView commonFloatBottomView, ValueAnimator valueAnimator) {
+        Intrinsics.e(commonFloatBottomView, "this$0");
         Object animatedValue = valueAnimator.getAnimatedValue();
         if (animatedValue == null) {
             throw new NullPointerException("null cannot be cast to non-null type kotlin.Float");
         }
         float floatValue = ((Float) animatedValue).floatValue();
-        FrameLayout frameLayout = this$0.contentView;
+        FrameLayout frameLayout = commonFloatBottomView.contentView;
         if (frameLayout != null) {
             frameLayout.setScaleX(floatValue);
         }
-        FrameLayout frameLayout2 = this$0.contentView;
+        FrameLayout frameLayout2 = commonFloatBottomView.contentView;
         if (frameLayout2 == null) {
             return;
         }
@@ -134,18 +134,18 @@ public final class CommonFloatBottomView extends FrameLayout {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: playImageButtonClickAnimator$lambda-3  reason: not valid java name */
-    public static final void m5145playImageButtonClickAnimator$lambda3(CommonFloatBottomView this$0, ValueAnimator valueAnimator) {
-        Intrinsics.e(this$0, "this$0");
+    public static final void m2058playImageButtonClickAnimator$lambda3(CommonFloatBottomView commonFloatBottomView, ValueAnimator valueAnimator) {
+        Intrinsics.e(commonFloatBottomView, "this$0");
         Object animatedValue = valueAnimator.getAnimatedValue();
         if (animatedValue == null) {
             throw new NullPointerException("null cannot be cast to non-null type kotlin.Float");
         }
         float floatValue = ((Float) animatedValue).floatValue();
-        FrameLayout frameLayout = this$0.contentView;
+        FrameLayout frameLayout = commonFloatBottomView.contentView;
         if (frameLayout != null) {
             frameLayout.setScaleX(floatValue);
         }
-        FrameLayout frameLayout2 = this$0.contentView;
+        FrameLayout frameLayout2 = commonFloatBottomView.contentView;
         if (frameLayout2 == null) {
             return;
         }
@@ -162,7 +162,7 @@ public final class CommonFloatBottomView extends FrameLayout {
         translateAnimation.setAnimationListener(new Animation.AnimationListener() { // from class: com.blued.community.view.CommonFloatBottomView$startBtmBtnHideAnim$1$1
             @Override // android.view.animation.Animation.AnimationListener
             public void onAnimationEnd(Animation animation) {
-                FrameLayout.this.setVisibility(8);
+                frameLayout.setVisibility(8);
             }
 
             @Override // android.view.animation.Animation.AnimationListener
@@ -194,7 +194,7 @@ public final class CommonFloatBottomView extends FrameLayout {
 
             @Override // android.view.animation.Animation.AnimationListener
             public void onAnimationStart(Animation animation) {
-                FrameLayout.this.setVisibility(0);
+                frameLayout.setVisibility(0);
             }
         });
         frameLayout.startAnimation(translateAnimation);

@@ -17,7 +17,7 @@ import java.util.Map;
 public class AppInfo {
 
     /* renamed from: a  reason: collision with root package name */
-    private static ActivityManager f35126a;
+    private static ActivityManager f21435a;
 
     static {
         "@buglyAllChannel@".split(",");
@@ -240,12 +240,12 @@ public class AppInfo {
         if (context == null) {
             return false;
         }
-        if (f35126a == null) {
-            f35126a = (ActivityManager) context.getSystemService("activity");
+        if (f21435a == null) {
+            f21435a = (ActivityManager) context.getSystemService("activity");
         }
         try {
             ActivityManager.MemoryInfo memoryInfo = new ActivityManager.MemoryInfo();
-            f35126a.getMemoryInfo(memoryInfo);
+            f21435a.getMemoryInfo(memoryInfo);
             if (memoryInfo.lowMemory) {
                 x.c("Memory is low.", new Object[0]);
                 return true;

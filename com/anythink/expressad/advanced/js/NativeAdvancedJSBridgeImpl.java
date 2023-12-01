@@ -4,7 +4,6 @@ import android.content.Context;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Base64;
-import com.anythink.core.api.ATAdConst;
 import com.anythink.core.common.b.n;
 import com.anythink.expressad.advanced.a.b;
 import com.anythink.expressad.advanced.d.a;
@@ -28,7 +27,7 @@ import org.json.JSONObject;
 public class NativeAdvancedJSBridgeImpl extends CommonBannerJSBridgeImp {
 
     /* renamed from: c  reason: collision with root package name */
-    private WeakReference<Context> f7045c;
+    private WeakReference<Context> f4207c;
     private List<c> d;
     private String e;
     private String f;
@@ -42,7 +41,7 @@ public class NativeAdvancedJSBridgeImpl extends CommonBannerJSBridgeImp {
     public NativeAdvancedJSBridgeImpl(Context context, String str, String str2) {
         this.f = str;
         this.e = str2;
-        this.f7045c = new WeakReference<>(context);
+        this.f4207c = new WeakReference<>(context);
     }
 
     @Override // com.anythink.expressad.atsignalcommon.bridge.CommonBannerJSBridgeImp, com.anythink.expressad.atsignalcommon.bridge.IBannerJSBridge
@@ -101,11 +100,11 @@ public class NativeAdvancedJSBridgeImpl extends CommonBannerJSBridgeImp {
             Bundle bundle = new Bundle();
             bundle.putString("url", str);
             bundle.putBoolean("shouldUseCustomClose", z);
-            if (this.f7045c == null || this.f7045c.get() == null) {
+            if (this.f4207c == null || this.f4207c.get() == null) {
                 return;
             }
             if (this.k == null || !this.k.isShowing()) {
-                NativeAdvancedExpandDialog nativeAdvancedExpandDialog = new NativeAdvancedExpandDialog(this.f7045c.get(), bundle, this.j);
+                NativeAdvancedExpandDialog nativeAdvancedExpandDialog = new NativeAdvancedExpandDialog(this.f4207c.get(), bundle, this.j);
                 this.k = nativeAdvancedExpandDialog;
                 nativeAdvancedExpandDialog.setCampaignList(this.e, this.d);
                 this.k.show();
@@ -169,7 +168,7 @@ public class NativeAdvancedJSBridgeImpl extends CommonBannerJSBridgeImp {
             cVar.a(this.h);
             jSONObject.put("unitSetting", cVar.s());
             jSONObject.put("appSetting", new JSONObject());
-            jSONObject.put(ATAdConst.NETWORK_REQUEST_PARAMS_KEY.SDK_INFO, d.f7071a);
+            jSONObject.put("sdk_info", d.f4233a);
             String str2 = this.b;
             o.d(str2, "init" + jSONObject.toString());
             j.a().a(obj, Base64.encodeToString(jSONObject.toString().getBytes(), 2));
@@ -222,7 +221,7 @@ public class NativeAdvancedJSBridgeImpl extends CommonBannerJSBridgeImp {
         try {
             if (obj instanceof com.anythink.expressad.atsignalcommon.windvane.a) {
                 j.a();
-                j.b(((com.anythink.expressad.atsignalcommon.windvane.a) obj).f7101a);
+                j.b(((com.anythink.expressad.atsignalcommon.windvane.a) obj).f4263a);
             }
         } catch (Throwable th) {
             o.b(this.b, "onJSBridgeConnect", th);
@@ -241,7 +240,7 @@ public class NativeAdvancedJSBridgeImpl extends CommonBannerJSBridgeImp {
     public void readyStatus(Object obj, String str) {
         WindVaneWebView windVaneWebView;
         try {
-            if (!(obj instanceof com.anythink.expressad.atsignalcommon.windvane.a) || (windVaneWebView = ((com.anythink.expressad.atsignalcommon.windvane.a) obj).f7101a) == null) {
+            if (!(obj instanceof com.anythink.expressad.atsignalcommon.windvane.a) || (windVaneWebView = ((com.anythink.expressad.atsignalcommon.windvane.a) obj).f4263a) == null) {
                 return;
             }
             try {
@@ -355,7 +354,7 @@ public class NativeAdvancedJSBridgeImpl extends CommonBannerJSBridgeImp {
     }
 
     public void updateContext(Context context) {
-        this.f7045c = new WeakReference<>(context);
+        this.f4207c = new WeakReference<>(context);
     }
 
     @Override // com.anythink.expressad.atsignalcommon.mraid.IMraidJSBridge

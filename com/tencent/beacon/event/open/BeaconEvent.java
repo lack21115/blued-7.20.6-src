@@ -10,11 +10,11 @@ import java.util.Map;
 public final class BeaconEvent {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f35067a;
+    private String f21376a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private EventType f35068c;
+    private EventType f21377c;
     private boolean d;
     private Map<String, String> e;
 
@@ -22,27 +22,27 @@ public final class BeaconEvent {
     public static final class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        private String f35069a;
+        private String f21378a;
         private String b;
 
         /* renamed from: c  reason: collision with root package name */
-        private EventType f35070c;
+        private EventType f21379c;
         private boolean d;
         private Map<String, String> e;
 
         private Builder() {
-            this.f35070c = EventType.NORMAL;
+            this.f21379c = EventType.NORMAL;
             this.d = true;
             this.e = new HashMap();
         }
 
         private Builder(BeaconEvent beaconEvent) {
-            this.f35070c = EventType.NORMAL;
+            this.f21379c = EventType.NORMAL;
             this.d = true;
             this.e = new HashMap();
-            this.f35069a = beaconEvent.f35067a;
+            this.f21378a = beaconEvent.f21376a;
             this.b = beaconEvent.b;
-            this.f35070c = beaconEvent.f35068c;
+            this.f21379c = beaconEvent.f21377c;
             this.d = beaconEvent.d;
             this.e.putAll(beaconEvent.e);
         }
@@ -57,14 +57,14 @@ public final class BeaconEvent {
 
         public BeaconEvent build() {
             String b = d.b(this.b);
-            if (TextUtils.isEmpty(this.f35069a)) {
-                this.f35069a = c.d().f();
+            if (TextUtils.isEmpty(this.f21378a)) {
+                this.f21378a = c.d().f();
             }
-            return new BeaconEvent(this.f35069a, b, this.f35070c, this.d, this.e, null);
+            return new BeaconEvent(this.f21378a, b, this.f21379c, this.d, this.e, null);
         }
 
         public Builder withAppKey(String str) {
-            this.f35069a = str;
+            this.f21378a = str;
             return this;
         }
 
@@ -91,15 +91,15 @@ public final class BeaconEvent {
         }
 
         public Builder withType(EventType eventType) {
-            this.f35070c = eventType;
+            this.f21379c = eventType;
             return this;
         }
     }
 
     private BeaconEvent(String str, String str2, EventType eventType, boolean z, Map<String, String> map) {
-        this.f35067a = str;
+        this.f21376a = str;
         this.b = str2;
-        this.f35068c = eventType;
+        this.f21377c = eventType;
         this.d = z;
         this.e = map;
     }
@@ -117,7 +117,7 @@ public final class BeaconEvent {
     }
 
     public String getAppKey() {
-        return this.f35067a;
+        return this.f21376a;
     }
 
     public String getCode() {
@@ -125,7 +125,7 @@ public final class BeaconEvent {
     }
 
     public String getLogidPrefix() {
-        switch (a.f35073a[this.f35068c.ordinal()]) {
+        switch (a.f21382a[this.f21377c.ordinal()]) {
             case 1:
             case 2:
                 return "N";
@@ -145,7 +145,7 @@ public final class BeaconEvent {
     }
 
     public EventType getType() {
-        return this.f35068c;
+        return this.f21377c;
     }
 
     public boolean isSucceed() {
@@ -153,7 +153,7 @@ public final class BeaconEvent {
     }
 
     public void setAppKey(String str) {
-        this.f35067a = str;
+        this.f21376a = str;
     }
 
     public void setCode(String str) {
@@ -169,7 +169,7 @@ public final class BeaconEvent {
     }
 
     public void setType(EventType eventType) {
-        this.f35068c = eventType;
+        this.f21377c = eventType;
     }
 
     public String toString() {

@@ -8,8 +8,9 @@ import android.os.ConditionVariable;
 import android.speech.tts.TextToSpeechService;
 import android.util.Log;
 
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-9557208-dex2jar.jar:android/speech/tts/AudioPlaybackQueueItem.class */
-class AudioPlaybackQueueItem extends PlaybackQueueItem {
+public class AudioPlaybackQueueItem extends PlaybackQueueItem {
     private static final String TAG = "TTS.AudioQueueItem";
     private final TextToSpeechService.AudioOutputParams mAudioParams;
     private final Context mContext;
@@ -107,8 +108,9 @@ class AudioPlaybackQueueItem extends PlaybackQueueItem {
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     @Override // android.speech.tts.PlaybackQueueItem
-    void stop(int i) {
+    public void stop(int i) {
         this.mDone.open();
     }
 }

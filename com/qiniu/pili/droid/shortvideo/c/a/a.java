@@ -8,7 +8,7 @@ import com.qiniu.pili.droid.shortvideo.gl.c.k;
 public class a extends k {
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f27528c;
+    private Context f13840c;
     private String d;
     private int e;
     private int f;
@@ -16,7 +16,7 @@ public class a extends k {
 
     public a(Context context, String str, boolean z) {
         this.o = true;
-        this.f27528c = context;
+        this.f13840c = context;
         this.d = str;
         this.o = z;
     }
@@ -28,7 +28,7 @@ public class a extends k {
 
     @Override // com.qiniu.pili.droid.shortvideo.gl.c.k, com.qiniu.pili.droid.shortvideo.gl.c.g
     public boolean b() {
-        int a2 = b.a(this.f27528c, this.d, this.o);
+        int a2 = b.a(this.f13840c, this.d, this.o);
         this.f = a2;
         if (a2 == 0) {
             return false;

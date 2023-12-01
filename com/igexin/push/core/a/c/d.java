@@ -11,11 +11,11 @@ import org.json.JSONObject;
 public final class d implements PushMessageInterface {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f23413a = "BasicAction";
+    public static final String f9805a = "BasicAction";
 
     @Override // com.igexin.push.extension.mod.PushMessageInterface
     public final boolean executeAction(PushTaskBean pushTaskBean, BaseActionBean baseActionBean) {
-        long currentTimeMillis = System.currentTimeMillis() + (((com.igexin.push.core.b.h) baseActionBean).f23442a * 1000);
+        long currentTimeMillis = System.currentTimeMillis() + (((com.igexin.push.core.b.h) baseActionBean).f9834a * 1000);
         com.igexin.push.core.e.f.a().a(true);
         com.igexin.push.core.e.f a2 = com.igexin.push.core.e.f.a();
         if (com.igexin.push.core.e.X != currentTimeMillis) {
@@ -35,7 +35,7 @@ public final class d implements PushMessageInterface {
                 hVar.setActionId(jSONObject.getString("actionid"));
                 hVar.setDoActionId(jSONObject.getString(com.anythink.expressad.foundation.d.d.s));
                 if (jSONObject.has("duration")) {
-                    hVar.f23442a = Long.valueOf(jSONObject.getString("duration")).longValue();
+                    hVar.f9834a = Long.valueOf(jSONObject.getString("duration")).longValue();
                 }
                 return hVar;
             }

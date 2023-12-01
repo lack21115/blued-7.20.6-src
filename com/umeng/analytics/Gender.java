@@ -30,23 +30,23 @@ public enum Gender {
     static /* synthetic */ class AnonymousClass4 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f40596a;
+        static final /* synthetic */ int[] f26905a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x002f -> B:19:0x001f). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:9:0x002b -> B:15:0x0014). Please submit an issue!!! */
         static {
             int[] iArr = new int[Gender.values().length];
-            f40596a = iArr;
+            f26905a = iArr;
             try {
                 iArr[Gender.Male.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f40596a[Gender.Female.ordinal()] = 2;
+                f26905a[Gender.Female.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f40596a[Gender.Unknown.ordinal()] = 3;
+                f26905a[Gender.Unknown.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
         }
@@ -61,7 +61,7 @@ public enum Gender {
     }
 
     public static com.umeng.commonsdk.statistics.proto.Gender transGender(Gender gender) {
-        int i = AnonymousClass4.f40596a[gender.ordinal()];
+        int i = AnonymousClass4.f26905a[gender.ordinal()];
         return i != 1 ? i != 2 ? com.umeng.commonsdk.statistics.proto.Gender.UNKNOWN : com.umeng.commonsdk.statistics.proto.Gender.FEMALE : com.umeng.commonsdk.statistics.proto.Gender.MALE;
     }
 

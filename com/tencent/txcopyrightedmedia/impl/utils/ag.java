@@ -4,27 +4,27 @@ package com.tencent.txcopyrightedmedia.impl.utils;
 public final class ag {
 
     /* renamed from: a  reason: collision with root package name */
-    public byte[] f40046a;
+    public byte[] f26355a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f40047c;
+    private int f26356c;
     private boolean d;
 
     public ag(int i) {
-        this.f40046a = new byte[i <= 0 ? 1 : i];
+        this.f26355a = new byte[i <= 0 ? 1 : i];
         this.b = 0;
-        this.f40047c = 0;
+        this.f26356c = 0;
         this.d = true;
     }
 
     public final int a() {
-        if (this.d || this.f40047c != this.b) {
-            int i = this.f40047c;
-            byte[] bArr = this.f40046a;
+        if (this.d || this.f26356c != this.b) {
+            int i = this.f26356c;
+            byte[] bArr = this.f26355a;
             return ((i + bArr.length) - this.b) % bArr.length;
         }
-        return this.f40046a.length;
+        return this.f26355a.length;
     }
 
     public final int a(byte[] bArr, int i) {
@@ -38,7 +38,7 @@ public final class ag {
             if (i2 >= i + 0) {
                 break;
             }
-            byte[] bArr2 = this.f40046a;
+            byte[] bArr2 = this.f26355a;
             int i4 = this.b;
             int i5 = i4 + 1;
             this.b = i5;
@@ -46,7 +46,7 @@ public final class ag {
             if (i5 == bArr2.length) {
                 this.b = 0;
             }
-            if (this.b == this.f40047c) {
+            if (this.b == this.f26356c) {
                 this.d = true;
                 break;
             }
@@ -56,33 +56,33 @@ public final class ag {
     }
 
     public final boolean a(byte b) {
-        if (this.f40047c == this.b) {
+        if (this.f26356c == this.b) {
             if (!this.d) {
                 return false;
             }
             this.d = false;
         }
-        byte[] bArr = this.f40046a;
-        int i = this.f40047c;
+        byte[] bArr = this.f26355a;
+        int i = this.f26356c;
         int i2 = i + 1;
-        this.f40047c = i2;
+        this.f26356c = i2;
         bArr[i] = b;
         if (i2 == bArr.length) {
-            this.f40047c = 0;
+            this.f26356c = 0;
             return true;
         }
         return true;
     }
 
     public final boolean a(int i) {
-        byte[] bArr = this.f40046a;
+        byte[] bArr = this.f26355a;
         if (i <= bArr.length) {
             return false;
         }
         byte[] bArr2 = new byte[i];
-        System.arraycopy((Object) bArr, 0, (Object) bArr2, 0, bArr.length);
-        this.f40047c = (this.b + a()) % i;
-        this.f40046a = bArr2;
+        System.arraycopy(bArr, 0, bArr2, 0, bArr.length);
+        this.f26356c = (this.b + a()) % i;
+        this.f26355a = bArr2;
         return true;
     }
 }

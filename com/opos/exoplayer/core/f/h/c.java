@@ -14,23 +14,23 @@ public final class c extends com.opos.exoplayer.core.f.b {
     public static /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f25395a;
+        static final /* synthetic */ int[] f11707a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x002f -> B:19:0x001f). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:9:0x002b -> B:15:0x0014). Please submit an issue!!! */
         static {
             int[] iArr = new int[Layout.Alignment.values().length];
-            f25395a = iArr;
+            f11707a = iArr;
             try {
                 iArr[Layout.Alignment.ALIGN_NORMAL.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f25395a[Layout.Alignment.ALIGN_CENTER.ordinal()] = 2;
+                f11707a[Layout.Alignment.ALIGN_CENTER.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f25395a[Layout.Alignment.ALIGN_OPPOSITE.ordinal()] = 3;
+                f11707a[Layout.Alignment.ALIGN_OPPOSITE.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
         }
@@ -40,11 +40,11 @@ public final class c extends com.opos.exoplayer.core.f.b {
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private long f25396a;
+        private long f11708a;
         private long b;
 
         /* renamed from: c  reason: collision with root package name */
-        private SpannableStringBuilder f25397c;
+        private SpannableStringBuilder f11709c;
         private Layout.Alignment d;
         private float e;
         private int f;
@@ -62,7 +62,7 @@ public final class c extends com.opos.exoplayer.core.f.b {
                 this.i = Integer.MIN_VALUE;
                 return this;
             }
-            int i = AnonymousClass1.f25395a[this.d.ordinal()];
+            int i = AnonymousClass1.f11707a[this.d.ordinal()];
             if (i != 1) {
                 if (i == 2) {
                     this.i = 1;
@@ -89,7 +89,7 @@ public final class c extends com.opos.exoplayer.core.f.b {
         }
 
         public a a(long j) {
-            this.f25396a = j;
+            this.f11708a = j;
             return this;
         }
 
@@ -99,14 +99,14 @@ public final class c extends com.opos.exoplayer.core.f.b {
         }
 
         public a a(SpannableStringBuilder spannableStringBuilder) {
-            this.f25397c = spannableStringBuilder;
+            this.f11709c = spannableStringBuilder;
             return this;
         }
 
         public void a() {
-            this.f25396a = 0L;
+            this.f11708a = 0L;
             this.b = 0L;
-            this.f25397c = null;
+            this.f11709c = null;
             this.d = null;
             this.e = Float.MIN_VALUE;
             this.f = Integer.MIN_VALUE;
@@ -135,7 +135,7 @@ public final class c extends com.opos.exoplayer.core.f.b {
             if (this.h != Float.MIN_VALUE && this.i == Integer.MIN_VALUE) {
                 c();
             }
-            return new c(this.f25396a, this.b, this.f25397c, this.d, this.e, this.f, this.g, this.h, this.i, this.j);
+            return new c(this.f11708a, this.b, this.f11709c, this.d, this.e, this.f, this.g, this.h, this.i, this.j);
         }
 
         public a c(float f) {

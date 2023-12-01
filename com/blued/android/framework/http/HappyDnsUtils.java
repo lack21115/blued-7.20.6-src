@@ -18,20 +18,15 @@ import java.util.Random;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/framework/http/HappyDnsUtils.class */
 public class HappyDnsUtils {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static DnsManager f9804a;
+    private static DnsManager a;
 
     /* loaded from: source-6737240-dex2jar.jar:com/blued/android/framework/http/HappyDnsUtils$FixIpResolver.class */
     public static class FixIpResolver implements IResolver {
-
-        /* renamed from: a  reason: collision with root package name */
-        private String f9805a;
+        private String a;
         private String b;
 
-        @Override // com.qiniu.android.dns.IResolver
         public Record[] resolve(Domain domain, NetworkInfo networkInfo) throws IOException {
-            if (domain.domain.equalsIgnoreCase(this.f9805a)) {
+            if (domain.domain.equalsIgnoreCase(this.a)) {
                 return new Record[]{new Record(this.b, 1, 600, System.currentTimeMillis() / 1000)};
             }
             return null;
@@ -172,29 +167,28 @@ public class HappyDnsUtils {
 
     public static DnsManager d() {
         IResolver[] iResolverArr;
-        if (f9804a == null) {
+        if (a == null) {
             if (b()) {
                 iResolverArr = new IResolver[]{new GoogleHttpsDns(), new DnspodEnterprise("9874", "jUG67TU4")};
             } else if (c()) {
                 iResolverArr = new IResolver[]{new DnspodEnterprise("9874", "jUG67TU4"), AndroidDnsServer.defaultResolver()};
             } else {
-                GoogleHttpsDns googleHttpsDns = new GoogleHttpsDns();
-                Resolver resolver = null;
+                IResolver googleHttpsDns = new GoogleHttpsDns();
+                IResolver iResolver = null;
                 try {
-                    resolver = new Resolver(InetAddress.getByName("8.8.8.8"));
+                    iResolver = new Resolver(InetAddress.getByName("8.8.8.8"));
                 } catch (UnknownHostException e) {
                     e.printStackTrace();
                 }
                 IResolver defaultResolver = AndroidDnsServer.defaultResolver();
-                iResolverArr = resolver != null ? new IResolver[]{googleHttpsDns, resolver, defaultResolver} : new IResolver[]{googleHttpsDns, defaultResolver};
+                iResolverArr = iResolver != null ? new IResolver[]{googleHttpsDns, iResolver, defaultResolver} : new IResolver[]{googleHttpsDns, defaultResolver};
             }
-            f9804a = new DnsManager(NetworkInfo.normal, iResolverArr, new IpSorter() { // from class: com.blued.android.framework.http.HappyDnsUtils.1
-                @Override // com.qiniu.android.dns.IpSorter
+            a = new DnsManager(NetworkInfo.normal, iResolverArr, new IpSorter() { // from class: com.blued.android.framework.http.HappyDnsUtils.1
                 public String[] sort(String[] strArr) {
                     return HappyDnsUtils.a(strArr);
                 }
             });
         }
-        return f9804a;
+        return a;
     }
 }

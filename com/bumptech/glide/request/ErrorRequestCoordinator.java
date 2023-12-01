@@ -6,22 +6,22 @@ import com.bumptech.glide.request.RequestCoordinator;
 public final class ErrorRequestCoordinator implements Request, RequestCoordinator {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Object f21041a;
+    private final Object f7435a;
     private final RequestCoordinator b;
 
     /* renamed from: c  reason: collision with root package name */
-    private volatile Request f21042c;
+    private volatile Request f7436c;
     private volatile Request d;
     private RequestCoordinator.RequestState e = RequestCoordinator.RequestState.CLEARED;
     private RequestCoordinator.RequestState f = RequestCoordinator.RequestState.CLEARED;
 
     public ErrorRequestCoordinator(Object obj, RequestCoordinator requestCoordinator) {
-        this.f21041a = obj;
+        this.f7435a = obj;
         this.b = requestCoordinator;
     }
 
     private boolean g(Request request) {
-        if (request.equals(this.f21042c)) {
+        if (request.equals(this.f7436c)) {
             return true;
         }
         return this.e == RequestCoordinator.RequestState.FAILED && request.equals(this.d);
@@ -44,16 +44,16 @@ public final class ErrorRequestCoordinator implements Request, RequestCoordinato
 
     @Override // com.bumptech.glide.request.Request
     public void a() {
-        synchronized (this.f21041a) {
+        synchronized (this.f7435a) {
             if (this.e != RequestCoordinator.RequestState.RUNNING) {
                 this.e = RequestCoordinator.RequestState.RUNNING;
-                this.f21042c.a();
+                this.f7436c.a();
             }
         }
     }
 
     public void a(Request request, Request request2) {
-        this.f21042c = request;
+        this.f7436c = request;
         this.d = request2;
     }
 
@@ -63,7 +63,7 @@ public final class ErrorRequestCoordinator implements Request, RequestCoordinato
         if (request instanceof ErrorRequestCoordinator) {
             ErrorRequestCoordinator errorRequestCoordinator = (ErrorRequestCoordinator) request;
             z = false;
-            if (this.f21042c.a(errorRequestCoordinator.f21042c)) {
+            if (this.f7436c.a(errorRequestCoordinator.f7436c)) {
                 z = false;
                 if (this.d.a(errorRequestCoordinator.d)) {
                     z = true;
@@ -75,9 +75,9 @@ public final class ErrorRequestCoordinator implements Request, RequestCoordinato
 
     @Override // com.bumptech.glide.request.Request
     public void b() {
-        synchronized (this.f21041a) {
+        synchronized (this.f7435a) {
             this.e = RequestCoordinator.RequestState.CLEARED;
-            this.f21042c.b();
+            this.f7436c.b();
             if (this.f != RequestCoordinator.RequestState.CLEARED) {
                 this.f = RequestCoordinator.RequestState.CLEARED;
                 this.d.b();
@@ -88,7 +88,7 @@ public final class ErrorRequestCoordinator implements Request, RequestCoordinato
     @Override // com.bumptech.glide.request.RequestCoordinator
     public boolean b(Request request) {
         boolean z;
-        synchronized (this.f21041a) {
+        synchronized (this.f7435a) {
             z = i() && g(request);
         }
         return z;
@@ -96,10 +96,10 @@ public final class ErrorRequestCoordinator implements Request, RequestCoordinato
 
     @Override // com.bumptech.glide.request.Request
     public void c() {
-        synchronized (this.f21041a) {
+        synchronized (this.f7435a) {
             if (this.e == RequestCoordinator.RequestState.RUNNING) {
                 this.e = RequestCoordinator.RequestState.PAUSED;
-                this.f21042c.c();
+                this.f7436c.c();
             }
             if (this.f == RequestCoordinator.RequestState.RUNNING) {
                 this.f = RequestCoordinator.RequestState.PAUSED;
@@ -111,7 +111,7 @@ public final class ErrorRequestCoordinator implements Request, RequestCoordinato
     @Override // com.bumptech.glide.request.RequestCoordinator
     public boolean c(Request request) {
         boolean z;
-        synchronized (this.f21041a) {
+        synchronized (this.f7435a) {
             z = k() && g(request);
         }
         return z;
@@ -120,7 +120,7 @@ public final class ErrorRequestCoordinator implements Request, RequestCoordinato
     @Override // com.bumptech.glide.request.Request
     public boolean d() {
         boolean z;
-        synchronized (this.f21041a) {
+        synchronized (this.f7435a) {
             if (this.e != RequestCoordinator.RequestState.RUNNING && this.f != RequestCoordinator.RequestState.RUNNING) {
                 z = false;
             }
@@ -132,7 +132,7 @@ public final class ErrorRequestCoordinator implements Request, RequestCoordinato
     @Override // com.bumptech.glide.request.RequestCoordinator
     public boolean d(Request request) {
         boolean z;
-        synchronized (this.f21041a) {
+        synchronized (this.f7435a) {
             z = j() && g(request);
         }
         return z;
@@ -140,8 +140,8 @@ public final class ErrorRequestCoordinator implements Request, RequestCoordinato
 
     @Override // com.bumptech.glide.request.RequestCoordinator
     public void e(Request request) {
-        synchronized (this.f21041a) {
-            if (request.equals(this.f21042c)) {
+        synchronized (this.f7435a) {
+            if (request.equals(this.f7436c)) {
                 this.e = RequestCoordinator.RequestState.SUCCESS;
             } else if (request.equals(this.d)) {
                 this.f = RequestCoordinator.RequestState.SUCCESS;
@@ -155,7 +155,7 @@ public final class ErrorRequestCoordinator implements Request, RequestCoordinato
     @Override // com.bumptech.glide.request.Request
     public boolean e() {
         boolean z;
-        synchronized (this.f21041a) {
+        synchronized (this.f7435a) {
             if (this.e != RequestCoordinator.RequestState.SUCCESS && this.f != RequestCoordinator.RequestState.SUCCESS) {
                 z = false;
             }
@@ -166,7 +166,7 @@ public final class ErrorRequestCoordinator implements Request, RequestCoordinato
 
     @Override // com.bumptech.glide.request.RequestCoordinator
     public void f(Request request) {
-        synchronized (this.f21041a) {
+        synchronized (this.f7435a) {
             if (request.equals(this.d)) {
                 this.f = RequestCoordinator.RequestState.FAILED;
                 if (this.b != null) {
@@ -185,7 +185,7 @@ public final class ErrorRequestCoordinator implements Request, RequestCoordinato
     @Override // com.bumptech.glide.request.Request
     public boolean f() {
         boolean z;
-        synchronized (this.f21041a) {
+        synchronized (this.f7435a) {
             z = this.e == RequestCoordinator.RequestState.CLEARED && this.f == RequestCoordinator.RequestState.CLEARED;
         }
         return z;
@@ -194,8 +194,8 @@ public final class ErrorRequestCoordinator implements Request, RequestCoordinato
     @Override // com.bumptech.glide.request.Request, com.bumptech.glide.request.RequestCoordinator
     public boolean g() {
         boolean z;
-        synchronized (this.f21041a) {
-            if (!this.f21042c.g() && !this.d.g()) {
+        synchronized (this.f7435a) {
+            if (!this.f7436c.g() && !this.d.g()) {
                 z = false;
             }
             z = true;
@@ -206,7 +206,7 @@ public final class ErrorRequestCoordinator implements Request, RequestCoordinato
     @Override // com.bumptech.glide.request.RequestCoordinator
     public RequestCoordinator h() {
         ErrorRequestCoordinator h;
-        synchronized (this.f21041a) {
+        synchronized (this.f7435a) {
             h = this.b != null ? this.b.h() : this;
         }
         return h;

@@ -2,13 +2,9 @@ package com.airbnb.lottie.model;
 
 /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/model/DocumentData.class */
 public class DocumentData {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final String f4315a;
+    public final String a;
     public final String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final double f4316c;
+    public final double c;
     public final Justification d;
     public final int e;
     public final double f;
@@ -26,9 +22,9 @@ public class DocumentData {
     }
 
     public DocumentData(String str, String str2, double d, Justification justification, int i, double d2, double d3, int i2, int i3, double d4, boolean z) {
-        this.f4315a = str;
+        this.a = str;
         this.b = str2;
-        this.f4316c = d;
+        this.c = d;
         this.d = justification;
         this.e = i;
         this.f = d2;
@@ -40,7 +36,7 @@ public class DocumentData {
     }
 
     public int hashCode() {
-        int hashCode = (int) ((((this.f4315a.hashCode() * 31) + this.b.hashCode()) * 31) + this.f4316c);
+        int hashCode = (int) ((((this.a.hashCode() * 31) + this.b.hashCode()) * 31) + this.c);
         int ordinal = this.d.ordinal();
         int i = this.e;
         long doubleToLongBits = Double.doubleToLongBits(this.f);

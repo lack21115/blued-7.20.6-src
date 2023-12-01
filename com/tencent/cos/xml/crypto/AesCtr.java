@@ -5,7 +5,7 @@ class AesCtr extends ContentCryptoScheme {
     private byte[] computeJ0(byte[] bArr) {
         int blockSizeInBytes = getBlockSizeInBytes();
         byte[] bArr2 = new byte[blockSizeInBytes];
-        System.arraycopy((Object) bArr, 0, (Object) bArr2, 0, bArr.length);
+        System.arraycopy(bArr, 0, bArr2, 0, bArr.length);
         bArr2[blockSizeInBytes - 1] = 1;
         return incrementBlocks(bArr2, 1L);
     }

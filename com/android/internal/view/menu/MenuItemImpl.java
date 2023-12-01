@@ -352,11 +352,11 @@ public final class MenuItemImpl implements MenuItem {
     }
 
     @Override // android.view.MenuItem
-    public MenuItem setAlphabeticShortcut(char c2) {
-        if (this.mShortcutAlphabeticChar == c2) {
+    public MenuItem setAlphabeticShortcut(char c) {
+        if (this.mShortcutAlphabeticChar == c) {
             return this;
         }
-        this.mShortcutAlphabeticChar = Character.toLowerCase(c2);
+        this.mShortcutAlphabeticChar = Character.toLowerCase(c);
         this.mMenu.onItemsChanged(false);
         return this;
     }
@@ -446,11 +446,11 @@ public final class MenuItemImpl implements MenuItem {
     }
 
     @Override // android.view.MenuItem
-    public MenuItem setNumericShortcut(char c2) {
-        if (this.mShortcutNumericChar == c2) {
+    public MenuItem setNumericShortcut(char c) {
+        if (this.mShortcutNumericChar == c) {
             return this;
         }
-        this.mShortcutNumericChar = c2;
+        this.mShortcutNumericChar = c;
         this.mMenu.onItemsChanged(false);
         return this;
     }
@@ -468,9 +468,9 @@ public final class MenuItemImpl implements MenuItem {
     }
 
     @Override // android.view.MenuItem
-    public MenuItem setShortcut(char c2, char c3) {
-        this.mShortcutNumericChar = c2;
-        this.mShortcutAlphabeticChar = Character.toLowerCase(c3);
+    public MenuItem setShortcut(char c, char c2) {
+        this.mShortcutNumericChar = c;
+        this.mShortcutAlphabeticChar = Character.toLowerCase(c2);
         this.mMenu.onItemsChanged(false);
         return this;
     }

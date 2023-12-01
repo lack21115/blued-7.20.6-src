@@ -16,13 +16,9 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/ui/RewardExitConfirmDialogActivity.class */
 public class RewardExitConfirmDialogActivity extends Activity {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static Runnable f6162a;
+    private static Runnable a;
     private static String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private Dialog f6163c;
+    private Dialog c;
 
     /* renamed from: com.anythink.basead.ui.RewardExitConfirmDialogActivity$1  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/ui/RewardExitConfirmDialogActivity$1.class */
@@ -33,8 +29,8 @@ public class RewardExitConfirmDialogActivity extends Activity {
         @Override // android.view.View.OnClickListener
         public final void onClick(View view) {
             Tracker.onClick(view);
-            if (RewardExitConfirmDialogActivity.f6162a != null) {
-                RewardExitConfirmDialogActivity.f6162a.run();
+            if (RewardExitConfirmDialogActivity.a != null) {
+                RewardExitConfirmDialogActivity.a.run();
             }
             RewardExitConfirmDialogActivity.this.finish();
         }
@@ -55,7 +51,7 @@ public class RewardExitConfirmDialogActivity extends Activity {
 
     public static void a(Context context, String str, Runnable runnable) {
         b = str;
-        f6162a = runnable;
+        a = runnable;
         Intent intent = new Intent(context, RewardExitConfirmDialogActivity.class);
         intent.addFlags(268435456);
         context.startActivity(intent);
@@ -73,10 +69,10 @@ public class RewardExitConfirmDialogActivity extends Activity {
             textView2.setOnClickListener(new AnonymousClass1());
             textView3.setOnClickListener(new AnonymousClass2());
             Dialog dialog = new Dialog(this, h.a(this, "style_full_screen_translucent_dialog", "style"));
-            this.f6163c = dialog;
+            this.c = dialog;
             dialog.setContentView(inflate);
-            this.f6163c.setCancelable(false);
-            this.f6163c.show();
+            this.c.setCancelable(false);
+            this.c.show();
         } catch (Throwable th) {
             finish();
         }
@@ -102,24 +98,23 @@ public class RewardExitConfirmDialogActivity extends Activity {
             textView2.setOnClickListener(new AnonymousClass1());
             textView3.setOnClickListener(new AnonymousClass2());
             Dialog dialog = new Dialog(this, h.a(this, "style_full_screen_translucent_dialog", "style"));
-            this.f6163c = dialog;
+            this.c = dialog;
             dialog.setContentView(inflate);
-            this.f6163c.setCancelable(false);
-            this.f6163c.show();
+            this.c.setCancelable(false);
+            this.c.show();
         } catch (Throwable th) {
             finish();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.app.Activity
-    public void onDestroy() {
-        Dialog dialog = this.f6163c;
+    protected void onDestroy() {
+        Dialog dialog = this.c;
         if (dialog != null) {
             dialog.dismiss();
-            this.f6163c = null;
+            this.c = null;
         }
-        f6162a = null;
+        a = null;
         super.onDestroy();
     }
 

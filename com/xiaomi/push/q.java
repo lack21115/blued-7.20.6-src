@@ -8,7 +8,7 @@ public class q {
         try {
             return (String) r.a(null, "android.os.SystemProperties").getMethod(MonitorConstants.CONNECT_TYPE_GET, String.class, String.class).invoke(null, str, str2);
         } catch (Exception e) {
-            com.xiaomi.channel.commonutils.logger.b.m11394a("SystemProperties.get: ".concat(String.valueOf(e)));
+            com.xiaomi.channel.commonutils.logger.b.m8344a("SystemProperties.get: ".concat(String.valueOf(e)));
             return str2;
         }
     }

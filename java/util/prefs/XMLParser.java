@@ -1,8 +1,8 @@
 package java.util.prefs;
 
-import com.anythink.expressad.foundation.g.a;
+import com.android.ims.ImsConferenceState;
+import com.anythink.core.common.c.d;
 import com.blued.android.module.common.web.jsbridge.BridgeUtil;
-import com.j256.ormlite.stmt.query.SimpleComparison;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
@@ -112,7 +112,7 @@ class XMLParser {
                 return;
             }
             if (strArr2[i2] != null) {
-                flushEmptyElement(a.aj, new String[]{"key", "value"}, new String[]{strArr[i2], strArr2[i2]}, bufferedWriter);
+                flushEmptyElement("entry", new String[]{d.a.b, d.a.d}, new String[]{strArr[i2], strArr2[i2]}, bufferedWriter);
             }
             i = i2 + 1;
         }
@@ -148,7 +148,7 @@ class XMLParser {
         bufferedWriter.newLine();
         bufferedWriter.newLine();
         flushStartTag("preferences", new String[]{"EXTERNAL_XML_VERSION"}, new String[]{String.valueOf(1.0f)}, bufferedWriter);
-        flushStartTag("root", new String[]{"type"}, new String[]{preferences.isUserNode() ? "user" : "system"}, bufferedWriter);
+        flushStartTag("root", new String[]{"type"}, new String[]{preferences.isUserNode() ? ImsConferenceState.USER : "system"}, bufferedWriter);
         flushEmptyElement("map", bufferedWriter);
         exportNode(new StringTokenizer(preferences.absolutePath(), BridgeUtil.SPLIT_MARK), preferences, z, bufferedWriter);
         flushEndTag("root", bufferedWriter);
@@ -180,7 +180,7 @@ class XMLParser {
         int i = indent + 1;
         indent = i;
         flushIndent(i, bufferedWriter);
-        bufferedWriter.write(SimpleComparison.LESS_THAN_OPERATION);
+        bufferedWriter.write("<");
         bufferedWriter.write(str);
         bufferedWriter.write(" />");
         bufferedWriter.newLine();
@@ -191,7 +191,7 @@ class XMLParser {
         int i = indent + 1;
         indent = i;
         flushIndent(i, bufferedWriter);
-        bufferedWriter.write(SimpleComparison.LESS_THAN_OPERATION);
+        bufferedWriter.write("<");
         bufferedWriter.write(str);
         flushPairs(strArr, strArr2, bufferedWriter);
         bufferedWriter.write(" />");
@@ -205,7 +205,7 @@ class XMLParser {
         flushIndent(i, bufferedWriter);
         bufferedWriter.write("</");
         bufferedWriter.write(str);
-        bufferedWriter.write(SimpleComparison.GREATER_THAN_OPERATION);
+        bufferedWriter.write(">");
         bufferedWriter.newLine();
     }
 
@@ -241,9 +241,9 @@ class XMLParser {
         int i = indent + 1;
         indent = i;
         flushIndent(i, bufferedWriter);
-        bufferedWriter.write(SimpleComparison.LESS_THAN_OPERATION);
+        bufferedWriter.write("<");
         bufferedWriter.write(str);
-        bufferedWriter.write(SimpleComparison.GREATER_THAN_OPERATION);
+        bufferedWriter.write(">");
         bufferedWriter.newLine();
     }
 
@@ -251,10 +251,10 @@ class XMLParser {
         int i = indent + 1;
         indent = i;
         flushIndent(i, bufferedWriter);
-        bufferedWriter.write(SimpleComparison.LESS_THAN_OPERATION);
+        bufferedWriter.write("<");
         bufferedWriter.write(str);
         flushPairs(strArr, strArr2, bufferedWriter);
-        bufferedWriter.write(SimpleComparison.GREATER_THAN_OPERATION);
+        bufferedWriter.write(">");
         bufferedWriter.newLine();
     }
 
@@ -297,7 +297,7 @@ class XMLParser {
                 throw new InvalidPreferencesFormatException("Preferences version " + attribute + " is not supported");
             }
             Element element = (Element) documentElement.getElementsByTagName("root").item(0);
-            loadNode(element.getAttribute("type").equals("user") ? Preferences.userRoot() : Preferences.systemRoot(), element);
+            loadNode(element.getAttribute("type").equals(ImsConferenceState.USER) ? Preferences.userRoot() : Preferences.systemRoot(), element);
         } catch (FactoryConfigurationError e) {
             throw new InvalidPreferencesFormatException(e);
         } catch (SAXException e2) {
@@ -322,7 +322,7 @@ class XMLParser {
                     break;
                 }
                 Element element2 = (Element) selectNodeList2.item(i2);
-                preferences.put(element2.getAttribute("key"), element2.getAttribute("value"));
+                preferences.put(element2.getAttribute(d.a.b), element2.getAttribute(d.a.d));
                 i = i2 + 1;
             }
             int i3 = 0;
@@ -368,7 +368,7 @@ class XMLParser {
                 inputStreamReader = null;
             }
             try {
-                NodeList selectNodeList = selectNodeList(builder.parse(new InputSource(inputStreamReader)).getDocumentElement(), a.aj);
+                NodeList selectNodeList = selectNodeList(builder.parse(new InputSource(inputStreamReader)).getDocumentElement(), "entry");
                 int length = selectNodeList.getLength();
                 int i = 0;
                 while (true) {
@@ -378,7 +378,7 @@ class XMLParser {
                         return properties;
                     }
                     Element element = (Element) selectNodeList.item(i2);
-                    properties.setProperty(element.getAttribute("key"), element.getAttribute("value"));
+                    properties.setProperty(element.getAttribute(d.a.b), element.getAttribute(d.a.d));
                     i = i2 + 1;
                 }
             } catch (IOException e3) {
@@ -399,7 +399,7 @@ class XMLParser {
         ArrayList arrayList = new ArrayList();
         String[] split = str.split(BridgeUtil.SPLIT_MARK);
         NodeList childNodes = element.getChildNodes();
-        if (split[0].equals(a.aj) || split[0].equals("node")) {
+        if (split[0].equals("entry") || split[0].equals("node")) {
             int i = 0;
             while (true) {
                 int i2 = i;
@@ -412,7 +412,7 @@ class XMLParser {
                 }
                 i = i2 + 1;
             }
-        } else if (split[0].equals("map") && split[1].equals(a.aj)) {
+        } else if (split[0].equals("map") && split[1].equals("entry")) {
             int i3 = 0;
             while (true) {
                 int i4 = i3;

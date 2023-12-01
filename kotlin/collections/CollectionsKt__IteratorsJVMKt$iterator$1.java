@@ -9,18 +9,16 @@ import kotlin.jvm.internal.markers.KMappedMarker;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/collections/CollectionsKt__IteratorsJVMKt$iterator$1.class */
 public final class CollectionsKt__IteratorsJVMKt$iterator$1<T> implements Iterator<T>, KMappedMarker {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ Enumeration<T> f42374a;
+    final /* synthetic */ Enumeration<T> a;
 
     @Override // java.util.Iterator
     public boolean hasNext() {
-        return this.f42374a.hasMoreElements();
+        return this.a.hasMoreElements();
     }
 
     @Override // java.util.Iterator
     public T next() {
-        return this.f42374a.nextElement();
+        return this.a.nextElement();
     }
 
     @Override // java.util.Iterator

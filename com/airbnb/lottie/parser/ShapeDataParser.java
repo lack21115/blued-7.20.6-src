@@ -13,9 +13,7 @@ import java.util.List;
 
 /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/parser/ShapeDataParser.class */
 public class ShapeDataParser implements ValueParser<ShapeData> {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final ShapeDataParser f4408a = new ShapeDataParser();
+    public static final ShapeDataParser a = new ShapeDataParser();
 
     private ShapeDataParser() {
     }

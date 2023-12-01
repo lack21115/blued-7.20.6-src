@@ -11,10 +11,10 @@ import java.util.List;
 public class DiffUtil {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Comparator<Snake> f3250a = new Comparator<Snake>() { // from class: androidx.recyclerview.widget.DiffUtil.1
+    private static final Comparator<Snake> f3202a = new Comparator<Snake>() { // from class: androidx.recyclerview.widget.DiffUtil.1
         @Override // java.util.Comparator
         public int compare(Snake snake, Snake snake2) {
-            int i = snake.f3257a - snake2.f3257a;
+            int i = snake.f3209a - snake2.f3209a;
             int i2 = i;
             if (i == 0) {
                 i2 = snake.b - snake2.b;
@@ -43,22 +43,22 @@ public class DiffUtil {
         public static final int NO_POSITION = -1;
 
         /* renamed from: a  reason: collision with root package name */
-        private final List<Snake> f3251a;
+        private final List<Snake> f3203a;
         private final int[] b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final int[] f3252c;
+        private final int[] f3204c;
         private final Callback d;
         private final int e;
         private final int f;
         private final boolean g;
 
         DiffResult(Callback callback, List<Snake> list, int[] iArr, int[] iArr2, boolean z) {
-            this.f3251a = list;
+            this.f3203a = list;
             this.b = iArr;
-            this.f3252c = iArr2;
+            this.f3204c = iArr2;
             Arrays.fill(iArr, 0);
-            Arrays.fill(this.f3252c, 0);
+            Arrays.fill(this.f3204c, 0);
             this.d = callback;
             this.e = callback.getOldListSize();
             this.f = callback.getNewListSize();
@@ -75,7 +75,7 @@ public class DiffUtil {
                     return null;
                 }
                 PostponedUpdate postponedUpdate = list.get(i2);
-                if (postponedUpdate.f3253a == i && postponedUpdate.f3254c == z) {
+                if (postponedUpdate.f3205a == i && postponedUpdate.f3206c == z) {
                     list.remove(i2);
                     while (i2 < list.size()) {
                         list.get(i2).b += z ? 1 : -1;
@@ -88,17 +88,17 @@ public class DiffUtil {
         }
 
         private void a() {
-            Snake snake = this.f3251a.isEmpty() ? null : this.f3251a.get(0);
-            if (snake != null && snake.f3257a == 0 && snake.b == 0) {
+            Snake snake = this.f3203a.isEmpty() ? null : this.f3203a.get(0);
+            if (snake != null && snake.f3209a == 0 && snake.b == 0) {
                 return;
             }
             Snake snake2 = new Snake();
-            snake2.f3257a = 0;
+            snake2.f3209a = 0;
             snake2.b = 0;
             snake2.d = false;
-            snake2.f3258c = 0;
+            snake2.f3210c = 0;
             snake2.e = false;
-            this.f3251a.add(0, snake2);
+            this.f3203a.add(0, snake2);
         }
 
         private void a(int i, int i2, int i3) {
@@ -119,14 +119,14 @@ public class DiffUtil {
                     return;
                 }
                 int i4 = i3 + i2;
-                int i5 = this.f3252c[i4] & 31;
+                int i5 = this.f3204c[i4] & 31;
                 if (i5 == 0) {
                     listUpdateCallback.onInserted(i, 1);
                     for (PostponedUpdate postponedUpdate : list) {
                         postponedUpdate.b++;
                     }
                 } else if (i5 == 4 || i5 == 8) {
-                    int i6 = this.f3252c[i4] >> 5;
+                    int i6 = this.f3204c[i4] >> 5;
                     listUpdateCallback.onMoved(a(list, i6, true).b, i);
                     if (i5 == 4) {
                         listUpdateCallback.onChanged(i, 1, this.d.getChangePayload(i6, i4));
@@ -161,17 +161,17 @@ public class DiffUtil {
             int i;
             int i2 = this.e;
             int i3 = this.f;
-            int size = this.f3251a.size();
+            int size = this.f3203a.size();
             while (true) {
                 int i4 = size - 1;
                 if (i4 < 0) {
                     return;
                 }
-                Snake snake = this.f3251a.get(i4);
-                int i5 = snake.f3257a;
-                int i6 = snake.f3258c;
+                Snake snake = this.f3203a.get(i4);
+                int i5 = snake.f3209a;
+                int i6 = snake.f3210c;
                 int i7 = snake.b;
-                int i8 = snake.f3258c;
+                int i8 = snake.f3210c;
                 if (this.g) {
                     while (true) {
                         if (i2 <= i5 + i6) {
@@ -187,23 +187,23 @@ public class DiffUtil {
                 int i9 = 0;
                 while (true) {
                     int i10 = i9;
-                    if (i10 < snake.f3258c) {
-                        int i11 = snake.f3257a + i10;
+                    if (i10 < snake.f3210c) {
+                        int i11 = snake.f3209a + i10;
                         int i12 = snake.b + i10;
                         int i13 = this.d.areContentsTheSame(i11, i12) ? 1 : 2;
                         this.b[i11] = (i12 << 5) | i13;
-                        this.f3252c[i12] = (i11 << 5) | i13;
+                        this.f3204c[i12] = (i11 << 5) | i13;
                         i9 = i10 + 1;
                     }
                 }
-                i2 = snake.f3257a;
+                i2 = snake.f3209a;
                 i3 = snake.b;
                 size = i4;
             }
         }
 
         private void b(int i, int i2, int i3) {
-            if (this.f3252c[i2 - 1] != 0) {
+            if (this.f3204c[i2 - 1] != 0) {
                 return;
             }
             a(i, i2, i3, true);
@@ -243,7 +243,7 @@ public class DiffUtil {
 
         public int convertNewPositionToOld(int i) {
             if (i >= 0 && i < this.f) {
-                int i2 = this.f3252c[i];
+                int i2 = this.f3204c[i];
                 if ((i2 & 31) == 0) {
                     return -1;
                 }
@@ -268,16 +268,16 @@ public class DiffUtil {
             ArrayList arrayList = new ArrayList();
             int i = this.e;
             int i2 = this.f;
-            int size = this.f3251a.size();
+            int size = this.f3203a.size();
             while (true) {
                 size--;
                 if (size < 0) {
                     batchingListUpdateCallback.dispatchLastEvent();
                     return;
                 }
-                Snake snake = this.f3251a.get(size);
-                int i3 = snake.f3258c;
-                int i4 = snake.f3257a + i3;
+                Snake snake = this.f3203a.get(size);
+                int i3 = snake.f3210c;
+                int i4 = snake.f3209a + i3;
                 int i5 = snake.b + i3;
                 if (i4 < i) {
                     b(arrayList, batchingListUpdateCallback, i4, i - i4, i4);
@@ -289,13 +289,13 @@ public class DiffUtil {
                 while (true) {
                     int i7 = i6 - 1;
                     if (i7 >= 0) {
-                        if ((this.b[snake.f3257a + i7] & 31) == 2) {
-                            batchingListUpdateCallback.onChanged(snake.f3257a + i7, 1, this.d.getChangePayload(snake.f3257a + i7, snake.b + i7));
+                        if ((this.b[snake.f3209a + i7] & 31) == 2) {
+                            batchingListUpdateCallback.onChanged(snake.f3209a + i7, 1, this.d.getChangePayload(snake.f3209a + i7, snake.b + i7));
                         }
                         i6 = i7;
                     }
                 }
-                i = snake.f3257a;
+                i = snake.f3209a;
                 i2 = snake.b;
             }
         }
@@ -321,16 +321,16 @@ public class DiffUtil {
     public static class PostponedUpdate {
 
         /* renamed from: a  reason: collision with root package name */
-        int f3253a;
+        int f3205a;
         int b;
 
         /* renamed from: c  reason: collision with root package name */
-        boolean f3254c;
+        boolean f3206c;
 
         public PostponedUpdate(int i, int i2, boolean z) {
-            this.f3253a = i;
+            this.f3205a = i;
             this.b = i2;
-            this.f3254c = z;
+            this.f3206c = z;
         }
     }
 
@@ -339,20 +339,20 @@ public class DiffUtil {
     public static class Range {
 
         /* renamed from: a  reason: collision with root package name */
-        int f3255a;
+        int f3207a;
         int b;
 
         /* renamed from: c  reason: collision with root package name */
-        int f3256c;
+        int f3208c;
         int d;
 
         public Range() {
         }
 
         public Range(int i, int i2, int i3, int i4) {
-            this.f3255a = i;
+            this.f3207a = i;
             this.b = i2;
-            this.f3256c = i3;
+            this.f3208c = i3;
             this.d = i4;
         }
     }
@@ -362,11 +362,11 @@ public class DiffUtil {
     public static class Snake {
 
         /* renamed from: a  reason: collision with root package name */
-        int f3257a;
+        int f3209a;
         int b;
 
         /* renamed from: c  reason: collision with root package name */
-        int f3258c;
+        int f3210c;
         boolean d;
         boolean e;
 
@@ -451,9 +451,9 @@ public class DiffUtil {
      */
     /* JADX WARN: Code restructure failed: missing block: B:73:0x023a, code lost:
         r0 = new androidx.recyclerview.widget.DiffUtil.Snake();
-        r0.f3257a = r11[r0];
-        r0.b = r0.f3257a - r0;
-        r0.f3258c = r10[r0] - r11[r0];
+        r0.f3209a = r11[r0];
+        r0.b = r0.f3209a - r0;
+        r0.f3210c = r10[r0] - r11[r0];
         r0.d = r22;
         r0.e = true;
      */
@@ -492,43 +492,43 @@ public class DiffUtil {
         ArrayList arrayList3 = new ArrayList();
         while (!arrayList2.isEmpty()) {
             Range range = (Range) arrayList2.remove(arrayList2.size() - 1);
-            Snake a2 = a(callback, range.f3255a, range.b, range.f3256c, range.d, iArr, iArr2, abs);
+            Snake a2 = a(callback, range.f3207a, range.b, range.f3208c, range.d, iArr, iArr2, abs);
             if (a2 != null) {
-                if (a2.f3258c > 0) {
+                if (a2.f3210c > 0) {
                     arrayList.add(a2);
                 }
-                a2.f3257a += range.f3255a;
-                a2.b += range.f3256c;
+                a2.f3209a += range.f3207a;
+                a2.b += range.f3208c;
                 Range range2 = arrayList3.isEmpty() ? new Range() : (Range) arrayList3.remove(arrayList3.size() - 1);
-                range2.f3255a = range.f3255a;
-                range2.f3256c = range.f3256c;
+                range2.f3207a = range.f3207a;
+                range2.f3208c = range.f3208c;
                 if (a2.e) {
-                    range2.b = a2.f3257a;
+                    range2.b = a2.f3209a;
                     range2.d = a2.b;
                 } else if (a2.d) {
-                    range2.b = a2.f3257a - 1;
+                    range2.b = a2.f3209a - 1;
                     range2.d = a2.b;
                 } else {
-                    range2.b = a2.f3257a;
+                    range2.b = a2.f3209a;
                     range2.d = a2.b - 1;
                 }
                 arrayList2.add(range2);
                 if (!a2.e) {
-                    range.f3255a = a2.f3257a + a2.f3258c;
-                    range.f3256c = a2.b + a2.f3258c;
+                    range.f3207a = a2.f3209a + a2.f3210c;
+                    range.f3208c = a2.b + a2.f3210c;
                 } else if (a2.d) {
-                    range.f3255a = a2.f3257a + a2.f3258c + 1;
-                    range.f3256c = a2.b + a2.f3258c;
+                    range.f3207a = a2.f3209a + a2.f3210c + 1;
+                    range.f3208c = a2.b + a2.f3210c;
                 } else {
-                    range.f3255a = a2.f3257a + a2.f3258c;
-                    range.f3256c = a2.b + a2.f3258c + 1;
+                    range.f3207a = a2.f3209a + a2.f3210c;
+                    range.f3208c = a2.b + a2.f3210c + 1;
                 }
                 arrayList2.add(range);
             } else {
                 arrayList3.add(range);
             }
         }
-        Collections.sort(arrayList, f3250a);
+        Collections.sort(arrayList, f3202a);
         return new DiffResult(callback, arrayList, iArr, iArr2, z);
     }
 }

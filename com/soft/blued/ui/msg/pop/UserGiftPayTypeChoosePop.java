@@ -23,7 +23,7 @@ public class UserGiftPayTypeChoosePop extends BottomPopupView {
     private iChoosePayResultListener b;
 
     /* renamed from: c  reason: collision with root package name */
-    private TextView f32514c;
+    private TextView f18823c;
     private ShapeLinearLayout d;
     private ImageView e;
     private ShapeLinearLayout f;
@@ -45,38 +45,36 @@ public class UserGiftPayTypeChoosePop extends BottomPopupView {
     }
 
     private void c() {
-        this.f32514c = (TextView) findViewById(2131372754);
-        ShapeLinearLayout shapeLinearLayout = (ShapeLinearLayout) findViewById(2131367655);
-        this.d = shapeLinearLayout;
-        ShapeHelper.b(shapeLinearLayout, 2131101780);
+        this.f18823c = (TextView) findViewById(2131372754);
+        ShapeLinearLayout findViewById = findViewById(R.id.ll_beans);
+        this.d = findViewById;
+        ShapeHelper.b(findViewById, 2131101780);
         this.e = (ImageView) findViewById(R.id.img_beans_choose_status);
-        ShapeLinearLayout shapeLinearLayout2 = (ShapeLinearLayout) findViewById(R.id.ll_others);
-        this.f = shapeLinearLayout2;
-        ShapeHelper.b(shapeLinearLayout2, 2131101780);
+        ShapeLinearLayout findViewById2 = findViewById(R.id.ll_others);
+        this.f = findViewById2;
+        ShapeHelper.b(findViewById2, 2131101780);
         this.g = (LinearLayout) findViewById(R.id.ll_alipay);
-        this.h = (ShapeTextView) findViewById(R.id.tv_alipay_discount_desc);
+        this.h = findViewById(R.id.tv_alipay_discount_desc);
         this.i = (ImageView) findViewById(R.id.img_alipay_choose_status);
         this.j = (LinearLayout) findViewById(R.id.ll_weixin);
         this.k = (ImageView) findViewById(R.id.img_wechat_choose_status);
         this.t = (LinearLayout) findViewById(R.id.ll_huabei);
         this.u = (ImageView) findViewById(R.id.img_huabei_choose_status);
-        this.v = (ShapeTextView) findViewById(2131371164);
+        this.v = findViewById(2131371164);
         this.x = findViewById(R.id.pb_loading);
     }
 
     public BluedUIHttpResponse a(IRequestHost iRequestHost) {
         return new BluedUIHttpResponse<BluedEntityA<PayPlatformDiscountModel>>(iRequestHost) { // from class: com.soft.blued.ui.msg.pop.UserGiftPayTypeChoosePop.6
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<PayPlatformDiscountModel> bluedEntityA) {
-                if (!bluedEntityA.hasData() || bluedEntityA.getSingleData() == null || bluedEntityA.getSingleData().channel == null || bluedEntityA.getSingleData().channel == null || bluedEntityA.getSingleData().channel.alipay == null) {
+                if (!bluedEntityA.hasData() || bluedEntityA.getSingleData() == null || ((PayPlatformDiscountModel) bluedEntityA.getSingleData()).channel == null || ((PayPlatformDiscountModel) bluedEntityA.getSingleData()).channel == null || ((PayPlatformDiscountModel) bluedEntityA.getSingleData()).channel.alipay == null) {
                     return;
                 }
-                UserGiftPayTypeChoosePop.this.h.setText(bluedEntityA.getSingleData().channel.alipay.desc);
+                UserGiftPayTypeChoosePop.this.h.setText(((PayPlatformDiscountModel) bluedEntityA.getSingleData()).channel.alipay.desc);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish(boolean z) {
                 super.onUIFinish(z);
                 if (z) {
@@ -89,7 +87,6 @@ public class UserGiftPayTypeChoosePop extends BottomPopupView {
                 UserGiftPayTypeChoosePop.this.x.setVisibility(8);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 super.onUIStart();
                 UserGiftPayTypeChoosePop.this.x.setVisibility(0);
@@ -97,7 +94,6 @@ public class UserGiftPayTypeChoosePop extends BottomPopupView {
         };
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.BottomPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
     public void b() {
         super.b();
         c();
@@ -155,7 +151,6 @@ public class UserGiftPayTypeChoosePop extends BottomPopupView {
         }));
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.BottomPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
     public int getImplLayoutId() {
         return R.layout.item_choose_pay_platform;
     }
@@ -184,7 +179,6 @@ public class UserGiftPayTypeChoosePop extends BottomPopupView {
         }
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.BasePopupView
     public void w() {
         super.w();
         PayHttpUtils.a(a(this.y), 0, this.y);

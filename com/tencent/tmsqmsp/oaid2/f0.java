@@ -6,7 +6,7 @@ import android.content.Context;
 public class f0 implements b {
 
     /* renamed from: a  reason: collision with root package name */
-    public Context f39626a = null;
+    public Context f25935a = null;
     public IVendorCallback b = null;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/tmsqmsp/oaid2/f0$a.class */
@@ -19,7 +19,7 @@ public class f0 implements b {
             try {
                 Thread.sleep(1000L);
                 if (f0.this.b != null) {
-                    f0.this.b.onResult(e0.a(), e0.a(f0.this.f39626a), e0.b(f0.this.f39626a));
+                    f0.this.b.onResult(e0.a(), e0.a(f0.this.f25935a), e0.b(f0.this.f25935a));
                 }
             } catch (Exception e) {
                 if (f0.this.b != null) {
@@ -37,7 +37,7 @@ public class f0 implements b {
 
     @Override // com.tencent.tmsqmsp.oaid2.b
     public void a(Context context, IVendorCallback iVendorCallback) {
-        this.f39626a = context;
+        this.f25935a = context;
         this.b = iVendorCallback;
         e0.c(context);
     }

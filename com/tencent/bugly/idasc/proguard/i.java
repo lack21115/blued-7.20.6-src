@@ -8,18 +8,18 @@ import java.util.Map;
 public final class i {
 
     /* renamed from: a  reason: collision with root package name */
-    private StringBuilder f35322a;
+    private StringBuilder f21631a;
     private int b;
 
     public i(StringBuilder sb, int i) {
         this.b = 0;
-        this.f35322a = sb;
+        this.f21631a = sb;
         this.b = i;
     }
 
     private i a(char c2, String str) {
         a(str);
-        StringBuilder sb = this.f35322a;
+        StringBuilder sb = this.f21631a;
         sb.append(c2);
         sb.append('\n');
         return this;
@@ -27,7 +27,7 @@ public final class i {
 
     private i a(double d, String str) {
         a(str);
-        StringBuilder sb = this.f35322a;
+        StringBuilder sb = this.f21631a;
         sb.append(d);
         sb.append('\n');
         return this;
@@ -35,7 +35,7 @@ public final class i {
 
     private i a(float f, String str) {
         a(str);
-        StringBuilder sb = this.f35322a;
+        StringBuilder sb = this.f21631a;
         sb.append(f);
         sb.append('\n');
         return this;
@@ -44,7 +44,7 @@ public final class i {
     /* JADX WARN: Multi-variable type inference failed */
     private <T> i a(T t, String str) {
         if (t == null) {
-            this.f35322a.append("null\n");
+            this.f21631a.append("null\n");
             return this;
         } else if (t instanceof Byte) {
             a(((Byte) t).byteValue(), str);
@@ -112,7 +112,7 @@ public final class i {
     private <T> i a(Collection<T> collection, String str) {
         if (collection == null) {
             a(str);
-            this.f35322a.append("null\t");
+            this.f21631a.append("null\t");
             return this;
         }
         return a(collection.toArray(), str);
@@ -121,18 +121,18 @@ public final class i {
     private i a(double[] dArr, String str) {
         a(str);
         if (dArr == null) {
-            this.f35322a.append("null\n");
+            this.f21631a.append("null\n");
             return this;
         } else if (dArr.length == 0) {
-            StringBuilder sb = this.f35322a;
+            StringBuilder sb = this.f21631a;
             sb.append(dArr.length);
             sb.append(", []\n");
             return this;
         } else {
-            StringBuilder sb2 = this.f35322a;
+            StringBuilder sb2 = this.f21631a;
             sb2.append(dArr.length);
             sb2.append(", [\n");
-            i iVar = new i(this.f35322a, this.b + 1);
+            i iVar = new i(this.f21631a, this.b + 1);
             int length = dArr.length;
             int i = 0;
             while (true) {
@@ -150,18 +150,18 @@ public final class i {
     private i a(float[] fArr, String str) {
         a(str);
         if (fArr == null) {
-            this.f35322a.append("null\n");
+            this.f21631a.append("null\n");
             return this;
         } else if (fArr.length == 0) {
-            StringBuilder sb = this.f35322a;
+            StringBuilder sb = this.f21631a;
             sb.append(fArr.length);
             sb.append(", []\n");
             return this;
         } else {
-            StringBuilder sb2 = this.f35322a;
+            StringBuilder sb2 = this.f21631a;
             sb2.append(fArr.length);
             sb2.append(", [\n");
-            i iVar = new i(this.f35322a, this.b + 1);
+            i iVar = new i(this.f21631a, this.b + 1);
             int length = fArr.length;
             int i = 0;
             while (true) {
@@ -179,18 +179,18 @@ public final class i {
     private i a(int[] iArr, String str) {
         a(str);
         if (iArr == null) {
-            this.f35322a.append("null\n");
+            this.f21631a.append("null\n");
             return this;
         } else if (iArr.length == 0) {
-            StringBuilder sb = this.f35322a;
+            StringBuilder sb = this.f21631a;
             sb.append(iArr.length);
             sb.append(", []\n");
             return this;
         } else {
-            StringBuilder sb2 = this.f35322a;
+            StringBuilder sb2 = this.f21631a;
             sb2.append(iArr.length);
             sb2.append(", [\n");
-            i iVar = new i(this.f35322a, this.b + 1);
+            i iVar = new i(this.f21631a, this.b + 1);
             int length = iArr.length;
             int i = 0;
             while (true) {
@@ -208,18 +208,18 @@ public final class i {
     private i a(long[] jArr, String str) {
         a(str);
         if (jArr == null) {
-            this.f35322a.append("null\n");
+            this.f21631a.append("null\n");
             return this;
         } else if (jArr.length == 0) {
-            StringBuilder sb = this.f35322a;
+            StringBuilder sb = this.f21631a;
             sb.append(jArr.length);
             sb.append(", []\n");
             return this;
         } else {
-            StringBuilder sb2 = this.f35322a;
+            StringBuilder sb2 = this.f21631a;
             sb2.append(jArr.length);
             sb2.append(", [\n");
-            i iVar = new i(this.f35322a, this.b + 1);
+            i iVar = new i(this.f21631a, this.b + 1);
             int length = jArr.length;
             int i = 0;
             while (true) {
@@ -237,18 +237,18 @@ public final class i {
     private <T> i a(T[] tArr, String str) {
         a(str);
         if (tArr == null) {
-            this.f35322a.append("null\n");
+            this.f21631a.append("null\n");
             return this;
         } else if (tArr.length == 0) {
-            StringBuilder sb = this.f35322a;
+            StringBuilder sb = this.f21631a;
             sb.append(tArr.length);
             sb.append(", []\n");
             return this;
         } else {
-            StringBuilder sb2 = this.f35322a;
+            StringBuilder sb2 = this.f21631a;
             sb2.append(tArr.length);
             sb2.append(", [\n");
-            i iVar = new i(this.f35322a, this.b + 1);
+            i iVar = new i(this.f21631a, this.b + 1);
             int length = tArr.length;
             int i = 0;
             while (true) {
@@ -266,18 +266,18 @@ public final class i {
     private i a(short[] sArr, String str) {
         a(str);
         if (sArr == null) {
-            this.f35322a.append("null\n");
+            this.f21631a.append("null\n");
             return this;
         } else if (sArr.length == 0) {
-            StringBuilder sb = this.f35322a;
+            StringBuilder sb = this.f21631a;
             sb.append(sArr.length);
             sb.append(", []\n");
             return this;
         } else {
-            StringBuilder sb2 = this.f35322a;
+            StringBuilder sb2 = this.f21631a;
             sb2.append(sArr.length);
             sb2.append(", [\n");
-            i iVar = new i(this.f35322a, this.b + 1);
+            i iVar = new i(this.f21631a, this.b + 1);
             int length = sArr.length;
             int i = 0;
             while (true) {
@@ -299,11 +299,11 @@ public final class i {
             if (i2 >= this.b) {
                 break;
             }
-            this.f35322a.append('\t');
+            this.f21631a.append('\t');
             i = i2 + 1;
         }
         if (str != null) {
-            StringBuilder sb = this.f35322a;
+            StringBuilder sb = this.f21631a;
             sb.append(str);
             sb.append(": ");
         }
@@ -311,7 +311,7 @@ public final class i {
 
     public final i a(byte b, String str) {
         a(str);
-        StringBuilder sb = this.f35322a;
+        StringBuilder sb = this.f21631a;
         sb.append((int) b);
         sb.append('\n');
         return this;
@@ -319,7 +319,7 @@ public final class i {
 
     public final i a(int i, String str) {
         a(str);
-        StringBuilder sb = this.f35322a;
+        StringBuilder sb = this.f21631a;
         sb.append(i);
         sb.append('\n');
         return this;
@@ -327,7 +327,7 @@ public final class i {
 
     public final i a(long j, String str) {
         a(str);
-        StringBuilder sb = this.f35322a;
+        StringBuilder sb = this.f21631a;
         sb.append(j);
         sb.append('\n');
         return this;
@@ -336,11 +336,11 @@ public final class i {
     public final i a(m mVar, String str) {
         a('{', str);
         if (mVar == null) {
-            StringBuilder sb = this.f35322a;
+            StringBuilder sb = this.f21631a;
             sb.append('\t');
             sb.append(com.igexin.push.core.b.l);
         } else {
-            mVar.a(this.f35322a, this.b + 1);
+            mVar.a(this.f21631a, this.b + 1);
         }
         a('}', (String) null);
         return this;
@@ -349,10 +349,10 @@ public final class i {
     public final i a(String str, String str2) {
         a(str2);
         if (str == null) {
-            this.f35322a.append("null\n");
+            this.f21631a.append("null\n");
             return this;
         }
-        StringBuilder sb = this.f35322a;
+        StringBuilder sb = this.f21631a;
         sb.append(str);
         sb.append('\n');
         return this;
@@ -361,19 +361,19 @@ public final class i {
     public final <K, V> i a(Map<K, V> map, String str) {
         a(str);
         if (map == null) {
-            this.f35322a.append("null\n");
+            this.f21631a.append("null\n");
             return this;
         } else if (map.isEmpty()) {
-            StringBuilder sb = this.f35322a;
+            StringBuilder sb = this.f21631a;
             sb.append(map.size());
             sb.append(", {}\n");
             return this;
         } else {
-            StringBuilder sb2 = this.f35322a;
+            StringBuilder sb2 = this.f21631a;
             sb2.append(map.size());
             sb2.append(", {\n");
-            i iVar = new i(this.f35322a, this.b + 1);
-            i iVar2 = new i(this.f35322a, this.b + 2);
+            i iVar = new i(this.f21631a, this.b + 1);
+            i iVar2 = new i(this.f21631a, this.b + 2);
             for (Map.Entry<K, V> entry : map.entrySet()) {
                 iVar.a('(', (String) null);
                 iVar2.a((i) entry.getKey(), (String) null);
@@ -387,7 +387,7 @@ public final class i {
 
     public final i a(short s, String str) {
         a(str);
-        StringBuilder sb = this.f35322a;
+        StringBuilder sb = this.f21631a;
         sb.append((int) s);
         sb.append('\n');
         return this;
@@ -395,7 +395,7 @@ public final class i {
 
     public final i a(boolean z, String str) {
         a(str);
-        StringBuilder sb = this.f35322a;
+        StringBuilder sb = this.f21631a;
         sb.append(z ? 'T' : 'F');
         sb.append('\n');
         return this;
@@ -404,18 +404,18 @@ public final class i {
     public final i a(byte[] bArr, String str) {
         a(str);
         if (bArr == null) {
-            this.f35322a.append("null\n");
+            this.f21631a.append("null\n");
             return this;
         } else if (bArr.length == 0) {
-            StringBuilder sb = this.f35322a;
+            StringBuilder sb = this.f21631a;
             sb.append(bArr.length);
             sb.append(", []\n");
             return this;
         } else {
-            StringBuilder sb2 = this.f35322a;
+            StringBuilder sb2 = this.f21631a;
             sb2.append(bArr.length);
             sb2.append(", [\n");
-            i iVar = new i(this.f35322a, this.b + 1);
+            i iVar = new i(this.f21631a, this.b + 1);
             int length = bArr.length;
             int i = 0;
             while (true) {

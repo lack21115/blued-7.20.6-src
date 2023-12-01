@@ -11,6 +11,7 @@ import com.blued.android.module.common.api.annotation.Param;
 import com.blued.android.module.common.api.annotation.ParamsMap;
 import com.blued.android.module.common.group.GroupCategoryModel;
 import com.blued.android.module.common.group.GroupInfoModel;
+import com.cdo.oaps.ad.OapsKey;
 import com.cdo.oaps.ad.wrapper.BaseWrapper;
 import com.sina.weibo.sdk.constant.WBPageConstants;
 import com.soft.blued.ui.find.model.CityLocation;
@@ -20,6 +21,7 @@ import com.soft.blued.ui.msg_group.model.GroupPrivilegeModel;
 import com.soft.blued.ui.msg_group.model.MyGroupModel;
 import java.util.Map;
 import kotlin.Metadata;
+import kotlin.Pair;
 import kotlin.TuplesKt;
 import kotlin.collections.MapsKt;
 import kotlin.coroutines.Continuation;
@@ -34,7 +36,7 @@ public interface GroupApiService extends BluedApiService {
         public static /* synthetic */ Object a(GroupApiService groupApiService, Map map, Continuation continuation, int i, Object obj) {
             if (obj == null) {
                 if ((i & 1) != 0) {
-                    map = MapsKt.a(TuplesKt.a("size", BaseWrapper.ENTER_ID_SYSTEM_HELPER), TuplesKt.a(WBPageConstants.ParamKey.PAGE, "1"));
+                    map = MapsKt.a(new Pair[]{TuplesKt.a(OapsKey.KEY_SIZE, BaseWrapper.ENTER_ID_SYSTEM_HELPER), TuplesKt.a(WBPageConstants.ParamKey.PAGE, "1")});
                 }
                 return groupApiService.a(map, continuation);
             }

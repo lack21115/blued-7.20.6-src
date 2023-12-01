@@ -9,17 +9,13 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ViewYyTitleBarLayoutBinding.class */
 public final class ViewYyTitleBarLayoutBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f16964a;
+    public final ImageView a;
     public final TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final RelativeLayout f16965c;
+    private final RelativeLayout c;
 
     private ViewYyTitleBarLayoutBinding(RelativeLayout relativeLayout, ImageView imageView, TextView textView) {
-        this.f16965c = relativeLayout;
-        this.f16964a = imageView;
+        this.c = relativeLayout;
+        this.a = imageView;
         this.b = textView;
     }
 
@@ -38,9 +34,8 @@ public final class ViewYyTitleBarLayoutBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
-        return this.f16965c;
+        return this.c;
     }
 }

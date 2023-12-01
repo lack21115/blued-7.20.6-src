@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 public class LinearSnapHelper extends SnapHelper {
 
     /* renamed from: a  reason: collision with root package name */
-    private OrientationHelper f3298a;
+    private OrientationHelper f3250a;
     private OrientationHelper b;
 
     private int a(RecyclerView.LayoutManager layoutManager, View view, OrientationHelper orientationHelper) {
@@ -49,11 +49,11 @@ public class LinearSnapHelper extends SnapHelper {
     }
 
     private OrientationHelper a(RecyclerView.LayoutManager layoutManager) {
-        OrientationHelper orientationHelper = this.f3298a;
-        if (orientationHelper == null || orientationHelper.f3311a != layoutManager) {
-            this.f3298a = OrientationHelper.createVerticalHelper(layoutManager);
+        OrientationHelper orientationHelper = this.f3250a;
+        if (orientationHelper == null || orientationHelper.f3263a != layoutManager) {
+            this.f3250a = OrientationHelper.createVerticalHelper(layoutManager);
         }
-        return this.f3298a;
+        return this.f3250a;
     }
 
     private float b(RecyclerView.LayoutManager layoutManager, OrientationHelper orientationHelper) {
@@ -111,7 +111,7 @@ public class LinearSnapHelper extends SnapHelper {
 
     private OrientationHelper b(RecyclerView.LayoutManager layoutManager) {
         OrientationHelper orientationHelper = this.b;
-        if (orientationHelper == null || orientationHelper.f3311a != layoutManager) {
+        if (orientationHelper == null || orientationHelper.f3263a != layoutManager) {
             this.b = OrientationHelper.createHorizontalHelper(layoutManager);
         }
         return this.b;

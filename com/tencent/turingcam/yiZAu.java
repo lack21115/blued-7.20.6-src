@@ -9,7 +9,7 @@ public class yiZAu extends s7Dnc {
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private long f39845c;
+    private long f26154c;
     private int d;
     private float e;
     private int f;
@@ -19,7 +19,7 @@ public class yiZAu extends s7Dnc {
 
     public yiZAu() {
         super("5");
-        this.f39845c = 0L;
+        this.f26154c = 0L;
         this.d = 0;
     }
 
@@ -35,7 +35,7 @@ public class yiZAu extends s7Dnc {
         this.h = spxpg.c(300);
         this.e = spxpg.c();
         this.d = 0;
-        this.f39845c = System.currentTimeMillis();
+        this.f26154c = System.currentTimeMillis();
         this.i = System.currentTimeMillis();
         return 0L;
     }
@@ -52,7 +52,7 @@ public class yiZAu extends s7Dnc {
         Camera.Parameters parameters2 = camera.getParameters();
         int i = parameters2.getPreviewSize().width;
         int i2 = parameters2.getPreviewSize().height;
-        if (System.currentTimeMillis() - this.f39845c > this.f) {
+        if (System.currentTimeMillis() - this.f26154c > this.f) {
             int i3 = (int) (i * 0.1f);
             int i4 = (int) (i2 * 0.1f);
             byte[] bArr = new byte[i3 * i4];
@@ -65,19 +65,19 @@ public class yiZAu extends s7Dnc {
                 if (i8 >= i4) {
                     break;
                 }
-                System.arraycopy((Object) bArr2, ((i5 + i8) * i) + i6, (Object) bArr, i3 * i8, i3);
+                System.arraycopy(bArr2, ((i5 + i8) * i) + i6, bArr, i3 * i8, i3);
                 i7 = i8 + 1;
             }
             Bi3eT bi3eT = new Bi3eT();
             bi3eT.b = a();
             int i9 = this.d;
             this.d = i9 + 1;
-            bi3eT.f39810c = i9;
+            bi3eT.f26119c = i9;
             bi3eT.e = i3;
             bi3eT.f = i4;
             bi3eT.d = bArr;
-            wmqhzVar.f39841c.add(bi3eT);
-            this.f39845c = System.currentTimeMillis();
+            wmqhzVar.f26150c.add(bi3eT);
+            this.f26154c = System.currentTimeMillis();
             if (this.d >= this.g / this.f) {
                 parameters2.setExposureCompensation(this.b);
                 camera.setParameters(parameters2);

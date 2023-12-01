@@ -4,11 +4,11 @@ package com.tencent.ugc;
 final /* synthetic */ class fd implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final UGCSingleFilePixelFrameProvider f40377a;
+    private final UGCSingleFilePixelFrameProvider f26686a;
     private final boolean b;
 
     private fd(UGCSingleFilePixelFrameProvider uGCSingleFilePixelFrameProvider, boolean z) {
-        this.f40377a = uGCSingleFilePixelFrameProvider;
+        this.f26686a = uGCSingleFilePixelFrameProvider;
         this.b = z;
     }
 
@@ -18,6 +18,6 @@ final /* synthetic */ class fd implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        this.f40377a.setReverseInternal(this.b);
+        this.f26686a.setReverseInternal(this.b);
     }
 }

@@ -6,11 +6,11 @@ import android.text.Layout;
 final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f25379a;
+    private String f11691a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f25380c;
+    private boolean f11692c;
     private int d;
     private boolean e;
     private int f = -1;
@@ -25,7 +25,7 @@ final class b {
 
     private b a(b bVar, boolean z) {
         if (bVar != null) {
-            if (!this.f25380c && bVar.f25380c) {
+            if (!this.f11692c && bVar.f11692c) {
                 a(bVar.b);
             }
             if (this.h == -1) {
@@ -34,8 +34,8 @@ final class b {
             if (this.i == -1) {
                 this.i = bVar.i;
             }
-            if (this.f25379a == null) {
-                this.f25379a = bVar.f25379a;
+            if (this.f11691a == null) {
+                this.f11691a = bVar.f11691a;
             }
             if (this.f == -1) {
                 this.f = bVar.f;
@@ -77,7 +77,7 @@ final class b {
     public b a(int i) {
         com.opos.exoplayer.core.i.a.b(this.m == null);
         this.b = i;
-        this.f25380c = true;
+        this.f11692c = true;
         return this;
     }
 
@@ -92,7 +92,7 @@ final class b {
 
     public b a(String str) {
         com.opos.exoplayer.core.i.a.b(this.m == null);
-        this.f25379a = str;
+        this.f11691a = str;
         return this;
     }
 
@@ -141,18 +141,18 @@ final class b {
     }
 
     public String d() {
-        return this.f25379a;
+        return this.f11691a;
     }
 
     public int e() {
-        if (this.f25380c) {
+        if (this.f11692c) {
             return this.b;
         }
         throw new IllegalStateException("Font color has not been defined.");
     }
 
     public boolean f() {
-        return this.f25380c;
+        return this.f11692c;
     }
 
     public int g() {

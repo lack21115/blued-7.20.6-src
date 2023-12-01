@@ -19,6 +19,7 @@ import com.bytedance.applog.tracker.Tracker;
 import com.qiniu.pili.droid.shortvideo.PLAudioEncodeSetting;
 import com.qiniu.pili.droid.shortvideo.PLCameraSetting;
 import com.qiniu.pili.droid.shortvideo.PLDisplayMode;
+import com.qiniu.pili.droid.shortvideo.PLFaceBeautySetting;
 import com.qiniu.pili.droid.shortvideo.PLFocusListener;
 import com.qiniu.pili.droid.shortvideo.PLMicrophoneSetting;
 import com.qiniu.pili.droid.shortvideo.PLRecordSetting;
@@ -27,17 +28,13 @@ import com.qiniu.pili.droid.shortvideo.PLShortVideoEnv;
 import com.qiniu.pili.droid.shortvideo.PLShortVideoRecorder;
 import com.qiniu.pili.droid.shortvideo.PLVideoEncodeSetting;
 import com.qiniu.pili.droid.shortvideo.PLVideoSaveListener;
-import com.tencent.ugc.UGCTransitionRules;
+import javax.microedition.khronos.opengles.GL10;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/shortvideo/presenter/AuthRecorderPresenter.class */
 public class AuthRecorderPresenter extends ShortVideoBasePresent<IAuthRecorderView> implements PLFocusListener, PLRecordStateListener, PLVideoSaveListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final String f15772a = AuthPreviewPresenter.class.getSimpleName();
+    private static final String a = AuthPreviewPresenter.class.getSimpleName();
     private PLShortVideoRecorder b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private PLRecordSetting f15773c;
+    private PLRecordSetting c;
     private PLCameraSetting d;
     private Bundle e;
     private int f;
@@ -61,19 +58,19 @@ public class AuthRecorderPresenter extends ShortVideoBasePresent<IAuthRecorderVi
         this.d.setCameraPreviewSizeRatio(VideoConfigData.a());
         PLMicrophoneSetting pLMicrophoneSetting = new PLMicrophoneSetting();
         PLVideoEncodeSetting pLVideoEncodeSetting = new PLVideoEncodeSetting(D().getContext());
-        pLVideoEncodeSetting.setPreferredEncodingSize(UGCTransitionRules.DEFAULT_IMAGE_WIDTH, 1280);
+        pLVideoEncodeSetting.setPreferredEncodingSize(720, (int) GL10.GL_INVALID_ENUM);
         pLVideoEncodeSetting.setEncodingFps(30);
         pLVideoEncodeSetting.setEncodingBitrate(VideoConfigData.c());
-        pLVideoEncodeSetting.setHWCodecEnabled(VideoConfigData.f15874a.booleanValue());
+        pLVideoEncodeSetting.setHWCodecEnabled(VideoConfigData.a.booleanValue());
         PLAudioEncodeSetting pLAudioEncodeSetting = new PLAudioEncodeSetting();
         pLAudioEncodeSetting.setHWCodecEnabled(false);
         PLRecordSetting pLRecordSetting = new PLRecordSetting();
-        this.f15773c = pLRecordSetting;
+        this.c = pLRecordSetting;
         pLRecordSetting.setVideoCacheDir(StvConfig.b());
-        this.f15773c.setVideoFilepath(StvTools.a());
-        this.f15773c.setDisplayMode(PLDisplayMode.FULL);
-        this.f15773c.setMaxRecordDuration(5000L);
-        this.b.prepare(D().a(), this.d, pLMicrophoneSetting, pLVideoEncodeSetting, pLAudioEncodeSetting, null, this.f15773c);
+        this.c.setVideoFilepath(StvTools.a());
+        this.c.setDisplayMode(PLDisplayMode.FULL);
+        this.c.setMaxRecordDuration(5000L);
+        this.b.prepare(D().a(), this.d, pLMicrophoneSetting, pLVideoEncodeSetting, pLAudioEncodeSetting, (PLFaceBeautySetting) null, this.c);
         this.b.setRecordSpeed(1.0d);
     }
 
@@ -117,7 +114,7 @@ public class AuthRecorderPresenter extends ShortVideoBasePresent<IAuthRecorderVi
 
     @Override // com.blued.android.module.shortvideo.presenter.ShortVideoBasePresent
     public void b() {
-        StvLogUtils.a(f15772a + "destroy()", new Object[0]);
+        StvLogUtils.a(a + "destroy()", new Object[0]);
         PLShortVideoRecorder pLShortVideoRecorder = this.b;
         if (pLShortVideoRecorder != null) {
             pLShortVideoRecorder.destroy();
@@ -126,7 +123,7 @@ public class AuthRecorderPresenter extends ShortVideoBasePresent<IAuthRecorderVi
 
     @Override // com.blued.android.module.shortvideo.presenter.ShortVideoBasePresent
     public void c() {
-        StvLogUtils.a(f15772a + "resume()", new Object[0]);
+        StvLogUtils.a(a + "resume()", new Object[0]);
         this.b.resume();
     }
 
@@ -136,7 +133,7 @@ public class AuthRecorderPresenter extends ShortVideoBasePresent<IAuthRecorderVi
 
     @Override // com.blued.android.module.shortvideo.presenter.ShortVideoBasePresent
     public void e() {
-        StvLogUtils.a(f15772a + "pause()", new Object[0]);
+        StvLogUtils.a(a + "pause()", new Object[0]);
         this.b.pause();
         i();
     }
@@ -171,17 +168,14 @@ public class AuthRecorderPresenter extends ShortVideoBasePresent<IAuthRecorderVi
         this.b.cancelConcat();
     }
 
-    @Override // com.qiniu.pili.droid.shortvideo.PLFocusListener
     public void onAutoFocusStart() {
-        StvLogUtils.a(f15772a + "auto focus start", new Object[0]);
+        StvLogUtils.a(a + "auto focus start", new Object[0]);
     }
 
-    @Override // com.qiniu.pili.droid.shortvideo.PLFocusListener
     public void onAutoFocusStop() {
-        StvLogUtils.a(f15772a + "auto focus stop", new Object[0]);
+        StvLogUtils.a(a + "auto focus stop", new Object[0]);
     }
 
-    @Override // com.qiniu.pili.droid.shortvideo.PLRecordStateListener
     public void onDurationTooShort() {
         if (D() != null && D().getActivity() != null && !D().getActivity().isFinishing()) {
             D().a(new Runnable() { // from class: com.blued.android.module.shortvideo.presenter.AuthRecorderPresenter.3
@@ -189,16 +183,15 @@ public class AuthRecorderPresenter extends ShortVideoBasePresent<IAuthRecorderVi
                 public void run() {
                     AuthRecorderPresenter.this.i();
                     AuthRecorderPresenter.this.D().b(false);
-                    StvLogUtils.a(AuthRecorderPresenter.f15772a + " 录制视频太短！！！", new Object[0]);
+                    StvLogUtils.a(AuthRecorderPresenter.a + " 录制视频太短！！！", new Object[0]);
                     AuthRecorderPresenter.this.a("时间过短，无法完成录制");
                 }
             });
             return;
         }
-        StvLogUtils.a(f15772a + " getView() == null!!!", new Object[0]);
+        StvLogUtils.a(a + " getView() == null!!!", new Object[0]);
     }
 
-    @Override // com.qiniu.pili.droid.shortvideo.PLRecordStateListener
     public void onError(int i) {
         String str = i == 4 ? "摄像头配置错误" : i == 5 ? "麦克风配置错误" : null;
         if (!TextUtils.isEmpty(str)) {
@@ -222,31 +215,26 @@ public class AuthRecorderPresenter extends ShortVideoBasePresent<IAuthRecorderVi
             });
             return;
         }
-        StvLogUtils.a(f15772a + " getView() == null!!!", new Object[0]);
+        StvLogUtils.a(a + " getView() == null!!!", new Object[0]);
     }
 
-    @Override // com.qiniu.pili.droid.shortvideo.PLFocusListener
     public void onManualFocusCancel() {
     }
 
-    @Override // com.qiniu.pili.droid.shortvideo.PLFocusListener
     public void onManualFocusStart(boolean z) {
     }
 
-    @Override // com.qiniu.pili.droid.shortvideo.PLFocusListener
     public void onManualFocusStop(boolean z) {
     }
 
-    @Override // com.qiniu.pili.droid.shortvideo.PLVideoSaveListener
     public void onProgressUpdate(float f) {
         if (D() == null || D().getActivity() == null || D().getActivity().isFinishing()) {
-            StvLogUtils.a(f15772a + " getView() == null!!!", new Object[0]);
+            StvLogUtils.a(a + " getView() == null!!!", new Object[0]);
         }
     }
 
-    @Override // com.qiniu.pili.droid.shortvideo.PLRecordStateListener
     public void onReady() {
-        StvLogUtils.a(f15772a + "onReady()", new Object[0]);
+        StvLogUtils.a(a + "onReady()", new Object[0]);
         if (D() != null && D().getActivity() != null && !D().getActivity().isFinishing()) {
             D().a(new Runnable() { // from class: com.blued.android.module.shortvideo.presenter.AuthRecorderPresenter.1
                 @Override // java.lang.Runnable
@@ -256,10 +244,9 @@ public class AuthRecorderPresenter extends ShortVideoBasePresent<IAuthRecorderVi
             });
             return;
         }
-        StvLogUtils.a(f15772a + " getView() == null!!!", new Object[0]);
+        StvLogUtils.a(a + " getView() == null!!!", new Object[0]);
     }
 
-    @Override // com.qiniu.pili.droid.shortvideo.PLRecordStateListener
     public void onRecordCompleted() {
         if (D() != null && D().getActivity() != null && !D().getActivity().isFinishing()) {
             D().a(new Runnable() { // from class: com.blued.android.module.shortvideo.presenter.AuthRecorderPresenter.4
@@ -271,26 +258,23 @@ public class AuthRecorderPresenter extends ShortVideoBasePresent<IAuthRecorderVi
             });
             return;
         }
-        StvLogUtils.a(f15772a + " getView() == null!!!", new Object[0]);
+        StvLogUtils.a(a + " getView() == null!!!", new Object[0]);
     }
 
-    @Override // com.qiniu.pili.droid.shortvideo.PLRecordStateListener
     public void onRecordStarted() {
-        StvLogUtils.a(f15772a + "record start time: " + System.currentTimeMillis(), new Object[0]);
+        StvLogUtils.a(a + "record start time: " + System.currentTimeMillis(), new Object[0]);
         if (D() == null || D().getActivity() == null || D().getActivity().isFinishing()) {
-            StvLogUtils.a(f15772a + " getView() == null!!!", new Object[0]);
+            StvLogUtils.a(a + " getView() == null!!!", new Object[0]);
         }
     }
 
-    @Override // com.qiniu.pili.droid.shortvideo.PLRecordStateListener
     public void onRecordStopped() {
-        StvLogUtils.a(f15772a + "record stop time: " + System.currentTimeMillis(), new Object[0]);
+        StvLogUtils.a(a + "record stop time: " + System.currentTimeMillis(), new Object[0]);
         if (D() == null || D().getActivity() == null || D().getActivity().isFinishing()) {
-            StvLogUtils.a(f15772a + " getView() == null!!!", new Object[0]);
+            StvLogUtils.a(a + " getView() == null!!!", new Object[0]);
         }
     }
 
-    @Override // com.qiniu.pili.droid.shortvideo.PLVideoSaveListener
     public void onSaveVideoCanceled() {
         if (D() != null && D().getActivity() != null && !D().getActivity().isFinishing()) {
             D().a(new Runnable() { // from class: com.blued.android.module.shortvideo.presenter.AuthRecorderPresenter.6
@@ -302,10 +286,9 @@ public class AuthRecorderPresenter extends ShortVideoBasePresent<IAuthRecorderVi
             });
             return;
         }
-        StvLogUtils.a(f15772a + " getView() == null!!!", new Object[0]);
+        StvLogUtils.a(a + " getView() == null!!!", new Object[0]);
     }
 
-    @Override // com.qiniu.pili.droid.shortvideo.PLVideoSaveListener
     public void onSaveVideoFailed(final int i) {
         if (D() != null && D().getActivity() != null) {
             D().a(new Runnable() { // from class: com.blued.android.module.shortvideo.presenter.AuthRecorderPresenter.5
@@ -320,12 +303,11 @@ public class AuthRecorderPresenter extends ShortVideoBasePresent<IAuthRecorderVi
             });
             return;
         }
-        StvLogUtils.a(f15772a + " getView() == null", new Object[0]);
+        StvLogUtils.a(a + " getView() == null", new Object[0]);
     }
 
-    @Override // com.qiniu.pili.droid.shortvideo.PLVideoSaveListener
     public void onSaveVideoSuccess(final String str) {
-        StvLogUtils.a(f15772a + "concat sections success filePath: " + str, new Object[0]);
+        StvLogUtils.a(a + "concat sections success filePath: " + str, new Object[0]);
         if (D() != null && D().getActivity() != null && !D().getActivity().isFinishing()) {
             D().a(new Runnable() { // from class: com.blued.android.module.shortvideo.presenter.AuthRecorderPresenter.7
                 @Override // java.lang.Runnable
@@ -338,20 +320,17 @@ public class AuthRecorderPresenter extends ShortVideoBasePresent<IAuthRecorderVi
             });
             return;
         }
-        StvLogUtils.a(f15772a + " getView() == null!!!", new Object[0]);
+        StvLogUtils.a(a + " getView() == null!!!", new Object[0]);
     }
 
-    @Override // com.qiniu.pili.droid.shortvideo.PLRecordStateListener
     public void onSectionDecreased(long j, long j2, int i) {
-        StvLogUtils.a(f15772a + "section decreased decDuration: " + j + " totalDuration: " + j2 + " sectionCount: " + i, new Object[0]);
+        StvLogUtils.a(a + "section decreased decDuration: " + j + " totalDuration: " + j2 + " sectionCount: " + i, new Object[0]);
     }
 
-    @Override // com.qiniu.pili.droid.shortvideo.PLRecordStateListener
     public void onSectionIncreased(long j, long j2, int i) {
-        StvLogUtils.a(f15772a + "section increased incDuration: " + j + " totalDuration: " + j2 + " sectionCount: " + i, new Object[0]);
+        StvLogUtils.a(a + "section increased incDuration: " + j + " totalDuration: " + j2 + " sectionCount: " + i, new Object[0]);
     }
 
-    @Override // com.qiniu.pili.droid.shortvideo.PLRecordStateListener
     public void onSectionRecording(long j, long j2, int i) {
     }
 }

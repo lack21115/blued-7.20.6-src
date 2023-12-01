@@ -14,13 +14,9 @@ import com.blued.android.module.yy_china.view.CircleImageView;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ItemYyEntranceEffectBinding.class */
 public final class ItemYyEntranceEffectBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final RelativeLayout f16706a;
+    public final RelativeLayout a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final CircleImageView f16707c;
+    public final CircleImageView c;
     public final ImageView d;
     public final LinearLayout e;
     public final ShapeFrameLayout f;
@@ -30,9 +26,9 @@ public final class ItemYyEntranceEffectBinding implements ViewBinding {
 
     private ItemYyEntranceEffectBinding(LinearLayout linearLayout, RelativeLayout relativeLayout, ImageView imageView, CircleImageView circleImageView, ImageView imageView2, LinearLayout linearLayout2, ShapeFrameLayout shapeFrameLayout, TextView textView, TextView textView2) {
         this.i = linearLayout;
-        this.f16706a = relativeLayout;
+        this.a = relativeLayout;
         this.b = imageView;
-        this.f16707c = circleImageView;
+        this.c = circleImageView;
         this.d = imageView2;
         this.e = linearLayout2;
         this.f = shapeFrameLayout;
@@ -93,7 +89,6 @@ public final class ItemYyEntranceEffectBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
         return this.i;

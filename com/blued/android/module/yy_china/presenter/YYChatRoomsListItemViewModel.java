@@ -21,14 +21,10 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/presenter/YYChatRoomsListItemViewModel.class */
 public final class YYChatRoomsListItemViewModel extends BaseViewModel {
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f17743c;
+    private String c;
     private int i;
     private List<String> j;
-
-    /* renamed from: a  reason: collision with root package name */
-    private final String f17742a = "YYChatRoomsListItemView";
+    private final String a = "YYChatRoomsListItemView";
     private final MutableLiveData<List<YYChatRoomModel>> d = new MutableLiveData<>();
     private final MutableLiveData<List<YYChatRoomModel>> e = new MutableLiveData<>();
     private final MutableLiveData<Boolean> f = new MutableLiveData<>();
@@ -44,14 +40,14 @@ public final class YYChatRoomsListItemViewModel extends BaseViewModel {
         ArrayList arrayList = new ArrayList();
         for (YYChatRoomModel yYChatRoomModel : list) {
             if (yYChatRoomModel != null && yYChatRoomModel.data != null) {
-                if (yYChatRoomModel.type == YYRoomListsAdapter.f16231a.a()) {
+                if (yYChatRoomModel.type == YYRoomListsAdapter.a.a()) {
                     List<String> list3 = this.j;
                     Intrinsics.a(list3);
                     if (list3.contains(yYChatRoomModel.data.room_id)) {
-                        Logger.e(this.f17742a, Intrinsics.a("去重room——id：", (Object) yYChatRoomModel.data.room_id));
+                        Logger.e(this.a, Intrinsics.a("去重room——id：", (Object) yYChatRoomModel.data.room_id));
                     }
                 }
-                if (yYChatRoomModel.type == YYRoomListsAdapter.f16231a.a() && (list2 = this.j) != null) {
+                if (yYChatRoomModel.type == YYRoomListsAdapter.a.a() && (list2 = this.j) != null) {
                     String str = yYChatRoomModel.data.room_id;
                     Intrinsics.c(str, "room.data.room_id");
                     list2.add(str);
@@ -59,7 +55,7 @@ public final class YYChatRoomsListItemViewModel extends BaseViewModel {
                 arrayList.add(yYChatRoomModel);
             }
         }
-        String str2 = this.f17742a;
+        String str2 = this.a;
         List<String> list4 = this.j;
         Intrinsics.a(list4);
         Object[] array = list4.toArray(new String[0]);
@@ -77,7 +73,7 @@ public final class YYChatRoomsListItemViewModel extends BaseViewModel {
         }
         int size = list.size();
         for (int i = 0; i < size; i++) {
-            if (list.get(i).type == YYRoomListsAdapter.f16231a.a()) {
+            if (list.get(i).type == YYRoomListsAdapter.a.a()) {
                 return i;
             }
         }
@@ -102,16 +98,14 @@ public final class YYChatRoomsListItemViewModel extends BaseViewModel {
         final int i = this.i;
         YYRoomHttpUtils.a(this.b, i, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<YYChatRoomModel>>(this, i) { // from class: com.blued.android.module.yy_china.presenter.YYChatRoomsListItemViewModel$getRoomDatasByType$1
             final /* synthetic */ YYChatRoomsListItemViewModel b;
-
-            /* renamed from: c  reason: collision with root package name */
-            final /* synthetic */ int f17745c;
+            final /* synthetic */ int c;
 
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
                 super(ActivityFragmentActive.this);
                 this.b = this;
-                this.f17745c = i;
+                this.c = i;
             }
 
             /* JADX INFO: Access modifiers changed from: protected */
@@ -154,11 +148,11 @@ public final class YYChatRoomsListItemViewModel extends BaseViewModel {
     }
 
     public final void b(String str) {
-        this.f17743c = str;
+        this.c = str;
     }
 
     public final String d() {
-        return this.f17742a;
+        return this.a;
     }
 
     public final String e() {
@@ -166,7 +160,7 @@ public final class YYChatRoomsListItemViewModel extends BaseViewModel {
     }
 
     public final String f() {
-        return this.f17743c;
+        return this.c;
     }
 
     public final MutableLiveData<List<YYChatRoomModel>> g() {

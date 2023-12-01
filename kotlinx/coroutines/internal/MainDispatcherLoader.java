@@ -10,13 +10,9 @@ import kotlinx.coroutines.MainCoroutineDispatcher;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/internal/MainDispatcherLoader.class */
 public final class MainDispatcherLoader {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final MainDispatcherLoader f43551a = new MainDispatcherLoader();
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final boolean f43552c = SystemPropsKt.a("kotlinx.coroutines.fast.service.loader", true);
-    public static final MainCoroutineDispatcher b = f43551a.a();
+    public static final MainDispatcherLoader a = new MainDispatcherLoader();
+    private static final boolean c = SystemPropsKt.a("kotlinx.coroutines.fast.service.loader", true);
+    public static final MainCoroutineDispatcher b = a.a();
 
     private MainDispatcherLoader() {
     }
@@ -24,7 +20,7 @@ public final class MainDispatcherLoader {
     private final MainCoroutineDispatcher a() {
         Object next;
         try {
-            List<MainDispatcherFactory> a2 = f43552c ? FastServiceLoader.f43534a.a() : SequencesKt.d(SequencesKt.a(ServiceLoader.load(MainDispatcherFactory.class, MainDispatcherFactory.class.getClassLoader()).iterator()));
+            List<MainDispatcherFactory> a2 = c ? FastServiceLoader.a.a() : SequencesKt.d(SequencesKt.a(ServiceLoader.load(MainDispatcherFactory.class, MainDispatcherFactory.class.getClassLoader()).iterator()));
             Iterator<E> it = a2.iterator();
             if (it.hasNext()) {
                 next = it.next();

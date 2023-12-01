@@ -6,11 +6,11 @@ import android.util.Log;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static c f35474a;
+    private static c f21783a;
     private static int b = 6;
 
     /* renamed from: c  reason: collision with root package name */
-    private static b f35475c = new b() { // from class: com.tencent.cloud.huiyansdkface.a.d.a.1
+    private static b f21784c = new b() { // from class: com.tencent.cloud.huiyansdkface.a.d.a.1
         @Override // com.tencent.cloud.huiyansdkface.a.d.a.b
         public void a(boolean z, Throwable th) {
             if (th == null || z) {
@@ -19,12 +19,12 @@ public class a {
             th.printStackTrace();
         }
     };
-    private static C0903a d = new C0903a();
+    private static C0733a d = new C0733a();
 
     /* renamed from: com.tencent.cloud.huiyansdkface.a.d.a$a  reason: collision with other inner class name */
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/cloud/huiyansdkface/a/d/a$a.class */
-    public static final class C0903a {
-        private C0903a() {
+    public static final class C0733a {
+        private C0733a() {
         }
     }
 
@@ -94,11 +94,11 @@ public class a {
     }
 
     public static void a(c cVar) {
-        f35474a = cVar;
+        f21783a = cVar;
     }
 
     public static void a(d dVar) {
-        f35474a = dVar;
+        f21783a = dVar;
     }
 
     public static void a(String str, String str2, Object... objArr) {
@@ -107,7 +107,7 @@ public class a {
 
     public static void a(String str, Throwable th, String str2, Object... objArr) {
         String a2 = a(str);
-        c cVar = f35474a;
+        c cVar = f21783a;
         if (cVar != null) {
             cVar.a(3, a2, th, str2, objArr);
         } else if (b <= 3) {
@@ -121,7 +121,7 @@ public class a {
     }
 
     private static void a(boolean z, Throwable th) {
-        b bVar = f35475c;
+        b bVar = f21784c;
         if (bVar == null || th == null) {
             return;
         }
@@ -134,7 +134,7 @@ public class a {
 
     public static void b(String str, Throwable th, String str2, Object... objArr) {
         String a2 = a(str);
-        c cVar = f35474a;
+        c cVar = f21783a;
         if (cVar != null) {
             cVar.a(4, a2, th, str2, objArr);
         } else if (b <= 4) {
@@ -153,7 +153,7 @@ public class a {
 
     public static void c(String str, Throwable th, String str2, Object... objArr) {
         String a2 = a(str);
-        c cVar = f35474a;
+        c cVar = f21783a;
         if (cVar != null) {
             cVar.a(5, a2, th, str2, objArr);
         } else if (b <= 5) {
@@ -168,7 +168,7 @@ public class a {
 
     public static void d(String str, Throwable th, String str2, Object... objArr) {
         String a2 = a(str);
-        c cVar = f35474a;
+        c cVar = f21783a;
         if (cVar != null) {
             cVar.a(6, a2, th, str2, objArr);
         } else if (b <= 6) {

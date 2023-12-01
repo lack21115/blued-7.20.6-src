@@ -6,6 +6,7 @@ import android.content.ContextWrapper;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
+import com.anythink.expressad.a;
 import io.github.inflationx.viewpump.internal.ViewPumpActivityFactory;
 import io.github.inflationx.viewpump.internal.ViewPumpLayoutInflater;
 import kotlin.Lazy;
@@ -24,7 +25,7 @@ import kotlin.reflect.KProperty;
 @Metadata
 /* loaded from: source-8829756-dex2jar.jar:io/github/inflationx/viewpump/ViewPumpContextWrapper.class */
 public final class ViewPumpContextWrapper extends ContextWrapper {
-    static final /* synthetic */ KProperty[] $$delegatedProperties = {Reflection.a(new PropertyReference1Impl(Reflection.b(ViewPumpContextWrapper.class), "inflater", "getInflater()Lio/github/inflationx/viewpump/internal/-ViewPumpLayoutInflater;"))};
+    static final /* synthetic */ KProperty[] $$delegatedProperties = {(KProperty) Reflection.a(new PropertyReference1Impl(Reflection.b(ViewPumpContextWrapper.class), "inflater", "getInflater()Lio/github/inflationx/viewpump/internal/-ViewPumpLayoutInflater;"))};
     public static final Companion Companion = new Companion(null);
     private final Lazy inflater$delegate;
 
@@ -52,32 +53,31 @@ public final class ViewPumpContextWrapper extends ContextWrapper {
         }
 
         @JvmStatic
-        public final View onActivityCreateView(Activity activity, View view, View view2, String name, Context context, AttributeSet attributeSet) {
+        public final View onActivityCreateView(Activity activity, View view, View view2, String str, Context context, AttributeSet attributeSet) {
             Intrinsics.d(activity, "activity");
-            Intrinsics.d(view2, "view");
-            Intrinsics.d(name, "name");
+            Intrinsics.d(view2, a.B);
+            Intrinsics.d(str, "name");
             Intrinsics.d(context, "context");
-            return get$viewpump_release(activity).onActivityCreateView(view, view2, name, context, attributeSet);
+            return get$viewpump_release(activity).onActivityCreateView(view, view2, str, context, attributeSet);
         }
 
         @JvmStatic
-        public final ContextWrapper wrap(Context base) {
-            Intrinsics.d(base, "base");
-            return new ViewPumpContextWrapper(base, null);
+        public final ContextWrapper wrap(Context context) {
+            Intrinsics.d(context, "base");
+            return new ViewPumpContextWrapper(context, null);
         }
     }
 
     private ViewPumpContextWrapper(Context context) {
         super(context);
-        this.inflater$delegate = LazyKt.a(LazyThreadSafetyMode.NONE, new Function0<ViewPumpLayoutInflater>() { // from class: io.github.inflationx.viewpump.ViewPumpContextWrapper$inflater$2
+        this.inflater$delegate = LazyKt.a(LazyThreadSafetyMode.c, new Function0<ViewPumpLayoutInflater>() { // from class: io.github.inflationx.viewpump.ViewPumpContextWrapper$inflater$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(0);
             }
 
-            /* JADX WARN: Can't rename method to resolve collision */
-            @Override // kotlin.jvm.functions.Function0
-            public final ViewPumpLayoutInflater invoke() {
+            /* renamed from: invoke */
+            public final ViewPumpLayoutInflater m9366invoke() {
                 LayoutInflater from = LayoutInflater.from(ViewPumpContextWrapper.this.getBaseContext());
                 Intrinsics.b(from, "LayoutInflater.from(baseContext)");
                 return new ViewPumpLayoutInflater(from, ViewPumpContextWrapper.this, false);
@@ -106,8 +106,8 @@ public final class ViewPumpContextWrapper extends ContextWrapper {
     }
 
     @Override // android.content.ContextWrapper, android.content.Context
-    public Object getSystemService(String name) {
-        Intrinsics.d(name, "name");
-        return Intrinsics.a((Object) Context.LAYOUT_INFLATER_SERVICE, (Object) name) ? getInflater() : super.getSystemService(name);
+    public Object getSystemService(String str) {
+        Intrinsics.d(str, "name");
+        return Intrinsics.a(Context.LAYOUT_INFLATER_SERVICE, str) ? getInflater() : super.getSystemService(str);
     }
 }

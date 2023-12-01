@@ -25,7 +25,7 @@ public class NotificationCompatJellybean {
     private static Field b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static boolean f2374c;
+    private static boolean f2326c;
     private static Field e;
     private static Field f;
     private static Field g;
@@ -33,7 +33,7 @@ public class NotificationCompatJellybean {
     private static boolean i;
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Object f2373a = new Object();
+    private static final Object f2325a = new Object();
     private static final Object d = new Object();
 
     private NotificationCompatJellybean() {
@@ -220,8 +220,8 @@ public class NotificationCompatJellybean {
     }
 
     public static Bundle getExtras(Notification notification) {
-        synchronized (f2373a) {
-            if (f2374c) {
+        synchronized (f2325a) {
+            if (f2326c) {
                 return null;
             }
             try {
@@ -229,7 +229,7 @@ public class NotificationCompatJellybean {
                     Field declaredField = Notification.class.getDeclaredField(ao.K);
                     if (!Bundle.class.isAssignableFrom(declaredField.getType())) {
                         Log.e(TAG, "Notification.extras field is not of type Bundle");
-                        f2374c = true;
+                        f2326c = true;
                         return null;
                     }
                     declaredField.setAccessible(true);
@@ -244,11 +244,11 @@ public class NotificationCompatJellybean {
                 return bundle2;
             } catch (IllegalAccessException e2) {
                 Log.e(TAG, "Unable to access notification extras", e2);
-                f2374c = true;
+                f2326c = true;
                 return null;
             } catch (NoSuchFieldException e3) {
                 Log.e(TAG, "Unable to access notification extras", e3);
-                f2374c = true;
+                f2326c = true;
                 return null;
             }
         }

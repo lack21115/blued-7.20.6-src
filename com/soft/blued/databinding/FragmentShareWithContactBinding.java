@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentShareWithContactBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f28974a;
+    private final LinearLayout f15284a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f28974a;
+        return this.f15284a;
     }
 }

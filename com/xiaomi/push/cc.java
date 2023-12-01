@@ -10,15 +10,15 @@ import java.util.List;
 public class cc extends ch.b<Long> {
 
     /* renamed from: a  reason: collision with root package name */
-    private long f41299a;
+    private long f27608a;
 
     /* renamed from: a  reason: collision with other field name */
-    private String f239a;
+    private String f192a;
 
     public cc(String str, List<String> list, String str2, String[] strArr, String str3, String str4, String str5, int i, String str6) {
         super(str, list, str2, strArr, str3, str4, str5, i);
-        this.f41299a = 0L;
-        this.f239a = str6;
+        this.f27608a = 0L;
+        this.f192a = str6;
     }
 
     public static cc a(String str) {
@@ -35,8 +35,8 @@ public class cc extends ch.b<Long> {
 
     @Override // com.xiaomi.push.ch.a
     /* renamed from: a */
-    public Object mo11582a() {
-        return Long.valueOf(this.f41299a);
+    public Object mo8532a() {
+        return Long.valueOf(this.f27608a);
     }
 
     @Override // com.xiaomi.push.ch.b
@@ -44,6 +44,6 @@ public class cc extends ch.b<Long> {
         if (context == null || list == null || list.size() <= 0) {
             return;
         }
-        this.f41299a = list.get(0).longValue();
+        this.f27608a = list.get(0).longValue();
     }
 }

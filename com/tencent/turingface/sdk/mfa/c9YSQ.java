@@ -4,9 +4,9 @@ package com.tencent.turingface.sdk.mfa;
 public final class c9YSQ implements Gc2mM {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ FLlEM f39941a;
+    public final /* synthetic */ FLlEM f26250a;
 
     public c9YSQ(FLlEM fLlEM) {
-        this.f39941a = fLlEM;
+        this.f26250a = fLlEM;
     }
 }

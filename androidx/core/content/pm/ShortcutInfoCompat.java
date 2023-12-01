@@ -15,7 +15,6 @@ import androidx.core.app.Person;
 import androidx.core.content.LocusIdCompat;
 import androidx.core.graphics.drawable.IconCompat;
 import androidx.core.net.UriCompat;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -28,11 +27,11 @@ import java.util.Set;
 public class ShortcutInfoCompat {
 
     /* renamed from: a  reason: collision with root package name */
-    Context f2415a;
+    Context f2367a;
     String b;
 
     /* renamed from: c  reason: collision with root package name */
-    String f2416c;
+    String f2368c;
     Intent[] d;
     ComponentName e;
     CharSequence f;
@@ -61,98 +60,98 @@ public class ShortcutInfoCompat {
     public static class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        private final ShortcutInfoCompat f2417a;
+        private final ShortcutInfoCompat f2369a;
         private boolean b;
 
         /* renamed from: c  reason: collision with root package name */
-        private Set<String> f2418c;
+        private Set<String> f2370c;
         private Map<String, Map<String, List<String>>> d;
         private Uri e;
 
         public Builder(Context context, ShortcutInfo shortcutInfo) {
             ShortcutInfoCompat shortcutInfoCompat = new ShortcutInfoCompat();
-            this.f2417a = shortcutInfoCompat;
-            shortcutInfoCompat.f2415a = context;
-            this.f2417a.b = shortcutInfo.getId();
-            this.f2417a.f2416c = shortcutInfo.getPackage();
+            this.f2369a = shortcutInfoCompat;
+            shortcutInfoCompat.f2367a = context;
+            this.f2369a.b = shortcutInfo.getId();
+            this.f2369a.f2368c = shortcutInfo.getPackage();
             Intent[] intents = shortcutInfo.getIntents();
-            this.f2417a.d = (Intent[]) Arrays.copyOf(intents, intents.length);
-            this.f2417a.e = shortcutInfo.getActivity();
-            this.f2417a.f = shortcutInfo.getShortLabel();
-            this.f2417a.g = shortcutInfo.getLongLabel();
-            this.f2417a.h = shortcutInfo.getDisabledMessage();
+            this.f2369a.d = (Intent[]) Arrays.copyOf(intents, intents.length);
+            this.f2369a.e = shortcutInfo.getActivity();
+            this.f2369a.f = shortcutInfo.getShortLabel();
+            this.f2369a.g = shortcutInfo.getLongLabel();
+            this.f2369a.h = shortcutInfo.getDisabledMessage();
             if (Build.VERSION.SDK_INT >= 28) {
-                this.f2417a.z = shortcutInfo.getDisabledReason();
+                this.f2369a.z = shortcutInfo.getDisabledReason();
             } else {
-                this.f2417a.z = shortcutInfo.isEnabled() ? 0 : 3;
+                this.f2369a.z = shortcutInfo.isEnabled() ? 0 : 3;
             }
-            this.f2417a.l = shortcutInfo.getCategories();
-            this.f2417a.k = ShortcutInfoCompat.a(shortcutInfo.getExtras());
-            this.f2417a.r = shortcutInfo.getUserHandle();
-            this.f2417a.q = shortcutInfo.getLastChangedTimestamp();
+            this.f2369a.l = shortcutInfo.getCategories();
+            this.f2369a.k = ShortcutInfoCompat.a(shortcutInfo.getExtras());
+            this.f2369a.r = shortcutInfo.getUserHandle();
+            this.f2369a.q = shortcutInfo.getLastChangedTimestamp();
             if (Build.VERSION.SDK_INT >= 30) {
-                this.f2417a.s = shortcutInfo.isCached();
+                this.f2369a.s = shortcutInfo.isCached();
             }
-            this.f2417a.t = shortcutInfo.isDynamic();
-            this.f2417a.u = shortcutInfo.isPinned();
-            this.f2417a.v = shortcutInfo.isDeclaredInManifest();
-            this.f2417a.w = shortcutInfo.isImmutable();
-            this.f2417a.x = shortcutInfo.isEnabled();
-            this.f2417a.y = shortcutInfo.hasKeyFieldsOnly();
-            this.f2417a.m = ShortcutInfoCompat.a(shortcutInfo);
-            this.f2417a.o = shortcutInfo.getRank();
-            this.f2417a.p = shortcutInfo.getExtras();
+            this.f2369a.t = shortcutInfo.isDynamic();
+            this.f2369a.u = shortcutInfo.isPinned();
+            this.f2369a.v = shortcutInfo.isDeclaredInManifest();
+            this.f2369a.w = shortcutInfo.isImmutable();
+            this.f2369a.x = shortcutInfo.isEnabled();
+            this.f2369a.y = shortcutInfo.hasKeyFieldsOnly();
+            this.f2369a.m = ShortcutInfoCompat.a(shortcutInfo);
+            this.f2369a.o = shortcutInfo.getRank();
+            this.f2369a.p = shortcutInfo.getExtras();
         }
 
         public Builder(Context context, String str) {
             ShortcutInfoCompat shortcutInfoCompat = new ShortcutInfoCompat();
-            this.f2417a = shortcutInfoCompat;
-            shortcutInfoCompat.f2415a = context;
-            this.f2417a.b = str;
+            this.f2369a = shortcutInfoCompat;
+            shortcutInfoCompat.f2367a = context;
+            this.f2369a.b = str;
         }
 
         public Builder(ShortcutInfoCompat shortcutInfoCompat) {
             ShortcutInfoCompat shortcutInfoCompat2 = new ShortcutInfoCompat();
-            this.f2417a = shortcutInfoCompat2;
-            shortcutInfoCompat2.f2415a = shortcutInfoCompat.f2415a;
-            this.f2417a.b = shortcutInfoCompat.b;
-            this.f2417a.f2416c = shortcutInfoCompat.f2416c;
-            this.f2417a.d = (Intent[]) Arrays.copyOf(shortcutInfoCompat.d, shortcutInfoCompat.d.length);
-            this.f2417a.e = shortcutInfoCompat.e;
-            this.f2417a.f = shortcutInfoCompat.f;
-            this.f2417a.g = shortcutInfoCompat.g;
-            this.f2417a.h = shortcutInfoCompat.h;
-            this.f2417a.z = shortcutInfoCompat.z;
-            this.f2417a.i = shortcutInfoCompat.i;
-            this.f2417a.j = shortcutInfoCompat.j;
-            this.f2417a.r = shortcutInfoCompat.r;
-            this.f2417a.q = shortcutInfoCompat.q;
-            this.f2417a.s = shortcutInfoCompat.s;
-            this.f2417a.t = shortcutInfoCompat.t;
-            this.f2417a.u = shortcutInfoCompat.u;
-            this.f2417a.v = shortcutInfoCompat.v;
-            this.f2417a.w = shortcutInfoCompat.w;
-            this.f2417a.x = shortcutInfoCompat.x;
-            this.f2417a.m = shortcutInfoCompat.m;
-            this.f2417a.n = shortcutInfoCompat.n;
-            this.f2417a.y = shortcutInfoCompat.y;
-            this.f2417a.o = shortcutInfoCompat.o;
+            this.f2369a = shortcutInfoCompat2;
+            shortcutInfoCompat2.f2367a = shortcutInfoCompat.f2367a;
+            this.f2369a.b = shortcutInfoCompat.b;
+            this.f2369a.f2368c = shortcutInfoCompat.f2368c;
+            this.f2369a.d = (Intent[]) Arrays.copyOf(shortcutInfoCompat.d, shortcutInfoCompat.d.length);
+            this.f2369a.e = shortcutInfoCompat.e;
+            this.f2369a.f = shortcutInfoCompat.f;
+            this.f2369a.g = shortcutInfoCompat.g;
+            this.f2369a.h = shortcutInfoCompat.h;
+            this.f2369a.z = shortcutInfoCompat.z;
+            this.f2369a.i = shortcutInfoCompat.i;
+            this.f2369a.j = shortcutInfoCompat.j;
+            this.f2369a.r = shortcutInfoCompat.r;
+            this.f2369a.q = shortcutInfoCompat.q;
+            this.f2369a.s = shortcutInfoCompat.s;
+            this.f2369a.t = shortcutInfoCompat.t;
+            this.f2369a.u = shortcutInfoCompat.u;
+            this.f2369a.v = shortcutInfoCompat.v;
+            this.f2369a.w = shortcutInfoCompat.w;
+            this.f2369a.x = shortcutInfoCompat.x;
+            this.f2369a.m = shortcutInfoCompat.m;
+            this.f2369a.n = shortcutInfoCompat.n;
+            this.f2369a.y = shortcutInfoCompat.y;
+            this.f2369a.o = shortcutInfoCompat.o;
             if (shortcutInfoCompat.k != null) {
-                this.f2417a.k = (Person[]) Arrays.copyOf(shortcutInfoCompat.k, shortcutInfoCompat.k.length);
+                this.f2369a.k = (Person[]) Arrays.copyOf(shortcutInfoCompat.k, shortcutInfoCompat.k.length);
             }
             if (shortcutInfoCompat.l != null) {
-                this.f2417a.l = new HashSet(shortcutInfoCompat.l);
+                this.f2369a.l = new HashSet(shortcutInfoCompat.l);
             }
             if (shortcutInfoCompat.p != null) {
-                this.f2417a.p = shortcutInfoCompat.p;
+                this.f2369a.p = shortcutInfoCompat.p;
             }
         }
 
         public Builder addCapabilityBinding(String str) {
-            if (this.f2418c == null) {
-                this.f2418c = new HashSet();
+            if (this.f2370c == null) {
+                this.f2370c = new HashSet();
             }
-            this.f2418c.add(str);
+            this.f2370c.add(str);
             return this;
         }
 
@@ -171,77 +170,77 @@ public class ShortcutInfoCompat {
         }
 
         public ShortcutInfoCompat build() {
-            if (TextUtils.isEmpty(this.f2417a.f)) {
+            if (TextUtils.isEmpty(this.f2369a.f)) {
                 throw new IllegalArgumentException("Shortcut must have a non-empty label");
             }
-            if (this.f2417a.d == null || this.f2417a.d.length == 0) {
+            if (this.f2369a.d == null || this.f2369a.d.length == 0) {
                 throw new IllegalArgumentException("Shortcut must have an intent");
             }
             if (this.b) {
-                if (this.f2417a.m == null) {
-                    ShortcutInfoCompat shortcutInfoCompat = this.f2417a;
+                if (this.f2369a.m == null) {
+                    ShortcutInfoCompat shortcutInfoCompat = this.f2369a;
                     shortcutInfoCompat.m = new LocusIdCompat(shortcutInfoCompat.b);
                 }
-                this.f2417a.n = true;
+                this.f2369a.n = true;
             }
-            if (this.f2418c != null) {
-                if (this.f2417a.l == null) {
-                    this.f2417a.l = new HashSet();
+            if (this.f2370c != null) {
+                if (this.f2369a.l == null) {
+                    this.f2369a.l = new HashSet();
                 }
-                this.f2417a.l.addAll(this.f2418c);
+                this.f2369a.l.addAll(this.f2370c);
             }
             if (Build.VERSION.SDK_INT >= 21) {
                 if (this.d != null) {
-                    if (this.f2417a.p == null) {
-                        this.f2417a.p = new PersistableBundle();
+                    if (this.f2369a.p == null) {
+                        this.f2369a.p = new PersistableBundle();
                     }
                     for (String str : this.d.keySet()) {
                         Map<String, List<String>> map = this.d.get(str);
-                        this.f2417a.p.putStringArray(str, (String[]) map.keySet().toArray(new String[0]));
+                        this.f2369a.p.putStringArray(str, (String[]) map.keySet().toArray(new String[0]));
                         for (String str2 : map.keySet()) {
                             List<String> list = map.get(str2);
-                            PersistableBundle persistableBundle = this.f2417a.p;
-                            persistableBundle.putStringArray(str + BridgeUtil.SPLIT_MARK + str2, list == null ? new String[0] : (String[]) list.toArray(new String[0]));
+                            PersistableBundle persistableBundle = this.f2369a.p;
+                            persistableBundle.putStringArray(str + "/" + str2, list == null ? new String[0] : (String[]) list.toArray(new String[0]));
                         }
                     }
                 }
                 if (this.e != null) {
-                    if (this.f2417a.p == null) {
-                        this.f2417a.p = new PersistableBundle();
+                    if (this.f2369a.p == null) {
+                        this.f2369a.p = new PersistableBundle();
                     }
-                    this.f2417a.p.putString("extraSliceUri", UriCompat.toSafeString(this.e));
+                    this.f2369a.p.putString("extraSliceUri", UriCompat.toSafeString(this.e));
                 }
             }
-            return this.f2417a;
+            return this.f2369a;
         }
 
         public Builder setActivity(ComponentName componentName) {
-            this.f2417a.e = componentName;
+            this.f2369a.e = componentName;
             return this;
         }
 
         public Builder setAlwaysBadged() {
-            this.f2417a.j = true;
+            this.f2369a.j = true;
             return this;
         }
 
         public Builder setCategories(Set<String> set) {
-            this.f2417a.l = set;
+            this.f2369a.l = set;
             return this;
         }
 
         public Builder setDisabledMessage(CharSequence charSequence) {
-            this.f2417a.h = charSequence;
+            this.f2369a.h = charSequence;
             return this;
         }
 
         public Builder setExtras(PersistableBundle persistableBundle) {
-            this.f2417a.p = persistableBundle;
+            this.f2369a.p = persistableBundle;
             return this;
         }
 
         public Builder setIcon(IconCompat iconCompat) {
-            this.f2417a.i = iconCompat;
+            this.f2369a.i = iconCompat;
             return this;
         }
 
@@ -250,7 +249,7 @@ public class ShortcutInfoCompat {
         }
 
         public Builder setIntents(Intent[] intentArr) {
-            this.f2417a.d = intentArr;
+            this.f2369a.d = intentArr;
             return this;
         }
 
@@ -260,23 +259,23 @@ public class ShortcutInfoCompat {
         }
 
         public Builder setLocusId(LocusIdCompat locusIdCompat) {
-            this.f2417a.m = locusIdCompat;
+            this.f2369a.m = locusIdCompat;
             return this;
         }
 
         public Builder setLongLabel(CharSequence charSequence) {
-            this.f2417a.g = charSequence;
+            this.f2369a.g = charSequence;
             return this;
         }
 
         @Deprecated
         public Builder setLongLived() {
-            this.f2417a.n = true;
+            this.f2369a.n = true;
             return this;
         }
 
         public Builder setLongLived(boolean z) {
-            this.f2417a.n = z;
+            this.f2369a.n = z;
             return this;
         }
 
@@ -285,17 +284,17 @@ public class ShortcutInfoCompat {
         }
 
         public Builder setPersons(Person[] personArr) {
-            this.f2417a.k = personArr;
+            this.f2369a.k = personArr;
             return this;
         }
 
         public Builder setRank(int i) {
-            this.f2417a.o = i;
+            this.f2369a.o = i;
             return this;
         }
 
         public Builder setShortLabel(CharSequence charSequence) {
-            this.f2417a.f = charSequence;
+            this.f2369a.f = charSequence;
             return this;
         }
 
@@ -393,7 +392,7 @@ public class ShortcutInfoCompat {
         if (this.i != null) {
             Drawable drawable = null;
             if (this.j) {
-                PackageManager packageManager = this.f2415a.getPackageManager();
+                PackageManager packageManager = this.f2367a.getPackageManager();
                 ComponentName componentName = this.e;
                 Drawable drawable2 = null;
                 if (componentName != null) {
@@ -405,10 +404,10 @@ public class ShortcutInfoCompat {
                 }
                 drawable = drawable2;
                 if (drawable2 == null) {
-                    drawable = this.f2415a.getApplicationInfo().loadIcon(packageManager);
+                    drawable = this.f2367a.getApplicationInfo().loadIcon(packageManager);
                 }
             }
-            this.i.addToShortcutIntent(intent, drawable, this.f2415a);
+            this.i.addToShortcutIntent(intent, drawable, this.f2367a);
         }
         return intent;
     }
@@ -464,7 +463,7 @@ public class ShortcutInfoCompat {
     }
 
     public String getPackage() {
-        return this.f2416c;
+        return this.f2368c;
     }
 
     public int getRank() {
@@ -508,10 +507,10 @@ public class ShortcutInfoCompat {
     }
 
     public ShortcutInfo toShortcutInfo() {
-        ShortcutInfo.Builder intents = new ShortcutInfo.Builder(this.f2415a, this.b).setShortLabel(this.f).setIntents(this.d);
+        ShortcutInfo.Builder intents = new ShortcutInfo.Builder(this.f2367a, this.b).setShortLabel(this.f).setIntents(this.d);
         IconCompat iconCompat = this.i;
         if (iconCompat != null) {
-            intents.setIcon(iconCompat.toIcon(this.f2415a));
+            intents.setIcon(iconCompat.toIcon(this.f2367a));
         }
         if (!TextUtils.isEmpty(this.g)) {
             intents.setLongLabel(this.g);

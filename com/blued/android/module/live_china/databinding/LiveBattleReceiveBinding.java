@@ -12,13 +12,9 @@ import com.blued.android.module.live_china.view.DisableScrollViewPager;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/LiveBattleReceiveBinding.class */
 public final class LiveBattleReceiveBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final FrameLayout f12145a;
+    public final FrameLayout a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f12146c;
+    public final ImageView c;
     public final ImageView d;
     public final ImageView e;
     public final FrameLayout f;
@@ -28,9 +24,9 @@ public final class LiveBattleReceiveBinding implements ViewBinding {
 
     private LiveBattleReceiveBinding(FrameLayout frameLayout, FrameLayout frameLayout2, ImageView imageView, ImageView imageView2, ImageView imageView3, ImageView imageView4, FrameLayout frameLayout3, RecyclerView recyclerView, DisableScrollViewPager disableScrollViewPager) {
         this.i = frameLayout;
-        this.f12145a = frameLayout2;
+        this.a = frameLayout2;
         this.b = imageView;
-        this.f12146c = imageView2;
+        this.c = imageView2;
         this.d = imageView3;
         this.e = imageView4;
         this.f = frameLayout3;
@@ -60,11 +56,11 @@ public final class LiveBattleReceiveBinding implements ViewBinding {
                         if (imageView4 != null) {
                             FrameLayout frameLayout2 = (FrameLayout) view.findViewById(R.id.root);
                             if (frameLayout2 != null) {
-                                RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rv_list);
-                                if (recyclerView != null) {
+                                RecyclerView findViewById = view.findViewById(R.id.rv_list);
+                                if (findViewById != null) {
                                     DisableScrollViewPager disableScrollViewPager = (DisableScrollViewPager) view.findViewById(R.id.view_pager);
                                     if (disableScrollViewPager != null) {
-                                        return new LiveBattleReceiveBinding((FrameLayout) view, frameLayout, imageView, imageView2, imageView3, imageView4, frameLayout2, recyclerView, disableScrollViewPager);
+                                        return new LiveBattleReceiveBinding((FrameLayout) view, frameLayout, imageView, imageView2, imageView3, imageView4, frameLayout2, findViewById, disableScrollViewPager);
                                     }
                                     str = "viewPager";
                                 } else {
@@ -91,7 +87,6 @@ public final class LiveBattleReceiveBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.i;

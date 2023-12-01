@@ -15,11 +15,11 @@ import java.util.concurrent.CountDownLatch;
 public class f implements k {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f39004a;
+    private static String f25313a;
     private static boolean b = false;
 
     /* renamed from: c  reason: collision with root package name */
-    private static boolean f39005c = false;
+    private static boolean f25314c = false;
     private static final CountDownLatch d = new CountDownLatch(1);
     private String e;
     private String f;
@@ -48,23 +48,23 @@ public class f implements k {
     @Override // com.tencent.tendinsv.b.k
     public String b(Context context) {
         h hVar;
-        if (!TextUtils.isEmpty(f39004a) || (hVar = this.i) == null || hVar.a() == null) {
-            return f39004a;
+        if (!TextUtils.isEmpty(f25313a) || (hVar = this.i) == null || hVar.a() == null) {
+            return f25313a;
         }
         try {
             String a2 = this.i.a().a(d(context), e(context), a(), b());
-            f39004a = a2;
+            f25313a = a2;
             if (!TextUtils.isEmpty(a2)) {
                 context.unbindService(this.i);
             }
         } catch (Throwable th) {
         }
-        return f39004a;
+        return f25313a;
     }
 
     @Override // com.tencent.tendinsv.b.k
     public boolean b_(Context context) {
-        if (f39005c) {
+        if (f25314c) {
             return b;
         }
         if (context == null || TextUtils.isEmpty(this.e)) {
@@ -80,7 +80,7 @@ public class f implements k {
                 return false;
             }
         }
-        f39005c = true;
+        f25314c = true;
         return b;
     }
 

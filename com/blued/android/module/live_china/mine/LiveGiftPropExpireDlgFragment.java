@@ -5,7 +5,6 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.anythink.expressad.d.a.b;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.framework.view.shape.ShapeTextView;
@@ -54,10 +53,10 @@ public class LiveGiftPropExpireDlgFragment extends LiveBaseDialogFragment {
             this.o.setVisibility(8);
         } else {
             this.o.setVisibility(0);
-            if (this.r.effect_time < b.P) {
+            if (this.r.effect_time < 3600) {
                 this.o.setText(String.format(getString(R.string.live_pocket_exp_time_minute), Long.valueOf(this.r.effect_time / 60)));
             } else if (this.r.effect_time <= 86400) {
-                this.o.setText(String.format(getString(R.string.live_pocket_exp_time_hour), Long.valueOf(this.r.effect_time / b.P)));
+                this.o.setText(String.format(getString(R.string.live_pocket_exp_time_hour), Long.valueOf(this.r.effect_time / 3600)));
             } else {
                 this.o.setText(String.format(getString(R.string.live_pocket_exp_time_day), Long.valueOf(this.r.effect_time / 86400)));
             }
@@ -123,10 +122,10 @@ public class LiveGiftPropExpireDlgFragment extends LiveBaseDialogFragment {
     @Override // com.blued.android.module.common.fragment.LiveBaseDialogFragment
     public void f() {
         super.f();
-        this.r = (LiveGiftModel) this.f10822c.getSerializable("gift_model");
+        this.r = (LiveGiftModel) this.c.getSerializable("gift_model");
     }
 
-    @Override // com.blued.android.module.common.fragment.LiveBaseDialogFragment, com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.common.fragment.LiveBaseDialogFragment, com.blued.android.core.ui.BaseDialogFragment
     public void onViewCreated(View view, Bundle bundle) {
         super.onViewCreated(view, bundle);
         k();

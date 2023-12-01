@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static a f40539a;
+    private static a f26848a;
     private ExecutorService b;
 
     protected a() {
@@ -18,10 +18,10 @@ public final class a {
     }
 
     public static a a() {
-        if (f40539a == null) {
-            f40539a = new a();
+        if (f26848a == null) {
+            f26848a = new a();
         }
-        return f40539a;
+        return f26848a;
     }
 
     public final void a(b bVar) {

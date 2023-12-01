@@ -2,6 +2,7 @@ package com.amap.api.location;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import com.android.internal.widget.LockPatternUtils;
 import com.autonavi.aps.amapapi.utils.b;
 
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/location/AMapLocationClientOption.class */
@@ -16,9 +17,7 @@ public class AMapLocationClientOption implements Parcelable, Cloneable {
     private float D;
     private AMapLocationPurpose E;
     boolean b;
-
-    /* renamed from: c  reason: collision with root package name */
-    String f5475c;
+    String c;
     private long h;
     private long i;
     private boolean j;
@@ -38,9 +37,7 @@ public class AMapLocationClientOption implements Parcelable, Cloneable {
     private long y;
     private GeoLanguage z;
     private static AMapLocationProtocol p = AMapLocationProtocol.HTTP;
-
-    /* renamed from: a  reason: collision with root package name */
-    static String f5474a = "";
+    static String a = "";
     public static final Parcelable.Creator<AMapLocationClientOption> CREATOR = new Parcelable.Creator<AMapLocationClientOption>() { // from class: com.amap.api.location.AMapLocationClientOption.1
         private static AMapLocationClientOption a(Parcel parcel) {
             return new AMapLocationClientOption(parcel);
@@ -61,30 +58,28 @@ public class AMapLocationClientOption implements Parcelable, Cloneable {
         }
     };
     public static boolean OPEN_ALWAYS_SCAN_WIFI = true;
-    public static long SCAN_WIFI_INTERVAL = 30000;
+    public static long SCAN_WIFI_INTERVAL = LockPatternUtils.FAILED_ATTEMPT_TIMEOUT_MS;
 
     /* renamed from: com.amap.api.location.AMapLocationClientOption$2  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/location/AMapLocationClientOption$2.class */
     static final /* synthetic */ class AnonymousClass2 {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f5476a;
+        static final /* synthetic */ int[] a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x002f -> B:19:0x001f). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:9:0x002b -> B:15:0x0014). Please submit an issue!!! */
         static {
             int[] iArr = new int[AMapLocationPurpose.values().length];
-            f5476a = iArr;
+            a = iArr;
             try {
                 iArr[AMapLocationPurpose.SignIn.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f5476a[AMapLocationPurpose.Transport.ordinal()] = 2;
+                a[AMapLocationPurpose.Transport.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f5476a[AMapLocationPurpose.Sport.ordinal()] = 3;
+                a[AMapLocationPurpose.Sport.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
         }
@@ -102,16 +97,14 @@ public class AMapLocationClientOption implements Parcelable, Cloneable {
         HTTP(0),
         HTTPS(1);
         
-
-        /* renamed from: a  reason: collision with root package name */
-        private int f5478a;
+        private int a;
 
         AMapLocationProtocol(int i) {
-            this.f5478a = i;
+            this.a = i;
         }
 
         public final int getValue() {
-            return this.f5478a;
+            return this.a;
         }
     }
 
@@ -145,8 +138,8 @@ public class AMapLocationClientOption implements Parcelable, Cloneable {
         this.u = false;
         this.v = false;
         this.w = true;
-        this.x = 30000L;
-        this.y = 30000L;
+        this.x = LockPatternUtils.FAILED_ATTEMPT_TIMEOUT_MS;
+        this.y = LockPatternUtils.FAILED_ATTEMPT_TIMEOUT_MS;
         this.z = GeoLanguage.DEFAULT;
         this.A = false;
         this.B = 1500;
@@ -154,7 +147,7 @@ public class AMapLocationClientOption implements Parcelable, Cloneable {
         this.D = 0.0f;
         this.E = null;
         this.b = false;
-        this.f5475c = null;
+        this.c = null;
     }
 
     protected AMapLocationClientOption(Parcel parcel) {
@@ -173,8 +166,8 @@ public class AMapLocationClientOption implements Parcelable, Cloneable {
         this.u = false;
         this.v = false;
         this.w = true;
-        this.x = 30000L;
-        this.y = 30000L;
+        this.x = LockPatternUtils.FAILED_ATTEMPT_TIMEOUT_MS;
+        this.y = LockPatternUtils.FAILED_ATTEMPT_TIMEOUT_MS;
         this.z = GeoLanguage.DEFAULT;
         this.A = false;
         this.B = 1500;
@@ -182,7 +175,7 @@ public class AMapLocationClientOption implements Parcelable, Cloneable {
         this.D = 0.0f;
         this.E = null;
         this.b = false;
-        this.f5475c = null;
+        this.c = null;
         this.h = parcel.readLong();
         this.i = parcel.readLong();
         this.j = parcel.readByte() != 0;
@@ -242,7 +235,7 @@ public class AMapLocationClientOption implements Parcelable, Cloneable {
     }
 
     public static String getAPIKEY() {
-        return f5474a;
+        return a;
     }
 
     public static boolean isDownloadCoordinateConvertLibrary() {
@@ -269,7 +262,7 @@ public class AMapLocationClientOption implements Parcelable, Cloneable {
     }
 
     /* renamed from: clone */
-    public AMapLocationClientOption m2373clone() {
+    public AMapLocationClientOption m8816clone() {
         try {
             super.clone();
         } catch (Throwable th) {
@@ -416,7 +409,7 @@ public class AMapLocationClientOption implements Parcelable, Cloneable {
             j2 = 5000;
         }
         long j3 = j2;
-        if (j2 > 30000) {
+        if (j2 > LockPatternUtils.FAILED_ATTEMPT_TIMEOUT_MS) {
             j3 = 30000;
         }
         this.y = j3;
@@ -460,7 +453,7 @@ public class AMapLocationClientOption implements Parcelable, Cloneable {
     public AMapLocationClientOption setLocationPurpose(AMapLocationPurpose aMapLocationPurpose) {
         this.E = aMapLocationPurpose;
         if (aMapLocationPurpose != null) {
-            int i = AnonymousClass2.f5476a[aMapLocationPurpose.ordinal()];
+            int i = AnonymousClass2.a[aMapLocationPurpose.ordinal()];
             if (i != 1) {
                 if (i == 2) {
                     int i2 = d;
@@ -468,7 +461,7 @@ public class AMapLocationClientOption implements Parcelable, Cloneable {
                     if ((i2 & i3) == 0) {
                         this.b = true;
                         d = i2 | i3;
-                        this.f5475c = "transport";
+                        this.c = "transport";
                     }
                     this.o = AMapLocationMode.Hight_Accuracy;
                     this.j = false;
@@ -485,7 +478,7 @@ public class AMapLocationClientOption implements Parcelable, Cloneable {
                     if ((i4 & i5) == 0) {
                         this.b = true;
                         d = i4 | i5;
-                        this.f5475c = "sport";
+                        this.c = "sport";
                     }
                     this.o = AMapLocationMode.Hight_Accuracy;
                     this.j = false;
@@ -507,7 +500,7 @@ public class AMapLocationClientOption implements Parcelable, Cloneable {
             if ((i6 & i7) == 0) {
                 this.b = true;
                 d = i6 | i7;
-                this.f5475c = "signin";
+                this.c = "signin";
             }
         }
         return this;

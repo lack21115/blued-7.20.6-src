@@ -12,17 +12,17 @@ import org.json.JSONObject;
 public class a0 implements Callable<HonorPushDataMsg> {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Intent f22279a;
+    public final Intent f8671a;
 
     public a0(Intent intent) {
-        this.f22279a = intent;
+        this.f8671a = intent;
     }
 
     @Override // java.util.concurrent.Callable
     public HonorPushDataMsg call() throws Exception {
         byte[] bArr;
         String str;
-        Intent intent = this.f22279a;
+        Intent intent = this.f8671a;
         HonorPushDataMsg honorPushDataMsg = null;
         if (intent != null) {
             long j = 0;
@@ -32,7 +32,7 @@ public class a0 implements Callable<HonorPushDataMsg> {
                 b.a("PassByMsgIntentParser", "parserMsgId", e);
             }
             try {
-                bArr = this.f22279a.getByteArrayExtra("msg_content");
+                bArr = this.f8671a.getByteArrayExtra("msg_content");
             } catch (Exception e2) {
                 b.a("PassByMsgIntentParser", "parseMsgContent", e2);
                 bArr = null;

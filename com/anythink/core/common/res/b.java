@@ -18,12 +18,8 @@ import java.util.Map;
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/res/b.class */
 public class b {
     private static final String b = "ImageLoader";
-
-    /* renamed from: c  reason: collision with root package name */
-    private static volatile b f6894c;
-
-    /* renamed from: a  reason: collision with root package name */
-    Context f6895a;
+    private static volatile b c;
+    Context a;
     private Map<String, Integer> d;
     private c<String, SoftReference<Bitmap>> e;
     private final Object f = new Object();
@@ -33,27 +29,23 @@ public class b {
     /* renamed from: com.anythink.core.common.res.b$1  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/res/b$1.class */
     public final class AnonymousClass1 implements Runnable {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ Bitmap f6896a;
+        final /* synthetic */ Bitmap a;
         final /* synthetic */ a b;
-
-        /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ String f6897c;
+        final /* synthetic */ String c;
 
         AnonymousClass1(Bitmap bitmap, a aVar, String str) {
-            this.f6896a = bitmap;
+            this.a = bitmap;
             this.b = aVar;
-            this.f6897c = str;
+            this.c = str;
         }
 
         @Override // java.lang.Runnable
         public final void run() {
-            Bitmap bitmap = this.f6896a;
+            Bitmap bitmap = this.a;
             if (bitmap != null) {
-                this.b.onSuccess(this.f6897c, bitmap);
+                this.b.onSuccess(this.c, bitmap);
             } else {
-                this.b.onFail(this.f6897c, "Bitmap load fail");
+                this.b.onFail(this.c, "Bitmap load fail");
             }
         }
     }
@@ -62,55 +54,47 @@ public class b {
     /* renamed from: com.anythink.core.common.res.b$2  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/res/b$2.class */
     public final class AnonymousClass2 implements Runnable {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ a f6898a;
+        final /* synthetic */ a a;
         final /* synthetic */ String b;
-
-        /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ String f6899c;
+        final /* synthetic */ String c;
 
         AnonymousClass2(a aVar, String str, String str2) {
-            this.f6898a = aVar;
+            this.a = aVar;
             this.b = str;
-            this.f6899c = str2;
+            this.c = str2;
         }
 
         @Override // java.lang.Runnable
         public final void run() {
-            this.f6898a.onFail(this.b, this.f6899c);
+            this.a.onFail(this.b, this.c);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.anythink.core.common.res.b$5  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/res/b$5.class */
-    public final class AnonymousClass5 implements a.InterfaceC0109a {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ int f6903a;
+    public final class AnonymousClass5 implements a.InterfaceC0069a {
+        final /* synthetic */ int a;
         final /* synthetic */ int b;
-
-        /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ e f6904c;
+        final /* synthetic */ e c;
 
         AnonymousClass5(int i, int i2, e eVar) {
-            this.f6903a = i;
+            this.a = i;
             this.b = i2;
-            this.f6904c = eVar;
+            this.c = eVar;
         }
 
-        @Override // com.anythink.core.common.res.image.a.InterfaceC0109a
+        @Override // com.anythink.core.common.res.image.a.InterfaceC0069a
         public final void a(e eVar) {
             new StringBuilder("Load Success:").append(eVar.f);
-            Bitmap a2 = b.this.a(eVar, this.f6903a, this.b);
-            if (a2 != null) {
-                b.this.a(eVar.f, a2);
+            Bitmap a = b.this.a(eVar, this.a, this.b);
+            if (a != null) {
+                b.this.a(eVar.f, a);
             }
-            b.a(b.this, this.f6904c.f, a2);
+            b.a(b.this, this.c.f, a);
         }
 
-        @Override // com.anythink.core.common.res.image.a.InterfaceC0109a
+        @Override // com.anythink.core.common.res.image.a.InterfaceC0069a
         public final void a(e eVar, String str) {
             b.a(b.this, eVar.f, str);
         }
@@ -124,7 +108,7 @@ public class b {
     }
 
     private b(Context context) {
-        this.f6895a = context.getApplicationContext();
+        this.a = context.getApplicationContext();
         int maxMemory = ((int) Runtime.getRuntime().maxMemory()) / 5;
         StringBuilder sb = new StringBuilder("ImageLoad init cache size: ");
         sb.append(maxMemory);
@@ -190,9 +174,8 @@ public class b {
                 return 0;
             }
 
-            /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.anythink.core.common.res.c
-            public final /* synthetic */ void a(boolean z, String str, SoftReference<Bitmap> softReference, SoftReference<Bitmap> softReference2) {
+            protected final /* synthetic */ void a(boolean z, String str, SoftReference<Bitmap> softReference, SoftReference<Bitmap> softReference2) {
                 Bitmap bitmap;
                 String str2 = str;
                 SoftReference<Bitmap> softReference3 = softReference;
@@ -227,18 +210,18 @@ public class b {
     }
 
     public static b a(Context context) {
-        if (f6894c == null) {
+        if (c == null) {
             synchronized (b.class) {
                 try {
-                    if (f6894c == null) {
-                        f6894c = new b(context);
+                    if (c == null) {
+                        c = new b(context);
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f6894c;
+        return c;
     }
 
     private void a() {
@@ -360,7 +343,7 @@ public class b {
         int i4 = i;
         if (i <= 0) {
             try {
-                i4 = this.f6895a.getResources().getDisplayMetrics().widthPixels;
+                i4 = this.a.getResources().getDisplayMetrics().widthPixels;
             } catch (Throwable th) {
                 i3 = i2;
             }
@@ -369,11 +352,11 @@ public class b {
         i3 = i2;
         if (i2 <= 0) {
             i = i4;
-            i3 = this.f6895a.getResources().getDisplayMetrics().heightPixels;
+            i3 = this.a.getResources().getDisplayMetrics().heightPixels;
             i = i4;
         }
         synchronized (this.f) {
-            FileInputStream a4 = d.a(this.f6895a).a(eVar.e, a3);
+            FileInputStream a4 = d.a(this.a).a(eVar.e, a3);
             if (a4 == null) {
                 return null;
             }

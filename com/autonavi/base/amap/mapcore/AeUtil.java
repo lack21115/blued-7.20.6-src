@@ -3,20 +3,19 @@ package com.autonavi.base.amap.mapcore;
 import android.content.Context;
 import android.os.Looper;
 import android.text.TextUtils;
-import com.amap.api.col.p0003sl.dt;
-import com.amap.api.col.p0003sl.du;
-import com.amap.api.col.p0003sl.dw;
-import com.amap.api.col.p0003sl.dx;
-import com.amap.api.col.p0003sl.dy;
-import com.amap.api.col.p0003sl.ia;
-import com.amap.api.col.p0003sl.iw;
-import com.amap.api.col.p0003sl.je;
-import com.amap.api.col.p0003sl.jg;
-import com.amap.api.col.p0003sl.lc;
+import com.amap.api.col.3sl.dt;
+import com.amap.api.col.3sl.du;
+import com.amap.api.col.3sl.dw;
+import com.amap.api.col.3sl.dx;
+import com.amap.api.col.3sl.dy;
+import com.amap.api.col.3sl.ia;
+import com.amap.api.col.3sl.iw;
+import com.amap.api.col.3sl.je;
+import com.amap.api.col.3sl.jg;
+import com.amap.api.col.3sl.lc;
 import com.autonavi.amap.mapcore.MsgProcessor;
 import com.autonavi.base.ae.gmap.GLMapEngine;
 import com.autonavi.config.a;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -61,7 +60,7 @@ public class AeUtil {
     private static String formatFileSeparator(String str) {
         String str2 = str;
         if (str != null) {
-            str2 = str.replace("//", BridgeUtil.SPLIT_MARK);
+            str2 = str.replace("//", "/");
         }
         return str2;
     }
@@ -106,7 +105,6 @@ public class AeUtil {
         }
         try {
             du.a().a(new lc() { // from class: com.autonavi.base.amap.mapcore.AeUtil.2
-                @Override // com.amap.api.col.p0003sl.lc
                 public final void runTask() {
                     AeUtil.loadAndSaveIntersectionRes("map_assets/VM3DRes", GLMapEngine.InitParam.this.mIntersectionResPath, context);
                 }
@@ -130,9 +128,8 @@ public class AeUtil {
         if (Looper.myLooper() == Looper.getMainLooper()) {
             try {
                 du.a().a(new lc() { // from class: com.autonavi.base.amap.mapcore.AeUtil.1
-                    @Override // com.amap.api.col.p0003sl.lc
                     public final void runTask() {
-                        AeUtil.loadEngineRes(String.this, context);
+                        AeUtil.loadEngineRes(mapBaseStorage, context);
                     }
                 });
             } catch (Exception e) {
@@ -183,7 +180,7 @@ public class AeUtil {
                 }
                 String str3 = list[i2];
                 File file2 = new File(str2, str3);
-                readAssetsFileAndSave(str + BridgeUtil.SPLIT_MARK + str3, file2.getAbsolutePath(), context);
+                readAssetsFileAndSave(str + "/" + str3, file2.getAbsolutePath(), context);
                 i = i2 + 1;
             }
         } catch (Exception e) {
@@ -199,7 +196,6 @@ public class AeUtil {
     /* JADX WARN: Removed duplicated region for block: B:75:0x01cb  */
     /* JADX WARN: Removed duplicated region for block: B:78:0x01ed  */
     /* JADX WARN: Removed duplicated region for block: B:89:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Type inference failed for: r5v6, types: [java.io.IOException] */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:39:0x011e -> B:80:0x01e9). Please submit an issue!!! */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -218,13 +214,13 @@ public class AeUtil {
             if (a.b) {
                 return true;
             }
-            System.loadLibrary(a.f9288a);
+            System.loadLibrary(a.f6448a);
             a.b = true;
             return true;
         } catch (Throwable th) {
             iw.c(th, "AeUtil", "loadLib");
             dw.a(th);
-            String str = dx.f4872c;
+            String str = dx.c;
             dy.b(str, "load so failed " + th.getMessage());
             return false;
         }

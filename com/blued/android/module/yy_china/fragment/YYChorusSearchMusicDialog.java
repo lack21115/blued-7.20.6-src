@@ -20,6 +20,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import com.blued.android.core.ui.ActivityFragmentActive;
 import com.blued.android.framework.http.BluedUIHttpResponse;
 import com.blued.android.framework.http.parser.BluedEntity;
@@ -58,13 +59,9 @@ import kotlin.text.StringsKt;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYChorusSearchMusicDialog.class */
 public final class YYChorusSearchMusicDialog extends BaseFullScreenDialog implements OnSoftKeyboardChangeListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    private FragmentYyKtvSearchMusicBinding f17147a;
+    private FragmentYyKtvSearchMusicBinding a;
     private SongAdapter b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private YYRoomModel f17148c;
+    private YYRoomModel c;
     private String d = "";
     private String e = "";
     private boolean f;
@@ -73,15 +70,13 @@ public final class YYChorusSearchMusicDialog extends BaseFullScreenDialog implem
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYChorusSearchMusicDialog$SongAdapter.class */
     public final class SongAdapter extends BaseQuickAdapter<YYKtvMusicModel, BaseViewHolder> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ YYChorusSearchMusicDialog f17149a;
+        final /* synthetic */ YYChorusSearchMusicDialog a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public SongAdapter(YYChorusSearchMusicDialog this$0) {
             super(R.layout.item_search_chorus_music_layout);
             Intrinsics.e(this$0, "this$0");
-            this.f17149a = this$0;
+            this.a = this$0;
         }
 
         private final SpannableString a(String str, String str2) {
@@ -115,7 +110,7 @@ public final class YYChorusSearchMusicDialog extends BaseFullScreenDialog implem
                 this$0.a(str, str2, str3, str4, yYKtvMusicModel.duration);
                 return;
             }
-            FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding = this$0.f17147a;
+            FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding = this$0.a;
             FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding2 = fragmentYyKtvSearchMusicBinding;
             if (fragmentYyKtvSearchMusicBinding == null) {
                 Intrinsics.c("mBinding");
@@ -123,7 +118,7 @@ public final class YYChorusSearchMusicDialog extends BaseFullScreenDialog implem
             }
             EditText editText = fragmentYyKtvSearchMusicBinding2.d;
             Context context = editText == null ? null : editText.getContext();
-            FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding3 = this$0.f17147a;
+            FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding3 = this$0.a;
             if (fragmentYyKtvSearchMusicBinding3 == null) {
                 Intrinsics.c("mBinding");
                 fragmentYyKtvSearchMusicBinding3 = null;
@@ -132,7 +127,6 @@ public final class YYChorusSearchMusicDialog extends BaseFullScreenDialog implem
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.chad.library.adapter.base.BaseQuickAdapter
         /* renamed from: a */
         public void convert(BaseViewHolder baseViewHolder, final YYKtvMusicModel yYKtvMusicModel) {
             TextView textView = baseViewHolder == null ? null : (TextView) baseViewHolder.getView(R.id.tv_music_name);
@@ -140,7 +134,7 @@ public final class YYChorusSearchMusicDialog extends BaseFullScreenDialog implem
             ImageView imageView = baseViewHolder == null ? null : (ImageView) baseViewHolder.getView(R.id.img_logo);
             ShapeTextView shapeTextView = baseViewHolder == null ? null : (ShapeTextView) baseViewHolder.getView(R.id.btn_book_in);
             if (yYKtvMusicModel != null) {
-                YYChorusSearchMusicDialog yYChorusSearchMusicDialog = this.f17149a;
+                YYChorusSearchMusicDialog yYChorusSearchMusicDialog = this.a;
                 if (textView != null) {
                     textView.setText(a(yYKtvMusicModel.musicName, yYChorusSearchMusicDialog.e));
                 }
@@ -154,7 +148,7 @@ public final class YYChorusSearchMusicDialog extends BaseFullScreenDialog implem
             if (shapeTextView == null) {
                 return;
             }
-            final YYChorusSearchMusicDialog yYChorusSearchMusicDialog2 = this.f17149a;
+            final YYChorusSearchMusicDialog yYChorusSearchMusicDialog2 = this.a;
             shapeTextView.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYChorusSearchMusicDialog$SongAdapter$xsF3NVJm_eG9hv_pZrsO7uAKvoA
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -168,9 +162,7 @@ public final class YYChorusSearchMusicDialog extends BaseFullScreenDialog implem
         final View decorView = activity.getWindow().getDecorView();
         Intrinsics.c(decorView, "activity.window.decorView");
         decorView.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() { // from class: com.blued.android.module.yy_china.fragment.YYChorusSearchMusicDialog$observeSoftKeyboard$1
-
-            /* renamed from: c  reason: collision with root package name */
-            private int f17155c = -1;
+            private int c = -1;
 
             @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
             public void onGlobalLayout() {
@@ -179,10 +171,10 @@ public final class YYChorusSearchMusicDialog extends BaseFullScreenDialog implem
                 int i = rect.bottom;
                 int height = View.this.getHeight();
                 int i2 = height - i;
-                if (this.f17155c != i2) {
+                if (this.c != i2) {
                     onSoftKeyboardChangeListener.a(i2, true ^ (((double) i) / ((double) height) > 0.8d));
                 }
-                this.f17155c = height;
+                this.c = height;
             }
         });
     }
@@ -198,7 +190,7 @@ public final class YYChorusSearchMusicDialog extends BaseFullScreenDialog implem
             this$0.dismissAllowingStateLoss();
             return;
         }
-        FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding = this$0.f17147a;
+        FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding = this$0.a;
         FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding2 = fragmentYyKtvSearchMusicBinding;
         if (fragmentYyKtvSearchMusicBinding == null) {
             Intrinsics.c("mBinding");
@@ -206,7 +198,7 @@ public final class YYChorusSearchMusicDialog extends BaseFullScreenDialog implem
         }
         EditText editText = fragmentYyKtvSearchMusicBinding2.d;
         Context context = editText == null ? null : editText.getContext();
-        FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding3 = this$0.f17147a;
+        FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding3 = this$0.a;
         if (fragmentYyKtvSearchMusicBinding3 == null) {
             Intrinsics.c("mBinding");
             fragmentYyKtvSearchMusicBinding3 = null;
@@ -222,14 +214,14 @@ public final class YYChorusSearchMusicDialog extends BaseFullScreenDialog implem
         String str = (String) keywords.get(i);
         this$0.e = str;
         if (str != null) {
-            FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding = this$0.f17147a;
+            FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding = this$0.a;
             FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding2 = fragmentYyKtvSearchMusicBinding;
             if (fragmentYyKtvSearchMusicBinding == null) {
                 Intrinsics.c("mBinding");
                 fragmentYyKtvSearchMusicBinding2 = null;
             }
             fragmentYyKtvSearchMusicBinding2.d.setText(str);
-            FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding3 = this$0.f17147a;
+            FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding3 = this$0.a;
             FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding4 = fragmentYyKtvSearchMusicBinding3;
             if (fragmentYyKtvSearchMusicBinding3 == null) {
                 Intrinsics.c("mBinding");
@@ -237,14 +229,14 @@ public final class YYChorusSearchMusicDialog extends BaseFullScreenDialog implem
             }
             fragmentYyKtvSearchMusicBinding4.d.setSelection(str.length());
         }
-        FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding5 = this$0.f17147a;
+        FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding5 = this$0.a;
         FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding6 = fragmentYyKtvSearchMusicBinding5;
         if (fragmentYyKtvSearchMusicBinding5 == null) {
             Intrinsics.c("mBinding");
             fragmentYyKtvSearchMusicBinding6 = null;
         }
         Context context = fragmentYyKtvSearchMusicBinding6.d.getContext();
-        FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding7 = this$0.f17147a;
+        FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding7 = this$0.a;
         if (fragmentYyKtvSearchMusicBinding7 == null) {
             Intrinsics.c("mBinding");
             fragmentYyKtvSearchMusicBinding7 = null;
@@ -255,13 +247,13 @@ public final class YYChorusSearchMusicDialog extends BaseFullScreenDialog implem
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void a(final String str, final String str2, String str3, final String str4, long j) {
-        YYRoomModel yYRoomModel = this.f17148c;
+        YYRoomModel yYRoomModel = this.c;
         String str5 = yYRoomModel == null ? null : yYRoomModel.room_id;
-        final ActivityFragmentActive a2 = a();
-        YYRoomHttpUtils.l(str5, str, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<Object>>(a2) { // from class: com.blued.android.module.yy_china.fragment.YYChorusSearchMusicDialog$chooseSong$1
+        final ActivityFragmentActive a = a();
+        YYRoomHttpUtils.l(str5, str, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<Object>>(a) { // from class: com.blued.android.module.yy_china.fragment.YYChorusSearchMusicDialog$chooseSong$1
             /* JADX INFO: Access modifiers changed from: protected */
             /* JADX WARN: Code restructure failed: missing block: B:8:0x001c, code lost:
-                r0 = r4.f17150a.f17148c;
+                r0 = r4.a.c;
              */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
@@ -391,7 +383,7 @@ public final class YYChorusSearchMusicDialog extends BaseFullScreenDialog implem
     public static final boolean a(YYChorusSearchMusicDialog this$0, TextView textView, int i, KeyEvent keyEvent) {
         Intrinsics.e(this$0, "this$0");
         if (i == 3) {
-            FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding = this$0.f17147a;
+            FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding = this$0.a;
             FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding2 = fragmentYyKtvSearchMusicBinding;
             if (fragmentYyKtvSearchMusicBinding == null) {
                 Intrinsics.c("mBinding");
@@ -408,7 +400,7 @@ public final class YYChorusSearchMusicDialog extends BaseFullScreenDialog implem
             }
             this$0.d = "";
             this$0.i();
-            FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding3 = this$0.f17147a;
+            FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding3 = this$0.a;
             FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding4 = fragmentYyKtvSearchMusicBinding3;
             if (fragmentYyKtvSearchMusicBinding3 == null) {
                 Intrinsics.c("mBinding");
@@ -416,7 +408,7 @@ public final class YYChorusSearchMusicDialog extends BaseFullScreenDialog implem
             }
             EditText editText2 = fragmentYyKtvSearchMusicBinding4.d;
             Context context = editText2 == null ? null : editText2.getContext();
-            FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding5 = this$0.f17147a;
+            FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding5 = this$0.a;
             if (fragmentYyKtvSearchMusicBinding5 == null) {
                 Intrinsics.c("mBinding");
                 fragmentYyKtvSearchMusicBinding5 = null;
@@ -431,7 +423,7 @@ public final class YYChorusSearchMusicDialog extends BaseFullScreenDialog implem
     public static final void b(YYChorusSearchMusicDialog this$0, View view) {
         Intrinsics.e(this$0, "this$0");
         if (this$0.f) {
-            FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding = this$0.f17147a;
+            FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding = this$0.a;
             FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding2 = fragmentYyKtvSearchMusicBinding;
             if (fragmentYyKtvSearchMusicBinding == null) {
                 Intrinsics.c("mBinding");
@@ -439,7 +431,7 @@ public final class YYChorusSearchMusicDialog extends BaseFullScreenDialog implem
             }
             EditText editText = fragmentYyKtvSearchMusicBinding2.d;
             Context context = editText == null ? null : editText.getContext();
-            FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding3 = this$0.f17147a;
+            FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding3 = this$0.a;
             if (fragmentYyKtvSearchMusicBinding3 == null) {
                 Intrinsics.c("mBinding");
                 fragmentYyKtvSearchMusicBinding3 = null;
@@ -453,7 +445,7 @@ public final class YYChorusSearchMusicDialog extends BaseFullScreenDialog implem
         Editable text;
         Editable text2;
         Intrinsics.e(this$0, "this$0");
-        FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding = this$0.f17147a;
+        FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding = this$0.a;
         FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding2 = fragmentYyKtvSearchMusicBinding;
         if (fragmentYyKtvSearchMusicBinding == null) {
             Intrinsics.c("mBinding");
@@ -464,7 +456,7 @@ public final class YYChorusSearchMusicDialog extends BaseFullScreenDialog implem
             this$0.dismissAllowingStateLoss();
             return;
         }
-        FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding3 = this$0.f17147a;
+        FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding3 = this$0.a;
         if (fragmentYyKtvSearchMusicBinding3 == null) {
             Intrinsics.c("mBinding");
             fragmentYyKtvSearchMusicBinding3 = null;
@@ -481,14 +473,14 @@ public final class YYChorusSearchMusicDialog extends BaseFullScreenDialog implem
         FrameLayout frameLayout;
         BluedLoadMoreView bluedLoadMoreView = new BluedLoadMoreView(getContext());
         bluedLoadMoreView.setBackgroundColorRes(R.color.transparent);
-        FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding = this.f17147a;
+        FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding = this.a;
         FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding2 = fragmentYyKtvSearchMusicBinding;
         if (fragmentYyKtvSearchMusicBinding == null) {
             Intrinsics.c("mBinding");
             fragmentYyKtvSearchMusicBinding2 = null;
         }
         fragmentYyKtvSearchMusicBinding2.i.a(bluedLoadMoreView);
-        FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding3 = this.f17147a;
+        FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding3 = this.a;
         FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding4 = fragmentYyKtvSearchMusicBinding3;
         if (fragmentYyKtvSearchMusicBinding3 == null) {
             Intrinsics.c("mBinding");
@@ -498,19 +490,17 @@ public final class YYChorusSearchMusicDialog extends BaseFullScreenDialog implem
         if (refreshFooter != null && (view = refreshFooter.getView()) != null && (frameLayout = (FrameLayout) view.findViewById(R.id.layout_load_more_view)) != null) {
             frameLayout.setBackgroundResource(R.color.transparent);
         }
-        FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding5 = this.f17147a;
+        FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding5 = this.a;
         if (fragmentYyKtvSearchMusicBinding5 == null) {
             Intrinsics.c("mBinding");
             fragmentYyKtvSearchMusicBinding5 = null;
         }
         fragmentYyKtvSearchMusicBinding5.i.a(new OnRefreshLoadMoreListener() { // from class: com.blued.android.module.yy_china.fragment.YYChorusSearchMusicDialog$initRefreshView$1
-            @Override // com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
             public void onLoadMore(RefreshLayout refreshLayout) {
                 Intrinsics.e(refreshLayout, "refreshLayout");
                 YYChorusSearchMusicDialog.this.i();
             }
 
-            @Override // com.scwang.smartrefresh.layout.listener.OnRefreshListener
             public void onRefresh(RefreshLayout refreshLayout) {
                 Intrinsics.e(refreshLayout, "refreshLayout");
                 YYChorusSearchMusicDialog.this.d = "";
@@ -522,11 +512,11 @@ public final class YYChorusSearchMusicDialog extends BaseFullScreenDialog implem
     private final void g() {
         FragmentActivity activity = getActivity();
         if (activity != null) {
-            a(activity, this);
+            a((Activity) activity, this);
         }
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        RecyclerView.LayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setOrientation(1);
-        FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding = this.f17147a;
+        FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding = this.a;
         FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding2 = fragmentYyKtvSearchMusicBinding;
         if (fragmentYyKtvSearchMusicBinding == null) {
             Intrinsics.c("mBinding");
@@ -534,14 +524,14 @@ public final class YYChorusSearchMusicDialog extends BaseFullScreenDialog implem
         }
         fragmentYyKtvSearchMusicBinding2.h.setLayoutManager(linearLayoutManager);
         this.b = new SongAdapter(this);
-        FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding3 = this.f17147a;
+        FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding3 = this.a;
         FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding4 = fragmentYyKtvSearchMusicBinding3;
         if (fragmentYyKtvSearchMusicBinding3 == null) {
             Intrinsics.c("mBinding");
             fragmentYyKtvSearchMusicBinding4 = null;
         }
         fragmentYyKtvSearchMusicBinding4.h.setAdapter(this.b);
-        FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding5 = this.f17147a;
+        FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding5 = this.a;
         FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding6 = fragmentYyKtvSearchMusicBinding5;
         if (fragmentYyKtvSearchMusicBinding5 == null) {
             Intrinsics.c("mBinding");
@@ -553,19 +543,19 @@ public final class YYChorusSearchMusicDialog extends BaseFullScreenDialog implem
                 YYChorusSearchMusicDialog.a(YYChorusSearchMusicDialog.this, view);
             }
         });
-        FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding7 = this.f17147a;
+        FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding7 = this.a;
         FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding8 = fragmentYyKtvSearchMusicBinding7;
         if (fragmentYyKtvSearchMusicBinding7 == null) {
             Intrinsics.c("mBinding");
             fragmentYyKtvSearchMusicBinding8 = null;
         }
-        fragmentYyKtvSearchMusicBinding8.f16523a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYChorusSearchMusicDialog$GmJU1mr3ceB-3yFgiPInd-hUddc
+        fragmentYyKtvSearchMusicBinding8.a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYChorusSearchMusicDialog$GmJU1mr3ceB-3yFgiPInd-hUddc
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 YYChorusSearchMusicDialog.b(YYChorusSearchMusicDialog.this, view);
             }
         });
-        FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding9 = this.f17147a;
+        FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding9 = this.a;
         FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding10 = fragmentYyKtvSearchMusicBinding9;
         if (fragmentYyKtvSearchMusicBinding9 == null) {
             Intrinsics.c("mBinding");
@@ -577,7 +567,7 @@ public final class YYChorusSearchMusicDialog extends BaseFullScreenDialog implem
                 YYChorusSearchMusicDialog.a(view);
             }
         });
-        FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding11 = this.f17147a;
+        FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding11 = this.a;
         FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding12 = fragmentYyKtvSearchMusicBinding11;
         if (fragmentYyKtvSearchMusicBinding11 == null) {
             Intrinsics.c("mBinding");
@@ -596,7 +586,7 @@ public final class YYChorusSearchMusicDialog extends BaseFullScreenDialog implem
                 YYChorusSearchMusicDialog.this.i();
             }
         });
-        FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding13 = this.f17147a;
+        FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding13 = this.a;
         FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding14 = fragmentYyKtvSearchMusicBinding13;
         if (fragmentYyKtvSearchMusicBinding13 == null) {
             Intrinsics.c("mBinding");
@@ -608,7 +598,7 @@ public final class YYChorusSearchMusicDialog extends BaseFullScreenDialog implem
                 YYChorusSearchMusicDialog.c(YYChorusSearchMusicDialog.this, view);
             }
         });
-        FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding15 = this.f17147a;
+        FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding15 = this.a;
         if (fragmentYyKtvSearchMusicBinding15 == null) {
             Intrinsics.c("mBinding");
             fragmentYyKtvSearchMusicBinding15 = null;
@@ -616,9 +606,9 @@ public final class YYChorusSearchMusicDialog extends BaseFullScreenDialog implem
         fragmentYyKtvSearchMusicBinding15.d.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYChorusSearchMusicDialog$KBinGNsKcmlN1kJrYs6cgqAzPgw
             @Override // android.widget.TextView.OnEditorActionListener
             public final boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
-                boolean a2;
-                a2 = YYChorusSearchMusicDialog.a(YYChorusSearchMusicDialog.this, textView, i, keyEvent);
-                return a2;
+                boolean a;
+                a = YYChorusSearchMusicDialog.a(YYChorusSearchMusicDialog.this, textView, i, keyEvent);
+                return a;
             }
         });
     }
@@ -626,24 +616,24 @@ public final class YYChorusSearchMusicDialog extends BaseFullScreenDialog implem
     /* JADX INFO: Access modifiers changed from: private */
     public final void h() {
         KeyboardUtils.a(getActivity());
-        ArrayList<String> a2 = YYRoomPreferences.a("chorus_search_records");
-        Intrinsics.c(a2, "getSearchHistory(BLUED_YY_CHORUS_KEYWORD)");
-        final ArrayList<String> arrayList = a2;
-        FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding = this.f17147a;
+        ArrayList<String> a = YYRoomPreferences.a("chorus_search_records");
+        Intrinsics.c(a, "getSearchHistory(BLUED_YY_CHORUS_KEYWORD)");
+        final ArrayList<String> arrayList = a;
+        FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding = this.a;
         FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding2 = fragmentYyKtvSearchMusicBinding;
         if (fragmentYyKtvSearchMusicBinding == null) {
             Intrinsics.c("mBinding");
             fragmentYyKtvSearchMusicBinding2 = null;
         }
         fragmentYyKtvSearchMusicBinding2.i.setVisibility(8);
-        FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding3 = this.f17147a;
+        FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding3 = this.a;
         FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding4 = fragmentYyKtvSearchMusicBinding3;
         if (fragmentYyKtvSearchMusicBinding3 == null) {
             Intrinsics.c("mBinding");
             fragmentYyKtvSearchMusicBinding4 = null;
         }
         fragmentYyKtvSearchMusicBinding4.e.setVisibility(0);
-        FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding5 = this.f17147a;
+        FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding5 = this.a;
         FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding6 = fragmentYyKtvSearchMusicBinding5;
         if (fragmentYyKtvSearchMusicBinding5 == null) {
             Intrinsics.c("mBinding");
@@ -656,7 +646,7 @@ public final class YYChorusSearchMusicDialog extends BaseFullScreenDialog implem
             if (shapeTextView != null) {
                 shapeTextView.setText(str);
             }
-            FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding7 = this.f17147a;
+            FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding7 = this.a;
             FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding8 = fragmentYyKtvSearchMusicBinding7;
             if (fragmentYyKtvSearchMusicBinding7 == null) {
                 Intrinsics.c("mBinding");
@@ -664,7 +654,7 @@ public final class YYChorusSearchMusicDialog extends BaseFullScreenDialog implem
             }
             fragmentYyKtvSearchMusicBinding8.g.addView(inflate);
         }
-        FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding9 = this.f17147a;
+        FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding9 = this.a;
         if (fragmentYyKtvSearchMusicBinding9 == null) {
             Intrinsics.c("mBinding");
             fragmentYyKtvSearchMusicBinding9 = null;
@@ -679,14 +669,14 @@ public final class YYChorusSearchMusicDialog extends BaseFullScreenDialog implem
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void i() {
-        FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding = this.f17147a;
+        FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding = this.a;
         FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding2 = fragmentYyKtvSearchMusicBinding;
         if (fragmentYyKtvSearchMusicBinding == null) {
             Intrinsics.c("mBinding");
             fragmentYyKtvSearchMusicBinding2 = null;
         }
         fragmentYyKtvSearchMusicBinding2.i.setVisibility(0);
-        FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding3 = this.f17147a;
+        FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding3 = this.a;
         if (fragmentYyKtvSearchMusicBinding3 == null) {
             Intrinsics.c("mBinding");
             fragmentYyKtvSearchMusicBinding3 = null;
@@ -694,8 +684,8 @@ public final class YYChorusSearchMusicDialog extends BaseFullScreenDialog implem
         fragmentYyKtvSearchMusicBinding3.e.setVisibility(8);
         String str = this.e;
         String str2 = this.d;
-        final ActivityFragmentActive a2 = a();
-        YYRoomHttpUtils.d(str, str2, "2", (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntity<YYKtvMusicModel, YYKtvMusicExtra>>(a2) { // from class: com.blued.android.module.yy_china.fragment.YYChorusSearchMusicDialog$showMusicListUI$1
+        final ActivityFragmentActive a = a();
+        YYRoomHttpUtils.d(str, str2, "2", (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntity<YYKtvMusicModel, YYKtvMusicExtra>>(a) { // from class: com.blued.android.module.yy_china.fragment.YYChorusSearchMusicDialog$showMusicListUI$1
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish(boolean z) {
                 String str3;
@@ -703,26 +693,26 @@ public final class YYChorusSearchMusicDialog extends BaseFullScreenDialog implem
                 str3 = YYChorusSearchMusicDialog.this.d;
                 FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding4 = null;
                 if (TextUtils.isEmpty(str3)) {
-                    FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding5 = YYChorusSearchMusicDialog.this.f17147a;
+                    FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding5 = YYChorusSearchMusicDialog.this.a;
                     if (fragmentYyKtvSearchMusicBinding5 == null) {
                         Intrinsics.c("mBinding");
                         fragmentYyKtvSearchMusicBinding5 = null;
                     }
-                    fragmentYyKtvSearchMusicBinding5.i.l(false);
+                    fragmentYyKtvSearchMusicBinding5.i.b(false);
                 } else {
-                    FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding6 = YYChorusSearchMusicDialog.this.f17147a;
+                    FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding6 = YYChorusSearchMusicDialog.this.a;
                     if (fragmentYyKtvSearchMusicBinding6 == null) {
                         Intrinsics.c("mBinding");
                     } else {
                         fragmentYyKtvSearchMusicBinding4 = fragmentYyKtvSearchMusicBinding6;
                     }
-                    fragmentYyKtvSearchMusicBinding4.i.l(true);
+                    fragmentYyKtvSearchMusicBinding4.i.b(true);
                 }
                 YYChorusSearchMusicDialog.this.j();
             }
 
             /* JADX WARN: Code restructure failed: missing block: B:25:0x0068, code lost:
-                r0 = r3.f17156a.b;
+                r0 = r3.a.b;
              */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /*
@@ -834,19 +824,19 @@ public final class YYChorusSearchMusicDialog extends BaseFullScreenDialog implem
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void j() {
-        FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding = this.f17147a;
+        FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding = this.a;
         FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding2 = fragmentYyKtvSearchMusicBinding;
         if (fragmentYyKtvSearchMusicBinding == null) {
             Intrinsics.c("mBinding");
             fragmentYyKtvSearchMusicBinding2 = null;
         }
         fragmentYyKtvSearchMusicBinding2.i.h();
-        FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding3 = this.f17147a;
+        FragmentYyKtvSearchMusicBinding fragmentYyKtvSearchMusicBinding3 = this.a;
         if (fragmentYyKtvSearchMusicBinding3 == null) {
             Intrinsics.c("mBinding");
             fragmentYyKtvSearchMusicBinding3 = null;
         }
-        fragmentYyKtvSearchMusicBinding3.i.j();
+        fragmentYyKtvSearchMusicBinding3.i.g();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -862,24 +852,24 @@ public final class YYChorusSearchMusicDialog extends BaseFullScreenDialog implem
     /* JADX INFO: Access modifiers changed from: private */
     public static final void k(YYChorusSearchMusicDialog this$0) {
         Intrinsics.e(this$0, "this$0");
-        ArrayList<String> a2 = YYRoomPreferences.a("chorus_search_records");
-        Intrinsics.c(a2, "getSearchHistory(BLUED_YY_CHORUS_KEYWORD)");
+        ArrayList<String> a = YYRoomPreferences.a("chorus_search_records");
+        Intrinsics.c(a, "getSearchHistory(BLUED_YY_CHORUS_KEYWORD)");
         if (TextUtils.isEmpty(this$0.e)) {
             return;
         }
-        if (CollectionsKt.a((Iterable<? extends String>) a2, this$0.e)) {
-            ArrayList<String> arrayList = a2;
+        if (CollectionsKt.a((Iterable<? extends String>) a, this$0.e)) {
+            ArrayList<String> arrayList = a;
             TypeIntrinsics.c(arrayList).remove(this$0.e);
         }
         String str = this$0.e;
         if (str != null) {
-            a2.add(0, str);
+            a.add(0, str);
         }
-        if (a2.size() <= 6) {
-            YYRoomPreferences.a("chorus_search_records", a2);
+        if (a.size() <= 6) {
+            YYRoomPreferences.a("chorus_search_records", a);
             return;
         }
-        List<String> subList = a2.subList(0, 6);
+        List<String> subList = a.subList(0, 6);
         Intrinsics.c(subList, "keywords.subList(0, 6)");
         YYRoomPreferences.a("chorus_search_records", subList);
     }
@@ -889,26 +879,26 @@ public final class YYChorusSearchMusicDialog extends BaseFullScreenDialog implem
         this.f = z;
     }
 
-    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        this.f17148c = YYRoomInfoManager.e().b();
+        this.c = YYRoomInfoManager.e().b();
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
         View inflate = inflater.inflate(R.layout.fragment_yy_ktv_search_music, viewGroup, true);
         Intrinsics.c(inflate, "inflater.inflate(R.layou…h_music, container, true)");
-        FragmentYyKtvSearchMusicBinding a2 = FragmentYyKtvSearchMusicBinding.a(inflate);
-        Intrinsics.c(a2, "bind(view)");
-        this.f17147a = a2;
+        FragmentYyKtvSearchMusicBinding a = FragmentYyKtvSearchMusicBinding.a(inflate);
+        Intrinsics.c(a, "bind(view)");
+        this.a = a;
         g();
         f();
         return inflate;
     }
 
-    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment
     public void onViewCreated(View view, Bundle bundle) {
         Intrinsics.e(view, "view");
         super.onViewCreated(view, bundle);

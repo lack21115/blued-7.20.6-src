@@ -21,7 +21,7 @@ public class StringPart extends PartBase {
     }
 
     public StringPart(String str, String str2, String str3) {
-        super(str, "text/plain", str3 == null ? "US-ASCII" : str3, DEFAULT_TRANSFER_ENCODING);
+        super(str, DEFAULT_CONTENT_TYPE, str3 == null ? "US-ASCII" : str3, DEFAULT_TRANSFER_ENCODING);
         if (str2 == null) {
             throw new IllegalArgumentException("Value may not be null");
         }

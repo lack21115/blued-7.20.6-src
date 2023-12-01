@@ -13,7 +13,7 @@ public class PngChunkSTER extends PngChunkSingle {
 
     @Override // ar.com.hjg.pngj.chunks.PngChunk
     public void a(ChunkRaw chunkRaw) {
-        if (chunkRaw.f3659a == 1) {
+        if (chunkRaw.f3611a == 1) {
             this.h = chunkRaw.d[0];
             return;
         }

@@ -26,8 +26,8 @@ import java.util.List;
 public final class MultiPkRank extends GeneratedMessageV3 implements MultiPkRankOrBuilder {
     private static final MultiPkRank DEFAULT_INSTANCE = new MultiPkRank();
     private static final Parser<MultiPkRank> PARSER = new AbstractParser<MultiPkRank>() { // from class: cn.irisgw.live.MultiPkRank.1
-        @Override // com.google.protobuf.Parser
-        public MultiPkRank parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        /* renamed from: parsePartialFrom */
+        public MultiPkRank m6035parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             return new MultiPkRank(codedInputStream, extensionRegistryLite);
         }
     };
@@ -90,24 +90,24 @@ public final class MultiPkRank extends GeneratedMessageV3 implements MultiPkRank
                 return this;
             }
             ensureUsersIsMutable();
-            AbstractMessageLite.Builder.addAll((Iterable) iterable, (List) this.users_);
+            AbstractMessageLite.Builder.addAll(iterable, this.users_);
             onChanged();
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: addRepeatedField */
+        public Builder m6037addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.addRepeatedField(fieldDescriptor, obj);
         }
 
         public Builder addUsers(int i, StartRecord.Builder builder) {
             RepeatedFieldBuilderV3<StartRecord, StartRecord.Builder, StartRecordOrBuilder> repeatedFieldBuilderV3 = this.usersBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.addMessage(i, builder.build());
+                repeatedFieldBuilderV3.addMessage(i, builder.m6086build());
                 return this;
             }
             ensureUsersIsMutable();
-            this.users_.add(i, builder.build());
+            this.users_.add(i, builder.m6086build());
             onChanged();
             return this;
         }
@@ -130,11 +130,11 @@ public final class MultiPkRank extends GeneratedMessageV3 implements MultiPkRank
         public Builder addUsers(StartRecord.Builder builder) {
             RepeatedFieldBuilderV3<StartRecord, StartRecord.Builder, StartRecordOrBuilder> repeatedFieldBuilderV3 = this.usersBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.addMessage(builder.build());
+                repeatedFieldBuilderV3.addMessage(builder.m6086build());
                 return this;
             }
             ensureUsersIsMutable();
-            this.users_.add(builder.build());
+            this.users_.add(builder.m6086build());
             onChanged();
             return this;
         }
@@ -162,17 +162,17 @@ public final class MultiPkRank extends GeneratedMessageV3 implements MultiPkRank
             return getUsersFieldBuilder().addBuilder(i, StartRecord.getDefaultInstance());
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public MultiPkRank build() {
-            MultiPkRank buildPartial = buildPartial();
-            if (buildPartial.isInitialized()) {
-                return buildPartial;
+        /* renamed from: build */
+        public MultiPkRank m6039build() {
+            MultiPkRank m6041buildPartial = m6041buildPartial();
+            if (m6041buildPartial.isInitialized()) {
+                return m6041buildPartial;
             }
-            throw newUninitializedMessageException((Message) buildPartial);
+            throw newUninitializedMessageException(m6041buildPartial);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public MultiPkRank buildPartial() {
+        /* renamed from: buildPartial */
+        public MultiPkRank m6041buildPartial() {
             MultiPkRank multiPkRank = new MultiPkRank(this);
             int i = this.bitField0_;
             RepeatedFieldBuilderV3<StartRecord, StartRecord.Builder, StartRecordOrBuilder> repeatedFieldBuilderV3 = this.usersBuilder_;
@@ -189,8 +189,8 @@ public final class MultiPkRank extends GeneratedMessageV3 implements MultiPkRank
             return multiPkRank;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public Builder clear() {
+        /* renamed from: clear */
+        public Builder m6045clear() {
             super.clear();
             RepeatedFieldBuilderV3<StartRecord, StartRecord.Builder, StartRecordOrBuilder> repeatedFieldBuilderV3 = this.usersBuilder_;
             if (repeatedFieldBuilderV3 != null) {
@@ -202,13 +202,13 @@ public final class MultiPkRank extends GeneratedMessageV3 implements MultiPkRank
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+        /* renamed from: clearField */
+        public Builder m6047clearField(Descriptors.FieldDescriptor fieldDescriptor) {
             return (Builder) super.clearField(fieldDescriptor);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+        /* renamed from: clearOneof */
+        public Builder m6050clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
             return (Builder) super.clearOneof(oneofDescriptor);
         }
 
@@ -224,18 +224,16 @@ public final class MultiPkRank extends GeneratedMessageV3 implements MultiPkRank
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder m6056clone() {
+            return (Builder) super.clone();
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public MultiPkRank getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public MultiPkRank m6058getDefaultInstanceForType() {
             return MultiPkRank.getDefaultInstance();
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
         public Descriptors.Descriptor getDescriptorForType() {
             return LiveConstants.internal_static_cn_irisgw_live_MultiPkRank_descriptor;
         }
@@ -269,7 +267,7 @@ public final class MultiPkRank extends GeneratedMessageV3 implements MultiPkRank
         @Override // cn.irisgw.live.MultiPkRankOrBuilder
         public StartRecordOrBuilder getUsersOrBuilder(int i) {
             RepeatedFieldBuilderV3<StartRecord, StartRecord.Builder, StartRecordOrBuilder> repeatedFieldBuilderV3 = this.usersBuilder_;
-            return repeatedFieldBuilderV3 == null ? this.users_.get(i) : repeatedFieldBuilderV3.getMessageOrBuilder(i);
+            return repeatedFieldBuilderV3 == null ? this.users_.get(i) : (StartRecordOrBuilder) repeatedFieldBuilderV3.getMessageOrBuilder(i);
         }
 
         @Override // cn.irisgw.live.MultiPkRankOrBuilder
@@ -278,12 +276,10 @@ public final class MultiPkRank extends GeneratedMessageV3 implements MultiPkRank
             return repeatedFieldBuilderV3 != null ? repeatedFieldBuilderV3.getMessageOrBuilderList() : Collections.unmodifiableList(this.users_);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_MultiPkRank_fieldAccessorTable.ensureFieldAccessorsInitialized(MultiPkRank.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             return true;
         }
@@ -318,18 +314,18 @@ public final class MultiPkRank extends GeneratedMessageV3 implements MultiPkRank
                     this.usersBuilder_.addAllMessages(multiPkRank.users_);
                 }
             }
-            mergeUnknownFields(multiPkRank.unknownFields);
+            m6067mergeUnknownFields(multiPkRank.unknownFields);
             onChanged();
             return this;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+        /* renamed from: mergeFrom */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
         */
-        public cn.irisgw.live.MultiPkRank.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+        public cn.irisgw.live.MultiPkRank.Builder m6064mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
             /*
                 r4 = this;
                 r0 = 0
@@ -374,11 +370,11 @@ public final class MultiPkRank extends GeneratedMessageV3 implements MultiPkRank
                 r0 = r6
                 throw r0
             */
-            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.MultiPkRank.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.MultiPkRank$Builder");
+            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.MultiPkRank.Builder.m6064mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.MultiPkRank$Builder");
         }
 
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder mergeFrom(Message message) {
+        /* renamed from: mergeFrom */
+        public Builder m6063mergeFrom(Message message) {
             if (message instanceof MultiPkRank) {
                 return mergeFrom((MultiPkRank) message);
             }
@@ -386,8 +382,8 @@ public final class MultiPkRank extends GeneratedMessageV3 implements MultiPkRank
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: mergeUnknownFields */
+        public final Builder m6067mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.mergeUnknownFields(unknownFieldSet);
         }
 
@@ -403,29 +399,29 @@ public final class MultiPkRank extends GeneratedMessageV3 implements MultiPkRank
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: setField */
+        public Builder m6069setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.setField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+        /* renamed from: setRepeatedField */
+        public Builder m6071setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
             return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: setUnknownFields */
+        public final Builder m6073setUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.setUnknownFields(unknownFieldSet);
         }
 
         public Builder setUsers(int i, StartRecord.Builder builder) {
             RepeatedFieldBuilderV3<StartRecord, StartRecord.Builder, StartRecordOrBuilder> repeatedFieldBuilderV3 = this.usersBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.setMessage(i, builder.build());
+                repeatedFieldBuilderV3.setMessage(i, builder.m6086build());
                 return this;
             }
             ensureUsersIsMutable();
-            this.users_.set(i, builder.build());
+            this.users_.set(i, builder.m6086build());
             onChanged();
             return this;
         }
@@ -474,8 +470,8 @@ public final class MultiPkRank extends GeneratedMessageV3 implements MultiPkRank
         private int uid_;
         private static final StartRecord DEFAULT_INSTANCE = new StartRecord();
         private static final Parser<StartRecord> PARSER = new AbstractParser<StartRecord>() { // from class: cn.irisgw.live.MultiPkRank.StartRecord.1
-            @Override // com.google.protobuf.Parser
-            public StartRecord parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+            /* renamed from: parsePartialFrom */
+            public StartRecord m6082parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
                 return new StartRecord(codedInputStream, extensionRegistryLite);
             }
         };
@@ -515,22 +511,22 @@ public final class MultiPkRank extends GeneratedMessageV3 implements MultiPkRank
                 boolean unused = StartRecord.alwaysUseFieldBuilders;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: addRepeatedField */
+            public Builder m6084addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.addRepeatedField(fieldDescriptor, obj);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public StartRecord build() {
-                StartRecord buildPartial = buildPartial();
-                if (buildPartial.isInitialized()) {
-                    return buildPartial;
+            /* renamed from: build */
+            public StartRecord m6086build() {
+                StartRecord m6088buildPartial = m6088buildPartial();
+                if (m6088buildPartial.isInitialized()) {
+                    return m6088buildPartial;
                 }
-                throw newUninitializedMessageException((Message) buildPartial);
+                throw newUninitializedMessageException(m6088buildPartial);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public StartRecord buildPartial() {
+            /* renamed from: buildPartial */
+            public StartRecord m6088buildPartial() {
                 StartRecord startRecord = new StartRecord(this);
                 startRecord.uid_ = this.uid_;
                 startRecord.lid_ = this.lid_;
@@ -547,8 +543,8 @@ public final class MultiPkRank extends GeneratedMessageV3 implements MultiPkRank
                 return startRecord;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public Builder clear() {
+            /* renamed from: clear */
+            public Builder m6092clear() {
                 super.clear();
                 this.uid_ = 0;
                 this.lid_ = 0;
@@ -564,8 +560,8 @@ public final class MultiPkRank extends GeneratedMessageV3 implements MultiPkRank
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+            /* renamed from: clearField */
+            public Builder m6094clearField(Descriptors.FieldDescriptor fieldDescriptor) {
                 return (Builder) super.clearField(fieldDescriptor);
             }
 
@@ -617,8 +613,8 @@ public final class MultiPkRank extends GeneratedMessageV3 implements MultiPkRank
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+            /* renamed from: clearOneof */
+            public Builder m6097clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
                 return (Builder) super.clearOneof(oneofDescriptor);
             }
 
@@ -640,18 +636,16 @@ public final class MultiPkRank extends GeneratedMessageV3 implements MultiPkRank
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder m6103clone() {
+                return (Builder) super.clone();
             }
 
-            @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-            public StartRecord getDefaultInstanceForType() {
+            /* renamed from: getDefaultInstanceForType */
+            public StartRecord m6105getDefaultInstanceForType() {
                 return StartRecord.getDefaultInstance();
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
             public Descriptors.Descriptor getDescriptorForType() {
                 return LiveConstants.internal_static_cn_irisgw_live_MultiPkRank_StartRecord_descriptor;
             }
@@ -745,12 +739,10 @@ public final class MultiPkRank extends GeneratedMessageV3 implements MultiPkRank
                 return this.uid_;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder
             public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
                 return LiveConstants.internal_static_cn_irisgw_live_MultiPkRank_StartRecord_fieldAccessorTable.ensureFieldAccessorsInitialized(StartRecord.class, Builder.class);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
             public final boolean isInitialized() {
                 return true;
             }
@@ -794,18 +786,18 @@ public final class MultiPkRank extends GeneratedMessageV3 implements MultiPkRank
                 if (startRecord.getGroupScore() != 0) {
                     setGroupScore(startRecord.getGroupScore());
                 }
-                mergeUnknownFields(startRecord.unknownFields);
+                m6114mergeUnknownFields(startRecord.unknownFields);
                 onChanged();
                 return this;
             }
 
             /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+            /* renamed from: mergeFrom */
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
                 To view partially-correct code enable 'Show inconsistent code' option in preferences
             */
-            public cn.irisgw.live.MultiPkRank.StartRecord.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+            public cn.irisgw.live.MultiPkRank.StartRecord.Builder m6111mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
                 /*
                     r4 = this;
                     r0 = 0
@@ -850,11 +842,11 @@ public final class MultiPkRank extends GeneratedMessageV3 implements MultiPkRank
                     r0 = r6
                     throw r0
                 */
-                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.MultiPkRank.StartRecord.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.MultiPkRank$StartRecord$Builder");
+                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.MultiPkRank.StartRecord.Builder.m6111mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.MultiPkRank$StartRecord$Builder");
             }
 
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder mergeFrom(Message message) {
+            /* renamed from: mergeFrom */
+            public Builder m6110mergeFrom(Message message) {
                 if (message instanceof StartRecord) {
                     return mergeFrom((StartRecord) message);
                 }
@@ -862,13 +854,13 @@ public final class MultiPkRank extends GeneratedMessageV3 implements MultiPkRank
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: mergeUnknownFields */
+            public final Builder m6114mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.mergeUnknownFields(unknownFieldSet);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: setField */
+            public Builder m6116setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.setField(fieldDescriptor, obj);
             }
 
@@ -952,8 +944,8 @@ public final class MultiPkRank extends GeneratedMessageV3 implements MultiPkRank
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+            /* renamed from: setRepeatedField */
+            public Builder m6118setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
                 return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
             }
 
@@ -969,8 +961,8 @@ public final class MultiPkRank extends GeneratedMessageV3 implements MultiPkRank
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: setUnknownFields */
+            public final Builder m6120setUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.setUnknownFields(unknownFieldSet);
             }
         }
@@ -1064,66 +1056,65 @@ public final class MultiPkRank extends GeneratedMessageV3 implements MultiPkRank
         }
 
         public static Builder newBuilder() {
-            return DEFAULT_INSTANCE.toBuilder();
+            return DEFAULT_INSTANCE.m6081toBuilder();
         }
 
         public static Builder newBuilder(StartRecord startRecord) {
-            return DEFAULT_INSTANCE.toBuilder().mergeFrom(startRecord);
+            return DEFAULT_INSTANCE.m6081toBuilder().mergeFrom(startRecord);
         }
 
         public static StartRecord parseDelimitedFrom(InputStream inputStream) throws IOException {
-            return (StartRecord) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
         }
 
         public static StartRecord parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (StartRecord) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static StartRecord parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString);
+            return (StartRecord) PARSER.parseFrom(byteString);
         }
 
         public static StartRecord parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString, extensionRegistryLite);
+            return (StartRecord) PARSER.parseFrom(byteString, extensionRegistryLite);
         }
 
         public static StartRecord parseFrom(CodedInputStream codedInputStream) throws IOException {
-            return (StartRecord) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
         }
 
         public static StartRecord parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (StartRecord) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
         }
 
         public static StartRecord parseFrom(InputStream inputStream) throws IOException {
-            return (StartRecord) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
         }
 
         public static StartRecord parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (StartRecord) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static StartRecord parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer);
+            return (StartRecord) PARSER.parseFrom(byteBuffer);
         }
 
         public static StartRecord parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+            return (StartRecord) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
         }
 
         public static StartRecord parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr);
+            return (StartRecord) PARSER.parseFrom(bArr);
         }
 
         public static StartRecord parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr, extensionRegistryLite);
+            return (StartRecord) PARSER.parseFrom(bArr, extensionRegistryLite);
         }
 
         public static Parser<StartRecord> parser() {
             return PARSER;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public boolean equals(Object obj) {
             if (obj == this) {
                 return true;
@@ -1135,8 +1126,8 @@ public final class MultiPkRank extends GeneratedMessageV3 implements MultiPkRank
             return super.equals(obj);
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public StartRecord getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public StartRecord m6076getDefaultInstanceForType() {
             return DEFAULT_INSTANCE;
         }
 
@@ -1214,7 +1205,6 @@ public final class MultiPkRank extends GeneratedMessageV3 implements MultiPkRank
             return this.lid_;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
         public Parser<StartRecord> getParserForType() {
             return PARSER;
         }
@@ -1229,7 +1219,6 @@ public final class MultiPkRank extends GeneratedMessageV3 implements MultiPkRank
             return this.score_;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public int getSerializedSize() {
             int i = this.memoizedSize;
             if (i != -1) {
@@ -1298,12 +1287,10 @@ public final class MultiPkRank extends GeneratedMessageV3 implements MultiPkRank
             return this.uid_;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
         public final UnknownFieldSet getUnknownFields() {
             return this.unknownFields;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public int hashCode() {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
@@ -1313,12 +1300,10 @@ public final class MultiPkRank extends GeneratedMessageV3 implements MultiPkRank
             return hashCode;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_MultiPkRank_StartRecord_fieldAccessorTable.ensureFieldAccessorsInitialized(StartRecord.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte b = this.memoizedIsInitialized;
             if (b == 1) {
@@ -1331,28 +1316,26 @@ public final class MultiPkRank extends GeneratedMessageV3 implements MultiPkRank
             return true;
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder newBuilderForType() {
+        /* renamed from: newBuilderForType */
+        public Builder m6079newBuilderForType() {
             return newBuilder();
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.google.protobuf.GeneratedMessageV3
-        public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+        /* renamed from: newBuilderForType */
+        public Builder m6078newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
             return new Builder(builderParent);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
             return new StartRecord();
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder toBuilder() {
+        /* renamed from: toBuilder */
+        public Builder m6081toBuilder() {
             return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
             int i = this.uid_;
             if (i != 0) {
@@ -1495,66 +1478,65 @@ public final class MultiPkRank extends GeneratedMessageV3 implements MultiPkRank
     }
 
     public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
+        return DEFAULT_INSTANCE.m6034toBuilder();
     }
 
     public static Builder newBuilder(MultiPkRank multiPkRank) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(multiPkRank);
+        return DEFAULT_INSTANCE.m6034toBuilder().mergeFrom(multiPkRank);
     }
 
     public static MultiPkRank parseDelimitedFrom(InputStream inputStream) throws IOException {
-        return (MultiPkRank) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
     }
 
     public static MultiPkRank parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (MultiPkRank) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static MultiPkRank parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString);
+        return (MultiPkRank) PARSER.parseFrom(byteString);
     }
 
     public static MultiPkRank parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString, extensionRegistryLite);
+        return (MultiPkRank) PARSER.parseFrom(byteString, extensionRegistryLite);
     }
 
     public static MultiPkRank parseFrom(CodedInputStream codedInputStream) throws IOException {
-        return (MultiPkRank) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
     }
 
     public static MultiPkRank parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (MultiPkRank) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
     }
 
     public static MultiPkRank parseFrom(InputStream inputStream) throws IOException {
-        return (MultiPkRank) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
     }
 
     public static MultiPkRank parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (MultiPkRank) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static MultiPkRank parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer);
+        return (MultiPkRank) PARSER.parseFrom(byteBuffer);
     }
 
     public static MultiPkRank parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+        return (MultiPkRank) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
     }
 
     public static MultiPkRank parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr);
+        return (MultiPkRank) PARSER.parseFrom(bArr);
     }
 
     public static MultiPkRank parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr, extensionRegistryLite);
+        return (MultiPkRank) PARSER.parseFrom(bArr, extensionRegistryLite);
     }
 
     public static Parser<MultiPkRank> parser() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
@@ -1566,17 +1548,15 @@ public final class MultiPkRank extends GeneratedMessageV3 implements MultiPkRank
         return super.equals(obj);
     }
 
-    @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-    public MultiPkRank getDefaultInstanceForType() {
+    /* renamed from: getDefaultInstanceForType */
+    public MultiPkRank m6029getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
     public Parser<MultiPkRank> getParserForType() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public int getSerializedSize() {
         int i = this.memoizedSize;
         if (i != -1) {
@@ -1591,7 +1571,6 @@ public final class MultiPkRank extends GeneratedMessageV3 implements MultiPkRank
         return serializedSize;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
     public final UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
     }
@@ -1621,7 +1600,6 @@ public final class MultiPkRank extends GeneratedMessageV3 implements MultiPkRank
         return this.users_;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public int hashCode() {
         if (this.memoizedHashCode != 0) {
             return this.memoizedHashCode;
@@ -1636,12 +1614,10 @@ public final class MultiPkRank extends GeneratedMessageV3 implements MultiPkRank
         return hashCode2;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
         return LiveConstants.internal_static_cn_irisgw_live_MultiPkRank_fieldAccessorTable.ensureFieldAccessorsInitialized(MultiPkRank.class, Builder.class);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
     public final boolean isInitialized() {
         byte b = this.memoizedIsInitialized;
         if (b == 1) {
@@ -1654,28 +1630,26 @@ public final class MultiPkRank extends GeneratedMessageV3 implements MultiPkRank
         return true;
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder newBuilderForType() {
+    /* renamed from: newBuilderForType */
+    public Builder m6032newBuilderForType() {
         return newBuilder();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.protobuf.GeneratedMessageV3
-    public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+    /* renamed from: newBuilderForType */
+    public Builder m6031newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
         return new Builder(builderParent);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
         return new MultiPkRank();
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder toBuilder() {
+    /* renamed from: toBuilder */
+    public Builder m6034toBuilder() {
         return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
         int i = 0;
         while (true) {

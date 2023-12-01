@@ -13,11 +13,11 @@ import com.soft.blued.ui.msg.contract.IMsgFilterCallback;
 public class MsgFilterView extends FrameLayout implements View.OnClickListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private IMsgFilterCallback f32303a;
+    private IMsgFilterCallback f18613a;
     private View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private View f32304c;
+    private View f18614c;
     private View d;
     private View e;
     private View f;
@@ -45,7 +45,7 @@ public class MsgFilterView extends FrameLayout implements View.OnClickListener {
         View findViewById = a2.findViewById(R.id.msg_filter_switch_ll);
         this.b = findViewById;
         findViewById.setOnClickListener(this);
-        this.f32304c = a2.findViewById(R.id.msg_filter_switch_right_iv);
+        this.f18614c = a2.findViewById(R.id.msg_filter_switch_right_iv);
         this.d = a2.findViewById(R.id.msg_filter_switch_bottom_line);
         View findViewById2 = a2.findViewById(R.id.msg_filter_close_ll);
         this.f = findViewById2;
@@ -67,7 +67,7 @@ public class MsgFilterView extends FrameLayout implements View.OnClickListener {
     }
 
     private void a(boolean z) {
-        this.f32303a.e(z);
+        this.f18613a.e(z);
         setFilterSwitch(false);
         this.i.setSelected(false);
         this.j.setSelected(false);
@@ -75,7 +75,7 @@ public class MsgFilterView extends FrameLayout implements View.OnClickListener {
     }
 
     private void c() {
-        setFilterSwitch(this.f32303a.C());
+        setFilterSwitch(this.f18613a.C());
     }
 
     private void d() {
@@ -115,9 +115,9 @@ public class MsgFilterView extends FrameLayout implements View.OnClickListener {
         if (view2 != null) {
             view2.setSelected(z);
             if (this.e.getVisibility() == 0) {
-                this.f32304c.setSelected(true);
+                this.f18614c.setSelected(true);
             } else {
-                this.f32304c.setSelected(false);
+                this.f18614c.setSelected(false);
             }
         }
         View view3 = this.d;
@@ -136,19 +136,19 @@ public class MsgFilterView extends FrameLayout implements View.OnClickListener {
 
     private void setSwitchFollowerButton(boolean z) {
         this.j.setSelected(z);
-        this.f32303a.c(z);
+        this.f18613a.c(z);
         c();
     }
 
     private void setSwitchInitiatorButton(boolean z) {
         this.i.setSelected(z);
-        this.f32303a.b(z);
+        this.f18613a.b(z);
         c();
     }
 
     private void setSwitchNearbyButton(boolean z) {
         this.k.setSelected(z);
-        this.f32303a.d(z);
+        this.f18613a.d(z);
         c();
     }
 
@@ -159,21 +159,21 @@ public class MsgFilterView extends FrameLayout implements View.OnClickListener {
     public void a() {
         if (this.e.getVisibility() == 0) {
             this.e.setVisibility(8);
-            this.f32304c.setSelected(false);
+            this.f18614c.setSelected(false);
         }
     }
 
     public void b() {
         if (this.e.getVisibility() == 8) {
             this.e.setVisibility(0);
-            this.f32304c.setSelected(true);
+            this.f18614c.setSelected(true);
         }
     }
 
     @Override // android.view.View.OnClickListener
     public void onClick(View view) {
         Tracker.onClick(view);
-        if (this.f32303a != null) {
+        if (this.f18613a != null) {
             switch (view.getId()) {
                 case R.id.msg_filter_close_ll /* 2131368532 */:
                     a(true);
@@ -194,7 +194,7 @@ public class MsgFilterView extends FrameLayout implements View.OnClickListener {
                     f();
                     return;
                 case R.id.msg_filter_reset /* 2131368539 */:
-                    if (this.f32303a.C()) {
+                    if (this.f18613a.C()) {
                         a(false);
                         return;
                     }
@@ -202,22 +202,22 @@ public class MsgFilterView extends FrameLayout implements View.OnClickListener {
                 case R.id.msg_filter_switch_ll /* 2131368541 */:
                     if (this.e.getVisibility() == 0) {
                         a();
-                        this.f32303a.y();
+                        this.f18613a.y();
                         return;
                     }
                     b();
-                    this.f32303a.x();
+                    this.f18613a.x();
                     return;
             }
         }
     }
 
     public void setCallback(IMsgFilterCallback iMsgFilterCallback) {
-        this.f32303a = iMsgFilterCallback;
+        this.f18613a = iMsgFilterCallback;
         if (iMsgFilterCallback != null) {
             this.i.setSelected(iMsgFilterCallback.z());
-            this.j.setSelected(this.f32303a.A());
-            this.k.setSelected(this.f32303a.B());
+            this.j.setSelected(this.f18613a.A());
+            this.k.setSelected(this.f18613a.B());
         }
         c();
     }

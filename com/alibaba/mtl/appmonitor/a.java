@@ -22,12 +22,12 @@ public class a implements Runnable {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.alibaba.mtl.appmonitor.a$a  reason: collision with other inner class name */
     /* loaded from: source-6737240-dex2jar.jar:com/alibaba/mtl/appmonitor/a$a.class */
-    public class C0042a implements Application.ActivityLifecycleCallbacks {
+    public class C0002a implements Application.ActivityLifecycleCallbacks {
 
         /* renamed from: a  reason: collision with other field name */
         private Runnable f15a;
 
-        C0042a(Runnable runnable) {
+        C0002a(Runnable runnable) {
             this.f15a = runnable;
         }
 
@@ -69,9 +69,9 @@ public class a implements Runnable {
     }
 
     private static boolean a(Context context) {
-        String a2 = com.alibaba.mtl.log.e.b.a(context);
-        i.a("BackgroundTrigger", "[checkRuningProcess]:", a2);
-        return (TextUtils.isEmpty(a2) || a2.indexOf(":") == -1) ? false : true;
+        String a = com.alibaba.mtl.log.e.b.a(context);
+        i.a("BackgroundTrigger", "[checkRuningProcess]:", a);
+        return (TextUtils.isEmpty(a) || a.indexOf(":") == -1) ? false : true;
     }
 
     public static void init(Application application) {
@@ -85,7 +85,7 @@ public class a implements Runnable {
             r.a().a(4, aVar, 60000L);
         } else if (Build.VERSION.SDK_INT >= 14) {
             aVar.getClass();
-            application.registerActivityLifecycleCallbacks(new C0042a(aVar));
+            application.registerActivityLifecycleCallbacks(new C0002a(aVar));
         }
         j = true;
     }

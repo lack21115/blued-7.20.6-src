@@ -14,17 +14,13 @@ import java.util.Map;
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/a/a.class */
 public final class a {
     private static a e;
-
-    /* renamed from: a  reason: collision with root package name */
-    l f6321a;
+    l a;
     SimpleDateFormat b = new SimpleDateFormat("yyyyMMdd");
-
-    /* renamed from: c  reason: collision with root package name */
-    SimpleDateFormat f6322c = new SimpleDateFormat("yyyyMMddHH");
+    SimpleDateFormat c = new SimpleDateFormat("yyyyMMddHH");
     Context d;
 
     private a(Context context) {
-        this.f6321a = l.a(com.anythink.core.common.c.c.a(context));
+        this.a = l.a(com.anythink.core.common.c.c.a(context));
         this.d = context;
     }
 
@@ -37,24 +33,24 @@ public final class a {
 
     public final ae.a a(String str, String str2) {
         long currentTimeMillis = System.currentTimeMillis();
-        return this.f6321a.a(str, str2, this.b.format(new Date(currentTimeMillis)), this.f6322c.format(new Date(currentTimeMillis)));
+        return this.a.a(str, str2, this.b.format(new Date(currentTimeMillis)), this.c.format(new Date(currentTimeMillis)));
     }
 
     public final ae a(String str) {
         long currentTimeMillis = System.currentTimeMillis();
-        return this.f6321a.a(str, this.b.format(new Date(currentTimeMillis)), this.f6322c.format(new Date(currentTimeMillis)));
+        return this.a.a(str, this.b.format(new Date(currentTimeMillis)), this.c.format(new Date(currentTimeMillis)));
     }
 
     public final Map<String, ae> a(int i) {
         long currentTimeMillis = System.currentTimeMillis();
-        return this.f6321a.a(i, this.b.format(new Date(currentTimeMillis)), this.f6322c.format(new Date(currentTimeMillis)));
+        return this.a.a(i, this.b.format(new Date(currentTimeMillis)), this.c.format(new Date(currentTimeMillis)));
     }
 
     public final void a() {
         com.anythink.core.common.k.b.a.a().a(new Runnable() { // from class: com.anythink.core.a.a.1
             @Override // java.lang.Runnable
             public final void run() {
-                a.this.f6321a.a(a.this.b.format(new Date(System.currentTimeMillis())));
+                a.this.a.a(a.this.b.format(new Date(System.currentTimeMillis())));
             }
         });
     }
@@ -63,19 +59,19 @@ public final class a {
         synchronized (v.a().a(str2)) {
             long currentTimeMillis = System.currentTimeMillis();
             String format = this.b.format(new Date(currentTimeMillis));
-            String format2 = this.f6322c.format(new Date(currentTimeMillis));
+            String format2 = this.c.format(new Date(currentTimeMillis));
             int parseInt = Integer.parseInt(str);
-            ae.a a2 = a(str2, str3);
-            ae.a aVar = a2;
-            if (a2 == null) {
+            ae.a a = a(str2, str3);
+            ae.a aVar = a;
+            if (a == null) {
                 aVar = new ae.a();
-                aVar.f6624a = str3;
+                aVar.a = str3;
             }
-            if (TextUtils.equals(format, aVar.f6625c)) {
+            if (TextUtils.equals(format, aVar.c)) {
                 aVar.d++;
             } else {
                 aVar.d = 1;
-                aVar.f6625c = format;
+                aVar.c = format;
             }
             if (TextUtils.equals(format2, aVar.b)) {
                 aVar.e++;
@@ -84,7 +80,7 @@ public final class a {
                 aVar.b = format2;
             }
             aVar.f = currentTimeMillis;
-            this.f6321a.a(parseInt, str2, aVar);
+            this.a.a(parseInt, str2, aVar);
         }
     }
 
@@ -93,9 +89,9 @@ public final class a {
             return false;
         }
         long currentTimeMillis = System.currentTimeMillis();
-        ae a2 = this.f6321a.a(str, this.b.format(new Date(currentTimeMillis)), this.f6322c.format(new Date(currentTimeMillis)));
-        int i = a2 != null ? a2.f6623c : 0;
-        int i2 = a2 != null ? a2.d : 0;
+        ae a = this.a.a(str, this.b.format(new Date(currentTimeMillis)), this.c.format(new Date(currentTimeMillis)));
+        int i = a != null ? a.c : 0;
+        int i2 = a != null ? a.d : 0;
         if (dVar.ab() == -1 || i < dVar.ab()) {
             return dVar.ac() != -1 && ((long) i2) >= dVar.ac();
         }
@@ -107,9 +103,9 @@ public final class a {
             return false;
         }
         long currentTimeMillis = System.currentTimeMillis();
-        ae.a a2 = this.f6321a.a(str, aiVar.t(), this.b.format(new Date(currentTimeMillis)), this.f6322c.format(new Date(currentTimeMillis)));
-        ae.a aVar = a2;
-        if (a2 == null) {
+        ae.a a = this.a.a(str, aiVar.t(), this.b.format(new Date(currentTimeMillis)), this.c.format(new Date(currentTimeMillis)));
+        ae.a aVar = a;
+        if (a == null) {
             aVar = new ae.a();
         }
         if (aiVar.f() == -1 || aVar.e < aiVar.f()) {

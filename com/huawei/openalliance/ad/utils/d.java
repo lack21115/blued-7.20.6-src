@@ -16,8 +16,9 @@ import org.json.JSONObject;
 public class d {
     private static final String Code = "AdSourceUtil";
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-7994992-dex2jar.jar:com/huawei/openalliance/ad/utils/d$a.class */
-    static class a implements RemoteCallResultCallback<String> {
+    public static class a implements RemoteCallResultCallback<String> {
         private final WeakReference<Context> Code;
 
         public a(Context context) {

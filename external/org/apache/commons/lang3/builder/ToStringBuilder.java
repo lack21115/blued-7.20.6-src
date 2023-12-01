@@ -58,8 +58,8 @@ public class ToStringBuilder implements Builder<String> {
         return this;
     }
 
-    public ToStringBuilder append(char c2) {
-        this.style.append(this.buffer, (String) null, c2);
+    public ToStringBuilder append(char c) {
+        this.style.append(this.buffer, (String) null, c);
         return this;
     }
 
@@ -93,8 +93,8 @@ public class ToStringBuilder implements Builder<String> {
         return this;
     }
 
-    public ToStringBuilder append(String str, char c2) {
-        this.style.append(this.buffer, str, c2);
+    public ToStringBuilder append(String str, char c) {
+        this.style.append(this.buffer, str, c);
         return this;
     }
 

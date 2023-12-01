@@ -10,24 +10,24 @@ import java.util.Map;
 public class n {
 
     /* renamed from: a  reason: collision with root package name */
-    private ByteBuffer f37652a;
+    private ByteBuffer f23961a;
     private r b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f37653c;
+    public String f23962c;
 
     public n() {
         this(128);
     }
 
     public n(int i) {
-        this.f37653c = "GBK";
-        this.f37652a = ByteBuffer.allocate(i);
+        this.f23962c = "GBK";
+        this.f23961a = ByteBuffer.allocate(i);
     }
 
     public n(ByteBuffer byteBuffer) {
-        this.f37653c = "GBK";
-        this.f37652a = byteBuffer;
+        this.f23962c = "GBK";
+        this.f23961a = byteBuffer;
     }
 
     private void b(Object[] objArr, int i) {
@@ -47,12 +47,12 @@ public class n {
     }
 
     public int a(String str) {
-        this.f37653c = str;
+        this.f23962c = str;
         return 0;
     }
 
     public ByteBuffer a() {
-        return this.f37652a;
+        return this.f23961a;
     }
 
     public void a(byte b, int i) {
@@ -62,32 +62,32 @@ public class n {
             return;
         }
         b((byte) 0, i);
-        this.f37652a.put(b);
+        this.f23961a.put(b);
     }
 
     public void a(double d, int i) {
         a(10);
         b((byte) 5, i);
-        this.f37652a.putDouble(d);
+        this.f23961a.putDouble(d);
     }
 
     public void a(float f, int i) {
         a(6);
         b((byte) 4, i);
-        this.f37652a.putFloat(f);
+        this.f23961a.putFloat(f);
     }
 
     public void a(int i) {
-        if (this.f37652a.remaining() < i) {
-            int capacity = (this.f37652a.capacity() + i) * 2;
+        if (this.f23961a.remaining() < i) {
+            int capacity = (this.f23961a.capacity() + i) * 2;
             try {
                 ByteBuffer allocate = ByteBuffer.allocate(capacity);
-                allocate.put(this.f37652a.array(), 0, this.f37652a.position());
-                this.f37652a = allocate;
+                allocate.put(this.f23961a.array(), 0, this.f23961a.position());
+                this.f23961a = allocate;
             } catch (IllegalArgumentException e) {
                 r rVar = this.b;
                 if (rVar != null) {
-                    rVar.a(e, this.f37652a, i, capacity);
+                    rVar.a(e, this.f23961a, i, capacity);
                 }
                 throw e;
             }
@@ -101,7 +101,7 @@ public class n {
             return;
         }
         b((byte) 2, i2);
-        this.f37652a.putInt(i);
+        this.f23961a.putInt(i);
     }
 
     public void a(long j, int i) {
@@ -111,7 +111,7 @@ public class n {
             return;
         }
         b((byte) 3, i);
-        this.f37652a.putLong(j);
+        this.f23961a.putLong(j);
     }
 
     public void a(p pVar, int i) {
@@ -203,20 +203,20 @@ public class n {
     public void a(String str, int i) {
         byte[] bytes;
         try {
-            bytes = str.getBytes(this.f37653c);
+            bytes = str.getBytes(this.f23962c);
         } catch (UnsupportedEncodingException e) {
             bytes = str.getBytes();
         }
         a(bytes.length + 10);
         if (bytes.length > 255) {
             b((byte) 7, i);
-            this.f37652a.putInt(bytes.length);
-            this.f37652a.put(bytes);
+            this.f23961a.putInt(bytes.length);
+            this.f23961a.put(bytes);
             return;
         }
         b((byte) 6, i);
-        this.f37652a.put((byte) bytes.length);
-        this.f37652a.put(bytes);
+        this.f23961a.put((byte) bytes.length);
+        this.f23961a.put(bytes);
     }
 
     public <T> void a(Collection<T> collection, int i) {
@@ -249,7 +249,7 @@ public class n {
             return;
         }
         b((byte) 1, i);
-        this.f37652a.putShort(s);
+        this.f23961a.putShort(s);
     }
 
     public void a(boolean z, int i) {
@@ -261,7 +261,7 @@ public class n {
         b((byte) 13, i);
         b((byte) 0, 0);
         a(bArr.length, 0);
-        this.f37652a.put(bArr);
+        this.f23961a.put(bArr);
     }
 
     public void a(double[] dArr, int i) {
@@ -370,10 +370,10 @@ public class n {
 
     public void b(byte b, int i) {
         if (i < 15) {
-            this.f37652a.put((byte) (b | (i << 4)));
+            this.f23961a.put((byte) (b | (i << 4)));
         } else if (i < 256) {
-            this.f37652a.put((byte) (b | 240));
-            this.f37652a.put((byte) i);
+            this.f23961a.put((byte) (b | 240));
+            this.f23961a.put((byte) i);
         } else {
             throw new l("tag is too large: " + i);
         }
@@ -384,13 +384,13 @@ public class n {
         byte[] b = i.b(str);
         if (b.length > 255) {
             b((byte) 7, i);
-            this.f37652a.putInt(b.length);
-            this.f37652a.put(b);
+            this.f23961a.putInt(b.length);
+            this.f23961a.put(b);
             return;
         }
         b((byte) 6, i);
-        this.f37652a.put((byte) b.length);
-        this.f37652a.put(b);
+        this.f23961a.put((byte) b.length);
+        this.f23961a.put(b);
     }
 
     public void c(String str, int i) {
@@ -398,18 +398,18 @@ public class n {
         a(b.length + 10);
         if (b.length > 255) {
             b((byte) 7, i);
-            this.f37652a.putInt(b.length);
-            this.f37652a.put(b);
+            this.f23961a.putInt(b.length);
+            this.f23961a.put(b);
             return;
         }
         b((byte) 6, i);
-        this.f37652a.put((byte) b.length);
-        this.f37652a.put(b);
+        this.f23961a.put((byte) b.length);
+        this.f23961a.put(b);
     }
 
     public byte[] c() {
-        byte[] bArr = new byte[this.f37652a.position()];
-        System.arraycopy((Object) this.f37652a.array(), 0, (Object) bArr, 0, this.f37652a.position());
+        byte[] bArr = new byte[this.f23961a.position()];
+        System.arraycopy(this.f23961a.array(), 0, bArr, 0, this.f23961a.position());
         return bArr;
     }
 }

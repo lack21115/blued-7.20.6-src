@@ -12,13 +12,9 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/LiveBattleAdvanceOneLineBinding.class */
 public final class LiveBattleAdvanceOneLineBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f12128a;
+    public final ImageView a;
     public final FrameLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final RecyclerView f12129c;
+    public final RecyclerView c;
     public final RecyclerView d;
     public final TextView e;
     public final TextView f;
@@ -27,9 +23,9 @@ public final class LiveBattleAdvanceOneLineBinding implements ViewBinding {
 
     private LiveBattleAdvanceOneLineBinding(FrameLayout frameLayout, ImageView imageView, FrameLayout frameLayout2, RecyclerView recyclerView, RecyclerView recyclerView2, TextView textView, TextView textView2, FrameLayout frameLayout3) {
         this.h = frameLayout;
-        this.f12128a = imageView;
+        this.a = imageView;
         this.b = frameLayout2;
-        this.f12129c = recyclerView;
+        this.c = recyclerView;
         this.d = recyclerView2;
         this.e = textView;
         this.f = textView2;
@@ -50,17 +46,17 @@ public final class LiveBattleAdvanceOneLineBinding implements ViewBinding {
         if (imageView != null) {
             FrameLayout frameLayout = (FrameLayout) view.findViewById(R.id.root);
             if (frameLayout != null) {
-                RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rv_list);
-                if (recyclerView != null) {
-                    RecyclerView recyclerView2 = (RecyclerView) view.findViewById(R.id.rv_list_advance);
-                    if (recyclerView2 != null) {
+                RecyclerView findViewById = view.findViewById(R.id.rv_list);
+                if (findViewById != null) {
+                    RecyclerView findViewById2 = view.findViewById(R.id.rv_list_advance);
+                    if (findViewById2 != null) {
                         TextView textView = (TextView) view.findViewById(R.id.tv_buy);
                         if (textView != null) {
                             TextView textView2 = (TextView) view.findViewById(R.id.tv_title);
                             if (textView2 != null) {
                                 FrameLayout frameLayout2 = (FrameLayout) view.findViewById(R.id.view_advance);
                                 if (frameLayout2 != null) {
-                                    return new LiveBattleAdvanceOneLineBinding((FrameLayout) view, imageView, frameLayout, recyclerView, recyclerView2, textView, textView2, frameLayout2);
+                                    return new LiveBattleAdvanceOneLineBinding((FrameLayout) view, imageView, frameLayout, findViewById, findViewById2, textView, textView2, frameLayout2);
                                 }
                                 str = "viewAdvance";
                             } else {
@@ -84,7 +80,6 @@ public final class LiveBattleAdvanceOneLineBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.h;

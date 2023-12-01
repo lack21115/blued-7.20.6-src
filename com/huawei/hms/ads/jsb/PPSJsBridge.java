@@ -7,6 +7,7 @@ import android.webkit.JavascriptInterface;
 import android.webkit.ValueCallback;
 import android.webkit.WebView;
 import com.bytedance.applog.tracker.Tracker;
+import com.bytedance.applog.util.WebViewJsUtil;
 import com.huawei.hms.ads.jsb.constant.Constant;
 import com.huawei.hms.ads.jsb.inner.impl.JsBridgeImpl;
 import com.huawei.hms.ads.jsbridge.b;
@@ -20,11 +21,11 @@ import org.json.JSONObject;
 public class PPSJsBridge extends com.huawei.hms.ads.jsbridge.a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static JsbConfig f22501a;
+    private static JsbConfig f8893a;
     private WeakReference<WebView> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private IWebView f22502c;
+    private IWebView f8894c;
     private boolean d;
 
     public PPSJsBridge(WebView webView) {
@@ -48,7 +49,7 @@ public class PPSJsBridge extends com.huawei.hms.ads.jsbridge.a {
     }
 
     private void a() {
-        JsBridgeImpl.initConfig(b(), f22501a);
+        JsBridgeImpl.initConfig(b(), f8893a);
     }
 
     private void a(final String str) {
@@ -56,9 +57,9 @@ public class PPSJsBridge extends com.huawei.hms.ads.jsbridge.a {
             @Override // java.lang.Runnable
             public void run() {
                 if (PPSJsBridge.this.d) {
-                    if (PPSJsBridge.this.f22502c != null) {
+                    if (PPSJsBridge.this.f8894c != null) {
                         if (Build.VERSION.SDK_INT >= 19) {
-                            PPSJsBridge.this.f22502c.evaluateJavascript(str, new ValueCallback<String>() { // from class: com.huawei.hms.ads.jsb.PPSJsBridge.2.1
+                            PPSJsBridge.this.f8894c.evaluateJavascript(str, new ValueCallback<String>() { // from class: com.huawei.hms.ads.jsb.PPSJsBridge.2.1
                                 @Override // android.webkit.ValueCallback
                                 /* renamed from: a */
                                 public void onReceiveValue(String str2) {
@@ -66,11 +67,11 @@ public class PPSJsBridge extends com.huawei.hms.ads.jsbridge.a {
                             });
                             return;
                         }
-                        IWebView iWebView = PPSJsBridge.this.f22502c;
-                        iWebView.loadUrl("javascript:" + str);
+                        IWebView iWebView = PPSJsBridge.this.f8894c;
+                        iWebView.loadUrl(WebViewJsUtil.JS_URL_PREFIX + str);
                         return;
                     }
-                } else if (PPSJsBridge.this.b != null && PPSJsBridge.this.b.get() != 0) {
+                } else if (PPSJsBridge.this.b != null && PPSJsBridge.this.b.get() != null) {
                     if (Build.VERSION.SDK_INT >= 19) {
                         ((WebView) PPSJsBridge.this.b.get()).evaluateJavascript(str, new ValueCallback<String>() { // from class: com.huawei.hms.ads.jsb.PPSJsBridge.2.2
                             @Override // android.webkit.ValueCallback
@@ -81,7 +82,7 @@ public class PPSJsBridge extends com.huawei.hms.ads.jsbridge.a {
                         return;
                     }
                     WebView webView = (WebView) PPSJsBridge.this.b.get();
-                    Tracker.loadUrl(webView, "javascript:" + str);
+                    Tracker.loadUrl(webView, WebViewJsUtil.JS_URL_PREFIX + str);
                     return;
                 }
                 b.b("please register a webView object to jsb.");
@@ -114,7 +115,7 @@ public class PPSJsBridge extends com.huawei.hms.ads.jsbridge.a {
     /* JADX INFO: Access modifiers changed from: private */
     public Context b() {
         if (this.d) {
-            IWebView iWebView = this.f22502c;
+            IWebView iWebView = this.f8894c;
             if (iWebView != null) {
                 Context context = iWebView.getContext();
                 if (context == null) {
@@ -138,13 +139,13 @@ public class PPSJsBridge extends com.huawei.hms.ads.jsbridge.a {
 
     private void b(IWebView iWebView) {
         this.d = true;
-        this.f22502c = iWebView;
+        this.f8894c = iWebView;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public String c() {
         if (this.d) {
-            IWebView iWebView = this.f22502c;
+            IWebView iWebView = this.f8894c;
             if (iWebView != null) {
                 return a(iWebView);
             }
@@ -158,7 +159,7 @@ public class PPSJsBridge extends com.huawei.hms.ads.jsbridge.a {
     }
 
     public static void init(JsbConfig jsbConfig) {
-        f22501a = jsbConfig;
+        f8893a = jsbConfig;
     }
 
     public void destroy() {
@@ -166,10 +167,10 @@ public class PPSJsBridge extends com.huawei.hms.ads.jsbridge.a {
         if (weakReference != null) {
             weakReference.clear();
         }
-        IWebView iWebView = this.f22502c;
+        IWebView iWebView = this.f8894c;
         if (iWebView != null) {
             iWebView.removeJavascriptInterface("_HwJSBridge");
-            this.f22502c = null;
+            this.f8894c = null;
         }
     }
 

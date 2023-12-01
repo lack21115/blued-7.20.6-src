@@ -7,13 +7,9 @@ import java.util.regex.Pattern;
 
 /* loaded from: source-3503164-dex2jar.jar:org/commonmark/internal/util/Escaping.class */
 public class Escaping {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final Pattern f44046a = Pattern.compile("[\\\\&]");
+    private static final Pattern a = Pattern.compile("[\\\\&]");
     private static final Pattern b = Pattern.compile("\\\\[!\"#$%&'()*+,./:;<=>?@\\[\\\\\\]^_`{|}~-]|&(?:#x[a-f0-9]{1,6}|#[0-9]{1,7}|[a-z][a-z0-9]{1,31});", 2);
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final Pattern f44047c = Pattern.compile("(%[a-fA-F0-9]{0,2}|[^:/?#@!$&'()*+,;=a-zA-Z0-9\\-._~])");
+    private static final Pattern c = Pattern.compile("(%[a-fA-F0-9]{0,2}|[^:/?#@!$&'()*+,;=a-zA-Z0-9\\-._~])");
     private static final char[] d = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
     private static final Pattern e = Pattern.compile("[ \t\r\n]+");
     private static final Replacer f = new Replacer() { // from class: org.commonmark.internal.util.Escaping.1
@@ -122,14 +118,14 @@ public class Escaping {
 
     public static String b(String str) {
         String str2 = str;
-        if (f44046a.matcher(str).find()) {
+        if (a.matcher(str).find()) {
             str2 = a(b, str, f);
         }
         return str2;
     }
 
     public static String c(String str) {
-        return a(f44047c, str, g);
+        return a(c, str, g);
     }
 
     public static String d(String str) {

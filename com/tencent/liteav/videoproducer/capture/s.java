@@ -11,11 +11,11 @@ import com.tencent.liteav.videoproducer.capture.CaptureSourceInterface;
 public final class s implements CaptureSourceInterface {
 
     /* renamed from: a  reason: collision with root package name */
-    final IVideoReporter f36942a;
+    final IVideoReporter f23251a;
     protected final Handler b;
 
     /* renamed from: c  reason: collision with root package name */
-    CaptureSourceInterface.a f36943c;
+    CaptureSourceInterface.a f23252c;
     CameraCaptureParams f;
     boolean d = true;
     boolean e = false;
@@ -52,21 +52,21 @@ public final class s implements CaptureSourceInterface {
 
         @Override // com.tencent.liteav.videoproducer.capture.CaptureSourceInterface.a
         public final void c(boolean z) {
-            if (s.this.f36943c != null) {
-                s.this.f36943c.c(z);
+            if (s.this.f23252c != null) {
+                s.this.f23252c.c(z);
             }
         }
 
         @Override // com.tencent.liteav.videoproducer.capture.CaptureSourceInterface.a
         public final void d(boolean z) {
-            if (s.this.f36943c != null) {
-                s.this.f36943c.d(z);
+            if (s.this.f23252c != null) {
+                s.this.f23252c.d(z);
             }
         }
     }
 
     public s(IVideoReporter iVideoReporter, Looper looper) {
-        this.f36942a = iVideoReporter;
+        this.f23251a = iVideoReporter;
         this.b = new com.tencent.liteav.base.util.b(looper);
     }
 

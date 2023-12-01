@@ -23,9 +23,7 @@ import org.conscrypt.SSLClientSessionCache;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/net/http/ssl/InternalSSLCertificateSocketFactory.class */
 public class InternalSSLCertificateSocketFactory extends SSLSocketFactory {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final TrustManager[] f9699a = {new X509TrustManager() { // from class: com.blued.android.core.net.http.ssl.InternalSSLCertificateSocketFactory.1
+    private static final TrustManager[] a = {new X509TrustManager() { // from class: com.blued.android.core.net.http.ssl.InternalSSLCertificateSocketFactory.1
         @Override // javax.net.ssl.X509TrustManager
         public void checkClientTrusted(X509Certificate[] x509CertificateArr, String str) {
         }
@@ -40,9 +38,7 @@ public class InternalSSLCertificateSocketFactory extends SSLSocketFactory {
         }
     }};
     private SSLSocketFactory b = null;
-
-    /* renamed from: c  reason: collision with root package name */
-    private SSLSocketFactory f9700c = null;
+    private SSLSocketFactory c = null;
     private TrustManager[] d = null;
     private KeyManager[] e = null;
     private byte[] f = null;
@@ -72,10 +68,10 @@ public class InternalSSLCertificateSocketFactory extends SSLSocketFactory {
     private SSLSocketFactory a() {
         synchronized (this) {
             if (this.k) {
-                if (this.f9700c == null) {
-                    this.f9700c = a(this.e, this.d);
+                if (this.c == null) {
+                    this.c = a(this.e, this.d);
                 }
-                return this.f9700c;
+                return this.c;
             }
             if (this.b == null) {
                 if (this.k) {
@@ -83,7 +79,7 @@ public class InternalSSLCertificateSocketFactory extends SSLSocketFactory {
                 } else {
                     Log.w("SSLCertificateSocket", "Bypassing SSL security checks at caller's request");
                 }
-                this.b = a(this.e, f9699a);
+                this.b = a(this.e, a);
             }
             return this.b;
         }

@@ -7,11 +7,11 @@ import com.soft.blued.customview.BluedADConstraintLayout;
 public final class NativeAdItemBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final BluedADConstraintLayout f29482a;
+    private final BluedADConstraintLayout f15792a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public BluedADConstraintLayout getRoot() {
-        return this.f29482a;
+        return this.f15792a;
     }
 }

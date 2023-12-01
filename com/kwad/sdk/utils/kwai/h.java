@@ -7,13 +7,11 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.security.SecureRandom;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-7994992-dex2jar.jar:com/kwad/sdk/utils/kwai/h.class */
-public final class h {
+final class h {
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/sdk/utils/kwai/h$a.class */
-    public static final class a {
+    static final class a {
         static final SecureRandom aCI = new SecureRandom();
         static final char[] aCJ = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
     }

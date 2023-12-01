@@ -6,21 +6,21 @@ import android.content.Context;
 public class a0 implements b {
 
     /* renamed from: a  reason: collision with root package name */
-    public Context f38458a;
+    public Context f24767a;
 
     @Override // com.tencent.qmsp.oaid2.b
     public String a() {
-        return y.b(this.f38458a);
+        return y.b(this.f24767a);
     }
 
     @Override // com.tencent.qmsp.oaid2.b
     public void a(Context context, IVendorCallback iVendorCallback) {
-        this.f38458a = context;
+        this.f24767a = context;
     }
 
     @Override // com.tencent.qmsp.oaid2.b
     public String d() {
-        return y.a(this.f38458a);
+        return y.a(this.f24767a);
     }
 
     @Override // com.tencent.qmsp.oaid2.b

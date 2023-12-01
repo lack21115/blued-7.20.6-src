@@ -15,28 +15,24 @@ import java.util.Map;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/e/a/e.class */
 public final class e extends BaseAd implements a, Serializable {
-
-    /* renamed from: a  reason: collision with root package name */
-    private int f6614a;
+    private int a;
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f6615c;
+    private int c;
     private int d;
     private int e;
     private BaseAd f;
     private Map<String, Object> g;
 
     public e(BaseAd baseAd, Map<String, Object> map) {
-        this.f6614a = 1;
+        this.a = 1;
         this.b = 5;
-        this.f6615c = 1;
+        this.c = 1;
         this.e = 5;
         this.f = baseAd;
         this.g = map;
         Object obj = map.get("orientation");
         if (obj != null) {
-            this.f6614a = Integer.parseInt(obj.toString());
+            this.a = Integer.parseInt(obj.toString());
         }
         Object obj2 = map.get("countdown");
         if (obj2 != null) {
@@ -44,7 +40,7 @@ public final class e extends BaseAd implements a, Serializable {
         }
         Object obj3 = map.get("allows_skip");
         if (obj3 != null) {
-            this.f6615c = Integer.parseInt(obj3.toString());
+            this.c = Integer.parseInt(obj3.toString());
         }
         Object obj4 = map.get("button_type");
         if (obj4 != null) {
@@ -59,7 +55,7 @@ public final class e extends BaseAd implements a, Serializable {
     private void a(Map<String, Object> map) {
         Object obj = map.get("orientation");
         if (obj != null) {
-            this.f6614a = Integer.parseInt(obj.toString());
+            this.a = Integer.parseInt(obj.toString());
         }
         Object obj2 = map.get("countdown");
         if (obj2 != null) {
@@ -67,7 +63,7 @@ public final class e extends BaseAd implements a, Serializable {
         }
         Object obj3 = map.get("allows_skip");
         if (obj3 != null) {
-            this.f6615c = Integer.parseInt(obj3.toString());
+            this.c = Integer.parseInt(obj3.toString());
         }
         Object obj4 = map.get("button_type");
         if (obj4 != null) {
@@ -81,7 +77,7 @@ public final class e extends BaseAd implements a, Serializable {
 
     @Override // com.anythink.core.common.e.a.a
     public final int a() {
-        return this.f6614a;
+        return this.a;
     }
 
     @Override // com.anythink.core.common.e.a.a
@@ -91,7 +87,7 @@ public final class e extends BaseAd implements a, Serializable {
 
     @Override // com.anythink.core.common.e.a.a
     public final int c() {
-        int i = this.f6615c;
+        int i = this.c;
         return (i != 1 && i == 0) ? 1 : 0;
     }
 

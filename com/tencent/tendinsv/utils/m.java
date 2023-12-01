@@ -12,7 +12,7 @@ import java.util.concurrent.TimeoutException;
 public class m {
 
     /* renamed from: a  reason: collision with root package name */
-    private final String[] f39105a = {com.tencent.tendinsv.a.h};
+    private final String[] f25414a = {com.tencent.tendinsv.a.h};
     private ExecutorService b = Executors.newSingleThreadExecutor();
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -49,7 +49,7 @@ public class m {
             @Override // java.util.concurrent.Callable
             /* renamed from: a */
             public String call() {
-                String[] strArr = m.this.f39105a;
+                String[] strArr = m.this.f25414a;
                 int length = strArr.length;
                 int i = 0;
                 while (true) {

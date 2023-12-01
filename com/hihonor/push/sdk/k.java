@@ -9,7 +9,7 @@ public class k {
         try {
             q0 q0Var = new q0(z ? UpMsgType.TURN_ON_PUSH : UpMsgType.TURN_OFF_PUSH, null);
             q0Var.e = a.a();
-            a.a(j.f22302c.a(q0Var));
+            a.a(j.f8694c.a(q0Var));
             return null;
         } catch (Exception e) {
             throw a.a(e);

@@ -9,37 +9,29 @@ import android.text.TextUtils;
 /* renamed from: com.amap.api.col.3sl.hu  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/hu.class */
 public final class hu {
-
-    /* renamed from: a  reason: collision with root package name */
-    private volatile b f5110a = new b((byte) 0);
+    private volatile b a = new b((byte) 0);
     private jj b = new jj("HttpsDecisionUtil");
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.amap.api.col.3sl.hu$a */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/hu$a.class */
     public static final class a {
-
-        /* renamed from: a  reason: collision with root package name */
-        static hu f5111a = new hu();
+        static hu a = new hu();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.amap.api.col.3sl.hu$b */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/hu$b.class */
     public static final class b {
-
-        /* renamed from: a  reason: collision with root package name */
-        protected boolean f5112a;
+        protected boolean a;
         private int b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private final boolean f5113c;
+        private final boolean c;
         private boolean d;
 
         private b() {
             this.b = 0;
-            this.f5112a = true;
-            this.f5113c = true;
+            this.a = true;
+            this.c = true;
             this.d = false;
         }
 
@@ -54,7 +46,7 @@ public final class hu {
         }
 
         public final void a(boolean z) {
-            this.f5112a = z;
+            this.a = z;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:30:0x0059 A[RETURN] */
@@ -80,7 +72,7 @@ public final class hu {
                 r4 = r0
             L16:
                 r0 = r3
-                boolean r0 = r0.f5112a
+                boolean r0 = r0.a
                 if (r0 == 0) goto L44
                 r0 = r3
                 int r0 = r0.b
@@ -144,18 +136,18 @@ public final class hu {
     }
 
     public static hu a() {
-        return a.f5111a;
+        return a.a;
     }
 
     public static String a(String str) {
         String str2 = str;
         if (!TextUtils.isEmpty(str)) {
-            if (str.startsWith("https")) {
+            if (str.startsWith(com.alipay.sdk.cons.b.a)) {
                 return str;
             }
             try {
                 Uri.Builder buildUpon = Uri.parse(str).buildUpon();
-                buildUpon.scheme("https");
+                buildUpon.scheme(com.alipay.sdk.cons.b.a);
                 str2 = buildUpon.build().toString();
             } catch (Throwable th) {
                 return str;
@@ -179,35 +171,35 @@ public final class hu {
     }
 
     public final void a(Context context) {
-        if (this.f5110a == null) {
-            this.f5110a = new b((byte) 0);
+        if (this.a == null) {
+            this.a = new b((byte) 0);
         }
-        this.f5110a.a(jj.a(context, "open_common", "a3", true));
-        this.f5110a.a(context);
+        this.a.a(jj.a(context, "open_common", "a3", true));
+        this.a.a(context);
         ic.a(context).a();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final void a(Context context, boolean z) {
-        if (this.f5110a == null) {
-            this.f5110a = new b((byte) 0);
+        if (this.a == null) {
+            this.a = new b((byte) 0);
         }
         b(context, z);
-        this.f5110a.a(z);
+        this.a.a(z);
     }
 
     public final void a(boolean z) {
-        if (this.f5110a == null) {
-            this.f5110a = new b((byte) 0);
+        if (this.a == null) {
+            this.a = new b((byte) 0);
         }
-        this.f5110a.b(z);
+        this.a.b(z);
     }
 
     public final boolean b() {
-        if (this.f5110a == null) {
-            this.f5110a = new b((byte) 0);
+        if (this.a == null) {
+            this.a = new b((byte) 0);
         }
-        return this.f5110a.a();
+        return this.a.a();
     }
 
     public final boolean b(boolean z) {

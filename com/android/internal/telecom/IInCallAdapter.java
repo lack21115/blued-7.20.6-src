@@ -165,12 +165,12 @@ public interface IInCallAdapter extends IInterface {
             }
 
             @Override // com.android.internal.telecom.IInCallAdapter
-            public void playDtmfTone(String str, char c2) throws RemoteException {
+            public void playDtmfTone(String str, char c) throws RemoteException {
                 Parcel obtain = Parcel.obtain();
                 try {
                     obtain.writeInterfaceToken(Stub.DESCRIPTOR);
                     obtain.writeString(str);
-                    obtain.writeInt(c2);
+                    obtain.writeInt(c);
                     this.mRemote.transact(9, obtain, null, 1);
                 } finally {
                     obtain.recycle();
@@ -383,7 +383,7 @@ public interface IInCallAdapter extends IInterface {
                     return true;
                 case 12:
                     parcel.enforceInterface(DESCRIPTOR);
-                    phoneAccountSelected(parcel.readString(), parcel.readInt() != 0 ? PhoneAccountHandle.CREATOR.createFromParcel(parcel) : null, parcel.readInt() != 0);
+                    phoneAccountSelected(parcel.readString(), parcel.readInt() != 0 ? (PhoneAccountHandle) PhoneAccountHandle.CREATOR.createFromParcel(parcel) : null, parcel.readInt() != 0);
                     return true;
                 case 13:
                     parcel.enforceInterface(DESCRIPTOR);
@@ -413,7 +413,7 @@ public interface IInCallAdapter extends IInterface {
                     parcel.enforceInterface(DESCRIPTOR);
                     switchToOtherActiveSub(parcel.readString(), parcel.readInt() != 0);
                     return true;
-                case IBinder.INTERFACE_TRANSACTION /* 1598968902 */:
+                case 1598968902:
                     parcel2.writeString(DESCRIPTOR);
                     return true;
                 default:
@@ -438,7 +438,7 @@ public interface IInCallAdapter extends IInterface {
 
     void phoneAccountSelected(String str, PhoneAccountHandle phoneAccountHandle, boolean z) throws RemoteException;
 
-    void playDtmfTone(String str, char c2) throws RemoteException;
+    void playDtmfTone(String str, char c) throws RemoteException;
 
     void postDialContinue(String str, boolean z) throws RemoteException;
 

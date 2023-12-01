@@ -20,7 +20,7 @@ public class LiveFragment_ViewBinding implements Unbinder {
         this.b = liveFragment;
         liveFragment.mTitle = Utils.a(view, 2131370694, "field 'mTitle'");
         liveFragment.mTitleLeft = (ImageView) Utils.a(view, 2131363120, "field 'mTitleLeft'", ImageView.class);
-        liveFragment.layoutTitleRight = (FrameLayout) Utils.a(view, 2131363133, "field 'layoutTitleRight'", FrameLayout.class);
+        liveFragment.layoutTitleRight = (FrameLayout) Utils.a(view, R.id.ctt_right_menu, "field 'layoutTitleRight'", FrameLayout.class);
         liveFragment.mTitleRight = (ImageView) Utils.a(view, 2131363126, "field 'mTitleRight'", ImageView.class);
         liveFragment.layoutTitleRequestLive = Utils.a(view, R.id.live_request_live_title_id, "field 'layoutTitleRequestLive'");
         liveFragment.ivTitleRequestLive = (ImageView) Utils.a(view, R.id.live_request_live_title_hand_iv, "field 'ivTitleRequestLive'", ImageView.class);
@@ -30,7 +30,7 @@ public class LiveFragment_ViewBinding implements Unbinder {
         liveFragment.mRightNewDot = (ShapeTextView) Utils.a(view, R.id.img_right_new_dot, "field 'mRightNewDot'", ShapeTextView.class);
         liveFragment.mTitleBarRoot = (FrameLayout) Utils.a(view, R.id.fl_title_bar_root, "field 'mTitleBarRoot'", FrameLayout.class);
         liveFragment.mViewPager = (CustomViewPager) Utils.a(view, R.id.main_live_viewpager, "field 'mViewPager'", CustomViewPager.class);
-        liveFragment.indicator = (TabPageIndicatorWithDot) Utils.a(view, 2131373299, "field 'indicator'", TabPageIndicatorWithDot.class);
+        liveFragment.indicator = (TabPageIndicatorWithDot) Utils.a(view, R.id.vp_indicator, "field 'indicator'", TabPageIndicatorWithDot.class);
         liveFragment.view_soft = Utils.a(view, R.id.soft, "field 'view_soft'");
         liveFragment.view_hard = Utils.a(view, R.id.hard, "field 'view_hard'");
         liveFragment.beauty_open = Utils.a(view, R.id.beauty_open, "field 'beauty_open'");

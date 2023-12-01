@@ -1,6 +1,6 @@
 package com.squareup.okhttp;
 
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
+import com.blued.das.live.LiveProtos;
 import java.net.IDN;
 import java.net.InetAddress;
 import java.net.MalformedURLException;
@@ -181,7 +181,7 @@ public final class HttpUrl {
          */
         /* JADX WARN: Code restructure failed: missing block: B:58:0x0131, code lost:
             r0 = r12 - r14;
-            java.lang.System.arraycopy((java.lang.Object) r0, r14, (java.lang.Object) r0, 16 - r0, r0);
+            java.lang.System.arraycopy(r0, r14, r0, 16 - r0, r0);
             java.util.Arrays.fill(r0, r14, (16 - r12) + r14, (byte) 0);
          */
         /* JADX WARN: Code restructure failed: missing block: B:60:0x015c, code lost:
@@ -668,7 +668,7 @@ public final class HttpUrl {
 
         public Builder encodedPath(String str) {
             if (str != null) {
-                if (str.startsWith(BridgeUtil.SPLIT_MARK)) {
+                if (str.startsWith("/")) {
                     resolvePath(str, 0, str.length());
                     return this;
                 }
@@ -983,8 +983,8 @@ public final class HttpUrl {
                     if (!buffer5.exhausted()) {
                         int readByte = buffer5.readByte() & 255;
                         buffer.writeByte(37);
-                        buffer.writeByte((int) HEX_DIGITS[(readByte >> 4) & 15]);
-                        buffer.writeByte((int) HEX_DIGITS[readByte & 15]);
+                        buffer.writeByte(HEX_DIGITS[(readByte >> 4) & 15]);
+                        buffer.writeByte(HEX_DIGITS[readByte & 15]);
                     }
                 }
             } else {
@@ -1014,7 +1014,10 @@ public final class HttpUrl {
         if (str.equals("http")) {
             return 80;
         }
-        return str.equals("https") ? 443 : -1;
+        if (str.equals("https")) {
+            return LiveProtos.Event.LIVE_CHALLENGE_PK_EXPLAIN_CLICK_VALUE;
+        }
+        return -1;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1252,7 +1255,7 @@ public final class HttpUrl {
         ArrayList arrayList = new ArrayList();
         while (indexOf < delimiterOffset) {
             int i = indexOf + 1;
-            indexOf = delimiterOffset(this.url, i, delimiterOffset, BridgeUtil.SPLIT_MARK);
+            indexOf = delimiterOffset(this.url, i, delimiterOffset, "/");
             arrayList.add(this.url.substring(i, indexOf));
         }
         return arrayList;

@@ -9,9 +9,7 @@ import kotlinx.coroutines.internal.ConcurrentLinkedListNode;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/internal/ConcurrentLinkedListNode.class */
 public abstract class ConcurrentLinkedListNode<N extends ConcurrentLinkedListNode<N>> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final /* synthetic */ AtomicReferenceFieldUpdater f43521a = AtomicReferenceFieldUpdater.newUpdater(ConcurrentLinkedListNode.class, Object.class, "_next");
+    private static final /* synthetic */ AtomicReferenceFieldUpdater a = AtomicReferenceFieldUpdater.newUpdater(ConcurrentLinkedListNode.class, Object.class, "_next");
     private static final /* synthetic */ AtomicReferenceFieldUpdater b = AtomicReferenceFieldUpdater.newUpdater(ConcurrentLinkedListNode.class, Object.class, "_prev");
     private volatile /* synthetic */ Object _next = null;
     private volatile /* synthetic */ Object _prev;
@@ -27,13 +25,13 @@ public abstract class ConcurrentLinkedListNode<N extends ConcurrentLinkedListNod
 
     private final N h() {
         N n;
-        N c2 = c();
+        N c = c();
         while (true) {
-            n = c2;
+            n = c;
             if (n == null || !n.e()) {
                 break;
             }
-            c2 = (N) n._prev;
+            c = (N) n._prev;
         }
         return n;
     }
@@ -56,7 +54,7 @@ public abstract class ConcurrentLinkedListNode<N extends ConcurrentLinkedListNod
     public final N a() {
         Symbol symbol;
         Object g = g();
-        symbol = ConcurrentLinkedListKt.f43520a;
+        symbol = ConcurrentLinkedListKt.a;
         if (g == symbol) {
             return null;
         }
@@ -64,7 +62,7 @@ public abstract class ConcurrentLinkedListNode<N extends ConcurrentLinkedListNod
     }
 
     public final boolean a(N n) {
-        return f43521a.compareAndSet(this, null, n);
+        return a.compareAndSet(this, null, n);
     }
 
     public final boolean b() {

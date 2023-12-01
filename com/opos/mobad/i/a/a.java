@@ -25,7 +25,7 @@ public class a implements com.opos.mobad.i.d {
 
     private String a(com.opos.mobad.i.a aVar) {
         if (aVar != null) {
-            int i = aVar.f26208c;
+            int i = aVar.f12520c;
             if (i != 0) {
                 if (i != 1) {
                     if (i != 2) {
@@ -191,8 +191,8 @@ public class a implements com.opos.mobad.i.d {
                 eVar.a();
             }
             if (eVar != null) {
-                if (200 != eVar.f24862a) {
-                    Log.d("DownloadEngineImpl", "downloadNormalFile httpResponseEntity.getResponseCode()=" + eVar.f24862a);
+                if (200 != eVar.f11174a) {
+                    Log.d("DownloadEngineImpl", "downloadNormalFile httpResponseEntity.getResponseCode()=" + eVar.f11174a);
                 } else if (c(context, aVar, eVar)) {
                     z = true;
                     com.opos.cmn.an.f.a.b("DownloadEngineImpl", "downloadNormalFile downloadRequest=", aVar, "netResponse=", eVar, "result=", Boolean.valueOf(z));
@@ -209,7 +209,7 @@ public class a implements com.opos.mobad.i.d {
     }
 
     private boolean c(Context context, com.opos.mobad.i.a aVar, com.opos.cmn.func.b.b.e eVar) {
-        boolean a2 = (context == null || aVar == null || eVar == null) ? false : a(d.a(context, aVar), d.b(context, aVar), eVar.f24863c, eVar.d, aVar.b);
+        boolean a2 = (context == null || aVar == null || eVar == null) ? false : a(d.a(context, aVar), d.b(context, aVar), eVar.f11175c, eVar.d, aVar.b);
         com.opos.cmn.an.f.a.b("DownloadEngineImpl", "saveNormalFile downloadRequest=", aVar, "netResponse=", eVar, "result=", Boolean.valueOf(a2));
         return a2;
     }
@@ -236,7 +236,7 @@ public class a implements com.opos.mobad.i.d {
         b.a aVar2 = new b.a();
         if (context != null && aVar != null) {
             long j = 0;
-            com.opos.cmn.func.b.b.e a2 = com.opos.cmn.func.b.b.b.a().a(context, aVar.f26207a);
+            com.opos.cmn.func.b.b.e a2 = com.opos.cmn.func.b.b.b.a().a(context, aVar.f12519a);
             if (a2 != null) {
                 j = a2.d;
             }
@@ -247,7 +247,7 @@ public class a implements com.opos.mobad.i.d {
                 z = true;
             } else {
                 com.opos.cmn.an.f.a.b("DownloadEngineImpl", "target not exists,start download it now.fileInfo=" + a(aVar));
-                if (a(aVar.f26208c)) {
+                if (a(aVar.f12520c)) {
                     String str = aVar.d + ".lk";
                     a(str);
                     e eVar = new e(str);

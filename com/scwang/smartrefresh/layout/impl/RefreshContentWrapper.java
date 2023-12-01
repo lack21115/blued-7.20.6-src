@@ -24,11 +24,11 @@ import java.util.LinkedList;
 public class RefreshContentWrapper implements ValueAnimator.AnimatorUpdateListener, RefreshContent, CoordinatorLayoutListener {
 
     /* renamed from: a  reason: collision with root package name */
-    protected View f27990a;
+    protected View f14302a;
     protected View b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected View f27991c;
+    protected View f14303c;
     protected View d;
     protected View e;
     protected int f = 0;
@@ -37,18 +37,18 @@ public class RefreshContentWrapper implements ValueAnimator.AnimatorUpdateListen
     protected ScrollBoundaryDeciderAdapter i = new ScrollBoundaryDeciderAdapter();
 
     public RefreshContentWrapper(View view) {
-        this.f27991c = view;
+        this.f14303c = view;
         this.b = view;
-        this.f27990a = view;
+        this.f14302a = view;
     }
 
     @Override // com.scwang.smartrefresh.layout.api.RefreshContent
     public ValueAnimator.AnimatorUpdateListener a(int i) {
-        View view = this.f27991c;
+        View view = this.f14303c;
         if (view == null || i == 0) {
             return null;
         }
-        if ((i >= 0 || !ScrollBoundaryUtil.b(view)) && (i <= 0 || !ScrollBoundaryUtil.a(this.f27991c))) {
+        if ((i >= 0 || !ScrollBoundaryUtil.b(view)) && (i <= 0 || !ScrollBoundaryUtil.a(this.f14303c))) {
             return null;
         }
         this.f = i;
@@ -57,7 +57,7 @@ public class RefreshContentWrapper implements ValueAnimator.AnimatorUpdateListen
 
     @Override // com.scwang.smartrefresh.layout.api.RefreshContent
     public View a() {
-        return this.f27990a;
+        return this.f14302a;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:14:0x0051, code lost:
@@ -296,22 +296,22 @@ public class RefreshContentWrapper implements ValueAnimator.AnimatorUpdateListen
     @Override // com.scwang.smartrefresh.layout.api.RefreshContent
     public void a(MotionEvent motionEvent) {
         PointF pointF = new PointF(motionEvent.getX(), motionEvent.getY());
-        pointF.offset(-this.f27990a.getLeft(), -this.f27990a.getTop());
-        View view = this.f27991c;
-        View view2 = this.f27990a;
+        pointF.offset(-this.f14302a.getLeft(), -this.f14302a.getTop());
+        View view = this.f14303c;
+        View view2 = this.f14302a;
         if (view != view2) {
-            this.f27991c = a(view2, pointF, view);
+            this.f14303c = a(view2, pointF, view);
         }
-        if (this.f27991c == this.f27990a) {
-            this.i.f27992a = null;
+        if (this.f14303c == this.f14302a) {
+            this.i.f14304a = null;
         } else {
-            this.i.f27992a = pointF;
+            this.i.f14304a = pointF;
         }
     }
 
     protected void a(View view, RefreshKernel refreshKernel) {
         View view2;
-        boolean isInEditMode = this.f27990a.isInEditMode();
+        boolean isInEditMode = this.f14302a.isInEditMode();
         View view3 = view;
         View view4 = null;
         while (true) {
@@ -329,24 +329,24 @@ public class RefreshContentWrapper implements ValueAnimator.AnimatorUpdateListen
             view4 = view3;
         }
         if (view2 != null) {
-            this.f27991c = view2;
+            this.f14303c = view2;
         }
     }
 
     @Override // com.scwang.smartrefresh.layout.api.RefreshContent
     public void a(RefreshKernel refreshKernel, View view, View view2) {
-        a(this.f27990a, refreshKernel);
+        a(this.f14302a, refreshKernel);
         if (view == null && view2 == null) {
             return;
         }
         this.d = view;
         this.e = view2;
-        FrameLayout frameLayout = new FrameLayout(this.f27990a.getContext());
-        refreshKernel.a().getLayout().removeView(this.f27990a);
-        ViewGroup.LayoutParams layoutParams = this.f27990a.getLayoutParams();
-        frameLayout.addView(this.f27990a, -1, -1);
+        FrameLayout frameLayout = new FrameLayout(this.f14302a.getContext());
+        refreshKernel.a().getLayout().removeView(this.f14302a);
+        ViewGroup.LayoutParams layoutParams = this.f14302a.getLayoutParams();
+        frameLayout.addView(this.f14302a, -1, -1);
         refreshKernel.a().getLayout().addView(frameLayout, layoutParams);
-        this.f27990a = frameLayout;
+        this.f14302a = frameLayout;
         if (view != null) {
             view.setClickable(true);
             ViewGroup.LayoutParams layoutParams2 = view.getLayoutParams();
@@ -354,7 +354,7 @@ public class RefreshContentWrapper implements ValueAnimator.AnimatorUpdateListen
             int indexOfChild = viewGroup.indexOfChild(view);
             viewGroup.removeView(view);
             layoutParams2.height = SmartUtil.a(view);
-            viewGroup.addView(new Space(this.f27990a.getContext()), indexOfChild, layoutParams2);
+            viewGroup.addView(new Space(this.f14302a.getContext()), indexOfChild, layoutParams2);
             frameLayout.addView(view);
         }
         if (view2 != null) {
@@ -365,7 +365,7 @@ public class RefreshContentWrapper implements ValueAnimator.AnimatorUpdateListen
             viewGroup2.removeView(view2);
             FrameLayout.LayoutParams layoutParams4 = new FrameLayout.LayoutParams(layoutParams3);
             layoutParams3.height = SmartUtil.a(view2);
-            viewGroup2.addView(new Space(this.f27990a.getContext()), indexOfChild2, layoutParams3);
+            viewGroup2.addView(new Space(this.f14302a.getContext()), indexOfChild2, layoutParams3);
             layoutParams4.gravity = 80;
             frameLayout.addView(view2, layoutParams4);
         }
@@ -382,7 +382,7 @@ public class RefreshContentWrapper implements ValueAnimator.AnimatorUpdateListen
 
     @Override // com.scwang.smartrefresh.layout.api.RefreshContent
     public void a(boolean z) {
-        this.i.f27993c = z;
+        this.i.f14305c = z;
     }
 
     @Override // com.scwang.smartrefresh.layout.listener.CoordinatorLayoutListener
@@ -393,27 +393,27 @@ public class RefreshContentWrapper implements ValueAnimator.AnimatorUpdateListen
 
     @Override // com.scwang.smartrefresh.layout.api.RefreshContent
     public View b() {
-        return this.f27991c;
+        return this.f14303c;
     }
 
     @Override // com.scwang.smartrefresh.layout.api.RefreshContent
     public boolean c() {
-        return this.g && this.i.a(this.f27990a);
+        return this.g && this.i.a(this.f14302a);
     }
 
     @Override // com.scwang.smartrefresh.layout.api.RefreshContent
     public boolean d() {
-        return this.h && this.i.b(this.f27990a);
+        return this.h && this.i.b(this.f14302a);
     }
 
     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
     public void onAnimationUpdate(ValueAnimator valueAnimator) {
         int intValue = ((Integer) valueAnimator.getAnimatedValue()).intValue();
         try {
-            if (this.f27991c instanceof AbsListView) {
-                SmartUtil.a((AbsListView) this.f27991c, intValue - this.f);
+            if (this.f14303c instanceof AbsListView) {
+                SmartUtil.a((AbsListView) this.f14303c, intValue - this.f);
             } else {
-                this.f27991c.scrollBy(0, intValue - this.f);
+                this.f14303c.scrollBy(0, intValue - this.f);
             }
         } catch (Throwable th) {
         }

@@ -7,7 +7,7 @@ import android.view.View;
 public class CustomPasswordTransformationMethod extends PasswordTransformationMethod {
 
     /* renamed from: a  reason: collision with root package name */
-    String f23677a;
+    String f10069a;
 
     /* loaded from: source-7994992-dex2jar.jar:com/jungly/gridpasswordview/CustomPasswordTransformationMethod$PasswordCharSequence.class */
     class PasswordCharSequence implements CharSequence {
@@ -19,7 +19,7 @@ public class CustomPasswordTransformationMethod extends PasswordTransformationMe
 
         @Override // java.lang.CharSequence
         public char charAt(int i) {
-            return CustomPasswordTransformationMethod.this.f23677a.charAt(0);
+            return CustomPasswordTransformationMethod.this.f10069a.charAt(0);
         }
 
         @Override // java.lang.CharSequence
@@ -34,7 +34,7 @@ public class CustomPasswordTransformationMethod extends PasswordTransformationMe
     }
 
     public CustomPasswordTransformationMethod(String str) {
-        this.f23677a = str;
+        this.f10069a = str;
     }
 
     @Override // android.text.method.PasswordTransformationMethod, android.text.method.TransformationMethod

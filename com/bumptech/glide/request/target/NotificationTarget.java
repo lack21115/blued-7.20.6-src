@@ -13,22 +13,22 @@ import com.bumptech.glide.util.Preconditions;
 public class NotificationTarget extends CustomTarget<Bitmap> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final RemoteViews f21068a;
+    private final RemoteViews f7462a;
     private final Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final int f21069c;
+    private final int f7463c;
     private final String d;
     private final Notification e;
     private final int f;
 
     private void a(Bitmap bitmap) {
-        this.f21068a.setImageViewBitmap(this.f, bitmap);
+        this.f7462a.setImageViewBitmap(this.f, bitmap);
         update();
     }
 
     private void update() {
-        ((NotificationManager) Preconditions.a((NotificationManager) this.b.getSystemService("notification"))).notify(this.d, this.f21069c, this.e);
+        ((NotificationManager) Preconditions.a((NotificationManager) this.b.getSystemService("notification"))).notify(this.d, this.f7463c, this.e);
     }
 
     @Override // com.bumptech.glide.request.target.Target

@@ -1,9 +1,9 @@
 package com.blued.android.chat.core.worker.link;
 
+import com.amap.api.services.core.AMapException;
 import com.blued.android.chat.ChatManager;
 import com.blued.android.chat.core.utils.Log;
-import com.huawei.openalliance.ad.constant.t;
-import com.sobot.chat.core.channel.Const;
+import java.util.Grego;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -14,8 +14,8 @@ public class ReLinkTimer {
     private static final String TAG = "Chat_ReLinkTimer";
     private Timer _timer;
     private ReLinkListener listener;
-    private static final int[] TimeFreqForeArrayMs = {3000, 3000, 5000, 5000, 10000, 10000, 30000, 30000, 30000, 60000, 60000, 60000, 300000, 300000, 300000, t.Y, t.Y, t.Y};
-    private static final int[] TimeFreqBackArrayMs = {10000, 30000, 60000, Const.SOCKET_CHECK_CHANNEL, 180000, 300000, 300000, t.Y, t.Y, 1800000, 3600000};
+    private static final int[] TimeFreqForeArrayMs = {AMapException.CODE_AMAP_ROUTE_OUT_OF_SERVICE, AMapException.CODE_AMAP_ROUTE_OUT_OF_SERVICE, 5000, 5000, 10000, 10000, 30000, 30000, 30000, 60000, 60000, 60000, 300000, 300000, 300000, 600000, 600000, 600000};
+    private static final int[] TimeFreqBackArrayMs = {10000, 30000, 60000, 120000, 180000, 300000, 300000, 600000, 600000, 1800000, Grego.MILLIS_PER_HOUR};
     private Object lock = new Object();
     private int _retryCount = 0;
 

@@ -4,16 +4,16 @@ package com.tencent.txcopyrightedmedia.impl.utils;
 public final class ar extends bb {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f40067a;
+    public String f26376a;
     public az b;
 
     @Override // com.tencent.txcopyrightedmedia.impl.utils.bb
     public final String b() {
-        return this.f40067a;
+        return this.f26376a;
     }
 
     @Override // com.tencent.txcopyrightedmedia.impl.utils.bb
     public final String c() {
-        return this.f40067a;
+        return this.f26376a;
     }
 }

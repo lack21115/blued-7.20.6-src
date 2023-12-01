@@ -12,21 +12,17 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/LiveBattleBuyTipBinding.class */
 public final class LiveBattleBuyTipBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f12137a;
+    public final ImageView a;
     public final SubsamplingScaleImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final FrameLayout f12138c;
+    public final FrameLayout c;
     public final TextView d;
     private final FrameLayout e;
 
     private LiveBattleBuyTipBinding(FrameLayout frameLayout, ImageView imageView, SubsamplingScaleImageView subsamplingScaleImageView, FrameLayout frameLayout2, TextView textView) {
         this.e = frameLayout;
-        this.f12137a = imageView;
+        this.a = imageView;
         this.b = subsamplingScaleImageView;
-        this.f12138c = frameLayout2;
+        this.c = frameLayout2;
         this.d = textView;
     }
 
@@ -63,7 +59,6 @@ public final class LiveBattleBuyTipBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.e;

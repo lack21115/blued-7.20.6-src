@@ -7,15 +7,15 @@ import java.util.List;
 public final class aq implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ List f41611a;
+    final /* synthetic */ List f27920a;
 
     /* renamed from: a  reason: collision with other field name */
-    final /* synthetic */ boolean f983a;
+    final /* synthetic */ boolean f936a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public aq(List list, boolean z) {
-        this.f41611a = list;
-        this.f983a = z;
+        this.f27920a = list;
+        this.f936a = z;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:23:0x004a A[SYNTHETIC] */
@@ -29,10 +29,10 @@ public final class aq implements Runnable {
         /*
             r2 = this;
             java.lang.String r0 = "www.baidu.com:80"
-            boolean r0 = com.xiaomi.push.service.ap.m12122a(r0)
+            boolean r0 = com.xiaomi.push.service.ap.m9072a(r0)
             r5 = r0
             r0 = r2
-            java.util.List r0 = r0.f41611a
+            java.util.List r0 = r0.f27920a
             java.util.Iterator r0 = r0.iterator()
             r7 = r0
         L11:
@@ -52,7 +52,7 @@ public final class aq implements Runnable {
             r0 = r5
             if (r0 != 0) goto L42
             r0 = r8
-            boolean r0 = com.xiaomi.push.service.ap.m12122a(r0)
+            boolean r0 = com.xiaomi.push.service.ap.m9072a(r0)
             if (r0 == 0) goto L3d
             goto L42
         L3d:
@@ -70,7 +70,7 @@ public final class aq implements Runnable {
             r0 = r4
             r6 = r0
             r0 = r2
-            boolean r0 = r0.f983a
+            boolean r0 = r0.f936a
             if (r0 == 0) goto L59
             r0 = r4
             r5 = r0

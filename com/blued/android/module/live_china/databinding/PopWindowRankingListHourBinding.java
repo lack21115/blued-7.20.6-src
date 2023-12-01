@@ -12,13 +12,9 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/PopWindowRankingListHourBinding.class */
 public final class PopWindowRankingListHourBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f12499a;
+    public final ImageView a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f12500c;
+    public final ImageView c;
     public final ImageView d;
     public final ImageView e;
     public final LinearLayout f;
@@ -33,9 +29,9 @@ public final class PopWindowRankingListHourBinding implements ViewBinding {
 
     private PopWindowRankingListHourBinding(FrameLayout frameLayout, ImageView imageView, ImageView imageView2, ImageView imageView3, ImageView imageView4, ImageView imageView5, LinearLayout linearLayout, RelativeLayout relativeLayout, RelativeLayout relativeLayout2, RecyclerView recyclerView, TextView textView, TextView textView2, TextView textView3, TextView textView4) {
         this.n = frameLayout;
-        this.f12499a = imageView;
+        this.a = imageView;
         this.b = imageView2;
-        this.f12500c = imageView3;
+        this.c = imageView3;
         this.d = imageView4;
         this.e = imageView5;
         this.f = linearLayout;
@@ -66,8 +62,8 @@ public final class PopWindowRankingListHourBinding implements ViewBinding {
                                 if (relativeLayout != null) {
                                     RelativeLayout relativeLayout2 = (RelativeLayout) view.findViewById(R.id.rl_empty_view);
                                     if (relativeLayout2 != null) {
-                                        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rv_list);
-                                        if (recyclerView != null) {
+                                        RecyclerView findViewById = view.findViewById(R.id.rv_list);
+                                        if (findViewById != null) {
                                             TextView textView = (TextView) view.findViewById(R.id.tv_empty_view);
                                             if (textView != null) {
                                                 TextView textView2 = (TextView) view.findViewById(R.id.tv_name);
@@ -76,7 +72,7 @@ public final class PopWindowRankingListHourBinding implements ViewBinding {
                                                     if (textView3 != null) {
                                                         TextView textView4 = (TextView) view.findViewById(R.id.tv_rank_index);
                                                         if (textView4 != null) {
-                                                            return new PopWindowRankingListHourBinding((FrameLayout) view, imageView, imageView2, imageView3, imageView4, imageView5, linearLayout, relativeLayout, relativeLayout2, recyclerView, textView, textView2, textView3, textView4);
+                                                            return new PopWindowRankingListHourBinding((FrameLayout) view, imageView, imageView2, imageView3, imageView4, imageView5, linearLayout, relativeLayout, relativeLayout2, findViewById, textView, textView2, textView3, textView4);
                                                         }
                                                         str = "tvRankIndex";
                                                     } else {
@@ -118,7 +114,6 @@ public final class PopWindowRankingListHourBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.n;

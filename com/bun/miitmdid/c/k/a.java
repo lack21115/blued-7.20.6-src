@@ -7,11 +7,11 @@ import java.lang.reflect.Method;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Object f21157a;
+    private static Object f7551a;
     private static Class<?> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static Method f21158c;
+    private static Method f7552c;
     private static Method d;
     private static Method e;
 
@@ -19,13 +19,13 @@ public class a {
         try {
             Class<?> cls = Class.forName("com.android.id.impl.IdProviderImpl");
             b = cls;
-            f21157a = cls.newInstance();
+            f7551a = cls.newInstance();
         } catch (Exception e2) {
             com.bun.lib.a.a("IdentifierManager", "reflect exception!", e2);
         }
         try {
             if (b != null) {
-                f21158c = b.getMethod("getOAID", Context.class);
+                f7552c = b.getMethod("getOAID", Context.class);
             }
         } catch (Exception e3) {
             com.bun.lib.a.a("IdentifierManager", "reflect exception!", e3);

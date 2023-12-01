@@ -30,7 +30,7 @@ public final class b {
     public static final String Z = "n4";
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f7130a = "app_id";
+    public static final String f4292a = "app_id";
     public static final String aA = "pmax";
     public static final String aB = "pid";
     public static final long aC = 1800;
@@ -76,7 +76,7 @@ public final class b {
     public static final String aq = "iex";
 
     /* renamed from: ar  reason: collision with root package name */
-    public static final String f7131ar = "cal";
+    public static final String f4293ar = "cal";
     public static final String as = "atf";
     public static final String at = "adct";
     public static final String au = "pf";
@@ -140,7 +140,7 @@ public final class b {
     public static final int bz = 20;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f7132c = "unitSetting";
+    public static final String f4294c = "unitSetting";
     public static final String cA = "useexpriedcacheoffer";
     public static final String cB = "retryoffer";
     public static final String cC = "mapping_cache_rate";
@@ -182,7 +182,7 @@ public final class b {
     public static final int cm = -1;
 
     /* renamed from: cn  reason: collision with root package name */
-    public static final String f7133cn = "play_ctdown";
+    public static final String f4295cn = "play_ctdown";
     public static final int co = 0;
     public static final String cp = "close_alert";
     public static final int cq = 0;
@@ -226,9 +226,7 @@ public final class b {
     public static final String db = "refreshFq";
     public static final int dc = 60;
     public static final String dd = "closeBtn";
-
-    /* renamed from: de  reason: collision with root package name */
-    public static final int f7134de = 0;
+    public static final int de = 0;
     public static final String df = "https://cdn-adn-https.rayjump.com/cdn-adn/v2/portal/19/08/20/11/06/5d5b63cb457e2.js";
     public static final String dg = "mcto";
     public static final int dh = 10;
@@ -240,7 +238,7 @@ public final class b {
     public static final int dn = 0;
 
     /* renamed from: do  reason: not valid java name */
-    public static final String f46do = "tmorl";
+    public static final String f0do = "tmorl";
     public static final int dp = 1;
     public static final String dq = "placementid";
     public static final String dr = "refactor_switch";

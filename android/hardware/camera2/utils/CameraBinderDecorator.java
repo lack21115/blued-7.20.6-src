@@ -20,9 +20,8 @@ public class CameraBinderDecorator {
     public static final int PERMISSION_DENIED = -1;
     public static final int TIMED_OUT = -110;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-9557208-dex2jar.jar:android/hardware/camera2/utils/CameraBinderDecorator$CameraBinderDecoratorListener.class */
-    public static class CameraBinderDecoratorListener implements Decorator.DecoratorListener {
+    static class CameraBinderDecoratorListener implements Decorator.DecoratorListener {
         @Override // android.hardware.camera2.utils.Decorator.DecoratorListener
         public void onAfterInvocation(Method method, Object[] objArr, Object obj) {
             if (method.getReturnType() == Integer.TYPE) {

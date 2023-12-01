@@ -13,10 +13,10 @@ import com.soft.blued.R;
 public class ExpLvlProgressView extends FrameLayout {
 
     /* renamed from: c  reason: collision with root package name */
-    public static int f28409c = 9;
+    public static int f14719c = 9;
 
     /* renamed from: a  reason: collision with root package name */
-    public Context f28410a;
+    public Context f14720a;
     public View b;
     private View d;
     private View e;
@@ -49,7 +49,7 @@ public class ExpLvlProgressView extends FrameLayout {
     }
 
     public void a(Context context) {
-        this.f28410a = context;
+        this.f14720a = context;
         View inflate = LayoutInflater.from(context).inflate(R.layout.view_exp_progress, this);
         this.b = inflate;
         this.d = inflate.findViewById(R.id.exp_left_line);

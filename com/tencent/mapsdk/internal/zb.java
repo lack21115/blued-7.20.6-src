@@ -8,11 +8,11 @@ import android.graphics.Point;
 public class zb {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final int f38159a = 7;
+    private static final int f24468a = 7;
     private static Canvas b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static int f38160c;
+    private static int f24469c;
     private static Bitmap[] d;
     private static Bitmap e;
 
@@ -27,12 +27,12 @@ public class zb {
         d[5] = Bitmap.createBitmap(32, 128, Bitmap.Config.ARGB_8888);
         d[6] = Bitmap.createBitmap(32, 256, Bitmap.Config.ARGB_8888);
         b = new Canvas(d[1]);
-        f38160c = 1;
+        f24469c = 1;
         e = null;
     }
 
     public static Bitmap a() {
-        int i = f38160c;
+        int i = f24469c;
         return i < 7 ? d[i] : e;
     }
 
@@ -49,12 +49,12 @@ public class zb {
             i4 = i + 1;
         }
         if (i < 7) {
-            f38160c = i;
+            f24469c = i;
             b.setBitmap(d[i]);
             d[i].eraseColor(0);
             return b;
         }
-        f38160c = d.length;
+        f24469c = d.length;
         int i5 = 1;
         while (true) {
             i2 = i5;

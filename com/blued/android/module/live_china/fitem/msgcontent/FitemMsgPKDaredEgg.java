@@ -47,7 +47,7 @@ public final class FitemMsgPKDaredEgg extends FitemMsgBase {
         Intrinsics.e(vh, "vh");
         Intrinsics.e(list, "list");
         super.a(context, vh, list, i);
-        StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
+        StringCompanionObject stringCompanionObject = StringCompanionObject.a;
         String string = AppInfo.d().getResources().getString(R.string.live_pk_dared_egg_msg);
         Intrinsics.c(string, "getAppContext().resource…ng.live_pk_dared_egg_msg)");
         String format = String.format(string, Arrays.copyOf(new Object[]{k(), e().msgMapExtra.get("propName")}, 2));

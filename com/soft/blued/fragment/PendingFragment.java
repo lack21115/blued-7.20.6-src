@@ -14,34 +14,32 @@ import com.soft.blued.utils.Logger;
 public class PendingFragment extends BaseFragment {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f29653a = 0;
+    private int f15963a = 0;
     private Context b;
 
     private void a(Bundle bundle) {
-        Logger.b("PendingFragment", "action:", Integer.valueOf(this.f29653a));
+        Logger.b("PendingFragment", "action:", Integer.valueOf(this.f15963a));
         if (bundle == null) {
             getActivity().finish();
             return;
         }
-        if (this.f29653a == 1) {
+        if (this.f15963a == 1) {
             DialogSkipFragment.a(this.b, (ChannelModel) bundle.getSerializable("CHANNEL"));
         }
         getActivity().finish();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         Logger.b("PendingFragment", "onCreate");
         this.b = getActivity();
         Bundle arguments = getArguments();
         if (arguments != null) {
-            this.f29653a = arguments.getInt("action", 0);
+            this.f15963a = arguments.getInt("action", 0);
         }
         a(arguments);
         super.onCreate(bundle);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         return super.onCreateView(layoutInflater, viewGroup, bundle);
     }

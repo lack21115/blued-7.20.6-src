@@ -8,7 +8,7 @@ import java.util.List;
 final class b implements d {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final b f25390a = new b();
+    public static final b f11702a = new b();
     private final List<com.opos.exoplayer.core.f.b> b;
 
     private b() {

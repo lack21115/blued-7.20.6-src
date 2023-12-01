@@ -14,11 +14,11 @@ import com.tencent.bugly.proguard.z;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    public static a f35123a;
+    public static a f21432a;
     private static boolean b = false;
 
     /* renamed from: c  reason: collision with root package name */
-    private static int f35124c = 10;
+    private static int f21433c = 10;
     private static long d = 300000;
     private static long e = 30000;
     private static long f = 0;
@@ -35,7 +35,7 @@ public class b {
     }
 
     public static void a() {
-        a aVar = f35123a;
+        a aVar = f21432a;
         if (aVar != null) {
             aVar.a(2, false, 0L);
         }
@@ -80,7 +80,7 @@ public class b {
         }
         boolean z = com.tencent.bugly.crashreport.common.info.a.a(context).e;
         m = z;
-        f35123a = new a(context, z);
+        f21432a = new a(context, z);
         b = true;
         if (buglyStrategy != null) {
             l = buglyStrategy.getUserInfoActivity();
@@ -102,7 +102,7 @@ public class b {
 
     public static void a(StrategyBean strategyBean, boolean z) {
         w a2;
-        a aVar = f35123a;
+        a aVar = f21432a;
         if (aVar != null && !z && (a2 = w.a()) != null) {
             a2.a(new a.AnonymousClass2());
         }
@@ -113,7 +113,7 @@ public class b {
             e = strategyBean.o;
         }
         if (strategyBean.t > 0) {
-            f35124c = strategyBean.t;
+            f21433c = strategyBean.t;
         }
         if (strategyBean.u > 0) {
             d = strategyBean.u;

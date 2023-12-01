@@ -190,7 +190,7 @@ public class OkHttpClient implements Cloneable {
     }
 
     /* renamed from: clone */
-    public OkHttpClient m9708clone() {
+    public OkHttpClient m6659clone() {
         return new OkHttpClient(this);
     }
 

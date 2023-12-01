@@ -3,17 +3,18 @@ package com.autonavi.aps.amapapi.trans;
 import android.content.Context;
 import android.os.Bundle;
 import android.text.TextUtils;
-import com.amap.api.col.p0003sl.ho;
-import com.amap.api.col.p0003sl.kc;
+import com.amap.api.col.3sl.ho;
+import com.amap.api.col.3sl.kc;
 import com.amap.api.location.AMapLocationClientOption;
 import com.autonavi.aps.amapapi.utils.g;
+import java.util.List;
 import org.json.JSONObject;
 
 /* loaded from: source-8756600-dex2jar.jar:com/autonavi/aps/amapapi/trans/e.class */
 public final class e {
 
     /* renamed from: a  reason: collision with root package name */
-    private StringBuilder f9272a = new StringBuilder();
+    private StringBuilder f6432a = new StringBuilder();
     private AMapLocationClientOption b = new AMapLocationClientOption();
 
     private void a(com.autonavi.aps.amapapi.model.a aVar, String str, String str2, String str3, String str4, String str5, String str6, String str7) {
@@ -147,12 +148,12 @@ public final class e {
         try {
             stringBuffer.append("#SHA1AndPackage#");
             stringBuffer.append(ho.e(context));
-            String str2 = kcVar.b.get("gsid").get(0);
+            String str2 = (String) ((List) kcVar.b.get("gsid")).get(0);
             if (!TextUtils.isEmpty(str2)) {
                 stringBuffer.append("#gsid#");
                 stringBuffer.append(str2);
             }
-            String str3 = kcVar.f5265c;
+            String str3 = kcVar.c;
             if (!TextUtils.isEmpty(str3)) {
                 stringBuffer.append("#csid#".concat(String.valueOf(str3)));
             }
@@ -162,7 +163,7 @@ public final class e {
             JSONObject jSONObject = new JSONObject(str);
             if (!jSONObject.has("status") || !jSONObject.has("info")) {
                 aVar.f("#0702");
-                StringBuilder sb = this.f9272a;
+                StringBuilder sb = this.f6432a;
                 sb.append("json is error:");
                 sb.append(str);
                 sb.append(stringBuffer);
@@ -173,7 +174,7 @@ public final class e {
             String string3 = jSONObject.getString("infocode");
             if ("0".equals(string)) {
                 aVar.f("#0701");
-                StringBuilder sb2 = this.f9272a;
+                StringBuilder sb2 = this.f6432a;
                 sb2.append("auth fail:");
                 sb2.append(string2);
                 sb2.append(stringBuffer);
@@ -182,16 +183,16 @@ public final class e {
             }
         } catch (Throwable th2) {
             aVar.f("#0703");
-            StringBuilder sb3 = this.f9272a;
+            StringBuilder sb3 = this.f6432a;
             sb3.append("json exception error:");
             sb3.append(th2.getMessage());
             sb3.append(stringBuffer);
             sb3.append("#0703");
             com.autonavi.aps.amapapi.utils.b.a(th2, "parser", "paseAuthFailurJson");
         }
-        aVar2.setLocationDetail(this.f9272a.toString());
-        if (this.f9272a.length() > 0) {
-            StringBuilder sb4 = this.f9272a;
+        aVar2.setLocationDetail(this.f6432a.toString());
+        if (this.f6432a.length() > 0) {
+            StringBuilder sb4 = this.f6432a;
             sb4.delete(0, sb4.length());
         }
         return aVar2;

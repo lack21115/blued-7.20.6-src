@@ -8,11 +8,11 @@ import java.util.List;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private EnumC0736a f27365a;
+    private EnumC0566a f13677a;
     private b b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f27366c;
+    private String f13678c;
     private List<String> d;
     private int[] e;
     private long f = -1;
@@ -23,7 +23,7 @@ public class a {
     public static /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f27367a;
+        static final /* synthetic */ int[] f13679a;
         static final /* synthetic */ int[] b;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:32:0x00b1 -> B:66:0x0014). Please submit an issue!!! */
@@ -74,30 +74,30 @@ public class a {
                 b[b.MINI_PROGRAM.ordinal()] = 8;
             } catch (NoSuchFieldError e8) {
             }
-            int[] iArr2 = new int[EnumC0736a.values().length];
-            f27367a = iArr2;
+            int[] iArr2 = new int[EnumC0566a.values().length];
+            f13679a = iArr2;
             try {
-                iArr2[EnumC0736a.VIDEO.ordinal()] = 1;
+                iArr2[EnumC0566a.VIDEO.ordinal()] = 1;
             } catch (NoSuchFieldError e9) {
             }
             try {
-                f27367a[EnumC0736a.EXTRA.ordinal()] = 2;
+                f13679a[EnumC0566a.EXTRA.ordinal()] = 2;
             } catch (NoSuchFieldError e10) {
             }
             try {
-                f27367a[EnumC0736a.FLOATLAYER_EXTRA.ordinal()] = 3;
+                f13679a[EnumC0566a.FLOATLAYER_EXTRA.ordinal()] = 3;
             } catch (NoSuchFieldError e11) {
             }
             try {
-                f27367a[EnumC0736a.BUTTON.ordinal()] = 4;
+                f13679a[EnumC0566a.BUTTON.ordinal()] = 4;
             } catch (NoSuchFieldError e12) {
             }
             try {
-                f27367a[EnumC0736a.FLOATLAYER_BUTTON.ordinal()] = 5;
+                f13679a[EnumC0566a.FLOATLAYER_BUTTON.ordinal()] = 5;
             } catch (NoSuchFieldError e13) {
             }
             try {
-                f27367a[EnumC0736a.PENDANT.ordinal()] = 6;
+                f13679a[EnumC0566a.PENDANT.ordinal()] = 6;
             } catch (NoSuchFieldError e14) {
             }
         }
@@ -105,7 +105,7 @@ public class a {
 
     /* renamed from: com.opos.mobad.service.g.a$a  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/opos/mobad/service/g/a$a.class */
-    public enum EnumC0736a {
+    public enum EnumC0566a {
         BUTTON,
         EXTRA,
         VIDEO,
@@ -131,8 +131,8 @@ public class a {
         MonitorEvent.d dVar;
         MonitorEvent.c cVar;
         MonitorEvent.b bVar = new MonitorEvent.b();
-        if (this.f27365a != null) {
-            switch (AnonymousClass1.f27367a[this.f27365a.ordinal()]) {
+        if (this.f13677a != null) {
+            switch (AnonymousClass1.f13679a[this.f13677a.ordinal()]) {
                 case 1:
                 case 2:
                 case 3:
@@ -182,7 +182,7 @@ public class a {
                     break;
             }
         }
-        String str = this.f27366c;
+        String str = this.f13678c;
         if (str != null) {
             bVar.a(str);
         }
@@ -202,8 +202,8 @@ public class a {
         return this;
     }
 
-    public a a(EnumC0736a enumC0736a) {
-        this.f27365a = enumC0736a;
+    public a a(EnumC0566a enumC0566a) {
+        this.f13677a = enumC0566a;
         return this;
     }
 
@@ -213,7 +213,7 @@ public class a {
     }
 
     public a a(String str) {
-        this.f27366c = str;
+        this.f13678c = str;
         return this;
     }
 

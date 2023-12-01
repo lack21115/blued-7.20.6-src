@@ -6,16 +6,13 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.text.TextUtils;
-import com.anythink.expressad.foundation.h.i;
 import com.blued.android.module.live.base.view.subscaleview.SubsamplingScaleImageView;
 import java.io.InputStream;
 import java.util.List;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/live/base/view/subscaleview/decoder/SkiaImageDecoder.class */
 public class SkiaImageDecoder implements ImageDecoder {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Bitmap.Config f11574a;
+    private final Bitmap.Config a;
 
     public SkiaImageDecoder() {
         this(null);
@@ -24,11 +21,11 @@ public class SkiaImageDecoder implements ImageDecoder {
     public SkiaImageDecoder(Bitmap.Config config) {
         Bitmap.Config preferredBitmapConfig = SubsamplingScaleImageView.getPreferredBitmapConfig();
         if (config != null) {
-            this.f11574a = config;
+            this.a = config;
         } else if (preferredBitmapConfig != null) {
-            this.f11574a = preferredBitmapConfig;
+            this.a = preferredBitmapConfig;
         } else {
-            this.f11574a = Bitmap.Config.RGB_565;
+            this.a = Bitmap.Config.RGB_565;
         }
     }
 
@@ -39,14 +36,14 @@ public class SkiaImageDecoder implements ImageDecoder {
         int i;
         String uri2 = uri.toString();
         BitmapFactory.Options options = new BitmapFactory.Options();
-        options.inPreferredConfig = this.f11574a;
+        options.inPreferredConfig = this.a;
         if (uri2.startsWith("android.resource://")) {
             String authority = uri.getAuthority();
             Resources resources = context.getPackageName().equals(authority) ? context.getResources() : context.getPackageManager().getResourcesForApplication(authority);
             List<String> pathSegments = uri.getPathSegments();
             int size = pathSegments.size();
-            if (size == 2 && pathSegments.get(0).equals(i.f7952c)) {
-                i = resources.getIdentifier(pathSegments.get(1), i.f7952c, authority);
+            if (size == 2 && pathSegments.get(0).equals("drawable")) {
+                i = resources.getIdentifier(pathSegments.get(1), "drawable", authority);
             } else {
                 i = 0;
                 if (size == 1) {

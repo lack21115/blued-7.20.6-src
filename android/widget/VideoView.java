@@ -26,6 +26,9 @@ import android.view.View;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.MediaController;
+import com.alipay.sdk.cons.b;
+import com.android.ims.ImsReasonInfo;
+import com.android.internal.R;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Iterator;
@@ -176,7 +179,7 @@ public class VideoView extends SurfaceView implements MediaController.MediaPlaye
                 }
                 if ((VideoView.this.mOnErrorListener == null || !VideoView.this.mOnErrorListener.onError(VideoView.this.mMediaPlayer, i, i2)) && VideoView.this.getWindowToken() != null) {
                     VideoView.this.mContext.getResources();
-                    new AlertDialog.Builder(VideoView.this.mContext).setMessage(i == 200 ? 17039381 : 17039377).setPositiveButton(17039376, new DialogInterface.OnClickListener() { // from class: android.widget.VideoView.5.1
+                    new AlertDialog.Builder(VideoView.this.mContext).setMessage(i == 200 ? 17039381 : 17039377).setPositiveButton(R.string.VideoView_error_button, new DialogInterface.OnClickListener() { // from class: android.widget.VideoView.5.1
                         @Override // android.content.DialogInterface.OnClickListener
                         public void onClick(DialogInterface dialogInterface, int i3) {
                             if (VideoView.this.mOnCompletionListener != null) {
@@ -356,7 +359,7 @@ public class VideoView extends SurfaceView implements MediaController.MediaPlaye
                 }
                 if ((VideoView.this.mOnErrorListener == null || !VideoView.this.mOnErrorListener.onError(VideoView.this.mMediaPlayer, i3, i22)) && VideoView.this.getWindowToken() != null) {
                     VideoView.this.mContext.getResources();
-                    new AlertDialog.Builder(VideoView.this.mContext).setMessage(i3 == 200 ? 17039381 : 17039377).setPositiveButton(17039376, new DialogInterface.OnClickListener() { // from class: android.widget.VideoView.5.1
+                    new AlertDialog.Builder(VideoView.this.mContext).setMessage(i3 == 200 ? 17039381 : 17039377).setPositiveButton(R.string.VideoView_error_button, new DialogInterface.OnClickListener() { // from class: android.widget.VideoView.5.1
                         @Override // android.content.DialogInterface.OnClickListener
                         public void onClick(DialogInterface dialogInterface, int i32) {
                             if (VideoView.this.mOnCompletionListener != null) {
@@ -457,7 +460,7 @@ public class VideoView extends SurfaceView implements MediaController.MediaPlaye
         if (uri == null || (scheme = uri.getScheme()) == null) {
             return false;
         }
-        return ((!scheme.equals("http") && !scheme.equals("https")) || (path = uri.getPath()) == null || path.endsWith(".m3u8") || path.endsWith(".m3u") || path.endsWith(".mpd")) ? false : true;
+        return ((!scheme.equals("http") && !scheme.equals(b.a)) || (path = uri.getPath()) == null || path.endsWith(".m3u8") || path.endsWith(".m3u") || path.endsWith(".mpd")) ? false : true;
     }
 
     private boolean isInPlaybackState() {
@@ -511,9 +514,9 @@ public class VideoView extends SurfaceView implements MediaController.MediaPlaye
             while (it.hasNext()) {
                 Pair<InputStream, MediaFormat> next = it.next();
                 try {
-                    this.mMediaPlayer.addSubtitleSource(next.first, next.second);
+                    this.mMediaPlayer.addSubtitleSource((InputStream) next.first, (MediaFormat) next.second);
                 } catch (IllegalStateException e) {
-                    this.mInfoListener.onInfo(this.mMediaPlayer, 901, 0);
+                    this.mInfoListener.onInfo(this.mMediaPlayer, ImsReasonInfo.CODE_ECBM_NOT_SUPPORTED, 0);
                 }
             }
             this.mCurrentState = 1;
@@ -564,7 +567,7 @@ public class VideoView extends SurfaceView implements MediaController.MediaPlaye
         try {
             this.mMediaPlayer.addSubtitleSource(inputStream, mediaFormat);
         } catch (IllegalStateException e) {
-            this.mInfoListener.onInfo(this.mMediaPlayer, 901, 0);
+            this.mInfoListener.onInfo(this.mMediaPlayer, ImsReasonInfo.CODE_ECBM_NOT_SUPPORTED, 0);
         }
     }
 
@@ -628,7 +631,6 @@ public class VideoView extends SurfaceView implements MediaController.MediaPlaye
         return -1;
     }
 
-    @Override // android.media.SubtitleController.Anchor
     public Looper getSubtitleLooper() {
         return Looper.getMainLooper();
     }
@@ -638,18 +640,16 @@ public class VideoView extends SurfaceView implements MediaController.MediaPlaye
         return isInPlaybackState() && this.mMediaPlayer.isPlaying();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.SurfaceView, android.view.View
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         if (this.mSubtitleWidget != null) {
             this.mSubtitleWidget.onAttachedToWindow();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.SurfaceView, android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         if (this.mSubtitleWidget != null) {
             this.mSubtitleWidget.onDetachedFromWindow();
@@ -711,9 +711,8 @@ public class VideoView extends SurfaceView implements MediaController.MediaPlaye
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.SurfaceView, android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         int defaultSize = getDefaultSize(this.mVideoWidth, i);
         int defaultSize2 = getDefaultSize(this.mVideoHeight, i2);
         int i3 = defaultSize2;
@@ -877,7 +876,6 @@ public class VideoView extends SurfaceView implements MediaController.MediaPlaye
         this.mOnPreparedListener = onPreparedListener;
     }
 
-    @Override // android.media.SubtitleController.Anchor
     public void setSubtitleWidget(SubtitleTrack.RenderingWidget renderingWidget) {
         if (this.mSubtitleWidget == renderingWidget) {
             return;
@@ -887,13 +885,12 @@ public class VideoView extends SurfaceView implements MediaController.MediaPlaye
             if (isAttachedToWindow) {
                 this.mSubtitleWidget.onDetachedFromWindow();
             }
-            this.mSubtitleWidget.setOnChangedListener(null);
+            this.mSubtitleWidget.setOnChangedListener((SubtitleTrack.RenderingWidget.OnChangedListener) null);
         }
         this.mSubtitleWidget = renderingWidget;
         if (renderingWidget != null) {
             if (this.mSubtitlesChangedListener == null) {
                 this.mSubtitlesChangedListener = new SubtitleTrack.RenderingWidget.OnChangedListener() { // from class: android.widget.VideoView.8
-                    @Override // android.media.SubtitleTrack.RenderingWidget.OnChangedListener
                     public void onChanged(SubtitleTrack.RenderingWidget renderingWidget2) {
                         VideoView.this.invalidate();
                     }

@@ -27,13 +27,9 @@ import java.io.FileDescriptor;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/video_gift/AlphaVideoGiftView.class */
 public class AlphaVideoGiftView extends AlphaMovieView implements LifecycleObserver {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final String f16069a = AlphaVideoGiftView.class.getSimpleName();
+    private static final String a = AlphaVideoGiftView.class.getSimpleName();
     private static Handler b = new Handler(Looper.getMainLooper());
-
-    /* renamed from: c  reason: collision with root package name */
-    private Lifecycle f16070c;
+    private Lifecycle c;
     private OnVideoStateChangedListener d;
     private Status e;
     private String f;
@@ -57,7 +53,7 @@ public class AlphaVideoGiftView extends AlphaMovieView implements LifecycleObser
 
     public AlphaVideoGiftView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f16070c = null;
+        this.c = null;
         this.d = null;
         this.e = Status.EMPTY;
         this.f = "";
@@ -286,10 +282,10 @@ public class AlphaVideoGiftView extends AlphaMovieView implements LifecycleObser
     protected void onEventDestroy() {
         g();
         this.e = Status.EMPTY;
-        Lifecycle lifecycle = this.f16070c;
+        Lifecycle lifecycle = this.c;
         if (lifecycle != null) {
             lifecycle.removeObserver(this);
-            this.f16070c = null;
+            this.c = null;
         }
     }
 
@@ -368,7 +364,7 @@ public class AlphaVideoGiftView extends AlphaMovieView implements LifecycleObser
 
     public void setLifecycle(Lifecycle lifecycle) {
         if (lifecycle != null) {
-            this.f16070c = lifecycle;
+            this.c = lifecycle;
             lifecycle.addObserver(this);
         }
     }

@@ -32,9 +32,8 @@ public interface ILockSettings extends IInterface {
         static final int TRANSACTION_setLong = 2;
         static final int TRANSACTION_setString = 3;
 
-        /* JADX INFO: Access modifiers changed from: private */
         /* loaded from: source-4181928-dex2jar.jar:com/android/internal/widget/ILockSettings$Stub$Proxy.class */
-        public static class Proxy implements ILockSettings {
+        private static class Proxy implements ILockSettings {
             private IBinder mRemote;
 
             Proxy(IBinder iBinder) {
@@ -497,12 +496,12 @@ public interface ILockSettings extends IInterface {
                     return true;
                 case 10:
                     parcel.enforceInterface(DESCRIPTOR);
-                    setLockGesture(parcel.readInt() != 0 ? Gesture.CREATOR.createFromParcel(parcel) : null, parcel.readInt());
+                    setLockGesture(parcel.readInt() != 0 ? (Gesture) Gesture.CREATOR.createFromParcel(parcel) : null, parcel.readInt());
                     parcel2.writeNoException();
                     return true;
                 case 11:
                     parcel.enforceInterface(DESCRIPTOR);
-                    boolean checkGesture = checkGesture(parcel.readInt() != 0 ? Gesture.CREATOR.createFromParcel(parcel) : null, parcel.readInt());
+                    boolean checkGesture = checkGesture(parcel.readInt() != 0 ? (Gesture) Gesture.CREATOR.createFromParcel(parcel) : null, parcel.readInt());
                     parcel2.writeNoException();
                     int i5 = 0;
                     if (checkGesture) {
@@ -570,7 +569,7 @@ public interface ILockSettings extends IInterface {
                     removeUser(parcel.readInt());
                     parcel2.writeNoException();
                     return true;
-                case IBinder.INTERFACE_TRANSACTION /* 1598968902 */:
+                case 1598968902:
                     parcel2.writeString(DESCRIPTOR);
                     return true;
                 default:

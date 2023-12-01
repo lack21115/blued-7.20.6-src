@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentVipBuyNewBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ConstraintLayout f29016a;
+    private final ConstraintLayout f15326a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f29016a;
+        return this.f15326a;
     }
 }

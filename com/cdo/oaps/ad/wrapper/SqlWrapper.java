@@ -8,10 +8,10 @@ public class SqlWrapper extends BaseWrapper {
     public static final String KEY_DATA = "bkd";
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f21544a = "bkd_md5";
+    private static final String f7938a = "bkd_md5";
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f21545c = "sql_rs";
+    private static final String f7939c = "sql_rs";
 
     public SqlWrapper(Map<String, Object> map) {
         super(map);
@@ -31,7 +31,7 @@ public class SqlWrapper extends BaseWrapper {
 
     public String getDataMd5() {
         try {
-            return (String) get(f21544a);
+            return (String) get(f7938a);
         } catch (ag e) {
             return "";
         }
@@ -39,7 +39,7 @@ public class SqlWrapper extends BaseWrapper {
 
     public String getResult() {
         try {
-            return (String) get(f21545c);
+            return (String) get(f7939c);
         } catch (ag e) {
             return "";
         }
@@ -50,10 +50,10 @@ public class SqlWrapper extends BaseWrapper {
     }
 
     public SqlWrapper setDataMd5(String str) {
-        return (SqlWrapper) set(f21544a, str);
+        return (SqlWrapper) set(f7938a, str);
     }
 
     public SqlWrapper setResult(String str) {
-        return (SqlWrapper) set(f21545c, str);
+        return (SqlWrapper) set(f7939c, str);
     }
 }

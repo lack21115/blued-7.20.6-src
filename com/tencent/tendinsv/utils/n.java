@@ -8,7 +8,7 @@ import java.util.concurrent.FutureTask;
 public class n {
 
     /* renamed from: a  reason: collision with root package name */
-    private final String[] f39107a = {"log1.cmpassport.com", "wap.cmpassport.com", "cmpassport.com", "config.cmpassport.com", "onekey.cmpassport.com", "auth.wosms.cn", "daily.m.zzx9.cn", "open.e.189.cn", "id6.me"};
+    private final String[] f25416a = {"log1.cmpassport.com", "wap.cmpassport.com", "cmpassport.com", "config.cmpassport.com", "onekey.cmpassport.com", "auth.wosms.cn", "daily.m.zzx9.cn", "open.e.189.cn", "id6.me"};
 
     /* JADX INFO: Access modifiers changed from: private */
     public void a(String str) {
@@ -42,7 +42,7 @@ public class n {
                 @Override // java.util.concurrent.Callable
                 /* renamed from: a */
                 public Void call() {
-                    String[] strArr = n.this.f39107a;
+                    String[] strArr = n.this.f25416a;
                     int length = strArr.length;
                     int i = 0;
                     while (true) {

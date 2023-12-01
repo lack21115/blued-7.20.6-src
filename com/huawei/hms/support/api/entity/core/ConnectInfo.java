@@ -10,13 +10,13 @@ public class ConnectInfo implements IMessageEntity {
     @Packed
 
     /* renamed from: a  reason: collision with root package name */
-    private List<String> f22882a;
+    private List<String> f9274a;
     @Packed
     private List<Scope> b;
     @Packed
 
     /* renamed from: c  reason: collision with root package name */
-    private String f22883c;
+    private String f9275c;
     @Packed
     private String d;
 
@@ -24,18 +24,18 @@ public class ConnectInfo implements IMessageEntity {
     }
 
     public ConnectInfo(List<String> list, List<Scope> list2, String str, String str2) {
-        this.f22882a = list;
+        this.f9274a = list;
         this.b = list2;
-        this.f22883c = str;
+        this.f9275c = str;
         this.d = str2;
     }
 
     public List<String> getApiNameList() {
-        return this.f22882a;
+        return this.f9274a;
     }
 
     public String getFingerprint() {
-        return this.f22883c;
+        return this.f9275c;
     }
 
     public List<Scope> getScopeList() {
@@ -47,11 +47,11 @@ public class ConnectInfo implements IMessageEntity {
     }
 
     public void setApiNameList(List<String> list) {
-        this.f22882a = list;
+        this.f9274a = list;
     }
 
     public void setFingerprint(String str) {
-        this.f22883c = str;
+        this.f9275c = str;
     }
 
     public void setScopeList(List<Scope> list) {

@@ -14,7 +14,7 @@ import java.util.List;
 public final class t implements com.opos.exoplayer.core.c.e {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final com.opos.exoplayer.core.c.h f25226a = new com.opos.exoplayer.core.c.h() { // from class: com.opos.exoplayer.core.c.f.t.1
+    public static final com.opos.exoplayer.core.c.h f11538a = new com.opos.exoplayer.core.c.h() { // from class: com.opos.exoplayer.core.c.f.t.1
         @Override // com.opos.exoplayer.core.c.h
         public com.opos.exoplayer.core.c.e[] a() {
             return new com.opos.exoplayer.core.c.e[]{new t()};
@@ -23,7 +23,7 @@ public final class t implements com.opos.exoplayer.core.c.e {
     private static final long b = com.opos.exoplayer.core.i.u.f("AC-3");
 
     /* renamed from: c  reason: collision with root package name */
-    private static final long f25227c = com.opos.exoplayer.core.i.u.f("EAC3");
+    private static final long f11539c = com.opos.exoplayer.core.i.u.f("EAC3");
     private static final long d = com.opos.exoplayer.core.i.u.f("HEVC");
     private final int e;
     private final List<com.opos.exoplayer.core.i.s> f;
@@ -86,7 +86,7 @@ public final class t implements com.opos.exoplayer.core.c.e {
         private final com.opos.exoplayer.core.i.l b = new com.opos.exoplayer.core.i.l(new byte[5]);
 
         /* renamed from: c  reason: collision with root package name */
-        private final SparseArray<u> f25230c = new SparseArray<>();
+        private final SparseArray<u> f11542c = new SparseArray<>();
         private final SparseIntArray d = new SparseIntArray();
         private final int e;
 
@@ -108,7 +108,7 @@ public final class t implements com.opos.exoplayer.core.c.e {
                 if (g == 5) {
                     long m = mVar.m();
                     if (m != t.b) {
-                        if (m != t.f25227c) {
+                        if (m != t.f11539c) {
                             str = str2;
                             arrayList = arrayList2;
                             if (m == t.d) {
@@ -164,7 +164,7 @@ public final class t implements com.opos.exoplayer.core.c.e {
                 arrayList2 = arrayList;
             }
             mVar.c(i2);
-            return new u.b(i3, str2, arrayList2, Arrays.copyOfRange(mVar.f25496a, d, i2));
+            return new u.b(i3, str2, arrayList2, Arrays.copyOfRange(mVar.f11808a, d, i2));
         }
 
         @Override // com.opos.exoplayer.core.c.f.q
@@ -191,7 +191,7 @@ public final class t implements com.opos.exoplayer.core.c.e {
                 tVar.o = tVar.i.a(21, bVar);
                 t.this.o.a(sVar, t.this.l, new u.d(h, 21, 8192));
             }
-            this.f25230c.clear();
+            this.f11542c.clear();
             this.d.clear();
             int b = mVar.b();
             while (true) {
@@ -208,7 +208,7 @@ public final class t implements com.opos.exoplayer.core.c.e {
                 u.b a2 = a(mVar, c4);
                 int i2 = c2;
                 if (c2 == 6) {
-                    i2 = a2.f25233a;
+                    i2 = a2.f11545a;
                 }
                 int i3 = i - (c4 + 5);
                 int i4 = t.this.e == 2 ? i2 : c3;
@@ -216,7 +216,7 @@ public final class t implements com.opos.exoplayer.core.c.e {
                     u a3 = (t.this.e == 2 && i2 == 21) ? t.this.o : t.this.i.a(i2, a2);
                     if (t.this.e != 2 || c3 < this.d.get(i4, 8192)) {
                         this.d.put(i4, c3);
-                        this.f25230c.put(i4, a3);
+                        this.f11542c.put(i4, a3);
                     }
                 }
                 b = i3;
@@ -230,7 +230,7 @@ public final class t implements com.opos.exoplayer.core.c.e {
                 }
                 int keyAt = this.d.keyAt(i6);
                 t.this.k.put(keyAt, true);
-                u valueAt = this.f25230c.valueAt(i6);
+                u valueAt = this.f11542c.valueAt(i6);
                 if (valueAt != null) {
                     if (valueAt != t.this.o) {
                         valueAt.a(sVar, t.this.l, new u.d(h, keyAt, 8192));
@@ -317,11 +317,11 @@ public final class t implements com.opos.exoplayer.core.c.e {
     @Override // com.opos.exoplayer.core.c.e
     public int a(com.opos.exoplayer.core.c.f fVar, com.opos.exoplayer.core.c.k kVar) {
         int i;
-        byte[] bArr = this.g.f25496a;
+        byte[] bArr = this.g.f11808a;
         if (9400 - this.g.d() < 188) {
             int b2 = this.g.b();
             if (b2 > 0) {
-                System.arraycopy((Object) bArr, this.g.d(), (Object) bArr, 0, b2);
+                System.arraycopy(bArr, this.g.d(), bArr, 0, b2);
             }
             this.g.a(bArr, b2);
         }
@@ -409,7 +409,7 @@ public final class t implements com.opos.exoplayer.core.c.e {
 
     @Override // com.opos.exoplayer.core.c.e
     public boolean a(com.opos.exoplayer.core.c.f fVar) {
-        byte[] bArr = this.g.f25496a;
+        byte[] bArr = this.g.f11808a;
         fVar.c(bArr, 0, 940);
         int i = 0;
         while (true) {

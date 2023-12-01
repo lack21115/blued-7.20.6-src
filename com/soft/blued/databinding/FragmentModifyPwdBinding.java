@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentModifyPwdBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f28899a;
+    private final LinearLayout f15209a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f28899a;
+        return this.f15209a;
     }
 }

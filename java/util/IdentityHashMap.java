@@ -72,12 +72,12 @@ public class IdentityHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V
             this.associatedMap = identityHashMap;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public void clear() {
             this.associatedMap.clear();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean contains(Object obj) {
             IdentityHashMapEntry entry;
             return (obj instanceof Map.Entry) && (entry = this.associatedMap.getEntry(((Map.Entry) obj).getKey())) != null && entry.equals(obj);
@@ -97,7 +97,7 @@ public class IdentityHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V
             }, this.associatedMap);
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean remove(Object obj) {
             if (contains(obj)) {
                 this.associatedMap.remove(((Map.Entry) obj).getKey());
@@ -106,7 +106,7 @@ public class IdentityHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V
             return false;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection
         public int size() {
             return this.associatedMap.size;
         }
@@ -429,12 +429,12 @@ public class IdentityHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V
     public Set<K> keySet() {
         if (this.keySet == null) {
             this.keySet = new AbstractSet<K>() { // from class: java.util.IdentityHashMap.1
-                @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+                @Override // java.util.AbstractCollection, java.util.Collection
                 public void clear() {
                     IdentityHashMap.this.clear();
                 }
 
-                @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+                @Override // java.util.AbstractCollection, java.util.Collection
                 public boolean contains(Object obj) {
                     return IdentityHashMap.this.containsKey(obj);
                 }
@@ -449,7 +449,7 @@ public class IdentityHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V
                     }, IdentityHashMap.this);
                 }
 
-                @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+                @Override // java.util.AbstractCollection, java.util.Collection
                 public boolean remove(Object obj) {
                     if (IdentityHashMap.this.containsKey(obj)) {
                         IdentityHashMap.this.remove(obj);
@@ -458,7 +458,7 @@ public class IdentityHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V
                     return false;
                 }
 
-                @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+                @Override // java.util.AbstractCollection, java.util.Collection
                 public int size() {
                     return IdentityHashMap.this.size();
                 }
@@ -546,12 +546,12 @@ public class IdentityHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V
     public Collection<V> values() {
         if (this.valuesCollection == null) {
             this.valuesCollection = new AbstractCollection<V>() { // from class: java.util.IdentityHashMap.2
-                @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+                @Override // java.util.AbstractCollection, java.util.Collection
                 public void clear() {
                     IdentityHashMap.this.clear();
                 }
 
-                @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+                @Override // java.util.AbstractCollection, java.util.Collection
                 public boolean contains(Object obj) {
                     return IdentityHashMap.this.containsValue(obj);
                 }
@@ -566,7 +566,7 @@ public class IdentityHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V
                     }, IdentityHashMap.this);
                 }
 
-                @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+                @Override // java.util.AbstractCollection, java.util.Collection
                 public boolean remove(Object obj) {
                     Iterator<V> it = iterator();
                     while (it.hasNext()) {
@@ -578,7 +578,7 @@ public class IdentityHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V
                     return false;
                 }
 
-                @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+                @Override // java.util.AbstractCollection, java.util.Collection
                 public int size() {
                     return IdentityHashMap.this.size();
                 }

@@ -9,7 +9,6 @@ import android.content.SharedPreferences;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorManager;
-import android.media.TtmlUtils;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.NetworkRequest;
@@ -18,6 +17,7 @@ import android.telephony.PhoneStateListener;
 import android.telephony.SignalStrength;
 import android.telephony.TelephonyManager;
 import android.util.Log;
+import com.android.internal.telephony.PhoneConstants;
 import java.io.BufferedReader;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -40,13 +40,9 @@ import org.json.JSONObject;
 public class DUHelper extends PhoneStateListener {
     public static final int MAIN_DU_ASYNCHRONOUS = 1;
     public static final int MAIN_DU_SYNCHRONOUS = 0;
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final String f4162a = "du.lock";
+    private static final String a = "du.lock";
     private static final String b = "du";
-
-    /* renamed from: c  reason: collision with root package name */
-    private static AIClient f4163c;
+    private static AIClient c;
     public static Context mContext;
     public static int mMeic;
     public static int mPopu;
@@ -102,7 +98,6 @@ public class DUHelper extends PhoneStateListener {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     public String a(Context context, String str, String str2, int i2) {
         try {
             if (!d.d(context)) {
@@ -165,7 +160,6 @@ public class DUHelper extends PhoneStateListener {
         q.execute(new p(this, context, str, str2, str3, listener));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     public void a(Context context, JSONObject jSONObject, String str) {
         String str2;
         try {
@@ -206,7 +200,6 @@ public class DUHelper extends PhoneStateListener {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     public void a(JSONObject jSONObject, String str) {
         a(jSONObject, "custom", str);
     }
@@ -215,7 +208,6 @@ public class DUHelper extends PhoneStateListener {
         jSONObject.put(str, str2);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     public static native void aXZlZWNl(Context context, Intent intent);
 
     private static Context b(Context context) {
@@ -230,7 +222,6 @@ public class DUHelper extends PhoneStateListener {
         return context;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     public String b(Context context, int i2) {
         String str;
         try {
@@ -263,7 +254,6 @@ public class DUHelper extends PhoneStateListener {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     public String b(Context context, String str, String str2, String str3) {
         String onEvent;
         try {
@@ -344,7 +334,7 @@ public class DUHelper extends PhoneStateListener {
     }
 
     private boolean d(Context context) {
-        ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService("connectivity");
         if (connectivityManager != null) {
             try {
                 NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
@@ -368,7 +358,6 @@ public class DUHelper extends PhoneStateListener {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     public static native void dGZvcmRQ(Context context, String str, String str2);
 
     private JSONObject e(Context context) {
@@ -385,7 +374,7 @@ public class DUHelper extends PhoneStateListener {
             if (c2 instanceof String) {
                 return null;
             }
-            return d.d(context, new JSONObject(c2.toString()).getJSONObject(TtmlUtils.TAG_METADATA).getString("name"));
+            return d.d(context, new JSONObject(c2.toString()).getJSONObject("metadata").getString("name"));
         } catch (Exception e2) {
             return null;
         }
@@ -407,7 +396,6 @@ public class DUHelper extends PhoneStateListener {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     public String g(Context context) {
         SharedPreferences sharedPreferences = context.getSharedPreferences(context.getPackageName() + "_dna", 0);
         String str = null;
@@ -511,7 +499,7 @@ public class DUHelper extends PhoneStateListener {
         }
     }
 
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:16:0x0047 -> B:10:0x0038). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:37:0x0047 -> B:31:0x0038). Please submit an issue!!! */
     public static void go(Context context, String str, String str2) {
         try {
             Context b2 = b(context);
@@ -529,7 +517,6 @@ public class DUHelper extends PhoneStateListener {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     public void h(Context context) {
         SensorManager sensorManager = (SensorManager) context.getSystemService("sensor");
         Sensor defaultSensor = sensorManager.getDefaultSensor(9);
@@ -566,14 +553,13 @@ public class DUHelper extends PhoneStateListener {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     public static void i(Context context) {
         if (d.d(context)) {
             try {
                 if (!y.a(context) || Build.VERSION.SDK_INT < 21) {
                     return;
                 }
-                ConnectivityManager connectivityManager = (ConnectivityManager) mContext.getSystemService(Context.CONNECTIVITY_SERVICE);
+                ConnectivityManager connectivityManager = (ConnectivityManager) mContext.getSystemService("connectivity");
                 NetworkRequest build = new NetworkRequest.Builder().addCapability(12).addTransportType(0).build();
                 i iVar = new i(context);
                 oxlbmV0d(context, iVar, 2);
@@ -586,7 +572,7 @@ public class DUHelper extends PhoneStateListener {
     public static void init(Context context, String str) {
         try {
             mContext = b(context);
-            FileOutputStream openFileOutput = context.openFileOutput(f4162a, 0);
+            FileOutputStream openFileOutput = context.openFileOutput(a, 0);
             FileLock tryLock = openFileOutput.getChannel().tryLock();
             if (!tryLock.isValid()) {
                 openFileOutput.close();
@@ -661,7 +647,6 @@ public class DUHelper extends PhoneStateListener {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     public static native String onIEvent(Context context, String str, String str2, String str3);
 
     public static void onIEvent(Context context, String str) {
@@ -673,15 +658,13 @@ public class DUHelper extends PhoneStateListener {
 
     private static native void onSSChanged(Context context, SignalStrength signalStrength);
 
-    /* JADX INFO: Access modifiers changed from: private */
     public static native void onSensorChanged(Context context, SensorEvent sensorEvent);
 
-    /* JADX INFO: Access modifiers changed from: private */
     public static native void oxlbmV0d(Context context, Object obj, int i2);
 
     private static native String query(Context context, String str, String str2, int i2);
 
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:16:0x0047 -> B:10:0x0038). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:37:0x0047 -> B:31:0x0038). Please submit an issue!!! */
     public static void report(Context context, String str, String str2) {
         try {
             Context b2 = b(context);
@@ -699,10 +682,8 @@ public class DUHelper extends PhoneStateListener {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     public static native String reportRun(Context context, String str, String str2);
 
-    /* JADX INFO: Access modifiers changed from: private */
     public static native String run(Context context, String str, String str2);
 
     public static int setConfig(String str, String str2) {
@@ -776,14 +757,13 @@ public class DUHelper extends PhoneStateListener {
 
     public static int unResListener() {
         try {
-            ((TelephonyManager) mContext.getSystemService("phone")).listen(d, 0);
+            ((TelephonyManager) mContext.getSystemService(PhoneConstants.PHONE_KEY)).listen(d, 0);
             return 0;
         } catch (Exception e2) {
             return -1;
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     public static native String zZVTFJRA(Context context, String str);
 
     @Override // android.telephony.PhoneStateListener

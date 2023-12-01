@@ -1,5 +1,6 @@
 package android.content;
 
+import android.R;
 import android.accounts.Account;
 import android.app.Activity;
 import android.os.Bundle;
@@ -11,7 +12,6 @@ import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-import com.android.internal.R;
 import com.umeng.analytics.pro.d;
 
 /* loaded from: source-9557208-dex2jar.jar:android/content/SyncActivityTooManyDeletes.class */
@@ -52,13 +52,13 @@ public class SyncActivityTooManyDeletes extends Activity implements AdapterView.
         this.mAccount = (Account) extras.getParcelable("account");
         this.mAuthority = extras.getString(ContactsContract.Directory.DIRECTORY_AUTHORITY);
         this.mProvider = extras.getString(d.M);
-        ArrayAdapter arrayAdapter = new ArrayAdapter(this, 17367043, 16908308, new CharSequence[]{getResources().getText(R.string.sync_really_delete), getResources().getText(R.string.sync_undo_deletes), getResources().getText(R.string.sync_do_nothing)});
+        ArrayAdapter arrayAdapter = new ArrayAdapter(this, (int) R.layout.simple_list_item_1, (int) R.id.text1, new CharSequence[]{getResources().getText(17040976), getResources().getText(17040977), getResources().getText(17040978)});
         ListView listView = new ListView(this);
         listView.setAdapter((ListAdapter) arrayAdapter);
         listView.setItemsCanFocus(true);
         listView.setOnItemClickListener(this);
         TextView textView = new TextView(this);
-        textView.setText(String.format(getResources().getText(R.string.sync_too_many_deletes_desc).toString(), Long.valueOf(this.mNumDeletes), this.mProvider, this.mAccount.name));
+        textView.setText(String.format(getResources().getText(17040975).toString(), Long.valueOf(this.mNumDeletes), this.mProvider, this.mAccount.name));
         LinearLayout linearLayout = new LinearLayout(this);
         linearLayout.setOrientation(1);
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(-1, -2, 0.0f);

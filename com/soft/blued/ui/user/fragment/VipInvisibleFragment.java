@@ -16,6 +16,7 @@ import android.widget.ListAdapter;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import com.blued.android.core.AppInfo;
+import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.ui.BaseFragment;
 import com.blued.android.core.utils.skin.BluedSkinUtils;
 import com.blued.android.framework.http.BluedHttpTools;
@@ -45,6 +46,7 @@ import com.soft.blued.ui.user.model.VipUpgradeModel;
 import com.soft.blued.ui.user.presenter.PayUtils;
 import com.soft.blued.user.BluedConfig;
 import com.soft.blued.utils.StringUtils;
+import com.xiaomi.mipush.sdk.Constants;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -59,11 +61,11 @@ public class VipInvisibleFragment extends BaseFragment implements View.OnClickLi
     private RelativeLayout K;
 
     /* renamed from: a  reason: collision with root package name */
-    public VipInvisibleDialogFragment f34163a;
+    public VipInvisibleDialogFragment f20472a;
     private View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private ImageView f34164c;
+    private ImageView f20473c;
     private TextView d;
     private TwoWaysBar e;
     private ImageView f;
@@ -99,7 +101,6 @@ public class VipInvisibleFragment extends BaseFragment implements View.OnClickLi
         AnonymousClass7() {
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public void onUIUpdate(BluedEntityA<Object> bluedEntityA) {
         }
@@ -160,17 +161,15 @@ public class VipInvisibleFragment extends BaseFragment implements View.OnClickLi
     private void a(final String str, final int i, final VipProtos.FromType fromType) {
         PayHttpUtils.c(new BluedUIHttpResponse<BluedEntityA<VipUpgradeModel>>(getFragmentActive()) { // from class: com.soft.blued.ui.user.fragment.VipInvisibleFragment.6
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<VipUpgradeModel> bluedEntityA) {
                 if (bluedEntityA == null || bluedEntityA.data == null || bluedEntityA.data.size() <= 0) {
                     PayUtils.a(VipInvisibleFragment.this.D, 2, str, i, fromType);
                 } else {
-                    VipUpgradeDialogFragment.f34178a.a(VipInvisibleFragment.this.getContext(), VipInvisibleFragment.this.getParentFragmentManager(), bluedEntityA.data, 2, str, i, VipProtos.FromType.UNKNOWN_FROM);
+                    VipUpgradeDialogFragment.f20487a.a(VipInvisibleFragment.this.getContext(), VipInvisibleFragment.this.getParentFragmentManager(), bluedEntityA.data, 2, str, i, VipProtos.FromType.UNKNOWN_FROM);
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i2, String str2, String str3) {
                 PayUtils.a(VipInvisibleFragment.this.D, 2, str, i, fromType);
                 return true;
@@ -179,7 +178,7 @@ public class VipInvisibleFragment extends BaseFragment implements View.OnClickLi
     }
 
     private void a(boolean z) {
-        this.f34164c.setSelected(z);
+        this.f20473c.setSelected(z);
         if (z) {
             d(false);
             e(false);
@@ -221,10 +220,10 @@ public class VipInvisibleFragment extends BaseFragment implements View.OnClickLi
     }
 
     private void b() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.b.findViewById(2131370749);
-        this.z = commonTopTitleNoTrans;
-        commonTopTitleNoTrans.setCenterText(this.E);
-        this.z.setRightText(R.string.done);
+        CommonTopTitleNoTrans findViewById = this.b.findViewById(R.id.top_title);
+        this.z = findViewById;
+        findViewById.setCenterText(this.E);
+        this.z.setRightText((int) R.string.done);
         this.z.setLeftClickListener(this);
         this.z.setRightClickListener(this);
         this.z.getTitleBackground().setBackground(new ColorDrawable(0));
@@ -251,7 +250,7 @@ public class VipInvisibleFragment extends BaseFragment implements View.OnClickLi
 
     /* JADX INFO: Access modifiers changed from: private */
     public void c() {
-        this.f34164c = (ImageView) this.b.findViewById(R.id.sbt_all_onoff);
+        this.f20473c = (ImageView) this.b.findViewById(R.id.sbt_all_onoff);
         this.d = (TextView) this.b.findViewById(R.id.tv_distance_range);
         this.e = (TwoWaysBar) this.b.findViewById(R.id.bar_distance);
         this.f = (ImageView) this.b.findViewById(R.id.sbt_distance_onoff);
@@ -260,7 +259,7 @@ public class VipInvisibleFragment extends BaseFragment implements View.OnClickLi
         this.i = (ImageView) this.b.findViewById(R.id.sbt_age_onoff);
         this.j = (TwoWaysBar) this.b.findViewById(R.id.bar_age);
         this.k = (TextView) this.b.findViewById(R.id.tv_age_range);
-        this.l = (TextView) this.b.findViewById(2131371285);
+        this.l = (TextView) this.b.findViewById(R.id.tv_distance);
         this.m = (TextView) this.b.findViewById(2131372467);
         this.n = (TextView) this.b.findViewById(R.id.tv_age);
         this.K = (RelativeLayout) this.b.findViewById(R.id.rl_invisible_to_user_list);
@@ -271,7 +270,7 @@ public class VipInvisibleFragment extends BaseFragment implements View.OnClickLi
             public void a(int i, int i2) {
                 StringBuilder sb = new StringBuilder();
                 sb.append(i);
-                sb.append("-");
+                sb.append(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
                 sb.append(i2 >= 100 ? "max" : Integer.valueOf(i2));
                 VipInvisibleFragment.this.s = sb.toString();
                 VipInvisibleFragment.this.d.setText(TwoWaysBar.a(VipInvisibleFragment.this.getContext(), i, i2, 1));
@@ -284,13 +283,13 @@ public class VipInvisibleFragment extends BaseFragment implements View.OnClickLi
         this.j.setTwoWaysBarListner(new TwoWaysBar.TowWaysBarListenerAdapter() { // from class: com.soft.blued.ui.user.fragment.VipInvisibleFragment.2
             @Override // com.soft.blued.ui.find.view.TwoWaysBar.TowWaysBarListenerAdapter, com.soft.blued.ui.find.view.TwoWaysBar.TwoWaysBarListner
             public void a(int i, int i2) {
-                String str = i + "-" + i2;
+                String str = i + Constants.ACCEPT_TIME_SEPARATOR_SERVER + i2;
                 VipInvisibleFragment.this.w = str;
                 VipInvisibleFragment.this.k.setText(VipInvisibleFragment.this.a(str));
             }
         });
         f();
-        this.f34164c.setOnClickListener(this);
+        this.f20473c.setOnClickListener(this);
         this.f.setOnClickListener(this);
         this.i.setOnClickListener(this);
         this.g.setOnClickListener(this);
@@ -323,7 +322,7 @@ public class VipInvisibleFragment extends BaseFragment implements View.OnClickLi
             return "0-" + (this.o.length - 1);
         }
         try {
-            String[] split = this.w.split("-");
+            String[] split = this.w.split(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
             int i3 = 0;
             String str = split[0];
             String str2 = split[1];
@@ -359,7 +358,7 @@ public class VipInvisibleFragment extends BaseFragment implements View.OnClickLi
                     break;
                 }
             }
-            return i2 + "-" + i;
+            return i2 + Constants.ACCEPT_TIME_SEPARATOR_SERVER + i;
         } catch (Exception e) {
             return "0-" + (this.o.length - 1);
         }
@@ -376,12 +375,11 @@ public class VipInvisibleFragment extends BaseFragment implements View.OnClickLi
         Dialog a2 = DialogUtils.a(getContext());
         this.y = a2;
         a2.show();
-        ProfileHttpUtils.a(getContext(), new BluedUIHttpResponse<BluedEntityA<VipInvisibleSettingModel>>(getFragmentActive()) { // from class: com.soft.blued.ui.user.fragment.VipInvisibleFragment.3
+        ProfileHttpUtils.a(getContext(), (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<VipInvisibleSettingModel>>(getFragmentActive()) { // from class: com.soft.blued.ui.user.fragment.VipInvisibleFragment.3
             /* JADX INFO: Access modifiers changed from: protected */
             /* JADX WARN: Code restructure failed: missing block: B:34:0x0118, code lost:
-                if (r4.f34167a.r != false) goto L33;
+                if (r4.f20476a.r != false) goto L33;
              */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
@@ -394,7 +392,7 @@ public class VipInvisibleFragment extends BaseFragment implements View.OnClickLi
                 */
                 throw new UnsupportedOperationException("Method not decompiled: com.soft.blued.ui.user.fragment.VipInvisibleFragment.AnonymousClass3.onUIUpdate(com.blued.android.framework.http.parser.BluedEntityA):void");
             }
-        }, UserInfo.getInstance().getLoginUserInfo().getUid(), getFragmentActive());
+        }, UserInfo.getInstance().getLoginUserInfo().getUid(), (IRequestHost) getFragmentActive());
     }
 
     private void e(boolean z) {
@@ -448,17 +446,17 @@ public class VipInvisibleFragment extends BaseFragment implements View.OnClickLi
         String str;
         String str2;
         try {
-            String[] split = this.w.split("-");
+            String[] split = this.w.split(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
             int parseInt = Integer.parseInt(split[0]);
             int parseInt2 = Integer.parseInt(split[1]);
             if (parseInt <= this.o.length - 1 && parseInt2 <= this.o.length - 1) {
                 str = this.o[parseInt];
                 str2 = parseInt2 == this.o.length - 1 ? "max" : this.o[parseInt2];
-                return str + "-" + str2;
+                return str + Constants.ACCEPT_TIME_SEPARATOR_SERVER + str2;
             }
             str = this.o[0];
             str2 = this.o[this.o.length - 1];
-            return str + "-" + str2;
+            return str + Constants.ACCEPT_TIME_SEPARATOR_SERVER + str2;
         } catch (Exception e) {
             return "18-max";
         }
@@ -481,10 +479,10 @@ public class VipInvisibleFragment extends BaseFragment implements View.OnClickLi
         String str2;
         String str3;
         String string = AppInfo.d().getResources().getString(R.string.old);
-        if (StringUtils.d(str) || str.split("-").length != 2) {
+        if (StringUtils.d(str) || str.split(Constants.ACCEPT_TIME_SEPARATOR_SERVER).length != 2) {
             return "18-80" + string + "+";
         }
-        String[] split = str.split("-");
+        String[] split = str.split(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
         int parseInt = Integer.parseInt(split[0]);
         int parseInt2 = Integer.parseInt(split[1]);
         String[] strArr = this.o;
@@ -510,7 +508,7 @@ public class VipInvisibleFragment extends BaseFragment implements View.OnClickLi
         Tracker.onClick(view);
         switch (view.getId()) {
             case 2131363120:
-                VipInvisibleDialogFragment vipInvisibleDialogFragment = this.f34163a;
+                VipInvisibleDialogFragment vipInvisibleDialogFragment = this.f20472a;
                 if (vipInvisibleDialogFragment != null) {
                     vipInvisibleDialogFragment.dismiss();
                     return;
@@ -596,13 +594,11 @@ public class VipInvisibleFragment extends BaseFragment implements View.OnClickLi
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         EventTrackVIP.a(VipProtos.Event.VIP_CENTRE_SUPER_HIDE_SECOND_PAGE_SHOW, EventTrackVIP.b(UserInfo.getInstance().getLoginUserInfo().vip_grade));
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.D = getActivity();
         this.b = layoutInflater.inflate(R.layout.pop_vip_invisible, (ViewGroup) null);
@@ -612,9 +608,8 @@ public class VipInvisibleFragment extends BaseFragment implements View.OnClickLi
         return this.b;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
-        this.f34163a = null;
+        this.f20472a = null;
     }
 }

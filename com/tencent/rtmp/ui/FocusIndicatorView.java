@@ -12,11 +12,11 @@ import android.view.animation.ScaleAnimation;
 public class FocusIndicatorView extends View {
 
     /* renamed from: a  reason: collision with root package name */
-    final ScaleAnimation f38683a;
+    final ScaleAnimation f24992a;
     private final Paint b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final int f38684c;
+    private final int f24993c;
     private final Rect d;
 
     public FocusIndicatorView(Context context) {
@@ -30,21 +30,20 @@ public class FocusIndicatorView extends View {
     public FocusIndicatorView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         this.d = new Rect();
-        this.f38684c = (int) ((getResources().getDisplayMetrics().density * 1.0f) + 0.5f);
+        this.f24993c = (int) ((getResources().getDisplayMetrics().density * 1.0f) + 0.5f);
         Paint paint = new Paint();
         this.b = paint;
         paint.setColor(-1);
         this.b.setStyle(Paint.Style.STROKE);
-        this.b.setStrokeWidth(this.f38684c);
+        this.b.setStrokeWidth(this.f24993c);
         ScaleAnimation scaleAnimation = new ScaleAnimation(1.3f, 1.0f, 1.3f, 1.0f, 1, 0.5f, 1, 0.5f);
-        this.f38683a = scaleAnimation;
+        this.f24992a = scaleAnimation;
         scaleAnimation.setDuration(200L);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onDraw(Canvas canvas) {
-        int i = this.f38684c / 2;
+    protected void onDraw(Canvas canvas) {
+        int i = this.f24993c / 2;
         this.d.left = i;
         this.d.top = i;
         this.d.right = getWidth() - i;

@@ -10,7 +10,7 @@ import java.lang.reflect.Method;
 public class UserHandleCompat {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Method f2522a;
+    private static Method f2474a;
     private static Constructor<UserHandle> b;
 
     /* loaded from: source-8756600-dex2jar.jar:androidx/core/os/UserHandleCompat$Api24Impl.class */
@@ -27,12 +27,12 @@ public class UserHandleCompat {
     }
 
     private static Method a() throws NoSuchMethodException {
-        if (f2522a == null) {
+        if (f2474a == null) {
             Method declaredMethod = UserHandle.class.getDeclaredMethod("getUserId", Integer.TYPE);
-            f2522a = declaredMethod;
+            f2474a = declaredMethod;
             declaredMethod.setAccessible(true);
         }
-        return f2522a;
+        return f2474a;
     }
 
     private static Constructor<UserHandle> b() throws NoSuchMethodException {

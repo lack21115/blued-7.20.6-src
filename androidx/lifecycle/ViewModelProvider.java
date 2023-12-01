@@ -31,10 +31,10 @@ public class ViewModelProvider {
                 this();
             }
 
-            public final Factory defaultFactory$lifecycle_viewmodel_release(ViewModelStoreOwner owner) {
-                Intrinsics.e(owner, "owner");
-                if (owner instanceof HasDefaultViewModelProviderFactory) {
-                    Factory defaultViewModelProviderFactory = ((HasDefaultViewModelProviderFactory) owner).getDefaultViewModelProviderFactory();
+            public final Factory defaultFactory$lifecycle_viewmodel_release(ViewModelStoreOwner viewModelStoreOwner) {
+                Intrinsics.e(viewModelStoreOwner, "owner");
+                if (viewModelStoreOwner instanceof HasDefaultViewModelProviderFactory) {
+                    Factory defaultViewModelProviderFactory = ((HasDefaultViewModelProviderFactory) viewModelStoreOwner).getDefaultViewModelProviderFactory();
                     Intrinsics.c(defaultViewModelProviderFactory, "owner.defaultViewModelProviderFactory");
                     return defaultViewModelProviderFactory;
                 }
@@ -64,24 +64,24 @@ public class ViewModelProvider {
         }
 
         @Override // androidx.lifecycle.ViewModelProvider.NewInstanceFactory, androidx.lifecycle.ViewModelProvider.Factory
-        public <T extends ViewModel> T create(Class<T> modelClass) {
-            Intrinsics.e(modelClass, "modelClass");
-            if (AndroidViewModel.class.isAssignableFrom(modelClass)) {
+        public <T extends ViewModel> T create(Class<T> cls) {
+            Intrinsics.e(cls, "modelClass");
+            if (AndroidViewModel.class.isAssignableFrom(cls)) {
                 try {
-                    T newInstance = modelClass.getConstructor(Application.class).newInstance(this.application);
+                    T newInstance = cls.getConstructor(Application.class).newInstance(this.application);
                     Intrinsics.c(newInstance, "{\n                try {\n…          }\n            }");
                     return newInstance;
                 } catch (IllegalAccessException e) {
-                    throw new RuntimeException(Intrinsics.a("Cannot create an instance of ", (Object) modelClass), e);
+                    throw new RuntimeException(Intrinsics.a("Cannot create an instance of ", cls), e);
                 } catch (InstantiationException e2) {
-                    throw new RuntimeException(Intrinsics.a("Cannot create an instance of ", (Object) modelClass), e2);
+                    throw new RuntimeException(Intrinsics.a("Cannot create an instance of ", cls), e2);
                 } catch (NoSuchMethodException e3) {
-                    throw new RuntimeException(Intrinsics.a("Cannot create an instance of ", (Object) modelClass), e3);
+                    throw new RuntimeException(Intrinsics.a("Cannot create an instance of ", cls), e3);
                 } catch (InvocationTargetException e4) {
-                    throw new RuntimeException(Intrinsics.a("Cannot create an instance of ", (Object) modelClass), e4);
+                    throw new RuntimeException(Intrinsics.a("Cannot create an instance of ", cls), e4);
                 }
             }
-            return (T) super.create(modelClass);
+            return (T) super.create(cls);
         }
     }
 
@@ -94,8 +94,8 @@ public class ViewModelProvider {
     @Metadata
     /* loaded from: source-8756600-dex2jar.jar:androidx/lifecycle/ViewModelProvider$KeyedFactory.class */
     public static abstract class KeyedFactory extends OnRequeryFactory implements Factory {
-        public <T extends ViewModel> T create(Class<T> modelClass) {
-            Intrinsics.e(modelClass, "modelClass");
+        public <T extends ViewModel> T create(Class<T> cls) {
+            Intrinsics.e(cls, "modelClass");
             throw new UnsupportedOperationException("create(String, Class<?>) must be called on implementations of KeyedFactory");
         }
 
@@ -137,16 +137,16 @@ public class ViewModelProvider {
         }
 
         @Override // androidx.lifecycle.ViewModelProvider.Factory
-        public <T extends ViewModel> T create(Class<T> modelClass) {
-            Intrinsics.e(modelClass, "modelClass");
+        public <T extends ViewModel> T create(Class<T> cls) {
+            Intrinsics.e(cls, "modelClass");
             try {
-                T newInstance = modelClass.newInstance();
+                T newInstance = cls.newInstance();
                 Intrinsics.c(newInstance, "{\n                modelC…wInstance()\n            }");
                 return newInstance;
             } catch (IllegalAccessException e) {
-                throw new RuntimeException(Intrinsics.a("Cannot create an instance of ", (Object) modelClass), e);
+                throw new RuntimeException(Intrinsics.a("Cannot create an instance of ", cls), e);
             } catch (InstantiationException e2) {
-                throw new RuntimeException(Intrinsics.a("Cannot create an instance of ", (Object) modelClass), e2);
+                throw new RuntimeException(Intrinsics.a("Cannot create an instance of ", cls), e2);
             }
         }
     }
@@ -159,10 +159,10 @@ public class ViewModelProvider {
         }
     }
 
-    public ViewModelProvider(ViewModelStore store, Factory factory) {
-        Intrinsics.e(store, "store");
+    public ViewModelProvider(ViewModelStore viewModelStore, Factory factory) {
+        Intrinsics.e(viewModelStore, "store");
         Intrinsics.e(factory, "factory");
-        this.store = store;
+        this.store = viewModelStore;
         this.factory = factory;
     }
 
@@ -223,34 +223,34 @@ public class ViewModelProvider {
         throw new UnsupportedOperationException("Method not decompiled: androidx.lifecycle.ViewModelProvider.<init>(androidx.lifecycle.ViewModelStoreOwner, androidx.lifecycle.ViewModelProvider$Factory):void");
     }
 
-    public <T extends ViewModel> T get(Class<T> modelClass) {
-        Intrinsics.e(modelClass, "modelClass");
-        String canonicalName = modelClass.getCanonicalName();
+    public <T extends ViewModel> T get(Class<T> cls) {
+        Intrinsics.e(cls, "modelClass");
+        String canonicalName = cls.getCanonicalName();
         if (canonicalName != null) {
-            return (T) get(Intrinsics.a("androidx.lifecycle.ViewModelProvider.DefaultKey:", (Object) canonicalName), modelClass);
+            return (T) get(Intrinsics.a("androidx.lifecycle.ViewModelProvider.DefaultKey:", canonicalName), cls);
         }
         throw new IllegalArgumentException("Local and anonymous classes can not be ViewModels");
     }
 
-    public <T extends ViewModel> T get(String key, Class<T> modelClass) {
-        Intrinsics.e(key, "key");
-        Intrinsics.e(modelClass, "modelClass");
-        T viewModel = (T) this.store.get(key);
-        if (!modelClass.isInstance(viewModel)) {
+    public <T extends ViewModel> T get(String str, Class<T> cls) {
+        Intrinsics.e(str, "key");
+        Intrinsics.e(cls, "modelClass");
+        T t = (T) this.store.get(str);
+        if (!cls.isInstance(t)) {
             Factory factory = this.factory;
-            ViewModel viewModel2 = factory instanceof KeyedFactory ? ((KeyedFactory) factory).create(key, modelClass) : factory.create(modelClass);
-            this.store.put(key, viewModel2);
-            Intrinsics.c(viewModel2, "viewModel");
-            return (T) viewModel2;
+            ViewModel create = factory instanceof KeyedFactory ? ((KeyedFactory) factory).create(str, cls) : factory.create(cls);
+            this.store.put(str, create);
+            Intrinsics.c(create, "viewModel");
+            return (T) create;
         }
         Factory factory2 = this.factory;
         OnRequeryFactory onRequeryFactory = factory2 instanceof OnRequeryFactory ? (OnRequeryFactory) factory2 : null;
         if (onRequeryFactory != null) {
-            Intrinsics.c(viewModel, "viewModel");
-            onRequeryFactory.onRequery(viewModel);
+            Intrinsics.c(t, "viewModel");
+            onRequeryFactory.onRequery(t);
         }
-        if (viewModel != null) {
-            return viewModel;
+        if (t != null) {
+            return t;
         }
         throw new NullPointerException("null cannot be cast to non-null type T of androidx.lifecycle.ViewModelProvider.get");
     }

@@ -14,11 +14,11 @@ import com.soft.blued.R;
 public class LabeledTextView extends RelativeLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    private ImageView f28437a;
+    private ImageView f14747a;
     private ImageView b;
 
     /* renamed from: c  reason: collision with root package name */
-    private ImageView f28438c;
+    private ImageView f14748c;
     private View d;
     private TextView e;
     private View f;
@@ -76,12 +76,12 @@ public class LabeledTextView extends RelativeLayout {
     }
 
     public void a(int i, int i2, int i3) {
-        this.f28437a.setImageResource(i);
+        this.f14747a.setImageResource(i);
         setLeftIconShow(true);
         if (i2 <= 0 || i3 <= 0) {
             return;
         }
-        this.f28437a.setLayoutParams(new LinearLayout.LayoutParams(i2, i3));
+        this.f14747a.setLayoutParams(new LinearLayout.LayoutParams(i2, i3));
     }
 
     public void a(Context context, AttributeSet attributeSet) {
@@ -99,13 +99,13 @@ public class LabeledTextView extends RelativeLayout {
         this.r = obtainStyledAttributes.getBoolean(0, false);
         obtainStyledAttributes.recycle();
         View a2 = a(context);
-        this.f28437a = (ImageView) a2.findViewById(R.id.icon_left);
-        this.d = a2.findViewById(2131365270);
+        this.f14747a = (ImageView) a2.findViewById(R.id.icon_left);
+        this.d = a2.findViewById(R.id.iv_dot);
         this.b = (ImageView) a2.findViewById(R.id.tv_right_img);
-        this.f28438c = (ImageView) a2.findViewById(R.id.icon_right);
+        this.f14748c = (ImageView) a2.findViewById(R.id.icon_right);
         this.e = (TextView) a2.findViewById(R.id.tv_label);
         setTextTitle(this.h);
-        this.f = a2.findViewById(2131370746);
+        this.f = a2.findViewById(R.id.top_line);
         this.g = a2.findViewById(2131362488);
         a(Boolean.valueOf(this.p));
         a();
@@ -136,11 +136,11 @@ public class LabeledTextView extends RelativeLayout {
     }
 
     public void setLeftIconShow(boolean z) {
-        this.f28437a.setVisibility(z ? 0 : 8);
+        this.f14747a.setVisibility(z ? 0 : 8);
     }
 
     public void setRightIconShow(boolean z) {
-        this.f28438c.setVisibility(z ? 0 : 8);
+        this.f14748c.setVisibility(z ? 0 : 8);
     }
 
     public void setTextTitle(String str) {

@@ -1,6 +1,7 @@
 package com.amap.api.col.p0003sl;
 
 import android.util.Base64;
+import com.android.internal.http.multipart.FilePart;
 import java.nio.charset.StandardCharsets;
 
 /* renamed from: com.amap.api.col.3sl.ln  reason: invalid package */
@@ -10,21 +11,21 @@ public final class ln {
         if (bArr != null) {
             try {
                 mu muVar = new mu();
-                muVar.b.put("Content-Type", "application/octet-stream");
+                muVar.b.put("Content-Type", FilePart.DEFAULT_CONTENT_TYPE);
                 muVar.b.put("aps_c_src", Base64.encodeToString(mu.a().getBytes(), 2));
                 muVar.b.put("aps_c_key", Base64.encodeToString(mu.b().getBytes(), 2));
                 muVar.d = bArr;
-                if (le.f5360a) {
-                    muVar.f5391a = "http://cgicol.amap.com/collection/collectData?src=baseCol&ver=v74&";
+                if (le.a) {
+                    muVar.a = "http://cgicol.amap.com/collection/collectData?src=baseCol&ver=v74&";
                 } else {
-                    muVar.f5391a = (le.b ? "https://" : "http://") + "cgicol.amap.com/collection/collectData?src=baseCol&ver=v74&";
+                    muVar.a = (le.b ? "https://" : "http://") + "cgicol.amap.com/collection/collectData?src=baseCol&ver=v74&";
                 }
-                mv a2 = mi.b().a(muVar);
+                mv a = mi.b().a(muVar);
                 byte[] bArr2 = null;
-                if (a2 != null) {
+                if (a != null) {
                     bArr2 = null;
-                    if (a2.f5393a == 200) {
-                        bArr2 = a2.f5394c;
+                    if (a.a == 200) {
+                        bArr2 = a.c;
                     }
                 }
                 if (bArr2 != null) {

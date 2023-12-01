@@ -13,7 +13,7 @@ import com.opos.cmn.func.dl.service.DownloadService;
 public final class a implements c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f24866a = a.class.getSimpleName();
+    private static final String f11178a = a.class.getSimpleName();
     private c b;
 
     public a(Context context) {
@@ -23,7 +23,7 @@ public final class a implements c {
     public a(Context context, Class cls) {
         d dVar;
         if (context == null) {
-            com.opos.cmn.an.f.a.d(f24866a, "Context should not be null!");
+            com.opos.cmn.an.f.a.d(f11178a, "Context should not be null!");
             return;
         }
         try {
@@ -33,7 +33,7 @@ public final class a implements c {
                         this.b = new DownloadRemoteManager(context.getApplicationContext(), cls);
                     }
                 } catch (NoClassDefFoundError e) {
-                    com.opos.cmn.an.f.a.d(f24866a, "library service not include!");
+                    com.opos.cmn.an.f.a.d(f11178a, "library service not include!");
                     if (this.b != null) {
                         return;
                     }
@@ -55,7 +55,7 @@ public final class a implements c {
     @Override // com.opos.cmn.func.dl.base.c
     public final void a(DownloadConfig downloadConfig) {
         this.b.a(downloadConfig);
-        com.opos.cmn.an.f.a.c(f24866a, "DownloadManager init!");
+        com.opos.cmn.an.f.a.c(f11178a, "DownloadManager init!");
     }
 
     @Override // com.opos.cmn.func.dl.base.c

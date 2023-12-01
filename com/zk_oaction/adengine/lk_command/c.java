@@ -3,7 +3,6 @@ package com.zk_oaction.adengine.lk_command;
 import android.os.Handler;
 import android.os.Looper;
 import android.service.notification.Condition;
-import com.blued.android.module.common.web.LoaderConstants;
 import com.heytap.mcssdk.constant.IntentConstant;
 import org.xmlpull.v1.XmlPullParser;
 
@@ -20,10 +19,10 @@ public class c extends b {
         @Override // java.lang.Runnable
         public void run() {
             if (c.this.i.equals("unlock")) {
-                c.this.f41909a.a(50L);
-                c.this.f41909a.k.a();
-            } else if (c.this.i.equals(LoaderConstants.VIBRATE)) {
-                c.this.f41909a.a(50L);
+                c.this.f28218a.a(50L);
+                c.this.f28218a.k.a();
+            } else if (c.this.i.equals("vibrate")) {
+                c.this.f28218a.a(50L);
             } else {
                 String str = null;
                 com.zk_oaction.adengine.lk_expression.c cVar = c.this.g;
@@ -31,7 +30,7 @@ public class c extends b {
                     str = cVar.a();
                 }
                 c cVar2 = c.this;
-                cVar2.f41909a.k.a(cVar2.i, c.this.f, str);
+                cVar2.f28218a.k.a(cVar2.i, c.this.f, str);
             }
         }
     }
@@ -45,10 +44,10 @@ public class c extends b {
     public void a() {
         this.b.a((String) null, (String) null);
         if (this.b.a() != 0.0f) {
-            if (this.d.a() != 1.0f || this.f41910c == 0) {
+            if (this.d.a() != 1.0f || this.f28219c == 0) {
                 this.j.run();
             } else {
-                new Handler(Looper.getMainLooper()).postDelayed(this.j, this.f41910c);
+                new Handler(Looper.getMainLooper()).postDelayed(this.j, this.f28219c);
             }
         }
     }
@@ -57,12 +56,12 @@ public class c extends b {
     public boolean a(XmlPullParser xmlPullParser, String str) {
         try {
             this.i = xmlPullParser.getAttributeValue(null, IntentConstant.COMMAND);
-            this.b = new com.zk_oaction.adengine.lk_expression.a(this.f41909a, null, xmlPullParser.getAttributeValue(null, Condition.SCHEME), 1.0f, null, false);
+            this.b = new com.zk_oaction.adengine.lk_expression.a(this.f28218a, null, xmlPullParser.getAttributeValue(null, Condition.SCHEME), 1.0f, null, false);
             String attributeValue = xmlPullParser.getAttributeValue(null, "delay");
             if (attributeValue != null) {
-                this.f41910c = Integer.parseInt(attributeValue);
+                this.f28219c = Integer.parseInt(attributeValue);
             }
-            this.d = new com.zk_oaction.adengine.lk_expression.a(this.f41909a, null, xmlPullParser.getAttributeValue(null, "delayCondition"), 1.0f, null, false);
+            this.d = new com.zk_oaction.adengine.lk_expression.a(this.f28218a, null, xmlPullParser.getAttributeValue(null, "delayCondition"), 1.0f, null, false);
             a(xmlPullParser);
             return true;
         } catch (Exception e) {

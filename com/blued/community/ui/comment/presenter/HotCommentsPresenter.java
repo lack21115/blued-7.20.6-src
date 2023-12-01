@@ -22,13 +22,9 @@ import java.util.ArrayList;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/comment/presenter/HotCommentsPresenter.class */
 public class HotCommentsPresenter implements IHotCommentsContract.IPresenter {
-
-    /* renamed from: a  reason: collision with root package name */
-    private IHotCommentsContract.IView f19485a;
+    private IHotCommentsContract.IView a;
     private Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private IRequestHost f19486c;
+    private IRequestHost c;
     private BluedIngSelfFeed d;
     private boolean f;
     private String i;
@@ -42,34 +38,34 @@ public class HotCommentsPresenter implements IHotCommentsContract.IPresenter {
         @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public void onUIUpdate(BluedEntityA<BluedIngSelfFeed> bluedEntityA) {
-            HotCommentsPresenter.this.f19485a.e();
+            HotCommentsPresenter.this.a.e();
             if (bluedEntityA.data == null || bluedEntityA.data.size() <= 0 || bluedEntityA.data.get(0) == null || bluedEntityA.data.get(0).comments == null) {
                 if (HotCommentsPresenter.this.e != 1) {
                     HotCommentsPresenter.d(HotCommentsPresenter.this);
                     HotCommentsPresenter.this.f = false;
                 } else {
-                    HotCommentsPresenter.this.f19485a.f();
+                    HotCommentsPresenter.this.a.f();
                 }
-                HotCommentsPresenter.this.f19485a.b();
+                HotCommentsPresenter.this.a.b();
             } else if (bluedEntityA.data.get(0).comments.size() <= 0) {
-                HotCommentsPresenter.this.f19485a.b();
+                HotCommentsPresenter.this.a.b();
                 if (HotCommentsPresenter.this.e == 1) {
-                    HotCommentsPresenter.this.f19485a.f();
+                    HotCommentsPresenter.this.a.f();
                 } else {
                     AppMethods.a((CharSequence) HotCommentsPresenter.this.b.getResources().getString(R.string.common_nomore_data));
                 }
             } else {
                 if (bluedEntityA.extra == 0 || bluedEntityA.extra.hasmore != 1) {
                     HotCommentsPresenter.this.f = false;
-                    HotCommentsPresenter.this.f19485a.b();
+                    HotCommentsPresenter.this.a.b();
                 } else {
                     HotCommentsPresenter.this.f = true;
-                    HotCommentsPresenter.this.f19485a.a();
+                    HotCommentsPresenter.this.a.a();
                 }
                 if (HotCommentsPresenter.this.e == 1) {
-                    HotCommentsPresenter.this.f19485a.b(bluedEntityA.data.get(0).comments);
+                    HotCommentsPresenter.this.a.b(bluedEntityA.data.get(0).comments);
                 } else {
-                    HotCommentsPresenter.this.f19485a.a(bluedEntityA.data.get(0).comments);
+                    HotCommentsPresenter.this.a.a(bluedEntityA.data.get(0).comments);
                 }
             }
         }
@@ -80,7 +76,7 @@ public class HotCommentsPresenter implements IHotCommentsContract.IPresenter {
             AppInfo.n().post(new Runnable() { // from class: com.blued.community.ui.comment.presenter.HotCommentsPresenter.2.1
                 @Override // java.lang.Runnable
                 public void run() {
-                    HotCommentsPresenter.this.f19485a.g();
+                    HotCommentsPresenter.this.a.g();
                 }
             });
         }
@@ -88,15 +84,15 @@ public class HotCommentsPresenter implements IHotCommentsContract.IPresenter {
         @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIFinish() {
             super.onUIFinish();
-            HotCommentsPresenter.this.f19485a.c();
+            HotCommentsPresenter.this.a.c();
         }
     };
 
     public HotCommentsPresenter(final Context context, BluedIngSelfFeed bluedIngSelfFeed, final IHotCommentsContract.IView iView, IRequestHost iRequestHost) {
         this.b = context;
         this.d = bluedIngSelfFeed;
-        this.f19486c = iRequestHost;
-        this.f19485a = iView;
+        this.c = iRequestHost;
+        this.a = iView;
         this.l = DialogUtils.a(context);
         this.k = new CommentListAdapter.FeedCommentListner() { // from class: com.blued.community.ui.comment.presenter.HotCommentsPresenter.1
             @Override // com.blued.community.ui.comment.adapter.CommentListAdapter.FeedCommentListner
@@ -115,18 +111,18 @@ public class HotCommentsPresenter implements IHotCommentsContract.IPresenter {
         int i;
         if (z) {
             this.e = 1;
-            this.f19485a.b(new ArrayList());
+            this.a.b(new ArrayList());
         }
         if (this.e == 1) {
             this.f = true;
         }
         if (this.f || (i = this.e) == 1) {
-            FeedHttpUtils.a(this.b, this.m, this.d.feed_id, this.e, 20, this.f19486c);
+            FeedHttpUtils.a(this.b, this.m, this.d.feed_id, this.e, 20, this.c);
             return;
         }
         this.e = i - 1;
         AppMethods.a((CharSequence) this.b.getResources().getString(R.string.common_nomore_data));
-        this.f19485a.c();
+        this.a.c();
     }
 
     static /* synthetic */ int d(HotCommentsPresenter hotCommentsPresenter) {
@@ -148,7 +144,7 @@ public class HotCommentsPresenter implements IHotCommentsContract.IPresenter {
             feedComment.is_ads = this.d.is_ads;
             feedComment.aid = this.d.aid;
         }
-        BluedUIHttpResponse<BluedEntityA<FeedComment>> bluedUIHttpResponse = new BluedUIHttpResponse<BluedEntityA<FeedComment>>(this.f19486c) { // from class: com.blued.community.ui.comment.presenter.HotCommentsPresenter.3
+        BluedUIHttpResponse<BluedEntityA<FeedComment>> bluedUIHttpResponse = new BluedUIHttpResponse<BluedEntityA<FeedComment>>(this.c) { // from class: com.blued.community.ui.comment.presenter.HotCommentsPresenter.3
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<FeedComment> bluedEntityA) {
@@ -161,7 +157,7 @@ public class HotCommentsPresenter implements IHotCommentsContract.IPresenter {
                         CommentListDataObserver.a().a(feedComment2, "");
                         LiveEventBus.get("feed_add_comment").post(feedComment2);
                         HotCommentsPresenter.this.g = true;
-                        HotCommentsPresenter.this.f19485a.d();
+                        HotCommentsPresenter.this.a.d();
                         AppMethods.d(R.string.send_successful);
                     } catch (Exception e) {
                         AppMethods.d(R.string.common_net_error);
@@ -180,9 +176,9 @@ public class HotCommentsPresenter implements IHotCommentsContract.IPresenter {
             }
         };
         if (e()) {
-            FeedHttpUtils.a(bluedUIHttpResponse, this.d, feedComment, str, this.f19486c);
+            FeedHttpUtils.a(bluedUIHttpResponse, this.d, feedComment, str, this.c);
         } else {
-            CircleHttpUtils.a(bluedUIHttpResponse, this.d, feedComment, str, z, -1, this.f19486c);
+            CircleHttpUtils.a(bluedUIHttpResponse, this.d, feedComment, str, z, -1, this.c);
         }
     }
 

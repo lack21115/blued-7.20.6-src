@@ -13,30 +13,31 @@ import com.anythink.expressad.atsignalcommon.base.b;
 import com.anythink.expressad.foundation.d.c;
 import com.anythink.expressad.foundation.h.o;
 import com.bytedance.applog.tracker.Tracker;
+import com.bytedance.applog.util.WebViewJsUtil;
 import java.util.List;
 
 /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/mbbanner/view/a.class */
 public final class a extends b {
 
     /* renamed from: a  reason: collision with root package name */
-    String f8056a;
+    String f5216a;
     List<c> b;
 
     /* renamed from: c  reason: collision with root package name */
-    com.anythink.expressad.mbbanner.a.c.a f8057c;
+    com.anythink.expressad.mbbanner.a.c.a f5217c;
     private final String d = "BannerWebViewClient";
 
     public a(String str, List<c> list, com.anythink.expressad.mbbanner.a.c.a aVar) {
-        this.f8056a = str;
+        this.f5216a = str;
         this.b = list;
-        this.f8057c = aVar;
+        this.f5217c = aVar;
     }
 
     @Override // android.webkit.WebViewClient
     public final void onPageStarted(WebView webView, String str, Bitmap bitmap) {
         super.onPageStarted(webView, str, bitmap);
         try {
-            StringBuilder sb = new StringBuilder("javascript:");
+            StringBuilder sb = new StringBuilder(WebViewJsUtil.JS_URL_PREFIX);
             com.anythink.expressad.d.b.a.a();
             sb.append(com.anythink.expressad.d.b.a.b());
             if (Build.VERSION.SDK_INT <= 19) {
@@ -56,6 +57,7 @@ public final class a extends b {
         }
     }
 
+    @Override // android.webkit.WebViewClient
     public final boolean shouldOverrideUrlLoading(WebView webView, WebResourceRequest webResourceRequest) {
         return super.shouldOverrideUrlLoading(webView, webResourceRequest);
     }
@@ -65,7 +67,7 @@ public final class a extends b {
         try {
             o.d("BannerWebViewClient", "Use html to open url.");
             BaseWebView baseWebView = (BaseWebView) webView;
-            if (System.currentTimeMillis() - baseWebView.lastTouchTime > com.anythink.expressad.a.b.a.f6956c) {
+            if (System.currentTimeMillis() - baseWebView.lastTouchTime > com.anythink.expressad.a.b.a.f4118c) {
                 c cVar = this.b.get(0);
                 baseWebView.getUrl();
                 int i = com.anythink.expressad.a.b.a.b;
@@ -78,8 +80,8 @@ public final class a extends b {
                 n.a().g().startActivity(new Intent("android.intent.action.VIEW", Uri.parse(str)));
                 str2 = null;
             }
-            if (this.f8057c != null) {
-                this.f8057c.a(false, str2);
+            if (this.f5217c != null) {
+                this.f5217c.a(false, str2);
                 return true;
             }
             return true;

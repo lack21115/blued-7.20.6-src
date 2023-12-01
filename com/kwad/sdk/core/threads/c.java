@@ -101,7 +101,7 @@ public class c {
             @Override // com.kwad.sdk.utils.aw
             public final void doTask() {
                 d cM;
-                if (TextUtils.isEmpty(String.this) || (cM = c.cM(String.this)) == null || cM.amD == 0) {
+                if (TextUtils.isEmpty(str) || (cM = c.cM(str)) == null || cM.amD == 0) {
                     return;
                 }
                 int unused = c.amD = cM.amD;

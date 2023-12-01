@@ -9,18 +9,18 @@ import org.json.JSONObject;
 public class ForegroundInnerHeader {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f22407a;
+    private int f8799a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f22408c;
+    private String f8800c;
 
     public void fromJson(String str) {
         try {
             JSONObject jSONObject = new JSONObject(str);
-            this.f22407a = JsonUtil.getIntValue(jSONObject, "apkVersion");
+            this.f8799a = JsonUtil.getIntValue(jSONObject, "apkVersion");
             this.b = JsonUtil.getStringValue(jSONObject, "action");
-            this.f22408c = JsonUtil.getStringValue(jSONObject, "responseCallbackKey");
+            this.f8800c = JsonUtil.getStringValue(jSONObject, "responseCallbackKey");
         } catch (JSONException e) {
             HMSLog.e("ForegroundInnerHeader", "fromJson failed: " + e.getMessage());
         }
@@ -31,11 +31,11 @@ public class ForegroundInnerHeader {
     }
 
     public int getApkVersion() {
-        return this.f22407a;
+        return this.f8799a;
     }
 
     public String getResponseCallbackKey() {
-        return this.f22408c;
+        return this.f8800c;
     }
 
     public void setAction(String str) {
@@ -43,19 +43,19 @@ public class ForegroundInnerHeader {
     }
 
     public void setApkVersion(int i) {
-        this.f22407a = i;
+        this.f8799a = i;
     }
 
     public void setResponseCallbackKey(String str) {
-        this.f22408c = str;
+        this.f8800c = str;
     }
 
     public String toJson() {
         JSONObject jSONObject = new JSONObject();
         try {
-            jSONObject.put("apkVersion", this.f22407a);
+            jSONObject.put("apkVersion", this.f8799a);
             jSONObject.put("action", this.b);
-            jSONObject.put("responseCallbackKey", this.f22408c);
+            jSONObject.put("responseCallbackKey", this.f8800c);
         } catch (JSONException e) {
             HMSLog.e("ForegroundInnerHeader", "ForegroundInnerHeader toJson failed: " + e.getMessage());
         }
@@ -63,6 +63,6 @@ public class ForegroundInnerHeader {
     }
 
     public String toString() {
-        return "apkVersion:" + this.f22407a + ", action:" + this.b + ", responseCallbackKey:" + this.f22408c;
+        return "apkVersion:" + this.f8799a + ", action:" + this.b + ", responseCallbackKey:" + this.f8800c;
     }
 }

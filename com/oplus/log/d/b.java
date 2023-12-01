@@ -15,10 +15,10 @@ public final class b {
     private static final Object b = new Object();
 
     /* renamed from: a  reason: collision with root package name */
-    public static volatile String f24353a = "";
+    public static volatile String f10666a = "";
 
     /* renamed from: c  reason: collision with root package name */
-    private static int f24354c = -1;
+    private static int f10667c = -1;
     private static String d = "";
     private static Context e = null;
     private static String f = null;
@@ -63,16 +63,16 @@ public final class b {
     }
 
     public static int d(Context context) {
-        if (-1 == f24354c && context != null) {
+        if (-1 == f10667c && context != null) {
             try {
-                f24354c = context.getPackageManager().getPackageInfo(context.getPackageName(), 0).versionCode;
+                f10667c = context.getPackageManager().getPackageInfo(context.getPackageName(), 0).versionCode;
             } catch (Exception e2) {
                 if (com.oplus.log.b.a()) {
                     e2.printStackTrace();
                 }
             }
         }
-        return f24354c;
+        return f10667c;
     }
 
     private static String d() {
@@ -84,12 +84,12 @@ public final class b {
 
     public static String e(Context context) {
         String str;
-        if (f24353a != null) {
-            return f24353a;
+        if (f10666a != null) {
+            return f10666a;
         }
         synchronized (b) {
-            if (f24353a != null) {
-                return f24353a;
+            if (f10666a != null) {
+                return f10666a;
             }
             List<ActivityManager.RunningAppProcessInfo> runningAppProcesses = ((ActivityManager) context.getSystemService("activity")).getRunningAppProcesses();
             Iterator<ActivityManager.RunningAppProcessInfo> it = (runningAppProcesses == null || runningAppProcesses.isEmpty()) ? null : runningAppProcesses.iterator();
@@ -103,7 +103,7 @@ public final class b {
                 }
             }
             str = null;
-            f24353a = str;
+            f10666a = str;
             return str;
         }
     }

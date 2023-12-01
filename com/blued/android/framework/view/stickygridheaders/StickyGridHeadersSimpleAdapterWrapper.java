@@ -9,9 +9,7 @@ import java.util.HashMap;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/view/stickygridheaders/StickyGridHeadersSimpleAdapterWrapper.class */
 public class StickyGridHeadersSimpleAdapterWrapper extends BaseAdapter implements StickyGridHeadersBaseAdapter {
-
-    /* renamed from: a  reason: collision with root package name */
-    private StickyGridHeadersSimpleAdapter f10318a;
+    private StickyGridHeadersSimpleAdapter a;
     private HeaderData[] b;
 
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/view/stickygridheaders/StickyGridHeadersSimpleAdapterWrapper$DataSetObserverExtension.class */
@@ -22,14 +20,14 @@ public class StickyGridHeadersSimpleAdapterWrapper extends BaseAdapter implement
         @Override // android.database.DataSetObserver
         public void onChanged() {
             StickyGridHeadersSimpleAdapterWrapper stickyGridHeadersSimpleAdapterWrapper = StickyGridHeadersSimpleAdapterWrapper.this;
-            stickyGridHeadersSimpleAdapterWrapper.b = stickyGridHeadersSimpleAdapterWrapper.a(stickyGridHeadersSimpleAdapterWrapper.f10318a);
+            stickyGridHeadersSimpleAdapterWrapper.b = stickyGridHeadersSimpleAdapterWrapper.a(stickyGridHeadersSimpleAdapterWrapper.a);
             StickyGridHeadersSimpleAdapterWrapper.this.notifyDataSetChanged();
         }
 
         @Override // android.database.DataSetObserver
         public void onInvalidated() {
             StickyGridHeadersSimpleAdapterWrapper stickyGridHeadersSimpleAdapterWrapper = StickyGridHeadersSimpleAdapterWrapper.this;
-            stickyGridHeadersSimpleAdapterWrapper.b = stickyGridHeadersSimpleAdapterWrapper.a(stickyGridHeadersSimpleAdapterWrapper.f10318a);
+            stickyGridHeadersSimpleAdapterWrapper.b = stickyGridHeadersSimpleAdapterWrapper.a(stickyGridHeadersSimpleAdapterWrapper.a);
             StickyGridHeadersSimpleAdapterWrapper.this.notifyDataSetInvalidated();
         }
     }
@@ -38,12 +36,10 @@ public class StickyGridHeadersSimpleAdapterWrapper extends BaseAdapter implement
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/view/stickygridheaders/StickyGridHeadersSimpleAdapterWrapper$HeaderData.class */
     public class HeaderData {
         private int b = 0;
-
-        /* renamed from: c  reason: collision with root package name */
-        private int f10321c;
+        private int c;
 
         public HeaderData(int i) {
-            this.f10321c = i;
+            this.c = i;
         }
 
         public int a() {
@@ -51,7 +47,7 @@ public class StickyGridHeadersSimpleAdapterWrapper extends BaseAdapter implement
         }
 
         public int b() {
-            return this.f10321c;
+            return this.c;
         }
 
         public void c() {
@@ -60,7 +56,7 @@ public class StickyGridHeadersSimpleAdapterWrapper extends BaseAdapter implement
     }
 
     public StickyGridHeadersSimpleAdapterWrapper(StickyGridHeadersSimpleAdapter stickyGridHeadersSimpleAdapter) {
-        this.f10318a = stickyGridHeadersSimpleAdapter;
+        this.a = stickyGridHeadersSimpleAdapter;
         stickyGridHeadersSimpleAdapter.registerDataSetObserver(new DataSetObserverExtension());
         this.b = a(stickyGridHeadersSimpleAdapter);
     }
@@ -77,7 +73,7 @@ public class StickyGridHeadersSimpleAdapterWrapper extends BaseAdapter implement
 
     @Override // com.blued.android.framework.view.stickygridheaders.StickyGridHeadersBaseAdapter
     public View a(int i, View view, ViewGroup viewGroup) {
-        return this.f10318a.a(this.b[i].b(), view, viewGroup);
+        return this.a.a(this.b[i].b(), view, viewGroup);
     }
 
     protected HeaderData[] a(StickyGridHeadersSimpleAdapter stickyGridHeadersSimpleAdapter) {
@@ -89,51 +85,51 @@ public class StickyGridHeadersSimpleAdapterWrapper extends BaseAdapter implement
             if (i2 >= stickyGridHeadersSimpleAdapter.getCount()) {
                 return (HeaderData[]) arrayList.toArray(new HeaderData[arrayList.size()]);
             }
-            long a2 = stickyGridHeadersSimpleAdapter.a(i2);
-            HeaderData headerData = (HeaderData) hashMap.get(Long.valueOf(a2));
+            long a = stickyGridHeadersSimpleAdapter.a(i2);
+            HeaderData headerData = (HeaderData) hashMap.get(Long.valueOf(a));
             HeaderData headerData2 = headerData;
             if (headerData == null) {
                 headerData2 = new HeaderData(i2);
                 arrayList.add(headerData2);
             }
             headerData2.c();
-            hashMap.put(Long.valueOf(a2), headerData2);
+            hashMap.put(Long.valueOf(a), headerData2);
             i = i2 + 1;
         }
     }
 
     @Override // android.widget.Adapter
     public int getCount() {
-        return this.f10318a.getCount();
+        return this.a.getCount();
     }
 
     @Override // android.widget.Adapter
     public Object getItem(int i) {
-        return this.f10318a.getItem(i);
+        return this.a.getItem(i);
     }
 
     @Override // android.widget.Adapter
     public long getItemId(int i) {
-        return this.f10318a.getItemId(i);
+        return this.a.getItemId(i);
     }
 
     @Override // android.widget.BaseAdapter, android.widget.Adapter
     public int getItemViewType(int i) {
-        return this.f10318a.getItemViewType(i);
+        return this.a.getItemViewType(i);
     }
 
     @Override // android.widget.Adapter
     public View getView(int i, View view, ViewGroup viewGroup) {
-        return this.f10318a.getView(i, view, viewGroup);
+        return this.a.getView(i, view, viewGroup);
     }
 
     @Override // android.widget.BaseAdapter, android.widget.Adapter
     public int getViewTypeCount() {
-        return this.f10318a.getViewTypeCount();
+        return this.a.getViewTypeCount();
     }
 
     @Override // android.widget.BaseAdapter, android.widget.Adapter
     public boolean hasStableIds() {
-        return this.f10318a.hasStableIds();
+        return this.a.hasStableIds();
     }
 }

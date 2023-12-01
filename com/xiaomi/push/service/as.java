@@ -19,7 +19,7 @@ public abstract class as {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: a  reason: collision with other method in class */
-    public abstract boolean m12123a(Context context, int i, String str, Map<String, String> map);
+    public abstract boolean m9073a(Context context, int i, String str, Map<String, String> map);
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public abstract boolean a(Map<String, String> map, int i, Notification notification);

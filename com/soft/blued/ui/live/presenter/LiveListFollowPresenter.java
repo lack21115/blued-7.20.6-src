@@ -3,6 +3,7 @@ package com.soft.blued.ui.live.presenter;
 import android.content.Context;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.AppMethods;
+import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.ui.BaseFragment;
 import com.blued.android.framework.http.BluedUIHttpResponse;
 import com.blued.android.framework.http.parser.BluedEntity;
@@ -23,11 +24,11 @@ import java.util.List;
 public class LiveListFollowPresenter implements LiveListFollowContract.IPresenter {
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f31274a;
+    private final String f17584a;
     private BaseFragment b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f31275c;
+    private Context f17585c;
     private LiveListFollowContract.IView d;
     private LiveListCommonModel e;
     private LiveListRecommendModel f;
@@ -39,7 +40,7 @@ public class LiveListFollowPresenter implements LiveListFollowContract.IPresente
     class AnonymousClass1 implements UserRelationshipUtils.IAddOrRemoveAttentionDone {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ BluedLiveListData f31276a;
+        final /* synthetic */ BluedLiveListData f17586a;
         final /* synthetic */ LiveListFollowPresenter b;
 
         @Override // com.soft.blued.utils.UserRelationshipUtils.IAddOrRemoveAttentionDone
@@ -56,7 +57,7 @@ public class LiveListFollowPresenter implements LiveListFollowContract.IPresente
 
         @Override // com.soft.blued.utils.UserRelationshipUtils.IAddOrRemoveAttentionDone
         public void b(String str) {
-            this.b.d.a(this.f31276a);
+            this.b.d.a(this.f17586a);
         }
 
         @Override // com.soft.blued.utils.UserRelationshipUtils.IAddOrRemoveAttentionDone
@@ -69,10 +70,9 @@ public class LiveListFollowPresenter implements LiveListFollowContract.IPresente
     class AnonymousClass3 extends BluedUIHttpResponse<BluedEntity<LiveRecommendModel, LiveRecommendExtra>> {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ boolean f31279a;
+        final /* synthetic */ boolean f17589a;
         final /* synthetic */ LiveListFollowPresenter b;
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse, com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
         public void onFailure(Throwable th, int i, String str) {
             AppInfo.n().post(new Runnable() { // from class: com.soft.blued.ui.live.presenter.LiveListFollowPresenter.3.1
                 @Override // java.lang.Runnable
@@ -82,14 +82,12 @@ public class LiveListFollowPresenter implements LiveListFollowContract.IPresente
             });
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIFinish() {
             this.b.d.d();
             this.b.d.k();
             this.b.d.j();
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIUpdate(BluedEntity<LiveRecommendModel, LiveRecommendExtra> bluedEntity) {
             if (bluedEntity.extra == null) {
                 this.b.b();
@@ -107,7 +105,7 @@ public class LiveListFollowPresenter implements LiveListFollowContract.IPresente
                     this.b.f.hasData = true;
                     this.b.d.b(true);
                 }
-                if (this.f31279a) {
+                if (this.f17589a) {
                     this.b.d.c(bluedEntity.data);
                 } else {
                     this.b.g = bluedEntity.data;
@@ -118,7 +116,6 @@ public class LiveListFollowPresenter implements LiveListFollowContract.IPresente
         }
     }
 
-    @Override // com.blued.android.framework.mvp_similarity.BasePresenter
     public void ar_() {
     }
 
@@ -127,16 +124,14 @@ public class LiveListFollowPresenter implements LiveListFollowContract.IPresente
             @Override // java.lang.Runnable
             public void run() {
                 LiveListFollowPresenter.this.d.f();
-                LiveHttpUtils.b(new BluedUIHttpResponse<BluedEntityA<BluedLiveListData>>(LiveListFollowPresenter.this.b.getFragmentActive()) { // from class: com.soft.blued.ui.live.presenter.LiveListFollowPresenter.2.1
+                LiveHttpUtils.b((BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<BluedLiveListData>>(LiveListFollowPresenter.this.b.getFragmentActive()) { // from class: com.soft.blued.ui.live.presenter.LiveListFollowPresenter.2.1
                     /* JADX INFO: Access modifiers changed from: protected */
-                    @Override // com.blued.android.framework.http.BluedUIHttpResponse
                     /* renamed from: a */
                     public BluedEntityA<BluedLiveListData> parseData(String str) {
-                        Logger.a(LiveListFollowPresenter.this.f31274a, "getLiveListFollow, content:", str);
-                        return (BluedEntityA) super.parseData(str);
+                        Logger.a(LiveListFollowPresenter.this.f17584a, "getLiveListFollow, content:", str);
+                        return super.parseData(str);
                     }
 
-                    @Override // com.blued.android.framework.http.BluedUIHttpResponse
                     /* renamed from: a */
                     public void onUIUpdate(BluedEntityA<BluedLiveListData> bluedEntityA) {
                         if (bluedEntityA != null) {
@@ -156,7 +151,7 @@ public class LiveListFollowPresenter implements LiveListFollowContract.IPresente
                                             if (i2 >= bluedEntityA.data.size()) {
                                                 break;
                                             }
-                                            BluedLiveListData bluedLiveListData = bluedEntityA.data.get(i2);
+                                            BluedLiveListData bluedLiveListData = (BluedLiveListData) bluedEntityA.data.get(i2);
                                             if (bluedLiveListData.livetype == 0) {
                                                 Logger.a("ddrb", "推荐数为：", Integer.valueOf(LiveListFollowPresenter.this.g.size()));
                                                 Logger.a("ddrb", "position = " + i2);
@@ -190,7 +185,7 @@ public class LiveListFollowPresenter implements LiveListFollowContract.IPresente
                                 if (LiveListFollowPresenter.this.e.getPage() != 1) {
                                     LiveListFollowPresenter.this.e.setPage(LiveListFollowPresenter.this.e.getPage() - 1);
                                 }
-                                AppMethods.a((CharSequence) LiveListFollowPresenter.this.f31275c.getResources().getString(2131887272));
+                                AppMethods.a(LiveListFollowPresenter.this.f17585c.getResources().getString(2131887272));
                                 return;
                             }
                         }
@@ -205,7 +200,6 @@ public class LiveListFollowPresenter implements LiveListFollowContract.IPresente
                         LiveListFollowPresenter.this.e.setTipShow(false);
                     }
 
-                    @Override // com.blued.android.framework.http.BluedUIHttpResponse, com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
                     public void onFailure(Throwable th, int i, String str) {
                         super.onFailure(th, i, str);
                         if (LiveListFollowPresenter.this.e.getPage() != 1) {
@@ -213,15 +207,14 @@ public class LiveListFollowPresenter implements LiveListFollowContract.IPresente
                         }
                     }
 
-                    @Override // com.blued.android.framework.http.BluedUIHttpResponse
                     public void onUIFinish() {
-                        Logger.a(LiveListFollowPresenter.this.f31274a, "onFinish");
+                        Logger.a(LiveListFollowPresenter.this.f17584a, "onFinish");
                         LiveListFollowPresenter.this.d.e();
                         LiveListFollowPresenter.this.d.c();
                         LiveListFollowPresenter.this.d.j();
                         LiveListFollowPresenter.this.d.a(false);
                     }
-                }, String.valueOf(LiveListFollowPresenter.this.e.getPage()), LiveListFollowPresenter.this.b.getFragmentActive());
+                }, String.valueOf(LiveListFollowPresenter.this.e.getPage()), (IRequestHost) LiveListFollowPresenter.this.b.getFragmentActive());
             }
         });
     }

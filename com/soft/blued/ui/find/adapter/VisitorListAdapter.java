@@ -17,7 +17,6 @@ import android.widget.TextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import com.anythink.core.api.ATAdConst;
 import com.anythink.core.api.ATAdInfo;
 import com.anythink.core.api.AdError;
 import com.anythink.nativead.api.ATNative;
@@ -86,7 +85,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class VisitorListAdapter extends BaseAdapter {
 
     /* renamed from: c  reason: collision with root package name */
-    private static int f30155c = 13;
+    private static int f16465c = 13;
     private Context d;
     private IRequestHost e;
     private LayoutInflater f;
@@ -103,27 +102,27 @@ public class VisitorListAdapter extends BaseAdapter {
     private int i = 0;
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f30156a = false;
+    public boolean f16466a = false;
     public List<String> b = new ArrayList();
 
     /* loaded from: source-8303388-dex2jar.jar:com/soft/blued/ui/find/adapter/VisitorListAdapter$AdViewHolder.class */
     class AdViewHolder {
 
         /* renamed from: a  reason: collision with root package name */
-        public BannerADView f30161a;
+        public BannerADView f16471a;
 
         /* renamed from: c  reason: collision with root package name */
-        private BluedMyVisitorList f30162c;
+        private BluedMyVisitorList f16472c;
         private int d;
 
         public AdViewHolder(View view) {
-            this.f30161a = (BannerADView) view.findViewById(R.id.banner_ad);
+            this.f16471a = (BannerADView) view.findViewById(R.id.banner_ad);
         }
 
         public void a(final BluedMyVisitorList bluedMyVisitorList, int i) {
-            this.f30162c = bluedMyVisitorList;
+            this.f16472c = bluedMyVisitorList;
             this.d = i;
-            this.f30161a.a(VisitorListAdapter.this.e, bluedMyVisitorList, ADConstants.AD_POSITION.VISITOR_BANNER, new BannerADView.ADListener() { // from class: com.soft.blued.ui.find.adapter.VisitorListAdapter.AdViewHolder.1
+            this.f16471a.a(VisitorListAdapter.this.e, bluedMyVisitorList, ADConstants.AD_POSITION.VISITOR_BANNER, new BannerADView.ADListener() { // from class: com.soft.blued.ui.find.adapter.VisitorListAdapter.AdViewHolder.1
                 @Override // com.soft.blued.customview.BannerADView.ADListener
                 public void a() {
                     VisitorListAdapter.this.g.remove(bluedMyVisitorList);
@@ -145,7 +144,7 @@ public class VisitorListAdapter extends BaseAdapter {
         private ImageView b;
 
         /* renamed from: c  reason: collision with root package name */
-        private ImageView f30165c;
+        private ImageView f16475c;
         private ImageView d;
         private TextView e;
         private TextView f;
@@ -161,20 +160,20 @@ public class VisitorListAdapter extends BaseAdapter {
         public HWOriginADViewHolder(View view) {
             this.d = (ImageView) view.findViewById(2131364232);
             this.b = (ImageView) view.findViewById(R.id.img_style_1_ad_icon);
-            this.f30165c = (ImageView) view.findViewById(R.id.img_style_2_ad_icon);
-            this.e = (TextView) view.findViewById(2131368652);
-            this.f = (TextView) view.findViewById(2131371262);
+            this.f16475c = (ImageView) view.findViewById(R.id.img_style_2_ad_icon);
+            this.e = (TextView) view.findViewById(R.id.name_view);
+            this.f = (TextView) view.findViewById(R.id.tv_desc);
             this.g = (MediaView) view.findViewById(R.id.ad_media);
             this.h = (TextView) view.findViewById(R.id.native_ad_install_btn);
             this.i = (ViewGroup) view.findViewById(R.id.cl_download_layout);
             this.j = (NativeView) view.findViewById(R.id.hw_native_view);
-            this.n = (BluedADConstraintLayout) view.findViewById(2131363859);
-            this.k = view.findViewById(2131364488);
+            this.n = (BluedADConstraintLayout) view.findViewById(R.id.fl_main);
+            this.k = view.findViewById(R.id.img_close);
         }
 
         public void a() {
             this.b.setVisibility(0);
-            this.f30165c.setVisibility(0);
+            this.f16475c.setVisibility(0);
             this.j.setTitleView(this.e);
             this.j.setMediaView(this.g);
             this.j.setAdSourceView(this.f);
@@ -191,7 +190,7 @@ public class VisitorListAdapter extends BaseAdapter {
             } else {
                 this.i.setVisibility(8);
             }
-            this.f30165c.setImageResource(2131233444);
+            this.f16475c.setImageResource(2131233444);
             ImageLoader.a(VisitorListAdapter.this.e, (this.l.hwNativeAd.getIcon() == null || this.l.hwNativeAd.getIcon().getUri() == null) ? "" : this.l.hwNativeAd.getIcon().getUri().toString()).b(2131237310).c().a(this.d);
             ((TextView) this.j.getTitleView()).setText(this.l.hwNativeAd.getAdSource());
             this.j.getMediaView().setMediaContent(this.l.hwNativeAd.getMediaContent());
@@ -278,10 +277,10 @@ public class VisitorListAdapter extends BaseAdapter {
             });
             this.o.setImageResource(2131233453);
             this.p.setImageResource(2131233453);
-            ArrayList arrayList = new ArrayList();
+            List<View> arrayList = new ArrayList<>();
             arrayList.add(this.g);
             if (bluedMyVisitorList.ksNativeAd != null) {
-                bluedMyVisitorList.ksNativeAd.registerViewForInteraction((Activity) VisitorListAdapter.this.d, this.g, arrayList, new KsNativeAd.AdInteractionListener() { // from class: com.soft.blued.ui.find.adapter.VisitorListAdapter.KSOriginADViewHolder.1
+                bluedMyVisitorList.ksNativeAd.registerViewForInteraction((Activity) VisitorListAdapter.this.d, (ViewGroup) this.g, arrayList, new KsNativeAd.AdInteractionListener() { // from class: com.soft.blued.ui.find.adapter.VisitorListAdapter.KSOriginADViewHolder.1
                     @Override // com.kwad.sdk.api.KsNativeAd.AdInteractionListener
                     public boolean handleDownloadDialog(DialogInterface.OnClickListener onClickListener) {
                         return false;
@@ -339,11 +338,11 @@ public class VisitorListAdapter extends BaseAdapter {
     public class NativeAdViewHolder {
 
         /* renamed from: a  reason: collision with root package name */
-        private BluedMyVisitorList f30170a;
+        private BluedMyVisitorList f16480a;
         public LinearLayout b;
 
         /* renamed from: c  reason: collision with root package name */
-        public ImageView f30171c;
+        public ImageView f16481c;
         public TextView d;
         public ImageView e;
         public TextView f;
@@ -358,23 +357,23 @@ public class VisitorListAdapter extends BaseAdapter {
 
         public NativeAdViewHolder(View view) {
             this.b = (LinearLayout) view.findViewById(R.id.layout_native_ad);
-            this.f30171c = (ImageView) view.findViewById(2131364232);
-            this.d = (TextView) view.findViewById(2131368652);
-            this.e = (ImageView) view.findViewById(2131364488);
-            this.f = (TextView) view.findViewById(2131371262);
-            this.g = (BluedADConstraintLayout) view.findViewById(2131363859);
+            this.f16481c = (ImageView) view.findViewById(2131364232);
+            this.d = (TextView) view.findViewById(R.id.name_view);
+            this.e = (ImageView) view.findViewById(R.id.img_close);
+            this.f = (TextView) view.findViewById(R.id.tv_desc);
+            this.g = (BluedADConstraintLayout) view.findViewById(R.id.fl_main);
             this.h = (ImageView) view.findViewById(R.id.iv_resource);
             this.i = (ImageView) view.findViewById(R.id.img_style_1_ad_icon);
             this.j = (ImageView) view.findViewById(R.id.img_style_2_ad_icon);
             this.k = (ConstraintLayout) view.findViewById(R.id.cl_style_1);
             this.l = (ConstraintLayout) view.findViewById(R.id.cl_style_2);
-            this.m = (ViewGroup) view.findViewById(2131363153);
+            this.m = (ViewGroup) view.findViewById(R.id.cv_content);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void a(View view) {
             Tracker.onClick(view);
-            ADClosePopOptionsUtils.a(VisitorListAdapter.this.d, this.f30170a, this.e, ADConstants.AD_POSITION.VISITOR_ORIGIN, new ADClosePopOptionsUtils.ADRemovedListener() { // from class: com.soft.blued.ui.find.adapter.-$$Lambda$VisitorListAdapter$NativeAdViewHolder$qPbFDSVbrac3B5xH6PbWEH_fq7w
+            ADClosePopOptionsUtils.a(VisitorListAdapter.this.d, this.f16480a, this.e, ADConstants.AD_POSITION.VISITOR_ORIGIN, new ADClosePopOptionsUtils.ADRemovedListener() { // from class: com.soft.blued.ui.find.adapter.-$$Lambda$VisitorListAdapter$NativeAdViewHolder$qPbFDSVbrac3B5xH6PbWEH_fq7w
                 @Override // com.soft.blued.utils.ADClosePopOptionsUtils.ADRemovedListener
                 public final void onRemoved() {
                     VisitorListAdapter.NativeAdViewHolder.this.b();
@@ -393,11 +392,11 @@ public class VisitorListAdapter extends BaseAdapter {
         public void a() {
             this.i.setVisibility(8);
             this.j.setVisibility(8);
-            this.g.setADData(this.f30170a);
-            ImageLoader.a(VisitorListAdapter.this.e, this.f30170a.avatar).b(2131237310).c().a(this.f30171c);
-            this.d.setText(this.f30170a.name);
-            this.f.setText(this.f30170a.description);
-            if (this.f30170a.can_close == 1) {
+            this.g.setADData(this.f16480a);
+            ImageLoader.a(VisitorListAdapter.this.e, this.f16480a.avatar).b(2131237310).c().a(this.f16481c);
+            this.d.setText(this.f16480a.name);
+            this.f.setText(this.f16480a.description);
+            if (this.f16480a.can_close == 1) {
                 this.e.setVisibility(0);
                 this.e.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.adapter.-$$Lambda$VisitorListAdapter$NativeAdViewHolder$LMEfSZKgbWIrsPIEa5QAJSjf60Q
                     @Override // android.view.View.OnClickListener
@@ -408,17 +407,17 @@ public class VisitorListAdapter extends BaseAdapter {
             } else {
                 this.e.setVisibility(8);
             }
-            if (StringUtils.a(this.f30170a.last_visit_time, 0L) < StringUtils.a(this.f30170a.visitors_time, 0L)) {
+            if (StringUtils.a(this.f16480a.last_visit_time, 0L) < StringUtils.a(this.f16480a.visitors_time, 0L)) {
                 this.b.setBackground(new ColorDrawable(BluedSkinUtils.a(VisitorListAdapter.this.d, 2131101796)));
             } else {
-                this.b.setBackground(BluedSkinUtils.b(VisitorListAdapter.this.d, 2131236289));
+                this.b.setBackground(BluedSkinUtils.b(VisitorListAdapter.this.d, (int) R.drawable.selector_visitor_bgcolor));
             }
-            if (this.f30170a.is_show_adm_icon == 1) {
+            if (this.f16480a.is_show_adm_icon == 1) {
                 this.l.setVisibility(0);
             } else {
                 this.l.setVisibility(8);
             }
-            if (this.f30170a.style_view != 2 || TextUtils.isEmpty(this.f30170a.style_material)) {
+            if (this.f16480a.style_view != 2 || TextUtils.isEmpty(this.f16480a.style_material)) {
                 this.h.setVisibility(8);
                 this.m.setVisibility(8);
                 this.k.setVisibility(0);
@@ -428,13 +427,13 @@ public class VisitorListAdapter extends BaseAdapter {
             ViewGroup.LayoutParams layoutParams = this.h.getLayoutParams();
             layoutParams.height = VisitorListAdapter.this.q;
             this.h.setLayoutParams(layoutParams);
-            ImageLoader.a(VisitorListAdapter.this.e, this.f30170a.style_material).a(this.h);
+            ImageLoader.a(VisitorListAdapter.this.e, this.f16480a.style_material).a(this.h);
             this.m.setVisibility(0);
             this.k.setVisibility(8);
         }
 
         public void a(BluedMyVisitorList bluedMyVisitorList, int i) {
-            this.f30170a = bluedMyVisitorList;
+            this.f16480a = bluedMyVisitorList;
             this.o = i;
             a();
         }
@@ -445,11 +444,11 @@ public class VisitorListAdapter extends BaseAdapter {
     public class NativeAdxViewHolder {
 
         /* renamed from: a  reason: collision with root package name */
-        public LinearLayout f30172a;
+        public LinearLayout f16482a;
         public NativeAdContainer b;
 
         /* renamed from: c  reason: collision with root package name */
-        public View f30173c;
+        public View f16483c;
         public BluedADConstraintLayout d;
         private BluedMyVisitorList f;
         private int g;
@@ -472,7 +471,7 @@ public class VisitorListAdapter extends BaseAdapter {
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
-                ADClosePopOptionsUtils.a(VisitorListAdapter.this.d, NativeAdxViewHolder.this.f, NativeAdxViewHolder.this.f30173c, ADConstants.AD_POSITION.VISITOR_ORIGIN, new ADClosePopOptionsUtils.ADRemovedListener() { // from class: com.soft.blued.ui.find.adapter.-$$Lambda$VisitorListAdapter$NativeAdxViewHolder$1$Wr4eQGIQ7C-stiMEx6qqLXGY7XQ
+                ADClosePopOptionsUtils.a(VisitorListAdapter.this.d, NativeAdxViewHolder.this.f, NativeAdxViewHolder.this.f16483c, ADConstants.AD_POSITION.VISITOR_ORIGIN, new ADClosePopOptionsUtils.ADRemovedListener() { // from class: com.soft.blued.ui.find.adapter.-$$Lambda$VisitorListAdapter$NativeAdxViewHolder$1$Wr4eQGIQ7C-stiMEx6qqLXGY7XQ
                     @Override // com.soft.blued.utils.ADClosePopOptionsUtils.ADRemovedListener
                     public final void onRemoved() {
                         VisitorListAdapter.NativeAdxViewHolder.AnonymousClass1.this.a();
@@ -482,10 +481,10 @@ public class VisitorListAdapter extends BaseAdapter {
         }
 
         public NativeAdxViewHolder(View view) {
-            this.d = (BluedADConstraintLayout) view.findViewById(2131363859);
+            this.d = (BluedADConstraintLayout) view.findViewById(R.id.fl_main);
             this.b = (NativeAdContainer) view.findViewById(R.id.native_adx_item_content);
-            this.f30173c = view.findViewById(2131364488);
-            this.f30172a = (LinearLayout) view.findViewById(R.id.layout_native_ad);
+            this.f16483c = view.findViewById(R.id.img_close);
+            this.f16482a = (LinearLayout) view.findViewById(R.id.layout_native_ad);
         }
 
         public void a() {
@@ -500,19 +499,19 @@ public class VisitorListAdapter extends BaseAdapter {
             } else {
                 Log.v("adx", "当前是第三方原生，配置点击事件");
             }
-            SelfRenderViewUtil.a(VisitorListAdapter.this.d, this.b, this.f);
+            SelfRenderViewUtil.a(VisitorListAdapter.this.d, this.b, (BluedADExtra) this.f);
             if (!"0".equalsIgnoreCase(this.f.adm_type_source)) {
-                this.f30173c.setVisibility(0);
+                this.f16483c.setVisibility(0);
             } else if (this.f.can_close == 1) {
-                this.f30173c.setVisibility(0);
+                this.f16483c.setVisibility(0);
             } else {
-                this.f30173c.setVisibility(8);
+                this.f16483c.setVisibility(8);
             }
-            this.f30173c.setOnClickListener(new AnonymousClass1());
+            this.f16483c.setOnClickListener(new AnonymousClass1());
             if (StringUtils.a(this.f.last_visit_time, 0L) < StringUtils.a(this.f.visitors_time, 0L)) {
-                this.f30172a.setBackground(new ColorDrawable(BluedSkinUtils.a(VisitorListAdapter.this.d, 2131101796)));
+                this.f16482a.setBackground(new ColorDrawable(BluedSkinUtils.a(VisitorListAdapter.this.d, 2131101796)));
             } else {
-                this.f30172a.setBackground(BluedSkinUtils.b(VisitorListAdapter.this.d, 2131236289));
+                this.f16482a.setBackground(BluedSkinUtils.b(VisitorListAdapter.this.d, (int) R.drawable.selector_visitor_bgcolor));
             }
         }
 
@@ -528,7 +527,7 @@ public class VisitorListAdapter extends BaseAdapter {
         private BluedMyVisitorList b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f30176c;
+        private int f16486c;
         private ConstraintLayout d;
         private LinearLayout e;
         private TextView f;
@@ -543,7 +542,7 @@ public class VisitorListAdapter extends BaseAdapter {
             this.e = (LinearLayout) view.findViewById(R.id.layout_is_vip);
             this.f = (TextView) view.findViewById(R.id.tv_git_it_now);
             this.g = (RecyclerView) view.findViewById(2131369105);
-            this.i = (ImageView) view.findViewById(2131364437);
+            this.i = (ImageView) view.findViewById(R.id.img_avatar);
             this.j = (ImageView) view.findViewById(R.id.img_fuzzy_profile_picture);
             LinearLayoutManager linearLayoutManager = new LinearLayoutManager(VisitorListAdapter.this.d) { // from class: com.soft.blued.ui.find.adapter.VisitorListAdapter.ShowVipViewHolder.1
                 @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
@@ -582,14 +581,14 @@ public class VisitorListAdapter extends BaseAdapter {
             this.h.setNewData(this.b.profile_picture);
             this.h.notifyDataSetChanged();
             LoadOptions loadOptions = new LoadOptions();
-            loadOptions.d = 2131237313;
-            loadOptions.b = 2131237313;
+            loadOptions.d = R.drawable.user_bg_round_border_white;
+            loadOptions.b = R.drawable.user_bg_round_border_white;
             loadOptions.a(VisitorListAdapter.this.h >> 1, VisitorListAdapter.this.h >> 1);
             if (this.b.profile_picture == null || this.b.profile_picture.size() <= 0) {
                 this.i.setVisibility(8);
                 this.g.setVisibility(8);
             } else {
-                ImageLoader.a(VisitorListAdapter.this.e, this.b.profile_picture.get(0).url).b(2131237313).a(2.0f, VisitorListAdapter.this.d.getResources().getColor(2131101191)).a(this.i);
+                ImageLoader.a(VisitorListAdapter.this.e, this.b.profile_picture.get(0).url).b((int) R.drawable.user_bg_round_border_white).a(2.0f, VisitorListAdapter.this.d.getResources().getColor(2131101191)).a(this.i);
                 this.i.setVisibility(0);
                 this.g.setVisibility(0);
             }
@@ -598,12 +597,12 @@ public class VisitorListAdapter extends BaseAdapter {
                 return;
             }
             this.j.setVisibility(0);
-            ImageLoader.a(VisitorListAdapter.this.e, this.b.profile_picture.get(0).url).b(2131237313).a(2.0f, VisitorListAdapter.this.d.getResources().getColor(2131101191)).d().a(this.j);
+            ImageLoader.a(VisitorListAdapter.this.e, this.b.profile_picture.get(0).url).b((int) R.drawable.user_bg_round_border_white).a(2.0f, VisitorListAdapter.this.d.getResources().getColor(2131101191)).d().a(this.j);
         }
 
         public void a(BluedMyVisitorList bluedMyVisitorList, int i) {
             this.b = bluedMyVisitorList;
-            this.f30176c = i;
+            this.f16486c = i;
             b();
             a();
         }
@@ -674,15 +673,15 @@ public class VisitorListAdapter extends BaseAdapter {
     public class TopAdViewHolder {
 
         /* renamed from: a  reason: collision with root package name */
-        ATNativeAdView f30180a;
+        ATNativeAdView f16490a;
         View b;
 
         /* renamed from: c  reason: collision with root package name */
-        int f30181c;
+        int f16491c;
 
         TopAdViewHolder(View view) {
             this.b = view;
-            this.f30180a = (ATNativeAdView) view.findViewById(2131361988);
+            this.f16490a = (ATNativeAdView) view.findViewById(2131361988);
         }
 
         private void a(NativeAd nativeAd, View view, final BluedMyVisitorList bluedMyVisitorList) {
@@ -731,7 +730,7 @@ public class VisitorListAdapter extends BaseAdapter {
                     SelfRenderViewUtil.a(aTNativeAdView.getContext(), nativeAd.getAdMaterial(), findViewById, aTNativePrepareInfo, nativeAd.getAdInfo().getNetworkFirmId());
                     nativeAd.renderAdContainer(aTNativeAdView, findViewById);
                 }
-                final View findViewById2 = findViewById.findViewById(2131364488);
+                final View findViewById2 = findViewById.findViewById(R.id.img_close);
                 findViewById2.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.adapter.VisitorListAdapter.TopAdViewHolder.2
                     @Override // android.view.View.OnClickListener
                     public void onClick(View view2) {
@@ -762,15 +761,15 @@ public class VisitorListAdapter extends BaseAdapter {
         }
 
         public void a() {
-            if (this.f30181c < VisitorListAdapter.this.g.size()) {
-                VisitorListAdapter.this.g.remove(this.f30181c);
+            if (this.f16491c < VisitorListAdapter.this.g.size()) {
+                VisitorListAdapter.this.g.remove(this.f16491c);
             }
             VisitorListAdapter.this.notifyDataSetChanged();
         }
 
         public void a(BluedMyVisitorList bluedMyVisitorList, int i) {
             boolean z;
-            this.f30181c = i;
+            this.f16491c = i;
             if (bluedMyVisitorList.nativeAd == null) {
                 bluedMyVisitorList.nativeAd = VisitorListAdapter.this.l.getNativeAd();
                 z = true;
@@ -803,7 +802,7 @@ public class VisitorListAdapter extends BaseAdapter {
             }
             FrameLayout.LayoutParams layoutParams3 = new FrameLayout.LayoutParams(-1, -2);
             layoutParams3.gravity = 1;
-            this.f30180a.setLayoutParams(layoutParams3);
+            this.f16490a.setLayoutParams(layoutParams3);
             VisitorListAdapter.this.m.put(String.valueOf(bluedMyVisitorList.nativeAd.hashCode()), bluedMyVisitorList.nativeAd);
             a(bluedMyVisitorList.nativeAd, this.b, bluedMyVisitorList);
         }
@@ -841,7 +840,6 @@ public class VisitorListAdapter extends BaseAdapter {
     private void a(int i, AdxConfig adxConfig, long j, final BluedMyVisitorList bluedMyVisitorList) {
         if (bluedMyVisitorList.adxNativeManager == null) {
             bluedMyVisitorList.adxNativeManager = new AdxNativeUnifiedManager(this.d, i, adxConfig.type, adxConfig.parallel_num, j, new ADListener() { // from class: com.soft.blued.ui.find.adapter.-$$Lambda$VisitorListAdapter$FM3SknB3CkMTKbLRq5aW_5WrwZA
-                @Override // com.blued.android.module.common.adx.base.ADListener
                 public final void onADEvent(ADEvent aDEvent) {
                     VisitorListAdapter.this.a(bluedMyVisitorList, aDEvent);
                 }
@@ -959,8 +957,8 @@ public class VisitorListAdapter extends BaseAdapter {
             });
         }
         HashMap hashMap = new HashMap();
-        hashMap.put(ATAdConst.KEY.AD_WIDTH, Integer.valueOf(this.n));
-        hashMap.put(ATAdConst.KEY.AD_HEIGHT, Integer.valueOf(this.o));
+        hashMap.put("key_width", Integer.valueOf(this.n));
+        hashMap.put("key_height", Integer.valueOf(this.o));
         hashMap.put(TTATConst.NATIVE_AD_IMAGE_HEIGHT, 0);
         hashMap.put(GDTATConst.AD_HEIGHT, -2);
         this.l.setLocalExtra(hashMap);
@@ -976,7 +974,7 @@ public class VisitorListAdapter extends BaseAdapter {
 
     public void a(List<BluedMyVisitorList> list, int i) {
         this.i = i;
-        this.f30156a = false;
+        this.f16466a = false;
         this.g.clear();
         this.b.clear();
         if (list == null || list.size() <= 0) {
@@ -1219,8 +1217,8 @@ public class VisitorListAdapter extends BaseAdapter {
                 nativeAdViewHolder.a(bluedMyVisitorList, i);
                 return view2;
             case 3:
-                if (!this.f30156a) {
-                    this.f30156a = true;
+                if (!this.f16466a) {
+                    this.f16466a = true;
                 }
                 if (view == null) {
                     view = this.f.inflate(R.layout.item_visitor_show_vip, (ViewGroup) null);
@@ -1323,6 +1321,6 @@ public class VisitorListAdapter extends BaseAdapter {
 
     @Override // android.widget.BaseAdapter, android.widget.Adapter
     public int getViewTypeCount() {
-        return f30155c;
+        return f16465c;
     }
 }

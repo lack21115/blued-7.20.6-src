@@ -8,41 +8,41 @@ public class BindResolveClients {
     private static final Object b = new Object();
 
     /* renamed from: a  reason: collision with root package name */
-    private ArrayList<ResolveClientBean> f22649a;
+    private ArrayList<ResolveClientBean> f9041a;
 
     /* loaded from: source-7994992-dex2jar.jar:com/huawei/hms/common/internal/BindResolveClients$SingletonManager.class */
     static class SingletonManager {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final BindResolveClients f22650a = new BindResolveClients();
+        private static final BindResolveClients f9042a = new BindResolveClients();
 
         private SingletonManager() {
         }
     }
 
     private BindResolveClients() {
-        this.f22649a = new ArrayList<>();
+        this.f9041a = new ArrayList<>();
     }
 
     public static BindResolveClients getInstance() {
-        return SingletonManager.f22650a;
+        return SingletonManager.f9042a;
     }
 
     public boolean isClientRegistered(ResolveClientBean resolveClientBean) {
         boolean contains;
         synchronized (b) {
-            contains = this.f22649a.contains(resolveClientBean);
+            contains = this.f9041a.contains(resolveClientBean);
         }
         return contains;
     }
 
     public void notifyClientReconnect() {
         synchronized (b) {
-            ListIterator<ResolveClientBean> listIterator = this.f22649a.listIterator();
+            ListIterator<ResolveClientBean> listIterator = this.f9041a.listIterator();
             while (listIterator.hasNext()) {
                 listIterator.next().clientReconnect();
             }
-            this.f22649a.clear();
+            this.f9041a.clear();
         }
     }
 
@@ -51,8 +51,8 @@ public class BindResolveClients {
             return;
         }
         synchronized (b) {
-            if (!this.f22649a.contains(resolveClientBean)) {
-                this.f22649a.add(resolveClientBean);
+            if (!this.f9041a.contains(resolveClientBean)) {
+                this.f9041a.add(resolveClientBean);
             }
         }
     }
@@ -62,8 +62,8 @@ public class BindResolveClients {
             return;
         }
         synchronized (b) {
-            if (this.f22649a.contains(resolveClientBean)) {
-                ListIterator<ResolveClientBean> listIterator = this.f22649a.listIterator();
+            if (this.f9041a.contains(resolveClientBean)) {
+                ListIterator<ResolveClientBean> listIterator = this.f9041a.listIterator();
                 while (true) {
                     if (!listIterator.hasNext()) {
                         break;
@@ -78,7 +78,7 @@ public class BindResolveClients {
 
     public void unRegisterAll() {
         synchronized (b) {
-            this.f22649a.clear();
+            this.f9041a.clear();
         }
     }
 }

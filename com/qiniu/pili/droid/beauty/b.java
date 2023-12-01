@@ -7,17 +7,17 @@ public final class b {
     private int b;
 
     /* renamed from: a  reason: collision with root package name */
-    private int f27465a = -1;
+    private int f13777a = -1;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f27466c = false;
+    private boolean f13778c = false;
 
     public void a() {
-        if (this.f27466c) {
+        if (this.f13778c) {
             JNIControl.reInit();
         }
-        this.f27466c = false;
-        this.f27465a = -1;
+        this.f13778c = false;
+        this.f13777a = -1;
     }
 
     public void a(float f) {
@@ -30,8 +30,8 @@ public final class b {
     }
 
     public void a(Context context, int i, int i2) {
-        this.f27466c = true;
-        if (this.f27465a == -1) {
+        this.f13778c = true;
+        if (this.f13777a == -1) {
             if (i == 3) {
                 JNIControl.setGLES(3);
             } else {

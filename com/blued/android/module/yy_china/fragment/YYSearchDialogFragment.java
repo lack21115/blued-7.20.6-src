@@ -13,9 +13,11 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
 import androidx.core.os.BundleKt;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
 import com.blued.android.core.ui.ActivityFragmentActive;
 import com.blued.android.core.ui.BaseDialogFragment;
@@ -31,6 +33,7 @@ import com.blued.android.module.yy_china.model.YYRoomModel;
 import com.blued.android.module.yy_china.utils.YYRoomHttpUtils;
 import com.jeremyliao.liveeventbus.LiveEventBus;
 import kotlin.Metadata;
+import kotlin.Pair;
 import kotlin.TuplesKt;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt;
@@ -38,13 +41,9 @@ import kotlin.text.StringsKt;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYSearchDialogFragment.class */
 public final class YYSearchDialogFragment extends BaseDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f17446a;
+    private Context a;
     private EditText b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private TextView f17447c;
+    private TextView c;
     private YYRoomModel d;
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -61,7 +60,7 @@ public final class YYSearchDialogFragment extends BaseDialogFragment {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void a(YYRecommendPkModel yYRecommendPkModel) {
-        getParentFragmentManager().setFragmentResult("search_name", BundleKt.bundleOf(TuplesKt.a("host_name", yYRecommendPkModel)));
+        getParentFragmentManager().setFragmentResult("search_name", BundleKt.bundleOf(new Pair[]{TuplesKt.a("host_name", yYRecommendPkModel)}));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -85,7 +84,7 @@ public final class YYSearchDialogFragment extends BaseDialogFragment {
     public final void a(View root) {
         Intrinsics.e(root, "root");
         View findViewById = root.findViewById(R.id.conver_view);
-        this.f17447c = (TextView) root.findViewById(R.id.btn_search);
+        this.c = (TextView) root.findViewById(R.id.btn_search);
         this.b = (EditText) root.findViewById(R.id.et_input);
         findViewById.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYSearchDialogFragment$Kvm80nQOsPPmWnK0TRD-3oDefxM
             @Override // android.view.View.OnClickListener
@@ -93,7 +92,7 @@ public final class YYSearchDialogFragment extends BaseDialogFragment {
                 YYSearchDialogFragment.a(YYSearchDialogFragment.this, view);
             }
         });
-        TextView textView = this.f17447c;
+        TextView textView = this.c;
         if (textView == null) {
             return;
         }
@@ -109,8 +108,8 @@ public final class YYSearchDialogFragment extends BaseDialogFragment {
         Intrinsics.e(name, "name");
         YYRoomModel yYRoomModel = this.d;
         String str = yYRoomModel == null ? null : yYRoomModel.room_id;
-        final ActivityFragmentActive a2 = a();
-        YYRoomHttpUtils.a(str, name, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<YYRecommendPkModel>>(a2) { // from class: com.blued.android.module.yy_china.fragment.YYSearchDialogFragment$searchHostByName$1
+        final ActivityFragmentActive a = a();
+        YYRoomHttpUtils.a(str, name, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<YYRecommendPkModel>>(a) { // from class: com.blued.android.module.yy_china.fragment.YYSearchDialogFragment$searchHostByName$1
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
@@ -129,7 +128,7 @@ public final class YYSearchDialogFragment extends BaseDialogFragment {
     }
 
     public final Context d() {
-        return this.f17446a;
+        return this.a;
     }
 
     public final EditText e() {
@@ -139,7 +138,7 @@ public final class YYSearchDialogFragment extends BaseDialogFragment {
     public final void f() {
         IBinder windowToken;
         FragmentActivity activity = getActivity();
-        Object systemService = activity == null ? null : activity.getSystemService(Context.INPUT_METHOD_SERVICE);
+        Object systemService = activity == null ? null : activity.getSystemService("input_method");
         if (systemService == null) {
             throw new NullPointerException("null cannot be cast to non-null type android.view.inputmethod.InputMethodManager");
         }
@@ -154,7 +153,7 @@ public final class YYSearchDialogFragment extends BaseDialogFragment {
             return;
         }
         KeyboardUtils.b(this.b);
-        KeyboardUtils.b(this.f17446a, this.b);
+        KeyboardUtils.b(this.a, this.b);
         KeyboardUtils.a(getActivity());
         View view = getView();
         if (view != null) {
@@ -175,7 +174,6 @@ public final class YYSearchDialogFragment extends BaseDialogFragment {
         inputMethodManager.restartInput(this.b);
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityCreated(Bundle bundle) {
         super.onActivityCreated(bundle);
         Dialog dialog = getDialog();
@@ -188,23 +186,22 @@ public final class YYSearchDialogFragment extends BaseDialogFragment {
         Window window2 = dialog2.getWindow();
         Intrinsics.a(window2);
         window2.setSoftInputMode(16);
-        LiveEventBus.get(LiveEventBusConstant.d, String.class).observe(this, new Observer() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYSearchDialogFragment$hBaWGyYvJ2pi8G_jIisqIfW0wnY
-            @Override // androidx.lifecycle.Observer
+        LiveEventBus.get(LiveEventBusConstant.d, String.class).observe((LifecycleOwner) this, new Observer() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYSearchDialogFragment$hBaWGyYvJ2pi8G_jIisqIfW0wnY
             public final void onChanged(Object obj) {
                 YYSearchDialogFragment.a(YYSearchDialogFragment.this, (String) obj);
             }
         });
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        this.f17446a = getActivity();
-        setStyle(0, 16973946);
+        this.a = getActivity();
+        setStyle(0, com.android.internal.R.style.Theme_Holo_Light_DialogWhenLarge_NoActionBar);
         this.d = YYRoomInfoManager.e().b();
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
         View view = inflater.inflate(R.layout.dialog_yy_search_layout, viewGroup, false);
@@ -213,7 +210,7 @@ public final class YYSearchDialogFragment extends BaseDialogFragment {
         return view;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void show(FragmentManager manager, String str) {
         Intrinsics.e(manager, "manager");
         try {
@@ -221,7 +218,7 @@ public final class YYSearchDialogFragment extends BaseDialogFragment {
             ReflectionUtils.a(this, "mShownByMe", true);
             FragmentTransaction beginTransaction = manager.beginTransaction();
             Intrinsics.c(beginTransaction, "manager.beginTransaction()");
-            beginTransaction.add(this, str);
+            beginTransaction.add((Fragment) this, str);
             beginTransaction.commitAllowingStateLoss();
         } catch (Exception e) {
             super.show(manager, str);

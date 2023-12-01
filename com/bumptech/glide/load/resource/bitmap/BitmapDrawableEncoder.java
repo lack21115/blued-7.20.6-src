@@ -13,11 +13,11 @@ import java.io.File;
 public class BitmapDrawableEncoder implements ResourceEncoder<BitmapDrawable> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final BitmapPool f20936a;
+    private final BitmapPool f7330a;
     private final ResourceEncoder<Bitmap> b;
 
     public BitmapDrawableEncoder(BitmapPool bitmapPool, ResourceEncoder<Bitmap> resourceEncoder) {
-        this.f20936a = bitmapPool;
+        this.f7330a = bitmapPool;
         this.b = resourceEncoder;
     }
 
@@ -28,6 +28,6 @@ public class BitmapDrawableEncoder implements ResourceEncoder<BitmapDrawable> {
 
     @Override // com.bumptech.glide.load.Encoder
     public boolean a(Resource<BitmapDrawable> resource, File file, Options options) {
-        return this.b.a(new BitmapResource(resource.f().getBitmap(), this.f20936a), file, options);
+        return this.b.a(new BitmapResource(resource.f().getBitmap(), this.f7330a), file, options);
     }
 }

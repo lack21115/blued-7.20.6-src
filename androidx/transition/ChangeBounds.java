@@ -17,28 +17,28 @@ import androidx.core.view.ViewCompat;
 public class ChangeBounds extends Transition {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String[] f3409a = {"android:changeBounds:bounds", "android:changeBounds:clip", "android:changeBounds:parent", "android:changeBounds:windowX", "android:changeBounds:windowY"};
+    private static final String[] f3361a = {"android:changeBounds:bounds", "android:changeBounds:clip", "android:changeBounds:parent", "android:changeBounds:windowX", "android:changeBounds:windowY"};
     private static final Property<Drawable, PointF> b = new Property<Drawable, PointF>(PointF.class, "boundsOrigin") { // from class: androidx.transition.ChangeBounds.1
 
         /* renamed from: a  reason: collision with root package name */
-        private Rect f3411a = new Rect();
+        private Rect f3363a = new Rect();
 
         @Override // android.util.Property
         public PointF get(Drawable drawable) {
-            drawable.copyBounds(this.f3411a);
-            return new PointF(this.f3411a.left, this.f3411a.top);
+            drawable.copyBounds(this.f3363a);
+            return new PointF(this.f3363a.left, this.f3363a.top);
         }
 
         @Override // android.util.Property
         public void set(Drawable drawable, PointF pointF) {
-            drawable.copyBounds(this.f3411a);
-            this.f3411a.offsetTo(Math.round(pointF.x), Math.round(pointF.y));
-            drawable.setBounds(this.f3411a);
+            drawable.copyBounds(this.f3363a);
+            this.f3363a.offsetTo(Math.round(pointF.x), Math.round(pointF.y));
+            drawable.setBounds(this.f3363a);
         }
     };
 
     /* renamed from: c  reason: collision with root package name */
-    private static final Property<ViewBounds, PointF> f3410c = new Property<ViewBounds, PointF>(PointF.class, "topLeft") { // from class: androidx.transition.ChangeBounds.2
+    private static final Property<ViewBounds, PointF> f3362c = new Property<ViewBounds, PointF>(PointF.class, "topLeft") { // from class: androidx.transition.ChangeBounds.2
         @Override // android.util.Property
         public PointF get(ViewBounds viewBounds) {
             return null;
@@ -105,11 +105,11 @@ public class ChangeBounds extends Transition {
     public static class ViewBounds {
 
         /* renamed from: a  reason: collision with root package name */
-        private int f3419a;
+        private int f3371a;
         private int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f3420c;
+        private int f3372c;
         private int d;
         private View e;
         private int f;
@@ -120,13 +120,13 @@ public class ChangeBounds extends Transition {
         }
 
         private void a() {
-            ViewUtils.a(this.e, this.f3419a, this.b, this.f3420c, this.d);
+            ViewUtils.a(this.e, this.f3371a, this.b, this.f3372c, this.d);
             this.f = 0;
             this.g = 0;
         }
 
         void a(PointF pointF) {
-            this.f3419a = Math.round(pointF.x);
+            this.f3371a = Math.round(pointF.x);
             this.b = Math.round(pointF.y);
             int i = this.f + 1;
             this.f = i;
@@ -136,7 +136,7 @@ public class ChangeBounds extends Transition {
         }
 
         void b(PointF pointF) {
-            this.f3420c = Math.round(pointF.x);
+            this.f3372c = Math.round(pointF.x);
             this.d = Math.round(pointF.y);
             int i = this.g + 1;
             this.g = i;
@@ -225,7 +225,7 @@ public class ChangeBounds extends Transition {
 
     @Override // androidx.transition.Transition
     public String[] getTransitionProperties() {
-        return f3409a;
+        return f3361a;
     }
 
     public void setResizeClip(boolean z) {

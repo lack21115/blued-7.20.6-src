@@ -1,8 +1,10 @@
 package com.kwad.sdk.core.a.kwai;
 
+import android.accounts.AccountManager;
 import android.provider.BrowserContract;
 import android.provider.Downloads;
 import android.speech.tts.TextToSpeech;
+import com.igexin.assist.sdk.AssistPushConsts;
 import com.kwad.sdk.core.report.q;
 import com.kwad.sdk.core.scene.URLPackage;
 import com.oplus.quickgame.sdk.hall.Constant;
@@ -25,7 +27,7 @@ public final class gv implements com.kwad.sdk.core.d<com.kwad.sdk.core.report.q>
         qVar.Ht = jSONObject.optLong("seq");
         qVar.aiF = jSONObject.optLong("listId");
         qVar.aiG = jSONObject.optLong(VideoActivity.EXTRA_KEY_ACTION_TYPE);
-        qVar.Ts = jSONObject.optString("payload");
+        qVar.Ts = jSONObject.optString(AssistPushConsts.MSG_TYPE_PAYLOAD);
         if (qVar.Ts == JSONObject.NULL) {
             qVar.Ts = "";
         }
@@ -78,7 +80,7 @@ public final class gv implements com.kwad.sdk.core.d<com.kwad.sdk.core.report.q>
         if (qVar.errorMsg == JSONObject.NULL) {
             qVar.errorMsg = "";
         }
-        qVar.errorCode = jSONObject.optInt("errorCode", new Integer("0").intValue());
+        qVar.errorCode = jSONObject.optInt(AccountManager.KEY_ERROR_CODE, new Integer("0").intValue());
         qVar.creativeId = jSONObject.optLong("creativeId");
         qVar.ajc = jSONObject.optString("cacheFailedReason");
         if (qVar.ajc == JSONObject.NULL) {
@@ -202,7 +204,7 @@ public final class gv implements com.kwad.sdk.core.d<com.kwad.sdk.core.report.q>
             com.kwad.sdk.utils.t.putValue(jSONObject2, VideoActivity.EXTRA_KEY_ACTION_TYPE, qVar.aiG);
         }
         if (qVar.Ts != null && !qVar.Ts.equals("")) {
-            com.kwad.sdk.utils.t.putValue(jSONObject2, "payload", qVar.Ts);
+            com.kwad.sdk.utils.t.putValue(jSONObject2, AssistPushConsts.MSG_TYPE_PAYLOAD, qVar.Ts);
         }
         if (qVar.llsid != 0) {
             com.kwad.sdk.utils.t.putValue(jSONObject2, "llsid", qVar.llsid);
@@ -286,7 +288,7 @@ public final class gv implements com.kwad.sdk.core.d<com.kwad.sdk.core.report.q>
         if (qVar.errorMsg != null && !qVar.errorMsg.equals("")) {
             com.kwad.sdk.utils.t.putValue(jSONObject2, Downloads.Impl.COLUMN_ERROR_MSG, qVar.errorMsg);
         }
-        com.kwad.sdk.utils.t.putValue(jSONObject2, "errorCode", qVar.errorCode);
+        com.kwad.sdk.utils.t.putValue(jSONObject2, AccountManager.KEY_ERROR_CODE, qVar.errorCode);
         if (qVar.creativeId != 0) {
             com.kwad.sdk.utils.t.putValue(jSONObject2, "creativeId", qVar.creativeId);
         }

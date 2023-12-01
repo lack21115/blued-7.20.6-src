@@ -38,12 +38,10 @@ public final class SyncGrpc {
             this.methodId = i;
         }
 
-        @Override // io.grpc.stub.ServerCalls.BidiStreamingMethod, io.grpc.stub.ServerCalls.StreamingRequestMethod, io.grpc.stub.ServerCalls.ClientStreamingMethod
         public StreamObserver<Req> invoke(StreamObserver<Resp> streamObserver) {
             throw new AssertionError();
         }
 
-        @Override // io.grpc.stub.ServerCalls.ServerStreamingMethod, io.grpc.stub.ServerCalls.UnaryRequestMethod, io.grpc.stub.ServerCalls.UnaryMethod
         public void invoke(Req req, StreamObserver<Resp> streamObserver) {
             if (this.methodId != 0) {
                 throw new AssertionError();
@@ -57,12 +55,10 @@ public final class SyncGrpc {
         SyncBaseDescriptorSupplier() {
         }
 
-        @Override // io.grpc.protobuf.ProtoFileDescriptorSupplier
         public Descriptors.FileDescriptor getFileDescriptor() {
             return SyncOuterClass.getDescriptor();
         }
 
-        @Override // io.grpc.protobuf.ProtoServiceDescriptorSupplier
         public Descriptors.ServiceDescriptor getServiceDescriptor() {
             return getFileDescriptor().findServiceByName("Sync");
         }
@@ -75,8 +71,8 @@ public final class SyncGrpc {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // io.grpc.stub.AbstractStub
-        public SyncBlockingStub build(Channel channel, CallOptions callOptions) {
+        /* renamed from: build */
+        public SyncBlockingStub m2530build(Channel channel, CallOptions callOptions) {
             return new SyncBlockingStub(channel, callOptions);
         }
 
@@ -99,8 +95,8 @@ public final class SyncGrpc {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // io.grpc.stub.AbstractStub
-        public SyncFutureStub build(Channel channel, CallOptions callOptions) {
+        /* renamed from: build */
+        public SyncFutureStub m2531build(Channel channel, CallOptions callOptions) {
             return new SyncFutureStub(channel, callOptions);
         }
 
@@ -130,7 +126,6 @@ public final class SyncGrpc {
             this.methodName = str;
         }
 
-        @Override // io.grpc.protobuf.ProtoMethodDescriptorSupplier
         public Descriptors.MethodDescriptor getMethodDescriptor() {
             return getServiceDescriptor().findMethodByName(this.methodName);
         }
@@ -143,8 +138,8 @@ public final class SyncGrpc {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // io.grpc.stub.AbstractStub
-        public SyncStub build(Channel channel, CallOptions callOptions) {
+        /* renamed from: build */
+        public SyncStub m2532build(Channel channel, CallOptions callOptions) {
             return new SyncStub(channel, callOptions);
         }
 
@@ -199,30 +194,27 @@ public final class SyncGrpc {
     }
 
     public static SyncBlockingStub newBlockingStub(Channel channel) {
-        return (SyncBlockingStub) SyncBlockingStub.newStub(new AbstractStub.StubFactory<SyncBlockingStub>() { // from class: com.blued.im.sync.SyncGrpc.2
-            /* JADX WARN: Can't rename method to resolve collision */
-            @Override // io.grpc.stub.AbstractStub.StubFactory
-            public SyncBlockingStub newStub(Channel channel2, CallOptions callOptions) {
+        return SyncBlockingStub.newStub(new AbstractStub.StubFactory<SyncBlockingStub>() { // from class: com.blued.im.sync.SyncGrpc.2
+            /* renamed from: newStub */
+            public SyncBlockingStub m2528newStub(Channel channel2, CallOptions callOptions) {
                 return new SyncBlockingStub(channel2, callOptions);
             }
         }, channel);
     }
 
     public static SyncFutureStub newFutureStub(Channel channel) {
-        return (SyncFutureStub) SyncFutureStub.newStub(new AbstractStub.StubFactory<SyncFutureStub>() { // from class: com.blued.im.sync.SyncGrpc.3
-            /* JADX WARN: Can't rename method to resolve collision */
-            @Override // io.grpc.stub.AbstractStub.StubFactory
-            public SyncFutureStub newStub(Channel channel2, CallOptions callOptions) {
+        return SyncFutureStub.newStub(new AbstractStub.StubFactory<SyncFutureStub>() { // from class: com.blued.im.sync.SyncGrpc.3
+            /* renamed from: newStub */
+            public SyncFutureStub m2529newStub(Channel channel2, CallOptions callOptions) {
                 return new SyncFutureStub(channel2, callOptions);
             }
         }, channel);
     }
 
     public static SyncStub newStub(Channel channel) {
-        return (SyncStub) SyncStub.newStub(new AbstractStub.StubFactory<SyncStub>() { // from class: com.blued.im.sync.SyncGrpc.1
-            /* JADX WARN: Can't rename method to resolve collision */
-            @Override // io.grpc.stub.AbstractStub.StubFactory
-            public SyncStub newStub(Channel channel2, CallOptions callOptions) {
+        return SyncStub.newStub(new AbstractStub.StubFactory<SyncStub>() { // from class: com.blued.im.sync.SyncGrpc.1
+            /* renamed from: newStub */
+            public SyncStub m2527newStub(Channel channel2, CallOptions callOptions) {
                 return new SyncStub(channel2, callOptions);
             }
         }, channel);

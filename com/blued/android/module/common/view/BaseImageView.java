@@ -13,12 +13,8 @@ import java.lang.ref.WeakReference;
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/view/BaseImageView.class */
 public abstract class BaseImageView extends ImageView {
     private static final String b = BaseImageView.class.getSimpleName();
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final Xfermode f10943c = new PorterDuffXfermode(PorterDuff.Mode.DST_IN);
-
-    /* renamed from: a  reason: collision with root package name */
-    protected Context f10944a;
+    private static final Xfermode c = new PorterDuffXfermode(PorterDuff.Mode.DST_IN);
+    protected Context a;
     private Bitmap d;
     private Paint e;
     private WeakReference<Bitmap> f;
@@ -34,7 +30,7 @@ public abstract class BaseImageView extends ImageView {
     }
 
     private void a(Context context) {
-        this.f10944a = context;
+        this.a = context;
         this.e = new Paint(1);
     }
 

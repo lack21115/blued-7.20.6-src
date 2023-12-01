@@ -11,17 +11,13 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/LayoutOnlineUserTipsBinding.class */
 public final class LayoutOnlineUserTipsBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f12109a;
+    public final ImageView a;
     public final ShapeTextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final ConstraintLayout f12110c;
+    private final ConstraintLayout c;
 
     private LayoutOnlineUserTipsBinding(ConstraintLayout constraintLayout, ImageView imageView, ShapeTextView shapeTextView) {
-        this.f12110c = constraintLayout;
-        this.f12109a = imageView;
+        this.c = constraintLayout;
+        this.a = imageView;
         this.b = shapeTextView;
     }
 
@@ -48,9 +44,8 @@ public final class LayoutOnlineUserTipsBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f12110c;
+        return this.c;
     }
 }

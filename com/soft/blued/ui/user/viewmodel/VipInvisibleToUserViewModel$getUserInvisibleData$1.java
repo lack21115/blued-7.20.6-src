@@ -1,6 +1,7 @@
 package com.soft.blued.ui.user.viewmodel;
 
 import com.blued.android.framework.http.parser.BluedEntityA;
+import com.blued.android.module.common.api.ApiState;
 import com.blued.android.module.common.api.BluedApiProxy;
 import com.blued.android.module.common.api.Error;
 import com.blued.android.module.common.api.Succeed;
@@ -22,46 +23,42 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.CoroutineScope;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 @Metadata
 @DebugMetadata(b = "VipInvisibleToUserViewModel.kt", c = {37}, d = "invokeSuspend", e = "com.soft.blued.ui.user.viewmodel.VipInvisibleToUserViewModel$getUserInvisibleData$1")
 /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/user/viewmodel/VipInvisibleToUserViewModel$getUserInvisibleData$1.class */
-public final class VipInvisibleToUserViewModel$getUserInvisibleData$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+final class VipInvisibleToUserViewModel$getUserInvisibleData$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
 
     /* renamed from: a  reason: collision with root package name */
-    int f34363a;
+    int f20672a;
     final /* synthetic */ VipInvisibleToUserAction.getInvisibleUserData b;
 
     /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ VipInvisibleToUserViewModel f34364c;
+    final /* synthetic */ VipInvisibleToUserViewModel f20673c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public VipInvisibleToUserViewModel$getUserInvisibleData$1(VipInvisibleToUserAction.getInvisibleUserData getinvisibleuserdata, VipInvisibleToUserViewModel vipInvisibleToUserViewModel, Continuation<? super VipInvisibleToUserViewModel$getUserInvisibleData$1> continuation) {
         super(2, continuation);
         this.b = getinvisibleuserdata;
-        this.f34364c = vipInvisibleToUserViewModel;
+        this.f20673c = vipInvisibleToUserViewModel;
     }
 
-    @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-        return ((VipInvisibleToUserViewModel$getUserInvisibleData$1) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+        return create(coroutineScope, continuation).invokeSuspend(Unit.a);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        return new VipInvisibleToUserViewModel$getUserInvisibleData$1(this.b, this.f34364c, continuation);
+        return new VipInvisibleToUserViewModel$getUserInvisibleData$1(this.b, this.f20673c, continuation);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         Object a2 = IntrinsicsKt.a();
-        int i = this.f34363a;
+        int i = this.f20672a;
         if (i == 0) {
             ResultKt.a(obj);
-            this.f34363a = 1;
-            Object a3 = ((UserApiService) BluedApiProxy.b().a(UserApiService.class)).a(this.b.a(), this.b.b(), this);
+            this.f20672a = 1;
+            Object a3 = ((UserApiService) BluedApiProxy.b().a(UserApiService.class)).a(this.b.a(), this.b.b(), (Continuation) this);
             obj = a3;
             if (a3 == a2) {
                 return a2;
@@ -72,11 +69,11 @@ public final class VipInvisibleToUserViewModel$getUserInvisibleData$1 extends Su
             ResultKt.a(obj);
         }
         BluedEntityA bluedEntityA = (BluedEntityA) obj;
-        VipInvisibleToUserViewModel vipInvisibleToUserViewModel = this.f34364c;
+        VipInvisibleToUserViewModel vipInvisibleToUserViewModel = this.f20673c;
         if (bluedEntityA.code == 200) {
             if (bluedEntityA.hasData()) {
-                final List<T> data = bluedEntityA.data;
-                Intrinsics.c(data, "data");
+                final List list = bluedEntityA.data;
+                Intrinsics.c(list, "data");
                 bluedEntityA.hasMore();
                 BluedStructureExtKt.a(vipInvisibleToUserViewModel, new Function1<VipInvisibleToUserState, VipInvisibleToUserState>() { // from class: com.soft.blued.ui.user.viewmodel.VipInvisibleToUserViewModel$getUserInvisibleData$1$1$1
                     /* JADX INFO: Access modifiers changed from: package-private */
@@ -86,11 +83,10 @@ public final class VipInvisibleToUserViewModel$getUserInvisibleData$1 extends Su
                         super(1);
                     }
 
-                    @Override // kotlin.jvm.functions.Function1
                     /* renamed from: a */
-                    public final VipInvisibleToUserState invoke(VipInvisibleToUserState setState) {
-                        Intrinsics.e(setState, "$this$setState");
-                        return setState.a(data.get(0));
+                    public final VipInvisibleToUserState invoke(VipInvisibleToUserState vipInvisibleToUserState) {
+                        Intrinsics.e(vipInvisibleToUserState, "$this$setState");
+                        return vipInvisibleToUserState.a(list.get(0));
                     }
                 });
             } else {
@@ -103,21 +99,20 @@ public final class VipInvisibleToUserViewModel$getUserInvisibleData$1 extends Su
                         super(1);
                     }
 
-                    @Override // kotlin.jvm.functions.Function1
                     /* renamed from: a */
-                    public final VipInvisibleToUserState invoke(VipInvisibleToUserState setState) {
-                        Intrinsics.e(setState, "$this$setState");
-                        return setState.a(b.get(0));
+                    public final VipInvisibleToUserState invoke(VipInvisibleToUserState vipInvisibleToUserState) {
+                        Intrinsics.e(vipInvisibleToUserState, "$this$setState");
+                        return vipInvisibleToUserState.a(b.get(0));
                     }
                 });
             }
-            Succeed succeed = Succeed.f10631a;
+            ApiState apiState = Succeed.a;
         } else {
             int i2 = bluedEntityA.code;
-            String message = bluedEntityA.message;
-            Intrinsics.c(message, "message");
-            new Error(i2, message);
+            String str = bluedEntityA.message;
+            Intrinsics.c(str, "message");
+            new Error(i2, str);
         }
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

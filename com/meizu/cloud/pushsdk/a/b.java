@@ -15,21 +15,21 @@ import java.util.Map;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23953a = b.class.getSimpleName();
+    private static final String f10342a = b.class.getSimpleName();
     private final HashMap<String, String> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final HashMap<String, Object> f23954c;
+    private final HashMap<String, Object> f10343c;
     private final HashMap<String, Object> d;
 
     /* loaded from: source-7994992-dex2jar.jar:com/meizu/cloud/pushsdk/a/b$a.class */
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private Context f23955a = null;
+        private Context f10344a = null;
 
         public a a(Context context) {
-            this.f23955a = context;
+            this.f10344a = context;
             return this;
         }
 
@@ -40,16 +40,16 @@ public class b {
 
     private b(a aVar) {
         this.b = new HashMap<>();
-        this.f23954c = new HashMap<>();
+        this.f10343c = new HashMap<>();
         this.d = new HashMap<>();
         d();
-        if (aVar.f23955a != null) {
-            b(aVar.f23955a);
-            a(aVar.f23955a);
-            c(aVar.f23955a);
-            d(aVar.f23955a);
+        if (aVar.f10344a != null) {
+            b(aVar.f10344a);
+            a(aVar.f10344a);
+            c(aVar.f10344a);
+            d(aVar.f10344a);
         }
-        DebugLogger.i(f23953a, "Subject created successfully.");
+        DebugLogger.i(f10342a, "Subject created successfully.");
     }
 
     private void a(String str, int i, int i2) {
@@ -63,7 +63,7 @@ public class b {
         if ((obj instanceof String) && ((String) obj).isEmpty()) {
             return;
         }
-        this.f23954c.put(str, obj);
+        this.f10343c.put(str, obj);
     }
 
     private void a(String str, String str2) {
@@ -113,14 +113,14 @@ public class b {
     public void a(Context context) {
         Point d = e.d(context);
         if (d == null) {
-            DebugLogger.e(f23953a, "screen information not available.");
+            DebugLogger.e(f10342a, "screen information not available.");
         } else {
-            a("ss", d.x, d.y);
+            a(com.anythink.expressad.foundation.g.a.ac, d.x, d.y);
         }
     }
 
     public Map<String, Object> b() {
-        return this.f23954c;
+        return this.f10343c;
     }
 
     public Map<String, Object> c() {

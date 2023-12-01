@@ -10,17 +10,15 @@ import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.Window;
 import android.widget.FrameLayout;
+import com.android.internal.R;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.ui.BaseDialogFragment;
 import com.blued.android.core.utils.skin.BluedSkinUtils;
-import com.blued.android.module.common.R;
 import com.blued.android.module.common.base.dialog.bottomsheet.BottomSheetBehavior;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/base/dialog/bottomsheet/BottomSheetDialogFragment.class */
 public class BottomSheetDialogFragment extends BaseDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    private boolean f10663a;
+    private boolean a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/base/dialog/bottomsheet/BottomSheetDialogFragment$BottomSheetDismissCallback.class */
@@ -41,7 +39,7 @@ public class BottomSheetDialogFragment extends BaseDialogFragment {
     }
 
     private void a(BottomSheetBehavior<?> bottomSheetBehavior, boolean z) {
-        this.f10663a = z;
+        this.a = z;
         if (bottomSheetBehavior.d() == 5) {
             h();
             return;
@@ -58,7 +56,7 @@ public class BottomSheetDialogFragment extends BaseDialogFragment {
         if (window == null || getContext() == null) {
             return;
         }
-        window.setBackgroundDrawableResource(17170445);
+        window.setBackgroundDrawableResource(R.color.transparent);
         window.setDimAmount(0.0f);
     }
 
@@ -66,9 +64,9 @@ public class BottomSheetDialogFragment extends BaseDialogFragment {
         Dialog dialog = getDialog();
         if (dialog instanceof BottomSheetDialog) {
             BottomSheetDialog bottomSheetDialog = (BottomSheetDialog) dialog;
-            BottomSheetBehavior<FrameLayout> a2 = bottomSheetDialog.a();
-            if (a2.b() && bottomSheetDialog.b()) {
-                a(a2, z);
+            BottomSheetBehavior<FrameLayout> a = bottomSheetDialog.a();
+            if (a.b() && bottomSheetDialog.b()) {
+                a(a, z);
                 return true;
             }
             return false;
@@ -84,7 +82,7 @@ public class BottomSheetDialogFragment extends BaseDialogFragment {
             GradientDrawable gradientDrawable = new GradientDrawable();
             GradientDrawable gradientDrawable2 = new GradientDrawable();
             gradientDrawable2.setShape(0);
-            gradientDrawable2.setColor(BluedSkinUtils.a(AppInfo.d(), R.color.syc_b));
+            gradientDrawable2.setColor(BluedSkinUtils.a(AppInfo.d(), com.blued.android.module.common.R.color.syc_b));
             LayerDrawable layerDrawable = new LayerDrawable(new Drawable[]{gradientDrawable, gradientDrawable2});
             layerDrawable.setLayerInsetTop(1, displayMetrics.heightPixels);
             window.setBackgroundDrawable(layerDrawable);
@@ -101,7 +99,7 @@ public class BottomSheetDialogFragment extends BaseDialogFragment {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void h() {
-        if (this.f10663a) {
+        if (this.a) {
             super.dismissAllowingStateLoss();
         } else {
             super.dismiss();
@@ -139,7 +137,6 @@ public class BottomSheetDialogFragment extends BaseDialogFragment {
         });
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public void dismiss() {
         if (a(false)) {
             return;
@@ -150,7 +147,6 @@ public class BottomSheetDialogFragment extends BaseDialogFragment {
         }
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public void dismissAllowingStateLoss() {
         if (a(true)) {
             return;
@@ -170,20 +166,20 @@ public class BottomSheetDialogFragment extends BaseDialogFragment {
         return 0;
     }
 
-    @Override // androidx.fragment.app.DialogFragment
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r0v0, types: [com.blued.android.module.common.base.dialog.bottomsheet.BottomSheetDialog, android.app.Dialog] */
     public Dialog onCreateDialog(Bundle bundle) {
-        BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(getActivity());
+        ?? bottomSheetDialog = new BottomSheetDialog(getActivity());
         if (e()) {
-            a(bottomSheetDialog);
+            a((BottomSheetDialog) bottomSheetDialog);
         } else if (Build.VERSION.SDK_INT >= 23) {
             b(bottomSheetDialog);
         }
-        a(bottomSheetDialog, f());
+        a((BottomSheetDialog) bottomSheetDialog, f());
         c(bottomSheetDialog);
         return bottomSheetDialog;
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public void setupDialog(Dialog dialog, int i) {
     }
 }

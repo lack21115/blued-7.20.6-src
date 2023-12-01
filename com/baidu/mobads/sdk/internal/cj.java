@@ -4,13 +4,13 @@ package com.baidu.mobads.sdk.internal;
 public class cj {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f9382a = "9.26";
+    public static final String f6542a = "9.26";
     public static final String b = "";
     public static final String e = "9.26";
     public static final int f = 5000;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final Boolean f9383c = false;
+    public static final Boolean f6543c = false;
     public static final Boolean d = true;
     public static final Boolean g = false;
     public static String h = "adserv_0";

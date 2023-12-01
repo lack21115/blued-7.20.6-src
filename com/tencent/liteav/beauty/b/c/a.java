@@ -8,24 +8,24 @@ import com.tencent.liteav.videobase.frame.e;
 public final class a extends h implements com.tencent.liteav.beauty.b.b {
 
     /* renamed from: c  reason: collision with root package name */
-    private float f36371c = 0.0f;
+    private float f22680c = 0.0f;
     private float d = 0.0f;
     private float e = 0.0f;
     private float f = 0.0f;
 
     /* renamed from: a  reason: collision with root package name */
-    private final b f36370a = new b();
+    private final b f22679a = new b();
     private final m b = new m();
 
     public a() {
-        addFilter(this.f36370a);
+        addFilter(this.f22679a);
         addFilter(this.b);
     }
 
     @Override // com.tencent.liteav.beauty.b.b
     public final void a(float f) {
-        this.f36371c = f;
-        b bVar = this.f36370a;
+        this.f22680c = f;
+        b bVar = this.f22679a;
         if (bVar != null) {
             bVar.a(f);
         }
@@ -34,7 +34,7 @@ public final class a extends h implements com.tencent.liteav.beauty.b.b {
     @Override // com.tencent.liteav.beauty.b.b
     public final void b(float f) {
         this.d = f;
-        b bVar = this.f36370a;
+        b bVar = this.f22679a;
         if (bVar != null) {
             bVar.b(f);
         }
@@ -43,7 +43,7 @@ public final class a extends h implements com.tencent.liteav.beauty.b.b {
     @Override // com.tencent.liteav.beauty.b.b
     public final void c(float f) {
         this.e = f;
-        b bVar = this.f36370a;
+        b bVar = this.f22679a;
         if (bVar != null) {
             bVar.c(f);
         }
@@ -51,7 +51,7 @@ public final class a extends h implements com.tencent.liteav.beauty.b.b {
 
     @Override // com.tencent.liteav.videobase.a.b
     public final boolean canBeSkipped() {
-        return this.b.canBeSkipped() && this.f36370a.canBeSkipped();
+        return this.b.canBeSkipped() && this.f22679a.canBeSkipped();
     }
 
     @Override // com.tencent.liteav.beauty.b.b
@@ -67,9 +67,9 @@ public final class a extends h implements com.tencent.liteav.beauty.b.b {
     @Override // com.tencent.liteav.videobase.a.h, com.tencent.liteav.videobase.a.b
     public final void onInit(e eVar) {
         super.onInit(eVar);
-        this.f36370a.a(this.f36371c);
-        this.f36370a.b(this.d);
-        this.f36370a.c(this.e);
+        this.f22679a.a(this.f22680c);
+        this.f22679a.b(this.d);
+        this.f22679a.c(this.e);
         this.b.a(this.f);
     }
 }

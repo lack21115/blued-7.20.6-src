@@ -11,9 +11,7 @@ import kotlin.jvm.internal.Ref;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt__ReduceKt$reduce$$inlined$collect$1.class */
 public final class FlowKt__ReduceKt$reduce$$inlined$collect$1<T> implements FlowCollector<T> {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ Ref.ObjectRef f43252a;
+    final /* synthetic */ Ref.ObjectRef a;
     final /* synthetic */ Function3 b;
 
     @Metadata
@@ -21,9 +19,7 @@ public final class FlowKt__ReduceKt$reduce$$inlined$collect$1<T> implements Flow
     /* renamed from: kotlinx.coroutines.flow.FlowKt__ReduceKt$reduce$$inlined$collect$1$1  reason: invalid class name */
     /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt__ReduceKt$reduce$$inlined$collect$1$1.class */
     public static final class AnonymousClass1 extends ContinuationImpl {
-
-        /* renamed from: a  reason: collision with root package name */
-        /* synthetic */ Object f43253a;
+        /* synthetic */ Object a;
         int b;
         Object d;
 
@@ -33,14 +29,14 @@ public final class FlowKt__ReduceKt$reduce$$inlined$collect$1<T> implements Flow
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Object invokeSuspend(Object obj) {
-            this.f43253a = obj;
+            this.a = obj;
             this.b |= Integer.MIN_VALUE;
             return FlowKt__ReduceKt$reduce$$inlined$collect$1.this.emit(null, this);
         }
     }
 
     public FlowKt__ReduceKt$reduce$$inlined$collect$1(Ref.ObjectRef objectRef, Function3 function3) {
-        this.f43252a = objectRef;
+        this.a = objectRef;
         this.b = function3;
     }
 

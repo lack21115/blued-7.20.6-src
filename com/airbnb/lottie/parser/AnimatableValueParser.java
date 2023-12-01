@@ -25,7 +25,7 @@ public class AnimatableValueParser {
     }
 
     public static AnimatableFloatValue a(JsonReader jsonReader, LottieComposition lottieComposition, boolean z) throws IOException {
-        return new AnimatableFloatValue(a(jsonReader, z ? Utils.a() : 1.0f, lottieComposition, FloatParser.f4400a));
+        return new AnimatableFloatValue(a(jsonReader, z ? Utils.a() : 1.0f, lottieComposition, FloatParser.a));
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -43,31 +43,31 @@ public class AnimatableValueParser {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static AnimatableIntegerValue b(JsonReader jsonReader, LottieComposition lottieComposition) throws IOException {
-        return new AnimatableIntegerValue(a(jsonReader, lottieComposition, IntegerParser.f4402a));
+        return new AnimatableIntegerValue(a(jsonReader, lottieComposition, IntegerParser.a));
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static AnimatablePointValue c(JsonReader jsonReader, LottieComposition lottieComposition) throws IOException {
-        return new AnimatablePointValue(a(jsonReader, Utils.a(), lottieComposition, PointFParser.f4406a));
+        return new AnimatablePointValue(a(jsonReader, Utils.a(), lottieComposition, PointFParser.a));
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static AnimatableScaleValue d(JsonReader jsonReader, LottieComposition lottieComposition) throws IOException {
-        return new AnimatableScaleValue(a(jsonReader, lottieComposition, ScaleXYParser.f4407a));
+        return new AnimatableScaleValue(a(jsonReader, lottieComposition, ScaleXYParser.a));
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static AnimatableShapeValue e(JsonReader jsonReader, LottieComposition lottieComposition) throws IOException {
-        return new AnimatableShapeValue(a(jsonReader, Utils.a(), lottieComposition, ShapeDataParser.f4408a));
+        return new AnimatableShapeValue(a(jsonReader, Utils.a(), lottieComposition, ShapeDataParser.a));
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static AnimatableTextFrame f(JsonReader jsonReader, LottieComposition lottieComposition) throws IOException {
-        return new AnimatableTextFrame(a(jsonReader, lottieComposition, DocumentDataParser.f4399a));
+        return new AnimatableTextFrame(a(jsonReader, lottieComposition, DocumentDataParser.a));
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static AnimatableColorValue g(JsonReader jsonReader, LottieComposition lottieComposition) throws IOException {
-        return new AnimatableColorValue(a(jsonReader, lottieComposition, ColorParser.f4398a));
+        return new AnimatableColorValue(a(jsonReader, lottieComposition, ColorParser.a));
     }
 }

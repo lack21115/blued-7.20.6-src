@@ -6,6 +6,6 @@ import android.content.Context;
 public class f {
 
     /* renamed from: a  reason: collision with root package name */
-    public Context f22290a;
+    public Context f8682a;
     public boolean b;
 }

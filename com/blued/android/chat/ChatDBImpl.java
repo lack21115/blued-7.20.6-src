@@ -28,12 +28,12 @@ public class ChatDBImpl implements DBOper {
     }
 
     private int insertChattingData(ChattingModel chattingModel, boolean z) {
-        ChattingModelDB a2 = DataTransform.a(chattingModel);
-        int a3 = ChattingDao.a().a(a2, z);
-        if (a3 > 0) {
-            chattingModel.dbId = a2.dbId;
+        ChattingModelDB a = DataTransform.a(chattingModel);
+        int a2 = ChattingDao.a().a(a, z);
+        if (a2 > 0) {
+            chattingModel.dbId = a.dbId;
         }
-        return a3;
+        return a2;
     }
 
     @Override // com.blued.android.chat.db.DBOper
@@ -160,9 +160,9 @@ public class ChatDBImpl implements DBOper {
 
     @Override // com.blued.android.chat.db.DBOper
     public List<SessionModel> getSessionList() {
-        List<SessionModel> a2 = DataTransform.a(SessionDao.a().c());
-        SessionDataManager.getInstance().setSessionList(a2);
-        return a2;
+        List<SessionModel> a = DataTransform.a(SessionDao.a().c());
+        SessionDataManager.getInstance().setSessionList(a);
+        return a;
     }
 
     @Override // com.blued.android.chat.db.DBOper
@@ -233,9 +233,9 @@ public class ChatDBImpl implements DBOper {
 
     @Override // com.blued.android.chat.db.DBOper
     public void saveSession(SessionModel sessionModel) {
-        SessionModelDB a2 = DataTransform.a(sessionModel);
-        if (SessionDao.a().a(a2) > 0) {
-            sessionModel.dbId = a2.dbId;
+        SessionModelDB a = DataTransform.a(sessionModel);
+        if (SessionDao.a().a(a) > 0) {
+            sessionModel.dbId = a.dbId;
             SessionDataManager.getInstance().saveSession(sessionModel);
         }
     }

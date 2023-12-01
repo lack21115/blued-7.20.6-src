@@ -10,24 +10,22 @@ import com.blued.community.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/community/ui/send/dialog/AnonymousHelpDialogFragment.class */
 public class AnonymousHelpDialogFragment extends BottomSheetDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f19914a;
+    private Context a;
     private View b;
 
     public static void a(FragmentManager fragmentManager) {
         new AnonymousHelpDialogFragment().show(fragmentManager, AnonymousHelpDialogFragment.class.getSimpleName());
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
     }
 
-    @Override // com.blued.android.module.common.base.dialog.bottomsheet.BottomSheetDialogFragment, androidx.fragment.app.DialogFragment
+    @Override // com.blued.android.module.common.base.dialog.bottomsheet.BottomSheetDialogFragment
     public void setupDialog(Dialog dialog, int i) {
         super.setupDialog(dialog, i);
-        this.f19914a = getContext();
+        this.a = getContext();
         View inflate = View.inflate(getContext(), R.layout.dialog_anonymous_help, null);
         this.b = inflate;
         dialog.setContentView(inflate);

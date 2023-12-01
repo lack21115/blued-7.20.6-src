@@ -26,7 +26,7 @@ public interface b {
 
     /* renamed from: com.ta.utdid2.b.a.b$b  reason: collision with other inner class name */
     /* loaded from: source-8457232-dex2jar.jar:com/ta/utdid2/b/a/b$b.class */
-    public interface InterfaceC0892b {
+    public interface InterfaceC0722b {
         void a(b bVar, String str);
     }
 

@@ -32,13 +32,9 @@ import kotlin.jvm.internal.TypeIntrinsics;
 public final class EventDetailsViewModel extends BaseViewModel {
     private boolean k;
     private int l;
-
-    /* renamed from: a  reason: collision with root package name */
-    private final MutableLiveData<EventDetailsModel> f19571a = new MutableLiveData<>();
+    private final MutableLiveData<EventDetailsModel> a = new MutableLiveData<>();
     private final MutableLiveData<List<EventDetailsModel>> b = new MutableLiveData<>();
-
-    /* renamed from: c  reason: collision with root package name */
-    private final MutableLiveData<EventIdentifyModel> f19572c = new MutableLiveData<>();
+    private final MutableLiveData<EventIdentifyModel> c = new MutableLiveData<>();
     private final MutableLiveData<List<BluedIngSelfFeed>> d = new MutableLiveData<>();
     private final MutableLiveData<Integer> e = new MutableLiveData<>();
     private String f = "";
@@ -76,7 +72,7 @@ public final class EventDetailsViewModel extends BaseViewModel {
                     if (EventDetailsViewModel.this.l() == 1 || EventDetailsViewModel.this.g().getValue() == null) {
                         EventDetailsViewModel.this.g().postValue(bluedEntityA.data);
                     } else {
-                        List<BluedIngSelfFeed> value = EventDetailsViewModel.this.g().getValue();
+                        Object value = EventDetailsViewModel.this.g().getValue();
                         if (value == null) {
                             throw new NullPointerException("null cannot be cast to non-null type kotlin.collections.MutableList<com.blued.community.model.BluedIngSelfFeed>");
                         }
@@ -139,7 +135,7 @@ public final class EventDetailsViewModel extends BaseViewModel {
             public void onUIUpdate(BluedEntityA<?> bluedEntityA) {
                 this.b.j().is_subscribe = 1;
                 this.b.d().postValue(this.b.j());
-                CommEventBusUtil.f20461a.d(this.b.j().uid);
+                CommEventBusUtil.a.d(this.b.j().uid);
                 AppMethods.d(R.string.event_sub_owner_event_success);
             }
         };
@@ -186,7 +182,7 @@ public final class EventDetailsViewModel extends BaseViewModel {
                 Intrinsics.e(parseData, "parseData");
                 this.b.j().is_subscribe = 0;
                 this.b.d().postValue(this.b.j());
-                CommEventBusUtil.f20461a.e(this.b.j().uid);
+                CommEventBusUtil.a.e(this.b.j().uid);
             }
         };
         String str = this.g.uid;
@@ -199,7 +195,7 @@ public final class EventDetailsViewModel extends BaseViewModel {
     }
 
     public final MutableLiveData<EventDetailsModel> d() {
-        return this.f19571a;
+        return this.a;
     }
 
     public final MutableLiveData<List<EventDetailsModel>> e() {
@@ -207,7 +203,7 @@ public final class EventDetailsViewModel extends BaseViewModel {
     }
 
     public final MutableLiveData<EventIdentifyModel> f() {
-        return this.f19572c;
+        return this.c;
     }
 
     public final MutableLiveData<List<BluedIngSelfFeed>> g() {
@@ -251,7 +247,7 @@ public final class EventDetailsViewModel extends BaseViewModel {
     }
 
     public final void q() {
-        EventHttpUtils eventHttpUtils = EventHttpUtils.f19079a;
+        EventHttpUtils eventHttpUtils = EventHttpUtils.a;
         BluedUIHttpResponse<BluedEntityA<EventDetailsModel>> bluedUIHttpResponse = new BluedUIHttpResponse<BluedEntityA<EventDetailsModel>>() { // from class: com.blued.community.ui.event.vm.EventDetailsViewModel$getEventDetailsData$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
@@ -292,7 +288,7 @@ public final class EventDetailsViewModel extends BaseViewModel {
     }
 
     public final void r() {
-        EventHttpUtils eventHttpUtils = EventHttpUtils.f19079a;
+        EventHttpUtils eventHttpUtils = EventHttpUtils.a;
         BluedUIHttpResponse<BluedEntityA<EventDetailsModel>> bluedUIHttpResponse = new BluedUIHttpResponse<BluedEntityA<EventDetailsModel>>() { // from class: com.blued.community.ui.event.vm.EventDetailsViewModel$getRecommendEventList$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
@@ -336,7 +332,7 @@ public final class EventDetailsViewModel extends BaseViewModel {
     }
 
     public final void s() {
-        EventHttpUtils.f19079a.b(new BluedUIHttpResponse<BluedEntityA<EventIdentifyModel>>() { // from class: com.blued.community.ui.event.vm.EventDetailsViewModel$checkIdentify$1
+        EventHttpUtils.a.b(new BluedUIHttpResponse<BluedEntityA<EventIdentifyModel>>() { // from class: com.blued.community.ui.event.vm.EventDetailsViewModel$checkIdentify$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(null);
@@ -353,7 +349,7 @@ public final class EventDetailsViewModel extends BaseViewModel {
     }
 
     public final void t() {
-        EventHttpUtils.f19079a.b(new BluedUIHttpResponse<BluedEntityA<EventDetailsModel>>() { // from class: com.blued.community.ui.event.vm.EventDetailsViewModel$exitEvent$1
+        EventHttpUtils.a.b(new BluedUIHttpResponse<BluedEntityA<EventDetailsModel>>() { // from class: com.blued.community.ui.event.vm.EventDetailsViewModel$exitEvent$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(null);
@@ -375,7 +371,7 @@ public final class EventDetailsViewModel extends BaseViewModel {
                     }
                 }
                 EventDetailsViewModel.this.d().postValue(EventDetailsViewModel.this.j());
-                CommEventBusUtil.f20461a.b(EventDetailsViewModel.this.j());
+                CommEventBusUtil.a.b(EventDetailsViewModel.this.j());
                 AppMethods.d(R.string.event_exit_event_success);
             }
 
@@ -390,7 +386,7 @@ public final class EventDetailsViewModel extends BaseViewModel {
     }
 
     public final void u() {
-        EventHttpUtils.f19079a.a(new BluedUIHttpResponse<BluedEntityA<EventDetailsModel>>() { // from class: com.blued.community.ui.event.vm.EventDetailsViewModel$toSignUp$1
+        EventHttpUtils.a.a(new BluedUIHttpResponse<BluedEntityA<EventDetailsModel>>() { // from class: com.blued.community.ui.event.vm.EventDetailsViewModel$toSignUp$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(null);
@@ -417,7 +413,7 @@ public final class EventDetailsViewModel extends BaseViewModel {
                     AppMethods.d(R.string.event_sign_up_to_exmine);
                 }
                 EventDetailsViewModel.this.d().postValue(EventDetailsViewModel.this.j());
-                CommEventBusUtil.f20461a.b(EventDetailsViewModel.this.j());
+                CommEventBusUtil.a.b(EventDetailsViewModel.this.j());
                 EventDetailsViewModel.this.q();
             }
 
@@ -430,11 +426,11 @@ public final class EventDetailsViewModel extends BaseViewModel {
 
     public final void v() {
         this.i = 1;
-        EventHttpUtils.f19079a.a(x(), this.g.id, this.g.uid, this.i, this.j, (IRequestHost) null);
+        EventHttpUtils.a.a(x(), this.g.id, this.g.uid, this.i, this.j, (IRequestHost) null);
     }
 
     public final void w() {
         this.i++;
-        EventHttpUtils.f19079a.a(x(), this.g.id, this.g.uid, this.i, this.j, (IRequestHost) null);
+        EventHttpUtils.a.a(x(), this.g.id, this.g.uid, this.i, this.j, (IRequestHost) null);
     }
 }

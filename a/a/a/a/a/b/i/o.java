@@ -10,24 +10,24 @@ import java.util.List;
 public class o {
 
     /* renamed from: a  reason: collision with root package name */
-    public int f1333a;
+    public int f1285a;
     public int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public int f1334c;
+    public int f1286c;
     public int d;
     public int e;
     public List<f> f = new ArrayList();
 
     public int a() {
-        return this.f1333a;
+        return this.f1285a;
     }
 
     public int a(int i, int i2) {
         if (this.f.size() <= i) {
             return 0;
         }
-        GLES20.glBindFramebuffer(36160, this.f1334c);
+        GLES20.glBindFramebuffer(36160, this.f1286c);
         GLES20.glFramebufferTexture2D(36160, 36064, 3553, this.d, 0);
         b(i, i2);
         GLES20.glBindFramebuffer(36160, 0);
@@ -35,7 +35,7 @@ public class o {
     }
 
     public int a(int i, int i2, float f, float f2, float f3, float f4, PreviewAppearance.ScaleType scaleType) {
-        float f5 = this.f1333a;
+        float f5 = this.f1285a;
         int i3 = (int) (f5 * f3);
         float f6 = this.b;
         int i4 = (int) (f6 * f4);
@@ -49,7 +49,7 @@ public class o {
     }
 
     public boolean a(int i, int i2, boolean z) {
-        this.f1333a = i;
+        this.f1285a = i;
         this.b = i2;
         f();
         if (z) {
@@ -84,10 +84,10 @@ public class o {
     }
 
     public void e() {
-        int i = this.f1334c;
+        int i = this.f1286c;
         if (i != 0) {
             GLES20.glDeleteFramebuffers(1, new int[]{i}, 0);
-            this.f1334c = 0;
+            this.f1286c = 0;
         }
         int i2 = this.d;
         if (i2 != 0) {
@@ -102,6 +102,6 @@ public class o {
     }
 
     public final void f() {
-        this.f1334c = a.a.a.a.a.a.h.f.c();
+        this.f1286c = a.a.a.a.a.a.h.f.c();
     }
 }

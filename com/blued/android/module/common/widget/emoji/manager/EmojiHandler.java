@@ -7,20 +7,16 @@ import java.util.List;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/widget/emoji/manager/EmojiHandler.class */
 public final class EmojiHandler {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static EmojiHandler f11139a;
+    private static EmojiHandler a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/widget/emoji/manager/EmojiHandler$Range.class */
     public static final class Range {
-
-        /* renamed from: a  reason: collision with root package name */
-        final int f11140a;
+        final int a;
         final int b;
 
         Range(int i, int i2) {
-            this.f11140a = i;
+            this.a = i;
             this.b = i2;
         }
     }
@@ -28,20 +24,18 @@ public final class EmojiHandler {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/widget/emoji/manager/EmojiHandler$SpanRangeList.class */
     public static final class SpanRangeList {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final List<Range> f11141a = new ArrayList();
+        private final List<Range> a = new ArrayList();
 
         SpanRangeList(Spannable spannable) {
             EmojiSpan[] emojiSpanArr;
             for (EmojiSpan emojiSpan : (EmojiSpan[]) spannable.getSpans(0, spannable.length(), EmojiSpan.class)) {
-                this.f11141a.add(new Range(spannable.getSpanStart(emojiSpan), spannable.getSpanEnd(emojiSpan)));
+                this.a.add(new Range(spannable.getSpanStart(emojiSpan), spannable.getSpanEnd(emojiSpan)));
             }
         }
 
         int a(int i) {
-            for (Range range : this.f11141a) {
-                if (range.f11140a == i) {
+            for (Range range : this.a) {
+                if (range.a == i) {
                     return range.b;
                 }
             }
@@ -49,9 +43,9 @@ public final class EmojiHandler {
         }
 
         int b(int i) {
-            for (Range range : this.f11141a) {
-                if (range.f11140a > i) {
-                    return range.f11140a;
+            for (Range range : this.a) {
+                if (range.a > i) {
+                    return range.a;
                 }
             }
             return -1;
@@ -62,10 +56,10 @@ public final class EmojiHandler {
     }
 
     public static EmojiHandler a() {
-        if (f11139a == null) {
-            f11139a = new EmojiHandler();
+        if (a == null) {
+            a = new EmojiHandler();
         }
-        return f11139a;
+        return a;
     }
 
     public void a(Context context, Spannable spannable, int i, int i2, int i3, int i4, int i5, boolean z) {

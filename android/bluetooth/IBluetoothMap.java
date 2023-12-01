@@ -24,9 +24,8 @@ public interface IBluetoothMap extends IInterface {
         static final int TRANSACTION_isConnected = 5;
         static final int TRANSACTION_setPriority = 9;
 
-        /* JADX INFO: Access modifiers changed from: private */
         /* loaded from: source-9557208-dex2jar.jar:android/bluetooth/IBluetoothMap$Stub$Proxy.class */
-        public static class Proxy implements IBluetoothMap {
+        private static class Proxy implements IBluetoothMap {
             private IBinder mRemote;
 
             Proxy(IBinder iBinder) {

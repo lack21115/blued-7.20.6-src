@@ -4,12 +4,12 @@ package com.scwang.smartrefresh.layout.util;
 public class DelayedRunnable implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public long f27997a;
+    public long f14309a;
     private Runnable b;
 
     public DelayedRunnable(Runnable runnable, long j) {
         this.b = runnable;
-        this.f27997a = j;
+        this.f14309a = j;
     }
 
     @Override // java.lang.Runnable

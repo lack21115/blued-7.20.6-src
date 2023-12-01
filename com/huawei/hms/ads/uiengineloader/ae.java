@@ -6,14 +6,14 @@ import java.io.Closeable;
 public abstract class ae {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f22542a = "StreamUtil";
+    public static final String f8934a = "StreamUtil";
 
     public static void a(Closeable closeable) {
         if (closeable != null) {
             try {
                 closeable.close();
             } catch (Throwable th) {
-                aa.c(f22542a, "close exception");
+                aa.c(f8934a, "close exception");
             }
         }
     }

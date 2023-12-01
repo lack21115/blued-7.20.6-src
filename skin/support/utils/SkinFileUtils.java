@@ -21,6 +21,6 @@ public class SkinFileUtils {
 
     private static String b(Context context) {
         File externalCacheDir;
-        return (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED) && (externalCacheDir = context.getExternalCacheDir()) != null && (externalCacheDir.exists() || externalCacheDir.mkdirs())) ? externalCacheDir.getAbsolutePath() : context.getCacheDir().getAbsolutePath();
+        return (Environment.getExternalStorageState().equals("mounted") && (externalCacheDir = context.getExternalCacheDir()) != null && (externalCacheDir.exists() || externalCacheDir.mkdirs())) ? externalCacheDir.getAbsolutePath() : context.getCacheDir().getAbsolutePath();
     }
 }

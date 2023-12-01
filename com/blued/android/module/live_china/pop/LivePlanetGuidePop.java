@@ -28,9 +28,7 @@ import kotlin.jvm.internal.Ref;
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/pop/LivePlanetGuidePop.class */
 public final class LivePlanetGuidePop extends CenterPopupView {
     private LivePlanetGuideShadeView A;
-
-    /* renamed from: c  reason: collision with root package name */
-    private FragmentActivity f13987c;
+    private FragmentActivity c;
     private DialogLivePlanetBinding d;
     private FrameLayout e;
     private FrameLayout f;
@@ -52,11 +50,11 @@ public final class LivePlanetGuidePop extends CenterPopupView {
         super(context);
         Intrinsics.e(context, "context");
         Intrinsics.e(activity, "activity");
-        this.f13987c = activity;
+        this.c = activity;
     }
 
     private final void A() {
-        int a2;
+        int a;
         ImageView imageView = this.k;
         ImageView imageView2 = imageView;
         if (imageView == null) {
@@ -72,9 +70,9 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             dialogLivePlanetBinding2 = null;
         }
         dialogLivePlanetBinding2.b.getLocationOnScreen(iArr);
-        int a3 = DensityUtils.a(getContext(), 6.0f);
+        int a2 = DensityUtils.a(getContext(), 6.0f);
         iArr[0] = iArr[0] - DensityUtils.a(getContext(), 4.0f);
-        iArr[1] = iArr[1] - a3;
+        iArr[1] = iArr[1] - a2;
         DialogLivePlanetBinding dialogLivePlanetBinding3 = this.d;
         DialogLivePlanetBinding dialogLivePlanetBinding4 = dialogLivePlanetBinding3;
         if (dialogLivePlanetBinding3 == null) {
@@ -89,10 +87,10 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             dialogLivePlanetBinding6 = null;
         }
         int height = dialogLivePlanetBinding6.b.getHeight();
-        int a4 = DensityUtils.a(getContext(), 27.0f);
-        int a5 = DensityUtils.a(getContext(), 81.0f);
-        int a6 = iArr[0] + DensityUtils.a(getContext(), 72.0f);
-        int i = (iArr[1] - a4) - a5;
+        int a3 = DensityUtils.a(getContext(), 27.0f);
+        int a4 = DensityUtils.a(getContext(), 81.0f);
+        int a5 = iArr[0] + DensityUtils.a(getContext(), 72.0f);
+        int i = (iArr[1] - a3) - a4;
         ImageView imageView3 = this.i;
         ImageView imageView4 = imageView3;
         if (imageView3 == null) {
@@ -113,30 +111,30 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("fl_step_root");
             frameLayout2 = null;
         }
-        frameLayout2.animate().translationX(a6).translationY(i).setDuration(350L).start();
-        int a7 = DensityUtils.a(getContext(), 227.0f);
-        int a8 = DensityUtils.a(getContext(), 14.0f);
-        int a9 = DensityUtils.a(getContext(), 105.0f);
-        int a10 = DensityUtils.a(getContext(), 30.0f);
+        frameLayout2.animate().translationX(a5).translationY(i).setDuration(350L).start();
+        int a6 = DensityUtils.a(getContext(), 227.0f);
+        int a7 = DensityUtils.a(getContext(), 14.0f);
+        int a8 = DensityUtils.a(getContext(), 105.0f);
+        int a9 = DensityUtils.a(getContext(), 30.0f);
         ImageView imageView7 = this.k;
         ImageView imageView8 = imageView7;
         if (imageView7 == null) {
             Intrinsics.c("iv_next");
             imageView8 = null;
         }
-        int i2 = a7 + a6;
-        ViewPropertyAnimator translationX = imageView8.animate().translationX(i2 - a9);
-        int i3 = a5 + i;
-        translationX.translationY(i3 + a8).setDuration(350L).start();
+        int i2 = a6 + a5;
+        ViewPropertyAnimator translationX = imageView8.animate().translationX(i2 - a8);
+        int i3 = a4 + i;
+        translationX.translationY(i3 + a7).setDuration(350L).start();
         ImageView imageView9 = this.t;
         ImageView imageView10 = imageView9;
         if (imageView9 == null) {
             Intrinsics.c("iv_close");
             imageView10 = null;
         }
-        imageView10.animate().translationX(i2 - a10).translationY((i - a8) - a10).setDuration(350L).start();
-        int a11 = DensityUtils.a(getContext(), 3.0f);
-        int a12 = DensityUtils.a(getContext(), 16.0f);
+        imageView10.animate().translationX(i2 - a9).translationY((i - a7) - a9).setDuration(350L).start();
+        int a10 = DensityUtils.a(getContext(), 3.0f);
+        int a11 = DensityUtils.a(getContext(), 16.0f);
         View view = this.x;
         View view2 = view;
         if (view == null) {
@@ -150,7 +148,7 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("view_line");
             view4 = null;
         }
-        view4.setTranslationX(a6 + a12);
+        view4.setTranslationX(a5 + a11);
         View view5 = this.x;
         View view6 = view5;
         if (view5 == null) {
@@ -164,7 +162,7 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("view_line");
             view8 = null;
         }
-        view8.setLayoutParams(new FrameLayout.LayoutParams(a11, a4));
+        view8.setLayoutParams(new FrameLayout.LayoutParams(a10, a3));
         final Ref.FloatRef floatRef = new Ref.FloatRef();
         View view9 = this.x;
         View view10 = view9;
@@ -172,7 +170,7 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("view_line");
             view10 = null;
         }
-        floatRef.f42542a = view10.getTranslationX();
+        floatRef.a = view10.getTranslationX();
         final Ref.FloatRef floatRef2 = new Ref.FloatRef();
         View view11 = this.x;
         View view12 = view11;
@@ -180,19 +178,19 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("view_line");
             view12 = null;
         }
-        floatRef2.f42542a = view12.getTranslationY() + a4;
+        floatRef2.a = view12.getTranslationY() + a3;
         final Ref.FloatRef floatRef3 = new Ref.FloatRef();
-        floatRef3.f42542a = 1.0f;
+        floatRef3.a = 1.0f;
         final Ref.FloatRef floatRef4 = new Ref.FloatRef();
-        floatRef4.f42542a = 1.0f;
+        floatRef4.a = 1.0f;
         final Ref.FloatRef floatRef5 = new Ref.FloatRef();
-        floatRef5.f42542a = iArr[0];
+        floatRef5.a = iArr[0];
         final Ref.FloatRef floatRef6 = new Ref.FloatRef();
-        floatRef6.f42542a = iArr[1];
+        floatRef6.a = iArr[1];
         final Ref.FloatRef floatRef7 = new Ref.FloatRef();
-        floatRef7.f42542a = width + (a2 * 2);
+        floatRef7.a = width + (a * 2);
         final Ref.FloatRef floatRef8 = new Ref.FloatRef();
-        floatRef8.f42542a = height + (a3 * 2);
+        floatRef8.a = height + (a2 * 2);
         View view13 = this.v;
         View view14 = view13;
         if (view13 == null) {
@@ -243,7 +241,7 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("lpgc");
             livePlanetGuideShadeView4 = null;
         }
-        livePlanetGuideShadeView4.a((int) floatRef.f42542a, (int) floatRef2.f42542a, (int) floatRef3.f42542a, (int) floatRef4.f42542a);
+        livePlanetGuideShadeView4.a((int) floatRef.a, (int) floatRef2.a, (int) floatRef3.a, (int) floatRef4.a);
         LivePlanetGuideShadeView livePlanetGuideShadeView5 = this.A;
         if (livePlanetGuideShadeView5 == null) {
             Intrinsics.c("lpgc");
@@ -272,7 +270,7 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("view_bordwr_1");
             view2 = null;
         }
-        floatRef.f42542a = view2.getTranslationX();
+        floatRef.a = view2.getTranslationX();
         final Ref.FloatRef floatRef2 = new Ref.FloatRef();
         View view3 = this.v;
         View view4 = view3;
@@ -280,7 +278,7 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("view_bordwr_1");
             view4 = null;
         }
-        floatRef2.f42542a = view4.getTranslationY();
+        floatRef2.a = view4.getTranslationY();
         final Ref.IntRef intRef = new Ref.IntRef();
         View view5 = this.v;
         View view6 = view5;
@@ -288,7 +286,7 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("view_bordwr_1");
             view6 = null;
         }
-        intRef.f42543a = view6.getWidth();
+        intRef.a = view6.getWidth();
         final Ref.IntRef intRef2 = new Ref.IntRef();
         View view7 = this.v;
         View view8 = view7;
@@ -296,8 +294,8 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("view_bordwr_1");
             view8 = null;
         }
-        intRef2.f42543a = view8.getHeight();
-        int a2 = DensityUtils.a(getContext(), 27.0f);
+        intRef2.a = view8.getHeight();
+        int a = DensityUtils.a(getContext(), 27.0f);
         final Ref.FloatRef floatRef3 = new Ref.FloatRef();
         View view9 = this.x;
         View view10 = view9;
@@ -305,7 +303,7 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("view_line");
             view10 = null;
         }
-        floatRef3.f42542a = view10.getTranslationX();
+        floatRef3.a = view10.getTranslationX();
         final Ref.FloatRef floatRef4 = new Ref.FloatRef();
         View view11 = this.x;
         View view12 = view11;
@@ -313,11 +311,11 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("view_line");
             view12 = null;
         }
-        floatRef4.f42542a = view12.getTranslationY() + a2;
+        floatRef4.a = view12.getTranslationY() + a;
         final Ref.FloatRef floatRef5 = new Ref.FloatRef();
-        floatRef5.f42542a = 1.0f;
+        floatRef5.a = 1.0f;
         final Ref.FloatRef floatRef6 = new Ref.FloatRef();
-        floatRef6.f42542a = 1.0f;
+        floatRef6.a = 1.0f;
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         ofFloat.setDuration(300L);
         ofFloat.setStartDelay(0L);
@@ -354,13 +352,13 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("lpgc");
             livePlanetGuideShadeView2 = null;
         }
-        livePlanetGuideShadeView2.a((int) floatRef.f42542a, (int) floatRef2.f42542a, intRef.f42543a, intRef2.f42543a);
+        livePlanetGuideShadeView2.a((int) floatRef.a, (int) floatRef2.a, intRef.a, intRef2.a);
         LivePlanetGuideShadeView livePlanetGuideShadeView3 = this.A;
         if (livePlanetGuideShadeView3 == null) {
             Intrinsics.c("lpgc");
             livePlanetGuideShadeView3 = null;
         }
-        livePlanetGuideShadeView3.a((int) floatRef3.f42542a, (int) floatRef4.f42542a, (int) floatRef5.f42542a, (int) floatRef6.f42542a, ofFloat.getDuration(), ofFloat.getStartDelay());
+        livePlanetGuideShadeView3.a((int) floatRef3.a, (int) floatRef4.a, (int) floatRef5.a, (int) floatRef6.a, ofFloat.getDuration(), ofFloat.getStartDelay());
         ImageView imageView3 = this.t;
         ImageView imageView4 = imageView3;
         if (imageView3 == null) {
@@ -411,7 +409,7 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             dialogLivePlanetBinding4 = null;
         }
         int width = dialogLivePlanetBinding4.v.getWidth();
-        int a2 = DensityUtils.a(getContext(), 20.0f);
+        int a = DensityUtils.a(getContext(), 20.0f);
         DialogLivePlanetBinding dialogLivePlanetBinding5 = this.d;
         DialogLivePlanetBinding dialogLivePlanetBinding6 = dialogLivePlanetBinding5;
         if (dialogLivePlanetBinding5 == null) {
@@ -419,10 +417,10 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             dialogLivePlanetBinding6 = null;
         }
         int height = dialogLivePlanetBinding6.v.getHeight() - DensityUtils.a(getContext(), 10.0f);
-        int a3 = DensityUtils.a(getContext(), 54.0f);
-        int a4 = DensityUtils.a(getContext(), 37.0f);
-        int i = iArr[0] - a3;
-        int i2 = iArr[1] + height + a4;
+        int a2 = DensityUtils.a(getContext(), 54.0f);
+        int a3 = DensityUtils.a(getContext(), 37.0f);
+        int i = iArr[0] - a2;
+        int i2 = iArr[1] + height + a3;
         ImageView imageView3 = this.j;
         ImageView imageView4 = imageView3;
         if (imageView3 == null) {
@@ -444,9 +442,9 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             frameLayout2 = null;
         }
         frameLayout2.animate().translationX(i).translationY(i2).setDuration(350L).start();
-        int a5 = DensityUtils.a(getContext(), 81.0f);
-        int a6 = DensityUtils.a(getContext(), 60.0f);
-        int a7 = DensityUtils.a(getContext(), 20.0f);
+        int a4 = DensityUtils.a(getContext(), 81.0f);
+        int a5 = DensityUtils.a(getContext(), 60.0f);
+        int a6 = DensityUtils.a(getContext(), 20.0f);
         ImageView imageView7 = this.u;
         ImageView imageView8 = imageView7;
         if (imageView7 == null) {
@@ -467,14 +465,14 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("iv_start_planet");
             imageView12 = null;
         }
-        imageView12.setTranslationX(i - a7);
+        imageView12.setTranslationX(i - a6);
         ImageView imageView13 = this.u;
         ImageView imageView14 = imageView13;
         if (imageView13 == null) {
             Intrinsics.c("iv_start_planet");
             imageView14 = null;
         }
-        imageView14.setTranslationY(a5 + i2 + a6);
+        imageView14.setTranslationY(a4 + i2 + a5);
         ImageView imageView15 = this.u;
         ImageView imageView16 = imageView15;
         if (imageView15 == null) {
@@ -506,10 +504,10 @@ public final class LivePlanetGuidePop extends CenterPopupView {
         ofFloat2.setRepeatCount(-1);
         ofFloat2.setRepeatMode(ofFloat2.getRepeatCount());
         ofFloat2.start();
-        int a8 = DensityUtils.a(getContext(), 3.0f);
-        int a9 = DensityUtils.a(getContext(), 124.0f);
-        int a10 = DensityUtils.a(getContext(), 38.0f);
-        int a11 = DensityUtils.a(getContext(), 44.0f);
+        int a7 = DensityUtils.a(getContext(), 3.0f);
+        int a8 = DensityUtils.a(getContext(), 124.0f);
+        int a9 = DensityUtils.a(getContext(), 38.0f);
+        int a10 = DensityUtils.a(getContext(), 44.0f);
         View view = this.x;
         View view2 = view;
         if (view == null) {
@@ -523,21 +521,21 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("view_line");
             view4 = null;
         }
-        view4.setTranslationX(i + a9);
+        view4.setTranslationX(i + a8);
         View view5 = this.x;
         View view6 = view5;
         if (view5 == null) {
             Intrinsics.c("view_line");
             view6 = null;
         }
-        view6.setTranslationY(i2 - a10);
+        view6.setTranslationY(i2 - a9);
         View view7 = this.x;
         View view8 = view7;
         if (view7 == null) {
             Intrinsics.c("view_line");
             view8 = null;
         }
-        view8.setLayoutParams(new FrameLayout.LayoutParams(a8, a11));
+        view8.setLayoutParams(new FrameLayout.LayoutParams(a7, a10));
         final Ref.FloatRef floatRef = new Ref.FloatRef();
         View view9 = this.x;
         View view10 = view9;
@@ -545,7 +543,7 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("view_line");
             view10 = null;
         }
-        floatRef.f42542a = view10.getTranslationX();
+        floatRef.a = view10.getTranslationX();
         final Ref.FloatRef floatRef2 = new Ref.FloatRef();
         View view11 = this.x;
         View view12 = view11;
@@ -553,19 +551,19 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("view_line");
             view12 = null;
         }
-        floatRef2.f42542a = view12.getTranslationY();
+        floatRef2.a = view12.getTranslationY();
         final Ref.FloatRef floatRef3 = new Ref.FloatRef();
-        floatRef3.f42542a = 1.0f;
+        floatRef3.a = 1.0f;
         final Ref.FloatRef floatRef4 = new Ref.FloatRef();
-        floatRef4.f42542a = 1.0f;
+        floatRef4.a = 1.0f;
         final Ref.FloatRef floatRef5 = new Ref.FloatRef();
-        floatRef5.f42542a = iArr[0];
+        floatRef5.a = iArr[0];
         final Ref.FloatRef floatRef6 = new Ref.FloatRef();
-        floatRef6.f42542a = iArr[1];
+        floatRef6.a = iArr[1];
         final Ref.FloatRef floatRef7 = new Ref.FloatRef();
-        floatRef7.f42542a = width + a2;
+        floatRef7.a = width + a;
         final Ref.FloatRef floatRef8 = new Ref.FloatRef();
-        floatRef8.f42542a = height;
+        floatRef8.a = height;
         View view13 = this.v;
         View view14 = view13;
         if (view13 == null) {
@@ -609,7 +607,7 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("lpgc");
             livePlanetGuideShadeView2 = null;
         }
-        livePlanetGuideShadeView2.a((int) floatRef.f42542a, (int) floatRef2.f42542a, (int) floatRef3.f42542a, (int) floatRef4.f42542a);
+        livePlanetGuideShadeView2.a((int) floatRef.a, (int) floatRef2.a, (int) floatRef3.a, (int) floatRef4.a);
         LivePlanetGuideShadeView livePlanetGuideShadeView3 = this.A;
         if (livePlanetGuideShadeView3 == null) {
             Intrinsics.c("lpgc");
@@ -648,7 +646,7 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("lpgc");
             livePlanetGuideShadeView2 = null;
         }
-        livePlanetGuideShadeView2.a((int) border1TargetX.f42542a, (int) border1TargetY.f42542a, (int) border1TargetW.f42542a, (int) border1TargetH.f42542a, valueAnimator.getDuration(), valueAnimator.getStartDelay());
+        livePlanetGuideShadeView2.a((int) border1TargetX.a, (int) border1TargetY.a, (int) border1TargetW.a, (int) border1TargetH.a, valueAnimator.getDuration(), valueAnimator.getStartDelay());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -674,21 +672,21 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("view_bordwr_1");
             view2 = null;
         }
-        view2.setTranslationX(border1CurrentX.f42542a + ((border1TargetX.f42542a - border1CurrentX.f42542a) * floatValue));
+        view2.setTranslationX(border1CurrentX.a + ((border1TargetX.a - border1CurrentX.a) * floatValue));
         View view3 = this$0.v;
         View view4 = view3;
         if (view3 == null) {
             Intrinsics.c("view_bordwr_1");
             view4 = null;
         }
-        view4.setTranslationY(border1CurrentY.f42542a + ((border1TargetY.f42542a - border1CurrentY.f42542a) * floatValue));
+        view4.setTranslationY(border1CurrentY.a + ((border1TargetY.a - border1CurrentY.a) * floatValue));
         View view5 = this$0.v;
         View view6 = view5;
         if (view5 == null) {
             Intrinsics.c("view_bordwr_1");
             view6 = null;
         }
-        view6.setLayoutParams(new FrameLayout.LayoutParams((int) (border1CurrentW.f42542a + ((border1TargetW.f42542a - border1CurrentW.f42542a) * floatValue)), (int) (border1CurrentH.f42542a + ((border1TargetH.f42542a - border1CurrentH.f42542a) * floatValue))));
+        view6.setLayoutParams(new FrameLayout.LayoutParams((int) (border1CurrentW.a + ((border1TargetW.a - border1CurrentW.a) * floatValue)), (int) (border1CurrentH.a + ((border1TargetH.a - border1CurrentH.a) * floatValue))));
         View view7 = this$0.v;
         View view8 = view7;
         if (view7 == null) {
@@ -726,21 +724,21 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("view_bordwr_1");
             view2 = null;
         }
-        view2.setTranslationX(border1CurrentX.f42542a + ((border1TargetX.f42542a - border1CurrentX.f42542a) * floatValue));
+        view2.setTranslationX(border1CurrentX.a + ((border1TargetX.a - border1CurrentX.a) * floatValue));
         View view3 = this$0.v;
         View view4 = view3;
         if (view3 == null) {
             Intrinsics.c("view_bordwr_1");
             view4 = null;
         }
-        view4.setTranslationY(border1CurrentY.f42542a + ((border1TargetY.f42542a - border1CurrentY.f42542a) * floatValue));
+        view4.setTranslationY(border1CurrentY.a + ((border1TargetY.a - border1CurrentY.a) * floatValue));
         View view5 = this$0.v;
         View view6 = view5;
         if (view5 == null) {
             Intrinsics.c("view_bordwr_1");
             view6 = null;
         }
-        view6.setLayoutParams(new FrameLayout.LayoutParams((int) (border1CurrentW.f42543a + ((border1TargetW.f42542a - border1CurrentW.f42543a) * floatValue)), (int) (border1CurrentH.f42543a + ((border1TargetH.f42542a - border1CurrentH.f42543a) * floatValue))));
+        view6.setLayoutParams(new FrameLayout.LayoutParams((int) (border1CurrentW.a + ((border1TargetW.a - border1CurrentW.a) * floatValue)), (int) (border1CurrentH.a + ((border1TargetH.a - border1CurrentH.a) * floatValue))));
         View view7 = this$0.v;
         View view8 = view7;
         if (view7 == null) {
@@ -778,21 +776,21 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("view_bordwr_1");
             view2 = null;
         }
-        view2.setTranslationX(border1CurrentX.f42543a + ((border1TargetX.f42542a - border1CurrentX.f42543a) * floatValue));
+        view2.setTranslationX(border1CurrentX.a + ((border1TargetX.a - border1CurrentX.a) * floatValue));
         View view3 = this$0.v;
         View view4 = view3;
         if (view3 == null) {
             Intrinsics.c("view_bordwr_1");
             view4 = null;
         }
-        view4.setTranslationY(border1CurrentY.f42542a + ((border1TargetY.f42542a - border1CurrentY.f42542a) * floatValue));
+        view4.setTranslationY(border1CurrentY.a + ((border1TargetY.a - border1CurrentY.a) * floatValue));
         View view5 = this$0.v;
         View view6 = view5;
         if (view5 == null) {
             Intrinsics.c("view_bordwr_1");
             view6 = null;
         }
-        view6.setLayoutParams(new FrameLayout.LayoutParams((int) (border1CurrentW.f42542a + ((border1TargetW.f42542a - border1CurrentW.f42542a) * floatValue)), (int) (border1CurrentH.f42542a + ((border1TargetH.f42542a - border1CurrentH.f42542a) * floatValue))));
+        view6.setLayoutParams(new FrameLayout.LayoutParams((int) (border1CurrentW.a + ((border1TargetW.a - border1CurrentW.a) * floatValue)), (int) (border1CurrentH.a + ((border1TargetH.a - border1CurrentH.a) * floatValue))));
         View view7 = this$0.v;
         View view8 = view7;
         if (view7 == null) {
@@ -816,8 +814,8 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("lpgc");
             livePlanetGuideShadeView = null;
         }
-        int i = ((int[]) myAirshipPoint.f42545a)[0];
-        int i2 = ((int[]) myAirshipPoint.f42545a)[1];
+        int i = ((int[]) myAirshipPoint.a)[0];
+        int i2 = ((int[]) myAirshipPoint.a)[1];
         DialogLivePlanetBinding dialogLivePlanetBinding = this$0.d;
         DialogLivePlanetBinding dialogLivePlanetBinding2 = dialogLivePlanetBinding;
         if (dialogLivePlanetBinding == null) {
@@ -869,7 +867,7 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("lpgc");
             livePlanetGuideShadeView2 = null;
         }
-        livePlanetGuideShadeView2.a((int) border1TargetX.f42542a, (int) border1TargetY.f42542a, (int) border1TargetW.f42542a, (int) border1TargetH.f42542a, valueAnimator.getDuration(), valueAnimator.getStartDelay());
+        livePlanetGuideShadeView2.a((int) border1TargetX.a, (int) border1TargetY.a, (int) border1TargetW.a, (int) border1TargetH.a, valueAnimator.getDuration(), valueAnimator.getStartDelay());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -895,21 +893,21 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("view_bordwr_2");
             view2 = null;
         }
-        view2.setTranslationX(border2CurrentX.f42542a + ((border2TargetX.f42542a - border2CurrentX.f42542a) * floatValue));
+        view2.setTranslationX(border2CurrentX.a + ((border2TargetX.a - border2CurrentX.a) * floatValue));
         View view3 = this$0.w;
         View view4 = view3;
         if (view3 == null) {
             Intrinsics.c("view_bordwr_2");
             view4 = null;
         }
-        view4.setTranslationY(border2CurrentY.f42542a + ((border2TargetY.f42542a - border2CurrentY.f42542a) * floatValue));
+        view4.setTranslationY(border2CurrentY.a + ((border2TargetY.a - border2CurrentY.a) * floatValue));
         View view5 = this$0.w;
         View view6 = view5;
         if (view5 == null) {
             Intrinsics.c("view_bordwr_2");
             view6 = null;
         }
-        view6.setLayoutParams(new FrameLayout.LayoutParams((int) (border2CurrentW.f42542a + ((border2TargetW.f42542a - border2CurrentW.f42542a) * floatValue)), (int) (border2CurrentH.f42542a + ((border2TargetH.f42542a - border2CurrentH.f42542a) * floatValue))));
+        view6.setLayoutParams(new FrameLayout.LayoutParams((int) (border2CurrentW.a + ((border2TargetW.a - border2CurrentW.a) * floatValue)), (int) (border2CurrentH.a + ((border2TargetH.a - border2CurrentH.a) * floatValue))));
         View view7 = this$0.w;
         View view8 = view7;
         if (view7 == null) {
@@ -947,21 +945,21 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("view_bordwr_1");
             view2 = null;
         }
-        view2.setTranslationX(border1CurrentX.f42542a + ((border1TargetX.f42542a - border1CurrentX.f42542a) * floatValue));
+        view2.setTranslationX(border1CurrentX.a + ((border1TargetX.a - border1CurrentX.a) * floatValue));
         View view3 = this$0.v;
         View view4 = view3;
         if (view3 == null) {
             Intrinsics.c("view_bordwr_1");
             view4 = null;
         }
-        view4.setTranslationY(border1CurrentY.f42542a + ((border1TargetY.f42542a - border1CurrentY.f42542a) * floatValue));
+        view4.setTranslationY(border1CurrentY.a + ((border1TargetY.a - border1CurrentY.a) * floatValue));
         View view5 = this$0.v;
         View view6 = view5;
         if (view5 == null) {
             Intrinsics.c("view_bordwr_1");
             view6 = null;
         }
-        view6.setLayoutParams(new FrameLayout.LayoutParams((int) (border1CurrentW.f42543a + ((border1TargetW.f42542a - border1CurrentW.f42543a) * floatValue)), (int) (border1CurrentH.f42543a + ((border1TargetH.f42542a - border1CurrentH.f42543a) * floatValue))));
+        view6.setLayoutParams(new FrameLayout.LayoutParams((int) (border1CurrentW.a + ((border1TargetW.a - border1CurrentW.a) * floatValue)), (int) (border1CurrentH.a + ((border1TargetH.a - border1CurrentH.a) * floatValue))));
         View view7 = this$0.v;
         View view8 = view7;
         if (view7 == null) {
@@ -976,7 +974,7 @@ public final class LivePlanetGuidePop extends CenterPopupView {
         view8.setLayoutParams(view9.getLayoutParams());
     }
 
-    /* JADX WARN: Type inference failed for: r1v3, types: [T, int[]] */
+    /* JADX WARN: Type inference failed for: r1v3, types: [int[], T] */
     private final void c() {
         ImageView imageView = this.k;
         ImageView imageView2 = imageView;
@@ -986,18 +984,18 @@ public final class LivePlanetGuidePop extends CenterPopupView {
         }
         imageView2.setClickable(false);
         final Ref.ObjectRef objectRef = new Ref.ObjectRef();
-        objectRef.f42545a = new int[2];
+        objectRef.a = new int[2];
         DialogLivePlanetBinding dialogLivePlanetBinding = this.d;
         DialogLivePlanetBinding dialogLivePlanetBinding2 = dialogLivePlanetBinding;
         if (dialogLivePlanetBinding == null) {
             Intrinsics.c("vb");
             dialogLivePlanetBinding2 = null;
         }
-        dialogLivePlanetBinding2.r.getLocationOnScreen((int[]) objectRef.f42545a);
-        int a2 = DensityUtils.a(getContext(), 205.0f);
-        int a3 = DensityUtils.a(getContext(), 46.0f);
-        int a4 = DensityUtils.a(getContext(), 87.0f);
-        int a5 = DensityUtils.a(getContext(), 88.0f);
+        dialogLivePlanetBinding2.r.getLocationOnScreen((int[]) objectRef.a);
+        int a = DensityUtils.a(getContext(), 205.0f);
+        int a2 = DensityUtils.a(getContext(), 46.0f);
+        int a3 = DensityUtils.a(getContext(), 87.0f);
+        int a4 = DensityUtils.a(getContext(), 88.0f);
         FrameLayout frameLayout = this.e;
         FrameLayout frameLayout2 = frameLayout;
         if (frameLayout == null) {
@@ -1005,14 +1003,14 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             frameLayout2 = null;
         }
         int width = frameLayout2.getWidth();
-        int i = (((int[]) objectRef.f42545a)[1] - a4) - a5;
+        int i = (((int[]) objectRef.a)[1] - a3) - a4;
         FrameLayout frameLayout3 = this.f;
         FrameLayout frameLayout4 = frameLayout3;
         if (frameLayout3 == null) {
             Intrinsics.c("fl_step_root");
             frameLayout4 = null;
         }
-        float f = (width - a2) - a3;
+        float f = (width - a) - a2;
         frameLayout4.setTranslationX(f);
         FrameLayout frameLayout5 = this.f;
         FrameLayout frameLayout6 = frameLayout5;
@@ -1021,9 +1019,9 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             frameLayout6 = null;
         }
         frameLayout6.setTranslationY(i);
-        int a6 = DensityUtils.a(getContext(), 14.0f);
-        int a7 = DensityUtils.a(getContext(), 47.0f);
-        int a8 = DensityUtils.a(getContext(), 30.0f);
+        int a5 = DensityUtils.a(getContext(), 14.0f);
+        int a6 = DensityUtils.a(getContext(), 47.0f);
+        int a7 = DensityUtils.a(getContext(), 30.0f);
         ImageView imageView3 = this.k;
         ImageView imageView4 = imageView3;
         if (imageView3 == null) {
@@ -1037,7 +1035,7 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("iv_next");
             imageView6 = null;
         }
-        imageView6.setTranslationY(a4 + i + a6);
+        imageView6.setTranslationY(a3 + i + a5);
         ImageView imageView7 = this.t;
         ImageView imageView8 = imageView7;
         if (imageView7 == null) {
@@ -1050,17 +1048,17 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("fl_root");
             frameLayout8 = null;
         }
-        imageView8.setTranslationX((frameLayout8.getWidth() - a7) - a8);
+        imageView8.setTranslationX((frameLayout8.getWidth() - a6) - a7);
         ImageView imageView9 = this.t;
         ImageView imageView10 = imageView9;
         if (imageView9 == null) {
             Intrinsics.c("iv_close");
             imageView10 = null;
         }
-        imageView10.setTranslationY((i - a6) - a8);
-        int a9 = DensityUtils.a(getContext(), 3.0f);
-        int a10 = DensityUtils.a(getContext(), 69.0f);
-        int a11 = DensityUtils.a(getContext(), 92.0f);
+        imageView10.setTranslationY((i - a5) - a7);
+        int a8 = DensityUtils.a(getContext(), 3.0f);
+        int a9 = DensityUtils.a(getContext(), 69.0f);
+        int a10 = DensityUtils.a(getContext(), 92.0f);
         View view = this.x;
         View view2 = view;
         if (view == null) {
@@ -1080,7 +1078,7 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("fl_root");
             frameLayout10 = null;
         }
-        view4.setTranslationX(frameLayout10.getWidth() - a10);
+        view4.setTranslationX(frameLayout10.getWidth() - a9);
         View view5 = this.x;
         View view6 = view5;
         if (view5 == null) {
@@ -1093,14 +1091,14 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("fl_step_root");
             frameLayout12 = null;
         }
-        view6.setTranslationY((i + frameLayout12.getHeight()) - a9);
+        view6.setTranslationY((i + frameLayout12.getHeight()) - a8);
         View view7 = this.x;
         View view8 = view7;
         if (view7 == null) {
             Intrinsics.c("view_line");
             view8 = null;
         }
-        view8.setLayoutParams(new FrameLayout.LayoutParams(a9, a11));
+        view8.setLayoutParams(new FrameLayout.LayoutParams(a8, a10));
         final Ref.IntRef intRef = new Ref.IntRef();
         View view9 = this.x;
         View view10 = view9;
@@ -1108,17 +1106,17 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("view_line");
             view10 = null;
         }
-        intRef.f42543a = (int) view10.getTranslationX();
+        intRef.a = (int) view10.getTranslationX();
         final Ref.FloatRef floatRef = new Ref.FloatRef();
-        floatRef.f42542a = ((int[]) objectRef.f42545a)[1];
+        floatRef.a = ((int[]) objectRef.a)[1];
         final Ref.FloatRef floatRef2 = new Ref.FloatRef();
-        floatRef2.f42542a = 1.0f;
+        floatRef2.a = 1.0f;
         final Ref.FloatRef floatRef3 = new Ref.FloatRef();
-        floatRef3.f42542a = 1.0f;
+        floatRef3.a = 1.0f;
         final Ref.FloatRef floatRef4 = new Ref.FloatRef();
-        floatRef4.f42542a = ((int[]) objectRef.f42545a)[0];
+        floatRef4.a = ((int[]) objectRef.a)[0];
         final Ref.FloatRef floatRef5 = new Ref.FloatRef();
-        floatRef5.f42542a = ((int[]) objectRef.f42545a)[1];
+        floatRef5.a = ((int[]) objectRef.a)[1];
         final Ref.FloatRef floatRef6 = new Ref.FloatRef();
         DialogLivePlanetBinding dialogLivePlanetBinding3 = this.d;
         DialogLivePlanetBinding dialogLivePlanetBinding4 = dialogLivePlanetBinding3;
@@ -1126,7 +1124,7 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("vb");
             dialogLivePlanetBinding4 = null;
         }
-        floatRef6.f42542a = dialogLivePlanetBinding4.r.getWidth();
+        floatRef6.a = dialogLivePlanetBinding4.r.getWidth();
         final Ref.FloatRef floatRef7 = new Ref.FloatRef();
         DialogLivePlanetBinding dialogLivePlanetBinding5 = this.d;
         DialogLivePlanetBinding dialogLivePlanetBinding6 = dialogLivePlanetBinding5;
@@ -1134,7 +1132,7 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("vb");
             dialogLivePlanetBinding6 = null;
         }
-        floatRef7.f42542a = dialogLivePlanetBinding6.r.getHeight();
+        floatRef7.a = dialogLivePlanetBinding6.r.getHeight();
         View view11 = this.v;
         View view12 = view11;
         if (view11 == null) {
@@ -1184,7 +1182,7 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("view_line");
             view18 = null;
         }
-        livePlanetGuideShadeView2.a((int) view18.getTranslationX(), ((int[]) objectRef.f42545a)[1], (int) floatRef2.f42542a, (int) floatRef3.f42542a);
+        livePlanetGuideShadeView2.a((int) view18.getTranslationX(), ((int[]) objectRef.a)[1], (int) floatRef2.a, (int) floatRef3.a);
         LivePlanetGuideShadeView livePlanetGuideShadeView3 = this.A;
         if (livePlanetGuideShadeView3 == null) {
             Intrinsics.c("lpgc");
@@ -1227,7 +1225,7 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("lpgc");
             livePlanetGuideShadeView2 = null;
         }
-        livePlanetGuideShadeView2.a((int) border1TargetX.f42542a, (int) border1TargetY.f42542a, (int) border1TargetW.f42542a, (int) border1TargetH.f42542a, (int) border2TargetX.f42542a, (int) border2TargetY.f42542a, (int) border2TargetW.f42542a, (int) border2TargetH.f42542a, valueAnimator.getDuration(), valueAnimator.getStartDelay());
+        livePlanetGuideShadeView2.a((int) border1TargetX.a, (int) border1TargetY.a, (int) border1TargetW.a, (int) border1TargetH.a, (int) border2TargetX.a, (int) border2TargetY.a, (int) border2TargetW.a, (int) border2TargetH.a, valueAnimator.getDuration(), valueAnimator.getStartDelay());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1253,21 +1251,21 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("view_bordwr_2");
             view2 = null;
         }
-        view2.setTranslationX(border2CurrentX.f42542a + ((border2TargetX.f42542a - border2CurrentX.f42542a) * floatValue));
+        view2.setTranslationX(border2CurrentX.a + ((border2TargetX.a - border2CurrentX.a) * floatValue));
         View view3 = this$0.w;
         View view4 = view3;
         if (view3 == null) {
             Intrinsics.c("view_bordwr_2");
             view4 = null;
         }
-        view4.setTranslationY(border2CurrentY.f42542a + ((border2TargetY.f42542a - border2CurrentY.f42542a) * floatValue));
+        view4.setTranslationY(border2CurrentY.a + ((border2TargetY.a - border2CurrentY.a) * floatValue));
         View view5 = this$0.w;
         View view6 = view5;
         if (view5 == null) {
             Intrinsics.c("view_bordwr_2");
             view6 = null;
         }
-        view6.setLayoutParams(new FrameLayout.LayoutParams((int) (border2CurrentW.f42543a + ((border2TargetW.f42542a - border2CurrentW.f42543a) * floatValue)), (int) (border2CurrentH.f42543a + ((border2TargetH.f42542a - border2CurrentH.f42543a) * floatValue))));
+        view6.setLayoutParams(new FrameLayout.LayoutParams((int) (border2CurrentW.a + ((border2TargetW.a - border2CurrentW.a) * floatValue)), (int) (border2CurrentH.a + ((border2TargetH.a - border2CurrentH.a) * floatValue))));
         View view7 = this$0.w;
         View view8 = view7;
         if (view7 == null) {
@@ -1297,7 +1295,7 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("view_bordwr_1");
             view2 = null;
         }
-        floatRef.f42542a = view2.getTranslationX();
+        floatRef.a = view2.getTranslationX();
         final Ref.FloatRef floatRef2 = new Ref.FloatRef();
         View view3 = this.v;
         View view4 = view3;
@@ -1305,7 +1303,7 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("view_bordwr_1");
             view4 = null;
         }
-        floatRef2.f42542a = view4.getTranslationY();
+        floatRef2.a = view4.getTranslationY();
         final Ref.IntRef intRef = new Ref.IntRef();
         View view5 = this.v;
         View view6 = view5;
@@ -1313,7 +1311,7 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("view_bordwr_1");
             view6 = null;
         }
-        intRef.f42543a = view6.getWidth();
+        intRef.a = view6.getWidth();
         final Ref.IntRef intRef2 = new Ref.IntRef();
         View view7 = this.v;
         View view8 = view7;
@@ -1321,8 +1319,8 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("view_bordwr_1");
             view8 = null;
         }
-        intRef2.f42543a = view8.getHeight();
-        int a2 = DensityUtils.a(getContext(), 92.0f);
+        intRef2.a = view8.getHeight();
+        int a = DensityUtils.a(getContext(), 92.0f);
         final Ref.FloatRef floatRef3 = new Ref.FloatRef();
         View view9 = this.x;
         View view10 = view9;
@@ -1330,7 +1328,7 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("view_line");
             view10 = null;
         }
-        floatRef3.f42542a = view10.getTranslationX();
+        floatRef3.a = view10.getTranslationX();
         final Ref.FloatRef floatRef4 = new Ref.FloatRef();
         View view11 = this.x;
         View view12 = view11;
@@ -1338,11 +1336,11 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("view_line");
             view12 = null;
         }
-        floatRef4.f42542a = view12.getTranslationY() + a2;
+        floatRef4.a = view12.getTranslationY() + a;
         final Ref.FloatRef floatRef5 = new Ref.FloatRef();
-        floatRef5.f42542a = 1.0f;
+        floatRef5.a = 1.0f;
         final Ref.FloatRef floatRef6 = new Ref.FloatRef();
-        floatRef6.f42542a = 1.0f;
+        floatRef6.a = 1.0f;
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         ofFloat.setDuration(300L);
         ofFloat.setStartDelay(0L);
@@ -1378,13 +1376,13 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("lpgc");
             livePlanetGuideShadeView = null;
         }
-        livePlanetGuideShadeView.a((int) floatRef.f42542a, (int) floatRef2.f42542a, intRef.f42543a, intRef2.f42543a);
+        livePlanetGuideShadeView.a((int) floatRef.a, (int) floatRef2.a, intRef.a, intRef2.a);
         LivePlanetGuideShadeView livePlanetGuideShadeView2 = this.A;
         if (livePlanetGuideShadeView2 == null) {
             Intrinsics.c("lpgc");
             livePlanetGuideShadeView2 = null;
         }
-        livePlanetGuideShadeView2.a((int) floatRef3.f42542a, (int) floatRef4.f42542a, (int) floatRef5.f42542a, (int) floatRef6.f42542a, ofFloat.getDuration(), ofFloat.getStartDelay());
+        livePlanetGuideShadeView2.a((int) floatRef3.a, (int) floatRef4.a, (int) floatRef5.a, (int) floatRef6.a, ofFloat.getDuration(), ofFloat.getStartDelay());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1433,21 +1431,21 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("view_bordwr_1");
             view2 = null;
         }
-        view2.setTranslationX(border1CurrentX.f42542a + ((border1TargetX.f42542a - border1CurrentX.f42542a) * floatValue));
+        view2.setTranslationX(border1CurrentX.a + ((border1TargetX.a - border1CurrentX.a) * floatValue));
         View view3 = this$0.v;
         View view4 = view3;
         if (view3 == null) {
             Intrinsics.c("view_bordwr_1");
             view4 = null;
         }
-        view4.setTranslationY(border1CurrentY.f42542a + ((border1TargetY.f42542a - border1CurrentY.f42542a) * floatValue));
+        view4.setTranslationY(border1CurrentY.a + ((border1TargetY.a - border1CurrentY.a) * floatValue));
         View view5 = this$0.v;
         View view6 = view5;
         if (view5 == null) {
             Intrinsics.c("view_bordwr_1");
             view6 = null;
         }
-        view6.setLayoutParams(new FrameLayout.LayoutParams((int) (border1CurrentW.f42542a + ((border1TargetW.f42542a - border1CurrentW.f42542a) * floatValue)), (int) (border1CurrentH.f42542a + ((border1TargetH.f42542a - border1CurrentH.f42542a) * floatValue))));
+        view6.setLayoutParams(new FrameLayout.LayoutParams((int) (border1CurrentW.a + ((border1TargetW.a - border1CurrentW.a) * floatValue)), (int) (border1CurrentH.a + ((border1TargetH.a - border1CurrentH.a) * floatValue))));
         View view7 = this$0.v;
         View view8 = view7;
         if (view7 == null) {
@@ -1485,21 +1483,21 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("view_bordwr_1");
             view2 = null;
         }
-        view2.setTranslationX(border1CurrentX.f42542a + ((border1TargetX.f42542a - border1CurrentX.f42542a) * floatValue));
+        view2.setTranslationX(border1CurrentX.a + ((border1TargetX.a - border1CurrentX.a) * floatValue));
         View view3 = this$0.v;
         View view4 = view3;
         if (view3 == null) {
             Intrinsics.c("view_bordwr_1");
             view4 = null;
         }
-        view4.setTranslationY(border1CurrentY.f42542a + ((border1TargetY.f42542a - border1CurrentY.f42542a) * floatValue));
+        view4.setTranslationY(border1CurrentY.a + ((border1TargetY.a - border1CurrentY.a) * floatValue));
         View view5 = this$0.v;
         View view6 = view5;
         if (view5 == null) {
             Intrinsics.c("view_bordwr_1");
             view6 = null;
         }
-        view6.setLayoutParams(new FrameLayout.LayoutParams((int) (border1CurrentW.f42543a + ((border1TargetW.f42542a - border1CurrentW.f42543a) * floatValue)), (int) (border1CurrentH.f42543a + ((border1TargetH.f42542a - border1CurrentH.f42543a) * floatValue))));
+        view6.setLayoutParams(new FrameLayout.LayoutParams((int) (border1CurrentW.a + ((border1TargetW.a - border1CurrentW.a) * floatValue)), (int) (border1CurrentH.a + ((border1TargetH.a - border1CurrentH.a) * floatValue))));
         View view7 = this$0.v;
         View view8 = view7;
         if (view7 == null) {
@@ -1568,11 +1566,11 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             dialogLivePlanetBinding12 = null;
         }
         int height2 = dialogLivePlanetBinding12.B.getHeight();
-        int a2 = DensityUtils.a(getContext(), 10.0f);
-        int a3 = DensityUtils.a(getContext(), 58.0f);
-        int a4 = DensityUtils.a(getContext(), 33.0f);
-        int i = iArr[0] + a3;
-        int i2 = iArr[1] + height + a4;
+        int a = DensityUtils.a(getContext(), 10.0f);
+        int a2 = DensityUtils.a(getContext(), 58.0f);
+        int a3 = DensityUtils.a(getContext(), 33.0f);
+        int i = iArr[0] + a2;
+        int i2 = iArr[1] + height + a3;
         ImageView imageView3 = this.h;
         ImageView imageView4 = imageView3;
         if (imageView3 == null) {
@@ -1594,30 +1592,30 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             frameLayout2 = null;
         }
         frameLayout2.animate().translationX(i).translationY(i2).setDuration(350L).start();
-        int a5 = DensityUtils.a(getContext(), 47.0f);
-        int a6 = DensityUtils.a(getContext(), 81.0f);
-        int a7 = DensityUtils.a(getContext(), 14.0f);
-        int a8 = DensityUtils.a(getContext(), 205.0f);
-        int a9 = DensityUtils.a(getContext(), 30.0f);
+        int a4 = DensityUtils.a(getContext(), 47.0f);
+        int a5 = DensityUtils.a(getContext(), 81.0f);
+        int a6 = DensityUtils.a(getContext(), 14.0f);
+        int a7 = DensityUtils.a(getContext(), 205.0f);
+        int a8 = DensityUtils.a(getContext(), 30.0f);
         ImageView imageView7 = this.k;
         ImageView imageView8 = imageView7;
         if (imageView7 == null) {
             Intrinsics.c("iv_next");
             imageView8 = null;
         }
-        ViewPropertyAnimator translationX = imageView8.animate().translationX(a5 + i);
-        int i3 = a6 + i2;
-        translationX.translationY(i3 + a7).setDuration(350L).start();
+        ViewPropertyAnimator translationX = imageView8.animate().translationX(a4 + i);
+        int i3 = a5 + i2;
+        translationX.translationY(i3 + a6).setDuration(350L).start();
         ImageView imageView9 = this.t;
         ImageView imageView10 = imageView9;
         if (imageView9 == null) {
             Intrinsics.c("iv_close");
             imageView10 = null;
         }
-        imageView10.animate().translationX((a8 + i) - a9).translationY((i2 - a7) - a9).setDuration(350L).start();
-        int a10 = DensityUtils.a(getContext(), 3.0f);
-        int a11 = DensityUtils.a(getContext(), 18.0f);
-        int a12 = DensityUtils.a(getContext(), 36.9999f);
+        imageView10.animate().translationX((a7 + i) - a8).translationY((i2 - a6) - a8).setDuration(350L).start();
+        int a9 = DensityUtils.a(getContext(), 3.0f);
+        int a10 = DensityUtils.a(getContext(), 18.0f);
+        int a11 = DensityUtils.a(getContext(), 36.9999f);
         View view = this.x;
         View view2 = view;
         if (view == null) {
@@ -1631,7 +1629,7 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("view_line");
             view4 = null;
         }
-        view4.setTranslationX(a11 + i);
+        view4.setTranslationX(a10 + i);
         View view5 = this.x;
         View view6 = view5;
         if (view5 == null) {
@@ -1645,10 +1643,10 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("view_line");
             view8 = null;
         }
-        view8.setLayoutParams(new FrameLayout.LayoutParams(a10, a12));
-        int a13 = DensityUtils.a(getContext(), 169.0f);
-        int a14 = DensityUtils.a(getContext(), 29.0f);
-        int a15 = DensityUtils.a(getContext(), 21.5f);
+        view8.setLayoutParams(new FrameLayout.LayoutParams(a9, a11));
+        int a12 = DensityUtils.a(getContext(), 169.0f);
+        int a13 = DensityUtils.a(getContext(), 29.0f);
+        int a14 = DensityUtils.a(getContext(), 21.5f);
         View view9 = this.y;
         View view10 = view9;
         if (view9 == null) {
@@ -1662,7 +1660,7 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("view_broken_line_vertical");
             view12 = null;
         }
-        float f = i + a13;
+        float f = i + a12;
         view12.setTranslationX(f);
         View view13 = this.y;
         View view14 = view13;
@@ -1670,14 +1668,14 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("view_broken_line_vertical");
             view14 = null;
         }
-        view14.setTranslationY(i3 - a10);
+        view14.setTranslationY(i3 - a9);
         View view15 = this.y;
         View view16 = view15;
         if (view15 == null) {
             Intrinsics.c("view_broken_line_vertical");
             view16 = null;
         }
-        view16.setLayoutParams(new FrameLayout.LayoutParams(a10, a14));
+        view16.setLayoutParams(new FrameLayout.LayoutParams(a9, a13));
         View view17 = this.z;
         View view18 = view17;
         if (view17 == null) {
@@ -1704,14 +1702,14 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("view_broken_line_vertical");
             view24 = null;
         }
-        view22.setTranslationY(view24.getTranslationY() + a14);
+        view22.setTranslationY(view24.getTranslationY() + a13);
         View view25 = this.z;
         View view26 = view25;
         if (view25 == null) {
             Intrinsics.c("view_broken_line_horizontal");
             view26 = null;
         }
-        view26.setLayoutParams(new FrameLayout.LayoutParams(a15, a10));
+        view26.setLayoutParams(new FrameLayout.LayoutParams(a14, a9));
         final Ref.FloatRef floatRef = new Ref.FloatRef();
         View view27 = this.x;
         View view28 = view27;
@@ -1719,7 +1717,7 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("view_line");
             view28 = null;
         }
-        floatRef.f42542a = view28.getTranslationX();
+        floatRef.a = view28.getTranslationX();
         final Ref.FloatRef floatRef2 = new Ref.FloatRef();
         View view29 = this.x;
         View view30 = view29;
@@ -1727,19 +1725,19 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("view_line");
             view30 = null;
         }
-        floatRef2.f42542a = view30.getTranslationY();
+        floatRef2.a = view30.getTranslationY();
         final Ref.FloatRef floatRef3 = new Ref.FloatRef();
-        floatRef3.f42542a = 1.0f;
+        floatRef3.a = 1.0f;
         final Ref.FloatRef floatRef4 = new Ref.FloatRef();
-        floatRef4.f42542a = 1.0f;
+        floatRef4.a = 1.0f;
         final Ref.FloatRef floatRef5 = new Ref.FloatRef();
-        floatRef5.f42542a = iArr[0];
+        floatRef5.a = iArr[0];
         final Ref.FloatRef floatRef6 = new Ref.FloatRef();
-        floatRef6.f42542a = iArr[1];
+        floatRef6.a = iArr[1];
         final Ref.FloatRef floatRef7 = new Ref.FloatRef();
-        floatRef7.f42542a = width;
+        floatRef7.a = width;
         final Ref.FloatRef floatRef8 = new Ref.FloatRef();
-        floatRef8.f42542a = height;
+        floatRef8.a = height;
         View view31 = this.v;
         View view32 = view31;
         if (view31 == null) {
@@ -1765,7 +1763,7 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("view_broken_line_horizontal");
             view34 = null;
         }
-        floatRef9.f42542a = view34.getTranslationX() + a15;
+        floatRef9.a = view34.getTranslationX() + a14;
         final Ref.FloatRef floatRef10 = new Ref.FloatRef();
         View view35 = this.z;
         View view36 = view35;
@@ -1773,19 +1771,19 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("view_broken_line_horizontal");
             view36 = null;
         }
-        floatRef10.f42542a = view36.getTranslationY();
+        floatRef10.a = view36.getTranslationY();
         final Ref.FloatRef floatRef11 = new Ref.FloatRef();
-        floatRef11.f42542a = 1.0f;
+        floatRef11.a = 1.0f;
         final Ref.FloatRef floatRef12 = new Ref.FloatRef();
-        floatRef12.f42542a = 1.0f;
+        floatRef12.a = 1.0f;
         final Ref.FloatRef floatRef13 = new Ref.FloatRef();
-        floatRef13.f42542a = iArr2[0];
+        floatRef13.a = iArr2[0];
         final Ref.FloatRef floatRef14 = new Ref.FloatRef();
-        floatRef14.f42542a = iArr2[1];
+        floatRef14.a = iArr2[1];
         final Ref.FloatRef floatRef15 = new Ref.FloatRef();
-        floatRef15.f42542a = width2;
+        floatRef15.a = width2;
         final Ref.FloatRef floatRef16 = new Ref.FloatRef();
-        floatRef16.f42542a = height2 - a2;
+        floatRef16.a = height2 - a;
         View view37 = this.w;
         View view38 = view37;
         if (view37 == null) {
@@ -1849,13 +1847,13 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("lpgc");
             livePlanetGuideShadeView = null;
         }
-        livePlanetGuideShadeView.a((int) floatRef.f42542a, (int) floatRef2.f42542a, (int) floatRef3.f42542a, (int) floatRef4.f42542a);
+        livePlanetGuideShadeView.a((int) floatRef.a, (int) floatRef2.a, (int) floatRef3.a, (int) floatRef4.a);
         LivePlanetGuideShadeView livePlanetGuideShadeView2 = this.A;
         if (livePlanetGuideShadeView2 == null) {
             Intrinsics.c("lpgc");
             livePlanetGuideShadeView2 = null;
         }
-        livePlanetGuideShadeView2.b((int) floatRef9.f42542a, (int) floatRef10.f42542a, (int) floatRef11.f42542a, (int) floatRef12.f42542a);
+        livePlanetGuideShadeView2.b((int) floatRef9.a, (int) floatRef10.a, (int) floatRef11.a, (int) floatRef12.a);
         LivePlanetGuideShadeView livePlanetGuideShadeView3 = this.A;
         if (livePlanetGuideShadeView3 == null) {
             Intrinsics.c("lpgc");
@@ -1904,21 +1902,21 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("view_bordwr_1");
             view2 = null;
         }
-        view2.setTranslationX(border1CurrentX.f42542a + ((border1TargetX.f42542a - border1CurrentX.f42542a) * floatValue));
+        view2.setTranslationX(border1CurrentX.a + ((border1TargetX.a - border1CurrentX.a) * floatValue));
         View view3 = this$0.v;
         View view4 = view3;
         if (view3 == null) {
             Intrinsics.c("view_bordwr_1");
             view4 = null;
         }
-        view4.setTranslationY(border1CurrentY.f42542a + ((border1TargetY.f42542a - border1CurrentY.f42542a) * floatValue));
+        view4.setTranslationY(border1CurrentY.a + ((border1TargetY.a - border1CurrentY.a) * floatValue));
         View view5 = this$0.v;
         View view6 = view5;
         if (view5 == null) {
             Intrinsics.c("view_bordwr_1");
             view6 = null;
         }
-        view6.setLayoutParams(new FrameLayout.LayoutParams((int) (border1CurrentW.f42542a + ((border1TargetW.f42542a - border1CurrentW.f42542a) * floatValue)), (int) (border1CurrentH.f42542a + ((border1TargetH.f42542a - border1CurrentH.f42542a) * floatValue))));
+        view6.setLayoutParams(new FrameLayout.LayoutParams((int) (border1CurrentW.a + ((border1TargetW.a - border1CurrentW.a) * floatValue)), (int) (border1CurrentH.a + ((border1TargetH.a - border1CurrentH.a) * floatValue))));
         View view7 = this$0.v;
         View view8 = view7;
         if (view7 == null) {
@@ -2018,7 +2016,7 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("view_bordwr_1");
             view2 = null;
         }
-        floatRef.f42542a = view2.getTranslationX();
+        floatRef.a = view2.getTranslationX();
         final Ref.FloatRef floatRef2 = new Ref.FloatRef();
         View view3 = this.v;
         View view4 = view3;
@@ -2026,7 +2024,7 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("view_bordwr_1");
             view4 = null;
         }
-        floatRef2.f42542a = view4.getTranslationY();
+        floatRef2.a = view4.getTranslationY();
         final Ref.IntRef intRef = new Ref.IntRef();
         View view5 = this.v;
         View view6 = view5;
@@ -2034,7 +2032,7 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("view_bordwr_1");
             view6 = null;
         }
-        intRef.f42543a = view6.getWidth();
+        intRef.a = view6.getWidth();
         final Ref.IntRef intRef2 = new Ref.IntRef();
         View view7 = this.v;
         View view8 = view7;
@@ -2042,7 +2040,7 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("view_bordwr_1");
             view8 = null;
         }
-        intRef2.f42543a = view8.getHeight();
+        intRef2.a = view8.getHeight();
         final Ref.FloatRef floatRef3 = new Ref.FloatRef();
         View view9 = this.x;
         View view10 = view9;
@@ -2050,7 +2048,7 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("view_line");
             view10 = null;
         }
-        floatRef3.f42542a = view10.getTranslationX();
+        floatRef3.a = view10.getTranslationX();
         final Ref.FloatRef floatRef4 = new Ref.FloatRef();
         View view11 = this.x;
         View view12 = view11;
@@ -2058,11 +2056,11 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("view_line");
             view12 = null;
         }
-        floatRef4.f42542a = view12.getTranslationY();
+        floatRef4.a = view12.getTranslationY();
         final Ref.FloatRef floatRef5 = new Ref.FloatRef();
-        floatRef5.f42542a = 1.0f;
+        floatRef5.a = 1.0f;
         final Ref.FloatRef floatRef6 = new Ref.FloatRef();
-        floatRef6.f42542a = 1.0f;
+        floatRef6.a = 1.0f;
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         ofFloat.setDuration(300L);
         ofFloat.setStartDelay(0L);
@@ -2100,7 +2098,7 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("view_bordwr_2");
             view18 = null;
         }
-        floatRef7.f42542a = view18.getTranslationX();
+        floatRef7.a = view18.getTranslationX();
         final Ref.FloatRef floatRef8 = new Ref.FloatRef();
         View view19 = this.w;
         View view20 = view19;
@@ -2108,7 +2106,7 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("view_bordwr_2");
             view20 = null;
         }
-        floatRef8.f42542a = view20.getTranslationY();
+        floatRef8.a = view20.getTranslationY();
         final Ref.IntRef intRef3 = new Ref.IntRef();
         View view21 = this.w;
         View view22 = view21;
@@ -2116,7 +2114,7 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("view_bordwr_2");
             view22 = null;
         }
-        intRef3.f42543a = view22.getWidth();
+        intRef3.a = view22.getWidth();
         final Ref.IntRef intRef4 = new Ref.IntRef();
         View view23 = this.w;
         View view24 = view23;
@@ -2124,7 +2122,7 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("view_bordwr_2");
             view24 = null;
         }
-        intRef4.f42543a = view24.getHeight();
+        intRef4.a = view24.getHeight();
         final Ref.FloatRef floatRef9 = new Ref.FloatRef();
         View view25 = this.z;
         View view26 = view25;
@@ -2139,7 +2137,7 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("view_broken_line_horizontal");
             view28 = null;
         }
-        floatRef9.f42542a = translationX + view28.getWidth();
+        floatRef9.a = translationX + view28.getWidth();
         final Ref.FloatRef floatRef10 = new Ref.FloatRef();
         View view29 = this.z;
         View view30 = view29;
@@ -2147,11 +2145,11 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("view_broken_line_horizontal");
             view30 = null;
         }
-        floatRef10.f42542a = view30.getTranslationY();
+        floatRef10.a = view30.getTranslationY();
         final Ref.FloatRef floatRef11 = new Ref.FloatRef();
-        floatRef11.f42542a = 1.0f;
+        floatRef11.a = 1.0f;
         final Ref.FloatRef floatRef12 = new Ref.FloatRef();
-        floatRef12.f42542a = 1.0f;
+        floatRef12.a = 1.0f;
         ValueAnimator ofFloat2 = ValueAnimator.ofFloat(0.0f, 1.0f);
         ofFloat2.setDuration(ofFloat.getDuration());
         ofFloat2.setStartDelay(ofFloat.getStartDelay());
@@ -2189,20 +2187,20 @@ public final class LivePlanetGuidePop extends CenterPopupView {
             Intrinsics.c("lpgc");
             livePlanetGuideShadeView = null;
         }
-        livePlanetGuideShadeView.a((int) floatRef.f42542a, (int) floatRef2.f42542a, intRef.f42543a, intRef2.f42543a);
+        livePlanetGuideShadeView.a((int) floatRef.a, (int) floatRef2.a, intRef.a, intRef2.a);
         LivePlanetGuideShadeView livePlanetGuideShadeView2 = this.A;
         LivePlanetGuideShadeView livePlanetGuideShadeView3 = livePlanetGuideShadeView2;
         if (livePlanetGuideShadeView2 == null) {
             Intrinsics.c("lpgc");
             livePlanetGuideShadeView3 = null;
         }
-        livePlanetGuideShadeView3.b((int) floatRef7.f42542a, (int) floatRef8.f42542a, intRef3.f42543a, intRef4.f42543a);
+        livePlanetGuideShadeView3.b((int) floatRef7.a, (int) floatRef8.a, intRef3.a, intRef4.a);
         LivePlanetGuideShadeView livePlanetGuideShadeView4 = this.A;
         if (livePlanetGuideShadeView4 == null) {
             Intrinsics.c("lpgc");
             livePlanetGuideShadeView4 = null;
         }
-        livePlanetGuideShadeView4.a((int) floatRef3.f42542a, (int) floatRef4.f42542a, (int) floatRef5.f42542a, (int) floatRef6.f42542a, (int) floatRef9.f42542a, (int) floatRef10.f42542a, (int) floatRef11.f42542a, (int) floatRef12.f42542a, ofFloat.getDuration(), ofFloat.getStartDelay());
+        livePlanetGuideShadeView4.a((int) floatRef3.a, (int) floatRef4.a, (int) floatRef5.a, (int) floatRef6.a, (int) floatRef9.a, (int) floatRef10.a, (int) floatRef11.a, (int) floatRef12.a, ofFloat.getDuration(), ofFloat.getStartDelay());
     }
 
     public final void a(DialogLivePlanetBinding viewBinding) {
@@ -2320,7 +2318,7 @@ public final class LivePlanetGuidePop extends CenterPopupView {
     }
 
     public final FragmentActivity getActivity() {
-        return this.f13987c;
+        return this.c;
     }
 
     @Override // com.blued.android.framework.ui.xpop.core.CenterPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
@@ -2330,7 +2328,7 @@ public final class LivePlanetGuidePop extends CenterPopupView {
 
     @Override // com.blued.android.framework.ui.xpop.core.CenterPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
     public int getMaxWidth() {
-        return this.f13987c.getWindowManager().getDefaultDisplay().getWidth();
+        return this.c.getWindowManager().getDefaultDisplay().getWidth();
     }
 
     @Override // com.blued.android.framework.ui.xpop.core.BasePopupView
@@ -2341,6 +2339,6 @@ public final class LivePlanetGuidePop extends CenterPopupView {
 
     public final void setActivity(FragmentActivity fragmentActivity) {
         Intrinsics.e(fragmentActivity, "<set-?>");
-        this.f13987c = fragmentActivity;
+        this.c = fragmentActivity;
     }
 }

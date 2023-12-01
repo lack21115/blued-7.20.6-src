@@ -14,9 +14,7 @@ import com.airbnb.lottie.value.LottieValueCallback;
 
 /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/animation/content/StrokeContent.class */
 public class StrokeContent extends BaseStrokeContent {
-
-    /* renamed from: c  reason: collision with root package name */
-    private final BaseLayer f4293c;
+    private final BaseLayer c;
     private final String d;
     private final boolean e;
     private final BaseKeyframeAnimation<Integer, Integer> f;
@@ -24,12 +22,12 @@ public class StrokeContent extends BaseStrokeContent {
 
     public StrokeContent(LottieDrawable lottieDrawable, BaseLayer baseLayer, ShapeStroke shapeStroke) {
         super(lottieDrawable, baseLayer, shapeStroke.g().a(), shapeStroke.h().a(), shapeStroke.i(), shapeStroke.c(), shapeStroke.d(), shapeStroke.e(), shapeStroke.f());
-        this.f4293c = baseLayer;
+        this.c = baseLayer;
         this.d = shapeStroke.a();
         this.e = shapeStroke.j();
-        BaseKeyframeAnimation<Integer, Integer> a2 = shapeStroke.b().a();
-        this.f = a2;
-        a2.a(this);
+        BaseKeyframeAnimation<Integer, Integer> a = shapeStroke.b().a();
+        this.f = a;
+        a.a(this);
         baseLayer.a(this.f);
     }
 
@@ -58,7 +56,7 @@ public class StrokeContent extends BaseStrokeContent {
             ValueCallbackKeyframeAnimation valueCallbackKeyframeAnimation = new ValueCallbackKeyframeAnimation(lottieValueCallback);
             this.g = valueCallbackKeyframeAnimation;
             valueCallbackKeyframeAnimation.a(this);
-            this.f4293c.a(this.f);
+            this.c.a(this.f);
         }
     }
 

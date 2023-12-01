@@ -42,13 +42,9 @@ public final class ViewYyGiftListLayoutBinding implements ViewBinding {
     public final ImageView Q;
     public final ShapeLinearLayout R;
     private final ConstraintLayout S;
-
-    /* renamed from: a  reason: collision with root package name */
-    public final YYGiftTabView f16913a;
+    public final YYGiftTabView a;
     public final ViewPager b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ShapeConstraintLayout f16914c;
+    public final ShapeConstraintLayout c;
     public final Group d;
     public final Group e;
     public final ImageView f;
@@ -75,9 +71,9 @@ public final class ViewYyGiftListLayoutBinding implements ViewBinding {
 
     private ViewYyGiftListLayoutBinding(ConstraintLayout constraintLayout, YYGiftTabView yYGiftTabView, ViewPager viewPager, ShapeConstraintLayout shapeConstraintLayout, Group group, Group group2, ImageView imageView, ImageView imageView2, LinearLayout linearLayout, ImageView imageView3, SquareImageView squareImageView, ImageView imageView4, SquareImageView squareImageView2, ImageView imageView5, View view, YYAdInGiftListView yYAdInGiftListView, LinearLayout linearLayout2, ShapeLinearLayout shapeLinearLayout, ShapeTextView shapeTextView, LinearLayout linearLayout3, ProgressBar progressBar, RecyclerView recyclerView, ShapeLinearLayout shapeLinearLayout2, TextView textView, DoubleHitSendGiftView doubleHitSendGiftView, TextView textView2, TextView textView3, TextView textView4, ShapeTextView shapeTextView2, TextView textView5, TextView textView6, TextView textView7, TextView textView8, ShapeTextView shapeTextView3, ShapeTextView shapeTextView4, ShapeTextView shapeTextView5, TextView textView9, ShapeTextView shapeTextView6, TextView textView10, ImageView imageView6, ImageView imageView7, FrameLayout frameLayout, ListView listView, ImageView imageView8, ShapeLinearLayout shapeLinearLayout3) {
         this.S = constraintLayout;
-        this.f16913a = yYGiftTabView;
+        this.a = yYGiftTabView;
         this.b = viewPager;
-        this.f16914c = shapeConstraintLayout;
+        this.c = shapeConstraintLayout;
         this.d = group;
         this.e = group2;
         this.f = imageView;
@@ -125,14 +121,14 @@ public final class ViewYyGiftListLayoutBinding implements ViewBinding {
         String str;
         YYGiftTabView yYGiftTabView = (YYGiftTabView) view.findViewById(R.id.base_gift_toolbar_view);
         if (yYGiftTabView != null) {
-            ViewPager viewPager = (ViewPager) view.findViewById(R.id.base_view_pager_id);
-            if (viewPager != null) {
+            ViewPager findViewById = view.findViewById(R.id.base_view_pager_id);
+            if (findViewById != null) {
                 ShapeConstraintLayout shapeConstraintLayout = (ShapeConstraintLayout) view.findViewById(R.id.con_host_users);
                 if (shapeConstraintLayout != null) {
-                    Group group = (Group) view.findViewById(R.id.grp_week_star);
-                    if (group != null) {
-                        Group group2 = (Group) view.findViewById(R.id.grp_week_star_new);
-                        if (group2 != null) {
+                    Group findViewById2 = view.findViewById(R.id.grp_week_star);
+                    if (findViewById2 != null) {
+                        Group findViewById3 = view.findViewById(R.id.grp_week_star_new);
+                        if (findViewById3 != null) {
                             ImageView imageView = (ImageView) view.findViewById(R.id.iv_bg_new_star);
                             if (imageView != null) {
                                 ImageView imageView2 = (ImageView) view.findViewById(R.id.iv_bg_star);
@@ -149,8 +145,8 @@ public final class ViewYyGiftListLayoutBinding implements ViewBinding {
                                                     if (squareImageView2 != null) {
                                                         ImageView imageView5 = (ImageView) view.findViewById(R.id.iv_week_star_user_live);
                                                         if (imageView5 != null) {
-                                                            View findViewById = view.findViewById(R.id.live_gift_blank_view);
-                                                            if (findViewById != null) {
+                                                            View findViewById4 = view.findViewById(R.id.live_gift_blank_view);
+                                                            if (findViewById4 != null) {
                                                                 YYAdInGiftListView yYAdInGiftListView = (YYAdInGiftListView) view.findViewById(R.id.ll_ad_view);
                                                                 if (yYAdInGiftListView != null) {
                                                                     LinearLayout linearLayout2 = (LinearLayout) view.findViewById(R.id.ll_gift_content);
@@ -163,8 +159,8 @@ public final class ViewYyGiftListLayoutBinding implements ViewBinding {
                                                                                 if (linearLayout3 != null) {
                                                                                     ProgressBar progressBar = (ProgressBar) view.findViewById(R.id.pro_lv);
                                                                                     if (progressBar != null) {
-                                                                                        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rcv_user);
-                                                                                        if (recyclerView != null) {
+                                                                                        RecyclerView findViewById5 = view.findViewById(R.id.rcv_user);
+                                                                                        if (findViewById5 != null) {
                                                                                             ShapeLinearLayout shapeLinearLayout2 = (ShapeLinearLayout) view.findViewById(R.id.shape_send);
                                                                                             if (shapeLinearLayout2 != null) {
                                                                                                 TextView textView = (TextView) view.findViewById(R.id.tv_backpack);
@@ -211,7 +207,7 @@ public final class ViewYyGiftListLayoutBinding implements ViewBinding {
                                                                                                                                                                                 if (imageView8 != null) {
                                                                                                                                                                                     ShapeLinearLayout shapeLinearLayout3 = (ShapeLinearLayout) view.findViewById(R.id.yy_top_up_view);
                                                                                                                                                                                     if (shapeLinearLayout3 != null) {
-                                                                                                                                                                                        return new ViewYyGiftListLayoutBinding((ConstraintLayout) view, yYGiftTabView, viewPager, shapeConstraintLayout, group, group2, imageView, imageView2, linearLayout, imageView3, squareImageView, imageView4, squareImageView2, imageView5, findViewById, yYAdInGiftListView, linearLayout2, shapeLinearLayout, shapeTextView, linearLayout3, progressBar, recyclerView, shapeLinearLayout2, textView, doubleHitSendGiftView, textView2, textView3, textView4, shapeTextView2, textView5, textView6, textView7, textView8, shapeTextView3, shapeTextView4, shapeTextView5, textView9, shapeTextView6, textView10, imageView6, imageView7, frameLayout, listView, imageView8, shapeLinearLayout3);
+                                                                                                                                                                                        return new ViewYyGiftListLayoutBinding((ConstraintLayout) view, yYGiftTabView, findViewById, shapeConstraintLayout, findViewById2, findViewById3, imageView, imageView2, linearLayout, imageView3, squareImageView, imageView4, squareImageView2, imageView5, findViewById4, yYAdInGiftListView, linearLayout2, shapeLinearLayout, shapeTextView, linearLayout3, progressBar, findViewById5, shapeLinearLayout2, textView, doubleHitSendGiftView, textView2, textView3, textView4, shapeTextView2, textView5, textView6, textView7, textView8, shapeTextView3, shapeTextView4, shapeTextView5, textView9, shapeTextView6, textView10, imageView6, imageView7, frameLayout, listView, imageView8, shapeLinearLayout3);
                                                                                                                                                                                     }
                                                                                                                                                                                     str = "yyTopUpView";
                                                                                                                                                                                 } else {
@@ -346,7 +342,6 @@ public final class ViewYyGiftListLayoutBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.S;

@@ -17,17 +17,17 @@ public final class c implements Runnable {
     private static Charset e = Charset.forName("UTF-8");
 
     /* renamed from: a  reason: collision with root package name */
-    private d f41812a;
+    private d f28121a;
     private PipedInputStream b = new PipedInputStream(8192);
 
     /* renamed from: c  reason: collision with root package name */
-    private PipedOutputStream f41813c;
+    private PipedOutputStream f28122c;
     private CountDownLatch d;
 
     public c(d dVar) {
-        this.f41812a = dVar;
+        this.f28121a = dVar;
         try {
-            this.f41813c = new PipedOutputStream(this.b);
+            this.f28122c = new PipedOutputStream(this.b);
         } catch (IOException e2) {
             Logger.e("StreamEncodingTransfer", "piped output stream exception", e2);
         }
@@ -48,12 +48,12 @@ public final class c implements Runnable {
     public final void run() {
         OutputStreamWriter outputStreamWriter;
         IOException e2;
-        Reader b = this.f41812a.b();
+        Reader b = this.f28121a.b();
         char[] cArr = new char[4096];
         OutputStreamWriter outputStreamWriter2 = null;
         try {
             try {
-                outputStreamWriter = new OutputStreamWriter(new BufferedOutputStream(this.f41813c), e);
+                outputStreamWriter = new OutputStreamWriter(new BufferedOutputStream(this.f28122c), e);
                 while (true) {
                     try {
                         int read = b.read(cArr, 0, 4096);

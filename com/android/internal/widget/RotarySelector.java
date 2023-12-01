@@ -215,12 +215,12 @@ public class RotarySelector extends View {
     private void vibrate(long j) {
         boolean z = true;
         synchronized (this) {
-            if (Settings.System.getIntForUser(this.mContext.getContentResolver(), Settings.System.HAPTIC_FEEDBACK_ENABLED, 1, -2) == 0) {
+            if (Settings.System.getIntForUser(this.mContext.getContentResolver(), "haptic_feedback_enabled", 1, -2) == 0) {
                 z = false;
             }
             if (z) {
                 if (this.mVibrator == null) {
-                    this.mVibrator = (Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE);
+                    this.mVibrator = (Vibrator) getContext().getSystemService("vibrator");
                 }
                 this.mVibrator.vibrate(j, VIBRATION_ATTRIBUTES);
             }

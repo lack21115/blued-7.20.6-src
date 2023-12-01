@@ -19,6 +19,7 @@ import com.anythink.expressad.atsignalcommon.mraid.IMraidJSBridge;
 import com.anythink.expressad.atsignalcommon.windvane.WindVaneWebView;
 import com.anythink.expressad.foundation.d.c;
 import com.anythink.expressad.foundation.h.o;
+import com.anythink.expressad.foundation.h.s;
 import com.anythink.expressad.video.signal.a.j;
 import com.anythink.expressad.videocommon.e.d;
 import com.bytedance.applog.tracker.Tracker;
@@ -135,7 +136,7 @@ public class AnythinkBTWebView extends BTBaseView implements IMraidJSBridge {
         this.z.setVisibility(0);
         j jVar = new j(null, this.b, this.y);
         this.A = jVar;
-        jVar.a(this.f8336c);
+        jVar.a(this.f5496c);
         this.z.setObject(this.A);
         this.z.setMraidObject(this);
         this.z.setWebViewListener(new a() { // from class: com.anythink.expressad.video.bt.module.AnythinkBTWebView.1
@@ -360,7 +361,7 @@ public class AnythinkBTWebView extends BTBaseView implements IMraidJSBridge {
                 this.b.p(str);
                 getMraidCampaign();
             }
-            new com.anythink.expressad.a.a(getContext(), this.f8336c);
+            new com.anythink.expressad.a.a(getContext(), this.f5496c);
             this.b.p(ad);
         } catch (Throwable th) {
             o.d(BTBaseView.TAG, th.getMessage());
@@ -395,7 +396,7 @@ public class AnythinkBTWebView extends BTBaseView implements IMraidJSBridge {
         if (TextUtils.isEmpty(str)) {
             return;
         }
-        boolean contains = str.contains("play.google.com");
+        boolean contains = str.contains(s.a.f5135c);
         setWebviewClickable(!contains);
         if (contains) {
             com.anythink.expressad.atsignalcommon.base.c cVar = new com.anythink.expressad.atsignalcommon.base.c();
@@ -480,7 +481,7 @@ public class AnythinkBTWebView extends BTBaseView implements IMraidJSBridge {
         if (dVar != null) {
             this.A.a(dVar);
         }
-        this.A.a(this.f8336c);
+        this.A.a(this.f5496c);
         this.A.c(this.d);
         if (i == 1) {
             this.A.q();

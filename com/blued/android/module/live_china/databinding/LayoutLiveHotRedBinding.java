@@ -11,21 +11,17 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/LayoutLiveHotRedBinding.class */
 public final class LayoutLiveHotRedBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f12095a;
+    public final ImageView a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ViewFlipper f12096c;
+    public final ViewFlipper c;
     public final ImageView d;
     private final FrameLayout e;
 
     private LayoutLiveHotRedBinding(FrameLayout frameLayout, ImageView imageView, ImageView imageView2, ViewFlipper viewFlipper, ImageView imageView3) {
         this.e = frameLayout;
-        this.f12095a = imageView;
+        this.a = imageView;
         this.b = imageView2;
-        this.f12096c = viewFlipper;
+        this.c = viewFlipper;
         this.d = imageView3;
     }
 
@@ -62,7 +58,6 @@ public final class LayoutLiveHotRedBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.e;

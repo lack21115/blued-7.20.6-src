@@ -7,7 +7,7 @@ public final class g extends l {
     public String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f21220c;
+    public String f7614c;
     public String d;
     public String e;
     public String f;
@@ -29,7 +29,7 @@ public final class g extends l {
     public JSONObject a() {
         JSONObject jSONObject = new JSONObject();
         jSONObject.put("name", this.b);
-        jSONObject.put("utm_campaign", this.f21220c);
+        jSONObject.put("utm_campaign", this.f7614c);
         jSONObject.put("utm_source", this.d);
         jSONObject.put("utm_medium", this.e);
         jSONObject.put("utm_content", this.f);
@@ -53,7 +53,7 @@ public final class g extends l {
     public void a(JSONObject jSONObject) {
         if (jSONObject != null) {
             this.b = jSONObject.optString("name", null);
-            this.f21220c = jSONObject.optString("utm_campaign", null);
+            this.f7614c = jSONObject.optString("utm_campaign", null);
             this.d = jSONObject.optString("utm_source", null);
             this.e = jSONObject.optString("utm_medium", null);
             this.f = jSONObject.optString("utm_content", null);

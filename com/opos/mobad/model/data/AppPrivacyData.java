@@ -23,17 +23,17 @@ public class AppPrivacyData extends a implements Parcelable {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f26468a;
+    public final String f12780a;
     public final String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final String f26469c;
+    public final String f12781c;
     public final String d;
 
     public AppPrivacyData(String str, String str2, String str3, String str4) {
-        this.f26468a = str;
+        this.f12780a = str;
         this.b = str2;
-        this.f26469c = str3;
+        this.f12781c = str3;
         this.d = str4;
     }
 
@@ -43,14 +43,14 @@ public class AppPrivacyData extends a implements Parcelable {
     }
 
     public String toString() {
-        return "AppPrivacyData{permissionUrl=" + this.f26468a + ", privacyUrl='" + this.b + "', developerName=" + this.f26469c + ", verName=" + this.d + '}';
+        return "AppPrivacyData{permissionUrl=" + this.f12780a + ", privacyUrl='" + this.b + "', developerName=" + this.f12781c + ", verName=" + this.d + '}';
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.f26468a);
+        parcel.writeString(this.f12780a);
         parcel.writeString(this.b);
-        parcel.writeString(this.f26469c);
+        parcel.writeString(this.f12781c);
         parcel.writeString(this.d);
     }
 }

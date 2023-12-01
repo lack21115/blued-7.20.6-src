@@ -4,12 +4,12 @@ package com.bytedance.android.a.a;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final boolean f21167a = false;
+    public static final boolean f7561a = false;
     public static final String b = "com.bytedance.android.ec.res";
     @Deprecated
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f21168c = "com.bytedance.android.ec.res";
+    public static final String f7562c = "com.bytedance.android.ec.res";
     public static final String d = "release";
     public static final String e = "";
     public static final int f = 1;

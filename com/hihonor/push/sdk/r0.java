@@ -8,7 +8,7 @@ import android.os.Build;
 public class r0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public SharedPreferences f22323a;
+    public SharedPreferences f8715a;
 
     public r0(Context context, String str) {
         if (context == null) {
@@ -24,13 +24,13 @@ public class r0 {
                 edit.apply();
             }
         }
-        this.f22323a = context2.getSharedPreferences(str, 0);
+        this.f8715a = context2.getSharedPreferences(str, 0);
     }
 
     public boolean a(String str) {
         SharedPreferences.Editor edit;
-        SharedPreferences sharedPreferences = this.f22323a;
-        if (sharedPreferences == null || !sharedPreferences.contains(str) || (edit = this.f22323a.edit()) == null) {
+        SharedPreferences sharedPreferences = this.f8715a;
+        if (sharedPreferences == null || !sharedPreferences.contains(str) || (edit = this.f8715a.edit()) == null) {
             return false;
         }
         return edit.remove(str).commit();
@@ -38,7 +38,7 @@ public class r0 {
 
     public boolean a(String str, String str2) {
         SharedPreferences.Editor edit;
-        SharedPreferences sharedPreferences = this.f22323a;
+        SharedPreferences sharedPreferences = this.f8715a;
         if (sharedPreferences == null || (edit = sharedPreferences.edit()) == null) {
             return false;
         }

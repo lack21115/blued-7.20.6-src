@@ -28,7 +28,7 @@ public class LimitQueue<E> extends ConcurrentLinkedQueue<E> {
         addAll(collection);
     }
 
-    @Override // java.util.concurrent.ConcurrentLinkedQueue, java.util.AbstractQueue, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.concurrent.ConcurrentLinkedQueue, java.util.AbstractQueue, java.util.AbstractCollection, java.util.Collection, java.util.Queue
     public boolean add(E e) {
         if (this.deduplication) {
             super.remove(e);
@@ -39,7 +39,7 @@ public class LimitQueue<E> extends ConcurrentLinkedQueue<E> {
         return super.add(e);
     }
 
-    @Override // java.util.concurrent.ConcurrentLinkedQueue, java.util.AbstractQueue, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.concurrent.ConcurrentLinkedQueue, java.util.AbstractQueue, java.util.AbstractCollection, java.util.Collection
     public boolean addAll(Collection<? extends E> collection) {
         if (collection.size() > this.limit) {
             return false;
@@ -60,7 +60,7 @@ public class LimitQueue<E> extends ConcurrentLinkedQueue<E> {
         }
     }
 
-    @Override // java.util.AbstractQueue, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractQueue, java.util.AbstractCollection, java.util.Collection
     public void clear() {
         super.clear();
     }
@@ -84,7 +84,7 @@ public class LimitQueue<E> extends ConcurrentLinkedQueue<E> {
         return this.limit;
     }
 
-    @Override // java.util.concurrent.ConcurrentLinkedQueue, java.util.Queue, java.util.concurrent.BlockingQueue
+    @Override // java.util.concurrent.ConcurrentLinkedQueue, java.util.Queue
     public boolean offer(E e) {
         if (this.deduplication) {
             super.remove(e);

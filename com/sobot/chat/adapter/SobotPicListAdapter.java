@@ -50,7 +50,7 @@ public class SobotPicListAdapter extends SobotBaseAdapter<ZhiChiUploadAppFileMod
                 this.sobot_iv_pic.setVisibility(0);
                 this.sobot_iv_pic_add_ll.setVisibility(8);
                 this.sobot_remove.setVisibility(0);
-                SobotBitmapUtil.display(this.mContext, zhiChiUploadAppFileModelResult.getFileLocalPath(), this.sobot_iv_pic, ResourceUtils.getIdByName(this.mContext, i.f7952c, "sobot_default_pic"), ResourceUtils.getIdByName(this.mContext, i.f7952c, "sobot_default_pic_err"));
+                SobotBitmapUtil.display(this.mContext, zhiChiUploadAppFileModelResult.getFileLocalPath(), this.sobot_iv_pic, ResourceUtils.getIdByName(this.mContext, i.f5112c, "sobot_default_pic"), ResourceUtils.getIdByName(this.mContext, i.f5112c, "sobot_default_pic_err"));
             }
             this.sobot_iv_pic.setOnClickListener(new View.OnClickListener() { // from class: com.sobot.chat.adapter.SobotPicListAdapter.SobotFileHolder.1
                 @Override // android.view.View.OnClickListener

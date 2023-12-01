@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class PopCallOpenCntGuideBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29507a;
+    private final LinearLayout f15817a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29507a;
+        return this.f15817a;
     }
 }

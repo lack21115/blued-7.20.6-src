@@ -37,13 +37,11 @@ public class DiscoveryPagePresenter extends MvpPresenter implements SingleSessio
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void a(FragmentActivity fragmentActivity, Bundle bundle, Bundle bundle2) {
         super.a(fragmentActivity, bundle, bundle2);
         this.h = DiscoveryPageTabModel.getDiscoveryTabs(h());
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void a(final LifecycleOwner lifecycleOwner) {
         super.a(lifecycleOwner);
         ChatHelperV4.a().a(this);
@@ -54,30 +52,28 @@ public class DiscoveryPagePresenter extends MvpPresenter implements SingleSessio
                 lifecycleOwner.getLifecycle().removeObserver(this);
             }
         });
-        if (HomeActivity.f30985c != null) {
-            DiscoverSquareViewModel discoverSquareViewModel = (DiscoverSquareViewModel) ViewModelProviders.of(HomeActivity.f30985c).get(DiscoverSquareViewModel.class);
-            discoverSquareViewModel.f29844a.observe(lifecycleOwner, new Observer<Integer>() { // from class: com.soft.blued.ui.discover.presenter.DiscoveryPagePresenter.2
+        if (HomeActivity.f17295c != null) {
+            DiscoverSquareViewModel discoverSquareViewModel = (DiscoverSquareViewModel) ViewModelProviders.of((FragmentActivity) HomeActivity.f17295c).get(DiscoverSquareViewModel.class);
+            discoverSquareViewModel.f16154a.observe(lifecycleOwner, new Observer<Integer>() { // from class: com.soft.blued.ui.discover.presenter.DiscoveryPagePresenter.2
                 @Override // androidx.lifecycle.Observer
                 /* renamed from: a */
                 public void onChanged(Integer num) {
-                    DiscoveryPagePresenter.this.a("view_page_to_item", (String) num);
+                    DiscoveryPagePresenter.this.a("view_page_to_item", num);
                 }
             });
             discoverSquareViewModel.b.observe(lifecycleOwner, new Observer<Void>() { // from class: com.soft.blued.ui.discover.presenter.DiscoveryPagePresenter.3
                 @Override // androidx.lifecycle.Observer
                 /* renamed from: a */
                 public void onChanged(Void r5) {
-                    DiscoveryPagePresenter.this.a("show_red_dot", (String) Integer.valueOf(DiscoveryPagePresenter.this.a(3)));
+                    DiscoveryPagePresenter.this.a("show_red_dot", Integer.valueOf(DiscoveryPagePresenter.this.a(3)));
                 }
             });
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void a(IFetchDataListener iFetchDataListener) {
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void b(IFetchDataListener iFetchDataListener) {
     }
 
@@ -89,18 +85,16 @@ public class DiscoveryPagePresenter extends MvpPresenter implements SingleSessio
         return this.h;
     }
 
-    @Override // com.blued.android.chat.listener.SingleSessionListener
     public void onSessionDataChanged(SessionModel sessionModel) {
         if (sessionModel == null || sessionModel.sessionType != 1 || sessionModel.sessionId != 13 || sessionModel.noReadMsgCount == 0) {
             return;
         }
-        a("show_red_dot", (String) Integer.valueOf(a(3)));
+        a("show_red_dot", Integer.valueOf(a(3)));
     }
 
-    @Override // com.blued.android.chat.listener.SingleSessionListener
     public void onSessionRemoved(short s, long j) {
         if (s == 1 && j == 13) {
-            a("hide_red_dot", (String) Integer.valueOf(a(3)));
+            a("hide_red_dot", Integer.valueOf(a(3)));
         }
     }
 }

@@ -7,10 +7,10 @@ import java.util.List;
 final class h implements com.opos.exoplayer.core.f.d {
 
     /* renamed from: a  reason: collision with root package name */
-    private final List<com.opos.exoplayer.core.f.b> f25408a;
+    private final List<com.opos.exoplayer.core.f.b> f11720a;
 
     public h(List<com.opos.exoplayer.core.f.b> list) {
-        this.f25408a = Collections.unmodifiableList(list);
+        this.f11720a = Collections.unmodifiableList(list);
     }
 
     @Override // com.opos.exoplayer.core.f.d
@@ -31,6 +31,6 @@ final class h implements com.opos.exoplayer.core.f.d {
 
     @Override // com.opos.exoplayer.core.f.d
     public List<com.opos.exoplayer.core.f.b> b(long j) {
-        return j >= 0 ? this.f25408a : Collections.emptyList();
+        return j >= 0 ? this.f11720a : Collections.emptyList();
     }
 }

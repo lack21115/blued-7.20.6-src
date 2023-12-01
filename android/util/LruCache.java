@@ -42,8 +42,7 @@ public class LruCache<K, V> {
         return i;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    public void entryRemoved(boolean z, K k, V v, V v2) {
+    protected void entryRemoved(boolean z, K k, V v, V v2) {
     }
 
     public final void evictAll() {
@@ -204,9 +203,10 @@ public class LruCache<K, V> {
         return format;
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     public void trimToSize(int i) {
-        K key;
-        V value;
+        Object key;
+        Object value;
         while (true) {
             synchronized (this) {
                 if (this.size < 0 || (this.map.isEmpty() && this.size != 0)) {
@@ -214,7 +214,7 @@ public class LruCache<K, V> {
                 } else if (this.size <= i) {
                     return;
                 } else {
-                    Map.Entry<K, V> eldest = this.map.eldest();
+                    Map.Entry eldest = this.map.eldest();
                     if (eldest == null) {
                         return;
                     }

@@ -12,11 +12,11 @@ import com.soft.blued.R;
 public final class LayoutVipCenterNewUserHeaderBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final LinearLayout f29436a;
+    public final LinearLayout f15746a;
     public final LinearLayout b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final ItemVipCenterBannerBinding f29437c;
+    public final ItemVipCenterBannerBinding f15747c;
     public final LinearLayout d;
     public final ImageView e;
     public final ImageView f;
@@ -33,9 +33,9 @@ public final class LayoutVipCenterNewUserHeaderBinding implements ViewBinding {
 
     private LayoutVipCenterNewUserHeaderBinding(LinearLayout linearLayout, LinearLayout linearLayout2, LinearLayout linearLayout3, ItemVipCenterBannerBinding itemVipCenterBannerBinding, LinearLayout linearLayout4, ImageView imageView, ImageView imageView2, ImageView imageView3, ImageView imageView4, RecyclerView recyclerView, TextView textView, TextView textView2, TextView textView3, TextView textView4, TextView textView5, LinearLayout linearLayout5) {
         this.p = linearLayout;
-        this.f29436a = linearLayout2;
+        this.f15746a = linearLayout2;
         this.b = linearLayout3;
-        this.f29437c = itemVipCenterBannerBinding;
+        this.f15747c = itemVipCenterBannerBinding;
         this.d = linearLayout4;
         this.e = imageView;
         this.f = imageView2;
@@ -65,7 +65,7 @@ public final class LayoutVipCenterNewUserHeaderBinding implements ViewBinding {
                         if (imageView != null) {
                             ImageView imageView2 = (ImageView) view.findViewById(R.id.iv_to_be_vip);
                             if (imageView2 != null) {
-                                ImageView imageView3 = (ImageView) view.findViewById(2131366006);
+                                ImageView imageView3 = (ImageView) view.findViewById(R.id.iv_user_avatar);
                                 if (imageView3 != null) {
                                     ImageView imageView4 = (ImageView) view.findViewById(R.id.iv_vip_new_user_top_right_bg);
                                     if (imageView4 != null) {
@@ -77,7 +77,7 @@ public final class LayoutVipCenterNewUserHeaderBinding implements ViewBinding {
                                                 if (textView2 != null) {
                                                     TextView textView3 = (TextView) view.findViewById(R.id.tv_to_be_vip);
                                                     if (textView3 != null) {
-                                                        TextView textView4 = (TextView) view.findViewById(2131372879);
+                                                        TextView textView4 = (TextView) view.findViewById(R.id.tv_user_name);
                                                         if (textView4 != null) {
                                                             TextView textView5 = (TextView) view.findViewById(R.id.tv_vip_state);
                                                             if (textView5 != null) {

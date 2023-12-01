@@ -7,11 +7,11 @@ import java.util.concurrent.atomic.AtomicReference;
 public final class CFgXs {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final AtomicReference<String> f39863a = new AtomicReference<>();
+    public static final AtomicReference<String> f26172a = new AtomicReference<>();
 
     public static String a() {
         String str;
-        AtomicReference<String> atomicReference = f39863a;
+        AtomicReference<String> atomicReference = f26172a;
         String str2 = atomicReference.get();
         if (str2 == null) {
             synchronized (atomicReference) {

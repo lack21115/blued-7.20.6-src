@@ -15,12 +15,12 @@ public class Bugly {
     public static final String SDK_IS_DEV = "false";
 
     /* renamed from: a  reason: collision with root package name */
-    private static boolean f35102a = false;
+    private static boolean f21411a = false;
     public static Context applicationContext;
     private static String[] b = {"BuglyCrashModule", "BuglyRqdModule", "BuglyBetaModule"};
 
     /* renamed from: c  reason: collision with root package name */
-    private static String[] f35103c = {"BuglyRqdModule", "BuglyCrashModule", "BuglyBetaModule"};
+    private static String[] f21412c = {"BuglyRqdModule", "BuglyCrashModule", "BuglyBetaModule"};
     public static boolean enable = true;
     public static Boolean isDev;
 
@@ -55,18 +55,18 @@ public class Bugly {
     public static void init(Context context, String str, boolean z, BuglyStrategy buglyStrategy) {
         synchronized (Bugly.class) {
             try {
-                if (f35102a) {
+                if (f21411a) {
                     return;
                 }
-                f35102a = true;
+                f21411a = true;
                 Context a2 = z.a(context);
                 applicationContext = a2;
                 if (a2 == null) {
-                    Log.e(x.f35414a, "init arg 'context' should not be null!");
+                    Log.e(x.f21723a, "init arg 'context' should not be null!");
                     return;
                 }
                 if (isDev()) {
-                    b = f35103c;
+                    b = f21412c;
                 }
                 String[] strArr = b;
                 int length = strArr.length;
@@ -74,7 +74,7 @@ public class Bugly {
                 while (true) {
                     int i2 = i;
                     if (i2 >= length) {
-                        b.f35108a = enable;
+                        b.f21417a = enable;
                         b.a(applicationContext, str, z, buglyStrategy);
                         return;
                     }

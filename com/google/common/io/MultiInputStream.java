@@ -11,7 +11,7 @@ final class MultiInputStream extends InputStream {
     @NullableDecl
 
     /* renamed from: in  reason: collision with root package name */
-    private InputStream f22218in;
+    private InputStream f8611in;
     private Iterator<? extends ByteSource> it;
 
     public MultiInputStream(Iterator<? extends ByteSource> it) throws IOException {
@@ -22,13 +22,13 @@ final class MultiInputStream extends InputStream {
     private void advance() throws IOException {
         close();
         if (this.it.hasNext()) {
-            this.f22218in = this.it.next().openStream();
+            this.f8611in = this.it.next().openStream();
         }
     }
 
     @Override // java.io.InputStream
     public int available() throws IOException {
-        InputStream inputStream = this.f22218in;
+        InputStream inputStream = this.f8611in;
         if (inputStream == null) {
             return 0;
         }
@@ -37,12 +37,12 @@ final class MultiInputStream extends InputStream {
 
     @Override // java.io.InputStream, java.io.Closeable, java.lang.AutoCloseable
     public void close() throws IOException {
-        InputStream inputStream = this.f22218in;
+        InputStream inputStream = this.f8611in;
         if (inputStream != null) {
             try {
                 inputStream.close();
             } finally {
-                this.f22218in = null;
+                this.f8611in = null;
             }
         }
     }
@@ -55,7 +55,7 @@ final class MultiInputStream extends InputStream {
     @Override // java.io.InputStream
     public int read() throws IOException {
         while (true) {
-            InputStream inputStream = this.f22218in;
+            InputStream inputStream = this.f8611in;
             if (inputStream == null) {
                 return -1;
             }
@@ -70,7 +70,7 @@ final class MultiInputStream extends InputStream {
     @Override // java.io.InputStream
     public int read(@NullableDecl byte[] bArr, int i, int i2) throws IOException {
         while (true) {
-            InputStream inputStream = this.f22218in;
+            InputStream inputStream = this.f8611in;
             if (inputStream == null) {
                 return -1;
             }
@@ -84,7 +84,7 @@ final class MultiInputStream extends InputStream {
 
     @Override // java.io.InputStream
     public long skip(long j) throws IOException {
-        InputStream inputStream = this.f22218in;
+        InputStream inputStream = this.f8611in;
         if (inputStream == null || j <= 0) {
             return 0L;
         }
@@ -95,6 +95,6 @@ final class MultiInputStream extends InputStream {
         if (read() == -1) {
             return 0L;
         }
-        return this.f22218in.skip(j - 1) + 1;
+        return this.f8611in.skip(j - 1) + 1;
     }
 }

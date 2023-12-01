@@ -8,17 +8,13 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ItemGiftExhibitionListTitleBinding.class */
 public final class ItemGiftExhibitionListTitleBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final TextView f16600a;
+    public final TextView a;
     public final TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final ConstraintLayout f16601c;
+    private final ConstraintLayout c;
 
     private ItemGiftExhibitionListTitleBinding(ConstraintLayout constraintLayout, TextView textView, TextView textView2) {
-        this.f16601c = constraintLayout;
-        this.f16600a = textView;
+        this.c = constraintLayout;
+        this.a = textView;
         this.b = textView2;
     }
 
@@ -37,9 +33,8 @@ public final class ItemGiftExhibitionListTitleBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f16601c;
+        return this.c;
     }
 }

@@ -209,7 +209,7 @@ public class b extends com.opos.cmn.biz.web.c.b.b {
         int i;
         if (this.b) {
             try {
-                i = com.opos.cmn.an.h.f.a.i(this.f24737a);
+                i = com.opos.cmn.an.h.f.a.i(this.f11049a);
             } catch (Exception e) {
                 com.opos.cmn.an.f.a.a("MixAdJsEngine", "", (Throwable) e);
             }
@@ -298,7 +298,7 @@ public class b extends com.opos.cmn.biz.web.c.b.b {
                             while (stringTokenizer.hasMoreTokens()) {
                                 String nextToken = stringTokenizer.nextToken();
                                 if (!com.opos.cmn.an.c.a.a(nextToken)) {
-                                    jSONObject.put(nextToken, com.opos.cmn.an.h.d.a.d(this.f24737a, nextToken));
+                                    jSONObject.put(nextToken, com.opos.cmn.an.h.d.a.d(this.f11049a, nextToken));
                                 }
                             }
                             str2 = jSONObject.toString();
@@ -394,7 +394,7 @@ public class b extends com.opos.cmn.biz.web.c.b.b {
             boolean r0 = r0.b
             if (r0 == 0) goto L1c
             r0 = r4
-            android.content.Context r0 = r0.f24737a     // Catch: java.lang.Exception -> L13
+            android.content.Context r0 = r0.f11049a     // Catch: java.lang.Exception -> L13
             r1 = r5
             boolean r0 = com.opos.mobad.activity.webview.a.a.a.b(r0, r1)     // Catch: java.lang.Exception -> L13
             r6 = r0
@@ -455,7 +455,7 @@ public class b extends com.opos.cmn.biz.web.c.b.b {
             boolean r0 = r0.b
             if (r0 == 0) goto L1c
             r0 = r4
-            android.content.Context r0 = r0.f24737a     // Catch: java.lang.Exception -> L13
+            android.content.Context r0 = r0.f11049a     // Catch: java.lang.Exception -> L13
             r1 = r5
             boolean r0 = com.opos.mobad.activity.webview.a.a.a.a(r0, r1)     // Catch: java.lang.Exception -> L13
             r6 = r0
@@ -623,7 +623,7 @@ public class b extends com.opos.cmn.biz.web.c.b.b {
                 @Override // java.lang.Runnable
                 public void run() {
                     try {
-                        com.opos.cmn.func.b.b.b.a().a(b.this.f24737a, new d.a().b(str).a(str2.getBytes()).a("POST").a());
+                        com.opos.cmn.func.b.b.b.a().a(b.this.f11049a, new d.a().b(str).a(str2.getBytes()).a("POST").a());
                     } catch (Exception e) {
                         com.opos.cmn.an.f.a.b("MixAdJsEngine", "request fail", e);
                     }

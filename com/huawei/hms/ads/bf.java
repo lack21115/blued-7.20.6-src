@@ -30,7 +30,7 @@ public class bf extends be {
                     ge.V(bf.Z, "ad not exist");
                     i = 3002;
                 } else if (bf.this.Code(adContentData)) {
-                    String str4 = com.huawei.openalliance.ad.constant.s.f22956a;
+                    String str4 = com.huawei.openalliance.ad.constant.s.f9348a;
                     int i3 = 13;
                     AdEventReport adEventReport2 = adEventReport;
                     int i4 = 0;
@@ -47,7 +47,7 @@ public class bf extends be {
                         str3 = adEventReport.k();
                         str2 = str5;
                     } else {
-                        str2 = com.huawei.openalliance.ad.constant.s.f22956a;
+                        str2 = com.huawei.openalliance.ad.constant.s.f9348a;
                         str3 = null;
                         i2 = 0;
                         i3 = 13;

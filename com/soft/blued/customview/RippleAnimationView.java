@@ -22,11 +22,11 @@ import android.view.ViewParent;
 public class RippleAnimationView extends View {
 
     /* renamed from: a  reason: collision with root package name */
-    private Bitmap f28492a;
+    private Bitmap f14802a;
     private Paint b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f28493c;
+    private int f14803c;
     private int d;
     private int e;
     private boolean f;
@@ -118,7 +118,7 @@ public class RippleAnimationView extends View {
         RectF rectF2 = new RectF(rectF.right, 0.0f, this.j.getRight(), rectF.bottom);
         RectF rectF3 = new RectF(0.0f, rectF.bottom, rectF.right, this.j.getBottom());
         RectF rectF4 = new RectF(rectF3.right, rectF.bottom, this.j.getRight(), rectF3.bottom);
-        this.f28493c = (int) Math.max(Math.max(Math.sqrt(Math.pow(rectF.width(), 2.0d) + Math.pow(rectF.height(), 2.0d)), Math.sqrt(Math.pow(rectF2.width(), 2.0d) + Math.pow(rectF2.height(), 2.0d))), Math.max(Math.sqrt(Math.pow(rectF3.width(), 2.0d) + Math.pow(rectF3.height(), 2.0d)), Math.sqrt(Math.pow(rectF4.width(), 2.0d) + Math.pow(rectF4.height(), 2.0d))));
+        this.f14803c = (int) Math.max(Math.max(Math.sqrt(Math.pow(rectF.width(), 2.0d) + Math.pow(rectF.height(), 2.0d)), Math.sqrt(Math.pow(rectF2.width(), 2.0d) + Math.pow(rectF2.height(), 2.0d))), Math.max(Math.sqrt(Math.pow(rectF3.width(), 2.0d) + Math.pow(rectF3.height(), 2.0d)), Math.sqrt(Math.pow(rectF4.width(), 2.0d) + Math.pow(rectF4.height(), 2.0d))));
     }
 
     private static float d(View view) {
@@ -143,12 +143,12 @@ public class RippleAnimationView extends View {
             viewGroup.removeView(this);
             this.j = null;
         }
-        Bitmap bitmap = this.f28492a;
+        Bitmap bitmap = this.f14802a;
         if (bitmap != null) {
             if (!bitmap.isRecycled()) {
-                this.f28492a.recycle();
+                this.f14802a.recycle();
             }
-            this.f28492a = null;
+            this.f14802a = null;
         }
         if (this.b != null) {
             this.b = null;
@@ -156,15 +156,15 @@ public class RippleAnimationView extends View {
     }
 
     private void f() {
-        Bitmap bitmap = this.f28492a;
+        Bitmap bitmap = this.f14802a;
         if (bitmap != null && !bitmap.isRecycled()) {
-            this.f28492a.recycle();
+            this.f14802a.recycle();
         }
-        this.f28492a = b(this.j);
+        this.f14802a = b(this.j);
     }
 
     private ValueAnimator getAnimator() {
-        ValueAnimator duration = ValueAnimator.ofFloat(0.0f, this.f28493c).setDuration(this.g);
+        ValueAnimator duration = ValueAnimator.ofFloat(0.0f, this.f14803c).setDuration(this.g);
         duration.addUpdateListener(this.m);
         duration.addListener(this.l);
         return duration;
@@ -185,11 +185,10 @@ public class RippleAnimationView extends View {
         getAnimator().start();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         int saveLayer = Build.VERSION.SDK_INT >= 21 ? canvas.saveLayer(0.0f, 0.0f, getWidth(), getHeight(), null) : canvas.saveLayer(0.0f, 0.0f, getWidth(), getHeight(), null, 31);
-        canvas.drawBitmap(this.f28492a, 0.0f, 0.0f, (Paint) null);
+        canvas.drawBitmap(this.f14802a, 0.0f, 0.0f, (Paint) null);
         canvas.drawCircle(this.h, this.i, this.e, this.b);
         canvas.restoreToCount(saveLayer);
     }

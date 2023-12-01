@@ -6,7 +6,6 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
-import android.os.BatteryManager;
 import android.text.Selection;
 import android.text.Spannable;
 import android.text.SpannableString;
@@ -22,6 +21,9 @@ import android.view.ViewGroup;
 import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 import android.widget.TextView;
+import com.alipay.sdk.cons.c;
+import com.alipay.sdk.util.l;
+import com.android.internal.util.cm.SpamFilter;
 import com.anythink.core.common.g.g;
 import com.blued.android.chat.utils.MsgPackHelper;
 import com.blued.android.core.AppInfo;
@@ -181,9 +183,9 @@ public class LiveMsgContentAdapter extends BaseListAdapter<LiveChattingModel> {
 
     private void a(final TextView textView, final SpannableStringBuilder spannableStringBuilder, String str, final int i, final int i2) {
         textView.setTag(R.id.image_bitmap, str);
-        LiveMemoryBitmapCache a2 = LiveMemoryBitmapCache.a();
+        LiveMemoryBitmapCache a = LiveMemoryBitmapCache.a();
         Context context = this.e;
-        a2.a(context, str, DensityUtils.a(context, 20.0f), R.drawable.live_msg_gift_default_bg, new LiveMemoryBitmapCache.BitmapCallback() { // from class: com.blued.android.module.live_china.liveForMsg.data.LiveMsgContentAdapter.14
+        a.a(context, str, DensityUtils.a(context, 20.0f), R.drawable.live_msg_gift_default_bg, new LiveMemoryBitmapCache.BitmapCallback() { // from class: com.blued.android.module.live_china.liveForMsg.data.LiveMsgContentAdapter.14
             @Override // com.blued.android.module.live_china.utils.LiveMemoryBitmapCache.BitmapCallback
             public void onBitmapCreate(String str2, Bitmap bitmap) {
                 if (bitmap == null) {
@@ -204,14 +206,14 @@ public class LiveMsgContentAdapter extends BaseListAdapter<LiveChattingModel> {
     }
 
     private void a(final TextView textView, final LiveChattingModel liveChattingModel) {
-        LiveGiftModel a2;
+        LiveGiftModel a;
         int i;
         Bitmap createBitmap;
         if (textView == null || liveChattingModel == null) {
             return;
         }
-        String a3 = LiveCloakingUtil.a(liveChattingModel.fromNickName, liveChattingModel.fromPrivilege);
-        if (TextUtils.isEmpty(a3) || (a2 = LiveUtils.a(liveChattingModel)) == null) {
+        String a2 = LiveCloakingUtil.a(liveChattingModel.fromNickName, liveChattingModel.fromPrivilege);
+        if (TextUtils.isEmpty(a2) || (a = LiveUtils.a(liveChattingModel)) == null) {
             return;
         }
         h(liveChattingModel);
@@ -221,72 +223,72 @@ public class LiveMsgContentAdapter extends BaseListAdapter<LiveChattingModel> {
         int i3 = d.fan_club_level;
         int i4 = d.in_fan_club;
         int i5 = d.fans_status;
-        int c2 = c(liveChattingModel);
-        LiveChatBadgeModel c3 = LiveUtils.c(liveChattingModel);
+        int c = c(liveChattingModel);
+        LiveChatBadgeModel c2 = LiveUtils.c(liveChattingModel);
         String str2 = i2 != 0 ? "field_control " : "";
         String str3 = i4 != 0 ? "fans " : "";
-        String str4 = c2 != 0 ? "rich " : "";
-        String str5 = (c3 == null || TextUtils.isEmpty(c3.getChat_badge_url()) || c3.getChat_badge_length().intValue() == 0 || c3.getChat_badge_height().intValue() == 0) ? "" : "rechargeBadge ";
-        final String str6 = str2 + str3 + str4 + str5 + "" + a3 + " 开启 lucky_bag 获得了 " + a2.name + " lucky_gift 送给主播";
+        String str4 = c != 0 ? "rich " : "";
+        String str5 = (c2 == null || TextUtils.isEmpty(c2.getChat_badge_url()) || c2.getChat_badge_length().intValue() == 0 || c2.getChat_badge_height().intValue() == 0) ? "" : "rechargeBadge ";
+        final String str6 = str2 + str3 + str4 + str5 + "" + a2 + " 开启 lucky_bag 获得了 " + a.name + " lucky_gift 送给主播";
         final SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str6);
-        final int a4 = AppMethods.a(1.0f);
+        final int a3 = AppMethods.a(1.0f);
         if (i2 != 0) {
-            Drawable a5 = LiveBitmapUtils.a();
-            a5.setBounds(0, a4, AppMethods.a(29), AppMethods.a(15) + a4);
-            spannableStringBuilder.setSpan(new VerticalCenterImageSpan(a5, 2), 0, str2.length() - 1, 33);
+            Drawable a4 = LiveBitmapUtils.a();
+            a4.setBounds(0, a3, AppMethods.a(29), AppMethods.a(15) + a3);
+            spannableStringBuilder.setSpan(new VerticalCenterImageSpan(a4, 2), 0, str2.length() - 1, 33);
         }
         if (i4 != 0) {
             LiveFansLevelView liveFansLevelView = new LiveFansLevelView(this.e);
             liveFansLevelView.setFansLevel(d);
-            int a6 = AppMethods.a(54.5f);
-            int a7 = AppMethods.a(15.0f);
+            int a5 = AppMethods.a(54.5f);
+            int a6 = AppMethods.a(15.0f);
             try {
                 liveFansLevelView.measure(View.MeasureSpec.makeMeasureSpec(0, 0), View.MeasureSpec.makeMeasureSpec(0, 0));
                 int measuredWidth = liveFansLevelView.getMeasuredWidth();
                 int measuredHeight = liveFansLevelView.getMeasuredHeight();
                 liveFansLevelView.layout(0, 0, measuredWidth, measuredHeight);
                 createBitmap = Bitmap.createBitmap(measuredWidth, measuredHeight, Bitmap.Config.ARGB_8888);
-                a6 = measuredWidth;
-                a7 = measuredHeight;
+                a5 = measuredWidth;
+                a6 = measuredHeight;
                 liveFansLevelView.draw(new Canvas(createBitmap));
-                a6 = measuredWidth;
-                a7 = measuredHeight;
+                a5 = measuredWidth;
+                a6 = measuredHeight;
             } catch (Exception e) {
                 createBitmap = Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888);
             }
             BitmapDrawable bitmapDrawable = new BitmapDrawable(textView.getResources(), createBitmap);
-            bitmapDrawable.setBounds(0, a4, a6, a7 + a4);
+            bitmapDrawable.setBounds(0, a3, a5, a6 + a3);
             spannableStringBuilder.setSpan(new VerticalCenterImageSpan(bitmapDrawable, 2), str6.indexOf(str3), (str6.indexOf(str3) + str3.length()) - 1, 33);
         }
-        if (c2 != 0) {
-            Drawable a8 = LiveBitmapUtils.a(AppInfo.d(), c2);
-            if (c2 >= 30) {
-                a8.setBounds(0, a4, AppMethods.a(44), AppMethods.a(15) + a4);
+        if (c != 0) {
+            Drawable a7 = LiveBitmapUtils.a(AppInfo.d(), c);
+            if (c >= 30) {
+                a7.setBounds(0, a3, AppMethods.a(44), AppMethods.a(15) + a3);
             } else {
-                a8.setBounds(0, a4, AppMethods.a(30), AppMethods.a(15) + a4);
+                a7.setBounds(0, a3, AppMethods.a(30), AppMethods.a(15) + a3);
             }
-            spannableStringBuilder.setSpan(new VerticalCenterImageSpan(a8, 2), str6.indexOf(str4), (str6.indexOf(str4) + str4.length()) - 1, 33);
+            spannableStringBuilder.setSpan(new VerticalCenterImageSpan(a7, 2), str6.indexOf(str4), (str6.indexOf(str4) + str4.length()) - 1, 33);
         }
-        if (!TextUtils.isEmpty(str5) && c3 != null && !TextUtils.isEmpty(c3.getChat_badge_url())) {
+        if (!TextUtils.isEmpty(str5) && c2 != null && !TextUtils.isEmpty(c2.getChat_badge_url())) {
             BitmapDrawable bitmapDrawable2 = new BitmapDrawable();
-            int a9 = AppMethods.a(15);
-            if (c3.getChat_badge_length().intValue() == 0 || c3.getChat_badge_height().intValue() == 0) {
+            int a8 = AppMethods.a(15);
+            if (c2.getChat_badge_length().intValue() == 0 || c2.getChat_badge_height().intValue() == 0) {
                 i = 0;
-                a9 = 0;
+                a8 = 0;
             } else {
-                i = (c3.getChat_badge_length().intValue() * a9) / c3.getChat_badge_height().intValue();
+                i = (c2.getChat_badge_length().intValue() * a8) / c2.getChat_badge_height().intValue();
             }
-            bitmapDrawable2.setBounds(0, a4, i, a9 + a4);
+            bitmapDrawable2.setBounds(0, a3, i, a8 + a3);
             final int indexOf = str6.indexOf(str5);
             final int length = (str5.length() + indexOf) - 1;
             if (indexOf < spannableStringBuilder.length() && length < spannableStringBuilder.length()) {
                 spannableStringBuilder.setSpan(new VerticalCenterImageSpan(bitmapDrawable2, 2), indexOf, length, 33);
                 final int i6 = i;
-                final int i7 = a9;
-                LiveMemoryBitmapCache.a().a(this.e, c3.getChat_badge_url(), DensityUtils.a(this.e, i), 0, new LiveMemoryBitmapCache.BitmapCallback() { // from class: com.blued.android.module.live_china.liveForMsg.data.-$$Lambda$LiveMsgContentAdapter$av5BgegNMoPwusfC8aPt-gjdJvE
+                final int i7 = a8;
+                LiveMemoryBitmapCache.a().a(this.e, c2.getChat_badge_url(), DensityUtils.a(this.e, i), 0, new LiveMemoryBitmapCache.BitmapCallback() { // from class: com.blued.android.module.live_china.liveForMsg.data.-$$Lambda$LiveMsgContentAdapter$av5BgegNMoPwusfC8aPt-gjdJvE
                     @Override // com.blued.android.module.live_china.utils.LiveMemoryBitmapCache.BitmapCallback
                     public final void onBitmapCreate(String str7, Bitmap bitmap) {
-                        LiveMsgContentAdapter.c(a4, i6, i7, spannableStringBuilder, indexOf, length, textView, str7, bitmap);
+                        LiveMsgContentAdapter.c(a3, i6, i7, spannableStringBuilder, indexOf, length, textView, str7, bitmap);
                     }
                 });
             }
@@ -300,8 +302,8 @@ public class LiveMsgContentAdapter extends BaseListAdapter<LiveChattingModel> {
             }
         });
         textView.setTextColor(AppInfo.d().getResources().getColor(R.color.biao_live_msg_name_0));
-        textView.setTag(960336433, a2.luck_bag_img);
-        LiveMemoryBitmapCache.a().a(this.e, a2.luck_bag_img, DensityUtils.a(this.e, 30.0f), R.drawable.live_msg_gift_default_bg, new LiveMemoryBitmapCache.BitmapCallback() { // from class: com.blued.android.module.live_china.liveForMsg.data.LiveMsgContentAdapter.22
+        textView.setTag(960336433, a.luck_bag_img);
+        LiveMemoryBitmapCache.a().a(this.e, a.luck_bag_img, DensityUtils.a(this.e, 30.0f), R.drawable.live_msg_gift_default_bg, new LiveMemoryBitmapCache.BitmapCallback() { // from class: com.blued.android.module.live_china.liveForMsg.data.LiveMsgContentAdapter.22
             @Override // com.blued.android.module.live_china.utils.LiveMemoryBitmapCache.BitmapCallback
             public void onBitmapCreate(String str7, Bitmap bitmap) {
                 if (bitmap == null) {
@@ -319,8 +321,8 @@ public class LiveMsgContentAdapter extends BaseListAdapter<LiveChattingModel> {
         });
         textView.setMovementMethod(LinkMovementClickMethod.a());
         textView.setText(spannableStringBuilder);
-        textView.setTag(R.id.image_bitmap, a2.images_static);
-        LiveMemoryBitmapCache.a().a(this.e, a2.images_static, DensityUtils.a(this.e, 30.0f), R.drawable.live_msg_gift_default_bg, new LiveMemoryBitmapCache.BitmapCallback() { // from class: com.blued.android.module.live_china.liveForMsg.data.LiveMsgContentAdapter.23
+        textView.setTag(R.id.image_bitmap, a.images_static);
+        LiveMemoryBitmapCache.a().a(this.e, a.images_static, DensityUtils.a(this.e, 30.0f), R.drawable.live_msg_gift_default_bg, new LiveMemoryBitmapCache.BitmapCallback() { // from class: com.blued.android.module.live_china.liveForMsg.data.LiveMsgContentAdapter.23
             @Override // com.blued.android.module.live_china.utils.LiveMemoryBitmapCache.BitmapCallback
             public void onBitmapCreate(String str7, Bitmap bitmap) {
                 if (bitmap == null) {
@@ -342,7 +344,7 @@ public class LiveMsgContentAdapter extends BaseListAdapter<LiveChattingModel> {
     }
 
     private void a(final TextView textView, LiveChattingModel liveChattingModel, final ClickMsgTalkerListener clickMsgTalkerListener) {
-        LiveGiftModel a2;
+        LiveGiftModel a;
         String str;
         String str2;
         int i;
@@ -356,11 +358,11 @@ public class LiveMsgContentAdapter extends BaseListAdapter<LiveChattingModel> {
         if (textView == null || liveChattingModel == null) {
             return;
         }
-        String a3 = LiveCloakingUtil.a(liveChattingModel.fromNickName, liveChattingModel.fromPrivilege);
-        if (TextUtils.isEmpty(a3) || (a2 = LiveUtils.a(liveChattingModel)) == null) {
+        String a2 = LiveCloakingUtil.a(liveChattingModel.fromNickName, liveChattingModel.fromPrivilege);
+        if (TextUtils.isEmpty(a2) || (a = LiveUtils.a(liveChattingModel)) == null) {
             return;
         }
-        final String str5 = this.e.getString(R.string.Live_SendPresent_send) + " " + a2.name + " ";
+        final String str5 = this.e.getString(R.string.Live_SendPresent_send) + " " + a.name + " ";
         h(liveChattingModel);
         int i6 = liveChattingModel.fromLiveManager;
         LiveFansLevelModel d = d(liveChattingModel);
@@ -368,12 +370,12 @@ public class LiveMsgContentAdapter extends BaseListAdapter<LiveChattingModel> {
         int i7 = d.fan_club_level;
         int i8 = d.in_fan_club;
         int i9 = d.fans_status;
-        int c2 = c(liveChattingModel);
-        LiveChatBadgeModel c3 = LiveUtils.c(liveChattingModel);
-        int length = a3.length();
+        int c = c(liveChattingModel);
+        LiveChatBadgeModel c2 = LiveUtils.c(liveChattingModel);
+        int length = a2.length();
         int i10 = 14;
         if (i6 != 0) {
-            length = a3.length() + 14;
+            length = a2.length() + 14;
             str = "field_control ";
         } else {
             str = "";
@@ -381,32 +383,32 @@ public class LiveMsgContentAdapter extends BaseListAdapter<LiveChattingModel> {
         }
         if (i8 != 0) {
             i2 = i10 + 5;
-            i = a3.length() + i2;
+            i = a2.length() + i2;
             str2 = "fans ";
         } else {
             str2 = "";
             i = length;
             i2 = i10;
         }
-        if (c2 != 0) {
+        if (c != 0) {
             i2 += 5;
-            i3 = i2 + a3.length();
+            i3 = i2 + a2.length();
             str3 = "rich ";
         } else {
             str3 = "";
             i3 = i;
         }
-        if (c3 == null || TextUtils.isEmpty(c3.getChat_badge_url()) || c3.getChat_badge_length().intValue() == 0 || c3.getChat_badge_height().intValue() == 0) {
+        if (c2 == null || TextUtils.isEmpty(c2.getChat_badge_url()) || c2.getChat_badge_length().intValue() == 0 || c2.getChat_badge_height().intValue() == 0) {
             str4 = "";
             i4 = i2;
         } else {
             i4 = i2 + 14;
-            i3 = i4 + a3.length();
+            i3 = i4 + a2.length();
             str4 = "rechargeBadge ";
         }
-        final SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str + str2 + str3 + str4 + "" + a3 + " " + str5 + "gift ");
-        if (a2.getDisplayCount() > 1) {
-            String str7 = " X" + a2.getDisplayCount();
+        final SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str + str2 + str3 + str4 + "" + a2 + " " + str5 + "gift ");
+        if (a.getDisplayCount() > 1) {
+            String str7 = " X" + a.getDisplayCount();
             int length2 = spannableStringBuilder.length();
             int length3 = str7.length();
             spannableStringBuilder.append((CharSequence) str7);
@@ -419,7 +421,7 @@ public class LiveMsgContentAdapter extends BaseListAdapter<LiveChattingModel> {
                 }
             }, length2, length2 + length3, 33);
         }
-        if (a2.is_help_wish_list) {
+        if (a.is_help_wish_list) {
             int length4 = spannableStringBuilder.length();
             spannableStringBuilder.append((CharSequence) "，帮助主播实现心愿");
             spannableStringBuilder.setSpan(new CharacterStyle() { // from class: com.blued.android.module.live_china.liveForMsg.data.LiveMsgContentAdapter.16
@@ -431,69 +433,69 @@ public class LiveMsgContentAdapter extends BaseListAdapter<LiveChattingModel> {
                 }
             }, length4, length4 + 9, 33);
         }
-        final int a4 = AppMethods.a(1.0f);
+        final int a3 = AppMethods.a(1.0f);
         if (i6 != 0) {
-            Drawable a5 = LiveBitmapUtils.a();
-            a5.setBounds(0, a4, AppMethods.a(29), a4 + AppMethods.a(15));
-            spannableStringBuilder.setSpan(new VerticalCenterImageSpan(a5, 2), 0, str.length() - 1, 33);
+            Drawable a4 = LiveBitmapUtils.a();
+            a4.setBounds(0, a3, AppMethods.a(29), a3 + AppMethods.a(15));
+            spannableStringBuilder.setSpan(new VerticalCenterImageSpan(a4, 2), 0, str.length() - 1, 33);
         }
         if (i8 != 0) {
             LiveFansLevelView liveFansLevelView = new LiveFansLevelView(this.e);
             liveFansLevelView.setFansLevel(d);
-            int a6 = AppMethods.a(54.5f);
-            int a7 = AppMethods.a(15.0f);
+            int a5 = AppMethods.a(54.5f);
+            int a6 = AppMethods.a(15.0f);
             try {
                 liveFansLevelView.measure(View.MeasureSpec.makeMeasureSpec(0, 0), View.MeasureSpec.makeMeasureSpec(0, 0));
                 int measuredWidth = liveFansLevelView.getMeasuredWidth();
                 int measuredHeight = liveFansLevelView.getMeasuredHeight();
                 liveFansLevelView.layout(0, 0, measuredWidth, measuredHeight);
                 createBitmap = Bitmap.createBitmap(measuredWidth, measuredHeight, Bitmap.Config.ARGB_8888);
-                a6 = measuredWidth;
-                a7 = measuredHeight;
+                a5 = measuredWidth;
+                a6 = measuredHeight;
                 liveFansLevelView.draw(new Canvas(createBitmap));
-                a6 = measuredWidth;
-                a7 = measuredHeight;
+                a5 = measuredWidth;
+                a6 = measuredHeight;
             } catch (Exception e) {
                 createBitmap = Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888);
             }
             BitmapDrawable bitmapDrawable = new BitmapDrawable(textView.getResources(), createBitmap);
-            bitmapDrawable.setBounds(0, a4, a6, a7 + a4);
+            bitmapDrawable.setBounds(0, a3, a5, a6 + a3);
             spannableStringBuilder.setSpan(new VerticalCenterImageSpan(bitmapDrawable, 2), str.length(), (str.length() + str2.length()) - 1, 33);
         }
-        if (c2 != 0) {
-            Drawable a8 = LiveBitmapUtils.a(AppInfo.d(), c2);
-            if (c2 >= 30) {
-                a8.setBounds(0, a4, AppMethods.a(44), AppMethods.a(15) + a4);
+        if (c != 0) {
+            Drawable a7 = LiveBitmapUtils.a(AppInfo.d(), c);
+            if (c >= 30) {
+                a7.setBounds(0, a3, AppMethods.a(44), AppMethods.a(15) + a3);
             } else {
-                a8.setBounds(0, a4, AppMethods.a(30), AppMethods.a(15) + a4);
+                a7.setBounds(0, a3, AppMethods.a(30), AppMethods.a(15) + a3);
             }
-            spannableStringBuilder.setSpan(new VerticalCenterImageSpan(a8, 2), str2.length() + str.length(), ((str2.length() + str.length()) + str3.length()) - 1, 33);
+            spannableStringBuilder.setSpan(new VerticalCenterImageSpan(a7, 2), str2.length() + str.length(), ((str2.length() + str.length()) + str3.length()) - 1, 33);
         }
-        if (!TextUtils.isEmpty(str4) && c3 != null && !TextUtils.isEmpty(c3.getChat_badge_url())) {
+        if (!TextUtils.isEmpty(str4) && c2 != null && !TextUtils.isEmpty(c2.getChat_badge_url())) {
             BitmapDrawable bitmapDrawable2 = new BitmapDrawable();
-            int a9 = AppMethods.a(15);
-            if (c3.getChat_badge_length().intValue() == 0 || c3.getChat_badge_height().intValue() == 0) {
-                a9 = 0;
+            int a8 = AppMethods.a(15);
+            if (c2.getChat_badge_length().intValue() == 0 || c2.getChat_badge_height().intValue() == 0) {
+                a8 = 0;
                 i5 = 0;
             } else {
-                i5 = (c3.getChat_badge_length().intValue() * a9) / c3.getChat_badge_height().intValue();
+                i5 = (c2.getChat_badge_length().intValue() * a8) / c2.getChat_badge_height().intValue();
             }
-            bitmapDrawable2.setBounds(0, a4, i5, a9 + a4);
+            bitmapDrawable2.setBounds(0, a3, i5, a8 + a3);
             final int length5 = str2.length() + str.length() + str3.length();
             final int length6 = (str4.length() + length5) - 1;
             if (length5 < spannableStringBuilder.length() && length6 < spannableStringBuilder.length()) {
                 spannableStringBuilder.setSpan(new VerticalCenterImageSpan(bitmapDrawable2, 2), length5, length6, 33);
                 final int i11 = i5;
-                final int i12 = a9;
-                LiveMemoryBitmapCache.a().a(this.e, c3.getChat_badge_url(), DensityUtils.a(this.e, i5), 0, new LiveMemoryBitmapCache.BitmapCallback() { // from class: com.blued.android.module.live_china.liveForMsg.data.-$$Lambda$LiveMsgContentAdapter$B5Xkw13jt1-nxbW3TTNFhrj_AyU
+                final int i12 = a8;
+                LiveMemoryBitmapCache.a().a(this.e, c2.getChat_badge_url(), DensityUtils.a(this.e, i5), 0, new LiveMemoryBitmapCache.BitmapCallback() { // from class: com.blued.android.module.live_china.liveForMsg.data.-$$Lambda$LiveMsgContentAdapter$B5Xkw13jt1-nxbW3TTNFhrj_AyU
                     @Override // com.blued.android.module.live_china.utils.LiveMemoryBitmapCache.BitmapCallback
                     public final void onBitmapCreate(String str8, Bitmap bitmap) {
-                        LiveMsgContentAdapter.d(a4, i11, i12, spannableStringBuilder, length5, length6, textView, str8, bitmap);
+                        LiveMsgContentAdapter.d(a3, i11, i12, spannableStringBuilder, length5, length6, textView, str8, bitmap);
                     }
                 });
             }
         }
-        if (a2.isReward) {
+        if (a.isReward) {
             int length7 = spannableStringBuilder.length();
             spannableStringBuilder.append((CharSequence) "（来自求开播）");
             spannableStringBuilder.setSpan(new CharacterStyle() { // from class: com.blued.android.module.live_china.liveForMsg.data.LiveMsgContentAdapter.17
@@ -521,9 +523,9 @@ public class LiveMsgContentAdapter extends BaseListAdapter<LiveChattingModel> {
                 textPaint.clearShadowLayer();
             }
         }, i4, str5.length() + i3 + 1, 33);
-        textView.setTag(R.id.image_bitmap, a2.images_static);
+        textView.setTag(R.id.image_bitmap, a.images_static);
         final int i13 = i3;
-        LiveMemoryBitmapCache.a().a(this.e, a2.images_static, DensityUtils.a(this.e, 30.0f), R.drawable.live_msg_gift_default_bg, new LiveMemoryBitmapCache.BitmapCallback() { // from class: com.blued.android.module.live_china.liveForMsg.data.LiveMsgContentAdapter.20
+        LiveMemoryBitmapCache.a().a(this.e, a.images_static, DensityUtils.a(this.e, 30.0f), R.drawable.live_msg_gift_default_bg, new LiveMemoryBitmapCache.BitmapCallback() { // from class: com.blued.android.module.live_china.liveForMsg.data.LiveMsgContentAdapter.20
             @Override // com.blued.android.module.live_china.utils.LiveMemoryBitmapCache.BitmapCallback
             public void onBitmapCreate(String str8, Bitmap bitmap) {
                 if (bitmap == null) {
@@ -561,7 +563,7 @@ public class LiveMsgContentAdapter extends BaseListAdapter<LiveChattingModel> {
         int i;
         long j = liveChattingModel.fromId;
         String str = liveChattingModel.fromNickName;
-        int intValue = ((Integer) liveChattingModel.msgMapExtra.get("result")).intValue();
+        int intValue = ((Integer) liveChattingModel.msgMapExtra.get(l.c)).intValue();
         int i2 = 3;
         if (intValue == 1) {
             i = R.string.live_chicken_win_msg;
@@ -660,7 +662,7 @@ public class LiveMsgContentAdapter extends BaseListAdapter<LiveChattingModel> {
             EventTrackLive.o(LiveProtos.Event.LIVE_SCREEN_GUIDE_CLICK, LiveRoomManager.a().e(), LiveRoomManager.a().g(), "recharge");
             LiveRefreshUIObserver.a().v();
         } else if (z) {
-            EventTrackLive.o(LiveProtos.Event.LIVE_SCREEN_GUIDE_CLICK, LiveRoomManager.a().e(), LiveRoomManager.a().g(), BatteryManager.EXTRA_PRESENT);
+            EventTrackLive.o(LiveProtos.Event.LIVE_SCREEN_GUIDE_CLICK, LiveRoomManager.a().e(), LiveRoomManager.a().g(), "present");
             LiveRefreshUIObserver.a().j();
         } else if (z) {
             EventTrackLive.o(LiveProtos.Event.LIVE_SCREEN_GUIDE_CLICK, LiveRoomManager.a().e(), LiveRoomManager.a().g(), "fans_club");
@@ -724,8 +726,8 @@ public class LiveMsgContentAdapter extends BaseListAdapter<LiveChattingModel> {
         int i7 = d.fan_club_level;
         int i8 = d.in_fan_club;
         int i9 = d.fans_status;
-        int c2 = c(liveChattingModel);
-        LiveChatBadgeModel c3 = LiveUtils.c(liveChattingModel);
+        int c = c(liveChattingModel);
+        LiveChatBadgeModel c2 = LiveUtils.c(liveChattingModel);
         if (liveChattingModel.fromPrivilege == 1) {
             liveChattingModel.fromNickName = LiveCloakingUtil.a(liveChattingModel.fromNickName);
         }
@@ -746,7 +748,7 @@ public class LiveMsgContentAdapter extends BaseListAdapter<LiveChattingModel> {
         } else {
             str2 = "";
         }
-        if (c2 != 0) {
+        if (c != 0) {
             i3 = i10 + 5;
             i2 = i3 + length;
             str3 = "rich ";
@@ -755,7 +757,7 @@ public class LiveMsgContentAdapter extends BaseListAdapter<LiveChattingModel> {
             i2 = i;
             i3 = i10;
         }
-        if (c3 == null || TextUtils.isEmpty(c3.getChat_badge_url()) || c3.getChat_badge_length().intValue() == 0 || c3.getChat_badge_height().intValue() == 0) {
+        if (c2 == null || TextUtils.isEmpty(c2.getChat_badge_url()) || c2.getChat_badge_length().intValue() == 0 || c2.getChat_badge_height().intValue() == 0) {
             str4 = "";
             i4 = i2;
         } else {
@@ -764,64 +766,64 @@ public class LiveMsgContentAdapter extends BaseListAdapter<LiveChattingModel> {
             str4 = "rechargeBadge ";
         }
         final SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str + str2 + str3 + str4 + "" + liveChattingModel.fromNickName + " " + str5 + "gift ");
-        final int a2 = AppMethods.a(1.0f);
+        final int a = AppMethods.a(1.0f);
         if (i6 != 0) {
-            Drawable a3 = LiveBitmapUtils.a();
-            a3.setBounds(0, a2, AppMethods.a(29), a2 + AppMethods.a(15));
-            spannableStringBuilder.setSpan(new VerticalCenterImageSpan(a3, 2), 0, str.length() - 1, 33);
+            Drawable a2 = LiveBitmapUtils.a();
+            a2.setBounds(0, a, AppMethods.a(29), a + AppMethods.a(15));
+            spannableStringBuilder.setSpan(new VerticalCenterImageSpan(a2, 2), 0, str.length() - 1, 33);
         }
         if (i8 != 0) {
             LiveFansLevelView liveFansLevelView = new LiveFansLevelView(this.e);
             liveFansLevelView.setFansLevel(d);
-            int a4 = AppMethods.a(54.5f);
-            int a5 = AppMethods.a(15.0f);
+            int a3 = AppMethods.a(54.5f);
+            int a4 = AppMethods.a(15.0f);
             try {
                 liveFansLevelView.measure(View.MeasureSpec.makeMeasureSpec(0, 0), View.MeasureSpec.makeMeasureSpec(0, 0));
                 int measuredWidth = liveFansLevelView.getMeasuredWidth();
                 int measuredHeight = liveFansLevelView.getMeasuredHeight();
                 liveFansLevelView.layout(0, 0, measuredWidth, measuredHeight);
                 createBitmap = Bitmap.createBitmap(measuredWidth, measuredHeight, Bitmap.Config.ARGB_8888);
-                a4 = measuredWidth;
-                a5 = measuredHeight;
+                a3 = measuredWidth;
+                a4 = measuredHeight;
                 liveFansLevelView.draw(new Canvas(createBitmap));
-                a4 = measuredWidth;
-                a5 = measuredHeight;
+                a3 = measuredWidth;
+                a4 = measuredHeight;
             } catch (Exception e) {
                 createBitmap = Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888);
             }
             BitmapDrawable bitmapDrawable = new BitmapDrawable(textView.getResources(), createBitmap);
-            bitmapDrawable.setBounds(0, a2, a4, a5 + a2);
+            bitmapDrawable.setBounds(0, a, a3, a4 + a);
             spannableStringBuilder.setSpan(new VerticalCenterImageSpan(bitmapDrawable, 2), str.length(), (str.length() + str2.length()) - 1, 33);
         }
-        if (c2 != 0) {
-            Drawable a6 = LiveBitmapUtils.a(AppInfo.d(), c2);
-            if (c2 >= 30) {
-                a6.setBounds(0, a2, AppMethods.a(44), AppMethods.a(15) + a2);
+        if (c != 0) {
+            Drawable a5 = LiveBitmapUtils.a(AppInfo.d(), c);
+            if (c >= 30) {
+                a5.setBounds(0, a, AppMethods.a(44), AppMethods.a(15) + a);
             } else {
-                a6.setBounds(0, a2, AppMethods.a(30), AppMethods.a(15) + a2);
+                a5.setBounds(0, a, AppMethods.a(30), AppMethods.a(15) + a);
             }
-            spannableStringBuilder.setSpan(new VerticalCenterImageSpan(a6, 2), str2.length() + str.length(), ((str2.length() + str.length()) + str3.length()) - 1, 33);
+            spannableStringBuilder.setSpan(new VerticalCenterImageSpan(a5, 2), str2.length() + str.length(), ((str2.length() + str.length()) + str3.length()) - 1, 33);
         }
-        if (!TextUtils.isEmpty(str4) && c3 != null && !TextUtils.isEmpty(c3.getChat_badge_url())) {
+        if (!TextUtils.isEmpty(str4) && c2 != null && !TextUtils.isEmpty(c2.getChat_badge_url())) {
             BitmapDrawable bitmapDrawable2 = new BitmapDrawable();
-            int a7 = AppMethods.a(15);
-            if (c3.getChat_badge_length().intValue() == 0 || c3.getChat_badge_height().intValue() == 0) {
-                a7 = 0;
+            int a6 = AppMethods.a(15);
+            if (c2.getChat_badge_length().intValue() == 0 || c2.getChat_badge_height().intValue() == 0) {
+                a6 = 0;
                 i5 = 0;
             } else {
-                i5 = (c3.getChat_badge_length().intValue() * a7) / c3.getChat_badge_height().intValue();
+                i5 = (c2.getChat_badge_length().intValue() * a6) / c2.getChat_badge_height().intValue();
             }
-            bitmapDrawable2.setBounds(0, a2, i5, a7 + a2);
+            bitmapDrawable2.setBounds(0, a, i5, a6 + a);
             final int length2 = str2.length() + str.length() + str3.length();
             final int length3 = (str4.length() + length2) - 1;
             if (length2 < spannableStringBuilder.length() && length3 < spannableStringBuilder.length()) {
                 spannableStringBuilder.setSpan(new VerticalCenterImageSpan(bitmapDrawable2, 2), length2, length3, 33);
                 final int i11 = i5;
-                final int i12 = a7;
-                LiveMemoryBitmapCache.a().a(this.e, c3.getChat_badge_url(), DensityUtils.a(this.e, i5), 0, new LiveMemoryBitmapCache.BitmapCallback() { // from class: com.blued.android.module.live_china.liveForMsg.data.-$$Lambda$LiveMsgContentAdapter$iT_qAoyNjxKIP2ly9Afs1ahm0CM
+                final int i12 = a6;
+                LiveMemoryBitmapCache.a().a(this.e, c2.getChat_badge_url(), DensityUtils.a(this.e, i5), 0, new LiveMemoryBitmapCache.BitmapCallback() { // from class: com.blued.android.module.live_china.liveForMsg.data.-$$Lambda$LiveMsgContentAdapter$iT_qAoyNjxKIP2ly9Afs1ahm0CM
                     @Override // com.blued.android.module.live_china.utils.LiveMemoryBitmapCache.BitmapCallback
                     public final void onBitmapCreate(String str7, Bitmap bitmap) {
-                        LiveMsgContentAdapter.e(a2, i11, i12, spannableStringBuilder, length2, length3, textView, str7, bitmap);
+                        LiveMsgContentAdapter.e(a, i11, i12, spannableStringBuilder, length2, length3, textView, str7, bitmap);
                     }
                 });
             }
@@ -849,7 +851,7 @@ public class LiveMsgContentAdapter extends BaseListAdapter<LiveChattingModel> {
     }
 
     private void b(LiveChattingModel liveChattingModel, TextView textView) {
-        textView.setText(LiveUtils.a((CharSequence) new SpannableString((String) liveChattingModel.msgMapExtra.get("msg")), "#FFD228", false));
+        textView.setText(LiveUtils.a((CharSequence) new SpannableString((String) liveChattingModel.msgMapExtra.get(c.b)), "#FFD228", false));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -933,7 +935,7 @@ public class LiveMsgContentAdapter extends BaseListAdapter<LiveChattingModel> {
             LiveFansLevelModel liveFansLevelModel2 = null;
             try {
                 if (!TextUtils.isEmpty(liveChattingModel.getMsgExtra())) {
-                    liveFansLevelModel2 = (LiveFansLevelModel) f.fromJson(liveChattingModel.getMsgExtra(), (Class<Object>) LiveFansLevelModel.class);
+                    liveFansLevelModel2 = (LiveFansLevelModel) f.fromJson(liveChattingModel.getMsgExtra(), LiveFansLevelModel.class);
                 }
             } catch (Exception e) {
                 e.printStackTrace();
@@ -1032,7 +1034,7 @@ public class LiveMsgContentAdapter extends BaseListAdapter<LiveChattingModel> {
         if (imageView != null) {
             imageView.setImageResource(R.drawable.live_chicken);
         }
-        if (TextUtils.isEmpty((String) liveChattingModel.msgMapExtra.get("msg"))) {
+        if (TextUtils.isEmpty((String) liveChattingModel.msgMapExtra.get(c.b))) {
             a(liveChattingModel, textView);
         } else {
             b(liveChattingModel, textView);
@@ -1068,9 +1070,9 @@ public class LiveMsgContentAdapter extends BaseListAdapter<LiveChattingModel> {
                     str3 = "星之许愿池：恭喜 " + str + " 直播间诞生了许愿争夺战最终擂主，主播获得 " + str4;
                     str2 = "";
                 } else {
-                    String a2 = LiveCloakingUtil.a(liveWishContestContentModel.userName, liveWishContestContentModel.isHide);
-                    str = a2;
-                    if (TextUtils.isEmpty(a2)) {
+                    String a = LiveCloakingUtil.a(liveWishContestContentModel.userName, liveWishContestContentModel.isHide);
+                    str = a;
+                    if (TextUtils.isEmpty(a)) {
                         str = liveWishContestContentModel.userName;
                     }
                     if (liveWishContestContentModel.giftCount > 1) {
@@ -1179,19 +1181,19 @@ public class LiveMsgContentAdapter extends BaseListAdapter<LiveChattingModel> {
         Map mapValue = MsgPackHelper.getMapValue(liveChattingModel.msgMapExtra, "mute_profile");
         long longValue = MsgPackHelper.getLongValue(mapValue, "uid");
         String stringValue = MsgPackHelper.getStringValue(mapValue, "name");
-        SpannableStringBuilder a2 = a(textView, liveChattingModel, String.format(this.e.getString(R.string.live_released_to_speak), CommonStringUtils.a(str, String.valueOf(j)), CommonStringUtils.a(stringValue, String.valueOf(longValue))));
-        Logger.a("rrb", "spannableString = ", a2);
-        CharSequence a3 = a(textView, a2);
-        Logger.a("rrb", "charSequence = ", a3);
-        textView.setText(a3);
+        SpannableStringBuilder a = a(textView, liveChattingModel, String.format(this.e.getString(R.string.live_released_to_speak), CommonStringUtils.a(str, String.valueOf(j)), CommonStringUtils.a(stringValue, String.valueOf(longValue))));
+        Logger.a("rrb", "spannableString = ", a);
+        CharSequence a2 = a(textView, a);
+        Logger.a("rrb", "charSequence = ", a2);
+        textView.setText(a2);
     }
 
     private void g(final LiveChattingModel liveChattingModel, View view, View view2) {
         LiveGiftModel liveGiftModel;
         String str;
         if (liveChattingModel instanceof LiveChattingModel) {
-            String a2 = LiveCloakingUtil.a(liveChattingModel.fromNickName, liveChattingModel.fromPrivilege);
-            if (TextUtils.isEmpty(a2) || (liveGiftModel = (LiveGiftModel) LiveChattingModel.copy(liveChattingModel).getObjExtra()) == null) {
+            String a = LiveCloakingUtil.a(liveChattingModel.fromNickName, liveChattingModel.fromPrivilege);
+            if (TextUtils.isEmpty(a) || (liveGiftModel = (LiveGiftModel) LiveChattingModel.copy(liveChattingModel).getObjExtra()) == null) {
                 return;
             }
             TextView textView = (TextView) view2.findViewById(R.id.live_msg_content_text);
@@ -1201,9 +1203,9 @@ public class LiveMsgContentAdapter extends BaseListAdapter<LiveChattingModel> {
             } else {
                 str = "";
             }
-            String str2 = "恭喜 " + a2 + " 在" + liveGiftModel.source + liveGiftModel.sourceEvent + "获得 " + liveGiftModel.name + " gift " + str;
+            String str2 = "恭喜 " + a + " 在" + liveGiftModel.source + liveGiftModel.sourceEvent + "获得 " + liveGiftModel.name + " gift " + str;
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str2);
-            spannableStringBuilder.setSpan(new ForegroundColorSpan(this.f), 3, a2.length() + 3, 33);
+            spannableStringBuilder.setSpan(new ForegroundColorSpan(this.f), 3, a.length() + 3, 33);
             if (liveGiftModel.getDisplayCount() > 1) {
                 int indexOf = str2.indexOf(str);
                 spannableStringBuilder.setSpan(new ForegroundColorSpan(this.f), indexOf, str.length() + indexOf, 33);
@@ -1242,12 +1244,12 @@ public class LiveMsgContentAdapter extends BaseListAdapter<LiveChattingModel> {
     }
 
     private void h(final LiveChattingModel liveChattingModel, View view, View view2) {
-        LiveGiftModel a2 = LiveUtils.a(liveChattingModel);
-        if (a2 == null) {
+        LiveGiftModel a = LiveUtils.a(liveChattingModel);
+        if (a == null) {
             return;
         }
         TextView textView = (TextView) view2.findViewById(R.id.live_msg_content_text);
-        if (a2.is_luck_bag) {
+        if (a.is_luck_bag) {
             a(textView, liveChattingModel);
         } else {
             a(textView, liveChattingModel, new ClickMsgTalkerListener() { // from class: com.blued.android.module.live_china.liveForMsg.data.-$$Lambda$LiveMsgContentAdapter$VvJtLWLHffSPmjP4fw-JBCCB-Ug
@@ -1279,7 +1281,7 @@ public class LiveMsgContentAdapter extends BaseListAdapter<LiveChattingModel> {
         String format;
         TextView textView = (TextView) view.findViewById(R.id.live_msg_content_text);
         String string = this.e.getString(R.string.live_chat_congratulations);
-        String a2 = CommonStringUtils.a(liveChattingModel.fromNickName, String.valueOf(liveChattingModel.fromId));
+        String a = CommonStringUtils.a(liveChattingModel.fromNickName, String.valueOf(liveChattingModel.fromId));
         if (liveChattingModel.fromRichLevel == 30) {
             format = String.format(this.e.getString(R.string.live_chat_upgrade), "神壕1级");
         } else if (liveChattingModel.fromRichLevel == 31) {
@@ -1296,7 +1298,7 @@ public class LiveMsgContentAdapter extends BaseListAdapter<LiveChattingModel> {
             String string2 = this.e.getString(R.string.live_chat_upgrade);
             format = String.format(string2, liveChattingModel.fromRichLevel + "");
         }
-        textView.setText(a(textView, string + a2 + format));
+        textView.setText(a(textView, string + a + format));
         view.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.liveForMsg.data.LiveMsgContentAdapter.7
             @Override // android.view.View.OnClickListener
             public void onClick(View view2) {
@@ -1309,11 +1311,11 @@ public class LiveMsgContentAdapter extends BaseListAdapter<LiveChattingModel> {
     private void l(final LiveChattingModel liveChattingModel, View view) {
         TextView textView = (TextView) view.findViewById(R.id.live_msg_content_text);
         String string = this.e.getString(R.string.live_chat_congratulations);
-        String a2 = CommonStringUtils.a(liveChattingModel.fromNickName, String.valueOf(liveChattingModel.fromId));
-        int intValue = MsgPackHelper.getIntValue(liveChattingModel.msgMapExtra, BatteryManager.EXTRA_LEVEL);
+        String a = CommonStringUtils.a(liveChattingModel.fromNickName, String.valueOf(liveChattingModel.fromId));
+        int intValue = MsgPackHelper.getIntValue(liveChattingModel.msgMapExtra, "level");
         String string2 = this.e.getString(R.string.live_record_level_msg);
         String format = String.format(string2, intValue + "");
-        textView.setText(a(textView, string + a2 + format));
+        textView.setText(a(textView, string + a + format));
         view.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.liveForMsg.data.LiveMsgContentAdapter.8
             @Override // android.view.View.OnClickListener
             public void onClick(View view2) {
@@ -1357,7 +1359,7 @@ public class LiveMsgContentAdapter extends BaseListAdapter<LiveChattingModel> {
                     EventTrackLive.a(LiveProtos.Event.LIVE_FOLLOW_GUIDE_CLICK, String.valueOf(LiveRoomManager.a().d()), LiveRoomManager.a().g());
                 }
                 InstantLog.a("live_follow_guide_click");
-                LiveMsgContentAdapter.this.f11594a.remove(liveChattingModel);
+                LiveMsgContentAdapter.this.a.remove(liveChattingModel);
                 LiveMsgContentAdapter.this.notifyDataSetChanged();
                 EventTrackLive.a(LiveProtos.Event.LIVE_MSG_GUIDE_FOLLOW_CLICK, LiveRoomManager.a().e(), LiveRoomManager.a().g());
             }
@@ -1425,7 +1427,7 @@ public class LiveMsgContentAdapter extends BaseListAdapter<LiveChattingModel> {
         } else if (z) {
             EventTrackLive.o(LiveProtos.Event.LIVE_SCREEN_GUIDE_SHOW, LiveRoomManager.a().e(), LiveRoomManager.a().g(), "recharge");
         } else if (z) {
-            EventTrackLive.o(LiveProtos.Event.LIVE_SCREEN_GUIDE_SHOW, LiveRoomManager.a().e(), LiveRoomManager.a().g(), BatteryManager.EXTRA_PRESENT);
+            EventTrackLive.o(LiveProtos.Event.LIVE_SCREEN_GUIDE_SHOW, LiveRoomManager.a().e(), LiveRoomManager.a().g(), "present");
         } else if (z) {
             EventTrackLive.o(LiveProtos.Event.LIVE_SCREEN_GUIDE_SHOW, LiveRoomManager.a().e(), LiveRoomManager.a().g(), "fans_club");
         } else if (z) {
@@ -1517,27 +1519,27 @@ public class LiveMsgContentAdapter extends BaseListAdapter<LiveChattingModel> {
         LiveBubbleBgModel liveBubbleBgModel;
         LiveWishContestContentModel liveWishContestContentModel;
         LiveGiftModel liveGiftModel;
-        int c2 = c(liveChattingModel);
+        int c = c(liveChattingModel);
         if (!(view instanceof LiveMsgBgFrameLayout)) {
-            if (c2 >= 0 && c2 <= 15) {
+            if (c >= 0 && c <= 15) {
                 view.setBackgroundResource(R.drawable.shape_round_live_msg_item_bg);
-            } else if (c2 >= 16 && c2 <= 20) {
+            } else if (c >= 16 && c <= 20) {
                 view.setBackgroundResource(R.drawable.shape_gradient_name_level_yellow);
-            } else if (c2 >= 21 && c2 <= 25) {
+            } else if (c >= 21 && c <= 25) {
                 view.setBackgroundResource(R.drawable.shape_gradient_name_level_orange);
-            } else if (c2 >= 26 && c2 < 30) {
+            } else if (c >= 26 && c < 30) {
                 view.setBackgroundResource(R.drawable.shape_gradient_name_level_red);
-            } else if (c2 == 30) {
+            } else if (c == 30) {
                 view.setBackgroundResource(R.drawable.shape_gradient_name_level_30);
-            } else if (c2 == 31) {
+            } else if (c == 31) {
                 view.setBackgroundResource(R.drawable.shape_gradient_name_level_31);
-            } else if (c2 == 32) {
+            } else if (c == 32) {
                 view.setBackgroundResource(R.drawable.shape_gradient_name_level_32);
-            } else if (c2 == 33) {
+            } else if (c == 33) {
                 view.setBackgroundResource(R.drawable.shape_gradient_name_level_33);
-            } else if (c2 == 34) {
+            } else if (c == 34) {
                 view.setBackgroundResource(R.drawable.shape_gradient_name_level_34);
-            } else if (c2 == 35) {
+            } else if (c == 35) {
                 view.setBackgroundResource(R.drawable.shape_gradient_name_level_35);
             }
             liveBubbleBgModel = null;
@@ -1545,39 +1547,39 @@ public class LiveMsgContentAdapter extends BaseListAdapter<LiveChattingModel> {
             LiveGiftScrawlTransModel liveGiftScrawlTransModel = liveChattingModel instanceof LiveChattingModel ? (LiveGiftScrawlTransModel) LiveChattingModel.copy(liveChattingModel).getObjExtra() : null;
             if (liveGiftScrawlTransModel != null && (liveGiftScrawlTransModel.extraModel instanceof LiveBubbleBgModel)) {
                 liveBubbleBgModel = (LiveBubbleBgModel) liveGiftScrawlTransModel.extraModel;
-                ((LiveMsgBgFrameLayout) view).a(liveBubbleBgModel, c2);
+                ((LiveMsgBgFrameLayout) view).a(liveBubbleBgModel, c);
             }
             liveBubbleBgModel = null;
-            ((LiveMsgBgFrameLayout) view).a(liveBubbleBgModel, c2);
+            ((LiveMsgBgFrameLayout) view).a(liveBubbleBgModel, c);
         } else if (liveChattingModel.msgType == 33 && liveChattingModel.msgMapExtra != null) {
             LiveGiftModel liveGiftModel2 = (LiveGiftModel) liveChattingModel.msgMapExtra.get("gift_model");
             if (liveGiftModel2 != null && (liveGiftModel2.extraModel instanceof LiveBubbleBgModel)) {
                 liveBubbleBgModel = (LiveBubbleBgModel) liveGiftModel2.extraModel;
-                ((LiveMsgBgFrameLayout) view).a(liveBubbleBgModel, c2);
+                ((LiveMsgBgFrameLayout) view).a(liveBubbleBgModel, c);
             }
             liveBubbleBgModel = null;
-            ((LiveMsgBgFrameLayout) view).a(liveBubbleBgModel, c2);
+            ((LiveMsgBgFrameLayout) view).a(liveBubbleBgModel, c);
         } else if (liveChattingModel.msgType == 245) {
             if ((liveChattingModel instanceof LiveChattingModel) && (liveGiftModel = (LiveGiftModel) LiveChattingModel.copy(liveChattingModel).getObjExtra()) != null && (liveGiftModel.extraModel instanceof LiveBubbleBgModel)) {
                 liveBubbleBgModel = (LiveBubbleBgModel) liveGiftModel.extraModel;
-                ((LiveMsgBgFrameLayout) view).a(liveBubbleBgModel, c2);
+                ((LiveMsgBgFrameLayout) view).a(liveBubbleBgModel, c);
             }
             liveBubbleBgModel = null;
-            ((LiveMsgBgFrameLayout) view).a(liveBubbleBgModel, c2);
+            ((LiveMsgBgFrameLayout) view).a(liveBubbleBgModel, c);
         } else if (liveChattingModel.msgType == 251) {
             if ((liveChattingModel instanceof LiveChattingModel) && (liveWishContestContentModel = (LiveWishContestContentModel) LiveChattingModel.copy(liveChattingModel).getObjExtra()) != null) {
                 liveBubbleBgModel = liveWishContestContentModel.bubbleBgModel;
-                ((LiveMsgBgFrameLayout) view).a(liveBubbleBgModel, c2);
+                ((LiveMsgBgFrameLayout) view).a(liveBubbleBgModel, c);
             }
             liveBubbleBgModel = null;
-            ((LiveMsgBgFrameLayout) view).a(liveBubbleBgModel, c2);
+            ((LiveMsgBgFrameLayout) view).a(liveBubbleBgModel, c);
         } else {
             if (liveChattingModel.msgType == 1 && liveChattingModel.msgMapExtra != null) {
                 liveBubbleBgModel = (LiveBubbleBgModel) liveChattingModel.msgMapExtra.get("live_chat_frame_model");
-                ((LiveMsgBgFrameLayout) view).a(liveBubbleBgModel, c2);
+                ((LiveMsgBgFrameLayout) view).a(liveBubbleBgModel, c);
             }
             liveBubbleBgModel = null;
-            ((LiveMsgBgFrameLayout) view).a(liveBubbleBgModel, c2);
+            ((LiveMsgBgFrameLayout) view).a(liveBubbleBgModel, c);
         }
         ImageView imageView = (ImageView) ((View) view.getParent()).findViewById(R.id.live_msg_content_star);
         View findViewById = view.findViewById(R.id.live_msg_content_text);
@@ -1593,13 +1595,13 @@ public class LiveMsgContentAdapter extends BaseListAdapter<LiveChattingModel> {
                 imageView.setVisibility(0);
                 ImageLoader.a((IRequestHost) null, liveBubbleBgModel.chat_frame_icon).a(imageView);
                 findViewById.setPadding(paddingLeft, paddingTop, b(), paddingBottom);
-            } else if (c2 < 30) {
+            } else if (c < 30) {
                 imageView.setVisibility(8);
                 findViewById.setPadding(paddingLeft, paddingTop, c(), paddingBottom);
             } else {
                 imageView.setVisibility(0);
                 findViewById.setPadding(paddingLeft, paddingTop, b(), paddingBottom);
-                if (c2 == 35 || c2 == 34) {
+                if (c == 35 || c == 34) {
                     imageView.setImageResource(R.drawable.live_msg_list_star_emperor);
                 } else {
                     imageView.setImageResource(R.drawable.live_msg_list_star);
@@ -1610,7 +1612,7 @@ public class LiveMsgContentAdapter extends BaseListAdapter<LiveChattingModel> {
 
     private void t(final LiveChattingModel liveChattingModel, View view) {
         MsgPackHelper.getLongValue(liveChattingModel.msgMapExtra, "id");
-        int intValue = MsgPackHelper.getIntValue(liveChattingModel.msgMapExtra, "count");
+        int intValue = MsgPackHelper.getIntValue(liveChattingModel.msgMapExtra, SpamFilter.SpamContract.NotificationTable.COUNT);
         String stringValue = MsgPackHelper.getStringValue(liveChattingModel.msgMapExtra, "image");
         String stringValue2 = MsgPackHelper.getStringValue(liveChattingModel.msgMapExtra, "name");
         MsgPackHelper.getIntValue(liveChattingModel.msgMapExtra, "uid");
@@ -1663,31 +1665,31 @@ public class LiveMsgContentAdapter extends BaseListAdapter<LiveChattingModel> {
 
     public SpannableStringBuilder a(TextView textView, LiveChattingModel liveChattingModel, CharSequence charSequence) {
         int i = liveChattingModel.fromLiveManager;
-        int c2 = c(liveChattingModel);
+        int c = c(liveChattingModel);
         String str = i != 0 ? "field_control " : "";
-        String str2 = c2 != 0 ? "rich " : "";
+        String str2 = c != 0 ? "rich " : "";
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str + str2 + ((Object) charSequence));
-        int a2 = AppMethods.a(1.0f);
+        int a = AppMethods.a(1.0f);
         if (i != 0) {
-            Drawable a3 = LiveBitmapUtils.a();
-            a3.setBounds(0, a2, AppMethods.a(29), AppMethods.a(15));
-            spannableStringBuilder.setSpan(new VerticalCenterImageSpan(a3, 1), 0, str.length() - 1, 33);
+            Drawable a2 = LiveBitmapUtils.a();
+            a2.setBounds(0, a, AppMethods.a(29), AppMethods.a(15));
+            spannableStringBuilder.setSpan(new VerticalCenterImageSpan(a2, 1), 0, str.length() - 1, 33);
         }
-        if (c2 != 0) {
-            Drawable a4 = LiveBitmapUtils.a(AppInfo.d(), c2);
-            if (c2 >= 30) {
-                a4.setBounds(0, a2, AppMethods.a(44), AppMethods.a(15) + a2);
+        if (c != 0) {
+            Drawable a3 = LiveBitmapUtils.a(AppInfo.d(), c);
+            if (c >= 30) {
+                a3.setBounds(0, a, AppMethods.a(44), AppMethods.a(15) + a);
             } else {
-                a4.setBounds(0, a2, AppMethods.a(30), AppMethods.a(15) + a2);
+                a3.setBounds(0, a, AppMethods.a(30), AppMethods.a(15) + a);
             }
-            spannableStringBuilder.setSpan(new VerticalCenterImageSpan(a4, 1), str.length(), (str.length() + str2.length()) - 1, 33);
+            spannableStringBuilder.setSpan(new VerticalCenterImageSpan(a3, 1), str.length(), (str.length() + str2.length()) - 1, 33);
         }
         return spannableStringBuilder;
     }
 
     @Override // com.blued.android.module.live_china.adapter.BaseListAdapter
     public View a(int i, View view, ViewGroup viewGroup) {
-        LiveChattingModel liveChattingModel = (LiveChattingModel) this.f11594a.get(i);
+        LiveChattingModel liveChattingModel = (LiveChattingModel) this.a.get(i);
         short s = liveChattingModel.msgType;
         View view2 = view;
         if (s == 1) {
@@ -1807,7 +1809,7 @@ public class LiveMsgContentAdapter extends BaseListAdapter<LiveChattingModel> {
     }
 
     public CharSequence a(TextView textView, SpannableStringBuilder spannableStringBuilder) {
-        CharSequence a2 = LiveRoomInfo.a().a(spannableStringBuilder, "#ffd452", new LiveRoomConstants.ClickAtLinkListener() { // from class: com.blued.android.module.live_china.liveForMsg.data.LiveMsgContentAdapter.24
+        CharSequence a = LiveRoomInfo.a().a(spannableStringBuilder, "#ffd452", new LiveRoomConstants.ClickAtLinkListener() { // from class: com.blued.android.module.live_china.liveForMsg.data.LiveMsgContentAdapter.24
             @Override // com.blued.android.module.live_china.constant.LiveRoomConstants.ClickAtLinkListener
             public void a(String str, String str2) {
                 if (TextUtils.isEmpty(str2)) {
@@ -1818,7 +1820,7 @@ public class LiveMsgContentAdapter extends BaseListAdapter<LiveChattingModel> {
             }
         });
         textView.setMovementMethod(LinkMovementClickMethod.a());
-        return a2;
+        return a;
     }
 
     public CharSequence a(final TextView textView, LiveChattingModel liveChattingModel, final ClickMsgTalkerListener clickMsgTalkerListener, boolean z) {
@@ -1838,10 +1840,10 @@ public class LiveMsgContentAdapter extends BaseListAdapter<LiveChattingModel> {
         if (textView == null || liveChattingModel == null) {
             return "";
         }
-        String a2 = LiveCloakingUtil.a(liveChattingModel.fromNickName, liveChattingModel.fromPrivilege);
+        String a = LiveCloakingUtil.a(liveChattingModel.fromNickName, liveChattingModel.fromPrivilege);
         String str7 = liveChattingModel.msgContent;
         if (liveChattingModel.msgType == 1) {
-            String str8 = a2 + "：";
+            String str8 = a + "：";
             str = str8;
             str2 = str7;
             if (f(liveChattingModel) != null) {
@@ -1849,13 +1851,13 @@ public class LiveMsgContentAdapter extends BaseListAdapter<LiveChattingModel> {
                 str = str8;
             }
         } else {
-            str = a2;
+            str = a;
             str2 = str7;
             if (liveChattingModel.msgType == 27) {
-                str = a2;
+                str = a;
                 str2 = str7;
                 if (!TextUtils.isEmpty(e(liveChattingModel))) {
-                    str = a2 + AppInfo.d().getString(R.string.live_come_from) + " ";
+                    str = a + AppInfo.d().getString(R.string.live_come_from) + " ";
                     str2 = str7;
                 }
             }
@@ -1869,8 +1871,8 @@ public class LiveMsgContentAdapter extends BaseListAdapter<LiveChattingModel> {
         int i8 = d.fan_club_level;
         int i9 = d.in_fan_club;
         int i10 = d.fans_status;
-        int c2 = c(liveChattingModel);
-        LiveChatBadgeModel c3 = LiveUtils.c(liveChattingModel);
+        int c = c(liveChattingModel);
+        LiveChatBadgeModel c2 = LiveUtils.c(liveChattingModel);
         String e = e(liveChattingModel);
         LiveEmojiModel f = f(liveChattingModel);
         int length = str.length();
@@ -1891,7 +1893,7 @@ public class LiveMsgContentAdapter extends BaseListAdapter<LiveChattingModel> {
             i = length;
             i2 = i11;
         }
-        if (c2 != 0) {
+        if (c != 0) {
             i2 += 5;
             i3 = i2 + str.length();
             str5 = "rich ";
@@ -1899,7 +1901,7 @@ public class LiveMsgContentAdapter extends BaseListAdapter<LiveChattingModel> {
             str5 = "";
             i3 = i;
         }
-        if (c3 == null || TextUtils.isEmpty(c3.getChat_badge_url()) || c3.getChat_badge_length().intValue() == 0 || c3.getChat_badge_height().intValue() == 0) {
+        if (c2 == null || TextUtils.isEmpty(c2.getChat_badge_url()) || c2.getChat_badge_length().intValue() == 0 || c2.getChat_badge_height().intValue() == 0) {
             str6 = "";
             i4 = i2;
             i5 = i3;
@@ -1910,64 +1912,64 @@ public class LiveMsgContentAdapter extends BaseListAdapter<LiveChattingModel> {
         }
         String str10 = f != null ? "emoji" : "";
         final SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str3 + str4 + str5 + str6 + "" + str + e + str10 + " " + str2);
-        final int a3 = AppMethods.a(1.0f);
+        final int a2 = AppMethods.a(1.0f);
         if (i7 != 0) {
-            Drawable a4 = LiveBitmapUtils.a();
-            a4.setBounds(0, a3, AppMethods.a(29), AppMethods.a(15) + a3);
-            spannableStringBuilder.setSpan(new VerticalCenterImageSpan(a4, 2), 0, str3.length() - 1, 33);
+            Drawable a3 = LiveBitmapUtils.a();
+            a3.setBounds(0, a2, AppMethods.a(29), AppMethods.a(15) + a2);
+            spannableStringBuilder.setSpan(new VerticalCenterImageSpan(a3, 2), 0, str3.length() - 1, 33);
         }
         if (i9 != 0) {
             LiveFansLevelView liveFansLevelView = new LiveFansLevelView(this.e);
             liveFansLevelView.setFansLevel(d);
-            int a5 = AppMethods.a(54.5f);
-            int a6 = AppMethods.a(15.0f);
+            int a4 = AppMethods.a(54.5f);
+            int a5 = AppMethods.a(15.0f);
             try {
                 liveFansLevelView.measure(View.MeasureSpec.makeMeasureSpec(0, 0), View.MeasureSpec.makeMeasureSpec(0, 0));
                 int measuredWidth = liveFansLevelView.getMeasuredWidth();
                 int measuredHeight = liveFansLevelView.getMeasuredHeight();
                 liveFansLevelView.layout(0, 0, measuredWidth, measuredHeight);
                 createBitmap = Bitmap.createBitmap(measuredWidth, measuredHeight, Bitmap.Config.ARGB_8888);
-                a5 = measuredWidth;
-                a6 = measuredHeight;
+                a4 = measuredWidth;
+                a5 = measuredHeight;
                 liveFansLevelView.draw(new Canvas(createBitmap));
-                a5 = measuredWidth;
-                a6 = measuredHeight;
+                a4 = measuredWidth;
+                a5 = measuredHeight;
             } catch (Exception e2) {
                 createBitmap = Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888);
             }
             BitmapDrawable bitmapDrawable = new BitmapDrawable(textView.getResources(), createBitmap);
-            bitmapDrawable.setBounds(0, a3, a5, a6 + a3);
+            bitmapDrawable.setBounds(0, a2, a4, a5 + a2);
             spannableStringBuilder.setSpan(new VerticalCenterImageSpan(bitmapDrawable, 2), str3.length(), (str3.length() + str4.length()) - 1, 33);
         }
-        if (c2 != 0) {
-            Drawable a7 = LiveBitmapUtils.a(AppInfo.d(), c2);
-            if (c2 >= 30) {
-                a7.setBounds(0, a3, AppMethods.a(44), AppMethods.a(15) + a3);
+        if (c != 0) {
+            Drawable a6 = LiveBitmapUtils.a(AppInfo.d(), c);
+            if (c >= 30) {
+                a6.setBounds(0, a2, AppMethods.a(44), AppMethods.a(15) + a2);
             } else {
-                a7.setBounds(0, a3, AppMethods.a(30), AppMethods.a(15) + a3);
+                a6.setBounds(0, a2, AppMethods.a(30), AppMethods.a(15) + a2);
             }
-            spannableStringBuilder.setSpan(new VerticalCenterImageSpan(a7, 2), str4.length() + str3.length(), ((str4.length() + str3.length()) + str5.length()) - 1, 33);
+            spannableStringBuilder.setSpan(new VerticalCenterImageSpan(a6, 2), str4.length() + str3.length(), ((str4.length() + str3.length()) + str5.length()) - 1, 33);
         }
-        if (!TextUtils.isEmpty(str6) && c3 != null && !TextUtils.isEmpty(c3.getChat_badge_url())) {
+        if (!TextUtils.isEmpty(str6) && c2 != null && !TextUtils.isEmpty(c2.getChat_badge_url())) {
             BitmapDrawable bitmapDrawable2 = new BitmapDrawable();
-            int a8 = AppMethods.a(15);
-            if (c3.getChat_badge_length().intValue() == 0 || c3.getChat_badge_height().intValue() == 0) {
+            int a7 = AppMethods.a(15);
+            if (c2.getChat_badge_length().intValue() == 0 || c2.getChat_badge_height().intValue() == 0) {
                 i6 = 0;
-                a8 = 0;
+                a7 = 0;
             } else {
-                i6 = (c3.getChat_badge_length().intValue() * a8) / c3.getChat_badge_height().intValue();
+                i6 = (c2.getChat_badge_length().intValue() * a7) / c2.getChat_badge_height().intValue();
             }
-            bitmapDrawable2.setBounds(0, a3, i6, a8 + a3);
+            bitmapDrawable2.setBounds(0, a2, i6, a7 + a2);
             final int length2 = str4.length() + str3.length() + str5.length();
             final int length3 = (str6.length() + length2) - 1;
             if (length2 < spannableStringBuilder.length() && length3 < spannableStringBuilder.length()) {
                 spannableStringBuilder.setSpan(new VerticalCenterImageSpan(bitmapDrawable2, 2), length2, length3, 33);
                 final int i12 = i6;
-                final int i13 = a8;
-                LiveMemoryBitmapCache.a().a(this.e, c3.getChat_badge_url(), DensityUtils.a(this.e, i6), 0, new LiveMemoryBitmapCache.BitmapCallback() { // from class: com.blued.android.module.live_china.liveForMsg.data.-$$Lambda$LiveMsgContentAdapter$T6z_HOn7yet2hdbqA466aO2SW-s
+                final int i13 = a7;
+                LiveMemoryBitmapCache.a().a(this.e, c2.getChat_badge_url(), DensityUtils.a(this.e, i6), 0, new LiveMemoryBitmapCache.BitmapCallback() { // from class: com.blued.android.module.live_china.liveForMsg.data.-$$Lambda$LiveMsgContentAdapter$T6z_HOn7yet2hdbqA466aO2SW-s
                     @Override // com.blued.android.module.live_china.utils.LiveMemoryBitmapCache.BitmapCallback
                     public final void onBitmapCreate(String str11, Bitmap bitmap) {
-                        LiveMsgContentAdapter.b(a3, i12, i13, spannableStringBuilder, length2, length3, textView, str11, bitmap);
+                        LiveMsgContentAdapter.b(a2, i12, i13, spannableStringBuilder, length2, length3, textView, str11, bitmap);
                     }
                 });
             }
@@ -1992,23 +1994,23 @@ public class LiveMsgContentAdapter extends BaseListAdapter<LiveChattingModel> {
         } else if (f != null) {
             final int length4 = i5 + str10.length();
             BitmapDrawable bitmapDrawable3 = new BitmapDrawable();
-            final int a9 = AppMethods.a(15);
-            int a10 = AppMethods.a(15);
-            int i14 = a10;
+            final int a8 = AppMethods.a(15);
+            int a9 = AppMethods.a(15);
+            int i14 = a9;
             if (f.getEmoji_w() != 0) {
-                i14 = a10;
+                i14 = a9;
                 if (f.getEmoji_h() != 0) {
-                    i14 = (f.getEmoji_w() * a9) / f.getEmoji_h();
+                    i14 = (f.getEmoji_w() * a8) / f.getEmoji_h();
                 }
             }
-            bitmapDrawable3.setBounds(0, a3, i14, a9 + a3);
+            bitmapDrawable3.setBounds(0, a2, i14, a8 + a2);
             spannableStringBuilder.setSpan(new VerticalCenterImageSpan(bitmapDrawable3, 2), i5, length4, 33);
             final int i15 = i14;
             final int i16 = i5;
             LiveMemoryBitmapCache.a().a(this.e, f.getEmoji_url(), DensityUtils.a(this.e, i14), 0, new LiveMemoryBitmapCache.BitmapCallback() { // from class: com.blued.android.module.live_china.liveForMsg.data.-$$Lambda$LiveMsgContentAdapter$i6Y1deegTcLu_M3VhIuzzMSKwjA
                 @Override // com.blued.android.module.live_china.utils.LiveMemoryBitmapCache.BitmapCallback
                 public final void onBitmapCreate(String str11, Bitmap bitmap) {
-                    LiveMsgContentAdapter.a(a3, i15, a9, spannableStringBuilder, i16, length4, textView, str11, bitmap);
+                    LiveMsgContentAdapter.a(a2, i15, a8, spannableStringBuilder, i16, length4, textView, str11, bitmap);
                 }
             });
         }
@@ -2092,7 +2094,7 @@ public class LiveMsgContentAdapter extends BaseListAdapter<LiveChattingModel> {
         String str;
         LivePropCardModel livePropCardModel;
         int anchor_pocket_traffic_card;
-        if (liveChattingModel == null || liveChattingModel.msgType != 27 || (livePropCardModel = (LivePropCardModel) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), (Class<Object>) LivePropCardModel.class)) == null || !((anchor_pocket_traffic_card = livePropCardModel.getAnchor_pocket_traffic_card()) == 1 || anchor_pocket_traffic_card == 2)) {
+        if (liveChattingModel == null || liveChattingModel.msgType != 27 || (livePropCardModel = (LivePropCardModel) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), LivePropCardModel.class)) == null || !((anchor_pocket_traffic_card = livePropCardModel.getAnchor_pocket_traffic_card()) == 1 || anchor_pocket_traffic_card == 2)) {
             str = "";
         } else {
             String anchor_pocket_traffic_card_name = livePropCardModel.getAnchor_pocket_traffic_card_name();
@@ -2106,7 +2108,7 @@ public class LiveMsgContentAdapter extends BaseListAdapter<LiveChattingModel> {
 
     public LiveEmojiModel f(LiveChattingModel liveChattingModel) {
         try {
-            LiveEmojiModel liveEmojiModel = (LiveEmojiModel) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), (Class<Object>) LiveEmojiModel.class);
+            LiveEmojiModel liveEmojiModel = (LiveEmojiModel) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), LiveEmojiModel.class);
             if (liveEmojiModel == null || StringUtils.a(liveEmojiModel.getEmoji_id(), 0) <= 0 || TextUtils.isEmpty(liveEmojiModel.getEmoji_url()) || liveEmojiModel.getEmoji_w() <= 0) {
                 return null;
             }
@@ -2122,7 +2124,7 @@ public class LiveMsgContentAdapter extends BaseListAdapter<LiveChattingModel> {
 
     @Override // android.widget.BaseAdapter, android.widget.Adapter
     public int getItemViewType(int i) {
-        short s = ((LiveChattingModel) this.f11594a.get(i)).msgType;
+        short s = ((LiveChattingModel) this.a.get(i)).msgType;
         return -1;
     }
 

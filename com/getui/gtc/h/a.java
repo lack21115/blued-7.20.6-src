@@ -19,7 +19,7 @@ public final class a {
                 Request.Builder cryptInterceptor = new Request.Builder().url(String.format("%s/api.php?format=json&t=1", server)).method("POST").body(RequestBody.create(MediaType.parse("application/json; charset=utf-8"), b(str, i))).cryptInterceptor(new GtRASCryptoInterceptor(com.getui.gtc.c.b.i, com.getui.gtc.c.b.h));
                 Request build = cryptInterceptor.tag("type" + i + " task ").build();
                 com.getui.gtc.i.c.a.a("type " + i + " data: " + str);
-                Response execute = d.f22027a.newCall(build).execute();
+                Response execute = d.f8420a.newCall(build).execute();
                 ServerManager.confirmServer("gtc.bs", server);
                 execute.close();
                 return;

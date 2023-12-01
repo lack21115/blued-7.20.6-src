@@ -13,9 +13,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/collections/builders/SerializedMap.class */
 final class SerializedMap implements Externalizable {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f42415a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private static final long serialVersionUID = 0;
     private Map<?, ?> b;
 

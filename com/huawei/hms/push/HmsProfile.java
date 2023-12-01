@@ -28,16 +28,16 @@ public class HmsProfile {
     public static final int HUAWEI_PROFILE = 1;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f22835c = "HmsProfile";
+    private static final String f9227c = "HmsProfile";
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f22836a;
+    private Context f9228a;
     private HuaweiApi<Api.ApiOptions.NoOptions> b;
 
     private HmsProfile(Context context) {
-        this.f22836a = null;
+        this.f9228a = null;
         Preconditions.checkNotNull(context);
-        this.f22836a = context;
+        this.f9228a = context;
         Api api = new Api(HuaweiApiAvailability.HMS_API_NAME_PUSH);
         if (context instanceof Activity) {
             this.b = new HuaweiApi<>((Activity) context, (Api<Api.ApiOptions>) api, (Api.ApiOptions) null, (AbstractClientBuilder) new PushClientBuilder());
@@ -55,9 +55,9 @@ public class HmsProfile {
         }
         String str3 = str;
         if (!TextUtils.isEmpty(str)) {
-            String a2 = a(this.f22836a);
+            String a2 = a(this.f9228a);
             if (TextUtils.isEmpty(a2)) {
-                HMSLog.i(f22835c, "agc connect services config missing project id.");
+                HMSLog.i(f9227c, "agc connect services config missing project id.");
                 TaskCompletionSource taskCompletionSource2 = new TaskCompletionSource();
                 taskCompletionSource2.setException(ErrorEnum.ERROR_MISSING_PROJECT_ID.toApiException());
                 return taskCompletionSource2.getTask();
@@ -74,23 +74,23 @@ public class HmsProfile {
         } else {
             profileReq.setOperation(1);
         }
-        String reportEntry = PushBiUtil.reportEntry(this.f22836a, PushNaming.PUSH_PROFILE);
+        String reportEntry = PushBiUtil.reportEntry(this.f9228a, PushNaming.PUSH_PROFILE);
         try {
             profileReq.setSubjectId(str3);
             profileReq.setProfileId(SHA.sha256Encrypt(str2));
-            profileReq.setPkgName(this.f22836a.getPackageName());
+            profileReq.setPkgName(this.f9228a.getPackageName());
             return this.b.doWrite(new ProfileTask(PushNaming.PUSH_PROFILE, JsonUtil.createJsonString(profileReq), reportEntry));
         } catch (Exception e) {
             if (!(e.getCause() instanceof ApiException)) {
                 TaskCompletionSource taskCompletionSource3 = new TaskCompletionSource();
-                PushBiUtil.reportExit(this.f22836a, PushNaming.PUSH_PROFILE, reportEntry, ErrorEnum.ERROR_INTERNAL_ERROR);
+                PushBiUtil.reportExit(this.f9228a, PushNaming.PUSH_PROFILE, reportEntry, ErrorEnum.ERROR_INTERNAL_ERROR);
                 taskCompletionSource3.setException(ErrorEnum.ERROR_INTERNAL_ERROR.toApiException());
                 return taskCompletionSource3.getTask();
             }
             TaskCompletionSource taskCompletionSource4 = new TaskCompletionSource();
             ApiException apiException = (ApiException) e.getCause();
             taskCompletionSource4.setException(apiException);
-            PushBiUtil.reportExit(this.f22836a, PushNaming.PUSH_PROFILE, reportEntry, apiException.getStatusCode());
+            PushBiUtil.reportExit(this.f9228a, PushNaming.PUSH_PROFILE, reportEntry, apiException.getStatusCode());
             return taskCompletionSource4.getTask();
         }
     }
@@ -113,12 +113,12 @@ public class HmsProfile {
 
     public Task<Void> addProfile(String str, int i, String str2) {
         if (i != 1 && i != 2) {
-            HMSLog.i(f22835c, "add profile type undefined.");
+            HMSLog.i(f9227c, "add profile type undefined.");
             TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
             taskCompletionSource.setException(ErrorEnum.ERROR_PUSH_ARGUMENTS_INVALID.toApiException());
             return taskCompletionSource.getTask();
         } else if (TextUtils.isEmpty(str2)) {
-            HMSLog.i(f22835c, "add profile params is empty.");
+            HMSLog.i(f9227c, "add profile params is empty.");
             TaskCompletionSource taskCompletionSource2 = new TaskCompletionSource();
             taskCompletionSource2.setException(ErrorEnum.ERROR_PUSH_ARGUMENTS_INVALID.toApiException());
             return taskCompletionSource2.getTask();
@@ -133,7 +133,7 @@ public class HmsProfile {
 
     public Task<Void> deleteProfile(String str, String str2) {
         if (TextUtils.isEmpty(str2)) {
-            HMSLog.e(f22835c, "del profile params is empty.");
+            HMSLog.e(f9227c, "del profile params is empty.");
             TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
             taskCompletionSource.setException(ErrorEnum.ERROR_PUSH_ARGUMENTS_INVALID.toApiException());
             return taskCompletionSource.getTask();
@@ -142,14 +142,14 @@ public class HmsProfile {
     }
 
     public boolean isSupportProfile() {
-        if (c.d(this.f22836a)) {
+        if (c.d(this.f9228a)) {
             if (c.c()) {
-                HMSLog.i(f22835c, "current EMUI version below 9.1, not support profile operation.");
+                HMSLog.i(f9227c, "current EMUI version below 9.1, not support profile operation.");
                 return false;
-            } else if (b(this.f22836a)) {
+            } else if (b(this.f9228a)) {
                 return true;
             } else {
-                HMSLog.i(f22835c, "current HwPushService.apk version below 11.0.1.400,please upgrade your HwPushService.apk version.");
+                HMSLog.i(f9227c, "current HwPushService.apk version below 11.0.1.400,please upgrade your HwPushService.apk version.");
                 return false;
             }
         }

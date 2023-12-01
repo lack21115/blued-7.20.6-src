@@ -24,11 +24,11 @@ import org.json.JSONObject;
 public class u implements y.a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f40781a = "session_start_time";
+    public static final String f27090a = "session_start_time";
     public static final String b = "session_end_time";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f40782c = "session_id";
+    public static final String f27091c = "session_id";
     public static final String d = "pre_session_id";
     public static final String e = "a_start_time";
     public static final String f = "a_end_time";
@@ -45,7 +45,7 @@ public class u implements y.a {
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final u f40783a = new u();
+        private static final u f27092a = new u();
 
         private a() {
         }
@@ -64,7 +64,7 @@ public class u implements y.a {
     }
 
     public static u a() {
-        return a.f40783a;
+        return a.f27092a;
     }
 
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:30:0x00da -> B:34:0x0092). Please submit an issue!!! */
@@ -216,7 +216,7 @@ public class u implements y.a {
         if (sharedPreferences == null || (edit = sharedPreferences.edit()) == null) {
             return;
         }
-        edit.putLong(f40781a, j2);
+        edit.putLong(f27090a, j2);
         edit.commit();
     }
 
@@ -349,13 +349,13 @@ public class u implements y.a {
                 }
                 UMRTLog.i(UMRTLog.RTLOG_TAG, "--->>> More then 30 sec from last session.");
                 j = true;
-                edit.putLong(f40781a, currentTimeMillis);
+                edit.putLong(f27090a, currentTimeMillis);
                 edit.commit();
                 a(i, currentTimeMillis, false);
                 return;
             }
             UMRTLog.i(UMRTLog.RTLOG_TAG, "--->>> requestNewInstantSessionIf: version upgrade");
-            edit.putLong(f40781a, currentTimeMillis);
+            edit.putLong(f27090a, currentTimeMillis);
             edit.commit();
             o.a(i).a((Object) null, true);
             String c2 = y.a().c(i);

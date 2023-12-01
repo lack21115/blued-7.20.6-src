@@ -3,8 +3,10 @@ package com.anythink.core.common.g;
 import android.content.Context;
 import android.os.SystemClock;
 import android.text.TextUtils;
+import com.android.internal.util.cm.NavigationRingConstants;
 import com.anythink.core.api.AdError;
 import com.anythink.core.common.b.n;
+import com.efs.sdk.base.Constants;
 import java.util.HashMap;
 import java.util.Map;
 import org.json.JSONException;
@@ -12,14 +14,10 @@ import org.json.JSONObject;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/g/d.class */
 public class d extends a {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final String f6723a = "custom";
+    public static final String a = "custom";
     private static final String e = d.class.getSimpleName();
     long b;
-
-    /* renamed from: c  reason: collision with root package name */
-    long f6724c;
+    long c;
     Map<String, Object> d = n.a().m();
     private String f;
     private String g;
@@ -47,14 +45,14 @@ public class d extends a {
             trim = jSONObject.toString();
         } catch (Exception e2) {
         }
-        com.anythink.core.common.j.c.a("app", (String) null, this.b, System.currentTimeMillis(), SystemClock.elapsedRealtime() - this.f6724c);
+        com.anythink.core.common.j.c.a(NavigationRingConstants.ACTION_APP, (String) null, this.b, System.currentTimeMillis(), SystemClock.elapsedRealtime() - this.c);
         return trim;
     }
 
     @Override // com.anythink.core.common.g.a
     public final void a(int i, i iVar) {
         this.b = System.currentTimeMillis();
-        this.f6724c = SystemClock.elapsedRealtime();
+        this.c = SystemClock.elapsedRealtime();
         super.a(i, iVar);
     }
 
@@ -75,13 +73,13 @@ public class d extends a {
 
     @Override // com.anythink.core.common.g.a
     protected final void b(AdError adError) {
-        com.anythink.core.common.j.c.a("app", adError.getPlatformCode(), adError.getPlatformMSG(), (String) null, "", "", "");
+        com.anythink.core.common.j.c.a(NavigationRingConstants.ACTION_APP, adError.getPlatformCode(), adError.getPlatformMSG(), (String) null, "", "", "");
     }
 
     @Override // com.anythink.core.common.g.a
     protected final Map<String, String> c() {
         HashMap hashMap = new HashMap();
-        hashMap.put("Accept-Encoding", "gzip");
+        hashMap.put("Accept-Encoding", Constants.CP_GZIP);
         hashMap.put("Content-Type", "application/json;charset=utf-8");
         return hashMap;
     }

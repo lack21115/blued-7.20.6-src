@@ -10,7 +10,6 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
-import com.android.internal.telephony.PhoneConstants;
 import com.tencent.mapsdk.internal.ii;
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -317,7 +316,7 @@ public class Util {
         }
         try {
             DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
-            return displayMetrics.widthPixels + PhoneConstants.APN_TYPE_ALL + displayMetrics.heightPixels;
+            return displayMetrics.widthPixels + "*" + displayMetrics.heightPixels;
         } catch (Exception e) {
             return "";
         }

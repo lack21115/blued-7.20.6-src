@@ -9,7 +9,7 @@ import com.heytap.nearx.track.TrackContext;
 public class OmasStub {
 
     /* renamed from: a  reason: collision with root package name */
-    public static boolean f24280a = false;
+    public static boolean f10593a = false;
 
     static {
         System.loadLibrary("scorpion");
@@ -23,7 +23,7 @@ public class OmasStub {
                 try {
                     Thread.sleep(5000L);
                     OmasStub.b();
-                    boolean z = OmasStub.f24280a;
+                    boolean z = OmasStub.f10593a;
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -41,9 +41,9 @@ public class OmasStub {
             TrackApi_20246.NearxTrack obtain = TrackApi_20246.NearxTrack.obtain("8888", "1234");
             obtain.add("scorpion", "1");
             obtain.commit(TrackContext.get(103900L));
-            f24280a = true;
+            f10593a = true;
         } catch (ClassNotFoundException e) {
-            f24280a = true;
+            f10593a = true;
             Log.d("SCORPION", "NearxTrackHelper not found");
         }
     }

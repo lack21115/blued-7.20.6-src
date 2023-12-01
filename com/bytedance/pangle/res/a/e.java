@@ -6,7 +6,7 @@ import java.io.InputStream;
 public final class e extends j {
 
     /* renamed from: a  reason: collision with root package name */
-    private long f21479a;
+    private long f7873a;
 
     public e(InputStream inputStream) {
         super(inputStream);
@@ -24,7 +24,7 @@ public final class e extends j {
     protected final void a(int i) {
         synchronized (this) {
             if (i != -1) {
-                this.f21479a += i;
+                this.f7873a += i;
             }
         }
     }
@@ -32,7 +32,7 @@ public final class e extends j {
     public final long b() {
         long j;
         synchronized (this) {
-            j = this.f21479a;
+            j = this.f7873a;
         }
         return j;
     }
@@ -42,7 +42,7 @@ public final class e extends j {
         long skip;
         synchronized (this) {
             skip = super.skip(j);
-            this.f21479a += skip;
+            this.f7873a += skip;
         }
         return skip;
     }

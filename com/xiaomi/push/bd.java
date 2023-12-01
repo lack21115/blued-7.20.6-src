@@ -9,20 +9,20 @@ import android.net.Uri;
 public class bd implements as {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f41274a = "content://com.vivo.vms.IdProvider/IdentifierId/";
-    private static String b = f41274a + "OAID";
+    private static String f27583a = "content://com.vivo.vms.IdProvider/IdentifierId/";
+    private static String b = f27583a + "OAID";
 
     /* renamed from: c  reason: collision with root package name */
-    private static String f41275c = f41274a + "VAID_";
-    private static String d = f41274a + "AAID_";
-    private static String e = f41274a + "OAIDSTATUS";
+    private static String f27584c = f27583a + "VAID_";
+    private static String d = f27583a + "AAID_";
+    private static String e = f27583a + "OAIDSTATUS";
     private static String f = "persist.sys.identifierid.supported";
 
     /* renamed from: a  reason: collision with other field name */
-    private Context f215a;
+    private Context f168a;
 
     public bd(Context context) {
-        this.f215a = context;
+        this.f168a = context;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:14:0x004a, code lost:
@@ -42,7 +42,7 @@ public class bd implements as {
             r0 = 0
             r12 = r0
             r0 = r7
-            android.content.Context r0 = r0.f215a     // Catch: java.lang.Throwable -> L55 java.lang.Exception -> L72
+            android.content.Context r0 = r0.f168a     // Catch: java.lang.Throwable -> L55 java.lang.Exception -> L72
             android.content.ContentResolver r0 = r0.getContentResolver()     // Catch: java.lang.Throwable -> L55 java.lang.Exception -> L72
             r1 = r8
             android.net.Uri r1 = android.net.Uri.parse(r1)     // Catch: java.lang.Throwable -> L55 java.lang.Exception -> L72
@@ -119,7 +119,7 @@ public class bd implements as {
 
     public static boolean a(Context context) {
         try {
-            ProviderInfo resolveContentProvider = context.getPackageManager().resolveContentProvider(Uri.parse(f41274a).getAuthority(), 128);
+            ProviderInfo resolveContentProvider = context.getPackageManager().resolveContentProvider(Uri.parse(f27583a).getAuthority(), 128);
             if (resolveContentProvider != null) {
                 return (resolveContentProvider.applicationInfo.flags & 1) != 0;
             }
@@ -131,13 +131,13 @@ public class bd implements as {
 
     @Override // com.xiaomi.push.as
     /* renamed from: a */
-    public String mo11508a() {
+    public String mo8458a() {
         return a(b);
     }
 
     @Override // com.xiaomi.push.as
     /* renamed from: a */
-    public boolean mo11509a() {
+    public boolean mo8459a() {
         return "1".equals(q.a(f, "0"));
     }
 }

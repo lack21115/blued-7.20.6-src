@@ -2,7 +2,6 @@ package com.android.internal.util.cm;
 
 import android.bluetooth.BluetoothAdapter;
 import android.content.Context;
-import android.content.pm.PackageManager;
 import android.hardware.SensorManager;
 import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraCharacteristics;
@@ -12,10 +11,12 @@ import android.os.PowerManager;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import com.android.internal.R;
+import com.android.internal.telephony.PhoneConstants;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.regex.Pattern;
+import javax.microedition.khronos.opengles.GL10;
 
 /* loaded from: source-4181928-dex2jar.jar:com/android/internal/util/cm/QSUtils.class */
 public class QSUtils {
@@ -34,7 +35,7 @@ public class QSUtils {
     }
 
     public static boolean deviceSupportsDdsSupported(Context context) {
-        TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService("phone");
+        TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService(PhoneConstants.PHONE_KEY);
         return telephonyManager.isMultiSimEnabled() && telephonyManager.getMultiSimConfiguration() == TelephonyManager.MultiSimVariants.DSDA;
     }
 
@@ -69,20 +70,20 @@ public class QSUtils {
     }
 
     public static boolean deviceSupportsLte(Context context) {
-        TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService("phone");
+        TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService(PhoneConstants.PHONE_KEY);
         return telephonyManager.getLteOnCdmaMode() == 1 || telephonyManager.getLteOnGsmMode() != 0;
     }
 
     public static boolean deviceSupportsMobileData(Context context) {
-        return ((ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE)).isNetworkSupported(0);
+        return ((ConnectivityManager) context.getSystemService("connectivity")).isNetworkSupported(0);
     }
 
     public static boolean deviceSupportsNfc(Context context) {
-        return context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_NFC);
+        return context.getPackageManager().hasSystemFeature("android.hardware.nfc");
     }
 
     public static boolean deviceSupportsPowerProfiles(Context context) {
-        return ((PowerManager) context.getSystemService("power")).hasPowerProfiles();
+        return ((PowerManager) context.getSystemService(PowerMenuConstants.GLOBAL_ACTION_KEY_POWER)).hasPowerProfiles();
     }
 
     private static void filterTiles(Context context) {
@@ -125,7 +126,7 @@ public class QSUtils {
                         break;
                     }
                     break;
-                case 3154:
+                case GL10.GL_LINE_SMOOTH_HINT /* 3154 */:
                     if (next.equals(QSConstants.TILE_BLUETOOTH)) {
                         z2 = true;
                         break;
@@ -144,13 +145,13 @@ public class QSUtils {
                     }
                     break;
                 case 108971:
-                    if (next.equals("nfc")) {
+                    if (next.equals(QSConstants.TILE_NFC)) {
                         z2 = true;
                         break;
                     }
                     break;
                 case 3049826:
-                    if (next.equals("cell")) {
+                    if (next.equals(QSConstants.TILE_CELLULAR)) {
                         z2 = false;
                         break;
                     }

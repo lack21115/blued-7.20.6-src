@@ -15,15 +15,15 @@ import com.soft.blued.R;
 public class OppoSplashManager extends SplashAdManagerAdapter {
 
     /* renamed from: a  reason: collision with root package name */
-    private HotSplashAd f34648a;
+    private HotSplashAd f20957a;
 
     @Override // com.soft.blued.ui.welcome.manager.SplashAdManagerAdapter, com.soft.blued.ui.welcome.manager.SplashAdManager
     public void a(final Context context, String str, ViewGroup viewGroup, IRequestHost iRequestHost, final SplashAdListener splashAdListener) {
-        HotSplashAd hotSplashAd = this.f34648a;
+        HotSplashAd hotSplashAd = this.f20957a;
         if (hotSplashAd != null) {
             hotSplashAd.destroyAd();
         }
-        this.f34648a = new HotSplashAd(context, str, new IHotSplashListener() { // from class: com.soft.blued.ui.welcome.manager.OppoSplashManager.1
+        this.f20957a = new HotSplashAd(context, str, new IHotSplashListener() { // from class: com.soft.blued.ui.welcome.manager.OppoSplashManager.1
             @Override // com.heytap.msp.mobad.api.listener.IHotSplashListener
             public void onAdClick() {
                 Log.v("drb", "oppo开机图 onAdClick");
@@ -34,7 +34,7 @@ public class OppoSplashManager extends SplashAdManagerAdapter {
             public void onAdDismissed() {
                 Log.v("drb", "oppo开机图 onAdDismissed");
                 splashAdListener.d();
-                HotSplashAd hotSplashAd2 = OppoSplashManager.this.f34648a;
+                HotSplashAd hotSplashAd2 = OppoSplashManager.this.f20957a;
                 if (hotSplashAd2 != null) {
                     hotSplashAd2.destroyAd();
                 }
@@ -50,7 +50,7 @@ public class OppoSplashManager extends SplashAdManagerAdapter {
             public void onAdReady() {
                 Log.v("drb", "oppo开机图 onAdReady");
                 splashAdListener.a();
-                OppoSplashManager.this.f34648a.showAd((Activity) context);
+                OppoSplashManager.this.f20957a.showAd((Activity) context);
             }
 
             @Override // com.heytap.msp.mobad.api.listener.IHotSplashListener

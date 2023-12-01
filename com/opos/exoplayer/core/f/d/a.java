@@ -14,11 +14,11 @@ import java.util.regex.Pattern;
 public final class a extends c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Pattern f25370a = Pattern.compile("(?:(\\d+):)?(\\d+):(\\d+)(?::|\\.)(\\d+)");
+    private static final Pattern f11682a = Pattern.compile("(?:(\\d+):)?(\\d+):(\\d+)(?::|\\.)(\\d+)");
     private final boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f25371c;
+    private int f11683c;
     private int d;
     private int e;
     private int f;
@@ -41,7 +41,7 @@ public final class a extends c {
     }
 
     public static long a(String str) {
-        Matcher matcher = f25370a.matcher(str);
+        Matcher matcher = f11682a.matcher(str);
         return !matcher.matches() ? com.anythink.expressad.exoplayer.b.b : (Long.parseLong(matcher.group(1)) * 60 * 60 * 1000000) + (Long.parseLong(matcher.group(2)) * 60 * 1000000) + (Long.parseLong(matcher.group(3)) * 1000000) + (Long.parseLong(matcher.group(4)) * 10000);
     }
 
@@ -73,12 +73,12 @@ public final class a extends c {
         long j;
         StringBuilder sb;
         String str2;
-        if (this.f25371c == 0) {
+        if (this.f11683c == 0) {
             sb = new StringBuilder();
             str2 = "Skipping dialogue line before complete format: ";
         } else {
-            String[] split = str.substring(10).split(",", this.f25371c);
-            if (split.length == this.f25371c) {
+            String[] split = str.substring(10).split(",", this.f11683c);
+            if (split.length == this.f11683c) {
                 long a2 = a(split[this.d]);
                 if (a2 != com.anythink.expressad.exoplayer.b.b) {
                     String str3 = split[this.e];
@@ -116,14 +116,14 @@ public final class a extends c {
     private void b(String str) {
         boolean z;
         String[] split = TextUtils.split(str.substring(8), ",");
-        this.f25371c = split.length;
+        this.f11683c = split.length;
         this.d = -1;
         this.e = -1;
         this.f = -1;
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f25371c) {
+            if (i2 >= this.f11683c) {
                 break;
             }
             String d = u.d(split[i2].trim());
@@ -154,7 +154,7 @@ public final class a extends c {
             i = i2 + 1;
         }
         if (this.d == -1 || this.e == -1 || this.f == -1) {
-            this.f25371c = 0;
+            this.f11683c = 0;
         }
     }
 

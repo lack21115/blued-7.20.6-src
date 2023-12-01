@@ -22,11 +22,11 @@ public final class StreamAllocation {
     static final /* synthetic */ boolean d = !StreamAllocation.class.desiredAssertionStatus();
 
     /* renamed from: a  reason: collision with root package name */
-    public final Address f35943a;
+    public final Address f22252a;
     public final Call b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final EventListener f35944c;
+    public final EventListener f22253c;
     private RouteSelector.Selection e;
     private Route f;
     private final ConnectionPool g;
@@ -43,19 +43,19 @@ public final class StreamAllocation {
     public static final class StreamAllocationReference extends WeakReference<StreamAllocation> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final Object f35945a;
+        public final Object f22254a;
 
         StreamAllocationReference(StreamAllocation streamAllocation, Object obj) {
             super(streamAllocation);
-            this.f35945a = obj;
+            this.f22254a = obj;
         }
     }
 
     public StreamAllocation(ConnectionPool connectionPool, Address address, Call call, EventListener eventListener, Object obj) {
         this.g = connectionPool;
-        this.f35943a = address;
+        this.f22252a = address;
         this.b = call;
-        this.f35944c = eventListener;
+        this.f22253c = eventListener;
         this.i = new RouteSelector(address, b(), call, eventListener);
         this.h = obj;
     }
@@ -95,7 +95,7 @@ public final class StreamAllocation {
                 realConnection2 = null;
             }
             if (realConnection == null) {
-                Internal.f35902a.get(this.g, this.f35943a, this, null);
+                Internal.f22211a.get(this.g, this.f22252a, this, null);
                 if (this.k != null) {
                     realConnection = this.k;
                     route = null;
@@ -110,10 +110,10 @@ public final class StreamAllocation {
         }
         Util.closeQuietly(a2);
         if (realConnection2 != null) {
-            this.f35944c.connectionReleased(this.b, realConnection2);
+            this.f22253c.connectionReleased(this.b, realConnection2);
         }
         if (z2) {
-            this.f35944c.connectionAcquired(this.b, realConnection);
+            this.f22253c.connectionAcquired(this.b, realConnection);
         }
         if (realConnection != null) {
             return realConnection;
@@ -142,7 +142,7 @@ public final class StreamAllocation {
                         break;
                     }
                     Route route2 = all.get(i6);
-                    Internal.f35902a.get(this.g, this.f35943a, this, route2);
+                    Internal.f22211a.get(this.g, this.f22252a, this, route2);
                     if (this.k != null) {
                         realConnection6 = this.k;
                         this.f = route2;
@@ -165,22 +165,22 @@ public final class StreamAllocation {
             }
         }
         if (!z4) {
-            realConnection3.connect(i, i2, i3, i4, z, this.b, this.f35944c);
+            realConnection3.connect(i, i2, i3, i4, z, this.b, this.f22253c);
             b().connected(realConnection3.route());
             synchronized (this.g) {
                 this.l = true;
-                Internal.f35902a.put(this.g, realConnection3);
+                Internal.f22211a.put(this.g, realConnection3);
                 realConnection4 = realConnection3;
                 socket = null;
                 if (realConnection3.isMultiplexed()) {
-                    socket = Internal.f35902a.deduplicate(this.g, this.f35943a, this);
+                    socket = Internal.f22211a.deduplicate(this.g, this.f22252a, this);
                     realConnection4 = this.k;
                 }
             }
             Util.closeQuietly(socket);
             realConnection3 = realConnection4;
         }
-        this.f35944c.connectionAcquired(this.b, realConnection3);
+        this.f22253c.connectionAcquired(this.b, realConnection3);
         return realConnection3;
     }
 
@@ -202,7 +202,7 @@ public final class StreamAllocation {
     private Socket a() {
         if (d || Thread.holdsLock(this.g)) {
             RealConnection realConnection = this.k;
-            if (realConnection == null || !realConnection.f35935a) {
+            if (realConnection == null || !realConnection.f22244a) {
                 return null;
             }
             return a(false, false, true);
@@ -211,7 +211,7 @@ public final class StreamAllocation {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:25:0x0066, code lost:
-        if (r4.k.f35935a != false) goto L25;
+        if (r4.k.f22244a != false) goto L25;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -258,7 +258,7 @@ public final class StreamAllocation {
             if (r0 == 0) goto L49
             r0 = r10
             r1 = 1
-            r0.f35935a = r1
+            r0.f22244a = r1
         L49:
             r0 = r9
             r8 = r0
@@ -272,7 +272,7 @@ public final class StreamAllocation {
             r8 = r0
             r0 = r4
             com.tencent.cloud.huiyansdkface.okhttp3.internal.connection.RealConnection r0 = r0.k
-            boolean r0 = r0.f35935a
+            boolean r0 = r0.f22244a
             if (r0 == 0) goto Laf
         L69:
             r0 = r4
@@ -288,7 +288,7 @@ public final class StreamAllocation {
             com.tencent.cloud.huiyansdkface.okhttp3.internal.connection.RealConnection r0 = r0.k
             long r1 = java.lang.System.nanoTime()
             r0.e = r1
-            com.tencent.cloud.huiyansdkface.okhttp3.internal.Internal r0 = com.tencent.cloud.huiyansdkface.okhttp3.internal.Internal.f35902a
+            com.tencent.cloud.huiyansdkface.okhttp3.internal.Internal r0 = com.tencent.cloud.huiyansdkface.okhttp3.internal.Internal.f22211a
             r1 = r4
             com.tencent.cloud.huiyansdkface.okhttp3.ConnectionPool r1 = r1.g
             r2 = r4
@@ -331,7 +331,7 @@ public final class StreamAllocation {
     }
 
     private RouteDatabase b() {
-        return Internal.f35902a.routeDatabase(this.g);
+        return Internal.f22211a.routeDatabase(this.g);
     }
 
     public void acquire(RealConnection realConnection, boolean z) {
@@ -409,7 +409,7 @@ public final class StreamAllocation {
         }
         Util.closeQuietly(a2);
         if (realConnection != null) {
-            this.f35944c.connectionReleased(this.b, realConnection);
+            this.f22253c.connectionReleased(this.b, realConnection);
         }
     }
 
@@ -425,9 +425,9 @@ public final class StreamAllocation {
         }
         Util.closeQuietly(a2);
         if (realConnection != null) {
-            Internal.f35902a.timeoutExit(this.b, null);
-            this.f35944c.connectionReleased(this.b, realConnection);
-            this.f35944c.callEnd(this.b);
+            Internal.f22211a.timeoutExit(this.b, null);
+            this.f22253c.connectionReleased(this.b, realConnection);
+            this.f22253c.callEnd(this.b);
         }
     }
 
@@ -472,7 +472,7 @@ public final class StreamAllocation {
         RealConnection realConnection;
         Socket a2;
         boolean z2;
-        this.f35944c.responseBodyEnd(this.b, j);
+        this.f22253c.responseBodyEnd(this.b, j);
         synchronized (this.g) {
             if (httpCodec != null) {
                 if (httpCodec == this.o) {
@@ -491,18 +491,18 @@ public final class StreamAllocation {
         }
         Util.closeQuietly(a2);
         if (realConnection != null) {
-            this.f35944c.connectionReleased(this.b, realConnection);
+            this.f22253c.connectionReleased(this.b, realConnection);
         }
         if (iOException != null) {
-            this.f35944c.callFailed(this.b, Internal.f35902a.timeoutExit(this.b, iOException));
+            this.f22253c.callFailed(this.b, Internal.f22211a.timeoutExit(this.b, iOException));
         } else if (z2) {
-            Internal.f35902a.timeoutExit(this.b, null);
-            this.f35944c.callEnd(this.b);
+            Internal.f22211a.timeoutExit(this.b, null);
+            this.f22253c.callEnd(this.b);
         }
     }
 
     public String toString() {
         RealConnection connection = connection();
-        return connection != null ? connection.toString() : this.f35943a.toString();
+        return connection != null ? connection.toString() : this.f22252a.toString();
     }
 }

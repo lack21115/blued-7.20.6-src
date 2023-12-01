@@ -2,8 +2,10 @@ package a.a.a.a.a.a.i;
 
 import a.a.a.a.a.a.b;
 import a.a.a.a.a.e.h;
+import android.accounts.AccountManager;
 import android.content.Context;
 import android.content.Intent;
+import android.net.UrlQuerySanitizer;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Looper;
@@ -45,7 +47,7 @@ public abstract class c {
     public int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public int f1241c;
+    public int f1193c;
     public int d;
     public int e;
     public byte[] f;
@@ -74,23 +76,23 @@ public abstract class c {
     public static /* synthetic */ class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final /* synthetic */ int[] f1242a;
+        public static final /* synthetic */ int[] f1194a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x002f -> B:19:0x001f). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:9:0x002b -> B:15:0x0014). Please submit an issue!!! */
         static {
             int[] iArr = new int[EnumC0001c.values().length];
-            f1242a = iArr;
+            f1194a = iArr;
             try {
                 iArr[EnumC0001c.HLS.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f1242a[EnumC0001c.MPEG4.ordinal()] = 2;
+                f1194a[EnumC0001c.MPEG4.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f1242a[EnumC0001c.RTMP.ordinal()] = 3;
+                f1194a[EnumC0001c.RTMP.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
         }
@@ -102,11 +104,11 @@ public abstract class c {
         public long B;
 
         /* renamed from: a  reason: collision with root package name */
-        public boolean f1243a;
+        public boolean f1195a;
         public boolean b;
 
         /* renamed from: c  reason: collision with root package name */
-        public long f1244c;
+        public long f1196c;
         public long d;
         public long e;
         public long f;
@@ -153,21 +155,21 @@ public abstract class c {
     public static class e extends Handler {
 
         /* renamed from: a  reason: collision with root package name */
-        public WeakReference<c> f1247a;
+        public WeakReference<c> f1199a;
 
         public e(Looper looper, c cVar) {
             super(looper);
-            this.f1247a = new WeakReference<>(cVar);
+            this.f1199a = new WeakReference<>(cVar);
         }
 
         public void a() {
             getLooper().quit();
-            this.f1247a.clear();
+            this.f1199a.clear();
         }
 
         @Override // android.os.Handler
         public void handleMessage(Message message) {
-            c cVar = this.f1247a.get();
+            c cVar = this.f1199a.get();
             if (cVar == null) {
                 a.a.a.a.a.e.e.f.d("Muxer", "MuxerHandler.handleMessage: muxer is null");
             } else if (message.what != 0) {
@@ -179,11 +181,11 @@ public abstract class c {
                     cVar.B.notifyStreamStatusChanged(streamStatus);
                 }
                 b bVar = cVar.J;
-                if (bVar.b && System.currentTimeMillis() - bVar.f1244c >= a.a.a.a.a.j.a.a().b()) {
+                if (bVar.b && System.currentTimeMillis() - bVar.f1196c >= a.a.a.a.a.j.a.a().b()) {
                     bVar.d = System.currentTimeMillis();
                     Intent intent = new Intent("pldroid-qos-filter");
                     intent.putExtra("pldroid-qos-msg-type", 161);
-                    intent.putExtra("beginAt", bVar.f1244c);
+                    intent.putExtra("beginAt", bVar.f1196c);
                     intent.putExtra("endAt", bVar.d);
                     intent.putExtra("audioFps", streamStatus.audioFps);
                     intent.putExtra("videoFps", streamStatus.videoFps);
@@ -197,7 +199,7 @@ public abstract class c {
                     intent.putExtra("sentAudioFps", bVar.r);
                     intent.putExtra("sentVideoFps", bVar.s);
                     a.a.a.a.a.j.a.a().a(intent);
-                    bVar.f1244c = System.currentTimeMillis();
+                    bVar.f1196c = System.currentTimeMillis();
                 }
                 cVar.o();
                 sendMessageDelayed(obtainMessage(0), intervalMs);
@@ -209,7 +211,7 @@ public abstract class c {
     public class f extends Thread {
 
         /* renamed from: a  reason: collision with root package name */
-        public volatile boolean f1248a;
+        public volatile boolean f1200a;
 
         /* loaded from: source-8756600-dex2jar.jar:a/a/a/a/a/a/i/c$f$a.class */
         public class a implements PLDroidStreamingCore.b {
@@ -227,7 +229,7 @@ public abstract class c {
         }
 
         public void a() {
-            this.f1248a = true;
+            this.f1200a = true;
         }
 
         @Override // java.lang.Thread, java.lang.Runnable
@@ -240,7 +242,7 @@ public abstract class c {
             c.this.l = false;
             boolean p = c.this.p();
             synchronized (c.this.h) {
-                if (this.f1248a) {
+                if (this.f1200a) {
                     a.a.a.a.a.e.e.f.d("Muxer", "muxing thread got interrupted, return anyway.");
                     return;
                 }
@@ -274,11 +276,11 @@ public abstract class c {
     public static class g {
 
         /* renamed from: a  reason: collision with root package name */
-        public PLBufferInfo f1250a;
+        public PLBufferInfo f1202a;
         public int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public int f1251c;
+        public int f1203c;
         public PLAVFrame d;
         public long e;
         public String f;
@@ -289,15 +291,15 @@ public abstract class c {
 
         public g(int i, int i2, PLAVFrame pLAVFrame, PLBufferInfo pLBufferInfo, String str) {
             this.b = i;
-            this.f1251c = i2;
+            this.f1203c = i2;
             this.d = pLAVFrame;
             this.e = System.currentTimeMillis();
             PLBufferInfo pLBufferInfo2 = new PLBufferInfo();
-            this.f1250a = pLBufferInfo2;
+            this.f1202a = pLBufferInfo2;
             this.f = str;
             if (pLBufferInfo != null) {
                 pLBufferInfo2.set(pLBufferInfo.offset, pLBufferInfo.size, pLBufferInfo.presentationTimeUs, pLBufferInfo.dtsUs, pLBufferInfo.flags);
-                this.f1250a.isNeedAddHeader = pLBufferInfo.isNeedAddHeader;
+                this.f1202a.isNeedAddHeader = pLBufferInfo.isNeedAddHeader;
             }
         }
     }
@@ -308,7 +310,7 @@ public abstract class c {
 
     public c() {
         this.b = 4;
-        this.f1241c = 1;
+        this.f1193c = 1;
         this.h = new Object();
         this.k = false;
         this.l = false;
@@ -331,7 +333,7 @@ public abstract class c {
 
     public c(int i) {
         this.b = 4;
-        this.f1241c = 1;
+        this.f1193c = 1;
         this.h = new Object();
         this.k = false;
         this.l = false;
@@ -359,7 +361,7 @@ public abstract class c {
     public int a(g gVar) {
         PLDroidStreamingCore pLDroidStreamingCore = this.g;
         ByteBuffer byteBuffer = gVar.d.mBuffer;
-        PLBufferInfo pLBufferInfo = gVar.f1250a;
+        PLBufferInfo pLBufferInfo = gVar.f1202a;
         int sendFrame = pLDroidStreamingCore.sendFrame(byteBuffer, pLBufferInfo.size, pLBufferInfo.presentationTimeUs / 1000, pLBufferInfo.dtsUs / 1000, false, false);
         if (sendFrame == 0) {
             this.J.n++;
@@ -423,7 +425,7 @@ public abstract class c {
         intent.putExtra("audioSendFrames", (int) this.J.t);
         intent.putExtra("audioDroppedFrames", (int) this.J.v);
         intent.putExtra("totalSendBytes", this.J.y + this.J.x);
-        intent.putExtra("errorCode", i);
+        intent.putExtra(AccountManager.KEY_ERROR_CODE, i);
         intent.putExtra("errorOSCode", i2);
         a.a.a.a.a.j.a.a().a(intent);
     }
@@ -588,10 +590,10 @@ public abstract class c {
         bArr[0] = -1;
         bArr[1] = -7;
         int i2 = this.b;
-        int i3 = this.f1241c;
+        int i3 = this.f1193c;
         bArr[2] = (byte) ((i2 << 2) + 64 + (i3 >> 2));
         bArr[3] = (byte) (((i3 & 3) << 6) + (i >> 11));
-        bArr[4] = (byte) ((i & 2047) >> 3);
+        bArr[4] = (byte) ((i & UrlQuerySanitizer.IllegalCharacterValueSanitizer.ALL_OK) >> 3);
         bArr[5] = (byte) (((i & 7) << 5) + 31);
         bArr[6] = -4;
     }
@@ -688,27 +690,27 @@ public abstract class c {
 
     public int c(g gVar) {
         if (gVar.b == 0 && i()) {
-            b(gVar.d.mBuffer, gVar.f1250a);
+            b(gVar.d.mBuffer, gVar.f1202a);
         }
-        gVar.d.mBuffer.position(gVar.f1250a.offset);
+        gVar.d.mBuffer.position(gVar.f1202a.offset);
         ByteBuffer byteBuffer = gVar.d.mBuffer;
-        PLBufferInfo pLBufferInfo = gVar.f1250a;
+        PLBufferInfo pLBufferInfo = gVar.f1202a;
         byteBuffer.limit(pLBufferInfo.offset + pLBufferInfo.size);
         gVar.f = null;
         if (gVar.b == 1) {
-            if (a.a.a.a.a.f.b.a().c() || a.a.a.a.a.f.b.a().b(gVar.f1250a.presentationTimeUs)) {
+            if (a.a.a.a.a.f.b.a().c() || a.a.a.a.a.f.b.a().b(gVar.f1202a.presentationTimeUs)) {
                 gVar.f = a.a.a.a.a.f.b.a().b();
                 a.a.a.a.a.f.b.a().d();
             }
             a.a.a.a.a.f.b.a().e();
         }
-        PLBufferInfo pLBufferInfo2 = gVar.f1250a;
+        PLBufferInfo pLBufferInfo2 = gVar.f1202a;
         pLBufferInfo2.presentationTimeUs = a(pLBufferInfo2.presentationTimeUs, gVar.b, true ^ h.b(pLBufferInfo2));
-        PLBufferInfo pLBufferInfo3 = gVar.f1250a;
+        PLBufferInfo pLBufferInfo3 = gVar.f1202a;
         if (pLBufferInfo3.presentationTimeUs < 0) {
-            a(pLBufferInfo3, gVar.d, gVar.f1251c, gVar.b);
+            a(pLBufferInfo3, gVar.d, gVar.f1203c, gVar.b);
             a.a.a.a.a.e.e eVar = a.a.a.a.a.e.e.f;
-            eVar.d("Muxer", "Warming bufferInfo.presentationTimeUs:" + gVar.f1250a.presentationTimeUs);
+            eVar.d("Muxer", "Warming bufferInfo.presentationTimeUs:" + gVar.f1202a.presentationTimeUs);
             if (this.C || !g()) {
                 return 0;
             }
@@ -756,21 +758,21 @@ public abstract class c {
         if (!d().t()) {
             d().a(b.c.STREAMING, null);
         }
-        if (!h.a(gVar.f1250a)) {
+        if (!h.a(gVar.f1202a)) {
             PLDroidStreamingCore pLDroidStreamingCore = this.g;
             ByteBuffer byteBuffer = gVar.d.mBuffer;
-            PLBufferInfo pLBufferInfo = gVar.f1250a;
+            PLBufferInfo pLBufferInfo = gVar.f1202a;
             sendFrame = pLDroidStreamingCore.sendFrame(byteBuffer, pLBufferInfo.size, pLBufferInfo.presentationTimeUs / 1000, pLBufferInfo.dtsUs / 1000, true, h.a(pLBufferInfo), gVar.f);
-        } else if (h.d(gVar.f1250a)) {
-            d(gVar.d.mBuffer, gVar.f1250a);
+        } else if (h.d(gVar.f1202a)) {
+            d(gVar.d.mBuffer, gVar.f1202a);
             PLDroidStreamingCore pLDroidStreamingCore2 = this.g;
             ByteBuffer byteBuffer2 = this.E;
-            PLBufferInfo pLBufferInfo2 = gVar.f1250a;
+            PLBufferInfo pLBufferInfo2 = gVar.f1202a;
             sendFrame = pLDroidStreamingCore2.sendFrame(byteBuffer2, this.F + pLBufferInfo2.size, pLBufferInfo2.presentationTimeUs / 1000, pLBufferInfo2.dtsUs / 1000, true, true, gVar.f);
         } else {
             PLDroidStreamingCore pLDroidStreamingCore3 = this.g;
             ByteBuffer byteBuffer3 = gVar.d.mBuffer;
-            PLBufferInfo pLBufferInfo3 = gVar.f1250a;
+            PLBufferInfo pLBufferInfo3 = gVar.f1202a;
             sendFrame = pLDroidStreamingCore3.sendFrame(byteBuffer3, pLBufferInfo3.size, pLBufferInfo3.presentationTimeUs / 1000, pLBufferInfo3.dtsUs / 1000, true, true, gVar.f);
         }
         if (sendFrame == 0) {
@@ -839,8 +841,8 @@ public abstract class c {
     }
 
     public final void f(g gVar) {
-        if (gVar.f1250a != null) {
-            this.J.B += gVar.f1250a.size;
+        if (gVar.f1202a != null) {
+            this.J.B += gVar.f1202a.size;
         }
     }
 
@@ -874,16 +876,16 @@ public abstract class c {
     }
 
     public final void g(g gVar) {
-        if (gVar.f1250a != null) {
+        if (gVar.f1202a != null) {
             int i = gVar.b;
             if (i == 0) {
                 this.J.e++;
-                this.J.g += gVar.f1250a.size;
-                this.J.x += gVar.f1250a.size;
+                this.J.g += gVar.f1202a.size;
+                this.J.x += gVar.f1202a.size;
             } else if (i == 1) {
                 this.J.f++;
-                this.J.h += gVar.f1250a.size;
-                this.J.y += gVar.f1250a.size;
+                this.J.h += gVar.f1202a.size;
+                this.J.y += gVar.f1202a.size;
             }
             if (this.K) {
                 return;
@@ -927,7 +929,7 @@ public abstract class c {
     }
 
     public boolean i() {
-        int i = a.f1242a[this.y.h().ordinal()];
+        int i = a.f1194a[this.y.h().ordinal()];
         return i == 1 || i == 2;
     }
 

@@ -27,13 +27,9 @@ import java.util.ArrayList;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYGameBonusView.class */
 public class YYGameBonusView extends LinearLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private RecyclerView f18163a;
+    private RecyclerView a;
     private ShapeTextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private YYGameBonusAdapter f18164c;
+    private YYGameBonusAdapter c;
     private BaseYYStudioFragment d;
     private YYRoomModel e;
 
@@ -54,11 +50,11 @@ public class YYGameBonusView extends LinearLayout {
 
     private void a() {
         LayoutInflater.from(getContext()).inflate(R.layout.view_yy_game_bonus_layout, (ViewGroup) this, true);
-        this.f18163a = (RecyclerView) findViewById(R.id.rv_bonus_list);
+        this.a = findViewById(R.id.rv_bonus_list);
         this.b = (ShapeTextView) findViewById(R.id.no_data_view);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setOrientation(0);
-        this.f18163a.setLayoutManager(linearLayoutManager);
+        this.a.setLayoutManager(linearLayoutManager);
         this.b.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.YYGameBonusView.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
@@ -70,13 +66,13 @@ public class YYGameBonusView extends LinearLayout {
 
     private void a(ActivityFragmentActive activityFragmentActive) {
         YYGameBonusAdapter yYGameBonusAdapter = new YYGameBonusAdapter(activityFragmentActive);
-        this.f18164c = yYGameBonusAdapter;
-        this.f18163a.setAdapter(yYGameBonusAdapter);
-        this.f18164c.a(new IMemberClickListener() { // from class: com.blued.android.module.yy_china.view.YYGameBonusView.2
+        this.c = yYGameBonusAdapter;
+        this.a.setAdapter(yYGameBonusAdapter);
+        this.c.a(new IMemberClickListener() { // from class: com.blued.android.module.yy_china.view.YYGameBonusView.2
             @Override // com.blued.android.module.yy_china.listener.IMemberClickListener
             public void a(int i) {
                 YYGiftModel yYGiftModel;
-                if (YYGameBonusView.this.e == null || YYGameBonusView.this.d == null || (yYGiftModel = YYGameBonusView.this.f18164c.getData().get(i)) == null) {
+                if (YYGameBonusView.this.e == null || YYGameBonusView.this.d == null || (yYGiftModel = (YYGiftModel) YYGameBonusView.this.c.getData().get(i)) == null) {
                     return;
                 }
                 YYGameBonusView.this.d.a(true, "", yYGiftModel.goods_id, YYGameBonusView.this.e.uid);
@@ -97,15 +93,15 @@ public class YYGameBonusView extends LinearLayout {
             public void onUIUpdate(BluedEntityA<YYGameBonusModel> bluedEntityA) {
                 if (bluedEntityA == null || !bluedEntityA.hasData()) {
                     YYGameBonusView.this.b.setVisibility(0);
-                    YYGameBonusView.this.f18163a.setVisibility(8);
+                    YYGameBonusView.this.a.setVisibility(8);
                     return;
                 }
-                YYGameBonusView.this.f18163a.setVisibility(0);
+                YYGameBonusView.this.a.setVisibility(0);
                 YYGameBonusView.this.b.setVisibility(8);
                 ArrayList arrayList = new ArrayList();
                 arrayList.add(bluedEntityA.getSingleData().incr);
                 arrayList.add(bluedEntityA.getSingleData().decr);
-                YYGameBonusView.this.f18164c.setNewData(arrayList);
+                YYGameBonusView.this.c.setNewData(arrayList);
             }
 
             @Override // com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
@@ -114,7 +110,7 @@ public class YYGameBonusView extends LinearLayout {
                 AppInfo.n().post(new Runnable() { // from class: com.blued.android.module.yy_china.view.YYGameBonusView.3.1
                     @Override // java.lang.Runnable
                     public void run() {
-                        YYGameBonusView.this.f18163a.setVisibility(8);
+                        YYGameBonusView.this.a.setVisibility(8);
                         YYGameBonusView.this.b.setVisibility(0);
                     }
                 });

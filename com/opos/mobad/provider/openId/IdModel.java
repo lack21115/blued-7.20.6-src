@@ -14,39 +14,39 @@ public class IdModel implements d {
         @Override // com.opos.process.bridge.provider.d.a
         public IdModel getInstance(Context context, IBridgeTargetIdentify iBridgeTargetIdentify) {
             IdModelIdentify idModelIdentify = (IdModelIdentify) iBridgeTargetIdentify;
-            return IdModel.b(context.getApplicationContext(), idModelIdentify.f27119a, idModelIdentify.b);
+            return IdModel.b(context.getApplicationContext(), idModelIdentify.f13431a, idModelIdentify.b);
         }
     };
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile IdModel f27117a;
+    private static volatile IdModel f13429a;
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f27118c;
+    private boolean f13430c;
     private String d;
 
     private IdModel(Context context, boolean z, String str) {
         this.b = context;
-        this.f27118c = z;
+        this.f13430c = z;
         this.d = str;
         StatisticModel.a(context, z, str);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final IdModel b(Context context, boolean z, String str) {
-        if (f27117a == null) {
+        if (f13429a == null) {
             synchronized (IdModel.class) {
                 try {
-                    if (f27117a == null) {
-                        f27117a = new IdModel(context, z, str);
+                    if (f13429a == null) {
+                        f13429a = new IdModel(context, z, str);
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f27117a;
+        return f13429a;
     }
 
     @BridgeMethod(a = 1)

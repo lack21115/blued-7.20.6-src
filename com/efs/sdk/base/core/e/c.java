@@ -12,9 +12,9 @@ public final class c extends a {
         new com.efs.sdk.base.core.e.a.d();
         com.efs.sdk.base.core.e.a.b bVar = new com.efs.sdk.base.core.e.a.b();
         e eVar = new e();
-        fVar.f21769a = cVar;
-        cVar.f21769a = bVar;
-        bVar.f21769a = eVar;
+        fVar.f8163a = cVar;
+        cVar.f8163a = bVar;
+        bVar.f8163a = eVar;
         return fVar;
     }
 }

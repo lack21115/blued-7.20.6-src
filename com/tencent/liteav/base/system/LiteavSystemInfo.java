@@ -70,7 +70,7 @@ public class LiteavSystemInfo {
                         }
                     }
                 }
-                i = sProcessStateOwner.f36331a ? 1 : 0;
+                i = sProcessStateOwner.f22640a ? 1 : 0;
             } catch (Throwable th) {
                 throw th;
             }

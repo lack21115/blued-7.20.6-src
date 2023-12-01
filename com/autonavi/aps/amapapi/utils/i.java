@@ -15,13 +15,14 @@ import android.os.Build;
 import android.os.SystemClock;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
-import com.amap.api.col.p0003sl.ho;
-import com.amap.api.col.p0003sl.hs;
-import com.amap.api.col.p0003sl.ht;
-import com.amap.api.col.p0003sl.ib;
+import com.amap.api.col.3sl.ho;
+import com.amap.api.col.3sl.hs;
+import com.amap.api.col.3sl.ht;
+import com.amap.api.col.3sl.ib;
 import com.amap.api.location.AMapLocation;
 import com.amap.api.location.DPoint;
 import com.baidu.mobads.sdk.internal.bw;
+import com.huawei.hms.framework.network.grs.GrsBaseInfo;
 import com.igexin.assist.util.AssistUtils;
 import java.io.BufferedReader;
 import java.io.File;
@@ -40,11 +41,11 @@ import org.json.JSONObject;
 public final class i {
 
     /* renamed from: a  reason: collision with root package name */
-    static WifiManager f9286a;
+    static WifiManager f6446a;
     private static int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static String[] f9287c;
+    private static String[] f6447c;
     private static String d;
 
     public static double a(double d2) {
@@ -651,14 +652,14 @@ public final class i {
             strArr[0] = "0";
         }
         if (!"0".equals(strArr[0]) && !"0".equals(strArr[1])) {
-            f9287c = strArr;
+            f6447c = strArr;
             return strArr;
         }
         String[] strArr2 = strArr;
         if ("0".equals(strArr[0])) {
             strArr2 = strArr;
             if ("0".equals(strArr[1])) {
-                String[] strArr3 = f9287c;
+                String[] strArr3 = f6447c;
                 strArr2 = strArr;
                 if (strArr3 != null) {
                     strArr2 = strArr3;
@@ -1020,19 +1021,19 @@ public final class i {
             r0 = 1
             return r0
         L6:
-            android.net.wifi.WifiManager r0 = com.autonavi.aps.amapapi.utils.i.f9286a
+            android.net.wifi.WifiManager r0 = com.autonavi.aps.amapapi.utils.i.f6446a
             if (r0 != 0) goto L19
             r0 = r5
             java.lang.String r1 = "wifi"
             java.lang.Object r0 = a(r0, r1)
             android.net.wifi.WifiManager r0 = (android.net.wifi.WifiManager) r0
-            com.autonavi.aps.amapapi.utils.i.f9286a = r0
+            com.autonavi.aps.amapapi.utils.i.f6446a = r0
         L19:
             r0 = r5
             java.lang.String r1 = "EYW5kcm9pZC5wZXJtaXNzaW9uLkFDQ0VTU19XSUZJX1NUQVRF"
             boolean r0 = c(r0, r1)     // Catch: java.lang.Throwable -> L6b
             if (r0 == 0) goto L2d
-            android.net.wifi.WifiManager r0 = com.autonavi.aps.amapapi.utils.i.f9286a     // Catch: java.lang.Throwable -> L6b
+            android.net.wifi.WifiManager r0 = com.autonavi.aps.amapapi.utils.i.f6446a     // Catch: java.lang.Throwable -> L6b
             boolean r0 = r0.isWifiEnabled()     // Catch: java.lang.Throwable -> L6b
             r6 = r0
             goto L42
@@ -1058,7 +1059,7 @@ public final class i {
             r1 = 17
             if (r0 <= r1) goto L69
             java.lang.String r0 = "true"
-            android.net.wifi.WifiManager r1 = com.autonavi.aps.amapapi.utils.i.f9286a     // Catch: java.lang.Throwable -> L6f
+            android.net.wifi.WifiManager r1 = com.autonavi.aps.amapapi.utils.i.f6446a     // Catch: java.lang.Throwable -> L6f
             java.lang.String r2 = "isScanAlwaysAvailable"
             r3 = 0
             java.lang.Object[] r3 = new java.lang.Object[r3]     // Catch: java.lang.Throwable -> L6f
@@ -1129,7 +1130,7 @@ public final class i {
                     break;
             }
         } else {
-            str = "UNKNOWN";
+            str = GrsBaseInfo.CountryCodeSource.UNKNOWN;
         }
         return str;
     }
@@ -1184,7 +1185,7 @@ public final class i {
     public static java.lang.String i(android.content.Context r3) {
         /*
             r0 = r3
-            java.lang.String r0 = com.amap.api.col.p0003sl.hs.k(r0)
+            java.lang.String r0 = com.amap.api.col.3sl.hs.k(r0)
             r5 = r0
             r0 = r5
             boolean r0 = android.text.TextUtils.isEmpty(r0)

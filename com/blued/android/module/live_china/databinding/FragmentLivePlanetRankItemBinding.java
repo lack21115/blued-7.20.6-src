@@ -12,20 +12,16 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/FragmentLivePlanetRankItemBinding.class */
 public final class FragmentLivePlanetRankItemBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final LinearLayout f11962a;
+    public final LinearLayout a;
     public final RecyclerView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final TextView f11963c;
+    public final TextView c;
     private final FrameLayout d;
 
     private FragmentLivePlanetRankItemBinding(FrameLayout frameLayout, LinearLayout linearLayout, RecyclerView recyclerView, TextView textView) {
         this.d = frameLayout;
-        this.f11962a = linearLayout;
+        this.a = linearLayout;
         this.b = recyclerView;
-        this.f11963c = textView;
+        this.c = textView;
     }
 
     public static FragmentLivePlanetRankItemBinding a(LayoutInflater layoutInflater) {
@@ -44,11 +40,11 @@ public final class FragmentLivePlanetRankItemBinding implements ViewBinding {
         String str;
         LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.ll_empty);
         if (linearLayout != null) {
-            RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rv_list);
-            if (recyclerView != null) {
+            RecyclerView findViewById = view.findViewById(R.id.rv_list);
+            if (findViewById != null) {
                 TextView textView = (TextView) view.findViewById(R.id.tv_empty);
                 if (textView != null) {
-                    return new FragmentLivePlanetRankItemBinding((FrameLayout) view, linearLayout, recyclerView, textView);
+                    return new FragmentLivePlanetRankItemBinding((FrameLayout) view, linearLayout, findViewById, textView);
                 }
                 str = "tvEmpty";
             } else {
@@ -60,7 +56,6 @@ public final class FragmentLivePlanetRankItemBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.d;

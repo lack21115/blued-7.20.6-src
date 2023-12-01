@@ -13,13 +13,9 @@ import kotlin.jvm.functions.Function3;
 @DebugMetadata(b = "_Sequences.kt", c = {2143, 2148}, d = "invokeSuspend", e = "kotlin.sequences.SequencesKt___SequencesKt$runningFoldIndexed$1")
 /* loaded from: source-3503164-dex2jar.jar:kotlin/sequences/SequencesKt___SequencesKt$runningFoldIndexed$1.class */
 final class SequencesKt___SequencesKt$runningFoldIndexed$1<R> extends RestrictedSuspendLambda implements Function2<SequenceScope<? super R>, Continuation<? super Unit>, Object> {
-
-    /* renamed from: a  reason: collision with root package name */
-    Object f42683a;
+    Object a;
     Object b;
-
-    /* renamed from: c  reason: collision with root package name */
-    int f42684c;
+    int c;
     int d;
     final /* synthetic */ R e;
     final /* synthetic */ Sequence<T> f;
@@ -38,7 +34,7 @@ final class SequencesKt___SequencesKt$runningFoldIndexed$1<R> extends Restricted
     @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(SequenceScope<? super R> sequenceScope, Continuation<? super Unit> continuation) {
-        return ((SequencesKt___SequencesKt$runningFoldIndexed$1) create(sequenceScope, continuation)).invokeSuspend(Unit.f42314a);
+        return ((SequencesKt___SequencesKt$runningFoldIndexed$1) create(sequenceScope, continuation)).invokeSuspend(Unit.a);
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl

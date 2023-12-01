@@ -20,13 +20,13 @@ public class d implements com.tencent.tmsbeacon.a.a.d, h {
     private final com.tencent.tmsbeacon.event.a.a b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final g f39569c;
+    private final g f25878c;
     private final g d;
     private long e = 2000;
     private long f = m.ag;
 
     /* renamed from: a  reason: collision with root package name */
-    private final Handler f39568a = com.tencent.tmsbeacon.a.b.a.a().a(3000);
+    private final Handler f25877a = com.tencent.tmsbeacon.a.b.a.a().a(3000);
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/tmsbeacon/event/d$a.class */
     public class a implements Runnable {
@@ -58,21 +58,21 @@ public class d implements com.tencent.tmsbeacon.a.a.d, h {
         public final /* synthetic */ EventBean b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ String f39571c;
+        public final /* synthetic */ String f25880c;
 
         public b(EventBean eventBean, String str) {
             this.b = eventBean;
-            this.f39571c = str;
+            this.f25880c = str;
         }
 
         @Override // java.lang.Runnable
         public void run() {
             try {
-                BeaconReport.getInstance().getImmediateReport().reportImmediate(d.this.a(com.tencent.tmsbeacon.event.c.d.a(this.b).toByteArray(), this.b), new BeaconImmediateReportCallback(d.this, this.b, this.f39571c));
+                BeaconReport.getInstance().getImmediateReport().reportImmediate(d.this.a(com.tencent.tmsbeacon.event.c.d.a(this.b).toByteArray(), this.b), new BeaconImmediateReportCallback(d.this, this.b, this.f25880c));
             } catch (Throwable th) {
                 com.tencent.tmsbeacon.base.util.c.b("[immediate] report error!", new Object[0]);
                 com.tencent.tmsbeacon.base.util.c.a(th);
-                d.this.a(this.b, this.f39571c);
+                d.this.a(this.b, this.f25880c);
                 com.tencent.tmsbeacon.a.b.d.b().a("515", "immediate report error!", th);
             }
         }
@@ -83,31 +83,31 @@ public class d implements com.tencent.tmsbeacon.a.a.d, h {
         public final /* synthetic */ EventBean b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ String f39572c;
+        public final /* synthetic */ String f25881c;
 
         public c(EventBean eventBean, String str) {
             this.b = eventBean;
-            this.f39572c = str;
+            this.f25881c = str;
         }
 
         @Override // com.tencent.tmsbeacon.base.net.call.Callback
         /* renamed from: a */
         public void onResponse(byte[] bArr) {
-            com.tencent.tmsbeacon.base.util.c.a("[EventManager]", "convert to report by beacon socket success, eventCode = %s, logId = %s", this.b.getEventCode(), this.f39572c);
+            com.tencent.tmsbeacon.base.util.c.a("[EventManager]", "convert to report by beacon socket success, eventCode = %s, logId = %s", this.b.getEventCode(), this.f25881c);
         }
 
         @Override // com.tencent.tmsbeacon.base.net.call.Callback
         public void onFailure(com.tencent.tmsbeacon.base.net.d dVar) {
             com.tencent.tmsbeacon.base.util.c.e("convert to report by beacon socket also fail, failure = %s", dVar.toString());
             com.tencent.tmsbeacon.a.b.d.b().a("464", dVar.toString());
-            d.this.b(this.f39572c, this.b);
+            d.this.b(this.f25881c, this.b);
         }
     }
 
     public d() {
         com.tencent.tmsbeacon.event.a.a aVar = new com.tencent.tmsbeacon.event.a.a();
         this.b = aVar;
-        this.f39569c = new g(2000, aVar, true);
+        this.f25878c = new g(2000, aVar, true);
         this.d = new g(1000, aVar, false);
         com.tencent.tmsbeacon.a.a.b.a().a(11, this);
         com.tencent.tmsbeacon.a.a.b.a().a(2, this);
@@ -137,7 +137,7 @@ public class d implements com.tencent.tmsbeacon.a.a.d, h {
 
     @Override // com.tencent.tmsbeacon.event.h
     public void a() {
-        com.tencent.tmsbeacon.a.b.a.a().a(2000, 0L, this.e, this.f39569c);
+        com.tencent.tmsbeacon.a.b.a.a().a(2000, 0L, this.e, this.f25878c);
         com.tencent.tmsbeacon.a.b.a.a().a(1000, 0L, this.f, this.d);
     }
 
@@ -154,16 +154,16 @@ public class d implements com.tencent.tmsbeacon.a.a.d, h {
     public void a(boolean z) {
         if (z) {
             this.d.run();
-            this.f39569c.run();
+            this.f25878c.run();
             return;
         }
         com.tencent.tmsbeacon.a.b.a.a().a(this.d);
-        com.tencent.tmsbeacon.a.b.a.a().a(this.f39569c);
+        com.tencent.tmsbeacon.a.b.a.a().a(this.f25878c);
     }
 
     @Override // com.tencent.tmsbeacon.event.h
     public boolean a(Runnable runnable) {
-        return this.f39568a.post(runnable);
+        return this.f25877a.post(runnable);
     }
 
     @Override // com.tencent.tmsbeacon.event.h
@@ -194,7 +194,7 @@ public class d implements com.tencent.tmsbeacon.a.a.d, h {
 
     @Override // com.tencent.tmsbeacon.a.a.d
     public void onEvent(com.tencent.tmsbeacon.a.a.c cVar) {
-        int i = cVar.f39460a;
+        int i = cVar.f25769a;
         if (i == 2) {
             Map map = (Map) cVar.b.get("d_m");
             if (map != null) {

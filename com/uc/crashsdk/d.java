@@ -12,18 +12,18 @@ import java.util.List;
 public final class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private static ICrashClient f40577a;
+    private static ICrashClient f26886a;
     private static int b = 3;
 
     /* renamed from: c  reason: collision with root package name */
-    private static volatile List<ValueCallback<Bundle>> f40578c;
+    private static volatile List<ValueCallback<Bundle>> f26887c;
     private static volatile List<ValueCallback<Bundle>> d;
     private static volatile List<ValueCallback<Bundle>> e;
     private static volatile List<ValueCallback<Bundle>> f;
     private static final Object g = new Object();
 
     public static File a(File file) {
-        ICrashClient iCrashClient = f40577a;
+        ICrashClient iCrashClient = f26886a;
         if (iCrashClient != null) {
             try {
                 return iCrashClient.onBeforeUploadLog(file);
@@ -35,16 +35,16 @@ public final class d {
     }
 
     public static String a(String str, boolean z) {
-        ICrashClient iCrashClient = f40577a;
+        ICrashClient iCrashClient = f26886a;
         return iCrashClient != null ? iCrashClient.onGetCallbackInfo(str, z) : "";
     }
 
     public static void a(ICrashClient iCrashClient) {
-        f40577a = iCrashClient;
+        f26886a = iCrashClient;
     }
 
     public static void a(String str, int i, int i2) {
-        ICrashClient iCrashClient = f40577a;
+        ICrashClient iCrashClient = f26886a;
         if (iCrashClient != null) {
             iCrashClient.onAddCrashStats(str, i, i2);
         }
@@ -67,19 +67,19 @@ public final class d {
             return;
         }
         boolean equals = e.h().equals(str2);
-        if (f40577a != null) {
+        if (f26886a != null) {
             File file = new File(str);
             try {
                 if (equals) {
-                    f40577a.onLogGenerated(file, str3);
+                    f26886a.onLogGenerated(file, str3);
                 } else {
-                    f40577a.onClientProcessLogGenerated(str2, file, str3);
+                    f26886a.onClientProcessLogGenerated(str2, file, str3);
                 }
             } catch (Throwable th) {
                 com.uc.crashsdk.a.g.a(th);
             }
         }
-        List<ValueCallback<Bundle>> list = f40578c;
+        List<ValueCallback<Bundle>> list = f26887c;
         if (!equals) {
             list = d;
         }
@@ -103,7 +103,7 @@ public final class d {
     }
 
     public static void a(boolean z) {
-        ICrashClient iCrashClient = f40577a;
+        ICrashClient iCrashClient = f26886a;
         if (iCrashClient != null) {
             try {
                 iCrashClient.onCrashRestarting(z);
@@ -123,18 +123,18 @@ public final class d {
     }
 
     public static boolean a(ValueCallback<Bundle> valueCallback) {
-        if (f40578c == null) {
+        if (f26887c == null) {
             synchronized (g) {
-                if (f40578c == null) {
-                    f40578c = new ArrayList();
+                if (f26887c == null) {
+                    f26887c = new ArrayList();
                 }
             }
         }
-        synchronized (f40578c) {
-            if (f40578c.size() >= b) {
+        synchronized (f26887c) {
+            if (f26887c.size() >= b) {
                 return false;
             }
-            f40578c.add(valueCallback);
+            f26887c.add(valueCallback);
             return true;
         }
     }

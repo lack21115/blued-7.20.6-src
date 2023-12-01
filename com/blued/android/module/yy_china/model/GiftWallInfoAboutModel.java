@@ -19,7 +19,6 @@ public final class GiftWallInfoAboutModel implements MultiItemEntity {
         return this.item;
     }
 
-    @Override // com.chad.library.adapter.base.entity.MultiItemEntity
     public int getItemType() {
         return this.type;
     }
@@ -50,7 +49,7 @@ public final class GiftWallInfoAboutModel implements MultiItemEntity {
     }
 
     /* renamed from: setType  reason: collision with other method in class */
-    public final void m4706setType(int i) {
+    public final void m10823setType(int i) {
         this.type = i;
     }
 }

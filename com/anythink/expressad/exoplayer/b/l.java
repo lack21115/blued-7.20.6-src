@@ -10,6 +10,7 @@ import com.anythink.expressad.exoplayer.b.h;
 import com.anythink.expressad.exoplayer.b.j;
 import com.anythink.expressad.exoplayer.k.af;
 import com.anythink.expressad.exoplayer.v;
+import com.tencent.thumbplayer.api.TPErrorCode;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.nio.ByteBuffer;
@@ -24,7 +25,7 @@ public final class l implements h {
     public static boolean b = false;
 
     /* renamed from: c  reason: collision with root package name */
-    public static boolean f7201c = false;
+    public static boolean f4362c = false;
     private static final long d = 250000;
     private static final long e = 750000;
     private static final long f = 250000;
@@ -105,35 +106,35 @@ public final class l implements h {
     public static final class b implements a {
 
         /* renamed from: a  reason: collision with root package name */
-        private final com.anythink.expressad.exoplayer.b.f[] f7204a;
+        private final com.anythink.expressad.exoplayer.b.f[] f4365a;
         private final q b = new q();
 
         /* renamed from: c  reason: collision with root package name */
-        private final t f7205c;
+        private final t f4366c;
 
         public b(com.anythink.expressad.exoplayer.b.f... fVarArr) {
-            this.f7204a = (com.anythink.expressad.exoplayer.b.f[]) Arrays.copyOf(fVarArr, fVarArr.length + 2);
+            this.f4365a = (com.anythink.expressad.exoplayer.b.f[]) Arrays.copyOf(fVarArr, fVarArr.length + 2);
             t tVar = new t();
-            this.f7205c = tVar;
-            com.anythink.expressad.exoplayer.b.f[] fVarArr2 = this.f7204a;
+            this.f4366c = tVar;
+            com.anythink.expressad.exoplayer.b.f[] fVarArr2 = this.f4365a;
             fVarArr2[fVarArr.length] = this.b;
             fVarArr2[fVarArr.length + 1] = tVar;
         }
 
         @Override // com.anythink.expressad.exoplayer.b.l.a
         public final long a(long j) {
-            return this.f7205c.a(j);
+            return this.f4366c.a(j);
         }
 
         @Override // com.anythink.expressad.exoplayer.b.l.a
         public final v a(v vVar) {
             this.b.a(vVar.d);
-            return new v(this.f7205c.a(vVar.b), this.f7205c.b(vVar.f7741c), vVar.d);
+            return new v(this.f4366c.a(vVar.b), this.f4366c.b(vVar.f4902c), vVar.d);
         }
 
         @Override // com.anythink.expressad.exoplayer.b.l.a
         public final com.anythink.expressad.exoplayer.b.f[] a() {
-            return this.f7204a;
+            return this.f4365a;
         }
 
         @Override // com.anythink.expressad.exoplayer.b.l.a
@@ -158,16 +159,16 @@ public final class l implements h {
     public static final class d {
 
         /* renamed from: a  reason: collision with root package name */
-        private final v f7206a;
+        private final v f4367a;
         private final long b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final long f7207c;
+        private final long f4368c;
 
         private d(v vVar, long j, long j2) {
-            this.f7206a = vVar;
+            this.f4367a = vVar;
             this.b = j;
-            this.f7207c = j2;
+            this.f4368c = j2;
         }
 
         /* synthetic */ d(v vVar, long j, long j2, byte b) {
@@ -199,7 +200,7 @@ public final class l implements h {
         @Override // com.anythink.expressad.exoplayer.b.j.a
         public final void a(long j, long j2, long j3, long j4) {
             String str = "Spurious audio timestamp (frame position mismatch): " + j + ", " + j2 + ", " + j3 + ", " + j4 + ", " + l.this.r() + ", " + l.this.s();
-            if (l.f7201c) {
+            if (l.f4362c) {
                 throw new c(str, (byte) 0);
             }
             Log.w(l.m, str);
@@ -208,7 +209,7 @@ public final class l implements h {
         @Override // com.anythink.expressad.exoplayer.b.j.a
         public final void b(long j, long j2, long j3, long j4) {
             String str = "Spurious audio timestamp (system clock mismatch): " + j + ", " + j2 + ", " + j3 + ", " + j4 + ", " + l.this.r() + ", " + l.this.s();
-            if (l.f7201c) {
+            if (l.f4362c) {
                 throw new c(str, (byte) 0);
             }
             Log.w(l.m, str);
@@ -235,9 +236,9 @@ public final class l implements h {
         this.w = new com.anythink.expressad.exoplayer.b.f[]{new n()};
         this.ac = 1.0f;
         this.aa = 0;
-        this.J = com.anythink.expressad.exoplayer.b.b.f7172a;
+        this.J = com.anythink.expressad.exoplayer.b.b.f4333a;
         this.am = 0;
-        this.O = v.f7740a;
+        this.O = v.f4901a;
         this.aj = -1;
         this.ad = new com.anythink.expressad.exoplayer.b.f[0];
         this.ae = new ByteBuffer[0];
@@ -322,7 +323,7 @@ public final class l implements h {
             } else {
                 byteBuffer = this.af;
                 if (byteBuffer == null) {
-                    byteBuffer = com.anythink.expressad.exoplayer.b.f.f7181a;
+                    byteBuffer = com.anythink.expressad.exoplayer.b.f.f4342a;
                 }
             }
             if (i3 == length) {
@@ -354,14 +355,14 @@ public final class l implements h {
         d dVar2 = null;
         while (true) {
             dVar = dVar2;
-            if (this.z.isEmpty() || j2 < this.z.getFirst().f7207c) {
+            if (this.z.isEmpty() || j2 < this.z.getFirst().f4368c) {
                 break;
             }
             dVar2 = this.z.remove();
         }
         if (dVar != null) {
-            this.O = dVar.f7206a;
-            this.Q = dVar.f7207c;
+            this.O = dVar.f4367a;
+            this.Q = dVar.f4368c;
             this.P = dVar.b - this.ab;
         }
         if (this.O.b == 1.0f) {
@@ -390,7 +391,7 @@ public final class l implements h {
                 com.anythink.expressad.exoplayer.k.a.a(byteBuffer2 == byteBuffer);
             } else {
                 this.ag = byteBuffer;
-                if (af.f7632a < 21) {
+                if (af.f4793a < 21) {
                     int remaining = byteBuffer.remaining();
                     byte[] bArr = this.ah;
                     if (bArr == null || bArr.length < remaining) {
@@ -403,7 +404,7 @@ public final class l implements h {
                 }
             }
             int remaining2 = byteBuffer.remaining();
-            if (af.f7632a < 21) {
+            if (af.f4793a < 21) {
                 int b2 = this.y.b(this.X);
                 if (b2 > 0) {
                     int write = this.C.write(this.ah, this.ai, Math.min(remaining2, b2));
@@ -445,7 +446,7 @@ public final class l implements h {
     }
 
     private static AudioTrack d(int i2) {
-        return new AudioTrack(3, 4000, 4, 2, 2, 0, i2);
+        return new AudioTrack(3, TPErrorCode.TP_ERROR_TYPE_DOWNLOAD_PROXY, 4, 2, 2, 0, i2);
     }
 
     private long e(long j2) {
@@ -500,13 +501,13 @@ public final class l implements h {
         AudioTrack t = t();
         this.C = t;
         int audioSessionId = t.getAudioSessionId();
-        if (b && af.f7632a < 21) {
+        if (b && af.f4793a < 21) {
             AudioTrack audioTrack = this.B;
             if (audioTrack != null && audioSessionId != audioTrack.getAudioSessionId()) {
                 p();
             }
             if (this.B == null) {
-                this.B = new AudioTrack(3, 4000, 4, 2, 2, 0, audioSessionId);
+                this.B = new AudioTrack(3, TPErrorCode.TP_ERROR_TYPE_DOWNLOAD_PROXY, 4, 2, 2, 0, audioSessionId);
             }
         }
         if (this.am != audioSessionId) {
@@ -516,7 +517,7 @@ public final class l implements h {
                 cVar.a(audioSessionId);
             }
         }
-        this.O = this.L ? this.r.a(this.O) : v.f7740a;
+        this.O = this.L ? this.r.a(this.O) : v.f4901a;
         k();
         this.y.a(this.C, this.I, this.W, this.M);
         o();
@@ -621,7 +622,7 @@ public final class l implements h {
 
     private void o() {
         if (q()) {
-            if (af.f7632a >= 21) {
+            if (af.f4793a >= 21) {
                 this.C.setVolume(this.ac);
                 return;
             }
@@ -631,6 +632,7 @@ public final class l implements h {
         }
     }
 
+    /* JADX WARN: Type inference failed for: r0v4, types: [com.anythink.expressad.exoplayer.b.l$2] */
     private void p() {
         final AudioTrack audioTrack = this.B;
         if (audioTrack == null) {
@@ -662,7 +664,7 @@ public final class l implements h {
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:25:0x00e5 -> B:22:0x00d0). Please submit an issue!!! */
     private AudioTrack t() {
         AudioTrack audioTrack;
-        if (af.f7632a >= 21) {
+        if (af.f4793a >= 21) {
             AudioAttributes build = this.an ? new AudioAttributes.Builder().setContentType(3).setFlags(16).setUsage(1).build() : this.J.a();
             AudioFormat build2 = new AudioFormat.Builder().setChannelMask(this.H).setEncoding(this.I).setSampleRate(this.G).build();
             int i2 = this.am;
@@ -713,14 +715,14 @@ public final class l implements h {
         d dVar2 = null;
         while (true) {
             dVar = dVar2;
-            if (this.z.isEmpty() || min < this.z.getFirst().f7207c) {
+            if (this.z.isEmpty() || min < this.z.getFirst().f4368c) {
                 break;
             }
             dVar2 = this.z.remove();
         }
         if (dVar != null) {
-            this.O = dVar.f7206a;
-            this.Q = dVar.f7207c;
+            this.O = dVar.f4367a;
+            this.Q = dVar.f4368c;
             this.P = dVar.b - this.ab;
         }
         if (this.O.b == 1.0f) {
@@ -741,13 +743,13 @@ public final class l implements h {
     @Override // com.anythink.expressad.exoplayer.b.h
     public final v a(v vVar) {
         if (q() && !this.L) {
-            v vVar2 = v.f7740a;
+            v vVar2 = v.f4901a;
             this.O = vVar2;
             return vVar2;
         }
         v vVar3 = this.N;
         if (vVar3 == null) {
-            vVar3 = !this.z.isEmpty() ? this.z.getLast().f7206a : this.O;
+            vVar3 = !this.z.isEmpty() ? this.z.getLast().f4367a : this.O;
         }
         if (!vVar.equals(vVar3)) {
             if (q()) {
@@ -814,7 +816,7 @@ public final class l implements h {
     @Override // com.anythink.expressad.exoplayer.b.h
     public final boolean a(int i2) {
         if (af.b(i2)) {
-            return i2 != 4 || af.f7632a >= 21;
+            return i2 != 4 || af.f4793a >= 21;
         }
         com.anythink.expressad.exoplayer.b.c cVar = this.q;
         return cVar != null && cVar.a(i2);
@@ -830,13 +832,13 @@ public final class l implements h {
             AudioTrack t = t();
             this.C = t;
             int audioSessionId = t.getAudioSessionId();
-            if (b && af.f7632a < 21) {
+            if (b && af.f4793a < 21) {
                 AudioTrack audioTrack = this.B;
                 if (audioTrack != null && audioSessionId != audioTrack.getAudioSessionId()) {
                     p();
                 }
                 if (this.B == null) {
-                    this.B = new AudioTrack(3, 4000, 4, 2, 2, 0, audioSessionId);
+                    this.B = new AudioTrack(3, TPErrorCode.TP_ERROR_TYPE_DOWNLOAD_PROXY, 4, 2, 2, 0, audioSessionId);
                 }
             }
             if (this.am != audioSessionId) {
@@ -846,7 +848,7 @@ public final class l implements h {
                     cVar.a(audioSessionId);
                 }
             }
-            this.O = this.L ? this.r.a(this.O) : v.f7740a;
+            this.O = this.L ? this.r.a(this.O) : v.f4901a;
             k();
             this.y.a(this.C, this.I, this.W, this.M);
             o();
@@ -958,7 +960,7 @@ public final class l implements h {
 
     @Override // com.anythink.expressad.exoplayer.b.h
     public final void c(int i2) {
-        com.anythink.expressad.exoplayer.k.a.b(af.f7632a >= 21);
+        com.anythink.expressad.exoplayer.k.a.b(af.f4793a >= 21);
         if (this.an && this.am == i2) {
             return;
         }
@@ -1002,6 +1004,7 @@ public final class l implements h {
         }
     }
 
+    /* JADX WARN: Type inference failed for: r0v36, types: [com.anythink.expressad.exoplayer.b.l$1] */
     @Override // com.anythink.expressad.exoplayer.b.h
     public final void i() {
         if (q()) {
@@ -1015,7 +1018,7 @@ public final class l implements h {
                 this.O = vVar;
                 this.N = null;
             } else if (!this.z.isEmpty()) {
-                this.O = this.z.getLast().f7206a;
+                this.O = this.z.getLast().f4367a;
             }
             this.z.clear();
             this.P = 0L;

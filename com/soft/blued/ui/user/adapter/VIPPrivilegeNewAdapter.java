@@ -21,39 +21,39 @@ import kotlin.jvm.internal.Intrinsics;
 public final class VIPPrivilegeNewAdapter extends BaseQuickAdapter<VIPPrivilegeModel, BaseViewHolder> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Context f33808a;
+    private final Context f20117a;
     private final IRequestHost b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public VIPPrivilegeNewAdapter(Context mContext, IRequestHost mRequestHost) {
+    public VIPPrivilegeNewAdapter(Context context, IRequestHost iRequestHost) {
         super((int) R.layout.vip_privilege_item_new);
-        Intrinsics.e(mContext, "mContext");
-        Intrinsics.e(mRequestHost, "mRequestHost");
-        this.f33808a = mContext;
-        this.b = mRequestHost;
+        Intrinsics.e(context, "mContext");
+        Intrinsics.e(iRequestHost, "mRequestHost");
+        this.f20117a = context;
+        this.b = iRequestHost;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(VIPPrivilegeNewAdapter this$0, VIPPrivilegeModel item, View view) {
+    public static final void a(VIPPrivilegeNewAdapter vIPPrivilegeNewAdapter, VIPPrivilegeModel vIPPrivilegeModel, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        Intrinsics.e(item, "$item");
-        WebViewShowInfoFragment.show(this$0.f33808a, item.url);
+        Intrinsics.e(vIPPrivilegeNewAdapter, "this$0");
+        Intrinsics.e(vIPPrivilegeModel, "$item");
+        WebViewShowInfoFragment.show(vIPPrivilegeNewAdapter.f20117a, vIPPrivilegeModel.url);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
-    public void convert(BaseViewHolder helper, final VIPPrivilegeModel item) {
-        Intrinsics.e(helper, "helper");
-        Intrinsics.e(item, "item");
-        helper.setText(R.id.tv_privilege, item.name);
-        ImageView imageView = (ImageView) helper.getView(2131365763);
-        ImageView imageView2 = (ImageView) helper.getView(R.id.iv_more_privilege);
-        LinearLayout linearLayout = (LinearLayout) helper.getView(2131367999);
-        if (!TextUtils.isEmpty(item.icon)) {
+    public void convert(BaseViewHolder baseViewHolder, final VIPPrivilegeModel vIPPrivilegeModel) {
+        Intrinsics.e(baseViewHolder, "helper");
+        Intrinsics.e(vIPPrivilegeModel, "item");
+        baseViewHolder.setText(R.id.tv_privilege, vIPPrivilegeModel.name);
+        ImageView imageView = (ImageView) baseViewHolder.getView(R.id.iv_privilege);
+        ImageView imageView2 = (ImageView) baseViewHolder.getView(R.id.iv_more_privilege);
+        LinearLayout linearLayout = (LinearLayout) baseViewHolder.getView(2131367999);
+        if (!TextUtils.isEmpty(vIPPrivilegeModel.icon)) {
             imageView.setVisibility(0);
-            ImageLoader.a(this.b, item.icon).b(2131237310).c().a(imageView);
+            ImageLoader.a(this.b, vIPPrivilegeModel.icon).b(2131237310).c().a(imageView);
             return;
         }
         imageView.setVisibility(8);
@@ -61,7 +61,7 @@ public final class VIPPrivilegeNewAdapter extends BaseQuickAdapter<VIPPrivilegeM
         linearLayout.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.adapter.-$$Lambda$VIPPrivilegeNewAdapter$899uKTJYa3m3m5HR8gNzKt7qAZk
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                VIPPrivilegeNewAdapter.a(VIPPrivilegeNewAdapter.this, item, view);
+                VIPPrivilegeNewAdapter.a(VIPPrivilegeNewAdapter.this, vIPPrivilegeModel, view);
             }
         });
     }

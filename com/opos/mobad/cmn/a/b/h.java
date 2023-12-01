@@ -13,6 +13,6 @@ public class h {
     }
 
     public static boolean a(Context context, String str, String str2, String str3) {
-        return com.opos.cmn.h.a.b.b.a(context, new a.C0644a().b(str2).c(str3).a(str).a());
+        return com.opos.cmn.h.a.b.b.a(context, new a.C0474a().b(str2).c(str3).a(str).a());
     }
 }

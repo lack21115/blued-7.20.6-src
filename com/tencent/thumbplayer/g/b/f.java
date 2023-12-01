@@ -1,5 +1,6 @@
 package com.tencent.thumbplayer.g.b;
 
+import android.accounts.AccountManager;
 import android.graphics.SurfaceTexture;
 import android.media.MediaCodec;
 import android.media.MediaCodecInfo;
@@ -8,7 +9,6 @@ import android.media.MediaFormat;
 import android.os.Build;
 import android.util.Log;
 import android.view.Surface;
-import com.android.ims.ImsReasonInfo;
 import com.autonavi.base.amap.mapcore.tools.GLMapStaticValue;
 import com.tencent.thumbplayer.g.f.a;
 import java.util.ArrayList;
@@ -27,13 +27,13 @@ public abstract class f implements c {
     public boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    public boolean f39329c;
+    public boolean f25638c;
     public boolean d;
     public final e e;
     protected Surface f;
     protected final com.tencent.thumbplayer.g.b.b g;
     protected final String h;
-    private final a.EnumC1024a k;
+    private final a.EnumC0854a k;
     private final MediaCodec p;
     private boolean q;
     private MediaCodecInfo.CodecCapabilities s;
@@ -43,7 +43,7 @@ public abstract class f implements c {
     private boolean x;
 
     /* renamed from: a  reason: collision with root package name */
-    public b f39328a = b.Started;
+    public b f25637a = b.Started;
     private final String j = "ReuseCodecWrapper[" + hashCode() + "]";
     private final HashSet<Integer> l = new HashSet<>();
     private final ArrayList<Long> m = new ArrayList<>();
@@ -61,28 +61,28 @@ public abstract class f implements c {
     public static /* synthetic */ class AnonymousClass2 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f39331a;
+        static final /* synthetic */ int[] f25640a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x0036 -> B:21:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:13:0x003a -> B:19:0x001f). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:15:0x003e -> B:25:0x002a). Please submit an issue!!! */
         static {
             int[] iArr = new int[a.b.values().length];
-            f39331a = iArr;
+            f25640a = iArr;
             try {
                 iArr[a.b.KEEP_CODEC_RESULT_NO.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f39331a[a.b.KEEP_CODEC_RESULT_YES_WITH_RECONFIGURATION.ordinal()] = 2;
+                f25640a[a.b.KEEP_CODEC_RESULT_YES_WITH_RECONFIGURATION.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f39331a[a.b.KEEP_CODEC_RESULT_YES_WITHOUT_RECONFIGURATION.ordinal()] = 3;
+                f25640a[a.b.KEEP_CODEC_RESULT_YES_WITHOUT_RECONFIGURATION.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f39331a[a.b.KEEP_CODEC_RESULT_YES_WITH_FLUSH.ordinal()] = 4;
+                f25640a[a.b.KEEP_CODEC_RESULT_YES_WITH_FLUSH.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
         }
@@ -123,7 +123,7 @@ public abstract class f implements c {
             }
         }
         MediaCodecInfo.CodecCapabilities codecCapabilities = this.s;
-        this.f39329c = codecCapabilities != null && com.tencent.thumbplayer.g.h.c.a(codecCapabilities);
+        this.f25638c = codecCapabilities != null && com.tencent.thumbplayer.g.h.c.a(codecCapabilities);
         MediaCodecInfo.CodecCapabilities codecCapabilities2 = this.s;
         boolean z2 = false;
         if (codecCapabilities2 != null) {
@@ -184,7 +184,7 @@ public abstract class f implements c {
         }
         JSONObject jSONObject = new JSONObject();
         try {
-            jSONObject.put("errorCode", i3);
+            jSONObject.put(AccountManager.KEY_ERROR_CODE, i3);
             jSONObject.put("exceptionMsg", str2);
             if (this.u != null) {
                 this.u.onReuseCodecAPIException(jSONObject.toString(), th);
@@ -203,7 +203,7 @@ public abstract class f implements c {
         }
         String str = null;
         if (com.tencent.thumbplayer.g.h.b.a()) {
-            str = this + " configure, call innerSetOutputSurface surface:" + surface + "  decodeState:" + this.f39328a + " callByInner:" + z;
+            str = this + " configure, call innerSetOutputSurface surface:" + surface + "  decodeState:" + this.f25637a + " callByInner:" + z;
             com.tencent.thumbplayer.g.h.b.b(this.j, str);
         }
         try {
@@ -220,7 +220,7 @@ public abstract class f implements c {
     }
 
     private final void b(int i2, int i3, int i4, long j, int i5) {
-        int i6 = AnonymousClass2.f39331a[this.w.ordinal()];
+        int i6 = AnonymousClass2.f25640a[this.w.ordinal()];
         if (i6 == 1) {
             com.tencent.thumbplayer.g.h.b.d(this.j, "queueInputBufferForAdaptation error for KEEP_CODEC_RESULT_NO");
         } else if (i6 == 2) {
@@ -292,13 +292,7 @@ public abstract class f implements c {
     }
 
     private int d(Surface surface) {
-        if (surface == null) {
-            return GLMapStaticValue.AM_CALLBACK_INDOOR_NETWORK_ERR;
-        }
-        if (surface.isValid()) {
-            return 0;
-        }
-        return ImsReasonInfo.CODE_CALL_DROP_IWLAN_TO_LTE_UNAVAILABLE;
+        return surface == null ? GLMapStaticValue.AM_CALLBACK_INDOOR_NETWORK_ERR : !surface.isValid() ? 10004 : 0;
     }
 
     private boolean n() {
@@ -354,14 +348,14 @@ public abstract class f implements c {
                 sb.append(", dequeueInputBuffer state:");
                 sb.append(this.r);
                 sb.append(" decodeState:");
-                sb.append(this.f39328a);
+                sb.append(this.f25637a);
                 sb.append(" , result=");
                 sb.append(dequeueInputBuffer);
                 str = sb.toString();
                 com.tencent.thumbplayer.g.h.b.a(this.j, str);
             }
             String str3 = str;
-            this.f39328a = b.DequeueIn;
+            this.f25637a = b.DequeueIn;
             String str4 = str;
             this.r = a.Running;
             str2 = str;
@@ -402,7 +396,7 @@ public abstract class f implements c {
             }
             this.l.add(Integer.valueOf(dequeueOutputBuffer));
             String str3 = str2;
-            this.f39328a = b.DequeueOut;
+            this.f25637a = b.DequeueOut;
             str = str2;
             a(1, dequeueOutputBuffer);
             return dequeueOutputBuffer;
@@ -433,7 +427,7 @@ public abstract class f implements c {
         }
         String str = null;
         if (com.tencent.thumbplayer.g.h.b.a()) {
-            str = this + ", queueInputBuffer index:" + i2 + " offset:" + i3 + " size:" + i4 + " presentationTimeUs:" + j + " flags:" + i5 + " state:" + this.r + " decodeState:" + this.f39328a;
+            str = this + ", queueInputBuffer index:" + i2 + " offset:" + i3 + " size:" + i4 + " presentationTimeUs:" + j + " flags:" + i5 + " state:" + this.r + " decodeState:" + this.f25637a;
             com.tencent.thumbplayer.g.h.b.a(this.j, str);
         }
         try {
@@ -442,7 +436,7 @@ public abstract class f implements c {
             } else {
                 this.p.queueInputBuffer(i2, i3, i4, j, i5);
             }
-            this.f39328a = b.QueueIn;
+            this.f25637a = b.QueueIn;
         } catch (Throwable th) {
             int i6 = 0;
             if (Build.VERSION.SDK_INT >= 21 && (th instanceof MediaCodec.CodecException)) {
@@ -483,7 +477,7 @@ public abstract class f implements c {
             }
             a(i3, str, th);
         }
-        this.f39328a = b.ReleaseOut;
+        this.f25637a = b.ReleaseOut;
     }
 
     @Override // com.tencent.thumbplayer.g.b.c

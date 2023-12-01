@@ -10,17 +10,17 @@ public interface m {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public final int f7325a;
+        public final int f4486a;
         public final byte[] b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final int f7326c;
+        public final int f4487c;
         public final int d;
 
         public a(int i, byte[] bArr, int i2, int i3) {
-            this.f7325a = i;
+            this.f4486a = i;
             this.b = bArr;
-            this.f7326c = i2;
+            this.f4487c = i2;
             this.d = i3;
         }
 
@@ -32,11 +32,11 @@ public interface m {
                 return false;
             }
             a aVar = (a) obj;
-            return this.f7325a == aVar.f7325a && this.f7326c == aVar.f7326c && this.d == aVar.d && Arrays.equals(this.b, aVar.b);
+            return this.f4486a == aVar.f4486a && this.f4487c == aVar.f4487c && this.d == aVar.d && Arrays.equals(this.b, aVar.b);
         }
 
         public final int hashCode() {
-            return (((((this.f7325a * 31) + Arrays.hashCode(this.b)) * 31) + this.f7326c) * 31) + this.d;
+            return (((((this.f4486a * 31) + Arrays.hashCode(this.b)) * 31) + this.f4487c) * 31) + this.d;
         }
     }
 

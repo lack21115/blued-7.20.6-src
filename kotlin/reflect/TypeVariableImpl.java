@@ -14,13 +14,11 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/reflect/TypeVariableImpl.class */
 public final class TypeVariableImpl implements TypeVariable<GenericDeclaration>, TypeImpl {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final KTypeParameter f42609a;
+    private final KTypeParameter a;
 
     public TypeVariableImpl(KTypeParameter typeParameter) {
         Intrinsics.e(typeParameter, "typeParameter");
-        this.f42609a = typeParameter;
+        this.a = typeParameter;
     }
 
     public boolean equals(Object obj) {
@@ -34,9 +32,9 @@ public final class TypeVariableImpl implements TypeVariable<GenericDeclaration>,
     @Override // java.lang.reflect.TypeVariable
     public Type[] getBounds() {
         Type b;
-        List<KType> c2 = this.f42609a.c();
-        ArrayList arrayList = new ArrayList(CollectionsKt.a((Iterable) c2, 10));
-        for (KType kType : c2) {
+        List<KType> c = this.a.c();
+        ArrayList arrayList = new ArrayList(CollectionsKt.a((Iterable) c, 10));
+        for (KType kType : c) {
             b = TypesJVMKt.b(kType, true);
             arrayList.add(b);
         }
@@ -49,12 +47,12 @@ public final class TypeVariableImpl implements TypeVariable<GenericDeclaration>,
 
     @Override // java.lang.reflect.TypeVariable
     public GenericDeclaration getGenericDeclaration() {
-        throw new NotImplementedError("An operation is not implemented: " + ("getGenericDeclaration() is not yet supported for type variables created from KType: " + this.f42609a));
+        throw new NotImplementedError("An operation is not implemented: " + ("getGenericDeclaration() is not yet supported for type variables created from KType: " + this.a));
     }
 
     @Override // java.lang.reflect.TypeVariable
     public String getName() {
-        return this.f42609a.a();
+        return this.a.a();
     }
 
     public String getTypeName() {

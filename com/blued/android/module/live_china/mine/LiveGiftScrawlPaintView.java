@@ -31,13 +31,9 @@ import java.util.Map;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/mine/LiveGiftScrawlPaintView.class */
 public class LiveGiftScrawlPaintView extends View {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Paint f13863a;
+    private Paint a;
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f13864c;
+    private int c;
     private int d;
     private Bitmap e;
     private int f;
@@ -139,10 +135,10 @@ public class LiveGiftScrawlPaintView extends View {
             bitmap = this.e;
         } else {
             int i = this.f;
-            Bitmap a2 = ImageUtils.a(file, i, i);
-            if (a2 != null) {
+            Bitmap a = ImageUtils.a(file, i, i);
+            if (a != null) {
                 int i2 = this.f;
-                bitmap = Bitmap.createScaledBitmap(a2, i2, i2, false);
+                bitmap = Bitmap.createScaledBitmap(a, i2, i2, false);
             } else {
                 bitmap = null;
             }
@@ -161,18 +157,18 @@ public class LiveGiftScrawlPaintView extends View {
 
     private void c() {
         this.b = DisplayUtil.a(getContext(), 1.0f);
-        int a2 = DisplayUtil.a(getContext(), 40.0f);
-        this.f = a2;
-        this.g = (a2 * 2) / 3.0f;
+        int a = DisplayUtil.a(getContext(), 40.0f);
+        this.f = a;
+        this.g = (a * 2) / 3.0f;
         Bitmap decodeResource = BitmapFactory.decodeResource(getResources(), R.drawable.gift_default_icon);
         int i = this.f;
         this.e = Bitmap.createScaledBitmap(decodeResource, i, i, false);
         Paint paint = new Paint();
-        this.f13863a = paint;
+        this.a = paint;
         paint.setAntiAlias(true);
-        this.f13863a.setDither(true);
-        this.f13863a.setStrokeWidth(this.b);
-        this.f13863a.setStyle(Paint.Style.STROKE);
+        this.a.setDither(true);
+        this.a.setStrokeWidth(this.b);
+        this.a.setStyle(Paint.Style.STROKE);
     }
 
     private int d() {
@@ -347,7 +343,7 @@ public class LiveGiftScrawlPaintView extends View {
             }
             if (bitmap2 != null) {
                 for (Point point : liveGiftScrawlModel.getPath()) {
-                    canvas.drawBitmap(bitmap2, point.x - (this.f / 2), point.y - (this.f / 2), this.f13863a);
+                    canvas.drawBitmap(bitmap2, point.x - (this.f / 2), point.y - (this.f / 2), this.a);
                 }
             }
         }
@@ -357,10 +353,10 @@ public class LiveGiftScrawlPaintView extends View {
     @Override // android.view.View
     public void onLayout(boolean z, int i, int i2, int i3, int i4) {
         super.onLayout(z, i, i2, i3, i4);
-        if (getMeasuredWidth() <= 0 || getMeasuredWidth() == this.f13864c) {
+        if (getMeasuredWidth() <= 0 || getMeasuredWidth() == this.c) {
             return;
         }
-        this.f13864c = getMeasuredWidth();
+        this.c = getMeasuredWidth();
         this.d = getMeasuredHeight();
     }
 

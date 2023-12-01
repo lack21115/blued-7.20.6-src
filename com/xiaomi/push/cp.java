@@ -1,9 +1,8 @@
 package com.xiaomi.push;
 
 import android.text.TextUtils;
-import com.amap.api.services.district.DistrictSearchQuery;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.huawei.hms.push.constant.RemoteMessageConst;
+import com.kwad.components.offline.api.tk.model.report.TKDownloadReason;
 import com.tencent.tendinsv.a.b;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -17,16 +16,16 @@ import org.json.JSONObject;
 public class cp {
 
     /* renamed from: a  reason: collision with other field name */
-    private long f258a;
+    private long f211a;
 
     /* renamed from: a  reason: collision with other field name */
-    public String f259a;
+    public String f212a;
 
     /* renamed from: b  reason: collision with other field name */
-    public String f261b;
+    public String f214b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f41315c;
+    public String f27624c;
     public String d;
     public String e;
     public String f;
@@ -35,29 +34,29 @@ public class cp {
     private String i;
 
     /* renamed from: a  reason: collision with other field name */
-    private ArrayList<cy> f260a = new ArrayList<>();
+    private ArrayList<cy> f213a = new ArrayList<>();
 
     /* renamed from: a  reason: collision with root package name */
-    private double f41314a = 0.1d;
+    private double f27623a = 0.1d;
     private String j = "s.mi1.cc";
     private long b = 86400000;
 
     public cp(String str) {
-        this.f259a = "";
+        this.f212a = "";
         if (TextUtils.isEmpty(str)) {
             throw new IllegalArgumentException("the host is empty");
         }
-        this.f258a = System.currentTimeMillis();
-        this.f260a.add(new cy(str, -1));
-        this.f259a = ct.m11597a();
-        this.f261b = str;
+        this.f211a = System.currentTimeMillis();
+        this.f213a.add(new cy(str, -1));
+        this.f212a = ct.m8547a();
+        this.f214b = str;
     }
 
     private void c(String str) {
         synchronized (this) {
-            Iterator<cy> it = this.f260a.iterator();
+            Iterator<cy> it = this.f213a.iterator();
             while (it.hasNext()) {
-                if (TextUtils.equals(it.next().f277a, str)) {
+                if (TextUtils.equals(it.next().f230a, str)) {
                     it.remove();
                 }
             }
@@ -66,16 +65,16 @@ public class cp {
 
     public cp a(JSONObject jSONObject) {
         synchronized (this) {
-            this.f259a = jSONObject.optString("net");
+            this.f212a = jSONObject.optString(TKDownloadReason.KSAD_TK_NET);
             this.b = jSONObject.getLong(RemoteMessageConst.TTL);
-            this.f41314a = jSONObject.getDouble("pct");
-            this.f258a = jSONObject.getLong("ts");
-            this.d = jSONObject.optString(DistrictSearchQuery.KEYWORDS_CITY);
-            this.f41315c = jSONObject.optString("prv");
+            this.f27623a = jSONObject.getDouble("pct");
+            this.f211a = jSONObject.getLong("ts");
+            this.d = jSONObject.optString("city");
+            this.f27624c = jSONObject.optString("prv");
             this.g = jSONObject.optString("cty");
             this.e = jSONObject.optString("isp");
             this.f = jSONObject.optString(b.a.q);
-            this.f261b = jSONObject.optString("host");
+            this.f214b = jSONObject.optString("host");
             this.h = jSONObject.optString("xf");
             JSONArray jSONArray = jSONObject.getJSONArray("fbs");
             int i = 0;
@@ -97,7 +96,7 @@ public class cp {
             } else if (TextUtils.isEmpty(this.e)) {
                 return "hardcode_isp";
             } else {
-                String a2 = bn.a(new String[]{this.e, this.f41315c, this.d, this.g, this.f}, BridgeUtil.UNDERLINE_STR);
+                String a2 = bn.a(new String[]{this.e, this.f27624c, this.d, this.g, this.f}, "_");
                 this.i = a2;
                 return a2;
             }
@@ -105,7 +104,7 @@ public class cp {
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public ArrayList<String> m11587a() {
+    public ArrayList<String> m8537a() {
         ArrayList<String> a2;
         synchronized (this) {
             a2 = a(false);
@@ -118,12 +117,12 @@ public class cp {
             throw new IllegalArgumentException("the url is empty.");
         }
         URL url = new URL(str);
-        if (TextUtils.equals(url.getHost(), this.f261b)) {
+        if (TextUtils.equals(url.getHost(), this.f214b)) {
             ArrayList<String> arrayList = new ArrayList<>();
             Iterator<String> it = a(true).iterator();
             while (it.hasNext()) {
                 cr a2 = cr.a(it.next(), url.getPort());
-                arrayList.add(new URL(url.getProtocol(), a2.m11595a(), a2.a(), url.getFile()).toString());
+                arrayList.add(new URL(url.getProtocol(), a2.m8545a(), a2.a(), url.getFile()).toString());
             }
             return arrayList;
         }
@@ -134,9 +133,9 @@ public class cp {
         ArrayList<String> arrayList;
         String substring;
         synchronized (this) {
-            int size = this.f260a.size();
+            int size = this.f213a.size();
             cy[] cyVarArr = new cy[size];
-            this.f260a.toArray(cyVarArr);
+            this.f213a.toArray(cyVarArr);
             Arrays.sort(cyVarArr);
             arrayList = new ArrayList<>();
             int i = 0;
@@ -145,10 +144,10 @@ public class cp {
                 if (i2 < size) {
                     cy cyVar = cyVarArr[i2];
                     if (z) {
-                        substring = cyVar.f277a;
+                        substring = cyVar.f230a;
                     } else {
-                        int indexOf = cyVar.f277a.indexOf(":");
-                        substring = indexOf != -1 ? cyVar.f277a.substring(0, indexOf) : cyVar.f277a;
+                        int indexOf = cyVar.f230a.indexOf(":");
+                        substring = indexOf != -1 ? cyVar.f230a.substring(0, indexOf) : cyVar.f230a;
                     }
                     arrayList.add(substring);
                     i = i2 + 1;
@@ -159,23 +158,23 @@ public class cp {
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public JSONObject m11588a() {
+    public JSONObject m8538a() {
         JSONObject jSONObject;
         synchronized (this) {
             jSONObject = new JSONObject();
-            jSONObject.put("net", this.f259a);
+            jSONObject.put(TKDownloadReason.KSAD_TK_NET, this.f212a);
             jSONObject.put(RemoteMessageConst.TTL, this.b);
-            jSONObject.put("pct", this.f41314a);
-            jSONObject.put("ts", this.f258a);
-            jSONObject.put(DistrictSearchQuery.KEYWORDS_CITY, this.d);
-            jSONObject.put("prv", this.f41315c);
+            jSONObject.put("pct", this.f27623a);
+            jSONObject.put("ts", this.f211a);
+            jSONObject.put("city", this.d);
+            jSONObject.put("prv", this.f27624c);
             jSONObject.put("cty", this.g);
             jSONObject.put("isp", this.e);
             jSONObject.put(b.a.q, this.f);
-            jSONObject.put("host", this.f261b);
+            jSONObject.put("host", this.f214b);
             jSONObject.put("xf", this.h);
             JSONArray jSONArray = new JSONArray();
-            Iterator<cy> it = this.f260a.iterator();
+            Iterator<cy> it = this.f213a.iterator();
             while (it.hasNext()) {
                 jSONArray.put(it.next().a());
             }
@@ -185,7 +184,7 @@ public class cp {
     }
 
     public void a(double d) {
-        this.f41314a = d;
+        this.f27623a = d;
     }
 
     public void a(long j) {
@@ -198,13 +197,13 @@ public class cp {
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a(cy cyVar) {
         synchronized (this) {
-            c(cyVar.f277a);
-            this.f260a.add(cyVar);
+            c(cyVar.f230a);
+            this.f213a.add(cyVar);
         }
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public void m11589a(String str) {
+    public void m8539a(String str) {
         synchronized (this) {
             a(new cy(str));
         }
@@ -231,13 +230,13 @@ public class cp {
     public void a(String str, co coVar) {
         cy next;
         synchronized (this) {
-            Iterator<cy> it = this.f260a.iterator();
+            Iterator<cy> it = this.f213a.iterator();
             do {
                 if (!it.hasNext()) {
                     return;
                 }
                 next = it.next();
-            } while (!TextUtils.equals(str, next.f277a));
+            } while (!TextUtils.equals(str, next.f230a));
             next.a(coVar);
         }
     }
@@ -245,7 +244,7 @@ public class cp {
     public void a(String[] strArr) {
         int i;
         synchronized (this) {
-            int size = this.f260a.size();
+            int size = this.f213a.size();
             while (true) {
                 int i2 = size - 1;
                 int i3 = 0;
@@ -255,8 +254,8 @@ public class cp {
                 int length = strArr.length;
                 while (true) {
                     if (i3 < length) {
-                        if (TextUtils.equals(this.f260a.get(i2).f277a, strArr[i3])) {
-                            this.f260a.remove(i2);
+                        if (TextUtils.equals(this.f213a.get(i2).f230a, strArr[i3])) {
+                            this.f213a.remove(i2);
                             break;
                         }
                         i3++;
@@ -264,15 +263,15 @@ public class cp {
                 }
                 size = i2;
             }
-            Iterator<cy> it = this.f260a.iterator();
+            Iterator<cy> it = this.f213a.iterator();
             int i4 = 0;
             while (true) {
                 if (!it.hasNext()) {
                     break;
                 }
                 cy next = it.next();
-                if (next.f41323a > i4) {
-                    i4 = next.f41323a;
+                if (next.f27632a > i4) {
+                    i4 = next.f27632a;
                 }
             }
             for (i = 0; i < strArr.length; i++) {
@@ -282,12 +281,12 @@ public class cp {
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public boolean m11590a() {
-        return TextUtils.equals(this.f259a, ct.m11597a());
+    public boolean m8540a() {
+        return TextUtils.equals(this.f212a, ct.m8547a());
     }
 
     public boolean a(cp cpVar) {
-        return TextUtils.equals(this.f259a, cpVar.f259a);
+        return TextUtils.equals(this.f212a, cpVar.f212a);
     }
 
     public void b(String str) {
@@ -303,7 +302,7 @@ public class cp {
     }
 
     public boolean b() {
-        return System.currentTimeMillis() - this.f258a < this.b;
+        return System.currentTimeMillis() - this.f211a < this.b;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -313,19 +312,19 @@ public class cp {
             j = 864000000;
         }
         long currentTimeMillis = System.currentTimeMillis();
-        long j2 = this.f258a;
+        long j2 = this.f211a;
         if (currentTimeMillis - j2 <= j) {
-            return currentTimeMillis - j2 > this.b && this.f259a.startsWith("WIFI-");
+            return currentTimeMillis - j2 > this.b && this.f212a.startsWith("WIFI-");
         }
         return true;
     }
 
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(this.f259a);
+        sb.append(this.f212a);
         sb.append("\n");
         sb.append(a());
-        Iterator<cy> it = this.f260a.iterator();
+        Iterator<cy> it = this.f213a.iterator();
         while (it.hasNext()) {
             sb.append("\n");
             sb.append(it.next().toString());

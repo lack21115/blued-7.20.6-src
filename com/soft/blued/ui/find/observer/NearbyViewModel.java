@@ -9,19 +9,19 @@ import androidx.lifecycle.MutableLiveData;
 public class NearbyViewModel extends AndroidViewModel {
 
     /* renamed from: a  reason: collision with root package name */
-    public MutableLiveData<Rect> f30625a;
+    public MutableLiveData<Rect> f16935a;
     public MutableLiveData<Void> b;
 
     /* renamed from: c  reason: collision with root package name */
-    public MutableLiveData<Void> f30626c;
+    public MutableLiveData<Void> f16936c;
     public MutableLiveData<Void> d;
     public MutableLiveData<Void> e;
 
     public NearbyViewModel(Application application) {
         super(application);
-        this.f30625a = new MutableLiveData<>();
+        this.f16935a = new MutableLiveData<>();
         this.b = new MutableLiveData<>();
-        this.f30626c = new MutableLiveData<>();
+        this.f16936c = new MutableLiveData<>();
         this.d = new MutableLiveData<>();
         this.e = new MutableLiveData<>();
     }

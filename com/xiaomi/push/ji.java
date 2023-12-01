@@ -9,7 +9,7 @@ public class ji extends iy {
     private static int b = 10000;
 
     /* renamed from: c  reason: collision with root package name */
-    private static int f41552c = 10000;
+    private static int f27861c = 10000;
     private static int d = 10000;
     private static int e = 10485760;
     private static int f = 104857600;
@@ -26,9 +26,9 @@ public class ji extends iy {
 
         @Override // com.xiaomi.push.iy.a, com.xiaomi.push.je
         public jc a(jm jmVar) {
-            ji jiVar = new ji(jmVar, this.f885a, this.b);
-            if (this.f41542a != 0) {
-                jiVar.b(this.f41542a);
+            ji jiVar = new ji(jmVar, this.f838a, this.b);
+            if (this.f27851a != 0) {
+                jiVar.b(this.f27851a);
             }
             return jiVar;
         }
@@ -40,10 +40,10 @@ public class ji extends iy {
 
     @Override // com.xiaomi.push.iy, com.xiaomi.push.jc
     /* renamed from: a */
-    public ja mo12033a() {
-        byte a2 = mo12033a();
-        int a3 = mo12033a();
-        if (a3 <= f41552c) {
+    public ja mo8983a() {
+        byte a2 = mo8983a();
+        int a3 = mo8983a();
+        if (a3 <= f27861c) {
             return new ja(a2, a3);
         }
         throw new jd(3, "Thrift list size " + a3 + " out of range!");
@@ -51,10 +51,10 @@ public class ji extends iy {
 
     @Override // com.xiaomi.push.iy, com.xiaomi.push.jc
     /* renamed from: a */
-    public jb mo12034a() {
-        byte a2 = mo12033a();
-        byte a3 = mo12033a();
-        int a4 = mo12033a();
+    public jb mo8984a() {
+        byte a2 = mo8983a();
+        byte a3 = mo8983a();
+        int a4 = mo8983a();
         if (a4 <= b) {
             return new jb(a2, a3, a4);
         }
@@ -63,9 +63,9 @@ public class ji extends iy {
 
     @Override // com.xiaomi.push.iy, com.xiaomi.push.jc
     /* renamed from: a */
-    public jg mo12035a() {
-        byte a2 = mo12033a();
-        int a3 = mo12033a();
+    public jg mo8985a() {
+        byte a2 = mo8983a();
+        int a3 = mo8983a();
         if (a3 <= d) {
             return new jg(a2, a3);
         }
@@ -74,14 +74,14 @@ public class ji extends iy {
 
     @Override // com.xiaomi.push.iy, com.xiaomi.push.jc
     /* renamed from: a */
-    public String mo12037a() {
-        int a2 = mo12033a();
+    public String mo8987a() {
+        int a2 = mo8983a();
         if (a2 > e) {
             throw new jd(3, "Thrift string size " + a2 + " out of range!");
-        } else if (this.f41547a.b() >= a2) {
+        } else if (this.f27856a.b() >= a2) {
             try {
-                String str = new String(this.f41547a.mo12058a(), this.f41547a.a(), a2, "UTF-8");
-                this.f41547a.a(a2);
+                String str = new String(this.f27856a.mo9008a(), this.f27856a.a(), a2, "UTF-8");
+                this.f27856a.a(a2);
                 return str;
             } catch (UnsupportedEncodingException e2) {
                 throw new iw("JVM DOES NOT SUPPORT UTF-8");
@@ -93,19 +93,19 @@ public class ji extends iy {
 
     @Override // com.xiaomi.push.iy, com.xiaomi.push.jc
     /* renamed from: a */
-    public ByteBuffer mo12038a() {
-        int a2 = mo12033a();
+    public ByteBuffer mo8988a() {
+        int a2 = mo8983a();
         if (a2 > f) {
             throw new jd(3, "Thrift binary size " + a2 + " out of range!");
         }
         c(a2);
-        if (this.f41547a.b() >= a2) {
-            ByteBuffer wrap = ByteBuffer.wrap(this.f41547a.mo12058a(), this.f41547a.a(), a2);
-            this.f41547a.a(a2);
+        if (this.f27856a.b() >= a2) {
+            ByteBuffer wrap = ByteBuffer.wrap(this.f27856a.mo9008a(), this.f27856a.a(), a2);
+            this.f27856a.a(a2);
             return wrap;
         }
         byte[] bArr = new byte[a2];
-        this.f41547a.b(bArr, 0, a2);
+        this.f27856a.b(bArr, 0, a2);
         return ByteBuffer.wrap(bArr);
     }
 }

@@ -9,9 +9,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/utils/HorizontalLooperLayoutManager.class */
 public final class HorizontalLooperLayoutManager extends LinearLayoutManager {
-
-    /* renamed from: a  reason: collision with root package name */
-    private boolean f10882a;
+    private boolean a;
 
     private final int a(int i, RecyclerView.Recycler recycler, RecyclerView.State state) {
         int i2;
@@ -27,7 +25,7 @@ public final class HorizontalLooperLayoutManager extends LinearLayoutManager {
             if (childAt.getRight() < getWidth()) {
                 if (position != getItemCount() - 1) {
                     viewForPosition2 = recycler.getViewForPosition(position + 1);
-                } else if (this.f10882a) {
+                } else if (this.a) {
                     viewForPosition2 = recycler.getViewForPosition(0);
                 } else {
                     viewForPosition2 = null;
@@ -51,7 +49,7 @@ public final class HorizontalLooperLayoutManager extends LinearLayoutManager {
             if (childAt2.getLeft() >= 0) {
                 if (position2 != 0) {
                     viewForPosition = recycler.getViewForPosition(position2 - 1);
-                } else if (this.f10882a) {
+                } else if (this.a) {
                     viewForPosition = recycler.getViewForPosition(getItemCount() - 1);
                 } else {
                     viewForPosition = null;
@@ -91,17 +89,14 @@ public final class HorizontalLooperLayoutManager extends LinearLayoutManager {
         }
     }
 
-    @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
     public boolean canScrollHorizontally() {
         return true;
     }
 
-    @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
     public RecyclerView.LayoutParams generateDefaultLayoutParams() {
         return new RecyclerView.LayoutParams(-2, -2);
     }
 
-    @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
     public void onLayoutChildren(RecyclerView.Recycler recycler, RecyclerView.State state) {
         Intrinsics.e(recycler, "recycler");
         Intrinsics.e(state, "state");
@@ -123,16 +118,15 @@ public final class HorizontalLooperLayoutManager extends LinearLayoutManager {
         }
     }
 
-    @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
     public int scrollHorizontallyBy(int i, RecyclerView.Recycler recycler, RecyclerView.State state) {
         Intrinsics.e(recycler, "recycler");
         Intrinsics.e(state, "state");
-        int a2 = a(i, recycler, state);
-        if (a2 == 0) {
+        int a = a(i, recycler, state);
+        if (a == 0) {
             return 0;
         }
-        offsetChildrenHorizontal(-a2);
+        offsetChildrenHorizontal(-a);
         b(i, recycler, state);
-        return a2;
+        return a;
     }
 }

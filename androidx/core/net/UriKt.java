@@ -11,14 +11,14 @@ import kotlin.jvm.internal.Intrinsics;
 public final class UriKt {
     public static final File toFile(Uri uri) {
         Intrinsics.e(uri, "<this>");
-        if (Intrinsics.a((Object) uri.getScheme(), (Object) ContentResolver.SCHEME_FILE)) {
+        if (Intrinsics.a(uri.getScheme(), ContentResolver.SCHEME_FILE)) {
             String path = uri.getPath();
             if (path != null) {
                 return new File(path);
             }
-            throw new IllegalArgumentException(Intrinsics.a("Uri path is null: ", (Object) uri).toString());
+            throw new IllegalArgumentException(Intrinsics.a("Uri path is null: ", uri).toString());
         }
-        throw new IllegalArgumentException(Intrinsics.a("Uri lacks 'file' scheme: ", (Object) uri).toString());
+        throw new IllegalArgumentException(Intrinsics.a("Uri lacks 'file' scheme: ", uri).toString());
     }
 
     public static final Uri toUri(File file) {

@@ -7,20 +7,20 @@ import com.baidu.mobads.sdk.internal.an;
 public class cd implements an.a {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ bw f9373a;
+    final /* synthetic */ bw f6533a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public cd(bw bwVar) {
-        this.f9373a = bwVar;
+        this.f6533a = bwVar;
     }
 
     @Override // com.baidu.mobads.sdk.internal.an.a
     public void a() {
         boolean z;
-        z = this.f9373a.A;
+        z = this.f6533a.A;
         if (z) {
-            this.f9373a.A = false;
-            this.f9373a.a(false, "remote update Network access failed");
+            this.f6533a.A = false;
+            this.f6533a.a(false, "remote update Network access failed");
         }
     }
 }

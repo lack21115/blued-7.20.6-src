@@ -5,9 +5,7 @@ import mtopsdk.common.util.StringUtils;
 
 /* loaded from: source-3503164-dex2jar.jar:mtopsdk/a/b/a.class */
 public final class a implements Serializable, Cloneable {
-
-    /* renamed from: a  reason: collision with root package name */
-    public String f43658a;
+    public String a;
 
     public final String a() {
         StringBuilder sb = new StringBuilder(128);
@@ -33,9 +31,9 @@ public final class a implements Serializable, Cloneable {
     }
 
     public final String toString() {
-        if (StringUtils.b(this.f43658a)) {
-            this.f43658a = a();
+        if (StringUtils.b(this.a)) {
+            this.a = a();
         }
-        return "NetworkStats [" + this.f43658a + "]";
+        return "NetworkStats [" + this.a + "]";
     }
 }

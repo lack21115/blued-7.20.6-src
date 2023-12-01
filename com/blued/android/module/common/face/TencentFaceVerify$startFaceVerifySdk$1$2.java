@@ -19,6 +19,6 @@ public final class TencentFaceVerify$startFaceVerifySdk$1$2 extends BluedUIHttpR
 
     @Override // com.blued.android.framework.http.BluedUIHttpResponse
     public void onUIFinish() {
-        TencentFaceVerify.f10798a.b();
+        TencentFaceVerify.a.b();
     }
 }

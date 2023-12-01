@@ -49,13 +49,13 @@ public abstract class StableSessionListListener implements SessionListener {
         if (this.currentTime.get() < this.nextMinNotifyTime.get()) {
             AppInfo.n().postDelayed(this.uiCallback, this.nextMinNotifyTime.get() - this.currentTime.get());
             this.lastNotifyTime.set(this.nextMinNotifyTime.get());
-        } else if (this.currentTime.get() >= this.lastNotifyTime.get() + 500) {
+        } else if (this.currentTime.get() >= this.lastNotifyTime.get() + MIN_CALLBACK_SPAN_MS) {
             AppInfo.n().post(this.uiCallback);
-            this.nextMinNotifyTime.set(this.currentTime.get() + 500);
+            this.nextMinNotifyTime.set(this.currentTime.get() + MIN_CALLBACK_SPAN_MS);
             this.lastNotifyTime.set(this.currentTime.get());
         } else {
             AtomicLong atomicLong = this.nextMinNotifyTime;
-            atomicLong.set(atomicLong.get() + 500);
+            atomicLong.set(atomicLong.get() + MIN_CALLBACK_SPAN_MS);
             AppInfo.n().postDelayed(this.uiCallback, this.nextMinNotifyTime.get() - this.currentTime.get());
             this.lastNotifyTime.set(this.nextMinNotifyTime.get());
         }

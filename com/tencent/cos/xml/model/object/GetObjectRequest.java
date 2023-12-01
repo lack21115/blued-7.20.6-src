@@ -1,7 +1,6 @@
 package com.tencent.cos.xml.model.object;
 
 import android.net.Uri;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.cos.xml.common.Range;
 import com.tencent.cos.xml.crypto.Headers;
 import com.tencent.cos.xml.listener.CosXmlProgressListener;
@@ -50,10 +49,10 @@ public class GetObjectRequest extends ObjectRequest implements TransferRequest {
         int lastIndexOf;
         String str3 = this.savePath;
         if (str3 != null) {
-            if (str3.endsWith(BridgeUtil.SPLIT_MARK)) {
+            if (str3.endsWith("/")) {
                 str2 = this.savePath;
             } else {
-                str2 = this.savePath + BridgeUtil.SPLIT_MARK;
+                str2 = this.savePath + "/";
             }
             File file = new File(str2);
             if (!file.exists()) {
@@ -64,7 +63,7 @@ public class GetObjectRequest extends ObjectRequest implements TransferRequest {
             }
             str = str2;
             if (this.cosPath != null) {
-                if (this.cosPath.lastIndexOf(BridgeUtil.SPLIT_MARK) >= 0) {
+                if (this.cosPath.lastIndexOf("/") >= 0) {
                     return str2 + this.cosPath.substring(lastIndexOf + 1);
                 }
                 return str2 + this.cosPath;

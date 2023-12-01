@@ -15,7 +15,7 @@ public class SwitchAccountFragment_ViewBinding implements Unbinder {
 
     public SwitchAccountFragment_ViewBinding(SwitchAccountFragment switchAccountFragment, View view) {
         this.b = switchAccountFragment;
-        switchAccountFragment.top_title = (CommonTopTitleNoTrans) Utils.a(view, 2131370749, "field 'top_title'", CommonTopTitleNoTrans.class);
+        switchAccountFragment.top_title = (CommonTopTitleNoTrans) Utils.a(view, R.id.top_title, "field 'top_title'", CommonTopTitleNoTrans.class);
         switchAccountFragment.iv_account_icon_one = (ImageView) Utils.a(view, R.id.iv_account_icon_one, "field 'iv_account_icon_one'", ImageView.class);
         switchAccountFragment.iv_account_icon_two = (ImageView) Utils.a(view, R.id.iv_account_icon_two, "field 'iv_account_icon_two'", ImageView.class);
         switchAccountFragment.iv_online_state_one = (ImageView) Utils.a(view, R.id.iv_online_state_one, "field 'iv_online_state_one'", ImageView.class);

@@ -8,7 +8,7 @@ import java.lang.reflect.Method;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f36477a = c.class.getName();
+    private static final String f22786a = c.class.getName();
 
     private static a a() {
         try {
@@ -17,7 +17,7 @@ public class c {
             method.setAccessible(true);
             return (a) method.invoke(null, new Object[0]);
         } catch (Exception e) {
-            String str = f36477a;
+            String str = f22786a;
             LiteavLog.e(str, "create IjkPlayer Downloader exception!" + e.getMessage());
             return null;
         }
@@ -42,7 +42,7 @@ public class c {
             }
             return null;
         } catch (Exception e) {
-            String str = f36477a;
+            String str = f22786a;
             LiteavLog.e(str, "create ThumbPlayer Downloader exception!" + e.getMessage());
             return null;
         }

@@ -36,7 +36,7 @@ public final class YYRobMusicPresenter extends AbstractBasePresenter {
         BaseConnectingAdapter baseConnectingAdapter;
         YYBorImJsonBodyInfoMode yYBorImJsonBodyInfoMode;
         String uid;
-        BaseYYStudioFragment baseYYStudioFragment = this.f17634a;
+        BaseYYStudioFragment baseYYStudioFragment = this.a;
         if (baseYYStudioFragment == null || (baseConnectingAdapter = baseYYStudioFragment.E) == null || !(baseConnectingAdapter instanceof YYRobMusicAdapter)) {
             return;
         }
@@ -68,11 +68,11 @@ public final class YYRobMusicPresenter extends AbstractBasePresenter {
             h();
             return;
         }
-        BaseYYStudioFragment baseYYStudioFragment = this.f17634a;
+        BaseYYStudioFragment baseYYStudioFragment = this.a;
         if (baseYYStudioFragment != null) {
             baseYYStudioFragment.R();
         }
-        BaseYYStudioFragment baseYYStudioFragment2 = this.f17634a;
+        BaseYYStudioFragment baseYYStudioFragment2 = this.a;
         if (baseYYStudioFragment2 == null || (baseConnectingAdapter = baseYYStudioFragment2.E) == null || !(baseConnectingAdapter instanceof YYRobMusicAdapter)) {
             return;
         }
@@ -83,7 +83,7 @@ public final class YYRobMusicPresenter extends AbstractBasePresenter {
     public static final void a(YYRobMusicPresenter this$0, RobMusicMode robMusicMode) {
         BaseConnectingAdapter baseConnectingAdapter;
         Intrinsics.e(this$0, "this$0");
-        BaseYYStudioFragment baseYYStudioFragment = this$0.f17634a;
+        BaseYYStudioFragment baseYYStudioFragment = this$0.a;
         if (baseYYStudioFragment == null || (baseConnectingAdapter = baseYYStudioFragment.E) == null || !(baseConnectingAdapter instanceof YYRobMusicAdapter)) {
             return;
         }
@@ -93,7 +93,7 @@ public final class YYRobMusicPresenter extends AbstractBasePresenter {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(YYRobMusicPresenter this$0, String d) {
         Intrinsics.e(this$0, "this$0");
-        BaseYYStudioFragment baseYYStudioFragment = this$0.f17634a;
+        BaseYYStudioFragment baseYYStudioFragment = this$0.a;
         Intrinsics.c(d, "d");
         baseYYStudioFragment.b(Integer.parseInt(d));
     }
@@ -101,11 +101,11 @@ public final class YYRobMusicPresenter extends AbstractBasePresenter {
     private final void b(YYBorImJsonMode yYBorImJsonMode) {
         BaseConnectingAdapter baseConnectingAdapter;
         Integer valueOf;
-        BaseYYStudioFragment baseYYStudioFragment = this.f17634a;
+        BaseYYStudioFragment baseYYStudioFragment = this.a;
         if (baseYYStudioFragment != null) {
             baseYYStudioFragment.R();
         }
-        BaseYYStudioFragment baseYYStudioFragment2 = this.f17634a;
+        BaseYYStudioFragment baseYYStudioFragment2 = this.a;
         if (baseYYStudioFragment2 == null || (baseConnectingAdapter = baseYYStudioFragment2.E) == null || !(baseConnectingAdapter instanceof YYRobMusicAdapter)) {
             return;
         }
@@ -128,7 +128,7 @@ public final class YYRobMusicPresenter extends AbstractBasePresenter {
     public static final void b(YYRobMusicPresenter this$0, RobMusicMode robMusicMode) {
         BaseConnectingAdapter baseConnectingAdapter;
         Intrinsics.e(this$0, "this$0");
-        BaseYYStudioFragment baseYYStudioFragment = this$0.f17634a;
+        BaseYYStudioFragment baseYYStudioFragment = this$0.a;
         if (baseYYStudioFragment == null || (baseConnectingAdapter = baseYYStudioFragment.E) == null || !(baseConnectingAdapter instanceof YYRobMusicAdapter) || robMusicMode == null) {
             return;
         }
@@ -150,7 +150,7 @@ public final class YYRobMusicPresenter extends AbstractBasePresenter {
         BaseConnectingAdapter baseConnectingAdapter;
         YYBorImJsonBodyMode status;
         Intrinsics.e(this$0, "this$0");
-        BaseYYStudioFragment baseYYStudioFragment = this$0.f17634a;
+        BaseYYStudioFragment baseYYStudioFragment = this$0.a;
         if (baseYYStudioFragment == null || (baseConnectingAdapter = baseYYStudioFragment.E) == null || !(baseConnectingAdapter instanceof YYRobMusicAdapter) || robMusicMode == null || (status = robMusicMode.getStatus()) == null) {
             return;
         }
@@ -162,7 +162,7 @@ public final class YYRobMusicPresenter extends AbstractBasePresenter {
         BaseConnectingAdapter baseConnectingAdapter;
         YYBorImJsonMode msg;
         Intrinsics.e(this$0, "this$0");
-        BaseYYStudioFragment baseYYStudioFragment = this$0.f17634a;
+        BaseYYStudioFragment baseYYStudioFragment = this$0.a;
         if (baseYYStudioFragment == null || (baseConnectingAdapter = baseYYStudioFragment.E) == null || !(baseConnectingAdapter instanceof YYRobMusicAdapter) || robMusicMode == null || (msg = robMusicMode.getMsg()) == null) {
             return;
         }
@@ -196,7 +196,7 @@ public final class YYRobMusicPresenter extends AbstractBasePresenter {
     public static final void h(YYRobMusicPresenter this$0, RobMusicMode robMusicMode) {
         BaseConnectingAdapter baseConnectingAdapter;
         Intrinsics.e(this$0, "this$0");
-        BaseYYStudioFragment baseYYStudioFragment = this$0.f17634a;
+        BaseYYStudioFragment baseYYStudioFragment = this$0.a;
         if (baseYYStudioFragment == null || (baseConnectingAdapter = baseYYStudioFragment.E) == null || !(baseConnectingAdapter instanceof YYRobMusicAdapter) || robMusicMode == null) {
             return;
         }
@@ -206,7 +206,7 @@ public final class YYRobMusicPresenter extends AbstractBasePresenter {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void i(YYRobMusicPresenter this$0, RobMusicMode robMusicMode) {
         Intrinsics.e(this$0, "this$0");
-        BaseYYStudioFragment baseYYStudioFragment = this$0.f17634a;
+        BaseYYStudioFragment baseYYStudioFragment = this$0.a;
         if (baseYYStudioFragment == null) {
             return;
         }
@@ -216,7 +216,7 @@ public final class YYRobMusicPresenter extends AbstractBasePresenter {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void j(YYRobMusicPresenter this$0, RobMusicMode robMusicMode) {
         Intrinsics.e(this$0, "this$0");
-        BaseYYStudioFragment baseYYStudioFragment = this$0.f17634a;
+        BaseYYStudioFragment baseYYStudioFragment = this$0.a;
         if (baseYYStudioFragment == null) {
             return;
         }
@@ -227,11 +227,11 @@ public final class YYRobMusicPresenter extends AbstractBasePresenter {
     public static final void k(YYRobMusicPresenter this$0, RobMusicMode robMusicMode) {
         BaseConnectingAdapter baseConnectingAdapter;
         Intrinsics.e(this$0, "this$0");
-        BaseYYStudioFragment baseYYStudioFragment = this$0.f17634a;
+        BaseYYStudioFragment baseYYStudioFragment = this$0.a;
         if (baseYYStudioFragment != null) {
             baseYYStudioFragment.R();
         }
-        BaseYYStudioFragment baseYYStudioFragment2 = this$0.f17634a;
+        BaseYYStudioFragment baseYYStudioFragment2 = this$0.a;
         if (baseYYStudioFragment2 == null || (baseConnectingAdapter = baseYYStudioFragment2.E) == null || !(baseConnectingAdapter instanceof YYRobMusicAdapter)) {
             return;
         }
@@ -239,7 +239,7 @@ public final class YYRobMusicPresenter extends AbstractBasePresenter {
     }
 
     private final void l() {
-        BaseYYStudioFragment baseYYStudioFragment = this.f17634a;
+        BaseYYStudioFragment baseYYStudioFragment = this.a;
         if (baseYYStudioFragment == null) {
             return;
         }
@@ -254,7 +254,7 @@ public final class YYRobMusicPresenter extends AbstractBasePresenter {
         YYRoomModel b;
         YYBorImJsonBodyInfoMode yYBorImJsonBodyInfoMode;
         Intrinsics.e(d, "d");
-        BaseYYStudioFragment baseYYStudioFragment = this.f17634a;
+        BaseYYStudioFragment baseYYStudioFragment = this.a;
         if (baseYYStudioFragment == null || (baseConnectingAdapter = baseYYStudioFragment.E) == null || !(baseConnectingAdapter instanceof YYRobMusicAdapter) || (b = YYRoomInfoManager.e().b()) == null || (yYBorImJsonBodyInfoMode = b.robMus) == null) {
             return;
         }
@@ -265,79 +265,66 @@ public final class YYRobMusicPresenter extends AbstractBasePresenter {
     public void b(LifecycleOwner lifecycle) {
         Intrinsics.e(lifecycle, "lifecycle");
         LiveEventBus.get("bor_music_show_user_result_uping", RobMusicMode.class).observe(lifecycle, new Observer() { // from class: com.blued.android.module.yy_china.presenter.-$$Lambda$YYRobMusicPresenter$pJe2L-LKLlBY2FFK2KVDrdrYQPQ
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 YYRobMusicPresenter.a(YYRobMusicPresenter.this, (RobMusicMode) obj);
             }
         });
         LiveEventBus.get("bor_music_ims_bg", String.class).observe(lifecycle, new Observer() { // from class: com.blued.android.module.yy_china.presenter.-$$Lambda$YYRobMusicPresenter$wm6GOgXpXh3Y9rWP2Yv1we2ziBQ
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 YYRobMusicPresenter.a(YYRobMusicPresenter.this, (String) obj);
             }
         });
         LiveEventBus.get("bor_music_ims_time", RobMusicMode.class).observe(lifecycle, new Observer() { // from class: com.blued.android.module.yy_china.presenter.-$$Lambda$YYRobMusicPresenter$NjoV9j_iata0J6YjlN0Ta2KN88s
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 YYRobMusicPresenter.b(YYRobMusicPresenter.this, (RobMusicMode) obj);
             }
         });
         LiveEventBus.get("bor_music_ims_add_user", RobMusicMode.class).observe(lifecycle, new Observer() { // from class: com.blued.android.module.yy_china.presenter.-$$Lambda$YYRobMusicPresenter$45dqUCsChK4PYqXohIv456FUthk
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 YYRobMusicPresenter.c(YYRobMusicPresenter.this, (RobMusicMode) obj);
             }
         });
         LiveEventBus.get("bor_music_ims_result", RobMusicMode.class).observe(lifecycle, new Observer() { // from class: com.blued.android.module.yy_china.presenter.-$$Lambda$YYRobMusicPresenter$J-lLjfCnzXhxgTSVo_AnwDiYnY4
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 YYRobMusicPresenter.d(YYRobMusicPresenter.this, (RobMusicMode) obj);
             }
         });
         LiveEventBus.get("bor_music_ims_show_begin", RobMusicMode.class).observe(lifecycle, new Observer() { // from class: com.blued.android.module.yy_china.presenter.-$$Lambda$YYRobMusicPresenter$VCy51eGNcoeqSedpqEtAeoy9Whs
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 YYRobMusicPresenter.e(YYRobMusicPresenter.this, (RobMusicMode) obj);
             }
         });
         LiveEventBus.get("bor_music_ims_host_music", RobMusicMode.class).observe(lifecycle, new Observer() { // from class: com.blued.android.module.yy_china.presenter.-$$Lambda$YYRobMusicPresenter$EZysDzdje-PsD6MAmCwFy31lKus
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 YYRobMusicPresenter.f(YYRobMusicPresenter.this, (RobMusicMode) obj);
             }
         });
         LiveEventBus.get("bor_music_ims_user_music", RobMusicMode.class).observe(lifecycle, new Observer() { // from class: com.blued.android.module.yy_china.presenter.-$$Lambda$YYRobMusicPresenter$8H49Javtc3n4nPQsHu8Oq052tA4
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 YYRobMusicPresenter.g(YYRobMusicPresenter.this, (RobMusicMode) obj);
             }
         });
         LiveEventBus.get("bor_music_ims_load_lrc", RobMusicMode.class).observe(lifecycle, new Observer() { // from class: com.blued.android.module.yy_china.presenter.-$$Lambda$YYRobMusicPresenter$pqLRJw5G0SrX6al2DsbSJs3sE6c
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 YYRobMusicPresenter.h(YYRobMusicPresenter.this, (RobMusicMode) obj);
             }
         });
         LiveEventBus.get("bor_music_ims_paly_rob_music_ani", RobMusicMode.class).observe(lifecycle, new Observer() { // from class: com.blued.android.module.yy_china.presenter.-$$Lambda$YYRobMusicPresenter$tqf46XA1UGB6PCnv5n-OU-3ESV4
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 YYRobMusicPresenter.i(YYRobMusicPresenter.this, (RobMusicMode) obj);
             }
         });
         LiveEventBus.get("bor_music_ims_light", RobMusicMode.class).observe(lifecycle, new Observer() { // from class: com.blued.android.module.yy_china.presenter.-$$Lambda$YYRobMusicPresenter$swziSmwUTv9vzJYF8V3WjrfthUg
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 YYRobMusicPresenter.j(YYRobMusicPresenter.this, (RobMusicMode) obj);
             }
         });
         LiveEventBus.get("bor_music_ims_paly_rob_by_user", RobMusicMode.class).observe(lifecycle, new Observer() { // from class: com.blued.android.module.yy_china.presenter.-$$Lambda$YYRobMusicPresenter$Dx6RSLC6XrINGchokVIMMnA4ME8
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 YYRobMusicPresenter.k(YYRobMusicPresenter.this, (RobMusicMode) obj);
             }
         });
         LiveEventBus.get("show_blind_guide", String.class).observe(lifecycle, new Observer() { // from class: com.blued.android.module.yy_china.presenter.-$$Lambda$YYRobMusicPresenter$21GKdExkG7XyIIE8gNXO_Lhvrtc
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 YYRobMusicPresenter.b(YYRobMusicPresenter.this, (String) obj);
             }
@@ -349,13 +336,13 @@ public final class YYRobMusicPresenter extends AbstractBasePresenter {
         if (L == null) {
             return;
         }
-        BaseYYStudioFragment baseYYStudioFragment = this.f17634a;
+        BaseYYStudioFragment baseYYStudioFragment = this.a;
         L.a(baseYYStudioFragment == null ? null : baseYYStudioFragment.getFragmentActive());
     }
 
     public final void g() {
         BaseConnectingAdapter baseConnectingAdapter;
-        BaseYYStudioFragment baseYYStudioFragment = this.f17634a;
+        BaseYYStudioFragment baseYYStudioFragment = this.a;
         if (baseYYStudioFragment == null || (baseConnectingAdapter = baseYYStudioFragment.E) == null || !(baseConnectingAdapter instanceof YYRobMusicAdapter)) {
             return;
         }
@@ -364,7 +351,7 @@ public final class YYRobMusicPresenter extends AbstractBasePresenter {
 
     public final void h() {
         BaseConnectingAdapter baseConnectingAdapter;
-        BaseYYStudioFragment baseYYStudioFragment = this.f17634a;
+        BaseYYStudioFragment baseYYStudioFragment = this.a;
         if (baseYYStudioFragment == null || (baseConnectingAdapter = baseYYStudioFragment.E) == null || !(baseConnectingAdapter instanceof YYRobMusicAdapter)) {
             return;
         }
@@ -384,7 +371,7 @@ public final class YYRobMusicPresenter extends AbstractBasePresenter {
         if (L == null) {
             return;
         }
-        L.b(this.f17634a.getFragmentActive());
+        L.b(this.a.getFragmentActive());
     }
 
     public final void k() {
@@ -392,6 +379,6 @@ public final class YYRobMusicPresenter extends AbstractBasePresenter {
         if (L == null) {
             return;
         }
-        L.c(this.f17634a.getFragmentActive());
+        L.c(this.a.getFragmentActive());
     }
 }

@@ -2,7 +2,6 @@ package com.tencent.bugly.proguard;
 
 import android.content.Context;
 import android.os.Process;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -15,11 +14,11 @@ import java.util.concurrent.Executors;
 public final class y {
 
     /* renamed from: a  reason: collision with root package name */
-    public static boolean f35416a = true;
+    public static boolean f21725a = true;
     private static boolean b = true;
 
     /* renamed from: c  reason: collision with root package name */
-    private static SimpleDateFormat f35417c;
+    private static SimpleDateFormat f21726c;
     private static int d = 30720;
     private static StringBuilder e;
     private static StringBuilder f;
@@ -39,11 +38,11 @@ public final class y {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private boolean f35420a;
+        private boolean f21729a;
         private File b;
 
         /* renamed from: c  reason: collision with root package name */
-        private String f35421c;
+        private String f21730c;
         private long d;
         private long e = 30720;
 
@@ -51,27 +50,27 @@ public final class y {
             if (str == null || str.equals("")) {
                 return;
             }
-            this.f35421c = str;
-            this.f35420a = a();
+            this.f21730c = str;
+            this.f21729a = a();
         }
 
         /* JADX INFO: Access modifiers changed from: private */
         public boolean a() {
             try {
-                File file = new File(this.f35421c);
+                File file = new File(this.f21730c);
                 this.b = file;
                 if (file.exists() && !this.b.delete()) {
-                    this.f35420a = false;
+                    this.f21729a = false;
                     return false;
                 } else if (this.b.createNewFile()) {
                     return true;
                 } else {
-                    this.f35420a = false;
+                    this.f21729a = false;
                     return false;
                 }
             } catch (Throwable th) {
                 x.a(th);
-                this.f35420a = false;
+                this.f21729a = false;
                 return false;
             }
         }
@@ -80,7 +79,7 @@ public final class y {
             FileOutputStream fileOutputStream;
             FileOutputStream fileOutputStream2;
             byte[] bytes;
-            if (this.f35420a) {
+            if (this.f21729a) {
                 try {
                     fileOutputStream2 = new FileOutputStream(this.b, true);
                 } catch (Throwable th) {
@@ -92,7 +91,7 @@ public final class y {
                     fileOutputStream2.flush();
                     fileOutputStream2.close();
                     this.d += bytes.length;
-                    this.f35420a = true;
+                    this.f21729a = true;
                     try {
                         fileOutputStream2.close();
                         return true;
@@ -104,7 +103,7 @@ public final class y {
                     th = th2;
                     try {
                         x.a(th);
-                        this.f35420a = false;
+                        this.f21729a = false;
                         if (fileOutputStream != null) {
                             try {
                                 fileOutputStream.close();
@@ -131,7 +130,7 @@ public final class y {
 
     static {
         try {
-            f35417c = new SimpleDateFormat("MM-dd HH:mm:ss");
+            f21726c = new SimpleDateFormat("MM-dd HH:mm:ss");
         } catch (Throwable th) {
             x.b(th.getCause());
         }
@@ -144,7 +143,7 @@ public final class y {
             str4 = str3.substring(str3.length() - 30720, str3.length() - 1);
         }
         Date date = new Date();
-        SimpleDateFormat simpleDateFormat = f35417c;
+        SimpleDateFormat simpleDateFormat = f21726c;
         String format = simpleDateFormat != null ? simpleDateFormat.format(date) : date.toString();
         StringBuilder sb = e;
         sb.append(format);
@@ -176,7 +175,7 @@ public final class y {
     public static void a(Context context) {
         synchronized (y.class) {
             try {
-                if (m || context == null || !f35416a) {
+                if (m || context == null || !f21725a) {
                     return;
                 }
                 try {
@@ -188,7 +187,7 @@ public final class y {
                     i = a2.d;
                     a2.getClass();
                     j = "";
-                    l = k.getFilesDir().getPath() + "/buglylog_" + i + BridgeUtil.UNDERLINE_STR + j + ".txt";
+                    l = k.getFilesDir().getPath() + "/buglylog_" + i + "_" + j + ".txt";
                     p = Process.myPid();
                 } catch (Throwable th) {
                 }
@@ -202,12 +201,12 @@ public final class y {
     public static void a(final String str, final String str2, final String str3) {
         synchronized (y.class) {
             try {
-                if (m && f35416a) {
+                if (m && f21725a) {
                     try {
                         o.execute(new Runnable() { // from class: com.tencent.bugly.proguard.y.1
                             @Override // java.lang.Runnable
                             public final void run() {
-                                y.c(String.this, str2, str3);
+                                y.c(str, str2, str3);
                             }
                         });
                     } catch (Exception e2) {
@@ -234,7 +233,7 @@ public final class y {
 
     public static byte[] a() {
         if (b) {
-            if (f35416a) {
+            if (f21725a) {
                 return z.a((File) null, f.toString(), "BuglyLog.txt");
             }
             return null;
@@ -243,10 +242,10 @@ public final class y {
     }
 
     private static byte[] b() {
-        if (f35416a) {
+        if (f21725a) {
             StringBuilder sb = new StringBuilder();
             synchronized (q) {
-                if (h != null && h.f35420a && h.b != null && h.b.length() > 0) {
+                if (h != null && h.f21729a && h.b != null && h.b.length() > 0) {
                     sb.append(z.a(h.b, 30720, true));
                 }
                 if (f != null && f.length() > 0) {

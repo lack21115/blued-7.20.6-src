@@ -8,20 +8,14 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/c/l.class */
 public class l extends com.anythink.core.common.c.a<ae> {
-
-    /* renamed from: c  reason: collision with root package name */
-    private static volatile l f6597c;
+    private static volatile l c;
     private final String b;
 
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/c/l$a.class */
     public static final class a {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static final String f6598a = "placement_ad_impression";
+        public static final String a = "placement_ad_impression";
         public static final String b = "format";
-
-        /* renamed from: c  reason: collision with root package name */
-        public static final String f6599c = "placement_id";
+        public static final String c = "placement_id";
         public static final String d = "adsource_id";
         public static final String e = "hour_time";
         public static final String f = "hour_imp";
@@ -37,18 +31,18 @@ public class l extends com.anythink.core.common.c.a<ae> {
     }
 
     public static l a(b bVar) {
-        if (f6597c == null) {
+        if (c == null) {
             synchronized (l.class) {
                 try {
-                    if (f6597c == null) {
-                        f6597c = new l(bVar);
+                    if (c == null) {
+                        c = new l(bVar);
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f6597c;
+        return c;
     }
 
     private static ae a(Cursor cursor, String str, String str2) {
@@ -58,29 +52,29 @@ public class l extends com.anythink.core.common.c.a<ae> {
         ae aeVar = new ae();
         aeVar.f = new ConcurrentHashMap<>();
         while (cursor.moveToNext()) {
-            aeVar.f6622a = cursor.getInt(cursor.getColumnIndex("format"));
-            aeVar.b = cursor.getString(cursor.getColumnIndex(a.f6599c));
+            aeVar.a = cursor.getInt(cursor.getColumnIndex(a.b));
+            aeVar.b = cursor.getString(cursor.getColumnIndex(a.c));
             ae.a aVar = new ae.a();
-            aVar.f6624a = cursor.getString(cursor.getColumnIndex("adsource_id"));
+            aVar.a = cursor.getString(cursor.getColumnIndex("adsource_id"));
             aVar.b = cursor.getString(cursor.getColumnIndex(a.e));
-            aVar.f6625c = cursor.getString(cursor.getColumnIndex(a.g));
+            aVar.c = cursor.getString(cursor.getColumnIndex(a.g));
             if (TextUtils.equals(aVar.b, str2)) {
                 aVar.e = cursor.getInt(cursor.getColumnIndex(a.f));
             } else {
                 aVar.e = 0;
             }
             aeVar.d += aVar.e;
-            if (TextUtils.equals(aVar.f6625c, str)) {
+            if (TextUtils.equals(aVar.c, str)) {
                 aVar.d = cursor.getInt(cursor.getColumnIndex(a.h));
             } else {
                 aVar.d = 0;
             }
-            aeVar.f6623c += aVar.d;
+            aeVar.c += aVar.d;
             aVar.f = cursor.getLong(cursor.getColumnIndex("show_time"));
             if (aVar.f >= aeVar.e) {
                 aeVar.e = aVar.f;
             }
-            aeVar.f.put(aVar.f6624a, aVar);
+            aeVar.f.put(aVar.a, aVar);
         }
         cursor.close();
         return aeVar;
@@ -92,15 +86,15 @@ public class l extends com.anythink.core.common.c.a<ae> {
         }
         cursor.moveToNext();
         ae.a aVar = new ae.a();
-        aVar.f6624a = cursor.getString(cursor.getColumnIndex("adsource_id"));
+        aVar.a = cursor.getString(cursor.getColumnIndex("adsource_id"));
         aVar.b = cursor.getString(cursor.getColumnIndex(a.e));
-        aVar.f6625c = cursor.getString(cursor.getColumnIndex(a.g));
+        aVar.c = cursor.getString(cursor.getColumnIndex(a.g));
         if (TextUtils.equals(aVar.b, str2)) {
             aVar.e = cursor.getInt(cursor.getColumnIndex(a.f));
         } else {
             aVar.e = 0;
         }
-        if (TextUtils.equals(aVar.f6625c, str)) {
+        if (TextUtils.equals(aVar.c, str)) {
             aVar.d = cursor.getInt(cursor.getColumnIndex(a.h));
         } else {
             aVar.d = 0;
@@ -110,7 +104,7 @@ public class l extends com.anythink.core.common.c.a<ae> {
     }
 
     private boolean b(String str) {
-        Cursor query = a().query(a.f6598a, new String[]{"adsource_id"}, "adsource_id=?", new String[]{str}, "adsource_id", null, null);
+        Cursor query = a().query(a.a, new String[]{"adsource_id"}, "adsource_id=?", new String[]{str}, "adsource_id", null, null);
         if (query != null && query.getCount() > 0) {
             query.close();
             return true;
@@ -130,15 +124,15 @@ public class l extends com.anythink.core.common.c.a<ae> {
             }
             try {
                 ContentValues contentValues = new ContentValues();
-                contentValues.put("format", Integer.valueOf(i));
-                contentValues.put(a.f6599c, str);
-                contentValues.put("adsource_id", aVar.f6624a);
+                contentValues.put(a.b, Integer.valueOf(i));
+                contentValues.put(a.c, str);
+                contentValues.put("adsource_id", aVar.a);
                 contentValues.put(a.e, aVar.b);
                 contentValues.put(a.f, Integer.valueOf(aVar.e));
-                contentValues.put(a.g, aVar.f6625c);
+                contentValues.put(a.g, aVar.c);
                 contentValues.put(a.h, Integer.valueOf(aVar.d));
                 contentValues.put("show_time", Long.valueOf(aVar.f));
-                Cursor query = a().query(a.f6598a, new String[]{"adsource_id"}, "adsource_id=?", new String[]{aVar.f6624a}, "adsource_id", null, null);
+                Cursor query = a().query(a.a, new String[]{"adsource_id"}, "adsource_id=?", new String[]{aVar.a}, "adsource_id", null, null);
                 if (query == null || query.getCount() <= 0) {
                     if (query != null) {
                         query.close();
@@ -149,9 +143,9 @@ public class l extends com.anythink.core.common.c.a<ae> {
                     z = true;
                 }
                 if (z) {
-                    return b().update(a.f6598a, contentValues, "adsource_id = ? ", new String[]{aVar.f6624a});
+                    return b().update(a.a, contentValues, "adsource_id = ? ", new String[]{aVar.a});
                 }
-                return b().insert(a.f6598a, null, contentValues);
+                return b().insert(a.a, null, contentValues);
             } catch (Exception e) {
                 return -1L;
             }
@@ -237,7 +231,7 @@ public class l extends com.anythink.core.common.c.a<ae> {
             if (b() == null) {
                 return;
             }
-            b().delete(a.f6598a, str2, null);
+            b().delete(a.a, str2, null);
         }
     }
 }

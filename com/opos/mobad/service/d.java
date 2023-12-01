@@ -6,26 +6,26 @@ import android.content.Context;
 public class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile d f27323a;
+    private static volatile d f13635a;
     private Object b = new Object();
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f27324c;
+    private Context f13636c;
 
     private d() {
     }
 
     public static final d a() {
         d dVar;
-        d dVar2 = f27323a;
+        d dVar2 = f13635a;
         if (dVar2 == null) {
             synchronized (d.class) {
                 try {
-                    d dVar3 = f27323a;
+                    d dVar3 = f13635a;
                     dVar = dVar3;
                     if (dVar3 == null) {
                         dVar = new d();
-                        f27323a = dVar;
+                        f13635a = dVar;
                     }
                 } catch (Throwable th) {
                     throw th;
@@ -44,6 +44,6 @@ public class d {
         if (context == null) {
             return;
         }
-        this.f27324c = context;
+        this.f13636c = context;
     }
 }

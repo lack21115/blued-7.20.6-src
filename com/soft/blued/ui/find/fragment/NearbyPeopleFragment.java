@@ -5,6 +5,7 @@ import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.Html;
 import android.text.TextUtils;
@@ -23,6 +24,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -33,7 +35,6 @@ import butterknife.ButterKnife;
 import butterknife.Unbinder;
 import butterknife.internal.Utils;
 import com.anythink.banner.api.ATBannerView;
-import com.anythink.core.api.ATAdConst;
 import com.anythink.core.api.ATAdInfo;
 import com.anythink.core.api.AdError;
 import com.anythink.interstitial.api.ATInterstitialAutoAd;
@@ -46,7 +47,8 @@ import com.blued.android.core.AppMethods;
 import com.blued.android.core.BlueAppLocal;
 import com.blued.android.core.image.ImageFileLoader;
 import com.blued.android.core.image.ImageLoader;
-import com.blued.android.core.ui.BaseFragmentActivity;
+import com.blued.android.core.net.IRequestHost;
+import com.blued.android.core.ui.BaseFragment;
 import com.blued.android.core.ui.TerminalActivity;
 import com.blued.android.core.ui.TransparentActivity;
 import com.blued.android.core.utils.skin.BluedSkinUtils;
@@ -56,7 +58,6 @@ import com.blued.android.framework.http.parser.BluedEntityA;
 import com.blued.android.framework.permission.PermissionCallbacks;
 import com.blued.android.framework.ui.mvp.MvpFragment;
 import com.blued.android.framework.ui.xpop.XPopup;
-import com.blued.android.framework.ui.xpop.core.BasePopupView;
 import com.blued.android.framework.ui.xpop.enums.PopupAnimation;
 import com.blued.android.framework.utils.AesCrypto;
 import com.blued.android.framework.utils.DensityUtils;
@@ -142,6 +143,7 @@ import com.soft.blued.ui.find.manager.SpannedGridLayoutManager;
 import com.soft.blued.ui.find.model.CallHelloModel;
 import com.soft.blued.ui.find.model.CallMeStatusData;
 import com.soft.blued.ui.find.model.FindDataExtra;
+import com.soft.blued.ui.find.model.FindRecommendExtra;
 import com.soft.blued.ui.find.model.NearbyChatRoomModel;
 import com.soft.blued.ui.find.model.NearbyModelInsertData;
 import com.soft.blued.ui.find.model.OperateUserADExtra;
@@ -177,6 +179,7 @@ import com.soft.blued.utils.BluedPreferences;
 import com.soft.blued.utils.PopMenuUtils;
 import com.soft.blued.utils.StringUtils;
 import com.soft.blued.utils.third.TTADUtils;
+import java.io.Serializable;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -202,7 +205,7 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
     private BluedADExtra U;
 
     /* renamed from: a  reason: collision with root package name */
-    public View f30453a;
+    public View f16763a;
     @BindView
     public AppBarLayout appbar;
     public BannerADView b;
@@ -298,7 +301,7 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
     private List<Unbinder> F = new ArrayList();
 
     /* renamed from: c  reason: collision with root package name */
-    public boolean f30454c = true;
+    public boolean f16764c = true;
     private boolean K = false;
     private boolean L = false;
     private boolean M = false;
@@ -308,22 +311,22 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
     private AppBarLayout.OnOffsetChangedListener N = new AppBarLayout.OnOffsetChangedListener() { // from class: com.soft.blued.ui.find.fragment.NearbyPeopleFragment.22
         @Override // com.google.android.material.appbar.AppBarLayout.OnOffsetChangedListener, com.google.android.material.appbar.AppBarLayout.BaseOnOffsetChangedListener
         public void onOffsetChanged(AppBarLayout appBarLayout, int i) {
-            if (i < (-RefreshUtils.f10911a)) {
-                if (NearbyPeopleFragment.this.f30454c) {
-                    NearbyPeopleFragment.this.f30454c = false;
+            if (i < (-RefreshUtils.a)) {
+                if (NearbyPeopleFragment.this.f16764c) {
+                    NearbyPeopleFragment.this.f16764c = false;
                     NearbyPeopleFragment.this.nearbyChatRoomView.d();
                     if (NearbyPeopleFragment.this.nearbyChatRoomHostView != null) {
                         NearbyPeopleFragment.this.nearbyChatRoomHostView.c();
                     }
                 }
-            } else if (!NearbyPeopleFragment.this.f30454c) {
-                NearbyPeopleFragment.this.f30454c = true;
+            } else if (!NearbyPeopleFragment.this.f16764c) {
+                NearbyPeopleFragment.this.f16764c = true;
                 NearbyPeopleFragment.this.nearbyChatRoomView.c();
                 if (NearbyPeopleFragment.this.nearbyChatRoomHostView != null) {
                     NearbyPeopleFragment.this.nearbyChatRoomHostView.b();
                 }
             }
-            Logger.c("onOffsetChanged", "i: " + i);
+            Logger.c("onOffsetChanged", new Object[]{"i: " + i});
             NearbyPeopleFragment.this.y = -i;
             if (NearbyPeopleFragment.this.y >= (NearbyPeopleFragment.this.appbar.getHeight() - NearbyPeopleFragment.this.tabBar.getHeight()) - NearbyPeopleFragment.this.llRefresh.getHeight()) {
                 LiveEventBus.get(EventBusConstant.KEY_EVENT_NEARBY_TITLE_SYC_B).post(true);
@@ -356,11 +359,11 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
                 if (NearbyPeopleFragment.this.mRecyclerView != null && (childLayoutPosition = NearbyPeopleFragment.this.mRecyclerView.getChildLayoutPosition(NearbyPeopleFragment.this.mRecyclerView.getChildAt(NearbyPeopleFragment.this.mRecyclerView.getChildCount() - 1))) > NearbyPeopleFragment.this.I) {
                     NearbyPeopleFragment.this.I = childLayoutPosition;
                     BluedPreferences.a(childLayoutPosition);
-                    BluedPreferences.g(UserFindResult.USER_SORT_BY.NEARBY.equals(NearbyPeopleFragment.this.j().j) ? "DISTANCE_SORT" : UserFindResult.USER_SORT_BY.ONLINE.equals(NearbyPeopleFragment.this.j().j) ? "ONLINE_TIME_SORT" : "");
-                    BluedPreferences.h(NearbyPeopleFragment.this.j().q().if_grid ? "PALACE_SHOW" : "LIST_SHOW");
+                    BluedPreferences.g(UserFindResult.USER_SORT_BY.NEARBY.equals(((NearbyPeoplePresenter) NearbyPeopleFragment.this.j()).j) ? "DISTANCE_SORT" : UserFindResult.USER_SORT_BY.ONLINE.equals(((NearbyPeoplePresenter) NearbyPeopleFragment.this.j()).j) ? "ONLINE_TIME_SORT" : "");
+                    BluedPreferences.h(((NearbyPeoplePresenter) NearbyPeopleFragment.this.j()).q().if_grid ? "PALACE_SHOW" : "LIST_SHOW");
                 }
-                if (CommunityManager.f19086a.a().g().size() > 0) {
-                    CommEventBusUtil.f20461a.a();
+                if (CommunityManager.a.a().g().size() > 0) {
+                    CommEventBusUtil.f6855a.a();
                 }
                 RecyclerView.LayoutManager layoutManager = NearbyPeopleFragment.this.mRecyclerView.getLayoutManager();
                 if (layoutManager instanceof LinearLayoutManager) {
@@ -387,11 +390,11 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
     class AnonymousClass44 implements TTADUtils.TTOriginAdListener {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ FindDataExtra._adms_user f30502a;
+        final /* synthetic */ FindDataExtra._adms_user f16812a;
         final /* synthetic */ int b;
 
         AnonymousClass44(FindDataExtra._adms_user _adms_userVar, int i) {
-            this.f30502a = _adms_userVar;
+            this.f16812a = _adms_userVar;
             this.b = i;
         }
 
@@ -401,7 +404,7 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
 
         @Override // com.soft.blued.utils.third.TTADUtils.TTOriginAdListener
         public void a(int i, String str) {
-            EventTrackLoginAndRegister.c(LoginAndRegisterProtos.Event.AD_NATIVE_RESPONSE_FAIL, this.f30502a.ads_id + "", this.f30502a.adms_type, NearbyPeopleFragment.this.ae(), i + str);
+            EventTrackLoginAndRegister.c(LoginAndRegisterProtos.Event.AD_NATIVE_RESPONSE_FAIL, this.f16812a.ads_id + "", this.f16812a.adms_type, NearbyPeopleFragment.this.ae(), i + str);
         }
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:7:0x00e5 -> B:4:0x00af). Please submit an issue!!! */
@@ -414,18 +417,18 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
             userFindResult.description = tTFeedAd.getDescription();
             userFindResult.can_close = 1;
             userFindResult.ttNativeAdData = tTFeedAd;
-            userFindResult.show_url = this.f30502a.show_url;
-            userFindResult.click_url = this.f30502a.click_url;
-            userFindResult.hidden_url = this.f30502a.hidden_url;
-            userFindResult.adms_type = this.f30502a.adms_type;
-            userFindResult.uid = this.f30502a.adms_type + this.f30502a.ads_id;
+            userFindResult.show_url = this.f16812a.show_url;
+            userFindResult.click_url = this.f16812a.click_url;
+            userFindResult.hidden_url = this.f16812a.hidden_url;
+            userFindResult.adms_type = this.f16812a.adms_type;
+            userFindResult.uid = this.f16812a.adms_type + this.f16812a.ads_id;
             try {
                 NearbyPeopleFragment.this.n.addData(this.b, userFindResult);
                 NearbyPeopleFragment.this.n.notifyDataSetChanged();
             } catch (Exception e) {
             }
             LoginAndRegisterProtos.Event event = LoginAndRegisterProtos.Event.AD_NATIVE_RESPONSE;
-            EventTrackLoginAndRegister.b(event, this.f30502a.ads_id + "", this.f30502a.adms_type, NearbyPeopleFragment.this.ae());
+            EventTrackLoginAndRegister.b(event, this.f16812a.ads_id + "", this.f16812a.adms_type, NearbyPeopleFragment.this.ae());
         }
     }
 
@@ -434,11 +437,11 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
     class AnonymousClass45 implements KsLoadManager.NativeAdListener {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ FindDataExtra._adms_user f30504a;
+        final /* synthetic */ FindDataExtra._adms_user f16814a;
         final /* synthetic */ int b;
 
         AnonymousClass45(FindDataExtra._adms_user _adms_userVar, int i) {
-            this.f30504a = _adms_userVar;
+            this.f16814a = _adms_userVar;
             this.b = i;
         }
 
@@ -447,10 +450,10 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
             Log.v("drb", "快手原生失败:" + i + " -- " + str);
             LoginAndRegisterProtos.Event event = LoginAndRegisterProtos.Event.AD_NATIVE_RESPONSE_FAIL;
             StringBuilder sb = new StringBuilder();
-            sb.append(this.f30504a.ads_id);
+            sb.append(this.f16814a.ads_id);
             sb.append("");
             String sb2 = sb.toString();
-            String str2 = this.f30504a.adms_type;
+            String str2 = this.f16814a.adms_type;
             String ae = NearbyPeopleFragment.this.ae();
             EventTrackLoginAndRegister.c(event, sb2, str2, ae, i + str);
         }
@@ -461,7 +464,7 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
                 return;
             }
             LoginAndRegisterProtos.Event event = LoginAndRegisterProtos.Event.AD_NATIVE_RESPONSE;
-            EventTrackLoginAndRegister.b(event, this.f30504a.ads_id + "", this.f30504a.adms_type, NearbyPeopleFragment.this.ae());
+            EventTrackLoginAndRegister.b(event, this.f16814a.ads_id + "", this.f16814a.adms_type, NearbyPeopleFragment.this.ae());
             KsNativeAd ksNativeAd = list.get(0);
             UserFindResult userFindResult = new UserFindResult();
             userFindResult.itemType = 18;
@@ -474,11 +477,11 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
             userFindResult.description = ksNativeAd.getAdDescription();
             userFindResult.can_close = 1;
             userFindResult.ksNativeAd = ksNativeAd;
-            userFindResult.show_url = this.f30504a.show_url;
-            userFindResult.click_url = this.f30504a.click_url;
-            userFindResult.hidden_url = this.f30504a.hidden_url;
-            userFindResult.adms_type = this.f30504a.adms_type;
-            userFindResult.uid = this.f30504a.adms_type + this.f30504a.ads_id;
+            userFindResult.show_url = this.f16814a.show_url;
+            userFindResult.click_url = this.f16814a.click_url;
+            userFindResult.hidden_url = this.f16814a.hidden_url;
+            userFindResult.adms_type = this.f16814a.adms_type;
+            userFindResult.uid = this.f16814a.adms_type + this.f16814a.ads_id;
             try {
                 NearbyPeopleFragment.this.n.addData(this.b, userFindResult);
                 NearbyPeopleFragment.this.n.notifyDataSetChanged();
@@ -492,31 +495,31 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
     class AnonymousClass46 extends AdListener {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ FindDataExtra._adms_user f30506a;
+        final /* synthetic */ FindDataExtra._adms_user f16816a;
 
         AnonymousClass46(FindDataExtra._adms_user _adms_userVar) {
-            this.f30506a = _adms_userVar;
+            this.f16816a = _adms_userVar;
         }
 
         @Override // com.huawei.hms.ads.AdListener
         public void onAdClicked() {
             Log.v("drb", "华为原生点击");
-            FindHttpUtils.b(this.f30506a.click_url);
+            FindHttpUtils.b(this.f16816a.click_url);
         }
 
         @Override // com.huawei.hms.ads.AdListener
         public void onAdFailed(int i) {
             Log.v("drb", "华为原生失败 errorCode:" + i);
-            EventTrackLoginAndRegister.c(LoginAndRegisterProtos.Event.AD_NATIVE_RESPONSE_FAIL, this.f30506a.ads_id + "", this.f30506a.adms_type, NearbyPeopleFragment.this.ae(), i + "");
+            EventTrackLoginAndRegister.c(LoginAndRegisterProtos.Event.AD_NATIVE_RESPONSE_FAIL, this.f16816a.ads_id + "", this.f16816a.adms_type, NearbyPeopleFragment.this.ae(), i + "");
         }
 
         @Override // com.huawei.hms.ads.AdListener
         public void onAdImpression() {
-            if (this.f30506a.ttShowSet.contains(Long.valueOf(this.f30506a.ads_id))) {
+            if (this.f16816a.ttShowSet.contains(Long.valueOf(this.f16816a.ads_id))) {
                 return;
             }
-            this.f30506a.ttShowSet.add(Long.valueOf(this.f30506a.ads_id));
-            FindHttpUtils.b(this.f30506a.show_url);
+            this.f16816a.ttShowSet.add(Long.valueOf(this.f16816a.ads_id));
+            FindHttpUtils.b(this.f16816a.show_url);
             Log.v("drb", "华为原生 曝光");
         }
 
@@ -531,11 +534,11 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
     class AnonymousClass47 implements NativeAd.NativeAdLoadedListener {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ FindDataExtra._adms_user f30507a;
+        final /* synthetic */ FindDataExtra._adms_user f16817a;
         final /* synthetic */ int b;
 
         AnonymousClass47(FindDataExtra._adms_user _adms_userVar, int i) {
-            this.f30507a = _adms_userVar;
+            this.f16817a = _adms_userVar;
             this.b = i;
         }
 
@@ -543,18 +546,18 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
         public void onNativeAdLoaded(NativeAd nativeAd) {
             Log.v("drb", "华为原生成功");
             LoginAndRegisterProtos.Event event = LoginAndRegisterProtos.Event.AD_NATIVE_RESPONSE;
-            EventTrackLoginAndRegister.b(event, this.f30507a.ads_id + "", this.f30507a.adms_type, NearbyPeopleFragment.this.ae());
+            EventTrackLoginAndRegister.b(event, this.f16817a.ads_id + "", this.f16817a.adms_type, NearbyPeopleFragment.this.ae());
             UserFindResult userFindResult = new UserFindResult();
             userFindResult.itemType = 27;
             userFindResult.hwNativeAd = nativeAd;
-            userFindResult.show_url = this.f30507a.show_url;
-            userFindResult.click_url = this.f30507a.click_url;
-            userFindResult.hidden_url = this.f30507a.hidden_url;
-            userFindResult.is_show_adm_icon = this.f30507a.is_show_adm_icon;
-            userFindResult.can_close = this.f30507a.can_close;
-            userFindResult.adms_type = this.f30507a.adms_type;
-            userFindResult.third_id = this.f30507a.third_id;
-            userFindResult.uid = this.f30507a.adms_type + this.f30507a.ads_id;
+            userFindResult.show_url = this.f16817a.show_url;
+            userFindResult.click_url = this.f16817a.click_url;
+            userFindResult.hidden_url = this.f16817a.hidden_url;
+            userFindResult.is_show_adm_icon = this.f16817a.is_show_adm_icon;
+            userFindResult.can_close = this.f16817a.can_close;
+            userFindResult.adms_type = this.f16817a.adms_type;
+            userFindResult.third_id = this.f16817a.third_id;
+            userFindResult.uid = this.f16817a.adms_type + this.f16817a.ads_id;
             try {
                 NearbyPeopleFragment.this.n.addData(this.b, userFindResult);
                 NearbyPeopleFragment.this.n.notifyDataSetChanged();
@@ -672,6 +675,7 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
         BluedPreferences.D(0L);
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private void H() {
         LiveEventBus.get("APP_CHANGE_TO_BACKGROUND", Boolean.class).observe(this, new Observer<Boolean>() { // from class: com.soft.blued.ui.find.fragment.NearbyPeopleFragment.2
             @Override // androidx.lifecycle.Observer
@@ -708,7 +712,7 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
     private void J() {
         this.stvFilterReset.setOnClickListener(this);
         this.search_layout.setOnClickListener(this);
-        this.mRecommendViewMixedInNearby.a(getFragmentActive());
+        this.mRecommendViewMixedInNearby.a((IRequestHost) getFragmentActive());
         this.mRecommendViewMixedInNearby.a(this.mCallBtn, this.mCallBtnState);
         if (MapFindManager.a().b()) {
             X();
@@ -773,17 +777,17 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
                     public void onClick(View view) {
                         Tracker.onClick(view);
                         if (NearbyPeopleFragment.this.s == i2) {
-                            NearbyPeopleFragment.this.j().j = tabHolder.tvSortTab.getTag().toString();
+                            ((NearbyPeoplePresenter) NearbyPeopleFragment.this.j()).j = tabHolder.tvSortTab.getTag().toString();
                             NearbyPeopleFragment nearbyPeopleFragment = NearbyPeopleFragment.this;
-                            nearbyPeopleFragment.a(nearbyPeopleFragment.j().j, 0);
+                            nearbyPeopleFragment.a(((NearbyPeoplePresenter) nearbyPeopleFragment.j()).j, 0);
                             return;
                         }
-                        NearbyPeopleFragment.this.m.c(NearbyPeopleFragment.this.j().j);
-                        NearbyPeopleFragment.this.n.c(NearbyPeopleFragment.this.j().j);
+                        NearbyPeopleFragment.this.m.c(((NearbyPeoplePresenter) NearbyPeopleFragment.this.j()).j);
+                        NearbyPeopleFragment.this.n.c(((NearbyPeoplePresenter) NearbyPeopleFragment.this.j()).j);
                         NearbyPeopleFragment.this.s = i2;
-                        NearbyPeopleFragment.this.j().j = tabHolder.tvSortTab.getTag().toString();
+                        ((NearbyPeoplePresenter) NearbyPeopleFragment.this.j()).j = tabHolder.tvSortTab.getTag().toString();
                         NearbyPeopleFragment nearbyPeopleFragment2 = NearbyPeopleFragment.this;
-                        nearbyPeopleFragment2.a(nearbyPeopleFragment2.j().j, 220);
+                        nearbyPeopleFragment2.a(((NearbyPeoplePresenter) nearbyPeopleFragment2.j()).j, 220);
                         if (NearbyPeopleFragment.this.M) {
                             NearbyPeopleFragment.this.L = false;
                             NearbyPeopleFragment.this.P();
@@ -791,15 +795,15 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
                         NearbyPeopleFragment.this.M = false;
                     }
                 }));
-                if (TextUtils.isEmpty(j().j)) {
-                    j().j = list.get(0);
+                if (TextUtils.isEmpty(((NearbyPeoplePresenter) j()).j)) {
+                    ((NearbyPeoplePresenter) j()).j = list.get(0);
                 }
-                if (j().j.equals(list.get(0))) {
+                if (((NearbyPeoplePresenter) j()).j.equals(list.get(0))) {
                     this.s = i2;
                 }
                 if (list.size() > 1) {
                     tabHolder.ivSortTab.setVisibility(0);
-                    tabHolder.ivSortTab.setImageDrawable(BluedSkinUtils.b(this.k, R.drawable.icon_nearby_arrow1));
+                    tabHolder.ivSortTab.setImageDrawable(BluedSkinUtils.b(this.k, (int) R.drawable.icon_nearby_arrow1));
                     LinearLayout linearLayout = new LinearLayout(this.k);
                     linearLayout.setLayoutParams(new ViewGroup.LayoutParams(-1, -2));
                     linearLayout.setOrientation(1);
@@ -809,14 +813,14 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
                         @Override // com.soft.blued.customview.PopMenu.onShowListener
                         public void a() {
                             NearbyPeopleFragment.this.w();
-                            tabHolder.ivSortTab.setImageDrawable(BluedSkinUtils.b(NearbyPeopleFragment.this.k, R.drawable.icon_nearby_arrow3));
+                            tabHolder.ivSortTab.setImageDrawable(BluedSkinUtils.b(NearbyPeopleFragment.this.k, (int) R.drawable.icon_nearby_arrow3));
                         }
                     });
                     popMenu.a(new PopupWindow.OnDismissListener() { // from class: com.soft.blued.ui.find.fragment.NearbyPeopleFragment.5
                         @Override // android.widget.PopupWindow.OnDismissListener
                         public void onDismiss() {
                             NearbyPeopleFragment.this.w();
-                            tabHolder.ivSortTab.setImageDrawable(BluedSkinUtils.b(NearbyPeopleFragment.this.k, R.drawable.icon_nearby_arrow2));
+                            tabHolder.ivSortTab.setImageDrawable(BluedSkinUtils.b(NearbyPeopleFragment.this.k, (int) R.drawable.icon_nearby_arrow2));
                         }
                     });
                     inflate.setOnClickListener(new SingleClickProxy(new View.OnClickListener() { // from class: com.soft.blued.ui.find.fragment.NearbyPeopleFragment.6
@@ -833,9 +837,9 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
                                 return;
                             }
                             NearbyPeopleFragment.this.s = i4;
-                            NearbyPeopleFragment.this.j().j = tabHolder.tvSortTab.getTag().toString();
+                            ((NearbyPeoplePresenter) NearbyPeopleFragment.this.j()).j = tabHolder.tvSortTab.getTag().toString();
                             NearbyPeopleFragment nearbyPeopleFragment = NearbyPeopleFragment.this;
-                            nearbyPeopleFragment.a(nearbyPeopleFragment.j().j, 220);
+                            nearbyPeopleFragment.a(((NearbyPeoplePresenter) nearbyPeopleFragment.j()).j, 220);
                         }
                     }));
                     final ArrayList arrayList = new ArrayList();
@@ -853,15 +857,15 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
                         final String str = list.get(i4);
                         this.C.add(menuHolder);
                         this.F.add(a3);
-                        if (TextUtils.isEmpty(j().j)) {
-                            j().j = str;
+                        if (TextUtils.isEmpty(((NearbyPeoplePresenter) j()).j)) {
+                            ((NearbyPeoplePresenter) j()).j = str;
                         }
-                        if (j().j.equals(str)) {
+                        if (((NearbyPeoplePresenter) j()).j.equals(str)) {
                             this.s = i2;
                             menuHolder.ivSortMenu.setVisibility(0);
                             tabHolder.tvSortTab.setTag(list.get(i4));
                             tabHolder.tvSortTab.setText(f(list.get(i4)));
-                            tabHolder.ivSortTab.setImageDrawable(BluedSkinUtils.b(this.k, R.drawable.icon_nearby_arrow2));
+                            tabHolder.ivSortTab.setImageDrawable(BluedSkinUtils.b(this.k, (int) R.drawable.icon_nearby_arrow2));
                             z = true;
                         }
                         inflate2.setOnClickListener(new SingleClickProxy(new View.OnClickListener() { // from class: com.soft.blued.ui.find.fragment.NearbyPeopleFragment.7
@@ -875,9 +879,9 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
                                 menuHolder.ivSortMenu.setVisibility(0);
                                 tabHolder.tvSortTab.setTag(str);
                                 tabHolder.tvSortTab.setText(NearbyPeopleFragment.this.f(str));
-                                NearbyPeopleFragment.this.j().j = str;
+                                ((NearbyPeoplePresenter) NearbyPeopleFragment.this.j()).j = str;
                                 NearbyPeopleFragment nearbyPeopleFragment = NearbyPeopleFragment.this;
-                                nearbyPeopleFragment.a(nearbyPeopleFragment.j().j, 220);
+                                nearbyPeopleFragment.a(((NearbyPeoplePresenter) nearbyPeopleFragment.j()).j, 220);
                             }
                         }));
                         menuHolder.tvSortMenu.setText(f(list.get(i4)));
@@ -898,7 +902,7 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
     private void O() {
         P();
         this.mRefreshLayout.l(false);
-        PeopleListQuickAdapter peopleListQuickAdapter = new PeopleListQuickAdapter(new ArrayList(), getActivity(), getFragmentActive(), j().j, this.mRecyclerView);
+        PeopleListQuickAdapter peopleListQuickAdapter = new PeopleListQuickAdapter(new ArrayList(), getActivity(), getFragmentActive(), ((NearbyPeoplePresenter) j()).j, this.mRecyclerView);
         this.n = peopleListQuickAdapter;
         peopleListQuickAdapter.setLoadMoreView(new BluedAdapterLoadMoreView());
         this.n.setNewData(this.p);
@@ -907,7 +911,7 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
             @Override // com.chad.library.adapter.base.BaseQuickAdapter.RequestLoadMoreListener
             public void onLoadMoreRequested() {
                 LiveEventBus.get(EventBusConstant.KEY_EVENT_IS_SHOW_TIP).post(true);
-                NearbyPeopleFragment.this.j().f();
+                ((NearbyPeoplePresenter) NearbyPeopleFragment.this.j()).f();
             }
         }, this.mRecyclerView);
         this.n.a(new PeopleGridQuickAdapter.OnDrawPeopleListener() { // from class: com.soft.blued.ui.find.fragment.NearbyPeopleFragment.9
@@ -922,7 +926,7 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
                         }
                     }, 500L);
                 }
-                if (UserFindResult.USER_SORT_BY.NEARBY.equals(NearbyPeopleFragment.this.j().j)) {
+                if (UserFindResult.USER_SORT_BY.NEARBY.equals(((NearbyPeoplePresenter) NearbyPeopleFragment.this.j()).j)) {
                     NearbyPeopleFragment.this.f++;
                 } else {
                     NearbyPeopleFragment.this.g++;
@@ -931,17 +935,17 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
                 if (NearbyPeopleFragment.this.f == 48 || NearbyPeopleFragment.this.g == 48) {
                     long a2 = TimeAndDateUtils.a();
                     long ai = CommunityPreferences.ai();
-                    boolean r = CommunityManager.f19086a.a().r();
+                    boolean r = CommunityManager.a.a().r();
                     LogUtils.c("nearbyPeopleDraw48.today:" + a2 + ", lastDay:" + ai + ", isTopBubbleShowing:" + r);
                     if (a2 <= ai || r) {
                         return;
                     }
-                    NearbyPeopleFragment.this.j().v();
+                    ((NearbyPeoplePresenter) NearbyPeopleFragment.this.j()).v();
                 }
             }
         });
         this.n.a(this.mRecyclerView);
-        PeopleGridQuickAdapter peopleGridQuickAdapter = new PeopleGridQuickAdapter(new ArrayList(), getActivity(), getFragmentActive(), j().j, this.mRecyclerView);
+        PeopleGridQuickAdapter peopleGridQuickAdapter = new PeopleGridQuickAdapter(new ArrayList(), getActivity(), getFragmentActive(), ((NearbyPeoplePresenter) j()).j, this.mRecyclerView);
         this.m = peopleGridQuickAdapter;
         peopleGridQuickAdapter.setLoadMoreView(new BluedAdapterLoadMoreView());
         this.m.setNewData(this.o);
@@ -950,7 +954,7 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
             @Override // com.chad.library.adapter.base.BaseQuickAdapter.RequestLoadMoreListener
             public void onLoadMoreRequested() {
                 LiveEventBus.get(EventBusConstant.KEY_EVENT_IS_SHOW_TIP).post(true);
-                NearbyPeopleFragment.this.j().f();
+                ((NearbyPeoplePresenter) NearbyPeopleFragment.this.j()).f();
             }
         }, this.mRecyclerView);
         this.m.a(new PeopleGridQuickAdapter.OnDrawPeopleListener() { // from class: com.soft.blued.ui.find.fragment.NearbyPeopleFragment.11
@@ -972,7 +976,7 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
         this.noDataAndLoadFailView.setOnTouchEvent(false);
         this.noDataAndLoadFailView.setTopSpace(DensityUtils.a(this.k, 40.0f));
         this.noDataAndLoadFailView.setImageScale(0.7f);
-        this.noDataAndLoadFailView.setNoDataStr(R.string.people_search_no_data_tip);
+        this.noDataAndLoadFailView.setNoDataStr((int) R.string.people_search_no_data_tip);
         this.noDataAndLoadFailView.setNoDataImg(2131233637);
         this.noDataAndLoadFailView.setNoDataBtnListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.fragment.NearbyPeopleFragment.12
             @Override // android.view.View.OnClickListener
@@ -984,11 +988,11 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
         ShapeTextView btn = this.noDataAndLoadFailView.getBtn();
         btn.getLayoutParams().width = DensityUtils.a(this.k, 160.0f);
         btn.getLayoutParams().height = DensityUtils.a(this.k, 44.0f);
-        btn.setText(R.string.people_search_no_data_btn);
+        btn.setText((int) R.string.people_search_no_data_btn);
         ShapeHelper.b(btn, 2131102212);
         ShapeHelper.c(btn, 2131102355);
         ShapeHelper.a(btn, DensityUtils.a(this.k, 18.0f));
-        ShapeHelper.a((ShapeHelper.ShapeView) btn, 2131102163);
+        ShapeHelper.a(btn, 2131102163);
         this.header.a(new OnTwoLevelListener() { // from class: com.soft.blued.ui.find.fragment.NearbyPeopleFragment.13
             @Override // com.scwang.smartrefresh.layout.api.OnTwoLevelListener
             public boolean onTwoLevel(RefreshLayout refreshLayout) {
@@ -997,14 +1001,14 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
         });
         this.d = new OnLocationListener() { // from class: com.soft.blued.ui.find.fragment.NearbyPeopleFragment.14
             private void a() {
-                NearbyPeopleFragment.this.j().p();
-                if (HomeActivity.f30985c != null) {
-                    ((NearbyViewModel) ViewModelProviders.of(HomeActivity.f30985c).get(NearbyViewModel.class)).d.postValue(null);
+                ((NearbyPeoplePresenter) NearbyPeopleFragment.this.j()).p();
+                if (HomeActivity.f17295c != null) {
+                    ((NearbyViewModel) ViewModelProviders.of((FragmentActivity) HomeActivity.f17295c).get(NearbyViewModel.class)).d.postValue(null);
                 }
             }
 
             private void b() {
-                if (NearbyPeopleFragment.this.j().e("people")) {
+                if (((NearbyPeoplePresenter) NearbyPeopleFragment.this.j()).e("people")) {
                     NearbyPeopleFragment.this.mRefreshLayout.j();
                     return;
                 }
@@ -1014,25 +1018,23 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
                         NearbyPeopleFragment.this.K();
                     }
                 }, 1000L);
-                NearbyPeopleFragment.this.j().e();
+                ((NearbyPeoplePresenter) NearbyPeopleFragment.this.j()).e();
                 a();
             }
 
-            @Override // com.blued.android.module.common.utils.gaode.OnLocationListener
             public void a(double d, double d2) {
-                CommunityManager.f19086a.a().a((float) d2);
-                CommunityManager.f19086a.a().b((float) d);
+                CommunityManager.a.a().a((float) d2);
+                CommunityManager.a.a().b((float) d);
                 b();
                 if (NearbyPeopleFragment.this.locationNoDataView != null) {
                     NearbyPeopleFragment.this.locationNoDataView.d();
                 }
             }
 
-            @Override // com.blued.android.module.common.utils.gaode.OnLocationListener
             public void a(int i) {
                 b();
-                AppMethods.a((CharSequence) (NearbyPeopleFragment.this.k.getResources().getString(R.string.location_fail_try_again) + "(" + i + ")"));
-                BluedStatistics.c().a("LOCATION", 0L, i, null);
+                AppMethods.a(NearbyPeopleFragment.this.k.getResources().getString(R.string.location_fail_try_again) + "(" + i + ")");
+                BluedStatistics.c().a("LOCATION", 0L, i, (String) null);
             }
         };
         this.mRefreshLayout.b((OnMultiPurposeListener) new SimpleMultiPurposeListener() { // from class: com.soft.blued.ui.find.fragment.NearbyPeopleFragment.15
@@ -1151,20 +1153,20 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
                 }
                 EventTrackGuy.b("friend");
                 NearbyPeopleFragment.this.Q();
-                if (UserFindResult.USER_SORT_BY.NEARBY.equals(NearbyPeopleFragment.this.j().j)) {
-                    NearbyPeopleFragment.this.j().t();
+                if (UserFindResult.USER_SORT_BY.NEARBY.equals(((NearbyPeoplePresenter) NearbyPeopleFragment.this.j()).j)) {
+                    ((NearbyPeoplePresenter) NearbyPeopleFragment.this.j()).t();
                 }
-                NearbyPeopleFragment.this.j().o();
-                NearbyPeopleFragment.this.j().n();
+                ((NearbyPeoplePresenter) NearbyPeopleFragment.this.j()).o();
+                ((NearbyPeoplePresenter) NearbyPeopleFragment.this.j()).n();
                 NearbyPeopleFragment.this.c(false);
-                if (NearbyPeopleFragment.this.j().r() && NearbyPeopleFragment.this.m != null) {
+                if (((NearbyPeoplePresenter) NearbyPeopleFragment.this.j()).r() && NearbyPeopleFragment.this.m != null) {
                     NearbyPeopleFragment.this.m.g();
                     NearbyPeopleFragment.this.V();
-                    NearbyPeopleFragment.this.m.c(NearbyPeopleFragment.this.j().j);
-                } else if (!NearbyPeopleFragment.this.j().r() && NearbyPeopleFragment.this.n != null) {
+                    NearbyPeopleFragment.this.m.c(((NearbyPeoplePresenter) NearbyPeopleFragment.this.j()).j);
+                } else if (!((NearbyPeoplePresenter) NearbyPeopleFragment.this.j()).r() && NearbyPeopleFragment.this.n != null) {
                     NearbyPeopleFragment.this.n.g();
                     NearbyPeopleFragment.this.U();
-                    NearbyPeopleFragment.this.n.c(NearbyPeopleFragment.this.j().j);
+                    NearbyPeopleFragment.this.n.c(((NearbyPeoplePresenter) NearbyPeopleFragment.this.j()).j);
                 }
                 if (NearbyPeopleFragment.this.b != null) {
                     NearbyPeopleFragment.this.b.setVisibility(8);
@@ -1198,7 +1200,7 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
                 if (NearbyPeopleFragment.this.L) {
                     return;
                 }
-                if (NearbyPeopleFragment.this.j().s()) {
+                if (((NearbyPeoplePresenter) NearbyPeopleFragment.this.j()).s()) {
                     if (NearbyPeopleFragment.this.n == null || NearbyPeopleFragment.this.n.getItemCount() <= 0) {
                         return;
                     }
@@ -1206,7 +1208,7 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
                     return;
                 }
                 List data = NearbyPeopleFragment.this.m.getData();
-                if (NearbyPeopleFragment.this.j().s()) {
+                if (((NearbyPeoplePresenter) NearbyPeopleFragment.this.j()).s()) {
                     data = NearbyPeopleFragment.this.n.getData();
                 }
                 int i = 0;
@@ -1219,23 +1221,23 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
                     if (userFindResult.operate_promotion != null && userFindResult.operate_promotion.popup != null) {
                         OperatePromotionPopup operatePromotionPopup = userFindResult.operate_promotion.popup;
                         RecyclerView.ViewHolder findViewHolderForAdapterPosition = NearbyPeopleFragment.this.mRecyclerView.findViewHolderForAdapterPosition(i2);
-                        if (findViewHolderForAdapterPosition != null && NearbyPeopleFragment.this.j().j.equals(operatePromotionPopup.getSourcePage())) {
+                        if (findViewHolderForAdapterPosition != null && ((NearbyPeoplePresenter) NearbyPeopleFragment.this.j()).j.equals(operatePromotionPopup.getSourcePage())) {
                             int[] iArr = new int[2];
                             findViewHolderForAdapterPosition.itemView.getLocationInWindow(iArr);
                             LogUtils.c("loc:" + iArr[0] + ", " + iArr[1]);
                             if (iArr[0] >= 0 && iArr[1] > 0) {
-                                LogUtils.c("onGlobalLayout: " + NearbyPeopleFragment.this.j().j + ",  popup.getSourcePage: " + operatePromotionPopup.getSourcePage());
+                                LogUtils.c("onGlobalLayout: " + ((NearbyPeoplePresenter) NearbyPeopleFragment.this.j()).j + ",  popup.getSourcePage: " + operatePromotionPopup.getSourcePage());
                                 NearbyPeopleFragment.this.L = true;
-                                if (CommunityManager.f19086a.a().f()) {
+                                if (CommunityManager.a.a().f()) {
                                     LogUtils.c("NearbyPromotionPopup: 广告浮窗正在显示");
                                     return;
-                                } else if (CommunityManager.f19086a.a().j()) {
+                                } else if (CommunityManager.a.a().j()) {
                                     LogUtils.c("NearbyPromotionPopup: 新功能介绍正在显示");
                                     return;
-                                } else if (CommunityManager.f19086a.a().k()) {
+                                } else if (CommunityManager.a.a().k()) {
                                     LogUtils.c("NearbyPromotionPopup: 协议变更窗口正在显示");
                                     return;
-                                } else if (CommunityManager.f19086a.a().l()) {
+                                } else if (CommunityManager.a.a().l()) {
                                     LogUtils.c("NearbyPromotionPopup: 版本更新窗口正在显示");
                                     return;
                                 } else {
@@ -1260,17 +1262,15 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
             GaoDeUtils.a(this.d);
             return;
         }
-        EventTrackSystemAuthority.a(SystemAuthorityProtos.Event.SYSTEM_AUTHORITY, SystemAuthorityProtos.Type.LOCATION, PermissionUtils.a("android.permission.ACCESS_FINE_LOCATION"));
+        EventTrackSystemAuthority.a(SystemAuthorityProtos.Event.SYSTEM_AUTHORITY, SystemAuthorityProtos.Type.LOCATION, PermissionUtils.a(new String[]{"android.permission.ACCESS_FINE_LOCATION"}));
         PermissionUtils.c(new PermissionCallbacks() { // from class: com.soft.blued.ui.find.fragment.NearbyPeopleFragment.19
-            @Override // com.blued.android.framework.permission.PermissionCallbacks
             public void U_() {
                 GaoDeUtils.a(NearbyPeopleFragment.this.d);
             }
 
-            @Override // com.blued.android.framework.permission.PermissionCallbacks
             public void a(String[] strArr) {
                 GaoDeUtils.a(NearbyPeopleFragment.this.d);
-                BluedStatistics.c().a("LOCATION", 0L, -1001, null);
+                BluedStatistics.c().a("LOCATION", 0L, -1001, (String) null);
             }
         });
     }
@@ -1300,19 +1300,18 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
                 z = bundleExtra.getBoolean("show_tag_page", false);
             }
             if (z && UserInfo.getInstance().isBindPhone() && !BluedPreferences.eU()) {
-                FindHttpUtils.a(getActivity(), new BluedUIHttpResponse<BluedEntityA<UserTagAll>>(getFragmentActive()) { // from class: com.soft.blued.ui.find.fragment.NearbyPeopleFragment.20
+                FindHttpUtils.a((Context) getActivity(), (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<UserTagAll>>(getFragmentActive()) { // from class: com.soft.blued.ui.find.fragment.NearbyPeopleFragment.20
                     /* JADX INFO: Access modifiers changed from: protected */
-                    @Override // com.blued.android.framework.http.BluedUIHttpResponse
                     /* renamed from: a */
                     public void onUIUpdate(BluedEntityA<UserTagAll> bluedEntityA) {
                         if (bluedEntityA.data == null || bluedEntityA.data.size() <= 0) {
                             return;
                         }
                         Bundle bundle2 = new Bundle();
-                        bundle2.putSerializable("login_data_tag", bluedEntityA.data.get(0));
+                        bundle2.putSerializable("login_data_tag", (Serializable) bluedEntityA.data.get(0));
                         TerminalActivity.d(NearbyPeopleFragment.this.getActivity(), SetTagFragment.class, bundle2);
                     }
-                }, getFragmentActive());
+                }, (IRequestHost) getFragmentActive());
             }
         }
     }
@@ -1321,7 +1320,6 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
     public void T() {
         UserHttpUtils.g(new BluedUIHttpResponse<BluedEntityA<UserInfoEntity>>(getFragmentActive()) { // from class: com.soft.blued.ui.find.fragment.NearbyPeopleFragment.21
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<UserInfoEntity> bluedEntityA) {
                 String str;
@@ -1329,7 +1327,7 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
                     return;
                 }
                 try {
-                    str = AesCrypto.e(bluedEntityA.getSingleData().registration_time_encrypt);
+                    str = AesCrypto.e(((UserInfoEntity) bluedEntityA.getSingleData()).registration_time_encrypt);
                 } catch (Exception e) {
                     e.printStackTrace();
                     str = "";
@@ -1341,7 +1339,7 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
                 if ((BluedConfig.a().U() != 1 || i <= ((float) NearbyPeopleFragment.this.e) || i >= ((float) (NearbyPeopleFragment.this.e * 30)) || !isActive()) && !(BluedConfig.a().U() == 0 && i < ((float) (NearbyPeopleFragment.this.e * 30)) && isActive())) {
                     return;
                 }
-                new XPopup.Builder(NearbyPeopleFragment.this.k).a(PopupAnimation.ScaleAlphaFromCenter).c((Boolean) false).d((Boolean) true).a((BasePopupView) new VIPGuidePopupWindow(NearbyPeopleFragment.this.k)).h();
+                new XPopup.Builder(NearbyPeopleFragment.this.k).a(PopupAnimation.a).c(false).d(true).a(new VIPGuidePopupWindow(NearbyPeopleFragment.this.k)).h();
             }
         }, UserInfo.getInstance().getLoginUserInfo().uid, getFragmentActive());
     }
@@ -1424,17 +1422,17 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
             public void a() {
                 NearbyPeopleFragment.this.a((Boolean) false);
                 if (!BluedConfig.a().u()) {
-                    NearbyPeopleFragment.this.f30453a = null;
+                    NearbyPeopleFragment.this.f16763a = null;
                     return;
                 }
                 NearbyPeopleFragment nearbyPeopleFragment = NearbyPeopleFragment.this;
-                nearbyPeopleFragment.f30453a = LayoutInflater.from(nearbyPeopleFragment.k).inflate(R.layout.layout_nearby_people_edit_tip, (ViewGroup) null);
+                nearbyPeopleFragment.f16763a = LayoutInflater.from(nearbyPeopleFragment.k).inflate(R.layout.layout_nearby_people_edit_tip, (ViewGroup) null);
                 NearbyPeopleFragment nearbyPeopleFragment2 = NearbyPeopleFragment.this;
                 nearbyPeopleFragment2.D = new TipHeaderHolder();
                 NearbyPeopleFragment nearbyPeopleFragment3 = NearbyPeopleFragment.this;
-                nearbyPeopleFragment3.G = ButterKnife.a(nearbyPeopleFragment3.D, NearbyPeopleFragment.this.f30453a);
+                nearbyPeopleFragment3.G = ButterKnife.a(nearbyPeopleFragment3.D, NearbyPeopleFragment.this.f16763a);
                 ImageLoader.a(NearbyPeopleFragment.this.getFragmentActive(), UserInfo.getInstance().getLoginUserInfo().avatar).b(2131237310).c().a(NearbyPeopleFragment.this.D.imgHeader);
-                NearbyPeopleFragment.this.f30453a.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.fragment.NearbyPeopleFragment.24.1
+                NearbyPeopleFragment.this.f16763a.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.fragment.NearbyPeopleFragment.24.1
                     @Override // android.view.View.OnClickListener
                     public void onClick(View view) {
                         Tracker.onClick(view);
@@ -1446,7 +1444,7 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
                     }
                 });
                 if (NearbyPeopleFragment.this.n != null) {
-                    NearbyPeopleFragment.this.n.addHeaderView(NearbyPeopleFragment.this.f30453a);
+                    NearbyPeopleFragment.this.n.addHeaderView(NearbyPeopleFragment.this.f16763a);
                     EventTrackGuy.b(GuyProtos.Event.COMPLETE_PROFILE_NEW_SHOW);
                 }
             }
@@ -1471,12 +1469,10 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
             public void onClick(View view) {
                 Tracker.onClick(view);
                 PermissionUtils.c(new PermissionCallbacks() { // from class: com.soft.blued.ui.find.fragment.NearbyPeopleFragment.32.1
-                    @Override // com.blued.android.framework.permission.PermissionCallbacks
                     public void U_() {
-                        FindSearchMapFragment.b((BaseFragmentActivity) NearbyPeopleFragment.this.getActivity(), 2);
+                        FindSearchMapFragment.b(NearbyPeopleFragment.this.getActivity(), 2);
                     }
 
-                    @Override // com.blued.android.framework.permission.PermissionCallbacks
                     public void a(String[] strArr) {
                     }
                 });
@@ -1486,7 +1482,7 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
             return;
         }
         this.rl_location_root.setVisibility(0);
-        double d = MapFindManager.a().c().f30600c;
+        double d = MapFindManager.a().c().f16910c;
         DecimalFormat decimalFormat = new DecimalFormat("0.00");
         this.rl_location_root.setBackgroundColor(BluedSkinUtils.a(getContext(), 2131101766));
         this.tv_distance.setText(decimalFormat.format(d) + " km");
@@ -1509,20 +1505,20 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
     }
 
     private void Y() {
-        if (TextUtils.isEmpty(j().j)) {
-            j().j = BluedPreferences.aB();
+        if (TextUtils.isEmpty(((NearbyPeoplePresenter) j()).j)) {
+            ((NearbyPeoplePresenter) j()).j = BluedPreferences.aB();
         }
-        if (TextUtils.isEmpty(j().j) && BluedPreferences.bT()) {
-            j().j = BluedConfig.a().b().default_home_tabs;
+        if (TextUtils.isEmpty(((NearbyPeoplePresenter) j()).j) && BluedPreferences.bT()) {
+            ((NearbyPeoplePresenter) j()).j = BluedConfig.a().b().default_home_tabs;
             BluedPreferences.bU();
         }
         if (!TextUtils.isEmpty(BluedConfig.a().b().default_home_tabs)) {
-            j().j = BluedConfig.a().b().default_home_tabs;
+            ((NearbyPeoplePresenter) j()).j = BluedConfig.a().b().default_home_tabs;
         }
-        if (h(j().j)) {
+        if (h(((NearbyPeoplePresenter) j()).j)) {
             return;
         }
-        j().j = null;
+        ((NearbyPeoplePresenter) j()).j = null;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1649,17 +1645,17 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
         if (nearbyTransformersExtra == null || (popupExtraJson = nearbyTransformersExtra.adv_extra_json) == null || popupExtraJson.popup == null) {
             return;
         }
-        if (CommunityManager.f19086a.a().f()) {
+        if (CommunityManager.a.a().f()) {
             LogUtils.c("NearbyPromotionPopup: 广告浮窗正在显示");
-        } else if (CommunityManager.f19086a.a().j()) {
+        } else if (CommunityManager.a.a().j()) {
             LogUtils.c("NearbyPromotionPopup: 新功能介绍正在显示");
-        } else if (CommunityManager.f19086a.a().k()) {
+        } else if (CommunityManager.a.a().k()) {
             LogUtils.c("NearbyPromotionPopup: 协议变更窗口正在显示");
-        } else if (CommunityManager.f19086a.a().l()) {
+        } else if (CommunityManager.a.a().l()) {
             LogUtils.c("NearbyPromotionPopup: 版本更新窗口正在显示");
-        } else if (CommunityManager.f19086a.a().m()) {
+        } else if (CommunityManager.a.a().m()) {
             LogUtils.c("NearbyPromotionPopup: ADV窗口正在显示");
-        } else if (CommunityManager.f19086a.a().n()) {
+        } else if (CommunityManager.a.a().n()) {
             LogUtils.c("NearbyPromotionPopup: ADV窗口显示过了");
         } else {
             int i = AppInfo.l / 2;
@@ -1686,7 +1682,7 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
                     if (i2 < bluedADExtra.show_url.length) {
                         String lowerCase = bluedADExtra.show_url[i2].toLowerCase();
                         if (lowerCase.startsWith(BluedHttpUrl.q())) {
-                            Map<String, String> a2 = BluedHttpTools.a();
+                            Map a2 = BluedHttpTools.a();
                             a2.put("is_cache", "1");
                             bluedADExtra.show_url[i2] = HttpUtils.a(a2, lowerCase);
                         }
@@ -1695,10 +1691,10 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
                 }
             }
         }
-        if (BluedPreferences.E() && AdTestManager.f34713a.a()) {
-            AdTestManager.f34713a.b().a(this.b);
+        if (BluedPreferences.E() && AdTestManager.f21022a.a()) {
+            AdTestManager.f21022a.b().a(this.b);
         }
-        this.b.a(getFragmentActive(), shortEntranceExtra.ads, new BannerADView.ADListener() { // from class: com.soft.blued.ui.find.fragment.NearbyPeopleFragment.51
+        this.b.a((IRequestHost) getFragmentActive(), shortEntranceExtra.ads, new BannerADView.ADListener() { // from class: com.soft.blued.ui.find.fragment.NearbyPeopleFragment.51
             @Override // com.soft.blued.customview.BannerADView.ADListener
             public void a() {
                 Log.v("drb", "广告关闭回调 onClose");
@@ -1738,7 +1734,7 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
             }
             i = i2 + 1;
         }
-        if (userFindExtra.position >= 0 && this.n.getData().size() > userFindExtra.position && (!userFindExtra.isInsert || j().n == 1)) {
+        if (userFindExtra.position >= 0 && this.n.getData().size() > userFindExtra.position && (!userFindExtra.isInsert || ((NearbyPeoplePresenter) j()).n == 1)) {
             this.n.addData(userFindExtra.position, userFindExtra);
         }
         this.n.notifyDataSetChanged();
@@ -1758,7 +1754,7 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
             } else {
                 this.tvCashOutBtn.setTextColor(Color.parseColor("#7D7D7D"));
             }
-            this.tvCashOutBtn.setOnClickListener(null);
+            this.tvCashOutBtn.setOnClickListener((View.OnClickListener) null);
             if (BluedPreferences.cK()) {
                 String string = this.k.getString(R.string.already_obtained_money);
                 this.tvRedPackGuideTitle.setText(Html.fromHtml(String.format(string, appConfigModel.sign_money_total + "")));
@@ -1799,7 +1795,7 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
             layoutParams2.height = DensityUtils.a(this.k, 72.0f);
             this.clRedPackGuide.setLayoutParams(layoutParams2);
             this.tvCashOutBtn.getBackground().setAlpha(100);
-            this.tvCashOutBtn.setOnClickListener(null);
+            this.tvCashOutBtn.setOnClickListener((View.OnClickListener) null);
             this.tvRedPackGuideSubtitle.setText(Html.fromHtml(String.format(this.k.getString(R.string.get_money), appConfigModel.sign_money_total)));
             this.tvCashOutBtn.setText(this.k.getString(R.string.cash_out_now_btn));
             this.tvCashOutBtn.getBackground().setAlpha(255);
@@ -1841,17 +1837,17 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
 
     /* JADX INFO: Access modifiers changed from: private */
     public void a(String str, int i) {
-        if (j().e("people")) {
+        if (((NearbyPeoplePresenter) j()).e("people")) {
             return;
         }
-        EventTrackGuy.a(GuyProtos.Event.NEARBY_FRIEND_SORT_CLICK, EventTrackGuy.c(j().j), MapFindManager.a().b());
+        EventTrackGuy.a(GuyProtos.Event.NEARBY_FRIEND_SORT_CLICK, EventTrackGuy.c(((NearbyPeoplePresenter) j()).j), MapFindManager.a().b());
         this.P = 0;
         g(str);
         this.mRecyclerView.scrollToPosition(0);
-        if (UserFindResult.USER_SORT_BY.NEARBY.equals(j().j)) {
-            j().t();
+        if (UserFindResult.USER_SORT_BY.NEARBY.equals(((NearbyPeoplePresenter) j()).j)) {
+            ((NearbyPeoplePresenter) j()).t();
         }
-        j().e();
+        ((NearbyPeoplePresenter) j()).e();
         if (this.mRefreshLayout.getState() == RefreshState.None) {
             c(true);
         }
@@ -1865,8 +1861,8 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
                 return nearbyModelInsertData.position < nearbyModelInsertData2.position ? -1 : 1;
             }
         });
-        if (BluedPreferences.E() && AdTestManager.f34713a.b().h() != -1) {
-            AdTestManager.f34713a.b().a((String) null);
+        if (BluedPreferences.E() && AdTestManager.f21022a.b().h() != -1) {
+            AdTestManager.f21022a.b().a((String) null);
         }
         int i = 0;
         while (true) {
@@ -1912,7 +1908,7 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
                 this.header.setBackgroundColor(BluedSkinUtils.a(this.k, 2131101796));
             } else {
                 this.refresh_view.a(this.w, true);
-                this.header.setBackground(null);
+                this.header.setBackground((Drawable) null);
             }
             ((NearbyHomeFragment) getParentFragment()).a(this.w, str, z);
             TwoFloorModel twoFloorModel2 = this.v;
@@ -1959,7 +1955,7 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
 
     /* JADX INFO: Access modifiers changed from: private */
     public String ae() {
-        return (!TextUtils.equals(j().j, UserFindResult.USER_SORT_BY.NEARBY) && TextUtils.equals(j().j, UserFindResult.USER_SORT_BY.ONLINE)) ? "home_online" : "home_nearby";
+        return (!TextUtils.equals(((NearbyPeoplePresenter) j()).j, UserFindResult.USER_SORT_BY.NEARBY) && TextUtils.equals(((NearbyPeoplePresenter) j()).j, UserFindResult.USER_SORT_BY.ONLINE)) ? "home_online" : "home_nearby";
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:15:0x006c, code lost:
@@ -2032,8 +2028,8 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
                     userFindExtra.operate_promotion = operateUserADExtra2;
                     userFindExtra.itemType = operateUserADExtra2.is_super_privilege_user == 1 ? 19 : 22;
                     userFindExtra.position = (operateUserADExtra2.is_super_privilege_user == 1 ? operateUserADExtra2.position : operateUserADExtra2.show_layer) - 1;
-                    userFindExtra.show_url = operateUserADExtra2.show_url;
-                    userFindExtra.click_url = operateUserADExtra2.click_url;
+                    ((UserFindExtra) userFindExtra).show_url = operateUserADExtra2.show_url;
+                    ((UserFindExtra) userFindExtra).click_url = operateUserADExtra2.click_url;
                     userFindExtra.size = operateUserADExtra2.is_super_privilege_user == 1 ? 1 : 3;
                     NearbyModelInsertData nearbyModelInsertData = new NearbyModelInsertData();
                     nearbyModelInsertData.nearby_dating = userFindExtra;
@@ -2087,7 +2083,7 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
                 i3++;
             }
         }
-        int ceil = (int) Math.ceil(i2 / j().l);
+        int ceil = (int) Math.ceil(i2 / ((NearbyPeoplePresenter) j()).l);
         if (z && userFindResult.show_url != null && userFindResult.show_url.length > 0) {
             int i5 = 0;
             while (true) {
@@ -2097,7 +2093,7 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
                 }
                 String lowerCase = userFindResult.show_url[i6].toLowerCase();
                 if (lowerCase.startsWith(BluedHttpUrl.q())) {
-                    Map<String, String> a2 = BluedHttpTools.a();
+                    Map a2 = BluedHttpTools.a();
                     a2.put("is_cache", "1");
                     userFindResult.show_url[i6] = HttpUtils.a(a2, lowerCase);
                 }
@@ -2109,11 +2105,11 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
         int i7 = getResources().getDisplayMetrics().widthPixels;
         int round = Math.round(i7 / 4.0f);
         HashMap hashMap = new HashMap();
-        hashMap.put(ATAdConst.KEY.AD_WIDTH, Integer.valueOf(i7));
-        hashMap.put(ATAdConst.KEY.AD_HEIGHT, Integer.valueOf(round));
+        hashMap.put("key_width", Integer.valueOf(i7));
+        hashMap.put("key_height", Integer.valueOf(round));
         aTBannerView.setLocalExtra(hashMap);
         if (i <= ceil + i3) {
-            int i8 = ((i - 1) * j().l) + this.m.m;
+            int i8 = ((i - 1) * ((NearbyPeoplePresenter) j()).l) + this.m.m;
             int i9 = i8;
             if (this.m.m > 0) {
                 i9 = i8 - (this.m.m * 3);
@@ -2138,7 +2134,7 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
             }
             NearbyModelInsertData nearbyModelInsertData = list.get(i2);
             if (nearbyModelInsertData.adms != null) {
-                nearbyModelInsertData.position = ((nearbyModelInsertData.adms.line - 1) * j().l) + this.m.m;
+                nearbyModelInsertData.position = ((nearbyModelInsertData.adms.line - 1) * ((NearbyPeoplePresenter) j()).l) + this.m.m;
             } else if (nearbyModelInsertData.adms_operating != null) {
                 nearbyModelInsertData.position = b(nearbyModelInsertData.adms_operating);
             } else if (nearbyModelInsertData.super_call != null) {
@@ -2179,9 +2175,9 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
     private void b(boolean z) {
         for (TabHolder tabHolder : this.B) {
             if (((tabHolder.layoutSortTab.getTag() instanceof Boolean) && ((Boolean) tabHolder.layoutSortTab.getTag()).booleanValue()) || z) {
-                ShapeHelper.a((ShapeHelper.ShapeView) tabHolder.tvSortTab, 2131102263);
+                ShapeHelper.a(tabHolder.tvSortTab, 2131102263);
                 tabHolder.tvSortTab.setTextSize(15.0f);
-                tabHolder.ivSortTab.setImageDrawable(BluedSkinUtils.b(this.k, R.drawable.icon_nearby_arrow1));
+                tabHolder.ivSortTab.setImageDrawable(BluedSkinUtils.b(this.k, (int) R.drawable.icon_nearby_arrow1));
                 tabHolder.layoutSortTab.setTag(false);
             }
         }
@@ -2225,16 +2221,16 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
                 if (operateUserADExtra != null) {
                     OperateUserADExtra userFindExtra = new UserFindExtra();
                     if (operateUserADExtra.is_super_privilege_user == 1) {
-                        operateUserADExtra.distanceStr = DistanceUtils.a(operateUserADExtra.distance, BlueAppLocal.c(), false);
-                        operateUserADExtra.last_operate_time_stamp = operateUserADExtra.last_operate;
-                        operateUserADExtra.last_operate_str = TimeAndDateUtils.a(this.k, TimeAndDateUtils.c(operateUserADExtra.last_operate));
+                        ((UserFindExtra) operateUserADExtra).distanceStr = DistanceUtils.a(((UserFindExtra) operateUserADExtra).distance, BlueAppLocal.c(), false);
+                        ((UserFindExtra) operateUserADExtra).last_operate_time_stamp = ((UserFindExtra) operateUserADExtra).last_operate;
+                        ((UserFindExtra) operateUserADExtra).last_operate_str = TimeAndDateUtils.a(this.k, TimeAndDateUtils.c(((UserFindExtra) operateUserADExtra).last_operate));
                         userFindExtra = operateUserADExtra;
                     }
                     userFindExtra.operate_promotion = operateUserADExtra;
                     userFindExtra.itemType = operateUserADExtra.is_super_privilege_user == 1 ? 19 : 22;
                     userFindExtra.position = (operateUserADExtra.is_super_privilege_user == 1 ? operateUserADExtra.position : operateUserADExtra.show_layer) - 1;
-                    userFindExtra.show_url = operateUserADExtra.show_url;
-                    userFindExtra.click_url = operateUserADExtra.click_url;
+                    ((UserFindExtra) userFindExtra).show_url = operateUserADExtra.show_url;
+                    ((UserFindExtra) userFindExtra).click_url = operateUserADExtra.click_url;
                     userFindExtra.size = operateUserADExtra.is_super_privilege_user == 1 ? 1 : 3;
                     NearbyModelInsertData nearbyModelInsertData = new NearbyModelInsertData();
                     nearbyModelInsertData.super_call = userFindExtra;
@@ -2249,7 +2245,7 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
 
     private void c(UserFindExtra userFindExtra) {
         userFindExtra.insertGridPosition = b(userFindExtra);
-        if (userFindExtra.insertGridPosition >= 0 && this.m.getData().size() > userFindExtra.insertGridPosition && (!userFindExtra.isInsert || j().n == 1)) {
+        if (userFindExtra.insertGridPosition >= 0 && this.m.getData().size() > userFindExtra.insertGridPosition && (!userFindExtra.isInsert || ((NearbyPeoplePresenter) j()).n == 1)) {
             this.m.addData(userFindExtra.insertGridPosition, userFindExtra);
         }
         this.m.notifyDataSetChanged();
@@ -2338,14 +2334,14 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
     }
 
     private void g(String str) {
-        j().j = str;
-        j().j = str;
+        ((NearbyPeoplePresenter) j()).j = str;
+        ((NearbyPeoplePresenter) j()).j = str;
         if (TextUtils.isEmpty(str)) {
-            j().j = BluedConfig.a().b().default_home_tabs;
+            ((NearbyPeoplePresenter) j()).j = BluedConfig.a().b().default_home_tabs;
         }
-        this.n.b(j().j);
-        this.m.b(j().j);
-        BluedPreferences.A(j().j);
+        this.n.b(((NearbyPeoplePresenter) j()).j);
+        this.m.b(((NearbyPeoplePresenter) j()).j);
+        BluedPreferences.A(((NearbyPeoplePresenter) j()).j);
         int size = this.C.size();
         int i = this.s;
         if (size > i) {
@@ -2407,22 +2403,22 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
 
     public void A() {
         if (this.mRecommendViewMixedInNearby != null) {
-            if (j().t == null) {
+            if (((NearbyPeoplePresenter) j()).t == null) {
                 this.mRecommendViewMixedInNearby.a();
                 return;
             }
-            if (j().t.hasData()) {
-                this.mRecommendViewMixedInNearby.setMakeFriendRecommend(j().t.data);
+            if (((NearbyPeoplePresenter) j()).t.hasData()) {
+                this.mRecommendViewMixedInNearby.setMakeFriendRecommend(((NearbyPeoplePresenter) j()).t.data);
             } else {
-                this.mRecommendViewMixedInNearby.setMakeFriendRecommendNoData(j().t.extra);
+                this.mRecommendViewMixedInNearby.setMakeFriendRecommendNoData((FindRecommendExtra) ((NearbyPeoplePresenter) j()).t.extra);
             }
-            this.mRecommendViewMixedInNearby.setMakeFriendRecommendExtra(j().t.extra);
-            CallHelloManager.a().a(getContext(), getFragmentActive(), this.mRecommendViewMixedInNearby.getFromPage(), (CallHelloManager.ToOpenListener) null);
+            this.mRecommendViewMixedInNearby.setMakeFriendRecommendExtra((FindRecommendExtra) ((NearbyPeoplePresenter) j()).t.extra);
+            CallHelloManager.a().a(getContext(), (IRequestHost) getFragmentActive(), this.mRecommendViewMixedInNearby.getFromPage(), (CallHelloManager.ToOpenListener) null);
         }
     }
 
     public void B() {
-        if (this.mRecommendViewMixedInNearby == null || j().n != 1) {
+        if (this.mRecommendViewMixedInNearby == null || ((NearbyPeoplePresenter) j()).n != 1) {
             return;
         }
         this.mRecommendViewMixedInNearby.d();
@@ -2441,7 +2437,7 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
     }
 
     public void D() {
-        if (j().e("people")) {
+        if (((NearbyPeoplePresenter) j()).e("people")) {
             return;
         }
         RecyclerView recyclerView = this.mRecyclerView;
@@ -2449,10 +2445,10 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
             recyclerView.scrollToPosition(0);
         }
         if (PermissionUtils.a()) {
-            if (UserFindResult.USER_SORT_BY.NEARBY.equals(j().j)) {
-                j().t();
+            if (UserFindResult.USER_SORT_BY.NEARBY.equals(((NearbyPeoplePresenter) j()).j)) {
+                ((NearbyPeoplePresenter) j()).t();
             }
-            j().e();
+            ((NearbyPeoplePresenter) j()).e();
             SmartRefreshLayout smartRefreshLayout = this.mRefreshLayout;
             if (smartRefreshLayout != null && smartRefreshLayout.getState() == RefreshState.None) {
                 c(true);
@@ -2504,18 +2500,17 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public void a(Bundle bundle) {
         super.a(bundle);
-        if (CommunityManager.f19086a.a().i()) {
-            CommunityManager.f19086a.a().d(false);
+        if (CommunityManager.a.a().i()) {
+            CommunityManager.a.a().d(false);
         }
         this.k = getActivity();
         if (BluedPreferences.E()) {
-            AdTestManager.f34713a.b().a(this);
+            AdTestManager.f21022a.b().a(this);
         }
         this.t = false;
-        j().m = 0;
+        ((NearbyPeoplePresenter) j()).m = 0;
         J();
         I();
         M();
@@ -2523,32 +2518,32 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
         N();
         O();
         W();
-        g(j().j);
-        a(Integer.valueOf(j().k));
+        g(((NearbyPeoplePresenter) j()).j);
+        a(Integer.valueOf(((NearbyPeoplePresenter) j()).k));
         postSafeRunOnUiThread(new Runnable() { // from class: com.soft.blued.ui.find.fragment.NearbyPeopleFragment.1
             @Override // java.lang.Runnable
             public void run() {
                 if (NearbyPeopleFragment.this.u) {
                     return;
                 }
-                NearbyPeopleFragment.this.mRefreshLayout.b(NearbyPeopleFragment.this.header);
+                NearbyPeopleFragment.this.mRefreshLayout.b((RefreshHeader) NearbyPeopleFragment.this.header);
                 NearbyPeopleFragment.this.u = true;
             }
         });
         aa();
-        if (j().n == 1 && !j().o) {
-            j().o();
+        if (((NearbyPeoplePresenter) j()).n == 1 && !((NearbyPeoplePresenter) j()).o) {
+            ((NearbyPeoplePresenter) j()).o();
         }
-        j().o = false;
+        ((NearbyPeoplePresenter) j()).o = false;
         RelativeLayout relativeLayout = this.rl_location_root;
         if (relativeLayout != null && relativeLayout.getVisibility() == 0) {
             this.rl_location_root.setBackgroundColor(BluedSkinUtils.a(getContext(), 2131101796));
         }
-        if (j().r != null) {
-            a(j().r);
-            j().r = null;
+        if (((NearbyPeoplePresenter) j()).r != null) {
+            a(((NearbyPeoplePresenter) j()).r);
+            ((NearbyPeoplePresenter) j()).r = null;
         }
-        j().a(true);
+        ((NearbyPeoplePresenter) j()).a(true);
         try {
             String e = AesCrypto.e("RUWuOMHXFQFVVJY+qrweSxn5fddG9vUeHNPKtjeZWzgBDg==");
             Log.e("XFM", "registerTime: " + e);
@@ -2585,8 +2580,8 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
         if (findDataExtra != null) {
             ((NearbyPeoplePresenter) j()).q().next_min_dist = findDataExtra.next_min_dist;
             ((NearbyPeoplePresenter) j()).q().next_skip_uid = findDataExtra.next_skip_uid;
-            List<NearbyModelInsertData> arrayList = new ArrayList<>();
-            List<NearbyModelInsertData> arrayList2 = new ArrayList<>();
+            ArrayList arrayList = new ArrayList();
+            ArrayList arrayList2 = new ArrayList();
             if (findDataExtra.adms_user != null && findDataExtra.adms_user.size() > 0) {
                 int i = 0;
                 while (true) {
@@ -2711,11 +2706,11 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
                 nearbyChatRoomModel.room_data = new ArrayList<>();
             }
             this.nearbyChatRoomHostView.setText(nearbyChatRoomModel.text);
-            this.nearbyChatRoomHostView.a(nearbyChatRoomModel, this);
+            this.nearbyChatRoomHostView.a(nearbyChatRoomModel, (BaseFragment) this);
         } else {
             this.nearbyChatRoomHostView.setVisibility(8);
             this.nearbyChatRoomView.setVisibility(0);
-            if (this.f30454c) {
+            if (this.f16764c) {
                 this.nearbyChatRoomView.a();
             } else {
                 this.nearbyChatRoomView.b();
@@ -2803,11 +2798,9 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
                             NearbyPeopleFragment.this.llGuideAnimation.setPadding(i, i2, 0, 0);
                             Log.e("xfm", "run: -------> " + i);
                             ImageLoader.c(NearbyPeopleFragment.this.getFragmentActive(), "icon_red_pack_get_animation.png").f().g(1).a(new ImageLoader.OnAnimationStateListener() { // from class: com.soft.blued.ui.find.fragment.NearbyPeopleFragment.26.1
-                                @Override // com.blued.android.core.image.ImageLoader.OnAnimationStateListener
                                 public void a() {
                                 }
 
-                                @Override // com.blued.android.core.image.ImageLoader.OnAnimationStateListener
                                 public void b() {
                                     LiveEventBus.get(EventBusConstant.KEY_EVENT_SHOW_GOLD_ANIMAITON).post(true);
                                     if (NearbyPeopleFragment.this.llGuideAnimation != null) {
@@ -2859,7 +2852,7 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
         }
         if (num.intValue() == 0) {
             this.mRecyclerView.setAdapter(this.m);
-            new NearbyGridLayoutManager(this.k, j().l);
+            new NearbyGridLayoutManager(this.k, ((NearbyPeoplePresenter) j()).l);
             this.m.notifyDataSetChanged();
             this.mRecyclerView.setLayoutManager(new SpannedGridLayoutManager(new SpannedGridLayoutManager.GridSpanLookup() { // from class: com.soft.blued.ui.find.fragment.NearbyPeopleFragment.34
                 @Override // com.soft.blued.ui.find.manager.SpannedGridLayoutManager.GridSpanLookup
@@ -2869,7 +2862,7 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
                     int i3 = 1;
                     if (NearbyPeopleFragment.this.m != null && NearbyPeopleFragment.this.m.getItem(i) != 0 && (itemViewType = NearbyPeopleFragment.this.m.getItemViewType(i)) != 10) {
                         if (itemViewType == 11 || itemViewType == 17) {
-                            i2 = NearbyPeopleFragment.this.j().l;
+                            i2 = ((NearbyPeoplePresenter) NearbyPeopleFragment.this.j()).l;
                         } else {
                             if (itemViewType != 22 && itemViewType != 19 && itemViewType != 20) {
                                 switch (itemViewType) {
@@ -2879,7 +2872,7 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
                                     case 26:
                                         break;
                                     default:
-                                        i2 = NearbyPeopleFragment.this.j().l;
+                                        i2 = ((NearbyPeoplePresenter) NearbyPeopleFragment.this.j()).l;
                                         break;
                                 }
                             }
@@ -2891,9 +2884,9 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
                     i2 = 1;
                     return new SpannedGridLayoutManager.SpanInfo(i2, i3);
                 }
-            }, j().l, 1.0f));
+            }, ((NearbyPeoplePresenter) j()).l, 1.0f));
             this.m.notifyDataSetChanged();
-            j().q().if_grid = true;
+            ((NearbyPeoplePresenter) j()).q().if_grid = true;
             ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) this.mRecyclerView.getLayoutParams();
             marginLayoutParams.leftMargin = DisplayUtil.a(this.k, 12.0f);
             marginLayoutParams.rightMargin = DisplayUtil.a(this.k, 6.0f);
@@ -2910,7 +2903,7 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
             });
             this.mRecyclerView.setLayoutManager(nearbyGridLayoutManager);
             this.n.notifyDataSetChanged();
-            j().q().if_grid = false;
+            ((NearbyPeoplePresenter) j()).q().if_grid = false;
             ViewGroup.MarginLayoutParams marginLayoutParams2 = (ViewGroup.MarginLayoutParams) this.mRecyclerView.getLayoutParams();
             marginLayoutParams2.leftMargin = DisplayUtil.a(this.k, 0.0f);
             marginLayoutParams2.rightMargin = DisplayUtil.a(this.k, 0.0f);
@@ -2918,10 +2911,9 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
             this.n.c();
             this.m.g();
         }
-        j().c(num.intValue());
+        ((NearbyPeoplePresenter) j()).c(num.intValue());
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void a(String str, boolean z) {
         super.a(str, z);
         if (TextUtils.equals(str, "_load_type_refresh_")) {
@@ -2967,8 +2959,8 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
                 this.noDataAndLoadFailView.d();
             }
             e();
-            j().m--;
-            if (j().m == 0) {
+            ((NearbyPeoplePresenter) j()).m--;
+            if (((NearbyPeoplePresenter) j()).m == 0) {
                 c(false);
             }
             this.mRefreshLayout.j();
@@ -2978,14 +2970,13 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
     }
 
     public void a(List<UserFindResult> list) {
-        if (j().n == 1) {
+        if (((NearbyPeoplePresenter) j()).n == 1) {
             c(list);
         } else {
             d(list);
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public void af_() {
         PeopleListQuickAdapter peopleListQuickAdapter = this.n;
         if (peopleListQuickAdapter != null) {
@@ -3138,14 +3129,14 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
         postSafeRunOnUiThread(new Runnable() { // from class: com.soft.blued.ui.find.fragment.NearbyPeopleFragment.36
             @Override // java.lang.Runnable
             public void run() {
-                if (NearbyPeopleFragment.this.j().r() && NearbyPeopleFragment.this.m != null) {
+                if (((NearbyPeoplePresenter) NearbyPeopleFragment.this.j()).r() && NearbyPeopleFragment.this.m != null) {
                     NearbyPeopleFragment.this.m.b(NearbyPeopleFragment.this.l);
                     if (NearbyPeopleFragment.this.l && NearbyPeopleFragment.this.z) {
                         NearbyPeopleFragment.this.m.c();
                     } else {
                         NearbyPeopleFragment.this.m.g();
                     }
-                } else if (NearbyPeopleFragment.this.j().r() || NearbyPeopleFragment.this.n == null) {
+                } else if (((NearbyPeoplePresenter) NearbyPeopleFragment.this.j()).r() || NearbyPeopleFragment.this.n == null) {
                 } else {
                     NearbyPeopleFragment.this.n.b(NearbyPeopleFragment.this.l);
                     if (NearbyPeopleFragment.this.l && NearbyPeopleFragment.this.z) {
@@ -3165,26 +3156,23 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
         }
         this.s = i;
         g(str);
-        if (UserFindResult.USER_SORT_BY.NEARBY.equals(j().j)) {
-            j().t();
+        if (UserFindResult.USER_SORT_BY.NEARBY.equals(((NearbyPeoplePresenter) j()).j)) {
+            ((NearbyPeoplePresenter) j()).t();
         }
         ab();
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public int g() {
         return R.layout.fragment_nearby_home;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment
     public String getSimpleRouterName() {
         return "A18";
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void l() {
         if (!PermissionUtils.a()) {
-            j().o();
+            ((NearbyPeoplePresenter) j()).o();
             NoDataAndLoadFailView noDataAndLoadFailView = this.locationNoDataView;
             if (noDataAndLoadFailView != null) {
                 noDataAndLoadFailView.a();
@@ -3192,7 +3180,7 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
             }
             return;
         }
-        j().t();
+        ((NearbyPeoplePresenter) j()).t();
         this.mRefreshLayout.i();
         NoDataAndLoadFailView noDataAndLoadFailView2 = this.locationNoDataView;
         if (noDataAndLoadFailView2 != null) {
@@ -3200,7 +3188,6 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void o() {
         super.o();
         this.m.setEnableLoadMore(true);
@@ -3213,14 +3200,13 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
         int id = view.getId();
         if (id == 2131369673) {
             EventTrackGuy.b(GuyProtos.Event.SEARCH_ALL_FRAME_CLICK);
-            TerminalActivity.d(getContext(), SearchGlobalFragment.class, null);
+            TerminalActivity.d(getContext(), SearchGlobalFragment.class, (Bundle) null);
         } else if (id != 2131370390) {
         } else {
             Z();
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
         HomeTabClick.b("find", this);
@@ -3237,14 +3223,13 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
             peopleListQuickAdapter.k();
         }
         if (BluedPreferences.E()) {
-            AdTestManager.f34713a.b().a((AdTestObserve) null);
+            AdTestManager.f21022a.b().a((AdTestObserve) null);
             if (this.b != null) {
-                AdTestManager.f34713a.b().b(this.b);
+                AdTestManager.f21022a.b().b(this.b);
             }
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onPause() {
         super.onPause();
         this.z = false;
@@ -3264,7 +3249,6 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onResume() {
         super.onResume();
         this.z = true;
@@ -3281,49 +3265,43 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
         G();
         e();
         AppUtils.a(this.appbar);
-        AppUtils.a(this.header);
+        AppUtils.a((View) this.header);
         AppUtils.a(this.nearbyChatRoomView);
         AppUtils.a(this.nearbyChatRoomHostView);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onStart() {
         super.onStart();
         M();
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onStop() {
         PeopleListQuickAdapter peopleListQuickAdapter;
         PeopleGridQuickAdapter peopleGridQuickAdapter;
         super.onStop();
         L();
-        if (j().r() && (peopleGridQuickAdapter = this.m) != null) {
-            peopleGridQuickAdapter.c(j().j);
-        } else if (j().r() || (peopleListQuickAdapter = this.n) == null) {
+        if (((NearbyPeoplePresenter) j()).r() && (peopleGridQuickAdapter = this.m) != null) {
+            peopleGridQuickAdapter.c(((NearbyPeoplePresenter) j()).j);
+        } else if (((NearbyPeoplePresenter) j()).r() || (peopleListQuickAdapter = this.n) == null) {
         } else {
-            peopleListQuickAdapter.c(j().j);
+            peopleListQuickAdapter.c(((NearbyPeoplePresenter) j()).j);
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void p() {
         super.p();
         this.m.setEnableLoadMore(false);
         this.n.setEnableLoadMore(false);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public boolean q() {
         return true;
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public boolean r() {
         return true;
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void setUserVisibleHint(boolean z) {
         super.setUserVisibleHint(z);
         this.l = z;
@@ -3357,26 +3335,26 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
         if (size > i) {
             TabHolder tabHolder = this.B.get(i);
             b(false);
-            ShapeHelper.a((ShapeHelper.ShapeView) tabHolder.tvSortTab, 2131102254);
+            ShapeHelper.a(tabHolder.tvSortTab, 2131102254);
             tabHolder.tvSortTab.setTextSize(17.0f);
-            tabHolder.ivSortTab.setImageDrawable(BluedSkinUtils.b(this.k, R.drawable.icon_nearby_arrow2));
+            tabHolder.ivSortTab.setImageDrawable(BluedSkinUtils.b(this.k, (int) R.drawable.icon_nearby_arrow2));
             tabHolder.layoutSortTab.setTag(true);
         }
     }
 
     public void x() {
         if (this.z) {
-            if (!j().h) {
+            if (!((NearbyPeoplePresenter) j()).h) {
                 AdFloatObserver.a().b();
                 return;
             }
-            AdvertFloatFragment.a(this.k, j().i, ADConstants.AD_POSITION.NEARBY_FLOAT_AD);
-            j().h = false;
+            AdvertFloatFragment.a(this.k, ((NearbyPeoplePresenter) j()).i, ADConstants.AD_POSITION.NEARBY_FLOAT_AD);
+            ((NearbyPeoplePresenter) j()).h = false;
         }
     }
 
     public void y() {
-        if (j().s()) {
+        if (((NearbyPeoplePresenter) j()).s()) {
             EventTrackGuy.a(GuyProtos.Event.NEARBY_FRIEND_LIST_BTN_CLICK, GuyProtos.ShowType.PALACE_SHOW);
             a((Integer) 0);
             return;
@@ -3386,7 +3364,7 @@ public class NearbyPeopleFragment extends MvpFragment<NearbyPeoplePresenter> imp
     }
 
     public void z() {
-        if (j().n == 1) {
+        if (((NearbyPeoplePresenter) j()).n == 1) {
             c((List<UserFindResult>) null);
         }
     }

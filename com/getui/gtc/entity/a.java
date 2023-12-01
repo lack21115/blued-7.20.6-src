@@ -13,30 +13,30 @@ import org.json.JSONObject;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public SparseArray<C0351a> f22001a = new SparseArray<>();
+    public SparseArray<C0181a> f8394a = new SparseArray<>();
     private String b;
 
     /* renamed from: com.getui.gtc.entity.a$a  reason: collision with other inner class name */
     /* loaded from: source-8110460-dex2jar.jar:com/getui/gtc/entity/a$a.class */
-    public static final class C0351a implements Parcelable {
-        public static final Parcelable.Creator<C0351a> CREATOR = new Parcelable.Creator<C0351a>() { // from class: com.getui.gtc.entity.a.a.1
+    public static final class C0181a implements Parcelable {
+        public static final Parcelable.Creator<C0181a> CREATOR = new Parcelable.Creator<C0181a>() { // from class: com.getui.gtc.entity.a.a.1
             @Override // android.os.Parcelable.Creator
-            public final /* synthetic */ C0351a createFromParcel(Parcel parcel) {
-                return new C0351a(parcel);
+            public final /* synthetic */ C0181a createFromParcel(Parcel parcel) {
+                return new C0181a(parcel);
             }
 
             @Override // android.os.Parcelable.Creator
-            public final /* bridge */ /* synthetic */ C0351a[] newArray(int i) {
-                return new C0351a[i];
+            public final /* bridge */ /* synthetic */ C0181a[] newArray(int i) {
+                return new C0181a[i];
             }
         };
 
         /* renamed from: a  reason: collision with root package name */
-        public int f22002a;
+        public int f8395a;
         public String b;
 
         /* renamed from: c  reason: collision with root package name */
-        public String f22003c;
+        public String f8396c;
         public String d;
         public String e;
         public String f;
@@ -45,13 +45,13 @@ public final class a {
         public boolean i;
         public boolean j;
 
-        public C0351a() {
+        public C0181a() {
         }
 
-        protected C0351a(Parcel parcel) {
-            this.f22002a = parcel.readInt();
+        protected C0181a(Parcel parcel) {
+            this.f8395a = parcel.readInt();
             this.b = parcel.readString();
-            this.f22003c = parcel.readString();
+            this.f8396c = parcel.readString();
             this.d = parcel.readString();
             this.e = parcel.readString();
             this.f = parcel.readString();
@@ -64,9 +64,9 @@ public final class a {
         public final String a() {
             JSONObject jSONObject = new JSONObject();
             try {
-                jSONObject.put("id", this.f22002a);
+                jSONObject.put("id", this.f8395a);
                 jSONObject.put("version", this.b);
-                jSONObject.put("name", this.f22003c);
+                jSONObject.put("name", this.f8396c);
                 jSONObject.put("cls_name", this.d);
                 jSONObject.put("url", this.h);
                 jSONObject.put("isdestroy", this.i);
@@ -86,9 +86,9 @@ public final class a {
 
         @Override // android.os.Parcelable
         public final void writeToParcel(Parcel parcel, int i) {
-            parcel.writeInt(this.f22002a);
+            parcel.writeInt(this.f8395a);
             parcel.writeString(this.b);
-            parcel.writeString(this.f22003c);
+            parcel.writeString(this.f8396c);
             parcel.writeString(this.d);
             parcel.writeString(this.e);
             parcel.writeString(this.f);
@@ -119,16 +119,16 @@ public final class a {
                         break;
                     }
                     JSONObject jSONObject2 = jSONArray.getJSONObject(i2);
-                    C0351a c0351a = new C0351a();
-                    c0351a.f22002a = jSONObject2.getInt("id");
-                    c0351a.b = jSONObject2.getString("version");
-                    c0351a.f22003c = jSONObject2.getString("name");
-                    c0351a.d = jSONObject2.getString("cls_name");
-                    c0351a.h = jSONObject2.getString("url");
-                    c0351a.e = jSONObject2.getString("checksum");
-                    c0351a.f = jSONObject2.getString("key");
+                    C0181a c0181a = new C0181a();
+                    c0181a.f8395a = jSONObject2.getInt("id");
+                    c0181a.b = jSONObject2.getString("version");
+                    c0181a.f8396c = jSONObject2.getString("name");
+                    c0181a.d = jSONObject2.getString("cls_name");
+                    c0181a.h = jSONObject2.getString("url");
+                    c0181a.e = jSONObject2.getString("checksum");
+                    c0181a.f = jSONObject2.getString("key");
                     if (jSONObject2.has("isdestroy")) {
-                        c0351a.i = jSONObject2.getBoolean("isdestroy");
+                        c0181a.i = jSONObject2.getBoolean("isdestroy");
                     }
                     if (jSONObject2.has("effective")) {
                         long j = 0;
@@ -137,9 +137,9 @@ public final class a {
                         } catch (Exception e) {
                             com.getui.gtc.i.c.a.b(e);
                         }
-                        c0351a.g = j;
+                        c0181a.g = j;
                     }
-                    aVar2.f22001a.put(c0351a.f22002a, c0351a);
+                    aVar2.f8394a.put(c0181a.f8395a, c0181a);
                     i = i2 + 1;
                 }
             }
@@ -158,7 +158,7 @@ public final class a {
                     break;
                 }
                 try {
-                    C0351a b = aVar.b(Integer.parseInt(split[i4]));
+                    C0181a b = aVar.b(Integer.parseInt(split[i4]));
                     if (b != null) {
                         b.j = true;
                     }
@@ -170,8 +170,8 @@ public final class a {
         return aVar;
     }
 
-    public final C0351a a(int i) {
-        SparseArray<C0351a> sparseArray = this.f22001a;
+    public final C0181a a(int i) {
+        SparseArray<C0181a> sparseArray = this.f8394a;
         return sparseArray.get(sparseArray.keyAt(i));
     }
 
@@ -181,14 +181,14 @@ public final class a {
             jSONObject.put("version", this.b);
             JSONArray jSONArray = new JSONArray();
             jSONObject.put(Contacts.People.Extensions.CONTENT_DIRECTORY, jSONArray);
-            int size = this.f22001a.size();
+            int size = this.f8394a.size();
             int i = 0;
             while (true) {
                 int i2 = i;
                 if (i2 >= size) {
                     break;
                 }
-                jSONArray.put(i2, new JSONObject(this.f22001a.get(this.f22001a.keyAt(i2)).a()));
+                jSONArray.put(i2, new JSONObject(this.f8394a.get(this.f8394a.keyAt(i2)).a()));
                 i = i2 + 1;
             }
         } catch (Exception e) {
@@ -197,11 +197,11 @@ public final class a {
         return jSONObject.toString();
     }
 
-    public final C0351a b(int i) {
-        return this.f22001a.get(i);
+    public final C0181a b(int i) {
+        return this.f8394a.get(i);
     }
 
     public final void c(int i) {
-        this.f22001a.removeAt(i);
+        this.f8394a.removeAt(i);
     }
 }

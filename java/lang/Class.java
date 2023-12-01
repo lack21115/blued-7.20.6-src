@@ -1,6 +1,7 @@
 package java.lang;
 
 import com.android.dex.Dex;
+import com.android.internal.telephony.RILConstants;
 import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import dalvik.system.VMStack;
 import java.io.InputStream;
@@ -963,7 +964,7 @@ public final class Class<T> implements Serializable, AnnotatedElement, GenericDe
             if ((modifiers & 512) != 0) {
                 i = modifiers & (-521);
             }
-            return i | 1040;
+            return i | RILConstants.RIL_UNSOL_HARDWARE_CONFIG_CHANGED;
         }
         return AnnotationAccess.getInnerClassFlags(this, this.accessFlags & 65535) & 65535;
     }

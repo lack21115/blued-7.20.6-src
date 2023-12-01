@@ -4,11 +4,11 @@ package com.anythink.expressad.foundation.g.f;
 public final class b implements l {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f7860a;
+    private int f5020a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final int f7861c;
+    private final int f5021c;
     private int d;
     private int e;
     private int f;
@@ -25,8 +25,8 @@ public final class b implements l {
         this.f = 0;
         this.g = 0;
         this.h = 0;
-        this.f7860a = 30000;
-        this.f7861c = 0;
+        this.f5020a = 30000;
+        this.f5021c = 0;
     }
 
     private b(int i, int i2, int i3, int i4, int i5) {
@@ -39,7 +39,7 @@ public final class b implements l {
         this.f = Math.max(i2, 0);
         this.g = Math.max(i3, 0);
         this.h = Math.max(i4, 0);
-        this.f7861c = Math.max(i5, 0);
+        this.f5021c = Math.max(i5, 0);
     }
 
     private b(int i, int i2, int i3, int i4, int i5, int i6) {
@@ -52,18 +52,18 @@ public final class b implements l {
         this.f = Math.max(i2, 0);
         this.g = Math.max(i3, 0);
         this.h = Math.max(i4, 0);
-        this.f7861c = Math.max(i5, 0);
+        this.f5021c = Math.max(i5, 0);
         this.d = i6;
     }
 
     @Override // com.anythink.expressad.foundation.g.f.l
     public final int a() {
-        return this.f7861c;
+        return this.f5021c;
     }
 
     @Override // com.anythink.expressad.foundation.g.f.l
     public final int b() {
-        return this.f7860a;
+        return this.f5020a;
     }
 
     @Override // com.anythink.expressad.foundation.g.f.l
@@ -75,7 +75,7 @@ public final class b implements l {
     public final boolean d() {
         int i = this.b + 1;
         this.b = i;
-        return i <= this.f7861c;
+        return i <= this.f5021c;
     }
 
     @Override // com.anythink.expressad.foundation.g.f.l

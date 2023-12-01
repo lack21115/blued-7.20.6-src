@@ -12,7 +12,7 @@ import java.util.Arrays;
 public class c extends d {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f23324a = c.class.getName();
+    public static final String f9716a = c.class.getName();
     public static int b = -1;
     private byte[] g;
 
@@ -32,14 +32,14 @@ public class c extends d {
 
     private static e a(com.igexin.push.c.c.a aVar) {
         e eVar = new e();
-        eVar.b = e.f23338a;
-        eVar.a(aVar.f23330c);
+        eVar.b = e.f9730a;
+        eVar.a(aVar.f9722c);
         eVar.f = aVar.b > 0 ? 1 : 0;
         eVar.d = 7;
-        eVar.f23339c = 11;
+        eVar.f9731c = 11;
         eVar.g = aVar.d;
-        eVar.f23339c += g.c().length;
-        if (aVar.f23329a <= 0) {
+        eVar.f9731c += g.c().length;
+        if (aVar.f9721a <= 0) {
             if (eVar.i == 0) {
                 eVar.p = 0;
             }
@@ -50,14 +50,14 @@ public class c extends d {
         eVar.r = (int) (System.currentTimeMillis() / 1000);
         eVar.o = g.a(aVar, eVar.q, eVar.r);
         eVar.p = eVar.o.length;
-        eVar.f23339c += eVar.p;
+        eVar.f9731c += eVar.p;
         com.igexin.c.a.b.e.c();
         return eVar;
     }
 
     private static Object a(h hVar, e eVar) throws Exception {
         if (eVar.i == 48) {
-            com.igexin.c.a.c.a.a(f23324a, "decodeAes, encryptType = 0x30, return");
+            com.igexin.c.a.c.a.a(f9716a, "decodeAes, encryptType = 0x30, return");
             return null;
         }
         byte b2 = (byte) b(hVar, 1);
@@ -86,7 +86,7 @@ public class c extends d {
         short a3 = com.igexin.c.a.b.g.a(a2, 8);
         int i = a2[10] & 255;
         com.igexin.push.c.c.a aVar2 = new com.igexin.push.c.c.a();
-        aVar2.f23329a = a3;
+        aVar2.f9721a = a3;
         aVar2.b = (byte) i;
         aVar2.f = eVar.d;
         aVar2.g = eVar.i;
@@ -98,7 +98,7 @@ public class c extends d {
                 if (i != 26) {
                     return null;
                 }
-                com.igexin.c.a.c.a.a(f23324a, "decodeAes, encryptType = 0x20, special");
+                com.igexin.c.a.c.a.a(f9716a, "decodeAes, encryptType = 0x20, special");
                 a4 = g.e(a4, com.igexin.c.a.b.g.b(c3));
             } else if (eVar.i != 0) {
                 byte b3 = eVar.i;
@@ -111,13 +111,13 @@ public class c extends d {
             }
             aVar2.a(a4);
             if (!Arrays.equals(eVar.o, g.a(aVar2, c2, c3))) {
-                com.igexin.c.a.c.a.a(f23324a, "decode signature error!!!!");
-                com.igexin.c.a.c.a.a(f23324a + "|decode signature error!!!!", new Object[0]);
+                com.igexin.c.a.c.a.a(f9716a, "decode signature error!!!!");
+                com.igexin.c.a.c.a.a(f9716a + "|decode signature error!!!!", new Object[0]);
                 return null;
             }
-        } else if (aVar2.f23329a < 0) {
-            com.igexin.c.a.c.a.a(f23324a, "data len < 0, error");
-            com.igexin.c.a.c.a.a(f23324a + "|data len < 0, error", new Object[0]);
+        } else if (aVar2.f9721a < 0) {
+            com.igexin.c.a.c.a.a(f9716a, "data len < 0, error");
+            com.igexin.c.a.c.a.a(f9716a + "|data len < 0, error", new Object[0]);
             return null;
         }
         return aVar2;
@@ -158,14 +158,14 @@ public class c extends d {
         short a3 = com.igexin.c.a.b.g.a(a2, 0);
         int i = a2[2] & 255;
         com.igexin.push.c.c.a aVar2 = new com.igexin.push.c.c.a();
-        aVar2.f23329a = a3;
+        aVar2.f9721a = a3;
         aVar2.b = (byte) i;
         aVar2.f = eVar.d;
         if (i != 26) {
-            com.igexin.c.a.c.a.a(f23324a, "decodeRC4, cmd != MsgFormatedReceive.COMMAND, return");
+            com.igexin.c.a.c.a.a(f9716a, "decodeRC4, cmd != MsgFormatedReceive.COMMAND, return");
             return null;
         }
-        if (aVar2.f23329a > 0) {
+        if (aVar2.f9721a > 0) {
             byte[] a4 = a(hVar, a3);
             byte[] bArr = a4;
             if (eVar.i == 48) {
@@ -217,8 +217,8 @@ public class c extends d {
         byte b2;
         h hVar = obj instanceof h ? (h) obj : null;
         if (hVar == null) {
-            com.igexin.c.a.c.a.a(f23324a, "syncIns is null");
-            com.igexin.c.a.c.a.a(f23324a + "|syncIns is null", new Object[0]);
+            com.igexin.c.a.c.a.a(f9716a, "syncIns is null");
+            com.igexin.c.a.c.a.a(f9716a + "|syncIns is null", new Object[0]);
             return null;
         }
         byte[] a2 = a(hVar, 8);
@@ -226,13 +226,13 @@ public class c extends d {
             return null;
         }
         e eVar = new e();
-        eVar.f23339c = a2[4] & 255;
+        eVar.f9731c = a2[4] & 255;
         eVar.d = a2[5] & 255;
         eVar.a(a2[6]);
         eVar.f = a2[7] & 255;
         if (eVar.d == 7) {
             if (eVar.i == 48) {
-                com.igexin.c.a.c.a.a(f23324a, "decodeAes, encryptType = 0x30, return");
+                com.igexin.c.a.c.a.a(f9716a, "decodeAes, encryptType = 0x30, return");
                 return null;
             }
             byte b3 = (byte) b(hVar, 1);
@@ -256,7 +256,7 @@ public class c extends d {
                 short a4 = com.igexin.c.a.b.g.a(a3, 8);
                 int i = a3[10] & 255;
                 com.igexin.push.c.c.a aVar2 = new com.igexin.push.c.c.a();
-                aVar2.f23329a = a4;
+                aVar2.f9721a = a4;
                 aVar2.b = (byte) i;
                 aVar2.f = eVar.d;
                 aVar2.g = eVar.i;
@@ -268,7 +268,7 @@ public class c extends d {
                         if (i != 26) {
                             return null;
                         }
-                        com.igexin.c.a.c.a.a(f23324a, "decodeAes, encryptType = 0x20, special");
+                        com.igexin.c.a.c.a.a(f9716a, "decodeAes, encryptType = 0x20, special");
                         a5 = g.e(a5, com.igexin.c.a.b.g.b(c3));
                     } else if (eVar.i != 0) {
                         byte b4 = eVar.i;
@@ -281,22 +281,22 @@ public class c extends d {
                     }
                     aVar2.a(a5);
                     if (!Arrays.equals(eVar.o, g.a(aVar2, c2, c3))) {
-                        com.igexin.c.a.c.a.a(f23324a, "decode signature error!!!!");
-                        com.igexin.c.a.c.a.a(f23324a + "|decode signature error!!!!", new Object[0]);
+                        com.igexin.c.a.c.a.a(f9716a, "decode signature error!!!!");
+                        com.igexin.c.a.c.a.a(f9716a + "|decode signature error!!!!", new Object[0]);
                         return null;
                     }
-                } else if (aVar2.f23329a < 0) {
-                    com.igexin.c.a.c.a.a(f23324a, "data len < 0, error");
-                    com.igexin.c.a.c.a.a(f23324a + "|data len < 0, error", new Object[0]);
+                } else if (aVar2.f9721a < 0) {
+                    com.igexin.c.a.c.a.a(f9716a, "data len < 0, error");
+                    com.igexin.c.a.c.a.a(f9716a + "|data len < 0, error", new Object[0]);
                     return null;
                 }
                 return aVar2;
             }
             aVar = new com.igexin.push.c.c.a();
         } else if (eVar.d != 1) {
-            String str = f23324a;
+            String str = f9716a;
             com.igexin.c.a.c.a.a(str, "server socket resp version = " + eVar.d + ", not support!!!");
-            com.igexin.c.a.c.a.a(f23324a + "|server socket resp version = " + eVar.d + ", not support !!!", new Object[0]);
+            com.igexin.c.a.c.a.a(f9716a + "|server socket resp version = " + eVar.d + ", not support !!!", new Object[0]);
             return null;
         } else {
             if (eVar.i == 48 && (b2 = (byte) b(hVar, 1)) > 0) {
@@ -307,14 +307,14 @@ public class c extends d {
                 short a7 = com.igexin.c.a.b.g.a(a6, 0);
                 int i2 = a6[2] & 255;
                 com.igexin.push.c.c.a aVar3 = new com.igexin.push.c.c.a();
-                aVar3.f23329a = a7;
+                aVar3.f9721a = a7;
                 aVar3.b = (byte) i2;
                 aVar3.f = eVar.d;
                 if (i2 != 26) {
-                    com.igexin.c.a.c.a.a(f23324a, "decodeRC4, cmd != MsgFormatedReceive.COMMAND, return");
+                    com.igexin.c.a.c.a.a(f9716a, "decodeRC4, cmd != MsgFormatedReceive.COMMAND, return");
                     return null;
                 }
-                if (aVar3.f23329a > 0) {
+                if (aVar3.f9721a > 0) {
                     byte[] a8 = a(hVar, a7);
                     byte[] bArr = a8;
                     if (eVar.i == 48) {

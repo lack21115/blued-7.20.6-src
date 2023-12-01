@@ -5,7 +5,6 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Build;
 import android.provider.DocumentsContract;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.io.File;
 
 /* loaded from: source-8829756-dex2jar.jar:com/zego/zegoavkit2/log/ZegoLogUtil.class */
@@ -180,11 +179,11 @@ public class ZegoLogUtil {
 
     public static String withAppendedPath(String str, String str2) {
         if (Build.VERSION.SDK_INT < 21) {
-            return str + BridgeUtil.SPLIT_MARK + str2;
+            return str + "/" + str2;
         }
         try {
             Uri parse = Uri.parse(str);
-            return DocumentsContract.buildDocumentUriUsingTree(parse, DocumentsContract.getDocumentId(parse) + BridgeUtil.SPLIT_MARK + str2).toString();
+            return DocumentsContract.buildDocumentUriUsingTree(parse, DocumentsContract.getDocumentId(parse) + "/" + str2).toString();
         } catch (Exception e) {
             return "";
         }

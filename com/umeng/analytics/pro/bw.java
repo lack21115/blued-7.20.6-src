@@ -4,7 +4,7 @@ package com.umeng.analytics.pro;
 public class bw extends Exception {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final long f40672a = 1;
+    private static final long f26981a = 1;
 
     public bw() {
     }

@@ -20,7 +20,6 @@ import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
-import com.sina.weibo.sdk.constant.WBPageConstants;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -32,13 +31,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/common/CommonRecyclerFragment.class */
 public abstract class CommonRecyclerFragment<T extends MultiItemEntity, S extends BluedEntityBaseExtra> extends SimpleFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    private CommonTopTitleNoTrans f19495a;
+    private CommonTopTitleNoTrans a;
     private SmartRefreshLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private RecyclerView f19496c;
+    private RecyclerView c;
     private CommonMultiItemAdapter<T> d;
     private NoDataAndLoadFailView e;
     private int f = 1;
@@ -67,20 +62,20 @@ public abstract class CommonRecyclerFragment<T extends MultiItemEntity, S extend
     }
 
     private final void q() {
-        this.f19495a = (CommonTopTitleNoTrans) this.rootView.findViewById(R.id.top_title);
+        this.a = (CommonTopTitleNoTrans) this.rootView.findViewById(R.id.top_title);
         if (!e()) {
-            CommonTopTitleNoTrans commonTopTitleNoTrans = this.f19495a;
+            CommonTopTitleNoTrans commonTopTitleNoTrans = this.a;
             if (commonTopTitleNoTrans == null) {
                 return;
             }
             commonTopTitleNoTrans.setVisibility(8);
             return;
         }
-        CommonTopTitleNoTrans commonTopTitleNoTrans2 = this.f19495a;
+        CommonTopTitleNoTrans commonTopTitleNoTrans2 = this.a;
         if (commonTopTitleNoTrans2 != null) {
             commonTopTitleNoTrans2.setCenterText(f());
         }
-        CommonTopTitleNoTrans commonTopTitleNoTrans3 = this.f19495a;
+        CommonTopTitleNoTrans commonTopTitleNoTrans3 = this.a;
         if (commonTopTitleNoTrans3 != null) {
             commonTopTitleNoTrans3.setLeftClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.common.-$$Lambda$CommonRecyclerFragment$DvqLmRIppGO842O2dEDiPBQvscA
                 @Override // android.view.View.OnClickListener
@@ -89,11 +84,11 @@ public abstract class CommonRecyclerFragment<T extends MultiItemEntity, S extend
                 }
             });
         }
-        CommonTopTitleNoTrans commonTopTitleNoTrans4 = this.f19495a;
+        CommonTopTitleNoTrans commonTopTitleNoTrans4 = this.a;
         if (commonTopTitleNoTrans4 != null) {
             commonTopTitleNoTrans4.f();
         }
-        CommonTopTitleNoTrans commonTopTitleNoTrans5 = this.f19495a;
+        CommonTopTitleNoTrans commonTopTitleNoTrans5 = this.a;
         if (commonTopTitleNoTrans5 == null) {
             return;
         }
@@ -129,14 +124,12 @@ public abstract class CommonRecyclerFragment<T extends MultiItemEntity, S extend
     protected BluedUIHttpResponse<BluedEntity<T, S>> b(int i) {
         final ActivityFragmentActive fragmentActive = getFragmentActive();
         BluedUIHttpResponse<BluedEntity<T, S>> bluedUIHttpResponse = (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntity<T, S>>(this, fragmentActive) { // from class: com.blued.community.ui.common.CommonRecyclerFragment$getHttpResponse$httpResponse$1
-
-            /* renamed from: a  reason: collision with root package name */
-            final /* synthetic */ CommonRecyclerFragment<T, S> f19497a;
+            final /* synthetic */ CommonRecyclerFragment<T, S> a;
             private boolean b;
 
             /* JADX INFO: Access modifiers changed from: package-private */
             {
-                this.f19497a = this;
+                this.a = this;
             }
 
             public final boolean a() {
@@ -152,13 +145,13 @@ public abstract class CommonRecyclerFragment<T extends MultiItemEntity, S extend
 
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
-                this.f19497a.o();
-                CommonMultiItemAdapter<T> a2 = this.f19497a.a();
-                if (a2 == null) {
+                this.a.o();
+                CommonMultiItemAdapter<T> a = this.a.a();
+                if (a == null) {
                     return;
                 }
-                CommonRecyclerFragment<T, S> commonRecyclerFragment = this.f19497a;
-                if (a2.getData().size() != 0) {
+                CommonRecyclerFragment<T, S> commonRecyclerFragment = this.a;
+                if (a.getData().size() != 0) {
                     commonRecyclerFragment.b(false);
                 } else if (a()) {
                     commonRecyclerFragment.p();
@@ -169,31 +162,31 @@ public abstract class CommonRecyclerFragment<T extends MultiItemEntity, S extend
 
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity<T, S> bluedEntity) {
-                CommonMultiItemAdapter<T> a2;
+                CommonMultiItemAdapter<T> a;
                 this.b = false;
                 Object data = getData();
                 if (data == null) {
                     throw new NullPointerException("null cannot be cast to non-null type kotlin.Int");
                 }
                 int intValue = ((Integer) data).intValue();
-                if (intValue == 1 && (a2 = this.f19497a.a()) != null) {
-                    a2.setDataAndNotify(new ArrayList());
+                if (intValue == 1 && (a = this.a.a()) != null) {
+                    a.setDataAndNotify(new ArrayList());
                 }
                 if (bluedEntity == null || !bluedEntity.hasData()) {
-                    this.f19497a.n();
+                    this.a.n();
                     return;
                 }
-                CommonMultiItemAdapter<T> a3 = this.f19497a.a();
-                if (a3 != null) {
-                    a3.addDataAndNotify(bluedEntity.data);
+                CommonMultiItemAdapter<T> a2 = this.a.a();
+                if (a2 != null) {
+                    a2.addDataAndNotify(bluedEntity.data);
                 }
-                this.f19497a.a(intValue);
-                if (this.f19497a.a(bluedEntity)) {
-                    this.f19497a.m();
+                this.a.a(intValue);
+                if (this.a.a(bluedEntity)) {
+                    this.a.m();
                 } else {
-                    this.f19497a.n();
+                    this.a.n();
                 }
-                this.f19497a.b(bluedEntity);
+                this.a.b(bluedEntity);
             }
         };
         bluedUIHttpResponse.setData(Integer.valueOf(i));
@@ -227,7 +220,7 @@ public abstract class CommonRecyclerFragment<T extends MultiItemEntity, S extend
     public Map<String, String> c(int i) {
         HashMap hashMap = new HashMap();
         hashMap.put("page_size", String.valueOf(this.g));
-        hashMap.put(WBPageConstants.ParamKey.PAGE, String.valueOf(i));
+        hashMap.put("page", String.valueOf(i));
         return hashMap;
     }
 
@@ -258,7 +251,7 @@ public abstract class CommonRecyclerFragment<T extends MultiItemEntity, S extend
     }
 
     protected void i() {
-        RecyclerView recyclerView = this.f19496c;
+        RecyclerView recyclerView = this.c;
         if (recyclerView == null) {
             return;
         }
@@ -277,7 +270,7 @@ public abstract class CommonRecyclerFragment<T extends MultiItemEntity, S extend
         if (smartRefreshLayout == null) {
             return;
         }
-        smartRefreshLayout.l(true);
+        smartRefreshLayout.b(true);
     }
 
     public void n() {
@@ -285,13 +278,13 @@ public abstract class CommonRecyclerFragment<T extends MultiItemEntity, S extend
         if (smartRefreshLayout == null) {
             return;
         }
-        smartRefreshLayout.l(false);
+        smartRefreshLayout.b(false);
     }
 
     public void o() {
         SmartRefreshLayout smartRefreshLayout = this.b;
         if (smartRefreshLayout != null) {
-            smartRefreshLayout.j();
+            smartRefreshLayout.g();
         }
         SmartRefreshLayout smartRefreshLayout2 = this.b;
         if (smartRefreshLayout2 != null) {
@@ -300,17 +293,15 @@ public abstract class CommonRecyclerFragment<T extends MultiItemEntity, S extend
         this.h.set(false);
     }
 
-    @Override // com.blued.android.framework.ui.SimpleFragment
     public void onInitView() {
         super.onInitView();
         q();
-        this.b = (SmartRefreshLayout) this.rootView.findViewById(R.id.refresh_layout);
-        this.f19496c = (RecyclerView) this.rootView.findViewById(R.id.recycler_view);
+        this.b = this.rootView.findViewById(R.id.refresh_layout);
+        this.c = this.rootView.findViewById(R.id.recycler_view);
         i();
         SmartRefreshLayout smartRefreshLayout = this.b;
         if (smartRefreshLayout != null) {
             smartRefreshLayout.a(new OnRefreshListener() { // from class: com.blued.community.ui.common.-$$Lambda$CommonRecyclerFragment$qK54NEfdHuvkT3LQyHq3n7U6fDE
-                @Override // com.scwang.smartrefresh.layout.listener.OnRefreshListener
                 public final void onRefresh(RefreshLayout refreshLayout) {
                     CommonRecyclerFragment.a(CommonRecyclerFragment.this, refreshLayout);
                 }
@@ -319,7 +310,6 @@ public abstract class CommonRecyclerFragment<T extends MultiItemEntity, S extend
         SmartRefreshLayout smartRefreshLayout2 = this.b;
         if (smartRefreshLayout2 != null) {
             smartRefreshLayout2.a(new OnLoadMoreListener() { // from class: com.blued.community.ui.common.-$$Lambda$CommonRecyclerFragment$M8uslSlNopHmuDZnDEUObdfZEdI
-                @Override // com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
                 public final void onLoadMore(RefreshLayout refreshLayout) {
                     CommonRecyclerFragment.b(CommonRecyclerFragment.this, refreshLayout);
                 }
@@ -331,15 +321,15 @@ public abstract class CommonRecyclerFragment<T extends MultiItemEntity, S extend
         }
         SmartRefreshLayout smartRefreshLayout4 = this.b;
         if (smartRefreshLayout4 != null) {
-            smartRefreshLayout4.l(true);
+            smartRefreshLayout4.b(true);
         }
         SmartRefreshLayout smartRefreshLayout5 = this.b;
         if (smartRefreshLayout5 != null) {
-            smartRefreshLayout5.k(true);
+            smartRefreshLayout5.d(true);
         }
-        CommonMultiItemAdapter<T> g = g();
+        RecyclerView.Adapter g = g();
         this.d = g;
-        RecyclerView recyclerView = this.f19496c;
+        RecyclerView recyclerView = this.c;
         if (recyclerView != null) {
             recyclerView.setAdapter(g);
         }
@@ -347,13 +337,13 @@ public abstract class CommonRecyclerFragment<T extends MultiItemEntity, S extend
         j();
         NoDataAndLoadFailView noDataAndLoadFailView = this.e;
         if (noDataAndLoadFailView != null) {
+            CommonMultiItemAdapter<T> a = a();
+            if (a != null) {
+                a.setEmptyView(noDataAndLoadFailView);
+            }
             CommonMultiItemAdapter<T> a2 = a();
             if (a2 != null) {
-                a2.setEmptyView(noDataAndLoadFailView);
-            }
-            CommonMultiItemAdapter<T> a3 = a();
-            if (a3 != null) {
-                a3.isUseEmpty(true);
+                a2.isUseEmpty(true);
             }
         }
         if (d()) {
@@ -375,7 +365,6 @@ public abstract class CommonRecyclerFragment<T extends MultiItemEntity, S extend
         }
     }
 
-    @Override // com.blued.android.framework.ui.SimpleFragment
     public int onSetRootViewId() {
         return R.layout.fragment_common_recycler;
     }
@@ -388,7 +377,6 @@ public abstract class CommonRecyclerFragment<T extends MultiItemEntity, S extend
         noDataAndLoadFailView.b();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void setUserVisibleHint(boolean z) {
         super.setUserVisibleHint(z);
         if (this.isUserVisibleHint && d() && c() && !this.i && getLifecycle().getCurrentState().compareTo(Lifecycle.State.CREATED) >= 0) {

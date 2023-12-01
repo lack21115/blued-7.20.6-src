@@ -15,9 +15,8 @@ public interface IWebViewUpdateService extends IInterface {
         static final int TRANSACTION_notifyRelroCreationCompleted_0 = 1;
         static final int TRANSACTION_waitForRelroCreationCompleted = 2;
 
-        /* JADX INFO: Access modifiers changed from: private */
         /* loaded from: source-4181928-dex2jar.jar:android/webkit/IWebViewUpdateService$Stub$Proxy.class */
-        public static class Proxy implements IWebViewUpdateService {
+        private static class Proxy implements IWebViewUpdateService {
             private IBinder mRemote;
 
             Proxy(IBinder iBinder) {
@@ -99,7 +98,7 @@ public interface IWebViewUpdateService extends IInterface {
                     waitForRelroCreationCompleted(parcel.readInt() != 0);
                     parcel2.writeNoException();
                     return true;
-                case IBinder.INTERFACE_TRANSACTION /* 1598968902 */:
+                case 1598968902:
                     parcel2.writeString(DESCRIPTOR);
                     return true;
                 default:

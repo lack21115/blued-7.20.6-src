@@ -14,11 +14,11 @@ import java.nio.ByteBuffer;
 public final class MetadataRepo {
 
     /* renamed from: a  reason: collision with root package name */
-    private final MetadataList f2842a;
+    private final MetadataList f2794a;
     private final char[] b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final Node f2843c = new Node(1024);
+    private final Node f2795c = new Node(1024);
     private final Typeface d;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -26,7 +26,7 @@ public final class MetadataRepo {
     public static class Node {
 
         /* renamed from: a  reason: collision with root package name */
-        private final SparseArray<Node> f2844a;
+        private final SparseArray<Node> f2796a;
         private EmojiMetadata b;
 
         private Node() {
@@ -34,7 +34,7 @@ public final class MetadataRepo {
         }
 
         Node(int i) {
-            this.f2844a = new SparseArray<>(i);
+            this.f2796a = new SparseArray<>(i);
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
@@ -44,7 +44,7 @@ public final class MetadataRepo {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         public Node a(int i) {
-            SparseArray<Node> sparseArray = this.f2844a;
+            SparseArray<Node> sparseArray = this.f2796a;
             if (sparseArray == null) {
                 return null;
             }
@@ -56,7 +56,7 @@ public final class MetadataRepo {
             Node node = a2;
             if (a2 == null) {
                 node = new Node();
-                this.f2844a.put(emojiMetadata.getCodepointAt(i), node);
+                this.f2796a.put(emojiMetadata.getCodepointAt(i), node);
             }
             if (i2 > i) {
                 node.a(emojiMetadata, i + 1, i2);
@@ -68,9 +68,9 @@ public final class MetadataRepo {
 
     private MetadataRepo(Typeface typeface, MetadataList metadataList) {
         this.d = typeface;
-        this.f2842a = metadataList;
-        this.b = new char[this.f2842a.listLength() * 2];
-        a(this.f2842a);
+        this.f2794a = metadataList;
+        this.b = new char[this.f2794a.listLength() * 2];
+        a(this.f2794a);
     }
 
     private void a(MetadataList metadataList) {
@@ -144,17 +144,17 @@ public final class MetadataRepo {
     void a(EmojiMetadata emojiMetadata) {
         Preconditions.checkNotNull(emojiMetadata, "emoji metadata cannot be null");
         Preconditions.checkArgument(emojiMetadata.getCodepointsLength() > 0, "invalid metadata codepoint length");
-        this.f2843c.a(emojiMetadata, 0, emojiMetadata.getCodepointsLength() - 1);
+        this.f2795c.a(emojiMetadata, 0, emojiMetadata.getCodepointsLength() - 1);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public int b() {
-        return this.f2842a.version();
+        return this.f2794a.version();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public Node c() {
-        return this.f2843c;
+        return this.f2795c;
     }
 
     public char[] getEmojiCharArray() {
@@ -162,6 +162,6 @@ public final class MetadataRepo {
     }
 
     public MetadataList getMetadataList() {
-        return this.f2842a;
+        return this.f2794a;
     }
 }

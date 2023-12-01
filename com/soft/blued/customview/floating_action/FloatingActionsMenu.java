@@ -31,11 +31,11 @@ public class FloatingActionsMenu extends ViewGroup {
     private static Interpolator t = new DecelerateInterpolator();
 
     /* renamed from: a  reason: collision with root package name */
-    public FloatingActionButton f28582a;
+    public FloatingActionButton f14892a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f28583c;
+    private int f14893c;
     private int d;
     private boolean e;
     private AnimatorSet f;
@@ -57,7 +57,7 @@ public class FloatingActionsMenu extends ViewGroup {
         private ObjectAnimator b;
 
         /* renamed from: c  reason: collision with root package name */
-        private ObjectAnimator f28586c;
+        private ObjectAnimator f14896c;
         private ObjectAnimator d;
         private ObjectAnimator e;
         private boolean f;
@@ -65,17 +65,17 @@ public class FloatingActionsMenu extends ViewGroup {
         public LayoutParams(ViewGroup.LayoutParams layoutParams) {
             super(layoutParams);
             this.b = new ObjectAnimator();
-            this.f28586c = new ObjectAnimator();
+            this.f14896c = new ObjectAnimator();
             this.d = new ObjectAnimator();
             this.e = new ObjectAnimator();
             this.b.setInterpolator(FloatingActionsMenu.r);
-            this.f28586c.setInterpolator(FloatingActionsMenu.t);
+            this.f14896c.setInterpolator(FloatingActionsMenu.t);
             this.d.setInterpolator(FloatingActionsMenu.s);
             this.e.setInterpolator(FloatingActionsMenu.s);
             this.e.setProperty(View.ALPHA);
             this.e.setFloatValues(1.0f, 0.0f);
-            this.f28586c.setProperty(View.ALPHA);
-            this.f28586c.setFloatValues(0.0f, 1.0f);
+            this.f14896c.setProperty(View.ALPHA);
+            this.f14896c.setFloatValues(0.0f, 1.0f);
             int i = FloatingActionsMenu.this.b;
             if (i == 0 || i == 1) {
                 this.d.setProperty(View.TRANSLATION_Y);
@@ -116,7 +116,7 @@ public class FloatingActionsMenu extends ViewGroup {
         public void a(View view) {
             this.e.setTarget(view);
             this.d.setTarget(view);
-            this.f28586c.setTarget(view);
+            this.f14896c.setTarget(view);
             this.b.setTarget(view);
             if (this.f) {
                 return;
@@ -125,7 +125,7 @@ public class FloatingActionsMenu extends ViewGroup {
             a(this.d, view);
             FloatingActionsMenu.this.g.play(this.e);
             FloatingActionsMenu.this.g.play(this.d);
-            FloatingActionsMenu.this.f.play(this.f28586c);
+            FloatingActionsMenu.this.f.play(this.f14896c);
             FloatingActionsMenu.this.f.play(this.b);
             this.f = true;
         }
@@ -159,11 +159,11 @@ public class FloatingActionsMenu extends ViewGroup {
         };
 
         /* renamed from: a  reason: collision with root package name */
-        public boolean f28588a;
+        public boolean f14898a;
 
         private SavedState(Parcel parcel) {
             super(parcel);
-            this.f28588a = parcel.readInt() != 1 ? false : true;
+            this.f14898a = parcel.readInt() != 1 ? false : true;
         }
 
         public SavedState(Parcelable parcelable) {
@@ -171,7 +171,7 @@ public class FloatingActionsMenu extends ViewGroup {
         }
 
         /* JADX WARN: Type inference failed for: r0v0, types: [java.lang.Throwable, java.lang.Runtime] */
-        @Override // android.view.AbsSavedState, android.os.Parcelable
+        @Override // android.view.View.BaseSavedState, android.view.AbsSavedState, android.os.Parcelable
         public void writeToParcel(Parcel parcel, int i) {
             throw new Runtime("d2j fail translate: java.lang.RuntimeException: can not merge I and Z\r\n\tat com.googlecode.dex2jar.ir.TypeClass.merge(TypeClass.java:100)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeRef.updateTypeClass(TypeTransformer.java:174)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeAnalyze.provideAs(TypeTransformer.java:780)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeAnalyze.e1expr(TypeTransformer.java:496)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeAnalyze.exExpr(TypeTransformer.java:713)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeAnalyze.exExpr(TypeTransformer.java:703)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeAnalyze.enexpr(TypeTransformer.java:698)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeAnalyze.exExpr(TypeTransformer.java:719)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeAnalyze.exExpr(TypeTransformer.java:703)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeAnalyze.s1stmt(TypeTransformer.java:810)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeAnalyze.sxStmt(TypeTransformer.java:840)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeAnalyze.analyze(TypeTransformer.java:206)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer.transform(TypeTransformer.java:44)\r\n\tat com.googlecode.d2j.dex.Dex2jar$2.optimize(Dex2jar.java:162)\r\n\tat com.googlecode.d2j.dex.Dex2Asm.convertCode(Dex2Asm.java:414)\r\n\tat com.googlecode.d2j.dex.ExDex2Asm.convertCode(ExDex2Asm.java:42)\r\n\tat com.googlecode.d2j.dex.Dex2jar$2.convertCode(Dex2jar.java:128)\r\n\tat com.googlecode.d2j.dex.Dex2Asm.convertMethod(Dex2Asm.java:509)\r\n\tat com.googlecode.d2j.dex.Dex2Asm.convertClass(Dex2Asm.java:406)\r\n\tat com.googlecode.d2j.dex.Dex2Asm.convertDex(Dex2Asm.java:422)\r\n\tat com.googlecode.d2j.dex.Dex2jar.doTranslate(Dex2jar.java:172)\r\n\tat com.googlecode.d2j.dex.Dex2jar.to(Dex2jar.java:272)\r\n\tat com.googlecode.dex2jar.tools.Dex2jarCmd.doCommandLine(Dex2jarCmd.java:108)\r\n\tat com.googlecode.dex2jar.tools.BaseCmd.doMain(BaseCmd.java:288)\r\n\tat com.googlecode.dex2jar.tools.Dex2jarCmd.main(Dex2jarCmd.java:32)\r\n");
         }
@@ -197,16 +197,16 @@ public class FloatingActionsMenu extends ViewGroup {
 
     private void a(Context context) {
         FloatingActionButton floatingActionButton = new FloatingActionButton(context);
-        this.f28582a = floatingActionButton;
+        this.f14892a = floatingActionButton;
         floatingActionButton.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        this.f28582a.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.customview.floating_action.FloatingActionsMenu.1
+        this.f14892a.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.customview.floating_action.FloatingActionsMenu.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
                 FloatingActionsMenu.this.b();
             }
         });
-        addView(this.f28582a, generateLayoutParams(new ViewGroup.LayoutParams(this.m, this.n)));
+        addView(this.f14892a, generateLayoutParams(new ViewGroup.LayoutParams(this.m, this.n)));
         this.l++;
         if (this.j != 0) {
             h();
@@ -214,7 +214,7 @@ public class FloatingActionsMenu extends ViewGroup {
     }
 
     private void a(Context context, AttributeSet attributeSet) {
-        this.f28583c = (int) getResources().getDimension(2131166124);
+        this.f14893c = (int) getResources().getDimension(2131166124);
         this.d = getResources().getDimensionPixelSize(2131166125);
         TouchDelegateGroup touchDelegateGroup = new TouchDelegateGroup(this);
         this.p = touchDelegateGroup;
@@ -294,15 +294,13 @@ public class FloatingActionsMenu extends ViewGroup {
         this.f.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup
-    public boolean checkLayoutParams(ViewGroup.LayoutParams layoutParams) {
+    protected boolean checkLayoutParams(ViewGroup.LayoutParams layoutParams) {
         return super.checkLayoutParams(layoutParams);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup
-    public ViewGroup.LayoutParams generateDefaultLayoutParams() {
+    protected ViewGroup.LayoutParams generateDefaultLayoutParams() {
         return new LayoutParams(super.generateDefaultLayoutParams());
     }
 
@@ -311,42 +309,39 @@ public class FloatingActionsMenu extends ViewGroup {
         return new LayoutParams(super.generateLayoutParams(attributeSet));
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup
-    public ViewGroup.LayoutParams generateLayoutParams(ViewGroup.LayoutParams layoutParams) {
+    protected ViewGroup.LayoutParams generateLayoutParams(ViewGroup.LayoutParams layoutParams) {
         return new LayoutParams(super.generateLayoutParams(layoutParams));
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onFinishInflate() {
+    protected void onFinishInflate() {
         super.onFinishInflate();
-        bringChildToFront(this.f28582a);
+        bringChildToFront(this.f14892a);
         this.l = getChildCount();
         if (this.j != 0) {
             h();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z, int i, int i2, int i3, int i4) {
+    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         View view;
         int i5 = this.b;
         if (i5 != 0 && i5 != 1) {
             if (i5 == 2 || i5 == 3) {
                 boolean z2 = this.b == 2;
-                int measuredWidth = z2 ? (i3 - i) - this.f28582a.getMeasuredWidth() : 0;
+                int measuredWidth = z2 ? (i3 - i) - this.f14892a.getMeasuredWidth() : 0;
                 int i6 = this.i;
-                int measuredHeight = ((i4 - i2) - i6) + ((i6 - this.f28582a.getMeasuredHeight()) / 2);
-                FloatingActionButton floatingActionButton = this.f28582a;
-                floatingActionButton.layout(measuredWidth, measuredHeight, floatingActionButton.getMeasuredWidth() + measuredWidth, this.f28582a.getMeasuredHeight() + measuredHeight);
-                int measuredWidth2 = z2 ? measuredWidth - this.f28583c : this.f28582a.getMeasuredWidth() + measuredWidth + this.f28583c;
+                int measuredHeight = ((i4 - i2) - i6) + ((i6 - this.f14892a.getMeasuredHeight()) / 2);
+                FloatingActionButton floatingActionButton = this.f14892a;
+                floatingActionButton.layout(measuredWidth, measuredHeight, floatingActionButton.getMeasuredWidth() + measuredWidth, this.f14892a.getMeasuredHeight() + measuredHeight);
+                int measuredWidth2 = z2 ? measuredWidth - this.f14893c : this.f14892a.getMeasuredWidth() + measuredWidth + this.f14893c;
                 int i7 = this.l - 1;
                 while (i7 >= 0) {
                     View childAt = getChildAt(i7);
                     int i8 = measuredWidth2;
-                    if (childAt != this.f28582a) {
+                    if (childAt != this.f14892a) {
                         if (childAt.getVisibility() == 8) {
                             i8 = measuredWidth2;
                         } else {
@@ -354,7 +349,7 @@ public class FloatingActionsMenu extends ViewGroup {
                             if (z2) {
                                 i9 = measuredWidth2 - childAt.getMeasuredWidth();
                             }
-                            int measuredHeight2 = ((this.f28582a.getMeasuredHeight() - childAt.getMeasuredHeight()) / 2) + measuredHeight;
+                            int measuredHeight2 = ((this.f14892a.getMeasuredHeight() - childAt.getMeasuredHeight()) / 2) + measuredHeight;
                             childAt.layout(i9, measuredHeight2, childAt.getMeasuredWidth() + i9, childAt.getMeasuredHeight() + measuredHeight2);
                             float f = measuredWidth - i9;
                             childAt.setTranslationX(this.e ? 0.0f : f);
@@ -363,7 +358,7 @@ public class FloatingActionsMenu extends ViewGroup {
                             layoutParams.d.setFloatValues(0.0f, f);
                             layoutParams.b.setFloatValues(f, 0.0f);
                             layoutParams.a(childAt);
-                            i8 = z2 ? i9 - this.f28583c : i9 + childAt.getMeasuredWidth() + this.f28583c;
+                            i8 = z2 ? i9 - this.f14893c : i9 + childAt.getMeasuredWidth() + this.f14893c;
                         }
                     }
                     i7--;
@@ -377,20 +372,20 @@ public class FloatingActionsMenu extends ViewGroup {
         if (z) {
             this.p.a();
         }
-        int measuredHeight3 = z3 ? (i4 - i2) - this.f28582a.getMeasuredHeight() : 0;
+        int measuredHeight3 = z3 ? (i4 - i2) - this.f14892a.getMeasuredHeight() : 0;
         int i10 = this.k == 0 ? (i3 - i) - (this.h / 2) : this.h / 2;
-        int measuredWidth3 = i10 - (this.f28582a.getMeasuredWidth() / 2);
-        FloatingActionButton floatingActionButton2 = this.f28582a;
-        floatingActionButton2.layout(measuredWidth3, measuredHeight3, floatingActionButton2.getMeasuredWidth() + measuredWidth3, this.f28582a.getMeasuredHeight() + measuredHeight3);
+        int measuredWidth3 = i10 - (this.f14892a.getMeasuredWidth() / 2);
+        FloatingActionButton floatingActionButton2 = this.f14892a;
+        floatingActionButton2.layout(measuredWidth3, measuredHeight3, floatingActionButton2.getMeasuredWidth() + measuredWidth3, this.f14892a.getMeasuredHeight() + measuredHeight3);
         int i11 = (this.h / 2) + this.d;
         int i12 = this.k == 0 ? i10 - i11 : i11 + i10;
-        int measuredHeight4 = z3 ? measuredHeight3 - this.f28583c : this.f28582a.getMeasuredHeight() + measuredHeight3 + this.f28583c;
+        int measuredHeight4 = z3 ? measuredHeight3 - this.f14893c : this.f14892a.getMeasuredHeight() + measuredHeight3 + this.f14893c;
         int i13 = measuredHeight3;
         for (int i14 = this.l - 1; i14 >= 0; i14--) {
             View childAt2 = getChildAt(i14);
             if (i14 == this.l - 1 && (view = (View) childAt2.getTag(R.id.fab_label)) != null) {
                 int measuredWidth4 = i10 - (childAt2.getMeasuredWidth() / 2);
-                int i15 = this.f28583c + measuredHeight4;
+                int i15 = this.f14893c + measuredHeight4;
                 int measuredWidth5 = this.k == 0 ? i12 - view.getMeasuredWidth() : view.getMeasuredWidth() + i12;
                 int i16 = this.k == 0 ? measuredWidth5 : i12;
                 if (this.k == 0) {
@@ -399,7 +394,7 @@ public class FloatingActionsMenu extends ViewGroup {
                 int measuredHeight5 = ((childAt2.getMeasuredHeight() - view.getMeasuredHeight()) / 2) + i15;
                 float f2 = i13 - i15;
                 view.layout(i16, measuredHeight5, measuredWidth5, measuredHeight5 + view.getMeasuredHeight());
-                this.p.a(new TouchDelegate(new Rect(Math.min(measuredWidth4, i16), i15 - (this.f28583c / 2), Math.max(measuredWidth4 + childAt2.getMeasuredWidth(), measuredWidth5), i15 + childAt2.getMeasuredHeight() + (this.f28583c / 2)), childAt2));
+                this.p.a(new TouchDelegate(new Rect(Math.min(measuredWidth4, i16), i15 - (this.f14893c / 2), Math.max(measuredWidth4 + childAt2.getMeasuredWidth(), measuredWidth5), i15 + childAt2.getMeasuredHeight() + (this.f14893c / 2)), childAt2));
                 if (this.o) {
                     this.o = false;
                     view.setTranslationY(this.e ? 0.0f : f2);
@@ -410,7 +405,7 @@ public class FloatingActionsMenu extends ViewGroup {
                 layoutParams2.b.setFloatValues(f2, 0.0f);
                 layoutParams2.a(view);
             }
-            if (childAt2 != this.f28582a && childAt2.getVisibility() != 8) {
+            if (childAt2 != this.f14892a && childAt2.getVisibility() != 8) {
                 int measuredWidth6 = i10 - (childAt2.getMeasuredWidth() / 2);
                 int i17 = measuredHeight4;
                 if (z3) {
@@ -436,7 +431,7 @@ public class FloatingActionsMenu extends ViewGroup {
                     }
                     int measuredHeight6 = ((childAt2.getMeasuredHeight() - view2.getMeasuredHeight()) / 2) + i17;
                     view2.layout(i18, measuredHeight6, measuredWidth7, measuredHeight6 + view2.getMeasuredHeight());
-                    this.p.a(new TouchDelegate(new Rect(Math.min(measuredWidth6, i18), i17 - (this.f28583c / 2), Math.max(measuredWidth6 + childAt2.getMeasuredWidth(), measuredWidth7), childAt2.getMeasuredHeight() + i17 + (this.f28583c / 2)), childAt2));
+                    this.p.a(new TouchDelegate(new Rect(Math.min(measuredWidth6, i18), i17 - (this.f14893c / 2), Math.max(measuredWidth6 + childAt2.getMeasuredWidth(), measuredWidth7), childAt2.getMeasuredHeight() + i17 + (this.f14893c / 2)), childAt2));
                     if (this.o) {
                         this.o = false;
                         view2.setTranslationY(this.e ? 0.0f : f3);
@@ -447,14 +442,13 @@ public class FloatingActionsMenu extends ViewGroup {
                     layoutParams4.b.setFloatValues(f3, 0.0f);
                     layoutParams4.a(view2);
                 }
-                measuredHeight4 = z3 ? i17 - this.f28583c : i17 + childAt2.getMeasuredHeight() + this.f28583c;
+                measuredHeight4 = z3 ? i17 - this.f14893c : i17 + childAt2.getMeasuredHeight() + this.f14893c;
             }
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         int i3;
         int i4;
         int i5;
@@ -517,9 +511,9 @@ public class FloatingActionsMenu extends ViewGroup {
         }
         int i14 = this.b;
         if (i14 == 0 || i14 == 1) {
-            i9 = a(i9 + (this.f28583c * (this.l - 1)));
+            i9 = a(i9 + (this.f14893c * (this.l - 1)));
         } else if (i14 == 2 || i14 == 3) {
-            i3 = a(i3 + (this.f28583c * (this.l - 1)));
+            i3 = a(i3 + (this.f14893c * (this.l - 1)));
         }
         setMeasuredDimension(i3, i9);
     }
@@ -531,7 +525,7 @@ public class FloatingActionsMenu extends ViewGroup {
             return;
         }
         SavedState savedState = (SavedState) parcelable;
-        boolean z = savedState.f28588a;
+        boolean z = savedState.f14898a;
         this.e = z;
         this.p.a(z);
         super.onRestoreInstanceState(savedState.getSuperState());
@@ -540,26 +534,26 @@ public class FloatingActionsMenu extends ViewGroup {
     @Override // android.view.View
     public Parcelable onSaveInstanceState() {
         SavedState savedState = new SavedState(super.onSaveInstanceState());
-        savedState.f28588a = this.e;
+        savedState.f14898a = this.e;
         return savedState;
     }
 
     public void setButtonClickListener(View.OnClickListener onClickListener) {
-        this.f28582a.setOnClickListener(onClickListener);
+        this.f14892a.setOnClickListener(onClickListener);
     }
 
     public void setButtonTitle(String str) {
-        this.f28582a.setTitle(str);
+        this.f14892a.setTitle(str);
     }
 
     public void setButtonTitleColor(String str) {
-        this.f28582a.setLabelColor(str);
+        this.f14892a.setLabelColor(str);
     }
 
     @Override // android.view.View
     public void setEnabled(boolean z) {
         super.setEnabled(z);
-        this.f28582a.setEnabled(z);
+        this.f14892a.setEnabled(z);
     }
 
     public void setOnFloatingActionsMenuUpdateListener(OnFloatingActionsMenuUpdateListener onFloatingActionsMenuUpdateListener) {

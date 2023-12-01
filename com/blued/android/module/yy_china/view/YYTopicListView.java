@@ -18,13 +18,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYTopicListView.class */
 public final class YYTopicListView extends View {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Paint f18526a;
+    private final Paint a;
     private final Paint b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final Paint f18527c;
+    private final Paint c;
     private final Paint d;
     private final Paint e;
     private final float f;
@@ -59,7 +55,7 @@ public final class YYTopicListView extends View {
         paint.setAntiAlias(true);
         paint.setStyle(Paint.Style.FILL);
         paint.setTextSize(getResources().getDimensionPixelOffset(R.dimen.sp_12));
-        this.f18526a = paint;
+        this.a = paint;
         Paint paint2 = new Paint();
         paint2.setColor(getResources().getColor(R.color.syc_989898));
         paint2.setAntiAlias(true);
@@ -72,7 +68,7 @@ public final class YYTopicListView extends View {
         paint3.setStyle(Paint.Style.FILL);
         paint3.setStrokeCap(Paint.Cap.ROUND);
         paint3.setStrokeWidth(60.0f);
-        this.f18527c = paint3;
+        this.c = paint3;
         Paint paint4 = new Paint();
         paint4.setColor(getResources().getColor(R.color.syc_1B1B1B));
         paint4.setAntiAlias(true);
@@ -92,7 +88,7 @@ public final class YYTopicListView extends View {
         this.h = getResources().getDimensionPixelOffset(R.dimen.dp_30);
         this.i = new ArrayList<>();
         this.j = 2;
-        Paint.FontMetrics fontMetrics = this.f18526a.getFontMetrics();
+        Paint.FontMetrics fontMetrics = this.a.getFontMetrics();
         this.m = ((fontMetrics.bottom - fontMetrics.top) / 2) - fontMetrics.bottom;
         this.n = new ArrayList<>();
         this.o = new ArrayList<>();
@@ -169,7 +165,7 @@ public final class YYTopicListView extends View {
         }
         for (YYTopicDataModel yYTopicDataModel2 : this.n) {
             if (yYTopicDataModel2.isClick()) {
-                Paint paint = this.f18527c;
+                Paint paint = this.c;
                 float left = yYTopicDataModel2.getLeft();
                 float f = 2;
                 paint.setShader(new LinearGradient(left, this.h / f, yYTopicDataModel2.getRight(), this.h / f, getResources().getColor(R.color.syc_3883FD), getResources().getColor(R.color.syc_00E0AB), Shader.TileMode.CLAMP));
@@ -177,7 +173,7 @@ public final class YYTopicListView extends View {
                     float left2 = yYTopicDataModel2.getLeft();
                     float right = yYTopicDataModel2.getRight();
                     float f2 = this.h;
-                    canvas.drawRoundRect(left2, 0.0f, right, f2, f2 / f, f2 / f, this.f18527c);
+                    canvas.drawRoundRect(left2, 0.0f, right, f2, f2 / f, f2 / f, this.c);
                 }
                 if (canvas != null) {
                     float left3 = yYTopicDataModel2.getLeft();
@@ -194,7 +190,7 @@ public final class YYTopicListView extends View {
                     canvas.drawRoundRect(left4 + f5, 4.0f, right3 - f5, f6 - f5, f6 / f, f6 / f, this.e);
                 }
                 if (canvas != null) {
-                    canvas.drawText(yYTopicDataModel2.getTopic().getTopic(), yYTopicDataModel2.getLeft() + this.f, (this.h / f) + this.m, this.f18526a);
+                    canvas.drawText(yYTopicDataModel2.getTopic().getTopic(), yYTopicDataModel2.getLeft() + this.f, (this.h / f) + this.m, this.a);
                 }
             } else {
                 if (canvas != null) {
@@ -228,13 +224,13 @@ public final class YYTopicListView extends View {
         float f13 = (f9 * 1.5f) + f10;
         for (YYTopicDataModel yYTopicDataModel4 : this.o) {
             if (yYTopicDataModel4.isClick()) {
-                this.f18527c.setShader(new LinearGradient(yYTopicDataModel4.getLeft(), f13, yYTopicDataModel4.getRight(), f13, getResources().getColor(R.color.syc_3883FD), getResources().getColor(R.color.syc_00E0AB), Shader.TileMode.CLAMP));
+                this.c.setShader(new LinearGradient(yYTopicDataModel4.getLeft(), f13, yYTopicDataModel4.getRight(), f13, getResources().getColor(R.color.syc_3883FD), getResources().getColor(R.color.syc_00E0AB), Shader.TileMode.CLAMP));
                 if (canvas != null) {
                     float left6 = yYTopicDataModel4.getLeft();
                     float right5 = yYTopicDataModel4.getRight();
                     float f14 = this.h;
                     float f15 = 2;
-                    canvas.drawRoundRect(left6, f11, right5, f12, f14 / f15, f14 / f15, this.f18527c);
+                    canvas.drawRoundRect(left6, f11, right5, f12, f14 / f15, f14 / f15, this.c);
                 }
                 if (canvas != null) {
                     float left7 = yYTopicDataModel4.getLeft();
@@ -245,7 +241,7 @@ public final class YYTopicListView extends View {
                     canvas.drawRoundRect(left7 + f16, f11 + 4.0f, right6 - f16, f12 - f16, f17 / f18, f17 / f18, this.d);
                 }
                 if (canvas != null) {
-                    canvas.drawText(yYTopicDataModel4.getTopic().getTopic(), yYTopicDataModel4.getLeft() + this.f, f13 + this.m, this.f18526a);
+                    canvas.drawText(yYTopicDataModel4.getTopic().getTopic(), yYTopicDataModel4.getLeft() + this.f, f13 + this.m, this.a);
                 }
             } else {
                 if (canvas != null) {

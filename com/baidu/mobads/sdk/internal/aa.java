@@ -5,15 +5,15 @@ package com.baidu.mobads.sdk.internal;
 public class aa implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ z f9296a;
+    final /* synthetic */ z f6456a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public aa(z zVar) {
-        this.f9296a = zVar;
+        this.f6456a = zVar;
     }
 
     @Override // java.lang.Runnable
     public void run() {
-        this.f9296a.a("加载dex超过5秒");
+        this.f6456a.a("加载dex超过5秒");
     }
 }

@@ -18,7 +18,7 @@ public class LineNumberInputStream extends FilterInputStream {
 
     @Override // java.io.FilterInputStream, java.io.InputStream
     public int available() throws IOException {
-        return (this.lastChar == -1 ? 0 : 1) + (this.f42254in.available() / 2);
+        return (this.lastChar == -1 ? 0 : 1) + (this.in.available() / 2);
     }
 
     public int getLineNumber() {
@@ -27,7 +27,7 @@ public class LineNumberInputStream extends FilterInputStream {
 
     @Override // java.io.FilterInputStream, java.io.InputStream
     public void mark(int i) {
-        this.f42254in.mark(i);
+        this.in.mark(i);
         this.markedLineNumber = this.lineNumber;
         this.markedLastChar = this.lastChar;
     }
@@ -36,7 +36,7 @@ public class LineNumberInputStream extends FilterInputStream {
     public int read() throws IOException {
         int i = this.lastChar;
         if (i == -1) {
-            i = this.f42254in.read();
+            i = this.in.read();
         } else {
             this.lastChar = -1;
         }
@@ -49,7 +49,7 @@ public class LineNumberInputStream extends FilterInputStream {
             default:
                 return i;
             case 13:
-                this.lastChar = this.f42254in.read();
+                this.lastChar = this.in.read();
                 i2 = 10;
                 if (this.lastChar == 10) {
                     this.lastChar = -1;
@@ -129,7 +129,7 @@ public class LineNumberInputStream extends FilterInputStream {
 
     @Override // java.io.FilterInputStream, java.io.InputStream
     public void reset() throws IOException {
-        this.f42254in.reset();
+        this.in.reset();
         this.lineNumber = this.markedLineNumber;
         this.lastChar = this.markedLastChar;
     }

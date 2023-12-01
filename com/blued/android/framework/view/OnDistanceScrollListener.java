@@ -5,13 +5,9 @@ import android.widget.AbsListView;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/view/OnDistanceScrollListener.class */
 public class OnDistanceScrollListener implements AbsListView.OnScrollListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    private ScrollDistanceListener f10180a;
+    private ScrollDistanceListener a;
     private boolean b = false;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f10181c;
+    private int c;
     private int d;
     private int e;
     private int f;
@@ -32,7 +28,7 @@ public class OnDistanceScrollListener implements AbsListView.OnScrollListener {
             }
             View childAt = absListView.getChildAt(0);
             if (!this.b) {
-                this.f10181c = absListView.getFirstVisiblePosition();
+                this.c = absListView.getFirstVisiblePosition();
                 this.e = childAt.getTop();
                 this.f = childAt.getBottom();
                 this.d = childAt.getHeight();
@@ -44,7 +40,7 @@ public class OnDistanceScrollListener implements AbsListView.OnScrollListener {
             int height = childAt.getHeight();
             int i6 = this.e;
             if (i6 != top) {
-                int i7 = this.f10181c;
+                int i7 = this.c;
                 if (i > i7) {
                     int i8 = i6 + this.d;
                     this.e = i8;
@@ -61,14 +57,14 @@ public class OnDistanceScrollListener implements AbsListView.OnScrollListener {
             }
             int i9 = this.g + i5;
             this.g = i9;
-            ScrollDistanceListener scrollDistanceListener = this.f10180a;
+            ScrollDistanceListener scrollDistanceListener = this.a;
             if (scrollDistanceListener != null) {
                 scrollDistanceListener.a(i5, i9);
             }
             this.e = top;
             this.f = bottom;
             this.d = height;
-            this.f10181c = i;
+            this.c = i;
         }
     }
 

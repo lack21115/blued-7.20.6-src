@@ -5,9 +5,8 @@ import com.google.zxing.pdf417.PDF417ResultMetadata;
 import java.math.BigInteger;
 import java.util.Arrays;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-7994992-dex2jar.jar:com/google/zxing/pdf417/decoder/DecodedBitStreamParser.class */
-public final class DecodedBitStreamParser {
+final class DecodedBitStreamParser {
     private static final int AL = 28;
     private static final int AS = 27;
     private static final int BEGIN_MACRO_PDF417_CONTROL_BLOCK = 928;

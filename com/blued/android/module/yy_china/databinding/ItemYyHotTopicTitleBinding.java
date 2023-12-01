@@ -8,14 +8,12 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ItemYyHotTopicTitleBinding.class */
 public final class ItemYyHotTopicTitleBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ShapeTextView f16743a;
+    public final ShapeTextView a;
     private final ConstraintLayout b;
 
     private ItemYyHotTopicTitleBinding(ConstraintLayout constraintLayout, ShapeTextView shapeTextView) {
         this.b = constraintLayout;
-        this.f16743a = shapeTextView;
+        this.a = shapeTextView;
     }
 
     public static ItemYyHotTopicTitleBinding a(View view) {
@@ -26,7 +24,6 @@ public final class ItemYyHotTopicTitleBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat("tv"));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.b;

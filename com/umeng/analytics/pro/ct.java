@@ -4,7 +4,7 @@ package com.umeng.analytics.pro;
 public final class ct {
 
     /* renamed from: a  reason: collision with root package name */
-    public final byte f40711a;
+    public final byte f27020a;
     public final int b;
 
     public ct() {
@@ -12,11 +12,11 @@ public final class ct {
     }
 
     public ct(byte b, int i) {
-        this.f40711a = b;
+        this.f27020a = b;
         this.b = i;
     }
 
     public ct(cl clVar) {
-        this(clVar.f40701a, clVar.b);
+        this(clVar.f27010a, clVar.b);
     }
 }

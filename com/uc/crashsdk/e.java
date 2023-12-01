@@ -14,10 +14,12 @@ import android.os.Process;
 import android.os.StatFs;
 import android.os.StrictMode;
 import com.anythink.expressad.video.module.a.a.m;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
+import com.baidu.mobads.sdk.internal.at;
 import com.cdo.oaps.ad.OapsKey;
+import com.tencent.tinker.loader.shareutil.ShareConstants;
 import com.uc.crashsdk.a.h;
 import com.uc.crashsdk.export.LogType;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.BufferedReader;
 import java.io.Closeable;
 import java.io.DataInputStream;
@@ -55,10 +57,10 @@ public class e implements Thread.UncaughtExceptionHandler {
     private final List<FileInputStream> e = new ArrayList();
 
     /* renamed from: a  reason: collision with root package name */
-    static final /* synthetic */ boolean f40579a = !e.class.desiredAssertionStatus();
+    static final /* synthetic */ boolean f26888a = !e.class.desiredAssertionStatus();
 
     /* renamed from: c  reason: collision with root package name */
-    private static final AtomicBoolean f40580c = new AtomicBoolean(false);
+    private static final AtomicBoolean f26889c = new AtomicBoolean(false);
     private static boolean d = false;
     private static long f = 0;
     private static long g = -1;
@@ -119,16 +121,16 @@ public class e implements Thread.UncaughtExceptionHandler {
     public static final class a extends OutputStream {
 
         /* renamed from: a  reason: collision with root package name */
-        private final long f40581a;
+        private final long f26890a;
         private final OutputStream b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f40582c = 0;
+        private int f26891c = 0;
         private int d = 0;
         private boolean e = false;
 
         a(long j, OutputStream outputStream) {
-            this.f40581a = j;
+            this.f26890a = j;
             this.b = outputStream;
         }
 
@@ -159,7 +161,7 @@ public class e implements Thread.UncaughtExceptionHandler {
                 r0 = r11
                 if (r0 <= 0) goto L36
                 r0 = r7
-                int r0 = r0.f40582c
+                int r0 = r0.f26891c
                 r12 = r0
                 r0 = r12
                 r1 = r10
@@ -177,12 +179,12 @@ public class e implements Thread.UncaughtExceptionHandler {
             L39:
                 r0 = r7
                 r1 = r7
-                int r1 = r1.f40582c
+                int r1 = r1.f26891c
                 r2 = r11
                 int r1 = r1 + r2
-                r0.f40582c = r1
+                r0.f26891c = r1
                 r0 = r7
-                long r0 = r0.f40581a
+                long r0 = r0.f26890a
                 r1 = 0
                 int r0 = (r0 > r1 ? 1 : (r0 == r1 ? 0 : -1))
                 if (r0 == 0) goto L5f
@@ -218,17 +220,17 @@ public class e implements Thread.UncaughtExceptionHandler {
 
         private void b(String str) {
             if (com.uc.crashsdk.b.d) {
-                JNIBridge.nativeClientWriteData(this.f40581a, str);
+                JNIBridge.nativeClientWriteData(this.f26890a, str);
             }
         }
 
         final void a() {
             try {
-                if (this.d - this.f40582c > 0) {
+                if (this.d - this.f26891c > 0) {
                     a("\n");
                     a("--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---\n");
                 }
-                a(String.format(Locale.US, "Full: %d bytes, write: %d bytes, limit: %d bytes, reject: %d bytes.\n", Integer.valueOf(this.d), Integer.valueOf(this.f40582c), Integer.valueOf(g.A()), Integer.valueOf(this.d - this.f40582c)));
+                a(String.format(Locale.US, "Full: %d bytes, write: %d bytes, limit: %d bytes, reject: %d bytes.\n", Integer.valueOf(this.d), Integer.valueOf(this.f26891c), Integer.valueOf(g.A()), Integer.valueOf(this.d - this.f26891c)));
             } catch (Throwable th) {
                 com.uc.crashsdk.a.g.a(th);
             }
@@ -238,7 +240,7 @@ public class e implements Thread.UncaughtExceptionHandler {
             if (e.h && e.I()) {
                 com.uc.crashsdk.a.a.d("DEBUG", str);
             }
-            if (this.f40581a != 0) {
+            if (this.f26890a != 0) {
                 b(str);
             } else {
                 this.b.write(str.getBytes("UTF-8"));
@@ -250,12 +252,12 @@ public class e implements Thread.UncaughtExceptionHandler {
             if (e.h && e.I()) {
                 com.uc.crashsdk.a.a.d("DEBUG", String.format(Locale.US, "%c", Integer.valueOf(i)));
             }
-            if (this.f40581a != 0) {
+            if (this.f26890a != 0) {
                 b(String.format(Locale.US, "%c", Integer.valueOf(i)));
             } else {
                 this.b.write(i);
             }
-            this.f40582c++;
+            this.f26891c++;
             this.d++;
         }
 
@@ -274,7 +276,7 @@ public class e implements Thread.UncaughtExceptionHandler {
         public final void write(byte[] bArr, int i, int i2) {
             if (e.h && e.I()) {
                 byte[] bArr2 = new byte[i2];
-                System.arraycopy((Object) bArr, i, (Object) bArr2, 0, i2);
+                System.arraycopy(bArr, i, bArr2, 0, i2);
                 if (i2 != 1 || bArr2[0] != 10) {
                     try {
                         com.uc.crashsdk.a.a.d("DEBUG", new String(bArr2));
@@ -357,20 +359,20 @@ public class e implements Thread.UncaughtExceptionHandler {
     public static final class d {
 
         /* renamed from: a  reason: collision with root package name */
-        long f40583a;
+        long f26892a;
         long b;
 
         /* renamed from: c  reason: collision with root package name */
-        int f40584c;
+        int f26893c;
         int d;
         boolean e;
         boolean f;
         boolean g;
 
         private d() {
-            this.f40583a = 0L;
+            this.f26892a = 0L;
             this.b = 0L;
-            this.f40584c = 0;
+            this.f26893c = 0;
             this.d = 0;
             this.e = false;
             this.f = false;
@@ -521,7 +523,7 @@ public class e implements Thread.UncaughtExceptionHandler {
     }
 
     private static String P() {
-        return g.e() + BridgeUtil.UNDERLINE_STR;
+        return g.e() + "_";
     }
 
     private static String Q() {
@@ -561,12 +563,12 @@ public class e implements Thread.UncaughtExceptionHandler {
         FileReader fileReader;
         String str2;
         int i2;
-        String str3 = "-";
+        String str3 = Constants.ACCEPT_TIME_SEPARATOR_SERVER;
         try {
             str = Build.HARDWARE;
         } catch (Throwable th) {
             com.uc.crashsdk.a.g.a(th);
-            str = "-";
+            str = Constants.ACCEPT_TIME_SEPARATOR_SERVER;
         }
         try {
             fileReader = new FileReader(new File("/proc/cpuinfo"));
@@ -726,7 +728,7 @@ public class e implements Thread.UncaughtExceptionHandler {
     }
 
     private static void Z() {
-        if (com.uc.crashsdk.b.f40575c && L && com.uc.crashsdk.a.f40558c) {
+        if (com.uc.crashsdk.b.f26884c && L && com.uc.crashsdk.a.f26867c) {
             L = false;
             if (com.uc.crashsdk.a.f.b(P)) {
                 return;
@@ -971,7 +973,7 @@ public class e implements Thread.UncaughtExceptionHandler {
         switch (i2) {
             case 401:
                 JNIBridge.nativeCmd(10, com.uc.crashsdk.b.I() == 5 ? 1L : 0L, null, null);
-                com.uc.crashsdk.a.f40558c = true;
+                com.uc.crashsdk.a.f26867c = true;
                 com.uc.crashsdk.a.a(false);
                 L = true;
                 Z();
@@ -1031,7 +1033,7 @@ public class e implements Thread.UncaughtExceptionHandler {
                 return;
             case 404:
             default:
-                if (!f40579a) {
+                if (!f26888a) {
                     throw new AssertionError();
                 }
                 return;
@@ -1045,7 +1047,7 @@ public class e implements Thread.UncaughtExceptionHandler {
                 }
                 return;
             case 406:
-                if (!f40579a && objArr == null) {
+                if (!f26888a && objArr == null) {
                     throw new AssertionError();
                 }
                 a((String) objArr[0], ((Boolean) objArr[1]).booleanValue(), ((Boolean) objArr[2]).booleanValue());
@@ -1131,7 +1133,7 @@ public class e implements Thread.UncaughtExceptionHandler {
                     return;
                 }
             case 415:
-                if (!f40579a && objArr == null) {
+                if (!f26888a && objArr == null) {
                     throw new AssertionError();
                 }
                 long longValue = ((Long) objArr[0]).longValue();
@@ -1184,7 +1186,7 @@ public class e implements Thread.UncaughtExceptionHandler {
                 com.uc.crashsdk.a.g.a(th);
             }
             nativeDumpThreads = JNIBridge.nativeDumpThreads(str, j2);
-            if (ag || nativeDumpThreads == null || nativeDumpThreads.length() >= 512 || !nativeDumpThreads.startsWith(BridgeUtil.SPLIT_MARK) || nativeDumpThreads.indexOf(10) >= 0) {
+            if (ag || nativeDumpThreads == null || nativeDumpThreads.length() >= 512 || !nativeDumpThreads.startsWith("/") || nativeDumpThreads.indexOf(10) >= 0) {
                 str2 = nativeDumpThreads;
             } else {
                 if (!new File(nativeDumpThreads).exists()) {
@@ -1537,9 +1539,9 @@ public class e implements Thread.UncaughtExceptionHandler {
                 long parseLong = Long.parseLong(matcher.group(1));
                 if (System.currentTimeMillis() - parseLong < 86400000) {
                     dVar.b = Long.parseLong(matcher.group(2));
-                    dVar.f40584c = Integer.parseInt(matcher.group(3));
+                    dVar.f26893c = Integer.parseInt(matcher.group(3));
                     dVar.d = Integer.parseInt(matcher.group(4));
-                    dVar.f40583a = parseLong;
+                    dVar.f26892a = parseLong;
                     return true;
                 }
                 return true;
@@ -1730,7 +1732,7 @@ public class e implements Thread.UncaughtExceptionHandler {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static long b() {
         if (g == -1) {
-            g = h(com.uc.crashsdk.b.b("local"));
+            g = h(com.uc.crashsdk.b.b(at.f6479a));
         }
         return g;
     }
@@ -1802,7 +1804,7 @@ public class e implements Thread.UncaughtExceptionHandler {
             return;
         }
         int n2 = g.n();
-        BufferedReader a2 = a(new InputStreamReader(Runtime.getRuntime().exec(new String[]{"logcat", "-d", "-b", com.umeng.analytics.pro.d.f40716ar, "-b", "main", "-v", "threadtime", "-t", String.valueOf(n2)}).getInputStream()));
+        BufferedReader a2 = a(new InputStreamReader(Runtime.getRuntime().exec(new String[]{"logcat", "-d", "-b", com.umeng.analytics.pro.d.f27025ar, "-b", "main", "-v", "threadtime", "-t", String.valueOf(n2)}).getInputStream()));
         if (a2 == null) {
             outputStream.write("[DEBUG] alloc buffer failed!\n".getBytes("UTF-8"));
             a(outputStream);
@@ -1959,19 +1961,19 @@ public class e implements Thread.UncaughtExceptionHandler {
 
     public static boolean b(int i2, Object[] objArr) {
         if (i2 == 451) {
-            if (f40579a || objArr != null) {
+            if (f26888a || objArr != null) {
                 return a((String) objArr[0], (d) objArr[1]);
             }
             throw new AssertionError();
         } else if (i2 != 452) {
-            if (f40579a) {
+            if (f26888a) {
                 return false;
             }
             throw new AssertionError();
-        } else if (f40579a || objArr != null) {
+        } else if (f26888a || objArr != null) {
             String str = (String) objArr[0];
             d dVar = (d) objArr[1];
-            return com.uc.crashsdk.a.g.a(new File(str), String.format(Locale.US, "%d %d %d %d", Long.valueOf(dVar.f40583a), Long.valueOf(dVar.b), Integer.valueOf(dVar.f40584c), Integer.valueOf(dVar.d)).getBytes());
+            return com.uc.crashsdk.a.g.a(new File(str), String.format(Locale.US, "%d %d %d %d", Long.valueOf(dVar.f26892a), Long.valueOf(dVar.b), Integer.valueOf(dVar.f26893c), Integer.valueOf(dVar.d)).getBytes());
         } else {
             throw new AssertionError();
         }
@@ -2216,7 +2218,7 @@ public class e implements Thread.UncaughtExceptionHandler {
 
     public static boolean e(String str) {
         try {
-            if (com.uc.crashsdk.a.g.b(str) && str.startsWith("lib") && str.endsWith(".so")) {
+            if (com.uc.crashsdk.a.g.b(str) && str.startsWith(ShareConstants.SO_PATH) && str.endsWith(".so")) {
                 System.loadLibrary(str.substring(3, str.length() - 3));
                 return true;
             }
@@ -2348,7 +2350,7 @@ public class e implements Thread.UncaughtExceptionHandler {
 
     private static String i(String str) {
         try {
-            return str.replaceAll("[^0-9a-zA-Z-.]", "-");
+            return str.replaceAll("[^0-9a-zA-Z-.]", Constants.ACCEPT_TIME_SEPARATOR_SERVER);
         } catch (Throwable th) {
             return "unknown";
         }
@@ -2438,7 +2440,7 @@ public class e implements Thread.UncaughtExceptionHandler {
         if (r5.endsWith(r0) != false) goto L30;
      */
     /* JADX WARN: Code restructure failed: missing block: B:34:0x00c8, code lost:
-        if (r5.indexOf(com.anythink.china.common.a.a.f, r5.lastIndexOf(95)) != r5.lastIndexOf(com.anythink.china.common.a.a.f)) goto L30;
+        if (r5.indexOf(".log", r5.lastIndexOf(95)) != r5.lastIndexOf(".log")) goto L30;
      */
     /* JADX WARN: Code restructure failed: missing block: B:5:0x0019, code lost:
         if (r0 != false) goto L8;
@@ -2523,7 +2525,7 @@ public class e implements Thread.UncaughtExceptionHandler {
                     try {
                         if (str != null) {
                             try {
-                                str = str.length() != 36 ? null : str.replaceAll("[^0-9a-zA-Z-]", "-");
+                                str = str.length() != 36 ? null : str.replaceAll("[^0-9a-zA-Z-]", Constants.ACCEPT_TIME_SEPARATOR_SERVER);
                             } catch (Exception e) {
                                 com.uc.crashsdk.a.g.a(e);
                             }
@@ -2654,7 +2656,7 @@ public class e implements Thread.UncaughtExceptionHandler {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static boolean u() {
-        return f40580c.get() || aa();
+        return f26889c.get() || aa();
     }
 
     public static Throwable v() {
@@ -2684,7 +2686,7 @@ public class e implements Thread.UncaughtExceptionHandler {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static void y() {
-        if (com.uc.crashsdk.b.f40575c && com.uc.crashsdk.a.f40558c && !com.uc.crashsdk.a.f.b(aa)) {
+        if (com.uc.crashsdk.b.f26884c && com.uc.crashsdk.a.f26867c && !com.uc.crashsdk.a.f.b(aa)) {
             com.uc.crashsdk.a.f.a(0, aa, 1000L);
         }
     }

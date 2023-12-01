@@ -23,7 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /* loaded from: source-7994992-dex2jar.jar:com/kwad/components/ad/reward/presenter/r.class */
-public final class r extends a implements com.kwad.components.ad.reward.d.f, a.InterfaceC0523a, o.b {
+public final class r extends a implements com.kwad.components.ad.reward.d.f, a.InterfaceC0353a, o.b {
     private AdTemplate mAdTemplate;
     private com.kwad.components.ad.reward.g oU;
     private ImageView rR;
@@ -200,8 +200,8 @@ public final class r extends a implements com.kwad.components.ad.reward.d.f, a.I
         this.oU.a(this.mWebCardClickListener);
         this.oU.a(this.sW, this.qt.mRootContainer, this.mAdTemplate, this.qt.mApkDownloadHelper, this.qt.mScreenOrientation);
         com.kwad.sdk.core.d.b.d("RewardPreEndCardPresenter", "startPreloadWebView");
-        this.oU.a(new b.InterfaceC0479b() { // from class: com.kwad.components.ad.reward.presenter.r.3
-            @Override // com.kwad.components.ad.i.b.InterfaceC0479b
+        this.oU.a(new b.InterfaceC0309b() { // from class: com.kwad.components.ad.reward.presenter.r.3
+            @Override // com.kwad.components.ad.i.b.InterfaceC0309b
             public final void hK() {
                 com.kwad.sdk.core.d.b.d("RewardPreEndCardPresenter", "onPreloadSuccess");
                 r.this.qt.pv = true;
@@ -293,12 +293,12 @@ public final class r extends a implements com.kwad.components.ad.reward.d.f, a.I
         this.sW = (FrameLayout) findViewById(R.id.ksad_middle_end_card_webview_container);
     }
 
-    @Override // com.kwad.components.core.g.a.InterfaceC0523a
+    @Override // com.kwad.components.core.g.a.InterfaceC0353a
     public final void onError(int i, String str) {
         com.kwad.sdk.core.d.b.w("RewardPreEndCardPresenter", "onError : msg " + str);
     }
 
-    @Override // com.kwad.components.core.g.a.InterfaceC0523a
+    @Override // com.kwad.components.core.g.a.InterfaceC0353a
     public final void onInnerAdLoad(List<com.kwad.components.core.g.c> list) {
         com.kwad.sdk.core.d.b.d("RewardPreEndCardPresenter", "onInnerAdLoad: " + list);
         if (list == null || list.size() == 0) {
@@ -312,7 +312,7 @@ public final class r extends a implements com.kwad.components.ad.reward.d.f, a.I
         c(arrayList);
     }
 
-    @Override // com.kwad.components.core.g.a.InterfaceC0523a
+    @Override // com.kwad.components.core.g.a.InterfaceC0353a
     public final void onRequestResult(int i) {
         com.kwad.sdk.core.d.b.w("RewardPreEndCardPresenter", "onRequestResult : adNumber " + i);
     }
@@ -323,7 +323,7 @@ public final class r extends a implements com.kwad.components.ad.reward.d.f, a.I
         this.qt.pv = false;
         this.qt.oN.b(this.mVideoPlayStateListener, this.mAdLivePlayStateListener);
         this.qt.c(this);
-        this.qt.b((a.InterfaceC0523a) this);
+        this.qt.b((a.InterfaceC0353a) this);
         com.kwad.components.ad.reward.g gVar = this.oU;
         if (gVar != null) {
             gVar.jW();

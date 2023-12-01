@@ -70,18 +70,18 @@ public final class LiveCommonPopTips extends AttachPopupView {
         if (liveRoomTipsModel2 != null && liveRoomTipsModel2.getLinkType() == 1) {
             LiveRoomTipsModel liveRoomTipsModel3 = this.u;
             if (!TextUtils.isEmpty(liveRoomTipsModel3 == null ? null : liveRoomTipsModel3.getLink())) {
-                LiveSetDataObserver a2 = LiveSetDataObserver.a();
+                LiveSetDataObserver a = LiveSetDataObserver.a();
                 LiveRoomTipsModel liveRoomTipsModel4 = this.u;
-                a2.b(liveRoomTipsModel4 == null ? null : liveRoomTipsModel4.getLink(), 25);
+                a.b(liveRoomTipsModel4 == null ? null : liveRoomTipsModel4.getLink(), 25);
             }
         } else {
             LiveRoomTipsModel liveRoomTipsModel5 = this.u;
             if (liveRoomTipsModel5 != null && liveRoomTipsModel5.getLinkType() == 2) {
                 LiveRoomTipsModel liveRoomTipsModel6 = this.u;
                 if (!TextUtils.isEmpty(liveRoomTipsModel6 == null ? null : liveRoomTipsModel6.getLink())) {
-                    LiveSetDataObserver a3 = LiveSetDataObserver.a();
+                    LiveSetDataObserver a2 = LiveSetDataObserver.a();
                     LiveRoomTipsModel liveRoomTipsModel7 = this.u;
-                    a3.c(liveRoomTipsModel7 == null ? null : liveRoomTipsModel7.getLink(), 25);
+                    a2.c(liveRoomTipsModel7 == null ? null : liveRoomTipsModel7.getLink(), 25);
                 }
             } else {
                 LiveRoomTipsModel liveRoomTipsModel8 = this.u;

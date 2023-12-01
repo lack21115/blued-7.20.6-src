@@ -8,10 +8,10 @@ import com.bytedance.sdk.openadsdk.TTAdSdk;
 public class TTAdManagerHolder {
 
     /* renamed from: a  reason: collision with root package name */
-    private static boolean f34844a;
+    private static boolean f21153a;
 
     public static TTAdManager a(Context context) {
-        if (!f34844a) {
+        if (!f21153a) {
             c(context);
         }
         return TTAdSdk.getAdManager();
@@ -22,10 +22,10 @@ public class TTAdManagerHolder {
     }
 
     private static void c(Context context) {
-        if (f34844a) {
+        if (f21153a) {
             return;
         }
         TTADUtils.a(context);
-        f34844a = true;
+        f21153a = true;
     }
 }

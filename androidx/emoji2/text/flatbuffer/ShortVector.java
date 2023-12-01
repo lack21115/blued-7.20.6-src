@@ -10,7 +10,7 @@ public final class ShortVector extends BaseVector {
     }
 
     public short get(int i) {
-        return this.f2849a.getShort(a(i));
+        return this.f2801a.getShort(a(i));
     }
 
     public int getAsUnsigned(int i) {

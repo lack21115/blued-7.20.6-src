@@ -8,11 +8,11 @@ import com.baidu.mobads.sdk.api.IOAdEventListener;
 public class m implements IOAdEventListener {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ l f9435a;
+    final /* synthetic */ l f6595a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public m(l lVar) {
-        this.f9435a = lVar;
+        this.f6595a = lVar;
     }
 
     @Override // com.baidu.mobads.sdk.api.IOAdEventListener

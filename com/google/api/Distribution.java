@@ -291,8 +291,8 @@ public final class Distribution extends GeneratedMessageV3 implements Distributi
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder mo2030clone() {
+                return (Builder) super.mo2030clone();
             }
 
             @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
@@ -732,8 +732,8 @@ public final class Distribution extends GeneratedMessageV3 implements Distributi
 
                 @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
                 /* renamed from: clone */
-                public Builder mo1800clone() {
-                    return (Builder) super.mo1800clone();
+                public Builder mo2030clone() {
+                    return (Builder) super.mo2030clone();
                 }
 
                 @Override // com.google.api.Distribution.BucketOptions.ExplicitOrBuilder
@@ -1280,8 +1280,8 @@ public final class Distribution extends GeneratedMessageV3 implements Distributi
 
                 @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
                 /* renamed from: clone */
-                public Builder mo1800clone() {
-                    return (Builder) super.mo1800clone();
+                public Builder mo2030clone() {
+                    return (Builder) super.mo2030clone();
                 }
 
                 @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
@@ -1795,8 +1795,8 @@ public final class Distribution extends GeneratedMessageV3 implements Distributi
 
                 @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
                 /* renamed from: clone */
-                public Builder mo1800clone() {
-                    return (Builder) super.mo1800clone();
+                public Builder mo2030clone() {
+                    return (Builder) super.mo2030clone();
                 }
 
                 @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
@@ -2915,8 +2915,8 @@ public final class Distribution extends GeneratedMessageV3 implements Distributi
 
         @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder mo2030clone() {
+            return (Builder) super.mo2030clone();
         }
 
         @Override // com.google.api.DistributionOrBuilder
@@ -3619,8 +3619,8 @@ public final class Distribution extends GeneratedMessageV3 implements Distributi
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder mo2030clone() {
+                return (Builder) super.mo2030clone();
             }
 
             @Override // com.google.api.Distribution.ExemplarOrBuilder
@@ -3940,6 +3940,7 @@ public final class Distribution extends GeneratedMessageV3 implements Distributi
             this.attachments_ = Collections.emptyList();
         }
 
+        /* JADX WARN: Multi-variable type inference failed */
         private Exemplar(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             this();
             Timestamp.Builder builder;
@@ -4371,8 +4372,8 @@ public final class Distribution extends GeneratedMessageV3 implements Distributi
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder mo2030clone() {
+                return (Builder) super.mo2030clone();
             }
 
             @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
@@ -4757,6 +4758,7 @@ public final class Distribution extends GeneratedMessageV3 implements Distributi
         this.exemplars_ = Collections.emptyList();
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private Distribution(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
         this();
         BucketOptions.Builder builder;

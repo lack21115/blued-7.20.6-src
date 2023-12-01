@@ -9,7 +9,7 @@ import android.telephony.TelephonyManager;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final int f39093a = -1231545315;
+    private static final int f25402a = -1231545315;
 
     public static boolean a(Context context) {
         return c(context) == 1;
@@ -49,6 +49,6 @@ public class c {
 
     private static int c(Context context) {
         NetworkInfo activeNetworkInfo = ((ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE)).getActiveNetworkInfo();
-        return activeNetworkInfo != null ? activeNetworkInfo.getType() : f39093a;
+        return activeNetworkInfo != null ? activeNetworkInfo.getType() : f25402a;
     }
 }

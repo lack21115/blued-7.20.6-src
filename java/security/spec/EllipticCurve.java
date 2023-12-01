@@ -1,13 +1,12 @@
 package java.security.spec;
 
+import com.android.ims.ImsReasonInfo;
 import java.math.BigInteger;
 import java.util.Arrays;
 
 /* loaded from: source-2895416-dex2jar.jar:java/security/spec/EllipticCurve.class */
 public class EllipticCurve {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final BigInteger f42261a;
+    private final BigInteger a;
     private final BigInteger b;
     private final ECField field;
     private volatile int hash;
@@ -22,8 +21,8 @@ public class EllipticCurve {
         if (this.field == null) {
             throw new NullPointerException("field == null");
         }
-        this.f42261a = bigInteger;
-        if (this.f42261a == null) {
+        this.a = bigInteger;
+        if (this.a == null) {
             throw new NullPointerException("a == null");
         }
         this.b = bigInteger2;
@@ -38,7 +37,7 @@ public class EllipticCurve {
         }
         if (this.field instanceof ECFieldFp) {
             BigInteger p = ((ECFieldFp) this.field).getP();
-            if (this.f42261a.signum() < 0 || this.f42261a.compareTo(p) >= 0) {
+            if (this.a.signum() < 0 || this.a.compareTo(p) >= 0) {
                 throw new IllegalArgumentException("the a is not in the field");
             }
             if (this.b.signum() < 0 || this.b.compareTo(p) >= 0) {
@@ -46,7 +45,7 @@ public class EllipticCurve {
             }
         } else if (this.field instanceof ECFieldF2m) {
             int fieldSize = this.field.getFieldSize();
-            if (this.f42261a.bitLength() > fieldSize) {
+            if (this.a.bitLength() > fieldSize) {
                 throw new IllegalArgumentException("the a is not in the field");
             }
             if (this.b.bitLength() > fieldSize) {
@@ -61,13 +60,13 @@ public class EllipticCurve {
         }
         if (obj instanceof EllipticCurve) {
             EllipticCurve ellipticCurve = (EllipticCurve) obj;
-            return this.field.equals(ellipticCurve.field) && this.f42261a.equals(ellipticCurve.f42261a) && this.b.equals(ellipticCurve.b) && Arrays.equals(this.seed, ellipticCurve.seed);
+            return this.field.equals(ellipticCurve.field) && this.a.equals(ellipticCurve.a) && this.b.equals(ellipticCurve.b) && Arrays.equals(this.seed, ellipticCurve.seed);
         }
         return false;
     }
 
     public BigInteger getA() {
-        return this.f42261a;
+        return this.a;
     }
 
     public BigInteger getB() {
@@ -90,7 +89,7 @@ public class EllipticCurve {
     public int hashCode() {
         int i;
         if (this.hash == 0) {
-            int hashCode = ((((this.field.hashCode() + 341) * 31) + this.f42261a.hashCode()) * 31) + this.b.hashCode();
+            int hashCode = ((((this.field.hashCode() + ImsReasonInfo.CODE_SIP_NOT_REACHABLE) * 31) + this.a.hashCode()) * 31) + this.b.hashCode();
             if (this.seed != null) {
                 int i2 = 0;
                 while (true) {

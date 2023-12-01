@@ -8,11 +8,11 @@ import java.util.ArrayList;
 public class ArrayRow implements LinearSystem.Row {
 
     /* renamed from: a  reason: collision with root package name */
-    SolverVariable f1986a = null;
+    SolverVariable f1938a = null;
     float b = 0.0f;
 
     /* renamed from: c  reason: collision with root package name */
-    boolean f1987c = false;
+    boolean f1939c = false;
     ArrayList<SolverVariable> d = new ArrayList<>();
     boolean e = false;
     public ArrayRowVariables variables;
@@ -107,7 +107,7 @@ public class ArrayRow implements LinearSystem.Row {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public ArrayRow a(SolverVariable solverVariable, int i) {
-        this.f1986a = solverVariable;
+        this.f1938a = solverVariable;
         float f = i;
         solverVariable.computedValue = f;
         this.b = f;
@@ -164,7 +164,7 @@ public class ArrayRow implements LinearSystem.Row {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public boolean a() {
-        SolverVariable solverVariable = this.f1986a;
+        SolverVariable solverVariable = this.f1938a;
         if (solverVariable != null) {
             return solverVariable.d == SolverVariable.Type.UNRESTRICTED || this.b >= 0.0f;
         }
@@ -358,14 +358,14 @@ public class ArrayRow implements LinearSystem.Row {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void b(SolverVariable solverVariable) {
-        SolverVariable solverVariable2 = this.f1986a;
+        SolverVariable solverVariable2 = this.f1938a;
         if (solverVariable2 != null) {
             this.variables.put(solverVariable2, -1.0f);
-            this.f1986a.f1996a = -1;
-            this.f1986a = null;
+            this.f1938a.f1948a = -1;
+            this.f1938a = null;
         }
         float remove = this.variables.remove(solverVariable, true) * (-1.0f);
-        this.f1986a = solverVariable;
+        this.f1938a = solverVariable;
         if (remove == 1.0f) {
             return;
         }
@@ -375,13 +375,13 @@ public class ArrayRow implements LinearSystem.Row {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public int c() {
-        return (this.f1986a != null ? 4 : 0) + 4 + 4 + this.variables.sizeInBytes();
+        return (this.f1938a != null ? 4 : 0) + 4 + 4 + this.variables.sizeInBytes();
     }
 
     @Override // androidx.constraintlayout.core.LinearSystem.Row
     public void clear() {
         this.variables.clear();
-        this.f1986a = null;
+        this.f1938a = null;
         this.b = 0.0f;
     }
 
@@ -541,7 +541,7 @@ public class ArrayRow implements LinearSystem.Row {
 
     @Override // androidx.constraintlayout.core.LinearSystem.Row
     public SolverVariable getKey() {
-        return this.f1986a;
+        return this.f1938a;
     }
 
     @Override // androidx.constraintlayout.core.LinearSystem.Row
@@ -555,7 +555,7 @@ public class ArrayRow implements LinearSystem.Row {
             return;
         }
         ArrayRow arrayRow = (ArrayRow) row;
-        this.f1986a = null;
+        this.f1938a = null;
         this.variables.clear();
         int i = 0;
         while (true) {
@@ -570,7 +570,7 @@ public class ArrayRow implements LinearSystem.Row {
 
     @Override // androidx.constraintlayout.core.LinearSystem.Row
     public boolean isEmpty() {
-        return this.f1986a == null && this.b == 0.0f && this.variables.getCurrentSize() == 0;
+        return this.f1938a == null && this.b == 0.0f && this.variables.getCurrentSize() == 0;
     }
 
     public SolverVariable pickPivot(SolverVariable solverVariable) {
@@ -578,7 +578,7 @@ public class ArrayRow implements LinearSystem.Row {
     }
 
     public void reset() {
-        this.f1986a = null;
+        this.f1938a = null;
         this.variables.clear();
         this.b = 0.0f;
         this.e = false;
@@ -608,9 +608,9 @@ public class ArrayRow implements LinearSystem.Row {
     public void updateFromRow(LinearSystem linearSystem, ArrayRow arrayRow, boolean z) {
         this.b += arrayRow.b * this.variables.use(arrayRow, z);
         if (z) {
-            arrayRow.f1986a.removeFromRow(this);
+            arrayRow.f1938a.removeFromRow(this);
         }
-        if (LinearSystem.SIMPLIFY_SYNONYMS && this.f1986a != null && this.variables.getCurrentSize() == 0) {
+        if (LinearSystem.SIMPLIFY_SYNONYMS && this.f1938a != null && this.variables.getCurrentSize() == 0) {
             this.e = true;
             linearSystem.hasSimpleDefinition = true;
         }
@@ -648,7 +648,7 @@ public class ArrayRow implements LinearSystem.Row {
                     break;
                 }
                 SolverVariable variable = this.variables.getVariable(i2);
-                if (variable.f1996a != -1 || variable.isFinalValue || variable.g) {
+                if (variable.f1948a != -1 || variable.isFinalValue || variable.g) {
                     this.d.add(variable);
                 }
                 i = i2 + 1;
@@ -667,7 +667,7 @@ public class ArrayRow implements LinearSystem.Row {
                     } else if (solverVariable.g) {
                         updateFromSynonymVariable(linearSystem, solverVariable, true);
                     } else {
-                        updateFromRow(linearSystem, linearSystem.b[solverVariable.f1996a], true);
+                        updateFromRow(linearSystem, linearSystem.b[solverVariable.f1948a], true);
                     }
                     i3 = i4 + 1;
                 }
@@ -676,7 +676,7 @@ public class ArrayRow implements LinearSystem.Row {
                 z = true;
             }
         }
-        if (LinearSystem.SIMPLIFY_SYNONYMS && this.f1986a != null && this.variables.getCurrentSize() == 0) {
+        if (LinearSystem.SIMPLIFY_SYNONYMS && this.f1938a != null && this.variables.getCurrentSize() == 0) {
             this.e = true;
             linearSystem.hasSimpleDefinition = true;
         }

@@ -4,11 +4,11 @@ package com.tencent.tendinsv.tool;
 public class f {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f39053a;
+    public String f25362a;
     public String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f39054c;
+    public String f25363c;
     public String d;
     public String e;
     public String f = "2";

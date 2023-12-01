@@ -16,25 +16,24 @@ public class b implements IGDTAdManager {
     public static final ExecutorService g = Executors.newSingleThreadExecutor();
 
     /* renamed from: a  reason: collision with root package name */
-    private volatile Boolean f27911a;
+    private volatile Boolean f14223a;
     private volatile boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private volatile Context f27912c;
+    private volatile Context f14224c;
     private volatile PM d;
     private volatile DevTools e;
     private volatile String f;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8303388-dex2jar.jar:com/qq/e/comm/managers/b$a.class */
-    public static final class a {
+    static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static b f27913a = new b(null);
+        private static b f14225a = new b(null);
     }
 
     private b() {
-        this.f27911a = Boolean.FALSE;
+        this.f14223a = Boolean.FALSE;
         this.b = false;
     }
 
@@ -43,7 +42,7 @@ public class b implements IGDTAdManager {
     }
 
     public static b b() {
-        return a.f27913a;
+        return a.f14225a;
     }
 
     public String a() {
@@ -56,7 +55,7 @@ public class b implements IGDTAdManager {
             if (Build.VERSION.SDK_INT < 14) {
                 GDTLogger.e("GDTADManager初始化错误，SDK不支持Android 4.0以下版本");
                 return false;
-            } else if (this.f27911a.booleanValue()) {
+            } else if (this.f14223a.booleanValue()) {
                 return true;
             } else {
                 if (context == null || TextUtils.isEmpty(str)) {
@@ -64,10 +63,10 @@ public class b implements IGDTAdManager {
                     return false;
                 }
                 this.f = str;
-                this.f27912c = context.getApplicationContext();
-                this.d = new PM(this.f27912c, null);
+                this.f14224c = context.getApplicationContext();
+                this.d = new PM(this.f14224c, null);
                 g.submit(new com.qq.e.comm.managers.a(this));
-                this.f27911a = Boolean.TRUE;
+                this.f14223a = Boolean.TRUE;
                 return true;
             }
         }
@@ -78,7 +77,7 @@ public class b implements IGDTAdManager {
     }
 
     public boolean d() {
-        if (this.f27911a == null || !this.f27911a.booleanValue()) {
+        if (this.f14223a == null || !this.f14223a.booleanValue()) {
             GDTLogger.e("SDK 尚未初始化，请在 Application 中调用 GDTAdSdk.init() 初始化");
             return false;
         }

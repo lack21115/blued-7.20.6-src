@@ -14,26 +14,26 @@ import java.util.List;
 public abstract class c<T> {
 
     /* renamed from: a  reason: collision with root package name */
-    protected static final Object f41067a = new Object();
+    protected static final Object f27376a = new Object();
     protected List<T> b = new ArrayList();
 
     /* renamed from: c  reason: collision with root package name */
-    protected Context f41068c;
+    protected Context f27377c;
     private byte[] d;
     private byte[] e;
 
     /* JADX INFO: Access modifiers changed from: protected */
     public c(Context context) {
-        this.f41068c = ContextDelegate.getContext(context);
+        this.f27377c = ContextDelegate.getContext(context);
         w b = w.b();
-        b.a(this.f41068c);
+        b.a(this.f27377c);
         this.d = b.c();
         this.e = b.d();
         c();
     }
 
     private String b() {
-        return y.b(this.f41068c).a(a(), null);
+        return y.b(this.f27377c).a(a(), null);
     }
 
     private void c(String str) {
@@ -57,7 +57,7 @@ public abstract class c<T> {
     }
 
     private void d(String str) {
-        y.b(this.f41068c).b(a(), str);
+        y.b(this.f27377c).b(a(), str);
     }
 
     protected abstract String a();
@@ -67,7 +67,7 @@ public abstract class c<T> {
     abstract String b(String str);
 
     public final void c() {
-        synchronized (f41067a) {
+        synchronized (f27376a) {
             g.a(a());
             this.b.clear();
             c(b());
@@ -75,7 +75,7 @@ public abstract class c<T> {
     }
 
     public final void d() {
-        synchronized (f41067a) {
+        synchronized (f27376a) {
             this.b.clear();
             d("");
             p.d("CacheSettings", "clear " + a() + " strApps");

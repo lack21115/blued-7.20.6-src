@@ -4,15 +4,15 @@ package com.oplus.log.f;
 public abstract class b implements com.oplus.log.a {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f24368a = 1;
+    private int f10681a = 1;
     private int b = 1;
 
     public int a() {
-        return this.f24368a;
+        return this.f10681a;
     }
 
     public void a(int i) {
-        this.f24368a = i;
+        this.f10681a = i;
     }
 
     @Override // com.oplus.log.a

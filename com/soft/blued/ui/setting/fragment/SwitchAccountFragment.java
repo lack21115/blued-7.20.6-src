@@ -32,11 +32,11 @@ import java.util.List;
 public class SwitchAccountFragment extends MvpFragment<SwitchAccountPresenter> implements View.OnClickListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f33611a = 0;
+    private int f19920a = 0;
     private boolean b = false;
 
     /* renamed from: c  reason: collision with root package name */
-    private ImageOptions f33612c = new ImageOptions();
+    private ImageOptions f19921c = new ImageOptions();
     private ImageOptions d = new ImageOptions();
     @BindView
     ImageView iv_account_icon_one;
@@ -73,14 +73,14 @@ public class SwitchAccountFragment extends MvpFragment<SwitchAccountPresenter> i
             return;
         }
         if (list.size() == 2) {
-            this.f33611a = 1;
+            this.f19920a = 1;
         } else {
-            this.f33611a = 0;
+            this.f19920a = 0;
         }
         UserAccountsModel userAccountsModel = list.get(0);
-        ImageLoader.a(getFragmentActive(), userAccountsModel.getBluedLoginResult().avatar).c().a(this.f33612c).a(this.iv_account_icon_one);
+        ImageLoader.a(getFragmentActive(), userAccountsModel.getBluedLoginResult().avatar).c().a(this.f19921c).a(this.iv_account_icon_one);
         this.tv_account_nick_one.setText(userAccountsModel.getBluedLoginResult().name);
-        if (this.f33611a != 1) {
+        if (this.f19920a != 1) {
             this.iv_account_icon_two.setImageResource(2131233028);
             this.iv_online_state_two.setVisibility(8);
             this.tv_account_nick_two.setVisibility(8);
@@ -111,7 +111,7 @@ public class SwitchAccountFragment extends MvpFragment<SwitchAccountPresenter> i
         }
         this.top_title.getLeftImg().setVisibility(8);
         this.top_title.getLeftTextView().setVisibility(0);
-        if (this.f33611a == 0) {
+        if (this.f19920a == 0) {
             this.iv_delete_one.setVisibility(0);
         } else {
             this.iv_delete_one.setVisibility(0);
@@ -134,7 +134,7 @@ public class SwitchAccountFragment extends MvpFragment<SwitchAccountPresenter> i
     /* JADX INFO: Access modifiers changed from: private */
     public void b(boolean z) {
         if (NetWorkUtil.isConnected(getContext())) {
-            j().a(z);
+            ((SwitchAccountPresenter) j()).a(z);
         } else {
             ToastUtils.a(getResources().getString(R.string.network_error));
         }
@@ -142,13 +142,13 @@ public class SwitchAccountFragment extends MvpFragment<SwitchAccountPresenter> i
 
     private void c() {
         if (NetWorkUtil.isConnected(getContext())) {
-            j().m();
+            ((SwitchAccountPresenter) j()).m();
         } else {
             ToastUtils.a(getResources().getString(R.string.network_error));
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
+    /* JADX WARN: Multi-variable type inference failed */
     public void a(Bundle bundle) {
         super.a(bundle);
         this.top_title.getRightImg().setVisibility(8);
@@ -164,14 +164,14 @@ public class SwitchAccountFragment extends MvpFragment<SwitchAccountPresenter> i
         this.iv_account_icon_two.setOnClickListener(this);
         this.tv_management.setOnClickListener(this);
         if (UserInfo.getInstance().getLoginUserInfo().vip_grade == 0) {
-            this.f33612c.f9508c = 2131237313;
-            this.f33612c.f9507a = 2131237313;
+            this.f19921c.c = R.drawable.user_bg_round_border_white;
+            this.f19921c.a = R.drawable.user_bg_round_border_white;
         } else {
-            this.f33612c.f9508c = R.drawable.user_bg_round_border_vip;
-            this.f33612c.f9507a = R.drawable.user_bg_round_border_vip;
+            this.f19921c.c = R.drawable.user_bg_round_border_vip;
+            this.f19921c.a = R.drawable.user_bg_round_border_vip;
         }
-        this.d.f9508c = 2131237313;
-        this.d.f9507a = 2131237313;
+        this.d.c = R.drawable.user_bg_round_border_white;
+        this.d.a = R.drawable.user_bg_round_border_white;
         LiveEventBus.get(EventBusConstant.KEY_EVENT_HIDE_LOGIN_BACK, Void.class).observe(this, new Observer<Void>() { // from class: com.soft.blued.ui.setting.fragment.SwitchAccountFragment.1
             @Override // androidx.lifecycle.Observer
             /* renamed from: a */
@@ -184,28 +184,25 @@ public class SwitchAccountFragment extends MvpFragment<SwitchAccountPresenter> i
             this.tv_has_unread.setVisibility(0);
             int dH = BluedPreferences.dH();
             if (dH == 1) {
-                this.tv_has_unread.setText(R.string.switch_account_unread);
+                this.tv_has_unread.setText((int) R.string.switch_account_unread);
             } else if (dH == 2) {
-                this.tv_has_unread.setText(R.string.switch_account_unread_follower);
+                this.tv_has_unread.setText((int) R.string.switch_account_unread_follower);
             } else if (dH != 3) {
             } else {
-                this.tv_has_unread.setText(R.string.switch_account_unread_visitor);
+                this.tv_has_unread.setText((int) R.string.switch_account_unread_visitor);
             }
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void a(String str, List list) {
         super.a(str, list);
         if (!str.equals("data_account") || list == null || list.size() <= 0) {
             return;
         }
         MvpUtils.a(list, UserAccountsModel.class, new MvpUtils.DataListHandler<UserAccountsModel>() { // from class: com.soft.blued.ui.setting.fragment.SwitchAccountFragment.2
-            @Override // com.blued.android.framework.ui.mvp.MvpUtils.DataListHandler
             public void a() {
             }
 
-            @Override // com.blued.android.framework.ui.mvp.MvpUtils.DataListHandler
             public void a(List<UserAccountsModel> list2) {
                 SwitchAccountFragment.this.a(list2);
                 SwitchAccountFragment.this.b = false;
@@ -214,12 +211,10 @@ public class SwitchAccountFragment extends MvpFragment<SwitchAccountPresenter> i
         });
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public int g() {
         return R.layout.fm_switch_account;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment
     public boolean isActivitySwipeBackEnable() {
         return false;
     }
@@ -248,8 +243,8 @@ public class SwitchAccountFragment extends MvpFragment<SwitchAccountPresenter> i
                 if (this.b) {
                     return;
                 }
-                if (this.f33611a == 0) {
-                    j().n();
+                if (this.f19920a == 0) {
+                    ((SwitchAccountPresenter) j()).n();
                     return;
                 } else {
                     b(false);
@@ -267,8 +262,8 @@ public class SwitchAccountFragment extends MvpFragment<SwitchAccountPresenter> i
                 b(new Runnable() { // from class: com.soft.blued.ui.setting.fragment.SwitchAccountFragment.4
                     @Override // java.lang.Runnable
                     public void run() {
-                        SwitchAccountFragment.this.j().p();
-                        SwitchAccountFragment.this.j().o();
+                        ((SwitchAccountPresenter) SwitchAccountFragment.this.j()).p();
+                        ((SwitchAccountPresenter) SwitchAccountFragment.this.j()).o();
                         CommonPreferences.a(false);
                     }
                 });

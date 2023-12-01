@@ -11,23 +11,23 @@ public final class l {
     public static final byte l = 11;
 
     /* renamed from: a  reason: collision with root package name */
-    public long f23448a;
+    public long f9840a;
     public String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public byte f23449c;
+    public byte f9841c;
     public long d;
     public int e;
 
     public l(long j2, String str, byte b, long j3) {
-        this.f23448a = j2;
+        this.f9840a = j2;
         this.b = str;
-        this.f23449c = b;
+        this.f9841c = b;
         this.d = j3;
     }
 
     private long a() {
-        return this.f23448a;
+        return this.f9840a;
     }
 
     private l a(int i2) {
@@ -36,11 +36,11 @@ public final class l {
     }
 
     private void a(byte b) {
-        this.f23449c = b;
+        this.f9841c = b;
     }
 
     private void a(long j2) {
-        this.f23448a = j2;
+        this.f9840a = j2;
     }
 
     private void a(String str) {
@@ -56,7 +56,7 @@ public final class l {
     }
 
     private byte c() {
-        return this.f23449c;
+        return this.f9841c;
     }
 
     private long d() {

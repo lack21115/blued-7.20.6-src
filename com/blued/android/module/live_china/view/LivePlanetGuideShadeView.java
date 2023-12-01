@@ -16,13 +16,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LivePlanetGuideShadeView.class */
 public final class LivePlanetGuideShadeView extends View {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Context f14865a;
+    private final Context a;
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f14866c;
+    private int c;
     private int d;
     private int e;
     private int f;
@@ -48,7 +44,7 @@ public final class LivePlanetGuideShadeView extends View {
     public LivePlanetGuideShadeView(Context mContext) {
         super(mContext);
         Intrinsics.e(mContext, "mContext");
-        this.f14865a = mContext;
+        this.a = mContext;
         this.h = -1;
         this.i = -1;
         this.j = -1;
@@ -73,12 +69,12 @@ public final class LivePlanetGuideShadeView extends View {
 
     private final void a(int i, int i2) {
         this.b = i;
-        this.f14866c = i2;
+        this.c = i2;
         invalidate();
     }
 
     private final void a(Canvas canvas) {
-        RectF rectF = new RectF(0.0f, 0.0f, this.b, this.f14866c);
+        RectF rectF = new RectF(0.0f, 0.0f, this.b, this.c);
         if (canvas == null) {
             return;
         }
@@ -186,7 +182,7 @@ public final class LivePlanetGuideShadeView extends View {
     }
 
     public final Context getMContext() {
-        return this.f14865a;
+        return this.a;
     }
 
     public final float getProgress() {

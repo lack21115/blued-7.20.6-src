@@ -13,7 +13,6 @@ import com.blued.android.framework.pool.ThreadExecutor;
 import com.blued.android.framework.pool.ThreadManager;
 import com.blued.android.module.common.base.dialog.bottomsheet.BottomSheetDialogFragment;
 import com.blued.android.module.common.user.model.UserInfo;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.bytedance.applog.tracker.Tracker;
 import com.soft.blued.R;
 import com.soft.blued.ui.msg.model.ChannelModel;
@@ -22,11 +21,11 @@ import com.soft.blued.ui.msg.model.ChannelModel;
 public class VideoChatDialogFragment extends BottomSheetDialogFragment implements View.OnClickListener, VideoChatHelper.CallInfoListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f31955a;
+    private Context f18265a;
     private View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private LinearLayout f31956c;
+    private LinearLayout f18266c;
     private TextView d;
     private TextView e;
     private TextView f;
@@ -38,14 +37,14 @@ public class VideoChatDialogFragment extends BottomSheetDialogFragment implement
     private View.OnClickListener l;
 
     private void h() {
-        this.f31956c = (LinearLayout) this.b.findViewById(R.id.layout_try_again);
+        this.f18266c = (LinearLayout) this.b.findViewById(R.id.layout_try_again);
         this.d = (TextView) this.b.findViewById(R.id.tv_chat_count);
         this.e = (TextView) this.b.findViewById(R.id.tv_chat_tip);
         this.f = (TextView) this.b.findViewById(R.id.tv_try_again);
         this.g = (TextView) this.b.findViewById(R.id.tv_video_chat);
         this.h = (TextView) this.b.findViewById(R.id.tv_voice_chat);
         this.i = (TextView) this.b.findViewById(2131371051);
-        this.f31956c.setOnClickListener(this);
+        this.f18266c.setOnClickListener(this);
         this.g.setOnClickListener(this);
         this.h.setOnClickListener(this);
         this.i.setOnClickListener(this);
@@ -53,7 +52,6 @@ public class VideoChatDialogFragment extends BottomSheetDialogFragment implement
 
     private void i() {
         ThreadManager.a().a(new ThreadExecutor("startConnect") { // from class: com.soft.blued.ui.msg.VideoChatDialogFragment.1
-            @Override // com.blued.android.framework.pool.ThreadExecutor
             public void execute() {
                 if (VideoChatDialogFragment.this.k != null) {
                     VideoChatDialogFragment.this.k.getLeftTimeAndCount();
@@ -70,11 +68,9 @@ public class VideoChatDialogFragment extends BottomSheetDialogFragment implement
         this.l = onClickListener;
     }
 
-    @Override // com.blued.android.chat.VideoChatHelper.CallInfoListener
     public void onCallClose(int i) {
     }
 
-    @Override // com.blued.android.chat.VideoChatHelper.CallInfoListener
     public void onCallLeftTime(final int i, final int i2) {
         this.b.post(new Runnable() { // from class: com.soft.blued.ui.msg.VideoChatDialogFragment.2
             @Override // java.lang.Runnable
@@ -91,16 +87,15 @@ public class VideoChatDialogFragment extends BottomSheetDialogFragment implement
                 VideoChatDialogFragment.this.e.setVisibility(8);
                 VideoChatDialogFragment.this.d.setVisibility(0);
                 if (i < 60) {
-                    str = String.format(VideoChatDialogFragment.this.f31955a.getString(R.string.chat_today_count_call), String.valueOf(i2)) + BridgeUtil.SPLIT_MARK + String.format(VideoChatDialogFragment.this.f31955a.getString(R.string.chat_today_count_sec), String.valueOf(i));
+                    str = String.format(VideoChatDialogFragment.this.f18265a.getString(R.string.chat_today_count_call), String.valueOf(i2)) + "/" + String.format(VideoChatDialogFragment.this.f18265a.getString(R.string.chat_today_count_sec), String.valueOf(i));
                 } else {
-                    str = String.format(VideoChatDialogFragment.this.f31955a.getString(R.string.chat_today_count_call), String.valueOf(i2)) + BridgeUtil.SPLIT_MARK + String.format(VideoChatDialogFragment.this.f31955a.getString(R.string.chat_today_count_min), String.valueOf(i / 60));
+                    str = String.format(VideoChatDialogFragment.this.f18265a.getString(R.string.chat_today_count_call), String.valueOf(i2)) + "/" + String.format(VideoChatDialogFragment.this.f18265a.getString(R.string.chat_today_count_min), String.valueOf(i / 60));
                 }
                 VideoChatDialogFragment.this.d.setText(str);
             }
         });
     }
 
-    @Override // com.blued.android.chat.VideoChatHelper.CallInfoListener
     public void onCallLeftTimeFail() {
         this.b.post(new Runnable() { // from class: com.soft.blued.ui.msg.VideoChatDialogFragment.3
             @Override // java.lang.Runnable
@@ -152,14 +147,12 @@ public class VideoChatDialogFragment extends BottomSheetDialogFragment implement
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.f31955a = getActivity();
+        this.f18265a = getActivity();
         View view = this.b;
         if (view == null) {
             this.b = layoutInflater.inflate(R.layout.dialog_video_chat, viewGroup, false);
@@ -167,12 +160,11 @@ public class VideoChatDialogFragment extends BottomSheetDialogFragment implement
         } else if (view.getParent() != null) {
             ((ViewGroup) this.b.getParent()).removeView(this.b);
         }
-        this.k = new VideoChatHelper(VideoChatHelper.ROLE.CALLER, 0L, "", 2, UserInfo.getInstance().getLoginUserInfo().chat_sdk_type, this, null);
+        this.k = new VideoChatHelper(VideoChatHelper.ROLE.CALLER, 0L, "", 2, UserInfo.getInstance().getLoginUserInfo().chat_sdk_type, this, (VideoChatHelper.CallMsgListener) null);
         i();
         return this.b;
     }
 
-    @Override // com.blued.android.chat.VideoChatHelper.CallInfoListener
     public void onSwitchToAudio() {
     }
 }

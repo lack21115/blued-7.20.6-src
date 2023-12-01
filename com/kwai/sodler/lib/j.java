@@ -16,8 +16,8 @@ public class j implements com.kwai.sodler.lib.a.e {
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: com.kwai.sodler.lib.j$a$a  reason: collision with other inner class name */
         /* loaded from: source-7994992-dex2jar.jar:com/kwai/sodler/lib/j$a$a.class */
-        public static final class C0597a extends a {
-            public C0597a(com.kwai.sodler.lib.a.e eVar) {
+        public static final class C0427a extends a {
+            public C0427a(com.kwai.sodler.lib.a.e eVar) {
                 super(eVar);
             }
 
@@ -58,7 +58,7 @@ public class j implements com.kwai.sodler.lib.a.e {
         }
 
         public static a a(com.kwai.sodler.lib.a.e eVar, int i) {
-            return i != 1 ? i != 256 ? new b(eVar) : new C0597a(eVar) : new c(eVar);
+            return i != 1 ? i != 256 ? new b(eVar) : new C0427a(eVar) : new c(eVar);
         }
 
         public abstract void m(com.kwai.sodler.lib.a.f fVar);

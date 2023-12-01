@@ -32,12 +32,12 @@ public class RequestManagerRetriever implements Handler.Callback {
     };
 
     /* renamed from: c  reason: collision with root package name */
-    private volatile RequestManager f21020c;
+    private volatile RequestManager f7414c;
     private final Handler d;
     private final RequestManagerFactory e;
 
     /* renamed from: a  reason: collision with root package name */
-    final Map<FragmentManager, RequestManagerFragment> f21019a = new HashMap();
+    final Map<FragmentManager, RequestManagerFragment> f7413a = new HashMap();
     final Map<androidx.fragment.app.FragmentManager, SupportRequestManagerFragment> b = new HashMap();
     private final ArrayMap<View, Fragment> f = new ArrayMap<>();
     private final ArrayMap<View, android.app.Fragment> g = new ArrayMap<>();
@@ -80,7 +80,7 @@ public class RequestManagerRetriever implements Handler.Callback {
         RequestManagerFragment requestManagerFragment = (RequestManagerFragment) fragmentManager.findFragmentByTag("com.bumptech.glide.manager");
         RequestManagerFragment requestManagerFragment2 = requestManagerFragment;
         if (requestManagerFragment == null) {
-            RequestManagerFragment requestManagerFragment3 = this.f21019a.get(fragmentManager);
+            RequestManagerFragment requestManagerFragment3 = this.f7413a.get(fragmentManager);
             requestManagerFragment2 = requestManagerFragment3;
             if (requestManagerFragment3 == null) {
                 requestManagerFragment2 = new RequestManagerFragment();
@@ -88,7 +88,7 @@ public class RequestManagerRetriever implements Handler.Callback {
                 if (z) {
                     requestManagerFragment2.a().a();
                 }
-                this.f21019a.put(fragmentManager, requestManagerFragment2);
+                this.f7413a.put(fragmentManager, requestManagerFragment2);
                 fragmentManager.beginTransaction().add(requestManagerFragment2, "com.bumptech.glide.manager").commitAllowingStateLoss();
                 this.d.obtainMessage(1, fragmentManager).sendToTarget();
             }
@@ -117,14 +117,14 @@ public class RequestManagerRetriever implements Handler.Callback {
     }
 
     private RequestManager b(Context context) {
-        if (this.f21020c == null) {
+        if (this.f7414c == null) {
             synchronized (this) {
-                if (this.f21020c == null) {
-                    this.f21020c = this.e.a(Glide.a(context.getApplicationContext()), new ApplicationLifecycle(), new EmptyRequestManagerTreeNode(), context.getApplicationContext());
+                if (this.f7414c == null) {
+                    this.f7414c = this.e.a(Glide.a(context.getApplicationContext()), new ApplicationLifecycle(), new EmptyRequestManagerTreeNode(), context.getApplicationContext());
                 }
             }
         }
-        return this.f21020c;
+        return this.f7414c;
     }
 
     private static Activity c(Context context) {
@@ -212,7 +212,7 @@ public class RequestManagerRetriever implements Handler.Callback {
         boolean z = true;
         if (i2 == 1) {
             obj = (FragmentManager) message.obj;
-            supportRequestManagerFragment = this.f21019a.remove(obj);
+            supportRequestManagerFragment = this.f7413a.remove(obj);
         } else if (i2 != 2) {
             z = false;
             obj = null;

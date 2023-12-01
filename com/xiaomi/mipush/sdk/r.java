@@ -10,19 +10,19 @@ import com.xiaomi.push.ht;
 public class r implements dk {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f41234a;
+    private Context f27543a;
 
     public r(Context context) {
-        this.f41234a = context;
+        this.f27543a = context;
     }
 
     @Override // com.xiaomi.push.dk
     public String a() {
-        return b.m11457a(this.f41234a).d();
+        return b.m8407a(this.f27543a).d();
     }
 
     @Override // com.xiaomi.push.dk
     public void a(Cif cif, hg hgVar, ht htVar) {
-        ao.a(this.f41234a).a((ao) cif, hgVar, htVar);
+        ao.a(this.f27543a).a((ao) cif, hgVar, htVar);
     }
 }

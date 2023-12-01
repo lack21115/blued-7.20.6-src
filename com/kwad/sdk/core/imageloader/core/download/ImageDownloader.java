@@ -15,7 +15,7 @@ public interface ImageDownloader {
         FILE(ContentResolver.SCHEME_FILE),
         CONTENT("content"),
         ASSETS("assets"),
-        DRAWABLE(i.f7952c),
+        DRAWABLE(i.f5112c),
         UNKNOWN("");
         
         private String scheme;

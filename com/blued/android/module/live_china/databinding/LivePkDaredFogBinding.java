@@ -5,13 +5,10 @@ import androidx.viewbinding.ViewBinding;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/LivePkDaredFogBinding.class */
 public final class LivePkDaredFogBinding implements ViewBinding {
+    private final RelativeLayout a;
 
-    /* renamed from: a  reason: collision with root package name */
-    private final RelativeLayout f12321a;
-
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
-        return this.f12321a;
+        return this.a;
     }
 }

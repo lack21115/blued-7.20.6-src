@@ -23,11 +23,11 @@ import java.util.concurrent.TimeUnit;
 public class q0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final a f42167a;
+    public static final a f28476a;
     public static volatile q0 b;
 
     /* renamed from: c  reason: collision with root package name */
-    public static Context f42168c;
+    public static Context f28477c;
     public static boolean d = false;
 
     /* loaded from: source-8829756-dex2jar.jar:com/zx/a/I8b7/q0$a.class */
@@ -47,18 +47,18 @@ public class q0 {
         public static final CountDownLatch i = new CountDownLatch(1);
 
         /* renamed from: a  reason: collision with root package name */
-        public String f42169a;
+        public String f28478a;
         public String b;
 
         /* renamed from: c  reason: collision with root package name */
-        public String f42170c;
+        public String f28479c;
         public String d;
         public e e;
 
         public b(String str, String str2, String str3, String str4) {
-            this.f42169a = str;
+            this.f28478a = str;
             this.b = str2;
-            this.f42170c = str3;
+            this.f28479c = str3;
             this.d = str4;
         }
 
@@ -68,7 +68,7 @@ public class q0 {
 
         @Override // com.zx.a.I8b7.q0.a
         public boolean a(Context context) {
-            if (context == null || TextUtils.isEmpty(this.f42169a)) {
+            if (context == null || TextUtils.isEmpty(this.f28478a)) {
                 return false;
             }
             if (this.e == null) {
@@ -76,12 +76,12 @@ public class q0 {
             }
             Intent intent = new Intent();
             if (TextUtils.isEmpty(this.b)) {
-                intent.setPackage(this.f42169a);
+                intent.setPackage(this.f28478a);
             } else {
-                intent.setComponent(new ComponentName(this.f42169a, this.b));
+                intent.setComponent(new ComponentName(this.f28478a, this.b));
             }
-            if (!TextUtils.isEmpty(this.f42170c)) {
-                intent.setAction(this.f42170c);
+            if (!TextUtils.isEmpty(this.f28479c)) {
+                intent.setAction(this.f28479c);
             }
             return this.e.a(context, intent);
         }
@@ -96,7 +96,7 @@ public class q0 {
             e eVar;
             d dVar;
             e eVar2;
-            if (!TextUtils.isEmpty(f) || (eVar = this.e) == null || (dVar = eVar.f42174a) == null) {
+            if (!TextUtils.isEmpty(f) || (eVar = this.e) == null || (dVar = eVar.f28483a) == null) {
                 return f;
             }
             try {
@@ -115,11 +115,11 @@ public class q0 {
             if (h) {
                 return g;
             }
-            if (context == null || TextUtils.isEmpty(this.f42169a)) {
+            if (context == null || TextUtils.isEmpty(this.f28478a)) {
                 g = false;
             } else {
                 try {
-                    PackageInfo a2 = p2.a(this.f42169a, 0);
+                    PackageInfo a2 = p2.a(this.f28478a, 0);
                     if (Build.VERSION.SDK_INT >= 28) {
                         if (a2 != null) {
                             return a2.getLongVersionCode() >= 1;
@@ -157,15 +157,15 @@ public class q0 {
         public static boolean f = false;
 
         /* renamed from: a  reason: collision with root package name */
-        public String f42171a;
+        public String f28480a;
         public String b;
 
         /* renamed from: c  reason: collision with root package name */
-        public String[] f42172c;
+        public String[] f28481c;
         public boolean d = false;
 
         public c(String str, String str2) {
-            this.f42171a = str;
+            this.f28480a = str;
             this.b = str2;
         }
 
@@ -199,7 +199,7 @@ public class q0 {
                 r9 = r0
                 r0 = r9
                 r1 = r7
-                java.lang.String r1 = r1.f42171a
+                java.lang.String r1 = r1.f28480a
                 java.lang.StringBuilder r0 = r0.append(r1)
                 r0 = r9
                 java.lang.String r1 = "/"
@@ -218,7 +218,7 @@ public class q0 {
                 r2 = 0
                 r3 = 0
                 r4 = r7
-                java.lang.String[] r4 = r4.f42172c     // Catch: java.lang.Throwable -> L87
+                java.lang.String[] r4 = r4.f28481c     // Catch: java.lang.Throwable -> L87
                 r5 = 0
                 android.database.Cursor r0 = r0.query(r1, r2, r3, r4, r5)     // Catch: java.lang.Throwable -> L87
                 r8 = r0
@@ -280,7 +280,7 @@ public class q0 {
             }
             try {
                 PackageManager c2 = d3.c(context);
-                f = (c2 == null || c2.resolveContentProvider(this.f42171a, 0) == null) ? false : true;
+                f = (c2 == null || c2.resolveContentProvider(this.f28480a, 0) == null) ? false : true;
             } catch (Throwable th) {
                 f = false;
             }
@@ -293,11 +293,11 @@ public class q0 {
     public static class d implements IInterface {
 
         /* renamed from: a  reason: collision with root package name */
-        public IBinder f42173a;
+        public IBinder f28482a;
         public String b;
 
         public d(IBinder iBinder, String str) {
-            this.f42173a = iBinder;
+            this.f28482a = iBinder;
             this.b = str;
         }
 
@@ -315,7 +315,7 @@ public class q0 {
                 if (!TextUtils.isEmpty(str3)) {
                     obtain.writeString(str3);
                 }
-                this.f42173a.transact(i, obtain, obtain2, 0);
+                this.f28482a.transact(i, obtain, obtain2, 0);
                 obtain2.readException();
                 return obtain2.readString();
             } catch (Throwable th) {
@@ -331,7 +331,7 @@ public class q0 {
 
         @Override // android.os.IInterface
         public IBinder asBinder() {
-            return this.f42173a;
+            return this.f28482a;
         }
     }
 
@@ -339,26 +339,26 @@ public class q0 {
     public static class e implements ServiceConnection {
 
         /* renamed from: a  reason: collision with root package name */
-        public d f42174a;
+        public d f28483a;
         public String b;
 
         /* renamed from: c  reason: collision with root package name */
-        public CountDownLatch f42175c;
+        public CountDownLatch f28484c;
         public IBinder d;
 
         public e(String str, CountDownLatch countDownLatch) {
             this.b = str;
-            this.f42175c = countDownLatch;
+            this.f28484c = countDownLatch;
         }
 
         public boolean a(Context context, Intent intent) {
             d dVar;
-            if (this.f42174a != null) {
+            if (this.f28483a != null) {
                 return true;
             }
             try {
                 boolean bindService = context.bindService(intent, this, 1);
-                this.f42175c.await(1L, TimeUnit.SECONDS);
+                this.f28484c.await(1L, TimeUnit.SECONDS);
                 IBinder iBinder = this.d;
                 String str = this.b;
                 if (iBinder == null) {
@@ -367,7 +367,7 @@ public class q0 {
                     IInterface queryLocalInterface = iBinder.queryLocalInterface(str);
                     dVar = queryLocalInterface instanceof d ? (d) queryLocalInterface : new d(iBinder, str);
                 }
-                this.f42174a = dVar;
+                this.f28483a = dVar;
                 return bindService;
             } catch (Throwable th) {
                 return false;
@@ -378,14 +378,14 @@ public class q0 {
         public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
             try {
                 this.d = iBinder;
-                this.f42175c.countDown();
+                this.f28484c.countDown();
             } catch (Throwable th) {
             }
         }
 
         @Override // android.content.ServiceConnection
         public void onServiceDisconnected(ComponentName componentName) {
-            this.f42174a = null;
+            this.f28483a = null;
             this.d = null;
         }
     }
@@ -429,7 +429,7 @@ public class q0 {
 
         @Override // com.zx.a.I8b7.q0.c, com.zx.a.I8b7.q0.a
         public String b(Context context) {
-            this.f42172c = new String[]{"oaid"};
+            this.f28481c = new String[]{"oaid"};
             return super.b(context);
         }
 
@@ -530,7 +530,7 @@ public class q0 {
         public static String b;
 
         /* renamed from: a  reason: collision with root package name */
-        public Class f42176a = null;
+        public Class f28485a = null;
 
         @Override // com.zx.a.I8b7.q0.a
         public boolean a(Context context) {
@@ -541,7 +541,7 @@ public class q0 {
         public String b(Context context) {
             if (TextUtils.isEmpty(b)) {
                 try {
-                    b = String.valueOf(this.f42176a.getMethod("getOAID", Context.class).invoke(this.f42176a.newInstance(), context));
+                    b = String.valueOf(this.f28485a.getMethod("getOAID", Context.class).invoke(this.f28485a.newInstance(), context));
                 } catch (Throwable th) {
                     b = null;
                 }
@@ -552,7 +552,7 @@ public class q0 {
         @Override // com.zx.a.I8b7.q0.a
         public boolean c(Context context) {
             try {
-                this.f42176a = Class.forName("com.android.id.impl.IdProviderImpl");
+                this.f28485a = Class.forName("com.android.id.impl.IdProviderImpl");
                 return true;
             } catch (Throwable th) {
                 return false;
@@ -721,6 +721,6 @@ public class q0 {
                 nVar = null;
                 break;
         }
-        f42167a = nVar;
+        f28476a = nVar;
     }
 }

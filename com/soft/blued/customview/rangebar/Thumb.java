@@ -12,11 +12,11 @@ import android.util.TypedValue;
 class Thumb {
 
     /* renamed from: a  reason: collision with root package name */
-    private final float f28626a;
+    private final float f14936a;
     private final Bitmap b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final Bitmap f28627c;
+    private final Bitmap f14937c;
     private final float d;
     private final float e;
     private final float f;
@@ -35,7 +35,7 @@ class Thumb {
     public Thumb(Context context, float f, int i, int i2, float f2, int i3, int i4) {
         Resources resources = context.getResources();
         this.b = BitmapFactory.decodeResource(resources, i3);
-        this.f28627c = BitmapFactory.decodeResource(resources, i4);
+        this.f14937c = BitmapFactory.decodeResource(resources, i4);
         int i5 = (f2 > (-1.0f) ? 1 : (f2 == (-1.0f) ? 0 : -1));
         if (i5 == 0 && i == -1 && i2 == -1) {
             this.n = true;
@@ -67,9 +67,9 @@ class Thumb {
         }
         this.d = this.b.getWidth() / 2.0f;
         this.e = this.b.getHeight() / 2.0f;
-        this.f = this.f28627c.getWidth() / 2.0f;
-        this.g = this.f28627c.getHeight() / 2.0f;
-        this.f28626a = TypedValue.applyDimension(1, (int) Math.max(24.0f, f2), resources.getDisplayMetrics());
+        this.f = this.f14937c.getWidth() / 2.0f;
+        this.g = this.f14937c.getHeight() / 2.0f;
+        this.f14936a = TypedValue.applyDimension(1, (int) Math.max(24.0f, f2), resources.getDisplayMetrics());
         this.j = this.d;
         this.i = f;
     }
@@ -95,7 +95,7 @@ class Thumb {
                 return;
             }
         }
-        Bitmap bitmap = this.h ? this.f28627c : this.b;
+        Bitmap bitmap = this.h ? this.f14937c : this.b;
         if (this.h) {
             canvas.drawBitmap(bitmap, this.j - this.f, this.i - this.g, (Paint) null);
         } else {
@@ -105,7 +105,7 @@ class Thumb {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public boolean a(float f, float f2) {
-        return Math.abs(f - this.j) <= this.f28626a && Math.abs(f2 - this.i) <= this.f28626a;
+        return Math.abs(f - this.j) <= this.f14936a && Math.abs(f2 - this.i) <= this.f14936a;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

@@ -1,8 +1,7 @@
 package com.wrapper.proxyapplication;
 
-import com.baidu.mobads.sdk.internal.ci;
+import com.anythink.core.common.b.g;
 import com.blued.android.module.common.web.jsbridge.BridgeUtil;
-import com.tencent.tinker.loader.shareutil.ShareConstants;
 import dalvik.system.DexFile;
 import dalvik.system.PathClassLoader;
 import java.io.ByteArrayOutputStream;
@@ -155,7 +154,7 @@ public class CustomerClassLoader extends PathClassLoader {
         } else {
             sb.append((CharSequence) str, 0, lastIndexOf2);
         }
-        sb.append(ShareConstants.DEX_SUFFIX);
+        sb.append(".dex");
         return sb.toString();
     }
 
@@ -187,7 +186,7 @@ public class CustomerClassLoader extends PathClassLoader {
 
     private byte[] loadFromDirectory(String str) {
         try {
-            RandomAccessFile randomAccessFile = new RandomAccessFile(str, "r");
+            RandomAccessFile randomAccessFile = new RandomAccessFile(str, g.o.o);
             try {
                 byte[] bArr = new byte[(int) randomAccessFile.length()];
                 randomAccessFile.read(bArr);
@@ -280,7 +279,7 @@ public class CustomerClassLoader extends PathClassLoader {
             }
             File file = this.mFiles[i2];
             ZipFile zipFile = this.mZips[i2];
-            if (!this.mPaths[i2].endsWith(ShareConstants.DEX_SUFFIX) && zipFile.getEntry(str) != null) {
+            if (!this.mPaths[i2].endsWith(".dex") && zipFile.getEntry(str) != null) {
                 try {
                     return new URL("jar:" + file.toURL() + "!/" + str);
                 } catch (MalformedURLException e) {
@@ -302,7 +301,7 @@ public class CustomerClassLoader extends PathClassLoader {
             Package r0 = super.getPackage(str);
             r12 = r0;
             if (r0 == null) {
-                r12 = definePackage(str, "Unknown", ci.d, "Unknown", "Unknown", ci.d, "Unknown", null);
+                r12 = definePackage(str, "Unknown", "0.0", "Unknown", "Unknown", "0.0", "Unknown", null);
             }
         }
         return r12;

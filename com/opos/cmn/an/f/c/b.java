@@ -7,6 +7,7 @@ import android.os.Process;
 import android.text.TextUtils;
 import android.util.Base64;
 import android.util.Log;
+import com.huawei.hms.ads.fw;
 import com.opos.cmn.an.f.a.b.d;
 import com.ss.android.socialbase.downloader.constants.MonitorConstants;
 import java.io.BufferedReader;
@@ -20,11 +21,11 @@ import java.util.Date;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f24539a = b("ZGVidWcuY29tLm9wb3MuY21uLmxvZw==");
+    private static final String f10852a = b("ZGVidWcuY29tLm9wb3MuY21uLmxvZw==");
     private static String b = "localId";
 
     /* renamed from: c  reason: collision with root package name */
-    private static volatile String f24540c = "";
+    private static volatile String f10853c = "";
 
     private static String a(long j) {
         try {
@@ -97,7 +98,7 @@ public class b {
     public static String a(d dVar) {
         StringBuilder sb = new StringBuilder();
         sb.append("[");
-        sb.append(dVar.f24518a);
+        sb.append(dVar.f10831a);
         sb.append("][");
         sb.append(a(dVar.g));
         sb.append("][");
@@ -127,9 +128,9 @@ public class b {
         } else {
             sb.append(dVar.b);
         }
-        if (dVar.f24519c != null) {
+        if (dVar.f10832c != null) {
             sb.append("\n");
-            sb.append(Log.getStackTraceString(dVar.f24519c));
+            sb.append(Log.getStackTraceString(dVar.f10832c));
         }
         return sb.toString();
     }
@@ -165,8 +166,8 @@ public class b {
     }
 
     public static boolean a() {
-        String a2 = a(f24539a);
-        return !TextUtils.isEmpty(a2) && a2.contentEquals("true");
+        String a2 = a(f10852a);
+        return !TextUtils.isEmpty(a2) && a2.contentEquals(fw.Code);
     }
 
     public static String b(String str) {
@@ -182,16 +183,16 @@ public class b {
     }
 
     public static String c() {
-        if (TextUtils.isEmpty(f24540c)) {
-            f24540c = d();
-            if (TextUtils.isEmpty(f24540c)) {
-                f24540c = e();
+        if (TextUtils.isEmpty(f10853c)) {
+            f10853c = d();
+            if (TextUtils.isEmpty(f10853c)) {
+                f10853c = e();
             }
-            if (TextUtils.isEmpty(f24540c)) {
-                f24540c = f();
+            if (TextUtils.isEmpty(f10853c)) {
+                f10853c = f();
             }
         }
-        return f24540c;
+        return f10853c;
     }
 
     public static String d() {

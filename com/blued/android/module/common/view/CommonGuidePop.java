@@ -71,8 +71,8 @@ public final class CommonGuidePop extends AttachPopupView {
             Intrinsics.e(guidePop, "guidePop");
             Intrinsics.e(atView, "atView");
             Intrinsics.e(position, "position");
-            final BasePopupView a2 = new XPopup.Builder(guidePop.getContext()).a(atView).a(xPopupCallback).d((Boolean) false).b(z).a(position).a(PopupAnimation.ScaleAlphaFromCenter).b(Boolean.valueOf(guidePop.z())).c(guidePop.A()).b(guidePop.getOffsetX()).c(guidePop.getOffsetY()).a((BasePopupView) guidePop);
-            a2.h();
+            final BasePopupView a = new XPopup.Builder(guidePop.getContext()).a(atView).a(xPopupCallback).d((Boolean) false).b(z).a(position).a(PopupAnimation.ScaleAlphaFromCenter).b(Boolean.valueOf(guidePop.z())).c(guidePop.A()).b(guidePop.getOffsetX()).c(guidePop.getOffsetY()).a((BasePopupView) guidePop);
+            a.h();
             if (j != 0) {
                 AppInfo.n().postDelayed(new Runnable() { // from class: com.blued.android.module.common.view.-$$Lambda$CommonGuidePop$Companion$Uj3x3bf7u2eqQ348TdEgGG4JGEQ
                     @Override // java.lang.Runnable
@@ -140,20 +140,20 @@ public final class CommonGuidePop extends AttachPopupView {
             return;
         }
         PopGuideCommonBinding vb2 = getVb();
-        TextView textView4 = vb2 == null ? null : vb2.f10750c;
+        TextView textView4 = vb2 == null ? null : vb2.c;
         if (textView4 != null) {
             textView4.setText(this.x);
         }
-        if (getColorId() != 0 && (vb = getVb()) != null && (textView3 = vb.f10750c) != null) {
+        if (getColorId() != 0 && (vb = getVb()) != null && (textView3 = vb.c) != null) {
             textView3.setTextColor(BluedSkinUtils.a(getContext(), getColorId()));
         }
         PopGuideCommonBinding vb3 = getVb();
-        FrameLayout frameLayout2 = vb3 == null ? null : vb3.f10749a;
+        FrameLayout frameLayout2 = vb3 == null ? null : vb3.a;
         if (frameLayout2 != null) {
             frameLayout2.setBackground(NinePatchUtils.a(getPosition(), getResId()));
         }
         PopGuideCommonBinding vb4 = getVb();
-        if (vb4 != null && (frameLayout = vb4.f10749a) != null) {
+        if (vb4 != null && (frameLayout = vb4.a) != null) {
             frameLayout.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.common.view.-$$Lambda$CommonGuidePop$W69eiIRDw6E6LQvd2JhkfDyiGKQ
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -163,19 +163,19 @@ public final class CommonGuidePop extends AttachPopupView {
         }
         if (getResId() == R.drawable.guide_black_bubble_down || getResId() == R.drawable.guide_blue_bubble_down) {
             PopGuideCommonBinding vb5 = getVb();
-            ViewGroup.LayoutParams layoutParams = (vb5 == null || (textView = vb5.f10750c) == null) ? null : textView.getLayoutParams();
+            ViewGroup.LayoutParams layoutParams = (vb5 == null || (textView = vb5.c) == null) ? null : textView.getLayoutParams();
             if (layoutParams == null) {
                 throw new NullPointerException("null cannot be cast to non-null type android.view.ViewGroup.MarginLayoutParams");
             }
             ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) layoutParams;
             marginLayoutParams.topMargin = BluedViewExtKt.a(5);
             PopGuideCommonBinding vb6 = getVb();
-            TextView textView5 = vb6 == null ? null : vb6.f10750c;
+            TextView textView5 = vb6 == null ? null : vb6.c;
             if (textView5 != null) {
                 textView5.setLayoutParams(marginLayoutParams);
             }
             PopGuideCommonBinding vb7 = getVb();
-            if (vb7 == null || (textView2 = vb7.f10750c) == null) {
+            if (vb7 == null || (textView2 = vb7.c) == null) {
                 return;
             }
             textView2.setPadding(0, 0, 0, 0);

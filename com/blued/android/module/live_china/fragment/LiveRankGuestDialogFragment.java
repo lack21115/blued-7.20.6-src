@@ -42,9 +42,7 @@ import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveRankGuestDialogFragment.class */
 public class LiveRankGuestDialogFragment extends BaseDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static String f13189a = "LID";
+    public static String a = "LID";
     public static String d = "IF_USER_ANCHOR";
     public static int e;
     private String B;
@@ -73,20 +71,15 @@ public class LiveRankGuestDialogFragment extends BaseDialogFragment {
     private String x;
     private boolean y;
     private boolean z;
-
-    /* renamed from: c  reason: collision with root package name */
-    public int f13190c = 2;
+    public int c = 2;
     private List<Fragment> A = new ArrayList();
     private ViewPager.OnPageChangeListener F = new ViewPager.OnPageChangeListener() { // from class: com.blued.android.module.live_china.fragment.LiveRankGuestDialogFragment.1
-        @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
         public void onPageScrollStateChanged(int i) {
         }
 
-        @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
         public void onPageScrolled(int i, float f, int i2) {
         }
 
-        @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
         public void onPageSelected(int i) {
             LiveRankGuestDialogFragment.this.v = i;
             int i2 = LiveRankGuestDialogFragment.this.v;
@@ -156,7 +149,7 @@ public class LiveRankGuestDialogFragment extends BaseDialogFragment {
                     LiveRankGuestDialogFragment.AnonymousClass4.this.a(view2);
                 }
             });
-            LiveCloakingUtil.f14157a = LiveCloakingUtil.a(singleData);
+            LiveCloakingUtil.a = LiveCloakingUtil.a(singleData);
         }
 
         @Override // com.blued.android.framework.http.BluedUIHttpResponse
@@ -174,26 +167,21 @@ public class LiveRankGuestDialogFragment extends BaseDialogFragment {
 
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveRankGuestDialogFragment$MyAdapter.class */
     public class MyAdapter extends FragmentPagerAdapter {
-
-        /* renamed from: a  reason: collision with root package name */
-        FragmentManager f13196a;
+        FragmentManager a;
 
         public MyAdapter(FragmentManager fragmentManager) {
             super(fragmentManager);
-            this.f13196a = fragmentManager;
+            this.a = fragmentManager;
         }
 
-        @Override // androidx.fragment.app.FragmentPagerAdapter, androidx.viewpager.widget.PagerAdapter
         public void destroyItem(ViewGroup viewGroup, int i, Object obj) {
             super.destroyItem(viewGroup, i, obj);
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public int getCount() {
             return LiveRankGuestDialogFragment.this.A.size();
         }
 
-        @Override // androidx.fragment.app.FragmentPagerAdapter
         public Fragment getItem(int i) {
             if (i < LiveRankGuestDialogFragment.this.A.size()) {
                 return (Fragment) LiveRankGuestDialogFragment.this.A.get(i);
@@ -220,12 +208,12 @@ public class LiveRankGuestDialogFragment extends BaseDialogFragment {
     private void e() {
         if (getArguments() != null) {
             this.x = getArguments().getString("UID");
-            this.w = getArguments().getLong(f13189a);
+            this.w = getArguments().getLong(a);
             this.z = getArguments().getBoolean(d);
             boolean z = getArguments().getBoolean("isMakeLover");
             this.y = z;
             if (z) {
-                this.f13190c = 1;
+                this.c = 1;
             }
         }
         i();
@@ -260,10 +248,10 @@ public class LiveRankGuestDialogFragment extends BaseDialogFragment {
     private void h() {
         if (LiveRoomManager.a().S()) {
             Bundle bundle = new Bundle();
-            bundle.putBoolean(LiveRankGuestFragment.f13197a, true);
+            bundle.putBoolean(LiveRankGuestFragment.a, true);
             bundle.putString("UID", this.x);
             bundle.putLong(LiveRankGuestFragment.b, this.w);
-            bundle.putBoolean(LiveRankGuestFragment.f13198c, this.z);
+            bundle.putBoolean(LiveRankGuestFragment.c, this.z);
             LiveRankGuestFragment liveRankGuestFragment = new LiveRankGuestFragment();
             liveRankGuestFragment.setArguments(bundle);
             this.A.add(liveRankGuestFragment);
@@ -273,10 +261,10 @@ public class LiveRankGuestDialogFragment extends BaseDialogFragment {
         }
         if (LiveRoomManager.a().T()) {
             Bundle bundle2 = new Bundle();
-            bundle2.putBoolean(LiveRankGuestFragment.f13197a, false);
+            bundle2.putBoolean(LiveRankGuestFragment.a, false);
             bundle2.putString("UID", this.x);
             bundle2.putLong(LiveRankGuestFragment.b, this.w);
-            bundle2.putBoolean(LiveRankGuestFragment.f13198c, this.z);
+            bundle2.putBoolean(LiveRankGuestFragment.c, this.z);
             LiveRankGuestFragment liveRankGuestFragment2 = new LiveRankGuestFragment();
             liveRankGuestFragment2.setArguments(bundle2);
             this.A.add(liveRankGuestFragment2);
@@ -310,7 +298,7 @@ public class LiveRankGuestDialogFragment extends BaseDialogFragment {
     }
 
     private void l() {
-        LiveRankDialogFragment.f14067a.a(getChildFragmentManager(), 2);
+        LiveRankDialogFragment.a.a(getChildFragmentManager(), 2);
     }
 
     public void a(ILiveGuestDialog iLiveGuestDialog) {
@@ -350,7 +338,7 @@ public class LiveRankGuestDialogFragment extends BaseDialogFragment {
                 int count;
                 if (bluedEntityA.code == 200) {
                     LiveRankGuestDialogFragment.this.h.setTag(Boolean.valueOf(i2 == 1));
-                    LiveCloakingUtil.f14157a = i2 == 1;
+                    LiveCloakingUtil.a = i2 == 1;
                     LiveRankGuestDialogFragment.this.h.animate().alpha(i2).setDuration(200L);
                     if (LiveRankGuestDialogFragment.this.o == null || (count = LiveRankGuestDialogFragment.this.o.getCount()) == 0) {
                         return;
@@ -372,7 +360,6 @@ public class LiveRankGuestDialogFragment extends BaseDialogFragment {
         });
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
         this.b = getActivity();
         boolean C = LiveFloatManager.a().C();
@@ -400,7 +387,7 @@ public class LiveRankGuestDialogFragment extends BaseDialogFragment {
         return dialog;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(0));
         View inflate = layoutInflater.inflate(R.layout.dialog_live_rank, viewGroup);
@@ -428,7 +415,7 @@ public class LiveRankGuestDialogFragment extends BaseDialogFragment {
         this.m = (TextView) inflate.findViewById(R.id.rank_money);
         this.t = inflate.findViewById(R.id.rank_popular_layout_id);
         this.u = inflate.findViewById(R.id.rank_money_layout_id);
-        this.n = (ViewPager) inflate.findViewById(R.id.dialog_rank_viewpager);
+        this.n = inflate.findViewById(R.id.dialog_rank_viewpager);
         MyAdapter myAdapter = new MyAdapter(getChildFragmentManager());
         this.o = myAdapter;
         this.n.setAdapter(myAdapter);
@@ -473,7 +460,6 @@ public class LiveRankGuestDialogFragment extends BaseDialogFragment {
             this.p.setText(R.string.live_rank_consumption_this_short);
         }
         LiveEventBus.get("live_rank_behalf_tips_show", Boolean.class).observe(this, new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveRankGuestDialogFragment$B6yNJ0YgBIOTFLDL1xs8bYxH4Hs
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 LiveRankGuestDialogFragment.this.a((Boolean) obj);
             }
@@ -481,7 +467,7 @@ public class LiveRankGuestDialogFragment extends BaseDialogFragment {
         return inflate;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onDestroy() {
         super.onDestroy();
         ILiveGuestDialog iLiveGuestDialog = this.f;
@@ -490,7 +476,7 @@ public class LiveRankGuestDialogFragment extends BaseDialogFragment {
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void show(FragmentManager fragmentManager, String str) {
         if (LiveRoomManager.a().R()) {
             if (LiveRoomManager.a().S() || LiveRoomManager.a().T()) {

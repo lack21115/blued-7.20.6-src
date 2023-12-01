@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 public final class V3a8U {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String[] f39925a;
+    public static final String[] f26234a;
     public static volatile Pattern[] b;
 
     static {
@@ -44,7 +44,7 @@ public final class V3a8U {
         int[] iArr13 = kC0XR.H;
         String a21 = kC0XR.a(iArr13);
         int[] iArr14 = kC0XR.I;
-        f39925a = new String[]{a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20, a21, kC0XR.a(iArr14)};
+        f26234a = new String[]{a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20, a21, kC0XR.a(iArr14)};
         kC0XR.a(iArr);
         kC0XR.a(iArr2);
         kC0XR.a(iArr3);

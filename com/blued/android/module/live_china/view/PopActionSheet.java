@@ -18,13 +18,9 @@ import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/PopActionSheet.class */
 public class PopActionSheet implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    private MyPopupWindow f14989a;
+    private MyPopupWindow a;
     private View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private Context f14990c;
+    private Context c;
     private LayoutInflater d;
     private View e;
     private View f;
@@ -37,9 +33,7 @@ public class PopActionSheet implements View.OnClickListener {
 
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/PopActionSheet$ActionItem.class */
     public class ActionItem {
-
-        /* renamed from: a  reason: collision with root package name */
-        public String f14992a;
+        public String a;
         public int b;
 
         public ActionItem() {
@@ -72,7 +66,7 @@ public class PopActionSheet implements View.OnClickListener {
     }
 
     public PopActionSheet(Context context, String[] strArr, int[] iArr, boolean z, PopSheetClickListner popSheetClickListner) {
-        this.f14990c = context;
+        this.c = context;
         this.l = z;
         int i = 0;
         while (true) {
@@ -83,7 +77,7 @@ public class PopActionSheet implements View.OnClickListener {
                 return;
             }
             ActionItem actionItem = new ActionItem();
-            actionItem.f14992a = strArr[i2];
+            actionItem.a = strArr[i2];
             if (i2 < iArr.length) {
                 actionItem.b = iArr[i2];
             } else {
@@ -108,7 +102,7 @@ public class PopActionSheet implements View.OnClickListener {
     }
 
     private void f() {
-        LayoutInflater from = LayoutInflater.from(this.f14990c);
+        LayoutInflater from = LayoutInflater.from(this.c);
         this.d = from;
         View inflate = from.inflate(R.layout.sheet_pop_center, (ViewGroup) null);
         this.f = inflate;
@@ -125,12 +119,12 @@ public class PopActionSheet implements View.OnClickListener {
             view = this.f;
         }
         MyPopupWindow myPopupWindow = new MyPopupWindow(view, -1, -1, true);
-        this.f14989a = myPopupWindow;
-        myPopupWindow.setBackgroundDrawable(this.f14990c.getResources().getDrawable(17170445));
-        this.f14989a.setTouchable(true);
-        this.f14989a.setOutsideTouchable(true);
-        this.f14989a.setFocusable(true);
-        this.f14989a.update();
+        this.a = myPopupWindow;
+        myPopupWindow.setBackgroundDrawable(this.c.getResources().getDrawable(com.android.internal.R.color.transparent));
+        this.a.setTouchable(true);
+        this.a.setOutsideTouchable(true);
+        this.a.setFocusable(true);
+        this.a.update();
     }
 
     private void g() {
@@ -146,9 +140,9 @@ public class PopActionSheet implements View.OnClickListener {
             }
             View inflate = this.d.inflate(R.layout.item_sheet_pop_center, (ViewGroup) null);
             TextView textView = (TextView) inflate.findViewById(R.id.tv_text);
-            textView.setText(this.k.get(i).f14992a);
+            textView.setText(this.k.get(i).a);
             if (this.k.get(i).b != 0) {
-                textView.setTextColor(this.f14990c.getResources().getColor(this.k.get(i).b));
+                textView.setTextColor(this.c.getResources().getColor(this.k.get(i).b));
             }
             inflate.setId(i);
             if (i != 0 || this.l) {
@@ -165,15 +159,15 @@ public class PopActionSheet implements View.OnClickListener {
     public void a() {
         this.b.clearAnimation();
         this.f.clearAnimation();
-        if (this.f14989a.isShowing()) {
-            this.f14989a.a();
+        if (this.a.isShowing()) {
+            this.a.a();
         }
         if (this.j > 0) {
             FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.g.getLayoutParams();
             layoutParams.width = this.j;
             this.g.setLayoutParams(layoutParams);
         }
-        this.f14989a.showAtLocation(this.f, 17, 0, 0);
+        this.a.showAtLocation(this.f, 17, 0, 0);
         this.f.setVisibility(0);
         d();
     }
@@ -188,7 +182,7 @@ public class PopActionSheet implements View.OnClickListener {
         AppInfo.n().postDelayed(new Runnable() { // from class: com.blued.android.module.live_china.view.PopActionSheet.1
             @Override // java.lang.Runnable
             public void run() {
-                PopActionSheet.this.f14989a.a();
+                PopActionSheet.this.a.a();
             }
         }, 320L);
     }
@@ -198,11 +192,11 @@ public class PopActionSheet implements View.OnClickListener {
         alphaAnimation.setDuration(300L);
         alphaAnimation.setFillAfter(true);
         this.b.startAnimation(alphaAnimation);
-        this.g.startAnimation(AnimationUtils.loadAnimation(this.f14990c, R.anim.push_center_out));
+        this.g.startAnimation(AnimationUtils.loadAnimation(this.c, R.anim.push_center_out));
     }
 
     public void d() {
-        this.g.startAnimation(AnimationUtils.loadAnimation(this.f14990c, R.anim.push_center_in));
+        this.g.startAnimation(AnimationUtils.loadAnimation(this.c, R.anim.push_center_in));
         AlphaAnimation alphaAnimation = new AlphaAnimation(0.0f, 0.5f);
         alphaAnimation.setDuration(300L);
         alphaAnimation.setFillAfter(true);
@@ -210,7 +204,7 @@ public class PopActionSheet implements View.OnClickListener {
     }
 
     public MyPopupWindow e() {
-        return this.f14989a;
+        return this.a;
     }
 
     @Override // android.view.View.OnClickListener
@@ -227,7 +221,7 @@ public class PopActionSheet implements View.OnClickListener {
                 return;
             }
             if (view.getId() == i2) {
-                this.i.onClick(i2, this.k.get(i2).f14992a);
+                this.i.onClick(i2, this.k.get(i2).a);
                 b();
                 return;
             }

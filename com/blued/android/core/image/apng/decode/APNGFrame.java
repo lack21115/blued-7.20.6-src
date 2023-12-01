@@ -18,13 +18,9 @@ public class APNGFrame extends Frame<APNGReader, APNGWriter> {
     private static final byte[] m = {-119, 80, 78, 71, 13, 10, 26, 10};
     private static final byte[] n = {0, 0, 0, 0, 73, 69, 78, 68, -82, 66, 96, -126};
     private static ThreadLocal<CRC32> o = new ThreadLocal<>();
-
-    /* renamed from: a  reason: collision with root package name */
-    public final byte f9522a;
+    public final byte a;
     public final byte b;
-
-    /* renamed from: c  reason: collision with root package name */
-    byte[] f9523c;
+    byte[] c;
     List<Chunk> d;
     List<Chunk> e;
 
@@ -32,10 +28,10 @@ public class APNGFrame extends Frame<APNGReader, APNGWriter> {
         super(aPNGReader);
         this.d = new ArrayList();
         this.e = new ArrayList();
-        this.f9522a = fCTLChunk.n;
+        this.a = fCTLChunk.n;
         this.b = fCTLChunk.m;
         this.l = (fCTLChunk.k * 1000) / (fCTLChunk.l == 0 ? (short) 100 : fCTLChunk.l);
-        this.h = fCTLChunk.f9525c;
+        this.h = fCTLChunk.c;
         this.i = fCTLChunk.h;
         this.j = fCTLChunk.i;
         this.k = fCTLChunk.j;
@@ -68,15 +64,15 @@ public class APNGFrame extends Frame<APNGReader, APNGWriter> {
         aPNGWriter.c(length);
         aPNGWriter.a(m);
         aPNGWriter.b(13);
-        int a2 = aPNGWriter.a();
-        aPNGWriter.a(IHDRChunk.f9538a);
+        int a = aPNGWriter.a();
+        aPNGWriter.a(IHDRChunk.a);
         aPNGWriter.b(this.h);
         aPNGWriter.b(this.i);
-        aPNGWriter.a(this.f9523c);
-        CRC32 a3 = a();
-        a3.reset();
-        a3.update(aPNGWriter.b(), a2, 17);
-        aPNGWriter.b((int) a3.getValue());
+        aPNGWriter.a(this.c);
+        CRC32 a2 = a();
+        a2.reset();
+        a2.update(aPNGWriter.b(), a, 17);
+        aPNGWriter.b((int) a2.getValue());
         for (Chunk chunk2 : this.e) {
             if (!(chunk2 instanceof IENDChunk)) {
                 ((APNGReader) this.g).reset();
@@ -93,15 +89,15 @@ public class APNGFrame extends Frame<APNGReader, APNGWriter> {
                 aPNGWriter.d(chunk3.d + 12);
             } else if (chunk3 instanceof FDATChunk) {
                 aPNGWriter.b(chunk3.d - 4);
-                int a4 = aPNGWriter.a();
-                aPNGWriter.a(IDATChunk.f9536a);
+                int a3 = aPNGWriter.a();
+                aPNGWriter.a(IDATChunk.a);
                 ((APNGReader) this.g).reset();
                 ((APNGReader) this.g).skip(chunk3.g + 4 + 4 + 4);
                 ((APNGReader) this.g).read(aPNGWriter.b(), aPNGWriter.a(), chunk3.d - 4);
                 aPNGWriter.d(chunk3.d - 4);
-                a3.reset();
-                a3.update(aPNGWriter.b(), a4, chunk3.d);
-                aPNGWriter.b((int) a3.getValue());
+                a2.reset();
+                a2.update(aPNGWriter.b(), a3, chunk3.d);
+                aPNGWriter.b((int) a2.getValue());
             }
         }
         aPNGWriter.a(n);
@@ -121,13 +117,13 @@ public class APNGFrame extends Frame<APNGReader, APNGWriter> {
     @Override // com.blued.android.core.image.apng.decode.Frame
     public Bitmap a(Canvas canvas, Paint paint, int i, Bitmap bitmap, APNGWriter aPNGWriter) {
         try {
-            int a2 = a(aPNGWriter);
+            int a = a(aPNGWriter);
             BitmapFactory.Options options = new BitmapFactory.Options();
             options.inJustDecodeBounds = false;
             options.inSampleSize = i;
             options.inMutable = true;
             options.inBitmap = bitmap;
-            Bitmap decodeByteArray = BitmapFactory.decodeByteArray(aPNGWriter.b(), 0, a2, options);
+            Bitmap decodeByteArray = BitmapFactory.decodeByteArray(aPNGWriter.b(), 0, a, options);
             if (f || decodeByteArray != null) {
                 float f2 = i;
                 canvas.drawBitmap(decodeByteArray, this.j / f2, this.k / f2, paint);

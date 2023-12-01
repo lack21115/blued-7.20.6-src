@@ -8,11 +8,11 @@ import java.util.Locale;
 public class TencentGeofence {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f37247a;
+    public final int f23556a;
     public final double b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final double f37248c;
+    public final double f23557c;
     public final float d;
     public final long e;
     public final String f;
@@ -22,11 +22,11 @@ public class TencentGeofence {
     public static class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        public double f37249a;
+        public double f23558a;
         public double b;
 
         /* renamed from: c  reason: collision with root package name */
-        public float f37250c;
+        public float f23559c;
         public long d;
         public String e;
 
@@ -53,15 +53,15 @@ public class TencentGeofence {
         }
 
         public TencentGeofence build() {
-            return new TencentGeofence(0, this.f37249a, this.b, this.f37250c, this.d, this.e);
+            return new TencentGeofence(0, this.f23558a, this.b, this.f23559c, this.d, this.e);
         }
 
         public Builder setCircularRegion(double d, double d2, float f) {
             a(f);
             a(d, d2);
-            this.f37249a = d;
+            this.f23558a = d;
             this.b = d2;
-            this.f37250c = f;
+            this.f23559c = f;
             return this;
         }
 
@@ -81,9 +81,9 @@ public class TencentGeofence {
     }
 
     public TencentGeofence(int i, double d, double d2, float f, long j, String str) {
-        this.f37247a = i;
+        this.f23556a = i;
         this.b = d;
-        this.f37248c = d2;
+        this.f23557c = d2;
         this.d = f;
         this.g = j;
         this.e = SystemClock.elapsedRealtime() + j;
@@ -111,7 +111,7 @@ public class TencentGeofence {
         }
         if (obj != null && TencentGeofence.class == obj.getClass()) {
             TencentGeofence tencentGeofence = (TencentGeofence) obj;
-            if (Double.doubleToLongBits(this.b) == Double.doubleToLongBits(tencentGeofence.b) && Double.doubleToLongBits(this.f37248c) == Double.doubleToLongBits(tencentGeofence.f37248c)) {
+            if (Double.doubleToLongBits(this.b) == Double.doubleToLongBits(tencentGeofence.b) && Double.doubleToLongBits(this.f23557c) == Double.doubleToLongBits(tencentGeofence.f23557c)) {
                 String str = this.f;
                 return str == null ? tencentGeofence.f == null : str.equals(tencentGeofence.f);
             }
@@ -133,7 +133,7 @@ public class TencentGeofence {
     }
 
     public double getLongitude() {
-        return this.f37248c;
+        return this.f23557c;
     }
 
     public float getRadius() {
@@ -147,13 +147,13 @@ public class TencentGeofence {
     public int hashCode() {
         long doubleToLongBits = Double.doubleToLongBits(this.b);
         int i = (int) (doubleToLongBits ^ (doubleToLongBits >>> 32));
-        long doubleToLongBits2 = Double.doubleToLongBits(this.f37248c);
+        long doubleToLongBits2 = Double.doubleToLongBits(this.f23557c);
         int i2 = (int) (doubleToLongBits2 ^ (doubleToLongBits2 >>> 32));
         String str = this.f;
         return ((((i + 31) * 31) + i2) * 31) + (str == null ? 0 : str.hashCode());
     }
 
     public String toString() {
-        return String.format(Locale.US, "TencentGeofence[tag=%s, type=%s, loc=(%.6f, %.6f), radius=%.2fm life=%.2fs]", this.f, b(this.f37247a), Double.valueOf(this.b), Double.valueOf(this.f37248c), Float.valueOf(this.d), Double.valueOf((this.e - SystemClock.elapsedRealtime()) / 1000.0d));
+        return String.format(Locale.US, "TencentGeofence[tag=%s, type=%s, loc=(%.6f, %.6f), radius=%.2fm life=%.2fs]", this.f, b(this.f23556a), Double.valueOf(this.b), Double.valueOf(this.f23557c), Float.valueOf(this.d), Double.valueOf((this.e - SystemClock.elapsedRealtime()) / 1000.0d));
     }
 }

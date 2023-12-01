@@ -6,13 +6,13 @@ import android.content.Context;
 public final class i3cNc {
 
     /* renamed from: a  reason: collision with root package name */
-    public static Context f39958a;
+    public static Context f26267a;
 
     public static Context a() {
         Context context;
         synchronized (i3cNc.class) {
             try {
-                context = f39958a;
+                context = f26267a;
             } catch (Throwable th) {
                 throw th;
             }
@@ -23,7 +23,7 @@ public final class i3cNc {
     public static boolean a(Context context) {
         synchronized (i3cNc.class) {
             try {
-                if (f39958a != null) {
+                if (f26267a != null) {
                     return true;
                 }
                 if (context == null) {
@@ -33,7 +33,7 @@ public final class i3cNc {
                 if (applicationContext == null) {
                     return false;
                 }
-                f39958a = applicationContext;
+                f26267a = applicationContext;
                 return true;
             } catch (Throwable th) {
                 throw th;

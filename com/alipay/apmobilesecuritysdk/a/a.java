@@ -2,7 +2,6 @@ package com.alipay.apmobilesecuritysdk.a;
 
 import android.content.Context;
 import android.os.Environment;
-import android.speech.tts.TextToSpeech;
 import com.alipay.apmobilesecuritysdk.d.e;
 import com.alipay.apmobilesecuritysdk.e.b;
 import com.alipay.apmobilesecuritysdk.e.g;
@@ -11,6 +10,7 @@ import com.alipay.apmobilesecuritysdk.e.i;
 import com.alipay.apmobilesecuritysdk.otherid.UmidSdkWrapper;
 import com.alipay.security.mobile.module.http.model.c;
 import com.alipay.security.mobile.module.http.model.d;
+import com.blued.android.chat.grpc.backup.MsgBackupManager;
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -19,16 +19,12 @@ import java.util.Map;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alipay/apmobilesecuritysdk/a/a.class */
 public final class a {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f4545a;
+    private Context a;
     private com.alipay.apmobilesecuritysdk.b.a b = com.alipay.apmobilesecuritysdk.b.a.a();
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f4546c = 4;
+    private int c = 4;
 
     public a(Context context) {
-        this.f4545a = context;
+        this.a = context;
     }
 
     public static String a(Context context) {
@@ -43,13 +39,13 @@ public final class a {
     public static String a(Context context, String str) {
         try {
             b();
-            String a2 = i.a(str);
-            if (com.alipay.security.mobile.module.a.a.a(a2)) {
-                String a3 = g.a(context, str);
-                i.a(str, a3);
-                return !com.alipay.security.mobile.module.a.a.a(a3) ? a3 : "";
+            String a = i.a(str);
+            if (com.alipay.security.mobile.module.a.a.a(a)) {
+                String a2 = g.a(context, str);
+                i.a(str, a2);
+                return !com.alipay.security.mobile.module.a.a.a(a2) ? a2 : "";
             }
-            return a2;
+            return a;
         } catch (Throwable th) {
             return "";
         }
@@ -91,26 +87,26 @@ public final class a {
         String str3;
         String str4;
         try {
-            Context context = this.f4545a;
+            Context context = this.a;
             d dVar = new d();
-            String a2 = com.alipay.security.mobile.module.a.a.a(map, "appName", "");
-            String a3 = com.alipay.security.mobile.module.a.a.a(map, TextToSpeech.Engine.KEY_PARAM_SESSION_ID, "");
-            String a4 = com.alipay.security.mobile.module.a.a.a(map, "rpcVersion", "");
-            String a5 = a(context, a2);
+            String a = com.alipay.security.mobile.module.a.a.a(map, "appName", "");
+            String a2 = com.alipay.security.mobile.module.a.a.a(map, "sessionId", "");
+            String a3 = com.alipay.security.mobile.module.a.a.a(map, "rpcVersion", "");
+            String a4 = a(context, a);
             String securityToken = UmidSdkWrapper.getSecurityToken(context);
             String d = h.d(context);
-            if (com.alipay.security.mobile.module.a.a.b(a3)) {
-                dVar.f4721c = a3;
+            if (com.alipay.security.mobile.module.a.a.b(a2)) {
+                dVar.c = a2;
             } else {
-                dVar.f4721c = a5;
+                dVar.c = a4;
             }
             dVar.d = securityToken;
             dVar.e = d;
-            dVar.f4720a = "android";
-            com.alipay.apmobilesecuritysdk.e.c c2 = com.alipay.apmobilesecuritysdk.e.d.c(context);
-            if (c2 != null) {
-                str2 = c2.f4551a;
-                str = c2.f4552c;
+            dVar.a = MsgBackupManager.PLATFORM_ANDROID;
+            com.alipay.apmobilesecuritysdk.e.c c = com.alipay.apmobilesecuritysdk.e.d.c(context);
+            if (c != null) {
+                str2 = c.a;
+                str = c.c;
             } else {
                 str = "";
                 str2 = str;
@@ -118,18 +114,18 @@ public final class a {
             String str5 = str;
             String str6 = str2;
             if (com.alipay.security.mobile.module.a.a.a(str2)) {
-                b c3 = com.alipay.apmobilesecuritysdk.e.a.c(context);
+                b c2 = com.alipay.apmobilesecuritysdk.e.a.c(context);
                 str5 = str;
                 str6 = str2;
-                if (c3 != null) {
-                    str6 = c3.f4549a;
-                    str5 = c3.f4550c;
+                if (c2 != null) {
+                    str6 = c2.a;
+                    str5 = c2.c;
                 }
             }
             com.alipay.apmobilesecuritysdk.e.c b = com.alipay.apmobilesecuritysdk.e.d.b();
             if (b != null) {
-                str4 = b.f4551a;
-                str3 = b.f4552c;
+                str4 = b.a;
+                str3 = b.c;
             } else {
                 str3 = "";
                 str4 = "";
@@ -141,13 +137,13 @@ public final class a {
                 str7 = str4;
                 str8 = str3;
                 if (b2 != null) {
-                    str7 = b2.f4549a;
-                    str8 = b2.f4550c;
+                    str7 = b2.a;
+                    str8 = b2.c;
                 }
             }
             dVar.h = str6;
             dVar.g = str7;
-            dVar.j = a4;
+            dVar.j = a3;
             if (com.alipay.security.mobile.module.a.a.a(str6)) {
                 dVar.b = str7;
                 dVar.i = str8;
@@ -156,7 +152,7 @@ public final class a {
                 dVar.i = str5;
             }
             dVar.f = e.a(context, map);
-            return com.alipay.security.mobile.module.http.d.b(this.f4545a, this.b.c()).a(dVar);
+            return com.alipay.security.mobile.module.http.d.b(this.a, this.b.c()).a(dVar);
         } catch (Throwable th) {
             th.printStackTrace();
             com.alipay.apmobilesecuritysdk.c.a.a(th);
@@ -171,7 +167,7 @@ public final class a {
                 com.alipay.apmobilesecuritysdk.e.c b2 = com.alipay.apmobilesecuritysdk.e.d.b(context);
                 if (b2 != null) {
                     i.a(b2);
-                    String str = b2.f4551a;
+                    String str = b2.a;
                     if (com.alipay.security.mobile.module.a.a.b(str)) {
                         return str;
                     }
@@ -179,7 +175,7 @@ public final class a {
                 b b3 = com.alipay.apmobilesecuritysdk.e.a.b(context);
                 if (b3 != null) {
                     i.a(b3);
-                    String str2 = b3.f4549a;
+                    String str2 = b3.a;
                     return com.alipay.security.mobile.module.a.a.b(str2) ? str2 : "";
                 }
                 return "";

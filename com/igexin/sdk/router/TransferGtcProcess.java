@@ -21,7 +21,7 @@ public class TransferGtcProcess implements Subscriber {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final TransferGtcProcess f23674a = new TransferGtcProcess();
+        private static final TransferGtcProcess f10066a = new TransferGtcProcess();
 
         private a() {
         }
@@ -36,7 +36,7 @@ public class TransferGtcProcess implements Subscriber {
 
     public static TransferGtcProcess getInstance() {
         methodName = Thread.currentThread().getStackTrace()[2].getMethodName();
-        return a.f23674a;
+        return a.f10066a;
     }
 
     @Override // com.getui.gtc.base.publish.Subscriber
@@ -53,7 +53,7 @@ public class TransferGtcProcess implements Subscriber {
             }
             if (TYPE145TASK_METHODNAME.equals(string)) {
                 Intent intent = (Intent) bundle.getParcelable("intent");
-                h unused = h.a.f23635a;
+                h unused = h.a.f10027a;
                 h.a(GtcProvider.context(), intent);
             }
         } catch (Throwable th2) {

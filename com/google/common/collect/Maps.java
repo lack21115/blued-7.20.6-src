@@ -128,7 +128,7 @@ public final class Maps {
         @Override // com.google.common.collect.Maps.ViewCachingAbstractMap
         protected Set<Map.Entry<K, V>> createEntrySet() {
             return new EntrySet<K, V>() { // from class: com.google.common.collect.Maps.AsMapView.1EntrySetImpl
-                @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+                @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
                 public Iterator<Map.Entry<K, V>> iterator() {
                     return Maps.asMapEntryIterator(AsMapView.this.backingSet(), AsMapView.this.function);
                 }
@@ -255,7 +255,7 @@ public final class Maps {
 
         Set<Map.Entry<K, V>> createEntrySet() {
             return new EntrySet<K, V>() { // from class: com.google.common.collect.Maps.DescendingMap.1EntrySetImpl
-                @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+                @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
                 public Iterator<Map.Entry<K, V>> iterator() {
                     return DescendingMap.this.entryIterator();
                 }
@@ -323,7 +323,7 @@ public final class Maps {
             return forward().tailMap(k, z).descendingMap();
         }
 
-        @Override // java.util.NavigableMap
+        @Override // java.util.NavigableMap, java.util.SortedMap
         public SortedMap<K, V> headMap(K k) {
             return headMap(k, false);
         }
@@ -389,7 +389,7 @@ public final class Maps {
             return forward().subMap(k2, z2, k, z).descendingMap();
         }
 
-        @Override // java.util.NavigableMap
+        @Override // java.util.NavigableMap, java.util.SortedMap
         public SortedMap<K, V> subMap(K k, K k2) {
             return subMap(k, true, k2, false);
         }
@@ -399,7 +399,7 @@ public final class Maps {
             return forward().headMap(k, z).descendingMap();
         }
 
-        @Override // java.util.NavigableMap
+        @Override // java.util.NavigableMap, java.util.SortedMap
         public SortedMap<K, V> tailMap(K k) {
             return tailMap(k, true);
         }
@@ -538,7 +538,7 @@ public final class Maps {
             }
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
         public int size() {
             return map().size();
         }
@@ -614,11 +614,12 @@ public final class Maps {
                 return FilteredEntryMap.this.filteredEntrySet;
             }
 
-            @Override // com.google.common.collect.ForwardingCollection, java.util.Collection, java.lang.Iterable
+            @Override // com.google.common.collect.ForwardingCollection, java.util.Collection, java.lang.Iterable, java.util.Set
             public Iterator<Map.Entry<K, V>> iterator() {
                 return new TransformedIterator<Map.Entry<K, V>, Map.Entry<K, V>>(FilteredEntryMap.this.filteredEntrySet.iterator()) { // from class: com.google.common.collect.Maps.FilteredEntryMap.EntrySet.1
+                    /* JADX INFO: Access modifiers changed from: package-private */
                     @Override // com.google.common.collect.TransformedIterator
-                    /* bridge */ /* synthetic */ Object transform(Object obj) {
+                    public /* bridge */ /* synthetic */ Object transform(Object obj) {
                         return transform((Map.Entry) ((Map.Entry) obj));
                     }
 
@@ -762,7 +763,7 @@ public final class Maps {
             return Iterators.filter(this.unfiltered.entrySet().iterator(), this.entryPredicate);
         }
 
-        @Override // com.google.common.collect.Maps.IteratorBasedAbstractMap, java.util.AbstractMap, java.util.Map
+        @Override // com.google.common.collect.Maps.IteratorBasedAbstractMap, java.util.AbstractMap, java.util.Map, java.util.SortedMap
         public Set<Map.Entry<K, V>> entrySet() {
             return this.filteredDelegate.entrySet();
         }
@@ -838,7 +839,7 @@ public final class Maps {
             return Maps.filterEntries((NavigableMap) this.unfiltered.tailMap(k, z), (Predicate) this.entryPredicate);
         }
 
-        @Override // java.util.AbstractMap, java.util.Map
+        @Override // java.util.AbstractMap, java.util.Map, java.util.SortedMap
         public Collection<V> values() {
             return new FilteredMapValues(this, this.unfiltered, this.entryPredicate);
         }
@@ -865,7 +866,7 @@ public final class Maps {
                 return (K) FilteredEntrySortedMap.this.firstKey();
             }
 
-            @Override // java.util.SortedSet, java.util.NavigableSet
+            @Override // java.util.SortedSet
             public SortedSet<K> headSet(K k) {
                 return (SortedSet) FilteredEntrySortedMap.this.headMap(k).keySet();
             }
@@ -875,12 +876,12 @@ public final class Maps {
                 return (K) FilteredEntrySortedMap.this.lastKey();
             }
 
-            @Override // java.util.SortedSet, java.util.NavigableSet
+            @Override // java.util.SortedSet
             public SortedSet<K> subSet(K k, K k2) {
                 return (SortedSet) FilteredEntrySortedMap.this.subMap(k, k2).keySet();
             }
 
-            @Override // java.util.SortedSet, java.util.NavigableSet
+            @Override // java.util.SortedSet
             public SortedSet<K> tailSet(K k) {
                 return (SortedSet) FilteredEntrySortedMap.this.tailMap(k).keySet();
             }
@@ -906,7 +907,7 @@ public final class Maps {
             return keySet().iterator().next();
         }
 
-        @Override // java.util.SortedMap, java.util.NavigableMap
+        @Override // java.util.SortedMap
         public SortedMap<K, V> headMap(K k) {
             return new FilteredEntrySortedMap(sortedMap().headMap(k), this.predicate);
         }
@@ -932,12 +933,12 @@ public final class Maps {
             return (SortedMap) this.unfiltered;
         }
 
-        @Override // java.util.SortedMap, java.util.NavigableMap
+        @Override // java.util.SortedMap
         public SortedMap<K, V> subMap(K k, K k2) {
             return new FilteredEntrySortedMap(sortedMap().subMap(k, k2), this.predicate);
         }
 
-        @Override // java.util.SortedMap, java.util.NavigableMap
+        @Override // java.util.SortedMap
         public SortedMap<K, V> tailMap(K k) {
             return new FilteredEntrySortedMap(sortedMap().tailMap(k), this.predicate);
         }
@@ -979,7 +980,7 @@ public final class Maps {
             this.predicate = predicate;
         }
 
-        @Override // com.google.common.collect.Maps.Values, java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // com.google.common.collect.Maps.Values, java.util.AbstractCollection, java.util.Collection
         public boolean remove(Object obj) {
             Iterator<Map.Entry<K, V>> it = this.unfiltered.entrySet().iterator();
             while (it.hasNext()) {
@@ -992,7 +993,7 @@ public final class Maps {
             return false;
         }
 
-        @Override // com.google.common.collect.Maps.Values, java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // com.google.common.collect.Maps.Values, java.util.AbstractCollection, java.util.Collection
         public boolean removeAll(Collection<?> collection) {
             Iterator<Map.Entry<K, V>> it = this.unfiltered.entrySet().iterator();
             boolean z = false;
@@ -1006,7 +1007,7 @@ public final class Maps {
             return z;
         }
 
-        @Override // com.google.common.collect.Maps.Values, java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // com.google.common.collect.Maps.Values, java.util.AbstractCollection, java.util.Collection
         public boolean retainAll(Collection<?> collection) {
             Iterator<Map.Entry<K, V>> it = this.unfiltered.entrySet().iterator();
             boolean z = false;
@@ -1020,12 +1021,12 @@ public final class Maps {
             return z;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public Object[] toArray() {
             return Lists.newArrayList(iterator()).toArray();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public <T> T[] toArray(T[] tArr) {
             return (T[]) Lists.newArrayList(iterator()).toArray(tArr);
         }
@@ -1041,10 +1042,10 @@ public final class Maps {
         /* JADX INFO: Access modifiers changed from: package-private */
         public abstract Iterator<Map.Entry<K, V>> entryIterator();
 
-        @Override // java.util.AbstractMap, java.util.Map
+        @Override // java.util.AbstractMap, java.util.Map, java.util.SortedMap
         public Set<Map.Entry<K, V>> entrySet() {
             return new EntrySet<K, V>() { // from class: com.google.common.collect.Maps.IteratorBasedAbstractMap.1
-                @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+                @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
                 public Iterator<Map.Entry<K, V>> iterator() {
                     return IteratorBasedAbstractMap.this.entryIterator();
                 }
@@ -1085,7 +1086,7 @@ public final class Maps {
             return map().isEmpty();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+        @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
         public Iterator<K> iterator() {
             return Maps.keyIterator(map().entrySet().iterator());
         }
@@ -1104,7 +1105,7 @@ public final class Maps {
             return false;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
         public int size() {
             return map().size();
         }
@@ -1368,7 +1369,7 @@ public final class Maps {
             return backingSet().first();
         }
 
-        @Override // java.util.SortedMap, java.util.NavigableMap
+        @Override // java.util.SortedMap
         public SortedMap<K, V> headMap(K k) {
             return Maps.asMap((SortedSet) backingSet().headSet(k), (Function) this.function);
         }
@@ -1383,12 +1384,12 @@ public final class Maps {
             return backingSet().last();
         }
 
-        @Override // java.util.SortedMap, java.util.NavigableMap
+        @Override // java.util.SortedMap
         public SortedMap<K, V> subMap(K k, K k2) {
             return Maps.asMap((SortedSet) backingSet().subSet(k, k2), (Function) this.function);
         }
 
-        @Override // java.util.SortedMap, java.util.NavigableMap
+        @Override // java.util.SortedMap
         public SortedMap<K, V> tailMap(K k) {
             return Maps.asMap((SortedSet) backingSet().tailSet(k), (Function) this.function);
         }
@@ -1766,7 +1767,7 @@ public final class Maps {
             return this.entries;
         }
 
-        @Override // com.google.common.collect.ForwardingCollection, java.util.Collection, java.lang.Iterable
+        @Override // com.google.common.collect.ForwardingCollection, java.util.Collection, java.lang.Iterable, java.util.Set
         public Iterator<Map.Entry<K, V>> iterator() {
             return Maps.unmodifiableEntryIterator(this.entries.iterator());
         }
@@ -1867,7 +1868,7 @@ public final class Maps {
             return Maps.unmodifiableNavigableMap(this.delegate.headMap(k, z));
         }
 
-        @Override // com.google.common.collect.ForwardingSortedMap, java.util.SortedMap, java.util.NavigableMap
+        @Override // com.google.common.collect.ForwardingSortedMap, java.util.SortedMap
         public SortedMap<K, V> headMap(K k) {
             return headMap(k, false);
         }
@@ -1922,7 +1923,7 @@ public final class Maps {
             return Maps.unmodifiableNavigableMap(this.delegate.subMap(k, z, k2, z2));
         }
 
-        @Override // com.google.common.collect.ForwardingSortedMap, java.util.SortedMap, java.util.NavigableMap
+        @Override // com.google.common.collect.ForwardingSortedMap, java.util.SortedMap
         public SortedMap<K, V> subMap(K k, K k2) {
             return subMap(k, true, k2, false);
         }
@@ -1932,7 +1933,7 @@ public final class Maps {
             return Maps.unmodifiableNavigableMap(this.delegate.tailMap(k, z));
         }
 
-        @Override // com.google.common.collect.ForwardingSortedMap, java.util.SortedMap, java.util.NavigableMap
+        @Override // com.google.common.collect.ForwardingSortedMap, java.util.SortedMap
         public SortedMap<K, V> tailMap(K k) {
             return tailMap(k, true);
         }
@@ -2001,17 +2002,17 @@ public final class Maps {
             this.map = (Map) Preconditions.checkNotNull(map);
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public void clear() {
             map().clear();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean contains(@NullableDecl Object obj) {
             return map().containsValue(obj);
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean isEmpty() {
             return map().isEmpty();
         }
@@ -2025,7 +2026,7 @@ public final class Maps {
             return this.map;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean remove(Object obj) {
             try {
                 return super.remove(obj);
@@ -2040,7 +2041,7 @@ public final class Maps {
             }
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean removeAll(Collection<?> collection) {
             try {
                 return super.removeAll((Collection) Preconditions.checkNotNull(collection));
@@ -2055,7 +2056,7 @@ public final class Maps {
             }
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean retainAll(Collection<?> collection) {
             try {
                 return super.retainAll((Collection) Preconditions.checkNotNull(collection));
@@ -2070,7 +2071,7 @@ public final class Maps {
             }
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection
         public int size() {
             return map().size();
         }
@@ -2193,14 +2194,16 @@ public final class Maps {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static <K, V> Iterator<Map.Entry<K, V>> asMapEntryIterator(Set<K> set, final Function<? super K, V> function) {
         return new TransformedIterator<K, Map.Entry<K, V>>(set.iterator()) { // from class: com.google.common.collect.Maps.3
+            /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: Multi-variable type inference failed */
             @Override // com.google.common.collect.TransformedIterator
-            /* bridge */ /* synthetic */ Object transform(Object obj) {
+            public /* bridge */ /* synthetic */ Object transform(Object obj) {
                 return transform((AnonymousClass3<K, V>) obj);
             }
 
+            /* JADX INFO: Access modifiers changed from: package-private */
             @Override // com.google.common.collect.TransformedIterator
-            Map.Entry<K, V> transform(K k) {
+            public Map.Entry<K, V> transform(K k) {
                 return Maps.immutableEntry(k, function.apply(k));
             }
         };
@@ -2436,8 +2439,9 @@ public final class Maps {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static <K, V> Iterator<K> keyIterator(Iterator<Map.Entry<K, V>> it) {
         return new TransformedIterator<Map.Entry<K, V>, K>(it) { // from class: com.google.common.collect.Maps.1
+            /* JADX INFO: Access modifiers changed from: package-private */
             @Override // com.google.common.collect.TransformedIterator
-            /* bridge */ /* synthetic */ Object transform(Object obj) {
+            public /* bridge */ /* synthetic */ Object transform(Object obj) {
                 return transform((Map.Entry) ((Map.Entry) obj));
             }
 
@@ -2535,12 +2539,12 @@ public final class Maps {
     /* JADX INFO: Access modifiers changed from: private */
     public static <E> NavigableSet<E> removeOnlyNavigableSet(final NavigableSet<E> navigableSet) {
         return new ForwardingNavigableSet<E>() { // from class: com.google.common.collect.Maps.6
-            @Override // com.google.common.collect.ForwardingCollection, java.util.Collection, java.util.Set
+            @Override // com.google.common.collect.ForwardingCollection, java.util.Collection, java.util.Queue
             public boolean add(E e) {
                 throw new UnsupportedOperationException();
             }
 
-            @Override // com.google.common.collect.ForwardingCollection, java.util.Collection, java.util.Set
+            @Override // com.google.common.collect.ForwardingCollection, java.util.Collection
             public boolean addAll(Collection<? extends E> collection) {
                 throw new UnsupportedOperationException();
             }
@@ -2548,7 +2552,7 @@ public final class Maps {
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.google.common.collect.ForwardingNavigableSet, com.google.common.collect.ForwardingSortedSet, com.google.common.collect.ForwardingSet, com.google.common.collect.ForwardingCollection, com.google.common.collect.ForwardingObject
             public NavigableSet<E> delegate() {
-                return NavigableSet.this;
+                return navigableSet;
             }
 
             @Override // com.google.common.collect.ForwardingNavigableSet, java.util.NavigableSet
@@ -2561,7 +2565,7 @@ public final class Maps {
                 return Maps.removeOnlyNavigableSet(super.headSet(e, z));
             }
 
-            @Override // com.google.common.collect.ForwardingSortedSet, java.util.SortedSet, java.util.NavigableSet
+            @Override // com.google.common.collect.ForwardingSortedSet, java.util.SortedSet
             public SortedSet<E> headSet(E e) {
                 return Maps.removeOnlySortedSet(super.headSet(e));
             }
@@ -2571,7 +2575,7 @@ public final class Maps {
                 return Maps.removeOnlyNavigableSet(super.subSet(e, z, e2, z2));
             }
 
-            @Override // com.google.common.collect.ForwardingSortedSet, java.util.SortedSet, java.util.NavigableSet
+            @Override // com.google.common.collect.ForwardingSortedSet, java.util.SortedSet
             public SortedSet<E> subSet(E e, E e2) {
                 return Maps.removeOnlySortedSet(super.subSet(e, e2));
             }
@@ -2581,7 +2585,7 @@ public final class Maps {
                 return Maps.removeOnlyNavigableSet(super.tailSet(e, z));
             }
 
-            @Override // com.google.common.collect.ForwardingSortedSet, java.util.SortedSet, java.util.NavigableSet
+            @Override // com.google.common.collect.ForwardingSortedSet, java.util.SortedSet
             public SortedSet<E> tailSet(E e) {
                 return Maps.removeOnlySortedSet(super.tailSet(e));
             }
@@ -2591,12 +2595,12 @@ public final class Maps {
     /* JADX INFO: Access modifiers changed from: private */
     public static <E> Set<E> removeOnlySet(final Set<E> set) {
         return new ForwardingSet<E>() { // from class: com.google.common.collect.Maps.4
-            @Override // com.google.common.collect.ForwardingCollection, java.util.Collection, java.util.Set
+            @Override // com.google.common.collect.ForwardingCollection, java.util.Collection, java.util.Queue
             public boolean add(E e) {
                 throw new UnsupportedOperationException();
             }
 
-            @Override // com.google.common.collect.ForwardingCollection, java.util.Collection, java.util.Set
+            @Override // com.google.common.collect.ForwardingCollection, java.util.Collection
             public boolean addAll(Collection<? extends E> collection) {
                 throw new UnsupportedOperationException();
             }
@@ -2604,7 +2608,7 @@ public final class Maps {
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.google.common.collect.ForwardingSet, com.google.common.collect.ForwardingCollection, com.google.common.collect.ForwardingObject
             public Set<E> delegate() {
-                return Set.this;
+                return set;
             }
         };
     }
@@ -2612,12 +2616,12 @@ public final class Maps {
     /* JADX INFO: Access modifiers changed from: private */
     public static <E> SortedSet<E> removeOnlySortedSet(final SortedSet<E> sortedSet) {
         return new ForwardingSortedSet<E>() { // from class: com.google.common.collect.Maps.5
-            @Override // com.google.common.collect.ForwardingCollection, java.util.Collection, java.util.Set
+            @Override // com.google.common.collect.ForwardingCollection, java.util.Collection, java.util.Queue
             public boolean add(E e) {
                 throw new UnsupportedOperationException();
             }
 
-            @Override // com.google.common.collect.ForwardingCollection, java.util.Collection, java.util.Set
+            @Override // com.google.common.collect.ForwardingCollection, java.util.Collection
             public boolean addAll(Collection<? extends E> collection) {
                 throw new UnsupportedOperationException();
             }
@@ -2625,20 +2629,20 @@ public final class Maps {
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.google.common.collect.ForwardingSortedSet, com.google.common.collect.ForwardingSet, com.google.common.collect.ForwardingCollection, com.google.common.collect.ForwardingObject
             public SortedSet<E> delegate() {
-                return SortedSet.this;
+                return sortedSet;
             }
 
-            @Override // com.google.common.collect.ForwardingSortedSet, java.util.SortedSet, java.util.NavigableSet
+            @Override // com.google.common.collect.ForwardingSortedSet, java.util.SortedSet
             public SortedSet<E> headSet(E e) {
                 return Maps.removeOnlySortedSet(super.headSet(e));
             }
 
-            @Override // com.google.common.collect.ForwardingSortedSet, java.util.SortedSet, java.util.NavigableSet
+            @Override // com.google.common.collect.ForwardingSortedSet, java.util.SortedSet
             public SortedSet<E> subSet(E e, E e2) {
                 return Maps.removeOnlySortedSet(super.subSet(e, e2));
             }
 
-            @Override // com.google.common.collect.ForwardingSortedSet, java.util.SortedSet, java.util.NavigableSet
+            @Override // com.google.common.collect.ForwardingSortedSet, java.util.SortedSet
             public SortedSet<E> tailSet(E e) {
                 return Maps.removeOnlySortedSet(super.tailSet(e));
             }
@@ -2717,7 +2721,7 @@ public final class Maps {
             K next = it.next();
             newLinkedHashMap.put(next, function.apply(next));
         }
-        return ImmutableMap.copyOf(newLinkedHashMap);
+        return ImmutableMap.copyOf((Map) newLinkedHashMap);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -2756,13 +2760,13 @@ public final class Maps {
         return new AbstractMapEntry<K, V2>() { // from class: com.google.common.collect.Maps.12
             @Override // com.google.common.collect.AbstractMapEntry, java.util.Map.Entry
             public K getKey() {
-                return (K) Map.Entry.this.getKey();
+                return (K) entry.getKey();
             }
 
             /* JADX WARN: Multi-variable type inference failed */
             @Override // com.google.common.collect.AbstractMapEntry, java.util.Map.Entry
             public V2 getValue() {
-                return (V2) entryTransformer.transformEntry(Map.Entry.this.getKey(), Map.Entry.this.getValue());
+                return (V2) entryTransformer.transformEntry(entry.getKey(), entry.getValue());
             }
         };
     }
@@ -2806,12 +2810,12 @@ public final class Maps {
         return new AbstractMapEntry<K, V>() { // from class: com.google.common.collect.Maps.7
             @Override // com.google.common.collect.AbstractMapEntry, java.util.Map.Entry
             public K getKey() {
-                return (K) Map.Entry.this.getKey();
+                return (K) entry.getKey();
             }
 
             @Override // com.google.common.collect.AbstractMapEntry, java.util.Map.Entry
             public V getValue() {
-                return (V) Map.Entry.this.getValue();
+                return (V) entry.getValue();
             }
         };
     }
@@ -2821,12 +2825,12 @@ public final class Maps {
         return new UnmodifiableIterator<Map.Entry<K, V>>() { // from class: com.google.common.collect.Maps.8
             @Override // java.util.Iterator
             public boolean hasNext() {
-                return Iterator.this.hasNext();
+                return it.hasNext();
             }
 
             @Override // java.util.Iterator
             public Map.Entry<K, V> next() {
-                return Maps.unmodifiableEntry((Map.Entry) Iterator.this.next());
+                return Maps.unmodifiableEntry((Map.Entry) it.next());
             }
         };
     }
@@ -2864,8 +2868,9 @@ public final class Maps {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static <K, V> Iterator<V> valueIterator(Iterator<Map.Entry<K, V>> it) {
         return new TransformedIterator<Map.Entry<K, V>, V>(it) { // from class: com.google.common.collect.Maps.2
+            /* JADX INFO: Access modifiers changed from: package-private */
             @Override // com.google.common.collect.TransformedIterator
-            /* bridge */ /* synthetic */ Object transform(Object obj) {
+            public /* bridge */ /* synthetic */ Object transform(Object obj) {
                 return transform((Map.Entry) ((Map.Entry) obj));
             }
 

@@ -1,6 +1,5 @@
 package libcore.icu;
 
-import com.anythink.expressad.exoplayer.b;
 import java.text.DateFormat;
 import java.util.HashMap;
 import java.util.Locale;
@@ -121,7 +120,7 @@ public final class LocaleData {
             locale2 = Locale.getDefault();
         } else {
             locale2 = locale;
-            if (b.f7166ar.equals(locale.toLanguageTag())) {
+            if ("und".equals(locale.toLanguageTag())) {
                 return Locale.ROOT;
             }
         }

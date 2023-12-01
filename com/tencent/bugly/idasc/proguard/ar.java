@@ -4,11 +4,11 @@ package com.tencent.bugly.idasc.proguard;
 public final class ar implements Comparable<ar> {
 
     /* renamed from: a  reason: collision with root package name */
-    public long f35254a = -1;
+    public long f21563a = -1;
     public long b = -1;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f35255c = null;
+    public String f21564c = null;
     public boolean d = false;
     public boolean e = false;
     public int f = 0;

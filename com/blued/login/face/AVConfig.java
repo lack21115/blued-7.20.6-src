@@ -10,22 +10,22 @@ public class AVConfig {
     private static AVConfig b;
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f20536a = false;
+    public boolean f6930a = false;
 
     /* renamed from: c  reason: collision with root package name */
-    private AVConfigModel f20537c;
+    private AVConfigModel f6931c;
 
     private AVConfig() {
         Gson f = AppInfo.f();
         String t = CommonPreferences.t();
         if (StringUtils.b(t)) {
-            this.f20537c = new AVConfigModel();
+            this.f6931c = new AVConfigModel();
             return;
         }
         try {
-            this.f20537c = (AVConfigModel) f.fromJson(t, (Class<Object>) AVConfigModel.class);
+            this.f6931c = (AVConfigModel) f.fromJson(t, (Class<Object>) AVConfigModel.class);
         } catch (Exception e) {
-            this.f20537c = new AVConfigModel();
+            this.f6931c = new AVConfigModel();
         }
     }
 
@@ -45,10 +45,10 @@ public class AVConfig {
     }
 
     public void a(AVConfigModel aVConfigModel, boolean z) {
-        this.f20536a = z;
+        this.f6930a = z;
         try {
             String json = AppInfo.f().toJson(aVConfigModel);
-            this.f20537c = aVConfigModel;
+            this.f6931c = aVConfigModel;
             CommonPreferences.y(json);
         } catch (Exception e) {
             CommonPreferences.y("");
@@ -56,11 +56,11 @@ public class AVConfig {
     }
 
     public void a(boolean z) {
-        this.f20536a = z;
+        this.f6930a = z;
     }
 
     public AVConfigModel b() {
-        AVConfigModel aVConfigModel = this.f20537c;
+        AVConfigModel aVConfigModel = this.f6931c;
         AVConfigModel aVConfigModel2 = aVConfigModel;
         if (aVConfigModel == null) {
             aVConfigModel2 = new AVConfigModel();

@@ -19,10 +19,10 @@ import java.util.Map;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Map<String, ClassLoader> f22016a = new HashMap();
+    private static final Map<String, ClassLoader> f8409a = new HashMap();
 
     public static ClassLoader a(Bundle bundle) {
-        return f22016a.get(bundle.getString(AdvanceSetting.CLEAR_NOTIFICATION));
+        return f8409a.get(bundle.getString(AdvanceSetting.CLEAR_NOTIFICATION));
     }
 
     public static void a(Context context, ClassLoader classLoader, String str, String str2, String str3) throws Throwable {
@@ -30,7 +30,7 @@ public final class b {
         com.getui.gtc.i.c.a.a("start load for class:" + str + ", appId: " + str2 + ", cid: " + str3);
         loadClass.getDeclaredMethod("onCreate", Context.class, String.class, String.class).invoke(loadClass.newInstance(), context, str2, str3);
         com.getui.gtc.i.c.a.a("load success for class:".concat(String.valueOf(str)));
-        f22016a.put(str, classLoader);
+        f8409a.put(str, classLoader);
     }
 
     public static void a(Context context, String str, String str2, String str3) throws Throwable {

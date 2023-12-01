@@ -1,6 +1,5 @@
 package com.tencent.cos.xml.model.tag;
 
-import com.alipay.sdk.util.i;
 import java.util.List;
 
 /* loaded from: source-8457232-dex2jar.jar:com/tencent/cos/xml/model/tag/ListAllMyBuckets.class */
@@ -16,7 +15,7 @@ public class ListAllMyBuckets {
         public String type;
 
         public String toString() {
-            return "{Bucket:\nName:" + this.name + "\nLocation:" + this.location + "\nCreateDate:" + this.createDate + "\n" + i.d;
+            return "{Bucket:\nName:" + this.name + "\nLocation:" + this.location + "\nCreateDate:" + this.createDate + "\n}";
         }
     }
 
@@ -26,7 +25,7 @@ public class ListAllMyBuckets {
         public String id;
 
         public String toString() {
-            return "{Owner:\nID:" + this.id + "\nDisPlayName:" + this.disPlayName + "\n" + i.d;
+            return "{Owner:\nID:" + this.id + "\nDisPlayName:" + this.disPlayName + "\n}";
         }
     }
 
@@ -44,9 +43,9 @@ public class ListAllMyBuckets {
                 sb.append("\n");
             }
         }
-        sb.append(i.d);
+        sb.append("}");
         sb.append("\n");
-        sb.append(i.d);
+        sb.append("}");
         return sb.toString();
     }
 }

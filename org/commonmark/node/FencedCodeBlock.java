@@ -2,18 +2,14 @@ package org.commonmark.node;
 
 /* loaded from: source-3503164-dex2jar.jar:org/commonmark/node/FencedCodeBlock.class */
 public class FencedCodeBlock extends Block {
-
-    /* renamed from: a  reason: collision with root package name */
-    private char f44053a;
+    private char a;
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f44054c;
+    private int c;
     private String d;
     private String e;
 
-    public void a(char c2) {
-        this.f44053a = c2;
+    public void a(char c) {
+        this.a = c;
     }
 
     public void a(int i) {
@@ -30,7 +26,7 @@ public class FencedCodeBlock extends Block {
     }
 
     public void b(int i) {
-        this.f44054c = i;
+        this.c = i;
     }
 
     public void b(String str) {
@@ -38,7 +34,7 @@ public class FencedCodeBlock extends Block {
     }
 
     public char c() {
-        return this.f44053a;
+        return this.a;
     }
 
     public int d() {
@@ -46,7 +42,7 @@ public class FencedCodeBlock extends Block {
     }
 
     public int e() {
-        return this.f44054c;
+        return this.c;
     }
 
     public String f() {

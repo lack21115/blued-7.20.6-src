@@ -4,16 +4,16 @@ package com.opos.exoplayer.core.i;
 public final class e {
 
     /* renamed from: a  reason: collision with root package name */
-    private boolean f25484a;
+    private boolean f11796a;
 
     public boolean a() {
         boolean z;
         synchronized (this) {
             z = true;
-            if (this.f25484a) {
+            if (this.f11796a) {
                 z = false;
             } else {
-                this.f25484a = true;
+                this.f11796a = true;
                 notifyAll();
             }
         }
@@ -23,15 +23,15 @@ public final class e {
     public boolean b() {
         boolean z;
         synchronized (this) {
-            z = this.f25484a;
-            this.f25484a = false;
+            z = this.f11796a;
+            this.f11796a = false;
         }
         return z;
     }
 
     public void c() {
         synchronized (this) {
-            while (!this.f25484a) {
+            while (!this.f11796a) {
                 wait();
             }
         }

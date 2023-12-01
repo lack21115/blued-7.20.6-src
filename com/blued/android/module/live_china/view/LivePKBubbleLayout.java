@@ -19,13 +19,9 @@ import java.util.Random;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LivePKBubbleLayout.class */
 public class LivePKBubbleLayout extends BubbleLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private List<BubbleLayout.Bubble> f14692a;
+    private List<BubbleLayout.Bubble> a;
     private Random b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f14693c;
+    private int c;
     private int d;
     private Context e;
     private Paint f;
@@ -35,21 +31,21 @@ public class LivePKBubbleLayout extends BubbleLayout {
 
     public LivePKBubbleLayout(Context context) {
         super(context);
-        this.f14692a = Collections.synchronizedList(new ArrayList());
+        this.a = Collections.synchronizedList(new ArrayList());
         this.b = new Random();
         this.f = new Paint();
     }
 
     public LivePKBubbleLayout(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f14692a = Collections.synchronizedList(new ArrayList());
+        this.a = Collections.synchronizedList(new ArrayList());
         this.b = new Random();
         this.f = new Paint();
     }
 
     public LivePKBubbleLayout(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f14692a = Collections.synchronizedList(new ArrayList());
+        this.a = Collections.synchronizedList(new ArrayList());
         this.b = new Random();
         this.f = new Paint();
     }
@@ -61,7 +57,7 @@ public class LivePKBubbleLayout extends BubbleLayout {
         }
         this.f.reset();
         this.f.setColor(6723993);
-        this.f14693c = getWidth();
+        this.c = getWidth();
         this.d = getHeight();
         final BubbleLayout.Bubble bubble = new BubbleLayout.Bubble();
         TextView textView = new TextView(this.e);
@@ -83,9 +79,9 @@ public class LivePKBubbleLayout extends BubbleLayout {
         textView.destroyDrawingCache();
         bubble.e = createBitmap;
         bubble.c(8.0f);
-        bubble.f14247c = 0.08f;
-        int measuredWidth = this.f14693c - textView.getMeasuredWidth();
-        bubble.a(measuredWidth > 0 ? this.b.nextInt(measuredWidth) : this.f14693c);
+        bubble.c = 0.08f;
+        int measuredWidth = this.c - textView.getMeasuredWidth();
+        bubble.a(measuredWidth > 0 ? this.b.nextInt(measuredWidth) : this.c);
         bubble.b(this.d - DensityUtils.a(this.e, 12.0f));
         float nextFloat = this.b.nextFloat();
         while (true) {
@@ -100,12 +96,12 @@ public class LivePKBubbleLayout extends BubbleLayout {
             f2 = f * (-1.0f);
         }
         bubble.d(f2 * 3.0f);
-        bubble.f14246a = bubble.e();
+        bubble.a = bubble.e();
         post(new Runnable() { // from class: com.blued.android.module.live_china.view.LivePKBubbleLayout.1
             @Override // java.lang.Runnable
             public void run() {
-                if (LivePKBubbleLayout.this.f14692a.size() <= 50) {
-                    LivePKBubbleLayout.this.f14692a.add(bubble);
+                if (LivePKBubbleLayout.this.a.size() <= 50) {
+                    LivePKBubbleLayout.this.a.add(bubble);
                 }
                 LivePKBubbleLayout.this.invalidate();
             }
@@ -124,15 +120,15 @@ public class LivePKBubbleLayout extends BubbleLayout {
     @Override // com.blued.android.module.live_china.view.BubbleLayout, android.view.View
     public void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        if (this.f14692a.size() > 0) {
-            Iterator<BubbleLayout.Bubble> it = this.f14692a.iterator();
+        if (this.a.size() > 0) {
+            Iterator<BubbleLayout.Bubble> it = this.a.iterator();
             while (it.hasNext()) {
                 BubbleLayout.Bubble next = it.next();
                 if (next != null) {
                     if (next.c() - next.d() <= 0.0f) {
                         it.remove();
                     } else {
-                        float b = (this.f14693c - this.g) - next.b();
+                        float b = (this.c - this.g) - next.b();
                         float f = this.i;
                         if (next.e() >= 0.0f) {
                             if (b <= 0.0f) {
@@ -150,7 +146,7 @@ public class LivePKBubbleLayout extends BubbleLayout {
                             if (next.e != null) {
                                 canvas.drawBitmap(next.e, matrix, this.f);
                             }
-                            next.b += next.f14247c;
+                            next.b += next.c;
                             next.b(next.c() - 5.0f);
                             next.a(next.b() - 3.5f);
                         } else {

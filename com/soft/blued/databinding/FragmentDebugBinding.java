@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentDebugBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final RelativeLayout f28811a;
+    private final RelativeLayout f15121a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
-        return this.f28811a;
+        return this.f15121a;
     }
 }

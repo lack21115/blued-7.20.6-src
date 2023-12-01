@@ -17,13 +17,9 @@ import kotlin.sequences.Sequence;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/io/FileTreeWalk.class */
 public final class FileTreeWalk implements Sequence<File> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final File f42488a;
+    private final File a;
     private final FileWalkDirection b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final Function1<File, Boolean> f42489c;
+    private final Function1<File, Boolean> c;
     private final Function1<File, Unit> d;
     private final Function2<File, IOException, Unit> e;
     private final int f;
@@ -54,13 +50,9 @@ public final class FileTreeWalk implements Sequence<File> {
         @Metadata
         /* loaded from: source-3503164-dex2jar.jar:kotlin/io/FileTreeWalk$FileTreeWalkIterator$BottomUpDirectoryState.class */
         public final class BottomUpDirectoryState extends DirectoryState {
-
-            /* renamed from: a  reason: collision with root package name */
-            final /* synthetic */ FileTreeWalkIterator f42491a;
+            final /* synthetic */ FileTreeWalkIterator a;
             private boolean b;
-
-            /* renamed from: c  reason: collision with root package name */
-            private File[] f42492c;
+            private File[] c;
             private int d;
             private boolean e;
 
@@ -68,13 +60,13 @@ public final class FileTreeWalk implements Sequence<File> {
             public BottomUpDirectoryState(FileTreeWalkIterator fileTreeWalkIterator, File rootDir) {
                 super(rootDir);
                 Intrinsics.e(rootDir, "rootDir");
-                this.f42491a = fileTreeWalkIterator;
+                this.a = fileTreeWalkIterator;
             }
 
             @Override // kotlin.io.FileTreeWalk.WalkState
             public File a() {
-                if (!this.e && this.f42492c == null) {
-                    Function1 function1 = FileTreeWalk.this.f42489c;
+                if (!this.e && this.c == null) {
+                    Function1 function1 = FileTreeWalk.this.c;
                     boolean z = false;
                     if (function1 != null) {
                         z = false;
@@ -86,7 +78,7 @@ public final class FileTreeWalk implements Sequence<File> {
                         return null;
                     }
                     File[] listFiles = b().listFiles();
-                    this.f42492c = listFiles;
+                    this.c = listFiles;
                     if (listFiles == null) {
                         Function2 function2 = FileTreeWalk.this.e;
                         if (function2 != null) {
@@ -95,12 +87,12 @@ public final class FileTreeWalk implements Sequence<File> {
                         this.e = true;
                     }
                 }
-                File[] fileArr = this.f42492c;
+                File[] fileArr = this.c;
                 if (fileArr != null) {
                     int i = this.d;
                     Intrinsics.a(fileArr);
                     if (i < fileArr.length) {
-                        File[] fileArr2 = this.f42492c;
+                        File[] fileArr2 = this.c;
                         Intrinsics.a(fileArr2);
                         int i2 = this.d;
                         this.d = i2 + 1;
@@ -123,16 +115,14 @@ public final class FileTreeWalk implements Sequence<File> {
         @Metadata
         /* loaded from: source-3503164-dex2jar.jar:kotlin/io/FileTreeWalk$FileTreeWalkIterator$SingleFileState.class */
         final class SingleFileState extends WalkState {
-
-            /* renamed from: a  reason: collision with root package name */
-            final /* synthetic */ FileTreeWalkIterator f42493a;
+            final /* synthetic */ FileTreeWalkIterator a;
             private boolean b;
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public SingleFileState(FileTreeWalkIterator fileTreeWalkIterator, File rootFile) {
                 super(rootFile);
                 Intrinsics.e(rootFile, "rootFile");
-                this.f42493a = fileTreeWalkIterator;
+                this.a = fileTreeWalkIterator;
                 if (_Assertions.b) {
                     boolean isFile = rootFile.isFile();
                     if (_Assertions.b && !isFile) {
@@ -155,20 +145,16 @@ public final class FileTreeWalk implements Sequence<File> {
         @Metadata
         /* loaded from: source-3503164-dex2jar.jar:kotlin/io/FileTreeWalk$FileTreeWalkIterator$TopDownDirectoryState.class */
         public final class TopDownDirectoryState extends DirectoryState {
-
-            /* renamed from: a  reason: collision with root package name */
-            final /* synthetic */ FileTreeWalkIterator f42494a;
+            final /* synthetic */ FileTreeWalkIterator a;
             private boolean b;
-
-            /* renamed from: c  reason: collision with root package name */
-            private File[] f42495c;
+            private File[] c;
             private int d;
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public TopDownDirectoryState(FileTreeWalkIterator fileTreeWalkIterator, File rootDir) {
                 super(rootDir);
                 Intrinsics.e(rootDir, "rootDir");
-                this.f42494a = fileTreeWalkIterator;
+                this.a = fileTreeWalkIterator;
             }
 
             /* JADX WARN: Code restructure failed: missing block: B:35:0x00c9, code lost:
@@ -191,30 +177,28 @@ public final class FileTreeWalk implements Sequence<File> {
         @Metadata
         /* loaded from: source-3503164-dex2jar.jar:kotlin/io/FileTreeWalk$FileTreeWalkIterator$WhenMappings.class */
         public final /* synthetic */ class WhenMappings {
-
-            /* renamed from: a  reason: collision with root package name */
-            public static final /* synthetic */ int[] f42496a;
+            public static final /* synthetic */ int[] a;
 
             static {
                 int[] iArr = new int[FileWalkDirection.values().length];
                 iArr[FileWalkDirection.TOP_DOWN.ordinal()] = 1;
                 iArr[FileWalkDirection.BOTTOM_UP.ordinal()] = 2;
-                f42496a = iArr;
+                a = iArr;
             }
         }
 
         public FileTreeWalkIterator() {
-            if (FileTreeWalk.this.f42488a.isDirectory()) {
-                this.b.push(a(FileTreeWalk.this.f42488a));
-            } else if (FileTreeWalk.this.f42488a.isFile()) {
-                this.b.push(new SingleFileState(this, FileTreeWalk.this.f42488a));
+            if (FileTreeWalk.this.a.isDirectory()) {
+                this.b.push(a(FileTreeWalk.this.a));
+            } else if (FileTreeWalk.this.a.isFile()) {
+                this.b.push(new SingleFileState(this, FileTreeWalk.this.a));
             } else {
                 b();
             }
         }
 
         private final DirectoryState a(File file) {
-            int i = WhenMappings.f42496a[FileTreeWalk.this.b.ordinal()];
+            int i = WhenMappings.a[FileTreeWalk.this.b.ordinal()];
             if (i != 1) {
                 if (i == 2) {
                     return new BottomUpDirectoryState(this, file);
@@ -225,31 +209,31 @@ public final class FileTreeWalk implements Sequence<File> {
         }
 
         private final File c() {
-            File a2;
+            File a;
             while (true) {
                 WalkState peek = this.b.peek();
                 if (peek == null) {
                     return null;
                 }
-                a2 = peek.a();
-                if (a2 == null) {
+                a = peek.a();
+                if (a == null) {
                     this.b.pop();
-                } else if (Intrinsics.a(a2, peek.b()) || !a2.isDirectory()) {
+                } else if (Intrinsics.a(a, peek.b()) || !a.isDirectory()) {
                     break;
                 } else if (this.b.size() >= FileTreeWalk.this.f) {
-                    return a2;
+                    return a;
                 } else {
-                    this.b.push(a(a2));
+                    this.b.push(a(a));
                 }
             }
-            return a2;
+            return a;
         }
 
         @Override // kotlin.collections.AbstractIterator
         public void a() {
-            File c2 = c();
-            if (c2 != null) {
-                a((FileTreeWalkIterator) c2);
+            File c = c();
+            if (c != null) {
+                a((FileTreeWalkIterator) c);
             } else {
                 b();
             }
@@ -260,19 +244,17 @@ public final class FileTreeWalk implements Sequence<File> {
     @Metadata
     /* loaded from: source-3503164-dex2jar.jar:kotlin/io/FileTreeWalk$WalkState.class */
     public static abstract class WalkState {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final File f42497a;
+        private final File a;
 
         public WalkState(File root) {
             Intrinsics.e(root, "root");
-            this.f42497a = root;
+            this.a = root;
         }
 
         public abstract File a();
 
         public final File b() {
-            return this.f42497a;
+            return this.a;
         }
     }
 

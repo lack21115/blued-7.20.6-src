@@ -4,7 +4,7 @@ import com.iab.omid.library.huawei.adsession.Owner;
 
 /* loaded from: source-7994992-dex2jar.jar:com/huawei/hms/ads/iv.class */
 public enum iv implements it {
-    NATIVE(com.anythink.expressad.foundation.g.a.f.f7832a),
+    NATIVE(com.anythink.expressad.foundation.g.a.f.f4992a),
     JAVASCRIPT("javascript"),
     NONE("none");
     

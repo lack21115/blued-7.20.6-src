@@ -11,34 +11,34 @@ import android.widget.ImageView;
 public class LoadingImageView extends ImageView {
 
     /* renamed from: a  reason: collision with root package name */
-    private Animation f21700a;
+    private Animation f8094a;
     private LinearInterpolator b;
 
     public LoadingImageView(Context context) {
         super(context);
-        this.f21700a = null;
+        this.f8094a = null;
         this.b = null;
         a();
     }
 
     public LoadingImageView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f21700a = null;
+        this.f8094a = null;
         this.b = null;
         a();
     }
 
     public LoadingImageView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f21700a = null;
+        this.f8094a = null;
         this.b = null;
         a();
     }
 
     protected void a() {
-        this.f21700a = AnimationUtils.loadAnimation(getContext(), c.c(getContext(), "umcsdk_anim_loading"));
+        this.f8094a = AnimationUtils.loadAnimation(getContext(), c.c(getContext(), "umcsdk_anim_loading"));
         LinearInterpolator linearInterpolator = new LinearInterpolator();
         this.b = linearInterpolator;
-        this.f21700a.setInterpolator(linearInterpolator);
+        this.f8094a.setInterpolator(linearInterpolator);
     }
 }

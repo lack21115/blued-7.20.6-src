@@ -7,7 +7,7 @@ public final class HttpException extends IOException {
     private static final long serialVersionUID = 1;
 
     /* renamed from: a  reason: collision with root package name */
-    private final int f20699a;
+    private final int f7093a;
 
     public HttpException(int i) {
         this("Http request failed with status code: " + i, i);
@@ -23,6 +23,6 @@ public final class HttpException extends IOException {
 
     public HttpException(String str, int i, Throwable th) {
         super(str, th);
-        this.f20699a = i;
+        this.f7093a = i;
     }
 }

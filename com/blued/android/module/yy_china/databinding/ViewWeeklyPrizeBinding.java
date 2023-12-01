@@ -11,22 +11,18 @@ import com.blued.android.module.yy_china.view.DailyPrizeView;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ViewWeeklyPrizeBinding.class */
 public final class ViewWeeklyPrizeBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final DailyPrizeView f16886a;
+    public final DailyPrizeView a;
     public final TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final TextView f16887c;
+    public final TextView c;
     public final TextView d;
     public final TextView e;
     private final LinearLayout f;
 
     private ViewWeeklyPrizeBinding(LinearLayout linearLayout, DailyPrizeView dailyPrizeView, TextView textView, TextView textView2, TextView textView3, TextView textView4) {
         this.f = linearLayout;
-        this.f16886a = dailyPrizeView;
+        this.a = dailyPrizeView;
         this.b = textView;
-        this.f16887c = textView2;
+        this.c = textView2;
         this.d = textView3;
         this.e = textView4;
     }
@@ -69,7 +65,6 @@ public final class ViewWeeklyPrizeBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
         return this.f;

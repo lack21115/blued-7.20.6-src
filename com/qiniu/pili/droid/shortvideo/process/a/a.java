@@ -6,6 +6,7 @@ import android.media.MediaCodec;
 import android.media.MediaFormat;
 import android.opengl.GLES20;
 import android.view.Surface;
+import androidx.constraintlayout.motion.widget.Key;
 import com.baidu.mobads.sdk.internal.bw;
 import com.huawei.openalliance.ad.constant.bc;
 import com.qiniu.pili.droid.shortvideo.PLComposeItem;
@@ -33,7 +34,7 @@ public class a {
     private volatile long B;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f27736c;
+    private String f14048c;
     private PLVideoSaveListener d;
     private PLVideoEncodeSetting e;
     private int f;
@@ -55,14 +56,14 @@ public class a {
     private com.qiniu.pili.droid.shortvideo.process.audio.a z;
 
     /* renamed from: a  reason: collision with root package name */
-    private boolean f27735a = false;
+    private boolean f14047a = false;
     private final Object b = new Object();
     private int l = 0;
     private int m = 0;
     private volatile int s = -1;
     private long u = 0;
-    private a.InterfaceC0745a C = new a.InterfaceC0745a() { // from class: com.qiniu.pili.droid.shortvideo.process.a.a.2
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+    private a.InterfaceC0575a C = new a.InterfaceC0575a() { // from class: com.qiniu.pili.droid.shortvideo.process.a.a.2
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(MediaFormat mediaFormat) {
             com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.t;
             eVar.c("MultiItemComposer", "video encode output format retrieved: " + mediaFormat);
@@ -70,13 +71,13 @@ public class a {
             a.this.d();
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(Surface surface) {
             com.qiniu.pili.droid.shortvideo.f.e.t.c("MultiItemComposer", "encode surface created");
             a.this.p = surface;
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(ByteBuffer byteBuffer, MediaCodec.BufferInfo bufferInfo) {
             com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.t;
             eVar.b("MultiItemComposer", "muxer write video: " + bufferInfo.presentationTimeUs);
@@ -87,7 +88,7 @@ public class a {
             }
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(boolean z) {
             com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.t;
             eVar.c("MultiItemComposer", "video encode started result: " + z);
@@ -100,14 +101,14 @@ public class a {
             }
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void b(boolean z) {
             com.qiniu.pili.droid.shortvideo.f.e.t.c("MultiItemComposer", "video encode stopped");
             a.this.e();
         }
     };
-    private a.InterfaceC0745a D = new a.InterfaceC0745a() { // from class: com.qiniu.pili.droid.shortvideo.process.a.a.3
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+    private a.InterfaceC0575a D = new a.InterfaceC0575a() { // from class: com.qiniu.pili.droid.shortvideo.process.a.a.3
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(MediaFormat mediaFormat) {
             com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.t;
             eVar.c("MultiItemComposer", "audio encode output format retrieved: " + mediaFormat);
@@ -115,11 +116,11 @@ public class a {
             a.this.d();
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(Surface surface) {
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(ByteBuffer byteBuffer, MediaCodec.BufferInfo bufferInfo) {
             com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.t;
             eVar.b("MultiItemComposer", "muxer write audio: " + bufferInfo.presentationTimeUs);
@@ -130,7 +131,7 @@ public class a {
             }
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(boolean z) {
             if (z) {
                 return;
@@ -138,7 +139,7 @@ public class a {
             a.this.a(7);
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void b(boolean z) {
             com.qiniu.pili.droid.shortvideo.f.e.t.c("MultiItemComposer", "audio encode stopped");
             a.this.e();
@@ -147,7 +148,7 @@ public class a {
     private a.b E = new a.b() { // from class: com.qiniu.pili.droid.shortvideo.process.a.a.4
 
         /* renamed from: a  reason: collision with root package name */
-        volatile h f27740a;
+        volatile h f14052a;
         volatile b b;
 
         @Override // com.qiniu.pili.droid.shortvideo.gl.b.a.b
@@ -156,9 +157,9 @@ public class a {
             PLComposeItem pLComposeItem = (PLComposeItem) a.this.v.getFirst();
             long durationMs = (pLComposeItem.getDurationMs() * 1000) - ((j / 1000) - j2);
             if (durationMs < pLComposeItem.getTransitionTimeMs() * 1000) {
-                if (this.f27740a == null) {
+                if (this.f14052a == null) {
                     this.b = a.this.a(i2, i3);
-                    this.f27740a = a.this.a(pLComposeItem.getTransitionTimeMs(), i2, i3, this.b.b(), this.b.c());
+                    this.f14052a = a.this.a(pLComposeItem.getTransitionTimeMs(), i2, i3, this.b.b(), this.b.c());
                     a.this.i.a(a.this.f, a.this.g);
                 }
                 a.this.b();
@@ -167,10 +168,10 @@ public class a {
                 if (a2 > 0) {
                     i4 = a.this.x.a(this.b.a());
                 }
-                i = this.f27740a.a(i, i4, durationMs * 1000);
+                i = this.f14052a.a(i, i4, durationMs * 1000);
             }
             synchronized (a.this.b) {
-                a.this.f27735a = true;
+                a.this.f14047a = true;
                 a.this.b.notify();
             }
             a.this.h.a(j);
@@ -179,9 +180,9 @@ public class a {
 
         @Override // com.qiniu.pili.droid.shortvideo.gl.b.a.b
         public void a() {
-            if (this.f27740a != null) {
-                this.f27740a.f();
-                this.f27740a = null;
+            if (this.f14052a != null) {
+                this.f14052a.f();
+                this.f14052a = null;
             }
             if (this.b != null) {
                 com.qiniu.pili.droid.shortvideo.c.a.b.a(this.b.a());
@@ -196,7 +197,7 @@ public class a {
         @Override // com.qiniu.pili.droid.shortvideo.gl.b.a.b
         public void a(Object obj, Surface surface) {
             if (a.this.g()) {
-                a.this.j.a(new C0749a());
+                a.this.j.a(new C0579a());
                 a.this.j.a(surface);
                 a.this.j.a();
             }
@@ -233,10 +234,10 @@ public class a {
 
     /* renamed from: com.qiniu.pili.droid.shortvideo.process.a.a$a  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/qiniu/pili/droid/shortvideo/process/a/a$a.class */
-    class C0749a implements b.c {
+    class C0579a implements b.c {
         private long b;
 
-        private C0749a() {
+        private C0579a() {
         }
 
         @Override // com.qiniu.pili.droid.shortvideo.d.b.c
@@ -248,14 +249,14 @@ public class a {
             }
             this.b = j;
             synchronized (a.this.b) {
-                while (!a.this.f27735a) {
+                while (!a.this.f14047a) {
                     try {
                         a.this.b.wait();
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
-                a.this.f27735a = false;
+                a.this.f14047a = false;
             }
             if (a.this.q) {
                 com.qiniu.pili.droid.shortvideo.f.e.t.c("MultiItemComposer", "cancel marked, stop video things now.");
@@ -272,12 +273,12 @@ public class a {
         private int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f27747c;
+        private int f14059c;
         private int d;
 
         public b(int i, int i2, int i3) {
             this.b = i;
-            this.f27747c = i2;
+            this.f14059c = i2;
             this.d = i3;
         }
 
@@ -286,7 +287,7 @@ public class a {
         }
 
         public int b() {
-            return this.f27747c;
+            return this.f14059c;
         }
 
         public int c() {
@@ -299,8 +300,8 @@ public class a {
         if (e.containsKey("rotation-degrees")) {
             return e.getInteger("rotation-degrees");
         }
-        if (e.containsKey("rotation")) {
-            return e.getInteger("rotation");
+        if (e.containsKey(Key.ROTATION)) {
+            return e.getInteger(Key.ROTATION);
         }
         return 0;
     }
@@ -359,8 +360,8 @@ public class a {
         com.qiniu.pili.droid.shortvideo.gl.b.a aVar = new com.qiniu.pili.droid.shortvideo.gl.b.a(this.p, i, i2, i3, this.e.getVideoEncodingWidth(), this.e.getVideoEncodingHeight(), list);
         this.i = aVar;
         aVar.a(this.E);
-        this.i.a(new a.InterfaceC0748a() { // from class: com.qiniu.pili.droid.shortvideo.process.a.a.1
-            @Override // com.qiniu.pili.droid.shortvideo.gl.b.a.InterfaceC0748a
+        this.i.a(new a.InterfaceC0578a() { // from class: com.qiniu.pili.droid.shortvideo.process.a.a.1
+            @Override // com.qiniu.pili.droid.shortvideo.gl.b.a.InterfaceC0578a
             public void a() {
                 if (a.this.g()) {
                     return;
@@ -417,7 +418,7 @@ public class a {
 
     private int b(com.qiniu.pili.droid.shortvideo.f.f fVar) {
         MediaFormat e = fVar.e();
-        if (e.containsKey("rotation-degrees") || e.containsKey("rotation")) {
+        if (e.containsKey("rotation-degrees") || e.containsKey(Key.ROTATION)) {
             return 0;
         }
         return fVar.m();
@@ -509,7 +510,7 @@ public class a {
             }
             com.qiniu.pili.droid.shortvideo.muxer.b bVar = new com.qiniu.pili.droid.shortvideo.muxer.b();
             this.k = bVar;
-            if (bVar.a(this.f27736c, this.n, this.o, 0)) {
+            if (bVar.a(this.f14048c, this.n, this.o, 0)) {
                 com.qiniu.pili.droid.shortvideo.f.e.t.c("MultiItemComposer", "start muxer success!");
                 notify();
             } else {
@@ -530,7 +531,7 @@ public class a {
         long j = 0;
         while (j <= durationMs && !this.q) {
             int a5 = this.x.a(a4.a(a2.a(), a3.a(), (durationMs - j) * 1000));
-            synchronized (com.qiniu.pili.droid.shortvideo.f.d.f27670a) {
+            synchronized (com.qiniu.pili.droid.shortvideo.f.d.f13982a) {
                 GLES20.glClear(16384);
                 this.w.b(a5);
             }
@@ -591,7 +592,7 @@ public class a {
             this.E.a();
             if (this.q) {
                 this.q = false;
-                new File(this.f27736c).delete();
+                new File(this.f14048c).delete();
                 if (f()) {
                     int i = this.s;
                     this.s = -1;
@@ -601,9 +602,9 @@ public class a {
                 }
             } else if (z) {
                 this.d.onProgressUpdate(1.0f);
-                this.d.onSaveVideoSuccess(this.f27736c);
+                this.d.onSaveVideoSuccess(this.f14048c);
             } else {
-                new File(this.f27736c).delete();
+                new File(this.f14048c).delete();
                 this.d.onSaveVideoFailed(3);
             }
             com.qiniu.pili.droid.shortvideo.f.e.t.c("MultiItemComposer", "stopMuxer -");
@@ -644,7 +645,7 @@ public class a {
                             createBitmap.recycle();
                         }
                         int a7 = this.x.a(a4.a(i2, a3.a(), (durationMs - j) * 1000));
-                        synchronized (com.qiniu.pili.droid.shortvideo.f.d.f27670a) {
+                        synchronized (com.qiniu.pili.droid.shortvideo.f.d.f13982a) {
                             GLES20.glClear(16384);
                             this.w.b(a7);
                         }
@@ -730,7 +731,7 @@ public class a {
                     this.u += pLComposeItem.getDurationMs() * 1000;
                 }
                 this.v = new LinkedList<>(list);
-                this.f27736c = str;
+                this.f14048c = str;
                 PLVideoSaveListener pLVideoSaveListener2 = pLVideoSaveListener;
                 if (pLVideoSaveListener == null) {
                     pLVideoSaveListener2 = this.F;

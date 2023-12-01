@@ -67,14 +67,14 @@ public enum hq {
     
 
     /* renamed from: a  reason: collision with other field name */
-    public final String f583a;
+    public final String f536a;
 
     hq(String str) {
-        this.f583a = str;
+        this.f536a = str;
     }
 
     @Override // java.lang.Enum
     public final String toString() {
-        return this.f583a;
+        return this.f536a;
     }
 }

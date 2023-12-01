@@ -40,7 +40,7 @@ public class FlymePushReceiver extends MzPushMessageReceiver {
             if (TextUtils.isEmpty(stringExtra)) {
                 return;
             }
-            MessageBean messageBean = new MessageBean(context, "payload", stringExtra);
+            MessageBean messageBean = new MessageBean(context, AssistPushConsts.MSG_TYPE_PAYLOAD, stringExtra);
             messageBean.setMessageSource(AssistPushConsts.MZ_PREFIX);
             MessageManger.getInstance().addMessage(messageBean);
         } catch (Throwable th) {
@@ -56,7 +56,7 @@ public class FlymePushReceiver extends MzPushMessageReceiver {
             if (context == null || TextUtils.isEmpty(str)) {
                 return;
             }
-            MessageBean messageBean = new MessageBean(context, "payload", str);
+            MessageBean messageBean = new MessageBean(context, AssistPushConsts.MSG_TYPE_PAYLOAD, str);
             messageBean.setMessageSource(AssistPushConsts.MZ_PREFIX);
             MessageManger.getInstance().addMessage(messageBean);
         } catch (Throwable th) {
@@ -83,7 +83,7 @@ public class FlymePushReceiver extends MzPushMessageReceiver {
                     str = jSONObject.getString(MSG_KEY_PAYLOAD);
                 }
                 if (!TextUtils.isEmpty(str)) {
-                    MessageBean messageBean = new MessageBean(context, "payload", str);
+                    MessageBean messageBean = new MessageBean(context, AssistPushConsts.MSG_TYPE_PAYLOAD, str);
                     messageBean.setMessageSource(AssistPushConsts.MZ_PREFIX);
                     MessageManger.getInstance().addMessage(messageBean);
                 }
@@ -156,7 +156,7 @@ public class FlymePushReceiver extends MzPushMessageReceiver {
             if (this.statusBarIconId != 0) {
                 pushNotificationBuilder.setStatusBarIcon(this.statusBarIconId);
             } else if (this.context != null) {
-                int identifier = this.context.getResources().getIdentifier("mz_push_notification_small_icon", i.f7952c, this.context.getPackageName());
+                int identifier = this.context.getResources().getIdentifier("mz_push_notification_small_icon", i.f5112c, this.context.getPackageName());
                 this.statusBarIconId = identifier;
                 if (identifier != 0) {
                     pushNotificationBuilder.setStatusBarIcon(identifier);

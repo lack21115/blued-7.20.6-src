@@ -6,15 +6,15 @@ import java.util.List;
 public final class l {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f8077a;
+    private int f5237a;
     private List<com.anythink.expressad.foundation.d.c> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f8078c;
+    private String f5238c;
     private String d;
 
     private int a() {
-        return this.f8077a;
+        return this.f5237a;
     }
 
     private List<com.anythink.expressad.foundation.d.c> b() {
@@ -22,7 +22,7 @@ public final class l {
     }
 
     private String c() {
-        return this.f8078c;
+        return this.f5238c;
     }
 
     private String d() {
@@ -30,11 +30,11 @@ public final class l {
     }
 
     public final void a(int i) {
-        this.f8077a = i;
+        this.f5237a = i;
     }
 
     public final void a(String str) {
-        this.f8078c = str;
+        this.f5238c = str;
     }
 
     public final void a(List<com.anythink.expressad.foundation.d.c> list) {

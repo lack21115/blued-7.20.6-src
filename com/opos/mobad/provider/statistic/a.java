@@ -10,10 +10,10 @@ import com.opos.process.bridge.provider.c;
 public final class a extends com.opos.process.bridge.provider.a {
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f27132c = StatisticModel.class.getName();
+    private static final String f13444c = StatisticModel.class.getName();
 
     public a(Context context, StatisticModelIdentify statisticModelIdentify) {
-        this.f27427a = context;
+        this.f13739a = context;
         this.b = statisticModelIdentify;
     }
 
@@ -23,10 +23,10 @@ public final class a extends com.opos.process.bridge.provider.a {
     }
 
     public final void a(String str) throws c, b {
-        b(this.f27427a, f27132c, this.b, 2, str);
+        b(this.f13739a, f13444c, this.b, 2, str);
     }
 
     public final void a(String str, String str2) throws c, b {
-        b(this.f27427a, f27132c, this.b, 1, str, str2);
+        b(this.f13739a, f13444c, this.b, 1, str, str2);
     }
 }

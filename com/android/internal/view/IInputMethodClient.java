@@ -18,9 +18,8 @@ public interface IInputMethodClient extends IInterface {
         static final int TRANSACTION_setUserActionNotificationSequenceNumber = 5;
         static final int TRANSACTION_setUsingInputMethod = 1;
 
-        /* JADX INFO: Access modifiers changed from: private */
         /* loaded from: source-4181928-dex2jar.jar:com/android/internal/view/IInputMethodClient$Stub$Proxy.class */
-        public static class Proxy implements IInputMethodClient {
+        private static class Proxy implements IInputMethodClient {
             private IBinder mRemote;
 
             Proxy(IBinder iBinder) {
@@ -158,7 +157,7 @@ public interface IInputMethodClient extends IInterface {
                     parcel.enforceInterface(DESCRIPTOR);
                     setUserActionNotificationSequenceNumber(parcel.readInt());
                     return true;
-                case IBinder.INTERFACE_TRANSACTION /* 1598968902 */:
+                case 1598968902:
                     parcel2.writeString(DESCRIPTOR);
                     return true;
                 default:

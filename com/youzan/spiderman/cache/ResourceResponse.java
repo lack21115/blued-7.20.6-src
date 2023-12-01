@@ -6,16 +6,16 @@ import java.io.InputStream;
 public class ResourceResponse {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f41791a;
+    private String f28100a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private InputStream f41792c;
+    private InputStream f28101c;
 
     public ResourceResponse(String str, String str2, InputStream inputStream) {
-        this.f41791a = str;
+        this.f28100a = str;
         this.b = str2;
-        this.f41792c = inputStream;
+        this.f28101c = inputStream;
     }
 
     public String getEncoding() {
@@ -23,11 +23,11 @@ public class ResourceResponse {
     }
 
     public InputStream getInputStream() {
-        return this.f41792c;
+        return this.f28101c;
     }
 
     public String getMimeType() {
-        return this.f41791a;
+        return this.f28100a;
     }
 
     public void setEncoding(String str) {
@@ -35,10 +35,10 @@ public class ResourceResponse {
     }
 
     public void setInputStream(InputStream inputStream) {
-        this.f41792c = inputStream;
+        this.f28101c = inputStream;
     }
 
     public void setMimeType(String str) {
-        this.f41791a = str;
+        this.f28100a = str;
     }
 }

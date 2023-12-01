@@ -14,14 +14,14 @@ import java.net.URL;
 public class e {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f38829a = "EmergencyManager";
+    private static String f25138a = "EmergencyManager";
     private static final Object f = new Object();
     private static HandlerThread g;
     private static Handler h;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f38830c;
+    private String f25139c;
     private String d;
     private Handler e;
 
@@ -36,7 +36,7 @@ public class e {
 
     public e(Context context, String str, String str2, String str3) {
         this.b = str;
-        this.f38830c = str2;
+        this.f25139c = str2;
         this.d = str3;
         this.e = new Handler(context.getMainLooper());
     }
@@ -56,18 +56,18 @@ public class e {
     }
 
     public String a(String str) {
-        String str2 = f38829a;
-        TbsLog.e(str2, "Request url: " + this.b + ",params: " + this.f38830c);
+        String str2 = f25138a;
+        TbsLog.e(str2, "Request url: " + this.b + ",params: " + this.f25139c);
         try {
             HttpURLConnection httpURLConnection = (HttpURLConnection) new URL(str.trim()).openConnection();
             httpURLConnection.setRequestMethod(this.d);
             httpURLConnection.setRequestProperty("Content-Type", "application/json;charset=UTF-8");
-            httpURLConnection.setRequestProperty("Content-Length", this.f38830c.length() + "");
+            httpURLConnection.setRequestProperty("Content-Length", this.f25139c.length() + "");
             httpURLConnection.setDoOutput(true);
-            httpURLConnection.getOutputStream().write(this.f38830c.getBytes());
+            httpURLConnection.getOutputStream().write(this.f25139c.getBytes());
             int responseCode = httpURLConnection.getResponseCode();
             if (200 != responseCode) {
-                String str3 = f38829a;
+                String str3 = f25138a;
                 TbsLog.e(str3, "Bad http request, code: " + responseCode);
                 return null;
             }
@@ -83,7 +83,7 @@ public class e {
                 byteArrayOutputStream.flush();
             }
         } catch (IOException e) {
-            String str4 = f38829a;
+            String str4 = f25138a;
             TbsLog.e(str4, "Http exception: " + e.getMessage());
             return null;
         }
@@ -106,7 +106,7 @@ public class e {
                     });
                     return;
                 }
-                String str = e.f38829a;
+                String str = e.f25138a;
                 TbsLog.e(str, "Unexpected result for an empty http response: " + e.this.b);
             }
         });

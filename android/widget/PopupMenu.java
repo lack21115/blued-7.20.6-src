@@ -6,6 +6,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListPopupWindow;
+import com.android.internal.R;
 import com.android.internal.view.menu.MenuBuilder;
 import com.android.internal.view.menu.MenuPopupHelper;
 import com.android.internal.view.menu.MenuPresenter;
@@ -36,7 +37,7 @@ public class PopupMenu implements MenuBuilder.Callback, MenuPresenter.Callback {
     }
 
     public PopupMenu(Context context, View view, int i) {
-        this(context, view, i, 16843520, 0);
+        this(context, view, i, R.attr.popupMenuStyle, 0);
     }
 
     public PopupMenu(Context context, View view, int i, int i2, int i3) {

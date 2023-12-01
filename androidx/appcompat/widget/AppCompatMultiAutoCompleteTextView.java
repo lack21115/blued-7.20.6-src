@@ -1,5 +1,6 @@
 package androidx.appcompat.widget;
 
+import android.R;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.graphics.PorterDuff;
@@ -12,7 +13,6 @@ import android.view.inspector.InspectionCompanion;
 import android.view.inspector.PropertyMapper;
 import android.view.inspector.PropertyReader;
 import android.widget.MultiAutoCompleteTextView;
-import androidx.appcompat.R;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.core.view.TintableBackgroundView;
 
@@ -20,37 +20,37 @@ import androidx.core.view.TintableBackgroundView;
 public class AppCompatMultiAutoCompleteTextView extends MultiAutoCompleteTextView implements EmojiCompatConfigurationView, TintableBackgroundView {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final int[] f1767a = {16843126};
+    private static final int[] f1719a = {R.attr.popupBackground};
     private final AppCompatBackgroundHelper b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final AppCompatTextHelper f1768c;
+    private final AppCompatTextHelper f1720c;
     private final AppCompatEmojiEditTextHelper d;
 
     /* loaded from: source-8756600-dex2jar.jar:androidx/appcompat/widget/AppCompatMultiAutoCompleteTextView$InspectionCompanion.class */
     public final class InspectionCompanion implements android.view.inspector.InspectionCompanion<AppCompatMultiAutoCompleteTextView> {
 
         /* renamed from: a  reason: collision with root package name */
-        private boolean f1769a = false;
+        private boolean f1721a = false;
         private int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f1770c;
+        private int f1722c;
 
         @Override // android.view.inspector.InspectionCompanion
         public void mapProperties(PropertyMapper propertyMapper) {
-            this.b = propertyMapper.mapObject("backgroundTint", R.attr.backgroundTint);
-            this.f1770c = propertyMapper.mapObject("backgroundTintMode", R.attr.backgroundTintMode);
-            this.f1769a = true;
+            this.b = propertyMapper.mapObject("backgroundTint", androidx.appcompat.R.attr.backgroundTint);
+            this.f1722c = propertyMapper.mapObject("backgroundTintMode", androidx.appcompat.R.attr.backgroundTintMode);
+            this.f1721a = true;
         }
 
         @Override // android.view.inspector.InspectionCompanion
         public void readProperties(AppCompatMultiAutoCompleteTextView appCompatMultiAutoCompleteTextView, PropertyReader propertyReader) {
-            if (!this.f1769a) {
+            if (!this.f1721a) {
                 throw new InspectionCompanion.UninitializedPropertyMapException();
             }
             propertyReader.readObject(this.b, appCompatMultiAutoCompleteTextView.getBackgroundTintList());
-            propertyReader.readObject(this.f1770c, appCompatMultiAutoCompleteTextView.getBackgroundTintMode());
+            propertyReader.readObject(this.f1722c, appCompatMultiAutoCompleteTextView.getBackgroundTintMode());
         }
     }
 
@@ -59,13 +59,13 @@ public class AppCompatMultiAutoCompleteTextView extends MultiAutoCompleteTextVie
     }
 
     public AppCompatMultiAutoCompleteTextView(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, R.attr.autoCompleteTextViewStyle);
+        this(context, attributeSet, androidx.appcompat.R.attr.autoCompleteTextViewStyle);
     }
 
     public AppCompatMultiAutoCompleteTextView(Context context, AttributeSet attributeSet, int i) {
         super(TintContextWrapper.wrap(context), attributeSet, i);
         ThemeUtils.checkAppCompatTheme(this, getContext());
-        TintTypedArray obtainStyledAttributes = TintTypedArray.obtainStyledAttributes(getContext(), attributeSet, f1767a, i, 0);
+        TintTypedArray obtainStyledAttributes = TintTypedArray.obtainStyledAttributes(getContext(), attributeSet, f1719a, i, 0);
         if (obtainStyledAttributes.hasValue(0)) {
             setDropDownBackgroundDrawable(obtainStyledAttributes.getDrawable(0));
         }
@@ -74,9 +74,9 @@ public class AppCompatMultiAutoCompleteTextView extends MultiAutoCompleteTextVie
         this.b = appCompatBackgroundHelper;
         appCompatBackgroundHelper.a(attributeSet, i);
         AppCompatTextHelper appCompatTextHelper = new AppCompatTextHelper(this);
-        this.f1768c = appCompatTextHelper;
+        this.f1720c = appCompatTextHelper;
         appCompatTextHelper.a(attributeSet, i);
-        this.f1768c.b();
+        this.f1720c.b();
         AppCompatEmojiEditTextHelper appCompatEmojiEditTextHelper = new AppCompatEmojiEditTextHelper(this);
         this.d = appCompatEmojiEditTextHelper;
         appCompatEmojiEditTextHelper.a(attributeSet, i);
@@ -98,15 +98,14 @@ public class AppCompatMultiAutoCompleteTextView extends MultiAutoCompleteTextVie
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.TextView, android.view.View
-    public void drawableStateChanged() {
+    protected void drawableStateChanged() {
         super.drawableStateChanged();
         AppCompatBackgroundHelper appCompatBackgroundHelper = this.b;
         if (appCompatBackgroundHelper != null) {
             appCompatBackgroundHelper.c();
         }
-        AppCompatTextHelper appCompatTextHelper = this.f1768c;
+        AppCompatTextHelper appCompatTextHelper = this.f1720c;
         if (appCompatTextHelper != null) {
             appCompatTextHelper.b();
         }
@@ -192,7 +191,7 @@ public class AppCompatMultiAutoCompleteTextView extends MultiAutoCompleteTextVie
     @Override // android.widget.TextView
     public void setTextAppearance(Context context, int i) {
         super.setTextAppearance(context, i);
-        AppCompatTextHelper appCompatTextHelper = this.f1768c;
+        AppCompatTextHelper appCompatTextHelper = this.f1720c;
         if (appCompatTextHelper != null) {
             appCompatTextHelper.a(context, i);
         }

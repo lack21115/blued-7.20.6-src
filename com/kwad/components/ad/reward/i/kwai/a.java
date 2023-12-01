@@ -10,13 +10,13 @@ import org.json.JSONObject;
 /* loaded from: source-7994992-dex2jar.jar:com/kwad/components/ad/reward/i/kwai/a.class */
 public final class a extends com.kwad.components.ad.reward.i.a {
     private b xq = new b();
-    private final C0493a xr = new C0493a(d.uA());
+    private final C0323a xr = new C0323a(d.uA());
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.kwad.components.ad.reward.i.kwai.a$a  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/components/ad/reward/i/kwai/a$a.class */
-    public static final class C0493a extends com.kwad.components.ad.reward.i.b {
-        public C0493a(int i) {
+    public static final class C0323a extends com.kwad.components.ad.reward.i.b {
+        public C0323a(int i) {
             StringBuilder sb = new StringBuilder();
             sb.append(i);
             this.xo = String.format("进阶奖励：浏览详情页 %ss", sb.toString());

@@ -15,11 +15,11 @@ import java.util.Map;
 public class d implements InvocationHandler {
 
     /* renamed from: a  reason: collision with root package name */
-    private e f39246a;
+    private e f25555a;
     private com.tencent.thumbplayer.tplayer.a b;
 
     /* renamed from: c  reason: collision with root package name */
-    private ITPPlayListener f39247c;
+    private ITPPlayListener f25556c;
     private a d = new a();
     private Object e;
 
@@ -31,57 +31,57 @@ public class d implements InvocationHandler {
 
         @Override // com.tencent.thumbplayer.core.downloadproxy.api.ITPPlayListener
         public long getAdvRemainTime() {
-            return d.this.f39247c.getAdvRemainTime();
+            return d.this.f25556c.getAdvRemainTime();
         }
 
         @Override // com.tencent.thumbplayer.core.downloadproxy.api.ITPPlayListener
         public String getContentType(int i, String str) {
-            return d.this.f39247c.getContentType(i, str);
+            return d.this.f25556c.getContentType(i, str);
         }
 
         @Override // com.tencent.thumbplayer.core.downloadproxy.api.ITPPlayListener
         public int getCurrentPlayClipNo() {
-            return d.this.f39247c.getCurrentPlayClipNo();
+            return d.this.f25556c.getCurrentPlayClipNo();
         }
 
         @Override // com.tencent.thumbplayer.core.downloadproxy.api.ITPPlayListener
         public long getCurrentPlayOffset() {
-            return d.this.f39247c.getCurrentPlayOffset();
+            return d.this.f25556c.getCurrentPlayOffset();
         }
 
         @Override // com.tencent.thumbplayer.core.downloadproxy.api.ITPPlayListener
         public long getCurrentPosition() {
-            return d.this.f39247c.getCurrentPosition();
+            return d.this.f25556c.getCurrentPosition();
         }
 
         @Override // com.tencent.thumbplayer.core.downloadproxy.api.ITPPlayListener
         public String getDataFilePath(int i, String str) {
-            return d.this.f39247c.getDataFilePath(i, str);
+            return d.this.f25556c.getDataFilePath(i, str);
         }
 
         @Override // com.tencent.thumbplayer.core.downloadproxy.api.ITPPlayListener
         public long getDataTotalSize(int i, String str) {
-            return d.this.f39247c.getDataTotalSize(i, str);
+            return d.this.f25556c.getDataTotalSize(i, str);
         }
 
         @Override // com.tencent.thumbplayer.core.downloadproxy.api.ITPPlayListener
         public Object getPlayInfo(long j) {
-            return d.this.f39247c.getPlayInfo(j);
+            return d.this.f25556c.getPlayInfo(j);
         }
 
         @Override // com.tencent.thumbplayer.core.downloadproxy.api.ITPPlayListener
         public Object getPlayInfo(String str) {
-            return d.this.f39247c.getPlayInfo(str);
+            return d.this.f25556c.getPlayInfo(str);
         }
 
         @Override // com.tencent.thumbplayer.core.downloadproxy.api.ITPPlayListener
         public long getPlayerBufferLength() {
-            return d.this.f39247c.getPlayerBufferLength();
+            return d.this.f25556c.getPlayerBufferLength();
         }
 
         @Override // com.tencent.thumbplayer.core.downloadproxy.api.ITPPlayListener
         public void onDownloadCdnUrlExpired(Map<String, String> map) {
-            d.this.f39247c.onDownloadCdnUrlExpired(map);
+            d.this.f25556c.onDownloadCdnUrlExpired(map);
         }
 
         @Override // com.tencent.thumbplayer.core.downloadproxy.api.ITPPlayListener
@@ -90,22 +90,22 @@ public class d implements InvocationHandler {
             dVar.a(str2);
             dVar.b(str3);
             d.this.b.b().a(dVar);
-            d.this.f39247c.onDownloadCdnUrlInfoUpdate(str, str2, str3, str4);
+            d.this.f25556c.onDownloadCdnUrlInfoUpdate(str, str2, str3, str4);
         }
 
         @Override // com.tencent.thumbplayer.core.downloadproxy.api.ITPPlayListener
         public void onDownloadCdnUrlUpdate(String str) {
-            d.this.f39247c.onDownloadCdnUrlUpdate(str);
+            d.this.f25556c.onDownloadCdnUrlUpdate(str);
         }
 
         @Override // com.tencent.thumbplayer.core.downloadproxy.api.ITPPlayListener
         public void onDownloadError(int i, int i2, String str) {
-            d.this.f39247c.onDownloadError(i, i2, str);
+            d.this.f25556c.onDownloadError(i, i2, str);
         }
 
         @Override // com.tencent.thumbplayer.core.downloadproxy.api.ITPPlayListener
         public void onDownloadFinish() {
-            d.this.f39247c.onDownloadFinish();
+            d.this.f25556c.onDownloadFinish();
         }
 
         @Override // com.tencent.thumbplayer.core.downloadproxy.api.ITPPlayListener
@@ -113,7 +113,7 @@ public class d implements InvocationHandler {
             b.e eVar = new b.e();
             eVar.b(i2 * 8);
             d.this.b.b().a(eVar);
-            d.this.f39247c.onDownloadProgressUpdate(i, i2, j, j2, str);
+            d.this.f25556c.onDownloadProgressUpdate(i, i2, j, j2, str);
         }
 
         @Override // com.tencent.thumbplayer.core.downloadproxy.api.ITPPlayListener
@@ -122,37 +122,37 @@ public class d implements InvocationHandler {
             fVar.b(str);
             fVar.a(str2);
             d.this.b.b().a(fVar);
-            d.this.f39247c.onDownloadProtocolUpdate(str, str2);
+            d.this.f25556c.onDownloadProtocolUpdate(str, str2);
         }
 
         @Override // com.tencent.thumbplayer.core.downloadproxy.api.ITPPlayListener
         public void onDownloadStatusUpdate(int i) {
-            d.this.f39247c.onDownloadStatusUpdate(i);
+            d.this.f25556c.onDownloadStatusUpdate(i);
         }
 
         @Override // com.tencent.thumbplayer.core.downloadproxy.api.ITPPlayListener
         public Object onPlayCallback(int i, Object obj, Object obj2, Object obj3, Object obj4) {
-            return d.this.f39247c.onPlayCallback(i, obj, obj2, obj3, obj4);
+            return d.this.f25556c.onPlayCallback(i, obj, obj2, obj3, obj4);
         }
 
         @Override // com.tencent.thumbplayer.core.downloadproxy.api.ITPPlayListener
         public int onReadData(int i, String str, long j, long j2) {
-            return d.this.f39247c.onReadData(i, str, j, j2);
+            return d.this.f25556c.onReadData(i, str, j, j2);
         }
 
         @Override // com.tencent.thumbplayer.core.downloadproxy.api.ITPPlayListener
         public int onStartReadData(int i, String str, long j, long j2) {
-            return d.this.f39247c.onStartReadData(i, str, j, j2);
+            return d.this.f25556c.onStartReadData(i, str, j, j2);
         }
 
         @Override // com.tencent.thumbplayer.core.downloadproxy.api.ITPPlayListener
         public int onStopReadData(int i, String str, int i2) {
-            return d.this.f39247c.onStopReadData(i, str, i2);
+            return d.this.f25556c.onStopReadData(i, str, i2);
         }
     }
 
     public d(e eVar, com.tencent.thumbplayer.tplayer.a aVar) {
-        this.f39246a = eVar;
+        this.f25555a = eVar;
         this.b = aVar;
     }
 
@@ -199,7 +199,7 @@ public class d implements InvocationHandler {
 
     private void b(Method method, Object[] objArr) {
         if (method.getName().equals("setPlayListener")) {
-            this.f39247c = (ITPPlayListener) objArr[0];
+            this.f25556c = (ITPPlayListener) objArr[0];
             objArr[0] = this.d;
         }
     }
@@ -208,7 +208,7 @@ public class d implements InvocationHandler {
         Object obj;
         synchronized (this) {
             if (this.e == null) {
-                this.e = Proxy.newProxyInstance(this.f39246a.getClass().getClassLoader(), this.f39246a.getClass().getInterfaces(), this);
+                this.e = Proxy.newProxyInstance(this.f25555a.getClass().getClassLoader(), this.f25555a.getClass().getInterfaces(), this);
             }
             obj = this.e;
         }
@@ -221,7 +221,7 @@ public class d implements InvocationHandler {
         String th;
         b(method, objArr);
         try {
-            Object invoke = method.invoke(this.f39246a, objArr);
+            Object invoke = method.invoke(this.f25555a, objArr);
             a(method, objArr);
             return invoke;
         } catch (InvocationTargetException e) {

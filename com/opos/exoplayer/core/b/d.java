@@ -4,11 +4,11 @@ package com.opos.exoplayer.core.b;
 public final class d {
 
     /* renamed from: a  reason: collision with root package name */
-    public int f25071a;
+    public int f11383a;
     public int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public int f25072c;
+    public int f11384c;
     public int d;
     public int e;
     public int f;

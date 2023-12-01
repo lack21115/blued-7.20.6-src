@@ -69,7 +69,7 @@ public class MapIteratorCache<K, V> {
                 return MapIteratorCache.this.containsKey(obj);
             }
 
-            @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+            @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
             public UnmodifiableIterator<K> iterator() {
                 final Iterator<Map.Entry<K, V>> it = MapIteratorCache.this.backingMap.entrySet().iterator();
                 return new UnmodifiableIterator<K>() { // from class: com.google.common.graph.MapIteratorCache.1.1
@@ -87,7 +87,7 @@ public class MapIteratorCache<K, V> {
                 };
             }
 
-            @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+            @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
             public int size() {
                 return MapIteratorCache.this.backingMap.size();
             }

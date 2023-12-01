@@ -17,6 +17,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.view.animation.Transformation;
 import android.widget.AdapterView;
 import com.android.internal.R;
+import java.net.HttpURLConnection;
 
 @Deprecated
 /* loaded from: source-4181928-dex2jar.jar:android/widget/Gallery.class */
@@ -144,7 +145,7 @@ public class Gallery extends AbsSpinner implements GestureDetector.OnGestureList
     }
 
     public Gallery(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, 16842864);
+        this(context, attributeSet, R.attr.galleryStyle);
     }
 
     public Gallery(Context context, AttributeSet attributeSet, int i) {
@@ -154,7 +155,7 @@ public class Gallery extends AbsSpinner implements GestureDetector.OnGestureList
     public Gallery(Context context, AttributeSet attributeSet, int i, int i2) {
         super(context, attributeSet, i, i2);
         this.mSpacing = 0;
-        this.mAnimationDuration = 400;
+        this.mAnimationDuration = HttpURLConnection.HTTP_BAD_REQUEST;
         this.mFlingRunnable = new FlingRunnable();
         this.mDisableSuppressSelectionChangedRunnable = new Runnable() { // from class: android.widget.Gallery.1
             @Override // java.lang.Runnable
@@ -602,9 +603,8 @@ public class Gallery extends AbsSpinner implements GestureDetector.OnGestureList
         return new LayoutParams(getContext(), attributeSet);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup
-    public ViewGroup.LayoutParams generateLayoutParams(ViewGroup.LayoutParams layoutParams) {
+    protected ViewGroup.LayoutParams generateLayoutParams(ViewGroup.LayoutParams layoutParams) {
         return new LayoutParams(layoutParams);
     }
 

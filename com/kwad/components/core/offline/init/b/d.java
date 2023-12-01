@@ -125,12 +125,12 @@ final class d {
         };
     }
 
-    public static c.InterfaceC0567c a(final IMediaPlayer iMediaPlayer, final IMediaPlayer.OnErrorListener onErrorListener) {
+    public static c.InterfaceC0397c a(final IMediaPlayer iMediaPlayer, final IMediaPlayer.OnErrorListener onErrorListener) {
         if (onErrorListener == null) {
             return null;
         }
-        return new c.InterfaceC0567c() { // from class: com.kwad.components.core.offline.init.b.d.7
-            @Override // com.kwad.sdk.core.video.kwai.c.InterfaceC0567c
+        return new c.InterfaceC0397c() { // from class: com.kwad.components.core.offline.init.b.d.7
+            @Override // com.kwad.sdk.core.video.kwai.c.InterfaceC0397c
             public final boolean j(int i, int i2) {
                 return IMediaPlayer.OnErrorListener.this.onError(iMediaPlayer, i, i2);
             }

@@ -5,18 +5,16 @@ import com.blued.android.module.live_china.observer.LiveRefreshUIObserver;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/manager/LiveMakeLoverManager.class */
 public class LiveMakeLoverManager {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static int f13663a;
+    private static int a;
 
     public static int a() {
-        return f13663a;
+        return a;
     }
 
     public static void a(int i) {
-        f13663a = i;
+        a = i;
         Log.i("==makelover", "setMode:" + i);
-        if (f13663a == 1) {
+        if (a == 1) {
             LiveRefreshUIObserver.a().c(true);
         } else {
             LiveRefreshUIObserver.a().c(false);
@@ -24,6 +22,6 @@ public class LiveMakeLoverManager {
     }
 
     public static boolean b() {
-        return f13663a == 2;
+        return a == 2;
     }
 }

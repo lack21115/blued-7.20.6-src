@@ -1,6 +1,7 @@
 package com.blued.community.ui.send.fragment;
 
 import android.animation.ValueAnimator;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -53,9 +54,7 @@ import com.jeremyliao.liveeventbus.LiveEventBus;
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/send/fragment/FeedPostSignBaseFragment.class */
 public class FeedPostSignBaseFragment extends BroadcastFragment {
     protected Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    protected View f20026c;
+    protected View c;
     protected KeyboardListenLinearLayout j;
     protected ImageView k;
     protected TextView l;
@@ -75,9 +74,7 @@ public class FeedPostSignBaseFragment extends BroadcastFragment {
     private boolean y = false;
     private TextWatcher A = new TextWatcher() { // from class: com.blued.community.ui.send.fragment.FeedPostSignBaseFragment.3
         private int b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private int f20030c;
+        private int c;
         private SpannableStringBuilder d;
         private SpannableStringBuilder e;
 
@@ -85,8 +82,8 @@ public class FeedPostSignBaseFragment extends BroadcastFragment {
         public void afterTextChanged(Editable editable) {
             try {
                 FeedPostSignBaseFragment.this.n.removeTextChangedListener(FeedPostSignBaseFragment.this.A);
-                MarkDownLinkHelper.a(FeedPostSignBaseFragment.this.n, this.d, this.e, editable, this.b, this.f20030c);
-                AtUserHelper.a(FeedPostSignBaseFragment.this.n, this.d, this.e, editable, this.b, this.f20030c);
+                MarkDownLinkHelper.a(FeedPostSignBaseFragment.this.n, this.d, this.e, editable, this.b, this.c);
+                AtUserHelper.a(FeedPostSignBaseFragment.this.n, this.d, this.e, editable, this.b, this.c);
                 FeedPostSignBaseFragment.this.n.addTextChangedListener(FeedPostSignBaseFragment.this.A);
             } catch (Exception e) {
                 e.printStackTrace();
@@ -98,7 +95,7 @@ public class FeedPostSignBaseFragment extends BroadcastFragment {
         public void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
             this.d = new SpannableStringBuilder(charSequence);
             this.b = FeedPostSignBaseFragment.this.n.getSelectionStart();
-            this.f20030c = FeedPostSignBaseFragment.this.n.getSelectionEnd();
+            this.c = FeedPostSignBaseFragment.this.n.getSelectionEnd();
         }
 
         @Override // android.text.TextWatcher
@@ -194,10 +191,10 @@ public class FeedPostSignBaseFragment extends BroadcastFragment {
     }
 
     private void q() {
-        KeyboardUtils.a(getActivity());
+        KeyboardUtils.a((Activity) getActivity());
         Bundle bundle = new Bundle();
         bundle.putSerializable("selected_model", this.z);
-        FeedPostSignStateFragment.f20033a.a(getActivity(), bundle, this.w);
+        FeedPostSignStateFragment.a.a(getActivity(), bundle, this.w);
     }
 
     private void r() {
@@ -207,8 +204,8 @@ public class FeedPostSignBaseFragment extends BroadcastFragment {
     }
 
     private void s() {
-        this.n = (SelectionEditText) this.f20026c.findViewById(R.id.feed_post_content_et);
-        this.o = (EditInputNumView) this.f20026c.findViewById(R.id.feed_post_content_num_tv);
+        this.n = this.c.findViewById(R.id.feed_post_content_et);
+        this.o = this.c.findViewById(R.id.feed_post_content_num_tv);
         this.t = new Emotion(this.b);
         this.n.setOnTouchListener(new View.OnTouchListener() { // from class: com.blued.community.ui.send.fragment.FeedPostSignBaseFragment.1
             @Override // android.view.View.OnTouchListener
@@ -242,7 +239,7 @@ public class FeedPostSignBaseFragment extends BroadcastFragment {
     }
 
     private void u() {
-        EmojiKeyboardLayout emojiKeyboardLayout = (EmojiKeyboardLayout) this.f20026c.findViewById(R.id.emoticon_layout);
+        EmojiKeyboardLayout emojiKeyboardLayout = (EmojiKeyboardLayout) this.c.findViewById(R.id.emoticon_layout);
         this.q = emojiKeyboardLayout;
         emojiKeyboardLayout.setKeyboardColor(2);
         this.q.setFragmentManager(getChildFragmentManager());
@@ -266,7 +263,7 @@ public class FeedPostSignBaseFragment extends BroadcastFragment {
     }
 
     private void v() {
-        KeyboardListenLinearLayout keyboardListenLinearLayout = (KeyboardListenLinearLayout) this.f20026c.findViewById(R.id.keyboardLinearLayout);
+        KeyboardListenLinearLayout keyboardListenLinearLayout = (KeyboardListenLinearLayout) this.c.findViewById(R.id.keyboardLinearLayout);
         this.j = keyboardListenLinearLayout;
         keyboardListenLinearLayout.setBackgroundColor(BluedSkinUtils.a(this.b, R.color.syc_b));
         super.a(this.q, this.j, this.n);
@@ -302,7 +299,7 @@ public class FeedPostSignBaseFragment extends BroadcastFragment {
             C();
         } else {
             this.s = true;
-            KeyboardUtils.a(getActivity());
+            KeyboardUtils.a((Activity) getActivity());
         }
     }
 
@@ -316,7 +313,7 @@ public class FeedPostSignBaseFragment extends BroadcastFragment {
     }
 
     public void i() {
-        ImageView imageView = (ImageView) this.f20026c.findViewById(R.id.feed_post_title_close);
+        ImageView imageView = (ImageView) this.c.findViewById(R.id.feed_post_title_close);
         this.k = imageView;
         imageView.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.send.fragment.-$$Lambda$FeedPostSignBaseFragment$fo2zJXhFhf_LKsHx2vLOifBlwLc
             @Override // android.view.View.OnClickListener
@@ -324,7 +321,7 @@ public class FeedPostSignBaseFragment extends BroadcastFragment {
                 FeedPostSignBaseFragment.this.f(view);
             }
         });
-        TextView textView = (TextView) this.f20026c.findViewById(R.id.feed_post_title_send_btn);
+        TextView textView = (TextView) this.c.findViewById(R.id.feed_post_title_send_btn);
         this.l = textView;
         textView.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.send.fragment.-$$Lambda$FeedPostSignBaseFragment$VXDGA1n12225hrvm2_iSRwItCUY
             @Override // android.view.View.OnClickListener
@@ -332,7 +329,7 @@ public class FeedPostSignBaseFragment extends BroadcastFragment {
                 FeedPostSignBaseFragment.this.e(view);
             }
         });
-        ImageView imageView2 = (ImageView) this.f20026c.findViewById(R.id.iv_emoji);
+        ImageView imageView2 = (ImageView) this.c.findViewById(R.id.iv_emoji);
         this.p = imageView2;
         imageView2.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.send.fragment.-$$Lambda$FeedPostSignBaseFragment$XR8a1ftzpTLADnUYdpqH-GWXO3w
             @Override // android.view.View.OnClickListener
@@ -340,14 +337,14 @@ public class FeedPostSignBaseFragment extends BroadcastFragment {
                 FeedPostSignBaseFragment.this.d(view);
             }
         });
-        FeedPostAuthView feedPostAuthView = (FeedPostAuthView) this.f20026c.findViewById(R.id.feed_post_auth_view);
+        FeedPostAuthView feedPostAuthView = (FeedPostAuthView) this.c.findViewById(R.id.feed_post_auth_view);
         this.m = feedPostAuthView;
         feedPostAuthView.setOwnFragment(this);
         this.m.setAnonymousTopic(false);
         this.m.setShowType(1);
-        this.u = (ImageView) this.f20026c.findViewById(R.id.feed_post_sign_state_iv);
-        this.v = (TextView) this.f20026c.findViewById(R.id.feed_post_sign_state_tv);
-        this.f20026c.findViewById(R.id.feed_post_sign_state_layout).setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.send.fragment.-$$Lambda$FeedPostSignBaseFragment$NbD672HymB5UYn7sV4irPTXo_pA
+        this.u = (ImageView) this.c.findViewById(R.id.feed_post_sign_state_iv);
+        this.v = (TextView) this.c.findViewById(R.id.feed_post_sign_state_tv);
+        this.c.findViewById(R.id.feed_post_sign_state_layout).setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.send.fragment.-$$Lambda$FeedPostSignBaseFragment$NbD672HymB5UYn7sV4irPTXo_pA
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 FeedPostSignBaseFragment.this.a(view);
@@ -363,7 +360,7 @@ public class FeedPostSignBaseFragment extends BroadcastFragment {
         CommunityServiceManager.e().a(this.y);
         FeedSendManager.a().a(l);
         m();
-        KeyboardUtils.a(getActivity());
+        KeyboardUtils.a((Activity) getActivity());
         Intent intent = new Intent();
         intent.putExtra("close_page", true);
         getActivity().setResult(-1, intent);
@@ -469,7 +466,6 @@ public class FeedPostSignBaseFragment extends BroadcastFragment {
         return 20;
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         super.onActivityResult(i, i2, intent);
         if (i2 == -1 && i == 9090) {
@@ -493,44 +489,43 @@ public class FeedPostSignBaseFragment extends BroadcastFragment {
         return true;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.b = getActivity();
-        View view = this.f20026c;
+        View view = this.c;
         if (view == null) {
-            this.f20026c = layoutInflater.inflate(R.layout.fragment_feed_post_sign_new, viewGroup, false);
+            this.c = layoutInflater.inflate(R.layout.fragment_feed_post_sign_new, viewGroup, false);
             getActivity().getWindow().setSoftInputMode(18);
         } else if (view.getParent() != null) {
-            ((ViewGroup) this.f20026c.getParent()).removeView(this.f20026c);
+            ((ViewGroup) this.c.getParent()).removeView(this.c);
         }
-        return this.f20026c;
+        return this.c;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onDestroy() {
         super.onDestroy();
         m();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onResume() {
         super.onResume();
         B();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onStart() {
         super.onStart();
         y();
     }
 
-    @Override // com.blued.android.framework.activity.HomeTabFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.framework.activity.HomeTabFragment, com.blued.android.core.ui.BaseFragment
     public void onViewCreated(View view, Bundle bundle) {
         super.onViewCreated(view, bundle);
         p();
         h();
         LiveEventBus.get("EVENT_BUBBLE_STATE_SELECTED_MODEL", FeedPostSignStateItem.class).observe(this, new Observer() { // from class: com.blued.community.ui.send.fragment.-$$Lambda$FeedPostSignBaseFragment$wuK6kNnEfERLx1rsMFEWhV9ZRn8
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 FeedPostSignBaseFragment.this.a((FeedPostSignStateItem) obj);
             }

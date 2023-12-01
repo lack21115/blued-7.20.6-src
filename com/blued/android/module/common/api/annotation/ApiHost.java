@@ -14,16 +14,12 @@ import kotlin.annotation.AnnotationRetention;
 @kotlin.annotation.Retention(AnnotationRetention.RUNTIME)
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/api/annotation/ApiHost.class */
 public @interface ApiHost {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f10632a = Companion.f10633a;
+    public static final Companion a = Companion.a;
 
     @Metadata
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/api/annotation/ApiHost$Companion.class */
     public static final class Companion {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ Companion f10633a = new Companion();
+        static final /* synthetic */ Companion a = new Companion();
 
         private Companion() {
         }

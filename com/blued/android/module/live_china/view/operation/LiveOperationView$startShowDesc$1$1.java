@@ -11,13 +11,11 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/operation/LiveOperationView$startShowDesc$1$1.class */
 public final class LiveOperationView$startShowDesc$1$1 extends AnimatorListenerAdapter {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ LiveOperationView f15357a;
+    final /* synthetic */ LiveOperationView a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public LiveOperationView$startShowDesc$1$1(LiveOperationView liveOperationView) {
-        this.f15357a = liveOperationView;
+        this.a = liveOperationView;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -46,9 +44,9 @@ public final class LiveOperationView$startShowDesc$1$1 extends AnimatorListenerA
         LiveOperationViewBinding vb;
         Intrinsics.e(animation, "animation");
         super.onAnimationEnd(animation);
-        vb = this.f15357a.getVb();
+        vb = this.a.getVb();
         LiveOperationDescView liveOperationDescView = vb.b;
-        final LiveOperationView liveOperationView = this.f15357a;
+        final LiveOperationView liveOperationView = this.a;
         liveOperationDescView.a(new Runnable() { // from class: com.blued.android.module.live_china.view.operation.-$$Lambda$LiveOperationView$startShowDesc$1$1$Fx6uxMGijpPUgBPZMedSWoZJeZQ
             @Override // java.lang.Runnable
             public final void run() {

@@ -11,13 +11,9 @@ import androidx.appcompat.widget.AppCompatTextView;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/MarqueeTextView.class */
 public class MarqueeTextView extends AppCompatTextView {
-
-    /* renamed from: a  reason: collision with root package name */
-    public boolean f14965a;
+    public boolean a;
     private float b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private float f14966c;
+    private float c;
     private Paint d;
     private String e;
     private long f;
@@ -41,8 +37,8 @@ public class MarqueeTextView extends AppCompatTextView {
     public MarqueeTextView(Context context) {
         super(context);
         this.b = 0.0f;
-        this.f14966c = 0.0f;
-        this.f14965a = false;
+        this.c = 0.0f;
+        this.a = false;
         this.d = null;
         this.e = "";
         this.f = 1000L;
@@ -50,12 +46,12 @@ public class MarqueeTextView extends AppCompatTextView {
         this.l = new Runnable() { // from class: com.blued.android.module.live_china.view.MarqueeTextView.1
             @Override // java.lang.Runnable
             public void run() {
-                MarqueeTextView.this.f14965a = true;
+                MarqueeTextView.this.a = true;
                 if (MarqueeTextView.this.j != null) {
                     MarqueeTextView.this.j.onFinish(MarqueeTextView.this.i);
                 }
-                if (MarqueeTextView.this.f14965a) {
-                    MarqueeTextView.this.f14966c = 1.0f;
+                if (MarqueeTextView.this.a) {
+                    MarqueeTextView.this.c = 1.0f;
                     MarqueeTextView.c(MarqueeTextView.this);
                     MarqueeTextView.this.invalidate();
                 }
@@ -67,8 +63,8 @@ public class MarqueeTextView extends AppCompatTextView {
     public MarqueeTextView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         this.b = 0.0f;
-        this.f14966c = 0.0f;
-        this.f14965a = false;
+        this.c = 0.0f;
+        this.a = false;
         this.d = null;
         this.e = "";
         this.f = 1000L;
@@ -76,12 +72,12 @@ public class MarqueeTextView extends AppCompatTextView {
         this.l = new Runnable() { // from class: com.blued.android.module.live_china.view.MarqueeTextView.1
             @Override // java.lang.Runnable
             public void run() {
-                MarqueeTextView.this.f14965a = true;
+                MarqueeTextView.this.a = true;
                 if (MarqueeTextView.this.j != null) {
                     MarqueeTextView.this.j.onFinish(MarqueeTextView.this.i);
                 }
-                if (MarqueeTextView.this.f14965a) {
-                    MarqueeTextView.this.f14966c = 1.0f;
+                if (MarqueeTextView.this.a) {
+                    MarqueeTextView.this.c = 1.0f;
                     MarqueeTextView.c(MarqueeTextView.this);
                     MarqueeTextView.this.invalidate();
                 }
@@ -93,8 +89,8 @@ public class MarqueeTextView extends AppCompatTextView {
     public MarqueeTextView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         this.b = 0.0f;
-        this.f14966c = 0.0f;
-        this.f14965a = false;
+        this.c = 0.0f;
+        this.a = false;
         this.d = null;
         this.e = "";
         this.f = 1000L;
@@ -102,12 +98,12 @@ public class MarqueeTextView extends AppCompatTextView {
         this.l = new Runnable() { // from class: com.blued.android.module.live_china.view.MarqueeTextView.1
             @Override // java.lang.Runnable
             public void run() {
-                MarqueeTextView.this.f14965a = true;
+                MarqueeTextView.this.a = true;
                 if (MarqueeTextView.this.j != null) {
                     MarqueeTextView.this.j.onFinish(MarqueeTextView.this.i);
                 }
-                if (MarqueeTextView.this.f14965a) {
-                    MarqueeTextView.this.f14966c = 1.0f;
+                if (MarqueeTextView.this.a) {
+                    MarqueeTextView.this.c = 1.0f;
                     MarqueeTextView.c(MarqueeTextView.this);
                     MarqueeTextView.this.invalidate();
                 }
@@ -127,7 +123,7 @@ public class MarqueeTextView extends AppCompatTextView {
             return;
         }
         this.b = this.d.measureText(this.e);
-        this.f14965a = true;
+        this.a = true;
     }
 
     static /* synthetic */ int c(MarqueeTextView marqueeTextView) {
@@ -137,27 +133,26 @@ public class MarqueeTextView extends AppCompatTextView {
     }
 
     public void a() {
-        if (this.f14965a) {
+        if (this.a) {
             return;
         }
         removeCallbacks(this.l);
-        this.f14965a = true;
+        this.a = true;
         this.i = 0;
-        this.f14966c = 0.0f;
+        this.c = 0.0f;
         invalidate();
     }
 
     public void b() {
-        if (this.f14965a) {
+        if (this.a) {
             removeCallbacks(this.l);
-            this.f14965a = false;
+            this.a = false;
             this.i = 0;
-            this.f14966c = 0.0f;
+            this.c = 0.0f;
             invalidate();
         }
     }
 
-    @Override // android.widget.TextView, android.view.View
     public void onDraw(Canvas canvas) {
         Paint.FontMetricsInt fontMetricsInt = this.d.getFontMetricsInt();
         this.h = ((canvas.getHeight() - fontMetricsInt.bottom) - fontMetricsInt.top) / 2;
@@ -170,21 +165,21 @@ public class MarqueeTextView extends AppCompatTextView {
             }
             return;
         }
-        canvas.drawText(this.e, -this.f14966c, this.h, this.d);
-        if (this.f14965a) {
-            float f = this.f14966c;
+        canvas.drawText(this.e, -this.c, this.h, this.d);
+        if (this.a) {
+            float f = this.c;
             if (f == 0.0f) {
-                this.f14965a = false;
+                this.a = false;
                 postDelayed(this.l, this.f);
                 return;
             }
             if (f <= (-this.g) || f >= 0.0f) {
-                this.f14966c += this.g;
+                this.c += this.g;
             } else {
-                this.f14966c = 0.0f;
+                this.c = 0.0f;
             }
-            if (this.f14966c > this.b) {
-                this.f14966c = -canvas.getWidth();
+            if (this.c > this.b) {
+                this.c = -canvas.getWidth();
             }
             invalidate();
         }
@@ -202,16 +197,14 @@ public class MarqueeTextView extends AppCompatTextView {
         this.g = f;
     }
 
-    @Override // android.widget.TextView
     public void setText(CharSequence charSequence, TextView.BufferType bufferType) {
         super.setText(charSequence, bufferType);
         this.e = charSequence.toString();
         this.b = getPaint().measureText(charSequence.toString());
-        this.f14966c = 0.0f;
+        this.c = 0.0f;
         a();
     }
 
-    @Override // android.widget.TextView
     public void setTextColor(int i) {
         super.setTextColor(i);
         this.d.setColor(i);

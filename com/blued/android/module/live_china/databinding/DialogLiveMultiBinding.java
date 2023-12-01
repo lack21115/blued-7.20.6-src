@@ -13,22 +13,18 @@ import com.blued.android.module.live_china.view.PopLiveActivityWebView;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/DialogLiveMultiBinding.class */
 public final class DialogLiveMultiBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final CardView f11790a;
+    public final CardView a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f11791c;
+    public final ImageView c;
     public final TextView d;
     public final PopLiveActivityWebView e;
     private final ConstraintLayout f;
 
     private DialogLiveMultiBinding(ConstraintLayout constraintLayout, CardView cardView, ImageView imageView, ImageView imageView2, TextView textView, PopLiveActivityWebView popLiveActivityWebView) {
         this.f = constraintLayout;
-        this.f11790a = cardView;
+        this.a = cardView;
         this.b = imageView;
-        this.f11791c = imageView2;
+        this.c = imageView2;
         this.d = textView;
         this.e = popLiveActivityWebView;
     }
@@ -47,8 +43,8 @@ public final class DialogLiveMultiBinding implements ViewBinding {
 
     public static DialogLiveMultiBinding a(View view) {
         String str;
-        CardView cardView = (CardView) view.findViewById(R.id.cv_content);
-        if (cardView != null) {
+        CardView findViewById = view.findViewById(R.id.cv_content);
+        if (findViewById != null) {
             ImageView imageView = (ImageView) view.findViewById(R.id.iv_close);
             if (imageView != null) {
                 ImageView imageView2 = (ImageView) view.findViewById(R.id.iv_img);
@@ -57,7 +53,7 @@ public final class DialogLiveMultiBinding implements ViewBinding {
                     if (textView != null) {
                         PopLiveActivityWebView popLiveActivityWebView = (PopLiveActivityWebView) view.findViewById(R.id.web_view);
                         if (popLiveActivityWebView != null) {
-                            return new DialogLiveMultiBinding((ConstraintLayout) view, cardView, imageView, imageView2, textView, popLiveActivityWebView);
+                            return new DialogLiveMultiBinding((ConstraintLayout) view, findViewById, imageView, imageView2, textView, popLiveActivityWebView);
                         }
                         str = "webView";
                     } else {
@@ -75,7 +71,6 @@ public final class DialogLiveMultiBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.f;

@@ -10,13 +10,9 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 @DebugMetadata(b = "Mutex.kt", c = {114}, d = "withLock", e = "kotlinx.coroutines.sync.MutexKt")
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/sync/MutexKt$withLock$1.class */
 public final class MutexKt$withLock$1<T> extends ContinuationImpl {
-
-    /* renamed from: a  reason: collision with root package name */
-    Object f43632a;
+    Object a;
     Object b;
-
-    /* renamed from: c  reason: collision with root package name */
-    Object f43633c;
+    Object c;
     /* synthetic */ Object d;
     int e;
 

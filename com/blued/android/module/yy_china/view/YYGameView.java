@@ -48,7 +48,6 @@ import com.bytedance.applog.tracker.Tracker;
 import com.jeremyliao.liveeventbus.LiveEventBus;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYGameView.class */
 public class YYGameView extends RelativeLayout implements View.OnClickListener {
@@ -73,13 +72,9 @@ public class YYGameView extends RelativeLayout implements View.OnClickListener {
     private TextView S;
     private YYRoomModel T;
     private String U;
-
-    /* renamed from: a  reason: collision with root package name */
-    private BaseYYStudioFragment f18172a;
+    private BaseYYStudioFragment a;
     private PopupWindow b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private ShapeTextView f18173c;
+    private ShapeTextView c;
     private TextView d;
     private ShapeTextView e;
     private TextView f;
@@ -126,7 +121,7 @@ public class YYGameView extends RelativeLayout implements View.OnClickListener {
         if (yYRoomModel == null) {
             return;
         }
-        YYRoomHttpUtils.m(yYRoomModel.room_id, str2, getCommonResponse(), this.f18172a.getFragmentActive());
+        YYRoomHttpUtils.m(yYRoomModel.room_id, str2, getCommonResponse(), this.a.getFragmentActive());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -165,7 +160,7 @@ public class YYGameView extends RelativeLayout implements View.OnClickListener {
 
     private void d() {
         LayoutInflater.from(getContext()).inflate(R.layout.view_yy_game_layout, (ViewGroup) this, true);
-        this.f18173c = (ShapeTextView) findViewById(R.id.tv_start);
+        this.c = (ShapeTextView) findViewById(R.id.tv_start);
         this.i = (ShapeFrameLayout) findViewById(R.id.set_game_view);
         this.d = (TextView) findViewById(R.id.tv_game_nostart);
         this.f = (TextView) findViewById(R.id.tv_game_gift);
@@ -203,31 +198,33 @@ public class YYGameView extends RelativeLayout implements View.OnClickListener {
         this.L = (RelativeLayout) findViewById(R.id.fl_left_team);
         this.M = (ShapeTextView) findViewById(R.id.reset_game);
         this.N = (ShapeFrameLayout) findViewById(R.id.fl_left_user);
-        this.O = (CardView) findViewById(R.id.cv_left_captain);
+        this.O = findViewById(R.id.cv_left_captain);
         this.P = (TextView) findViewById(R.id.tv_left_seat_empty);
         this.Q = (ShapeFrameLayout) findViewById(R.id.fl_right_user);
-        this.R = (CardView) findViewById(R.id.cv_right_captain);
+        this.R = findViewById(R.id.cv_right_captain);
         this.S = (TextView) findViewById(R.id.tv_right_seat_empty);
         this.e.setOnClickListener(this);
-        this.f18173c.setOnClickListener(this);
+        this.c.setOnClickListener(this);
         this.r.setOnClickListener(this);
         this.M.setOnClickListener(this);
     }
 
     private void e() {
         YYCaptainGiftView yYCaptainGiftView = new YYCaptainGiftView(getContext());
-        yYCaptainGiftView.a(this.f18172a, new YYCaptainGiftView.OnJoinListener() { // from class: com.blued.android.module.yy_china.view.YYGameView.3
+        yYCaptainGiftView.a(this.a, new YYCaptainGiftView.OnJoinListener() { // from class: com.blued.android.module.yy_china.view.YYGameView.3
             @Override // com.blued.android.module.yy_china.view.YYCaptainGiftView.OnJoinListener
             public void a() {
                 YYGameView.this.a(true);
             }
         });
-        this.f18172a.a(yYCaptainGiftView, -2);
+        this.a.a(yYCaptainGiftView, -2);
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r0v0, types: [android.view.View, com.blued.android.module.yy_china.view.YYWishListView] */
     private void f() {
-        YYWishListView yYWishListView = new YYWishListView(getContext());
-        yYWishListView.a(this.f18172a, (Set<String>) null);
+        ?? yYWishListView = new YYWishListView(getContext());
+        yYWishListView.a(this.a, null);
         yYWishListView.setOkListener(new YYWishListView.OnConfirmListener() { // from class: com.blued.android.module.yy_china.view.YYGameView.4
             @Override // com.blued.android.module.yy_china.view.YYWishListView.OnConfirmListener
             public void a(YYGiftModel yYGiftModel, int i) {
@@ -236,14 +233,14 @@ public class YYGameView extends RelativeLayout implements View.OnClickListener {
                 }
                 YYGameView.this.U = yYGiftModel.goods_id;
                 YYGameView.this.e.setVisibility(8);
-                YYGameView.this.f18173c.setVisibility(0);
+                YYGameView.this.c.setVisibility(0);
                 YYGameView.this.f.setVisibility(0);
                 TextView textView = YYGameView.this.f;
                 textView.setText("游戏礼物：" + yYGiftModel.name + " " + yYGiftModel.beans + YYGameView.this.getContext().getString(R.string.yy_gift_beans));
                 YYGameView.this.b.dismiss();
             }
         });
-        this.b = new PopupwindowFactory.Builder(getContext()).a(yYWishListView).a(80).c(-2).b(-1).d(R.color.transparent).h();
+        this.b = new PopupwindowFactory.Builder(getContext()).a((View) yYWishListView).a(80).c(-2).b(-1).d(R.color.transparent).h();
     }
 
     private void g() {
@@ -251,11 +248,11 @@ public class YYGameView extends RelativeLayout implements View.OnClickListener {
             return;
         }
         EventTrackYY.e(ChatRoomProtos.Event.CHAT_ROOM_GAME_START_CLICK, this.T.room_id);
-        YYRoomHttpUtils.k(this.T.room_id, this.U, (BluedUIHttpResponse) getCommonResponse(), (IRequestHost) this.f18172a.getFragmentActive());
+        YYRoomHttpUtils.k(this.T.room_id, this.U, (BluedUIHttpResponse) getCommonResponse(), (IRequestHost) this.a.getFragmentActive());
     }
 
     private BluedUIHttpResponse<BluedEntityA<Object>> getCommonResponse() {
-        return new BluedUIHttpResponse<BluedEntityA<Object>>(this.f18172a.getFragmentActive()) { // from class: com.blued.android.module.yy_china.view.YYGameView.8
+        return new BluedUIHttpResponse<BluedEntityA<Object>>(this.a.getFragmentActive()) { // from class: com.blued.android.module.yy_china.view.YYGameView.8
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
@@ -269,7 +266,7 @@ public class YYGameView extends RelativeLayout implements View.OnClickListener {
         if (yYRoomModel == null) {
             return;
         }
-        YYRoomHttpUtils.L(yYRoomModel.room_id, new BluedUIHttpResponse<BluedEntityA<YYGamePrizeModel>>(this.f18172a.getFragmentActive()) { // from class: com.blued.android.module.yy_china.view.YYGameView.7
+        YYRoomHttpUtils.L(yYRoomModel.room_id, new BluedUIHttpResponse<BluedEntityA<YYGamePrizeModel>>(this.a.getFragmentActive()) { // from class: com.blued.android.module.yy_china.view.YYGameView.7
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
@@ -293,10 +290,10 @@ public class YYGameView extends RelativeLayout implements View.OnClickListener {
                 }
                 LogUtils.d("prize", "4");
                 YYGameRewardView yYGameRewardView = new YYGameRewardView(YYGameView.this.getContext());
-                yYGameRewardView.a(YYGameView.this.f18172a, singleData.victory, yYGiftModel.images_static, yYGiftModel.name);
-                YYGameView.this.f18172a.a((View) yYGameRewardView, DensityUtils.a(YYGameView.this.getContext(), 300.0f), -2, 17, false);
+                yYGameRewardView.a(YYGameView.this.a, singleData.victory, yYGiftModel.images_static, yYGiftModel.name);
+                YYGameView.this.a.a((View) yYGameRewardView, DensityUtils.a(YYGameView.this.getContext(), 300.0f), -2, 17, false);
             }
-        }, this.f18172a.getFragmentActive());
+        }, this.a.getFragmentActive());
     }
 
     private void h() {
@@ -320,9 +317,9 @@ public class YYGameView extends RelativeLayout implements View.OnClickListener {
     public void a() {
         this.U = "";
         b(true);
-        ImageLoader.a(this.f18172a.getFragmentActive(), "").b(R.drawable.user_bg_round).a(this.A);
+        ImageLoader.a(this.a.getFragmentActive(), "").b(R.drawable.user_bg_round).a(this.A);
         this.C.setText(getResources().getString(R.string.yy_game_electioning));
-        ImageLoader.a(this.f18172a.getFragmentActive(), "").b(R.drawable.user_bg_round).a(this.B);
+        ImageLoader.a(this.a.getFragmentActive(), "").b(R.drawable.user_bg_round).a(this.B);
         this.D.setText(getResources().getString(R.string.yy_game_electioning));
         h();
         this.p.setVisibility(0);
@@ -339,7 +336,7 @@ public class YYGameView extends RelativeLayout implements View.OnClickListener {
         this.d.setVisibility(8);
         this.i.setVisibility(0);
         this.e.setVisibility(0);
-        this.f18173c.setVisibility(8);
+        this.c.setVisibility(8);
     }
 
     public void a(final int i, final int i2) {
@@ -359,10 +356,9 @@ public class YYGameView extends RelativeLayout implements View.OnClickListener {
     }
 
     public void a(BaseYYStudioFragment baseYYStudioFragment) {
-        this.f18172a = baseYYStudioFragment;
+        this.a = baseYYStudioFragment;
         this.T = YYRoomInfoManager.e().b();
         LiveEventBus.get("show_game_time", YYGameTimerEvent.class).observe(baseYYStudioFragment, new Observer<YYGameTimerEvent>() { // from class: com.blued.android.module.yy_china.view.YYGameView.1
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(YYGameTimerEvent yYGameTimerEvent) {
                 if (yYGameTimerEvent == null) {
@@ -384,7 +380,7 @@ public class YYGameView extends RelativeLayout implements View.OnClickListener {
         this.L.setAlpha(i > 0 ? 1.0f : 0.4f);
         this.K.setAlpha(i2 > 0 ? 1.0f : 0.4f);
         if (yYSeatMemberModel != null) {
-            ImageLoader.a(this.f18172a.getFragmentActive(), yYSeatMemberModel.getAvatar()).b(R.drawable.user_bg_round).a(this.E);
+            ImageLoader.a(this.a.getFragmentActive(), yYSeatMemberModel.getAvatar()).b(R.drawable.user_bg_round).a(this.E);
         }
     }
 
@@ -437,7 +433,7 @@ public class YYGameView extends RelativeLayout implements View.OnClickListener {
             str = "等待上位";
             str2 = "";
         }
-        ImageLoader.a(this.f18172a.getFragmentActive(), str2).b(R.drawable.user_bg_round).a(this.A);
+        ImageLoader.a(this.a.getFragmentActive(), str2).b(R.drawable.user_bg_round).a(this.A);
         this.C.setText(str);
         String str3 = "等待上位";
         String str4 = "";
@@ -445,7 +441,7 @@ public class YYGameView extends RelativeLayout implements View.OnClickListener {
             str4 = yYSeatMemberModel2.getAvatar();
             str3 = yYSeatMemberModel2.getName();
         }
-        ImageLoader.a(this.f18172a.getFragmentActive(), str4).b(R.drawable.user_bg_round).a(this.B);
+        ImageLoader.a(this.a.getFragmentActive(), str4).b(R.drawable.user_bg_round).a(this.B);
         this.D.setText(str3);
     }
 
@@ -473,8 +469,8 @@ public class YYGameView extends RelativeLayout implements View.OnClickListener {
         this.C.setVisibility(0);
         this.D.setVisibility(0);
         b(true);
-        ImageLoader.a(this.f18172a.getFragmentActive(), "").b(R.drawable.user_bg_round).a(this.A);
-        ImageLoader.a(this.f18172a.getFragmentActive(), "").b(R.drawable.user_bg_round).a(this.B);
+        ImageLoader.a(this.a.getFragmentActive(), "").b(R.drawable.user_bg_round).a(this.A);
+        ImageLoader.a(this.a.getFragmentActive(), "").b(R.drawable.user_bg_round).a(this.B);
         if (!YYRoomInfoManager.e().y() && !z && YYRoomInfoManager.e().i()) {
             this.p.setVisibility(8);
             this.q.setVisibility(0);
@@ -514,8 +510,8 @@ public class YYGameView extends RelativeLayout implements View.OnClickListener {
             return;
         }
         YYGameBonusView yYGameBonusView = new YYGameBonusView(getContext());
-        yYGameBonusView.a(this.f18172a);
-        this.f18172a.a((View) yYGameBonusView, -2, false);
+        yYGameBonusView.a(this.a);
+        this.a.a((View) yYGameBonusView, -2, false);
     }
 
     public void c() {
@@ -524,15 +520,15 @@ public class YYGameView extends RelativeLayout implements View.OnClickListener {
         yYPunishListView.setConfirmListener(new IPunishClickListener() { // from class: com.blued.android.module.yy_china.view.YYGameView.6
             @Override // com.blued.android.module.yy_china.listener.IPunishClickListener
             public void a(YYRewardModel yYRewardModel) {
-                if (YYGameView.this.f18172a != null) {
-                    YYGameView.this.f18172a.y();
+                if (YYGameView.this.a != null) {
+                    YYGameView.this.a.y();
                 }
                 YYGameView yYGameView = YYGameView.this;
                 yYGameView.a("获胜方选择惩罚\n" + yYRewardModel.event_name, yYRewardModel.event_id);
             }
         });
-        yYPunishListView.a(this.f18172a, 1);
-        this.f18172a.a(yYPunishListView, -2);
+        yYPunishListView.a(this.a, 1);
+        this.a.a(yYPunishListView, -2);
     }
 
     public void c(String str) {
@@ -575,7 +571,7 @@ public class YYGameView extends RelativeLayout implements View.OnClickListener {
             f();
         } else if (view.getId() != R.id.tv_campign_captain) {
             if (view.getId() == R.id.reset_game) {
-                YYRoomHttpUtils.M(this.T.room_id, new BluedUIHttpResponse<BluedEntityA<Object>>(this.f18172a.getFragmentActive()) { // from class: com.blued.android.module.yy_china.view.YYGameView.2
+                YYRoomHttpUtils.M(this.T.room_id, new BluedUIHttpResponse<BluedEntityA<Object>>(this.a.getFragmentActive()) { // from class: com.blued.android.module.yy_china.view.YYGameView.2
                     /* JADX INFO: Access modifiers changed from: protected */
                     @Override // com.blued.android.framework.http.BluedUIHttpResponse
                     /* renamed from: a */
@@ -589,7 +585,7 @@ public class YYGameView extends RelativeLayout implements View.OnClickListener {
                         MsgPackHelper.putMapValue(yYImModel.msgMapExtra, "active_right_value", "");
                         LiveEventBus.get("show_game_step").post(yYImModel);
                     }
-                }, this.f18172a.getFragmentActive());
+                }, this.a.getFragmentActive());
             }
         } else if (ClickUtils.a(R.id.tv_campign_captain)) {
         } else {

@@ -9,9 +9,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public class CompletedExceptionally {
     private static final /* synthetic */ AtomicIntegerFieldUpdater b = AtomicIntegerFieldUpdater.newUpdater(CompletedExceptionally.class, "_handled");
     private volatile /* synthetic */ int _handled;
-
-    /* renamed from: a  reason: collision with root package name */
-    public final Throwable f42791a;
+    public final Throwable a;
 
     /* JADX WARN: Type inference failed for: r0v0, types: [java.lang.Throwable, java.lang.Runtime] */
     public CompletedExceptionally(Throwable th, boolean z) {
@@ -32,6 +30,6 @@ public class CompletedExceptionally {
     }
 
     public String toString() {
-        return DebugStringsKt.b(this) + '[' + this.f42791a + ']';
+        return DebugStringsKt.b(this) + '[' + this.a + ']';
     }
 }

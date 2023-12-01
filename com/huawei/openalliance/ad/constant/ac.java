@@ -14,11 +14,11 @@ public interface ac {
     public static final String Z = "playEnd";
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f22938a = "easterEggClose";
+    public static final String f9330a = "easterEggClose";
     public static final String b = "easterEggImp";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f22939c = "faOpenSuccess";
+    public static final String f9331c = "faOpenSuccess";
     public static final String d = "faOpenFail";
     public static final String e = "interactImp";
     public static final String f = "interactEnd";

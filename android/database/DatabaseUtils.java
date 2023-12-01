@@ -18,7 +18,6 @@ import android.os.Parcel;
 import android.os.ParcelFileDescriptor;
 import android.text.TextUtils;
 import android.util.Log;
-import com.alipay.sdk.util.i;
 import java.io.FileNotFoundException;
 import java.io.PrintStream;
 import java.text.Collator;
@@ -546,7 +545,7 @@ public class DatabaseUtils {
         while (true) {
             int i2 = i;
             if (i2 >= length) {
-                printStream.println(i.d);
+                printStream.println("}");
                 return;
             }
             try {

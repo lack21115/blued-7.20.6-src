@@ -14,26 +14,26 @@ import java.util.Map;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    protected final Context f35012a;
+    protected final Context f21321a;
     private final boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f35013c = false;
+    private boolean f21322c = false;
 
     public c(Context context) {
-        this.f35012a = context;
+        this.f21321a = context;
         this.b = com.tencent.beacon.a.c.b.f(context);
     }
 
     private Map<String, String> b() {
-        this.f35013c = com.tencent.beacon.a.c.b.d;
+        this.f21322c = com.tencent.beacon.a.c.b.d;
         HashMap hashMap = new HashMap(8);
         e l = e.l();
         f e = f.e();
         hashMap.put("A19", l.q());
-        hashMap.put("A66", com.tencent.beacon.a.c.b.f(this.f35012a) ? "F" : "B");
-        hashMap.put("A68", "" + com.tencent.beacon.a.c.b.b(this.f35012a));
-        hashMap.put("A85", this.f35013c ? "Y" : "N");
+        hashMap.put("A66", com.tencent.beacon.a.c.b.f(this.f21321a) ? "F" : "B");
+        hashMap.put("A68", "" + com.tencent.beacon.a.c.b.b(this.f21321a));
+        hashMap.put("A85", this.f21322c ? "Y" : "N");
         hashMap.put("A20", e.j());
         hashMap.put("A69", e.k());
         return hashMap;
@@ -53,7 +53,7 @@ public class c {
         com.tencent.beacon.base.util.c.a("[event] recover a heart beat for active user.", new Object[0]);
         if (c()) {
             com.tencent.beacon.base.util.c.a("[event] rqd_heartbeat A85=Y report success", new Object[0]);
-            a.SharedPreferences$EditorC0895a edit = a2.edit();
+            a.SharedPreferences$EditorC0725a edit = a2.edit();
             if (com.tencent.beacon.base.util.b.a((SharedPreferences.Editor) edit)) {
                 edit.putString("active_user_date", com.tencent.beacon.base.util.b.d()).apply();
             }

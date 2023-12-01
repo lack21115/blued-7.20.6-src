@@ -44,19 +44,19 @@ public final class NativeAdMonitor implements View.OnAttachStateChangeListener, 
     private DislikeAdListener h;
 
     /* renamed from: a  reason: collision with root package name */
-    private boolean f22518a = true;
+    private boolean f8910a = true;
     private boolean b = false;
 
     /* renamed from: c  reason: collision with root package name */
-    private final String f22519c = t.ah + hashCode();
+    private final String f8911c = t.ah + hashCode();
     private final String d = t.ai + hashCode();
     private boolean e = false;
     private View.OnClickListener i = new View.OnClickListener() { // from class: com.huawei.hms.ads.nativead.NativeAdMonitor.2
         @Override // android.view.View.OnClickListener
         public void onClick(View view) {
             Tracker.onClick(view);
-            if (NativeAdMonitor.this.f22518a) {
-                NativeAdMonitor.this.f22518a = false;
+            if (NativeAdMonitor.this.f8910a) {
+                NativeAdMonitor.this.f8910a = false;
                 ge.V(NativeAdMonitor.Code, "onClick");
                 NativeAdMonitor.this.e = true;
                 if (NativeAdMonitor.this.f != null) {
@@ -67,7 +67,7 @@ public final class NativeAdMonitor implements View.OnAttachStateChangeListener, 
                 ba.Code(new Runnable() { // from class: com.huawei.hms.ads.nativead.NativeAdMonitor.2.1
                     @Override // java.lang.Runnable
                     public void run() {
-                        NativeAdMonitor.this.f22518a = true;
+                        NativeAdMonitor.this.f8910a = true;
                     }
                 }, 500L);
             }
@@ -283,7 +283,7 @@ public final class NativeAdMonitor implements View.OnAttachStateChangeListener, 
 
     @Override // com.huawei.hms.ads.ha
     public void Code(long j, int i) {
-        ba.Code(this.f22519c);
+        ba.Code(this.f8911c);
         if (!this.S.Code(j) || this.b) {
             return;
         }
@@ -360,7 +360,7 @@ public final class NativeAdMonitor implements View.OnAttachStateChangeListener, 
 
     @Override // com.huawei.hms.ads.ha
     public void V(long j, int i) {
-        ba.Code(this.f22519c);
+        ba.Code(this.f8911c);
         n nVar = this.L;
         if (nVar != null) {
             nVar.B(false);
@@ -385,7 +385,7 @@ public final class NativeAdMonitor implements View.OnAttachStateChangeListener, 
                         NativeAdMonitor.this.Code(Long.valueOf(nVar2.r()), Integer.valueOf(NativeAdMonitor.this.S.I()), null, false);
                     }
                 }
-            }, this.f22519c, nVar.r());
+            }, this.f8911c, nVar.r());
         }
     }
 
@@ -408,7 +408,7 @@ public final class NativeAdMonitor implements View.OnAttachStateChangeListener, 
 
     public void setNativeAd(NativeAd nativeAd) {
         ba.Code(this.d);
-        ba.Code(this.f22519c);
+        ba.Code(this.f8911c);
         if (nativeAd == null) {
             ge.V(Code, "nativeAd is null, can't set the nativeAd now.");
             return;
@@ -421,7 +421,7 @@ public final class NativeAdMonitor implements View.OnAttachStateChangeListener, 
 
     public void unregister() {
         ba.Code(this.d);
-        ba.Code(this.f22519c);
+        ba.Code(this.f8911c);
         n nVar = this.L;
         if (nVar != null) {
             nVar.B(false);

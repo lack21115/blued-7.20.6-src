@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentSearchAllLayoutBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final RelativeLayout f28961a;
+    private final RelativeLayout f15271a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
-        return this.f28961a;
+        return this.f15271a;
     }
 }

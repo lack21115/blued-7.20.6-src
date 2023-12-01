@@ -36,11 +36,11 @@ import java.util.List;
 public class PhotoPagerFragment extends BaseFragment {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f29962a;
+    private Context f16272a;
     private View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private HackyViewPager f29963c;
+    private HackyViewPager f16273c;
     private LayoutInflater d;
     private ImagePagerAdapter e;
     private TextView f;
@@ -110,17 +110,17 @@ public class PhotoPagerFragment extends BaseFragment {
     }
 
     private void b() {
-        this.d = LayoutInflater.from(this.f29962a);
-        this.f29963c = (HackyViewPager) this.b.findViewById(2131368810);
+        this.d = LayoutInflater.from(this.f16272a);
+        this.f16273c = (HackyViewPager) this.b.findViewById(2131368810);
         ImagePagerAdapter imagePagerAdapter = new ImagePagerAdapter(getChildFragmentManager());
         this.e = imagePagerAdapter;
-        this.f29963c.setAdapter(imagePagerAdapter);
+        this.f16273c.setAdapter(imagePagerAdapter);
         View findViewById = this.b.findViewById(2131370694);
         this.h = findViewById;
         this.j = (ImageView) findViewById.findViewById(2131363120);
         this.i = (TextView) this.h.findViewById(2131363108);
         this.k = (ImageView) this.h.findViewById(2131363126);
-        this.g = (TextView) this.b.findViewById(2131368751);
+        this.g = (TextView) this.b.findViewById(R.id.num_view);
         this.f = (TextView) this.b.findViewById(R.id.done_text_view);
         this.k.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.feed.fragment.PhotoPagerFragment.1
             @Override // android.view.View.OnClickListener
@@ -132,8 +132,8 @@ public class PhotoPagerFragment extends BaseFragment {
                     PhotoPagerFragment.this.k.setImageResource(R.drawable.photo_unselected);
                     SelectPhotoManager.a().b(a2);
                     PhotoPagerFragment.this.c();
-                } else if (SelectPhotoManager.a().b() + PhotoSelectFragment.f29974a.size() >= PhotoConstants.CONFIG.f10707a) {
-                    AppMethods.a((CharSequence) String.format(PhotoPagerFragment.this.getResources().getString(2131890590), Integer.valueOf(PhotoConstants.CONFIG.f10707a)));
+                } else if (SelectPhotoManager.a().b() + PhotoSelectFragment.f16284a.size() >= PhotoConstants.CONFIG.a) {
+                    AppMethods.a(String.format(PhotoPagerFragment.this.getResources().getString(R.string.max_select_num), Integer.valueOf(PhotoConstants.CONFIG.a)));
                 } else {
                     a2.mSelect = true;
                     PhotoPagerFragment.this.k.setImageResource(R.drawable.photo_selected);
@@ -152,7 +152,7 @@ public class PhotoPagerFragment extends BaseFragment {
                 PhotoPagerFragment.this.getActivity().finish();
             }
         });
-        this.f29963c.setOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: com.soft.blued.ui.feed.fragment.PhotoPagerFragment.3
+        this.f16273c.setOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: com.soft.blued.ui.feed.fragment.PhotoPagerFragment.3
             @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageScrollStateChanged(int i) {
             }
@@ -185,7 +185,7 @@ public class PhotoPagerFragment extends BaseFragment {
                         if (i2 >= SelectPhotoManager.a().c().size()) {
                             break;
                         }
-                        ChildImageInfo childImageInfo2 = SelectPhotoManager.a().c().get(i2);
+                        ChildImageInfo childImageInfo2 = (ChildImageInfo) SelectPhotoManager.a().c().get(i2);
                         if (childImageInfo2 != null && !TextUtils.isEmpty(childImageInfo2.imgUri) && !AppUtils.b(childImageInfo2.mImagePath)) {
                             String e = RecyclingUtils.e("photo");
                             FileUtils.a(childImageInfo2.imgUri, e);
@@ -196,11 +196,11 @@ public class PhotoPagerFragment extends BaseFragment {
                 }
                 int i3 = PhotoPagerFragment.this.o;
                 if (i3 == 5) {
-                    SelectPhotoManager.a().c().addAll(0, PhotoSelectFragment.f29974a);
+                    SelectPhotoManager.a().c().addAll(0, PhotoSelectFragment.f16284a);
                 } else if (i3 != 7) {
-                    FeedAddPostFragment.a(PhotoPagerFragment.this.f29962a);
+                    FeedAddPostFragment.a(PhotoPagerFragment.this.f16272a);
                 } else {
-                    SelectPhotoManager.a().c().addAll(0, PhotoSelectFragment.f29974a);
+                    SelectPhotoManager.a().c().addAll(0, PhotoSelectFragment.f16284a);
                 }
                 Intent intent = new Intent();
                 intent.putExtra("page_state", 1);
@@ -209,7 +209,7 @@ public class PhotoPagerFragment extends BaseFragment {
             }
         });
         a(this.l + 1);
-        this.f29963c.setCurrentItem(this.l);
+        this.f16273c.setCurrentItem(this.l);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -224,20 +224,17 @@ public class PhotoPagerFragment extends BaseFragment {
         textView.setText(b + "");
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener
     public boolean onBackPressed() {
         getActivity().setResult(-1);
         return false;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.f29962a = getActivity();
+        this.f16272a = getActivity();
         View view = this.b;
         if (view == null) {
             this.b = layoutInflater.inflate(R.layout.fragment_photo_pager, viewGroup, false);
@@ -250,7 +247,6 @@ public class PhotoPagerFragment extends BaseFragment {
         return this.b;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
     }

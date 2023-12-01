@@ -7,6 +7,7 @@ import com.tencent.qcloud.core.common.QCloudProgressListener;
 import com.tencent.qcloud.core.logger.QCloudLogger;
 import com.tencent.qcloud.core.util.Base64Utils;
 import com.tencent.qcloud.core.util.QCloudUtils;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.ByteArrayInputStream;
 import java.io.Closeable;
 import java.io.File;
@@ -22,7 +23,7 @@ import okhttp3.MediaType;
 import okhttp3.RequestBody;
 import okhttp3.internal.Util;
 import okio.BufferedSink;
-import okio.BufferedSource;
+import okio.ForwardingSink;
 import okio.Okio;
 
 /* loaded from: source-8829756-dex2jar.jar:com/tencent/qcloud/core/http/StreamingRequestBody.class */
@@ -118,7 +119,6 @@ public class StreamingRequestBody extends RequestBody implements QCloudDigistLis
         return streamingRequestBody;
     }
 
-    @Override // okhttp3.RequestBody
     public long contentLength() throws IOException {
         long contentRawLength = getContentRawLength();
         if (contentRawLength <= 0) {
@@ -128,7 +128,6 @@ public class StreamingRequestBody extends RequestBody implements QCloudDigistLis
         return j <= 0 ? Math.max(contentRawLength - this.offset, -1L) : Math.min(contentRawLength - this.offset, j);
     }
 
-    @Override // okhttp3.RequestBody
     public MediaType contentType() {
         String str = this.contentType;
         if (str != null) {
@@ -208,7 +207,7 @@ public class StreamingRequestBody extends RequestBody implements QCloudDigistLis
                 if (url != null) {
                     URLConnection openConnection = url.openConnection();
                     if (this.offset > 0) {
-                        openConnection.setRequestProperty("Range", "bytes=" + this.offset + "-" + this.offset + this.requiredLength);
+                        openConnection.setRequestProperty("Range", "bytes=" + this.offset + Constants.ACCEPT_TIME_SEPARATOR_SERVER + this.offset + this.requiredLength);
                     }
                     inputStream = this.url.openStream();
                 } else {
@@ -331,26 +330,25 @@ public class StreamingRequestBody extends RequestBody implements QCloudDigistLis
         this.progressListener = qCloudProgressListener;
     }
 
-    @Override // okhttp3.RequestBody
     public void writeTo(BufferedSink bufferedSink) throws IOException {
         InputStream inputStream = null;
-        BufferedSource bufferedSource = null;
+        Closeable closeable = null;
         try {
             InputStream stream = getStream();
-            BufferedSource bufferedSource2 = null;
+            Closeable closeable2 = null;
             if (stream != null) {
                 try {
-                    bufferedSource2 = Okio.buffer(Okio.source(stream));
+                    closeable2 = Okio.buffer(Okio.source(stream));
                     long contentLength = contentLength();
                     CountingSink countingSink = new CountingSink(bufferedSink, contentLength, this.progressListener);
                     this.countingSink = countingSink;
                     BufferedSink buffer = Okio.buffer(countingSink);
                     if (contentLength > 0) {
-                        buffer.write(bufferedSource2, contentLength);
+                        buffer.write(closeable2, contentLength);
                     } else {
-                        buffer.writeAll(bufferedSource2);
+                        buffer.writeAll(closeable2);
                     }
-                    bufferedSource = bufferedSource2;
+                    closeable = closeable2;
                     buffer.flush();
                 } catch (Throwable th) {
                     th = th;
@@ -358,12 +356,12 @@ public class StreamingRequestBody extends RequestBody implements QCloudDigistLis
                     if (inputStream != null) {
                         Util.a(inputStream);
                     }
-                    if (bufferedSource != null) {
-                        Util.a(bufferedSource);
+                    if (closeable != null) {
+                        Util.a(closeable);
                     }
-                    CountingSink countingSink2 = this.countingSink;
-                    if (countingSink2 != null) {
-                        Util.a(countingSink2);
+                    ForwardingSink forwardingSink = this.countingSink;
+                    if (forwardingSink != null) {
+                        Util.a(forwardingSink);
                     }
                     throw th;
                 }
@@ -371,16 +369,16 @@ public class StreamingRequestBody extends RequestBody implements QCloudDigistLis
             if (stream != null) {
                 Util.a(stream);
             }
-            if (bufferedSource2 != null) {
-                Util.a(bufferedSource2);
+            if (closeable2 != null) {
+                Util.a(closeable2);
             }
-            CountingSink countingSink3 = this.countingSink;
-            if (countingSink3 != null) {
-                Util.a(countingSink3);
+            ForwardingSink forwardingSink2 = this.countingSink;
+            if (forwardingSink2 != null) {
+                Util.a(forwardingSink2);
             }
         } catch (Throwable th2) {
             th = th2;
-            bufferedSource = null;
+            closeable = null;
         }
     }
 }

@@ -13,24 +13,24 @@ import java.util.Iterator;
 public class TransitionManager {
 
     /* renamed from: c  reason: collision with root package name */
-    private ArrayMap<Scene, Transition> f3476c = new ArrayMap<>();
+    private ArrayMap<Scene, Transition> f3428c = new ArrayMap<>();
     private ArrayMap<Scene, ArrayMap<Scene, Transition>> d = new ArrayMap<>();
     private static Transition b = new AutoTransition();
     private static ThreadLocal<WeakReference<ArrayMap<ViewGroup, ArrayList<Transition>>>> e = new ThreadLocal<>();
 
     /* renamed from: a  reason: collision with root package name */
-    static ArrayList<ViewGroup> f3475a = new ArrayList<>();
+    static ArrayList<ViewGroup> f3427a = new ArrayList<>();
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8756600-dex2jar.jar:androidx/transition/TransitionManager$MultiListener.class */
     public static class MultiListener implements View.OnAttachStateChangeListener, ViewTreeObserver.OnPreDrawListener {
 
         /* renamed from: a  reason: collision with root package name */
-        Transition f3477a;
+        Transition f3429a;
         ViewGroup b;
 
         MultiListener(Transition transition, ViewGroup viewGroup) {
-            this.f3477a = transition;
+            this.f3429a = transition;
             this.b = viewGroup;
         }
 
@@ -43,7 +43,7 @@ public class TransitionManager {
         public boolean onPreDraw() {
             ArrayList<Transition> arrayList;
             a();
-            if (TransitionManager.f3475a.remove(this.b)) {
+            if (TransitionManager.f3427a.remove(this.b)) {
                 final ArrayMap<ViewGroup, ArrayList<Transition>> a2 = TransitionManager.a();
                 ArrayList<Transition> arrayList2 = a2.get(this.b);
                 ArrayList arrayList3 = null;
@@ -57,22 +57,22 @@ public class TransitionManager {
                         arrayList = arrayList2;
                     }
                 }
-                arrayList.add(this.f3477a);
-                this.f3477a.addListener(new TransitionListenerAdapter() { // from class: androidx.transition.TransitionManager.MultiListener.1
+                arrayList.add(this.f3429a);
+                this.f3429a.addListener(new TransitionListenerAdapter() { // from class: androidx.transition.TransitionManager.MultiListener.1
                     @Override // androidx.transition.TransitionListenerAdapter, androidx.transition.Transition.TransitionListener
                     public void onTransitionEnd(Transition transition) {
                         ((ArrayList) a2.get(MultiListener.this.b)).remove(transition);
                         transition.removeListener(this);
                     }
                 });
-                this.f3477a.captureValues(this.b, false);
+                this.f3429a.captureValues(this.b, false);
                 if (arrayList3 != null) {
                     Iterator it = arrayList3.iterator();
                     while (it.hasNext()) {
                         ((Transition) it.next()).resume(this.b);
                     }
                 }
-                this.f3477a.playTransition(this.b);
+                this.f3429a.playTransition(this.b);
                 return true;
             }
             return true;
@@ -85,7 +85,7 @@ public class TransitionManager {
         @Override // android.view.View.OnAttachStateChangeListener
         public void onViewDetachedFromWindow(View view) {
             a();
-            TransitionManager.f3475a.remove(this.b);
+            TransitionManager.f3427a.remove(this.b);
             ArrayList<Transition> arrayList = TransitionManager.a().get(this.b);
             if (arrayList != null && arrayList.size() > 0) {
                 Iterator<Transition> it = arrayList.iterator();
@@ -93,7 +93,7 @@ public class TransitionManager {
                     it.next().resume(this.b);
                 }
             }
-            this.f3477a.clearValues(true);
+            this.f3429a.clearValues(true);
         }
     }
 
@@ -114,7 +114,7 @@ public class TransitionManager {
         Transition transition;
         ViewGroup sceneRoot = scene.getSceneRoot();
         if (sceneRoot == null || (currentScene = Scene.getCurrentScene(sceneRoot)) == null || (arrayMap = this.d.get(scene)) == null || (transition = arrayMap.get(currentScene)) == null) {
-            Transition transition2 = this.f3476c.get(scene);
+            Transition transition2 = this.f3428c.get(scene);
             return transition2 != null ? transition2 : b;
         }
         return transition;
@@ -131,7 +131,7 @@ public class TransitionManager {
 
     private static void a(Scene scene, Transition transition) {
         ViewGroup sceneRoot = scene.getSceneRoot();
-        if (f3475a.contains(sceneRoot)) {
+        if (f3427a.contains(sceneRoot)) {
             return;
         }
         Scene currentScene = Scene.getCurrentScene(sceneRoot);
@@ -142,15 +142,15 @@ public class TransitionManager {
             scene.enter();
             return;
         }
-        f3475a.add(sceneRoot);
-        Transition mo1622clone = transition.mo1622clone();
-        mo1622clone.setSceneRoot(sceneRoot);
+        f3427a.add(sceneRoot);
+        Transition mo1493clone = transition.mo1493clone();
+        mo1493clone.setSceneRoot(sceneRoot);
         if (currentScene != null && currentScene.a()) {
-            mo1622clone.setCanRemoveViews(true);
+            mo1493clone.setCanRemoveViews(true);
         }
-        b(sceneRoot, mo1622clone);
+        b(sceneRoot, mo1493clone);
         scene.enter();
-        a(sceneRoot, mo1622clone);
+        a(sceneRoot, mo1493clone);
     }
 
     private static void b(ViewGroup viewGroup, Transition transition) {
@@ -175,22 +175,22 @@ public class TransitionManager {
     }
 
     public static void beginDelayedTransition(ViewGroup viewGroup, Transition transition) {
-        if (f3475a.contains(viewGroup) || !ViewCompat.isLaidOut(viewGroup)) {
+        if (f3427a.contains(viewGroup) || !ViewCompat.isLaidOut(viewGroup)) {
             return;
         }
-        f3475a.add(viewGroup);
+        f3427a.add(viewGroup);
         Transition transition2 = transition;
         if (transition == null) {
             transition2 = b;
         }
-        Transition mo1622clone = transition2.mo1622clone();
-        b(viewGroup, mo1622clone);
+        Transition mo1493clone = transition2.mo1493clone();
+        b(viewGroup, mo1493clone);
         Scene.a(viewGroup, null);
-        a(viewGroup, mo1622clone);
+        a(viewGroup, mo1493clone);
     }
 
     public static void endTransitions(ViewGroup viewGroup) {
-        f3475a.remove(viewGroup);
+        f3427a.remove(viewGroup);
         ArrayList<Transition> arrayList = a().get(viewGroup);
         if (arrayList == null || arrayList.isEmpty()) {
             return;
@@ -226,7 +226,7 @@ public class TransitionManager {
     }
 
     public void setTransition(Scene scene, Transition transition) {
-        this.f3476c.put(scene, transition);
+        this.f3428c.put(scene, transition);
     }
 
     public void transitionTo(Scene scene) {

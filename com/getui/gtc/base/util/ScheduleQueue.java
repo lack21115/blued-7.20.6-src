@@ -14,9 +14,8 @@ public class ScheduleQueue {
     private static final AtomicInteger poolNumber = new AtomicInteger(1);
     private ScheduledThreadPoolExecutor exec;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8110460-dex2jar.jar:com/getui/gtc/base/util/ScheduleQueue$SingletonHolder.class */
-    public static class SingletonHolder {
+    static class SingletonHolder {
         private static final ScheduleQueue instance = new ScheduleQueue();
 
         private SingletonHolder() {

@@ -16,7 +16,6 @@ public final class LiveJoinFansFragment_MVP implements MvpDispatcher {
      */
     /* JADX WARN: Removed duplicated region for block: B:27:0x0073  */
     /* JADX WARN: Removed duplicated region for block: B:40:0x00a6  */
-    @Override // com.blued.android.framework.ui.mvp.MvpDispatcher
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences

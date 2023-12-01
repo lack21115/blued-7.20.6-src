@@ -8,9 +8,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/svgaplayer/bitmap/SVGABitmapFileDecoder.class */
 public final class SVGABitmapFileDecoder extends SVGABitmapDecoder<String> {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final SVGABitmapFileDecoder f15985a = new SVGABitmapFileDecoder();
+    public static final SVGABitmapFileDecoder a = new SVGABitmapFileDecoder();
 
     private SVGABitmapFileDecoder() {
     }

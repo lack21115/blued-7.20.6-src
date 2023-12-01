@@ -22,13 +22,9 @@ public class BusPath extends Path implements Parcelable {
             return null;
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    private float f5676a;
+    private float a;
     private boolean b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private float f5677c;
+    private float c;
     private float d;
     private List<BusStep> e;
 
@@ -39,11 +35,11 @@ public class BusPath extends Path implements Parcelable {
     public BusPath(Parcel parcel) {
         super(parcel);
         this.e = new ArrayList();
-        this.f5676a = parcel.readFloat();
+        this.a = parcel.readFloat();
         boolean[] zArr = new boolean[1];
         parcel.readBooleanArray(zArr);
         this.b = zArr[0];
-        this.f5677c = parcel.readFloat();
+        this.c = parcel.readFloat();
         this.d = parcel.readFloat();
         this.e = parcel.createTypedArrayList(BusStep.CREATOR);
     }
@@ -58,7 +54,7 @@ public class BusPath extends Path implements Parcelable {
     }
 
     public float getCost() {
-        return this.f5676a;
+        return this.a;
     }
 
     public List<BusStep> getSteps() {
@@ -66,7 +62,7 @@ public class BusPath extends Path implements Parcelable {
     }
 
     public float getWalkDistance() {
-        return this.f5677c;
+        return this.c;
     }
 
     public boolean isNightBus() {
@@ -78,7 +74,7 @@ public class BusPath extends Path implements Parcelable {
     }
 
     public void setCost(float f) {
-        this.f5676a = f;
+        this.a = f;
     }
 
     public void setNightBus(boolean z) {
@@ -90,15 +86,15 @@ public class BusPath extends Path implements Parcelable {
     }
 
     public void setWalkDistance(float f) {
-        this.f5677c = f;
+        this.c = f;
     }
 
     @Override // com.amap.api.services.route.Path, android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
         super.writeToParcel(parcel, i);
-        parcel.writeFloat(this.f5676a);
+        parcel.writeFloat(this.a);
         parcel.writeBooleanArray(new boolean[]{this.b});
-        parcel.writeFloat(this.f5677c);
+        parcel.writeFloat(this.c);
         parcel.writeFloat(this.d);
         parcel.writeTypedList(this.e);
     }

@@ -17,13 +17,9 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYStudioErrorFragment.class */
 public class YYStudioErrorFragment extends MvpFragment<MvpPresenter> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private ImageView f17457a;
+    private ImageView a;
     private TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private RelativeLayout f17458c;
+    private RelativeLayout c;
     private ImageView d;
 
     public static void a(Context context, String str) {
@@ -37,15 +33,15 @@ public class YYStudioErrorFragment extends MvpFragment<MvpPresenter> {
     @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public void a(Bundle bundle) {
         super.a(bundle);
-        this.f17457a = (ImageView) this.i.findViewById(R.id.img_right);
+        this.a = (ImageView) this.i.findViewById(R.id.img_right);
         this.b = (TextView) this.i.findViewById(R.id.tv_error);
-        this.f17458c = (RelativeLayout) this.i.findViewById(R.id.ll_common_title);
+        this.c = (RelativeLayout) this.i.findViewById(R.id.ll_common_title);
         this.d = (ImageView) this.i.findViewById(R.id.ctt_left);
         if (StatusBarHelper.a()) {
-            this.f17458c.setPadding(0, StatusBarHelper.a((Context) getActivity()), 0, 0);
-            ((FrameLayout.LayoutParams) this.f17457a.getLayoutParams()).topMargin = DensityUtils.a(getContext(), 35.0f) + StatusBarHelper.a(getContext());
+            this.c.setPadding(0, StatusBarHelper.a((Context) getActivity()), 0, 0);
+            ((FrameLayout.LayoutParams) this.a.getLayoutParams()).topMargin = DensityUtils.a(getContext(), 35.0f) + StatusBarHelper.a(getContext());
         }
-        this.f17458c.setBackgroundColor(getResources().getColor(R.color.transparent));
+        this.c.setBackgroundColor(getResources().getColor(R.color.transparent));
         this.d.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.YYStudioErrorFragment.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {

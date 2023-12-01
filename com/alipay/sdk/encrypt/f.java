@@ -6,9 +6,7 @@ import javax.crypto.spec.SecretKeySpec;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alipay/sdk/encrypt/f.class */
 public class f {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static String f4630a = "DESede/CBC/PKCS5Padding";
+    private static String a = "DESede/CBC/PKCS5Padding";
 
     public static String a(String str, String str2, String str3) {
         try {
@@ -21,7 +19,7 @@ public class f {
     public static byte[] a(String str, byte[] bArr, String str2) {
         try {
             SecretKeySpec secretKeySpec = new SecretKeySpec(str.getBytes(), "DESede");
-            Cipher cipher = Cipher.getInstance(f4630a);
+            Cipher cipher = Cipher.getInstance(a);
             cipher.init(1, secretKeySpec, new IvParameterSpec(d.a(cipher, str2)));
             return cipher.doFinal(bArr);
         } catch (Exception e) {
@@ -40,7 +38,7 @@ public class f {
     public static byte[] b(String str, byte[] bArr, String str2) {
         try {
             SecretKeySpec secretKeySpec = new SecretKeySpec(str.getBytes(), "DESede");
-            Cipher cipher = Cipher.getInstance(f4630a);
+            Cipher cipher = Cipher.getInstance(a);
             cipher.init(2, secretKeySpec, new IvParameterSpec(d.a(cipher, str2)));
             return cipher.doFinal(bArr);
         } catch (Exception e) {

@@ -11,11 +11,11 @@ public final class aq extends BroadcastReceiver {
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f35252c;
+    private String f21561c;
     private boolean e = true;
 
     /* renamed from: a  reason: collision with root package name */
-    private IntentFilter f35251a = new IntentFilter();
+    private IntentFilter f21560a = new IntentFilter();
 
     public static aq a() {
         aq aqVar;
@@ -42,13 +42,13 @@ public final class aq extends BroadcastReceiver {
                     }
                     String c2 = ab.c(this.b);
                     al.c("is Connect BC ".concat(String.valueOf(c2)), new Object[0]);
-                    al.a("network %s changed to %s", this.f35252c, String.valueOf(c2));
+                    al.a("network %s changed to %s", this.f21561c, String.valueOf(c2));
                     if (c2 == null) {
-                        this.f35252c = null;
+                        this.f21561c = null;
                         return true;
                     }
-                    String str = this.f35252c;
-                    this.f35252c = c2;
+                    String str = this.f21561c;
+                    this.f21561c = c2;
                     long currentTimeMillis = System.currentTimeMillis();
                     ac a2 = ac.a();
                     ai a3 = ai.a();
@@ -57,7 +57,7 @@ public final class aq extends BroadcastReceiver {
                         al.d("not inited BC not work", new Object[0]);
                         return true;
                     }
-                    if (!c2.equals(str) && currentTimeMillis - a3.a(at.f35261a) > 30000) {
+                    if (!c2.equals(str) && currentTimeMillis - a3.a(at.f21570a) > 30000) {
                         al.a("try to upload crash on network changed.", new Object[0]);
                         at a5 = at.a();
                         if (a5 != null) {
@@ -82,7 +82,7 @@ public final class aq extends BroadcastReceiver {
                     try {
                         al.a(aq.d.getClass(), "Register broadcast receiver of Bugly.", new Object[0]);
                         synchronized (this) {
-                            aq.this.b.registerReceiver(aq.d, aq.this.f35251a, "com.tencent.bugly.idasc.BuglyBroadcastReceiver.permission", null);
+                            aq.this.b.registerReceiver(aq.d, aq.this.f21560a, "com.tencent.bugly.idasc.BuglyBroadcastReceiver.permission", null);
                         }
                     } catch (Throwable th) {
                         th.printStackTrace();
@@ -94,8 +94,8 @@ public final class aq extends BroadcastReceiver {
 
     public final void a(String str) {
         synchronized (this) {
-            if (!this.f35251a.hasAction(str)) {
-                this.f35251a.addAction(str);
+            if (!this.f21560a.hasAction(str)) {
+                this.f21560a.addAction(str);
             }
             al.c("add action %s", str);
         }

@@ -13,7 +13,7 @@ public class HtmlHeader {
     @SerializedName("header_map")
 
     /* renamed from: a  reason: collision with root package name */
-    private Map<String, List<String>> f41819a = new HashMap();
+    private Map<String, List<String>> f28128a = new HashMap();
 
     public static HtmlHeader fromJson(String str) {
         if (str != null) {
@@ -25,7 +25,7 @@ public class HtmlHeader {
     public static HtmlHeader fromMap(Map<String, String> map) {
         HtmlHeader htmlHeader = new HtmlHeader();
         HashMap hashMap = new HashMap();
-        htmlHeader.f41819a = hashMap;
+        htmlHeader.f28128a = hashMap;
         if (map != null) {
             for (Map.Entry<String, String> entry : map.entrySet()) {
                 ArrayList arrayList = new ArrayList();
@@ -39,10 +39,10 @@ public class HtmlHeader {
     public static HtmlHeader fromMapList(Map<String, List<String>> map) {
         HtmlHeader htmlHeader = new HtmlHeader();
         if (map != null) {
-            htmlHeader.f41819a = map;
+            htmlHeader.f28128a = map;
             return htmlHeader;
         }
-        htmlHeader.f41819a = new HashMap();
+        htmlHeader.f28128a = new HashMap();
         return htmlHeader;
     }
 
@@ -72,10 +72,10 @@ public class HtmlHeader {
     }
 
     public Map<String, List<String>> getHeaders() {
-        return this.f41819a;
+        return this.f28128a;
     }
 
     public Map<String, String> getTransferdedHeader() {
-        return transferHeaderMapList(this.f41819a);
+        return transferHeaderMapList(this.f28128a);
     }
 }

@@ -49,9 +49,7 @@ import java.util.List;
 public class LiveRoomManager {
     private static List<LiveGiftModel> M;
     private static volatile LiveRoomManager e;
-
-    /* renamed from: a  reason: collision with root package name */
-    public LiveRoomData f13670a;
+    public LiveRoomData a;
     public LiveJoinRoomExtraModel d;
     private LiveFansInfoModel h;
     private LiveLiangModel i;
@@ -86,9 +84,7 @@ public class LiveRoomManager {
     private boolean J = true;
     private String K = null;
     public int b = 0;
-
-    /* renamed from: c  reason: collision with root package name */
-    public int f13671c = 0;
+    public int c = 0;
     private Handler L = new Handler(Looper.getMainLooper()) { // from class: com.blued.android.module.live_china.manager.LiveRoomManager.1
         @Override // android.os.Handler
         public void handleMessage(Message message) {
@@ -287,11 +283,11 @@ public class LiveRoomManager {
                 }
                 String next = it.next();
                 if (!TextUtils.isEmpty(next)) {
-                    long a2 = StringUtils.a(this.f.red_point.get(next), 0L);
-                    Log.i("==opop", next + " time:" + a2);
-                    long a3 = StringUtils.a(LiveRoomPreferences.B(next), 0L);
-                    Log.i("==opop", next + " curTime:" + a3);
-                    if (a2 > a3) {
+                    long a = StringUtils.a(this.f.red_point.get(next), 0L);
+                    Log.i("==opop", next + " time:" + a);
+                    long a2 = StringUtils.a(LiveRoomPreferences.B(next), 0L);
+                    Log.i("==opop", next + " curTime:" + a2);
+                    if (a > a2) {
                         z2 = true;
                     }
                 }
@@ -581,11 +577,11 @@ public class LiveRoomManager {
 
     public void b(LiveRoomData liveRoomData) {
         if (liveRoomData == null) {
-            this.f13670a = null;
+            this.a = null;
             return;
         }
         LiveRoomData liveRoomData2 = new LiveRoomData();
-        this.f13670a = liveRoomData2;
+        this.a = liveRoomData2;
         ReflectionUtils.a(liveRoomData, liveRoomData2);
     }
 
@@ -770,7 +766,7 @@ public class LiveRoomManager {
     }
 
     public LiveRoomData y() {
-        return this.f13670a;
+        return this.a;
     }
 
     public void z() {

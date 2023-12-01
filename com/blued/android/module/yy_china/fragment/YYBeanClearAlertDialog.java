@@ -13,14 +13,12 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYBeanClearAlertDialog.class */
 public final class YYBeanClearAlertDialog extends BaseFullScreenDialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final View.OnClickListener f17108a;
+    private final View.OnClickListener a;
     private DialogBeansClearBinding b;
 
     public YYBeanClearAlertDialog(View.OnClickListener cli) {
         Intrinsics.e(cli, "cli");
-        this.f17108a = cli;
+        this.a = cli;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -32,7 +30,7 @@ public final class YYBeanClearAlertDialog extends BaseFullScreenDialog {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void b(YYBeanClearAlertDialog this$0, View view) {
         Intrinsics.e(this$0, "this$0");
-        this$0.f17108a.onClick(null);
+        this$0.a.onClick(null);
         this$0.dismissAllowingStateLoss();
     }
 
@@ -40,7 +38,7 @@ public final class YYBeanClearAlertDialog extends BaseFullScreenDialog {
         ShapeTextView shapeTextView;
         ShapeTextView shapeTextView2;
         DialogBeansClearBinding dialogBeansClearBinding = this.b;
-        if (dialogBeansClearBinding != null && (shapeTextView2 = dialogBeansClearBinding.f16300a) != null) {
+        if (dialogBeansClearBinding != null && (shapeTextView2 = dialogBeansClearBinding.a) != null) {
             shapeTextView2.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYBeanClearAlertDialog$TF2lP8NvLbjpSuGChTc4LIbx5ng
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -60,7 +58,7 @@ public final class YYBeanClearAlertDialog extends BaseFullScreenDialog {
         });
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
         View inflate = inflater.inflate(R.layout.dialog_beans_clear, (ViewGroup) null);

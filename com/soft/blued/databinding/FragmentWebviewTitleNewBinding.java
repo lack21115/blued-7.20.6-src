@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentWebviewTitleNewBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ConstraintLayout f29040a;
+    private final ConstraintLayout f15350a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f29040a;
+        return this.f15350a;
     }
 }

@@ -10,7 +10,7 @@ import java.util.Date;
 public class g {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile g f39546a;
+    private static volatile g f25855a;
     private c d;
     private final String b = "sid";
     private String e = "";
@@ -20,7 +20,7 @@ public class g {
     private String i = "";
 
     /* renamed from: c  reason: collision with root package name */
-    private final Context f39547c = com.tencent.tmsbeacon.a.c.c.d().c();
+    private final Context f25856c = com.tencent.tmsbeacon.a.c.c.d().c();
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/tmsbeacon/d/g$a.class */
     public class a implements Runnable {
@@ -29,9 +29,9 @@ public class g {
 
         @Override // java.lang.Runnable
         public void run() {
-            if (g.this.f39547c != null) {
+            if (g.this.f25856c != null) {
                 g gVar = g.this;
-                gVar.a(gVar.f39547c);
+                gVar.a(gVar.f25856c);
             }
         }
     }
@@ -41,11 +41,11 @@ public class g {
         public final /* synthetic */ String b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ String f39548c;
+        public final /* synthetic */ String f25857c;
 
         public b(String str, String str2) {
             this.b = str;
-            this.f39548c = str2;
+            this.f25857c = str2;
         }
 
         @Override // java.lang.Runnable
@@ -56,9 +56,9 @@ public class g {
             if (time == 0) {
                 j = (new Date().getTime() / 1000) + 86400;
             }
-            a.SharedPreferences$EditorC1031a edit = com.tencent.tmsbeacon.a.d.a.a().edit();
+            a.SharedPreferences$EditorC0861a edit = com.tencent.tmsbeacon.a.d.a.a().edit();
             if (com.tencent.tmsbeacon.base.util.b.a((SharedPreferences.Editor) edit)) {
-                edit.putString("sid_value", this.f39548c).putLong("sid_mt", j);
+                edit.putString("sid_value", this.f25857c).putLong("sid_mt", j);
             }
         }
     }
@@ -68,18 +68,18 @@ public class g {
     }
 
     public static g b() {
-        if (f39546a == null) {
+        if (f25855a == null) {
             synchronized (g.class) {
                 try {
-                    if (f39546a == null) {
-                        f39546a = new g();
+                    if (f25855a == null) {
+                        f25855a = new g();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f39546a;
+        return f25855a;
     }
 
     public String a() {

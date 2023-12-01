@@ -61,8 +61,8 @@ public class LiveGuestInterruptDlgFragment extends com.blued.android.module.comm
 
     @Override // com.blued.android.module.common.fragment.LiveBaseDialogFragment
     public void f() {
-        this.l = this.f10822c.getString("msg_title");
-        this.m = this.f10822c.getString("msg_text");
+        this.l = this.c.getString("msg_title");
+        this.m = this.c.getString("msg_text");
     }
 
     @Override // com.blued.android.core.ui.BaseDialogFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener

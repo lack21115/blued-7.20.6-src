@@ -22,32 +22,31 @@ public final class VirtualImageDoubleTapGuide extends BottomPopupView {
     private final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final IRequestHost f34253c;
+    private final IRequestHost f20562c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public VirtualImageDoubleTapGuide(Context context, int i, IRequestHost requestHost) {
+    public VirtualImageDoubleTapGuide(Context context, int i, IRequestHost iRequestHost) {
         super(context);
         Intrinsics.e(context, "context");
-        Intrinsics.e(requestHost, "requestHost");
+        Intrinsics.e(iRequestHost, "requestHost");
         this.b = i;
-        this.f34253c = requestHost;
+        this.f20562c = iRequestHost;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(VirtualImageDoubleTapGuide this$0, View view) {
+    public static final void a(VirtualImageDoubleTapGuide virtualImageDoubleTapGuide, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.p();
+        Intrinsics.e(virtualImageDoubleTapGuide, "this$0");
+        virtualImageDoubleTapGuide.p();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(VirtualImageDoubleTapGuide this$0, View view) {
+    public static final void b(VirtualImageDoubleTapGuide virtualImageDoubleTapGuide, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.p();
+        Intrinsics.e(virtualImageDoubleTapGuide, "this$0");
+        virtualImageDoubleTapGuide.p();
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.BottomPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
     public void b() {
         String str;
         super.b();
@@ -58,7 +57,7 @@ public final class VirtualImageDoubleTapGuide extends BottomPopupView {
             }
         });
         ImageView imageView = (ImageView) findViewById(R.id.iv_guide_bg);
-        ImageLoader.a(this.f34253c, (int) R.drawable.virtual_image_guide_bg).a(imageView);
+        ImageLoader.a(this.f20562c, (int) R.drawable.virtual_image_guide_bg).a(imageView);
         RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.rl_try_now);
         ImageView imageView2 = (ImageView) findViewById(R.id.iv_click_anim);
         int i = this.b;
@@ -86,14 +85,13 @@ public final class VirtualImageDoubleTapGuide extends BottomPopupView {
             Intrinsics.c(locale, "getDefault()");
             String upperCase = country.toUpperCase(locale);
             Intrinsics.c(upperCase, "this as java.lang.String).toUpperCase(locale)");
-            str = Intrinsics.a((Object) "CN", (Object) upperCase) ? "anim_virtual_image_guide_double_click_cn.png" : "anim_virtual_image_guide_double_click_tw.png";
+            str = Intrinsics.a("CN", upperCase) ? "anim_virtual_image_guide_double_click_cn.png" : "anim_virtual_image_guide_double_click_tw.png";
         } else {
             str = "anim_virtual_image_guide_double_click_en.png";
         }
-        ImageLoader.c(this.f34253c, str).f().g(-1).a(imageView2);
+        ImageLoader.c(this.f20562c, str).f().g(-1).a(imageView2);
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.BottomPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
     public int getImplLayoutId() {
         return R.layout.layout_virtual_image_guide;
     }
@@ -103,6 +101,6 @@ public final class VirtualImageDoubleTapGuide extends BottomPopupView {
     }
 
     public final IRequestHost getRequestHost() {
-        return this.f34253c;
+        return this.f20562c;
     }
 }

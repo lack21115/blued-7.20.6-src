@@ -13,13 +13,9 @@ public class PopupwindowFactory {
 
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/utils/PopupwindowFactory$Builder.class */
     public static class Builder {
-
-        /* renamed from: a  reason: collision with root package name */
-        private int f17872a;
+        private int a;
         private int b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private int f17873c;
+        private int c;
         private View d;
         private Context e;
         private int f;
@@ -36,7 +32,7 @@ public class PopupwindowFactory {
         }
 
         public Builder a(int i) {
-            this.f17872a = i;
+            this.a = i;
             return this;
         }
 
@@ -60,7 +56,7 @@ public class PopupwindowFactory {
         }
 
         public int b() {
-            return this.f17873c;
+            return this.c;
         }
 
         public Builder b(int i) {
@@ -73,7 +69,7 @@ public class PopupwindowFactory {
         }
 
         public Builder c(int i) {
-            this.f17873c = i;
+            this.c = i;
             return this;
         }
 
@@ -105,7 +101,7 @@ public class PopupwindowFactory {
 
         public PopupWindow h() {
             YYPopupWindow yYPopupWindow = new YYPopupWindow(this.e, this);
-            int i = this.f17872a;
+            int i = this.a;
             if (i == 80) {
                 yYPopupWindow.setAnimationStyle(R.style.yy_pop_bottom_in_anim);
             } else if (i == 48) {
@@ -120,7 +116,7 @@ public class PopupwindowFactory {
             }
             yYPopupWindow.setSoftInputMode(1);
             yYPopupWindow.setSoftInputMode(16);
-            yYPopupWindow.showAtLocation(((Activity) this.e).getWindow().getDecorView(), this.f17872a, 0, 0);
+            yYPopupWindow.showAtLocation(((Activity) this.e).getWindow().getDecorView(), this.a, 0, 0);
             return yYPopupWindow;
         }
     }

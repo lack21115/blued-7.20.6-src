@@ -68,7 +68,6 @@ public class LiverecommendListData implements MultiItemEntity {
         public static final int PK_DARED = 6;
     }
 
-    @Override // com.chad.library.adapter.base.entity.MultiItemEntity
     public int getItemType() {
         return this.type;
     }

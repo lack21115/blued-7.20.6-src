@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemVisitorChartMarkerBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ConstraintLayout f29369a;
+    private final ConstraintLayout f15679a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f29369a;
+        return this.f15679a;
     }
 }

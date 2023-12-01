@@ -257,15 +257,15 @@ public class AccessibilityNodeInfo implements Parcelable {
         }
 
         public static CollectionInfo obtain(int i, int i2, boolean z, int i3) {
-            CollectionInfo acquire = sPool.acquire();
-            if (acquire == null) {
+            CollectionInfo collectionInfo = (CollectionInfo) sPool.acquire();
+            if (collectionInfo == null) {
                 return new CollectionInfo(i, i2, z, i3);
             }
-            acquire.mRowCount = i;
-            acquire.mColumnCount = i2;
-            acquire.mHierarchical = z;
-            acquire.mSelectionMode = i3;
-            return acquire;
+            collectionInfo.mRowCount = i;
+            collectionInfo.mColumnCount = i2;
+            collectionInfo.mHierarchical = z;
+            collectionInfo.mSelectionMode = i3;
+            return collectionInfo;
         }
 
         public static CollectionInfo obtain(CollectionInfo collectionInfo) {
@@ -328,17 +328,17 @@ public class AccessibilityNodeInfo implements Parcelable {
         }
 
         public static CollectionItemInfo obtain(int i, int i2, int i3, int i4, boolean z, boolean z2) {
-            CollectionItemInfo acquire = sPool.acquire();
-            if (acquire == null) {
+            CollectionItemInfo collectionItemInfo = (CollectionItemInfo) sPool.acquire();
+            if (collectionItemInfo == null) {
                 return new CollectionItemInfo(i, i2, i3, i4, z, z2);
             }
-            acquire.mRowIndex = i;
-            acquire.mRowSpan = i2;
-            acquire.mColumnIndex = i3;
-            acquire.mColumnSpan = i4;
-            acquire.mHeading = z;
-            acquire.mSelected = z2;
-            return acquire;
+            collectionItemInfo.mRowIndex = i;
+            collectionItemInfo.mRowSpan = i2;
+            collectionItemInfo.mColumnIndex = i3;
+            collectionItemInfo.mColumnSpan = i4;
+            collectionItemInfo.mHeading = z;
+            collectionItemInfo.mSelected = z2;
+            return collectionItemInfo;
         }
 
         public static CollectionItemInfo obtain(CollectionItemInfo collectionItemInfo) {
@@ -402,8 +402,8 @@ public class AccessibilityNodeInfo implements Parcelable {
         }
 
         public static RangeInfo obtain(int i, float f, float f2, float f3) {
-            RangeInfo acquire = sPool.acquire();
-            return acquire != null ? acquire : new RangeInfo(i, f, f2, f3);
+            RangeInfo rangeInfo = (RangeInfo) sPool.acquire();
+            return rangeInfo != null ? rangeInfo : new RangeInfo(i, f, f2, f3);
         }
 
         public static RangeInfo obtain(RangeInfo rangeInfo) {
@@ -659,7 +659,7 @@ public class AccessibilityNodeInfo implements Parcelable {
         LongArray longArray = accessibilityNodeInfo.mChildNodeIds;
         if (longArray != null && longArray.size() > 0) {
             if (this.mChildNodeIds == null) {
-                this.mChildNodeIds = longArray.m1020clone();
+                this.mChildNodeIds = longArray.clone();
             } else {
                 this.mChildNodeIds.clear();
                 this.mChildNodeIds.addAll(longArray);
@@ -770,8 +770,8 @@ public class AccessibilityNodeInfo implements Parcelable {
     }
 
     public static AccessibilityNodeInfo obtain() {
-        AccessibilityNodeInfo acquire = sPool.acquire();
-        return acquire != null ? acquire : new AccessibilityNodeInfo();
+        AccessibilityNodeInfo accessibilityNodeInfo = (AccessibilityNodeInfo) sPool.acquire();
+        return accessibilityNodeInfo != null ? accessibilityNodeInfo : new AccessibilityNodeInfo();
     }
 
     public static AccessibilityNodeInfo obtain(View view) {

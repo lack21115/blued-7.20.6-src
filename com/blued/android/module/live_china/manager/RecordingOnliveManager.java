@@ -10,7 +10,9 @@ import android.util.Log;
 import android.view.TextureView;
 import android.view.View;
 import android.widget.FrameLayout;
+import com.android.org.conscrypt.NativeCrypto;
 import com.blued.android.chat.ChatManager;
+import com.blued.android.chat.core.pack.ReqAckPackage;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.AppMethods;
 import com.blued.android.framework.http.BluedHttpTools;
@@ -47,9 +49,9 @@ import com.blued.android.module.live_china.view.PopBeautyNewView;
 import com.blued.android.module.live_china.zegoVideoCapture.VideoFilterFactory;
 import com.blued.das.live.LiveProtos;
 import com.bytedance.applog.tracker.Tracker;
-import com.igexin.sdk.PushConsts;
 import com.zego.zegoavkit2.IZegoMediaPlayerWithIndexCallback;
 import com.zego.zegoavkit2.ZegoExternalVideoCapture;
+import com.zego.zegoavkit2.ZegoVideoCaptureFactory;
 import com.zego.zegoavkit2.audiodevice.ZegoExternalAudioDevice;
 import com.zego.zegoavkit2.mediarecorder.ZegoMediaRecorder;
 import com.zego.zegoavkit2.mixstream.ZegoMixStreamInfo;
@@ -79,9 +81,7 @@ import java.util.concurrent.Executors;
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/manager/RecordingOnliveManager.class */
 public class RecordingOnliveManager implements IHandActionListener {
     public static ZegoScreenCaptureFactory f;
-
-    /* renamed from: a  reason: collision with root package name */
-    public Context f13794a;
+    public Context a;
     public SenseTimeZegoFlashManger b;
     public boolean e;
     private RecordingOnliveFragment h;
@@ -92,9 +92,7 @@ public class RecordingOnliveManager implements IHandActionListener {
     private StartMixStream k = new StartMixStream();
     private volatile boolean l = true;
     private int m = 0;
-
-    /* renamed from: c  reason: collision with root package name */
-    public String f13795c = "";
+    public String c = "";
     private List<String> n = new ArrayList();
     private boolean o = false;
     private boolean p = false;
@@ -114,8 +112,8 @@ public class RecordingOnliveManager implements IHandActionListener {
             } else {
                 AppInfo.n().removeCallbacks(RecordingOnliveManager.this.k);
             }
-            LiveMsgSendManager a2 = LiveMsgSendManager.a();
-            a2.d("混流回调errorcode：" + i);
+            LiveMsgSendManager a = LiveMsgSendManager.a();
+            a.d("混流回调errorcode：" + i);
         }
 
         @Override // com.blued.android.module.live_china.common.ZegoMixStreamHelper.MixStreamCallback
@@ -144,8 +142,8 @@ public class RecordingOnliveManager implements IHandActionListener {
         @Override // java.lang.Runnable
         public void run() {
             if (RecordingOnliveManager.this.h.bb()) {
-                Log.i("==makelover==", "isLiveConnecting:" + RecordingOnliveManager.this.f13795c);
-                ZegoMixStreamHelper.a().a(RecordingOnliveManager.this.f13795c);
+                Log.i("==makelover==", "isLiveConnecting:" + RecordingOnliveManager.this.c);
+                ZegoMixStreamHelper.a().a(RecordingOnliveManager.this.c);
                 RecordingOnliveManager.this.B();
             }
         }
@@ -173,7 +171,7 @@ public class RecordingOnliveManager implements IHandActionListener {
     }
 
     public RecordingOnliveManager(RecordingOnliveFragment recordingOnliveFragment, boolean z) {
-        this.f13794a = recordingOnliveFragment.getContext();
+        this.a = recordingOnliveFragment.getContext();
         this.h = recordingOnliveFragment;
         FilterDataManager.getInstance().getFilters();
         E();
@@ -185,7 +183,6 @@ public class RecordingOnliveManager implements IHandActionListener {
 
     private void A() {
         ZegoCommonHelper.b().c().setZegoRoomCallback(new IZegoRoomCallback() { // from class: com.blued.android.module.live_china.manager.RecordingOnliveManager.4
-            @Override // com.zego.zegoliveroom.callback.IZegoRoomCallback
             public void onDisconnect(int i, String str) {
                 Log.v("==record", "onDisconnect");
                 if (RecordingOnliveManager.this.h.ba()) {
@@ -205,33 +202,26 @@ public class RecordingOnliveManager implements IHandActionListener {
                 }
             }
 
-            @Override // com.zego.zegoliveroom.callback.IZegoRoomCallback
             public void onKickOut(int i, String str, String str2) {
                 Log.v("==record", "onKickOut");
             }
 
-            @Override // com.zego.zegoliveroom.callback.IZegoRoomCallback
             public void onNetworkQuality(String str, int i, int i2) {
             }
 
-            @Override // com.zego.zegoliveroom.callback.IZegoRoomCallback
             public void onReconnect(int i, String str) {
                 Log.v("==record", "onReconnect");
             }
 
-            @Override // com.zego.zegoliveroom.callback.IZegoRoomCallback
             public void onRecvCustomCommand(String str, String str2, String str3, String str4) {
             }
 
-            @Override // com.zego.zegoliveroom.callback.IZegoRoomCallback
             public void onRoomInfoUpdated(ZegoRoomInfo zegoRoomInfo, String str) {
             }
 
-            @Override // com.zego.zegoliveroom.callback.IZegoRoomCallback
             public void onStreamExtraInfoUpdated(ZegoStreamInfo[] zegoStreamInfoArr, String str) {
             }
 
-            @Override // com.zego.zegoliveroom.callback.IZegoRoomCallback
             public void onStreamUpdated(int i, ZegoStreamInfo[] zegoStreamInfoArr, String str) {
                 int length = zegoStreamInfoArr.length;
                 int i2 = 0;
@@ -247,7 +237,7 @@ public class RecordingOnliveManager implements IHandActionListener {
                 if (i != 2002 || zegoStreamInfoArr == null || zegoStreamInfoArr.length <= 0 || zegoStreamInfoArr[0] == null) {
                     return;
                 }
-                if (TextUtils.equals(RecordingOnliveManager.this.h.ad != null ? String.valueOf(RecordingOnliveManager.this.h.ad.f13761a) : "", LiveRoomInfo.a().f())) {
+                if (TextUtils.equals(RecordingOnliveManager.this.h.ad != null ? String.valueOf(RecordingOnliveManager.this.h.ad.a) : "", LiveRoomInfo.a().f())) {
                     if (RecordingOnliveManager.this.h.r()) {
                         RecordingOnliveManager.this.h.bc();
                     } else if (RecordingOnliveManager.this.h.aS() || RecordingOnliveManager.this.h.aT()) {
@@ -264,18 +254,15 @@ public class RecordingOnliveManager implements IHandActionListener {
                 }
             }
 
-            @Override // com.zego.zegoliveroom.callback.IZegoRoomCallback
             public void onTempBroken(int i, String str) {
                 Log.v("==record", "onTempBroken");
             }
 
-            @Override // com.zego.zegoliveroom.callback.IZegoRoomCallback
             public void onTokenWillExpired(String str, int i) {
             }
         });
         ZegoMixStreamHelper.a().a(this.y);
         ZegoCommonHelper.b().c().setZegoLiveEventCallback(new IZegoLiveEventCallback() { // from class: com.blued.android.module.live_china.manager.RecordingOnliveManager.5
-            @Override // com.zego.zegoliveroom.callback.IZegoLiveEventCallback
             public void onLiveEvent(int i, HashMap<String, String> hashMap) {
                 Log.v("==record", "onLiveEvent:" + i);
                 if (i == 3) {
@@ -288,38 +275,31 @@ public class RecordingOnliveManager implements IHandActionListener {
                 }
             }
 
-            @Override // com.zego.zegoliveroom.callback.IZegoLiveEventCallback
             public void onStreamEvent(int i, String str, HashMap<String, String> hashMap) {
             }
         });
         ZegoCommonHelper.b().c().setZegoLivePublisherCallback(new IZegoLivePublisherCallback() { // from class: com.blued.android.module.live_china.manager.RecordingOnliveManager.6
-            @Override // com.zego.zegoliveroom.callback.IZegoLivePublisherCallback
             public void onCaptureAudioFirstFrame() {
                 Log.v("==record", "onCaptureAudioFirstFrame");
             }
 
-            @Override // com.zego.zegoliveroom.callback.IZegoLivePublisherCallback
             public void onCaptureVideoFirstFrame() {
                 Log.v("==record", "onCaptureVideoFirstFrame");
             }
 
-            @Override // com.zego.zegoliveroom.callback.IZegoLivePublisherCallback
             public void onCaptureVideoSizeChangedTo(int i, int i2) {
             }
 
-            @Override // com.zego.zegoliveroom.callback.IZegoLivePublisherCallback
             public void onJoinLiveRequest(int i, String str, String str2, String str3) {
                 Log.v("==record", "onJoinLiveRequest i:" + i + " -- s:" + str + " -- s1:" + str2 + " -- s2:" + str3);
             }
 
-            @Override // com.zego.zegoliveroom.callback.IZegoLivePublisherCallback
             public void onPublishQualityUpdate(String str, ZegoPublishStreamQuality zegoPublishStreamQuality) {
                 if (zegoPublishStreamQuality != null) {
                     Log.i("record", "onPublishQualityUpdate:" + zegoPublishStreamQuality.width + " : " + zegoPublishStreamQuality.height + " : " + zegoPublishStreamQuality.vkbps + "  : " + zegoPublishStreamQuality.vcapFps);
                 }
             }
 
-            @Override // com.zego.zegoliveroom.callback.IZegoLivePublisherCallback
             public void onPublishStateUpdate(int i, String str, HashMap<String, Object> hashMap) {
                 if (i != 0) {
                     AppMethods.a((CharSequence) ("推流失败，err:" + i));
@@ -327,17 +307,14 @@ public class RecordingOnliveManager implements IHandActionListener {
             }
         });
         ZegoCommonHelper.b().c().setZegoLivePlayerCallback(new IZegoLivePlayerCallback() { // from class: com.blued.android.module.live_china.manager.RecordingOnliveManager.7
-            @Override // com.zego.zegoliveroom.callback.IZegoLivePlayerCallback
             public void onInviteJoinLiveRequest(int i, String str, String str2, String str3) {
                 Log.v("==record", "onInviteJoinLiveRequest i:" + i + " -- s:" + str + " -- s1:" + str2 + " -- s2:" + str3);
             }
 
-            @Override // com.zego.zegoliveroom.callback.IZegoLivePlayerCallback
             public void onPlayQualityUpdate(String str, ZegoPlayStreamQuality zegoPlayStreamQuality) {
                 Log.v("==record", "onPlayQualityUpdate s:" + str);
             }
 
-            @Override // com.zego.zegoliveroom.callback.IZegoLivePlayerCallback
             public void onPlayStateUpdate(int i, String str) {
                 if (i != 0) {
                     AppMethods.a((CharSequence) ("拉流失败，err:" + i));
@@ -347,7 +324,7 @@ public class RecordingOnliveManager implements IHandActionListener {
                 Log.v("==record", "拉流成功：" + str);
                 if (RecordingOnliveManager.this.h.r() || RecordingOnliveManager.this.h.aR() || RecordingOnliveManager.this.h.aS() || RecordingOnliveManager.this.h.aT()) {
                     RecordingOnliveManager.this.h.aI();
-                    String valueOf = RecordingOnliveManager.this.h.ad != null ? String.valueOf(RecordingOnliveManager.this.h.ad.f13761a) : "";
+                    String valueOf = RecordingOnliveManager.this.h.ad != null ? String.valueOf(RecordingOnliveManager.this.h.ad.a) : "";
                     Log.i("==xpm", "uid:" + valueOf);
                     if (RecordingOnliveManager.this.h.aR() || RecordingOnliveManager.this.h.r()) {
                         LiveMsgSendManager.a().d("对方窗口已准备好");
@@ -367,82 +344,65 @@ public class RecordingOnliveManager implements IHandActionListener {
                 }
             }
 
-            @Override // com.zego.zegoliveroom.callback.IZegoLivePlayerCallback
             public void onRecvEndJoinLiveCommand(String str, String str2, String str3) {
                 Log.v("==record", "onRecvEndJoinLiveCommand s:" + str + " -- s1:" + str2 + " -- s2:" + str3);
             }
 
-            @Override // com.zego.zegoliveroom.callback.IZegoLivePlayerCallback
             public void onVideoSizeChangedTo(String str, int i, int i2) {
             }
         });
         ZegoCommonHelper.b().e().setEventWithIndexCallback(new IZegoMediaPlayerWithIndexCallback() { // from class: com.blued.android.module.live_china.manager.RecordingOnliveManager.8
-            @Override // com.zego.zegoavkit2.IZegoMediaPlayerWithIndexCallback
             public void onAudioBegin(int i) {
                 Log.i("==record", "onAudioBegin");
             }
 
-            @Override // com.zego.zegoavkit2.IZegoMediaPlayerWithIndexCallback
             public void onBufferBegin(int i) {
             }
 
-            @Override // com.zego.zegoavkit2.IZegoMediaPlayerWithIndexCallback
             public void onBufferEnd(int i) {
             }
 
-            @Override // com.zego.zegoavkit2.IZegoMediaPlayerWithIndexCallback
             public void onLoadComplete(int i) {
                 Log.i("==record", "onLoadComplete");
             }
 
-            @Override // com.zego.zegoavkit2.IZegoMediaPlayerWithIndexCallback
             public void onPlayEnd(int i) {
             }
 
-            @Override // com.zego.zegoavkit2.IZegoMediaPlayerWithIndexCallback
             public void onPlayError(int i, int i2) {
                 Log.i("==record", "onPlayError");
             }
 
-            @Override // com.zego.zegoavkit2.IZegoMediaPlayerWithIndexCallback
             public void onPlayPause(int i) {
                 Log.i("==record", "onPlayPause");
             }
 
-            @Override // com.zego.zegoavkit2.IZegoMediaPlayerWithIndexCallback
             public void onPlayResume(int i) {
                 Log.i("==record", "onPlayResume");
             }
 
-            @Override // com.zego.zegoavkit2.IZegoMediaPlayerWithIndexCallback
             public void onPlayStart(int i) {
             }
 
-            @Override // com.zego.zegoavkit2.IZegoMediaPlayerWithIndexCallback
             public void onPlayStop(int i) {
                 Log.i("==record", "onPlayStop");
             }
 
-            @Override // com.zego.zegoavkit2.IZegoMediaPlayerWithIndexCallback
             public void onProcessInterval(long j, int i) {
             }
 
-            @Override // com.zego.zegoavkit2.IZegoMediaPlayerWithIndexCallback
             public void onReadEOF(int i) {
                 Log.i("==record", "onReadEOF");
             }
 
-            @Override // com.zego.zegoavkit2.IZegoMediaPlayerWithIndexCallback
             public void onSeekComplete(int i, long j, int i2) {
                 Log.i("==record", "onSeekComplete");
             }
 
-            @Override // com.zego.zegoavkit2.IZegoMediaPlayerWithIndexCallback
             public void onSnapshot(Bitmap bitmap, int i) {
                 Log.i("==record", "onSnapshot");
             }
 
-            @Override // com.zego.zegoavkit2.IZegoMediaPlayerWithIndexCallback
             public void onVideoBegin(int i) {
                 Log.i("==record", "onVideoBegin");
             }
@@ -457,15 +417,14 @@ public class RecordingOnliveManager implements IHandActionListener {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void C() {
-        f = new ZegoScreenCaptureFactory(this.f13794a);
+        f = new ZegoScreenCaptureFactory(this.a);
         new ZegoExternalVideoCapture();
         ZegoExternalVideoCapture.setVideoCaptureFactory(f, 1);
     }
 
     private void D() {
         ZegoCommonHelper.b().d();
-        ZegoCommonHelper.b().a(846434966L, GetAppIDConfig.f11724a, !LiveRoomInfo.a().j(), 0, new IZegoInitSDKCompletionCallback() { // from class: com.blued.android.module.live_china.manager.RecordingOnliveManager.10
-            @Override // com.zego.zegoliveroom.callback.IZegoInitSDKCompletionCallback
+        ZegoCommonHelper.b().a(846434966L, GetAppIDConfig.a, !LiveRoomInfo.a().j(), 0, new IZegoInitSDKCompletionCallback() { // from class: com.blued.android.module.live_china.manager.RecordingOnliveManager.10
             public void onInitSDK(int i) {
                 if (i != 0) {
                     AppMethods.a((CharSequence) ("zego SDK 初始化失败" + i));
@@ -501,7 +460,7 @@ public class RecordingOnliveManager implements IHandActionListener {
             this.b.setHandler(this.z);
             this.b.enableBeautify(true);
             this.b.setCameraFacing(this.l);
-            a(this.f13794a, this.b);
+            a(this.a, this.b);
         } catch (Exception e) {
             Logger.a("rrrb", "initKiwi ", e.toString());
             m();
@@ -664,7 +623,7 @@ public class RecordingOnliveManager implements IHandActionListener {
             if (!this.h.x) {
                 Log.i("==record", "makefriends");
                 int i3 = ZegoCommonHelper.b().h / 2;
-                int i4 = (int) (i3 * RecordingMakeFriendManager.f13753c);
+                int i4 = (int) (i3 * RecordingMakeFriendManager.c);
                 zegoMixStreamInfo.left = 0;
                 zegoMixStreamInfo.top = (ZegoCommonHelper.b().i - (i4 * 2)) / 2;
                 zegoMixStreamInfo.right = i3;
@@ -697,13 +656,13 @@ public class RecordingOnliveManager implements IHandActionListener {
     }
 
     public void a() {
-        if (TextUtils.isEmpty(this.f13795c)) {
+        if (TextUtils.isEmpty(this.c)) {
             Log.i("==record", "mStreamID is empty");
         } else if (this.p) {
         } else {
             this.p = true;
             Log.i("==record", "startPublish");
-            ZegoCommonHelper.b().c().startPublishing(this.f13795c, "", 0);
+            ZegoCommonHelper.b().c().startPublishing(this.c, "", 0);
         }
     }
 
@@ -749,8 +708,8 @@ public class RecordingOnliveManager implements IHandActionListener {
         Log.i("==record", "startConferenceInternal mode:" + i);
         Log.i("==record", "startConferenceInternal playId:" + str);
         Log.i("==record", "startConferenceInternal loginRoomSuccess:" + this.q);
-        LiveMsgSendManager a2 = LiveMsgSendManager.a();
-        a2.d("我的拉流id:" + str);
+        LiveMsgSendManager a = LiveMsgSendManager.a();
+        a.d("我的拉流id:" + str);
         if (i == 0) {
             j();
         }
@@ -760,7 +719,7 @@ public class RecordingOnliveManager implements IHandActionListener {
         if (i == 3 || i == 4 || i == 5) {
             Log.v("==record", "startConferenceInternal playId ignore");
         } else {
-            a(this.f13795c, str, 1);
+            a(this.c, str, 1);
         }
     }
 
@@ -772,7 +731,7 @@ public class RecordingOnliveManager implements IHandActionListener {
     public void a(Context context, ISenseTimeProcessor iSenseTimeProcessor) {
         try {
             VideoFilterFactory videoFilterFactory = new VideoFilterFactory(VideoFilterFactory.FilterType.FilterType_SurfaceTexture, this.b);
-            videoFilterFactory.a(this.f13794a);
+            videoFilterFactory.a(this.a);
             ZegoExternalVideoFilter.setVideoFilterFactory(videoFilterFactory, 0);
         } catch (Exception e) {
             e.printStackTrace();
@@ -822,13 +781,13 @@ public class RecordingOnliveManager implements IHandActionListener {
 
     public void a(String str, String str2, int i) {
         Log.i("==record", "startZegoPlay:" + str + "  :" + str2 + "  :" + i);
-        LiveMsgSendManager a2 = LiveMsgSendManager.a();
+        LiveMsgSendManager a = LiveMsgSendManager.a();
         StringBuilder sb = new StringBuilder();
         sb.append("拉流index：");
         sb.append(i);
         sb.append(" -- playId：");
         sb.append(str2);
-        a2.d(sb.toString());
+        a.d(sb.toString());
         this.n.add(str2);
         if (TextUtils.isEmpty(str2)) {
             return;
@@ -874,7 +833,7 @@ public class RecordingOnliveManager implements IHandActionListener {
         }
         Log.v("==record", "conference_id:" + LiveRoomManager.a().p().conference_id);
         Log.v("==record", "streamId:" + str);
-        this.f13795c = str;
+        this.c = str;
         if (this.h.x) {
             this.h.getActivity().setRequestedOrientation(0);
             a(1);
@@ -889,7 +848,6 @@ public class RecordingOnliveManager implements IHandActionListener {
             }
         }
         ZegoCommonHelper.b().c().loginRoom(LiveRoomManager.a().p().conference_id, 1, new IZegoLoginCompletionCallback() { // from class: com.blued.android.module.live_china.manager.RecordingOnliveManager.1
-            @Override // com.zego.zegoliveroom.callback.IZegoLoginCompletionCallback
             public void onLoginCompletion(int i, ZegoStreamInfo[] zegoStreamInfoArr) {
                 if (i != 0) {
                     RecordingOnliveManager.this.q = false;
@@ -897,7 +855,7 @@ public class RecordingOnliveManager implements IHandActionListener {
                     return;
                 }
                 RecordingOnliveManager.this.q = true;
-                if (TextUtils.isEmpty(RecordingOnliveManager.this.f13795c)) {
+                if (TextUtils.isEmpty(RecordingOnliveManager.this.c)) {
                     return;
                 }
                 ZegoCommonHelper.b().c().enableMicDevice(true);
@@ -927,12 +885,11 @@ public class RecordingOnliveManager implements IHandActionListener {
         this.m++;
         this.r = (LiveRoomManager.a().p().publish_url + "&serialnum=") + String.valueOf(this.m);
         Log.v("==record", "startSingleStream:" + this.r);
-        ZegoCommonHelper.b().c().addPublishTarget(this.r, this.f13795c, new IZegoUpdatePublishTargetCallback() { // from class: com.blued.android.module.live_china.manager.RecordingOnliveManager.2
-            @Override // com.zego.zegoliveroom.callback.IZegoUpdatePublishTargetCallback
+        ZegoCommonHelper.b().c().addPublishTarget(this.r, this.c, new IZegoUpdatePublishTargetCallback() { // from class: com.blued.android.module.live_china.manager.RecordingOnliveManager.2
             public void onUpdatePublishTargetState(int i, String str) {
                 Log.v("==record", "addPublishTarget:" + i);
                 if (z) {
-                    ZegoMixStreamHelper.a().c(RecordingOnliveManager.this.f13795c);
+                    ZegoMixStreamHelper.a().c(RecordingOnliveManager.this.c);
                 } else {
                     ZegoMixStreamHelper.a().b();
                 }
@@ -957,13 +914,13 @@ public class RecordingOnliveManager implements IHandActionListener {
 
     public void b(long j) {
         LiveRoomManager.a().p();
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("loading_time", String.valueOf(j));
-        a2.put("session_id", String.valueOf(this.h.t));
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("loading_time", String.valueOf(j));
+        a.put(ReqAckPackage.REQ_RESPONSE_KEY.SESSION_ID, String.valueOf(this.h.t));
         InstantLogBody instantLogBody = new InstantLogBody();
         instantLogBody.service = "live_loading";
-        instantLogBody.event = PushConsts.SETTAG_ERROR_COUNT;
-        InstantLog.a(instantLogBody, a2);
+        instantLogBody.event = 20001;
+        InstantLog.a(instantLogBody, a);
     }
 
     public void b(String str) {
@@ -972,13 +929,13 @@ public class RecordingOnliveManager implements IHandActionListener {
 
     public void b(String str, String str2, int i) {
         Log.i("==record", "startZegoPlayForMakeLover:" + str + "  :" + str2 + "  :" + i);
-        LiveMsgSendManager a2 = LiveMsgSendManager.a();
+        LiveMsgSendManager a = LiveMsgSendManager.a();
         StringBuilder sb = new StringBuilder();
         sb.append("拉流index：");
         sb.append(i);
         sb.append(" -- playId：");
         sb.append(str2);
-        a2.d(sb.toString());
+        a.d(sb.toString());
         this.n.add(str2);
         if (TextUtils.isEmpty(str2)) {
             return;
@@ -1090,7 +1047,7 @@ public class RecordingOnliveManager implements IHandActionListener {
         } else if (this.h.aU()) {
             if (!this.h.x) {
                 int i6 = ZegoCommonHelper.b().h / 2;
-                int i7 = (int) (i6 * RecordingMakeFriendManager.f13753c);
+                int i7 = (int) (i6 * RecordingMakeFriendManager.c);
                 if (i == 1) {
                     zegoMixStreamInfo.left = i6;
                     int i8 = i7 * 2;
@@ -1161,7 +1118,7 @@ public class RecordingOnliveManager implements IHandActionListener {
         if (this.h.getContext() == null) {
             return;
         }
-        ZegoCommonHelper.b().c().setPreviewView(null);
+        ZegoCommonHelper.b().c().setPreviewView((Object) null);
         this.h.N = new TextureView(this.h.getContext());
         FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-1, -1);
         layoutParams.gravity = 17;
@@ -1176,8 +1133,7 @@ public class RecordingOnliveManager implements IHandActionListener {
             return;
         }
         z();
-        ZegoCommonHelper.b().c().deletePublishTarget(this.r, this.f13795c, new IZegoUpdatePublishTargetCallback() { // from class: com.blued.android.module.live_china.manager.RecordingOnliveManager.3
-            @Override // com.zego.zegoliveroom.callback.IZegoUpdatePublishTargetCallback
+        ZegoCommonHelper.b().c().deletePublishTarget(this.r, this.c, new IZegoUpdatePublishTargetCallback() { // from class: com.blued.android.module.live_china.manager.RecordingOnliveManager.3
             public void onUpdatePublishTargetState(int i, String str) {
                 Log.v("==record", "stopSingleStream:" + i);
             }
@@ -1189,7 +1145,7 @@ public class RecordingOnliveManager implements IHandActionListener {
         this.d = true;
         this.m++;
         ZegoMixStreamHelper.a().b((LiveRoomManager.a().p().publish_url + "&serialnum=") + String.valueOf(this.m));
-        return a(this.f13795c);
+        return a(this.c);
     }
 
     public void g() {
@@ -1274,7 +1230,7 @@ public class RecordingOnliveManager implements IHandActionListener {
                 AppMethods.a((CharSequence) "检测到单枪手势");
             } else if (j == 2048) {
                 AppMethods.a((CharSequence) "检测到大拇哥手势");
-            } else if (j == 16384) {
+            } else if (j == NativeCrypto.SSL_OP_NO_TICKET) {
                 AppMethods.a((CharSequence) "检测到爱心手势");
             }
         }
@@ -1323,10 +1279,10 @@ public class RecordingOnliveManager implements IHandActionListener {
         b();
         ZegoCommonHelper.b().l();
         if (this.d) {
-            ZegoMixStreamHelper.a().c(this.f13795c);
+            ZegoMixStreamHelper.a().c(this.c);
         }
         ZegoMixStreamHelper.a().c();
-        ZegoExternalVideoCapture.setVideoCaptureFactory(null, 0);
+        ZegoExternalVideoCapture.setVideoCaptureFactory((ZegoVideoCaptureFactory) null, 0);
         ZegoCommonHelper.b().i();
         this.q = false;
     }

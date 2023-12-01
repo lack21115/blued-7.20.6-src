@@ -26,7 +26,7 @@ public final class RpcUtil {
             public void run(Message message) {
                 Message copyAsType;
                 try {
-                    copyAsType = (Message) Class.this.cast(message);
+                    copyAsType = (Message) cls.cast(message);
                 } catch (ClassCastException e) {
                     copyAsType = RpcUtil.copyAsType(type, message);
                 }

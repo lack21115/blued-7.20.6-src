@@ -28,7 +28,7 @@ public class CompressorStreamLz4 extends CompressorStream {
         }
         this.f += i2;
         while (i2 > 0) {
-            if (this.m != 0 || (i2 < 16000 && this.f != this.f3674c)) {
+            if (this.m != 0 || (i2 < 16000 && this.f != this.f3626c)) {
                 if (this.k == null) {
                     this.k = new byte[this.l];
                 }
@@ -36,7 +36,7 @@ public class CompressorStreamLz4 extends CompressorStream {
                 int i4 = this.l;
                 int i5 = i3 + i2 <= i4 ? i2 : i4 - i3;
                 if (i5 > 0) {
-                    System.arraycopy((Object) bArr, i, (Object) this.k, this.m, i5);
+                    System.arraycopy(bArr, i, this.k, this.m, i5);
                 }
                 int i6 = this.m + i5;
                 this.m = i6;

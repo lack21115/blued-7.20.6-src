@@ -23,7 +23,7 @@ public class b extends SQLiteOpenHelper {
     }
 
     public static String a(Context context) {
-        return h.b(context) + a.f40802a;
+        return h.b(context) + a.f27111a;
     }
 
     private void a(SQLiteDatabase sQLiteDatabase) {
@@ -38,7 +38,7 @@ public class b extends SQLiteOpenHelper {
         if (TextUtils.isEmpty(str)) {
             str2 = a.h;
         }
-        String str3 = h.b(context) + a.f40802a;
+        String str3 = h.b(context) + a.f27111a;
         if (a.h.equals(str2)) {
             str3 = h.b(context);
         }

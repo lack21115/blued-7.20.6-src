@@ -10,11 +10,11 @@ import java.util.List;
 public final class d {
 
     /* renamed from: a  reason: collision with root package name */
-    public final List<byte[]> f7699a;
+    public final List<byte[]> f4860a;
     public final int b;
 
     private d(List<byte[]> list, int i) {
-        this.f7699a = list;
+        this.f4860a = list;
         this.b = i;
     }
 
@@ -50,9 +50,9 @@ public final class d {
                     int i8 = i7;
                     if (i8 < e3) {
                         int e4 = sVar.e();
-                        System.arraycopy((Object) p.f7664a, 0, (Object) bArr, i5, p.f7664a.length);
-                        int length = i5 + p.f7664a.length;
-                        System.arraycopy((Object) sVar.f7674a, sVar.c(), (Object) bArr, length, e4);
+                        System.arraycopy(p.f4825a, 0, bArr, i5, p.f4825a.length);
+                        int length = i5 + p.f4825a.length;
+                        System.arraycopy(sVar.f4835a, sVar.c(), bArr, length, e4);
                         i5 = length + e4;
                         sVar.d(e4);
                         i7 = i8 + 1;

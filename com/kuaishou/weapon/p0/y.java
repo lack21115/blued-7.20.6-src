@@ -12,11 +12,11 @@ public class y implements Serializable {
     private String F;
 
     /* renamed from: a  reason: collision with root package name */
-    private String f23873a;
+    private String f10265a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private h f23874c;
+    private h f10266c;
     private String d;
     private String e;
     private String f;
@@ -45,20 +45,20 @@ public class y implements Serializable {
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private int f23875a;
+        private int f10267a;
         private int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f23876c;
+        private int f10268c;
         private int d;
         private int e;
 
         public int a() {
-            return this.f23875a;
+            return this.f10267a;
         }
 
         public void a(int i) {
-            this.f23875a = i;
+            this.f10267a = i;
         }
 
         public int b() {
@@ -70,11 +70,11 @@ public class y implements Serializable {
         }
 
         public int c() {
-            return this.f23876c;
+            return this.f10268c;
         }
 
         public void c(int i) {
-            this.f23876c = i;
+            this.f10268c = i;
         }
 
         public int d() {
@@ -98,18 +98,18 @@ public class y implements Serializable {
     public static class b {
 
         /* renamed from: a  reason: collision with root package name */
-        private int f23877a;
+        private int f10269a;
         private int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f23878c;
+        private int f10270c;
 
         public int a() {
-            return this.f23877a;
+            return this.f10269a;
         }
 
         public void a(int i) {
-            this.f23877a = i;
+            this.f10269a = i;
         }
 
         public int b() {
@@ -121,11 +121,11 @@ public class y implements Serializable {
         }
 
         public int c() {
-            return this.f23878c;
+            return this.f10270c;
         }
 
         public void c(int i) {
-            this.f23878c = i;
+            this.f10270c = i;
         }
     }
 
@@ -133,11 +133,11 @@ public class y implements Serializable {
     public static class c {
 
         /* renamed from: a  reason: collision with root package name */
-        private int f23879a;
+        private int f10271a;
         private int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f23880c;
+        private int f10272c;
         private a d;
         private b e;
 
@@ -145,11 +145,11 @@ public class y implements Serializable {
         public static class a {
 
             /* renamed from: a  reason: collision with root package name */
-            private int f23881a;
+            private int f10273a;
             private int b;
 
             /* renamed from: c  reason: collision with root package name */
-            private int f23882c;
+            private int f10274c;
             private int d;
             private int e;
             private int f;
@@ -167,11 +167,11 @@ public class y implements Serializable {
             private int r;
 
             public int a() {
-                return this.f23881a;
+                return this.f10273a;
             }
 
             public void a(int i) {
-                this.f23881a = i;
+                this.f10273a = i;
             }
 
             public int b() {
@@ -183,11 +183,11 @@ public class y implements Serializable {
             }
 
             public int c() {
-                return this.f23882c;
+                return this.f10274c;
             }
 
             public void c(int i) {
-                this.f23882c = i;
+                this.f10274c = i;
             }
 
             public int d() {
@@ -315,11 +315,11 @@ public class y implements Serializable {
         public static class b {
 
             /* renamed from: a  reason: collision with root package name */
-            private int f23883a;
+            private int f10275a;
             private int b;
 
             /* renamed from: c  reason: collision with root package name */
-            private int f23884c;
+            private int f10276c;
             private int d;
             private int e;
             private int f;
@@ -328,11 +328,11 @@ public class y implements Serializable {
             private int i;
 
             public int a() {
-                return this.f23883a;
+                return this.f10275a;
             }
 
             public void a(int i) {
-                this.f23883a = i;
+                this.f10275a = i;
             }
 
             public int b() {
@@ -344,11 +344,11 @@ public class y implements Serializable {
             }
 
             public int c() {
-                return this.f23884c;
+                return this.f10276c;
             }
 
             public void c(int i) {
-                this.f23884c = i;
+                this.f10276c = i;
             }
 
             public int d() {
@@ -401,11 +401,11 @@ public class y implements Serializable {
         }
 
         public int a() {
-            return this.f23879a;
+            return this.f10271a;
         }
 
         public void a(int i) {
-            this.f23879a = i;
+            this.f10271a = i;
         }
 
         public void a(a aVar) {
@@ -425,11 +425,11 @@ public class y implements Serializable {
         }
 
         public int c() {
-            return this.f23880c;
+            return this.f10272c;
         }
 
         public void c(int i) {
-            this.f23880c = i;
+            this.f10272c = i;
         }
 
         public a d() {
@@ -445,11 +445,11 @@ public class y implements Serializable {
     public static class d {
 
         /* renamed from: a  reason: collision with root package name */
-        private int f23885a;
+        private int f10277a;
         private int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f23886c;
+        private int f10278c;
         private a d;
         private int e;
 
@@ -457,11 +457,11 @@ public class y implements Serializable {
         public static class a {
 
             /* renamed from: a  reason: collision with root package name */
-            private int f23887a;
+            private int f10279a;
             private int b;
 
             /* renamed from: c  reason: collision with root package name */
-            private int f23888c;
+            private int f10280c;
             private int d;
             private int e;
             private int f;
@@ -469,11 +469,11 @@ public class y implements Serializable {
             private int h;
 
             public int a() {
-                return this.f23887a;
+                return this.f10279a;
             }
 
             public void a(int i) {
-                this.f23887a = i;
+                this.f10279a = i;
             }
 
             public int b() {
@@ -485,11 +485,11 @@ public class y implements Serializable {
             }
 
             public int c() {
-                return this.f23888c;
+                return this.f10280c;
             }
 
             public void c(int i) {
-                this.f23888c = i;
+                this.f10280c = i;
             }
 
             public int d() {
@@ -534,11 +534,11 @@ public class y implements Serializable {
         }
 
         public int a() {
-            return this.f23885a;
+            return this.f10277a;
         }
 
         public void a(int i) {
-            this.f23885a = i;
+            this.f10277a = i;
         }
 
         public void a(a aVar) {
@@ -554,11 +554,11 @@ public class y implements Serializable {
         }
 
         public int c() {
-            return this.f23886c;
+            return this.f10278c;
         }
 
         public void c(int i) {
-            this.f23886c = i;
+            this.f10278c = i;
         }
 
         public a d() {
@@ -578,21 +578,21 @@ public class y implements Serializable {
     public static class e {
 
         /* renamed from: a  reason: collision with root package name */
-        private int f23889a;
+        private int f10281a;
         private int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f23890c;
+        private int f10282c;
         private int d;
         private int e;
         private String f;
 
         public int a() {
-            return this.f23889a;
+            return this.f10281a;
         }
 
         public void a(int i) {
-            this.f23889a = i;
+            this.f10281a = i;
         }
 
         public void a(String str) {
@@ -608,11 +608,11 @@ public class y implements Serializable {
         }
 
         public int c() {
-            return this.f23890c;
+            return this.f10282c;
         }
 
         public void c(int i) {
-            this.f23890c = i;
+            this.f10282c = i;
         }
 
         public int d() {
@@ -640,22 +640,22 @@ public class y implements Serializable {
     public static class f {
 
         /* renamed from: a  reason: collision with root package name */
-        private int f23891a;
+        private int f10283a;
         private int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private a f23892c;
+        private a f10284c;
         private int d;
 
         /* loaded from: source-7994992-dex2jar.jar:com/kuaishou/weapon/p0/y$f$a.class */
         public static class a {
 
             /* renamed from: a  reason: collision with root package name */
-            private int f23893a;
+            private int f10285a;
             private int b;
 
             /* renamed from: c  reason: collision with root package name */
-            private int f23894c;
+            private int f10286c;
             private int d;
             private int e;
 
@@ -668,11 +668,11 @@ public class y implements Serializable {
             }
 
             public int b() {
-                return this.f23894c;
+                return this.f10286c;
             }
 
             public void b(int i) {
-                this.f23894c = i;
+                this.f10286c = i;
             }
 
             public int c() {
@@ -684,11 +684,11 @@ public class y implements Serializable {
             }
 
             public int d() {
-                return this.f23893a;
+                return this.f10285a;
             }
 
             public void d(int i) {
-                this.f23893a = i;
+                this.f10285a = i;
             }
 
             public int e() {
@@ -701,15 +701,15 @@ public class y implements Serializable {
         }
 
         public int a() {
-            return this.f23891a;
+            return this.f10283a;
         }
 
         public void a(int i) {
-            this.f23891a = i;
+            this.f10283a = i;
         }
 
         public void a(a aVar) {
-            this.f23892c = aVar;
+            this.f10284c = aVar;
         }
 
         public int b() {
@@ -721,7 +721,7 @@ public class y implements Serializable {
         }
 
         public a c() {
-            return this.f23892c;
+            return this.f10284c;
         }
 
         public void c(int i) {
@@ -737,11 +737,11 @@ public class y implements Serializable {
     public static class g {
 
         /* renamed from: a  reason: collision with root package name */
-        private int f23895a;
+        private int f10287a;
         private int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f23896c;
+        private int f10288c;
         private int d;
         private a e;
         private int f;
@@ -750,11 +750,11 @@ public class y implements Serializable {
         public static class a {
 
             /* renamed from: a  reason: collision with root package name */
-            private int f23897a;
+            private int f10289a;
             private int b;
 
             /* renamed from: c  reason: collision with root package name */
-            private int f23898c;
+            private int f10290c;
             private int d;
             private int e;
             private int f;
@@ -768,11 +768,11 @@ public class y implements Serializable {
             private int n;
 
             public int a() {
-                return this.f23897a;
+                return this.f10289a;
             }
 
             public void a(int i) {
-                this.f23897a = i;
+                this.f10289a = i;
             }
 
             public int b() {
@@ -784,11 +784,11 @@ public class y implements Serializable {
             }
 
             public int c() {
-                return this.f23898c;
+                return this.f10290c;
             }
 
             public void c(int i) {
-                this.f23898c = i;
+                this.f10290c = i;
             }
 
             public int d() {
@@ -881,11 +881,11 @@ public class y implements Serializable {
         }
 
         public int a() {
-            return this.f23895a;
+            return this.f10287a;
         }
 
         public void a(int i) {
-            this.f23895a = i;
+            this.f10287a = i;
         }
 
         public void a(a aVar) {
@@ -901,11 +901,11 @@ public class y implements Serializable {
         }
 
         public int c() {
-            return this.f23896c;
+            return this.f10288c;
         }
 
         public void c(int i) {
-            this.f23896c = i;
+            this.f10288c = i;
         }
 
         public int d() {
@@ -933,19 +933,19 @@ public class y implements Serializable {
     public static class h {
 
         /* renamed from: a  reason: collision with root package name */
-        private int f23899a;
+        private int f10291a;
         private int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f23900c;
+        private int f10292c;
         private int d;
 
         public int a() {
-            return this.f23899a;
+            return this.f10291a;
         }
 
         public void a(int i) {
-            this.f23899a = i;
+            this.f10291a = i;
         }
 
         public int b() {
@@ -957,11 +957,11 @@ public class y implements Serializable {
         }
 
         public int c() {
-            return this.f23900c;
+            return this.f10292c;
         }
 
         public void c(int i) {
-            this.f23900c = i;
+            this.f10292c = i;
         }
 
         public int d() {
@@ -986,7 +986,7 @@ public class y implements Serializable {
     }
 
     public String a() {
-        return this.f23873a;
+        return this.f10265a;
     }
 
     public void a(int i) {
@@ -1022,11 +1022,11 @@ public class y implements Serializable {
     }
 
     public void a(h hVar) {
-        this.f23874c = hVar;
+        this.f10266c = hVar;
     }
 
     public void a(String str) {
-        this.f23873a = str;
+        this.f10265a = str;
     }
 
     public String b() {
@@ -1042,7 +1042,7 @@ public class y implements Serializable {
     }
 
     public h c() {
-        return this.f23874c;
+        return this.f10266c;
     }
 
     public void c(int i) {

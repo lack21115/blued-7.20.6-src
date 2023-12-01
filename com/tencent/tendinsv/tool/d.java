@@ -6,11 +6,11 @@ import android.content.Context;
 public final class d {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f39049a = "";
+    public static final String f25358a = "";
     private static volatile d b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static volatile String f39050c;
+    private static volatile String f25359c;
     private static volatile String d;
     private static volatile String e;
 
@@ -34,23 +34,23 @@ public final class d {
 
     public String a(Context context) {
         if (com.tencent.tendinsv.utils.g.a(context, "operator_sub")) {
-            f39050c = com.tencent.tendinsv.utils.g.c(context);
-        } else if (f39050c == null) {
+            f25359c = com.tencent.tendinsv.utils.g.c(context);
+        } else if (f25359c == null) {
             synchronized (d.class) {
                 try {
-                    if (f39050c == null) {
-                        f39050c = com.tencent.tendinsv.utils.g.c(context);
+                    if (f25359c == null) {
+                        f25359c = com.tencent.tendinsv.utils.g.c(context);
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        if (f39050c == null) {
-            f39050c = "Unknown_Operator";
+        if (f25359c == null) {
+            f25359c = "Unknown_Operator";
         }
-        com.tencent.tendinsv.utils.l.b(com.tencent.tendinsv.b.O, "current Operator Type", f39050c);
-        return f39050c;
+        com.tencent.tendinsv.utils.l.b(com.tencent.tendinsv.b.O, "current Operator Type", f25359c);
+        return f25359c;
     }
 
     public String b() {

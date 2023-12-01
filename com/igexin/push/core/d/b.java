@@ -6,17 +6,17 @@ import java.util.Map;
 public class b implements e {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23476a = "GTConfigProxy";
+    private static final String f9868a = "GTConfigProxy";
     private static volatile b b;
 
     /* renamed from: c  reason: collision with root package name */
-    private e f23477c = new a();
+    private e f9869c = new a();
 
     private b() {
     }
 
     private void a(e eVar) {
-        this.f23477c = eVar;
+        this.f9869c = eVar;
     }
 
     public static b c() {
@@ -36,7 +36,7 @@ public class b implements e {
 
     @Override // com.igexin.push.core.d.e
     public final Map<String, String> a() {
-        e eVar = this.f23477c;
+        e eVar = this.f9869c;
         if (eVar != null) {
             return eVar.a();
         }
@@ -45,7 +45,7 @@ public class b implements e {
 
     @Override // com.igexin.push.core.d.e
     public final boolean a(Map<String, String> map) {
-        e eVar = this.f23477c;
+        e eVar = this.f9869c;
         if (eVar != null) {
             return eVar.a(map);
         }
@@ -54,7 +54,7 @@ public class b implements e {
 
     @Override // com.igexin.push.core.d.e
     public final boolean b() {
-        e eVar = this.f23477c;
+        e eVar = this.f9869c;
         if (eVar != null) {
             return eVar.b();
         }

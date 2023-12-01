@@ -8,16 +8,16 @@ import java.security.MessageDigest;
 
 /* loaded from: source-7206380-dex2jar.jar:com/bumptech/glide/load/resource/bitmap/GranularRoundedCorners.class */
 public final class GranularRoundedCorners extends BitmapTransformation {
-    private static final byte[] b = "com.bumptech.glide.load.resource.bitmap.GranularRoundedCorners".getBytes(f20706a);
+    private static final byte[] b = "com.bumptech.glide.load.resource.bitmap.GranularRoundedCorners".getBytes(f7100a);
 
     /* renamed from: c  reason: collision with root package name */
-    private final float f20955c;
+    private final float f7349c;
     private final float d;
     private final float e;
     private final float f;
 
     public GranularRoundedCorners(float f, float f2, float f3, float f4) {
-        this.f20955c = f;
+        this.f7349c = f;
         this.d = f2;
         this.e = f3;
         this.f = f4;
@@ -25,13 +25,13 @@ public final class GranularRoundedCorners extends BitmapTransformation {
 
     @Override // com.bumptech.glide.load.resource.bitmap.BitmapTransformation
     protected Bitmap a(BitmapPool bitmapPool, Bitmap bitmap, int i, int i2) {
-        return TransformationUtils.a(bitmapPool, bitmap, this.f20955c, this.d, this.e, this.f);
+        return TransformationUtils.a(bitmapPool, bitmap, this.f7349c, this.d, this.e, this.f);
     }
 
     @Override // com.bumptech.glide.load.Key
     public void a(MessageDigest messageDigest) {
         messageDigest.update(b);
-        messageDigest.update(ByteBuffer.allocate(16).putFloat(this.f20955c).putFloat(this.d).putFloat(this.e).putFloat(this.f).array());
+        messageDigest.update(ByteBuffer.allocate(16).putFloat(this.f7349c).putFloat(this.d).putFloat(this.e).putFloat(this.f).array());
     }
 
     @Override // com.bumptech.glide.load.Key
@@ -40,7 +40,7 @@ public final class GranularRoundedCorners extends BitmapTransformation {
         if (obj instanceof GranularRoundedCorners) {
             GranularRoundedCorners granularRoundedCorners = (GranularRoundedCorners) obj;
             z = false;
-            if (this.f20955c == granularRoundedCorners.f20955c) {
+            if (this.f7349c == granularRoundedCorners.f7349c) {
                 z = false;
                 if (this.d == granularRoundedCorners.d) {
                     z = false;
@@ -58,6 +58,6 @@ public final class GranularRoundedCorners extends BitmapTransformation {
 
     @Override // com.bumptech.glide.load.Key
     public int hashCode() {
-        return Util.a(this.f, Util.a(this.e, Util.a(this.d, Util.b(-2013597734, Util.a(this.f20955c)))));
+        return Util.a(this.f, Util.a(this.e, Util.a(this.d, Util.b(-2013597734, Util.a(this.f7349c)))));
     }
 }

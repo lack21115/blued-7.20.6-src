@@ -7,29 +7,29 @@ import ar.com.hjg.pngj.ImageInfo;
 public class ChunkFactory implements IChunkFactory {
 
     /* renamed from: a  reason: collision with root package name */
-    boolean f3653a;
+    boolean f3605a;
 
     public ChunkFactory() {
         this(true);
     }
 
     public ChunkFactory(boolean z) {
-        this.f3653a = z;
+        this.f3605a = z;
     }
 
     @Override // ar.com.hjg.pngj.IChunkFactory
     public final PngChunk a(ChunkRaw chunkRaw, ImageInfo imageInfo) {
-        PngChunk a2 = a(chunkRaw.f3660c, imageInfo);
+        PngChunk a2 = a(chunkRaw.f3612c, imageInfo);
         PngChunk pngChunk = a2;
         if (a2 == null) {
-            pngChunk = c(chunkRaw.f3660c, imageInfo);
+            pngChunk = c(chunkRaw.f3612c, imageInfo);
         }
         PngChunk pngChunk2 = pngChunk;
         if (pngChunk == null) {
-            pngChunk2 = b(chunkRaw.f3660c, imageInfo);
+            pngChunk2 = b(chunkRaw.f3612c, imageInfo);
         }
         pngChunk2.b(chunkRaw);
-        if (this.f3653a && chunkRaw.d != null) {
+        if (this.f3605a && chunkRaw.d != null) {
             pngChunk2.a(chunkRaw);
         }
         return pngChunk2;

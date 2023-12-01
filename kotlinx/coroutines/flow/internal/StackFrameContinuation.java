@@ -8,20 +8,18 @@ import kotlin.coroutines.jvm.internal.CoroutineStackFrame;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/internal/StackFrameContinuation.class */
 final class StackFrameContinuation<T> implements Continuation<T>, CoroutineStackFrame {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Continuation<T> f43510a;
+    private final Continuation<T> a;
     private final CoroutineContext b;
 
     /* JADX WARN: Multi-variable type inference failed */
     public StackFrameContinuation(Continuation<? super T> continuation, CoroutineContext coroutineContext) {
-        this.f43510a = continuation;
+        this.a = continuation;
         this.b = coroutineContext;
     }
 
     @Override // kotlin.coroutines.jvm.internal.CoroutineStackFrame
     public CoroutineStackFrame getCallerFrame() {
-        Continuation<T> continuation = this.f43510a;
+        Continuation<T> continuation = this.a;
         if (continuation instanceof CoroutineStackFrame) {
             return (CoroutineStackFrame) continuation;
         }
@@ -40,6 +38,6 @@ final class StackFrameContinuation<T> implements Continuation<T>, CoroutineStack
 
     @Override // kotlin.coroutines.Continuation
     public void resumeWith(Object obj) {
-        this.f43510a.resumeWith(obj);
+        this.a.resumeWith(obj);
     }
 }

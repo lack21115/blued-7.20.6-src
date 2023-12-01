@@ -22,11 +22,8 @@ import com.android.i18n.phonenumbers.NumberParseException;
 import com.android.i18n.phonenumbers.PhoneNumberUtil;
 import com.android.i18n.phonenumbers.Phonenumber;
 import com.android.i18n.phonenumbers.ShortNumberUtil;
-import com.android.internal.R;
-import com.android.internal.telephony.PhoneConstants;
-import com.android.internal.telephony.TelephonyProperties;
-import com.anythink.core.api.ATAdConst;
 import com.opos.acs.st.STManager;
+import com.xiaomi.mipush.sdk.Constants;
 import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -317,7 +314,7 @@ public class PhoneNumberUtils {
     }
 
     public static boolean compare(Context context, String str, String str2) {
-        return compare(str, str2, context.getResources().getBoolean(R.bool.config_use_strict_phone_number_comparation));
+        return compare(str, str2, context.getResources().getBoolean(17956926));
     }
 
     public static boolean compare(String str, String str2) {
@@ -765,7 +762,7 @@ public class PhoneNumberUtils {
             int i5 = i4;
             if (i5 < i2) {
                 int i6 = iArr[i5];
-                editable.replace(i6 + i5, i6 + i5, "-");
+                editable.replace(i6 + i5, i6 + i5, Constants.ACCEPT_TIME_SEPARATOR_SERVER);
                 i4 = i5 + 1;
             } else {
                 int length3 = editable.length();
@@ -794,7 +791,7 @@ public class PhoneNumberUtils {
     }
 
     public static String formatNumber(String str, String str2) {
-        if (str.startsWith("#") || str.startsWith(PhoneConstants.APN_TYPE_ALL)) {
+        if (str.startsWith("#") || str.startsWith("*")) {
             return str;
         }
         PhoneNumberUtil phoneNumberUtil = PhoneNumberUtil.getInstance();
@@ -908,7 +905,7 @@ public class PhoneNumberUtils {
     }
 
     private static String getCurrentIdp(boolean z) {
-        return SystemProperties.get(TelephonyProperties.PROPERTY_OPERATOR_IDP_STRING, z ? NANP_IDP_STRING : PLUS_SIGN_STRING);
+        return SystemProperties.get("gsm.operator.idpstring", z ? NANP_IDP_STRING : PLUS_SIGN_STRING);
     }
 
     private static int getDefaultVoiceSubId() {
@@ -1077,7 +1074,7 @@ public class PhoneNumberUtils {
         boolean z = true;
         if (!STManager.REGION_OF_IN.equalsIgnoreCase(str2)) {
             z = true;
-            if (str.equals("101") | str.equals(ATAdConst.BIDDING_TYPE.BIDDING_LOSS_WITH_LOW_PRICE_IN_HB)) {
+            if (str.equals("101") | str.equals("102")) {
                 Rlog.w(LOG_TAG, "Number and Country doesn't match for emergency number");
                 z = false;
             }

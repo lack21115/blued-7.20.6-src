@@ -12,20 +12,16 @@ import java.util.List;
 /* renamed from: com.amap.api.col.3sl.al  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/al.class */
 public final class al {
-
-    /* renamed from: a  reason: collision with root package name */
-    static double f4740a = 3.141592653589793d;
+    static double a = 3.141592653589793d;
     private static boolean d = false;
     private static final double[] e = {25.575374d, 120.391111d};
     private static final double[] f = {21.405235d, 121.649046d};
     private static final List<LatLng> g = new ArrayList(Arrays.asList(new LatLng(23.379947d, 119.757001d), new LatLng(24.983296d, 120.474496d), new LatLng(25.518722d, 121.359866d), new LatLng(25.41329d, 122.443582d), new LatLng(24.862708d, 122.288354d), new LatLng(24.461292d, 122.188319d), new LatLng(21.584761d, 120.968923d), new LatLng(21.830837d, 120.654445d)));
     public static double b = 6378245.0d;
-
-    /* renamed from: c  reason: collision with root package name */
-    public static double f4741c = 0.006693421622965943d;
+    public static double c = 0.006693421622965943d;
 
     private static double a(double d2) {
-        return Math.sin(d2 * 3000.0d * (f4740a / 180.0d)) * 2.0E-5d;
+        return Math.sin(d2 * 3000.0d * (a / 180.0d)) * 2.0E-5d;
     }
 
     private static double a(double d2, double d3) {
@@ -95,7 +91,7 @@ public final class al {
     }
 
     private static double b(double d2) {
-        return Math.cos(d2 * 3000.0d * (f4740a / 180.0d)) * 3.0E-6d;
+        return Math.cos(d2 * 3000.0d * (a / 180.0d)) * 3.0E-6d;
     }
 
     private static double b(double d2, double d3) {
@@ -171,21 +167,21 @@ public final class al {
         double d5 = d2 - 35.0d;
         double i = i(d4, d5);
         double j = j(d4, d5);
-        double d6 = (d2 / 180.0d) * f4740a;
+        double d6 = (d2 / 180.0d) * a;
         double sin = Math.sin(d6);
-        double d7 = 1.0d - ((f4741c * sin) * sin);
+        double d7 = 1.0d - ((c * sin) * sin);
         double sqrt = Math.sqrt(d7);
         double d8 = b;
-        return new LatLng(d2 + ((i * 180.0d) / ((((1.0d - f4741c) * d8) / (d7 * sqrt)) * f4740a)), d3 + ((j * 180.0d) / (((d8 / sqrt) * Math.cos(d6)) * f4740a)));
+        return new LatLng(d2 + ((i * 180.0d) / ((((1.0d - c) * d8) / (d7 * sqrt)) * a)), d3 + ((j * 180.0d) / (((d8 / sqrt) * Math.cos(d6)) * a)));
     }
 
     private static double i(double d2, double d3) {
         double d4 = d2 * 2.0d;
-        return (-100.0d) + d4 + (d3 * 3.0d) + (d3 * 0.2d * d3) + (0.1d * d2 * d3) + (Math.sqrt(Math.abs(d2)) * 0.2d) + ((((Math.sin((d2 * 6.0d) * f4740a) * 20.0d) + (Math.sin(d4 * f4740a) * 20.0d)) * 2.0d) / 3.0d) + ((((Math.sin(f4740a * d3) * 20.0d) + (Math.sin((d3 / 3.0d) * f4740a) * 40.0d)) * 2.0d) / 3.0d) + ((((Math.sin((d3 / 12.0d) * f4740a) * 160.0d) + (Math.sin((d3 * f4740a) / 30.0d) * 320.0d)) * 2.0d) / 3.0d);
+        return (-100.0d) + d4 + (d3 * 3.0d) + (d3 * 0.2d * d3) + (0.1d * d2 * d3) + (Math.sqrt(Math.abs(d2)) * 0.2d) + ((((Math.sin((d2 * 6.0d) * a) * 20.0d) + (Math.sin(d4 * a) * 20.0d)) * 2.0d) / 3.0d) + ((((Math.sin(a * d3) * 20.0d) + (Math.sin((d3 / 3.0d) * a) * 40.0d)) * 2.0d) / 3.0d) + ((((Math.sin((d3 / 12.0d) * a) * 160.0d) + (Math.sin((d3 * a) / 30.0d) * 320.0d)) * 2.0d) / 3.0d);
     }
 
     private static double j(double d2, double d3) {
         double d4 = d2 * 0.1d;
-        return d2 + 300.0d + (d3 * 2.0d) + (d4 * d2) + (d4 * d3) + (Math.sqrt(Math.abs(d2)) * 0.1d) + ((((Math.sin((6.0d * d2) * f4740a) * 20.0d) + (Math.sin((d2 * 2.0d) * f4740a) * 20.0d)) * 2.0d) / 3.0d) + ((((Math.sin(f4740a * d2) * 20.0d) + (Math.sin((d2 / 3.0d) * f4740a) * 40.0d)) * 2.0d) / 3.0d) + ((((Math.sin((d2 / 12.0d) * f4740a) * 150.0d) + (Math.sin((d2 / 30.0d) * f4740a) * 300.0d)) * 2.0d) / 3.0d);
+        return d2 + 300.0d + (d3 * 2.0d) + (d4 * d2) + (d4 * d3) + (Math.sqrt(Math.abs(d2)) * 0.1d) + ((((Math.sin((6.0d * d2) * a) * 20.0d) + (Math.sin((d2 * 2.0d) * a) * 20.0d)) * 2.0d) / 3.0d) + ((((Math.sin(a * d2) * 20.0d) + (Math.sin((d2 / 3.0d) * a) * 40.0d)) * 2.0d) / 3.0d) + ((((Math.sin((d2 / 12.0d) * a) * 150.0d) + (Math.sin((d2 / 30.0d) * a) * 300.0d)) * 2.0d) / 3.0d);
     }
 }

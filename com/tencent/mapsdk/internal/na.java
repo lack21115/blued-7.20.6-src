@@ -8,10 +8,10 @@ import java.io.File;
 public class na {
 
     /* renamed from: a  reason: collision with root package name */
-    private static oa f37661a;
+    private static oa f23970a;
 
     public static String a() {
-        oa oaVar = f37661a;
+        oa oaVar = f23970a;
         if (oaVar != null) {
             return oaVar.c();
         }
@@ -19,31 +19,31 @@ public class na {
     }
 
     public static void a(Context context, da.a aVar) {
-        oa oaVar = f37661a;
+        oa oaVar = f23970a;
         if (oaVar != null) {
             oaVar.a(context, aVar);
         }
     }
 
     public static void a(oa oaVar) {
-        oa oaVar2 = f37661a;
+        oa oaVar2 = f23970a;
         if (oaVar2 != oaVar) {
             if (oaVar2 != null) {
                 oaVar2.a();
             }
-            f37661a = oaVar;
+            f23970a = oaVar;
         }
     }
 
     public static void a(File file, String str, String str2) {
-        oa oaVar = f37661a;
+        oa oaVar = f23970a;
         if (oaVar != null) {
             oaVar.a(file, str, str2);
         }
     }
 
     public static void a(String str) {
-        oa oaVar = f37661a;
+        oa oaVar = f23970a;
         if (oaVar != null) {
             oaVar.f(str);
         } else {
@@ -52,7 +52,7 @@ public class na {
     }
 
     public static void a(String str, String str2) {
-        oa oaVar = f37661a;
+        oa oaVar = f23970a;
         if (oaVar != null) {
             oaVar.d(str, str2);
         } else {
@@ -61,7 +61,7 @@ public class na {
     }
 
     public static void a(String str, String str2, Throwable th) {
-        oa oaVar = f37661a;
+        oa oaVar = f23970a;
         if (oaVar != null) {
             oaVar.b(str, str2, th);
         } else {
@@ -70,7 +70,7 @@ public class na {
     }
 
     public static void a(String str, Throwable th) {
-        oa oaVar = f37661a;
+        oa oaVar = f23970a;
         if (oaVar != null) {
             oaVar.b(str, th);
         } else {
@@ -79,21 +79,21 @@ public class na {
     }
 
     public static void a(boolean z, int i, String... strArr) {
-        oa oaVar = f37661a;
+        oa oaVar = f23970a;
         if (oaVar != null) {
             oaVar.a(z, i, strArr);
         }
     }
 
     public static void a(boolean z, String... strArr) {
-        oa oaVar = f37661a;
+        oa oaVar = f23970a;
         if (oaVar != null) {
             oaVar.a(z, strArr);
         }
     }
 
     public static boolean a(int i, String str) {
-        oa oaVar = f37661a;
+        oa oaVar = f23970a;
         if (oaVar != null) {
             return oaVar.a(i, str);
         }
@@ -101,7 +101,7 @@ public class na {
     }
 
     public static void b(String str) {
-        oa oaVar = f37661a;
+        oa oaVar = f23970a;
         if (oaVar != null) {
             oaVar.b(str);
         } else {
@@ -110,7 +110,7 @@ public class na {
     }
 
     public static void b(String str, String str2) {
-        oa oaVar = f37661a;
+        oa oaVar = f23970a;
         if (oaVar != null) {
             oaVar.e(str, str2);
         } else {
@@ -119,7 +119,7 @@ public class na {
     }
 
     public static void b(String str, String str2, Throwable th) {
-        oa oaVar = f37661a;
+        oa oaVar = f23970a;
         if (oaVar != null) {
             oaVar.d(str, str2, th);
         } else {
@@ -128,7 +128,7 @@ public class na {
     }
 
     public static void b(String str, Throwable th) {
-        oa oaVar = f37661a;
+        oa oaVar = f23970a;
         if (oaVar != null) {
             oaVar.e(str, th);
         } else {
@@ -137,7 +137,7 @@ public class na {
     }
 
     public static boolean b() {
-        oa oaVar = f37661a;
+        oa oaVar = f23970a;
         if (oaVar != null) {
             return oaVar.b();
         }
@@ -145,7 +145,7 @@ public class na {
     }
 
     public static void c(String str) {
-        oa oaVar = f37661a;
+        oa oaVar = f23970a;
         if (oaVar != null) {
             oaVar.a(str);
         } else {
@@ -154,7 +154,7 @@ public class na {
     }
 
     public static void c(String str, String str2) {
-        oa oaVar = f37661a;
+        oa oaVar = f23970a;
         if (oaVar != null) {
             oaVar.i(str, str2);
         } else {
@@ -163,7 +163,7 @@ public class na {
     }
 
     public static void c(String str, String str2, Throwable th) {
-        oa oaVar = f37661a;
+        oa oaVar = f23970a;
         if (oaVar != null) {
             oaVar.c(str, str2, th);
         } else {
@@ -172,7 +172,7 @@ public class na {
     }
 
     public static void c(String str, Throwable th) {
-        oa oaVar = f37661a;
+        oa oaVar = f23970a;
         if (oaVar != null) {
             oaVar.a(str, th);
         } else {
@@ -181,7 +181,7 @@ public class na {
     }
 
     public static void d(String str, String str2) {
-        oa oaVar = f37661a;
+        oa oaVar = f23970a;
         if (oaVar != null) {
             oaVar.a(str, str2);
         }
@@ -196,7 +196,7 @@ public class na {
     }
 
     public static boolean d(String str) {
-        oa oaVar = f37661a;
+        oa oaVar = f23970a;
         if (oaVar != null) {
             return oaVar.d(str);
         }
@@ -204,7 +204,7 @@ public class na {
     }
 
     public static void e(String str) {
-        oa oaVar = f37661a;
+        oa oaVar = f23970a;
         if (oaVar != null) {
             oaVar.e(str);
         } else {
@@ -217,7 +217,7 @@ public class na {
     }
 
     public static void e(String str, String str2, Throwable th) {
-        oa oaVar = f37661a;
+        oa oaVar = f23970a;
         if (oaVar != null) {
             oaVar.e(str, str2, th);
         } else {
@@ -226,7 +226,7 @@ public class na {
     }
 
     public static void e(String str, Throwable th) {
-        oa oaVar = f37661a;
+        oa oaVar = f23970a;
         if (oaVar != null) {
             oaVar.d(str, th);
         } else {
@@ -239,7 +239,7 @@ public class na {
     }
 
     public static void f(String str, String str2) {
-        oa oaVar = f37661a;
+        oa oaVar = f23970a;
         if (oaVar != null) {
             oaVar.v(str, str2);
         } else {
@@ -248,7 +248,7 @@ public class na {
     }
 
     public static void f(String str, String str2, Throwable th) {
-        oa oaVar = f37661a;
+        oa oaVar = f23970a;
         if (oaVar != null) {
             oaVar.a(str, str2, th);
         } else {
@@ -257,7 +257,7 @@ public class na {
     }
 
     public static void f(String str, Throwable th) {
-        oa oaVar = f37661a;
+        oa oaVar = f23970a;
         if (oaVar != null) {
             oaVar.c(str, th);
         } else {
@@ -266,7 +266,7 @@ public class na {
     }
 
     public static void g(String str) {
-        oa oaVar = f37661a;
+        oa oaVar = f23970a;
         if (oaVar != null) {
             oaVar.c(str);
         } else {
@@ -275,7 +275,7 @@ public class na {
     }
 
     public static void g(String str, String str2) {
-        oa oaVar = f37661a;
+        oa oaVar = f23970a;
         if (oaVar != null) {
             oaVar.w(str, str2);
         } else {
@@ -284,7 +284,7 @@ public class na {
     }
 
     public static void h(String str) {
-        oa oaVar = f37661a;
+        oa oaVar = f23970a;
         if (oaVar != null) {
             oaVar.g(str);
         } else {

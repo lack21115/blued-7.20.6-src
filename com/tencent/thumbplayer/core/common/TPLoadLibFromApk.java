@@ -3,6 +3,7 @@ package com.tencent.thumbplayer.core.common;
 import android.content.Context;
 import android.text.TextUtils;
 import com.ss.android.socialbase.downloader.constants.MonitorConstants;
+import com.tencent.tinker.loader.shareutil.ShareConstants;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -130,7 +131,7 @@ public final class TPLoadLibFromApk {
                 if (matcher.matches()) {
                     String group = matcher.group(1);
                     if (!hashSet.contains(group)) {
-                        extractLibrary(zipFile, group, generateAbiList, new File(dir, "lib" + group + ".so"));
+                        extractLibrary(zipFile, group, generateAbiList, new File(dir, ShareConstants.SO_PATH + group + ".so"));
                         hashSet.add(group);
                     }
                 }
@@ -193,7 +194,7 @@ public final class TPLoadLibFromApk {
         }
         String str3 = str2;
         if (str2 == null) {
-            File file = new File(context.getDir("recover_lib", 0), "lib" + str + ".so");
+            File file = new File(context.getDir("recover_lib", 0), ShareConstants.SO_PATH + str + ".so");
             str3 = str2;
             if (file.canRead()) {
                 str3 = file.getAbsolutePath();
@@ -235,7 +236,7 @@ public final class TPLoadLibFromApk {
                 }
                 throw new UnsatisfiedLinkError("Library '" + str + "' was loaded by a different ClassLoader.");
             } else if (context != null) {
-                File file = new File(context.getDir("recover_lib", 0), "lib" + str + ".so");
+                File file = new File(context.getDir("recover_lib", 0), ShareConstants.SO_PATH + str + ".so");
                 UnsatisfiedLinkError loadFromRecovery = loadFromRecovery(str, classLoader, context, file);
                 if (loadFromRecovery == null) {
                     return true;

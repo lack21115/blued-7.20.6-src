@@ -14,7 +14,7 @@ import java.util.Queue;
 public final class Util {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final char[] f21109a = "0123456789abcdef".toCharArray();
+    private static final char[] f7503a = "0123456789abcdef".toCharArray();
     private static final char[] b = new char[64];
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -23,7 +23,7 @@ public final class Util {
     public static /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f21110a;
+        static final /* synthetic */ int[] f7504a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:13:0x0041 -> B:27:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:15:0x0045 -> B:25:0x001f). Please submit an issue!!! */
@@ -31,25 +31,25 @@ public final class Util {
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:19:0x004d -> B:29:0x0035). Please submit an issue!!! */
         static {
             int[] iArr = new int[Bitmap.Config.values().length];
-            f21110a = iArr;
+            f7504a = iArr;
             try {
                 iArr[Bitmap.Config.ALPHA_8.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f21110a[Bitmap.Config.RGB_565.ordinal()] = 2;
+                f7504a[Bitmap.Config.RGB_565.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f21110a[Bitmap.Config.ARGB_4444.ordinal()] = 3;
+                f7504a[Bitmap.Config.ARGB_4444.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f21110a[Bitmap.Config.RGBA_F16.ordinal()] = 4;
+                f7504a[Bitmap.Config.RGBA_F16.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f21110a[Bitmap.Config.ARGB_8888.ordinal()] = 5;
+                f7504a[Bitmap.Config.ARGB_8888.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
         }
@@ -75,7 +75,7 @@ public final class Util {
         if (config == null) {
             config2 = Bitmap.Config.ARGB_8888;
         }
-        int i = AnonymousClass1.f21110a[config2.ordinal()];
+        int i = AnonymousClass1.f7504a[config2.ordinal()];
         if (i != 1) {
             if (i == 2 || i == 3) {
                 return 2;
@@ -124,7 +124,7 @@ public final class Util {
             }
             int i3 = bArr[i2] & 255;
             int i4 = i2 * 2;
-            char[] cArr2 = f21109a;
+            char[] cArr2 = f7503a;
             cArr[i4] = cArr2[i3 >>> 4];
             cArr[i4 + 1] = cArr2[i3 & 15];
             i = i2 + 1;

@@ -5,7 +5,6 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.StatFs;
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
@@ -432,7 +431,7 @@ public class IOUtils {
 
     private static String getUrlFileName(String str) {
         int indexOf;
-        String[] split = str.split(BridgeUtil.SPLIT_MARK);
+        String[] split = str.split("/");
         int length = split.length;
         int i = 0;
         while (true) {

@@ -4,8 +4,8 @@ package com.xiaomi.push;
 public class ae {
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f41245a = "10.237.14.141";
+    public static String f27554a = "10.237.14.141";
 
     /* renamed from: a  reason: collision with other field name */
-    public static boolean f171a = false;
+    public static boolean f124a = false;
 }

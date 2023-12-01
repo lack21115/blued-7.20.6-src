@@ -1,10 +1,7 @@
 package org.apache.commons.codec.language.bm;
 
-import com.anythink.expressad.foundation.d.c;
-import com.anythink.expressad.foundation.d.d;
-import com.anythink.expressad.video.dynview.a.a;
-import com.kuaishou.weapon.p0.t;
-import com.meizu.cloud.pushsdk.notification.model.AppIconSetting;
+import com.android.internal.content.NativeLibraryHelper;
+import com.anythink.core.common.g.c;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -162,9 +159,9 @@ public class PhoneticEngine {
     static {
         EnumMap enumMap = new EnumMap(NameType.class);
         NAME_PREFIXES = enumMap;
-        enumMap.put((EnumMap) NameType.ASHKENAZI, (NameType) Collections.unmodifiableSet(new HashSet(Arrays.asList("bar", "ben", "da", a.X, "van", "von"))));
-        NAME_PREFIXES.put(NameType.SEPHARDIC, Collections.unmodifiableSet(new HashSet(Arrays.asList(c.bl, t.n, "da", "dal", a.X, "del", "dela", "de la", "della", "des", AppIconSetting.DEFAULT_LARGE_ICON, d.s, "dos", com.umeng.analytics.pro.d.W, "van", "von"))));
-        NAME_PREFIXES.put(NameType.GENERIC, Collections.unmodifiableSet(new HashSet(Arrays.asList("da", "dal", a.X, "del", "dela", "de la", "della", "des", AppIconSetting.DEFAULT_LARGE_ICON, d.s, "dos", com.umeng.analytics.pro.d.W, "van", "von"))));
+        enumMap.put((EnumMap) NameType.ASHKENAZI, (NameType) Collections.unmodifiableSet(new HashSet(Arrays.asList("bar", "ben", "da", "de", "van", "von"))));
+        NAME_PREFIXES.put(NameType.SEPHARDIC, Collections.unmodifiableSet(new HashSet(Arrays.asList("al", "el", "da", "dal", "de", "del", "dela", "de la", "della", "des", "di", "do", "dos", "du", "van", "von"))));
+        NAME_PREFIXES.put(NameType.GENERIC, Collections.unmodifiableSet(new HashSet(Arrays.asList("da", "dal", "de", "del", "dela", "de la", "della", "des", "di", "do", "dos", "du", "van", "von"))));
     }
 
     public PhoneticEngine(NameType nameType, RuleType ruleType, boolean z) {
@@ -258,7 +255,7 @@ public class PhoneticEngine {
         String substring;
         String substring2;
         List<Rule> rule = Rule.getInstance(this.nameType, RuleType.RULES, languageSet);
-        List<Rule> rule2 = Rule.getInstance(this.nameType, this.ruleType, "common");
+        List<Rule> rule2 = Rule.getInstance(this.nameType, this.ruleType, c.Z);
         List<Rule> rule3 = Rule.getInstance(this.nameType, this.ruleType, languageSet);
         String trim = str.toLowerCase(Locale.ENGLISH).replace('-', ' ').trim();
         int i = 0;
@@ -296,7 +293,7 @@ public class PhoneticEngine {
         } else if (arrayList.size() != 1) {
             StringBuilder sb = new StringBuilder();
             for (String str7 : arrayList) {
-                sb.append("-");
+                sb.append(NativeLibraryHelper.CLEAR_ABI_OVERRIDE);
                 sb.append(encode(str7));
             }
             return sb.substring(1);

@@ -1,6 +1,5 @@
 package com.squareup.okhttp.internal.framed;
 
-import android.view.View;
 import com.squareup.okhttp.Protocol;
 import com.squareup.okhttp.internal.Util;
 import com.squareup.okhttp.internal.framed.FrameReader;
@@ -15,7 +14,6 @@ import okio.BufferedSource;
 import okio.ByteString;
 import okio.DeflaterSink;
 import okio.Okio;
-import okio.Sink;
 
 /* loaded from: source-8457232-dex2jar.jar:com/squareup/okhttp/internal/framed/Spdy3.class */
 public final class Spdy3 implements Variant {
@@ -215,7 +213,7 @@ public final class Spdy3 implements Variant {
             deflater.setDictionary(Spdy3.DICTIONARY);
             Buffer buffer = new Buffer();
             this.headerBlockBuffer = buffer;
-            this.headerBlockOut = Okio.buffer(new DeflaterSink((Sink) buffer, deflater));
+            this.headerBlockOut = Okio.buffer(new DeflaterSink(buffer, deflater));
         }
 
         private void writeNameValueBlockToBuffer(List<Header> list) throws IOException {
@@ -307,7 +305,7 @@ public final class Spdy3 implements Variant {
 
         @Override // com.squareup.okhttp.internal.framed.FrameWriter
         public int maxDataLength() {
-            return View.PUBLIC_STATUS_BAR_VISIBILITY_MASK;
+            return 16383;
         }
 
         @Override // com.squareup.okhttp.internal.framed.FrameWriter

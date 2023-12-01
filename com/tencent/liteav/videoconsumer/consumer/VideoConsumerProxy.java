@@ -28,14 +28,14 @@ public class VideoConsumerProxy {
 
     public static VideoDecoderDef.DecodeAbility getDecodeAbility() {
         com.tencent.liteav.videoconsumer.decoder.b bVar;
-        bVar = b.a.f36777a;
-        return bVar.f36776a;
+        bVar = b.a.f23086a;
+        return bVar.f23085a;
     }
 
     public void appendNALPacket(EncodedVideoFrame encodedVideoFrame) {
         j jVar = this.mConsumer;
         if (encodedVideoFrame == null || encodedVideoFrame.data == null) {
-            LiteavLog.w(jVar.f36705a, "packet or packet.data is null,packet={%s}", encodedVideoFrame);
+            LiteavLog.w(jVar.f23014a, "packet or packet.data is null,packet={%s}", encodedVideoFrame);
         } else {
             jVar.a(aa.a(jVar, encodedVideoFrame), "appendNALPacket", false);
         }
@@ -49,10 +49,10 @@ public class VideoConsumerProxy {
         j jVar = this.mConsumer;
         synchronized (jVar) {
             if (jVar.b != null) {
-                LiteavLog.w(jVar.f36705a, "videoConsumer is initialized!");
+                LiteavLog.w(jVar.f23014a, "videoConsumer is initialized!");
                 return;
             }
-            LiteavLog.i(jVar.f36705a, "initialize videoConsumer");
+            LiteavLog.i(jVar.f23014a, "initialize videoConsumer");
             HandlerThread handlerThread = new HandlerThread("VideoConsumer_" + jVar.hashCode());
             handlerThread.start();
             jVar.b = new com.tencent.liteav.base.util.b(handlerThread.getLooper(), t.a(jVar));
@@ -120,7 +120,7 @@ public class VideoConsumerProxy {
 
     public void setSharedEGLContext(Object obj) {
         j jVar = this.mConsumer;
-        String str = jVar.f36705a;
+        String str = jVar.f23014a;
         LiteavLog.i(str, "setSharedEGLContext(object:" + obj + ")");
         jVar.a(s.a(jVar, obj), "setSharedEGLContext", false);
     }
@@ -145,7 +145,7 @@ public class VideoConsumerProxy {
         jVar.a(new Runnable() { // from class: com.tencent.liteav.videoconsumer.consumer.j.5
             @Override // java.lang.Runnable
             public final void run() {
-                LiteavLog.i(jVar.f36705a, "uninitialize videoConsumer");
+                LiteavLog.i(jVar.f23014a, "uninitialize videoConsumer");
                 if (jVar.d != null) {
                     jVar.d.setDisplayView(null, false);
                     jVar.d = null;

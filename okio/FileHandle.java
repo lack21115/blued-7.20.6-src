@@ -36,7 +36,7 @@ public abstract class FileHandle implements Closeable {
             synchronized (this.fileHandle) {
                 getFileHandle().openStreamCount--;
                 if (getFileHandle().openStreamCount == 0 && getFileHandle().closed) {
-                    Unit unit = Unit.f42314a;
+                    Unit unit = Unit.a;
                     this.fileHandle.protectedClose();
                 }
             }
@@ -109,7 +109,7 @@ public abstract class FileHandle implements Closeable {
             synchronized (this.fileHandle) {
                 getFileHandle().openStreamCount--;
                 if (getFileHandle().openStreamCount == 0 && getFileHandle().closed) {
-                    Unit unit = Unit.f42314a;
+                    Unit unit = Unit.a;
                     this.fileHandle.protectedClose();
                 }
             }
@@ -245,7 +245,7 @@ public abstract class FileHandle implements Closeable {
             if (this.openStreamCount != 0) {
                 return;
             }
-            Unit unit = Unit.f42314a;
+            Unit unit = Unit.a;
             protectedClose();
         }
     }
@@ -258,7 +258,7 @@ public abstract class FileHandle implements Closeable {
             if (!(!this.closed)) {
                 throw new IllegalStateException("closed".toString());
             }
-            Unit unit = Unit.f42314a;
+            Unit unit = Unit.a;
         }
         protectedFlush();
     }
@@ -325,7 +325,7 @@ public abstract class FileHandle implements Closeable {
             if (!(!this.closed)) {
                 throw new IllegalStateException("closed".toString());
             }
-            Unit unit = Unit.f42314a;
+            Unit unit = Unit.a;
         }
         return protectedRead(j, array, i, i2);
     }
@@ -336,7 +336,7 @@ public abstract class FileHandle implements Closeable {
             if (!(!this.closed)) {
                 throw new IllegalStateException("closed".toString());
             }
-            Unit unit = Unit.f42314a;
+            Unit unit = Unit.a;
         }
         return readNoCloseCheck(j, sink, j2);
     }
@@ -435,7 +435,7 @@ public abstract class FileHandle implements Closeable {
             if (!(!this.closed)) {
                 throw new IllegalStateException("closed".toString());
             }
-            Unit unit = Unit.f42314a;
+            Unit unit = Unit.a;
         }
         protectedResize(j);
     }
@@ -458,7 +458,7 @@ public abstract class FileHandle implements Closeable {
             if (!(!this.closed)) {
                 throw new IllegalStateException("closed".toString());
             }
-            Unit unit = Unit.f42314a;
+            Unit unit = Unit.a;
         }
         return protectedSize();
     }
@@ -482,7 +482,7 @@ public abstract class FileHandle implements Closeable {
             if (!(!this.closed)) {
                 throw new IllegalStateException("closed".toString());
             }
-            Unit unit = Unit.f42314a;
+            Unit unit = Unit.a;
         }
         writeNoCloseCheck(j, source, j2);
     }
@@ -496,7 +496,7 @@ public abstract class FileHandle implements Closeable {
             if (!(!this.closed)) {
                 throw new IllegalStateException("closed".toString());
             }
-            Unit unit = Unit.f42314a;
+            Unit unit = Unit.a;
         }
         protectedWrite(j, array, i, i2);
     }

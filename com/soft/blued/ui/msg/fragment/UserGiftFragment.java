@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.lifecycle.Observer;
 import androidx.viewpager.widget.ViewPager;
 import butterknife.BindView;
+import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.utils.skin.BluedSkinUtils;
 import com.blued.android.framework.http.BluedUIHttpResponse;
 import com.blued.android.framework.http.parser.BluedEntity;
@@ -94,7 +95,7 @@ public class UserGiftFragment extends BasePagerGridFragment<UserGiftPresenter, U
     public static class VoucherComparator implements Comparator<GiftVoucherModel> {
 
         /* renamed from: a  reason: collision with root package name */
-        public GiftGivingOptionForJsonParse f32386a;
+        public GiftGivingOptionForJsonParse f18696a;
 
         private VoucherComparator() {
         }
@@ -113,11 +114,11 @@ public class UserGiftFragment extends BasePagerGridFragment<UserGiftPresenter, U
             }
             if (!giftVoucherModel.isExpire || giftVoucherModel2.isExpire) {
                 if (giftVoucherModel.isExpire || !giftVoucherModel2.isExpire) {
-                    if (this.f32386a != null) {
-                        if (giftVoucherModel.money >= this.f32386a.money && giftVoucherModel2.money < this.f32386a.money) {
+                    if (this.f18696a != null) {
+                        if (giftVoucherModel.money >= this.f18696a.money && giftVoucherModel2.money < this.f18696a.money) {
                             return -1;
                         }
-                        if (giftVoucherModel.money < this.f32386a.money && giftVoucherModel2.money >= this.f32386a.money) {
+                        if (giftVoucherModel.money < this.f18696a.money && giftVoucherModel2.money >= this.f18696a.money) {
                             return 1;
                         }
                     }
@@ -148,7 +149,7 @@ public class UserGiftFragment extends BasePagerGridFragment<UserGiftPresenter, U
         this.m = "";
         this.q = 2;
         this.u = new VoucherComparator();
-        this.f32331a = list;
+        this.f18641a = list;
         this.o = str;
         this.p = str2;
         this.n = buySucceedListener;
@@ -197,14 +198,13 @@ public class UserGiftFragment extends BasePagerGridFragment<UserGiftPresenter, U
             ((GiftGivingOptionForJsonParse) this.f).extra_info.to = this.m;
             ((GiftGivingOptionForJsonParse) this.f).extra_info.from = UserInfo.getInstance().getLoginUserInfo().name;
             final BirthCardPop birthCardPop = new BirthCardPop(getContext(), (GiftGivingOptionForJsonParse) this.f, true, false);
-            birthCardPop.f32459c = getFragmentActive();
+            birthCardPop.f18768c = getFragmentActive();
             new XPopup.Builder(getContext()).f(false).a(new SimpleCallback() { // from class: com.soft.blued.ui.msg.fragment.UserGiftFragment.5
-                @Override // com.blued.android.framework.ui.xpop.interfaces.SimpleCallback, com.blued.android.framework.ui.xpop.interfaces.XPopupCallback
                 public boolean f(BasePopupView basePopupView) {
                     birthCardPop.c();
                     return true;
                 }
-            }).a((BasePopupView) birthCardPop).h();
+            }).a(birthCardPop).h();
         } else if (((GiftGivingOptionForJsonParse) this.f).is_stock == 1) {
             D();
         } else if (((GiftGivingOptionForJsonParse) this.f).is_free == 2 || ((GiftGivingOptionForJsonParse) this.f).currentVoucher != null) {
@@ -219,12 +219,10 @@ public class UserGiftFragment extends BasePagerGridFragment<UserGiftPresenter, U
 
     private void D() {
         UserHttpUtils.b(new BluedUIHttpResponse(getFragmentActive()) { // from class: com.soft.blued.ui.msg.fragment.UserGiftFragment.6
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str) {
                 return super.onUIFailure(i, str);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish(boolean z) {
                 super.onUIFinish(z);
                 if (z) {
@@ -241,20 +239,17 @@ public class UserGiftFragment extends BasePagerGridFragment<UserGiftPresenter, U
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity bluedEntity) {
             }
-        }, this.o, ((GiftGivingOptionForJsonParse) this.f).gift_id, this.p, (String) null, getFragmentActive());
+        }, this.o, ((GiftGivingOptionForJsonParse) this.f).gift_id, this.p, (String) null, (IRequestHost) getFragmentActive());
     }
 
     private void E() {
         UserHttpUtils.a(new BluedUIHttpResponse(getFragmentActive()) { // from class: com.soft.blued.ui.msg.fragment.UserGiftFragment.7
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str) {
                 return super.onUIFailure(i, str);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish(boolean z) {
                 super.onUIFinish(z);
                 if (z) {
@@ -281,10 +276,9 @@ public class UserGiftFragment extends BasePagerGridFragment<UserGiftPresenter, U
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity bluedEntity) {
             }
-        }, this.o, ((GiftGivingOptionForJsonParse) this.f).gift_id, this.p, ((GiftGivingOptionForJsonParse) this.f).is_free == 2 ? null : ((GiftGivingOptionForJsonParse) this.f).currentVoucher, getFragmentActive());
+        }, this.o, ((GiftGivingOptionForJsonParse) this.f).gift_id, this.p, ((GiftGivingOptionForJsonParse) this.f).is_free == 2 ? null : ((GiftGivingOptionForJsonParse) this.f).currentVoucher, (IRequestHost) getFragmentActive());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -302,10 +296,10 @@ public class UserGiftFragment extends BasePagerGridFragment<UserGiftPresenter, U
         } else if (i == 4) {
             this.tv_pay_type.setText(getContext().getString(R.string.pay_platform_huabei));
         }
-        for (UserGiftAdapterNew userGiftAdapterNew : this.f32332c) {
-            userGiftAdapterNew.f32196a = this.q;
+        for (A a2 : this.f18642c) {
+            a2.f18506a = this.q;
             if (z) {
-                userGiftAdapterNew.notifyDataSetChanged();
+                a2.notifyDataSetChanged();
             }
         }
         if (z) {
@@ -313,12 +307,13 @@ public class UserGiftFragment extends BasePagerGridFragment<UserGiftPresenter, U
         }
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private void v() {
         LiveEventBus.get(EventBusConstant.KEY_EVENT_UPDATE_VOUCHER, UpdateVoucherEvent.class).observe(this, new Observer<UpdateVoucherEvent>() { // from class: com.soft.blued.ui.msg.fragment.UserGiftFragment.1
             @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(UpdateVoucherEvent updateVoucherEvent) {
-                UserGiftFragment.this.a(updateVoucherEvent.f32330a, updateVoucherEvent.b);
+                UserGiftFragment.this.a(updateVoucherEvent.f18640a, updateVoucherEvent.b);
             }
         });
         LiveEventBus.get(EventBusConstant.KEY_EVENT_GO_ON_SEND_GIFT, Void.class).observe(this, new Observer<Void>() { // from class: com.soft.blued.ui.msg.fragment.UserGiftFragment.2
@@ -336,7 +331,6 @@ public class UserGiftFragment extends BasePagerGridFragment<UserGiftPresenter, U
     private void w() {
         ChatHttpUtils.c(new BluedUIHttpResponse<BluedEntityA<GiftVoucherModel>>(getFragmentActive()) { // from class: com.soft.blued.ui.msg.fragment.UserGiftFragment.3
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<GiftVoucherModel> bluedEntityA) {
                 int i;
@@ -376,22 +370,21 @@ public class UserGiftFragment extends BasePagerGridFragment<UserGiftPresenter, U
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish(boolean z) {
                 boolean z2;
                 super.onUIFinish(z);
-                if (UserGiftFragment.this.f32331a == null || UserGiftFragment.this.f32331a.size() <= 0) {
+                if (UserGiftFragment.this.f18641a == null || UserGiftFragment.this.f18641a.size() <= 0) {
                     return;
                 }
                 int i = 0;
                 while (true) {
                     int i2 = i;
-                    if (i2 >= UserGiftFragment.this.f32331a.size()) {
+                    if (i2 >= UserGiftFragment.this.f18641a.size()) {
                         z2 = false;
                         break;
-                    } else if (((GiftGivingOptionForJsonParse) UserGiftFragment.this.f32331a.get(i2)).is_default == 1) {
+                    } else if (((GiftGivingOptionForJsonParse) UserGiftFragment.this.f18641a.get(i2)).is_default == 1) {
                         UserGiftFragment userGiftFragment = UserGiftFragment.this;
-                        userGiftFragment.b((GiftGivingOptionForJsonParse) userGiftFragment.f32331a.get(i2));
+                        userGiftFragment.b((GiftGivingOptionForJsonParse) userGiftFragment.f18641a.get(i2));
                         z2 = true;
                         break;
                     } else {
@@ -400,7 +393,7 @@ public class UserGiftFragment extends BasePagerGridFragment<UserGiftPresenter, U
                 }
                 if (!z2) {
                     UserGiftFragment userGiftFragment2 = UserGiftFragment.this;
-                    userGiftFragment2.b((GiftGivingOptionForJsonParse) userGiftFragment2.f32331a.get(0));
+                    userGiftFragment2.b((GiftGivingOptionForJsonParse) userGiftFragment2.f18641a.get(0));
                 }
                 UserGiftFragment.this.z();
                 UserGiftFragment userGiftFragment3 = UserGiftFragment.this;
@@ -429,7 +422,7 @@ public class UserGiftFragment extends BasePagerGridFragment<UserGiftPresenter, U
         if (this.f == 0 || ((GiftGivingOptionForJsonParse) this.f).currentVoucher == null) {
             if (!this.s || this.r || this.t.size() <= 0) {
                 this.tv_voucher.setText(getContext().getString(R.string.not_available));
-                this.tv_voucher.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, (Drawable) null, BluedSkinUtils.b(getContext(), R.drawable.icon_pop_gift_arrow_right_gray), (Drawable) null);
+                this.tv_voucher.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, (Drawable) null, BluedSkinUtils.b(getContext(), (int) R.drawable.icon_pop_gift_arrow_right_gray), (Drawable) null);
                 this.tv_voucher.setTextColor(BluedSkinUtils.a(getContext(), 2131102204));
                 this.tv_voucher_title.setTextColor(BluedSkinUtils.a(getContext(), 2131102204));
             } else {
@@ -445,26 +438,26 @@ public class UserGiftFragment extends BasePagerGridFragment<UserGiftPresenter, U
                 textView.setText(context.getString(i));
                 this.tv_voucher.setTextColor(BluedSkinUtils.a(getContext(), 2131102203));
                 this.tv_voucher_title.setTextColor(BluedSkinUtils.a(getContext(), 2131102203));
-                this.tv_voucher.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, (Drawable) null, BluedSkinUtils.b(getContext(), R.drawable.icon_user_gift_arrow), (Drawable) null);
+                this.tv_voucher.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, (Drawable) null, BluedSkinUtils.b(getContext(), (int) R.drawable.icon_user_gift_arrow), (Drawable) null);
             }
-            this.tv_pay_type.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, (Drawable) null, BluedSkinUtils.b(getContext(), R.drawable.icon_user_gift_arrow), (Drawable) null);
+            this.tv_pay_type.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, (Drawable) null, BluedSkinUtils.b(getContext(), (int) R.drawable.icon_user_gift_arrow), (Drawable) null);
             this.tv_pay_title.setTextColor(BluedSkinUtils.a(getContext(), 2131102203));
             this.tv_pay_type.setTextColor(BluedSkinUtils.a(getContext(), 2131102203));
             this.stv_buy.setText(getContext().getString(R.string.give_it_now));
         } else {
             if (this.r) {
                 this.tv_voucher.setText(getContext().getString(R.string.not_selected));
-                this.tv_voucher.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, (Drawable) null, BluedSkinUtils.b(getContext(), R.drawable.icon_pop_gift_arrow_right_gray), (Drawable) null);
+                this.tv_voucher.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, (Drawable) null, BluedSkinUtils.b(getContext(), (int) R.drawable.icon_pop_gift_arrow_right_gray), (Drawable) null);
                 this.tv_voucher.setTextColor(BluedSkinUtils.a(getContext(), 2131102204));
                 this.tv_voucher_title.setTextColor(BluedSkinUtils.a(getContext(), 2131102204));
             } else {
                 this.tv_voucher.setText(String.format(getContext().getString(R.string.voucher_selected), ((GiftGivingOptionForJsonParse) this.f).currentVoucher.title));
                 this.tv_voucher.setTextColor(BluedSkinUtils.a(getContext(), 2131102203));
                 this.tv_voucher_title.setTextColor(BluedSkinUtils.a(getContext(), 2131102203));
-                this.tv_voucher.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, (Drawable) null, BluedSkinUtils.b(getContext(), R.drawable.icon_user_gift_arrow), (Drawable) null);
+                this.tv_voucher.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, (Drawable) null, BluedSkinUtils.b(getContext(), (int) R.drawable.icon_user_gift_arrow), (Drawable) null);
                 this.stv_buy.setText(getContext().getString(R.string.exchange_send));
             }
-            this.tv_pay_type.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, (Drawable) null, BluedSkinUtils.b(getContext(), R.drawable.icon_pop_gift_arrow_right_gray), (Drawable) null);
+            this.tv_pay_type.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, (Drawable) null, BluedSkinUtils.b(getContext(), (int) R.drawable.icon_pop_gift_arrow_right_gray), (Drawable) null);
             this.tv_pay_title.setTextColor(BluedSkinUtils.a(getContext(), 2131102204));
             this.tv_pay_type.setTextColor(BluedSkinUtils.a(getContext(), 2131102204));
         }
@@ -474,17 +467,17 @@ public class UserGiftFragment extends BasePagerGridFragment<UserGiftPresenter, U
 
     /* JADX INFO: Access modifiers changed from: private */
     public void z() {
-        if (this.f32331a == null) {
+        if (this.f18641a == null) {
             return;
         }
         this.ll_stock_tip.setVisibility(8);
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f32331a.size()) {
+            if (i2 >= this.f18641a.size()) {
                 return;
             }
-            if (((GiftGivingOptionForJsonParse) this.f32331a.get(i2)).is_stock == 1) {
+            if (((GiftGivingOptionForJsonParse) this.f18641a.get(i2)).is_stock == 1) {
                 this.ll_stock_tip.setVisibility(0);
                 return;
             }
@@ -506,7 +499,7 @@ public class UserGiftFragment extends BasePagerGridFragment<UserGiftPresenter, U
                                 dialogInterface.dismiss();
                                 UserGiftFragment.this.C();
                             }
-                        }, UserGiftFragment.this.getContext().getString(2131887258), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
+                        }, UserGiftFragment.this.getContext().getString(R.string.common_cancel), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
                     }
                 }
             }, 200L);
@@ -525,15 +518,14 @@ public class UserGiftFragment extends BasePagerGridFragment<UserGiftPresenter, U
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public void a(Bundle bundle) {
         super.a(bundle);
-        if (this.f32331a != null) {
+        if (this.f18641a != null) {
             this.circlePageIndicator.setInterval(DensityUtils.a(getContext(), 5.0f));
             this.circlePageIndicator.setPageColor(BluedSkinUtils.a(getContext(), 2131102205));
             this.circlePageIndicator.setFillColor(BluedSkinUtils.a(getContext(), 2131101304));
             a(this.gift_pager, this.circlePageIndicator);
-            if (this.f32331a.size() <= b()) {
+            if (this.f18641a.size() <= b()) {
                 this.circlePageIndicator.setVisibility(8);
             }
             ShapeHelper.b(this.rl_pay_type, 2131102170);
@@ -579,7 +571,7 @@ public class UserGiftFragment extends BasePagerGridFragment<UserGiftPresenter, U
             return;
         }
         super.b((UserGiftFragment) giftGivingOptionForJsonParse);
-        giftHintEvent.f32325a = giftGivingOptionForJsonParse.type;
+        giftHintEvent.f18635a = giftGivingOptionForJsonParse.type;
         giftHintEvent.e = giftGivingOptionForJsonParse.icon;
         if (giftGivingOptionForJsonParse.type != 1) {
             if (giftGivingOptionForJsonParse.type == 2) {
@@ -604,7 +596,7 @@ public class UserGiftFragment extends BasePagerGridFragment<UserGiftPresenter, U
                         i2 = i3 + 1;
                     }
                     giftHintEvent.b = sb.toString();
-                    giftHintEvent.f32326c = giftGivingOptionForJsonParse.rules_title;
+                    giftHintEvent.f18636c = giftGivingOptionForJsonParse.rules_title;
                 }
             }
         }
@@ -619,7 +611,7 @@ public class UserGiftFragment extends BasePagerGridFragment<UserGiftPresenter, U
         }
         this.s = false;
         if (giftGivingOptionForJsonParse.type != -1 && (list = this.t) != null && list.size() > 0) {
-            this.u.f32386a = giftGivingOptionForJsonParse;
+            this.u.f18696a = giftGivingOptionForJsonParse;
             Collections.sort(this.t, this.u);
             if (!x() || this.t.get(0).money < giftGivingOptionForJsonParse.money) {
                 giftGivingOptionForJsonParse.currentVoucher = null;
@@ -642,7 +634,6 @@ public class UserGiftFragment extends BasePagerGridFragment<UserGiftPresenter, U
         return new UserGiftAdapterNew(getFragmentActive(), list);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public int g() {
         return R.layout.fm_user_gift;
     }
@@ -660,10 +651,10 @@ public class UserGiftFragment extends BasePagerGridFragment<UserGiftPresenter, U
                 return;
             }
             GiftVoucherPop giftVoucherPop = new GiftVoucherPop(getContext());
-            giftVoucherPop.f32484c = this.t;
+            giftVoucherPop.f18793c = this.t;
             giftVoucherPop.d = ((GiftGivingOptionForJsonParse) this.f).money;
             giftVoucherPop.e = ((GiftGivingOptionForJsonParse) this.f).currentVoucher;
-            new XPopup.Builder(getContext()).a((BasePopupView) giftVoucherPop).h();
+            new XPopup.Builder(getContext()).a(giftVoucherPop).h();
         } else if (id == 2131370354 && this.f != 0) {
             EventTrackPersonalProfile.a(PersonalProfileProtos.Event.GIFT_BUY_PAGE_BUY_BTN_CLICK, this.o, this.p.equals("user_page_gift") ? PersonalProfileProtos.GiftFrom.PERSONAL_PAGE : PersonalProfileProtos.GiftFrom.MESSAGE_PAGE, ((GiftGivingOptionForJsonParse) this.f).gift_id, false);
             if (PopMenuUtils.a(getContext())) {
@@ -683,7 +674,6 @@ public class UserGiftFragment extends BasePagerGridFragment<UserGiftPresenter, U
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
         VIPBuyResultObserver.a().b(this);

@@ -2,6 +2,7 @@ package com.opos.acs.st.b;
 
 import android.content.Context;
 import android.text.TextUtils;
+import com.kwad.components.offline.api.tk.model.report.TKDownloadReason;
 import com.opos.acs.st.utils.ErrorContants;
 import com.opos.acs.st.utils.d;
 import com.opos.acs.st.utils.e;
@@ -18,11 +19,11 @@ import org.json.JSONObject;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public int f24451a;
+    public int f10764a;
     public String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public long f24452c;
+    public long f10765c;
     public long d;
 
     public static StatisticEvent a(Map map) {
@@ -38,7 +39,7 @@ public final class a {
                     d.b("ErrorTag", "", e);
                     j = -1;
                 }
-                statisticEvent = new StatisticEvent.Builder((String) map.get("evtId"), (String) map.get("url"), j, map.get("rt") == null ? 0L : ((Long) map.get("rt")).longValue(), map.get("mt") == null ? 0L : ((Long) map.get("mt")).longValue(), (String) map.get("chn")).setCurrentTime(map.get(com.anythink.expressad.d.a.b.dx) == null ? System.currentTimeMillis() : ((Long) map.get(com.anythink.expressad.d.a.b.dx)).longValue()).setExt((String) map.get("ext")).setNet((String) map.get("net")).setSdkVersion("330").build();
+                statisticEvent = new StatisticEvent.Builder((String) map.get("evtId"), (String) map.get("url"), j, map.get("rt") == null ? 0L : ((Long) map.get("rt")).longValue(), map.get("mt") == null ? 0L : ((Long) map.get("mt")).longValue(), (String) map.get("chn")).setCurrentTime(map.get(com.anythink.expressad.d.a.b.dx) == null ? System.currentTimeMillis() : ((Long) map.get(com.anythink.expressad.d.a.b.dx)).longValue()).setExt((String) map.get("ext")).setNet((String) map.get(TKDownloadReason.KSAD_TK_NET)).setSdkVersion("330").build();
             } catch (Exception e2) {
                 return null;
             }
@@ -68,7 +69,7 @@ public final class a {
         try {
             return a(new JSONObject(str));
         } catch (JSONException e) {
-            d.b(com.anythink.core.common.k.h.f6811a, "", e);
+            d.b("CommonUtils", "", e);
             return null;
         }
     }
@@ -85,7 +86,7 @@ public final class a {
                 try {
                     hashMap.put(next, jSONObject.getString(next));
                 } catch (JSONException e) {
-                    d.b(com.anythink.core.common.k.h.f6811a, "", e);
+                    d.b("CommonUtils", "", e);
                 }
             }
         }
@@ -125,7 +126,7 @@ public final class a {
         try {
             return new JSONObject(map);
         } catch (Exception e) {
-            d.b(com.anythink.core.common.k.h.f6811a, "", e);
+            d.b("CommonUtils", "", e);
             return null;
         }
     }

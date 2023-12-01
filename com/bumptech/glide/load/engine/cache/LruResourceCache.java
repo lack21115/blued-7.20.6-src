@@ -9,7 +9,7 @@ import com.bumptech.glide.util.LruCache;
 public class LruResourceCache extends LruCache<Key, Resource<?>> implements MemoryCache {
 
     /* renamed from: a  reason: collision with root package name */
-    private MemoryCache.ResourceRemovedListener f20832a;
+    private MemoryCache.ResourceRemovedListener f7226a;
 
     public LruResourceCache(long j) {
         super(j);
@@ -38,7 +38,7 @@ public class LruResourceCache extends LruCache<Key, Resource<?>> implements Memo
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.bumptech.glide.util.LruCache
     public void a(Key key, Resource<?> resource) {
-        MemoryCache.ResourceRemovedListener resourceRemovedListener = this.f20832a;
+        MemoryCache.ResourceRemovedListener resourceRemovedListener = this.f7226a;
         if (resourceRemovedListener == null || resource == null) {
             return;
         }
@@ -47,7 +47,7 @@ public class LruResourceCache extends LruCache<Key, Resource<?>> implements Memo
 
     @Override // com.bumptech.glide.load.engine.cache.MemoryCache
     public void a(MemoryCache.ResourceRemovedListener resourceRemovedListener) {
-        this.f20832a = resourceRemovedListener;
+        this.f7226a = resourceRemovedListener;
     }
 
     @Override // com.bumptech.glide.load.engine.cache.MemoryCache

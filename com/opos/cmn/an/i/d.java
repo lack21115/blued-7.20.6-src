@@ -7,11 +7,11 @@ import java.util.concurrent.ScheduledExecutorService;
 public final class d {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ExecutorService f24568a;
+    public final ExecutorService f10881a;
     public final ExecutorService b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final ExecutorService f24569c;
+    public final ExecutorService f10882c;
     public final ExecutorService d;
     public final ExecutorService e;
     public final ScheduledExecutorService f;
@@ -20,24 +20,24 @@ public final class d {
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private ExecutorService f24570a;
+        private ExecutorService f10883a;
         private ExecutorService b;
 
         /* renamed from: c  reason: collision with root package name */
-        private ExecutorService f24571c;
+        private ExecutorService f10884c;
         private ExecutorService d;
         private ExecutorService e;
         private ScheduledExecutorService f;
 
         private void b() {
-            if (this.f24570a == null) {
-                this.f24570a = com.opos.cmn.an.i.a.a();
+            if (this.f10883a == null) {
+                this.f10883a = com.opos.cmn.an.i.a.a();
             }
             if (this.b == null) {
                 this.b = com.opos.cmn.an.i.a.b();
             }
-            if (this.f24571c == null) {
-                this.f24571c = com.opos.cmn.an.i.a.d();
+            if (this.f10884c == null) {
+                this.f10884c = com.opos.cmn.an.i.a.d();
             }
             if (this.d == null) {
                 this.d = com.opos.cmn.an.i.a.c();
@@ -51,7 +51,7 @@ public final class d {
         }
 
         public a a(ExecutorService executorService) {
-            this.f24570a = executorService;
+            this.f10883a = executorService;
             return this;
         }
 
@@ -71,7 +71,7 @@ public final class d {
         }
 
         public a c(ExecutorService executorService) {
-            this.f24571c = executorService;
+            this.f10884c = executorService;
             return this;
         }
 
@@ -87,15 +87,15 @@ public final class d {
     }
 
     public d(a aVar) {
-        this.f24568a = aVar.f24570a;
+        this.f10881a = aVar.f10883a;
         this.b = aVar.b;
-        this.f24569c = aVar.f24571c;
+        this.f10882c = aVar.f10884c;
         this.d = aVar.d;
         this.e = aVar.e;
         this.f = aVar.f;
     }
 
     public String toString() {
-        return "ThreadPoolParams{netExecutorService=" + this.f24568a + ", ioExecutorService=" + this.b + ", bizExecutorService=" + this.f24569c + ", dlExecutorService=" + this.d + ", singleExecutorService=" + this.e + ", scheduleExecutorService=" + this.f + '}';
+        return "ThreadPoolParams{netExecutorService=" + this.f10881a + ", ioExecutorService=" + this.b + ", bizExecutorService=" + this.f10882c + ", dlExecutorService=" + this.d + ", singleExecutorService=" + this.e + ", scheduleExecutorService=" + this.f + '}';
     }
 }

@@ -16,11 +16,11 @@ public class k {
     private static final String Z = "com.huawei.software.features.tv";
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f22998a = "com.hihonor.software.features.mobiletv";
+    private static final String f9390a = "com.hihonor.software.features.mobiletv";
     private static final String b = "com.hihonor.software.features.watch";
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f22999c = "com.hihonor.software.features.kidwatch";
+    private static final String f9391c = "com.hihonor.software.features.kidwatch";
     private static final String d = "default";
     private static final String e = "tablet";
     private static final String f = "tv";

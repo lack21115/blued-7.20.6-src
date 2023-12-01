@@ -5,6 +5,8 @@ import android.os.Handler;
 import android.os.Looper;
 import android.webkit.JavascriptInterface;
 import android.widget.Toast;
+import com.anythink.pd.ExHandler;
+import com.kwad.components.offline.api.tk.model.report.TKDownloadReason;
 import com.meizu.cloud.pushsdk.notification.model.ActVideoSetting;
 import com.opos.cmn.an.b.d;
 import com.opos.cmn.biz.ststrategy.StStrategyManager;
@@ -19,15 +21,15 @@ public class b extends a {
     private String f;
 
     public b(Context context, c cVar) {
-        super(context, cVar != null ? cVar.f24742c : "", cVar != null ? cVar.b : true);
+        super(context, cVar != null ? cVar.f11054c : "", cVar != null ? cVar.b : true);
         this.e = new Handler(Looper.getMainLooper());
-        this.f24737a = context.getApplicationContext();
-        this.f = cVar != null ? cVar.f24741a : "";
+        this.f11049a = context.getApplicationContext();
+        this.f = cVar != null ? cVar.f11053a : "";
     }
 
     private String a() {
         try {
-            return !com.opos.cmn.an.f.a.b(this.f24737a) ? StStrategyManager.getInstance(this.f24737a).getAnId(this.f24737a) : "";
+            return !com.opos.cmn.an.f.a.b(this.f11049a) ? StStrategyManager.getInstance(this.f11049a).getAnId(this.f11049a) : "";
         } catch (Exception e) {
             com.opos.cmn.an.f.a.c("JSCommonEngine", "", e);
             return "";
@@ -39,7 +41,7 @@ public class b extends a {
         String str = "";
         if (this.b) {
             try {
-                List<String> b = com.opos.cmn.an.h.d.a.b(this.f24737a);
+                List<String> b = com.opos.cmn.an.h.d.a.b(this.f11049a);
                 str = "";
                 if (b != null) {
                     str = "";
@@ -67,25 +69,25 @@ public class b extends a {
         if (this.b) {
             try {
                 JSONObject jSONObject = new JSONObject();
-                String packageName = this.f24737a.getPackageName();
+                String packageName = this.f11049a.getPackageName();
                 jSONObject.put("pkgName", packageName);
-                jSONObject.put("verName", com.opos.cmn.an.h.d.a.c(this.f24737a, packageName));
-                jSONObject.put("verCode", com.opos.cmn.an.h.d.a.b(this.f24737a, packageName));
-                jSONObject.put("imei", getImei());
+                jSONObject.put("verName", com.opos.cmn.an.h.d.a.c(this.f11049a, packageName));
+                jSONObject.put("verCode", com.opos.cmn.an.h.d.a.b(this.f11049a, packageName));
+                jSONObject.put(ExHandler.JSON_REQUEST_IMEI, getImei());
                 jSONObject.put("localId", getLocalId());
                 jSONObject.put("anId", a());
                 jSONObject.put("mac", "");
                 jSONObject.put("osVer", d.b());
                 jSONObject.put("romVer", d.a());
                 jSONObject.put("anVer", com.opos.cmn.an.b.c.c());
-                jSONObject.put("net", com.opos.cmn.biz.web.c.a.a.a.a(this.f24737a));
-                jSONObject.put("opt", com.opos.cmn.an.h.e.a.c(this.f24737a));
-                jSONObject.put("ori", com.opos.cmn.an.h.f.a.i(this.f24737a));
-                jSONObject.put("hg", com.opos.cmn.an.h.f.a.c(this.f24737a));
-                jSONObject.put(ActVideoSetting.WIFI_DISPLAY, com.opos.cmn.an.h.f.a.b(this.f24737a));
-                jSONObject.put("density", com.opos.cmn.an.h.f.a.f(this.f24737a));
+                jSONObject.put(TKDownloadReason.KSAD_TK_NET, com.opos.cmn.biz.web.c.a.a.a.a(this.f11049a));
+                jSONObject.put("opt", com.opos.cmn.an.h.e.a.c(this.f11049a));
+                jSONObject.put("ori", com.opos.cmn.an.h.f.a.i(this.f11049a));
+                jSONObject.put("hg", com.opos.cmn.an.h.f.a.c(this.f11049a));
+                jSONObject.put(ActVideoSetting.WIFI_DISPLAY, com.opos.cmn.an.h.f.a.b(this.f11049a));
+                jSONObject.put("density", com.opos.cmn.an.h.f.a.f(this.f11049a));
                 jSONObject.put("model", com.opos.cmn.an.b.c.a());
-                jSONObject.put("brand", com.opos.cmn.biz.a.b.a(this.f24737a));
+                jSONObject.put("brand", com.opos.cmn.biz.a.b.a(this.f11049a));
                 jSONObject.put("lang", com.opos.cmn.an.b.b.a());
                 jSONObject.put("country", com.opos.cmn.an.b.b.b());
                 jSONObject.put("ouId", getOuId());
@@ -107,7 +109,7 @@ public class b extends a {
         String str = "";
         if (this.b) {
             try {
-                str = com.opos.cmn.biz.a.b.a(this.f24737a);
+                str = com.opos.cmn.biz.a.b.a(this.f11049a);
             } catch (Exception e) {
                 com.opos.cmn.an.f.a.c("JSCommonEngine", "", e);
                 str = "";
@@ -127,7 +129,7 @@ public class b extends a {
             try {
                 JSONObject jSONObject = new JSONObject();
                 jSONObject.put("model", com.opos.cmn.an.b.c.a());
-                jSONObject.put("brand", com.opos.cmn.biz.a.b.a(this.f24737a));
+                jSONObject.put("brand", com.opos.cmn.biz.a.b.a(this.f11049a));
                 str = jSONObject.toString();
             } catch (Exception e) {
                 com.opos.cmn.an.f.a.c("JSCommonEngine", "", e);
@@ -156,7 +158,7 @@ public class b extends a {
         if (this.b) {
             try {
                 JSONObject jSONObject = new JSONObject();
-                jSONObject.put("imei", getImei());
+                jSONObject.put(ExHandler.JSON_REQUEST_IMEI, getImei());
                 jSONObject.put("localId", getLocalId());
                 jSONObject.put("anId", a());
                 jSONObject.put("mac", "");
@@ -198,7 +200,7 @@ public class b extends a {
         String str = "";
         if (this.b) {
             try {
-                str = com.opos.cmn.g.a.b.b(this.f24737a);
+                str = com.opos.cmn.g.a.b.b(this.f11049a);
             } catch (Exception e) {
                 com.opos.cmn.an.f.a.c("JSCommonEngine", "", e);
                 str = "";
@@ -217,8 +219,8 @@ public class b extends a {
         if (this.b) {
             str = "";
             try {
-                if (!com.opos.cmn.an.f.a.b(this.f24737a)) {
-                    str = StStrategyManager.getInstance(this.f24737a).getGUID();
+                if (!com.opos.cmn.an.f.a.b(this.f11049a)) {
+                    str = StStrategyManager.getInstance(this.f11049a).getGUID();
                 }
             } catch (Exception e) {
                 com.opos.cmn.an.f.a.c("JSCommonEngine", "", e);
@@ -238,8 +240,8 @@ public class b extends a {
         if (this.b) {
             str = "";
             try {
-                if (!com.opos.cmn.an.f.a.b(this.f24737a)) {
-                    str = StStrategyManager.getInstance(this.f24737a).getImei();
+                if (!com.opos.cmn.an.f.a.b(this.f11049a)) {
+                    str = StStrategyManager.getInstance(this.f11049a).getImei();
                 }
             } catch (Exception e) {
                 com.opos.cmn.an.f.a.c("JSCommonEngine", "", e);
@@ -273,7 +275,7 @@ public class b extends a {
         String str = "";
         if (this.b) {
             try {
-                str = com.opos.cmn.g.a.c.c(this.f24737a);
+                str = com.opos.cmn.g.a.c.c(this.f11049a);
             } catch (Exception e) {
                 com.opos.cmn.an.f.a.c("JSCommonEngine", "", e);
                 str = "";
@@ -288,7 +290,7 @@ public class b extends a {
         String str = "";
         if (this.b) {
             try {
-                str = com.opos.cmn.biz.web.c.a.a.a.a(this.f24737a);
+                str = com.opos.cmn.biz.web.c.a.a.a.a(this.f11049a);
             } catch (Exception e) {
                 com.opos.cmn.an.f.a.c("JSCommonEngine", "", e);
                 str = "";
@@ -303,7 +305,7 @@ public class b extends a {
         boolean h;
         if (this.b) {
             try {
-                h = com.opos.cmn.g.a.b.h(this.f24737a);
+                h = com.opos.cmn.g.a.b.h(this.f11049a);
             } catch (Exception e) {
                 com.opos.cmn.an.f.a.c("JSCommonEngine", "", e);
             }
@@ -320,7 +322,7 @@ public class b extends a {
         String str = "";
         if (this.b) {
             try {
-                str = com.opos.cmn.an.h.e.a.c(this.f24737a);
+                str = com.opos.cmn.an.h.e.a.c(this.f11049a);
             } catch (Exception e) {
                 com.opos.cmn.an.f.a.c("JSCommonEngine", "", e);
                 str = "";
@@ -335,7 +337,7 @@ public class b extends a {
         int i;
         if (this.b) {
             try {
-                i = com.opos.cmn.an.h.f.a.i(this.f24737a);
+                i = com.opos.cmn.an.h.f.a.i(this.f11049a);
             } catch (Exception e) {
                 com.opos.cmn.an.f.a.c("JSCommonEngine", "", e);
             }
@@ -352,7 +354,7 @@ public class b extends a {
         String str = "";
         if (this.b) {
             try {
-                str = com.opos.cmn.g.a.b.a(this.f24737a);
+                str = com.opos.cmn.g.a.b.a(this.f11049a);
             } catch (Exception e) {
                 com.opos.cmn.an.f.a.c("JSCommonEngine", "", e);
                 str = "";
@@ -371,10 +373,10 @@ public class b extends a {
         if (this.b) {
             try {
                 JSONObject jSONObject = new JSONObject();
-                String packageName = com.opos.cmn.an.c.a.a(str) ? this.f24737a.getPackageName() : str;
+                String packageName = com.opos.cmn.an.c.a.a(str) ? this.f11049a.getPackageName() : str;
                 jSONObject.put("pkgName", packageName);
-                jSONObject.put("verName", com.opos.cmn.an.h.d.a.c(this.f24737a, packageName));
-                jSONObject.put("verCode", com.opos.cmn.an.h.d.a.b(this.f24737a, packageName));
+                jSONObject.put("verName", com.opos.cmn.an.h.d.a.c(this.f11049a, packageName));
+                jSONObject.put("verCode", com.opos.cmn.an.h.d.a.b(this.f11049a, packageName));
                 str2 = jSONObject.toString();
             } catch (Exception e) {
                 com.opos.cmn.an.f.a.c("JSCommonEngine", "", e);
@@ -397,7 +399,7 @@ public class b extends a {
         String str = "";
         if (this.b) {
             try {
-                str = com.opos.cmn.biz.a.d.a(this.f24737a);
+                str = com.opos.cmn.biz.a.d.a(this.f11049a);
             } catch (Exception e) {
                 com.opos.cmn.an.f.a.c("JSCommonEngine", "", e);
                 str = "";
@@ -416,9 +418,9 @@ public class b extends a {
         if (this.b) {
             try {
                 JSONObject jSONObject = new JSONObject();
-                jSONObject.put("hg", com.opos.cmn.an.h.f.a.c(this.f24737a));
-                jSONObject.put(ActVideoSetting.WIFI_DISPLAY, com.opos.cmn.an.h.f.a.b(this.f24737a));
-                jSONObject.put("density", com.opos.cmn.an.h.f.a.f(this.f24737a));
+                jSONObject.put("hg", com.opos.cmn.an.h.f.a.c(this.f11049a));
+                jSONObject.put(ActVideoSetting.WIFI_DISPLAY, com.opos.cmn.an.h.f.a.b(this.f11049a));
+                jSONObject.put("density", com.opos.cmn.an.h.f.a.f(this.f11049a));
                 str = jSONObject.toString();
             } catch (Exception e) {
                 com.opos.cmn.an.f.a.c("JSCommonEngine", "", e);
@@ -434,7 +436,7 @@ public class b extends a {
         boolean b;
         if (this.b) {
             try {
-                b = com.opos.cmn.an.f.a.b(this.f24737a);
+                b = com.opos.cmn.an.f.a.b(this.f11049a);
             } catch (Exception e) {
                 com.opos.cmn.an.f.a.c("JSCommonEngine", "", e);
             }
@@ -459,7 +461,7 @@ public class b extends a {
             boolean r0 = r0.b
             if (r0 == 0) goto L1c
             r0 = r4
-            android.content.Context r0 = r0.f24737a     // Catch: java.lang.Exception -> L13
+            android.content.Context r0 = r0.f11049a     // Catch: java.lang.Exception -> L13
             r1 = r5
             boolean r0 = com.opos.cmn.an.h.d.a.d(r0, r1)     // Catch: java.lang.Exception -> L13
             r6 = r0
@@ -525,7 +527,7 @@ public class b extends a {
                             while (stringTokenizer.hasMoreTokens()) {
                                 String nextToken = stringTokenizer.nextToken();
                                 if (!com.opos.cmn.an.c.a.a(nextToken)) {
-                                    jSONObject.put(nextToken, com.opos.cmn.an.h.d.a.d(this.f24737a, nextToken));
+                                    jSONObject.put(nextToken, com.opos.cmn.an.h.d.a.d(this.f11049a, nextToken));
                                 }
                             }
                             str2 = jSONObject.toString();
@@ -557,7 +559,7 @@ public class b extends a {
             boolean r0 = r0.b
             if (r0 == 0) goto L1c
             r0 = r4
-            android.content.Context r0 = r0.f24737a     // Catch: java.lang.Exception -> L13
+            android.content.Context r0 = r0.f11049a     // Catch: java.lang.Exception -> L13
             r1 = r5
             boolean r0 = com.opos.cmn.biz.web.c.a.a.a.a(r0, r1)     // Catch: java.lang.Exception -> L13
             r6 = r0
@@ -612,7 +614,7 @@ public class b extends a {
                 @Override // java.lang.Runnable
                 public void run() {
                     try {
-                        Toast.makeText(b.this.f24737a, str, !z ? 1 : 0).show();
+                        Toast.makeText(b.this.f11049a, str, !z ? 1 : 0).show();
                     } catch (Exception e) {
                         com.opos.cmn.an.f.a.c("JSCommonEngine", "", e);
                     }

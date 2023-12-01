@@ -16,7 +16,7 @@ public final class e extends f {
                 obj2 = a(obj, str, stringBuffer, new f.c() { // from class: com.tramini.plugin.a.e.e.1
                     @Override // com.tramini.plugin.a.e.f.c
                     public final boolean a(Object obj3) {
-                        return (obj3 instanceof List) || obj3.getClass().getName().contains(String.this);
+                        return (obj3 instanceof List) || obj3.getClass().getName().contains(str2);
                     }
 
                     @Override // com.tramini.plugin.a.e.f.c
@@ -32,7 +32,7 @@ public final class e extends f {
                                             return f.a.a();
                                         }
                                         Object obj4 = list.get(i2);
-                                        if (obj4.getClass().getName().contains(String.this)) {
+                                        if (obj4.getClass().getName().contains(str2)) {
                                             return f.a.a(obj4);
                                         }
                                         i = i2 + 1;
@@ -72,7 +72,7 @@ public final class e extends f {
             }
             if (jSONObject2.length() > 0) {
                 com.tramini.plugin.a.c.a aVar = new com.tramini.plugin.a.c.a();
-                aVar.f40498a = jSONObject2;
+                aVar.f26807a = jSONObject2;
                 return aVar;
             }
             return null;

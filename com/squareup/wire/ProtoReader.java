@@ -50,9 +50,9 @@ public final class ProtoReader {
         }
     }
 
-    public ProtoReader(BufferedSource source) {
-        Intrinsics.e(source, "source");
-        this.source = source;
+    public ProtoReader(BufferedSource bufferedSource) {
+        Intrinsics.e(bufferedSource, "source");
+        this.source = bufferedSource;
         this.limit = Long.MAX_VALUE;
         this.state = 2;
         this.tag = -1;
@@ -88,7 +88,7 @@ public final class ProtoReader {
             this.pushedLimit = -1L;
             return j;
         }
-        throw new ProtocolException(Intrinsics.a("Expected LENGTH_DELIMITED but was ", (Object) Integer.valueOf(this.state)));
+        throw new ProtocolException(Intrinsics.a("Expected LENGTH_DELIMITED but was ", Integer.valueOf(this.state)));
     }
 
     private final int internalReadVarint32() {
@@ -168,7 +168,7 @@ public final class ProtoReader {
                 }
                 return;
             } else if (i3 != 5) {
-                throw new ProtocolException(Intrinsics.a("Unexpected field encoding: ", (Object) Integer.valueOf(i3)));
+                throw new ProtocolException(Intrinsics.a("Unexpected field encoding: ", Integer.valueOf(i3)));
             } else {
                 this.state = 5;
                 readFixed32();
@@ -178,15 +178,15 @@ public final class ProtoReader {
     }
 
     /* renamed from: -forEachTag  reason: not valid java name */
-    public final ByteString m9747forEachTag(Function1<? super Integer, ? extends Object> tagHandler) {
-        Intrinsics.e(tagHandler, "tagHandler");
+    public final ByteString m6698forEachTag(Function1<? super Integer, ? extends Object> function1) {
+        Intrinsics.e(function1, "tagHandler");
         long beginMessage = beginMessage();
         while (true) {
             int nextTag = nextTag();
             if (nextTag == -1) {
                 return endMessageAndGetUnknownFields(beginMessage);
             }
-            tagHandler.invoke(Integer.valueOf(nextTag));
+            function1.invoke(Integer.valueOf(nextTag));
         }
     }
 
@@ -274,7 +274,7 @@ public final class ProtoReader {
                         }
                         throw new IllegalStateException();
                     }
-                    throw new ProtocolException(Intrinsics.a("Negative length: ", (Object) Integer.valueOf(internalReadVarint322)));
+                    throw new ProtocolException(Intrinsics.a("Negative length: ", Integer.valueOf(internalReadVarint322)));
                 } else if (i3 != 3) {
                     if (i3 != 4) {
                         if (i3 == 5) {
@@ -282,7 +282,7 @@ public final class ProtoReader {
                             this.state = 5;
                             return this.tag;
                         }
-                        throw new ProtocolException(Intrinsics.a("Unexpected field encoding: ", (Object) Integer.valueOf(i3)));
+                        throw new ProtocolException(Intrinsics.a("Unexpected field encoding: ", Integer.valueOf(i3)));
                     }
                     throw new ProtocolException("Unexpected end group");
                 } else {
@@ -314,7 +314,7 @@ public final class ProtoReader {
             afterPackableScalar(5);
             return readIntLe;
         }
-        throw new ProtocolException(Intrinsics.a("Expected FIXED32 or LENGTH_DELIMITED but was ", (Object) Integer.valueOf(this.state)));
+        throw new ProtocolException(Intrinsics.a("Expected FIXED32 or LENGTH_DELIMITED but was ", Integer.valueOf(this.state)));
     }
 
     public final long readFixed64() throws IOException {
@@ -326,7 +326,7 @@ public final class ProtoReader {
             afterPackableScalar(1);
             return readLongLe;
         }
-        throw new ProtocolException(Intrinsics.a("Expected FIXED64 or LENGTH_DELIMITED but was ", (Object) Integer.valueOf(this.state)));
+        throw new ProtocolException(Intrinsics.a("Expected FIXED64 or LENGTH_DELIMITED but was ", Integer.valueOf(this.state)));
     }
 
     public final String readString() throws IOException {
@@ -348,14 +348,14 @@ public final class ProtoReader {
             afterPackableScalar(0);
             return internalReadVarint32;
         }
-        throw new ProtocolException(Intrinsics.a("Expected VARINT or LENGTH_DELIMITED but was ", (Object) Integer.valueOf(this.state)));
+        throw new ProtocolException(Intrinsics.a("Expected VARINT or LENGTH_DELIMITED but was ", Integer.valueOf(this.state)));
     }
 
     public final long readVarint64() throws IOException {
         byte readByte;
         int i = this.state;
         if (i != 0 && i != 2) {
-            throw new ProtocolException(Intrinsics.a("Expected VARINT or LENGTH_DELIMITED but was ", (Object) Integer.valueOf(this.state)));
+            throw new ProtocolException(Intrinsics.a("Expected VARINT or LENGTH_DELIMITED but was ", Integer.valueOf(this.state)));
         }
         long j = 0;
         int i2 = 0;

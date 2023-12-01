@@ -1,5 +1,6 @@
 package com.blued.android.module.live_china.model;
 
+import com.android.internal.content.NativeLibraryHelper;
 import java.io.Serializable;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/model/LiveGuideModel.class */
@@ -20,7 +21,7 @@ public class LiveGuideModel implements Serializable {
     public String url;
 
     public String getGuideType() {
-        return this.type + "-" + this.sub_type;
+        return this.type + NativeLibraryHelper.CLEAR_ABI_OVERRIDE + this.sub_type;
     }
 
     public long getNextTime() {

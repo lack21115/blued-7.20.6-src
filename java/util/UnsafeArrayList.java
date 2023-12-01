@@ -13,7 +13,7 @@ public class UnsafeArrayList<T> extends AbstractList<T> {
         this.elementType = cls;
     }
 
-    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection
     public boolean add(T t) {
         if (this.size == this.array.length) {
             T[] tArr = (T[]) ((Object[]) Array.newInstance((Class<?>) this.elementType, this.size * 2));
@@ -37,7 +37,7 @@ public class UnsafeArrayList<T> extends AbstractList<T> {
         return this.array[i];
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    @Override // java.util.AbstractCollection, java.util.Collection
     public int size() {
         return this.size;
     }

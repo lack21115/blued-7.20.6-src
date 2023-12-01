@@ -9,44 +9,36 @@ import java.util.Set;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/net/http/HttpDnsUtils.class */
 public class HttpDnsUtils {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static Set<String> f9678a = new HashSet();
+    private static Set<String> a = new HashSet();
 
     /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/net/http/HttpDnsUtils$HttpDnsResult.class */
     public static class HttpDnsResult {
-
-        /* renamed from: a  reason: collision with root package name */
-        public String f9679a;
+        public String a;
         public String b;
-
-        /* renamed from: c  reason: collision with root package name */
-        public String f9680c;
+        public String c;
         public String d;
 
         public String toString() {
-            return "[oriUrl:" + this.f9679a + ", ipUrl:" + this.b + ", hostName:" + this.f9680c + ", ipAddr:" + this.d + "]";
+            return "[oriUrl:" + this.a + ", ipUrl:" + this.b + ", hostName:" + this.c + ", ipAddr:" + this.d + "]";
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/net/http/HttpDnsUtils$HttpDnsTask.class */
     public static class HttpDnsTask extends AsyncTask {
-
-        /* renamed from: a  reason: collision with root package name */
-        private String f9681a;
+        private String a;
 
         public HttpDnsTask(String str) {
-            this.f9681a = str;
+            this.a = str;
         }
 
         @Override // android.os.AsyncTask
         protected Object doInBackground(Object[] objArr) {
             if (HttpManager.d() != null) {
                 try {
-                    HttpManager.d().query(this.f9681a);
+                    HttpManager.d().query(this.a);
                     if (HttpManager.c()) {
-                        Log.v("HttpManager", "finish update HttpDns for " + this.f9681a);
+                        Log.v("HttpManager", "finish update HttpDns for " + this.a);
                         return null;
                     }
                     return null;
@@ -58,21 +50,19 @@ public class HttpDnsUtils {
             return null;
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // android.os.AsyncTask
-        public void onCancelled() {
+        protected void onCancelled() {
             super.onCancelled();
-            synchronized (HttpDnsUtils.f9678a) {
-                HttpDnsUtils.f9678a.remove(this.f9681a);
+            synchronized (HttpDnsUtils.a) {
+                HttpDnsUtils.a.remove(this.a);
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // android.os.AsyncTask
-        public void onPostExecute(Object obj) {
+        protected void onPostExecute(Object obj) {
             super.onPostExecute(obj);
-            synchronized (HttpDnsUtils.f9678a) {
-                HttpDnsUtils.f9678a.remove(this.f9681a);
+            synchronized (HttpDnsUtils.a) {
+                HttpDnsUtils.a.remove(this.a);
             }
         }
     }
@@ -107,9 +97,9 @@ public class HttpDnsUtils {
     }
 
     private static void b(String str) {
-        synchronized (f9678a) {
-            if (!f9678a.contains(str)) {
-                f9678a.add(str);
+        synchronized (a) {
+            if (!a.contains(str)) {
+                a.add(str);
                 new HttpDnsTask(str).execute(new Object[0]);
             }
         }

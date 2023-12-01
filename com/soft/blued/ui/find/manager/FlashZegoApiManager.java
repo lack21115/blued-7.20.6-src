@@ -8,7 +8,7 @@ public class FlashZegoApiManager {
     private static FlashZegoApiManager d;
 
     /* renamed from: a  reason: collision with root package name */
-    public ChannelModel f30596a;
+    public ChannelModel f16906a;
     private ZegoLiveRoom e;
     private boolean f;
     private boolean g = false;
@@ -17,7 +17,7 @@ public class FlashZegoApiManager {
     long b = 3170513794L;
 
     /* renamed from: c  reason: collision with root package name */
-    byte[] f30597c = {-98, -126, -116, 45, -18, -101, -67, 14, 2, 90, -85, 54, -84, 63, 45, -111, -110, 33, -9, -74, -109, -121, 18, 8, -127, 75, -62, 24, -115, -69, -70, -28};
+    byte[] f16907c = {-98, -126, -116, 45, -18, -101, -67, 14, 2, 90, -85, 54, -84, 63, 45, -111, -110, 33, -9, -74, -109, -121, 18, 8, -127, 75, -62, 24, -115, -69, -70, -28};
 
     private FlashZegoApiManager() {
         this.e = null;
@@ -40,7 +40,7 @@ public class FlashZegoApiManager {
     }
 
     public void a(ChannelModel channelModel) {
-        this.f30596a = channelModel;
+        this.f16906a = channelModel;
     }
 
     public void a(boolean z) {

@@ -8,9 +8,7 @@ import org.json.JSONObject;
 /* loaded from: source-4181928-dex2jar.jar:com/mokee/cloud/misc/CloudUtils.class */
 public class CloudUtils {
     public static final String TAG = null;
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final String[] f24213a = null;
+    private static final String[] a = null;
     public static boolean b;
 
     static {
@@ -19,13 +17,13 @@ public class CloudUtils {
     }
 
     public static String formatNumber(String str) {
-        return str.replaceAll(f24213a[0], "");
+        return str.replaceAll(a[0], "");
     }
 
     public static String getInfoFromResult(String str) {
         byte b2 = 1;
         try {
-            String[] split = new JSONObject(str.substring(5, str.length() - 1)).getString(f24213a[4]).split("：");
+            String[] split = new JSONObject(str.substring(5, str.length() - 1)).getString(a[4]).split("：");
             try {
                 if (split.length <= 1) {
                     b2 = 0;
@@ -41,11 +39,11 @@ public class CloudUtils {
     }
 
     public static boolean hasAccessPermission() {
-        return Build.MOD_VERSION.startsWith(f24213a[5]) && Build.VERSION.startsWith(f24213a[8]) && SystemProperties.get(f24213a[7]).equals(f24213a[6]);
+        return Build.MOD_VERSION.startsWith(a[5]) && Build.VERSION.startsWith(a[8]) && SystemProperties.get(a[7]).equals(a[6]);
     }
 
     public static boolean inBlackList() {
-        return android.os.Build.DISPLAY.contains(f24213a[3]) || android.os.Build.USER.contains(f24213a[1]) || android.os.Build.HOST.contains(f24213a[2]);
+        return android.os.Build.DISPLAY.contains(a[3]) || android.os.Build.USER.contains(a[1]) || android.os.Build.HOST.contains(a[2]);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -57,7 +55,7 @@ public class CloudUtils {
     */
     public static boolean inContactList(android.content.ContentResolver r7, java.lang.String r8) {
         /*
-            java.lang.String[] r0 = com.mokee.cloud.misc.CloudUtils.f24213a
+            java.lang.String[] r0 = com.mokee.cloud.misc.CloudUtils.a
             r1 = 9
             r0 = r0[r1]
             r10 = r0
@@ -105,10 +103,10 @@ public class CloudUtils {
         L43:
             r0 = r8
             r7 = r0
-            java.lang.String[] r0 = com.mokee.cloud.misc.CloudUtils.f24213a     // Catch: java.lang.Throwable -> L84
+            java.lang.String[] r0 = com.mokee.cloud.misc.CloudUtils.a     // Catch: java.lang.Throwable -> L84
             r1 = 10
             r0 = r0[r1]     // Catch: java.lang.Throwable -> L84
-            java.lang.String[] r1 = com.mokee.cloud.misc.CloudUtils.f24213a     // Catch: java.lang.Throwable -> L84
+            java.lang.String[] r1 = com.mokee.cloud.misc.CloudUtils.a     // Catch: java.lang.Throwable -> L84
             r2 = 11
             r1 = r1[r2]     // Catch: java.lang.Throwable -> L84
             r2 = r10

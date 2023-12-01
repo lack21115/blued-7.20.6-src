@@ -3,6 +3,11 @@ package com.blued.community.http;
 import android.content.Context;
 import android.text.TextUtils;
 import androidx.collection.ArrayMap;
+import com.alipay.sdk.util.i;
+import com.android.internal.telephony.PhoneConstants;
+import com.android.internal.util.cm.QSConstants;
+import com.anythink.core.api.ATAdConst;
+import com.anythink.core.common.g.c;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.net.HttpManager;
 import com.blued.android.core.net.IRequestHost;
@@ -22,28 +27,21 @@ import com.blued.community.utils.CityHelper;
 import com.blued.community.utils.CommunityPreferences;
 import com.blued.community.utils.StringUtils;
 import com.blued.community.utils.UserInfoUtils;
-import com.cdo.oaps.ad.wrapper.BaseWrapper;
 import com.google.gson.JsonParser;
-import com.huawei.openalliance.ad.constant.ao;
-import com.sina.weibo.sdk.constant.WBPageConstants;
-import com.tencent.open.SocialConstants;
-import com.umeng.analytics.pro.bh;
 import java.net.URLEncoder;
 import java.util.Map;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/http/FeedHttpUtils.class */
 public class FeedHttpUtils {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static String f19080a = "?http_method_override=DELETE";
+    public static String a = "?http_method_override=DELETE";
 
     private static Map<String, String> a(String str, String str2, String str3, String str4, String str5, String str6, String str7, int i) {
         Map<String, String> a2 = BluedHttpTools.a();
         a2.put("filter", str);
-        a2.put(WBPageConstants.ParamKey.PAGE, str2);
-        a2.put("size", str3);
+        a2.put("page", str2);
+        a2.put(ATAdConst.NETWORK_REQUEST_PARAMS_KEY.BANNER_SIZE, str3);
         a2.put("lot", str4);
-        a2.put("lat", str5);
+        a2.put(c.B, str5);
         a2.put("distance", str6);
         a2.put("type", String.valueOf(i));
         if (!TextUtils.isEmpty(str7)) {
@@ -63,8 +61,8 @@ public class FeedHttpUtils {
 
     public static void a(Context context, BluedUIHttpResponse bluedUIHttpResponse, int i, int i2, IRequestHost iRequestHost) {
         Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(WBPageConstants.ParamKey.PAGE, i + "");
-        a2.put("size", i2 + "");
+        a2.put("page", i + "");
+        a2.put(ATAdConst.NETWORK_REQUEST_PARAMS_KEY.BANNER_SIZE, i2 + "");
         HttpManager.a(CommunityHttpUtils.a() + "/ticktocks/super_topics/list", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
     }
 
@@ -76,12 +74,12 @@ public class FeedHttpUtils {
 
     public static void a(Context context, BluedUIHttpResponse bluedUIHttpResponse, String str, int i, int i2, IRequestHost iRequestHost) {
         Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(WBPageConstants.ParamKey.PAGE, i + "");
+        a2.put("page", i + "");
         int i3 = i2;
         if (i2 == 0) {
             i3 = 20;
         }
-        a2.put("size", i3 + "");
+        a2.put(ATAdConst.NETWORK_REQUEST_PARAMS_KEY.BANNER_SIZE, i3 + "");
         HttpManager.a(CommunityHttpUtils.a() + "/ticktocks/" + str + "/comments/hot", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
     }
 
@@ -105,7 +103,7 @@ public class FeedHttpUtils {
         if (i3 != 0) {
             a2.put("is_ads", i3 + "");
         }
-        b.put("location", str3);
+        b.put(QSConstants.TILE_LOCATION, str3);
         b.put("location_lot", str4);
         b.put("location_lat", str5);
         HttpManager.b(CommunityHttpUtils.a(a2, CommunityHttpUtils.a() + "/ticktocks/" + str + "/repost"), bluedUIHttpResponse).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(b)).h();
@@ -147,8 +145,8 @@ public class FeedHttpUtils {
 
     public static void a(Context context, BluedUIHttpResponse bluedUIHttpResponse, String str, String str2, String str3, int i, IRequestHost iRequestHost) {
         Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(WBPageConstants.ParamKey.PAGE, str2);
-        a2.put("size", str3);
+        a2.put("page", str2);
+        a2.put(ATAdConst.NETWORK_REQUEST_PARAMS_KEY.BANNER_SIZE, str3);
         if (i != 0) {
             a2.put("is_ads", i + "");
         }
@@ -158,8 +156,8 @@ public class FeedHttpUtils {
     public static void a(Context context, BluedUIHttpResponse bluedUIHttpResponse, String str, String str2, String str3, IRequestHost iRequestHost) {
         Map<String, String> a2 = BluedHttpTools.a();
         a2.put("tid", str);
-        a2.put(WBPageConstants.ParamKey.PAGE, str2);
-        a2.put("size", str3);
+        a2.put("page", str2);
+        a2.put(ATAdConst.NETWORK_REQUEST_PARAMS_KEY.BANNER_SIZE, str3);
         HttpManager.a(CommunityHttpUtils.a() + "/ticktocks/recommend/" + str, bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
     }
 
@@ -172,7 +170,7 @@ public class FeedHttpUtils {
         String str = CommunityHttpUtils.a() + "/ticktocks/users/feed/diversion";
         Map<String, String> a2 = BluedHttpTools.a();
         a2.put("filter", String.valueOf(i));
-        a2.put("lat", CityHelper.a().e());
+        a2.put(c.B, CityHelper.a().e());
         a2.put("lot", CityHelper.a().c());
         a2.put("is_no_show", String.valueOf(i2));
         int v = CommunityPreferences.v("RecommendDrawDepthBubbleShowCount");
@@ -185,8 +183,8 @@ public class FeedHttpUtils {
 
     public static void a(BluedUIHttpResponse bluedUIHttpResponse, int i, int i2, String str, IRequestHost iRequestHost) {
         Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(WBPageConstants.ParamKey.PAGE, i + "");
-        a2.put("size", i2 + "");
+        a2.put("page", i + "");
+        a2.put(ATAdConst.NETWORK_REQUEST_PARAMS_KEY.BANNER_SIZE, i2 + "");
         a2.put("q", URLEncoder.encode(str));
         HttpManager.a(CommunityHttpUtils.a() + "/ticktocks/super_topics/search", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
     }
@@ -197,15 +195,15 @@ public class FeedHttpUtils {
 
     public static void a(BluedUIHttpResponse bluedUIHttpResponse, int i, String str, String str2, IRequestHost iRequestHost) {
         String str3 = CommunityHttpUtils.a() + "/ticktocks/users/" + UserInfo.getInstance().getLoginUserInfo().getUid() + "/explore";
-        ArrayMap arrayMap = new ArrayMap();
-        arrayMap.put(WBPageConstants.ParamKey.PAGE, i + "");
+        Map<String, String> arrayMap = new ArrayMap<>();
+        arrayMap.put("page", i + "");
         if (!TextUtils.isEmpty(str)) {
             arrayMap.put("exclude_id", str);
         }
         if (!TextUtils.isEmpty(str2)) {
             arrayMap.put("super_num", str2);
         }
-        arrayMap.put("channel", AppInfo.f9487c);
+        arrayMap.put("channel", AppInfo.c);
         String[] r = CommunityServiceManager.a().r();
         if (r != null && CommunityServiceManager.a().q() != 6) {
             if (!TextUtils.isEmpty(r[0])) {
@@ -220,9 +218,9 @@ public class FeedHttpUtils {
 
     public static void a(BluedUIHttpResponse bluedUIHttpResponse, int i, String str, String str2, String str3, String str4, String str5, IRequestHost iRequestHost) {
         String str6 = CommunityHttpUtils.a() + "/ticktocks/info";
-        ArrayMap arrayMap = new ArrayMap();
-        arrayMap.put(WBPageConstants.ParamKey.PAGE, i + "");
-        arrayMap.put("size", BaseWrapper.ENTER_ID_SYSTEM_HELPER);
+        Map<String, String> arrayMap = new ArrayMap<>();
+        arrayMap.put("page", i + "");
+        arrayMap.put(ATAdConst.NETWORK_REQUEST_PARAMS_KEY.BANNER_SIZE, "20");
         arrayMap.put("filter", str);
         arrayMap.put("longitude", str2);
         arrayMap.put("latitude", str3);
@@ -241,11 +239,11 @@ public class FeedHttpUtils {
 
     public static void a(BluedUIHttpResponse bluedUIHttpResponse, NewFeedModel newFeedModel, String str, String str2, String[] strArr, String[] strArr2, String str3, String str4, double d) {
         Map<String, Object> b = BluedHttpTools.b();
-        b.put(bh.x, str);
-        b.put("phone", str2);
+        b.put("os", str);
+        b.put(PhoneConstants.PHONE_KEY, str2);
         b.put("duration", String.valueOf(d));
         b.put("text", newFeedModel.getContent());
-        b.put(SocialConstants.PARAM_IMAGE, strArr);
+        b.put("pics", strArr);
         b.put("videos", strArr2);
         b.put("width", str3);
         b.put("height", str4);
@@ -253,7 +251,7 @@ public class FeedHttpUtils {
         b.put("location_lat", newFeedModel.getLat());
         b.put("allow_comments", newFeedModel.allow_comments + "");
         b.put("reading_scope", newFeedModel.reading_scope + "");
-        b.put("location", newFeedModel.address);
+        b.put(QSConstants.TILE_LOCATION, newFeedModel.address);
         b.put("is_vote", newFeedModel.is_vote + "");
         b.put("is_super_topics", newFeedModel.is_super_topics + "");
         b.put("super_did", newFeedModel.super_did);
@@ -264,7 +262,7 @@ public class FeedHttpUtils {
         b.put("circle_id", newFeedModel.circle_id);
         b.put("is_posts_vote", Integer.valueOf(newFeedModel.is_posts_vote));
         b.put("posts_vote_title", newFeedModel.posts_vote_title);
-        b.put("option", TextUtils.isEmpty(newFeedModel.option) ? "" : newFeedModel.option.split(";"));
+        b.put("option", TextUtils.isEmpty(newFeedModel.option) ? "" : newFeedModel.option.split(i.b));
         b.put("share_circle_posting_id", newFeedModel.share_posting_id);
         b.put("is_join_circle", newFeedModel.is_join_circle + "");
         b.put("join_circle_id", newFeedModel.join_circle_id + "");
@@ -289,10 +287,10 @@ public class FeedHttpUtils {
         b.put("anonym_avatar", Integer.valueOf(newFeedModel.anonym_avatar));
         b.put("bubble_state_id", newFeedModel.sign_state_id);
         if (!TextUtils.isEmpty(newFeedModel.extraJSON)) {
-            if (!TextUtils.isEmpty(((FeedExtra) AppInfo.f().fromJson(newFeedModel.extraJSON, (Class<Object>) FeedExtra.class)).url)) {
+            if (!TextUtils.isEmpty(((FeedExtra) AppInfo.f().fromJson(newFeedModel.extraJSON, FeedExtra.class)).url)) {
                 b.put("is_url", "1");
             }
-            b.put(ao.K, new JsonParser().parse(newFeedModel.extraJSON));
+            b.put("extras", new JsonParser().parse(newFeedModel.extraJSON));
         }
         if (strArr2 == null || strArr2.length <= 0) {
             b.put("is_catch", "0");
@@ -355,15 +353,15 @@ public class FeedHttpUtils {
 
     public static void a(BluedUIHttpResponse bluedUIHttpResponse, String str, String str2, String str3, IRequestHost iRequestHost) {
         Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(WBPageConstants.ParamKey.PAGE, str);
-        a2.put("size", str2);
+        a2.put("page", str);
+        a2.put(ATAdConst.NETWORK_REQUEST_PARAMS_KEY.BANNER_SIZE, str2);
         HttpManager.a(CommunityHttpUtils.a() + "/ticktocks/waterfall/" + str3, bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
     }
 
     public static void a(BluedUIHttpResponse bluedUIHttpResponse, String str, String str2, String str3, String str4, int i, IRequestHost iRequestHost) {
         Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(WBPageConstants.ParamKey.PAGE, str2);
-        a2.put("size", str3);
+        a2.put("page", str2);
+        a2.put(ATAdConst.NETWORK_REQUEST_PARAMS_KEY.BANNER_SIZE, str3);
         a2.put("source", "ticktock");
         a2.put("anchor_comment_id", str4);
         if (i != 0) {
@@ -383,8 +381,8 @@ public class FeedHttpUtils {
         }
         Map<String, String> a2 = BluedHttpTools.a();
         a2.put("filter", str3);
-        a2.put(WBPageConstants.ParamKey.PAGE, str4);
-        a2.put("size", str5);
+        a2.put("page", str4);
+        a2.put(ATAdConst.NETWORK_REQUEST_PARAMS_KEY.BANNER_SIZE, str5);
         if (!TextUtils.isEmpty(str8)) {
             a2.put("name", str8);
         }
@@ -409,7 +407,7 @@ public class FeedHttpUtils {
         Map<String, String> a2 = a(str2, str3, str4, str5, str6, str7, str8, i);
         a2.put("is_top", z ? "1" : "0");
         a2.put("is_third_ads", z2 ? "1" : "0");
-        if (CommunityManager.f19086a.a().h()) {
+        if (CommunityManager.a.a().h()) {
             a2.put("enter_city_num", String.valueOf(CommunityPreferences.E()));
         }
         if (!StringUtils.d(str9)) {
@@ -421,38 +419,38 @@ public class FeedHttpUtils {
         } else {
             a2.put("anchor_round", CommunityPreferences.O().booleanValue() ? "1" : "2");
         }
-        if (CommonStringUtils.a(str3) == 1 && CommunityManager.f19086a.a().b() && CommunityManager.f19086a.a().a() != null) {
-            if (CommunityManager.f19086a.a().a().getDouble_click_feed_id() > 0) {
-                LogUtils.c("noticeGetBubbleData.getCityFeed.feedId:" + CommunityManager.f19086a.a().a().getDouble_click_feed_id());
-                LogUtils.c("noticeGetBubbleData.getCityFeed.uid:" + CommunityManager.f19086a.a().a().getDouble_click_feed_uid());
-                a2.put("double_click_feed_id", CommunityManager.f19086a.a().a().getDouble_click_feed_id() + "");
-                a2.put("double_click_feed_uid", CommunityManager.f19086a.a().a().getDouble_click_feed_uid() + "");
-                CommunityManager.f19086a.a().a().setDouble_click_feed_id(0);
-                CommunityManager.f19086a.a().a().setDouble_click_feed_uid(0);
-                CommunityManager.f19086a.a().a().double_click_feed_avatar = null;
+        if (CommonStringUtils.a(str3) == 1 && CommunityManager.a.a().b() && CommunityManager.a.a().a() != null) {
+            if (CommunityManager.a.a().a().getDouble_click_feed_id() > 0) {
+                LogUtils.c("noticeGetBubbleData.getCityFeed.feedId:" + CommunityManager.a.a().a().getDouble_click_feed_id());
+                LogUtils.c("noticeGetBubbleData.getCityFeed.uid:" + CommunityManager.a.a().a().getDouble_click_feed_uid());
+                a2.put("double_click_feed_id", CommunityManager.a.a().a().getDouble_click_feed_id() + "");
+                a2.put("double_click_feed_uid", CommunityManager.a.a().a().getDouble_click_feed_uid() + "");
+                CommunityManager.a.a().a().setDouble_click_feed_id(0);
+                CommunityManager.a.a().a().setDouble_click_feed_uid(0);
+                CommunityManager.a.a().a().double_click_feed_avatar = null;
             }
-            if (CommunityManager.f19086a.a().a().predestined_person_feed_ttids != null) {
-                LogUtils.c("noticeGetBubbleData.getCityFeed.predestined_person_feed_ttids:" + CommunityManager.f19086a.a().a().predestined_person_feed_ttids);
-                LogUtils.c("noticeGetBubbleData.getCityFeed.predestined_person_feed_uids:" + CommunityManager.f19086a.a().a().predestined_person_feed_uids);
-                a2.put("predestined_person_feed_ttids", CommunityManager.f19086a.a().a().predestined_person_feed_ttids);
-                a2.put("predestined_person_feed_uids", CommunityManager.f19086a.a().a().predestined_person_feed_uids);
-                CommunityManager.f19086a.a().a().predestined_person_feed_ttids = null;
-                CommunityManager.f19086a.a().a().predestined_person_feed_uids = null;
-                CommunityManager.f19086a.a().a().extra_bubble_img = null;
+            if (CommunityManager.a.a().a().predestined_person_feed_ttids != null) {
+                LogUtils.c("noticeGetBubbleData.getCityFeed.predestined_person_feed_ttids:" + CommunityManager.a.a().a().predestined_person_feed_ttids);
+                LogUtils.c("noticeGetBubbleData.getCityFeed.predestined_person_feed_uids:" + CommunityManager.a.a().a().predestined_person_feed_uids);
+                a2.put("predestined_person_feed_ttids", CommunityManager.a.a().a().predestined_person_feed_ttids);
+                a2.put("predestined_person_feed_uids", CommunityManager.a.a().a().predestined_person_feed_uids);
+                CommunityManager.a.a().a().predestined_person_feed_ttids = null;
+                CommunityManager.a.a().a().predestined_person_feed_uids = null;
+                CommunityManager.a.a().a().extra_bubble_img = null;
             }
-            if (CommunityManager.f19086a.a().a().extra_activity_id != 0) {
-                a2.put("extra_activity_id", String.valueOf(CommunityManager.f19086a.a().a().extra_activity_id));
-                CommunityManager.f19086a.a().a().extra_activity_id = 0;
+            if (CommunityManager.a.a().a().extra_activity_id != 0) {
+                a2.put("extra_activity_id", String.valueOf(CommunityManager.a.a().a().extra_activity_id));
+                CommunityManager.a.a().a().extra_activity_id = 0;
             }
-            if (CommunityManager.f19086a.a().a().adv_activity_id != 0) {
-                a2.put("adv_activity_id", String.valueOf(CommunityManager.f19086a.a().a().adv_activity_id));
-                CommunityManager.f19086a.a().a().adv_activity_id = 0;
+            if (CommunityManager.a.a().a().adv_activity_id != 0) {
+                a2.put("adv_activity_id", String.valueOf(CommunityManager.a.a().a().adv_activity_id));
+                CommunityManager.a.a().a().adv_activity_id = 0;
             }
-            if (!TextUtils.isEmpty(CommunityManager.f19086a.a().a().extra_bubble_id)) {
-                a2.put("extra_bubble_id", String.valueOf(CommunityManager.f19086a.a().a().extra_bubble_id));
-                CommunityManager.f19086a.a().a().extra_bubble_id = null;
+            if (!TextUtils.isEmpty(CommunityManager.a.a().a().extra_bubble_id)) {
+                a2.put("extra_bubble_id", String.valueOf(CommunityManager.a.a().a().extra_bubble_id));
+                CommunityManager.a.a().a().extra_bubble_id = null;
             }
-            CommunityManager.f19086a.a().a(false);
+            CommunityManager.a.a().a(false);
         }
         if (CommunityServiceManager.a().q() == 6 || CommunityServiceManager.a().q() == 7) {
             String[] r = CommunityServiceManager.a().r();
@@ -484,7 +482,7 @@ public class FeedHttpUtils {
         b.put("text", str2);
         b.put("is_reply", "0");
         b.put("reply_id", "");
-        b.put(SocialConstants.PARAM_IMAGE, strArr);
+        b.put("pics", strArr);
         b.put("is_anonym", z ? "1" : "0");
         Map<String, String> a2 = BluedHttpTools.a();
         a2.put("source", "posting");
@@ -507,8 +505,8 @@ public class FeedHttpUtils {
 
     public static void a(BluedUIHttpResponse bluedUIHttpResponse, boolean z, String str, String str2, String str3, String str4, IRequestHost iRequestHost) {
         Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(WBPageConstants.ParamKey.PAGE, str2);
-        a2.put("size", str3);
+        a2.put("page", str2);
+        a2.put(ATAdConst.NETWORK_REQUEST_PARAMS_KEY.BANNER_SIZE, str3);
         a2.put("source", z ? "ticktock" : "posting");
         a2.put("anchor_comment_id", str4);
         HttpManager.a(CommunityHttpUtils.a() + "/ticktocks/comments/" + str, bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
@@ -573,7 +571,7 @@ public class FeedHttpUtils {
         String str2 = CommunityHttpUtils.a() + "/ticktocks/super_topics/follow";
         String str3 = str2;
         if (!z) {
-            str3 = str2 + f19080a;
+            str3 = str2 + a;
         }
         Map<String, String> a2 = BluedHttpTools.a();
         a2.put("super_id", str);
@@ -599,8 +597,8 @@ public class FeedHttpUtils {
 
     public static void b(Context context, BluedUIHttpResponse bluedUIHttpResponse, String str, String str2, String str3, int i, IRequestHost iRequestHost) {
         Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(WBPageConstants.ParamKey.PAGE, str2);
-        a2.put("size", str3);
+        a2.put("page", str2);
+        a2.put(ATAdConst.NETWORK_REQUEST_PARAMS_KEY.BANNER_SIZE, str3);
         if (i != 0) {
             a2.put("is_ads", i + "");
         }
@@ -627,15 +625,15 @@ public class FeedHttpUtils {
 
     public static void b(BluedUIHttpResponse bluedUIHttpResponse, String str, String str2, IRequestHost iRequestHost) {
         Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(WBPageConstants.ParamKey.PAGE, str);
-        a2.put("size", str2);
+        a2.put("page", str);
+        a2.put(ATAdConst.NETWORK_REQUEST_PARAMS_KEY.BANNER_SIZE, str2);
         HttpManager.a(CommunityHttpUtils.a() + "/ticktocks/comments/list", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
     }
 
     public static void b(BluedUIHttpResponse bluedUIHttpResponse, String str, String str2, String str3, IRequestHost iRequestHost) {
         Map<String, String> a2 = BluedHttpTools.a();
         a2.put("lot", str);
-        a2.put("lat", str2);
+        a2.put(c.B, str2);
         a2.put("city_name", str3);
         HttpManager.a(CommunityHttpUtils.a() + "/ticktocks/banner", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
     }
@@ -659,13 +657,13 @@ public class FeedHttpUtils {
 
     public static void c(BluedUIHttpResponse bluedUIHttpResponse) {
         Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(WBPageConstants.ParamKey.PAGE, "1");
-        a2.put("size", "100");
+        a2.put("page", "1");
+        a2.put(ATAdConst.NETWORK_REQUEST_PARAMS_KEY.BANNER_SIZE, "100");
         HttpManager.a(CommunityHttpUtils.a() + "/ticktocks/questionnaire?filter=img", bluedUIHttpResponse).b(BluedHttpTools.a(true)).a(a2).h();
     }
 
     public static void c(BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        ArrayMap arrayMap = new ArrayMap();
+        Map<String, String> arrayMap = new ArrayMap<>();
         arrayMap.put("filter", "banner");
         arrayMap.put("longitude", CityHelper.a().c());
         arrayMap.put("latitude", CityHelper.a().e());
@@ -688,8 +686,8 @@ public class FeedHttpUtils {
 
     public static void c(BluedUIHttpResponse bluedUIHttpResponse, String str, String str2, IRequestHost iRequestHost) {
         Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(WBPageConstants.ParamKey.PAGE, str);
-        a2.put("size", str2);
+        a2.put("page", str);
+        a2.put(ATAdConst.NETWORK_REQUEST_PARAMS_KEY.BANNER_SIZE, str2);
         HttpManager.a(CommunityHttpUtils.a() + "/ticktocks/liked/list", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
     }
 
@@ -770,7 +768,7 @@ public class FeedHttpUtils {
     }
 
     public static void h(BluedUIHttpResponse bluedUIHttpResponse, String str, IRequestHost iRequestHost) {
-        ArrayMap arrayMap = new ArrayMap();
+        Map<String, String> arrayMap = new ArrayMap<>();
         arrayMap.put("filter", str);
         HttpManager.a(CommunityHttpUtils.a() + "/ticktocks/info", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(arrayMap).h();
     }
@@ -786,7 +784,7 @@ public class FeedHttpUtils {
     }
 
     public static void i(BluedUIHttpResponse bluedUIHttpResponse, String str, IRequestHost iRequestHost) {
-        ArrayMap arrayMap = new ArrayMap();
+        Map<String, String> arrayMap = new ArrayMap<>();
         arrayMap.put("feed_id", str);
         HttpManager.b(CommunityHttpUtils.a() + "/ticktocks/feed/double_click", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(arrayMap).h();
     }

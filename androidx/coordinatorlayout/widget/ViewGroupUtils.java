@@ -11,17 +11,17 @@ import android.view.ViewParent;
 public class ViewGroupUtils {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final ThreadLocal<Matrix> f2300a = new ThreadLocal<>();
+    private static final ThreadLocal<Matrix> f2252a = new ThreadLocal<>();
     private static final ThreadLocal<RectF> b = new ThreadLocal<>();
 
     private ViewGroupUtils() {
     }
 
     static void a(ViewGroup viewGroup, View view, Rect rect) {
-        Matrix matrix = f2300a.get();
+        Matrix matrix = f2252a.get();
         if (matrix == null) {
             matrix = new Matrix();
-            f2300a.set(matrix);
+            f2252a.set(matrix);
         } else {
             matrix.reset();
         }

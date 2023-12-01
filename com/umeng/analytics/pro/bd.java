@@ -16,19 +16,19 @@ public class bd implements au {
     static final class a implements ServiceConnection {
 
         /* renamed from: a  reason: collision with root package name */
-        boolean f40652a;
+        boolean f26961a;
         private final LinkedBlockingQueue<IBinder> b;
 
         private a() {
-            this.f40652a = false;
+            this.f26961a = false;
             this.b = new LinkedBlockingQueue<>();
         }
 
         public IBinder a() throws InterruptedException {
-            if (this.f40652a) {
+            if (this.f26961a) {
                 throw new IllegalStateException();
             }
-            this.f40652a = true;
+            this.f26961a = true;
             return this.b.poll(5L, TimeUnit.SECONDS);
         }
 
@@ -52,7 +52,7 @@ public class bd implements au {
         intent.setClassName("com.samsung.android.deviceidservice", "com.samsung.android.deviceidservice.DeviceIdService");
         if (context.bindService(intent, aVar, 1)) {
             try {
-                return b.AbstractBinderC1076b.a(aVar.a()).a();
+                return b.AbstractBinderC0906b.a(aVar.a()).a();
             } catch (Exception e) {
                 return null;
             } finally {

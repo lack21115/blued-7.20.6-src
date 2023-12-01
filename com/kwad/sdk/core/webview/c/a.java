@@ -16,7 +16,7 @@ public final class a implements com.kwad.sdk.core.webview.b.a {
 
     /* renamed from: com.kwad.sdk.core.webview.c.a$a  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/sdk/core/webview/c/a$a.class */
-    public static final class C0569a extends com.kwad.sdk.core.response.kwai.a {
+    public static final class C0399a extends com.kwad.sdk.core.response.kwai.a {
         public String SK;
         public int SL;
         public String SM;
@@ -50,45 +50,45 @@ public final class a implements com.kwad.sdk.core.webview.b.a {
         public String aqk;
         public String model;
 
-        public static C0569a zf() {
-            C0569a c0569a = new C0569a();
-            c0569a.SK = "3.3.40";
-            c0569a.SL = 3034000;
-            c0569a.ajB = "5.0.1";
-            c0569a.aqk = "1.1";
-            c0569a.SM = ((e) ServiceProvider.get(e.class)).getApiVersion();
-            c0569a.SN = ((e) ServiceProvider.get(e.class)).getApiVersionCode();
-            c0569a.SO = 1;
+        public static C0399a zf() {
+            C0399a c0399a = new C0399a();
+            c0399a.SK = "3.3.40";
+            c0399a.SL = 3034000;
+            c0399a.ajB = "5.0.1";
+            c0399a.aqk = "1.1";
+            c0399a.SM = ((e) ServiceProvider.get(e.class)).getApiVersion();
+            c0399a.SN = ((e) ServiceProvider.get(e.class)).getApiVersionCode();
+            c0399a.SO = 1;
             Context context = ((e) ServiceProvider.get(e.class)).getContext();
-            c0569a.appVersion = k.bH(context);
-            c0569a.appName = ((e) ServiceProvider.get(e.class)).getAppName();
-            c0569a.appId = ((e) ServiceProvider.get(e.class)).getAppId();
-            c0569a.aqh = "";
-            c0569a.alo = y.Dw();
+            c0399a.appVersion = k.bH(context);
+            c0399a.appName = ((e) ServiceProvider.get(e.class)).getAppName();
+            c0399a.appId = ((e) ServiceProvider.get(e.class)).getAppId();
+            c0399a.aqh = "";
+            c0399a.alo = y.Dw();
             f fVar = (f) c.f(f.class);
             if (fVar != null) {
-                c0569a.aln = fVar.nv();
+                c0399a.aln = fVar.nv();
             }
-            c0569a.SP = String.valueOf(ag.ca(context));
-            c0569a.SQ = bd.EO();
-            c0569a.model = bd.EF();
-            c0569a.SR = bd.EH();
-            c0569a.SS = 1;
-            c0569a.ST = bd.getOsVersion();
-            c0569a.SU = bd.ER();
-            c0569a.SV = bd.getLanguage();
-            c0569a.SW = bd.getLocale();
-            c0569a.aqj = ((e) ServiceProvider.get(e.class)).getIsExternal();
-            c0569a.aqi = au.getDeviceId();
-            c0569a.SX = bd.getScreenWidth(context);
-            c0569a.SY = bd.getScreenHeight(context);
-            c0569a.adV = au.cl(context);
-            c0569a.adW = au.getOaid();
-            c0569a.ali = au.cm(context);
-            c0569a.alB = au.cn(context);
-            c0569a.SZ = com.kwad.sdk.c.kwai.a.getStatusBarHeight(context);
-            c0569a.Ta = com.kwad.sdk.c.kwai.a.a(context, 50.0f);
-            return c0569a;
+            c0399a.SP = String.valueOf(ag.ca(context));
+            c0399a.SQ = bd.EO();
+            c0399a.model = bd.EF();
+            c0399a.SR = bd.EH();
+            c0399a.SS = 1;
+            c0399a.ST = bd.getOsVersion();
+            c0399a.SU = bd.ER();
+            c0399a.SV = bd.getLanguage();
+            c0399a.SW = bd.getLocale();
+            c0399a.aqj = ((e) ServiceProvider.get(e.class)).getIsExternal();
+            c0399a.aqi = au.getDeviceId();
+            c0399a.SX = bd.getScreenWidth(context);
+            c0399a.SY = bd.getScreenHeight(context);
+            c0399a.adV = au.cl(context);
+            c0399a.adW = au.getOaid();
+            c0399a.ali = au.cm(context);
+            c0399a.alB = au.cn(context);
+            c0399a.SZ = com.kwad.sdk.c.kwai.a.getStatusBarHeight(context);
+            c0399a.Ta = com.kwad.sdk.c.kwai.a.a(context, 50.0f);
+            return c0399a;
         }
     }
 
@@ -99,7 +99,7 @@ public final class a implements com.kwad.sdk.core.webview.b.a {
 
     @Override // com.kwad.sdk.core.webview.b.a
     public final void handleJsCall(String str, com.kwad.sdk.core.webview.b.c cVar) {
-        cVar.a(C0569a.zf());
+        cVar.a(C0399a.zf());
     }
 
     @Override // com.kwad.sdk.core.webview.b.a

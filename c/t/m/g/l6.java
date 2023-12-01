@@ -10,11 +10,11 @@ public class l6 implements TencentLocation {
     public static final l6 k = new l6();
 
     /* renamed from: a  reason: collision with root package name */
-    public int f3876a;
+    public int f3828a;
     public TencentLocation b;
 
     /* renamed from: c  reason: collision with root package name */
-    public double f3877c;
+    public double f3829c;
     public double d;
     public float e;
     public float f;
@@ -25,7 +25,7 @@ public class l6 implements TencentLocation {
 
     public l6() {
         this.b = m6.b;
-        this.f3876a = 404;
+        this.f3828a = 404;
     }
 
     public l6(i6 i6Var) {
@@ -74,13 +74,13 @@ public class l6 implements TencentLocation {
     }
 
     public void a(int i) {
-        this.f3876a = i;
+        this.f3828a = i;
     }
 
     public void a(i6 i6Var) {
         try {
-            this.f3876a = i6Var.f() <= 0.0d ? 5 : 0;
-            this.f3877c = i6Var.d();
+            this.f3828a = i6Var.f() <= 0.0d ? 5 : 0;
+            this.f3829c = i6Var.d();
             this.d = i6Var.e();
             this.e = (float) i6Var.b();
             this.f = (float) i6Var.a();
@@ -97,7 +97,7 @@ public class l6 implements TencentLocation {
     }
 
     public int b() {
-        return this.f3876a;
+        return this.f3828a;
     }
 
     @Override // com.tencent.map.geolocation.TencentLocation
@@ -201,7 +201,7 @@ public class l6 implements TencentLocation {
     @Override // com.tencent.map.geolocation.TencentLocation
     public double getLatitude() {
         TencentLocation tencentLocation = this.b;
-        return tencentLocation == m6.b ? this.f3877c : tencentLocation.getLatitude();
+        return tencentLocation == m6.b ? this.f3829c : tencentLocation.getLatitude();
     }
 
     @Override // com.tencent.map.geolocation.TencentLocation
@@ -293,6 +293,6 @@ public class l6 implements TencentLocation {
     }
 
     public String toString() {
-        return "TencentLocation{name=" + getName() + ",address=" + getAddress() + ",provider=" + getProvider() + ",latitude=" + getLatitude() + ",longitude=" + getLongitude() + ",altitude=" + getAltitude() + ",accuracy=" + getAccuracy() + ",cityCode=" + getCityCode() + ",areaStat=" + getAreaStat() + ",nation=" + getNation() + ",province=" + getProvince() + ",city=" + getCity() + ",district=" + getDistrict() + ",street=" + getStreet() + ",streetNo=" + getStreetNo() + ",town=" + getTown() + ",village=" + getVillage() + ",bearing=" + getBearing() + ",time=" + getTime() + "," + com.alipay.sdk.util.i.d;
+        return "TencentLocation{name=" + getName() + ",address=" + getAddress() + ",provider=" + getProvider() + ",latitude=" + getLatitude() + ",longitude=" + getLongitude() + ",altitude=" + getAltitude() + ",accuracy=" + getAccuracy() + ",cityCode=" + getCityCode() + ",areaStat=" + getAreaStat() + ",nation=" + getNation() + ",province=" + getProvince() + ",city=" + getCity() + ",district=" + getDistrict() + ",street=" + getStreet() + ",streetNo=" + getStreetNo() + ",town=" + getTown() + ",village=" + getVillage() + ",bearing=" + getBearing() + ",time=" + getTime() + ",}";
     }
 }

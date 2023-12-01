@@ -16,13 +16,9 @@ import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LivePKRoundDotView.class */
 public class LivePKRoundDotView extends FrameLayout implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    Runnable f14804a;
+    Runnable a;
     private LinearLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private LinearLayout f14805c;
+    private LinearLayout c;
     private boolean d;
 
     public LivePKRoundDotView(Context context) {
@@ -32,7 +28,7 @@ public class LivePKRoundDotView extends FrameLayout implements View.OnClickListe
     public LivePKRoundDotView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         this.d = false;
-        this.f14804a = new Runnable() { // from class: com.blued.android.module.live_china.view.LivePKRoundDotView.1
+        this.a = new Runnable() { // from class: com.blued.android.module.live_china.view.LivePKRoundDotView.1
             @Override // java.lang.Runnable
             public void run() {
                 LivePKRoundDotView.this.setVisibility(0);
@@ -69,14 +65,14 @@ public class LivePKRoundDotView extends FrameLayout implements View.OnClickListe
     private void b() {
         LayoutInflater.from(getContext()).inflate(R.layout.live_pk_round_dot_view, this);
         this.b = (LinearLayout) findViewById(R.id.ll_left);
-        this.f14805c = (LinearLayout) findViewById(R.id.ll_right);
+        this.c = (LinearLayout) findViewById(R.id.ll_right);
         setVisibility(8);
         c();
     }
 
     private void c() {
         this.b.removeAllViews();
-        this.f14805c.removeAllViews();
+        this.c.removeAllViews();
         int i = 0;
         while (true) {
             int i2 = i;
@@ -92,7 +88,7 @@ public class LivePKRoundDotView extends FrameLayout implements View.OnClickListe
             LinearLayout.LayoutParams layoutParams2 = new LinearLayout.LayoutParams(-2, -2);
             layoutParams2.rightMargin = a(getContext(), 6.0f);
             layoutParams2.gravity = 16;
-            this.f14805c.addView(inflate2, layoutParams2);
+            this.c.addView(inflate2, layoutParams2);
             i = i2 + 1;
         }
     }
@@ -114,7 +110,7 @@ public class LivePKRoundDotView extends FrameLayout implements View.OnClickListe
     }
 
     private void setRightData(List<LiveDotModel> list) {
-        int childCount = this.f14805c.getChildCount();
+        int childCount = this.c.getChildCount();
         if (list == null || list.size() != childCount) {
             return;
         }
@@ -124,13 +120,13 @@ public class LivePKRoundDotView extends FrameLayout implements View.OnClickListe
             if (i2 >= childCount) {
                 return;
             }
-            a(list.get(i2), (ImageView) this.f14805c.getChildAt(i2).findViewById(R.id.iv_dot));
+            a(list.get(i2), (ImageView) this.c.getChildAt(i2).findViewById(R.id.iv_dot));
             i = i2 + 1;
         }
     }
 
     public void a() {
-        removeCallbacks(this.f14804a);
+        removeCallbacks(this.a);
         if (getVisibility() == 0) {
             setVisibility(8);
         }
@@ -140,7 +136,7 @@ public class LivePKRoundDotView extends FrameLayout implements View.OnClickListe
         setVisibility(8);
         setLeftData(list);
         setRightData(list2);
-        postDelayed(this.f14804a, 600L);
+        postDelayed(this.a, 600L);
     }
 
     @Override // android.view.View.OnClickListener

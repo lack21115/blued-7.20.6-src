@@ -8,18 +8,18 @@ import java.io.File;
 public final class v extends u {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ Runnable f41712a;
+    final /* synthetic */ Runnable f28021a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public v(Context context, File file, Runnable runnable) {
         super(context, file, null);
-        this.f41712a = runnable;
+        this.f28021a = runnable;
     }
 
     @Override // com.xiaomi.push.u
     protected final void a(Context context) {
-        Runnable runnable = this.f41712a;
+        Runnable runnable = this.f28021a;
         if (runnable != null) {
             runnable.run();
         }

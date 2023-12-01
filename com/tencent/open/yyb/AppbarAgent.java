@@ -1,5 +1,6 @@
 package com.tencent.open.yyb;
 
+import android.R;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
@@ -7,6 +8,7 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.widget.Toast;
+import com.huawei.hms.framework.common.ContainerUtils;
 import com.tencent.connect.auth.QQToken;
 import com.tencent.connect.common.BaseApi;
 import com.tencent.connect.common.Constants;
@@ -24,7 +26,7 @@ public class AppbarAgent extends BaseApi {
     public static final String wx_appid = "wx8e8dc60535c9cd93";
 
     /* renamed from: a  reason: collision with root package name */
-    private Bundle f38304a;
+    private Bundle f24613a;
     private String b;
 
     public AppbarAgent(QQToken qQToken) {
@@ -39,7 +41,7 @@ public class AppbarAgent extends BaseApi {
             bundle.putString("qAccessToken", this.mToken.getAccessToken());
         }
         bundle.putString("qPackageName", Global.getContext().getPackageName());
-        return "&" + a(bundle);
+        return ContainerUtils.FIELD_DELIMITER + a(bundle);
     }
 
     private String a(Bundle bundle) {
@@ -51,11 +53,11 @@ public class AppbarAgent extends BaseApi {
             sb.append(str);
             sb.append("=");
             sb.append(bundle.get(str));
-            sb.append("&");
+            sb.append(ContainerUtils.FIELD_DELIMITER);
         }
         String sb2 = sb.toString();
         String str2 = sb2;
-        if (sb2.endsWith("&")) {
+        if (sb2.endsWith(ContainerUtils.FIELD_DELIMITER)) {
             str2 = sb2.substring(0, sb2.length() - 1);
         }
         f.a("openSDK_LOG.AppbarAgent", "-->encodeParams, result: " + str2);
@@ -69,10 +71,10 @@ public class AppbarAgent extends BaseApi {
         Intent intent = new Intent(activity, AppbarActivity.class);
         intent.putExtra("appid", this.mToken.getAppId());
         if (this.mToken.getAccessToken() != null && this.mToken.getOpenId() != null) {
-            a.C0975a c0975a = new a.C0975a();
-            c0975a.b = this.mToken.getAccessToken();
-            c0975a.f38309c = Long.parseLong(this.mToken.getAppId());
-            c0975a.f38308a = this.mToken.getOpenId();
+            a.C0805a c0805a = new a.C0805a();
+            c0805a.b = this.mToken.getAccessToken();
+            c0805a.f24618c = Long.parseLong(this.mToken.getAppId());
+            c0805a.f24617a = this.mToken.getOpenId();
             a.a(activity, str, this.mToken.getOpenId(), this.mToken.getAccessToken(), this.mToken.getAppId());
         }
         intent.putExtra("url", str);
@@ -99,7 +101,7 @@ public class AppbarAgent extends BaseApi {
                 bundle.putString("source", "myapp");
                 str2 = str;
             } else if ("sId".equals(str)) {
-                Bundle bundle2 = this.f38304a;
+                Bundle bundle2 = this.f24613a;
                 str2 = str;
                 if (bundle2 != null) {
                     bundle.putAll(bundle2);
@@ -155,7 +157,7 @@ public class AppbarAgent extends BaseApi {
             intent.setClassName("com.tencent.android.qqdownloader", "com.tencent.assistant.activity.ExportBrowserActivity");
             intent.putExtra("com.tencent.assistant.BROWSER_URL", str2);
             activity.startActivity(intent);
-            activity.overridePendingTransition(17432576, 17432577);
+            activity.overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
         } catch (Exception e) {
             f.b("openSDK_LOG.AppbarAgent", "-->(AppbarAgent)startAppbar : ExportBrowserActivity not found, start H5", e);
             a(activity, c2);
@@ -168,7 +170,7 @@ public class AppbarAgent extends BaseApi {
             return;
         }
         Bundle bundle = new Bundle();
-        this.f38304a = bundle;
+        this.f24613a = bundle;
         bundle.putString("params", "label/" + str);
         startAppbar(activity, "sId");
     }

@@ -8,7 +8,7 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: source-3503164-dex2jar.jar:kotlin/collections/SetsKt__SetsKt.class */
 public class SetsKt__SetsKt extends SetsKt__SetsJVMKt {
     public static final <T> Set<T> a() {
-        return EmptySet.f42381a;
+        return EmptySet.a;
     }
 
     public static final <T> Set<T> a(T... elements) {

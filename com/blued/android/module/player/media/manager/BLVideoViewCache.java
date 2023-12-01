@@ -14,9 +14,7 @@ import java.util.Map;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/player/media/manager/BLVideoViewCache.class */
 public class BLVideoViewCache {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Activity f15650a;
+    private Activity a;
     private LinkedHashMap<String, AbBaseVideoView> b = new LinkedHashMap<>(8, 0.75f, true);
 
     private AbBaseVideoView a(Context context, String str) {
@@ -64,8 +62,8 @@ public class BLVideoViewCache {
 
     private String b(String str) {
         String str2 = str;
-        if (this.f15650a != null) {
-            str2 = this.f15650a.toString() + str;
+        if (this.a != null) {
+            str2 = this.a.toString() + str;
         }
         return str2;
     }
@@ -78,20 +76,20 @@ public class BLVideoViewCache {
 
     public AbBaseVideoView a(String str, Context context) {
         String str2 = str;
-        if (this.f15650a != null) {
-            str2 = this.f15650a.toString() + str;
+        if (this.a != null) {
+            str2 = this.a.toString() + str;
         }
         return a(context, str2);
     }
 
     public void a() {
-        Log.c("PLVideoViewCache", "clearViewCacheByActivity: activity = " + this.f15650a);
+        Log.c("PLVideoViewCache", "clearViewCacheByActivity: activity = " + this.a);
         Iterator<Map.Entry<String, AbBaseVideoView>> it = this.b.entrySet().iterator();
         while (it.hasNext()) {
             Map.Entry<String, AbBaseVideoView> next = it.next();
             AbBaseVideoView value = next.getValue();
             Log.b("PLVideoViewCache", "clearViewCacheByActivity: url " + next.getKey());
-            if (next.getKey().contains(this.f15650a.toString())) {
+            if (next.getKey().contains(this.a.toString())) {
                 a(value);
                 it.remove();
             }
@@ -100,7 +98,7 @@ public class BLVideoViewCache {
 
     public void a(Activity activity) {
         Log.c("PLVideoViewCache", "setActivity: " + activity);
-        this.f15650a = activity;
+        this.a = activity;
         BLVideoViewLifeFragment.a(this, activity);
     }
 

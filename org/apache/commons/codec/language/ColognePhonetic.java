@@ -44,9 +44,9 @@ public class ColognePhonetic implements StringEncoder {
             super(cArr);
         }
 
-        public void addLeft(char c2) {
+        public void addLeft(char c) {
             this.length++;
-            this.data[getNextPos()] = c2;
+            this.data[getNextPos()] = c;
         }
 
         @Override // org.apache.commons.codec.language.ColognePhonetic.CologneBuffer
@@ -78,8 +78,8 @@ public class ColognePhonetic implements StringEncoder {
             super(i);
         }
 
-        public void addRight(char c2) {
-            this.data[this.length] = c2;
+        public void addRight(char c) {
+            this.data[this.length] = c;
             this.length++;
         }
 
@@ -91,7 +91,7 @@ public class ColognePhonetic implements StringEncoder {
         }
     }
 
-    private static boolean arrayContains(char[] cArr, char c2) {
+    private static boolean arrayContains(char[] cArr, char c) {
         int length = cArr.length;
         int i = 0;
         while (true) {
@@ -99,7 +99,7 @@ public class ColognePhonetic implements StringEncoder {
             if (i2 >= length) {
                 return false;
             }
-            if (cArr[i2] == c2) {
+            if (cArr[i2] == c) {
                 return true;
             }
             i = i2 + 1;

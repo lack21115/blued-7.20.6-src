@@ -1,7 +1,7 @@
 package com.qiniu.android.storage;
 
 import android.os.Process;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
+import com.cdo.oaps.ad.OapsKey;
 import com.qiniu.android.collect.LogHandler;
 import com.qiniu.android.collect.UploadInfo;
 import com.qiniu.android.collect.UploadInfoCollector;
@@ -159,7 +159,7 @@ final class ResumeUploader implements Runnable {
                 strArr[i2] = String.format(Locale.ENGLISH, "%s/%s", next.getKey(), UrlSafeBase64.encodeToString(next.getValue()));
                 i = i2 + 1;
             }
-            str3 = BridgeUtil.SPLIT_MARK + StringUtils.join(strArr, BridgeUtil.SPLIT_MARK);
+            str3 = "/" + StringUtils.join(strArr, "/");
         }
         String format3 = String.format(Locale.ENGLISH, "/mkfile/%d%s%s%s", Long.valueOf(this.totalSize), format, format2, str3);
         byte[] bytes = StringUtils.join(this.contexts, ",").getBytes();
@@ -347,7 +347,7 @@ final class ResumeUploader implements Runnable {
             JSONObject jSONObject = new JSONObject(new String(bArr));
             long optLong = jSONObject.optLong("offset", 0L);
             long optLong2 = jSONObject.optLong("modify_time", 0L);
-            long optLong3 = jSONObject.optLong("size", 0L);
+            long optLong3 = jSONObject.optLong(OapsKey.KEY_SIZE, 0L);
             JSONArray optJSONArray = jSONObject.optJSONArray("contexts");
             if (optLong == 0 || optLong2 != this.modifyTime || optLong3 != this.totalSize || optJSONArray == null || optJSONArray.length() == 0) {
                 return 0L;

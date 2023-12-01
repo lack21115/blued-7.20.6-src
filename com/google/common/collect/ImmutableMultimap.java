@@ -1,5 +1,6 @@
 package com.google.common.collect;
 
+import com.cdo.oaps.ad.OapsKey;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Multiset;
 import com.google.common.collect.Serialization;
@@ -149,12 +150,12 @@ public abstract class ImmutableMultimap<K, V> extends BaseImmutableMultimap<K, V
             return this.multimap.isPartialView();
         }
 
-        @Override // com.google.common.collect.ImmutableCollection, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+        @Override // com.google.common.collect.ImmutableCollection, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set, com.google.common.collect.SortedIterable, java.util.NavigableSet
         public UnmodifiableIterator<Map.Entry<K, V>> iterator() {
             return this.multimap.entryIterator();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection
         public int size() {
             return this.multimap.size();
         }
@@ -163,7 +164,7 @@ public abstract class ImmutableMultimap<K, V> extends BaseImmutableMultimap<K, V
     /* loaded from: source-8110460-dex2jar.jar:com/google/common/collect/ImmutableMultimap$FieldSettersHolder.class */
     static class FieldSettersHolder {
         static final Serialization.FieldSetter<ImmutableMultimap> MAP_FIELD_SETTER = Serialization.getFieldSetter(ImmutableMultimap.class, "map");
-        static final Serialization.FieldSetter<ImmutableMultimap> SIZE_FIELD_SETTER = Serialization.getFieldSetter(ImmutableMultimap.class, "size");
+        static final Serialization.FieldSetter<ImmutableMultimap> SIZE_FIELD_SETTER = Serialization.getFieldSetter(ImmutableMultimap.class, OapsKey.KEY_SIZE);
 
         FieldSettersHolder() {
         }
@@ -206,7 +207,7 @@ public abstract class ImmutableMultimap<K, V> extends BaseImmutableMultimap<K, V
             return true;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection, com.google.common.collect.Multiset
         public int size() {
             return ImmutableMultimap.this.size();
         }
@@ -261,12 +262,12 @@ public abstract class ImmutableMultimap<K, V> extends BaseImmutableMultimap<K, V
             return true;
         }
 
-        @Override // com.google.common.collect.ImmutableCollection, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+        @Override // com.google.common.collect.ImmutableCollection, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set, com.google.common.collect.SortedIterable, java.util.NavigableSet
         public UnmodifiableIterator<V> iterator() {
             return this.multimap.valueIterator();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection
         public int size() {
             return this.multimap.size();
         }

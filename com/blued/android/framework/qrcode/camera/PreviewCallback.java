@@ -10,18 +10,18 @@ import android.util.Log;
 public final class PreviewCallback implements Camera.PreviewCallback {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f9862a = PreviewCallback.class.getSimpleName();
+    private static final String f6660a = PreviewCallback.class.getSimpleName();
     private final CameraConfigurationManager b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final boolean f9863c;
+    private final boolean f6661c;
     private Handler d;
     private int e;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public PreviewCallback(CameraConfigurationManager cameraConfigurationManager, boolean z) {
         this.b = cameraConfigurationManager;
-        this.f9863c = z;
+        this.f6661c = z;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -33,12 +33,12 @@ public final class PreviewCallback implements Camera.PreviewCallback {
     @Override // android.hardware.Camera.PreviewCallback
     public void onPreviewFrame(byte[] bArr, Camera camera) {
         Point a2 = this.b.a();
-        if (!this.f9863c) {
+        if (!this.f6661c) {
             camera.setPreviewCallback(null);
         }
         Handler handler = this.d;
         if (handler == null) {
-            Log.d(f9862a, "Got preview callback, but no handler for it");
+            Log.d(f6660a, "Got preview callback, but no handler for it");
             return;
         }
         handler.obtainMessage(this.e, a2.x, a2.y, bArr).sendToTarget();

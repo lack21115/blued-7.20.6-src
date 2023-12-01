@@ -23,11 +23,11 @@ import java.security.NoSuchAlgorithmException;
 public class BksUtil {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23124a = "BksUtil";
+    private static final String f9516a = "BksUtil";
     private static final String b = "com.huawei.hwid";
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f23125c = "com.huawei.hwid";
+    private static final String f9517c = "com.huawei.hwid";
     private static final String d = "com.huawei.hms";
     private static final String e = "com.huawei.hwid.tv";
     private static final String g = "files/hmsrootcas.bks";
@@ -53,13 +53,13 @@ public class BksUtil {
         }
         File file = new File(str);
         if (file.exists()) {
-            g.e(f23124a, "The directory  has already exists");
+            g.e(f9516a, "The directory  has already exists");
             return 1;
         } else if (file.mkdirs()) {
-            g.a(f23124a, "create directory  success");
+            g.a(f9516a, "create directory  success");
             return 0;
         } else {
-            g.b(f23124a, "create directory  failed");
+            g.b(f9516a, "create directory  failed");
             return -1;
         }
     }
@@ -108,7 +108,7 @@ public class BksUtil {
         FileOutputStream fileOutputStream2 = null;
         try {
             try {
-                g.c(f23124a, "write output stream ");
+                g.c(f9516a, "write output stream ");
                 FileOutputStream fileOutputStream3 = new FileOutputStream(file);
                 try {
                     byte[] bArr = new byte[2048];
@@ -123,7 +123,7 @@ public class BksUtil {
                 } catch (IOException e2) {
                     fileOutputStream = fileOutputStream3;
                     fileOutputStream2 = fileOutputStream;
-                    g.b(f23124a, " IOException");
+                    g.b(f9516a, " IOException");
                     f.a((OutputStream) fileOutputStream);
                 } catch (Throwable th) {
                     th = th;
@@ -146,7 +146,7 @@ public class BksUtil {
     private static byte[] a(Context context, String str) {
         PackageInfo packageInfo;
         if (context == null || TextUtils.isEmpty(str)) {
-            Log.e(f23124a, "packageName is null or context is null");
+            Log.e(f9516a, "packageName is null or context is null");
             return new byte[0];
         }
         try {
@@ -155,9 +155,9 @@ public class BksUtil {
                 return packageInfo.signatures[0].toByteArray();
             }
         } catch (PackageManager.NameNotFoundException e2) {
-            Log.e(f23124a, "PackageManager.NameNotFoundException : " + e2.getMessage());
+            Log.e(f9516a, "PackageManager.NameNotFoundException : " + e2.getMessage());
         } catch (Exception e3) {
-            Log.e(f23124a, "get pm exception : " + e3.getMessage());
+            Log.e(f9516a, "get pm exception : " + e3.getMessage());
         }
         return new byte[0];
     }
@@ -175,7 +175,7 @@ public class BksUtil {
             messageDigest.update(bArr);
             return a(messageDigest.digest());
         } catch (NoSuchAlgorithmException e2) {
-            g.b(f23124a, "inputstraem exception");
+            g.b(f9516a, "inputstraem exception");
             return "";
         }
     }
@@ -190,7 +190,7 @@ public class BksUtil {
         if (TextUtils.isEmpty(str)) {
             return false;
         }
-        g.c(f23124a, "hms version code is : " + str);
+        g.c(f9516a, "hms version code is : " + str);
         String[] split = str.split("\\.");
         String[] split2 = h.split("\\.");
         int length = split.length;
@@ -206,7 +206,7 @@ public class BksUtil {
                 try {
                     parseInt = Integer.parseInt(split[i3]);
                 } catch (Exception e2) {
-                    g.b(f23124a, " exception : " + e2.getMessage());
+                    g.b(f9516a, " exception : " + e2.getMessage());
                     if (i3 >= length2) {
                         z = true;
                     }
@@ -233,7 +233,7 @@ public class BksUtil {
         try {
             return a(MessageDigest.getInstance("SHA-256").digest(bArr));
         } catch (NoSuchAlgorithmException e2) {
-            Log.e(f23124a, "NoSuchAlgorithmException" + e2.getMessage());
+            Log.e(f9516a, "NoSuchAlgorithmException" + e2.getMessage());
             return "";
         }
     }
@@ -269,20 +269,20 @@ public class BksUtil {
         String b2;
         synchronized (BksUtil.class) {
             try {
-                g.c(f23124a, "get bks from tss begin");
+                g.c(f9516a, "get bks from tss begin");
                 if (context != null) {
                     c.a(context);
                 }
                 Context a3 = c.a();
                 InputStream inputStream2 = null;
                 if (a3 == null) {
-                    g.b(f23124a, com.anythink.expressad.foundation.g.b.b.f7836a);
+                    g.b(f9516a, com.anythink.expressad.foundation.g.b.b.f4996a);
                     return null;
                 } else if (!b(h.a("com.huawei.hwid")) && !b(h.a("com.huawei.hms"))) {
-                    g.b(f23124a, "hms version code is too low : " + h.a("com.huawei.hwid"));
+                    g.b(f9516a, "hms version code is too low : " + h.a("com.huawei.hwid"));
                     return null;
                 } else if (!c(a3, "com.huawei.hwid") && !b(a3, "com.huawei.hms")) {
-                    g.b(f23124a, "hms sign error");
+                    g.b(f9516a, "hms sign error");
                     return null;
                 } else {
                     ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
@@ -314,7 +314,7 @@ public class BksUtil {
                                     sb.append(e2.getMessage());
                                     byteArrayInputStream = byteArrayInputStream2;
                                     inputStream2 = inputStream;
-                                    g.b(f23124a, sb.toString());
+                                    g.b(f9516a, sb.toString());
                                     f.a(inputStream);
                                     f.a((OutputStream) byteArrayOutputStream);
                                     f.a((InputStream) byteArrayInputStream2);
@@ -355,13 +355,13 @@ public class BksUtil {
                         throw th;
                     }
                     if (c(a3) && a2.equals(b2)) {
-                        g.c(f23124a, "bks not update");
+                        g.c(f9516a, "bks not update");
                         f.a(inputStream);
                         f.a((OutputStream) byteArrayOutputStream);
                         f.a((InputStream) byteArrayInputStream2);
                         return getFilesBksIS(a3);
                     }
-                    g.c(f23124a, "update bks and sp");
+                    g.c(f9516a, "update bks and sp");
                     a(byteArrayInputStream2, a3);
                     i.b(r, b2, a3);
                     f.a(inputStream);
@@ -377,11 +377,11 @@ public class BksUtil {
 
     public static InputStream getFilesBksIS(Context context) {
         if (c(context)) {
-            g.c(f23124a, "getFilesBksIS ");
+            g.c(f9516a, "getFilesBksIS ");
             try {
                 return new FileInputStream(b(context));
             } catch (FileNotFoundException e2) {
-                g.b(f23124a, "FileNotFoundExceptio: ");
+                g.b(f9516a, "FileNotFoundExceptio: ");
                 return null;
             }
         }

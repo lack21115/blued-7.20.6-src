@@ -210,7 +210,7 @@ public final class R {
         public static final int[] CalendarView = {2130968998, 2130968999, 2130969000, 2130969001, 2130969002, 2130969003, 2130969004, 2130969005, 2130969006, 2130969007, 2130969008, 2130969009, 2130969010, 2130969011};
         public static final int[] DatePicker = {2130969056, 2130969057, 2130969058, 2130969059, 2130969060, 2130969061, 2130969062};
         public static final int[] NumberPicker = {2130969344, 2130969345, 2130969346, 2130969347, 2130969348, 2130969971, 2130969972, 2130969973, 2130970053, 2130970431};
-        public static final int[] TextAppearanceCompatStyleable = {16842901};
+        public static final int[] TextAppearanceCompatStyleable = {android.R.attr.textSize};
         public static final int[] gridPasswordView = {2130969266, 2130969600, 2130969607, 2130969803, 2130969809, 2130969810, 2130970298, 2130970317};
 
         private styleable() {

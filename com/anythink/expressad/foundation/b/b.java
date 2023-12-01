@@ -3,7 +3,6 @@ package com.anythink.expressad.foundation.b;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.text.TextUtils;
-import com.anythink.core.common.b.g;
 import com.anythink.core.common.b.n;
 import com.anythink.expressad.foundation.g.f.m;
 import com.anythink.expressad.foundation.h.k;
@@ -23,11 +22,11 @@ public class b {
     private boolean l = false;
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f7753a = 1;
+    public final int f4914a = 1;
     public final int b = 2;
 
     /* renamed from: c  reason: collision with root package name */
-    public final int f7754c = 3;
+    public final int f4915c = 3;
     public final int d = 4;
     public final int e = 5;
     public final int f = 6;
@@ -53,11 +52,11 @@ public class b {
     private static void a(Context context) {
         String str;
         try {
-            SharedPreferences sharedPreferences = context.getSharedPreferences(g.w, 0);
+            SharedPreferences sharedPreferences = context.getSharedPreferences("exc_log", 0);
             String str2 = "";
             if (sharedPreferences != null) {
-                str2 = sharedPreferences.getString(g.o.l, "");
-                str = sharedPreferences.getString(g.o.m, "");
+                str2 = sharedPreferences.getString("exc_sys", "");
+                str = sharedPreferences.getString("exc_bk", "");
             } else {
                 str = "";
             }
@@ -71,7 +70,7 @@ public class b {
     }
 
     private static String b() {
-        return com.anythink.expressad.out.b.f8067a;
+        return com.anythink.expressad.out.b.f5227a;
     }
 
     private void c() {

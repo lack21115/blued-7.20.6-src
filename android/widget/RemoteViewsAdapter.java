@@ -76,7 +76,7 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
 
         public FixedSizeRemoteViewsCache(int i) {
             this.mMaxCount = i;
-            this.mMaxCountSlack = Math.round(0.75f * (this.mMaxCount / 2));
+            this.mMaxCountSlack = Math.round(sMaxCountSlackPercent * (this.mMaxCount / 2));
         }
 
         private int getFarthestPositionFrom(int i, ArrayList<Integer> arrayList) {

@@ -36,18 +36,17 @@ import com.soft.blued.http.MineHttpUtils;
 import com.soft.blued.ui.user.observer.UserinfoFeedScrollObserver;
 import com.soft.blued.ui.web.WebViewShowInfoFragment;
 import com.soft.blued.utils.StringUtils;
-import java.util.Collection;
 import java.util.List;
 
 /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/user/fragment/UserinfoFragmentFeedTab.class */
 public class UserinfoFragmentFeedTab extends BaseFragment implements FeedRefreshObserver.IFeedRefreshObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    public Context f34076a;
+    public Context f20385a;
     public View b;
 
     /* renamed from: c  reason: collision with root package name */
-    public PullToRefreshRecyclerView f34077c;
+    public PullToRefreshRecyclerView f20386c;
     public RecyclerView d;
     public FeedListAdapterForRecyclerView e;
     private View f;
@@ -68,7 +67,7 @@ public class UserinfoFragmentFeedTab extends BaseFragment implements FeedRefresh
                 if (UserinfoFragmentFeedTab.this.h == 1) {
                     UserinfoFragmentFeedTab.this.e.setNewData(bluedEntityA.data);
                 } else {
-                    UserinfoFragmentFeedTab.this.e.addData((Collection<? extends BluedIngSelfFeed>) bluedEntityA.data);
+                    UserinfoFragmentFeedTab.this.e.addData(bluedEntityA.data);
                 }
                 UserinfoFragmentFeedTab.this.e.notifyDataSetChanged();
                 UserinfoFragmentFeedTab.this.m = bluedEntityA.data;
@@ -92,35 +91,31 @@ public class UserinfoFragmentFeedTab extends BaseFragment implements FeedRefresh
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public BluedEntityA<BluedIngSelfFeed> parseData(String str) {
-            BluedEntityA<BluedIngSelfFeed> bluedEntityA = (BluedEntityA) super.parseData(str);
-            if (UserinfoFragmentFeedTab.this.f34076a != null && bluedEntityA != null) {
-                if (!bluedEntityA.hasData()) {
-                    return bluedEntityA;
+            BluedEntityA<BluedIngSelfFeed> parseData = super.parseData(str);
+            if (UserinfoFragmentFeedTab.this.f20385a != null && parseData != null) {
+                if (!parseData.hasData()) {
+                    return parseData;
                 }
-                for (BluedIngSelfFeed bluedIngSelfFeed : bluedEntityA.data) {
-                    bluedIngSelfFeed.feedParse = new FeedParse(UserinfoFragmentFeedTab.this.f34076a, bluedIngSelfFeed, 1);
+                for (BluedIngSelfFeed bluedIngSelfFeed : parseData.data) {
+                    bluedIngSelfFeed.feedParse = new FeedParse(UserinfoFragmentFeedTab.this.f20385a, bluedIngSelfFeed, 1);
                 }
             }
-            return bluedEntityA;
+            return parseData;
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public void onUICache(BluedEntityA<BluedIngSelfFeed> bluedEntityA) {
             a(bluedEntityA, true);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: b */
         public void onUIUpdate(BluedEntityA<BluedIngSelfFeed> bluedEntityA) {
             a(bluedEntityA, false);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIFinish(boolean z) {
             if (UserinfoFragmentFeedTab.this.l != null) {
                 UserinfoFragmentFeedTab.this.l.setVisibility(8);
@@ -149,7 +144,6 @@ public class UserinfoFragmentFeedTab extends BaseFragment implements FeedRefresh
             }
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIStart() {
             super.onUIStart();
             if (UserinfoFragmentFeedTab.this.e.getItemCount() != 0 || UserinfoFragmentFeedTab.this.l == null) {
@@ -181,36 +175,36 @@ public class UserinfoFragmentFeedTab extends BaseFragment implements FeedRefresh
     }
 
     public void a() {
-        this.l = this.b.findViewById(2131368385);
-        NoDataAndLoadFailView noDataAndLoadFailView = new NoDataAndLoadFailView(this.f34076a);
+        this.l = this.b.findViewById(R.id.loading_view);
+        NoDataAndLoadFailView noDataAndLoadFailView = new NoDataAndLoadFailView(this.f20385a);
         this.g = noDataAndLoadFailView;
         noDataAndLoadFailView.d();
         this.g.setImageScale(0.7f);
-        this.g.setTopSpace(DensityUtils.a(this.f34076a, 58.0f));
-        this.f = LayoutInflater.from(this.f34076a).inflate(R.layout.user_feed_no_more_view, (ViewGroup) null);
-        PullToRefreshRecyclerView pullToRefreshRecyclerView = (PullToRefreshRecyclerView) this.b.findViewById(2131373425);
-        this.f34077c = pullToRefreshRecyclerView;
-        pullToRefreshRecyclerView.setRefreshEnabled(false);
-        RecyclerView refreshableView = this.f34077c.getRefreshableView();
-        this.d = refreshableView;
-        FeedListAdapterForRecyclerView feedListAdapterForRecyclerView = new FeedListAdapterForRecyclerView(this.f34076a, this, refreshableView, 1);
+        this.g.setTopSpace(DensityUtils.a(this.f20385a, 58.0f));
+        this.f = LayoutInflater.from(this.f20385a).inflate(R.layout.user_feed_no_more_view, (ViewGroup) null);
+        PullToRefreshRecyclerView findViewById = this.b.findViewById(R.id.wrapper);
+        this.f20386c = findViewById;
+        findViewById.setRefreshEnabled(false);
+        RecyclerView recyclerView = (RecyclerView) this.f20386c.getRefreshableView();
+        this.d = recyclerView;
+        RecyclerView.Adapter feedListAdapterForRecyclerView = new FeedListAdapterForRecyclerView(this.f20385a, this, recyclerView, 1);
         this.e = feedListAdapterForRecyclerView;
         this.d.setAdapter(feedListAdapterForRecyclerView);
         this.e.setEmptyView(this.g);
         this.e.setLoadMoreView(new BluedAdapterLoadMoreView());
-        this.d.setLayoutManager(new GridLayoutManager(this.f34076a, 1));
+        this.d.setLayoutManager(new GridLayoutManager(this.f20385a, 1));
         this.d.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: com.soft.blued.ui.user.fragment.UserinfoFragmentFeedTab.1
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
-            public void onScrollStateChanged(RecyclerView recyclerView, int i) {
-                super.onScrollStateChanged(recyclerView, i);
-                UserinfoFragmentFeedTab.this.e.s.onScrollStateChanged(recyclerView, i);
+            public void onScrollStateChanged(RecyclerView recyclerView2, int i) {
+                super.onScrollStateChanged(recyclerView2, i);
+                UserinfoFragmentFeedTab.this.e.s.onScrollStateChanged(recyclerView2, i);
             }
 
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
-            public void onScrolled(RecyclerView recyclerView, int i, int i2) {
-                super.onScrolled(recyclerView, i, i2);
-                UserinfoFragmentFeedTab.this.e.s.onScrolled(recyclerView, i, i2);
-                UserinfoFeedScrollObserver.a().a(recyclerView, i, i2);
+            public void onScrolled(RecyclerView recyclerView2, int i, int i2) {
+                super.onScrolled(recyclerView2, i, i2);
+                UserinfoFragmentFeedTab.this.e.s.onScrolled(recyclerView2, i, i2);
+                UserinfoFeedScrollObserver.a().a(recyclerView2, i, i2);
             }
         });
         this.e.setEnableLoadMore(true);
@@ -228,8 +222,8 @@ public class UserinfoFragmentFeedTab extends BaseFragment implements FeedRefresh
             return;
         }
         if (this.q == null) {
-            View inflate = View.inflate(getContext(), 2131560948, null);
-            ((TextView) inflate.findViewById(2131372661)).setText(bluedIngSelfFeed.recommendation);
+            View inflate = View.inflate(getContext(), R.layout.pop_super_exposure_guide, null);
+            ((TextView) inflate.findViewById(R.id.tv_super_exposure_tips)).setText(bluedIngSelfFeed.recommendation);
             BluedPopupWindow a2 = BluedPopupWindow.Builder.a(getActivity(), inflate).a(true).a();
             this.q = a2;
             a2.setOnDismissListener(new PopupWindow.OnDismissListener() { // from class: com.soft.blued.ui.user.fragment.UserinfoFragmentFeedTab.4
@@ -243,19 +237,19 @@ public class UserinfoFragmentFeedTab extends BaseFragment implements FeedRefresh
                 public void onClick(View view) {
                     Tracker.onClick(view);
                     EventTrackSuperExpose.a(SuperExposeProtos.Event.EXPOSE_FEED_PERSONAL_POP_CLICK, bluedIngSelfFeed.feed_id);
-                    WebViewShowInfoFragment.show(UserinfoFragmentFeedTab.this.f34076a, bluedIngSelfFeed.promotion_url, 0);
+                    WebViewShowInfoFragment.show(UserinfoFragmentFeedTab.this.f20385a, bluedIngSelfFeed.promotion_url, 0);
                     UserinfoFragmentFeedTab.this.q.dismiss();
                 }
             });
             postDelaySafeRunOnUiThread(new Runnable() { // from class: com.soft.blued.ui.user.fragment.UserinfoFragmentFeedTab.6
                 @Override // java.lang.Runnable
                 public void run() {
-                    View viewByPosition = UserinfoFragmentFeedTab.this.e.getViewByPosition(UserinfoFragmentFeedTab.this.d, i, 2131368165);
+                    View viewByPosition = UserinfoFragmentFeedTab.this.e.getViewByPosition(UserinfoFragmentFeedTab.this.d, i, (int) R.id.ll_read_num);
                     if (viewByPosition == null || !UserinfoFragmentFeedTab.this.a(viewByPosition)) {
                         return;
                     }
                     EventTrackSuperExpose.a(SuperExposeProtos.Event.EXPOSE_FEED_PERSONAL_POP_SHOW, bluedIngSelfFeed.feed_id);
-                    UserinfoFragmentFeedTab.this.q.a(viewByPosition, 1, 4, 0, -DensityUtils.a(UserinfoFragmentFeedTab.this.f34076a, 9.0f));
+                    UserinfoFragmentFeedTab.this.q.a(viewByPosition, 1, 4, 0, -DensityUtils.a(UserinfoFragmentFeedTab.this.f20385a, 9.0f));
                 }
             }, 300L);
             inflate.postDelayed(new Runnable() { // from class: com.soft.blued.ui.user.fragment.UserinfoFragmentFeedTab.7
@@ -273,7 +267,6 @@ public class UserinfoFragmentFeedTab extends BaseFragment implements FeedRefresh
         this.n = false;
     }
 
-    @Override // com.blued.community.ui.send.observer.FeedRefreshObserver.IFeedRefreshObserver
     public void a(Object obj, int i) {
         if (i == 2) {
             NoDataAndLoadFailView noDataAndLoadFailView = this.g;
@@ -305,7 +298,7 @@ public class UserinfoFragmentFeedTab extends BaseFragment implements FeedRefresh
             this.h = i - 1;
             return;
         }
-        MineHttpUtils.b(this.f34076a, this.p, this.k.uid, this.h + "", this.i + "", getFragmentActive());
+        MineHttpUtils.b(this.f20385a, this.p, this.k.uid, this.h + "", this.i + "", getFragmentActive());
     }
 
     public void b(UserBasicModel userBasicModel) {
@@ -321,18 +314,17 @@ public class UserinfoFragmentFeedTab extends BaseFragment implements FeedRefresh
         a(true);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.f34076a = getActivity();
+        this.f20385a = getActivity();
         View view = this.b;
         if (view == null) {
-            this.b = layoutInflater.inflate(2131559000, viewGroup, false);
-            UserBasicModel userBasicModel = (UserBasicModel) getArguments().getSerializable("user");
-            this.k = userBasicModel;
-            if (userBasicModel == null) {
-                UserBasicModel userBasicModel2 = new UserBasicModel();
-                this.k = userBasicModel2;
-                userBasicModel2.uid = UserInfo.getInstance().getLoginUserInfo().uid;
+            this.b = layoutInflater.inflate(R.layout.fragment_circle_pubish_respond, viewGroup, false);
+            UserBasicModel serializable = getArguments().getSerializable("user");
+            this.k = serializable;
+            if (serializable == null) {
+                UserBasicModel userBasicModel = new UserBasicModel();
+                this.k = userBasicModel;
+                userBasicModel.uid = UserInfo.getInstance().getLoginUserInfo().uid;
             }
             a();
             FeedMethods.a(getActivity(), this.e);
@@ -343,13 +335,11 @@ public class UserinfoFragmentFeedTab extends BaseFragment implements FeedRefresh
         return this.b;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
         FeedRefreshObserver.a().b(this);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onPause() {
         super.onPause();
         FeedListAdapterForRecyclerView feedListAdapterForRecyclerView = this.e;
@@ -358,7 +348,6 @@ public class UserinfoFragmentFeedTab extends BaseFragment implements FeedRefresh
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onResume() {
         super.onResume();
         FeedListAdapterForRecyclerView feedListAdapterForRecyclerView = this.e;
@@ -367,7 +356,6 @@ public class UserinfoFragmentFeedTab extends BaseFragment implements FeedRefresh
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void setUserVisibleHint(boolean z) {
         List<BluedIngSelfFeed> list;
         super.setUserVisibleHint(z);

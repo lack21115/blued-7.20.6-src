@@ -23,13 +23,9 @@ public class DriveStepV2 implements Parcelable {
             return null;
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f5710a;
+    private String a;
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f5711c;
+    private String c;
     private List<LatLonPoint> d;
     private List<RouteSearchCity> e;
     private List<TMC> f;
@@ -49,9 +45,9 @@ public class DriveStepV2 implements Parcelable {
         this.e = new ArrayList();
         this.f = new ArrayList();
         this.g = -1;
-        this.f5710a = parcel.readString();
+        this.a = parcel.readString();
         this.b = parcel.readString();
-        this.f5711c = parcel.readString();
+        this.c = parcel.readString();
         this.d = parcel.createTypedArrayList(LatLonPoint.CREATOR);
         this.e = parcel.createTypedArrayList(RouteSearchCity.CREATOR);
         this.f = parcel.createTypedArrayList(TMC.CREATOR);
@@ -67,7 +63,7 @@ public class DriveStepV2 implements Parcelable {
     }
 
     public String getInstruction() {
-        return this.f5710a;
+        return this.a;
     }
 
     public Navi getNavi() {
@@ -83,7 +79,7 @@ public class DriveStepV2 implements Parcelable {
     }
 
     public String getRoad() {
-        return this.f5711c;
+        return this.c;
     }
 
     public List<RouteSearchCity> getRouteSearchCityList() {
@@ -103,7 +99,7 @@ public class DriveStepV2 implements Parcelable {
     }
 
     public void setInstruction(String str) {
-        this.f5710a = str;
+        this.a = str;
     }
 
     public void setNavi(Navi navi) {
@@ -119,7 +115,7 @@ public class DriveStepV2 implements Parcelable {
     }
 
     public void setRoad(String str) {
-        this.f5711c = str;
+        this.c = str;
     }
 
     public void setRouteSearchCityList(List<RouteSearchCity> list) {
@@ -136,9 +132,9 @@ public class DriveStepV2 implements Parcelable {
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.f5710a);
+        parcel.writeString(this.a);
         parcel.writeString(this.b);
-        parcel.writeString(this.f5711c);
+        parcel.writeString(this.c);
         parcel.writeTypedList(this.d);
         parcel.writeTypedList(this.e);
         parcel.writeTypedList(this.f);

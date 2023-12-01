@@ -20,20 +20,20 @@ public class DownloadConfig implements Parcelable {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    private int f24867a;
+    private int f11179a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f24868c;
+    private int f11180c;
     private boolean d;
     private float e;
     private int f;
     private int g;
 
     public DownloadConfig() {
-        this.f24867a = 3;
+        this.f11179a = 3;
         this.b = 2;
-        this.f24868c = 3;
+        this.f11180c = 3;
         this.d = true;
         this.e = 0.02f;
         this.f = 100;
@@ -41,17 +41,17 @@ public class DownloadConfig implements Parcelable {
     }
 
     private DownloadConfig(Parcel parcel) {
-        this.f24867a = 3;
+        this.f11179a = 3;
         this.b = 2;
-        this.f24868c = 3;
+        this.f11180c = 3;
         boolean z = true;
         this.d = true;
         this.e = 0.02f;
         this.f = 100;
         this.g = 8192;
-        this.f24867a = parcel.readInt();
+        this.f11179a = parcel.readInt();
         this.b = parcel.readInt();
-        this.f24868c = parcel.readInt();
+        this.f11180c = parcel.readInt();
         this.d = parcel.readByte() == 0 ? false : z;
         this.e = parcel.readFloat();
         this.f = parcel.readInt();
@@ -59,7 +59,7 @@ public class DownloadConfig implements Parcelable {
     }
 
     public int a() {
-        return this.f24867a;
+        return this.f11179a;
     }
 
     public DownloadConfig a(float f, int i, int i2) {
@@ -70,7 +70,7 @@ public class DownloadConfig implements Parcelable {
     }
 
     public DownloadConfig a(int i) {
-        this.f24868c = i;
+        this.f11180c = i;
         return this;
     }
 
@@ -84,7 +84,7 @@ public class DownloadConfig implements Parcelable {
     }
 
     public int c() {
-        return this.f24868c;
+        return this.f11180c;
     }
 
     public boolean d() {
@@ -109,14 +109,14 @@ public class DownloadConfig implements Parcelable {
     }
 
     public String toString() {
-        return "DownloadConfig{, readThreadCountPerTask=" + this.f24867a + ", writeThreadCount=" + this.b + ", maxDownloadNum=" + this.f24868c + ", listenOnUi=" + this.d + ", notifyRatio=" + this.e + ", notifyInterval=" + this.f + ", notifyIntervalSize=" + this.g + '}';
+        return "DownloadConfig{, readThreadCountPerTask=" + this.f11179a + ", writeThreadCount=" + this.b + ", maxDownloadNum=" + this.f11180c + ", listenOnUi=" + this.d + ", notifyRatio=" + this.e + ", notifyInterval=" + this.f + ", notifyIntervalSize=" + this.g + '}';
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeInt(this.f24867a);
+        parcel.writeInt(this.f11179a);
         parcel.writeInt(this.b);
-        parcel.writeInt(this.f24868c);
+        parcel.writeInt(this.f11180c);
         parcel.writeByte(this.d ? (byte) 1 : (byte) 0);
         parcel.writeFloat(this.e);
         parcel.writeInt(this.f);

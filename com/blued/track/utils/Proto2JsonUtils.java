@@ -8,14 +8,14 @@ import java.util.regex.Pattern;
 public class Proto2JsonUtils {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Pattern f20627a = Pattern.compile("[0-9]", 2);
+    private static final Pattern f7021a = Pattern.compile("[0-9]", 2);
 
     /* renamed from: com.blued.track.utils.Proto2JsonUtils$1  reason: invalid class name */
     /* loaded from: source-7206380-dex2jar.jar:com/blued/track/utils/Proto2JsonUtils$1.class */
     static /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f20628a;
+        static final /* synthetic */ int[] f7022a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:39:0x00dd -> B:109:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:41:0x00e1 -> B:103:0x001f). Please submit an issue!!! */
@@ -36,77 +36,77 @@ public class Proto2JsonUtils {
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:71:0x011d -> B:105:0x00d0). Please submit an issue!!! */
         static {
             int[] iArr = new int[Descriptors.FieldDescriptor.Type.values().length];
-            f20628a = iArr;
+            f7022a = iArr;
             try {
                 iArr[Descriptors.FieldDescriptor.Type.INT32.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f20628a[Descriptors.FieldDescriptor.Type.INT64.ordinal()] = 2;
+                f7022a[Descriptors.FieldDescriptor.Type.INT64.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f20628a[Descriptors.FieldDescriptor.Type.SINT32.ordinal()] = 3;
+                f7022a[Descriptors.FieldDescriptor.Type.SINT32.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f20628a[Descriptors.FieldDescriptor.Type.SINT64.ordinal()] = 4;
+                f7022a[Descriptors.FieldDescriptor.Type.SINT64.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f20628a[Descriptors.FieldDescriptor.Type.SFIXED32.ordinal()] = 5;
+                f7022a[Descriptors.FieldDescriptor.Type.SFIXED32.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
             try {
-                f20628a[Descriptors.FieldDescriptor.Type.SFIXED64.ordinal()] = 6;
+                f7022a[Descriptors.FieldDescriptor.Type.SFIXED64.ordinal()] = 6;
             } catch (NoSuchFieldError e6) {
             }
             try {
-                f20628a[Descriptors.FieldDescriptor.Type.FLOAT.ordinal()] = 7;
+                f7022a[Descriptors.FieldDescriptor.Type.FLOAT.ordinal()] = 7;
             } catch (NoSuchFieldError e7) {
             }
             try {
-                f20628a[Descriptors.FieldDescriptor.Type.DOUBLE.ordinal()] = 8;
+                f7022a[Descriptors.FieldDescriptor.Type.DOUBLE.ordinal()] = 8;
             } catch (NoSuchFieldError e8) {
             }
             try {
-                f20628a[Descriptors.FieldDescriptor.Type.BOOL.ordinal()] = 9;
+                f7022a[Descriptors.FieldDescriptor.Type.BOOL.ordinal()] = 9;
             } catch (NoSuchFieldError e9) {
             }
             try {
-                f20628a[Descriptors.FieldDescriptor.Type.UINT32.ordinal()] = 10;
+                f7022a[Descriptors.FieldDescriptor.Type.UINT32.ordinal()] = 10;
             } catch (NoSuchFieldError e10) {
             }
             try {
-                f20628a[Descriptors.FieldDescriptor.Type.FIXED32.ordinal()] = 11;
+                f7022a[Descriptors.FieldDescriptor.Type.FIXED32.ordinal()] = 11;
             } catch (NoSuchFieldError e11) {
             }
             try {
-                f20628a[Descriptors.FieldDescriptor.Type.UINT64.ordinal()] = 12;
+                f7022a[Descriptors.FieldDescriptor.Type.UINT64.ordinal()] = 12;
             } catch (NoSuchFieldError e12) {
             }
             try {
-                f20628a[Descriptors.FieldDescriptor.Type.FIXED64.ordinal()] = 13;
+                f7022a[Descriptors.FieldDescriptor.Type.FIXED64.ordinal()] = 13;
             } catch (NoSuchFieldError e13) {
             }
             try {
-                f20628a[Descriptors.FieldDescriptor.Type.STRING.ordinal()] = 14;
+                f7022a[Descriptors.FieldDescriptor.Type.STRING.ordinal()] = 14;
             } catch (NoSuchFieldError e14) {
             }
             try {
-                f20628a[Descriptors.FieldDescriptor.Type.BYTES.ordinal()] = 15;
+                f7022a[Descriptors.FieldDescriptor.Type.BYTES.ordinal()] = 15;
             } catch (NoSuchFieldError e15) {
             }
             try {
-                f20628a[Descriptors.FieldDescriptor.Type.ENUM.ordinal()] = 16;
+                f7022a[Descriptors.FieldDescriptor.Type.ENUM.ordinal()] = 16;
             } catch (NoSuchFieldError e16) {
             }
             try {
-                f20628a[Descriptors.FieldDescriptor.Type.MESSAGE.ordinal()] = 17;
+                f7022a[Descriptors.FieldDescriptor.Type.MESSAGE.ordinal()] = 17;
             } catch (NoSuchFieldError e17) {
             }
             try {
-                f20628a[Descriptors.FieldDescriptor.Type.GROUP.ordinal()] = 18;
+                f7022a[Descriptors.FieldDescriptor.Type.GROUP.ordinal()] = 18;
             } catch (NoSuchFieldError e18) {
             }
         }
@@ -130,11 +130,11 @@ public class Proto2JsonUtils {
     public static class Tokenizer {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final Pattern f20629a = Pattern.compile("(\\s|(#.*$))++", 8);
+        private static final Pattern f7023a = Pattern.compile("(\\s|(#.*$))++", 8);
         private static final Pattern b = Pattern.compile("[a-zA-Z_][0-9a-zA-Z_+-]*+|[.]?[0-9+-][0-9a-zA-Z_.+-]*+|\"([^\"\n\\\\]|\\\\.)*+(\"|\\\\?$)|'([^'\n\\\\]|\\\\.)*+('|\\\\?$)", 8);
 
         /* renamed from: c  reason: collision with root package name */
-        private static final Pattern f20630c = Pattern.compile("-?inf(inity)?", 2);
+        private static final Pattern f7024c = Pattern.compile("-?inf(inity)?", 2);
         private static final Pattern d = Pattern.compile("-?inf(inity)?f?", 2);
         private static final Pattern e = Pattern.compile("nanf?", 2);
     }

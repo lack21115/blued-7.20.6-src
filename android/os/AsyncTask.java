@@ -50,9 +50,8 @@ public abstract class AsyncTask<Params, Progress, Result> {
         }
     };
     private final FutureTask<Result> mFuture = new FutureTask<Result>(this.mWorker) { // from class: android.os.AsyncTask.3
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // java.util.concurrent.FutureTask
-        public void done() {
+        protected void done() {
             try {
                 AsyncTask.this.postResultIfNotInvoked(get());
             } catch (InterruptedException e) {
@@ -264,8 +263,7 @@ public abstract class AsyncTask<Params, Progress, Result> {
         return this.mCancelled.get();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    public void onCancelled() {
+    protected void onCancelled() {
     }
 
     protected void onCancelled(Result result) {
@@ -276,15 +274,13 @@ public abstract class AsyncTask<Params, Progress, Result> {
     public void onPostExecute(Result result) {
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    public void onPreExecute() {
+    protected void onPreExecute() {
     }
 
     protected void onProgressUpdate(Progress... progressArr) {
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    public final void publishProgress(Progress... progressArr) {
+    protected final void publishProgress(Progress... progressArr) {
         if (isCancelled()) {
             return;
         }

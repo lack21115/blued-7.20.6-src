@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import androidx.core.os.BuildCompat;
+import com.anythink.expressad.a;
 import io.github.inflationx.viewpump.FallbackViewCreator;
 import io.github.inflationx.viewpump.InflateRequest;
 import io.github.inflationx.viewpump.R;
@@ -39,9 +40,8 @@ public final class ViewPumpLayoutInflater extends LayoutInflater implements View
     private boolean setPrivateFactory;
     private boolean storeLayoutResId;
     public static final Companion Companion = new Companion(null);
-    private static final Set<String> CLASS_PREFIX_LIST = SetsKt.a((Object[]) new String[]{"android.widget.", "android.webkit."});
+    private static final Set<String> CLASS_PREFIX_LIST = SetsKt.a(new String[]{"android.widget.", "android.webkit."});
     private static final Lazy CONSTRUCTOR_ARGS_FIELD$delegate = LazyKt.a(new Function0<Field>() { // from class: io.github.inflationx.viewpump.internal.-ViewPumpLayoutInflater$Companion$CONSTRUCTOR_ARGS_FIELD$2
-        @Override // kotlin.jvm.functions.Function0
         public final Field invoke() {
             Field declaredField = LayoutInflater.class.getDeclaredField("mConstructorArgs");
             if (declaredField != null) {
@@ -59,18 +59,18 @@ public final class ViewPumpLayoutInflater extends LayoutInflater implements View
         private final ViewPumpLayoutInflater inflater;
         private final View view;
 
-        public ActivityViewCreator(ViewPumpLayoutInflater inflater, View view) {
-            Intrinsics.d(inflater, "inflater");
-            Intrinsics.d(view, "view");
-            this.inflater = inflater;
+        public ActivityViewCreator(ViewPumpLayoutInflater viewPumpLayoutInflater, View view) {
+            Intrinsics.d(viewPumpLayoutInflater, "inflater");
+            Intrinsics.d(view, a.B);
+            this.inflater = viewPumpLayoutInflater;
             this.view = view;
         }
 
         @Override // io.github.inflationx.viewpump.FallbackViewCreator
-        public View onCreateView(View view, String name, Context context, AttributeSet attributeSet) {
-            Intrinsics.d(name, "name");
+        public View onCreateView(View view, String str, Context context, AttributeSet attributeSet) {
+            Intrinsics.d(str, "name");
             Intrinsics.d(context, "context");
-            return this.inflater.createCustomViewInternal(this.view, name, context, attributeSet);
+            return this.inflater.createCustomViewInternal(this.view, str, context, attributeSet);
         }
     }
 
@@ -78,7 +78,7 @@ public final class ViewPumpLayoutInflater extends LayoutInflater implements View
     /* renamed from: io.github.inflationx.viewpump.internal.-ViewPumpLayoutInflater$Companion */
     /* loaded from: source-8829756-dex2jar.jar:io/github/inflationx/viewpump/internal/-ViewPumpLayoutInflater$Companion.class */
     public static final class Companion {
-        static final /* synthetic */ KProperty[] $$delegatedProperties = {Reflection.a(new PropertyReference1Impl(Reflection.b(Companion.class), "CONSTRUCTOR_ARGS_FIELD", "getCONSTRUCTOR_ARGS_FIELD()Ljava/lang/reflect/Field;"))};
+        static final /* synthetic */ KProperty[] $$delegatedProperties = {(KProperty) Reflection.a(new PropertyReference1Impl(Reflection.b(Companion.class), "CONSTRUCTOR_ARGS_FIELD", "getCONSTRUCTOR_ARGS_FIELD()Ljava/lang/reflect/Field;"))};
 
         private Companion() {
         }
@@ -102,16 +102,16 @@ public final class ViewPumpLayoutInflater extends LayoutInflater implements View
     static final class NameAndAttrsViewCreator implements FallbackViewCreator {
         private final ViewPumpLayoutInflater inflater;
 
-        public NameAndAttrsViewCreator(ViewPumpLayoutInflater inflater) {
-            Intrinsics.d(inflater, "inflater");
-            this.inflater = inflater;
+        public NameAndAttrsViewCreator(ViewPumpLayoutInflater viewPumpLayoutInflater) {
+            Intrinsics.d(viewPumpLayoutInflater, "inflater");
+            this.inflater = viewPumpLayoutInflater;
         }
 
         @Override // io.github.inflationx.viewpump.FallbackViewCreator
-        public View onCreateView(View view, String name, Context context, AttributeSet attributeSet) {
+        public View onCreateView(View view, String str, Context context, AttributeSet attributeSet) {
             View view2;
             View createView;
-            Intrinsics.d(name, "name");
+            Intrinsics.d(str, "name");
             Intrinsics.d(context, "context");
             View view3 = null;
             Iterator it = ViewPumpLayoutInflater.CLASS_PREFIX_LIST.iterator();
@@ -122,7 +122,7 @@ public final class ViewPumpLayoutInflater extends LayoutInflater implements View
                     break;
                 }
                 try {
-                    createView = this.inflater.createView(name, (String) it.next(), attributeSet);
+                    createView = this.inflater.createView(str, (String) it.next(), attributeSet);
                     view3 = createView;
                 } catch (ClassNotFoundException e) {
                     view3 = view4;
@@ -134,7 +134,7 @@ public final class ViewPumpLayoutInflater extends LayoutInflater implements View
             }
             View view5 = view2;
             if (view2 == null) {
-                view5 = this.inflater.superOnCreateView(name, attributeSet);
+                view5 = this.inflater.superOnCreateView(str, attributeSet);
             }
             return view5;
         }
@@ -146,16 +146,16 @@ public final class ViewPumpLayoutInflater extends LayoutInflater implements View
     static final class ParentAndNameAndAttrsViewCreator implements FallbackViewCreator {
         private final ViewPumpLayoutInflater inflater;
 
-        public ParentAndNameAndAttrsViewCreator(ViewPumpLayoutInflater inflater) {
-            Intrinsics.d(inflater, "inflater");
-            this.inflater = inflater;
+        public ParentAndNameAndAttrsViewCreator(ViewPumpLayoutInflater viewPumpLayoutInflater) {
+            Intrinsics.d(viewPumpLayoutInflater, "inflater");
+            this.inflater = viewPumpLayoutInflater;
         }
 
         @Override // io.github.inflationx.viewpump.FallbackViewCreator
-        public View onCreateView(View view, String name, Context context, AttributeSet attributeSet) {
-            Intrinsics.d(name, "name");
+        public View onCreateView(View view, String str, Context context, AttributeSet attributeSet) {
+            Intrinsics.d(str, "name");
             Intrinsics.d(context, "context");
-            return this.inflater.superOnCreateView(view, name, attributeSet);
+            return this.inflater.superOnCreateView(view, str, attributeSet);
         }
     }
 
@@ -167,18 +167,18 @@ public final class ViewPumpLayoutInflater extends LayoutInflater implements View
         private final PrivateWrapperFactory2ViewCreator viewCreator;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public PrivateWrapperFactory2(LayoutInflater.Factory2 factory2, ViewPumpLayoutInflater inflater) {
+        public PrivateWrapperFactory2(LayoutInflater.Factory2 factory2, ViewPumpLayoutInflater viewPumpLayoutInflater) {
             super(factory2);
             Intrinsics.d(factory2, "factory2");
-            Intrinsics.d(inflater, "inflater");
-            this.viewCreator = new PrivateWrapperFactory2ViewCreator(factory2, inflater);
+            Intrinsics.d(viewPumpLayoutInflater, "inflater");
+            this.viewCreator = new PrivateWrapperFactory2ViewCreator(factory2, viewPumpLayoutInflater);
         }
 
         @Override // io.github.inflationx.viewpump.internal.ViewPumpLayoutInflater.WrapperFactory2, android.view.LayoutInflater.Factory2
-        public View onCreateView(View view, String name, Context context, AttributeSet attributeSet) {
-            Intrinsics.d(name, "name");
+        public View onCreateView(View view, String str, Context context, AttributeSet attributeSet) {
+            Intrinsics.d(str, "name");
             Intrinsics.d(context, "context");
-            return ViewPump.Companion.get().inflate(new InflateRequest(name, context, attributeSet, view, this.viewCreator)).view();
+            return ViewPump.Companion.get().inflate(new InflateRequest(str, context, attributeSet, view, this.viewCreator)).view();
         }
     }
 
@@ -189,18 +189,18 @@ public final class ViewPumpLayoutInflater extends LayoutInflater implements View
         private final ViewPumpLayoutInflater inflater;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public PrivateWrapperFactory2ViewCreator(LayoutInflater.Factory2 factory2, ViewPumpLayoutInflater inflater) {
+        public PrivateWrapperFactory2ViewCreator(LayoutInflater.Factory2 factory2, ViewPumpLayoutInflater viewPumpLayoutInflater) {
             super(factory2);
             Intrinsics.d(factory2, "factory2");
-            Intrinsics.d(inflater, "inflater");
-            this.inflater = inflater;
+            Intrinsics.d(viewPumpLayoutInflater, "inflater");
+            this.inflater = viewPumpLayoutInflater;
         }
 
         @Override // io.github.inflationx.viewpump.internal.ViewPumpLayoutInflater.WrapperFactory2ViewCreator, io.github.inflationx.viewpump.FallbackViewCreator
-        public View onCreateView(View view, String name, Context context, AttributeSet attributeSet) {
-            Intrinsics.d(name, "name");
+        public View onCreateView(View view, String str, Context context, AttributeSet attributeSet) {
+            Intrinsics.d(str, "name");
             Intrinsics.d(context, "context");
-            return this.inflater.createCustomViewInternal(getFactory2().onCreateView(view, name, context, attributeSet), name, context, attributeSet);
+            return this.inflater.createCustomViewInternal(getFactory2().onCreateView(view, str, context, attributeSet), str, context, attributeSet);
         }
     }
 
@@ -217,10 +217,10 @@ public final class ViewPumpLayoutInflater extends LayoutInflater implements View
         }
 
         @Override // android.view.LayoutInflater.Factory
-        public View onCreateView(String name, Context context, AttributeSet attributeSet) {
-            Intrinsics.d(name, "name");
+        public View onCreateView(String str, Context context, AttributeSet attributeSet) {
+            Intrinsics.d(str, "name");
             Intrinsics.d(context, "context");
-            return ViewPump.Companion.get().inflate(new InflateRequest(name, context, attributeSet, null, this.viewCreator, 8, null)).view();
+            return ViewPump.Companion.get().inflate(new InflateRequest(str, context, attributeSet, null, this.viewCreator, 8, null)).view();
         }
     }
 
@@ -237,17 +237,17 @@ public final class ViewPumpLayoutInflater extends LayoutInflater implements View
         }
 
         @Override // android.view.LayoutInflater.Factory2
-        public View onCreateView(View view, String name, Context context, AttributeSet attributeSet) {
-            Intrinsics.d(name, "name");
+        public View onCreateView(View view, String str, Context context, AttributeSet attributeSet) {
+            Intrinsics.d(str, "name");
             Intrinsics.d(context, "context");
-            return ViewPump.Companion.get().inflate(new InflateRequest(name, context, attributeSet, view, this.viewCreator)).view();
+            return ViewPump.Companion.get().inflate(new InflateRequest(str, context, attributeSet, view, this.viewCreator)).view();
         }
 
         @Override // android.view.LayoutInflater.Factory
-        public View onCreateView(String name, Context context, AttributeSet attributeSet) {
-            Intrinsics.d(name, "name");
+        public View onCreateView(String str, Context context, AttributeSet attributeSet) {
+            Intrinsics.d(str, "name");
             Intrinsics.d(context, "context");
-            return onCreateView(null, name, context, attributeSet);
+            return onCreateView(null, str, context, attributeSet);
         }
     }
 
@@ -268,10 +268,10 @@ public final class ViewPumpLayoutInflater extends LayoutInflater implements View
         }
 
         @Override // io.github.inflationx.viewpump.FallbackViewCreator
-        public View onCreateView(View view, String name, Context context, AttributeSet attributeSet) {
-            Intrinsics.d(name, "name");
+        public View onCreateView(View view, String str, Context context, AttributeSet attributeSet) {
+            Intrinsics.d(str, "name");
             Intrinsics.d(context, "context");
-            return this.factory2.onCreateView(view, name, context, attributeSet);
+            return this.factory2.onCreateView(view, str, context, attributeSet);
         }
     }
 
@@ -287,18 +287,18 @@ public final class ViewPumpLayoutInflater extends LayoutInflater implements View
         }
 
         @Override // io.github.inflationx.viewpump.FallbackViewCreator
-        public View onCreateView(View view, String name, Context context, AttributeSet attributeSet) {
-            Intrinsics.d(name, "name");
+        public View onCreateView(View view, String str, Context context, AttributeSet attributeSet) {
+            Intrinsics.d(str, "name");
             Intrinsics.d(context, "context");
-            return this.factory.onCreateView(name, context, attributeSet);
+            return this.factory.onCreateView(str, context, attributeSet);
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ViewPumpLayoutInflater(LayoutInflater original, Context newContext, boolean z) {
-        super(original, newContext);
-        Intrinsics.d(original, "original");
-        Intrinsics.d(newContext, "newContext");
+    public ViewPumpLayoutInflater(LayoutInflater layoutInflater, Context context, boolean z) {
+        super(layoutInflater, context);
+        Intrinsics.d(layoutInflater, "original");
+        Intrinsics.d(context, "newContext");
         this.IS_AT_LEAST_Q = Build.VERSION.SDK_INT > 28 || BuildCompat.isAtLeastQ();
         this.nameAndAttrsViewCreator = new NameAndAttrsViewCreator(this);
         this.parentAndNameAndAttrsViewCreator = new ParentAndNameAndAttrsViewCreator(this);
@@ -309,7 +309,7 @@ public final class ViewPumpLayoutInflater extends LayoutInflater implements View
     /* JADX INFO: Access modifiers changed from: private */
     public final View createCustomViewInternal(View view, String str, Context context, AttributeSet attributeSet) {
         if (ViewPump.Companion.get().isCustomViewCreation()) {
-            if (view != null || StringsKt.a((CharSequence) str, '.', 0, false, 6, (Object) null) <= -1) {
+            if (view != null || StringsKt.a(str, '.', 0, false, 6, (Object) null) <= -1) {
                 return view;
             }
             if (this.IS_AT_LEAST_Q) {
@@ -388,9 +388,9 @@ public final class ViewPumpLayoutInflater extends LayoutInflater implements View
     }
 
     @Override // android.view.LayoutInflater
-    public LayoutInflater cloneInContext(Context newContext) {
-        Intrinsics.d(newContext, "newContext");
-        return new ViewPumpLayoutInflater(this, newContext, true);
+    public LayoutInflater cloneInContext(Context context) {
+        Intrinsics.d(context, "newContext");
+        return new ViewPumpLayoutInflater(this, context, true);
     }
 
     @Override // android.view.LayoutInflater
@@ -403,40 +403,40 @@ public final class ViewPumpLayoutInflater extends LayoutInflater implements View
     }
 
     @Override // android.view.LayoutInflater
-    public View inflate(XmlPullParser parser, ViewGroup viewGroup, boolean z) {
-        Intrinsics.d(parser, "parser");
+    public View inflate(XmlPullParser xmlPullParser, ViewGroup viewGroup, boolean z) {
+        Intrinsics.d(xmlPullParser, "parser");
         setPrivateFactoryInternal();
-        View inflate = super.inflate(parser, viewGroup, z);
+        View inflate = super.inflate(xmlPullParser, viewGroup, z);
         Intrinsics.b(inflate, "super.inflate(parser, root, attachToRoot)");
         return inflate;
     }
 
     @Override // io.github.inflationx.viewpump.internal.ViewPumpActivityFactory
-    public View onActivityCreateView(View view, View view2, String name, Context context, AttributeSet attributeSet) {
-        Intrinsics.d(view2, "view");
-        Intrinsics.d(name, "name");
+    public View onActivityCreateView(View view, View view2, String str, Context context, AttributeSet attributeSet) {
+        Intrinsics.d(view2, a.B);
+        Intrinsics.d(str, "name");
         Intrinsics.d(context, "context");
-        return ViewPump.Companion.get().inflate(new InflateRequest(name, context, attributeSet, view, new ActivityViewCreator(this, view2))).view();
+        return ViewPump.Companion.get().inflate(new InflateRequest(str, context, attributeSet, view, new ActivityViewCreator(this, view2))).view();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.LayoutInflater
-    public View onCreateView(View view, String name, AttributeSet attributeSet) throws ClassNotFoundException {
-        Intrinsics.d(name, "name");
+    public View onCreateView(View view, String str, AttributeSet attributeSet) throws ClassNotFoundException {
+        Intrinsics.d(str, "name");
         ViewPump viewPump = ViewPump.Companion.get();
         Context context = getContext();
         Intrinsics.b(context, "context");
-        return viewPump.inflate(new InflateRequest(name, context, attributeSet, view, this.parentAndNameAndAttrsViewCreator)).view();
+        return viewPump.inflate(new InflateRequest(str, context, attributeSet, view, this.parentAndNameAndAttrsViewCreator)).view();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.LayoutInflater
-    public View onCreateView(String name, AttributeSet attributeSet) throws ClassNotFoundException {
-        Intrinsics.d(name, "name");
+    public View onCreateView(String str, AttributeSet attributeSet) throws ClassNotFoundException {
+        Intrinsics.d(str, "name");
         ViewPump viewPump = ViewPump.Companion.get();
         Context context = getContext();
         Intrinsics.b(context, "context");
-        return viewPump.inflate(new InflateRequest(name, context, attributeSet, null, this.nameAndAttrsViewCreator, 8, null)).view();
+        return viewPump.inflate(new InflateRequest(str, context, attributeSet, null, this.nameAndAttrsViewCreator, 8, null)).view();
     }
 
     @Override // android.view.LayoutInflater

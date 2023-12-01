@@ -4,11 +4,11 @@ package com.tencent.mapsdk.internal;
 public class b6 {
 
     /* renamed from: a  reason: collision with root package name */
-    private d6 f37314a;
+    private d6 f23623a;
     private d6 b;
 
     /* renamed from: c  reason: collision with root package name */
-    private d6 f37315c;
+    private d6 f23624c;
     private e6 d;
 
     public b6() {
@@ -42,9 +42,9 @@ public class b6 {
     }
 
     private void a(d6 d6Var, d6 d6Var2, d6 d6Var3) {
-        this.f37314a = d6Var;
+        this.f23623a = d6Var;
         this.b = d6Var2;
-        this.f37315c = d6Var3;
+        this.f23624c = d6Var3;
         this.d.a(d6Var);
         this.d.a(d6Var2);
         this.d.a(d6Var3);
@@ -53,7 +53,7 @@ public class b6 {
     public boolean a(float[] fArr) {
         boolean z = false;
         d6 d6Var = new d6(fArr[0], fArr[1], fArr[2]);
-        if (Math.abs(a() - ((new b6(d6Var, this.f37314a, this.b).a() + new b6(d6Var, this.f37314a, this.f37315c).a()) + new b6(d6Var, this.b, this.f37315c).a())) < 0.001d) {
+        if (Math.abs(a() - ((new b6(d6Var, this.f23623a, this.b).a() + new b6(d6Var, this.f23623a, this.f23624c).a()) + new b6(d6Var, this.b, this.f23624c).a())) < 0.001d) {
             z = true;
         }
         return z;

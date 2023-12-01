@@ -27,7 +27,9 @@ import com.anythink.expressad.foundation.d.c;
 import com.anythink.expressad.foundation.h.k;
 import com.anythink.expressad.foundation.h.o;
 import com.bytedance.applog.tracker.Tracker;
+import com.bytedance.applog.util.WebViewJsUtil;
 import com.google.android.material.badge.BadgeDrawable;
+import com.huawei.hms.ads.fw;
 import java.util.HashMap;
 import java.util.List;
 import org.json.JSONObject;
@@ -36,11 +38,11 @@ import org.json.JSONObject;
 public class NativeAdvancedExpandDialog extends Dialog {
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f7038a;
+    private final String f4200a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f7039c;
+    private boolean f4201c;
     private FrameLayout d;
     private WindVaneWebView e;
     private TextView f;
@@ -71,7 +73,7 @@ public class NativeAdvancedExpandDialog extends Dialog {
         @Override // com.anythink.expressad.atsignalcommon.a.b, com.anythink.expressad.atsignalcommon.windvane.e
         public void onPageFinished(WebView webView, String str) {
             super.onPageFinished(webView, str);
-            StringBuilder sb = new StringBuilder("javascript:");
+            StringBuilder sb = new StringBuilder(WebViewJsUtil.JS_URL_PREFIX);
             com.anythink.expressad.d.b.a.a();
             sb.append(com.anythink.expressad.d.b.a.b());
             if (Build.VERSION.SDK_INT <= 19) {
@@ -108,7 +110,7 @@ public class NativeAdvancedExpandDialog extends Dialog {
 
     public NativeAdvancedExpandDialog(Context context, Bundle bundle, a aVar) {
         super(context);
-        this.f7038a = "NativeAdvancedExpandDialog";
+        this.f4200a = "NativeAdvancedExpandDialog";
         this.j = new IMraidJSBridge() { // from class: com.anythink.expressad.advanced.js.NativeAdvancedExpandDialog.4
             @Override // com.anythink.expressad.atsignalcommon.mraid.IMraidJSBridge
             public void close() {
@@ -127,10 +129,10 @@ public class NativeAdvancedExpandDialog extends Dialog {
             @Override // com.anythink.expressad.atsignalcommon.mraid.IMraidJSBridge
             public void open(String str) {
                 try {
-                    if (NativeAdvancedExpandDialog.this.e != null && System.currentTimeMillis() - NativeAdvancedExpandDialog.this.e.lastTouchTime > com.anythink.expressad.a.b.a.f6956c) {
+                    if (NativeAdvancedExpandDialog.this.e != null && System.currentTimeMillis() - NativeAdvancedExpandDialog.this.e.lastTouchTime > com.anythink.expressad.a.b.a.f4118c) {
                         c cVar = (c) NativeAdvancedExpandDialog.this.h.get(0);
                         NativeAdvancedExpandDialog.this.e.getUrl();
-                        int i = com.anythink.expressad.a.b.a.f6955a;
+                        int i = com.anythink.expressad.a.b.a.f4117a;
                         if (com.anythink.expressad.a.b.a.a(cVar)) {
                             return;
                         }
@@ -165,7 +167,7 @@ public class NativeAdvancedExpandDialog extends Dialog {
         };
         if (bundle != null) {
             this.b = bundle.getString("url");
-            this.f7039c = bundle.getBoolean("shouldUseCustomClose");
+            this.f4201c = bundle.getBoolean("shouldUseCustomClose");
         }
         this.i = aVar;
     }
@@ -185,7 +187,7 @@ public class NativeAdvancedExpandDialog extends Dialog {
         layoutParams.gravity = BadgeDrawable.TOP_END;
         layoutParams.setMargins(30, 30, 30, 30);
         this.f.setLayoutParams(layoutParams);
-        this.f.setVisibility(this.f7039c ? 4 : 0);
+        this.f.setVisibility(this.f4201c ? 4 : 0);
         this.f.setOnClickListener(new AnonymousClass1());
         this.d.addView(this.f);
         setContentView(this.d);
@@ -216,16 +218,16 @@ public class NativeAdvancedExpandDialog extends Dialog {
             int i = n.a().g().getResources().getConfiguration().orientation;
             JSONObject jSONObject = new JSONObject();
             jSONObject.put("orientation", i == 2 ? Camera.Parameters.SCENE_MODE_LANDSCAPE : i == 1 ? Camera.Parameters.SCENE_MODE_PORTRAIT : "undefined");
-            jSONObject.put(TvContract.Channels.COLUMN_LOCKED, "true");
+            jSONObject.put(TvContract.Channels.COLUMN_LOCKED, fw.Code);
             float e = k.e(n.a().g());
             float f = k.f(n.a().g());
             HashMap g = k.g(n.a().g());
             int intValue = ((Integer) g.get("width")).intValue();
             int intValue2 = ((Integer) g.get("height")).intValue();
             HashMap hashMap = new HashMap();
-            hashMap.put(CallMraidJS.f7085a, "inline");
+            hashMap.put(CallMraidJS.f4247a, "inline");
             hashMap.put("state", CallMraidJS.g);
-            hashMap.put(CallMraidJS.f7086c, "true");
+            hashMap.put(CallMraidJS.f4248c, fw.Code);
             hashMap.put(CallMraidJS.d, jSONObject);
             nativeAdvancedExpandDialog.e.getLocationInWindow(new int[2]);
             CallMraidJS.getInstance().fireSetDefaultPosition(nativeAdvancedExpandDialog.e, iArr[0], iArr[1], nativeAdvancedExpandDialog.e.getWidth(), nativeAdvancedExpandDialog.e.getHeight());
@@ -245,16 +247,16 @@ public class NativeAdvancedExpandDialog extends Dialog {
             int i = n.a().g().getResources().getConfiguration().orientation;
             JSONObject jSONObject = new JSONObject();
             jSONObject.put("orientation", i == 2 ? Camera.Parameters.SCENE_MODE_LANDSCAPE : i == 1 ? Camera.Parameters.SCENE_MODE_PORTRAIT : "undefined");
-            jSONObject.put(TvContract.Channels.COLUMN_LOCKED, "true");
+            jSONObject.put(TvContract.Channels.COLUMN_LOCKED, fw.Code);
             float e = k.e(n.a().g());
             float f = k.f(n.a().g());
             HashMap g = k.g(n.a().g());
             int intValue = ((Integer) g.get("width")).intValue();
             int intValue2 = ((Integer) g.get("height")).intValue();
             HashMap hashMap = new HashMap();
-            hashMap.put(CallMraidJS.f7085a, "inline");
+            hashMap.put(CallMraidJS.f4247a, "inline");
             hashMap.put("state", CallMraidJS.g);
-            hashMap.put(CallMraidJS.f7086c, "true");
+            hashMap.put(CallMraidJS.f4248c, fw.Code);
             hashMap.put(CallMraidJS.d, jSONObject);
             this.e.getLocationInWindow(new int[2]);
             CallMraidJS.getInstance().fireSetDefaultPosition(this.e, iArr[0], iArr[1], this.e.getWidth(), this.e.getHeight());
@@ -294,7 +296,7 @@ public class NativeAdvancedExpandDialog extends Dialog {
         layoutParams.gravity = BadgeDrawable.TOP_END;
         layoutParams.setMargins(30, 30, 30, 30);
         this.f.setLayoutParams(layoutParams);
-        this.f.setVisibility(this.f7039c ? 4 : 0);
+        this.f.setVisibility(this.f4201c ? 4 : 0);
         this.f.setOnClickListener(new AnonymousClass1());
         this.d.addView(this.f);
         setContentView(this.d);

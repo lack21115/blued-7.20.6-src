@@ -11,12 +11,12 @@ import java.nio.FloatBuffer;
 public class GlUtil {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final float[] f27722a;
+    public static final float[] f14034a;
     private static int b = 2;
 
     static {
         float[] fArr = new float[16];
-        f27722a = fArr;
+        f14034a = fArr;
         Matrix.setIdentityM(fArr, 0);
     }
 

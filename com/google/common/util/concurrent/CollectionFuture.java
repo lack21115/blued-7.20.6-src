@@ -79,8 +79,9 @@ abstract class CollectionFuture<V, C> extends AggregateFuture<V, C> {
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     @Override // com.google.common.util.concurrent.AggregateFuture
-    void releaseResources(AggregateFuture.ReleaseResourcesReason releaseResourcesReason) {
+    public void releaseResources(AggregateFuture.ReleaseResourcesReason releaseResourcesReason) {
         super.releaseResources(releaseResourcesReason);
         this.values = null;
     }

@@ -7,7 +7,7 @@ import com.anythink.expressad.exoplayer.m;
 public interface d {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final d f7377a = new d() { // from class: com.anythink.expressad.exoplayer.g.d.1
+    public static final d f4538a = new d() { // from class: com.anythink.expressad.exoplayer.g.d.1
         @Override // com.anythink.expressad.exoplayer.g.d
         public final boolean a(m mVar) {
             String str = mVar.h;

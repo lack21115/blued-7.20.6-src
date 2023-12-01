@@ -2,27 +2,25 @@ package com.blued.android.module.external_sense_library.utils;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/external_sense_library/utils/SenseLibSPMgr.class */
 public class SenseLibSPMgr {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static SenseLibSPMgr f11320a;
+    private static SenseLibSPMgr a;
     private SPUtils b = new SPUtils("senseBeautyConfig");
 
     private SenseLibSPMgr() {
     }
 
     public static SenseLibSPMgr a() {
-        if (f11320a == null) {
+        if (a == null) {
             synchronized (SenseLibSPMgr.class) {
                 try {
-                    if (f11320a == null) {
-                        f11320a = new SenseLibSPMgr();
+                    if (a == null) {
+                        a = new SenseLibSPMgr();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f11320a;
+        return a;
     }
 
     public void a(String str) {

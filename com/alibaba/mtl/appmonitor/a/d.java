@@ -1,6 +1,5 @@
 package com.alibaba.mtl.appmonitor.a;
 
-import com.sina.weibo.sdk.constant.WBPageConstants;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -14,7 +13,7 @@ public abstract class d implements com.alibaba.mtl.appmonitor.c.b {
     public JSONObject a() {
         JSONObject jSONObject = (JSONObject) com.alibaba.mtl.appmonitor.c.a.a().a(com.alibaba.mtl.appmonitor.c.e.class, new Object[0]);
         try {
-            jSONObject.put(WBPageConstants.ParamKey.PAGE, this.o);
+            jSONObject.put("page", this.o);
             jSONObject.put("monitorPoint", this.p);
             if (this.s != null) {
                 jSONObject.put("arg", this.s);

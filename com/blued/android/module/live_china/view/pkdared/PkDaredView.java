@@ -35,13 +35,9 @@ import java.util.HashMap;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/pkdared/PkDaredView.class */
 public class PkDaredView extends FrameLayout implements PkDaredObserver.IPkDaredObserver {
-
-    /* renamed from: a  reason: collision with root package name */
-    public EnumPKStage f15425a;
+    public EnumPKStage a;
     private IRequestHost b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f15426c;
+    private int c;
     private int d;
     private int e;
     private int f;
@@ -65,25 +61,25 @@ public class PkDaredView extends FrameLayout implements PkDaredObserver.IPkDared
 
     public PkDaredView(Context context) {
         super(context);
-        this.f15425a = EnumPKStage.MATCH;
+        this.a = EnumPKStage.MATCH;
         a(context);
     }
 
     public PkDaredView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f15425a = EnumPKStage.MATCH;
+        this.a = EnumPKStage.MATCH;
         a(context);
     }
 
     public PkDaredView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f15425a = EnumPKStage.MATCH;
+        this.a = EnumPKStage.MATCH;
         a(context);
     }
 
     public PkDaredView(Context context, AttributeSet attributeSet, int i, int i2) {
         super(context, attributeSet, i, i2);
-        this.f15425a = EnumPKStage.MATCH;
+        this.a = EnumPKStage.MATCH;
         a(context);
     }
 
@@ -98,7 +94,7 @@ public class PkDaredView extends FrameLayout implements PkDaredObserver.IPkDared
         int i7;
         PkDaredTextBarView pkDaredTextBarView;
         j();
-        this.f15425a = EnumPKStage.PK_1;
+        this.a = EnumPKStage.PK_1;
         this.i = str;
         this.j = str2;
         this.k = str3;
@@ -108,7 +104,7 @@ public class PkDaredView extends FrameLayout implements PkDaredObserver.IPkDared
         this.h = i6;
         this.p.a(i5, i6);
         this.q.setTargetScore(this.g);
-        int i8 = this.f15426c;
+        int i8 = this.c;
         if ((LiveRoomInfo.a().g() == LiveRoomManager.a().f()) || TextUtils.isEmpty(str4) || (pkDaredTextBarView = this.s) == null) {
             this.s.setVisibility(8);
             i7 = i8;
@@ -175,7 +171,7 @@ public class PkDaredView extends FrameLayout implements PkDaredObserver.IPkDared
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void b(int i, int i2, int i3, int i4, int i5) {
-        this.f15425a = EnumPKStage.EGG;
+        this.a = EnumPKStage.EGG;
         this.q.a(i, i2, i3, i4, i5, this.b);
     }
 
@@ -198,7 +194,7 @@ public class PkDaredView extends FrameLayout implements PkDaredObserver.IPkDared
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void b(int i, boolean z) {
         e();
-        this.f15425a = EnumPKStage.MATCH;
+        this.a = EnumPKStage.MATCH;
         this.o.setRequestHost(this.b);
         this.o.setVisibility(0);
         this.o.a(i, z);
@@ -248,7 +244,7 @@ public class PkDaredView extends FrameLayout implements PkDaredObserver.IPkDared
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void f(int i, int i2) {
-        this.f15425a = EnumPKStage.KILL_ACTIVATE;
+        this.a = EnumPKStage.KILL_ACTIVATE;
         this.p.e(i, i2);
     }
 
@@ -299,7 +295,7 @@ public class PkDaredView extends FrameLayout implements PkDaredObserver.IPkDared
     }
 
     private void i() {
-        this.f15426c = DensityUtils.a(getContext(), 61.5f);
+        this.c = DensityUtils.a(getContext(), 61.5f);
         this.d = DensityUtils.a(getContext(), 19.6f);
         this.e = DensityUtils.a(getContext(), 14.5f);
     }
@@ -316,7 +312,7 @@ public class PkDaredView extends FrameLayout implements PkDaredObserver.IPkDared
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void i(int i, int i2) {
-        if (this.p != null && this.f15425a == EnumPKStage.EGG) {
+        if (this.p != null && this.a == EnumPKStage.EGG) {
             this.q.a(i, i2);
         }
     }
@@ -334,7 +330,7 @@ public class PkDaredView extends FrameLayout implements PkDaredObserver.IPkDared
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void j(int i) {
-        this.f15425a = EnumPKStage.KILL_ACTIVATE;
+        this.a = EnumPKStage.KILL_ACTIVATE;
         this.p.d(i);
     }
 
@@ -345,21 +341,21 @@ public class PkDaredView extends FrameLayout implements PkDaredObserver.IPkDared
             return;
         }
         pkDaredBodyView.b(i, i2);
-        if (this.f != this.f15426c) {
+        if (this.f != this.c) {
             e();
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void k() {
-        this.f15425a = EnumPKStage.PK_2;
+        this.a = EnumPKStage.PK_2;
         this.p.c();
         this.q.c();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void k(int i) {
-        this.f15425a = EnumPKStage.KILL_UN_ACTIVATE;
+        this.a = EnumPKStage.KILL_UN_ACTIVATE;
         this.p.c(i);
     }
 
@@ -373,7 +369,7 @@ public class PkDaredView extends FrameLayout implements PkDaredObserver.IPkDared
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void l(int i) {
-        this.f15425a = EnumPKStage.KILL_PREDICTION;
+        this.a = EnumPKStage.KILL_PREDICTION;
         this.p.b(i);
     }
 
@@ -385,7 +381,7 @@ public class PkDaredView extends FrameLayout implements PkDaredObserver.IPkDared
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void m(int i) {
-        this.f15425a = EnumPKStage.EGG_PREDICTION;
+        this.a = EnumPKStage.EGG_PREDICTION;
         this.p.a(i);
     }
 
@@ -400,13 +396,13 @@ public class PkDaredView extends FrameLayout implements PkDaredObserver.IPkDared
         /*
             r3 = this;
             r0 = r3
-            int r0 = r0.f15426c
+            int r0 = r0.c
             if (r0 != 0) goto Lb
             r0 = r3
             r0.i()
         Lb:
             r0 = r3
-            int r0 = r0.f15426c
+            int r0 = r0.c
             r5 = r0
             r0 = r3
             com.blued.android.module.live_china.view.pkdared.PkDaredPropBarView r0 = r0.t
@@ -474,7 +470,7 @@ public class PkDaredView extends FrameLayout implements PkDaredObserver.IPkDared
             a();
             return;
         }
-        this.f15425a = EnumPKStage.MATCH;
+        this.a = EnumPKStage.MATCH;
         this.o.setVisibility(0);
         this.o.b(i, true);
         this.p.setVisibility(8);
@@ -488,7 +484,7 @@ public class PkDaredView extends FrameLayout implements PkDaredObserver.IPkDared
         }
         final ViewGroup.LayoutParams layoutParams = this.m.getLayoutParams();
         final int i2 = layoutParams.height;
-        int max = Math.max((int) ((Math.abs(i - i2) * 500.0f) / this.f15426c), 200);
+        int max = Math.max((int) ((Math.abs(i - i2) * 500.0f) / this.c), 200);
         this.f = i;
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         ofFloat.setDuration(max);

@@ -4,7 +4,7 @@ package com.tencent.mapsdk.internal;
 public interface h2 extends i2, k2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f37505a = "sdk_protocol";
+    public static final String f23814a = "sdk_protocol";
     public static final String b = "_private_partner";
 
     String b();

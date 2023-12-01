@@ -22,7 +22,7 @@ import java.util.List;
 public class VIPCenterBannerAdapter extends PagerAdapter {
 
     /* renamed from: a  reason: collision with root package name */
-    private List<View> f33789a = new ArrayList();
+    private List<View> f20098a = new ArrayList();
     private int b;
 
     public VIPCenterBannerAdapter(final Context context, IRequestHost iRequestHost, final int i, List<VIPCenterForJsonParse._banner> list) {
@@ -32,7 +32,7 @@ public class VIPCenterBannerAdapter extends PagerAdapter {
         }
         for (final VIPCenterForJsonParse._banner _bannerVar : list) {
             View inflate = LayoutInflater.from(context).inflate(R.layout.item_vip_head_avatar, (ViewGroup) null);
-            ImageView imageView = (ImageView) inflate.findViewById(2131364628);
+            ImageView imageView = (ImageView) inflate.findViewById(R.id.img_pic);
             imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
             ImageLoader.a(iRequestHost, _bannerVar.img).b(2131231620).a(imageView);
             inflate.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.adapter.-$$Lambda$VIPCenterBannerAdapter$Z9EsfbfbIP6lYa0sQ3miIg3bjUc
@@ -42,7 +42,7 @@ public class VIPCenterBannerAdapter extends PagerAdapter {
                 }
             });
             inflate.setTag(_bannerVar);
-            this.f33789a.add(inflate);
+            this.f20098a.add(inflate);
         }
         notifyDataSetChanged();
     }
@@ -55,11 +55,11 @@ public class VIPCenterBannerAdapter extends PagerAdapter {
     }
 
     public VIPCenterForJsonParse._banner a(int i) {
-        List<View> list = this.f33789a;
+        List<View> list = this.f20098a;
         if (list == null || i >= list.size()) {
             return null;
         }
-        return (VIPCenterForJsonParse._banner) this.f33789a.get(i).getTag();
+        return (VIPCenterForJsonParse._banner) this.f20098a.get(i).getTag();
     }
 
     @Override // androidx.viewpager.widget.PagerAdapter
@@ -69,7 +69,7 @@ public class VIPCenterBannerAdapter extends PagerAdapter {
 
     @Override // androidx.viewpager.widget.PagerAdapter
     public int getCount() {
-        List<View> list = this.f33789a;
+        List<View> list = this.f20098a;
         if (list != null) {
             return list.size();
         }
@@ -83,8 +83,8 @@ public class VIPCenterBannerAdapter extends PagerAdapter {
 
     @Override // androidx.viewpager.widget.PagerAdapter
     public Object instantiateItem(ViewGroup viewGroup, int i) {
-        viewGroup.addView(this.f33789a.get(i));
-        return this.f33789a.get(i);
+        viewGroup.addView(this.f20098a.get(i));
+        return this.f20098a.get(i);
     }
 
     @Override // androidx.viewpager.widget.PagerAdapter

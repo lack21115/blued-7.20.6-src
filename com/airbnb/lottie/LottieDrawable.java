@@ -24,7 +24,6 @@ import com.airbnb.lottie.utils.MiscUtils;
 import com.airbnb.lottie.value.LottieFrameInfo;
 import com.airbnb.lottie.value.LottieValueCallback;
 import com.airbnb.lottie.value.SimpleLottieValueCallback;
-import com.blued.das.live.LiveProtos;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.util.ArrayList;
@@ -36,12 +35,8 @@ import java.util.Set;
 
 /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/LottieDrawable.class */
 public class LottieDrawable extends Drawable implements Animatable, Drawable.Callback {
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final String f4229c = LottieDrawable.class.getSimpleName();
-
-    /* renamed from: a  reason: collision with root package name */
-    FontAssetDelegate f4230a;
+    private static final String c = LottieDrawable.class.getSimpleName();
+    FontAssetDelegate a;
     TextDelegate b;
     private LottieComposition e;
     private ImageAssetManager k;
@@ -64,25 +59,19 @@ public class LottieDrawable extends Drawable implements Animatable, Drawable.Cal
     /* renamed from: com.airbnb.lottie.LottieDrawable$16  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/LottieDrawable$16.class */
     class AnonymousClass16<T> extends LottieValueCallback<T> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ SimpleLottieValueCallback f4241a;
+        final /* synthetic */ SimpleLottieValueCallback a;
 
         @Override // com.airbnb.lottie.value.LottieValueCallback
         public T a(LottieFrameInfo<T> lottieFrameInfo) {
-            return (T) this.f4241a.a(lottieFrameInfo);
+            return (T) this.a.a(lottieFrameInfo);
         }
     }
 
     /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/LottieDrawable$ColorFilterData.class */
     static class ColorFilterData {
-
-        /* renamed from: a  reason: collision with root package name */
-        final String f4250a;
+        final String a;
         final String b;
-
-        /* renamed from: c  reason: collision with root package name */
-        final ColorFilter f4251c;
+        final ColorFilter c;
 
         public boolean equals(Object obj) {
             if (this == obj) {
@@ -90,14 +79,14 @@ public class LottieDrawable extends Drawable implements Animatable, Drawable.Cal
             }
             if (obj instanceof ColorFilterData) {
                 ColorFilterData colorFilterData = (ColorFilterData) obj;
-                return hashCode() == colorFilterData.hashCode() && this.f4251c == colorFilterData.f4251c;
+                return hashCode() == colorFilterData.hashCode() && this.c == colorFilterData.c;
             }
             return false;
         }
 
         public int hashCode() {
-            String str = this.f4250a;
-            int hashCode = str != null ? LiveProtos.Event.LIVE_END_PAGE_CLOSE_CLICK_VALUE * str.hashCode() : 17;
+            String str = this.a;
+            int hashCode = str != null ? 527 * str.hashCode() : 17;
             String str2 = this.b;
             int i = hashCode;
             if (str2 != null) {
@@ -172,7 +161,7 @@ public class LottieDrawable extends Drawable implements Animatable, Drawable.Cal
             return null;
         }
         if (this.n == null) {
-            this.n = new FontAssetManager(getCallback(), this.f4230a);
+            this.n = new FontAssetManager(getCallback(), this.a);
         }
         return this.n;
     }
@@ -254,7 +243,7 @@ public class LottieDrawable extends Drawable implements Animatable, Drawable.Cal
     }
 
     public void a(FontAssetDelegate fontAssetDelegate) {
-        this.f4230a = fontAssetDelegate;
+        this.a = fontAssetDelegate;
         FontAssetManager fontAssetManager = this.n;
         if (fontAssetManager != null) {
             fontAssetManager.a(fontAssetDelegate);
@@ -287,17 +276,17 @@ public class LottieDrawable extends Drawable implements Animatable, Drawable.Cal
         if (keyPath.a() != null) {
             keyPath.a().a(t, lottieValueCallback);
         } else {
-            List<KeyPath> a2 = a(keyPath);
+            List<KeyPath> a = a(keyPath);
             int i = 0;
             while (true) {
                 int i2 = i;
-                if (i2 >= a2.size()) {
+                if (i2 >= a.size()) {
                     break;
                 }
-                a2.get(i2).a().a(t, lottieValueCallback);
+                a.get(i2).a().a(t, lottieValueCallback);
                 i = i2 + 1;
             }
-            z = true ^ a2.isEmpty();
+            z = true ^ a.isEmpty();
         }
         if (z) {
             invalidateSelf();
@@ -400,7 +389,7 @@ public class LottieDrawable extends Drawable implements Animatable, Drawable.Cal
         }
         Marker c2 = lottieComposition.c(str);
         if (c2 != null) {
-            a((int) c2.f4326a);
+            a((int) c2.a);
             return;
         }
         throw new IllegalArgumentException("Cannot find marker with name " + str + ".");
@@ -452,7 +441,7 @@ public class LottieDrawable extends Drawable implements Animatable, Drawable.Cal
         }
         Marker c2 = lottieComposition.c(str);
         if (c2 != null) {
-            b((int) (c2.f4326a + c2.b));
+            b((int) (c2.a + c2.b));
             return;
         }
         throw new IllegalArgumentException("Cannot find marker with name " + str + ".");
@@ -500,7 +489,7 @@ public class LottieDrawable extends Drawable implements Animatable, Drawable.Cal
         }
         Marker c2 = lottieComposition.c(str);
         if (c2 != null) {
-            int i = (int) c2.f4326a;
+            int i = (int) c2.a;
             a(i, ((int) c2.b) + i);
             return;
         }
@@ -516,11 +505,11 @@ public class LottieDrawable extends Drawable implements Animatable, Drawable.Cal
             return;
         }
         float f2 = this.g;
-        float a2 = a(canvas);
-        if (f2 > a2) {
-            f = this.g / a2;
+        float a = a(canvas);
+        if (f2 > a) {
+            f = this.g / a;
         } else {
-            a2 = f2;
+            a = f2;
             f = 1.0f;
         }
         int i = -1;
@@ -528,13 +517,13 @@ public class LottieDrawable extends Drawable implements Animatable, Drawable.Cal
             i = canvas.save();
             float width = this.e.d().width() / 2.0f;
             float height = this.e.d().height() / 2.0f;
-            float f3 = width * a2;
-            float f4 = height * a2;
+            float f3 = width * a;
+            float f4 = height * a;
             canvas.translate((q() * width) - f3, (q() * height) - f4);
             canvas.scale(f, f, f3, f4);
         }
         this.d.reset();
-        this.d.preScale(a2, a2);
+        this.d.preScale(a, a);
         this.p.a(canvas, this.d, this.q);
         L.b("Drawable#draw");
         if (i > 0) {

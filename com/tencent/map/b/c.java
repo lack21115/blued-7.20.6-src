@@ -9,11 +9,11 @@ import org.json.JSONObject;
 public final class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static c f37205a;
+    private static c f23514a;
     private long b = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    private List<a> f37206c = new ArrayList();
+    private List<a> f23515c = new ArrayList();
     private List<b> d = new ArrayList();
     private String e;
 
@@ -21,17 +21,17 @@ public final class c {
     static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public int f37207a;
+        public int f23516a;
         public int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public int f37208c;
+        public int f23517c;
         public int d;
 
         private a() {
-            this.f37207a = -1;
+            this.f23516a = -1;
             this.b = -1;
-            this.f37208c = -1;
+            this.f23517c = -1;
             this.d = -1;
         }
 
@@ -45,10 +45,10 @@ public final class c {
     public static final class b {
 
         /* renamed from: a  reason: collision with root package name */
-        public String f37209a;
+        public String f23518a;
 
         private b() {
-            this.f37209a = null;
+            this.f23518a = null;
         }
 
         /* synthetic */ b(byte b) {
@@ -57,10 +57,10 @@ public final class c {
     }
 
     public static c a() {
-        if (f37205a == null) {
-            f37205a = new c();
+        if (f23514a == null) {
+            f23514a = new c();
         }
-        return f37205a;
+        return f23514a;
     }
 
     private static boolean a(StringBuffer stringBuffer) {
@@ -86,7 +86,7 @@ public final class c {
                 if (i3 >= this.d.size()) {
                     break;
                 }
-                String str = this.d.get(i3).f37209a;
+                String str = this.d.get(i3).f23518a;
                 int i6 = 0;
                 while (true) {
                     int i7 = i6;
@@ -122,13 +122,13 @@ public final class c {
     public final void a(int i, int i2, int i3, int i4, List<ScanResult> list) {
         this.b = System.currentTimeMillis();
         this.e = null;
-        this.f37206c.clear();
+        this.f23515c.clear();
         a aVar = new a((byte) 0);
-        aVar.f37207a = i;
+        aVar.f23516a = i;
         aVar.b = i2;
-        aVar.f37208c = i3;
+        aVar.f23517c = i3;
         aVar.d = i4;
-        this.f37206c.add(aVar);
+        this.f23515c.add(aVar);
         if (list == null) {
             return;
         }
@@ -140,7 +140,7 @@ public final class c {
                 return;
             }
             b bVar = new b((byte) 0);
-            bVar.f37209a = list.get(i6).BSSID;
+            bVar.f23518a = list.get(i6).BSSID;
             int i7 = list.get(i6).level;
             this.d.add(bVar);
             i5 = i6 + 1;

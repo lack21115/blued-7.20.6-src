@@ -6,8 +6,6 @@ import android.os.Build;
 import android.text.TextUtils;
 import android.util.Base64;
 import android.util.Log;
-import com.android.internal.telephony.PhoneConstants;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.umeng.analytics.AnalyticsConfig;
 import com.umeng.analytics.pro.bh;
 import com.umeng.analytics.pro.bz;
@@ -34,11 +32,11 @@ import org.json.JSONObject;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f40900a;
+    public static String f27209a;
     public static String b = "";
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f40901c = "EnvelopeManager";
+    private static final String f27210c = "EnvelopeManager";
     private static final String d = "debug.umeng.umTaskId";
     private static final String e = "debug.umeng.umCaseId";
     private static final String f = "empty";
@@ -95,7 +93,7 @@ public class b {
         j.put("network_type", "#nt");
         j.put(bh.b, "#cv");
         j.put(bh.d, "#mv");
-        j.put(bh.f40656c, "#cot");
+        j.put(bh.f26965c, "#cot");
         j.put(bh.e, "#mod");
         j.put(bh.aj, "#al");
         j.put("session_id", "#sid");
@@ -114,7 +112,7 @@ public class b {
         j.put(d.ah, "#prv");
         j.put(d.l, "#$prv");
         j.put(d.m, "#uda");
-        j.put(bh.f40654a, "#tok");
+        j.put(bh.f26963a, "#tok");
         j.put(bh.aQ, "#iv");
         j.put(bh.R, "#ast");
         j.put("backstate", "#bst");
@@ -140,11 +138,11 @@ public class b {
         sb.append(str);
         sb.append("&&");
         sb.append(str4);
-        sb.append(BridgeUtil.UNDERLINE_STR);
+        sb.append("_");
         sb.append(System.currentTimeMillis());
-        sb.append(BridgeUtil.UNDERLINE_STR);
+        sb.append("_");
         sb.append(b2);
-        sb.append(com.anythink.china.common.a.a.f);
+        sb.append(".log");
         byte[] binary = envelope.toBinary();
         if (com.umeng.commonsdk.utils.c.a()) {
             if (str.startsWith("h")) {
@@ -161,7 +159,7 @@ public class b {
     public static long a(Context context) {
         long j2 = DataHelper.ENVELOPE_ENTITY_RAW_LENGTH_MAX - DataHelper.ENVELOPE_EXTRA_LENGTH;
         if (ULog.DEBUG) {
-            Log.i(f40901c, "free size is " + j2);
+            Log.i(f27210c, "free size is " + j2);
         }
         return j2;
     }
@@ -266,7 +264,7 @@ public class b {
                 jSONObject2.put(a("os_version"), Build.VERSION.RELEASE);
                 jSONObject2.put(a(bh.x), "Android");
                 if (DeviceConfig.getResolutionArray(context) != null) {
-                    jSONObject2.put(a("resolution"), resolutionArray[1] + PhoneConstants.APN_TYPE_ALL + resolutionArray[0]);
+                    jSONObject2.put(a("resolution"), resolutionArray[1] + "*" + resolutionArray[0]);
                 }
                 jSONObject2.put(a("mc"), DeviceConfig.getMac(context));
                 jSONObject2.put(a("timezone"), DeviceConfig.getTimeZone(context));
@@ -293,10 +291,10 @@ public class b {
                 }
                 jSONObject2.put(a("network_type"), DeviceConfig.getNetworkType(context));
                 jSONObject2.put(a(bh.b), "9.6.3");
-                jSONObject2.put(a(bh.f40656c), SdkVersion.SDK_TYPE);
+                jSONObject2.put(a(bh.f26965c), SdkVersion.SDK_TYPE);
                 jSONObject2.put(a(bh.d), "1");
-                if (!TextUtils.isEmpty(f40900a)) {
-                    jSONObject2.put(a(bh.e), f40900a);
+                if (!TextUtils.isEmpty(f27209a)) {
+                    jSONObject2.put(a(bh.e), f27209a);
                 }
                 jSONObject2.put(a(bh.aj), Build.VERSION.SDK_INT);
                 if (!TextUtils.isEmpty(UMUtils.VALUE_REC_VERSION_NAME)) {
@@ -314,7 +312,7 @@ public class b {
                 }
                 try {
                     if (DeviceConfig.hasRequestPermission(context, "android.permission.PACKAGE_USAGE_STATS")) {
-                        jSONObject2.put(bh.f40655ar, "1");
+                        jSONObject2.put(bh.f26964ar, "1");
                         if (DeviceConfig.hasOpsPermission(context.getApplicationContext())) {
                             jSONObject2.put(bh.as, "1");
                         }
@@ -358,7 +356,7 @@ public class b {
             try {
                 String deviceToken = UMUtils.getDeviceToken(context);
                 if (!TextUtils.isEmpty(deviceToken)) {
-                    jSONObject.put(a(bh.f40654a), deviceToken);
+                    jSONObject.put(a(bh.f26963a), deviceToken);
                 }
             } catch (Exception e5) {
                 UMCrashManager.reportCrash(context, e5);
@@ -372,7 +370,7 @@ public class b {
                 UMCrashManager.reportCrash(context, e6);
             }
             try {
-                jSONObject.put(a("wrapper_type"), a.f40898a);
+                jSONObject.put(a("wrapper_type"), a.f27207a);
                 jSONObject.put(a("wrapper_version"), a.b);
             } catch (Exception e7) {
             }
@@ -530,10 +528,10 @@ public class b {
     private static int[] b(Context context) {
         int[] iArr = new int[3];
         try {
-            SharedPreferences sharedPreferences = context.getApplicationContext().getSharedPreferences(com.umeng.commonsdk.internal.c.f40862a, 0);
+            SharedPreferences sharedPreferences = context.getApplicationContext().getSharedPreferences(com.umeng.commonsdk.internal.c.f27171a, 0);
             if (sharedPreferences != null) {
                 iArr[0] = sharedPreferences.getInt(com.umeng.commonsdk.internal.c.b, 0);
-                iArr[1] = sharedPreferences.getInt(com.umeng.commonsdk.internal.c.f40863c, 0);
+                iArr[1] = sharedPreferences.getInt(com.umeng.commonsdk.internal.c.f27172c, 0);
                 iArr[2] = sharedPreferences.getInt("policyGrantResult", 0);
             }
             return iArr;
@@ -584,7 +582,7 @@ public class b {
                     return a(a3, jSONObject4);
                 }
                 if (ULog.DEBUG) {
-                    Log.i(f40901c, "constructHeader size is " + jSONObject4.toString().getBytes().length);
+                    Log.i(f27210c, "constructHeader size is " + jSONObject4.toString().getBytes().length);
                 }
                 return jSONObject4;
             }
@@ -603,8 +601,8 @@ public class b {
         String str5;
         JSONObject optJSONObject;
         if (ULog.DEBUG && jSONObject != null && jSONObject2 != null) {
-            Log.i(f40901c, "headerJSONObject size is " + jSONObject.toString().getBytes().length);
-            Log.i(f40901c, "bodyJSONObject size is " + jSONObject2.toString().getBytes().length);
+            Log.i(f27210c, "headerJSONObject size is " + jSONObject.toString().getBytes().length);
+            Log.i(f27210c, "bodyJSONObject size is " + jSONObject2.toString().getBytes().length);
         }
         if (context == null || jSONObject2 == null) {
             return a(110, (JSONObject) null);
@@ -683,7 +681,7 @@ public class b {
                     return a(a4, jSONObject5);
                 }
                 if (ULog.DEBUG) {
-                    Log.i(f40901c, "constructHeader size is " + jSONObject5.toString().getBytes().length);
+                    Log.i(f27210c, "constructHeader size is " + jSONObject5.toString().getBytes().length);
                 }
                 if (!str4.startsWith(bh.aG) && !str4.startsWith("i") && !str4.startsWith("t")) {
                     if (str4.startsWith("a")) {
@@ -810,7 +808,7 @@ public class b {
                     return a(a3, jSONObject4);
                 }
                 if (ULog.DEBUG) {
-                    Log.i(f40901c, "constructHeader size is " + jSONObject4.toString().getBytes().length);
+                    Log.i(f27210c, "constructHeader size is " + jSONObject4.toString().getBytes().length);
                 }
                 return jSONObject4;
             }

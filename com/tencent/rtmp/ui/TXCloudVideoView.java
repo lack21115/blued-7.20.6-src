@@ -42,16 +42,16 @@ public class TXCloudVideoView extends FrameLayout implements ScaleGestureDetecto
     final class a implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final Point f38687a;
+        final Point f24996a;
         int b;
 
         /* renamed from: c  reason: collision with root package name */
-        int f38688c;
+        int f24997c;
 
         private a() {
-            this.f38687a = new Point();
+            this.f24996a = new Point();
             this.b = 0;
-            this.f38688c = 0;
+            this.f24997c = 0;
         }
 
         /* synthetic */ a(TXCloudVideoView tXCloudVideoView, byte b) {
@@ -61,7 +61,7 @@ public class TXCloudVideoView extends FrameLayout implements ScaleGestureDetecto
         @Override // java.lang.Runnable
         public final void run() {
             if (TXCloudVideoView.this.mTapListener != null) {
-                TXCloudVideoView.this.mTapListener.a(this.f38687a.x, this.f38687a.y, this.b, this.f38688c);
+                TXCloudVideoView.this.mTapListener.a(this.f24996a.x, this.f24996a.y, this.b, this.f24997c);
             }
         }
     }
@@ -148,7 +148,7 @@ public class TXCloudVideoView extends FrameLayout implements ScaleGestureDetecto
         }
         this.mFocusIndicatorView.setVisibility(0);
         FocusIndicatorView focusIndicatorView2 = this.mFocusIndicatorView;
-        focusIndicatorView2.startAnimation(focusIndicatorView2.f38683a);
+        focusIndicatorView2.startAnimation(focusIndicatorView2.f24992a);
         postDelayed(this.mHideIndicatorViewRunnable, TimeUnit.SECONDS.toMillis(1L));
     }
 
@@ -171,12 +171,12 @@ public class TXCloudVideoView extends FrameLayout implements ScaleGestureDetecto
     public void clearLog() {
         DashBoard dashBoard = this.mDashBoard;
         if (dashBoard != null) {
-            dashBoard.f38681a.setLength(0);
+            dashBoard.f24990a.setLength(0);
             if (dashBoard.b != null) {
                 dashBoard.b.setText("");
             }
-            if (dashBoard.f38682c != null) {
-                dashBoard.f38682c.setText("");
+            if (dashBoard.f24991c != null) {
+                dashBoard.f24991c.setText("");
             }
         }
     }
@@ -215,9 +215,8 @@ public class TXCloudVideoView extends FrameLayout implements ScaleGestureDetecto
     public void onDestroy() {
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z, int i, int i2, int i3, int i4) {
+    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         super.onLayout(z, i, i2, i3, i4);
         this.mDashBoard.a(this.mDashMargin.left, this.mDashMargin.top, this.mDashMargin.right, this.mDashMargin.bottom);
         this.mDashBoard.setStatusTextSize((float) (px2dip(getContext(), getWidth()) / 30.0d));
@@ -267,10 +266,10 @@ public class TXCloudVideoView extends FrameLayout implements ScaleGestureDetecto
                 int y = (int) motionEvent.getY();
                 int width = getWidth();
                 int height = getHeight();
-                aVar.f38687a.x = x;
-                aVar.f38687a.y = y;
+                aVar.f24996a.x = x;
+                aVar.f24996a.y = y;
                 aVar.b = width;
-                aVar.f38688c = height;
+                aVar.f24997c = height;
                 removeCallbacks(this.mDelayedTapRunnable);
                 postDelayed(this.mDelayedTapRunnable, 100L);
             }

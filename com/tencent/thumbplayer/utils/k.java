@@ -6,17 +6,17 @@ import java.lang.reflect.Method;
 public class k {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Method f39439a;
+    private static Method f25748a;
     private static Method b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static Method f39440c;
+    private static Method f25749c;
 
     static {
         try {
-            f39439a = Class.class.getDeclaredMethod("forName", String.class);
+            f25748a = Class.class.getDeclaredMethod("forName", String.class);
             b = Class.class.getDeclaredMethod("getDeclaredMethod", String.class, Class[].class);
-            f39440c = Class.class.getDeclaredMethod("getDeclaredField", String.class);
+            f25749c = Class.class.getDeclaredMethod("getDeclaredField", String.class);
         } catch (Throwable th) {
             TPLogUtil.e("TPPrimaryReflectUtil", th.getMessage());
         }
@@ -40,7 +40,7 @@ public class k {
         Method method2 = null;
         if (a()) {
             try {
-                method = (Method) b.invoke((Class) f39439a.invoke(null, str), str2, clsArr);
+                method = (Method) b.invoke((Class) f25748a.invoke(null, str), str2, clsArr);
                 try {
                     method.setAccessible(true);
                     return method;
@@ -59,6 +59,6 @@ public class k {
     }
 
     private static boolean a() {
-        return (f39439a == null || b == null || f39440c == null) ? false : true;
+        return (f25748a == null || b == null || f25749c == null) ? false : true;
     }
 }

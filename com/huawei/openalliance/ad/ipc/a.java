@@ -15,22 +15,22 @@ public class a {
     private int C = 0;
     private Context F;
     private String S;
-    private InterfaceC0436a Z;
+    private InterfaceC0266a Z;
 
     /* renamed from: com.huawei.openalliance.ad.ipc.a$a  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/huawei/openalliance/ad/ipc/a$a.class */
-    public interface InterfaceC0436a {
+    public interface InterfaceC0266a {
         void Code();
     }
 
-    public a(Context context, String str, InterfaceC0436a interfaceC0436a) {
+    public a(Context context, String str, InterfaceC0266a interfaceC0266a) {
         this.F = context.getApplicationContext();
         this.S = str;
-        this.Z = interfaceC0436a;
+        this.Z = interfaceC0266a;
     }
 
     private int B() {
-        return TextUtils.equals(t.f22960cn, this.F.getPackageName()) ? 0 : 60000;
+        return TextUtils.equals(t.f9352cn, this.F.getPackageName()) ? 0 : 60000;
     }
 
     /* JADX INFO: Access modifiers changed from: private */

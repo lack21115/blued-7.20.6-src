@@ -9,19 +9,19 @@ import java.io.InputStream;
 public final class j extends InputStream {
 
     /* renamed from: a  reason: collision with root package name */
-    private HtmlHeader f41841a;
+    private HtmlHeader f28150a;
     private g b;
 
     /* renamed from: c  reason: collision with root package name */
-    private InputStream f41842c;
+    private InputStream f28151c;
     private e e;
     private ByteArrayOutputStream d = new ByteArrayOutputStream();
     private boolean f = false;
 
     public j(HtmlHeader htmlHeader, g gVar, InputStream inputStream, e eVar) {
-        this.f41841a = htmlHeader;
+        this.f28150a = htmlHeader;
         this.b = gVar;
-        this.f41842c = inputStream;
+        this.f28151c = inputStream;
         this.e = eVar;
     }
 
@@ -39,25 +39,25 @@ public final class j extends InputStream {
             try {
                 byte[] bArr = new byte[4096];
                 while (true) {
-                    int read = this.f41842c.read(bArr, 0, 4096);
+                    int read = this.f28151c.read(bArr, 0, 4096);
                     if (read == -1) {
                         break;
                     }
                     this.d.write(bArr, 0, read);
                 }
-                this.e.a(this.f41841a, this.b, this.d.toByteArray());
+                this.e.a(this.f28150a, this.b, this.d.toByteArray());
             } catch (IOException e) {
                 Logger.e("HtmlInputStream", "close exception", e);
             }
         } finally {
-            this.f41842c.close();
+            this.f28151c.close();
         }
     }
 
     @Override // java.io.InputStream
     public final int read() throws IOException {
         try {
-            int read = this.f41842c.read();
+            int read = this.f28151c.read();
             if (read != -1) {
                 this.d.write(read);
             }
@@ -77,7 +77,7 @@ public final class j extends InputStream {
     @Override // java.io.InputStream
     public final int read(byte[] bArr, int i, int i2) throws IOException {
         try {
-            int read = this.f41842c.read(bArr, i, i2);
+            int read = this.f28151c.read(bArr, i, i2);
             if (read != -1) {
                 this.d.write(bArr, i, read);
             }

@@ -9,6 +9,8 @@ import com.airbnb.lottie.model.animatable.AnimatablePointValue;
 import com.airbnb.lottie.model.content.GradientFill;
 import com.airbnb.lottie.model.content.GradientType;
 import com.amap.api.col.p0003sl.iu;
+import com.anythink.core.common.b.g;
+import com.anythink.core.common.g.c;
 import java.io.IOException;
 
 /* JADX INFO: Access modifiers changed from: package-private */
@@ -39,7 +41,7 @@ public class GradientFillParser {
                 }
                 z = true;
             } else if (hashCode == 103) {
-                if (nextName.equals("g")) {
+                if (nextName.equals(iu.f)) {
                     z = true;
                 }
                 z = true;
@@ -56,7 +58,7 @@ public class GradientFillParser {
             } else if (hashCode != 3519) {
                 switch (hashCode) {
                     case 114:
-                        if (nextName.equals("r")) {
+                        if (nextName.equals(g.o.o)) {
                             z = true;
                             break;
                         }
@@ -97,12 +99,12 @@ public class GradientFillParser {
                         String nextName2 = jsonReader.nextName();
                         int hashCode2 = nextName2.hashCode();
                         if (hashCode2 != 107) {
-                            if (hashCode2 == 112 && nextName2.equals("p")) {
+                            if (hashCode2 == 112 && nextName2.equals(c.W)) {
                                 z2 = false;
                             }
                             z2 = true;
                         } else {
-                            if (nextName2.equals("k")) {
+                            if (nextName2.equals(iu.k)) {
                                 z2 = true;
                             }
                             z2 = true;

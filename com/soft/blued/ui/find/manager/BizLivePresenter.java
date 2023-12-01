@@ -15,10 +15,10 @@ import java.util.HashMap;
 public class BizLivePresenter {
 
     /* renamed from: a  reason: collision with root package name */
-    private static BizLivePresenter f30556a;
+    private static BizLivePresenter f16866a;
 
     /* renamed from: c  reason: collision with root package name */
-    private volatile OnVideoLiveListener f30557c = null;
+    private volatile OnVideoLiveListener f16867c = null;
     private volatile OnLiveRoomListener d = null;
     private volatile boolean e = false;
     private volatile boolean f = false;
@@ -29,7 +29,7 @@ public class BizLivePresenter {
     class AnonymousClass1 implements IZegoLivePublisherCallback {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ BizLivePresenter f30558a;
+        final /* synthetic */ BizLivePresenter f16868a;
 
         @Override // com.zego.zegoliveroom.callback.IZegoLivePublisherCallback
         public void onCaptureAudioFirstFrame() {
@@ -53,7 +53,7 @@ public class BizLivePresenter {
 
         @Override // com.zego.zegoliveroom.callback.IZegoLivePublisherCallback
         public void onPublishStateUpdate(int i, String str, HashMap<String, Object> hashMap) {
-            OnVideoLiveListener onVideoLiveListener = this.f30558a.f30557c;
+            OnVideoLiveListener onVideoLiveListener = this.f16868a.f16867c;
             if (onVideoLiveListener != null) {
                 if (i == 0) {
                     onVideoLiveListener.a(str, hashMap);
@@ -70,7 +70,7 @@ public class BizLivePresenter {
     class AnonymousClass2 implements IZegoLivePlayerCallback {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ BizLivePresenter f30559a;
+        final /* synthetic */ BizLivePresenter f16869a;
 
         @Override // com.zego.zegoliveroom.callback.IZegoLivePlayerCallback
         public void onInviteJoinLiveRequest(int i, String str, String str2, String str3) {
@@ -82,7 +82,7 @@ public class BizLivePresenter {
 
         @Override // com.zego.zegoliveroom.callback.IZegoLivePlayerCallback
         public void onPlayStateUpdate(int i, String str) {
-            OnVideoLiveListener onVideoLiveListener = this.f30559a.f30557c;
+            OnVideoLiveListener onVideoLiveListener = this.f16869a.f16867c;
             if (onVideoLiveListener != null) {
                 if (i == 0) {
                     onVideoLiveListener.a(str);
@@ -106,11 +106,11 @@ public class BizLivePresenter {
     class AnonymousClass3 implements IZegoRoomCallback {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ BizLivePresenter f30560a;
+        final /* synthetic */ BizLivePresenter f16870a;
 
         @Override // com.zego.zegoliveroom.callback.IZegoRoomCallback
         public void onDisconnect(int i, String str) {
-            OnLiveRoomListener onLiveRoomListener = this.f30560a.d;
+            OnLiveRoomListener onLiveRoomListener = this.f16870a.d;
             if (onLiveRoomListener != null) {
                 onLiveRoomListener.a(i, str);
             }
@@ -142,7 +142,7 @@ public class BizLivePresenter {
 
         @Override // com.zego.zegoliveroom.callback.IZegoRoomCallback
         public void onStreamUpdated(int i, ZegoStreamInfo[] zegoStreamInfoArr, String str) {
-            OnLiveRoomListener onLiveRoomListener = this.f30560a.d;
+            OnLiveRoomListener onLiveRoomListener = this.f16870a.d;
             if (onLiveRoomListener != null) {
                 if (i == 2001) {
                     onLiveRoomListener.a(zegoStreamInfoArr, str);
@@ -165,18 +165,18 @@ public class BizLivePresenter {
     }
 
     public static BizLivePresenter a() {
-        if (f30556a == null) {
+        if (f16866a == null) {
             synchronized (BizLivePresenter.class) {
                 try {
-                    if (f30556a == null) {
-                        f30556a = new BizLivePresenter();
+                    if (f16866a == null) {
+                        f16866a = new BizLivePresenter();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f30556a;
+        return f16866a;
     }
 
     public void a(OnLiveRoomListener onLiveRoomListener) {
@@ -184,6 +184,6 @@ public class BizLivePresenter {
     }
 
     public void a(OnVideoLiveListener onVideoLiveListener) {
-        this.f30557c = onVideoLiveListener;
+        this.f16867c = onVideoLiveListener;
     }
 }

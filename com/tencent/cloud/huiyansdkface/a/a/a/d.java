@@ -4,16 +4,16 @@ package com.tencent.cloud.huiyansdkface.a.a.a;
 public class d {
 
     /* renamed from: a  reason: collision with root package name */
-    public int f35431a;
+    public int f21740a;
     public int b;
 
     public d(int i, int i2) {
-        this.f35431a = i;
+        this.f21740a = i;
         this.b = i2;
     }
 
     public int a() {
-        return this.f35431a;
+        return this.f21740a;
     }
 
     public int b() {
@@ -21,7 +21,7 @@ public class d {
     }
 
     public int c() {
-        return this.f35431a * this.b;
+        return this.f21740a * this.b;
     }
 
     public boolean equals(Object obj) {
@@ -32,14 +32,14 @@ public class d {
             return false;
         }
         d dVar = (d) obj;
-        return this.f35431a == dVar.f35431a && this.b == dVar.b;
+        return this.f21740a == dVar.f21740a && this.b == dVar.b;
     }
 
     public int hashCode() {
-        return (this.f35431a * 31) + this.b;
+        return (this.f21740a * 31) + this.b;
     }
 
     public String toString() {
-        return "{width=" + this.f35431a + ", height=" + this.b + '}';
+        return "{width=" + this.f21740a + ", height=" + this.b + '}';
     }
 }

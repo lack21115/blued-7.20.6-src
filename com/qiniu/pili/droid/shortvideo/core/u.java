@@ -23,11 +23,11 @@ public class u {
     private static boolean d = true;
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f27627a;
+    private Context f13939a;
     private b b = b.UnCheck;
 
     /* renamed from: c  reason: collision with root package name */
-    private long f27628c = 0;
+    private long f13940c = 0;
     private ArrayList<Integer> e = new ArrayList<>();
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -35,7 +35,7 @@ public class u {
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final u f27631a = new u();
+        public static final u f13943a = new u();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -47,7 +47,7 @@ public class u {
     }
 
     public static u a() {
-        return a.f27631a;
+        return a.f13943a;
     }
 
     private String a(InputStream inputStream) {
@@ -103,7 +103,7 @@ public class u {
     }
 
     private void a(String str) {
-        SharedPreferences.Editor edit = this.f27627a.getSharedPreferences("ShortVideo", 0).edit();
+        SharedPreferences.Editor edit = this.f13939a.getSharedPreferences("ShortVideo", 0).edit();
         edit.putString("feature", Base64.encodeToString(str.getBytes(), 0));
         edit.apply();
     }
@@ -117,14 +117,14 @@ public class u {
     }
 
     private void b(final PLAuthenticationResultCallback pLAuthenticationResultCallback) {
-        if (this.f27627a == null) {
+        if (this.f13939a == null) {
             return;
         }
-        this.f27628c = System.currentTimeMillis();
-        Context context = this.f27627a;
+        this.f13940c = System.currentTimeMillis();
+        Context context = this.f13939a;
         if (context != null) {
             SharedPreferences.Editor edit = context.getSharedPreferences("ShortVideo", 0).edit();
-            edit.putString("ts", Base64.encodeToString(String.valueOf(this.f27628c).getBytes(), 0));
+            edit.putString("ts", Base64.encodeToString(String.valueOf(this.f13940c).getBytes(), 0));
             edit.apply();
         }
         new Thread(new Runnable() { // from class: com.qiniu.pili.droid.shortvideo.core.u.1
@@ -154,7 +154,7 @@ public class u {
     }
 
     private void c() {
-        long currentTimeMillis = System.currentTimeMillis() - this.f27628c;
+        long currentTimeMillis = System.currentTimeMillis() - this.f13940c;
         if (currentTimeMillis < 0 || currentTimeMillis >= 3600000) {
             b((PLAuthenticationResultCallback) null);
         }
@@ -177,7 +177,7 @@ public class u {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void d(PLAuthenticationResultCallback pLAuthenticationResultCallback) {
-        String b2 = b(this.f27627a);
+        String b2 = b(this.f13939a);
         if ("".equals(b2)) {
             return;
         }
@@ -205,21 +205,21 @@ public class u {
     }
 
     public void a(Context context) {
-        if (this.f27627a != null || context == null) {
+        if (this.f13939a != null || context == null) {
             return;
         }
         Context applicationContext = context.getApplicationContext();
-        this.f27627a = applicationContext;
+        this.f13939a = applicationContext;
         SharedPreferences sharedPreferences = applicationContext.getSharedPreferences("ShortVideo", 0);
         String string = sharedPreferences.getString("ts", "");
         String string2 = sharedPreferences.getString("feature", "");
         if (!"".equals(string)) {
-            this.f27628c = Long.valueOf(new String(Base64.decode(string, 0))).longValue();
+            this.f13940c = Long.valueOf(new String(Base64.decode(string, 0))).longValue();
         }
         if (!"".equals(string2)) {
             b(new String(Base64.decode(string2, 0)));
         }
-        String[] strArr = c.f27539a;
+        String[] strArr = c.f13851a;
         int length = strArr.length;
         int i = 0;
         while (true) {

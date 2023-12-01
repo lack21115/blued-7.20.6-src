@@ -25,18 +25,18 @@ import java.util.List;
 public class ChooseCityFragment extends BaseFragment {
 
     /* renamed from: a  reason: collision with root package name */
-    public CountryAdapter f33821a;
+    public CountryAdapter f20130a;
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private View f33822c;
+    private View f20131c;
     private ListView e;
     private List<Country> d = new ArrayList();
     private String f = "";
     private String g = "";
 
     private void a() {
-        this.e = (ListView) this.f33822c.findViewById(R.id.ac_lv);
+        this.e = (ListView) this.f20131c.findViewById(R.id.ac_lv);
     }
 
     public static void a(BaseFragment baseFragment, String str, String str2) {
@@ -55,9 +55,9 @@ public class ChooseCityFragment extends BaseFragment {
     }
 
     private void b() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.f33822c.findViewById(2131370749);
-        commonTopTitleNoTrans.a();
-        commonTopTitleNoTrans.setLeftClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.ChooseCityFragment.1
+        CommonTopTitleNoTrans findViewById = this.f20131c.findViewById(R.id.top_title);
+        findViewById.a();
+        findViewById.setLeftClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.ChooseCityFragment.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
@@ -65,20 +65,20 @@ public class ChooseCityFragment extends BaseFragment {
             }
         });
         if (StringUtils.d(this.g)) {
-            commonTopTitleNoTrans.setCenterText(getResources().getString(2131887002));
+            findViewById.setCenterText(getResources().getString(2131887002));
         } else {
-            commonTopTitleNoTrans.setCenterText(this.g);
+            findViewById.setCenterText(this.g);
         }
     }
 
     private void c() {
-        List<Country> areaSubList = AreaUtils.getAreaSubList(this.f);
+        List areaSubList = AreaUtils.getAreaSubList(this.f);
         int i = 0;
         while (true) {
             int i2 = i;
             if (i2 >= areaSubList.size()) {
                 CountryAdapter countryAdapter = new CountryAdapter(this.b, this.d);
-                this.f33821a = countryAdapter;
+                this.f20130a = countryAdapter;
                 this.e.setAdapter((ListAdapter) countryAdapter);
                 this.e.setOnItemClickListener(new AdapterView.OnItemClickListener() { // from class: com.soft.blued.ui.user.fragment.ChooseCityFragment.2
                     @Override // android.widget.AdapterView.OnItemClickListener
@@ -94,12 +94,11 @@ public class ChooseCityFragment extends BaseFragment {
                 });
                 return;
             }
-            this.d.add(areaSubList.get(i2));
+            this.d.add((Country) areaSubList.get(i2));
             i = i2 + 1;
         }
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         if (i2 == -1 && intent != null && !StringUtils.d(intent.getStringExtra("areacode"))) {
             a(intent.getStringExtra("areacode"));
@@ -107,11 +106,10 @@ public class ChooseCityFragment extends BaseFragment {
         super.onActivityResult(i, i2, intent);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.b = getActivity();
-        if (this.f33822c == null) {
-            this.f33822c = layoutInflater.inflate(R.layout.fragment_user_choosecity, viewGroup, false);
+        if (this.f20131c == null) {
+            this.f20131c = layoutInflater.inflate(R.layout.fragment_user_choosecity, viewGroup, false);
             if (getArguments() != null) {
                 this.f = getArguments().getString("areacode");
                 this.g = getArguments().getString("areaname");
@@ -120,6 +118,6 @@ public class ChooseCityFragment extends BaseFragment {
             b();
             c();
         }
-        return this.f33822c;
+        return this.f20131c;
     }
 }

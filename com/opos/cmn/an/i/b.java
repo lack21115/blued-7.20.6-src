@@ -6,14 +6,14 @@ import java.lang.Thread;
 public class b implements Thread.UncaughtExceptionHandler {
 
     /* renamed from: a  reason: collision with root package name */
-    private static b f24566a = new b();
+    private static b f10879a = new b();
     private Thread.UncaughtExceptionHandler b;
 
     private b() {
     }
 
     public static b a() {
-        return f24566a;
+        return f10879a;
     }
 
     @Override // java.lang.Thread.UncaughtExceptionHandler

@@ -17,7 +17,6 @@ import android.util.Log;
 import android.util.Printer;
 import android.util.SparseArray;
 import android.util.Xml;
-import com.alipay.sdk.util.i;
 import com.android.internal.R;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -85,7 +84,7 @@ public final class DeviceAdminInfo implements Parcelable {
 
     static {
         ArrayList<PolicyInfo> arrayList = sPoliciesDisplayOrder;
-        new PolicyInfo(4, "wipe-data", R.string.policylab_wipeData, R.string.policydesc_wipeData);
+        new PolicyInfo(4, "wipe-data", 17040380, 17040381);
         throw new VerifyError("bad dex opcode");
     }
 
@@ -234,7 +233,7 @@ public final class DeviceAdminInfo implements Parcelable {
     }
 
     public String toString() {
-        return "DeviceAdminInfo{" + this.mReceiver.activityInfo.name + i.d;
+        return "DeviceAdminInfo{" + this.mReceiver.activityInfo.name + "}";
     }
 
     public boolean usesPolicy(int i) {

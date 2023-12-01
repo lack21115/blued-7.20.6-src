@@ -29,11 +29,11 @@ import java.util.UUID;
 public class n {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f23661a = "PhoneInfoUtils";
+    public static final String f10053a = "PhoneInfoUtils";
     public static final String b = "";
 
     /* renamed from: c  reason: collision with root package name */
-    private static volatile PackageInfo f23662c;
+    private static volatile PackageInfo f10054c;
     private static String d;
 
     public static int a(Context context) {
@@ -88,14 +88,14 @@ public class n {
     public static Pair<String, String> b() {
         try {
             if (!com.igexin.push.config.d.X || d.b("3.1.12.0")) {
-                com.igexin.c.a.c.a.b(f23661a, "use wf");
+                com.igexin.c.a.c.a.b(f10053a, "use wf");
                 WifiInfo wifiInfo = (WifiInfo) DimManager.getInstance().get(f.a.F);
                 if (wifiInfo == null) {
                     return null;
                 }
                 return Pair.create(wifiInfo.getSSID(), wifiInfo.getBSSID());
             }
-            com.igexin.c.a.c.a.b(f23661a, "use gt wf");
+            com.igexin.c.a.c.a.b(f10053a, "use gt wf");
             GtWifiInfo parseJson = GtWifiInfo.parseJson((String) DimManager.getInstance().get(f.a.I));
             if (parseJson == null) {
                 return null;
@@ -108,21 +108,21 @@ public class n {
     }
 
     private static PackageInfo c(Context context) throws PackageManager.NameNotFoundException {
-        if (f23662c != null) {
-            com.igexin.c.a.c.a.b(f23661a, "getSelfPackageInfo cache");
-            return f23662c;
+        if (f10054c != null) {
+            com.igexin.c.a.c.a.b(f10053a, "getSelfPackageInfo cache");
+            return f10054c;
         }
         synchronized (n.class) {
             try {
-                if (f23662c == null) {
-                    f23662c = context.getPackageManager().getPackageInfo(context.getPackageName(), 128);
-                    com.igexin.c.a.c.a.b(f23661a, "getSelfPackageInfo");
+                if (f10054c == null) {
+                    f10054c = context.getPackageManager().getPackageInfo(context.getPackageName(), 128);
+                    com.igexin.c.a.c.a.b(f10053a, "getSelfPackageInfo");
                 }
             } catch (Throwable th) {
                 throw th;
             }
         }
-        return f23662c;
+        return f10054c;
     }
 
     public static String c() {

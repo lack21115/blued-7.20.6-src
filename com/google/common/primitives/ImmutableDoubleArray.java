@@ -28,12 +28,12 @@ public final class ImmutableDoubleArray implements Serializable {
             this.parent = immutableDoubleArray;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
         public boolean contains(Object obj) {
             return indexOf(obj) >= 0;
         }
 
-        @Override // java.util.AbstractList, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractList, java.util.Collection, java.util.List
         public boolean equals(@NullableDecl Object obj) {
             if (obj instanceof AsList) {
                 return this.parent.equals(((AsList) obj).parent);
@@ -60,7 +60,7 @@ public final class ImmutableDoubleArray implements Serializable {
             return Double.valueOf(this.parent.get(i));
         }
 
-        @Override // java.util.AbstractList, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractList, java.util.Collection, java.util.List
         public int hashCode() {
             return this.parent.hashCode();
         }
@@ -111,7 +111,7 @@ public final class ImmutableDoubleArray implements Serializable {
             double[] dArr = this.array;
             if (i2 > dArr.length) {
                 double[] dArr2 = new double[expandedCapacity(dArr.length, i2)];
-                System.arraycopy((Object) this.array, 0, (Object) dArr2, 0, this.count);
+                System.arraycopy(this.array, 0, dArr2, 0, this.count);
                 this.array = dArr2;
             }
         }
@@ -143,7 +143,7 @@ public final class ImmutableDoubleArray implements Serializable {
 
         public Builder addAll(ImmutableDoubleArray immutableDoubleArray) {
             ensureRoomFor(immutableDoubleArray.length());
-            System.arraycopy((Object) immutableDoubleArray.array, immutableDoubleArray.start, (Object) this.array, this.count, immutableDoubleArray.length());
+            System.arraycopy(immutableDoubleArray.array, immutableDoubleArray.start, this.array, this.count, immutableDoubleArray.length());
             this.count += immutableDoubleArray.length();
             return this;
         }
@@ -171,7 +171,7 @@ public final class ImmutableDoubleArray implements Serializable {
 
         public Builder addAll(double[] dArr) {
             ensureRoomFor(dArr.length);
-            System.arraycopy((Object) dArr, 0, (Object) this.array, this.count, dArr.length);
+            System.arraycopy(dArr, 0, this.array, this.count, dArr.length);
             this.count += dArr.length;
             return this;
         }
@@ -255,7 +255,7 @@ public final class ImmutableDoubleArray implements Serializable {
         Preconditions.checkArgument(dArr.length <= 2147483646, "the total number of elements must fit in an int");
         double[] dArr2 = new double[dArr.length + 1];
         dArr2[0] = d;
-        System.arraycopy((Object) dArr, 0, (Object) dArr2, 1, dArr.length);
+        System.arraycopy(dArr, 0, dArr2, 1, dArr.length);
         return new ImmutableDoubleArray(dArr2);
     }
 

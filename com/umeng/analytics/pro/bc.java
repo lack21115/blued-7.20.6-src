@@ -8,14 +8,14 @@ import org.repackage.com.heytap.openid.sdk.OpenIDSDK;
 public class bc implements au {
 
     /* renamed from: a  reason: collision with root package name */
-    private boolean f40651a = false;
+    private boolean f26960a = false;
 
     @Override // com.umeng.analytics.pro.au
     public String a(Context context) {
         try {
-            if (!this.f40651a) {
+            if (!this.f26960a) {
                 OpenIDSDK.a(context);
-                this.f40651a = true;
+                this.f26960a = true;
             }
             if (OpenIDSDK.a()) {
                 return OpenIDSDK.b(context);

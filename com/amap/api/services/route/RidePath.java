@@ -22,18 +22,16 @@ public class RidePath extends Path implements Parcelable {
             return null;
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    private List<RideStep> f5721a;
+    private List<RideStep> a;
 
     public RidePath() {
-        this.f5721a = new ArrayList();
+        this.a = new ArrayList();
     }
 
     public RidePath(Parcel parcel) {
         super(parcel);
-        this.f5721a = new ArrayList();
-        this.f5721a = parcel.createTypedArrayList(RideStep.CREATOR);
+        this.a = new ArrayList();
+        this.a = parcel.createTypedArrayList(RideStep.CREATOR);
     }
 
     @Override // com.amap.api.services.route.Path, android.os.Parcelable
@@ -42,16 +40,16 @@ public class RidePath extends Path implements Parcelable {
     }
 
     public List<RideStep> getSteps() {
-        return this.f5721a;
+        return this.a;
     }
 
     public void setSteps(List<RideStep> list) {
-        this.f5721a = list;
+        this.a = list;
     }
 
     @Override // com.amap.api.services.route.Path, android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
         super.writeToParcel(parcel, i);
-        parcel.writeTypedList(this.f5721a);
+        parcel.writeTypedList(this.a);
     }
 }

@@ -3,6 +3,7 @@ package com.kwad.sdk.core.kwai;
 import android.content.Context;
 import android.net.Uri;
 import android.text.TextUtils;
+import com.huawei.hms.framework.common.ContainerUtils;
 import com.kwad.sdk.service.ServiceProvider;
 import com.yxcorp.kuaishou.addfp.KWEGIDDFP;
 import java.util.Arrays;
@@ -18,9 +19,9 @@ public final class e {
         if (TextUtils.isEmpty(str)) {
             return emptyIfNull(str);
         }
-        String[] split = str.split("&");
+        String[] split = str.split(ContainerUtils.FIELD_DELIMITER);
         Arrays.sort(split);
-        return TextUtils.join("&", split);
+        return TextUtils.join(ContainerUtils.FIELD_DELIMITER, split);
     }
 
     private static String ca(String str) {
@@ -39,6 +40,6 @@ public final class e {
 
     private static String s(String str, String str2) {
         Uri parse = Uri.parse(str);
-        return parse.getPath() + "&" + bZ(parse.getQuery()) + "&" + str2;
+        return parse.getPath() + ContainerUtils.FIELD_DELIMITER + bZ(parse.getQuery()) + ContainerUtils.FIELD_DELIMITER + str2;
     }
 }

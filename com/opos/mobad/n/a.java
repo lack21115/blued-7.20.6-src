@@ -8,7 +8,7 @@ public interface a {
 
     /* renamed from: com.opos.mobad.n.a$a  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/opos/mobad/n/a$a.class */
-    public interface InterfaceC0708a {
+    public interface InterfaceC0538a {
         void a(int i, String str);
 
         void a(long j, long j2);
@@ -54,7 +54,7 @@ public interface a {
 
     void a();
 
-    void a(InterfaceC0708a interfaceC0708a);
+    void a(InterfaceC0538a interfaceC0538a);
 
     void a(h hVar);
 

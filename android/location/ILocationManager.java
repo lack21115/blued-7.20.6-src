@@ -363,10 +363,10 @@ public interface ILocationManager extends IInterface {
                     obtain.writeString(str);
                     this.mRemote.transact(20, obtain, obtain2, 0);
                     obtain2.readException();
-                    ProviderProperties createFromParcel = obtain2.readInt() != 0 ? ProviderProperties.CREATOR.createFromParcel(obtain2) : null;
+                    ProviderProperties providerProperties = obtain2.readInt() != 0 ? (ProviderProperties) ProviderProperties.CREATOR.createFromParcel(obtain2) : null;
                     obtain2.recycle();
                     obtain.recycle();
-                    return createFromParcel;
+                    return providerProperties;
                 } catch (Throwable th) {
                     obtain2.recycle();
                     obtain.recycle();
@@ -950,7 +950,7 @@ public interface ILocationManager extends IInterface {
                     return true;
                 case 22:
                     parcel.enforceInterface(DESCRIPTOR);
-                    addTestProvider(parcel.readString(), parcel.readInt() != 0 ? ProviderProperties.CREATOR.createFromParcel(parcel) : null);
+                    addTestProvider(parcel.readString(), parcel.readInt() != 0 ? (ProviderProperties) ProviderProperties.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     return true;
                 case 23:

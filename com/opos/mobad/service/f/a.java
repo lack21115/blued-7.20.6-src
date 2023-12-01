@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.SystemClock;
 import android.text.TextUtils;
 import com.cdo.oaps.ad.af;
+import com.huawei.hms.framework.network.grs.GrsBaseInfo;
 import com.opos.cmn.i.a;
 import com.sobot.chat.core.channel.Const;
 
@@ -11,14 +12,14 @@ import com.sobot.chat.core.channel.Const;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f27353a = com.opos.cmn.an.a.b.a(com.cdo.oaps.ad.a.b);
+    public static final String f13665a = com.opos.cmn.an.a.b.a(com.cdo.oaps.ad.a.b);
     private static a b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f27354c;
+    private Context f13666c;
     private c d;
     private g e;
-    private InterfaceC0735a f;
+    private InterfaceC0565a f;
     private f g;
     private e h;
     private String i;
@@ -37,7 +38,7 @@ public class a {
 
     /* renamed from: com.opos.mobad.service.f.a$a  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/opos/mobad/service/f/a$a.class */
-    public interface InterfaceC0735a {
+    public interface InterfaceC0565a {
         String a();
 
         String b();
@@ -65,11 +66,11 @@ public class a {
     public static class d {
 
         /* renamed from: a  reason: collision with root package name */
-        public final int f27363a;
+        public final int f13675a;
         public final String b;
 
         public d(int i, String str) {
-            this.f27363a = i;
+            this.f13675a = i;
             this.b = str;
         }
     }
@@ -106,7 +107,7 @@ public class a {
 
     /* JADX INFO: Access modifiers changed from: private */
     public d A() {
-        this.r = new d(b(this.f27354c), a(this.f27354c));
+        this.r = new d(b(this.f13666c), a(this.f13666c));
         return this.r;
     }
 
@@ -132,7 +133,7 @@ public class a {
     private String a(Context context) {
         String str = af.e;
         if (!com.opos.cmn.an.h.d.a.d(context, af.e)) {
-            str = f27353a;
+            str = f13665a;
         }
         return com.opos.cmn.an.h.d.a.c(context, str);
     }
@@ -144,7 +145,7 @@ public class a {
     private int b(Context context) {
         String str = af.e;
         if (!com.opos.cmn.an.h.d.a.d(context, af.e)) {
-            str = f27353a;
+            str = f13665a;
         }
         return com.opos.cmn.an.h.d.a.b(context, str);
     }
@@ -152,24 +153,24 @@ public class a {
     private void z() {
         this.n = new com.opos.cmn.i.a(new a.b() { // from class: com.opos.mobad.service.f.a.1
             @Override // com.opos.cmn.i.a.b
-            public void a(final a.InterfaceC0645a interfaceC0645a) {
+            public void a(final a.InterfaceC0475a interfaceC0475a) {
                 com.opos.cmn.an.f.a.b("infoManager", "init instant");
                 if (a.this.d == null) {
-                    interfaceC0645a.b();
+                    interfaceC0475a.b();
                 } else {
                     com.opos.cmn.an.j.b.c(new Runnable() { // from class: com.opos.mobad.service.f.a.1.1
                         @Override // java.lang.Runnable
                         public void run() {
                             try {
                                 a.this.d.d();
-                                if (interfaceC0645a != null) {
-                                    interfaceC0645a.a();
+                                if (interfaceC0475a != null) {
+                                    interfaceC0475a.a();
                                 }
                             } catch (Exception e2) {
                                 com.opos.cmn.an.f.a.a("infoManager", "init error" + e2);
-                                a.InterfaceC0645a interfaceC0645a2 = interfaceC0645a;
-                                if (interfaceC0645a2 != null) {
-                                    interfaceC0645a2.b();
+                                a.InterfaceC0475a interfaceC0475a2 = interfaceC0475a;
+                                if (interfaceC0475a2 != null) {
+                                    interfaceC0475a2.b();
                                 }
                             }
                         }
@@ -179,24 +180,24 @@ public class a {
         }, Integer.MAX_VALUE, Const.SOCKET_CHECK_CHANNEL);
         this.o = new com.opos.cmn.i.a(new a.b() { // from class: com.opos.mobad.service.f.a.2
             @Override // com.opos.cmn.i.a.b
-            public void a(final a.InterfaceC0645a interfaceC0645a) {
+            public void a(final a.InterfaceC0475a interfaceC0475a) {
                 com.opos.cmn.an.f.a.b("infoManager", "init xgame");
                 if (a.this.e == null) {
-                    interfaceC0645a.b();
+                    interfaceC0475a.b();
                 } else {
                     com.opos.cmn.an.j.b.c(new Runnable() { // from class: com.opos.mobad.service.f.a.2.1
                         @Override // java.lang.Runnable
                         public void run() {
                             try {
                                 a.this.e.d();
-                                if (interfaceC0645a != null) {
-                                    interfaceC0645a.a();
+                                if (interfaceC0475a != null) {
+                                    interfaceC0475a.a();
                                 }
                             } catch (Exception e2) {
                                 com.opos.cmn.an.f.a.a("infoManager", "init error" + e2);
-                                a.InterfaceC0645a interfaceC0645a2 = interfaceC0645a;
-                                if (interfaceC0645a2 != null) {
-                                    interfaceC0645a2.b();
+                                a.InterfaceC0475a interfaceC0475a2 = interfaceC0475a;
+                                if (interfaceC0475a2 != null) {
+                                    interfaceC0475a2.b();
                                 }
                             }
                         }
@@ -206,21 +207,21 @@ public class a {
         }, Integer.MAX_VALUE, Const.SOCKET_CHECK_CHANNEL);
         this.l = new com.opos.cmn.i.a(new a.b() { // from class: com.opos.mobad.service.f.a.3
             @Override // com.opos.cmn.i.a.b
-            public void a(final a.InterfaceC0645a interfaceC0645a) {
+            public void a(final a.InterfaceC0475a interfaceC0475a) {
                 com.opos.cmn.an.f.a.b("infoManager", "init market");
                 com.opos.cmn.an.j.b.c(new Runnable() { // from class: com.opos.mobad.service.f.a.3.1
                     @Override // java.lang.Runnable
                     public void run() {
                         try {
                             a.this.A();
-                            if (interfaceC0645a != null) {
-                                interfaceC0645a.a();
+                            if (interfaceC0475a != null) {
+                                interfaceC0475a.a();
                             }
                         } catch (Exception e2) {
                             com.opos.cmn.an.f.a.a("infoManager", "init error" + e2);
-                            a.InterfaceC0645a interfaceC0645a2 = interfaceC0645a;
-                            if (interfaceC0645a2 != null) {
-                                interfaceC0645a2.b();
+                            a.InterfaceC0475a interfaceC0475a2 = interfaceC0475a;
+                            if (interfaceC0475a2 != null) {
+                                interfaceC0475a2.b();
                             }
                         }
                     }
@@ -229,21 +230,21 @@ public class a {
         }, Integer.MAX_VALUE, Const.SOCKET_CHECK_CHANNEL);
         this.m = new com.opos.cmn.i.a(new a.b() { // from class: com.opos.mobad.service.f.a.4
             @Override // com.opos.cmn.i.a.b
-            public void a(final a.InterfaceC0645a interfaceC0645a) {
+            public void a(final a.InterfaceC0475a interfaceC0475a) {
                 com.opos.cmn.an.f.a.b("infoManager", "init operator");
                 com.opos.cmn.an.j.b.c(new Runnable() { // from class: com.opos.mobad.service.f.a.4.1
                     @Override // java.lang.Runnable
                     public void run() {
                         try {
-                            a.this.p = com.opos.cmn.an.h.e.a.e(a.this.f27354c);
-                            if (interfaceC0645a != null) {
-                                interfaceC0645a.a();
+                            a.this.p = com.opos.cmn.an.h.e.a.e(a.this.f13666c);
+                            if (interfaceC0475a != null) {
+                                interfaceC0475a.a();
                             }
                         } catch (Exception e2) {
                             com.opos.cmn.an.f.a.a("infoManager", "init error" + e2);
-                            a.InterfaceC0645a interfaceC0645a2 = interfaceC0645a;
-                            if (interfaceC0645a2 != null) {
-                                interfaceC0645a2.b();
+                            a.InterfaceC0475a interfaceC0475a2 = interfaceC0475a;
+                            if (interfaceC0475a2 != null) {
+                                interfaceC0475a2.b();
                             }
                         }
                     }
@@ -252,13 +253,13 @@ public class a {
         }, Integer.MAX_VALUE, 180000);
     }
 
-    public void a(Context context, c cVar, g gVar, InterfaceC0735a interfaceC0735a, f fVar, e eVar, b bVar) {
+    public void a(Context context, c cVar, g gVar, InterfaceC0565a interfaceC0565a, f fVar, e eVar, b bVar) {
         Context applicationContext = context.getApplicationContext();
-        this.f27354c = applicationContext;
+        this.f13666c = applicationContext;
         this.q = applicationContext.getPackageName();
         this.d = cVar;
         this.e = gVar;
-        this.f = interfaceC0735a;
+        this.f = interfaceC0565a;
         this.g = fVar;
         this.h = eVar;
         this.s = bVar;
@@ -341,18 +342,18 @@ public class a {
     }
 
     public String k() {
-        InterfaceC0735a interfaceC0735a = this.f;
-        return interfaceC0735a == null ? "" : interfaceC0735a.b();
+        InterfaceC0565a interfaceC0565a = this.f;
+        return interfaceC0565a == null ? "" : interfaceC0565a.b();
     }
 
     public String l() {
-        InterfaceC0735a interfaceC0735a = this.f;
-        return interfaceC0735a == null ? "" : interfaceC0735a.a();
+        InterfaceC0565a interfaceC0565a = this.f;
+        return interfaceC0565a == null ? "" : interfaceC0565a.a();
     }
 
     public String m() {
-        InterfaceC0735a interfaceC0735a = this.f;
-        return interfaceC0735a == null ? "" : interfaceC0735a.c();
+        InterfaceC0565a interfaceC0565a = this.f;
+        return interfaceC0565a == null ? "" : interfaceC0565a.c();
     }
 
     public d n() {
@@ -396,7 +397,7 @@ public class a {
             this.m.a();
             return this.p;
         }
-        String e2 = com.opos.cmn.an.h.e.a.e(this.f27354c);
+        String e2 = com.opos.cmn.an.h.e.a.e(this.f13666c);
         this.p = e2;
         return e2;
     }
@@ -412,7 +413,7 @@ public class a {
         long elapsedRealtime = SystemClock.elapsedRealtime();
         this.u = this.s.a();
         if (TextUtils.isEmpty(this.u) || (!"ADULT".equals(this.u) && !"CHILD".equals(this.u) && !"TEEN".equals(this.u))) {
-            this.u = "UNKNOWN";
+            this.u = GrsBaseInfo.CountryCodeSource.UNKNOWN;
         }
         com.opos.cmn.an.f.a.b("infoManager", "age provider =" + this.u + ", time = " + (SystemClock.elapsedRealtime() - elapsedRealtime));
         return this.u;

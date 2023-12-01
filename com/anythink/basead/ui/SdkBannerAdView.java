@@ -37,12 +37,10 @@ public class SdkBannerAdView extends BaseBannerAdView {
     /* renamed from: com.anythink.basead.ui.SdkBannerAdView$10  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/ui/SdkBannerAdView$10.class */
     final class AnonymousClass10 implements b.a {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ ImageView f6173a;
+        final /* synthetic */ ImageView a;
 
         AnonymousClass10(ImageView imageView) {
-            this.f6173a = imageView;
+            this.a = imageView;
         }
 
         @Override // com.anythink.core.common.res.b.a
@@ -52,7 +50,7 @@ public class SdkBannerAdView extends BaseBannerAdView {
         @Override // com.anythink.core.common.res.b.a
         public final void onSuccess(String str, Bitmap bitmap) {
             if (TextUtils.equals(SdkBannerAdView.this.d.v(), str)) {
-                this.f6173a.setImageBitmap(bitmap);
+                this.a.setImageBitmap(bitmap);
             }
         }
     }
@@ -110,12 +108,10 @@ public class SdkBannerAdView extends BaseBannerAdView {
     /* renamed from: com.anythink.basead.ui.SdkBannerAdView$15  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/ui/SdkBannerAdView$15.class */
     final class AnonymousClass15 implements b.a {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ RoundImageView f6178a;
+        final /* synthetic */ RoundImageView a;
 
         AnonymousClass15(RoundImageView roundImageView) {
-            this.f6178a = roundImageView;
+            this.a = roundImageView;
         }
 
         @Override // com.anythink.core.common.res.b.a
@@ -125,7 +121,7 @@ public class SdkBannerAdView extends BaseBannerAdView {
         @Override // com.anythink.core.common.res.b.a
         public final void onSuccess(String str, Bitmap bitmap) {
             if (TextUtils.equals(SdkBannerAdView.this.d.t(), str)) {
-                this.f6178a.setImageBitmap(bitmap);
+                this.a.setImageBitmap(bitmap);
             }
         }
     }
@@ -133,12 +129,10 @@ public class SdkBannerAdView extends BaseBannerAdView {
     /* renamed from: com.anythink.basead.ui.SdkBannerAdView$2  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/ui/SdkBannerAdView$2.class */
     final class AnonymousClass2 implements b.a {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ ImageView f6179a;
+        final /* synthetic */ ImageView a;
 
         AnonymousClass2(ImageView imageView) {
-            this.f6179a = imageView;
+            this.a = imageView;
         }
 
         @Override // com.anythink.core.common.res.b.a
@@ -148,7 +142,7 @@ public class SdkBannerAdView extends BaseBannerAdView {
         @Override // com.anythink.core.common.res.b.a
         public final void onSuccess(String str, Bitmap bitmap) {
             if (TextUtils.equals(SdkBannerAdView.this.d.v(), str)) {
-                this.f6179a.setImageBitmap(bitmap);
+                this.a.setImageBitmap(bitmap);
             }
         }
     }
@@ -156,12 +150,10 @@ public class SdkBannerAdView extends BaseBannerAdView {
     /* renamed from: com.anythink.basead.ui.SdkBannerAdView$3  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/ui/SdkBannerAdView$3.class */
     final class AnonymousClass3 implements b.a {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ RoundImageView f6180a;
+        final /* synthetic */ RoundImageView a;
 
         AnonymousClass3(RoundImageView roundImageView) {
-            this.f6180a = roundImageView;
+            this.a = roundImageView;
         }
 
         @Override // com.anythink.core.common.res.b.a
@@ -171,7 +163,7 @@ public class SdkBannerAdView extends BaseBannerAdView {
         @Override // com.anythink.core.common.res.b.a
         public final void onSuccess(String str, Bitmap bitmap) {
             if (TextUtils.equals(SdkBannerAdView.this.d.u(), str)) {
-                this.f6180a.setImageBitmap(bitmap);
+                this.a.setImageBitmap(bitmap);
             }
         }
     }
@@ -229,18 +221,14 @@ public class SdkBannerAdView extends BaseBannerAdView {
     /* renamed from: com.anythink.basead.ui.SdkBannerAdView$9  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/ui/SdkBannerAdView$9.class */
     final class AnonymousClass9 implements b.a {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ String f6186a;
+        final /* synthetic */ String a;
         final /* synthetic */ RecycleImageView b;
-
-        /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ RecycleImageView f6187c;
+        final /* synthetic */ RecycleImageView c;
 
         AnonymousClass9(String str, RecycleImageView recycleImageView, RecycleImageView recycleImageView2) {
-            this.f6186a = str;
+            this.a = str;
             this.b = recycleImageView;
-            this.f6187c = recycleImageView2;
+            this.c = recycleImageView2;
         }
 
         @Override // com.anythink.core.common.res.b.a
@@ -249,21 +237,21 @@ public class SdkBannerAdView extends BaseBannerAdView {
 
         @Override // com.anythink.core.common.res.b.a
         public final void onSuccess(String str, final Bitmap bitmap) {
-            if (TextUtils.equals(this.f6186a, str)) {
+            if (TextUtils.equals(this.a, str)) {
                 this.b.setImageBitmap(bitmap);
                 SdkBannerAdView.this.post(new Runnable() { // from class: com.anythink.basead.ui.SdkBannerAdView.9.1
                     @Override // java.lang.Runnable
                     public final void run() {
-                        int[] a2 = u.a(SdkBannerAdView.this.getWidth(), SdkBannerAdView.this.getHeight(), bitmap.getWidth() / bitmap.getHeight());
+                        int[] a = u.a(SdkBannerAdView.this.getWidth(), SdkBannerAdView.this.getHeight(), bitmap.getWidth() / bitmap.getHeight());
                         ViewGroup.LayoutParams layoutParams = AnonymousClass9.this.b.getLayoutParams();
                         if (layoutParams != null) {
-                            layoutParams.width = a2[0];
-                            layoutParams.height = a2[1];
+                            layoutParams.width = a[0];
+                            layoutParams.height = a[1];
                             AnonymousClass9.this.b.setLayoutParams(layoutParams);
                         }
                     }
                 });
-                this.f6187c.setImageBitmap(com.anythink.core.common.k.b.a(SdkBannerAdView.this.getContext(), bitmap));
+                this.c.setImageBitmap(com.anythink.core.common.k.b.a(SdkBannerAdView.this.getContext(), bitmap));
             }
         }
     }
@@ -277,7 +265,7 @@ public class SdkBannerAdView extends BaseBannerAdView {
                 Tracker.onClick(view);
                 if (2 != SdkBannerAdView.this.w) {
                     SdkBannerAdView.super.b(1);
-                } else if (SdkBannerAdView.this.f6049c.m == null || SdkBannerAdView.this.f6049c.m.x() != 0) {
+                } else if (SdkBannerAdView.this.c.m == null || SdkBannerAdView.this.c.m.x() != 0) {
                 } else {
                     SdkBannerAdView.super.b(1);
                 }
@@ -301,7 +289,7 @@ public class SdkBannerAdView extends BaseBannerAdView {
                 Tracker.onClick(view);
                 if (2 != SdkBannerAdView.this.w) {
                     SdkBannerAdView.super.b(1);
-                } else if (SdkBannerAdView.this.f6049c.m == null || SdkBannerAdView.this.f6049c.m.x() != 0) {
+                } else if (SdkBannerAdView.this.c.m == null || SdkBannerAdView.this.c.m.x() != 0) {
                 } else {
                     SdkBannerAdView.super.b(1);
                 }
@@ -335,7 +323,7 @@ public class SdkBannerAdView extends BaseBannerAdView {
         TextView textView2 = (TextView) findViewById(h.a(getContext(), "myoffer_banner_privacy_agreement", "id"));
         TextView textView3 = (TextView) findViewById(h.a(getContext(), "myoffer_banner_permission_manage", "id"));
         TextView textView4 = (TextView) findViewById(h.a(getContext(), "myoffer_banner_version_name", "id"));
-        if (this.f6049c.m.s() == 0) {
+        if (this.c.m.s() == 0) {
             this.t.setVisibility(0);
             if (TextUtils.equals(k.d, this.v)) {
                 ViewGroup.LayoutParams layoutParams = this.t.getLayoutParams();
@@ -343,7 +331,7 @@ public class SdkBannerAdView extends BaseBannerAdView {
                 layoutParams.height = h.a(getContext(), 23.0f);
                 this.t.setLayoutParams(layoutParams);
             }
-            a(this.t, this.f6049c.m.h());
+            a(this.t, this.c.m.h());
         } else {
             this.t.setVisibility(8);
         }
@@ -393,7 +381,7 @@ public class SdkBannerAdView extends BaseBannerAdView {
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
     /* JADX WARN: Code restructure failed: missing block: B:263:0x0c43, code lost:
-        if (r0.equals(com.anythink.core.common.e.k.f6665a) != false) goto L146;
+        if (r0.equals(com.anythink.core.common.e.k.a) != false) goto L146;
      */
     /* JADX WARN: Removed duplicated region for block: B:122:0x05ff  */
     /* JADX WARN: Removed duplicated region for block: B:129:0x064c  */
@@ -426,7 +414,7 @@ public class SdkBannerAdView extends BaseBannerAdView {
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
     /* JADX WARN: Code restructure failed: missing block: B:263:0x0c43, code lost:
-        if (r0.equals(com.anythink.core.common.e.k.f6665a) != false) goto L146;
+        if (r0.equals(com.anythink.core.common.e.k.a) != false) goto L146;
      */
     /* JADX WARN: Removed duplicated region for block: B:122:0x05ff  */
     /* JADX WARN: Removed duplicated region for block: B:129:0x064c  */
@@ -443,8 +431,9 @@ public class SdkBannerAdView extends BaseBannerAdView {
         throw new UnsupportedOperationException("Method not decompiled: com.anythink.basead.ui.SdkBannerAdView.a():void");
     }
 
+    /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.anythink.basead.ui.BaseBannerAdView
-    protected final void c() {
+    public final void c() {
         int size = this.r.size();
         int i = 0;
         while (true) {

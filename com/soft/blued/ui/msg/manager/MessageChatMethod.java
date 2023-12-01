@@ -62,7 +62,6 @@ public class MessageChatMethod {
             }, (DialogInterface.OnCancelListener) null, true);
         } else if (a(chattingModel, iMsgChatAdapterCallback)) {
             ChatManager.getInstance().retractOneMessage(chattingModel.sessionType, chattingModel.sessionId, chattingModel.msgId, (short) chattingModel.isMatchMsg, new RetractionListener() { // from class: com.soft.blued.ui.msg.manager.MessageChatMethod.1
-                @Override // com.blued.android.chat.listener.RetractionListener
                 public void onMsgRetractedTimeout() {
                     AppInfo.n().post(new Runnable() { // from class: com.soft.blued.ui.msg.manager.MessageChatMethod.1.1
                         @Override // java.lang.Runnable
@@ -80,16 +79,14 @@ public class MessageChatMethod {
                     });
                 }
 
-                @Override // com.blued.android.chat.listener.RetractionListener
                 public void onRetractFailed() {
                 }
 
-                @Override // com.blued.android.chat.listener.RetractionListener
                 public void onRetractSuccess() {
-                    if (ChattingModel.this.sessionType != 3 || ChattingModel.this.isFromSelf()) {
+                    if (chattingModel.sessionType != 3 || chattingModel.isFromSelf()) {
                         return;
                     }
-                    ChatManager.getInstance().updateMsgState(ChattingModel.this, (short) 10);
+                    ChatManager.getInstance().updateMsgState(chattingModel, (short) 10);
                 }
             });
         } else {
@@ -116,7 +113,7 @@ public class MessageChatMethod {
         CommonAlertDialog.a(view.getContext(), AppUtils.a((int) R.string.turn_text_tip_title), AppUtils.a((int) R.string.turn_text_tip), AppUtils.a((int) R.string.map_ok), (DialogInterface.OnClickListener) null, new DialogInterface.OnDismissListener() { // from class: com.soft.blued.ui.msg.manager.MessageChatMethod.5
             @Override // android.content.DialogInterface.OnDismissListener
             public void onDismiss(DialogInterface dialogInterface) {
-                MessageChatMethod.b(View.this, textView, view2, chattingModel, set, iMsgChatAdapterOperationCallback, iRequestHost);
+                MessageChatMethod.b(view, textView, view2, chattingModel, set, iMsgChatAdapterOperationCallback, iRequestHost);
             }
         }, 0);
     }
@@ -155,41 +152,38 @@ public class MessageChatMethod {
             str2 = "";
         }
         d(chattingModel, iMsgChatAdapterOperationCallback);
-        ChatHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<MsgContentTranslatedEntity>>() { // from class: com.soft.blued.ui.msg.manager.MessageChatMethod.4
+        ChatHttpUtils.a((BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<MsgContentTranslatedEntity>>() { // from class: com.soft.blued.ui.msg.manager.MessageChatMethod.4
 
             /* renamed from: a  reason: collision with root package name */
-            boolean f32425a;
+            boolean f18735a;
 
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<MsgContentTranslatedEntity> bluedEntityA) {
                 MsgContentTranslatedEntity msgContentTranslatedEntity;
-                if (bluedEntityA.data == null || bluedEntityA.data.size() <= 0 || (msgContentTranslatedEntity = bluedEntityA.data.get(0)) == null || msgContentTranslatedEntity.trans_result == null || msgContentTranslatedEntity.trans_result.size() <= 0) {
+                if (bluedEntityA.data == null || bluedEntityA.data.size() <= 0 || (msgContentTranslatedEntity = (MsgContentTranslatedEntity) bluedEntityA.data.get(0)) == null || msgContentTranslatedEntity.trans_result == null || msgContentTranslatedEntity.trans_result.size() <= 0) {
                     return;
                 }
                 String str3 = msgContentTranslatedEntity.trans_result.get(0).dst;
                 if (TextUtils.isEmpty(str3)) {
                     return;
                 }
-                MessageChatMethod.b(ChattingModel.this, str3, iMsgChatAdapterOperationCallback);
+                MessageChatMethod.b(chattingModel, str3, iMsgChatAdapterOperationCallback);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str3) {
-                this.f32425a = true;
+                this.f18735a = true;
                 return super.onUIFailure(i, str3);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 super.onUIFinish();
-                if (this.f32425a) {
-                    this.f32425a = false;
-                    MessageChatMethod.e(ChattingModel.this, iMsgChatAdapterOperationCallback);
+                if (this.f18735a) {
+                    this.f18735a = false;
+                    MessageChatMethod.e(chattingModel, iMsgChatAdapterOperationCallback);
                 }
             }
-        }, str2, iMsgChatAdapterOperationCallback.getFragmentActive());
+        }, str2, (IRequestHost) iMsgChatAdapterOperationCallback.getFragmentActive());
     }
 
     public static void a(boolean z, short s, long j, int i, TextView textView, String str) {
@@ -200,7 +194,7 @@ public class MessageChatMethod {
         } else {
             String str2 = str;
             if (j < 0) {
-                str2 = DateTodayManager.f32404a.c(str);
+                str2 = DateTodayManager.f18714a.c(str);
             }
             textView.setText(String.format(textView.getContext().getResources().getString(R.string.msg_retraction_other), str2));
         }
@@ -235,13 +229,12 @@ public class MessageChatMethod {
             d(chattingModel, null);
             ChatHttpUtils.c(new BluedUIHttpResponse<BluedEntityA<VoiceTurnText>>(iRequestHost) { // from class: com.soft.blued.ui.msg.manager.MessageChatMethod.6
                 /* JADX INFO: Access modifiers changed from: protected */
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 /* renamed from: a */
                 public void onUIUpdate(BluedEntityA<VoiceTurnText> bluedEntityA) {
                     if (bluedEntityA == null || !bluedEntityA.hasData()) {
                         return;
                     }
-                    String str = bluedEntityA.getSingleData().text;
+                    String str = ((VoiceTurnText) bluedEntityA.getSingleData()).text;
                     if (TextUtils.isEmpty(str)) {
                         AppMethods.d((int) R.string.turn_text_no_find_content);
                         return;
@@ -256,13 +249,11 @@ public class MessageChatMethod {
                     ChatManager.getInstance().updateMsgState(chattingModel, (short) 5);
                 }
 
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public void onUIFinish(boolean z) {
                     super.onUIFinish(z);
                     view2.setVisibility(8);
                 }
 
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public void onUIStart() {
                     super.onUIStart();
                     view2.setVisibility(0);

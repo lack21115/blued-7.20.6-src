@@ -4,9 +4,9 @@ package com.opos.mobad.f.a.d;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f26081a;
+    public final int f12393a;
 
     public a(int i) {
-        this.f26081a = i;
+        this.f12393a = i;
     }
 }

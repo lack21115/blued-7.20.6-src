@@ -12,11 +12,11 @@ import com.soft.blued.R;
 public final class FragmentWebviewTitleBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final FrameLayout f29038a;
+    public final FrameLayout f15348a;
     public final LinearLayout b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final TextView f29039c;
+    public final TextView f15349c;
     public final ImageView d;
     public final ImageView e;
     public final LinearLayout f;
@@ -39,9 +39,9 @@ public final class FragmentWebviewTitleBinding implements ViewBinding {
 
     private FragmentWebviewTitleBinding(LinearLayout linearLayout, FrameLayout frameLayout, LinearLayout linearLayout2, TextView textView, ImageView imageView, ImageView imageView2, LinearLayout linearLayout3, ImageView imageView3, ImageView imageView4, FrameLayout frameLayout2, TextView textView2, ImageView imageView5, ImageView imageView6, TextView textView3, ImageView imageView7, ImageView imageView8, ImageView imageView9, ImageView imageView10, TextView textView4, TextView textView5, LinearLayout linearLayout4, TextView textView6) {
         this.v = linearLayout;
-        this.f29038a = frameLayout;
+        this.f15348a = frameLayout;
         this.b = linearLayout2;
-        this.f29039c = textView;
+        this.f15349c = textView;
         this.d = imageView;
         this.e = imageView2;
         this.f = linearLayout3;
@@ -100,7 +100,7 @@ public final class FragmentWebviewTitleBinding implements ViewBinding {
                                                                         if (imageView10 != null) {
                                                                             TextView textView4 = (TextView) view.findViewById(R.id.ctt_right_left_text);
                                                                             if (textView4 != null) {
-                                                                                TextView textView5 = (TextView) view.findViewById(2131363135);
+                                                                                TextView textView5 = (TextView) view.findViewById(R.id.ctt_right_text);
                                                                                 if (textView5 != null) {
                                                                                     LinearLayout linearLayout3 = (LinearLayout) view.findViewById(R.id.title_bg);
                                                                                     if (linearLayout3 != null) {

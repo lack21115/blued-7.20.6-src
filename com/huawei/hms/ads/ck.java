@@ -23,7 +23,7 @@ public class ck extends cp<ImageView> {
     private String Z;
 
     /* renamed from: a  reason: collision with root package name */
-    private int f22445a;
+    private int f8837a;
 
     public ck(ImageView imageView) {
         super(imageView);
@@ -51,7 +51,7 @@ public class ck extends cp<ImageView> {
             if (r0 != 0) goto L34
             r0 = r6
             r1 = 0
-            r0.f22445a = r1
+            r0.f8837a = r1
             r0 = r6
             java.lang.String r0 = r0.D
             boolean r0 = android.text.TextUtils.isEmpty(r0)
@@ -73,7 +73,7 @@ public class ck extends cp<ImageView> {
         L46:
             r0 = r6
             r1 = r9
-            r0.f22445a = r1     // Catch: java.lang.NumberFormatException -> Lc6
+            r0.f8837a = r1     // Catch: java.lang.NumberFormatException -> Lc6
             goto L5d
         L4e:
             java.lang.String r0 = "ImageSrcHandler"
@@ -83,7 +83,7 @@ public class ck extends cp<ImageView> {
         L58:
             r0 = r6
             r1 = 1
-            r0.f22445a = r1
+            r0.f8837a = r1
         L5d:
             r0 = r8
             if (r0 == 0) goto Lc5
@@ -95,7 +95,7 @@ public class ck extends cp<ImageView> {
             r3 = r6
             java.lang.String r3 = r3.L
             r4 = r6
-            int r4 = r4.f22445a
+            int r4 = r4.f8837a
             r0.load(r1, r2, r3, r4)
             return
         L78:

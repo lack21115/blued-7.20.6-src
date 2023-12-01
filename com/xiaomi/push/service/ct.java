@@ -8,19 +8,19 @@ import com.xiaomi.push.service.u;
 public class ct implements u.a {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ XMPushService.j f41677a;
+    final /* synthetic */ XMPushService.j f27986a;
 
     /* renamed from: a  reason: collision with other field name */
-    final /* synthetic */ XMPushService f1049a;
+    final /* synthetic */ XMPushService f1002a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public ct(XMPushService xMPushService, XMPushService.j jVar) {
-        this.f1049a = xMPushService;
-        this.f41677a = jVar;
+        this.f1002a = xMPushService;
+        this.f27986a = jVar;
     }
 
     @Override // com.xiaomi.push.service.u.a
     public void a() {
-        this.f1049a.a(this.f41677a);
+        this.f1002a.a(this.f27986a);
     }
 }

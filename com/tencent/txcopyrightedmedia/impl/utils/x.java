@@ -4,6 +4,6 @@ package com.tencent.txcopyrightedmedia.impl.utils;
 public final class x {
 
     /* renamed from: a  reason: collision with root package name */
-    public int f40187a;
+    public int f26496a;
     public int b;
 }

@@ -2,7 +2,6 @@ package com.anythink.expressad.video.signal.communication;
 
 import android.text.TextUtils;
 import android.util.Base64;
-import com.anythink.core.api.ATAdConst;
 import com.anythink.core.common.b.n;
 import com.anythink.core.common.k.l;
 import com.anythink.expressad.atsignalcommon.bridge.CommonJSBridgeImpUtils;
@@ -37,7 +36,7 @@ public class BaseVideoBridge extends AbsFeedBackForH5 implements IVideoBridge {
     private static String a(int i) {
         switch (i) {
             case 1:
-                return ATAdConst.NETWORK_REQUEST_PARAMS_KEY.SDK_INFO;
+                return "sdk_info";
             case 2:
                 return "unit_id";
             case 3:
@@ -190,7 +189,7 @@ public class BaseVideoBridge extends AbsFeedBackForH5 implements IVideoBridge {
                 this.i.getJSCommon().click(i, str2);
             } else if (obj != null) {
                 com.anythink.expressad.atsignalcommon.windvane.a aVar = (com.anythink.expressad.atsignalcommon.windvane.a) obj;
-                if (!(aVar.f7101a.getObject() instanceof com.anythink.expressad.video.signal.a.j) || (jVar = (com.anythink.expressad.video.signal.a.j) aVar.f7101a.getObject()) == null) {
+                if (!(aVar.f4263a.getObject() instanceof com.anythink.expressad.video.signal.a.j) || (jVar = (com.anythink.expressad.video.signal.a.j) aVar.f4263a.getObject()) == null) {
                     return;
                 }
                 jVar.click(i, str2);
@@ -591,8 +590,8 @@ public class BaseVideoBridge extends AbsFeedBackForH5 implements IVideoBridge {
                     }
                     int i5 = jSONArray.getInt(i4);
                     com.anythink.expressad.atsignalcommon.windvane.a aVar = (com.anythink.expressad.atsignalcommon.windvane.a) obj;
-                    if (aVar.f7101a.getObject() instanceof com.anythink.expressad.video.signal.a.j) {
-                        jSONObject.put(a(i5), ((com.anythink.expressad.video.signal.a.j) aVar.f7101a.getObject()).h(i5));
+                    if (aVar.f4263a.getObject() instanceof com.anythink.expressad.video.signal.a.j) {
+                        jSONObject.put(a(i5), ((com.anythink.expressad.video.signal.a.j) aVar.f4263a.getObject()).h(i5));
                     }
                     i3 = i4 + 1;
                 }
@@ -653,7 +652,7 @@ public class BaseVideoBridge extends AbsFeedBackForH5 implements IVideoBridge {
             }
             JSONObject jSONObject = new JSONObject(str);
             o.b(h, "handlerH5Exception,params:".concat(String.valueOf(str)));
-            this.i.getJSCommon().handlerH5Exception(jSONObject.optInt("code", c.f8290a), jSONObject.optString("message", "h5 error"));
+            this.i.getJSCommon().handlerH5Exception(jSONObject.optInt("code", c.f5450a), jSONObject.optString("message", "h5 error"));
         } catch (Throwable th) {
             o.b(h, "handlerH5Exception", th);
         }
@@ -718,8 +717,8 @@ public class BaseVideoBridge extends AbsFeedBackForH5 implements IVideoBridge {
                 jSCommon.i(i);
             } else if (obj != null) {
                 com.anythink.expressad.atsignalcommon.windvane.a aVar = (com.anythink.expressad.atsignalcommon.windvane.a) obj;
-                if (aVar.f7101a.getObject() instanceof com.anythink.expressad.video.signal.a.j) {
-                    com.anythink.expressad.video.signal.a.j jVar = (com.anythink.expressad.video.signal.a.j) aVar.f7101a.getObject();
+                if (aVar.f4263a.getObject() instanceof com.anythink.expressad.video.signal.a.j) {
+                    com.anythink.expressad.video.signal.a.j jVar = (com.anythink.expressad.video.signal.a.j) aVar.f4263a.getObject();
                     String i3 = jVar.i();
                     if (!TextUtils.isEmpty(str)) {
                         JSONObject jSONObject2 = new JSONObject(str);
@@ -830,8 +829,8 @@ public class BaseVideoBridge extends AbsFeedBackForH5 implements IVideoBridge {
             }
             if (obj != null) {
                 com.anythink.expressad.atsignalcommon.windvane.a aVar = (com.anythink.expressad.atsignalcommon.windvane.a) obj;
-                if (aVar.f7101a instanceof WindVaneWebView) {
-                    WindVaneWebView windVaneWebView = aVar.f7101a;
+                if (aVar.f4263a instanceof WindVaneWebView) {
+                    WindVaneWebView windVaneWebView = aVar.f4263a;
                     if (windVaneWebView.getWebViewListener() != null) {
                         ((com.anythink.expressad.atsignalcommon.a.a) windVaneWebView.getWebViewListener()).a(str2, i2, i);
                     }
@@ -851,8 +850,8 @@ public class BaseVideoBridge extends AbsFeedBackForH5 implements IVideoBridge {
             try {
                 com.anythink.expressad.atsignalcommon.windvane.a aVar = (com.anythink.expressad.atsignalcommon.windvane.a) obj;
                 int optInt = new JSONObject(str).optInt("isReady", 1);
-                if (aVar.f7101a != null) {
-                    WindVaneWebView windVaneWebView = aVar.f7101a;
+                if (aVar.f4263a != null) {
+                    WindVaneWebView windVaneWebView = aVar.f4263a;
                     if (windVaneWebView.getWebViewListener() != null) {
                         windVaneWebView.getWebViewListener().loadingResourceStatus(windVaneWebView, optInt);
                     }
@@ -1065,8 +1064,8 @@ public class BaseVideoBridge extends AbsFeedBackForH5 implements IVideoBridge {
                 return;
             }
             com.anythink.expressad.atsignalcommon.windvane.a aVar = (com.anythink.expressad.atsignalcommon.windvane.a) obj;
-            if (aVar.f7101a instanceof WindVaneWebView) {
-                WindVaneWebView windVaneWebView = aVar.f7101a;
+            if (aVar.f4263a instanceof WindVaneWebView) {
+                WindVaneWebView windVaneWebView = aVar.f4263a;
                 if (windVaneWebView.getWebViewListener() == null) {
                     o.a(h, "preloadSubPlayTemplateView: failed");
                     return;
@@ -1129,11 +1128,11 @@ public class BaseVideoBridge extends AbsFeedBackForH5 implements IVideoBridge {
             try {
                 com.anythink.expressad.atsignalcommon.windvane.a aVar = (com.anythink.expressad.atsignalcommon.windvane.a) obj;
                 int optInt = new JSONObject(str).optInt("isReady", 1);
-                if (aVar.f7101a.getObject() instanceof com.anythink.expressad.video.signal.a.j) {
-                    ((com.anythink.expressad.video.signal.a.j) aVar.f7101a.getObject()).j(optInt);
+                if (aVar.f4263a.getObject() instanceof com.anythink.expressad.video.signal.a.j) {
+                    ((com.anythink.expressad.video.signal.a.j) aVar.f4263a.getObject()).j(optInt);
                 }
-                if (aVar.f7101a != null) {
-                    WindVaneWebView windVaneWebView = aVar.f7101a;
+                if (aVar.f4263a != null) {
+                    WindVaneWebView windVaneWebView = aVar.f4263a;
                     if (windVaneWebView.getWebViewListener() != null) {
                         windVaneWebView.getWebViewListener().readyState(windVaneWebView, optInt);
                     }

@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.TextView;
+import androidx.fragment.app.Fragment;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.image.ImageWrapper;
 import com.blued.android.core.ui.ActivityFragmentActive;
@@ -38,13 +39,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYApplyVipDialog.class */
 public final class YYApplyVipDialog extends BaseFullScreenDialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    private ViewYyCpBossDialogBinding f17101a;
+    private ViewYyCpBossDialogBinding a;
     private YYRoomModel b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private YYGiftModel f17102c;
+    private YYGiftModel c;
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(View view) {
@@ -58,13 +55,13 @@ public final class YYApplyVipDialog extends BaseFullScreenDialog {
 
     private final void a(String str, boolean z) {
         final YYPayRequestModel yYPayRequestModel = new YYPayRequestModel();
-        YYGiftModel yYGiftModel = this.f17102c;
+        YYGiftModel yYGiftModel = this.c;
         if (yYGiftModel != null) {
             yYGiftModel.hit_id = System.currentTimeMillis();
         }
-        yYPayRequestModel.gift = this.f17102c;
+        yYPayRequestModel.gift = this.c;
         yYPayRequestModel.giftCount = 1;
-        YYGiftModel yYGiftModel2 = this.f17102c;
+        YYGiftModel yYGiftModel2 = this.c;
         if (yYGiftModel2 != null) {
             yYPayRequestModel.beans = yYGiftModel2.beans;
             yYPayRequestModel.goods_id = yYGiftModel2.goods_id;
@@ -78,7 +75,7 @@ public final class YYApplyVipDialog extends BaseFullScreenDialog {
         YYRoomModel yYRoomModel2 = this.b;
         yYPayRequestModel.target_uid = yYRoomModel2 == null ? null : yYRoomModel2.uid;
         yYPayRequestModel.pay_from = 1;
-        YYPayUtils.a(yYPayRequestModel, YYConstants.PayFromSource.Pay_Gift, this, a(), new YYPayUtils.PayGiftStatusListener() { // from class: com.blued.android.module.yy_china.fragment.YYApplyVipDialog$buyGift$2
+        YYPayUtils.a(yYPayRequestModel, YYConstants.PayFromSource.Pay_Gift, (Fragment) this, a(), new YYPayUtils.PayGiftStatusListener() { // from class: com.blued.android.module.yy_china.fragment.YYApplyVipDialog$buyGift$2
             @Override // com.blued.android.module.yy_china.utils.YYPayUtils.PayGiftStatusListener
             public void a(int i, String errorMessage) {
                 Intrinsics.e(errorMessage, "errorMessage");
@@ -93,9 +90,9 @@ public final class YYApplyVipDialog extends BaseFullScreenDialog {
                 if (yYSeatMemberModel == null) {
                     return;
                 }
-                YYImMsgManager a2 = YYImMsgManager.a();
-                yYGiftModel3 = this.f17102c;
-                a2.a(yYGiftModel3, yYSeatMemberModel, goodsModel, false);
+                YYImMsgManager a = YYImMsgManager.a();
+                yYGiftModel3 = this.c;
+                a.a(yYGiftModel3, yYSeatMemberModel, goodsModel, false);
                 this.dismissAllowingStateLoss();
             }
         });
@@ -120,18 +117,18 @@ public final class YYApplyVipDialog extends BaseFullScreenDialog {
         ShapeTextView shapeTextView;
         FrameLayout frameLayout;
         View view;
-        ViewYyCpBossDialogBinding viewYyCpBossDialogBinding = this.f17101a;
+        ViewYyCpBossDialogBinding viewYyCpBossDialogBinding = this.a;
         TextView textView = viewYyCpBossDialogBinding == null ? null : viewYyCpBossDialogBinding.n;
         if (textView != null) {
             textView.setText(Html.fromHtml(getResources().getString(R.string.yy_vip_requirement)));
         }
-        ViewYyCpBossDialogBinding viewYyCpBossDialogBinding2 = this.f17101a;
+        ViewYyCpBossDialogBinding viewYyCpBossDialogBinding2 = this.a;
         TextView textView2 = viewYyCpBossDialogBinding2 == null ? null : viewYyCpBossDialogBinding2.m;
         if (textView2 != null) {
             textView2.setText(Html.fromHtml(getResources().getString(R.string.yy_vip_benefits)));
         }
-        ViewYyCpBossDialogBinding viewYyCpBossDialogBinding3 = this.f17101a;
-        if (viewYyCpBossDialogBinding3 != null && (view = viewYyCpBossDialogBinding3.f16898c) != null) {
+        ViewYyCpBossDialogBinding viewYyCpBossDialogBinding3 = this.a;
+        if (viewYyCpBossDialogBinding3 != null && (view = viewYyCpBossDialogBinding3.c) != null) {
             view.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYApplyVipDialog$-i4PWjgn0QtHwefmnVPdsyGDdRU
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {
@@ -139,7 +136,7 @@ public final class YYApplyVipDialog extends BaseFullScreenDialog {
                 }
             });
         }
-        ViewYyCpBossDialogBinding viewYyCpBossDialogBinding4 = this.f17101a;
+        ViewYyCpBossDialogBinding viewYyCpBossDialogBinding4 = this.a;
         if (viewYyCpBossDialogBinding4 != null && (frameLayout = viewYyCpBossDialogBinding4.f) != null) {
             frameLayout.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYApplyVipDialog$3J_D_OfF44plPyWmKELmJoxVBZY
                 @Override // android.view.View.OnClickListener
@@ -148,8 +145,8 @@ public final class YYApplyVipDialog extends BaseFullScreenDialog {
                 }
             });
         }
-        ViewYyCpBossDialogBinding viewYyCpBossDialogBinding5 = this.f17101a;
-        if (viewYyCpBossDialogBinding5 == null || (shapeTextView = viewYyCpBossDialogBinding5.f16897a) == null) {
+        ViewYyCpBossDialogBinding viewYyCpBossDialogBinding5 = this.a;
+        if (viewYyCpBossDialogBinding5 == null || (shapeTextView = viewYyCpBossDialogBinding5.a) == null) {
             return;
         }
         shapeTextView.setOnClickListener(new SingleClickProxy(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYApplyVipDialog$D7xm5f0CPfv7JrlPAr6Rqv-b9Ik
@@ -161,8 +158,8 @@ public final class YYApplyVipDialog extends BaseFullScreenDialog {
     }
 
     private final void g() {
-        final ActivityFragmentActive a2 = a();
-        YYRoomHttpUtils.c((BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<YYGiftModel>>(a2) { // from class: com.blued.android.module.yy_china.fragment.YYApplyVipDialog$getVipRequirement$1
+        final ActivityFragmentActive a = a();
+        YYRoomHttpUtils.c((BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<YYGiftModel>>(a) { // from class: com.blued.android.module.yy_china.fragment.YYApplyVipDialog$getVipRequirement$1
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
@@ -178,16 +175,16 @@ public final class YYApplyVipDialog extends BaseFullScreenDialog {
                 if (singleData == null) {
                     return;
                 }
-                yYApplyVipDialog.f17102c = singleData;
-                ImageWrapper a3 = ImageLoader.a(yYApplyVipDialog.a(), singleData.images_static);
-                viewYyCpBossDialogBinding = yYApplyVipDialog.f17101a;
-                a3.a(viewYyCpBossDialogBinding == null ? null : viewYyCpBossDialogBinding.i);
-                viewYyCpBossDialogBinding2 = yYApplyVipDialog.f17101a;
+                yYApplyVipDialog.c = singleData;
+                ImageWrapper a2 = ImageLoader.a(yYApplyVipDialog.a(), singleData.images_static);
+                viewYyCpBossDialogBinding = yYApplyVipDialog.a;
+                a2.a(viewYyCpBossDialogBinding == null ? null : viewYyCpBossDialogBinding.i);
+                viewYyCpBossDialogBinding2 = yYApplyVipDialog.a;
                 TextView textView = viewYyCpBossDialogBinding2 == null ? null : viewYyCpBossDialogBinding2.k;
                 if (textView != null) {
                     textView.setText(singleData.name);
                 }
-                viewYyCpBossDialogBinding3 = yYApplyVipDialog.f17101a;
+                viewYyCpBossDialogBinding3 = yYApplyVipDialog.a;
                 TextView textView2 = viewYyCpBossDialogBinding3 == null ? null : viewYyCpBossDialogBinding3.l;
                 if (textView2 == null) {
                     return;
@@ -197,7 +194,7 @@ public final class YYApplyVipDialog extends BaseFullScreenDialog {
         }, a());
     }
 
-    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog
     public void onActivityCreated(Bundle bundle) {
         super.onActivityCreated(bundle);
         ChatRoomProtos.Event event = ChatRoomProtos.Event.CHAT_ROOM_BOSS_SEAT_POP_SHOW;
@@ -211,7 +208,6 @@ public final class YYApplyVipDialog extends BaseFullScreenDialog {
         EventTrackYY.d(event, str2, str);
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         super.onActivityResult(i, i2, intent);
         Logger.a(Intrinsics.a("web dialog onActivityResult: ", (Object) Integer.valueOf(i)), new Object[0]);
@@ -247,17 +243,17 @@ public final class YYApplyVipDialog extends BaseFullScreenDialog {
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
         View inflate = inflater.inflate(R.layout.view_yy_cp_boss_dialog, viewGroup, true);
         Intrinsics.c(inflate, "inflater.inflate(R.layou…_dialog, container, true)");
-        this.f17101a = ViewYyCpBossDialogBinding.a(inflate);
+        this.a = ViewYyCpBossDialogBinding.a(inflate);
         f();
         return inflate;
     }
 
-    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment
     public void onViewCreated(View view, Bundle bundle) {
         Intrinsics.e(view, "view");
         super.onViewCreated(view, bundle);

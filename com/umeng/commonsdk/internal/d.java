@@ -1,6 +1,7 @@
 package com.umeng.commonsdk.internal;
 
 import android.app.ActivityManager;
+import android.app.backup.FullBackup;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Build;
@@ -156,9 +157,9 @@ public class d {
             if (a2 != null) {
                 jSONObject = new JSONObject();
                 try {
-                    jSONObject.put("pro", a2.f40877a);
+                    jSONObject.put("pro", a2.f27186a);
                     jSONObject.put("pla", a2.b);
-                    jSONObject.put("cpus", a2.f40878c);
+                    jSONObject.put("cpus", a2.f27187c);
                     jSONObject.put("fea", a2.d);
                     jSONObject.put("imp", a2.e);
                     jSONObject.put("arc", a2.f);
@@ -203,8 +204,8 @@ public class d {
                 if (jSONObject2.has(k.d)) {
                     jSONObject3.put(k.d, jSONObject2.opt(k.d));
                 }
-                if (jSONObject2.has(k.f40885c)) {
-                    jSONObject3.put(k.f40885c, jSONObject2.opt(k.f40885c));
+                if (jSONObject2.has(k.f27194c)) {
+                    jSONObject3.put(k.f27194c, jSONObject2.opt(k.f27194c));
                 }
                 if (jSONObject2.has(k.b)) {
                     jSONObject3.put(k.b, jSONObject2.opt(k.b));
@@ -403,15 +404,15 @@ public class d {
 
     public static JSONArray h(Context context) {
         Context applicationContext;
-        List<a.C1082a> g;
+        List<a.C0912a> g;
         JSONArray jSONArray = new JSONArray();
         if (context != null && (g = com.umeng.commonsdk.internal.utils.a.g((applicationContext = context.getApplicationContext()))) != null && !g.isEmpty()) {
-            for (a.C1082a c1082a : g) {
-                if (c1082a != null) {
+            for (a.C0912a c0912a : g) {
+                if (c0912a != null) {
                     try {
                         JSONObject jSONObject = new JSONObject();
-                        jSONObject.put("a_pn", c1082a.f40870a);
-                        jSONObject.put("a_la", c1082a.b);
+                        jSONObject.put("a_pn", c0912a.f27179a);
+                        jSONObject.put("a_la", c0912a.b);
                         jSONObject.put("ts", System.currentTimeMillis());
                         jSONArray.put(jSONObject);
                     } catch (Exception e) {
@@ -432,7 +433,7 @@ public class d {
                 if (Build.VERSION.SDK_INT >= 16) {
                     jSONObject.put("t", h.totalMem);
                 }
-                jSONObject.put("f", h.availMem);
+                jSONObject.put(FullBackup.DATA_TREE_TOKEN, h.availMem);
                 jSONObject.put("ts", System.currentTimeMillis());
                 return jSONObject;
             } catch (Exception e) {

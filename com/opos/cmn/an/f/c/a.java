@@ -6,7 +6,7 @@ import android.content.Context;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static boolean f24538a = false;
+    private static boolean f10851a = false;
 
     public static String a(Context context) {
         try {
@@ -18,10 +18,10 @@ public class a {
     }
 
     private static void b(Context context) {
-        if (f24538a) {
+        if (f10851a) {
             return;
         }
         com.oplus.stdid.sdk.a.b(context);
-        f24538a = true;
+        f10851a = true;
     }
 }

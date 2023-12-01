@@ -10,7 +10,7 @@ import java.util.List;
 public abstract class EventListener {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final EventListener f35849a = new EventListener() { // from class: com.tencent.cloud.huiyansdkface.okhttp3.EventListener.1
+    public static final EventListener f22158a = new EventListener() { // from class: com.tencent.cloud.huiyansdkface.okhttp3.EventListener.1
     };
 
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/cloud/huiyansdkface/okhttp3/EventListener$Factory.class */

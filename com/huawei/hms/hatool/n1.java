@@ -6,18 +6,18 @@ import android.content.Context;
 public class n1 {
 
     /* renamed from: a  reason: collision with root package name */
-    public k f22775a;
+    public k f9167a;
     public k b;
 
     /* renamed from: c  reason: collision with root package name */
-    public Context f22776c;
+    public Context f9168c;
     public String d;
 
     public n1(Context context) {
         if (context != null) {
-            this.f22776c = context.getApplicationContext();
+            this.f9168c = context.getApplicationContext();
         }
-        this.f22775a = new k();
+        this.f9167a = new k();
         this.b = new k();
     }
 
@@ -29,7 +29,7 @@ public class n1 {
             str2 = "";
         }
         if (i == 0) {
-            kVar = this.f22775a;
+            kVar = this.f9167a;
         } else if (i != 1) {
             z.f("hmsSdk", "Builder.setCollectURL(int type,String collectURL): invalid type!");
             return this;
@@ -49,22 +49,22 @@ public class n1 {
     @Deprecated
     public n1 a(boolean z) {
         z.c("hmsSdk", "Builder.setEnableImei(boolean isReportAndroidImei) is execute.");
-        this.f22775a.j().a(z);
+        this.f9167a.j().a(z);
         this.b.j().a(z);
         return this;
     }
 
     public void a() {
-        if (this.f22776c == null) {
+        if (this.f9168c == null) {
             z.b("hmsSdk", "analyticsConf create(): context is null,create failed!");
             return;
         }
         z.c("hmsSdk", "Builder.create() is execute.");
         k1 k1Var = new k1("_hms_config_tag");
-        k1Var.b(new k(this.f22775a));
+        k1Var.b(new k(this.f9167a));
         k1Var.a(new k(this.b));
-        i1.a().a(this.f22776c);
-        j1.a().a(this.f22776c);
+        i1.a().a(this.f9168c);
+        j1.a().a(this.f9168c);
         p1.c().a(k1Var);
         i1.a().a(this.d);
     }
@@ -72,7 +72,7 @@ public class n1 {
     @Deprecated
     public n1 b(boolean z) {
         z.c("hmsSdk", "Builder.setEnableSN(boolean isReportSN) is execute.");
-        this.f22775a.j().b(z);
+        this.f9167a.j().b(z);
         this.b.j().b(z);
         return this;
     }
@@ -80,7 +80,7 @@ public class n1 {
     @Deprecated
     public n1 c(boolean z) {
         z.c("hmsSdk", "Builder.setEnableUDID(boolean isReportUDID) is execute.");
-        this.f22775a.j().c(z);
+        this.f9167a.j().c(z);
         this.b.j().c(z);
         return this;
     }

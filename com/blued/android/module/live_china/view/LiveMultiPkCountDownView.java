@@ -12,13 +12,9 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveMultiPkCountDownView.class */
 public class LiveMultiPkCountDownView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private ImageView f14681a;
+    private ImageView a;
     private ValueAnimator b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private long f14682c;
+    private long c;
     private int d;
 
     public LiveMultiPkCountDownView(Context context) {
@@ -27,14 +23,14 @@ public class LiveMultiPkCountDownView extends FrameLayout {
 
     public LiveMultiPkCountDownView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f14682c = 600L;
+        this.c = 600L;
         this.d = 5;
         b();
     }
 
     private void b() {
         LayoutInflater.from(getContext()).inflate(R.layout.live_pk_round_count_down_view, this);
-        this.f14681a = (ImageView) findViewById(R.id.iv_round_time);
+        this.a = (ImageView) findViewById(R.id.iv_round_time);
         setVisibility(8);
     }
 
@@ -49,7 +45,7 @@ public class LiveMultiPkCountDownView extends FrameLayout {
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.3f, 1.2f, 1.0f);
         this.b = ofFloat;
         ofFloat.setInterpolator(new AccelerateDecelerateInterpolator());
-        this.b.setDuration(this.f14682c);
+        this.b.setDuration(this.c);
         this.b.addListener(new Animator.AnimatorListener() { // from class: com.blued.android.module.live_china.view.LiveMultiPkCountDownView.1
             @Override // android.animation.Animator.AnimatorListener
             public void onAnimationCancel(Animator animator) {
@@ -80,15 +76,15 @@ public class LiveMultiPkCountDownView extends FrameLayout {
             public void onAnimationStart(Animator animator) {
                 LiveMultiPkCountDownView.this.setVisibility(0);
                 if (LiveMultiPkCountDownView.this.d == 1) {
-                    LiveMultiPkCountDownView.this.f14681a.setImageResource(R.drawable.live_pk_multi_down1);
+                    LiveMultiPkCountDownView.this.a.setImageResource(R.drawable.live_pk_multi_down1);
                 } else if (LiveMultiPkCountDownView.this.d == 2) {
-                    LiveMultiPkCountDownView.this.f14681a.setImageResource(R.drawable.live_pk_multi_down2);
+                    LiveMultiPkCountDownView.this.a.setImageResource(R.drawable.live_pk_multi_down2);
                 } else if (LiveMultiPkCountDownView.this.d == 3) {
-                    LiveMultiPkCountDownView.this.f14681a.setImageResource(R.drawable.live_pk_multi_down3);
+                    LiveMultiPkCountDownView.this.a.setImageResource(R.drawable.live_pk_multi_down3);
                 } else if (LiveMultiPkCountDownView.this.d == 4) {
-                    LiveMultiPkCountDownView.this.f14681a.setImageResource(R.drawable.live_pk_multi_down4);
+                    LiveMultiPkCountDownView.this.a.setImageResource(R.drawable.live_pk_multi_down4);
                 } else if (LiveMultiPkCountDownView.this.d == 5) {
-                    LiveMultiPkCountDownView.this.f14681a.setImageResource(R.drawable.live_pk_multi_down5);
+                    LiveMultiPkCountDownView.this.a.setImageResource(R.drawable.live_pk_multi_down5);
                 }
             }
         });
@@ -96,8 +92,8 @@ public class LiveMultiPkCountDownView extends FrameLayout {
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public void onAnimationUpdate(ValueAnimator valueAnimator) {
                 float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                LiveMultiPkCountDownView.this.f14681a.setScaleX(floatValue);
-                LiveMultiPkCountDownView.this.f14681a.setScaleY(floatValue);
+                LiveMultiPkCountDownView.this.a.setScaleX(floatValue);
+                LiveMultiPkCountDownView.this.a.setScaleY(floatValue);
             }
         });
     }

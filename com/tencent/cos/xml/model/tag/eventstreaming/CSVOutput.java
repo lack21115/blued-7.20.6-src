@@ -1,6 +1,5 @@
 package com.tencent.cos.xml.model.tag.eventstreaming;
 
-import com.alipay.sdk.util.i;
 import java.io.Serializable;
 
 /* loaded from: source-8457232-dex2jar.jar:com/tencent/cos/xml/model/tag/eventstreaming/CSVOutput.class */
@@ -204,7 +203,7 @@ public class CSVOutput implements Serializable, Cloneable {
             sb.append("QuoteCharacter: ");
             sb.append(getQuoteCharacterAsString());
         }
-        sb.append(i.d);
+        sb.append("}");
         return sb.toString();
     }
 

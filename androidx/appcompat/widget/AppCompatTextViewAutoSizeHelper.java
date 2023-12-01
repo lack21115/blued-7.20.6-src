@@ -30,11 +30,11 @@ import java.util.concurrent.ConcurrentHashMap;
 public class AppCompatTextViewAutoSizeHelper {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final RectF f1804a = new RectF();
+    private static final RectF f1756a = new RectF();
     private static ConcurrentHashMap<String, Method> b = new ConcurrentHashMap<>();
 
     /* renamed from: c  reason: collision with root package name */
-    private static ConcurrentHashMap<String, Field> f1805c = new ConcurrentHashMap<>();
+    private static ConcurrentHashMap<String, Field> f1757c = new ConcurrentHashMap<>();
     private int d = 0;
     private boolean e = false;
     private float f = -1.0f;
@@ -298,14 +298,14 @@ public class AppCompatTextViewAutoSizeHelper {
 
     private static Field b(String str) {
         try {
-            Field field = f1805c.get(str);
+            Field field = f1757c.get(str);
             Field field2 = field;
             if (field == null) {
                 Field declaredField = TextView.class.getDeclaredField(str);
                 field2 = declaredField;
                 if (declaredField != null) {
                     declaredField.setAccessible(true);
-                    f1805c.put(str, declaredField);
+                    f1757c.put(str, declaredField);
                     field2 = declaredField;
                 }
             }
@@ -521,11 +521,11 @@ public class AppCompatTextViewAutoSizeHelper {
                 if (measuredWidth <= 0 || height <= 0) {
                     return;
                 }
-                synchronized (f1804a) {
-                    f1804a.setEmpty();
-                    f1804a.right = measuredWidth;
-                    f1804a.bottom = height;
-                    float a2 = a(f1804a);
+                synchronized (f1756a) {
+                    f1756a.setEmpty();
+                    f1756a.right = measuredWidth;
+                    f1756a.bottom = height;
+                    float a2 = a(f1756a);
                     if (a2 != this.l.getTextSize()) {
                         a(0, a2);
                     }

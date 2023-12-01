@@ -8,14 +8,14 @@ import java.util.concurrent.Executor;
 public final class Executors {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Executor f21100a = new Executor() { // from class: com.bumptech.glide.util.Executors.1
+    private static final Executor f7494a = new Executor() { // from class: com.bumptech.glide.util.Executors.1
 
         /* renamed from: a  reason: collision with root package name */
-        private final Handler f21101a = new Handler(Looper.getMainLooper());
+        private final Handler f7495a = new Handler(Looper.getMainLooper());
 
         @Override // java.util.concurrent.Executor
         public void execute(Runnable runnable) {
-            this.f21101a.post(runnable);
+            this.f7495a.post(runnable);
         }
     };
     private static final Executor b = new Executor() { // from class: com.bumptech.glide.util.Executors.2
@@ -29,7 +29,7 @@ public final class Executors {
     }
 
     public static Executor a() {
-        return f21100a;
+        return f7494a;
     }
 
     public static Executor b() {

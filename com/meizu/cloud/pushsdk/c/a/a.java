@@ -6,21 +6,21 @@ import com.meizu.cloud.pushinternal.DebugLogger;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static boolean f23997a = false;
+    private static boolean f10386a = false;
     private static String b = "AndroidNetworking";
 
     public static void a() {
-        f23997a = true;
+        f10386a = true;
     }
 
     public static void a(String str) {
-        if (f23997a) {
+        if (f10386a) {
             DebugLogger.d(b, str);
         }
     }
 
     public static void b(String str) {
-        if (f23997a) {
+        if (f10386a) {
             DebugLogger.i(b, str);
         }
     }

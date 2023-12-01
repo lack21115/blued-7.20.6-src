@@ -8,7 +8,7 @@ import java.util.Set;
 public class ArrayMap<K, V> extends SimpleArrayMap<K, V> implements Map<K, V> {
 
     /* renamed from: a  reason: collision with root package name */
-    MapCollections<K, V> f1940a;
+    MapCollections<K, V> f1892a;
 
     public ArrayMap() {
     }
@@ -22,8 +22,8 @@ public class ArrayMap<K, V> extends SimpleArrayMap<K, V> implements Map<K, V> {
     }
 
     private MapCollections<K, V> b() {
-        if (this.f1940a == null) {
-            this.f1940a = new MapCollections<K, V>() { // from class: androidx.collection.ArrayMap.1
+        if (this.f1892a == null) {
+            this.f1892a = new MapCollections<K, V>() { // from class: androidx.collection.ArrayMap.1
                 @Override // androidx.collection.MapCollections
                 protected int a() {
                     return ArrayMap.this.h;
@@ -70,7 +70,7 @@ public class ArrayMap<K, V> extends SimpleArrayMap<K, V> implements Map<K, V> {
                 }
             };
         }
-        return this.f1940a;
+        return this.f1892a;
     }
 
     public boolean containsAll(Collection<?> collection) {

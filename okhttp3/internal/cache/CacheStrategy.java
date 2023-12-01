@@ -1,6 +1,5 @@
 package okhttp3.internal.cache;
 
-import com.google.common.net.HttpHeaders;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Nullable;
@@ -10,25 +9,20 @@ import okhttp3.Request;
 import okhttp3.Response;
 import okhttp3.internal.Internal;
 import okhttp3.internal.http.HttpDate;
+import okhttp3.internal.http.HttpHeaders;
 
 /* loaded from: source-3503164-dex2jar.jar:okhttp3/internal/cache/CacheStrategy.class */
 public final class CacheStrategy {
     @Nullable
-
-    /* renamed from: a  reason: collision with root package name */
-    public final Request f43846a;
+    public final Request a;
     @Nullable
     public final Response b;
 
     /* loaded from: source-3503164-dex2jar.jar:okhttp3/internal/cache/CacheStrategy$Factory.class */
     public static class Factory {
-
-        /* renamed from: a  reason: collision with root package name */
-        final long f43847a;
+        final long a;
         final Request b;
-
-        /* renamed from: c  reason: collision with root package name */
-        final Response f43848c;
+        final Response c;
         private Date d;
         private String e;
         private Date f;
@@ -41,9 +35,9 @@ public final class CacheStrategy {
 
         public Factory(long j, Request request, Response response) {
             this.l = -1;
-            this.f43847a = j;
+            this.a = j;
             this.b = request;
-            this.f43848c = response;
+            this.c = response;
             if (response != null) {
                 this.i = response.sentRequestAtMillis();
                 this.j = response.receivedResponseAtMillis();
@@ -62,8 +56,8 @@ public final class CacheStrategy {
                         this.g = value;
                     } else if ("ETag".equalsIgnoreCase(name)) {
                         this.k = value;
-                    } else if (HttpHeaders.AGE.equalsIgnoreCase(name)) {
-                        this.l = okhttp3.internal.http.HttpHeaders.b(value, -1);
+                    } else if ("Age".equalsIgnoreCase(name)) {
+                        this.l = HttpHeaders.b(value, -1);
                     }
                 }
             }
@@ -74,20 +68,20 @@ public final class CacheStrategy {
         }
 
         private CacheStrategy b() {
-            if (this.f43848c == null) {
+            if (this.c == null) {
                 return new CacheStrategy(this.b, null);
             }
-            if ((!this.b.isHttps() || this.f43848c.handshake() != null) && CacheStrategy.a(this.f43848c, this.b)) {
+            if ((!this.b.isHttps() || this.c.handshake() != null) && CacheStrategy.a(this.c, this.b)) {
                 CacheControl cacheControl = this.b.cacheControl();
                 if (cacheControl.noCache() || a(this.b)) {
                     return new CacheStrategy(this.b, null);
                 }
-                CacheControl cacheControl2 = this.f43848c.cacheControl();
+                CacheControl cacheControl2 = this.c.cacheControl();
                 long d = d();
-                long c2 = c();
-                long j = c2;
+                long c = c();
+                long j = c;
                 if (cacheControl.maxAgeSeconds() != -1) {
-                    j = Math.min(c2, TimeUnit.SECONDS.toMillis(cacheControl.maxAgeSeconds()));
+                    j = Math.min(c, TimeUnit.SECONDS.toMillis(cacheControl.maxAgeSeconds()));
                 }
                 long millis = cacheControl.minFreshSeconds() != -1 ? TimeUnit.SECONDS.toMillis(cacheControl.minFreshSeconds()) : 0L;
                 long j2 = 0;
@@ -100,12 +94,12 @@ public final class CacheStrategy {
                 if (!cacheControl2.noCache()) {
                     long j3 = millis + d;
                     if (j3 < j2 + j) {
-                        Response.Builder newBuilder = this.f43848c.newBuilder();
+                        Response.Builder newBuilder = this.c.newBuilder();
                         if (j3 >= j) {
-                            newBuilder.addHeader(HttpHeaders.WARNING, "110 HttpURLConnection \"Response is stale\"");
+                            newBuilder.addHeader("Warning", "110 HttpURLConnection \"Response is stale\"");
                         }
                         if (d > 86400000 && e()) {
-                            newBuilder.addHeader(HttpHeaders.WARNING, "113 HttpURLConnection \"Heuristic expiration\"");
+                            newBuilder.addHeader("Warning", "113 HttpURLConnection \"Heuristic expiration\"");
                         }
                         return new CacheStrategy(null, newBuilder.build());
                     }
@@ -123,14 +117,14 @@ public final class CacheStrategy {
                 }
                 Headers.Builder newBuilder2 = this.b.headers().newBuilder();
                 Internal.instance.addLenient(newBuilder2, str2, str);
-                return new CacheStrategy(this.b.newBuilder().headers(newBuilder2.build()).build(), this.f43848c);
+                return new CacheStrategy(this.b.newBuilder().headers(newBuilder2.build()).build(), this.c);
             }
             return new CacheStrategy(this.b, null);
         }
 
         private long c() {
             CacheControl cacheControl;
-            if (this.f43848c.cacheControl().maxAgeSeconds() != -1) {
+            if (this.c.cacheControl().maxAgeSeconds() != -1) {
                 return TimeUnit.SECONDS.toMillis(cacheControl.maxAgeSeconds());
             }
             long j = 0;
@@ -145,7 +139,7 @@ public final class CacheStrategy {
             long j2 = 0;
             if (this.f != null) {
                 j2 = 0;
-                if (this.f43848c.request().url().query() == null) {
+                if (this.c.request().url().query() == null) {
                     Date date2 = this.d;
                     long time2 = (date2 != null ? date2.getTime() : this.i) - this.f.getTime();
                     j2 = 0;
@@ -168,17 +162,17 @@ public final class CacheStrategy {
                 j2 = Math.max(j, TimeUnit.SECONDS.toMillis(this.l));
             }
             long j3 = this.j;
-            return j2 + (j3 - this.i) + (this.f43847a - j3);
+            return j2 + (j3 - this.i) + (this.a - j3);
         }
 
         private boolean e() {
-            return this.f43848c.cacheControl().maxAgeSeconds() == -1 && this.h == null;
+            return this.c.cacheControl().maxAgeSeconds() == -1 && this.h == null;
         }
 
         public CacheStrategy a() {
             CacheStrategy b = b();
             CacheStrategy cacheStrategy = b;
-            if (b.f43846a != null) {
+            if (b.a != null) {
                 cacheStrategy = b;
                 if (this.b.cacheControl().onlyIfCached()) {
                     cacheStrategy = new CacheStrategy(null, null);
@@ -189,7 +183,7 @@ public final class CacheStrategy {
     }
 
     CacheStrategy(Request request, Response response) {
-        this.f43846a = request;
+        this.a = request;
         this.b = response;
     }
 

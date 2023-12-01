@@ -2,18 +2,14 @@ package com.amap.api.services.route;
 
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/services/route/Cost.class */
 public class Cost {
-
-    /* renamed from: a  reason: collision with root package name */
-    private float f5684a;
+    private float a;
     private float b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f5685c;
+    private String c;
     private float d;
     private int e;
 
     public float getDuration() {
-        return this.f5684a;
+        return this.a;
     }
 
     public float getTollDistance() {
@@ -21,7 +17,7 @@ public class Cost {
     }
 
     public String getTollRoad() {
-        return this.f5685c;
+        return this.c;
     }
 
     public float getTolls() {
@@ -33,7 +29,7 @@ public class Cost {
     }
 
     public void setDuration(float f) {
-        this.f5684a = f;
+        this.a = f;
     }
 
     public void setTollDistance(float f) {
@@ -41,7 +37,7 @@ public class Cost {
     }
 
     public void setTollRoad(String str) {
-        this.f5685c = str;
+        this.c = str;
     }
 
     public void setTolls(float f) {

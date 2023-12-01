@@ -14,18 +14,18 @@ import java.util.concurrent.TimeUnit;
 public final class CacheStrategy {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Request f35910a;
+    public final Request f22219a;
     public final Response b;
 
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/cloud/huiyansdkface/okhttp3/internal/cache/CacheStrategy$Factory.class */
     public static class Factory {
 
         /* renamed from: a  reason: collision with root package name */
-        final long f35911a;
+        final long f22220a;
         final Request b;
 
         /* renamed from: c  reason: collision with root package name */
-        final Response f35912c;
+        final Response f22221c;
         private Date d;
         private String e;
         private Date f;
@@ -38,9 +38,9 @@ public final class CacheStrategy {
 
         public Factory(long j, Request request, Response response) {
             this.l = -1;
-            this.f35911a = j;
+            this.f22220a = j;
             this.b = request;
-            this.f35912c = response;
+            this.f22221c = response;
             if (response != null) {
                 this.i = response.sentRequestAtMillis();
                 this.j = response.receivedResponseAtMillis();
@@ -67,15 +67,15 @@ public final class CacheStrategy {
         }
 
         private CacheStrategy a() {
-            if (this.f35912c == null) {
+            if (this.f22221c == null) {
                 return new CacheStrategy(this.b, null);
             }
-            if ((!this.b.isHttps() || this.f35912c.handshake() != null) && CacheStrategy.isCacheable(this.f35912c, this.b)) {
+            if ((!this.b.isHttps() || this.f22221c.handshake() != null) && CacheStrategy.isCacheable(this.f22221c, this.b)) {
                 CacheControl cacheControl = this.b.cacheControl();
                 if (cacheControl.noCache() || a(this.b)) {
                     return new CacheStrategy(this.b, null);
                 }
-                CacheControl cacheControl2 = this.f35912c.cacheControl();
+                CacheControl cacheControl2 = this.f22221c.cacheControl();
                 long c2 = c();
                 long b = b();
                 long j = b;
@@ -93,7 +93,7 @@ public final class CacheStrategy {
                 if (!cacheControl2.noCache()) {
                     long j3 = millis + c2;
                     if (j3 < j2 + j) {
-                        Response.Builder newBuilder = this.f35912c.newBuilder();
+                        Response.Builder newBuilder = this.f22221c.newBuilder();
                         if (j3 >= j) {
                             newBuilder.addHeader(HttpHeaders.WARNING, "110 HttpURLConnection \"Response is stale\"");
                         }
@@ -115,8 +115,8 @@ public final class CacheStrategy {
                     str = this.e;
                 }
                 Headers.Builder newBuilder2 = this.b.headers().newBuilder();
-                Internal.f35902a.addLenient(newBuilder2, str2, str);
-                return new CacheStrategy(this.b.newBuilder().headers(newBuilder2.build()).build(), this.f35912c);
+                Internal.f22211a.addLenient(newBuilder2, str2, str);
+                return new CacheStrategy(this.b.newBuilder().headers(newBuilder2.build()).build(), this.f22221c);
             }
             return new CacheStrategy(this.b, null);
         }
@@ -127,7 +127,7 @@ public final class CacheStrategy {
 
         private long b() {
             CacheControl cacheControl;
-            if (this.f35912c.cacheControl().maxAgeSeconds() != -1) {
+            if (this.f22221c.cacheControl().maxAgeSeconds() != -1) {
                 return TimeUnit.SECONDS.toMillis(cacheControl.maxAgeSeconds());
             }
             long j = 0;
@@ -142,7 +142,7 @@ public final class CacheStrategy {
             long j2 = 0;
             if (this.f != null) {
                 j2 = 0;
-                if (this.f35912c.request().url().query() == null) {
+                if (this.f22221c.request().url().query() == null) {
                     Date date2 = this.d;
                     long time2 = (date2 != null ? date2.getTime() : this.i) - this.f.getTime();
                     j2 = 0;
@@ -165,17 +165,17 @@ public final class CacheStrategy {
                 j2 = Math.max(j, TimeUnit.SECONDS.toMillis(this.l));
             }
             long j3 = this.j;
-            return j2 + (j3 - this.i) + (this.f35911a - j3);
+            return j2 + (j3 - this.i) + (this.f22220a - j3);
         }
 
         private boolean d() {
-            return this.f35912c.cacheControl().maxAgeSeconds() == -1 && this.h == null;
+            return this.f22221c.cacheControl().maxAgeSeconds() == -1 && this.h == null;
         }
 
         public CacheStrategy get() {
             CacheStrategy a2 = a();
             CacheStrategy cacheStrategy = a2;
-            if (a2.f35910a != null) {
+            if (a2.f22219a != null) {
                 cacheStrategy = a2;
                 if (this.b.cacheControl().onlyIfCached()) {
                     cacheStrategy = new CacheStrategy(null, null);
@@ -186,7 +186,7 @@ public final class CacheStrategy {
     }
 
     CacheStrategy(Request request, Response response) {
-        this.f35910a = request;
+        this.f22219a = request;
         this.b = response;
     }
 

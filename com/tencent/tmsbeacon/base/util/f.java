@@ -1,12 +1,14 @@
 package com.tencent.tmsbeacon.base.util;
 
 import android.text.TextUtils;
+import com.huawei.hms.framework.common.ContainerUtils;
+import com.huawei.openalliance.ad.constant.t;
 import java.nio.charset.Charset;
 
 /* loaded from: source-8829756-dex2jar.jar:com/tencent/tmsbeacon/base/util/f.class */
 public class f {
     public static String a(String str) {
-        return str.trim().replace(" ", "").replace("\t", "").replace("&", "").replace(":", "").replace("=", "").replace(";", "");
+        return str.trim().replace(" ", "").replace("\t", "").replace(ContainerUtils.FIELD_DELIMITER, "").replace(":", "").replace("=", "").replace(t.aE, "");
     }
 
     public static void a(String[] strArr) {

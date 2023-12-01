@@ -2,12 +2,12 @@ package com.tencent.tinker.lib.library;
 
 import android.content.Context;
 import android.os.Build;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.tinker.entry.ApplicationLike;
 import com.tencent.tinker.lib.tinker.Tinker;
 import com.tencent.tinker.lib.tinker.TinkerApplicationHelper;
 import com.tencent.tinker.lib.tinker.TinkerLoadResult;
 import com.tencent.tinker.loader.TinkerRuntimeException;
+import com.tencent.tinker.loader.shareutil.ShareConstants;
 import com.tencent.tinker.loader.shareutil.SharePatchFileUtil;
 import com.tencent.tinker.loader.shareutil.ShareReflectUtil;
 import com.tencent.tinker.loader.shareutil.ShareTinkerInternals;
@@ -179,7 +179,7 @@ public class TinkerLoadLibrary {
             ShareTinkerLog.e(TAG, "failed to get current patch directory.", new Object[0]);
             return false;
         }
-        File file = new File(patchDirectory.getAbsolutePath() + BridgeUtil.SPLIT_MARK + SharePatchFileUtil.getPatchVersionDirectory(currentVersion));
+        File file = new File(patchDirectory.getAbsolutePath() + "/" + SharePatchFileUtil.getPatchVersionDirectory(currentVersion));
         File file2 = new File(file.getAbsolutePath() + "/lib/lib/" + str);
         if (!file2.exists()) {
             ShareTinkerLog.e(TAG, "tinker lib path [%s] is not exists.", file2);
@@ -316,13 +316,13 @@ public class TinkerLoadLibrary {
 
     public static boolean loadLibraryFromTinker(Context context, String str, String str2) throws UnsatisfiedLinkError {
         Tinker with = Tinker.with(context);
-        if (!str2.startsWith("lib")) {
-            str2 = "lib" + str2;
+        if (!str2.startsWith(ShareConstants.SO_PATH)) {
+            str2 = ShareConstants.SO_PATH + str2;
         }
         if (!str2.endsWith(".so")) {
             str2 = str2 + ".so";
         }
-        String str3 = str + BridgeUtil.SPLIT_MARK + str2;
+        String str3 = str + "/" + str2;
         if (with.isEnabledForNativeLib() && with.isTinkerLoaded()) {
             TinkerLoadResult tinkerLoadResultIfPresent = with.getTinkerLoadResultIfPresent();
             if (tinkerLoadResultIfPresent.libs == null) {
@@ -330,7 +330,7 @@ public class TinkerLoadLibrary {
             }
             for (String str4 : tinkerLoadResultIfPresent.libs.keySet()) {
                 if (str4.equals(str3)) {
-                    String str5 = tinkerLoadResultIfPresent.libraryDirectory + BridgeUtil.SPLIT_MARK + str4;
+                    String str5 = tinkerLoadResultIfPresent.libraryDirectory + "/" + str4;
                     File file = new File(str5);
                     if (!file.exists()) {
                         continue;

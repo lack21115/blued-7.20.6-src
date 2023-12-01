@@ -6,14 +6,14 @@ import android.util.Base64;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f21513a = "Y29tLm9uZXBsdXMubWFya2V0";
+    public static final String f7907a = "Y29tLm9uZXBsdXMubWFya2V0";
     public static final String b = "Y29tLm9wcG8ubWFya2V0";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f21514c = "b3Bwbw==";
+    public static final String f7908c = "b3Bwbw==";
 
     public static String a() {
-        return b(f21513a);
+        return b(f7907a);
     }
 
     public static String a(String str) {
@@ -29,6 +29,6 @@ public class a {
     }
 
     public static String c() {
-        return b(f21514c);
+        return b(f7908c);
     }
 }

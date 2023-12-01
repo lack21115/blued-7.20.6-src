@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class DialogPageBindingEmailBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f28711a;
+    private final LinearLayout f15021a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f28711a;
+        return this.f15021a;
     }
 }

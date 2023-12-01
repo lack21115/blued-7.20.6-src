@@ -2,8 +2,6 @@ package android.content;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.alipay.sdk.util.i;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.io.PrintWriter;
 
 /* loaded from: source-9557208-dex2jar.jar:android/content/ComponentName.class */
@@ -133,7 +131,7 @@ public final class ComponentName implements Parcelable, Cloneable, Comparable<Co
     }
 
     /* renamed from: clone */
-    public ComponentName m182clone() {
+    public ComponentName m180clone() {
         return new ComponentName(this.mPackage, this.mClass);
     }
 
@@ -174,7 +172,7 @@ public final class ComponentName implements Parcelable, Cloneable, Comparable<Co
     }
 
     public String flattenToString() {
-        return this.mPackage + BridgeUtil.SPLIT_MARK + this.mClass;
+        return this.mPackage + "/" + this.mClass;
     }
 
     public String getClassName() {
@@ -237,11 +235,11 @@ public final class ComponentName implements Parcelable, Cloneable, Comparable<Co
     }
 
     public String toShortString() {
-        return "{" + this.mPackage + BridgeUtil.SPLIT_MARK + this.mClass + i.d;
+        return "{" + this.mPackage + "/" + this.mClass + "}";
     }
 
     public String toString() {
-        return "ComponentInfo{" + this.mPackage + BridgeUtil.SPLIT_MARK + this.mClass + i.d;
+        return "ComponentInfo{" + this.mPackage + "/" + this.mClass + "}";
     }
 
     @Override // android.os.Parcelable

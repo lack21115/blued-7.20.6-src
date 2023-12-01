@@ -3,6 +3,11 @@ package com.alipay.android.phone.mrpc.core;
 import android.net.SSLCertificateSocketFactory;
 import android.util.Base64;
 import android.util.Log;
+import android.view.Window;
+import com.alibaba.fastjson.support.spring.FastJsonJsonView;
+import com.blued.android.module.yy_china.model.YYGiftPackageModel;
+import com.efs.sdk.base.Constants;
+import io.grpc.internal.GrpcUtil;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.net.URI;
@@ -42,16 +47,12 @@ import org.apache.http.protocol.HttpContext;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alipay/android/phone/mrpc/core/b.class */
 public final class b implements HttpClient {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static long f4517a = 160;
-    private static String[] b = {"text/", "application/xml", "application/json"};
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final HttpRequestInterceptor f4518c = new c();
+    public static long a = 160;
+    private static String[] b = {"text/", "application/xml", FastJsonJsonView.DEFAULT_CONTENT_TYPE};
+    private static final HttpRequestInterceptor c = new c();
     private final HttpClient d;
     private RuntimeException e = new IllegalStateException("AndroidHttpClient created and never closed");
-    private volatile C0045b f;
+    private volatile C0005b f;
 
     /* loaded from: source-6737240-dex2jar.jar:com/alipay/android/phone/mrpc/core/b$a.class */
     final class a implements HttpRequestInterceptor {
@@ -64,27 +65,25 @@ public final class b implements HttpClient {
         }
 
         public final void process(HttpRequest httpRequest, HttpContext httpContext) {
-            C0045b c0045b = b.this.f;
-            if (c0045b != null && C0045b.a(c0045b) && (httpRequest instanceof HttpUriRequest)) {
-                C0045b.a(c0045b, b.a((HttpUriRequest) httpRequest));
+            C0005b c0005b = b.this.f;
+            if (c0005b != null && C0005b.a(c0005b) && (httpRequest instanceof HttpUriRequest)) {
+                C0005b.a(c0005b, b.a((HttpUriRequest) httpRequest));
             }
         }
     }
 
     /* renamed from: com.alipay.android.phone.mrpc.core.b$b  reason: collision with other inner class name */
     /* loaded from: source-6737240-dex2jar.jar:com/alipay/android/phone/mrpc/core/b$b.class */
-    static final class C0045b {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final String f4520a;
+    static final class C0005b {
+        private final String a;
         private final int b;
 
-        static /* synthetic */ void a(C0045b c0045b, String str) {
-            Log.println(c0045b.b, c0045b.f4520a, str);
+        static /* synthetic */ void a(C0005b c0005b, String str) {
+            Log.println(c0005b.b, c0005b.a, str);
         }
 
-        static /* synthetic */ boolean a(C0045b c0045b) {
-            return Log.isLoggable(c0045b.f4520a, c0045b.b);
+        static /* synthetic */ boolean a(C0005b c0005b) {
+            return Log.isLoggable(c0005b.a, c0005b.b);
         }
     }
 
@@ -97,7 +96,7 @@ public final class b implements HttpClient {
         HttpProtocolParams.setVersion(basicHttpParams, HttpVersion.HTTP_1_1);
         HttpProtocolParams.setUseExpectContinue(basicHttpParams, false);
         HttpConnectionParams.setStaleCheckingEnabled(basicHttpParams, true);
-        HttpConnectionParams.setConnectionTimeout(basicHttpParams, 20000);
+        HttpConnectionParams.setConnectionTimeout(basicHttpParams, Window.PROGRESS_SECONDARY_START);
         HttpConnectionParams.setSoTimeout(basicHttpParams, 30000);
         HttpConnectionParams.setSocketBufferSize(basicHttpParams, 8192);
         HttpClientParams.setRedirecting(basicHttpParams, true);
@@ -105,12 +104,12 @@ public final class b implements HttpClient {
         HttpProtocolParams.setUserAgent(basicHttpParams, str);
         SchemeRegistry schemeRegistry = new SchemeRegistry();
         schemeRegistry.register(new Scheme("http", PlainSocketFactory.getSocketFactory(), 80));
-        schemeRegistry.register(new Scheme("https", SSLCertificateSocketFactory.getHttpSocketFactory(30000, null), 443));
+        schemeRegistry.register(new Scheme(com.alipay.sdk.cons.b.a, SSLCertificateSocketFactory.getHttpSocketFactory(30000, null), (int) GrpcUtil.DEFAULT_PORT_SSL));
         ThreadSafeClientConnManager threadSafeClientConnManager = new ThreadSafeClientConnManager(basicHttpParams, schemeRegistry);
         ConnManagerParams.setTimeout(basicHttpParams, 60000L);
         ConnManagerParams.setMaxConnectionsPerRoute(basicHttpParams, new ConnPerRouteBean(10));
         ConnManagerParams.setMaxTotalConnections(basicHttpParams, 50);
-        Security.setProperty("networkaddress.cache.ttl", "-1");
+        Security.setProperty("networkaddress.cache.ttl", YYGiftPackageModel.YY_GIFT_BAG_TYPE_ID);
         HttpsURLConnection.setDefaultHostnameVerifier(SSLSocketFactory.STRICT_HOSTNAME_VERIFIER);
         return new b(threadSafeClientConnManager, basicHttpParams);
     }
@@ -121,7 +120,7 @@ public final class b implements HttpClient {
         InputStream content = httpEntity.getContent();
         if (content != null && (contentEncoding = httpEntity.getContentEncoding()) != null && (value = contentEncoding.getValue()) != null) {
             GZIPInputStream gZIPInputStream = content;
-            if (value.contains("gzip")) {
+            if (value.contains(Constants.CP_GZIP)) {
                 gZIPInputStream = new GZIPInputStream(content);
             }
             return gZIPInputStream;
@@ -185,7 +184,7 @@ public final class b implements HttpClient {
     }
 
     public static AbstractHttpEntity a(byte[] bArr) {
-        if (bArr.length < f4517a) {
+        if (bArr.length < a) {
             return new ByteArrayEntity(bArr);
         }
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
@@ -193,7 +192,7 @@ public final class b implements HttpClient {
         gZIPOutputStream.write(bArr);
         gZIPOutputStream.close();
         ByteArrayEntity byteArrayEntity = new ByteArrayEntity(byteArrayOutputStream.toByteArray());
-        byteArrayEntity.setContentEncoding("gzip");
+        byteArrayEntity.setContentEncoding(Constants.CP_GZIP);
         StringBuilder sb = new StringBuilder("gzip size:");
         sb.append(bArr.length);
         sb.append("->");
@@ -202,7 +201,7 @@ public final class b implements HttpClient {
     }
 
     public static void a(HttpRequest httpRequest) {
-        httpRequest.addHeader("Accept-Encoding", "gzip");
+        httpRequest.addHeader("Accept-Encoding", Constants.CP_GZIP);
     }
 
     public static long b(String str) {
@@ -210,11 +209,11 @@ public final class b implements HttpClient {
     }
 
     public static void b(HttpRequest httpRequest) {
-        httpRequest.addHeader("Connection", com.anythink.expressad.foundation.g.f.g.c.f7906c);
+        httpRequest.addHeader("Connection", "Keep-Alive");
     }
 
     private static boolean b(HttpUriRequest httpUriRequest) {
-        Header[] headers = httpUriRequest.getHeaders("content-encoding");
+        Header[] headers = httpUriRequest.getHeaders(GrpcUtil.CONTENT_ENCODING);
         if (headers != null) {
             int length = headers.length;
             int i = 0;
@@ -222,14 +221,14 @@ public final class b implements HttpClient {
                 int i2 = i;
                 if (i2 >= length) {
                     break;
-                } else if ("gzip".equalsIgnoreCase(headers[i2].getValue())) {
+                } else if (Constants.CP_GZIP.equalsIgnoreCase(headers[i2].getValue())) {
                     return true;
                 } else {
                     i = i2 + 1;
                 }
             }
         }
-        Header[] headers2 = httpUriRequest.getHeaders("content-type");
+        Header[] headers2 = httpUriRequest.getHeaders(com.alipay.sdk.packet.e.d);
         if (headers2 == null) {
             return true;
         }

@@ -1,5 +1,6 @@
 package com.blued.android.framework.ui.custom;
 
+import android.app.Activity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
@@ -10,13 +11,9 @@ import com.blued.android.framework.utils.KeyboardUtils;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/ui/custom/MvpKeyBoardFragment.class */
 public abstract class MvpKeyBoardFragment<T extends MvpPresenter> extends MvpFragment<T> {
-
-    /* renamed from: a  reason: collision with root package name */
-    public KeyboardListenLinearLayout f9879a;
+    public KeyboardListenLinearLayout a;
     public View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public EditText f9880c;
+    public EditText c;
     public View d;
     public View e;
     public boolean f;
@@ -33,27 +30,27 @@ public abstract class MvpKeyBoardFragment<T extends MvpPresenter> extends MvpFra
 
     public void a(View view, KeyboardListenLinearLayout keyboardListenLinearLayout, EditText editText, View view2) {
         this.b = view;
-        this.f9879a = keyboardListenLinearLayout;
-        this.f9880c = editText;
+        this.a = keyboardListenLinearLayout;
+        this.c = editText;
         this.d = view2;
         c();
     }
 
     public void a(KeyboardListenLinearLayout keyboardListenLinearLayout) {
-        this.f9879a = keyboardListenLinearLayout;
+        this.a = keyboardListenLinearLayout;
         b();
     }
 
     @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public void af_() {
         super.af_();
-        KeyboardListenLinearLayout keyboardListenLinearLayout = this.f9879a;
+        KeyboardListenLinearLayout keyboardListenLinearLayout = this.a;
         if (keyboardListenLinearLayout != null) {
             keyboardListenLinearLayout.setOnKeyboardStateChangedListener(null);
         }
-        this.f9879a = null;
+        this.a = null;
         this.b = null;
-        this.f9880c = null;
+        this.c = null;
         this.d = null;
         this.e = null;
         this.f = false;
@@ -61,7 +58,7 @@ public abstract class MvpKeyBoardFragment<T extends MvpPresenter> extends MvpFra
     }
 
     protected void b() {
-        this.f9879a.setOnKeyboardStateChangedListener(new KeyboardListenLinearLayout.IOnKeyboardStateChangedListener() { // from class: com.blued.android.framework.ui.custom.MvpKeyBoardFragment.1
+        this.a.setOnKeyboardStateChangedListener(new KeyboardListenLinearLayout.IOnKeyboardStateChangedListener() { // from class: com.blued.android.framework.ui.custom.MvpKeyBoardFragment.1
             @Override // com.blued.android.framework.ui.custom.KeyboardListenLinearLayout.IOnKeyboardStateChangedListener
             public void a(int i) {
                 if (i == -3) {
@@ -81,7 +78,7 @@ public abstract class MvpKeyBoardFragment<T extends MvpPresenter> extends MvpFra
     }
 
     protected void c() {
-        this.f9879a.setOnKeyboardStateChangedListener(new KeyboardListenLinearLayout.IOnKeyboardStateChangedListener() { // from class: com.blued.android.framework.ui.custom.MvpKeyBoardFragment.2
+        this.a.setOnKeyboardStateChangedListener(new KeyboardListenLinearLayout.IOnKeyboardStateChangedListener() { // from class: com.blued.android.framework.ui.custom.MvpKeyBoardFragment.2
             @Override // com.blued.android.framework.ui.custom.KeyboardListenLinearLayout.IOnKeyboardStateChangedListener
             public void a(int i) {
                 if (i != -3) {
@@ -117,16 +114,16 @@ public abstract class MvpKeyBoardFragment<T extends MvpPresenter> extends MvpFra
 
     public void e() {
         if (this.b.getVisibility() == 0) {
-            this.f9880c.setFocusable(true);
-            this.f9880c.setFocusableInTouchMode(true);
-            this.f9880c.requestFocus();
+            this.c.setFocusable(true);
+            this.c.setFocusableInTouchMode(true);
+            this.c.requestFocus();
             KeyboardUtils.c(getActivity());
             d();
             return;
         }
         this.b.setVisibility(0);
         this.d.setVisibility(0);
-        KeyboardUtils.a(getActivity());
+        KeyboardUtils.a((Activity) getActivity());
         d();
         a(-4);
     }

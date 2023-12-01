@@ -5,7 +5,7 @@ public abstract class AbsLog implements ILogProtocol {
     private String cp = "none";
 
     /* renamed from: de  reason: collision with root package name */
-    private byte f21798de = 1;
+    private byte f60de = 1;
     private String logType;
 
     public AbsLog(String str) {
@@ -22,7 +22,7 @@ public abstract class AbsLog implements ILogProtocol {
     }
 
     public boolean isDe() {
-        return this.f21798de != 1;
+        return this.f60de != 1;
     }
 
     public void setCp(String str) {
@@ -30,6 +30,6 @@ public abstract class AbsLog implements ILogProtocol {
     }
 
     public void setDe(byte b) {
-        this.f21798de = b;
+        this.f60de = b;
     }
 }

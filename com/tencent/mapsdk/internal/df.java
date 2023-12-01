@@ -128,17 +128,17 @@ public class df extends ze<r0> implements r0 {
         public float b;
 
         /* renamed from: c  reason: collision with root package name */
-        public int f37396c;
+        public int f23705c;
 
         public d() {
             this.b = 0.0f;
-            this.f37396c = 0;
+            this.f23705c = 0;
         }
 
         public d(GeoPoint geoPoint) {
             super(geoPoint);
             this.b = 0.0f;
-            this.f37396c = 0;
+            this.f23705c = 0;
         }
 
         @Override // com.tencent.map.lib.models.GeoPoint
@@ -151,27 +151,27 @@ public class df extends ze<r0> implements r0 {
     public static class e {
 
         /* renamed from: a  reason: collision with root package name */
-        public int[] f37397a;
+        public int[] f23706a;
         public int[] b;
 
         /* renamed from: c  reason: collision with root package name */
-        public int f37398c;
+        public int f23707c;
         public int d;
 
         public e(int i) {
             this.d = i;
-            this.f37397a = new int[i];
+            this.f23706a = new int[i];
             this.b = new int[i];
         }
 
         public void a(int i, int i2) {
-            int i3 = this.f37398c;
+            int i3 = this.f23707c;
             if (i3 >= this.d) {
                 return;
             }
-            this.f37397a[i3] = i;
+            this.f23706a[i3] = i;
             this.b[i3] = i2;
-            this.f37398c = i3 + 1;
+            this.f23707c = i3 + 1;
         }
     }
 
@@ -249,7 +249,7 @@ public class df extends ze<r0> implements r0 {
         }
         int[] M = M();
         if (this.X) {
-            t5Var.c(a2.f37397a);
+            t5Var.c(a2.f23706a);
             if (this.G <= 0.0f || M == null || M.length <= 0) {
                 t5Var.d(a2.b);
             } else {
@@ -585,7 +585,7 @@ public class df extends ze<r0> implements r0 {
                             float f7 = dVar.b;
                             if (f7 < f4) {
                                 d a2 = a(dVar, dVar2, (f4 - f7) / (f6 - f7));
-                                a2.f37396c = dVar.f37396c;
+                                a2.f23705c = dVar.f23705c;
                                 arrayList.add(a2);
                             }
                         }
@@ -595,7 +595,7 @@ public class df extends ze<r0> implements r0 {
                             float f8 = dVar.b;
                             if (f8 < f5) {
                                 d a3 = a(dVar, dVar2, (f5 - f8) / (f6 - f8));
-                                a3.f37396c = dVar2.f37396c;
+                                a3.f23705c = dVar2.f23705c;
                                 arrayList.add(a3);
                                 return arrayList;
                             }
@@ -908,7 +908,7 @@ public class df extends ze<r0> implements r0 {
                     float a2 = this.Y + a(dVar, geoPoint);
                     this.Y = a2;
                     dVar.b = a2;
-                    dVar.f37396c = geoPoint.f37396c + 1;
+                    dVar.f23705c = geoPoint.f23705c + 1;
                 }
                 this.E.add(dVar);
                 geoPoint = dVar;
@@ -1213,7 +1213,7 @@ public class df extends ze<r0> implements r0 {
         this.X = polylineOptions.isRoad();
         Animation animation = polylineOptions.getAnimation();
         if (animation != null) {
-            a(((j7) animation).f37563a);
+            a(((j7) animation).f23872a);
         }
         int[][] colors = polylineOptions.getColors();
         if (colors != null && colors.length == 2) {
@@ -1272,7 +1272,7 @@ public class df extends ze<r0> implements r0 {
         if (this.i0 == null || (a2 = i8.a(this.H.V(), this.i0)) == null) {
             return false;
         }
-        a(a2.f37563a);
+        a(a2.f23872a);
         return false;
     }
 }

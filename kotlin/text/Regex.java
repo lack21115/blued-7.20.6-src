@@ -14,9 +14,7 @@ import kotlin.ranges.RangesKt;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/text/Regex.class */
 public final class Regex implements Serializable {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f42730a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private final Pattern b;
 
     @Metadata
@@ -33,14 +31,10 @@ public final class Regex implements Serializable {
     @Metadata
     /* loaded from: source-3503164-dex2jar.jar:kotlin/text/Regex$Serialized.class */
     static final class Serialized implements Serializable {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static final Companion f42732a = new Companion(null);
+        public static final Companion a = new Companion(null);
         private static final long serialVersionUID = 0;
         private final String b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private final int f42733c;
+        private final int c;
 
         @Metadata
         /* loaded from: source-3503164-dex2jar.jar:kotlin/text/Regex$Serialized$Companion.class */
@@ -56,11 +50,11 @@ public final class Regex implements Serializable {
         public Serialized(String pattern, int i) {
             Intrinsics.e(pattern, "pattern");
             this.b = pattern;
-            this.f42733c = i;
+            this.c = i;
         }
 
         private final Object readResolve() {
-            Pattern compile = Pattern.compile(this.b, this.f42733c);
+            Pattern compile = Pattern.compile(this.b, this.c);
             Intrinsics.c(compile, "compile(pattern, flags)");
             return new Regex(compile);
         }

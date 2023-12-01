@@ -8,7 +8,6 @@ import android.os.IBinder;
 import android.os.RemoteException;
 import android.text.TextUtils;
 import android.util.Log;
-import com.anythink.core.api.ErrorCode;
 import com.youzan.androidsdk.tool.AppSigning;
 import s_a.s_a.s_a.b;
 
@@ -16,11 +15,11 @@ import s_a.s_a.s_a.b;
 public class d {
 
     /* renamed from: a  reason: collision with root package name */
-    public volatile s_a.s_a.s_a.b f24436a = null;
+    public volatile s_a.s_a.s_a.b f10749a = null;
     public String b = null;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f24437c = null;
+    public String f10750c = null;
     public final Object d = new Object();
     public ServiceConnection e = new a();
 
@@ -31,8 +30,8 @@ public class d {
 
         @Override // android.content.ServiceConnection
         public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
-            com.oplus.stdid.sdk.b.a(ErrorCode.inNetworkErrorCodeRequestFailPacing);
-            d.this.f24436a = b.a.a(iBinder);
+            com.oplus.stdid.sdk.b.a("2014");
+            d.this.f10749a = b.a.a(iBinder);
             synchronized (d.this.d) {
                 com.oplus.stdid.sdk.b.a("2015");
                 d.this.d.notify();
@@ -42,7 +41,7 @@ public class d {
         @Override // android.content.ServiceConnection
         public void onServiceDisconnected(ComponentName componentName) {
             com.oplus.stdid.sdk.b.a("2016");
-            d.this.f24436a = null;
+            d.this.f10749a = null;
         }
     }
 
@@ -50,26 +49,26 @@ public class d {
     public static class b {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final d f24439a = new d();
+        public static final d f10752a = new d();
     }
 
     public String a(Context context, String str) {
         String str2;
         String b2;
         synchronized (this) {
-            if (this.f24436a == null) {
-                com.oplus.stdid.sdk.b.a(ErrorCode.loadCappingError);
+            if (this.f10749a == null) {
+                com.oplus.stdid.sdk.b.a("2009");
                 Intent intent = new Intent();
                 intent.setComponent(new ComponentName("com.oplus.stdid", "com.oplus.stdid.IdentifyService"));
                 intent.setAction("action.com.oplus.stdid.ID_SERVICE");
-                com.oplus.stdid.sdk.b.a(ErrorCode.c2sBiddingCacheError);
+                com.oplus.stdid.sdk.b.a("2012");
                 try {
                     if (context.bindService(intent, this.e, 1)) {
-                        com.oplus.stdid.sdk.b.a(ErrorCode.networkFirmIdfilterSourceError);
-                        if (this.f24436a == null) {
+                        com.oplus.stdid.sdk.b.a("2013");
+                        if (this.f10749a == null) {
                             synchronized (this.d) {
                                 try {
-                                    if (this.f24436a == null) {
+                                    if (this.f10749a == null) {
                                         this.d.wait(10000L);
                                     }
                                 } catch (InterruptedException e) {
@@ -86,11 +85,11 @@ public class d {
                     sb.append(e2.getMessage() != null ? e2.getMessage() : e2.getLocalizedMessage());
                     Log.e("StdIDHelper", sb.toString());
                 }
-                if (this.f24436a == null) {
+                if (this.f10749a == null) {
                     str2 = "1004";
                 } else {
                     try {
-                        com.oplus.stdid.sdk.b.a(ErrorCode.filterSourceError);
+                        com.oplus.stdid.sdk.b.a("2010");
                         b2 = b(context, str);
                     } catch (RemoteException e3) {
                         str2 = "1005";
@@ -100,7 +99,7 @@ public class d {
                 b2 = "";
             } else {
                 try {
-                    com.oplus.stdid.sdk.b.a(ErrorCode.loadInShowingFilter);
+                    com.oplus.stdid.sdk.b.a("2011");
                     b2 = b(context, str);
                 } catch (RemoteException e4) {
                     str2 = "1005";
@@ -113,10 +112,10 @@ public class d {
     public void a(Context context) {
         synchronized (this) {
             try {
-                if (this.f24436a != null) {
+                if (this.f10749a != null) {
                     com.oplus.stdid.sdk.b.a("2019");
                     context.unbindService(this.e);
-                    this.f24436a = null;
+                    this.f10749a = null;
                 }
             } catch (Exception e) {
                 Log.e("StdIDHelper", "1010");
@@ -128,12 +127,12 @@ public class d {
         if (TextUtils.isEmpty(this.b)) {
             this.b = context.getPackageName();
         }
-        if (TextUtils.isEmpty(this.f24437c)) {
-            this.f24437c = s_a.s_a.s_a.a.a.a(context, this.b, AppSigning.SHA1);
+        if (TextUtils.isEmpty(this.f10750c)) {
+            this.f10750c = s_a.s_a.s_a.a.a.a(context, this.b, AppSigning.SHA1);
         }
         com.oplus.stdid.sdk.b.a("2017");
-        if (this.f24436a != null) {
-            String a2 = this.f24436a.a(this.b, this.f24437c, str);
+        if (this.f10749a != null) {
+            String a2 = this.f10749a.a(this.b, this.f10750c, str);
             com.oplus.stdid.sdk.b.a("2018");
             return TextUtils.isEmpty(a2) ? "" : a2;
         }

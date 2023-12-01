@@ -8,7 +8,9 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Base64;
 import android.widget.Toast;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
+import com.anythink.pd.ExHandler;
+import com.huawei.hms.framework.common.ContainerUtils;
+import com.huawei.openalliance.ad.constant.t;
 import com.tencent.connect.auth.QQToken;
 import com.tencent.connect.common.BaseApi;
 import com.tencent.connect.common.Constants;
@@ -168,7 +170,7 @@ public class GameAppOperation extends BaseApi {
                     return true;
                 }
                 String trim = stringArrayList.get(i3).trim();
-                if (trim.startsWith(BridgeUtil.SPLIT_MARK) && !new File(trim).exists()) {
+                if (trim.startsWith("/") && !new File(trim).exists()) {
                     iUiListener.onError(new UiError(-6, Constants.MSG_PARAM_IMAGE_URL_FORMAT_ERROR, null));
                     return false;
                 }
@@ -220,7 +222,7 @@ public class GameAppOperation extends BaseApi {
                     stringBuffer2.append(URLEncoder.encode(stringArrayList.get(i3).trim()));
                 }
                 if (i3 != size - 1) {
-                    stringBuffer2.append(";");
+                    stringBuffer2.append(t.aE);
                 }
                 i2 = i3 + 1;
             }
@@ -340,7 +342,7 @@ public class GameAppOperation extends BaseApi {
             for (String str : composeActivityParams.keySet()) {
                 composeActivityParams.putString(str, Base64.encodeToString(Util.getBytesUTF8(composeActivityParams.getString(str)), 2));
             }
-            stringBuffer.append("&" + Util.encodeUrl(composeActivityParams));
+            stringBuffer.append(ContainerUtils.FIELD_DELIMITER + Util.encodeUrl(composeActivityParams));
             f.a("openSDK_LOG.GameAppOperation", "-->bindQQGroup, url: " + stringBuffer.toString());
             Intent intent = new Intent("android.intent.action.VIEW");
             intent.setData(Uri.parse(stringBuffer.toString()));
@@ -414,7 +416,7 @@ public class GameAppOperation extends BaseApi {
                         return;
                     }
                     a2.putString(GameAppOperation.SHARE_PRIZE_SHARE_ID, stringBuffer.toString());
-                    a2.putString("imei", com.tencent.open.b.c.b(Global.getContext()));
+                    a2.putString(ExHandler.JSON_REQUEST_IMEI, com.tencent.open.b.c.b(Global.getContext()));
                     try {
                         iUiListener.onComplete(HttpUtils.request(GameAppOperation.this.mToken, context3, ServerSetting.URL_PRIZE_EXCHANGE, a2, "GET"));
                     } catch (Exception e) {
@@ -606,7 +608,7 @@ public class GameAppOperation extends BaseApi {
                     stringBuffer2.append(URLEncoder.encode(stringArrayList.get(i3).trim()));
                 }
                 if (i3 != size - 1) {
-                    stringBuffer2.append(";");
+                    stringBuffer2.append(t.aE);
                 }
                 i2 = i3 + 1;
             }
@@ -788,17 +790,17 @@ public class GameAppOperation extends BaseApi {
                                             stringBuffer.append(URLEncoder.encode(stringArrayList.get(i4).trim()));
                                         }
                                         if (i4 != size - 1) {
-                                            stringBuffer.append(";");
+                                            stringBuffer.append(t.aE);
                                         }
                                         i3 = i4 + 1;
                                     }
                                 } else {
                                     String trim = stringArrayList.get(i2).trim();
-                                    if (!trim.startsWith(BridgeUtil.SPLIT_MARK)) {
+                                    if (!trim.startsWith("/")) {
                                         iUiListener.onError(new UiError(-6, Constants.MSG_PARAM_ERROR, "file_data应该为本地图片"));
                                         f.e("openSDK_LOG.GameAppOperation", "shareToTroopBar(): file_data应该为本地图片");
                                         return;
-                                    } else if (trim.startsWith(BridgeUtil.SPLIT_MARK) && !new File(trim).exists()) {
+                                    } else if (trim.startsWith("/") && !new File(trim).exists()) {
                                         iUiListener.onError(new UiError(-6, Constants.MSG_PARAM_ERROR, "图片文件不存在"));
                                         f.e("openSDK_LOG.GameAppOperation", "shareToTroopBar(): 图片文件不存在");
                                         return;

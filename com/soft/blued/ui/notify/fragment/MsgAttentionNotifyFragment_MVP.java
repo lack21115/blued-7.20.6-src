@@ -29,7 +29,6 @@ public final class MsgAttentionNotifyFragment_MVP implements MvpDispatcher {
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpDispatcher
     public void a(MvpFragment mvpFragment, String str, List list) {
         MsgAttentionNotifyFragment msgAttentionNotifyFragment = (MsgAttentionNotifyFragment) mvpFragment;
         if (list != null && list.size() > 0) {

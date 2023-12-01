@@ -57,10 +57,12 @@ public final class Parameter implements AnnotatedElement {
         return getDeclaredAnnotations();
     }
 
+    @Override // java.lang.reflect.AnnotatedElement
     public <A extends Annotation> A[] getAnnotationsByType(Class<A> cls) {
         return (A[]) getDeclaredAnnotationsByType(cls);
     }
 
+    @Override // java.lang.reflect.AnnotatedElement
     @NullableDecl
     public <A extends Annotation> A getDeclaredAnnotation(Class<A> cls) {
         Preconditions.checkNotNull(cls);
@@ -72,6 +74,7 @@ public final class Parameter implements AnnotatedElement {
         return (Annotation[]) this.annotations.toArray(new Annotation[0]);
     }
 
+    @Override // java.lang.reflect.AnnotatedElement
     public <A extends Annotation> A[] getDeclaredAnnotationsByType(Class<A> cls) {
         return (A[]) ((Annotation[]) FluentIterable.from(this.annotations).filter(cls).toArray(cls));
     }

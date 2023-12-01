@@ -27,13 +27,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view_model/LiveMainViewModel.class */
 public final class LiveMainViewModel extends BaseViewModel {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final MutableLiveData<LiveTabInfo> f15474a = new MutableLiveData<>();
+    private final MutableLiveData<LiveTabInfo> a = new MutableLiveData<>();
     private final MutableLiveData<List<LiveLiangModel>> b = new MutableLiveData<>();
-
-    /* renamed from: c  reason: collision with root package name */
-    private final MutableLiveData<MultiDialogModel> f15475c = new MutableLiveData<>();
+    private final MutableLiveData<MultiDialogModel> c = new MutableLiveData<>();
     private final MutableLiveData<Integer> d = new MutableLiveData<>();
     private String e = "";
     private int f;
@@ -100,23 +96,23 @@ public final class LiveMainViewModel extends BaseViewModel {
             Intrinsics.a(list2);
             list2.add(liveTabModel);
         }
-        LiveTabInfo value = this.f15474a.getValue();
-        List<LiveTabModel> list3 = value == null ? null : value.liveTabs;
+        LiveTabInfo liveTabInfo5 = (LiveTabInfo) this.a.getValue();
+        List<LiveTabModel> list3 = liveTabInfo5 == null ? null : liveTabInfo5.liveTabs;
         if (list3 == null) {
             Log.i("==okr", "data empty");
             z = true;
         } else {
             Log.i("==okr", Intrinsics.a("data.size:", (Object) Integer.valueOf(list3.size())));
             int size = list3.size();
-            LiveTabInfo liveTabInfo5 = this.g;
-            Intrinsics.a(liveTabInfo5);
-            if (size != liveTabInfo5.liveTabs.size()) {
+            LiveTabInfo liveTabInfo6 = this.g;
+            Intrinsics.a(liveTabInfo6);
+            if (size != liveTabInfo6.liveTabs.size()) {
                 z = true;
             } else {
-                LiveTabInfo liveTabInfo6 = this.g;
-                Intrinsics.a(liveTabInfo6);
+                LiveTabInfo liveTabInfo7 = this.g;
+                Intrinsics.a(liveTabInfo7);
                 int i = 0;
-                for (LiveTabModel liveTabModel2 : liveTabInfo6.liveTabs) {
+                for (LiveTabModel liveTabModel2 : liveTabInfo7.liveTabs) {
                     int i2 = i + 1;
                     if (i >= list3.size() || (TextUtils.equals(liveTabModel2.id, list3.get(i).id) && liveTabModel2.red_point == list3.get(i).red_point)) {
                         i = i2;
@@ -127,17 +123,17 @@ public final class LiveMainViewModel extends BaseViewModel {
                 }
             }
         }
-        LiveTabInfo liveTabInfo7 = this.g;
-        Intrinsics.a(liveTabInfo7);
-        List<LiveTabModel> list4 = liveTabInfo7.liveTabs;
+        LiveTabInfo liveTabInfo8 = this.g;
+        Intrinsics.a(liveTabInfo8);
+        List<LiveTabModel> list4 = liveTabInfo8.liveTabs;
         Intrinsics.a(list4);
         this.f = list4.size();
         Log.i("==okr", Intrinsics.a("changed:", (Object) Boolean.valueOf(z)));
         if (z) {
-            MutableLiveData<LiveTabInfo> mutableLiveData = this.f15474a;
-            LiveTabInfo liveTabInfo8 = this.g;
-            Intrinsics.a(liveTabInfo8);
-            mutableLiveData.setValue(liveTabInfo8);
+            MutableLiveData<LiveTabInfo> mutableLiveData = this.a;
+            LiveTabInfo liveTabInfo9 = this.g;
+            Intrinsics.a(liveTabInfo9);
+            mutableLiveData.setValue(liveTabInfo9);
         }
     }
 
@@ -204,16 +200,14 @@ public final class LiveMainViewModel extends BaseViewModel {
         Intrinsics.e(fragmentActive, "fragmentActive");
         LiveRoomHttpUtils.a(0, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<MultiDialogModel>>(0, this) { // from class: com.blued.android.module.live_china.view_model.LiveMainViewModel$getLiveMultiDialogInfo$1
             final /* synthetic */ int b;
-
-            /* renamed from: c  reason: collision with root package name */
-            final /* synthetic */ LiveMainViewModel f15479c;
+            final /* synthetic */ LiveMainViewModel c;
 
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
                 super(IRequestHost.this);
                 this.b = r5;
-                this.f15479c = this;
+                this.c = this;
             }
 
             /* JADX INFO: Access modifiers changed from: protected */
@@ -231,7 +225,7 @@ public final class LiveMainViewModel extends BaseViewModel {
                 Intrinsics.a(singleData2);
                 singleData2.isInit = true;
                 LiveRoomManager.a().a(parseData.getSingleData());
-                this.f15479c.f().setValue(parseData.getSingleData());
+                this.c.f().setValue(parseData.getSingleData());
             }
 
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
@@ -242,14 +236,14 @@ public final class LiveMainViewModel extends BaseViewModel {
 
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
-                this.f15479c.b(IRequestHost.this);
+                this.c.b(IRequestHost.this);
                 super.onUIFinish();
             }
         });
     }
 
     public final MutableLiveData<LiveTabInfo> d() {
-        return this.f15474a;
+        return this.a;
     }
 
     public final void d(final IRequestHost fragmentActive) {
@@ -286,7 +280,7 @@ public final class LiveMainViewModel extends BaseViewModel {
     }
 
     public final MutableLiveData<MultiDialogModel> f() {
-        return this.f15475c;
+        return this.c;
     }
 
     public final MutableLiveData<Integer> g() {

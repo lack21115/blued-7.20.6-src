@@ -6,7 +6,7 @@ import java.io.Serializable;
 public abstract class WebBackForwardList implements Cloneable, Serializable {
     /* JADX INFO: Access modifiers changed from: protected */
     /* renamed from: clone */
-    public abstract WebBackForwardList m1131clone();
+    public abstract WebBackForwardList m65clone();
 
     public abstract int getCurrentIndex();
 

@@ -14,21 +14,17 @@ import kotlin.math.MathKt;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/operation/LiveOperationDescView$initTimer$1.class */
 public final class LiveOperationDescView$initTimer$1 extends CountDownTimer {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ Ref.LongRef f15347a;
+    final /* synthetic */ Ref.LongRef a;
     final /* synthetic */ LiveOperationDescView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ LiveRoomOperationModel f15348c;
+    final /* synthetic */ LiveRoomOperationModel c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public LiveOperationDescView$initTimer$1(Ref.LongRef longRef, LiveOperationDescView liveOperationDescView, LiveRoomOperationModel liveRoomOperationModel) {
-        super(longRef.f42544a, 1000L);
-        this.f15347a = longRef;
+        super(longRef.a, 1000L);
+        this.a = longRef;
         this.b = liveOperationDescView;
-        this.f15348c = liveRoomOperationModel;
+        this.c = liveRoomOperationModel;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -37,9 +33,9 @@ public final class LiveOperationDescView$initTimer$1 extends CountDownTimer {
         LiveOperationDescViewBinding vb2;
         Intrinsics.e(this$0, "this$0");
         vb = this$0.getVb();
-        ViewPropertyAnimator animate = vb.f12310a.animate();
+        ViewPropertyAnimator animate = vb.a.animate();
         vb2 = this$0.getVb();
-        animate.translationY(vb2.f12310a.getHeight() * 3).setInterpolator(new AnticipateInterpolator(2.0f)).setDuration(500L).start();
+        animate.translationY(vb2.a.getHeight() * 3).setInterpolator(new AnticipateInterpolator(2.0f)).setDuration(500L).start();
     }
 
     @Override // android.os.CountDownTimer
@@ -57,11 +53,11 @@ public final class LiveOperationDescView$initTimer$1 extends CountDownTimer {
     @Override // android.os.CountDownTimer
     public void onTick(long j) {
         LiveOperationDescViewBinding vb;
-        String a2;
+        String a;
         long b = MathKt.b(j);
         vb = this.b.getVb();
         TextView textView = vb.f;
-        a2 = this.b.a(this.f15348c, b);
-        textView.setText(a2);
+        a = this.b.a(this.c, b);
+        textView.setText(a);
     }
 }

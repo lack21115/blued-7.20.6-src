@@ -4,7 +4,6 @@ import android.content.ComponentName;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.PersistableBundle;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 
 /* loaded from: source-9557208-dex2jar.jar:android/app/job/JobInfo.class */
 public class JobInfo implements Parcelable {
@@ -241,7 +240,7 @@ public class JobInfo implements Parcelable {
     }
 
     public String toString() {
-        return "(job:" + this.jobId + BridgeUtil.SPLIT_MARK + this.service.flattenToShortString() + ")";
+        return "(job:" + this.jobId + "/" + this.service.flattenToShortString() + ")";
     }
 
     @Override // android.os.Parcelable

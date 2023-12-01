@@ -28,13 +28,9 @@ import kotlinx.coroutines.CoroutineScopeKt;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/adx/gdt/unified/TXNativeAdAdapter.class */
 public final class TXNativeAdAdapter extends BaseNativeExpressAd {
-
-    /* renamed from: a  reason: collision with root package name */
-    private BluedADExtra f10563a;
+    private BluedADExtra a;
     private NativeUnifiedAD b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private ADListener f10564c;
+    private ADListener c;
     private final Context d;
     private int e;
     private TXNativeAdDataAdapter f;
@@ -43,8 +39,8 @@ public final class TXNativeAdAdapter extends BaseNativeExpressAd {
         Intrinsics.e(context, "context");
         Intrinsics.e(adExtra, "adExtra");
         Intrinsics.e(listener, "listener");
-        this.f10563a = adExtra;
-        this.f10564c = listener;
+        this.a = adExtra;
+        this.c = listener;
         this.d = context;
         this.e = -1;
     }
@@ -52,11 +48,11 @@ public final class TXNativeAdAdapter extends BaseNativeExpressAd {
     /* JADX INFO: Access modifiers changed from: private */
     public final void a(ADListener aDListener) {
         NativeUnifiedAD nativeUnifiedAD;
-        if (this.f10563a.gdt_bid == null || TextUtils.isEmpty(this.f10563a.gdt_bid.gdt_token)) {
-            nativeUnifiedAD = new NativeUnifiedAD(this.d, this.f10563a.third_id, b(aDListener));
+        if (this.a.gdt_bid == null || TextUtils.isEmpty(this.a.gdt_bid.gdt_token)) {
+            nativeUnifiedAD = new NativeUnifiedAD(this.d, this.a.third_id, b(aDListener));
         } else {
-            Log.v("adx", Intrinsics.a("「广点通自渲染」广告 本次请求为服务端bidding，token:", (Object) this.f10563a.gdt_bid.gdt_token));
-            nativeUnifiedAD = new NativeUnifiedAD(this.d, this.f10563a.third_id, b(aDListener), this.f10563a.gdt_bid.gdt_token);
+            Log.v("adx", Intrinsics.a("「广点通自渲染」广告 本次请求为服务端bidding，token:", (Object) this.a.gdt_bid.gdt_token));
+            nativeUnifiedAD = new NativeUnifiedAD(this.d, this.a.third_id, b(aDListener), this.a.gdt_bid.gdt_token);
         }
         this.b = nativeUnifiedAD;
         if (nativeUnifiedAD == null) {
@@ -67,7 +63,6 @@ public final class TXNativeAdAdapter extends BaseNativeExpressAd {
 
     private final NativeADUnifiedListener b(final ADListener aDListener) {
         return new NativeADUnifiedListener() { // from class: com.blued.android.module.common.adx.gdt.unified.TXNativeAdAdapter$getNativeADListener$1
-            @Override // com.qq.e.ads.nativ.NativeADUnifiedListener
             public void onADLoaded(List<NativeUnifiedADData> list) {
                 Context context;
                 String str;
@@ -99,18 +94,16 @@ public final class TXNativeAdAdapter extends BaseNativeExpressAd {
                 final TXNativeAdAdapter tXNativeAdAdapter2 = TXNativeAdAdapter.this;
                 final ADListener aDListener2 = aDListener;
                 tXNativeAdDataAdapter.setNativeAdEventListener(new NativeADEventListener() { // from class: com.blued.android.module.common.adx.gdt.unified.TXNativeAdAdapter$getNativeADListener$1$onADLoaded$1
-                    @Override // com.qq.e.ads.nativ.NativeADEventListener
                     public void onADClicked() {
                         ADListener aDListener3;
                         Log.v("adx", "「广点通自渲染」 点击回调");
-                        aDListener3 = TXNativeAdAdapter.this.f10564c;
+                        aDListener3 = TXNativeAdAdapter.this.c;
                         if (aDListener3 == null) {
                             return;
                         }
                         aDListener3.onADEvent(new ADEvent(105, TXNativeAdAdapter.this.e()));
                     }
 
-                    @Override // com.qq.e.ads.nativ.NativeADEventListener
                     public void onADError(AdError adError) {
                         BluedADExtra e = TXNativeAdAdapter.this.e();
                         StringBuilder sb = new StringBuilder();
@@ -129,24 +122,21 @@ public final class TXNativeAdAdapter extends BaseNativeExpressAd {
                         aDListener2.onADEvent(new ADEvent(101, TXNativeAdAdapter.this));
                     }
 
-                    @Override // com.qq.e.ads.nativ.NativeADEventListener
                     public void onADExposed() {
                         ADListener aDListener3;
                         Log.v("adx", "「广点通自渲染」 曝光回调");
-                        aDListener3 = TXNativeAdAdapter.this.f10564c;
+                        aDListener3 = TXNativeAdAdapter.this.c;
                         if (aDListener3 == null) {
                             return;
                         }
                         aDListener3.onADEvent(new ADEvent(103, TXNativeAdAdapter.this.e()));
                     }
 
-                    @Override // com.qq.e.ads.nativ.NativeADEventListener
                     public void onADStatusChanged() {
                     }
                 });
             }
 
-            @Override // com.qq.e.ads.NativeAbstractAD.BasicADListener
             public void onNoAD(AdError adError) {
                 BluedADExtra e = TXNativeAdAdapter.this.e();
                 StringBuilder sb = new StringBuilder();
@@ -211,10 +201,10 @@ public final class TXNativeAdAdapter extends BaseNativeExpressAd {
 
     @Override // com.blued.android.module.common.adx.base.IBaseAd
     public Map<String, Object> d() {
-        return MapsKt.a(TuplesKt.a("original_ad", this.f10563a));
+        return MapsKt.a(TuplesKt.a("original_ad", this.a));
     }
 
     public final BluedADExtra e() {
-        return this.f10563a;
+        return this.a;
     }
 }

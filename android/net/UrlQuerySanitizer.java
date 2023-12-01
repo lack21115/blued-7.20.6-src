@@ -1,5 +1,6 @@
 package android.net;
 
+import com.huawei.hms.framework.common.ContainerUtils;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -12,7 +13,7 @@ public class UrlQuerySanitizer {
     private boolean mAllowUnregisteredParamaters;
     private boolean mPreferFirstRepeatedParameter;
     private static final ValueSanitizer sAllIllegal = new IllegalCharacterValueSanitizer(0);
-    private static final ValueSanitizer sAllButNulLegal = new IllegalCharacterValueSanitizer(1535);
+    private static final ValueSanitizer sAllButNulLegal = new IllegalCharacterValueSanitizer(IllegalCharacterValueSanitizer.ALL_BUT_NUL_LEGAL);
     private static final ValueSanitizer sAllButWhitespaceLegal = new IllegalCharacterValueSanitizer(IllegalCharacterValueSanitizer.ALL_BUT_WHITESPACE_LEGAL);
     private static final ValueSanitizer sURLLegal = new IllegalCharacterValueSanitizer(404);
     private static final ValueSanitizer sUrlAndSpaceLegal = new IllegalCharacterValueSanitizer(405);
@@ -305,7 +306,7 @@ public class UrlQuerySanitizer {
 
     public void parseQuery(String str) {
         clear();
-        StringTokenizer stringTokenizer = new StringTokenizer(str, "&");
+        StringTokenizer stringTokenizer = new StringTokenizer(str, ContainerUtils.FIELD_DELIMITER);
         while (stringTokenizer.hasMoreElements()) {
             String nextToken = stringTokenizer.nextToken();
             if (nextToken.length() > 0) {

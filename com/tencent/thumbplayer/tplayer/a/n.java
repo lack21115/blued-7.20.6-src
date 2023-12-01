@@ -27,7 +27,7 @@ public class n extends c {
 
     private void a(long j, int i, TPGeneralPlayFlowParams tPGeneralPlayFlowParams, TPDynamicStatisticParams tPDynamicStatisticParams) {
         if (this.k) {
-            k(new b.C1018b());
+            k(new b.C0848b());
             this.k = false;
         }
         if (this.j) {
@@ -125,12 +125,12 @@ public class n extends c {
         bVar.p(tPDrmInfo.drmRecvKeyRespTimeMs);
         bVar.q(tPDrmInfo.drmProvideKeyRespStartTimeMs);
         bVar.r(tPDrmInfo.drmProvideKeyRespEndTimeMs);
-        this.f.b(this.m.f39365a);
-        com.tencent.thumbplayer.tplayer.a.b.a aVar = this.m.f39365a;
+        this.f.b(this.m.f25674a);
+        com.tencent.thumbplayer.tplayer.a.b.a aVar = this.m.f25674a;
         int i = this.g;
         this.g = i + 1;
         aVar.a(i);
-        bVar.a(this.m.f39365a);
+        bVar.a(this.m.f25674a);
         return bVar;
     }
 
@@ -146,35 +146,35 @@ public class n extends c {
         cVar.r(this.m.q);
         cVar.e(this.m.r);
         a(cVar, tPGeneralPlayFlowParams);
-        com.tencent.thumbplayer.tplayer.a.b.a aVar = this.m.f39365a;
+        com.tencent.thumbplayer.tplayer.a.b.a aVar = this.m.f25674a;
         int i2 = this.g;
         this.g = i2 + 1;
         aVar.a(i2);
-        this.f.b(this.m.f39365a);
-        cVar.a(this.m.f39365a);
+        this.f.b(this.m.f25674a);
+        cVar.a(this.m.f25674a);
         return cVar;
     }
 
     private com.tencent.thumbplayer.tplayer.a.b.b.e b(TPGeneralPlayFlowParams tPGeneralPlayFlowParams, TPDynamicStatisticParams tPDynamicStatisticParams) {
         com.tencent.thumbplayer.tplayer.a.b.b.e eVar = new com.tencent.thumbplayer.tplayer.a.b.b.e();
-        eVar.c(this.e.f39396a);
+        eVar.c(this.e.f25705a);
         eVar.d(this.e.b);
-        eVar.e(this.e.f39397c);
+        eVar.e(this.e.f25706c);
         eVar.p(this.m.f);
         a(eVar, tPGeneralPlayFlowParams);
         a(eVar, tPDynamicStatisticParams);
-        this.f.b(this.m.f39365a);
-        com.tencent.thumbplayer.tplayer.a.b.a aVar = this.m.f39365a;
+        this.f.b(this.m.f25674a);
+        com.tencent.thumbplayer.tplayer.a.b.a aVar = this.m.f25674a;
         int i = this.g;
         this.g = i + 1;
         aVar.a(i);
-        eVar.a(this.m.f39365a);
+        eVar.a(this.m.f25674a);
         return eVar;
     }
 
     private void c() {
         TPLogUtil.i("TPVodReporter", "onAppForeground");
-        a(this.m.f39365a.a());
+        a(this.m.f25674a.a());
     }
 
     private void c(b.a aVar) {
@@ -183,19 +183,19 @@ public class n extends c {
             return;
         }
         b.o oVar = (b.o) aVar;
-        long b = oVar.b() - this.e.f39397c;
+        long b = oVar.b() - this.e.f25706c;
         this.m.f = oVar.b();
         TPLogUtil.i("TPVodReporter", "Vod onPrepareDone timeMs:".concat(String.valueOf(b)));
         a(this.m);
-        com.tencent.thumbplayer.tplayer.a.b.a aVar2 = this.m.f39365a;
+        com.tencent.thumbplayer.tplayer.a.b.a aVar2 = this.m.f25674a;
         int i = this.g;
         this.g = i + 1;
         aVar2.a(i);
-        this.f.b(this.m.f39365a);
+        this.f.b(this.m.f25674a);
         b(this.m);
         com.tencent.thumbplayer.tplayer.a.b.b.d dVar = new com.tencent.thumbplayer.tplayer.a.b.b.d();
         dVar.c(b);
-        dVar.a(this.m.f39365a);
+        dVar.a(this.m.f25674a);
         Map<String, String> b2 = dVar.b();
         a("onPrepareDone", b2);
         b("vod_first_load", b2);
@@ -252,7 +252,7 @@ public class n extends c {
         }
         this.i = true;
         a(aVar.b(), 0, a(aVar), b(aVar));
-        a(this.m.f39365a.a());
+        a(this.m.f25674a.a());
     }
 
     private void g(b.a aVar) {
@@ -267,7 +267,7 @@ public class n extends c {
         }
         b.i iVar = (b.i) aVar;
         a(iVar.b(), iVar.e(), a(iVar), b(iVar));
-        a(this.m.f39365a.a());
+        a(this.m.f25674a.a());
     }
 
     private void h(b.a aVar) {
@@ -277,7 +277,7 @@ public class n extends c {
         }
         b.r rVar = (b.r) aVar;
         if (this.k) {
-            k(new b.C1018b());
+            k(new b.C0848b());
         }
         if (this.j) {
             i(new b.q());
@@ -319,16 +319,16 @@ public class n extends c {
 
     private void k(b.a aVar) {
         m mVar;
-        if (!(aVar instanceof b.C1018b)) {
+        if (!(aVar instanceof b.C0848b)) {
             TPLogUtil.e("TPVodReporter", "onBufferingEnd fail:params is not match");
             return;
         }
-        b.C1018b c1018b = (b.C1018b) aVar;
+        b.C0848b c0848b = (b.C0848b) aVar;
         this.k = false;
         if (this.j) {
             return;
         }
-        long b = c1018b.b() - this.m.p;
+        long b = c0848b.b() - this.m.p;
         TPLogUtil.i("TPVodReporter", "Vod onBufferingEnd bufferingCostTimeMs:".concat(String.valueOf(b)));
         if (b <= 1200) {
             return;
@@ -338,12 +338,12 @@ public class n extends c {
         com.tencent.thumbplayer.tplayer.a.b.b.a aVar2 = new com.tencent.thumbplayer.tplayer.a.b.b.a();
         aVar2.b(this.m.s);
         aVar2.c(b);
-        this.f.b(this.m.f39365a);
-        com.tencent.thumbplayer.tplayer.a.b.a aVar3 = this.m.f39365a;
+        this.f.b(this.m.f25674a);
+        com.tencent.thumbplayer.tplayer.a.b.a aVar3 = this.m.f25674a;
         int i = this.g;
         this.g = i + 1;
         aVar3.a(i);
-        aVar2.a(this.m.f39365a);
+        aVar2.a(this.m.f25674a);
         Map<String, String> b2 = aVar2.b();
         a("onBufferingEnd", b2);
         b("vod_second_buffering", b2);
@@ -372,8 +372,8 @@ public class n extends c {
             return;
         }
         m.a aVar2 = new m.a();
-        aVar2.f39398a = d;
-        aVar2.f39399c = tVar.f();
+        aVar2.f25707a = d;
+        aVar2.f25708c = tVar.f();
         aVar2.b = tVar.b();
         this.m.t.put(Long.valueOf(tVar.e()), aVar2);
     }
@@ -417,7 +417,7 @@ public class n extends c {
         String d = dVar.d();
         String e = dVar.e();
         TPLogUtil.i("TPVodReporter", "Vod onDTCdnUrlUpdate cdnIp:" + d + " uIp:" + e);
-        this.m.f39366c = d;
+        this.m.f25675c = d;
         this.m.d = e;
     }
 
@@ -504,6 +504,6 @@ public class n extends c {
     @Override // com.tencent.thumbplayer.tplayer.a.c, com.tencent.thumbplayer.tplayer.a.a
     public void a(Context context, l lVar) {
         super.a(context, lVar);
-        this.f.a(this.m.f39365a);
+        this.f.a(this.m.f25674a);
     }
 }

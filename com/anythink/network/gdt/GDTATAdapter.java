@@ -10,6 +10,7 @@ import com.anythink.core.api.ATInitMediation;
 import com.anythink.core.api.MediationInitCallback;
 import com.anythink.nativead.unitgroup.api.CustomNativeAd;
 import com.anythink.nativead.unitgroup.api.CustomNativeAdapter;
+import com.igexin.assist.sdk.AssistPushConsts;
 import com.qq.e.ads.nativ.NativeADUnifiedListener;
 import com.qq.e.ads.nativ.NativeUnifiedAD;
 import com.qq.e.ads.nativ.NativeUnifiedADData;
@@ -22,11 +23,11 @@ import java.util.Map;
 public class GDTATAdapter extends CustomNativeAdapter {
 
     /* renamed from: a  reason: collision with root package name */
-    String f8918a;
+    String f6078a;
     String b;
 
     /* renamed from: c  reason: collision with root package name */
-    int f8919c;
+    int f6079c;
     String d;
     int e;
     int f;
@@ -75,10 +76,10 @@ public class GDTATAdapter extends CustomNativeAdapter {
     public final class AnonymousClass2 implements NativeADUnifiedListener {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ Context f8921a;
+        final /* synthetic */ Context f6081a;
 
         AnonymousClass2(Context context) {
-            this.f8921a = context;
+            this.f6081a = context;
         }
 
         @Override // com.qq.e.ads.nativ.NativeADUnifiedListener
@@ -92,10 +93,10 @@ public class GDTATAdapter extends CustomNativeAdapter {
             GDTATNativeAd gDTATNativeAd = null;
             for (NativeUnifiedADData nativeUnifiedADData : list) {
                 if (GDTATAdapter.this.e == 4) {
-                    gDTATNativePatchAd = new GDTATNativePatchAd(this.f8921a, nativeUnifiedADData, GDTATAdapter.this.f, GDTATAdapter.this.g, GDTATAdapter.this.h);
+                    gDTATNativePatchAd = new GDTATNativePatchAd(this.f6081a, nativeUnifiedADData, GDTATAdapter.this.f, GDTATAdapter.this.g, GDTATAdapter.this.h);
                     arrayList.add(gDTATNativePatchAd);
                 } else {
-                    gDTATNativeAd = new GDTATNativeAd(this.f8921a, nativeUnifiedADData, GDTATAdapter.this.f, GDTATAdapter.this.g, GDTATAdapter.this.h);
+                    gDTATNativeAd = new GDTATNativeAd(this.f6081a, nativeUnifiedADData, GDTATAdapter.this.f, GDTATAdapter.this.g, GDTATAdapter.this.h);
                     arrayList.add(gDTATNativeAd);
                 }
             }
@@ -106,14 +107,14 @@ public class GDTATAdapter extends CustomNativeAdapter {
                 }
             } else if (GDTATAdapter.this.mBiddingListener != null) {
                 if (GDTATAdapter.this.e == 4 && gDTATNativePatchAd != null) {
-                    double ecpm = gDTATNativePatchAd.f8945c.getECPM();
+                    double ecpm = gDTATNativePatchAd.f6105c.getECPM();
                     GDTATBiddingNotice gDTATBiddingNotice = new GDTATBiddingNotice(gDTATNativePatchAd);
                     ATBiddingListener aTBiddingListener = GDTATAdapter.this.mBiddingListener;
                     StringBuilder sb = new StringBuilder();
                     sb.append(System.currentTimeMillis());
                     aTBiddingListener.onC2SBiddingResultWithCache(ATBiddingResult.success(ecpm, sb.toString(), gDTATBiddingNotice, ATAdConst.CURRENCY.RMB_CENT), gDTATNativePatchAd);
                 } else if (gDTATNativeAd != null) {
-                    double ecpm2 = gDTATNativeAd.f8945c.getECPM();
+                    double ecpm2 = gDTATNativeAd.f6105c.getECPM();
                     GDTATBiddingNotice gDTATBiddingNotice2 = new GDTATBiddingNotice(gDTATNativeAd);
                     ATBiddingListener aTBiddingListener2 = GDTATAdapter.this.mBiddingListener;
                     StringBuilder sb2 = new StringBuilder();
@@ -155,10 +156,10 @@ public class GDTATAdapter extends CustomNativeAdapter {
                 nativeUnifiedAD.setMaxVideoDuration(this.h);
             }
             if (!TextUtils.isEmpty(this.d)) {
-                nativeUnifiedAD.loadData(this.f8919c);
+                nativeUnifiedAD.loadData(this.f6079c);
                 return;
             }
-            int i2 = this.f8919c;
+            int i2 = this.f6079c;
             GDTATInitManager.getInstance();
             nativeUnifiedAD.loadData(i2, GDTATInitManager.a(map));
         } catch (Throwable th) {
@@ -189,10 +190,10 @@ public class GDTATAdapter extends CustomNativeAdapter {
                 nativeUnifiedAD.setMaxVideoDuration(gDTATAdapter.h);
             }
             if (!TextUtils.isEmpty(gDTATAdapter.d)) {
-                nativeUnifiedAD.loadData(gDTATAdapter.f8919c);
+                nativeUnifiedAD.loadData(gDTATAdapter.f6079c);
                 return;
             }
-            int i2 = gDTATAdapter.f8919c;
+            int i2 = gDTATAdapter.f6079c;
             GDTATInitManager.getInstance();
             nativeUnifiedAD.loadData(i2, GDTATInitManager.a(map));
         } catch (Throwable th) {
@@ -201,17 +202,17 @@ public class GDTATAdapter extends CustomNativeAdapter {
     }
 
     private void a(Map<String, Object> map, Map<String, Object> map2) {
-        this.f8918a = ATInitMediation.getStringFromMap(map, "app_id");
+        this.f6078a = ATInitMediation.getStringFromMap(map, "app_id");
         this.b = ATInitMediation.getStringFromMap(map, "unit_id");
         this.e = ATInitMediation.getIntFromMap(map, "unit_type");
-        this.d = ATInitMediation.getStringFromMap(map, "payload");
-        this.f8919c = this.i ? 1 : this.mRequestNum;
+        this.d = ATInitMediation.getStringFromMap(map, AssistPushConsts.MSG_TYPE_PAYLOAD);
+        this.f6079c = this.i ? 1 : this.mRequestNum;
         try {
-            this.j = ATInitMediation.getIntFromMap(map2, ATAdConst.KEY.AD_WIDTH, -1);
+            this.j = ATInitMediation.getIntFromMap(map2, "key_width", -1);
             if (map2.containsKey(GDTATConst.AD_HEIGHT)) {
                 this.k = ATInitMediation.getIntFromMap(map2, GDTATConst.AD_HEIGHT, -2);
-            } else if (map2.containsKey(ATAdConst.KEY.AD_HEIGHT)) {
-                this.k = ATInitMediation.getIntFromMap(map2, ATAdConst.KEY.AD_HEIGHT, -2);
+            } else if (map2.containsKey("key_height")) {
+                this.k = ATInitMediation.getIntFromMap(map2, "key_height", -2);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -232,57 +233,50 @@ public class GDTATAdapter extends CustomNativeAdapter {
             nativeUnifiedAD.setMaxVideoDuration(i);
         }
         if (!TextUtils.isEmpty(this.d)) {
-            nativeUnifiedAD.loadData(this.f8919c);
+            nativeUnifiedAD.loadData(this.f6079c);
             return;
         }
-        int i2 = this.f8919c;
+        int i2 = this.f6079c;
         GDTATInitManager.getInstance();
         nativeUnifiedAD.loadData(i2, GDTATInitManager.a(map));
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public void destory() {
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public void getBidRequestInfo(Context context, Map<String, Object> map, Map<String, Object> map2, ATBidRequestInfoListener aTBidRequestInfoListener) {
         this.b = ATInitMediation.getStringFromMap(map, "unit_id");
         GDTATInitManager.getInstance().a(context, map, map2, aTBidRequestInfoListener);
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public ATInitMediation getMediationInitManager() {
         return GDTATInitManager.getInstance();
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public String getNetworkName() {
         return GDTATInitManager.getInstance().getNetworkName();
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public String getNetworkPlacementId() {
         return this.b;
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public String getNetworkSDKVersion() {
         return GDTATInitManager.getInstance().getNetworkVersion();
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public void loadCustomNetworkAd(final Context context, final Map<String, Object> map, Map<String, Object> map2) {
-        this.f8918a = ATInitMediation.getStringFromMap(map, "app_id");
+        this.f6078a = ATInitMediation.getStringFromMap(map, "app_id");
         this.b = ATInitMediation.getStringFromMap(map, "unit_id");
         this.e = ATInitMediation.getIntFromMap(map, "unit_type");
-        this.d = ATInitMediation.getStringFromMap(map, "payload");
-        this.f8919c = this.i ? 1 : this.mRequestNum;
+        this.d = ATInitMediation.getStringFromMap(map, AssistPushConsts.MSG_TYPE_PAYLOAD);
+        this.f6079c = this.i ? 1 : this.mRequestNum;
         try {
-            this.j = ATInitMediation.getIntFromMap(map2, ATAdConst.KEY.AD_WIDTH, -1);
+            this.j = ATInitMediation.getIntFromMap(map2, "key_width", -1);
             if (map2.containsKey(GDTATConst.AD_HEIGHT)) {
                 this.k = ATInitMediation.getIntFromMap(map2, GDTATConst.AD_HEIGHT, -2);
-            } else if (map2.containsKey(ATAdConst.KEY.AD_HEIGHT)) {
-                this.k = ATInitMediation.getIntFromMap(map2, ATAdConst.KEY.AD_HEIGHT, -2);
+            } else if (map2.containsKey("key_height")) {
+                this.k = ATInitMediation.getIntFromMap(map2, "key_height", -2);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -293,16 +287,14 @@ public class GDTATAdapter extends CustomNativeAdapter {
         this.f = intFromMap;
         this.g = intFromMap2;
         this.h = intFromMap3;
-        if (TextUtils.isEmpty(this.f8918a) || TextUtils.isEmpty(this.b)) {
+        if (TextUtils.isEmpty(this.f6078a) || TextUtils.isEmpty(this.b)) {
             notifyATLoadFail("", "GTD appid or unitId is empty.");
         } else {
             GDTATInitManager.getInstance().initSDK(context, map, new MediationInitCallback() { // from class: com.anythink.network.gdt.GDTATAdapter.3
-                @Override // com.anythink.core.api.MediationInitCallback
                 public final void onFail(String str) {
                     GDTATAdapter.this.notifyATLoadFail("", str);
                 }
 
-                @Override // com.anythink.core.api.MediationInitCallback
                 public final void onSuccess() {
                     GDTATAdapter.a(GDTATAdapter.this, context, map);
                 }
@@ -310,7 +302,6 @@ public class GDTATAdapter extends CustomNativeAdapter {
         }
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public boolean startBiddingRequest(Context context, Map<String, Object> map, Map<String, Object> map2, ATBiddingListener aTBiddingListener) {
         this.i = true;
         loadCustomNetworkAd(context, map, map2);

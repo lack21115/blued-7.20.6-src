@@ -29,11 +29,11 @@ public class i1 {
     private final f1 j;
 
     /* renamed from: a  reason: collision with root package name */
-    private final Map<String, u4> f37540a = new ConcurrentHashMap();
+    private final Map<String, u4> f23849a = new ConcurrentHashMap();
     private final List<u4> b = new CopyOnWriteArrayList();
 
     /* renamed from: c  reason: collision with root package name */
-    private final List<u4> f37541c = new CopyOnWriteArrayList();
+    private final List<u4> f23850c = new CopyOnWriteArrayList();
     private final List<u4> d = new CopyOnWriteArrayList();
     private final List<q4> e = new CopyOnWriteArrayList();
     private final Comparator<Levelable> h = new a();
@@ -82,7 +82,7 @@ public class i1 {
     }
 
     public <T extends u4> T a(String str, Class<T> cls) {
-        T t = (T) this.f37540a.get(str);
+        T t = (T) this.f23849a.get(str);
         if (t == null || t.getClass() != cls) {
             return null;
         }
@@ -92,8 +92,8 @@ public class i1 {
     public Arc a(ArcOptions arcOptions) {
         xe xeVar = new xe(arcOptions, this.g);
         s0 s0Var = new s0(xeVar);
-        this.f37540a.put(xeVar.getId(), s0Var);
-        this.f37541c.add(s0Var);
+        this.f23849a.put(xeVar.getId(), s0Var);
+        this.f23850c.add(s0Var);
         a((q4) xeVar);
         return s0Var;
     }
@@ -102,7 +102,7 @@ public class i1 {
         ye yeVar = new ye(this.g);
         yeVar.a(circleOptions);
         t0 t0Var = new t0(yeVar);
-        this.f37540a.put(yeVar.getId(), t0Var);
+        this.f23849a.put(yeVar.getId(), t0Var);
         this.d.add(t0Var);
         a((q4) yeVar);
         return t0Var;
@@ -113,7 +113,7 @@ public class i1 {
         bf bfVar = new bf(yiVar);
         bfVar.setMarkerOptions(markerOptions);
         w0 w0Var = new w0(bfVar);
-        this.f37540a.put(bfVar.getId(), w0Var);
+        this.f23849a.put(bfVar.getId(), w0Var);
         this.b.add(w0Var);
         yiVar.a(bfVar);
         a((q4) bfVar);
@@ -123,7 +123,7 @@ public class i1 {
     public Polygon a(PolygonOptions polygonOptions) {
         cf cfVar = new cf(this.g, polygonOptions);
         x0 x0Var = new x0(cfVar);
-        this.f37540a.put(cfVar.getId(), x0Var);
+        this.f23849a.put(cfVar.getId(), x0Var);
         this.d.add(x0Var);
         a((q4) cfVar);
         return x0Var;
@@ -133,15 +133,15 @@ public class i1 {
         df dfVar = new df(this.g);
         dfVar.setPolylineOptions(polylineOptions);
         y0 y0Var = new y0(dfVar);
-        this.f37540a.put(dfVar.getId(), y0Var);
-        this.f37541c.add(y0Var);
+        this.f23849a.put(dfVar.getId(), y0Var);
+        this.f23850c.add(y0Var);
         a((q4) dfVar);
         return y0Var;
     }
 
     public void a() {
         synchronized (this) {
-            Iterator<u4> it = this.f37540a.values().iterator();
+            Iterator<u4> it = this.f23849a.values().iterator();
             while (it.hasNext()) {
                 u4 next = it.next();
                 if (next != null) {
@@ -151,12 +151,12 @@ public class i1 {
             }
         }
         this.b.clear();
-        this.f37541c.clear();
+        this.f23850c.clear();
         this.d.clear();
     }
 
     public void a(int i, int i2) {
-        for (u4 u4Var : this.f37540a.values()) {
+        for (u4 u4Var : this.f23849a.values()) {
             if (u4Var instanceof q4) {
                 ((q4) u4Var).a(i, i2);
             }
@@ -196,10 +196,10 @@ public class i1 {
 
     public boolean a(String str) {
         p0 x;
-        u4 remove = this.f37540a.remove(str);
+        u4 remove = this.f23849a.remove(str);
         if (remove != null) {
             this.b.remove(remove);
-            this.f37541c.remove(remove);
+            this.f23850c.remove(remove);
             this.d.remove(remove);
             if ((remove instanceof v0) && (x = ((v0) remove).x()) != null) {
                 this.e.remove(x);
@@ -209,12 +209,12 @@ public class i1 {
     }
 
     public u4 b(String str) {
-        return this.f37540a.get(str);
+        return this.f23849a.get(str);
     }
 
     public List<Arc> b() {
         ArrayList arrayList = new ArrayList();
-        for (u4 u4Var : this.f37540a.values()) {
+        for (u4 u4Var : this.f23849a.values()) {
             if (u4Var instanceof s0) {
                 arrayList.add((s0) u4Var);
             }
@@ -229,7 +229,7 @@ public class i1 {
 
     public List<Circle> c() {
         ArrayList arrayList = new ArrayList();
-        for (u4 u4Var : this.f37540a.values()) {
+        for (u4 u4Var : this.f23849a.values()) {
             if (u4Var instanceof t0) {
                 arrayList.add((t0) u4Var);
             }
@@ -239,12 +239,12 @@ public class i1 {
     }
 
     public List<u4> d() {
-        return this.f37541c;
+        return this.f23850c;
     }
 
     public List<Marker> e() {
         ArrayList arrayList = new ArrayList();
-        for (u4 u4Var : this.f37540a.values()) {
+        for (u4 u4Var : this.f23849a.values()) {
             if (u4Var instanceof w0) {
                 arrayList.add((w0) u4Var);
             }
@@ -254,7 +254,7 @@ public class i1 {
     }
 
     public Iterable<u4> f() {
-        return this.f37540a.values();
+        return this.f23849a.values();
     }
 
     public List<u4> g() {
@@ -267,7 +267,7 @@ public class i1 {
 
     public List<Polygon> i() {
         ArrayList arrayList = new ArrayList();
-        for (u4 u4Var : this.f37540a.values()) {
+        for (u4 u4Var : this.f23849a.values()) {
             if (u4Var instanceof x0) {
                 arrayList.add((x0) u4Var);
             }
@@ -278,7 +278,7 @@ public class i1 {
 
     public List<Polyline> j() {
         ArrayList arrayList = new ArrayList();
-        for (u4 u4Var : this.f37540a.values()) {
+        for (u4 u4Var : this.f23849a.values()) {
             if (u4Var instanceof y0) {
                 arrayList.add((y0) u4Var);
             }

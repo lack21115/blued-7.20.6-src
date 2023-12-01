@@ -7,8 +7,8 @@ import com.tencent.tencentmap.mapsdk.maps.model.IAnimationSet;
 /* loaded from: source-8829756-dex2jar.jar:com/tencent/mapsdk/internal/k7.class */
 public class k7 extends j7 implements IAnimationSet {
     public k7(boolean z) {
-        if (this.f37563a == null) {
-            this.f37563a = new b8(z);
+        if (this.f23872a == null) {
+            this.f23872a = new b8(z);
         }
     }
 
@@ -16,7 +16,7 @@ public class k7 extends j7 implements IAnimationSet {
     public boolean addAnimation(Animation animation) {
         a8 a8Var;
         a8 a8Var2;
-        if (animation == null || !(animation instanceof j7) || (a8Var = ((j7) animation).f37563a) == null || (a8Var2 = this.f37563a) == null) {
+        if (animation == null || !(animation instanceof j7) || (a8Var = ((j7) animation).f23872a) == null || (a8Var2 = this.f23872a) == null) {
             return false;
         }
         ((b8) a8Var2).a(a8Var);
@@ -25,7 +25,7 @@ public class k7 extends j7 implements IAnimationSet {
 
     @Override // com.tencent.tencentmap.mapsdk.maps.model.IAnimationSet
     public void cleanAnimation() {
-        a8 a8Var = this.f37563a;
+        a8 a8Var = this.f23872a;
         if (a8Var == null) {
             return;
         }
@@ -34,7 +34,7 @@ public class k7 extends j7 implements IAnimationSet {
 
     @Override // com.tencent.tencentmap.mapsdk.maps.model.Animation
     public void setDuration(long j) {
-        a8 a8Var = this.f37563a;
+        a8 a8Var = this.f23872a;
         if (a8Var == null) {
             return;
         }
@@ -43,7 +43,7 @@ public class k7 extends j7 implements IAnimationSet {
 
     @Override // com.tencent.tencentmap.mapsdk.maps.model.Animation
     public void setInterpolator(Interpolator interpolator) {
-        a8 a8Var = this.f37563a;
+        a8 a8Var = this.f23872a;
         if (a8Var == null || interpolator == null) {
             return;
         }

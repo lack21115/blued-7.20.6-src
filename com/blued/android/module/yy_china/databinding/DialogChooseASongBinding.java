@@ -12,13 +12,9 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/DialogChooseASongBinding.class */
 public final class DialogChooseASongBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final SquareImageView f16303a;
+    public final SquareImageView a;
     public final TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ShapeTextView f16304c;
+    public final ShapeTextView c;
     public final TextView d;
     public final TextView e;
     public final TextView f;
@@ -26,9 +22,9 @@ public final class DialogChooseASongBinding implements ViewBinding {
 
     private DialogChooseASongBinding(ShapeConstraintLayout shapeConstraintLayout, SquareImageView squareImageView, TextView textView, ShapeTextView shapeTextView, TextView textView2, TextView textView3, TextView textView4) {
         this.g = shapeConstraintLayout;
-        this.f16303a = squareImageView;
+        this.a = squareImageView;
         this.b = textView;
-        this.f16304c = shapeTextView;
+        this.c = shapeTextView;
         this.d = textView2;
         this.e = textView3;
         this.f = textView4;
@@ -77,7 +73,6 @@ public final class DialogChooseASongBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ShapeConstraintLayout getRoot() {
         return this.g;

@@ -6,7 +6,5 @@ import java.util.ArrayList;
 public class c {
     public String Q;
     public String R;
-
-    /* renamed from: a  reason: collision with root package name */
-    public ArrayList<String> f4480a;
+    public ArrayList<String> a;
 }

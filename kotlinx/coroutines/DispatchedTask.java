@@ -18,12 +18,10 @@ import kotlinx.coroutines.scheduling.TaskContext;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/DispatchedTask.class */
 public abstract class DispatchedTask<T> extends Task {
-
-    /* renamed from: a  reason: collision with root package name */
-    public int f42808a;
+    public int a;
 
     public DispatchedTask(int i) {
-        this.f42808a = i;
+        this.a = i;
     }
 
     public void a(Object obj, Throwable th) {
@@ -56,7 +54,7 @@ public abstract class DispatchedTask<T> extends Task {
         if (completedExceptionally == null) {
             return null;
         }
-        return completedExceptionally.f42791a;
+        return completedExceptionally.a;
     }
 
     public abstract Object g();
@@ -69,62 +67,62 @@ public abstract class DispatchedTask<T> extends Task {
         Object f2;
         CancellationException cancellationException;
         if (DebugKt.a()) {
-            if (!(this.f42808a != -1)) {
+            if (!(this.a != -1)) {
                 throw new AssertionError();
             }
         }
         TaskContext taskContext = this.g;
         try {
             DispatchedContinuation dispatchedContinuation = (DispatchedContinuation) b();
-            Continuation<T> continuation = dispatchedContinuation.f43523c;
+            Continuation<T> continuation = dispatchedContinuation.c;
             Object obj = dispatchedContinuation.e;
             CoroutineContext context = continuation.getContext();
-            Object a2 = ThreadContextKt.a(context, obj);
-            UndispatchedCoroutine<?> a3 = a2 != ThreadContextKt.f43565a ? CoroutineContextKt.a(continuation, context, a2) : null;
+            Object a = ThreadContextKt.a(context, obj);
+            UndispatchedCoroutine<?> a2 = a != ThreadContextKt.a ? CoroutineContextKt.a(continuation, context, a) : null;
             CoroutineContext context2 = continuation.getContext();
             Object g = g();
-            Throwable c2 = c(g);
-            Job job = (c2 == null && DispatchedTaskKt.a(this.f42808a)) ? (Job) context2.get(Job.C_) : null;
+            Throwable c = c(g);
+            Job job = (c == null && DispatchedTaskKt.a(this.a)) ? (Job) context2.get(Job.C_) : null;
             if (job != null && !job.a()) {
                 CancellationException i = job.i();
                 a(g, i);
-                Result.Companion companion = Result.f42293a;
+                Result.Companion companion = Result.a;
                 if (DebugKt.c() && (continuation instanceof CoroutineStackFrame)) {
                     cancellationException = StackTraceRecoveryKt.a(i, (CoroutineStackFrame) continuation);
                     continuation.resumeWith(Result.f(ResultKt.a((Throwable) cancellationException)));
                 }
                 cancellationException = i;
                 continuation.resumeWith(Result.f(ResultKt.a((Throwable) cancellationException)));
-            } else if (c2 != null) {
-                Result.Companion companion2 = Result.f42293a;
-                continuation.resumeWith(Result.f(ResultKt.a(c2)));
+            } else if (c != null) {
+                Result.Companion companion2 = Result.a;
+                continuation.resumeWith(Result.f(ResultKt.a(c)));
             } else {
                 T b = b(g);
-                Result.Companion companion3 = Result.f42293a;
+                Result.Companion companion3 = Result.a;
                 continuation.resumeWith(Result.f(b));
             }
-            Unit unit = Unit.f42314a;
-            if (a3 == null || a3.q()) {
-                ThreadContextKt.b(context, a2);
+            Unit unit = Unit.a;
+            if (a2 == null || a2.q()) {
+                ThreadContextKt.b(context, a);
             }
             try {
-                Result.Companion companion4 = Result.f42293a;
+                Result.Companion companion4 = Result.a;
                 DispatchedTask<T> dispatchedTask = this;
                 taskContext.c();
-                f2 = Result.f(Unit.f42314a);
+                f2 = Result.f(Unit.a);
             } catch (Throwable th) {
-                Result.Companion companion5 = Result.f42293a;
+                Result.Companion companion5 = Result.a;
                 f2 = Result.f(ResultKt.a(th));
             }
             a((Throwable) null, Result.c(f2));
         } catch (Throwable th2) {
             try {
-                Result.Companion companion6 = Result.f42293a;
+                Result.Companion companion6 = Result.a;
                 DispatchedTask<T> dispatchedTask2 = this;
                 taskContext.c();
-                f = Result.f(Unit.f42314a);
+                f = Result.f(Unit.a);
             } catch (Throwable th3) {
-                Result.Companion companion7 = Result.f42293a;
+                Result.Companion companion7 = Result.a;
                 f = Result.f(ResultKt.a(th3));
             }
             a(th2, Result.c(f));

@@ -19,7 +19,7 @@ public class CommonShowBottomWindow {
 
     public static ActionSheet a(FragmentActivity fragmentActivity, String[] strArr, int i, ActionSheet.ActionSheetListener actionSheetListener) {
         fragmentActivity.setTheme(R.style.ActionSheetStyleIOS7);
-        return ActionSheet.a(fragmentActivity, fragmentActivity.getSupportFragmentManager()).a(fragmentActivity.getResources().getString(R.string.cancel)).a(strArr).a(i).a(true).a(actionSheetListener).b();
+        return ActionSheet.a((Context) fragmentActivity, fragmentActivity.getSupportFragmentManager()).a(fragmentActivity.getResources().getString(R.string.cancel)).a(strArr).a(i).a(true).a(actionSheetListener).b();
     }
 
     public static ActionSheet a(FragmentActivity fragmentActivity, String[] strArr, ActionSheet.ActionSheetListener actionSheetListener) {
@@ -28,16 +28,16 @@ public class CommonShowBottomWindow {
 
     public static ActionSheet a(FragmentActivity fragmentActivity, String[] strArr, String str, ActionSheet.ActionSheetListener actionSheetListener) {
         fragmentActivity.setTheme(R.style.ActionSheetStyleIOS7);
-        return ActionSheet.a(fragmentActivity, fragmentActivity.getSupportFragmentManager()).a(fragmentActivity.getResources().getString(R.string.cancel)).a(strArr).b(str).a(true).a(actionSheetListener).b();
+        return ActionSheet.a((Context) fragmentActivity, fragmentActivity.getSupportFragmentManager()).a(fragmentActivity.getResources().getString(R.string.cancel)).a(strArr).b(str).a(true).a(actionSheetListener).b();
     }
 
     public static ActionSheet a(FragmentActivity fragmentActivity, String[] strArr, boolean z, ActionSheet.ActionSheetListener actionSheetListener) {
         fragmentActivity.setTheme(R.style.ActionSheetStyleIOS7);
-        return ActionSheet.a(fragmentActivity, fragmentActivity.getSupportFragmentManager()).a(fragmentActivity.getResources().getString(R.string.cancel)).a(strArr).b(z).a(true).a(actionSheetListener).b();
+        return ActionSheet.a((Context) fragmentActivity, fragmentActivity.getSupportFragmentManager()).a(fragmentActivity.getResources().getString(R.string.cancel)).a(strArr).b(z).a(true).a(actionSheetListener).b();
     }
 
     public static ActionSheet a(FragmentActivity fragmentActivity, String[] strArr, int[] iArr, String str, ActionSheet.ActionSheetListener actionSheetListener) {
         fragmentActivity.setTheme(R.style.ActionSheetStyleIOS7);
-        return ActionSheet.a(fragmentActivity, fragmentActivity.getSupportFragmentManager()).a(fragmentActivity.getResources().getString(R.string.cancel)).a(strArr).a(iArr).c(str).a(true).a(actionSheetListener).b();
+        return ActionSheet.a((Context) fragmentActivity, fragmentActivity.getSupportFragmentManager()).a(fragmentActivity.getResources().getString(R.string.cancel)).a(strArr).a(iArr).c(str).a(true).a(actionSheetListener).b();
     }
 }

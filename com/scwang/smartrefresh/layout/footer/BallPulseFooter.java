@@ -22,11 +22,11 @@ import java.util.Map;
 public class BallPulseFooter extends InternalAbstract implements RefreshFooter {
 
     /* renamed from: a  reason: collision with root package name */
-    protected boolean f27972a;
+    protected boolean f14284a;
     protected boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected Paint f27973c;
+    protected Paint f14285c;
     protected int d;
     protected int e;
     protected float f;
@@ -53,10 +53,10 @@ public class BallPulseFooter extends InternalAbstract implements RefreshFooter {
         setMinimumHeight(DensityUtil.a(60.0f));
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.BallPulseFooter);
         Paint paint = new Paint();
-        this.f27973c = paint;
+        this.f14285c = paint;
         paint.setColor(-1);
-        this.f27973c.setStyle(Paint.Style.FILL);
-        this.f27973c.setAntiAlias(true);
+        this.f14285c.setStyle(Paint.Style.FILL);
+        this.f14285c.setAntiAlias(true);
         this.x = SpinnerStyle.Translate;
         this.x = SpinnerStyle.values()[obtainStyledAttributes.getInt(R.styleable.BallPulseFooter_srlClassicsSpinnerStyle, this.x.ordinal())];
         if (obtainStyledAttributes.hasValue(R.styleable.BallPulseFooter_srlNormalColor)) {
@@ -101,15 +101,15 @@ public class BallPulseFooter extends InternalAbstract implements RefreshFooter {
                 }
             }
         }
-        this.f27973c.setColor(this.d);
+        this.f14285c.setColor(this.d);
         return 0;
     }
 
     public BallPulseFooter a(int i) {
         this.d = i;
-        this.f27972a = true;
+        this.f14284a = true;
         if (!this.h) {
-            this.f27973c.setColor(i);
+            this.f14285c.setColor(i);
         }
         return this;
     }
@@ -124,7 +124,7 @@ public class BallPulseFooter extends InternalAbstract implements RefreshFooter {
             int i4 = i3;
             if (i4 >= this.i.size()) {
                 this.h = true;
-                this.f27973c.setColor(this.e);
+                this.f14285c.setColor(this.e);
                 return;
             }
             ValueAnimator valueAnimator = this.i.get(i4);
@@ -146,14 +146,13 @@ public class BallPulseFooter extends InternalAbstract implements RefreshFooter {
         this.e = i;
         this.b = true;
         if (this.h) {
-            this.f27973c.setColor(i);
+            this.f14285c.setColor(i);
         }
         return this;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void dispatchDraw(Canvas canvas) {
+    protected void dispatchDraw(Canvas canvas) {
         int width = getWidth();
         int height = getHeight();
         float min = Math.min(width, height);
@@ -174,15 +173,14 @@ public class BallPulseFooter extends InternalAbstract implements RefreshFooter {
             canvas.translate((f4 * f6) + (f3 - (f + f4)) + (this.f * f6), f5);
             float[] fArr = this.g;
             canvas.scale(fArr[i2], fArr[i2]);
-            canvas.drawCircle(0.0f, 0.0f, f2, this.f27973c);
+            canvas.drawCircle(0.0f, 0.0f, f2, this.f14285c);
             canvas.restore();
             i = i2 + 1;
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         if (this.i == null) {
             return;
@@ -207,7 +205,7 @@ public class BallPulseFooter extends InternalAbstract implements RefreshFooter {
             b(iArr[0]);
             this.b = false;
         }
-        if (this.f27972a) {
+        if (this.f14284a) {
             return;
         }
         if (iArr.length > 1) {
@@ -215,6 +213,6 @@ public class BallPulseFooter extends InternalAbstract implements RefreshFooter {
         } else if (iArr.length > 0) {
             a(ColorUtils.compositeColors(-1711276033, iArr[0]));
         }
-        this.f27972a = false;
+        this.f14284a = false;
     }
 }

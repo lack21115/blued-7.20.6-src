@@ -14,11 +14,11 @@ public class hc extends he {
     protected com.huawei.openalliance.ad.inter.data.l Z;
 
     /* renamed from: a  reason: collision with root package name */
-    private int f22490a;
+    private int f8882a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f22491c;
+    private int f8883c;
 
     /* loaded from: source-7994992-dex2jar.jar:com/huawei/hms/ads/hc$a.class */
     public interface a {
@@ -43,7 +43,7 @@ public class hc extends he {
         this.F = 50;
         this.D = false;
         this.b = 100;
-        this.f22491c = 10;
+        this.f8883c = 10;
         this.V = false;
         this.I = false;
         this.C = aVar;
@@ -69,18 +69,18 @@ public class hc extends he {
             this.D = false;
             long currentTimeMillis = System.currentTimeMillis() - this.L;
             if (ge.Code()) {
-                ge.Code("PPSLinkedViewMonitor", "max visible area percentage: %d duration: %d", Integer.valueOf(this.f22490a), Long.valueOf(currentTimeMillis));
+                ge.Code("PPSLinkedViewMonitor", "max visible area percentage: %d duration: %d", Integer.valueOf(this.f8882a), Long.valueOf(currentTimeMillis));
             }
             a aVar = this.C;
             if (aVar != null) {
-                aVar.Code(currentTimeMillis, this.f22490a);
+                aVar.Code(currentTimeMillis, this.f8882a);
             }
-            this.f22490a = 0;
+            this.f8882a = 0;
         }
     }
 
     public int B() {
-        return this.f22490a;
+        return this.f8882a;
     }
 
     @Override // com.huawei.hms.ads.he
@@ -94,8 +94,8 @@ public class hc extends he {
     @Override // com.huawei.hms.ads.he
     protected void Code(int i) {
         ge.V("PPSLinkedViewMonitor", "onUpdateViewShowArea, percentage: %s", Integer.valueOf(i));
-        if (i > this.f22490a) {
-            this.f22490a = i;
+        if (i > this.f8882a) {
+            this.f8882a = i;
         }
         if (i >= this.F) {
             f();
@@ -122,11 +122,11 @@ public class hc extends he {
         }
         com.huawei.openalliance.ad.inter.data.v C = lVar.C();
         this.b = C.c();
-        this.f22491c = Math.max(100 - C.d(), 0);
+        this.f8883c = Math.max(100 - C.d(), 0);
     }
 
     public boolean Code(long j) {
-        return j >= this.S && this.f22490a >= this.F;
+        return j >= this.S && this.f8882a >= this.F;
     }
 
     public boolean F() {
@@ -134,7 +134,7 @@ public class hc extends he {
     }
 
     protected int I() {
-        return this.f22491c;
+        return this.f8883c;
     }
 
     protected int V() {

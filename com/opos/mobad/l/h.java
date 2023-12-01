@@ -7,16 +7,16 @@ import java.util.concurrent.Callable;
 public abstract class h extends k implements com.opos.mobad.ad.d.a {
 
     /* renamed from: a  reason: collision with root package name */
-    private com.opos.mobad.ad.d.b f26304a;
+    private com.opos.mobad.ad.d.b f12616a;
 
     public h(com.opos.mobad.ad.d.b bVar) {
         super(bVar);
-        this.f26304a = bVar;
+        this.f12616a = bVar;
     }
 
     public final void a(long j) {
         com.opos.mobad.ad.d.b bVar;
-        if (d() == 5 || (bVar = this.f26304a) == null) {
+        if (d() == 5 || (bVar = this.f12616a) == null) {
             return;
         }
         bVar.a(j);
@@ -35,7 +35,7 @@ public abstract class h extends k implements com.opos.mobad.ad.d.a {
 
     public final void a(Object... objArr) {
         com.opos.mobad.ad.d.b bVar;
-        if (d() == 5 || (bVar = this.f26304a) == null) {
+        if (d() == 5 || (bVar = this.f12616a) == null) {
             return;
         }
         bVar.a(objArr);
@@ -43,7 +43,7 @@ public abstract class h extends k implements com.opos.mobad.ad.d.a {
 
     public final void b(long j) {
         com.opos.mobad.ad.d.b bVar;
-        if (d() == 5 || (bVar = this.f26304a) == null) {
+        if (d() == 5 || (bVar = this.f12616a) == null) {
             return;
         }
         bVar.b(j);
@@ -58,7 +58,7 @@ public abstract class h extends k implements com.opos.mobad.ad.d.a {
 
     public final void d(String str) {
         com.opos.mobad.ad.d.b bVar;
-        if (d() == 5 || (bVar = this.f26304a) == null) {
+        if (d() == 5 || (bVar = this.f12616a) == null) {
             return;
         }
         bVar.b(str);
@@ -66,7 +66,7 @@ public abstract class h extends k implements com.opos.mobad.ad.d.a {
 
     public final void h_() {
         com.opos.mobad.ad.d.b bVar;
-        if (d() == 5 || (bVar = this.f26304a) == null) {
+        if (d() == 5 || (bVar = this.f12616a) == null) {
             return;
         }
         bVar.d();
@@ -74,7 +74,7 @@ public abstract class h extends k implements com.opos.mobad.ad.d.a {
 
     public final void i() {
         com.opos.mobad.ad.d.b bVar;
-        if (d() == 5 || (bVar = this.f26304a) == null) {
+        if (d() == 5 || (bVar = this.f12616a) == null) {
             return;
         }
         bVar.c();
@@ -82,7 +82,7 @@ public abstract class h extends k implements com.opos.mobad.ad.d.a {
 
     public final void k() {
         com.opos.mobad.ad.d.b bVar;
-        if (d() == 5 || (bVar = this.f26304a) == null) {
+        if (d() == 5 || (bVar = this.f12616a) == null) {
             return;
         }
         bVar.e();
@@ -90,7 +90,7 @@ public abstract class h extends k implements com.opos.mobad.ad.d.a {
 
     public final void m() {
         com.opos.mobad.ad.d.b bVar;
-        if (d() == 5 || (bVar = this.f26304a) == null) {
+        if (d() == 5 || (bVar = this.f12616a) == null) {
             return;
         }
         bVar.f();

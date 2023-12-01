@@ -17,11 +17,11 @@ public class LiveGiftParentFragment extends BaseGiftParentFragment<LiveGiftModel
     @Override // com.blued.android.module.common.fragment.BaseGiftParentFragment
     public void b() {
         super.b();
-        CommonGiftPackageModel c2 = c();
-        if (c2 != null) {
-            if (c2.packageType == 3) {
+        CommonGiftPackageModel c = c();
+        if (c != null) {
+            if (c.packageType == 3) {
                 this.d.setText("还没有头像框哦");
-            } else if (c2.packageType == 4) {
+            } else if (c.packageType == 4) {
                 this.d.setText("还没有公聊气泡哦");
             }
         }

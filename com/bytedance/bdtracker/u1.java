@@ -8,7 +8,7 @@ import com.bytedance.applog.util.SensitiveUtils;
 public abstract class u1 {
 
     /* renamed from: a  reason: collision with root package name */
-    public u1 f21314a;
+    public u1 f7708a;
     public Handler b;
 
     /* loaded from: source-7206380-dex2jar.jar:com/bytedance/bdtracker/u1$a.class */
@@ -280,7 +280,7 @@ public abstract class u1 {
 
     public final <T> T a(T t, T t2, h<T> hVar) {
         if (hVar != null) {
-            u1 u1Var = this.f21314a;
+            u1 u1Var = this.f7708a;
             T a2 = hVar.a();
             boolean b2 = hVar.b(t);
             boolean b3 = hVar.b(a2);
@@ -313,7 +313,7 @@ public abstract class u1 {
     }
 
     public void a(Handler handler) {
-        u1 u1Var = this.f21314a;
+        u1 u1Var = this.f7708a;
         if (u1Var != null) {
             u1Var.a(handler);
         }
@@ -321,7 +321,7 @@ public abstract class u1 {
     }
 
     public void a(String str) {
-        u1 u1Var = this.f21314a;
+        u1 u1Var = this.f7708a;
         if (u1Var != null) {
             u1Var.a(str);
         }

@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.core.content.ContextCompat;
 import com.sobot.chat.application.MyApplication;
 import com.sobot.chat.widget.timePicker.SobotTimePickerView;
+import com.xiaomi.mipush.sdk.Constants;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -135,7 +136,7 @@ public class DateUtil {
             calendar.setTime(date);
         }
         if (!calendar.after(calendar2)) {
-            int indexOf = bjToLocal.indexOf("-") + 1;
+            int indexOf = bjToLocal.indexOf(Constants.ACCEPT_TIME_SEPARATOR_SERVER) + 1;
             return z ? bjToLocal.substring(indexOf, bjToLocal.length()).substring(0, 11) : bjToLocal.substring(indexOf, bjToLocal.length()).substring(0, 5);
         }
         return str2 + " " + bjToLocal.split(" ")[1].substring(0, 5);

@@ -8,7 +8,7 @@ import java.lang.reflect.Method;
 public class d {
     public static String a(Context context) {
         c a2 = c.a();
-        return a2.a(context.getApplicationContext(), a2.f39785c);
+        return a2.a(context.getApplicationContext(), a2.f26094c);
     }
 
     public static final boolean a() {

@@ -15,13 +15,13 @@ public final class DebugMetadataKt {
             return null;
         }
         a(1, b.a());
-        int c2 = c(baseContinuationImpl);
-        int i = c2 < 0 ? -1 : b.c()[c2];
-        String a2 = ModuleNameRetriever.f42471a.a(baseContinuationImpl);
-        if (a2 == null) {
+        int c = c(baseContinuationImpl);
+        int i = c < 0 ? -1 : b.c()[c];
+        String a = ModuleNameRetriever.a.a(baseContinuationImpl);
+        if (a == null) {
             str = b.e();
         } else {
-            str = a2 + '/' + b.e();
+            str = a + '/' + b.e();
         }
         return new StackTraceElement(str, b.d(), b.b(), i);
     }

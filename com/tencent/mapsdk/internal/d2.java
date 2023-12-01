@@ -47,7 +47,7 @@ public class d2 extends p1 implements OfflineMapComponent, b2.d {
     public static final String w = "offline_city_list.json";
 
     /* renamed from: c  reason: collision with root package name */
-    private ic f37384c;
+    private ic f23693c;
     private boolean d;
     private List<OfflineItem> e = new ArrayList();
     private List<OfflineItem> f = new ArrayList();
@@ -84,17 +84,17 @@ public class d2 extends p1 implements OfflineMapComponent, b2.d {
     public class b extends ca.i<Object> {
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ q1 f37385c;
+        public final /* synthetic */ q1 f23694c;
 
         public b(q1 q1Var) {
-            this.f37385c = q1Var;
+            this.f23694c = q1Var;
         }
 
         @Override // java.util.concurrent.Callable
         public Object call() throws Exception {
             d2.this.p = false;
             if (!d2.this.d) {
-                d2.this.d(this.f37385c);
+                d2.this.d(this.f23694c);
                 return null;
             }
             d2 d2Var = d2.this;
@@ -109,11 +109,11 @@ public class d2 extends p1 implements OfflineMapComponent, b2.d {
     public static class c extends JsonComposer {
 
         /* renamed from: a  reason: collision with root package name */
-        public String f37386a;
+        public String f23695a;
         public int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public boolean f37387c;
+        public boolean f23696c;
 
         private c() {
         }
@@ -150,7 +150,7 @@ public class d2 extends p1 implements OfflineMapComponent, b2.d {
             b2 b2Var = this.l.get(a2);
             b2 b2Var2 = b2Var;
             if (b2Var == null) {
-                b2Var2 = new b2(mapContext, this.j, offlineItem, a2, this.f37384c, offlineStatusChangedListener);
+                b2Var2 = new b2(mapContext, this.j, offlineItem, a2, this.f23693c, offlineStatusChangedListener);
                 this.l.put(a2, b2Var2);
             }
             b2Var2.a(offlineStatusChangedListener);
@@ -162,7 +162,7 @@ public class d2 extends p1 implements OfflineMapComponent, b2.d {
     }
 
     private void c(q1 q1Var) {
-        String a2 = this.f37384c.a(q, "");
+        String a2 = this.f23693c.a(q, "");
         if (this.d || !TextUtils.isEmpty(a2)) {
             w6 w2 = q1Var.w();
             if (w2 != null) {
@@ -189,7 +189,7 @@ public class d2 extends p1 implements OfflineMapComponent, b2.d {
     private List<OfflineItem> g() {
         List<OfflineItem> list;
         ArrayList arrayList = new ArrayList();
-        String[] split = this.f37384c.a(q, "").split(",");
+        String[] split = this.f23693c.a(q, "").split(",");
         if (split.length != 0 && (list = this.e) != null) {
             for (OfflineItem offlineItem : list) {
                 if (Arrays.binarySearch(split, offlineItem.getPinyin()) >= 0) {
@@ -217,7 +217,7 @@ public class d2 extends p1 implements OfflineMapComponent, b2.d {
                             this.f.add(a2);
                             this.e.add(a2);
                         } else {
-                            List<a2> list = a2Var.f37286c;
+                            List<a2> list = a2Var.f23595c;
                             if (list == null || list.isEmpty()) {
                                 OfflineCity a3 = a2Var.a((OfflineProvince) null);
                                 this.f.add(a3);
@@ -226,7 +226,7 @@ public class d2 extends p1 implements OfflineMapComponent, b2.d {
                                 ArrayList arrayList = new ArrayList();
                                 OfflineProvince a4 = a2Var.a(arrayList);
                                 this.f.add(a4);
-                                for (a2 a2Var2 : a2Var.f37286c) {
+                                for (a2 a2Var2 : a2Var.f23595c) {
                                     OfflineCity a5 = a2Var2.a(a4);
                                     this.e.add(a5);
                                     arrayList.add(a5);
@@ -252,7 +252,7 @@ public class d2 extends p1 implements OfflineMapComponent, b2.d {
             while (true) {
                 if (it.hasNext()) {
                     c2 next = it.next();
-                    if (offlineItem.getPinyin().equals(next.f37338c)) {
+                    if (offlineItem.getPinyin().equals(next.f23647c)) {
                         offlineItem.setSize(next.d);
                         Iterator<String> it2 = keySet.iterator();
                         while (true) {
@@ -303,8 +303,8 @@ public class d2 extends p1 implements OfflineMapComponent, b2.d {
         if (mapContext == null) {
             return false;
         }
-        int b2 = this.f37384c.b(r);
-        String d = this.f37384c.d(s);
+        int b2 = this.f23693c.b(r);
+        String d = this.f23693c.d(s);
         na.c(ma.u, "检查离线配置更新, 当前v:" + b2 + "|md5:" + d + "obj:" + this);
         n3 n3Var = (n3) n2.a(n3.class);
         ArrayList<FileUpdateReq> arrayList = new ArrayList<>();
@@ -329,9 +329,9 @@ public class d2 extends p1 implements OfflineMapComponent, b2.d {
                     str4 = str2;
                     i2 = i;
                     if (!this.h.exists()) {
-                        str3 = this.f37384c.a(t, "");
-                        str4 = this.f37384c.a(s, "");
-                        i2 = this.f37384c.a(r, 0);
+                        str3 = this.f23693c.a(t, "");
+                        str4 = this.f23693c.a(s, "");
+                        i2 = this.f23693c.a(r, 0);
                     }
                 }
                 if (TextUtils.isEmpty(str3)) {
@@ -340,9 +340,9 @@ public class d2 extends p1 implements OfflineMapComponent, b2.d {
                 } else if (NetManager.getInstance().builder().url(str3).downloadTo(this.h).available()) {
                     if (wa.a(this.h).equals(str4)) {
                         na.c(ma.u, "离线配置文件下载成功");
-                        this.f37384c.b(r, i2);
-                        this.f37384c.b(s, str4);
-                        this.f37384c.b(t, str3);
+                        this.f23693c.b(r, i2);
+                        this.f23693c.b(s, str4);
+                        this.f23693c.b(t, str3);
                     } else {
                         na.c(ma.u, "离线配置文件MD5校验失败");
                         ga.d(this.h);
@@ -393,14 +393,14 @@ public class d2 extends p1 implements OfflineMapComponent, b2.d {
             cVar2 = new c(null);
             this.g.put(pinyin, cVar2);
         }
-        cVar2.f37386a = pinyin;
+        cVar2.f23695a = pinyin;
         cVar2.b = i;
         offlineItem.setPercentage(i);
     }
 
     @Override // com.tencent.mapsdk.internal.b2.d
     public void a(OfflineItem offlineItem, boolean z) {
-        String a2 = this.f37384c.a(q, "");
+        String a2 = this.f23693c.a(q, "");
         na.c(ma.u, "当前开启城市IDS：" + a2);
         String[] split = a2.split(",");
         int binarySearch = Arrays.binarySearch(split, offlineItem.getPinyin());
@@ -408,7 +408,7 @@ public class d2 extends p1 implements OfflineMapComponent, b2.d {
             if (binarySearch < 0) {
                 String str = a2 + offlineItem.getPinyin() + ",";
                 na.c(ma.u, "新增开启城市IDS：" + str);
-                this.f37384c.b(q, str);
+                this.f23693c.b(q, str);
             }
         } else if (binarySearch < 0) {
         } else {
@@ -420,7 +420,7 @@ public class d2 extends p1 implements OfflineMapComponent, b2.d {
                 if (i2 >= length) {
                     String sb2 = sb.toString();
                     na.c(ma.u, "剩余开启城市IDS：" + sb2);
-                    this.f37384c.b(q, sb2);
+                    this.f23693c.b(q, sb2);
                     return;
                 }
                 String str2 = split[i2];
@@ -438,13 +438,13 @@ public class d2 extends p1 implements OfflineMapComponent, b2.d {
         super.a(q1Var);
         this.d = q1Var.r().isOfflineMapEnable();
         ic a2 = kc.a(e(), q1Var.q().j());
-        this.f37384c = a2;
+        this.f23693c = a2;
         String a3 = a2.a(u, "");
         na.c(ma.u, "获取持久化状态, json：" + a3);
         if (!TextUtils.isEmpty(a3)) {
             try {
                 for (c cVar : JsonUtils.parseToList(new JSONArray(a3), c.class, new Object[0])) {
-                    this.g.put(cVar.f37386a, cVar);
+                    this.g.put(cVar.f23695a, cVar);
                 }
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -465,8 +465,8 @@ public class d2 extends p1 implements OfflineMapComponent, b2.d {
             cVar2 = new c(null);
             this.g.put(pinyin, cVar2);
         }
-        cVar2.f37386a = pinyin;
-        cVar2.f37387c = z;
+        cVar2.f23695a = pinyin;
+        cVar2.f23696c = z;
         offlineItem.setUpgrade(z);
     }
 
@@ -482,7 +482,7 @@ public class d2 extends p1 implements OfflineMapComponent, b2.d {
         }
         String collectionToJson = JsonUtils.collectionToJson(this.g.values());
         na.c(ma.u, "保存持久化状态, json：" + collectionToJson);
-        this.f37384c.b(u, collectionToJson);
+        this.f23693c.b(u, collectionToJson);
     }
 
     @Override // com.tencent.mapsdk.internal.p1
@@ -516,7 +516,7 @@ public class d2 extends p1 implements OfflineMapComponent, b2.d {
                 c cVar = this.g.get(offlineItem.getPinyin());
                 if (cVar != null) {
                     offlineItem.setPercentage(cVar.b);
-                    offlineItem.setUpgrade(cVar.f37387c);
+                    offlineItem.setUpgrade(cVar.f23696c);
                 }
             }
             list = this.f;

@@ -3,7 +3,6 @@ package com.soft.blued.customview.banner;
 import android.content.Context;
 import android.util.Log;
 import android.widget.FrameLayout;
-import com.anythink.core.api.ATAdConst;
 import com.anythink.core.api.ATAdInfo;
 import com.anythink.core.api.AdError;
 import com.anythink.nativead.api.ATNative;
@@ -25,11 +24,11 @@ import java.util.Map;
 public class TopNativeTemplateManager<V> extends BannerAdManagerAdapter {
 
     /* renamed from: a  reason: collision with root package name */
-    private ATNative f28558a;
+    private ATNative f14868a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f28559c;
+    private int f14869c;
     private ATNativeAdView d;
     private BluedADExtra e;
 
@@ -40,7 +39,7 @@ public class TopNativeTemplateManager<V> extends BannerAdManagerAdapter {
         if (this.e.bannerPosition == ADConstants.AD_POSITION.NEARBY_HOME_LIST_BANNER || this.e.bannerPosition == ADConstants.AD_POSITION.NEARBY_HOME_GRID_BANNER) {
             this.b = AppInfo.l;
         }
-        this.f28559c = this.b / 3;
+        this.f14869c = this.b / 3;
     }
 
     private NativeAd a() {
@@ -100,13 +99,13 @@ public class TopNativeTemplateManager<V> extends BannerAdManagerAdapter {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void a(BannerAdListener bannerAdListener) {
-        if (a() == null && this.f28558a != null) {
+        if (a() == null && this.f14868a != null) {
             if (this.e.bannerPosition == ADConstants.AD_POSITION.NEARBY_HOME_GRID_BANNER) {
-                this.e.nativeAdGrid = this.f28558a.getNativeAd();
+                this.e.nativeAdGrid = this.f14868a.getNativeAd();
             } else if (this.e.bannerPosition == ADConstants.AD_POSITION.NEARBY_HOME_LIST_BANNER) {
-                this.e.nativeAdList = this.f28558a.getNativeAd();
+                this.e.nativeAdList = this.f14868a.getNativeAd();
             } else {
-                this.e.nativeAd = this.f28558a.getNativeAd();
+                this.e.nativeAd = this.f14868a.getNativeAd();
             }
         }
         if (a() == null) {
@@ -136,8 +135,8 @@ public class TopNativeTemplateManager<V> extends BannerAdManagerAdapter {
     }
 
     public void a(Context context, final BannerAdListener bannerAdListener, String str) {
-        if (this.f28558a == null) {
-            this.f28558a = new ATNative(context, str, new ATNativeNetworkListener() { // from class: com.soft.blued.customview.banner.TopNativeTemplateManager.3
+        if (this.f14868a == null) {
+            this.f14868a = new ATNative(context, str, new ATNativeNetworkListener() { // from class: com.soft.blued.customview.banner.TopNativeTemplateManager.3
                 @Override // com.anythink.nativead.api.ATNativeNetworkListener
                 public void onNativeAdLoadFail(AdError adError) {
                     Log.v("drb", "topon原生模版广告载入失败：" + adError.getFullErrorInfo());
@@ -156,12 +155,12 @@ public class TopNativeTemplateManager<V> extends BannerAdManagerAdapter {
             });
         }
         Map<String, Object> hashMap = new HashMap<>();
-        hashMap.put(ATAdConst.KEY.AD_WIDTH, Integer.valueOf(this.b));
-        hashMap.put(ATAdConst.KEY.AD_HEIGHT, Integer.valueOf(this.f28559c));
+        hashMap.put("key_width", Integer.valueOf(this.b));
+        hashMap.put("key_height", Integer.valueOf(this.f14869c));
         hashMap.put(TTATConst.NATIVE_AD_IMAGE_HEIGHT, 0);
         hashMap.put(GDTATConst.AD_HEIGHT, -2);
-        this.f28558a.setLocalExtra(hashMap);
-        this.f28558a.makeAdRequest();
+        this.f14868a.setLocalExtra(hashMap);
+        this.f14868a.makeAdRequest();
         Log.i("drb", "native ad start to load ad------------- ");
     }
 }

@@ -12,11 +12,11 @@ import androidx.core.widget.PopupWindowCompat;
 class AppCompatPopupWindow extends PopupWindow {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final boolean f1771a;
+    private static final boolean f1723a;
     private boolean b;
 
     static {
-        f1771a = Build.VERSION.SDK_INT < 21;
+        f1723a = Build.VERSION.SDK_INT < 21;
     }
 
     public AppCompatPopupWindow(Context context, AttributeSet attributeSet, int i) {
@@ -39,7 +39,7 @@ class AppCompatPopupWindow extends PopupWindow {
     }
 
     private void a(boolean z) {
-        if (f1771a) {
+        if (f1723a) {
             this.b = z;
         } else {
             PopupWindowCompat.setOverlapAnchor(this, z);
@@ -49,7 +49,7 @@ class AppCompatPopupWindow extends PopupWindow {
     @Override // android.widget.PopupWindow
     public void showAsDropDown(View view, int i, int i2) {
         int i3 = i2;
-        if (f1771a) {
+        if (f1723a) {
             i3 = i2;
             if (this.b) {
                 i3 = i2 - view.getHeight();
@@ -61,7 +61,7 @@ class AppCompatPopupWindow extends PopupWindow {
     @Override // android.widget.PopupWindow
     public void showAsDropDown(View view, int i, int i2, int i3) {
         int i4 = i2;
-        if (f1771a) {
+        if (f1723a) {
             i4 = i2;
             if (this.b) {
                 i4 = i2 - view.getHeight();
@@ -73,7 +73,7 @@ class AppCompatPopupWindow extends PopupWindow {
     @Override // android.widget.PopupWindow
     public void update(View view, int i, int i2, int i3, int i4) {
         int i5 = i2;
-        if (f1771a) {
+        if (f1723a) {
             i5 = i2;
             if (this.b) {
                 i5 = i2 - view.getHeight();

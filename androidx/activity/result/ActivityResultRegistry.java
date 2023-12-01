@@ -18,13 +18,13 @@ import java.util.Random;
 public abstract class ActivityResultRegistry {
 
     /* renamed from: a  reason: collision with root package name */
-    private Random f1512a = new Random();
+    private Random f1464a = new Random();
     private final Map<Integer, String> g = new HashMap();
     final Map<String, Integer> b = new HashMap();
     private final Map<String, LifecycleContainer> h = new HashMap();
 
     /* renamed from: c  reason: collision with root package name */
-    ArrayList<String> f1513c = new ArrayList<>();
+    ArrayList<String> f1465c = new ArrayList<>();
     final transient Map<String, CallbackAndContract<?>> d = new HashMap();
     final Map<String, Object> e = new HashMap();
     final Bundle f = new Bundle();
@@ -34,11 +34,11 @@ public abstract class ActivityResultRegistry {
     public static class CallbackAndContract<O> {
 
         /* renamed from: a  reason: collision with root package name */
-        final ActivityResultCallback<O> f1520a;
+        final ActivityResultCallback<O> f1472a;
         final ActivityResultContract<?, O> b;
 
         CallbackAndContract(ActivityResultCallback<O> activityResultCallback, ActivityResultContract<?, O> activityResultContract) {
-            this.f1520a = activityResultCallback;
+            this.f1472a = activityResultCallback;
             this.b = activityResultContract;
         }
     }
@@ -48,35 +48,35 @@ public abstract class ActivityResultRegistry {
     public static class LifecycleContainer {
 
         /* renamed from: a  reason: collision with root package name */
-        final Lifecycle f1521a;
+        final Lifecycle f1473a;
         private final ArrayList<LifecycleEventObserver> b = new ArrayList<>();
 
         LifecycleContainer(Lifecycle lifecycle) {
-            this.f1521a = lifecycle;
+            this.f1473a = lifecycle;
         }
 
         void a() {
             Iterator<LifecycleEventObserver> it = this.b.iterator();
             while (it.hasNext()) {
-                this.f1521a.removeObserver(it.next());
+                this.f1473a.removeObserver(it.next());
             }
             this.b.clear();
         }
 
         void a(LifecycleEventObserver lifecycleEventObserver) {
-            this.f1521a.addObserver(lifecycleEventObserver);
+            this.f1473a.addObserver(lifecycleEventObserver);
             this.b.add(lifecycleEventObserver);
         }
     }
 
     private int a() {
-        int nextInt = this.f1512a.nextInt(2147418112);
+        int nextInt = this.f1464a.nextInt(2147418112);
         while (true) {
             int i = nextInt + 65536;
             if (!this.g.containsKey(Integer.valueOf(i))) {
                 return i;
             }
-            nextInt = this.f1512a.nextInt(2147418112);
+            nextInt = this.f1464a.nextInt(2147418112);
         }
     }
 
@@ -86,8 +86,8 @@ public abstract class ActivityResultRegistry {
     }
 
     private <O> void a(String str, int i, Intent intent, CallbackAndContract<O> callbackAndContract) {
-        if (callbackAndContract != null && callbackAndContract.f1520a != null) {
-            callbackAndContract.f1520a.onActivityResult(callbackAndContract.b.parseResult(i, intent));
+        if (callbackAndContract != null && callbackAndContract.f1472a != null) {
+            callbackAndContract.f1472a.onActivityResult(callbackAndContract.b.parseResult(i, intent));
             return;
         }
         this.e.remove(str);
@@ -106,7 +106,7 @@ public abstract class ActivityResultRegistry {
 
     final void a(String str) {
         Integer remove;
-        if (!this.f1513c.contains(str) && (remove = this.b.remove(str)) != null) {
+        if (!this.f1465c.contains(str) && (remove = this.b.remove(str)) != null) {
             this.g.remove(remove);
         }
         this.d.remove(str);
@@ -130,7 +130,7 @@ public abstract class ActivityResultRegistry {
         if (str == null) {
             return false;
         }
-        this.f1513c.remove(str);
+        this.f1465c.remove(str);
         a(str, i2, intent, this.d.get(str));
         return true;
     }
@@ -140,10 +140,10 @@ public abstract class ActivityResultRegistry {
         if (str == null) {
             return false;
         }
-        this.f1513c.remove(str);
+        this.f1465c.remove(str);
         CallbackAndContract<?> callbackAndContract = this.d.get(str);
-        if (callbackAndContract != null && callbackAndContract.f1520a != null) {
-            callbackAndContract.f1520a.onActivityResult(o);
+        if (callbackAndContract != null && callbackAndContract.f1472a != null) {
+            callbackAndContract.f1472a.onActivityResult(o);
             return true;
         }
         this.f.remove(str);
@@ -162,8 +162,8 @@ public abstract class ActivityResultRegistry {
         if (stringArrayList == null || integerArrayList == null) {
             return;
         }
-        this.f1513c = bundle.getStringArrayList("KEY_COMPONENT_ACTIVITY_LAUNCHED_KEYS");
-        this.f1512a = (Random) bundle.getSerializable("KEY_COMPONENT_ACTIVITY_RANDOM_OBJECT");
+        this.f1465c = bundle.getStringArrayList("KEY_COMPONENT_ACTIVITY_LAUNCHED_KEYS");
+        this.f1464a = (Random) bundle.getSerializable("KEY_COMPONENT_ACTIVITY_RANDOM_OBJECT");
         this.f.putAll(bundle.getBundle("KEY_COMPONENT_ACTIVITY_PENDING_RESULT"));
         int i = 0;
         while (true) {
@@ -186,9 +186,9 @@ public abstract class ActivityResultRegistry {
     public final void onSaveInstanceState(Bundle bundle) {
         bundle.putIntegerArrayList("KEY_COMPONENT_ACTIVITY_REGISTERED_RCS", new ArrayList<>(this.b.values()));
         bundle.putStringArrayList("KEY_COMPONENT_ACTIVITY_REGISTERED_KEYS", new ArrayList<>(this.b.keySet()));
-        bundle.putStringArrayList("KEY_COMPONENT_ACTIVITY_LAUNCHED_KEYS", new ArrayList<>(this.f1513c));
+        bundle.putStringArrayList("KEY_COMPONENT_ACTIVITY_LAUNCHED_KEYS", new ArrayList<>(this.f1465c));
         bundle.putBundle("KEY_COMPONENT_ACTIVITY_PENDING_RESULT", (Bundle) this.f.clone());
-        bundle.putSerializable("KEY_COMPONENT_ACTIVITY_RANDOM_OBJECT", this.f1512a);
+        bundle.putSerializable("KEY_COMPONENT_ACTIVITY_RANDOM_OBJECT", this.f1464a);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -213,7 +213,7 @@ public abstract class ActivityResultRegistry {
 
             @Override // androidx.activity.result.ActivityResultLauncher
             public void launch(I i, ActivityOptionsCompat activityOptionsCompat) {
-                ActivityResultRegistry.this.f1513c.add(str);
+                ActivityResultRegistry.this.f1465c.add(str);
                 Integer num = ActivityResultRegistry.this.b.get(str);
                 ActivityResultRegistry.this.onLaunch(num != null ? num.intValue() : b, activityResultContract, i, activityOptionsCompat);
             }
@@ -272,7 +272,7 @@ public abstract class ActivityResultRegistry {
 
             @Override // androidx.activity.result.ActivityResultLauncher
             public void launch(I i, ActivityOptionsCompat activityOptionsCompat) {
-                ActivityResultRegistry.this.f1513c.add(str);
+                ActivityResultRegistry.this.f1465c.add(str);
                 Integer num = ActivityResultRegistry.this.b.get(str);
                 ActivityResultRegistry.this.onLaunch(num != null ? num.intValue() : b, activityResultContract, i, activityOptionsCompat);
             }

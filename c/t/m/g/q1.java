@@ -6,7 +6,7 @@ import android.location.Location;
 public class q1 extends o1 {
 
     /* renamed from: a  reason: collision with root package name */
-    public Location f3943a;
+    public Location f3895a;
 
     @Override // c.t.m.g.o1
     public int a() {

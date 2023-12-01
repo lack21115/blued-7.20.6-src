@@ -12,7 +12,7 @@ import com.xiaomi.mipush.sdk.MiPushClient;
 public final class c {
 
     /* renamed from: a  reason: collision with root package name */
-    public AudioManager f1379a;
+    public AudioManager f1331a;
     public BroadcastReceiver b = new a();
 
     /* loaded from: source-8756600-dex2jar.jar:a/a/a/a/a/g/c$a.class */
@@ -22,25 +22,25 @@ public final class c {
 
         @Override // android.content.BroadcastReceiver
         public void onReceive(Context context, Intent intent) {
-            if (c.this.f1379a != null && 1 == intent.getIntExtra(AudioManager.EXTRA_SCO_AUDIO_STATE, -1)) {
+            if (c.this.f1331a != null && 1 == intent.getIntExtra(AudioManager.EXTRA_SCO_AUDIO_STATE, -1)) {
                 e.g.c("BluetoothScoManager", "setBluetoothScoOn to true");
-                c.this.f1379a.setBluetoothScoOn(true);
+                c.this.f1331a.setBluetoothScoOn(true);
             }
         }
     }
 
     public void a(Context context) {
-        if (this.f1379a == null) {
-            this.f1379a = (AudioManager) context.getSystemService("audio");
+        if (this.f1331a == null) {
+            this.f1331a = (AudioManager) context.getSystemService("audio");
         }
-        AudioManager audioManager = this.f1379a;
+        AudioManager audioManager = this.f1331a;
         if (audioManager == null || !audioManager.isBluetoothScoAvailableOffCall()) {
             return;
         }
         e.g.c("BluetoothScoManager", "register");
-        this.f1379a.stopBluetoothSco();
+        this.f1331a.stopBluetoothSco();
         try {
-            this.f1379a.startBluetoothSco();
+            this.f1331a.startBluetoothSco();
             context.registerReceiver(this.b, new IntentFilter(AudioManager.ACTION_SCO_AUDIO_STATE_CHANGED));
         } catch (Exception e) {
             e eVar = e.g;
@@ -49,7 +49,7 @@ public final class c {
     }
 
     public void b(Context context) {
-        AudioManager audioManager = this.f1379a;
+        AudioManager audioManager = this.f1331a;
         if (audioManager == null || !audioManager.isBluetoothScoAvailableOffCall()) {
             return;
         }
@@ -59,9 +59,9 @@ public final class c {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        if (this.f1379a.isBluetoothScoOn()) {
-            this.f1379a.setBluetoothScoOn(false);
-            this.f1379a.stopBluetoothSco();
+        if (this.f1331a.isBluetoothScoOn()) {
+            this.f1331a.setBluetoothScoOn(false);
+            this.f1331a.stopBluetoothSco();
         }
     }
 }

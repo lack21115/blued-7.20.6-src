@@ -7,7 +7,6 @@ import java.util.List;
 
 /* loaded from: source-7206380-dex2jar.jar:com/blued/community/ui/video/fragment/MyMusicCollectionFragment_MVP.class */
 public final class MyMusicCollectionFragment_MVP implements MvpDispatcher {
-    @Override // com.blued.android.framework.ui.mvp.MvpDispatcher
     public void a(MvpFragment mvpFragment, String str, List list) {
         MyMusicCollectionFragment myMusicCollectionFragment = (MyMusicCollectionFragment) mvpFragment;
         if (list == null || list.size() <= 0) {

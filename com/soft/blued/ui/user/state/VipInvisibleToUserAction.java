@@ -15,32 +15,32 @@ public abstract class VipInvisibleToUserAction implements UiAction {
     public static final class cancelInvisibleUser extends VipInvisibleToUserAction {
 
         /* renamed from: a  reason: collision with root package name */
-        private final List<String> f34312a;
+        private final List<String> f20621a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public cancelInvisibleUser(List<String> targetUid) {
+        public cancelInvisibleUser(List<String> list) {
             super(null);
-            Intrinsics.e(targetUid, "targetUid");
-            this.f34312a = targetUid;
+            Intrinsics.e(list, "targetUid");
+            this.f20621a = list;
         }
 
         public final List<String> a() {
-            return this.f34312a;
+            return this.f20621a;
         }
 
         public boolean equals(Object obj) {
             if (this == obj) {
                 return true;
             }
-            return (obj instanceof cancelInvisibleUser) && Intrinsics.a(this.f34312a, ((cancelInvisibleUser) obj).f34312a);
+            return (obj instanceof cancelInvisibleUser) && Intrinsics.a(this.f20621a, ((cancelInvisibleUser) obj).f20621a);
         }
 
         public int hashCode() {
-            return this.f34312a.hashCode();
+            return this.f20621a.hashCode();
         }
 
         public String toString() {
-            return "cancelInvisibleUser(targetUid=" + this.f34312a + ')';
+            return "cancelInvisibleUser(targetUid=" + this.f20621a + ')';
         }
     }
 
@@ -49,17 +49,17 @@ public abstract class VipInvisibleToUserAction implements UiAction {
     public static final class getInvisibleUserData extends VipInvisibleToUserAction {
 
         /* renamed from: a  reason: collision with root package name */
-        private final int f34313a;
+        private final int f20622a;
         private final int b;
 
         public getInvisibleUserData(int i, int i2) {
             super(null);
-            this.f34313a = i;
+            this.f20622a = i;
             this.b = i2;
         }
 
         public final int a() {
-            return this.f34313a;
+            return this.f20622a;
         }
 
         public final int b() {
@@ -72,17 +72,17 @@ public abstract class VipInvisibleToUserAction implements UiAction {
             }
             if (obj instanceof getInvisibleUserData) {
                 getInvisibleUserData getinvisibleuserdata = (getInvisibleUserData) obj;
-                return this.f34313a == getinvisibleuserdata.f34313a && this.b == getinvisibleuserdata.b;
+                return this.f20622a == getinvisibleuserdata.f20622a && this.b == getinvisibleuserdata.b;
             }
             return false;
         }
 
         public int hashCode() {
-            return (this.f34313a * 31) + this.b;
+            return (this.f20622a * 31) + this.b;
         }
 
         public String toString() {
-            return "getInvisibleUserData(page=" + this.f34313a + ", size=" + this.b + ')';
+            return "getInvisibleUserData(page=" + this.f20622a + ", size=" + this.b + ')';
         }
     }
 

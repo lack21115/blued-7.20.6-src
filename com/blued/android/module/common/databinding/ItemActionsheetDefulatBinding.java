@@ -12,13 +12,9 @@ import com.blued.android.module.common.R;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/databinding/ItemActionsheetDefulatBinding.class */
 public final class ItemActionsheetDefulatBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ShapeConstraintLayout f10729a;
+    public final ShapeConstraintLayout a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f10730c;
+    public final ImageView c;
     public final ShapeTextView d;
     public final ImageView e;
     public final TextView f;
@@ -26,9 +22,9 @@ public final class ItemActionsheetDefulatBinding implements ViewBinding {
 
     private ItemActionsheetDefulatBinding(ShapeConstraintLayout shapeConstraintLayout, ShapeConstraintLayout shapeConstraintLayout2, ImageView imageView, ImageView imageView2, ShapeTextView shapeTextView, ImageView imageView3, TextView textView) {
         this.g = shapeConstraintLayout;
-        this.f10729a = shapeConstraintLayout2;
+        this.a = shapeConstraintLayout2;
         this.b = imageView;
-        this.f10730c = imageView2;
+        this.c = imageView2;
         this.d = shapeTextView;
         this.e = imageView3;
         this.f = textView;
@@ -77,7 +73,6 @@ public final class ItemActionsheetDefulatBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ShapeConstraintLayout getRoot() {
         return this.g;

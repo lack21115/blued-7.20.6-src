@@ -7,11 +7,11 @@ import java.util.List;
 public class BluedConstant {
 
     /* renamed from: a  reason: collision with root package name */
-    public static boolean f28239a = false;
+    public static boolean f14549a = false;
     public static boolean b = false;
 
     /* renamed from: c  reason: collision with root package name */
-    public static List<String> f28240c = new ArrayList();
+    public static List<String> f14550c = new ArrayList();
     public static int d = 0;
     public static int e = -1;
     public static int f = 0;

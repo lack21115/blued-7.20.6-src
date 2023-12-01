@@ -5,13 +5,11 @@ import com.autonavi.ae.gmap.gloverlay.AVectorCrossAttr;
 
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/maps/model/CrossOverlayOptions.class */
 public class CrossOverlayOptions {
-
-    /* renamed from: a  reason: collision with root package name */
-    AVectorCrossAttr f5524a = null;
+    AVectorCrossAttr a = null;
     private Bitmap bitmapDescriptor = null;
 
     public AVectorCrossAttr getAttribute() {
-        return this.f5524a;
+        return this.a;
     }
 
     public Bitmap getRes() {
@@ -19,7 +17,7 @@ public class CrossOverlayOptions {
     }
 
     public CrossOverlayOptions setAttribute(AVectorCrossAttr aVectorCrossAttr) {
-        this.f5524a = aVectorCrossAttr;
+        this.a = aVectorCrossAttr;
         return this;
     }
 

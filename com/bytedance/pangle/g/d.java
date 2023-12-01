@@ -32,16 +32,16 @@ public final class d {
                 f.a(str, randomAccessFile2, -262969152, 1896449818);
                 try {
                     try {
-                        m mVar = f.f21413a.get(str).get(-262969152);
+                        m mVar = f.f7807a.get(str).get(-262969152);
                         if (mVar != null) {
-                            c.C0318c a2 = c.a(randomAccessFile2, mVar);
-                            Signature[] a3 = a((Certificate[][]) new Certificate[]{a2.f21411a});
+                            c.C0148c a2 = c.a(randomAccessFile2, mVar);
+                            Signature[] a3 = a((Certificate[][]) new Certificate[]{a2.f7805a});
                             if (a2.b != null) {
-                                int size = a2.b.f21410a.size();
+                                int size = a2.b.f7804a.size();
                                 signatureArr = new Signature[size];
                                 iArr = new int[a2.b.b.size()];
                                 for (i = 0; i < size; i++) {
-                                    signatureArr[i] = new Signature(a2.b.f21410a.get(i).getEncoded());
+                                    signatureArr[i] = new Signature(a2.b.f7804a.get(i).getEncoded());
                                     iArr[i] = a2.b.b.get(i).intValue();
                                 }
                             } else {
@@ -59,9 +59,9 @@ public final class d {
                     } catch (n e3) {
                         try {
                             try {
-                                m mVar2 = f.f21413a.get(str).get(1896449818);
+                                m mVar2 = f.f7807a.get(str).get(1896449818);
                                 if (mVar2 != null) {
-                                    o oVar2 = new o(a(b.a(randomAccessFile2, mVar2).f21409a));
+                                    o oVar2 = new o(a(b.a(randomAccessFile2, mVar2).f7803a));
                                     try {
                                         randomAccessFile2.close();
                                         return oVar2;

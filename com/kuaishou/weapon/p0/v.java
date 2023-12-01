@@ -18,11 +18,11 @@ public class v {
     public static final String o = "7";
 
     /* renamed from: a  reason: collision with root package name */
-    public int f23869a;
+    public int f10261a;
     public long b;
 
     /* renamed from: c  reason: collision with root package name */
-    public long f23870c;
+    public long f10262c;
     public String d;
     public String e;
     public String f;
@@ -42,11 +42,11 @@ public class v {
     }
 
     public int a() {
-        return this.f23869a;
+        return this.f10261a;
     }
 
     public void a(int i2) {
-        this.f23869a = i2;
+        this.f10261a = i2;
     }
 
     public void a(long j2) {
@@ -66,7 +66,7 @@ public class v {
     }
 
     public void b(long j2) {
-        this.f23870c = j2;
+        this.f10262c = j2;
     }
 
     public void b(String str) {
@@ -90,7 +90,7 @@ public class v {
     }
 
     public long f() {
-        return this.f23870c;
+        return this.f10262c;
     }
 
     public int g() {

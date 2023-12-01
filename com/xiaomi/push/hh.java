@@ -7,13 +7,13 @@ public enum hh {
     
 
     /* renamed from: a  reason: collision with other field name */
-    private final int f548a;
+    private final int f501a;
 
     hh(int i) {
-        this.f548a = i;
+        this.f501a = i;
     }
 
     public final int a() {
-        return this.f548a;
+        return this.f501a;
     }
 }

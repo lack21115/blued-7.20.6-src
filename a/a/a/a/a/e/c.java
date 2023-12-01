@@ -6,14 +6,14 @@ import android.os.Build;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    public EnumC0009c f1354a;
+    public EnumC0009c f1306a;
     public EnumC0009c b;
 
     /* loaded from: source-8756600-dex2jar.jar:a/a/a/a/a/e/c$b.class */
     public static class b {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final c f1355a = new c();
+        public static final c f1307a = new c();
     }
 
     /* renamed from: a.a.a.a.a.e.c$c  reason: collision with other inner class name */
@@ -26,21 +26,21 @@ public class c {
 
     public c() {
         EnumC0009c enumC0009c = EnumC0009c.UNKNOWN;
-        this.f1354a = enumC0009c;
+        this.f1306a = enumC0009c;
         this.b = enumC0009c;
-        e eVar = e.f1361c;
+        e eVar = e.f1313c;
         eVar.c("CompatibleManager", "Build.MODEL:" + Build.MODEL);
     }
 
     public static c a() {
-        return b.f1355a;
+        return b.f1307a;
     }
 
     public boolean b() {
-        if (this.f1354a == EnumC0009c.UNKNOWN) {
-            this.f1354a = d();
+        if (this.f1306a == EnumC0009c.UNKNOWN) {
+            this.f1306a = d();
         }
-        return this.f1354a == EnumC0009c.YES;
+        return this.f1306a == EnumC0009c.YES;
     }
 
     public boolean c() {

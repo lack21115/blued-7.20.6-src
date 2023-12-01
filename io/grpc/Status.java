@@ -140,7 +140,7 @@ public final class Status {
             int i3;
             byte[] bArr2 = new byte[((bArr.length - i) * 3) + i];
             if (i != 0) {
-                System.arraycopy((Object) bArr, 0, (Object) bArr2, 0, i);
+                System.arraycopy(bArr, 0, bArr2, 0, i);
             }
             int i4 = i;
             for (int i5 = i; i5 < bArr.length; i5++) {
@@ -160,7 +160,7 @@ public final class Status {
                 i4 = i2 + i3;
             }
             byte[] bArr4 = new byte[i4];
-            System.arraycopy((Object) bArr2, 0, (Object) bArr4, 0, i4);
+            System.arraycopy(bArr2, 0, bArr4, 0, i4);
             return bArr4;
         }
 

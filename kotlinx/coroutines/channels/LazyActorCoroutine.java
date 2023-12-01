@@ -17,8 +17,8 @@ final class LazyActorCoroutine<E> extends ActorCoroutine<E> implements SelectCla
     @Override // kotlinx.coroutines.channels.ChannelCoroutine, kotlinx.coroutines.channels.SendChannel
     public Object a(E e, Continuation<? super Unit> continuation) {
         ay_();
-        Object a2 = super.a((LazyActorCoroutine<E>) e, continuation);
-        return a2 == IntrinsicsKt.a() ? a2 : Unit.f42314a;
+        Object a = super.a((LazyActorCoroutine<E>) e, continuation);
+        return a == IntrinsicsKt.a() ? a : Unit.a;
     }
 
     /* JADX WARN: Multi-variable type inference failed */

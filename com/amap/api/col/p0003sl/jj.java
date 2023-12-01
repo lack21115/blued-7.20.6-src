@@ -1,33 +1,27 @@
 package com.amap.api.col.p0003sl;
 
-import android.app.backup.FullBackup;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.text.TextUtils;
-import com.anythink.expressad.foundation.d.d;
 import java.util.Arrays;
 
 /* renamed from: com.amap.api.col.3sl.jj  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/jj.class */
 public final class jj {
-
-    /* renamed from: a  reason: collision with root package name */
-    static byte[] f5211a;
+    static byte[] a;
     static byte[] b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f5212c;
+    private String c;
 
     public jj(String str) {
-        this.f5212c = hw.b(TextUtils.isDigitsOnly(str) ? "SPUtil" : str);
+        this.c = hw.b(TextUtils.isDigitsOnly(str) ? "SPUtil" : str);
     }
 
     public static int a(Context context, String str, String str2, int i) {
         try {
             return context.getSharedPreferences(str, 0).getInt(str2, i);
         } catch (Throwable th) {
-            iw.c(th, d.r, "giv");
+            iw.c(th, "csp", "giv");
             return i;
         }
     }
@@ -40,7 +34,7 @@ public final class jj {
                 }
                 return context.getSharedPreferences(str, 0).edit();
             } catch (Throwable th) {
-                it.a(th, FullBackup.SHAREDPREFS_TREE_TOKEN, "ge");
+                it.a(th, "sp", "ge");
                 return null;
             }
         }
@@ -77,7 +71,7 @@ public final class jj {
         try {
             editor.apply();
         } catch (Throwable th) {
-            it.a(th, FullBackup.SHAREDPREFS_TREE_TOKEN, "cm");
+            it.a(th, "sp", "cm");
         }
     }
 
@@ -89,7 +83,7 @@ public final class jj {
                 }
                 editor.remove(str);
             } catch (Throwable th) {
-                it.a(th, FullBackup.SHAREDPREFS_TREE_TOKEN, "rk");
+                it.a(th, "sp", "rk");
             }
         }
     }
@@ -98,7 +92,7 @@ public final class jj {
         try {
             editor.putInt(str, i);
         } catch (Throwable th) {
-            iw.c(th, d.r, "putPrefsInt");
+            iw.c(th, "csp", "putPrefsInt");
         }
     }
 
@@ -109,7 +103,7 @@ public final class jj {
         try {
             editor.putLong(str, j);
         } catch (Throwable th) {
-            iw.c(th, d.r, "plv");
+            iw.c(th, "csp", "plv");
         }
     }
 
@@ -121,7 +115,7 @@ public final class jj {
                 }
                 editor.putString(str, str2);
             } catch (Throwable th) {
-                it.a(th, FullBackup.SHAREDPREFS_TREE_TOKEN, "ps");
+                it.a(th, "sp", "ps");
             }
         }
     }
@@ -130,7 +124,7 @@ public final class jj {
         try {
             editor.putBoolean(str, z);
         } catch (Throwable th) {
-            iw.c(th, d.r, "setPrefsStr");
+            iw.c(th, "csp", "setPrefsStr");
         }
     }
 
@@ -138,7 +132,7 @@ public final class jj {
         try {
             return context.getSharedPreferences(str, 0).getBoolean(str2, z);
         } catch (Throwable th) {
-            iw.c(th, d.r, "gbv");
+            iw.c(th, "csp", "gbv");
             return z;
         }
     }
@@ -147,10 +141,10 @@ public final class jj {
         if (context == null) {
             return new byte[0];
         }
-        byte[] bArr = f5211a;
+        byte[] bArr = a;
         if (bArr == null || bArr.length <= 0) {
             byte[] bytes = ho.f(context).getBytes();
-            f5211a = bytes;
+            a = bytes;
             return bytes;
         }
         return bArr;
@@ -168,7 +162,7 @@ public final class jj {
         try {
             return context.getSharedPreferences(str, 0).getLong(str2, 0L);
         } catch (Throwable th) {
-            iw.c(th, d.r, "glv");
+            iw.c(th, "csp", "glv");
             return 0L;
         }
     }
@@ -180,7 +174,7 @@ public final class jj {
         try {
             return context.getSharedPreferences(str, 0).getString(str2, str3);
         } catch (Throwable th) {
-            iw.c(th, d.r, "gsv");
+            iw.c(th, "csp", "gsv");
             return str3;
         }
     }

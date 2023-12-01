@@ -6,41 +6,41 @@ import android.text.TextUtils;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f24714a;
+    public final String f11026a;
     public final String b;
 
     /* renamed from: com.opos.cmn.biz.web.a.b.a$a  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/opos/cmn/biz/web/a/b/a$a.class */
-    public static class C0633a {
+    public static class C0463a {
 
         /* renamed from: a  reason: collision with root package name */
-        private String f24715a;
+        private String f11027a;
         private String b;
 
-        public C0633a a(String str) {
-            this.f24715a = str;
+        public C0463a a(String str) {
+            this.f11027a = str;
             return this;
         }
 
         public a a() {
-            if (TextUtils.isEmpty(this.f24715a)) {
+            if (TextUtils.isEmpty(this.f11027a)) {
                 throw new Exception("url is null.");
             }
             return new a(this);
         }
 
-        public C0633a b(String str) {
+        public C0463a b(String str) {
             this.b = str;
             return this;
         }
     }
 
-    private a(C0633a c0633a) {
-        this.f24714a = c0633a.f24715a;
-        this.b = c0633a.b;
+    private a(C0463a c0463a) {
+        this.f11026a = c0463a.f11027a;
+        this.b = c0463a.b;
     }
 
     public String toString() {
-        return "CacheResourceRequest{url=" + this.f24714a + ", md5=" + this.b + '}';
+        return "CacheResourceRequest{url=" + this.f11026a + ", md5=" + this.b + '}';
     }
 }

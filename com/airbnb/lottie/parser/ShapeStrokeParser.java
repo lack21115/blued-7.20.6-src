@@ -6,7 +6,7 @@ import com.airbnb.lottie.model.animatable.AnimatableColorValue;
 import com.airbnb.lottie.model.animatable.AnimatableFloatValue;
 import com.airbnb.lottie.model.animatable.AnimatableIntegerValue;
 import com.airbnb.lottie.model.content.ShapeStroke;
-import com.baidu.mobads.sdk.api.IAdInterListener;
+import com.amap.api.col.p0003sl.iu;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -50,7 +50,7 @@ public class ShapeStrokeParser {
                 }
                 z = true;
             } else if (hashCode == 119) {
-                if (nextName.equals(IAdInterListener.AdReqParam.WIDTH)) {
+                if (nextName.equals("w")) {
                     z = true;
                 }
                 z = true;
@@ -146,7 +146,7 @@ public class ShapeStrokeParser {
                             }
                             z2 = true;
                         } else {
-                            if (str2.equals("g")) {
+                            if (str2.equals(iu.f)) {
                                 z2 = true;
                             }
                             z2 = true;

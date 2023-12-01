@@ -17,12 +17,12 @@ public class e {
         return str2 == null ? b.a(list, new c() { // from class: com.kwad.sdk.pngencrypt.chunk.e.1
             @Override // com.kwad.sdk.pngencrypt.chunk.c
             public final boolean a(PngChunk pngChunk) {
-                return pngChunk.awG.equals(String.this);
+                return pngChunk.awG.equals(str);
             }
         }) : b.a(list, new c() { // from class: com.kwad.sdk.pngencrypt.chunk.e.2
             @Override // com.kwad.sdk.pngencrypt.chunk.c
             public final boolean a(PngChunk pngChunk) {
-                if (pngChunk.awG.equals(String.this)) {
+                if (pngChunk.awG.equals(str)) {
                     if (!(pngChunk instanceof t) || ((t) pngChunk).getKey().equals(str2)) {
                         return !(pngChunk instanceof n) || ((n) pngChunk).Cg().equals(str2);
                     }

@@ -390,9 +390,8 @@ public class ScaleAnimSeekBar extends View {
         return this.aoL;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         canvas.save();
         canvas.translate(this.aoN / 2, this.aoM / 2);
@@ -405,9 +404,8 @@ public class ScaleAnimSeekBar extends View {
         canvas.restore();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         int mode = View.MeasureSpec.getMode(i);
         int size = View.MeasureSpec.getSize(i);
         int mode2 = View.MeasureSpec.getMode(i2);

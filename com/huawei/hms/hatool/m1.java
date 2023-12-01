@@ -7,16 +7,16 @@ import java.util.LinkedHashMap;
 public abstract class m1 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static k1 f22772a;
+    public static k1 f9164a;
 
     public static k1 a() {
         k1 k1Var;
         synchronized (m1.class) {
             try {
-                if (f22772a == null) {
-                    f22772a = p1.c().b();
+                if (f9164a == null) {
+                    f9164a = p1.c().b();
                 }
-                k1Var = f22772a;
+                k1Var = f9164a;
             } catch (Throwable th) {
                 throw th;
             }
@@ -29,7 +29,7 @@ public abstract class m1 {
             return;
         }
         if (i == 1 || i == 0) {
-            f22772a.a(i, str, linkedHashMap);
+            f9164a.a(i, str, linkedHashMap);
             return;
         }
         z.d("hmsSdk", "Data type no longer collects range.type: " + i);
@@ -38,7 +38,7 @@ public abstract class m1 {
     @Deprecated
     public static void a(Context context, String str, String str2) {
         if (a() != null) {
-            f22772a.a(context, str, str2);
+            f9164a.a(context, str, str2);
         }
     }
 
@@ -47,7 +47,7 @@ public abstract class m1 {
             return;
         }
         if (i == 1 || i == 0) {
-            f22772a.b(i, str, linkedHashMap);
+            f9164a.b(i, str, linkedHashMap);
             return;
         }
         z.d("hmsSdk", "Data type no longer collects range.type: " + i);
@@ -61,6 +61,6 @@ public abstract class m1 {
         if (a() == null || !x0.b().a()) {
             return;
         }
-        f22772a.a(-1);
+        f9164a.a(-1);
     }
 }

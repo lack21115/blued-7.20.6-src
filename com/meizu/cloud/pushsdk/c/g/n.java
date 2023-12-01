@@ -7,7 +7,7 @@ import java.io.InterruptedIOException;
 public class n {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final n f24076a = new n() { // from class: com.meizu.cloud.pushsdk.c.g.n.1
+    public static final n f10465a = new n() { // from class: com.meizu.cloud.pushsdk.c.g.n.1
         @Override // com.meizu.cloud.pushsdk.c.g.n
         public void a() {
         }
@@ -15,13 +15,13 @@ public class n {
     private boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private long f24077c;
+    private long f10466c;
 
     public void a() throws IOException {
         if (Thread.interrupted()) {
             throw new InterruptedIOException("thread interrupted");
         }
-        if (this.b && this.f24077c - System.nanoTime() <= 0) {
+        if (this.b && this.f10466c - System.nanoTime() <= 0) {
             throw new InterruptedIOException("deadline reached");
         }
     }

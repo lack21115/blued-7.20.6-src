@@ -29,13 +29,9 @@ import java.text.DecimalFormat;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/pkdared/PkDaredEggView.class */
 public class PkDaredEggView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private IRequestHost f15380a;
+    private IRequestHost a;
     private TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private View f15381c;
+    private View c;
     private PkDaredEggProgressView d;
     private PkDaredEggProgressView e;
     private TextView f;
@@ -148,11 +144,11 @@ public class PkDaredEggView extends FrameLayout {
 
     private void a(String str, String str2, String str3) {
         this.m.setText(str);
-        ImageLoader.a(this.f15380a, str3).a(this.o);
+        ImageLoader.a(this.a, str3).a(this.o);
         SpannableString spannableString = new SpannableString(String.format(getContext().getResources().getString(R.string.live_pk_dared_get_prop), str2));
         spannableString.setSpan(new ForegroundColorSpan(ContextCompat.getColor(getContext(), R.color.syc_dark_FFB119)), 2, spannableString.length(), 17);
         this.n.setText(spannableString);
-        this.f15381c.animate().alpha(0.0f).setDuration(300L);
+        this.c.animate().alpha(0.0f).setDuration(300L);
         this.l.animate().alpha(1.0f).setDuration(300L);
     }
 
@@ -180,7 +176,7 @@ public class PkDaredEggView extends FrameLayout {
         this.g.setText("");
         this.d.setProgress(0);
         this.e.setProgress(0);
-        this.f15381c.setAlpha(1.0f);
+        this.c.setAlpha(1.0f);
         this.l.setAlpha(0.0f);
         this.p.setAlpha(0.0f);
     }
@@ -196,6 +192,7 @@ public class PkDaredEggView extends FrameLayout {
         });
     }
 
+    /* JADX WARN: Type inference failed for: r1v0, types: [com.blued.android.module.live_china.view.pkdared.PkDaredEggView$1] */
     public void a(int i) {
         CountDownTimer countDownTimer = this.s;
         if (countDownTimer != null) {
@@ -240,18 +237,18 @@ public class PkDaredEggView extends FrameLayout {
             }
             a(progress2, i2, this.g, this.i);
         }
-        if (this.f15380a != null) {
+        if (this.a != null) {
             if (i >= this.d.b || i2 >= this.e.b) {
-                ImageLoader.c(this.f15380a, "live_pk_dared_egg.png").g().g(1).a(this.j);
+                ImageLoader.c(this.a, "live_pk_dared_egg.png").g().g(1).a(this.j);
             }
         }
     }
 
     public void a(final int i, final int i2, final int i3, final int i4, final int i5, IRequestHost iRequestHost) {
-        this.f15380a = iRequestHost;
+        this.a = iRequestHost;
         setAlpha(0.0f);
         setVisibility(0);
-        this.f15381c.setAlpha(1.0f);
+        this.c.setAlpha(1.0f);
         this.l.setAlpha(0.0f);
         this.p.setAlpha(0.0f);
         post(new Runnable() { // from class: com.blued.android.module.live_china.view.pkdared.-$$Lambda$PkDaredEggView$3gVXCocEAz9Tw9Ds1AbxJBRTrXY
@@ -278,7 +275,7 @@ public class PkDaredEggView extends FrameLayout {
     protected void a(Context context) {
         LayoutInflater.from(getContext()).inflate(R.layout.live_pk_dared_egg, this);
         this.b = (TextView) findViewById(R.id.tv_egg_title);
-        this.f15381c = findViewById(R.id.rl_egg_fight_ing);
+        this.c = findViewById(R.id.rl_egg_fight_ing);
         this.d = (PkDaredEggProgressView) findViewById(R.id.pdep_our);
         this.e = (PkDaredEggProgressView) findViewById(R.id.pdep_opposite);
         this.f = (TextView) findViewById(R.id.tv_egg_score_our);

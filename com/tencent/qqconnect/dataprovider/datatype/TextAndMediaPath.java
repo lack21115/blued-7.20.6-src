@@ -20,16 +20,16 @@ public class TextAndMediaPath implements Parcelable {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    private String f38657a;
+    private String f24966a;
     private String b;
 
     private TextAndMediaPath(Parcel parcel) {
-        this.f38657a = parcel.readString();
+        this.f24966a = parcel.readString();
         this.b = parcel.readString();
     }
 
     public TextAndMediaPath(String str, String str2) {
-        this.f38657a = str;
+        this.f24966a = str;
         this.b = str2;
     }
 
@@ -43,12 +43,12 @@ public class TextAndMediaPath implements Parcelable {
     }
 
     public String getText() {
-        return this.f38657a;
+        return this.f24966a;
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.f38657a);
+        parcel.writeString(this.f24966a);
         parcel.writeString(this.b);
     }
 }

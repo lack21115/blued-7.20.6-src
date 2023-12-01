@@ -6,11 +6,11 @@ import java.io.File;
 public final class m {
 
     /* renamed from: a  reason: collision with root package name */
-    public File f22557a;
+    public File f8949a;
     private String b;
 
     public m(File file, String str) {
-        this.f22557a = file;
+        this.f8949a = file;
         this.b = str;
     }
 
@@ -19,6 +19,6 @@ public final class m {
     }
 
     private File b() {
-        return this.f22557a;
+        return this.f8949a;
     }
 }

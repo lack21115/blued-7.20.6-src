@@ -7,9 +7,7 @@ import kotlin.jvm.internal.Lambda;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt__MigrationKt$onErrorReturn$1.class */
 final class FlowKt__MigrationKt$onErrorReturn$1 extends Lambda implements Function1<Throwable, Boolean> {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final FlowKt__MigrationKt$onErrorReturn$1 f43236a = new FlowKt__MigrationKt$onErrorReturn$1();
+    public static final FlowKt__MigrationKt$onErrorReturn$1 a = new FlowKt__MigrationKt$onErrorReturn$1();
 
     FlowKt__MigrationKt$onErrorReturn$1() {
         super(1);

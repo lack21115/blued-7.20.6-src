@@ -24,11 +24,11 @@ public class w1 {
     public static final int[] f = {1};
 
     /* renamed from: a  reason: collision with root package name */
-    public final t1[] f21329a = t1.k();
+    public final t1[] f7723a = t1.k();
     public final HashMap<String, t1> b = t1.j();
 
     /* renamed from: c  reason: collision with root package name */
-    public final a f21330c;
+    public final a f7724c;
     public String d;
     public final v e;
 
@@ -83,7 +83,7 @@ public class w1 {
     }
 
     public w1(v vVar, String str) {
-        this.f21330c = new a(vVar.a(), str, null, 44);
+        this.f7724c = new a(vVar.a(), str, null, 44);
         this.e = vVar;
     }
 
@@ -195,7 +195,7 @@ public class w1 {
                 jSONArrayArr = new JSONArray[3];
                 jArr = new long[3];
                 hashMap = new HashMap<>();
-                sQLiteDatabase = this.f21330c.getWritableDatabase();
+                sQLiteDatabase = this.f7724c.getWritableDatabase();
                 try {
                     a(str, sQLiteDatabase, hashMap);
                     sQLiteDatabase.beginTransaction();
@@ -249,7 +249,7 @@ public class w1 {
                 } else {
                     try {
                         a(str, jSONObject2, a2Var, b2Var, c2Var, f2Var, sQLiteDatabase, jSONArrayArr, jArr, hashMap);
-                        sQLiteDatabase.execSQL("DELETE FROM launch WHERE _id=?", new String[]{String.valueOf(a2Var.f21308a)});
+                        sQLiteDatabase.execSQL("DELETE FROM launch WHERE _id=?", new String[]{String.valueOf(a2Var.f7702a)});
                     } catch (Throwable th7) {
                         th = th7;
                         cursor = rawQuery;
@@ -335,7 +335,7 @@ public class w1 {
                 }
                 a2Var.a(rawQuery);
                 JSONObject jSONObject = new JSONObject();
-                this.e.f21325c.b.onSessionBatchEvent(a2Var.f21308a, a2Var.d, jSONObject);
+                this.e.f7719c.b.onSessionBatchEvent(a2Var.f7702a, a2Var.d, jSONObject);
                 hashMap.put(a2Var.d, jSONObject);
             }
         } catch (Throwable th) {
@@ -355,7 +355,7 @@ public class w1 {
         boolean z3;
         boolean z4;
         if (sQLiteDatabase == null) {
-            sQLiteDatabase = this.f21330c.getWritableDatabase();
+            sQLiteDatabase = this.f7724c.getWritableDatabase();
             z3 = true;
         } else {
             z3 = false;
@@ -416,7 +416,7 @@ public class w1 {
             }
         }
         try {
-            SQLiteDatabase writableDatabase = this.f21330c.getWritableDatabase();
+            SQLiteDatabase writableDatabase = this.f7724c.getWritableDatabase();
             try {
                 writableDatabase.beginTransaction();
                 Iterator<b2> it2 = arrayList.iterator();
@@ -425,7 +425,7 @@ public class w1 {
                     if (arrayList3.contains(next2)) {
                         a(str, next2, true, writableDatabase, false);
                     } else {
-                        writableDatabase.execSQL("DELETE FROM pack WHERE _id=?", new String[]{String.valueOf(next2.f21308a)});
+                        writableDatabase.execSQL("DELETE FROM pack WHERE _id=?", new String[]{String.valueOf(next2.f7702a)});
                     }
                 }
                 Iterator<b2> it3 = arrayList2.iterator();
@@ -435,7 +435,7 @@ public class w1 {
                         a((String) null);
                     }
                     if (!arrayList3.contains(next3)) {
-                        long j = next3.f21308a;
+                        long j = next3.f7702a;
                         int i = next3.q + 1;
                         next3.q = i;
                         writableDatabase.execSQL("UPDATE pack SET _fail=" + i + " WHERE _id=" + j);
@@ -467,15 +467,15 @@ public class w1 {
         JSONArray a4 = a(a2Var, hashMap);
         if (a2 || a(jArr) || a4 != null) {
             b2Var.a(str, jSONObject, a2 ? a2Var : null, null, null, jSONArrayArr, jArr, a4, 0);
-            if (a4 != null || a3 < this.f21329a.length) {
+            if (a4 != null || a3 < this.f7723a.length) {
                 a(str, b2Var, true, sQLiteDatabase, true);
             } else {
-                b2 b2Var2 = (b2) b2Var.m5742clone();
+                b2 b2Var2 = (b2) b2Var.m2745clone();
                 b2Var2.l();
                 arrayList.add(b2Var2);
             }
         }
-        while (a3 < this.f21329a.length) {
+        while (a3 < this.f7723a.length) {
             a3 = a(str, a3, sQLiteDatabase, a2Var.d, true, 0, jSONArrayArr, jArr);
             if (a(jArr)) {
                 b2Var.a(str, jSONObject, a(a2Var.d) ? a2Var : null, null, null, jSONArrayArr, jArr, null, 0);
@@ -497,7 +497,7 @@ public class w1 {
         }
         while (true) {
             a(str, b2Var, true, sQLiteDatabase, true);
-            while (a4 < this.f21329a.length) {
+            while (a4 < this.f7723a.length) {
                 a2 = a(str, a4, sQLiteDatabase, a2Var.d, true, 0, jSONArrayArr, jArr);
                 a4 = a2;
                 if (a(jArr)) {
@@ -541,7 +541,7 @@ public class w1 {
             if (a(jArr)) {
                 b2Var.a(str, jSONObject, null, null, null, jSONArrayArr, jArr, null, i3);
                 a(str, b2Var, z, sQLiteDatabase, true);
-                while (a2 < this.f21329a.length) {
+                while (a2 < this.f7723a.length) {
                     a2 = a(str, a2, sQLiteDatabase, b2Var2.d, z, i3, jSONArrayArr, jArr);
                     if (a(jArr)) {
                         b2Var.a(str, jSONObject, null, null, null, jSONArrayArr, jArr, null, i3);
@@ -556,11 +556,11 @@ public class w1 {
 
     public void a(ArrayList<t1> arrayList) {
         synchronized (this) {
-            SQLiteDatabase writableDatabase = this.f21330c.getWritableDatabase();
+            SQLiteDatabase writableDatabase = this.f7724c.getWritableDatabase();
             writableDatabase.beginTransaction();
             Iterator<t1> it = arrayList.iterator();
             while (it.hasNext()) {
-                writableDatabase.execSQL("DELETE FROM profile WHERE _id=?", new String[]{String.valueOf(it.next().f21308a)});
+                writableDatabase.execSQL("DELETE FROM profile WHERE _id=?", new String[]{String.valueOf(it.next().f7702a)});
             }
             writableDatabase.setTransactionSuccessful();
             j1.a(writableDatabase);
@@ -633,7 +633,7 @@ public class w1 {
             arrayList = new ArrayList<>();
             SQLiteDatabase sQLiteDatabase = null;
             try {
-                writableDatabase = this.f21330c.getWritableDatabase();
+                writableDatabase = this.f7724c.getWritableDatabase();
                 cursor2 = null;
             } catch (Throwable th) {
                 th = th;
@@ -651,7 +651,7 @@ public class w1 {
                 Cursor rawQuery = writableDatabase.rawQuery(sb.toString(), null);
                 while (rawQuery.moveToNext()) {
                     d2Var.a(rawQuery);
-                    arrayList.add(d2Var.m5742clone());
+                    arrayList.add(d2Var.m2745clone());
                 }
                 cursor2 = rawQuery;
                 writableDatabase.setTransactionSuccessful();

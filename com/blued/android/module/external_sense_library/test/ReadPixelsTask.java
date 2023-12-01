@@ -13,24 +13,21 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
+import javax.microedition.khronos.opengles.GL10;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/external_sense_library/test/ReadPixelsTask.class */
 public class ReadPixelsTask extends AsyncTask<Void, Integer, Long> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final String f11279a = ReadPixelsTask.class.getSimpleName();
+    private static final String a = ReadPixelsTask.class.getSimpleName();
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f11280c;
+    private int c;
     private int d;
     private ProgressBar e;
 
     private long a(OffscreenSurface offscreenSurface) {
         offscreenSurface.d();
-        ByteBuffer allocateDirect = ByteBuffer.allocateDirect(this.b * this.f11280c * 4);
+        ByteBuffer allocateDirect = ByteBuffer.allocateDirect(this.b * this.c * 4);
         allocateDirect.order(ByteOrder.LITTLE_ENDIAN);
-        Log.d(f11279a, "Running...");
+        Log.d(a, "Running...");
         float f = 1.0f / this.d;
         long j = 0;
         int i = 0;
@@ -38,11 +35,11 @@ public class ReadPixelsTask extends AsyncTask<Void, Integer, Long> {
             int i2 = i;
             int i3 = this.d;
             if (i2 >= i3) {
-                Log.d(f11279a, "done");
+                Log.d(a, "done");
                 long nanoTime = System.nanoTime();
                 try {
                     offscreenSurface.a(new File(Environment.getExternalStorageDirectory(), "test.png"));
-                    Log.d(f11279a, "Saved frame in " + ((System.nanoTime() - nanoTime) / 1000000) + "ms");
+                    Log.d(a, "Saved frame in " + ((System.nanoTime() - nanoTime) / 1000000) + "ms");
                     return j;
                 } catch (IOException e) {
                     throw new RuntimeException(e);
@@ -56,18 +53,18 @@ public class ReadPixelsTask extends AsyncTask<Void, Integer, Long> {
             float f4 = (f2 + f3) / 2.0f;
             GLES20.glClearColor(f2, f3, f4, 1.0f);
             GLES20.glClear(16384);
-            GLES20.glEnable(3089);
+            GLES20.glEnable(GL10.GL_SCISSOR_TEST);
             int i4 = this.b;
             int i5 = i4 / 4;
-            int i6 = this.f11280c;
+            int i6 = this.c;
             GLES20.glScissor(i5, i6 / 4, i4 / 2, i6 / 2);
             GLES20.glClearColor(f4, f3, f2, 1.0f);
             GLES20.glClear(16384);
-            GLES20.glDisable(3089);
+            GLES20.glDisable(GL10.GL_SCISSOR_TEST);
             GLES20.glFinish();
-            GLES20.glReadPixels(0, 0, 1, 1, 6408, 5121, allocateDirect);
+            GLES20.glReadPixels(0, 0, 1, 1, GL10.GL_RGBA, GL10.GL_UNSIGNED_BYTE, allocateDirect);
             long nanoTime2 = System.nanoTime();
-            GLES20.glReadPixels(0, 0, this.b, this.f11280c, 6408, 5121, allocateDirect);
+            GLES20.glReadPixels(0, 0, this.b, this.c, GL10.GL_RGBA, GL10.GL_UNSIGNED_BYTE, allocateDirect);
             j += System.nanoTime() - nanoTime2;
             i = i2 + 1;
         }
@@ -83,13 +80,13 @@ public class ReadPixelsTask extends AsyncTask<Void, Integer, Long> {
         try {
             eglCore = new EglCore(null, 0);
             try {
-                offscreenSurface = new OffscreenSurface(eglCore, this.b, this.f11280c);
+                offscreenSurface = new OffscreenSurface(eglCore, this.b, this.c);
             } catch (Throwable th) {
                 th = th;
                 offscreenSurface = null;
             }
             try {
-                Log.d(f11279a, "Buffer size " + this.b + "x" + this.f11280c);
+                Log.d(a, "Buffer size " + this.b + "x" + this.c);
                 long a2 = a(offscreenSurface);
                 offscreenSurface.e();
                 eglCore.a();
@@ -118,7 +115,7 @@ public class ReadPixelsTask extends AsyncTask<Void, Integer, Long> {
     @Override // android.os.AsyncTask
     /* renamed from: a */
     public void onPostExecute(Long l) {
-        String str = f11279a;
+        String str = a;
         Log.d(str, "onPostExecute result=" + l);
         if (l.longValue() < 0) {
             AppMethods.a((CharSequence) "没有保存完成");

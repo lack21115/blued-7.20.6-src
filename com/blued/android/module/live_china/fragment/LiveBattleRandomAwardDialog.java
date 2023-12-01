@@ -3,7 +3,6 @@ package com.blued.android.module.live_china.fragment;
 import android.app.Dialog;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.os.BatteryManager;
 import android.os.Bundle;
 import android.view.Display;
 import android.view.LayoutInflater;
@@ -16,6 +15,7 @@ import android.widget.ProgressBar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import com.blued.android.core.ui.ActivityFragmentActive;
 import com.blued.android.core.ui.BaseDialogFragment;
 import com.blued.android.framework.http.BluedUIHttpResponse;
@@ -45,12 +45,8 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveBattleRandomAwardDialog.class */
 public final class LiveBattleRandomAwardDialog extends BaseDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f12735a = new Companion(null);
-
-    /* renamed from: c  reason: collision with root package name */
-    private FreedomAdapter f12736c;
+    public static final Companion a = new Companion(null);
+    private FreedomAdapter c;
     private final Lazy b = LazyKt.a(new Function0<LiveBattleRandomAwardDialogBinding>() { // from class: com.blued.android.module.live_china.fragment.LiveBattleRandomAwardDialog$vb$2
         /* JADX INFO: Access modifiers changed from: package-private */
         {
@@ -79,7 +75,7 @@ public final class LiveBattleRandomAwardDialog extends BaseDialogFragment {
             Intrinsics.e(fragment, "fragment");
             LiveBattleRandomAwardDialog liveBattleRandomAwardDialog = new LiveBattleRandomAwardDialog();
             Bundle bundle = new Bundle();
-            bundle.putInt(BatteryManager.EXTRA_LEVEL, i);
+            bundle.putInt("level", i);
             liveBattleRandomAwardDialog.setArguments(bundle);
             liveBattleRandomAwardDialog.show(fragment.getChildFragmentManager(), "LiveBattleRandomAwardDialog");
         }
@@ -118,7 +114,7 @@ public final class LiveBattleRandomAwardDialog extends BaseDialogFragment {
     }
 
     private final void e() {
-        SVGAParser.a(SVGAParser.f15958a.b(), "live_battle_fly_gift.svga", new SVGAParser.ParseCompletion() { // from class: com.blued.android.module.live_china.fragment.LiveBattleRandomAwardDialog$initView$1
+        SVGAParser.a(SVGAParser.a.b(), "live_battle_fly_gift.svga", new SVGAParser.ParseCompletion() { // from class: com.blued.android.module.live_china.fragment.LiveBattleRandomAwardDialog$initView$1
             @Override // com.blued.android.module.svgaplayer.SVGAParser.ParseCompletion
             public void onComplete(SVGAVideoEntity videoItem) {
                 LiveBattleRandomAwardDialogBinding d;
@@ -134,14 +130,14 @@ public final class LiveBattleRandomAwardDialog extends BaseDialogFragment {
             public void onError() {
             }
         }, (SVGAParser.PlayCallback) null, 4, (Object) null);
-        d().f12144c.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(450L).setInterpolator(new OvershootInterpolator()).start();
+        d().c.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(450L).setInterpolator(new OvershootInterpolator()).start();
         d().getRoot().setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveBattleRandomAwardDialog$GUciZEtCWBG-DZwftPg8mureLaU
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 LiveBattleRandomAwardDialog.a(LiveBattleRandomAwardDialog.this, view);
             }
         });
-        d().f12143a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveBattleRandomAwardDialog$S9Iq0zpypmHwhjKVJox9_y_bfw4
+        d().a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveBattleRandomAwardDialog$S9Iq0zpypmHwhjKVJox9_y_bfw4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 LiveBattleRandomAwardDialog.b(LiveBattleRandomAwardDialog.this, view);
@@ -154,7 +150,7 @@ public final class LiveBattleRandomAwardDialog extends BaseDialogFragment {
         Bundle arguments = getArguments();
         int i = 0;
         if (arguments != null) {
-            i = arguments.getInt(BatteryManager.EXTRA_LEVEL, 0);
+            i = arguments.getInt("level", 0);
         }
         final ActivityFragmentActive a2 = a();
         LiveRoomHttpUtils.f(i, new BluedUIHttpResponse<BluedEntity<LiveBattleGiftModel, LiveBattleGiftExtra>>(a2) { // from class: com.blued.android.module.live_china.fragment.LiveBattleRandomAwardDialog$getData$2
@@ -181,7 +177,7 @@ public final class LiveBattleRandomAwardDialog extends BaseDialogFragment {
     }
 
     private final void g() {
-        FreedomAdapter freedomAdapter = this.f12736c;
+        FreedomAdapter freedomAdapter = this.c;
         if (freedomAdapter != null) {
             if (freedomAdapter == null) {
                 return;
@@ -189,9 +185,8 @@ public final class LiveBattleRandomAwardDialog extends BaseDialogFragment {
             freedomAdapter.notifyDataSetChanged();
             return;
         }
-        final GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 4);
+        final RecyclerView.LayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 4);
         gridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() { // from class: com.blued.android.module.live_china.fragment.LiveBattleRandomAwardDialog$notifyList$1
-            @Override // androidx.recyclerview.widget.GridLayoutManager.SpanSizeLookup
             public int getSpanSize(int i) {
                 ArrayList arrayList;
                 arrayList = LiveBattleRandomAwardDialog.this.d;
@@ -199,11 +194,10 @@ public final class LiveBattleRandomAwardDialog extends BaseDialogFragment {
             }
         });
         d().d.setLayoutManager(gridLayoutManager);
-        this.f12736c = new FreedomAdapter(getContext(), a(), this.d);
-        d().d.setAdapter(this.f12736c);
+        this.c = new FreedomAdapter(getContext(), a(), this.d);
+        d().d.setAdapter(this.c);
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
         WindowManager windowManager;
         Display defaultDisplay;

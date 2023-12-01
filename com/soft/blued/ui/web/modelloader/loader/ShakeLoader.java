@@ -2,7 +2,6 @@ package com.soft.blued.ui.web.modelloader.loader;
 
 import android.text.TextUtils;
 import androidx.fragment.app.FragmentActivity;
-import com.blued.android.module.common.web.LoaderConstants;
 import com.blued.android.module.common.web.ModelLoaderRegistry;
 import com.blued.android.module.common.web.jsbridge.BridgeManager;
 import com.blued.android.module.common.web.modelloader.loader.ModelLoader;
@@ -23,7 +22,6 @@ public class ShakeLoader implements ModelLoader<String> {
             this.activity = fragmentActivity;
         }
 
-        @Override // com.blued.android.module.common.web.modelloader.loader.ModelLoader.ModelLoaderFactory
         public ModelLoader<String> build(ModelLoaderRegistry modelLoaderRegistry) {
             return new ShakeLoader(this.bridgeManager, this.activity);
         }
@@ -34,13 +32,11 @@ public class ShakeLoader implements ModelLoader<String> {
         this.activity = fragmentActivity;
     }
 
-    @Override // com.blued.android.module.common.web.modelloader.loader.ModelLoader
     public ModelLoader.LoadData buildData(String str) {
         return new ModelLoader.LoadData(str, new ShakeFetcher(this.bridgeManager, this.activity));
     }
 
-    @Override // com.blued.android.module.common.web.modelloader.loader.ModelLoader
     public boolean handles(String str) {
-        return TextUtils.equals(str, LoaderConstants.SHAKE);
+        return TextUtils.equals(str, "shake");
     }
 }

@@ -9,11 +9,11 @@ import org.json.JSONObject;
 public class uf implements JsonParser {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f38049a;
+    public String f24358a;
     public String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public int f38050c;
+    public int f24359c;
     public int d;
     private String e;
     private String[] f;
@@ -39,14 +39,14 @@ public class uf implements JsonParser {
             if (opt instanceof JSONArray) {
                 JSONArray jSONArray = (JSONArray) opt;
                 String optString = jSONArray.optString(xa.a(0, jSONArray.length()), "");
-                replace = replace4.replace("{" + str2 + com.alipay.sdk.util.i.d, optString);
+                replace = replace4.replace("{" + str2 + "}", optString);
             } else {
                 if (!(opt instanceof String)) {
                     replace = replace4;
                     if (!(opt instanceof Number)) {
                     }
                 }
-                replace = replace4.replace("{" + str2 + com.alipay.sdk.util.i.d, String.valueOf(opt));
+                replace = replace4.replace("{" + str2 + "}", String.valueOf(opt));
             }
             i4++;
             replace4 = replace;
@@ -60,10 +60,10 @@ public class uf implements JsonParser {
         if (jSONObject == null) {
             return;
         }
-        this.f38049a = jSONObject.optString("layerid");
+        this.f24358a = jSONObject.optString("layerid");
         this.b = jSONObject.optString("version");
         this.e = jSONObject.optString("url");
-        this.f38050c = jSONObject.optInt("zoom_max", 20);
+        this.f24359c = jSONObject.optInt("zoom_max", 20);
         this.d = jSONObject.optInt("zoom_min", 1);
         JSONArray optJSONArray = jSONObject.optJSONArray("params");
         if (optJSONArray == null) {
@@ -84,13 +84,13 @@ public class uf implements JsonParser {
     public String toString() {
         StringBuffer stringBuffer = new StringBuffer("CustomLayerModel{");
         stringBuffer.append("mLayerId='");
-        stringBuffer.append(this.f38049a);
+        stringBuffer.append(this.f24358a);
         stringBuffer.append('\'');
         stringBuffer.append(", mVersion='");
         stringBuffer.append(this.b);
         stringBuffer.append('\'');
         stringBuffer.append(", mMaxZoomLevel=");
-        stringBuffer.append(this.f38050c);
+        stringBuffer.append(this.f24359c);
         stringBuffer.append(", mMinZoomLevel=");
         stringBuffer.append(this.d);
         stringBuffer.append(", mUrl='");

@@ -26,12 +26,10 @@ public final class MutableHandlerRegistry extends HandlerRegistry {
         return this.services.put(serverServiceDefinition.getServiceDescriptor().getName(), serverServiceDefinition);
     }
 
-    @Override // io.grpc.HandlerRegistry
     public List<ServerServiceDefinition> getServices() {
         return Collections.unmodifiableList(new ArrayList(this.services.values()));
     }
 
-    @Override // io.grpc.HandlerRegistry
     @Nullable
     public ServerMethodDefinition<?, ?> lookupMethod(String str, @Nullable String str2) {
         ServerServiceDefinition serverServiceDefinition;

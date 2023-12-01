@@ -8,11 +8,11 @@ public class HybridADSetting {
     private String h;
 
     /* renamed from: a  reason: collision with root package name */
-    private int f27874a = 1;
+    private int f14186a = 1;
     private int b = 44;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f27875c = -1;
+    private int f14187c = -1;
     private int d = -14013133;
     private int e = 16;
     private int i = -1776153;
@@ -54,7 +54,7 @@ public class HybridADSetting {
     }
 
     public int getTitleBarColor() {
-        return this.f27875c;
+        return this.f14187c;
     }
 
     public int getTitleBarHeight() {
@@ -70,7 +70,7 @@ public class HybridADSetting {
     }
 
     public int getType() {
-        return this.f27874a;
+        return this.f14186a;
     }
 
     public HybridADSetting separatorColor(int i) {
@@ -84,7 +84,7 @@ public class HybridADSetting {
     }
 
     public HybridADSetting titleBarColor(int i) {
-        this.f27875c = i;
+        this.f14187c = i;
         return this;
     }
 
@@ -104,7 +104,7 @@ public class HybridADSetting {
     }
 
     public HybridADSetting type(int i) {
-        this.f27874a = i;
+        this.f14186a = i;
         return this;
     }
 }

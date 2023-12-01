@@ -6,13 +6,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/KotlinVersion.class */
 public final class KotlinVersion implements Comparable<KotlinVersion> {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f42284a = new Companion(null);
+    public static final Companion a = new Companion(null);
     public static final KotlinVersion b = KotlinVersionCurrentValue.a();
-
-    /* renamed from: c  reason: collision with root package name */
-    private final int f42285c;
+    private final int c;
     private final int d;
     private final int e;
     private final int f;
@@ -29,7 +25,7 @@ public final class KotlinVersion implements Comparable<KotlinVersion> {
     }
 
     public KotlinVersion(int i, int i2, int i3) {
-        this.f42285c = i;
+        this.c = i;
         this.d = i2;
         this.e = i3;
         this.f = a(i, i2, i3);
@@ -162,7 +158,7 @@ public final class KotlinVersion implements Comparable<KotlinVersion> {
 
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(this.f42285c);
+        sb.append(this.c);
         sb.append('.');
         sb.append(this.d);
         sb.append('.');

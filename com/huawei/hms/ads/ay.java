@@ -7,7 +7,7 @@ import com.huawei.openalliance.ad.ipc.RemoteCallResultCallback;
 /* loaded from: source-7994992-dex2jar.jar:com/huawei/hms/ads/ay.class */
 public class ay extends ap {
     public ay() {
-        super(ai.f22437c);
+        super(ai.f8829c);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

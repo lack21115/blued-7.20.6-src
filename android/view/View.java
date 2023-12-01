@@ -26,7 +26,6 @@ import android.graphics.Shader;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.hardware.display.DisplayManagerGlobal;
-import android.media.AudioSystem;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
@@ -70,13 +69,15 @@ import android.widget.ScrollBarDrawable;
 import com.alipay.sdk.util.i;
 import com.android.internal.R;
 import com.android.internal.util.Predicate;
+import com.android.internal.util.Protocol;
+import com.android.internal.util.cm.NavigationRingConstants;
+import com.android.internal.util.cm.QSConstants;
 import com.android.internal.view.menu.MenuBuilder;
+import com.android.org.conscrypt.NativeCrypto;
+import com.blued.android.chat.grpc.backup.MsgBackupManager;
 import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.google.android.collect.Lists;
 import com.google.android.collect.Maps;
-import com.sensetime.stmobile.STMobileHumanActionNative;
-import com.umeng.analytics.pro.bh;
-import com.umeng.commonsdk.internal.a;
 import java.lang.ref.WeakReference;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -460,7 +461,7 @@ public class View implements Drawable.Callback, KeyEvent.Callback, Accessibility
     private CheckForLongPress mPendingCheckForLongPress;
     private CheckForTap mPendingCheckForTap;
     private PerformClick mPerformClick;
-    @ViewDebug.ExportedProperty(flagMapping = {@ViewDebug.FlagToString(equals = 4096, mask = 4096, name = "FORCE_LAYOUT"), @ViewDebug.FlagToString(equals = 8192, mask = 8192, name = "LAYOUT_REQUIRED"), @ViewDebug.FlagToString(equals = 32768, mask = 32768, name = "DRAWING_CACHE_INVALID", outputIf = false), @ViewDebug.FlagToString(equals = 32, mask = 32, name = "DRAWN", outputIf = true), @ViewDebug.FlagToString(equals = 32, mask = 32, name = "NOT_DRAWN", outputIf = false), @ViewDebug.FlagToString(equals = 4194304, mask = 6291456, name = "DIRTY_OPAQUE"), @ViewDebug.FlagToString(equals = 2097152, mask = 6291456, name = "DIRTY")}, formatToHexString = true)
+    @ViewDebug.ExportedProperty(flagMapping = {@ViewDebug.FlagToString(equals = 4096, mask = 4096, name = "FORCE_LAYOUT"), @ViewDebug.FlagToString(equals = 8192, mask = 8192, name = "LAYOUT_REQUIRED"), @ViewDebug.FlagToString(equals = 32768, mask = 32768, name = "DRAWING_CACHE_INVALID", outputIf = false), @ViewDebug.FlagToString(equals = 32, mask = 32, name = "DRAWN", outputIf = true), @ViewDebug.FlagToString(equals = 32, mask = 32, name = "NOT_DRAWN", outputIf = false), @ViewDebug.FlagToString(equals = 4194304, mask = PFLAG_DIRTY_MASK, name = "DIRTY_OPAQUE"), @ViewDebug.FlagToString(equals = 2097152, mask = PFLAG_DIRTY_MASK, name = "DIRTY")}, formatToHexString = true)
     int mPrivateFlags;
     int mPrivateFlags2;
     int mPrivateFlags3;
@@ -515,7 +516,7 @@ public class View implements Drawable.Callback, KeyEvent.Callback, Accessibility
     private static boolean sIgnoreMeasureCache = false;
     private static final int[] VISIBILITY_FLAGS = {0, 4, 8};
     private static final int[] DRAWING_CACHE_QUALITY_FLAGS = {0, 524288, 1048576};
-    static final int[] VIEW_STATE_IDS = {16842909, 1, 16842913, 2, 16842908, 4, 16842910, 8, 16842919, 16, 16843518, 32, 16843547, 64, 16843623, 128, 16843624, 256, 16843625, 512};
+    static final int[] VIEW_STATE_IDS = {R.attr.state_window_focused, 1, R.attr.state_selected, 2, R.attr.state_focused, 4, R.attr.state_enabled, 8, R.attr.state_pressed, 16, R.attr.state_activated, 32, R.attr.state_accelerated, 64, R.attr.state_hovered, 128, R.attr.state_drag_can_accept, 256, R.attr.state_drag_hovered, 512};
 
     /* loaded from: source-4181928-dex2jar.jar:android/view/View$AccessibilityDelegate.class */
     public static class AccessibilityDelegate {
@@ -655,8 +656,8 @@ public class View implements Drawable.Callback, KeyEvent.Callback, Accessibility
             }
 
             public static InvalidateInfo obtain() {
-                InvalidateInfo acquire = sPool.acquire();
-                return acquire != null ? acquire : new InvalidateInfo();
+                InvalidateInfo invalidateInfo = (InvalidateInfo) sPool.acquire();
+                return invalidateInfo != null ? invalidateInfo : new InvalidateInfo();
             }
 
             public void recycle() {
@@ -848,7 +849,7 @@ public class View implements Drawable.Callback, KeyEvent.Callback, Accessibility
         }
 
         public static int getMode(int i) {
-            return (-1073741824) & i;
+            return MODE_MASK & i;
         }
 
         public static int getSize(int i) {
@@ -856,7 +857,7 @@ public class View implements Drawable.Callback, KeyEvent.Callback, Accessibility
         }
 
         public static int makeMeasureSpec(int i, int i2) {
-            return View.sUseBrokenMakeMeasureSpec ? i + i2 : (1073741823 & i) | ((-1073741824) & i2);
+            return View.sUseBrokenMakeMeasureSpec ? i + i2 : (1073741823 & i) | (MODE_MASK & i2);
         }
 
         public static String toString(int i) {
@@ -983,7 +984,7 @@ public class View implements Drawable.Callback, KeyEvent.Callback, Accessibility
         public int scrollBarFadeDuration = ViewConfiguration.getScrollBarFadeDuration();
         public final Paint paint = new Paint();
         public final Matrix matrix = new Matrix();
-        public Shader shader = new LinearGradient(0.0f, 0.0f, 0.0f, 1.0f, -16777216, 0, Shader.TileMode.CLAMP);
+        public Shader shader = new LinearGradient(0.0f, 0.0f, 0.0f, 1.0f, (int) View.MEASURED_STATE_MASK, 0, Shader.TileMode.CLAMP);
 
         public ScrollabilityCache(ViewConfiguration viewConfiguration, View view) {
             this.fadingEdgeLength = viewConfiguration.getScaledFadingEdgeLength();
@@ -1015,7 +1016,7 @@ public class View implements Drawable.Callback, KeyEvent.Callback, Accessibility
                     this.paint.setXfermode(null);
                     return;
                 }
-                this.shader = new LinearGradient(0.0f, 0.0f, 0.0f, 1.0f, -16777216, 0, Shader.TileMode.CLAMP);
+                this.shader = new LinearGradient(0.0f, 0.0f, 0.0f, 1.0f, (int) View.MEASURED_STATE_MASK, 0, Shader.TileMode.CLAMP);
                 this.paint.setShader(this.shader);
                 this.paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
             }
@@ -1192,8 +1193,8 @@ public class View implements Drawable.Callback, KeyEvent.Callback, Accessibility
                 PRESSED_ENABLED_FOCUSED_SELECTED_WINDOW_FOCUSED_STATE_SET = VIEW_STATE_SETS[31];
                 sThreadLocal = new ThreadLocal<>();
                 LAYOUT_DIRECTION_FLAGS = new int[]{0, 1, 2, 3};
-                PFLAG2_TEXT_DIRECTION_FLAGS = new int[]{0, 64, 128, 192, 256, 320};
-                PFLAG2_TEXT_ALIGNMENT_FLAGS = new int[]{0, 8192, 16384, AudioSystem.DEVICE_OUT_ALL_USB, 32768, 40960, 49152};
+                PFLAG2_TEXT_DIRECTION_FLAGS = new int[]{0, 64, 128, 192, 256, NativeCrypto.SSL3_RT_MAX_ENCRYPTED_OVERHEAD};
+                PFLAG2_TEXT_ALIGNMENT_FLAGS = new int[]{0, 8192, 16384, 24576, 32768, 40960, 49152};
                 sNextGeneratedId = new AtomicInteger(1);
                 ALPHA = new FloatProperty<View>("alpha") { // from class: android.view.View.3
                     @Override // android.util.Property
@@ -1261,7 +1262,7 @@ public class View implements Drawable.Callback, KeyEvent.Callback, Accessibility
                         view.setY(f);
                     }
                 };
-                Z = new FloatProperty<View>(bh.aG) { // from class: android.view.View.9
+                Z = new FloatProperty<View>("z") { // from class: android.view.View.9
                     @Override // android.util.Property
                     public Float get(View view) {
                         return Float.valueOf(view.getZ());
@@ -1272,7 +1273,7 @@ public class View implements Drawable.Callback, KeyEvent.Callback, Accessibility
                         view.setZ(f);
                     }
                 };
-                ROTATION = new FloatProperty<View>("rotation") { // from class: android.view.View.10
+                ROTATION = new FloatProperty<View>(QSConstants.TILE_ROTATION) { // from class: android.view.View.10
                     @Override // android.util.Property
                     public Float get(View view) {
                         return Float.valueOf(view.getRotation());
@@ -1415,7 +1416,7 @@ public class View implements Drawable.Callback, KeyEvent.Callback, Accessibility
         this.mInputEventConsistencyVerifier = InputEventConsistencyVerifier.isInstrumentationEnabled() ? new InputEventConsistencyVerifier(this, 0) : null;
         this.mContext = context;
         this.mResources = context != null ? context.getResources() : null;
-        this.mViewFlags = STMobileHumanActionNative.ST_MOBILE_BODY_DETECT_FULL;
+        this.mViewFlags = 402653184;
         this.mPrivateFlags2 = 140296;
         this.mTouchSlop = ViewConfiguration.get(context).getScaledTouchSlop();
         setOverScrollMode(1);
@@ -7211,7 +7212,7 @@ public class View implements Drawable.Callback, KeyEvent.Callback, Accessibility
             return;
         }
         if (this.mOutlineProvider == null) {
-            this.mRenderNode.setOutline(null);
+            this.mRenderNode.setOutline((Outline) null);
             return;
         }
         Outline outline = this.mAttachInfo.mTmpOutline;
@@ -7498,10 +7499,10 @@ public class View implements Drawable.Callback, KeyEvent.Callback, Accessibility
         RenderNode renderNode = this.mRenderNode;
         if (canHaveDisplayList()) {
             if ((this.mPrivateFlags & 32768) != 0 && renderNode.isValid() && !this.mRecreateDisplayList) {
-                this.mPrivateFlags |= a.B;
+                this.mPrivateFlags |= 32800;
                 this.mPrivateFlags &= -6291457;
             } else if (renderNode.isValid() && !this.mRecreateDisplayList) {
-                this.mPrivateFlags |= a.B;
+                this.mPrivateFlags |= 32800;
                 this.mPrivateFlags &= -6291457;
                 dispatchGetDisplayList();
             } else {
@@ -7511,7 +7512,7 @@ public class View implements Drawable.Callback, KeyEvent.Callback, Accessibility
                 int i3 = this.mBottom;
                 int i4 = this.mTop;
                 int layerType = getLayerType();
-                HardwareCanvas start = renderNode.start(i - i2, i3 - i4);
+                Canvas start = renderNode.start(i - i2, i3 - i4);
                 start.setHighContrastText(this.mAttachInfo.mHighContrastText);
                 try {
                     HardwareLayer hardwareLayer = getHardwareLayer();
@@ -7526,7 +7527,7 @@ public class View implements Drawable.Callback, KeyEvent.Callback, Accessibility
                     } else {
                         computeScroll();
                         start.translate(-this.mScrollX, -this.mScrollY);
-                        this.mPrivateFlags |= a.B;
+                        this.mPrivateFlags |= 32800;
                         this.mPrivateFlags &= -6291457;
                         if ((this.mPrivateFlags & 128) == 128) {
                             dispatchDraw(start);
@@ -7919,7 +7920,7 @@ public class View implements Drawable.Callback, KeyEvent.Callback, Accessibility
 
     /* JADX INFO: Access modifiers changed from: protected */
     public boolean computeFitSystemWindows(Rect rect, Rect rect2) {
-        if ((this.mViewFlags & 2048) == 0 || this.mAttachInfo == null || ((this.mAttachInfo.mSystemUiVisibility & 1536) == 0 && !this.mAttachInfo.mOverscanRequested)) {
+        if ((this.mViewFlags & 2048) == 0 || this.mAttachInfo == null || ((this.mAttachInfo.mSystemUiVisibility & SYSTEM_UI_LAYOUT_FLAGS) == 0 && !this.mAttachInfo.mOverscanRequested)) {
             rect2.set(rect);
             rect.set(0, 0, 0, 0);
             return true;
@@ -7970,7 +7971,7 @@ public class View implements Drawable.Callback, KeyEvent.Callback, Accessibility
     }
 
     public WindowInsets computeSystemWindowInsets(WindowInsets windowInsets, Rect rect) {
-        if ((this.mViewFlags & 2048) == 0 || this.mAttachInfo == null || (this.mAttachInfo.mSystemUiVisibility & 1536) == 0) {
+        if ((this.mViewFlags & 2048) == 0 || this.mAttachInfo == null || (this.mAttachInfo.mSystemUiVisibility & SYSTEM_UI_LAYOUT_FLAGS) == 0) {
             rect.set(windowInsets.getSystemWindowInsets());
             return windowInsets.consumeSystemWindowInsets();
         }
@@ -7978,8 +7979,7 @@ public class View implements Drawable.Callback, KeyEvent.Callback, Accessibility
         return windowInsets;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    public int computeVerticalScrollExtent() {
+    protected int computeVerticalScrollExtent() {
         return getHeight();
     }
 
@@ -8141,8 +8141,7 @@ public class View implements Drawable.Callback, KeyEvent.Callback, Accessibility
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    public void destroyHardwareResources() {
+    protected void destroyHardwareResources() {
         resetDisplayList();
     }
 
@@ -8520,7 +8519,7 @@ public class View implements Drawable.Callback, KeyEvent.Callback, Accessibility
 
     public void draw(Canvas canvas) {
         int i = this.mPrivateFlags;
-        boolean z = (6291456 & i) == 4194304 && (this.mAttachInfo == null || !this.mAttachInfo.mIgnoreDirtyState);
+        boolean z = (PFLAG_DIRTY_MASK & i) == 4194304 && (this.mAttachInfo == null || !this.mAttachInfo.mIgnoreDirtyState);
         this.mPrivateFlags = ((-6291457) & i) | 32;
         if (!z) {
             drawBackground(canvas);
@@ -8727,8 +8726,7 @@ public class View implements Drawable.Callback, KeyEvent.Callback, Accessibility
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public View findUserSetNextFocus(View view, int i) {
+    View findUserSetNextFocus(View view, int i) {
         switch (i) {
             case 1:
                 if (this.mID != -1) {
@@ -9076,7 +9074,7 @@ public class View implements Drawable.Callback, KeyEvent.Callback, Accessibility
         return this.mRenderNode.getClipToOutline();
     }
 
-    @ViewDebug.ExportedProperty(category = Context.ACCESSIBILITY_SERVICE)
+    @ViewDebug.ExportedProperty(category = "accessibility")
     public CharSequence getContentDescription() {
         return this.mContentDescription;
     }
@@ -9345,7 +9343,7 @@ public class View implements Drawable.Callback, KeyEvent.Callback, Accessibility
         return this.mID;
     }
 
-    @ViewDebug.ExportedProperty(category = Context.ACCESSIBILITY_SERVICE, mapping = {@ViewDebug.IntToString(from = 0, to = "auto"), @ViewDebug.IntToString(from = 1, to = "yes"), @ViewDebug.IntToString(from = 2, to = "no"), @ViewDebug.IntToString(from = 4, to = "noHideDescendants")})
+    @ViewDebug.ExportedProperty(category = "accessibility", mapping = {@ViewDebug.IntToString(from = 0, to = "auto"), @ViewDebug.IntToString(from = 1, to = "yes"), @ViewDebug.IntToString(from = 2, to = "no"), @ViewDebug.IntToString(from = 4, to = "noHideDescendants")})
     public int getImportantForAccessibility() {
         return (this.mPrivateFlags2 & PFLAG2_IMPORTANT_FOR_ACCESSIBILITY_MASK) >> 20;
     }
@@ -9406,7 +9404,7 @@ public class View implements Drawable.Callback, KeyEvent.Callback, Accessibility
         return null;
     }
 
-    @ViewDebug.ExportedProperty(category = Context.ACCESSIBILITY_SERVICE)
+    @ViewDebug.ExportedProperty(category = "accessibility")
     public int getLabelFor() {
         return this.mLabelForId;
     }
@@ -9533,7 +9531,7 @@ public class View implements Drawable.Callback, KeyEvent.Callback, Accessibility
     }
 
     public final int getMeasuredState() {
-        return (this.mMeasuredWidth & (-16777216)) | ((this.mMeasuredHeight >> 16) & (-256));
+        return (this.mMeasuredWidth & MEASURED_STATE_MASK) | ((this.mMeasuredHeight >> 16) & (-256));
     }
 
     public final int getMeasuredWidth() {
@@ -9671,7 +9669,7 @@ public class View implements Drawable.Callback, KeyEvent.Callback, Accessibility
 
     @ViewDebug.ExportedProperty(category = "text", mapping = {@ViewDebug.IntToString(from = 0, to = "INHERIT"), @ViewDebug.IntToString(from = 1, to = "FIRST_STRONG"), @ViewDebug.IntToString(from = 2, to = "ANY_RTL"), @ViewDebug.IntToString(from = 3, to = "LTR"), @ViewDebug.IntToString(from = 4, to = "RTL"), @ViewDebug.IntToString(from = 5, to = "LOCALE")})
     public int getRawTextDirection() {
-        return (this.mPrivateFlags2 & 448) >> 6;
+        return (this.mPrivateFlags2 & PFLAG2_TEXT_DIRECTION_MASK) >> 6;
     }
 
     public Resources getResources() {
@@ -9868,7 +9866,7 @@ public class View implements Drawable.Callback, KeyEvent.Callback, Accessibility
     public float getVerticalScrollFactor() {
         if (this.mVerticalScrollFactor == 0.0f) {
             TypedValue typedValue = new TypedValue();
-            if (!this.mContext.getTheme().resolveAttribute(16842829, typedValue, true)) {
+            if (!this.mContext.getTheme().resolveAttribute(R.attr.listPreferredItemHeight, typedValue, true)) {
                 throw new IllegalStateException("Expected theme to define listPreferredItemHeight.");
             }
             this.mVerticalScrollFactor = typedValue.getDimension(this.mContext.getResources().getDisplayMetrics());
@@ -9943,8 +9941,7 @@ public class View implements Drawable.Callback, KeyEvent.Callback, Accessibility
         return this.mAttachInfo.mWindowId;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public IWindowSession getWindowSession() {
+    IWindowSession getWindowSession() {
         if (this.mAttachInfo != null) {
             return this.mAttachInfo.mSession;
         }
@@ -10409,7 +10406,7 @@ public class View implements Drawable.Callback, KeyEvent.Callback, Accessibility
     }
 
     public boolean isDirty() {
-        return (this.mPrivateFlags & 6291456) != 0;
+        return (this.mPrivateFlags & PFLAG_DIRTY_MASK) != 0;
     }
 
     @ViewDebug.ExportedProperty(category = "drawing")
@@ -11760,7 +11757,7 @@ public class View implements Drawable.Callback, KeyEvent.Callback, Accessibility
     }
 
     public void outputDirtyFlags(String str, boolean z, int i) {
-        Log.d(VIEW_LOG_TAG, str + this + "             DIRTY(" + (this.mPrivateFlags & 6291456) + ") DRAWN(" + (this.mPrivateFlags & 32) + ") CACHE_VALID(" + (this.mPrivateFlags & 32768) + ") INVALIDATED(" + (this.mPrivateFlags & Integer.MIN_VALUE) + ")");
+        Log.d(VIEW_LOG_TAG, str + this + "             DIRTY(" + (this.mPrivateFlags & PFLAG_DIRTY_MASK) + ") DRAWN(" + (this.mPrivateFlags & 32) + ") CACHE_VALID(" + (this.mPrivateFlags & 32768) + ") INVALIDATED(" + (this.mPrivateFlags & Integer.MIN_VALUE) + ")");
         if (z) {
             this.mPrivateFlags &= i;
         }
@@ -11884,21 +11881,21 @@ public class View implements Drawable.Callback, KeyEvent.Callback, Accessibility
                 return false;
             case 256:
                 if (bundle != null) {
-                    return traverseAtGranularity(bundle.getInt("ACTION_ARGUMENT_MOVEMENT_GRANULARITY_INT"), true, bundle.getBoolean("ACTION_ARGUMENT_EXTEND_SELECTION_BOOLEAN"));
+                    return traverseAtGranularity(bundle.getInt(AccessibilityNodeInfo.ACTION_ARGUMENT_MOVEMENT_GRANULARITY_INT), true, bundle.getBoolean(AccessibilityNodeInfo.ACTION_ARGUMENT_EXTEND_SELECTION_BOOLEAN));
                 }
                 return false;
             case 512:
                 if (bundle != null) {
-                    return traverseAtGranularity(bundle.getInt("ACTION_ARGUMENT_MOVEMENT_GRANULARITY_INT"), false, bundle.getBoolean("ACTION_ARGUMENT_EXTEND_SELECTION_BOOLEAN"));
+                    return traverseAtGranularity(bundle.getInt(AccessibilityNodeInfo.ACTION_ARGUMENT_MOVEMENT_GRANULARITY_INT), false, bundle.getBoolean(AccessibilityNodeInfo.ACTION_ARGUMENT_EXTEND_SELECTION_BOOLEAN));
                 }
                 return false;
             case 131072:
                 if (getIterableTextForAccessibility() == null) {
                     return false;
                 }
-                int i3 = bundle != null ? bundle.getInt("ACTION_ARGUMENT_SELECTION_START_INT", -1) : -1;
+                int i3 = bundle != null ? bundle.getInt(AccessibilityNodeInfo.ACTION_ARGUMENT_SELECTION_START_INT, -1) : -1;
                 if (bundle != null) {
-                    i2 = bundle.getInt("ACTION_ARGUMENT_SELECTION_END_INT", -1);
+                    i2 = bundle.getInt(AccessibilityNodeInfo.ACTION_ARGUMENT_SELECTION_END_INT, -1);
                 }
                 if (!(getAccessibilitySelectionStart() == i3 && getAccessibilitySelectionEnd() == i2) && i3 == i2) {
                     setAccessibilitySelection(i3, i2);
@@ -12467,7 +12464,7 @@ public class View implements Drawable.Callback, KeyEvent.Callback, Accessibility
                         }
                     } catch (AbstractMethodError e2) {
                         Log.e(VIEW_LOG_TAG, this.mParent.getClass().getSimpleName() + " does not fully implement ViewParent", e2);
-                        this.mPrivateFlags2 |= 196608;
+                        this.mPrivateFlags2 |= Protocol.BASE_DHCP;
                         return true;
                     }
                 case 1:
@@ -12525,7 +12522,7 @@ public class View implements Drawable.Callback, KeyEvent.Callback, Accessibility
                         }
                     } catch (AbstractMethodError e2) {
                         Log.e(VIEW_LOG_TAG, this.mParent.getClass().getSimpleName() + " does not fully implement ViewParent", e2);
-                        this.mPrivateFlags2 |= 1536;
+                        this.mPrivateFlags2 |= SYSTEM_UI_LAYOUT_FLAGS;
                         return true;
                     }
                 case 1:
@@ -13846,7 +13843,7 @@ public class View implements Drawable.Callback, KeyEvent.Callback, Accessibility
         if (getRawTextDirection() != i) {
             this.mPrivateFlags2 &= -449;
             resetResolvedTextDirection();
-            this.mPrivateFlags2 |= (i << 6) & 448;
+            this.mPrivateFlags2 |= (i << 6) & PFLAG2_TEXT_DIRECTION_MASK;
             resolveTextDirection();
             onRtlPropertiesChanged(getLayoutDirection());
             requestLayout();
@@ -14139,7 +14136,7 @@ public class View implements Drawable.Callback, KeyEvent.Callback, Accessibility
         sb.append((this.mPrivateFlags & 268435456) != 0 ? 'H' : '.');
         sb.append((this.mPrivateFlags & 1073741824) != 0 ? 'A' : '.');
         sb.append((this.mPrivateFlags & Integer.MIN_VALUE) != 0 ? 'I' : '.');
-        sb.append((this.mPrivateFlags & 6291456) != 0 ? 'D' : '.');
+        sb.append((this.mPrivateFlags & PFLAG_DIRTY_MASK) != 0 ? 'D' : '.');
         sb.append(' ');
         sb.append(this.mLeft);
         sb.append(',');
@@ -14156,7 +14153,7 @@ public class View implements Drawable.Callback, KeyEvent.Callback, Accessibility
             if (Resources.resourceHasPackage(id) && resources != null) {
                 switch ((-16777216) & id) {
                     case 16777216:
-                        resourcePackageName = "android";
+                        resourcePackageName = MsgBackupManager.PLATFORM_ANDROID;
                         String resourceTypeName = resources.getResourceTypeName(id);
                         String resourceEntryName = resources.getResourceEntryName(id);
                         sb.append(" ");
@@ -14167,7 +14164,7 @@ public class View implements Drawable.Callback, KeyEvent.Callback, Accessibility
                         sb.append(resourceEntryName);
                         break;
                     case 2130706432:
-                        resourcePackageName = "app";
+                        resourcePackageName = NavigationRingConstants.ACTION_APP;
                         String resourceTypeName2 = resources.getResourceTypeName(id);
                         String resourceEntryName2 = resources.getResourceEntryName(id);
                         sb.append(" ");

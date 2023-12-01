@@ -7,7 +7,7 @@ import android.os.Looper;
 public class av {
 
     /* renamed from: a  reason: collision with root package name */
-    private static au f40636a;
+    private static au f26945a;
     private static boolean b = false;
 
     public static String a(Context context) {
@@ -16,9 +16,9 @@ public class av {
                 if (context != null) {
                     if (Looper.myLooper() != Looper.getMainLooper()) {
                         b(context);
-                        if (f40636a != null) {
+                        if (f26945a != null) {
                             try {
-                                return f40636a.a(context);
+                                return f26945a.a(context);
                             } catch (Exception e) {
                             }
                         }
@@ -33,13 +33,13 @@ public class av {
     }
 
     private static void b(Context context) {
-        if (f40636a != null || b) {
+        if (f26945a != null || b) {
             return;
         }
         synchronized (av.class) {
             try {
-                if (f40636a == null && !b) {
-                    f40636a = ax.a(context);
+                if (f26945a == null && !b) {
+                    f26945a = ax.a(context);
                     b = true;
                 }
             } finally {

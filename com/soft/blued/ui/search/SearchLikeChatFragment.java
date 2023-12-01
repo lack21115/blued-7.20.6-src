@@ -24,7 +24,7 @@ import java.util.List;
 public class SearchLikeChatFragment extends MvpFragment<SearchLikeChatPresenter> {
 
     /* renamed from: a  reason: collision with root package name */
-    private SearchAllAdapter f33146a;
+    private SearchAllAdapter f19455a;
     @BindView
     LinearLayout llSearchEmpty;
     @BindView
@@ -48,7 +48,7 @@ public class SearchLikeChatFragment extends MvpFragment<SearchLikeChatPresenter>
     }
 
     private void e() {
-        this.titleView.setCenterText(String.format(getResources().getString(R.string.search_chat_to), j().p()));
+        this.titleView.setCenterText(String.format(getResources().getString(R.string.search_chat_to), ((SearchLikeChatPresenter) j()).p()));
         this.titleView.a();
         this.titleView.setLeftClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.search.SearchLikeChatFragment.1
             @Override // android.view.View.OnClickListener
@@ -64,19 +64,18 @@ public class SearchLikeChatFragment extends MvpFragment<SearchLikeChatPresenter>
         this.userList.setNestedScrollingEnabled(false);
         this.userList.setLayoutManager(new LinearLayoutManager(getContext()));
         SearchAllAdapter searchAllAdapter = new SearchAllAdapter(this);
-        this.f33146a = searchAllAdapter;
+        this.f19455a = searchAllAdapter;
         this.userList.setAdapter(searchAllAdapter);
-        this.f33146a.setLoadMoreView(new BluedAdapterLoadMoreView());
-        this.f33146a.setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() { // from class: com.soft.blued.ui.search.SearchLikeChatFragment.2
+        this.f19455a.setLoadMoreView(new BluedAdapterLoadMoreView());
+        this.f19455a.setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() { // from class: com.soft.blued.ui.search.SearchLikeChatFragment.2
             @Override // com.chad.library.adapter.base.BaseQuickAdapter.RequestLoadMoreListener
             public void onLoadMoreRequested() {
-                SearchLikeChatFragment.this.j().n();
+                ((SearchLikeChatPresenter) SearchLikeChatFragment.this.j()).n();
             }
         }, this.userList);
-        this.f33146a.setEnableLoadMore(false);
+        this.f19455a.setEnableLoadMore(false);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public void a(Bundle bundle) {
         super.a(bundle);
         e();
@@ -86,7 +85,7 @@ public class SearchLikeChatFragment extends MvpFragment<SearchLikeChatPresenter>
     public void a(List<SearchSessionModel> list) {
         this.llSearchEmpty.setVisibility(8);
         this.userList.setVisibility(0);
-        this.f33146a.b(list, j().q());
+        this.f19455a.b(list, ((SearchLikeChatPresenter) j()).q());
     }
 
     public void b() {
@@ -96,29 +95,26 @@ public class SearchLikeChatFragment extends MvpFragment<SearchLikeChatPresenter>
     }
 
     public void c() {
-        this.f33146a.loadMoreComplete();
-        this.f33146a.setEnableLoadMore(false);
+        this.f19455a.loadMoreComplete();
+        this.f19455a.setEnableLoadMore(false);
     }
 
     public void d() {
-        this.f33146a.loadMoreComplete();
-        this.f33146a.setEnableLoadMore(true);
+        this.f19455a.loadMoreComplete();
+        this.f19455a.setEnableLoadMore(true);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public int g() {
         return R.layout.fragment_search_list;
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, androidx.fragment.app.Fragment
     public void onActivityCreated(Bundle bundle) {
         super.onActivityCreated(bundle);
-        j().m();
+        ((SearchLikeChatPresenter) j()).m();
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
-        j().o();
+        ((SearchLikeChatPresenter) j()).o();
     }
 }

@@ -9,6 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -41,13 +42,11 @@ import com.blued.android.module.live_china.view.LiveTwoLevelRefreshView;
 import com.blued.android.module.live_china.view_model.LiveTabViewModel;
 import com.blued.das.live.LiveProtos;
 import com.jeremyliao.liveeventbus.LiveEventBus;
-import com.opos.acs.st.STManager;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.OnTwoLevelListener;
 import com.scwang.smartrefresh.layout.api.RefreshHeader;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.constant.RefreshState;
-import com.scwang.smartrefresh.layout.listener.OnMultiPurposeListener;
 import com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener;
 import java.util.ArrayList;
 import java.util.List;
@@ -62,9 +61,7 @@ import kotlin.reflect.KProperty;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveTabFragmentNew.class */
 public final class LiveTabFragmentNew extends MVVMBaseFragment<LiveTabViewModel> {
-
-    /* renamed from: c  reason: collision with root package name */
-    private final ViewBindingProperty f13277c;
+    private final ViewBindingProperty c;
     private boolean d;
     private LiveTwoFloorModel e;
     private LiveTabAdapter f;
@@ -81,9 +78,7 @@ public final class LiveTabFragmentNew extends MVVMBaseFragment<LiveTabViewModel>
     private final Observer<String> q;
     private final Observer<Boolean> r;
     static final /* synthetic */ KProperty<Object>[] b = {Reflection.a(new PropertyReference1Impl(LiveTabFragmentNew.class, "viewBinding", "getViewBinding()Lcom/blued/android/module/live_china/databinding/FragmentLiveTabNewBinding;", 0))};
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f13276a = new Companion(null);
+    public static final Companion a = new Companion(null);
 
     @Metadata
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveTabFragmentNew$Companion.class */
@@ -99,7 +94,7 @@ public final class LiveTabFragmentNew extends MVVMBaseFragment<LiveTabViewModel>
             Intrinsics.e(details, "details");
             LiveTabFragmentNew liveTabFragmentNew = new LiveTabFragmentNew();
             Bundle bundle = new Bundle();
-            bundle.putString(STManager.KEY_TAB_ID, str);
+            bundle.putString("tabId", str);
             bundle.putString("tabName", str2);
             bundle.putString("tabPoint", str3);
             bundle.putString("live_pay_beans_details", details);
@@ -110,7 +105,7 @@ public final class LiveTabFragmentNew extends MVVMBaseFragment<LiveTabViewModel>
 
     public LiveTabFragmentNew() {
         super(R.layout.fragment_live_tab_new);
-        this.f13277c = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<LiveTabFragmentNew, FragmentLiveTabNewBinding>() { // from class: com.blued.android.module.live_china.fragment.LiveTabFragmentNew$special$$inlined$viewBindingFragment$default$1
+        this.c = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<LiveTabFragmentNew, FragmentLiveTabNewBinding>() { // from class: com.blued.android.module.live_china.fragment.LiveTabFragmentNew$special$$inlined$viewBindingFragment$default$1
             @Override // kotlin.jvm.functions.Function1
             /* renamed from: a */
             public final FragmentLiveTabNewBinding invoke(LiveTabFragmentNew fragment) {
@@ -127,19 +122,16 @@ public final class LiveTabFragmentNew extends MVVMBaseFragment<LiveTabViewModel>
         });
         this.o = "";
         this.p = new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveTabFragmentNew$9Op2GfMgnI6EkWnqC4POOkugRuU
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 LiveTabFragmentNew.a(LiveTabFragmentNew.this, (String) obj);
             }
         };
         this.q = new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveTabFragmentNew$UDI__0JGIuhDKbAsA2iZUpUg64o
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 LiveTabFragmentNew.b(LiveTabFragmentNew.this, (String) obj);
             }
         };
         this.r = new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveTabFragmentNew$s2aiS1ZS52e-BJAkVmMMaBvky6w
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 LiveTabFragmentNew.a(LiveTabFragmentNew.this, (Boolean) obj);
             }
@@ -161,13 +153,12 @@ public final class LiveTabFragmentNew extends MVVMBaseFragment<LiveTabViewModel>
             layoutManager = recyclerView2.getLayoutManager();
         }
         if (layoutManager == null) {
-            GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2);
+            RecyclerView.LayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2);
             FragmentLiveTabNewBinding p2 = p();
             if (p2 != null && (recyclerView = p2.d) != null) {
                 recyclerView.setLayoutManager(gridLayoutManager);
             }
             gridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() { // from class: com.blued.android.module.live_china.fragment.LiveTabFragmentNew$updateRecyclerView$1
-                @Override // androidx.recyclerview.widget.GridLayoutManager.SpanSizeLookup
                 public int getSpanSize(int i) {
                     LiveTabAdapter q = LiveTabFragmentNew.this.q();
                     if ((q == null ? null : (BluedLiveListData) q.getItem(i)) != null) {
@@ -196,7 +187,7 @@ public final class LiveTabFragmentNew extends MVVMBaseFragment<LiveTabViewModel>
         if (smartRefreshLayout == null) {
             return;
         }
-        smartRefreshLayout.b(binding.b);
+        smartRefreshLayout.a(binding.b);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -347,7 +338,7 @@ public final class LiveTabFragmentNew extends MVVMBaseFragment<LiveTabViewModel>
                 if (p2 == null) {
                     root2 = null;
                 } else {
-                    NodataShowLiveListBinding nodataShowLiveListBinding2 = p2.f11974c;
+                    NodataShowLiveListBinding nodataShowLiveListBinding2 = p2.c;
                     root2 = nodataShowLiveListBinding2 == null ? null : nodataShowLiveListBinding2.getRoot();
                 }
                 if (root2 == null) {
@@ -366,14 +357,14 @@ public final class LiveTabFragmentNew extends MVVMBaseFragment<LiveTabViewModel>
         if (p4 == null) {
             root = null;
         } else {
-            NodataShowLiveListBinding nodataShowLiveListBinding3 = p4.f11974c;
+            NodataShowLiveListBinding nodataShowLiveListBinding3 = p4.c;
             root = nodataShowLiveListBinding3 == null ? null : nodataShowLiveListBinding3.getRoot();
         }
         if (root != null) {
             root.setVisibility(0);
         }
         FragmentLiveTabNewBinding p5 = p();
-        if (p5 == null || (nodataShowLiveListBinding = p5.f11974c) == null || (textView = nodataShowLiveListBinding.b) == null) {
+        if (p5 == null || (nodataShowLiveListBinding = p5.c) == null || (textView = nodataShowLiveListBinding.b) == null) {
             return;
         }
         textView.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveTabFragmentNew$s6IKqnFwE7VakHeA1aLMh15KUt4
@@ -390,7 +381,7 @@ public final class LiveTabFragmentNew extends MVVMBaseFragment<LiveTabViewModel>
         SmartRefreshLayout smartRefreshLayout2;
         FragmentLiveTabNewBinding p = p();
         if (p != null && (smartRefreshLayout2 = p.e) != null) {
-            smartRefreshLayout2.j();
+            smartRefreshLayout2.g();
         }
         FragmentLiveTabNewBinding p2 = p();
         if (p2 == null || (smartRefreshLayout = p2.e) == null) {
@@ -466,8 +457,8 @@ public final class LiveTabFragmentNew extends MVVMBaseFragment<LiveTabViewModel>
         if (arguments == null) {
             return;
         }
-        Log.i("==okr", Intrinsics.a("tabId:", (Object) arguments.getString(STManager.KEY_TAB_ID)));
-        a(arguments.getString(STManager.KEY_TAB_ID, ""));
+        Log.i("==okr", Intrinsics.a("tabId:", (Object) arguments.getString("tabId")));
+        a(arguments.getString("tabId", ""));
         b(arguments.getString("tabName", ""));
         c(arguments.getString("tabPoint", ""));
         String string = arguments.getString("live_pay_beans_details", "");
@@ -493,14 +484,13 @@ public final class LiveTabFragmentNew extends MVVMBaseFragment<LiveTabViewModel>
         }
         p.b.b(300);
         p.b.a(new OnTwoLevelListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveTabFragmentNew$sU7VpUnIfFnmyp6VevY7QjtPdrI
-            @Override // com.scwang.smartrefresh.layout.api.OnTwoLevelListener
             public final boolean onTwoLevel(RefreshLayout refreshLayout) {
                 boolean a2;
                 a2 = LiveTabFragmentNew.a(refreshLayout);
                 return a2;
             }
         });
-        p.e.l(false);
+        p.e.b(false);
         if (q() == null) {
             a(new LiveTabAdapter(getContext(), new ArrayList(), s(), j()));
         }
@@ -509,7 +499,6 @@ public final class LiveTabFragmentNew extends MVVMBaseFragment<LiveTabViewModel>
             p.e.setBackgroundColor(BluedSkinUtils.a(getContext(), R.color.syc_b));
         }
         p.d.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: com.blued.android.module.live_china.fragment.LiveTabFragmentNew$initView$1$2
-            @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
             public void onScrollStateChanged(RecyclerView recyclerView, int i) {
                 Intrinsics.e(recyclerView, "recyclerView");
                 super.onScrollStateChanged(recyclerView, i);
@@ -533,14 +522,12 @@ public final class LiveTabFragmentNew extends MVVMBaseFragment<LiveTabViewModel>
                 }
             }
 
-            @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
             public void onScrolled(RecyclerView recyclerView, int i, int i2) {
                 Intrinsics.e(recyclerView, "recyclerView");
                 super.onScrolled(recyclerView, i, i2);
             }
         });
-        p.e.b((OnMultiPurposeListener) new SimpleMultiPurposeListener() { // from class: com.blued.android.module.live_china.fragment.LiveTabFragmentNew$initView$1$3
-            @Override // com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener, com.scwang.smartrefresh.layout.listener.OnMultiPurposeListener
+        p.e.a(new SimpleMultiPurposeListener() { // from class: com.blued.android.module.live_china.fragment.LiveTabFragmentNew$initView$1$3
             public void a(RefreshHeader header, boolean z, float f, int i, int i2, int i3) {
                 LiveTwoFloorModel liveTwoFloorModel;
                 LiveTwoFloorModel liveTwoFloorModel2;
@@ -578,7 +565,6 @@ public final class LiveTabFragmentNew extends MVVMBaseFragment<LiveTabViewModel>
                 }
             }
 
-            @Override // com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener, com.scwang.smartrefresh.layout.listener.OnStateChangedListener
             public void a(RefreshLayout refreshLayout, RefreshState oldState, RefreshState newState) {
                 LiveTwoFloorModel liveTwoFloorModel;
                 LiveTwoFloorModel liveTwoFloorModel2;
@@ -600,7 +586,7 @@ public final class LiveTabFragmentNew extends MVVMBaseFragment<LiveTabViewModel>
                 Intrinsics.e(refreshLayout, "refreshLayout");
                 Intrinsics.e(oldState, "oldState");
                 Intrinsics.e(newState, "newState");
-                if (newState == RefreshState.None) {
+                if (newState == RefreshState.a) {
                     LiveTabFragmentNew.this.x();
                     liveTwoFloorModel8 = LiveTabFragmentNew.this.e;
                     if (liveTwoFloorModel8 != null) {
@@ -628,7 +614,7 @@ public final class LiveTabFragmentNew extends MVVMBaseFragment<LiveTabViewModel>
                             EventTrackLive.a(event2, str3, str4, liveTwoFloorModel13 == null ? null : liveTwoFloorModel13.id);
                         }
                     }
-                } else if (newState != RefreshState.ReleaseToTwoLevel && newState == RefreshState.TwoLevelReleased) {
+                } else if (newState != RefreshState.h && newState == RefreshState.i) {
                     LiveTabViewModel a2 = LiveTabFragmentNew.this.a();
                     ActivityFragmentActive fragmentActive = LiveTabFragmentNew.this.getFragmentActive();
                     Intrinsics.c(fragmentActive, "fragmentActive");
@@ -661,7 +647,6 @@ public final class LiveTabFragmentNew extends MVVMBaseFragment<LiveTabViewModel>
                 }
             }
 
-            @Override // com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener, com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
             public void onLoadMore(RefreshLayout refreshLayout) {
                 Intrinsics.e(refreshLayout, "refreshLayout");
                 LiveTabViewModel a2 = LiveTabFragmentNew.this.a();
@@ -670,7 +655,6 @@ public final class LiveTabFragmentNew extends MVVMBaseFragment<LiveTabViewModel>
                 a2.a((IRequestHost) fragmentActive, false);
             }
 
-            @Override // com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener, com.scwang.smartrefresh.layout.listener.OnRefreshListener
             public void onRefresh(RefreshLayout refreshLayout) {
                 FragmentLiveTabNewBinding fragmentLiveTabNewBinding;
                 RecyclerView recyclerView;
@@ -720,10 +704,10 @@ public final class LiveTabFragmentNew extends MVVMBaseFragment<LiveTabViewModel>
         });
         x();
         if (a().g().hasRequestData) {
-            List<BluedLiveListData> c2 = LiveRoomUtils.c(a().g().tabId);
-            Intrinsics.c(c2, "getApaterData(mViewModel.commonModel.tabId)");
-            a(c2);
-            p.e.l(a().g().getHasData());
+            List<BluedLiveListData> c = LiveRoomUtils.c(a().g().tabId);
+            Intrinsics.c(c, "getApaterData(mViewModel.commonModel.tabId)");
+            a(c);
+            p.e.b(a().g().getHasData());
         }
     }
 
@@ -748,10 +732,10 @@ public final class LiveTabFragmentNew extends MVVMBaseFragment<LiveTabViewModel>
 
     @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
     public void l() {
-        LiveTabFragmentNew liveTabFragmentNew = this;
-        LifecycleExtKt.a(liveTabFragmentNew, a().e(), new LiveTabFragmentNew$liveDataObserver$1(this));
-        LifecycleExtKt.a(liveTabFragmentNew, a().d(), new LiveTabFragmentNew$liveDataObserver$2(this));
-        LifecycleExtKt.a(liveTabFragmentNew, a().f(), new LiveTabFragmentNew$liveDataObserver$3(this));
+        LifecycleOwner lifecycleOwner = (LifecycleOwner) this;
+        LifecycleExtKt.a(lifecycleOwner, a().e(), new LiveTabFragmentNew$liveDataObserver$1(this));
+        LifecycleExtKt.a(lifecycleOwner, a().d(), new LiveTabFragmentNew$liveDataObserver$2(this));
+        LifecycleExtKt.a(lifecycleOwner, a().f(), new LiveTabFragmentNew$liveDataObserver$3(this));
     }
 
     @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
@@ -765,7 +749,7 @@ public final class LiveTabFragmentNew extends MVVMBaseFragment<LiveTabViewModel>
         if (p == null || (smartRefreshLayout = p.e) == null) {
             return;
         }
-        smartRefreshLayout.l(true);
+        smartRefreshLayout.b(true);
     }
 
     @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
@@ -775,27 +759,27 @@ public final class LiveTabFragmentNew extends MVVMBaseFragment<LiveTabViewModel>
         if (p == null || (smartRefreshLayout = p.e) == null) {
             return;
         }
-        smartRefreshLayout.l(false);
+        smartRefreshLayout.b(false);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onDestroy() {
         A();
         super.onDestroy();
     }
 
-    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment, com.blued.android.core.ui.BaseFragment
     public void onDestroyView() {
         super.onDestroyView();
         FragmentLiveTabNewBinding p = p();
         RecyclerView recyclerView = p == null ? null : p.d;
         if (recyclerView != null) {
-            recyclerView.setAdapter(null);
+            recyclerView.setAdapter((RecyclerView.Adapter) null);
         }
         A();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onPause() {
         super.onPause();
         this.l = false;
@@ -803,7 +787,7 @@ public final class LiveTabFragmentNew extends MVVMBaseFragment<LiveTabViewModel>
         v();
     }
 
-    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment, com.blued.android.core.ui.BaseFragment
     public void onResume() {
         super.onResume();
         Log.i("==xpm", "tab:" + ((Object) this.h) + " onResume");
@@ -812,7 +796,7 @@ public final class LiveTabFragmentNew extends MVVMBaseFragment<LiveTabViewModel>
     }
 
     public final FragmentLiveTabNewBinding p() {
-        return (FragmentLiveTabNewBinding) this.f13277c.b(this, b[0]);
+        return (FragmentLiveTabNewBinding) this.c.b(this, b[0]);
     }
 
     public final LiveTabAdapter q() {
@@ -827,7 +811,7 @@ public final class LiveTabFragmentNew extends MVVMBaseFragment<LiveTabViewModel>
         return this.h;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void setUserVisibleHint(boolean z) {
         super.setUserVisibleHint(z);
         Log.i("==xpm", "tab:" + ((Object) this.h) + " setUserVisibleHint:" + z);
@@ -917,7 +901,7 @@ public final class LiveTabFragmentNew extends MVVMBaseFragment<LiveTabViewModel>
             return;
         }
         SmartRefreshLayout smartRefreshLayout = p.e;
-        if ((smartRefreshLayout == null ? null : smartRefreshLayout.getState()) == RefreshState.None) {
+        if ((smartRefreshLayout == null ? null : smartRefreshLayout.getState()) == RefreshState.a) {
             CustomTwoLevelHeader customTwoLevelHeader = p.b;
             if (customTwoLevelHeader != null) {
                 customTwoLevelHeader.a(this.d);

@@ -26,9 +26,7 @@ import kotlinx.coroutines.flow.FlowKt;
 @DebugMetadata(b = "CommunitySampleViewModel.kt", c = {185}, d = "invokeSuspend", e = "com.blued.community.manager.CommunitySampleViewModel$requestDataFlow$1")
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/manager/CommunitySampleViewModel$requestDataFlow$1.class */
 final class CommunitySampleViewModel$requestDataFlow$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
-
-    /* renamed from: a  reason: collision with root package name */
-    int f19096a;
+    int a;
     final /* synthetic */ CommunitySampleViewModel b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -37,13 +35,9 @@ final class CommunitySampleViewModel$requestDataFlow$1 extends SuspendLambda imp
     /* renamed from: com.blued.community.manager.CommunitySampleViewModel$requestDataFlow$1$1  reason: invalid class name */
     /* loaded from: source-5382004-dex2jar.jar:com/blued/community/manager/CommunitySampleViewModel$requestDataFlow$1$1.class */
     public static final class AnonymousClass1 extends SuspendLambda implements Function3<BluedEntityA<BluedIngSelfFeed>, BluedEntity<BluedIngSelfFeed, SignFeedExtra>, Continuation<? super BluedEntityA<BluedIngSelfFeed>>, Object> {
-
-        /* renamed from: a  reason: collision with root package name */
-        int f19097a;
+        int a;
         /* synthetic */ Object b;
-
-        /* renamed from: c  reason: collision with root package name */
-        /* synthetic */ Object f19098c;
+        /* synthetic */ Object c;
         final /* synthetic */ CommunitySampleViewModel d;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -56,17 +50,17 @@ final class CommunitySampleViewModel$requestDataFlow$1 extends SuspendLambda imp
         public final Object a(BluedEntityA<BluedIngSelfFeed> bluedEntityA, BluedEntity<BluedIngSelfFeed, SignFeedExtra> bluedEntity, Continuation<? super BluedEntityA<BluedIngSelfFeed>> continuation) {
             AnonymousClass1 anonymousClass1 = new AnonymousClass1(this.d, continuation);
             anonymousClass1.b = bluedEntityA;
-            anonymousClass1.f19098c = bluedEntity;
-            return anonymousClass1.invokeSuspend(Unit.f42314a);
+            anonymousClass1.c = bluedEntity;
+            return anonymousClass1.invokeSuspend(Unit.a);
         }
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Object invokeSuspend(Object obj) {
             IntrinsicsKt.a();
-            if (this.f19097a == 0) {
+            if (this.a == 0) {
                 ResultKt.a(obj);
                 BluedEntityA bluedEntityA = (BluedEntityA) this.b;
-                BluedEntity bluedEntity = (BluedEntity) this.f19098c;
+                BluedEntity bluedEntity = (BluedEntity) this.c;
                 if (bluedEntity == null) {
                     LogUtils.c(Intrinsics.a("entityB == null, ", (Object) Boxing.a(Thread.currentThread().getId())));
                     return bluedEntityA;
@@ -88,7 +82,7 @@ final class CommunitySampleViewModel$requestDataFlow$1 extends SuspendLambda imp
     @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-        return ((CommunitySampleViewModel$requestDataFlow$1) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+        return ((CommunitySampleViewModel$requestDataFlow$1) create(coroutineScope, continuation)).invokeSuspend(Unit.a);
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -98,14 +92,14 @@ final class CommunitySampleViewModel$requestDataFlow$1 extends SuspendLambda imp
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        Object a2 = IntrinsicsKt.a();
-        int i = this.f19096a;
+        Object a = IntrinsicsKt.a();
+        int i = this.a;
         if (i == 0) {
             ResultKt.a(obj);
-            Flow a3 = FlowKt.a(FlowKt.a(FlowKt.a((Function2) new CommunitySampleViewModel$requestDataFlow$1$flowFeed$1(this.b, null)), Dispatchers.c()), FlowKt.a(FlowKt.a((Function2) new CommunitySampleViewModel$requestDataFlow$1$flowFloatOp$1(this.b, null)), Dispatchers.c()), new AnonymousClass1(this.b, null));
+            Flow a2 = FlowKt.a(FlowKt.a(FlowKt.a((Function2) new CommunitySampleViewModel$requestDataFlow$1$flowFeed$1(this.b, null)), Dispatchers.c()), FlowKt.a(FlowKt.a((Function2) new CommunitySampleViewModel$requestDataFlow$1$flowFloatOp$1(this.b, null)), Dispatchers.c()), new AnonymousClass1(this.b, null));
             final CommunitySampleViewModel communitySampleViewModel = this.b;
-            this.f19096a = 1;
-            if (a3.a(new FlowCollector<BluedEntityA<BluedIngSelfFeed>>() { // from class: com.blued.community.manager.CommunitySampleViewModel$requestDataFlow$1$invokeSuspend$$inlined$collect$1
+            this.a = 1;
+            if (a2.a(new FlowCollector<BluedEntityA<BluedIngSelfFeed>>() { // from class: com.blued.community.manager.CommunitySampleViewModel$requestDataFlow$1$invokeSuspend$$inlined$collect$1
                 @Override // kotlinx.coroutines.flow.FlowCollector
                 public Object emit(BluedEntityA<BluedIngSelfFeed> bluedEntityA, Continuation<? super Unit> continuation) {
                     BluedEntityA<BluedIngSelfFeed> bluedEntityA2 = bluedEntityA;
@@ -114,16 +108,16 @@ final class CommunitySampleViewModel$requestDataFlow$1 extends SuspendLambda imp
                     } else {
                         CommunitySampleViewModel.this.loadListFailed();
                     }
-                    return Unit.f42314a;
+                    return Unit.a;
                 }
-            }, this) == a2) {
-                return a2;
+            }, this) == a) {
+                return a;
             }
         } else if (i != 1) {
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         } else {
             ResultKt.a(obj);
         }
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

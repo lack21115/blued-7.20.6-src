@@ -28,7 +28,7 @@ public class SecureCryptTools {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static SecureCryptTools f21899a = new SecureCryptTools();
+        private static SecureCryptTools f8292a = new SecureCryptTools();
     }
 
     private SecureCryptTools() {
@@ -141,7 +141,7 @@ public class SecureCryptTools {
         InputStream inputStream2;
         ByteArrayInputStream byteArrayInputStream;
         ByteArrayInputStream byteArrayInputStream2 = null;
-        if (this.secureKeyStore.f21905c != null) {
+        if (this.secureKeyStore.f8298c != null) {
             try {
                 ByteArrayInputStream byteArrayInputStream3 = new ByteArrayInputStream(bArr);
                 try {
@@ -162,9 +162,9 @@ public class SecureCryptTools {
                                 byte[] bytes = sb.toString().getBytes();
                                 int length = bytes.length;
                                 byte[] bArr3 = new byte[byteArray.length + length];
-                                System.arraycopy((Object) byteArray, 0, (Object) bArr3, 0, byteArray.length);
+                                System.arraycopy(byteArray, 0, bArr3, 0, byteArray.length);
                                 inputStream = encrypt;
-                                System.arraycopy((Object) bytes, 0, (Object) bArr3, byteArray.length, length);
+                                System.arraycopy(bytes, 0, bArr3, byteArray.length, length);
                                 IOUtils.safeClose(encrypt);
                                 IOUtils.safeClose(byteArrayInputStream3);
                                 IOUtils.safeClose(byteArrayOutputStream2);
@@ -193,9 +193,9 @@ public class SecureCryptTools {
                                             byte[] bytes2 = sb2.toString().getBytes();
                                             int length2 = bytes2.length;
                                             byte[] bArr5 = new byte[byteArray2.length + length2];
-                                            System.arraycopy((Object) byteArray2, 0, (Object) bArr5, 0, byteArray2.length);
+                                            System.arraycopy(byteArray2, 0, bArr5, 0, byteArray2.length);
                                             inputStream = encrypt2;
-                                            System.arraycopy((Object) bytes2, 0, (Object) bArr5, byteArray2.length, length2);
+                                            System.arraycopy(bytes2, 0, bArr5, byteArray2.length, length2);
                                             IOUtils.safeClose(encrypt2);
                                             IOUtils.safeClose(byteArrayInputStream4);
                                             IOUtils.safeClose(byteArrayOutputStream3);
@@ -249,9 +249,9 @@ public class SecureCryptTools {
                             byte[] bytes3 = sb3.toString().getBytes();
                             int length3 = bytes3.length;
                             byte[] bArr7 = new byte[byteArray3.length + length3];
-                            System.arraycopy((Object) byteArray3, 0, (Object) bArr7, 0, byteArray3.length);
+                            System.arraycopy(byteArray3, 0, bArr7, 0, byteArray3.length);
                             inputStream2 = encrypt3;
-                            System.arraycopy((Object) bytes3, 0, (Object) bArr7, byteArray3.length, length3);
+                            System.arraycopy(bytes3, 0, bArr7, byteArray3.length, length3);
                             IOUtils.safeClose(encrypt3);
                             IOUtils.safeClose(byteArrayInputStream);
                             return bArr7;
@@ -285,7 +285,7 @@ public class SecureCryptTools {
     }
 
     public static SecureCryptTools getInstance() {
-        return a.f21899a;
+        return a.f8292a;
     }
 
     private List<CryptException> init(Context context) throws CryptException {

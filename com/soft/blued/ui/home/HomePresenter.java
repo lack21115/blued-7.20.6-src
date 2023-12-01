@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
@@ -29,7 +30,6 @@ import com.blued.android.module.common.user.model.UserInfo;
 import com.blued.android.module.common.utils.TimeAndDateUtils;
 import com.blued.android.module.common.utils.ToastUtils;
 import com.blued.android.module.common.widget.dialog.CommonAlertDialog;
-import com.blued.android.module.live_china.model.LiveGuideType;
 import com.blued.android.statistics.BluedStatistics;
 import com.blued.community.ui.send.manager.FeedSendManager;
 import com.blued.community.ui.send.observer.FeedRefreshObserver;
@@ -73,12 +73,12 @@ import java.util.concurrent.Executors;
 public class HomePresenter implements FeedRefreshObserver.IFeedRefreshObserver, HomeContract.Presenter {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f31015a = HomePresenter.class.getSimpleName();
+    public static final String f17325a = HomePresenter.class.getSimpleName();
     private static ExecutorService k = Executors.newSingleThreadExecutor();
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f31016c;
+    private String f17326c;
     private HomeContract.View d;
     private HomePageSessionListener g;
     private IRequestHost h;
@@ -105,13 +105,12 @@ public class HomePresenter implements FeedRefreshObserver.IFeedRefreshObserver, 
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public void onUIUpdate(BluedEntityA<MessageTabBubbleModel> bluedEntityA) {
             if (bluedEntityA == null || bluedEntityA.data == null || bluedEntityA.data.size() == 0) {
                 return;
             }
-            final MessageTabBubbleModel messageTabBubbleModel = bluedEntityA.data.get(0);
+            final MessageTabBubbleModel messageTabBubbleModel = (MessageTabBubbleModel) bluedEntityA.data.get(0);
             if (messageTabBubbleModel.open == 0 || TextUtils.isEmpty(messageTabBubbleModel.label) || messageTabBubbleModel.rate_day == 0) {
                 return;
             }
@@ -130,11 +129,11 @@ public class HomePresenter implements FeedRefreshObserver.IFeedRefreshObserver, 
     public class CountNewSessionThread implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        int f31028a = 0;
+        int f17338a = 0;
         int b = 0;
 
         /* renamed from: c  reason: collision with root package name */
-        boolean f31029c = false;
+        boolean f17339c = false;
         List<SessionModel> d;
 
         public CountNewSessionThread(List<SessionModel> list) {
@@ -143,27 +142,27 @@ public class HomePresenter implements FeedRefreshObserver.IFeedRefreshObserver, 
 
         @Override // java.lang.Runnable
         public void run() {
-            Logger.c(HomePresenter.f31015a, "计算未读数");
+            Logger.c(HomePresenter.f17325a, "计算未读数");
             ChatHelperV4.a(this.d, false);
             if (this.d != null) {
                 for (int i = 0; i < this.d.size(); i++) {
                     SessionModel sessionModel = this.d.get(i);
                     if (!MsgBoxManager.a().c() || !MsgBoxManager.a().a(sessionModel)) {
-                        SessionSettingModel sessionSettingModel = (SessionSettingModel) sessionModel.sessionSettingModel;
+                        SessionSettingModel sessionSettingModel = sessionModel.sessionSettingModel;
                         if (sessionSettingModel == null || sessionSettingModel.getRemindAudio() == 0) {
-                            if (BluedConstant.f28239a) {
+                            if (BluedConstant.f14549a) {
                                 if (sessionModel.sessionType != 3) {
                                     if (sessionModel.sessionType != 1) {
-                                        this.f31028a += sessionModel.noReadMsgCount;
+                                        this.f17338a += sessionModel.noReadMsgCount;
                                     } else if (sessionModel.sessionId != 2) {
-                                        this.f31028a += sessionModel.noReadMsgCount;
+                                        this.f17338a += sessionModel.noReadMsgCount;
                                     }
                                 }
                             } else if (sessionModel.sessionType != 2 || sessionModel.sessionId >= 0 || sessionModel.lastMsgType != 281) {
-                                this.f31028a += sessionModel.noReadMsgCount;
+                                this.f17338a += sessionModel.noReadMsgCount;
                             }
-                            if (sessionModel.noReadRedDot == 1 && this.f31028a == 0) {
-                                this.f31029c = true;
+                            if (sessionModel.noReadRedDot == 1 && this.f17338a == 0) {
+                                this.f17339c = true;
                             }
                         }
                         if (sessionModel.lastMsgType == 52 && sessionModel.noReadMsgCount > 0 && sessionModel.lastMsgContent != null) {
@@ -189,25 +188,25 @@ public class HomePresenter implements FeedRefreshObserver.IFeedRefreshObserver, 
                     } else {
                         HomePresenter.this.d.f("msg");
                     }
-                    CountNewSessionThread.this.f31028a += DateTodayManager.f32404a.j();
-                    if ((CountNewSessionThread.this.f31028a > 0 || HomePresenter.this.i > 0) && CountNewSessionThread.this.b == 0) {
-                        HomePresenter.this.d.a("msg", CountNewSessionThread.this.f31028a + HomePresenter.this.i);
+                    CountNewSessionThread.this.f17338a += DateTodayManager.f18714a.j();
+                    if ((CountNewSessionThread.this.f17338a > 0 || HomePresenter.this.i > 0) && CountNewSessionThread.this.b == 0) {
+                        HomePresenter.this.d.a("msg", CountNewSessionThread.this.f17338a + HomePresenter.this.i);
                         if (HomePresenter.this.b != null) {
-                            ((HomeViewModel) ViewModelProviders.of((HomeActivity) HomePresenter.this.b).get(HomeViewModel.class)).f31047a.postValue(Integer.valueOf(CountNewSessionThread.this.f31028a));
+                            ((HomeViewModel) ViewModelProviders.of((FragmentActivity) ((HomeActivity) HomePresenter.this.b)).get(HomeViewModel.class)).f17357a.postValue(Integer.valueOf(CountNewSessionThread.this.f17338a));
                         }
                     } else {
                         HomePresenter.this.d.c("msg");
                     }
-                    if (HomePresenter.this.d.b("msg") || !CountNewSessionThread.this.f31029c) {
+                    if (HomePresenter.this.d.b("msg") || !CountNewSessionThread.this.f17339c) {
                         HomePresenter.this.d.e("msg");
                     } else {
                         HomePresenter.this.d.d("msg");
                     }
                     if (HomePresenter.this.b != null) {
-                        SystemNoticeViewModel systemNoticeViewModel = (SystemNoticeViewModel) ViewModelProviders.of((HomeActivity) HomePresenter.this.b).get(SystemNoticeViewModel.class);
-                        systemNoticeViewModel.f29846a = CountNewSessionThread.this.f31028a;
-                        systemNoticeViewModel.e.postValue(Integer.valueOf(CountNewSessionThread.this.f31028a));
-                        systemNoticeViewModel.d.postValue(Integer.valueOf(systemNoticeViewModel.f29846a + systemNoticeViewModel.b.getSum() + systemNoticeViewModel.f29847c));
+                        SystemNoticeViewModel systemNoticeViewModel = (SystemNoticeViewModel) ViewModelProviders.of((FragmentActivity) ((HomeActivity) HomePresenter.this.b)).get(SystemNoticeViewModel.class);
+                        systemNoticeViewModel.f16156a = CountNewSessionThread.this.f17338a;
+                        systemNoticeViewModel.e.postValue(Integer.valueOf(CountNewSessionThread.this.f17338a));
+                        systemNoticeViewModel.d.postValue(Integer.valueOf(systemNoticeViewModel.f16156a + systemNoticeViewModel.b.getSum() + systemNoticeViewModel.f16157c));
                     }
                     HomePresenter.this.i = 0;
                     HomePresenter.this.m = false;
@@ -223,9 +222,8 @@ public class HomePresenter implements FeedRefreshObserver.IFeedRefreshObserver, 
         private HomePageSessionListener() {
         }
 
-        @Override // com.blued.android.chat.StableSessionListListener
         public void onUISessionDataChanged(List<SessionModel> list) {
-            String str = HomePresenter.f31015a;
+            String str = HomePresenter.f17325a;
             Logger.c(str, "onUISessionDataChanged=====" + list.size());
             HomePresenter.this.l = list;
             HomePresenter.this.k();
@@ -234,7 +232,7 @@ public class HomePresenter implements FeedRefreshObserver.IFeedRefreshObserver, 
 
     public HomePresenter(Context context, String str, HomeContract.View view, IRequestHost iRequestHost) {
         this.b = context;
-        this.f31016c = str;
+        this.f17326c = str;
         this.d = view;
         this.h = iRequestHost;
     }
@@ -244,7 +242,7 @@ public class HomePresenter implements FeedRefreshObserver.IFeedRefreshObserver, 
         if (StringUtils.d(BluedApplicationLike.previousLanguage)) {
             a2 = H5Url.a(32);
         } else {
-            a2 = H5Url.a(32, "?lan=" + BluedApplicationLike.previousLanguage);
+            a2 = H5Url.a(32, new Object[]{"?lan=" + BluedApplicationLike.previousLanguage});
         }
         final String str4 = a2;
         CommonAlertDialog.a(context, (View) null, "", str, str2, str3, new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.home.HomePresenter.6
@@ -272,7 +270,7 @@ public class HomePresenter implements FeedRefreshObserver.IFeedRefreshObserver, 
         boolean z;
         boolean z2;
         boolean z3;
-        final SystemNoticeViewModel systemNoticeViewModel = (SystemNoticeViewModel) ViewModelProviders.of((HomeActivity) this.b).get(SystemNoticeViewModel.class);
+        final SystemNoticeViewModel systemNoticeViewModel = (SystemNoticeViewModel) ViewModelProviders.of((FragmentActivity) ((HomeActivity) this.b)).get(SystemNoticeViewModel.class);
         boolean z4 = false;
         if (list == null || list.size() <= 0) {
             z = false;
@@ -285,12 +283,12 @@ public class HomePresenter implements FeedRefreshObserver.IFeedRefreshObserver, 
             z3 = false;
             for (SessionModel sessionModel : list) {
                 if (sessionModel.sessionType == 1 && (sessionModel.sessionId == 3 || sessionModel.sessionId == 11 || sessionModel.sessionId == 22)) {
-                    Logger.e(f31015a, "找到动态session===" + sessionModel.noReadMsgCount + "===" + sessionModel.sessionId);
+                    Logger.e(f17325a, "找到动态session===" + sessionModel.noReadMsgCount + "===" + sessionModel.sessionId);
                     if (sessionModel.noReadMsgCount > 0) {
                         this.i += sessionModel.noReadMsgCount;
-                        if (systemNoticeViewModel.f29847c != sessionModel.noReadMsgCount) {
-                            systemNoticeViewModel.f29847c = sessionModel.noReadMsgCount;
-                            systemNoticeViewModel.g.postValue(Integer.valueOf(systemNoticeViewModel.f29847c));
+                        if (systemNoticeViewModel.f16157c != sessionModel.noReadMsgCount) {
+                            systemNoticeViewModel.f16157c = sessionModel.noReadMsgCount;
+                            systemNoticeViewModel.g.postValue(Integer.valueOf(systemNoticeViewModel.f16157c));
                         }
                         this.d.e(IAdInterListener.AdProdType.PRODUCT_FEEDS);
                         z4 = true;
@@ -342,14 +340,14 @@ public class HomePresenter implements FeedRefreshObserver.IFeedRefreshObserver, 
                     z3 = true;
                 }
             }
-            Logger.c(f31015a, "attention_like_vote_count = " + this.i);
+            Logger.c(f17325a, "attention_like_vote_count = " + this.i);
             AppInfo.n().post(new Runnable() { // from class: com.soft.blued.ui.home.HomePresenter.9
                 @Override // java.lang.Runnable
                 public void run() {
                     if (HomePresenter.this.b != null) {
                         systemNoticeViewModel.h.postValue(systemNoticeViewModel.b);
-                        systemNoticeViewModel.f.postValue(Integer.valueOf(systemNoticeViewModel.b.getSum() + systemNoticeViewModel.f29847c));
-                        systemNoticeViewModel.d.postValue(Integer.valueOf(systemNoticeViewModel.f29846a + systemNoticeViewModel.b.getSum() + systemNoticeViewModel.f29847c));
+                        systemNoticeViewModel.f.postValue(Integer.valueOf(systemNoticeViewModel.b.getSum() + systemNoticeViewModel.f16157c));
+                        systemNoticeViewModel.d.postValue(Integer.valueOf(systemNoticeViewModel.f16156a + systemNoticeViewModel.b.getSum() + systemNoticeViewModel.f16157c));
                     }
                 }
             });
@@ -374,20 +372,19 @@ public class HomePresenter implements FeedRefreshObserver.IFeedRefreshObserver, 
     private void g() {
         ChatHttpUtils.b(new BluedUIHttpResponse<BluedEntityA<MsgBoxSettingResponse>>(this.h) { // from class: com.soft.blued.ui.home.HomePresenter.2
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<MsgBoxSettingResponse> bluedEntityA) {
                 if (bluedEntityA == null || bluedEntityA.data == null || bluedEntityA.data.size() == 0) {
                     return;
                 }
                 boolean z = false;
-                BluedPreferences.T(bluedEntityA.data.get(0).source);
-                if (StringUtils.d(bluedEntityA.data.get(0).distance)) {
-                    BluedPreferences.U(LiveGuideType.GUIDE_TYPE_OFFICIAL_SAFETY_NOTICE);
+                BluedPreferences.T(((MsgBoxSettingResponse) bluedEntityA.data.get(0)).source);
+                if (StringUtils.d(((MsgBoxSettingResponse) bluedEntityA.data.get(0)).distance)) {
+                    BluedPreferences.U("0-0");
                 } else {
-                    BluedPreferences.U(bluedEntityA.data.get(0).distance);
+                    BluedPreferences.U(((MsgBoxSettingResponse) bluedEntityA.data.get(0)).distance);
                 }
-                if (bluedEntityA.data.get(0).is_open == 1) {
+                if (((MsgBoxSettingResponse) bluedEntityA.data.get(0)).is_open == 1) {
                     z = true;
                 }
                 BluedPreferences.V(z);
@@ -426,20 +423,20 @@ public class HomePresenter implements FeedRefreshObserver.IFeedRefreshObserver, 
                 if (refreshSessionEvent.list.size() == 0) {
                     return;
                 }
-                String str = HomePresenter.f31015a;
+                String str = HomePresenter.f17325a;
                 Logger.e(str, "KEY_EVENT_REFRESH_UNREAD_MSG_CNT==" + refreshSessionEvent.list.size());
                 HomePresenter.this.l = refreshSessionEvent.list;
                 HomePresenter.this.k();
             }
         });
-        String str = f31015a;
+        String str = f17325a;
         Log.w(str, "abtest reqeust value = " + BluedStatistics.g().a("mql-blued国内-客户端实验测试-2_name", ""));
     }
 
     private void i() {
         boolean z;
         boolean z2 = true;
-        if (TextUtils.isEmpty(this.f31016c) || !(this.f31016c.equals("from_tag_register") || this.f31016c.equals("from_tag_login"))) {
+        if (TextUtils.isEmpty(this.f17326c) || !(this.f17326c.equals("from_tag_register") || this.f17326c.equals("from_tag_login"))) {
             z = false;
         } else {
             if (BluedPreferences.aC() == 1 || BluedPreferences.aD()) {
@@ -514,7 +511,6 @@ public class HomePresenter implements FeedRefreshObserver.IFeedRefreshObserver, 
         MsgGroupHttpUtils.a(new AnonymousClass10(this.h), this.h);
     }
 
-    @Override // com.blued.community.ui.send.observer.FeedRefreshObserver.IFeedRefreshObserver
     public void a(Object obj, int i) {
         if (i == 3) {
             FeedSendManager.a().g();
@@ -531,7 +527,7 @@ public class HomePresenter implements FeedRefreshObserver.IFeedRefreshObserver, 
         this.j = z;
     }
 
-    @Override // com.soft.blued.ui.home.HomeContract.Presenter, com.blued.android.framework.mvp_similarity.BasePresenter
+    @Override // com.soft.blued.ui.home.HomeContract.Presenter
     public void ar_() {
         if (!this.e) {
             h();
@@ -575,14 +571,13 @@ public class HomePresenter implements FeedRefreshObserver.IFeedRefreshObserver, 
         VipBubbleManager.a().a((VipBubbleManager.RefreshListener) null, (IRequestHost) null);
         if (!TimeAndDateUtils.f(BluedPreferences.fe())) {
             AppHttpUtils.d(new BluedUIHttpResponse(this.h) { // from class: com.soft.blued.ui.home.HomePresenter.1
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public void onUIUpdate(BluedEntity bluedEntity) {
                     BluedPreferences.C(System.currentTimeMillis());
                 }
             });
         }
         VirtualImageUtils.Companion.a();
-        FilterNewHelper.f30593a.k();
+        FilterNewHelper.f16903a.k();
         l();
     }
 }

@@ -4,11 +4,11 @@ package com.tencent.txcopyrightedmedia.impl.utils;
 public final class ax {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f40078a;
+    public String f26387a;
     public String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f40079c;
+    public String f26388c;
     public String d;
     public int e;
     public String f;
@@ -22,9 +22,9 @@ public final class ax {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public ax(String str, String str2, String str3) {
-        this.f40078a = str;
+        this.f26387a = str;
         this.b = str2;
-        this.f40079c = null;
+        this.f26388c = null;
         this.d = str3;
         this.e = 0;
         this.f = ac.a();

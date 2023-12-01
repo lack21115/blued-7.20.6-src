@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.media.MediaMetadataRetriever;
-import android.provider.MediaStore;
 import android.text.TextUtils;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.utils.Log;
@@ -15,9 +14,7 @@ import java.io.FileOutputStream;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/player/media/utils/Utils.class */
 public class Utils {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final String f15657a = Utils.class.getSimpleName();
+    private static final String a = Utils.class.getSimpleName();
 
     public static Activity a(Context context) {
         while (context instanceof ContextWrapper) {
@@ -97,7 +94,7 @@ public class Utils {
                 String extractMetadata2 = mediaMetadataRetriever.extractMetadata(19);
                 String extractMetadata3 = mediaMetadataRetriever.extractMetadata(24);
                 if (TextUtils.isEmpty(extractMetadata) || TextUtils.isEmpty(extractMetadata2)) {
-                    Log.e(f15657a, " widthStr" + extractMetadata + ",heightStr" + extractMetadata2);
+                    Log.e(a, " widthStr" + extractMetadata + ",heightStr" + extractMetadata2);
                     i = 0;
                     i2 = 0;
                 } else {
@@ -105,7 +102,7 @@ public class Utils {
                     i2 = Integer.parseInt(extractMetadata2);
                 }
                 if (TextUtils.isEmpty(extractMetadata3)) {
-                    Log.e(f15657a, " rotation" + extractMetadata3);
+                    Log.e(a, " rotation" + extractMetadata3);
                     i3 = 0;
                 } else {
                     i3 = Integer.parseInt(extractMetadata3);
@@ -119,7 +116,7 @@ public class Utils {
                 }
                 iArr[2] = i3;
             } catch (Exception e) {
-                Log.e(f15657a, " MediaMetadataRetriever exception " + e);
+                Log.e(a, " MediaMetadataRetriever exception " + e);
                 e.printStackTrace();
             }
             return iArr;
@@ -142,7 +139,7 @@ public class Utils {
         synchronized (Utils.class) {
             try {
                 File file = new File(str);
-                File file2 = new File(str, MediaStore.MEDIA_IGNORE_FILENAME);
+                File file2 = new File(str, ".nomedia");
                 FileOutputStream fileOutputStream = null;
                 FileOutputStream fileOutputStream2 = null;
                 try {
@@ -155,10 +152,10 @@ public class Utils {
                             fileOutputStream = new FileOutputStream(file2);
                             try {
                                 fileOutputStream.flush();
-                                Log.e(f15657a, "create .nomedia file:" + file2.getAbsolutePath());
+                                Log.e(a, "create .nomedia file:" + file2.getAbsolutePath());
                             } catch (Exception e2) {
                                 e = e2;
-                                String str2 = f15657a;
+                                String str2 = a;
                                 FileOutputStream fileOutputStream3 = fileOutputStream;
                                 StringBuilder sb = new StringBuilder();
                                 FileOutputStream fileOutputStream4 = fileOutputStream;

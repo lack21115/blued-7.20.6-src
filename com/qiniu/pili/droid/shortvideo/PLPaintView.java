@@ -14,11 +14,11 @@ import java.util.LinkedList;
 public class PLPaintView extends View {
 
     /* renamed from: a  reason: collision with root package name */
-    private Bitmap f27495a;
+    private Bitmap f13807a;
     private Canvas b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Paint f27496c;
+    private Paint f13808c;
     private Path d;
     private boolean e;
     private int f;
@@ -33,11 +33,11 @@ public class PLPaintView extends View {
         private Paint b;
 
         /* renamed from: c  reason: collision with root package name */
-        private Path f27498c;
+        private Path f13810c;
 
         public a(Paint paint, Path path) {
             this.b = paint;
-            this.f27498c = path;
+            this.f13810c = path;
         }
 
         public Paint a() {
@@ -45,13 +45,13 @@ public class PLPaintView extends View {
         }
 
         public Path b() {
-            return this.f27498c;
+            return this.f13810c;
         }
     }
 
     public PLPaintView(Context context) {
         super(context);
-        this.f27496c = new Paint();
+        this.f13808c = new Paint();
         this.d = new Path();
         this.e = true;
         this.j = new LinkedList<>();
@@ -65,13 +65,13 @@ public class PLPaintView extends View {
     }
 
     private void a() {
-        this.f27496c.setAntiAlias(true);
-        this.f27496c.setDither(true);
-        this.f27496c.setStrokeJoin(Paint.Join.ROUND);
-        this.f27496c.setStrokeCap(Paint.Cap.ROUND);
-        this.f27496c.setColor(-16777216);
-        this.f27496c.setStyle(Paint.Style.STROKE);
-        this.f27496c.setStrokeWidth(10.0f);
+        this.f13808c.setAntiAlias(true);
+        this.f13808c.setDither(true);
+        this.f13808c.setStrokeJoin(Paint.Join.ROUND);
+        this.f13808c.setStrokeCap(Paint.Cap.ROUND);
+        this.f13808c.setColor(-16777216);
+        this.f13808c.setStyle(Paint.Style.STROKE);
+        this.f13808c.setStrokeWidth(10.0f);
     }
 
     private void b() {
@@ -93,16 +93,16 @@ public class PLPaintView extends View {
             i3 = this.g;
         }
         this.g = i3;
-        this.f27495a = Bitmap.createBitmap(this.f, i3, Bitmap.Config.ARGB_8888);
-        this.b = new Canvas(this.f27495a);
+        this.f13807a = Bitmap.createBitmap(this.f, i3, Bitmap.Config.ARGB_8888);
+        this.b = new Canvas(this.f13807a);
     }
 
     private void c() {
-        this.j.add(new a(new Paint(this.f27496c), new Path(this.d)));
+        this.j.add(new a(new Paint(this.f13808c), new Path(this.d)));
     }
 
     private void d() {
-        Bitmap bitmap = this.f27495a;
+        Bitmap bitmap = this.f13807a;
         if (bitmap != null) {
             bitmap.eraseColor(0);
             if (!this.j.isEmpty()) {
@@ -121,10 +121,9 @@ public class PLPaintView extends View {
         d();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onDraw(Canvas canvas) {
-        Bitmap bitmap = this.f27495a;
+    protected void onDraw(Canvas canvas) {
+        Bitmap bitmap = this.f13807a;
         if (bitmap != null) {
             canvas.drawBitmap(bitmap, 0.0f, 0.0f, (Paint) null);
         }
@@ -147,7 +146,7 @@ public class PLPaintView extends View {
                 this.d.reset();
                 return true;
             } else if (action == 2 && motionEvent.getPointerId(actionIndex) != 1) {
-                if (this.f27495a == null) {
+                if (this.f13807a == null) {
                     b();
                 }
                 float abs = Math.abs(x - this.h);
@@ -157,7 +156,7 @@ public class PLPaintView extends View {
                     float f = this.h;
                     float f2 = this.i;
                     path.quadTo(f, f2, (x + f) / 2.0f, (y + f2) / 2.0f);
-                    this.b.drawPath(this.d, this.f27496c);
+                    this.b.drawPath(this.d, this.f13808c);
                     invalidate();
                     this.h = x;
                     this.i = y;
@@ -172,11 +171,11 @@ public class PLPaintView extends View {
     }
 
     public void setPaint(Paint paint) {
-        this.f27496c = paint;
+        this.f13808c = paint;
     }
 
     public void setPaintColor(int i) {
-        this.f27496c.setColor(i);
+        this.f13808c.setColor(i);
     }
 
     public void setPaintEnable(boolean z) {
@@ -184,7 +183,7 @@ public class PLPaintView extends View {
     }
 
     public void setPaintSize(int i) {
-        this.f27496c.setStrokeWidth(i);
+        this.f13808c.setStrokeWidth(i);
     }
 
     public void undo() {

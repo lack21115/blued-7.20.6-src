@@ -9,20 +9,16 @@ import com.blued.android.module.common.R;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/databinding/PopGuideCommonBinding.class */
 public final class PopGuideCommonBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final FrameLayout f10749a;
+    public final FrameLayout a;
     public final LinearLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final TextView f10750c;
+    public final TextView c;
     private final LinearLayout d;
 
     private PopGuideCommonBinding(LinearLayout linearLayout, FrameLayout frameLayout, LinearLayout linearLayout2, TextView textView) {
         this.d = linearLayout;
-        this.f10749a = frameLayout;
+        this.a = frameLayout;
         this.b = linearLayout2;
-        this.f10750c = textView;
+        this.c = textView;
     }
 
     public static PopGuideCommonBinding a(View view) {
@@ -45,7 +41,6 @@ public final class PopGuideCommonBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
         return this.d;

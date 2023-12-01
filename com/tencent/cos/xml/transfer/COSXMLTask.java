@@ -40,9 +40,10 @@ public abstract class COSXMLTask {
     volatile TransferState taskState = TransferState.WAITING;
     protected AtomicBoolean IS_EXIT = new AtomicBoolean(false);
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.tencent.cos.xml.transfer.COSXMLTask$2  reason: invalid class name */
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/cos/xml/transfer/COSXMLTask$2.class */
-    static /* synthetic */ class AnonymousClass2 {
+    public static /* synthetic */ class AnonymousClass2 {
         static final /* synthetic */ int[] $SwitchMap$com$tencent$cos$xml$transfer$TransferState;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:19:0x0065 -> B:41:0x0014). Please submit an issue!!! */

@@ -16,13 +16,9 @@ import com.google.android.material.appbar.AppBarLayout;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/FragmentLiveGiftSetViewBinding.class */
 public final class FragmentLiveGiftSetViewBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final AppBarLayout f11938a;
+    public final AppBarLayout a;
     public final LiveGiftSetBannerView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final CoordinatorLayout f11939c;
+    public final CoordinatorLayout c;
     public final ShapeFrameLayout d;
     public final ImageView e;
     public final PageTabLayout f;
@@ -32,9 +28,9 @@ public final class FragmentLiveGiftSetViewBinding implements ViewBinding {
 
     private FragmentLiveGiftSetViewBinding(LinearLayout linearLayout, AppBarLayout appBarLayout, LiveGiftSetBannerView liveGiftSetBannerView, CoordinatorLayout coordinatorLayout, ShapeFrameLayout shapeFrameLayout, ImageView imageView, PageTabLayout pageTabLayout, PageTabLayout pageTabLayout2, ViewPager viewPager) {
         this.i = linearLayout;
-        this.f11938a = appBarLayout;
+        this.a = appBarLayout;
         this.b = liveGiftSetBannerView;
-        this.f11939c = coordinatorLayout;
+        this.c = coordinatorLayout;
         this.d = shapeFrameLayout;
         this.e = imageView;
         this.f = pageTabLayout;
@@ -56,12 +52,12 @@ public final class FragmentLiveGiftSetViewBinding implements ViewBinding {
 
     public static FragmentLiveGiftSetViewBinding a(View view) {
         String str;
-        AppBarLayout appBarLayout = (AppBarLayout) view.findViewById(R.id.appbar);
-        if (appBarLayout != null) {
+        AppBarLayout findViewById = view.findViewById(R.id.appbar);
+        if (findViewById != null) {
             LiveGiftSetBannerView liveGiftSetBannerView = (LiveGiftSetBannerView) view.findViewById(R.id.banner);
             if (liveGiftSetBannerView != null) {
-                CoordinatorLayout coordinatorLayout = (CoordinatorLayout) view.findViewById(R.id.coordinator);
-                if (coordinatorLayout != null) {
+                CoordinatorLayout findViewById2 = view.findViewById(R.id.coordinator);
+                if (findViewById2 != null) {
                     ShapeFrameLayout shapeFrameLayout = (ShapeFrameLayout) view.findViewById(R.id.fl_tab);
                     if (shapeFrameLayout != null) {
                         ImageView imageView = (ImageView) view.findViewById(R.id.iv_qa);
@@ -70,9 +66,9 @@ public final class FragmentLiveGiftSetViewBinding implements ViewBinding {
                             if (pageTabLayout != null) {
                                 PageTabLayout pageTabLayout2 = (PageTabLayout) view.findViewById(R.id.tab_layout_4);
                                 if (pageTabLayout2 != null) {
-                                    ViewPager viewPager = (ViewPager) view.findViewById(R.id.view_pager);
-                                    if (viewPager != null) {
-                                        return new FragmentLiveGiftSetViewBinding((LinearLayout) view, appBarLayout, liveGiftSetBannerView, coordinatorLayout, shapeFrameLayout, imageView, pageTabLayout, pageTabLayout2, viewPager);
+                                    ViewPager findViewById3 = view.findViewById(R.id.view_pager);
+                                    if (findViewById3 != null) {
+                                        return new FragmentLiveGiftSetViewBinding((LinearLayout) view, findViewById, liveGiftSetBannerView, findViewById2, shapeFrameLayout, imageView, pageTabLayout, pageTabLayout2, findViewById3);
                                     }
                                     str = "viewPager";
                                 } else {
@@ -99,7 +95,6 @@ public final class FragmentLiveGiftSetViewBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
         return this.i;

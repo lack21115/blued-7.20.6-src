@@ -173,7 +173,7 @@ public class RemoteViews implements Parcelable, LayoutInflater.Filter {
                 if (i2 >= readInt) {
                     return;
                 }
-                this.mBitmaps.add(Bitmap.CREATOR.createFromParcel(parcel));
+                this.mBitmaps.add((Bitmap) Bitmap.CREATOR.createFromParcel(parcel));
                 i = i2 + 1;
             }
         }
@@ -676,9 +676,8 @@ public class RemoteViews implements Parcelable, LayoutInflater.Filter {
     public @interface RemoteView {
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: source-4181928-dex2jar.jar:android/widget/RemoteViews$SetDrawableParameters.class */
-    public class SetDrawableParameters extends Action {
+    private class SetDrawableParameters extends Action {
         public static final int TAG = 3;
         int alpha;
         int colorFilter;
@@ -814,7 +813,7 @@ public class RemoteViews implements Parcelable, LayoutInflater.Filter {
         public SetOnClickFillInIntent(Parcel parcel) {
             super();
             this.viewId = parcel.readInt();
-            this.fillInIntent = Intent.CREATOR.createFromParcel(parcel);
+            this.fillInIntent = (Intent) Intent.CREATOR.createFromParcel(parcel);
         }
 
         @Override // android.widget.RemoteViews.Action
@@ -867,9 +866,8 @@ public class RemoteViews implements Parcelable, LayoutInflater.Filter {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: source-4181928-dex2jar.jar:android/widget/RemoteViews$SetOnClickPendingIntent.class */
-    public class SetOnClickPendingIntent extends Action {
+    private class SetOnClickPendingIntent extends Action {
         public static final int TAG = 1;
         PendingIntent pendingIntent;
 
@@ -1029,7 +1027,7 @@ public class RemoteViews implements Parcelable, LayoutInflater.Filter {
         public SetRemoteViewsAdapterIntent(Parcel parcel) {
             super();
             this.viewId = parcel.readInt();
-            this.intent = Intent.CREATOR.createFromParcel(parcel);
+            this.intent = (Intent) Intent.CREATOR.createFromParcel(parcel);
         }
 
         @Override // android.widget.RemoteViews.Action
@@ -1156,9 +1154,8 @@ public class RemoteViews implements Parcelable, LayoutInflater.Filter {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: source-4181928-dex2jar.jar:android/widget/RemoteViews$TextViewDrawableAction.class */
-    public class TextViewDrawableAction extends Action {
+    private class TextViewDrawableAction extends Action {
         public static final int TAG = 11;
         int d1;
         int d2;
@@ -1221,9 +1218,8 @@ public class RemoteViews implements Parcelable, LayoutInflater.Filter {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: source-4181928-dex2jar.jar:android/widget/RemoteViews$TextViewDrawableColorFilterAction.class */
-    public class TextViewDrawableColorFilterAction extends Action {
+    private class TextViewDrawableColorFilterAction extends Action {
         public static final int TAG = 17;
         final int color;
         final int index;
@@ -1286,9 +1282,8 @@ public class RemoteViews implements Parcelable, LayoutInflater.Filter {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: source-4181928-dex2jar.jar:android/widget/RemoteViews$TextViewSizeAction.class */
-    public class TextViewSizeAction extends Action {
+    private class TextViewSizeAction extends Action {
         public static final int TAG = 13;
         float size;
         int units;
@@ -1330,9 +1325,8 @@ public class RemoteViews implements Parcelable, LayoutInflater.Filter {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: source-4181928-dex2jar.jar:android/widget/RemoteViews$ViewGroupAction.class */
-    public class ViewGroupAction extends Action {
+    private class ViewGroupAction extends Action {
         public static final int TAG = 4;
         RemoteViews nestedViews;
 
@@ -1406,9 +1400,8 @@ public class RemoteViews implements Parcelable, LayoutInflater.Filter {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: source-4181928-dex2jar.jar:android/widget/RemoteViews$ViewPaddingAction.class */
-    public class ViewPaddingAction extends Action {
+    private class ViewPaddingAction extends Action {
         public static final int TAG = 14;
         int bottom;
         int left;
@@ -1458,8 +1451,7 @@ public class RemoteViews implements Parcelable, LayoutInflater.Filter {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    public RemoteViews(ApplicationInfo applicationInfo, int i) {
+    protected RemoteViews(ApplicationInfo applicationInfo, int i) {
         this.mIsRoot = true;
         this.mLandscape = null;
         this.mPortrait = null;
@@ -1852,7 +1844,7 @@ public class RemoteViews implements Parcelable, LayoutInflater.Filter {
     public View apply(Context context, ViewGroup viewGroup, OnClickHandler onClickHandler, String str) {
         RemoteViews remoteViewsToApply = getRemoteViewsToApply(context);
         final Context contextForResources = getContextForResources(context, str);
-        LayoutInflater cloneInContext = ((LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE)).cloneInContext(new ContextWrapper(context) { // from class: android.widget.RemoteViews.2
+        LayoutInflater cloneInContext = ((LayoutInflater) context.getSystemService("layout_inflater")).cloneInContext(new ContextWrapper(context) { // from class: android.widget.RemoteViews.2
             @Override // android.content.ContextWrapper, android.content.Context
             public Resources getResources() {
                 return contextForResources.getResources();
@@ -1869,9 +1861,8 @@ public class RemoteViews implements Parcelable, LayoutInflater.Filter {
         return inflate;
     }
 
-    @Override // 
     /* renamed from: clone */
-    public RemoteViews mo120clone() {
+    public RemoteViews m117clone() {
         Parcel obtain = Parcel.obtain();
         writeToParcel(obtain, 0);
         obtain.setDataPosition(0);
@@ -1911,7 +1902,7 @@ public class RemoteViews implements Parcelable, LayoutInflater.Filter {
         if (remoteViews == null) {
             return;
         }
-        RemoteViews mo120clone = remoteViews.mo120clone();
+        RemoteViews m117clone = remoteViews.m117clone();
         HashMap hashMap = new HashMap();
         if (this.mActions == null) {
             this.mActions = new ArrayList<>();
@@ -1927,7 +1918,7 @@ public class RemoteViews implements Parcelable, LayoutInflater.Filter {
             hashMap.put(action.getUniqueKey(), action);
             i = i2 + 1;
         }
-        ArrayList<Action> arrayList = mo120clone.mActions;
+        ArrayList<Action> arrayList = m117clone.mActions;
         if (arrayList == null) {
             return;
         }
@@ -1999,8 +1990,8 @@ public class RemoteViews implements Parcelable, LayoutInflater.Filter {
         addAction(new ReflectionAction(i, str, 2, Byte.valueOf(b)));
     }
 
-    public void setChar(int i, String str, char c2) {
-        addAction(new ReflectionAction(i, str, 8, Character.valueOf(c2)));
+    public void setChar(int i, String str, char c) {
+        addAction(new ReflectionAction(i, str, 8, Character.valueOf(c)));
     }
 
     public void setCharSequence(int i, String str, CharSequence charSequence) {

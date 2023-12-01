@@ -10,11 +10,11 @@ import java.util.Collections;
 public final class a extends com.opos.exoplayer.core.f.c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final int f25391a = u.f("payl");
+    private static final int f11703a = u.f("payl");
     private static final int b = u.f("sttg");
 
     /* renamed from: c  reason: collision with root package name */
-    private static final int f25392c = u.f("vttc");
+    private static final int f11704c = u.f("vttc");
     private final m d;
     private final c.a e;
 
@@ -33,7 +33,7 @@ public final class a extends com.opos.exoplayer.core.f.c {
             int o = mVar.o();
             int o2 = mVar.o();
             int i2 = o - 8;
-            String str = new String(mVar.f25496a, mVar.d(), i2);
+            String str = new String(mVar.f11808a, mVar.d(), i2);
             mVar.d(i2);
             int i3 = (i - 8) - i2;
             if (o2 == b) {
@@ -41,7 +41,7 @@ public final class a extends com.opos.exoplayer.core.f.c {
                 i = i3;
             } else {
                 i = i3;
-                if (o2 == f25391a) {
+                if (o2 == f11703a) {
                     d.a((String) null, str.trim(), aVar, Collections.emptyList());
                     i = i3;
                 }
@@ -61,7 +61,7 @@ public final class a extends com.opos.exoplayer.core.f.c {
                 throw new com.opos.exoplayer.core.f.f("Incomplete Mp4Webvtt Top Level box header found.");
             }
             int o = this.d.o();
-            if (this.d.o() == f25392c) {
+            if (this.d.o() == f11704c) {
                 arrayList.add(a(this.d, this.e, o - 8));
             } else {
                 this.d.d(o - 8);

@@ -4,18 +4,18 @@ package com.huawei.hms.push.ups.entity;
 public class CodeResult {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f22864a;
+    private int f9256a;
     private String b;
 
     public CodeResult() {
     }
 
     public CodeResult(int i) {
-        this.f22864a = i;
+        this.f9256a = i;
     }
 
     public CodeResult(int i, String str) {
-        this.f22864a = i;
+        this.f9256a = i;
         this.b = str;
     }
 
@@ -24,7 +24,7 @@ public class CodeResult {
     }
 
     public int getReturnCode() {
-        return this.f22864a;
+        return this.f9256a;
     }
 
     public void setReason(String str) {
@@ -32,6 +32,6 @@ public class CodeResult {
     }
 
     public void setReturnCode(int i) {
-        this.f22864a = i;
+        this.f9256a = i;
     }
 }

@@ -12,20 +12,18 @@ import java.util.List;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/adapter/PkRotationPageAdapter.class */
 public class PkRotationPageAdapter extends PagerAdapter {
-
-    /* renamed from: a  reason: collision with root package name */
-    private List<String> f16141a;
+    private List<String> a;
     private IRequestHost b;
 
     public PkRotationPageAdapter(List<String> list, IRequestHost iRequestHost) {
         ArrayList arrayList = new ArrayList();
-        this.f16141a = arrayList;
+        this.a = arrayList;
         arrayList.addAll(list);
         this.b = iRequestHost;
     }
 
     private int a() {
-        List<String> list = this.f16141a;
+        List<String> list = this.a;
         if (list == null) {
             return 0;
         }
@@ -33,29 +31,25 @@ public class PkRotationPageAdapter extends PagerAdapter {
     }
 
     private void a(ImageView imageView, int i) {
-        ImageLoader.a(this.b, this.f16141a.get(i)).a(imageView.getResources().getDimensionPixelOffset(R.dimen.dp_2)).a(imageView);
+        ImageLoader.a(this.b, this.a.get(i)).a(imageView.getResources().getDimensionPixelOffset(R.dimen.dp_2)).a(imageView);
     }
 
-    @Override // androidx.viewpager.widget.PagerAdapter
     public void destroyItem(ViewGroup viewGroup, int i, Object obj) {
         viewGroup.removeView((View) obj);
     }
 
-    @Override // androidx.viewpager.widget.PagerAdapter
     public int getCount() {
         return a() * 500;
     }
 
-    @Override // androidx.viewpager.widget.PagerAdapter
     public Object instantiateItem(ViewGroup viewGroup, int i) {
-        int a2 = a();
+        int a = a();
         ImageView imageView = new ImageView(viewGroup.getContext());
-        a(imageView, i % a2);
+        a(imageView, i % a);
         viewGroup.addView(imageView, new ViewGroup.LayoutParams(-1, -1));
         return imageView;
     }
 
-    @Override // androidx.viewpager.widget.PagerAdapter
     public boolean isViewFromObject(View view, Object obj) {
         return view == obj;
     }

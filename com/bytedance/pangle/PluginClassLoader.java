@@ -33,9 +33,8 @@ public class PluginClassLoader extends BaseDexClassLoader {
         return new ClassNotFoundException(sb.toString(), classNotFoundException2);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // dalvik.system.BaseDexClassLoader, java.lang.ClassLoader
-    public Class<?> findClass(String str) {
+    protected Class<?> findClass(String str) {
         HashSet<String> hashSet = this.allPluginClasses;
         Class<?> cls = null;
         if (hashSet == null || hashSet.contains(str)) {

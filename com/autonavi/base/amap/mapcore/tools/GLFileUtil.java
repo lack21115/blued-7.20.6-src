@@ -85,42 +85,42 @@ public class GLFileUtil {
     }
 
     public static byte[] readFileContents(String str) {
-        InputStream inputStream;
-        Throwable th;
         FileInputStream fileInputStream;
+        Throwable th;
+        FileInputStream fileInputStream2;
         try {
             File file = new File(str);
             if (!file.exists()) {
                 closeQuietly(null);
                 return null;
             }
-            fileInputStream = new FileInputStream(file);
+            fileInputStream2 = new FileInputStream(file);
             try {
                 byte[] bArr = new byte[1024];
                 ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
                 while (true) {
-                    int read = fileInputStream.read(bArr);
+                    int read = fileInputStream2.read(bArr);
                     if (read == -1) {
                         byteArrayOutputStream.close();
                         byte[] byteArray = byteArrayOutputStream.toByteArray();
-                        closeQuietly(fileInputStream);
+                        closeQuietly(fileInputStream2);
                         return byteArray;
                     }
                     byteArrayOutputStream.write(bArr, 0, read);
                 }
             } catch (Exception e) {
-                closeQuietly(fileInputStream);
+                closeQuietly(fileInputStream2);
                 return null;
             } catch (Throwable th2) {
                 th = th2;
-                inputStream = fileInputStream;
-                closeQuietly(inputStream);
+                fileInputStream = fileInputStream2;
+                closeQuietly(fileInputStream);
                 throw th;
             }
         } catch (Exception e2) {
-            fileInputStream = null;
+            fileInputStream2 = null;
         } catch (Throwable th3) {
-            inputStream = null;
+            fileInputStream = null;
             th = th3;
         }
     }

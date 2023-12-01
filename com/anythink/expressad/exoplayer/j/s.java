@@ -10,20 +10,19 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import javax.xml.XMLConstants;
 
 /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/exoplayer/j/s.class */
 public interface s extends h {
 
     /* renamed from: c  reason: collision with root package name */
-    public static final com.anythink.expressad.exoplayer.k.u<String> f7602c = new com.anythink.expressad.exoplayer.k.u<String>() { // from class: com.anythink.expressad.exoplayer.j.s.1
+    public static final com.anythink.expressad.exoplayer.k.u<String> f4763c = new com.anythink.expressad.exoplayer.k.u<String>() { // from class: com.anythink.expressad.exoplayer.j.s.1
         /* renamed from: a  reason: avoid collision after fix types in other method */
         private static boolean a2(String str) {
             String d2 = af.d(str);
             if (TextUtils.isEmpty(d2)) {
                 return false;
             }
-            return ((d2.contains("text") && !d2.contains("text/vtt")) || d2.contains(com.baidu.mobads.sdk.internal.a.f) || d2.contains(XMLConstants.XML_NS_PREFIX)) ? false : true;
+            return ((d2.contains("text") && !d2.contains("text/vtt")) || d2.contains(com.baidu.mobads.sdk.internal.a.f) || d2.contains("xml")) ? false : true;
         }
 
         @Override // com.anythink.expressad.exoplayer.k.u
@@ -32,7 +31,7 @@ public interface s extends h {
             if (TextUtils.isEmpty(d2)) {
                 return false;
             }
-            return ((d2.contains("text") && !d2.contains("text/vtt")) || d2.contains(com.baidu.mobads.sdk.internal.a.f) || d2.contains(XMLConstants.XML_NS_PREFIX)) ? false : true;
+            return ((d2.contains("text") && !d2.contains("text/vtt")) || d2.contains(com.baidu.mobads.sdk.internal.a.f) || d2.contains("xml")) ? false : true;
         }
     };
 
@@ -40,37 +39,37 @@ public interface s extends h {
     public static abstract class a implements b {
 
         /* renamed from: a  reason: collision with root package name */
-        private final f f7603a = new f();
+        private final f f4764a = new f();
 
         protected abstract s a(f fVar);
 
         @Override // com.anythink.expressad.exoplayer.j.s.b
         @Deprecated
         public final void a(String str) {
-            this.f7603a.a(str);
+            this.f4764a.a(str);
         }
 
         @Override // com.anythink.expressad.exoplayer.j.s.b
         @Deprecated
         public final void a(String str, String str2) {
-            this.f7603a.a(str, str2);
+            this.f4764a.a(str, str2);
         }
 
         @Override // com.anythink.expressad.exoplayer.j.s.b, com.anythink.expressad.exoplayer.j.h.a
         /* renamed from: b */
         public final s a() {
-            return a(this.f7603a);
+            return a(this.f4764a);
         }
 
         @Override // com.anythink.expressad.exoplayer.j.s.b
         public final f c() {
-            return this.f7603a;
+            return this.f4764a;
         }
 
         @Override // com.anythink.expressad.exoplayer.j.s.b
         @Deprecated
         public final void d() {
-            this.f7603a.a();
+            this.f4764a.a();
         }
     }
 
@@ -103,11 +102,11 @@ public interface s extends h {
     public static class c extends IOException {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final int f7604a = 1;
+        public static final int f4765a = 1;
         public static final int b = 2;
 
         /* renamed from: c  reason: collision with root package name */
-        public static final int f7605c = 3;
+        public static final int f4766c = 3;
         public final int d;
         public final k e;
 
@@ -166,42 +165,42 @@ public interface s extends h {
     public static final class f {
 
         /* renamed from: a  reason: collision with root package name */
-        private final Map<String, String> f7606a = new HashMap();
+        private final Map<String, String> f4767a = new HashMap();
         private Map<String, String> b;
 
         private void a(Map<String, String> map) {
             synchronized (this) {
                 this.b = null;
-                this.f7606a.putAll(map);
+                this.f4767a.putAll(map);
             }
         }
 
         private void b(Map<String, String> map) {
             synchronized (this) {
                 this.b = null;
-                this.f7606a.clear();
-                this.f7606a.putAll(map);
+                this.f4767a.clear();
+                this.f4767a.putAll(map);
             }
         }
 
         public final void a() {
             synchronized (this) {
                 this.b = null;
-                this.f7606a.clear();
+                this.f4767a.clear();
             }
         }
 
         public final void a(String str) {
             synchronized (this) {
                 this.b = null;
-                this.f7606a.remove(str);
+                this.f4767a.remove(str);
             }
         }
 
         public final void a(String str, String str2) {
             synchronized (this) {
                 this.b = null;
-                this.f7606a.put(str, str2);
+                this.f4767a.put(str, str2);
             }
         }
 
@@ -209,7 +208,7 @@ public interface s extends h {
             Map<String, String> map;
             synchronized (this) {
                 if (this.b == null) {
-                    this.b = Collections.unmodifiableMap(new HashMap(this.f7606a));
+                    this.b = Collections.unmodifiableMap(new HashMap(this.f4767a));
                 }
                 map = this.b;
             }

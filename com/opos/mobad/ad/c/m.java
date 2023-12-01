@@ -6,7 +6,7 @@ import java.util.List;
 public interface m extends f, com.opos.mobad.ad.f, com.opos.mobad.ad.h {
 
     /* renamed from: c  reason: collision with root package name */
-    public static final m f25671c = new m() { // from class: com.opos.mobad.ad.c.m.1
+    public static final m f11983c = new m() { // from class: com.opos.mobad.ad.c.m.1
         @Override // com.opos.mobad.ad.c.f
         public void a(q qVar) {
             com.opos.cmn.an.f.a.b("INativeRewardAdListener", "onAdFailed=", qVar);

@@ -28,14 +28,10 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveGiftSetComboView.class */
 public final class LiveGiftSetComboView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f14486a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private static HashMap<String, MyCountDown> i = new HashMap<>();
     private final Lazy b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private boolean f14487c;
+    private boolean c;
     private boolean d;
     private int e;
     private long f;
@@ -111,14 +107,12 @@ public final class LiveGiftSetComboView extends FrameLayout {
     @Metadata
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveGiftSetComboView$MyCountDown.class */
     public static final class MyCountDown extends CountDownTimer {
-
-        /* renamed from: a  reason: collision with root package name */
-        private int f14488a;
+        private int a;
         private long b;
 
         public MyCountDown(long j, long j2, int i) {
             super(j, j2);
-            this.f14488a = i;
+            this.a = i;
             this.b = j / 1000;
         }
 
@@ -129,9 +123,9 @@ public final class LiveGiftSetComboView extends FrameLayout {
         @Override // android.os.CountDownTimer
         public void onFinish() {
             this.b = 0L;
-            Log.i("==xppp", Intrinsics.a("onFinish", (Object) Integer.valueOf(this.f14488a)));
-            LiveGiftSetComboView.f14486a.a().remove(String.valueOf(this.f14488a));
-            LiveEventBus.get("live_gift_set_buy_count_end").post(Integer.valueOf(this.f14488a));
+            Log.i("==xppp", Intrinsics.a("onFinish", (Object) Integer.valueOf(this.a)));
+            LiveGiftSetComboView.a.a().remove(String.valueOf(this.a));
+            LiveEventBus.get("live_gift_set_buy_count_end").post(Integer.valueOf(this.a));
         }
 
         @Override // android.os.CountDownTimer
@@ -232,11 +226,11 @@ public final class LiveGiftSetComboView extends FrameLayout {
             getVb().b.getAnimation().cancel();
         }
         getVb().b.clearAnimation();
-        if (getVb().f12229c.getAnimation() != null) {
-            getVb().f12229c.getAnimation().reset();
-            getVb().f12229c.getAnimation().cancel();
+        if (getVb().c.getAnimation() != null) {
+            getVb().c.getAnimation().reset();
+            getVb().c.getAnimation().cancel();
         }
-        getVb().f12229c.clearAnimation();
+        getVb().c.clearAnimation();
         getVb().b.setScaleX(1.0f);
         getVb().b.setScaleY(1.0f);
         getVb().b.animate().scaleX(0.7f).scaleY(0.7f).setDuration(120L).withEndAction(new Runnable() { // from class: com.blued.android.module.live_china.view.-$$Lambda$LiveGiftSetComboView$SX1x_6QBvGrd1WS__l1WvDzeOq8
@@ -300,12 +294,13 @@ public final class LiveGiftSetComboView extends FrameLayout {
         rotateAnimation.setDuration(1200L);
         rotateAnimation.setRepeatCount(-1);
         rotateAnimation.setInterpolator(new LinearInterpolator());
-        getVb().f12229c.startAnimation(rotateAnimation);
+        getVb().c.startAnimation(rotateAnimation);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:5:0x0025, code lost:
         if (r0.a() <= 0) goto L8;
      */
+    /* JADX WARN: Type inference failed for: r1v8, types: [com.blued.android.module.live_china.view.LiveGiftSetComboView$startPunishTimer$1] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences
@@ -392,7 +387,7 @@ public final class LiveGiftSetComboView extends FrameLayout {
         setVisibility(8);
         clearAnimation();
         d();
-        getVb().f12229c.clearAnimation();
+        getVb().c.clearAnimation();
         getVb().b.clearAnimation();
     }
 
@@ -406,7 +401,7 @@ public final class LiveGiftSetComboView extends FrameLayout {
     }
 
     public final boolean getAttatch() {
-        return this.f14487c;
+        return this.c;
     }
 
     public final EventCallBack getCallBack() {
@@ -433,7 +428,7 @@ public final class LiveGiftSetComboView extends FrameLayout {
     @Override // android.view.ViewGroup, android.view.View
     public void onAttachedToWindow() {
         super.onAttachedToWindow();
-        this.f14487c = true;
+        this.c = true;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -441,11 +436,11 @@ public final class LiveGiftSetComboView extends FrameLayout {
     public void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         f();
-        this.f14487c = false;
+        this.c = false;
     }
 
     public final void setAttatch(boolean z) {
-        this.f14487c = z;
+        this.c = z;
     }
 
     public final void setCallBack(EventCallBack eventCallBack) {

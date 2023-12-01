@@ -2,7 +2,6 @@ package com.alibaba.mtl.appmonitor.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.igexin.push.core.b;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alibaba/mtl/appmonitor/model/Dimension.class */
 public class Dimension implements Parcelable {
@@ -23,7 +22,7 @@ public class Dimension implements Parcelable {
     protected String y;
 
     public Dimension() {
-        this.y = b.l;
+        this.y = "null";
     }
 
     public Dimension(String str) {
@@ -31,9 +30,9 @@ public class Dimension implements Parcelable {
     }
 
     public Dimension(String str, String str2) {
-        this.y = b.l;
+        this.y = "null";
         this.name = str;
-        this.y = str2 == null ? b.l : str2;
+        this.y = str2 == null ? "null" : str2;
     }
 
     static Dimension a(Parcel parcel) {

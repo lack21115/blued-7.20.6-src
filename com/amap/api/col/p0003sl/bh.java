@@ -1,15 +1,15 @@
 package com.amap.api.col.p0003sl;
 
-import android.content.ContentResolver;
 import android.content.Context;
 import com.amap.api.maps.offlinemap.OfflineMapCity;
 import com.amap.api.maps.offlinemap.OfflineMapProvince;
+import com.anythink.core.common.b.g;
 import com.blued.android.module.common.web.jsbridge.BridgeUtil;
-import com.sobot.network.http.model.SobotProgress;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
+import javax.xml.transform.OutputKeys;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -25,8 +25,8 @@ public class bh extends bk {
 
     public bh(OfflineMapCity offlineMapCity, Context context) {
         this.o = context;
-        this.f4781a = offlineMapCity.getCity();
-        this.f4782c = offlineMapCity.getAdcode();
+        this.a = offlineMapCity.getCity();
+        this.c = offlineMapCity.getAdcode();
         this.b = offlineMapCity.getUrl();
         this.g = offlineMapCity.getSize();
         this.e = offlineMapCity.getVersion();
@@ -40,8 +40,8 @@ public class bh extends bk {
 
     public bh(OfflineMapProvince offlineMapProvince, Context context) {
         this.o = context;
-        this.f4781a = offlineMapProvince.getProvinceName();
-        this.f4782c = offlineMapProvince.getProvinceCode();
+        this.a = offlineMapProvince.getProvinceName();
+        this.c = offlineMapProvince.getProvinceCode();
         this.b = offlineMapProvince.getUrl();
         this.g = offlineMapProvince.getSize();
         this.e = offlineMapProvince.getVersion();
@@ -67,8 +67,8 @@ public class bh extends bk {
     }
 
     private void i() {
-        String c2 = dw.c(this.o);
-        this.d = c2 + this.m + ".zip.tmp";
+        String c = dw.c(this.o);
+        this.d = c + this.m + ".zip.tmp";
     }
 
     public final String a() {
@@ -85,14 +85,14 @@ public class bh extends bk {
         JSONObject jSONObject = new JSONObject();
         try {
             JSONObject jSONObject2 = new JSONObject();
-            jSONObject2.put("title", this.f4781a);
-            jSONObject2.put("code", this.f4782c);
+            jSONObject2.put("title", this.a);
+            jSONObject2.put(g.c.b, this.c);
             jSONObject2.put("url", this.b);
-            jSONObject2.put(SobotProgress.FILE_NAME, this.d);
+            jSONObject2.put("fileName", this.d);
             jSONObject2.put("lLocalLength", this.f);
             jSONObject2.put("lRemoteLength", this.g);
             jSONObject2.put("mState", this.l);
-            jSONObject2.put("version", this.e);
+            jSONObject2.put(OutputKeys.VERSION, this.e);
             jSONObject2.put("localPath", this.h);
             if (this.n != null) {
                 jSONObject2.put("vMapFileNames", this.n);
@@ -101,7 +101,7 @@ public class bh extends bk {
             jSONObject2.put("mCompleteCode", this.j);
             jSONObject2.put("mCityCode", this.k);
             jSONObject2.put("pinyin", this.m);
-            jSONObject.put(ContentResolver.SCHEME_FILE, jSONObject2);
+            jSONObject.put("file", jSONObject2);
             File file = new File(this.d + ".dt");
             file.delete();
             OutputStreamWriter outputStreamWriter2 = null;
@@ -156,17 +156,17 @@ public class bh extends bk {
         JSONObject jSONObject;
         if (str != null) {
             try {
-                if ("".equals(str) || (jSONObject = new JSONObject(str).getJSONObject(ContentResolver.SCHEME_FILE)) == null) {
+                if ("".equals(str) || (jSONObject = new JSONObject(str).getJSONObject("file")) == null) {
                     return;
                 }
-                this.f4781a = jSONObject.optString("title");
-                this.f4782c = jSONObject.optString("code");
+                this.a = jSONObject.optString("title");
+                this.c = jSONObject.optString(g.c.b);
                 this.b = jSONObject.optString("url");
-                this.d = jSONObject.optString(SobotProgress.FILE_NAME);
+                this.d = jSONObject.optString("fileName");
                 this.f = jSONObject.optLong("lLocalLength");
                 this.g = jSONObject.optLong("lRemoteLength");
                 this.l = jSONObject.optInt("mState");
-                this.e = jSONObject.optString("version");
+                this.e = jSONObject.optString(OutputKeys.VERSION);
                 this.h = jSONObject.optString("localPath");
                 this.n = jSONObject.optString("vMapFileNames");
                 this.i = jSONObject.optInt("isSheng");

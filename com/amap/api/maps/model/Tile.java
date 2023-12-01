@@ -45,8 +45,8 @@ public final class Tile implements Parcelable {
     }
 
     public static Tile obtain(int i, int i2, byte[] bArr) {
-        Tile acquire = M_POOL.acquire();
-        return acquire != null ? acquire : new Tile(i, i2, bArr);
+        Tile tile = (Tile) M_POOL.acquire();
+        return tile != null ? tile : new Tile(i, i2, bArr);
     }
 
     @Override // android.os.Parcelable

@@ -12,7 +12,6 @@ import android.os.Looper;
 import android.os.Message;
 import android.os.RemoteException;
 import android.util.Log;
-import com.android.internal.R;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -121,7 +120,7 @@ public final class BluetoothHeadset implements BluetoothProfile {
     }
 
     public static boolean isBluetoothVoiceDialingEnabled(Context context) {
-        return context.getResources().getBoolean(R.bool.config_bluetooth_sco_off_call);
+        return context.getResources().getBoolean(17956954);
     }
 
     private boolean isDisabled() {

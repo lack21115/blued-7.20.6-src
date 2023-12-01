@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentTabShowBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f28986a;
+    private final LinearLayout f15296a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f28986a;
+        return this.f15296a;
     }
 }

@@ -10,11 +10,11 @@ final class l implements d {
     private static final int b = Float.floatToIntBits(Float.NaN);
 
     /* renamed from: c  reason: collision with root package name */
-    private int f25041c = -1;
+    private int f11353c = -1;
     private int d = -1;
     private int e = 0;
-    private ByteBuffer f = f25014a;
-    private ByteBuffer g = f25014a;
+    private ByteBuffer f = f11326a;
+    private ByteBuffer g = f11326a;
     private boolean h;
 
     private static void a(int i, ByteBuffer byteBuffer) {
@@ -64,10 +64,10 @@ final class l implements d {
     @Override // com.opos.exoplayer.core.a.d
     public boolean a(int i, int i2, int i3) {
         if (u.c(i3)) {
-            if (this.f25041c == i && this.d == i2 && this.e == i3) {
+            if (this.f11353c == i && this.d == i2 && this.e == i3) {
                 return false;
             }
-            this.f25041c = i;
+            this.f11353c = i;
             this.d = i2;
             this.e = i3;
             return true;
@@ -87,7 +87,7 @@ final class l implements d {
 
     @Override // com.opos.exoplayer.core.a.d
     public int d() {
-        return this.f25041c;
+        return this.f11353c;
     }
 
     @Override // com.opos.exoplayer.core.a.d
@@ -98,26 +98,26 @@ final class l implements d {
     @Override // com.opos.exoplayer.core.a.d
     public ByteBuffer f() {
         ByteBuffer byteBuffer = this.g;
-        this.g = f25014a;
+        this.g = f11326a;
         return byteBuffer;
     }
 
     @Override // com.opos.exoplayer.core.a.d
     public boolean g() {
-        return this.h && this.g == f25014a;
+        return this.h && this.g == f11326a;
     }
 
     @Override // com.opos.exoplayer.core.a.d
     public void h() {
-        this.g = f25014a;
+        this.g = f11326a;
         this.h = false;
     }
 
     @Override // com.opos.exoplayer.core.a.d
     public void i() {
         h();
-        this.f = f25014a;
-        this.f25041c = -1;
+        this.f = f11326a;
+        this.f11353c = -1;
         this.d = -1;
         this.e = 0;
     }

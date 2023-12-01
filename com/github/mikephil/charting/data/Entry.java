@@ -21,21 +21,21 @@ public class Entry extends BaseEntry implements Parcelable {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    private float f22132a;
+    private float f8525a;
 
     public Entry() {
-        this.f22132a = 0.0f;
+        this.f8525a = 0.0f;
     }
 
     public Entry(float f, float f2, Object obj) {
         super(f2, obj);
-        this.f22132a = 0.0f;
-        this.f22132a = f;
+        this.f8525a = 0.0f;
+        this.f8525a = f;
     }
 
     protected Entry(Parcel parcel) {
-        this.f22132a = 0.0f;
-        this.f22132a = parcel.readFloat();
+        this.f8525a = 0.0f;
+        this.f8525a = parcel.readFloat();
         a(parcel.readFloat());
         if (parcel.readInt() == 1) {
             a(parcel.readParcelable(Object.class.getClassLoader()));
@@ -48,16 +48,16 @@ public class Entry extends BaseEntry implements Parcelable {
     }
 
     public float i() {
-        return this.f22132a;
+        return this.f8525a;
     }
 
     public String toString() {
-        return "Entry, x: " + this.f22132a + " y: " + b();
+        return "Entry, x: " + this.f8525a + " y: " + b();
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeFloat(this.f22132a);
+        parcel.writeFloat(this.f8525a);
         parcel.writeFloat(b());
         if (h() == null) {
             parcel.writeInt(0);

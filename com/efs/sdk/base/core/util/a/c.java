@@ -6,16 +6,16 @@ import com.efs.sdk.base.http.HttpResponse;
 public final class c extends com.efs.sdk.base.core.util.concurrent.d<HttpResponse> {
 
     /* renamed from: a  reason: collision with root package name */
-    public b f21790a;
+    public b f8184a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public c(b bVar) {
         super(bVar);
-        this.f21790a = bVar;
+        this.f8184a = bVar;
     }
 
     public final HttpResponse b() {
-        this.f21790a.e = "post";
+        this.f8184a.e = "post";
         return a();
     }
 }

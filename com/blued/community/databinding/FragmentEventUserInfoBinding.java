@@ -16,13 +16,9 @@ import com.blued.community.R;
 public final class FragmentEventUserInfoBinding implements ViewBinding {
     public final ImageView A;
     private final FrameLayout B;
-
-    /* renamed from: a  reason: collision with root package name */
-    public final TextView f18860a;
+    public final TextView a;
     public final TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final TextView f18861c;
+    public final TextView c;
     public final TextView d;
     public final TextView e;
     public final ImageView f;
@@ -49,9 +45,9 @@ public final class FragmentEventUserInfoBinding implements ViewBinding {
 
     private FragmentEventUserInfoBinding(FrameLayout frameLayout, TextView textView, TextView textView2, TextView textView3, TextView textView4, TextView textView5, ImageView imageView, TextView textView6, View view, LinearLayout linearLayout, TextView textView7, CardView cardView, ImageView imageView2, RelativeLayout relativeLayout, TextView textView8, View view2, TextView textView9, LinearLayout linearLayout2, TextView textView10, TextView textView11, TextView textView12, TextView textView13, View view3, ImageView imageView3, FrameLayout frameLayout2, TextView textView14, ImageView imageView4, ImageView imageView5) {
         this.B = frameLayout;
-        this.f18860a = textView;
+        this.a = textView;
         this.b = textView2;
-        this.f18861c = textView3;
+        this.c = textView3;
         this.d = textView4;
         this.e = textView5;
         this.f = imageView;
@@ -112,16 +108,16 @@ public final class FragmentEventUserInfoBinding implements ViewBinding {
                                         if (linearLayout != null) {
                                             TextView textView7 = (TextView) view.findViewById(R.id.event_user_info_des);
                                             if (textView7 != null) {
-                                                CardView cardView = (CardView) view.findViewById(R.id.event_user_info_des_auditing);
-                                                if (cardView != null) {
+                                                CardView findViewById2 = view.findViewById(R.id.event_user_info_des_auditing);
+                                                if (findViewById2 != null) {
                                                     ImageView imageView2 = (ImageView) view.findViewById(R.id.event_user_info_des_edit_icon);
                                                     if (imageView2 != null) {
                                                         RelativeLayout relativeLayout = (RelativeLayout) view.findViewById(R.id.event_user_info_des_layout);
                                                         if (relativeLayout != null) {
                                                             TextView textView8 = (TextView) view.findViewById(R.id.event_user_info_follow);
                                                             if (textView8 != null) {
-                                                                View findViewById2 = view.findViewById(R.id.event_user_info_follow_divider);
-                                                                if (findViewById2 != null) {
+                                                                View findViewById3 = view.findViewById(R.id.event_user_info_follow_divider);
+                                                                if (findViewById3 != null) {
                                                                     TextView textView9 = (TextView) view.findViewById(R.id.event_user_info_name);
                                                                     if (textView9 != null) {
                                                                         LinearLayout linearLayout2 = (LinearLayout) view.findViewById(R.id.event_user_info_name_layout);
@@ -134,8 +130,8 @@ public final class FragmentEventUserInfoBinding implements ViewBinding {
                                                                                     if (textView12 != null) {
                                                                                         TextView textView13 = (TextView) view.findViewById(R.id.event_user_info_report);
                                                                                         if (textView13 != null) {
-                                                                                            View findViewById3 = view.findViewById(R.id.event_user_info_sub_divider);
-                                                                                            if (findViewById3 != null) {
+                                                                                            View findViewById4 = view.findViewById(R.id.event_user_info_sub_divider);
+                                                                                            if (findViewById4 != null) {
                                                                                                 ImageView imageView3 = (ImageView) view.findViewById(R.id.event_user_info_sub_iv);
                                                                                                 if (imageView3 != null) {
                                                                                                     FrameLayout frameLayout = (FrameLayout) view.findViewById(R.id.event_user_info_sub_layout);
@@ -146,7 +142,7 @@ public final class FragmentEventUserInfoBinding implements ViewBinding {
                                                                                                             if (imageView4 != null) {
                                                                                                                 ImageView imageView5 = (ImageView) view.findViewById(R.id.event_user_info_vip);
                                                                                                                 if (imageView5 != null) {
-                                                                                                                    return new FragmentEventUserInfoBinding((FrameLayout) view, textView, textView2, textView3, textView4, textView5, imageView, textView6, findViewById, linearLayout, textView7, cardView, imageView2, relativeLayout, textView8, findViewById2, textView9, linearLayout2, textView10, textView11, textView12, textView13, findViewById3, imageView3, frameLayout, textView14, imageView4, imageView5);
+                                                                                                                    return new FragmentEventUserInfoBinding((FrameLayout) view, textView, textView2, textView3, textView4, textView5, imageView, textView6, findViewById, linearLayout, textView7, findViewById2, imageView2, relativeLayout, textView8, findViewById3, textView9, linearLayout2, textView10, textView11, textView12, textView13, findViewById4, imageView3, frameLayout, textView14, imageView4, imageView5);
                                                                                                                 }
                                                                                                                 str = "eventUserInfoVip";
                                                                                                             } else {
@@ -230,7 +226,6 @@ public final class FragmentEventUserInfoBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.B;

@@ -43,7 +43,7 @@ public final class AnnotationMirrors {
         return FluentIterable.from(element.getAnnotationMirrors()).filter(new Predicate<AnnotationMirror>() { // from class: com.google.auto.common.AnnotationMirrors.2
             @Override // com.google.common.base.Predicate
             public boolean apply(AnnotationMirror annotationMirror) {
-                return MoreElements.isAnnotationPresent(annotationMirror.getAnnotationType().asElement(), Class.this);
+                return MoreElements.isAnnotationPresent(annotationMirror.getAnnotationType().asElement(), cls);
             }
         }).toSet();
     }

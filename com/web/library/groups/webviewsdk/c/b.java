@@ -9,7 +9,6 @@ import android.os.Build;
 import android.os.Environment;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 
 /* loaded from: source-8829756-dex2jar.jar:com/web/library/groups/webviewsdk/c/b.class */
 public class b {
@@ -26,7 +25,7 @@ public class b {
             return null;
         } else if (a(uri)) {
             if ("primary".equalsIgnoreCase(DocumentsContract.getDocumentId(uri).split(":")[0])) {
-                return Environment.getExternalStorageDirectory() + BridgeUtil.SPLIT_MARK + split[1];
+                return Environment.getExternalStorageDirectory() + "/" + split[1];
             }
             return null;
         } else if (b(uri)) {

@@ -73,13 +73,9 @@ public class PopRewardConfigView implements View.OnClickListener, IRewardConfigV
     private ViewGroup T;
     private ImageView U;
     private boolean X;
-
-    /* renamed from: a  reason: collision with root package name */
-    public View f15185a;
+    public View a;
     public View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public View f15186c;
+    public View c;
     public Context d;
     public BaseFragment e;
     public LayoutInflater f;
@@ -109,19 +105,17 @@ public class PopRewardConfigView implements View.OnClickListener, IRewardConfigV
     private HashMap<Integer, LiveRewardConfigSumModel> Z = new HashMap<>();
     private TextWatcher aa = new TextWatcher() { // from class: com.blued.android.module.live_china.view.PopRewardConfigView.8
         private int b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private int f15198c;
+        private int c;
 
         @Override // android.text.TextWatcher
         public void afterTextChanged(Editable editable) {
             this.b = PopRewardConfigView.this.N.getSelectionStart();
-            this.f15198c = PopRewardConfigView.this.N.getSelectionEnd();
+            this.c = PopRewardConfigView.this.N.getSelectionEnd();
             PopRewardConfigView.this.N.removeTextChangedListener(PopRewardConfigView.this.aa);
             while (editable.length() > 20) {
-                editable.delete(this.b - 1, this.f15198c);
+                editable.delete(this.b - 1, this.c);
                 this.b--;
-                this.f15198c--;
+                this.c--;
             }
             PopRewardConfigView.this.N.setSelection(this.b);
             PopRewardConfigView.this.N.addTextChangedListener(PopRewardConfigView.this.aa);
@@ -249,7 +243,7 @@ public class PopRewardConfigView implements View.OnClickListener, IRewardConfigV
     private void l() {
         this.f = LayoutInflater.from(this.d);
         b();
-        View findViewById = this.f15185a.findViewById(R.id.tv_bg);
+        View findViewById = this.a.findViewById(R.id.tv_bg);
         this.b = findViewById;
         findViewById.setBackgroundColor(this.d.getResources().getColor(R.color.transparent));
         this.b.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.PopRewardConfigView.1
@@ -258,60 +252,60 @@ public class PopRewardConfigView implements View.OnClickListener, IRewardConfigV
                 Tracker.onClick(view);
             }
         });
-        View findViewById2 = this.f15185a.findViewById(R.id.ll_content);
-        this.f15186c = findViewById2;
+        View findViewById2 = this.a.findViewById(R.id.ll_content);
+        this.c = findViewById2;
         findViewById2.setVisibility(8);
-        this.f15186c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.PopRewardConfigView.2
+        this.c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.PopRewardConfigView.2
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
             }
         });
-        MyPopupWindow myPopupWindow = new MyPopupWindow(this.f15185a, -1, -1, true);
+        MyPopupWindow myPopupWindow = new MyPopupWindow(this.a, -1, -1, true);
         this.h = myPopupWindow;
-        myPopupWindow.setBackgroundDrawable(this.d.getResources().getDrawable(17170445));
+        myPopupWindow.setBackgroundDrawable(this.d.getResources().getDrawable(com.android.internal.R.color.transparent));
         this.h.setTouchable(true);
         this.h.setOutsideTouchable(true);
         this.h.setFocusable(true);
         this.h.update();
-        this.i = (LinearLayout) this.f15185a.findViewById(R.id.live_reward_sum_layout1);
-        this.j = (ImageView) this.f15185a.findViewById(R.id.live_reward_sum_image1);
-        this.k = (TextView) this.f15185a.findViewById(R.id.live_reward_sum1);
-        this.l = (LinearLayout) this.f15185a.findViewById(R.id.live_reward_sum_layout2);
-        this.m = (ImageView) this.f15185a.findViewById(R.id.live_reward_sum_image2);
-        this.n = (TextView) this.f15185a.findViewById(R.id.live_reward_sum2);
-        this.o = (LinearLayout) this.f15185a.findViewById(R.id.live_reward_sum_layout3);
-        this.p = (ImageView) this.f15185a.findViewById(R.id.live_reward_sum_image3);
-        this.q = (TextView) this.f15185a.findViewById(R.id.live_reward_sum3);
-        this.r = (Button) this.f15185a.findViewById(R.id.live_reward_num1);
-        this.s = (Button) this.f15185a.findViewById(R.id.live_reward_num2);
-        this.t = (Button) this.f15185a.findViewById(R.id.live_reward_num3);
-        this.u = (ImageView) this.f15185a.findViewById(R.id.live_reward_condition);
-        this.v = (ImageView) this.f15185a.findViewById(R.id.live_fans_condition);
-        this.w = (ShapeFrameLayout) this.f15185a.findViewById(R.id.live_reward_send_btn);
-        this.x = (TextView) this.f15185a.findViewById(R.id.price_view);
-        this.y = (TextView) this.f15185a.findViewById(R.id.give_price_view);
-        this.z = (TextView) this.f15185a.findViewById(R.id.top_up_btn);
-        this.A = (ImageView) this.f15185a.findViewById(R.id.top_up_icon);
-        this.B = (ImageView) this.f15185a.findViewById(R.id.live_reward_help);
-        this.C = (ImageView) this.f15185a.findViewById(R.id.live_reward_close);
-        this.R = (ViewGroup) this.f15185a.findViewById(R.id.live_reward_loading);
-        this.S = (ViewGroup) this.f15185a.findViewById(R.id.live_reward_help_layout);
-        this.T = (ViewGroup) this.f15185a.findViewById(R.id.live_reward_config_layout);
-        this.U = (ImageView) this.f15185a.findViewById(R.id.live_reward_help_close);
-        this.P = (LinearLayout) this.f15185a.findViewById(R.id.ll_reward_condition);
-        this.Q = (LinearLayout) this.f15185a.findViewById(R.id.ll_fans_condition);
-        this.D = this.f15185a.findViewById(R.id.ll_gift);
-        this.E = this.f15185a.findViewById(R.id.ll_gift_tip);
-        this.F = (ImageView) this.f15185a.findViewById(R.id.iv_gift_delete);
-        this.G = (ImageView) this.f15185a.findViewById(R.id.iv_gift_add);
-        this.H = (TextView) this.f15185a.findViewById(R.id.tv_reward_gift_num);
-        this.I = this.f15185a.findViewById(R.id.ll_word);
-        this.J = (TextView) this.f15185a.findViewById(R.id.tv_word);
-        this.K = this.f15185a.findViewById(R.id.iv_word_icon);
-        this.L = this.f15185a.findViewById(R.id.ll_reward_word);
-        this.M = this.f15185a.findViewById(R.id.tv_word_cancel);
-        EditText editText = (EditText) this.f15185a.findViewById(R.id.et_word);
+        this.i = (LinearLayout) this.a.findViewById(R.id.live_reward_sum_layout1);
+        this.j = (ImageView) this.a.findViewById(R.id.live_reward_sum_image1);
+        this.k = (TextView) this.a.findViewById(R.id.live_reward_sum1);
+        this.l = (LinearLayout) this.a.findViewById(R.id.live_reward_sum_layout2);
+        this.m = (ImageView) this.a.findViewById(R.id.live_reward_sum_image2);
+        this.n = (TextView) this.a.findViewById(R.id.live_reward_sum2);
+        this.o = (LinearLayout) this.a.findViewById(R.id.live_reward_sum_layout3);
+        this.p = (ImageView) this.a.findViewById(R.id.live_reward_sum_image3);
+        this.q = (TextView) this.a.findViewById(R.id.live_reward_sum3);
+        this.r = (Button) this.a.findViewById(R.id.live_reward_num1);
+        this.s = (Button) this.a.findViewById(R.id.live_reward_num2);
+        this.t = (Button) this.a.findViewById(R.id.live_reward_num3);
+        this.u = (ImageView) this.a.findViewById(R.id.live_reward_condition);
+        this.v = (ImageView) this.a.findViewById(R.id.live_fans_condition);
+        this.w = (ShapeFrameLayout) this.a.findViewById(R.id.live_reward_send_btn);
+        this.x = (TextView) this.a.findViewById(R.id.price_view);
+        this.y = (TextView) this.a.findViewById(R.id.give_price_view);
+        this.z = (TextView) this.a.findViewById(R.id.top_up_btn);
+        this.A = (ImageView) this.a.findViewById(R.id.top_up_icon);
+        this.B = (ImageView) this.a.findViewById(R.id.live_reward_help);
+        this.C = (ImageView) this.a.findViewById(R.id.live_reward_close);
+        this.R = (ViewGroup) this.a.findViewById(R.id.live_reward_loading);
+        this.S = (ViewGroup) this.a.findViewById(R.id.live_reward_help_layout);
+        this.T = (ViewGroup) this.a.findViewById(R.id.live_reward_config_layout);
+        this.U = (ImageView) this.a.findViewById(R.id.live_reward_help_close);
+        this.P = (LinearLayout) this.a.findViewById(R.id.ll_reward_condition);
+        this.Q = (LinearLayout) this.a.findViewById(R.id.ll_fans_condition);
+        this.D = this.a.findViewById(R.id.ll_gift);
+        this.E = this.a.findViewById(R.id.ll_gift_tip);
+        this.F = (ImageView) this.a.findViewById(R.id.iv_gift_delete);
+        this.G = (ImageView) this.a.findViewById(R.id.iv_gift_add);
+        this.H = (TextView) this.a.findViewById(R.id.tv_reward_gift_num);
+        this.I = this.a.findViewById(R.id.ll_word);
+        this.J = (TextView) this.a.findViewById(R.id.tv_word);
+        this.K = this.a.findViewById(R.id.iv_word_icon);
+        this.L = this.a.findViewById(R.id.ll_reward_word);
+        this.M = this.a.findViewById(R.id.tv_word_cancel);
+        EditText editText = (EditText) this.a.findViewById(R.id.et_word);
         this.N = editText;
         editText.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: com.blued.android.module.live_china.view.PopRewardConfigView.3
             @Override // android.widget.TextView.OnEditorActionListener
@@ -319,7 +313,7 @@ public class PopRewardConfigView implements View.OnClickListener, IRewardConfigV
                 return keyEvent != null && keyEvent.getKeyCode() == 66;
             }
         });
-        this.O = this.f15185a.findViewById(R.id.tv_word_ok);
+        this.O = this.a.findViewById(R.id.tv_word_ok);
         this.b.setOnClickListener(this);
         this.u.setOnClickListener(this);
         this.w.setOnClickListener(this);
@@ -545,7 +539,7 @@ public class PopRewardConfigView implements View.OnClickListener, IRewardConfigV
     }
 
     public void b() {
-        this.f15185a = this.f.inflate(R.layout.pop_reward, (ViewGroup) null);
+        this.a = this.f.inflate(R.layout.pop_reward, (ViewGroup) null);
     }
 
     public void c() {
@@ -557,18 +551,18 @@ public class PopRewardConfigView implements View.OnClickListener, IRewardConfigV
 
     public void d() {
         this.b.clearAnimation();
-        this.f15186c.clearAnimation();
+        this.c.clearAnimation();
         if (this.h.isShowing()) {
             this.h.a();
         }
-        this.h.showAtLocation(this.f15186c, 80, 0, 0);
-        this.f15186c.setVisibility(0);
+        this.h.showAtLocation(this.c, 80, 0, 0);
+        this.c.setVisibility(0);
         e();
     }
 
     public void e() {
         Logger.a("drb", "showAnim");
-        this.f15186c.startAnimation(AnimationUtils.loadAnimation(this.d, R.anim.push_bottom_in));
+        this.c.startAnimation(AnimationUtils.loadAnimation(this.d, R.anim.push_bottom_in));
         AlphaAnimation alphaAnimation = new AlphaAnimation(0.0f, 0.5f);
         alphaAnimation.setDuration(300L);
         alphaAnimation.setFillAfter(true);
@@ -599,7 +593,7 @@ public class PopRewardConfigView implements View.OnClickListener, IRewardConfigV
             }
         }, 320L);
         g();
-        this.f15186c.setVisibility(8);
+        this.c.setVisibility(8);
     }
 
     public void g() {
@@ -607,18 +601,18 @@ public class PopRewardConfigView implements View.OnClickListener, IRewardConfigV
         alphaAnimation.setDuration(300L);
         alphaAnimation.setFillAfter(true);
         this.b.startAnimation(alphaAnimation);
-        this.f15186c.startAnimation(AnimationUtils.loadAnimation(this.d, R.anim.push_bottom_out));
+        this.c.startAnimation(AnimationUtils.loadAnimation(this.d, R.anim.push_bottom_out));
     }
 
     public void h() {
         this.N.setFocusableInTouchMode(true);
         this.N.setFocusable(true);
         this.N.requestFocus();
-        ((InputMethodManager) this.e.getActivity().getSystemService(Context.INPUT_METHOD_SERVICE)).showSoftInput(this.N, 0);
+        ((InputMethodManager) this.e.getActivity().getSystemService("input_method")).showSoftInput(this.N, 0);
     }
 
     public void i() {
-        ((InputMethodManager) this.e.getActivity().getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(this.N.getWindowToken(), 0);
+        ((InputMethodManager) this.e.getActivity().getSystemService("input_method")).hideSoftInputFromWindow(this.N.getWindowToken(), 0);
     }
 
     public void j() {

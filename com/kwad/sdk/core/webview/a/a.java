@@ -73,13 +73,13 @@ public class a {
     private WebResourceResponse a(String str, String str2, b.a aVar, boolean z) {
         com.kwad.sdk.f.kwai.b df = df(str);
         if (df == null) {
-            com.kwad.sdk.f.kwai.b de2 = de(str);
-            if (de2 == null) {
+            com.kwad.sdk.f.kwai.b de = de(str);
+            if (de == null) {
                 aVar.msg = "配置文件没有下发该zip资源";
                 return null;
             }
-            aVar.msg = "资源未下载:" + de2.loadType;
-            b(de2);
+            aVar.msg = "资源未下载:" + de.loadType;
+            b(de);
             return null;
         }
         return b.a(this.mContext, str2, df, aVar, z);
@@ -90,14 +90,14 @@ public class a {
         if (this.apM.contains(bVar.atm)) {
             return;
         }
-        com.kwad.sdk.core.webview.a.a.a.a(bVar, new a.InterfaceC0568a() { // from class: com.kwad.sdk.core.webview.a.a.4
-            @Override // com.kwad.sdk.core.webview.a.a.a.InterfaceC0568a
+        com.kwad.sdk.core.webview.a.a.a.a(bVar, new a.InterfaceC0398a() { // from class: com.kwad.sdk.core.webview.a.a.4
+            @Override // com.kwad.sdk.core.webview.a.a.a.InterfaceC0398a
             public final void c(com.kwad.sdk.f.kwai.b bVar2) {
                 a.this.apM.add(bVar2.atm);
                 com.kwad.sdk.core.d.b.d("HybridPackageManager", "download onStart: " + bVar2.toString());
             }
 
-            @Override // com.kwad.sdk.core.webview.a.a.a.InterfaceC0568a
+            @Override // com.kwad.sdk.core.webview.a.a.a.InterfaceC0398a
             public final void d(com.kwad.sdk.f.kwai.b bVar2) {
                 com.kwad.sdk.core.d.b.d("HybridPackageManager", "download success: " + bVar2.toString());
                 if (com.kwad.sdk.core.webview.a.a.b.a(a.this.mContext, bVar2)) {
@@ -110,7 +110,7 @@ public class a {
                 a.this.apM.remove(bVar2.atm);
             }
 
-            @Override // com.kwad.sdk.core.webview.a.a.a.InterfaceC0568a
+            @Override // com.kwad.sdk.core.webview.a.a.a.InterfaceC0398a
             public final void e(com.kwad.sdk.f.kwai.b bVar2) {
                 com.kwad.sdk.core.d.b.d("HybridPackageManager", "download failure: " + bVar2.toString());
                 a.this.apM.remove(bVar2.atm);

@@ -23,7 +23,6 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewParent;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.sobot.chat.R;
 import com.sobot.chat.widget.subscaleview.decoder.CompatDecoderFactory;
 import com.sobot.chat.widget.subscaleview.decoder.DecoderFactory;
@@ -1655,9 +1654,8 @@ public class SobotScaleImageView extends View {
         return this.zoomEnabled;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         float f;
         super.onDraw(canvas);
         createPaints();
@@ -1833,9 +1831,8 @@ public class SobotScaleImageView extends View {
     protected void onImageLoaded() {
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         int mode = View.MeasureSpec.getMode(i);
         int mode2 = View.MeasureSpec.getMode(i2);
         int size = View.MeasureSpec.getSize(i);
@@ -1873,9 +1870,8 @@ public class SobotScaleImageView extends View {
     protected void onReady() {
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onSizeChanged(int i, int i2, int i3, int i4) {
+    protected void onSizeChanged(int i, int i2, int i3, int i4) {
         debug("onSizeChanged %dx%d -> %dx%d", Integer.valueOf(i3), Integer.valueOf(i4), Integer.valueOf(i), Integer.valueOf(i2));
         PointF center = getCenter();
         if (!this.readySent || center == null) {
@@ -2044,7 +2040,7 @@ public class SobotScaleImageView extends View {
                 if (uri == null) {
                     uri2 = uri;
                     if (imageSource2.getResource() != null) {
-                        uri2 = Uri.parse("android.resource://" + getContext().getPackageName() + BridgeUtil.SPLIT_MARK + imageSource2.getResource());
+                        uri2 = Uri.parse("android.resource://" + getContext().getPackageName() + "/" + imageSource2.getResource());
                     }
                 }
                 execute(new BitmapLoadTask(this, getContext(), this.bitmapDecoderFactory, uri2, true));
@@ -2059,7 +2055,7 @@ public class SobotScaleImageView extends View {
             Uri uri3 = imageSource.getUri();
             this.uri = uri3;
             if (uri3 == null && imageSource.getResource() != null) {
-                this.uri = Uri.parse("android.resource://" + getContext().getPackageName() + BridgeUtil.SPLIT_MARK + imageSource.getResource());
+                this.uri = Uri.parse("android.resource://" + getContext().getPackageName() + "/" + imageSource.getResource());
             }
             if (imageSource.getTile() || this.sRegion != null) {
                 execute(new TilesInitTask(this, getContext(), this.regionDecoderFactory, this.uri));

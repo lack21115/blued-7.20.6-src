@@ -6,11 +6,11 @@ import com.tencent.liteav.videobase.base.GLConstants;
 final /* synthetic */ class aj implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final f f37120a;
+    private final f f23429a;
     private final boolean b;
 
     private aj(f fVar, boolean z) {
-        this.f37120a = fVar;
+        this.f23429a = fVar;
         this.b = z;
     }
 
@@ -20,7 +20,7 @@ final /* synthetic */ class aj implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        f fVar = this.f37120a;
+        f fVar = this.f23429a;
         boolean z = this.b;
         fVar.s.d = r4 ? GLConstants.Orientation.PORTRAIT : GLConstants.Orientation.LANDSCAPE;
     }

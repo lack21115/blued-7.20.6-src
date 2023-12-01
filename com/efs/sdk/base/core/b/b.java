@@ -7,18 +7,18 @@ import java.util.concurrent.ConcurrentHashMap;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private ConcurrentHashMap<Byte, e> f21728a = new ConcurrentHashMap<>();
+    private ConcurrentHashMap<Byte, e> f8122a = new ConcurrentHashMap<>();
 
     public final e a(byte b) {
-        if (!this.f21728a.containsKey(Byte.valueOf(b))) {
+        if (!this.f8122a.containsKey(Byte.valueOf(b))) {
             if (b == 1) {
-                this.f21728a.putIfAbsent(Byte.valueOf(b), new g());
+                this.f8122a.putIfAbsent(Byte.valueOf(b), new g());
             } else if (b != 2) {
                 Log.w("efs.cache", "Cache module not support protocol ".concat(String.valueOf((int) b)));
             } else {
-                this.f21728a.putIfAbsent(Byte.valueOf(b), new d());
+                this.f8122a.putIfAbsent(Byte.valueOf(b), new d());
             }
         }
-        return this.f21728a.get(Byte.valueOf(b));
+        return this.f8122a.get(Byte.valueOf(b));
     }
 }

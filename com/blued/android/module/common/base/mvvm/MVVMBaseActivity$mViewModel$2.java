@@ -8,15 +8,13 @@ import kotlin.jvm.internal.Lambda;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/base/mvvm/MVVMBaseActivity$mViewModel$2.class */
 final class MVVMBaseActivity$mViewModel$2<M> extends Lambda implements Function0<M> {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ MVVMBaseActivity<M> f10695a;
+    final /* synthetic */ MVVMBaseActivity<M> a;
 
     /* JADX WARN: Incorrect return type in method signature: ()TM; */
     /* JADX WARN: Type inference failed for: r0v2, types: [com.blued.android.module.common.base.mvvm.BaseViewModel] */
     @Override // kotlin.jvm.functions.Function0
     /* renamed from: a */
     public final BaseViewModel invoke() {
-        return this.f10695a.i();
+        return this.a.i();
     }
 }

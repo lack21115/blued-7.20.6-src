@@ -36,7 +36,7 @@ public class m extends d {
                 a(((PLFadeTransition) pLTransition).a(j));
             } else if (pLTransition instanceof PLPositionTransition) {
                 float f = ((-this.b) + 1.0f) / 2.0f;
-                float f2 = ((this.f27713a / (this.i / this.j)) + 1.0f) / 2.0f;
+                float f2 = ((this.f14025a / (this.i / this.j)) + 1.0f) / 2.0f;
                 float f3 = (this.i * 2.0f) / this.j;
                 PLPositionTransition pLPositionTransition = (PLPositionTransition) pLTransition;
                 this.q = (pLPositionTransition.b(j) - f) * 2.0f;

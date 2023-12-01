@@ -11,7 +11,7 @@ public final class bl implements com.kwad.sdk.core.d<com.kwad.sdk.core.report.j>
             return;
         }
         jVar.llsid = jSONObject.optLong("llsid");
-        jVar.creativeId = jSONObject.optLong("creative_id");
+        jVar.creativeId = jSONObject.optLong(com.anythink.expressad.foundation.d.c.l);
         jVar.score = jSONObject.optInt(WBConstants.GAME_PARAMS_SCORE);
         jVar.aiq = jSONObject.optInt("is_bidding");
         jVar.source = jSONObject.optString("source");
@@ -30,7 +30,7 @@ public final class bl implements com.kwad.sdk.core.d<com.kwad.sdk.core.report.j>
             com.kwad.sdk.utils.t.putValue(jSONObject2, "llsid", jVar.llsid);
         }
         if (jVar.creativeId != 0) {
-            com.kwad.sdk.utils.t.putValue(jSONObject2, "creative_id", jVar.creativeId);
+            com.kwad.sdk.utils.t.putValue(jSONObject2, com.anythink.expressad.foundation.d.c.l, jVar.creativeId);
         }
         if (jVar.score != 0) {
             com.kwad.sdk.utils.t.putValue(jSONObject2, WBConstants.GAME_PARAMS_SCORE, jVar.score);

@@ -26,10 +26,10 @@ public class c implements Handler.Callback {
     private com.tencent.tmsqmsp.sdk.d.b i;
 
     /* renamed from: a  reason: collision with root package name */
-    private ConcurrentHashMap<String, com.tencent.tmsqmsp.sdk.b.b> f39738a = new ConcurrentHashMap<>();
+    private ConcurrentHashMap<String, com.tencent.tmsqmsp.sdk.b.b> f26047a = new ConcurrentHashMap<>();
 
     /* renamed from: c  reason: collision with root package name */
-    public final Object f39739c = new Object();
+    public final Object f26048c = new Object();
     private int d = 0;
     private d.b e = null;
     private String f = "";
@@ -64,14 +64,14 @@ public class c implements Handler.Callback {
 
     /* renamed from: com.tencent.tmsqmsp.sdk.d.c$c  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/tmsqmsp/sdk/d/c$c.class */
-    public static class C1045c {
+    public static class C0875c {
 
         /* renamed from: a  reason: collision with root package name */
-        public int f39741a;
+        public int f26050a;
         public int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public String f39742c;
+        public String f26051c;
         public String d;
         public String e;
         public String f;
@@ -81,10 +81,10 @@ public class c implements Handler.Callback {
         public long j;
         public int k;
 
-        public C1045c(int i, int i2, String str, String str2, String str3, String str4, int i3, boolean z, int i4, long j, int i5) {
-            this.f39741a = i;
+        public C0875c(int i, int i2, String str, String str2, String str3, String str4, int i3, boolean z, int i4, long j, int i5) {
+            this.f26050a = i;
             this.b = i2;
-            this.f39742c = str;
+            this.f26051c = str;
             this.d = str2;
             this.e = str3;
             this.f = str4;
@@ -96,14 +96,14 @@ public class c implements Handler.Callback {
         }
 
         public String toString() {
-            return "filePath=" + this.f39742c + ",fileName=" + this.d + ",fileId=" + this.b + ",fileUrl=" + this.e + ",fileHash=" + this.f + ",fileVersion=" + this.g + ",zipFlag=" + this.h + ",startTime=" + this.j + ",tryTimes=" + this.i + ",downloadFlag=" + this.k;
+            return "filePath=" + this.f26051c + ",fileName=" + this.d + ",fileId=" + this.b + ",fileUrl=" + this.e + ",fileHash=" + this.f + ",fileVersion=" + this.g + ",zipFlag=" + this.h + ",startTime=" + this.j + ",tryTimes=" + this.i + ",downloadFlag=" + this.k;
         }
     }
 
     public c(Context context) {
         this.h = null;
         this.i = null;
-        this.h = context.getSharedPreferences(com.tencent.tmsqmsp.sdk.c.b.f39705a + a(d.b), 0);
+        this.h = context.getSharedPreferences(com.tencent.tmsqmsp.sdk.c.b.f26014a + a(d.b), 0);
         this.i = new com.tencent.tmsqmsp.sdk.d.b();
     }
 
@@ -163,7 +163,7 @@ public class c implements Handler.Callback {
         String format = String.format(TimeModel.NUMBER_FORMAT, Integer.valueOf(i));
         d.b bVar = this.e;
         int i3 = bVar != null ? (int) bVar.b : 0;
-        String format2 = bVar != null ? String.format(TimeModel.NUMBER_FORMAT, Long.valueOf(bVar.f39747a)) : "";
+        String format2 = bVar != null ? String.format(TimeModel.NUMBER_FORMAT, Long.valueOf(bVar.f26056a)) : "";
         g.a("Qp.QUM", 1, String.format("[SFU] report: actiontype=%s, actionname=%s, actionfrom=%d, actionresult=%d, sectionId=%s, reportId=%s, fileInfo: %s", str, str, Integer.valueOf(i3), Integer.valueOf(this.d), format2, format, "", ""));
         com.tencent.tmsqmsp.sdk.a.g gVar = new com.tencent.tmsqmsp.sdk.a.g();
         try {
@@ -171,7 +171,7 @@ public class c implements Handler.Callback {
             f.a(gVar.toString(), 2);
         } catch (Exception e) {
             e.printStackTrace();
-            g.b(g.f39757a, 0, "onReport error! <JsonObject userData>!");
+            g.b(g.f26066a, 0, "onReport error! <JsonObject userData>!");
         }
     }
 
@@ -182,24 +182,24 @@ public class c implements Handler.Callback {
             return;
         }
         File file = new File(bVar.b);
-        C1045c c1045c = (C1045c) bVar.a();
-        if (!file.exists() || c1045c == null) {
+        C0875c c0875c = (C0875c) bVar.a();
+        if (!file.exists() || c0875c == null) {
             a(3);
             return;
         }
-        g.a("Qp.QUM", 1, String.format("[SFU] http download complete: %s, %s", bVar.b, c1045c.e));
-        int i2 = c1045c.f39741a;
+        g.a("Qp.QUM", 1, String.format("[SFU] http download complete: %s, %s", bVar.b, c0875c.e));
+        int i2 = c0875c.f26050a;
         if (i2 == 1) {
             File file2 = new File(c());
             new File(bVar.b).renameTo(file2);
-            a("0X80078AC", c1045c.g, this.j, "", "");
+            a("0X80078AC", c0875c.g, this.j, "", "");
             if (!this.i.a(file2.toString())) {
-                a("0X80078AD", c1045c.g, this.j, c1045c.d, c1045c.e);
+                a("0X80078AD", c0875c.g, this.j, c0875c.d, c0875c.e);
                 g.a("Qp.QUM", 1, "[SFU] invalid config (sig not accepted)");
                 a(1);
                 return;
             }
-            this.h.edit().putInt(a(d.d), c1045c.g).commit();
+            this.h.edit().putInt(a(d.d), c0875c.g).commit();
             if (this.i.a().isEmpty()) {
                 g.a("Qp.QUM", 1, "[SFU] config ok but without any sections");
                 i = 16;
@@ -209,18 +209,18 @@ public class c implements Handler.Callback {
         } else if (i2 != 2) {
             return;
         } else {
-            a("0X80078AE", c1045c.g, this.j, "", "");
+            a("0X80078AE", c0875c.g, this.j, "", "");
             i = 7;
         }
         b(i);
     }
 
-    private boolean a(C1045c c1045c) {
+    private boolean a(C0875c c0875c) {
         Context context;
-        if (c1045c == null) {
+        if (c0875c == null) {
             return false;
         }
-        if (c1045c.f39741a == 2 && c1045c.k != 1) {
+        if (c0875c.f26050a == 2 && c0875c.k != 1) {
             context = oj.getContext();
             if (!com.tencent.tmsqmsp.sdk.f.f.b(context)) {
                 g.a("Qp.QUM", 1, "[SFU] donot download file because not using wifi");
@@ -228,21 +228,21 @@ public class c implements Handler.Callback {
                 return false;
             }
         }
-        if (c1045c.i >= 3 || !this.f39738a.contains(c1045c.f.toLowerCase())) {
+        if (c0875c.i >= 3 || !this.f26047a.contains(c0875c.f.toLowerCase())) {
             com.tencent.tmsqmsp.sdk.b.b bVar = new com.tencent.tmsqmsp.sdk.b.b();
-            bVar.f39687a = c1045c.e;
-            bVar.b = c1045c.f39742c + c1045c.d;
-            bVar.d = c1045c.d;
-            bVar.f39688c = c1045c.f39742c;
-            c1045c.i = c1045c.i + 1;
-            bVar.a(c1045c);
-            this.f39738a.put(c1045c.f.toLowerCase(), bVar);
+            bVar.f25996a = c0875c.e;
+            bVar.b = c0875c.f26051c + c0875c.d;
+            bVar.d = c0875c.d;
+            bVar.f25997c = c0875c.f26051c;
+            c0875c.i = c0875c.i + 1;
+            bVar.a(c0875c);
+            this.f26047a.put(c0875c.f.toLowerCase(), bVar);
             try {
                 com.tencent.tmsqmsp.sdk.b.d.a(bVar);
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            g.a("Qp.QUM", 1, String.format("[SFU] begin http download %s", c1045c.e));
+            g.a("Qp.QUM", 1, String.format("[SFU] begin http download %s", c0875c.e));
             return true;
         }
         return false;
@@ -279,7 +279,7 @@ public class c implements Handler.Callback {
 
     private void b() {
         try {
-            this.h.edit().putLong(a(d.f39744c), System.currentTimeMillis()).commit();
+            this.h.edit().putLong(a(d.f26053c), System.currentTimeMillis()).commit();
             b(2);
         } catch (Exception e) {
             e.printStackTrace();
@@ -426,22 +426,22 @@ public class c implements Handler.Callback {
         if (cVar == null) {
             return;
         }
-        int i = cVar.f39689a;
+        int i = cVar.f25998a;
         if (i == 2) {
             g.a("Qp.QUM", 1, String.format("[SFU] http download error=%d", Integer.valueOf(i)));
             return;
         }
-        C1045c c1045c = (C1045c) cVar.b.a();
-        if (c1045c == null) {
+        C0875c c0875c = (C0875c) cVar.b.a();
+        if (c0875c == null) {
             return;
         }
-        boolean z = cVar.f39689a == 0;
+        boolean z = cVar.f25998a == 0;
         if (!z) {
             try {
-                int i2 = c1045c.i;
+                int i2 = c0875c.i;
                 if (i2 < 3) {
-                    g.a("Qp.QUM", 1, String.format("[SFU] retried to download, retry=%d, result=%b, url=%s", Integer.valueOf(i2), Boolean.valueOf(z), c1045c.e));
-                    a(c1045c);
+                    g.a("Qp.QUM", 1, String.format("[SFU] retried to download, retry=%d, result=%b, url=%s", Integer.valueOf(i2), Boolean.valueOf(z), c0875c.e));
+                    a(c0875c);
                     return;
                 }
                 File file = new File(cVar.b.b);
@@ -453,19 +453,19 @@ public class c implements Handler.Callback {
                 return;
             }
         }
-        this.f39738a.remove(c1045c.f.toLowerCase());
+        this.f26047a.remove(c0875c.f.toLowerCase());
         a(z, cVar.b);
     }
 
     private void b(d.b bVar) {
         if (bVar != null) {
-            g.a("Qp.QUM", 1, String.format("[SFU] cleanup: sid=%d", Long.valueOf(bVar.f39747a)));
+            g.a("Qp.QUM", 1, String.format("[SFU] cleanup: sid=%d", Long.valueOf(bVar.f26056a)));
             com.tencent.tmsqmsp.sdk.f.d.a(g(bVar), false);
         }
     }
 
     private String c() {
-        return e() + a(d.f39743a);
+        return e() + a(d.f26052a);
     }
 
     private void c(int i) {
@@ -492,11 +492,11 @@ public class c implements Handler.Callback {
                 if (bVar.m && bVar.l && bVar.n) {
                     this.e = bVar;
                     c(0);
-                    g.a("Qp.QUM", 1, String.format("[SFU] next update: sid=%d", Long.valueOf(this.e.f39747a)));
+                    g.a("Qp.QUM", 1, String.format("[SFU] next update: sid=%d", Long.valueOf(this.e.f26056a)));
                     z = true;
                     break;
                 }
-                g.d("Qp.QUM", 1, String.format("[SFU] not matched section: sid=%d, os: %b, qq:%b, cpu:%b", Long.valueOf(bVar.f39747a), Boolean.valueOf(bVar.m), Boolean.valueOf(bVar.l), Boolean.valueOf(bVar.n)));
+                g.d("Qp.QUM", 1, String.format("[SFU] not matched section: sid=%d, os: %b, qq:%b, cpu:%b", Long.valueOf(bVar.f26056a), Boolean.valueOf(bVar.m), Boolean.valueOf(bVar.l), Boolean.valueOf(bVar.n)));
                 bVar.b();
             }
             i = i2 + 1;
@@ -507,8 +507,8 @@ public class c implements Handler.Callback {
 
     private boolean d(d.b bVar) {
         if (bVar != null) {
-            g.a("Qp.QUM", 1, String.format("[SFU] download package: sid=%d", Long.valueOf(bVar.f39747a)));
-            return a(new C1045c(2, 0, g(bVar), bVar.f39748c, bVar.e, bVar.d, 0, true, 0, System.currentTimeMillis(), bVar.u));
+            g.a("Qp.QUM", 1, String.format("[SFU] download package: sid=%d", Long.valueOf(bVar.f26056a)));
+            return a(new C0875c(2, 0, g(bVar), bVar.f26057c, bVar.e, bVar.d, 0, true, 0, System.currentTimeMillis(), bVar.u));
         }
         return false;
     }
@@ -526,7 +526,7 @@ public class c implements Handler.Callback {
         if (bVar == null) {
             return false;
         }
-        g.a("Qp.QUM", 1, String.format("[SFU] get different: sid=%d", Long.valueOf(bVar.f39747a)));
+        g.a("Qp.QUM", 1, String.format("[SFU] get different: sid=%d", Long.valueOf(bVar.f26056a)));
         List<d.a> list = bVar.o;
         int i = 0;
         while (true) {
@@ -543,7 +543,7 @@ public class c implements Handler.Callback {
                     if (a2 == null) {
                         a2 = "";
                     }
-                    aVar.f39746c = a2;
+                    aVar.f26055c = a2;
                     bVar.q.add(aVar);
                     bVar.r++;
                 }
@@ -585,7 +585,7 @@ public class c implements Handler.Callback {
     }
 
     private String g(d.b bVar) {
-        String str = e() + bVar.f39747a + File.separator;
+        String str = e() + bVar.f26056a + File.separator;
         File file = new File(str);
         if (!file.exists()) {
             file.mkdirs();
@@ -608,11 +608,11 @@ public class c implements Handler.Callback {
     }
 
     private String h(d.b bVar) {
-        return g(bVar) + bVar.f39748c;
+        return g(bVar) + bVar.f26057c;
     }
 
     private void h() {
-        synchronized (this.f39739c) {
+        synchronized (this.f26048c) {
             a("0X80078B5", 0, this.j, "", "");
             this.e = null;
             g.a("Qp.QUM", 1, "[SFU] update ended");
@@ -626,11 +626,11 @@ public class c implements Handler.Callback {
 
     private void i(d.b bVar) {
         if (bVar != null) {
-            g.a("Qp.QUM", 1, String.format("[SFU] update complete: sid=%d", Long.valueOf(bVar.f39747a)));
+            g.a("Qp.QUM", 1, String.format("[SFU] update complete: sid=%d", Long.valueOf(bVar.f26056a)));
             bVar.b();
             if (j()) {
                 this.f += String.format("#%d#", Long.valueOf(bVar.b));
-                this.g += String.format("#%d#", Long.valueOf(bVar.f39747a));
+                this.g += String.format("#%d#", Long.valueOf(bVar.f26056a));
             }
             a("0X80078B4", 0, this.j, "", "");
         }
@@ -658,7 +658,7 @@ public class c implements Handler.Callback {
     private boolean k(d.b bVar) {
         boolean z;
         if (bVar != null) {
-            g.a("Qp.QUM", 1, String.format("[SFU] unzip package: sid=%d", Long.valueOf(bVar.f39747a)));
+            g.a("Qp.QUM", 1, String.format("[SFU] unzip package: sid=%d", Long.valueOf(bVar.f26056a)));
             String g = g(bVar);
             File file = new File(g);
             if (!file.exists()) {
@@ -678,7 +678,7 @@ public class c implements Handler.Callback {
     private boolean l(d.b bVar) {
         boolean z;
         if (bVar != null && !bVar.q.isEmpty()) {
-            g.a("Qp.QUM", 1, String.format("[SFU] do update files: sid=%d", Long.valueOf(bVar.f39747a)));
+            g.a("Qp.QUM", 1, String.format("[SFU] do update files: sid=%d", Long.valueOf(bVar.f26056a)));
             String g = g(bVar);
             int i = 0;
             while (true) {
@@ -706,7 +706,7 @@ public class c implements Handler.Callback {
                         }
                     }
                     if (!z2) {
-                        a("0X80078B2", (int) aVar.h, this.j, aVar.f39745a, aVar.b);
+                        a("0X80078B2", (int) aVar.h, this.j, aVar.f26054a, aVar.b);
                         g.a("Qp.QUM", 1, String.format("[SFU] failed copied: %s", aVar.f));
                         break;
                     }
@@ -735,9 +735,9 @@ public class c implements Handler.Callback {
         d.a aVar;
         String a2;
         if (bVar != null) {
-            g.a("Qp.QUM", 1, String.format("[SFU] verify: sid=%d", Long.valueOf(bVar.f39747a)));
+            g.a("Qp.QUM", 1, String.format("[SFU] verify: sid=%d", Long.valueOf(bVar.f26056a)));
             if (bVar.q.isEmpty()) {
-                g.a("Qp.QUM", 1, String.format("[SFU] no diff: sid=%d", Long.valueOf(bVar.f39747a)));
+                g.a("Qp.QUM", 1, String.format("[SFU] no diff: sid=%d", Long.valueOf(bVar.f26056a)));
             } else {
                 int i = 0;
                 while (true) {
@@ -752,7 +752,7 @@ public class c implements Handler.Callback {
                     }
                     i = i2 + 1;
                 }
-                g.a("Qp.QUM", 1, String.format("[SFU] not matched: %s!=%s, sid=%d", a2, aVar.b, Long.valueOf(bVar.f39747a)));
+                g.a("Qp.QUM", 1, String.format("[SFU] not matched: %s!=%s, sid=%d", a2, aVar.b, Long.valueOf(bVar.f26056a)));
             }
             z = true;
             g.a("Qp.QUM", 1, String.format("[SFU] verify result: %b", Boolean.valueOf(z)));
@@ -766,7 +766,7 @@ public class c implements Handler.Callback {
     private boolean n(d.b bVar) {
         boolean z;
         if (bVar != null) {
-            g.a("Qp.QUM", 1, String.format("[SFU] verify package: sid=%d", Long.valueOf(bVar.f39747a)));
+            g.a("Qp.QUM", 1, String.format("[SFU] verify package: sid=%d", Long.valueOf(bVar.f26056a)));
             String a2 = com.tencent.tmsqmsp.sdk.d.a.a(h(bVar));
             if (a2 == null) {
                 return false;
@@ -794,7 +794,7 @@ public class c implements Handler.Callback {
             a(atomUpdateInterval4.get());
         } else {
             long j2 = 0;
-            long j3 = this.h.getLong(a(d.f39744c), 0L);
+            long j3 = this.h.getLong(a(d.f26053c), 0L);
             long currentTimeMillis = System.currentTimeMillis() - j3;
             if (currentTimeMillis >= 0) {
                 j2 = currentTimeMillis;
@@ -866,7 +866,7 @@ public class c implements Handler.Callback {
                     if (a2 == 0) {
                         a("0X80078AB", optInt3, this.j, "", "");
                         g.a("Qp.QUM", 1, String.format("Need to update config file, fileid=%d", Integer.valueOf(optInt3)));
-                        z = a(new C1045c(1, optInt3, e(), a(d.f39743a), str2, str, optInt4, z2, 0, System.currentTimeMillis(), 1));
+                        z = a(new C0875c(1, optInt3, e(), a(d.f26052a), str2, str, optInt4, z2, 0, System.currentTimeMillis(), 1));
                     } else if (a2 == 1) {
                         z = false;
                         if (this.i.a(new File(c()).toString())) {

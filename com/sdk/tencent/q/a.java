@@ -11,11 +11,11 @@ import javax.crypto.spec.SecretKeySpec;
 public class a extends com.sdk.tencent.i.a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f28071a = "com.sdk.tencent.q.a";
+    public static final String f14383a = "com.sdk.tencent.q.a";
     public static boolean b = com.sdk.tencent.f.c.b;
 
     /* renamed from: c  reason: collision with root package name */
-    public static String f28072c = "a6Hy5Hb8IfX46D1f";
+    public static String f14384c = "a6Hy5Hb8IfX46D1f";
 
     public static String a(int i) {
         String str;

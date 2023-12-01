@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
+import android.content.res.ThemeConfig;
 import android.content.res.XmlResourceParser;
 import android.os.Environment;
 import android.os.Handler;
@@ -106,7 +107,7 @@ public abstract class RegisteredServicesCache<V> {
         this.mMetaDataName = str2;
         this.mAttributesName = str3;
         this.mSerializerAndParser = xmlSerializerAndParser;
-        this.mPersistentServicesFile = new AtomicFile(new File(new File(new File(Environment.getDataDirectory(), "system"), "registered_services"), str + ".xml"));
+        this.mPersistentServicesFile = new AtomicFile(new File(new File(new File(Environment.getDataDirectory(), ThemeConfig.SYSTEM_DEFAULT), "registered_services"), str + ".xml"));
         readPersistentServicesLocked();
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction(Intent.ACTION_PACKAGE_ADDED);

@@ -12,25 +12,25 @@ public final class i<T extends l> {
     public static final a b = new a(null);
 
     /* renamed from: a  reason: collision with root package name */
-    public T f21228a;
+    public T f7622a;
 
     /* loaded from: source-7206380-dex2jar.jar:com/bytedance/bdtracker/i$a.class */
     public static final class a {
         public /* synthetic */ a(DefaultConstructorMarker defaultConstructorMarker) {
         }
 
-        public final <T extends l> i<T> a(String str, Class<T> clazz) {
-            Intrinsics.d(clazz, "clazz");
+        public final <T extends l> i<T> a(String str, Class<T> cls) {
+            Intrinsics.d(cls, "clazz");
             JSONObject jSONObject = new JSONObject(str);
             i<T> iVar = new i<>();
             jSONObject.optInt("code");
             jSONObject.optString("message");
-            iVar.f21228a = (T) l.f21245a.a(jSONObject.optJSONObject("data"), clazz);
+            iVar.f7622a = (T) l.f7639a.a(jSONObject.optJSONObject("data"), cls);
             return iVar;
         }
     }
 
     public final T a() {
-        return this.f21228a;
+        return this.f7622a;
     }
 }

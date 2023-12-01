@@ -16,11 +16,11 @@ import org.json.JSONObject;
 public abstract class a0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public HashSet<String> f21188a;
+    public HashSet<String> f7582a;
     public HashMap<String, HashSet<String>> b;
 
     public a0(HashSet<String> hashSet, HashMap<String, HashSet<String>> hashMap) {
-        this.f21188a = hashSet;
+        this.f7582a = hashSet;
         this.b = hashMap;
     }
 
@@ -37,7 +37,7 @@ public abstract class a0 {
                 int optInt = optJSONObject.optInt("is_block", 0);
                 edit.putInt("is_block", optInt);
                 HashSet hashSet = new HashSet();
-                JSONArray optJSONArray = optJSONObject.optJSONArray(com.umeng.analytics.pro.d.f40716ar);
+                JSONArray optJSONArray = optJSONObject.optJSONArray(com.umeng.analytics.pro.d.f27025ar);
                 if (optJSONArray != null && optJSONArray.length() > 0) {
                     int i = 0;
                     while (true) {
@@ -53,7 +53,7 @@ public abstract class a0 {
                     }
                 }
                 if (hashSet.size() > 0) {
-                    edit.putStringSet(com.umeng.analytics.pro.d.f40716ar, hashSet);
+                    edit.putStringSet(com.umeng.analytics.pro.d.f27025ar, hashSet);
                 }
                 HashMap hashMap = new HashMap();
                 JSONObject optJSONObject2 = optJSONObject.optJSONObject("params");
@@ -107,7 +107,7 @@ public abstract class a0 {
         if (TextUtils.isEmpty(str)) {
             return false;
         }
-        HashSet<String> hashSet2 = this.f21188a;
+        HashSet<String> hashSet2 = this.f7582a;
         if (hashSet2 == null || hashSet2.size() <= 0) {
             return true;
         }

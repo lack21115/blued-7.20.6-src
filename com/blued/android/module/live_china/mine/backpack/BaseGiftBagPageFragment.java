@@ -4,7 +4,6 @@ import android.view.View;
 import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.SimpleItemAnimator;
 import com.blued.android.framework.ui.SimpleFragment;
 import com.blued.android.framework.utils.LogUtils;
 import com.blued.android.module.common.R;
@@ -18,13 +17,9 @@ import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/mine/backpack/BaseGiftBagPageFragment.class */
 public abstract class BaseGiftBagPageFragment<T extends BaseGiftModel> extends SimpleFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected RecyclerView f13883a;
+    protected RecyclerView a;
     protected BaseGiftAdapter b;
-
-    /* renamed from: c  reason: collision with root package name */
-    protected View f13884c;
+    protected View c;
     protected String e;
     protected final List<T> d = new ArrayList();
     protected int f = 0;
@@ -32,30 +27,30 @@ public abstract class BaseGiftBagPageFragment<T extends BaseGiftModel> extends S
 
     /* JADX INFO: Access modifiers changed from: private */
     public void c() {
-        List a2 = b().a(this.f);
+        List a = b().a(this.f);
         this.d.clear();
-        if (a2 != null) {
-            this.d.addAll(a2);
+        if (a != null) {
+            this.d.addAll(a);
         }
         LogUtils.c("packageIndex: " + this.e + ", pageIndex: " + this.f + ", dataList.size:" + this.d.size());
         d();
         this.b.setDataAndNotify(this.d);
         if (this.d.isEmpty()) {
-            this.f13884c.setVisibility(0);
+            this.c.setVisibility(0);
         } else {
-            this.f13884c.setVisibility(8);
+            this.c.setVisibility(8);
         }
     }
 
     private void d() {
-        CommonGiftPackageModel c2 = b().c();
-        if (c2 != null) {
-            RecyclerView.LayoutManager layoutManager = this.f13883a.getLayoutManager();
+        CommonGiftPackageModel c = b().c();
+        if (c != null) {
+            GridLayoutManager layoutManager = this.a.getLayoutManager();
             if (layoutManager == null) {
-                this.f13883a.setLayoutManager(a(c2));
+                this.a.setLayoutManager(a(c));
             }
             if (layoutManager instanceof GridLayoutManager) {
-                ((GridLayoutManager) layoutManager).setSpanCount(c2.getColumn());
+                layoutManager.setSpanCount(c.getColumn());
             }
         }
     }
@@ -67,19 +62,16 @@ public abstract class BaseGiftBagPageFragment<T extends BaseGiftModel> extends S
     public abstract void a();
 
     protected BaseGiftBagParentFragment b() {
-        return (BaseGiftBagParentFragment) getParentFragment();
+        return getParentFragment();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener
     public boolean onBackPressed() {
         return b().onBackPressed();
     }
 
-    @Override // com.blued.android.framework.ui.SimpleFragment
     public void onInitListener() {
         super.onInitListener();
         LiveEventBus.get("gift_page_change", CommonGiftPageChangeEvent.class).observe(this, new Observer<CommonGiftPageChangeEvent>() { // from class: com.blued.android.module.live_china.mine.backpack.BaseGiftBagPageFragment.1
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(CommonGiftPageChangeEvent commonGiftPageChangeEvent) {
                 if (commonGiftPageChangeEvent != null && BaseGiftBagPageFragment.this.g == commonGiftPageChangeEvent.packageTabIndex && BaseGiftBagPageFragment.this.f == commonGiftPageChangeEvent.pageIndex) {
@@ -89,7 +81,6 @@ public abstract class BaseGiftBagPageFragment<T extends BaseGiftModel> extends S
             }
         });
         LiveEventBus.get("gift_page_data_change", Object.class).observe(this, new Observer<Object>() { // from class: com.blued.android.module.live_china.mine.backpack.BaseGiftBagPageFragment.2
-            @Override // androidx.lifecycle.Observer
             public void onChanged(Object obj) {
                 LogUtils.c("GIFT_PAGE_DATA_CHANGE: " + BaseGiftBagPageFragment.this.f);
                 BaseGiftBagPageFragment.this.c();
@@ -97,27 +88,24 @@ public abstract class BaseGiftBagPageFragment<T extends BaseGiftModel> extends S
         });
     }
 
-    @Override // com.blued.android.framework.ui.SimpleFragment
     public void onInitView() {
         super.onInitView();
-        this.f13883a = (RecyclerView) this.rootView.findViewById(R.id.base_gift_page_grid);
+        this.a = this.rootView.findViewById(R.id.base_gift_page_grid);
         a();
-        this.f13883a.setAdapter(this.b);
-        if (this.f13883a.getItemAnimator() != null) {
-            ((SimpleItemAnimator) this.f13883a.getItemAnimator()).setSupportsChangeAnimations(false);
+        this.a.setAdapter(this.b);
+        if (this.a.getItemAnimator() != null) {
+            this.a.getItemAnimator().setSupportsChangeAnimations(false);
         }
         View findViewById = this.rootView.findViewById(R.id.base_gift_page_no_data_layout);
-        this.f13884c = findViewById;
+        this.c = findViewById;
         findViewById.setVisibility(0);
     }
 
-    @Override // com.blued.android.framework.ui.SimpleFragment
     public void onLoadData() {
         super.onLoadData();
         c();
     }
 
-    @Override // com.blued.android.framework.ui.SimpleFragment
     public void onParseArguments() {
         super.onParseArguments();
         this.e = this.args.getString("package_index");
@@ -125,7 +113,6 @@ public abstract class BaseGiftBagPageFragment<T extends BaseGiftModel> extends S
         this.g = this.args.getInt("package_tab_index");
     }
 
-    @Override // com.blued.android.framework.ui.SimpleFragment
     public int onSetRootViewId() {
         return R.layout.fragment_base_gift_page;
     }

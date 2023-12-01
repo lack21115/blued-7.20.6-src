@@ -59,7 +59,7 @@ public class TextClock extends TextView {
         this.mIntentReceiver = new BroadcastReceiver() { // from class: android.widget.TextClock.2
             @Override // android.content.BroadcastReceiver
             public void onReceive(Context context2, Intent intent) {
-                if (TextClock.this.mTimeZone == null && Intent.ACTION_TIMEZONE_CHANGED.equals(intent.getAction())) {
+                if (TextClock.this.mTimeZone == null && "android.intent.action.TIMEZONE_CHANGED".equals(intent.getAction())) {
                     TextClock.this.createTime(intent.getStringExtra("time-zone"));
                 }
                 TextClock.this.onTimeChanged();
@@ -102,7 +102,7 @@ public class TextClock extends TextView {
         this.mIntentReceiver = new BroadcastReceiver() { // from class: android.widget.TextClock.2
             @Override // android.content.BroadcastReceiver
             public void onReceive(Context context2, Intent intent) {
-                if (TextClock.this.mTimeZone == null && Intent.ACTION_TIMEZONE_CHANGED.equals(intent.getAction())) {
+                if (TextClock.this.mTimeZone == null && "android.intent.action.TIMEZONE_CHANGED".equals(intent.getAction())) {
                     TextClock.this.createTime(intent.getStringExtra("time-zone"));
                 }
                 TextClock.this.onTimeChanged();
@@ -197,10 +197,10 @@ public class TextClock extends TextView {
 
     private void registerReceiver() {
         IntentFilter intentFilter = new IntentFilter();
-        intentFilter.addAction(Intent.ACTION_TIME_TICK);
+        intentFilter.addAction("android.intent.action.TIME_TICK");
         intentFilter.addAction("android.intent.action.TIME_SET");
-        intentFilter.addAction(Intent.ACTION_TIMEZONE_CHANGED);
-        intentFilter.addAction(Intent.ACTION_DOZE_PULSE_STARTING);
+        intentFilter.addAction("android.intent.action.TIMEZONE_CHANGED");
+        intentFilter.addAction("android.intent.action.DOZE_PULSE_STARTING");
         getContext().registerReceiver(this.mIntentReceiver, intentFilter, null, getHandler());
     }
 

@@ -4,10 +4,10 @@ package com.tencent.liteav.videoconsumer.decoder;
 final /* synthetic */ class v implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final r f36808a;
+    private final r f23117a;
 
     private v(r rVar) {
-        this.f36808a = rVar;
+        this.f23117a = rVar;
     }
 
     public static Runnable a(r rVar) {
@@ -16,6 +16,6 @@ final /* synthetic */ class v implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        this.f36808a.a();
+        this.f23117a.a();
     }
 }

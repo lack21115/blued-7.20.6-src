@@ -5,6 +5,8 @@ import com.amap.api.services.cloud.CloudItem;
 import com.amap.api.services.cloud.CloudItemDetail;
 import com.amap.api.services.core.AMapException;
 import com.amap.api.services.core.LatLonPoint;
+import com.android.internal.util.cm.SpamFilter;
+import com.efs.sdk.base.Constants;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -17,7 +19,7 @@ import org.json.JSONObject;
 public abstract class fa<T, V> extends ex<T, V> {
     public fa(Context context, T t) {
         super(context, t);
-        this.f4949a = false;
+        this.a = false;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -52,7 +54,7 @@ public abstract class fa<T, V> extends ex<T, V> {
         if (optJSONObject2 == null || (optJSONObject = optJSONObject2.optJSONObject("info")) == null) {
             return 0;
         }
-        return optJSONObject.optInt("count");
+        return optJSONObject.optInt(SpamFilter.SpamContract.NotificationTable.COUNT);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -98,7 +100,7 @@ public abstract class fa<T, V> extends ex<T, V> {
     public Map<String, String> getRequestHead() {
         HashMap hashMap = new HashMap();
         hashMap.put("Content-Type", "application/x-www-form-urlencoded");
-        hashMap.put("Accept-Encoding", "gzip");
+        hashMap.put("Accept-Encoding", Constants.CP_GZIP);
         hashMap.put("User-Agent", "AMAP SDK Android Search 9.3.1");
         hashMap.put("X-INFO", hr.b(this.i));
         hashMap.put("platinfo", String.format("platform=Android&sdkversion=%s&product=%s", "9.3.1", "cloud"));

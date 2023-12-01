@@ -24,7 +24,7 @@ public class g {
     boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    boolean f6970c;
+    boolean f4132c;
     private int e;
     private int f;
     private com.anythink.expressad.d.a h;
@@ -39,7 +39,7 @@ public class g {
     private static final String d = g.class.getSimpleName();
 
     /* renamed from: a  reason: collision with root package name */
-    public static long f6969a = 0;
+    public static long f4131a = 0;
     private boolean s = false;
     private final Runnable u = new Runnable() { // from class: com.anythink.expressad.a.g.4
         @Override // java.lang.Runnable
@@ -106,7 +106,7 @@ public class g {
         this.l.getSettings().setLoadsImagesAutomatically(false);
         this.l.setWebViewClient(new WebViewClient() { // from class: com.anythink.expressad.a.g.2
             private boolean a() {
-                return g.this.b || g.this.f6970c;
+                return g.this.b || g.this.f4132c;
             }
 
             @Override // android.webkit.WebViewClient
@@ -170,7 +170,7 @@ public class g {
             public final boolean shouldOverrideUrlLoading(WebView webView2, String str3) {
                 synchronized (g.d) {
                     o.a(g.d, "override js跳转：".concat(String.valueOf(str3)));
-                    g.this.f6970c = true;
+                    g.this.f4132c = true;
                     g.this.j();
                     if (g.this.t) {
                         g.this.h();
@@ -221,7 +221,7 @@ public class g {
                         String str3 = g.d;
                         o.b(str3, "加载页面-进度完成：" + webView2.getUrl());
                         Tracker.loadUrl(webView2, "javascript:window.navigator.vibrate([]);");
-                        if (!g.this.t && !g.this.f6970c) {
+                        if (!g.this.t && !g.this.f4132c) {
                             g.m(g.this);
                         }
                         if (g.this.i != null) {

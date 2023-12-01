@@ -10,6 +10,6 @@ public final class DoubleVector extends BaseVector {
     }
 
     public double get(int i) {
-        return this.f2849a.getDouble(a(i));
+        return this.f2801a.getDouble(a(i));
     }
 }

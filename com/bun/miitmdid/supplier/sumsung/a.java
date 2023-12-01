@@ -8,11 +8,11 @@ import com.bun.supplier.SupplierListener;
 public class a implements com.bun.miitmdid.c.e.a, InnerIdSupplier {
 
     /* renamed from: a  reason: collision with root package name */
-    public SupplierListener f21166a;
+    public SupplierListener f7560a;
     private SumsungCore b;
 
     public a(Context context, SupplierListener supplierListener) {
-        this.f21166a = supplierListener;
+        this.f7560a = supplierListener;
         this.b = new SumsungCore(context, this);
     }
 

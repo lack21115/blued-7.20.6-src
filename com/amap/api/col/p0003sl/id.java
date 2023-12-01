@@ -14,36 +14,30 @@ import java.util.List;
 /* renamed from: com.amap.api.col.3sl.id  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/id.class */
 public final class id {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final String f5142a = ib.c("SU2hhcmVkUHJlZmVyZW5jZUFkaXU");
+    public static final String a = ib.c("SU2hhcmVkUHJlZmVyZW5jZUFkaXU");
     private static id f;
     private List<String> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f5143c;
+    private String c;
     private final Context d;
     private final Handler e;
 
     /* renamed from: com.amap.api.col.3sl.id$a */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/id$a.class */
     static final class a extends Handler {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final WeakReference<id> f5146a;
+        private final WeakReference<id> a;
 
         a(Looper looper, id idVar) {
             super(looper);
-            this.f5146a = new WeakReference<>(idVar);
+            this.a = new WeakReference<>(idVar);
         }
 
         a(id idVar) {
-            this.f5146a = new WeakReference<>(idVar);
+            this.a = new WeakReference<>(idVar);
         }
 
         @Override // android.os.Handler
         public final void handleMessage(Message message) {
-            id idVar = this.f5146a.get();
+            id idVar = this.a.get();
             if (idVar == null || message == null || message.obj == null) {
                 return;
             }
@@ -89,19 +83,19 @@ public final class id {
                         if ((i & 1) > 0) {
                             try {
                                 if (Build.VERSION.SDK_INT < 23) {
-                                    Settings.System.putString(id.this.d.getContentResolver(), id.this.f5143c, b);
+                                    Settings.System.putString(id.this.d.getContentResolver(), id.this.c, b);
                                 } else if (Settings.System.canWrite(id.this.d)) {
-                                    Settings.System.putString(id.this.d.getContentResolver(), id.this.f5143c, b);
+                                    Settings.System.putString(id.this.d.getContentResolver(), id.this.c, b);
                                 }
                             } catch (Exception e) {
                             }
                         }
                         if ((i & 16) > 0) {
-                            Cif.a(id.this.d, id.this.f5143c, b);
+                            Cif.a(id.this.d, id.this.c, b);
                         }
                         if ((i & 256) > 0) {
-                            SharedPreferences.Editor edit = id.this.d.getSharedPreferences(id.f5142a, 0).edit();
-                            edit.putString(id.this.f5143c, b);
+                            SharedPreferences.Editor edit = id.this.d.getSharedPreferences(id.a, 0).edit();
+                            edit.putString(id.this.c, b);
                             if (Build.VERSION.SDK_INT >= 9) {
                                 edit.apply();
                             } else {
@@ -117,19 +111,19 @@ public final class id {
                 if ((i & 1) > 0) {
                     try {
                         if (Build.VERSION.SDK_INT >= 23) {
-                            Settings.System.putString(this.d.getContentResolver(), this.f5143c, b);
+                            Settings.System.putString(this.d.getContentResolver(), this.c, b);
                         } else {
-                            Settings.System.putString(this.d.getContentResolver(), this.f5143c, b);
+                            Settings.System.putString(this.d.getContentResolver(), this.c, b);
                         }
                     } catch (Exception e) {
                     }
                 }
                 if ((i & 16) > 0) {
-                    Cif.a(this.d, this.f5143c, b);
+                    Cif.a(this.d, this.c, b);
                 }
                 if ((i & 256) > 0) {
-                    SharedPreferences.Editor edit = this.d.getSharedPreferences(f5142a, 0).edit();
-                    edit.putString(this.f5143c, b);
+                    SharedPreferences.Editor edit = this.d.getSharedPreferences(a, 0).edit();
+                    edit.putString(this.c, b);
                     if (Build.VERSION.SDK_INT >= 9) {
                         edit.apply();
                         return;
@@ -141,7 +135,7 @@ public final class id {
     }
 
     public final void a(String str) {
-        this.f5143c = str;
+        this.c = str;
     }
 
     public final void b(String str) {

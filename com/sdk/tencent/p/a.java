@@ -12,7 +12,7 @@ import java.security.spec.X509EncodedKeySpec;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f28069a = "a";
+    public static final String f14381a = "a";
     public static Boolean b = Boolean.valueOf(c.b);
 
     public static PublicKey a(String str) {
@@ -43,7 +43,7 @@ public class a {
                 aVar.a(pushbackInputStream, byteArrayOutputStream, i2 == 72 ? 4 : 72 - i);
             }
         } catch (Exception e2) {
-            com.sdk.tencent.n.b.a(f28069a, e2.toString(), b);
+            com.sdk.tencent.n.b.a(f14381a, e2.toString(), b);
             return null;
         }
     }

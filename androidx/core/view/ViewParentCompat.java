@@ -10,20 +10,20 @@ import android.view.accessibility.AccessibilityEvent;
 public final class ViewParentCompat {
 
     /* renamed from: a  reason: collision with root package name */
-    private static int[] f2677a;
+    private static int[] f2629a;
 
     private ViewParentCompat() {
     }
 
     private static int[] a() {
-        int[] iArr = f2677a;
+        int[] iArr = f2629a;
         if (iArr == null) {
-            f2677a = new int[2];
+            f2629a = new int[2];
         } else {
             iArr[0] = 0;
             iArr[1] = 0;
         }
-        return f2677a;
+        return f2629a;
     }
 
     public static void notifySubtreeAccessibilityStateChanged(ViewParent viewParent, View view, View view2, int i) {

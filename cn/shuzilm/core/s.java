@@ -4,9 +4,8 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-6737240-dex2jar.jar:cn/shuzilm/core/s.class */
-public class s extends BroadcastReceiver {
+class s extends BroadcastReceiver {
     private s() {
     }
 
@@ -24,7 +23,7 @@ public class s extends BroadcastReceiver {
             if (intent.getAction() == null) {
                 return;
             }
-            DUHelper.aXZlZWNl(context, intent);
+            DUHelper.a(context, intent);
         } catch (Exception e) {
         }
     }

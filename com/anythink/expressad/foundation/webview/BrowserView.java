@@ -2,6 +2,7 @@ package com.anythink.expressad.foundation.webview;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.net.http.Headers;
 import android.os.Build;
 import android.os.Handler;
 import android.text.TextUtils;
@@ -26,11 +27,11 @@ import java.lang.reflect.Method;
 public class BrowserView extends LinearLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f7983a = "BrowserView";
+    private static final String f5143a = "BrowserView";
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private ProgressBar f7984c;
+    private ProgressBar f5144c;
     private WebView d;
     private ToolBar e;
     private a f;
@@ -84,7 +85,7 @@ public class BrowserView extends LinearLayout {
 
     private void a() {
         ProgressBar progressBar = new ProgressBar(getContext());
-        this.f7984c = progressBar;
+        this.f5144c = progressBar;
         progressBar.setLayoutParams(new LinearLayout.LayoutParams(-1, 4));
         try {
             if (this.d == null) {
@@ -94,12 +95,12 @@ public class BrowserView extends LinearLayout {
             layoutParams.weight = 1.0f;
             this.d.setLayoutParams(layoutParams);
         } catch (Throwable th) {
-            o.b(f7983a, "webview is error", th);
+            o.b(f5143a, "webview is error", th);
         }
         this.e = new ToolBar(getContext());
         this.e.setLayoutParams(new LinearLayout.LayoutParams(-1, t.b(getContext(), 40.0f)));
         this.e.setBackgroundColor(-1);
-        addView(this.f7984c);
+        addView(this.f5144c);
         WebView webView = this.d;
         if (webView != null) {
             addView(webView);
@@ -136,7 +137,7 @@ public class BrowserView extends LinearLayout {
                     settings.setMixedContentMode(0);
                 }
             } catch (Exception e) {
-                o.d(f7983a, e.getMessage());
+                o.d(f5143a, e.getMessage());
             }
             settings.setDatabaseEnabled(true);
             String path = getContext().getDir(WebParameter.PATH_DATABASE, 0).getPath();
@@ -148,27 +149,27 @@ public class BrowserView extends LinearLayout {
                 declaredMethod.setAccessible(true);
                 declaredMethod.invoke(settings, Boolean.FALSE);
             } catch (Exception e2) {
-                o.d(f7983a, e2.getMessage());
+                o.d(f5143a, e2.getMessage());
             }
         } catch (Throwable th) {
-            o.d(f7983a, th.getMessage());
+            o.d(f5143a, th.getMessage());
         }
         webView.setDownloadListener(new DownloadListener(this.g));
         webView.setWebViewClient(new WebViewClient() { // from class: com.anythink.expressad.foundation.webview.BrowserView.2
             @Override // android.webkit.WebViewClient
             public final void onPageStarted(WebView webView2, String str, Bitmap bitmap) {
-                o.b(BrowserView.f7983a, "开始! = ".concat(String.valueOf(str)));
+                o.b(BrowserView.f5143a, "开始! = ".concat(String.valueOf(str)));
                 BrowserView.this.b = str;
                 if (BrowserView.this.f != null) {
                     a unused = BrowserView.this.f;
                 }
-                BrowserView.this.f7984c.setVisible(true);
-                BrowserView.this.f7984c.setProgressState(5);
+                BrowserView.this.f5144c.setVisible(true);
+                BrowserView.this.f5144c.setProgressState(5);
             }
 
             @Override // android.webkit.WebViewClient
             public final boolean shouldOverrideUrlLoading(WebView webView2, String str) {
-                o.b(BrowserView.f7983a, "js大跳! = ".concat(String.valueOf(str)));
+                o.b(BrowserView.f5143a, "js大跳! = ".concat(String.valueOf(str)));
                 BrowserView.this.e.getItem("backward").setEnabled(true);
                 BrowserView.this.e.getItem("forward").setEnabled(false);
                 if (BrowserView.this.f != null) {
@@ -198,11 +199,11 @@ public class BrowserView extends LinearLayout {
             public final void onProgressChanged(WebView webView2, int i) {
                 Tracker.onProgressChanged(this, webView2, i);
                 if (i == 100) {
-                    BrowserView.this.f7984c.setProgressState(7);
+                    BrowserView.this.f5144c.setProgressState(7);
                     new Handler().postDelayed(new Runnable() { // from class: com.anythink.expressad.foundation.webview.BrowserView.3.1
                         @Override // java.lang.Runnable
                         public final void run() {
-                            BrowserView.this.f7984c.setVisible(false);
+                            BrowserView.this.f5144c.setVisible(false);
                         }
                     }, 200L);
                 }
@@ -212,11 +213,11 @@ public class BrowserView extends LinearLayout {
             public final void onProgressChanged(WebView webView2, int i) {
                 Tracker.onProgressChanged(this, webView2, i);
                 if (i == 100) {
-                    BrowserView.this.f7984c.setProgressState(7);
+                    BrowserView.this.f5144c.setProgressState(7);
                     new Handler().postDelayed(new Runnable() { // from class: com.anythink.expressad.foundation.webview.BrowserView.4.1
                         @Override // java.lang.Runnable
                         public final void run() {
-                            BrowserView.this.f7984c.setVisible(false);
+                            BrowserView.this.f5144c.setVisible(false);
                         }
                     }, 200L);
                 }
@@ -239,7 +240,7 @@ public class BrowserView extends LinearLayout {
         setOrientation(1);
         setGravity(17);
         ProgressBar progressBar = new ProgressBar(getContext());
-        this.f7984c = progressBar;
+        this.f5144c = progressBar;
         progressBar.setLayoutParams(new LinearLayout.LayoutParams(-1, 4));
         try {
             if (this.d == null) {
@@ -249,18 +250,18 @@ public class BrowserView extends LinearLayout {
             layoutParams.weight = 1.0f;
             this.d.setLayoutParams(layoutParams);
         } catch (Throwable th) {
-            o.b(f7983a, "webview is error", th);
+            o.b(f5143a, "webview is error", th);
         }
         this.e = new ToolBar(getContext());
         this.e.setLayoutParams(new LinearLayout.LayoutParams(-1, t.b(getContext(), 40.0f)));
         this.e.setBackgroundColor(-1);
-        addView(this.f7984c);
+        addView(this.f5144c);
         WebView webView = this.d;
         if (webView != null) {
             addView(webView);
         }
         addView(this.e);
-        this.f7984c.initResource(true);
+        this.f5144c.initResource(true);
         this.e.getItem("backward").setEnabled(false);
         this.e.getItem("forward").setEnabled(false);
         this.e.setOnItemClickListener(new View.OnClickListener() { // from class: com.anythink.expressad.foundation.webview.BrowserView.1
@@ -299,7 +300,7 @@ public class BrowserView extends LinearLayout {
                         }
                     }
                     item2.setEnabled(z2);
-                } else if (!TextUtils.equals(str, "refresh")) {
+                } else if (!TextUtils.equals(str, Headers.REFRESH)) {
                     if (!TextUtils.equals(str, "exits") || BrowserView.this.f == null) {
                         return;
                     }

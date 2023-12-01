@@ -11,11 +11,12 @@ import android.view.ViewGroup;
 import android.view.Window;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.ViewModelStoreOwner;
 import androidx.viewbinding.ViewBinding;
+import com.blued.android.chat.grpc.backup.MsgBackupManager;
 import com.blued.android.core.ui.BaseDialogFragment;
 import com.blued.android.module.common.R;
 import com.blued.android.module.common.ext.AnyExtKt;
-import com.ss.android.socialbase.downloader.constants.MonitorConstants;
 import java.lang.reflect.Method;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
@@ -25,13 +26,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/base/mvvm/MVVMFullDialogFragment.class */
 public abstract class MVVMFullDialogFragment<VB extends ViewBinding, VM extends ViewModel> extends BaseDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public VM f10700a;
+    public VM a;
     public VB b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final String f10701c = "navigationBarBackground";
+    private final String c = "navigationBarBackground";
 
     private final void a(Dialog dialog) {
         if (Build.VERSION.SDK_INT < 19 || !h() || a(getActivity())) {
@@ -45,7 +42,7 @@ public abstract class MVVMFullDialogFragment<VB extends ViewBinding, VM extends 
 
     public final void a(VM vm) {
         Intrinsics.e(vm, "<set-?>");
-        this.f10700a = vm;
+        this.a = vm;
     }
 
     public final void a(VB vb) {
@@ -71,7 +68,7 @@ public abstract class MVVMFullDialogFragment<VB extends ViewBinding, VM extends 
                 return false;
             }
             viewGroup2.getChildAt(i2).getContext().getPackageName();
-            if (viewGroup2.getChildAt(i2).getId() != -1 && Intrinsics.a((Object) this.f10701c, (Object) activity.getResources().getResourceEntryName(viewGroup2.getChildAt(i2).getId()))) {
+            if (viewGroup2.getChildAt(i2).getId() != -1 && Intrinsics.a((Object) this.c, (Object) activity.getResources().getResourceEntryName(viewGroup2.getChildAt(i2).getId()))) {
                 return true;
             }
             i = i2 + 1;
@@ -97,11 +94,11 @@ public abstract class MVVMFullDialogFragment<VB extends ViewBinding, VM extends 
         Object invoke;
         Resources resources = getResources();
         Intrinsics.c(resources, "resources");
-        int identifier = resources.getIdentifier("config_showNavigationBar", "bool", "android");
+        int identifier = resources.getIdentifier("config_showNavigationBar", "bool", MsgBackupManager.PLATFORM_ANDROID);
         boolean z = identifier > 0 ? resources.getBoolean(identifier) : false;
         try {
             Class<?> cls = Class.forName("android.os.SystemProperties");
-            Method method = cls.getMethod(MonitorConstants.CONNECT_TYPE_GET, String.class);
+            Method method = cls.getMethod("get", String.class);
             Intrinsics.c(method, "systemPropertiesClass.ge…get\", String::class.java)");
             invoke = method.invoke(cls, "qemu.hw.mainkeys");
         } catch (Exception e) {
@@ -120,7 +117,6 @@ public abstract class MVVMFullDialogFragment<VB extends ViewBinding, VM extends 
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
         Type genericSuperclass = getClass().getGenericSuperclass();
         Intrinsics.a(genericSuperclass);
@@ -133,7 +129,7 @@ public abstract class MVVMFullDialogFragment<VB extends ViewBinding, VM extends 
             Type genericSuperclass2 = getClass().getGenericSuperclass();
             if (genericSuperclass2 != null) {
                 Type[] actualTypeArguments = ((ParameterizedType) genericSuperclass2).getActualTypeArguments();
-                ViewModelProvider viewModelProvider = new ViewModelProvider(this);
+                ViewModelProvider viewModelProvider = new ViewModelProvider((ViewModelStoreOwner) this);
                 Type type2 = actualTypeArguments[1];
                 if (type2 != null) {
                     a((MVVMFullDialogFragment<VB, VM>) viewModelProvider.get((Class) type2));
@@ -153,7 +149,6 @@ public abstract class MVVMFullDialogFragment<VB extends ViewBinding, VM extends 
         throw new NullPointerException("null cannot be cast to non-null type java.lang.reflect.ParameterizedType");
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public void setupDialog(Dialog dialog, int i) {
         Intrinsics.e(dialog, "dialog");
         super.setupDialog(dialog, i);

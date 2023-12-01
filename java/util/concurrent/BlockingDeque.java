@@ -5,7 +5,7 @@ import java.util.Iterator;
 
 /* loaded from: source-2895416-dex2jar.jar:java/util/concurrent/BlockingDeque.class */
 public interface BlockingDeque<E> extends BlockingQueue<E>, Deque<E> {
-    @Override // java.util.concurrent.BlockingQueue, java.util.Queue, java.util.Collection, java.util.Set
+    @Override // java.util.concurrent.BlockingQueue, java.util.Queue, java.util.Collection
     boolean add(E e);
 
     @Override // java.util.Deque
@@ -14,7 +14,7 @@ public interface BlockingDeque<E> extends BlockingQueue<E>, Deque<E> {
     @Override // java.util.Deque
     void addLast(E e);
 
-    @Override // java.util.concurrent.BlockingQueue, java.util.Collection, java.util.Set
+    @Override // java.util.concurrent.BlockingQueue, java.util.Collection
     boolean contains(Object obj);
 
     @Override // java.util.Queue
@@ -65,7 +65,7 @@ public interface BlockingDeque<E> extends BlockingQueue<E>, Deque<E> {
     @Override // java.util.Queue
     E remove();
 
-    @Override // java.util.concurrent.BlockingQueue, java.util.Collection, java.util.Set
+    @Override // java.util.concurrent.BlockingQueue, java.util.Collection
     boolean remove(Object obj);
 
     @Override // java.util.Deque
@@ -74,7 +74,7 @@ public interface BlockingDeque<E> extends BlockingQueue<E>, Deque<E> {
     @Override // java.util.Deque
     boolean removeLastOccurrence(Object obj);
 
-    @Override // java.util.Collection, java.util.List
+    @Override // java.util.Collection
     int size();
 
     @Override // java.util.concurrent.BlockingQueue

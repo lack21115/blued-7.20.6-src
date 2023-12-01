@@ -1,6 +1,7 @@
 package com.sobot.chat.utils;
 
 import android.text.TextUtils;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.PrintStream;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -51,7 +52,7 @@ public class TimeUtil {
             calendar.setTime(date);
         }
         if (!calendar.after(calendar2)) {
-            int indexOf = str.indexOf("-") + 1;
+            int indexOf = str.indexOf(Constants.ACCEPT_TIME_SEPARATOR_SERVER) + 1;
             return z ? str.substring(indexOf, str.length()).substring(0, 11) : str.substring(indexOf, str.length()).substring(0, 5);
         }
         return str2 + " " + str.split(" ")[1].substring(0, 5);

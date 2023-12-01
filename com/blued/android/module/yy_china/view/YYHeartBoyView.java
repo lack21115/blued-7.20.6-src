@@ -5,6 +5,7 @@ import android.os.CountDownTimer;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import com.blued.android.core.ui.ActivityFragmentActive;
@@ -25,13 +26,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYHeartBoyView.class */
 public final class YYHeartBoyView extends ConstraintLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final ViewHeartBoyLayoutBinding f18219a;
+    private final ViewHeartBoyLayoutBinding a;
     private CountDownTimer b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private boolean f18220c;
+    private boolean c;
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
     public YYHeartBoyView(Context context) {
@@ -49,11 +46,11 @@ public final class YYHeartBoyView extends ConstraintLayout {
     public YYHeartBoyView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         Intrinsics.e(context, "context");
-        ViewHeartBoyLayoutBinding a2 = ViewHeartBoyLayoutBinding.a(LayoutInflater.from(getContext()), this, true);
-        Intrinsics.c(a2, "inflate(LayoutInflater.from(context), this, true)");
-        this.f18219a = a2;
-        this.f18220c = true;
-        a2.f16855c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYHeartBoyView$WpI2doqWNnXnW_wT52neyJJnoxQ
+        ViewHeartBoyLayoutBinding a = ViewHeartBoyLayoutBinding.a(LayoutInflater.from(getContext()), (ViewGroup) this, true);
+        Intrinsics.c(a, "inflate(LayoutInflater.from(context), this, true)");
+        this.a = a;
+        this.c = true;
+        a.c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYHeartBoyView$WpI2doqWNnXnW_wT52neyJJnoxQ
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 YYHeartBoyView.a(YYHeartBoyView.this, view);
@@ -78,7 +75,7 @@ public final class YYHeartBoyView extends ConstraintLayout {
         YYBorImJsonBodyInfoMode yYBorImJsonBodyInfoMode;
         String uid;
         Intrinsics.e(this$0, "this$0");
-        if (!this$0.f18220c) {
+        if (!this$0.c) {
             ToastUtils.a("操作太频繁，请稍后重试~");
             return;
         }
@@ -104,33 +101,31 @@ public final class YYHeartBoyView extends ConstraintLayout {
         if (countDownTimer != null) {
             countDownTimer.cancel();
         }
-        this.f18219a.e.setText("5000s");
+        this.a.e.setText("5000s");
         c();
         CountDownTimer countDownTimer2 = new CountDownTimer(5000L, this) { // from class: com.blued.android.module.yy_china.view.YYHeartBoyView$showTimer$1
-
-            /* renamed from: a  reason: collision with root package name */
-            final /* synthetic */ long f18222a;
+            final /* synthetic */ long a;
             final /* synthetic */ YYHeartBoyView b;
 
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
                 super(r7, 1000L);
-                this.f18222a = r7;
+                this.a = r7;
                 this.b = this;
             }
 
             @Override // android.os.CountDownTimer
             public void onFinish() {
-                this.b.f18220c = true;
+                this.b.c = true;
                 this.b.d();
             }
 
             @Override // android.os.CountDownTimer
             public void onTick(long j) {
                 ViewHeartBoyLayoutBinding viewHeartBoyLayoutBinding;
-                this.b.f18220c = false;
-                viewHeartBoyLayoutBinding = this.b.f18219a;
+                this.b.c = false;
+                viewHeartBoyLayoutBinding = this.b.a;
                 TextView textView = viewHeartBoyLayoutBinding.e;
                 StringBuilder sb = new StringBuilder();
                 sb.append((j / 1000) + 1);
@@ -146,17 +141,17 @@ public final class YYHeartBoyView extends ConstraintLayout {
     }
 
     private final void c() {
-        this.f18219a.f16854a.setImageResource(R.drawable.icon_chorus_light_timer);
-        this.f18219a.b.setImageResource(R.drawable.icon_chorus_light_timer_bg);
-        this.f18219a.e.setVisibility(0);
-        this.f18219a.d.setTextColor(getResources().getColor(R.color.syc_tran30_FFFFFF));
+        this.a.a.setImageResource(R.drawable.icon_chorus_light_timer);
+        this.a.b.setImageResource(R.drawable.icon_chorus_light_timer_bg);
+        this.a.e.setVisibility(0);
+        this.a.d.setTextColor(getResources().getColor(R.color.syc_tran30_FFFFFF));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void d() {
-        this.f18219a.f16854a.setImageResource(R.drawable.icon_chorus_light_bg);
-        this.f18219a.b.setImageResource(R.drawable.icon_chorus_light);
-        this.f18219a.e.setVisibility(8);
-        this.f18219a.d.setTextColor(getResources().getColor(R.color.syc_dark_b));
+        this.a.a.setImageResource(R.drawable.icon_chorus_light_bg);
+        this.a.b.setImageResource(R.drawable.icon_chorus_light);
+        this.a.e.setVisibility(8);
+        this.a.d.setTextColor(getResources().getColor(R.color.syc_dark_b));
     }
 }

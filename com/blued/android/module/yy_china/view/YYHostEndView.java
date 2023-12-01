@@ -33,13 +33,9 @@ import java.util.List;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYHostEndView.class */
 public class YYHostEndView extends LinearLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private TextView f18241a;
+    private TextView a;
     private TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private TextView f18242c;
+    private TextView c;
     private TextView d;
     private MvpFragment e;
     private ImageView f;
@@ -71,9 +67,9 @@ public class YYHostEndView extends LinearLayout {
         this.f = (ImageView) findViewById(R.id.iv_end_close);
         this.g = (RelativeLayout) findViewById(R.id.yy_end_title);
         this.h = (RankingView) findViewById(R.id.ranking_view);
-        this.f18241a = (TextView) findViewById(R.id.tv_total_beans);
+        this.a = (TextView) findViewById(R.id.tv_total_beans);
         this.b = (TextView) findViewById(R.id.tv_total_person);
-        this.f18242c = (TextView) findViewById(R.id.tv_my_beans);
+        this.c = (TextView) findViewById(R.id.tv_my_beans);
         this.d = (TextView) findViewById(R.id.tv_living_time);
         this.i = (ShapeTextView) findViewById(R.id.btn_to_activity_details);
         if (StatusBarHelper.a()) {
@@ -112,9 +108,9 @@ public class YYHostEndView extends LinearLayout {
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
-                IYYRoomInfoCallback c2 = YYRoomInfoManager.e().c();
-                if (c2 != null) {
-                    c2.a(YYHostEndView.this.getContext(), c2.i(), 7);
+                IYYRoomInfoCallback c = YYRoomInfoManager.e().c();
+                if (c != null) {
+                    c.a(YYHostEndView.this.getContext(), c.i(), 7);
                 }
             }
         });
@@ -130,8 +126,8 @@ public class YYHostEndView extends LinearLayout {
                 if (singleData == null) {
                     return;
                 }
-                YYHostEndView.this.f18241a.setText(singleData.total_beans);
-                YYHostEndView.this.f18242c.setText(singleData.received_beans);
+                YYHostEndView.this.a.setText(singleData.total_beans);
+                YYHostEndView.this.c.setText(singleData.received_beans);
                 YYHostEndView.this.b.setText(singleData.total_user);
                 YYHostEndView.this.d.setText(singleData.live_duration);
                 if (z) {
@@ -188,9 +184,9 @@ public class YYHostEndView extends LinearLayout {
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
-                IYYRoomInfoCallback c2 = YYRoomInfoManager.e().c();
-                if (c2 != null) {
-                    c2.b(YYHostEndView.this.getContext());
+                IYYRoomInfoCallback c = YYRoomInfoManager.e().c();
+                if (c != null) {
+                    c.b(YYHostEndView.this.getContext());
                 }
             }
         });

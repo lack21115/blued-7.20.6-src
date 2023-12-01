@@ -19,6 +19,7 @@ import com.anythink.expressad.atsignalcommon.windvane.j;
 import com.anythink.expressad.foundation.h.k;
 import com.anythink.expressad.foundation.h.o;
 import com.anythink.expressad.foundation.h.t;
+import com.huawei.hms.ads.fw;
 import java.util.HashMap;
 import org.json.JSONObject;
 
@@ -26,11 +27,11 @@ import org.json.JSONObject;
 public class ATNativeAdvancedView extends RelativeLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    protected static final String f7048a = "webviewshow";
+    protected static final String f4210a = "webviewshow";
     private static String b = "ATNativeAdvancedView";
 
     /* renamed from: c  reason: collision with root package name */
-    private ATNativeAdvancedWebview f7049c;
+    private ATNativeAdvancedWebview f4211c;
     private View d;
     private boolean e;
     private boolean f;
@@ -48,9 +49,9 @@ public class ATNativeAdvancedView extends RelativeLayout {
         @Override // java.lang.Runnable
         public final void run() {
             try {
-                o.a(ATNativeAdvancedView.b, ATNativeAdvancedView.f7048a);
+                o.a(ATNativeAdvancedView.b, ATNativeAdvancedView.f4210a);
                 int[] iArr = new int[2];
-                ATNativeAdvancedView.this.f7049c.getLocationOnScreen(iArr);
+                ATNativeAdvancedView.this.f4211c.getLocationOnScreen(iArr);
                 String str = ATNativeAdvancedView.b;
                 o.d(str, "coordinate:" + iArr[0] + "--" + iArr[1]);
                 JSONObject jSONObject = new JSONObject();
@@ -58,7 +59,7 @@ public class ATNativeAdvancedView extends RelativeLayout {
                 jSONObject.put("startY", t.a(n.a().g(), (float) iArr[1]));
                 String encodeToString = Base64.encodeToString(jSONObject.toString().toString().getBytes(), 2);
                 j.a();
-                j.a((WebView) ATNativeAdvancedView.this.f7049c, ATNativeAdvancedView.f7048a, encodeToString);
+                j.a((WebView) ATNativeAdvancedView.this.f4211c, ATNativeAdvancedView.f4210a, encodeToString);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -79,18 +80,18 @@ public class ATNativeAdvancedView extends RelativeLayout {
     }
 
     private void b() {
-        ATNativeAdvancedWebview aTNativeAdvancedWebview = this.f7049c;
+        ATNativeAdvancedWebview aTNativeAdvancedWebview = this.f4211c;
         if (aTNativeAdvancedWebview != null && aTNativeAdvancedWebview.getParent() == null) {
-            addView(this.f7049c, new ViewGroup.LayoutParams(-1, -1));
+            addView(this.f4211c, new ViewGroup.LayoutParams(-1, -1));
         }
         int[] iArr = new int[2];
-        this.f7049c.getLocationInWindow(iArr);
-        ATNativeAdvancedWebview aTNativeAdvancedWebview2 = this.f7049c;
-        transInfoForMraid(aTNativeAdvancedWebview2, iArr[0], iArr[1], aTNativeAdvancedWebview2.getWidth(), this.f7049c.getHeight());
-        ATNativeAdvancedWebview aTNativeAdvancedWebview3 = this.f7049c;
+        this.f4211c.getLocationInWindow(iArr);
+        ATNativeAdvancedWebview aTNativeAdvancedWebview2 = this.f4211c;
+        transInfoForMraid(aTNativeAdvancedWebview2, iArr[0], iArr[1], aTNativeAdvancedWebview2.getWidth(), this.f4211c.getHeight());
+        ATNativeAdvancedWebview aTNativeAdvancedWebview3 = this.f4211c;
         if (aTNativeAdvancedWebview3 != null) {
             aTNativeAdvancedWebview3.setObject(this.i);
-            this.f7049c.post(new AnonymousClass1());
+            this.f4211c.post(new AnonymousClass1());
         }
         View view = this.d;
         if (view != null) {
@@ -109,13 +110,13 @@ public class ATNativeAdvancedView extends RelativeLayout {
 
     private void c() {
         int[] iArr = new int[2];
-        this.f7049c.getLocationInWindow(iArr);
-        ATNativeAdvancedWebview aTNativeAdvancedWebview = this.f7049c;
-        transInfoForMraid(aTNativeAdvancedWebview, iArr[0], iArr[1], aTNativeAdvancedWebview.getWidth(), this.f7049c.getHeight());
-        ATNativeAdvancedWebview aTNativeAdvancedWebview2 = this.f7049c;
+        this.f4211c.getLocationInWindow(iArr);
+        ATNativeAdvancedWebview aTNativeAdvancedWebview = this.f4211c;
+        transInfoForMraid(aTNativeAdvancedWebview, iArr[0], iArr[1], aTNativeAdvancedWebview.getWidth(), this.f4211c.getHeight());
+        ATNativeAdvancedWebview aTNativeAdvancedWebview2 = this.f4211c;
         if (aTNativeAdvancedWebview2 != null) {
             aTNativeAdvancedWebview2.setObject(this.i);
-            this.f7049c.post(new AnonymousClass1());
+            this.f4211c.post(new AnonymousClass1());
         }
     }
 
@@ -125,16 +126,16 @@ public class ATNativeAdvancedView extends RelativeLayout {
             int i5 = n.a().g().getResources().getConfiguration().orientation;
             JSONObject jSONObject = new JSONObject();
             jSONObject.put("orientation", i5 == 2 ? Camera.Parameters.SCENE_MODE_LANDSCAPE : i5 == 1 ? Camera.Parameters.SCENE_MODE_PORTRAIT : "undefined");
-            jSONObject.put(TvContract.Channels.COLUMN_LOCKED, "true");
+            jSONObject.put(TvContract.Channels.COLUMN_LOCKED, fw.Code);
             float e = k.e(n.a().g());
             float f = k.f(n.a().g());
             HashMap g = k.g(n.a().g());
             int intValue = ((Integer) g.get("width")).intValue();
             int intValue2 = ((Integer) g.get("height")).intValue();
             HashMap hashMap = new HashMap();
-            hashMap.put(CallMraidJS.f7085a, "inline");
+            hashMap.put(CallMraidJS.f4247a, "inline");
             hashMap.put("state", "default");
-            hashMap.put(CallMraidJS.f7086c, "true");
+            hashMap.put(CallMraidJS.f4248c, fw.Code);
             hashMap.put(CallMraidJS.d, jSONObject);
             float f2 = i;
             float f3 = i2;
@@ -179,10 +180,10 @@ public class ATNativeAdvancedView extends RelativeLayout {
 
     public void destroy() {
         removeAllViews();
-        ATNativeAdvancedWebview aTNativeAdvancedWebview = this.f7049c;
+        ATNativeAdvancedWebview aTNativeAdvancedWebview = this.f4211c;
         if (aTNativeAdvancedWebview != null && !aTNativeAdvancedWebview.isDestroyed()) {
-            this.f7049c.release();
-            NativeAdvancedJsUtils.sendEventToH5(this.f7049c, "onSystemDestory", "");
+            this.f4211c.release();
+            NativeAdvancedJsUtils.sendEventToH5(this.f4211c, "onSystemDestory", "");
         }
         if (this.j != null) {
             this.j = null;
@@ -194,7 +195,7 @@ public class ATNativeAdvancedView extends RelativeLayout {
     }
 
     public ATNativeAdvancedWebview getAdvancedNativeWebview() {
-        return this.f7049c;
+        return this.f4211c;
     }
 
     public View getCloseView() {
@@ -213,9 +214,8 @@ public class ATNativeAdvancedView extends RelativeLayout {
         return this.f;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onConfigurationChanged(Configuration configuration) {
+    protected void onConfigurationChanged(Configuration configuration) {
         super.onConfigurationChanged(configuration);
     }
 
@@ -227,14 +227,14 @@ public class ATNativeAdvancedView extends RelativeLayout {
 
     public void setAdvancedNativeJSBridgeImpl(NativeAdvancedJSBridgeImpl nativeAdvancedJSBridgeImpl) {
         this.i = nativeAdvancedJSBridgeImpl;
-        ATNativeAdvancedWebview aTNativeAdvancedWebview = this.f7049c;
+        ATNativeAdvancedWebview aTNativeAdvancedWebview = this.f4211c;
         if (aTNativeAdvancedWebview != null) {
             aTNativeAdvancedWebview.setObject(nativeAdvancedJSBridgeImpl);
         }
     }
 
     public void setAdvancedNativeWebview(ATNativeAdvancedWebview aTNativeAdvancedWebview) {
-        this.f7049c = aTNativeAdvancedWebview;
+        this.f4211c = aTNativeAdvancedWebview;
         NativeAdvancedJSBridgeImpl nativeAdvancedJSBridgeImpl = this.i;
         if (nativeAdvancedJSBridgeImpl != null) {
             aTNativeAdvancedWebview.setObject(nativeAdvancedJSBridgeImpl);
@@ -261,18 +261,18 @@ public class ATNativeAdvancedView extends RelativeLayout {
     }
 
     public void show() {
-        ATNativeAdvancedWebview aTNativeAdvancedWebview = this.f7049c;
+        ATNativeAdvancedWebview aTNativeAdvancedWebview = this.f4211c;
         if (aTNativeAdvancedWebview != null && aTNativeAdvancedWebview.getParent() == null) {
-            addView(this.f7049c, new ViewGroup.LayoutParams(-1, -1));
+            addView(this.f4211c, new ViewGroup.LayoutParams(-1, -1));
         }
         int[] iArr = new int[2];
-        this.f7049c.getLocationInWindow(iArr);
-        ATNativeAdvancedWebview aTNativeAdvancedWebview2 = this.f7049c;
-        transInfoForMraid(aTNativeAdvancedWebview2, iArr[0], iArr[1], aTNativeAdvancedWebview2.getWidth(), this.f7049c.getHeight());
-        ATNativeAdvancedWebview aTNativeAdvancedWebview3 = this.f7049c;
+        this.f4211c.getLocationInWindow(iArr);
+        ATNativeAdvancedWebview aTNativeAdvancedWebview2 = this.f4211c;
+        transInfoForMraid(aTNativeAdvancedWebview2, iArr[0], iArr[1], aTNativeAdvancedWebview2.getWidth(), this.f4211c.getHeight());
+        ATNativeAdvancedWebview aTNativeAdvancedWebview3 = this.f4211c;
         if (aTNativeAdvancedWebview3 != null) {
             aTNativeAdvancedWebview3.setObject(this.i);
-            this.f7049c.post(new AnonymousClass1());
+            this.f4211c.post(new AnonymousClass1());
         }
         View view = this.d;
         if (view != null) {

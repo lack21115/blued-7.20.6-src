@@ -8,11 +8,11 @@ import java.nio.ByteBuffer;
 public abstract class c {
 
     /* renamed from: a  reason: collision with root package name */
-    protected String f27733a;
+    protected String f14045a;
     protected int b = -1;
 
     /* renamed from: c  reason: collision with root package name */
-    protected int f27734c = -1;
+    protected int f14046c = -1;
     protected long d = -1;
     protected long e = -1;
 
@@ -27,6 +27,6 @@ public abstract class c {
     }
 
     public int c() {
-        return this.f27734c;
+        return this.f14046c;
     }
 }

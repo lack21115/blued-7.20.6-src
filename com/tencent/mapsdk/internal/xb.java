@@ -2,6 +2,7 @@ package com.tencent.mapsdk.internal;
 
 import android.net.Uri;
 import android.text.TextUtils;
+import com.huawei.hms.framework.common.ContainerUtils;
 import com.tencent.map.tools.Util;
 import com.tencent.map.tools.net.NetMethod;
 import com.tencent.map.tools.net.NetRequest;
@@ -18,25 +19,25 @@ public class xb implements RequestProcessor {
     public static final /* synthetic */ boolean b = !xb.class.desiredAssertionStatus();
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f38109a;
+    private final String f24418a;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/mapsdk/internal/xb$a.class */
     public static /* synthetic */ class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final /* synthetic */ int[] f38110a;
+        public static final /* synthetic */ int[] f24419a;
 
         static {
             NetMethod.values();
             int[] iArr = new int[4];
-            f38110a = iArr;
+            f24419a = iArr;
             try {
                 NetMethod netMethod = NetMethod.GET;
                 iArr[1] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                int[] iArr2 = f38110a;
+                int[] iArr2 = f24419a;
                 NetMethod netMethod2 = NetMethod.POST;
                 iArr2[0] = 2;
             } catch (NoSuchFieldError e2) {
@@ -45,7 +46,7 @@ public class xb implements RequestProcessor {
     }
 
     private xb(String str) {
-        this.f38109a = str;
+        this.f24418a = str;
     }
 
     public static xb a(String str) {
@@ -85,7 +86,7 @@ public class xb implements RequestProcessor {
                 if (!b && query == null) {
                     throw new AssertionError();
                 }
-                String[] split = query.split("&");
+                String[] split = query.split(ContainerUtils.FIELD_DELIMITER);
                 int length = split.length;
                 int i3 = 0;
                 while (true) {
@@ -124,7 +125,7 @@ public class xb implements RequestProcessor {
                         sb.append(str3);
                         sb.append("=");
                         sb.append(obj.toString());
-                        sb.append("&");
+                        sb.append(ContainerUtils.FIELD_DELIMITER);
                     }
                 }
                 i5 = i6 + 1;
@@ -136,6 +137,6 @@ public class xb implements RequestProcessor {
 
     @Override // com.tencent.map.tools.net.processor.RequestProcessor
     public void onRequest(NetRequest netRequest) {
-        a(netRequest, this.f38109a);
+        a(netRequest, this.f24418a);
     }
 }

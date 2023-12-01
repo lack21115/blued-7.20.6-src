@@ -30,9 +30,7 @@ import com.jeremyliao.liveeventbus.LiveEventBus;
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/circle/pop/CircleMainMenuPop.class */
 public class CircleMainMenuPop extends BottomPopupView implements View.OnClickListener {
     public static final String b = CircleMainMenuPop.class.getSimpleName();
-
-    /* renamed from: c  reason: collision with root package name */
-    private CirclePostDetailsPresenter f19321c;
+    private CirclePostDetailsPresenter c;
     private TextView d;
     private TextView e;
     private TextView f;
@@ -44,124 +42,124 @@ public class CircleMainMenuPop extends BottomPopupView implements View.OnClickLi
 
     public CircleMainMenuPop(Context context, CirclePostDetailsPresenter circlePostDetailsPresenter) {
         super(context);
-        this.f19321c = circlePostDetailsPresenter;
+        this.c = circlePostDetailsPresenter;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void A() {
-        CircleHttpUtils.a(this.f19321c.n().circle_id, new BluedUIHttpResponse(this.f19321c.g()) { // from class: com.blued.community.ui.circle.pop.CircleMainMenuPop.5
+        CircleHttpUtils.a(this.c.n().circle_id, new BluedUIHttpResponse(this.c.g()) { // from class: com.blued.community.ui.circle.pop.CircleMainMenuPop.5
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity bluedEntity) {
-                CircleMainMenuPop.this.f19321c.n().is_muted = 1;
-                if (CircleMainMenuPop.this.f19321c.n().mute_type == 0) {
-                    CircleMainMenuPop.this.f19321c.n().mute_type = 1;
-                } else if (CircleMainMenuPop.this.f19321c.n().mute_type == 1) {
-                    CircleMainMenuPop.this.f19321c.n().mute_type = 2;
-                } else if (CircleMainMenuPop.this.f19321c.n().mute_type == 2) {
-                    CircleMainMenuPop.this.f19321c.n().mute_type = 1009;
+                CircleMainMenuPop.this.c.n().is_muted = 1;
+                if (CircleMainMenuPop.this.c.n().mute_type == 0) {
+                    CircleMainMenuPop.this.c.n().mute_type = 1;
+                } else if (CircleMainMenuPop.this.c.n().mute_type == 1) {
+                    CircleMainMenuPop.this.c.n().mute_type = 2;
+                } else if (CircleMainMenuPop.this.c.n().mute_type == 2) {
+                    CircleMainMenuPop.this.c.n().mute_type = 1009;
                 } else {
-                    CircleMainMenuPop.this.f19321c.n().mute_type = 1009;
+                    CircleMainMenuPop.this.c.n().mute_type = 1009;
                 }
                 AppMethods.a((CharSequence) CircleMainMenuPop.this.getResources().getString(R.string.circle_post_detail_menu_mute_success), true);
-                EventTrackFeed.a(FeedProtos.Event.CIRCLE_NOTE_MANAGE_BTN_CLICK, CircleMainMenuPop.this.f19321c.n().circle_id, CircleMainMenuPop.this.f19321c.n().feed_id, CircleMainMenuPop.this.f19321c.n().feed_uid, FeedProtos.OptType.OPT_FORB, EventTrackFeed.c(CircleMainMenuPop.this.f19321c.n()), CircleMainMenuPop.this.f19321c.n().is_anonym == 1);
+                EventTrackFeed.a(FeedProtos.Event.CIRCLE_NOTE_MANAGE_BTN_CLICK, CircleMainMenuPop.this.c.n().circle_id, CircleMainMenuPop.this.c.n().feed_id, CircleMainMenuPop.this.c.n().feed_uid, FeedProtos.OptType.OPT_FORB, EventTrackFeed.c(CircleMainMenuPop.this.c.n()), CircleMainMenuPop.this.c.n().is_anonym == 1);
             }
-        }, this.f19321c.n().feed_uid, this.f19321c.n().is_anonym, this.f19321c.n().user_name, this.f19321c.n().user_avatar, this.f19321c.g());
+        }, this.c.n().feed_uid, this.c.n().is_anonym, this.c.n().user_name, this.c.n().user_avatar, this.c.g());
     }
 
     private void B() {
-        if (this.f19321c.n().is_top == 0) {
-            CircleHttpUtils.a(new BluedUIHttpResponse(this.f19321c.g()) { // from class: com.blued.community.ui.circle.pop.CircleMainMenuPop.6
+        if (this.c.n().is_top == 0) {
+            CircleHttpUtils.a(new BluedUIHttpResponse(this.c.g()) { // from class: com.blued.community.ui.circle.pop.CircleMainMenuPop.6
                 @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public void onUIUpdate(BluedEntity bluedEntity) {
-                    CircleMainMenuPop.this.f19321c.n().is_top = 1;
+                    CircleMainMenuPop.this.c.n().is_top = 1;
                     AppMethods.a((CharSequence) CircleMainMenuPop.this.getResources().getString(R.string.circle_post_detail_menu_top_success), true);
-                    EventTrackFeed.a(FeedProtos.Event.CIRCLE_NOTE_MANAGE_BTN_CLICK, CircleMainMenuPop.this.f19321c.n().circle_id, CircleMainMenuPop.this.f19321c.n().feed_id, CircleMainMenuPop.this.f19321c.n().feed_uid, FeedProtos.OptType.OPT_TOP, EventTrackFeed.c(CircleMainMenuPop.this.f19321c.n()), CircleMainMenuPop.this.f19321c.n().is_anonym == 1);
+                    EventTrackFeed.a(FeedProtos.Event.CIRCLE_NOTE_MANAGE_BTN_CLICK, CircleMainMenuPop.this.c.n().circle_id, CircleMainMenuPop.this.c.n().feed_id, CircleMainMenuPop.this.c.n().feed_uid, FeedProtos.OptType.OPT_TOP, EventTrackFeed.c(CircleMainMenuPop.this.c.n()), CircleMainMenuPop.this.c.n().is_anonym == 1);
                 }
-            }, this.f19321c.n().feed_id, this.f19321c.g());
+            }, this.c.n().feed_id, this.c.g());
         } else {
-            CircleHttpUtils.b(new BluedUIHttpResponse(this.f19321c.g()) { // from class: com.blued.community.ui.circle.pop.CircleMainMenuPop.7
+            CircleHttpUtils.b(new BluedUIHttpResponse(this.c.g()) { // from class: com.blued.community.ui.circle.pop.CircleMainMenuPop.7
                 @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public void onUIUpdate(BluedEntity bluedEntity) {
-                    CircleMainMenuPop.this.f19321c.n().is_top = 0;
+                    CircleMainMenuPop.this.c.n().is_top = 0;
                 }
-            }, this.f19321c.n().feed_id, this.f19321c.g());
+            }, this.c.n().feed_id, this.c.g());
         }
     }
 
     private void C() {
         p();
-        CommunityServiceManager.b().a(getContext(), CommunityConstants.ReportType.CIRCLE, this.f19321c.n().user_name, this.f19321c.n().feed_id, (String) null);
-        EventTrackFeed.a(FeedProtos.Event.CIRCLE_NOTE_MANAGE_BTN_CLICK, this.f19321c.n().circle_id, this.f19321c.n().feed_id, this.f19321c.n().feed_uid, FeedProtos.OptType.OPT_REPORT, EventTrackFeed.c(this.f19321c.n()), this.f19321c.n().is_anonym == 1);
+        CommunityServiceManager.b().a(getContext(), CommunityConstants.ReportType.CIRCLE, this.c.n().user_name, this.c.n().feed_id, (String) null);
+        EventTrackFeed.a(FeedProtos.Event.CIRCLE_NOTE_MANAGE_BTN_CLICK, this.c.n().circle_id, this.c.n().feed_id, this.c.n().feed_uid, FeedProtos.OptType.OPT_REPORT, EventTrackFeed.c(this.c.n()), this.c.n().is_anonym == 1);
     }
 
     private boolean c() {
-        return this.f19321c.n().posting_allow_delete == 1;
+        return this.c.n().posting_allow_delete == 1;
     }
 
     private void d() {
-        if (this.f19321c.n().is_essence == 0) {
-            CircleHttpUtils.c(new BluedUIHttpResponse(this.f19321c.g()) { // from class: com.blued.community.ui.circle.pop.CircleMainMenuPop.1
+        if (this.c.n().is_essence == 0) {
+            CircleHttpUtils.c(new BluedUIHttpResponse(this.c.g()) { // from class: com.blued.community.ui.circle.pop.CircleMainMenuPop.1
                 @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public void onUIUpdate(BluedEntity bluedEntity) {
                     AppMethods.a(CircleMainMenuPop.this.getResources().getText(R.string.circle_post_detail_menu_essence_success));
-                    CircleMainMenuPop.this.f19321c.n().is_essence = 1;
-                    CircleMainMenuPop.this.f19321c.e();
+                    CircleMainMenuPop.this.c.n().is_essence = 1;
+                    CircleMainMenuPop.this.c.e();
                 }
-            }, this.f19321c.q(), this.f19321c.g());
+            }, this.c.q(), this.c.g());
         } else {
-            CircleHttpUtils.d(new BluedUIHttpResponse(this.f19321c.g()) { // from class: com.blued.community.ui.circle.pop.CircleMainMenuPop.2
+            CircleHttpUtils.d(new BluedUIHttpResponse(this.c.g()) { // from class: com.blued.community.ui.circle.pop.CircleMainMenuPop.2
                 @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public void onUIUpdate(BluedEntity bluedEntity) {
                     AppMethods.a(CircleMainMenuPop.this.getResources().getText(R.string.circle_post_detail_menu_set_essence_cancel));
-                    CircleMainMenuPop.this.f19321c.n().is_essence = 0;
-                    CircleMainMenuPop.this.f19321c.e();
+                    CircleMainMenuPop.this.c.n().is_essence = 0;
+                    CircleMainMenuPop.this.c.e();
                 }
-            }, this.f19321c.q(), this.f19321c.g());
+            }, this.c.q(), this.c.g());
         }
     }
 
     private void delete() {
-        EventTrackFeed.a(FeedProtos.Event.CIRCLE_NOTE_MANAGE_BTN_CLICK, this.f19321c.n().circle_id, this.f19321c.n().feed_id, this.f19321c.n().feed_uid, FeedProtos.OptType.OPT_DELETE, EventTrackFeed.c(this.f19321c.n()), this.f19321c.n().is_anonym == 1);
-        if (TextUtils.equals(this.f19321c.n().feed_uid, UserInfoUtils.c()) || TextUtils.equals(this.f19321c.n().feed_uid, EncryptTool.b(UserInfoUtils.c()))) {
+        EventTrackFeed.a(FeedProtos.Event.CIRCLE_NOTE_MANAGE_BTN_CLICK, this.c.n().circle_id, this.c.n().feed_id, this.c.n().feed_uid, FeedProtos.OptType.OPT_DELETE, EventTrackFeed.c(this.c.n()), this.c.n().is_anonym == 1);
+        if (TextUtils.equals(this.c.n().feed_uid, UserInfoUtils.c()) || TextUtils.equals(this.c.n().feed_uid, EncryptTool.b(UserInfoUtils.c()))) {
             CommonAlertDialog.a(getContext(), "", getResources().getString(R.string.circle_post_detail_menu_delete_hint), getResources().getString(R.string.delete), new DialogInterface.OnClickListener() { // from class: com.blued.community.ui.circle.pop.CircleMainMenuPop.8
                 @Override // android.content.DialogInterface.OnClickListener
                 public void onClick(DialogInterface dialogInterface, int i) {
                     Tracker.onClick(dialogInterface, i);
                     dialogInterface.dismiss();
-                    CircleHttpUtils.a(CircleMainMenuPop.this.getContext(), new BluedUIHttpResponse(CircleMainMenuPop.this.f19321c.g()) { // from class: com.blued.community.ui.circle.pop.CircleMainMenuPop.8.1
+                    CircleHttpUtils.a(CircleMainMenuPop.this.getContext(), new BluedUIHttpResponse(CircleMainMenuPop.this.c.g()) { // from class: com.blued.community.ui.circle.pop.CircleMainMenuPop.8.1
                         @Override // com.blued.android.framework.http.BluedUIHttpResponse
                         public void onUIUpdate(BluedEntity bluedEntity) {
                             CircleMainMenuPop.this.p();
-                            LiveEventBus.get("circle_delete_feed").post(CircleMainMenuPop.this.f19321c.n().feed_id);
+                            LiveEventBus.get("circle_delete_feed").post(CircleMainMenuPop.this.c.n().feed_id);
                             AppMethods.a(R.string.circle_post_detail_menu_delete_success, true);
                         }
-                    }, CircleMainMenuPop.this.f19321c.n().feed_id, "", CircleMainMenuPop.this.f19321c.g());
+                    }, CircleMainMenuPop.this.c.n().feed_id, "", CircleMainMenuPop.this.c.g());
                 }
             }, (String) null, (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
         } else {
-            CircleDeletePostReasonDialogFragment.f19138a.a(getContext(), this.f19321c.n().feed_id);
+            CircleDeletePostReasonDialogFragment.a.a(getContext(), this.c.n().feed_id);
         }
     }
 
     private void e() {
-        if (this.f19321c.n().is_muted == 1) {
-            CircleHttpUtils.a(this.f19321c.n().circle_id, new BluedUIHttpResponse(this.f19321c.g()) { // from class: com.blued.community.ui.circle.pop.CircleMainMenuPop.3
+        if (this.c.n().is_muted == 1) {
+            CircleHttpUtils.a(this.c.n().circle_id, new BluedUIHttpResponse(this.c.g()) { // from class: com.blued.community.ui.circle.pop.CircleMainMenuPop.3
                 @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public void onUIUpdate(BluedEntity bluedEntity) {
-                    CircleMainMenuPop.this.f19321c.n().is_muted = 0;
-                    if (CircleMainMenuPop.this.f19321c.n().mute_type == 1009 || CircleMainMenuPop.this.f19321c.n().mute_type == 1010) {
-                        CircleMainMenuPop.this.f19321c.n().mute_type = 0;
+                    CircleMainMenuPop.this.c.n().is_muted = 0;
+                    if (CircleMainMenuPop.this.c.n().mute_type == 1009 || CircleMainMenuPop.this.c.n().mute_type == 1010) {
+                        CircleMainMenuPop.this.c.n().mute_type = 0;
                     }
                     AppMethods.a((CharSequence) CircleMainMenuPop.this.getResources().getString(R.string.circle_post_detail_menu_mute_canceled_success));
                 }
-            }, this.f19321c.n().feed_uid, this.f19321c.n().is_anonym, this.f19321c.g());
+            }, this.c.n().feed_uid, this.c.n().is_anonym, this.c.g());
         } else {
             z();
         }
     }
 
     private void z() {
-        CommonAlertDialog.a(getContext(), this.f19321c.n().mute_type == 0 ? getResources().getString(R.string.circle_mute_member_dialog_first_title) : this.f19321c.n().mute_type == 1 ? getResources().getString(R.string.circle_mute_member_dialog_second_title) : getResources().getString(R.string.circle_mute_member_dialog_third_title), getContext().getResources().getString(R.string.circle_mute_member_dialog_content), getContext().getResources().getString(R.string.circle_mute_member_dialog_btn), 0, new DialogInterface.OnClickListener() { // from class: com.blued.community.ui.circle.pop.CircleMainMenuPop.4
+        CommonAlertDialog.a(getContext(), this.c.n().mute_type == 0 ? getResources().getString(R.string.circle_mute_member_dialog_first_title) : this.c.n().mute_type == 1 ? getResources().getString(R.string.circle_mute_member_dialog_second_title) : getResources().getString(R.string.circle_mute_member_dialog_third_title), getContext().getResources().getString(R.string.circle_mute_member_dialog_content), getContext().getResources().getString(R.string.circle_mute_member_dialog_btn), 0, new DialogInterface.OnClickListener() { // from class: com.blued.community.ui.circle.pop.CircleMainMenuPop.4
             @Override // android.content.DialogInterface.OnClickListener
             public void onClick(DialogInterface dialogInterface, int i) {
                 Tracker.onClick(dialogInterface, i);
@@ -173,7 +171,7 @@ public class CircleMainMenuPop extends BottomPopupView implements View.OnClickLi
     @Override // com.blued.android.framework.ui.xpop.core.BottomPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
     public void b() {
         super.b();
-        if (this.f19321c.n() == null) {
+        if (this.c.n() == null) {
             p();
             return;
         }
@@ -192,25 +190,25 @@ public class CircleMainMenuPop extends BottomPopupView implements View.OnClickLi
         this.h.setOnClickListener(this);
         this.j.setOnClickListener(this);
         this.k.setOnClickListener(this);
-        if (this.f19321c.n().is_top == 1) {
+        if (this.c.n().is_top == 1) {
             this.d.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, getResources().getDrawable(R.drawable.icon_circle_menu_top2), (Drawable) null, (Drawable) null);
             this.d.setCompoundDrawablePadding(DensityUtils.a(getContext(), 11.5f));
             this.d.setText(getResources().getString(R.string.circle_post_detail_menu_top_cancel));
         }
-        if (this.f19321c.n().is_muted == 1) {
+        if (this.c.n().is_muted == 1) {
             this.e.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, getResources().getDrawable(R.drawable.icon_circle_menu_muted), (Drawable) null, (Drawable) null);
             this.e.setCompoundDrawablePadding(DensityUtils.a(getContext(), 11.5f));
             this.e.setText(getResources().getString(R.string.circle_post_detail_menu_mute_cancel));
         }
-        if (this.f19321c.n().is_essence == 1) {
+        if (this.c.n().is_essence == 1) {
             this.k.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, getResources().getDrawable(R.drawable.icon_circle_menu_essence2), (Drawable) null, (Drawable) null);
             this.k.setCompoundDrawablePadding(DensityUtils.a(getContext(), 11.5f));
             this.k.setText(getResources().getString(R.string.circle_post_detail_menu_set_essence_cancel));
         }
-        if (this.f19321c.n().isOwner() || this.f19321c.n().isManager()) {
+        if (this.c.n().isOwner() || this.c.n().isManager()) {
             this.h.setVisibility(8);
             this.i.setVisibility(0);
-            if (!this.f19321c.n().isManager() || c()) {
+            if (!this.c.n().isManager() || c()) {
                 return;
             }
             this.f.setVisibility(8);
@@ -242,9 +240,9 @@ public class CircleMainMenuPop extends BottomPopupView implements View.OnClickLi
             e();
         } else if (id == R.id.tv_cancel) {
             p();
-            EventTrackFeed.a(FeedProtos.Event.CIRCLE_NOTE_MANAGE_BTN_CLICK, this.f19321c.n().circle_id, this.f19321c.n().feed_id, this.f19321c.n().feed_uid, FeedProtos.OptType.OPT_CANCEL, EventTrackFeed.c(this.f19321c.n()), this.f19321c.n().is_anonym == 1);
+            EventTrackFeed.a(FeedProtos.Event.CIRCLE_NOTE_MANAGE_BTN_CLICK, this.c.n().circle_id, this.c.n().feed_id, this.c.n().feed_uid, FeedProtos.OptType.OPT_CANCEL, EventTrackFeed.c(this.c.n()), this.c.n().is_anonym == 1);
         } else if (id == R.id.tv_report || id == R.id.tv_report_bottom) {
-            if (this.f19321c.n().isOwner() || this.f19321c.n().isManager() || !c()) {
+            if (this.c.n().isOwner() || this.c.n().isManager() || !c()) {
                 C();
             } else {
                 delete();
@@ -260,6 +258,6 @@ public class CircleMainMenuPop extends BottomPopupView implements View.OnClickLi
     @Override // com.blued.android.framework.ui.xpop.core.BasePopupView
     public void w() {
         super.w();
-        EventTrackFeed.g(FeedProtos.Event.CIRCLE_NOTE_MANAGE_SHOW, this.f19321c.n().circle_id, this.f19321c.n().feed_id);
+        EventTrackFeed.g(FeedProtos.Event.CIRCLE_NOTE_MANAGE_SHOW, this.c.n().circle_id, this.c.n().feed_id);
     }
 }

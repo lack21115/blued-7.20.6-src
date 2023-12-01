@@ -13,8 +13,8 @@ public class i extends c {
     private l k;
     private Bitmap l;
 
-    public i(Activity activity, int i, a.InterfaceC0708a interfaceC0708a) {
-        super(activity, i, interfaceC0708a);
+    public i(Activity activity, int i, a.InterfaceC0538a interfaceC0538a) {
+        super(activity, i, interfaceC0538a);
         this.l = null;
     }
 
@@ -33,10 +33,10 @@ public class i extends c {
         b((View) this.h);
         a(a2.o);
         List<com.opos.mobad.n.d.g> list = a2.g;
-        if (list == null || list.size() <= 0 || TextUtils.isEmpty(list.get(0).f26633a)) {
+        if (list == null || list.size() <= 0 || TextUtils.isEmpty(list.get(0).f12945a)) {
             return;
         }
-        Bitmap a3 = com.opos.mobad.cmn.a.b.g.a(list.get(0).f26633a, com.opos.cmn.an.h.f.a.a(this.f26227a, 240.0f), com.opos.cmn.an.h.f.a.a(this.f26227a, 200.0f));
+        Bitmap a3 = com.opos.mobad.cmn.a.b.g.a(list.get(0).f12945a, com.opos.cmn.an.h.f.a.a(this.f12539a, 240.0f), com.opos.cmn.an.h.f.a.a(this.f12539a, 200.0f));
         this.l = a3;
         if (a3 != null) {
             this.k.setImageBitmap(a3);
@@ -44,10 +44,10 @@ public class i extends c {
     }
 
     public void c(RelativeLayout relativeLayout) {
-        l lVar = new l(this.f26227a, 14.0f);
+        l lVar = new l(this.f12539a, 14.0f);
         this.k = lVar;
         lVar.setId(2);
-        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(this.f26227a, 240.0f), com.opos.cmn.an.h.f.a.a(this.f26227a, 200.0f));
+        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(this.f12539a, 240.0f), com.opos.cmn.an.h.f.a.a(this.f12539a, 200.0f));
         layoutParams.addRule(10);
         relativeLayout.addView(this.k, layoutParams);
     }
@@ -70,7 +70,7 @@ public class i extends c {
     public void f() {
         c(this.h);
         a(this.h);
-        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(this.f26227a, 240.0f), com.opos.cmn.an.h.f.a.a(this.f26227a, 234.0f));
+        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(this.f12539a, 240.0f), com.opos.cmn.an.h.f.a.a(this.f12539a, 234.0f));
         layoutParams.addRule(13);
         this.g.addView(this.h, layoutParams);
     }

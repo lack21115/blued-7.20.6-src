@@ -5,7 +5,6 @@ import android.os.Handler;
 import android.os.Looper;
 import android.text.TextUtils;
 import android.util.Log;
-import com.anythink.core.api.ATBidRequestInfo;
 import com.anythink.core.api.ATBidRequestInfoListener;
 import com.anythink.core.api.ATInitMediation;
 import com.anythink.core.api.ATSDK;
@@ -26,7 +25,7 @@ public class KSATInitManager extends ATInitMediation {
     private static volatile KSATInitManager e;
 
     /* renamed from: a  reason: collision with root package name */
-    Boolean f8987a;
+    Boolean f6147a;
     Boolean b;
     private boolean h;
     private KSATCustomController i;
@@ -34,7 +33,7 @@ public class KSATInitManager extends ATInitMediation {
     private Map<String, WeakReference> j = new ConcurrentHashMap();
 
     /* renamed from: c  reason: collision with root package name */
-    int f8988c = 0;
+    int f6148c = 0;
     private Handler f = new Handler(Looper.getMainLooper());
 
     private KSATInitManager() {
@@ -43,7 +42,7 @@ public class KSATInitManager extends ATInitMediation {
     private void a() {
         try {
             for (Map.Entry<String, WeakReference> entry : this.j.entrySet()) {
-                if (entry.getValue().get() == 0) {
+                if (entry.getValue().get() == null) {
                     this.j.remove(entry.getKey());
                 }
             }
@@ -54,11 +53,11 @@ public class KSATInitManager extends ATInitMediation {
     /* JADX INFO: Access modifiers changed from: private */
     public void b() {
         boolean z = false;
-        boolean z2 = this.f8988c != 2;
-        if (this.f8988c != 2) {
+        boolean z2 = this.f6148c != 2;
+        if (this.f6148c != 2) {
             z = true;
         }
-        Boolean bool = this.f8987a;
+        Boolean bool = this.f6147a;
         if (bool != null) {
             z2 = bool.booleanValue();
         }
@@ -97,15 +96,13 @@ public class KSATInitManager extends ATInitMediation {
     /* JADX INFO: Access modifiers changed from: package-private */
     public final void a(Context context, final Map<String, Object> map, final Map<String, Object> map2, final ATBidRequestInfoListener aTBidRequestInfoListener) {
         initSDK(context, map, new MediationInitCallback() { // from class: com.anythink.network.ks.KSATInitManager.2
-            @Override // com.anythink.core.api.MediationInitCallback
             public final void onFail(String str) {
                 ATBidRequestInfoListener aTBidRequestInfoListener2 = aTBidRequestInfoListener;
                 if (aTBidRequestInfoListener2 != null) {
-                    aTBidRequestInfoListener2.onFailed(ATBidRequestInfo.INIT_ERROR_TYPE);
+                    aTBidRequestInfoListener2.onFailed("Network init error.");
                 }
             }
 
-            @Override // com.anythink.core.api.MediationInitCallback
             public final void onSuccess() {
                 KSATInitManager.this.runOnThreadPool(new Runnable() { // from class: com.anythink.network.ks.KSATInitManager.2.1
                     @Override // java.lang.Runnable
@@ -116,7 +113,7 @@ public class KSATInitManager extends ATInitMediation {
                                 aTBidRequestInfoListener.onSuccess(kSBidRequestInfo);
                             }
                         } else if (aTBidRequestInfoListener != null) {
-                            aTBidRequestInfoListener.onFailed(ATBidRequestInfo.BIDTOKEN_EMPTY_ERROR_TYPE);
+                            aTBidRequestInfoListener.onFailed("Network BidToken or Custom bid info is Empty.");
                         }
                     }
                 });
@@ -132,17 +129,14 @@ public class KSATInitManager extends ATInitMediation {
         }
     }
 
-    @Override // com.anythink.core.api.ATInitMediation
     public String getNetworkName() {
         return "Kuaishou";
     }
 
-    @Override // com.anythink.core.api.ATInitMediation
     public String getNetworkSDKClass() {
         return "com.kwad.sdk.api.KsAdSDK";
     }
 
-    @Override // com.anythink.core.api.ATInitMediation
     public String getNetworkVersion() {
         return KSATConst.getNetworkVersion();
     }
@@ -161,7 +155,6 @@ public class KSATInitManager extends ATInitMediation {
         }
     }
 
-    @Override // com.anythink.core.api.ATInitMediation
     public Map<String, Boolean> getPluginClassStatus() {
         HashMap hashMap = new HashMap();
         hashMap.put("recyclerview-*.aar", Boolean.FALSE);
@@ -174,7 +167,6 @@ public class KSATInitManager extends ATInitMediation {
         }
     }
 
-    @Override // com.anythink.core.api.ATInitMediation
     public List getResourceStatus() {
         ArrayList arrayList = new ArrayList();
         arrayList.add("ksad_reward_order_end_dialog");
@@ -185,11 +177,10 @@ public class KSATInitManager extends ATInitMediation {
         initSDK(context, map, null);
     }
 
-    @Override // com.anythink.core.api.ATInitMediation
     public void initSDK(Context context, Map<String, Object> map, final MediationInitCallback mediationInitCallback) {
         try {
             for (Map.Entry<String, WeakReference> entry : this.j.entrySet()) {
-                if (entry.getValue().get() == 0) {
+                if (entry.getValue().get() == null) {
                     this.j.remove(entry.getKey());
                 }
             }
@@ -197,7 +188,7 @@ public class KSATInitManager extends ATInitMediation {
         }
         final Context applicationContext = context.getApplicationContext();
         try {
-            this.f8988c = ATSDK.getPersionalizedAdStatus();
+            this.f6148c = ATSDK.getPersionalizedAdStatus();
         } catch (Throwable th2) {
         }
         if (this.h) {
@@ -254,7 +245,7 @@ public class KSATInitManager extends ATInitMediation {
     }
 
     public void setPersonalRecommend(boolean z) {
-        this.f8987a = Boolean.valueOf(z);
+        this.f6147a = Boolean.valueOf(z);
     }
 
     public void setProgrammaticRecommend(boolean z) {

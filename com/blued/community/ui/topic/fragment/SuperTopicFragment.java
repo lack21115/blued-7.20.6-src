@@ -34,13 +34,9 @@ import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/community/ui/topic/fragment/SuperTopicFragment.class */
 public class SuperTopicFragment extends MvpFragment<SuperTopicPresenter> implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    private CommonTopTitleNoTrans f20265a;
+    private CommonTopTitleNoTrans a;
     private SearchView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private RecyclerView f20266c;
+    private RecyclerView c;
     private SmartRefreshLayout d;
     private TextView e;
     private SuperTopicAdapter f;
@@ -57,17 +53,17 @@ public class SuperTopicFragment extends MvpFragment<SuperTopicPresenter> impleme
     }
 
     private void b() {
-        this.f20265a = (CommonTopTitleNoTrans) this.i.findViewById(R.id.title);
+        this.a = (CommonTopTitleNoTrans) this.i.findViewById(R.id.title);
         this.b = (SearchView) this.i.findViewById(R.id.search_view);
-        this.f20266c = (RecyclerView) this.i.findViewById(R.id.recycler_view);
-        this.d = (SmartRefreshLayout) this.i.findViewById(R.id.refresh_layout);
+        this.c = this.i.findViewById(R.id.recycler_view);
+        this.d = this.i.findViewById(R.id.refresh_layout);
         TextView textView = (TextView) this.i.findViewById(R.id.tv_my_topic);
         this.e = textView;
         textView.setOnClickListener(this);
     }
 
     private void b(boolean z) {
-        this.d.j();
+        this.d.g();
         this.d.h();
         if (this.f.getData().size() <= 0) {
             if (z) {
@@ -79,7 +75,7 @@ public class SuperTopicFragment extends MvpFragment<SuperTopicPresenter> impleme
     }
 
     private void c() {
-        this.f20265a.setLeftClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.topic.fragment.SuperTopicFragment.1
+        this.a.setLeftClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.topic.fragment.SuperTopicFragment.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
@@ -89,17 +85,16 @@ public class SuperTopicFragment extends MvpFragment<SuperTopicPresenter> impleme
     }
 
     private void d() {
-        this.f20266c.setLayoutManager(new LinearLayoutManager(getContext()));
+        this.c.setLayoutManager(new LinearLayoutManager(getContext()));
         SuperTopicAdapter superTopicAdapter = new SuperTopicAdapter(getContext(), getFragmentActive());
         this.f = superTopicAdapter;
         superTopicAdapter.a(true);
-        this.f20266c.setAdapter(this.f);
+        this.c.setAdapter(this.f);
         NoDataAndLoadFailView noDataAndLoadFailView = new NoDataAndLoadFailView(getContext());
         this.g = noDataAndLoadFailView;
         this.f.setEmptyView(noDataAndLoadFailView);
         this.f.setHeaderAndEmpty(true);
         this.f.setOnItemClickListener(new SingleItemClickProxy(new BaseQuickAdapter.OnItemClickListener() { // from class: com.blued.community.ui.topic.fragment.SuperTopicFragment.2
-            @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemClickListener
             public void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
                 if (baseQuickAdapter.getItem(i) == null || !(baseQuickAdapter.getItem(i) instanceof BluedTopic)) {
                     return;
@@ -117,11 +112,11 @@ public class SuperTopicFragment extends MvpFragment<SuperTopicPresenter> impleme
                 String str = bluedTopic.super_did;
                 boolean z = true;
                 boolean z2 = bluedTopic.is_anonym == 1;
-                boolean a2 = MarkDownLinkHelper.a(bluedTopic.description);
+                boolean a = MarkDownLinkHelper.a(bluedTopic.description);
                 if (bluedTopic.is_follow != 1) {
                     z = false;
                 }
-                EventTrackFeed.a(event, detailFrom, str, z2, a2, z);
+                EventTrackFeed.a(event, detailFrom, str, z2, a, z);
             }
 
             @Override // com.blued.community.ui.topic.adapter.SuperTopicAdapter.OnShowListener
@@ -130,12 +125,10 @@ public class SuperTopicFragment extends MvpFragment<SuperTopicPresenter> impleme
         });
         this.f.setLoadMoreView(new BluedAdapterLoadMoreView());
         this.d.a(new OnRefreshLoadMoreListener() { // from class: com.blued.community.ui.topic.fragment.SuperTopicFragment.4
-            @Override // com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
             public void onLoadMore(RefreshLayout refreshLayout) {
                 SuperTopicFragment.this.j().f();
             }
 
-            @Override // com.scwang.smartrefresh.layout.listener.OnRefreshListener
             public void onRefresh(RefreshLayout refreshLayout) {
                 SuperTopicFragment.this.j().e();
             }
@@ -210,7 +203,7 @@ public class SuperTopicFragment extends MvpFragment<SuperTopicPresenter> impleme
     @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void o() {
         super.o();
-        this.d.l(true);
+        this.d.b(true);
     }
 
     @Override // android.view.View.OnClickListener
@@ -225,7 +218,7 @@ public class SuperTopicFragment extends MvpFragment<SuperTopicPresenter> impleme
     @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void p() {
         super.p();
-        this.d.l(false);
+        this.d.b(false);
         AppMethods.d(R.string.common_nomore_data);
     }
 }

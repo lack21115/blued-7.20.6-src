@@ -15,7 +15,7 @@ public final class g extends BroadcastReceiver {
             boolean z = true;
             switch (action.hashCode()) {
                 case -1301069232:
-                    if (action.equals(com.anythink.china.common.a.f6276c)) {
+                    if (action.equals(com.anythink.china.common.a.c)) {
                         z = true;
                         break;
                     }

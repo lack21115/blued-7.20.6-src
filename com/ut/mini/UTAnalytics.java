@@ -25,10 +25,10 @@ import java.util.Map;
 public class UTAnalytics {
 
     /* renamed from: a  reason: collision with root package name */
-    private static UTAnalytics f41015a;
+    private static UTAnalytics f27324a;
 
     /* renamed from: a  reason: collision with other field name */
-    private UTTracker f75a;
+    private UTTracker f28a;
     private Map<String, UTTracker> u = new HashMap();
 
     private UTAnalytics() {
@@ -47,10 +47,10 @@ public class UTAnalytics {
         UTAnalytics uTAnalytics;
         synchronized (UTAnalytics.class) {
             try {
-                if (f41015a == null) {
-                    f41015a = new UTAnalytics();
+                if (f27324a == null) {
+                    f27324a = new UTAnalytics();
                 }
-                uTAnalytics = f41015a;
+                uTAnalytics = f27324a;
             } catch (Throwable th) {
                 throw th;
             }
@@ -70,13 +70,13 @@ public class UTAnalytics {
     public UTTracker getDefaultTracker() {
         UTTracker uTTracker;
         synchronized (this) {
-            if (this.f75a == null) {
-                this.f75a = new UTTracker();
+            if (this.f28a == null) {
+                this.f28a = new UTTracker();
             }
-            if (this.f75a == null) {
+            if (this.f28a == null) {
                 i.a("getDefaultTracker error", "Fatal Error,must call setRequestAuthentication method first.");
             }
-            uTTracker = this.f75a;
+            uTTracker = this.f28a;
         }
         return uTTracker;
     }
@@ -143,9 +143,9 @@ public class UTAnalytics {
             i.a("setRequestAuthentication", "Fatal Error,pRequestAuth must not be null.");
         }
         if (iUTRequestAuthentication instanceof UTBaseRequestAuthentication) {
-            AppMonitor.setRequestAuthInfo(false, iUTRequestAuthentication.getAppkey(), ((UTBaseRequestAuthentication) iUTRequestAuthentication).getAppSecret(), null);
+            AppMonitor.setRequestAuthInfo(false, iUTRequestAuthentication.getAppkey(), ((UTBaseRequestAuthentication) iUTRequestAuthentication).getAppSecret(), (String) null);
         } else {
-            AppMonitor.setRequestAuthInfo(true, iUTRequestAuthentication.getAppkey(), null, ((UTSecuritySDKRequestAuthentication) iUTRequestAuthentication).getAuthCode());
+            AppMonitor.setRequestAuthInfo(true, iUTRequestAuthentication.getAppkey(), (String) null, ((UTSecuritySDKRequestAuthentication) iUTRequestAuthentication).getAuthCode());
         }
     }
 
@@ -158,10 +158,10 @@ public class UTAnalytics {
     }
 
     public void updateSessionProperties(Map<String, String> map) {
-        Map<String, String> m2169a = c.a().m2169a();
+        Map a2 = c.a().a();
         HashMap hashMap = new HashMap();
-        if (m2169a != null) {
-            hashMap.putAll(m2169a);
+        if (a2 != null) {
+            hashMap.putAll(a2);
         }
         hashMap.putAll(map);
         c.a().c(hashMap);

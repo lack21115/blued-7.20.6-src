@@ -8,11 +8,11 @@ import java.util.List;
 public class LiveListDataUtils {
 
     /* renamed from: a  reason: collision with root package name */
-    private static List<BluedLiveListData> f31303a;
+    private static List<BluedLiveListData> f17613a;
     private static List<BluedLiveListData> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static List<BluedLiveListData> f31304c;
+    private static List<BluedLiveListData> f17614c;
     private static List<List<BluedLiveListData>> d;
     private static List<List<BluedLiveListData>> e;
     private static List<List<BluedLiveListData>> f;
@@ -64,7 +64,7 @@ public class LiveListDataUtils {
                 while (true) {
                     int i4 = i3;
                     if (i4 < bluedLiveListData.hotpk_list.size()) {
-                        arrayList.add(bluedLiveListData.hotpk_list.get(i4));
+                        arrayList.add((BluedLiveListData) bluedLiveListData.hotpk_list.get(i4));
                         i3 = i4 + 1;
                     }
                 }
@@ -75,12 +75,12 @@ public class LiveListDataUtils {
 
     public static List<BluedLiveListData> a(List<BluedLiveListData> list, boolean z) {
         ArrayList arrayList = new ArrayList();
-        f31303a = new ArrayList();
+        f17613a = new ArrayList();
         b = new ArrayList();
         e = new ArrayList();
         f = new ArrayList();
         d = new ArrayList();
-        f31304c = new ArrayList();
+        f17614c = new ArrayList();
         BluedLiveListData bluedLiveListData = null;
         BluedLiveListData bluedLiveListData2 = null;
         if (list != null) {
@@ -206,15 +206,15 @@ public class LiveListDataUtils {
                 }
             }
         }
-        if (f31304c.size() > 1) {
+        if (f17614c.size() > 1) {
             int i15 = 0;
-            if (b(f31304c)) {
-                List<BluedLiveListData> list9 = f31304c;
+            if (b(f17614c)) {
+                List<BluedLiveListData> list9 = f17614c;
                 list9.remove(list9.size() - 1);
                 i15 = 0;
             }
-            while (i15 < f31304c.size()) {
-                f31304c.get(i15).position = i15 % 2;
+            while (i15 < f17614c.size()) {
+                f17614c.get(i15).position = i15 % 2;
                 i15++;
             }
             if (f.size() == 0) {
@@ -225,7 +225,7 @@ public class LiveListDataUtils {
             BluedLiveListData bluedLiveListData8 = new BluedLiveListData();
             bluedLiveListData8.liveType = 8;
             arrayList.add(bluedLiveListData8);
-            arrayList.addAll(f31304c);
+            arrayList.addAll(f17614c);
         }
         return arrayList;
     }
@@ -239,14 +239,14 @@ public class LiveListDataUtils {
     }
 
     private static void b(BluedLiveListData bluedLiveListData) {
-        if (f31303a.size() != 3 && f31303a.size() != 0) {
-            f31303a.add(bluedLiveListData);
+        if (f17613a.size() != 3 && f17613a.size() != 0) {
+            f17613a.add(bluedLiveListData);
             return;
         }
         ArrayList arrayList = new ArrayList();
-        f31303a = arrayList;
+        f17613a = arrayList;
         arrayList.add(bluedLiveListData);
-        d.add(f31303a);
+        d.add(f17613a);
     }
 
     public static boolean b(List<BluedLiveListData> list) {
@@ -271,6 +271,6 @@ public class LiveListDataUtils {
     }
 
     private static void e(BluedLiveListData bluedLiveListData) {
-        f31304c.add(bluedLiveListData);
+        f17614c.add(bluedLiveListData);
     }
 }

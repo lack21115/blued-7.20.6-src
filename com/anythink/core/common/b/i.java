@@ -8,12 +8,8 @@ import java.util.Map;
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/b/i.class */
 public class i {
     private static volatile i b;
-
-    /* renamed from: a  reason: collision with root package name */
-    private final String f6528a = getClass().getSimpleName();
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f6529c;
+    private final String a = getClass().getSimpleName();
+    private String c;
     private String d;
     private String e;
     private boolean f;
@@ -35,7 +31,7 @@ public class i {
     }
 
     private boolean e() {
-        return (TextUtils.isEmpty(this.f6529c) || TextUtils.isEmpty(this.d) || TextUtils.isEmpty(this.e)) ? false : true;
+        return (TextUtils.isEmpty(this.c) || TextUtils.isEmpty(this.d) || TextUtils.isEmpty(this.e)) ? false : true;
     }
 
     public final void a(int i, com.anythink.core.common.e.e eVar) {
@@ -78,16 +74,16 @@ public class i {
                 return false;
             }
             try {
-                if (TextUtils.isEmpty(this.f6529c) || TextUtils.isEmpty(this.d) || TextUtils.isEmpty(this.e)) {
+                if (TextUtils.isEmpty(this.c) || TextUtils.isEmpty(this.d) || TextUtils.isEmpty(this.e)) {
                     MobClientInfo clientInfo = MobDNA.getClientInfo(n.a().g());
                     if (clientInfo == null) {
                         return false;
                     }
-                    this.f6529c = clientInfo.oid;
+                    this.c = clientInfo.oid;
                     this.d = clientInfo.appkey;
                     this.e = clientInfo.rdid;
                     StringBuilder sb = new StringBuilder("oid: ");
-                    sb.append(this.f6529c);
+                    sb.append(this.c);
                     sb.append(", appkey: ");
                     sb.append(this.d);
                     sb.append(", rdid: ");
@@ -99,14 +95,14 @@ public class i {
             this.g = e;
             if (!this.f && e) {
                 this.f = true;
-                com.anythink.core.common.j.c.b(this.f6529c, this.d, this.e);
+                com.anythink.core.common.j.c.b(this.c, this.d, this.e);
             }
             return this.g;
         }
     }
 
     public final String b() {
-        return this.f6529c;
+        return this.c;
     }
 
     public final String c() {

@@ -9,10 +9,10 @@ import org.json.JSONObject;
 public class g {
 
     /* renamed from: c  reason: collision with root package name */
-    private static g f39691c;
+    private static g f26000c;
 
     /* renamed from: a  reason: collision with root package name */
-    private String f39692a = "Qp.netImp";
+    private String f26001a = "Qp.netImp";
     private f b = null;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/tmsqmsp/sdk/b/g$a.class */
@@ -30,13 +30,13 @@ public class g {
                 }
                 a.d a2 = com.tencent.tmsqmsp.sdk.b.a.a(i, str, i2, b);
                 if (a2.b != 0) {
-                    eVar.a(162, a2.f39686a);
+                    eVar.a(162, a2.f25995a);
                     return;
                 }
-                JSONObject jSONObject2 = a2.f39686a;
+                JSONObject jSONObject2 = a2.f25995a;
                 eVar.a(161, (jSONObject2 == null || !(jSONObject2 instanceof JSONObject)) ? null : g.this.b(9, jSONObject2));
             } catch (Exception e) {
-                com.tencent.tmsqmsp.sdk.f.g.b(g.this.f39692a, 0, "send fail！");
+                com.tencent.tmsqmsp.sdk.f.g.b(g.this.f26001a, 0, "send fail！");
                 eVar.a(162, null);
                 e.printStackTrace();
             }
@@ -72,18 +72,18 @@ public class g {
     }
 
     public static g b() {
-        if (f39691c == null) {
+        if (f26000c == null) {
             synchronized (g.class) {
                 try {
-                    if (f39691c == null) {
-                        f39691c = new g();
+                    if (f26000c == null) {
+                        f26000c = new g();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f39691c;
+        return f26000c;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -110,7 +110,7 @@ public class g {
     public void a(int i, String str, int i2, JSONObject jSONObject, e eVar) {
         f fVar;
         if (!(jSONObject instanceof JSONObject) || jSONObject == null || eVar == null || (fVar = this.b) == null) {
-            com.tencent.tmsqmsp.sdk.f.g.d(this.f39692a, 0, h.a(h.f39758a));
+            com.tencent.tmsqmsp.sdk.f.g.d(this.f26001a, 0, h.a(h.f26067a));
         } else {
             fVar.a(i, str, i2, jSONObject, eVar);
         }
@@ -120,7 +120,7 @@ public class g {
         if (fVar != null) {
             this.b = fVar;
         } else {
-            com.tencent.tmsqmsp.sdk.f.g.d(this.f39692a, 0, h.a(h.f39758a));
+            com.tencent.tmsqmsp.sdk.f.g.d(this.f26001a, 0, h.a(h.f26067a));
         }
     }
 }

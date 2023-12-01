@@ -21,9 +21,7 @@ import kotlinx.coroutines.CoroutineScopeKt;
 /* renamed from: com.blued.android.module.common.adx.gdt.native.TXNativeServerAdAdapter  reason: invalid package */
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/adx/gdt/native/TXNativeServerAdAdapter.class */
 public final class TXNativeServerAdAdapter extends BaseNativeExpressAd {
-
-    /* renamed from: a  reason: collision with root package name */
-    private BluedADExtra f10556a;
+    private BluedADExtra a;
     private int b;
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -98,10 +96,10 @@ public final class TXNativeServerAdAdapter extends BaseNativeExpressAd {
 
     @Override // com.blued.android.module.common.adx.base.IBaseAd
     public Map<String, Object> d() {
-        return MapsKt.a(TuplesKt.a("original_ad", this.f10556a));
+        return MapsKt.a(TuplesKt.a("original_ad", this.a));
     }
 
     public final BluedADExtra e() {
-        return this.f10556a;
+        return this.a;
     }
 }

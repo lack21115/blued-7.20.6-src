@@ -18,9 +18,7 @@ import java.util.List;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/f/a/a.class */
 public final class a {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static a f5985a;
+    private static a a;
     private Context b;
 
     private a(Context context) {
@@ -28,10 +26,10 @@ public final class a {
     }
 
     public static a a(Context context) {
-        if (f5985a == null) {
-            f5985a = new a(context);
+        if (a == null) {
+            a = new a(context);
         }
-        return f5985a;
+        return a;
     }
 
     private static boolean a(s sVar) {
@@ -80,16 +78,16 @@ public final class a {
         }
     }
 
-    public final void a(String str, s sVar, j jVar, b.InterfaceC0067b interfaceC0067b) {
+    public final void a(String str, s sVar, j jVar, b.InterfaceC0027b interfaceC0027b) {
         if (a(sVar)) {
-            interfaceC0067b.a(com.anythink.basead.c.f.a(com.anythink.basead.c.f.h, com.anythink.basead.c.f.G));
+            interfaceC0027b.a(com.anythink.basead.c.f.a(com.anythink.basead.c.f.h, com.anythink.basead.c.f.G));
         } else if (b.a(this.b).b(sVar)) {
-            interfaceC0067b.a(com.anythink.basead.c.f.a(com.anythink.basead.c.f.e, com.anythink.basead.c.f.z));
+            interfaceC0027b.a(com.anythink.basead.c.f.a(com.anythink.basead.c.f.e, com.anythink.basead.c.f.z));
         } else if (b.a(this.b).c(sVar)) {
-            interfaceC0067b.a(com.anythink.basead.c.f.a(com.anythink.basead.c.f.f, com.anythink.basead.c.f.A));
+            interfaceC0027b.a(com.anythink.basead.c.f.a(com.anythink.basead.c.f.f, com.anythink.basead.c.f.A));
         } else {
             f.a();
-            f.a(str, sVar, jVar, interfaceC0067b);
+            f.a(str, sVar, jVar, interfaceC0027b);
         }
     }
 
@@ -146,6 +144,6 @@ public final class a {
                 return Integer.valueOf(cVar.d).compareTo(Integer.valueOf(cVar2.d));
             }
         });
-        return ((c) arrayList.get(0)).f5893a;
+        return ((c) arrayList.get(0)).a;
     }
 }

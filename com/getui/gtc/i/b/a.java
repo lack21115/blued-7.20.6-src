@@ -24,7 +24,7 @@ public final class a {
                             break;
                         } else if (read < 10240) {
                             byte[] bArr2 = new byte[read];
-                            System.arraycopy((Object) bArr, 0, (Object) bArr2, 0, read);
+                            System.arraycopy(bArr, 0, bArr2, 0, read);
                             messageDigest.update(bArr2);
                         } else {
                             messageDigest.update(bArr);
@@ -86,7 +86,7 @@ public final class a {
         if (!file.isDirectory() || (listFiles = file.listFiles(new FileFilter() { // from class: com.getui.gtc.i.b.a.1
             @Override // java.io.FileFilter
             public final boolean accept(File file2) {
-                return file2.isDirectory() || file2.getName().startsWith(String.this);
+                return file2.isDirectory() || file2.getName().startsWith(str2);
             }
         })) == null || listFiles.length <= 0) {
             return;

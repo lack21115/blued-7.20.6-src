@@ -264,7 +264,7 @@ public class ActionBarView extends AbsActionBarView implements DecorToolbar {
             super(context, attributeSet);
             LayoutTransition layoutTransition = getLayoutTransition();
             if (layoutTransition != null) {
-                layoutTransition.setDuration(150L);
+                layoutTransition.setDuration(DEFAULT_TRANSITION_DURATION);
             }
         }
 
@@ -313,7 +313,7 @@ public class ActionBarView extends AbsActionBarView implements DecorToolbar {
         @Override // android.view.View
         public void onFinishInflate() {
             this.mUpView = (ImageView) findViewById(R.id.up);
-            this.mIconView = (ImageView) findViewById(16908332);
+            this.mIconView = (ImageView) findViewById(R.id.home);
             this.mDefaultUpIndicator = this.mUpView.getDrawable();
         }
 
@@ -511,7 +511,7 @@ public class ActionBarView extends AbsActionBarView implements DecorToolbar {
             }
         };
         setBackgroundResource(0);
-        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.ActionBar, 16843470, 0);
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.ActionBar, R.attr.actionBarStyle, 0);
         this.mNavigationMode = obtainStyledAttributes.getInt(7, 0);
         this.mTitle = obtainStyledAttributes.getText(5);
         this.mSubtitle = obtainStyledAttributes.getText(9);
@@ -546,7 +546,7 @@ public class ActionBarView extends AbsActionBarView implements DecorToolbar {
         }
         this.mContentHeight = obtainStyledAttributes.getLayoutDimension(4, 0);
         obtainStyledAttributes.recycle();
-        this.mLogoNavItem = new ActionMenuItem(context, 0, 16908332, 0, 0, this.mTitle);
+        this.mLogoNavItem = new ActionMenuItem(context, 0, R.id.home, 0, 0, this.mTitle);
         this.mUpGoerFive.setOnClickListener(this.mUpClickListener);
         this.mUpGoerFive.setClickable(true);
         this.mUpGoerFive.setFocusable(true);
@@ -652,9 +652,8 @@ public class ActionBarView extends AbsActionBarView implements DecorToolbar {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup
-    public ViewGroup.LayoutParams generateDefaultLayoutParams() {
+    protected ViewGroup.LayoutParams generateDefaultLayoutParams() {
         return new ActionBar.LayoutParams((int) DEFAULT_CUSTOM_GRAVITY);
     }
 
@@ -1325,9 +1324,9 @@ public class ActionBarView extends AbsActionBarView implements DecorToolbar {
             switch (i) {
                 case 1:
                     if (this.mSpinner == null) {
-                        this.mSpinner = new Spinner(this.mContext, null, 16843479);
+                        this.mSpinner = new Spinner(this.mContext, null, R.attr.actionDropDownStyle);
                         this.mSpinner.setId(R.id.action_bar_spinner);
-                        this.mListNavLayout = new LinearLayout(this.mContext, null, 16843508);
+                        this.mListNavLayout = new LinearLayout(this.mContext, null, R.attr.actionBarTabBarStyle);
                         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(-2, -1);
                         layoutParams.gravity = 17;
                         this.mListNavLayout.addView(this.mSpinner, layoutParams);

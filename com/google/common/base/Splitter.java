@@ -228,7 +228,7 @@ public final class Splitter {
                 return new SplittingIterator(splitter, charSequence) { // from class: com.google.common.base.Splitter.2.1
                     @Override // com.google.common.base.Splitter.SplittingIterator
                     public int separatorEnd(int i) {
-                        return i + String.this.length();
+                        return i + str.length();
                     }
 
                     /* JADX WARN: Code restructure failed: missing block: B:10:0x003f, code lost:
@@ -244,7 +244,7 @@ public final class Splitter {
                             r4 = this;
                             r0 = r4
                             com.google.common.base.Splitter$2 r0 = com.google.common.base.Splitter.AnonymousClass2.this
-                            java.lang.String r0 = java.lang.String.this
+                            java.lang.String r0 = r4
                             int r0 = r0.length()
                             r7 = r0
                             r0 = r4
@@ -271,7 +271,7 @@ public final class Splitter {
                             char r0 = r0.charAt(r1)
                             r1 = r4
                             com.google.common.base.Splitter$2 r1 = com.google.common.base.Splitter.AnonymousClass2.this
-                            java.lang.String r1 = java.lang.String.this
+                            java.lang.String r1 = r4
                             r2 = r6
                             char r1 = r1.charAt(r2)
                             if (r0 == r1) goto L46

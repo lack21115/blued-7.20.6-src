@@ -10,14 +10,14 @@ public final class r2 implements Serializable {
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f37732c;
+    private String f24041c;
     public static final /* synthetic */ boolean i = !r2.class.desiredAssertionStatus();
     private static r2[] d = new r2[28];
     public static final r2 h = new r2(26, 29, "REQ_CONFIG");
 
     private r2(int i2, int i3, String str) {
-        this.f37732c = new String();
-        this.f37732c = str;
+        this.f24041c = new String();
+        this.f24041c = str;
         this.b = i3;
         d[i2] = this;
     }
@@ -63,6 +63,6 @@ public final class r2 implements Serializable {
     }
 
     public String toString() {
-        return this.f37732c;
+        return this.f24041c;
     }
 }

@@ -8,11 +8,11 @@ import java.util.List;
 public class d extends a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f26391a = com.opos.cmn.an.a.b.a("b3Bwb19hZHg=");
+    public static final String f12703a = com.opos.cmn.an.a.b.a("b3Bwb19hZHg=");
     public static final String b = com.opos.cmn.an.a.b.a("b3Bwb19mZWVk");
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f26392c = com.opos.cmn.an.a.b.a("b3Bwb19jcGQ=");
+    public static final String f12704c = com.opos.cmn.an.a.b.a("b3Bwb19jcGQ=");
     private int d;
     private String e;
     private List<com.opos.mobad.b.a.b> f;
@@ -39,23 +39,23 @@ public class d extends a {
     public static /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f26393a;
+        static final /* synthetic */ int[] f12705a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x002f -> B:19:0x001f). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:9:0x002b -> B:15:0x0014). Please submit an issue!!! */
         static {
             int[] iArr = new int[d.b.values().length];
-            f26393a = iArr;
+            f12705a = iArr;
             try {
                 iArr[d.b.NO_TYPE.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f26393a[d.b.GAME_BOX_BANNER.ordinal()] = 2;
+                f12705a[d.b.GAME_BOX_BANNER.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f26393a[d.b.GAME_BOX_INTERSTITIAL.ordinal()] = 3;
+                f12705a[d.b.GAME_BOX_INTERSTITIAL.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
         }
@@ -128,7 +128,7 @@ public class d extends a {
             r5 = r0
             r0 = r4
             if (r0 == 0) goto L1e
-            int[] r0 = com.opos.mobad.model.b.d.AnonymousClass1.f26393a
+            int[] r0 = com.opos.mobad.model.b.d.AnonymousClass1.f12705a
             r1 = r4
             int r1 = r1.ordinal()
             r0 = r0[r1]

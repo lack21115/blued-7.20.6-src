@@ -7,7 +7,7 @@ public final class TimeUtils {
     public static final int HUNDRED_DAY_FIELD_LEN = 19;
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Object f2614a = new Object();
+    private static final Object f2566a = new Object();
     private static char[] b = new char[24];
 
     private TimeUtils() {
@@ -236,13 +236,13 @@ public final class TimeUtils {
     }
 
     public static void formatDuration(long j, PrintWriter printWriter, int i) {
-        synchronized (f2614a) {
+        synchronized (f2566a) {
             printWriter.print(new String(b, 0, a(j, i)));
         }
     }
 
     public static void formatDuration(long j, StringBuilder sb) {
-        synchronized (f2614a) {
+        synchronized (f2566a) {
             sb.append(b, 0, a(j, 0));
         }
     }

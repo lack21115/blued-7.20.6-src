@@ -17,10 +17,10 @@ import android.util.DisplayMetrics;
 public abstract class RoundedBitmapDrawable extends Drawable {
 
     /* renamed from: a  reason: collision with root package name */
-    final Bitmap f2471a;
+    final Bitmap f2423a;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f2472c;
+    private int f2424c;
     private final BitmapShader f;
     private float h;
     private boolean k;
@@ -35,14 +35,14 @@ public abstract class RoundedBitmapDrawable extends Drawable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public RoundedBitmapDrawable(Resources resources, Bitmap bitmap) {
-        this.f2472c = 160;
+        this.f2424c = 160;
         if (resources != null) {
-            this.f2472c = resources.getDisplayMetrics().densityDpi;
+            this.f2424c = resources.getDisplayMetrics().densityDpi;
         }
-        this.f2471a = bitmap;
+        this.f2423a = bitmap;
         if (bitmap != null) {
             b();
-            this.f = new BitmapShader(this.f2471a, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP);
+            this.f = new BitmapShader(this.f2423a, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP);
             return;
         }
         this.m = -1;
@@ -55,8 +55,8 @@ public abstract class RoundedBitmapDrawable extends Drawable {
     }
 
     private void b() {
-        this.l = this.f2471a.getScaledWidth(this.f2472c);
-        this.m = this.f2471a.getScaledHeight(this.f2472c);
+        this.l = this.f2423a.getScaledWidth(this.f2424c);
+        this.m = this.f2423a.getScaledHeight(this.f2424c);
     }
 
     private void c() {
@@ -78,7 +78,7 @@ public abstract class RoundedBitmapDrawable extends Drawable {
             this.i.set(this.b);
             if (this.f != null) {
                 this.g.setTranslate(this.i.left, this.i.top);
-                this.g.preScale(this.i.width() / this.f2471a.getWidth(), this.i.height() / this.f2471a.getHeight());
+                this.g.preScale(this.i.width() / this.f2423a.getWidth(), this.i.height() / this.f2423a.getHeight());
                 this.f.setLocalMatrix(this.g);
                 this.e.setShader(this.f);
             }
@@ -92,7 +92,7 @@ public abstract class RoundedBitmapDrawable extends Drawable {
 
     @Override // android.graphics.drawable.Drawable
     public void draw(Canvas canvas) {
-        Bitmap bitmap = this.f2471a;
+        Bitmap bitmap = this.f2423a;
         if (bitmap == null) {
             return;
         }
@@ -112,7 +112,7 @@ public abstract class RoundedBitmapDrawable extends Drawable {
     }
 
     public final Bitmap getBitmap() {
-        return this.f2471a;
+        return this.f2423a;
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -145,7 +145,7 @@ public abstract class RoundedBitmapDrawable extends Drawable {
             if (this.k) {
                 return -3;
             }
-            Bitmap bitmap = this.f2471a;
+            Bitmap bitmap = this.f2423a;
             i = -3;
             if (bitmap != null) {
                 i = -3;
@@ -259,13 +259,13 @@ public abstract class RoundedBitmapDrawable extends Drawable {
     }
 
     public void setTargetDensity(int i) {
-        if (this.f2472c != i) {
+        if (this.f2424c != i) {
             int i2 = i;
             if (i == 0) {
                 i2 = 160;
             }
-            this.f2472c = i2;
-            if (this.f2471a != null) {
+            this.f2424c = i2;
+            if (this.f2423a != null) {
                 b();
             }
             invalidateSelf();

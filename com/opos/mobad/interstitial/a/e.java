@@ -20,8 +20,8 @@ public class e extends b {
     private Bitmap q;
     private Bitmap r;
 
-    public e(Context context, int i, a.InterfaceC0708a interfaceC0708a) {
-        super(context, i, interfaceC0708a);
+    public e(Context context, int i, a.InterfaceC0538a interfaceC0538a) {
+        super(context, i, interfaceC0538a);
         this.p = null;
         this.q = null;
         this.r = null;
@@ -159,9 +159,9 @@ public class e extends b {
         if (list == null || list.size() < 3) {
             return;
         }
-        String str = list.get(0).f26633a;
-        String str2 = list.get(1).f26633a;
-        String str3 = list.get(2).f26633a;
+        String str = list.get(0).f12945a;
+        String str2 = list.get(1).f12945a;
+        String str3 = list.get(2).f12945a;
         if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || TextUtils.isEmpty(str3)) {
             return;
         }

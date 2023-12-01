@@ -10,21 +10,17 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/FragmentYyRoomPkLayoutBinding.class */
 public final class FragmentYyRoomPkLayoutBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final View f16549a;
+    public final View a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ViewPager f16550c;
+    public final ViewPager c;
     public final TabPageIndicatorWithDot d;
     private final FrameLayout e;
 
     private FragmentYyRoomPkLayoutBinding(FrameLayout frameLayout, View view, ImageView imageView, ViewPager viewPager, TabPageIndicatorWithDot tabPageIndicatorWithDot) {
         this.e = frameLayout;
-        this.f16549a = view;
+        this.a = view;
         this.b = imageView;
-        this.f16550c = viewPager;
+        this.c = viewPager;
         this.d = tabPageIndicatorWithDot;
     }
 
@@ -34,11 +30,11 @@ public final class FragmentYyRoomPkLayoutBinding implements ViewBinding {
         if (findViewById != null) {
             ImageView imageView = (ImageView) view.findViewById(R.id.iv_pk_more);
             if (imageView != null) {
-                ViewPager viewPager = (ViewPager) view.findViewById(R.id.pk_category);
-                if (viewPager != null) {
+                ViewPager findViewById2 = view.findViewById(R.id.pk_category);
+                if (findViewById2 != null) {
                     TabPageIndicatorWithDot tabPageIndicatorWithDot = (TabPageIndicatorWithDot) view.findViewById(R.id.tablayout);
                     if (tabPageIndicatorWithDot != null) {
-                        return new FragmentYyRoomPkLayoutBinding((FrameLayout) view, findViewById, imageView, viewPager, tabPageIndicatorWithDot);
+                        return new FragmentYyRoomPkLayoutBinding((FrameLayout) view, findViewById, imageView, findViewById2, tabPageIndicatorWithDot);
                     }
                     str = "tablayout";
                 } else {
@@ -53,7 +49,6 @@ public final class FragmentYyRoomPkLayoutBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.e;

@@ -2,15 +2,14 @@ package com.tencent.qcloud.core.logger;
 
 import android.util.Log;
 import com.baidu.mobads.sdk.internal.bw;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
+import com.huawei.hms.framework.network.grs.GrsBaseInfo;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Locale;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8829756-dex2jar.jar:com/tencent/qcloud/core/logger/FileLogItem.class */
-public class FileLogItem {
+class FileLogItem {
     private String msg;
     private int priority;
     private String tag;
@@ -33,7 +32,7 @@ public class FileLogItem {
     }
 
     private static String getPriorityString(int i) {
-        return i != 2 ? i != 3 ? i != 4 ? i != 5 ? i != 6 ? "UNKNOWN" : bw.l : "WARN" : "INFO" : "DEBUG" : "VERBOSE";
+        return i != 2 ? i != 3 ? i != 4 ? i != 5 ? i != 6 ? GrsBaseInfo.CountryCodeSource.UNKNOWN : bw.l : "WARN" : "INFO" : "DEBUG" : "VERBOSE";
     }
 
     private static String timeUtils(long j, String str) {
@@ -51,7 +50,7 @@ public class FileLogItem {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append(getPriorityString(this.priority));
-        sb.append(BridgeUtil.SPLIT_MARK);
+        sb.append("/");
         sb.append(timeUtils(this.timestamp, "yyyy-MM-dd HH:mm:ss"));
         sb.append("[");
         sb.append(this.threadName);

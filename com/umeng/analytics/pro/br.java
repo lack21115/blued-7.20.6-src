@@ -13,7 +13,7 @@ import java.util.TreeSet;
 public final class br {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Comparator f40670a = new a();
+    private static final Comparator f26979a = new a();
 
     /* loaded from: source-8829756-dex2jar.jar:com/umeng/analytics/pro/br$a.class */
     static class a implements Comparator {
@@ -95,7 +95,7 @@ public final class br {
 
     public static int a(ByteBuffer byteBuffer, byte[] bArr, int i) {
         int remaining = byteBuffer.remaining();
-        System.arraycopy((Object) byteBuffer.array(), byteBuffer.arrayOffset() + byteBuffer.position(), (Object) bArr, i, remaining);
+        System.arraycopy(byteBuffer.array(), byteBuffer.arrayOffset() + byteBuffer.position(), bArr, i, remaining);
         return remaining;
     }
 
@@ -110,7 +110,7 @@ public final class br {
             if (i2 >= list.size()) {
                 return 0;
             }
-            int compare = f40670a.compare(list.get(i2), list2.get(i2));
+            int compare = f26979a.compare(list.get(i2), list2.get(i2));
             if (compare != 0) {
                 return compare;
             }
@@ -123,20 +123,20 @@ public final class br {
         if (a2 != 0) {
             return a2;
         }
-        TreeMap treeMap = new TreeMap(f40670a);
+        TreeMap treeMap = new TreeMap(f26979a);
         treeMap.putAll(map);
         Iterator it = treeMap.entrySet().iterator();
-        TreeMap treeMap2 = new TreeMap(f40670a);
+        TreeMap treeMap2 = new TreeMap(f26979a);
         treeMap2.putAll(map2);
         Iterator it2 = treeMap2.entrySet().iterator();
         while (it.hasNext() && it2.hasNext()) {
             Map.Entry entry = (Map.Entry) it.next();
             Map.Entry entry2 = (Map.Entry) it2.next();
-            int compare = f40670a.compare(entry.getKey(), entry2.getKey());
+            int compare = f26979a.compare(entry.getKey(), entry2.getKey());
             if (compare != 0) {
                 return compare;
             }
-            int compare2 = f40670a.compare(entry.getValue(), entry2.getValue());
+            int compare2 = f26979a.compare(entry.getValue(), entry2.getValue());
             if (compare2 != 0) {
                 return compare2;
             }
@@ -149,14 +149,14 @@ public final class br {
         if (a2 != 0) {
             return a2;
         }
-        TreeSet treeSet = new TreeSet(f40670a);
+        TreeSet treeSet = new TreeSet(f26979a);
         treeSet.addAll(set);
-        TreeSet treeSet2 = new TreeSet(f40670a);
+        TreeSet treeSet2 = new TreeSet(f26979a);
         treeSet2.addAll(set2);
-        Iterator<E> it = treeSet.iterator();
-        Iterator<E> it2 = treeSet2.iterator();
+        Iterator it = treeSet.iterator();
+        Iterator it2 = treeSet2.iterator();
         while (it.hasNext() && it2.hasNext()) {
-            int compare = f40670a.compare(it.next(), it2.next());
+            int compare = f26979a.compare(it.next(), it2.next());
             if (compare != 0) {
                 return compare;
             }
@@ -235,7 +235,7 @@ public final class br {
             return null;
         }
         byte[] bArr2 = new byte[bArr.length];
-        System.arraycopy((Object) bArr, 0, (Object) bArr2, 0, bArr.length);
+        System.arraycopy(bArr, 0, bArr2, 0, bArr.length);
         return bArr2;
     }
 
@@ -256,7 +256,7 @@ public final class br {
         }
         ByteBuffer wrap = ByteBuffer.wrap(new byte[byteBuffer.remaining()]);
         if (byteBuffer.hasArray()) {
-            System.arraycopy((Object) byteBuffer.array(), byteBuffer.arrayOffset() + byteBuffer.position(), (Object) wrap.array(), 0, byteBuffer.remaining());
+            System.arraycopy(byteBuffer.array(), byteBuffer.arrayOffset() + byteBuffer.position(), wrap.array(), 0, byteBuffer.remaining());
             return wrap;
         }
         byteBuffer.slice().get(wrap.array());

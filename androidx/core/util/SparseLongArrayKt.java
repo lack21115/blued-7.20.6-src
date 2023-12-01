@@ -27,9 +27,9 @@ public final class SparseLongArrayKt {
         return sparseLongArray.indexOfValue(j) >= 0;
     }
 
-    public static final void forEach(SparseLongArray sparseLongArray, Function2<? super Integer, ? super Long, Unit> action) {
+    public static final void forEach(SparseLongArray sparseLongArray, Function2<? super Integer, ? super Long, Unit> function2) {
         Intrinsics.e(sparseLongArray, "<this>");
-        Intrinsics.e(action, "action");
+        Intrinsics.e(function2, "action");
         int size = sparseLongArray.size();
         if (size <= 0) {
             return;
@@ -38,7 +38,7 @@ public final class SparseLongArrayKt {
         while (true) {
             int i2 = i;
             int i3 = i2 + 1;
-            action.invoke(Integer.valueOf(sparseLongArray.keyAt(i2)), Long.valueOf(sparseLongArray.valueAt(i2)));
+            function2.invoke(Integer.valueOf(sparseLongArray.keyAt(i2)), Long.valueOf(sparseLongArray.valueAt(i2)));
             if (i3 >= size) {
                 return;
             }
@@ -51,11 +51,11 @@ public final class SparseLongArrayKt {
         return sparseLongArray.get(i, j);
     }
 
-    public static final long getOrElse(SparseLongArray sparseLongArray, int i, Function0<Long> defaultValue) {
+    public static final long getOrElse(SparseLongArray sparseLongArray, int i, Function0<Long> function0) {
         Intrinsics.e(sparseLongArray, "<this>");
-        Intrinsics.e(defaultValue, "defaultValue");
+        Intrinsics.e(function0, "defaultValue");
         int indexOfKey = sparseLongArray.indexOfKey(i);
-        return indexOfKey >= 0 ? sparseLongArray.valueAt(indexOfKey) : defaultValue.invoke().longValue();
+        return indexOfKey >= 0 ? sparseLongArray.valueAt(indexOfKey) : ((Number) function0.invoke()).longValue();
     }
 
     public static final int getSize(SparseLongArray sparseLongArray) {
@@ -82,12 +82,10 @@ public final class SparseLongArrayKt {
                 return this.b;
             }
 
-            @Override // java.util.Iterator
             public boolean hasNext() {
                 return this.b < SparseLongArray.this.size();
             }
 
-            @Override // kotlin.collections.IntIterator
             public int nextInt() {
                 SparseLongArray sparseLongArray2 = SparseLongArray.this;
                 int i = this.b;
@@ -101,19 +99,19 @@ public final class SparseLongArrayKt {
         };
     }
 
-    public static final SparseLongArray plus(SparseLongArray sparseLongArray, SparseLongArray other) {
+    public static final SparseLongArray plus(SparseLongArray sparseLongArray, SparseLongArray sparseLongArray2) {
         Intrinsics.e(sparseLongArray, "<this>");
-        Intrinsics.e(other, "other");
-        SparseLongArray sparseLongArray2 = new SparseLongArray(sparseLongArray.size() + other.size());
-        putAll(sparseLongArray2, sparseLongArray);
-        putAll(sparseLongArray2, other);
-        return sparseLongArray2;
+        Intrinsics.e(sparseLongArray2, "other");
+        SparseLongArray sparseLongArray3 = new SparseLongArray(sparseLongArray.size() + sparseLongArray2.size());
+        putAll(sparseLongArray3, sparseLongArray);
+        putAll(sparseLongArray3, sparseLongArray2);
+        return sparseLongArray3;
     }
 
-    public static final void putAll(SparseLongArray sparseLongArray, SparseLongArray other) {
+    public static final void putAll(SparseLongArray sparseLongArray, SparseLongArray sparseLongArray2) {
         Intrinsics.e(sparseLongArray, "<this>");
-        Intrinsics.e(other, "other");
-        int size = other.size();
+        Intrinsics.e(sparseLongArray2, "other");
+        int size = sparseLongArray2.size();
         if (size <= 0) {
             return;
         }
@@ -121,7 +119,7 @@ public final class SparseLongArrayKt {
         while (true) {
             int i2 = i;
             int i3 = i2 + 1;
-            sparseLongArray.put(other.keyAt(i2), other.valueAt(i2));
+            sparseLongArray.put(sparseLongArray2.keyAt(i2), sparseLongArray2.valueAt(i2));
             if (i3 >= size) {
                 return;
             }
@@ -153,12 +151,10 @@ public final class SparseLongArrayKt {
                 return this.b;
             }
 
-            @Override // java.util.Iterator
             public boolean hasNext() {
                 return this.b < SparseLongArray.this.size();
             }
 
-            @Override // kotlin.collections.LongIterator
             public long nextLong() {
                 SparseLongArray sparseLongArray2 = SparseLongArray.this;
                 int i = this.b;

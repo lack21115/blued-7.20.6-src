@@ -11,18 +11,18 @@ import java.util.List;
 public class InSubQuery extends BaseComparison {
 
     /* renamed from: in  reason: collision with root package name */
-    private final boolean f23676in;
+    private final boolean f10068in;
     private final QueryBuilder.InternalQueryBuilderWrapper subQueryBuilder;
 
     public InSubQuery(String str, FieldType fieldType, QueryBuilder.InternalQueryBuilderWrapper internalQueryBuilderWrapper, boolean z) throws SQLException {
         super(str, fieldType, null, true);
         this.subQueryBuilder = internalQueryBuilderWrapper;
-        this.f23676in = z;
+        this.f10068in = z;
     }
 
     @Override // com.j256.ormlite.stmt.query.BaseComparison, com.j256.ormlite.stmt.query.Comparison
     public void appendOperation(StringBuilder sb) {
-        if (this.f23676in) {
+        if (this.f10068in) {
             sb.append("IN ");
         } else {
             sb.append("NOT IN ");

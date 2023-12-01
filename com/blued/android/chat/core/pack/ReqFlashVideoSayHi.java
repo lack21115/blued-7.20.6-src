@@ -1,7 +1,6 @@
 package com.blued.android.chat.core.pack;
 
 import androidx.collection.ArrayMap;
-import com.bytedance.sdk.openadsdk.live.TTLiveConstants;
 import java.util.Map;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/chat/core/pack/ReqFlashVideoSayHi.class */
@@ -18,7 +17,7 @@ public class ReqFlashVideoSayHi extends ReqBasePackage {
     @Override // com.blued.android.chat.core.pack.ReqBasePackage
     protected Map<String, Object> getReqInfo() {
         ArrayMap arrayMap = new ArrayMap();
-        arrayMap.put(TTLiveConstants.ROOMID_KEY, this.roomId);
+        arrayMap.put("room_id", this.roomId);
         arrayMap.put("uid", Long.valueOf(this.matchedUid));
         return arrayMap;
     }

@@ -11,7 +11,7 @@ import androidx.recyclerview.R;
 public class ItemTouchUIUtilImpl implements ItemTouchUIUtil {
 
     /* renamed from: a  reason: collision with root package name */
-    static final ItemTouchUIUtil f3289a = new ItemTouchUIUtilImpl();
+    static final ItemTouchUIUtil f3241a = new ItemTouchUIUtilImpl();
 
     ItemTouchUIUtilImpl() {
     }

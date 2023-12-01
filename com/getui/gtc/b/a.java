@@ -9,12 +9,13 @@ import android.database.sqlite.SQLiteOpenHelper;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static C0340a f21893a;
+    private static C0170a f8286a;
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.getui.gtc.b.a$a  reason: collision with other inner class name */
     /* loaded from: source-8110460-dex2jar.jar:com/getui/gtc/b/a$a.class */
-    static final class C0340a extends SQLiteOpenHelper {
-        C0340a(Context context) {
+    public static final class C0170a extends SQLiteOpenHelper {
+        C0170a(Context context) {
             super(context, "gtc.db", null, 5);
         }
 
@@ -37,12 +38,12 @@ public final class a {
         if (!context.getDatabasePath("gtc.db").exists()) {
             return null;
         }
-        if (f21893a == null) {
-            f21893a = new C0340a(context);
+        if (f8286a == null) {
+            f8286a = new C0170a(context);
         }
         try {
             try {
-                sQLiteDatabase = f21893a.getReadableDatabase();
+                sQLiteDatabase = f8286a.getReadableDatabase();
             } catch (Exception e) {
                 e = e;
                 sQLiteDatabase = null;

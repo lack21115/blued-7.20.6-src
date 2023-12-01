@@ -13,19 +13,16 @@ import java.io.InputStream;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/image/http/FileDataFetcher.class */
 public class FileDataFetcher implements DataFetcher<InputStream> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f9553a;
+    private String a;
     private InputStream b;
 
     public FileDataFetcher(String str) {
         if (ImageLoader.a()) {
             Log.e("IMAGE", "-- FileDataFetcher :" + str);
         }
-        this.f9553a = str;
+        this.a = str;
     }
 
-    @Override // com.bumptech.glide.load.data.DataFetcher
     public void a() {
         if (ImageLoader.a()) {
             Log.e("IMAGE", "-- FileDataFetcher cleanup");
@@ -40,18 +37,17 @@ public class FileDataFetcher implements DataFetcher<InputStream> {
         }
     }
 
-    @Override // com.bumptech.glide.load.data.DataFetcher
     public void a(Priority priority, DataFetcher.DataCallback<? super InputStream> dataCallback) {
         if (ImageLoader.a()) {
             Log.e("IMAGE", "-- FileDataFetcher loadData");
         }
         try {
-            DataInputStream dataInputStream = new DataInputStream(new FileInputStream(this.f9553a));
+            DataInputStream dataInputStream = new DataInputStream(new FileInputStream(this.a));
             this.b = ContentLengthInputStream.a(dataInputStream, dataInputStream.available());
             if (ImageLoader.a()) {
                 Log.e("IMAGE", "-- FileDataFetcher loadData ++ onSuccess");
             }
-            dataCallback.a((DataFetcher.DataCallback<? super InputStream>) this.b);
+            dataCallback.a(this.b);
         } catch (Exception e) {
             if (ImageLoader.a()) {
                 Log.e("IMAGE", "-- FileDataFetcher loadData ++ onFailure");
@@ -60,20 +56,17 @@ public class FileDataFetcher implements DataFetcher<InputStream> {
         }
     }
 
-    @Override // com.bumptech.glide.load.data.DataFetcher
     public void b() {
         if (ImageLoader.a()) {
             Log.e("IMAGE", "-- FileDataFetcher cancel");
         }
     }
 
-    @Override // com.bumptech.glide.load.data.DataFetcher
     public Class<InputStream> c() {
         return InputStream.class;
     }
 
-    @Override // com.bumptech.glide.load.data.DataFetcher
     public DataSource d() {
-        return DataSource.REMOTE;
+        return DataSource.b;
     }
 }

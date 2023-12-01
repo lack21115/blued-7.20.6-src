@@ -162,9 +162,8 @@ public class GifView extends View implements GifAction {
         gifDecoder2.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         GifDecoder gifDecoder = this.gifDecoder;
         if (gifDecoder == null) {
@@ -187,9 +186,8 @@ public class GifView extends View implements GifAction {
         canvas.restoreToCount(saveCount);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         int i3;
         int paddingLeft = getPaddingLeft();
         int paddingRight = getPaddingRight();

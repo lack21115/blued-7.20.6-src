@@ -3,6 +3,7 @@ package com.huawei.openalliance.ad.inter.data;
 import android.content.Context;
 import android.os.Bundle;
 import com.huawei.hms.ads.AdvertiserInfo;
+import com.huawei.hms.ads.fw;
 import com.huawei.hms.ads.ge;
 import com.huawei.hms.ads.ko;
 import com.huawei.hms.ads.nativead.NativeAdConfiguration;
@@ -29,11 +30,11 @@ public class n extends c implements g {
     private String S;
 
     /* renamed from: a  reason: collision with root package name */
-    private List<String> f22973a;
+    private List<String> f9365a;
     private boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f22974c;
+    private boolean f9366c;
     private boolean d;
     private int e;
     private String f;
@@ -47,7 +48,7 @@ public class n extends c implements g {
         super(adContentData);
         this.B = false;
         this.b = false;
-        this.f22974c = false;
+        this.f9366c = false;
         this.d = false;
         this.e = 0;
         this.i = Integer.valueOf(adContentData.aA());
@@ -187,7 +188,7 @@ public class n extends c implements g {
     }
 
     public boolean R() {
-        return this.f22974c;
+        return this.f9366c;
     }
 
     public boolean T() {
@@ -273,7 +274,7 @@ public class n extends c implements g {
     }
 
     public void Z(boolean z) {
-        this.f22974c = z;
+        this.f9366c = z;
     }
 
     public boolean Z(Context context, Bundle bundle) {
@@ -306,7 +307,7 @@ public class n extends c implements g {
         int L = B().L();
         ge.V("INativeAd", "buildLinkedAdConfig, set progress from native view " + L);
         hashMap.put(at.n, String.valueOf(aj()));
-        hashMap.put(at.q, B().h() ? "true" : "false");
+        hashMap.put(at.q, B().h() ? fw.Code : "false");
         hashMap.put(at.p, B().a());
         hashMap.put(at.o, String.valueOf(L));
         return hashMap;
@@ -367,10 +368,10 @@ public class n extends c implements g {
     @Override // com.huawei.openalliance.ad.inter.data.g
     public List<String> n() {
         List<String> k;
-        if (this.f22973a == null && this.Code != null && (k = this.Code.k()) != null && k.size() > 0) {
-            this.f22973a = k;
+        if (this.f9365a == null && this.Code != null && (k = this.Code.k()) != null && k.size() > 0) {
+            this.f9365a = k;
         }
-        return this.f22973a;
+        return this.f9365a;
     }
 
     @Override // com.huawei.openalliance.ad.inter.data.c

@@ -39,11 +39,11 @@ public class bi implements bq<bi, e>, Serializable, Cloneable {
     private e[] D;
 
     /* renamed from: a  reason: collision with root package name */
-    public String f40657a;
+    public String f26966a;
     public String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f40658c;
+    public String f26967c;
     public int d;
     public int e;
     public int f;
@@ -77,13 +77,13 @@ public class bi implements bq<bi, e>, Serializable, Cloneable {
                         throw new cq("Required field 'length' was not found in serialized data! Struct: " + toString());
                     }
                 }
-                switch (l.f40700c) {
+                switch (l.f27009c) {
                     case 1:
                         if (l.b != 11) {
                             cs.a(cpVar, l.b);
                             break;
                         } else {
-                            biVar.f40657a = cpVar.z();
+                            biVar.f26966a = cpVar.z();
                             biVar.a(true);
                             break;
                         }
@@ -101,7 +101,7 @@ public class bi implements bq<bi, e>, Serializable, Cloneable {
                             cs.a(cpVar, l.b);
                             break;
                         } else {
-                            biVar.f40658c = cpVar.z();
+                            biVar.f26967c = cpVar.z();
                             biVar.c(true);
                             break;
                         }
@@ -181,9 +181,9 @@ public class bi implements bq<bi, e>, Serializable, Cloneable {
         public void a(cp cpVar, bi biVar) throws bw {
             biVar.G();
             cpVar.a(bi.m);
-            if (biVar.f40657a != null) {
+            if (biVar.f26966a != null) {
                 cpVar.a(bi.n);
-                cpVar.a(biVar.f40657a);
+                cpVar.a(biVar.f26966a);
                 cpVar.c();
             }
             if (biVar.b != null) {
@@ -191,9 +191,9 @@ public class bi implements bq<bi, e>, Serializable, Cloneable {
                 cpVar.a(biVar.b);
                 cpVar.c();
             }
-            if (biVar.f40658c != null) {
+            if (biVar.f26967c != null) {
                 cpVar.a(bi.p);
-                cpVar.a(biVar.f40658c);
+                cpVar.a(biVar.f26967c);
                 cpVar.c();
             }
             cpVar.a(bi.q);
@@ -251,9 +251,9 @@ public class bi implements bq<bi, e>, Serializable, Cloneable {
         @Override // com.umeng.analytics.pro.cx
         public void a(cp cpVar, bi biVar) throws bw {
             cv cvVar = (cv) cpVar;
-            cvVar.a(biVar.f40657a);
+            cvVar.a(biVar.f26966a);
             cvVar.a(biVar.b);
-            cvVar.a(biVar.f40658c);
+            cvVar.a(biVar.f26967c);
             cvVar.a(biVar.d);
             cvVar.a(biVar.e);
             cvVar.a(biVar.f);
@@ -273,11 +273,11 @@ public class bi implements bq<bi, e>, Serializable, Cloneable {
         @Override // com.umeng.analytics.pro.cx
         public void b(cp cpVar, bi biVar) throws bw {
             cv cvVar = (cv) cpVar;
-            biVar.f40657a = cvVar.z();
+            biVar.f26966a = cvVar.z();
             biVar.a(true);
             biVar.b = cvVar.z();
             biVar.b(true);
-            biVar.f40658c = cvVar.z();
+            biVar.f26967c = cvVar.z();
             biVar.c(true);
             biVar.d = cvVar.w();
             biVar.d(true);
@@ -328,7 +328,7 @@ public class bi implements bq<bi, e>, Serializable, Cloneable {
         private final String m;
 
         static {
-            Iterator<E> it = EnumSet.allOf(e.class).iterator();
+            Iterator it = EnumSet.allOf(e.class).iterator();
             while (it.hasNext()) {
                 e eVar = (e) it.next();
                 k.put(eVar.b(), eVar);
@@ -421,13 +421,13 @@ public class bi implements bq<bi, e>, Serializable, Cloneable {
         this.D = new e[]{e.CODEX};
         this.C = biVar.C;
         if (biVar.d()) {
-            this.f40657a = biVar.f40657a;
+            this.f26966a = biVar.f26966a;
         }
         if (biVar.g()) {
             this.b = biVar.b;
         }
         if (biVar.j()) {
-            this.f40658c = biVar.f40658c;
+            this.f26967c = biVar.f26967c;
         }
         this.d = biVar.d;
         this.e = biVar.e;
@@ -446,9 +446,9 @@ public class bi implements bq<bi, e>, Serializable, Cloneable {
 
     public bi(String str, String str2, String str3, int i, int i2, int i3, ByteBuffer byteBuffer, String str4, String str5) {
         this();
-        this.f40657a = str;
+        this.f26966a = str;
         this.b = str2;
-        this.f40658c = str3;
+        this.f26967c = str3;
         this.d = i;
         d(true);
         this.e = i2;
@@ -502,11 +502,11 @@ public class bi implements bq<bi, e>, Serializable, Cloneable {
     }
 
     public void G() throws bw {
-        if (this.f40657a == null) {
+        if (this.f26966a == null) {
             throw new cq("Required field 'version' was not present! Struct: " + toString());
         } else if (this.b == null) {
             throw new cq("Required field 'address' was not present! Struct: " + toString());
-        } else if (this.f40658c == null) {
+        } else if (this.f26967c == null) {
             throw new cq("Required field 'signature' was not present! Struct: " + toString());
         } else if (this.g == null) {
             throw new cq("Required field 'entity' was not present! Struct: " + toString());
@@ -531,7 +531,7 @@ public class bi implements bq<bi, e>, Serializable, Cloneable {
     }
 
     public bi a(String str) {
-        this.f40657a = str;
+        this.f26966a = str;
         return this;
     }
 
@@ -549,7 +549,7 @@ public class bi implements bq<bi, e>, Serializable, Cloneable {
         if (z2) {
             return;
         }
-        this.f40657a = null;
+        this.f26966a = null;
     }
 
     public bi b(int i) {
@@ -564,7 +564,7 @@ public class bi implements bq<bi, e>, Serializable, Cloneable {
     }
 
     public String b() {
-        return this.f40657a;
+        return this.f26966a;
     }
 
     public void b(boolean z2) {
@@ -581,26 +581,26 @@ public class bi implements bq<bi, e>, Serializable, Cloneable {
     }
 
     public bi c(String str) {
-        this.f40658c = str;
+        this.f26967c = str;
         return this;
     }
 
     public void c() {
-        this.f40657a = null;
+        this.f26966a = null;
     }
 
     public void c(boolean z2) {
         if (z2) {
             return;
         }
-        this.f40658c = null;
+        this.f26967c = null;
     }
 
     @Override // com.umeng.analytics.pro.bq
     public void clear() {
-        this.f40657a = null;
+        this.f26966a = null;
         this.b = null;
-        this.f40658c = null;
+        this.f26967c = null;
         d(false);
         this.d = 0;
         e(false);
@@ -630,7 +630,7 @@ public class bi implements bq<bi, e>, Serializable, Cloneable {
     }
 
     public boolean d() {
-        return this.f40657a != null;
+        return this.f26966a != null;
     }
 
     @Override // com.umeng.analytics.pro.bq
@@ -672,7 +672,7 @@ public class bi implements bq<bi, e>, Serializable, Cloneable {
     }
 
     public String h() {
-        return this.f40658c;
+        return this.f26967c;
     }
 
     public void h(boolean z2) {
@@ -683,7 +683,7 @@ public class bi implements bq<bi, e>, Serializable, Cloneable {
     }
 
     public void i() {
-        this.f40658c = null;
+        this.f26967c = null;
     }
 
     public void i(boolean z2) {
@@ -698,7 +698,7 @@ public class bi implements bq<bi, e>, Serializable, Cloneable {
     }
 
     public boolean j() {
-        return this.f40658c != null;
+        return this.f26967c != null;
     }
 
     public int k() {
@@ -754,7 +754,7 @@ public class bi implements bq<bi, e>, Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder("UMEnvelope(");
         sb.append("version:");
-        String str = this.f40657a;
+        String str = this.f26966a;
         if (str == null) {
             sb.append(com.igexin.push.core.b.l);
         } else {
@@ -770,7 +770,7 @@ public class bi implements bq<bi, e>, Serializable, Cloneable {
         }
         sb.append(", ");
         sb.append("signature:");
-        String str3 = this.f40658c;
+        String str3 = this.f26967c;
         if (str3 == null) {
             sb.append(com.igexin.push.core.b.l);
         } else {

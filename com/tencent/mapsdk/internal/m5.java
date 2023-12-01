@@ -4,11 +4,11 @@ package com.tencent.mapsdk.internal;
 public interface m5 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f37629a = 0;
+    public static final int f23938a = 0;
     public static final int b = 11;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final int f37630c = 12;
+    public static final int f23939c = 12;
 
     void a(int i);
 }

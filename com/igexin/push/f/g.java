@@ -18,11 +18,11 @@ public class g {
     private static final String e = g.class.getName();
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f23648a = com.igexin.push.a.k;
+    public static String f10040a = com.igexin.push.a.k;
     public static String b = com.igexin.push.a.j;
 
     /* renamed from: c  reason: collision with root package name */
-    public static String f23649c = "";
+    public static String f10041c = "";
 
     static {
         d = "";
@@ -64,12 +64,12 @@ public class g {
     }
 
     public static byte[] a(com.igexin.push.c.c.a aVar, int i2, int i3) {
-        byte[] bArr = new byte[aVar.f23329a + 11];
+        byte[] bArr = new byte[aVar.f9721a + 11];
         com.igexin.c.a.b.g.a(i2, bArr, 0);
         com.igexin.c.a.b.g.a(i3, bArr, 4);
-        com.igexin.c.a.b.g.b((short) aVar.f23329a, bArr, 8);
+        com.igexin.c.a.b.g.b((short) aVar.f9721a, bArr, 8);
         bArr[10] = aVar.b;
-        com.igexin.c.a.b.g.a(aVar.e, bArr, 11, aVar.f23329a);
+        com.igexin.c.a.b.g.a(aVar.e, bArr, 11, aVar.f9721a);
         return d(bArr);
     }
 
@@ -91,8 +91,8 @@ public class g {
         if (f) {
             try {
                 byte[] bArr = new byte[h.length];
-                System.arraycopy((Object) h, 0, (Object) bArr, 0, h.length);
-                return CryptTools.encrypt("RSA/NONE/OAEPWithSHA1AndMGF1Padding", CryptTools.parsePublicKey("RSA", f23648a), bArr);
+                System.arraycopy(h, 0, bArr, 0, h.length);
+                return CryptTools.encrypt("RSA/NONE/OAEPWithSHA1AndMGF1Padding", CryptTools.parsePublicKey("RSA", f10040a), bArr);
             } catch (Throwable th) {
                 com.igexin.c.a.c.a.a(th);
                 com.igexin.c.a.c.a.a(e + "| getSocketAESKey  fail ~~~~~~~" + th.getMessage(), new Object[0]);
@@ -189,7 +189,7 @@ public class g {
 
     public static byte[] e(byte[] bArr, byte[] bArr2) {
         try {
-            byte[] bytes = f23649c.getBytes();
+            byte[] bytes = f10041c.getBytes();
             byte[] bArr3 = new byte[bytes.length];
             int i2 = 0;
             while (true) {
@@ -217,7 +217,7 @@ public class g {
 
     private static byte[] f(byte[] bArr, byte[] bArr2) {
         try {
-            byte[] bytes = f23649c.getBytes();
+            byte[] bytes = f10041c.getBytes();
             byte[] bArr3 = new byte[bytes.length];
             int i2 = 0;
             while (true) {
@@ -262,8 +262,8 @@ public class g {
     private static byte[] j() {
         try {
             byte[] bArr = new byte[i.length];
-            System.arraycopy((Object) i, 0, (Object) bArr, 0, i.length);
-            return CryptTools.encrypt("RSA/NONE/OAEPWithSHA1AndMGF1Padding", CryptTools.parsePublicKey("RSA", f23648a), bArr);
+            System.arraycopy(i, 0, bArr, 0, i.length);
+            return CryptTools.encrypt("RSA/NONE/OAEPWithSHA1AndMGF1Padding", CryptTools.parsePublicKey("RSA", f10040a), bArr);
         } catch (Throwable th) {
             com.igexin.c.a.c.a.a(th);
             com.igexin.c.a.c.a.a(e + "| getHttpAESKey  fail ~~~~~~~", new Object[0]);

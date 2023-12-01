@@ -1,7 +1,6 @@
 package com.tencent.cos.xml.model.object;
 
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.cos.xml.CosXmlServiceConfig;
 import com.tencent.cos.xml.common.ClientErrorCode;
 import com.tencent.cos.xml.exception.CosXmlClientException;
@@ -59,7 +58,7 @@ public final class DeleteMultiObjectRequest extends ObjectRequest {
 
     @Override // com.tencent.cos.xml.model.object.ObjectRequest, com.tencent.cos.xml.model.CosXmlRequest
     public String getPath(CosXmlServiceConfig cosXmlServiceConfig) {
-        return cosXmlServiceConfig.getUrlPath(this.bucket, BridgeUtil.SPLIT_MARK);
+        return cosXmlServiceConfig.getUrlPath(this.bucket, "/");
     }
 
     @Override // com.tencent.cos.xml.model.CosXmlRequest
@@ -104,7 +103,7 @@ public final class DeleteMultiObjectRequest extends ObjectRequest {
             return;
         }
         String str2 = str;
-        if (str.startsWith(BridgeUtil.SPLIT_MARK)) {
+        if (str.startsWith("/")) {
             str2 = str.substring(1);
         }
         Delete.DeleteObject deleteObject = new Delete.DeleteObject();
@@ -117,7 +116,7 @@ public final class DeleteMultiObjectRequest extends ObjectRequest {
             return;
         }
         String str3 = str;
-        if (str.startsWith(BridgeUtil.SPLIT_MARK)) {
+        if (str.startsWith("/")) {
             str3 = str.substring(1);
         }
         Delete.DeleteObject deleteObject = new Delete.DeleteObject();
@@ -142,7 +141,7 @@ public final class DeleteMultiObjectRequest extends ObjectRequest {
             Delete.DeleteObject deleteObject = new Delete.DeleteObject();
             String str = list.get(i2);
             if (!TextUtils.isEmpty(str)) {
-                if (str.startsWith(BridgeUtil.SPLIT_MARK)) {
+                if (str.startsWith("/")) {
                     deleteObject.key = str.substring(1);
                 } else {
                     deleteObject.key = str;
@@ -160,7 +159,7 @@ public final class DeleteMultiObjectRequest extends ObjectRequest {
                 String key = entry.getKey();
                 String value = entry.getValue();
                 if (!TextUtils.isEmpty(key)) {
-                    if (key.startsWith(BridgeUtil.SPLIT_MARK)) {
+                    if (key.startsWith("/")) {
                         deleteObject.key = key.substring(1);
                     } else {
                         deleteObject.key = key;

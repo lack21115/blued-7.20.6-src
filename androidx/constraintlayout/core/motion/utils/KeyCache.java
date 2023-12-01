@@ -7,27 +7,27 @@ import java.util.HashMap;
 public class KeyCache {
 
     /* renamed from: a  reason: collision with root package name */
-    HashMap<Object, HashMap<String, float[]>> f2034a = new HashMap<>();
+    HashMap<Object, HashMap<String, float[]>> f1986a = new HashMap<>();
 
     public float getFloatValue(Object obj, String str, int i) {
         HashMap<String, float[]> hashMap;
         float[] fArr;
-        if (this.f2034a.containsKey(obj) && (hashMap = this.f2034a.get(obj)) != null && hashMap.containsKey(str) && (fArr = hashMap.get(str)) != null && fArr.length > i) {
+        if (this.f1986a.containsKey(obj) && (hashMap = this.f1986a.get(obj)) != null && hashMap.containsKey(str) && (fArr = hashMap.get(str)) != null && fArr.length > i) {
             return fArr[i];
         }
         return Float.NaN;
     }
 
     public void setFloatValue(Object obj, String str, int i, float f) {
-        if (!this.f2034a.containsKey(obj)) {
+        if (!this.f1986a.containsKey(obj)) {
             HashMap<String, float[]> hashMap = new HashMap<>();
             float[] fArr = new float[i + 1];
             fArr[i] = f;
             hashMap.put(str, fArr);
-            this.f2034a.put(obj, hashMap);
+            this.f1986a.put(obj, hashMap);
             return;
         }
-        HashMap<String, float[]> hashMap2 = this.f2034a.get(obj);
+        HashMap<String, float[]> hashMap2 = this.f1986a.get(obj);
         HashMap<String, float[]> hashMap3 = hashMap2;
         if (hashMap2 == null) {
             hashMap3 = new HashMap<>();
@@ -36,7 +36,7 @@ public class KeyCache {
             float[] fArr2 = new float[i + 1];
             fArr2[i] = f;
             hashMap3.put(str, fArr2);
-            this.f2034a.put(obj, hashMap3);
+            this.f1986a.put(obj, hashMap3);
             return;
         }
         float[] fArr3 = hashMap3.get(str);

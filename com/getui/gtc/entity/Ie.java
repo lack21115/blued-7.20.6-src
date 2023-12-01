@@ -20,7 +20,7 @@ public class Ie implements Parcelable {
     private String aid;
 
     /* renamed from: cn  reason: collision with root package name */
-    private String f22000cn;
+    private String f8393cn;
     private String cs;
     private String k;
 
@@ -28,7 +28,7 @@ public class Ie implements Parcelable {
     }
 
     protected Ie(Parcel parcel) {
-        this.f22000cn = parcel.readString();
+        this.f8393cn = parcel.readString();
         this.aid = parcel.readString();
         this.cs = parcel.readString();
         this.k = parcel.readString();
@@ -46,8 +46,8 @@ public class Ie implements Parcelable {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        String str = this.f22000cn;
-        String str2 = ((Ie) obj).f22000cn;
+        String str = this.f8393cn;
+        String str2 = ((Ie) obj).f8393cn;
         return str != null ? str.equals(str2) : str2 == null;
     }
 
@@ -56,7 +56,7 @@ public class Ie implements Parcelable {
     }
 
     public String getCn() {
-        return this.f22000cn;
+        return this.f8393cn;
     }
 
     public String getCs() {
@@ -68,7 +68,7 @@ public class Ie implements Parcelable {
     }
 
     public int hashCode() {
-        String str = this.f22000cn;
+        String str = this.f8393cn;
         if (str != null) {
             return str.hashCode();
         }
@@ -80,7 +80,7 @@ public class Ie implements Parcelable {
     }
 
     public void setCn(String str) {
-        this.f22000cn = str;
+        this.f8393cn = str;
     }
 
     public void setCs(String str) {
@@ -93,7 +93,7 @@ public class Ie implements Parcelable {
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.f22000cn);
+        parcel.writeString(this.f8393cn);
         parcel.writeString(this.aid);
         parcel.writeString(this.cs);
         parcel.writeString(this.k);

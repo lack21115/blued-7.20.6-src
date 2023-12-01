@@ -57,7 +57,7 @@ public abstract class BaseNCodec implements BinaryDecoder, BinaryEncoder {
             return;
         }
         byte[] bArr2 = new byte[bArr.length * 2];
-        System.arraycopy((Object) bArr, 0, (Object) bArr2, 0, bArr.length);
+        System.arraycopy(bArr, 0, bArr2, 0, bArr.length);
         this.buffer = bArr2;
     }
 
@@ -88,7 +88,6 @@ public abstract class BaseNCodec implements BinaryDecoder, BinaryEncoder {
         }
     }
 
-    @Override // org.apache.commons.codec.Decoder
     public Object decode(Object obj) {
         if (obj instanceof byte[]) {
             return decode((byte[]) obj);
@@ -105,7 +104,6 @@ public abstract class BaseNCodec implements BinaryDecoder, BinaryEncoder {
         return decode(StringUtils.getBytesUtf8(str));
     }
 
-    @Override // org.apache.commons.codec.BinaryDecoder
     public byte[] decode(byte[] bArr) {
         reset();
         if (bArr != null && bArr.length != 0) {
@@ -119,7 +117,6 @@ public abstract class BaseNCodec implements BinaryDecoder, BinaryEncoder {
         return bArr;
     }
 
-    @Override // org.apache.commons.codec.Encoder
     public Object encode(Object obj) {
         if (obj instanceof byte[]) {
             return encode((byte[]) obj);
@@ -129,7 +126,6 @@ public abstract class BaseNCodec implements BinaryDecoder, BinaryEncoder {
 
     abstract void encode(byte[] bArr, int i, int i2);
 
-    @Override // org.apache.commons.codec.BinaryEncoder
     public byte[] encode(byte[] bArr) {
         reset();
         if (bArr != null && bArr.length != 0) {
@@ -209,7 +205,7 @@ public abstract class BaseNCodec implements BinaryDecoder, BinaryEncoder {
             return this.eof ? -1 : 0;
         }
         int min = Math.min(available(), i2);
-        System.arraycopy((Object) this.buffer, this.readPos, (Object) bArr, i, min);
+        System.arraycopy(this.buffer, this.readPos, bArr, i, min);
         int i3 = this.readPos + min;
         this.readPos = i3;
         if (i3 >= this.pos) {

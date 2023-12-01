@@ -20,11 +20,11 @@ import com.soft.blued.R;
 public class ShineVideoListIndepFragment extends BaseFragment {
 
     /* renamed from: a  reason: collision with root package name */
-    public Context f29816a;
+    public Context f16126a;
     public View b;
 
     /* renamed from: c  reason: collision with root package name */
-    public ViewPager f29817c;
+    public ViewPager f16127c;
     public MyAdapter d;
 
     /* loaded from: source-8303388-dex2jar.jar:com/soft/blued/ui/discover/fragment/ShineVideoListIndepFragment$MyAdapter.class */
@@ -43,31 +43,32 @@ public class ShineVideoListIndepFragment extends BaseFragment {
             return 1;
         }
 
+        /* JADX WARN: Type inference failed for: r0v0, types: [androidx.fragment.app.Fragment, com.blued.community.ui.video.fragment.ShineVideoListFragment] */
         @Override // androidx.fragment.app.FragmentPagerAdapter
         public Fragment getItem(int i) {
-            ShineVideoListFragment shineVideoListFragment = new ShineVideoListFragment();
+            ?? shineVideoListFragment = new ShineVideoListFragment();
             Bundle bundle = new Bundle();
-            bundle.putInt(ShineVideoListFragment.f20380a, 1);
+            bundle.putInt(ShineVideoListFragment.f6774a, 1);
             shineVideoListFragment.setArguments(bundle);
             return shineVideoListFragment;
         }
 
         @Override // androidx.viewpager.widget.PagerAdapter
         public CharSequence getPageTitle(int i) {
-            return ShineVideoListIndepFragment.this.f29816a.getResources().getString(2131891305);
+            return ShineVideoListIndepFragment.this.f16126a.getResources().getString(R.string.post_shine_video);
         }
     }
 
     public static void a(Context context) {
-        TerminalActivity.d(context, ShineVideoListIndepFragment.class, null);
+        TerminalActivity.d(context, ShineVideoListIndepFragment.class, (Bundle) null);
     }
 
     public void a() {
-        this.f29817c = (ViewPager) this.b.findViewById(R.id.viewpager);
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.b.findViewById(2131370749);
-        commonTopTitleNoTrans.setCenterText(2131891305);
-        commonTopTitleNoTrans.a();
-        commonTopTitleNoTrans.setLeftClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.discover.fragment.ShineVideoListIndepFragment.1
+        this.f16127c = (ViewPager) this.b.findViewById(R.id.viewpager);
+        CommonTopTitleNoTrans findViewById = this.b.findViewById(R.id.top_title);
+        findViewById.setCenterText((int) R.string.post_shine_video);
+        findViewById.a();
+        findViewById.setLeftClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.discover.fragment.ShineVideoListIndepFragment.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
@@ -76,13 +77,12 @@ public class ShineVideoListIndepFragment extends BaseFragment {
         });
         MyAdapter myAdapter = new MyAdapter(getChildFragmentManager());
         this.d = myAdapter;
-        this.f29817c.setAdapter(myAdapter);
+        this.f16127c.setAdapter(myAdapter);
         this.d.notifyDataSetChanged();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.f29816a = getActivity();
+        this.f16126a = getActivity();
         View view = this.b;
         if (view == null) {
             this.b = layoutInflater.inflate(R.layout.fragment_shine_video_list_independent, viewGroup, false);

@@ -14,10 +14,10 @@ public class GammaEvaluator {
         float b4 = b(((i2 >> 16) & 255) / 255.0f);
         float b5 = b(((i2 >> 8) & 255) / 255.0f);
         float b6 = b((i2 & 255) / 255.0f);
-        float a2 = a(b + ((b4 - b) * f));
-        float a3 = a(b2 + ((b5 - b2) * f));
-        float a4 = a(b3 + (f * (b6 - b3)));
-        return (Math.round(a2 * 255.0f) << 16) | (Math.round((f2 + (((((i2 >> 24) & 255) / 255.0f) - f2) * f)) * 255.0f) << 24) | (Math.round(a3 * 255.0f) << 8) | Math.round(a4 * 255.0f);
+        float a = a(b + ((b4 - b) * f));
+        float a2 = a(b2 + ((b5 - b2) * f));
+        float a3 = a(b3 + (f * (b6 - b3)));
+        return (Math.round(a * 255.0f) << 16) | (Math.round((f2 + (((((i2 >> 24) & 255) / 255.0f) - f2) * f)) * 255.0f) << 24) | (Math.round(a2 * 255.0f) << 8) | Math.round(a3 * 255.0f);
     }
 
     private static float b(float f) {

@@ -19,14 +19,13 @@ import kotlin.jvm.internal.Intrinsics;
 public final class ReportPhotoMenuDialogFragment extends BottomSheetDialogFragment {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Companion f33951a = new Companion(null);
+    public static final Companion f20260a = new Companion(null);
     private final Lazy b = LazyKt.a(new Function0<DialogReportPhotoMenuBinding>() { // from class: com.soft.blued.ui.user.fragment.ReportPhotoMenuDialogFragment$viewBinding$2
         /* JADX INFO: Access modifiers changed from: package-private */
         {
             super(0);
         }
 
-        @Override // kotlin.jvm.functions.Function0
         /* renamed from: a */
         public final DialogReportPhotoMenuBinding invoke() {
             return DialogReportPhotoMenuBinding.a(LayoutInflater.from(ReportPhotoMenuDialogFragment.this.getContext()));
@@ -34,7 +33,7 @@ public final class ReportPhotoMenuDialogFragment extends BottomSheetDialogFragme
     });
 
     /* renamed from: c  reason: collision with root package name */
-    private ClickCameraListener f33952c;
+    private ClickCameraListener f20261c;
     private ClickAlbumListener d;
 
     @Metadata
@@ -59,41 +58,41 @@ public final class ReportPhotoMenuDialogFragment extends BottomSheetDialogFragme
             this();
         }
 
-        public final ReportPhotoMenuDialogFragment a(FragmentManager manager) {
-            Intrinsics.e(manager, "manager");
+        public final ReportPhotoMenuDialogFragment a(FragmentManager fragmentManager) {
+            Intrinsics.e(fragmentManager, "manager");
             ReportPhotoMenuDialogFragment reportPhotoMenuDialogFragment = new ReportPhotoMenuDialogFragment();
-            reportPhotoMenuDialogFragment.show(manager, ReportPhotoMenuDialogFragment.class.getSimpleName());
+            reportPhotoMenuDialogFragment.show(fragmentManager, ReportPhotoMenuDialogFragment.class.getSimpleName());
             return reportPhotoMenuDialogFragment;
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(ReportPhotoMenuDialogFragment this$0, View view) {
+    public static final void a(ReportPhotoMenuDialogFragment reportPhotoMenuDialogFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.dismiss();
+        Intrinsics.e(reportPhotoMenuDialogFragment, "this$0");
+        reportPhotoMenuDialogFragment.dismiss();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(ReportPhotoMenuDialogFragment this$0, View view) {
+    public static final void b(ReportPhotoMenuDialogFragment reportPhotoMenuDialogFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        ClickCameraListener clickCameraListener = this$0.f33952c;
+        Intrinsics.e(reportPhotoMenuDialogFragment, "this$0");
+        ClickCameraListener clickCameraListener = reportPhotoMenuDialogFragment.f20261c;
         if (clickCameraListener != null) {
             clickCameraListener.onClick();
         }
-        this$0.dismiss();
+        reportPhotoMenuDialogFragment.dismiss();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void c(ReportPhotoMenuDialogFragment this$0, View view) {
+    public static final void c(ReportPhotoMenuDialogFragment reportPhotoMenuDialogFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        ClickAlbumListener clickAlbumListener = this$0.d;
+        Intrinsics.e(reportPhotoMenuDialogFragment, "this$0");
+        ClickAlbumListener clickAlbumListener = reportPhotoMenuDialogFragment.d;
         if (clickAlbumListener != null) {
             clickAlbumListener.a();
         }
-        this$0.dismiss();
+        reportPhotoMenuDialogFragment.dismiss();
     }
 
     private final void i() {
@@ -122,14 +121,13 @@ public final class ReportPhotoMenuDialogFragment extends BottomSheetDialogFragme
     }
 
     public final void a(ClickCameraListener clickCameraListener) {
-        this.f33952c = clickCameraListener;
+        this.f20261c = clickCameraListener;
     }
 
     public final DialogReportPhotoMenuBinding h() {
         return (DialogReportPhotoMenuBinding) this.b.getValue();
     }
 
-    @Override // com.blued.android.module.common.base.dialog.bottomsheet.BottomSheetDialogFragment, androidx.fragment.app.DialogFragment
     public void setupDialog(Dialog dialog, int i) {
         Intrinsics.e(dialog, "dialog");
         super.setupDialog(dialog, i);

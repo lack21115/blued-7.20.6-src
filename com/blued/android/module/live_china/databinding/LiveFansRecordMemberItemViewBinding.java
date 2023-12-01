@@ -5,13 +5,10 @@ import androidx.viewbinding.ViewBinding;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/LiveFansRecordMemberItemViewBinding.class */
 public final class LiveFansRecordMemberItemViewBinding implements ViewBinding {
+    private final LinearLayout a;
 
-    /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f12199a;
-
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f12199a;
+        return this.a;
     }
 }

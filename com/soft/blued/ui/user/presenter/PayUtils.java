@@ -12,7 +12,6 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleObserver;
 import androidx.lifecycle.OnLifecycleEvent;
-import com.blued.android.chat.core.pack.ReqAckPackage;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.AppMethods;
 import com.blued.android.core.net.IRequestHost;
@@ -65,11 +64,11 @@ import java.util.TimerTask;
 public class PayUtils {
 
     /* renamed from: a  reason: collision with root package name */
-    public Context f34259a;
+    public Context f20568a;
     public String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public IRequestHost f34260c;
+    public IRequestHost f20569c;
     public String d;
     public String e;
     public String f;
@@ -89,11 +88,10 @@ public class PayUtils {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public void onUIUpdate(BluedEntityA<PayRemaining> bluedEntityA) {
             try {
-                PayOrderInfo.AlipayOrder alipayOrder = (PayOrderInfo.AlipayOrder) AppInfo.f().fromJson(AesCrypto.c(bluedEntityA.data.get(0).encrypted), (Class<Object>) PayOrderInfo.AlipayOrder.class);
+                PayOrderInfo.AlipayOrder alipayOrder = (PayOrderInfo.AlipayOrder) AppInfo.f().fromJson(AesCrypto.c(((PayRemaining) bluedEntityA.data.get(0)).encrypted), (Class<Object>) PayOrderInfo.AlipayOrder.class);
                 String str = null;
                 if (!TextUtils.isEmpty(alipayOrder.info)) {
                     str = null;
@@ -103,7 +101,7 @@ public class PayUtils {
                     }
                 }
                 final String str2 = str;
-                AlipayUtils.a(PayUtils.this.f34259a, new Handler() { // from class: com.soft.blued.ui.user.presenter.PayUtils.1.1
+                AlipayUtils.a(PayUtils.this.f20568a, new Handler() { // from class: com.soft.blued.ui.user.presenter.PayUtils.1.1
                     @Override // android.os.Handler
                     public void handleMessage(Message message) {
                         try {
@@ -116,7 +114,7 @@ public class PayUtils {
                                 new Timer().schedule(new TimerTask() { // from class: com.soft.blued.ui.user.presenter.PayUtils.1.1.1
                                     @Override // java.util.TimerTask, java.lang.Runnable
                                     public void run() {
-                                        WXPayEntryActivity.a(PayUtils.this.f34259a, result.toString());
+                                        WXPayEntryActivity.a(PayUtils.this.f20568a, result.toString());
                                     }
                                 }, 200L);
                                 if (PayUtils.this.i != null) {
@@ -125,15 +123,15 @@ public class PayUtils {
                             } else if (a2.equals("6001")) {
                                 BluedStatistics.c().a("ALI_PAY_CANCEL", 0L, 0, (String) message.obj);
                                 VIPBuyResultObserver.a().a(0, false);
-                                AppMethods.a((CharSequence) "支付取消");
+                                AppMethods.a("支付取消");
                             } else {
                                 BluedStatistics.c().a("ALI_PAY_FAIL", 0L, 0, (String) message.obj);
                                 VIPBuyResultObserver.a().a(0, false);
-                                AppMethods.a((CharSequence) PayUtils.this.f34259a.getResources().getString(2131886224));
+                                AppMethods.a(PayUtils.this.f20568a.getResources().getString(R.string.Live_setting_rechargeFail));
                             }
                         } catch (Exception e) {
                             VIPBuyResultObserver.a().a(0, false);
-                            AppMethods.a((CharSequence) AppInfo.d().getResources().getString(2131887272));
+                            AppMethods.a(AppInfo.d().getResources().getString(2131887272));
                         }
                     }
                 }, alipayOrder.sign_type, alipayOrder.info, alipayOrder.sign);
@@ -142,11 +140,10 @@ public class PayUtils {
                 }
             } catch (Exception e) {
                 VIPBuyResultObserver.a().a(0, false);
-                AppMethods.a((CharSequence) AppInfo.d().getResources().getString(2131887272));
+                AppMethods.a(AppInfo.d().getResources().getString(2131887272));
             }
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public boolean onUIFailure(int i, String str) {
             VIPBuyResultObserver.a().a(0, false);
             switch (i) {
@@ -164,12 +161,10 @@ public class PayUtils {
             }
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIFinish() {
             super.onUIFinish();
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIStart() {
             super.onUIStart();
         }
@@ -181,29 +176,28 @@ public class PayUtils {
     public class AnonymousClass3 extends BluedUIHttpResponse<BluedEntityA<GiftPayRemaining>> {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ GoodsOptionBasic f34265a;
+        final /* synthetic */ GoodsOptionBasic f20574a;
         final /* synthetic */ String b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ Context f34266c;
+        final /* synthetic */ Context f20575c;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         AnonymousClass3(IRequestHost iRequestHost, GoodsOptionBasic goodsOptionBasic, String str, Context context) {
             super(iRequestHost);
-            this.f34265a = goodsOptionBasic;
+            this.f20574a = goodsOptionBasic;
             this.b = str;
-            this.f34266c = context;
+            this.f20575c = context;
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public void onUIUpdate(BluedEntityA<GiftPayRemaining> bluedEntityA) {
             if (PayUtils.this.j != null) {
-                PayUtils.this.j.f34868a.dismiss();
+                PayUtils.this.j.f21177a.dismiss();
             }
             if (bluedEntityA.hasData()) {
-                PayUtils.this.k = bluedEntityA.data.get(0);
+                PayUtils.this.k = (GiftPayRemaining) bluedEntityA.data.get(0);
                 if (!TextUtils.isEmpty(PayUtils.this.k.token)) {
                     BluedPreferences.H(PayUtils.this.k.token);
                 }
@@ -214,55 +208,54 @@ public class PayUtils {
                             return;
                         }
                         FuGiftListEvent fuGiftListEvent = new FuGiftListEvent();
-                        fuGiftListEvent.f32324a = PayUtils.this.k.lucky_list;
+                        fuGiftListEvent.f18634a = PayUtils.this.k.lucky_list;
                         LiveEventBus.get(EventBusConstant.KEY_EVENT_BUY_FU, FuGiftListEvent.class).post(fuGiftListEvent);
                     }
                 }, 500L);
             }
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public boolean onUIFailure(int i, String str, String str2) {
             LiveGiftPayTools.a(str2);
-            final Pair<Integer, String> a2 = BluedHttpUtils.a(null, i, str2);
-            if (a2.first.intValue() == 0) {
+            final Pair a2 = BluedHttpUtils.a((Throwable) null, i, str2);
+            if (((Integer) a2.first).intValue() == 0) {
                 return super.onUIFailure(i, str, str2);
             }
             if (i == 4221002) {
                 AppInfo.n().post(new Runnable() { // from class: com.soft.blued.ui.user.presenter.PayUtils.3.4
                     @Override // java.lang.Runnable
                     public void run() {
-                        LiveGiftPayTools.a(PayUtils.this.f34259a, PayUtils.this.f34260c);
+                        LiveGiftPayTools.a(PayUtils.this.f20568a, PayUtils.this.f20569c);
                     }
                 });
                 return true;
             } else if (i == 4221008) {
-                if (PayUtils.this.j != null && PayUtils.this.j.f34868a != null && PayUtils.this.j.f34868a.isShowing()) {
-                    PayUtils.this.j.f34868a.dismiss();
+                if (PayUtils.this.j != null && PayUtils.this.j.f21177a != null && PayUtils.this.j.f21177a.isShowing()) {
+                    PayUtils.this.j.f21177a.dismiss();
                 }
-                CommonAlertDialog.a(PayUtils.this.f34259a, "", PayUtils.this.f34259a.getResources().getString(2131886091), PayUtils.this.f34259a.getString(2131886096), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.user.presenter.PayUtils.3.3
+                CommonAlertDialog.a(PayUtils.this.f20568a, "", PayUtils.this.f20568a.getResources().getString(R.string.Live_SendPresent_notEnoughWandou), PayUtils.this.f20568a.getString(R.string.Live_SendPresent_recharge), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.user.presenter.PayUtils.3.3
                     @Override // android.content.DialogInterface.OnClickListener
                     public void onClick(DialogInterface dialogInterface, int i2) {
                         Tracker.onClick(dialogInterface, i2);
                         dialogInterface.dismiss();
-                        BeansPrePayFragment.a(PayUtils.this.f34259a, 6);
+                        BeansPrePayFragment.a(PayUtils.this.f20568a, 6);
                     }
-                }, PayUtils.this.f34259a.getString(2131887258), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
+                }, PayUtils.this.f20568a.getString(R.string.common_cancel), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
                 return true;
             } else {
                 switch (i) {
                     case 4221004:
-                        if (TextUtils.isEmpty(a2.second)) {
+                        if (TextUtils.isEmpty((CharSequence) a2.second)) {
                             return true;
                         }
                         AppInfo.n().post(new Runnable() { // from class: com.soft.blued.ui.user.presenter.PayUtils.3.2
                             @Override // java.lang.Runnable
                             public void run() {
-                                if (PayUtils.this.j == null || PayUtils.this.j.f34869c == null || PayUtils.this.j.b == null) {
+                                if (PayUtils.this.j == null || PayUtils.this.j.f21178c == null || PayUtils.this.j.b == null) {
                                     return;
                                 }
-                                PayUtils.this.j.f34869c.setTextColor(PayUtils.this.f34259a.getResources().getColor(2131099765));
-                                PayUtils.this.j.f34869c.setText((CharSequence) a2.second);
+                                PayUtils.this.j.f21178c.setTextColor(PayUtils.this.f20568a.getResources().getColor(2131099765));
+                                PayUtils.this.j.f21178c.setText((CharSequence) a2.second);
                                 PayUtils.this.j.b.a();
                             }
                         });
@@ -271,10 +264,10 @@ public class PayUtils {
                         AppInfo.n().post(new Runnable() { // from class: com.soft.blued.ui.user.presenter.PayUtils.3.5
                             @Override // java.lang.Runnable
                             public void run() {
-                                if (PayUtils.this.j == null || PayUtils.this.j.f34868a == null || !PayUtils.this.j.f34868a.isShowing()) {
-                                    String string = PayUtils.this.f34259a.getResources().getString(2131886103);
-                                    String string2 = PayUtils.this.f34259a.getResources().getString(2131886104);
-                                    PayUtils.this.j = CommonAlertDialog2.a(PayUtils.this.f34259a, string, string2, true, false, true, true, new CommonAlertDialog2.PWDListener() { // from class: com.soft.blued.ui.user.presenter.PayUtils.3.5.1
+                                if (PayUtils.this.j == null || PayUtils.this.j.f21177a == null || !PayUtils.this.j.f21177a.isShowing()) {
+                                    String string = PayUtils.this.f20568a.getResources().getString(R.string.Live_SendPresent_verifyPassword);
+                                    String string2 = PayUtils.this.f20568a.getResources().getString(R.string.Live_SendPresent_verifyPasswordText);
+                                    PayUtils.this.j = CommonAlertDialog2.a(PayUtils.this.f20568a, string, string2, true, false, true, true, new CommonAlertDialog2.PWDListener() { // from class: com.soft.blued.ui.user.presenter.PayUtils.3.5.1
                                         @Override // com.soft.blued.view.dialog.CommonAlertDialog2.PWDListener
                                         public void onClick(String str3, boolean z, DialogWith6PW dialogWith6PW) {
                                             String str4;
@@ -287,7 +280,7 @@ public class PayUtils {
                                                 e.printStackTrace();
                                                 str4 = "";
                                             }
-                                            PayUtils.this.a(PayUtils.this.f34259a, AnonymousClass3.this.f34265a, str4, z, "", AnonymousClass3.this.b);
+                                            PayUtils.this.a(PayUtils.this.f20568a, AnonymousClass3.this.f20574a, str4, z, "", AnonymousClass3.this.b);
                                         }
                                     }, null);
                                 }
@@ -318,24 +311,23 @@ public class PayUtils {
             }
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIFinish(boolean z) {
             super.onUIFinish(z);
             VIPBuyResultObserver.a().a(3, z);
-            if (z && TextUtils.equals(this.f34265a.trade_type, ReqAckPackage.REQ_RESPONSE_KEY.BEANS)) {
-                Context context = this.f34266c;
+            if (z && TextUtils.equals(this.f20574a.trade_type, "beans")) {
+                Context context = this.f20575c;
                 if (context instanceof Activity) {
                     ((Activity) context).finish();
-                    PayUtils.a(this.f34266c, this.b, PayUtils.this.k == null ? "" : PayUtils.this.k.order_id, this.f34265a.id);
+                    PayUtils.a(this.f20575c, this.b, PayUtils.this.k == null ? "" : PayUtils.this.k.order_id, this.f20574a.id);
                 }
             }
         }
     }
 
     public PayUtils(Context context, String str, IRequestHost iRequestHost) {
-        this.f34259a = context;
+        this.f20568a = context;
         this.b = str;
-        this.f34260c = iRequestHost;
+        this.f20569c = iRequestHost;
         IWXAPI createWXAPI = WXAPIFactory.createWXAPI(context, ShareCoreConstants.a(), false);
         this.l = createWXAPI;
         createWXAPI.registerApp(ShareCoreConstants.a());
@@ -393,14 +385,14 @@ public class PayUtils {
     }
 
     public static void a(Context context, final String str, final String str2) {
-        if (BDActivityManager.f34819a.a() != null) {
-            context = BDActivityManager.f34819a.a();
+        if (BDActivityManager.f21128a.a() != null) {
+            context = BDActivityManager.f21128a.a();
         }
-        BluedAlertDialog a2 = CommonAlertDialog.a(context, context.getString(2131888059), context.getString(2131888057), context.getString(2131888058), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.user.presenter.PayUtils.5
+        BluedAlertDialog a2 = CommonAlertDialog.a(context, context.getString(R.string.feed_super_bug_title), context.getString(R.string.feed_super_bug_msg), context.getString(R.string.feed_super_bug_sure), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.user.presenter.PayUtils.5
             @Override // android.content.DialogInterface.OnClickListener
             public void onClick(DialogInterface dialogInterface, int i) {
                 Tracker.onClick(dialogInterface, i);
-                WebViewShowInfoFragment.show(BDActivityManager.f34819a.a(), H5Url.a(55, String.this, str2), 0);
+                WebViewShowInfoFragment.show(BDActivityManager.f21128a.a(), H5Url.a(55, new Object[]{str, str2}), 0);
             }
         }, (DialogInterface.OnDismissListener) null, 1);
         a2.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: com.soft.blued.ui.user.presenter.PayUtils.6
@@ -424,22 +416,22 @@ public class PayUtils {
                 public void onStop() {
                     Log.v("drb", "onStop");
                     Activity activity = Context.this;
-                    if (BDActivityManager.f34819a.a() != null) {
-                        activity = BDActivityManager.f34819a.a();
+                    if (BDActivityManager.f21128a.a() != null) {
+                        activity = BDActivityManager.f21128a.a();
                     }
-                    String string = activity.getString(2131888057);
+                    String string = activity.getString(R.string.feed_super_bug_msg);
                     if (PayUtils.a(i)) {
                         LiveEventBus.get(EventBusConstant.KEY_EVENT_REFRESH_SUPER_EXPOSURE).post(true);
                         string = activity.getString(R.string.super_exposure_fire_bag_buy_success_content);
                     }
-                    BluedAlertDialog a2 = CommonAlertDialog.a(activity, activity.getString(2131888059), string, activity.getString(2131888058), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.user.presenter.PayUtils.4.1
+                    BluedAlertDialog a2 = CommonAlertDialog.a(activity, activity.getString(R.string.feed_super_bug_title), string, activity.getString(R.string.feed_super_bug_sure), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.user.presenter.PayUtils.4.1
                         @Override // android.content.DialogInterface.OnClickListener
                         public void onClick(DialogInterface dialogInterface, int i2) {
                             Tracker.onClick(dialogInterface, i2);
                             if (PayUtils.a(i)) {
                                 return;
                             }
-                            WebViewShowInfoFragment.show(BDActivityManager.f34819a.a(), H5Url.a(55, str, str2), 0);
+                            WebViewShowInfoFragment.show(BDActivityManager.f21128a.a(), H5Url.a(55, new Object[]{str, str2}), 0);
                         }
                     }, (DialogInterface.OnDismissListener) null, 1);
                     a2.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: com.soft.blued.ui.user.presenter.PayUtils.4.2
@@ -458,7 +450,7 @@ public class PayUtils {
     }
 
     public BluedUIHttpResponse a() {
-        return new AnonymousClass1(this.f34260c);
+        return new AnonymousClass1(this.f20569c);
     }
 
     public void a(int i, GoodsOptionBasic goodsOptionBasic, int i2) {
@@ -466,7 +458,7 @@ public class PayUtils {
             if (i != 1) {
                 if (i == 2) {
                     if (c()) {
-                        PayHttpUtils.a(b(), this.f34260c, 2, goodsOptionBasic.id, this.b, this.e, this.d, this.f, this.g, this.h);
+                        PayHttpUtils.a(b(), this.f20569c, 2, goodsOptionBasic.id, this.b, this.e, this.d, this.f, this.g, this.h);
                         return;
                     }
                     return;
@@ -474,14 +466,14 @@ public class PayUtils {
                     return;
                 }
             }
-            PayHttpUtils.a(a(), this.f34260c, i, goodsOptionBasic.id, this.b, this.e, this.d, this.f, this.g, this.h);
+            PayHttpUtils.a(a(), this.f20569c, i, goodsOptionBasic.id, this.b, this.e, this.d, this.f, this.g, this.h);
         }
     }
 
     public void a(Context context, GoodsOptionBasic goodsOptionBasic, String str, boolean z, String str2, String str3) {
-        AnonymousClass3 anonymousClass3 = new AnonymousClass3(this.f34260c, goodsOptionBasic, str3, context);
+        AnonymousClass3 anonymousClass3 = new AnonymousClass3(this.f20569c, goodsOptionBasic, str3, context);
         String str4 = this.d;
-        UserHttpUtils.a(anonymousClass3, str4, goodsOptionBasic.id + "", goodsOptionBasic.feed_id, this.g, null, this.f34260c, str, str2, z, goodsOptionBasic.trade_type, goodsOptionBasic.beans, goodsOptionBasic.aim, goodsOptionBasic.promotion_type, goodsOptionBasic.role, goodsOptionBasic.age, goodsOptionBasic.area);
+        UserHttpUtils.a(anonymousClass3, str4, goodsOptionBasic.id + "", goodsOptionBasic.feed_id, this.g, null, this.f20569c, str, str2, z, goodsOptionBasic.trade_type, goodsOptionBasic.beans, goodsOptionBasic.aim, goodsOptionBasic.promotion_type, goodsOptionBasic.role, goodsOptionBasic.age, goodsOptionBasic.area);
     }
 
     public void a(String str, String str2, String str3, String str4, int i, LiveChargeCouponModel liveChargeCouponModel) {
@@ -494,13 +486,12 @@ public class PayUtils {
     }
 
     public BluedUIHttpResponse b() {
-        return new BluedUIHttpResponse<BluedEntityA<PayRemaining>>(this.f34260c) { // from class: com.soft.blued.ui.user.presenter.PayUtils.2
+        return new BluedUIHttpResponse<BluedEntityA<PayRemaining>>(this.f20569c) { // from class: com.soft.blued.ui.user.presenter.PayUtils.2
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<PayRemaining> bluedEntityA) {
                 try {
-                    String c2 = AesCrypto.c(bluedEntityA.data.get(0).encrypted);
+                    String c2 = AesCrypto.c(((PayRemaining) bluedEntityA.data.get(0)).encrypted);
                     Gson f = AppInfo.f();
                     PayOrderInfo.WXpayOrder wXpayOrder = (PayOrderInfo.WXpayOrder) f.fromJson(c2, (Class<Object>) PayOrderInfo.WXpayOrder.class);
                     PayReq payReq = new PayReq();
@@ -523,11 +514,10 @@ public class PayUtils {
                     PayUtils.this.l.sendReq(payReq);
                 } catch (Exception e2) {
                     VIPBuyResultObserver.a().a(0, false);
-                    AppMethods.a((CharSequence) AppInfo.d().getResources().getString(2131887272));
+                    AppMethods.a(AppInfo.d().getResources().getString(2131887272));
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str) {
                 VIPBuyResultObserver.a().a(0, false);
                 switch (i) {
@@ -550,7 +540,7 @@ public class PayUtils {
     public boolean c() {
         boolean z = this.l.getWXAppSupportAPI() >= 570425345;
         if (!z) {
-            AppMethods.a((CharSequence) this.f34259a.getResources().getString(2131886219));
+            AppMethods.a(this.f20568a.getResources().getString(R.string.Live_setting_noWechat));
         }
         return z;
     }

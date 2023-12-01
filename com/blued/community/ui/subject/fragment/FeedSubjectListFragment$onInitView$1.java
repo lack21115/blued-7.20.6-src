@@ -30,7 +30,7 @@ public final class FeedSubjectListFragment$onInitView$1 extends CommonAdapter<Bl
         Intrinsics.e(this$0, "this$0");
         Intrinsics.e(item, "$item");
         FeedConstants.b = FeedProtos.DetailFrom.FIND_TOPIC_MINE;
-        CommRouteUtil.a(this$0.f10437a, item.super_did, item.name);
+        CommRouteUtil.a(this$0.a, item.super_did, item.name);
     }
 
     @Override // com.blued.android.module.common.adapter.CommonAdapter

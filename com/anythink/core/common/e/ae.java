@@ -4,26 +4,18 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/e/ae.class */
 public final class ae {
-
-    /* renamed from: a  reason: collision with root package name */
-    public int f6622a;
+    public int a;
     public String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public int f6623c;
+    public int c;
     public int d;
     public long e;
     public ConcurrentHashMap<String, a> f;
 
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/e/ae$a.class */
     public static final class a {
-
-        /* renamed from: a  reason: collision with root package name */
-        public String f6624a;
+        public String a;
         public String b;
-
-        /* renamed from: c  reason: collision with root package name */
-        public String f6625c;
+        public String c;
         public int d;
         public int e;
         public long f;

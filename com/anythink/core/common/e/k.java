@@ -4,13 +4,9 @@ import java.io.Serializable;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/e/k.class */
 public abstract class k implements Serializable {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final String f6665a = "320x50";
+    public static final String a = "320x50";
     public static final String b = "320x90";
-
-    /* renamed from: c  reason: collision with root package name */
-    public static final String f6666c = "300x250";
+    public static final String c = "300x250";
     public static final String d = "728x90";
     private int A;
     private long B;

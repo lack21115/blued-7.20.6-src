@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class GlobalPopTaskProgressBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final RelativeLayout f29052a;
+    private final RelativeLayout f15362a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
-        return this.f29052a;
+        return this.f15362a;
     }
 }

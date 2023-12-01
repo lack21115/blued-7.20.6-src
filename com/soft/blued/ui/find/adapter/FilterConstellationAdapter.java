@@ -22,21 +22,21 @@ import kotlin.jvm.internal.Intrinsics;
 public final class FilterConstellationAdapter extends BaseAdapter {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f30039a;
+    private Context f16349a;
     private List<? extends ConstellationModel> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f30040c;
+    private int f16350c;
 
     public FilterConstellationAdapter(Context context, List<? extends ConstellationModel> list) {
         Intrinsics.e(context, "context");
         Intrinsics.e(list, "list");
-        this.f30039a = context;
+        this.f16349a = context;
         this.b = list;
     }
 
     public final void a(int i) {
-        this.f30040c = i;
+        this.f16350c = i;
     }
 
     @Override // android.widget.Adapter
@@ -61,15 +61,15 @@ public final class FilterConstellationAdapter extends BaseAdapter {
     @Override // android.widget.Adapter
     public View getView(int i, View view, ViewGroup viewGroup) {
         List<? extends ConstellationModel> list;
-        View rootView = LayoutInflater.from(this.f30039a).inflate(R.layout.item_filter_new_constellation, viewGroup, false);
-        ItemFilterNewConstellationBinding a2 = ItemFilterNewConstellationBinding.a(rootView);
+        View inflate = LayoutInflater.from(this.f16349a).inflate(R.layout.item_filter_new_constellation, viewGroup, false);
+        ItemFilterNewConstellationBinding a2 = ItemFilterNewConstellationBinding.a(inflate);
         Intrinsics.c(a2, "bind(rootView)");
-        Context context = this.f30039a;
+        Context context = this.f16349a;
         if (context != null && (list = this.b) != null) {
-            ViewGroup.LayoutParams layoutParams = a2.f29176a.getLayoutParams();
+            ViewGroup.LayoutParams layoutParams = a2.f15486a.getLayoutParams();
             Intrinsics.c(layoutParams, "vb.itemView.layoutParams");
-            layoutParams.width = (context.getResources().getDisplayMetrics().widthPixels - DensityUtils.a(this.f30039a, 65.0f)) / 5;
-            a2.f29176a.setLayoutParams(layoutParams);
+            layoutParams.width = (context.getResources().getDisplayMetrics().widthPixels - DensityUtils.a(this.f16349a, 65.0f)) / 5;
+            a2.f15486a.setLayoutParams(layoutParams);
             ViewGroup.LayoutParams layoutParams2 = a2.b.getLayoutParams();
             layoutParams2.width = layoutParams.width;
             layoutParams2.height = layoutParams.width;
@@ -81,11 +81,11 @@ public final class FilterConstellationAdapter extends BaseAdapter {
             }
             ImageLoader.a((IRequestHost) null, str).a(a2.b);
             if (!TextUtils.isEmpty(constellationModel.name)) {
-                a2.f29177c.setText(constellationModel.name);
+                a2.f15487c.setText(constellationModel.name);
             }
-            a(a2.f29176a.getLayoutParams().height);
+            a(a2.f15486a.getLayoutParams().height);
         }
-        Intrinsics.c(rootView, "rootView");
-        return rootView;
+        Intrinsics.c(inflate, "rootView");
+        return inflate;
     }
 }

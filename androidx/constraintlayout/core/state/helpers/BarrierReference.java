@@ -17,7 +17,7 @@ public class BarrierReference extends HelperReference {
     static /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f2107a;
+        static final /* synthetic */ int[] f2059a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:15:0x004d -> B:37:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:17:0x0051 -> B:33:0x001f). Please submit an issue!!! */
@@ -26,29 +26,29 @@ public class BarrierReference extends HelperReference {
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:23:0x005d -> B:35:0x0040). Please submit an issue!!! */
         static {
             int[] iArr = new int[State.Direction.values().length];
-            f2107a = iArr;
+            f2059a = iArr;
             try {
                 iArr[State.Direction.LEFT.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f2107a[State.Direction.START.ordinal()] = 2;
+                f2059a[State.Direction.START.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f2107a[State.Direction.RIGHT.ordinal()] = 3;
+                f2059a[State.Direction.RIGHT.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f2107a[State.Direction.END.ordinal()] = 4;
+                f2059a[State.Direction.END.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f2107a[State.Direction.TOP.ordinal()] = 5;
+                f2059a[State.Direction.TOP.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
             try {
-                f2107a[State.Direction.BOTTOM.ordinal()] = 6;
+                f2059a[State.Direction.BOTTOM.ordinal()] = 6;
             } catch (NoSuchFieldError e6) {
             }
         }
@@ -61,7 +61,7 @@ public class BarrierReference extends HelperReference {
     @Override // androidx.constraintlayout.core.state.HelperReference, androidx.constraintlayout.core.state.ConstraintReference, androidx.constraintlayout.core.state.Reference
     public void apply() {
         getHelperWidget();
-        int i = AnonymousClass1.f2107a[this.af.ordinal()];
+        int i = AnonymousClass1.f2059a[this.af.ordinal()];
         int i2 = 3;
         if (i == 3 || i == 4) {
             i2 = 1;

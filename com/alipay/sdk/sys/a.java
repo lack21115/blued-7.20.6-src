@@ -7,6 +7,8 @@ import android.os.SystemClock;
 import android.text.TextUtils;
 import com.alipay.sdk.app.statistic.c;
 import com.alipay.sdk.util.n;
+import com.android.internal.content.NativeLibraryHelper;
+import com.anythink.core.api.ATAdConst;
 import java.io.Serializable;
 import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
@@ -17,13 +19,9 @@ import org.json.JSONObject;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alipay/sdk/sys/a.class */
 public class a {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final String f4647a = "\"&";
+    public static final String a = "\"&";
     public static final String b = "&";
-
-    /* renamed from: c  reason: collision with root package name */
-    public static final String f4648c = "bizcontext=\"";
+    public static final String c = "bizcontext=\"";
     public static final String d = "bizcontext=";
     public static final String e = "\"";
     public static final String f = "appkey";
@@ -46,22 +44,18 @@ public class a {
 
     /* renamed from: com.alipay.sdk.sys.a$a  reason: collision with other inner class name */
     /* loaded from: source-6737240-dex2jar.jar:com/alipay/sdk/sys/a$a.class */
-    public static final class C0050a {
-
-        /* renamed from: a  reason: collision with root package name */
-        private static final HashMap<UUID, a> f4649a = new HashMap<>();
+    public static final class C0010a {
+        private static final HashMap<UUID, a> a = new HashMap<>();
         private static final HashMap<String, a> b = new HashMap<>();
-
-        /* renamed from: c  reason: collision with root package name */
-        private static final String f4650c = "i_uuid_b_c";
+        private static final String c = "i_uuid_b_c";
 
         public static a a(Intent intent) {
             if (intent == null) {
                 return null;
             }
-            Serializable serializableExtra = intent.getSerializableExtra(f4650c);
+            Serializable serializableExtra = intent.getSerializableExtra(c);
             if (serializableExtra instanceof UUID) {
-                return f4649a.remove((UUID) serializableExtra);
+                return a.remove((UUID) serializableExtra);
             }
             return null;
         }
@@ -78,8 +72,8 @@ public class a {
                 return;
             }
             UUID randomUUID = UUID.randomUUID();
-            f4649a.put(randomUUID, aVar);
-            intent.putExtra(f4650c, randomUUID);
+            a.put(randomUUID, aVar);
+            intent.putExtra(c, randomUUID);
         }
 
         public static void a(a aVar, String str) {
@@ -150,14 +144,14 @@ public class a {
         } else {
             jSONObject = new JSONObject(substring2);
         }
-        if (!jSONObject.has("appkey")) {
-            jSONObject.put("appkey", com.alipay.sdk.cons.a.f);
+        if (!jSONObject.has(f)) {
+            jSONObject.put(f, com.alipay.sdk.cons.a.f);
         }
         if (!jSONObject.has(g)) {
             jSONObject.put(g, "and_lite");
         }
-        if (!jSONObject.has("sv")) {
-            jSONObject.put("sv", "h.a.3.7.4");
+        if (!jSONObject.has(h)) {
+            jSONObject.put(h, "h.a.3.7.4");
         }
         if (!jSONObject.has(i) && (!this.u.contains(j) || !n.b(this.v))) {
             jSONObject.put(i, this.u);
@@ -183,7 +177,7 @@ public class a {
         HashMap<String, String> hashMap = new HashMap<>();
         if (aVar != null) {
             hashMap.put("sdk_ver", "15.7.4");
-            hashMap.put("app_name", aVar.u);
+            hashMap.put(ATAdConst.KEY.APP_NAME, aVar.u);
             hashMap.put("token", aVar.p);
             hashMap.put("call_type", aVar.r);
             hashMap.put("ts_api_invoke", String.valueOf(aVar.q));
@@ -197,14 +191,14 @@ public class a {
     }
 
     private boolean b(String str) {
-        return !str.contains(f4647a);
+        return !str.contains(a);
     }
 
     private String c(String str) {
         try {
-            String a2 = a(str, "&", d);
+            String a2 = a(str, b, d);
             if (TextUtils.isEmpty(a2)) {
-                return str + "&" + b(d, "");
+                return str + b + b(d, "");
             }
             int indexOf = str.indexOf(a2);
             String substring = str.substring(0, indexOf);
@@ -228,7 +222,7 @@ public class a {
             }
             return String.format("EP%s%s_%s", "1", n.f(String.format(locale, "%s%s%d%s", str3, str4, Long.valueOf(System.currentTimeMillis()), UUID.randomUUID().toString())), Long.valueOf(System.currentTimeMillis()));
         } catch (Throwable th) {
-            return "-";
+            return NativeLibraryHelper.CLEAR_ABI_OVERRIDE;
         }
     }
 
@@ -244,16 +238,16 @@ public class a {
 
     private String d(String str) {
         try {
-            String a2 = a(str, f4647a, f4648c);
+            String a2 = a(str, a, c);
             if (TextUtils.isEmpty(a2)) {
-                return str + "&" + b(f4648c, "\"");
+                return str + b + b(c, "\"");
             }
             String str2 = a2;
             if (!a2.endsWith("\"")) {
                 str2 = a2 + "\"";
             }
             int indexOf = str.indexOf(str2);
-            return str.substring(0, indexOf) + a(str2, f4648c, "\"", false) + str.substring(indexOf + str2.length());
+            return str.substring(0, indexOf) + a(str2, c, "\"", false) + str.substring(indexOf + str2.length());
         } catch (Throwable th) {
             return str;
         }
@@ -269,9 +263,9 @@ public class a {
     public String a(String str, String str2) {
         try {
             JSONObject jSONObject = new JSONObject();
-            jSONObject.put("appkey", com.alipay.sdk.cons.a.f);
+            jSONObject.put(f, com.alipay.sdk.cons.a.f);
             jSONObject.put(g, "and_lite");
-            jSONObject.put("sv", "h.a.3.7.4");
+            jSONObject.put(h, "h.a.3.7.4");
             if (!this.u.contains(j) || !n.b(this.v)) {
                 jSONObject.put(i, this.u);
             }

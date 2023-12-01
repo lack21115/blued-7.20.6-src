@@ -14,6 +14,7 @@ import com.blued.das.client.ClientProtos;
 import com.blued.das.client.abtest.AbClientProtos;
 import com.blued.das.client.abtest.AbClientServiceGrpc;
 import com.blued.das.client.abtest.AbTestProtos;
+import com.efs.sdk.base.Constants;
 import com.google.protobuf.Any;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -23,41 +24,35 @@ import java.util.concurrent.TimeUnit;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/statistics/grpc/connect/AbtestManager.class */
 public class AbtestManager {
-
-    /* renamed from: a  reason: collision with root package name */
-    private volatile ConcurrentHashMap<String, AbClientProtos.AbResult> f18705a;
+    private volatile ConcurrentHashMap<String, AbClientProtos.AbResult> a;
     private volatile ConcurrentHashMap<String, AbClientProtos.AbResult> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private volatile String f18706c;
+    private volatile String c;
     private volatile String d;
     private final Runnable e;
 
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/statistics/grpc/connect/AbtestManager$AbtestSyncRunnable.class */
     class AbtestSyncRunnable extends NamedRunnable {
         private final String b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private final String f18709c;
+        private final String c;
 
         public AbtestSyncRunnable(String str, String str2) {
             super(StatConfig.a("abtest"));
-            this.f18709c = str;
+            this.c = str;
             this.b = str2;
         }
 
         @Override // com.blued.android.statistics.util.NamedRunnable
         public void a() {
             AbClientProtos.Response response;
-            AbClientProtos.Request build = AbClientProtos.Request.newBuilder().setDecisionId(this.b).setToken(this.f18709c).setCommon(BluedStatistics.a().b()).build();
+            AbClientProtos.Request build = AbClientProtos.Request.newBuilder().setDecisionId(this.b).setToken(this.c).setCommon(BluedStatistics.a().b()).build();
             if (StatConfig.o()) {
                 StatConfig.b().b("ABTEST start-request \n", build);
             }
-            AbClientServiceGrpc.AbClientServiceBlockingStub abClientServiceBlockingStub = (AbClientServiceGrpc.AbClientServiceBlockingStub) ((AbClientServiceGrpc.AbClientServiceBlockingStub) ((AbClientServiceGrpc.AbClientServiceBlockingStub) ConnectManager.a(AbClientServiceGrpc.newBlockingStub(ConnectManager.a()))).withCompression("gzip")).withDeadlineAfter(30L, TimeUnit.SECONDS);
+            AbClientServiceGrpc.AbClientServiceBlockingStub withDeadlineAfter = ConnectManager.a(AbClientServiceGrpc.newBlockingStub(ConnectManager.a())).withCompression(Constants.CP_GZIP).withDeadlineAfter(30L, TimeUnit.SECONDS);
             AbClientProtos.Response response2 = null;
             long uptimeMillis = SystemClock.uptimeMillis();
             try {
-                AbClientProtos.Response abResult = abClientServiceBlockingStub.getAbResult(build);
+                AbClientProtos.Response abResult = withDeadlineAfter.getAbResult(build);
                 response = abResult;
                 if (abResult != null) {
                     int code = abResult.getCode();
@@ -89,23 +84,21 @@ public class AbtestManager {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/statistics/grpc/connect/AbtestManager$InstanceHolder.class */
     public static class InstanceHolder {
-
-        /* renamed from: a  reason: collision with root package name */
-        private static final AbtestManager f18710a = new AbtestManager();
+        private static final AbtestManager a = new AbtestManager();
 
         private InstanceHolder() {
         }
     }
 
     private AbtestManager() {
-        this.f18705a = new ConcurrentHashMap<>();
+        this.a = new ConcurrentHashMap<>();
         this.b = new ConcurrentHashMap<>();
         this.e = new Runnable() { // from class: com.blued.android.statistics.grpc.connect.AbtestManager.1
             @Override // java.lang.Runnable
             public void run() {
                 if (StatConfig.n()) {
                     AbtestManager abtestManager = AbtestManager.this;
-                    StatThreadManager.a(new AbtestSyncRunnable(abtestManager.f18706c, AbtestManager.this.d));
+                    StatThreadManager.a(new AbtestSyncRunnable(abtestManager.c, AbtestManager.this.d));
                 }
                 Utils.a(this, 60000L);
             }
@@ -113,7 +106,7 @@ public class AbtestManager {
     }
 
     public static AbtestManager a() {
-        return InstanceHolder.f18710a;
+        return InstanceHolder.a;
     }
 
     private AbClientProtos.AbResult a(AbClientProtos.AbResult abResult, AbClientProtos.AbResult abResult2) {
@@ -154,10 +147,10 @@ public class AbtestManager {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void a(String str, Map<String, AbClientProtos.AbResult> map) {
-        this.f18705a = new ConcurrentHashMap<>(map);
+        this.a = new ConcurrentHashMap<>(map);
         HashSet hashSet = new HashSet();
         boolean z = false;
-        for (Map.Entry<String, AbClientProtos.AbResult> entry : this.f18705a.entrySet()) {
+        for (Map.Entry<String, AbClientProtos.AbResult> entry : this.a.entrySet()) {
             String key = entry.getKey();
             AbClientProtos.AbResult value = entry.getValue();
             if (StatConfig.o()) {
@@ -205,17 +198,17 @@ public class AbtestManager {
     }
 
     public String a(String str, String str2) {
-        String a2 = a(str, 1);
-        return TextUtils.isEmpty(a2) ? str2 : a2;
+        String a = a(str, 1);
+        return TextUtils.isEmpty(a) ? str2 : a;
     }
 
     public void a(String str, String str2, final Abtest.OnLocalLoadedListener onLocalLoadedListener) {
         if (!StatConfig.n() || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
             return;
         }
-        this.f18706c = str;
+        this.c = str;
         this.d = str2;
-        this.f18705a = new ConcurrentHashMap<>();
+        this.a = new ConcurrentHashMap<>();
         this.b = new ConcurrentHashMap<>();
         StatThreadManager.a(new Runnable() { // from class: com.blued.android.statistics.grpc.connect.-$$Lambda$AbtestManager$2LIaAc6t48mKHhBVDZ45j0UfdZg
             @Override // java.lang.Runnable

@@ -7,13 +7,9 @@ import android.widget.FrameLayout;
 @Deprecated
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/player/live/view/BLVideoView.class */
 public class BLVideoView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static boolean f15633a = false;
+    public static boolean a = false;
     private AbsVideoView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private Context f15634c;
+    private Context c;
 
     public BLVideoView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
@@ -26,7 +22,7 @@ public class BLVideoView extends FrameLayout {
     }
 
     public void a(Context context) {
-        this.f15634c = context;
+        this.c = context;
     }
 
     public void setVideoPath(String str) {

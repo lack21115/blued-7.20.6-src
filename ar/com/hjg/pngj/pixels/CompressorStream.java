@@ -7,11 +7,11 @@ import java.io.OutputStream;
 public abstract class CompressorStream extends OutputStream {
 
     /* renamed from: a  reason: collision with root package name */
-    protected IDatChunkWriter f3673a;
+    protected IDatChunkWriter f3625a;
     public final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final long f3674c;
+    public final long f3626c;
     boolean d;
     protected boolean e;
     protected long f;
@@ -27,7 +27,7 @@ public abstract class CompressorStream extends OutputStream {
     @Override // java.io.OutputStream, java.io.Closeable, java.lang.AutoCloseable
     public void close() {
         a();
-        IDatChunkWriter iDatChunkWriter = this.f3673a;
+        IDatChunkWriter iDatChunkWriter = this.f3625a;
         if (iDatChunkWriter != null) {
             iDatChunkWriter.g();
         }
@@ -66,7 +66,7 @@ public abstract class CompressorStream extends OutputStream {
                 i4 -= i6;
             }
         }
-        if (this.f >= this.f3674c) {
+        if (this.f >= this.f3626c) {
             a();
         }
     }

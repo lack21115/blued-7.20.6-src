@@ -10,7 +10,6 @@ import android.os.ServiceManager;
 import com.android.internal.telephony.IOnSubscriptionsChangedListener;
 import com.android.internal.telephony.ISub;
 import com.android.internal.telephony.ITelephonyRegistry;
-import com.android.internal.telephony.PhoneConstants;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -79,12 +78,10 @@ public class SubscriptionManager {
             }
         };
         IOnSubscriptionsChangedListener callback = new IOnSubscriptionsChangedListener.Stub() { // from class: android.telephony.SubscriptionManager.OnSubscriptionsChangedListener.2
-            @Override // com.android.internal.telephony.IOnSubscriptionsChangedListener
             public void onSubscriptionsChanged() {
                 OnSubscriptionsChangedListener.this.mHandler.sendEmptyMessage(0);
             }
 
-            @Override // com.android.internal.telephony.IOnSubscriptionsChangedListener
             public void onUnregistered() {
                 OnSubscriptionsChangedListener.this.mHandler.removeMessages(0);
             }
@@ -319,9 +316,9 @@ public class SubscriptionManager {
     }
 
     public static void putPhoneIdAndSubIdExtra(Intent intent, int i, int i2) {
-        intent.putExtra(PhoneConstants.SUBSCRIPTION_KEY, i2);
+        intent.putExtra("subscription", i2);
         intent.putExtra("phone", i);
-        intent.putExtra(PhoneConstants.SLOT_KEY, i);
+        intent.putExtra("slot", i);
     }
 
     public static void setSMSPromptEnabled(boolean z) {

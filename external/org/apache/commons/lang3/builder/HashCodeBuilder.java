@@ -145,8 +145,8 @@ public class HashCodeBuilder implements Builder<Integer> {
         return this;
     }
 
-    public HashCodeBuilder append(char c2) {
-        this.iTotal = (this.iTotal * this.iConstant) + c2;
+    public HashCodeBuilder append(char c) {
+        this.iTotal = (this.iTotal * this.iConstant) + c;
         return this;
     }
 

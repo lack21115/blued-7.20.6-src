@@ -23,11 +23,11 @@ public final class TimeSignalCommand extends SpliceCommand {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    public final long f25551a;
+    public final long f11863a;
     public final long b;
 
     private TimeSignalCommand(long j, long j2) {
-        this.f25551a = j;
+        this.f11863a = j;
         this.b = j2;
     }
 
@@ -45,7 +45,7 @@ public final class TimeSignalCommand extends SpliceCommand {
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeLong(this.f25551a);
+        parcel.writeLong(this.f11863a);
         parcel.writeLong(this.b);
     }
 }

@@ -1,7 +1,5 @@
 package android.media;
 
-import com.alipay.sdk.util.i;
-
 /* loaded from: source-9557208-dex2jar.jar:android/media/AudioDevicePort.class */
 public class AudioDevicePort extends AudioPort {
     private final String mAddress;
@@ -32,7 +30,7 @@ public class AudioDevicePort extends AudioPort {
 
     @Override // android.media.AudioPort
     public String toString() {
-        return "{" + super.toString() + ", mType: " + (this.mRole == 1 ? AudioSystem.getInputDeviceName(this.mType) : AudioSystem.getOutputDeviceName(this.mType)) + ", mAddress: " + this.mAddress + i.d;
+        return "{" + super.toString() + ", mType: " + (this.mRole == 1 ? AudioSystem.getInputDeviceName(this.mType) : AudioSystem.getOutputDeviceName(this.mType)) + ", mAddress: " + this.mAddress + "}";
     }
 
     public int type() {

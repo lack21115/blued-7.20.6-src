@@ -27,22 +27,20 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYChorusMusicItemFragment$createMusicItemAdapter$1.class */
 public final class YYChorusMusicItemFragment$createMusicItemAdapter$1 extends BaseMultiItemQuickAdapter<YYKtvMusicModel, BaseViewHolder> {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ YYChorusMusicItemFragment f17137a;
+    final /* synthetic */ YYChorusMusicItemFragment a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public YYChorusMusicItemFragment$createMusicItemAdapter$1(YYChorusMusicItemFragment yYChorusMusicItemFragment) {
-        super(null);
-        this.f17137a = yYChorusMusicItemFragment;
+        super((List) null);
+        this.a = yYChorusMusicItemFragment;
         addItemType(0, R.layout.item_yy_ktv_music_info);
         addItemType(1, R.layout.live_music_item_no_more_view);
         addItemType(2, R.layout.item_yy_chorus_music_info);
     }
 
     private final void a(YYKtvMusicModel yYKtvMusicModel) {
-        final YYChorusMusicItemFragment yYChorusMusicItemFragment = this.f17137a;
+        final YYChorusMusicItemFragment yYChorusMusicItemFragment = this.a;
         YYRoomModel d = yYChorusMusicItemFragment.d();
         String str = d == null ? null : d.room_id;
         String str2 = yYKtvMusicModel.musicId;
@@ -64,11 +62,11 @@ public final class YYChorusMusicItemFragment$createMusicItemAdapter$1 extends Ba
     }
 
     private final void a(YYKtvMusicModel yYKtvMusicModel, String str, final int i) {
-        YYRoomModel d = this.f17137a.d();
+        YYRoomModel d = this.a.d();
         String str2 = d == null ? null : d.room_id;
         String str3 = yYKtvMusicModel == null ? null : yYKtvMusicModel.musicId;
-        final ActivityFragmentActive fragmentActive = this.f17137a.getFragmentActive();
-        final YYChorusMusicItemFragment yYChorusMusicItemFragment = this.f17137a;
+        final ActivityFragmentActive fragmentActive = this.a.getFragmentActive();
+        final YYChorusMusicItemFragment yYChorusMusicItemFragment = this.a;
         YYRoomHttpUtils.e(str2, str3, str, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<Object>>(i, fragmentActive) { // from class: com.blued.android.module.yy_china.fragment.YYChorusMusicItemFragment$createMusicItemAdapter$1$toAcceptOrDeny$1
             final /* synthetic */ int b;
 
@@ -82,7 +80,7 @@ public final class YYChorusMusicItemFragment$createMusicItemAdapter$1 extends Ba
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<Object> bluedEntityA) {
-                List<YYKtvMusicModel> data;
+                List data;
                 BaseQuickAdapter<YYKtvMusicModel, BaseViewHolder> b = YYChorusMusicItemFragment.this.b();
                 if (b != null) {
                     b.remove(this.b);
@@ -96,7 +94,7 @@ public final class YYChorusMusicItemFragment$createMusicItemAdapter$1 extends Ba
                     YYChorusMusicItemFragment.this.f();
                 }
             }
-        }, this.f17137a.getFragmentActive());
+        }, this.a.getFragmentActive());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -145,7 +143,7 @@ public final class YYChorusMusicItemFragment$createMusicItemAdapter$1 extends Ba
         if (yYKtvMusicModel == null) {
             return;
         }
-        ImageLoader.a(this.f17137a.getFragmentActive(), yYKtvMusicModel.coverUrl).a(imageView);
+        ImageLoader.a(this.a.getFragmentActive(), yYKtvMusicModel.coverUrl).a(imageView);
         if (textView != null) {
             textView.setText(yYKtvMusicModel.musicName);
         }
@@ -181,7 +179,7 @@ public final class YYChorusMusicItemFragment$createMusicItemAdapter$1 extends Ba
         ShapeTextView shapeTextView2 = (ShapeTextView) baseViewHolder.getView(R.id.btn_deny);
         ImageView imageView2 = (ImageView) baseViewHolder.getView(R.id.img_logo);
         if (yYKtvMusicModel != null) {
-            ImageLoader.a(this.f17137a.getFragmentActive(), yYKtvMusicModel.coverUrl).a(imageView);
+            ImageLoader.a(this.a.getFragmentActive(), yYKtvMusicModel.coverUrl).a(imageView);
             if (textView != null) {
                 textView.setText(yYKtvMusicModel.musicName);
             }
@@ -219,7 +217,6 @@ public final class YYChorusMusicItemFragment$createMusicItemAdapter$1 extends Ba
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(BaseViewHolder baseViewHolder, YYKtvMusicModel yYKtvMusicModel) {
         if (baseViewHolder == null) {

@@ -15,11 +15,11 @@ import kotlin.jvm.internal.Intrinsics;
 public final class ViewHolder extends RecyclerView.ViewHolder {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Companion f23936a = new Companion(null);
+    public static final Companion f10325a = new Companion(null);
     private final SparseArray<View> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final View f23937c;
+    private final View f10326c;
 
     @Metadata
     /* loaded from: source-7994992-dex2jar.jar:com/lxj/easyadapter/ViewHolder$Companion.class */
@@ -31,29 +31,29 @@ public final class ViewHolder extends RecyclerView.ViewHolder {
             this();
         }
 
-        public final ViewHolder a(Context context, ViewGroup parent, int i) {
+        public final ViewHolder a(Context context, ViewGroup viewGroup, int i) {
             Intrinsics.d(context, "context");
-            Intrinsics.d(parent, "parent");
-            View itemView = LayoutInflater.from(context).inflate(i, parent, false);
-            Intrinsics.b(itemView, "itemView");
-            return new ViewHolder(itemView);
+            Intrinsics.d(viewGroup, "parent");
+            View inflate = LayoutInflater.from(context).inflate(i, viewGroup, false);
+            Intrinsics.b(inflate, "itemView");
+            return new ViewHolder(inflate);
         }
 
-        public final ViewHolder a(View itemView) {
-            Intrinsics.d(itemView, "itemView");
-            return new ViewHolder(itemView);
+        public final ViewHolder a(View view) {
+            Intrinsics.d(view, "itemView");
+            return new ViewHolder(view);
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ViewHolder(View convertView) {
-        super(convertView);
-        Intrinsics.d(convertView, "convertView");
-        this.f23937c = convertView;
+    public ViewHolder(View view) {
+        super(view);
+        Intrinsics.d(view, "convertView");
+        this.f10326c = view;
         this.b = new SparseArray<>();
     }
 
     public final View a() {
-        return this.f23937c;
+        return this.f10326c;
     }
 }

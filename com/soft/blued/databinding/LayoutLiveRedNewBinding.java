@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class LayoutLiveRedNewBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final RelativeLayout f29402a;
+    private final RelativeLayout f15712a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
-        return this.f29402a;
+        return this.f15712a;
     }
 }

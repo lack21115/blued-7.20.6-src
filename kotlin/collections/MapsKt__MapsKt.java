@@ -13,7 +13,7 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: source-3503164-dex2jar.jar:kotlin/collections/MapsKt__MapsKt.class */
 public class MapsKt__MapsKt extends MapsKt__MapsJVMKt {
     public static final <K, V> Map<K, V> a() {
-        return EmptyMap.f42380a;
+        return EmptyMap.a;
     }
 
     public static final <K, V> Map<K, V> a(Iterable<? extends Pair<? extends K, ? extends V>> iterable) {

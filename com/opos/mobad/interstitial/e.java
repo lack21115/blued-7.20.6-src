@@ -2,7 +2,6 @@ package com.opos.mobad.interstitial;
 
 import android.app.Activity;
 import android.content.Context;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.opos.mobad.cmn.b.a;
 import com.opos.mobad.model.e.a;
 import com.opos.mobad.q.a.h;
@@ -12,14 +11,14 @@ import com.opos.mobad.service.event.EventDescription;
 public class e implements a {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f26256a;
+    private String f12568a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private h f26257c;
-    private a.C0707a d;
+    private h f12569c;
+    private a.C0537a d;
     private com.opos.mobad.q.a.b.c e;
-    private a.C0684a f;
+    private a.C0514a f;
     private com.opos.mobad.q.a.b.d g;
     private com.opos.mobad.service.event.c h;
     private com.opos.mobad.q.a.a i;
@@ -78,7 +77,7 @@ public class e implements a {
             com.opos.mobad.service.event.b.a().b(e.this.h);
         }
 
-        @Override // com.opos.mobad.q.a.a.InterfaceC0724a
+        @Override // com.opos.mobad.q.a.a.InterfaceC0554a
         public void j_() {
             if (e.this.e != null) {
                 e.this.e.j_();
@@ -86,27 +85,27 @@ public class e implements a {
         }
     };
 
-    public e(Context context, String str, h hVar, com.opos.mobad.cmn.a.a aVar, com.opos.mobad.q.a.b.d dVar, com.opos.mobad.q.a.b.c cVar, a.C0707a c0707a, int i) {
+    public e(Context context, String str, h hVar, com.opos.mobad.cmn.a.a aVar, com.opos.mobad.q.a.b.d dVar, com.opos.mobad.q.a.b.c cVar, a.C0537a c0537a, int i) {
         com.opos.mobad.q.a.a aVar2 = new com.opos.mobad.q.a.a(context, str, aVar, null, cVar);
         this.i = aVar2;
-        this.f26257c = hVar;
+        this.f12569c = hVar;
         this.e = cVar;
         this.b = str;
         this.j = i;
         this.g = dVar;
-        this.d = c0707a;
-        aVar2.a(c0707a.b, this.d.f26483c, this.d.f26483c.b(), 0);
+        this.d = c0537a;
+        aVar2.a(c0537a.b, this.d.f12795c, this.d.f12795c.b(), 0);
     }
 
     private String b() {
-        return this.b + BridgeUtil.UNDERLINE_STR + System.currentTimeMillis();
+        return this.b + "_" + System.currentTimeMillis();
     }
 
     @Override // com.opos.mobad.interstitial.a
     public void a() {
-        a.C0684a c0684a = this.f;
-        if (c0684a != null) {
-            c0684a.b();
+        a.C0514a c0514a = this.f;
+        if (c0514a != null) {
+            c0514a.b();
         }
         this.f = null;
         if (this.h != null) {
@@ -123,21 +122,21 @@ public class e implements a {
             aVar = this.i;
             i = -1;
         } else {
-            a.C0707a c0707a = this.d;
-            if (c0707a == null || c0707a.b == null) {
+            a.C0537a c0537a = this.d;
+            if (c0537a == null || c0537a.b == null) {
                 com.opos.cmn.an.f.a.b("ActivityStarted", "null data");
                 aVar = this.i;
                 i = 10006;
             } else if (System.currentTimeMillis() <= this.d.b.s()) {
                 String b = b();
-                this.f26256a = b;
+                this.f12568a = b;
                 EventDescription eventDescription = new EventDescription(b);
                 this.h = com.opos.mobad.q.a.a.a.a(eventDescription, this.k);
-                if (!this.f26257c.a(activity, this.d.b, this.j, this.g, eventDescription)) {
+                if (!this.f12569c.a(activity, this.d.b, this.j, this.g, eventDescription)) {
                     com.opos.mobad.service.event.b.a().b(this.h);
                     return false;
                 }
-                this.f = new a.C0684a(a.C0684a.a(eventDescription));
+                this.f = new a.C0514a(a.C0514a.a(eventDescription));
                 com.opos.cmn.an.f.a.b("ActivityStarted", "do show as activity");
                 return true;
             } else {

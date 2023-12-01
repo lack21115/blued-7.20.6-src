@@ -11,13 +11,9 @@ import mtopsdk.common.util.TBSdkLog;
 
 /* loaded from: source-3503164-dex2jar.jar:mtopsdk/mtop/global/SwitchConfig.class */
 public class SwitchConfig {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final SwitchConfig f43766a = new SwitchConfig();
+    private static final SwitchConfig a = new SwitchConfig();
     private static final RemoteConfig b = RemoteConfig.a();
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final LocalConfig f43767c = LocalConfig.a();
+    private static final LocalConfig c = LocalConfig.a();
     private static a d = null;
     private static long e = 10;
     private static Map f = new ConcurrentHashMap();
@@ -26,7 +22,7 @@ public class SwitchConfig {
     }
 
     public static SwitchConfig a() {
-        return f43766a;
+        return a;
     }
 
     public long a(String str) {
@@ -50,7 +46,7 @@ public class SwitchConfig {
     }
 
     public boolean b() {
-        return f43767c.f43681c && b.f43685c;
+        return c.c && b.c;
     }
 
     public long c() {
@@ -60,6 +56,6 @@ public class SwitchConfig {
     }
 
     public boolean d() {
-        return f43767c.b && b.b;
+        return c.b && b.b;
     }
 }

@@ -6,40 +6,40 @@ import com.anythink.expressad.foundation.h.o;
 public class c implements h {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f8339a = "ShowRewardListener";
+    private static final String f5499a = "ShowRewardListener";
 
     @Override // com.anythink.expressad.video.bt.module.b.h
     public void a() {
-        o.a(f8339a, "onAdShow");
+        o.a(f5499a, "onAdShow");
     }
 
     @Override // com.anythink.expressad.video.bt.module.b.h
     public void a(com.anythink.expressad.foundation.d.c cVar) {
-        o.a(f8339a, "onVideoAdClicked:");
+        o.a(f5499a, "onVideoAdClicked:");
     }
 
     @Override // com.anythink.expressad.video.bt.module.b.h
     public void a(String str) {
-        o.a(f8339a, "onShowFail:".concat(String.valueOf(str)));
+        o.a(f5499a, "onShowFail:".concat(String.valueOf(str)));
     }
 
     @Override // com.anythink.expressad.video.bt.module.b.h
     public void a(boolean z, int i) {
-        o.a(f8339a, "onAdCloseWithIVReward: " + z + "  " + i);
+        o.a(f5499a, "onAdCloseWithIVReward: " + z + "  " + i);
     }
 
     @Override // com.anythink.expressad.video.bt.module.b.h
     public void a(boolean z, com.anythink.expressad.videocommon.c.c cVar) {
-        o.a(f8339a, "onAdClose:isCompleteView:" + z + ",reward:" + cVar);
+        o.a(f5499a, "onAdClose:isCompleteView:" + z + ",reward:" + cVar);
     }
 
     @Override // com.anythink.expressad.video.bt.module.b.h
     public void b() {
-        o.a(f8339a, "onVideoComplete: ");
+        o.a(f5499a, "onVideoComplete: ");
     }
 
     @Override // com.anythink.expressad.video.bt.module.b.h
     public void c() {
-        o.a(f8339a, "onEndcardShow: ");
+        o.a(f5499a, "onEndcardShow: ");
     }
 }

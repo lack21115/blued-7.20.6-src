@@ -24,8 +24,8 @@ public final class LoveSuccess extends GeneratedMessageV3 implements LoveSuccess
     public static final int CHOSEN_FIELD_NUMBER = 1;
     private static final LoveSuccess DEFAULT_INSTANCE = new LoveSuccess();
     private static final Parser<LoveSuccess> PARSER = new AbstractParser<LoveSuccess>() { // from class: cn.irisgw.live.LoveSuccess.1
-        @Override // com.google.protobuf.Parser
-        public LoveSuccess parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        /* renamed from: parsePartialFrom */
+        public LoveSuccess m5565parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             return new LoveSuccess(codedInputStream, extensionRegistryLite);
         }
     };
@@ -78,22 +78,22 @@ public final class LoveSuccess extends GeneratedMessageV3 implements LoveSuccess
             boolean unused = LoveSuccess.alwaysUseFieldBuilders;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: addRepeatedField */
+        public Builder m5567addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.addRepeatedField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public LoveSuccess build() {
-            LoveSuccess buildPartial = buildPartial();
-            if (buildPartial.isInitialized()) {
-                return buildPartial;
+        /* renamed from: build */
+        public LoveSuccess m5569build() {
+            LoveSuccess m5571buildPartial = m5571buildPartial();
+            if (m5571buildPartial.isInitialized()) {
+                return m5571buildPartial;
             }
-            throw newUninitializedMessageException((Message) buildPartial);
+            throw newUninitializedMessageException(m5571buildPartial);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public LoveSuccess buildPartial() {
+        /* renamed from: buildPartial */
+        public LoveSuccess m5571buildPartial() {
             LoveSuccess loveSuccess = new LoveSuccess(this);
             SingleFieldBuilderV3<LoveFan, LoveFan.Builder, LoveFanOrBuilder> singleFieldBuilderV3 = this.chosenBuilder_;
             if (singleFieldBuilderV3 == null) {
@@ -112,8 +112,8 @@ public final class LoveSuccess extends GeneratedMessageV3 implements LoveSuccess
             return loveSuccess;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public Builder clear() {
+        /* renamed from: clear */
+        public Builder m5575clear() {
             super.clear();
             if (this.chosenBuilder_ == null) {
                 this.chosen_ = null;
@@ -159,20 +159,19 @@ public final class LoveSuccess extends GeneratedMessageV3 implements LoveSuccess
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+        /* renamed from: clearField */
+        public Builder m5577clearField(Descriptors.FieldDescriptor fieldDescriptor) {
             return (Builder) super.clearField(fieldDescriptor);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+        /* renamed from: clearOneof */
+        public Builder m5580clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
             return (Builder) super.clearOneof(oneofDescriptor);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder m5586clone() {
+            return (Builder) super.clone();
         }
 
         @Override // cn.irisgw.live.LoveSuccessOrBuilder
@@ -220,7 +219,7 @@ public final class LoveSuccess extends GeneratedMessageV3 implements LoveSuccess
         public LoveFanOrBuilder getChooserOrBuilder() {
             SingleFieldBuilderV3<LoveFan, LoveFan.Builder, LoveFanOrBuilder> singleFieldBuilderV3 = this.chooserBuilder_;
             if (singleFieldBuilderV3 != null) {
-                return singleFieldBuilderV3.getMessageOrBuilder();
+                return (LoveFanOrBuilder) singleFieldBuilderV3.getMessageOrBuilder();
             }
             LoveFan loveFan = this.chooser_;
             LoveFan loveFan2 = loveFan;
@@ -253,7 +252,7 @@ public final class LoveSuccess extends GeneratedMessageV3 implements LoveSuccess
         public LoveFanOrBuilder getChosenOrBuilder() {
             SingleFieldBuilderV3<LoveFan, LoveFan.Builder, LoveFanOrBuilder> singleFieldBuilderV3 = this.chosenBuilder_;
             if (singleFieldBuilderV3 != null) {
-                return singleFieldBuilderV3.getMessageOrBuilder();
+                return (LoveFanOrBuilder) singleFieldBuilderV3.getMessageOrBuilder();
             }
             LoveFan loveFan = this.chosen_;
             LoveFan loveFan2 = loveFan;
@@ -263,12 +262,11 @@ public final class LoveSuccess extends GeneratedMessageV3 implements LoveSuccess
             return loveFan2;
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public LoveSuccess getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public LoveSuccess m5588getDefaultInstanceForType() {
             return LoveSuccess.getDefaultInstance();
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
         public Descriptors.Descriptor getDescriptorForType() {
             return LiveConstants.internal_static_cn_irisgw_live_LoveSuccess_descriptor;
         }
@@ -283,12 +281,10 @@ public final class LoveSuccess extends GeneratedMessageV3 implements LoveSuccess
             return (this.chosenBuilder_ == null && this.chosen_ == null) ? false : true;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_LoveSuccess_fieldAccessorTable.ensureFieldAccessorsInitialized(LoveSuccess.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             return true;
         }
@@ -301,7 +297,7 @@ public final class LoveSuccess extends GeneratedMessageV3 implements LoveSuccess
             }
             LoveFan loveFan2 = this.chooser_;
             if (loveFan2 != null) {
-                this.chooser_ = LoveFan.newBuilder(loveFan2).mergeFrom(loveFan).buildPartial();
+                this.chooser_ = LoveFan.newBuilder(loveFan2).mergeFrom(loveFan).m5289buildPartial();
             } else {
                 this.chooser_ = loveFan;
             }
@@ -317,7 +313,7 @@ public final class LoveSuccess extends GeneratedMessageV3 implements LoveSuccess
             }
             LoveFan loveFan2 = this.chosen_;
             if (loveFan2 != null) {
-                this.chosen_ = LoveFan.newBuilder(loveFan2).mergeFrom(loveFan).buildPartial();
+                this.chosen_ = LoveFan.newBuilder(loveFan2).mergeFrom(loveFan).m5289buildPartial();
             } else {
                 this.chosen_ = loveFan;
             }
@@ -339,18 +335,18 @@ public final class LoveSuccess extends GeneratedMessageV3 implements LoveSuccess
                 this.animeUrl_ = loveSuccess.animeUrl_;
                 onChanged();
             }
-            mergeUnknownFields(loveSuccess.unknownFields);
+            m5597mergeUnknownFields(loveSuccess.unknownFields);
             onChanged();
             return this;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+        /* renamed from: mergeFrom */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
         */
-        public cn.irisgw.live.LoveSuccess.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+        public cn.irisgw.live.LoveSuccess.Builder m5594mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
             /*
                 r4 = this;
                 r0 = 0
@@ -395,11 +391,11 @@ public final class LoveSuccess extends GeneratedMessageV3 implements LoveSuccess
                 r0 = r6
                 throw r0
             */
-            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.LoveSuccess.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.LoveSuccess$Builder");
+            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.LoveSuccess.Builder.m5594mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.LoveSuccess$Builder");
         }
 
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder mergeFrom(Message message) {
+        /* renamed from: mergeFrom */
+        public Builder m5593mergeFrom(Message message) {
             if (message instanceof LoveSuccess) {
                 return mergeFrom((LoveSuccess) message);
             }
@@ -407,8 +403,8 @@ public final class LoveSuccess extends GeneratedMessageV3 implements LoveSuccess
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: mergeUnknownFields */
+        public final Builder m5597mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.mergeUnknownFields(unknownFieldSet);
         }
 
@@ -434,10 +430,10 @@ public final class LoveSuccess extends GeneratedMessageV3 implements LoveSuccess
         public Builder setChooser(LoveFan.Builder builder) {
             SingleFieldBuilderV3<LoveFan, LoveFan.Builder, LoveFanOrBuilder> singleFieldBuilderV3 = this.chooserBuilder_;
             if (singleFieldBuilderV3 != null) {
-                singleFieldBuilderV3.setMessage(builder.build());
+                singleFieldBuilderV3.setMessage(builder.m5287build());
                 return this;
             }
-            this.chooser_ = builder.build();
+            this.chooser_ = builder.m5287build();
             onChanged();
             return this;
         }
@@ -459,10 +455,10 @@ public final class LoveSuccess extends GeneratedMessageV3 implements LoveSuccess
         public Builder setChosen(LoveFan.Builder builder) {
             SingleFieldBuilderV3<LoveFan, LoveFan.Builder, LoveFanOrBuilder> singleFieldBuilderV3 = this.chosenBuilder_;
             if (singleFieldBuilderV3 != null) {
-                singleFieldBuilderV3.setMessage(builder.build());
+                singleFieldBuilderV3.setMessage(builder.m5287build());
                 return this;
             }
-            this.chosen_ = builder.build();
+            this.chosen_ = builder.m5287build();
             onChanged();
             return this;
         }
@@ -481,18 +477,18 @@ public final class LoveSuccess extends GeneratedMessageV3 implements LoveSuccess
             }
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: setField */
+        public Builder m5599setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.setField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+        /* renamed from: setRepeatedField */
+        public Builder m5601setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
             return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: setUnknownFields */
+        public final Builder m5603setUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.setUnknownFields(unknownFieldSet);
         }
     }
@@ -516,20 +512,20 @@ public final class LoveSuccess extends GeneratedMessageV3 implements LoveSuccess
                         int readTag = codedInputStream.readTag();
                         if (readTag != 0) {
                             if (readTag == 10) {
-                                LoveFan.Builder builder = this.chosen_ != null ? this.chosen_.toBuilder() : null;
-                                LoveFan loveFan = (LoveFan) codedInputStream.readMessage(LoveFan.parser(), extensionRegistryLite);
-                                this.chosen_ = loveFan;
-                                if (builder != null) {
-                                    builder.mergeFrom(loveFan);
-                                    this.chosen_ = builder.buildPartial();
+                                LoveFan.Builder m5282toBuilder = this.chosen_ != null ? this.chosen_.m5282toBuilder() : null;
+                                LoveFan readMessage = codedInputStream.readMessage(LoveFan.parser(), extensionRegistryLite);
+                                this.chosen_ = readMessage;
+                                if (m5282toBuilder != null) {
+                                    m5282toBuilder.mergeFrom(readMessage);
+                                    this.chosen_ = m5282toBuilder.m5289buildPartial();
                                 }
                             } else if (readTag == 18) {
-                                LoveFan.Builder builder2 = this.chooser_ != null ? this.chooser_.toBuilder() : null;
-                                LoveFan loveFan2 = (LoveFan) codedInputStream.readMessage(LoveFan.parser(), extensionRegistryLite);
-                                this.chooser_ = loveFan2;
-                                if (builder2 != null) {
-                                    builder2.mergeFrom(loveFan2);
-                                    this.chooser_ = builder2.buildPartial();
+                                LoveFan.Builder m5282toBuilder2 = this.chooser_ != null ? this.chooser_.m5282toBuilder() : null;
+                                LoveFan readMessage2 = codedInputStream.readMessage(LoveFan.parser(), extensionRegistryLite);
+                                this.chooser_ = readMessage2;
+                                if (m5282toBuilder2 != null) {
+                                    m5282toBuilder2.mergeFrom(readMessage2);
+                                    this.chooser_ = m5282toBuilder2.m5289buildPartial();
                                 }
                             } else if (readTag == 26) {
                                 this.animeUrl_ = codedInputStream.readStringRequireUtf8();
@@ -564,66 +560,65 @@ public final class LoveSuccess extends GeneratedMessageV3 implements LoveSuccess
     }
 
     public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
+        return DEFAULT_INSTANCE.m5564toBuilder();
     }
 
     public static Builder newBuilder(LoveSuccess loveSuccess) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(loveSuccess);
+        return DEFAULT_INSTANCE.m5564toBuilder().mergeFrom(loveSuccess);
     }
 
     public static LoveSuccess parseDelimitedFrom(InputStream inputStream) throws IOException {
-        return (LoveSuccess) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
     }
 
     public static LoveSuccess parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (LoveSuccess) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static LoveSuccess parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString);
+        return (LoveSuccess) PARSER.parseFrom(byteString);
     }
 
     public static LoveSuccess parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString, extensionRegistryLite);
+        return (LoveSuccess) PARSER.parseFrom(byteString, extensionRegistryLite);
     }
 
     public static LoveSuccess parseFrom(CodedInputStream codedInputStream) throws IOException {
-        return (LoveSuccess) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
     }
 
     public static LoveSuccess parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (LoveSuccess) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
     }
 
     public static LoveSuccess parseFrom(InputStream inputStream) throws IOException {
-        return (LoveSuccess) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
     }
 
     public static LoveSuccess parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (LoveSuccess) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static LoveSuccess parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer);
+        return (LoveSuccess) PARSER.parseFrom(byteBuffer);
     }
 
     public static LoveSuccess parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+        return (LoveSuccess) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
     }
 
     public static LoveSuccess parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr);
+        return (LoveSuccess) PARSER.parseFrom(bArr);
     }
 
     public static LoveSuccess parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr, extensionRegistryLite);
+        return (LoveSuccess) PARSER.parseFrom(bArr, extensionRegistryLite);
     }
 
     public static Parser<LoveSuccess> parser() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
@@ -693,17 +688,15 @@ public final class LoveSuccess extends GeneratedMessageV3 implements LoveSuccess
         return getChosen();
     }
 
-    @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-    public LoveSuccess getDefaultInstanceForType() {
+    /* renamed from: getDefaultInstanceForType */
+    public LoveSuccess m5559getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
     public Parser<LoveSuccess> getParserForType() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public int getSerializedSize() {
         int i = this.memoizedSize;
         if (i != -1) {
@@ -726,7 +719,6 @@ public final class LoveSuccess extends GeneratedMessageV3 implements LoveSuccess
         return serializedSize;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
     public final UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
     }
@@ -741,7 +733,6 @@ public final class LoveSuccess extends GeneratedMessageV3 implements LoveSuccess
         return this.chosen_ != null;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public int hashCode() {
         if (this.memoizedHashCode != 0) {
             return this.memoizedHashCode;
@@ -760,12 +751,10 @@ public final class LoveSuccess extends GeneratedMessageV3 implements LoveSuccess
         return hashCode2;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
         return LiveConstants.internal_static_cn_irisgw_live_LoveSuccess_fieldAccessorTable.ensureFieldAccessorsInitialized(LoveSuccess.class, Builder.class);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
     public final boolean isInitialized() {
         byte b = this.memoizedIsInitialized;
         if (b == 1) {
@@ -778,28 +767,26 @@ public final class LoveSuccess extends GeneratedMessageV3 implements LoveSuccess
         return true;
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder newBuilderForType() {
+    /* renamed from: newBuilderForType */
+    public Builder m5562newBuilderForType() {
         return newBuilder();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.protobuf.GeneratedMessageV3
-    public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+    /* renamed from: newBuilderForType */
+    public Builder m5561newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
         return new Builder(builderParent);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
         return new LoveSuccess();
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder toBuilder() {
+    /* renamed from: toBuilder */
+    public Builder m5564toBuilder() {
         return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
         if (this.chosen_ != null) {
             codedOutputStream.writeMessage(1, getChosen());

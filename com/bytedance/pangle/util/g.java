@@ -23,7 +23,7 @@ import java.util.zip.ZipFile;
 public final class g {
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f21504a;
+    public static String f7898a;
     static String b;
 
     public static String a(Context context) {

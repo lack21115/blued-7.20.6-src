@@ -9,16 +9,16 @@ import java.util.Map;
 public final class wmqhz extends SkEpO {
 
     /* renamed from: a  reason: collision with root package name */
-    static ArrayList<Bi3eT> f39840a;
+    static ArrayList<Bi3eT> f26149a;
     static Map<String, String> b;
 
     /* renamed from: c  reason: collision with root package name */
-    public ArrayList<Bi3eT> f39841c = null;
+    public ArrayList<Bi3eT> f26150c = null;
     public Map<String, String> d = null;
 
     static {
         ArrayList<Bi3eT> arrayList = new ArrayList<>();
-        f39840a = arrayList;
+        f26149a = arrayList;
         arrayList.add(new Bi3eT());
         HashMap hashMap = new HashMap();
         b = hashMap;
@@ -28,7 +28,7 @@ public final class wmqhz extends SkEpO {
     @Override // com.tencent.turingcam.SkEpO
     public void a(ShGzN shGzN) {
         shGzN.a("", 0);
-        shGzN.a((Collection) this.f39841c, 1);
+        shGzN.a((Collection) this.f26150c, 1);
         Map<String, String> map = this.d;
         if (map != null) {
             shGzN.a((Map) map, 2);

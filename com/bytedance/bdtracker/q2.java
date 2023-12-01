@@ -8,15 +8,15 @@ import com.google.android.gms.ads.identifier.AdvertisingIdClient;
 public class q2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static volatile String f21293a;
+    public static volatile String f7687a;
 
     public static String a(Context context, m0 m0Var) {
         String str;
-        if (TextUtils.isEmpty(f21293a)) {
+        if (TextUtils.isEmpty(f7687a)) {
             synchronized (q2.class) {
                 try {
-                    if (!TextUtils.isEmpty(f21293a)) {
-                        return f21293a;
+                    if (!TextUtils.isEmpty(f7687a)) {
+                        return f7687a;
                     }
                     AdvertisingIdClient.Info advertisingIdInfo = AdvertisingIdClient.getAdvertisingIdInfo(context);
                     String id = advertisingIdInfo != null ? advertisingIdInfo.getId() : null;
@@ -32,12 +32,12 @@ public class q2 {
                             }
                         }
                     }
-                    f21293a = str;
+                    f7687a = str;
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f21293a;
+        return f7687a;
     }
 }

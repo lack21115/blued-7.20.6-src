@@ -1,6 +1,5 @@
 package com.blued.android.module.live_china.msg;
 
-import android.app.Instrumentation;
 import android.graphics.Point;
 import android.text.TextUtils;
 import cn.irisgw.live.Animation;
@@ -72,14 +71,10 @@ import java.util.Set;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/msg/GrpcMsgSender.class */
 public class GrpcMsgSender extends ILiveMsgSender {
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f13933c;
+    private String c;
     private String d;
     private String e;
-
-    /* renamed from: a  reason: collision with root package name */
-    private final String f13932a = "GrpcMsgSender";
+    private final String a = "GrpcMsgSender";
     private boolean b = false;
     private long f = 0;
     private long g = 0;
@@ -120,17 +115,15 @@ public class GrpcMsgSender extends ILiveMsgSender {
     /* renamed from: com.blued.android.module.live_china.msg.GrpcMsgSender$3  reason: invalid class name */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/msg/GrpcMsgSender$3.class */
     class AnonymousClass3 implements Runnable {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ LiveGiftModel f13936a;
+        final /* synthetic */ LiveGiftModel a;
 
         AnonymousClass3(LiveGiftModel liveGiftModel) {
-            this.f13936a = liveGiftModel;
+            this.a = liveGiftModel;
         }
 
         @Override // java.lang.Runnable
         public void run() {
-            LiveSetDataObserver.a().b(this.f13936a);
+            LiveSetDataObserver.a().b(this.a);
         }
     }
 
@@ -180,7 +173,7 @@ public class GrpcMsgSender extends ILiveMsgSender {
         liveGiftModel.images_static = winningPrize.getGoodsIcon();
         liveGiftModel.source = winningPrize.getSource();
         liveGiftModel.sourceEvent = winningPrize.getEvent();
-        liveGiftModel.extraModel = new LiveBubbleBgModel(null, winningPrize.getChatFrameIcon(), 0, winningPrize.getChatFrameFrameColorList(), winningPrize.getChatFrameBorderColorList());
+        liveGiftModel.extraModel = new LiveBubbleBgModel(null, winningPrize.getChatFrameIcon(), 0, winningPrize.mo8160getChatFrameFrameColorList(), winningPrize.mo8159getChatFrameBorderColorList());
         return liveGiftModel;
     }
 
@@ -194,7 +187,7 @@ public class GrpcMsgSender extends ILiveMsgSender {
         liveGiftScrawlTransModel.remember_me = drawGoods.getRememberMe();
         liveGiftScrawlTransModel.from = LiveRoomManager.a().p().comeCode;
         liveGiftScrawlTransModel.beans_current_count = drawGoods.getBeansCurrentCount();
-        liveGiftScrawlTransModel.extraModel = new LiveBubbleBgModel(drawGoods.getChatFrame(), drawGoods.getChatFrameIcon(), drawGoods.getChatFrameGradientType(), drawGoods.getChatFrameFrameColorList(), drawGoods.getChatFrameBorderColorList());
+        liveGiftScrawlTransModel.extraModel = new LiveBubbleBgModel(drawGoods.getChatFrame(), drawGoods.getChatFrameIcon(), drawGoods.getChatFrameGradientType(), drawGoods.mo1999getChatFrameFrameColorList(), drawGoods.mo1998getChatFrameBorderColorList());
         if (drawGoods.getBeansCurrentCount() > 0) {
             LiveEventBus.get("live_beans_change").post(new LiveBeansChangeEvent(LiveRoomManager.a().e(), drawGoods.getBeansCurrentCount(), (long) LiveRoomManager.a().u()));
         }
@@ -242,7 +235,7 @@ public class GrpcMsgSender extends ILiveMsgSender {
         liveWishContestContentModel.isHide = wishingContestText.getHide();
         liveWishContestContentModel.beans = wishingContestText.getAnchorBeans();
         liveWishContestContentModel.type = wishingContestText.getType();
-        liveWishContestContentModel.bubbleBgModel = new LiveBubbleBgModel(null, wishingContestText.getChatFrameIcon(), 0, wishingContestText.getChatFrameFrameColorList(), wishingContestText.getChatFrameBorderColorList());
+        liveWishContestContentModel.bubbleBgModel = new LiveBubbleBgModel(null, wishingContestText.getChatFrameIcon(), 0, wishingContestText.mo8256getChatFrameFrameColorList(), wishingContestText.mo8255getChatFrameBorderColorList());
         LogUtils.c("parseWishCourtContent:" + AppInfo.f().toJson(liveWishContestContentModel));
         return liveWishContestContentModel;
     }
@@ -276,7 +269,7 @@ public class GrpcMsgSender extends ILiveMsgSender {
         MsgPackHelper.putMapValue(hashMap, "pic", loveFan.getPic());
         MsgPackHelper.putMapValue((Map<String, Object>) hashMap, "lamp", loveFan.getLamp() ? 1L : 0L);
         MsgPackHelper.putMapValue((Map<String, Object>) hashMap, "is_followed", loveFan.getIsFollowed() ? 1L : 0L);
-        MsgPackHelper.putMapValue(hashMap, Instrumentation.REPORT_KEY_STREAMRESULT, loveFan.getStream());
+        MsgPackHelper.putMapValue(hashMap, "stream", loveFan.getStream());
         return hashMap;
     }
 
@@ -366,11 +359,11 @@ public class GrpcMsgSender extends ILiveMsgSender {
         }
         String propIcon = challengeProp.getUserProp().getPropIcon();
         String propName = challengeProp.getUserProp().getPropName();
-        ProtocolStringList propDescList = challengeProp.getUserProp().getPropDescList();
+        ProtocolStringList mo8064getPropDescList = challengeProp.getUserProp().mo8064getPropDescList();
         boolean z = false;
-        if (propDescList != null) {
-            String propDesc = propDescList.size() >= 2 ? challengeProp.getUserProp().getPropDesc(1) : "";
-            str2 = propDescList.size() >= 1 ? challengeProp.getUserProp().getPropDesc(0) : "";
+        if (mo8064getPropDescList != null) {
+            String propDesc = mo8064getPropDescList.size() >= 2 ? challengeProp.getUserProp().getPropDesc(1) : "";
+            str2 = mo8064getPropDescList.size() >= 1 ? challengeProp.getUserProp().getPropDesc(0) : "";
             str = propDesc;
         } else {
             str = "";
@@ -406,10 +399,10 @@ public class GrpcMsgSender extends ILiveMsgSender {
         for (UserProp userProp : challengeSync.getChallengeInfo(i).getUserPropList()) {
             String propIcon = userProp.getPropIcon();
             String propName = userProp.getPropName();
-            ProtocolStringList propDescList = userProp.getPropDescList();
-            if (propDescList != null) {
-                String propDesc = propDescList.size() >= 2 ? userProp.getPropDesc(1) : "";
-                if (propDescList.size() >= 1) {
+            ProtocolStringList mo8064getPropDescList = userProp.mo8064getPropDescList();
+            if (mo8064getPropDescList != null) {
+                String propDesc = mo8064getPropDescList.size() >= 2 ? userProp.getPropDesc(1) : "";
+                if (mo8064getPropDescList.size() >= 1) {
                     str2 = propDesc;
                     str = userProp.getPropDesc(0);
                 } else {
@@ -583,15 +576,15 @@ public class GrpcMsgSender extends ILiveMsgSender {
         if (TextUtils.isEmpty(this.e)) {
             this.e = LocaleUtils.b();
         }
-        LiveIM.a(AppInfo.g, "android_china", this.e, AppInfo.f9487c);
+        LiveIM.a(AppInfo.g, "android_china", this.e, AppInfo.c);
     }
 
     @Override // com.blued.android.module.live_china.msg.ILiveMsgSender
     public void a() {
-        this.f13933c = LiveRoomInfo.a().l();
+        this.c = LiveRoomInfo.a().l();
         this.d = LiveRoomInfo.a().q();
-        LogUtils.c("GrpcMsgSender", "init: mLiveImHost=" + this.f13933c + "\nmAccessToken=" + this.d);
-        LiveIM.a(AppInfo.d(), this.f13933c, HappyDnsUtils.d());
+        LogUtils.c("GrpcMsgSender", "init: mLiveImHost=" + this.c + "\nmAccessToken=" + this.d);
+        LiveIM.a(AppInfo.d(), this.c, HappyDnsUtils.d());
         LiveIM.b(this.i);
         LiveIM.a(this.i);
         LiveIM.a(this.d);
@@ -619,19 +612,19 @@ public class GrpcMsgSender extends ILiveMsgSender {
 
     @Override // com.blued.android.module.live_china.msg.ILiveMsgSender
     public void a(String str, final boolean z, final LiveZanExtraModel.EmojiModel emojiModel, final SendMsgListener sendMsgListener) {
-        final String a2 = EventTrackUtils.a(str);
+        final String a = EventTrackUtils.a(str);
         final Runnable runnable = new Runnable() { // from class: com.blued.android.module.live_china.msg.-$$Lambda$GrpcMsgSender$-HWAh-mV2IGJDREPajS3FnAjvro
             @Override // java.lang.Runnable
             public final void run() {
-                GrpcMsgSender.this.a(a2, z, emojiModel);
+                GrpcMsgSender.this.a(a, z, emojiModel);
             }
         };
-        LiveChatOuterClass.LiveMsgRequest.Builder contents = LiveChatOuterClass.LiveMsgRequest.newBuilder().setLiveId(LiveRoomManager.a().e()).setContents(a2);
+        LiveChatOuterClass.LiveMsgRequest.Builder contents = LiveChatOuterClass.LiveMsgRequest.newBuilder().setLiveId(LiveRoomManager.a().e()).setContents(a);
         int i = 0;
         if (emojiModel != null) {
             i = StringUtils.a(emojiModel.id, 0);
         }
-        LiveIM.a(contents.setEmojiId(i).build(), new LiveIM.OnSendMessageFinishListener() { // from class: com.blued.android.module.live_china.msg.-$$Lambda$GrpcMsgSender$18Mtc6nnVl85c1HH9QPSvqHnVWg
+        LiveIM.a(contents.setEmojiId(i).m4571build(), new LiveIM.OnSendMessageFinishListener() { // from class: com.blued.android.module.live_china.msg.-$$Lambda$GrpcMsgSender$18Mtc6nnVl85c1HH9QPSvqHnVWg
             @Override // com.blued.android.module.live.im.LiveIM.OnSendMessageFinishListener
             public final void onFinish(LiveChatOuterClass.LiveMsgResponse liveMsgResponse) {
                 GrpcMsgSender.this.a(sendMsgListener, runnable, liveMsgResponse);
@@ -646,7 +639,7 @@ public class GrpcMsgSender extends ILiveMsgSender {
 
     @Override // com.blued.android.module.live_china.msg.ILiveMsgSender
     public void a(boolean z) {
-        LiveIM.a(LiveChatOuterClass.LiveLikeRequest.newBuilder().setLiveId(LiveRoomManager.a().e()).setCount(1).setHasFirstLike(z).build(), new LiveIM.OnSendLikeFinishListener() { // from class: com.blued.android.module.live_china.msg.-$$Lambda$GrpcMsgSender$_aqvHetsiuhYMaWMZohyMhXKlok
+        LiveIM.a(LiveChatOuterClass.LiveLikeRequest.newBuilder().setLiveId(LiveRoomManager.a().e()).setCount(1).setHasFirstLike(z).m4477build(), new LiveIM.OnSendLikeFinishListener() { // from class: com.blued.android.module.live_china.msg.-$$Lambda$GrpcMsgSender$_aqvHetsiuhYMaWMZohyMhXKlok
             @Override // com.blued.android.module.live.im.LiveIM.OnSendLikeFinishListener
             public final void onFinish(LiveChatOuterClass.LiveLikeResponse liveLikeResponse) {
                 GrpcMsgSender.this.b(liveLikeResponse);
@@ -660,7 +653,7 @@ public class GrpcMsgSender extends ILiveMsgSender {
     @Override // com.blued.android.module.live_china.msg.ILiveMsgSender
     public void b() {
         if (this.b) {
-            if (!TextUtils.equals(this.f13933c, LiveRoomInfo.a().l()) || !TextUtils.equals(this.d, LiveRoomInfo.a().q())) {
+            if (!TextUtils.equals(this.c, LiveRoomInfo.a().l()) || !TextUtils.equals(this.d, LiveRoomInfo.a().q())) {
                 c();
             }
             AppInfo.n().postDelayed(new Runnable() { // from class: com.blued.android.module.live_china.msg.GrpcMsgSender.1
@@ -705,10 +698,10 @@ public class GrpcMsgSender extends ILiveMsgSender {
         }
         this.b = true;
         LogUtils.c("GrpcMsgSender", "connect live im @" + Thread.currentThread().getName());
-        this.f13933c = LiveRoomInfo.a().l();
+        this.c = LiveRoomInfo.a().l();
         this.d = LiveRoomInfo.a().q();
         if (!LiveIM.a()) {
-            LiveIM.a(AppInfo.d(), this.f13933c, HappyDnsUtils.d());
+            LiveIM.a(AppInfo.d(), this.c, HappyDnsUtils.d());
             LiveIM.a(false);
             LiveIM.a(this.i);
         }

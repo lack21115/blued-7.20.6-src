@@ -1,5 +1,6 @@
 package com.tencent.open;
 
+import android.R;
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.AssetManager;
@@ -80,10 +81,10 @@ public class TaskGuide extends BaseApi {
     private Runnable N;
 
     /* renamed from: a  reason: collision with root package name */
-    boolean f38201a;
+    boolean f24510a;
 
     /* renamed from: c  reason: collision with root package name */
-    IUiListener f38202c;
+    IUiListener f24511c;
     private WindowManager.LayoutParams d;
     private ViewGroup e;
     private WindowManager f;
@@ -98,28 +99,28 @@ public class TaskGuide extends BaseApi {
     public static /* synthetic */ class AnonymousClass4 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f38206a;
+        static final /* synthetic */ int[] f24515a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x0036 -> B:21:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:13:0x003a -> B:19:0x001f). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:15:0x003e -> B:25:0x002a). Please submit an issue!!! */
         static {
             int[] iArr = new int[k.values().length];
-            f38206a = iArr;
+            f24515a = iArr;
             try {
                 iArr[k.INIT.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f38206a[k.NORAML.ordinal()] = 2;
+                f24515a[k.NORAML.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f38206a[k.WAITTING_BACK_REWARD.ordinal()] = 3;
+                f24515a[k.WAITTING_BACK_REWARD.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f38206a[k.REWARD_SUCCESS.ordinal()] = 4;
+                f24515a[k.REWARD_SUCCESS.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
         }
@@ -190,12 +191,12 @@ public class TaskGuide extends BaseApi {
     public class c implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        boolean f38209a;
+        boolean f24518a;
         float b = 0.0f;
 
         public c(boolean z) {
-            this.f38209a = false;
-            this.f38209a = z;
+            this.f24518a = false;
+            this.f24518a = z;
         }
 
         @Override // java.lang.Runnable
@@ -209,7 +210,7 @@ public class TaskGuide extends BaseApi {
             }
             boolean z = f2 >= 1.0f;
             int interpolation = (int) (TaskGuide.this.D.getInterpolation(f2) * TaskGuide.this.J);
-            if (this.f38209a) {
+            if (this.f24518a) {
                 TaskGuide.this.d.y = TaskGuide.this.K + interpolation;
             } else {
                 TaskGuide.this.d.y = TaskGuide.this.K - interpolation;
@@ -244,7 +245,7 @@ public class TaskGuide extends BaseApi {
             if (exc != null) {
                 exc.printStackTrace();
             }
-            TaskGuide.this.f38202c.onError(new UiError(101, "error ", "金券领取时出现异常"));
+            TaskGuide.this.f24511c.onError(new UiError(101, "error ", "金券领取时出现异常"));
             if (TaskGuide.this.g != null) {
                 TaskGuide.this.g.post(new Runnable() { // from class: com.tencent.open.TaskGuide.d.1
                     @Override // java.lang.Runnable
@@ -284,7 +285,7 @@ public class TaskGuide extends BaseApi {
                 } catch (JSONException e2) {
                     e2.printStackTrace();
                 }
-                TaskGuide.this.f38202c.onComplete(jSONObject2);
+                TaskGuide.this.f24511c.onComplete(jSONObject2);
                 TaskGuide.this.b(this.b);
                 TaskGuide.this.d(2000);
             }
@@ -297,7 +298,7 @@ public class TaskGuide extends BaseApi {
             } catch (JSONException e3) {
                 e3.printStackTrace();
             }
-            TaskGuide.this.f38202c.onComplete(jSONObject3);
+            TaskGuide.this.f24511c.onComplete(jSONObject3);
             TaskGuide.this.b(this.b);
             TaskGuide.this.d(2000);
             TaskGuide.this.a(this.b, k.NORAML);
@@ -313,11 +314,11 @@ public class TaskGuide extends BaseApi {
     public class e extends RelativeLayout {
 
         /* renamed from: a  reason: collision with root package name */
-        int f38213a;
+        int f24522a;
 
         public e(Context context) {
             super(context);
-            this.f38213a = 0;
+            this.f24522a = 0;
         }
 
         @Override // android.view.ViewGroup
@@ -327,9 +328,9 @@ public class TaskGuide extends BaseApi {
             TaskGuide.this.d(3000);
             int action = motionEvent.getAction();
             if (action == 0) {
-                this.f38213a = y;
+                this.f24522a = y;
                 return false;
-            } else if (action == 1 && this.f38213a - y > ViewConfiguration.getTouchSlop() * 2) {
+            } else if (action == 1 && this.f24522a - y > ViewConfiguration.getTouchSlop() * 2) {
                 TaskGuide.this.l();
                 return true;
             } else {
@@ -341,12 +342,12 @@ public class TaskGuide extends BaseApi {
         public boolean onTouchEvent(MotionEvent motionEvent) {
             super.onTouchEvent(motionEvent);
             int y = (int) motionEvent.getY();
-            com.tencent.open.a.f.b("openSDK_LOG.TaskGuide", " onTouchEvent-----startY = " + this.f38213a + "currentY = " + y);
+            com.tencent.open.a.f.b("openSDK_LOG.TaskGuide", " onTouchEvent-----startY = " + this.f24522a + "currentY = " + y);
             int action = motionEvent.getAction();
             if (action == 0) {
-                this.f38213a = y;
+                this.f24522a = y;
                 return false;
-            } else if (action == 1 && this.f38213a - y > ViewConfiguration.getTouchSlop() * 2) {
+            } else if (action == 1 && this.f24522a - y > ViewConfiguration.getTouchSlop() * 2) {
                 TaskGuide.this.l();
                 return false;
             } else {
@@ -360,19 +361,19 @@ public class TaskGuide extends BaseApi {
     public class f implements View.OnClickListener {
 
         /* renamed from: a  reason: collision with root package name */
-        int f38214a;
+        int f24523a;
 
         public f(int i) {
-            this.f38214a = i;
+            this.f24523a = i;
         }
 
         @Override // android.view.View.OnClickListener
         public void onClick(View view) {
             Tracker.onClick(view);
             Button button = (Button) view;
-            if (TaskGuide.this.c(this.f38214a) == k.NORAML) {
-                TaskGuide.this.e(this.f38214a);
-                TaskGuide.this.b(this.f38214a);
+            if (TaskGuide.this.c(this.f24523a) == k.NORAML) {
+                TaskGuide.this.e(this.f24523a);
+                TaskGuide.this.b(this.f24523a);
             }
             TaskGuide.this.h();
         }
@@ -383,18 +384,18 @@ public class TaskGuide extends BaseApi {
     public static class g {
 
         /* renamed from: a  reason: collision with root package name */
-        int f38215a;
+        int f24524a;
         String b;
 
         /* renamed from: c  reason: collision with root package name */
-        String f38216c;
+        String f24525c;
         long d;
         int e;
 
         public g(int i, String str, String str2, long j, int i2) {
-            this.f38215a = i;
+            this.f24524a = i;
             this.b = str;
-            this.f38216c = str2;
+            this.f24525c = str2;
             this.d = j;
             this.e = i2;
         }
@@ -405,11 +406,11 @@ public class TaskGuide extends BaseApi {
     public static class h {
 
         /* renamed from: a  reason: collision with root package name */
-        String f38217a;
+        String f24526a;
         String b;
 
         /* renamed from: c  reason: collision with root package name */
-        g[] f38218c;
+        g[] f24527c;
 
         private h() {
         }
@@ -420,12 +421,12 @@ public class TaskGuide extends BaseApi {
             }
             h hVar = new h();
             JSONObject jSONObject2 = jSONObject.getJSONObject("task_info");
-            hVar.f38217a = jSONObject2.getString("task_id");
+            hVar.f24526a = jSONObject2.getString("task_id");
             hVar.b = jSONObject2.getString("task_desc");
             JSONArray jSONArray = jSONObject2.getJSONArray("step_info");
             int length = jSONArray.length();
             if (length > 0) {
-                hVar.f38218c = new g[length];
+                hVar.f24527c = new g[length];
             }
             int i = 0;
             while (true) {
@@ -434,14 +435,14 @@ public class TaskGuide extends BaseApi {
                     return hVar;
                 }
                 JSONObject jSONObject3 = jSONArray.getJSONObject(i2);
-                hVar.f38218c[i2] = new g(jSONObject3.getInt("step_no"), jSONObject3.getString("step_desc"), jSONObject3.getString("step_gift"), jSONObject3.getLong("end_time"), jSONObject3.getInt("status"));
+                hVar.f24527c[i2] = new g(jSONObject3.getInt("step_no"), jSONObject3.getString("step_desc"), jSONObject3.getString("step_gift"), jSONObject3.getLong("end_time"), jSONObject3.getInt("status"));
                 i = i2 + 1;
             }
         }
 
         public boolean a() {
             g[] gVarArr;
-            return (TextUtils.isEmpty(this.f38217a) || (gVarArr = this.f38218c) == null || gVarArr.length <= 0) ? false : true;
+            return (TextUtils.isEmpty(this.f24526a) || (gVarArr = this.f24527c) == null || gVarArr.length <= 0) ? false : true;
         }
     }
 
@@ -451,7 +452,7 @@ public class TaskGuide extends BaseApi {
         private TextView b;
 
         /* renamed from: c  reason: collision with root package name */
-        private Button f38220c;
+        private Button f24529c;
         private g d;
 
         public i(Context context, g gVar) {
@@ -476,52 +477,53 @@ public class TaskGuide extends BaseApi {
             layoutParams.leftMargin = TaskGuide.this.a(4);
             addView(this.b, layoutParams);
             Button button = new Button(TaskGuide.this.F);
-            this.f38220c = button;
+            this.f24529c = button;
             button.setPadding(0, 0, 0, 0);
-            this.f38220c.setTextSize(16.0f);
-            this.f38220c.setTextColor(Color.rgb(255, 255, 255));
-            this.f38220c.setShadowLayer(1.0f, 1.0f, 1.0f, Color.rgb(242, 211, 199));
-            this.f38220c.setIncludeFontPadding(false);
-            this.f38220c.setOnClickListener(new f(this.d.f38215a));
+            this.f24529c.setTextSize(16.0f);
+            this.f24529c.setTextColor(Color.rgb(255, 255, 255));
+            this.f24529c.setShadowLayer(1.0f, 1.0f, 1.0f, Color.rgb(242, 211, 199));
+            this.f24529c.setIncludeFontPadding(false);
+            this.f24529c.setOnClickListener(new f(this.d.f24524a));
             LinearLayout.LayoutParams layoutParams2 = new LinearLayout.LayoutParams(TaskGuide.this.a(TaskGuide.p), TaskGuide.this.a(TaskGuide.q));
             layoutParams2.leftMargin = TaskGuide.this.a(2);
             layoutParams2.rightMargin = TaskGuide.this.a(8);
-            addView(this.f38220c, layoutParams2);
+            addView(this.f24529c, layoutParams2);
         }
 
         public void a(k kVar) {
             if (!TextUtils.isEmpty(this.d.b)) {
                 this.b.setText(this.d.b);
             }
-            int i = AnonymousClass4.f38206a[kVar.ordinal()];
+            int i = AnonymousClass4.f24515a[kVar.ordinal()];
             if (i == 1) {
-                this.f38220c.setEnabled(false);
+                this.f24529c.setEnabled(false);
             } else if (i != 2) {
                 if (i == 3) {
-                    this.f38220c.setText("领取中...");
-                    this.f38220c.setEnabled(false);
+                    this.f24529c.setText("领取中...");
+                    this.f24529c.setEnabled(false);
                 } else if (i != 4) {
                 } else {
-                    this.f38220c.setText("已领取");
-                    this.f38220c.setBackgroundDrawable(TaskGuide.this.g());
-                    this.f38220c.setEnabled(false);
+                    this.f24529c.setText("已领取");
+                    this.f24529c.setBackgroundDrawable(TaskGuide.this.g());
+                    this.f24529c.setEnabled(false);
                 }
             } else if (this.d.e == 1) {
-                this.f38220c.setText(this.d.f38216c);
-                this.f38220c.setBackgroundDrawable(null);
-                this.f38220c.setTextColor(Color.rgb(255, 246, 0));
-                this.f38220c.setEnabled(false);
+                this.f24529c.setText(this.d.f24525c);
+                this.f24529c.setBackgroundDrawable(null);
+                this.f24529c.setTextColor(Color.rgb(255, 246, 0));
+                this.f24529c.setEnabled(false);
             } else if (this.d.e == 2) {
-                this.f38220c.setText("领取奖励");
-                this.f38220c.setTextColor(Color.rgb(255, 255, 255));
-                this.f38220c.setBackgroundDrawable(TaskGuide.this.f());
-                this.f38220c.setEnabled(true);
+                this.f24529c.setText("领取奖励");
+                this.f24529c.setTextColor(Color.rgb(255, 255, 255));
+                this.f24529c.setBackgroundDrawable(TaskGuide.this.f());
+                this.f24529c.setEnabled(true);
             }
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/open/TaskGuide$j.class */
-    class j extends a {
+    public class j extends a {
         private j() {
             super();
         }
@@ -538,9 +540,9 @@ public class TaskGuide extends BaseApi {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-                TaskGuide.this.f38202c.onComplete(jSONObject);
+                TaskGuide.this.f24511c.onComplete(jSONObject);
             } else {
-                TaskGuide.this.f38202c.onError(new UiError(100, "error ", "获取任务失败"));
+                TaskGuide.this.f24511c.onError(new UiError(100, "error ", "获取任务失败"));
             }
             TaskGuide.this.g.post(new Runnable() { // from class: com.tencent.open.TaskGuide.j.1
                 @Override // java.lang.Runnable
@@ -569,7 +571,7 @@ public class TaskGuide extends BaseApi {
             } catch (JSONException e2) {
                 e2.printStackTrace();
             }
-            TaskGuide.this.f38202c.onComplete(jSONObject2);
+            TaskGuide.this.f24511c.onComplete(jSONObject2);
         }
     }
 
@@ -596,7 +598,7 @@ public class TaskGuide extends BaseApi {
         this.C = 0.0f;
         this.D = new AccelerateInterpolator();
         this.E = false;
-        this.f38201a = false;
+        this.f24510a = false;
         this.G = false;
         this.H = false;
         this.M = null;
@@ -618,7 +620,7 @@ public class TaskGuide extends BaseApi {
         this.C = 0.0f;
         this.D = new AccelerateInterpolator();
         this.E = false;
-        this.f38201a = false;
+        this.f24510a = false;
         this.G = false;
         this.H = false;
         this.M = null;
@@ -676,7 +678,7 @@ public class TaskGuide extends BaseApi {
         this.f.getDefaultDisplay().getHeight();
         layoutParams.width = a(o);
         layoutParams.height = a(n);
-        layoutParams.windowAnimations = 16973826;
+        layoutParams.windowAnimations = R.style.Animation_Dialog;
         layoutParams.format = 1;
         layoutParams.flags |= 520;
         layoutParams.type = 2;
@@ -723,7 +725,7 @@ public class TaskGuide extends BaseApi {
     /* JADX INFO: Access modifiers changed from: private */
     public ViewGroup b(Context context) {
         e eVar = new e(context);
-        g[] gVarArr = this.h.f38218c;
+        g[] gVarArr = this.h.f24527c;
         if (gVarArr.length == 1) {
             i iVar = new i(context, gVarArr[0]);
             iVar.setId(1);
@@ -815,7 +817,7 @@ public class TaskGuide extends BaseApi {
     public void e(int i2) {
         Bundle composeCGIParams = composeCGIParams();
         composeCGIParams.putString("action", "get_gift");
-        composeCGIParams.putString("task_id", this.h.f38217a);
+        composeCGIParams.putString("task_id", this.h.f24526a);
         composeCGIParams.putString("step_no", new Integer(i2).toString());
         composeCGIParams.putString("appid", this.mToken.getAppId());
         HttpUtils.requestAsync(this.mToken, this.F, "http://appact.qzone.qq.com/appstore_activity_task_pcpush_sdk", composeCGIParams, "GET", new d(i2));
@@ -901,7 +903,7 @@ public class TaskGuide extends BaseApi {
     public void showTaskGuideWindow(Activity activity, Bundle bundle, IUiListener iUiListener) {
         Bundle composeCGIParams;
         this.F = activity;
-        this.f38202c = iUiListener;
+        this.f24511c = iUiListener;
         if (this.i == k.WAITTING_BACK_TASKINFO || this.j == k.WAITTING_BACK_TASKINFO || this.E) {
             com.tencent.open.a.f.c("openSDK_LOG.TaskGuide", "showTaskGuideWindow, mState1 ==" + this.i + ", mState2" + this.j);
             return;
@@ -915,7 +917,7 @@ public class TaskGuide extends BaseApi {
         }
         j jVar = new j();
         composeCGIParams.putString("action", "task_list");
-        composeCGIParams.putString(com.alipay.sdk.app.statistic.c.d, "mobile");
+        composeCGIParams.putString("auth", "mobile");
         composeCGIParams.putString("appid", this.mToken.getAppId());
         HttpUtils.requestAsync(this.mToken, this.F, "http://appact.qzone.qq.com/appstore_activity_task_pcpush_sdk", composeCGIParams, "GET", jVar);
         a(2, k.WAITTING_BACK_TASKINFO);

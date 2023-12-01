@@ -9,19 +9,20 @@ import com.anythink.expressad.foundation.d.c;
 import com.anythink.expressad.foundation.h.o;
 import com.anythink.expressad.splash.js.SplashJSBridgeImpl;
 import com.bytedance.applog.tracker.Tracker;
+import com.bytedance.applog.util.WebViewJsUtil;
 
 /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/splash/view/b.class */
 public final class b extends com.anythink.expressad.atsignalcommon.base.b {
 
     /* renamed from: a  reason: collision with root package name */
-    String f8281a;
+    String f5441a;
     com.anythink.expressad.splash.d.a b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final String f8282c = "SplashWebViewClient";
+    private final String f5442c = "SplashWebViewClient";
 
     public b(String str, com.anythink.expressad.splash.d.a aVar) {
-        this.f8281a = str;
+        this.f5441a = str;
         this.b = aVar;
     }
 
@@ -29,7 +30,7 @@ public final class b extends com.anythink.expressad.atsignalcommon.base.b {
     public final void onPageStarted(WebView webView, String str, Bitmap bitmap) {
         super.onPageStarted(webView, str, bitmap);
         try {
-            StringBuilder sb = new StringBuilder("javascript:");
+            StringBuilder sb = new StringBuilder(WebViewJsUtil.JS_URL_PREFIX);
             com.anythink.expressad.d.b.a.a();
             sb.append(com.anythink.expressad.d.b.a.b());
             if (Build.VERSION.SDK_INT <= 19) {
@@ -53,7 +54,7 @@ public final class b extends com.anythink.expressad.atsignalcommon.base.b {
     public final boolean shouldOverrideUrlLoading(WebView webView, String str) {
         try {
             WindVaneWebView windVaneWebView = (WindVaneWebView) webView;
-            if (System.currentTimeMillis() - windVaneWebView.lastTouchTime > com.anythink.expressad.a.b.a.f6956c) {
+            if (System.currentTimeMillis() - windVaneWebView.lastTouchTime > com.anythink.expressad.a.b.a.f4118c) {
                 c cVar = ((SplashJSBridgeImpl) windVaneWebView.getObject()).getmCampaignList().get(0);
                 windVaneWebView.getUrl();
                 int i = com.anythink.expressad.a.b.a.b;

@@ -11,13 +11,9 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 @DebugMetadata(b = "Deprecated.kt", c = {369, 371}, d = "minWith", e = "kotlinx.coroutines.channels.ChannelsKt__DeprecatedKt")
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/channels/ChannelsKt__DeprecatedKt$minWith$1.class */
 public final class ChannelsKt__DeprecatedKt$minWith$1<E> extends ContinuationImpl {
-
-    /* renamed from: a  reason: collision with root package name */
-    Object f42964a;
+    Object a;
     Object b;
-
-    /* renamed from: c  reason: collision with root package name */
-    Object f42965c;
+    Object c;
     Object d;
     /* synthetic */ Object e;
     int f;

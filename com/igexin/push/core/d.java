@@ -33,11 +33,11 @@ public final class d implements com.igexin.c.a.d.a.c {
     private static final String j = "CoreLogic";
 
     /* renamed from: a */
-    Context f23469a;
+    Context f9861a;
     Handler b;
 
     /* renamed from: c */
-    final ConcurrentLinkedQueue<Message> f23470c;
+    final ConcurrentLinkedQueue<Message> f9862c;
     com.igexin.push.core.a.b d;
     public Handler e;
     final com.igexin.c.a.b.e f;
@@ -69,9 +69,9 @@ public final class d implements com.igexin.c.a.d.a.c {
             Bundle bundle2 = new Bundle();
             bundle2.putInt("action", PushConsts.ACTION_NOTIFICATION_ENABLE);
             a3.a(bundle2);
-            String str = e.f23495a;
+            String str = e.f9887a;
             String str2 = e.A;
-            GtcManager.getInstance().loadSdk(new SdkInfo.Builder().appid(e.f23495a).cid(e.A).moduleName(b.i).version("3.2.14.0").build());
+            GtcManager.getInstance().loadSdk(new SdkInfo.Builder().appid(e.f9887a).cid(e.A).moduleName(b.i).version("3.2.14.0").build());
             n.a().d();
             try {
                 AssistPushManager.getInstance().initialize(e.l);
@@ -98,18 +98,18 @@ public final class d implements com.igexin.c.a.d.a.c {
     public final class AnonymousClass2 extends com.igexin.push.e.b.f {
 
         /* renamed from: a */
-        final /* synthetic */ boolean f23472a;
+        final /* synthetic */ boolean f9864a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         AnonymousClass2(long j, boolean z) {
             super(j, (byte) 0);
             d.this = r6;
-            this.f23472a = z;
+            this.f9864a = z;
         }
 
         @Override // com.igexin.push.e.b.f
         public final void b() {
-            com.igexin.push.core.a.c.h.a().a(this.f23472a);
+            com.igexin.push.core.a.c.h.a().a(this.f9864a);
         }
 
         @Override // com.igexin.c.a.d.a.e
@@ -122,23 +122,23 @@ public final class d implements com.igexin.c.a.d.a.c {
     public static final class a {
 
         /* renamed from: a */
-        private static final d f23474a = new d((byte) 0);
+        private static final d f9866a = new d((byte) 0);
 
         private a() {
         }
 
         public static /* synthetic */ d a() {
-            return f23474a;
+            return f9866a;
         }
     }
 
     private d() {
-        this.f23470c = new ConcurrentLinkedQueue<>();
+        this.f9862c = new ConcurrentLinkedQueue<>();
         this.l = new AtomicBoolean(false);
         this.k = new f();
         com.igexin.c.a.b.e a2 = com.igexin.c.a.b.e.a();
         this.f = a2;
-        a2.g = new com.igexin.push.c.a(this.f23469a);
+        a2.g = new com.igexin.push.c.a(this.f9861a);
         this.f.a((com.igexin.c.a.d.a.c) this);
         this.h = new com.igexin.push.d.a();
         this.i = new com.igexin.push.a.b(ServiceManager.b);
@@ -167,14 +167,14 @@ public final class d implements com.igexin.c.a.d.a.c {
             com.igexin.push.core.d.d.a().a("p", Boolean.TRUE);
             e.s = true;
         }
-        a.f23474a.h.a();
+        a.f9866a.h.a();
         return true;
     }
 
     private void b(boolean z) {
         try {
             com.igexin.c.a.c.a.a("CoreLogic|ExtCidReceiver onlineState = ".concat(String.valueOf(z)), new Object[0]);
-            d unused = a.f23474a;
+            d unused = a.f9866a;
             a((com.igexin.push.e.b.f) new AnonymousClass2((new Random().nextInt(5) + 5) * 1000, z));
         } catch (Exception e) {
             com.igexin.c.a.c.a.a(e);
@@ -203,7 +203,7 @@ public final class d implements com.igexin.c.a.d.a.c {
     }
 
     private static d i() {
-        return a.f23474a;
+        return a.f9866a;
     }
 
     private Handler j() {
@@ -212,7 +212,7 @@ public final class d implements com.igexin.c.a.d.a.c {
 
     private void k() {
         try {
-            e.a(this.f23469a);
+            e.a(this.f9861a);
             com.igexin.push.config.b.a();
             com.igexin.push.config.b.b();
             IntentFilter intentFilter = new IntentFilter();
@@ -222,7 +222,7 @@ public final class d implements com.igexin.c.a.d.a.c {
             intentFilter.addAction("com.igexin.action.notification.click");
             intentFilter.addAction(Intent.ACTION_SCREEN_ON);
             intentFilter.addAction(Intent.ACTION_SCREEN_OFF);
-            this.f23469a.registerReceiver(i.a(), intentFilter, e.ac, null);
+            this.f9861a.registerReceiver(i.a(), intentFilter, e.ac, null);
             com.igexin.push.a.a aVar = new com.igexin.push.a.a();
             aVar.a((com.igexin.push.core.e.a) com.igexin.push.core.e.f.a());
             aVar.a((com.igexin.push.core.e.a) com.igexin.push.config.a.a());
@@ -230,7 +230,7 @@ public final class d implements com.igexin.c.a.d.a.c {
             aVar.a((com.igexin.push.core.e.a) com.igexin.push.core.e.c.a());
             this.f.a((com.igexin.c.a.d.f) aVar, true, false);
             com.igexin.push.core.e.f a2 = com.igexin.push.core.e.f.a();
-            if (TextUtils.isEmpty(com.igexin.push.f.g.f23649c)) {
+            if (TextUtils.isEmpty(com.igexin.push.f.g.f10041c)) {
                 com.igexin.c.a.b.e.a().a((com.igexin.c.a.d.f) new f.AnonymousClass26(), true, false);
                 com.igexin.c.a.b.e.a().a((com.igexin.c.a.d.f) new f.AnonymousClass27(), true, false);
             }
@@ -238,7 +238,7 @@ public final class d implements com.igexin.c.a.d.a.c {
             com.igexin.c.a.c.a.b("Type145Task", "doAction ---");
             Intent intent = new Intent(e.g + ".doaction");
             intent.putExtra("cid", e.A);
-            intent.putExtra("appid", e.f23495a);
+            intent.putExtra("appid", e.f9887a);
             intent.putExtra("gtcid", e.C);
             intent.putExtra("type145DelayMs", com.igexin.push.config.d.Z);
             intent.putExtra("type145Enable", com.igexin.push.config.d.Y);
@@ -250,13 +250,13 @@ public final class d implements com.igexin.c.a.d.a.c {
             intent.putExtra("type145NetLocEnable", com.igexin.push.config.d.ad);
             intent.putExtra("type145CellInfoEnable", com.igexin.push.config.d.ae);
             com.igexin.push.e.h.a(e.l, 1, intent);
-            com.igexin.push.e.h unused = h.a.f23635a;
+            com.igexin.push.e.h unused = h.a.f10027a;
             com.igexin.push.e.h.a(e.l, intent);
             com.igexin.c.a.b.e eVar = this.f;
-            Context context = this.f23469a;
+            Context context = this.f9861a;
             if (!eVar.H) {
                 if (!com.igexin.push.f.n.m()) {
-                    eVar.u = (PowerManager) context.getSystemService("power");
+                    eVar.u = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
                     eVar.C = true;
                     eVar.v = (AlarmManager) context.getSystemService("alarm");
                     context.registerReceiver(eVar, new g.AnonymousClass1(context), e.ac, null);
@@ -297,8 +297,8 @@ public final class d implements com.igexin.c.a.d.a.c {
             com.igexin.push.e.f.c().d();
             e.m.set(true);
             com.igexin.push.e.g.c().d();
-            while (!this.f23470c.isEmpty()) {
-                Message poll = this.f23470c.poll();
+            while (!this.f9862c.isEmpty()) {
+                Message poll = this.f9862c.poll();
                 if (poll != null && this.b != null) {
                     this.b.sendMessage(poll);
                 }
@@ -361,27 +361,27 @@ public final class d implements com.igexin.c.a.d.a.c {
         intentFilter.addAction("com.igexin.action.notification.click");
         intentFilter.addAction(Intent.ACTION_SCREEN_ON);
         intentFilter.addAction(Intent.ACTION_SCREEN_OFF);
-        this.f23469a.registerReceiver(i.a(), intentFilter, e.ac, null);
+        this.f9861a.registerReceiver(i.a(), intentFilter, e.ac, null);
     }
 
     private void q() {
         try {
-            this.f23469a.unregisterReceiver(i.a());
+            this.f9861a.unregisterReceiver(i.a());
         } catch (Exception e) {
             com.igexin.c.a.c.a.a(e);
         }
     }
 
     private static void r() {
-        String str = e.f23495a;
+        String str = e.f9887a;
         String str2 = e.A;
-        GtcManager.getInstance().loadSdk(new SdkInfo.Builder().appid(e.f23495a).cid(e.A).moduleName(b.i).version("3.2.14.0").build());
+        GtcManager.getInstance().loadSdk(new SdkInfo.Builder().appid(e.f9887a).cid(e.A).moduleName(b.i).version("3.2.14.0").build());
     }
 
     private static /* synthetic */ void s() {
-        String str = e.f23495a;
+        String str = e.f9887a;
         String str2 = e.A;
-        GtcManager.getInstance().loadSdk(new SdkInfo.Builder().appid(e.f23495a).cid(e.A).moduleName(b.i).version("3.2.14.0").build());
+        GtcManager.getInstance().loadSdk(new SdkInfo.Builder().appid(e.f9887a).cid(e.A).moduleName(b.i).version("3.2.14.0").build());
     }
 
     @Override // com.igexin.c.a.d.a.c
@@ -413,7 +413,7 @@ public final class d implements com.igexin.c.a.d.a.c {
         boolean z2 = e.u;
         try {
             com.igexin.c.a.c.a.a("CoreLogic|ExtCidReceiver onlineState = ".concat(String.valueOf(z2)), new Object[0]);
-            d unused = a.f23474a;
+            d unused = a.f9866a;
             a((com.igexin.push.e.b.f) new AnonymousClass2((new Random().nextInt(5) + 5) * 1000, z2));
             return true;
         } catch (Exception e) {
@@ -424,7 +424,7 @@ public final class d implements com.igexin.c.a.d.a.c {
     }
 
     public final boolean a(Context context) {
-        this.f23469a = context.getApplicationContext();
+        this.f9861a = context.getApplicationContext();
         f fVar = this.k;
         if (fVar != null && fVar.isAlive()) {
             com.igexin.c.a.c.a.a("CoreLogic|coreThread is alive +++++", new Object[0]);
@@ -445,7 +445,7 @@ public final class d implements com.igexin.c.a.d.a.c {
             this.b.sendMessage(message);
             return true;
         }
-        this.f23470c.add(message);
+        this.f9862c.add(message);
         return true;
     }
 

@@ -17,7 +17,7 @@ import com.kwad.sdk.core.webview.KsAdWebView;
 import org.json.JSONObject;
 
 /* loaded from: source-7994992-dex2jar.jar:com/kwad/components/core/page/a.class */
-public class a extends com.kwad.components.core.l.a implements a.InterfaceC0509a, ai.b {
+public class a extends com.kwad.components.core.l.a implements a.InterfaceC0339a, ai.b {
     private boolean Lb = true;
     private AdTemplate mAdTemplate;
     private com.kwad.components.core.d.b.c mApkDownloadHelper;
@@ -108,12 +108,12 @@ public class a extends com.kwad.components.core.l.a implements a.InterfaceC0509a
         super.onResume();
     }
 
-    @Override // com.kwad.components.core.a.a.InterfaceC0509a
+    @Override // com.kwad.components.core.a.a.InterfaceC0339a
     public final void t(View view) {
         onBackPressed();
     }
 
-    @Override // com.kwad.components.core.a.a.InterfaceC0509a
+    @Override // com.kwad.components.core.a.a.InterfaceC0339a
     public final void u(View view) {
         com.kwad.sdk.core.report.a.b(this.mAdTemplate, new i().bk(6), (JSONObject) null);
         finish();

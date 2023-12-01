@@ -18,9 +18,7 @@ import org.json.JSONObject;
 
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/location/AMapLocationClient.class */
 public class AMapLocationClient {
-
-    /* renamed from: a  reason: collision with root package name */
-    Context f5473a;
+    Context a;
     d b;
 
     public AMapLocationClient(Context context) throws Exception {
@@ -29,7 +27,7 @@ public class AMapLocationClient {
             if (context == null) {
                 throw new IllegalArgumentException("Context参数不能为null");
             }
-            this.f5473a = context.getApplicationContext();
+            this.a = context.getApplicationContext();
             this.b = new d(context, null, null);
         } catch (Throwable th) {
             b.a(th, "AMClt", "ne1");
@@ -43,7 +41,7 @@ public class AMapLocationClient {
                 throw new IllegalArgumentException("Context参数不能为null");
             }
             Context applicationContext = context.getApplicationContext();
-            this.f5473a = applicationContext;
+            this.a = applicationContext;
             this.b = new d(applicationContext, intent, null);
         } catch (Throwable th) {
             b.a(th, "AMClt", "ne2");
@@ -57,7 +55,7 @@ public class AMapLocationClient {
                 throw new IllegalArgumentException("Context参数不能为null");
             }
             Context applicationContext = context.getApplicationContext();
-            this.f5473a = applicationContext;
+            this.a = applicationContext;
             this.b = new d(applicationContext, null, looper);
         } catch (Throwable th) {
             b.a(th, "AMClt", "ne3");
@@ -65,12 +63,12 @@ public class AMapLocationClient {
     }
 
     private static void a(Context context) throws Exception {
-        hy a2 = hx.a(context, b.c());
-        if (a2.f5127a == hx.c.SuccessCode) {
+        hy a = hx.a(context, b.c());
+        if (a.a == hx.c.SuccessCode) {
             return;
         }
-        Log.e("AMapLocationClient", a2.b);
-        throw new Exception(a2.b);
+        Log.e("AMapLocationClient", a.b);
+        throw new Exception(a.b);
     }
 
     public static String getDeviceId(Context context) {
@@ -79,7 +77,7 @@ public class AMapLocationClient {
 
     public static void setApiKey(String str) {
         try {
-            AMapLocationClientOption.f5474a = str;
+            AMapLocationClientOption.a = str;
         } catch (Throwable th) {
             b.a(th, "AMClt", "sKey");
         }
@@ -87,11 +85,11 @@ public class AMapLocationClient {
 
     public static void setHost(String str) {
         if (TextUtils.isEmpty(str)) {
-            ju.f5230a = -1;
+            ju.a = -1;
             ju.b = "";
             return;
         }
-        ju.f5230a = 1;
+        ju.a = 1;
         ju.b = str;
     }
 
@@ -185,10 +183,10 @@ public class AMapLocationClient {
             if (aMapLocationClientOption.b) {
                 aMapLocationClientOption.b = false;
                 JSONObject jSONObject = new JSONObject();
-                if (!TextUtils.isEmpty(aMapLocationClientOption.f5475c)) {
-                    jSONObject.put("amap_loc_scenes_type", aMapLocationClientOption.f5475c);
+                if (!TextUtils.isEmpty(aMapLocationClientOption.c)) {
+                    jSONObject.put("amap_loc_scenes_type", aMapLocationClientOption.c);
                 }
-                g.a(this.f5473a, "O019", jSONObject);
+                g.a(this.a, "O019", jSONObject);
             }
         } catch (Throwable th) {
             b.a(th, "AMClt", "sLocnO");

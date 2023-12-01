@@ -13,7 +13,6 @@ import com.android.internal.app.IVoiceInteractorCallback;
 import com.android.internal.app.IVoiceInteractorRequest;
 import com.android.internal.os.HandlerCaller;
 import com.android.internal.os.SomeArgs;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.util.ArrayList;
 
 /* loaded from: source-9557208-dex2jar.jar:android/app/VoiceInteractor.class */
@@ -30,14 +29,13 @@ public class VoiceInteractor {
     final HandlerCaller mHandlerCaller;
     final IVoiceInteractor mInteractor;
     final HandlerCaller.Callback mHandlerCallerCallback = new HandlerCaller.Callback() { // from class: android.app.VoiceInteractor.1
-        @Override // com.android.internal.os.HandlerCaller.Callback
         public void executeMessage(Message message) {
             boolean z = false;
             SomeArgs someArgs = (SomeArgs) message.obj;
             switch (message.what) {
                 case 1:
                     Request pullRequest = VoiceInteractor.this.pullRequest((IVoiceInteractorRequest) someArgs.arg1, true);
-                    Log.d(VoiceInteractor.TAG, "onConfirmResult: req=" + ((IVoiceInteractorRequest) someArgs.arg1).asBinder() + BridgeUtil.SPLIT_MARK + pullRequest + " confirmed=" + message.arg1 + " result=" + someArgs.arg2);
+                    Log.d(VoiceInteractor.TAG, "onConfirmResult: req=" + ((IVoiceInteractorRequest) someArgs.arg1).asBinder() + "/" + pullRequest + " confirmed=" + message.arg1 + " result=" + someArgs.arg2);
                     if (pullRequest != null) {
                         ConfirmationRequest confirmationRequest = (ConfirmationRequest) pullRequest;
                         if (message.arg1 != 0) {
@@ -50,7 +48,7 @@ public class VoiceInteractor {
                     return;
                 case 2:
                     Request pullRequest2 = VoiceInteractor.this.pullRequest((IVoiceInteractorRequest) someArgs.arg1, true);
-                    Log.d(VoiceInteractor.TAG, "onCompleteVoice: req=" + ((IVoiceInteractorRequest) someArgs.arg1).asBinder() + BridgeUtil.SPLIT_MARK + pullRequest2 + " result=" + someArgs.arg1);
+                    Log.d(VoiceInteractor.TAG, "onCompleteVoice: req=" + ((IVoiceInteractorRequest) someArgs.arg1).asBinder() + "/" + pullRequest2 + " result=" + someArgs.arg1);
                     if (pullRequest2 != null) {
                         ((CompleteVoiceRequest) pullRequest2).onCompleteResult((Bundle) someArgs.arg2);
                         pullRequest2.clear();
@@ -59,7 +57,7 @@ public class VoiceInteractor {
                     return;
                 case 3:
                     Request pullRequest3 = VoiceInteractor.this.pullRequest((IVoiceInteractorRequest) someArgs.arg1, true);
-                    Log.d(VoiceInteractor.TAG, "onAbortVoice: req=" + ((IVoiceInteractorRequest) someArgs.arg1).asBinder() + BridgeUtil.SPLIT_MARK + pullRequest3 + " result=" + someArgs.arg1);
+                    Log.d(VoiceInteractor.TAG, "onAbortVoice: req=" + ((IVoiceInteractorRequest) someArgs.arg1).asBinder() + "/" + pullRequest3 + " result=" + someArgs.arg1);
                     if (pullRequest3 != null) {
                         ((AbortVoiceRequest) pullRequest3).onAbortResult((Bundle) someArgs.arg2);
                         pullRequest3.clear();
@@ -68,7 +66,7 @@ public class VoiceInteractor {
                     return;
                 case 4:
                     Request pullRequest4 = VoiceInteractor.this.pullRequest((IVoiceInteractorRequest) someArgs.arg1, message.arg1 != 0);
-                    Log.d(VoiceInteractor.TAG, "onCommandResult: req=" + ((IVoiceInteractorRequest) someArgs.arg1).asBinder() + BridgeUtil.SPLIT_MARK + pullRequest4 + " result=" + someArgs.arg2);
+                    Log.d(VoiceInteractor.TAG, "onCommandResult: req=" + ((IVoiceInteractorRequest) someArgs.arg1).asBinder() + "/" + pullRequest4 + " result=" + someArgs.arg2);
                     if (pullRequest4 != null) {
                         ((CommandRequest) pullRequest4).onCommandResult((Bundle) someArgs.arg2);
                         if (message.arg1 != 0) {
@@ -80,7 +78,7 @@ public class VoiceInteractor {
                     return;
                 case 5:
                     Request pullRequest5 = VoiceInteractor.this.pullRequest((IVoiceInteractorRequest) someArgs.arg1, true);
-                    Log.d(VoiceInteractor.TAG, "onCancelResult: req=" + ((IVoiceInteractorRequest) someArgs.arg1).asBinder() + BridgeUtil.SPLIT_MARK + pullRequest5);
+                    Log.d(VoiceInteractor.TAG, "onCancelResult: req=" + ((IVoiceInteractorRequest) someArgs.arg1).asBinder() + "/" + pullRequest5);
                     if (pullRequest5 != null) {
                         pullRequest5.onCancel();
                         pullRequest5.clear();
@@ -93,27 +91,22 @@ public class VoiceInteractor {
         }
     };
     final IVoiceInteractorCallback.Stub mCallback = new IVoiceInteractorCallback.Stub() { // from class: android.app.VoiceInteractor.2
-        @Override // com.android.internal.app.IVoiceInteractorCallback
         public void deliverAbortVoiceResult(IVoiceInteractorRequest iVoiceInteractorRequest, Bundle bundle) {
             VoiceInteractor.this.mHandlerCaller.sendMessage(VoiceInteractor.this.mHandlerCaller.obtainMessageOO(3, iVoiceInteractorRequest, bundle));
         }
 
-        @Override // com.android.internal.app.IVoiceInteractorCallback
         public void deliverCancel(IVoiceInteractorRequest iVoiceInteractorRequest) throws RemoteException {
             VoiceInteractor.this.mHandlerCaller.sendMessage(VoiceInteractor.this.mHandlerCaller.obtainMessageO(5, iVoiceInteractorRequest));
         }
 
-        @Override // com.android.internal.app.IVoiceInteractorCallback
         public void deliverCommandResult(IVoiceInteractorRequest iVoiceInteractorRequest, boolean z, Bundle bundle) {
             VoiceInteractor.this.mHandlerCaller.sendMessage(VoiceInteractor.this.mHandlerCaller.obtainMessageIOO(4, z ? 1 : 0, iVoiceInteractorRequest, bundle));
         }
 
-        @Override // com.android.internal.app.IVoiceInteractorCallback
         public void deliverCompleteVoiceResult(IVoiceInteractorRequest iVoiceInteractorRequest, Bundle bundle) {
             VoiceInteractor.this.mHandlerCaller.sendMessage(VoiceInteractor.this.mHandlerCaller.obtainMessageOO(2, iVoiceInteractorRequest, bundle));
         }
 
-        @Override // com.android.internal.app.IVoiceInteractorCallback
         public void deliverConfirmationResult(IVoiceInteractorRequest iVoiceInteractorRequest, boolean z, Bundle bundle) {
             VoiceInteractor.this.mHandlerCaller.sendMessage(VoiceInteractor.this.mHandlerCaller.obtainMessageIOO(1, z ? 1 : 0, iVoiceInteractorRequest, bundle));
         }

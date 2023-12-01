@@ -75,9 +75,9 @@ public class MeasureValueSet implements Parcelable, b {
         MeasureValueSet measureValueSet = (MeasureValueSet) a.a().a(MeasureValueSet.class, new Object[0]);
         if (map != null) {
             for (Map.Entry<String, String> entry : map.entrySet()) {
-                Double a2 = a(entry.getValue());
-                if (a2 != null) {
-                    measureValueSet.map.put(entry.getKey(), a.a().a(MeasureValue.class, a2));
+                Double a = a(entry.getValue());
+                if (a != null) {
+                    measureValueSet.map.put(entry.getKey(), a.a().a(MeasureValue.class, a));
                 }
             }
         }

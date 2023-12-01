@@ -15,24 +15,24 @@ import java.lang.reflect.InvocationTargetException;
 public final class r {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f22566a = "dl_LoadHelper";
+    private static final String f8958a = "dl_LoadHelper";
     private static final String b = "DynamicLoader";
 
     public static Context a(Context context, String str, Bundle bundle, IDynamicLoader iDynamicLoader) {
         try {
             IObjectWrapper load = iDynamicLoader.load(ac.a(context), str, bundle.getInt("module_version"), ac.a(bundle));
             if (ac.a(load) == null) {
-                aa.c(f22566a, "Get remote context is null.");
+                aa.c(f8958a, "Get remote context is null.");
                 return null;
             } else if (!(ac.a(load) instanceof Context)) {
-                aa.c(f22566a, "Incorrect context type.");
+                aa.c(f8958a, "Incorrect context type.");
                 return null;
             } else {
-                aa.b(f22566a, "Get context for the module:" + str + " success.");
+                aa.b(f8958a, "Get context for the module:" + str + " success.");
                 return (Context) ac.a(load);
             }
         } catch (Exception e) {
-            aa.c(f22566a, "Failed to get remote module context." + e.getClass().getSimpleName());
+            aa.c(f8958a, "Failed to get remote module context." + e.getClass().getSimpleName());
             return null;
         }
     }
@@ -43,7 +43,7 @@ public final class r {
             try {
                 if (!TextUtils.isEmpty(str)) {
                     if (Build.VERSION.SDK_INT < 21) {
-                        aa.b(f22566a, "The android version is android 4.x.");
+                        aa.b(f8958a, "The android version is android 4.x.");
                         dVar = new com.huawei.hms.ads.dynamicloader.c(str, context.getFilesDir().getAbsolutePath(), null, ClassLoader.getSystemClassLoader());
                     } else {
                         dVar = new com.huawei.hms.ads.dynamicloader.d(str, ClassLoader.getSystemClassLoader());
@@ -71,7 +71,7 @@ public final class r {
                     }
                     String str3 = strArr2[i3];
                     if (Integer.parseInt(str3) < i) {
-                        aa.b(r.f22566a, "Delete low version:" + i + " in modulePath.");
+                        aa.b(r.f8958a, "Delete low version:" + i + " in modulePath.");
                         y.b(str + File.separator + str3);
                     }
                     i2 = i3 + 1;

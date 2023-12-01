@@ -1,7 +1,6 @@
 package com.sdk.tencent.g;
 
 import android.content.Context;
-import com.alipay.sdk.util.i;
 import com.sdk.tencent.a.d;
 import com.sdk.tencent.a.e;
 import com.sdk.tencent.base.framework.bean.AInfo;
@@ -32,11 +31,11 @@ public class b<T> {
     public static final boolean j = c.b;
 
     /* renamed from: a  reason: collision with root package name */
-    public PInfo f28054a;
+    public PInfo f14366a;
     public AInfo b;
 
     /* renamed from: c  reason: collision with root package name */
-    public SInfo f28055c;
+    public SInfo f14367c;
     public ArrayList<KInfo> d;
     public com.sdk.tencent.e.a<T> e;
     public Context f;
@@ -87,7 +86,7 @@ public class b<T> {
             String a4 = a(dataInfo, a2, a3);
             try {
                 String str5 = a2 + a3;
-                int i5 = com.sdk.tencent.p.b.f28070a;
+                int i5 = com.sdk.tencent.p.b.f14382a;
                 PublicKey a5 = com.sdk.tencent.p.a.a(str3);
                 Cipher cipher = Cipher.getInstance("RSA/ECB/PKCS1Padding");
                 cipher.init(1, a5);
@@ -98,20 +97,20 @@ public class b<T> {
                 String a6 = com.sdk.tencent.r.a.a(apiKey, str2, treeMap);
                 HashMap<String, Object> hashMap = new HashMap<>(16);
                 if (com.sdk.tencent.n.b.b(a6).booleanValue()) {
-                    treeMap.put("sign", a6);
+                    treeMap.put(com.anythink.expressad.d.a.b.d, a6);
                     treeMap.put("sign_Type", "B");
-                    hashMap.put("sign", a6);
+                    hashMap.put(com.anythink.expressad.d.a.b.d, a6);
                     hashMap.put("api-protocol", "1.1");
                 }
                 e eVar = new e();
-                String str7 = bVar2.f28011a;
+                String str7 = bVar2.f14323a;
                 if (com.sdk.tencent.n.b.b(str7).booleanValue()) {
-                    eVar.f28012a = str7;
+                    eVar.f14324a = str7;
                 }
                 eVar.b = str + str2;
                 eVar.g = bVar;
                 eVar.f = i2;
-                eVar.f28013c = treeMap;
+                eVar.f14325c = treeMap;
                 eVar.d = null;
                 eVar.e = hashMap;
                 if (!"/dro/netm/v1.0/qc".equals(str2)) {
@@ -125,7 +124,7 @@ public class b<T> {
                         throw new IllegalStateException("Cannot execute task: the task is already executed.");
                     }
                     cVar.e = true;
-                    cVar.f28031a.f28035a = new Object[]{dVar};
+                    cVar.f14343a.f14347a = new Object[]{dVar};
                     executor.execute(new g(null, cVar.b));
                     return cVar;
                 } catch (Exception e) {
@@ -162,13 +161,13 @@ public class b<T> {
                 aInfo.setMd5(AppUtils.getAppMd5(context));
                 this.b = aInfo;
             }
-            if (this.f28055c == null) {
+            if (this.f14367c == null) {
                 SInfo sInfo = new SInfo();
                 sInfo.setN(BaseConfig.n);
-                sInfo.setC(BaseConfig.f28025c);
+                sInfo.setC(BaseConfig.f14337c);
                 sInfo.setV(BaseConfig.v);
                 sInfo.setCm(BaseConfig.cm);
-                this.f28055c = sInfo;
+                this.f14367c = sInfo;
             }
             if (this.d == null) {
                 this.d = new ArrayList<>();
@@ -184,26 +183,26 @@ public class b<T> {
                 mobileKInfo.setIdfd(next.isIdfd());
                 arrayList.add(mobileKInfo);
             }
-            if (this.f28054a == null) {
+            if (this.f14366a == null) {
                 PInfo pInfo = new PInfo();
                 pInfo.setOs("Android");
-                this.f28054a = pInfo;
+                this.f14366a = pInfo;
             }
-            str3 = "{app:" + this.b + ",sdk:" + this.f28055c + ",device:" + this.f28054a + ",sim:" + arrayList + ",data:" + dataInfo + i.d;
+            str3 = "{app:" + this.b + ",sdk:" + this.f14367c + ",device:" + this.f14366a + ",sim:" + arrayList + ",data:" + dataInfo + "}";
         } catch (Exception e) {
             com.sdk.tencent.n.b.a(i, e.toString(), Boolean.valueOf(j));
             str3 = null;
         }
-        String str5 = com.sdk.tencent.q.a.f28071a;
+        String str5 = com.sdk.tencent.q.a.f14383a;
         if (str3 != null) {
             try {
                 if (str3.length() != 0 && str3.trim().length() != 0) {
                     if (str == null) {
-                        str4 = com.sdk.tencent.q.a.f28071a;
+                        str4 = com.sdk.tencent.q.a.f14383a;
                         z = com.sdk.tencent.q.a.b;
                         obj = "encrypt key is null";
                     } else if (str.length() != 16) {
-                        str4 = com.sdk.tencent.q.a.f28071a;
+                        str4 = com.sdk.tencent.q.a.f14383a;
                         z = com.sdk.tencent.q.a.b;
                         obj = "encrypt key length error";
                     } else if (str2.length() == 16) {
@@ -211,7 +210,7 @@ public class b<T> {
                         cipher.init(1, new SecretKeySpec(str.getBytes("utf-8"), "AES"), new IvParameterSpec(str2.getBytes("utf-8")));
                         return com.sdk.tencent.q.c.a(cipher.doFinal(str3.getBytes("utf-8")));
                     } else {
-                        str4 = com.sdk.tencent.q.a.f28071a;
+                        str4 = com.sdk.tencent.q.a.f14383a;
                         z = com.sdk.tencent.q.a.b;
                         obj = "ivStr length error";
                     }
@@ -219,11 +218,11 @@ public class b<T> {
                     return null;
                 }
             } catch (Exception e2) {
-                com.sdk.tencent.i.a.logError(com.sdk.tencent.q.a.f28071a, "EncryptCbcIv", e2.getMessage(), com.sdk.tencent.q.a.b);
+                com.sdk.tencent.i.a.logError(com.sdk.tencent.q.a.f14383a, "EncryptCbcIv", e2.getMessage(), com.sdk.tencent.q.a.b);
                 return null;
             }
         }
-        str4 = com.sdk.tencent.q.a.f28071a;
+        str4 = com.sdk.tencent.q.a.f14383a;
         z = com.sdk.tencent.q.a.b;
         obj = "encrypt content is null";
         com.sdk.tencent.i.a.logError(str4, "EncryptCbcIv", obj, z);

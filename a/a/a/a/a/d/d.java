@@ -9,7 +9,7 @@ import java.net.UnknownHostException;
 public class d implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public int f1346a = 0;
+    public int f1298a = 0;
     public g b = new g();
 
     public final String a() {
@@ -27,10 +27,10 @@ public class d implements Runnable {
     }
 
     public final void b() {
-        int i = this.f1346a + 1;
-        this.f1346a = i;
+        int i = this.f1298a + 1;
+        this.f1298a = i;
         if (i > 2) {
-            this.f1346a = 0;
+            this.f1298a = 0;
             return;
         }
         try {
@@ -66,7 +66,7 @@ public class d implements Runnable {
                 return;
             }
             if (responseCode == 200) {
-                this.f1346a = 0;
+                this.f1298a = 0;
             }
             f.a().d();
         }

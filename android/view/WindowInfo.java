@@ -67,12 +67,12 @@ public class WindowInfo implements Parcelable {
     }
 
     public static WindowInfo obtain() {
-        WindowInfo acquire = sPool.acquire();
-        WindowInfo windowInfo = acquire;
-        if (acquire == null) {
-            windowInfo = new WindowInfo();
+        WindowInfo windowInfo = (WindowInfo) sPool.acquire();
+        WindowInfo windowInfo2 = windowInfo;
+        if (windowInfo == null) {
+            windowInfo2 = new WindowInfo();
         }
-        return windowInfo;
+        return windowInfo2;
     }
 
     public static WindowInfo obtain(WindowInfo windowInfo) {

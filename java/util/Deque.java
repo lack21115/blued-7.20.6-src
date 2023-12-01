@@ -2,14 +2,14 @@ package java.util;
 
 /* loaded from: source-2895416-dex2jar.jar:java/util/Deque.class */
 public interface Deque<E> extends Queue<E> {
-    @Override // java.util.Queue, java.util.Collection, java.util.Set
+    @Override // java.util.Queue, java.util.Collection
     boolean add(E e);
 
     void addFirst(E e);
 
     void addLast(E e);
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     boolean contains(Object obj);
 
     Iterator<E> descendingIterator();
@@ -52,7 +52,7 @@ public interface Deque<E> extends Queue<E> {
     @Override // java.util.Queue
     E remove();
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     boolean remove(Object obj);
 
     E removeFirst();
@@ -63,6 +63,6 @@ public interface Deque<E> extends Queue<E> {
 
     boolean removeLastOccurrence(Object obj);
 
-    @Override // java.util.Collection, java.util.List
+    @Override // java.util.Collection
     int size();
 }

@@ -8,12 +8,12 @@ import java.util.concurrent.TimeUnit;
 public class o {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Object f22853a = new Object();
+    private static final Object f9245a = new Object();
     private static ThreadPoolExecutor b = new ThreadPoolExecutor(1, 50, 60, TimeUnit.SECONDS, new LinkedBlockingQueue());
 
     public static ThreadPoolExecutor a() {
         ThreadPoolExecutor threadPoolExecutor;
-        synchronized (f22853a) {
+        synchronized (f9245a) {
             threadPoolExecutor = b;
         }
         return threadPoolExecutor;

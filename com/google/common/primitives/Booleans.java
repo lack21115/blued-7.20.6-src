@@ -32,12 +32,12 @@ public final class Booleans {
             this.end = i2;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
         public boolean contains(Object obj) {
             return (obj instanceof Boolean) && Booleans.indexOf(this.array, ((Boolean) obj).booleanValue(), this.start, this.end) != -1;
         }
 
-        @Override // java.util.AbstractList, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractList, java.util.Collection, java.util.List
         public boolean equals(@NullableDecl Object obj) {
             if (obj == this) {
                 return true;
@@ -69,7 +69,7 @@ public final class Booleans {
             return Boolean.valueOf(this.array[this.start + i]);
         }
 
-        @Override // java.util.AbstractList, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractList, java.util.Collection, java.util.List
         public int hashCode() {
             int i = 1;
             for (int i2 = this.start; i2 < this.end; i2++) {
@@ -87,7 +87,7 @@ public final class Booleans {
             return indexOf - this.start;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
         public boolean isEmpty() {
             return false;
         }
@@ -225,7 +225,7 @@ public final class Booleans {
         boolean[] zArr3 = new boolean[i];
         int i2 = 0;
         for (boolean[] zArr4 : zArr) {
-            System.arraycopy((Object) zArr4, 0, (Object) zArr3, i2, zArr4.length);
+            System.arraycopy(zArr4, 0, zArr3, i2, zArr4.length);
             i2 += zArr4.length;
         }
         return zArr3;

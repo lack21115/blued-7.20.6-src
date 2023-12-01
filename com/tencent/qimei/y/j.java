@@ -4,16 +4,16 @@ package com.tencent.qimei.y;
 public class j implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ k f38452a;
+    public final /* synthetic */ k f24761a;
 
     public j(k kVar) {
-        this.f38452a = kVar;
+        this.f24761a = kVar;
     }
 
     @Override // java.lang.Runnable
     public void run() {
         try {
-            this.f38452a.a();
+            this.f24761a.a();
         } catch (Throwable th) {
             com.tencent.qimei.k.a.a(th);
         }

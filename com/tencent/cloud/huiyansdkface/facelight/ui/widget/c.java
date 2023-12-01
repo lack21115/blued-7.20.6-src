@@ -10,22 +10,22 @@ import com.tencent.cloud.huiyansdkface.normal.tools.WLogger;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f35786a;
+    private Context f22095a;
     private IntentFilter b = new IntentFilter(Intent.ACTION_CLOSE_SYSTEM_DIALOGS);
 
     /* renamed from: c  reason: collision with root package name */
-    private b f35787c;
+    private b f22096c;
     private a d;
 
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/cloud/huiyansdkface/facelight/ui/widget/c$a.class */
     class a extends BroadcastReceiver {
 
         /* renamed from: a  reason: collision with root package name */
-        final String f35788a = "reason";
+        final String f22097a = "reason";
         final String b = "globalactions";
 
         /* renamed from: c  reason: collision with root package name */
-        final String f35789c = "recentapps";
+        final String f22098c = "recentapps";
         final String d = "homekey";
 
         a() {
@@ -39,11 +39,11 @@ public class c {
                 return;
             }
             WLogger.i("HomeWatcher", "action: " + action + ",reason: " + stringExtra);
-            if (c.this.f35787c != null) {
+            if (c.this.f22096c != null) {
                 if (stringExtra.equals("homekey")) {
-                    c.this.f35787c.a();
+                    c.this.f22096c.a();
                 } else if (stringExtra.equals("recentapps")) {
-                    c.this.f35787c.b();
+                    c.this.f22096c.b();
                 }
             }
         }
@@ -57,25 +57,25 @@ public class c {
     }
 
     public c(Context context) {
-        this.f35786a = context;
+        this.f22095a = context;
     }
 
     public void a() {
         a aVar = this.d;
         if (aVar != null) {
-            this.f35786a.registerReceiver(aVar, this.b, null, null);
+            this.f22095a.registerReceiver(aVar, this.b, null, null);
         }
     }
 
     public void a(b bVar) {
-        this.f35787c = bVar;
+        this.f22096c = bVar;
         this.d = new a();
     }
 
     public void b() {
         a aVar = this.d;
         if (aVar != null) {
-            this.f35786a.unregisterReceiver(aVar);
+            this.f22095a.unregisterReceiver(aVar);
         }
     }
 }

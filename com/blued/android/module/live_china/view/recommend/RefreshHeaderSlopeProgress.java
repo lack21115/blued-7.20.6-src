@@ -11,20 +11,16 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/recommend/RefreshHeaderSlopeProgress.class */
 public class RefreshHeaderSlopeProgress extends View {
-
-    /* renamed from: a  reason: collision with root package name */
-    private int f15435a;
+    private int a;
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f15436c;
+    private int c;
     private int d;
     private float e;
     private float f;
 
     public RefreshHeaderSlopeProgress(Context context) {
         super(context);
-        this.f15435a = 0;
+        this.a = 0;
         this.b = 100;
         this.e = 100.0f;
         this.f = 0.0f;
@@ -33,7 +29,7 @@ public class RefreshHeaderSlopeProgress extends View {
 
     public RefreshHeaderSlopeProgress(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f15435a = 0;
+        this.a = 0;
         this.b = 100;
         this.e = 100.0f;
         this.f = 0.0f;
@@ -42,7 +38,7 @@ public class RefreshHeaderSlopeProgress extends View {
 
     public RefreshHeaderSlopeProgress(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f15435a = 0;
+        this.a = 0;
         this.b = 100;
         this.e = 100.0f;
         this.f = 0.0f;
@@ -51,7 +47,7 @@ public class RefreshHeaderSlopeProgress extends View {
 
     public RefreshHeaderSlopeProgress(Context context, AttributeSet attributeSet, int i, int i2) {
         super(context, attributeSet, i, i2);
-        this.f15435a = 0;
+        this.a = 0;
         this.b = 100;
         this.e = 100.0f;
         this.f = 0.0f;
@@ -59,7 +55,7 @@ public class RefreshHeaderSlopeProgress extends View {
     }
 
     private void a(Context context) {
-        this.f15436c = ContextCompat.getColor(context, R.color.white);
+        this.c = ContextCompat.getColor(context, R.color.white);
         this.d = ContextCompat.getColor(context, R.color.syc_dark_30ffffff);
     }
 
@@ -72,7 +68,7 @@ public class RefreshHeaderSlopeProgress extends View {
     }
 
     public int getProgress() {
-        return this.f15435a;
+        return this.a;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -85,7 +81,7 @@ public class RefreshHeaderSlopeProgress extends View {
         paint.setDither(true);
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(this.f);
-        float f = this.f15435a / this.b;
+        float f = this.a / this.b;
         float f2 = (-90.0f) - (180.0f * f);
         float f3 = f * 360.0f;
         float f4 = (int) ((min - this.e) / 2.0f);
@@ -93,7 +89,7 @@ public class RefreshHeaderSlopeProgress extends View {
         RectF rectF = new RectF(f4, f4, f4 + f5, f5 + f4);
         paint.setColor(this.d);
         canvas.drawArc(rectF, f2 + f3, 360.0f - f3, false, paint);
-        paint.setColor(this.f15436c);
+        paint.setColor(this.c);
         canvas.drawArc(rectF, f2, f3, false, paint);
     }
 
@@ -127,13 +123,13 @@ public class RefreshHeaderSlopeProgress extends View {
         if (i2 > i3) {
             i4 = i3;
         }
-        this.f15435a = i4;
+        this.a = i4;
         invalidate();
     }
 
     public void setRingColor(int i) {
         if (i != 0) {
-            this.f15436c = i;
+            this.c = i;
         }
     }
 }

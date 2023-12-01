@@ -8,7 +8,7 @@ public class SimpleArrayMap<K, V> {
     static Object[] b;
 
     /* renamed from: c  reason: collision with root package name */
-    static int f1963c;
+    static int f1915c;
     static Object[] d;
     static int e;
     int[] f;
@@ -16,15 +16,15 @@ public class SimpleArrayMap<K, V> {
     int h;
 
     public SimpleArrayMap() {
-        this.f = ContainerHelpers.f1947a;
-        this.g = ContainerHelpers.f1948c;
+        this.f = ContainerHelpers.f1899a;
+        this.g = ContainerHelpers.f1900c;
         this.h = 0;
     }
 
     public SimpleArrayMap(int i) {
         if (i == 0) {
-            this.f = ContainerHelpers.f1947a;
-            this.g = ContainerHelpers.f1948c;
+            this.f = ContainerHelpers.f1899a;
+            this.g = ContainerHelpers.f1900c;
         } else {
             a(i);
         }
@@ -74,7 +74,7 @@ public class SimpleArrayMap<K, V> {
                         this.f = (int[]) objArr2[1];
                         objArr2[1] = null;
                         objArr2[0] = null;
-                        f1963c--;
+                        f1915c--;
                         return;
                     }
                 } finally {
@@ -110,7 +110,7 @@ public class SimpleArrayMap<K, V> {
         } else if (iArr.length == 4) {
             synchronized (SimpleArrayMap.class) {
                 try {
-                    if (f1963c < 10) {
+                    if (f1915c < 10) {
                         objArr[0] = b;
                         objArr[1] = iArr;
                         int i4 = i << 1;
@@ -123,7 +123,7 @@ public class SimpleArrayMap<K, V> {
                             i4 = i5;
                         }
                         b = objArr;
-                        f1963c++;
+                        f1915c++;
                     }
                 } finally {
                 }
@@ -237,8 +237,8 @@ public class SimpleArrayMap<K, V> {
         if (i > 0) {
             int[] iArr = this.f;
             Object[] objArr = this.g;
-            this.f = ContainerHelpers.f1947a;
-            this.g = ContainerHelpers.f1948c;
+            this.f = ContainerHelpers.f1899a;
+            this.g = ContainerHelpers.f1900c;
             this.h = 0;
             a(iArr, objArr, i);
         }
@@ -262,7 +262,7 @@ public class SimpleArrayMap<K, V> {
             Object[] objArr = this.g;
             a(i);
             if (this.h > 0) {
-                System.arraycopy((Object) iArr, 0, (Object) this.f, 0, i2);
+                System.arraycopy(iArr, 0, this.f, 0, i2);
                 System.arraycopy(objArr, 0, this.g, 0, i2 << 1);
             }
             a(iArr, objArr, i2);
@@ -412,7 +412,7 @@ public class SimpleArrayMap<K, V> {
             }
             int[] iArr2 = this.f;
             if (iArr2.length > 0) {
-                System.arraycopy((Object) iArr, 0, (Object) iArr2, 0, iArr.length);
+                System.arraycopy(iArr, 0, iArr2, 0, iArr.length);
                 System.arraycopy(objArr2, 0, this.g, 0, objArr2.length);
             }
             a(iArr, objArr2, i);
@@ -420,7 +420,7 @@ public class SimpleArrayMap<K, V> {
         if (i3 < i) {
             int[] iArr3 = this.f;
             int i5 = i3 + 1;
-            System.arraycopy((Object) iArr3, i3, (Object) iArr3, i5, i - i3);
+            System.arraycopy(iArr3, i3, iArr3, i5, i - i3);
             Object[] objArr3 = this.g;
             System.arraycopy(objArr3, i3 << 1, objArr3, i5 << 1, (this.h - i3) << 1);
         }
@@ -448,7 +448,7 @@ public class SimpleArrayMap<K, V> {
                 put(simpleArrayMap.keyAt(i2), simpleArrayMap.valueAt(i2));
             }
         } else if (i > 0) {
-            System.arraycopy((Object) simpleArrayMap.f, 0, (Object) this.f, 0, i);
+            System.arraycopy(simpleArrayMap.f, 0, this.f, 0, i);
             System.arraycopy(simpleArrayMap.g, 0, this.g, 0, i << 1);
             this.h = i;
         }
@@ -492,8 +492,8 @@ public class SimpleArrayMap<K, V> {
         int i4 = this.h;
         if (i4 <= 1) {
             a(this.f, objArr, i4);
-            this.f = ContainerHelpers.f1947a;
-            this.g = ContainerHelpers.f1948c;
+            this.f = ContainerHelpers.f1899a;
+            this.g = ContainerHelpers.f1900c;
             i2 = 0;
         } else {
             int i5 = i4 - 1;
@@ -504,7 +504,7 @@ public class SimpleArrayMap<K, V> {
                     int[] iArr2 = this.f;
                     int i7 = i + 1;
                     int i8 = i5 - i;
-                    System.arraycopy((Object) iArr2, i7, (Object) iArr2, i, i8);
+                    System.arraycopy(iArr2, i7, iArr2, i, i8);
                     Object[] objArr2 = this.g;
                     System.arraycopy(objArr2, i7 << 1, objArr2, i3, i8 << 1);
                 }
@@ -523,13 +523,13 @@ public class SimpleArrayMap<K, V> {
                     throw new ConcurrentModificationException();
                 }
                 if (i > 0) {
-                    System.arraycopy((Object) iArr3, 0, (Object) this.f, 0, i);
+                    System.arraycopy(iArr3, 0, this.f, 0, i);
                     System.arraycopy(objArr4, 0, this.g, 0, i3);
                 }
                 if (i < i5) {
                     int i10 = i + 1;
                     int i11 = i5 - i;
-                    System.arraycopy((Object) iArr3, i10, (Object) this.f, i, i11);
+                    System.arraycopy(iArr3, i10, this.f, i, i11);
                     System.arraycopy(objArr4, i10 << 1, this.g, i3, i11 << 1);
                 }
             }

@@ -330,7 +330,7 @@ public class CompactHashSet<E> extends AbstractSet<E> implements Serializable {
         return delegateOrNull() != null;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
     public Iterator<E> iterator() {
         Set<E> delegateOrNull = delegateOrNull();
         return delegateOrNull != null ? delegateOrNull.iterator() : new Iterator<E>() { // from class: com.google.common.collect.CompactHashSet.1
@@ -449,7 +449,7 @@ public class CompactHashSet<E> extends AbstractSet<E> implements Serializable {
         this.elements = Arrays.copyOf(this.elements, i);
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
     public int size() {
         Set<E> delegateOrNull = delegateOrNull();
         return delegateOrNull != null ? delegateOrNull.size() : this.size;

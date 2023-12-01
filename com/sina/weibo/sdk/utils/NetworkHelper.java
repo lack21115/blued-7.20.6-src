@@ -9,7 +9,6 @@ import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.webkit.CookieManager;
 import android.webkit.CookieSyncManager;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.util.List;
 
 /* loaded from: source-8303388-dex2jar.jar:com/sina/weibo/sdk/utils/NetworkHelper.class */
@@ -29,7 +28,7 @@ public class NetworkHelper {
         sb.append("sdk");
         sb.append("__");
         try {
-            sb.append(context.getPackageManager().getPackageInfo(context.getPackageName(), 16).versionName.replaceAll("\\s+", BridgeUtil.UNDERLINE_STR));
+            sb.append(context.getPackageManager().getPackageInfo(context.getPackageName(), 16).versionName.replaceAll("\\s+", "_"));
         } catch (Exception e) {
             sb.append("unknown");
         }

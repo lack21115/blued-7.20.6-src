@@ -7,11 +7,11 @@ import java.io.InputStream;
 final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    int f21396a;
+    int f7790a;
     b b;
 
     /* renamed from: c  reason: collision with root package name */
-    int[] f21397c;
+    int[] f7791c;
     private boolean i;
     private f k;
     private boolean j = false;
@@ -27,14 +27,14 @@ final class a {
     }
 
     private void c() {
-        this.f21397c = null;
-        this.f21396a = -1;
+        this.f7791c = null;
+        this.f7790a = -1;
     }
 
     private int e(int i) {
-        if (this.f21396a == 2) {
+        if (this.f7790a == 2) {
             int i2 = i * 5;
-            if (i2 < this.f21397c.length) {
+            if (i2 < this.f7791c.length) {
                 return i2;
             }
             throw new IndexOutOfBoundsException("Invalid attribute index (" + i + ").");
@@ -43,7 +43,7 @@ final class a {
     }
 
     public final String a(int i) {
-        int i2 = this.f21397c[e(i) + 1];
+        int i2 = this.f7791c[e(i) + 1];
         return i2 == -1 ? "" : this.k.a(i2);
     }
 
@@ -51,9 +51,9 @@ final class a {
         if (this.j) {
             this.j = false;
             b bVar = this.b;
-            if (bVar.f21399a != null) {
+            if (bVar.f7793a != null) {
                 try {
-                    bVar.f21399a.close();
+                    bVar.f7793a.close();
                 } catch (IOException e) {
                 }
                 bVar.a((InputStream) null);
@@ -62,7 +62,7 @@ final class a {
             this.b = null;
             c cVar = this.l;
             cVar.b = 0;
-            cVar.f21401c = 0;
+            cVar.f7795c = 0;
             c();
         }
     }
@@ -86,16 +86,16 @@ final class a {
     }
 
     public final int b(int i) {
-        return this.f21397c[e(i) + 3];
+        return this.f7791c[e(i) + 3];
     }
 
     public final int c(int i) {
-        return this.f21397c[e(i) + 4];
+        return this.f7791c[e(i) + 4];
     }
 
     public final String d(int i) {
         int e = e(i);
-        int[] iArr = this.f21397c;
+        int[] iArr = this.f7791c;
         if (iArr[e + 3] == 3) {
             return this.k.a(iArr[e + 2]);
         }

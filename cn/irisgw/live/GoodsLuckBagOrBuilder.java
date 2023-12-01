@@ -27,7 +27,8 @@ public interface GoodsLuckBagOrBuilder extends MessageOrBuilder {
 
     int getBgColorCount();
 
-    List<String> getBgColorList();
+    /* renamed from: getBgColorList */
+    List<String> mo2757getBgColorList();
 
     String getBgImg();
 
@@ -49,7 +50,8 @@ public interface GoodsLuckBagOrBuilder extends MessageOrBuilder {
 
     int getChatFrameBorderColorCount();
 
-    List<String> getChatFrameBorderColorList();
+    /* renamed from: getChatFrameBorderColorList */
+    List<String> mo2758getChatFrameBorderColorList();
 
     ByteString getChatFrameBytes();
 
@@ -61,7 +63,8 @@ public interface GoodsLuckBagOrBuilder extends MessageOrBuilder {
 
     int getChatFrameFrameColorCount();
 
-    List<String> getChatFrameFrameColorList();
+    /* renamed from: getChatFrameFrameColorList */
+    List<String> mo2759getChatFrameFrameColorList();
 
     int getChatFrameGradientType();
 

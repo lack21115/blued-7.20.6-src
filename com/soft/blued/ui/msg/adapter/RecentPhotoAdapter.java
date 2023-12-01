@@ -20,24 +20,24 @@ import java.util.List;
 public class RecentPhotoAdapter extends BaseQuickAdapter<MsgRecentPhotoInfo, BaseViewHolder> {
 
     /* renamed from: a  reason: collision with root package name */
-    private LoadOptions f32177a;
+    private LoadOptions f18487a;
     private IRecentPhotoAdapterCallback b;
 
     /* renamed from: c  reason: collision with root package name */
-    private double f32178c;
+    private double f18488c;
     private IRequestHost d;
     private int e;
 
     public RecentPhotoAdapter(IRequestHost iRequestHost, IRecentPhotoAdapterCallback iRecentPhotoAdapterCallback) {
         super((int) R.layout.view_msg_chatting_recent_photo_item);
-        this.f32177a = null;
+        this.f18487a = null;
         this.e = 0;
         this.d = iRequestHost;
         this.b = iRecentPhotoAdapterCallback;
         if (iRecentPhotoAdapterCallback == null) {
             return;
         }
-        this.f32178c = KeyboardUtils.a() - DisplayUtil.a(AppInfo.d().getApplicationContext(), 50.0f);
+        this.f18488c = KeyboardUtils.a() - DisplayUtil.a(AppInfo.d().getApplicationContext(), 50.0f);
         this.b.a(new IRecentPhotoAdapterCallback.IGetPhotoListCallback() { // from class: com.soft.blued.ui.msg.adapter.RecentPhotoAdapter.1
             @Override // com.soft.blued.ui.msg.contract.IRecentPhotoAdapterCallback.IGetPhotoListCallback
             public void a(List<MsgRecentPhotoInfo> list) {
@@ -62,18 +62,18 @@ public class RecentPhotoAdapter extends BaseQuickAdapter<MsgRecentPhotoInfo, Bas
         double d3 = 1.7777777910232544d;
         if (i != 1) {
             if (i != 2) {
-                d2 = this.f32178c;
+                d2 = this.f18488c;
                 d3 = (msgRecentPhotoInfo.width * 1.0f) / msgRecentPhotoInfo.height;
             } else {
-                d2 = this.f32178c;
+                d2 = this.f18488c;
             }
             d = d2 * d3;
         } else {
-            d = this.f32178c / 1.7777777910232544d;
+            d = this.f18488c / 1.7777777910232544d;
         }
         int i2 = (int) d;
         layoutParams2.width = i2;
-        layoutParams2.height = (int) this.f32178c;
+        layoutParams2.height = (int) this.f18488c;
         layoutParams.width = i2;
         imageView.setLayoutParams(layoutParams2);
         baseViewHolder.itemView.setLayoutParams(layoutParams);

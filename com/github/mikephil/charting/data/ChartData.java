@@ -11,11 +11,11 @@ import java.util.List;
 public abstract class ChartData<T extends IDataSet<? extends Entry>> {
 
     /* renamed from: a  reason: collision with root package name */
-    protected float f22128a;
+    protected float f8521a;
     protected float b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected float f22129c;
+    protected float f8522c;
     protected float d;
     protected float e;
     protected float f;
@@ -24,9 +24,9 @@ public abstract class ChartData<T extends IDataSet<? extends Entry>> {
     protected List<T> i;
 
     public ChartData() {
-        this.f22128a = -3.4028235E38f;
+        this.f8521a = -3.4028235E38f;
         this.b = Float.MAX_VALUE;
-        this.f22129c = -3.4028235E38f;
+        this.f8522c = -3.4028235E38f;
         this.d = Float.MAX_VALUE;
         this.e = -3.4028235E38f;
         this.f = Float.MAX_VALUE;
@@ -36,9 +36,9 @@ public abstract class ChartData<T extends IDataSet<? extends Entry>> {
     }
 
     public ChartData(T... tArr) {
-        this.f22128a = -3.4028235E38f;
+        this.f8521a = -3.4028235E38f;
         this.b = Float.MAX_VALUE;
-        this.f22129c = -3.4028235E38f;
+        this.f8522c = -3.4028235E38f;
         this.d = Float.MAX_VALUE;
         this.e = -3.4028235E38f;
         this.f = Float.MAX_VALUE;
@@ -117,14 +117,14 @@ public abstract class ChartData<T extends IDataSet<? extends Entry>> {
     }
 
     protected void a(T t) {
-        if (this.f22128a < t.K()) {
-            this.f22128a = t.K();
+        if (this.f8521a < t.K()) {
+            this.f8521a = t.K();
         }
         if (this.b > t.J()) {
             this.b = t.J();
         }
-        if (this.f22129c < t.M()) {
-            this.f22129c = t.M();
+        if (this.f8522c < t.M()) {
+            this.f8522c = t.M();
         }
         if (this.d > t.L()) {
             this.d = t.L();
@@ -189,9 +189,9 @@ public abstract class ChartData<T extends IDataSet<? extends Entry>> {
         if (list == null) {
             return;
         }
-        this.f22128a = -3.4028235E38f;
+        this.f8521a = -3.4028235E38f;
         this.b = Float.MAX_VALUE;
-        this.f22129c = -3.4028235E38f;
+        this.f8522c = -3.4028235E38f;
         this.d = Float.MAX_VALUE;
         for (T t : list) {
             a((ChartData<T>) t);
@@ -245,7 +245,7 @@ public abstract class ChartData<T extends IDataSet<? extends Entry>> {
     }
 
     public float f() {
-        return this.f22128a;
+        return this.f8521a;
     }
 
     public float g() {
@@ -253,7 +253,7 @@ public abstract class ChartData<T extends IDataSet<? extends Entry>> {
     }
 
     public float h() {
-        return this.f22129c;
+        return this.f8522c;
     }
 
     public List<T> i() {

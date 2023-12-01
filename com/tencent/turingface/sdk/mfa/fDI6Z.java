@@ -4,11 +4,11 @@ package com.tencent.turingface.sdk.mfa;
 public final class fDI6Z {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f39949a;
+    public final String f26258a;
     public final boolean b;
 
     public fDI6Z(String str, boolean z) {
-        this.f39949a = str;
+        this.f26258a = str;
         this.b = z;
     }
 }

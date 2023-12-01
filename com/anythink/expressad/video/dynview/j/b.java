@@ -26,11 +26,11 @@ import com.anythink.expressad.video.widget.SoundImageView;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f8398a = "anythink_top_play_bg";
+    private String f5558a = "anythink_top_play_bg";
     private String b = "anythink_top_finger_bg";
 
     /* renamed from: c  reason: collision with root package name */
-    private String f8399c = "anythink_bottom_play_bg";
+    private String f5559c = "anythink_bottom_play_bg";
     private String d = "anythink_bottom_finger_bg";
     private String e = "anythink_tv_count";
     private String f = "anythink_sound_switch";
@@ -80,7 +80,7 @@ public final class b {
     private void b(View view) {
         RelativeLayout relativeLayout = (RelativeLayout) view.findViewById(a(this.g));
         if (relativeLayout != null) {
-            if (com.anythink.expressad.video.dynview.a.b.f8349a == 0 && com.anythink.expressad.video.dynview.a.b.b == 0 && com.anythink.expressad.video.dynview.a.b.f8350c == 0 && com.anythink.expressad.video.dynview.a.b.d == 0) {
+            if (com.anythink.expressad.video.dynview.a.b.f5509a == 0 && com.anythink.expressad.video.dynview.a.b.b == 0 && com.anythink.expressad.video.dynview.a.b.f5510c == 0 && com.anythink.expressad.video.dynview.a.b.d == 0) {
                 return;
             }
             relativeLayout.setVisibility(4);
@@ -96,12 +96,12 @@ public final class b {
         if (relativeLayout != null) {
             if (cVar.e() == 1) {
                 FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-1, -1);
-                layoutParams.setMargins(layoutParams.leftMargin + com.anythink.expressad.video.dynview.a.b.f8349a, layoutParams.topMargin + com.anythink.expressad.video.dynview.a.b.f8350c, layoutParams.rightMargin + com.anythink.expressad.video.dynview.a.b.b, layoutParams.bottomMargin + com.anythink.expressad.video.dynview.a.b.d);
+                layoutParams.setMargins(layoutParams.leftMargin + com.anythink.expressad.video.dynview.a.b.f5509a, layoutParams.topMargin + com.anythink.expressad.video.dynview.a.b.f5510c, layoutParams.rightMargin + com.anythink.expressad.video.dynview.a.b.b, layoutParams.bottomMargin + com.anythink.expressad.video.dynview.a.b.d);
                 relativeLayout.setLayoutParams(layoutParams);
                 return;
             }
             RelativeLayout.LayoutParams layoutParams2 = new RelativeLayout.LayoutParams(-1, -1);
-            layoutParams2.setMargins(layoutParams2.leftMargin + com.anythink.expressad.video.dynview.a.b.f8349a, layoutParams2.topMargin + com.anythink.expressad.video.dynview.a.b.f8350c, layoutParams2.rightMargin + com.anythink.expressad.video.dynview.a.b.b, layoutParams2.bottomMargin + com.anythink.expressad.video.dynview.a.b.d);
+            layoutParams2.setMargins(layoutParams2.leftMargin + com.anythink.expressad.video.dynview.a.b.f5509a, layoutParams2.topMargin + com.anythink.expressad.video.dynview.a.b.f5510c, layoutParams2.rightMargin + com.anythink.expressad.video.dynview.a.b.b, layoutParams2.bottomMargin + com.anythink.expressad.video.dynview.a.b.d);
             relativeLayout.setLayoutParams(layoutParams2);
         }
     }
@@ -117,9 +117,9 @@ public final class b {
         AnimatorSet animatorSet = new AnimatorSet();
         if (view.getContext() != null) {
             this.x = false;
-            ImageView imageView = (ImageView) view.findViewById(a(this.f8398a));
+            ImageView imageView = (ImageView) view.findViewById(a(this.f5558a));
             ImageView imageView2 = (ImageView) view.findViewById(a(this.b));
-            ImageView imageView3 = (ImageView) view.findViewById(a(this.f8399c));
+            ImageView imageView3 = (ImageView) view.findViewById(a(this.f5559c));
             ImageView imageView4 = (ImageView) view.findViewById(a(this.d));
             ObjectAnimator objectAnimator4 = null;
             if (imageView != null) {
@@ -175,7 +175,7 @@ public final class b {
             return;
         }
         if (cVar.e() == 1) {
-            view.setBackgroundDrawable(context.getResources().getDrawable(i.a(context, this.o, i.f7952c)));
+            view.setBackgroundDrawable(context.getResources().getDrawable(i.a(context, this.o, i.f5112c)));
             TextView textView = (TextView) view.findViewById(a(this.h));
             if (textView != null) {
                 textView.setTextColor(Color.parseColor(this.q));
@@ -232,11 +232,11 @@ public final class b {
             if (relativeLayout != null) {
                 if (cVar.e() == 1) {
                     FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-1, -1);
-                    layoutParams.setMargins(layoutParams.leftMargin + com.anythink.expressad.video.dynview.a.b.f8349a, layoutParams.topMargin + com.anythink.expressad.video.dynview.a.b.f8350c, layoutParams.rightMargin + com.anythink.expressad.video.dynview.a.b.b, layoutParams.bottomMargin + com.anythink.expressad.video.dynview.a.b.d);
+                    layoutParams.setMargins(layoutParams.leftMargin + com.anythink.expressad.video.dynview.a.b.f5509a, layoutParams.topMargin + com.anythink.expressad.video.dynview.a.b.f5510c, layoutParams.rightMargin + com.anythink.expressad.video.dynview.a.b.b, layoutParams.bottomMargin + com.anythink.expressad.video.dynview.a.b.d);
                     relativeLayout.setLayoutParams(layoutParams);
                 } else {
                     RelativeLayout.LayoutParams layoutParams2 = new RelativeLayout.LayoutParams(-1, -1);
-                    layoutParams2.setMargins(layoutParams2.leftMargin + com.anythink.expressad.video.dynview.a.b.f8349a, layoutParams2.topMargin + com.anythink.expressad.video.dynview.a.b.f8350c, layoutParams2.rightMargin + com.anythink.expressad.video.dynview.a.b.b, layoutParams2.bottomMargin + com.anythink.expressad.video.dynview.a.b.d);
+                    layoutParams2.setMargins(layoutParams2.leftMargin + com.anythink.expressad.video.dynview.a.b.f5509a, layoutParams2.topMargin + com.anythink.expressad.video.dynview.a.b.f5510c, layoutParams2.rightMargin + com.anythink.expressad.video.dynview.a.b.b, layoutParams2.bottomMargin + com.anythink.expressad.video.dynview.a.b.d);
                     relativeLayout.setLayoutParams(layoutParams2);
                 }
             }

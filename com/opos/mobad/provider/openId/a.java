@@ -10,10 +10,10 @@ import com.opos.process.bridge.provider.c;
 public final class a extends com.opos.process.bridge.provider.a {
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f27122c = IdModel.class.getName();
+    private static final String f13434c = IdModel.class.getName();
 
     public a(Context context, IdModelIdentify idModelIdentify) {
-        this.f27427a = context;
+        this.f13739a = context;
         this.b = idModelIdentify;
     }
 
@@ -23,14 +23,14 @@ public final class a extends com.opos.process.bridge.provider.a {
     }
 
     public final OpenIdData a() throws c, b {
-        return (OpenIdData) a(this.f27427a, f27122c, this.b, 1, new Object[0]);
+        return (OpenIdData) a(this.f13739a, f13434c, this.b, 1, new Object[0]);
     }
 
     public final boolean b() throws c, b {
-        return ((Boolean) a(this.f27427a, f27122c, this.b, 2, new Object[0])).booleanValue();
+        return ((Boolean) a(this.f13739a, f13434c, this.b, 2, new Object[0])).booleanValue();
     }
 
     public final String c() throws c, b {
-        return (String) a(this.f27427a, f27122c, this.b, 3, new Object[0]);
+        return (String) a(this.f13739a, f13434c, this.b, 3, new Object[0]);
     }
 }

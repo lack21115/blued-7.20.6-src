@@ -28,9 +28,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.WeakHashMap;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-4181928-dex2jar.jar:android/widget/SuggestionsAdapter.class */
-public class SuggestionsAdapter extends ResourceCursorAdapter implements View.OnClickListener {
+class SuggestionsAdapter extends ResourceCursorAdapter implements View.OnClickListener {
     private static final boolean DBG = false;
     private static final long DELETE_KEY_POST_DELAY = 500;
     static final int INVALID_INDEX = -1;
@@ -65,10 +64,10 @@ public class SuggestionsAdapter extends ResourceCursorAdapter implements View.On
         public final TextView mText2;
 
         public ChildViewCache(View view) {
-            this.mText1 = (TextView) view.findViewById(16908308);
-            this.mText2 = (TextView) view.findViewById(16908309);
-            this.mIcon1 = (ImageView) view.findViewById(16908295);
-            this.mIcon2 = (ImageView) view.findViewById(16908296);
+            this.mText1 = (TextView) view.findViewById(R.id.text1);
+            this.mText2 = (TextView) view.findViewById(R.id.text2);
+            this.mIcon1 = (ImageView) view.findViewById(R.id.icon1);
+            this.mIcon2 = (ImageView) view.findViewById(R.id.icon2);
             this.mIconRefine = (ImageView) view.findViewById(R.id.edit_query);
         }
     }
@@ -174,7 +173,7 @@ public class SuggestionsAdapter extends ResourceCursorAdapter implements View.On
 
     private Drawable getDrawable(Uri uri) {
         try {
-            if (ContentResolver.SCHEME_ANDROID_RESOURCE.equals(uri.getScheme())) {
+            if ("android.resource".equals(uri.getScheme())) {
                 ContentResolver.OpenResourceIdResult resourceId = this.mProviderContext.getContentResolver().getResourceId(uri);
                 try {
                     return resourceId.r.getDrawable(resourceId.id, this.mContext.getTheme());
@@ -294,7 +293,7 @@ public class SuggestionsAdapter extends ResourceCursorAdapter implements View.On
 
     private void updateSpinnerState(Cursor cursor) {
         Bundle extras = cursor != null ? cursor.getExtras() : null;
-        if (extras == null || extras.getBoolean(SearchManager.CURSOR_EXTRA_KEY_IN_PROGRESS)) {
+        if (extras == null || extras.getBoolean("in_progress")) {
         }
     }
 
@@ -350,12 +349,12 @@ public class SuggestionsAdapter extends ResourceCursorAdapter implements View.On
         try {
             super.changeCursor(cursor);
             if (cursor != null) {
-                this.mText1Col = cursor.getColumnIndex(SearchManager.SUGGEST_COLUMN_TEXT_1);
-                this.mText2Col = cursor.getColumnIndex(SearchManager.SUGGEST_COLUMN_TEXT_2);
-                this.mText2UrlCol = cursor.getColumnIndex(SearchManager.SUGGEST_COLUMN_TEXT_2_URL);
-                this.mIconName1Col = cursor.getColumnIndex(SearchManager.SUGGEST_COLUMN_ICON_1);
-                this.mIconName2Col = cursor.getColumnIndex(SearchManager.SUGGEST_COLUMN_ICON_2);
-                this.mFlagsCol = cursor.getColumnIndex(SearchManager.SUGGEST_COLUMN_FLAGS);
+                this.mText1Col = cursor.getColumnIndex("suggest_text_1");
+                this.mText2Col = cursor.getColumnIndex("suggest_text_2");
+                this.mText2UrlCol = cursor.getColumnIndex("suggest_text_2_url");
+                this.mIconName1Col = cursor.getColumnIndex("suggest_icon_1");
+                this.mIconName2Col = cursor.getColumnIndex("suggest_icon_2");
+                this.mFlagsCol = cursor.getColumnIndex("suggest_flags");
             }
         } catch (Exception e) {
             Log.e(LOG_TAG, "error changing cursor and caching columns", e);
@@ -375,11 +374,11 @@ public class SuggestionsAdapter extends ResourceCursorAdapter implements View.On
         if (cursor == null) {
             str = null;
         } else {
-            String columnString3 = getColumnString(cursor, SearchManager.SUGGEST_COLUMN_QUERY);
+            String columnString3 = getColumnString(cursor, "suggest_intent_query");
             str = columnString3;
             if (columnString3 == null) {
-                if (!this.mSearchable.shouldRewriteQueryFromData() || (columnString2 = getColumnString(cursor, SearchManager.SUGGEST_COLUMN_INTENT_DATA)) == null) {
-                    if (!this.mSearchable.shouldRewriteQueryFromText() || (columnString = getColumnString(cursor, SearchManager.SUGGEST_COLUMN_TEXT_1)) == null) {
+                if (!this.mSearchable.shouldRewriteQueryFromData() || (columnString2 = getColumnString(cursor, "suggest_intent_data")) == null) {
+                    if (!this.mSearchable.shouldRewriteQueryFromText() || (columnString = getColumnString(cursor, "suggest_text_1")) == null) {
                         return null;
                     }
                     return columnString;

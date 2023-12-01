@@ -2,6 +2,7 @@ package com.qiniu.android.collect;
 
 import android.media.MediaFormat;
 import com.igexin.push.core.b;
+import com.qiniu.android.http.ResponseInfo;
 
 /* loaded from: source-8303388-dex2jar.jar:com/qiniu/android/collect/UploadInfoElement.class */
 public class UploadInfoElement {
@@ -502,7 +503,7 @@ public class UploadInfoElement {
             } else if (i != -406) {
                 if (i != 200) {
                     switch (i) {
-                        case -1005:
+                        case ResponseInfo.NetworkConnectionLost /* -1005 */:
                             return "network_slow";
                         case -1004:
                             return "cannot_connect_to_host";

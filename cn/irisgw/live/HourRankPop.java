@@ -33,8 +33,8 @@ public final class HourRankPop extends GeneratedMessageV3 implements HourRankPop
     private int type_;
     private static final HourRankPop DEFAULT_INSTANCE = new HourRankPop();
     private static final Parser<HourRankPop> PARSER = new AbstractParser<HourRankPop>() { // from class: cn.irisgw.live.HourRankPop.1
-        @Override // com.google.protobuf.Parser
-        public HourRankPop parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        /* renamed from: parsePartialFrom */
+        public HourRankPop m3472parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             return new HourRankPop(codedInputStream, extensionRegistryLite);
         }
     };
@@ -65,22 +65,22 @@ public final class HourRankPop extends GeneratedMessageV3 implements HourRankPop
             boolean unused = HourRankPop.alwaysUseFieldBuilders;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: addRepeatedField */
+        public Builder m3474addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.addRepeatedField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public HourRankPop build() {
-            HourRankPop buildPartial = buildPartial();
-            if (buildPartial.isInitialized()) {
-                return buildPartial;
+        /* renamed from: build */
+        public HourRankPop m3476build() {
+            HourRankPop m3478buildPartial = m3478buildPartial();
+            if (m3478buildPartial.isInitialized()) {
+                return m3478buildPartial;
             }
-            throw newUninitializedMessageException((Message) buildPartial);
+            throw newUninitializedMessageException(m3478buildPartial);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public HourRankPop buildPartial() {
+        /* renamed from: buildPartial */
+        public HourRankPop m3478buildPartial() {
             HourRankPop hourRankPop = new HourRankPop(this);
             hourRankPop.type_ = this.type_;
             hourRankPop.rank_ = this.rank_;
@@ -92,8 +92,8 @@ public final class HourRankPop extends GeneratedMessageV3 implements HourRankPop
             return hourRankPop;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public Builder clear() {
+        /* renamed from: clear */
+        public Builder m3482clear() {
             super.clear();
             this.type_ = 0;
             this.rank_ = 0;
@@ -104,8 +104,8 @@ public final class HourRankPop extends GeneratedMessageV3 implements HourRankPop
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+        /* renamed from: clearField */
+        public Builder m3484clearField(Descriptors.FieldDescriptor fieldDescriptor) {
             return (Builder) super.clearField(fieldDescriptor);
         }
 
@@ -115,8 +115,8 @@ public final class HourRankPop extends GeneratedMessageV3 implements HourRankPop
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+        /* renamed from: clearOneof */
+        public Builder m3487clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
             return (Builder) super.clearOneof(oneofDescriptor);
         }
 
@@ -150,18 +150,16 @@ public final class HourRankPop extends GeneratedMessageV3 implements HourRankPop
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder m3493clone() {
+            return (Builder) super.clone();
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public HourRankPop getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public HourRankPop m3495getDefaultInstanceForType() {
             return HourRankPop.getDefaultInstance();
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
         public Descriptors.Descriptor getDescriptorForType() {
             return LiveConstants.internal_static_cn_irisgw_live_HourRankPop_descriptor;
         }
@@ -196,12 +194,10 @@ public final class HourRankPop extends GeneratedMessageV3 implements HourRankPop
             return this.type_;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_HourRankPop_fieldAccessorTable.ensureFieldAccessorsInitialized(HourRankPop.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             return true;
         }
@@ -228,18 +224,18 @@ public final class HourRankPop extends GeneratedMessageV3 implements HourRankPop
             if (hourRankPop.getRankType() != 0) {
                 setRankType(hourRankPop.getRankType());
             }
-            mergeUnknownFields(hourRankPop.unknownFields);
+            m3504mergeUnknownFields(hourRankPop.unknownFields);
             onChanged();
             return this;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+        /* renamed from: mergeFrom */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
         */
-        public cn.irisgw.live.HourRankPop.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+        public cn.irisgw.live.HourRankPop.Builder m3501mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
             /*
                 r4 = this;
                 r0 = 0
@@ -284,11 +280,11 @@ public final class HourRankPop extends GeneratedMessageV3 implements HourRankPop
                 r0 = r6
                 throw r0
             */
-            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.HourRankPop.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.HourRankPop$Builder");
+            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.HourRankPop.Builder.m3501mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.HourRankPop$Builder");
         }
 
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder mergeFrom(Message message) {
+        /* renamed from: mergeFrom */
+        public Builder m3500mergeFrom(Message message) {
             if (message instanceof HourRankPop) {
                 return mergeFrom((HourRankPop) message);
             }
@@ -296,13 +292,13 @@ public final class HourRankPop extends GeneratedMessageV3 implements HourRankPop
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: mergeUnknownFields */
+        public final Builder m3504mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.mergeUnknownFields(unknownFieldSet);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: setField */
+        public Builder m3506setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.setField(fieldDescriptor, obj);
         }
 
@@ -324,8 +320,8 @@ public final class HourRankPop extends GeneratedMessageV3 implements HourRankPop
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+        /* renamed from: setRepeatedField */
+        public Builder m3508setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
             return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
         }
 
@@ -347,8 +343,8 @@ public final class HourRankPop extends GeneratedMessageV3 implements HourRankPop
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: setUnknownFields */
+        public final Builder m3510setUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.setUnknownFields(unknownFieldSet);
         }
     }
@@ -411,66 +407,65 @@ public final class HourRankPop extends GeneratedMessageV3 implements HourRankPop
     }
 
     public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
+        return DEFAULT_INSTANCE.m3471toBuilder();
     }
 
     public static Builder newBuilder(HourRankPop hourRankPop) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(hourRankPop);
+        return DEFAULT_INSTANCE.m3471toBuilder().mergeFrom(hourRankPop);
     }
 
     public static HourRankPop parseDelimitedFrom(InputStream inputStream) throws IOException {
-        return (HourRankPop) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
     }
 
     public static HourRankPop parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (HourRankPop) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static HourRankPop parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString);
+        return (HourRankPop) PARSER.parseFrom(byteString);
     }
 
     public static HourRankPop parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString, extensionRegistryLite);
+        return (HourRankPop) PARSER.parseFrom(byteString, extensionRegistryLite);
     }
 
     public static HourRankPop parseFrom(CodedInputStream codedInputStream) throws IOException {
-        return (HourRankPop) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
     }
 
     public static HourRankPop parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (HourRankPop) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
     }
 
     public static HourRankPop parseFrom(InputStream inputStream) throws IOException {
-        return (HourRankPop) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
     }
 
     public static HourRankPop parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (HourRankPop) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static HourRankPop parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer);
+        return (HourRankPop) PARSER.parseFrom(byteBuffer);
     }
 
     public static HourRankPop parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+        return (HourRankPop) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
     }
 
     public static HourRankPop parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr);
+        return (HourRankPop) PARSER.parseFrom(bArr);
     }
 
     public static HourRankPop parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr, extensionRegistryLite);
+        return (HourRankPop) PARSER.parseFrom(bArr, extensionRegistryLite);
     }
 
     public static Parser<HourRankPop> parser() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
@@ -482,8 +477,8 @@ public final class HourRankPop extends GeneratedMessageV3 implements HourRankPop
         return super.equals(obj);
     }
 
-    @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-    public HourRankPop getDefaultInstanceForType() {
+    /* renamed from: getDefaultInstanceForType */
+    public HourRankPop m3466getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
     }
 
@@ -492,7 +487,6 @@ public final class HourRankPop extends GeneratedMessageV3 implements HourRankPop
         return this.needScore_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
     public Parser<HourRankPop> getParserForType() {
         return PARSER;
     }
@@ -517,7 +511,6 @@ public final class HourRankPop extends GeneratedMessageV3 implements HourRankPop
         return this.second_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public int getSerializedSize() {
         int i = this.memoizedSize;
         if (i != -1) {
@@ -563,12 +556,10 @@ public final class HourRankPop extends GeneratedMessageV3 implements HourRankPop
         return this.type_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
     public final UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public int hashCode() {
         if (this.memoizedHashCode != 0) {
             return this.memoizedHashCode;
@@ -578,12 +569,10 @@ public final class HourRankPop extends GeneratedMessageV3 implements HourRankPop
         return hashCode;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
         return LiveConstants.internal_static_cn_irisgw_live_HourRankPop_fieldAccessorTable.ensureFieldAccessorsInitialized(HourRankPop.class, Builder.class);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
     public final boolean isInitialized() {
         byte b = this.memoizedIsInitialized;
         if (b == 1) {
@@ -596,28 +585,26 @@ public final class HourRankPop extends GeneratedMessageV3 implements HourRankPop
         return true;
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder newBuilderForType() {
+    /* renamed from: newBuilderForType */
+    public Builder m3469newBuilderForType() {
         return newBuilder();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.protobuf.GeneratedMessageV3
-    public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+    /* renamed from: newBuilderForType */
+    public Builder m3468newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
         return new Builder(builderParent);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
         return new HourRankPop();
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder toBuilder() {
+    /* renamed from: toBuilder */
+    public Builder m3471toBuilder() {
         return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
         int i = this.type_;
         if (i != 0) {

@@ -28,11 +28,11 @@ import com.soft.blued.utils.MemoryBitmapCache;
 public class ShowPhotoDestroyFragment extends BaseFragment {
 
     /* renamed from: a  reason: collision with root package name */
-    private View f30021a;
+    private View f16331a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f30022c;
+    private int f16332c;
     private ProgressBar d;
     private LinearLayout e;
     private TextView f;
@@ -47,13 +47,13 @@ public class ShowPhotoDestroyFragment extends BaseFragment {
     private long o;
 
     private void a() {
-        this.j = (ImageView) this.f30021a.findViewById(2131368859);
-        this.d = (ProgressBar) this.f30021a.findViewById(2131368385);
-        this.e = (LinearLayout) this.f30021a.findViewById(2131369468);
-        this.f = (TextView) this.f30021a.findViewById(R.id.first_text);
-        this.g = (TextView) this.f30021a.findViewById(R.id.second_text);
-        this.h = (FrameLayout) this.f30021a.findViewById(R.id.photo_layout);
-        TextView textView = (TextView) this.f30021a.findViewById(R.id.photo_num);
+        this.j = (ImageView) this.f16331a.findViewById(R.id.photo_view);
+        this.d = (ProgressBar) this.f16331a.findViewById(R.id.loading_view);
+        this.e = (LinearLayout) this.f16331a.findViewById(2131369468);
+        this.f = (TextView) this.f16331a.findViewById(R.id.first_text);
+        this.g = (TextView) this.f16331a.findViewById(R.id.second_text);
+        this.h = (FrameLayout) this.f16331a.findViewById(R.id.photo_layout);
+        TextView textView = (TextView) this.f16331a.findViewById(R.id.photo_num);
         this.i = textView;
         textView.setText(String.valueOf(5L));
     }
@@ -72,19 +72,17 @@ public class ShowPhotoDestroyFragment extends BaseFragment {
     private void b() {
         Logger.c("ShowPhotoDestroyFragment", "mImagePath===" + this.b);
         MemoryBitmapCache.BitmapWrapper b = MemoryBitmapCache.a().b(this.b);
-        if (b == null || b.f34762a == null || b.f34762a.isRecycled()) {
+        if (b == null || b.f21071a == null || b.f21071a.isRecycled()) {
             this.d.setVisibility(0);
             ImageLoader.a(getFragmentActive(), this.b).a(new ImageLoadResult(getFragmentActive()) { // from class: com.soft.blued.ui.feed.fragment.ShowPhotoDestroyFragment.1
-                @Override // com.blued.android.core.image.ImageLoadResult
                 public void a() {
                     ShowPhotoDestroyFragment.this.c();
                 }
 
-                @Override // com.blued.android.core.image.ImageLoadResult
                 public void a(int i, Exception exc) {
                     Logger.e("loadImage", "Exception===" + exc.getMessage());
                     ShowPhotoDestroyFragment.this.d.setVisibility(8);
-                    AppMethods.a((CharSequence) (AppInfo.d().getResources().getString(2131891037) + "(" + i + ")"));
+                    AppMethods.a(AppInfo.d().getResources().getString(2131891037) + "(" + i + ")");
                     ShowPhotoDestroyFragment.this.postDelaySafeRunOnUiThread(new Runnable() { // from class: com.soft.blued.ui.feed.fragment.ShowPhotoDestroyFragment.1.1
                         @Override // java.lang.Runnable
                         public void run() {
@@ -96,7 +94,7 @@ public class ShowPhotoDestroyFragment extends BaseFragment {
             return;
         }
         Logger.c("ShowPhotoDestroyFragment", "缓存存在===" + this.b);
-        this.j.setImageBitmap(b.f34762a);
+        this.j.setImageBitmap(b.f21071a);
         c();
     }
 
@@ -157,7 +155,7 @@ public class ShowPhotoDestroyFragment extends BaseFragment {
             this.n = arguments.getLong("passby_session_id");
             this.o = arguments.getLong("PASSBY_MSG_ID");
             this.b = arguments.getString("photo_path");
-            this.f30022c = arguments.getInt("msg_burn_after_reading_position", -1);
+            this.f16332c = arguments.getInt("msg_burn_after_reading_position", -1);
         }
         this.k = false;
     }
@@ -167,7 +165,7 @@ public class ShowPhotoDestroyFragment extends BaseFragment {
             if (z) {
                 ChatManager.getInstance().sendReadReceipt(this.m, this.n, this.o);
                 Intent intent = new Intent();
-                intent.putExtra("msg_burn_after_reading_position", this.f30022c);
+                intent.putExtra("msg_burn_after_reading_position", this.f16332c);
                 getActivity().setResult(-1, intent);
             }
             getActivity().finish();
@@ -175,33 +173,29 @@ public class ShowPhotoDestroyFragment extends BaseFragment {
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment
     public boolean isActivitySwipeBackEnable() {
         return false;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener
     public boolean onBackPressed() {
         a(this.k);
         return super.onBackPressed();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         getActivity().getWindow().addFlags(8192);
-        View view = this.f30021a;
+        View view = this.f16331a;
         if (view == null) {
-            this.f30021a = layoutInflater.inflate(R.layout.fragment_show_photo_destroy, viewGroup, false);
+            this.f16331a = layoutInflater.inflate(R.layout.fragment_show_photo_destroy, viewGroup, false);
             e();
             a();
             b();
         } else if (view.getParent() != null) {
-            ((ViewGroup) this.f30021a.getParent()).removeView(this.f30021a);
+            ((ViewGroup) this.f16331a.getParent()).removeView(this.f16331a);
         }
-        return this.f30021a;
+        return this.f16331a;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
         CountDownTimer countDownTimer = this.l;

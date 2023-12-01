@@ -133,7 +133,7 @@ public class LocalCache<K, V> extends AbstractMap<K, V> implements ConcurrentMap
             return ImmutableSet.of().iterator();
         }
 
-        @Override // java.util.Queue, java.util.concurrent.BlockingQueue
+        @Override // java.util.Queue
         public boolean offer(Object obj) {
             return true;
         }
@@ -148,7 +148,7 @@ public class LocalCache<K, V> extends AbstractMap<K, V> implements ConcurrentMap
             return null;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection
         public int size() {
             return 0;
         }
@@ -172,7 +172,7 @@ public class LocalCache<K, V> extends AbstractMap<K, V> implements ConcurrentMap
             return this.map.isEmpty();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
         public int size() {
             return this.map.size();
         }
@@ -319,7 +319,7 @@ public class LocalCache<K, V> extends AbstractMap<K, V> implements ConcurrentMap
         AccessQueue() {
         }
 
-        @Override // java.util.AbstractQueue, java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractQueue, java.util.AbstractCollection, java.util.Collection
         public void clear() {
             ReferenceEntry<K, V> nextInAccessQueue = this.head.getNextInAccessQueue();
             while (true) {
@@ -337,12 +337,12 @@ public class LocalCache<K, V> extends AbstractMap<K, V> implements ConcurrentMap
             }
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean contains(Object obj) {
             return ((ReferenceEntry) obj).getNextInAccessQueue() != NullEntry.INSTANCE;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean isEmpty() {
             return this.head.getNextInAccessQueue() == this.head;
         }
@@ -373,7 +373,7 @@ public class LocalCache<K, V> extends AbstractMap<K, V> implements ConcurrentMap
             return true;
         }
 
-        @Override // java.util.Queue, java.util.concurrent.BlockingQueue
+        @Override // java.util.Queue
         public /* bridge */ /* synthetic */ boolean offer(Object obj) {
             return offer((ReferenceEntry) ((ReferenceEntry) obj));
         }
@@ -398,7 +398,7 @@ public class LocalCache<K, V> extends AbstractMap<K, V> implements ConcurrentMap
             return nextInAccessQueue;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean remove(Object obj) {
             ReferenceEntry referenceEntry = (ReferenceEntry) obj;
             ReferenceEntry<K, V> previousInAccessQueue = referenceEntry.getPreviousInAccessQueue();
@@ -408,7 +408,7 @@ public class LocalCache<K, V> extends AbstractMap<K, V> implements ConcurrentMap
             return nextInAccessQueue != NullEntry.INSTANCE;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection
         public int size() {
             int i = 0;
             for (ReferenceEntry<K, V> nextInAccessQueue = this.head.getNextInAccessQueue(); nextInAccessQueue != this.head; nextInAccessQueue = nextInAccessQueue.getNextInAccessQueue()) {
@@ -590,7 +590,7 @@ public class LocalCache<K, V> extends AbstractMap<K, V> implements ConcurrentMap
             return false;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+        @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
         public Iterator<Map.Entry<K, V>> iterator() {
             return new EntryIterator();
         }
@@ -759,7 +759,7 @@ public class LocalCache<K, V> extends AbstractMap<K, V> implements ConcurrentMap
             return this.map.containsKey(obj);
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+        @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
         public Iterator<K> iterator() {
             return new KeyIterator();
         }
@@ -2896,17 +2896,17 @@ public class LocalCache<K, V> extends AbstractMap<K, V> implements ConcurrentMap
             this.map = concurrentMap;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public void clear() {
             this.map.clear();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean contains(Object obj) {
             return this.map.containsValue(obj);
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean isEmpty() {
             return this.map.isEmpty();
         }
@@ -2916,17 +2916,17 @@ public class LocalCache<K, V> extends AbstractMap<K, V> implements ConcurrentMap
             return new ValueIterator();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection
         public int size() {
             return this.map.size();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public Object[] toArray() {
             return LocalCache.toArrayList(this).toArray();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public <E> E[] toArray(E[] eArr) {
             return (E[]) LocalCache.toArrayList(this).toArray(eArr);
         }
@@ -3081,7 +3081,7 @@ public class LocalCache<K, V> extends AbstractMap<K, V> implements ConcurrentMap
 
         @Override // com.google.common.cache.ReferenceEntry
         public K getKey() {
-            return get();
+            return (K) get();
         }
 
         @Override // com.google.common.cache.ReferenceEntry
@@ -3327,7 +3327,7 @@ public class LocalCache<K, V> extends AbstractMap<K, V> implements ConcurrentMap
         WriteQueue() {
         }
 
-        @Override // java.util.AbstractQueue, java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractQueue, java.util.AbstractCollection, java.util.Collection
         public void clear() {
             ReferenceEntry<K, V> nextInWriteQueue = this.head.getNextInWriteQueue();
             while (true) {
@@ -3345,12 +3345,12 @@ public class LocalCache<K, V> extends AbstractMap<K, V> implements ConcurrentMap
             }
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean contains(Object obj) {
             return ((ReferenceEntry) obj).getNextInWriteQueue() != NullEntry.INSTANCE;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean isEmpty() {
             return this.head.getNextInWriteQueue() == this.head;
         }
@@ -3381,7 +3381,7 @@ public class LocalCache<K, V> extends AbstractMap<K, V> implements ConcurrentMap
             return true;
         }
 
-        @Override // java.util.Queue, java.util.concurrent.BlockingQueue
+        @Override // java.util.Queue
         public /* bridge */ /* synthetic */ boolean offer(Object obj) {
             return offer((ReferenceEntry) ((ReferenceEntry) obj));
         }
@@ -3406,7 +3406,7 @@ public class LocalCache<K, V> extends AbstractMap<K, V> implements ConcurrentMap
             return nextInWriteQueue;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean remove(Object obj) {
             ReferenceEntry referenceEntry = (ReferenceEntry) obj;
             ReferenceEntry<K, V> previousInWriteQueue = referenceEntry.getPreviousInWriteQueue();
@@ -3416,7 +3416,7 @@ public class LocalCache<K, V> extends AbstractMap<K, V> implements ConcurrentMap
             return nextInWriteQueue != NullEntry.INSTANCE;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection
         public int size() {
             int i = 0;
             for (ReferenceEntry<K, V> nextInWriteQueue = this.head.getNextInWriteQueue(); nextInWriteQueue != this.head; nextInWriteQueue = nextInWriteQueue.getNextInWriteQueue()) {
@@ -3874,7 +3874,7 @@ public class LocalCache<K, V> extends AbstractMap<K, V> implements ConcurrentMap
         }
         this.globalStatsCounter.recordHits(i);
         this.globalStatsCounter.recordMisses(i2);
-        return ImmutableMap.copyOf(newLinkedHashMap);
+        return ImmutableMap.copyOf((Map) newLinkedHashMap);
     }
 
     ReferenceEntry<K, V> getEntry(@NullableDecl Object obj) {
@@ -3906,6 +3906,7 @@ public class LocalCache<K, V> extends AbstractMap<K, V> implements ConcurrentMap
         return v;
     }
 
+    @Override // java.util.Map, java.util.concurrent.ConcurrentMap
     @NullableDecl
     public V getOrDefault(@NullableDecl Object obj, @NullableDecl V v) {
         V v2 = get(obj);
@@ -4066,7 +4067,7 @@ public class LocalCache<K, V> extends AbstractMap<K, V> implements ConcurrentMap
         }
     }
 
-    @Override // java.util.concurrent.ConcurrentMap
+    @Override // java.util.Map, java.util.concurrent.ConcurrentMap
     public V putIfAbsent(K k, V v) {
         Preconditions.checkNotNull(k);
         Preconditions.checkNotNull(v);
@@ -4115,7 +4116,7 @@ public class LocalCache<K, V> extends AbstractMap<K, V> implements ConcurrentMap
         return segmentFor(hash).remove(obj, hash);
     }
 
-    @Override // java.util.concurrent.ConcurrentMap
+    @Override // java.util.Map, java.util.concurrent.ConcurrentMap
     public boolean remove(@NullableDecl Object obj, @NullableDecl Object obj2) {
         if (obj == null || obj2 == null) {
             return false;
@@ -4124,7 +4125,7 @@ public class LocalCache<K, V> extends AbstractMap<K, V> implements ConcurrentMap
         return segmentFor(hash).remove(obj, hash, obj2);
     }
 
-    @Override // java.util.concurrent.ConcurrentMap
+    @Override // java.util.Map, java.util.concurrent.ConcurrentMap
     public V replace(K k, V v) {
         Preconditions.checkNotNull(k);
         Preconditions.checkNotNull(v);
@@ -4132,7 +4133,7 @@ public class LocalCache<K, V> extends AbstractMap<K, V> implements ConcurrentMap
         return segmentFor(hash).replace(k, hash, v);
     }
 
-    @Override // java.util.concurrent.ConcurrentMap
+    @Override // java.util.Map, java.util.concurrent.ConcurrentMap
     public boolean replace(K k, @NullableDecl V v, V v2) {
         Preconditions.checkNotNull(k);
         Preconditions.checkNotNull(v2);

@@ -3,22 +3,21 @@ package com.tencent.cloud.huiyansdkface.okhttp3.internal.platform;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8457232-dex2jar.jar:com/tencent/cloud/huiyansdkface/okhttp3/internal/platform/OptionalMethod.class */
-public class OptionalMethod<T> {
+class OptionalMethod<T> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Class<?> f36025a;
+    private final Class<?> f22334a;
     private final String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final Class[] f36026c;
+    private final Class[] f22335c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public OptionalMethod(Class<?> cls, String str, Class... clsArr) {
-        this.f36025a = cls;
+        this.f22334a = cls;
         this.b = str;
-        this.f36026c = clsArr;
+        this.f22335c = clsArr;
     }
 
     private Method a(Class<?> cls) {
@@ -26,8 +25,8 @@ public class OptionalMethod<T> {
         String str = this.b;
         Method method = null;
         if (str != null) {
-            method = a(cls, str, this.f36026c);
-            if (method != null && (cls2 = this.f36025a) != null && !cls2.isAssignableFrom(method.getReturnType())) {
+            method = a(cls, str, this.f22335c);
+            if (method != null && (cls2 = this.f22334a) != null && !cls2.isAssignableFrom(method.getReturnType())) {
                 return null;
             }
         }

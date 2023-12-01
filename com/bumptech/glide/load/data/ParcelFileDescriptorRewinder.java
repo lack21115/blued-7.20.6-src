@@ -12,7 +12,7 @@ import java.io.IOException;
 public final class ParcelFileDescriptorRewinder implements DataRewinder<ParcelFileDescriptor> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final InternalRewinder f20725a;
+    private final InternalRewinder f7119a;
 
     /* loaded from: source-7206380-dex2jar.jar:com/bumptech/glide/load/data/ParcelFileDescriptorRewinder$Factory.class */
     public static final class Factory implements DataRewinder.Factory<ParcelFileDescriptor> {
@@ -32,16 +32,16 @@ public final class ParcelFileDescriptorRewinder implements DataRewinder<ParcelFi
     public static final class InternalRewinder {
 
         /* renamed from: a  reason: collision with root package name */
-        private final ParcelFileDescriptor f20726a;
+        private final ParcelFileDescriptor f7120a;
 
         InternalRewinder(ParcelFileDescriptor parcelFileDescriptor) {
-            this.f20726a = parcelFileDescriptor;
+            this.f7120a = parcelFileDescriptor;
         }
 
         ParcelFileDescriptor rewind() throws IOException {
             try {
-                Os.lseek(this.f20726a.getFileDescriptor(), 0L, OsConstants.SEEK_SET);
-                return this.f20726a;
+                Os.lseek(this.f7120a.getFileDescriptor(), 0L, OsConstants.SEEK_SET);
+                return this.f7120a;
             } catch (ErrnoException e) {
                 throw new IOException(e);
             }
@@ -49,7 +49,7 @@ public final class ParcelFileDescriptorRewinder implements DataRewinder<ParcelFi
     }
 
     public ParcelFileDescriptorRewinder(ParcelFileDescriptor parcelFileDescriptor) {
-        this.f20725a = new InternalRewinder(parcelFileDescriptor);
+        this.f7119a = new InternalRewinder(parcelFileDescriptor);
     }
 
     public static boolean c() {
@@ -63,6 +63,6 @@ public final class ParcelFileDescriptorRewinder implements DataRewinder<ParcelFi
     @Override // com.bumptech.glide.load.data.DataRewinder
     /* renamed from: d */
     public ParcelFileDescriptor a() throws IOException {
-        return this.f20725a.rewind();
+        return this.f7119a.rewind();
     }
 }

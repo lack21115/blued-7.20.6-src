@@ -9,13 +9,9 @@ import java.util.List;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/view/stickylistheaders/ExpandableStickyListHeadersAdapter.class */
 class ExpandableStickyListHeadersAdapter extends BaseAdapter implements StickyListHeadersAdapter {
-
-    /* renamed from: a  reason: collision with root package name */
-    DualHashMap<View, Long> f10333a = new DualHashMap<>();
+    DualHashMap<View, Long> a = new DualHashMap<>();
     DistinctMultiHashMap<Integer, View> b = new DistinctMultiHashMap<>();
-
-    /* renamed from: c  reason: collision with root package name */
-    List<Long> f10334c = new ArrayList();
+    List<Long> c = new ArrayList();
     private final StickyListHeadersAdapter d;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -61,9 +57,9 @@ class ExpandableStickyListHeadersAdapter extends BaseAdapter implements StickyLi
     @Override // android.widget.Adapter
     public View getView(int i, View view, ViewGroup viewGroup) {
         View view2 = this.d.getView(i, view, viewGroup);
-        this.f10333a.a(view2, Long.valueOf(getItemId(i)));
+        this.a.a(view2, Long.valueOf(getItemId(i)));
         this.b.a((DistinctMultiHashMap<Integer, View>) Integer.valueOf((int) a(i)), (Integer) view2);
-        if (this.f10334c.contains(Long.valueOf(a(i)))) {
+        if (this.c.contains(Long.valueOf(a(i)))) {
             view2.setVisibility(8);
             return view2;
         }

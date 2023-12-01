@@ -1,7 +1,6 @@
 package androidx.lifecycle;
 
 import androidx.lifecycle.Lifecycle;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
@@ -60,7 +59,7 @@ public class Lifecycling {
     }
 
     public static String getAdapterName(String str) {
-        return str.replace(".", BridgeUtil.UNDERLINE_STR) + "_LifecycleAdapter";
+        return str.replace(".", "_") + "_LifecycleAdapter";
     }
 
     @Deprecated

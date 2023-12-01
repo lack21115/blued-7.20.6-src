@@ -39,13 +39,13 @@ import java.util.List;
 public class SearchAllAdapter extends BaseQuickAdapter<SearchSessionModel, BaseViewHolder> {
 
     /* renamed from: a  reason: collision with root package name */
-    private BaseFragment f33153a;
+    private BaseFragment f19462a;
     private String b;
 
     public SearchAllAdapter(BaseFragment baseFragment) {
         super(R.layout.item_search_all_layout, new ArrayList());
         this.b = "";
-        this.f33153a = baseFragment;
+        this.f19462a = baseFragment;
     }
 
     private UserBasicModel a(SessionModel sessionModel) {
@@ -65,8 +65,8 @@ public class SearchAllAdapter extends BaseQuickAdapter<SearchSessionModel, BaseV
 
     /* JADX INFO: Access modifiers changed from: private */
     public void a(SearchSessionModel searchSessionModel) {
-        if (searchSessionModel.f33162a > 1) {
-            SearchLikeChatFragment.a(this.f33153a.getContext(), this.b, a(searchSessionModel, (SessionSettingModel) searchSessionModel.sessionSettingModel), searchSessionModel.sessionId, searchSessionModel.sessionType, searchSessionModel.avatar, searchSessionModel.vBadge, searchSessionModel.vipGrade, searchSessionModel.vipAnnual, searchSessionModel.vipExpLvl, searchSessionModel.hideVipLook);
+        if (searchSessionModel.f19471a > 1) {
+            SearchLikeChatFragment.a(this.f19462a.getContext(), this.b, a(searchSessionModel, (SessionSettingModel) searchSessionModel.sessionSettingModel), searchSessionModel.sessionId, searchSessionModel.sessionType, searchSessionModel.avatar, searchSessionModel.vBadge, searchSessionModel.vipGrade, searchSessionModel.vipAnnual, searchSessionModel.vipExpLvl, searchSessionModel.hideVipLook);
         } else if (searchSessionModel.sessionType == 2 && BluedPreferences.av()) {
             a(searchSessionModel, true);
         } else {
@@ -78,7 +78,7 @@ public class SearchAllAdapter extends BaseQuickAdapter<SearchSessionModel, BaseV
         LogData logData = new LogData();
         logData.from = "none";
         ChatHelperV4 a2 = ChatHelperV4.a();
-        Context context = this.f33153a.getContext();
+        Context context = this.f19462a.getContext();
         long j = searchSessionModel.sessionId;
         String str = searchSessionModel.nickName;
         String str2 = searchSessionModel.avatar;
@@ -90,8 +90,8 @@ public class SearchAllAdapter extends BaseQuickAdapter<SearchSessionModel, BaseV
         int i5 = searchSessionModel.sessionType == 3 ? 1 : 0;
         MsgSourceEntity msgSourceEntity = new MsgSourceEntity(MessageProtos.StrangerSource.UNKNOWN_STRANGER_SOURCE, "");
         long j2 = -1;
-        long j3 = searchSessionModel.f33162a == 0 ? -1L : searchSessionModel.lastMsgId;
-        if (searchSessionModel.f33162a != 0) {
+        long j3 = searchSessionModel.f19471a == 0 ? -1L : searchSessionModel.lastMsgId;
+        if (searchSessionModel.f19471a != 0) {
             j2 = searchSessionModel.lastMsgLocalId;
         }
         a2.a(context, j, str, str2, i, i2, i3, i4, str3, z, i5, 0, logData, msgSourceEntity, j3, j2, false, false);
@@ -101,7 +101,7 @@ public class SearchAllAdapter extends BaseQuickAdapter<SearchSessionModel, BaseV
     @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(BaseViewHolder baseViewHolder, final SearchSessionModel searchSessionModel) {
-        LinearLayout linearLayout = (LinearLayout) baseViewHolder.getView(2131364999);
+        LinearLayout linearLayout = (LinearLayout) baseViewHolder.getView(R.id.item_view);
         ImageView imageView = (ImageView) baseViewHolder.getView(2131364232);
         ImageView imageView2 = (ImageView) baseViewHolder.getView(R.id.msg_friend_item_avatar_v);
         ImageView imageView3 = (ImageView) baseViewHolder.getView(R.id.msg_friend_item_status);
@@ -124,26 +124,26 @@ public class SearchAllAdapter extends BaseQuickAdapter<SearchSessionModel, BaseV
             imageView3.setImageResource(R.drawable.chat_fail_resend);
             imageView3.setVisibility(0);
         }
-        textView.setMaxWidth(DensityUtils.a(this.f33153a.getContext(), 120.0f));
+        textView.setMaxWidth(DensityUtils.a(this.f19462a.getContext(), 120.0f));
         linearLayout2.setVisibility(0);
-        if (searchSessionModel.f33162a <= 0) {
+        if (searchSessionModel.f19471a <= 0) {
             if (TextUtils.isEmpty(searchSessionModel.b)) {
                 linearLayout2.setVisibility(8);
             }
             textView3.setText("");
             imageView3.setVisibility(8);
-        } else if (searchSessionModel.f33162a > 1) {
+        } else if (searchSessionModel.f19471a > 1) {
             Resources resources = this.mContext.getResources();
-            textView3.setText(resources.getString(R.string.chat_count, searchSessionModel.f33162a + ""));
+            textView3.setText(resources.getString(R.string.chat_count, searchSessionModel.f19471a + ""));
         } else {
             UserRelationshipUtils.a(this.mContext, StringUtils.a(StringUtils.a(searchSessionModel.lastMsgContent, false, true, true, ""), (int) textView3.getTextSize()).toString(), this.b, textView3);
         }
-        if (searchSessionModel.lastMsgTime == 0 || searchSessionModel.f33162a > 1) {
+        if (searchSessionModel.lastMsgTime == 0 || searchSessionModel.f19471a > 1) {
             textView4.setText("");
         } else {
-            textView4.setText(MsgCommonUtils.a(this.f33153a.getContext(), searchSessionModel.lastMsgTime));
+            textView4.setText(MsgCommonUtils.a(this.f19462a.getContext(), searchSessionModel.lastMsgTime));
         }
-        ImageLoader.a(this.f33153a.getFragmentActive(), searchSessionModel.sessionType == 3 ? searchSessionModel.avatar : AvatarUtils.a(0, searchSessionModel.avatar)).b(2131237310).a(imageView);
+        ImageLoader.a(this.f19462a.getFragmentActive(), searchSessionModel.sessionType == 3 ? searchSessionModel.avatar : AvatarUtils.a(0, searchSessionModel.avatar)).b(2131237310).a(imageView);
         if (TextUtils.isEmpty(searchSessionModel.b)) {
             textView2.setVisibility(8);
         } else {
@@ -153,7 +153,7 @@ public class SearchAllAdapter extends BaseQuickAdapter<SearchSessionModel, BaseV
         UserRelationshipUtils.a(this.mContext, a(searchSessionModel, (SessionSettingModel) searchSessionModel.sessionSettingModel), this.b, textView);
         UserInfoHelper.a(imageView2, searchSessionModel.vBadge, 3);
         UserRelationshipUtils.a(imageView4, a((SessionModel) searchSessionModel));
-        UserRelationshipUtils.a(this.f33153a.getContext(), textView, a((SessionModel) searchSessionModel));
+        UserRelationshipUtils.a(this.f19462a.getContext(), textView, a((SessionModel) searchSessionModel));
         baseViewHolder.setGone(R.id.tv_group_icon, searchSessionModel.sessionType == 3);
         linearLayout.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.search.adapter.SearchAllAdapter.1
             @Override // android.view.View.OnClickListener

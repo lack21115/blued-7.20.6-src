@@ -6,9 +6,7 @@ import okio.BufferedSource;
 
 /* loaded from: source-3503164-dex2jar.jar:okhttp3/internal/http2/PushObserver.class */
 public interface PushObserver {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final PushObserver f43961a = new PushObserver() { // from class: okhttp3.internal.http2.PushObserver.1
+    public static final PushObserver a = new PushObserver() { // from class: okhttp3.internal.http2.PushObserver.1
         @Override // okhttp3.internal.http2.PushObserver
         public void a(int i, ErrorCode errorCode) {
         }

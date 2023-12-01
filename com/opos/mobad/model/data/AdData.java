@@ -38,11 +38,11 @@ public class AdData extends a implements Parcelable {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    private int f26458a;
+    private int f12770a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private List<AdItemData> f26459c;
+    private List<AdItemData> f12771c;
     private long d;
     private int e;
     private int f;
@@ -63,7 +63,7 @@ public class AdData extends a implements Parcelable {
         this.h = 0;
         this.i = false;
         this.j = 0;
-        this.f26458a = i;
+        this.f12770a = i;
         this.b = str;
     }
 
@@ -72,7 +72,7 @@ public class AdData extends a implements Parcelable {
         this.h = 0;
         this.i = false;
         this.j = 0;
-        this.f26458a = i;
+        this.f12770a = i;
         this.b = str;
         this.f = i2;
         this.g = i3;
@@ -100,7 +100,7 @@ public class AdData extends a implements Parcelable {
     }
 
     public void a(List<AdItemData> list) {
-        this.f26459c = list;
+        this.f12771c = list;
     }
 
     public void a(boolean z) {
@@ -108,7 +108,7 @@ public class AdData extends a implements Parcelable {
     }
 
     public void b(int i) {
-        this.f26458a = i;
+        this.f12770a = i;
     }
 
     public boolean b() {
@@ -124,7 +124,7 @@ public class AdData extends a implements Parcelable {
     }
 
     public int d() {
-        return this.f26458a;
+        return this.f12770a;
     }
 
     public void d(int i) {
@@ -141,7 +141,7 @@ public class AdData extends a implements Parcelable {
     }
 
     public List<AdItemData> f() {
-        return this.f26459c;
+        return this.f12771c;
     }
 
     public int g() {
@@ -153,7 +153,7 @@ public class AdData extends a implements Parcelable {
     }
 
     public String toString() {
-        return "AdData{code=" + this.f26458a + ", msg='" + this.b + "', adItemDataList=" + this.f26459c + ", expTime=" + this.d + ", requestInterval=" + this.f + ", dispatchMode=" + this.g + ", gameBoxType=" + this.h + ", customSkip=" + this.i + '}';
+        return "AdData{code=" + this.f12770a + ", msg='" + this.b + "', adItemDataList=" + this.f12771c + ", expTime=" + this.d + ", requestInterval=" + this.f + ", dispatchMode=" + this.g + ", gameBoxType=" + this.h + ", customSkip=" + this.i + '}';
     }
 
     /* JADX WARN: Type inference failed for: r0v0, types: [java.lang.Throwable, java.lang.Runtime] */

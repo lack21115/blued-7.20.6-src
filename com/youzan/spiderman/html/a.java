@@ -10,11 +10,11 @@ import com.youzan.spiderman.utils.NetWorkUtil;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private h f41824a = h.a.f41839a;
-    private d b = d.a.f41832a;
+    private h f28133a = h.a.f28148a;
+    private d b = d.a.f28141a;
 
     /* renamed from: c  reason: collision with root package name */
-    private com.youzan.spiderman.c.a.a f41825c = com.youzan.spiderman.c.a.a.a();
+    private com.youzan.spiderman.c.a.a f28134c = com.youzan.spiderman.c.a.a.a();
     private HtmlCacheStrategy d = null;
 
     public final HtmlCacheStrategy a() {
@@ -22,9 +22,9 @@ public class a {
     }
 
     public final HtmlResponse a(Context context, l lVar, HtmlStatistic htmlStatistic) {
-        f fVar = new f(context, this.d, this.f41825c.f());
+        f fVar = new f(context, this.d, this.f28134c.f());
         if (fVar.a()) {
-            if (this.f41824a.a(lVar.c()) != null || this.b.a(lVar)) {
+            if (this.f28133a.a(lVar.c()) != null || this.b.a(lVar)) {
                 HtmlResponse a2 = this.b.b(lVar).a(fVar);
                 if (htmlStatistic != null) {
                     htmlStatistic.setNeedRecord(true);
@@ -40,7 +40,7 @@ public class a {
     }
 
     public final void a(Context context, final l lVar, final HtmlCallback htmlCallback) {
-        if (!new f(context, this.d, this.f41825c.f()).a()) {
+        if (!new f(context, this.d, this.f28134c.f()).a()) {
             if (htmlCallback != null) {
                 htmlCallback.onFailed();
             }

@@ -35,11 +35,11 @@ import java.nio.ByteBuffer;
 public class n {
 
     /* renamed from: a  reason: collision with root package name */
-    private av f40112a;
+    private av f26421a;
     private t b;
 
     /* renamed from: c  reason: collision with root package name */
-    private ag f40113c;
+    private ag f26422c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/txcopyrightedmedia/impl/utils/n$a.class */
@@ -47,7 +47,7 @@ public class n {
         private final TXCMMusicInfo b;
 
         /* renamed from: c  reason: collision with root package name */
-        private ITXCMMusicTrack.OnErrorListener f40115c;
+        private ITXCMMusicTrack.OnErrorListener f26424c;
         private ITXCMMusicTrack.OnPreparedListener d;
         private HandlerThread e;
         private final Handler f;
@@ -58,10 +58,10 @@ public class n {
 
         /* renamed from: com.tencent.txcopyrightedmedia.impl.utils.n$a$a  reason: collision with other inner class name */
         /* loaded from: source-8829756-dex2jar.jar:com/tencent/txcopyrightedmedia/impl/utils/n$a$a.class */
-        final class C1065a implements ITXCMAgoraRtcEngine {
+        final class C0895a implements ITXCMAgoraRtcEngine {
             private RtcEngine b;
 
-            private C1065a(Object obj) {
+            private C0895a(Object obj) {
                 try {
                     this.b = (RtcEngine) obj;
                 } catch (Error e) {
@@ -69,19 +69,19 @@ public class n {
                 }
             }
 
-            /* synthetic */ C1065a(a aVar, Object obj, byte b) {
+            /* synthetic */ C0895a(a aVar, Object obj, byte b) {
                 this(obj);
             }
 
             @Override // com.tencent.txcopyrightedmedia.agora.ITXCMAgoraRtcEngine
             public final int pushExternalAudioFrame(TXCMAudioFrameInfo tXCMAudioFrameInfo, long j) {
                 av.a a2;
-                if (tXCMAudioFrameInfo == null || n.this.f40112a == null || (a2 = n.this.f40112a.a(tXCMAudioFrameInfo.frameId)) == null) {
+                if (tXCMAudioFrameInfo == null || n.this.f26421a == null || (a2 = n.this.f26421a.a(tXCMAudioFrameInfo.frameId)) == null) {
                     return -1;
                 }
                 int pushExternalAudioFrame = this.b.pushExternalAudioFrame(a2.b, j);
-                if (a2.f40077c <= 0) {
-                    n.this.f40112a.a(a2);
+                if (a2.f26386c <= 0) {
+                    n.this.f26421a.a(a2);
                 }
                 return pushExternalAudioFrame;
             }
@@ -89,12 +89,12 @@ public class n {
             @Override // com.tencent.txcopyrightedmedia.agora.ITXCMAgoraRtcEngine
             public final int pushExternalAudioFrame(TXCMAudioFrameInfo tXCMAudioFrameInfo, long j, int i, int i2, int i3, int i4) {
                 av.a a2;
-                if (tXCMAudioFrameInfo == null || n.this.f40112a == null || (a2 = n.this.f40112a.a(tXCMAudioFrameInfo.frameId)) == null) {
+                if (tXCMAudioFrameInfo == null || n.this.f26421a == null || (a2 = n.this.f26421a.a(tXCMAudioFrameInfo.frameId)) == null) {
                     return -1;
                 }
                 int pushExternalAudioFrame = this.b.pushExternalAudioFrame(a2.b, j, i, i2, i3, i4);
-                if (a2.f40077c <= 0) {
-                    n.this.f40112a.a(a2);
+                if (a2.f26386c <= 0) {
+                    n.this.f26421a.a(a2);
                 }
                 return pushExternalAudioFrame;
             }
@@ -119,12 +119,12 @@ public class n {
             @Override // com.tencent.txcopyrightedmedia.IAndroidAudioTrack
             public final int write(TXCMAudioFrameInfo tXCMAudioFrameInfo, int i, int i2) {
                 av.a a2;
-                if (tXCMAudioFrameInfo == null || n.this.f40112a == null || (a2 = n.this.f40112a.a(tXCMAudioFrameInfo.frameId)) == null) {
+                if (tXCMAudioFrameInfo == null || n.this.f26421a == null || (a2 = n.this.f26421a.a(tXCMAudioFrameInfo.frameId)) == null) {
                     return -1;
                 }
                 int write = this.b.write(a2.b, i, i2);
-                if (a2.f40077c <= 0) {
-                    n.this.f40112a.a(a2);
+                if (a2.f26386c <= 0) {
+                    n.this.f26421a.a(a2);
                 }
                 return write;
             }
@@ -135,7 +135,7 @@ public class n {
             private ZegoAudioAux b;
 
             /* renamed from: c  reason: collision with root package name */
-            private TXCMAuxDataEx f40124c;
+            private TXCMAuxDataEx f26433c;
 
             private c(Object obj) {
                 try {
@@ -143,7 +143,7 @@ public class n {
                 } catch (Error e) {
                     e.printStackTrace();
                 }
-                n.this.f40113c = new ag(a.this.getMinBufferSize());
+                n.this.f26422c = new ag(a.this.getMinBufferSize());
             }
 
             /* synthetic */ c(a aVar, Object obj, byte b) {
@@ -164,20 +164,20 @@ public class n {
                             AuxDataEx auxDataEx2 = null;
                             while (true) {
                                 auxDataEx = auxDataEx2;
-                                if (n.this.f40113c.a() >= i || (onAuxCallback = iTXCMZegoAudioAuxCallbackEx.onAuxCallback()) == null || onAuxCallback.auxDataInfo == null || n.this.f40112a == null || (a2 = n.this.f40112a.a(onAuxCallback.auxDataInfo.frameId)) == null) {
+                                if (n.this.f26422c.a() >= i || (onAuxCallback = iTXCMZegoAudioAuxCallbackEx.onAuxCallback()) == null || onAuxCallback.auxDataInfo == null || n.this.f26421a == null || (a2 = n.this.f26421a.a(onAuxCallback.auxDataInfo.frameId)) == null) {
                                     break;
                                 }
                                 int i2 = 0;
                                 while (i2 < onAuxCallback.auxDataInfo.size) {
-                                    if (n.this.f40113c.a(a2.b[i2])) {
+                                    if (n.this.f26422c.a(a2.b[i2])) {
                                         i2++;
                                     } else {
-                                        n.this.f40113c.a((n.this.f40113c.f40046a.length + onAuxCallback.auxDataInfo.size) - i2);
-                                        new StringBuilder("expand to ").append(n.this.f40113c.f40046a.length);
+                                        n.this.f26422c.a((n.this.f26422c.f26355a.length + onAuxCallback.auxDataInfo.size) - i2);
+                                        new StringBuilder("expand to ").append(n.this.f26422c.f26355a.length);
                                     }
                                 }
-                                if (a2.f40077c <= 0) {
-                                    n.this.f40112a.a(a2);
+                                if (a2.f26386c <= 0) {
+                                    n.this.f26421a.a(a2);
                                 }
                                 AuxDataEx auxDataEx3 = auxDataEx;
                                 if (auxDataEx == null) {
@@ -188,26 +188,26 @@ public class n {
                                     auxDataEx3.mediaSideInfoBufLen = onAuxCallback.mediaSideInfoBufLen;
                                 }
                                 auxDataEx3.packet = onAuxCallback.packet;
-                                c.this.f40124c = onAuxCallback;
+                                c.this.f26433c = onAuxCallback;
                                 auxDataEx2 = auxDataEx3;
                             }
                             AuxDataEx auxDataEx4 = auxDataEx;
                             if (auxDataEx == null) {
                                 AuxDataEx auxDataEx5 = new AuxDataEx();
                                 auxDataEx4 = auxDataEx5;
-                                if (c.this.f40124c != null) {
-                                    auxDataEx5.packet = c.this.f40124c.packet;
+                                if (c.this.f26433c != null) {
+                                    auxDataEx5.packet = c.this.f26433c.packet;
                                     auxDataEx4 = auxDataEx5;
                                 }
                             }
                             auxDataEx4.sampleRate = a.this.getSampleRate();
                             auxDataEx4.channelCount = a.this.getChannelCount();
-                            int min = Math.min(n.this.f40113c.a(), i);
+                            int min = Math.min(n.this.f26422c.a(), i);
                             if (min == 0) {
                                 return null;
                             }
                             byte[] bArr = new byte[min];
-                            n.this.f40113c.a(bArr, min);
+                            n.this.f26422c.a(bArr, min);
                             ByteBuffer allocateDirect = ByteBuffer.allocateDirect(min);
                             allocateDirect.put(bArr);
                             allocateDirect.flip();
@@ -225,7 +225,7 @@ public class n {
             private ZegoExpressEngine b;
 
             /* renamed from: c  reason: collision with root package name */
-            private TXCMZegoAudioMixingData f40127c;
+            private TXCMZegoAudioMixingData f26436c;
 
             private d(Object obj) {
                 try {
@@ -233,7 +233,7 @@ public class n {
                 } catch (Error e) {
                     e.printStackTrace();
                 }
-                n.this.f40113c = new ag(a.this.getMinBufferSize());
+                n.this.f26422c = new ag(a.this.getMinBufferSize());
             }
 
             /* synthetic */ d(a aVar, Object obj, byte b) {
@@ -253,20 +253,20 @@ public class n {
                             ZegoAudioMixingData zegoAudioMixingData2 = null;
                             while (true) {
                                 zegoAudioMixingData = zegoAudioMixingData2;
-                                if (n.this.f40113c.a() >= i || (onAudioMixingCopyData = iTXCMZegoAudioMixingHandler.onAudioMixingCopyData()) == null || onAudioMixingCopyData.audioInfo == null || n.this.f40112a == null || (a2 = n.this.f40112a.a(onAudioMixingCopyData.audioInfo.frameId)) == null) {
+                                if (n.this.f26422c.a() >= i || (onAudioMixingCopyData = iTXCMZegoAudioMixingHandler.onAudioMixingCopyData()) == null || onAudioMixingCopyData.audioInfo == null || n.this.f26421a == null || (a2 = n.this.f26421a.a(onAudioMixingCopyData.audioInfo.frameId)) == null) {
                                     break;
                                 }
                                 int i2 = 0;
                                 while (i2 < onAudioMixingCopyData.audioInfo.size) {
-                                    if (n.this.f40113c.a(a2.b[i2])) {
+                                    if (n.this.f26422c.a(a2.b[i2])) {
                                         i2++;
                                     } else {
-                                        n.this.f40113c.a((n.this.f40113c.f40046a.length + onAudioMixingCopyData.audioInfo.size) - i2);
-                                        new StringBuilder("expand to ").append(n.this.f40113c.f40046a.length);
+                                        n.this.f26422c.a((n.this.f26422c.f26355a.length + onAudioMixingCopyData.audioInfo.size) - i2);
+                                        new StringBuilder("expand to ").append(n.this.f26422c.f26355a.length);
                                     }
                                 }
-                                if (a2.f40077c <= 0) {
-                                    n.this.f40112a.a(a2);
+                                if (a2.f26386c <= 0) {
+                                    n.this.f26421a.a(a2);
                                 }
                                 ZegoAudioMixingData zegoAudioMixingData3 = zegoAudioMixingData;
                                 if (zegoAudioMixingData == null) {
@@ -279,15 +279,15 @@ public class n {
                                 if (onAudioMixingCopyData.param != null) {
                                     zegoAudioMixingData3.param = onAudioMixingCopyData.param;
                                 }
-                                d.this.f40127c = onAudioMixingCopyData;
+                                d.this.f26436c = onAudioMixingCopyData;
                                 zegoAudioMixingData2 = zegoAudioMixingData3;
                             }
                             ZegoAudioMixingData zegoAudioMixingData4 = zegoAudioMixingData;
                             if (zegoAudioMixingData == null) {
                                 ZegoAudioMixingData zegoAudioMixingData5 = new ZegoAudioMixingData();
                                 zegoAudioMixingData4 = zegoAudioMixingData5;
-                                if (d.this.f40127c != null) {
-                                    zegoAudioMixingData5.param = d.this.f40127c.param;
+                                if (d.this.f26436c != null) {
+                                    zegoAudioMixingData5.param = d.this.f26436c.param;
                                     zegoAudioMixingData4 = zegoAudioMixingData5;
                                 }
                             }
@@ -296,12 +296,12 @@ public class n {
                                 zegoAudioMixingData4.param.channel = ZegoAudioChannel.getZegoAudioChannel(a.this.getChannelCount());
                                 zegoAudioMixingData4.param.sampleRate = ZegoAudioSampleRate.getZegoAudioSampleRate(a.this.getSampleRate());
                             }
-                            int min = Math.min(n.this.f40113c.a(), i);
+                            int min = Math.min(n.this.f26422c.a(), i);
                             if (min == 0) {
                                 return null;
                             }
                             byte[] bArr = new byte[min];
-                            n.this.f40113c.a(bArr, min);
+                            n.this.f26422c.a(bArr, min);
                             ByteBuffer allocateDirect = ByteBuffer.allocateDirect(min);
                             allocateDirect.put(bArr);
                             allocateDirect.flip();
@@ -359,11 +359,11 @@ public class n {
 
         /* JADX INFO: Access modifiers changed from: private */
         public void a(final ErrorCode errorCode) {
-            if (this.f40115c != null) {
+            if (this.f26424c != null) {
                 this.f.post(new Runnable() { // from class: com.tencent.txcopyrightedmedia.impl.utils.n.a.4
                     @Override // java.lang.Runnable
                     public final void run() {
-                        a.this.f40115c.onError(errorCode.code, errorCode.msg);
+                        a.this.f26424c.onError(errorCode.code, errorCode.msg);
                     }
                 });
             }
@@ -391,11 +391,11 @@ public class n {
                 ah.a().a(beVar);
             }
             n.this.b.b();
-            if (n.this.f40112a != null) {
-                av avVar = n.this.f40112a;
-                synchronized (avVar.f40075c) {
+            if (n.this.f26421a != null) {
+                av avVar = n.this.f26421a;
+                synchronized (avVar.f26384c) {
                     avVar.b.clear();
-                    avVar.f40074a.clear();
+                    avVar.f26383a.clear();
                 }
             }
             Handler handler = this.g;
@@ -403,7 +403,7 @@ public class n {
                 handler.post(new Runnable() { // from class: com.tencent.txcopyrightedmedia.impl.utils.n.a.3
                     @Override // java.lang.Runnable
                     public final void run() {
-                        h hVar = (h) m.a().b(m.f40110c);
+                        h hVar = (h) m.a().b(m.f26419c);
                         if (hVar != null && a.this.h != null) {
                             hVar.a(a.this.h);
                         }
@@ -415,7 +415,7 @@ public class n {
 
         @Override // com.tencent.txcopyrightedmedia.ITXCMMusicTrack
         public final int getChannelCount() {
-            return n.this.b.f40155c;
+            return n.this.b.f26464c;
         }
 
         @Override // com.tencent.txcopyrightedmedia.ITXCMMusicTrack
@@ -426,7 +426,7 @@ public class n {
         @Override // com.tencent.txcopyrightedmedia.ITXCMMusicTrack
         public final int getMinBufferSize() {
             String str = n.this.b.j;
-            return (!TextUtils.isEmpty(str) ? str.contains("mpeg") ? 1152 : 1024 : 1200) * n.this.b.f40155c * 2;
+            return (!TextUtils.isEmpty(str) ? str.contains("mpeg") ? 1152 : 1024 : 1200) * n.this.b.f26464c * 2;
         }
 
         /* JADX WARN: Type inference failed for: r0v17, types: [T, com.tencent.txcopyrightedmedia.impl.utils.n$a$c] */
@@ -436,8 +436,8 @@ public class n {
         @Override // com.tencent.txcopyrightedmedia.ITXCMMusicTrack
         public final <T> T getProxy(Object obj) {
             if (TextUtils.equals(obj.getClass().getName(), "io.agora.rtc.internal.RtcEngineImpl")) {
-                ?? r0 = (T) new C1065a(this, obj, (byte) 0);
-                if (((C1065a) r0).b != null) {
+                ?? r0 = (T) new C0895a(this, obj, (byte) 0);
+                if (((C0895a) r0).b != null) {
                     return r0;
                 }
                 return null;
@@ -523,11 +523,11 @@ public class n {
         @Override // com.tencent.txcopyrightedmedia.ITXCMMusicTrack
         public final int readAudioFrame(TXCMAudioFrameInfo tXCMAudioFrameInfo) {
             int i;
-            if (tXCMAudioFrameInfo == null || n.this.f40112a == null) {
+            if (tXCMAudioFrameInfo == null || n.this.f26421a == null) {
                 return -1;
             }
-            av.a a2 = n.this.f40112a.a();
-            a2.f40077c = com.tencent.txcopyrightedmedia.b.a(tXCMAudioFrameInfo);
+            av.a a2 = n.this.f26421a.a();
+            a2.f26386c = com.tencent.txcopyrightedmedia.b.a(tXCMAudioFrameInfo);
             synchronized (a.class) {
                 try {
                     byte[] bArr = a2.b;
@@ -543,7 +543,7 @@ public class n {
                     }
                     if (i != -1 && this.i != null) {
                         be beVar = this.i;
-                        beVar.f += (((i * 1000.0f) / n.this.b.f40155c) / 2.0f) / n.this.b.b;
+                        beVar.f += (((i * 1000.0f) / n.this.b.f26464c) / 2.0f) / n.this.b.b;
                         if (beVar.f - beVar.g > 5000.0d) {
                             beVar.d = System.currentTimeMillis() / 1000;
                             beVar.e = "PCM_TimedEvent";
@@ -558,10 +558,10 @@ public class n {
                     throw th;
                 }
             }
-            av avVar = n.this.f40112a;
+            av avVar = n.this.f26421a;
             if (i > 0) {
                 avVar.b(a2);
-                tXCMAudioFrameInfo.frameId = a2.f40076a;
+                tXCMAudioFrameInfo.frameId = a2.f26385a;
                 tXCMAudioFrameInfo.size = i;
                 return i;
             }
@@ -588,7 +588,7 @@ public class n {
 
         @Override // com.tencent.txcopyrightedmedia.ITXCMMusicTrack
         public final void setOnErrorListener(ITXCMMusicTrack.OnErrorListener onErrorListener) {
-            this.f40115c = new q(onErrorListener);
+            this.f26424c = new q(onErrorListener);
         }
 
         @Override // com.tencent.txcopyrightedmedia.ITXCMMusicTrack

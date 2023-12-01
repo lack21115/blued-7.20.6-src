@@ -6,7 +6,6 @@ import io.github.inflationx.viewpump.internal.FallbackViewCreationInterceptor;
 import io.github.inflationx.viewpump.internal.InterceptorChain;
 import io.github.inflationx.viewpump.internal.ReflectiveFallbackViewCreator;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import kotlin.Lazy;
 import kotlin.LazyKt;
@@ -31,9 +30,8 @@ public final class ViewPump {
     private final boolean isStoreLayoutResId;
     public static final Companion Companion = new Companion(null);
     private static final Lazy reflectiveFallbackViewCreator$delegate = LazyKt.a(new Function0<ReflectiveFallbackViewCreator>() { // from class: io.github.inflationx.viewpump.ViewPump$Companion$reflectiveFallbackViewCreator$2
-        /* JADX WARN: Can't rename method to resolve collision */
-        @Override // kotlin.jvm.functions.Function0
-        public final ReflectiveFallbackViewCreator invoke() {
+        /* renamed from: invoke */
+        public final ReflectiveFallbackViewCreator m9364invoke() {
             return new ReflectiveFallbackViewCreator();
         }
     });
@@ -55,7 +53,7 @@ public final class ViewPump {
         }
 
         public final ViewPump build() {
-            return new ViewPump(CollectionsKt.f((Iterable) this.interceptors), this.reflection, this.customViewCreation, this.storeLayoutResId, null);
+            return new ViewPump(CollectionsKt.f(this.interceptors), this.reflection, this.customViewCreation, this.storeLayoutResId, null);
         }
 
         public final Builder setCustomViewInflationEnabled(boolean z) {
@@ -70,10 +68,10 @@ public final class ViewPump {
             return builder;
         }
 
-        public final Builder setReflectiveFallbackViewCreator(FallbackViewCreator reflectiveFallbackViewCreator) {
-            Intrinsics.d(reflectiveFallbackViewCreator, "reflectiveFallbackViewCreator");
+        public final Builder setReflectiveFallbackViewCreator(FallbackViewCreator fallbackViewCreator) {
+            Intrinsics.d(fallbackViewCreator, "reflectiveFallbackViewCreator");
             Builder builder = this;
-            builder.reflectiveFallbackViewCreator = reflectiveFallbackViewCreator;
+            builder.reflectiveFallbackViewCreator = fallbackViewCreator;
             return builder;
         }
 
@@ -87,7 +85,7 @@ public final class ViewPump {
     @Metadata
     /* loaded from: source-8829756-dex2jar.jar:io/github/inflationx/viewpump/ViewPump$Companion.class */
     public static final class Companion {
-        static final /* synthetic */ KProperty[] $$delegatedProperties = {Reflection.a(new PropertyReference1Impl(Reflection.b(Companion.class), "reflectiveFallbackViewCreator", "getReflectiveFallbackViewCreator()Lio/github/inflationx/viewpump/FallbackViewCreator;"))};
+        static final /* synthetic */ KProperty[] $$delegatedProperties = {(KProperty) Reflection.a(new PropertyReference1Impl(Reflection.b(Companion.class), "reflectiveFallbackViewCreator", "getReflectiveFallbackViewCreator()Lio/github/inflationx/viewpump/FallbackViewCreator;"))};
 
         private Companion() {
         }
@@ -109,12 +107,12 @@ public final class ViewPump {
         }
 
         @JvmStatic
-        public final View create(Context context, Class<? extends View> clazz) {
+        public final View create(Context context, Class<? extends View> cls) {
             Intrinsics.d(context, "context");
-            Intrinsics.d(clazz, "clazz");
+            Intrinsics.d(cls, "clazz");
             Companion companion = this;
             ViewPump viewPump = companion.get();
-            String name = clazz.getName();
+            String name = cls.getName();
             Intrinsics.b(name, "clazz.name");
             return viewPump.inflate(new InflateRequest(name, context, null, null, companion.getReflectiveFallbackViewCreator(), 12, null)).view();
         }
@@ -142,7 +140,7 @@ public final class ViewPump {
         this.isReflection = z;
         this.isCustomViewCreation = z2;
         this.isStoreLayoutResId = z3;
-        this.interceptorsWithFallback = CollectionsKt.c((Collection) CollectionsKt.a((Collection<? extends FallbackViewCreationInterceptor>) list, new FallbackViewCreationInterceptor()));
+        this.interceptorsWithFallback = CollectionsKt.c(CollectionsKt.a(list, new FallbackViewCreationInterceptor()));
     }
 
     public /* synthetic */ ViewPump(List list, boolean z, boolean z2, boolean z3, DefaultConstructorMarker defaultConstructorMarker) {
@@ -169,9 +167,9 @@ public final class ViewPump {
         Companion.init(viewPump);
     }
 
-    public final InflateResult inflate(InflateRequest originalRequest) {
-        Intrinsics.d(originalRequest, "originalRequest");
-        return new InterceptorChain(this.interceptorsWithFallback, 0, originalRequest).proceed(originalRequest);
+    public final InflateResult inflate(InflateRequest inflateRequest) {
+        Intrinsics.d(inflateRequest, "originalRequest");
+        return new InterceptorChain(this.interceptorsWithFallback, 0, inflateRequest).proceed(inflateRequest);
     }
 
     public final List<Interceptor> interceptors() {

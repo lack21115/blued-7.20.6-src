@@ -20,7 +20,6 @@ public abstract class LiveBaseImprovePresenter extends MvpPresenter {
     /* JADX INFO: Access modifiers changed from: private */
     public void a(String str, BluedAlbum bluedAlbum, final int i) {
         QiniuUploadUtils.a(str, bluedAlbum, new QiniuUploadTools.QiNiuListener() { // from class: com.soft.blued.ui.live.presenter.LiveBaseImprovePresenter.2
-            @Override // com.blued.android.framework.utils.upload.QiniuUploadTools.QiNiuListener
             public void a(String str2) {
                 int i2 = i;
                 if (i2 == 0) {
@@ -31,17 +30,14 @@ public abstract class LiveBaseImprovePresenter extends MvpPresenter {
                 }
             }
 
-            @Override // com.blued.android.framework.utils.upload.QiniuUploadTools.QiNiuListener
             public void a(String str2, double d) {
             }
 
-            @Override // com.blued.android.framework.utils.upload.QiniuUploadTools.QiNiuListener
             public void a(String str2, String str3) {
                 Log.v("pk", "七牛上传成功：" + i);
                 LiveBaseImprovePresenter.this.a(i, str2);
             }
 
-            @Override // com.blued.android.framework.utils.upload.QiniuUploadTools.QiNiuListener
             public boolean a() {
                 return false;
             }
@@ -53,17 +49,15 @@ public abstract class LiveBaseImprovePresenter extends MvpPresenter {
     public void a(Context context, final String str, final int i) {
         LiveHttpUtils.a(context, new BluedUIHttpResponse<BluedEntityA<BluedAlbum>>(g()) { // from class: com.soft.blued.ui.live.presenter.LiveBaseImprovePresenter.1
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<BluedAlbum> bluedEntityA) {
                 if (bluedEntityA.data == null || bluedEntityA.data.size() <= 0) {
                     return;
                 }
-                LiveBaseImprovePresenter.this.a(str, bluedEntityA.data.get(0), i);
+                LiveBaseImprovePresenter.this.a(str, (BluedAlbum) bluedEntityA.data.get(0), i);
                 Log.v("pk", "获取token成功：" + i);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i2, String str2) {
                 int i3 = i;
                 if (i3 == 0) {
@@ -71,25 +65,21 @@ public abstract class LiveBaseImprovePresenter extends MvpPresenter {
                 } else if (i3 == 1) {
                     LiveBaseImprovePresenter.this.b("LIVE_CARD_BACK_UPLOAD", true);
                 }
-                AppMethods.a((CharSequence) str2);
+                AppMethods.a(str2);
                 return true;
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
             }
         }, g());
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void a(IFetchDataListener iFetchDataListener) {
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void b(IFetchDataListener iFetchDataListener) {
     }
 }

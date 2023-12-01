@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemUserProfileGiftBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29337a;
+    private final LinearLayout f15647a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29337a;
+        return this.f15647a;
     }
 }

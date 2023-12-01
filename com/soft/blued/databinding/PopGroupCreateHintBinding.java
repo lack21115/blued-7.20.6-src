@@ -10,11 +10,11 @@ import androidx.viewbinding.ViewBinding;
 public final class PopGroupCreateHintBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final View f29525a;
+    public final View f15835a;
     public final View b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final LinearLayout f29526c;
+    public final LinearLayout f15836c;
     public final LinearLayout d;
     public final LinearLayout e;
     public final TextView f;
@@ -25,9 +25,9 @@ public final class PopGroupCreateHintBinding implements ViewBinding {
 
     private PopGroupCreateHintBinding(ConstraintLayout constraintLayout, View view, View view2, LinearLayout linearLayout, LinearLayout linearLayout2, LinearLayout linearLayout3, TextView textView, TextView textView2, TextView textView3, TextView textView4) {
         this.j = constraintLayout;
-        this.f29525a = view;
+        this.f15835a = view;
         this.b = view2;
-        this.f29526c = linearLayout;
+        this.f15836c = linearLayout;
         this.d = linearLayout2;
         this.e = linearLayout3;
         this.f = textView;

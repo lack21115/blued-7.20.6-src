@@ -21,13 +21,9 @@ import com.blued.android.module.live_china.model.RankingHourExtra;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveHourExpanView.class */
 public class LiveHourExpanView extends LinearLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    boolean f14491a;
+    boolean a;
     private Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private LayoutInflater f14492c;
+    private LayoutInflater c;
     private ShapeLinearLayout d;
     private TextView e;
     private TextView f;
@@ -40,14 +36,14 @@ public class LiveHourExpanView extends LinearLayout {
     public LiveHourExpanView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         this.g = 0;
-        this.f14491a = false;
+        this.a = false;
         this.b = context;
         a();
     }
 
     private void a() {
         LayoutInflater from = LayoutInflater.from(this.b);
-        this.f14492c = from;
+        this.c = from;
         from.inflate(R.layout.pop_live_hour, (ViewGroup) this, true);
         this.d = (ShapeLinearLayout) findViewById(R.id.rl_root);
         this.e = (TextView) findViewById(R.id.tv_top);
@@ -85,7 +81,7 @@ public class LiveHourExpanView extends LinearLayout {
             @Override // android.view.animation.Animation.AnimationListener
             public void onAnimationEnd(Animation animation) {
                 LiveHourExpanView.this.clearAnimation();
-                LiveHourExpanView.this.f14491a = false;
+                LiveHourExpanView.this.a = false;
                 if (z) {
                     return;
                 }
@@ -104,10 +100,10 @@ public class LiveHourExpanView extends LinearLayout {
     }
 
     public void a(ShapeFrameLayout shapeFrameLayout, boolean z, boolean z2) {
-        if (shapeFrameLayout == null || this.f14491a) {
+        if (shapeFrameLayout == null || this.a) {
             return;
         }
-        this.f14491a = true;
+        this.a = true;
         a(shapeFrameLayout, z);
     }
 

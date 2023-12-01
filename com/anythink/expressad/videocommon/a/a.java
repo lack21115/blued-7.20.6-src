@@ -10,11 +10,11 @@ import java.util.List;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f8721a = 1;
+    public static final int f5881a = 1;
     public static final int b = 2;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f8722c = a.class.getName();
+    private static final String f5882c = a.class.getName();
     private static a d = null;
 
     private a() {

@@ -5,7 +5,8 @@ import com.anythink.core.api.AdError;
 import com.anythink.core.api.ErrorCode;
 import com.anythink.core.common.b.g;
 import com.anythink.core.common.b.n;
-import com.google.common.net.HttpHeaders;
+import com.efs.sdk.base.Constants;
+import io.grpc.internal.GrpcUtil;
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
@@ -29,9 +30,7 @@ import org.json.JSONObject;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/g/a.class */
 public abstract class a {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final String f6704a = "http.loader";
+    private static final String a = "http.loader";
     public i m;
     protected boolean n;
     protected String o;
@@ -40,12 +39,10 @@ public abstract class a {
     /* renamed from: com.anythink.core.common.g.a$1  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/g/a$1.class */
     public final class AnonymousClass1 extends com.anythink.core.common.k.b.b {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ int f6707a;
+        final /* synthetic */ int a;
 
         AnonymousClass1(int i) {
-            this.f6707a = i;
+            this.a = i;
         }
 
         /* JADX WARN: Multi-variable type inference failed */
@@ -55,7 +52,7 @@ public abstract class a {
             HttpURLConnection httpURLConnection;
             HttpURLConnection httpURLConnection2;
             int i;
-            String a2;
+            String a;
             byte[] d;
             HttpURLConnection httpURLConnection3 = null;
             try {
@@ -93,34 +90,34 @@ public abstract class a {
                     httpURLConnection = null;
                 }
                 try {
-                    int a3 = a.this.a();
-                    i = a3;
-                    if (a3 != 1) {
-                        i = a3;
-                        if (a3 != 2) {
+                    int a2 = a.this.a();
+                    i = a2;
+                    if (a2 != 1) {
+                        i = a2;
+                        if (a2 != 2) {
                             i = 2;
                         }
                     }
                     if (i == 1) {
                         httpURLConnection.setDoInput(true);
                         httpURLConnection.setDoOutput(true);
-                        httpURLConnection.setRequestMethod("POST");
+                        httpURLConnection.setRequestMethod(GrpcUtil.HTTP_METHOD);
                         httpURLConnection.setUseCaches(false);
                     }
                     if (i == 2) {
                         httpURLConnection.setInstanceFollowRedirects(false);
                     }
-                    Map<String, String> c2 = a.this.c();
-                    if (c2 != null && c2.size() > 0) {
-                        for (String str2 : c2.keySet()) {
-                            httpURLConnection.addRequestProperty(str2, c2.get(str2));
+                    Map<String, String> c = a.this.c();
+                    if (c != null && c.size() > 0) {
+                        for (String str2 : c.keySet()) {
+                            httpURLConnection.addRequestProperty(str2, c.get(str2));
                         }
                     }
                 } catch (ConnectException e9) {
                     e = e9;
                     a.this.a(ErrorCode.getErrorCode(ErrorCode.exception, ErrorCode.exception, e.getMessage()));
                     HttpURLConnection httpURLConnection4 = httpURLConnection;
-                    a.this.a(this.f6707a, -1001, "Connect error.", ErrorCode.getErrorCode(ErrorCode.exception, ErrorCode.exception, e.getMessage()));
+                    a.this.a(this.a, g.b, "Connect error.", ErrorCode.getErrorCode(ErrorCode.exception, ErrorCode.exception, e.getMessage()));
                     HttpURLConnection httpURLConnection5 = httpURLConnection;
                     new StringBuilder("http connect error! ").append(e.toString());
                     if (httpURLConnection != null) {
@@ -130,7 +127,7 @@ public abstract class a {
                     return;
                 } catch (SocketTimeoutException e10) {
                     e = e10;
-                    a.this.a(this.f6707a, -1002, "Connect timeout.", ErrorCode.getErrorCode(ErrorCode.exception, ErrorCode.exception, e.getMessage()));
+                    a.this.a(this.a, g.c, "Connect timeout.", ErrorCode.getErrorCode(ErrorCode.exception, ErrorCode.exception, e.getMessage()));
                     if (httpURLConnection != null) {
                         httpURLConnection.disconnect();
                         return;
@@ -140,7 +137,7 @@ public abstract class a {
                     httpURLConnection2 = httpURLConnection;
                     e = e11;
                     httpURLConnection3 = httpURLConnection2;
-                    a.this.a(this.f6707a, e);
+                    a.this.a(this.a, e);
                     if (httpURLConnection2 != null) {
                         httpURLConnection2.disconnect();
                         return;
@@ -154,7 +151,7 @@ public abstract class a {
                         message = e.getMessage();
                     }
                     HttpURLConnection httpURLConnection8 = httpURLConnection;
-                    a.this.a(this.f6707a, g.g, message, ErrorCode.getErrorCode(ErrorCode.exception, ErrorCode.exception, e.getMessage()));
+                    a.this.a(this.a, g.g, message, ErrorCode.getErrorCode(ErrorCode.exception, ErrorCode.exception, e.getMessage()));
                     if (httpURLConnection != null) {
                         httpURLConnection.disconnect();
                         return;
@@ -171,7 +168,7 @@ public abstract class a {
                         message2 = e.getMessage();
                     }
                     HttpURLConnection httpURLConnection12 = httpURLConnection;
-                    a.this.a(this.f6707a, -1004, message2, ErrorCode.getErrorCode(ErrorCode.exception, ErrorCode.exception, e.getMessage()));
+                    a.this.a(this.a, g.e, message2, ErrorCode.getErrorCode(ErrorCode.exception, ErrorCode.exception, e.getMessage()));
                     if (httpURLConnection != null) {
                         httpURLConnection.disconnect();
                         return;
@@ -188,7 +185,7 @@ public abstract class a {
                         message3 = e.getMessage();
                     }
                     HttpURLConnection httpURLConnection16 = httpURLConnection;
-                    a.this.a(this.f6707a, -1005, message3, ErrorCode.getErrorCode(ErrorCode.exception, ErrorCode.exception, e.getMessage()));
+                    a.this.a(this.a, g.f, message3, ErrorCode.getErrorCode(ErrorCode.exception, ErrorCode.exception, e.getMessage()));
                     if (httpURLConnection != null) {
                         httpURLConnection.disconnect();
                         return;
@@ -205,7 +202,7 @@ public abstract class a {
                         message4 = e.getMessage();
                     }
                     HttpURLConnection httpURLConnection20 = httpURLConnection;
-                    a.this.a(this.f6707a, -9999, message4, ErrorCode.getErrorCode(ErrorCode.exception, ErrorCode.exception, e.getMessage()));
+                    a.this.a(this.a, g.h, message4, ErrorCode.getErrorCode(ErrorCode.exception, ErrorCode.exception, e.getMessage()));
                     if (httpURLConnection != null) {
                         httpURLConnection.disconnect();
                         return;
@@ -215,7 +212,7 @@ public abstract class a {
                     e = e16;
                     a.this.a(ErrorCode.getErrorCode(ErrorCode.exception, ErrorCode.exception, e.getMessage()));
                     HttpURLConnection httpURLConnection21 = httpURLConnection;
-                    a.this.a(this.f6707a, -1000, "UnknownHostException", ErrorCode.getErrorCode(ErrorCode.exception, ErrorCode.exception, e.getMessage()));
+                    a.this.a(this.a, -1000, "UnknownHostException", ErrorCode.getErrorCode(ErrorCode.exception, ErrorCode.exception, e.getMessage()));
                     HttpURLConnection httpURLConnection22 = httpURLConnection;
                     new StringBuilder("UnknownHostException ").append(e.toString());
                     if (httpURLConnection != null) {
@@ -225,7 +222,7 @@ public abstract class a {
                     return;
                 }
                 if (a.this.n) {
-                    a.this.c(this.f6707a);
+                    a.this.c(this.a);
                     if (httpURLConnection != null) {
                         httpURLConnection.disconnect();
                         return;
@@ -247,7 +244,7 @@ public abstract class a {
                 int responseCode = httpURLConnection.getResponseCode();
                 if (!a.this.a(responseCode) && responseCode != 200) {
                     if (responseCode != 302 && responseCode != 301 && responseCode != 307) {
-                        a.this.a(this.f6707a, responseCode, "Http respond status code is ".concat(String.valueOf(responseCode)), ErrorCode.getErrorCode(ErrorCode.httpStatuException, String.valueOf(responseCode), httpURLConnection.getResponseMessage()));
+                        a.this.a(this.a, responseCode, "Http respond status code is ".concat(String.valueOf(responseCode)), ErrorCode.getErrorCode(ErrorCode.httpStatuException, String.valueOf(responseCode), httpURLConnection.getResponseMessage()));
                         if (httpURLConnection != null) {
                             httpURLConnection.disconnect();
                             return;
@@ -255,9 +252,9 @@ public abstract class a {
                         return;
                     }
                     if (a.this.n) {
-                        a.this.c(this.f6707a);
+                        a.this.c(this.a);
                     } else {
-                        String headerField = httpURLConnection.getHeaderField(HttpHeaders.LOCATION);
+                        String headerField = httpURLConnection.getHeaderField("Location");
                         if (headerField != null && headerField.toLowerCase().startsWith("http")) {
                             b(headerField);
                         }
@@ -266,13 +263,13 @@ public abstract class a {
                         httpURLConnection.disconnect();
                     }
                 } else if (a.this.n) {
-                    a.this.c(this.f6707a);
+                    a.this.c(this.a);
                     if (httpURLConnection != null) {
                         httpURLConnection.disconnect();
                     }
                 } else {
-                    InputStream a4 = a.a(httpURLConnection);
-                    InputStreamReader inputStreamReader = new InputStreamReader(a4);
+                    InputStream a3 = a.a(httpURLConnection);
+                    InputStreamReader inputStreamReader = new InputStreamReader(a3);
                     BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
                     StringBuilder sb = new StringBuilder();
                     while (true) {
@@ -284,13 +281,13 @@ public abstract class a {
                     }
                     bufferedReader.close();
                     inputStreamReader.close();
-                    if (a4 != null) {
-                        a4.close();
+                    if (a3 != null) {
+                        a3.close();
                     }
                     if (a.this.n()) {
-                        a2 = sb.toString().trim();
-                        JSONObject jSONObject = new JSONObject(a2);
-                        int optInt = jSONObject.optInt("code");
+                        a = sb.toString().trim();
+                        JSONObject jSONObject = new JSONObject(a);
+                        int optInt = jSONObject.optInt(g.c.b);
                         if (optInt == 0) {
                             JSONObject optJSONObject = jSONObject.optJSONObject(g.c.d);
                             JSONObject jSONObject2 = optJSONObject;
@@ -300,18 +297,18 @@ public abstract class a {
                             String jSONObject3 = jSONObject2.toString();
                             a aVar = a.this;
                             httpURLConnection.getHeaderFields();
-                            a2 = aVar.a(jSONObject3);
-                            a.this.a(this.f6707a, a2);
+                            a = aVar.a(jSONObject3);
+                            a.this.a(this.a, a);
                         } else {
-                            a.this.a(this.f6707a, -10000, a2, ErrorCode.getErrorCode(ErrorCode.statuError, String.valueOf(optInt), a2));
+                            a.this.a(this.a, -10000, a, ErrorCode.getErrorCode(ErrorCode.statuError, String.valueOf(optInt), a));
                         }
                     } else {
                         a aVar2 = a.this;
                         httpURLConnection.getHeaderFields();
-                        a2 = aVar2.a(sb.toString());
-                        a.this.a(this.f6707a, a2);
+                        a = aVar2.a(sb.toString());
+                        a.this.a(this.a, a);
                     }
-                    httpURLConnection3 = a2;
+                    httpURLConnection3 = a;
                     if (httpURLConnection != null) {
                         httpURLConnection.disconnect();
                     }
@@ -344,7 +341,7 @@ public abstract class a {
                 com.anythink.core.common.g.a r0 = com.anythink.core.common.g.a.this     // Catch: java.lang.Exception -> L26 java.lang.StackOverflowError -> L61 java.lang.OutOfMemoryError -> L65
                 com.anythink.core.common.g.i r0 = r0.m     // Catch: java.lang.Exception -> L26 java.lang.StackOverflowError -> L61 java.lang.OutOfMemoryError -> L65
                 r1 = r7
-                int r1 = r1.f6707a     // Catch: java.lang.Exception -> L26 java.lang.StackOverflowError -> L61 java.lang.OutOfMemoryError -> L65
+                int r1 = r1.a     // Catch: java.lang.Exception -> L26 java.lang.StackOverflowError -> L61 java.lang.OutOfMemoryError -> L65
                 r0.onLoadStart(r1)     // Catch: java.lang.Exception -> L26 java.lang.StackOverflowError -> L61 java.lang.OutOfMemoryError -> L65
             L1a:
                 r0 = r7
@@ -373,7 +370,7 @@ public abstract class a {
                 com.anythink.core.common.g.a r0 = com.anythink.core.common.g.a.this
                 com.anythink.core.common.g.i r0 = r0.m
                 r1 = r7
-                int r1 = r1.f6707a
+                int r1 = r1.a
                 r2 = r8
                 java.lang.String r3 = "9999"
                 java.lang.String r4 = "9999"
@@ -408,7 +405,7 @@ public abstract class a {
                 com.anythink.core.common.g.a r0 = com.anythink.core.common.g.a.this
                 com.anythink.core.common.g.i r0 = r0.m
                 r1 = r7
-                int r1 = r1.f6707a
+                int r1 = r1.a
                 r2 = r9
                 java.lang.String r3 = "9999"
                 java.lang.String r4 = "9999"
@@ -433,7 +430,7 @@ public abstract class a {
         } catch (Exception e) {
         }
         BufferedInputStream bufferedInputStream2 = bufferedInputStream;
-        if ("gzip".equalsIgnoreCase(httpURLConnection.getHeaderField("Content-Encoding"))) {
+        if (Constants.CP_GZIP.equalsIgnoreCase(httpURLConnection.getHeaderField("Content-Encoding"))) {
             try {
                 byte[] bArr = new byte[2];
                 bufferedInputStream2 = new BufferedInputStream(bufferedInputStream);
@@ -520,7 +517,7 @@ public abstract class a {
             iVar.onLoadError(i, "Connect timeout.", errorCode);
         }
         b(errorCode);
-        b(-1001);
+        b(g.b);
     }
 
     protected abstract void a(AdError adError);
@@ -559,7 +556,7 @@ public abstract class a {
         String a2 = com.anythink.core.common.k.c.a(e().toString());
         String a3 = com.anythink.core.common.k.c.a(f().toString());
         hashMap.put(c.O, "1.0");
-        hashMap.put("p", a2);
+        hashMap.put(c.W, a2);
         hashMap.put(c.X, a3);
         ArrayList<String> arrayList = new ArrayList(hashMap.size());
         arrayList.addAll(hashMap.keySet());
@@ -567,14 +564,14 @@ public abstract class a {
         StringBuilder sb = new StringBuilder();
         for (String str : arrayList) {
             if (sb.length() > 0) {
-                sb.append("&");
+                sb.append(com.alipay.sdk.sys.a.b);
             }
             sb.append(str);
             sb.append("=");
             sb.append(hashMap.get(str));
         }
         new StringBuilder(" sorted value list:").append(sb.toString());
-        hashMap.put("sign", com.anythink.core.common.k.f.c(j() + sb.toString()));
+        hashMap.put(c.Y, com.anythink.core.common.k.f.c(j() + sb.toString()));
         if (l() != null) {
             hashMap.putAll(l());
         }

@@ -11,13 +11,9 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 @DebugMetadata(b = "Collection.kt", c = {32}, d = "toCollection", e = "kotlinx.coroutines.flow.FlowKt__CollectionKt")
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt__CollectionKt$toCollection$1.class */
 public final class FlowKt__CollectionKt$toCollection$1<T, C extends Collection<? super T>> extends ContinuationImpl {
-
-    /* renamed from: a  reason: collision with root package name */
-    Object f43105a;
+    Object a;
     /* synthetic */ Object b;
-
-    /* renamed from: c  reason: collision with root package name */
-    int f43106c;
+    int c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public FlowKt__CollectionKt$toCollection$1(Continuation<? super FlowKt__CollectionKt$toCollection$1> continuation) {
@@ -27,7 +23,7 @@ public final class FlowKt__CollectionKt$toCollection$1<T, C extends Collection<?
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         this.b = obj;
-        this.f43106c |= Integer.MIN_VALUE;
+        this.c |= Integer.MIN_VALUE;
         return FlowKt.a((Flow) null, (Collection) null, this);
     }
 }

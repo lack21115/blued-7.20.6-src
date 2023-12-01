@@ -66,7 +66,7 @@ public class Convert {
 
     public static byte[] copyString(byte[] bArr, int i, int i2) {
         byte[] bArr2 = new byte[i2];
-        System.arraycopy((Object) bArr, i, (Object) bArr2, 0, i2);
+        System.arraycopy(bArr, i, bArr2, 0, i2);
         return bArr2;
     }
 
@@ -148,7 +148,7 @@ public class Convert {
 
     public static byte[] getSubBytes(byte[] bArr, int i, int i2) {
         byte[] bArr2 = new byte[i2];
-        System.arraycopy((Object) bArr, i, (Object) bArr2, 0, i2);
+        System.arraycopy(bArr, i, bArr2, 0, i2);
         return bArr2;
     }
 
@@ -158,15 +158,15 @@ public class Convert {
 
     public static void moveArray(byte[] bArr, int i, byte[] bArr2, int i2, int i3) {
         byte[] bArr3 = new byte[i3];
-        System.arraycopy((Object) bArr, i, (Object) bArr3, 0, i3);
-        System.arraycopy((Object) bArr3, 0, (Object) bArr2, i2, i3);
+        System.arraycopy(bArr, i, bArr3, 0, i3);
+        System.arraycopy(bArr3, 0, bArr2, i2, i3);
     }
 
     public static void writeInt(byte[] bArr, int i, int i2) {
-        System.arraycopy((Object) convertInt(i2), 0, (Object) bArr, i, 4);
+        System.arraycopy(convertInt(i2), 0, bArr, i, 4);
     }
 
     public static void writeShort(byte[] bArr, int i, short s) {
-        System.arraycopy((Object) convertShort(s), 0, (Object) bArr, i, 2);
+        System.arraycopy(convertShort(s), 0, bArr, i, 2);
     }
 }

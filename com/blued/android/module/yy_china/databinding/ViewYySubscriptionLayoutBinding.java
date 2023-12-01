@@ -10,14 +10,12 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ViewYySubscriptionLayoutBinding.class */
 public final class ViewYySubscriptionLayoutBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ShapeTextView f16962a;
+    public final ShapeTextView a;
     private final ShapeLinearLayout b;
 
     private ViewYySubscriptionLayoutBinding(ShapeLinearLayout shapeLinearLayout, ShapeTextView shapeTextView) {
         this.b = shapeLinearLayout;
-        this.f16962a = shapeTextView;
+        this.a = shapeTextView;
     }
 
     public static ViewYySubscriptionLayoutBinding a(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
@@ -36,7 +34,6 @@ public final class ViewYySubscriptionLayoutBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat("tvSubscription"));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ShapeLinearLayout getRoot() {
         return this.b;

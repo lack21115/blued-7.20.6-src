@@ -15,11 +15,11 @@ import com.opos.mobad.n.a;
 public class ag extends RelativeLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f26781a;
+    private int f13093a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private RelativeLayout f26782c;
+    private RelativeLayout f13094c;
     private View d;
     private int e;
     private View f;
@@ -29,7 +29,7 @@ public class ag extends RelativeLayout {
     private String j;
     private boolean k;
     private com.opos.mobad.c.c.b l;
-    private a.InterfaceC0708a m;
+    private a.InterfaceC0538a m;
     private a n;
 
     /* loaded from: source-8303388-dex2jar.jar:com/opos/mobad/n/g/ag$a.class */
@@ -142,7 +142,7 @@ public class ag extends RelativeLayout {
             public void j() {
             }
         };
-        this.f26781a = i == 0 ? 256 : i;
+        this.f13093a = i == 0 ? 256 : i;
         this.b = i2 == 0 ? 144 : i2;
         this.i = aVar;
         aVar.a(this.l);
@@ -154,26 +154,26 @@ public class ag extends RelativeLayout {
     }
 
     private void a(Context context) {
-        setLayoutParams(new ViewGroup.LayoutParams(this.f26781a, this.b));
+        setLayoutParams(new ViewGroup.LayoutParams(this.f13093a, this.b));
         this.e = View.generateViewId();
         RelativeLayout relativeLayout = new RelativeLayout(context);
-        this.f26782c = relativeLayout;
+        this.f13094c = relativeLayout;
         relativeLayout.setId(this.e);
-        addView(this.f26782c, new RelativeLayout.LayoutParams(this.f26781a, this.b));
-        this.f26782c.setBackgroundColor(-16777216);
+        addView(this.f13094c, new RelativeLayout.LayoutParams(this.f13093a, this.b));
+        this.f13094c.setBackgroundColor(-16777216);
         this.d = this.i.b();
         this.i.d(-16777216);
         this.d.setBackgroundColor(-16777216);
-        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(this.f26781a, this.b);
+        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(this.f13093a, this.b);
         layoutParams.addRule(13);
-        this.f26782c.addView(this.d, layoutParams);
+        this.f13094c.addView(this.d, layoutParams);
         View view = new View(context);
         RelativeLayout.LayoutParams layoutParams2 = new RelativeLayout.LayoutParams(-2, -2);
         layoutParams2.addRule(7, this.e);
         layoutParams2.addRule(5, this.e);
         layoutParams2.addRule(6, this.e);
         layoutParams2.addRule(8, this.e);
-        this.f26782c.addView(view, layoutParams2);
+        this.f13094c.addView(view, layoutParams2);
         com.opos.mobad.n.c.g gVar = new com.opos.mobad.n.c.g() { // from class: com.opos.mobad.n.g.ag.1
             @Override // com.opos.mobad.n.c.g
             public void a(View view2, int[] iArr) {
@@ -188,14 +188,14 @@ public class ag extends RelativeLayout {
         RelativeLayout.LayoutParams layoutParams3 = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(context, 20.0f), com.opos.cmn.an.h.f.a.a(context, 29.0f));
         layoutParams3.addRule(13);
         this.f.setVisibility(0);
-        this.f26782c.addView(this.f, layoutParams3);
+        this.f13094c.addView(this.f, layoutParams3);
         View view2 = new View(context);
         this.h = view2;
         view2.setBackground(context.getResources().getDrawable(R.drawable.opos_mobad_continue_bn));
         RelativeLayout.LayoutParams layoutParams4 = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(context, 42.0f), com.opos.cmn.an.h.f.a.a(context, 42.0f));
         layoutParams4.addRule(13);
         this.h.setVisibility(4);
-        this.f26782c.addView(this.h, layoutParams4);
+        this.f13094c.addView(this.h, layoutParams4);
         ProgressBar progressBar = new ProgressBar(context);
         this.g = progressBar;
         progressBar.setId(View.generateViewId());
@@ -203,10 +203,10 @@ public class ag extends RelativeLayout {
         this.g.setIndeterminate(false);
         this.g.setProgressDrawable(new ClipDrawable(new ColorDrawable(getResources().getColor(R.color.opos_mobad_video_progress_color)), 3, 1));
         this.g.setBackgroundColor(Color.parseColor(this.j));
-        RelativeLayout.LayoutParams layoutParams5 = new RelativeLayout.LayoutParams(this.f26781a, com.opos.cmn.an.h.f.a.a(context, 2.0f));
+        RelativeLayout.LayoutParams layoutParams5 = new RelativeLayout.LayoutParams(this.f13093a, com.opos.cmn.an.h.f.a.a(context, 2.0f));
         layoutParams5.addRule(12);
         this.g.setVisibility(0);
-        this.f26782c.addView(this.g, layoutParams5);
+        this.f13094c.addView(this.g, layoutParams5);
     }
 
     private void j() {
@@ -255,9 +255,9 @@ public class ag extends RelativeLayout {
         aVar.a(i == 1 ? 1.0f : 0.0f);
     }
 
-    public void a(a.InterfaceC0708a interfaceC0708a) {
-        com.opos.cmn.an.f.a.b("BlockVideoView", "setListener " + interfaceC0708a);
-        this.m = interfaceC0708a;
+    public void a(a.InterfaceC0538a interfaceC0538a) {
+        com.opos.cmn.an.f.a.b("BlockVideoView", "setListener " + interfaceC0538a);
+        this.m = interfaceC0538a;
     }
 
     public void a(com.opos.mobad.n.d.e eVar) {
@@ -266,7 +266,7 @@ public class ag extends RelativeLayout {
             com.opos.cmn.an.f.a.b("BlockVideoView", "mPlayer is null");
             return;
         }
-        aVar.a(eVar.f26630a.f26633a, false);
+        aVar.a(eVar.f12942a.f12945a, false);
         a(eVar.B);
     }
 

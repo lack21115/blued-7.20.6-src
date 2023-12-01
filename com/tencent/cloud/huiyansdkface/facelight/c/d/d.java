@@ -15,7 +15,7 @@ import org.json.JSONObject;
 public class d {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final c f35580a;
+    public static final c f21889a;
     private static boolean b;
 
     static {
@@ -25,7 +25,7 @@ public class d {
         } catch (ClassNotFoundException e) {
             b = false;
         }
-        f35580a = new c() { // from class: com.tencent.cloud.huiyansdkface.facelight.c.d.d.1
+        f21889a = new c() { // from class: com.tencent.cloud.huiyansdkface.facelight.c.d.d.1
             @Override // com.tencent.cloud.huiyansdkface.facelight.c.d.c
             public View a(Context context) {
                 return null;
@@ -46,7 +46,7 @@ public class d {
             }
 
             @Override // com.tencent.cloud.huiyansdkface.facelight.c.d.c
-            public void a(a.InterfaceC0905a interfaceC0905a) {
+            public void a(a.InterfaceC0735a interfaceC0735a) {
             }
 
             @Override // com.tencent.cloud.huiyansdkface.facelight.c.d.c
@@ -65,7 +65,7 @@ public class d {
     }
 
     public static c a() {
-        return b ? new a() : f35580a;
+        return b ? new a() : f21889a;
     }
 
     public static void a(Context context) {

@@ -6,14 +6,14 @@ import java.net.InetSocketAddress;
 public final class cr {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f41317a;
+    private int f27626a;
 
     /* renamed from: a  reason: collision with other field name */
-    private String f263a;
+    private String f216a;
 
     public cr(String str, int i) {
-        this.f263a = str;
-        this.f41317a = i;
+        this.f216a = str;
+        this.f27626a = i;
     }
 
     public static cr a(String str, int i) {
@@ -35,24 +35,24 @@ public final class cr {
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public static InetSocketAddress m11594a(String str, int i) {
+    public static InetSocketAddress m8544a(String str, int i) {
         cr a2 = a(str, i);
-        return new InetSocketAddress(a2.m11595a(), a2.a());
+        return new InetSocketAddress(a2.m8545a(), a2.a());
     }
 
     public final int a() {
-        return this.f41317a;
+        return this.f27626a;
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public final String m11595a() {
-        return this.f263a;
+    public final String m8545a() {
+        return this.f216a;
     }
 
     public final String toString() {
-        if (this.f41317a > 0) {
-            return this.f263a + ":" + this.f41317a;
+        if (this.f27626a > 0) {
+            return this.f216a + ":" + this.f27626a;
         }
-        return this.f263a;
+        return this.f216a;
     }
 }

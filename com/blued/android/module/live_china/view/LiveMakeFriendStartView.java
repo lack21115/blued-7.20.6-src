@@ -12,7 +12,6 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
-import androidx.exifinterface.media.ExifInterface;
 import com.blued.android.core.AppInfo;
 import com.blued.android.framework.http.BluedUIHttpResponse;
 import com.blued.android.framework.http.parser.BluedEntity;
@@ -27,13 +26,9 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveMakeFriendStartView.class */
 public class LiveMakeFriendStartView implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    public View f14538a;
+    public View a;
     public View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public View f14539c;
+    public View c;
     public Context d;
     public LayoutInflater e;
     private MyPopupWindow f;
@@ -131,12 +126,12 @@ public class LiveMakeFriendStartView implements View.OnClickListener {
     private void f() {
         this.e = LayoutInflater.from(this.d);
         a();
-        this.b = this.f14538a.findViewById(R.id.live_make_friend_start_layer);
-        this.f14539c = (FrameLayout) this.f14538a.findViewById(R.id.content_layout);
-        this.g = (LinearLayout) this.f14538a.findViewById(R.id.ll_loading);
-        this.h = (TextView) this.f14538a.findViewById(R.id.live_make_friend_start_text);
-        this.i = (TextView) this.f14538a.findViewById(R.id.live_make_friend_start_cancel);
-        this.j = (TextView) this.f14538a.findViewById(R.id.live_make_friend_start_now);
+        this.b = this.a.findViewById(R.id.live_make_friend_start_layer);
+        this.c = (FrameLayout) this.a.findViewById(R.id.content_layout);
+        this.g = (LinearLayout) this.a.findViewById(R.id.ll_loading);
+        this.h = (TextView) this.a.findViewById(R.id.live_make_friend_start_text);
+        this.i = (TextView) this.a.findViewById(R.id.live_make_friend_start_cancel);
+        this.j = (TextView) this.a.findViewById(R.id.live_make_friend_start_now);
         this.i.setOnClickListener(this);
         this.j.setOnClickListener(this);
         this.b.setBackgroundColor(this.d.getResources().getColor(R.color.transparent));
@@ -146,16 +141,16 @@ public class LiveMakeFriendStartView implements View.OnClickListener {
                 Tracker.onClick(view);
             }
         });
-        this.f14539c.setVisibility(8);
-        this.f14539c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.LiveMakeFriendStartView.2
+        this.c.setVisibility(8);
+        this.c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.LiveMakeFriendStartView.2
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
             }
         });
-        MyPopupWindow myPopupWindow = new MyPopupWindow(this, this.f14538a, -1, -1);
+        MyPopupWindow myPopupWindow = new MyPopupWindow(this, this.a, -1, -1);
         this.f = myPopupWindow;
-        myPopupWindow.setBackgroundDrawable(this.d.getResources().getDrawable(17170445));
+        myPopupWindow.setBackgroundDrawable(this.d.getResources().getDrawable(com.android.internal.R.color.transparent));
         this.f.setTouchable(true);
         this.f.setOutsideTouchable(true);
         this.f.setFocusable(true);
@@ -163,7 +158,7 @@ public class LiveMakeFriendStartView implements View.OnClickListener {
     }
 
     private void g() {
-        this.f14539c.startAnimation(AnimationUtils.loadAnimation(this.d, R.anim.push_bottom_in));
+        this.c.startAnimation(AnimationUtils.loadAnimation(this.d, R.anim.push_bottom_in));
         AlphaAnimation alphaAnimation = new AlphaAnimation(0.0f, 0.5f);
         alphaAnimation.setDuration(300L);
         alphaAnimation.setFillAfter(true);
@@ -188,7 +183,7 @@ public class LiveMakeFriendStartView implements View.OnClickListener {
         alphaAnimation.setDuration(300L);
         alphaAnimation.setFillAfter(true);
         this.b.startAnimation(alphaAnimation);
-        this.f14539c.startAnimation(AnimationUtils.loadAnimation(this.d, R.anim.push_bottom_out));
+        this.c.startAnimation(AnimationUtils.loadAnimation(this.d, R.anim.push_bottom_out));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -223,7 +218,7 @@ public class LiveMakeFriendStartView implements View.OnClickListener {
     }
 
     public void a() {
-        this.f14538a = this.e.inflate(R.layout.live_make_friend_start, (ViewGroup) null);
+        this.a = this.e.inflate(R.layout.live_make_friend_start, (ViewGroup) null);
     }
 
     public void a(final ILiveConnectionAnimListener iLiveConnectionAnimListener) {
@@ -238,7 +233,7 @@ public class LiveMakeFriendStartView implements View.OnClickListener {
             }
         }, 320L);
         h();
-        this.f14539c.setVisibility(8);
+        this.c.setVisibility(8);
     }
 
     public void b() {
@@ -248,6 +243,7 @@ public class LiveMakeFriendStartView implements View.OnClickListener {
         }
     }
 
+    /* JADX WARN: Type inference failed for: r1v0, types: [com.blued.android.module.live_china.view.LiveMakeFriendStartView$3] */
     public void c() {
         b();
         this.k = new CountDownTimer(6000L, 500L) { // from class: com.blued.android.module.live_china.view.LiveMakeFriendStartView.3
@@ -259,7 +255,7 @@ public class LiveMakeFriendStartView implements View.OnClickListener {
             @Override // android.os.CountDownTimer
             public void onTick(long j) {
                 TextView textView = LiveMakeFriendStartView.this.h;
-                textView.setText(((j / 1000) + 1) + ExifInterface.LATITUDE_SOUTH);
+                textView.setText(((j / 1000) + 1) + "S");
             }
         }.start();
     }
@@ -267,12 +263,12 @@ public class LiveMakeFriendStartView implements View.OnClickListener {
     public void d() {
         c();
         this.b.clearAnimation();
-        this.f14539c.clearAnimation();
+        this.c.clearAnimation();
         if (this.f.isShowing()) {
             this.f.a();
         }
-        this.f.showAtLocation(this.f14539c, 81, 0, 0);
-        this.f14539c.setVisibility(0);
+        this.f.showAtLocation(this.c, 81, 0, 0);
+        this.c.setVisibility(0);
         g();
     }
 

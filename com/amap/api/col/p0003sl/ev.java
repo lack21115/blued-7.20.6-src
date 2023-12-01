@@ -23,9 +23,7 @@ import java.lang.reflect.Field;
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/ev.class */
 public class ev {
     private static AssetManager b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private static Resources f4948c;
+    private static Resources c;
     private static Resources d;
     private static boolean e = true;
     private static Context f;
@@ -42,9 +40,7 @@ public class ev {
     private static Field q = null;
     private static Field r = null;
     private static Activity s = null;
-
-    /* renamed from: a  reason: collision with root package name */
-    public static int f4947a = -1;
+    public static int a = -1;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.amap.api.col.3sl.ev$a */
@@ -85,7 +81,7 @@ public class ev {
     }
 
     public static Resources a() {
-        Resources resources = f4948c;
+        Resources resources = c;
         Resources resources2 = resources;
         if (resources == null) {
             resources2 = f.getResources();
@@ -104,7 +100,7 @@ public class ev {
         XmlResourceParser xml = a().getXml(i2);
         if (e) {
             try {
-                view = LayoutInflater.from(new eu(context, f4947a == -1 ? 0 : f4947a, ev.class.getClassLoader())).inflate(xml, (ViewGroup) null);
+                view = LayoutInflater.from(new eu(context, a == -1 ? 0 : a, ev.class.getClassLoader())).inflate(xml, (ViewGroup) null);
             } catch (Throwable th) {
                 try {
                     th.printStackTrace();
@@ -145,7 +141,7 @@ public class ev {
                 if (c(context)) {
                     AssetManager a2 = a(n);
                     b = a2;
-                    f4948c = a(context, a2);
+                    c = a(context, a2);
                     return true;
                 }
                 return false;
@@ -169,7 +165,7 @@ public class ev {
         }
         try {
             try {
-                if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
+                if (Environment.getExternalStorageState().equals("mounted")) {
                     File externalStorageDirectory = Environment.getExternalStorageDirectory();
                     file = externalStorageDirectory;
                     if (externalStorageDirectory.canWrite()) {

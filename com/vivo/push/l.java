@@ -6,21 +6,21 @@ import android.content.Context;
 public abstract class l implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public Context f41105a;
+    public Context f27414a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private o f41106c;
+    private o f27415c;
 
     public l(o oVar) {
         this.b = -1;
-        this.f41106c = oVar;
+        this.f27415c = oVar;
         int b = oVar.b();
         this.b = b;
         if (b < 0) {
             throw new IllegalArgumentException("PushTask need a > 0 task id.");
         }
-        this.f41105a = e.a().h();
+        this.f27414a = e.a().h();
     }
 
     public final int a() {
@@ -31,20 +31,20 @@ public abstract class l implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        Context context = this.f41105a;
-        if (context != null && !(this.f41106c instanceof com.vivo.push.b.n)) {
-            com.vivo.push.util.p.a(context, "[执行指令]" + this.f41106c);
+        Context context = this.f27414a;
+        if (context != null && !(this.f27415c instanceof com.vivo.push.b.n)) {
+            com.vivo.push.util.p.a(context, "[执行指令]" + this.f27415c);
         }
-        a(this.f41106c);
+        a(this.f27415c);
     }
 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append(getClass().getSimpleName());
         sb.append("{");
-        o oVar = this.f41106c;
+        o oVar = this.f27415c;
         sb.append(oVar == null ? "[null]" : oVar.toString());
-        sb.append(com.alipay.sdk.util.i.d);
+        sb.append("}");
         return sb.toString();
     }
 }

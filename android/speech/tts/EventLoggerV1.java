@@ -2,8 +2,9 @@ package android.speech.tts;
 
 import android.text.TextUtils;
 
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-9557208-dex2jar.jar:android/speech/tts/EventLoggerV1.class */
-class EventLoggerV1 extends AbstractEventLogger {
+public class EventLoggerV1 extends AbstractEventLogger {
     private final SynthesisRequest mRequest;
 
     /* JADX INFO: Access modifiers changed from: package-private */

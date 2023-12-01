@@ -6,11 +6,11 @@ import java.util.HashMap;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f38529a;
+    public String f24838a;
     public String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f38530c;
+    public String f24839c;
     public String d;
     private Object e;
 

@@ -28,13 +28,9 @@ import java.util.Set;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYMemberCPView.class */
 public class YYMemberCPView extends ConstraintLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private YYBaseUserHeadView f18309a;
+    private YYBaseUserHeadView a;
     private ConstraintLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private TextView f18310c;
+    private TextView c;
     private TextView d;
     private TextView e;
     private TextView f;
@@ -68,11 +64,12 @@ public class YYMemberCPView extends ConstraintLayout {
         b();
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private void b() {
         LayoutInflater.from(getContext()).inflate(R.layout.view_yy_member_cp, (ViewGroup) this, true);
-        this.f18309a = (YYBaseUserHeadView) findViewById(R.id.base_us_head);
-        this.b = (ConstraintLayout) findViewById(R.id.fl_cp_heart);
-        this.f18310c = (TextView) findViewById(R.id.tv_like_index);
+        this.a = (YYBaseUserHeadView) findViewById(R.id.base_us_head);
+        this.b = findViewById(R.id.fl_cp_heart);
+        this.c = (TextView) findViewById(R.id.tv_like_index);
         this.d = (TextView) findViewById(R.id.tv_audience_index);
         this.e = (TextView) findViewById(R.id.tv_audience_name);
         this.f = (TextView) findViewById(R.id.tv_selected_number);
@@ -116,7 +113,7 @@ public class YYMemberCPView extends ConstraintLayout {
     }
 
     public void a(IRequestHost iRequestHost, String str, String str2, YYImModel yYImModel) {
-        YYBaseUserHeadView yYBaseUserHeadView = this.f18309a;
+        YYBaseUserHeadView yYBaseUserHeadView = this.a;
         if (yYBaseUserHeadView != null) {
             yYBaseUserHeadView.a(iRequestHost, str, str2, yYImModel);
         }
@@ -135,19 +132,19 @@ public class YYMemberCPView extends ConstraintLayout {
             this.b.setVisibility(8);
         } else {
             this.b.setVisibility(0);
-            int a2 = StringUtils.a(yYSeatMemberModel.likeNum, 0);
-            TextView textView = this.f18310c;
-            textView.setText(a2 + "");
+            int a = StringUtils.a(yYSeatMemberModel.likeNum, 0);
+            TextView textView = this.c;
+            textView.setText(a + "");
         }
     }
 
     public void a(final YYSeatMemberModel yYSeatMemberModel, final BaseFragment baseFragment) {
         this.l = yYSeatMemberModel;
-        YYBaseUserHeadView yYBaseUserHeadView = this.f18309a;
+        YYBaseUserHeadView yYBaseUserHeadView = this.a;
         if (yYBaseUserHeadView != null) {
             yYBaseUserHeadView.a(yYSeatMemberModel, baseFragment.getFragmentActive());
             if (this.p <= 0) {
-                this.p = this.f18309a.getHeight();
+                this.p = this.a.getHeight();
             }
         }
         LinearLayout linearLayout = this.i;
@@ -155,11 +152,11 @@ public class YYMemberCPView extends ConstraintLayout {
             linearLayout.setBackgroundResource(yYSeatMemberModel.isVip ? R.drawable.shape_layer_vip_background : R.color.transparent);
             final ConstraintLayout.LayoutParams layoutParams = (ConstraintLayout.LayoutParams) this.i.getLayoutParams();
             if (this.p <= 0) {
-                this.f18309a.post(new Runnable() { // from class: com.blued.android.module.yy_china.view.YYMemberCPView.2
+                this.a.post(new Runnable() { // from class: com.blued.android.module.yy_china.view.YYMemberCPView.2
                     @Override // java.lang.Runnable
                     public void run() {
                         YYMemberCPView yYMemberCPView = YYMemberCPView.this;
-                        yYMemberCPView.p = yYMemberCPView.f18309a.getHeight();
+                        yYMemberCPView.p = yYMemberCPView.a.getHeight();
                         YYMemberCPView.this.setLlNormalNumberMargin(layoutParams);
                     }
                 });
@@ -190,26 +187,25 @@ public class YYMemberCPView extends ConstraintLayout {
             }
         }
         LiveEventBus.get("take_off_mask", String.class).observe(baseFragment, new Observer<String>() { // from class: com.blued.android.module.yy_china.view.YYMemberCPView.3
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(String str) {
                 LogUtils.d("YYMemberCPView", "member uid: " + yYSeatMemberModel.getUid() + " ; uid: " + str);
                 YYSeatMemberModel yYSeatMemberModel2 = yYSeatMemberModel;
-                if (yYSeatMemberModel2 == null || !TextUtils.equals(yYSeatMemberModel2.getUid(), str) || YYMemberCPView.this.f18309a == null) {
+                if (yYSeatMemberModel2 == null || !TextUtils.equals(yYSeatMemberModel2.getUid(), str) || YYMemberCPView.this.a == null) {
                     return;
                 }
                 YYMemberCPView.this.e.setText(YYRoomInfoManager.e().a(yYSeatMemberModel.getUid(), yYSeatMemberModel.getName()));
-                YYMemberCPView.this.f18309a.a(yYSeatMemberModel, baseFragment.getFragmentActive());
+                YYMemberCPView.this.a.a(yYSeatMemberModel, baseFragment.getFragmentActive());
             }
         });
     }
 
     public void a(YYBaseUserHeadView.GetViewX_Y_W_H getViewX_Y_W_H) {
-        this.f18309a.a(getViewX_Y_W_H);
+        this.a.a(getViewX_Y_W_H);
     }
 
     public void a(Set<String> set, YYSeatMemberModel yYSeatMemberModel) {
-        YYBaseUserHeadView yYBaseUserHeadView = this.f18309a;
+        YYBaseUserHeadView yYBaseUserHeadView = this.a;
         if (yYBaseUserHeadView != null) {
             yYBaseUserHeadView.a(set, yYSeatMemberModel);
         }

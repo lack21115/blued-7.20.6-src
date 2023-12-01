@@ -6,7 +6,6 @@ import com.j256.ormlite.stmt.query.SimpleComparison;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
-import org.apache.commons.codec.language.bm.Rule;
 
 /* loaded from: source-9557208-dex2jar.jar:android/net/wifi/BatchedScanSettings.class */
 public class BatchedScanSettings implements Parcelable {
@@ -169,7 +168,7 @@ public class BatchedScanSettings implements Parcelable {
         StringBuffer stringBuffer = new StringBuffer();
         stringBuffer.append("BatchScanSettings [maxScansPerBatch: ").append(this.maxScansPerBatch == Integer.MAX_VALUE ? "<none>" : Integer.valueOf(this.maxScansPerBatch)).append(", maxApPerScan: ").append(this.maxApPerScan == Integer.MAX_VALUE ? "<none>" : Integer.valueOf(this.maxApPerScan)).append(", scanIntervalSec: ").append(this.scanIntervalSec == Integer.MAX_VALUE ? "<none>" : Integer.valueOf(this.scanIntervalSec)).append(", maxApForDistance: ").append(this.maxApForDistance == Integer.MAX_VALUE ? "<none>" : Integer.valueOf(this.maxApForDistance)).append(", channelSet: ");
         if (this.channelSet == null) {
-            stringBuffer.append(Rule.ALL);
+            stringBuffer.append("ALL");
         } else {
             stringBuffer.append(SimpleComparison.LESS_THAN_OPERATION);
             Iterator<String> it = this.channelSet.iterator();

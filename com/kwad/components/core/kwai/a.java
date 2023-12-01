@@ -24,7 +24,7 @@ public final class a {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.kwad.components.core.kwai.a$a  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/components/core/kwai/a$a.class */
-    public static final class C0525a {
+    public static final class C0355a {
         private static final a Hx = new a();
     }
 
@@ -79,7 +79,7 @@ public final class a {
     }
 
     public static a lT() {
-        return C0525a.Hx;
+        return C0355a.Hx;
     }
 
     /* JADX INFO: Access modifiers changed from: private */

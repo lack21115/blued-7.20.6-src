@@ -10,7 +10,7 @@ import android.webkit.WebView;
 public final class y {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f7982a = "ViewUtils";
+    private static final String f5142a = "ViewUtils";
     private static boolean b = false;
 
     private static int a(View view, ViewGroup viewGroup) {
@@ -29,21 +29,21 @@ public final class y {
     public static boolean a(View view) {
         ViewGroup viewGroup;
         if (view.getVisibility() != 0) {
-            o.d(f7982a, "Banner Judge : Banner's not visible.");
+            o.d(f5142a, "Banner Judge : Banner's not visible.");
             return true;
         } else if (view.getAlpha() < 0.5f) {
-            o.d(f7982a, "Banner Judge : Banner's alpha must set up 50%.");
+            o.d(f5142a, "Banner Judge : Banner's alpha must set up 50%.");
             return true;
         } else if (view.getParent() != null && (view.getParent() instanceof ViewGroup) && ((ViewGroup) view.getParent()).getVisibility() != 0) {
-            o.d(f7982a, "View Judge : View's container is not visible.");
+            o.d(f5142a, "View Judge : View's container is not visible.");
             return true;
         } else {
             Rect rect = new Rect();
             boolean globalVisibleRect = view.getGlobalVisibleRect(rect);
             boolean z = (rect.bottom - rect.top) * (rect.right - rect.left) >= (view.getMeasuredHeight() * view.getMeasuredWidth()) / 2;
             boolean z2 = globalVisibleRect && z;
-            o.d(f7982a, "View Judge : partVisible is " + globalVisibleRect + " halfPercentVisible is " + z);
-            o.d(f7982a, "View Judge : totalViewVisible is ".concat(String.valueOf(z2)));
+            o.d(f5142a, "View Judge : partVisible is " + globalVisibleRect + " halfPercentVisible is " + z);
+            o.d(f5142a, "View Judge : totalViewVisible is ".concat(String.valueOf(z2)));
             if (!z2) {
                 return true;
             }
@@ -51,7 +51,7 @@ public final class y {
             while (true) {
                 View view2 = viewGroup2;
                 if (!(view2.getParent() instanceof ViewGroup)) {
-                    o.d(f7982a, "View Judge : Well done, View is not covered.");
+                    o.d(f5142a, "View Judge : Well done, View is not covered.");
                     return false;
                 }
                 viewGroup = (ViewGroup) view2.getParent();
@@ -64,7 +64,7 @@ public final class y {
                             if (childAt instanceof ViewGroup) {
                                 ViewGroup viewGroup3 = (ViewGroup) childAt;
                                 if (viewGroup3.getChildCount() > 0) {
-                                    o.d(f7982a, "View Judge : Covered by ViewGroup.");
+                                    o.d(f5142a, "View Judge : Covered by ViewGroup.");
                                     boolean b2 = b(view, viewGroup3);
                                     b = false;
                                     if (b2) {
@@ -73,7 +73,7 @@ public final class y {
                                 }
                             }
                             if (b(childAt)) {
-                                o.d(f7982a, "View Judge : View Covered and Cover View is not transparent.");
+                                o.d(f5142a, "View Judge : View Covered and Cover View is not transparent.");
                                 return true;
                             }
                         }
@@ -110,15 +110,15 @@ public final class y {
             if (i2 >= viewGroup.getChildCount()) {
                 break;
             }
-            o.d(f7982a, "View Judge : Start Loop");
+            o.d(f5142a, "View Judge : Start Loop");
             View childAt = viewGroup.getChildAt(i2);
             if (childAt.getVisibility() == 0 && a(view, childAt)) {
                 if ((childAt instanceof WebView) && childAt.getVisibility() == 0) {
-                    o.d(f7982a, "View Judge : View Covered by WebView.");
+                    o.d(f5142a, "View Judge : View Covered by WebView.");
                     b = true;
                 }
                 if (b(childAt)) {
-                    o.d(f7982a, "View Judge : View Covered and Cover ViewGroup is not transparent.");
+                    o.d(f5142a, "View Judge : View Covered and Cover ViewGroup is not transparent.");
                     b = true;
                 }
                 if (b) {

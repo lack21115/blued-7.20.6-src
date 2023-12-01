@@ -16,7 +16,7 @@ public class MsgAttentionNotifyFragment_ViewBinding implements Unbinder {
     public MsgAttentionNotifyFragment_ViewBinding(MsgAttentionNotifyFragment msgAttentionNotifyFragment, View view) {
         this.b = msgAttentionNotifyFragment;
         msgAttentionNotifyFragment.lv_friend = (ListView) Utils.a(view, R.id.notice_list, "field 'lv_friend'", ListView.class);
-        msgAttentionNotifyFragment.topTitle = (CommonTopTitleNoTrans) Utils.a(view, 2131370749, "field 'topTitle'", CommonTopTitleNoTrans.class);
+        msgAttentionNotifyFragment.topTitle = (CommonTopTitleNoTrans) Utils.a(view, R.id.top_title, "field 'topTitle'", CommonTopTitleNoTrans.class);
         msgAttentionNotifyFragment.llNodataChats = (NoDataAndLoadFailView) Utils.a(view, R.id.ll_nodata_chats, "field 'llNodataChats'", NoDataAndLoadFailView.class);
         msgAttentionNotifyFragment.msgFrientPullrefresh = (SmartRefreshLayout) Utils.a(view, R.id.msg_frient_pullrefresh, "field 'msgFrientPullrefresh'", SmartRefreshLayout.class);
     }

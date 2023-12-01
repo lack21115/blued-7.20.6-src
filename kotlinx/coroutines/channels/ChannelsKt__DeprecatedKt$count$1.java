@@ -1,5 +1,7 @@
 package kotlinx.coroutines.channels;
 
+import com.android.internal.util.cm.SpamFilter;
+import java.net.HttpURLConnection;
 import kotlin.Metadata;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
@@ -7,16 +9,12 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 
 /* JADX INFO: Access modifiers changed from: package-private */
 @Metadata
-@DebugMetadata(b = "Deprecated.kt", c = {415}, d = "count", e = "kotlinx.coroutines.channels.ChannelsKt__DeprecatedKt")
+@DebugMetadata(b = "Deprecated.kt", c = {HttpURLConnection.HTTP_UNSUPPORTED_TYPE}, d = SpamFilter.SpamContract.NotificationTable.COUNT, e = "kotlinx.coroutines.channels.ChannelsKt__DeprecatedKt")
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/channels/ChannelsKt__DeprecatedKt$count$1.class */
 public final class ChannelsKt__DeprecatedKt$count$1<E> extends ContinuationImpl {
-
-    /* renamed from: a  reason: collision with root package name */
-    Object f42920a;
+    Object a;
     Object b;
-
-    /* renamed from: c  reason: collision with root package name */
-    Object f42921c;
+    Object c;
     /* synthetic */ Object d;
     int e;
 

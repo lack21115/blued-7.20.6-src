@@ -7,8 +7,8 @@ public interface a {
 
     /* renamed from: com.opos.mobad.cmn.a.a.a$a  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/opos/mobad/cmn/a/a/a$a.class */
-    public interface InterfaceC0680a extends a {
-        boolean a(a.C0707a c0707a, int i, b bVar);
+    public interface InterfaceC0510a extends a {
+        boolean a(a.C0537a c0537a, int i, b bVar);
     }
 
     /* loaded from: source-8303388-dex2jar.jar:com/opos/mobad/cmn/a/a/a$b.class */

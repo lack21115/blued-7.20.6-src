@@ -10,6 +10,7 @@ import com.opos.acs.st.utils.e;
 import com.opos.acs.st.utils.g;
 import com.opos.acs.st.utils.h;
 import com.opos.cmn.nt.crypt.EncryptUtils;
+import com.xiaomi.mipush.sdk.Constants;
 import java.util.Map;
 import org.json.JSONObject;
 
@@ -62,9 +63,9 @@ public final class STManager {
     private static volatile STManager sInstance;
     private Context mContext = null;
     private static final byte[] LOCK = new byte[0];
-    public static final String BRAND_OF_O = b.f24458a;
+    public static final String BRAND_OF_O = b.f10771a;
     public static final String BRAND_OF_P = b.b;
-    public static final String BRAND_OF_R = b.f24459c;
+    public static final String BRAND_OF_R = b.f10772c;
 
     /* loaded from: source-8303388-dex2jar.jar:com/opos/acs/st/STManager$EventListener.class */
     public interface EventListener {
@@ -109,7 +110,7 @@ public final class STManager {
     }
 
     public static boolean isReleaseServer() {
-        return com.opos.acs.st.utils.a.f24457a;
+        return com.opos.acs.st.utils.a.f10770a;
     }
 
     public static Map<String, String> jsonObject2Map(JSONObject jSONObject) {
@@ -135,10 +136,10 @@ public final class STManager {
     }
 
     public final void enableDebugLog() {
-        if (d.f24462a) {
+        if (d.f10775a) {
             return;
         }
-        d.f24462a = true;
+        d.f10775a = true;
         d.a();
     }
 
@@ -271,7 +272,7 @@ public final class STManager {
                 if (h.a(str2)) {
                     str6 = "0";
                 }
-                str3 = "0-" + str4 + "-" + currentTimeMillis + "-" + str5 + "-" + str6;
+                str3 = "0-" + str4 + Constants.ACCEPT_TIME_SEPARATOR_SERVER + currentTimeMillis + Constants.ACCEPT_TIME_SEPARATOR_SERVER + str5 + Constants.ACCEPT_TIME_SEPARATOR_SERVER + str6;
             }
             d.a(TAG, "traceId=".concat(String.valueOf(str3)));
             map.put("evtId", String.valueOf(currentTimeMillis));

@@ -15,9 +15,7 @@ import kotlin.jvm.functions.Function2;
 @DebugMetadata(b = "Deprecated.kt", c = {}, d = "invokeSuspend", e = "kotlinx.coroutines.channels.ChannelsKt__DeprecatedKt$filterNotNull$1")
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/channels/ChannelsKt__DeprecatedKt$filterNotNull$1.class */
 final class ChannelsKt__DeprecatedKt$filterNotNull$1<E> extends SuspendLambda implements Function2<E, Continuation<? super Boolean>, Object> {
-
-    /* renamed from: a  reason: collision with root package name */
-    int f42939a;
+    int a;
     /* synthetic */ Object b;
 
     ChannelsKt__DeprecatedKt$filterNotNull$1(Continuation<? super ChannelsKt__DeprecatedKt$filterNotNull$1> continuation) {
@@ -27,7 +25,7 @@ final class ChannelsKt__DeprecatedKt$filterNotNull$1<E> extends SuspendLambda im
     @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(E e, Continuation<? super Boolean> continuation) {
-        return ((ChannelsKt__DeprecatedKt$filterNotNull$1) create(e, continuation)).invokeSuspend(Unit.f42314a);
+        return ((ChannelsKt__DeprecatedKt$filterNotNull$1) create(e, continuation)).invokeSuspend(Unit.a);
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -40,7 +38,7 @@ final class ChannelsKt__DeprecatedKt$filterNotNull$1<E> extends SuspendLambda im
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         IntrinsicsKt.a();
-        if (this.f42939a == 0) {
+        if (this.a == 0) {
             ResultKt.a(obj);
             return Boxing.a(this.b != null);
         }

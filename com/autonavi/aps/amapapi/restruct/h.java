@@ -3,7 +3,7 @@ package com.autonavi.aps.amapapi.restruct;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Handler;
-import com.amap.api.col.p0003sl.mq;
+import com.amap.api.col.3sl.mq;
 
 /* loaded from: source-8756600-dex2jar.jar:com/autonavi/aps/amapapi/restruct/h.class */
 public final class h extends a<mq> {
@@ -24,7 +24,7 @@ public final class h extends a<mq> {
 
     /* renamed from: b  reason: avoid collision after fix types in other method */
     private static int b2(mq mqVar) {
-        return mqVar == null ? PackageManager.INSTALL_FAILED_NO_MATCHING_ABIS : mqVar.f5388c;
+        return mqVar == null ? PackageManager.INSTALL_FAILED_NO_MATCHING_ABIS : mqVar.c;
     }
 
     /* renamed from: c  reason: avoid collision after fix types in other method */

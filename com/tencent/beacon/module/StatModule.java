@@ -20,12 +20,12 @@ import java.util.Map;
 public class StatModule implements d, BeaconModule {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f35084a;
+    private Context f21393a;
     private b d;
     private boolean b = true;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f35085c = true;
+    private boolean f21394c = true;
     private long e = 0;
 
     /* renamed from: com.tencent.beacon.module.StatModule$4  reason: invalid class name */
@@ -33,16 +33,16 @@ public class StatModule implements d, BeaconModule {
     class AnonymousClass4 implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ Map f35091a;
+        final /* synthetic */ Map f21400a;
 
         @Override // java.lang.Runnable
         public void run() {
-            BeaconReport.getInstance().report(BeaconEvent.builder().withCode("rqd_sensor").withParams(this.f35091a).build());
+            BeaconReport.getInstance().report(BeaconEvent.builder().withCode("rqd_sensor").withParams(this.f21400a).build());
         }
     }
 
     private void c() {
-        ((Application) this.f35084a).registerActivityLifecycleCallbacks(new com.tencent.beacon.d.a.d(this));
+        ((Application) this.f21393a).registerActivityLifecycleCallbacks(new com.tencent.beacon.d.a.d(this));
     }
 
     private void d() {
@@ -66,7 +66,7 @@ public class StatModule implements d, BeaconModule {
                     BeaconReport.getInstance().report(withParams7.withParams("A59", l.k() + "m").withParams("A69", e.k()).withParams("A82", l.v()).withType(EventType.REALTIME).withCode("rqd_model").build());
                 }
             });
-            a.SharedPreferences$EditorC0895a edit = a2.edit();
+            a.SharedPreferences$EditorC0725a edit = a2.edit();
             if (com.tencent.beacon.base.util.b.a((SharedPreferences.Editor) edit)) {
                 edit.putString("rqd_model", com.tencent.beacon.base.util.b.d());
             }
@@ -86,9 +86,9 @@ public class StatModule implements d, BeaconModule {
             hashMap.put("A19", l.q());
             hashMap.put("A63", "Y");
             hashMap.put("A21", com.tencent.beacon.a.c.b.g() ? "Y" : "N");
-            hashMap.put("A45", com.tencent.beacon.a.c.b.e(this.f35084a) ? "Y" : "N");
-            hashMap.put("A66", com.tencent.beacon.a.c.b.f(this.f35084a) ? "F" : "B");
-            hashMap.put("A68", "" + com.tencent.beacon.a.c.b.b(this.f35084a));
+            hashMap.put("A45", com.tencent.beacon.a.c.b.e(this.f21393a) ? "Y" : "N");
+            hashMap.put("A66", com.tencent.beacon.a.c.b.f(this.f21393a) ? "F" : "B");
+            hashMap.put("A68", "" + com.tencent.beacon.a.c.b.b(this.f21393a));
             hashMap.put("A85", com.tencent.beacon.a.c.b.d ? "Y" : "N");
             hashMap.put("A9", Build.BRAND);
             hashMap.put("A14", l.w());
@@ -96,7 +96,7 @@ public class StatModule implements d, BeaconModule {
             hashMap.put("A20", e.j());
             hashMap.put("A69", e.k());
             if (b(hashMap)) {
-                a.SharedPreferences$EditorC0895a edit = a.a().edit();
+                a.SharedPreferences$EditorC0725a edit = a.a().edit();
                 if (com.tencent.beacon.base.util.b.a((SharedPreferences.Editor) edit)) {
                     edit.putString("LAUEVE_DENGTA", com.tencent.beacon.base.util.b.d());
                 }
@@ -109,38 +109,38 @@ public class StatModule implements d, BeaconModule {
 
     @Override // com.tencent.beacon.module.BeaconModule
     public void a(Context context) {
-        this.f35084a = context;
+        this.f21393a = context;
         if (!com.tencent.beacon.a.c.b.g(context)) {
             c.a("non-main process. do not report rqd event", new Object[0]);
             return;
         }
-        b b = ((StrategyModule) BeaconModule.f35077a.get(ModuleName.STRATEGY)).b();
+        b b = ((StrategyModule) BeaconModule.f21386a.get(ModuleName.STRATEGY)).b();
         this.d = b;
-        this.f35085c = b.j();
-        ((Application) this.f35084a).registerActivityLifecycleCallbacks(new com.tencent.beacon.d.a.c(this));
+        this.f21394c = b.j();
+        ((Application) this.f21393a).registerActivityLifecycleCallbacks(new com.tencent.beacon.d.a.c(this));
         com.tencent.beacon.a.a.b.a().a(2, this);
         com.tencent.beacon.a.a.b.a().a(10, this);
     }
 
     @Override // com.tencent.beacon.a.a.d
     public void a(com.tencent.beacon.a.a.c cVar) {
-        int i = cVar.f34920a;
+        int i = cVar.f21229a;
         if (i == 2) {
             Map map = (Map) cVar.b.get("d_m");
             if (map != null) {
                 this.b = com.tencent.beacon.base.util.b.a((String) map.get("modelEventUsable"), this.b);
-                this.f35085c = com.tencent.beacon.base.util.b.a((String) map.get("isPagePath"), this.f35085c);
+                this.f21394c = com.tencent.beacon.base.util.b.a((String) map.get("isPagePath"), this.f21394c);
             }
         } else if (i != 10) {
         } else {
             e();
-            if (com.tencent.beacon.a.c.b.g(this.f35084a)) {
-                new com.tencent.beacon.d.c(this.f35084a).a(this.d);
+            if (com.tencent.beacon.a.c.b.g(this.f21393a)) {
+                new com.tencent.beacon.d.c(this.f21393a).a(this.d);
             }
             if (this.b) {
                 d();
             }
-            if (this.f35085c) {
+            if (this.f21394c) {
                 c();
             }
         }

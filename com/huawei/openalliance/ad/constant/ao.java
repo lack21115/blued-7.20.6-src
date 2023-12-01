@@ -31,7 +31,7 @@ public interface ao {
     public static final String Z = "h5_url";
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f22940a = "adType";
+    public static final String f9332a = "adType";
     public static final String aA = "directCacheVideo";
     public static final String aB = "directReturnVideoAd";
     public static final String aa = "name";
@@ -53,7 +53,7 @@ public interface ao {
     public static final String aq = "audioFocusType";
 
     /* renamed from: ar  reason: collision with root package name */
-    public static final String f22941ar = "location";
+    public static final String f9333ar = "location";
     public static final String as = "latitude";
     public static final String at = "longitude";
     public static final String au = "muted";
@@ -65,7 +65,7 @@ public interface ao {
     public static final String b = "smart";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f22942c = "phyWidth";
+    public static final String f9334c = "phyWidth";
     public static final String d = "phyHeight";
     public static final String e = "deviceType";
     public static final String f = "cacheIds";

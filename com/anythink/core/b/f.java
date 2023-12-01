@@ -17,13 +17,9 @@ public final class f {
     ConcurrentHashMap<String, Integer> e;
     private MediationBidManager i;
     private final String g = getClass().getSimpleName();
-
-    /* renamed from: a  reason: collision with root package name */
-    ConcurrentHashMap<String, m> f6374a = new ConcurrentHashMap<>();
+    ConcurrentHashMap<String, m> a = new ConcurrentHashMap<>();
     ConcurrentHashMap<String, j> b = new ConcurrentHashMap<>(5);
-
-    /* renamed from: c  reason: collision with root package name */
-    ConcurrentHashMap<String, ai> f6375c = new ConcurrentHashMap<>(5);
+    ConcurrentHashMap<String, ai> c = new ConcurrentHashMap<>(5);
     List<Integer> f = new CopyOnWriteArrayList();
 
     private f() {
@@ -37,7 +33,7 @@ public final class f {
     }
 
     private void a(ai aiVar, m mVar) {
-        this.f6374a.put(aiVar.t(), mVar);
+        this.a.put(aiVar.t(), mVar);
         if (aiVar.l() == 3 || aiVar.l() == 7) {
             a(aiVar.t(), mVar);
         }
@@ -89,7 +85,7 @@ public final class f {
         ConcurrentHashMap<String, j> concurrentHashMap = this.b;
         j jVar = concurrentHashMap.get(str + BridgeUtil.UNDERLINE_STR + str2);
         if (jVar != null) {
-            return jVar.f6387c;
+            return jVar.c;
         }
         return 0.0d;
     }
@@ -105,7 +101,7 @@ public final class f {
         /*
             r5 = this;
             r0 = r5
-            java.util.concurrent.ConcurrentHashMap<java.lang.String, com.anythink.core.common.e.m> r0 = r0.f6374a
+            java.util.concurrent.ConcurrentHashMap<java.lang.String, com.anythink.core.common.e.m> r0 = r0.a
             r1 = r6
             java.lang.String r1 = r1.t()
             java.lang.Object r0 = r0.get(r1)
@@ -146,7 +142,7 @@ public final class f {
             r0 = r7
             if (r0 == 0) goto L5b
             r0 = r5
-            java.util.concurrent.ConcurrentHashMap<java.lang.String, com.anythink.core.common.e.m> r0 = r0.f6374a
+            java.util.concurrent.ConcurrentHashMap<java.lang.String, com.anythink.core.common.e.m> r0 = r0.a
             r1 = r6
             java.lang.String r1 = r1.t()
             r2 = r7
@@ -173,11 +169,11 @@ public final class f {
     }
 
     public final void a(String str) {
-        this.f6374a.remove(str);
+        this.a.remove(str);
     }
 
     public final void a(String str, ai aiVar) {
-        this.f6375c.put(str, aiVar);
+        this.c.put(str, aiVar);
     }
 
     public final void a(String str, String str2, j jVar) {
@@ -211,7 +207,7 @@ public final class f {
     }
 
     public final ai c(String str) {
-        return this.f6375c.get(str);
+        return this.c.get(str);
     }
 
     public final void c(String str, String str2) {

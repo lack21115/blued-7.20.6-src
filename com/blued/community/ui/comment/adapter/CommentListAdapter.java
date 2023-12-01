@@ -13,7 +13,6 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import androidx.fragment.app.FragmentActivity;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.AppMethods;
 import com.blued.android.core.net.IRequestHost;
@@ -47,13 +46,9 @@ import java.util.List;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/comment/adapter/CommentListAdapter.class */
 public class CommentListAdapter extends BaseAdapter implements CommentListDataObserver.ICommentDataObserver {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f19406a;
+    private Context a;
     private LayoutInflater b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private List<FeedComment> f19407c;
+    private List<FeedComment> c;
     private int d;
     private IRequestHost e;
     private BluedIngSelfFeed f;
@@ -75,13 +70,9 @@ public class CommentListAdapter extends BaseAdapter implements CommentListDataOb
 
     /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/comment/adapter/CommentListAdapter$ViewHolder.class */
     class ViewHolder {
-
-        /* renamed from: a  reason: collision with root package name */
-        public View f19425a;
+        public View a;
         public ImageView b;
-
-        /* renamed from: c  reason: collision with root package name */
-        public TextView f19426c;
+        public TextView c;
         public TextView d;
         public TextView e;
         public ImageView f;
@@ -103,11 +94,11 @@ public class CommentListAdapter extends BaseAdapter implements CommentListDataOb
     }
 
     public CommentListAdapter(Context context, IRequestHost iRequestHost, BluedIngSelfFeed bluedIngSelfFeed, FeedCommentListner feedCommentListner, boolean z, String str, String str2) {
-        this.f19407c = new ArrayList();
+        this.c = new ArrayList();
         this.h = true;
         this.k = 1;
         this.l = -1;
-        this.f19406a = context;
+        this.a = context;
         this.g = feedCommentListner;
         this.f = bluedIngSelfFeed;
         this.e = iRequestHost;
@@ -124,33 +115,33 @@ public class CommentListAdapter extends BaseAdapter implements CommentListDataOb
                 @Override // android.view.View.OnLongClickListener
                 public boolean onLongClick(View view2) {
                     ArrayList arrayList = new ArrayList();
-                    KeyboardUtils.b(CommentListAdapter.this.f19406a, view);
-                    arrayList.add(CommentListAdapter.this.f19406a.getResources().getString(R.string.community_copy));
+                    KeyboardUtils.b(CommentListAdapter.this.a, view);
+                    arrayList.add(CommentListAdapter.this.a.getResources().getString(R.string.community_copy));
                     if (feedComment.user_allow_mute == CommentListAdapter.this.k) {
-                        arrayList.add(CommentListAdapter.this.f19406a.getResources().getString(feedComment.is_muted == 1 ? R.string.circle_comments_list_cancel_mute : R.string.circle_comments_list_mute));
+                        arrayList.add(CommentListAdapter.this.a.getResources().getString(feedComment.is_muted == 1 ? R.string.circle_comments_list_cancel_mute : R.string.circle_comments_list_mute));
                     }
                     if (!CircleMethods.a(feedComment.comment_uid)) {
-                        arrayList.add(CommentListAdapter.this.f19406a.getResources().getString(R.string.report));
+                        arrayList.add(CommentListAdapter.this.a.getResources().getString(R.string.report));
                     }
                     if ("1".equals(feedComment.comment_allow_delete)) {
-                        arrayList.add(CommentListAdapter.this.f19406a.getResources().getString(R.string.delete));
+                        arrayList.add(CommentListAdapter.this.a.getResources().getString(R.string.delete));
                     }
-                    CommonShowBottomWindow.a((FragmentActivity) CommentListAdapter.this.f19406a, (String[]) arrayList.toArray(new String[arrayList.size()]), new ActionSheet.ActionSheetListener() { // from class: com.blued.community.ui.comment.adapter.CommentListAdapter.5.1
+                    CommonShowBottomWindow.a(CommentListAdapter.this.a, (String[]) arrayList.toArray(new String[arrayList.size()]), new ActionSheet.ActionSheetListener() { // from class: com.blued.community.ui.comment.adapter.CommentListAdapter.5.1
                         @Override // com.blued.android.module.common.widget.menu.ActionSheet.ActionSheetListener
                         public void a(ActionSheet actionSheet, int i) {
-                            String a2 = actionSheet.a(i);
-                            if (a2.equals(CommentListAdapter.this.f19406a.getResources().getString(R.string.community_copy))) {
+                            String a = actionSheet.a(i);
+                            if (a.equals(CommentListAdapter.this.a.getResources().getString(R.string.community_copy))) {
                                 CommentListAdapter.this.a(feedComment);
-                            } else if (a2.equals(CommentListAdapter.this.f19406a.getResources().getString(R.string.delete))) {
+                            } else if (a.equals(CommentListAdapter.this.a.getResources().getString(R.string.delete))) {
                                 CommentListAdapter.this.b(feedComment);
-                            } else if (!a2.equals(CommentListAdapter.this.f19406a.getResources().getString(R.string.report))) {
-                                if (a2.equals(CommentListAdapter.this.f19406a.getResources().getString(feedComment.is_muted == CommentListAdapter.this.k ? R.string.circle_comments_list_cancel_mute : R.string.circle_comments_list_mute))) {
+                            } else if (!a.equals(CommentListAdapter.this.a.getResources().getString(R.string.report))) {
+                                if (a.equals(CommentListAdapter.this.a.getResources().getString(feedComment.is_muted == CommentListAdapter.this.k ? R.string.circle_comments_list_cancel_mute : R.string.circle_comments_list_mute))) {
                                     CommentListAdapter.this.a(feedComment, CommentListAdapter.this.e);
                                 }
                             } else if (CommentListAdapter.this.b()) {
-                                CommunityServiceManager.b().a(CommentListAdapter.this.f19406a, CommunityConstants.ReportType.FEED_COMMENT, feedComment.user_name, feedComment.feed_id, feedComment.comment_id);
+                                CommunityServiceManager.b().a(CommentListAdapter.this.a, CommunityConstants.ReportType.FEED_COMMENT, feedComment.user_name, feedComment.feed_id, feedComment.comment_id);
                             } else {
-                                CommunityServiceManager.b().a(CommentListAdapter.this.f19406a, CommunityConstants.ReportType.CIRCLE_COMMENT, feedComment.user_name, feedComment.feed_id, feedComment.comment_id);
+                                CommunityServiceManager.b().a(CommentListAdapter.this.a, CommunityConstants.ReportType.CIRCLE_COMMENT, feedComment.user_name, feedComment.feed_id, feedComment.comment_id);
                             }
                         }
 
@@ -166,7 +157,7 @@ public class CommentListAdapter extends BaseAdapter implements CommentListDataOb
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void a(FeedComment feedComment, View view) {
-        if (CommunityServiceManager.a().b(this.f19406a)) {
+        if (CommunityServiceManager.a().b(this.a)) {
             return;
         }
         this.g.contentClick(feedComment);
@@ -221,15 +212,15 @@ public class CommentListAdapter extends BaseAdapter implements CommentListDataOb
     }
 
     private void c(final FeedComment feedComment) {
-        String string = feedComment.mute_type == 0 ? this.f19406a.getResources().getString(R.string.circle_mute_member_dialog_first_title) : feedComment.mute_type == 1 ? this.f19406a.getResources().getString(R.string.circle_mute_member_dialog_second_title) : this.f19406a.getResources().getString(R.string.circle_mute_member_dialog_third_title);
-        Context context = this.f19406a;
-        CommonAlertDialog.a(context, string, context.getResources().getString(R.string.circle_mute_member_dialog_content), this.f19406a.getResources().getString(R.string.circle_mute_member_dialog_btn), 0, new DialogInterface.OnClickListener() { // from class: com.blued.community.ui.comment.adapter.CommentListAdapter.7
+        String string = feedComment.mute_type == 0 ? this.a.getResources().getString(R.string.circle_mute_member_dialog_first_title) : feedComment.mute_type == 1 ? this.a.getResources().getString(R.string.circle_mute_member_dialog_second_title) : this.a.getResources().getString(R.string.circle_mute_member_dialog_third_title);
+        Context context = this.a;
+        CommonAlertDialog.a(context, string, context.getResources().getString(R.string.circle_mute_member_dialog_content), this.a.getResources().getString(R.string.circle_mute_member_dialog_btn), 0, new DialogInterface.OnClickListener() { // from class: com.blued.community.ui.comment.adapter.CommentListAdapter.7
             @Override // android.content.DialogInterface.OnClickListener
             public void onClick(DialogInterface dialogInterface, int i) {
                 Tracker.onClick(dialogInterface, i);
                 CommentListAdapter.this.d(feedComment);
             }
-        }, this.f19406a.getResources().getString(R.string.cancel), this.f19406a.getResources().getColor(R.color.syc_A5A6B3), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
+        }, this.a.getResources().getString(R.string.cancel), this.a.getResources().getColor(R.color.syc_A5A6B3), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -260,14 +251,14 @@ public class CommentListAdapter extends BaseAdapter implements CommentListDataOb
     public void a(FeedComment feedComment) {
         String str = feedComment.comment_content;
         if (Build.VERSION.SDK_INT < 11 || Build.VERSION.SDK_INT == 18) {
-            ((ClipboardManager) this.f19406a.getSystemService(Context.CLIPBOARD_SERVICE)).setText(RegExpUtils.a(str));
+            ((ClipboardManager) this.a.getSystemService("clipboard")).setText(RegExpUtils.a(str));
         } else {
             try {
-                ((android.content.ClipboardManager) this.f19406a.getSystemService(Context.CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("simple text", RegExpUtils.a(str)));
+                ((android.content.ClipboardManager) this.a.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("simple text", RegExpUtils.a(str)));
             } catch (Exception e) {
             }
         }
-        AppMethods.a((CharSequence) this.f19406a.getResources().getString(R.string.copy));
+        AppMethods.a((CharSequence) this.a.getResources().getString(R.string.copy));
     }
 
     public void a(final FeedComment feedComment, IRequestHost iRequestHost) {
@@ -298,22 +289,22 @@ public class CommentListAdapter extends BaseAdapter implements CommentListDataOb
                 int i3 = 0;
                 while (true) {
                     i2 = i3;
-                    if (i2 >= this.f19407c.size()) {
+                    if (i2 >= this.c.size()) {
                         i2 = -1;
                         break;
-                    } else if (this.f19407c.get(i2).isLastHotComment) {
+                    } else if (this.c.get(i2).isLastHotComment) {
                         break;
                     } else {
                         i3 = i2 + 1;
                     }
                 }
                 if (i2 == -1) {
-                    this.f19407c.add(0, feedComment);
+                    this.c.add(0, feedComment);
                 } else {
-                    this.f19407c.add(i2 + 1, feedComment);
+                    this.c.add(i2 + 1, feedComment);
                 }
             } else if (!TextUtils.isEmpty(str)) {
-                Iterator<FeedComment> it = this.f19407c.iterator();
+                Iterator<FeedComment> it = this.c.iterator();
                 while (true) {
                     if (!it.hasNext()) {
                         break;
@@ -331,19 +322,19 @@ public class CommentListAdapter extends BaseAdapter implements CommentListDataOb
                 int i4 = 0;
                 while (true) {
                     i = i4;
-                    if (i >= this.f19407c.size()) {
+                    if (i >= this.c.size()) {
                         i = -1;
                         break;
-                    } else if (this.f19407c.get(i).isLastHotComment) {
+                    } else if (this.c.get(i).isLastHotComment) {
                         break;
                     } else {
                         i4 = i + 1;
                     }
                 }
                 if (i == -1) {
-                    this.f19407c.add(0, feedComment);
+                    this.c.add(0, feedComment);
                 } else {
-                    this.f19407c.add(i + 1, feedComment);
+                    this.c.add(i + 1, feedComment);
                 }
             }
             notifyDataSetChanged();
@@ -359,16 +350,16 @@ public class CommentListAdapter extends BaseAdapter implements CommentListDataOb
     public void a(String str) {
         List<FeedComment> list;
         int i;
-        if (TextUtils.isEmpty(str) || (list = this.f19407c) == null || list.size() <= 0) {
+        if (TextUtils.isEmpty(str) || (list = this.c) == null || list.size() <= 0) {
             return;
         }
         int i2 = 0;
         while (true) {
             int i3 = i2;
-            if (i3 < this.f19407c.size()) {
-                if (str.equals(this.f19407c.get(i3).comment_id) && this.f19407c.get(i3).isLastHotComment && (i = i3 - 1) >= 0) {
-                    this.f19407c.get(i).isLastHotComment = this.f19407c.get(i3).isLastHotComment;
-                    this.f19407c.get(i).isHasMoreHotComment = this.f19407c.get(i3).isHasMoreHotComment;
+            if (i3 < this.c.size()) {
+                if (str.equals(this.c.get(i3).comment_id) && this.c.get(i3).isLastHotComment && (i = i3 - 1) >= 0) {
+                    this.c.get(i).isLastHotComment = this.c.get(i3).isLastHotComment;
+                    this.c.get(i).isHasMoreHotComment = this.c.get(i3).isHasMoreHotComment;
                     break;
                 }
                 i2 = i3 + 1;
@@ -376,7 +367,7 @@ public class CommentListAdapter extends BaseAdapter implements CommentListDataOb
                 break;
             }
         }
-        Iterator<FeedComment> it = this.f19407c.iterator();
+        Iterator<FeedComment> it = this.c.iterator();
         while (it.hasNext()) {
             if (str.equals(it.next().comment_id)) {
                 it.remove();
@@ -388,22 +379,22 @@ public class CommentListAdapter extends BaseAdapter implements CommentListDataOb
     @Override // com.blued.community.ui.feed.observer.CommentListDataObserver.ICommentDataObserver
     public void a(String str, int i) {
         List<FeedComment> list;
-        if (TextUtils.isEmpty(str) || (list = this.f19407c) == null || list.size() <= 0) {
+        if (TextUtils.isEmpty(str) || (list = this.c) == null || list.size() <= 0) {
             return;
         }
         int i2 = 0;
         while (true) {
             int i3 = i2;
-            if (i3 >= this.f19407c.size()) {
+            if (i3 >= this.c.size()) {
                 notifyDataSetChanged();
                 return;
             }
-            if (str.equals(this.f19407c.get(i3).comment_id)) {
-                this.f19407c.get(i3).iliked = i;
+            if (str.equals(this.c.get(i3).comment_id)) {
+                this.c.get(i3).iliked = i;
                 if (i == 1) {
-                    this.f19407c.get(i3).liked_count++;
+                    this.c.get(i3).liked_count++;
                 } else {
-                    this.f19407c.get(i3).liked_count--;
+                    this.c.get(i3).liked_count--;
                 }
             }
             i2 = i3 + 1;
@@ -411,9 +402,9 @@ public class CommentListAdapter extends BaseAdapter implements CommentListDataOb
     }
 
     public void a(List<FeedComment> list) {
-        this.f19407c.clear();
+        this.c.clear();
         if (list != null && list.size() > 0) {
-            this.f19407c.addAll(list);
+            this.c.addAll(list);
         }
         notifyDataSetChanged();
     }
@@ -421,20 +412,20 @@ public class CommentListAdapter extends BaseAdapter implements CommentListDataOb
     public void b(final FeedComment feedComment) {
         StringBuilder sb;
         String str;
-        String string = this.f19406a.getString(R.string.hint);
-        CharSequence a2 = StringUtils.a(feedComment.comment_content, false, true, false, "feed_detail");
-        if (a2.length() > 14) {
+        String string = this.a.getString(R.string.hint);
+        CharSequence a = StringUtils.a(feedComment.comment_content, false, true, false, "feed_detail");
+        if (a.length() > 14) {
             sb = new StringBuilder();
-            sb.append((Object) a2.subSequence(0, 14));
+            sb.append((Object) a.subSequence(0, 14));
             str = "...";
         } else {
             sb = new StringBuilder();
-            sb.append((Object) a2);
+            sb.append((Object) a);
             str = "";
         }
         sb.append(str);
-        String format = String.format(this.f19406a.getResources().getString(R.string.delete_comment_confirm), sb.toString());
-        Context context = this.f19406a;
+        String format = String.format(this.a.getResources().getString(R.string.delete_comment_confirm), sb.toString());
+        Context context = this.a;
         CommonAlertDialog.a(context, string, format, context.getResources().getString(R.string.delete), new DialogInterface.OnClickListener() { // from class: com.blued.community.ui.comment.adapter.CommentListAdapter.9
             @Override // android.content.DialogInterface.OnClickListener
             public void onClick(DialogInterface dialogInterface, int i) {
@@ -466,12 +457,12 @@ public class CommentListAdapter extends BaseAdapter implements CommentListDataOb
                     }
                 }, TextUtils.isEmpty(CommentListAdapter.this.j), feedComment.feed_id, feedComment.comment_id, CommentListAdapter.this.c().is_ads, CommentListAdapter.this.e);
             }
-        }, this.f19406a.getResources().getString(R.string.common_cancel), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
+        }, this.a.getResources().getString(R.string.common_cancel), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
     }
 
     @Override // android.widget.Adapter
     public int getCount() {
-        List<FeedComment> list = this.f19407c;
+        List<FeedComment> list = this.c;
         if (list != null) {
             return list.size();
         }

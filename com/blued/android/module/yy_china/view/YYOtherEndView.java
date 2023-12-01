@@ -1,5 +1,6 @@
 package com.blued.android.module.yy_china.view;
 
+import android.app.Activity;
 import android.content.Context;
 import android.text.TextUtils;
 import android.util.AttributeSet;
@@ -33,13 +34,9 @@ import java.util.List;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYOtherEndView.class */
 public class YYOtherEndView extends LinearLayout implements FollowStatusObserver {
-
-    /* renamed from: a  reason: collision with root package name */
-    private MvpFragment f18347a;
+    private MvpFragment a;
     private ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private RelativeLayout f18348c;
+    private RelativeLayout c;
     private RankingView d;
     private ImageView e;
     private TextView f;
@@ -66,20 +63,20 @@ public class YYOtherEndView extends LinearLayout implements FollowStatusObserver
     private void a() {
         LayoutInflater.from(getContext()).inflate(R.layout.view_yy_other_end_layout, (ViewGroup) this, true);
         this.b = (ImageView) findViewById(R.id.iv_end_close);
-        this.f18348c = (RelativeLayout) findViewById(R.id.yy_end_title);
+        this.c = (RelativeLayout) findViewById(R.id.yy_end_title);
         this.d = (RankingView) findViewById(R.id.ranking_view);
         this.e = (ImageView) findViewById(R.id.img_view);
         this.f = (TextView) findViewById(R.id.tv_name_view);
         this.g = (ShapeTextView) findViewById(R.id.tv_follow_view);
         if (StatusBarHelper.a()) {
-            ((LinearLayout.LayoutParams) this.f18348c.getLayoutParams()).topMargin = StatusBarHelper.a(getContext());
+            ((LinearLayout.LayoutParams) this.c.getLayoutParams()).topMargin = StatusBarHelper.a(getContext());
         }
         this.b.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.YYOtherEndView.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
                 YYRoomInfoManager.e().x();
-                YYOtherEndView.this.f18347a.getActivity().finish();
+                YYOtherEndView.this.a.getActivity().finish();
             }
         });
         this.g.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.YYOtherEndView.2
@@ -92,7 +89,7 @@ public class YYOtherEndView extends LinearLayout implements FollowStatusObserver
                 if (!YYObserverManager.a().c(YYOtherEndView.this)) {
                     YYObserverManager.a().a(YYOtherEndView.this);
                 }
-                YYRoomInfoManager.e().b(YYOtherEndView.this.getContext(), YYOtherEndView.this.h.getUid(), "", YYOtherEndView.this.f18347a.getFragmentActive());
+                YYRoomInfoManager.e().b(YYOtherEndView.this.getContext(), YYOtherEndView.this.h.getUid(), "", YYOtherEndView.this.a.getFragmentActive());
             }
         });
         this.e.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.YYOtherEndView.3
@@ -109,14 +106,14 @@ public class YYOtherEndView extends LinearLayout implements FollowStatusObserver
     }
 
     private void a(String str) {
-        YYRoomHttpUtils.n(str, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<YYEndInfoModel>>(this.f18347a.getFragmentActive()) { // from class: com.blued.android.module.yy_china.view.YYOtherEndView.4
+        YYRoomHttpUtils.n(str, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<YYEndInfoModel>>(this.a.getFragmentActive()) { // from class: com.blued.android.module.yy_china.view.YYOtherEndView.4
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<YYEndInfoModel> bluedEntityA) {
                 YYOtherEndView.this.h = bluedEntityA.getSingleData().anchor;
                 if (YYOtherEndView.this.h != null) {
-                    ImageLoader.a(YYOtherEndView.this.f18347a.getFragmentActive(), YYOtherEndView.this.h.getAvatar()).b(R.drawable.user_bg_round).a(YYOtherEndView.this.e);
+                    ImageLoader.a(YYOtherEndView.this.a.getFragmentActive(), YYOtherEndView.this.h.getAvatar()).b(R.drawable.user_bg_round).a(YYOtherEndView.this.e);
                     YYOtherEndView.this.f.setText(YYOtherEndView.this.h.getName());
                     YYOtherEndView.this.g.setText(UserRelationshipUtils.a(YYOtherEndView.this.getContext(), YYOtherEndView.this.h.relationship));
                 }
@@ -134,12 +131,12 @@ public class YYOtherEndView extends LinearLayout implements FollowStatusObserver
                     YYOtherEndView.this.d.c(list.get(2));
                 }
             }
-        }, (IRequestHost) this.f18347a.getFragmentActive());
+        }, (IRequestHost) this.a.getFragmentActive());
     }
 
     public void a(MvpFragment mvpFragment) {
-        this.f18347a = mvpFragment;
-        KeyboardUtils.a(mvpFragment.getActivity());
+        this.a = mvpFragment;
+        KeyboardUtils.a((Activity) mvpFragment.getActivity());
         setVisibility(0);
         YYRoomModel b = YYRoomInfoManager.e().b();
         if (b == null) {

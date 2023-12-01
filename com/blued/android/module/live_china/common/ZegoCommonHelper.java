@@ -1,7 +1,6 @@
 package com.blued.android.module.live_china.common;
 
 import android.app.Application;
-import android.net.wifi.WifiScanner;
 import android.text.TextUtils;
 import android.util.Log;
 import com.blued.android.core.AppInfo;
@@ -12,10 +11,9 @@ import com.blued.android.module.live.base.music.model.YYKtvMusicModel;
 import com.blued.android.module.live_china.live_info.LiveRoomInfo;
 import com.blued.android.module.live_china.manager.LiveRoomManager;
 import com.blued.android.module.live_china.utils.ZipUtil;
-import com.blued.das.live.LiveProtos;
 import com.jeremyliao.liveeventbus.LiveEventBus;
 import com.tencent.txcopyrightedmedia.zego.ITXCMZegoAudioAux;
-import com.tencent.ugc.UGCTransitionRules;
+import com.tencent.txcopyrightedmedia.zego.ITXCMZegoAudioAuxCallbackEx;
 import com.zego.zegoavkit2.ZegoMediaPlayer;
 import com.zego.zegoavkit2.audioaux.ZegoAudioAux;
 import com.zego.zegoliveroom.ZegoLiveRoom;
@@ -24,16 +22,13 @@ import com.zego.zegoliveroom.callback.IZegoLogHookCallback;
 import com.zego.zegoliveroom.constants.ZegoAvConfig;
 import java.io.File;
 import java.util.List;
+import javax.microedition.khronos.opengles.GL10;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/common/ZegoCommonHelper.class */
 public class ZegoCommonHelper {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static String f11726a = "BluedSolutionRoom_1";
+    public static String a = "BluedSolutionRoom_1";
     public static String b = "zego-joinlive-stream-anchor-1";
-
-    /* renamed from: c  reason: collision with root package name */
-    public static String f11727c = "zego-joinlive-stream-anchor-2";
+    public static String c = "zego-joinlive-stream-anchor-2";
     public static String d = "zego-joinlive-stream-anchor";
     public static String e = "zego-joinlive-stream-audience1";
     private static ZegoCommonHelper o;
@@ -44,7 +39,7 @@ public class ZegoCommonHelper {
     private ZegoMediaPlayer p = null;
     public String f = "";
     public String g = "";
-    public int h = LiveProtos.Event.LIVE_GIFT_EFFECT_BTN_CLICK_VALUE;
+    public int h = 544;
     public int i = 960;
     private int q = 0;
     public int l = 15;
@@ -98,28 +93,28 @@ public class ZegoCommonHelper {
         if (i == 0) {
             int i2 = this.q;
             if (i2 == 0) {
-                this.j = LiveProtos.Event.LIVE_GIFT_EFFECT_BTN_CLICK_VALUE;
+                this.j = 544;
                 this.k = 960;
                 this.l = 15;
-                this.m = WifiScanner.MAX_SCAN_PERIOD_MS;
+                this.m = 1024000;
             } else if (i2 == 1) {
-                this.j = LiveProtos.Event.LIVE_GIFT_EFFECT_BTN_CLICK_VALUE;
+                this.j = 544;
                 this.k = 960;
                 this.l = 15;
                 this.m = 1228800;
             } else if (i2 == 2) {
-                this.j = LiveProtos.Event.LIVE_GIFT_EFFECT_BTN_CLICK_VALUE;
+                this.j = 544;
                 this.k = 960;
                 this.l = 18;
                 this.m = 1228800;
             } else if (i2 == 3) {
-                this.j = LiveProtos.Event.LIVE_GIFT_EFFECT_BTN_CLICK_VALUE;
+                this.j = 544;
                 this.k = 960;
                 this.l = 20;
                 this.m = 1228800;
             } else if (i2 == 4) {
-                this.j = UGCTransitionRules.DEFAULT_IMAGE_WIDTH;
-                this.k = 1280;
+                this.j = 720;
+                this.k = GL10.GL_INVALID_ENUM;
                 this.l = 20;
                 this.m = 1843200;
             }
@@ -136,22 +131,22 @@ public class ZegoCommonHelper {
                 this.j = 480;
                 this.k = 848;
                 this.l = 15;
-                this.m = WifiScanner.MAX_SCAN_PERIOD_MS;
+                this.m = 1024000;
             } else if (i3 == 2) {
                 this.j = 480;
                 this.k = 848;
                 this.l = 15;
-                this.m = WifiScanner.MAX_SCAN_PERIOD_MS;
+                this.m = 1024000;
             } else if (i3 == 3) {
                 this.j = 480;
                 this.k = 848;
                 this.l = 20;
-                this.m = WifiScanner.MAX_SCAN_PERIOD_MS;
+                this.m = 1024000;
             } else if (i3 == 4) {
                 this.j = 480;
                 this.k = 848;
                 this.l = 20;
-                this.m = WifiScanner.MAX_SCAN_PERIOD_MS;
+                this.m = 1024000;
             }
         } else if (2 == i || 3 == i || 4 == i) {
             int i4 = this.q;
@@ -259,32 +254,26 @@ public class ZegoCommonHelper {
 
     public void a(final String str, final String str2, final long j, final Application application) {
         ZegoLiveRoom.setSDKContext(new ZegoLiveRoom.SDKContextEx() { // from class: com.blued.android.module.live_china.common.ZegoCommonHelper.1
-            @Override // com.zego.zegoliveroom.ZegoLiveRoom.SDKContext
             public Application getAppContext() {
                 return application;
             }
 
-            @Override // com.zego.zegoliveroom.ZegoLiveRoom.SDKContextEx
             public long getLogFileSize() {
                 return j;
             }
 
-            @Override // com.zego.zegoliveroom.ZegoLiveRoom.SDKContextEx
             public IZegoLogHookCallback getLogHookCallback() {
                 return null;
             }
 
-            @Override // com.zego.zegoliveroom.ZegoLiveRoom.SDKContext
             public String getLogPath() {
                 return str;
             }
 
-            @Override // com.zego.zegoliveroom.ZegoLiveRoom.SDKContext
             public String getSoFullPath() {
                 return str2;
             }
 
-            @Override // com.zego.zegoliveroom.ZegoLiveRoom.SDKContextEx
             public String getSubLogFolder() {
                 return null;
             }
@@ -310,7 +299,6 @@ public class ZegoCommonHelper {
         ZegoLiveRoom.setBusinessType(0);
         Log.d("==record", "onInitSDK version:" + ZegoLiveRoom.version() + " version2:" + ZegoLiveRoom.version2());
         return this.n.initSDK(j, bArr, new IZegoInitSDKCompletionCallback() { // from class: com.blued.android.module.live_china.common.ZegoCommonHelper.2
-            @Override // com.zego.zegoliveroom.callback.IZegoInitSDKCompletionCallback
             public void onInitSDK(int i2) {
                 Log.d("==record", "onInitSDK:" + i2);
                 if (i2 == 0) {
@@ -394,12 +382,12 @@ public class ZegoCommonHelper {
 
     public void h() {
         ZegoAvConfig zegoAvConfig = new ZegoAvConfig(2);
-        int i = (int) (((AppInfo.m * LiveProtos.Event.LIVE_GIFT_EFFECT_BTN_CLICK_VALUE) * 1.0f) / AppInfo.l);
-        zegoAvConfig.setVideoCaptureResolution(LiveProtos.Event.LIVE_GIFT_EFFECT_BTN_CLICK_VALUE, i);
-        zegoAvConfig.setVideoEncodeResolution(LiveProtos.Event.LIVE_GIFT_EFFECT_BTN_CLICK_VALUE, i);
-        Log.i("xpm", "setZegoAvConfigScreen width:" + LiveProtos.Event.LIVE_GIFT_EFFECT_BTN_CLICK_VALUE);
+        int i = (int) (((AppInfo.m * 544) * 1.0f) / AppInfo.l);
+        zegoAvConfig.setVideoCaptureResolution(544, i);
+        zegoAvConfig.setVideoEncodeResolution(544, i);
+        Log.i("xpm", "setZegoAvConfigScreen width:544");
         Log.i("xpm", "setZegoAvConfigScreen height:" + i);
-        zegoAvConfig.setVideoBitrate(WifiScanner.MAX_SCAN_PERIOD_MS);
+        zegoAvConfig.setVideoBitrate(1024000);
         zegoAvConfig.setVideoFPS(15);
         ZegoLiveRoom zegoLiveRoom = this.n;
         if (zegoLiveRoom != null) {
@@ -442,15 +430,15 @@ public class ZegoCommonHelper {
     public void l() {
         m();
         f().enableAux(false);
-        YYMusicManager.f11418a.c().a((LiveMusicModel) null);
-        YYMusicManager.f11418a.c().a((YYKtvMusicModel) null);
-        YYMusicManager.f11418a.c().a((List<? extends YYKtvMusicModel>) null);
+        YYMusicManager.a.c().a((LiveMusicModel) null);
+        YYMusicManager.a.c().a((YYKtvMusicModel) null);
+        YYMusicManager.a.c().a((List<? extends YYKtvMusicModel>) null);
     }
 
     public void m() {
         ITXCMZegoAudioAux iTXCMZegoAudioAux = this.s;
         if (iTXCMZegoAudioAux != null) {
-            iTXCMZegoAudioAux.setZegoAuxCallbackEx(null);
+            iTXCMZegoAudioAux.setZegoAuxCallbackEx((ITXCMZegoAudioAuxCallbackEx) null);
         }
         this.s = null;
     }
@@ -458,7 +446,7 @@ public class ZegoCommonHelper {
     public String n() {
         File externalFilesDir = AppInfo.d().getExternalFilesDir(null);
         if (externalFilesDir.exists() && externalFilesDir.canRead()) {
-            String a2 = ZipUtil.f14200a.a().a();
+            String a2 = ZipUtil.a.a().a();
             if (TextUtils.isEmpty(a2)) {
                 return "";
             }
@@ -470,7 +458,7 @@ public class ZegoCommonHelper {
             if (file2.exists()) {
                 FileUtils.a(file2.getAbsolutePath(), new File(a2, "zego_av_log.txt").getAbsolutePath());
                 File file3 = new File(externalFilesDir, "live_log.zip");
-                ZipUtil.f14200a.a().a(a2, file3.getAbsolutePath());
+                ZipUtil.a.a().a(a2, file3.getAbsolutePath());
                 return file3.getAbsolutePath();
             }
             return "";

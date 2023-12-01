@@ -39,14 +39,12 @@ import com.blued.android.module.live_china.utils.log.trackUtils.EventTrackLive;
 import com.blued.android.module.live_china.view.LiveTwoLevelRefreshView;
 import com.blued.das.live.LiveProtos;
 import com.jeremyliao.liveeventbus.LiveEventBus;
-import com.opos.acs.st.STManager;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.OnTwoLevelListener;
 import com.scwang.smartrefresh.layout.api.RefreshHeader;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.constant.RefreshState;
 import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
-import com.scwang.smartrefresh.layout.listener.OnMultiPurposeListener;
 import com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -55,13 +53,9 @@ import java.util.TimeZone;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveFootPrintFragmentN.class */
 public class LiveFootPrintFragmentN extends SimpleFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    private CommonTopTitleNoTrans f12887a;
+    private CommonTopTitleNoTrans a;
     private SmartRefreshLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private RecyclerView f12888c;
+    private RecyclerView c;
     private GridLayoutManager d;
     private CommonRecycleAdapter<BluedLiveListData> e;
     private NoDataAndLoadFailView f;
@@ -98,7 +92,7 @@ public class LiveFootPrintFragmentN extends SimpleFragment {
                 return;
             }
             ImageView imageView = (ImageView) commonAdapterHolder.a(R.id.item_live_foot_print_header);
-            GridLayoutManager.LayoutParams layoutParams = (GridLayoutManager.LayoutParams) commonAdapterHolder.a().getLayoutParams();
+            GridLayoutManager.LayoutParams layoutParams = commonAdapterHolder.a().getLayoutParams();
             if (layoutParams.height != LiveFootPrintFragmentN.this.m) {
                 layoutParams.height = LiveFootPrintFragmentN.this.m;
                 commonAdapterHolder.a().setLayoutParams(layoutParams);
@@ -124,7 +118,7 @@ public class LiveFootPrintFragmentN extends SimpleFragment {
             LiveFootPrintFragmentN.this.n.add(bluedLiveListData.lid);
         }
 
-        @Override // com.blued.android.module.common.adapter.CommonRecycleAdapter, androidx.recyclerview.widget.RecyclerView.Adapter
+        @Override // com.blued.android.module.common.adapter.CommonRecycleAdapter
         public int getItemViewType(int i) {
             return ((BluedLiveListData) this.dataList.get(i)).getItemType();
         }
@@ -176,7 +170,7 @@ public class LiveFootPrintFragmentN extends SimpleFragment {
             public void onUIUpdate(BluedEntityA<LiveFootPrintModel> bluedEntityA) {
                 ArrayList arrayList = new ArrayList();
                 if (bluedEntityA == null || bluedEntityA.data == null) {
-                    LiveFootPrintFragmentN.this.b.l(false);
+                    LiveFootPrintFragmentN.this.b.b(false);
                 } else {
                     for (LiveFootPrintModel liveFootPrintModel : bluedEntityA.data) {
                         UserBasicModel userBasicModel = new UserBasicModel(liveFootPrintModel.getAnchor());
@@ -189,9 +183,9 @@ public class LiveFootPrintFragmentN extends SimpleFragment {
                     }
                     LiveFootPrintFragmentN.this.l.setHasData(bluedEntityA.hasMore());
                     if (LiveFootPrintFragmentN.this.l.getHasData()) {
-                        LiveFootPrintFragmentN.this.b.l(true);
+                        LiveFootPrintFragmentN.this.b.b(true);
                     } else {
-                        LiveFootPrintFragmentN.this.b.l(false);
+                        LiveFootPrintFragmentN.this.b.b(false);
                         if (LiveFootPrintFragmentN.this.e.getDataList().size() + arrayList.size() > 0) {
                             BluedLiveListData bluedLiveListData2 = new BluedLiveListData();
                             bluedLiveListData2.setItemType(1);
@@ -207,7 +201,7 @@ public class LiveFootPrintFragmentN extends SimpleFragment {
                     }
                     LiveRoomUtils.c(LiveFootPrintFragmentN.this.l.tabId, LiveFootPrintFragmentN.this.e.getDataList());
                 }
-                LiveFootPrintFragmentN.this.b.j();
+                LiveFootPrintFragmentN.this.b.g();
                 LiveFootPrintFragmentN.this.b.h();
             }
 
@@ -221,30 +215,29 @@ public class LiveFootPrintFragmentN extends SimpleFragment {
 
     private void f() {
         CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.rootView.findViewById(R.id.title);
-        this.f12887a = commonTopTitleNoTrans;
+        this.a = commonTopTitleNoTrans;
         if (this.o == 1) {
             commonTopTitleNoTrans.setVisibility(8);
             return;
         }
         commonTopTitleNoTrans.setVisibility(0);
-        this.f12887a.setLeftClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveFootPrintFragmentN$4ZlPme7eBL1WuxHXkI2bn1kdV14
+        this.a.setLeftClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveFootPrintFragmentN$4ZlPme7eBL1WuxHXkI2bn1kdV14
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 LiveFootPrintFragmentN.this.a(view);
             }
         });
-        this.f12887a.setCenterText("观看记录");
+        this.a.setCenterText("观看记录");
     }
 
     private void g() {
-        this.b = (SmartRefreshLayout) this.rootView.findViewById(R.id.refreshLayout);
-        RecyclerView recyclerView = (RecyclerView) this.rootView.findViewById(R.id.recyclerView);
-        this.f12888c = recyclerView;
-        recyclerView.setPadding(DisplayUtil.a(AppInfo.d(), 9.0f), 0, DisplayUtil.a(AppInfo.d(), 9.0f), 0);
+        this.b = this.rootView.findViewById(R.id.refreshLayout);
+        RecyclerView findViewById = this.rootView.findViewById(R.id.recyclerView);
+        this.c = findViewById;
+        findViewById.setPadding(DisplayUtil.a(AppInfo.d(), 9.0f), 0, DisplayUtil.a(AppInfo.d(), 9.0f), 0);
         CustomTwoLevelHeader customTwoLevelHeader = (CustomTwoLevelHeader) this.rootView.findViewById(R.id.header);
         this.g = customTwoLevelHeader;
         customTwoLevelHeader.a(new OnTwoLevelListener() { // from class: com.blued.android.module.live_china.fragment.LiveFootPrintFragmentN.3
-            @Override // com.scwang.smartrefresh.layout.api.OnTwoLevelListener
             public boolean onTwoLevel(RefreshLayout refreshLayout) {
                 return false;
             }
@@ -253,20 +246,18 @@ public class LiveFootPrintFragmentN extends SimpleFragment {
         if (this.e == null) {
             this.e = new AnonymousClass4(AppInfo.d());
         }
-        this.f12888c.setAdapter(this.e);
+        this.c.setAdapter(this.e);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(AppInfo.d(), 3);
         this.d = gridLayoutManager;
         gridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() { // from class: com.blued.android.module.live_china.fragment.LiveFootPrintFragmentN.5
-            @Override // androidx.recyclerview.widget.GridLayoutManager.SpanSizeLookup
             public int getSpanSize(int i) {
                 return (i >= LiveFootPrintFragmentN.this.e.getDataList().size() || ((BluedLiveListData) LiveFootPrintFragmentN.this.e.getDataList().get(i)).getItemType() != 0) ? 3 : 1;
             }
         });
-        this.f12888c.setLayoutManager(this.d);
-        this.f12888c.addItemDecoration(new RecyclerView.ItemDecoration() { // from class: com.blued.android.module.live_china.fragment.LiveFootPrintFragmentN.6
-            @Override // androidx.recyclerview.widget.RecyclerView.ItemDecoration
-            public void getItemOffsets(Rect rect, View view, RecyclerView recyclerView2, RecyclerView.State state) {
-                int childAdapterPosition = recyclerView2.getChildAdapterPosition(view);
+        this.c.setLayoutManager(this.d);
+        this.c.addItemDecoration(new RecyclerView.ItemDecoration() { // from class: com.blued.android.module.live_china.fragment.LiveFootPrintFragmentN.6
+            public void getItemOffsets(Rect rect, View view, RecyclerView recyclerView, RecyclerView.State state) {
+                int childAdapterPosition = recyclerView.getChildAdapterPosition(view);
                 if (childAdapterPosition < LiveFootPrintFragmentN.this.e.getDataList().size() && ((BluedLiveListData) LiveFootPrintFragmentN.this.e.getDataList().get(childAdapterPosition)).getItemType() == 0) {
                     float f = 0.0f;
                     rect.top = DisplayUtil.a(view.getContext(), 0.0f);
@@ -286,8 +277,7 @@ public class LiveFootPrintFragmentN extends SimpleFragment {
                 }
             }
         });
-        this.b.b((OnMultiPurposeListener) new SimpleMultiPurposeListener() { // from class: com.blued.android.module.live_china.fragment.LiveFootPrintFragmentN.7
-            @Override // com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener, com.scwang.smartrefresh.layout.listener.OnMultiPurposeListener
+        this.b.a(new SimpleMultiPurposeListener() { // from class: com.blued.android.module.live_china.fragment.LiveFootPrintFragmentN.7
             public void a(RefreshHeader refreshHeader, boolean z, float f, int i, int i2, int i3) {
                 super.a(refreshHeader, z, f, i, i2, i3);
                 if (LiveFootPrintFragmentN.this.getParentFragment() instanceof LiveMainFragment) {
@@ -302,9 +292,8 @@ public class LiveFootPrintFragmentN extends SimpleFragment {
                 }
             }
 
-            @Override // com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener, com.scwang.smartrefresh.layout.listener.OnStateChangedListener
             public void a(RefreshLayout refreshLayout, RefreshState refreshState, RefreshState refreshState2) {
-                if (refreshState2 == RefreshState.None) {
+                if (refreshState2 == RefreshState.a) {
                     LiveFootPrintFragmentN.this.d();
                     if (LiveFootPrintFragmentN.this.j != null && !TextUtils.isEmpty(LiveFootPrintFragmentN.this.j.two_floor_picture)) {
                         com.blued.android.module.live_china.utils.log.EventTrackLive.a(LiveProtos.Event.LIVE_HOME_REFRESH_IMAGE_SHOW, LiveFootPrintFragmentN.this.j.lid, LiveFootPrintFragmentN.this.j.uid, LiveFootPrintFragmentN.this.j.id);
@@ -313,7 +302,7 @@ public class LiveFootPrintFragmentN extends SimpleFragment {
                         return;
                     }
                     com.blued.android.module.live_china.utils.log.EventTrackLive.a(LiveProtos.Event.LIVE_HOME_REFRESH_WORD_SHOW, LiveFootPrintFragmentN.this.j.lid, LiveFootPrintFragmentN.this.j.uid, LiveFootPrintFragmentN.this.j.id);
-                } else if (refreshState2 != RefreshState.ReleaseToTwoLevel && refreshState2 == RefreshState.TwoLevelReleased) {
+                } else if (refreshState2 != RefreshState.h && refreshState2 == RefreshState.i) {
                     LiveFootPrintFragmentN.this.e();
                     if (LiveFootPrintFragmentN.this.j == null) {
                         return;
@@ -327,7 +316,6 @@ public class LiveFootPrintFragmentN extends SimpleFragment {
                 }
             }
 
-            @Override // com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener, com.scwang.smartrefresh.layout.listener.OnRefreshListener
             public void onRefresh(RefreshLayout refreshLayout) {
                 LiveFootPrintFragmentN.this.a(true);
                 LiveFootPrintFragmentN.this.d.scrollToPosition(0);
@@ -339,7 +327,6 @@ public class LiveFootPrintFragmentN extends SimpleFragment {
             }
         });
         this.b.a(new OnLoadMoreListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveFootPrintFragmentN$nJ7BNkhAWk5yI_RleuwfLryUElk
-            @Override // com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
             public final void onLoadMore(RefreshLayout refreshLayout) {
                 LiveFootPrintFragmentN.this.a(refreshLayout);
             }
@@ -347,7 +334,7 @@ public class LiveFootPrintFragmentN extends SimpleFragment {
         postSafeRunOnUiThread(new Runnable() { // from class: com.blued.android.module.live_china.fragment.LiveFootPrintFragmentN.8
             @Override // java.lang.Runnable
             public void run() {
-                LiveFootPrintFragmentN.this.b.b(LiveFootPrintFragmentN.this.g);
+                LiveFootPrintFragmentN.this.b.a(LiveFootPrintFragmentN.this.g);
             }
         });
         d();
@@ -439,7 +426,7 @@ public class LiveFootPrintFragmentN extends SimpleFragment {
             this.j = liveMainFragment.t();
             this.i = liveMainFragment.s();
         }
-        if (this.b.getState() == RefreshState.None) {
+        if (this.b.getState() == RefreshState.a) {
             this.g.a(this.i);
             LiveTwoFloorModel liveTwoFloorModel = this.j;
             String str = liveTwoFloorModel != null ? liveTwoFloorModel.two_floor_picture : "";
@@ -474,7 +461,6 @@ public class LiveFootPrintFragmentN extends SimpleFragment {
         }
     }
 
-    @Override // com.blued.android.framework.ui.SimpleFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         String str;
         String str2;
@@ -482,7 +468,7 @@ public class LiveFootPrintFragmentN extends SimpleFragment {
         String str3 = "";
         if (getArguments() != null) {
             this.o = getArguments().getInt("from", 0);
-            str3 = getArguments().getString(STManager.KEY_TAB_ID, "");
+            str3 = getArguments().getString("tabId", "");
             str = getArguments().getString("tabName", "");
             str2 = getArguments().getString("tabPoint", "");
             this.q = getArguments().getString("live_pay_beans_details", "");
@@ -505,7 +491,6 @@ public class LiveFootPrintFragmentN extends SimpleFragment {
         com.blued.android.module.live_china.utils.log.EventTrackLive.a(LiveProtos.Event.LIVE_FOOTPRINT_CLICK);
     }
 
-    @Override // com.blued.android.framework.ui.SimpleFragment
     public void onInitView() {
         super.onInitView();
         f();
@@ -517,9 +502,9 @@ public class LiveFootPrintFragmentN extends SimpleFragment {
         this.m = (AppInfo.l - DisplayUtil.a(AppInfo.d(), 24.0f)) / 3;
         com.blued.android.module.live_china.utils.log.EventTrackLive.a(LiveProtos.Event.LIVE_FOOTPRINT_PAGE_SHOW);
         if (this.l.hasRequestData) {
-            List<BluedLiveListData> c2 = LiveRoomUtils.c(this.l.tabId);
-            this.b.l(this.l.getHasData());
-            this.e.setDataAndNotify(c2);
+            List<BluedLiveListData> c = LiveRoomUtils.c(this.l.tabId);
+            this.b.b(this.l.getHasData());
+            this.e.setDataAndNotify(c);
         } else {
             postDelaySafeRunOnUiThread(new Runnable() { // from class: com.blued.android.module.live_china.fragment.LiveFootPrintFragmentN.1
                 @Override // java.lang.Runnable
@@ -529,7 +514,6 @@ public class LiveFootPrintFragmentN extends SimpleFragment {
             }, 300L);
         }
         LiveEventBus.get("live_back_to_two_level", String.class).observe(this, new Observer<String>() { // from class: com.blued.android.module.live_china.fragment.LiveFootPrintFragmentN.2
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(String str) {
                 LiveFootPrintFragmentN.this.postDelaySafeRunOnUiThread(new Runnable() { // from class: com.blued.android.module.live_china.fragment.LiveFootPrintFragmentN.2.1
@@ -545,26 +529,22 @@ public class LiveFootPrintFragmentN extends SimpleFragment {
         });
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onPause() {
         super.onPause();
         this.k = false;
         a();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onResume() {
         super.onResume();
         this.k = true;
         a();
     }
 
-    @Override // com.blued.android.framework.ui.SimpleFragment
     public int onSetRootViewId() {
         return R.layout.fragment_live_foot_point;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void setUserVisibleHint(boolean z) {
         super.setUserVisibleHint(z);
         a();

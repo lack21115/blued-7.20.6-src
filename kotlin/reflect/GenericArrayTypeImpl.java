@@ -9,13 +9,11 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/reflect/GenericArrayTypeImpl.class */
 public final class GenericArrayTypeImpl implements GenericArrayType, TypeImpl {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Type f42596a;
+    private final Type a;
 
     public GenericArrayTypeImpl(Type elementType) {
         Intrinsics.e(elementType, "elementType");
-        this.f42596a = elementType;
+        this.a = elementType;
     }
 
     public boolean equals(Object obj) {
@@ -24,13 +22,13 @@ public final class GenericArrayTypeImpl implements GenericArrayType, TypeImpl {
 
     @Override // java.lang.reflect.GenericArrayType
     public Type getGenericComponentType() {
-        return this.f42596a;
+        return this.a;
     }
 
     public String getTypeName() {
         String b;
         StringBuilder sb = new StringBuilder();
-        b = TypesJVMKt.b(this.f42596a);
+        b = TypesJVMKt.b(this.a);
         sb.append(b);
         sb.append("[]");
         return sb.toString();

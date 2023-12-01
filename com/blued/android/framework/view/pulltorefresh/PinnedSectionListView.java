@@ -22,13 +22,9 @@ import com.blued.android.framework.R;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/view/pulltorefresh/PinnedSectionListView.class */
 public class PinnedSectionListView extends ListView {
-
-    /* renamed from: a  reason: collision with root package name */
-    AbsListView.OnScrollListener f10229a;
+    AbsListView.OnScrollListener a;
     PinnedSection b;
-
-    /* renamed from: c  reason: collision with root package name */
-    PinnedSection f10230c;
+    PinnedSection c;
     int d;
     private final Rect e;
     private final PointF f;
@@ -44,13 +40,9 @@ public class PinnedSectionListView extends ListView {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/view/pulltorefresh/PinnedSectionListView$PinnedSection.class */
     public static class PinnedSection {
-
-        /* renamed from: a  reason: collision with root package name */
-        public View f10234a;
+        public View a;
         public int b;
-
-        /* renamed from: c  reason: collision with root package name */
-        public long f10235c;
+        public long c;
 
         PinnedSection() {
         }
@@ -68,8 +60,8 @@ public class PinnedSectionListView extends ListView {
         this.m = new AbsListView.OnScrollListener() { // from class: com.blued.android.framework.view.pulltorefresh.PinnedSectionListView.1
             @Override // android.widget.AbsListView.OnScrollListener
             public void onScroll(AbsListView absListView, int i, int i2, int i3) {
-                if (PinnedSectionListView.this.f10229a != null) {
-                    PinnedSectionListView.this.f10229a.onScroll(absListView, i, i2, i3);
+                if (PinnedSectionListView.this.a != null) {
+                    PinnedSectionListView.this.a.onScroll(absListView, i, i2, i3);
                 }
                 ListAdapter adapter = PinnedSectionListView.this.getAdapter();
                 if (adapter == null || i2 == 0) {
@@ -94,8 +86,8 @@ public class PinnedSectionListView extends ListView {
 
             @Override // android.widget.AbsListView.OnScrollListener
             public void onScrollStateChanged(AbsListView absListView, int i) {
-                if (PinnedSectionListView.this.f10229a != null) {
-                    PinnedSectionListView.this.f10229a.onScrollStateChanged(absListView, i);
+                if (PinnedSectionListView.this.a != null) {
+                    PinnedSectionListView.this.a.onScrollStateChanged(absListView, i);
                 }
             }
         };
@@ -120,8 +112,8 @@ public class PinnedSectionListView extends ListView {
         this.m = new AbsListView.OnScrollListener() { // from class: com.blued.android.framework.view.pulltorefresh.PinnedSectionListView.1
             @Override // android.widget.AbsListView.OnScrollListener
             public void onScroll(AbsListView absListView, int i2, int i22, int i3) {
-                if (PinnedSectionListView.this.f10229a != null) {
-                    PinnedSectionListView.this.f10229a.onScroll(absListView, i2, i22, i3);
+                if (PinnedSectionListView.this.a != null) {
+                    PinnedSectionListView.this.a.onScroll(absListView, i2, i22, i3);
                 }
                 ListAdapter adapter = PinnedSectionListView.this.getAdapter();
                 if (adapter == null || i22 == 0) {
@@ -146,8 +138,8 @@ public class PinnedSectionListView extends ListView {
 
             @Override // android.widget.AbsListView.OnScrollListener
             public void onScrollStateChanged(AbsListView absListView, int i2) {
-                if (PinnedSectionListView.this.f10229a != null) {
-                    PinnedSectionListView.this.f10229a.onScrollStateChanged(absListView, i2);
+                if (PinnedSectionListView.this.a != null) {
+                    PinnedSectionListView.this.a.onScrollStateChanged(absListView, i2);
                 }
             }
         };
@@ -199,15 +191,15 @@ public class PinnedSectionListView extends ListView {
 
     private boolean e() {
         AdapterView.OnItemClickListener onItemClickListener;
-        if (this.f10230c == null || (onItemClickListener = getOnItemClickListener()) == null) {
+        if (this.c == null || (onItemClickListener = getOnItemClickListener()) == null) {
             return false;
         }
-        View view = this.f10230c.f10234a;
+        View view = this.c.a;
         playSoundEffect(0);
         if (view != null) {
             view.sendAccessibilityEvent(1);
         }
-        onItemClickListener.onItemClick(this, view, this.f10230c.b, this.f10230c.f10235c);
+        onItemClickListener.onItemClick(this, view, this.c.b, this.c.c);
         return true;
     }
 
@@ -228,10 +220,10 @@ public class PinnedSectionListView extends ListView {
     }
 
     void a() {
-        PinnedSection pinnedSection = this.f10230c;
+        PinnedSection pinnedSection = this.c;
         if (pinnedSection != null) {
             this.b = pinnedSection;
-            this.f10230c = null;
+            this.c = null;
         }
     }
 
@@ -242,7 +234,7 @@ public class PinnedSectionListView extends ListView {
         if (pinnedSection == null) {
             pinnedSection2 = new PinnedSection();
         }
-        View view = getAdapter().getView(i, pinnedSection2.f10234a, this);
+        View view = getAdapter().getView(i, pinnedSection2.a, this);
         AbsListView.LayoutParams layoutParams = (AbsListView.LayoutParams) view.getLayoutParams();
         AbsListView.LayoutParams layoutParams2 = layoutParams;
         if (layoutParams == null) {
@@ -266,10 +258,10 @@ public class PinnedSectionListView extends ListView {
         view.layout(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight());
         this.d = 0;
         view.setBackgroundResource(R.drawable.group_distance_bg);
-        pinnedSection2.f10234a = view;
+        pinnedSection2.a = view;
         pinnedSection2.b = i;
-        pinnedSection2.f10235c = getAdapter().getItemId(i);
-        this.f10230c = pinnedSection2;
+        pinnedSection2.c = getAdapter().getItemId(i);
+        this.c = pinnedSection2;
     }
 
     void a(int i, int i2, int i3) {
@@ -277,22 +269,22 @@ public class PinnedSectionListView extends ListView {
             a();
             return;
         }
-        PinnedSection pinnedSection = this.f10230c;
+        PinnedSection pinnedSection = this.c;
         if (pinnedSection != null && pinnedSection.b != i) {
             a();
         }
-        if (this.f10230c == null) {
+        if (this.c == null) {
             a(i);
         }
         int i4 = i + 1;
         if (i4 < getCount()) {
-            int a2 = a(i4, i3 - (i4 - i2));
-            if (a2 <= -1) {
+            int a = a(i4, i3 - (i4 - i2));
+            if (a <= -1) {
                 this.d = 0;
                 this.k = Integer.MAX_VALUE;
                 return;
             }
-            int top = getChildAt(a2 - i2).getTop() - (this.f10230c.f10234a.getBottom() + getPaddingTop());
+            int top = getChildAt(a - i2).getTop() - (this.c.a.getBottom() + getPaddingTop());
             this.k = top;
             if (top < 0) {
                 this.d = top;
@@ -349,17 +341,17 @@ public class PinnedSectionListView extends ListView {
     @Override // android.widget.ListView, android.widget.AbsListView, android.view.ViewGroup, android.view.View
     public void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
-        if (this.f10230c != null) {
+        if (this.c != null) {
             int listPaddingLeft = getListPaddingLeft();
             int listPaddingTop = getListPaddingTop();
-            View view = this.f10230c.f10234a;
+            View view = this.c.a;
             canvas.save();
             canvas.clipRect(listPaddingLeft, listPaddingTop, view.getWidth() + listPaddingLeft, view.getHeight() + (this.j == null ? 0 : Math.min(this.l, this.k)) + listPaddingTop);
             canvas.translate(listPaddingLeft, listPaddingTop + this.d);
-            drawChild(canvas, this.f10230c.f10234a, getDrawingTime());
+            drawChild(canvas, this.c.a, getDrawingTime());
             GradientDrawable gradientDrawable = this.j;
             if (gradientDrawable != null && this.k > 0) {
-                gradientDrawable.setBounds(this.f10230c.f10234a.getLeft(), this.f10230c.f10234a.getBottom(), this.f10230c.f10234a.getRight(), this.f10230c.f10234a.getBottom() + this.l);
+                gradientDrawable.setBounds(this.c.a.getLeft(), this.c.a.getBottom(), this.c.a.getRight(), this.c.a.getBottom() + this.l);
                 this.j.draw(canvas);
             }
             canvas.restore();
@@ -372,8 +364,8 @@ public class PinnedSectionListView extends ListView {
         float x = motionEvent.getX();
         float y = motionEvent.getY();
         int action = motionEvent.getAction();
-        if (action == 0 && this.h == null && (pinnedSection = this.f10230c) != null && a(pinnedSection.f10234a, x, y)) {
-            this.h = this.f10230c.f10234a;
+        if (action == 0 && this.h == null && (pinnedSection = this.c) != null && a(pinnedSection.a, x, y)) {
+            this.h = this.c.a;
             this.f.x = x;
             this.f.y = y;
             this.i = MotionEvent.obtain(motionEvent);
@@ -411,7 +403,7 @@ public class PinnedSectionListView extends ListView {
     @Override // android.widget.AbsListView, android.widget.AdapterView, android.view.ViewGroup, android.view.View
     public void onLayout(boolean z, int i, int i2, int i3, int i4) {
         super.onLayout(z, i, i2, i3, i4);
-        if (this.f10230c == null || ((i3 - i) - getPaddingLeft()) - getPaddingRight() == this.f10230c.f10234a.getWidth()) {
+        if (this.c == null || ((i3 - i) - getPaddingLeft()) - getPaddingRight() == this.c.a.getWidth()) {
             return;
         }
         b();
@@ -448,15 +440,15 @@ public class PinnedSectionListView extends ListView {
         if (onScrollListener == this.m) {
             super.setOnScrollListener(onScrollListener);
         } else {
-            this.f10229a = onScrollListener;
+            this.a = onScrollListener;
         }
     }
 
     public void setShadowVisible(boolean z) {
         a(z);
-        PinnedSection pinnedSection = this.f10230c;
+        PinnedSection pinnedSection = this.c;
         if (pinnedSection != null) {
-            View view = pinnedSection.f10234a;
+            View view = pinnedSection.a;
             invalidate(view.getLeft(), view.getTop(), view.getRight(), view.getBottom() + this.l);
         }
     }

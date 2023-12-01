@@ -1,7 +1,6 @@
 package com.kwad.sdk.collector;
 
 import android.os.Environment;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.kwad.sdk.collector.AppStatusRules;
 import com.kwad.sdk.collector.model.jni.AnalyseTaskNative;
 import com.kwad.sdk.collector.model.jni.AppRunningInfoNative;
@@ -30,7 +29,7 @@ public final class b {
                 if (i2 >= size) {
                     if (d.tF()) {
                         try {
-                            long[] analysis = AppStatusNative.analysis(jArr, file.getAbsolutePath() + BridgeUtil.SPLIT_MARK);
+                            long[] analysis = AppStatusNative.analysis(jArr, file.getAbsolutePath() + "/");
                             StringBuilder sb = new StringBuilder("analysisByFile: runningInfoPtrs: ");
                             sb.append(analysis);
                             com.kwad.sdk.core.d.b.d("AppStatusAnalyserNative", sb.toString());

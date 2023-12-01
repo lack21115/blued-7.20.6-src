@@ -13,24 +13,24 @@ import com.meizu.cloud.pushsdk.notification.model.AdvanceSettingEx;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f24133a;
+    private Context f10518a;
     private com.meizu.cloud.pushsdk.b.a.a b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f24134c;
+    private int f10519c;
     private Notification d;
 
     public a(Context context) {
-        this.f24133a = context;
+        this.f10518a = context;
     }
 
     private void a(int i, Notification notification) {
-        this.f24134c = i;
+        this.f10519c = i;
         this.d = notification;
     }
 
     private void b() {
-        this.f24134c = 0;
+        this.f10519c = 0;
         this.d = null;
         com.meizu.cloud.pushsdk.b.a.a aVar = this.b;
         try {
@@ -62,7 +62,7 @@ public class a {
                 this.b = null;
             }
         }
-        com.meizu.cloud.pushsdk.b.a.a aVar2 = new com.meizu.cloud.pushsdk.b.a.a(this.f24133a, new Runnable() { // from class: com.meizu.cloud.pushsdk.handler.a.a.a.1
+        com.meizu.cloud.pushsdk.b.a.a aVar2 = new com.meizu.cloud.pushsdk.b.a.a(this.f10518a, new Runnable() { // from class: com.meizu.cloud.pushsdk.handler.a.a.a.1
             @Override // java.lang.Runnable
             public void run() {
                 DebugLogger.d("AdNotification", "ad priority valid time out");
@@ -74,12 +74,12 @@ public class a {
     }
 
     public void a() {
-        if (this.f24134c <= 0 || this.d == null) {
+        if (this.f10519c <= 0 || this.d == null) {
             return;
         }
         try {
-            ((NotificationManager) this.f24133a.getSystemService("notification")).notify(this.f24134c, this.d);
-            DebugLogger.d("AdNotification", "again show old ad notification, notifyId:" + this.f24134c);
+            ((NotificationManager) this.f10518a.getSystemService("notification")).notify(this.f10519c, this.d);
+            DebugLogger.d("AdNotification", "again show old ad notification, notifyId:" + this.f10519c);
         } catch (Exception e) {
             e.printStackTrace();
             DebugLogger.e("AdNotification", "again show old ad notification error:" + e.getMessage());
@@ -89,7 +89,7 @@ public class a {
 
     public void a(int i) {
         int i2;
-        if (i <= 0 || (i2 = this.f24134c) <= 0 || i != i2) {
+        if (i <= 0 || (i2 = this.f10519c) <= 0 || i != i2) {
             return;
         }
         b();

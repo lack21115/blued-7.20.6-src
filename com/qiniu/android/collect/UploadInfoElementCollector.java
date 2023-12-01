@@ -14,21 +14,21 @@ public class UploadInfoElementCollector {
         return new LogHandler() { // from class: com.qiniu.android.collect.UploadInfoElementCollector.1
             @Override // com.qiniu.android.collect.LogHandler
             public Object getUploadInfo() {
-                return Object.this;
+                return obj;
             }
 
             @Override // com.qiniu.android.collect.LogHandler
             public void send(String str, Object obj2) {
                 try {
                     if (obj2 instanceof String) {
-                        Class<?> cls = Object.this.getClass();
-                        cls.getMethod("set" + StringUtils.upperCase(str), Class.forName("java.lang.String")).invoke(Object.this, obj2);
+                        Class<?> cls = obj.getClass();
+                        cls.getMethod("set" + StringUtils.upperCase(str), Class.forName("java.lang.String")).invoke(obj, obj2);
                     } else if (obj2 instanceof Integer) {
-                        Class<?> cls2 = Object.this.getClass();
-                        cls2.getMethod("set" + StringUtils.upperCase(str), Integer.TYPE).invoke(Object.this, obj2);
+                        Class<?> cls2 = obj.getClass();
+                        cls2.getMethod("set" + StringUtils.upperCase(str), Integer.TYPE).invoke(obj, obj2);
                     } else if (obj2 instanceof Long) {
-                        Class<?> cls3 = Object.this.getClass();
-                        cls3.getMethod("set" + StringUtils.upperCase(str), Long.TYPE).invoke(Object.this, obj2);
+                        Class<?> cls3 = obj.getClass();
+                        cls3.getMethod("set" + StringUtils.upperCase(str), Long.TYPE).invoke(obj, obj2);
                     }
                 } catch (ClassNotFoundException e) {
                     e.printStackTrace();

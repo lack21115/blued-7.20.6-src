@@ -10,13 +10,9 @@ import kotlin.jvm.internal.markers.KMappedMarker;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/ranges/CharProgression.class */
 public class CharProgression implements Iterable<Character>, KMappedMarker {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f42568a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private final char b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final char f42569c;
+    private final char c;
     private final int d;
 
     @Metadata
@@ -30,15 +26,15 @@ public class CharProgression implements Iterable<Character>, KMappedMarker {
         }
     }
 
-    public CharProgression(char c2, char c3, int i) {
+    public CharProgression(char c, char c2, int i) {
         if (i == 0) {
             throw new IllegalArgumentException("Step must be non-zero.");
         }
         if (i == Integer.MIN_VALUE) {
             throw new IllegalArgumentException("Step must be greater than Int.MIN_VALUE to avoid overflow on negation.");
         }
-        this.b = c2;
-        this.f42569c = (char) ProgressionUtilKt.a((int) c2, (int) c3, i);
+        this.b = c;
+        this.c = (char) ProgressionUtilKt.a((int) c, (int) c2, i);
         this.d = i;
     }
 
@@ -47,17 +43,17 @@ public class CharProgression implements Iterable<Character>, KMappedMarker {
     }
 
     public final char b() {
-        return this.f42569c;
+        return this.c;
     }
 
     @Override // java.lang.Iterable
     /* renamed from: c */
     public CharIterator iterator() {
-        return new CharProgressionIterator(this.b, this.f42569c, this.d);
+        return new CharProgressionIterator(this.b, this.c, this.d);
     }
 
     public boolean d() {
-        return this.d > 0 ? Intrinsics.a((int) this.b, (int) this.f42569c) > 0 : Intrinsics.a((int) this.b, (int) this.f42569c) < 0;
+        return this.d > 0 ? Intrinsics.a((int) this.b, (int) this.c) > 0 : Intrinsics.a((int) this.b, (int) this.c) < 0;
     }
 
     public boolean equals(Object obj) {
@@ -66,7 +62,7 @@ public class CharProgression implements Iterable<Character>, KMappedMarker {
                 return true;
             }
             CharProgression charProgression = (CharProgression) obj;
-            return this.b == charProgression.b && this.f42569c == charProgression.f42569c && this.d == charProgression.d;
+            return this.b == charProgression.b && this.c == charProgression.c && this.d == charProgression.d;
         }
         return false;
     }
@@ -75,7 +71,7 @@ public class CharProgression implements Iterable<Character>, KMappedMarker {
         if (d()) {
             return -1;
         }
-        return (((this.b * 31) + this.f42569c) * 31) + this.d;
+        return (((this.b * 31) + this.c) * 31) + this.d;
     }
 
     public String toString() {
@@ -85,14 +81,14 @@ public class CharProgression implements Iterable<Character>, KMappedMarker {
             sb = new StringBuilder();
             sb.append(this.b);
             sb.append("..");
-            sb.append(this.f42569c);
+            sb.append(this.c);
             sb.append(" step ");
             i = this.d;
         } else {
             sb = new StringBuilder();
             sb.append(this.b);
             sb.append(" downTo ");
-            sb.append(this.f42569c);
+            sb.append(this.c);
             sb.append(" step ");
             i = -this.d;
         }

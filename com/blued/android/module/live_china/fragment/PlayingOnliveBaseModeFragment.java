@@ -2,6 +2,7 @@ package com.blued.android.module.live_china.fragment;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.res.Configuration;
@@ -33,7 +34,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 import androidx.lifecycle.Observer;
-import com.anythink.expressad.video.module.a.a.m;
+import com.android.internal.widget.LockPatternUtils;
 import com.blued.android.chat.core.pack.ReqAckPackage;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.AppMethods;
@@ -61,7 +62,6 @@ import com.blued.android.module.live.base.event.LiveBeansChangeEvent;
 import com.blued.android.module.live.base.utils.LiveTimeAndDateUtils;
 import com.blued.android.module.live.base.utils.LiveUserRelationshipUtils;
 import com.blued.android.module.live_china.R;
-import com.blued.android.module.live_china.activity.PlayingOnliveActivity;
 import com.blued.android.module.live_china.constant.LiveRoomConstants;
 import com.blued.android.module.live_china.fragment.LiveBaseDialogFragment;
 import com.blued.android.module.live_china.fragment.LiveGiftFragmentDialogFragment;
@@ -162,7 +162,6 @@ import com.blued.android.module.svgaplayer.SVGAVideoEntity;
 import com.blued.das.live.LiveProtos;
 import com.bytedance.applog.tracker.Tracker;
 import com.jeremyliao.liveeventbus.LiveEventBus;
-import com.soft.blued.constant.EventBusConstant;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Date;
@@ -233,9 +232,7 @@ public class PlayingOnliveBaseModeFragment extends BaseFragment implements View.
     public int ao;
     public int ap;
     public int aq;
-
-    /* renamed from: ar  reason: collision with root package name */
-    public int f13293ar;
+    public int ar;
     public boolean at;
     public FrameLayout au;
     public View av;
@@ -262,9 +259,7 @@ public class PlayingOnliveBaseModeFragment extends BaseFragment implements View.
     private double bw;
     private String bx;
     private CountDownTimer by;
-
-    /* renamed from: c  reason: collision with root package name */
-    public ViewGroup f13294c;
+    public ViewGroup c;
     public ViewGroup d;
     public TextView e;
     public ViewGroup f;
@@ -293,35 +288,32 @@ public class PlayingOnliveBaseModeFragment extends BaseFragment implements View.
     public boolean aU = false;
     protected boolean aV = false;
     private Observer bv = new Observer<String>() { // from class: com.blued.android.module.live_china.fragment.PlayingOnliveBaseModeFragment.1
-        @Override // androidx.lifecycle.Observer
         /* renamed from: a */
         public void onChanged(String str) {
             PlayingOnliveBaseModeFragment.this.ac();
         }
     };
     public TextWatcher aX = new TextWatcher() { // from class: com.blued.android.module.live_china.fragment.PlayingOnliveBaseModeFragment.23
-
-        /* renamed from: a  reason: collision with root package name */
-        public int f13314a;
+        public int a;
         public int b;
 
         @Override // android.text.TextWatcher
         public void afterTextChanged(Editable editable) {
             int i;
-            this.f13314a = PlayingOnliveBaseModeFragment.this.S.getSelectionStart();
+            this.a = PlayingOnliveBaseModeFragment.this.S.getSelectionStart();
             this.b = PlayingOnliveBaseModeFragment.this.S.getSelectionEnd();
             PlayingOnliveBaseModeFragment.this.S.removeTextChangedListener(PlayingOnliveBaseModeFragment.this.aX);
             if (AppInfo.m() && TextUtils.equals("test", editable.toString())) {
                 AppMethods.a((CharSequence) "1012");
             }
-            while (editable.length() > LiveRoomConstants.f11735a && (i = this.f13314a) != 0) {
+            while (editable.length() > LiveRoomConstants.a && (i = this.a) != 0) {
                 editable.delete(i - 1, this.b);
-                this.f13314a--;
+                this.a--;
                 this.b--;
             }
-            Logger.a("rrb", "editStart = ", Integer.valueOf(this.f13314a));
-            if (this.f13314a >= 0) {
-                PlayingOnliveBaseModeFragment.this.S.setSelection(this.f13314a);
+            Logger.a("rrb", "editStart = ", Integer.valueOf(this.a));
+            if (this.a >= 0) {
+                PlayingOnliveBaseModeFragment.this.S.setSelection(this.a);
             }
             PlayingOnliveBaseModeFragment.this.S.addTextChangedListener(PlayingOnliveBaseModeFragment.this.aX);
         }
@@ -334,10 +326,8 @@ public class PlayingOnliveBaseModeFragment extends BaseFragment implements View.
         public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    public Context f13292a;
-    GestureDetector aY = new GestureDetector(this.f13292a, new GestureDetector.SimpleOnGestureListener() { // from class: com.blued.android.module.live_china.fragment.PlayingOnliveBaseModeFragment.26
+    public Context a;
+    GestureDetector aY = new GestureDetector(this.a, new GestureDetector.SimpleOnGestureListener() { // from class: com.blued.android.module.live_china.fragment.PlayingOnliveBaseModeFragment.26
         @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnDoubleTapListener
         public boolean onDoubleTap(MotionEvent motionEvent) {
             Logger.a("drb", "双击事件");
@@ -513,12 +503,10 @@ public class PlayingOnliveBaseModeFragment extends BaseFragment implements View.
     /* renamed from: com.blued.android.module.live_china.fragment.PlayingOnliveBaseModeFragment$21  reason: invalid class name */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/PlayingOnliveBaseModeFragment$21.class */
     public class AnonymousClass21 implements SendMsgListener {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ boolean f13310a;
+        final /* synthetic */ boolean a;
 
         AnonymousClass21(boolean z) {
-            this.f13310a = z;
+            this.a = z;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -530,6 +518,8 @@ public class PlayingOnliveBaseModeFragment extends BaseFragment implements View.
             PlayingOnliveBaseModeFragment.this.T.setEnabled(true);
             PlayingOnliveBaseModeFragment.this.T.setText("发送");
             PlayingOnliveBaseModeFragment.this.T.animate().alpha(1.0f).setDuration(300L).setListener(new AnimatorListenerAdapter() { // from class: com.blued.android.module.live_china.fragment.PlayingOnliveBaseModeFragment.21.1
+                /* JADX WARN: Multi-variable type inference failed */
+                /* JADX WARN: Type inference failed for: r0v52, types: [com.blued.android.module.live_china.view.LiveMsgShimmerTextView] */
                 @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                 public void onAnimationEnd(Animator animator) {
                     if (PlayingOnliveBaseModeFragment.this.getActivity() == null || PlayingOnliveBaseModeFragment.this.getActivity().isFinishing()) {
@@ -540,7 +530,7 @@ public class PlayingOnliveBaseModeFragment extends BaseFragment implements View.
                             PlayingOnliveBaseModeFragment.this.q.l.setVisibility(8);
                             PlayingOnliveBaseModeFragment.this.q.k.e();
                         }
-                        new LiveSendMsgTransitionAnimView(PlayingOnliveBaseModeFragment.this.f13292a).a(PlayingOnliveBaseModeFragment.this.getActivity(), PlayingOnliveBaseModeFragment.this.f13294c, PlayingOnliveBaseModeFragment.this.S.getText().toString(), PlayingOnliveBaseModeFragment.this.R.getVisibility() == 0 ? PlayingOnliveBaseModeFragment.this.S : PlayingOnliveBaseModeFragment.this.bn, PlayingOnliveBaseModeFragment.this.q.j, runnable);
+                        new LiveSendMsgTransitionAnimView(PlayingOnliveBaseModeFragment.this.a).a((Activity) PlayingOnliveBaseModeFragment.this.getActivity(), PlayingOnliveBaseModeFragment.this.c, PlayingOnliveBaseModeFragment.this.S.getText().toString(), (View) (PlayingOnliveBaseModeFragment.this.R.getVisibility() == 0 ? PlayingOnliveBaseModeFragment.this.S : PlayingOnliveBaseModeFragment.this.bn), (View) PlayingOnliveBaseModeFragment.this.q.j, runnable);
                     } else {
                         Runnable runnable2 = runnable;
                         if (runnable2 != null) {
@@ -571,7 +561,7 @@ public class PlayingOnliveBaseModeFragment extends BaseFragment implements View.
                 return;
             }
             EditText editText = PlayingOnliveBaseModeFragment.this.S;
-            final boolean z = this.f13310a;
+            final boolean z = this.a;
             editText.post(new Runnable() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$PlayingOnliveBaseModeFragment$21$o46pDjBhgn1COVKEJI7aQ_ehU18
                 @Override // java.lang.Runnable
                 public final void run() {
@@ -641,7 +631,7 @@ public class PlayingOnliveBaseModeFragment extends BaseFragment implements View.
             return;
         }
         sVGAImageView.setVisibility(0);
-        SVGAParser.f15958a.b().a("live_gift_fragment.svga", new SVGAParser.ParseCompletion() { // from class: com.blued.android.module.live_china.fragment.PlayingOnliveBaseModeFragment.40
+        SVGAParser.a.b().a("live_gift_fragment.svga", new SVGAParser.ParseCompletion() { // from class: com.blued.android.module.live_china.fragment.PlayingOnliveBaseModeFragment.40
 
             /* renamed from: com.blued.android.module.live_china.fragment.PlayingOnliveBaseModeFragment$40$1  reason: invalid class name */
             /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/PlayingOnliveBaseModeFragment$40$1.class */
@@ -755,58 +745,49 @@ public class PlayingOnliveBaseModeFragment extends BaseFragment implements View.
     }
 
     private void ad() {
-        LiveEventBus.get(EventBusConstant.KEY_EVENT_LIVE_LUCK_TURNING_BTN, Boolean.class).observe(this, new Observer<Boolean>() { // from class: com.blued.android.module.live_china.fragment.PlayingOnliveBaseModeFragment.2
-            @Override // androidx.lifecycle.Observer
+        LiveEventBus.get("live_luck_turning_btn", Boolean.class).observe(this, new Observer<Boolean>() { // from class: com.blued.android.module.live_china.fragment.PlayingOnliveBaseModeFragment.2
             /* renamed from: a */
             public void onChanged(Boolean bool) {
                 PlayingOnliveBaseModeFragment.this.af();
             }
         });
-        LiveEventBus.get(LiveEventBusUtil.f13938c, LiveEntranceData.class).observe(this, new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$PlayingOnliveBaseModeFragment$NC7im0MJjmNkU84VvjubxjqZfww
-            @Override // androidx.lifecycle.Observer
+        LiveEventBus.get(LiveEventBusUtil.c, LiveEntranceData.class).observe(this, new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$PlayingOnliveBaseModeFragment$NC7im0MJjmNkU84VvjubxjqZfww
             public final void onChanged(Object obj) {
                 PlayingOnliveBaseModeFragment.this.a((LiveEntranceData) obj);
             }
         });
         LiveEventBus.get("live_beans_change", LiveBeansChangeEvent.class).observe(this, new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$PlayingOnliveBaseModeFragment$asl1qYEoIottL_sMwiKlDRUSKBY
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 PlayingOnliveBaseModeFragment.this.a((LiveBeansChangeEvent) obj);
             }
         });
         LiveEventBus.get(LiveEventBusUtil.C, LiveRoomFunctionItemModel.class).observe(this, new $$Lambda$iYY4pdGBSBhTTrGtmUvzVDHnEHs(this));
         LiveEventBus.get(LiveEventBusUtil.k, Integer.class).observe(this, new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$PlayingOnliveBaseModeFragment$3MHksk-tJ23oxkVbqEFEQM1O6mw
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 PlayingOnliveBaseModeFragment.this.a((Integer) obj);
             }
         });
         LiveEventBus.get(LiveEventBusUtil.l, Boolean.class).observe(this, new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$PlayingOnliveBaseModeFragment$FIwmL6r_ehey06AWnfKBMCtSkyg
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 PlayingOnliveBaseModeFragment.this.b((Boolean) obj);
             }
         });
         LiveEventBus.get(LiveEventBusUtil.b, LiveChattingModel.class).observe(this, new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$PlayingOnliveBaseModeFragment$MHJtKrpziWi9vTG-YlZ_OzCORqg
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 PlayingOnliveBaseModeFragment.this.d((LiveChattingModel) obj);
             }
         });
         LiveEventBus.get("key_event_live_add_fans_club_success", Boolean.class).observe(this, new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$PlayingOnliveBaseModeFragment$ugItoiwnf3J-wIfvVCoXJg7KPwM
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 PlayingOnliveBaseModeFragment.this.a((Boolean) obj);
             }
         });
         LiveEventBus.get("live_function_red_dot", LiveJoinRoomExtraModel.class).observe(this, new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$PlayingOnliveBaseModeFragment$ItF1gjpQ5_UfgSGDyjLUeJE9dBA
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 PlayingOnliveBaseModeFragment.this.a((LiveJoinRoomExtraModel) obj);
             }
         });
         LiveEventBus.get("live_gift_fragment_play_svga", LiveSyntheticFragmentSuccessModel.class).observe(this, new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$PlayingOnliveBaseModeFragment$-Xknqsu7CCzWHPZhEEtgA6b7Rrg
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 PlayingOnliveBaseModeFragment.this.b((LiveSyntheticFragmentSuccessModel) obj);
             }
@@ -817,14 +798,14 @@ public class PlayingOnliveBaseModeFragment extends BaseFragment implements View.
         if (this.aj || PushGuideObserver.d().a()) {
             return;
         }
-        final String c2 = TimeAndDateUtils.c();
-        if (LiveRoomPreferences.P().equals(c2)) {
+        final String c = TimeAndDateUtils.c();
+        if (LiveRoomPreferences.P().equals(c)) {
             return;
         }
         this.am.post(new Runnable() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$PlayingOnliveBaseModeFragment$ZRcgRFpRqM5LB1-HyTVyPTkilkE
             @Override // java.lang.Runnable
             public final void run() {
-                PlayingOnliveBaseModeFragment.this.i(c2);
+                PlayingOnliveBaseModeFragment.this.i(c);
             }
         });
     }
@@ -856,7 +837,7 @@ public class PlayingOnliveBaseModeFragment extends BaseFragment implements View.
             }
             WishingWellBubbleView wishingWellBubbleView = this.Q;
             if (wishingWellBubbleView == null || !wishingWellBubbleView.s()) {
-                WishingWellBubbleView wishingWellBubbleView2 = new WishingWellBubbleView(this.f13292a, liveRoomWishingWellData.star_expire_text, liveRoomWishingWellData.star_expire_url, false);
+                WishingWellBubbleView wishingWellBubbleView2 = new WishingWellBubbleView(this.a, liveRoomWishingWellData.star_expire_text, liveRoomWishingWellData.star_expire_url, false);
                 this.Q = wishingWellBubbleView2;
                 wishingWellBubbleView2.b(this.aO.getWishingWellView());
             }
@@ -867,7 +848,7 @@ public class PlayingOnliveBaseModeFragment extends BaseFragment implements View.
         if (LiveRoomManager.a().p() == null || LiveRoomManager.a().p().rankingExtra == null) {
             return;
         }
-        LiveEventBus.get(EventBusConstant.KEY_EVENT_LIVE_RANKING_MSG).post(LiveRoomManager.a().p().rankingExtra);
+        LiveEventBus.get("live_ranking_msg").post(LiveRoomManager.a().p().rankingExtra);
     }
 
     private void ah() {
@@ -908,7 +889,7 @@ public class PlayingOnliveBaseModeFragment extends BaseFragment implements View.
         if (!this.aj && !this.u) {
             liveMsgManager.c();
         }
-        this.q.b = this.f13294c;
+        this.q.b = this.c;
     }
 
     private void ak() {
@@ -947,7 +928,7 @@ public class PlayingOnliveBaseModeFragment extends BaseFragment implements View.
             LiveGiftModel liveGiftModel = new LiveGiftModel();
             liveGiftModel.contents = CommonStringUtils.f(this.S.getText().toString());
             liveGiftModel.goods_id = String.valueOf(this.Z);
-            LiveGiftPayTools.a().a(this.f13292a, getFragmentManager(), this.r, this.s, getFragmentActive(), liveGiftModel, LiveRoomManager.a().g(), "", 1, new LiveGiftPayTools.BackGiftStatusListener() { // from class: com.blued.android.module.live_china.fragment.PlayingOnliveBaseModeFragment.19
+            LiveGiftPayTools.a().a(this.a, getFragmentManager(), this.r, this.s, getFragmentActive(), liveGiftModel, LiveRoomManager.a().g(), "", 1, new LiveGiftPayTools.BackGiftStatusListener() { // from class: com.blued.android.module.live_china.fragment.PlayingOnliveBaseModeFragment.19
                 @Override // com.blued.android.module.live_china.utils.LiveGiftPayTools.BackGiftStatusListener
                 public void a() {
                     LiveRefreshUIObserver.a().b(true);
@@ -1045,7 +1026,7 @@ public class PlayingOnliveBaseModeFragment extends BaseFragment implements View.
     }
 
     private void ao() {
-        if (LiveRoomInfo.a().a(this.f13292a, new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.PlayingOnliveBaseModeFragment.22
+        if (LiveRoomInfo.a().a(this.a, new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.PlayingOnliveBaseModeFragment.22
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
@@ -1105,6 +1086,7 @@ public class PlayingOnliveBaseModeFragment extends BaseFragment implements View.
         }, getFragmentActive());
     }
 
+    /* JADX WARN: Type inference failed for: r1v0, types: [com.blued.android.module.live_china.fragment.PlayingOnliveBaseModeFragment$38] */
     private void ar() {
         this.by = new CountDownTimer(5000L, 1000L) { // from class: com.blued.android.module.live_china.fragment.PlayingOnliveBaseModeFragment.38
             @Override // android.os.CountDownTimer
@@ -1148,7 +1130,7 @@ public class PlayingOnliveBaseModeFragment extends BaseFragment implements View.
     public /* synthetic */ void i(String str) {
         if (isVisible()) {
             LiveRoomPreferences.A(str);
-            new LiveRecommendDialogFragment(this.f13292a, ab(), true).show(getFragmentManager(), "recommendDialog");
+            new LiveRecommendDialogFragment(this.a, ab(), true).show(getFragmentManager(), "recommendDialog");
         }
     }
 
@@ -1237,9 +1219,9 @@ public class PlayingOnliveBaseModeFragment extends BaseFragment implements View.
     @Override // com.blued.android.module.live_china.observer.LiveSetDataObserver.ILiveSetDataObserver
     public void E_() {
         int i = AppInfo.l / 2;
-        int i2 = PlayingMakeFriendManager.f13678a;
+        int i2 = PlayingMakeFriendManager.a;
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(-1, i2 * 2);
-        layoutParams.setMargins(0, PlayingMakeFriendManager.f13679c, 0, 0);
+        layoutParams.setMargins(0, PlayingMakeFriendManager.c, 0, 0);
         this.au.setLayoutParams(layoutParams);
         FrameLayout.LayoutParams layoutParams2 = new FrameLayout.LayoutParams(i, i2);
         FrameLayout.LayoutParams layoutParams3 = new FrameLayout.LayoutParams(i, i2);
@@ -1330,7 +1312,7 @@ public class PlayingOnliveBaseModeFragment extends BaseFragment implements View.
         this.S.setFocusableInTouchMode(true);
         this.S.setFocusable(true);
         this.S.requestFocus();
-        ((InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE)).showSoftInput(this.S, 0);
+        ((InputMethodManager) getActivity().getSystemService("input_method")).showSoftInput(this.S, 0);
     }
 
     @Override // com.blued.android.module.live_china.observer.LiveSetDataObserver.ILiveSetDataObserver
@@ -1517,7 +1499,7 @@ public class PlayingOnliveBaseModeFragment extends BaseFragment implements View.
     }
 
     public void Y() {
-        AppInfo.n().postDelayed(this.bf, 30000L);
+        AppInfo.n().postDelayed(this.bf, LockPatternUtils.FAILED_ATTEMPT_TIMEOUT_MS);
     }
 
     public void Z() {
@@ -1585,7 +1567,7 @@ public class PlayingOnliveBaseModeFragment extends BaseFragment implements View.
         this.ao = i;
         this.aq = i2;
         this.ap = i3;
-        this.f13293ar = i4;
+        this.ar = i4;
     }
 
     @Override // com.blued.android.module.live_china.observer.LiveSetDataObserver.ILiveSetDataObserver
@@ -1599,24 +1581,24 @@ public class PlayingOnliveBaseModeFragment extends BaseFragment implements View.
     }
 
     public void a(Bitmap bitmap) {
-        LiveRoomInfo.a().a(this.f13292a, this.u, LiveRoomManager.a().p(), bitmap, this.bx);
+        LiveRoomInfo.a().a(this.a, this.u, LiveRoomManager.a().p(), bitmap, this.bx);
     }
 
     @Override // com.blued.android.module.live_china.live_interface.IDispatchTouchEvent
     public void a(MotionEvent motionEvent) {
         if (this.ai == 2) {
             AppInfo.n().removeCallbacks(this.as);
-            AppInfo.n().postDelayed(this.as, m.ag);
+            AppInfo.n().postDelayed(this.as, 3000L);
         }
     }
 
     public void a(View view, final LiveRoomTipsModel liveRoomTipsModel) {
-        if (this.aj || this.f13292a == null || getFragmentActive() == null || !getFragmentActive().isActive()) {
+        if (this.aj || this.a == null || getFragmentActive() == null || !getFragmentActive().isActive()) {
             return;
         }
         LiveCommonPopTips liveCommonPopTips = this.bg;
         if (liveCommonPopTips == null || !liveCommonPopTips.z()) {
-            LiveCommonPopTips liveCommonPopTips2 = new LiveCommonPopTips(this.f13292a, liveRoomTipsModel);
+            LiveCommonPopTips liveCommonPopTips2 = new LiveCommonPopTips(this.a, liveRoomTipsModel);
             this.bg = liveCommonPopTips2;
             liveCommonPopTips2.a(view, new XPopupCallback() { // from class: com.blued.android.module.live_china.fragment.PlayingOnliveBaseModeFragment.39
                 @Override // com.blued.android.framework.ui.xpop.interfaces.XPopupCallback
@@ -1692,11 +1674,11 @@ public class PlayingOnliveBaseModeFragment extends BaseFragment implements View.
             LiveBottomOperationView liveBottomOperationView = this.aO;
             if (liveBottomOperationView != null) {
                 if (liveBottomOperationView.getWishingWellView() != null && red_point_word.equals(this.aO.getWishingWellView().getRedPointWord())) {
-                    this.aO.getWishingWellView().f15312a.setTag(functionRedPModelJson);
+                    this.aO.getWishingWellView().a.setTag(functionRedPModelJson);
                     if (functionRedPModelJson.getRed_point_action() == 1) {
-                        this.aO.getWishingWellView().f15312a.setVisibility(0);
+                        this.aO.getWishingWellView().a.setVisibility(0);
                     } else {
-                        this.aO.getWishingWellView().f15312a.setVisibility(8);
+                        this.aO.getWishingWellView().a.setVisibility(8);
                     }
                 } else if (this.aO.getH5View() == null || !red_point_word.equals(this.aO.getH5View().getModel().getRed_point_word())) {
                 } else {
@@ -1714,7 +1696,7 @@ public class PlayingOnliveBaseModeFragment extends BaseFragment implements View.
         if (liveBarrageModel == null || liveBarrageModel.beans == 0 || liveBarrageModel.goods_id == 0) {
             this.S.setHint(getString(R.string.write_text));
             this.Y = false;
-            LiveRoomConstants.f11735a = 32;
+            LiveRoomConstants.a = 32;
             this.V.setVisibility(8);
             this.V.setChecked(false);
             return;
@@ -1731,7 +1713,7 @@ public class PlayingOnliveBaseModeFragment extends BaseFragment implements View.
                     PlayingOnliveBaseModeFragment.this.Y = true;
                     PlayingOnliveBaseModeFragment.this.S.setHint(String.format(PlayingOnliveBaseModeFragment.this.getResources().getString(R.string.LiveVideo_danmaku_hint), Long.valueOf(liveBarrageModel.beans)));
                     PlayingOnliveBaseModeFragment.this.T.setEnabled(true);
-                    LiveRoomConstants.f11735a = 20;
+                    LiveRoomConstants.a = 20;
                     PlayingOnliveBaseModeFragment.this.W.setVisibility(0);
                     PlayingOnliveBaseModeFragment.this.q.e(0);
                     return;
@@ -1741,12 +1723,12 @@ public class PlayingOnliveBaseModeFragment extends BaseFragment implements View.
                 if (PlayingOnliveFragment.cB == 0) {
                     PlayingOnliveBaseModeFragment.this.S.setHint(PlayingOnliveBaseModeFragment.this.getString(R.string.simple_model_danmaku));
                     PlayingOnliveBaseModeFragment.this.Y = false;
-                    LiveRoomConstants.f11735a = 0;
+                    LiveRoomConstants.a = 0;
                     PlayingOnliveBaseModeFragment.this.T.setEnabled(false);
                 } else {
                     PlayingOnliveBaseModeFragment.this.S.setHint(PlayingOnliveBaseModeFragment.this.getString(R.string.write_text));
                     PlayingOnliveBaseModeFragment.this.Y = false;
-                    LiveRoomConstants.f11735a = 32;
+                    LiveRoomConstants.a = 32;
                     PlayingOnliveBaseModeFragment.this.T.setEnabled(true);
                 }
                 PlayingOnliveBaseModeFragment.this.ap();
@@ -1983,7 +1965,7 @@ public class PlayingOnliveBaseModeFragment extends BaseFragment implements View.
         }
         int i = PlayingMultiConnectionManager.f;
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(-1, -2);
-        layoutParams.setMargins(0, PlayingMultiConnectionManager.f13686c, 0, 0);
+        layoutParams.setMargins(0, PlayingMultiConnectionManager.c, 0, 0);
         this.aI.setLayoutParams(layoutParams);
         this.aI.removeAllViews();
         this.aI.setVisibility(0);
@@ -1997,7 +1979,7 @@ public class PlayingOnliveBaseModeFragment extends BaseFragment implements View.
         this.o.setOnTouchListener(new View.OnTouchListener() { // from class: com.blued.android.module.live_china.fragment.PlayingOnliveBaseModeFragment.16
             @Override // android.view.View.OnTouchListener
             public boolean onTouch(View view, MotionEvent motionEvent) {
-                KeyboardUtils.a(PlayingOnliveBaseModeFragment.this.getActivity());
+                KeyboardUtils.a((Activity) PlayingOnliveBaseModeFragment.this.getActivity());
                 PlayingOnliveBaseModeFragment.this.o.setVisibility(8);
                 return true;
             }
@@ -2039,16 +2021,16 @@ public class PlayingOnliveBaseModeFragment extends BaseFragment implements View.
         int[] iArr = new int[2];
         this.I.getLocationOnScreen(iArr);
         Logger.d("PlayingOnliveBaseModeFragment", "offestY = " + iArr[1]);
-        PopupWindow popupWindow2 = new PopupWindow(this.f13292a);
+        PopupWindow popupWindow2 = new PopupWindow(this.a);
         this.bu = popupWindow2;
         popupWindow2.setBackgroundDrawable(new ColorDrawable(0));
         this.bu.setOutsideTouchable(true);
-        ImageView imageView = new ImageView(this.f13292a);
+        ImageView imageView = new ImageView(this.a);
         imageView.setImageResource(R.drawable.live_fans_guide_icon);
         imageView.measure(0, 0);
-        int measuredWidth = (AppInfo.l - imageView.getMeasuredWidth()) - DensityUtils.a(this.f13292a, 10.0f);
+        int measuredWidth = (AppInfo.l - imageView.getMeasuredWidth()) - DensityUtils.a(this.a, 10.0f);
         Logger.d("PlayingOnliveBaseModeFragment", "guideView width = " + measuredWidth + " ; guideView height = " + imageView.getMeasuredHeight());
-        int measuredHeight = (iArr[1] - imageView.getMeasuredHeight()) - DensityUtils.a(this.f13292a, 5.0f);
+        int measuredHeight = (iArr[1] - imageView.getMeasuredHeight()) - DensityUtils.a(this.a, 5.0f);
         StringBuilder sb = new StringBuilder();
         sb.append("offestY = ");
         sb.append(measuredHeight);
@@ -2245,7 +2227,7 @@ public class PlayingOnliveBaseModeFragment extends BaseFragment implements View.
 
     public void e() {
         if (getActivity() instanceof BaseFragmentActivity) {
-            ((BaseFragmentActivity) getActivity()).a((BaseFragmentActivity.IOnBackPressedListener) this);
+            getActivity().a((BaseFragmentActivity.IOnBackPressedListener) this);
         }
     }
 
@@ -2255,15 +2237,15 @@ public class PlayingOnliveBaseModeFragment extends BaseFragment implements View.
             if (i == 1 && !this.Y) {
                 this.S.setHint(getString(R.string.write_text));
                 this.T.setEnabled(true);
-                LiveRoomConstants.f11735a = 32;
+                LiveRoomConstants.a = 32;
             }
         } else if (this.Y) {
             this.T.setEnabled(true);
-            LiveRoomConstants.f11735a = 20;
+            LiveRoomConstants.a = 20;
         } else {
             this.S.setHint(getString(R.string.simple_model_danmaku));
             this.T.setEnabled(false);
-            LiveRoomConstants.f11735a = 0;
+            LiveRoomConstants.a = 0;
         }
     }
 
@@ -2281,7 +2263,7 @@ public class PlayingOnliveBaseModeFragment extends BaseFragment implements View.
     }
 
     public void f() {
-        this.f13294c = (ViewGroup) this.b.findViewById(R.id.fl_root);
+        this.c = (ViewGroup) this.b.findViewById(R.id.fl_root);
         this.al = this.b.findViewById(R.id.header_lay);
         this.am = this.b.findViewById(R.id.live_recommend);
         this.an = (LinearLayout) this.b.findViewById(R.id.bottom_lay);
@@ -2375,17 +2357,17 @@ public class PlayingOnliveBaseModeFragment extends BaseFragment implements View.
         this.S.setOnTouchListener(new View.OnTouchListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$PlayingOnliveBaseModeFragment$9lGfskXaLuZv6dCoLJAyg-4Oi20
             @Override // android.view.View.OnTouchListener
             public final boolean onTouch(View view, MotionEvent motionEvent) {
-                boolean a2;
-                a2 = PlayingOnliveBaseModeFragment.a(view, motionEvent);
-                return a2;
+                boolean a;
+                a = PlayingOnliveBaseModeFragment.a(view, motionEvent);
+                return a;
             }
         });
         this.S.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$PlayingOnliveBaseModeFragment$giCKWrbBsgprQsXYS-JEciNVHao
             @Override // android.widget.TextView.OnEditorActionListener
             public final boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
-                boolean a2;
-                a2 = PlayingOnliveBaseModeFragment.this.a(textView, i, keyEvent);
-                return a2;
+                boolean a;
+                a = PlayingOnliveBaseModeFragment.this.a(textView, i, keyEvent);
+                return a;
             }
         });
         this.W = (BackgroundTextView) this.b.findViewById(R.id.danmaku_count_view);
@@ -2431,13 +2413,13 @@ public class PlayingOnliveBaseModeFragment extends BaseFragment implements View.
         this.aK = (ShapeRelativeLayout) this.b.findViewById(R.id.live_anchor_layout);
         this.aL = (ImageView) this.b.findViewById(R.id.header_level_bg);
         this.bh = (SVGAImageView) this.b.findViewById(R.id.iv_fragment_synthesis);
-        if (ab() != null && ab().f13344cn != null) {
+        if (ab() != null && ab().f49cn != null) {
             if (!this.aj && this.aN == null) {
                 LiveOperationView liveOperationView = (LiveOperationView) this.b.findViewById(R.id.live_operation_view);
                 this.aN = liveOperationView;
                 if (liveOperationView != null) {
                     liveOperationView.a((BaseFragment) this, false);
-                    ab().f13344cn.a(this.aN);
+                    ab().f49cn.a(this.aN);
                 }
             }
             if (this.aO == null) {
@@ -2445,7 +2427,7 @@ public class PlayingOnliveBaseModeFragment extends BaseFragment implements View.
                 this.aO = liveBottomOperationView;
                 if (liveBottomOperationView != null) {
                     liveBottomOperationView.a(this, false);
-                    ab().f13344cn.a(this.aO);
+                    ab().f49cn.a(this.aO);
                 }
             }
         }
@@ -2460,12 +2442,12 @@ public class PlayingOnliveBaseModeFragment extends BaseFragment implements View.
                 pkDaredView2.setVisibility(8);
             } else {
                 pkDaredView2.a(getFragmentActive());
-                this.x.setStartPKAnimRootView(this.f13294c);
+                this.x.setStartPKAnimRootView(this.c);
             }
         }
         this.am.setOnClickListener(this);
         if (!PushGuideObserver.d().a() && LiveRoomPreferences.d() && this.am.getTag() == null) {
-            final LiveRecommendPop liveRecommendPop = new LiveRecommendPop(this.f13292a);
+            final LiveRecommendPop liveRecommendPop = new LiveRecommendPop(this.a);
             this.am.setTag(liveRecommendPop);
             this.am.post(new Runnable() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$PlayingOnliveBaseModeFragment$FnlYdxDd5FBN__JGpcrZVuqfp9E
                 @Override // java.lang.Runnable
@@ -2486,7 +2468,7 @@ public class PlayingOnliveBaseModeFragment extends BaseFragment implements View.
         this.W.a(9, Color.parseColor("#abd2ff"));
         if (!"en".equals(BlueAppLocal.a())) {
             ViewGroup.LayoutParams layoutParams = this.V.getLayoutParams();
-            layoutParams.width = DensityUtils.a(this.f13292a, 60.0f);
+            layoutParams.width = DensityUtils.a(this.a, 60.0f);
             this.V.setLayoutParams(layoutParams);
         }
         this.P = (ImageView) this.b.findViewById(R.id.img_live_recommend);
@@ -2677,8 +2659,8 @@ public class PlayingOnliveBaseModeFragment extends BaseFragment implements View.
 
     @Override // com.blued.android.module.live_china.observer.LiveSetDataObserver.ILiveSetDataObserver
     public void i() {
-        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(-1, (((AppInfo.l / 2) / 3) * 4) + DensityUtils.a(this.f13292a, 60.0f));
-        layoutParams.topMargin = PlayingMakeFriendManager.f13679c;
+        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(-1, (((AppInfo.l / 2) / 3) * 4) + DensityUtils.a(this.a, 60.0f));
+        layoutParams.topMargin = PlayingMakeFriendManager.c;
         this.aB.setLayoutParams(layoutParams);
         this.aB.setVisibility(0);
     }
@@ -2699,7 +2681,7 @@ public class PlayingOnliveBaseModeFragment extends BaseFragment implements View.
 
     public void k() {
         int i = PlayingMakeLoverManager.b;
-        int i2 = PlayingMakeLoverManager.f13681c;
+        int i2 = PlayingMakeLoverManager.c;
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(-1, i2 * 2);
         layoutParams.setMargins(0, PlayingMakeLoverManager.e, 0, 0);
         this.au.setLayoutParams(layoutParams);
@@ -2808,7 +2790,7 @@ public class PlayingOnliveBaseModeFragment extends BaseFragment implements View.
             }
         } else if (view.getId() == R.id.live_bottom_icon_more) {
             EventTrackLive.a(LiveProtos.Event.LIVE_DOWN_COLLECTION_CLICK, LiveRoomManager.a().e(), LiveRoomManager.a().g());
-            LiveRoomFunctionDlgFragment.f13241a.a(getFragmentManager(), false);
+            LiveRoomFunctionDlgFragment.a.a(getFragmentManager(), false);
         } else if (view.getId() == R.id.switch_normal_view) {
             this.ab.a();
         } else if (view.getId() == R.id.switch_clear_view) {
@@ -2848,7 +2830,7 @@ public class PlayingOnliveBaseModeFragment extends BaseFragment implements View.
                 this.am.setTag(null);
             }
             EventTrackLive.a(LiveProtos.Event.LIVE_RECOMMEND_FOR_YOU_CLICK, LiveRoomManager.a().e(), LiveRoomManager.a().g());
-            new LiveRecommendDialogFragment(this.f13292a, ab()).show(getFragmentManager(), "recommendDialog");
+            new LiveRecommendDialogFragment(this.a, ab()).show(getFragmentManager(), "recommendDialog");
             PushGuideObserver.d().c();
         } else if (view.getId() == R.id.iv_make_lover_hold_off) {
             if (LiveRoomManager.a().p() != null) {
@@ -2931,7 +2913,6 @@ public class PlayingOnliveBaseModeFragment extends BaseFragment implements View.
         }
     }
 
-    @Override // androidx.fragment.app.Fragment, android.content.ComponentCallbacks
     public void onConfigurationChanged(Configuration configuration) {
         int i = configuration.orientation;
         if (i == 1) {
@@ -2946,7 +2927,7 @@ public class PlayingOnliveBaseModeFragment extends BaseFragment implements View.
         super.onConfigurationChanged(configuration);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         if (LiveRoomManager.a().p() != null) {
@@ -2954,11 +2935,11 @@ public class PlayingOnliveBaseModeFragment extends BaseFragment implements View.
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.aS = DialogUtils.a(getActivity());
+        this.aS = DialogUtils.a((Context) getActivity());
         this.u = LiveFloatManager.a().C();
-        this.f13292a = getActivity();
+        this.a = getActivity();
         View view = this.b;
         if (view == null) {
             this.b = layoutInflater.inflate(R.layout.fragment_onlive_base_mode, viewGroup, false);
@@ -2971,7 +2952,7 @@ public class PlayingOnliveBaseModeFragment extends BaseFragment implements View.
             LiveSysNetworkObserver.a().a(this);
             LiveRelationshipObserver.a().a(this);
             LiveFansObserver.a().a(this);
-            ((PlayingOnliveActivity) getActivity()).a((IDispatchTouchEvent) this);
+            getActivity().a((IDispatchTouchEvent) this);
             Logger.a("drb", getSimpleName(), "++++++++++++ onCreateView ++++++++++++");
             a(LiveRoomManager.a().p());
             LiveRoomManager.a().b(true);
@@ -2984,7 +2965,7 @@ public class PlayingOnliveBaseModeFragment extends BaseFragment implements View.
         return this.b;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onDestroy() {
         super.onDestroy();
         BeansRefreshObserver.a().b(this);
@@ -3001,7 +2982,7 @@ public class PlayingOnliveBaseModeFragment extends BaseFragment implements View.
         if (pkDaredView != null) {
             pkDaredView.d();
         }
-        ((PlayingOnliveActivity) getActivity()).b(this);
+        getActivity().b(this);
         this.q.d();
         u();
         LiveRankingButtonView liveRankingButtonView = this.aT;
@@ -3027,11 +3008,11 @@ public class PlayingOnliveBaseModeFragment extends BaseFragment implements View.
         return true;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onViewCreated(View view, Bundle bundle) {
         super.onViewCreated(view, bundle);
         ViewGroup.LayoutParams layoutParams = this.aK.getLayoutParams();
-        layoutParams.width = DensityUtils.a(this.f13292a, 141.5f);
+        layoutParams.width = DensityUtils.a(this.a, 141.5f);
         this.aK.setLayoutParams(layoutParams);
         LiveRoomHttpUtils.j(new BluedUIHttpResponse<BluedEntity<LiveBarrageModel, LiveBarrageModel>>(getFragmentActive()) { // from class: com.blued.android.module.live_china.fragment.PlayingOnliveBaseModeFragment.24
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
@@ -3049,7 +3030,7 @@ public class PlayingOnliveBaseModeFragment extends BaseFragment implements View.
     public void q() {
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void setUserVisibleHint(boolean z) {
         super.setUserVisibleHint(z);
         this.aU = z;

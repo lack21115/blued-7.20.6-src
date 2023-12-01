@@ -6,7 +6,7 @@ import java.util.Arrays;
 public class ArrayReadWriteBuf implements ReadWriteBuf {
 
     /* renamed from: a  reason: collision with root package name */
-    private byte[] f2848a;
+    private byte[] f2800a;
     private int b;
 
     public ArrayReadWriteBuf() {
@@ -18,28 +18,28 @@ public class ArrayReadWriteBuf implements ReadWriteBuf {
     }
 
     public ArrayReadWriteBuf(byte[] bArr) {
-        this.f2848a = bArr;
+        this.f2800a = bArr;
         this.b = 0;
     }
 
     public ArrayReadWriteBuf(byte[] bArr, int i) {
-        this.f2848a = bArr;
+        this.f2800a = bArr;
         this.b = i;
     }
 
     @Override // androidx.emoji2.text.flatbuffer.ReadBuf
     public byte[] data() {
-        return this.f2848a;
+        return this.f2800a;
     }
 
     @Override // androidx.emoji2.text.flatbuffer.ReadBuf
     public byte get(int i) {
-        return this.f2848a[i];
+        return this.f2800a[i];
     }
 
     @Override // androidx.emoji2.text.flatbuffer.ReadBuf
     public boolean getBoolean(int i) {
-        return this.f2848a[i] != 0;
+        return this.f2800a[i] != 0;
     }
 
     @Override // androidx.emoji2.text.flatbuffer.ReadBuf
@@ -54,13 +54,13 @@ public class ArrayReadWriteBuf implements ReadWriteBuf {
 
     @Override // androidx.emoji2.text.flatbuffer.ReadBuf
     public int getInt(int i) {
-        byte[] bArr = this.f2848a;
+        byte[] bArr = this.f2800a;
         return (bArr[i] & 255) | (bArr[i + 3] << 24) | ((bArr[i + 2] & 255) << 16) | ((bArr[i + 1] & 255) << 8);
     }
 
     @Override // androidx.emoji2.text.flatbuffer.ReadBuf
     public long getLong(int i) {
-        byte[] bArr = this.f2848a;
+        byte[] bArr = this.f2800a;
         int i2 = i + 1;
         long j = bArr[i];
         int i3 = i2 + 1;
@@ -77,13 +77,13 @@ public class ArrayReadWriteBuf implements ReadWriteBuf {
 
     @Override // androidx.emoji2.text.flatbuffer.ReadBuf
     public short getShort(int i) {
-        byte[] bArr = this.f2848a;
+        byte[] bArr = this.f2800a;
         return (short) ((bArr[i] & 255) | (bArr[i + 1] << 8));
     }
 
     @Override // androidx.emoji2.text.flatbuffer.ReadBuf
     public String getString(int i, int i2) {
-        return Utf8Safe.decodeUtf8Array(this.f2848a, i, i2);
+        return Utf8Safe.decodeUtf8Array(this.f2800a, i, i2);
     }
 
     @Override // androidx.emoji2.text.flatbuffer.ReadWriteBuf, androidx.emoji2.text.flatbuffer.ReadBuf
@@ -141,25 +141,25 @@ public class ArrayReadWriteBuf implements ReadWriteBuf {
 
     @Override // androidx.emoji2.text.flatbuffer.ReadWriteBuf
     public boolean requestCapacity(int i) {
-        byte[] bArr = this.f2848a;
+        byte[] bArr = this.f2800a;
         if (bArr.length > i) {
             return true;
         }
         int length = bArr.length;
-        this.f2848a = Arrays.copyOf(bArr, length + (length >> 1));
+        this.f2800a = Arrays.copyOf(bArr, length + (length >> 1));
         return true;
     }
 
     @Override // androidx.emoji2.text.flatbuffer.ReadWriteBuf
     public void set(int i, byte b) {
         requestCapacity(i + 1);
-        this.f2848a[i] = b;
+        this.f2800a[i] = b;
     }
 
     @Override // androidx.emoji2.text.flatbuffer.ReadWriteBuf
     public void set(int i, byte[] bArr, int i2, int i3) {
         requestCapacity((i3 - i2) + i);
-        System.arraycopy((Object) bArr, i2, (Object) this.f2848a, i, i3);
+        System.arraycopy(bArr, i2, this.f2800a, i, i3);
     }
 
     /* JADX WARN: Type inference failed for: r0v0, types: [java.lang.Throwable, java.lang.Runtime] */
@@ -173,7 +173,7 @@ public class ArrayReadWriteBuf implements ReadWriteBuf {
         requestCapacity(i + 8);
         long doubleToRawLongBits = Double.doubleToRawLongBits(d);
         int i2 = (int) doubleToRawLongBits;
-        byte[] bArr = this.f2848a;
+        byte[] bArr = this.f2800a;
         int i3 = i + 1;
         bArr[i] = (byte) (i2 & 255);
         int i4 = i3 + 1;
@@ -195,7 +195,7 @@ public class ArrayReadWriteBuf implements ReadWriteBuf {
     public void setFloat(int i, float f) {
         requestCapacity(i + 4);
         int floatToRawIntBits = Float.floatToRawIntBits(f);
-        byte[] bArr = this.f2848a;
+        byte[] bArr = this.f2800a;
         int i2 = i + 1;
         bArr[i] = (byte) (floatToRawIntBits & 255);
         int i3 = i2 + 1;
@@ -207,7 +207,7 @@ public class ArrayReadWriteBuf implements ReadWriteBuf {
     @Override // androidx.emoji2.text.flatbuffer.ReadWriteBuf
     public void setInt(int i, int i2) {
         requestCapacity(i + 4);
-        byte[] bArr = this.f2848a;
+        byte[] bArr = this.f2800a;
         int i3 = i + 1;
         bArr[i] = (byte) (i2 & 255);
         int i4 = i3 + 1;
@@ -220,7 +220,7 @@ public class ArrayReadWriteBuf implements ReadWriteBuf {
     public void setLong(int i, long j) {
         requestCapacity(i + 8);
         int i2 = (int) j;
-        byte[] bArr = this.f2848a;
+        byte[] bArr = this.f2800a;
         int i3 = i + 1;
         bArr[i] = (byte) (i2 & 255);
         int i4 = i3 + 1;
@@ -241,7 +241,7 @@ public class ArrayReadWriteBuf implements ReadWriteBuf {
     @Override // androidx.emoji2.text.flatbuffer.ReadWriteBuf
     public void setShort(int i, short s) {
         requestCapacity(i + 2);
-        byte[] bArr = this.f2848a;
+        byte[] bArr = this.f2800a;
         bArr[i] = (byte) (s & 255);
         bArr[i + 1] = (byte) ((s >> 8) & 255);
     }

@@ -20,21 +20,21 @@ public class b extends a {
     }
 
     private void b(String str) {
-        Drawable f = com.opos.cmn.an.h.d.a.f(this.f24778a, str);
+        Drawable f = com.opos.cmn.an.h.d.a.f(this.f11090a, str);
         if (f != null) {
             this.f.setImageDrawable(f);
         }
     }
 
     private void c() {
-        ImageView imageView = new ImageView(this.f24778a);
+        ImageView imageView = new ImageView(this.f11090a);
         this.f = imageView;
         imageView.setId(1);
         this.f.setScaleType(ImageView.ScaleType.FIT_XY);
-        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(this.f24778a, 43.0f), com.opos.cmn.an.h.f.a.a(this.f24778a, 43.0f));
+        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(this.f11090a, 43.0f), com.opos.cmn.an.h.f.a.a(this.f11090a, 43.0f));
         layoutParams.addRule(15);
-        layoutParams.leftMargin = com.opos.cmn.an.h.f.a.a(this.f24778a, 12.0f);
-        this.f24779c.addView(this.f, layoutParams);
+        layoutParams.leftMargin = com.opos.cmn.an.h.f.a.a(this.f11090a, 12.0f);
+        this.f11091c.addView(this.f, layoutParams);
     }
 
     private void c(String str) {
@@ -58,7 +58,7 @@ public class b extends a {
     }
 
     private void d() {
-        TextView textView = new TextView(this.f24778a);
+        TextView textView = new TextView(this.f11090a);
         this.g = textView;
         textView.setTextColor(Color.parseColor("#2f2f2f"));
         this.g.setTextSize(1, 12.0f);
@@ -68,24 +68,24 @@ public class b extends a {
         layoutParams.addRule(1, 1);
         layoutParams.addRule(0, 2);
         layoutParams.addRule(15);
-        layoutParams.leftMargin = com.opos.cmn.an.h.f.a.a(this.f24778a, 19.0f);
-        layoutParams.rightMargin = com.opos.cmn.an.h.f.a.a(this.f24778a, 19.0f);
-        this.f24779c.addView(this.g, layoutParams);
+        layoutParams.leftMargin = com.opos.cmn.an.h.f.a.a(this.f11090a, 19.0f);
+        layoutParams.rightMargin = com.opos.cmn.an.h.f.a.a(this.f11090a, 19.0f);
+        this.f11091c.addView(this.g, layoutParams);
     }
 
     private void e() {
-        com.opos.cmn.e.a.a.a aVar = new com.opos.cmn.e.a.a.a(this.f24778a, "opos_module_biz_ui_cmn_reminder_toast_click_bn_normal_img.png", "opos_module_biz_ui_cmn_reminder_toast_click_bn_pressed_img.png");
+        com.opos.cmn.e.a.a.a aVar = new com.opos.cmn.e.a.a.a(this.f11090a, "opos_module_biz_ui_cmn_reminder_toast_click_bn_normal_img.png", "opos_module_biz_ui_cmn_reminder_toast_click_bn_pressed_img.png");
         this.h = aVar;
         aVar.setText("立即打开");
         this.h.setId(2);
         this.h.setTextColor(-1);
         this.h.setTextSize(1, 10.0f);
         this.h.setGravity(17);
-        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(this.f24778a, 66.0f), com.opos.cmn.an.h.f.a.a(this.f24778a, 22.0f));
+        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(this.f11090a, 66.0f), com.opos.cmn.an.h.f.a.a(this.f11090a, 22.0f));
         layoutParams.addRule(15);
         layoutParams.addRule(11);
-        layoutParams.rightMargin = com.opos.cmn.an.h.f.a.a(this.f24778a, 12.0f);
-        this.f24779c.addView(this.h, layoutParams);
+        layoutParams.rightMargin = com.opos.cmn.an.h.f.a.a(this.f11090a, 12.0f);
+        this.f11091c.addView(this.h, layoutParams);
     }
 
     @Override // com.opos.cmn.e.a.c.a.a
@@ -110,10 +110,10 @@ public class b extends a {
             c(str);
             a(str);
             if (z) {
-                a(this.f24779c, str);
+                a(this.f11091c, str);
                 aVar = this.h;
             } else {
-                a(this.f24779c);
+                a(this.f11091c);
                 aVar = this.h;
             }
             a(aVar, str);

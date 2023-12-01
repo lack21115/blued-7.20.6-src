@@ -24,26 +24,26 @@ public final class GeobFrame extends Id3Frame {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f25533a;
+    public final String f11845a;
     public final String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final String f25534c;
+    public final String f11846c;
     public final byte[] d;
 
     GeobFrame(Parcel parcel) {
-        super(f.f7352a);
-        this.f25533a = parcel.readString();
+        super(f.f4513a);
+        this.f11845a = parcel.readString();
         this.b = parcel.readString();
-        this.f25534c = parcel.readString();
+        this.f11846c = parcel.readString();
         this.d = parcel.createByteArray();
     }
 
     public GeobFrame(String str, String str2, String str3, byte[] bArr) {
-        super(f.f7352a);
-        this.f25533a = str;
+        super(f.f4513a);
+        this.f11845a = str;
         this.b = str2;
-        this.f25534c = str3;
+        this.f11846c = str3;
         this.d = bArr;
     }
 
@@ -57,11 +57,11 @@ public final class GeobFrame extends Id3Frame {
                 }
                 GeobFrame geobFrame = (GeobFrame) obj;
                 z = false;
-                if (u.a(this.f25533a, geobFrame.f25533a)) {
+                if (u.a(this.f11845a, geobFrame.f11845a)) {
                     z = false;
                     if (u.a(this.b, geobFrame.b)) {
                         z = false;
-                        if (u.a(this.f25534c, geobFrame.f25534c)) {
+                        if (u.a(this.f11846c, geobFrame.f11846c)) {
                             if (!Arrays.equals(this.d, geobFrame.d)) {
                                 return false;
                             }
@@ -76,12 +76,12 @@ public final class GeobFrame extends Id3Frame {
     }
 
     public int hashCode() {
-        String str = this.f25533a;
+        String str = this.f11845a;
         int i = 0;
         int hashCode = str != null ? str.hashCode() : 0;
         String str2 = this.b;
         int hashCode2 = str2 != null ? str2.hashCode() : 0;
-        String str3 = this.f25534c;
+        String str3 = this.f11846c;
         if (str3 != null) {
             i = str3.hashCode();
         }
@@ -90,9 +90,9 @@ public final class GeobFrame extends Id3Frame {
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.f25533a);
+        parcel.writeString(this.f11845a);
         parcel.writeString(this.b);
-        parcel.writeString(this.f25534c);
+        parcel.writeString(this.f11846c);
         parcel.writeByteArray(this.d);
     }
 }

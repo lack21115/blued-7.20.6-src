@@ -7,7 +7,6 @@ public class YYChatRoomModel implements MultiItemEntity {
     public YYChatR_InnerModel data;
     public int type;
 
-    @Override // com.chad.library.adapter.base.entity.MultiItemEntity
     public int getItemType() {
         return this.type;
     }

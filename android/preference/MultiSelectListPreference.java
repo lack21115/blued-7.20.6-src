@@ -1,5 +1,6 @@
 package android.preference;
 
+import android.R;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -8,7 +9,6 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.preference.Preference;
 import android.util.AttributeSet;
-import com.android.internal.R;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -70,7 +70,7 @@ public class MultiSelectListPreference extends DialogPreference {
     }
 
     public MultiSelectListPreference(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, 16842897);
+        this(context, attributeSet, R.attr.dialogPreferenceStyle);
     }
 
     public MultiSelectListPreference(Context context, AttributeSet attributeSet, int i) {
@@ -81,7 +81,7 @@ public class MultiSelectListPreference extends DialogPreference {
         super(context, attributeSet, i, i2);
         this.mValues = new HashSet();
         this.mNewValues = new HashSet();
-        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.MultiSelectListPreference, i, i2);
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, com.android.internal.R.styleable.MultiSelectListPreference, i, i2);
         this.mEntries = obtainStyledAttributes.getTextArray(0);
         this.mEntryValues = obtainStyledAttributes.getTextArray(1);
         obtainStyledAttributes.recycle();

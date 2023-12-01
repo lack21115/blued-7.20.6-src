@@ -11,6 +11,7 @@ import android.webkit.CookieSyncManager;
 import android.widget.Toast;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
+import com.huawei.hms.ads.fw;
 import com.igexin.push.core.b;
 import com.tencent.connect.a.a;
 import com.tencent.connect.common.BaseApi;
@@ -26,13 +27,13 @@ import java.util.Iterator;
 public class QQAuth {
 
     /* renamed from: a  reason: collision with root package name */
-    private AuthAgent f36167a;
+    private AuthAgent f22476a;
     private QQToken b;
 
     private QQAuth(String str, Context context) {
         f.c("openSDK_LOG.QQAuth", "new QQAuth() --start");
         this.b = new QQToken(str);
-        this.f36167a = new AuthAgent(this.b);
+        this.f22476a = new AuthAgent(this.b);
         a.c(context, this.b);
         f.c("openSDK_LOG.QQAuth", "new QQAuth() --end");
     }
@@ -66,7 +67,7 @@ public class QQAuth {
         }
         f.b("openSDK_LOG.QQAuth", "-->login channelId is null ");
         BaseApi.isOEM = false;
-        return this.f36167a.doLogin(activity, str, iUiListener, false, fragment);
+        return this.f22476a.doLogin(activity, str, iUiListener, false, fragment);
     }
 
     public static QQAuth createInstance(String str, Context context) {
@@ -87,7 +88,7 @@ public class QQAuth {
     }
 
     public void checkLogin(IUiListener iUiListener) {
-        this.f36167a.b(iUiListener);
+        this.f22476a.b(iUiListener);
     }
 
     public QQToken getQQToken() {
@@ -97,7 +98,7 @@ public class QQAuth {
     public boolean isSessionValid() {
         StringBuilder sb = new StringBuilder();
         sb.append("isSessionValid(), result = ");
-        sb.append(this.b.isSessionValid() ? "true" : "false");
+        sb.append(this.b.isSessionValid() ? fw.Code : "false");
         sb.append("");
         f.a("openSDK_LOG.QQAuth", sb.toString());
         return this.b.isSessionValid();
@@ -138,7 +139,7 @@ public class QQAuth {
         BaseApi.installChannel = str6;
         BaseApi.registerChannel = str5;
         BaseApi.businessId = str7;
-        return this.f36167a.doLogin(activity, str, iUiListener);
+        return this.f22476a.doLogin(activity, str, iUiListener);
     }
 
     public void logout(Context context) {
@@ -156,11 +157,11 @@ public class QQAuth {
 
     public int reAuth(Activity activity, String str, IUiListener iUiListener) {
         f.c("openSDK_LOG.QQAuth", "reAuth()");
-        return this.f36167a.doLogin(activity, str, iUiListener, true, null);
+        return this.f22476a.doLogin(activity, str, iUiListener, true, null);
     }
 
     public void reportDAU() {
-        this.f36167a.a((IUiListener) null);
+        this.f22476a.a((IUiListener) null);
     }
 
     public void setAccessToken(String str, String str2) {

@@ -1,11 +1,10 @@
 package com.efs.sdk.base.core.a;
 
 import android.text.TextUtils;
-import com.efs.sdk.base.BuildConfig;
-import com.efs.sdk.base.EfsConstant;
 import com.efs.sdk.base.core.controller.ControllerCenter;
 import com.efs.sdk.base.core.util.Log;
 import com.efs.sdk.base.core.util.PackageUtil;
+import com.huawei.hms.framework.common.ContainerUtils;
 import com.umeng.analytics.pro.bh;
 import java.util.Locale;
 import java.util.Map;
@@ -16,11 +15,11 @@ import java.util.TreeMap;
 public final class c {
 
     /* renamed from: a  reason: collision with root package name */
-    String f21722a;
+    String f8116a;
     String b;
 
     /* renamed from: c  reason: collision with root package name */
-    String f21723c;
+    String f8117c;
     public String d;
     public int e;
     public String f;
@@ -34,13 +33,13 @@ public final class c {
 
     public static c a() {
         c cVar = new c();
-        cVar.f21722a = ControllerCenter.getGlobalEnvStruct().getAppid();
+        cVar.f8116a = ControllerCenter.getGlobalEnvStruct().getAppid();
         cVar.b = ControllerCenter.getGlobalEnvStruct().getSecret();
         cVar.l = ControllerCenter.getGlobalEnvStruct().getUid();
-        cVar.j = BuildConfig.VERSION_NAME;
-        cVar.f21723c = PackageUtil.getAppVersionName(ControllerCenter.getGlobalEnvStruct().mAppContext);
-        cVar.i = String.valueOf(com.efs.sdk.base.core.config.a.c.a().d.f21749a);
-        cVar.k = EfsConstant.UM_SDK_VERSION;
+        cVar.j = "1.3.10.umeng";
+        cVar.f8117c = PackageUtil.getAppVersionName(ControllerCenter.getGlobalEnvStruct().mAppContext);
+        cVar.i = String.valueOf(com.efs.sdk.base.core.config.a.c.a().d.f8143a);
+        cVar.k = "1.6.4";
         return cVar;
     }
 
@@ -49,10 +48,10 @@ public final class c {
         String valueOf = String.valueOf(a.b() / 1000);
         String a2 = com.efs.sdk.base.core.util.b.b.a(com.efs.sdk.base.core.util.b.a.a(this.l + valueOf, this.b));
         TreeMap treeMap = new TreeMap();
-        treeMap.put("app", this.f21722a);
+        treeMap.put("app", this.f8116a);
         treeMap.put("sd", a2);
         if (!TextUtils.isEmpty(this.d)) {
-            treeMap.put(com.alipay.sdk.app.statistic.c.f4610c, this.d);
+            treeMap.put("cp", this.d);
         }
         if (this.g != 0) {
             treeMap.put(com.anythink.expressad.video.dynview.a.a.X, String.valueOf(this.e));
@@ -70,7 +69,7 @@ public final class c {
         treeMap.put(bh.x, "android");
         treeMap.put("sver", this.i);
         treeMap.put("tm", valueOf);
-        treeMap.put("ver", this.f21723c);
+        treeMap.put("ver", this.f8117c);
         treeMap.put("um_sdk_ver", this.k);
         StringBuilder sb = new StringBuilder();
         StringBuilder sb2 = new StringBuilder();
@@ -78,7 +77,7 @@ public final class c {
             String str3 = ((String) entry.getKey()) + "=" + ((String) entry.getValue());
             sb2.append(str3);
             sb.append(str3);
-            sb.append("&");
+            sb.append(ContainerUtils.FIELD_DELIMITER);
         }
         String a3 = com.efs.sdk.base.core.util.b.b.a(sb2.toString() + this.b);
         sb.append("sign=");

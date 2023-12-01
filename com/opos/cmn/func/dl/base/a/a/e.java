@@ -14,11 +14,11 @@ import java.util.concurrent.ConcurrentHashMap;
 public class e implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    static final String f24887a = e.class.getSimpleName();
+    static final String f11199a = e.class.getSimpleName();
     public volatile boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    public Map<Integer, RandomAccessFile> f24888c = new ConcurrentHashMap();
+    public Map<Integer, RandomAccessFile> f11200c = new ConcurrentHashMap();
     BlockingQueue<a> d = new ArrayBlockingQueue(1000);
     private d e;
 
@@ -27,11 +27,11 @@ public class e implements Runnable {
     }
 
     private void a(RandomAccessFile randomAccessFile) {
-        com.opos.cmn.an.f.a.b(f24887a, "close buffer stream!downloadId:");
+        com.opos.cmn.an.f.a.b(f11199a, "close buffer stream!downloadId:");
         if (randomAccessFile == null) {
             return;
         }
-        Iterator<Map.Entry<Integer, RandomAccessFile>> it = this.f24888c.entrySet().iterator();
+        Iterator<Map.Entry<Integer, RandomAccessFile>> it = this.f11200c.entrySet().iterator();
         while (it.hasNext()) {
             if (randomAccessFile.equals(it.next().getValue())) {
                 it.remove();
@@ -47,27 +47,27 @@ public class e implements Runnable {
 
     public final void a(a aVar) {
         int i = aVar.b;
-        if (this.f24888c.get(Integer.valueOf(i)) == null) {
+        if (this.f11200c.get(Integer.valueOf(i)) == null) {
             com.opos.cmn.func.dl.base.a.c a2 = this.e.a(i);
             if (a2 == null || a2.b.a() != 3) {
                 return;
             }
             try {
-                File file = a2.f24893a.j;
+                File file = a2.f11205a.j;
                 if (!com.opos.cmn.an.d.b.a.a(file)) {
                     com.opos.cmn.func.dl.base.h.a.a(file);
                 }
-                this.f24888c.put(Integer.valueOf(i), new RandomAccessFile(file, "rw"));
+                this.f11200c.put(Integer.valueOf(i), new RandomAccessFile(file, "rw"));
             } catch (Exception e) {
-                boolean a3 = com.opos.cmn.func.dl.base.h.a.a(this.e.f24886c);
-                com.opos.cmn.an.f.a.d(f24887a, "create tempFile failed!hasStorage=".concat(String.valueOf(a3)), e);
+                boolean a3 = com.opos.cmn.func.dl.base.h.a.a(this.e.f11198c);
+                com.opos.cmn.an.f.a.d(f11199a, "create tempFile failed!hasStorage=".concat(String.valueOf(a3)), e);
                 throw new DlException(a3 ? 1000 : 1008, e);
             }
         }
         try {
             this.d.put(aVar);
         } catch (InterruptedException e2) {
-            com.opos.cmn.an.f.a.c(f24887a, "addBuffer interrupt!", e2);
+            com.opos.cmn.an.f.a.c(f11199a, "addBuffer interrupt!", e2);
         }
     }
 
@@ -82,7 +82,7 @@ public class e implements Runnable {
         f fVar2;
         Throwable th;
         DlException dlException;
-        com.opos.cmn.an.f.a.b(f24887a, "Write thread start!");
+        com.opos.cmn.an.f.a.b(f11199a, "Write thread start!");
         while (!this.b) {
             try {
                 try {
@@ -109,21 +109,21 @@ public class e implements Runnable {
                     try {
                         com.opos.cmn.func.dl.base.a.c a2 = this.e.a(aVar.b);
                         if (a2 != null) {
-                            randomAccessFile3 = this.f24888c.get(Integer.valueOf(aVar.b));
+                            randomAccessFile3 = this.f11200c.get(Integer.valueOf(aVar.b));
                             if (randomAccessFile3 != null) {
                                 try {
                                     if (a2.b.a() == 3) {
-                                        f fVar3 = a2.f24894c;
-                                        com.opos.cmn.func.dl.base.a.b bVar = a2.f24893a;
+                                        f fVar3 = a2.f11206c;
+                                        com.opos.cmn.func.dl.base.a.b bVar = a2.f11205a;
                                         if (!bVar.j.exists()) {
                                             throw new DlException(1009);
                                             break;
                                         }
-                                        if (aVar.f24880c != -1) {
+                                        if (aVar.f11192c != -1) {
                                             if (a2.b.a() == 3) {
                                                 randomAccessFile3.seek(aVar.d);
-                                                randomAccessFile3.write(aVar.e, 0, aVar.f24880c);
-                                                bVar.s.addAndGet(aVar.f24880c);
+                                                randomAccessFile3.write(aVar.e, 0, aVar.f11192c);
+                                                bVar.s.addAndGet(aVar.f11192c);
                                                 fVar3.b(aVar);
                                             }
                                         }
@@ -131,18 +131,18 @@ public class e implements Runnable {
                                         boolean z2 = false;
                                         if (bVar.k == -1) {
                                             z2 = false;
-                                            if (aVar.f24880c == -1) {
+                                            if (aVar.f11192c == -1) {
                                                 z2 = true;
                                             }
                                         }
                                         if (z || z2) {
-                                            String str = f24887a;
+                                            String str = f11199a;
                                             StringBuilder sb = new StringBuilder("Write finish by isOverLen :");
                                             sb.append(z);
                                             sb.append(",isEndBuffer:");
                                             sb.append(z2);
                                             com.opos.cmn.an.f.a.a(str, sb.toString());
-                                            RandomAccessFile remove = this.f24888c.remove(Integer.valueOf(aVar.b));
+                                            RandomAccessFile remove = this.f11200c.remove(Integer.valueOf(aVar.b));
                                             if (remove != null) {
                                                 try {
                                                     remove.close();
@@ -151,7 +151,7 @@ public class e implements Runnable {
                                                     fVar2 = fVar3;
                                                     e = e5;
                                                     e = e;
-                                                    com.opos.cmn.an.f.a.c(f24887a, "write block error! ", e);
+                                                    com.opos.cmn.an.f.a.c(f11199a, "write block error! ", e);
                                                     a aVar3 = aVar;
                                                     a(randomAccessFile3);
                                                     aVar2 = aVar;
@@ -159,13 +159,13 @@ public class e implements Runnable {
                                                         fVar2.a(e);
                                                         aVar2 = aVar;
                                                     }
-                                                    this.e.f24885a.e.a(aVar2);
+                                                    this.e.f11197a.e.a(aVar2);
                                                 } catch (IOException e6) {
                                                     randomAccessFile2 = remove;
                                                     fVar = fVar3;
                                                     e = e6;
                                                     e = e;
-                                                    com.opos.cmn.an.f.a.c(f24887a, "write block io error! ", e);
+                                                    com.opos.cmn.an.f.a.c(f11199a, "write block io error! ", e);
                                                     a aVar4 = aVar;
                                                     a(randomAccessFile2);
                                                     aVar2 = aVar;
@@ -175,13 +175,13 @@ public class e implements Runnable {
                                                         fVar.a(dlException);
                                                         aVar2 = aVar;
                                                     }
-                                                    this.e.f24885a.e.a(aVar2);
+                                                    this.e.f11197a.e.a(aVar2);
                                                 } catch (Exception e7) {
                                                     randomAccessFile = remove;
                                                     fVar = fVar3;
                                                     e = e7;
                                                     e = e;
-                                                    com.opos.cmn.an.f.a.c(f24887a, "onError error! ", e);
+                                                    com.opos.cmn.an.f.a.c(f11199a, "onError error! ", e);
                                                     a aVar6 = aVar;
                                                     a(randomAccessFile);
                                                     aVar2 = aVar;
@@ -191,7 +191,7 @@ public class e implements Runnable {
                                                         fVar.a(dlException);
                                                         aVar2 = aVar;
                                                     }
-                                                    this.e.f24885a.e.a(aVar2);
+                                                    this.e.f11197a.e.a(aVar2);
                                                 }
                                             }
                                             fVar3.a();
@@ -211,7 +211,7 @@ public class e implements Runnable {
                                 }
                             }
                         }
-                        this.e.f24885a.e.a(aVar);
+                        this.e.f11197a.e.a(aVar);
                     } catch (DlException e11) {
                         e = e11;
                         fVar2 = null;
@@ -228,17 +228,17 @@ public class e implements Runnable {
                 } catch (InterruptedException e14) {
                     aVar2 = aVar;
                     try {
-                        com.opos.cmn.an.f.a.c(f24887a, "write block inerrupted! ");
-                        this.e.f24885a.e.a(aVar2);
+                        com.opos.cmn.an.f.a.c(f11199a, "write block inerrupted! ");
+                        this.e.f11197a.e.a(aVar2);
                     } catch (Throwable th2) {
                         aVar = aVar2;
                         th = th2;
-                        this.e.f24885a.e.a(aVar);
+                        this.e.f11197a.e.a(aVar);
                         throw th;
                     }
                 } catch (Throwable th3) {
                     th = th3;
-                    this.e.f24885a.e.a(aVar);
+                    this.e.f11197a.e.a(aVar);
                     throw th;
                 }
             } catch (Throwable th4) {

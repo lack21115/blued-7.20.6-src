@@ -2,6 +2,7 @@ package com.tencent.mapsdk.internal;
 
 import android.text.SpannableStringBuilder;
 import android.text.style.ForegroundColorSpan;
+import com.huawei.hms.framework.common.ContainerUtils;
 import com.tencent.map.lib.models.AccessibleTouchItem;
 import java.io.UnsupportedEncodingException;
 import java.net.URI;
@@ -17,7 +18,7 @@ import java.util.regex.Pattern;
 public class f7 {
 
     /* renamed from: a  reason: collision with root package name */
-    private static SimpleDateFormat f37441a = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss.SSS");
+    private static SimpleDateFormat f23750a = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss.SSS");
 
     public static int a(String str, String str2) {
         String[] split = str.split("\\.");
@@ -55,7 +56,7 @@ public class f7 {
     }
 
     public static String a(long j) {
-        return f37441a.format(Long.valueOf(j));
+        return f23750a.format(Long.valueOf(j));
     }
 
     public static String a(String str) {
@@ -213,7 +214,7 @@ public class f7 {
         }
         try {
             URI uri = new URI(str);
-            String[] split = uri.getQuery().split("&");
+            String[] split = uri.getQuery().split(ContainerUtils.FIELD_DELIMITER);
             Arrays.sort(split);
             StringBuilder sb = new StringBuilder();
             int length = split.length;

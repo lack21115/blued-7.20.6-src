@@ -8,6 +8,7 @@ import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import com.blued.android.core.image.ImageLoadResult;
@@ -20,6 +21,7 @@ import com.blued.android.module.yy_china.databinding.ItemYyEntranceEffectBinding
 import com.blued.android.module.yy_china.manager.YYRoomInfoManager;
 import com.blued.android.module.yy_china.model.YYImModel;
 import com.bumptech.glide.request.target.CustomTarget;
+import com.bumptech.glide.request.target.Target;
 import com.bumptech.glide.request.transition.Transition;
 import java.util.ArrayList;
 import java.util.List;
@@ -29,13 +31,9 @@ public class YyEntranceEffectLayout extends RelativeLayout {
     private static int d = 500;
     private static int e = 2900;
     private static int f = 500;
-
-    /* renamed from: a  reason: collision with root package name */
-    private ItemYyEntranceEffectBinding f18590a;
+    private ItemYyEntranceEffectBinding a;
     private List<YYImModel> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private KeyBoardFragment f18591c;
+    private KeyBoardFragment c;
 
     public YyEntranceEffectLayout(Context context) {
         this(context, null);
@@ -47,7 +45,7 @@ public class YyEntranceEffectLayout extends RelativeLayout {
 
     public YyEntranceEffectLayout(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f18590a = ItemYyEntranceEffectBinding.a(LayoutInflater.from(context), this, true);
+        this.a = ItemYyEntranceEffectBinding.a(LayoutInflater.from(context), this, true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -56,82 +54,80 @@ public class YyEntranceEffectLayout extends RelativeLayout {
             return;
         }
         if (!YYRoomInfoManager.e().J()) {
-            this.f18590a.h.setText(yYImModel.source_profile.getName());
-            ImageLoader.a(this.f18591c.getFragmentActive(), yYImModel.source_profile.getAvatar()).b(R.drawable.user_bg_round).a(this.f18590a.f16707c);
+            this.a.h.setText(yYImModel.source_profile.getName());
+            ImageLoader.a(this.c.getFragmentActive(), yYImModel.source_profile.getAvatar()).b(R.drawable.user_bg_round).a((ImageView) this.a.c);
         } else if (YYRoomInfoManager.e().g(yYImModel.source_profile.getUid())) {
-            this.f18590a.h.setText(yYImModel.source_profile.getName());
-            ImageLoader.a(this.f18591c.getFragmentActive(), yYImModel.source_profile.getAvatar()).b(R.drawable.user_bg_round).a(this.f18590a.f16707c);
+            this.a.h.setText(yYImModel.source_profile.getName());
+            ImageLoader.a(this.c.getFragmentActive(), yYImModel.source_profile.getAvatar()).b(R.drawable.user_bg_round).a((ImageView) this.a.c);
         } else {
-            this.f18590a.h.setText(this.f18591c.getResources().getString(R.string.masked_user_name));
-            ImageLoader.a(this.f18591c.getFragmentActive(), R.drawable.icon_user_mask_without_text).a(this.f18590a.f16707c);
+            this.a.h.setText(this.c.getResources().getString(R.string.masked_user_name));
+            ImageLoader.a(this.c.getFragmentActive(), R.drawable.icon_user_mask_without_text).a((ImageView) this.a.c);
         }
         if (yYImModel.source_profile.enter_effects_forward == null || "".equals(yYImModel.source_profile.enter_effects_forward)) {
-            ShapeHelper.a(this.f18590a.f, R.color.syc_00FD4848, R.color.syc_fff95b39);
+            ShapeHelper.a(this.a.f, R.color.syc_00FD4848, R.color.syc_fff95b39);
             if (yYImModel.source_profile.wealth_level >= 30) {
-                ShapeHelper.a(this.f18590a.f, R.color.syc_0050A6FF, R.color.syc_FF50A6FF);
+                ShapeHelper.a(this.a.f, R.color.syc_0050A6FF, R.color.syc_FF50A6FF);
             }
             if (yYImModel.source_profile.wealth_level >= 36) {
-                ShapeHelper.a(this.f18590a.f, R.color.syc_009270F0, R.color.syc_FF9270F0);
+                ShapeHelper.a(this.a.f, R.color.syc_009270F0, R.color.syc_FF9270F0);
             }
             if (yYImModel.source_profile.wealth_level >= 41) {
-                ShapeHelper.a(this.f18590a.f, R.color.syc_00FD4848, R.color.syc_FFFD4848);
+                ShapeHelper.a(this.a.f, R.color.syc_00FD4848, R.color.syc_FFFD4848);
             }
             if (yYImModel.source_profile.wealth_level >= 46) {
-                ShapeHelper.a(this.f18590a.f, R.color.syc_00FDDE01, R.color.syc_FFFDDE01);
+                ShapeHelper.a(this.a.f, R.color.syc_00FDDE01, R.color.syc_FFFDDE01);
             }
         } else {
-            ImageLoader.a(this.f18591c.getFragmentActive(), yYImModel.source_profile.enter_effects_forward).a(new CustomTarget<Drawable>() { // from class: com.blued.android.module.yy_china.view.YyEntranceEffectLayout.1
-                @Override // com.bumptech.glide.request.target.Target
+            ImageLoader.a(this.c.getFragmentActive(), yYImModel.source_profile.enter_effects_forward).a((Target<Drawable>) new CustomTarget<Drawable>() { // from class: com.blued.android.module.yy_china.view.YyEntranceEffectLayout.1
                 /* renamed from: a */
                 public void onResourceReady(Drawable drawable, Transition<? super Drawable> transition) {
-                    YyEntranceEffectLayout.this.f18590a.f.setBackground(drawable);
+                    YyEntranceEffectLayout.this.a.f.setBackground(drawable);
                 }
 
-                @Override // com.bumptech.glide.request.target.Target
                 public void onLoadCleared(Drawable drawable) {
                 }
             });
         }
         if (yYImModel.source_profile.enter_effects == null || "".equals(yYImModel.source_profile.enter_effects)) {
-            this.f18590a.d.setVisibility(8);
-            this.f18590a.f16706a.post(new Runnable() { // from class: com.blued.android.module.yy_china.view.YyEntranceEffectLayout.3
+            this.a.d.setVisibility(8);
+            this.a.a.post(new Runnable() { // from class: com.blued.android.module.yy_china.view.YyEntranceEffectLayout.3
                 @Override // java.lang.Runnable
                 public void run() {
-                    YyEntranceEffectLayout.this.f18590a.f16706a.measure(View.MeasureSpec.makeMeasureSpec(0, 0), View.MeasureSpec.makeMeasureSpec(0, 0));
-                    YyEntranceEffectLayout.this.f18590a.f16706a.layout(0, 0, YyEntranceEffectLayout.this.f18590a.f16706a.getMeasuredWidth(), YyEntranceEffectLayout.this.f18590a.f16706a.getMeasuredHeight());
+                    YyEntranceEffectLayout.this.a.a.measure(View.MeasureSpec.makeMeasureSpec(0, 0), View.MeasureSpec.makeMeasureSpec(0, 0));
+                    YyEntranceEffectLayout.this.a.a.layout(0, 0, YyEntranceEffectLayout.this.a.a.getMeasuredWidth(), YyEntranceEffectLayout.this.a.a.getMeasuredHeight());
                     YyEntranceEffectLayout yyEntranceEffectLayout = YyEntranceEffectLayout.this;
-                    yyEntranceEffectLayout.a(yyEntranceEffectLayout.f18590a.f16706a.getMeasuredWidth(), yYImModel).start();
+                    yyEntranceEffectLayout.a(yyEntranceEffectLayout.a.a.getMeasuredWidth(), yYImModel).start();
                 }
             });
             return;
         }
-        this.f18590a.d.setVisibility(0);
-        ImageLoader.a(this.f18591c.getFragmentActive(), yYImModel.source_profile.enter_effects).a(new ImageLoadResult(this.f18591c.getFragmentActive()) { // from class: com.blued.android.module.yy_china.view.YyEntranceEffectLayout.2
+        this.a.d.setVisibility(0);
+        ImageLoader.a(this.c.getFragmentActive(), yYImModel.source_profile.enter_effects).a(new ImageLoadResult(this.c.getFragmentActive()) { // from class: com.blued.android.module.yy_china.view.YyEntranceEffectLayout.2
             @Override // com.blued.android.core.image.ImageLoadResult
             public void a() {
                 super.a();
-                YyEntranceEffectLayout.this.f18590a.f16706a.post(new Runnable() { // from class: com.blued.android.module.yy_china.view.YyEntranceEffectLayout.2.1
+                YyEntranceEffectLayout.this.a.a.post(new Runnable() { // from class: com.blued.android.module.yy_china.view.YyEntranceEffectLayout.2.1
                     @Override // java.lang.Runnable
                     public void run() {
-                        YyEntranceEffectLayout.this.f18590a.f16706a.measure(View.MeasureSpec.makeMeasureSpec(0, 0), View.MeasureSpec.makeMeasureSpec(0, 0));
-                        YyEntranceEffectLayout.this.f18590a.f16706a.layout(0, 0, YyEntranceEffectLayout.this.f18590a.f16706a.getMeasuredWidth(), YyEntranceEffectLayout.this.f18590a.f16706a.getMeasuredHeight());
-                        YyEntranceEffectLayout.this.a(YyEntranceEffectLayout.this.f18590a.f16706a.getMeasuredWidth(), yYImModel).start();
+                        YyEntranceEffectLayout.this.a.a.measure(View.MeasureSpec.makeMeasureSpec(0, 0), View.MeasureSpec.makeMeasureSpec(0, 0));
+                        YyEntranceEffectLayout.this.a.a.layout(0, 0, YyEntranceEffectLayout.this.a.a.getMeasuredWidth(), YyEntranceEffectLayout.this.a.a.getMeasuredHeight());
+                        YyEntranceEffectLayout.this.a(YyEntranceEffectLayout.this.a.a.getMeasuredWidth(), yYImModel).start();
                     }
                 });
             }
-        }).g(-1).e(1).a().a(this.f18590a.d);
+        }).g(-1).e(1).a().a(this.a.d);
     }
 
     public AnimatorSet a(float f2, final YYImModel yYImModel) {
-        this.f18590a.f16706a.setVisibility(0);
+        this.a.a.setVisibility(0);
         ValueAnimator ofFloat = ValueAnimator.ofFloat(getResources().getDisplayMetrics().widthPixels, DensityUtils.a(getContext(), 20.0f));
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.blued.android.module.yy_china.view.YyEntranceEffectLayout.4
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public void onAnimationUpdate(ValueAnimator valueAnimator) {
                 float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) YyEntranceEffectLayout.this.f18590a.f16706a.getLayoutParams();
+                LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) YyEntranceEffectLayout.this.a.a.getLayoutParams();
                 layoutParams.leftMargin = (int) floatValue;
-                YyEntranceEffectLayout.this.f18590a.f16706a.setLayoutParams(layoutParams);
+                YyEntranceEffectLayout.this.a.a.setLayoutParams(layoutParams);
             }
         });
         ofFloat.setDuration(d);
@@ -140,9 +136,9 @@ public class YyEntranceEffectLayout extends RelativeLayout {
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public void onAnimationUpdate(ValueAnimator valueAnimator) {
                 float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) YyEntranceEffectLayout.this.f18590a.f16706a.getLayoutParams();
+                LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) YyEntranceEffectLayout.this.a.a.getLayoutParams();
                 layoutParams.leftMargin = (int) floatValue;
-                YyEntranceEffectLayout.this.f18590a.f16706a.setLayoutParams(layoutParams);
+                YyEntranceEffectLayout.this.a.a.setLayoutParams(layoutParams);
             }
         });
         ofFloat2.addListener(new Animator.AnimatorListener() { // from class: com.blued.android.module.yy_china.view.YyEntranceEffectLayout.6
@@ -168,9 +164,9 @@ public class YyEntranceEffectLayout extends RelativeLayout {
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public void onAnimationUpdate(ValueAnimator valueAnimator) {
                 float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) YyEntranceEffectLayout.this.f18590a.f16706a.getLayoutParams();
+                LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) YyEntranceEffectLayout.this.a.a.getLayoutParams();
                 layoutParams.leftMargin = (int) floatValue;
-                YyEntranceEffectLayout.this.f18590a.f16706a.setLayoutParams(layoutParams);
+                YyEntranceEffectLayout.this.a.a.setLayoutParams(layoutParams);
             }
         });
         ofFloat3.setDuration(f);
@@ -180,10 +176,10 @@ public class YyEntranceEffectLayout extends RelativeLayout {
         arrayList.add(ofFloat3);
         AnimatorSet animatorSet = new AnimatorSet();
         animatorSet.playSequentially(arrayList);
-        this.f18590a.f16706a.postDelayed(new Runnable() { // from class: com.blued.android.module.yy_china.view.YyEntranceEffectLayout.8
+        this.a.a.postDelayed(new Runnable() { // from class: com.blued.android.module.yy_china.view.YyEntranceEffectLayout.8
             @Override // java.lang.Runnable
             public void run() {
-                YyEntranceEffectLayout.this.f18590a.f16706a.setVisibility(8);
+                YyEntranceEffectLayout.this.a.a.setVisibility(8);
                 if (YyEntranceEffectLayout.this.b.size() > 0) {
                     YyEntranceEffectLayout.this.b.remove(yYImModel);
                 }
@@ -197,7 +193,7 @@ public class YyEntranceEffectLayout extends RelativeLayout {
     }
 
     public void a(KeyBoardFragment keyBoardFragment) {
-        this.f18591c = keyBoardFragment;
+        this.c = keyBoardFragment;
         this.b = new ArrayList();
     }
 
@@ -213,7 +209,7 @@ public class YyEntranceEffectLayout extends RelativeLayout {
             r0 = r5
             if (r0 == 0) goto L76
             r0 = r4
-            com.blued.android.framework.activity.keyboardpage.KeyBoardFragment r0 = r0.f18591c
+            com.blued.android.framework.activity.keyboardpage.KeyBoardFragment r0 = r0.c
             if (r0 == 0) goto L76
             r0 = r5
             com.blued.android.module.yy_china.model.YYAudienceModel r0 = r0.source_profile

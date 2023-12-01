@@ -1,6 +1,5 @@
 package com.blued.android.framework.utils;
 
-import com.igexin.push.core.b;
 import java.lang.reflect.Array;
 import java.lang.reflect.GenericArrayType;
 import java.lang.reflect.ParameterizedType;
@@ -26,7 +25,7 @@ public class ClassUtils {
         if (type instanceof WildcardType) {
             return a(((WildcardType) type).getUpperBounds()[0]);
         }
-        String name = type == null ? b.l : type.getClass().getName();
+        String name = type == null ? "null" : type.getClass().getName();
         throw new IllegalArgumentException("Expected a Class, ParameterizedType, or GenericArrayType, but <" + type + "> is of type " + name);
     }
 }

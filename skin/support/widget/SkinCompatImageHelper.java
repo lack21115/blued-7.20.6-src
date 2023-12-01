@@ -11,13 +11,9 @@ import skin.support.content.res.SkinCompatVectorResources;
 
 /* loaded from: source-3503164-dex2jar.jar:skin/support/widget/SkinCompatImageHelper.class */
 public class SkinCompatImageHelper extends SkinCompatHelper {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final String f44270a = SkinCompatImageHelper.class.getSimpleName();
+    private static final String a = SkinCompatImageHelper.class.getSimpleName();
     private final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f44271c = 0;
+    private int c = 0;
     private int d = 0;
     private int e = 0;
 
@@ -35,9 +31,9 @@ public class SkinCompatImageHelper extends SkinCompatHelper {
                 this.b.setImageDrawable(a3);
             }
         } else {
-            int b2 = b(this.f44271c);
-            this.f44271c = b2;
-            if (b2 != 0 && (a2 = SkinCompatVectorResources.a(this.b.getContext(), this.f44271c)) != null) {
+            int b2 = b(this.c);
+            this.c = b2;
+            if (b2 != 0 && (a2 = SkinCompatVectorResources.a(this.b.getContext(), this.c)) != null) {
                 this.b.setImageDrawable(a2);
             }
         }
@@ -49,7 +45,7 @@ public class SkinCompatImageHelper extends SkinCompatHelper {
     }
 
     public void a(int i) {
-        this.f44271c = i;
+        this.c = i;
         this.d = 0;
         a();
     }
@@ -58,7 +54,7 @@ public class SkinCompatImageHelper extends SkinCompatHelper {
         TypedArray typedArray = null;
         try {
             TypedArray obtainStyledAttributes = this.b.getContext().obtainStyledAttributes(attributeSet, R.styleable.SkinCompatImageView, i, 0);
-            this.f44271c = obtainStyledAttributes.getResourceId(R.styleable.SkinCompatImageView_android_src, 0);
+            this.c = obtainStyledAttributes.getResourceId(R.styleable.SkinCompatImageView_android_src, 0);
             this.d = obtainStyledAttributes.getResourceId(R.styleable.SkinCompatImageView_srcCompat, 0);
             int resourceId = obtainStyledAttributes.getResourceId(R.styleable.SkinCompatImageView_tint, 0);
             this.e = resourceId;

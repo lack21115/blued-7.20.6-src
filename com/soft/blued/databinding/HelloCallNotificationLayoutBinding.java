@@ -13,11 +13,11 @@ import com.soft.blued.R;
 public final class HelloCallNotificationLayoutBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final FrameLayout f29063a;
+    public final FrameLayout f15373a;
     public final FrameLayout b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final ImageView f29064c;
+    public final ImageView f15374c;
     public final ImageView d;
     public final LinearLayout e;
     public final ShapeConstraintLayout f;
@@ -26,9 +26,9 @@ public final class HelloCallNotificationLayoutBinding implements ViewBinding {
 
     private HelloCallNotificationLayoutBinding(ShapeConstraintLayout shapeConstraintLayout, FrameLayout frameLayout, FrameLayout frameLayout2, ImageView imageView, ImageView imageView2, LinearLayout linearLayout, ShapeConstraintLayout shapeConstraintLayout2, TextView textView) {
         this.h = shapeConstraintLayout;
-        this.f29063a = frameLayout;
+        this.f15373a = frameLayout;
         this.b = frameLayout2;
-        this.f29064c = imageView;
+        this.f15374c = imageView;
         this.d = imageView2;
         this.e = linearLayout;
         this.f = shapeConstraintLayout2;
@@ -45,13 +45,13 @@ public final class HelloCallNotificationLayoutBinding implements ViewBinding {
                 if (imageView != null) {
                     ImageView imageView2 = (ImageView) view.findViewById(R.id.img_notification_bg);
                     if (imageView2 != null) {
-                        LinearLayout linearLayout = (LinearLayout) view.findViewById(2131364999);
+                        LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.item_view);
                         if (linearLayout != null) {
-                            ShapeConstraintLayout shapeConstraintLayout = (ShapeConstraintLayout) view.findViewById(2131369470);
-                            if (shapeConstraintLayout != null) {
+                            ShapeConstraintLayout findViewById = view.findViewById(2131369470);
+                            if (findViewById != null) {
                                 TextView textView = (TextView) view.findViewById(R.id.tv_notification_title);
                                 if (textView != null) {
-                                    return new HelloCallNotificationLayoutBinding((ShapeConstraintLayout) view, frameLayout, frameLayout2, imageView, imageView2, linearLayout, shapeConstraintLayout, textView);
+                                    return new HelloCallNotificationLayoutBinding((ShapeConstraintLayout) view, frameLayout, frameLayout2, imageView, imageView2, linearLayout, findViewById, textView);
                                 }
                                 str = "tvNotificationTitle";
                             } else {

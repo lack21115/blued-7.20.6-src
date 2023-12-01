@@ -11,7 +11,7 @@ import org.json.JSONObject;
 public class k {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f9434a;
+    private int f6594a;
     private String b;
 
     private static k a(JSONObject jSONObject) {
@@ -25,7 +25,7 @@ public class k {
             kVar = null;
             if (!TextUtils.isEmpty(optString)) {
                 kVar = new k();
-                kVar.f9434a = optInt;
+                kVar.f6594a = optInt;
                 kVar.b = optString;
             }
         }
@@ -56,7 +56,7 @@ public class k {
     }
 
     public int a() {
-        return this.f9434a;
+        return this.f6594a;
     }
 
     public String b() {

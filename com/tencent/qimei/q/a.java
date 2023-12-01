@@ -8,18 +8,18 @@ import java.util.concurrent.ConcurrentHashMap;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f38403a = "a";
+    public static final String f24712a = "a";
     public static final Map<String, a> b = new ConcurrentHashMap();
 
     /* renamed from: c  reason: collision with root package name */
-    public final String f38404c;
+    public final String f24713c;
     public boolean d = false;
     public boolean e = false;
     public Qimei f;
     public boolean g;
 
     public a(String str) {
-        this.f38404c = str;
+        this.f24713c = str;
     }
 
     public static a a(String str) {
@@ -62,7 +62,7 @@ public class a {
             goto L41
         L13:
             r0 = r5
-            java.lang.String r0 = r0.f38404c
+            java.lang.String r0 = r0.f24713c
             com.tencent.qimei.i.f r0 = com.tencent.qimei.i.f.a(r0)
             java.lang.String r1 = "q_s_t"
             long r0 = r0.b(r1)

@@ -39,9 +39,9 @@ public final class ProtoAdapterKt {
         return new ProtoAdapter<Boolean>(fieldEncoding, b, syntax) { // from class: com.squareup.wire.ProtoAdapterKt$commonBool$1
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // com.squareup.wire.ProtoAdapter
-            public Boolean decode(ProtoReader reader) throws IOException {
-                Intrinsics.e(reader, "reader");
-                return Boolean.valueOf(reader.readVarint32() != 0);
+            public Boolean decode(ProtoReader protoReader) throws IOException {
+                Intrinsics.e(protoReader, "reader");
+                return Boolean.valueOf(protoReader.readVarint32() != 0);
             }
 
             @Override // com.squareup.wire.ProtoAdapter
@@ -91,34 +91,34 @@ public final class ProtoAdapterKt {
         final ByteString byteString = ByteString.EMPTY;
         return new ProtoAdapter<ByteString>(fieldEncoding, b, syntax, byteString) { // from class: com.squareup.wire.ProtoAdapterKt$commonBytes$1
             @Override // com.squareup.wire.ProtoAdapter
-            public ByteString decode(ProtoReader reader) throws IOException {
-                Intrinsics.e(reader, "reader");
-                return reader.readBytes();
+            public ByteString decode(ProtoReader protoReader) throws IOException {
+                Intrinsics.e(protoReader, "reader");
+                return protoReader.readBytes();
             }
 
             @Override // com.squareup.wire.ProtoAdapter
-            public void encode(ProtoWriter writer, ByteString value) throws IOException {
-                Intrinsics.e(writer, "writer");
-                Intrinsics.e(value, "value");
-                writer.writeBytes(value);
+            public void encode(ProtoWriter protoWriter, ByteString byteString2) throws IOException {
+                Intrinsics.e(protoWriter, "writer");
+                Intrinsics.e(byteString2, "value");
+                protoWriter.writeBytes(byteString2);
             }
 
             @Override // com.squareup.wire.ProtoAdapter
-            public void encode(ReverseProtoWriter writer, ByteString value) throws IOException {
-                Intrinsics.e(writer, "writer");
-                Intrinsics.e(value, "value");
-                writer.writeBytes(value);
+            public void encode(ReverseProtoWriter reverseProtoWriter, ByteString byteString2) throws IOException {
+                Intrinsics.e(reverseProtoWriter, "writer");
+                Intrinsics.e(byteString2, "value");
+                reverseProtoWriter.writeBytes(byteString2);
             }
 
             @Override // com.squareup.wire.ProtoAdapter
-            public int encodedSize(ByteString value) {
-                Intrinsics.e(value, "value");
-                return value.size();
+            public int encodedSize(ByteString byteString2) {
+                Intrinsics.e(byteString2, "value");
+                return byteString2.size();
             }
 
             @Override // com.squareup.wire.ProtoAdapter
-            public ByteString redact(ByteString value) {
-                Intrinsics.e(value, "value");
+            public ByteString redact(ByteString byteString2) {
+                Intrinsics.e(byteString2, "value");
                 throw new UnsupportedOperationException();
             }
         };
@@ -137,22 +137,22 @@ public final class ProtoAdapterKt {
         return new RepeatedProtoAdapter(protoAdapter);
     }
 
-    public static final <E> E commonDecode(ProtoAdapter<E> protoAdapter, BufferedSource source) {
+    public static final <E> E commonDecode(ProtoAdapter<E> protoAdapter, BufferedSource bufferedSource) {
         Intrinsics.e(protoAdapter, "<this>");
-        Intrinsics.e(source, "source");
-        return protoAdapter.decode(new ProtoReader(source));
+        Intrinsics.e(bufferedSource, "source");
+        return protoAdapter.decode(new ProtoReader(bufferedSource));
     }
 
-    public static final <E> E commonDecode(ProtoAdapter<E> protoAdapter, ByteString bytes) {
+    public static final <E> E commonDecode(ProtoAdapter<E> protoAdapter, ByteString byteString) {
         Intrinsics.e(protoAdapter, "<this>");
-        Intrinsics.e(bytes, "bytes");
-        return protoAdapter.decode(new Buffer().write(bytes));
+        Intrinsics.e(byteString, "bytes");
+        return protoAdapter.decode(new Buffer().write(byteString));
     }
 
-    public static final <E> E commonDecode(ProtoAdapter<E> protoAdapter, byte[] bytes) {
+    public static final <E> E commonDecode(ProtoAdapter<E> protoAdapter, byte[] bArr) {
         Intrinsics.e(protoAdapter, "<this>");
-        Intrinsics.e(bytes, "bytes");
-        return protoAdapter.decode(new Buffer().write(bytes));
+        Intrinsics.e(bArr, "bytes");
+        return protoAdapter.decode(new Buffer().write(bArr));
     }
 
     public static final ProtoAdapter<Double> commonDouble() {
@@ -167,15 +167,15 @@ public final class ProtoAdapterKt {
 
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // com.squareup.wire.ProtoAdapter
-            public Double decode(ProtoReader reader) throws IOException {
-                Intrinsics.e(reader, "reader");
-                DoubleCompanionObject doubleCompanionObject = DoubleCompanionObject.f42531a;
-                return Double.valueOf(Double.longBitsToDouble(reader.readFixed64()));
+            public Double decode(ProtoReader protoReader) throws IOException {
+                Intrinsics.e(protoReader, "reader");
+                DoubleCompanionObject doubleCompanionObject = DoubleCompanionObject.a;
+                return Double.valueOf(Double.longBitsToDouble(protoReader.readFixed64()));
             }
 
-            public void encode(ProtoWriter writer, double d) throws IOException {
-                Intrinsics.e(writer, "writer");
-                writer.writeFixed64(Double.doubleToLongBits(d));
+            public void encode(ProtoWriter protoWriter, double d) throws IOException {
+                Intrinsics.e(protoWriter, "writer");
+                protoWriter.writeFixed64(Double.doubleToLongBits(d));
             }
 
             @Override // com.squareup.wire.ProtoAdapter
@@ -183,9 +183,9 @@ public final class ProtoAdapterKt {
                 encode(protoWriter, d.doubleValue());
             }
 
-            public void encode(ReverseProtoWriter writer, double d) throws IOException {
-                Intrinsics.e(writer, "writer");
-                writer.writeFixed64(Double.doubleToLongBits(d));
+            public void encode(ReverseProtoWriter reverseProtoWriter, double d) throws IOException {
+                Intrinsics.e(reverseProtoWriter, "writer");
+                reverseProtoWriter.writeFixed64(Double.doubleToLongBits(d));
             }
 
             @Override // com.squareup.wire.ProtoAdapter
@@ -227,65 +227,65 @@ public final class ProtoAdapterKt {
             }
 
             @Override // com.squareup.wire.ProtoAdapter
-            public Duration decode(ProtoReader reader) {
-                Intrinsics.e(reader, "reader");
-                long beginMessage = reader.beginMessage();
+            public Duration decode(ProtoReader protoReader) {
+                Intrinsics.e(protoReader, "reader");
+                long beginMessage = protoReader.beginMessage();
                 long j = 0;
                 int i = 0;
                 while (true) {
-                    int nextTag = reader.nextTag();
+                    int nextTag = protoReader.nextTag();
                     if (nextTag == -1) {
-                        reader.endMessageAndGetUnknownFields(beginMessage);
+                        protoReader.endMessageAndGetUnknownFields(beginMessage);
                         Duration ofSeconds = Duration.ofSeconds(j, i);
                         Intrinsics.c(ofSeconds, "ofSeconds(seconds, nano)");
                         return ofSeconds;
                     } else if (nextTag == 1) {
-                        j = ProtoAdapter.INT64.decode(reader).longValue();
+                        j = ProtoAdapter.INT64.decode(protoReader).longValue();
                     } else if (nextTag != 2) {
-                        reader.readUnknownField(nextTag);
+                        protoReader.readUnknownField(nextTag);
                     } else {
-                        i = ProtoAdapter.INT32.decode(reader).intValue();
+                        i = ProtoAdapter.INT32.decode(protoReader).intValue();
                     }
                 }
             }
 
             @Override // com.squareup.wire.ProtoAdapter
-            public void encode(ProtoWriter writer, Duration value) {
-                Intrinsics.e(writer, "writer");
-                Intrinsics.e(value, "value");
-                long sameSignSeconds = getSameSignSeconds(value);
+            public void encode(ProtoWriter protoWriter, Duration duration) {
+                Intrinsics.e(protoWriter, "writer");
+                Intrinsics.e(duration, "value");
+                long sameSignSeconds = getSameSignSeconds(duration);
                 if (sameSignSeconds != 0) {
-                    ProtoAdapter.INT64.encodeWithTag(writer, 1, (int) Long.valueOf(sameSignSeconds));
+                    ProtoAdapter.INT64.encodeWithTag(protoWriter, 1, (int) Long.valueOf(sameSignSeconds));
                 }
-                int sameSignNanos = getSameSignNanos(value);
+                int sameSignNanos = getSameSignNanos(duration);
                 if (sameSignNanos != 0) {
-                    ProtoAdapter.INT32.encodeWithTag(writer, 2, (int) Integer.valueOf(sameSignNanos));
+                    ProtoAdapter.INT32.encodeWithTag(protoWriter, 2, (int) Integer.valueOf(sameSignNanos));
                 }
             }
 
             @Override // com.squareup.wire.ProtoAdapter
-            public void encode(ReverseProtoWriter writer, Duration value) {
-                Intrinsics.e(writer, "writer");
-                Intrinsics.e(value, "value");
-                int sameSignNanos = getSameSignNanos(value);
+            public void encode(ReverseProtoWriter reverseProtoWriter, Duration duration) {
+                Intrinsics.e(reverseProtoWriter, "writer");
+                Intrinsics.e(duration, "value");
+                int sameSignNanos = getSameSignNanos(duration);
                 if (sameSignNanos != 0) {
-                    ProtoAdapter.INT32.encodeWithTag(writer, 2, (int) Integer.valueOf(sameSignNanos));
+                    ProtoAdapter.INT32.encodeWithTag(reverseProtoWriter, 2, (int) Integer.valueOf(sameSignNanos));
                 }
-                long sameSignSeconds = getSameSignSeconds(value);
+                long sameSignSeconds = getSameSignSeconds(duration);
                 if (sameSignSeconds != 0) {
-                    ProtoAdapter.INT64.encodeWithTag(writer, 1, (int) Long.valueOf(sameSignSeconds));
+                    ProtoAdapter.INT64.encodeWithTag(reverseProtoWriter, 1, (int) Long.valueOf(sameSignSeconds));
                 }
             }
 
             @Override // com.squareup.wire.ProtoAdapter
-            public int encodedSize(Duration value) {
-                Intrinsics.e(value, "value");
-                long sameSignSeconds = getSameSignSeconds(value);
+            public int encodedSize(Duration duration) {
+                Intrinsics.e(duration, "value");
+                long sameSignSeconds = getSameSignSeconds(duration);
                 int i = 0;
                 if (sameSignSeconds != 0) {
                     i = 0 + ProtoAdapter.INT64.encodedSizeWithTag(1, Long.valueOf(sameSignSeconds));
                 }
-                int sameSignNanos = getSameSignNanos(value);
+                int sameSignNanos = getSameSignNanos(duration);
                 int i2 = i;
                 if (sameSignNanos != 0) {
                     i2 = i + ProtoAdapter.INT32.encodedSizeWithTag(2, Integer.valueOf(sameSignNanos));
@@ -294,9 +294,9 @@ public final class ProtoAdapterKt {
             }
 
             @Override // com.squareup.wire.ProtoAdapter
-            public Duration redact(Duration value) {
-                Intrinsics.e(value, "value");
-                return value;
+            public Duration redact(Duration duration) {
+                Intrinsics.e(duration, "value");
+                return duration;
             }
         };
     }
@@ -309,103 +309,103 @@ public final class ProtoAdapterKt {
             @Override // com.squareup.wire.ProtoAdapter
             public /* bridge */ /* synthetic */ Unit decode(ProtoReader protoReader) {
                 decode2(protoReader);
-                return Unit.f42314a;
+                return Unit.a;
             }
 
             /* renamed from: decode  reason: avoid collision after fix types in other method */
-            public void decode2(ProtoReader reader) {
-                Intrinsics.e(reader, "reader");
-                long beginMessage = reader.beginMessage();
+            public void decode2(ProtoReader protoReader) {
+                Intrinsics.e(protoReader, "reader");
+                long beginMessage = protoReader.beginMessage();
                 while (true) {
-                    int nextTag = reader.nextTag();
+                    int nextTag = protoReader.nextTag();
                     if (nextTag == -1) {
-                        reader.endMessageAndGetUnknownFields(beginMessage);
+                        protoReader.endMessageAndGetUnknownFields(beginMessage);
                         return;
                     }
-                    reader.readUnknownField(nextTag);
+                    protoReader.readUnknownField(nextTag);
                 }
             }
 
             @Override // com.squareup.wire.ProtoAdapter
-            public void encode(ProtoWriter writer, Unit value) {
-                Intrinsics.e(writer, "writer");
-                Intrinsics.e(value, "value");
+            public void encode(ProtoWriter protoWriter, Unit unit) {
+                Intrinsics.e(protoWriter, "writer");
+                Intrinsics.e(unit, "value");
             }
 
             @Override // com.squareup.wire.ProtoAdapter
-            public void encode(ReverseProtoWriter writer, Unit value) {
-                Intrinsics.e(writer, "writer");
-                Intrinsics.e(value, "value");
+            public void encode(ReverseProtoWriter reverseProtoWriter, Unit unit) {
+                Intrinsics.e(reverseProtoWriter, "writer");
+                Intrinsics.e(unit, "value");
             }
 
             @Override // com.squareup.wire.ProtoAdapter
-            public int encodedSize(Unit value) {
-                Intrinsics.e(value, "value");
+            public int encodedSize(Unit unit) {
+                Intrinsics.e(unit, "value");
                 return 0;
             }
 
             @Override // com.squareup.wire.ProtoAdapter
             public /* bridge */ /* synthetic */ Unit redact(Unit unit) {
                 redact2(unit);
-                return Unit.f42314a;
+                return Unit.a;
             }
 
             /* renamed from: redact  reason: avoid collision after fix types in other method */
-            public void redact2(Unit value) {
-                Intrinsics.e(value, "value");
+            public void redact2(Unit unit) {
+                Intrinsics.e(unit, "value");
             }
         };
     }
 
-    public static final <E> void commonEncode(ProtoAdapter<E> protoAdapter, BufferedSink sink, E e) {
+    public static final <E> void commonEncode(ProtoAdapter<E> protoAdapter, BufferedSink bufferedSink, E e) {
         Intrinsics.e(protoAdapter, "<this>");
-        Intrinsics.e(sink, "sink");
+        Intrinsics.e(bufferedSink, "sink");
         ReverseProtoWriter reverseProtoWriter = new ReverseProtoWriter();
         protoAdapter.encode(reverseProtoWriter, (ReverseProtoWriter) e);
-        reverseProtoWriter.writeTo(sink);
+        reverseProtoWriter.writeTo(bufferedSink);
     }
 
     public static final <E> byte[] commonEncode(ProtoAdapter<E> protoAdapter, E e) {
         Intrinsics.e(protoAdapter, "<this>");
-        Buffer buffer = new Buffer();
-        protoAdapter.encode((BufferedSink) buffer, (Buffer) e);
+        BufferedSink buffer = new Buffer();
+        protoAdapter.encode(buffer, (BufferedSink) e);
         return buffer.readByteArray();
     }
 
     public static final <E> ByteString commonEncodeByteString(ProtoAdapter<E> protoAdapter, E e) {
         Intrinsics.e(protoAdapter, "<this>");
-        Buffer buffer = new Buffer();
-        protoAdapter.encode((BufferedSink) buffer, (Buffer) e);
+        BufferedSink buffer = new Buffer();
+        protoAdapter.encode(buffer, (BufferedSink) e);
         return buffer.readByteString();
     }
 
-    public static final <E> void commonEncodeWithTag(ProtoAdapter<E> protoAdapter, ProtoWriter writer, int i, E e) {
+    public static final <E> void commonEncodeWithTag(ProtoAdapter<E> protoAdapter, ProtoWriter protoWriter, int i, E e) {
         Intrinsics.e(protoAdapter, "<this>");
-        Intrinsics.e(writer, "writer");
+        Intrinsics.e(protoWriter, "writer");
         if (e == null) {
             return;
         }
-        writer.writeTag(i, protoAdapter.getFieldEncoding$wire_runtime());
+        protoWriter.writeTag(i, protoAdapter.getFieldEncoding$wire_runtime());
         if (protoAdapter.getFieldEncoding$wire_runtime() == FieldEncoding.LENGTH_DELIMITED) {
-            writer.writeVarint32(protoAdapter.encodedSize(e));
+            protoWriter.writeVarint32(protoAdapter.encodedSize(e));
         }
-        protoAdapter.encode(writer, (ProtoWriter) e);
+        protoAdapter.encode(protoWriter, (ProtoWriter) e);
     }
 
-    public static final <E> void commonEncodeWithTag(ProtoAdapter<E> protoAdapter, ReverseProtoWriter writer, int i, E e) {
+    public static final <E> void commonEncodeWithTag(ProtoAdapter<E> protoAdapter, ReverseProtoWriter reverseProtoWriter, int i, E e) {
         Intrinsics.e(protoAdapter, "<this>");
-        Intrinsics.e(writer, "writer");
+        Intrinsics.e(reverseProtoWriter, "writer");
         if (e == null) {
             return;
         }
         if (protoAdapter.getFieldEncoding$wire_runtime() == FieldEncoding.LENGTH_DELIMITED) {
-            int byteCount = writer.getByteCount();
-            protoAdapter.encode(writer, (ReverseProtoWriter) e);
-            writer.writeVarint32(writer.getByteCount() - byteCount);
+            int byteCount = reverseProtoWriter.getByteCount();
+            protoAdapter.encode(reverseProtoWriter, (ReverseProtoWriter) e);
+            reverseProtoWriter.writeVarint32(reverseProtoWriter.getByteCount() - byteCount);
         } else {
-            protoAdapter.encode(writer, (ReverseProtoWriter) e);
+            protoAdapter.encode(reverseProtoWriter, (ReverseProtoWriter) e);
         }
-        writer.writeTag(i, protoAdapter.getFieldEncoding$wire_runtime());
+        reverseProtoWriter.writeTag(i, protoAdapter.getFieldEncoding$wire_runtime());
     }
 
     public static final <E> int commonEncodedSizeWithTag(ProtoAdapter<E> protoAdapter, int i, E e) {
@@ -428,14 +428,14 @@ public final class ProtoAdapterKt {
         return new ProtoAdapter<Integer>(fieldEncoding, b, syntax) { // from class: com.squareup.wire.ProtoAdapterKt$commonFixed32$1
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // com.squareup.wire.ProtoAdapter
-            public Integer decode(ProtoReader reader) throws IOException {
-                Intrinsics.e(reader, "reader");
-                return Integer.valueOf(reader.readFixed32());
+            public Integer decode(ProtoReader protoReader) throws IOException {
+                Intrinsics.e(protoReader, "reader");
+                return Integer.valueOf(protoReader.readFixed32());
             }
 
-            public void encode(ProtoWriter writer, int i) throws IOException {
-                Intrinsics.e(writer, "writer");
-                writer.writeFixed32(i);
+            public void encode(ProtoWriter protoWriter, int i) throws IOException {
+                Intrinsics.e(protoWriter, "writer");
+                protoWriter.writeFixed32(i);
             }
 
             @Override // com.squareup.wire.ProtoAdapter
@@ -443,9 +443,9 @@ public final class ProtoAdapterKt {
                 encode(protoWriter, num.intValue());
             }
 
-            public void encode(ReverseProtoWriter writer, int i) throws IOException {
-                Intrinsics.e(writer, "writer");
-                writer.writeFixed32(i);
+            public void encode(ReverseProtoWriter reverseProtoWriter, int i) throws IOException {
+                Intrinsics.e(reverseProtoWriter, "writer");
+                reverseProtoWriter.writeFixed32(i);
             }
 
             @Override // com.squareup.wire.ProtoAdapter
@@ -480,14 +480,14 @@ public final class ProtoAdapterKt {
         return new ProtoAdapter<Long>(fieldEncoding, b, syntax) { // from class: com.squareup.wire.ProtoAdapterKt$commonFixed64$1
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // com.squareup.wire.ProtoAdapter
-            public Long decode(ProtoReader reader) throws IOException {
-                Intrinsics.e(reader, "reader");
-                return Long.valueOf(reader.readFixed64());
+            public Long decode(ProtoReader protoReader) throws IOException {
+                Intrinsics.e(protoReader, "reader");
+                return Long.valueOf(protoReader.readFixed64());
             }
 
-            public void encode(ProtoWriter writer, long j) throws IOException {
-                Intrinsics.e(writer, "writer");
-                writer.writeFixed64(j);
+            public void encode(ProtoWriter protoWriter, long j) throws IOException {
+                Intrinsics.e(protoWriter, "writer");
+                protoWriter.writeFixed64(j);
             }
 
             @Override // com.squareup.wire.ProtoAdapter
@@ -495,9 +495,9 @@ public final class ProtoAdapterKt {
                 encode(protoWriter, l.longValue());
             }
 
-            public void encode(ReverseProtoWriter writer, long j) throws IOException {
-                Intrinsics.e(writer, "writer");
-                writer.writeFixed64(j);
+            public void encode(ReverseProtoWriter reverseProtoWriter, long j) throws IOException {
+                Intrinsics.e(reverseProtoWriter, "writer");
+                reverseProtoWriter.writeFixed64(j);
             }
 
             @Override // com.squareup.wire.ProtoAdapter
@@ -537,15 +537,15 @@ public final class ProtoAdapterKt {
 
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // com.squareup.wire.ProtoAdapter
-            public Float decode(ProtoReader reader) throws IOException {
-                Intrinsics.e(reader, "reader");
-                FloatCompanionObject floatCompanionObject = FloatCompanionObject.f42533a;
-                return Float.valueOf(Float.intBitsToFloat(reader.readFixed32()));
+            public Float decode(ProtoReader protoReader) throws IOException {
+                Intrinsics.e(protoReader, "reader");
+                FloatCompanionObject floatCompanionObject = FloatCompanionObject.a;
+                return Float.valueOf(Float.intBitsToFloat(protoReader.readFixed32()));
             }
 
-            public void encode(ProtoWriter writer, float f) throws IOException {
-                Intrinsics.e(writer, "writer");
-                writer.writeFixed32(Float.floatToIntBits(f));
+            public void encode(ProtoWriter protoWriter, float f) throws IOException {
+                Intrinsics.e(protoWriter, "writer");
+                protoWriter.writeFixed32(Float.floatToIntBits(f));
             }
 
             @Override // com.squareup.wire.ProtoAdapter
@@ -553,9 +553,9 @@ public final class ProtoAdapterKt {
                 encode(protoWriter, f.floatValue());
             }
 
-            public void encode(ReverseProtoWriter writer, float f) throws IOException {
-                Intrinsics.e(writer, "writer");
-                writer.writeFixed32(Float.floatToIntBits(f));
+            public void encode(ReverseProtoWriter reverseProtoWriter, float f) throws IOException {
+                Intrinsics.e(reverseProtoWriter, "writer");
+                reverseProtoWriter.writeFixed32(Float.floatToIntBits(f));
             }
 
             @Override // com.squareup.wire.ProtoAdapter
@@ -589,65 +589,65 @@ public final class ProtoAdapterKt {
         final Syntax syntax = Syntax.PROTO_3;
         return new ProtoAdapter<Instant>(fieldEncoding, b, syntax) { // from class: com.squareup.wire.ProtoAdapterKt$commonInstant$1
             @Override // com.squareup.wire.ProtoAdapter
-            public Instant decode(ProtoReader reader) {
-                Intrinsics.e(reader, "reader");
-                long beginMessage = reader.beginMessage();
+            public Instant decode(ProtoReader protoReader) {
+                Intrinsics.e(protoReader, "reader");
+                long beginMessage = protoReader.beginMessage();
                 long j = 0;
                 int i = 0;
                 while (true) {
-                    int nextTag = reader.nextTag();
+                    int nextTag = protoReader.nextTag();
                     if (nextTag == -1) {
-                        reader.endMessageAndGetUnknownFields(beginMessage);
+                        protoReader.endMessageAndGetUnknownFields(beginMessage);
                         Instant ofEpochSecond = Instant.ofEpochSecond(j, i);
                         Intrinsics.c(ofEpochSecond, "ofEpochSecond(epochSecond, nano)");
                         return ofEpochSecond;
                     } else if (nextTag == 1) {
-                        j = ProtoAdapter.INT64.decode(reader).longValue();
+                        j = ProtoAdapter.INT64.decode(protoReader).longValue();
                     } else if (nextTag != 2) {
-                        reader.readUnknownField(nextTag);
+                        protoReader.readUnknownField(nextTag);
                     } else {
-                        i = ProtoAdapter.INT32.decode(reader).intValue();
+                        i = ProtoAdapter.INT32.decode(protoReader).intValue();
                     }
                 }
             }
 
             @Override // com.squareup.wire.ProtoAdapter
-            public void encode(ProtoWriter writer, Instant value) {
-                Intrinsics.e(writer, "writer");
-                Intrinsics.e(value, "value");
-                long epochSecond = value.getEpochSecond();
+            public void encode(ProtoWriter protoWriter, Instant instant) {
+                Intrinsics.e(protoWriter, "writer");
+                Intrinsics.e(instant, "value");
+                long epochSecond = instant.getEpochSecond();
                 if (epochSecond != 0) {
-                    ProtoAdapter.INT64.encodeWithTag(writer, 1, (int) Long.valueOf(epochSecond));
+                    ProtoAdapter.INT64.encodeWithTag(protoWriter, 1, (int) Long.valueOf(epochSecond));
                 }
-                int nano = value.getNano();
+                int nano = instant.getNano();
                 if (nano != 0) {
-                    ProtoAdapter.INT32.encodeWithTag(writer, 2, (int) Integer.valueOf(nano));
+                    ProtoAdapter.INT32.encodeWithTag(protoWriter, 2, (int) Integer.valueOf(nano));
                 }
             }
 
             @Override // com.squareup.wire.ProtoAdapter
-            public void encode(ReverseProtoWriter writer, Instant value) {
-                Intrinsics.e(writer, "writer");
-                Intrinsics.e(value, "value");
-                int nano = value.getNano();
+            public void encode(ReverseProtoWriter reverseProtoWriter, Instant instant) {
+                Intrinsics.e(reverseProtoWriter, "writer");
+                Intrinsics.e(instant, "value");
+                int nano = instant.getNano();
                 if (nano != 0) {
-                    ProtoAdapter.INT32.encodeWithTag(writer, 2, (int) Integer.valueOf(nano));
+                    ProtoAdapter.INT32.encodeWithTag(reverseProtoWriter, 2, (int) Integer.valueOf(nano));
                 }
-                long epochSecond = value.getEpochSecond();
+                long epochSecond = instant.getEpochSecond();
                 if (epochSecond != 0) {
-                    ProtoAdapter.INT64.encodeWithTag(writer, 1, (int) Long.valueOf(epochSecond));
+                    ProtoAdapter.INT64.encodeWithTag(reverseProtoWriter, 1, (int) Long.valueOf(epochSecond));
                 }
             }
 
             @Override // com.squareup.wire.ProtoAdapter
-            public int encodedSize(Instant value) {
-                Intrinsics.e(value, "value");
-                long epochSecond = value.getEpochSecond();
+            public int encodedSize(Instant instant) {
+                Intrinsics.e(instant, "value");
+                long epochSecond = instant.getEpochSecond();
                 int i = 0;
                 if (epochSecond != 0) {
                     i = 0 + ProtoAdapter.INT64.encodedSizeWithTag(1, Long.valueOf(epochSecond));
                 }
-                int nano = value.getNano();
+                int nano = instant.getNano();
                 int i2 = i;
                 if (nano != 0) {
                     i2 = i + ProtoAdapter.INT32.encodedSizeWithTag(2, Integer.valueOf(nano));
@@ -656,9 +656,9 @@ public final class ProtoAdapterKt {
             }
 
             @Override // com.squareup.wire.ProtoAdapter
-            public Instant redact(Instant value) {
-                Intrinsics.e(value, "value");
-                return value;
+            public Instant redact(Instant instant) {
+                Intrinsics.e(instant, "value");
+                return instant;
             }
         };
     }
@@ -670,14 +670,14 @@ public final class ProtoAdapterKt {
         return new ProtoAdapter<Integer>(fieldEncoding, b, syntax) { // from class: com.squareup.wire.ProtoAdapterKt$commonInt32$1
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // com.squareup.wire.ProtoAdapter
-            public Integer decode(ProtoReader reader) throws IOException {
-                Intrinsics.e(reader, "reader");
-                return Integer.valueOf(reader.readVarint32());
+            public Integer decode(ProtoReader protoReader) throws IOException {
+                Intrinsics.e(protoReader, "reader");
+                return Integer.valueOf(protoReader.readVarint32());
             }
 
-            public void encode(ProtoWriter writer, int i) throws IOException {
-                Intrinsics.e(writer, "writer");
-                writer.writeSignedVarint32$wire_runtime(i);
+            public void encode(ProtoWriter protoWriter, int i) throws IOException {
+                Intrinsics.e(protoWriter, "writer");
+                protoWriter.writeSignedVarint32$wire_runtime(i);
             }
 
             @Override // com.squareup.wire.ProtoAdapter
@@ -685,9 +685,9 @@ public final class ProtoAdapterKt {
                 encode(protoWriter, num.intValue());
             }
 
-            public void encode(ReverseProtoWriter writer, int i) throws IOException {
-                Intrinsics.e(writer, "writer");
-                writer.writeSignedVarint32$wire_runtime(i);
+            public void encode(ReverseProtoWriter reverseProtoWriter, int i) throws IOException {
+                Intrinsics.e(reverseProtoWriter, "writer");
+                reverseProtoWriter.writeSignedVarint32$wire_runtime(i);
             }
 
             @Override // com.squareup.wire.ProtoAdapter
@@ -722,14 +722,14 @@ public final class ProtoAdapterKt {
         return new ProtoAdapter<Long>(fieldEncoding, b, syntax) { // from class: com.squareup.wire.ProtoAdapterKt$commonInt64$1
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // com.squareup.wire.ProtoAdapter
-            public Long decode(ProtoReader reader) throws IOException {
-                Intrinsics.e(reader, "reader");
-                return Long.valueOf(reader.readVarint64());
+            public Long decode(ProtoReader protoReader) throws IOException {
+                Intrinsics.e(protoReader, "reader");
+                return Long.valueOf(protoReader.readVarint64());
             }
 
-            public void encode(ProtoWriter writer, long j) throws IOException {
-                Intrinsics.e(writer, "writer");
-                writer.writeVarint64(j);
+            public void encode(ProtoWriter protoWriter, long j) throws IOException {
+                Intrinsics.e(protoWriter, "writer");
+                protoWriter.writeVarint64(j);
             }
 
             @Override // com.squareup.wire.ProtoAdapter
@@ -737,9 +737,9 @@ public final class ProtoAdapterKt {
                 encode(protoWriter, l.longValue());
             }
 
-            public void encode(ReverseProtoWriter writer, long j) throws IOException {
-                Intrinsics.e(writer, "writer");
-                writer.writeVarint64(j);
+            public void encode(ReverseProtoWriter reverseProtoWriter, long j) throws IOException {
+                Intrinsics.e(reverseProtoWriter, "writer");
+                reverseProtoWriter.writeVarint64(j);
             }
 
             @Override // com.squareup.wire.ProtoAdapter
@@ -767,10 +767,10 @@ public final class ProtoAdapterKt {
         };
     }
 
-    public static final <K, V> ProtoAdapter<Map<K, V>> commonNewMapAdapter(ProtoAdapter<K> keyAdapter, ProtoAdapter<V> valueAdapter) {
-        Intrinsics.e(keyAdapter, "keyAdapter");
-        Intrinsics.e(valueAdapter, "valueAdapter");
-        return new MapProtoAdapter(keyAdapter, valueAdapter);
+    public static final <K, V> ProtoAdapter<Map<K, V>> commonNewMapAdapter(ProtoAdapter<K> protoAdapter, ProtoAdapter<V> protoAdapter2) {
+        Intrinsics.e(protoAdapter, "keyAdapter");
+        Intrinsics.e(protoAdapter2, "valueAdapter");
+        return new MapProtoAdapter(protoAdapter, protoAdapter2);
     }
 
     public static final ProtoAdapter<Integer> commonSfixed32() {
@@ -788,14 +788,14 @@ public final class ProtoAdapterKt {
         return new ProtoAdapter<Integer>(fieldEncoding, b, syntax) { // from class: com.squareup.wire.ProtoAdapterKt$commonSint32$1
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // com.squareup.wire.ProtoAdapter
-            public Integer decode(ProtoReader reader) throws IOException {
-                Intrinsics.e(reader, "reader");
-                return Integer.valueOf(ProtoWriter.Companion.decodeZigZag32$wire_runtime(reader.readVarint32()));
+            public Integer decode(ProtoReader protoReader) throws IOException {
+                Intrinsics.e(protoReader, "reader");
+                return Integer.valueOf(ProtoWriter.Companion.decodeZigZag32$wire_runtime(protoReader.readVarint32()));
             }
 
-            public void encode(ProtoWriter writer, int i) throws IOException {
-                Intrinsics.e(writer, "writer");
-                writer.writeVarint32(ProtoWriter.Companion.encodeZigZag32$wire_runtime(i));
+            public void encode(ProtoWriter protoWriter, int i) throws IOException {
+                Intrinsics.e(protoWriter, "writer");
+                protoWriter.writeVarint32(ProtoWriter.Companion.encodeZigZag32$wire_runtime(i));
             }
 
             @Override // com.squareup.wire.ProtoAdapter
@@ -803,9 +803,9 @@ public final class ProtoAdapterKt {
                 encode(protoWriter, num.intValue());
             }
 
-            public void encode(ReverseProtoWriter writer, int i) throws IOException {
-                Intrinsics.e(writer, "writer");
-                writer.writeVarint32(ProtoWriter.Companion.encodeZigZag32$wire_runtime(i));
+            public void encode(ReverseProtoWriter reverseProtoWriter, int i) throws IOException {
+                Intrinsics.e(reverseProtoWriter, "writer");
+                reverseProtoWriter.writeVarint32(ProtoWriter.Companion.encodeZigZag32$wire_runtime(i));
             }
 
             @Override // com.squareup.wire.ProtoAdapter
@@ -840,14 +840,14 @@ public final class ProtoAdapterKt {
         return new ProtoAdapter<Long>(fieldEncoding, b, syntax) { // from class: com.squareup.wire.ProtoAdapterKt$commonSint64$1
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // com.squareup.wire.ProtoAdapter
-            public Long decode(ProtoReader reader) throws IOException {
-                Intrinsics.e(reader, "reader");
-                return Long.valueOf(ProtoWriter.Companion.decodeZigZag64$wire_runtime(reader.readVarint64()));
+            public Long decode(ProtoReader protoReader) throws IOException {
+                Intrinsics.e(protoReader, "reader");
+                return Long.valueOf(ProtoWriter.Companion.decodeZigZag64$wire_runtime(protoReader.readVarint64()));
             }
 
-            public void encode(ProtoWriter writer, long j) throws IOException {
-                Intrinsics.e(writer, "writer");
-                writer.writeVarint64(ProtoWriter.Companion.encodeZigZag64$wire_runtime(j));
+            public void encode(ProtoWriter protoWriter, long j) throws IOException {
+                Intrinsics.e(protoWriter, "writer");
+                protoWriter.writeVarint64(ProtoWriter.Companion.encodeZigZag64$wire_runtime(j));
             }
 
             @Override // com.squareup.wire.ProtoAdapter
@@ -855,9 +855,9 @@ public final class ProtoAdapterKt {
                 encode(protoWriter, l.longValue());
             }
 
-            public void encode(ReverseProtoWriter writer, long j) throws IOException {
-                Intrinsics.e(writer, "writer");
-                writer.writeVarint64(ProtoWriter.Companion.encodeZigZag64$wire_runtime(j));
+            public void encode(ReverseProtoWriter reverseProtoWriter, long j) throws IOException {
+                Intrinsics.e(reverseProtoWriter, "writer");
+                reverseProtoWriter.writeVarint64(ProtoWriter.Companion.encodeZigZag64$wire_runtime(j));
             }
 
             @Override // com.squareup.wire.ProtoAdapter
@@ -891,34 +891,34 @@ public final class ProtoAdapterKt {
         final Syntax syntax = Syntax.PROTO_2;
         return new ProtoAdapter<String>(fieldEncoding, b, syntax) { // from class: com.squareup.wire.ProtoAdapterKt$commonString$1
             @Override // com.squareup.wire.ProtoAdapter
-            public String decode(ProtoReader reader) throws IOException {
-                Intrinsics.e(reader, "reader");
-                return reader.readString();
+            public String decode(ProtoReader protoReader) throws IOException {
+                Intrinsics.e(protoReader, "reader");
+                return protoReader.readString();
             }
 
             @Override // com.squareup.wire.ProtoAdapter
-            public void encode(ProtoWriter writer, String value) throws IOException {
-                Intrinsics.e(writer, "writer");
-                Intrinsics.e(value, "value");
-                writer.writeString(value);
+            public void encode(ProtoWriter protoWriter, String str) throws IOException {
+                Intrinsics.e(protoWriter, "writer");
+                Intrinsics.e(str, "value");
+                protoWriter.writeString(str);
             }
 
             @Override // com.squareup.wire.ProtoAdapter
-            public void encode(ReverseProtoWriter writer, String value) throws IOException {
-                Intrinsics.e(writer, "writer");
-                Intrinsics.e(value, "value");
-                writer.writeString(value);
+            public void encode(ReverseProtoWriter reverseProtoWriter, String str) throws IOException {
+                Intrinsics.e(reverseProtoWriter, "writer");
+                Intrinsics.e(str, "value");
+                reverseProtoWriter.writeString(str);
             }
 
             @Override // com.squareup.wire.ProtoAdapter
-            public int encodedSize(String value) {
-                Intrinsics.e(value, "value");
-                return (int) Utf8.size$default(value, 0, 0, 3, null);
+            public int encodedSize(String str) {
+                Intrinsics.e(str, "value");
+                return (int) Utf8.size$default(str, 0, 0, 3, (Object) null);
             }
 
             @Override // com.squareup.wire.ProtoAdapter
-            public String redact(String value) {
-                Intrinsics.e(value, "value");
+            public String redact(String str) {
+                Intrinsics.e(str, "value");
                 throw new UnsupportedOperationException();
             }
         };
@@ -930,38 +930,38 @@ public final class ProtoAdapterKt {
         final Syntax syntax = Syntax.PROTO_3;
         return new ProtoAdapter<List<?>>(fieldEncoding, b, syntax) { // from class: com.squareup.wire.ProtoAdapterKt$commonStructList$1
             @Override // com.squareup.wire.ProtoAdapter
-            public List<?> decode(ProtoReader reader) {
-                Intrinsics.e(reader, "reader");
+            public List<?> decode(ProtoReader protoReader) {
+                Intrinsics.e(protoReader, "reader");
                 ArrayList arrayList = new ArrayList();
-                long beginMessage = reader.beginMessage();
+                long beginMessage = protoReader.beginMessage();
                 while (true) {
-                    int nextTag = reader.nextTag();
+                    int nextTag = protoReader.nextTag();
                     if (nextTag == -1) {
-                        reader.endMessageAndGetUnknownFields(beginMessage);
+                        protoReader.endMessageAndGetUnknownFields(beginMessage);
                         return arrayList;
                     } else if (nextTag != 1) {
-                        reader.skip();
+                        protoReader.skip();
                     } else {
-                        arrayList.add(ProtoAdapter.STRUCT_VALUE.decode(reader));
+                        arrayList.add(ProtoAdapter.STRUCT_VALUE.decode(protoReader));
                     }
                 }
             }
 
             @Override // com.squareup.wire.ProtoAdapter
-            public void encode(ProtoWriter writer, List<?> list) {
-                Intrinsics.e(writer, "writer");
+            public void encode(ProtoWriter protoWriter, List<?> list) {
+                Intrinsics.e(protoWriter, "writer");
                 if (list == null) {
                     return;
                 }
                 Iterator<?> it = list.iterator();
                 while (it.hasNext()) {
-                    ProtoAdapter.STRUCT_VALUE.encodeWithTag(writer, 1, (int) it.next());
+                    ProtoAdapter.STRUCT_VALUE.encodeWithTag(protoWriter, 1, (int) it.next());
                 }
             }
 
             @Override // com.squareup.wire.ProtoAdapter
-            public void encode(ReverseProtoWriter writer, List<?> list) {
-                Intrinsics.e(writer, "writer");
+            public void encode(ReverseProtoWriter reverseProtoWriter, List<?> list) {
+                Intrinsics.e(reverseProtoWriter, "writer");
                 if (list == null) {
                     return;
                 }
@@ -971,7 +971,7 @@ public final class ProtoAdapterKt {
                 }
                 while (true) {
                     int i = size - 1;
-                    ProtoAdapter.STRUCT_VALUE.encodeWithTag(writer, 1, (int) list.get(size));
+                    ProtoAdapter.STRUCT_VALUE.encodeWithTag(reverseProtoWriter, 1, (int) list.get(size));
                     if (i < 0) {
                         return;
                     }
@@ -998,8 +998,8 @@ public final class ProtoAdapterKt {
                     return null;
                 }
                 List<?> list2 = list;
-                ArrayList arrayList = new ArrayList(CollectionsKt.a((Iterable) list2, 10));
-                Iterator<?> it = list2.iterator();
+                ArrayList arrayList = new ArrayList(CollectionsKt.a(list2, 10));
+                Iterator<T> it = list2.iterator();
                 while (it.hasNext()) {
                     arrayList.add(ProtoAdapter.STRUCT_VALUE.redact(it.next()));
                 }
@@ -1014,34 +1014,34 @@ public final class ProtoAdapterKt {
         final Syntax syntax = Syntax.PROTO_3;
         return new ProtoAdapter<Map<String, ?>>(fieldEncoding, b, syntax) { // from class: com.squareup.wire.ProtoAdapterKt$commonStructMap$1
             @Override // com.squareup.wire.ProtoAdapter
-            public Map<String, ?> decode(ProtoReader reader) {
-                Intrinsics.e(reader, "reader");
+            public Map<String, ?> decode(ProtoReader protoReader) {
+                Intrinsics.e(protoReader, "reader");
                 LinkedHashMap linkedHashMap = new LinkedHashMap();
-                long beginMessage = reader.beginMessage();
+                long beginMessage = protoReader.beginMessage();
                 while (true) {
-                    int nextTag = reader.nextTag();
+                    int nextTag = protoReader.nextTag();
                     if (nextTag == -1) {
-                        reader.endMessageAndGetUnknownFields(beginMessage);
+                        protoReader.endMessageAndGetUnknownFields(beginMessage);
                         return linkedHashMap;
                     } else if (nextTag != 1) {
-                        reader.skip();
+                        protoReader.skip();
                     } else {
-                        long beginMessage2 = reader.beginMessage();
+                        long beginMessage2 = protoReader.beginMessage();
                         String str = null;
                         Object obj = null;
                         while (true) {
-                            int nextTag2 = reader.nextTag();
+                            int nextTag2 = protoReader.nextTag();
                             if (nextTag2 == -1) {
                                 break;
                             } else if (nextTag2 == 1) {
-                                str = ProtoAdapter.STRING.decode(reader);
+                                str = ProtoAdapter.STRING.decode(protoReader);
                             } else if (nextTag2 != 2) {
-                                reader.readUnknownField(nextTag2);
+                                protoReader.readUnknownField(nextTag2);
                             } else {
-                                obj = ProtoAdapter.STRUCT_VALUE.decode(reader);
+                                obj = ProtoAdapter.STRUCT_VALUE.decode(protoReader);
                             }
                         }
-                        reader.endMessageAndGetUnknownFields(beginMessage2);
+                        protoReader.endMessageAndGetUnknownFields(beginMessage2);
                         if (str != null) {
                             linkedHashMap.put(str, obj);
                         }
@@ -1050,8 +1050,8 @@ public final class ProtoAdapterKt {
             }
 
             @Override // com.squareup.wire.ProtoAdapter
-            public void encode(ProtoWriter writer, Map<String, ?> map) {
-                Intrinsics.e(writer, "writer");
+            public void encode(ProtoWriter protoWriter, Map<String, ?> map) {
+                Intrinsics.e(protoWriter, "writer");
                 if (map == null) {
                     return;
                 }
@@ -1060,16 +1060,16 @@ public final class ProtoAdapterKt {
                     Object value = entry.getValue();
                     int encodedSizeWithTag = ProtoAdapter.STRING.encodedSizeWithTag(1, key);
                     int encodedSizeWithTag2 = ProtoAdapter.STRUCT_VALUE.encodedSizeWithTag(2, value);
-                    writer.writeTag(1, FieldEncoding.LENGTH_DELIMITED);
-                    writer.writeVarint32(encodedSizeWithTag + encodedSizeWithTag2);
-                    ProtoAdapter.STRING.encodeWithTag(writer, 1, (int) key);
-                    ProtoAdapter.STRUCT_VALUE.encodeWithTag(writer, 2, (int) value);
+                    protoWriter.writeTag(1, FieldEncoding.LENGTH_DELIMITED);
+                    protoWriter.writeVarint32(encodedSizeWithTag + encodedSizeWithTag2);
+                    ProtoAdapter.STRING.encodeWithTag(protoWriter, 1, (int) key);
+                    ProtoAdapter.STRUCT_VALUE.encodeWithTag(protoWriter, 2, (int) value);
                 }
             }
 
             @Override // com.squareup.wire.ProtoAdapter
-            public void encode(ReverseProtoWriter writer, Map<String, ?> map) {
-                Intrinsics.e(writer, "writer");
+            public void encode(ReverseProtoWriter reverseProtoWriter, Map<String, ?> map) {
+                Intrinsics.e(reverseProtoWriter, "writer");
                 if (map == null) {
                     return;
                 }
@@ -1086,11 +1086,11 @@ public final class ProtoAdapterKt {
                     i++;
                     String str = (String) entry.getKey();
                     Object value = entry.getValue();
-                    int byteCount = writer.getByteCount();
-                    ProtoAdapter.STRUCT_VALUE.encodeWithTag(writer, 2, (int) value);
-                    ProtoAdapter.STRING.encodeWithTag(writer, 1, (int) str);
-                    writer.writeVarint32(writer.getByteCount() - byteCount);
-                    writer.writeTag(1, FieldEncoding.LENGTH_DELIMITED);
+                    int byteCount = reverseProtoWriter.getByteCount();
+                    ProtoAdapter.STRUCT_VALUE.encodeWithTag(reverseProtoWriter, 2, (int) value);
+                    ProtoAdapter.STRING.encodeWithTag(reverseProtoWriter, 1, (int) str);
+                    reverseProtoWriter.writeVarint32(reverseProtoWriter.getByteCount() - byteCount);
+                    reverseProtoWriter.writeTag(1, FieldEncoding.LENGTH_DELIMITED);
                 }
             }
 
@@ -1113,7 +1113,9 @@ public final class ProtoAdapterKt {
                     return null;
                 }
                 LinkedHashMap linkedHashMap = new LinkedHashMap(MapsKt.b(map.size()));
-                for (Map.Entry<String, ?> entry : map.entrySet()) {
+                Iterator<T> it = map.entrySet().iterator();
+                while (it.hasNext()) {
+                    Map.Entry entry = (Map.Entry) it.next();
                     linkedHashMap.put(entry.getKey(), ProtoAdapter.STRUCT_VALUE.redact(entry));
                 }
                 return linkedHashMap;
@@ -1127,39 +1129,39 @@ public final class ProtoAdapterKt {
         final Syntax syntax = Syntax.PROTO_3;
         return new ProtoAdapter(fieldEncoding, b, syntax) { // from class: com.squareup.wire.ProtoAdapterKt$commonStructNull$1
             @Override // com.squareup.wire.ProtoAdapter
-            public Void decode(ProtoReader reader) {
-                Intrinsics.e(reader, "reader");
-                int readVarint32 = reader.readVarint32();
+            public Void decode(ProtoReader protoReader) {
+                Intrinsics.e(protoReader, "reader");
+                int readVarint32 = protoReader.readVarint32();
                 if (readVarint32 == 0) {
                     return null;
                 }
-                throw new IOException(Intrinsics.a("expected 0 but was ", (Object) Integer.valueOf(readVarint32)));
+                throw new IOException(Intrinsics.a("expected 0 but was ", Integer.valueOf(readVarint32)));
             }
 
             @Override // com.squareup.wire.ProtoAdapter
-            public void encode(ProtoWriter writer, Void r5) {
-                Intrinsics.e(writer, "writer");
-                writer.writeVarint32(0);
+            public void encode(ProtoWriter protoWriter, Void r5) {
+                Intrinsics.e(protoWriter, "writer");
+                protoWriter.writeVarint32(0);
             }
 
             @Override // com.squareup.wire.ProtoAdapter
-            public void encode(ReverseProtoWriter writer, Void r5) {
-                Intrinsics.e(writer, "writer");
-                writer.writeVarint32(0);
+            public void encode(ReverseProtoWriter reverseProtoWriter, Void r5) {
+                Intrinsics.e(reverseProtoWriter, "writer");
+                reverseProtoWriter.writeVarint32(0);
             }
 
             @Override // com.squareup.wire.ProtoAdapter
-            public void encodeWithTag(ProtoWriter writer, int i, Void r7) {
-                Intrinsics.e(writer, "writer");
-                writer.writeTag(i, getFieldEncoding$wire_runtime());
-                encode(writer, r7);
+            public void encodeWithTag(ProtoWriter protoWriter, int i, Void r7) {
+                Intrinsics.e(protoWriter, "writer");
+                protoWriter.writeTag(i, getFieldEncoding$wire_runtime());
+                encode(protoWriter, r7);
             }
 
             @Override // com.squareup.wire.ProtoAdapter
-            public void encodeWithTag(ReverseProtoWriter writer, int i, Void r7) {
-                Intrinsics.e(writer, "writer");
-                encode(writer, r7);
-                writer.writeTag(i, getFieldEncoding$wire_runtime());
+            public void encodeWithTag(ReverseProtoWriter reverseProtoWriter, int i, Void r7) {
+                Intrinsics.e(reverseProtoWriter, "writer");
+                encode(reverseProtoWriter, r7);
+                reverseProtoWriter.writeTag(i, getFieldEncoding$wire_runtime());
             }
 
             @Override // com.squareup.wire.ProtoAdapter
@@ -1185,116 +1187,116 @@ public final class ProtoAdapterKt {
         final Syntax syntax = Syntax.PROTO_3;
         return new ProtoAdapter<Object>(fieldEncoding, b, syntax) { // from class: com.squareup.wire.ProtoAdapterKt$commonStructValue$1
             @Override // com.squareup.wire.ProtoAdapter
-            public Object decode(ProtoReader reader) {
-                Intrinsics.e(reader, "reader");
-                long beginMessage = reader.beginMessage();
+            public Object decode(ProtoReader protoReader) {
+                Intrinsics.e(protoReader, "reader");
+                long beginMessage = protoReader.beginMessage();
                 List<?> list = null;
                 while (true) {
-                    int nextTag = reader.nextTag();
+                    int nextTag = protoReader.nextTag();
                     if (nextTag != -1) {
                         switch (nextTag) {
                             case 1:
-                                list = ProtoAdapter.STRUCT_NULL.decode(reader);
+                                list = ProtoAdapter.STRUCT_NULL.decode(protoReader);
                                 break;
                             case 2:
-                                list = ProtoAdapter.DOUBLE.decode(reader);
+                                list = ProtoAdapter.DOUBLE.decode(protoReader);
                                 break;
                             case 3:
-                                list = ProtoAdapter.STRING.decode(reader);
+                                list = ProtoAdapter.STRING.decode(protoReader);
                                 break;
                             case 4:
-                                list = ProtoAdapter.BOOL.decode(reader);
+                                list = ProtoAdapter.BOOL.decode(protoReader);
                                 break;
                             case 5:
-                                list = ProtoAdapter.STRUCT_MAP.decode(reader);
+                                list = ProtoAdapter.STRUCT_MAP.decode(protoReader);
                                 break;
                             case 6:
-                                list = ProtoAdapter.STRUCT_LIST.decode(reader);
+                                list = ProtoAdapter.STRUCT_LIST.decode(protoReader);
                                 break;
                             default:
-                                reader.skip();
+                                protoReader.skip();
                                 break;
                         }
                     } else {
-                        reader.endMessageAndGetUnknownFields(beginMessage);
+                        protoReader.endMessageAndGetUnknownFields(beginMessage);
                         return list;
                     }
                 }
             }
 
             @Override // com.squareup.wire.ProtoAdapter
-            public void encode(ProtoWriter writer, Object obj) {
-                Intrinsics.e(writer, "writer");
+            public void encode(ProtoWriter protoWriter, Object obj) {
+                Intrinsics.e(protoWriter, "writer");
                 if (obj == null) {
-                    ProtoAdapter.STRUCT_NULL.encodeWithTag(writer, 1, (int) obj);
+                    ProtoAdapter.STRUCT_NULL.encodeWithTag(protoWriter, 1, (int) obj);
                 } else if (obj instanceof Number) {
-                    ProtoAdapter.DOUBLE.encodeWithTag(writer, 2, (int) Double.valueOf(((Number) obj).doubleValue()));
+                    ProtoAdapter.DOUBLE.encodeWithTag(protoWriter, 2, (int) Double.valueOf(((Number) obj).doubleValue()));
                 } else if (obj instanceof String) {
-                    ProtoAdapter.STRING.encodeWithTag(writer, 3, (int) obj);
+                    ProtoAdapter.STRING.encodeWithTag(protoWriter, 3, (int) obj);
                 } else if (obj instanceof Boolean) {
-                    ProtoAdapter.BOOL.encodeWithTag(writer, 4, (int) obj);
+                    ProtoAdapter.BOOL.encodeWithTag(protoWriter, 4, (int) obj);
                 } else if (!(obj instanceof Map)) {
                     if (!(obj instanceof List)) {
                         throw new IllegalArgumentException(Intrinsics.a("unexpected struct value: ", obj));
                     }
-                    ProtoAdapter.STRUCT_LIST.encodeWithTag(writer, 6, (int) obj);
+                    ProtoAdapter.STRUCT_LIST.encodeWithTag(protoWriter, 6, (int) obj);
                 } else {
                     ProtoAdapter<Map<String, ?>> protoAdapter = ProtoAdapter.STRUCT_MAP;
                     if (obj == null) {
                         throw new NullPointerException("null cannot be cast to non-null type kotlin.collections.Map<kotlin.String, *>");
                     }
-                    protoAdapter.encodeWithTag(writer, 5, (int) ((Map) obj));
+                    protoAdapter.encodeWithTag(protoWriter, 5, (int) ((Map) obj));
                 }
             }
 
             @Override // com.squareup.wire.ProtoAdapter
-            public void encode(ReverseProtoWriter writer, Object obj) {
-                Intrinsics.e(writer, "writer");
+            public void encode(ReverseProtoWriter reverseProtoWriter, Object obj) {
+                Intrinsics.e(reverseProtoWriter, "writer");
                 if (obj == null) {
-                    ProtoAdapter.STRUCT_NULL.encodeWithTag(writer, 1, (int) obj);
+                    ProtoAdapter.STRUCT_NULL.encodeWithTag(reverseProtoWriter, 1, (int) obj);
                 } else if (obj instanceof Number) {
-                    ProtoAdapter.DOUBLE.encodeWithTag(writer, 2, (int) Double.valueOf(((Number) obj).doubleValue()));
+                    ProtoAdapter.DOUBLE.encodeWithTag(reverseProtoWriter, 2, (int) Double.valueOf(((Number) obj).doubleValue()));
                 } else if (obj instanceof String) {
-                    ProtoAdapter.STRING.encodeWithTag(writer, 3, (int) obj);
+                    ProtoAdapter.STRING.encodeWithTag(reverseProtoWriter, 3, (int) obj);
                 } else if (obj instanceof Boolean) {
-                    ProtoAdapter.BOOL.encodeWithTag(writer, 4, (int) obj);
+                    ProtoAdapter.BOOL.encodeWithTag(reverseProtoWriter, 4, (int) obj);
                 } else if (!(obj instanceof Map)) {
                     if (!(obj instanceof List)) {
                         throw new IllegalArgumentException(Intrinsics.a("unexpected struct value: ", obj));
                     }
-                    ProtoAdapter.STRUCT_LIST.encodeWithTag(writer, 6, (int) obj);
+                    ProtoAdapter.STRUCT_LIST.encodeWithTag(reverseProtoWriter, 6, (int) obj);
                 } else {
                     ProtoAdapter<Map<String, ?>> protoAdapter = ProtoAdapter.STRUCT_MAP;
                     if (obj == null) {
                         throw new NullPointerException("null cannot be cast to non-null type kotlin.collections.Map<kotlin.String, *>");
                     }
-                    protoAdapter.encodeWithTag(writer, 5, (int) ((Map) obj));
+                    protoAdapter.encodeWithTag(reverseProtoWriter, 5, (int) ((Map) obj));
                 }
             }
 
             @Override // com.squareup.wire.ProtoAdapter
-            public void encodeWithTag(ProtoWriter writer, int i, Object obj) {
-                Intrinsics.e(writer, "writer");
+            public void encodeWithTag(ProtoWriter protoWriter, int i, Object obj) {
+                Intrinsics.e(protoWriter, "writer");
                 if (obj != null) {
-                    super.encodeWithTag(writer, i, (int) obj);
+                    super.encodeWithTag(protoWriter, i, (int) obj);
                     return;
                 }
-                writer.writeTag(i, getFieldEncoding$wire_runtime());
-                writer.writeVarint32(encodedSize(obj));
-                encode(writer, obj);
+                protoWriter.writeTag(i, getFieldEncoding$wire_runtime());
+                protoWriter.writeVarint32(encodedSize(obj));
+                encode(protoWriter, obj);
             }
 
             @Override // com.squareup.wire.ProtoAdapter
-            public void encodeWithTag(ReverseProtoWriter writer, int i, Object obj) {
-                Intrinsics.e(writer, "writer");
+            public void encodeWithTag(ReverseProtoWriter reverseProtoWriter, int i, Object obj) {
+                Intrinsics.e(reverseProtoWriter, "writer");
                 if (obj != null) {
-                    super.encodeWithTag(writer, i, (int) obj);
+                    super.encodeWithTag(reverseProtoWriter, i, (int) obj);
                     return;
                 }
-                int byteCount = writer.getByteCount();
-                encode(writer, obj);
-                writer.writeVarint32(writer.getByteCount() - byteCount);
-                writer.writeTag(i, getFieldEncoding$wire_runtime());
+                int byteCount = reverseProtoWriter.getByteCount();
+                encode(reverseProtoWriter, obj);
+                reverseProtoWriter.writeVarint32(reverseProtoWriter.getByteCount() - byteCount);
+                reverseProtoWriter.writeTag(i, getFieldEncoding$wire_runtime());
             }
 
             @Override // com.squareup.wire.ProtoAdapter
@@ -1373,14 +1375,14 @@ public final class ProtoAdapterKt {
         return new ProtoAdapter<Integer>(fieldEncoding, b, syntax) { // from class: com.squareup.wire.ProtoAdapterKt$commonUint32$1
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // com.squareup.wire.ProtoAdapter
-            public Integer decode(ProtoReader reader) throws IOException {
-                Intrinsics.e(reader, "reader");
-                return Integer.valueOf(reader.readVarint32());
+            public Integer decode(ProtoReader protoReader) throws IOException {
+                Intrinsics.e(protoReader, "reader");
+                return Integer.valueOf(protoReader.readVarint32());
             }
 
-            public void encode(ProtoWriter writer, int i) throws IOException {
-                Intrinsics.e(writer, "writer");
-                writer.writeVarint32(i);
+            public void encode(ProtoWriter protoWriter, int i) throws IOException {
+                Intrinsics.e(protoWriter, "writer");
+                protoWriter.writeVarint32(i);
             }
 
             @Override // com.squareup.wire.ProtoAdapter
@@ -1388,9 +1390,9 @@ public final class ProtoAdapterKt {
                 encode(protoWriter, num.intValue());
             }
 
-            public void encode(ReverseProtoWriter writer, int i) throws IOException {
-                Intrinsics.e(writer, "writer");
-                writer.writeVarint32(i);
+            public void encode(ReverseProtoWriter reverseProtoWriter, int i) throws IOException {
+                Intrinsics.e(reverseProtoWriter, "writer");
+                reverseProtoWriter.writeVarint32(i);
             }
 
             @Override // com.squareup.wire.ProtoAdapter
@@ -1425,14 +1427,14 @@ public final class ProtoAdapterKt {
         return new ProtoAdapter<Long>(fieldEncoding, b, syntax) { // from class: com.squareup.wire.ProtoAdapterKt$commonUint64$1
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // com.squareup.wire.ProtoAdapter
-            public Long decode(ProtoReader reader) throws IOException {
-                Intrinsics.e(reader, "reader");
-                return Long.valueOf(reader.readVarint64());
+            public Long decode(ProtoReader protoReader) throws IOException {
+                Intrinsics.e(protoReader, "reader");
+                return Long.valueOf(protoReader.readVarint64());
             }
 
-            public void encode(ProtoWriter writer, long j) throws IOException {
-                Intrinsics.e(writer, "writer");
-                writer.writeVarint64(j);
+            public void encode(ProtoWriter protoWriter, long j) throws IOException {
+                Intrinsics.e(protoWriter, "writer");
+                protoWriter.writeVarint64(j);
             }
 
             @Override // com.squareup.wire.ProtoAdapter
@@ -1440,9 +1442,9 @@ public final class ProtoAdapterKt {
                 encode(protoWriter, l.longValue());
             }
 
-            public void encode(ReverseProtoWriter writer, long j) throws IOException {
-                Intrinsics.e(writer, "writer");
-                writer.writeVarint64(j);
+            public void encode(ReverseProtoWriter reverseProtoWriter, long j) throws IOException {
+                Intrinsics.e(reverseProtoWriter, "writer");
+                reverseProtoWriter.writeVarint64(j);
             }
 
             @Override // com.squareup.wire.ProtoAdapter
@@ -1483,58 +1485,60 @@ public final class ProtoAdapterKt {
         return protoAdapter2;
     }
 
-    public static final <T> ProtoAdapter<T> commonWrapper(final ProtoAdapter<T> delegate, final String typeUrl) {
-        Intrinsics.e(delegate, "delegate");
-        Intrinsics.e(typeUrl, "typeUrl");
+    public static final <T> ProtoAdapter<T> commonWrapper(final ProtoAdapter<T> protoAdapter, final String str) {
+        Intrinsics.e(protoAdapter, "delegate");
+        Intrinsics.e(str, "typeUrl");
         final FieldEncoding fieldEncoding = FieldEncoding.LENGTH_DELIMITED;
-        final KClass<?> type = delegate.getType();
+        final KClass<?> type = protoAdapter.getType();
         final Syntax syntax = Syntax.PROTO_3;
-        final T identity = delegate.getIdentity();
-        return new ProtoAdapter<T>(delegate, fieldEncoding, type, syntax, identity) { // from class: com.squareup.wire.ProtoAdapterKt$commonWrapper$1
+        final T identity = protoAdapter.getIdentity();
+        return new ProtoAdapter<T>(str, protoAdapter, fieldEncoding, type, syntax, identity) { // from class: com.squareup.wire.ProtoAdapterKt$commonWrapper$1
             final /* synthetic */ ProtoAdapter<T> $delegate;
+            final /* synthetic */ String $typeUrl;
 
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
-                super(fieldEncoding, type, String.this, syntax, identity);
-                this.$delegate = delegate;
+                super(fieldEncoding, type, str, syntax, identity);
+                this.$typeUrl = str;
+                this.$delegate = protoAdapter;
             }
 
             @Override // com.squareup.wire.ProtoAdapter
-            public T decode(ProtoReader reader) {
-                Intrinsics.e(reader, "reader");
+            public T decode(ProtoReader protoReader) {
+                Intrinsics.e(protoReader, "reader");
                 T identity2 = this.$delegate.getIdentity();
-                ProtoAdapter<T> protoAdapter = this.$delegate;
-                long beginMessage = reader.beginMessage();
+                ProtoAdapter<T> protoAdapter2 = this.$delegate;
+                long beginMessage = protoReader.beginMessage();
                 while (true) {
-                    int nextTag = reader.nextTag();
+                    int nextTag = protoReader.nextTag();
                     if (nextTag == -1) {
-                        reader.endMessageAndGetUnknownFields(beginMessage);
+                        protoReader.endMessageAndGetUnknownFields(beginMessage);
                         return identity2;
                     } else if (nextTag == 1) {
-                        identity2 = protoAdapter.decode(reader);
+                        identity2 = protoAdapter2.decode(protoReader);
                     } else {
-                        reader.readUnknownField(nextTag);
+                        protoReader.readUnknownField(nextTag);
                     }
                 }
             }
 
             @Override // com.squareup.wire.ProtoAdapter
-            public void encode(ProtoWriter writer, T t) {
-                Intrinsics.e(writer, "writer");
+            public void encode(ProtoWriter protoWriter, T t) {
+                Intrinsics.e(protoWriter, "writer");
                 if (t == null || Intrinsics.a(t, this.$delegate.getIdentity())) {
                     return;
                 }
-                this.$delegate.encodeWithTag(writer, 1, (int) t);
+                this.$delegate.encodeWithTag(protoWriter, 1, (int) t);
             }
 
             @Override // com.squareup.wire.ProtoAdapter
-            public void encode(ReverseProtoWriter writer, T t) {
-                Intrinsics.e(writer, "writer");
+            public void encode(ReverseProtoWriter reverseProtoWriter, T t) {
+                Intrinsics.e(reverseProtoWriter, "writer");
                 if (t == null || Intrinsics.a(t, this.$delegate.getIdentity())) {
                     return;
                 }
-                this.$delegate.encodeWithTag(writer, 1, (int) t);
+                this.$delegate.encodeWithTag(reverseProtoWriter, 1, (int) t);
             }
 
             @Override // com.squareup.wire.ProtoAdapter
@@ -1555,9 +1559,9 @@ public final class ProtoAdapterKt {
         };
     }
 
-    public static final <E> void delegateEncode(ProtoAdapter<E> protoAdapter, ReverseProtoWriter writer, E e) {
+    public static final <E> void delegateEncode(ProtoAdapter<E> protoAdapter, ReverseProtoWriter reverseProtoWriter, E e) {
         Intrinsics.e(protoAdapter, "<this>");
-        Intrinsics.e(writer, "writer");
-        writer.writeForward$wire_runtime(new ProtoAdapterKt$delegateEncode$1(protoAdapter, e));
+        Intrinsics.e(reverseProtoWriter, "writer");
+        reverseProtoWriter.writeForward$wire_runtime(new ProtoAdapterKt$delegateEncode$1(protoAdapter, e));
     }
 }

@@ -104,8 +104,8 @@ public class SuperTopicDetailFragment extends FeedTopicDetailBaseFragment implem
         this.j = inflate;
         this.k = (ImageView) inflate.findViewById(R.id.img_bg);
         this.l = this.j.findViewById(R.id.bg_shadow);
-        this.f20231c = (ImageView) this.j.findViewById(R.id.img_avatar);
-        this.f20231c.setOnClickListener(this);
+        this.c = (ImageView) this.j.findViewById(R.id.img_avatar);
+        this.c.setOnClickListener(this);
         this.m = (TextView) this.j.findViewById(R.id.tv_name);
         this.n = (TextView) this.j.findViewById(R.id.tv_visit);
         this.o = (TextView) this.j.findViewById(R.id.tv_join);
@@ -115,7 +115,7 @@ public class SuperTopicDetailFragment extends FeedTopicDetailBaseFragment implem
         this.b.setTopSpace(DensityUtils.a(getContext(), 58.0f));
         this.b.setImageScale(0.7f);
         this.b.d();
-        this.f20230a.addHeaderView(this.j);
+        this.a.addHeaderView(this.j);
     }
 
     @Override // com.blued.community.ui.subject.fragment.FeedTopicDetailBaseFragment
@@ -184,7 +184,7 @@ public class SuperTopicDetailFragment extends FeedTopicDetailBaseFragment implem
         CommunityServiceManager.b().a(getContext(), new String[]{this.g}, 0, 14, loadOptions);
     }
 
-    @Override // com.blued.community.ui.subject.fragment.FeedTopicDetailBaseFragment, com.blued.android.framework.ui.SimpleFragment
+    @Override // com.blued.community.ui.subject.fragment.FeedTopicDetailBaseFragment
     public void onInitView() {
         super.onInitView();
         CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.rootView.findViewById(R.id.title);
@@ -206,7 +206,6 @@ public class SuperTopicDetailFragment extends FeedTopicDetailBaseFragment implem
         this.h = 6.0f;
     }
 
-    @Override // com.blued.android.framework.ui.SimpleFragment
     public int onSetRootViewId() {
         return R.layout.fragment_super_topic_detail;
     }

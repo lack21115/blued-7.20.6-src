@@ -30,18 +30,14 @@ import kotlin.text.StringsKt;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYModifyClubNameDialog.class */
 public final class YYModifyClubNameDialog extends BaseFullScreenDialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f17344a;
+    private String a;
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private YYRoomModel f17345c;
+    private YYRoomModel c;
     private DialogYyModifyClubNameBinding d;
 
     public YYModifyClubNameDialog(String clubName, int i) {
         Intrinsics.e(clubName, "clubName");
-        this.f17344a = clubName;
+        this.a = clubName;
         this.b = i;
     }
 
@@ -56,35 +52,35 @@ public final class YYModifyClubNameDialog extends BaseFullScreenDialog {
         AppCompatEditText appCompatEditText2;
         Intrinsics.e(this$0, "this$0");
         DialogYyModifyClubNameBinding dialogYyModifyClubNameBinding = this$0.d;
-        AppCompatEditText appCompatEditText3 = dialogYyModifyClubNameBinding == null ? null : dialogYyModifyClubNameBinding.f16439c;
+        AppCompatEditText appCompatEditText3 = dialogYyModifyClubNameBinding == null ? null : dialogYyModifyClubNameBinding.c;
         if (appCompatEditText3 != null) {
             appCompatEditText3.setFocusableInTouchMode(true);
         }
         DialogYyModifyClubNameBinding dialogYyModifyClubNameBinding2 = this$0.d;
-        AppCompatEditText appCompatEditText4 = dialogYyModifyClubNameBinding2 == null ? null : dialogYyModifyClubNameBinding2.f16439c;
+        AppCompatEditText appCompatEditText4 = dialogYyModifyClubNameBinding2 == null ? null : dialogYyModifyClubNameBinding2.c;
         if (appCompatEditText4 != null) {
             appCompatEditText4.setFocusable(true);
         }
         DialogYyModifyClubNameBinding dialogYyModifyClubNameBinding3 = this$0.d;
-        if (dialogYyModifyClubNameBinding3 != null && (appCompatEditText2 = dialogYyModifyClubNameBinding3.f16439c) != null) {
+        if (dialogYyModifyClubNameBinding3 != null && (appCompatEditText2 = dialogYyModifyClubNameBinding3.c) != null) {
             appCompatEditText2.requestFocus();
         }
         Context context = this$0.getContext();
-        Object systemService = context == null ? null : context.getSystemService(Context.INPUT_METHOD_SERVICE);
+        Object systemService = context == null ? null : context.getSystemService("input_method");
         if (systemService instanceof InputMethodManager) {
             InputMethodManager inputMethodManager = (InputMethodManager) systemService;
             DialogYyModifyClubNameBinding dialogYyModifyClubNameBinding4 = this$0.d;
-            inputMethodManager.showSoftInput(dialogYyModifyClubNameBinding4 == null ? null : dialogYyModifyClubNameBinding4.f16439c, 0);
+            inputMethodManager.showSoftInput(dialogYyModifyClubNameBinding4 == null ? null : dialogYyModifyClubNameBinding4.c, 0);
         }
         DialogYyModifyClubNameBinding dialogYyModifyClubNameBinding5 = this$0.d;
-        if (dialogYyModifyClubNameBinding5 == null || (appCompatEditText = dialogYyModifyClubNameBinding5.f16439c) == null) {
+        if (dialogYyModifyClubNameBinding5 == null || (appCompatEditText = dialogYyModifyClubNameBinding5.c) == null) {
             return;
         }
         DialogYyModifyClubNameBinding dialogYyModifyClubNameBinding6 = this$0.d;
         if (dialogYyModifyClubNameBinding6 == null) {
             valueOf = null;
         } else {
-            AppCompatEditText appCompatEditText5 = dialogYyModifyClubNameBinding6.f16439c;
+            AppCompatEditText appCompatEditText5 = dialogYyModifyClubNameBinding6.c;
             if (appCompatEditText5 == null) {
                 valueOf = null;
             } else {
@@ -103,11 +99,11 @@ public final class YYModifyClubNameDialog extends BaseFullScreenDialog {
     }
 
     private final void a(String str) {
-        if (this.f17345c == null) {
+        if (this.c == null) {
             return;
         }
-        final ActivityFragmentActive a2 = a();
-        YYRoomHttpUtils.w(str, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<Object>>(a2) { // from class: com.blued.android.module.yy_china.fragment.YYModifyClubNameDialog$setNewName$1
+        final ActivityFragmentActive a = a();
+        YYRoomHttpUtils.w(str, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<Object>>(a) { // from class: com.blued.android.module.yy_china.fragment.YYModifyClubNameDialog$setNewName$1
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
@@ -152,14 +148,14 @@ public final class YYModifyClubNameDialog extends BaseFullScreenDialog {
         Intrinsics.e(this$0, "this$0");
         DialogYyModifyClubNameBinding dialogYyModifyClubNameBinding = this$0.d;
         String str = null;
-        String obj = StringsKt.b((CharSequence) String.valueOf((dialogYyModifyClubNameBinding == null || (appCompatEditText = dialogYyModifyClubNameBinding.f16439c) == null) ? null : appCompatEditText.getText())).toString();
+        String obj = StringsKt.b((CharSequence) String.valueOf((dialogYyModifyClubNameBinding == null || (appCompatEditText = dialogYyModifyClubNameBinding.c) == null) ? null : appCompatEditText.getText())).toString();
         if (TextUtils.isEmpty(obj)) {
             return;
         }
         ChatRoomProtos.Event event = ChatRoomProtos.Event.CHAT_ROOM_FANS_EDIT_SUBMIT_CLICK;
-        YYRoomModel yYRoomModel = this$0.f17345c;
+        YYRoomModel yYRoomModel = this$0.c;
         String str2 = yYRoomModel == null ? null : yYRoomModel.room_id;
-        YYRoomModel yYRoomModel2 = this$0.f17345c;
+        YYRoomModel yYRoomModel2 = this$0.c;
         if (yYRoomModel2 != null) {
             str = yYRoomModel2.uid;
         }
@@ -201,7 +197,7 @@ public final class YYModifyClubNameDialog extends BaseFullScreenDialog {
             });
         }
         DialogYyModifyClubNameBinding dialogYyModifyClubNameBinding4 = this.d;
-        if (dialogYyModifyClubNameBinding4 != null && (shapeTextView = dialogYyModifyClubNameBinding4.f16438a) != null) {
+        if (dialogYyModifyClubNameBinding4 != null && (shapeTextView = dialogYyModifyClubNameBinding4.a) != null) {
             shapeTextView.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYModifyClubNameDialog$CGLum6mvTxsSd6-l9DkG7d3cABA
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {
@@ -209,16 +205,16 @@ public final class YYModifyClubNameDialog extends BaseFullScreenDialog {
                 }
             });
         }
-        if (TextUtils.isEmpty(this.f17344a)) {
+        if (TextUtils.isEmpty(this.a)) {
             DialogYyModifyClubNameBinding dialogYyModifyClubNameBinding5 = this.d;
-            AppCompatEditText appCompatEditText2 = dialogYyModifyClubNameBinding5 == null ? null : dialogYyModifyClubNameBinding5.f16439c;
+            AppCompatEditText appCompatEditText2 = dialogYyModifyClubNameBinding5 == null ? null : dialogYyModifyClubNameBinding5.c;
             if (appCompatEditText2 != null) {
                 appCompatEditText2.setHint(getResources().getString(R.string.yy_live_notice));
             }
         } else {
             DialogYyModifyClubNameBinding dialogYyModifyClubNameBinding6 = this.d;
-            if (dialogYyModifyClubNameBinding6 != null && (appCompatEditText = dialogYyModifyClubNameBinding6.f16439c) != null) {
-                appCompatEditText.setText(this.f17344a);
+            if (dialogYyModifyClubNameBinding6 != null && (appCompatEditText = dialogYyModifyClubNameBinding6.c) != null) {
+                appCompatEditText.setText(this.a);
             }
         }
         a(new Runnable() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYModifyClubNameDialog$d4Fst6G5McnJN_AIGMizOcdLtkw
@@ -238,13 +234,13 @@ public final class YYModifyClubNameDialog extends BaseFullScreenDialog {
         return this.d;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
         View inflate = inflater.inflate(R.layout.dialog_yy_modify_club_name, viewGroup, true);
         Intrinsics.c(inflate, "inflater.inflate(R.layou…ub_name, container, true)");
         this.d = DialogYyModifyClubNameBinding.a(inflate);
-        this.f17345c = YYRoomInfoManager.e().b();
+        this.c = YYRoomInfoManager.e().b();
         g();
         return inflate;
     }

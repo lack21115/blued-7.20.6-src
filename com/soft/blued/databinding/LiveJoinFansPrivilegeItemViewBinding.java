@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class LiveJoinFansPrivilegeItemViewBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final FrameLayout f29454a;
+    private final FrameLayout f15764a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f29454a;
+        return this.f15764a;
     }
 }

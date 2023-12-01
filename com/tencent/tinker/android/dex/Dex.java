@@ -61,11 +61,11 @@ public final class Dex {
         private int count;
 
         /* renamed from: in  reason: collision with root package name */
-        private final Section f39453in;
+        private final Section f25762in;
 
         private ClassDefIterator() {
             Dex dex = Dex.this;
-            this.f39453in = dex.openSection(dex.tableOfContents.classDefs);
+            this.f25762in = dex.openSection(dex.tableOfContents.classDefs);
             this.count = 0;
         }
 
@@ -79,7 +79,7 @@ public final class Dex {
         public ClassDef next() {
             if (hasNext()) {
                 this.count++;
-                return this.f39453in.readClassDef();
+                return this.f25762in.readClassDef();
             }
             throw new NoSuchElementException();
         }

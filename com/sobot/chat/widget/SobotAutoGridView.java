@@ -95,22 +95,19 @@ public class SobotAutoGridView extends GridView {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onConfigurationChanged(Configuration configuration) {
+    protected void onConfigurationChanged(Configuration configuration) {
         setNumColumns(this.numColumns);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.AbsListView, android.widget.AdapterView, android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z, int i, int i2, int i3, int i4) {
+    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         super.onLayout(z, i, i2, i3, i4);
         setHeights();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onScrollChanged(int i, int i2, int i3, int i4) {
+    protected void onScrollChanged(int i, int i2, int i3, int i4) {
         int firstVisiblePosition = getFirstVisiblePosition();
         if (this.previousFirstVisible != firstVisiblePosition) {
             this.previousFirstVisible = firstVisiblePosition;

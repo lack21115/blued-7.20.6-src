@@ -60,29 +60,29 @@ public final class SpringAnimation extends DynamicAnimation<SpringAnimation> {
                 this.j = Float.MAX_VALUE;
             }
             this.b = this.i.getFinalPosition();
-            this.f2801a = 0.0f;
+            this.f2753a = 0.0f;
             this.k = false;
             return true;
         }
         if (this.j != Float.MAX_VALUE) {
             this.i.getFinalPosition();
             long j2 = j / 2;
-            DynamicAnimation.MassState a2 = this.i.a(this.b, this.f2801a, j2);
+            DynamicAnimation.MassState a2 = this.i.a(this.b, this.f2753a, j2);
             this.i.setFinalPosition(this.j);
             this.j = Float.MAX_VALUE;
-            DynamicAnimation.MassState a3 = this.i.a(a2.f2804a, a2.b, j2);
-            this.b = a3.f2804a;
-            this.f2801a = a3.b;
+            DynamicAnimation.MassState a3 = this.i.a(a2.f2756a, a2.b, j2);
+            this.b = a3.f2756a;
+            this.f2753a = a3.b;
         } else {
-            DynamicAnimation.MassState a4 = this.i.a(this.b, this.f2801a, j);
-            this.b = a4.f2804a;
-            this.f2801a = a4.b;
+            DynamicAnimation.MassState a4 = this.i.a(this.b, this.f2753a, j);
+            this.b = a4.f2756a;
+            this.f2753a = a4.b;
         }
         this.b = Math.max(this.b, this.h);
         this.b = Math.min(this.b, this.g);
-        if (a(this.b, this.f2801a)) {
+        if (a(this.b, this.f2753a)) {
             this.b = this.i.getFinalPosition();
-            this.f2801a = 0.0f;
+            this.f2753a = 0.0f;
             return true;
         }
         return false;

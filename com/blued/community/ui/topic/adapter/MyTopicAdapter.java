@@ -6,7 +6,6 @@ import android.content.DialogInterface;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.TextView;
-import androidx.fragment.app.FragmentActivity;
 import com.blued.android.core.BlueAppLocal;
 import com.blued.android.core.net.IRequestHost;
 import com.blued.android.framework.http.BluedUIHttpResponse;
@@ -28,13 +27,9 @@ import com.chad.library.adapter.base.BaseViewHolder;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/community/ui/topic/adapter/MyTopicAdapter.class */
 public class MyTopicAdapter extends SuperTopicAdapter {
-
-    /* renamed from: a  reason: collision with root package name */
-    public Context f20238a;
+    public Context a;
     public MY_TOPIC_PAGE b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public IRequestHost f20239c;
+    public IRequestHost c;
     public Dialog d;
 
     /* loaded from: source-5961304-dex2jar.jar:com/blued/community/ui/topic/adapter/MyTopicAdapter$MY_TOPIC_PAGE.class */
@@ -45,17 +40,17 @@ public class MyTopicAdapter extends SuperTopicAdapter {
 
     public MyTopicAdapter(Context context, MY_TOPIC_PAGE my_topic_page, IRequestHost iRequestHost) {
         super(context, iRequestHost, R.layout.item_mine_topic);
-        this.f20238a = context;
+        this.a = context;
         this.b = my_topic_page;
-        this.f20239c = iRequestHost;
+        this.c = iRequestHost;
         this.d = DialogUtils.a(context);
     }
 
     public void a(final int i, final String str) {
-        CommonShowBottomWindow.a((FragmentActivity) this.f20238a, new String[]{this.f20238a.getResources().getString(R.string.delete)}, new ActionSheet.ActionSheetListener() { // from class: com.blued.community.ui.topic.adapter.MyTopicAdapter.3
+        CommonShowBottomWindow.a(this.a, new String[]{this.a.getResources().getString(R.string.delete)}, new ActionSheet.ActionSheetListener() { // from class: com.blued.community.ui.topic.adapter.MyTopicAdapter.3
             @Override // com.blued.android.module.common.widget.menu.ActionSheet.ActionSheetListener
             public void a(ActionSheet actionSheet, int i2) {
-                if (TextUtils.equals(actionSheet.a(i2), MyTopicAdapter.this.f20238a.getResources().getString(R.string.delete))) {
+                if (TextUtils.equals(actionSheet.a(i2), MyTopicAdapter.this.a.getResources().getString(R.string.delete))) {
                     MyTopicAdapter.this.b(i, str);
                 }
             }
@@ -67,7 +62,7 @@ public class MyTopicAdapter extends SuperTopicAdapter {
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.blued.community.ui.topic.adapter.SuperTopicAdapter, com.chad.library.adapter.base.BaseQuickAdapter
+    @Override // com.blued.community.ui.topic.adapter.SuperTopicAdapter
     /* renamed from: a */
     public void convert(final BaseViewHolder baseViewHolder, final BluedTopic bluedTopic) {
         super.convert(baseViewHolder, bluedTopic);
@@ -84,7 +79,7 @@ public class MyTopicAdapter extends SuperTopicAdapter {
                     } else if (MyTopicAdapter.this.b == MY_TOPIC_PAGE.CREATED) {
                         FeedConstants.b = FeedProtos.DetailFrom.SUPER_TOPIC_CREATE;
                     }
-                    SuperTopicDetailFragment.a(MyTopicAdapter.this.f20238a, bluedTopic.super_did);
+                    SuperTopicDetailFragment.a(MyTopicAdapter.this.a, bluedTopic.super_did);
                 }
             }));
             if (this.b == MY_TOPIC_PAGE.JOINED) {
@@ -106,13 +101,13 @@ public class MyTopicAdapter extends SuperTopicAdapter {
                 } else {
                     textView.setText(bluedTopic.ranking + "名");
                 }
-                textView.setTextColor(this.f20238a.getResources().getColor(R.color.syc_h));
+                textView.setTextColor(this.a.getResources().getColor(R.color.syc_h));
             }
         } else {
             view.setOnClickListener(null);
             view.setOnLongClickListener(null);
             textView.setText(R.string.community_under_review);
-            textView.setTextColor(this.f20238a.getResources().getColor(R.color.syc_a));
+            textView.setTextColor(this.a.getResources().getColor(R.color.syc_a));
         }
         if (this.b == MY_TOPIC_PAGE.JOINED) {
             textView.setVisibility(8);
@@ -122,12 +117,12 @@ public class MyTopicAdapter extends SuperTopicAdapter {
     }
 
     public void b(final int i, final String str) {
-        Context context = this.f20238a;
-        CommonAlertDialog.a(context, "", context.getResources().getString(R.string.feed_confirm_delete), this.f20238a.getResources().getString(R.string.common_ok), new DialogInterface.OnClickListener() { // from class: com.blued.community.ui.topic.adapter.MyTopicAdapter.4
+        Context context = this.a;
+        CommonAlertDialog.a(context, "", context.getResources().getString(R.string.feed_confirm_delete), this.a.getResources().getString(R.string.common_ok), new DialogInterface.OnClickListener() { // from class: com.blued.community.ui.topic.adapter.MyTopicAdapter.4
             @Override // android.content.DialogInterface.OnClickListener
             public void onClick(DialogInterface dialogInterface, int i2) {
                 Tracker.onClick(dialogInterface, i2);
-                FeedHttpUtils.d(new BluedUIHttpResponse<BluedEntityA<UserBasicModel>>(MyTopicAdapter.this.f20239c) { // from class: com.blued.community.ui.topic.adapter.MyTopicAdapter.4.1
+                FeedHttpUtils.d(new BluedUIHttpResponse<BluedEntityA<UserBasicModel>>(MyTopicAdapter.this.c) { // from class: com.blued.community.ui.topic.adapter.MyTopicAdapter.4.1
                     /* JADX INFO: Access modifiers changed from: protected */
                     @Override // com.blued.android.framework.http.BluedUIHttpResponse
                     /* renamed from: a */
@@ -149,7 +144,7 @@ public class MyTopicAdapter extends SuperTopicAdapter {
                         super.onUIStart();
                         DialogUtils.a(MyTopicAdapter.this.d);
                     }
-                }, str, MyTopicAdapter.this.f20239c);
+                }, str, MyTopicAdapter.this.c);
             }
         }, (String) null, (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
     }

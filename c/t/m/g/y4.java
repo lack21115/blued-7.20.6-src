@@ -11,20 +11,20 @@ import java.util.List;
 public class y4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final List<String> f4065a;
+    public static final List<String> f4017a;
 
     static {
         ArrayList arrayList = new ArrayList();
-        f4065a = arrayList;
+        f4017a = arrayList;
         arrayList.add("mobile");
-        f4065a.add("16wifi");
-        f4065a.add("cmcc");
-        f4065a.add("360wifi");
-        f4065a.add("androidap");
-        f4065a.add("htcphone");
-        f4065a.add(AssistUtils.BRAND_XIAOMI);
-        f4065a.add("lenovo");
-        f4065a.add("macbook");
+        f4017a.add("16wifi");
+        f4017a.add("cmcc");
+        f4017a.add("360wifi");
+        f4017a.add("androidap");
+        f4017a.add("htcphone");
+        f4017a.add(AssistUtils.BRAND_XIAOMI);
+        f4017a.add("lenovo");
+        f4017a.add("macbook");
     }
 
     public static void a(List<ScanResult> list) {

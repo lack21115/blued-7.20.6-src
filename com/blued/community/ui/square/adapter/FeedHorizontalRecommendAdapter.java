@@ -20,25 +20,20 @@ import com.blued.das.message.MessageProtos;
 import com.bytedance.applog.tracker.Tracker;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
+import java.util.List;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/square/adapter/FeedHorizontalRecommendAdapter.class */
 public class FeedHorizontalRecommendAdapter extends BaseQuickAdapter<FeedRecommendUser, BaseViewHolder> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f20113a;
+    private Context a;
     private IRequestHost b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f20114c;
+    private String c;
     private int d;
     private long e;
 
     /* renamed from: com.blued.community.ui.square.adapter.FeedHorizontalRecommendAdapter$2  reason: invalid class name */
     /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/square/adapter/FeedHorizontalRecommendAdapter$2.class */
     class AnonymousClass2 implements CommunityHttpUtils.IAddOrRemoveAttentionDone {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ FeedRecommendUser f20117a;
+        final /* synthetic */ FeedRecommendUser a;
         final /* synthetic */ FeedHorizontalRecommendAdapter b;
 
         @Override // com.blued.community.http.CommunityHttpUtils.IAddOrRemoveAttentionDone
@@ -47,7 +42,7 @@ public class FeedHorizontalRecommendAdapter extends BaseQuickAdapter<FeedRecomme
 
         @Override // com.blued.community.http.CommunityHttpUtils.IAddOrRemoveAttentionDone
         public void a(String str) {
-            this.f20117a.relationship = str;
+            this.a.relationship = str;
             this.b.notifyDataSetChanged();
         }
 
@@ -61,7 +56,7 @@ public class FeedHorizontalRecommendAdapter extends BaseQuickAdapter<FeedRecomme
 
         @Override // com.blued.community.http.CommunityHttpUtils.IAddOrRemoveAttentionDone
         public void c() {
-            this.f20117a.relationship = "0";
+            this.a.relationship = "0";
             this.b.notifyDataSetChanged();
         }
     }
@@ -69,9 +64,7 @@ public class FeedHorizontalRecommendAdapter extends BaseQuickAdapter<FeedRecomme
     /* renamed from: com.blued.community.ui.square.adapter.FeedHorizontalRecommendAdapter$3  reason: invalid class name */
     /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/square/adapter/FeedHorizontalRecommendAdapter$3.class */
     class AnonymousClass3 implements CommunityHttpUtils.IAddOrRemoveAttentionDone {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ FeedRecommendUser f20118a;
+        final /* synthetic */ FeedRecommendUser a;
         final /* synthetic */ FeedHorizontalRecommendAdapter b;
 
         @Override // com.blued.community.http.CommunityHttpUtils.IAddOrRemoveAttentionDone
@@ -88,7 +81,7 @@ public class FeedHorizontalRecommendAdapter extends BaseQuickAdapter<FeedRecomme
 
         @Override // com.blued.community.http.CommunityHttpUtils.IAddOrRemoveAttentionDone
         public void b(String str) {
-            this.f20118a.relationship = "0";
+            this.a.relationship = "0";
             this.b.notifyDataSetChanged();
         }
 
@@ -98,11 +91,11 @@ public class FeedHorizontalRecommendAdapter extends BaseQuickAdapter<FeedRecomme
     }
 
     public FeedHorizontalRecommendAdapter(Context context, IRequestHost iRequestHost, String str, int i) {
-        super(R.layout.item_recommend_live_user, null);
-        this.f20114c = "recommend";
-        this.f20113a = context;
+        super(R.layout.item_recommend_live_user, (List) null);
+        this.c = "recommend";
+        this.a = context;
         this.b = iRequestHost;
-        this.f20114c = str;
+        this.c = str;
         this.d = i;
     }
 
@@ -118,13 +111,12 @@ public class FeedHorizontalRecommendAdapter extends BaseQuickAdapter<FeedRecomme
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(BaseViewHolder baseViewHolder, final FeedRecommendUser feedRecommendUser) {
         if (baseViewHolder == null || feedRecommendUser == null) {
             return;
         }
-        final String a2 = EncryptTool.a(feedRecommendUser.uid);
+        final String a = EncryptTool.a(feedRecommendUser.uid);
         EncryptTool.a(feedRecommendUser.lid);
         final ImageView imageView = (ImageView) baseViewHolder.getView(R.id.img_header);
         if (imageView != null) {
@@ -133,19 +125,19 @@ public class FeedHorizontalRecommendAdapter extends BaseQuickAdapter<FeedRecomme
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view) {
                     Tracker.onClick(view);
-                    if (FeedHorizontalRecommendAdapter.this.f20114c.equals("recommend")) {
-                        EventTrackFeed.a(FeedProtos.Event.PLAZA_RECOMMEND_FOLLOW_USER_CLICK, a2, feedRecommendUser.show_type == 0, FeedHorizontalRecommendAdapter.this.d, FeedHorizontalRecommendAdapter.this.e);
-                    } else if (FeedHorizontalRecommendAdapter.this.f20114c.equals("followed")) {
-                        EventTrackFeed.a(FeedProtos.Event.PLAZA_FOLLOW_LIVE_USER_CLICK, a2, feedRecommendUser.show_type == 0, FeedHorizontalRecommendAdapter.this.d, FeedHorizontalRecommendAdapter.this.e);
+                    if (FeedHorizontalRecommendAdapter.this.c.equals("recommend")) {
+                        EventTrackFeed.a(FeedProtos.Event.PLAZA_RECOMMEND_FOLLOW_USER_CLICK, a, feedRecommendUser.show_type == 0, FeedHorizontalRecommendAdapter.this.d, FeedHorizontalRecommendAdapter.this.e);
+                    } else if (FeedHorizontalRecommendAdapter.this.c.equals("followed")) {
+                        EventTrackFeed.a(FeedProtos.Event.PLAZA_FOLLOW_LIVE_USER_CLICK, a, feedRecommendUser.show_type == 0, FeedHorizontalRecommendAdapter.this.d, FeedHorizontalRecommendAdapter.this.e);
                     }
                     UserBasicModel userBasicModel = new UserBasicModel();
-                    userBasicModel.uid = a2;
+                    userBasicModel.uid = a;
                     userBasicModel.name = feedRecommendUser.name;
                     userBasicModel.avatar = feedRecommendUser.avatar;
                     if (feedRecommendUser.show_type == 0) {
-                        CommunityServiceManager.b().a(FeedHorizontalRecommendAdapter.this.f20113a, feedRecommendUser, FeedHorizontalRecommendAdapter.this.mData);
+                        CommunityServiceManager.b().a(FeedHorizontalRecommendAdapter.this.a, feedRecommendUser, FeedHorizontalRecommendAdapter.this.mData);
                     } else {
-                        CommunityServiceManager.b().a(FeedHorizontalRecommendAdapter.this.f20113a, userBasicModel, "feed_horizontal_recommend", false, (View) imageView, (LogData) null, MessageProtos.StrangerSource.FIND_PLAZA_RECOMMEND_USER);
+                        CommunityServiceManager.b().a(FeedHorizontalRecommendAdapter.this.a, userBasicModel, "feed_horizontal_recommend", false, (View) imageView, (LogData) null, MessageProtos.StrangerSource.FIND_PLAZA_RECOMMEND_USER);
                     }
                 }
             });
@@ -157,10 +149,10 @@ public class FeedHorizontalRecommendAdapter extends BaseQuickAdapter<FeedRecomme
         if (feedRecommendUser.isShowed) {
             return;
         }
-        if (this.f20114c.equals("recommend")) {
-            EventTrackFeed.a(FeedProtos.Event.PLAZA_RECOMMEND_FOLLOW_USER_SHOW, a2, feedRecommendUser.show_type == 0, this.d, this.e);
-        } else if (this.f20114c.equals("followed")) {
-            EventTrackFeed.a(FeedProtos.Event.PLAZA_FOLLOW_LIVE_USER_SHOW, a2, feedRecommendUser.show_type == 0, this.d, this.e);
+        if (this.c.equals("recommend")) {
+            EventTrackFeed.a(FeedProtos.Event.PLAZA_RECOMMEND_FOLLOW_USER_SHOW, a, feedRecommendUser.show_type == 0, this.d, this.e);
+        } else if (this.c.equals("followed")) {
+            EventTrackFeed.a(FeedProtos.Event.PLAZA_FOLLOW_LIVE_USER_SHOW, a, feedRecommendUser.show_type == 0, this.d, this.e);
         }
         feedRecommendUser.isShowed = true;
     }

@@ -12,7 +12,7 @@ public interface CaptureSourceInterface {
         public int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public int f36846c;
+        public int f23155c;
         public int d;
         public Rect e;
 
@@ -21,7 +21,7 @@ public interface CaptureSourceInterface {
 
         public CaptureParams(CaptureParams captureParams) {
             this.b = captureParams.b;
-            this.f36846c = captureParams.f36846c;
+            this.f23155c = captureParams.f23155c;
             this.d = captureParams.d;
             this.e = captureParams.e;
         }
@@ -29,13 +29,13 @@ public interface CaptureSourceInterface {
         public boolean equals(Object obj) {
             if (obj instanceof CaptureParams) {
                 CaptureParams captureParams = (CaptureParams) obj;
-                return this.b == captureParams.b && this.f36846c == captureParams.f36846c && this.d == captureParams.d;
+                return this.b == captureParams.b && this.f23155c == captureParams.f23155c && this.d == captureParams.d;
             }
             return false;
         }
 
         public String toString() {
-            return String.format(Locale.ENGLISH, "size: %dx%d, fps: %d", Integer.valueOf(this.f36846c), Integer.valueOf(this.d), Integer.valueOf(this.b));
+            return String.format(Locale.ENGLISH, "size: %dx%d, fps: %d", Integer.valueOf(this.f23155c), Integer.valueOf(this.d), Integer.valueOf(this.b));
         }
     }
 

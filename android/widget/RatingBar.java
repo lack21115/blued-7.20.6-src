@@ -25,7 +25,7 @@ public class RatingBar extends AbsSeekBar {
     }
 
     public RatingBar(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, 16842876);
+        this(context, attributeSet, R.attr.ratingBarStyle);
     }
 
     public RatingBar(Context context, AttributeSet attributeSet, int i) {

@@ -11,11 +11,11 @@ import java.util.ArrayList;
 public class MenuAdapter extends BaseAdapter {
 
     /* renamed from: a  reason: collision with root package name */
-    MenuBuilder f1675a;
+    MenuBuilder f1627a;
     private int b = -1;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f1676c;
+    private boolean f1628c;
     private final boolean d;
     private final LayoutInflater e;
     private final int f;
@@ -23,15 +23,15 @@ public class MenuAdapter extends BaseAdapter {
     public MenuAdapter(MenuBuilder menuBuilder, LayoutInflater layoutInflater, boolean z, int i) {
         this.d = z;
         this.e = layoutInflater;
-        this.f1675a = menuBuilder;
+        this.f1627a = menuBuilder;
         this.f = i;
         a();
     }
 
     void a() {
-        MenuItemImpl expandedItem = this.f1675a.getExpandedItem();
+        MenuItemImpl expandedItem = this.f1627a.getExpandedItem();
         if (expandedItem != null) {
-            ArrayList<MenuItemImpl> nonActionItems = this.f1675a.getNonActionItems();
+            ArrayList<MenuItemImpl> nonActionItems = this.f1627a.getNonActionItems();
             int size = nonActionItems.size();
             int i = 0;
             while (true) {
@@ -50,22 +50,22 @@ public class MenuAdapter extends BaseAdapter {
     }
 
     public MenuBuilder getAdapterMenu() {
-        return this.f1675a;
+        return this.f1627a;
     }
 
     @Override // android.widget.Adapter
     public int getCount() {
-        ArrayList<MenuItemImpl> nonActionItems = this.d ? this.f1675a.getNonActionItems() : this.f1675a.getVisibleItems();
+        ArrayList<MenuItemImpl> nonActionItems = this.d ? this.f1627a.getNonActionItems() : this.f1627a.getVisibleItems();
         return this.b < 0 ? nonActionItems.size() : nonActionItems.size() - 1;
     }
 
     public boolean getForceShowIcon() {
-        return this.f1676c;
+        return this.f1628c;
     }
 
     @Override // android.widget.Adapter
     public MenuItemImpl getItem(int i) {
-        ArrayList<MenuItemImpl> nonActionItems = this.d ? this.f1675a.getNonActionItems() : this.f1675a.getVisibleItems();
+        ArrayList<MenuItemImpl> nonActionItems = this.d ? this.f1627a.getNonActionItems() : this.f1627a.getVisibleItems();
         int i2 = this.b;
         int i3 = i;
         if (i2 >= 0) {
@@ -92,9 +92,9 @@ public class MenuAdapter extends BaseAdapter {
         int i2 = i - 1;
         int groupId2 = i2 >= 0 ? getItem(i2).getGroupId() : groupId;
         ListMenuItemView listMenuItemView = (ListMenuItemView) view2;
-        listMenuItemView.setGroupDividerEnabled(this.f1675a.isGroupDividerEnabled() && groupId != groupId2);
+        listMenuItemView.setGroupDividerEnabled(this.f1627a.isGroupDividerEnabled() && groupId != groupId2);
         MenuView.ItemView itemView = (MenuView.ItemView) view2;
-        if (this.f1676c) {
+        if (this.f1628c) {
             listMenuItemView.setForceShowIcon(true);
         }
         itemView.initialize(getItem(i), 0);
@@ -108,6 +108,6 @@ public class MenuAdapter extends BaseAdapter {
     }
 
     public void setForceShowIcon(boolean z) {
-        this.f1676c = z;
+        this.f1628c = z;
     }
 }

@@ -17,11 +17,11 @@ import java.util.concurrent.atomic.AtomicInteger;
 public final class c implements e.a, e, Closeable {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile c f34977a;
+    private static volatile c f21286a;
     private final AtomicBoolean b = new AtomicBoolean(false);
 
     /* renamed from: c  reason: collision with root package name */
-    private final AtomicInteger f34978c = new AtomicInteger();
+    private final AtomicInteger f21287c = new AtomicInteger();
     public com.tencent.beacon.base.net.a.a d;
     public com.tencent.beacon.base.net.a.b e;
     private Context f;
@@ -35,10 +35,10 @@ public final class c implements e.a, e, Closeable {
         c cVar;
         synchronized (c.class) {
             try {
-                if (f34977a == null) {
-                    f34977a = new c();
+                if (f21286a == null) {
+                    f21286a = new c();
                 }
-                cVar = f34977a;
+                cVar = f21286a;
             } catch (Throwable th) {
                 throw th;
             }
@@ -48,11 +48,11 @@ public final class c implements e.a, e, Closeable {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void f() {
-        com.tencent.beacon.base.util.c.a("[BeaconNet]", "current net connected num: %d", Integer.valueOf(this.f34978c.decrementAndGet()));
+        com.tencent.beacon.base.util.c.a("[BeaconNet]", "current net connected num: %d", Integer.valueOf(this.f21287c.decrementAndGet()));
     }
 
     private void g() {
-        com.tencent.beacon.base.util.c.a("[BeaconNet]", "current net connected num: %d", Integer.valueOf(this.f34978c.incrementAndGet()));
+        com.tencent.beacon.base.util.c.a("[BeaconNet]", "current net connected num: %d", Integer.valueOf(this.f21287c.incrementAndGet()));
     }
 
     public AbstractNetAdapter a(JceRequestEntity jceRequestEntity) {
@@ -109,7 +109,7 @@ public final class c implements e.a, e, Closeable {
     }
 
     public void a(d dVar) {
-        if (dVar.f34992a.equals("atta") || TextUtils.isEmpty(dVar.b)) {
+        if (dVar.f21301a.equals("atta") || TextUtils.isEmpty(dVar.b)) {
             return;
         }
         g.e().a(dVar.b, dVar.toString(), dVar.e);
@@ -132,7 +132,7 @@ public final class c implements e.a, e, Closeable {
     }
 
     public boolean d() {
-        return this.f34978c.get() >= 5;
+        return this.f21287c.get() >= 5;
     }
 
     public void e() {

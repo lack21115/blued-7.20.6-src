@@ -1,9 +1,7 @@
 package com.amap.api.col.p0003sl;
 
-import android.os.BatteryManager;
-import android.provider.SearchIndexablesContract;
-import android.telecom.PhoneAccount;
 import android.text.TextUtils;
+import com.alipay.sdk.util.i;
 import com.alipay.sdk.widget.j;
 import com.amap.api.services.busline.BusLineItem;
 import com.amap.api.services.busline.BusStationItem;
@@ -71,13 +69,10 @@ import com.amap.api.services.routepoisearch.RoutePOIItem;
 import com.amap.api.services.weather.LocalDayWeatherForecast;
 import com.amap.api.services.weather.LocalWeatherForecast;
 import com.amap.api.services.weather.LocalWeatherLive;
-import com.anythink.expressad.foundation.d.c;
-import com.anythink.expressad.foundation.d.l;
-import com.cdo.oaps.ad.OapsWrapper;
-import com.google.common.net.HttpHeaders;
-import com.sina.weibo.sdk.constant.WBPageConstants;
-import com.sina.weibo.sdk.statistic.LogBuilder;
-import com.ss.android.socialbase.downloader.constants.DBDefinition;
+import com.android.internal.util.cm.QSConstants;
+import com.anythink.core.common.b.e;
+import com.anythink.core.common.b.g;
+import com.anythink.core.common.c.g;
 import java.util.ArrayList;
 import java.util.List;
 import org.json.JSONArray;
@@ -87,9 +82,7 @@ import org.json.JSONObject;
 /* renamed from: com.amap.api.col.3sl.fm  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/fm.class */
 public final class fm {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static String[] f4953a = {"010", "021", "022", "023", "1852", "1853"};
+    private static String[] a = {"010", "021", "022", "023", "1852", "1853"};
 
     private static List<RailwayStationItem> A(JSONObject jSONObject) throws JSONException {
         JSONArray optJSONArray;
@@ -155,7 +148,7 @@ public final class fm {
     }
 
     private static RailwaySpace D(JSONObject jSONObject) throws JSONException {
-        return new RailwaySpace(a(jSONObject, "code"), q(a(jSONObject, "cost")));
+        return new RailwaySpace(a(jSONObject, g.c.b), q(a(jSONObject, "cost")));
     }
 
     private static TaxiItem E(JSONObject jSONObject) throws JSONException {
@@ -163,7 +156,7 @@ public final class fm {
             return null;
         }
         TaxiItem taxiItem = new TaxiItem();
-        taxiItem.setOrigin(c(jSONObject, HttpHeaders.ReferrerPolicyValues.ORIGIN));
+        taxiItem.setOrigin(c(jSONObject, "origin"));
         taxiItem.setDestination(c(jSONObject, "destination"));
         taxiItem.setDistance(q(a(jSONObject, "distance")));
         taxiItem.setDuration(q(a(jSONObject, "duration")));
@@ -236,7 +229,7 @@ public final class fm {
         RoutePOIItem routePOIItem = new RoutePOIItem();
         routePOIItem.setID(a(jSONObject, "id"));
         routePOIItem.setTitle(a(jSONObject, "name"));
-        routePOIItem.setPoint(c(jSONObject, "location"));
+        routePOIItem.setPoint(c(jSONObject, QSConstants.TILE_LOCATION));
         routePOIItem.setDistance(q(a(jSONObject, "distance")));
         routePOIItem.setDuration(q(a(jSONObject, "duration")));
         return routePOIItem;
@@ -297,7 +290,7 @@ public final class fm {
                 if (optJSONObject == null) {
                     return busRouteResult;
                 }
-                busRouteResult.setStartPos(c(optJSONObject, HttpHeaders.ReferrerPolicyValues.ORIGIN));
+                busRouteResult.setStartPos(c(optJSONObject, "origin"));
                 busRouteResult.setTargetPos(c(optJSONObject, "destination"));
                 busRouteResult.setTaxiCost(q(a(optJSONObject, "taxi_cost")));
                 if (optJSONObject.has("transits") && (optJSONArray = optJSONObject.optJSONArray("transits")) != null) {
@@ -338,7 +331,7 @@ public final class fm {
                 }
                 JSONObject optJSONObject = optJSONArray.optJSONObject(i2);
                 if (optJSONObject != null) {
-                    arrayList.add(new SuggestionCity(a(optJSONObject, "name"), a(optJSONObject, "citycode"), a(optJSONObject, "adcode"), p(a(optJSONObject, l.d))));
+                    arrayList.add(new SuggestionCity(a(optJSONObject, "name"), a(optJSONObject, "citycode"), a(optJSONObject, "adcode"), p(a(optJSONObject, "num"))));
                 }
                 i = i2 + 1;
             }
@@ -379,7 +372,7 @@ public final class fm {
                 busPath.setNightBus(t(a(optJSONObject, "nightflag")));
                 busPath.setWalkDistance(q(a(optJSONObject, "walking_distance")));
                 busPath.setDistance(q(a(optJSONObject, "distance")));
-                JSONArray optJSONArray = optJSONObject.optJSONArray(DBDefinition.SEGMENT_TABLE_NAME);
+                JSONArray optJSONArray = optJSONObject.optJSONArray("segments");
                 if (optJSONArray != null) {
                     ArrayList arrayList2 = new ArrayList();
                     float f = 0.0f;
@@ -576,7 +569,7 @@ public final class fm {
                 crossroad.setId(a(optJSONObject, "id"));
                 crossroad.setDirection(a(optJSONObject, "direction"));
                 crossroad.setDistance(q(a(optJSONObject, "distance")));
-                crossroad.setCenterPoint(c(optJSONObject, "location"));
+                crossroad.setCenterPoint(c(optJSONObject, QSConstants.TILE_LOCATION));
                 crossroad.setFirstRoadId(a(optJSONObject, "first_id"));
                 crossroad.setFirstRoadName(a(optJSONObject, "first_name"));
                 crossroad.setSecondRoadId(a(optJSONObject, "second_id"));
@@ -609,7 +602,7 @@ public final class fm {
     }
 
     public static void a(JSONObject jSONObject, RegeocodeAddress regeocodeAddress) throws JSONException {
-        regeocodeAddress.setCountry(a(jSONObject, "country"));
+        regeocodeAddress.setCountry(a(jSONObject, DistrictSearchQuery.KEYWORDS_COUNTRY));
         regeocodeAddress.setCountryCode(a(jSONObject, "countrycode"));
         regeocodeAddress.setProvince(a(jSONObject, DistrictSearchQuery.KEYWORDS_PROVINCE));
         regeocodeAddress.setCity(a(jSONObject, DistrictSearchQuery.KEYWORDS_CITY));
@@ -623,7 +616,7 @@ public final class fm {
         JSONObject optJSONObject = jSONObject.optJSONObject("streetNumber");
         streetNumber.setStreet(a(optJSONObject, "street"));
         streetNumber.setNumber(a(optJSONObject, "number"));
-        streetNumber.setLatLonPoint(c(optJSONObject, "location"));
+        streetNumber.setLatLonPoint(c(optJSONObject, QSConstants.TILE_LOCATION));
         streetNumber.setDirection(a(optJSONObject, "direction"));
         streetNumber.setDistance(q(a(optJSONObject, "distance")));
         regeocodeAddress.setStreetNumber(streetNumber);
@@ -653,7 +646,7 @@ public final class fm {
                 if (optJSONObject == null) {
                     return driveRouteResult;
                 }
-                driveRouteResult.setStartPos(c(optJSONObject, HttpHeaders.ReferrerPolicyValues.ORIGIN));
+                driveRouteResult.setStartPos(c(optJSONObject, "origin"));
                 driveRouteResult.setTargetPos(c(optJSONObject, "destination"));
                 driveRouteResult.setTaxiCost(q(a(optJSONObject, "taxi_cost")));
                 if (optJSONObject.has("paths") && (optJSONArray = optJSONObject.optJSONArray("paths")) != null) {
@@ -726,7 +719,7 @@ public final class fm {
 
     public static ArrayList<String> b(JSONObject jSONObject) throws JSONException {
         ArrayList<String> arrayList = new ArrayList<>();
-        JSONArray optJSONArray = jSONObject.optJSONArray(SearchIndexablesContract.RawData.COLUMN_KEYWORDS);
+        JSONArray optJSONArray = jSONObject.optJSONArray("keywords");
         if (optJSONArray == null) {
             return arrayList;
         }
@@ -753,7 +746,7 @@ public final class fm {
                 JSONObject jSONObject = jSONArray.getJSONObject(i2);
                 ChargeStationInfo chargeStationInfo = new ChargeStationInfo();
                 chargeStationInfo.setName(a(jSONObject, "name"));
-                chargeStationInfo.setPoiId(a(jSONObject, WBPageConstants.ParamKey.POIID));
+                chargeStationInfo.setPoiId(a(jSONObject, "poiid"));
                 chargeStationInfo.setBrandName(a(jSONObject, "brand_name"));
                 chargeStationInfo.setShowPoint(c(jSONObject, "show_point"));
                 chargeStationInfo.setProjectivePoint(c(jSONObject, "projective_point"));
@@ -761,7 +754,7 @@ public final class fm {
                 chargeStationInfo.setChargePercent(b(jSONObject, "charge_percent"));
                 chargeStationInfo.setChargeTime(b(jSONObject, "charge_time"));
                 chargeStationInfo.setRemainingCapacity(b(jSONObject, "remaining_capacity"));
-                chargeStationInfo.setVoltage(b(jSONObject, BatteryManager.EXTRA_VOLTAGE));
+                chargeStationInfo.setVoltage(b(jSONObject, "voltage"));
                 chargeStationInfo.setAmperage(b(jSONObject, "amperage"));
                 chargeStationInfo.setStepIndex(b(jSONObject, "step_index"));
                 arrayList.add(chargeStationInfo);
@@ -862,7 +855,7 @@ public final class fm {
             if (optJSONObject != null) {
                 regeocodeRoad.setId(a(optJSONObject, "id"));
                 regeocodeRoad.setName(a(optJSONObject, "name"));
-                regeocodeRoad.setLatLngPoint(c(optJSONObject, "location"));
+                regeocodeRoad.setLatLngPoint(c(optJSONObject, QSConstants.TILE_LOCATION));
                 regeocodeRoad.setDirection(a(optJSONObject, "direction"));
                 regeocodeRoad.setDistance(q(a(optJSONObject, "distance")));
                 arrayList.add(regeocodeRoad);
@@ -888,7 +881,7 @@ public final class fm {
                 if (optJSONObject == null) {
                     return driveRouteResultV2;
                 }
-                driveRouteResultV2.setStartPos(c(optJSONObject, HttpHeaders.ReferrerPolicyValues.ORIGIN));
+                driveRouteResultV2.setStartPos(c(optJSONObject, "origin"));
                 driveRouteResultV2.setTargetPos(c(optJSONObject, "destination"));
                 driveRouteResultV2.setTaxiCost(q(a(optJSONObject, "taxi_cost")));
                 if (optJSONObject.has("paths") && (optJSONArray = optJSONObject.optJSONArray("paths")) != null) {
@@ -1060,7 +1053,7 @@ public final class fm {
                 aoiItem.setId(a(optJSONObject, "id"));
                 aoiItem.setName(a(optJSONObject, "name"));
                 aoiItem.setAdcode(a(optJSONObject, "adcode"));
-                aoiItem.setLocation(c(optJSONObject, "location"));
+                aoiItem.setLocation(c(optJSONObject, QSConstants.TILE_LOCATION));
                 aoiItem.setArea(Float.valueOf(q(a(optJSONObject, "area"))));
                 arrayList.add(aoiItem);
             }
@@ -1069,7 +1062,7 @@ public final class fm {
     }
 
     public static PoiItem d(JSONObject jSONObject) throws JSONException {
-        PoiItem poiItem = new PoiItem(a(jSONObject, "id"), c(jSONObject, "location"), a(jSONObject, "name"), a(jSONObject, "address"));
+        PoiItem poiItem = new PoiItem(a(jSONObject, "id"), c(jSONObject, QSConstants.TILE_LOCATION), a(jSONObject, "name"), a(jSONObject, "address"));
         poiItem.setAdCode(a(jSONObject, "adcode"));
         poiItem.setProvinceName(a(jSONObject, "pname"));
         poiItem.setCityName(a(jSONObject, "cityname"));
@@ -1089,7 +1082,7 @@ public final class fm {
                 }
             }
         }
-        poiItem.setTel(a(jSONObject, PhoneAccount.SCHEME_TEL));
+        poiItem.setTel(a(jSONObject, "tel"));
         poiItem.setTypeDes(a(jSONObject, "type"));
         poiItem.setEnter(c(jSONObject, "entr_location"));
         poiItem.setExit(c(jSONObject, "exit_location"));
@@ -1137,7 +1130,7 @@ public final class fm {
             }
             WalkRouteResult walkRouteResult = new WalkRouteResult();
             JSONObject optJSONObject = jSONObject.optJSONObject("route");
-            walkRouteResult.setStartPos(c(optJSONObject, HttpHeaders.ReferrerPolicyValues.ORIGIN));
+            walkRouteResult.setStartPos(c(optJSONObject, "origin"));
             walkRouteResult.setTargetPos(c(optJSONObject, "destination"));
             if (!optJSONObject.has("paths")) {
                 return walkRouteResult;
@@ -1276,7 +1269,7 @@ public final class fm {
                         localWeatherLive.setProvince(a(optJSONObject, DistrictSearchQuery.KEYWORDS_PROVINCE));
                         localWeatherLive.setCity(a(optJSONObject, DistrictSearchQuery.KEYWORDS_CITY));
                         localWeatherLive.setWeather(a(optJSONObject, "weather"));
-                        localWeatherLive.setTemperature(a(optJSONObject, BatteryManager.EXTRA_TEMPERATURE));
+                        localWeatherLive.setTemperature(a(optJSONObject, "temperature"));
                         localWeatherLive.setWindDirection(a(optJSONObject, "winddirection"));
                         localWeatherLive.setWindPower(a(optJSONObject, "windpower"));
                         localWeatherLive.setHumidity(a(optJSONObject, "humidity"));
@@ -1326,7 +1319,7 @@ public final class fm {
             str3 = "";
         } else {
             str3 = a(optJSONObject, "open_time");
-            str2 = a(optJSONObject, c.Y);
+            str2 = a(optJSONObject, "rating");
         }
         return new PoiItemExtension(str3, str2);
     }
@@ -1428,9 +1421,9 @@ public final class fm {
                         geocodeAddress.setNeighborhood(a(optJSONObject.optJSONObject("neighborhood"), "name"));
                         geocodeAddress.setBuilding(a(optJSONObject.optJSONObject("building"), "name"));
                         geocodeAddress.setAdcode(a(optJSONObject, "adcode"));
-                        geocodeAddress.setLatLonPoint(c(optJSONObject, "location"));
-                        geocodeAddress.setLevel(a(optJSONObject, BatteryManager.EXTRA_LEVEL));
-                        geocodeAddress.setCountry(a(optJSONObject, "country"));
+                        geocodeAddress.setLatLonPoint(c(optJSONObject, QSConstants.TILE_LOCATION));
+                        geocodeAddress.setLevel(a(optJSONObject, "level"));
+                        geocodeAddress.setCountry(a(optJSONObject, DistrictSearchQuery.KEYWORDS_COUNTRY));
                         geocodeAddress.setPostcode(a(optJSONObject, "postcode"));
                         arrayList.add(geocodeAddress);
                     }
@@ -1453,7 +1446,7 @@ public final class fm {
             if (jSONObject.has("data")) {
                 RideRouteResult rideRouteResult = new RideRouteResult();
                 JSONObject optJSONObject = jSONObject.optJSONObject("data");
-                rideRouteResult.setStartPos(c(optJSONObject, HttpHeaders.ReferrerPolicyValues.ORIGIN));
+                rideRouteResult.setStartPos(c(optJSONObject, "origin"));
                 rideRouteResult.setTargetPos(c(optJSONObject, "destination"));
                 ArrayList arrayList = new ArrayList();
                 Object opt = optJSONObject.opt("paths");
@@ -1477,11 +1470,11 @@ public final class fm {
                     }
                 } else if (opt instanceof JSONObject) {
                     JSONObject optJSONObject2 = optJSONObject.optJSONObject("paths");
-                    if (!optJSONObject2.has(OapsWrapper.KEY_PATH)) {
+                    if (!optJSONObject2.has("path")) {
                         rideRouteResult.setPaths(arrayList);
                         return rideRouteResult;
                     }
-                    RidePath J2 = J(optJSONObject2.optJSONObject(OapsWrapper.KEY_PATH));
+                    RidePath J2 = J(optJSONObject2.optJSONObject("path"));
                     if (J2 != null) {
                         arrayList.add(J2);
                     }
@@ -1517,7 +1510,7 @@ public final class fm {
                 tip.setID(a(optJSONObject, "id"));
                 tip.setAddress(a(optJSONObject, "address"));
                 tip.setTypeCode(a(optJSONObject, "typecode"));
-                String a2 = a(optJSONObject, "location");
+                String a2 = a(optJSONObject, QSConstants.TILE_LOCATION);
                 if (!TextUtils.isEmpty(a2)) {
                     String[] split = a2.split(",");
                     if (split.length == 2) {
@@ -1556,7 +1549,7 @@ public final class fm {
                 String a2 = a(jSONObject2, "info");
                 if (!TextUtils.isEmpty(a2)) {
                     distanceItem.setErrorInfo(a2);
-                    distanceItem.setErrorCode(p(a(jSONObject2, "code")));
+                    distanceItem.setErrorCode(p(a(jSONObject2, g.c.b)));
                 }
                 arrayList.add(distanceItem);
                 i = i2 + 1;
@@ -1594,7 +1587,7 @@ public final class fm {
     }
 
     private static SubPoiItem j(JSONObject jSONObject) throws JSONException {
-        SubPoiItem subPoiItem = new SubPoiItem(a(jSONObject, "id"), c(jSONObject, "location"), a(jSONObject, "name"), a(jSONObject, "address"));
+        SubPoiItem subPoiItem = new SubPoiItem(a(jSONObject, "id"), c(jSONObject, QSConstants.TILE_LOCATION), a(jSONObject, "name"), a(jSONObject, "address"));
         subPoiItem.setSubName(a(jSONObject, "sname"));
         subPoiItem.setSubTypeDes(a(jSONObject, "subtype"));
         if (jSONObject.has("distance")) {
@@ -1621,7 +1614,7 @@ public final class fm {
             if (jSONObject.has("data")) {
                 TruckRouteRestult truckRouteRestult = new TruckRouteRestult();
                 JSONObject optJSONObject = jSONObject.optJSONObject("data").optJSONObject("route");
-                truckRouteRestult.setStartPos(c(optJSONObject, HttpHeaders.ReferrerPolicyValues.ORIGIN));
+                truckRouteRestult.setStartPos(c(optJSONObject, "origin"));
                 truckRouteRestult.setTargetPos(c(optJSONObject, "destination"));
                 if (optJSONObject.has("paths") && (optJSONArray = optJSONObject.optJSONArray("paths")) != null) {
                     ArrayList arrayList = new ArrayList();
@@ -1795,7 +1788,7 @@ public final class fm {
                     if (optJSONObject.has("time_infos") && (optJSONArray = optJSONObject.optJSONArray("time_infos")) != null) {
                         ArrayList arrayList3 = new ArrayList();
                         int i4 = 0;
-                        String str5 = LogBuilder.KEY_START_TIME;
+                        String str5 = "starttime";
                         while (true) {
                             String str6 = str5;
                             if (i4 >= optJSONArray.length()) {
@@ -1880,7 +1873,7 @@ public final class fm {
     private static BusStationItem l(JSONObject jSONObject) throws JSONException {
         BusStationItem busStationItem = new BusStationItem();
         busStationItem.setBusStationId(a(jSONObject, "id"));
-        busStationItem.setLatLonPoint(c(jSONObject, "location"));
+        busStationItem.setLatLonPoint(c(jSONObject, QSConstants.TILE_LOCATION));
         busStationItem.setBusStationName(a(jSONObject, "name"));
         return busStationItem;
     }
@@ -1889,7 +1882,7 @@ public final class fm {
         if (str == null || str.length() <= 0) {
             return false;
         }
-        String[] strArr = f4953a;
+        String[] strArr = a;
         int length = strArr.length;
         int i = 0;
         while (true) {
@@ -1918,7 +1911,7 @@ public final class fm {
 
     private static ArrayList<LatLonPoint> m(String str) {
         ArrayList<LatLonPoint> arrayList = new ArrayList<>();
-        String[] split = str.split(";");
+        String[] split = str.split(i.b);
         int i = 0;
         while (true) {
             int i2 = i;
@@ -1932,8 +1925,8 @@ public final class fm {
 
     private static BusLineItem n(JSONObject jSONObject) throws JSONException {
         BusLineItem m = m(jSONObject);
-        m.setFirstBusTime(fe.d(a(jSONObject, "start_time")));
-        m.setLastBusTime(fe.d(a(jSONObject, "end_time")));
+        m.setFirstBusTime(fe.d(a(jSONObject, e.a)));
+        m.setLastBusTime(fe.d(a(jSONObject, e.b)));
         m.setBusCompany(a(jSONObject, "company"));
         m.setDistance(q(a(jSONObject, "distance")));
         m.setBasicPrice(q(a(jSONObject, "basic_price")));
@@ -1977,7 +1970,7 @@ public final class fm {
         districtItem.setCitycode(a(jSONObject, "citycode"));
         districtItem.setAdcode(a(jSONObject, "adcode"));
         districtItem.setName(a(jSONObject, "name"));
-        districtItem.setLevel(a(jSONObject, BatteryManager.EXTRA_LEVEL));
+        districtItem.setLevel(a(jSONObject, "level"));
         districtItem.setCenter(c(jSONObject, "center"));
         if (jSONObject.has("polyline") && (optString = jSONObject.optString("polyline")) != null && optString.length() > 0) {
             districtItem.setDistrictBoundary(optString.split("\\|"));
@@ -2016,7 +2009,7 @@ public final class fm {
                     BusinessArea businessArea = new BusinessArea();
                     JSONObject optJSONObject = optJSONArray.optJSONObject(i2);
                     if (optJSONObject != null) {
-                        businessArea.setCenterPoint(c(optJSONObject, "location"));
+                        businessArea.setCenterPoint(c(optJSONObject, QSConstants.TILE_LOCATION));
                         businessArea.setName(a(optJSONObject, "name"));
                         arrayList.add(businessArea);
                     }
@@ -2094,7 +2087,7 @@ public final class fm {
             return null;
         }
         RouteBusWalkItem routeBusWalkItem = new RouteBusWalkItem();
-        routeBusWalkItem.setOrigin(c(jSONObject, HttpHeaders.ReferrerPolicyValues.ORIGIN));
+        routeBusWalkItem.setOrigin(c(jSONObject, "origin"));
         routeBusWalkItem.setDestination(c(jSONObject, "destination"));
         routeBusWalkItem.setDistance(q(a(jSONObject, "distance")));
         routeBusWalkItem.setDuration(s(a(jSONObject, "duration")));
@@ -2153,7 +2146,7 @@ public final class fm {
     private static Doorway t(JSONObject jSONObject) throws JSONException {
         Doorway doorway = new Doorway();
         doorway.setName(a(jSONObject, "name"));
-        doorway.setLatLonPoint(c(jSONObject, "location"));
+        doorway.setLatLonPoint(c(jSONObject, QSConstants.TILE_LOCATION));
         return doorway;
     }
 
@@ -2187,8 +2180,8 @@ public final class fm {
         routeBusLineItem.setDistance(q(a(jSONObject, "distance")));
         routeBusLineItem.setDuration(q(a(jSONObject, "duration")));
         routeBusLineItem.setPolyline(d(jSONObject, "polyline"));
-        routeBusLineItem.setFirstBusTime(fe.d(a(jSONObject, "start_time")));
-        routeBusLineItem.setLastBusTime(fe.d(a(jSONObject, "end_time")));
+        routeBusLineItem.setFirstBusTime(fe.d(a(jSONObject, e.a)));
+        routeBusLineItem.setLastBusTime(fe.d(a(jSONObject, e.b)));
         routeBusLineItem.setPassStationNum(p(a(jSONObject, "via_num")));
         routeBusLineItem.setPassStations(w(jSONObject));
         return routeBusLineItem;
@@ -2218,7 +2211,7 @@ public final class fm {
         BusStationItem busStationItem = new BusStationItem();
         busStationItem.setBusStationName(a(jSONObject, "name"));
         busStationItem.setBusStationId(a(jSONObject, "id"));
-        busStationItem.setLatLonPoint(c(jSONObject, "location"));
+        busStationItem.setLatLonPoint(c(jSONObject, QSConstants.TILE_LOCATION));
         return busStationItem;
     }
 
@@ -2234,7 +2227,7 @@ public final class fm {
             routeRailwayItem = new RouteRailwayItem();
             routeRailwayItem.setID(a(jSONObject, "id"));
             routeRailwayItem.setName(a(jSONObject, "name"));
-            routeRailwayItem.setTime(a(jSONObject, "time"));
+            routeRailwayItem.setTime(a(jSONObject, g.a.g));
             routeRailwayItem.setTrip(a(jSONObject, "trip"));
             routeRailwayItem.setDistance(q(a(jSONObject, "distance")));
             routeRailwayItem.setType(a(jSONObject, "type"));
@@ -2251,9 +2244,9 @@ public final class fm {
         RailwayStationItem railwayStationItem = new RailwayStationItem();
         railwayStationItem.setID(a(jSONObject, "id"));
         railwayStationItem.setName(a(jSONObject, "name"));
-        railwayStationItem.setLocation(c(jSONObject, "location"));
+        railwayStationItem.setLocation(c(jSONObject, QSConstants.TILE_LOCATION));
         railwayStationItem.setAdcode(a(jSONObject, "adcode"));
-        railwayStationItem.setTime(a(jSONObject, "time"));
+        railwayStationItem.setTime(a(jSONObject, g.a.g));
         railwayStationItem.setisStart(t(a(jSONObject, "start")));
         railwayStationItem.setisEnd(t(a(jSONObject, "end")));
         railwayStationItem.setWait(q(a(jSONObject, "wait")));

@@ -38,19 +38,19 @@ public final class b {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.kwad.components.ad.splashscreen.b$b  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/components/ad/splashscreen/b$b.class */
-    public static final class C0502b {
+    public static final class C0332b {
         private volatile boolean Bt;
 
-        private C0502b() {
+        private C0332b() {
             this.Bt = false;
         }
 
-        /* synthetic */ C0502b(byte b) {
+        /* synthetic */ C0332b(byte b) {
             this();
         }
 
-        static /* synthetic */ boolean a(C0502b c0502b, boolean z) {
-            c0502b.Bt = true;
+        static /* synthetic */ boolean a(C0332b c0332b, boolean z) {
+            c0332b.Bt = true;
             return true;
         }
     }
@@ -67,7 +67,7 @@ public final class b {
             sceneImpl.setAdNum(5);
             com.kwad.sdk.core.d.b.d("KsAdSplashScreenLoadManager", "loadSplashScreenCache ");
             KsAdLoadManager.ac();
-            KsAdLoadManager.a(new a.C0527a().e(bVar).aH(false).a(new com.kwad.components.core.n.c() { // from class: com.kwad.components.ad.splashscreen.b.4
+            KsAdLoadManager.a(new a.C0357a().e(bVar).aH(false).a(new com.kwad.components.core.n.c() { // from class: com.kwad.components.ad.splashscreen.b.4
                 @Override // com.kwad.components.core.n.c, com.kwad.components.core.n.i
                 public final void a(AdResultData adResultData) {
                     if (adResultData.getAdTemplateList().size() > 0) {
@@ -99,7 +99,7 @@ public final class b {
         aVar.Bs = false;
         final long elapsedRealtime = SystemClock.elapsedRealtime();
         final com.kwad.components.core.n.kwai.b bVar = new com.kwad.components.core.n.kwai.b(covert);
-        final C0502b c0502b = new C0502b((byte) 0);
+        final C0332b c0332b = new C0332b((byte) 0);
         com.kwad.components.core.m.a.pb().pd();
         mHandler.postDelayed(new Runnable() { // from class: com.kwad.components.ad.splashscreen.b.1
             @Override // java.lang.Runnable
@@ -110,7 +110,7 @@ public final class b {
         final Runnable runnable = new Runnable() { // from class: com.kwad.components.ad.splashscreen.b.2
             @Override // java.lang.Runnable
             public final void run() {
-                C0502b.a(C0502b.this, true);
+                C0332b.a(C0332b.this, true);
                 com.kwad.sdk.core.d.b.d("KsAdSplashScreenLoadManager", "loadSplashAd mTimeOutRunnable timeOut");
                 splashScreenAdListener.onError(com.kwad.sdk.core.network.f.agp.errorCode, com.kwad.sdk.core.network.f.agp.msg);
                 com.kwad.components.splash.monitor.a.rY();
@@ -127,10 +127,10 @@ public final class b {
         com.kwad.components.splash.monitor.a.rY();
         com.kwad.components.splash.monitor.a.B(covert.getPosId());
         KsAdLoadManager.ac();
-        KsAdLoadManager.a(new a.C0527a().e(bVar).aG(true).aH(a2).a(new com.kwad.components.core.n.c() { // from class: com.kwad.components.ad.splashscreen.b.3
+        KsAdLoadManager.a(new a.C0357a().e(bVar).aG(true).aH(a2).a(new com.kwad.components.core.n.c() { // from class: com.kwad.components.ad.splashscreen.b.3
             @Override // com.kwad.components.core.n.c, com.kwad.components.core.n.b
             public final void a(final int i2, final String str, boolean z) {
-                if (C0502b.this.Bt) {
+                if (C0332b.this.Bt) {
                     com.kwad.sdk.core.d.b.d("KsAdSplashScreenLoadManager", "loadSplashAd onError isTimeOut return " + String.format("code:%s__msg:%s", Integer.valueOf(i2), str));
                     return;
                 }
@@ -166,7 +166,7 @@ public final class b {
                     }
                 });
                 if (adResultData.getAdTemplateList().size() <= 0) {
-                    if (C0502b.this.Bt) {
+                    if (C0332b.this.Bt) {
                         com.kwad.sdk.core.d.b.d("KsAdSplashScreenLoadManager", "loadSplashAd isTimeOut return ");
                         return;
                     }
@@ -192,7 +192,7 @@ public final class b {
                 if (!f) {
                     SplashPreloadManager.rV();
                     if (!SplashPreloadManager.g(adResultData)) {
-                        if (C0502b.this.Bt) {
+                        if (C0332b.this.Bt) {
                             com.kwad.sdk.core.d.b.d("KsAdSplashScreenLoadManager", "loadSplashAd isTimeOut return ");
                             return;
                         }
@@ -207,7 +207,7 @@ public final class b {
                     }
                     com.kwad.sdk.core.d.b.d("KsAdSplashScreenLoadManager", "loadSplashAd image returned");
                     int b = SplashPreloadManager.rV().b(adResultData, true);
-                    if (!C0502b.this.Bt) {
+                    if (!C0332b.this.Bt) {
                         b.mHandler.removeCallbacks(runnable);
                         if (b > 0) {
                             bi.runOnUiThread(new Runnable() { // from class: com.kwad.components.ad.splashscreen.b.3.4
@@ -232,7 +232,7 @@ public final class b {
                         a(com.kwad.sdk.core.network.f.agq.errorCode, com.kwad.sdk.core.network.f.agq.msg, z);
                         return;
                     }
-                } else if (!C0502b.this.Bt) {
+                } else if (!C0332b.this.Bt) {
                     b.mHandler.removeCallbacks(runnable);
                     bi.runOnUiThread(new Runnable() { // from class: com.kwad.components.ad.splashscreen.b.3.3
                         @Override // java.lang.Runnable

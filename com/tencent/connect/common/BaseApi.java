@@ -173,7 +173,7 @@ public abstract class BaseApi {
         bundle.putString("platform", "androidqz");
         SharedPreferences sharedPreferences = Global.getContext().getSharedPreferences("pfStore", 0);
         if (isOEM) {
-            bundle.putString("pf", "desktop_m_qq-" + installChannel + "-android-" + registerChannel + "-" + businessId);
+            bundle.putString("pf", "desktop_m_qq-" + installChannel + com.xiaomi.mipush.sdk.Constants.ACCEPT_TIME_SEPARATOR_SERVER + "android" + com.xiaomi.mipush.sdk.Constants.ACCEPT_TIME_SEPARATOR_SERVER + registerChannel + com.xiaomi.mipush.sdk.Constants.ACCEPT_TIME_SEPARATOR_SERVER + businessId);
         } else {
             bundle.putString("pf", sharedPreferences.getString("pf", "openmobile_android"));
             bundle.putString("pf", "openmobile_android");
@@ -204,7 +204,7 @@ public abstract class BaseApi {
             bundle.putString("pf", sharedPreferences.getString("pf", "openmobile_android"));
             return bundle;
         }
-        bundle.putString("pf", "desktop_m_qq-" + installChannel + "-android-" + registerChannel + "-" + businessId);
+        bundle.putString("pf", "desktop_m_qq-" + installChannel + com.xiaomi.mipush.sdk.Constants.ACCEPT_TIME_SEPARATOR_SERVER + "android" + com.xiaomi.mipush.sdk.Constants.ACCEPT_TIME_SEPARATOR_SERVER + registerChannel + com.xiaomi.mipush.sdk.Constants.ACCEPT_TIME_SEPARATOR_SERVER + businessId);
         return bundle;
     }
 

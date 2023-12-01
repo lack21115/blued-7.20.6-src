@@ -7,36 +7,36 @@ import java.util.List;
 public final class e {
 
     /* renamed from: a  reason: collision with root package name */
-    private a f7845a;
+    private a f5005a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private e f7846c;
+    private e f5006c;
     private List<e> d;
 
     private void a(e eVar) {
-        this.f7846c = eVar;
+        this.f5006c = eVar;
     }
 
     private void b(e eVar) {
         if (this.d == null) {
             this.d = new ArrayList();
         }
-        eVar.f7846c = this;
+        eVar.f5006c = this;
         this.d.add(eVar);
     }
 
     public final a a() {
-        return this.f7845a;
+        return this.f5005a;
     }
 
     public final void a(a aVar) {
-        this.f7845a = aVar;
+        this.f5005a = aVar;
     }
 
     public final void a(a aVar, String str) {
         e eVar = new e();
-        eVar.f7845a = aVar;
+        eVar.f5005a = aVar;
         eVar.b = str;
         b(eVar);
     }
@@ -59,7 +59,7 @@ public final class e {
     }
 
     public final e c() {
-        return this.f7846c;
+        return this.f5006c;
     }
 
     public final List<e> d() {

@@ -7,17 +7,17 @@ import com.tencent.ugc.TXVideoEditConstants;
 final /* synthetic */ class k implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final TXVideoEditer f40434a;
+    private final TXVideoEditer f26743a;
     private final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final Bitmap f40435c;
+    private final Bitmap f26744c;
     private final TXVideoEditConstants.TXRect d;
 
     private k(TXVideoEditer tXVideoEditer, int i, Bitmap bitmap, TXVideoEditConstants.TXRect tXRect) {
-        this.f40434a = tXVideoEditer;
+        this.f26743a = tXVideoEditer;
         this.b = i;
-        this.f40435c = bitmap;
+        this.f26744c = bitmap;
         this.d = tXRect;
     }
 
@@ -27,6 +27,6 @@ final /* synthetic */ class k implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        TXVideoEditer.lambda$setTailWaterMark$18(this.f40434a, this.b, this.f40435c, this.d);
+        TXVideoEditer.lambda$setTailWaterMark$18(this.f26743a, this.b, this.f26744c, this.d);
     }
 }

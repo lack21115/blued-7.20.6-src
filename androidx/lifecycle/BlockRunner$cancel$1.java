@@ -1,5 +1,6 @@
 package androidx.lifecycle;
 
+import java.util.concurrent.CancellationException;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -27,17 +28,14 @@ public final class BlockRunner$cancel$1 extends SuspendLambda implements Functio
         this.this$0 = blockRunner;
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
         return new BlockRunner$cancel$1(this.this$0, continuation);
     }
 
-    @Override // kotlin.jvm.functions.Function2
     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-        return ((BlockRunner$cancel$1) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+        return create(coroutineScope, continuation).invokeSuspend(Unit.a);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         long j;
         CoroutineLiveData coroutineLiveData;
@@ -48,7 +46,7 @@ public final class BlockRunner$cancel$1 extends SuspendLambda implements Functio
             ResultKt.a(obj);
             j = ((BlockRunner) this.this$0).timeoutInMs;
             this.label = 1;
-            if (DelayKt.a(j, this) == a2) {
+            if (DelayKt.a(j, (Continuation) this) == a2) {
                 return a2;
             }
         } else if (i != 1) {
@@ -60,10 +58,10 @@ public final class BlockRunner$cancel$1 extends SuspendLambda implements Functio
         if (!coroutineLiveData.hasActiveObservers()) {
             job = ((BlockRunner) this.this$0).runningJob;
             if (job != null) {
-                Job.DefaultImpls.a(job, null, 1, null);
+                Job.DefaultImpls.a(job, (CancellationException) null, 1, (Object) null);
             }
             ((BlockRunner) this.this$0).runningJob = null;
         }
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

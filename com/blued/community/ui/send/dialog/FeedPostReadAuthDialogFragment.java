@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import androidx.fragment.app.FragmentManager;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelStore;
 import com.blued.android.core.AppInfo;
@@ -29,13 +30,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/community/ui/send/dialog/FeedPostReadAuthDialogFragment.class */
 public final class FeedPostReadAuthDialogFragment extends BottomSheetDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f19920a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private DialogFeedPostReadAuthBinding b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f19921c;
+    private int c;
     private int d;
     private FeedPostViewModel e;
     private int f;
@@ -116,14 +113,14 @@ public final class FeedPostReadAuthDialogFragment extends BottomSheetDialogFragm
     }
 
     private final void j() {
-        FeedPostReadAuthDialogFragment feedPostReadAuthDialogFragment = this;
+        LifecycleOwner lifecycleOwner = (LifecycleOwner) this;
         FeedPostViewModel feedPostViewModel = this.e;
         FeedPostViewModel feedPostViewModel2 = feedPostViewModel;
         if (feedPostViewModel == null) {
             Intrinsics.c("mViewModel");
             feedPostViewModel2 = null;
         }
-        LifecycleExtKt.a(feedPostReadAuthDialogFragment, feedPostViewModel2.d(), new Function1<Integer, Unit>() { // from class: com.blued.community.ui.send.dialog.FeedPostReadAuthDialogFragment$initData$1
+        LifecycleExtKt.a(lifecycleOwner, feedPostViewModel2.d(), new Function1<Integer, Unit>() { // from class: com.blued.community.ui.send.dialog.FeedPostReadAuthDialogFragment$initData$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(1);
@@ -144,7 +141,7 @@ public final class FeedPostReadAuthDialogFragment extends BottomSheetDialogFragm
             @Override // kotlin.jvm.functions.Function1
             public /* synthetic */ Unit invoke(Integer num) {
                 a(num);
-                return Unit.f42314a;
+                return Unit.a;
             }
         });
         FeedPostViewModel feedPostViewModel3 = this.e;
@@ -152,7 +149,7 @@ public final class FeedPostReadAuthDialogFragment extends BottomSheetDialogFragm
             Intrinsics.c("mViewModel");
             feedPostViewModel3 = null;
         }
-        LifecycleExtKt.a(feedPostReadAuthDialogFragment, feedPostViewModel3.e(), new Function1<Integer, Unit>() { // from class: com.blued.community.ui.send.dialog.FeedPostReadAuthDialogFragment$initData$2
+        LifecycleExtKt.a(lifecycleOwner, feedPostViewModel3.e(), new Function1<Integer, Unit>() { // from class: com.blued.community.ui.send.dialog.FeedPostReadAuthDialogFragment$initData$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(1);
@@ -175,7 +172,7 @@ public final class FeedPostReadAuthDialogFragment extends BottomSheetDialogFragm
             @Override // kotlin.jvm.functions.Function1
             public /* synthetic */ Unit invoke(Integer num) {
                 a(num);
-                return Unit.f42314a;
+                return Unit.a;
             }
         });
     }
@@ -313,7 +310,7 @@ public final class FeedPostReadAuthDialogFragment extends BottomSheetDialogFragm
                 Intrinsics.c("viewBinding");
                 dialogFeedPostReadAuthBinding21 = null;
             }
-            dialogFeedPostReadAuthBinding21.f18801a.setVisibility(8);
+            dialogFeedPostReadAuthBinding21.a.setVisibility(8);
             return;
         }
         DialogFeedPostReadAuthBinding dialogFeedPostReadAuthBinding22 = this.b;
@@ -321,7 +318,7 @@ public final class FeedPostReadAuthDialogFragment extends BottomSheetDialogFragm
             Intrinsics.c("viewBinding");
             dialogFeedPostReadAuthBinding22 = null;
         }
-        dialogFeedPostReadAuthBinding22.f18801a.setVisibility(0);
+        dialogFeedPostReadAuthBinding22.a.setVisibility(0);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -340,7 +337,7 @@ public final class FeedPostReadAuthDialogFragment extends BottomSheetDialogFragm
             dialogFeedPostReadAuthBinding3 = null;
         }
         dialogFeedPostReadAuthBinding3.g.setVisibility(0);
-        this.f19921c = 0;
+        this.c = 0;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -359,7 +356,7 @@ public final class FeedPostReadAuthDialogFragment extends BottomSheetDialogFragm
             dialogFeedPostReadAuthBinding3 = null;
         }
         dialogFeedPostReadAuthBinding3.h.setVisibility(0);
-        this.f19921c = 1;
+        this.c = 1;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -378,7 +375,7 @@ public final class FeedPostReadAuthDialogFragment extends BottomSheetDialogFragm
             dialogFeedPostReadAuthBinding3 = null;
         }
         dialogFeedPostReadAuthBinding3.i.setVisibility(0);
-        this.f19921c = 2;
+        this.c = 2;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -396,7 +393,7 @@ public final class FeedPostReadAuthDialogFragment extends BottomSheetDialogFragm
             Intrinsics.c("viewBinding");
             dialogFeedPostReadAuthBinding3 = null;
         }
-        dialogFeedPostReadAuthBinding3.f18802c.setVisibility(0);
+        dialogFeedPostReadAuthBinding3.c.setVisibility(0);
         this.d = 0;
     }
 
@@ -515,7 +512,7 @@ public final class FeedPostReadAuthDialogFragment extends BottomSheetDialogFragm
             Intrinsics.c("viewBinding");
             dialogFeedPostReadAuthBinding4 = null;
         }
-        dialogFeedPostReadAuthBinding4.f18802c.setVisibility(8);
+        dialogFeedPostReadAuthBinding4.c.setVisibility(8);
         DialogFeedPostReadAuthBinding dialogFeedPostReadAuthBinding5 = this.b;
         DialogFeedPostReadAuthBinding dialogFeedPostReadAuthBinding6 = dialogFeedPostReadAuthBinding5;
         if (dialogFeedPostReadAuthBinding5 == null) {
@@ -566,7 +563,7 @@ public final class FeedPostReadAuthDialogFragment extends BottomSheetDialogFragm
             Intrinsics.c("mViewModel");
             feedPostViewModel2 = null;
         }
-        feedPostViewModel2.d().setValue(Integer.valueOf(this.f19921c));
+        feedPostViewModel2.d().setValue(Integer.valueOf(this.c));
         FeedPostViewModel feedPostViewModel3 = this.e;
         if (feedPostViewModel3 == null) {
             Intrinsics.c("mViewModel");
@@ -580,7 +577,7 @@ public final class FeedPostReadAuthDialogFragment extends BottomSheetDialogFragm
         dismiss();
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         ViewModelStore viewModelStore = requireActivity().getViewModelStore();
@@ -593,7 +590,7 @@ public final class FeedPostReadAuthDialogFragment extends BottomSheetDialogFragm
         this.e = (FeedPostViewModel) new ViewModelProvider(viewModelStore, companion.getInstance((Application) d)).get(FeedPostViewModel.class);
     }
 
-    @Override // com.blued.android.module.common.base.dialog.bottomsheet.BottomSheetDialogFragment, androidx.fragment.app.DialogFragment
+    @Override // com.blued.android.module.common.base.dialog.bottomsheet.BottomSheetDialogFragment
     public void setupDialog(Dialog dialog, int i) {
         Intrinsics.e(dialog, "dialog");
         super.setupDialog(dialog, i);

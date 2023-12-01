@@ -9,7 +9,7 @@ public interface Headers {
     @Deprecated
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Headers f20877a = new Headers() { // from class: com.bumptech.glide.load.model.Headers.1
+    public static final Headers f7271a = new Headers() { // from class: com.bumptech.glide.load.model.Headers.1
         @Override // com.bumptech.glide.load.model.Headers
         public Map<String, String> a() {
             return Collections.emptyMap();

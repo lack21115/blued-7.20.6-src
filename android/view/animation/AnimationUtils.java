@@ -253,7 +253,7 @@ public class AnimationUtils {
     }
 
     public static Animation makeInAnimation(Context context, boolean z) {
-        Animation loadAnimation = z ? loadAnimation(context, 17432578) : loadAnimation(context, R.anim.slide_in_right);
+        Animation loadAnimation = z ? loadAnimation(context, R.anim.slide_in_left) : loadAnimation(context, R.anim.slide_in_right);
         loadAnimation.setInterpolator(new DecelerateInterpolator());
         loadAnimation.setStartTime(currentAnimationTimeMillis());
         return loadAnimation;
@@ -267,7 +267,7 @@ public class AnimationUtils {
     }
 
     public static Animation makeOutAnimation(Context context, boolean z) {
-        Animation loadAnimation = z ? loadAnimation(context, 17432579) : loadAnimation(context, R.anim.slide_out_left);
+        Animation loadAnimation = z ? loadAnimation(context, R.anim.slide_out_right) : loadAnimation(context, R.anim.slide_out_left);
         loadAnimation.setInterpolator(new AccelerateInterpolator());
         loadAnimation.setStartTime(currentAnimationTimeMillis());
         return loadAnimation;

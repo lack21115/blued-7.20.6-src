@@ -7,10 +7,10 @@ import androidx.viewbinding.ViewBinding;
 public final class ArcMenuBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final View f28677a;
+    private final View f14987a;
 
     @Override // androidx.viewbinding.ViewBinding
     public View getRoot() {
-        return this.f28677a;
+        return this.f14987a;
     }
 }

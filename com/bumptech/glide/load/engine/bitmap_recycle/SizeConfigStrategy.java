@@ -13,11 +13,11 @@ import java.util.TreeMap;
 public class SizeConfigStrategy implements LruPoolStrategy {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Bitmap.Config[] f20813a;
+    private static final Bitmap.Config[] f7207a;
     private static final Bitmap.Config[] b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final Bitmap.Config[] f20814c;
+    private static final Bitmap.Config[] f7208c;
     private static final Bitmap.Config[] d;
     private static final Bitmap.Config[] e;
     private final KeyPool f = new KeyPool();
@@ -30,28 +30,28 @@ public class SizeConfigStrategy implements LruPoolStrategy {
     public static /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f20815a;
+        static final /* synthetic */ int[] f7209a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x0036 -> B:21:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:13:0x003a -> B:19:0x001f). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:15:0x003e -> B:25:0x002a). Please submit an issue!!! */
         static {
             int[] iArr = new int[Bitmap.Config.values().length];
-            f20815a = iArr;
+            f7209a = iArr;
             try {
                 iArr[Bitmap.Config.ARGB_8888.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f20815a[Bitmap.Config.RGB_565.ordinal()] = 2;
+                f7209a[Bitmap.Config.RGB_565.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f20815a[Bitmap.Config.ARGB_4444.ordinal()] = 3;
+                f7209a[Bitmap.Config.ARGB_4444.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f20815a[Bitmap.Config.ALPHA_8.ordinal()] = 4;
+                f7209a[Bitmap.Config.ALPHA_8.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
         }
@@ -62,11 +62,11 @@ public class SizeConfigStrategy implements LruPoolStrategy {
     public static final class Key implements Poolable {
 
         /* renamed from: a  reason: collision with root package name */
-        int f20816a;
+        int f7210a;
         private final KeyPool b;
 
         /* renamed from: c  reason: collision with root package name */
-        private Bitmap.Config f20817c;
+        private Bitmap.Config f7211c;
 
         public Key(KeyPool keyPool) {
             this.b = keyPool;
@@ -78,8 +78,8 @@ public class SizeConfigStrategy implements LruPoolStrategy {
         }
 
         public void a(int i, Bitmap.Config config) {
-            this.f20816a = i;
-            this.f20817c = config;
+            this.f7210a = i;
+            this.f7211c = config;
         }
 
         public boolean equals(Object obj) {
@@ -87,9 +87,9 @@ public class SizeConfigStrategy implements LruPoolStrategy {
             if (obj instanceof Key) {
                 Key key = (Key) obj;
                 z = false;
-                if (this.f20816a == key.f20816a) {
+                if (this.f7210a == key.f7210a) {
                     z = false;
-                    if (Util.a(this.f20817c, key.f20817c)) {
+                    if (Util.a(this.f7211c, key.f7211c)) {
                         z = true;
                     }
                 }
@@ -98,13 +98,13 @@ public class SizeConfigStrategy implements LruPoolStrategy {
         }
 
         public int hashCode() {
-            int i = this.f20816a;
-            Bitmap.Config config = this.f20817c;
+            int i = this.f7210a;
+            Bitmap.Config config = this.f7211c;
             return (i * 31) + (config != null ? config.hashCode() : 0);
         }
 
         public String toString() {
-            return SizeConfigStrategy.a(this.f20816a, this.f20817c);
+            return SizeConfigStrategy.a(this.f7210a, this.f7211c);
         }
     }
 
@@ -135,9 +135,9 @@ public class SizeConfigStrategy implements LruPoolStrategy {
             configArr2 = (Bitmap.Config[]) Arrays.copyOf(configArr, 3);
             configArr2[configArr2.length - 1] = Bitmap.Config.RGBA_F16;
         }
-        f20813a = configArr2;
+        f7207a = configArr2;
         b = configArr2;
-        f20814c = new Bitmap.Config[]{Bitmap.Config.RGB_565};
+        f7208c = new Bitmap.Config[]{Bitmap.Config.RGB_565};
         d = new Bitmap.Config[]{Bitmap.Config.ARGB_4444};
         e = new Bitmap.Config[]{Bitmap.Config.ALPHA_8};
     }
@@ -158,7 +158,7 @@ public class SizeConfigStrategy implements LruPoolStrategy {
 
     private void a(Integer num, Bitmap bitmap) {
         NavigableMap<Integer, Integer> a2 = a(bitmap.getConfig());
-        Integer num2 = a2.get(num);
+        Integer num2 = (Integer) a2.get(num);
         if (num2 != null) {
             if (num2.intValue() == 1) {
                 a2.remove(num);
@@ -195,8 +195,8 @@ public class SizeConfigStrategy implements LruPoolStrategy {
 
     private static Bitmap.Config[] b(Bitmap.Config config) {
         if (Build.VERSION.SDK_INT < 26 || !Bitmap.Config.RGBA_F16.equals(config)) {
-            int i = AnonymousClass1.f20815a[config.ordinal()];
-            return i != 1 ? i != 2 ? i != 3 ? i != 4 ? new Bitmap.Config[]{config} : e : d : f20814c : f20813a;
+            int i = AnonymousClass1.f7209a[config.ordinal()];
+            return i != 1 ? i != 2 ? i != 3 ? i != 4 ? new Bitmap.Config[]{config} : e : d : f7208c : f7207a;
         }
         return b;
     }
@@ -215,7 +215,7 @@ public class SizeConfigStrategy implements LruPoolStrategy {
         Key b2 = b(Util.a(i, i2, config), config);
         Bitmap a2 = this.g.a((GroupedLinkedMap<Key, Bitmap>) b2);
         if (a2 != null) {
-            a(Integer.valueOf(b2.f20816a), a2);
+            a(Integer.valueOf(b2.f7210a), a2);
             a2.reconfigure(i, i2, config);
         }
         return a2;
@@ -226,8 +226,8 @@ public class SizeConfigStrategy implements LruPoolStrategy {
         Key a2 = this.f.a(Util.a(bitmap), bitmap.getConfig());
         this.g.a(a2, bitmap);
         NavigableMap<Integer, Integer> a3 = a(bitmap.getConfig());
-        Integer num = a3.get(Integer.valueOf(a2.f20816a));
-        int i = a2.f20816a;
+        Integer num = (Integer) a3.get(Integer.valueOf(a2.f7210a));
+        int i = a2.f7210a;
         int i2 = 1;
         if (num != null) {
             i2 = 1 + num.intValue();

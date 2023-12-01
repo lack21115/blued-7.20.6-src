@@ -1,6 +1,6 @@
 package com.blued.android.module.yy_china.trtc_audio.permission;
 
-import android.Manifest;
+import com.anythink.china.common.d;
 import com.blued.android.core.AppInfo;
 import com.blued.android.framework.R;
 import com.blued.android.framework.permission.PermissionAuxiliaryDialogSetting;
@@ -16,11 +16,11 @@ public final class PermissionHelper {
 
     private static void a() {
         HashMap hashMap = new HashMap();
-        hashMap.put(Manifest.permission.CAMERA, Integer.valueOf(R.string.permission_camera));
-        hashMap.put(Manifest.permission.RECORD_AUDIO, Integer.valueOf(R.string.permission_mic));
-        hashMap.put("android.permission.READ_PHONE_STATE", Integer.valueOf(R.string.permission_phone));
+        hashMap.put("android.permission.CAMERA", Integer.valueOf(R.string.permission_camera));
+        hashMap.put("android.permission.RECORD_AUDIO", Integer.valueOf(R.string.permission_mic));
+        hashMap.put(d.a, Integer.valueOf(R.string.permission_phone));
         hashMap.put("android.permission.READ_EXTERNAL_STORAGE", Integer.valueOf(R.string.permission_storage));
-        hashMap.put("android.permission.WRITE_EXTERNAL_STORAGE", Integer.valueOf(R.string.permission_storage));
+        hashMap.put(d.b, Integer.valueOf(R.string.permission_storage));
         PermissionManager.a(hashMap);
     }
 
@@ -30,7 +30,7 @@ public final class PermissionHelper {
             @Override // java.lang.Runnable
             public void run() {
                 PermissionHelper.c(com.blued.android.module.yy_china.R.string.permission_radio_content);
-                PermissionManager.a(PermissionCallbacks.this, Manifest.permission.RECORD_AUDIO);
+                PermissionManager.a(PermissionCallbacks.this, "android.permission.RECORD_AUDIO");
             }
         });
     }

@@ -1,7 +1,6 @@
 package android.widget;
 
 import android.content.Context;
-import android.content.pm.PackageManager;
 import android.content.res.TypedArray;
 import android.graphics.Rect;
 import android.util.ArrayMap;
@@ -16,7 +15,6 @@ import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.RemoteViews;
 import com.android.internal.R;
-import com.google.android.material.badge.BadgeDrawable;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -88,13 +86,13 @@ public class RelativeLayout extends ViewGroup {
             }
 
             static Node acquire(View view) {
-                Node acquire = sPool.acquire();
-                Node node = acquire;
-                if (acquire == null) {
-                    node = new Node();
+                Node node = (Node) sPool.acquire();
+                Node node2 = node;
+                if (node == null) {
+                    node2 = new Node();
                 }
-                node.view = view;
-                return node;
+                node2.view = view;
+                return node2;
             }
 
             void release() {
@@ -590,7 +588,7 @@ public class RelativeLayout extends ViewGroup {
     public RelativeLayout(Context context, AttributeSet attributeSet, int i, int i2) {
         super(context, attributeSet, i, i2);
         this.mBaselineView = null;
-        this.mGravity = BadgeDrawable.TOP_START;
+        this.mGravity = 8388659;
         this.mContentBounds = new Rect();
         this.mSelfBounds = new Rect();
         this.mTopToBottomLeftToRightSet = null;
@@ -933,15 +931,13 @@ public class RelativeLayout extends ViewGroup {
         return false;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup
-    public ViewGroup.LayoutParams generateDefaultLayoutParams() {
+    protected ViewGroup.LayoutParams generateDefaultLayoutParams() {
         return new LayoutParams(-2, -2);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup
-    public ViewGroup.LayoutParams generateLayoutParams(ViewGroup.LayoutParams layoutParams) {
+    protected ViewGroup.LayoutParams generateLayoutParams(ViewGroup.LayoutParams layoutParams) {
         return new LayoutParams(layoutParams);
     }
 
@@ -1053,7 +1049,7 @@ public class RelativeLayout extends ViewGroup {
     public void setVerticalGravity(int i) {
         int i2 = i & 112;
         if ((this.mGravity & 112) != i2) {
-            this.mGravity = (this.mGravity & PackageManager.INSTALL_FAILED_NO_MATCHING_ABIS) | i2;
+            this.mGravity = (this.mGravity & (-113)) | i2;
             requestLayout();
         }
     }

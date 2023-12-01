@@ -87,8 +87,8 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
     private int width_;
     private static final DrawGoods DEFAULT_INSTANCE = new DrawGoods();
     private static final Parser<DrawGoods> PARSER = new AbstractParser<DrawGoods>() { // from class: cn.irisgw.live.DrawGoods.1
-        @Override // com.google.protobuf.Parser
-        public DrawGoods parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        /* renamed from: parsePartialFrom */
+        public DrawGoods m2007parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             return new DrawGoods(codedInputStream, extensionRegistryLite);
         }
     };
@@ -212,21 +212,21 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
 
         public Builder addAllBgColor(Iterable<String> iterable) {
             ensureBgColorIsMutable();
-            AbstractMessageLite.Builder.addAll((Iterable) iterable, (List) this.bgColor_);
+            AbstractMessageLite.Builder.addAll(iterable, this.bgColor_);
             onChanged();
             return this;
         }
 
         public Builder addAllChatFrameBorderColor(Iterable<String> iterable) {
             ensureChatFrameBorderColorIsMutable();
-            AbstractMessageLite.Builder.addAll((Iterable) iterable, (List) this.chatFrameBorderColor_);
+            AbstractMessageLite.Builder.addAll(iterable, this.chatFrameBorderColor_);
             onChanged();
             return this;
         }
 
         public Builder addAllChatFrameFrameColor(Iterable<String> iterable) {
             ensureChatFrameFrameColorIsMutable();
-            AbstractMessageLite.Builder.addAll((Iterable) iterable, (List) this.chatFrameFrameColor_);
+            AbstractMessageLite.Builder.addAll(iterable, this.chatFrameFrameColor_);
             onChanged();
             return this;
         }
@@ -238,7 +238,7 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
                 return this;
             }
             ensureGoodsIsMutable();
-            AbstractMessageLite.Builder.addAll((Iterable) iterable, (List) this.goods_);
+            AbstractMessageLite.Builder.addAll(iterable, this.goods_);
             onChanged();
             return this;
         }
@@ -246,7 +246,7 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
         public Builder addBgColor(String str) {
             if (str != null) {
                 ensureBgColorIsMutable();
-                this.bgColor_.add((LazyStringList) str);
+                this.bgColor_.add(str);
                 onChanged();
                 return this;
             }
@@ -267,7 +267,7 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
         public Builder addChatFrameBorderColor(String str) {
             if (str != null) {
                 ensureChatFrameBorderColorIsMutable();
-                this.chatFrameBorderColor_.add((LazyStringList) str);
+                this.chatFrameBorderColor_.add(str);
                 onChanged();
                 return this;
             }
@@ -288,7 +288,7 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
         public Builder addChatFrameFrameColor(String str) {
             if (str != null) {
                 ensureChatFrameFrameColorIsMutable();
-                this.chatFrameFrameColor_.add((LazyStringList) str);
+                this.chatFrameFrameColor_.add(str);
                 onChanged();
                 return this;
             }
@@ -309,11 +309,11 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
         public Builder addGoods(int i, Goods.Builder builder) {
             RepeatedFieldBuilderV3<Goods, Goods.Builder, GoodsOrBuilder> repeatedFieldBuilderV3 = this.goodsBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.addMessage(i, builder.build());
+                repeatedFieldBuilderV3.addMessage(i, builder.m2058build());
                 return this;
             }
             ensureGoodsIsMutable();
-            this.goods_.add(i, builder.build());
+            this.goods_.add(i, builder.m2058build());
             onChanged();
             return this;
         }
@@ -336,11 +336,11 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
         public Builder addGoods(Goods.Builder builder) {
             RepeatedFieldBuilderV3<Goods, Goods.Builder, GoodsOrBuilder> repeatedFieldBuilderV3 = this.goodsBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.addMessage(builder.build());
+                repeatedFieldBuilderV3.addMessage(builder.m2058build());
                 return this;
             }
             ensureGoodsIsMutable();
-            this.goods_.add(builder.build());
+            this.goods_.add(builder.m2058build());
             onChanged();
             return this;
         }
@@ -368,22 +368,22 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
             return getGoodsFieldBuilder().addBuilder(i, Goods.getDefaultInstance());
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: addRepeatedField */
+        public Builder m2009addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.addRepeatedField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public DrawGoods build() {
-            DrawGoods buildPartial = buildPartial();
-            if (buildPartial.isInitialized()) {
-                return buildPartial;
+        /* renamed from: build */
+        public DrawGoods m2011build() {
+            DrawGoods m2013buildPartial = m2013buildPartial();
+            if (m2013buildPartial.isInitialized()) {
+                return m2013buildPartial;
             }
-            throw newUninitializedMessageException((Message) buildPartial);
+            throw newUninitializedMessageException(m2013buildPartial);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public DrawGoods buildPartial() {
+        /* renamed from: buildPartial */
+        public DrawGoods m2013buildPartial() {
             DrawGoods drawGoods = new DrawGoods(this);
             int i = this.bitField0_;
             RepeatedFieldBuilderV3<Goods, Goods.Builder, GoodsOrBuilder> repeatedFieldBuilderV3 = this.goodsBuilder_;
@@ -439,8 +439,8 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
             return drawGoods;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public Builder clear() {
+        /* renamed from: clear */
+        public Builder m2017clear() {
             super.clear();
             RepeatedFieldBuilderV3<Goods, Goods.Builder, GoodsOrBuilder> repeatedFieldBuilderV3 = this.goodsBuilder_;
             if (repeatedFieldBuilderV3 == null) {
@@ -463,7 +463,7 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
             this.fansStatus_ = 0;
             this.liangId_ = 0;
             this.liangType_ = 0;
-            this.beansCurrentCount_ = 0L;
+            this.beansCurrentCount_ = DrawGoods.serialVersionUID;
             this.chatFrame_ = "";
             this.chatFrameIcon_ = "";
             this.chatFrameColorType_ = 0;
@@ -489,7 +489,7 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
         }
 
         public Builder clearBeansCurrentCount() {
-            this.beansCurrentCount_ = 0L;
+            this.beansCurrentCount_ = DrawGoods.serialVersionUID;
             onChanged();
             return this;
         }
@@ -587,8 +587,8 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+        /* renamed from: clearField */
+        public Builder m2019clearField(Descriptors.FieldDescriptor fieldDescriptor) {
             return (Builder) super.clearField(fieldDescriptor);
         }
 
@@ -634,8 +634,8 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+        /* renamed from: clearOneof */
+        public Builder m2022clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
             return (Builder) super.clearOneof(oneofDescriptor);
         }
 
@@ -669,10 +669,9 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder m2028clone() {
+            return (Builder) super.clone();
         }
 
         @Override // cn.irisgw.live.DrawGoodsOrBuilder
@@ -704,7 +703,7 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
 
         @Override // cn.irisgw.live.DrawGoodsOrBuilder
         public String getBgColor(int i) {
-            return this.bgColor_.get(i);
+            return (String) this.bgColor_.get(i);
         }
 
         @Override // cn.irisgw.live.DrawGoodsOrBuilder
@@ -718,7 +717,8 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
         }
 
         @Override // cn.irisgw.live.DrawGoodsOrBuilder
-        public ProtocolStringList getBgColorList() {
+        /* renamed from: getBgColorList */
+        public ProtocolStringList mo1997getBgColorList() {
             return this.bgColor_.getUnmodifiableView();
         }
 
@@ -789,7 +789,7 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
 
         @Override // cn.irisgw.live.DrawGoodsOrBuilder
         public String getChatFrameBorderColor(int i) {
-            return this.chatFrameBorderColor_.get(i);
+            return (String) this.chatFrameBorderColor_.get(i);
         }
 
         @Override // cn.irisgw.live.DrawGoodsOrBuilder
@@ -803,7 +803,8 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
         }
 
         @Override // cn.irisgw.live.DrawGoodsOrBuilder
-        public ProtocolStringList getChatFrameBorderColorList() {
+        /* renamed from: getChatFrameBorderColorList */
+        public ProtocolStringList mo1998getChatFrameBorderColorList() {
             return this.chatFrameBorderColor_.getUnmodifiableView();
         }
 
@@ -825,7 +826,7 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
 
         @Override // cn.irisgw.live.DrawGoodsOrBuilder
         public String getChatFrameFrameColor(int i) {
-            return this.chatFrameFrameColor_.get(i);
+            return (String) this.chatFrameFrameColor_.get(i);
         }
 
         @Override // cn.irisgw.live.DrawGoodsOrBuilder
@@ -839,7 +840,8 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
         }
 
         @Override // cn.irisgw.live.DrawGoodsOrBuilder
-        public ProtocolStringList getChatFrameFrameColorList() {
+        /* renamed from: getChatFrameFrameColorList */
+        public ProtocolStringList mo1999getChatFrameFrameColorList() {
             return this.chatFrameFrameColor_.getUnmodifiableView();
         }
 
@@ -870,12 +872,11 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public DrawGoods getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public DrawGoods m2030getDefaultInstanceForType() {
             return DrawGoods.getDefaultInstance();
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
         public Descriptors.Descriptor getDescriptorForType() {
             return LiveConstants.internal_static_cn_irisgw_live_DrawGoods_descriptor;
         }
@@ -946,7 +947,7 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
         @Override // cn.irisgw.live.DrawGoodsOrBuilder
         public GoodsOrBuilder getGoodsOrBuilder(int i) {
             RepeatedFieldBuilderV3<Goods, Goods.Builder, GoodsOrBuilder> repeatedFieldBuilderV3 = this.goodsBuilder_;
-            return repeatedFieldBuilderV3 == null ? this.goods_.get(i) : repeatedFieldBuilderV3.getMessageOrBuilder(i);
+            return repeatedFieldBuilderV3 == null ? this.goods_.get(i) : (GoodsOrBuilder) repeatedFieldBuilderV3.getMessageOrBuilder(i);
         }
 
         @Override // cn.irisgw.live.DrawGoodsOrBuilder
@@ -1039,12 +1040,10 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
             return this.width_;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_DrawGoods_fieldAccessorTable.ensureFieldAccessorsInitialized(DrawGoods.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             return true;
         }
@@ -1124,7 +1123,7 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
             if (drawGoods.getLiangType() != 0) {
                 setLiangType(drawGoods.getLiangType());
             }
-            if (drawGoods.getBeansCurrentCount() != 0) {
+            if (drawGoods.getBeansCurrentCount() != DrawGoods.serialVersionUID) {
                 setBeansCurrentCount(drawGoods.getBeansCurrentCount());
             }
             if (!drawGoods.getChatFrame().isEmpty()) {
@@ -1189,18 +1188,18 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
                 }
                 onChanged();
             }
-            mergeUnknownFields(drawGoods.unknownFields);
+            m2039mergeUnknownFields(drawGoods.unknownFields);
             onChanged();
             return this;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+        /* renamed from: mergeFrom */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
         */
-        public cn.irisgw.live.DrawGoods.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+        public cn.irisgw.live.DrawGoods.Builder m2036mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
             /*
                 r4 = this;
                 r0 = 0
@@ -1245,11 +1244,11 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
                 r0 = r6
                 throw r0
             */
-            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.DrawGoods.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.DrawGoods$Builder");
+            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.DrawGoods.Builder.m2036mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.DrawGoods$Builder");
         }
 
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder mergeFrom(Message message) {
+        /* renamed from: mergeFrom */
+        public Builder m2035mergeFrom(Message message) {
             if (message instanceof DrawGoods) {
                 return mergeFrom((DrawGoods) message);
             }
@@ -1257,8 +1256,8 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: mergeUnknownFields */
+        public final Builder m2039mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.mergeUnknownFields(unknownFieldSet);
         }
 
@@ -1302,7 +1301,7 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
         public Builder setBgColor(int i, String str) {
             if (str != null) {
                 ensureBgColorIsMutable();
-                this.bgColor_.set(i, (int) str);
+                this.bgColor_.set(i, str);
                 onChanged();
                 return this;
             }
@@ -1371,7 +1370,7 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
         public Builder setChatFrameBorderColor(int i, String str) {
             if (str != null) {
                 ensureChatFrameBorderColorIsMutable();
-                this.chatFrameBorderColor_.set(i, (int) str);
+                this.chatFrameBorderColor_.set(i, str);
                 onChanged();
                 return this;
             }
@@ -1397,7 +1396,7 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
         public Builder setChatFrameFrameColor(int i, String str) {
             if (str != null) {
                 ensureChatFrameFrameColorIsMutable();
-                this.chatFrameFrameColor_.set(i, (int) str);
+                this.chatFrameFrameColor_.set(i, str);
                 onChanged();
                 return this;
             }
@@ -1466,19 +1465,19 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: setField */
+        public Builder m2041setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.setField(fieldDescriptor, obj);
         }
 
         public Builder setGoods(int i, Goods.Builder builder) {
             RepeatedFieldBuilderV3<Goods, Goods.Builder, GoodsOrBuilder> repeatedFieldBuilderV3 = this.goodsBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.setMessage(i, builder.build());
+                repeatedFieldBuilderV3.setMessage(i, builder.m2058build());
                 return this;
             }
             ensureGoodsIsMutable();
-            this.goods_.set(i, builder.build());
+            this.goods_.set(i, builder.m2058build());
             onChanged();
             return this;
         }
@@ -1572,8 +1571,8 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+        /* renamed from: setRepeatedField */
+        public Builder m2043setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
             return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
         }
 
@@ -1583,8 +1582,8 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: setUnknownFields */
+        public final Builder m2045setUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.setUnknownFields(unknownFieldSet);
         }
 
@@ -1617,8 +1616,8 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
         private List<Path> path_;
         private static final Goods DEFAULT_INSTANCE = new Goods();
         private static final Parser<Goods> PARSER = new AbstractParser<Goods>() { // from class: cn.irisgw.live.DrawGoods.Goods.1
-            @Override // com.google.protobuf.Parser
-            public Goods parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+            /* renamed from: parsePartialFrom */
+            public Goods m2054parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
                 return new Goods(codedInputStream, extensionRegistryLite);
             }
         };
@@ -1688,7 +1687,7 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
                     return this;
                 }
                 ensurePathIsMutable();
-                AbstractMessageLite.Builder.addAll((Iterable) iterable, (List) this.path_);
+                AbstractMessageLite.Builder.addAll(iterable, this.path_);
                 onChanged();
                 return this;
             }
@@ -1696,11 +1695,11 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
             public Builder addPath(int i, Path.Builder builder) {
                 RepeatedFieldBuilderV3<Path, Path.Builder, PathOrBuilder> repeatedFieldBuilderV3 = this.pathBuilder_;
                 if (repeatedFieldBuilderV3 != null) {
-                    repeatedFieldBuilderV3.addMessage(i, builder.build());
+                    repeatedFieldBuilderV3.addMessage(i, builder.m2105build());
                     return this;
                 }
                 ensurePathIsMutable();
-                this.path_.add(i, builder.build());
+                this.path_.add(i, builder.m2105build());
                 onChanged();
                 return this;
             }
@@ -1723,11 +1722,11 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
             public Builder addPath(Path.Builder builder) {
                 RepeatedFieldBuilderV3<Path, Path.Builder, PathOrBuilder> repeatedFieldBuilderV3 = this.pathBuilder_;
                 if (repeatedFieldBuilderV3 != null) {
-                    repeatedFieldBuilderV3.addMessage(builder.build());
+                    repeatedFieldBuilderV3.addMessage(builder.m2105build());
                     return this;
                 }
                 ensurePathIsMutable();
-                this.path_.add(builder.build());
+                this.path_.add(builder.m2105build());
                 onChanged();
                 return this;
             }
@@ -1755,22 +1754,22 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
                 return getPathFieldBuilder().addBuilder(i, Path.getDefaultInstance());
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: addRepeatedField */
+            public Builder m2056addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.addRepeatedField(fieldDescriptor, obj);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public Goods build() {
-                Goods buildPartial = buildPartial();
-                if (buildPartial.isInitialized()) {
-                    return buildPartial;
+            /* renamed from: build */
+            public Goods m2058build() {
+                Goods m2060buildPartial = m2060buildPartial();
+                if (m2060buildPartial.isInitialized()) {
+                    return m2060buildPartial;
                 }
-                throw newUninitializedMessageException((Message) buildPartial);
+                throw newUninitializedMessageException(m2060buildPartial);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public Goods buildPartial() {
+            /* renamed from: buildPartial */
+            public Goods m2060buildPartial() {
                 Goods goods = new Goods(this);
                 int i = this.bitField0_;
                 RepeatedFieldBuilderV3<Path, Path.Builder, PathOrBuilder> repeatedFieldBuilderV3 = this.pathBuilder_;
@@ -1794,8 +1793,8 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
                 return goods;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public Builder clear() {
+            /* renamed from: clear */
+            public Builder m2064clear() {
                 super.clear();
                 RepeatedFieldBuilderV3<Path, Path.Builder, PathOrBuilder> repeatedFieldBuilderV3 = this.pathBuilder_;
                 if (repeatedFieldBuilderV3 == null) {
@@ -1838,8 +1837,8 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+            /* renamed from: clearField */
+            public Builder m2066clearField(Descriptors.FieldDescriptor fieldDescriptor) {
                 return (Builder) super.clearField(fieldDescriptor);
             }
 
@@ -1861,8 +1860,8 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+            /* renamed from: clearOneof */
+            public Builder m2069clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
                 return (Builder) super.clearOneof(oneofDescriptor);
             }
 
@@ -1878,10 +1877,9 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder m2075clone() {
+                return (Builder) super.clone();
             }
 
             @Override // cn.irisgw.live.DrawGoods.GoodsOrBuilder
@@ -1906,12 +1904,11 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
                 return (ByteString) obj;
             }
 
-            @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-            public Goods getDefaultInstanceForType() {
+            /* renamed from: getDefaultInstanceForType */
+            public Goods m2077getDefaultInstanceForType() {
                 return Goods.getDefaultInstance();
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
             public Descriptors.Descriptor getDescriptorForType() {
                 return LiveConstants.internal_static_cn_irisgw_live_DrawGoods_Goods_descriptor;
             }
@@ -1992,7 +1989,7 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
             @Override // cn.irisgw.live.DrawGoods.GoodsOrBuilder
             public PathOrBuilder getPathOrBuilder(int i) {
                 RepeatedFieldBuilderV3<Path, Path.Builder, PathOrBuilder> repeatedFieldBuilderV3 = this.pathBuilder_;
-                return repeatedFieldBuilderV3 == null ? this.path_.get(i) : repeatedFieldBuilderV3.getMessageOrBuilder(i);
+                return repeatedFieldBuilderV3 == null ? this.path_.get(i) : (PathOrBuilder) repeatedFieldBuilderV3.getMessageOrBuilder(i);
             }
 
             @Override // cn.irisgw.live.DrawGoods.GoodsOrBuilder
@@ -2001,12 +1998,10 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
                 return repeatedFieldBuilderV3 != null ? repeatedFieldBuilderV3.getMessageOrBuilderList() : Collections.unmodifiableList(this.path_);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder
             public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
                 return LiveConstants.internal_static_cn_irisgw_live_DrawGoods_Goods_fieldAccessorTable.ensureFieldAccessorsInitialized(Goods.class, Builder.class);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
             public final boolean isInitialized() {
                 return true;
             }
@@ -2064,18 +2059,18 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
                     this.imagesStatic_ = goods.imagesStatic_;
                     onChanged();
                 }
-                mergeUnknownFields(goods.unknownFields);
+                m2086mergeUnknownFields(goods.unknownFields);
                 onChanged();
                 return this;
             }
 
             /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+            /* renamed from: mergeFrom */
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
                 To view partially-correct code enable 'Show inconsistent code' option in preferences
             */
-            public cn.irisgw.live.DrawGoods.Goods.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+            public cn.irisgw.live.DrawGoods.Goods.Builder m2083mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
                 /*
                     r4 = this;
                     r0 = 0
@@ -2120,11 +2115,11 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
                     r0 = r6
                     throw r0
                 */
-                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.DrawGoods.Goods.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.DrawGoods$Goods$Builder");
+                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.DrawGoods.Goods.Builder.m2083mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.DrawGoods$Goods$Builder");
             }
 
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder mergeFrom(Message message) {
+            /* renamed from: mergeFrom */
+            public Builder m2082mergeFrom(Message message) {
                 if (message instanceof Goods) {
                     return mergeFrom((Goods) message);
                 }
@@ -2132,8 +2127,8 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: mergeUnknownFields */
+            public final Builder m2086mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.mergeUnknownFields(unknownFieldSet);
             }
 
@@ -2186,8 +2181,8 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: setField */
+            public Builder m2088setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.setField(fieldDescriptor, obj);
             }
 
@@ -2225,11 +2220,11 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
             public Builder setPath(int i, Path.Builder builder) {
                 RepeatedFieldBuilderV3<Path, Path.Builder, PathOrBuilder> repeatedFieldBuilderV3 = this.pathBuilder_;
                 if (repeatedFieldBuilderV3 != null) {
-                    repeatedFieldBuilderV3.setMessage(i, builder.build());
+                    repeatedFieldBuilderV3.setMessage(i, builder.m2105build());
                     return this;
                 }
                 ensurePathIsMutable();
-                this.path_.set(i, builder.build());
+                this.path_.set(i, builder.m2105build());
                 onChanged();
                 return this;
             }
@@ -2249,13 +2244,13 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
                 }
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+            /* renamed from: setRepeatedField */
+            public Builder m2090setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
                 return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: setUnknownFields */
+            public final Builder m2092setUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.setUnknownFields(unknownFieldSet);
             }
         }
@@ -2264,8 +2259,8 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
         public static final class Path extends GeneratedMessageV3 implements PathOrBuilder {
             private static final Path DEFAULT_INSTANCE = new Path();
             private static final Parser<Path> PARSER = new AbstractParser<Path>() { // from class: cn.irisgw.live.DrawGoods.Goods.Path.1
-                @Override // com.google.protobuf.Parser
-                public Path parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+                /* renamed from: parsePartialFrom */
+                public Path m2101parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
                     return new Path(codedInputStream, extensionRegistryLite);
                 }
             };
@@ -2298,22 +2293,22 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
                     boolean unused = Path.alwaysUseFieldBuilders;
                 }
 
-                @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-                public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+                /* renamed from: addRepeatedField */
+                public Builder m2103addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                     return (Builder) super.addRepeatedField(fieldDescriptor, obj);
                 }
 
-                @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-                public Path build() {
-                    Path buildPartial = buildPartial();
-                    if (buildPartial.isInitialized()) {
-                        return buildPartial;
+                /* renamed from: build */
+                public Path m2105build() {
+                    Path m2107buildPartial = m2107buildPartial();
+                    if (m2107buildPartial.isInitialized()) {
+                        return m2107buildPartial;
                     }
-                    throw newUninitializedMessageException((Message) buildPartial);
+                    throw newUninitializedMessageException(m2107buildPartial);
                 }
 
-                @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-                public Path buildPartial() {
+                /* renamed from: buildPartial */
+                public Path m2107buildPartial() {
                     Path path = new Path(this);
                     path.x_ = this.x_;
                     path.y_ = this.y_;
@@ -2321,21 +2316,21 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
                     return path;
                 }
 
-                @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-                public Builder clear() {
+                /* renamed from: clear */
+                public Builder m2111clear() {
                     super.clear();
                     this.x_ = 0;
                     this.y_ = 0;
                     return this;
                 }
 
-                @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-                public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+                /* renamed from: clearField */
+                public Builder m2113clearField(Descriptors.FieldDescriptor fieldDescriptor) {
                     return (Builder) super.clearField(fieldDescriptor);
                 }
 
-                @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-                public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+                /* renamed from: clearOneof */
+                public Builder m2116clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
                     return (Builder) super.clearOneof(oneofDescriptor);
                 }
 
@@ -2351,18 +2346,16 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
                     return this;
                 }
 
-                @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
                 /* renamed from: clone */
-                public Builder mo1800clone() {
-                    return (Builder) super.mo1800clone();
+                public Builder m2122clone() {
+                    return (Builder) super.clone();
                 }
 
-                @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-                public Path getDefaultInstanceForType() {
+                /* renamed from: getDefaultInstanceForType */
+                public Path m2124getDefaultInstanceForType() {
                     return Path.getDefaultInstance();
                 }
 
-                @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
                 public Descriptors.Descriptor getDescriptorForType() {
                     return LiveConstants.internal_static_cn_irisgw_live_DrawGoods_Goods_Path_descriptor;
                 }
@@ -2377,12 +2370,10 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
                     return this.y_;
                 }
 
-                @Override // com.google.protobuf.GeneratedMessageV3.Builder
                 public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
                     return LiveConstants.internal_static_cn_irisgw_live_DrawGoods_Goods_Path_fieldAccessorTable.ensureFieldAccessorsInitialized(Path.class, Builder.class);
                 }
 
-                @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
                 public final boolean isInitialized() {
                     return true;
                 }
@@ -2397,18 +2388,18 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
                     if (path.getY() != 0) {
                         setY(path.getY());
                     }
-                    mergeUnknownFields(path.unknownFields);
+                    m2133mergeUnknownFields(path.unknownFields);
                     onChanged();
                     return this;
                 }
 
                 /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-                @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+                /* renamed from: mergeFrom */
                 /*
                     Code decompiled incorrectly, please refer to instructions dump.
                     To view partially-correct code enable 'Show inconsistent code' option in preferences
                 */
-                public cn.irisgw.live.DrawGoods.Goods.Path.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+                public cn.irisgw.live.DrawGoods.Goods.Path.Builder m2130mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
                     /*
                         r4 = this;
                         r0 = 0
@@ -2453,11 +2444,11 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
                         r0 = r6
                         throw r0
                     */
-                    throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.DrawGoods.Goods.Path.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.DrawGoods$Goods$Path$Builder");
+                    throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.DrawGoods.Goods.Path.Builder.m2130mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.DrawGoods$Goods$Path$Builder");
                 }
 
-                @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-                public Builder mergeFrom(Message message) {
+                /* renamed from: mergeFrom */
+                public Builder m2129mergeFrom(Message message) {
                     if (message instanceof Path) {
                         return mergeFrom((Path) message);
                     }
@@ -2465,23 +2456,23 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
                     return this;
                 }
 
-                @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-                public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+                /* renamed from: mergeUnknownFields */
+                public final Builder m2133mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
                     return (Builder) super.mergeUnknownFields(unknownFieldSet);
                 }
 
-                @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-                public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+                /* renamed from: setField */
+                public Builder m2135setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                     return (Builder) super.setField(fieldDescriptor, obj);
                 }
 
-                @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-                public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+                /* renamed from: setRepeatedField */
+                public Builder m2137setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
                     return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
                 }
 
-                @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-                public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+                /* renamed from: setUnknownFields */
+                public final Builder m2139setUnknownFields(UnknownFieldSet unknownFieldSet) {
                     return (Builder) super.setUnknownFields(unknownFieldSet);
                 }
 
@@ -2550,66 +2541,65 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
             }
 
             public static Builder newBuilder() {
-                return DEFAULT_INSTANCE.toBuilder();
+                return DEFAULT_INSTANCE.m2100toBuilder();
             }
 
             public static Builder newBuilder(Path path) {
-                return DEFAULT_INSTANCE.toBuilder().mergeFrom(path);
+                return DEFAULT_INSTANCE.m2100toBuilder().mergeFrom(path);
             }
 
             public static Path parseDelimitedFrom(InputStream inputStream) throws IOException {
-                return (Path) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+                return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
             }
 
             public static Path parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-                return (Path) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+                return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
             }
 
             public static Path parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-                return PARSER.parseFrom(byteString);
+                return (Path) PARSER.parseFrom(byteString);
             }
 
             public static Path parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-                return PARSER.parseFrom(byteString, extensionRegistryLite);
+                return (Path) PARSER.parseFrom(byteString, extensionRegistryLite);
             }
 
             public static Path parseFrom(CodedInputStream codedInputStream) throws IOException {
-                return (Path) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+                return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
             }
 
             public static Path parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-                return (Path) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+                return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
             }
 
             public static Path parseFrom(InputStream inputStream) throws IOException {
-                return (Path) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+                return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
             }
 
             public static Path parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-                return (Path) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+                return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
             }
 
             public static Path parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-                return PARSER.parseFrom(byteBuffer);
+                return (Path) PARSER.parseFrom(byteBuffer);
             }
 
             public static Path parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-                return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+                return (Path) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
             }
 
             public static Path parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-                return PARSER.parseFrom(bArr);
+                return (Path) PARSER.parseFrom(bArr);
             }
 
             public static Path parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-                return PARSER.parseFrom(bArr, extensionRegistryLite);
+                return (Path) PARSER.parseFrom(bArr, extensionRegistryLite);
             }
 
             public static Parser<Path> parser() {
                 return PARSER;
             }
 
-            @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
             public boolean equals(Object obj) {
                 if (obj == this) {
                     return true;
@@ -2621,17 +2611,15 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
                 return super.equals(obj);
             }
 
-            @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-            public Path getDefaultInstanceForType() {
+            /* renamed from: getDefaultInstanceForType */
+            public Path m2095getDefaultInstanceForType() {
                 return DEFAULT_INSTANCE;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
             public Parser<Path> getParserForType() {
                 return PARSER;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
             public int getSerializedSize() {
                 int i = this.memoizedSize;
                 if (i != -1) {
@@ -2652,7 +2640,6 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
                 return serializedSize;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
             public final UnknownFieldSet getUnknownFields() {
                 return this.unknownFields;
             }
@@ -2667,7 +2654,6 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
                 return this.y_;
             }
 
-            @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
             public int hashCode() {
                 if (this.memoizedHashCode != 0) {
                     return this.memoizedHashCode;
@@ -2677,12 +2663,10 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
                 return hashCode;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3
             public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
                 return LiveConstants.internal_static_cn_irisgw_live_DrawGoods_Goods_Path_fieldAccessorTable.ensureFieldAccessorsInitialized(Path.class, Builder.class);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
             public final boolean isInitialized() {
                 byte b = this.memoizedIsInitialized;
                 if (b == 1) {
@@ -2695,28 +2679,26 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
                 return true;
             }
 
-            @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-            public Builder newBuilderForType() {
+            /* renamed from: newBuilderForType */
+            public Builder m2098newBuilderForType() {
                 return newBuilder();
             }
 
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.google.protobuf.GeneratedMessageV3
-            public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+            /* renamed from: newBuilderForType */
+            public Builder m2097newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
                 return new Builder(builderParent);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3
             public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
                 return new Path();
             }
 
-            @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-            public Builder toBuilder() {
+            /* renamed from: toBuilder */
+            public Builder m2100toBuilder() {
                 return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
             public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
                 int i = this.x_;
                 if (i != 0) {
@@ -2821,66 +2803,65 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
         }
 
         public static Builder newBuilder() {
-            return DEFAULT_INSTANCE.toBuilder();
+            return DEFAULT_INSTANCE.m2053toBuilder();
         }
 
         public static Builder newBuilder(Goods goods) {
-            return DEFAULT_INSTANCE.toBuilder().mergeFrom(goods);
+            return DEFAULT_INSTANCE.m2053toBuilder().mergeFrom(goods);
         }
 
         public static Goods parseDelimitedFrom(InputStream inputStream) throws IOException {
-            return (Goods) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
         }
 
         public static Goods parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (Goods) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static Goods parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString);
+            return (Goods) PARSER.parseFrom(byteString);
         }
 
         public static Goods parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString, extensionRegistryLite);
+            return (Goods) PARSER.parseFrom(byteString, extensionRegistryLite);
         }
 
         public static Goods parseFrom(CodedInputStream codedInputStream) throws IOException {
-            return (Goods) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
         }
 
         public static Goods parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (Goods) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
         }
 
         public static Goods parseFrom(InputStream inputStream) throws IOException {
-            return (Goods) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
         }
 
         public static Goods parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (Goods) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static Goods parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer);
+            return (Goods) PARSER.parseFrom(byteBuffer);
         }
 
         public static Goods parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+            return (Goods) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
         }
 
         public static Goods parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr);
+            return (Goods) PARSER.parseFrom(bArr);
         }
 
         public static Goods parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr, extensionRegistryLite);
+            return (Goods) PARSER.parseFrom(bArr, extensionRegistryLite);
         }
 
         public static Parser<Goods> parser() {
             return PARSER;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public boolean equals(Object obj) {
             if (obj == this) {
                 return true;
@@ -2914,8 +2895,8 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public Goods getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public Goods m2048getDefaultInstanceForType() {
             return DEFAULT_INSTANCE;
         }
 
@@ -2966,7 +2947,6 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
         public Parser<Goods> getParserForType() {
             return PARSER;
         }
@@ -2996,7 +2976,6 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
             return this.path_;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public int getSerializedSize() {
             int i = this.memoizedSize;
             if (i != -1) {
@@ -3044,12 +3023,10 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
             return serializedSize;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
         public final UnknownFieldSet getUnknownFields() {
             return this.unknownFields;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public int hashCode() {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
@@ -3064,12 +3041,10 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
             return goodsId;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_DrawGoods_Goods_fieldAccessorTable.ensureFieldAccessorsInitialized(Goods.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte b = this.memoizedIsInitialized;
             if (b == 1) {
@@ -3082,28 +3057,26 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
             return true;
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder newBuilderForType() {
+        /* renamed from: newBuilderForType */
+        public Builder m2051newBuilderForType() {
             return newBuilder();
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.google.protobuf.GeneratedMessageV3
-        public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+        /* renamed from: newBuilderForType */
+        public Builder m2050newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
             return new Builder(builderParent);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
             return new Goods();
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder toBuilder() {
+        /* renamed from: toBuilder */
+        public Builder m2053toBuilder() {
             return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
             int i = 0;
             while (true) {
@@ -3280,7 +3253,7 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
                                 this.chatFrameFrameColor_ = new LazyStringArrayList();
                                 z5 = z2 | true;
                             }
-                            this.chatFrameFrameColor_.add((LazyStringList) readStringRequireUtf8);
+                            this.chatFrameFrameColor_.add(readStringRequireUtf8);
                             z2 = z5;
                             continue;
                         case 178:
@@ -3290,7 +3263,7 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
                                 this.chatFrameBorderColor_ = new LazyStringArrayList();
                                 z6 = z2 | true;
                             }
-                            this.chatFrameBorderColor_.add((LazyStringList) readStringRequireUtf82);
+                            this.chatFrameBorderColor_.add(readStringRequireUtf82);
                             z2 = z6;
                             continue;
                         case 186:
@@ -3315,7 +3288,7 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
                                 this.bgColor_ = new LazyStringArrayList();
                                 z7 = z2 | true;
                             }
-                            this.bgColor_.add((LazyStringList) readStringRequireUtf83);
+                            this.bgColor_.add(readStringRequireUtf83);
                             z2 = z7;
                             continue;
                         default:
@@ -3379,73 +3352,72 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
     }
 
     public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
+        return DEFAULT_INSTANCE.m2006toBuilder();
     }
 
     public static Builder newBuilder(DrawGoods drawGoods) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(drawGoods);
+        return DEFAULT_INSTANCE.m2006toBuilder().mergeFrom(drawGoods);
     }
 
     public static DrawGoods parseDelimitedFrom(InputStream inputStream) throws IOException {
-        return (DrawGoods) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
     }
 
     public static DrawGoods parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (DrawGoods) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static DrawGoods parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString);
+        return (DrawGoods) PARSER.parseFrom(byteString);
     }
 
     public static DrawGoods parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString, extensionRegistryLite);
+        return (DrawGoods) PARSER.parseFrom(byteString, extensionRegistryLite);
     }
 
     public static DrawGoods parseFrom(CodedInputStream codedInputStream) throws IOException {
-        return (DrawGoods) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
     }
 
     public static DrawGoods parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (DrawGoods) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
     }
 
     public static DrawGoods parseFrom(InputStream inputStream) throws IOException {
-        return (DrawGoods) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
     }
 
     public static DrawGoods parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (DrawGoods) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static DrawGoods parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer);
+        return (DrawGoods) PARSER.parseFrom(byteBuffer);
     }
 
     public static DrawGoods parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+        return (DrawGoods) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
     }
 
     public static DrawGoods parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr);
+        return (DrawGoods) PARSER.parseFrom(bArr);
     }
 
     public static DrawGoods parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr, extensionRegistryLite);
+        return (DrawGoods) PARSER.parseFrom(bArr, extensionRegistryLite);
     }
 
     public static Parser<DrawGoods> parser() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
         }
         if (obj instanceof DrawGoods) {
             DrawGoods drawGoods = (DrawGoods) obj;
-            return getGoodsList().equals(drawGoods.getGoodsList()) && getWidth() == drawGoods.getWidth() && getHeight() == drawGoods.getHeight() && getPayToken().equals(drawGoods.getPayToken()) && getPayCode().equals(drawGoods.getPayCode()) && getDiscountId() == drawGoods.getDiscountId() && getRememberMe() == drawGoods.getRememberMe() && getTargetUid() == drawGoods.getTargetUid() && getLiveId() == drawGoods.getLiveId() && getFanClubName().equals(drawGoods.getFanClubName()) && getFanClubLevel() == drawGoods.getFanClubLevel() && getInFanClub() == drawGoods.getInFanClub() && getFansStatus() == drawGoods.getFansStatus() && getLiangId() == drawGoods.getLiangId() && getLiangType() == drawGoods.getLiangType() && getBeansCurrentCount() == drawGoods.getBeansCurrentCount() && getChatFrame().equals(drawGoods.getChatFrame()) && getChatFrameIcon().equals(drawGoods.getChatFrameIcon()) && getChatFrameColorType() == drawGoods.getChatFrameColorType() && getChatFrameGradientType() == drawGoods.getChatFrameGradientType() && getChatFrameFrameColorList().equals(drawGoods.getChatFrameFrameColorList()) && getChatFrameBorderColorList().equals(drawGoods.getChatFrameBorderColorList()) && getChatBadgeUrl().equals(drawGoods.getChatBadgeUrl()) && getChatBadgeLength() == drawGoods.getChatBadgeLength() && getChatBadgeHeight() == drawGoods.getChatBadgeHeight() && getAvatarFrameUrl().equals(drawGoods.getAvatarFrameUrl()) && getBgImg().equals(drawGoods.getBgImg()) && getBgColorList().equals(drawGoods.getBgColorList()) && this.unknownFields.equals(drawGoods.unknownFields);
+            return getGoodsList().equals(drawGoods.getGoodsList()) && getWidth() == drawGoods.getWidth() && getHeight() == drawGoods.getHeight() && getPayToken().equals(drawGoods.getPayToken()) && getPayCode().equals(drawGoods.getPayCode()) && getDiscountId() == drawGoods.getDiscountId() && getRememberMe() == drawGoods.getRememberMe() && getTargetUid() == drawGoods.getTargetUid() && getLiveId() == drawGoods.getLiveId() && getFanClubName().equals(drawGoods.getFanClubName()) && getFanClubLevel() == drawGoods.getFanClubLevel() && getInFanClub() == drawGoods.getInFanClub() && getFansStatus() == drawGoods.getFansStatus() && getLiangId() == drawGoods.getLiangId() && getLiangType() == drawGoods.getLiangType() && getBeansCurrentCount() == drawGoods.getBeansCurrentCount() && getChatFrame().equals(drawGoods.getChatFrame()) && getChatFrameIcon().equals(drawGoods.getChatFrameIcon()) && getChatFrameColorType() == drawGoods.getChatFrameColorType() && getChatFrameGradientType() == drawGoods.getChatFrameGradientType() && mo1999getChatFrameFrameColorList().equals(drawGoods.mo1999getChatFrameFrameColorList()) && mo1998getChatFrameBorderColorList().equals(drawGoods.mo1998getChatFrameBorderColorList()) && getChatBadgeUrl().equals(drawGoods.getChatBadgeUrl()) && getChatBadgeLength() == drawGoods.getChatBadgeLength() && getChatBadgeHeight() == drawGoods.getChatBadgeHeight() && getAvatarFrameUrl().equals(drawGoods.getAvatarFrameUrl()) && getBgImg().equals(drawGoods.getBgImg()) && mo1997getBgColorList().equals(drawGoods.mo1997getBgColorList()) && this.unknownFields.equals(drawGoods.unknownFields);
         }
         return super.equals(obj);
     }
@@ -3479,7 +3451,7 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
 
     @Override // cn.irisgw.live.DrawGoodsOrBuilder
     public String getBgColor(int i) {
-        return this.bgColor_.get(i);
+        return (String) this.bgColor_.get(i);
     }
 
     @Override // cn.irisgw.live.DrawGoodsOrBuilder
@@ -3493,7 +3465,8 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
     }
 
     @Override // cn.irisgw.live.DrawGoodsOrBuilder
-    public ProtocolStringList getBgColorList() {
+    /* renamed from: getBgColorList */
+    public ProtocolStringList mo1997getBgColorList() {
         return this.bgColor_;
     }
 
@@ -3564,7 +3537,7 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
 
     @Override // cn.irisgw.live.DrawGoodsOrBuilder
     public String getChatFrameBorderColor(int i) {
-        return this.chatFrameBorderColor_.get(i);
+        return (String) this.chatFrameBorderColor_.get(i);
     }
 
     @Override // cn.irisgw.live.DrawGoodsOrBuilder
@@ -3578,7 +3551,8 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
     }
 
     @Override // cn.irisgw.live.DrawGoodsOrBuilder
-    public ProtocolStringList getChatFrameBorderColorList() {
+    /* renamed from: getChatFrameBorderColorList */
+    public ProtocolStringList mo1998getChatFrameBorderColorList() {
         return this.chatFrameBorderColor_;
     }
 
@@ -3600,7 +3574,7 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
 
     @Override // cn.irisgw.live.DrawGoodsOrBuilder
     public String getChatFrameFrameColor(int i) {
-        return this.chatFrameFrameColor_.get(i);
+        return (String) this.chatFrameFrameColor_.get(i);
     }
 
     @Override // cn.irisgw.live.DrawGoodsOrBuilder
@@ -3614,7 +3588,8 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
     }
 
     @Override // cn.irisgw.live.DrawGoodsOrBuilder
-    public ProtocolStringList getChatFrameFrameColorList() {
+    /* renamed from: getChatFrameFrameColorList */
+    public ProtocolStringList mo1999getChatFrameFrameColorList() {
         return this.chatFrameFrameColor_;
     }
 
@@ -3645,8 +3620,8 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
         return (ByteString) obj;
     }
 
-    @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-    public DrawGoods getDefaultInstanceForType() {
+    /* renamed from: getDefaultInstanceForType */
+    public DrawGoods m2001getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
     }
 
@@ -3737,7 +3712,6 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
         return this.liveId_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
     public Parser<DrawGoods> getParserForType() {
         return PARSER;
     }
@@ -3791,7 +3765,6 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
         return this.rememberMe_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public int getSerializedSize() {
         int i = this.memoizedSize;
         if (i != -1) {
@@ -3870,7 +3843,7 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
         }
         long j = this.beansCurrentCount_;
         int i29 = i28;
-        if (j != 0) {
+        if (j != serialVersionUID) {
             i29 = i28 + CodedOutputStream.computeUInt64Size(16, j);
         }
         int i30 = i29;
@@ -3895,12 +3868,12 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
         for (int i37 = 0; i37 < this.chatFrameFrameColor_.size(); i37++) {
             i36 += computeStringSizeNoTag(this.chatFrameFrameColor_.getRaw(i37));
         }
-        int size = getChatFrameFrameColorList().size();
+        int size = mo1999getChatFrameFrameColorList().size();
         int i38 = 0;
         for (int i39 = 0; i39 < this.chatFrameBorderColor_.size(); i39++) {
             i38 += computeStringSizeNoTag(this.chatFrameBorderColor_.getRaw(i39));
         }
-        int size2 = i35 + i36 + (size * 2) + i38 + (getChatFrameBorderColorList().size() * 2);
+        int size2 = i35 + i36 + (size * 2) + i38 + (mo1998getChatFrameBorderColorList().size() * 2);
         int i40 = size2;
         if (!getChatBadgeUrlBytes().isEmpty()) {
             i40 = size2 + GeneratedMessageV3.computeStringSize(23, this.chatBadgeUrl_);
@@ -3928,7 +3901,7 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
         while (true) {
             int i49 = i48;
             if (i49 >= this.bgColor_.size()) {
-                int size3 = i46 + i47 + (getBgColorList().size() * 2) + this.unknownFields.getSerializedSize();
+                int size3 = i46 + i47 + (mo1997getBgColorList().size() * 2) + this.unknownFields.getSerializedSize();
                 this.memoizedSize = size3;
                 return size3;
             }
@@ -3942,7 +3915,6 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
         return this.targetUid_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
     public final UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
     }
@@ -3952,7 +3924,6 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
         return this.width_;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public int hashCode() {
         if (this.memoizedHashCode != 0) {
             return this.memoizedHashCode;
@@ -3965,28 +3936,26 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
         int width = (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((i * 37) + 2) * 53) + getWidth()) * 37) + 3) * 53) + getHeight()) * 37) + 4) * 53) + getPayToken().hashCode()) * 37) + 5) * 53) + getPayCode().hashCode()) * 37) + 6) * 53) + getDiscountId()) * 37) + 7) * 53) + getRememberMe()) * 37) + 8) * 53) + getTargetUid()) * 37) + 9) * 53) + getLiveId()) * 37) + 10) * 53) + getFanClubName().hashCode()) * 37) + 11) * 53) + getFanClubLevel()) * 37) + 12) * 53) + getInFanClub()) * 37) + 13) * 53) + getFansStatus()) * 37) + 14) * 53) + getLiangId()) * 37) + 15) * 53) + getLiangType()) * 37) + 16) * 53) + Internal.hashLong(getBeansCurrentCount())) * 37) + 17) * 53) + getChatFrame().hashCode()) * 37) + 18) * 53) + getChatFrameIcon().hashCode()) * 37) + 19) * 53) + getChatFrameColorType()) * 37) + 20) * 53) + getChatFrameGradientType();
         int i2 = width;
         if (getChatFrameFrameColorCount() > 0) {
-            i2 = (((width * 37) + 21) * 53) + getChatFrameFrameColorList().hashCode();
+            i2 = (((width * 37) + 21) * 53) + mo1999getChatFrameFrameColorList().hashCode();
         }
         int i3 = i2;
         if (getChatFrameBorderColorCount() > 0) {
-            i3 = (((i2 * 37) + 22) * 53) + getChatFrameBorderColorList().hashCode();
+            i3 = (((i2 * 37) + 22) * 53) + mo1998getChatFrameBorderColorList().hashCode();
         }
         int hashCode2 = (((((((((((((((((((i3 * 37) + 23) * 53) + getChatBadgeUrl().hashCode()) * 37) + 24) * 53) + getChatBadgeLength()) * 37) + 25) * 53) + getChatBadgeHeight()) * 37) + 26) * 53) + getAvatarFrameUrl().hashCode()) * 37) + 27) * 53) + getBgImg().hashCode();
         int i4 = hashCode2;
         if (getBgColorCount() > 0) {
-            i4 = (((hashCode2 * 37) + 28) * 53) + getBgColorList().hashCode();
+            i4 = (((hashCode2 * 37) + 28) * 53) + mo1997getBgColorList().hashCode();
         }
         int hashCode3 = (i4 * 29) + this.unknownFields.hashCode();
         this.memoizedHashCode = hashCode3;
         return hashCode3;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
         return LiveConstants.internal_static_cn_irisgw_live_DrawGoods_fieldAccessorTable.ensureFieldAccessorsInitialized(DrawGoods.class, Builder.class);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
     public final boolean isInitialized() {
         byte b = this.memoizedIsInitialized;
         if (b == 1) {
@@ -3999,28 +3968,26 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
         return true;
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder newBuilderForType() {
+    /* renamed from: newBuilderForType */
+    public Builder m2004newBuilderForType() {
         return newBuilder();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.protobuf.GeneratedMessageV3
-    public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+    /* renamed from: newBuilderForType */
+    public Builder m2003newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
         return new Builder(builderParent);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
         return new DrawGoods();
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder toBuilder() {
+    /* renamed from: toBuilder */
+    public Builder m2006toBuilder() {
         return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
         int i = 0;
         while (true) {
@@ -4085,7 +4052,7 @@ public final class DrawGoods extends GeneratedMessageV3 implements DrawGoodsOrBu
             codedOutputStream.writeUInt32(15, i13);
         }
         long j = this.beansCurrentCount_;
-        if (j != 0) {
+        if (j != serialVersionUID) {
             codedOutputStream.writeUInt64(16, j);
         }
         if (!getChatFrameBytes().isEmpty()) {

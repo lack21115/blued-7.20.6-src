@@ -1,7 +1,6 @@
 package com.blued.android.module.common.db;
 
 import android.database.Cursor;
-import android.speech.tts.TextToSpeech;
 import android.text.TextUtils;
 import android.util.Log;
 import com.blued.android.chat.ChatManager;
@@ -9,7 +8,6 @@ import com.blued.android.chat.model.ChattingModel;
 import com.blued.android.module.common.db.model.ChattingModelDB;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import com.huawei.hms.push.constant.RemoteMessageConst;
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.stmt.QueryBuilder;
 import com.j256.ormlite.stmt.UpdateBuilder;
@@ -24,12 +22,8 @@ import java.util.concurrent.Callable;
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/db/ChattingDao.class */
 public class ChattingDao {
     private static ChattingDao b;
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f10769a = ChattingDao.class.getSimpleName();
-
-    /* renamed from: c  reason: collision with root package name */
-    private Dao<ChattingModelDB, Integer> f10770c;
+    private String a = ChattingDao.class.getSimpleName();
+    private Dao<ChattingModelDB, Integer> c;
 
     public static ChattingDao a() {
         if (b == null) {
@@ -50,19 +44,19 @@ public class ChattingDao {
     public /* synthetic */ Void b(List list) throws Exception {
         Iterator it = list.iterator();
         while (it.hasNext()) {
-            this.f10770c.create(DataTransform.a((ChattingModel) it.next()));
+            this.c.create(DataTransform.a((ChattingModel) it.next()));
         }
         return null;
     }
 
     public int a(int i, long j) {
-        UpdateBuilder<ChattingModelDB, Integer> updateBuilder = b().updateBuilder();
+        UpdateBuilder updateBuilder = b().updateBuilder();
         try {
             updateBuilder.updateColumnValue("msgTextTranslateIsShow", 0);
             updateBuilder.updateColumnValue("msgTextTranslateContent", "");
             updateBuilder.updateColumnValue("msgTextTranslateStatus", 0);
-            Where<ChattingModelDB, Integer> where = updateBuilder.where();
-            where.and(where.eq("loadName", Long.valueOf(ChatManager.userInfo.uid)), where.eq("sessionType", Integer.valueOf(i)), where.eq(TextToSpeech.Engine.KEY_PARAM_SESSION_ID, Long.valueOf(j)), where.eq("msgTextTranslateStatus", (short) 1));
+            Where where = updateBuilder.where();
+            where.and(where.eq("loadName", Long.valueOf(ChatManager.userInfo.uid)), where.eq("sessionType", Integer.valueOf(i)), new Where[]{where.eq("sessionId", Long.valueOf(j)), where.eq("msgTextTranslateStatus", (short) 1)});
             return updateBuilder.update();
         } catch (Exception e) {
             e.printStackTrace();
@@ -81,7 +75,7 @@ public class ChattingDao {
 
     public int a(ChattingModelDB chattingModelDB) {
         try {
-            return b().update((Dao<ChattingModelDB, Integer>) chattingModelDB);
+            return b().update(chattingModelDB);
         } catch (Exception e) {
             e.printStackTrace();
             return -1;
@@ -103,7 +97,7 @@ public class ChattingDao {
 
     public int a(final List<ChattingModel> list) {
         try {
-            this.f10770c.callBatchTasks(new Callable() { // from class: com.blued.android.module.common.db.-$$Lambda$ChattingDao$KEGlb_uz_BTUzl4b7Ax4KVcxiLQ
+            this.c.callBatchTasks(new Callable() { // from class: com.blued.android.module.common.db.-$$Lambda$ChattingDao$KEGlb_uz_BTUzl4b7Ax4KVcxiLQ
                 @Override // java.util.concurrent.Callable
                 public final Object call() {
                     Void b2;
@@ -121,9 +115,9 @@ public class ChattingDao {
     public int a(short s, long j) {
         int i;
         try {
-            QueryBuilder<ChattingModelDB, Integer> queryBuilder = b().queryBuilder();
-            Where<ChattingModelDB, Integer> where = queryBuilder.where();
-            where.and(where.eq("loadName", Long.valueOf(ChatManager.userInfo.uid)), where.eq("sessionType", Short.valueOf(s)), where.eq(TextToSpeech.Engine.KEY_PARAM_SESSION_ID, Long.valueOf(j)));
+            QueryBuilder queryBuilder = b().queryBuilder();
+            Where where = queryBuilder.where();
+            where.and(where.eq("loadName", Long.valueOf(ChatManager.userInfo.uid)), where.eq("sessionType", Short.valueOf(s)), new Where[]{where.eq("sessionId", Long.valueOf(j))});
             List<ChattingModelDB> query = queryBuilder.query();
             i = 0;
             if (query != null) {
@@ -148,7 +142,7 @@ public class ChattingDao {
                                     Log.e("xxx", e.toString());
                                 }
                                 Log.i("xxx", " --> msgModel =" + chattingModelDB);
-                                if (b().update((Dao<ChattingModelDB, Integer>) chattingModelDB) > -1) {
+                                if (b().update(chattingModelDB) > -1) {
                                     i++;
                                 }
                             }
@@ -183,15 +177,15 @@ public class ChattingDao {
 
     public ChattingModelDB a(long j, short s, long j2) {
         try {
-            QueryBuilder<ChattingModelDB, Integer> queryBuilder = b().queryBuilder();
-            Where<ChattingModelDB, Integer> where = queryBuilder.where();
-            where.and(where.eq("loadName", Long.valueOf(ChatManager.userInfo.uid)), where.eq("msgLocalId", Long.valueOf(j)), where.eq("sessionType", Short.valueOf(s)), where.eq(TextToSpeech.Engine.KEY_PARAM_SESSION_ID, Long.valueOf(j2)));
-            List<ChattingModelDB> query = queryBuilder.query();
+            QueryBuilder queryBuilder = b().queryBuilder();
+            Where where = queryBuilder.where();
+            where.and(where.eq("loadName", Long.valueOf(ChatManager.userInfo.uid)), where.eq("msgLocalId", Long.valueOf(j)), new Where[]{where.eq("sessionType", Short.valueOf(s)), where.eq("sessionId", Long.valueOf(j2))});
+            List query = queryBuilder.query();
             ChattingModelDB chattingModelDB = null;
             if (query != null) {
                 chattingModelDB = null;
                 if (query.size() > 0) {
-                    chattingModelDB = query.get(0);
+                    chattingModelDB = (ChattingModelDB) query.get(0);
                 }
             }
             return chattingModelDB;
@@ -203,15 +197,15 @@ public class ChattingDao {
 
     public ChattingModelDB a(short s, long j, long j2, long j3) {
         try {
-            QueryBuilder<ChattingModelDB, Integer> queryBuilder = b().queryBuilder();
-            Where<ChattingModelDB, Integer> where = queryBuilder.where();
-            where.and(where.eq("loadName", Long.valueOf(ChatManager.userInfo.uid)), where.eq("sessionType", Short.valueOf(s)), where.eq(TextToSpeech.Engine.KEY_PARAM_SESSION_ID, Long.valueOf(j)), where.eq(RemoteMessageConst.MSGID, Long.valueOf(j2)), where.eq("msgLocalId", Long.valueOf(j3)));
-            List<ChattingModelDB> query = queryBuilder.query();
+            QueryBuilder queryBuilder = b().queryBuilder();
+            Where where = queryBuilder.where();
+            where.and(where.eq("loadName", Long.valueOf(ChatManager.userInfo.uid)), where.eq("sessionType", Short.valueOf(s)), new Where[]{where.eq("sessionId", Long.valueOf(j)), where.eq("msgId", Long.valueOf(j2)), where.eq("msgLocalId", Long.valueOf(j3))});
+            List query = queryBuilder.query();
             ChattingModelDB chattingModelDB = null;
             if (query != null) {
                 chattingModelDB = null;
                 if (query.size() > 0) {
-                    chattingModelDB = query.get(0);
+                    chattingModelDB = (ChattingModelDB) query.get(0);
                 }
             }
             return chattingModelDB;
@@ -223,14 +217,14 @@ public class ChattingDao {
 
     public List<ChattingModelDB> a(int i, long j, long j2, long j3, long j4, long j5) {
         try {
-            QueryBuilder<ChattingModelDB, Integer> queryBuilder = b().queryBuilder();
-            Where<ChattingModelDB, Integer> where = queryBuilder.where();
+            QueryBuilder queryBuilder = b().queryBuilder();
+            Where where = queryBuilder.where();
             if (j2 == 0 && j3 == 0 && j4 == 0) {
-                where.and(where.eq("sessionType", Integer.valueOf(i)), where.eq("loadName", Long.valueOf(ChatManager.userInfo.uid)), where.eq(TextToSpeech.Engine.KEY_PARAM_SESSION_ID, Long.valueOf(j)));
+                where.and(where.eq("sessionType", Integer.valueOf(i)), where.eq("loadName", Long.valueOf(ChatManager.userInfo.uid)), new Where[]{where.eq("sessionId", Long.valueOf(j))});
             } else {
-                where.and(where.eq("sessionType", Integer.valueOf(i)), where.eq("loadName", Long.valueOf(ChatManager.userInfo.uid)), where.eq(TextToSpeech.Engine.KEY_PARAM_SESSION_ID, Long.valueOf(j)), where.or(where.lt(RemoteMessageConst.MSGID, Long.valueOf(j2)), where.and(where.eq(RemoteMessageConst.MSGID, Long.valueOf(j2)), where.lt("msgLocalId", Long.valueOf(j3)), new Where[0]), where.and(where.eq(RemoteMessageConst.MSGID, 0), where.lt("msgLocalId", Long.valueOf(j3)), new Where[0]), where.and(where.eq(RemoteMessageConst.MSGID, 0), where.eq("msgLocalId", 0), where.lt("msgTimestamp", Long.valueOf(j4)))));
+                where.and(where.eq("sessionType", Integer.valueOf(i)), where.eq("loadName", Long.valueOf(ChatManager.userInfo.uid)), new Where[]{where.eq("sessionId", Long.valueOf(j)), where.or(where.lt("msgId", Long.valueOf(j2)), where.and(where.eq("msgId", Long.valueOf(j2)), where.lt("msgLocalId", Long.valueOf(j3)), new Where[0]), new Where[]{where.and(where.eq("msgId", 0), where.lt("msgLocalId", Long.valueOf(j3)), new Where[0]), where.and(where.eq("msgId", 0), where.eq("msgLocalId", 0), new Where[]{where.lt("msgTimestamp", Long.valueOf(j4))})})});
             }
-            queryBuilder.orderBy(RemoteMessageConst.MSGID, false);
+            queryBuilder.orderBy("msgId", false);
             queryBuilder.orderBy("msgLocalId", false);
             queryBuilder.orderBy("msgTimestamp", false);
             queryBuilder.orderBy("id", false);
@@ -244,12 +238,12 @@ public class ChattingDao {
 
     public List<ChattingModelDB> a(int i, String str, long j, long j2, long j3) {
         try {
-            QueryBuilder<ChattingModelDB, Integer> queryBuilder = b().queryBuilder();
-            Where<ChattingModelDB, Integer> where = queryBuilder.where();
+            QueryBuilder queryBuilder = b().queryBuilder();
+            Where where = queryBuilder.where();
             if (j == 0 || j2 == 0) {
-                where.and(where.eq("sessionType", Integer.valueOf(i)), where.eq("loadName", Long.valueOf(ChatManager.userInfo.uid)), where.in(TextToSpeech.Engine.KEY_PARAM_SESSION_ID, str), where.in("msgType", "1,68"), where.ne("fromId", Long.valueOf(ChatManager.userInfo.uid)));
+                where.and(where.eq("sessionType", Integer.valueOf(i)), where.eq("loadName", Long.valueOf(ChatManager.userInfo.uid)), new Where[]{where.in("sessionId", new Object[]{str}), where.in("msgType", new Object[]{"1,68"}), where.ne("fromId", Long.valueOf(ChatManager.userInfo.uid))});
             } else {
-                where.and(where.eq("sessionType", Integer.valueOf(i)), where.eq("loadName", Long.valueOf(ChatManager.userInfo.uid)), where.ne("fromId", Long.valueOf(ChatManager.userInfo.uid)), where.in(TextToSpeech.Engine.KEY_PARAM_SESSION_ID, str), where.in("msgType", "1,68"), where.le("msgTimestamp", Long.valueOf(j2)));
+                where.and(where.eq("sessionType", Integer.valueOf(i)), where.eq("loadName", Long.valueOf(ChatManager.userInfo.uid)), new Where[]{where.ne("fromId", Long.valueOf(ChatManager.userInfo.uid)), where.in("sessionId", new Object[]{str}), where.in("msgType", new Object[]{"1,68"}), where.le("msgTimestamp", Long.valueOf(j2))});
             }
             queryBuilder.orderBy("msgTimestamp", false);
             queryBuilder.limit(Long.valueOf(j3));
@@ -262,9 +256,9 @@ public class ChattingDao {
 
     public Set<Long> a(int i, long j, long j2) {
         try {
-            QueryBuilder<ChattingModelDB, Integer> queryBuilder = b().queryBuilder();
-            Where<ChattingModelDB, Integer> where = queryBuilder.where();
-            where.and(where.eq("loadName", Long.valueOf(ChatManager.userInfo.uid)), where.eq("sessionType", Integer.valueOf(i)), where.eq(TextToSpeech.Engine.KEY_PARAM_SESSION_ID, Long.valueOf(j)), where.notIn("fromId", Long.valueOf(ChatManager.userInfo.uid)), where.eq("msgStateCode", (short) 4));
+            QueryBuilder queryBuilder = b().queryBuilder();
+            Where where = queryBuilder.where();
+            where.and(where.eq("loadName", Long.valueOf(ChatManager.userInfo.uid)), where.eq("sessionType", Integer.valueOf(i)), new Where[]{where.eq("sessionId", Long.valueOf(j)), where.notIn("fromId", new Object[]{Long.valueOf(ChatManager.userInfo.uid)}), where.eq("msgStateCode", (short) 4)});
             queryBuilder.limit(Long.valueOf(j2));
             List<ChattingModelDB> query = queryBuilder.query();
             HashSet hashSet = new HashSet();
@@ -283,7 +277,7 @@ public class ChattingDao {
             return false;
         }
         try {
-            List<ChattingModelDB> query = b().queryBuilder().where().eq("loadName", Long.valueOf(ChatManager.userInfo.uid)).and().eq("sessionType", Short.valueOf(s)).and().eq(TextToSpeech.Engine.KEY_PARAM_SESSION_ID, Long.valueOf(j)).and().eq(RemoteMessageConst.MSGID, Long.valueOf(j2)).query();
+            List query = b().queryBuilder().where().eq("loadName", Long.valueOf(ChatManager.userInfo.uid)).and().eq("sessionType", Short.valueOf(s)).and().eq("sessionId", Long.valueOf(j)).and().eq("msgId", Long.valueOf(j2)).query();
             boolean z = false;
             if (query != null) {
                 z = false;
@@ -309,25 +303,25 @@ public class ChattingDao {
 
     public Dao<ChattingModelDB, Integer> b() {
         try {
-            if (this.f10770c == null) {
-                this.f10770c = BluedBaseDataHelper.a().getDao(ChattingModelDB.class);
+            if (this.c == null) {
+                this.c = BluedBaseDataHelper.a().getDao(ChattingModelDB.class);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return this.f10770c;
+        return this.c;
     }
 
     public List<ChattingModelDB> b(int i, long j, long j2, long j3, long j4, long j5) {
         try {
-            QueryBuilder<ChattingModelDB, Integer> queryBuilder = b().queryBuilder();
-            Where<ChattingModelDB, Integer> where = queryBuilder.where();
+            QueryBuilder queryBuilder = b().queryBuilder();
+            Where where = queryBuilder.where();
             if (j2 == 0 && j3 == 0 && j4 == 0) {
-                where.and(where.eq("sessionType", Integer.valueOf(i)), where.eq("loadName", Long.valueOf(ChatManager.userInfo.uid)), where.eq(TextToSpeech.Engine.KEY_PARAM_SESSION_ID, Long.valueOf(j)));
+                where.and(where.eq("sessionType", Integer.valueOf(i)), where.eq("loadName", Long.valueOf(ChatManager.userInfo.uid)), new Where[]{where.eq("sessionId", Long.valueOf(j))});
             } else {
-                where.and(where.eq("sessionType", Integer.valueOf(i)), where.eq("loadName", Long.valueOf(ChatManager.userInfo.uid)), where.eq(TextToSpeech.Engine.KEY_PARAM_SESSION_ID, Long.valueOf(j)), where.or(where.ge(RemoteMessageConst.MSGID, Long.valueOf(j2)), where.and(where.eq(RemoteMessageConst.MSGID, 0), where.ge("msgLocalId", Long.valueOf(j3)), new Where[0]), where.and(where.eq(RemoteMessageConst.MSGID, 0), where.eq("msgLocalId", 0), where.ge("msgTimestamp", Long.valueOf(j4)))));
+                where.and(where.eq("sessionType", Integer.valueOf(i)), where.eq("loadName", Long.valueOf(ChatManager.userInfo.uid)), new Where[]{where.eq("sessionId", Long.valueOf(j)), where.or(where.ge("msgId", Long.valueOf(j2)), where.and(where.eq("msgId", 0), where.ge("msgLocalId", Long.valueOf(j3)), new Where[0]), new Where[]{where.and(where.eq("msgId", 0), where.eq("msgLocalId", 0), new Where[]{where.ge("msgTimestamp", Long.valueOf(j4))})})});
             }
-            queryBuilder.orderBy(RemoteMessageConst.MSGID, true);
+            queryBuilder.orderBy("msgId", true);
             queryBuilder.orderBy("msgLocalId", true);
             queryBuilder.orderBy("msgTimestamp", true);
             queryBuilder.limit(Long.valueOf(j5));
@@ -372,20 +366,20 @@ public class ChattingDao {
     }
 
     public ChattingModelDB c(int i, long j) {
-        QueryBuilder<ChattingModelDB, Integer> queryBuilder = b().queryBuilder();
-        Where<ChattingModelDB, Integer> where = queryBuilder.where();
+        QueryBuilder queryBuilder = b().queryBuilder();
+        Where where = queryBuilder.where();
         try {
-            where.and(where.eq("sessionType", Integer.valueOf(i)), where.eq("loadName", Long.valueOf(ChatManager.userInfo.uid)), where.eq(TextToSpeech.Engine.KEY_PARAM_SESSION_ID, Long.valueOf(j)));
-            queryBuilder.orderBy(RemoteMessageConst.MSGID, false);
+            where.and(where.eq("sessionType", Integer.valueOf(i)), where.eq("loadName", Long.valueOf(ChatManager.userInfo.uid)), new Where[]{where.eq("sessionId", Long.valueOf(j))});
+            queryBuilder.orderBy("msgId", false);
             queryBuilder.orderBy("msgLocalId", false);
             queryBuilder.orderBy("msgTimestamp", false);
             queryBuilder.orderBy("id", false);
-            queryBuilder.limit((Long) 1L);
-            List<ChattingModelDB> query = queryBuilder.query();
+            queryBuilder.limit(1L);
+            List query = queryBuilder.query();
             if (query == null || query.size() <= 0) {
                 return null;
             }
-            return query.get(0);
+            return (ChattingModelDB) query.get(0);
         } catch (Throwable th) {
             return null;
         }
@@ -435,20 +429,20 @@ public class ChattingDao {
     }
 
     public ChattingModelDB e(int i, long j) {
-        QueryBuilder<ChattingModelDB, Integer> queryBuilder = b().queryBuilder();
-        Where<ChattingModelDB, Integer> where = queryBuilder.where();
+        QueryBuilder queryBuilder = b().queryBuilder();
+        Where where = queryBuilder.where();
         try {
-            where.and(where.eq("sessionType", Integer.valueOf(i)), where.eq("loadName", Long.valueOf(ChatManager.userInfo.uid)), where.eq(TextToSpeech.Engine.KEY_PARAM_SESSION_ID, Long.valueOf(j)), where.and(where.ne("msgType", (short) 24), where.ne("msgType", (short) 25), where.ne("msgType", (short) 3), where.ne("identifyYellow", 1)));
-            queryBuilder.orderBy(RemoteMessageConst.MSGID, false);
+            where.and(where.eq("sessionType", Integer.valueOf(i)), where.eq("loadName", Long.valueOf(ChatManager.userInfo.uid)), new Where[]{where.eq("sessionId", Long.valueOf(j)), where.and(where.ne("msgType", (short) 24), where.ne("msgType", (short) 25), new Where[]{where.ne("msgType", (short) 3), where.ne("identifyYellow", 1)})});
+            queryBuilder.orderBy("msgId", false);
             queryBuilder.orderBy("msgLocalId", false);
             queryBuilder.orderBy("msgTimestamp", false);
             queryBuilder.orderBy("id", false);
-            queryBuilder.limit((Long) 1L);
-            List<ChattingModelDB> query = queryBuilder.query();
+            queryBuilder.limit(1L);
+            List query = queryBuilder.query();
             if (query == null || query.size() <= 0) {
                 return null;
             }
-            return query.get(0);
+            return (ChattingModelDB) query.get(0);
         } catch (Throwable th) {
             return null;
         }

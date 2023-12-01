@@ -12,11 +12,11 @@ import java.util.List;
 public final class BDActivityManager implements Application.ActivityLifecycleCallbacks {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final BDActivityManager f34819a = new BDActivityManager();
+    public static final BDActivityManager f21128a = new BDActivityManager();
     private static final Object b = new Object();
 
     /* renamed from: c  reason: collision with root package name */
-    private Application f34820c;
+    private Application f21129c;
     private final List<Activity> d = new ArrayList();
     private final List<IActivityResumedCallback> e = new ArrayList();
     private final List<IActivityPausedCallback> f = new ArrayList();
@@ -65,11 +65,11 @@ public final class BDActivityManager implements Application.ActivityLifecycleCal
 
     public void a(Application application, Activity activity) {
         Log.d("ActivityManager", "init");
-        Application application2 = this.f34820c;
+        Application application2 = this.f21129c;
         if (application2 != null) {
             application2.unregisterActivityLifecycleCallbacks(this);
         }
-        this.f34820c = application;
+        this.f21129c = application;
         b(activity);
         application.registerActivityLifecycleCallbacks(this);
     }

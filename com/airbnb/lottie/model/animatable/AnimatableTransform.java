@@ -10,13 +10,9 @@ import com.airbnb.lottie.model.layer.BaseLayer;
 
 /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/model/animatable/AnimatableTransform.class */
 public class AnimatableTransform implements ModifierContent, ContentModel {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final AnimatablePathValue f4332a;
+    private final AnimatablePathValue a;
     private final AnimatableValue<PointF, PointF> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final AnimatableScaleValue f4333c;
+    private final AnimatableScaleValue c;
     private final AnimatableFloatValue d;
     private final AnimatableIntegerValue e;
     private final AnimatableFloatValue f;
@@ -29,9 +25,9 @@ public class AnimatableTransform implements ModifierContent, ContentModel {
     }
 
     public AnimatableTransform(AnimatablePathValue animatablePathValue, AnimatableValue<PointF, PointF> animatableValue, AnimatableScaleValue animatableScaleValue, AnimatableFloatValue animatableFloatValue, AnimatableIntegerValue animatableIntegerValue, AnimatableFloatValue animatableFloatValue2, AnimatableFloatValue animatableFloatValue3, AnimatableFloatValue animatableFloatValue4, AnimatableFloatValue animatableFloatValue5) {
-        this.f4332a = animatablePathValue;
+        this.a = animatablePathValue;
         this.b = animatableValue;
-        this.f4333c = animatableScaleValue;
+        this.c = animatableScaleValue;
         this.d = animatableFloatValue;
         this.e = animatableIntegerValue;
         this.h = animatableFloatValue2;
@@ -46,7 +42,7 @@ public class AnimatableTransform implements ModifierContent, ContentModel {
     }
 
     public AnimatablePathValue a() {
-        return this.f4332a;
+        return this.a;
     }
 
     public AnimatableValue<PointF, PointF> b() {
@@ -54,7 +50,7 @@ public class AnimatableTransform implements ModifierContent, ContentModel {
     }
 
     public AnimatableScaleValue c() {
-        return this.f4333c;
+        return this.c;
     }
 
     public AnimatableFloatValue d() {

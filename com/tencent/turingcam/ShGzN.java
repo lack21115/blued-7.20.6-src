@@ -10,10 +10,10 @@ import java.util.Map;
 public class ShGzN {
 
     /* renamed from: a  reason: collision with root package name */
-    private ByteBuffer f39817a;
+    private ByteBuffer f26126a;
 
     public ShGzN(int i) {
-        this.f39817a = ByteBuffer.allocate(i);
+        this.f26126a = ByteBuffer.allocate(i);
     }
 
     public void a(byte b, int i) {
@@ -23,14 +23,14 @@ public class ShGzN {
             return;
         }
         b((byte) 0, i);
-        this.f39817a.put(b);
+        this.f26126a.put(b);
     }
 
     public void a(int i) {
-        if (this.f39817a.remaining() < i) {
-            ByteBuffer allocate = ByteBuffer.allocate((this.f39817a.capacity() + i) * 2);
-            allocate.put(this.f39817a.array(), 0, this.f39817a.position());
-            this.f39817a = allocate;
+        if (this.f26126a.remaining() < i) {
+            ByteBuffer allocate = ByteBuffer.allocate((this.f26126a.capacity() + i) * 2);
+            allocate.put(this.f26126a.array(), 0, this.f26126a.position());
+            this.f26126a = allocate;
         }
     }
 
@@ -41,7 +41,7 @@ public class ShGzN {
             return;
         }
         b((byte) 2, i2);
-        this.f39817a.putInt(i);
+        this.f26126a.putInt(i);
     }
 
     public void a(long j, int i) {
@@ -51,7 +51,7 @@ public class ShGzN {
             return;
         }
         b((byte) 3, i);
-        this.f39817a.putLong(j);
+        this.f26126a.putLong(j);
     }
 
     public void a(SkEpO skEpO, int i) {
@@ -77,12 +77,12 @@ public class ShGzN {
             float floatValue = ((Float) obj).floatValue();
             a(6);
             b((byte) 4, i);
-            this.f39817a.putFloat(floatValue);
+            this.f26126a.putFloat(floatValue);
         } else if (obj instanceof Double) {
             double doubleValue = ((Double) obj).doubleValue();
             a(10);
             b((byte) 5, i);
-            this.f39817a.putDouble(doubleValue);
+            this.f26126a.putDouble(doubleValue);
         } else if (obj instanceof String) {
             a((String) obj, i);
         } else if (obj instanceof Map) {
@@ -168,7 +168,7 @@ public class ShGzN {
                 float f = fArr[i11];
                 a(6);
                 b((byte) 4, 0);
-                this.f39817a.putFloat(f);
+                this.f26126a.putFloat(f);
                 i10 = i11 + 1;
             }
         } else if (obj instanceof double[]) {
@@ -186,7 +186,7 @@ public class ShGzN {
                 double d = dArr[i13];
                 a(10);
                 b((byte) 5, 0);
-                this.f39817a.putDouble(d);
+                this.f26126a.putDouble(d);
                 i12 = i13 + 1;
             }
         } else if (!obj.getClass().isArray()) {
@@ -223,13 +223,13 @@ public class ShGzN {
         a(bytes.length + 10);
         if (bytes.length > 255) {
             b((byte) 7, i);
-            this.f39817a.putInt(bytes.length);
-            this.f39817a.put(bytes);
+            this.f26126a.putInt(bytes.length);
+            this.f26126a.put(bytes);
             return;
         }
         b((byte) 6, i);
-        this.f39817a.put((byte) bytes.length);
-        this.f39817a.put(bytes);
+        this.f26126a.put((byte) bytes.length);
+        this.f26126a.put(bytes);
     }
 
     public <T> void a(Collection<T> collection, int i) {
@@ -262,7 +262,7 @@ public class ShGzN {
             return;
         }
         b((byte) 1, i);
-        this.f39817a.putShort(s);
+        this.f26126a.putShort(s);
     }
 
     public void a(byte[] bArr, int i) {
@@ -270,23 +270,23 @@ public class ShGzN {
         b((byte) 13, i);
         b((byte) 0, 0);
         a(bArr.length, 0);
-        this.f39817a.put(bArr);
+        this.f26126a.put(bArr);
     }
 
     public byte[] a() {
-        byte[] bArr = new byte[this.f39817a.position()];
-        System.arraycopy((Object) this.f39817a.array(), 0, (Object) bArr, 0, this.f39817a.position());
+        byte[] bArr = new byte[this.f26126a.position()];
+        System.arraycopy(this.f26126a.array(), 0, bArr, 0, this.f26126a.position());
         return bArr;
     }
 
     public void b(byte b, int i) {
         if (i < 15) {
-            this.f39817a.put((byte) (b | (i << 4)));
+            this.f26126a.put((byte) (b | (i << 4)));
         } else if (i >= 256) {
             throw new spXPg("tag is too large: " + i);
         } else {
-            this.f39817a.put((byte) (b | 240));
-            this.f39817a.put((byte) i);
+            this.f26126a.put((byte) (b | 240));
+            this.f26126a.put((byte) i);
         }
     }
 }

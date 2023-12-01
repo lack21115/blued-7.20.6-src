@@ -22,7 +22,6 @@ public final class PersistableBundle extends BaseBundle implements Cloneable, Pa
         MyReadMapCallback() {
         }
 
-        @Override // com.android.internal.util.XmlUtils.ReadMapCallback
         public Object readThisUnknownObjectXml(XmlPullParser xmlPullParser, String str) throws XmlPullParserException, IOException {
             if (PersistableBundle.TAG_PERSISTABLEMAP.equals(str)) {
                 return PersistableBundle.restoreFromXml(xmlPullParser);
@@ -148,7 +147,6 @@ public final class PersistableBundle extends BaseBundle implements Cloneable, Pa
         }
     }
 
-    @Override // com.android.internal.util.XmlUtils.WriteMapCallback
     public void writeUnknownObject(Object obj, String str, XmlSerializer xmlSerializer) throws XmlPullParserException, IOException {
         if (!(obj instanceof PersistableBundle)) {
             throw new XmlPullParserException("Unknown Object o=" + obj);

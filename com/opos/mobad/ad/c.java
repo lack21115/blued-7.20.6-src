@@ -14,11 +14,11 @@ public interface c {
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public final boolean f25670a;
+        public final boolean f11982a;
         public final String b;
 
         public a(boolean z, String str) {
-            this.f25670a = z;
+            this.f11982a = z;
             this.b = str;
         }
     }

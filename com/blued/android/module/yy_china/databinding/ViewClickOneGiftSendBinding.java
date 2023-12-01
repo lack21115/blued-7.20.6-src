@@ -13,13 +13,9 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ViewClickOneGiftSendBinding.class */
 public final class ViewClickOneGiftSendBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ShapeTextView f16844a;
+    public final ShapeTextView a;
     public final ShapeTextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f16845c;
+    public final ImageView c;
     public final SquareImageView d;
     public final SquareImageView e;
     public final ConstraintLayout f;
@@ -30,9 +26,9 @@ public final class ViewClickOneGiftSendBinding implements ViewBinding {
 
     private ViewClickOneGiftSendBinding(View view, ShapeTextView shapeTextView, ShapeTextView shapeTextView2, ImageView imageView, SquareImageView squareImageView, SquareImageView squareImageView2, ConstraintLayout constraintLayout, ConstraintLayout constraintLayout2, TextView textView, TextView textView2) {
         this.j = view;
-        this.f16844a = shapeTextView;
+        this.a = shapeTextView;
         this.b = shapeTextView2;
-        this.f16845c = imageView;
+        this.c = imageView;
         this.d = squareImageView;
         this.e = squareImageView2;
         this.f = constraintLayout;
@@ -61,15 +57,15 @@ public final class ViewClickOneGiftSendBinding implements ViewBinding {
                     if (squareImageView != null) {
                         SquareImageView squareImageView2 = (SquareImageView) view.findViewById(R.id.iv_theme_gift_icn);
                         if (squareImageView2 != null) {
-                            ConstraintLayout constraintLayout = (ConstraintLayout) view.findViewById(R.id.ll_single_gift);
-                            if (constraintLayout != null) {
-                                ConstraintLayout constraintLayout2 = (ConstraintLayout) view.findViewById(R.id.ll_wish_content);
-                                if (constraintLayout2 != null) {
+                            ConstraintLayout findViewById = view.findViewById(R.id.ll_single_gift);
+                            if (findViewById != null) {
+                                ConstraintLayout findViewById2 = view.findViewById(R.id.ll_wish_content);
+                                if (findViewById2 != null) {
                                     TextView textView = (TextView) view.findViewById(R.id.tv_got_count);
                                     if (textView != null) {
                                         TextView textView2 = (TextView) view.findViewById(R.id.tv_total_count);
                                         if (textView2 != null) {
-                                            return new ViewClickOneGiftSendBinding(view, shapeTextView, shapeTextView2, imageView, squareImageView, squareImageView2, constraintLayout, constraintLayout2, textView, textView2);
+                                            return new ViewClickOneGiftSendBinding(view, shapeTextView, shapeTextView2, imageView, squareImageView, squareImageView2, findViewById, findViewById2, textView, textView2);
                                         }
                                         str = "tvTotalCount";
                                     } else {
@@ -99,7 +95,6 @@ public final class ViewClickOneGiftSendBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     public View getRoot() {
         return this.j;
     }

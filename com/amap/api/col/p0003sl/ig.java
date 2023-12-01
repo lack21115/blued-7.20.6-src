@@ -3,6 +3,7 @@ package com.amap.api.col.p0003sl;
 import android.content.Context;
 import android.text.TextUtils;
 import com.amap.api.col.p0003sl.hs;
+import com.android.dex.DexFormat;
 import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.Locale;
@@ -13,13 +14,9 @@ import org.json.JSONObject;
 /* renamed from: com.amap.api.col.3sl.ig  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/ig.class */
 public final class ig {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final String f5151a = ib.c("SRFZHZUVZT3BOa0ZiemZRQQ");
+    private static final String a = ib.c("SRFZHZUVZT3BOa0ZiemZRQQ");
     private static final String b = ib.c("FbGJzX3Nkaw");
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final String f5152c = ib.c("SWjJuYVh2eEMwSzVmNklFSmh0UXpVb2xtOVM4eU9Ua3E");
+    private static final String c = ib.c("SWjJuYVh2eEMwSzVmNklFSmh0UXpVb2xtOVM4eU9Ua3E");
     private static final String d = ib.c("FQU5EU0RLMTA");
     private static final String e = ib.c("FMTAw");
     private static boolean f = false;
@@ -27,9 +24,7 @@ public final class ig {
 
     public static hs.a a() {
         return new hs.a() { // from class: com.amap.api.col.3sl.ig.1
-
-            /* renamed from: a  reason: collision with root package name */
-            private ig f5153a = new ig();
+            private ig a = new ig();
 
             @Override // com.amap.api.col.p0003sl.hs.a
             public final kb a(byte[] bArr, Map<String, String> map) {
@@ -48,12 +43,12 @@ public final class ig {
 
             @Override // com.amap.api.col.p0003sl.hs.a
             public final String a(String str, String str2, String str3, String str4) {
-                return this.f5153a.a(str, str2, str3, str4);
+                return this.a.a(str, str2, str3, str4);
             }
 
             @Override // com.amap.api.col.p0003sl.hs.a
             public final Map<String, String> b() {
-                return this.f5153a.b();
+                return this.a.b();
             }
         };
     }
@@ -129,7 +124,7 @@ public final class ig {
         if (TextUtils.isEmpty(a2)) {
             return null;
         }
-        String a3 = ie.a(jq.a((jSONObject2 + "��").getBytes(), a2.getBytes()));
+        String a3 = ie.a(jq.a((jSONObject2 + DexFormat.MAGIC_SUFFIX).getBytes(), a2.getBytes()));
         if (TextUtils.isEmpty(a3)) {
             return null;
         }
@@ -159,12 +154,12 @@ public final class ig {
             stringBuffer.append(b);
             stringBuffer.append(d);
             stringBuffer.append(ib.c("FQA"));
-            stringBuffer.append(f5152c);
+            stringBuffer.append(c);
             String a2 = ij.a(stringBuffer.toString());
             sb.append(ib.c("FJnNpZ249"));
             sb.append(a2.toUpperCase(Locale.US));
-            sb.append(ib.c("SJm91dHB1dD1qc29u") + "��");
-            hashMap.put(ib.c("FaW4"), ie.a(jq.a(sb.toString().getBytes(), f5151a.getBytes())));
+            sb.append(ib.c("SJm91dHB1dD1qc29u") + DexFormat.MAGIC_SUFFIX);
+            hashMap.put(ib.c("FaW4"), ie.a(jq.a(sb.toString().getBytes(), a.getBytes())));
             hashMap.put(ib.c("Sa2V5dA"), e);
             return hashMap;
         }

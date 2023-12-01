@@ -3,6 +3,7 @@ package com.tencent.tmsbeacon.base.net.b;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import com.huawei.hms.framework.common.ContainerUtils;
 import com.tencent.tmsbeacon.a.c.f;
 import com.tencent.tmsbeacon.d.g;
 import com.tencent.tmsbeacon.pack.RequestPackage;
@@ -15,7 +16,7 @@ import java.util.Map;
 public final class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Map<String, String> f39503a;
+    private static Map<String, String> f25812a;
 
     public static RequestPackage a(int i, byte[] bArr, Map<String, String> map, String str) {
         com.tencent.tmsbeacon.a.c.c d = com.tencent.tmsbeacon.a.c.c.d();
@@ -40,19 +41,19 @@ public final class d {
         Map<String, String> map;
         synchronized (d.class) {
             try {
-                if (f39503a == null) {
+                if (f25812a == null) {
                     HashMap hashMap = new HashMap(4);
-                    f39503a = hashMap;
+                    f25812a = hashMap;
                     hashMap.put("wup_version", "3.0");
-                    f39503a.put("TYPE_COMPRESS", String.valueOf(2));
-                    f39503a.put("encr_type", "rsapost");
-                    f39503a.put("Content-Type", "jce");
+                    f25812a.put("TYPE_COMPRESS", String.valueOf(2));
+                    f25812a.put("encr_type", "rsapost");
+                    f25812a.put("Content-Type", "jce");
                     g b = g.b();
                     if (b != null) {
-                        f39503a.put("bea_key", b.d());
+                        f25812a.put("bea_key", b.d());
                     }
                 }
-                map = f39503a;
+                map = f25812a;
             } catch (Throwable th) {
                 throw th;
             }
@@ -140,12 +141,12 @@ public final class d {
                 com.tencent.tmsbeacon.base.util.c.e("[core] '%s' should be ASCII code in 32-126!", key);
             } else {
                 String trim = key.trim();
-                sb.append("&");
-                sb.append(trim.replace("|", "%7C").replace("&", "%26").replace("=", "%3D"));
+                sb.append(ContainerUtils.FIELD_DELIMITER);
+                sb.append(trim.replace("|", "%7C").replace(ContainerUtils.FIELD_DELIMITER, "%26").replace("=", "%3D"));
                 sb.append("=");
                 String value = entry.getValue();
                 if (value != null) {
-                    sb.append(value.trim().replace('\n', ' ').replace('\r', ' ').replace("|", "%7C").replace("&", "%26").replace("=", "%3D"));
+                    sb.append(value.trim().replace('\n', ' ').replace('\r', ' ').replace("|", "%7C").replace(ContainerUtils.FIELD_DELIMITER, "%26").replace("=", "%3D"));
                 }
             }
         }

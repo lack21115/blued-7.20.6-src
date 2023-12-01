@@ -12,9 +12,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/AwaitAll.class */
 public final class AwaitAll<T> {
-
-    /* renamed from: a  reason: collision with root package name */
-    static final /* synthetic */ AtomicIntegerFieldUpdater f42776a = AtomicIntegerFieldUpdater.newUpdater(AwaitAll.class, "notCompletedCount");
+    static final /* synthetic */ AtomicIntegerFieldUpdater a = AtomicIntegerFieldUpdater.newUpdater(AwaitAll.class, "notCompletedCount");
     private final Deferred<T>[] b;
     volatile /* synthetic */ int notCompletedCount;
 
@@ -23,14 +21,12 @@ public final class AwaitAll<T> {
     /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/AwaitAll$AwaitAllNode.class */
     public final class AwaitAllNode extends JobNode {
         private volatile /* synthetic */ Object _disposer;
-
-        /* renamed from: a  reason: collision with root package name */
-        public DisposableHandle f42777a;
+        public DisposableHandle a;
         final /* synthetic */ AwaitAll<T> b;
         private final CancellableContinuation<List<? extends T>> d;
 
         public final DisposableHandle a() {
-            DisposableHandle disposableHandle = this.f42777a;
+            DisposableHandle disposableHandle = this.a;
             if (disposableHandle != null) {
                 return disposableHandle;
             }
@@ -41,9 +37,9 @@ public final class AwaitAll<T> {
         @Override // kotlinx.coroutines.CompletionHandlerBase
         public void a(Throwable th) {
             if (th != null) {
-                Object a2 = this.d.a(th);
-                if (a2 != null) {
-                    this.d.a(a2);
+                Object a = this.d.a(th);
+                if (a != null) {
+                    this.d.a(a);
                     AwaitAll<T>.DisposeHandlersOnCancel b = b();
                     if (b == null) {
                         return;
@@ -53,7 +49,7 @@ public final class AwaitAll<T> {
                 }
                 return;
             }
-            if (AwaitAll.f42776a.decrementAndGet(this.b) != 0) {
+            if (AwaitAll.a.decrementAndGet(this.b) != 0) {
                 return;
             }
             CancellableContinuation<List<? extends T>> cancellableContinuation = this.d;
@@ -65,7 +61,7 @@ public final class AwaitAll<T> {
                 int i2 = i;
                 if (i2 >= length) {
                     ArrayList arrayList2 = arrayList;
-                    Result.Companion companion = Result.f42293a;
+                    Result.Companion companion = Result.a;
                     cancellableContinuation.resumeWith(Result.f(arrayList2));
                     return;
                 }
@@ -81,7 +77,7 @@ public final class AwaitAll<T> {
         @Override // kotlin.jvm.functions.Function1
         public /* synthetic */ Unit invoke(Throwable th) {
             a(th);
-            return Unit.f42314a;
+            return Unit.a;
         }
     }
 
@@ -89,12 +85,10 @@ public final class AwaitAll<T> {
     @Metadata
     /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/AwaitAll$DisposeHandlersOnCancel.class */
     public final class DisposeHandlersOnCancel extends CancelHandler {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final AwaitAll<T>.AwaitAllNode[] f42778a;
+        private final AwaitAll<T>.AwaitAllNode[] a;
 
         public final void a() {
-            AwaitAll<T>.AwaitAllNode[] awaitAllNodeArr = this.f42778a;
+            AwaitAll<T>.AwaitAllNode[] awaitAllNodeArr = this.a;
             int length = awaitAllNodeArr.length;
             int i = 0;
             while (true) {
@@ -115,11 +109,11 @@ public final class AwaitAll<T> {
         @Override // kotlin.jvm.functions.Function1
         public /* synthetic */ Unit invoke(Throwable th) {
             a(th);
-            return Unit.f42314a;
+            return Unit.a;
         }
 
         public String toString() {
-            return "DisposeHandlersOnCancel[" + this.f42778a + ']';
+            return "DisposeHandlersOnCancel[" + this.a + ']';
         }
     }
 }

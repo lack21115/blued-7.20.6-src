@@ -198,7 +198,7 @@ public interface ImsConfigListener extends IInterface {
                     parcel.enforceInterface(DESCRIPTOR);
                     onSetWifiCallingPreference(parcel.readInt());
                     return true;
-                case IBinder.INTERFACE_TRANSACTION /* 1598968902 */:
+                case 1598968902:
                     parcel2.writeString(DESCRIPTOR);
                     return true;
                 default:

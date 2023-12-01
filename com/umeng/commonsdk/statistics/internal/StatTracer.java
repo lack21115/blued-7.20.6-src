@@ -2,6 +2,7 @@ package com.umeng.commonsdk.statistics.internal;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import com.ss.android.download.api.constant.BaseConstants;
 import com.umeng.commonsdk.statistics.common.MLog;
 
 /* loaded from: source-8829756-dex2jar.jar:com/umeng/commonsdk/statistics/internal/StatTracer.class */
@@ -21,19 +22,18 @@ public class StatTracer implements b {
     public long mLastSuccessfulRequestTime;
     public int mSuccessfulRequest;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8829756-dex2jar.jar:com/umeng/commonsdk/statistics/internal/StatTracer$a.class */
-    public static class a {
+    static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final StatTracer f40928a = new StatTracer();
+        public static final StatTracer f27237a = new StatTracer();
 
         private a() {
         }
     }
 
     private StatTracer() {
-        this.MAX_REQUEST_LIMIT = 3600000;
+        this.MAX_REQUEST_LIMIT = BaseConstants.Time.HOUR;
         this.lastRequestTime = 0L;
         this.firstActivateTime = 0L;
         init();
@@ -47,7 +47,7 @@ public class StatTracer implements b {
                 MLog.e("inside StatTracer. please check context. context must not be null!");
             }
         }
-        return a.f40928a;
+        return a.f27237a;
     }
 
     private void init() {

@@ -8,7 +8,7 @@ import java.util.Map;
 public class WebWrapper extends BaseWrapper {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f21546a = "wtic";
+    private static final String f7940a = "wtic";
 
     protected WebWrapper(Map<String, Object> map) {
         super(map);
@@ -44,7 +44,7 @@ public class WebWrapper extends BaseWrapper {
 
     public int getWebTitleIconColor() {
         try {
-            return getInt(f21546a);
+            return getInt(f7940a);
         } catch (ag e) {
             return 0;
         }
@@ -63,6 +63,6 @@ public class WebWrapper extends BaseWrapper {
     }
 
     public WebWrapper setWebTitleIconColor(int i) {
-        return (WebWrapper) set(f21546a, Integer.valueOf(i));
+        return (WebWrapper) set(f7940a, Integer.valueOf(i));
     }
 }

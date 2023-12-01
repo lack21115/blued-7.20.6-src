@@ -10,11 +10,11 @@ import java.util.List;
 public class h implements com.tencent.cloud.huiyansdkface.a.a.g<com.tencent.cloud.huiyansdkface.a.a.a.d> {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f35541a = h.class.getSimpleName();
+    private static final String f21850a = h.class.getSimpleName();
     private CamcorderProfile b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f35542c;
+    private int f21851c;
     private int d;
 
     private Camera.Size a(List<Camera.Size> list, int i, int i2) {
@@ -34,7 +34,7 @@ public class h implements com.tencent.cloud.huiyansdkface.a.a.g<com.tencent.clou
         }
         Camera.Size size3 = size;
         if (size == null) {
-            WLogger.i(f35541a, "No preview size match the aspect ratio");
+            WLogger.i(f21850a, "No preview size match the aspect ratio");
             Iterator<Camera.Size> it = list.iterator();
             double d3 = Double.MAX_VALUE;
             while (true) {
@@ -59,12 +59,12 @@ public class h implements com.tencent.cloud.huiyansdkface.a.a.g<com.tencent.clou
         if (r6 != null) goto L19;
      */
     /* JADX WARN: Code restructure failed: missing block: B:41:0x01ef, code lost:
-        r5.f35542c = r6.width;
+        r5.f21851c = r6.width;
         r5.d = r6.height;
      */
     /* JADX WARN: Code restructure failed: missing block: B:42:0x0202, code lost:
-        com.tencent.cloud.huiyansdkface.normal.tools.WLogger.i(com.tencent.cloud.huiyansdkface.facelight.c.a.h.f35541a, "do not find proper preview size, use default");
-        r5.f35542c = 640;
+        com.tencent.cloud.huiyansdkface.normal.tools.WLogger.i(com.tencent.cloud.huiyansdkface.facelight.c.a.h.f21850a, "do not find proper preview size, use default");
+        r5.f21851c = 640;
         r5.d = 480;
      */
     @Override // com.tencent.cloud.huiyansdkface.a.a.g

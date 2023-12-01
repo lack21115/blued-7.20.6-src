@@ -52,10 +52,10 @@ public final class e extends c<com.vivo.push.model.a> {
     }
 
     public final String c(String str) {
-        synchronized (f41067a) {
-            for (com.vivo.push.model.a aVar : this.b) {
-                if (!TextUtils.isEmpty(aVar.a()) && aVar.a().equals(str)) {
-                    return aVar.b();
+        synchronized (f27376a) {
+            for (T t : this.b) {
+                if (!TextUtils.isEmpty(t.a()) && t.a().equals(str)) {
+                    return t.b();
                 }
             }
             return null;

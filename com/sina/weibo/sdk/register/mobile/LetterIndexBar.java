@@ -59,9 +59,8 @@ public class LetterIndexBar extends View {
         this.mOrgTextSzie = ResourceManager.dp2px(getContext(), 13);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         String valueOf;
         char c2;
         super.onDraw(canvas);
@@ -123,9 +122,8 @@ public class LetterIndexBar extends View {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         int size = View.MeasureSpec.getSize(i2);
         int paddingTop = ((size - getPaddingTop()) - getPaddingBottom()) / this.count;
         this.mItemHeight = paddingTop;

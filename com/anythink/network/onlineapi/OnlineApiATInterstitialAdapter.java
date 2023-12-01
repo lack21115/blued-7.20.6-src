@@ -7,9 +7,9 @@ import com.anythink.basead.c.e;
 import com.anythink.basead.d.b;
 import com.anythink.basead.d.c;
 import com.anythink.basead.d.d;
+import com.anythink.basead.e.g;
 import com.anythink.core.api.ATInitMediation;
 import com.anythink.core.api.BaseAd;
-import com.anythink.core.common.b.g;
 import com.anythink.core.common.e.j;
 import com.anythink.interstitial.unitgroup.api.CustomInterstitialAdapter;
 import java.util.HashMap;
@@ -19,15 +19,15 @@ import java.util.Map;
 public class OnlineApiATInterstitialAdapter extends CustomInterstitialAdapter {
 
     /* renamed from: a  reason: collision with root package name */
-    j f9051a;
+    j f6211a;
     d b;
 
     /* renamed from: c  reason: collision with root package name */
-    String f9052c;
+    String f6212c;
     Map<String, Object> d;
 
     private void a(Context context, Map<String, Object> map) {
-        this.f9052c = map.get("unit_id") != null ? map.get("unit_id").toString() : "";
+        this.f6212c = map.get("unit_id") != null ? map.get("unit_id").toString() : "";
         int i = 0;
         if (map.containsKey("v_m")) {
             Object obj = map.get("v_m");
@@ -44,8 +44,8 @@ public class OnlineApiATInterstitialAdapter extends CustomInterstitialAdapter {
                 i2 = Integer.parseInt(obj2.toString());
             }
         }
-        this.f9051a = (j) map.get(g.k.f6515a);
-        d dVar = new d(context, b.a.ONLINE_API_OFFER_REQUEST_TYPE, this.f9051a);
+        this.f6211a = (j) map.get("basead_params");
+        d dVar = new d(context, b.a.b, this.f6211a);
         this.b = dVar;
         dVar.a(new c.a().a(i).b(i2).a());
         String stringFromMap = ATInitMediation.getStringFromMap(map, "unit_type");
@@ -55,7 +55,6 @@ public class OnlineApiATInterstitialAdapter extends CustomInterstitialAdapter {
         this.b.a(stringFromMap);
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public void destory() {
         d dVar = this.b;
         if (dVar != null) {
@@ -64,33 +63,27 @@ public class OnlineApiATInterstitialAdapter extends CustomInterstitialAdapter {
         }
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public Map<String, Object> getNetworkInfoMap() {
         return this.d;
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public String getNetworkName() {
         return "";
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public String getNetworkPlacementId() {
-        return this.f9052c;
+        return this.f6212c;
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public String getNetworkSDKVersion() {
         return "";
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public boolean initNetworkObjectByPlacementId(Context context, Map<String, Object> map, Map<String, Object> map2) {
         a(context, map);
         return true;
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public boolean isAdReady() {
         d dVar = this.b;
         boolean z = dVar != null && dVar.c();
@@ -100,11 +93,9 @@ public class OnlineApiATInterstitialAdapter extends CustomInterstitialAdapter {
         return z;
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public void loadCustomNetworkAd(Context context, Map<String, Object> map, Map<String, Object> map2) {
         a(context, map);
         this.b.a(new com.anythink.basead.e.c() { // from class: com.anythink.network.onlineapi.OnlineApiATInterstitialAdapter.2
-            @Override // com.anythink.basead.e.c
             public final void onAdCacheLoaded() {
                 OnlineApiATInterstitialAdapter onlineApiATInterstitialAdapter = OnlineApiATInterstitialAdapter.this;
                 onlineApiATInterstitialAdapter.d = com.anythink.basead.b.a(onlineApiATInterstitialAdapter.b);
@@ -113,14 +104,12 @@ public class OnlineApiATInterstitialAdapter extends CustomInterstitialAdapter {
                 }
             }
 
-            @Override // com.anythink.basead.e.c
             public final void onAdDataLoaded() {
                 if (OnlineApiATInterstitialAdapter.this.mLoadListener != null) {
                     OnlineApiATInterstitialAdapter.this.mLoadListener.onAdDataLoaded();
                 }
             }
 
-            @Override // com.anythink.basead.e.c
             public final void onAdLoadFailed(e eVar) {
                 if (OnlineApiATInterstitialAdapter.this.mLoadListener != null) {
                     OnlineApiATInterstitialAdapter.this.mLoadListener.onAdLoadError(eVar.a(), eVar.b());
@@ -134,9 +123,8 @@ public class OnlineApiATInterstitialAdapter extends CustomInterstitialAdapter {
         int g = com.anythink.core.common.k.d.g(activity);
         HashMap hashMap = new HashMap(1);
         hashMap.put("extra_scenario", this.mScenario);
-        hashMap.put(com.anythink.basead.f.c.j, Integer.valueOf(g));
-        this.b.a(new com.anythink.basead.e.g() { // from class: com.anythink.network.onlineapi.OnlineApiATInterstitialAdapter.1
-            @Override // com.anythink.basead.e.a
+        hashMap.put("extra_orientation", Integer.valueOf(g));
+        this.b.a(new g() { // from class: com.anythink.network.onlineapi.OnlineApiATInterstitialAdapter.1
             public final void onAdClick(int i) {
                 com.anythink.core.common.e.e trackingInfo = OnlineApiATInterstitialAdapter.this.getTrackingInfo();
                 if (trackingInfo != null) {
@@ -147,46 +135,39 @@ public class OnlineApiATInterstitialAdapter extends CustomInterstitialAdapter {
                 }
             }
 
-            @Override // com.anythink.basead.e.a
             public final void onAdClosed() {
                 if (OnlineApiATInterstitialAdapter.this.mImpressListener != null) {
                     OnlineApiATInterstitialAdapter.this.mImpressListener.onInterstitialAdClose();
                 }
             }
 
-            @Override // com.anythink.basead.e.a
             public final void onAdShow() {
                 if (OnlineApiATInterstitialAdapter.this.mImpressListener != null) {
                     OnlineApiATInterstitialAdapter.this.mImpressListener.onInterstitialAdShow();
                 }
             }
 
-            @Override // com.anythink.basead.e.a
             public final void onDeeplinkCallback(boolean z) {
                 if (OnlineApiATInterstitialAdapter.this.mImpressListener != null) {
                     OnlineApiATInterstitialAdapter.this.mImpressListener.onDeeplinkCallback(z);
                 }
             }
 
-            @Override // com.anythink.basead.e.g
             public final void onRewarded() {
             }
 
-            @Override // com.anythink.basead.e.a
             public final void onShowFailed(e eVar) {
                 if (OnlineApiATInterstitialAdapter.this.mImpressListener != null) {
                     OnlineApiATInterstitialAdapter.this.mImpressListener.onInterstitialAdVideoError(eVar.a(), eVar.b());
                 }
             }
 
-            @Override // com.anythink.basead.e.g
             public final void onVideoAdPlayEnd() {
                 if (OnlineApiATInterstitialAdapter.this.mImpressListener != null) {
                     OnlineApiATInterstitialAdapter.this.mImpressListener.onInterstitialAdVideoEnd();
                 }
             }
 
-            @Override // com.anythink.basead.e.g
             public final void onVideoAdPlayStart() {
                 if (OnlineApiATInterstitialAdapter.this.mImpressListener != null) {
                     OnlineApiATInterstitialAdapter.this.mImpressListener.onInterstitialAdVideoStart();

@@ -8,17 +8,17 @@ import com.tencent.liteav.videoproducer.producer.VideoProducerDef;
 final /* synthetic */ class s implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final f f37176a;
+    private final f f23485a;
     private final VideoProducerDef.StreamType b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final GLConstants.Orientation f37177c;
+    private final GLConstants.Orientation f23486c;
     private final VideoEncodeParams d;
 
     private s(f fVar, VideoProducerDef.StreamType streamType, GLConstants.Orientation orientation, VideoEncodeParams videoEncodeParams) {
-        this.f37176a = fVar;
+        this.f23485a = fVar;
         this.b = streamType;
-        this.f37177c = orientation;
+        this.f23486c = orientation;
         this.d = videoEncodeParams;
     }
 
@@ -28,6 +28,6 @@ final /* synthetic */ class s implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        f.a(this.f37176a, this.b, this.f37177c, this.d);
+        f.a(this.f23485a, this.b, this.f23486c, this.d);
     }
 }

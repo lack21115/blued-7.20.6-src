@@ -7,10 +7,10 @@ import java.util.concurrent.Callable;
 public final /* synthetic */ class dg implements Callable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final UGCMediaListSource f40321a;
+    private final UGCMediaListSource f26630a;
 
     private dg(UGCMediaListSource uGCMediaListSource) {
-        this.f40321a = uGCMediaListSource;
+        this.f26630a = uGCMediaListSource;
     }
 
     public static Callable a(UGCMediaListSource uGCMediaListSource) {
@@ -20,7 +20,7 @@ public final /* synthetic */ class dg implements Callable {
     @Override // java.util.concurrent.Callable
     public final Object call() {
         boolean hasAudioDataInternal;
-        hasAudioDataInternal = this.f40321a.hasAudioDataInternal();
+        hasAudioDataInternal = this.f26630a.hasAudioDataInternal();
         return Boolean.valueOf(hasAudioDataInternal);
     }
 }

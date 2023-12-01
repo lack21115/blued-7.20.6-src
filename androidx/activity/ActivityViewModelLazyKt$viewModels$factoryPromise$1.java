@@ -10,17 +10,16 @@ import kotlin.jvm.internal.Lambda;
 public final class ActivityViewModelLazyKt$viewModels$factoryPromise$1 extends Lambda implements Function0<ViewModelProvider.Factory> {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ ComponentActivity f1479a;
+    final /* synthetic */ ComponentActivity f1431a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public ActivityViewModelLazyKt$viewModels$factoryPromise$1(ComponentActivity componentActivity) {
         super(0);
-        this.f1479a = componentActivity;
+        this.f1431a = componentActivity;
     }
 
-    /* JADX WARN: Can't rename method to resolve collision */
-    @Override // kotlin.jvm.functions.Function0
-    public final ViewModelProvider.Factory invoke() {
-        return this.f1479a.getDefaultViewModelProviderFactory();
+    /* renamed from: invoke */
+    public final ViewModelProvider.Factory m1066invoke() {
+        return this.f1431a.getDefaultViewModelProviderFactory();
     }
 }

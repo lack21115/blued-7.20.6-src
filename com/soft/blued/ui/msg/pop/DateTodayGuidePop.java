@@ -24,13 +24,12 @@ public final class DateTodayGuidePop extends FullScreenPopupView {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(DateTodayGuidePop this$0, View view) {
+    public static final void a(DateTodayGuidePop dateTodayGuidePop, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.p();
+        Intrinsics.e(dateTodayGuidePop, "this$0");
+        dateTodayGuidePop.p();
     }
 
-    @Override // com.blued.android.framework.ui.xpop.impl.FullScreenPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
     public void b() {
         super.b();
         FrameLayout frameLayout = (FrameLayout) findViewById(R.id.fl_top);
@@ -45,7 +44,6 @@ public final class DateTodayGuidePop extends FullScreenPopupView {
         });
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.BasePopupView
     public int getImplLayoutId() {
         return R.layout.pop_date_today_guide;
     }

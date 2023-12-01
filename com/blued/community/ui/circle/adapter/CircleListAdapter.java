@@ -24,34 +24,26 @@ import java.util.ArrayList;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/circle/adapter/CircleListAdapter.class */
 public class CircleListAdapter extends BaseQuickAdapter<MyCircleModel, BaseViewHolder> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private LoadOptions f19113a;
+    private LoadOptions a;
     private CircleConstants.CIRCLE_FROM_PAGE b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private IRequestHost f19114c;
+    private IRequestHost c;
     private View.OnClickListener d;
     private View e;
 
     /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/circle/adapter/CircleListAdapter$MyCircleViewHolder.class */
     public static class MyCircleViewHolder {
-
-        /* renamed from: a  reason: collision with root package name */
-        ImageView f19117a;
+        ImageView a;
         TextView b;
-
-        /* renamed from: c  reason: collision with root package name */
-        TextView f19118c;
+        TextView c;
         TextView d;
         CircleJoinView e;
         ImageView f;
         View g;
 
         public MyCircleViewHolder(BaseViewHolder baseViewHolder) {
-            this.f19117a = (ImageView) baseViewHolder.getView(R.id.img_cover);
+            this.a = (ImageView) baseViewHolder.getView(R.id.img_cover);
             this.b = (TextView) baseViewHolder.getView(R.id.tv_circle_desc);
-            this.f19118c = (TextView) baseViewHolder.getView(R.id.tv_circle_name);
+            this.c = (TextView) baseViewHolder.getView(R.id.tv_circle_name);
             this.d = (TextView) baseViewHolder.getView(R.id.tv_circle_member);
             this.f = (ImageView) baseViewHolder.getView(R.id.iv_level);
             CircleJoinView circleJoinView = (CircleJoinView) baseViewHolder.getView(R.id.cjv_join);
@@ -65,13 +57,13 @@ public class CircleListAdapter extends BaseQuickAdapter<MyCircleModel, BaseViewH
         super(R.layout.item_circle_list, new ArrayList());
         this.mContext = context;
         this.d = onClickListener;
-        this.f19114c = iRequestHost;
+        this.c = iRequestHost;
         LoadOptions loadOptions = new LoadOptions();
-        this.f19113a = loadOptions;
+        this.a = loadOptions;
         loadOptions.j = true;
-        this.f19113a.l = false;
-        this.f19113a.d = R.drawable.defaultpicture;
-        this.f19113a.b = R.drawable.defaultpicture;
+        this.a.l = false;
+        this.a.d = R.drawable.defaultpicture;
+        this.a.b = R.drawable.defaultpicture;
         this.b = circle_from_page;
         if (circle_from_page == CircleConstants.CIRCLE_FROM_PAGE.JOINED_CIRCLE) {
             View inflate = View.inflate(this.mContext, R.layout.item_joined_circle_list_footer, null);
@@ -89,7 +81,7 @@ public class CircleListAdapter extends BaseQuickAdapter<MyCircleModel, BaseViewH
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void a(View view) {
         EventTrackFeed.a(FeedProtos.Event.CIRCLE_FIND_PAGE_SHOW, FeedProtos.CircleSource.MY_CIRCLE_MORE);
-        CircleTypeListFragment.f19307a.a(this.mContext, FeedProtos.SourcePage.MINE_CIRCLE);
+        CircleTypeListFragment.a.a(this.mContext, FeedProtos.SourcePage.MINE_CIRCLE);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -124,20 +116,19 @@ public class CircleListAdapter extends BaseQuickAdapter<MyCircleModel, BaseViewH
                 circleJoinView.setJoinStatusWithMember(myCircleModel);
                 CircleListAdapter.this.notifyDataSetChanged();
             }
-        }, myCircleModel.getJoinState(), this.f19114c, this.mContext instanceof AppCompatActivity ? ((AppCompatActivity) this.mContext).getSupportFragmentManager() : null, false, true);
+        }, myCircleModel.getJoinState(), this.c, this.mContext instanceof AppCompatActivity ? this.mContext.getSupportFragmentManager() : null, false, true);
         notifyDataSetChanged();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(BaseViewHolder baseViewHolder, final MyCircleModel myCircleModel) {
         if (baseViewHolder == null || myCircleModel == null) {
             return;
         }
         final MyCircleViewHolder myCircleViewHolder = new MyCircleViewHolder(baseViewHolder);
-        ImageLoader.a(this.f19114c, myCircleModel.cover).b(R.drawable.circle_header_default).a(8.0f).a(myCircleViewHolder.f19117a);
-        myCircleViewHolder.f19118c.setText(myCircleModel.title);
+        ImageLoader.a(this.c, myCircleModel.cover).b(R.drawable.circle_header_default).a(8.0f).a(myCircleViewHolder.a);
+        myCircleViewHolder.c.setText(myCircleModel.title);
         myCircleViewHolder.b.setText(myCircleModel.description);
         TextView textView = myCircleViewHolder.d;
         textView.setText(myCircleModel.members_num + this.mContext.getResources().getString(R.string.members_count_part));

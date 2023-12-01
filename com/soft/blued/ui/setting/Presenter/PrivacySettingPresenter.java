@@ -27,7 +27,7 @@ import java.util.Map;
 public class PrivacySettingPresenter implements IPrivacySettingContract.IPresenter {
 
     /* renamed from: c  reason: collision with root package name */
-    private IPrivacySettingContract.IView f33241c;
+    private IPrivacySettingContract.IView f19550c;
     private Context d;
     private IRequestHost e;
     private BluedUIHttpResponse r;
@@ -44,39 +44,35 @@ public class PrivacySettingPresenter implements IPrivacySettingContract.IPresent
     private boolean q = false;
 
     /* renamed from: a  reason: collision with root package name */
-    public String f33240a = "";
+    public String f19549a = "";
     public String b = "";
     private Map<String, String> f = BluedHttpTools.a();
 
     public PrivacySettingPresenter(Context context, IRequestHost iRequestHost, IPrivacySettingContract.IView iView) {
         this.r = new BluedUIHttpResponse<BluedEntityA<BluedBlackList.privacySettingEntity>>("my_privacy_setting", this.e) { // from class: com.soft.blued.ui.setting.Presenter.PrivacySettingPresenter.1
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public BluedEntityA<BluedBlackList.privacySettingEntity> parseData(String str) {
-                return (BluedEntityA) super.parseData(str);
+                return super.parseData(str);
             }
 
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUICache(BluedEntityA<BluedBlackList.privacySettingEntity> bluedEntityA) {
                 super.onUICache(bluedEntityA);
                 PrivacySettingPresenter.this.a(bluedEntityA);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: b */
             public void onUIUpdate(BluedEntityA<BluedBlackList.privacySettingEntity> bluedEntityA) {
                 PrivacySettingPresenter.this.a(bluedEntityA);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse, com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
             public void onFailure(Throwable th, int i, String str) {
                 super.onFailure(th, i, str);
             }
         };
-        this.f33241c = iView;
+        this.f19550c = iView;
         this.d = context;
         this.e = iRequestHost;
     }
@@ -88,46 +84,46 @@ public class PrivacySettingPresenter implements IPrivacySettingContract.IPresent
                 if (bluedEntityA.data == null || bluedEntityA.data.size() <= 0) {
                     return;
                 }
-                boolean z = bluedEntityA.data.get(0).is_access_follows == 1;
+                boolean z = ((BluedBlackList.privacySettingEntity) bluedEntityA.data.get(0)).is_access_follows == 1;
                 this.g = z;
-                this.f33241c.f(z);
-                boolean z2 = bluedEntityA.data.get(0).is_access_followers == 1;
+                this.f19550c.f(z);
+                boolean z2 = ((BluedBlackList.privacySettingEntity) bluedEntityA.data.get(0)).is_access_followers == 1;
                 this.i = z2;
-                this.f33241c.g(z2);
-                boolean z3 = bluedEntityA.data.get(0).is_global_view_secretly == 1;
+                this.f19550c.g(z2);
+                boolean z3 = ((BluedBlackList.privacySettingEntity) bluedEntityA.data.get(0)).is_global_view_secretly == 1;
                 this.h = z3;
-                this.f33241c.i(z3);
-                boolean z4 = bluedEntityA.data.get(0).is_invisible_map == 1;
+                this.f19550c.i(z3);
+                boolean z4 = ((BluedBlackList.privacySettingEntity) bluedEntityA.data.get(0)).is_invisible_map == 1;
                 this.j = z4;
-                this.f33241c.j(z4);
-                boolean z5 = bluedEntityA.data.get(0).is_hide_last_operate == 1;
+                this.f19550c.j(z4);
+                boolean z5 = ((BluedBlackList.privacySettingEntity) bluedEntityA.data.get(0)).is_hide_last_operate == 1;
                 this.k = z5;
-                this.f33241c.k(z5);
-                boolean z6 = bluedEntityA.data.get(0).is_hide_distance == 1;
+                this.f19550c.k(z5);
+                boolean z6 = ((BluedBlackList.privacySettingEntity) bluedEntityA.data.get(0)).is_hide_distance == 1;
                 this.l = z6;
-                this.f33241c.l(z6);
-                boolean z7 = bluedEntityA.data.get(0).is_traceless_access == 1;
+                this.f19550c.l(z6);
+                boolean z7 = ((BluedBlackList.privacySettingEntity) bluedEntityA.data.get(0)).is_traceless_access == 1;
                 this.m = z7;
-                this.f33241c.m(z7);
-                this.n = bluedEntityA.data.get(0).is_invisible_half == 1;
-                String str = bluedEntityA.data.get(0).stealth_distance;
-                this.f33240a = str;
-                this.f33241c.b(this.n, str);
-                boolean z8 = bluedEntityA.data.get(0).is_un_disturb == 1;
+                this.f19550c.m(z7);
+                this.n = ((BluedBlackList.privacySettingEntity) bluedEntityA.data.get(0)).is_invisible_half == 1;
+                String str = ((BluedBlackList.privacySettingEntity) bluedEntityA.data.get(0)).stealth_distance;
+                this.f19549a = str;
+                this.f19550c.b(this.n, str);
+                boolean z8 = ((BluedBlackList.privacySettingEntity) bluedEntityA.data.get(0)).is_un_disturb == 1;
                 this.o = z8;
-                this.f33241c.n(z8);
-                this.f33241c.o(bluedEntityA.data.get(0).avatar_location_status == 1);
-                boolean z9 = bluedEntityA.data.get(0).is_access_groups == 1;
+                this.f19550c.n(z8);
+                this.f19550c.o(((BluedBlackList.privacySettingEntity) bluedEntityA.data.get(0)).avatar_location_status == 1);
+                boolean z9 = ((BluedBlackList.privacySettingEntity) bluedEntityA.data.get(0)).is_access_groups == 1;
                 this.p = z9;
-                this.f33241c.h(z9);
-                this.q = bluedEntityA.data.get(0).is_open_individuality_recommend == 1;
-                BluedPreferences.C(bluedEntityA.data.get(0).is_open_individuality_recommend == 1);
-                UserInfo.getInstance().getLoginUserInfo().setBlackCount(String.valueOf(bluedEntityA.data.get(0).black_count));
-                UserInfo.getInstance().getLoginUserInfo().setBlackMax(String.valueOf(bluedEntityA.data.get(0).black_allowed_count));
-                this.f33241c.a(bluedEntityA.data.get(0).black_count + "", bluedEntityA.data.get(0).black_allowed_count + "");
+                this.f19550c.h(z9);
+                this.q = ((BluedBlackList.privacySettingEntity) bluedEntityA.data.get(0)).is_open_individuality_recommend == 1;
+                BluedPreferences.C(((BluedBlackList.privacySettingEntity) bluedEntityA.data.get(0)).is_open_individuality_recommend == 1);
+                UserInfo.getInstance().getLoginUserInfo().setBlackCount(String.valueOf(((BluedBlackList.privacySettingEntity) bluedEntityA.data.get(0)).black_count));
+                UserInfo.getInstance().getLoginUserInfo().setBlackMax(String.valueOf(((BluedBlackList.privacySettingEntity) bluedEntityA.data.get(0)).black_allowed_count));
+                this.f19550c.a(((BluedBlackList.privacySettingEntity) bluedEntityA.data.get(0)).black_count + "", ((BluedBlackList.privacySettingEntity) bluedEntityA.data.get(0)).black_allowed_count + "");
             } catch (Exception e) {
                 e.printStackTrace();
-                AppMethods.a((CharSequence) AppInfo.d().getResources().getString(2131887272));
+                AppMethods.a(AppInfo.d().getResources().getString(2131887272));
             }
         }
     }
@@ -136,17 +132,16 @@ public class PrivacySettingPresenter implements IPrivacySettingContract.IPresent
     public void a(boolean z) {
         e(z);
         ProfileHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<Object>>() { // from class: com.soft.blued.ui.setting.Presenter.PrivacySettingPresenter.4
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<Object> bluedEntityA) {
                 if (bluedEntityA != null) {
                     return;
                 }
                 try {
-                    AppMethods.a((CharSequence) AppInfo.d().getResources().getString(2131887272));
+                    AppMethods.a(AppInfo.d().getResources().getString(2131887272));
                 } catch (Exception e) {
                     e.printStackTrace();
-                    AppMethods.a((CharSequence) AppInfo.d().getResources().getString(2131887272));
+                    AppMethods.a(AppInfo.d().getResources().getString(2131887272));
                 }
             }
         }, UserInfo.getInstance().getLoginUserInfo().getUid(), this.f);
@@ -156,13 +151,12 @@ public class PrivacySettingPresenter implements IPrivacySettingContract.IPresent
     public void a(final boolean z, final boolean z2) {
         d(z);
         ProfileHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<AppConfigModel.VIPRight>>() { // from class: com.soft.blued.ui.setting.Presenter.PrivacySettingPresenter.3
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<AppConfigModel.VIPRight> bluedEntityA) {
                 if (bluedEntityA != null && bluedEntityA.hasData()) {
                     PrivacySettingPresenter privacySettingPresenter = PrivacySettingPresenter.this;
                     boolean z3 = true;
-                    if (bluedEntityA.getSingleData().is_global_view_secretly != 1) {
+                    if (((AppConfigModel.VIPRight) bluedEntityA.getSingleData()).is_global_view_secretly != 1) {
                         z3 = false;
                     }
                     privacySettingPresenter.h = z3;
@@ -179,22 +173,21 @@ public class PrivacySettingPresenter implements IPrivacySettingContract.IPresent
                 try {
                     if (z2) {
                         if (bluedEntityA != null) {
-                            AppMethods.a((CharSequence) AppInfo.d().getResources().getString(R.string.privacy_setting_done));
+                            AppMethods.a(AppInfo.d().getResources().getString(R.string.privacy_setting_done));
                         } else {
-                            AppMethods.a((CharSequence) AppInfo.d().getResources().getString(2131887272));
+                            AppMethods.a(AppInfo.d().getResources().getString(2131887272));
                         }
                     }
                     BluedPreferences.B(z);
                     LiveEventBus.get(EventBusConstant.KEY_EVENT_SYNC_SECRET_LOOK_STATE).post(Boolean.valueOf(z));
                 } catch (Exception e) {
                     e.printStackTrace();
-                    AppMethods.a((CharSequence) AppInfo.d().getResources().getString(2131887272));
+                    AppMethods.a(AppInfo.d().getResources().getString(2131887272));
                 }
             }
         }, UserInfo.getInstance().getLoginUserInfo().getUid(), this.f);
     }
 
-    @Override // com.blued.android.framework.mvp_similarity.BasePresenter
     public void ar_() {
     }
 
@@ -227,35 +220,34 @@ public class PrivacySettingPresenter implements IPrivacySettingContract.IPresent
         try {
             int parseInt = Integer.parseInt(UserInfo.getInstance().getLoginUserInfo().getBlackCount());
             int parseInt2 = Integer.parseInt(UserInfo.getInstance().getLoginUserInfo().getBlackMax());
-            this.f33241c.a(parseInt + "", parseInt2 + "");
+            this.f19550c.a(parseInt + "", parseInt2 + "");
         } catch (Exception e) {
-            this.f33241c.a("0", this.d.getResources().getString(R.string.black_list_max));
+            this.f19550c.a("0", this.d.getResources().getString(R.string.black_list_max));
         }
     }
 
     public void d(boolean z) {
-        if ((this.f33241c instanceof MsgFragment) || this.h != z) {
+        if ((this.f19550c instanceof MsgFragment) || this.h != z) {
             this.f.put("is_global_view_secretly", z ? "1" : "0");
         }
     }
 
     public void e() {
-        final boolean D = this.f33241c.D();
-        final boolean E = this.f33241c.E();
+        final boolean D = this.f19550c.D();
+        final boolean E = this.f19550c.E();
         if (E) {
             this.f.put("stealth_distance", BluedPreferences.ab());
         }
         Log.v("drb", "ajaxParams.size():" + this.f.size());
         if (this.f.size() > 0) {
             ProfileHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<Object>>() { // from class: com.soft.blued.ui.setting.Presenter.PrivacySettingPresenter.2
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 /* renamed from: a */
                 public void onUIUpdate(BluedEntityA<Object> bluedEntityA) {
                     if (bluedEntityA == null) {
-                        AppMethods.a((CharSequence) AppInfo.d().getResources().getString(2131887272));
+                        AppMethods.a(AppInfo.d().getResources().getString(2131887272));
                         return;
                     }
-                    AppMethods.a((CharSequence) AppInfo.d().getResources().getString(R.string.privacy_setting_done));
+                    AppMethods.a(AppInfo.d().getResources().getString(R.string.privacy_setting_done));
                     if (D) {
                         UserInfo.getInstance().getLoginUserInfo().is_invisible_all = 1;
                     } else {
@@ -302,7 +294,7 @@ public class PrivacySettingPresenter implements IPrivacySettingContract.IPresent
     }
 
     public void j(boolean z) {
-        if (this.n == z && this.b.equals(this.f33240a)) {
+        if (this.n == z && this.b.equals(this.f19549a)) {
             return;
         }
         this.f.put("is_invisible_half", z ? "1" : "0");

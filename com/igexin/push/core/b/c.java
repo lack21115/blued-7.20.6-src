@@ -4,22 +4,22 @@ package com.igexin.push.core.b;
 public final class c {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f23433a;
+    public final int f9825a;
     public final String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final int f23434c;
+    private final int f9826c;
     private final long d;
 
     public c(int i, String str, int i2, long j) {
-        this.f23433a = i;
+        this.f9825a = i;
         this.b = str;
-        this.f23434c = i2;
+        this.f9826c = i2;
         this.d = j;
     }
 
     private int a() {
-        return this.f23434c;
+        return this.f9826c;
     }
 
     private long b() {
@@ -27,7 +27,7 @@ public final class c {
     }
 
     private int c() {
-        return this.f23433a;
+        return this.f9825a;
     }
 
     private String d() {

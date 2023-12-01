@@ -13,11 +13,11 @@ import java.lang.reflect.Method;
 public final class PopupWindowCompat {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Method f2754a;
+    private static Method f2706a;
     private static boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static Method f2755c;
+    private static Method f2707c;
     private static boolean d;
     private static Field e;
     private static boolean f;
@@ -93,13 +93,13 @@ public final class PopupWindowCompat {
         if (!d) {
             try {
                 Method declaredMethod = PopupWindow.class.getDeclaredMethod("getWindowLayoutType", new Class[0]);
-                f2755c = declaredMethod;
+                f2707c = declaredMethod;
                 declaredMethod.setAccessible(true);
             } catch (Exception e2) {
             }
             d = true;
         }
-        Method method = f2755c;
+        Method method = f2707c;
         if (method != null) {
             try {
                 return ((Integer) method.invoke(popupWindow, new Object[0])).intValue();
@@ -143,13 +143,13 @@ public final class PopupWindowCompat {
         if (!b) {
             try {
                 Method declaredMethod = PopupWindow.class.getDeclaredMethod("setWindowLayoutType", Integer.TYPE);
-                f2754a = declaredMethod;
+                f2706a = declaredMethod;
                 declaredMethod.setAccessible(true);
             } catch (Exception e2) {
             }
             b = true;
         }
-        Method method = f2754a;
+        Method method = f2706a;
         if (method != null) {
             try {
                 method.invoke(popupWindow, Integer.valueOf(i));

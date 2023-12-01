@@ -9,17 +9,13 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ItemYyKtvNoticeSendGiftBinding.class */
 public final class ItemYyKtvNoticeSendGiftBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final TextView f16746a;
+    public final TextView a;
     public final ShapeTextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final ConstraintLayout f16747c;
+    private final ConstraintLayout c;
 
     private ItemYyKtvNoticeSendGiftBinding(ConstraintLayout constraintLayout, TextView textView, ShapeTextView shapeTextView) {
-        this.f16747c = constraintLayout;
-        this.f16746a = textView;
+        this.c = constraintLayout;
+        this.a = textView;
         this.b = shapeTextView;
     }
 
@@ -38,9 +34,8 @@ public final class ItemYyKtvNoticeSendGiftBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f16747c;
+        return this.c;
     }
 }

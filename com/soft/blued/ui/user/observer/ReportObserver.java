@@ -7,7 +7,7 @@ import java.util.Iterator;
 public class ReportObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    private static ReportObserver f34242a = new ReportObserver();
+    private static ReportObserver f20551a = new ReportObserver();
     private ArrayList<IReportObserver> b = new ArrayList<>();
 
     /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/user/observer/ReportObserver$IReportObserver.class */
@@ -19,7 +19,7 @@ public class ReportObserver {
     }
 
     public static ReportObserver a() {
-        return f34242a;
+        return f20551a;
     }
 
     public void a(IReportObserver iReportObserver) {

@@ -10,7 +10,6 @@ import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Looper;
 import android.os.Message;
-import com.alipay.sdk.util.i;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Set;
@@ -19,14 +18,14 @@ import java.util.Set;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Object f1393a = new Object();
+    public static final Object f1345a = new Object();
     public static a b;
     public Context f;
     public Handler g;
     public HandlerThread h;
 
     /* renamed from: c  reason: collision with root package name */
-    public final HashMap<BroadcastReceiver, ArrayList<IntentFilter>> f1394c = new HashMap<>();
+    public final HashMap<BroadcastReceiver, ArrayList<IntentFilter>> f1346c = new HashMap<>();
     public final HashMap<String, ArrayList<c>> d = new HashMap<>();
     public final ArrayList<b> e = new ArrayList<>();
     public boolean i = false;
@@ -53,11 +52,11 @@ public final class a {
     public static class b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final Intent f1396a;
+        public final Intent f1348a;
         public final ArrayList<c> b;
 
         public b(Intent intent, ArrayList<c> arrayList) {
-            this.f1396a = intent;
+            this.f1348a = intent;
             this.b = arrayList;
         }
     }
@@ -66,14 +65,14 @@ public final class a {
     public static class c {
 
         /* renamed from: a  reason: collision with root package name */
-        public final IntentFilter f1397a;
+        public final IntentFilter f1349a;
         public final BroadcastReceiver b;
 
         /* renamed from: c  reason: collision with root package name */
-        public boolean f1398c;
+        public boolean f1350c;
 
         public c(IntentFilter intentFilter, BroadcastReceiver broadcastReceiver) {
-            this.f1397a = intentFilter;
+            this.f1349a = intentFilter;
             this.b = broadcastReceiver;
         }
 
@@ -82,15 +81,15 @@ public final class a {
             sb.append("Receiver{");
             sb.append(this.b);
             sb.append(" filter=");
-            sb.append(this.f1397a);
-            sb.append(i.d);
+            sb.append(this.f1349a);
+            sb.append("}");
             return sb.toString();
         }
     }
 
     public static a a() {
         a aVar;
-        synchronized (f1393a) {
+        synchronized (f1345a) {
             if (b == null) {
                 b = new a();
             }
@@ -103,8 +102,8 @@ public final class a {
         if (this.f == null) {
             throw new IllegalStateException("Context is NULL");
         }
-        synchronized (this.f1394c) {
-            ArrayList<IntentFilter> remove = this.f1394c.remove(broadcastReceiver);
+        synchronized (this.f1346c) {
+            ArrayList<IntentFilter> remove = this.f1346c.remove(broadcastReceiver);
             if (remove == null) {
                 return;
             }
@@ -149,15 +148,15 @@ public final class a {
 
     public void a(BroadcastReceiver broadcastReceiver, IntentFilter intentFilter) {
         if (this.f == null) {
-            e.f1361c.e("QosBroadcastManager", "Context is NULL");
+            e.f1313c.e("QosBroadcastManager", "Context is NULL");
         }
-        synchronized (this.f1394c) {
+        synchronized (this.f1346c) {
             c cVar = new c(intentFilter, broadcastReceiver);
-            ArrayList<IntentFilter> arrayList = this.f1394c.get(broadcastReceiver);
+            ArrayList<IntentFilter> arrayList = this.f1346c.get(broadcastReceiver);
             ArrayList<IntentFilter> arrayList2 = arrayList;
             if (arrayList == null) {
                 arrayList2 = new ArrayList<>(1);
-                this.f1394c.put(broadcastReceiver, arrayList2);
+                this.f1346c.put(broadcastReceiver, arrayList2);
             }
             arrayList2.add(intentFilter);
             int i = 0;
@@ -179,7 +178,7 @@ public final class a {
     }
 
     public void a(Context context) {
-        synchronized (this.f1394c) {
+        synchronized (this.f1346c) {
             if (context != null) {
                 if (!this.j) {
                     this.j = true;
@@ -198,7 +197,7 @@ public final class a {
     }
 
     public boolean a(Intent intent) {
-        synchronized (this.f1394c) {
+        synchronized (this.f1346c) {
             if (this.i && this.f != null && this.j) {
                 String action = intent.getAction();
                 String resolveTypeIfNeeded = intent.resolveTypeIfNeeded(this.f.getContentResolver());
@@ -207,12 +206,12 @@ public final class a {
                 Set<String> categories = intent.getCategories();
                 boolean z = (intent.getFlags() & 8) != 0;
                 if (z) {
-                    e.f1361c.a("QosBroadcastManager", "Resolving type " + resolveTypeIfNeeded + " scheme " + scheme + " of intent " + intent);
+                    e.f1313c.a("QosBroadcastManager", "Resolving type " + resolveTypeIfNeeded + " scheme " + scheme + " of intent " + intent);
                 }
                 ArrayList<c> arrayList = this.d.get(intent.getAction());
                 if (arrayList != null) {
                     if (z) {
-                        e.f1361c.a("QosBroadcastManager", "Action list: " + arrayList);
+                        e.f1313c.a("QosBroadcastManager", "Action list: " + arrayList);
                     }
                     ArrayList arrayList2 = null;
                     int i = 0;
@@ -223,25 +222,25 @@ public final class a {
                         }
                         c cVar = arrayList.get(i2);
                         if (z) {
-                            e.f1361c.a("QosBroadcastManager", "Matching against filter " + cVar.f1397a);
+                            e.f1313c.a("QosBroadcastManager", "Matching against filter " + cVar.f1349a);
                         }
-                        if (!cVar.f1398c) {
-                            IntentFilter intentFilter = cVar.f1397a;
+                        if (!cVar.f1350c) {
+                            IntentFilter intentFilter = cVar.f1349a;
                             ArrayList arrayList3 = arrayList2;
                             int match = intentFilter.match(action, resolveTypeIfNeeded, scheme, data, categories, "QosBroadcastManager");
                             if (match >= 0) {
                                 if (z) {
-                                    e.f1361c.a("QosBroadcastManager", "  Filter matched!  match=0x" + Integer.toHexString(match));
+                                    e.f1313c.a("QosBroadcastManager", "  Filter matched!  match=0x" + Integer.toHexString(match));
                                 }
                                 arrayList2 = arrayList3 == null ? new ArrayList() : arrayList3;
                                 arrayList2.add(cVar);
-                                cVar.f1398c = true;
+                                cVar.f1350c = true;
                             } else if (z) {
                                 String str = match != -4 ? match != -3 ? match != -2 ? match != -1 ? "unknown reason" : "type" : "data" : "action" : "category";
-                                e.f1361c.a("QosBroadcastManager", "  Filter did not match: " + str);
+                                e.f1313c.a("QosBroadcastManager", "  Filter did not match: " + str);
                             }
                         } else if (z) {
-                            e.f1361c.a("QosBroadcastManager", "  Filter's target already added");
+                            e.f1313c.a("QosBroadcastManager", "  Filter's target already added");
                         }
                         i = i2 + 1;
                     }
@@ -252,7 +251,7 @@ public final class a {
                             if (i4 >= arrayList2.size()) {
                                 break;
                             }
-                            ((c) arrayList2.get(i4)).f1398c = false;
+                            ((c) arrayList2.get(i4)).f1350c = false;
                             i3 = i4 + 1;
                         }
                         this.e.add(new b(intent, arrayList2));
@@ -269,7 +268,7 @@ public final class a {
     }
 
     public void b() {
-        synchronized (this.f1394c) {
+        synchronized (this.f1346c) {
             if (this.j) {
                 this.j = false;
                 this.h.quit();
@@ -282,7 +281,7 @@ public final class a {
         int size;
         b[] bVarArr;
         while (true) {
-            synchronized (this.f1394c) {
+            synchronized (this.f1346c) {
                 size = this.e.size();
                 if (size <= 0) {
                     return;
@@ -300,7 +299,7 @@ public final class a {
                     while (true) {
                         int i4 = i3;
                         if (i4 < bVar.b.size()) {
-                            bVar.b.get(i4).b.onReceive(this.f, bVar.f1396a);
+                            bVar.b.get(i4).b.onReceive(this.f, bVar.f1348a);
                             i3 = i4 + 1;
                         }
                     }

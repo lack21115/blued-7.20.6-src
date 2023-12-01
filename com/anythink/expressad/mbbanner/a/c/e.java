@@ -8,15 +8,15 @@ import java.util.Random;
 public class e implements c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f8015a = e.class.getSimpleName();
+    private static final String f5175a = e.class.getSimpleName();
     private c b;
 
     /* renamed from: c  reason: collision with root package name */
-    private com.anythink.expressad.d.c f8016c;
+    private com.anythink.expressad.d.c f5176c;
     private boolean d = false;
 
     public e(c cVar, com.anythink.expressad.d.c cVar2) {
-        this.f8016c = cVar2;
+        this.f5176c = cVar2;
         this.b = cVar;
     }
 
@@ -65,7 +65,7 @@ public class e implements c {
         if (list != null) {
             try {
                 if (list.size() > 0) {
-                    com.anythink.expressad.d.c cVar = this.f8016c;
+                    com.anythink.expressad.d.c cVar = this.f5176c;
                     boolean z = false;
                     if (!list.get(0).A()) {
                         z = false;
@@ -80,13 +80,13 @@ public class e implements c {
                         }
                     }
                     this.d = z;
-                    String str = f8015a;
+                    String str = f5175a;
                     StringBuilder sb = new StringBuilder();
                     sb.append(this.d);
                     o.d(str, sb.toString());
                 }
             } catch (Exception e) {
-                o.b(f8015a, "Exception", e);
+                o.b(f5175a, "Exception", e);
             }
         }
         c cVar2 = this.b;

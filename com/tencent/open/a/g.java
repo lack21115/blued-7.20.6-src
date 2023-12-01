@@ -10,13 +10,13 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class g implements Iterable<String> {
 
     /* renamed from: a  reason: collision with root package name */
-    private ConcurrentLinkedQueue<String> f38238a;
+    private ConcurrentLinkedQueue<String> f24547a;
     private AtomicInteger b;
 
     public g() {
-        this.f38238a = null;
+        this.f24547a = null;
         this.b = null;
-        this.f38238a = new ConcurrentLinkedQueue<>();
+        this.f24547a = new ConcurrentLinkedQueue<>();
         this.b = new AtomicInteger(0);
     }
 
@@ -26,7 +26,7 @@ public class g implements Iterable<String> {
 
     public int a(String str) {
         int length = str.length();
-        this.f38238a.add(str);
+        this.f24547a.add(str);
         return this.b.addAndGet(length);
     }
 
@@ -72,12 +72,12 @@ public class g implements Iterable<String> {
     }
 
     public void b() {
-        this.f38238a.clear();
+        this.f24547a.clear();
         this.b.set(0);
     }
 
     @Override // java.lang.Iterable
     public Iterator<String> iterator() {
-        return this.f38238a.iterator();
+        return this.f24547a.iterator();
     }
 }

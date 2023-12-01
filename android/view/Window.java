@@ -1,6 +1,5 @@
 package android.view;
 
-import android.Manifest;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.Resources;
@@ -156,7 +155,7 @@ public abstract class Window {
 
     private void setPrivateFlags(int i, int i2) {
         if ((i & i2 & 536870912) != 0) {
-            this.mContext.enforceCallingOrSelfPermission(Manifest.permission.PREVENT_POWER_KEY, "No permission to prevent power key");
+            this.mContext.enforceCallingOrSelfPermission("android.permission.PREVENT_POWER_KEY", "No permission to prevent power key");
         }
         WindowManager.LayoutParams attributes = getAttributes();
         attributes.privateFlags = (attributes.privateFlags & (i2 ^ (-1))) | (i & i2);

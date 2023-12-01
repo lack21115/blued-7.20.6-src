@@ -7,24 +7,24 @@ import java.util.Map;
 public class g {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile g f39037a;
+    private static volatile g f25346a;
 
     private g() {
     }
 
     public static g a() {
-        if (f39037a == null) {
+        if (f25346a == null) {
             synchronized (g.class) {
                 try {
-                    if (f39037a == null) {
-                        f39037a = new g();
+                    if (f25346a == null) {
+                        f25346a = new g();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f39037a;
+        return f25346a;
     }
 
     public Map<String, String> a(String str, String str2, String str3, String str4, String str5) {
@@ -49,7 +49,7 @@ public class g {
         hashMap.put("packageName", str4);
         hashMap.put("randoms", str3);
         hashMap.put("version", com.tencent.tendinsv.b.ao);
-        hashMap.put("sign", str5);
+        hashMap.put(com.anythink.expressad.d.a.b.d, str5);
         hashMap.put("device", str6);
         return hashMap;
     }

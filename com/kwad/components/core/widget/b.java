@@ -61,8 +61,8 @@ public abstract class b<T extends AdTemplate> extends KSFrameLayout implements D
             c(viewGroup);
             com.kwad.components.core.widget.a aVar = new com.kwad.components.core.widget.a(viewGroup.getContext(), viewGroup);
             viewGroup.addView(aVar);
-            aVar.setViewCallback(new a.InterfaceC0544a() { // from class: com.kwad.components.core.widget.b.1
-                @Override // com.kwad.components.core.widget.a.InterfaceC0544a
+            aVar.setViewCallback(new a.InterfaceC0374a() { // from class: com.kwad.components.core.widget.b.1
+                @Override // com.kwad.components.core.widget.a.InterfaceC0374a
                 public final void eM() {
                     if (b.this.mAdTemplate.mPvReported && b.this.mN) {
                         long EZ = b.this.getTimerHelper().EZ();
@@ -72,7 +72,7 @@ public abstract class b<T extends AdTemplate> extends KSFrameLayout implements D
                     }
                 }
 
-                @Override // com.kwad.components.core.widget.a.InterfaceC0544a
+                @Override // com.kwad.components.core.widget.a.InterfaceC0374a
                 public final void k(View view) {
                     if (!b.this.mAdTemplate.mPvReported && b.this.VS != null) {
                         b.this.mN = true;
@@ -85,11 +85,11 @@ public abstract class b<T extends AdTemplate> extends KSFrameLayout implements D
                     b.this.mN = true;
                 }
 
-                @Override // com.kwad.components.core.widget.a.InterfaceC0544a
+                @Override // com.kwad.components.core.widget.a.InterfaceC0374a
                 public final void onViewAttached() {
                 }
 
-                @Override // com.kwad.components.core.widget.a.InterfaceC0544a
+                @Override // com.kwad.components.core.widget.a.InterfaceC0374a
                 public final void onViewDetached() {
                     if (b.this.mAdTemplate.mPvReported && b.this.mN) {
                         long EZ = b.this.getTimerHelper().EZ();

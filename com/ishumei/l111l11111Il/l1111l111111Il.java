@@ -13,16 +13,13 @@ import android.util.Base64;
 import android.view.inputmethod.InputMethodInfo;
 import android.view.inputmethod.InputMethodManager;
 import androidx.constraintlayout.core.motion.utils.TypedValues;
-import com.amap.api.col.p0003sl.iu;
 import com.baidu.mobads.sdk.api.IAdInterListener;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.ishumei.l1111l111111Il.l111l1111llIl;
 import com.tencent.lbssearch.object.param.Geo2AddressParam;
 import dalvik.system.BaseDexClassLoader;
 import java.io.File;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
-import java.lang.reflect.GenericDeclaration;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -113,7 +110,7 @@ public class l1111l111111Il {
     }
 
     private static Class[] l1111l111111Il(List<String> list) {
-        GenericDeclaration genericDeclaration;
+        Class<?> cls;
         if (list == null || list.size() == 0) {
             return null;
         }
@@ -172,34 +169,34 @@ public class l1111l111111Il {
             }
             switch (z) {
                 case false:
-                    genericDeclaration = Integer.TYPE;
+                    cls = Integer.TYPE;
                     break;
                 case true:
-                    genericDeclaration = Long.TYPE;
+                    cls = Long.TYPE;
                     break;
                 case true:
-                    genericDeclaration = Boolean.TYPE;
+                    cls = Boolean.TYPE;
                     break;
                 case true:
-                    genericDeclaration = Double.TYPE;
+                    cls = Double.TYPE;
                     break;
                 case true:
-                    genericDeclaration = Float.TYPE;
+                    cls = Float.TYPE;
                     break;
                 case true:
-                    genericDeclaration = Byte.TYPE;
+                    cls = Byte.TYPE;
                     break;
                 case true:
-                    genericDeclaration = Character.TYPE;
+                    cls = Character.TYPE;
                     break;
                 case true:
-                    genericDeclaration = Short.TYPE;
+                    cls = Short.TYPE;
                     break;
                 default:
-                    genericDeclaration = Class.forName(str);
+                    cls = Class.forName(str);
                     break;
             }
-            arrayList.add(genericDeclaration);
+            arrayList.add(cls);
         }
         Class[] clsArr = new Class[arrayList.size()];
         arrayList.toArray(clsArr);
@@ -285,7 +282,7 @@ public class l1111l111111Il {
             Object newInstance = constructor2.newInstance(constructor.newInstance(-1301668207276963122L, -6645017420763422227L));
             sb.append(Base64.encodeToString((byte[]) method.invoke(newInstance, com.ishumei.l111l1111llIl.l111l1111lI1l.l111l11111Il("9b9a89969c9aaa91968e8a9ab69b")), 2));
             sb.append("__");
-            sb.append(BridgeUtil.UNDERLINE_STR);
+            sb.append("_");
             cls2.getMethod(com.ishumei.l111l1111llIl.l111l1111lI1l.l111l11111Il("9c93908c9a"), new Class[0]).invoke(newInstance, new Object[0]);
         } catch (Throwable th) {
         }
@@ -315,7 +312,7 @@ public class l1111l111111Il {
             hashMap.put("suc", "1");
             return hashMap;
         } catch (Throwable th) {
-            hashMap.put(iu.h, th.getMessage());
+            hashMap.put("e", th.getMessage());
             hashMap.put("suc", "-1");
             return hashMap;
         }

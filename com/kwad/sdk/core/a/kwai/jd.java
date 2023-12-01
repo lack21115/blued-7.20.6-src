@@ -1,5 +1,6 @@
 package com.kwad.sdk.core.a.kwai;
 
+import com.cdo.oaps.ad.OapsKey;
 import com.kwad.sdk.core.response.model.PhotoInfo;
 import org.json.JSONObject;
 
@@ -23,7 +24,7 @@ public final class jd implements com.kwad.sdk.core.d<PhotoInfo.VideoInfo> {
             videoInfo.firstFrame = "";
         }
         videoInfo.duration = jSONObject.optLong("duration");
-        videoInfo.size = jSONObject.optInt("size");
+        videoInfo.size = jSONObject.optInt(OapsKey.KEY_SIZE);
         videoInfo.width = jSONObject.optInt("width");
         videoInfo.height = jSONObject.optInt("height");
         videoInfo.leftRatio = jSONObject.optDouble("leftRatio");
@@ -51,7 +52,7 @@ public final class jd implements com.kwad.sdk.core.d<PhotoInfo.VideoInfo> {
             com.kwad.sdk.utils.t.putValue(jSONObject2, "duration", videoInfo.duration);
         }
         if (videoInfo.size != 0) {
-            com.kwad.sdk.utils.t.putValue(jSONObject2, "size", videoInfo.size);
+            com.kwad.sdk.utils.t.putValue(jSONObject2, OapsKey.KEY_SIZE, videoInfo.size);
         }
         if (videoInfo.width != 0) {
             com.kwad.sdk.utils.t.putValue(jSONObject2, "width", videoInfo.width);

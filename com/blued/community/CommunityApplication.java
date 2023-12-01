@@ -6,6 +6,8 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
+import com.android.internal.telephony.PhoneConstants;
+import com.anythink.china.common.d;
 import com.anythink.core.api.ATSDK;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.AppMethods;
@@ -36,7 +38,6 @@ import com.scwang.smartrefresh.layout.api.DefaultRefreshHeaderCreator;
 import com.scwang.smartrefresh.layout.api.RefreshFooter;
 import com.scwang.smartrefresh.layout.api.RefreshHeader;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
-import com.youzan.spiderman.utils.Stone;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
@@ -52,16 +53,16 @@ public final class CommunityApplication extends Application {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: initSmartRefresh$lambda-0  reason: not valid java name */
-    public static final RefreshHeader m4899initSmartRefresh$lambda0(Context context, RefreshLayout layout) {
+    public static final RefreshHeader m11016initSmartRefresh$lambda0(Context context, RefreshLayout layout) {
         Intrinsics.e(context, "context");
         Intrinsics.e(layout, "layout");
-        layout.c(R.color.transparent, 17170445);
+        layout.c(new int[]{R.color.transparent, com.android.internal.R.color.transparent});
         return new BluedRefreshView(context);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: initSmartRefresh$lambda-1  reason: not valid java name */
-    public static final RefreshFooter m4900initSmartRefresh$lambda1(Context context, RefreshLayout layout) {
+    public static final RefreshFooter m11017initSmartRefresh$lambda1(Context context, RefreshLayout layout) {
         Intrinsics.e(context, "context");
         Intrinsics.e(layout, "layout");
         layout.f(30.0f);
@@ -128,7 +129,7 @@ public final class CommunityApplication extends Application {
             }
         });
         BluedWebViewCache.a("https://web.bldimg.com", "https://www.bldimg.com");
-        BluedWebViewCache.b(Stone.CSS_SUFFIX, Stone.JS_SUFFIX);
+        BluedWebViewCache.b("css", "js");
     }
 
     public final void initHttpHost() {
@@ -156,19 +157,17 @@ public final class CommunityApplication extends Application {
 
     public final void initSmartRefresh() {
         SmartRefreshLayout.setDefaultRefreshHeaderCreator(new DefaultRefreshHeaderCreator() { // from class: com.blued.community.-$$Lambda$CommunityApplication$Xz-HVUyw5bfmA5X4b5g-Ytqd-4o
-            @Override // com.scwang.smartrefresh.layout.api.DefaultRefreshHeaderCreator
             public final RefreshHeader createRefreshHeader(Context context, RefreshLayout refreshLayout) {
-                RefreshHeader m4899initSmartRefresh$lambda0;
-                m4899initSmartRefresh$lambda0 = CommunityApplication.m4899initSmartRefresh$lambda0(context, refreshLayout);
-                return m4899initSmartRefresh$lambda0;
+                RefreshHeader m11016initSmartRefresh$lambda0;
+                m11016initSmartRefresh$lambda0 = CommunityApplication.m11016initSmartRefresh$lambda0(context, refreshLayout);
+                return m11016initSmartRefresh$lambda0;
             }
         });
         SmartRefreshLayout.setDefaultRefreshFooterCreator(new DefaultRefreshFooterCreator() { // from class: com.blued.community.-$$Lambda$CommunityApplication$sDB1TZN5j4fZHadldjxLFXKYmj4
-            @Override // com.scwang.smartrefresh.layout.api.DefaultRefreshFooterCreator
             public final RefreshFooter createRefreshFooter(Context context, RefreshLayout refreshLayout) {
-                RefreshFooter m4900initSmartRefresh$lambda1;
-                m4900initSmartRefresh$lambda1 = CommunityApplication.m4900initSmartRefresh$lambda1(context, refreshLayout);
-                return m4900initSmartRefresh$lambda1;
+                RefreshFooter m11017initSmartRefresh$lambda1;
+                m11017initSmartRefresh$lambda1 = CommunityApplication.m11017initSmartRefresh$lambda1(context, refreshLayout);
+                return m11017initSmartRefresh$lambda1;
             }
         });
     }
@@ -198,7 +197,7 @@ public final class CommunityApplication extends Application {
         initBluedFramework();
         initSmartRefresh();
         initTopOnAdSDK();
-        SVGAParser.f15958a.b().a(communityApplication2);
+        SVGAParser.a.b().a(communityApplication2);
     }
 
     @Override // android.app.Application, android.content.ComponentCallbacks
@@ -220,19 +219,19 @@ public final class CommunityApplication extends Application {
     }
 
     public final void setChannel() {
-        String a2 = PackerNg.a(AppInfo.d());
-        String str = a2;
-        if (TextUtils.isEmpty(a2)) {
+        String a = PackerNg.a(AppInfo.d());
+        String str = a;
+        if (TextUtils.isEmpty(a)) {
             try {
                 ApplicationInfo applicationInfo = AppInfo.d().getPackageManager().getApplicationInfo(AppInfo.d().getPackageName(), 128);
                 Intrinsics.c(applicationInfo, "getAppContext().packageM…TA_DATA\n                )");
-                str = a2;
+                str = a;
                 if (applicationInfo.metaData != null) {
                     str = applicationInfo.metaData.getString("UMENG_CHANNEL");
                 }
             } catch (PackageManager.NameNotFoundException e) {
                 e.printStackTrace();
-                str = a2;
+                str = a;
             }
         }
         String str2 = str;
@@ -244,8 +243,8 @@ public final class CommunityApplication extends Application {
     }
 
     public final void setMEI() {
-        if (PermissionUtils.a("android.permission.READ_PHONE_STATE")) {
-            Object systemService = AppInfo.d().getSystemService("phone");
+        if (PermissionUtils.a(d.a)) {
+            Object systemService = AppInfo.d().getSystemService(PhoneConstants.PHONE_KEY);
             if (systemService == null) {
                 throw new NullPointerException("null cannot be cast to non-null type android.telephony.TelephonyManager");
             }

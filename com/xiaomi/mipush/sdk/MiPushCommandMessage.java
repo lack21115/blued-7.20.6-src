@@ -98,6 +98,6 @@ public class MiPushCommandMessage implements PushMessageHandler.a {
     }
 
     public String toString() {
-        return "command={" + this.command + "}, resultCode={" + this.resultCode + "}, reason={" + this.reason + "}, category={" + this.category + "}, commandArguments={" + this.commandArguments + com.alipay.sdk.util.i.d;
+        return "command={" + this.command + "}, resultCode={" + this.resultCode + "}, reason={" + this.reason + "}, category={" + this.category + "}, commandArguments={" + this.commandArguments + "}";
     }
 }

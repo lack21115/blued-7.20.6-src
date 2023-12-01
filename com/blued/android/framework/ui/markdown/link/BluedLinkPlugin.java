@@ -17,17 +17,13 @@ import org.commonmark.node.Text;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/ui/markdown/link/BluedLinkPlugin.class */
 public class BluedLinkPlugin extends AbstractMarkwonPlugin {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final Pattern f9919a = Pattern.compile("((http[s]{0,1}|blued)://|www\\.)[A-Za-z0-9\\.\\?\\-_~!@#$%^&/:=]+[A-Za-z0-9/#]");
+    private static final Pattern a = Pattern.compile("((http[s]{0,1}|blued)://|www\\.)[A-Za-z0-9\\.\\?\\-_~!@#$%^&/:=]+[A-Za-z0-9/#]");
     private OnClickLinkListener b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f9920c;
+    private int c;
 
     /* JADX INFO: Access modifiers changed from: private */
     public void a(MarkwonVisitor markwonVisitor, String str, int i) {
-        Matcher matcher = f9919a.matcher(str);
+        Matcher matcher = a.matcher(str);
         while (matcher.find()) {
             String group = matcher.group();
             int start = matcher.start() + i;
@@ -43,7 +39,7 @@ public class BluedLinkPlugin extends AbstractMarkwonPlugin {
     }
 
     public void a(int i) {
-        this.f9920c = i;
+        this.c = i;
     }
 
     public void a(OnClickLinkListener onClickLinkListener) {
@@ -65,7 +61,7 @@ public class BluedLinkPlugin extends AbstractMarkwonPlugin {
 
     @Override // io.noties.markwon.AbstractMarkwonPlugin, io.noties.markwon.MarkwonPlugin
     public void configureTheme(MarkwonTheme.Builder builder) {
-        builder.linkColor(this.f9920c);
+        builder.linkColor(this.c);
     }
 
     @Override // io.noties.markwon.AbstractMarkwonPlugin, io.noties.markwon.MarkwonPlugin

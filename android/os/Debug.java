@@ -4,7 +4,6 @@ import android.os.Parcelable;
 import android.util.Log;
 import com.android.internal.util.FastPrintWriter;
 import com.android.internal.util.TypedProperties;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.igexin.push.core.b;
 import com.sobot.chat.widget.zxing.util.Intents;
 import dalvik.bytecode.OpcodeInfo;
@@ -12,6 +11,7 @@ import dalvik.system.VMDebug;
 import java.io.FileDescriptor;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -46,7 +46,7 @@ public final class Debug {
     private static final String TAG = "Debug";
     public static final int TRACE_COUNT_ALLOCS = 1;
     private static volatile boolean mWaiting = false;
-    private static final String DEFAULT_TRACE_PATH_PREFIX = Environment.getLegacyExternalStorageDirectory().getPath() + BridgeUtil.SPLIT_MARK;
+    private static final String DEFAULT_TRACE_PATH_PREFIX = Environment.getLegacyExternalStorageDirectory().getPath() + "/";
     private static final String DEFAULT_TRACE_BODY = "dmtrace";
     private static final String DEFAULT_TRACE_EXTENSION = ".trace";
     private static final String DEFAULT_TRACE_FILE_PATH = DEFAULT_TRACE_PATH_PREFIX + DEFAULT_TRACE_BODY + DEFAULT_TRACE_EXTENSION;
@@ -752,29 +752,29 @@ public final class Debug {
     }
 
     public static void startNativeTracing() {
-        FastPrintWriter fastPrintWriter;
+        PrintWriter printWriter;
         try {
-            fastPrintWriter = new FastPrintWriter(new FileOutputStream(SYSFS_QEMU_TRACE_STATE));
+            printWriter = new FastPrintWriter(new FileOutputStream(SYSFS_QEMU_TRACE_STATE));
         } catch (Exception e) {
-            fastPrintWriter = null;
+            printWriter = null;
         } catch (Throwable th) {
             th = th;
-            fastPrintWriter = null;
+            printWriter = null;
         }
         try {
-            fastPrintWriter.println("1");
-            if (fastPrintWriter != null) {
-                fastPrintWriter.close();
+            printWriter.println("1");
+            if (printWriter != null) {
+                printWriter.close();
             }
         } catch (Exception e2) {
-            if (fastPrintWriter != null) {
-                fastPrintWriter.close();
+            if (printWriter != null) {
+                printWriter.close();
             }
             VMDebug.startEmulatorTracing();
         } catch (Throwable th2) {
             th = th2;
-            if (fastPrintWriter != null) {
-                fastPrintWriter.close();
+            if (printWriter != null) {
+                printWriter.close();
             }
             throw th;
         }
@@ -791,29 +791,29 @@ public final class Debug {
     }
 
     public static void stopNativeTracing() {
-        FastPrintWriter fastPrintWriter;
+        PrintWriter printWriter;
         VMDebug.stopEmulatorTracing();
         try {
-            fastPrintWriter = new FastPrintWriter(new FileOutputStream(SYSFS_QEMU_TRACE_STATE));
+            printWriter = new FastPrintWriter(new FileOutputStream(SYSFS_QEMU_TRACE_STATE));
         } catch (Exception e) {
-            fastPrintWriter = null;
+            printWriter = null;
         } catch (Throwable th) {
             th = th;
-            fastPrintWriter = null;
+            printWriter = null;
         }
         try {
-            fastPrintWriter.println("0");
-            if (fastPrintWriter != null) {
-                fastPrintWriter.close();
+            printWriter.println("0");
+            if (printWriter != null) {
+                printWriter.close();
             }
         } catch (Exception e2) {
-            if (fastPrintWriter != null) {
-                fastPrintWriter.close();
+            if (printWriter != null) {
+                printWriter.close();
             }
         } catch (Throwable th2) {
             th = th2;
-            if (fastPrintWriter != null) {
-                fastPrintWriter.close();
+            if (printWriter != null) {
+                printWriter.close();
             }
             throw th;
         }

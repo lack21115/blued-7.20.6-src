@@ -14,11 +14,11 @@ import java.util.Enumeration;
 /* loaded from: source-8829756-dex2jar.jar:com/tencent/qimei/c/c.class */
 public class c {
 
-    /* renamed from: a */
-    public static final c f38318a = new c();
+    /* renamed from: a  reason: collision with root package name */
+    public static final c f24627a = new c();
 
-    /* renamed from: c */
-    public long f38319c;
+    /* renamed from: c  reason: collision with root package name */
+    public long f24628c;
     public String e;
     public String f;
     public String g;
@@ -37,20 +37,11 @@ public class c {
         v();
     }
 
-    public static /* synthetic */ long a(c cVar) {
-        return cVar.f38319c;
-    }
-
-    public static /* synthetic */ String a(c cVar, String str) {
-        cVar.h = str;
-        return str;
-    }
-
     public static c j() {
         c cVar;
         synchronized (c.class) {
             try {
-                cVar = f38318a;
+                cVar = f24627a;
             } catch (Throwable th) {
                 throw th;
             }
@@ -58,7 +49,7 @@ public class c {
         return cVar;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:76:0x00da  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x00da  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences
@@ -122,8 +113,8 @@ public class c {
         return "";
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:157:0x011f  */
-    /* JADX WARN: Removed duplicated region for block: B:172:0x016b  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x011f  */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x016b  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences
@@ -175,35 +166,35 @@ public class c {
         return "";
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:48:0x000f, code lost:
-        if (r0 == null) goto L27;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:51:0x001b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:10:0x001b, code lost:
         if (r0.hasMoreElements() == false) goto L26;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:52:0x001e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:11:0x001e, code lost:
         r0 = r0.nextElement().getInetAddresses();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:55:0x0031, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:14:0x0031, code lost:
         if (r0.hasMoreElements() == false) goto L25;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:56:0x0034, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:15:0x0034, code lost:
         r0 = r0.nextElement();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:57:0x0042, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:16:0x0042, code lost:
         if (r0.isLoopbackAddress() != false) goto L24;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:59:0x0049, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:18:0x0049, code lost:
         if ((r0 instanceof java.net.Inet4Address) == false) goto L22;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:60:0x004c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:19:0x004c, code lost:
         r4 = r0.getHostAddress();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:61:0x0054, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:20:0x0054, code lost:
         r3.i = r4;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:72:0x0067, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:31:0x0067, code lost:
         r4 = "0.0.0.0";
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:7:0x000f, code lost:
+        if (r0 == null) goto L27;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -311,7 +302,7 @@ public class c {
         String o;
         synchronized (this) {
             if (this.m == null) {
-                if (U.f38315a) {
+                if (U.f24624a) {
                     try {
                         o = U.o();
                     } catch (UnsatisfiedLinkError e) {
@@ -345,7 +336,7 @@ public class c {
         synchronized (this) {
             if (this.l == null) {
                 Context context = this.b;
-                if (U.f38315a) {
+                if (U.f24624a) {
                     try {
                         z = U.z(context);
                     } catch (UnsatisfiedLinkError e) {
@@ -366,7 +357,7 @@ public class c {
     }
 
     public String s() {
-        if (U.f38315a) {
+        if (U.f24624a) {
             try {
                 return U.s();
             } catch (UnsatisfiedLinkError e) {
@@ -382,7 +373,7 @@ public class c {
         String u;
         synchronized (this) {
             if (this.n == null) {
-                if (U.f38315a) {
+                if (U.f24624a) {
                     try {
                         u = U.u();
                     } catch (UnsatisfiedLinkError e) {
@@ -406,14 +397,14 @@ public class c {
         return "harmony".equalsIgnoreCase(str);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:103:0x00a4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:25:0x007a, code lost:
+        if (r6.hasTransport(0) != false) goto L24;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:35:0x00a4, code lost:
         if (r0.getType() == 0) goto L24;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:104:0x00a7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:36:0x00a7, code lost:
         r6 = "mobile";
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:93:0x007a, code lost:
-        if (r6.hasTransport(0) != false) goto L24;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.

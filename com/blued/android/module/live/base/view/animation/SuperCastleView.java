@@ -13,8 +13,6 @@ import android.view.animation.ScaleAnimation;
 import android.view.animation.TranslateAnimation;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import com.anythink.expressad.foundation.h.i;
-import com.anythink.expressad.video.module.a.a.m;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.net.IRequestHost;
 import com.blued.android.module.live.base.R;
@@ -22,9 +20,7 @@ import com.blued.android.module.live.base.R;
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/live/base/view/animation/SuperCastleView.class */
 public class SuperCastleView extends BaseLiveAnimationView {
     private Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private LayoutInflater f11522c;
+    private LayoutInflater c;
     private View d;
     private FrameLayout e;
     private ImageView f;
@@ -51,7 +47,7 @@ public class SuperCastleView extends BaseLiveAnimationView {
         imageView.setVisibility(0);
         this.r = new AnimationDrawable();
         for (int i = 0; i <= 20; i++) {
-            this.r.addFrame(this.b.getResources().getDrawable(this.b.getResources().getIdentifier("fireworks_" + i, i.f7952c, this.b.getPackageName())), 50);
+            this.r.addFrame(this.b.getResources().getDrawable(this.b.getResources().getIdentifier("fireworks_" + i, "drawable", this.b.getPackageName())), 50);
         }
         this.r.setOneShot(true);
         imageView.setImageDrawable(this.r);
@@ -68,7 +64,7 @@ public class SuperCastleView extends BaseLiveAnimationView {
 
     private void c() {
         LayoutInflater from = LayoutInflater.from(this.b);
-        this.f11522c = from;
+        this.c = from;
         View inflate = from.inflate(R.layout.layout_sports_castle_anim, (ViewGroup) null);
         this.d = inflate;
         this.e = (FrameLayout) inflate.findViewById(R.id.cloud_layout);
@@ -95,8 +91,8 @@ public class SuperCastleView extends BaseLiveAnimationView {
             public void onAnimationEnd(Animation animation) {
                 SuperCastleView.this.d.setVisibility(8);
                 SuperCastleView.this.e.setVisibility(8);
-                if (SuperCastleView.this.f11493a != null) {
-                    SuperCastleView.this.f11493a.b();
+                if (SuperCastleView.this.a != null) {
+                    SuperCastleView.this.a.b();
                 }
             }
 
@@ -115,7 +111,7 @@ public class SuperCastleView extends BaseLiveAnimationView {
         this.k.setVisibility(0);
         this.q = new AnimationDrawable();
         for (int i = 0; i <= 23; i++) {
-            this.q.addFrame(this.b.getResources().getDrawable(this.b.getResources().getIdentifier("castle_flag_" + i, i.f7952c, this.b.getPackageName())), 50);
+            this.q.addFrame(this.b.getResources().getDrawable(this.b.getResources().getIdentifier("castle_flag_" + i, "drawable", this.b.getPackageName())), 50);
         }
         this.k.setImageDrawable(this.q);
         this.q.start();
@@ -139,7 +135,7 @@ public class SuperCastleView extends BaseLiveAnimationView {
         AlphaAnimation alphaAnimation = new AlphaAnimation(0.0f, 1.0f);
         alphaAnimation.setDuration(1000L);
         ScaleAnimation scaleAnimation = new ScaleAnimation(1.0f, 1.05f, 1.0f, 1.05f, 1, 0.5f, 1, 0.5f);
-        scaleAnimation.setDuration(m.ag);
+        scaleAnimation.setDuration(3000L);
         AnimationSet animationSet = new AnimationSet(false);
         animationSet.addAnimation(alphaAnimation);
         animationSet.addAnimation(scaleAnimation);
@@ -157,8 +153,8 @@ public class SuperCastleView extends BaseLiveAnimationView {
 
             @Override // android.view.animation.Animation.AnimationListener
             public void onAnimationStart(Animation animation) {
-                if (SuperCastleView.this.f11493a != null) {
-                    SuperCastleView.this.f11493a.a();
+                if (SuperCastleView.this.a != null) {
+                    SuperCastleView.this.a.a();
                 }
                 SuperCastleView.this.e();
                 SuperCastleView.this.b();

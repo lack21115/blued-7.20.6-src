@@ -20,11 +20,11 @@ import java.util.Vector;
 public class RecentPhotoManager {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f32437a = "CHAT_" + RecentPhotoManager.class.getSimpleName();
+    private static final String f18747a = "CHAT_" + RecentPhotoManager.class.getSimpleName();
     private static int b = 5;
 
     /* renamed from: c  reason: collision with root package name */
-    private static int f32438c = 5;
+    private static int f18748c = 5;
     private Vector<MsgRecentPhotoInfo> d = new Vector<>();
     private Vector<MsgRecentPhotoInfo> e = new Vector<>();
 
@@ -36,7 +36,6 @@ public class RecentPhotoManager {
     public RecentPhotoManager() {
         try {
             ThreadManager.a().a(new ThreadExecutor("RecentPhoto_Thread") { // from class: com.soft.blued.ui.msg.manager.RecentPhotoManager.1
-                @Override // com.blued.android.framework.pool.ThreadExecutor
                 public void execute() {
                     RecentPhotoManager.this.d();
                 }
@@ -112,7 +111,7 @@ public class RecentPhotoManager {
     public void e() {
         synchronized (this.e) {
             this.e.clear();
-            int min = Math.min(this.d.size(), f32438c);
+            int min = Math.min(this.d.size(), f18748c);
             if (min > 0) {
                 this.e.addAll(this.d.subList(0, min));
             }
@@ -137,7 +136,6 @@ public class RecentPhotoManager {
     public void a(final IRecentPhotoAdapterCallback.IGetPhotoListCallback iGetPhotoListCallback) {
         if (this.e.size() <= 0) {
             ThreadManager.a().a(new ThreadExecutor("RecentPhoto_Thread") { // from class: com.soft.blued.ui.msg.manager.RecentPhotoManager.2
-                @Override // com.blued.android.framework.pool.ThreadExecutor
                 public void execute() {
                     RecentPhotoManager.this.d();
                     AppInfo.n().post(new Runnable() { // from class: com.soft.blued.ui.msg.manager.RecentPhotoManager.2.1
@@ -158,8 +156,7 @@ public class RecentPhotoManager {
     public void a(MsgRecentPhotoInfo msgRecentPhotoInfo) {
         this.d.remove(msgRecentPhotoInfo);
         this.e.remove(msgRecentPhotoInfo);
-        ThreadManager.a().a((Runnable) new ThreadExecutor("RecentPhoto_Thread") { // from class: com.soft.blued.ui.msg.manager.RecentPhotoManager.6
-            @Override // com.blued.android.framework.pool.ThreadExecutor
+        ThreadManager.a().a(new ThreadExecutor("RecentPhoto_Thread") { // from class: com.soft.blued.ui.msg.manager.RecentPhotoManager.6
             public void execute() {
                 RecentPhotoManager recentPhotoManager = RecentPhotoManager.this;
                 recentPhotoManager.a(recentPhotoManager.d);
@@ -169,9 +166,9 @@ public class RecentPhotoManager {
 
     public void a(final MsgRecentPhotoInfo msgRecentPhotoInfo, final IRecordPicCallback iRecordPicCallback) {
         if (msgRecentPhotoInfo == null || TextUtils.isEmpty(msgRecentPhotoInfo.imgPath)) {
-            Logger.c(f32437a, "photoInfo == null || TextUtils.isEmpty(photoInfo.imgPath) ！！！");
+            Logger.c(f18747a, "photoInfo == null || TextUtils.isEmpty(photoInfo.imgPath) ！！！");
         } else {
-            ThreadManager.a().a((Runnable) new ThreadExecutor("RecentPhoto_Thread") { // from class: com.soft.blued.ui.msg.manager.RecentPhotoManager.4
+            ThreadManager.a().a(new ThreadExecutor("RecentPhoto_Thread") { // from class: com.soft.blued.ui.msg.manager.RecentPhotoManager.4
                 /* JADX WARN: Can't wrap try/catch for region: R(9:1|(11:3|(1:5)|95|96|7|(1:9)(2:91|(1:93)(1:94))|10|f3|78|79|(2:81|82)(1:84))|100|95|96|7|(0)(0)|10|f3) */
                 /* JADX WARN: Code restructure failed: missing block: B:11:0x008d, code lost:
                     com.blued.android.core.imagecache.MemoryRequest.a().b();
@@ -182,7 +179,6 @@ public class RecentPhotoManager {
                 /* JADX WARN: Removed duplicated region for block: B:14:0x00b1  */
                 /* JADX WARN: Removed duplicated region for block: B:15:0x00bc  */
                 /* JADX WARN: Removed duplicated region for block: B:93:0x00f4 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-                @Override // com.blued.android.framework.pool.ThreadExecutor
                 /*
                     Code decompiled incorrectly, please refer to instructions dump.
                     To view partially-correct code enable 'Show inconsistent code' option in preferences
@@ -205,8 +201,7 @@ public class RecentPhotoManager {
     }
 
     public void b(final IRecentPhotoAdapterCallback.IGetPhotoListCallback iGetPhotoListCallback) {
-        ThreadManager.a().a((Runnable) new ThreadExecutor("GetSelectPhotoThreadName") { // from class: com.soft.blued.ui.msg.manager.RecentPhotoManager.3
-            @Override // com.blued.android.framework.pool.ThreadExecutor
+        ThreadManager.a().a(new ThreadExecutor("GetSelectPhotoThreadName") { // from class: com.soft.blued.ui.msg.manager.RecentPhotoManager.3
             public void execute() {
                 ArrayList arrayList = new ArrayList();
                 ArrayList<MsgRecentPhotoInfo> arrayList2 = new ArrayList();
@@ -247,8 +242,7 @@ public class RecentPhotoManager {
                 break;
             }
         }
-        ThreadManager.a().a((Runnable) new ThreadExecutor("RecentPhoto_Thread") { // from class: com.soft.blued.ui.msg.manager.RecentPhotoManager.7
-            @Override // com.blued.android.framework.pool.ThreadExecutor
+        ThreadManager.a().a(new ThreadExecutor("RecentPhoto_Thread") { // from class: com.soft.blued.ui.msg.manager.RecentPhotoManager.7
             public void execute() {
                 RecentPhotoManager recentPhotoManager = RecentPhotoManager.this;
                 recentPhotoManager.a(recentPhotoManager.d);
@@ -278,7 +272,7 @@ public class RecentPhotoManager {
             if (i == -1) {
                 this.e.add(msgRecentPhotoInfo);
                 int size = this.d.size();
-                int i2 = f32438c;
+                int i2 = f18748c;
                 if (size >= i2) {
                     this.d.add(i2 - 1, msgRecentPhotoInfo);
                 } else {
@@ -291,8 +285,7 @@ public class RecentPhotoManager {
                 }
             }
         }
-        ThreadManager.a().a((Runnable) new ThreadExecutor("RecentPhoto_Thread") { // from class: com.soft.blued.ui.msg.manager.RecentPhotoManager.8
-            @Override // com.blued.android.framework.pool.ThreadExecutor
+        ThreadManager.a().a(new ThreadExecutor("RecentPhoto_Thread") { // from class: com.soft.blued.ui.msg.manager.RecentPhotoManager.8
             public void execute() {
                 RecentPhotoManager recentPhotoManager = RecentPhotoManager.this;
                 recentPhotoManager.a(recentPhotoManager.d);

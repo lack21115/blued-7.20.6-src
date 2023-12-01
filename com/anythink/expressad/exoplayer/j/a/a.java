@@ -10,12 +10,12 @@ public interface a {
 
     /* renamed from: com.anythink.expressad.exoplayer.j.a.a$a  reason: collision with other inner class name */
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/exoplayer/j/a/a$a.class */
-    public static class C0138a extends IOException {
-        public C0138a(String str) {
+    public static class C0067a extends IOException {
+        public C0067a(String str) {
             super(str);
         }
 
-        public C0138a(Throwable th) {
+        public C0067a(Throwable th) {
             super(th);
         }
     }

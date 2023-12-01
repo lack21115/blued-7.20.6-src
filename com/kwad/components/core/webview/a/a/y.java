@@ -10,7 +10,7 @@ public class y extends com.kwad.sdk.core.response.kwai.a {
     public int nZ;
 
     public final boolean isFailed() {
-        return TextUtils.equals(com.alipay.sdk.util.e.f4661a, this.Vp);
+        return TextUtils.equals("failed", this.Vp);
     }
 
     public final boolean rg() {

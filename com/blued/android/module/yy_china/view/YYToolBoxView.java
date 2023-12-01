@@ -14,6 +14,7 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import com.anythink.core.api.ATAdConst;
 import com.blued.android.core.image.ImageFileLoader;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.net.IRequestHost;
@@ -47,8 +48,6 @@ import com.blued.android.module.yy_china.utils.YYRoomHttpUtils;
 import com.blued.android.module.yy_china.utils.log.EventTrackYY;
 import com.blued.das.client.chatroom.ChatRoomProtos;
 import com.bytedance.applog.tracker.Tracker;
-import com.bytedance.sdk.openadsdk.live.TTLiveConstants;
-import com.cdo.oaps.ad.wrapper.BaseWrapper;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.jeremyliao.liveeventbus.LiveEventBus;
@@ -60,13 +59,9 @@ import java.util.Map;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYToolBoxView.class */
 public class YYToolBoxView extends LinearLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private RecyclerView f18520a;
+    private RecyclerView a;
     private RecyclerView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private TextView f18521c;
+    private TextView c;
     private TextView d;
     private BaseYYStudioFragment e;
     private ToolKitBoxAdapter f;
@@ -87,20 +82,19 @@ public class YYToolBoxView extends LinearLayout {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.chad.library.adapter.base.BaseQuickAdapter
         /* renamed from: a */
         public void convert(BaseViewHolder baseViewHolder, final ToolMode toolMode) {
-            ItemToolBoxBinding a2 = ItemToolBoxBinding.a(baseViewHolder.itemView);
-            a2.f16665a.setVisibility(8);
+            ItemToolBoxBinding a = ItemToolBoxBinding.a(baseViewHolder.itemView);
+            a.a.setVisibility(8);
             if (toolMode.getNa() <= 0) {
-                a2.f16666c.setText(toolMode.getName());
-                ImageLoader.a(YYToolBoxView.this.e.getFragmentActive(), toolMode.getIcon()).a(a2.b);
+                a.c.setText(toolMode.getName());
+                ImageLoader.a(YYToolBoxView.this.e.getFragmentActive(), toolMode.getIcon()).a(a.b);
             } else {
-                a2.f16666c.setText(toolMode.getNa());
-                a2.b.setImageResource(toolMode.getImg());
+                a.c.setText(toolMode.getNa());
+                a.b.setImageResource(toolMode.getImg());
             }
             if (toolMode.isRed()) {
-                a2.f16665a.setVisibility(0);
+                a.a.setVisibility(0);
             }
             if (TextUtils.equals("10", toolMode.getType()) && YYToolBoxView.this.h != null) {
                 EventTrackYY.d(ChatRoomProtos.Event.CHAT_ROOM_BG_MUSIC_ENTRANCE_SHOW, YYToolBoxView.this.h.room_id, YYToolBoxView.this.h.uid);
@@ -133,9 +127,9 @@ public class YYToolBoxView extends LinearLayout {
                         YYToolBoxView.this.c();
                     } else if (TextUtils.equals("5", type)) {
                         YYToolBoxView.this.g();
-                    } else if (TextUtils.equals("6", type)) {
+                    } else if (TextUtils.equals(ATAdConst.ATDevFrameworkType.FLUTTER, type)) {
                         YYToolBoxView.this.h();
-                    } else if (TextUtils.equals("7", type)) {
+                    } else if (TextUtils.equals(ATAdConst.ATDevFrameworkType.ADOBIE_AIR, type)) {
                         YYToolBoxView.this.i();
                     } else if (TextUtils.equals("8", type)) {
                         YYToolBoxView.this.p();
@@ -157,7 +151,7 @@ public class YYToolBoxView extends LinearLayout {
                         YYToolBoxView.this.w();
                     } else if (TextUtils.equals(type, "18")) {
                         YYToolBoxView.this.x();
-                    } else if (TextUtils.equals(type, BaseWrapper.ENTER_ID_SYSTEM_HELPER)) {
+                    } else if (TextUtils.equals(type, "20")) {
                         YYToolBoxView.this.y();
                     } else if (TextUtils.equals(type, "21")) {
                         YYToolBoxView.this.l();
@@ -212,7 +206,7 @@ public class YYToolBoxView extends LinearLayout {
 
     private void a() {
         LayoutInflater.from(getContext()).inflate(R.layout.view_yy_toolbox, (ViewGroup) this, true);
-        this.f18521c = (TextView) findViewById(R.id.tv_tools_activities);
+        this.c = (TextView) findViewById(R.id.tv_tools_activities);
         this.d = (TextView) findViewById(R.id.tv_tools_basic);
         b();
         e();
@@ -242,11 +236,11 @@ public class YYToolBoxView extends LinearLayout {
     }
 
     private void b() {
-        this.f18520a = (RecyclerView) findViewById(R.id.rv_activities_list);
-        this.f18520a.setLayoutManager(new GridLayoutManager(getContext(), 5));
+        this.a = findViewById(R.id.rv_activities_list);
+        this.a.setLayoutManager(new GridLayoutManager(getContext(), 5));
         ToolKitBoxAdapter toolKitBoxAdapter = new ToolKitBoxAdapter(true);
         this.f = toolKitBoxAdapter;
-        this.f18520a.setAdapter(toolKitBoxAdapter);
+        this.a.setAdapter(toolKitBoxAdapter);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -281,7 +275,7 @@ public class YYToolBoxView extends LinearLayout {
         }
         Uri.Builder buildUpon = Uri.parse(target_url).buildUpon();
         buildUpon.clearQuery();
-        buildUpon.appendQueryParameter(TTLiveConstants.ROOMID_KEY, this.h.room_id);
+        buildUpon.appendQueryParameter("room_id", this.h.room_id);
         buildUpon.appendQueryParameter("uid", EncryptTool.b(YYRoomInfoManager.e().k()));
         String builder = buildUpon.toString();
         EventTrackYY.d(ChatRoomProtos.Event.CHAT_ROOM_COOL_STAGE_CLICK, this.h.room_id, this.h.uid);
@@ -289,7 +283,7 @@ public class YYToolBoxView extends LinearLayout {
     }
 
     private void d() {
-        YYRoomPKFragment.f17442a.a().show(this.e.getFragmentManager(), "pk_dialog");
+        YYRoomPKFragment.a.a().show(this.e.getFragmentManager(), "pk_dialog");
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -305,14 +299,14 @@ public class YYToolBoxView extends LinearLayout {
         if (TextUtils.isEmpty(target_url)) {
             return;
         }
-        Map<String, String> a2 = BluedUrlUtils.a(target_url);
+        Map<String, String> a = BluedUrlUtils.a(target_url);
         Uri.Builder buildUpon = Uri.parse(target_url).buildUpon();
         buildUpon.clearQuery();
-        buildUpon.appendQueryParameter(TTLiveConstants.ROOMID_KEY, this.h.room_id);
+        buildUpon.appendQueryParameter("room_id", this.h.room_id);
         buildUpon.appendQueryParameter("uid", EncryptTool.b(YYRoomInfoManager.e().k()));
-        for (String str : a2.keySet()) {
-            if (!TextUtils.equals(str, TTLiveConstants.ROOMID_KEY) && !TextUtils.equals(str, "uid")) {
-                buildUpon.appendQueryParameter(str, a2.get(str));
+        for (String str : a.keySet()) {
+            if (!TextUtils.equals(str, "room_id") && !TextUtils.equals(str, "uid")) {
+                buildUpon.appendQueryParameter(str, a.get(str));
             }
         }
         String builder = buildUpon.toString();
@@ -321,7 +315,7 @@ public class YYToolBoxView extends LinearLayout {
     }
 
     private void e() {
-        this.b = (RecyclerView) findViewById(R.id.rv_basic_list);
+        this.b = findViewById(R.id.rv_basic_list);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setOrientation(0);
         this.b.setLayoutManager(linearLayoutManager);
@@ -343,8 +337,8 @@ public class YYToolBoxView extends LinearLayout {
         if (this.h == null) {
             return;
         }
-        this.f18521c.setVisibility(8);
-        this.f18520a.setVisibility(8);
+        this.c.setVisibility(8);
+        this.a.setVisibility(8);
         this.d.setVisibility(8);
         YYRoomHttpUtils.d(this.h.room_id, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntity<ToolkitMode, YYExtoolBoxModel>>(this.e.getFragmentActive()) { // from class: com.blued.android.module.yy_china.view.YYToolBoxView.2
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
@@ -356,7 +350,7 @@ public class YYToolBoxView extends LinearLayout {
                 ArrayList arrayList2 = new ArrayList();
                 ToolkitMode singleData = bluedEntity.getSingleData();
                 if (singleData.getFun_modes() != null && singleData.getFun_modes().getItems() != null && singleData.getFun_modes().getItems().size() > 0) {
-                    YYToolBoxView.this.f18521c.setText(singleData.getFun_modes().getName());
+                    YYToolBoxView.this.c.setText(singleData.getFun_modes().getName());
                     Iterator<ToolMode> it = singleData.getFun_modes().getItems().iterator();
                     while (it.hasNext()) {
                         ToolMode next = it.next();
@@ -374,13 +368,13 @@ public class YYToolBoxView extends LinearLayout {
                     }
                 }
                 if (arrayList.size() > 0) {
-                    YYToolBoxView.this.f18521c.setVisibility(0);
-                    YYToolBoxView.this.f18520a.setVisibility(0);
+                    YYToolBoxView.this.c.setVisibility(0);
+                    YYToolBoxView.this.a.setVisibility(0);
                     YYToolBoxView.this.d.setVisibility(0);
                     YYToolBoxView.this.f.setNewData(arrayList);
                 } else {
-                    YYToolBoxView.this.f18521c.setVisibility(8);
-                    YYToolBoxView.this.f18520a.setVisibility(8);
+                    YYToolBoxView.this.c.setVisibility(8);
+                    YYToolBoxView.this.a.setVisibility(8);
                     YYToolBoxView.this.d.setVisibility(8);
                 }
                 YYToolBoxView.this.g.setNewData(arrayList2);
@@ -404,9 +398,9 @@ public class YYToolBoxView extends LinearLayout {
         if (this.h == null) {
             return;
         }
-        IYYRoomInfoCallback c2 = YYRoomInfoManager.e().c();
+        IYYRoomInfoCallback c = YYRoomInfoManager.e().c();
         Context context = getContext();
-        c2.a(context, YYRoomInfoManager.e().c(3) + "?room_id=" + this.h.room_id, 0, true);
+        c.a(context, YYRoomInfoManager.e().c(3) + "?room_id=" + this.h.room_id, 0, true);
         EventTrackYY.d(ChatRoomProtos.Event.CHAT_ROOM_TOOLBOX_PROP_CLICK, this.h.room_id, this.h.uid);
     }
 
@@ -415,9 +409,9 @@ public class YYToolBoxView extends LinearLayout {
         if (this.h == null) {
             return;
         }
-        IYYRoomInfoCallback c2 = YYRoomInfoManager.e().c();
+        IYYRoomInfoCallback c = YYRoomInfoManager.e().c();
         Context context = getContext();
-        c2.a(context, YYRoomInfoManager.e().c(1) + "?roomid=" + this.h.room_id, 0);
+        c.a(context, YYRoomInfoManager.e().c(1) + "?roomid=" + this.h.room_id, 0);
         EventTrackYY.d(ChatRoomProtos.Event.CHAT_ROOM_ANCHOR_LEVEL_CLICK, this.h.room_id, this.h.uid);
     }
 
@@ -439,7 +433,7 @@ public class YYToolBoxView extends LinearLayout {
         if (this.e == null || this.h == null) {
             return;
         }
-        YYUserInfo yYUserInfo = YYRoomInfoManager.e().f17578a;
+        YYUserInfo yYUserInfo = YYRoomInfoManager.e().a;
         this.e.w();
         if (this.h != null) {
             EventTrackYY.d(ChatRoomProtos.Event.YY_BOX_RELATION_CLICK, this.h.room_id, this.h.uid);
@@ -501,7 +495,7 @@ public class YYToolBoxView extends LinearLayout {
             return;
         }
         EventTrackYY.d(ChatRoomProtos.Event.CHAT_ROOM_SHARE_CLICK, this.h.room_id, this.h.uid);
-        YYUserInfo yYUserInfo = YYRoomInfoManager.e().f17578a;
+        YYUserInfo yYUserInfo = YYRoomInfoManager.e().a;
         if (yYUserInfo == null) {
             return;
         }
@@ -551,7 +545,7 @@ public class YYToolBoxView extends LinearLayout {
         if (!TextUtils.isEmpty(str)) {
             Uri.Builder buildUpon = Uri.parse(str).buildUpon();
             buildUpon.clearQuery();
-            buildUpon.appendQueryParameter(TTLiveConstants.ROOMID_KEY, this.h.room_id);
+            buildUpon.appendQueryParameter("room_id", this.h.room_id);
             buildUpon.appendQueryParameter("uid", EncryptTool.b(YYRoomInfoManager.e().k()));
             str2 = buildUpon.toString();
         }

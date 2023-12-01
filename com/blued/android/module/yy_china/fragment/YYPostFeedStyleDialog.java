@@ -29,13 +29,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYPostFeedStyleDialog.class */
 public final class YYPostFeedStyleDialog extends BaseFullScreenDialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    private DialogFeedStyleBinding f17388a;
+    private DialogFeedStyleBinding a;
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f17389c;
+    private int c;
     private int d;
     private YYThemeEventEndInfo e;
 
@@ -43,7 +39,7 @@ public final class YYPostFeedStyleDialog extends BaseFullScreenDialog {
         this.d = i;
         if (i == 0) {
             g();
-            DialogFeedStyleBinding dialogFeedStyleBinding = this.f17388a;
+            DialogFeedStyleBinding dialogFeedStyleBinding = this.a;
             DialogFeedStyleBinding dialogFeedStyleBinding2 = dialogFeedStyleBinding;
             if (dialogFeedStyleBinding == null) {
                 Intrinsics.c("mBinding");
@@ -51,8 +47,8 @@ public final class YYPostFeedStyleDialog extends BaseFullScreenDialog {
             }
             ShapeConstraintLayout shapeConstraintLayout = dialogFeedStyleBinding2.p;
             Intrinsics.c(shapeConstraintLayout, "mBinding.llPostAll");
-            ShapeConstraintLayout shapeConstraintLayout2 = shapeConstraintLayout;
-            DialogFeedStyleBinding dialogFeedStyleBinding3 = this.f17388a;
+            View view = (View) shapeConstraintLayout;
+            DialogFeedStyleBinding dialogFeedStyleBinding3 = this.a;
             DialogFeedStyleBinding dialogFeedStyleBinding4 = dialogFeedStyleBinding3;
             if (dialogFeedStyleBinding3 == null) {
                 Intrinsics.c("mBinding");
@@ -60,8 +56,8 @@ public final class YYPostFeedStyleDialog extends BaseFullScreenDialog {
             }
             ImageView imageView = dialogFeedStyleBinding4.l;
             Intrinsics.c(imageView, "mBinding.imgBtnAll");
-            a(true, shapeConstraintLayout2, imageView);
-            DialogFeedStyleBinding dialogFeedStyleBinding5 = this.f17388a;
+            a(true, view, imageView);
+            DialogFeedStyleBinding dialogFeedStyleBinding5 = this.a;
             DialogFeedStyleBinding dialogFeedStyleBinding6 = dialogFeedStyleBinding5;
             if (dialogFeedStyleBinding5 == null) {
                 Intrinsics.c("mBinding");
@@ -69,28 +65,28 @@ public final class YYPostFeedStyleDialog extends BaseFullScreenDialog {
             }
             ConstraintLayout constraintLayout = dialogFeedStyleBinding6.q;
             Intrinsics.c(constraintLayout, "mBinding.llPostData");
-            ConstraintLayout constraintLayout2 = constraintLayout;
-            DialogFeedStyleBinding dialogFeedStyleBinding7 = this.f17388a;
+            View view2 = (View) constraintLayout;
+            DialogFeedStyleBinding dialogFeedStyleBinding7 = this.a;
             if (dialogFeedStyleBinding7 == null) {
                 Intrinsics.c("mBinding");
                 dialogFeedStyleBinding7 = null;
             }
             ImageView imageView2 = dialogFeedStyleBinding7.m;
             Intrinsics.c(imageView2, "mBinding.imgBtnData");
-            a(false, constraintLayout2, imageView2);
+            a(false, view2, imageView2);
             a(false);
         } else if (i == 1) {
             g();
-            DialogFeedStyleBinding dialogFeedStyleBinding8 = this.f17388a;
+            DialogFeedStyleBinding dialogFeedStyleBinding8 = this.a;
             DialogFeedStyleBinding dialogFeedStyleBinding9 = dialogFeedStyleBinding8;
             if (dialogFeedStyleBinding8 == null) {
                 Intrinsics.c("mBinding");
                 dialogFeedStyleBinding9 = null;
             }
-            ShapeConstraintLayout shapeConstraintLayout3 = dialogFeedStyleBinding9.p;
-            Intrinsics.c(shapeConstraintLayout3, "mBinding.llPostAll");
-            ShapeConstraintLayout shapeConstraintLayout4 = shapeConstraintLayout3;
-            DialogFeedStyleBinding dialogFeedStyleBinding10 = this.f17388a;
+            ShapeConstraintLayout shapeConstraintLayout2 = dialogFeedStyleBinding9.p;
+            Intrinsics.c(shapeConstraintLayout2, "mBinding.llPostAll");
+            View view3 = (View) shapeConstraintLayout2;
+            DialogFeedStyleBinding dialogFeedStyleBinding10 = this.a;
             DialogFeedStyleBinding dialogFeedStyleBinding11 = dialogFeedStyleBinding10;
             if (dialogFeedStyleBinding10 == null) {
                 Intrinsics.c("mBinding");
@@ -98,38 +94,38 @@ public final class YYPostFeedStyleDialog extends BaseFullScreenDialog {
             }
             ImageView imageView3 = dialogFeedStyleBinding11.l;
             Intrinsics.c(imageView3, "mBinding.imgBtnAll");
-            a(false, shapeConstraintLayout4, imageView3);
-            DialogFeedStyleBinding dialogFeedStyleBinding12 = this.f17388a;
+            a(false, view3, imageView3);
+            DialogFeedStyleBinding dialogFeedStyleBinding12 = this.a;
             DialogFeedStyleBinding dialogFeedStyleBinding13 = dialogFeedStyleBinding12;
             if (dialogFeedStyleBinding12 == null) {
                 Intrinsics.c("mBinding");
                 dialogFeedStyleBinding13 = null;
             }
-            ConstraintLayout constraintLayout3 = dialogFeedStyleBinding13.q;
-            Intrinsics.c(constraintLayout3, "mBinding.llPostData");
-            ConstraintLayout constraintLayout4 = constraintLayout3;
-            DialogFeedStyleBinding dialogFeedStyleBinding14 = this.f17388a;
+            ConstraintLayout constraintLayout2 = dialogFeedStyleBinding13.q;
+            Intrinsics.c(constraintLayout2, "mBinding.llPostData");
+            View view4 = (View) constraintLayout2;
+            DialogFeedStyleBinding dialogFeedStyleBinding14 = this.a;
             if (dialogFeedStyleBinding14 == null) {
                 Intrinsics.c("mBinding");
                 dialogFeedStyleBinding14 = null;
             }
             ImageView imageView4 = dialogFeedStyleBinding14.m;
             Intrinsics.c(imageView4, "mBinding.imgBtnData");
-            a(true, constraintLayout4, imageView4);
+            a(true, view4, imageView4);
             a(false);
         } else if (i != 2) {
         } else {
             a(true);
-            DialogFeedStyleBinding dialogFeedStyleBinding15 = this.f17388a;
+            DialogFeedStyleBinding dialogFeedStyleBinding15 = this.a;
             DialogFeedStyleBinding dialogFeedStyleBinding16 = dialogFeedStyleBinding15;
             if (dialogFeedStyleBinding15 == null) {
                 Intrinsics.c("mBinding");
                 dialogFeedStyleBinding16 = null;
             }
-            ShapeConstraintLayout shapeConstraintLayout5 = dialogFeedStyleBinding16.p;
-            Intrinsics.c(shapeConstraintLayout5, "mBinding.llPostAll");
-            ShapeConstraintLayout shapeConstraintLayout6 = shapeConstraintLayout5;
-            DialogFeedStyleBinding dialogFeedStyleBinding17 = this.f17388a;
+            ShapeConstraintLayout shapeConstraintLayout3 = dialogFeedStyleBinding16.p;
+            Intrinsics.c(shapeConstraintLayout3, "mBinding.llPostAll");
+            View view5 = (View) shapeConstraintLayout3;
+            DialogFeedStyleBinding dialogFeedStyleBinding17 = this.a;
             DialogFeedStyleBinding dialogFeedStyleBinding18 = dialogFeedStyleBinding17;
             if (dialogFeedStyleBinding17 == null) {
                 Intrinsics.c("mBinding");
@@ -137,24 +133,24 @@ public final class YYPostFeedStyleDialog extends BaseFullScreenDialog {
             }
             ImageView imageView5 = dialogFeedStyleBinding18.l;
             Intrinsics.c(imageView5, "mBinding.imgBtnAll");
-            a(false, shapeConstraintLayout6, imageView5);
-            DialogFeedStyleBinding dialogFeedStyleBinding19 = this.f17388a;
+            a(false, view5, imageView5);
+            DialogFeedStyleBinding dialogFeedStyleBinding19 = this.a;
             DialogFeedStyleBinding dialogFeedStyleBinding20 = dialogFeedStyleBinding19;
             if (dialogFeedStyleBinding19 == null) {
                 Intrinsics.c("mBinding");
                 dialogFeedStyleBinding20 = null;
             }
-            ConstraintLayout constraintLayout5 = dialogFeedStyleBinding20.q;
-            Intrinsics.c(constraintLayout5, "mBinding.llPostData");
-            ConstraintLayout constraintLayout6 = constraintLayout5;
-            DialogFeedStyleBinding dialogFeedStyleBinding21 = this.f17388a;
+            ConstraintLayout constraintLayout3 = dialogFeedStyleBinding20.q;
+            Intrinsics.c(constraintLayout3, "mBinding.llPostData");
+            View view6 = (View) constraintLayout3;
+            DialogFeedStyleBinding dialogFeedStyleBinding21 = this.a;
             if (dialogFeedStyleBinding21 == null) {
                 Intrinsics.c("mBinding");
                 dialogFeedStyleBinding21 = null;
             }
             ImageView imageView6 = dialogFeedStyleBinding21.m;
             Intrinsics.c(imageView6, "mBinding.imgBtnData");
-            a(false, constraintLayout6, imageView6);
+            a(false, view6, imageView6);
         }
     }
 
@@ -168,7 +164,7 @@ public final class YYPostFeedStyleDialog extends BaseFullScreenDialog {
         if (!TextUtils.isEmpty(yYThemeEventEndInfo.getDuration_time())) {
             YYShareAchievementModel yYShareAchievementModel = new YYShareAchievementModel("开播时长", yYThemeEventEndInfo.getDuration_time(), "", false);
             HashMap<Integer, YYShareAchievementModel> hashMap2 = hashMap;
-            DialogFeedStyleBinding dialogFeedStyleBinding = this.f17388a;
+            DialogFeedStyleBinding dialogFeedStyleBinding = this.a;
             DialogFeedStyleBinding dialogFeedStyleBinding2 = dialogFeedStyleBinding;
             if (dialogFeedStyleBinding == null) {
                 Intrinsics.c("mBinding");
@@ -179,7 +175,7 @@ public final class YYPostFeedStyleDialog extends BaseFullScreenDialog {
         if (!TextUtils.isEmpty(yYThemeEventEndInfo.getSend_users_count())) {
             YYShareAchievementModel yYShareAchievementModel2 = new YYShareAchievementModel("祝福人数", yYThemeEventEndInfo.getSend_users_count(), "", false);
             HashMap<Integer, YYShareAchievementModel> hashMap3 = hashMap;
-            DialogFeedStyleBinding dialogFeedStyleBinding3 = this.f17388a;
+            DialogFeedStyleBinding dialogFeedStyleBinding3 = this.a;
             DialogFeedStyleBinding dialogFeedStyleBinding4 = dialogFeedStyleBinding3;
             if (dialogFeedStyleBinding3 == null) {
                 Intrinsics.c("mBinding");
@@ -190,7 +186,7 @@ public final class YYPostFeedStyleDialog extends BaseFullScreenDialog {
         if (!TextUtils.isEmpty(yYThemeEventEndInfo.getUsers_count())) {
             YYShareAchievementModel yYShareAchievementModel3 = new YYShareAchievementModel("观看人数", yYThemeEventEndInfo.getUsers_count(), "", false);
             HashMap<Integer, YYShareAchievementModel> hashMap4 = hashMap;
-            DialogFeedStyleBinding dialogFeedStyleBinding5 = this.f17388a;
+            DialogFeedStyleBinding dialogFeedStyleBinding5 = this.a;
             DialogFeedStyleBinding dialogFeedStyleBinding6 = dialogFeedStyleBinding5;
             if (dialogFeedStyleBinding5 == null) {
                 Intrinsics.c("mBinding");
@@ -203,7 +199,7 @@ public final class YYPostFeedStyleDialog extends BaseFullScreenDialog {
         }
         YYShareAchievementModel yYShareAchievementModel4 = new YYShareAchievementModel("庆典值", yYThemeEventEndInfo.getValue(), "", false);
         HashMap<Integer, YYShareAchievementModel> hashMap5 = hashMap;
-        DialogFeedStyleBinding dialogFeedStyleBinding7 = this.f17388a;
+        DialogFeedStyleBinding dialogFeedStyleBinding7 = this.a;
         if (dialogFeedStyleBinding7 == null) {
             Intrinsics.c("mBinding");
             dialogFeedStyleBinding7 = null;
@@ -221,7 +217,7 @@ public final class YYPostFeedStyleDialog extends BaseFullScreenDialog {
     }
 
     private final void a(boolean z) {
-        DialogFeedStyleBinding dialogFeedStyleBinding = this.f17388a;
+        DialogFeedStyleBinding dialogFeedStyleBinding = this.a;
         DialogFeedStyleBinding dialogFeedStyleBinding2 = dialogFeedStyleBinding;
         if (dialogFeedStyleBinding == null) {
             Intrinsics.c("mBinding");
@@ -229,8 +225,8 @@ public final class YYPostFeedStyleDialog extends BaseFullScreenDialog {
         }
         ConstraintLayout constraintLayout = dialogFeedStyleBinding2.e;
         Intrinsics.c(constraintLayout, "mBinding.btnPostText");
-        ConstraintLayout constraintLayout2 = constraintLayout;
-        DialogFeedStyleBinding dialogFeedStyleBinding3 = this.f17388a;
+        View view = (View) constraintLayout;
+        DialogFeedStyleBinding dialogFeedStyleBinding3 = this.a;
         DialogFeedStyleBinding dialogFeedStyleBinding4 = dialogFeedStyleBinding3;
         if (dialogFeedStyleBinding3 == null) {
             Intrinsics.c("mBinding");
@@ -238,52 +234,52 @@ public final class YYPostFeedStyleDialog extends BaseFullScreenDialog {
         }
         ImageView imageView = dialogFeedStyleBinding4.n;
         Intrinsics.c(imageView, "mBinding.imgBtnText");
-        a(z, constraintLayout2, imageView);
-        DialogFeedStyleBinding dialogFeedStyleBinding5 = this.f17388a;
+        a(z, view, imageView);
+        DialogFeedStyleBinding dialogFeedStyleBinding5 = this.a;
         DialogFeedStyleBinding dialogFeedStyleBinding6 = dialogFeedStyleBinding5;
         if (dialogFeedStyleBinding5 == null) {
             Intrinsics.c("mBinding");
             dialogFeedStyleBinding6 = null;
         }
-        ConstraintLayout constraintLayout3 = dialogFeedStyleBinding6.e;
+        ConstraintLayout constraintLayout2 = dialogFeedStyleBinding6.e;
         int i = this.b;
-        constraintLayout3.setPadding(0, i, 0, z ? this.f17389c : i);
-        DialogFeedStyleBinding dialogFeedStyleBinding7 = this.f17388a;
+        constraintLayout2.setPadding(0, i, 0, z ? this.c : i);
+        DialogFeedStyleBinding dialogFeedStyleBinding7 = this.a;
         DialogFeedStyleBinding dialogFeedStyleBinding8 = dialogFeedStyleBinding7;
         if (dialogFeedStyleBinding7 == null) {
             Intrinsics.c("mBinding");
             dialogFeedStyleBinding8 = null;
         }
         dialogFeedStyleBinding8.o.setVisibility(z ? 0 : 8);
-        DialogFeedStyleBinding dialogFeedStyleBinding9 = this.f17388a;
+        DialogFeedStyleBinding dialogFeedStyleBinding9 = this.a;
         DialogFeedStyleBinding dialogFeedStyleBinding10 = dialogFeedStyleBinding9;
         if (dialogFeedStyleBinding9 == null) {
             Intrinsics.c("mBinding");
             dialogFeedStyleBinding10 = null;
         }
         dialogFeedStyleBinding10.r.setVisibility(z ? 0 : 8);
-        DialogFeedStyleBinding dialogFeedStyleBinding11 = this.f17388a;
+        DialogFeedStyleBinding dialogFeedStyleBinding11 = this.a;
         DialogFeedStyleBinding dialogFeedStyleBinding12 = dialogFeedStyleBinding11;
         if (dialogFeedStyleBinding11 == null) {
             Intrinsics.c("mBinding");
             dialogFeedStyleBinding12 = null;
         }
         dialogFeedStyleBinding12.g.setVisibility(z ? 0 : 8);
-        DialogFeedStyleBinding dialogFeedStyleBinding13 = this.f17388a;
+        DialogFeedStyleBinding dialogFeedStyleBinding13 = this.a;
         DialogFeedStyleBinding dialogFeedStyleBinding14 = dialogFeedStyleBinding13;
         if (dialogFeedStyleBinding13 == null) {
             Intrinsics.c("mBinding");
             dialogFeedStyleBinding14 = null;
         }
         dialogFeedStyleBinding14.h.setVisibility(z ? 0 : 8);
-        DialogFeedStyleBinding dialogFeedStyleBinding15 = this.f17388a;
+        DialogFeedStyleBinding dialogFeedStyleBinding15 = this.a;
         DialogFeedStyleBinding dialogFeedStyleBinding16 = dialogFeedStyleBinding15;
         if (dialogFeedStyleBinding15 == null) {
             Intrinsics.c("mBinding");
             dialogFeedStyleBinding16 = null;
         }
         dialogFeedStyleBinding16.i.setVisibility(z ? 0 : 8);
-        DialogFeedStyleBinding dialogFeedStyleBinding17 = this.f17388a;
+        DialogFeedStyleBinding dialogFeedStyleBinding17 = this.a;
         if (dialogFeedStyleBinding17 == null) {
             Intrinsics.c("mBinding");
             dialogFeedStyleBinding17 = null;
@@ -340,14 +336,14 @@ public final class YYPostFeedStyleDialog extends BaseFullScreenDialog {
                 z = false;
             } else if (i == 2) {
                 ArrayList arrayList2 = new ArrayList();
-                DialogFeedStyleBinding dialogFeedStyleBinding = this.f17388a;
+                DialogFeedStyleBinding dialogFeedStyleBinding = this.a;
                 DialogFeedStyleBinding dialogFeedStyleBinding2 = dialogFeedStyleBinding;
                 if (dialogFeedStyleBinding == null) {
                     Intrinsics.c("mBinding");
                     dialogFeedStyleBinding2 = null;
                 }
                 if (dialogFeedStyleBinding2.i.isChecked()) {
-                    DialogFeedStyleBinding dialogFeedStyleBinding3 = this.f17388a;
+                    DialogFeedStyleBinding dialogFeedStyleBinding3 = this.a;
                     DialogFeedStyleBinding dialogFeedStyleBinding4 = dialogFeedStyleBinding3;
                     if (dialogFeedStyleBinding3 == null) {
                         Intrinsics.c("mBinding");
@@ -355,14 +351,14 @@ public final class YYPostFeedStyleDialog extends BaseFullScreenDialog {
                     }
                     arrayList2.add(Integer.valueOf(dialogFeedStyleBinding4.i.getId()));
                 }
-                DialogFeedStyleBinding dialogFeedStyleBinding5 = this.f17388a;
+                DialogFeedStyleBinding dialogFeedStyleBinding5 = this.a;
                 DialogFeedStyleBinding dialogFeedStyleBinding6 = dialogFeedStyleBinding5;
                 if (dialogFeedStyleBinding5 == null) {
                     Intrinsics.c("mBinding");
                     dialogFeedStyleBinding6 = null;
                 }
                 if (dialogFeedStyleBinding6.j.isChecked()) {
-                    DialogFeedStyleBinding dialogFeedStyleBinding7 = this.f17388a;
+                    DialogFeedStyleBinding dialogFeedStyleBinding7 = this.a;
                     DialogFeedStyleBinding dialogFeedStyleBinding8 = dialogFeedStyleBinding7;
                     if (dialogFeedStyleBinding7 == null) {
                         Intrinsics.c("mBinding");
@@ -370,14 +366,14 @@ public final class YYPostFeedStyleDialog extends BaseFullScreenDialog {
                     }
                     arrayList2.add(Integer.valueOf(dialogFeedStyleBinding8.j.getId()));
                 }
-                DialogFeedStyleBinding dialogFeedStyleBinding9 = this.f17388a;
+                DialogFeedStyleBinding dialogFeedStyleBinding9 = this.a;
                 DialogFeedStyleBinding dialogFeedStyleBinding10 = dialogFeedStyleBinding9;
                 if (dialogFeedStyleBinding9 == null) {
                     Intrinsics.c("mBinding");
                     dialogFeedStyleBinding10 = null;
                 }
                 if (dialogFeedStyleBinding10.g.isChecked()) {
-                    DialogFeedStyleBinding dialogFeedStyleBinding11 = this.f17388a;
+                    DialogFeedStyleBinding dialogFeedStyleBinding11 = this.a;
                     DialogFeedStyleBinding dialogFeedStyleBinding12 = dialogFeedStyleBinding11;
                     if (dialogFeedStyleBinding11 == null) {
                         Intrinsics.c("mBinding");
@@ -385,14 +381,14 @@ public final class YYPostFeedStyleDialog extends BaseFullScreenDialog {
                     }
                     arrayList2.add(Integer.valueOf(dialogFeedStyleBinding12.g.getId()));
                 }
-                DialogFeedStyleBinding dialogFeedStyleBinding13 = this.f17388a;
+                DialogFeedStyleBinding dialogFeedStyleBinding13 = this.a;
                 DialogFeedStyleBinding dialogFeedStyleBinding14 = dialogFeedStyleBinding13;
                 if (dialogFeedStyleBinding13 == null) {
                     Intrinsics.c("mBinding");
                     dialogFeedStyleBinding14 = null;
                 }
                 if (dialogFeedStyleBinding14.h.isChecked()) {
-                    DialogFeedStyleBinding dialogFeedStyleBinding15 = this.f17388a;
+                    DialogFeedStyleBinding dialogFeedStyleBinding15 = this.a;
                     DialogFeedStyleBinding dialogFeedStyleBinding16 = dialogFeedStyleBinding15;
                     if (dialogFeedStyleBinding15 == null) {
                         Intrinsics.c("mBinding");
@@ -444,28 +440,28 @@ public final class YYPostFeedStyleDialog extends BaseFullScreenDialog {
     }
 
     private final void g() {
-        DialogFeedStyleBinding dialogFeedStyleBinding = this.f17388a;
+        DialogFeedStyleBinding dialogFeedStyleBinding = this.a;
         DialogFeedStyleBinding dialogFeedStyleBinding2 = dialogFeedStyleBinding;
         if (dialogFeedStyleBinding == null) {
             Intrinsics.c("mBinding");
             dialogFeedStyleBinding2 = null;
         }
         dialogFeedStyleBinding2.i.setChecked(false);
-        DialogFeedStyleBinding dialogFeedStyleBinding3 = this.f17388a;
+        DialogFeedStyleBinding dialogFeedStyleBinding3 = this.a;
         DialogFeedStyleBinding dialogFeedStyleBinding4 = dialogFeedStyleBinding3;
         if (dialogFeedStyleBinding3 == null) {
             Intrinsics.c("mBinding");
             dialogFeedStyleBinding4 = null;
         }
         dialogFeedStyleBinding4.j.setChecked(false);
-        DialogFeedStyleBinding dialogFeedStyleBinding5 = this.f17388a;
+        DialogFeedStyleBinding dialogFeedStyleBinding5 = this.a;
         DialogFeedStyleBinding dialogFeedStyleBinding6 = dialogFeedStyleBinding5;
         if (dialogFeedStyleBinding5 == null) {
             Intrinsics.c("mBinding");
             dialogFeedStyleBinding6 = null;
         }
         dialogFeedStyleBinding6.g.setChecked(false);
-        DialogFeedStyleBinding dialogFeedStyleBinding7 = this.f17388a;
+        DialogFeedStyleBinding dialogFeedStyleBinding7 = this.a;
         if (dialogFeedStyleBinding7 == null) {
             Intrinsics.c("mBinding");
             dialogFeedStyleBinding7 = null;
@@ -483,23 +479,23 @@ public final class YYPostFeedStyleDialog extends BaseFullScreenDialog {
         this.e = yYThemeEventEndInfo;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
         View inflate = LayoutInflater.from(getContext()).inflate(R.layout.dialog_feed_style, (ViewGroup) null);
-        DialogFeedStyleBinding a2 = DialogFeedStyleBinding.a(inflate);
-        Intrinsics.c(a2, "bind(view)");
-        this.f17388a = a2;
+        DialogFeedStyleBinding a = DialogFeedStyleBinding.a(inflate);
+        Intrinsics.c(a, "bind(view)");
+        this.a = a;
         this.b = DensityUtils.a(getContext(), 19.0f);
-        this.f17389c = DensityUtils.a(getContext(), 34.0f);
+        this.c = DensityUtils.a(getContext(), 34.0f);
         return inflate;
     }
 
-    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment
     public void onViewCreated(View view, Bundle bundle) {
         Intrinsics.e(view, "view");
         super.onViewCreated(view, bundle);
-        DialogFeedStyleBinding dialogFeedStyleBinding = this.f17388a;
+        DialogFeedStyleBinding dialogFeedStyleBinding = this.a;
         DialogFeedStyleBinding dialogFeedStyleBinding2 = dialogFeedStyleBinding;
         if (dialogFeedStyleBinding == null) {
             Intrinsics.c("mBinding");
@@ -511,7 +507,7 @@ public final class YYPostFeedStyleDialog extends BaseFullScreenDialog {
                 YYPostFeedStyleDialog.a(YYPostFeedStyleDialog.this, view2);
             }
         });
-        DialogFeedStyleBinding dialogFeedStyleBinding3 = this.f17388a;
+        DialogFeedStyleBinding dialogFeedStyleBinding3 = this.a;
         DialogFeedStyleBinding dialogFeedStyleBinding4 = dialogFeedStyleBinding3;
         if (dialogFeedStyleBinding3 == null) {
             Intrinsics.c("mBinding");
@@ -523,19 +519,19 @@ public final class YYPostFeedStyleDialog extends BaseFullScreenDialog {
                 YYPostFeedStyleDialog.b(YYPostFeedStyleDialog.this, view2);
             }
         });
-        DialogFeedStyleBinding dialogFeedStyleBinding5 = this.f17388a;
+        DialogFeedStyleBinding dialogFeedStyleBinding5 = this.a;
         DialogFeedStyleBinding dialogFeedStyleBinding6 = dialogFeedStyleBinding5;
         if (dialogFeedStyleBinding5 == null) {
             Intrinsics.c("mBinding");
             dialogFeedStyleBinding6 = null;
         }
-        dialogFeedStyleBinding6.f16336a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYPostFeedStyleDialog$1atxa6kurwQj9kYTmCs-cZE6DKg
+        dialogFeedStyleBinding6.a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYPostFeedStyleDialog$1atxa6kurwQj9kYTmCs-cZE6DKg
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 YYPostFeedStyleDialog.c(YYPostFeedStyleDialog.this, view2);
             }
         });
-        DialogFeedStyleBinding dialogFeedStyleBinding7 = this.f17388a;
+        DialogFeedStyleBinding dialogFeedStyleBinding7 = this.a;
         DialogFeedStyleBinding dialogFeedStyleBinding8 = dialogFeedStyleBinding7;
         if (dialogFeedStyleBinding7 == null) {
             Intrinsics.c("mBinding");
@@ -547,7 +543,7 @@ public final class YYPostFeedStyleDialog extends BaseFullScreenDialog {
                 YYPostFeedStyleDialog.d(YYPostFeedStyleDialog.this, view2);
             }
         });
-        DialogFeedStyleBinding dialogFeedStyleBinding9 = this.f17388a;
+        DialogFeedStyleBinding dialogFeedStyleBinding9 = this.a;
         DialogFeedStyleBinding dialogFeedStyleBinding10 = dialogFeedStyleBinding9;
         if (dialogFeedStyleBinding9 == null) {
             Intrinsics.c("mBinding");
@@ -559,7 +555,7 @@ public final class YYPostFeedStyleDialog extends BaseFullScreenDialog {
                 YYPostFeedStyleDialog.e(YYPostFeedStyleDialog.this, view2);
             }
         });
-        DialogFeedStyleBinding dialogFeedStyleBinding11 = this.f17388a;
+        DialogFeedStyleBinding dialogFeedStyleBinding11 = this.a;
         DialogFeedStyleBinding dialogFeedStyleBinding12 = dialogFeedStyleBinding11;
         if (dialogFeedStyleBinding11 == null) {
             Intrinsics.c("mBinding");
@@ -571,7 +567,7 @@ public final class YYPostFeedStyleDialog extends BaseFullScreenDialog {
                 YYPostFeedStyleDialog.f(YYPostFeedStyleDialog.this, view2);
             }
         });
-        DialogFeedStyleBinding dialogFeedStyleBinding13 = this.f17388a;
+        DialogFeedStyleBinding dialogFeedStyleBinding13 = this.a;
         if (dialogFeedStyleBinding13 == null) {
             Intrinsics.c("mBinding");
             dialogFeedStyleBinding13 = null;

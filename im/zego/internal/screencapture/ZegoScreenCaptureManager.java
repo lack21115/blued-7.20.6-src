@@ -22,11 +22,11 @@ import com.zego.zegoavkit2.screencapture.ZegoScreenCaptureFactory;
 public class ZegoScreenCaptureManager {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final ZegoScreenCaptureManager f42238a = new ZegoScreenCaptureManager();
+    private static final ZegoScreenCaptureManager f28546a = new ZegoScreenCaptureManager();
     private ZegoScreenCaptureService b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f42239c;
+    private Context f28547c;
     private ZegoScreenCaptureFactory d;
     private Display e;
     private IZegoScreenCaptureManagerEventHandler f;
@@ -38,18 +38,18 @@ public class ZegoScreenCaptureManager {
     class AnonymousClass1 implements ServiceConnection {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ ZegoScreenCaptureManager f42240a;
+        final /* synthetic */ ZegoScreenCaptureManager f28548a;
 
         @Override // android.content.ServiceConnection
         public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
-            Intent intent = new Intent(this.f42240a.f42239c, ZegoScreenCaptureAssistantActivity.class);
+            Intent intent = new Intent(this.f28548a.f28547c, ZegoScreenCaptureAssistantActivity.class);
             intent.addFlags(268435456);
-            this.f42240a.f42239c.startActivity(intent);
+            this.f28548a.f28547c.startActivity(intent);
         }
 
         @Override // android.content.ServiceConnection
         public void onServiceDisconnected(ComponentName componentName) {
-            this.f42240a.b = null;
+            this.f28548a.b = null;
         }
     }
 
@@ -58,16 +58,16 @@ public class ZegoScreenCaptureManager {
     class AnonymousClass2 implements ComponentCallbacks {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ ZegoScreenCaptureManager f42241a;
+        final /* synthetic */ ZegoScreenCaptureManager f28549a;
 
         @Override // android.content.ComponentCallbacks
         public void onConfigurationChanged(Configuration configuration) {
-            int rotation = this.f42241a.e.getRotation();
-            if (rotation == this.f42241a.g) {
+            int rotation = this.f28549a.e.getRotation();
+            if (rotation == this.f28549a.g) {
                 return;
             }
-            this.f42241a.g = rotation;
-            this.f42241a.b();
+            this.f28549a.g = rotation;
+            this.f28549a.b();
         }
 
         @Override // android.content.ComponentCallbacks
@@ -79,7 +79,7 @@ public class ZegoScreenCaptureManager {
     public static class ZegoScreenCaptureAssistantActivity extends Activity {
 
         /* renamed from: a  reason: collision with root package name */
-        private MediaProjectionManager f42242a;
+        private MediaProjectionManager f28550a;
 
         @Override // android.app.Activity, android.view.Window.Callback
         public boolean dispatchTouchEvent(MotionEvent motionEvent) {
@@ -92,9 +92,9 @@ public class ZegoScreenCaptureManager {
         public void onActivityResult(int i, int i2, Intent intent) {
             super.onActivityResult(i, i2, intent);
             if (i == 1001 && i2 == -1) {
-                ZegoScreenCaptureManager.f42238a.a(this.f42242a.getMediaProjection(i2, intent));
+                ZegoScreenCaptureManager.f28546a.a(this.f28550a.getMediaProjection(i2, intent));
             } else {
-                ZegoScreenCaptureManager.f42238a.f.a(-2);
+                ZegoScreenCaptureManager.f28546a.f.a(-2);
             }
             finish();
         }
@@ -105,7 +105,7 @@ public class ZegoScreenCaptureManager {
             super.onCreate(bundle);
             requestWindowFeature(1);
             MediaProjectionManager mediaProjectionManager = (MediaProjectionManager) getSystemService(Context.MEDIA_PROJECTION_SERVICE);
-            this.f42242a = mediaProjectionManager;
+            this.f28550a = mediaProjectionManager;
             startActivityForResult(mediaProjectionManager.createScreenCaptureIntent(), 1001);
         }
     }
@@ -117,7 +117,7 @@ public class ZegoScreenCaptureManager {
             zegoScreenCaptureFactory.setMediaProjection(mediaProjection);
             return;
         }
-        IZegoScreenCaptureManagerEventHandler iZegoScreenCaptureManagerEventHandler = f42238a.f;
+        IZegoScreenCaptureManagerEventHandler iZegoScreenCaptureManagerEventHandler = f28546a.f;
         if (iZegoScreenCaptureManagerEventHandler != null) {
             iZegoScreenCaptureManagerEventHandler.a(-1);
         }
@@ -127,7 +127,7 @@ public class ZegoScreenCaptureManager {
     public void b() {
         DisplayMetrics displayMetrics = new DisplayMetrics();
         if (this.e == null) {
-            this.e = ((WindowManager) this.f42239c.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay();
+            this.e = ((WindowManager) this.f28547c.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay();
         }
         this.e.getRealMetrics(displayMetrics);
         setCaptureResolution(displayMetrics.widthPixels, displayMetrics.heightPixels, this.h);

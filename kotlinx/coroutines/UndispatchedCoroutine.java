@@ -14,7 +14,7 @@ public final class UndispatchedCoroutine<T> extends ScopeCoroutine<T> {
     private Object d;
 
     public UndispatchedCoroutine(CoroutineContext coroutineContext, Continuation<? super T> continuation) {
-        super(coroutineContext.get(UndispatchedMarker.f42861a) == null ? coroutineContext.plus(UndispatchedMarker.f42861a) : coroutineContext, continuation);
+        super(coroutineContext.get(UndispatchedMarker.a) == null ? coroutineContext.plus(UndispatchedMarker.a) : coroutineContext, continuation);
     }
 
     public final void a(CoroutineContext coroutineContext, Object obj) {
@@ -30,20 +30,20 @@ public final class UndispatchedCoroutine<T> extends ScopeCoroutine<T> {
             this.b = null;
             this.d = null;
         }
-        Object a2 = CompletionStateKt.a(obj, this.f43559c);
-        Continuation<T> continuation = this.f43559c;
+        Object a = CompletionStateKt.a(obj, this.c);
+        Continuation<T> continuation = this.c;
         CoroutineContext context = continuation.getContext();
-        Object a3 = ThreadContextKt.a(context, null);
-        UndispatchedCoroutine<?> a4 = a3 != ThreadContextKt.f43565a ? CoroutineContextKt.a(continuation, context, a3) : null;
+        Object a2 = ThreadContextKt.a(context, null);
+        UndispatchedCoroutine<?> a3 = a2 != ThreadContextKt.a ? CoroutineContextKt.a(continuation, context, a2) : null;
         try {
-            this.f43559c.resumeWith(a2);
-            Unit unit = Unit.f42314a;
-            if (a4 == null || a4.q()) {
-                ThreadContextKt.b(context, a3);
+            this.c.resumeWith(a);
+            Unit unit = Unit.a;
+            if (a3 == null || a3.q()) {
+                ThreadContextKt.b(context, a2);
             }
         } catch (Throwable th) {
-            if (a4 == null || a4.q()) {
-                ThreadContextKt.b(context, a3);
+            if (a3 == null || a3.q()) {
+                ThreadContextKt.b(context, a2);
             }
             throw th;
         }

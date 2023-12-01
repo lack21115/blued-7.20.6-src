@@ -1,5 +1,6 @@
 package com.android.org.conscrypt;
 
+import com.android.internal.content.NativeLibraryHelper;
 import com.android.org.conscrypt.util.EmptyArray;
 import java.io.IOException;
 import java.security.AlgorithmParameters;
@@ -223,7 +224,7 @@ public abstract class OpenSSLCipher extends CipherSpi {
 
         @Override // com.android.org.conscrypt.OpenSSLCipher
         protected String getCipherName(int i, Mode mode) {
-            return "aes-" + (i * 8) + "-" + mode.toString().toLowerCase(Locale.US);
+            return "aes-" + (i * 8) + NativeLibraryHelper.CLEAR_ABI_OVERRIDE + mode.toString().toLowerCase(Locale.US);
         }
     }
 
@@ -378,7 +379,7 @@ public abstract class OpenSSLCipher extends CipherSpi {
         @Override // com.android.org.conscrypt.OpenSSLCipher
         protected String getCipherName(int i, Mode mode) {
             String str = i == 16 ? "des-ede" : "des-ede3";
-            return mode == Mode.ECB ? str : str + "-" + mode.toString().toLowerCase(Locale.US);
+            return mode == Mode.ECB ? str : str + NativeLibraryHelper.CLEAR_ABI_OVERRIDE + mode.toString().toLowerCase(Locale.US);
         }
     }
 

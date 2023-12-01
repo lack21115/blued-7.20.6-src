@@ -19,15 +19,13 @@ public final class ProtoAdapterKt$delegateEncode$1 extends Lambda implements Fun
         this.$value = e;
     }
 
-    @Override // kotlin.jvm.functions.Function1
-    public /* bridge */ /* synthetic */ Unit invoke(ProtoWriter protoWriter) {
-        invoke2(protoWriter);
-        return Unit.f42314a;
+    public /* bridge */ /* synthetic */ Object invoke(Object obj) {
+        invoke((ProtoWriter) obj);
+        return Unit.a;
     }
 
-    /* renamed from: invoke  reason: avoid collision after fix types in other method */
-    public final void invoke2(ProtoWriter forwardWriter) {
-        Intrinsics.e(forwardWriter, "forwardWriter");
-        this.$this_delegateEncode.encode(forwardWriter, (ProtoWriter) this.$value);
+    public final void invoke(ProtoWriter protoWriter) {
+        Intrinsics.e(protoWriter, "forwardWriter");
+        this.$this_delegateEncode.encode(protoWriter, (ProtoWriter) this.$value);
     }
 }

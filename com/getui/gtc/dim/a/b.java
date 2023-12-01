@@ -38,7 +38,7 @@ public class b extends AbstractTable {
                                         str2 = new String(c.a(file));
                                     }
                                 }
-                                fVar.f21942a = c.a(SecureCryptTools.getInstance().decrypt(Base64.decode(str2, 0)));
+                                fVar.f8335a = c.a(SecureCryptTools.getInstance().decrypt(Base64.decode(str2, 0)));
                             }
                         } catch (Throwable th) {
                             th = th;

@@ -7,19 +7,19 @@ import java.text.DecimalFormat;
 public class StackedValueFormatter extends ValueFormatter {
 
     /* renamed from: a  reason: collision with root package name */
-    private boolean f22146a;
+    private boolean f8539a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private DecimalFormat f22147c;
+    private DecimalFormat f8540c;
 
     @Override // com.github.mikephil.charting.formatter.ValueFormatter
     public String a(float f, BarEntry barEntry) {
         float[] a2;
-        if (this.f22146a || (a2 = barEntry.a()) == null) {
-            return this.f22147c.format(f) + this.b;
+        if (this.f8539a || (a2 = barEntry.a()) == null) {
+            return this.f8540c.format(f) + this.b;
         } else if (a2[a2.length - 1] == f) {
-            return this.f22147c.format(barEntry.b()) + this.b;
+            return this.f8540c.format(barEntry.b()) + this.b;
         } else {
             return "";
         }

@@ -31,15 +31,15 @@ public class GroupManagerPresenter extends MvpPresenter {
         ArrayList arrayList;
         GroupInfoModel groupInfoModel = this.h;
         if (groupInfoModel != null) {
-            List<GroupMemberModel> list = groupInfoModel.admin;
+            List list = groupInfoModel.admin;
             if (list == null) {
                 arrayList = new ArrayList();
             } else {
                 arrayList = list;
                 if (list.size() > 0) {
                     arrayList = list;
-                    if (list.get(0).group_role == 1) {
-                        this.i = list.remove(0);
+                    if (((GroupMemberModel) list.get(0)).group_role == 1) {
+                        this.i = (GroupMemberModel) list.remove(0);
                         arrayList = list;
                     }
                 }
@@ -51,20 +51,18 @@ public class GroupManagerPresenter extends MvpPresenter {
             if (arrayList.size() < this.h.group_max_admin && !arrayList.contains(groupMemberModel)) {
                 arrayList.add(groupMemberModel);
             }
-            a(d.K, (String) this.h);
+            a(d.K, this.h);
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void a(FragmentActivity fragmentActivity, Bundle bundle, Bundle bundle2) {
         super.a(fragmentActivity, bundle, bundle2);
         if (bundle != null) {
-            this.h = (GroupInfoModel) bundle.getSerializable(d.K);
+            this.h = bundle.getSerializable(d.K);
             o();
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void a(IFetchDataListener iFetchDataListener) {
     }
 
@@ -76,7 +74,6 @@ public class GroupManagerPresenter extends MvpPresenter {
         SearchMemberFragment.a(h, 0, this.h.group_id + "");
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void b(IFetchDataListener iFetchDataListener) {
     }
 
@@ -87,12 +84,10 @@ public class GroupManagerPresenter extends MvpPresenter {
         IRequestHost g = g();
         MsgGroupHttpUtils.a(g, this.h.group_id + "", str, 3, new BluedUIHttpResponse<BluedEntityA>(g()) { // from class: com.soft.blued.ui.msg_group.presenter.GroupManagerPresenter.1
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA bluedEntityA) {
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish(boolean z) {
                 GroupManagerPresenter.this.b("cancelManager", z);
                 super.onUIFinish(z);
@@ -104,7 +99,7 @@ public class GroupManagerPresenter extends MvpPresenter {
                             int i2 = i;
                             if (i2 >= GroupManagerPresenter.this.h.admin.size()) {
                                 break;
-                            } else if (GroupManagerPresenter.this.h.admin.get(i2).uid.equals(str)) {
+                            } else if (((GroupMemberModel) GroupManagerPresenter.this.h.admin.get(i2)).uid.equals(str)) {
                                 GroupManagerPresenter.this.h.admin.remove(i2);
                                 break;
                             } else {
@@ -116,7 +111,6 @@ public class GroupManagerPresenter extends MvpPresenter {
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 super.onUIStart();
                 GroupManagerPresenter.this.d_("cancelManager");
@@ -132,7 +126,7 @@ public class GroupManagerPresenter extends MvpPresenter {
         GroupInfoModel groupInfoModel = this.h;
         if (groupInfoModel != null) {
             if (groupInfoModel.admin != null && this.h.admin.size() > 0) {
-                if (this.h.admin.get(this.h.admin.size() - 1).uid.equals("0")) {
+                if (((GroupMemberModel) this.h.admin.get(this.h.admin.size() - 1)).uid.equals("0")) {
                     this.h.admin.remove(this.h.admin.size() - 1);
                 }
                 if (this.i != null) {

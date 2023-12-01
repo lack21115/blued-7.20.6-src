@@ -9,17 +9,17 @@ import java.net.Socket;
 public abstract class gb extends fu {
 
     /* renamed from: a  reason: collision with root package name */
-    protected Exception f41430a;
+    protected Exception f27739a;
 
     /* renamed from: a  reason: collision with other field name */
-    protected Socket f503a;
+    protected Socket f456a;
     protected XMPushService b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f41431c;
+    private int f27740c;
 
     /* renamed from: c  reason: collision with other field name */
-    String f504c;
+    String f457c;
     private String d;
     protected volatile long e;
     protected volatile long f;
@@ -28,8 +28,8 @@ public abstract class gb extends fu {
 
     public gb(XMPushService xMPushService, fv fvVar) {
         super(xMPushService, fvVar);
-        this.f41430a = null;
-        this.f504c = null;
+        this.f27739a = null;
+        this.f457c = null;
         this.e = 0L;
         this.f = 0L;
         this.g = 0L;
@@ -38,7 +38,7 @@ public abstract class gb extends fu {
     }
 
     private void a(fv fvVar) {
-        a(fvVar.c(), fvVar.m11792a());
+        a(fvVar.c(), fvVar.m8742a());
     }
 
     /* JADX WARN: Type inference failed for: r0v0, types: [java.lang.Throwable, java.lang.Runtime] */
@@ -57,7 +57,7 @@ public abstract class gb extends fu {
 
     @Override // com.xiaomi.push.fu
     /* renamed from: a */
-    public String mo11785a() {
+    public String mo8735a() {
         return this.d;
     }
 
@@ -66,7 +66,7 @@ public abstract class gb extends fu {
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    protected void mo11809a() {
+    protected void mo8759a() {
         synchronized (this) {
         }
     }
@@ -78,9 +78,9 @@ public abstract class gb extends fu {
                 return;
             }
             a(2, i, exc);
-            this.f487a = "";
+            this.f440a = "";
             try {
-                this.f503a.close();
+                this.f456a.close();
             } catch (Throwable th) {
             }
             this.e = 0L;
@@ -93,28 +93,28 @@ public abstract class gb extends fu {
             if (!bh.b(this.b)) {
                 return;
             }
-            int i = this.f41431c + 1;
-            this.f41431c = i;
+            int i = this.f27740c + 1;
+            this.f27740c = i;
             if (i < 2) {
                 return;
             }
-            String mo11785a = mo11785a();
-            com.xiaomi.channel.commonutils.logger.b.m11394a("max short conn time reached, sink down current host:".concat(String.valueOf(mo11785a)));
-            a(mo11785a, 0L, exc);
+            String mo8735a = mo8735a();
+            com.xiaomi.channel.commonutils.logger.b.m8344a("max short conn time reached, sink down current host:".concat(String.valueOf(mo8735a)));
+            a(mo8735a, 0L, exc);
         }
-        this.f41431c = 0;
+        this.f27740c = 0;
     }
 
     protected void a(String str, long j, Exception exc) {
         cp a2 = ct.a().a(fv.a(), false);
         if (a2 != null) {
             a2.b(str, j, 0L, exc);
-            ct.a().m11606c();
+            ct.a().m8556c();
         }
     }
 
     /* renamed from: a */
-    protected abstract void mo11774a(boolean z);
+    protected abstract void mo8724a(boolean z);
 
     @Override // com.xiaomi.push.fu
     public void a(fj[] fjVarArr) {
@@ -133,8 +133,8 @@ public abstract class gb extends fu {
     public void b(boolean z) {
         long elapsedRealtime = SystemClock.elapsedRealtime();
         long currentTimeMillis = System.currentTimeMillis();
-        mo11774a(z);
-        com.xiaomi.push.service.o.a(this.b).m12195c();
+        mo8724a(z);
+        com.xiaomi.push.service.o.a(this.b).m9145c();
         if (z) {
             return;
         }
@@ -142,7 +142,7 @@ public abstract class gb extends fu {
     }
 
     public String c() {
-        return this.f487a;
+        return this.f440a;
     }
 
     public void c(int i, Exception exc) {
@@ -154,10 +154,10 @@ public abstract class gb extends fu {
             try {
                 if (!c() && !b()) {
                     a(0, 0, (Exception) null);
-                    a(this.f484a);
+                    a(this.f437a);
                     return;
                 }
-                com.xiaomi.channel.commonutils.logger.b.m11394a("WARNING: current xmpp has connected");
+                com.xiaomi.channel.commonutils.logger.b.m8344a("WARNING: current xmpp has connected");
             } catch (IOException e) {
                 throw new gf(e);
             }

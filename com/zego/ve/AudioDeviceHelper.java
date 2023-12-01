@@ -9,7 +9,7 @@ import android.hardware.usb.UsbManager;
 import android.media.AudioDeviceInfo;
 import android.media.AudioManager;
 import android.os.Build;
-import com.android.internal.telephony.RILConstants;
+import com.huawei.hms.framework.network.grs.GrsBaseInfo;
 import java.util.Iterator;
 import java.util.Map;
 
@@ -247,7 +247,7 @@ public class AudioDeviceHelper {
             case 19:
                 return "AUX_LINE";
             case 20:
-                return RILConstants.SETUP_DATA_PROTOCOL_IP;
+                return "IP";
             case 21:
                 return "BUS";
             case 22:
@@ -259,7 +259,7 @@ public class AudioDeviceHelper {
             case 25:
                 return "REMOTE_SUBMIX";
             default:
-                return "UNKNOWN";
+                return GrsBaseInfo.CountryCodeSource.UNKNOWN;
         }
     }
 

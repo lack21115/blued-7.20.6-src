@@ -15,11 +15,11 @@ import android.widget.ImageView;
 public class c extends ImageView {
 
     /* renamed from: a  reason: collision with root package name */
-    final String f36185a;
+    final String f22494a;
     public boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Matrix f36186c;
+    private Matrix f22495c;
     private Matrix d;
     private int e;
     private float f;
@@ -36,13 +36,13 @@ public class c extends ImageView {
 
     public c(Context context) {
         super(context);
-        this.f36186c = new Matrix();
+        this.f22495c = new Matrix();
         this.d = new Matrix();
         this.e = 0;
         this.f = 1.0f;
         this.g = 1.0f;
         this.i = false;
-        this.f36185a = "TouchView";
+        this.f22494a = "TouchView";
         this.l = new PointF();
         this.m = new PointF();
         this.n = 1.0f;
@@ -71,7 +71,7 @@ public class c extends ImageView {
             return;
         }
         float[] fArr = new float[9];
-        this.f36186c.getValues(fArr);
+        this.f22495c.getValues(fArr);
         float f = fArr[2];
         float f2 = fArr[5];
         float f3 = fArr[0];
@@ -106,7 +106,7 @@ public class c extends ImageView {
         float width = this.p.width();
         float height = this.p.height();
         float[] fArr = new float[9];
-        this.f36186c.getValues(fArr);
+        this.f22495c.getValues(fArr);
         float f = fArr[2];
         float f2 = fArr[5];
         boolean z = false;
@@ -116,8 +116,8 @@ public class c extends ImageView {
         if (f3 > f4) {
             float f5 = f4 / f3;
             this.o = f5;
-            this.f36186c.postScale(f5, f5, this.m.x, this.m.y);
-            setImageMatrix(this.f36186c);
+            this.f22495c.postScale(f5, f5, this.m.x, this.m.y);
+            setImageMatrix(this.f22495c);
             float f6 = this.o;
             scaleAnimation = new ScaleAnimation(1.0f / f6, 1.0f, 1.0f / f6, 1.0f, this.m.x, this.m.y);
         } else {
@@ -125,7 +125,7 @@ public class c extends ImageView {
             if (f3 < f7) {
                 float f8 = f7 / f3;
                 this.o = f8;
-                this.f36186c.postScale(f8, f8, this.m.x, this.m.y);
+                this.f22495c.postScale(f8, f8, this.m.x, this.m.y);
                 float f9 = this.o;
                 scaleAnimation = new ScaleAnimation(1.0f, f9, 1.0f, f9, this.m.x, this.m.y);
             } else {
@@ -154,11 +154,11 @@ public class c extends ImageView {
                     float f13 = fArr[5];
                     fArr[2] = f;
                     fArr[5] = f2;
-                    this.f36186c.setValues(fArr);
-                    setImageMatrix(this.f36186c);
+                    this.f22495c.setValues(fArr);
+                    setImageMatrix(this.f22495c);
                     scaleAnimation = new TranslateAnimation(f12 - f, 0.0f, f13 - f2, 0.0f);
                 } else {
-                    setImageMatrix(this.f36186c);
+                    setImageMatrix(this.f22495c);
                 }
             }
         }
@@ -191,20 +191,20 @@ public class c extends ImageView {
         if (this.h == null) {
             return;
         }
-        this.f36186c.getValues(r0);
+        this.f22495c.getValues(r0);
         float max = Math.max(this.p.width() / this.h.getWidth(), this.p.height() / this.h.getHeight());
         this.j = this.p.left - (((this.h.getWidth() * max) - this.p.width()) / 2.0f);
         float height = this.p.top - (((this.h.getHeight() * max) - this.p.height()) / 2.0f);
         this.k = height;
         float[] fArr = {max, 0.0f, this.j, 0.0f, max, height};
-        this.f36186c.setValues(fArr);
+        this.f22495c.setValues(fArr);
         float min = Math.min(2048.0f / this.h.getWidth(), 2048.0f / this.h.getHeight());
         this.f = min;
         this.g = max;
         if (min < max) {
             this.f = max;
         }
-        setImageMatrix(this.f36186c);
+        setImageMatrix(this.f22495c);
     }
 
     public void a(Rect rect) {

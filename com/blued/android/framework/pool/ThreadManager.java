@@ -15,37 +15,29 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/framework/pool/ThreadManager.class */
 public class ThreadManager {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static ThreadManager f9829a;
+    private static ThreadManager a;
     private static final Long b = 10L;
-
-    /* renamed from: c  reason: collision with root package name */
-    private ThreadPoolExecutor f9830c;
+    private ThreadPoolExecutor c;
     private ExecutorService d;
     private ExecutorService e;
 
     /* loaded from: source-6737240-dex2jar.jar:com/blued/android/framework/pool/ThreadManager$DefaultThreadFactory.class */
     static class DefaultThreadFactory implements ThreadFactory {
-
-        /* renamed from: a  reason: collision with root package name */
-        private static final AtomicInteger f9833a = new AtomicInteger(1);
+        private static final AtomicInteger a = new AtomicInteger(1);
         private final ThreadGroup b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private final AtomicInteger f9834c = new AtomicInteger(1);
+        private final AtomicInteger c = new AtomicInteger(1);
         private final String d;
 
         DefaultThreadFactory() {
             SecurityManager securityManager = System.getSecurityManager();
             this.b = securityManager != null ? securityManager.getThreadGroup() : Thread.currentThread().getThreadGroup();
-            this.d = "blued-" + f9833a.getAndIncrement() + "-pool-";
+            this.d = "blued-" + a.getAndIncrement() + "-pool-";
         }
 
         @Override // java.util.concurrent.ThreadFactory
         public Thread newThread(Runnable runnable) {
             ThreadGroup threadGroup = this.b;
-            Thread thread = new Thread(threadGroup, runnable, this.d + this.f9834c.getAndIncrement(), 0L);
+            Thread thread = new Thread(threadGroup, runnable, this.d + this.c.getAndIncrement(), 0L);
             if (thread.isDaemon()) {
                 thread.setDaemon(false);
             }
@@ -90,7 +82,7 @@ public class ThreadManager {
                     }
                 }
             });
-            this.f9830c = threadPoolExecutor;
+            this.c = threadPoolExecutor;
             threadPoolExecutor.allowCoreThreadTimeOut(true);
         } catch (Exception e) {
             e.printStackTrace();
@@ -100,23 +92,23 @@ public class ThreadManager {
     }
 
     public static ThreadManager a() {
-        if (f9829a == null) {
+        if (a == null) {
             synchronized (ThreadManager.class) {
                 try {
-                    if (f9829a == null) {
-                        f9829a = new ThreadManager();
+                    if (a == null) {
+                        a = new ThreadManager();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f9829a;
+        return a;
     }
 
     public void a(ThreadExecutor threadExecutor) {
         ThreadPoolExecutor threadPoolExecutor;
-        if (threadExecutor == null || (threadPoolExecutor = this.f9830c) == null) {
+        if (threadExecutor == null || (threadPoolExecutor = this.c) == null) {
             return;
         }
         threadPoolExecutor.execute(threadExecutor);

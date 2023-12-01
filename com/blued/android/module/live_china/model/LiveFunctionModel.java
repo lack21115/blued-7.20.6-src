@@ -50,7 +50,6 @@ public class LiveFunctionModel implements MultiItemEntity {
         this.count = i4;
     }
 
-    @Override // com.chad.library.adapter.base.entity.MultiItemEntity
     public int getItemType() {
         return this.item_type;
     }

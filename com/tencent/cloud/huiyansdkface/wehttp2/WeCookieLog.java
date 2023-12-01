@@ -11,15 +11,15 @@ import java.io.IOException;
 public class WeCookieLog implements Interceptor {
 
     /* renamed from: a  reason: collision with root package name */
-    private WeLog f36124a;
+    private WeLog f22433a;
 
     public WeCookieLog(WeLog weLog) {
-        this.f36124a = weLog;
+        this.f22433a = weLog;
     }
 
     @Override // com.tencent.cloud.huiyansdkface.okhttp3.Interceptor
     public Response intercept(Interceptor.Chain chain) throws IOException {
-        if (this.f36124a.d == WeLog.Level.HEADERS || this.f36124a.d == WeLog.Level.BODY) {
+        if (this.f22433a.d == WeLog.Level.HEADERS || this.f22433a.d == WeLog.Level.BODY) {
             Request request = chain.request();
             Headers headers = request.headers();
             int i = 0;
@@ -31,9 +31,9 @@ public class WeCookieLog implements Interceptor {
                 String name = headers.name(i2);
                 if ("Cookie".equals(name)) {
                     LogTag logTag = (LogTag) request.tag(LogTag.class);
-                    WeLog.InnerLogger innerLogger = this.f36124a.f36131c;
+                    WeLog.InnerLogger innerLogger = this.f22433a.f22440c;
                     StringBuilder sb = new StringBuilder();
-                    sb.append((!this.f36124a.b || logTag == null) ? "" : logTag.getTag());
+                    sb.append((!this.f22433a.b || logTag == null) ? "" : logTag.getTag());
                     sb.append(name);
                     sb.append(":");
                     sb.append(headers.value(i2));

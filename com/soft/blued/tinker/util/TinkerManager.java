@@ -15,22 +15,22 @@ import com.tencent.tinker.lib.util.UpgradePatchRetry;
 public class TinkerManager {
 
     /* renamed from: a  reason: collision with root package name */
-    private static ApplicationLike f29785a;
+    private static ApplicationLike f16095a;
     private static BluedUncaughtExceptionHandler b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static boolean f29786c = false;
+    private static boolean f16096c = false;
 
     public static ApplicationLike a() {
-        return f29785a;
+        return f16095a;
     }
 
     public static void a(ApplicationLike applicationLike) {
-        f29785a = applicationLike;
+        f16095a = applicationLike;
     }
 
     public static void a(boolean z) {
-        UpgradePatchRetry.getInstance(f29785a.getApplication()).setRetryEnable(z);
+        UpgradePatchRetry.getInstance(f16095a.getApplication()).setRetryEnable(z);
     }
 
     public static void b() {
@@ -42,11 +42,11 @@ public class TinkerManager {
     }
 
     public static void b(ApplicationLike applicationLike) {
-        if (f29786c) {
+        if (f16096c) {
             TinkerLog.w("Tinker.TinkerManager", "install tinker, but has installed, ignore", new Object[0]);
             return;
         }
         TinkerInstaller.install(applicationLike, new BluedLoadReporter(applicationLike.getApplication()), new BluedPatchReporter(applicationLike.getApplication()), new BluedPatchListener(applicationLike.getApplication()), PatchLoadResultService.class, new UpgradePatch());
-        f29786c = true;
+        f16096c = true;
     }
 }

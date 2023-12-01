@@ -3,22 +3,21 @@ package androidx.fragment.app;
 import android.util.Log;
 import java.io.Writer;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8756600-dex2jar.jar:androidx/fragment/app/LogWriter.class */
-public final class LogWriter extends Writer {
+final class LogWriter extends Writer {
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f3051a;
+    private final String f3003a;
     private StringBuilder b = new StringBuilder(128);
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public LogWriter(String str) {
-        this.f3051a = str;
+        this.f3003a = str;
     }
 
     private void a() {
         if (this.b.length() > 0) {
-            Log.d(this.f3051a, this.b.toString());
+            Log.d(this.f3003a, this.b.toString());
             StringBuilder sb = this.b;
             sb.delete(0, sb.length());
         }

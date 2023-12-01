@@ -16,23 +16,23 @@ public class g extends com.opos.mobad.l.g {
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f26096c;
+    private String f12408c;
     private o<com.opos.mobad.ad.c.n, p> d;
 
     /* loaded from: source-8303388-dex2jar.jar:com/opos/mobad/f/a/g$a.class */
     public class a extends com.opos.mobad.f.a.a.p<p> implements com.opos.mobad.ad.c.o {
 
         /* renamed from: c  reason: collision with root package name */
-        private int f26100c;
+        private int f12412c;
 
         public a(int i, com.opos.mobad.f.a.a.n nVar) {
             super(i, nVar);
-            this.f26100c = i;
+            this.f12412c = i;
         }
 
         @Override // com.opos.mobad.ad.c.o
         public void a(p pVar) {
-            if (this.f26100c == g.this.d.j()) {
+            if (this.f12412c == g.this.d.j()) {
                 com.opos.mobad.service.j.n.a().b(g.this.b);
                 g.this.a(pVar);
             }
@@ -40,14 +40,14 @@ public class g extends com.opos.mobad.l.g {
 
         @Override // com.opos.mobad.ad.c.o
         public void a(q qVar, p pVar) {
-            if (this.f26100c == g.this.d.j()) {
+            if (this.f12412c == g.this.d.j()) {
                 g.this.a(qVar, pVar);
             }
         }
 
         @Override // com.opos.mobad.ad.c.o
         public void b(p pVar) {
-            if (this.f26100c == g.this.d.j()) {
+            if (this.f12412c == g.this.d.j()) {
                 com.opos.mobad.service.j.n.a().a(g.this.b);
                 g.this.b(pVar);
             }
@@ -55,14 +55,14 @@ public class g extends com.opos.mobad.l.g {
 
         @Override // com.opos.mobad.ad.c.o
         public void c(p pVar) {
-            if (this.f26100c == g.this.d.j()) {
+            if (this.f12412c == g.this.d.j()) {
                 g.this.c(pVar);
             }
         }
 
         @Override // com.opos.mobad.ad.c.o
         public void d(p pVar) {
-            if (this.f26100c == g.this.d.j()) {
+            if (this.f12412c == g.this.d.j()) {
                 g.this.d(pVar);
             }
         }
@@ -73,20 +73,20 @@ public class g extends com.opos.mobad.l.g {
     public static class b implements p {
 
         /* renamed from: a  reason: collision with root package name */
-        private String f26101a;
+        private String f12413a;
         private String b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f26102c;
+        private int f12414c;
         private boolean d = false;
         private p e;
         private int f;
 
         public b(p pVar, String str, String str2, int i, int i2) {
             this.e = pVar;
-            this.f26101a = str;
+            this.f12413a = str;
             this.b = str2;
-            this.f26102c = i;
+            this.f12414c = i;
             this.f = i2;
         }
 
@@ -97,11 +97,11 @@ public class g extends com.opos.mobad.l.g {
 
         @Override // com.opos.mobad.ad.g
         public void a(int i, String str, int i2) {
-            if (!com.opos.mobad.service.f.b().b(this.f26101a) || this.d) {
+            if (!com.opos.mobad.service.f.b().b(this.f12413a) || this.d) {
                 return;
             }
             this.d = true;
-            com.opos.mobad.service.i.d.a().a(this.f26101a, this.b, i, str, this.f26102c, this.f, i2);
+            com.opos.mobad.service.i.d.a().a(this.f12413a, this.b, i, str, this.f12414c, this.f, i2);
         }
 
         @Override // com.opos.mobad.ad.c.p
@@ -116,11 +116,11 @@ public class g extends com.opos.mobad.l.g {
 
         @Override // com.opos.mobad.ad.g
         public void b(int i) {
-            if (!com.opos.mobad.service.f.b().b(this.f26101a) || this.d) {
+            if (!com.opos.mobad.service.f.b().b(this.f12413a) || this.d) {
                 return;
             }
             this.d = true;
-            com.opos.mobad.service.i.d.a().a(this.f26101a, this.b, this.f26102c, this.f, i);
+            com.opos.mobad.service.i.d.a().a(this.f12413a, this.b, this.f12414c, this.f, i);
         }
 
         @Override // com.opos.mobad.ad.c.p
@@ -130,7 +130,7 @@ public class g extends com.opos.mobad.l.g {
 
         @Override // com.opos.mobad.ad.g
         public void c(int i) {
-            if (!com.opos.mobad.service.f.b().b(this.f26101a) || this.d) {
+            if (!com.opos.mobad.service.f.b().b(this.f12413a) || this.d) {
                 return;
             }
             this.e.c(i);
@@ -148,7 +148,7 @@ public class g extends com.opos.mobad.l.g {
 
         @Override // com.opos.mobad.ad.g
         public int g() {
-            if (com.opos.mobad.service.f.b().b(this.f26101a)) {
+            if (com.opos.mobad.service.f.b().b(this.f12413a)) {
                 return this.f;
             }
             return 0;
@@ -162,11 +162,11 @@ public class g extends com.opos.mobad.l.g {
             @Override // com.opos.mobad.f.a.b.a
             /* renamed from: a */
             public com.opos.mobad.ad.c.n b(e.a aVar3, com.opos.mobad.f.a.a.n nVar) {
-                com.opos.mobad.ad.c b2 = bVar.b(aVar3.f27301a);
+                com.opos.mobad.ad.c b2 = bVar.b(aVar3.f13613a);
                 if (b2 == null) {
                     return null;
                 }
-                return b2.a(context, new s.a().a(sVar.f25676a).b(sVar.b).a(), str, aVar3.b, new a(aVar3.f27301a, nVar));
+                return b2.a(context, new s.a().a(sVar.f11988a).b(sVar.b).a(), str, aVar3.b, new a(aVar3.f13613a, nVar));
             }
         }, new com.opos.mobad.f.a.c.a(context));
     }
@@ -208,7 +208,7 @@ public class g extends com.opos.mobad.l.g {
                         e.a k = this.d.k();
                         i2 = (k == null || k.g <= 0) ? 0 : k.g;
                     }
-                    arrayList.add(new b(pVar, this.b, this.f26096c, i, i2));
+                    arrayList.add(new b(pVar, this.b, this.f12408c, i, i2));
                 }
             }
         }
@@ -233,7 +233,7 @@ public class g extends com.opos.mobad.l.g {
 
     @Override // com.opos.mobad.l.f
     public boolean b(String str, int i) {
-        this.f26096c = str;
+        this.f12408c = str;
         this.d.a(str, i);
         return true;
     }

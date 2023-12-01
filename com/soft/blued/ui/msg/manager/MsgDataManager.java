@@ -11,11 +11,11 @@ import java.util.List;
 public class MsgDataManager {
 
     /* renamed from: a  reason: collision with root package name */
-    private List<SessionModel> f32433a = new ArrayList();
+    private List<SessionModel> f18743a = new ArrayList();
     private List<SessionModel> b = new ArrayList();
 
     /* renamed from: c  reason: collision with root package name */
-    private List<SessionModel> f32434c = new ArrayList();
+    private List<SessionModel> f18744c = new ArrayList();
     private List<SessionModel> d = new ArrayList();
 
     public List<SessionModel> a() {
@@ -31,9 +31,9 @@ public class MsgDataManager {
     }
 
     public void a(List<SessionModel> list) {
-        this.f32434c.clear();
+        this.f18744c.clear();
         if (list != null) {
-            this.f32434c.addAll(list);
+            this.f18744c.addAll(list);
         }
     }
 
@@ -53,9 +53,9 @@ public class MsgDataManager {
     }
 
     public void c(List<SessionModel> list) {
-        this.f32433a.clear();
+        this.f18743a.clear();
         if (list != null) {
-            this.f32433a.addAll(list);
+            this.f18743a.addAll(list);
         }
     }
 
@@ -71,9 +71,9 @@ public class MsgDataManager {
                     break;
                 }
                 SessionModel next = it.next();
-                SessionSettingModel sessionSettingModel = (SessionSettingModel) next.sessionSettingModel;
+                SessionSettingModel sessionSettingModel = next.sessionSettingModel;
                 if (sessionSettingModel == null || sessionSettingModel.getRemindAudio() == 0) {
-                    if (!BluedConstant.f28239a) {
+                    if (!BluedConstant.f14549a) {
                         i = next.noReadMsgCount;
                     } else if (next.sessionType != 3) {
                         if (next.sessionType != 1) {
@@ -90,13 +90,13 @@ public class MsgDataManager {
     }
 
     public List<SessionModel> d() {
-        return this.f32433a;
+        return this.f18743a;
     }
 
     public List<SessionModel> e() {
         List<SessionModel> list;
-        synchronized (this.f32434c) {
-            list = this.f32434c;
+        synchronized (this.f18744c) {
+            list = this.f18744c;
         }
         return list;
     }

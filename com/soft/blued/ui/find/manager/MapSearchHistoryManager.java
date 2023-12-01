@@ -10,13 +10,13 @@ import com.soft.blued.utils.BluedPreferences;
 public class MapSearchHistoryManager {
 
     /* renamed from: a  reason: collision with root package name */
-    private static MapSearchHistoryManager f30601a = new MapSearchHistoryManager();
+    private static MapSearchHistoryManager f16911a = new MapSearchHistoryManager();
 
     private MapSearchHistoryManager() {
     }
 
     public static MapSearchHistoryManager a() {
-        return f30601a;
+        return f16911a;
     }
 
     public void a(SearchPositionModel searchPositionModel) {

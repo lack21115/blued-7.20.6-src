@@ -5,16 +5,13 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 
+/* JADX INFO: Access modifiers changed from: package-private */
 /* renamed from: com.amap.api.col.3sl.gb  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/gb.class */
-class gb {
-
-    /* renamed from: a  reason: collision with root package name */
-    private boolean f4986a = true;
+public class gb {
+    private boolean a = true;
     private long b = 86400;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f4987c = 10;
+    private int c = 10;
     private long d = 0;
     private final LinkedHashMap<ga.b, Object> e = new LinkedHashMap<>();
     private final Object f = new Object();
@@ -29,7 +26,7 @@ class gb {
     private void a() {
         ga.b bVar;
         int size = this.e.size();
-        if (size <= 0 || size < this.f4987c) {
+        if (size <= 0 || size < this.c) {
             return;
         }
         Iterator<ga.b> it = this.e.keySet().iterator();
@@ -79,7 +76,7 @@ class gb {
     }
 
     public final ga.c a(ga.b bVar) {
-        if (this.f4986a && bVar != null && b(bVar)) {
+        if (this.a && bVar != null && b(bVar)) {
             b();
             synchronized (this.f) {
                 if (a(this.e, bVar)) {
@@ -106,14 +103,14 @@ class gb {
 
     public void a(ga.a aVar) {
         if (aVar != null) {
-            this.f4986a = aVar.a();
+            this.a = aVar.a();
             this.b = aVar.b();
-            this.f4987c = aVar.c();
+            this.c = aVar.c();
         }
     }
 
     public final void a(ga.b bVar, Object obj) {
-        if (this.f4986a && bVar != null && b(bVar)) {
+        if (this.a && bVar != null && b(bVar)) {
             b(bVar, obj);
             synchronized (this.h) {
                 c(this.g, bVar);
@@ -139,13 +136,13 @@ class gb {
     }
 
     public final boolean b(ga.b bVar) {
-        if (bVar == null || bVar.f4984a == null) {
+        if (bVar == null || bVar.a == null) {
             return false;
         }
         Iterator<String> it = this.i.iterator();
         while (it.hasNext()) {
             String next = it.next();
-            if (next != null && bVar.f4984a.contains(next)) {
+            if (next != null && bVar.a.contains(next)) {
                 return true;
             }
         }

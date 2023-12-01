@@ -9,7 +9,7 @@ import android.os.Build;
 public class y {
     public static boolean a(Context context) {
         try {
-            ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+            ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService("connectivity");
             NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
             if (activeNetworkInfo != null) {
                 int type = activeNetworkInfo.getType();

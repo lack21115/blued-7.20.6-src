@@ -19,11 +19,11 @@ import java.util.List;
 public class f extends RelativeLayout implements com.opos.mobad.n.a {
 
     /* renamed from: a  reason: collision with root package name */
-    private com.opos.mobad.n.c.f f26964a;
+    private com.opos.mobad.n.c.f f13276a;
     private TextView b;
 
     /* renamed from: c  reason: collision with root package name */
-    private TextView f26965c;
+    private TextView f13277c;
     private j d;
     private e e;
     private LinearLayout f;
@@ -31,7 +31,7 @@ public class f extends RelativeLayout implements com.opos.mobad.n.a {
     private boolean h;
     private int i;
     private boolean j;
-    private a.InterfaceC0708a k;
+    private a.InterfaceC0538a k;
 
     public f(Context context, boolean z, com.opos.mobad.c.a aVar, int i) {
         super(context);
@@ -90,23 +90,23 @@ public class f extends RelativeLayout implements com.opos.mobad.n.a {
     private void a(com.opos.mobad.n.d.d dVar) {
         j jVar;
         com.opos.mobad.n.d.a aVar = dVar.v;
-        if (aVar == null || TextUtils.isEmpty(aVar.f26626a) || TextUtils.isEmpty(aVar.b) || (jVar = this.d) == null) {
+        if (aVar == null || TextUtils.isEmpty(aVar.f12938a) || TextUtils.isEmpty(aVar.b) || (jVar = this.d) == null) {
             return;
         }
         jVar.setVisibility(0);
-        this.d.a(aVar.f26626a, aVar.b);
+        this.d.a(aVar.f12938a, aVar.b);
     }
 
     private void a(com.opos.mobad.n.d.g gVar, com.opos.mobad.c.a aVar) {
-        this.f26964a.setScaleType(ImageView.ScaleType.FIT_XY);
+        this.f13276a.setScaleType(ImageView.ScaleType.FIT_XY);
         if (gVar == null) {
             com.opos.cmn.an.f.a.b("RewardEndPage", "iconUrl is null");
         } else if (this.j) {
         } else {
             this.j = true;
             int a2 = com.opos.cmn.an.h.f.a.a(getContext(), 60.0f);
-            aVar.a(gVar.f26633a, gVar.b, a2, a2, new a.InterfaceC0676a() { // from class: com.opos.mobad.n.h.f.3
-                @Override // com.opos.mobad.c.a.InterfaceC0676a
+            aVar.a(gVar.f12945a, gVar.b, a2, a2, new a.InterfaceC0506a() { // from class: com.opos.mobad.n.h.f.3
+                @Override // com.opos.mobad.c.a.InterfaceC0506a
                 public void a(int i, final Bitmap bitmap) {
                     if (f.this.h) {
                         return;
@@ -128,7 +128,7 @@ public class f extends RelativeLayout implements com.opos.mobad.n.a {
                             if (f.this.h || (bitmap2 = bitmap) == null || bitmap2.isRecycled()) {
                                 return;
                             }
-                            f.this.f26964a.setImageBitmap(bitmap);
+                            f.this.f13276a.setImageBitmap(bitmap);
                         }
                     });
                 }
@@ -145,15 +145,15 @@ public class f extends RelativeLayout implements com.opos.mobad.n.a {
             this.b.setText(str2);
         }
         if (!TextUtils.isEmpty(str3)) {
-            this.f26965c.setVisibility(0);
-            this.f26965c.setText(str3);
+            this.f13277c.setVisibility(0);
+            this.f13277c.setText(str3);
         }
-        if (gVar == null || TextUtils.isEmpty(gVar.f26633a)) {
-            this.f26964a.setVisibility(0);
-            this.f26964a.setVisibility(8);
+        if (gVar == null || TextUtils.isEmpty(gVar.f12945a)) {
+            this.f13276a.setVisibility(0);
+            this.f13276a.setVisibility(8);
             return;
         }
-        this.f26964a.setVisibility(0);
+        this.f13276a.setVisibility(0);
         a(gVar, aVar);
     }
 
@@ -223,13 +223,13 @@ public class f extends RelativeLayout implements com.opos.mobad.n.a {
 
     private void b(LinearLayout linearLayout) {
         com.opos.mobad.n.c.f fVar = new com.opos.mobad.n.c.f(getContext(), com.opos.cmn.an.h.f.a.a(getContext(), 14.0f));
-        this.f26964a = fVar;
+        this.f13276a = fVar;
         fVar.setScaleType(ImageView.ScaleType.FIT_XY);
-        this.f26964a.setVisibility(8);
+        this.f13276a.setVisibility(8);
         int a2 = com.opos.cmn.an.h.f.a.a(getContext(), 60.0f);
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(a2, a2);
         layoutParams.gravity = 1;
-        linearLayout.addView(this.f26964a, layoutParams);
+        linearLayout.addView(this.f13276a, layoutParams);
     }
 
     private void c(LinearLayout linearLayout) {
@@ -245,16 +245,16 @@ public class f extends RelativeLayout implements com.opos.mobad.n.a {
         layoutParams.gravity = 1;
         linearLayout.addView(this.b, layoutParams);
         TextView textView2 = new TextView(getContext());
-        this.f26965c = textView2;
+        this.f13277c = textView2;
         textView2.setTextColor(Color.parseColor("#8CFFFFFF"));
-        this.f26965c.setTextSize(1, 10.0f);
-        this.f26965c.setEllipsize(TextUtils.TruncateAt.valueOf("END"));
-        this.f26965c.setSingleLine(true);
+        this.f13277c.setTextSize(1, 10.0f);
+        this.f13277c.setEllipsize(TextUtils.TruncateAt.valueOf("END"));
+        this.f13277c.setSingleLine(true);
         LinearLayout.LayoutParams layoutParams2 = new LinearLayout.LayoutParams(-2, -2);
         layoutParams2.topMargin = com.opos.cmn.an.h.f.a.a(getContext(), 16.0f);
-        this.f26965c.setVisibility(8);
+        this.f13277c.setVisibility(8);
         layoutParams2.gravity = 1;
-        linearLayout.addView(this.f26965c, layoutParams2);
+        linearLayout.addView(this.f13277c, layoutParams2);
         this.d = j.a(getContext());
         new RelativeLayout.LayoutParams(-1, -2).addRule(5);
         this.d.setGravity(3);
@@ -278,36 +278,36 @@ public class f extends RelativeLayout implements com.opos.mobad.n.a {
     }
 
     @Override // com.opos.mobad.n.a
-    public void a(a.InterfaceC0708a interfaceC0708a) {
-        this.k = interfaceC0708a;
-        this.e.a(interfaceC0708a);
-        this.d.a(interfaceC0708a);
+    public void a(a.InterfaceC0538a interfaceC0538a) {
+        this.k = interfaceC0538a;
+        this.e.a(interfaceC0538a);
+        this.d.a(interfaceC0538a);
     }
 
     @Override // com.opos.mobad.n.a
     public void a(com.opos.mobad.n.d.h hVar) {
-        a.InterfaceC0708a interfaceC0708a;
+        a.InterfaceC0538a interfaceC0538a;
         if (hVar == null) {
             com.opos.cmn.an.f.a.b("RewardEndPage", "data is null");
-            interfaceC0708a = this.k;
-            if (interfaceC0708a == null) {
+            interfaceC0538a = this.k;
+            if (interfaceC0538a == null) {
                 return;
             }
         } else {
             com.opos.mobad.n.d.f e = hVar.e();
             if (e != null) {
-                a(e.f26631a, e.d, e.b, e.f26632c, this.g);
+                a(e.f12943a, e.d, e.b, e.f12944c, this.g);
                 a(e);
                 a(e.n);
                 return;
             }
             com.opos.cmn.an.f.a.d("", "render with data null");
-            interfaceC0708a = this.k;
-            if (interfaceC0708a == null) {
+            interfaceC0538a = this.k;
+            if (interfaceC0538a == null) {
                 return;
             }
         }
-        interfaceC0708a.b(1);
+        interfaceC0538a.b(1);
     }
 
     @Override // com.opos.mobad.n.a

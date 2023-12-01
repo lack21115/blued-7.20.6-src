@@ -1,9 +1,6 @@
 package com.alibaba.fastjson.parser;
 
-import androidx.constraintlayout.core.motion.utils.TypedValues;
 import com.alipay.sdk.util.i;
-import com.baidu.mobads.sdk.api.IAdInterListener;
-import com.igexin.push.core.b;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alibaba/fastjson/parser/JSONToken.class */
 public class JSONToken {
@@ -36,9 +33,9 @@ public class JSONToken {
             case 1:
                 return "error";
             case 2:
-                return IAdInterListener.AdProdType.PRODUCT_INTERSTITIAL;
+                return "int";
             case 3:
-                return TypedValues.Custom.S_FLOAT;
+                return "float";
             case 4:
                 return "string";
             case 5:
@@ -48,7 +45,7 @@ public class JSONToken {
             case 7:
                 return "false";
             case 8:
-                return b.l;
+                return "null";
             case 9:
                 return "new";
             case 10:

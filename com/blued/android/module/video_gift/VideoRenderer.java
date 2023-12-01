@@ -6,7 +6,6 @@ import android.opengl.Matrix;
 import android.util.Log;
 import android.view.Surface;
 import com.blued.android.module.video_gift.GLTextureView;
-import com.uc.crashsdk.export.LogType;
 import java.nio.Buffer;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
@@ -18,14 +17,10 @@ import javax.microedition.khronos.opengles.GL10;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/video_gift/VideoRenderer.class */
 public class VideoRenderer implements SurfaceTexture.OnFrameAvailableListener, GLTextureView.Renderer {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static String f16097a = "VideoRender";
+    private static String a = "VideoRender";
     private static int r = 36197;
     private final float[] b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private FloatBuffer f16098c;
+    private FloatBuffer c;
     private int j;
     private int k;
     private int l;
@@ -57,7 +52,7 @@ public class VideoRenderer implements SurfaceTexture.OnFrameAvailableListener, G
         float[] fArr = {-1.0f, -1.0f, 0.0f, 0.0f, 0.0f, 1.0f, -1.0f, 0.0f, 1.0f, 0.0f, -1.0f, 1.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f, 0.0f, 1.0f, 1.0f};
         this.b = fArr;
         FloatBuffer asFloatBuffer = ByteBuffer.allocateDirect(fArr.length * 4).order(ByteOrder.nativeOrder()).asFloatBuffer();
-        this.f16098c = asFloatBuffer;
+        this.c = asFloatBuffer;
         asFloatBuffer.put(this.b).position(0);
         Matrix.setIdentityM(this.i, 0);
     }
@@ -69,12 +64,12 @@ public class VideoRenderer implements SurfaceTexture.OnFrameAvailableListener, G
             GLES20.glShaderSource(glCreateShader, str);
             GLES20.glCompileShader(glCreateShader);
             int[] iArr = new int[1];
-            GLES20.glGetShaderiv(glCreateShader, GLES20.GL_COMPILE_STATUS, iArr, 0);
+            GLES20.glGetShaderiv(glCreateShader, 35713, iArr, 0);
             i2 = glCreateShader;
             if (iArr[0] == 0) {
-                String str2 = f16097a;
+                String str2 = a;
                 Log.e(str2, "Could not compile shader " + i + ":");
-                Log.e(f16097a, GLES20.glGetShaderInfoLog(glCreateShader));
+                Log.e(a, GLES20.glGetShaderInfoLog(glCreateShader));
                 GLES20.glDeleteShader(glCreateShader);
                 i2 = 0;
             }
@@ -84,8 +79,8 @@ public class VideoRenderer implements SurfaceTexture.OnFrameAvailableListener, G
 
     private int a(String str, String str2) {
         int a2;
-        int a3 = a(GLES20.GL_VERTEX_SHADER, str);
-        if (a3 == 0 || (a2 = a(GLES20.GL_FRAGMENT_SHADER, str2)) == 0) {
+        int a3 = a(35633, str);
+        if (a3 == 0 || (a2 = a(35632, str2)) == 0) {
             return 0;
         }
         int glCreateProgram = GLES20.glCreateProgram();
@@ -96,10 +91,10 @@ public class VideoRenderer implements SurfaceTexture.OnFrameAvailableListener, G
             b("glAttachShader");
             GLES20.glLinkProgram(glCreateProgram);
             int[] iArr = new int[1];
-            GLES20.glGetProgramiv(glCreateProgram, GLES20.GL_LINK_STATUS, iArr, 0);
+            GLES20.glGetProgramiv(glCreateProgram, 35714, iArr, 0);
             if (iArr[0] != 1) {
-                Log.e(f16097a, "Could not link program: ");
-                Log.e(f16097a, GLES20.glGetProgramInfoLog(glCreateProgram));
+                Log.e(a, "Could not link program: ");
+                Log.e(a, GLES20.glGetProgramInfoLog(glCreateProgram));
                 GLES20.glDeleteProgram(glCreateProgram);
                 return 0;
             }
@@ -114,8 +109,8 @@ public class VideoRenderer implements SurfaceTexture.OnFrameAvailableListener, G
         this.k = i;
         GLES20.glBindTexture(r, i);
         b("glBindTexture textureID");
-        GLES20.glTexParameterf(r, 10241, 9728.0f);
-        GLES20.glTexParameterf(r, 10240, 9729.0f);
+        GLES20.glTexParameterf(r, GL10.GL_TEXTURE_MIN_FILTER, 9728.0f);
+        GLES20.glTexParameterf(r, GL10.GL_TEXTURE_MAG_FILTER, 9729.0f);
         SurfaceTexture surfaceTexture = new SurfaceTexture(this.k);
         this.p = surfaceTexture;
         surfaceTexture.setOnFrameAvailableListener(this);
@@ -134,7 +129,7 @@ public class VideoRenderer implements SurfaceTexture.OnFrameAvailableListener, G
         if (glGetError == 0) {
             return;
         }
-        String str2 = f16097a;
+        String str2 = a;
         Log.e(str2, str + ": glError " + glGetError);
         throw new RuntimeException(str + ": glError " + glGetError);
     }
@@ -159,21 +154,21 @@ public class VideoRenderer implements SurfaceTexture.OnFrameAvailableListener, G
                 this.q = false;
             }
         }
-        GLES20.glClear(LogType.UNEXP_RESTART);
-        GLES20.glEnable(3042);
-        GLES20.glBlendFunc(770, 771);
+        GLES20.glClear(16640);
+        GLES20.glEnable(GL10.GL_BLEND);
+        GLES20.glBlendFunc(GL10.GL_SRC_ALPHA, GL10.GL_ONE_MINUS_SRC_ALPHA);
         GLES20.glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
         GLES20.glUseProgram(this.j);
         b("glUseProgram");
-        GLES20.glActiveTexture(33984);
+        GLES20.glActiveTexture(GL10.GL_TEXTURE0);
         GLES20.glBindTexture(r, this.k);
-        this.f16098c.position(0);
-        GLES20.glVertexAttribPointer(this.n, 3, 5126, false, 20, (Buffer) this.f16098c);
+        this.c.position(0);
+        GLES20.glVertexAttribPointer(this.n, 3, (int) GL10.GL_FLOAT, false, 20, (Buffer) this.c);
         b("glVertexAttribPointer maPosition");
         GLES20.glEnableVertexAttribArray(this.n);
         b("glEnableVertexAttribArray aPositionHandle");
-        this.f16098c.position(3);
-        GLES20.glVertexAttribPointer(this.o, 3, 5126, false, 20, (Buffer) this.f16098c);
+        this.c.position(3);
+        GLES20.glVertexAttribPointer(this.o, 3, (int) GL10.GL_FLOAT, false, 20, (Buffer) this.c);
         b("glVertexAttribPointer aTextureHandle");
         GLES20.glEnableVertexAttribArray(this.o);
         b("glEnableVertexAttribArray aTextureHandle");

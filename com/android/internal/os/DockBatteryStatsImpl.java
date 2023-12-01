@@ -34,7 +34,7 @@ public final class DockBatteryStatsImpl extends BatteryStatsImpl {
         super(file, handler);
     }
 
-    @Override // com.android.internal.os.BatteryStatsImpl, android.os.BatteryStats
+    @Override // com.android.internal.os.BatteryStatsImpl
     public int getCpuSpeedSteps() {
         return sNumSpeedSteps;
     }

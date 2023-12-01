@@ -22,9 +22,7 @@ import kotlin.text.Charsets;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/utils/ZipUtil.class */
 public final class ZipUtil {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f14200a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private static final Lazy<ZipUtil> b = LazyKt.a(new Function0<ZipUtil>() { // from class: com.blued.android.module.live_china.utils.ZipUtil$Companion$instance$2
         @Override // kotlin.jvm.functions.Function0
         /* renamed from: a */

@@ -1,6 +1,5 @@
 package java.util;
 
-import com.igexin.push.core.b;
 import dalvik.system.VMStack;
 import java.io.File;
 import java.io.IOException;
@@ -379,7 +378,7 @@ public abstract class ResourceBundle {
         ResourceBundle processGetBundle;
         boolean z = false;
         String bundleName = control.toBundleName(str, locale);
-        Hashtable<String, ResourceBundle> loaderCache = getLoaderCache(classLoader != null ? classLoader : b.l);
+        Hashtable<String, ResourceBundle> loaderCache = getLoaderCache(classLoader != null ? classLoader : "null");
         ResourceBundle resourceBundle = loaderCache.get(bundleName);
         if (resourceBundle != null) {
             long timeToLive = control.getTimeToLive(str, locale);

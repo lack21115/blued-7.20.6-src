@@ -28,11 +28,11 @@ import java.util.List;
 public abstract class BasePagerGridFragment<P extends MvpPresenter, A extends BaseQuickAdapter, M extends Selectable> extends MvpFragment<P> {
 
     /* renamed from: a  reason: collision with root package name */
-    protected List<M> f32331a;
+    protected List<M> f18641a;
     protected FrameLayout[] b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected List<A> f32332c = new ArrayList();
+    protected List<A> f18642c = new ArrayList();
     protected int d;
     protected int e;
     public M f;
@@ -43,20 +43,20 @@ public abstract class BasePagerGridFragment<P extends MvpPresenter, A extends Ba
     public static class GridPagerAdapter extends PagerAdapter {
 
         /* renamed from: a  reason: collision with root package name */
-        private final FrameLayout[] f32334a;
+        private final FrameLayout[] f18644a;
 
         public GridPagerAdapter(FrameLayout[] frameLayoutArr) {
-            this.f32334a = frameLayoutArr;
+            this.f18644a = frameLayoutArr;
         }
 
         @Override // androidx.viewpager.widget.PagerAdapter
         public void destroyItem(View view, int i, Object obj) {
-            ((ViewGroup) view).removeView(this.f32334a[i]);
+            ((ViewGroup) view).removeView(this.f18644a[i]);
         }
 
         @Override // androidx.viewpager.widget.PagerAdapter
         public int getCount() {
-            return this.f32334a.length;
+            return this.f18644a.length;
         }
 
         @Override // androidx.viewpager.widget.PagerAdapter
@@ -66,11 +66,11 @@ public abstract class BasePagerGridFragment<P extends MvpPresenter, A extends Ba
 
         @Override // androidx.viewpager.widget.PagerAdapter
         public Object instantiateItem(View view, int i) {
-            FrameLayout frameLayout = this.f32334a[i];
+            FrameLayout frameLayout = this.f18644a[i];
             if (frameLayout.getParent() != null) {
                 ((ViewGroup) frameLayout.getParent()).removeView(frameLayout);
             }
-            ((ViewGroup) view).addView(this.f32334a[i]);
+            ((ViewGroup) view).addView(this.f18644a[i]);
             return frameLayout;
         }
 
@@ -123,21 +123,21 @@ public abstract class BasePagerGridFragment<P extends MvpPresenter, A extends Ba
         recyclerView.addItemDecoration(spacesItemDecoration);
         ArrayList arrayList = new ArrayList();
         if (i != this.d) {
-            arrayList.addAll(this.f32331a.subList(this.e, b() * i));
+            arrayList.addAll(this.f18641a.subList(this.e, b() * i));
             this.e += b();
         } else {
-            List<M> list = this.f32331a;
+            List<M> list = this.f18641a;
             arrayList.addAll(list.subList(this.e, list.size()));
         }
         A a2 = a(arrayList);
-        this.f32332c.add(a2);
+        this.f18642c.add(a2);
         a2.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() { // from class: com.soft.blued.ui.msg.fragment.BasePagerGridFragment.1
             /* JADX WARN: Multi-variable type inference failed */
             @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemClickListener
             public void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i2) {
                 if (BasePagerGridFragment.this.f == null || !BasePagerGridFragment.this.f.equals(baseQuickAdapter.getData().get(i2))) {
                     BasePagerGridFragment.this.d();
-                    BasePagerGridFragment.this.b((BasePagerGridFragment) ((Selectable) baseQuickAdapter.getData().get(i2)));
+                    BasePagerGridFragment.this.b((Selectable) baseQuickAdapter.getData().get(i2));
                     baseQuickAdapter.notifyItemChanged(i2);
                 }
             }
@@ -156,7 +156,7 @@ public abstract class BasePagerGridFragment<P extends MvpPresenter, A extends Ba
     /* JADX INFO: Access modifiers changed from: protected */
     public void a(ViewPager viewPager, CirclePageIndicator circlePageIndicator) {
         int i;
-        List<M> list = this.f32331a;
+        List<M> list = this.f18641a;
         if (list == null) {
             return;
         }
@@ -188,7 +188,7 @@ public abstract class BasePagerGridFragment<P extends MvpPresenter, A extends Ba
     /* JADX INFO: Access modifiers changed from: protected */
     public void a(M m) {
         if (m != null) {
-            for (A a2 : this.f32332c) {
+            for (A a2 : this.f18642c) {
                 int indexOf = a2.getData().indexOf(m);
                 if (indexOf != -1) {
                     a2.notifyItemChanged(indexOf);
@@ -198,7 +198,6 @@ public abstract class BasePagerGridFragment<P extends MvpPresenter, A extends Ba
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public void af_() {
         super.af_();
         Unbinder unbinder = this.k;
@@ -226,7 +225,7 @@ public abstract class BasePagerGridFragment<P extends MvpPresenter, A extends Ba
         M m = this.f;
         if (m != null) {
             m.chosen = false;
-            Iterator<A> it = this.f32332c.iterator();
+            Iterator<A> it = this.f18642c.iterator();
             while (true) {
                 if (!it.hasNext()) {
                     break;
@@ -243,6 +242,6 @@ public abstract class BasePagerGridFragment<P extends MvpPresenter, A extends Ba
     }
 
     public void e() {
-        b((BasePagerGridFragment<P, A, M>) this.f);
+        b(this.f);
     }
 }

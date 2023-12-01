@@ -43,11 +43,11 @@ public class b implements bq<b, e>, Serializable, Cloneable {
     private static final int l = 1;
 
     /* renamed from: a  reason: collision with root package name */
-    public String f40943a;
+    public String f27252a;
     public long b;
 
     /* renamed from: c  reason: collision with root package name */
-    public int f40944c;
+    public int f27253c;
     private byte m;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -65,13 +65,13 @@ public class b implements bq<b, e>, Serializable, Cloneable {
                 if (l.b == 0) {
                     break;
                 }
-                short s = l.f40700c;
+                short s = l.f27009c;
                 if (s != 1) {
                     if (s != 2) {
                         if (s != 3) {
                             cs.a(cpVar, l.b);
                         } else if (l.b == 8) {
-                            bVar.f40944c = cpVar.w();
+                            bVar.f27253c = cpVar.w();
                             bVar.c(true);
                         } else {
                             cs.a(cpVar, l.b);
@@ -83,7 +83,7 @@ public class b implements bq<b, e>, Serializable, Cloneable {
                         cs.a(cpVar, l.b);
                     }
                 } else if (l.b == 11) {
-                    bVar.f40943a = cpVar.z();
+                    bVar.f27252a = cpVar.z();
                     bVar.a(true);
                 } else {
                     cs.a(cpVar, l.b);
@@ -105,16 +105,16 @@ public class b implements bq<b, e>, Serializable, Cloneable {
         public void a(cp cpVar, b bVar) throws bw {
             bVar.k();
             cpVar.a(b.f);
-            if (bVar.f40943a != null) {
+            if (bVar.f27252a != null) {
                 cpVar.a(b.g);
-                cpVar.a(bVar.f40943a);
+                cpVar.a(bVar.f27252a);
                 cpVar.c();
             }
             cpVar.a(b.h);
             cpVar.a(bVar.b);
             cpVar.c();
             cpVar.a(b.i);
-            cpVar.a(bVar.f40944c);
+            cpVar.a(bVar.f27253c);
             cpVar.c();
             cpVar.d();
             cpVar.b();
@@ -123,8 +123,8 @@ public class b implements bq<b, e>, Serializable, Cloneable {
 
     /* renamed from: com.umeng.commonsdk.statistics.proto.b$b  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/umeng/commonsdk/statistics/proto/b$b.class */
-    static class C1086b implements cy {
-        private C1086b() {
+    static class C0916b implements cy {
+        private C0916b() {
         }
 
         @Override // com.umeng.analytics.pro.cy
@@ -143,19 +143,19 @@ public class b implements bq<b, e>, Serializable, Cloneable {
         @Override // com.umeng.analytics.pro.cx
         public void a(cp cpVar, b bVar) throws bw {
             cv cvVar = (cv) cpVar;
-            cvVar.a(bVar.f40943a);
+            cvVar.a(bVar.f27252a);
             cvVar.a(bVar.b);
-            cvVar.a(bVar.f40944c);
+            cvVar.a(bVar.f27253c);
         }
 
         @Override // com.umeng.analytics.pro.cx
         public void b(cp cpVar, b bVar) throws bw {
             cv cvVar = (cv) cpVar;
-            bVar.f40943a = cvVar.z();
+            bVar.f27252a = cvVar.z();
             bVar.a(true);
             bVar.b = cvVar.x();
             bVar.b(true);
-            bVar.f40944c = cvVar.w();
+            bVar.f27253c = cvVar.w();
             bVar.c(true);
         }
     }
@@ -183,7 +183,7 @@ public class b implements bq<b, e>, Serializable, Cloneable {
         private final String f;
 
         static {
-            Iterator<E> it = EnumSet.allOf(e.class).iterator();
+            Iterator it = EnumSet.allOf(e.class).iterator();
             while (it.hasNext()) {
                 e eVar = (e) it.next();
                 d.put(eVar.b(), eVar);
@@ -234,7 +234,7 @@ public class b implements bq<b, e>, Serializable, Cloneable {
     static {
         HashMap hashMap = new HashMap();
         j = hashMap;
-        hashMap.put(cz.class, new C1086b());
+        hashMap.put(cz.class, new C0916b());
         j.put(da.class, new d());
         EnumMap enumMap = new EnumMap(e.class);
         enumMap.put((EnumMap) e.IDENTITY, (e) new cc(WifiEnterpriseConfig.IDENTITY_KEY, (byte) 1, new cd((byte) 11)));
@@ -253,18 +253,18 @@ public class b implements bq<b, e>, Serializable, Cloneable {
         this.m = (byte) 0;
         this.m = bVar.m;
         if (bVar.d()) {
-            this.f40943a = bVar.f40943a;
+            this.f27252a = bVar.f27252a;
         }
         this.b = bVar.b;
-        this.f40944c = bVar.f40944c;
+        this.f27253c = bVar.f27253c;
     }
 
     public b(String str, long j2, int i2) {
         this();
-        this.f40943a = str;
+        this.f27252a = str;
         this.b = j2;
         b(true);
-        this.f40944c = i2;
+        this.f27253c = i2;
         c(true);
     }
 
@@ -292,7 +292,7 @@ public class b implements bq<b, e>, Serializable, Cloneable {
     }
 
     public b a(int i2) {
-        this.f40944c = i2;
+        this.f27253c = i2;
         c(true);
         return this;
     }
@@ -304,7 +304,7 @@ public class b implements bq<b, e>, Serializable, Cloneable {
     }
 
     public b a(String str) {
-        this.f40943a = str;
+        this.f27252a = str;
         return this;
     }
 
@@ -312,7 +312,7 @@ public class b implements bq<b, e>, Serializable, Cloneable {
         if (z) {
             return;
         }
-        this.f40943a = null;
+        this.f27252a = null;
     }
 
     @Override // com.umeng.analytics.pro.bq
@@ -322,7 +322,7 @@ public class b implements bq<b, e>, Serializable, Cloneable {
     }
 
     public String b() {
-        return this.f40943a;
+        return this.f27252a;
     }
 
     public void b(boolean z) {
@@ -330,7 +330,7 @@ public class b implements bq<b, e>, Serializable, Cloneable {
     }
 
     public void c() {
-        this.f40943a = null;
+        this.f27252a = null;
     }
 
     public void c(boolean z) {
@@ -339,15 +339,15 @@ public class b implements bq<b, e>, Serializable, Cloneable {
 
     @Override // com.umeng.analytics.pro.bq
     public void clear() {
-        this.f40943a = null;
+        this.f27252a = null;
         b(false);
         this.b = 0L;
         c(false);
-        this.f40944c = 0;
+        this.f27253c = 0;
     }
 
     public boolean d() {
-        return this.f40943a != null;
+        return this.f27252a != null;
     }
 
     public long e() {
@@ -363,7 +363,7 @@ public class b implements bq<b, e>, Serializable, Cloneable {
     }
 
     public int h() {
-        return this.f40944c;
+        return this.f27253c;
     }
 
     public void i() {
@@ -375,7 +375,7 @@ public class b implements bq<b, e>, Serializable, Cloneable {
     }
 
     public void k() throws bw {
-        if (this.f40943a != null) {
+        if (this.f27252a != null) {
             return;
         }
         throw new cq("Required field 'identity' was not present! Struct: " + toString());
@@ -389,7 +389,7 @@ public class b implements bq<b, e>, Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder("IdSnapshot(");
         sb.append("identity:");
-        String str = this.f40943a;
+        String str = this.f27252a;
         if (str == null) {
             sb.append(com.igexin.push.core.b.l);
         } else {
@@ -400,7 +400,7 @@ public class b implements bq<b, e>, Serializable, Cloneable {
         sb.append(this.b);
         sb.append(", ");
         sb.append("version:");
-        sb.append(this.f40944c);
+        sb.append(this.f27253c);
         sb.append(")");
         return sb.toString();
     }

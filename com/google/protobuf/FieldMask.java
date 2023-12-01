@@ -64,7 +64,7 @@ public final class FieldMask extends GeneratedMessageV3 implements FieldMaskOrBu
         public Builder addPaths(String str) {
             if (str != null) {
                 ensurePathsIsMutable();
-                this.paths_.add((LazyStringList) str);
+                this.paths_.add(str);
                 onChanged();
                 return this;
             }
@@ -135,8 +135,8 @@ public final class FieldMask extends GeneratedMessageV3 implements FieldMaskOrBu
 
         @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder mo2030clone() {
+            return (Builder) super.mo2030clone();
         }
 
         @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
@@ -151,7 +151,7 @@ public final class FieldMask extends GeneratedMessageV3 implements FieldMaskOrBu
 
         @Override // com.google.protobuf.FieldMaskOrBuilder
         public String getPaths(int i) {
-            return this.paths_.get(i);
+            return (String) this.paths_.get(i);
         }
 
         @Override // com.google.protobuf.FieldMaskOrBuilder
@@ -274,7 +274,7 @@ public final class FieldMask extends GeneratedMessageV3 implements FieldMaskOrBu
         public Builder setPaths(int i, String str) {
             if (str != null) {
                 ensurePathsIsMutable();
-                this.paths_.set(i, (int) str);
+                this.paths_.set(i, str);
                 onChanged();
                 return this;
             }
@@ -318,7 +318,7 @@ public final class FieldMask extends GeneratedMessageV3 implements FieldMaskOrBu
                                 this.paths_ = new LazyStringArrayList();
                                 z4 = z2 | true;
                             }
-                            this.paths_.add((LazyStringList) readStringRequireUtf8);
+                            this.paths_.add(readStringRequireUtf8);
                             z2 = z4;
                         } else if (!parseUnknownField(codedInputStream, newBuilder, extensionRegistryLite, readTag)) {
                         }
@@ -442,7 +442,7 @@ public final class FieldMask extends GeneratedMessageV3 implements FieldMaskOrBu
 
     @Override // com.google.protobuf.FieldMaskOrBuilder
     public String getPaths(int i) {
-        return this.paths_.get(i);
+        return (String) this.paths_.get(i);
     }
 
     @Override // com.google.protobuf.FieldMaskOrBuilder

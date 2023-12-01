@@ -42,9 +42,8 @@ public final class MovieEntity extends Message<MovieEntity, Builder> {
             return this;
         }
 
-        /* JADX WARN: Can't rename method to resolve collision */
-        @Override // com.squareup.wire.Message.Builder
-        public MovieEntity build() {
+        /* renamed from: build */
+        public MovieEntity m10557build() {
             return new MovieEntity(this.version, this.params, this.images, this.sprites, this.audios, super.buildUnknownFields());
         }
 
@@ -80,48 +79,45 @@ public final class MovieEntity extends Message<MovieEntity, Builder> {
             this.images = ProtoAdapter.newMapAdapter(ProtoAdapter.STRING, ProtoAdapter.BYTES);
         }
 
-        /* JADX WARN: Can't rename method to resolve collision */
-        @Override // com.squareup.wire.ProtoAdapter
-        public MovieEntity decode(ProtoReader protoReader) throws IOException {
+        /* renamed from: decode */
+        public MovieEntity m10558decode(ProtoReader protoReader) throws IOException {
             Builder builder = new Builder();
             long beginMessage = protoReader.beginMessage();
             while (true) {
                 int nextTag = protoReader.nextTag();
                 if (nextTag == -1) {
                     protoReader.endMessage(beginMessage);
-                    return builder.build();
+                    return builder.m10557build();
                 } else if (nextTag == 1) {
-                    builder.version(ProtoAdapter.STRING.decode(protoReader));
+                    builder.version((String) ProtoAdapter.STRING.decode(protoReader));
                 } else if (nextTag == 2) {
-                    builder.params(MovieParams.ADAPTER.decode(protoReader));
+                    builder.params((MovieParams) MovieParams.ADAPTER.decode(protoReader));
                 } else if (nextTag == 3) {
-                    builder.images.putAll(this.images.decode(protoReader));
+                    builder.images.putAll((Map) this.images.decode(protoReader));
                 } else if (nextTag == 4) {
-                    builder.sprites.add(SpriteEntity.ADAPTER.decode(protoReader));
+                    builder.sprites.add((SpriteEntity) SpriteEntity.ADAPTER.decode(protoReader));
                 } else if (nextTag != 5) {
                     FieldEncoding peekFieldEncoding = protoReader.peekFieldEncoding();
                     builder.addUnknownField(nextTag, peekFieldEncoding, peekFieldEncoding.rawProtoAdapter().decode(protoReader));
                 } else {
-                    builder.audios.add(AudioEntity.ADAPTER.decode(protoReader));
+                    builder.audios.add((AudioEntity) AudioEntity.ADAPTER.decode(protoReader));
                 }
             }
         }
 
-        @Override // com.squareup.wire.ProtoAdapter
         public void encode(ProtoWriter protoWriter, MovieEntity movieEntity) throws IOException {
             if (movieEntity.version != null) {
-                ProtoAdapter.STRING.encodeWithTag(protoWriter, 1, (int) movieEntity.version);
+                ProtoAdapter.STRING.encodeWithTag(protoWriter, 1, movieEntity.version);
             }
             if (movieEntity.params != null) {
-                MovieParams.ADAPTER.encodeWithTag(protoWriter, 2, (int) movieEntity.params);
+                MovieParams.ADAPTER.encodeWithTag(protoWriter, 2, movieEntity.params);
             }
-            this.images.encodeWithTag(protoWriter, 3, (int) movieEntity.images);
-            SpriteEntity.ADAPTER.asRepeated().encodeWithTag(protoWriter, 4, (int) movieEntity.sprites);
-            AudioEntity.ADAPTER.asRepeated().encodeWithTag(protoWriter, 5, (int) movieEntity.audios);
+            this.images.encodeWithTag(protoWriter, 3, movieEntity.images);
+            SpriteEntity.ADAPTER.asRepeated().encodeWithTag(protoWriter, 4, movieEntity.sprites);
+            AudioEntity.ADAPTER.asRepeated().encodeWithTag(protoWriter, 5, movieEntity.audios);
             protoWriter.writeBytes(movieEntity.unknownFields());
         }
 
-        @Override // com.squareup.wire.ProtoAdapter
         public int encodedSize(MovieEntity movieEntity) {
             int i = 0;
             int encodedSizeWithTag = movieEntity.version != null ? ProtoAdapter.STRING.encodedSizeWithTag(1, movieEntity.version) : 0;
@@ -131,16 +127,15 @@ public final class MovieEntity extends Message<MovieEntity, Builder> {
             return encodedSizeWithTag + i + this.images.encodedSizeWithTag(3, movieEntity.images) + SpriteEntity.ADAPTER.asRepeated().encodedSizeWithTag(4, movieEntity.sprites) + AudioEntity.ADAPTER.asRepeated().encodedSizeWithTag(5, movieEntity.audios) + movieEntity.unknownFields().size();
         }
 
-        @Override // com.squareup.wire.ProtoAdapter
         public MovieEntity redact(MovieEntity movieEntity) {
-            Builder newBuilder = movieEntity.newBuilder();
-            if (newBuilder.params != null) {
-                newBuilder.params = MovieParams.ADAPTER.redact(newBuilder.params);
+            Builder m10556newBuilder = movieEntity.m10556newBuilder();
+            if (m10556newBuilder.params != null) {
+                m10556newBuilder.params = (MovieParams) MovieParams.ADAPTER.redact(m10556newBuilder.params);
             }
-            Internal.redactElements(newBuilder.sprites, SpriteEntity.ADAPTER);
-            Internal.redactElements(newBuilder.audios, AudioEntity.ADAPTER);
-            newBuilder.clearUnknownFields();
-            return newBuilder.build();
+            Internal.redactElements(m10556newBuilder.sprites, SpriteEntity.ADAPTER);
+            Internal.redactElements(m10556newBuilder.audios, AudioEntity.ADAPTER);
+            m10556newBuilder.clearUnknownFields();
+            return m10556newBuilder.m10557build();
         }
     }
 
@@ -169,7 +164,7 @@ public final class MovieEntity extends Message<MovieEntity, Builder> {
     }
 
     public int hashCode() {
-        int i = this.hashCode;
+        int i = ((Message) this).hashCode;
         int i2 = i;
         if (i == 0) {
             int hashCode = unknownFields().hashCode();
@@ -181,14 +176,13 @@ public final class MovieEntity extends Message<MovieEntity, Builder> {
                 i3 = movieParams.hashCode();
             }
             i2 = (((((((((hashCode * 37) + hashCode2) * 37) + i3) * 37) + this.images.hashCode()) * 37) + this.sprites.hashCode()) * 37) + this.audios.hashCode();
-            this.hashCode = i2;
+            ((Message) this).hashCode = i2;
         }
         return i2;
     }
 
-    /* JADX WARN: Can't rename method to resolve collision */
-    @Override // com.squareup.wire.Message
-    public Builder newBuilder() {
+    /* renamed from: newBuilder */
+    public Builder m10556newBuilder() {
         Builder builder = new Builder();
         builder.version = this.version;
         builder.params = this.params;
@@ -199,7 +193,6 @@ public final class MovieEntity extends Message<MovieEntity, Builder> {
         return builder;
     }
 
-    @Override // com.squareup.wire.Message
     public String toString() {
         StringBuilder sb = new StringBuilder();
         if (this.version != null) {

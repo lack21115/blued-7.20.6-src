@@ -2,14 +2,12 @@ package org.commonmark.internal.util;
 
 /* loaded from: source-3503164-dex2jar.jar:org/commonmark/internal/util/Parsing.class */
 public class Parsing {
+    public static int a = 4;
 
-    /* renamed from: a  reason: collision with root package name */
-    public static int f44049a = 4;
-
-    public static int a(char c2, CharSequence charSequence, int i) {
+    public static int a(char c, CharSequence charSequence, int i) {
         int length = charSequence.length();
         while (i < length) {
-            if (charSequence.charAt(i) == c2) {
+            if (charSequence.charAt(i) == c) {
                 return i;
             }
             i++;
@@ -17,9 +15,9 @@ public class Parsing {
         return -1;
     }
 
-    public static int a(char c2, CharSequence charSequence, int i, int i2) {
+    public static int a(char c, CharSequence charSequence, int i, int i2) {
         while (i < i2) {
-            if (charSequence.charAt(i) != c2) {
+            if (charSequence.charAt(i) != c) {
                 return i;
             }
             i++;
@@ -62,9 +60,9 @@ public class Parsing {
         return z;
     }
 
-    public static int b(char c2, CharSequence charSequence, int i, int i2) {
+    public static int b(char c, CharSequence charSequence, int i, int i2) {
         while (i >= i2) {
-            if (charSequence.charAt(i) != c2) {
+            if (charSequence.charAt(i) != c) {
                 return i;
             }
             i--;

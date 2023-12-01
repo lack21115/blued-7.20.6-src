@@ -27,11 +27,11 @@ public class y1 extends HeatMapTileProvider {
     public static final double s = 1.0d;
 
     /* renamed from: a  reason: collision with root package name */
-    private final HeatMapTileProvider.OnHeatMapReadyListener f38122a;
+    private final HeatMapTileProvider.OnHeatMapReadyListener f24431a;
     private HeatMapTileProvider.HeatTileGenerator b;
 
     /* renamed from: c  reason: collision with root package name */
-    private y5<z1> f38123c;
+    private y5<z1> f24432c;
     private Collection<z1> d;
     private o5 e;
     private int f;
@@ -65,8 +65,8 @@ public class y1 extends HeatMapTileProvider {
             y1 y1Var4 = y1.this;
             y1Var4.b(y1Var4.d);
             y1.this.l = true;
-            if (y1.this.f38122a != null) {
-                y1.this.f38122a.onHeatMapReady();
+            if (y1.this.f24431a != null) {
+                y1.this.f24431a.onHeatMapReady();
             }
             return Boolean.TRUE;
         }
@@ -77,14 +77,14 @@ public class y1 extends HeatMapTileProvider {
         this.f = builder.getRadius();
         this.g = builder.getGradient();
         this.j = builder.getOpacity();
-        this.f38122a = builder.getReadyListener();
+        this.f24431a = builder.getReadyListener();
         this.b = builder.getHeatTileGenerator();
         a();
     }
 
     public static double a(Collection<z1> collection, o5 o5Var, int i, int i2) {
-        double d = o5Var.f37674a;
-        double d2 = o5Var.f37675c;
+        double d = o5Var.f23983a;
+        double d2 = o5Var.f23984c;
         double d3 = o5Var.b;
         double d4 = d2 - d;
         double d5 = o5Var.d - d3;
@@ -96,7 +96,7 @@ public class y1 extends HeatMapTileProvider {
         double d7 = 0.0d;
         for (z1 z1Var : collection) {
             double d8 = z1Var.a().b;
-            double d9 = z1Var.a().f37683c;
+            double d9 = z1Var.a().f23992c;
             int i3 = (int) ((d8 - d) * d6);
             int i4 = (int) ((d9 - d3) * d6);
             Map map = (Map) hashMap.get(Integer.valueOf(i3));
@@ -158,13 +158,13 @@ public class y1 extends HeatMapTileProvider {
         z1 next = it.next();
         double d = next.a().b;
         double d2 = next.a().b;
-        double d3 = next.a().f37683c;
-        double d4 = next.a().f37683c;
+        double d3 = next.a().f23992c;
+        double d4 = next.a().f23992c;
         double d5 = d;
         while (it.hasNext()) {
             z1 next2 = it.next();
             double d6 = next2.a().b;
-            double d7 = next2.a().f37683c;
+            double d7 = next2.a().f23992c;
             double d8 = d5;
             if (d6 < d5) {
                 d8 = d6;
@@ -342,9 +342,9 @@ public class y1 extends HeatMapTileProvider {
         }
         o5 a2 = a(this.d);
         this.e = a2;
-        this.f38123c = new y5<>(a2);
+        this.f24432c = new y5<>(a2);
         for (z1 z1Var : this.d) {
-            this.f38123c.a((y5<z1>) z1Var);
+            this.f24432c.a((y5<z1>) z1Var);
         }
         this.k = a(this.f);
     }
@@ -366,21 +366,21 @@ public class y1 extends HeatMapTileProvider {
         double d7 = ((i2 + 1) * pow) + d2;
         ArrayList<z1> arrayList = new ArrayList();
         if (d4 < 0.0d) {
-            arrayList = this.f38123c.a(new o5(d4 + 1.0d, 1.0d, d6, d7));
+            arrayList = this.f24432c.a(new o5(d4 + 1.0d, 1.0d, d6, d7));
             d = -1.0d;
         } else if (d5 > 1.0d) {
-            arrayList = this.f38123c.a(new o5(0.0d, d5 - 1.0d, d6, d7));
+            arrayList = this.f24432c.a(new o5(0.0d, d5 - 1.0d, d6, d7));
             d = 1.0d;
         } else {
             d = 0.0d;
         }
         o5 o5Var = new o5(d4, d5, d6, d7);
         o5 o5Var2 = this.e;
-        if (!o5Var.b(new o5(o5Var2.f37674a - d2, o5Var2.f37675c + d2, o5Var2.b - d2, o5Var2.d + d2))) {
+        if (!o5Var.b(new o5(o5Var2.f23983a - d2, o5Var2.f23984c + d2, o5Var2.b - d2, o5Var2.d + d2))) {
             na.g("TileOverlay", "热力图超出有效边界，返回空瓦块-" + i + ":" + i2 + ":" + i3);
             return TileProvider.NO_TILE;
         }
-        Collection<z1> a2 = this.f38123c.a(o5Var);
+        Collection<z1> a2 = this.f24432c.a(o5Var);
         if (a2.isEmpty()) {
             na.g("TileOverlay", "热力图没有热力数据，返回空瓦块-" + i + ":" + i2 + ":" + i3);
             return TileProvider.NO_TILE;
@@ -390,14 +390,14 @@ public class y1 extends HeatMapTileProvider {
         for (z1 z1Var : a2) {
             p5 a3 = z1Var.a();
             int i6 = (int) ((a3.b - d4) / d3);
-            int i7 = (int) ((a3.f37683c - d6) / d3);
+            int i7 = (int) ((a3.f23992c - d6) / d3);
             double[] dArr2 = dArr[i6];
             dArr2[i7] = dArr2[i7] + z1Var.b();
         }
         for (z1 z1Var2 : arrayList) {
             p5 a4 = z1Var2.a();
             int i8 = (int) (((a4.b + d) - d4) / d3);
-            int i9 = (int) ((a4.f37683c - d6) / d3);
+            int i9 = (int) ((a4.f23992c - d6) / d3);
             double[] dArr3 = dArr[i8];
             dArr3[i9] = dArr3[i9] + z1Var2.b();
         }

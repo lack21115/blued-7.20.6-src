@@ -1,5 +1,6 @@
 package com.android.internal.os;
 
+import com.android.internal.content.NativeLibraryHelper;
 import java.io.PrintStream;
 
 /* loaded from: source-4181928-dex2jar.jar:com/android/internal/os/BaseCommand.class */
@@ -41,7 +42,7 @@ public abstract class BaseCommand {
             return null;
         } else {
             String str = this.mArgs[this.mNextArg];
-            if (str.startsWith("-")) {
+            if (str.startsWith(NativeLibraryHelper.CLEAR_ABI_OVERRIDE)) {
                 this.mNextArg++;
                 if (str.equals("--")) {
                     return null;

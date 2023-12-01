@@ -8,20 +8,20 @@ import com.umeng.commonsdk.service.UMGlobalContext;
 public class ae implements aa {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f40615a;
+    private String f26924a;
     private long b;
 
     public ae(String str, long j) {
-        this.f40615a = "";
+        this.f26924a = "";
         this.b = 0L;
-        this.f40615a = str;
+        this.f26924a = str;
         this.b = j;
     }
 
     @Override // com.umeng.analytics.pro.aa
     public boolean a() {
         try {
-            String str = aq.b + this.f40615a;
+            String str = aq.b + this.f26924a;
             SharedPreferences a2 = aq.a(UMGlobalContext.getAppContext());
             if (a2 != null) {
                 long currentTimeMillis = System.currentTimeMillis() - a2.getLong(str, 0L);

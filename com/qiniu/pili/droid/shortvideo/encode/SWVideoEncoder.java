@@ -19,8 +19,8 @@ public class SWVideoEncoder extends f {
     private MediaFormat a(PLVideoEncodeSetting pLVideoEncodeSetting, byte[] bArr, byte[] bArr2) {
         MediaFormat createVideoFormat = MediaFormat.createVideoFormat("video/avc", pLVideoEncodeSetting.getVideoEncodingWidth(), pLVideoEncodeSetting.getVideoEncodingHeight());
         int round = Math.round((pLVideoEncodeSetting.getIFrameInterval() * 1.0f) / pLVideoEncodeSetting.getVideoEncodingFps());
-        createVideoFormat.setInteger(MediaFormat.KEY_BIT_RATE, (int) (pLVideoEncodeSetting.getEncodingBitrate() * this.f27649a));
-        createVideoFormat.setInteger(MediaFormat.KEY_FRAME_RATE, (int) (pLVideoEncodeSetting.getVideoEncodingFps() * this.f27649a));
+        createVideoFormat.setInteger(MediaFormat.KEY_BIT_RATE, (int) (pLVideoEncodeSetting.getEncodingBitrate() * this.f13961a));
+        createVideoFormat.setInteger(MediaFormat.KEY_FRAME_RATE, (int) (pLVideoEncodeSetting.getVideoEncodingFps() * this.f13961a));
         createVideoFormat.setInteger(MediaFormat.KEY_I_FRAME_INTERVAL, round);
         createVideoFormat.setInteger(MediaFormat.KEY_PROFILE, g.a(pLVideoEncodeSetting.getProfileMode()));
         createVideoFormat.setInteger(BatteryManager.EXTRA_LEVEL, 1);
@@ -30,7 +30,7 @@ public class SWVideoEncoder extends f {
     }
 
     private boolean n() {
-        return nativeSetParam(1, this.f.getVideoEncodingWidth()) & true & nativeSetParam(2, this.f.getVideoEncodingHeight()) & nativeSetParam(3, (int) (this.f.getEncodingBitrate() * this.f27649a)) & nativeSetParam(5, (int) (this.f.getVideoEncodingFps() * this.f27649a)) & nativeSetParam(4, (int) (this.f.getIFrameInterval() * this.f27649a)) & nativeSetParam(7, this.f.getProfileMode().ordinal());
+        return nativeSetParam(1, this.f.getVideoEncodingWidth()) & true & nativeSetParam(2, this.f.getVideoEncodingHeight()) & nativeSetParam(3, (int) (this.f.getEncodingBitrate() * this.f13961a)) & nativeSetParam(5, (int) (this.f.getVideoEncodingFps() * this.f13961a)) & nativeSetParam(4, (int) (this.f.getIFrameInterval() * this.f13961a)) & nativeSetParam(7, this.f.getProfileMode().ordinal());
     }
 
     private native boolean nativeClose();

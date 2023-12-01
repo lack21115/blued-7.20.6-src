@@ -14,7 +14,7 @@ import java.util.List;
 public class bb {
     public static int a(ba baVar, hm hmVar) {
         int i = 1;
-        if (bc.f41626a[hmVar.ordinal()] != 1) {
+        if (bc.f27935a[hmVar.ordinal()] != 1) {
             i = 0;
         }
         return baVar.a(hmVar, i);
@@ -29,11 +29,11 @@ public class bb {
             int a2 = hrVar.a();
             hn a3 = hn.a(hrVar.b());
             if (a3 != null) {
-                if (z && hrVar.f589a) {
+                if (z && hrVar.f542a) {
                     arrayList.add(new Pair(Integer.valueOf(a2), null));
                 } else {
                     int i = bc.b[a3.ordinal()];
-                    arrayList.add(i != 1 ? i != 2 ? i != 3 ? i != 4 ? null : new Pair(Integer.valueOf(a2), Boolean.valueOf(hrVar.g())) : new Pair(Integer.valueOf(a2), hrVar.m11879a()) : new Pair(Integer.valueOf(a2), Long.valueOf(hrVar.m11878a())) : new Pair(Integer.valueOf(a2), Integer.valueOf(hrVar.c())));
+                    arrayList.add(i != 1 ? i != 2 ? i != 3 ? i != 4 ? null : new Pair(Integer.valueOf(a2), Boolean.valueOf(hrVar.g())) : new Pair(Integer.valueOf(a2), hrVar.m8829a()) : new Pair(Integer.valueOf(a2), Long.valueOf(hrVar.m8828a())) : new Pair(Integer.valueOf(a2), Integer.valueOf(hrVar.c())));
                 }
             }
         }
@@ -49,8 +49,8 @@ public class bb {
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = new ArrayList();
         for (hp hpVar : ieVar.a()) {
-            arrayList.add(new Pair<>(hpVar.m11872a(), Integer.valueOf(hpVar.a())));
-            List<Pair<Integer, Object>> a2 = a(hpVar.f581a, false);
+            arrayList.add(new Pair<>(hpVar.m8822a(), Integer.valueOf(hpVar.a())));
+            List<Pair<Integer, Object>> a2 = a(hpVar.f534a, false);
             if (!com.xiaomi.push.ac.a(a2)) {
                 arrayList2.addAll(a2);
             }

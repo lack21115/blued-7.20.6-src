@@ -1,5 +1,6 @@
 package android.app;
 
+import android.R;
 import android.content.Context;
 import android.content.res.Resources;
 import android.hardware.display.DisplayManager;
@@ -75,7 +76,7 @@ public class Presentation extends Dialog {
         int i2 = i;
         if (i == 0) {
             TypedValue typedValue = new TypedValue();
-            createDisplayContext.getTheme().resolveAttribute(16843712, typedValue, true);
+            createDisplayContext.getTheme().resolveAttribute(R.attr.presentationTheme, typedValue, true);
             i2 = typedValue.resourceId;
         }
         final WindowManagerImpl createPresentationWindowManager = ((WindowManagerImpl) context.getSystemService(Context.WINDOW_SERVICE)).createPresentationWindowManager(display);

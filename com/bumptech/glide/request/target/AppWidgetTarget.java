@@ -12,16 +12,16 @@ import com.bumptech.glide.request.transition.Transition;
 public class AppWidgetTarget extends CustomTarget<Bitmap> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final int[] f21054a;
+    private final int[] f7448a;
     private final ComponentName b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final RemoteViews f21055c;
+    private final RemoteViews f7449c;
     private final Context d;
     private final int e;
 
     private void a(Bitmap bitmap) {
-        this.f21055c.setImageViewBitmap(this.e, bitmap);
+        this.f7449c.setImageViewBitmap(this.e, bitmap);
         update();
     }
 
@@ -29,9 +29,9 @@ public class AppWidgetTarget extends CustomTarget<Bitmap> {
         AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(this.d);
         ComponentName componentName = this.b;
         if (componentName != null) {
-            appWidgetManager.updateAppWidget(componentName, this.f21055c);
+            appWidgetManager.updateAppWidget(componentName, this.f7449c);
         } else {
-            appWidgetManager.updateAppWidget(this.f21054a, this.f21055c);
+            appWidgetManager.updateAppWidget(this.f7448a, this.f7449c);
         }
     }
 

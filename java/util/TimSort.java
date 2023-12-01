@@ -7,12 +7,8 @@ public class TimSort<T> {
     private static final int INITIAL_TMP_STORAGE_LENGTH = 256;
     private static final int MIN_GALLOP = 7;
     private static final int MIN_MERGE = 32;
-
-    /* renamed from: a  reason: collision with root package name */
-    private final T[] f42270a;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final Comparator<? super T> f42271c;
+    private final T[] a;
+    private final Comparator<? super T> c;
     private final int[] runBase;
     private final int[] runLen;
     private T[] tmp;
@@ -20,8 +16,8 @@ public class TimSort<T> {
     private int stackSize = 0;
 
     private TimSort(T[] tArr, Comparator<? super T> comparator) {
-        this.f42270a = tArr;
-        this.f42271c = comparator;
+        this.a = tArr;
+        this.c = comparator;
         int length = tArr.length;
         this.tmp = (T[]) new Object[length < 512 ? length >>> 1 : 256];
         int i = length < 120 ? 5 : length < 1542 ? 10 : length < 119151 ? 19 : 40;
@@ -102,7 +98,7 @@ public class TimSort<T> {
             int i5 = i4 | (i4 >> 8);
             int i6 = (i5 | (i5 >> 16)) + 1;
             if (i6 >= 0) {
-                i = Math.min(i6, this.f42270a.length >>> 1);
+                i = Math.min(i6, this.a.length >>> 1);
             }
             this.tmp = (T[]) new Object[i];
         }
@@ -235,10 +231,10 @@ public class TimSort<T> {
             this.runLen[i + 1] = this.runLen[i + 2];
         }
         this.stackSize--;
-        int gallopRight = gallopRight(this.f42270a[i4], this.f42270a, i2, i3, 0, this.f42271c);
+        int gallopRight = gallopRight(this.a[i4], this.a, i2, i3, 0, this.c);
         int i6 = i2 + gallopRight;
         int i7 = i3 - gallopRight;
-        if (i7 == 0 || (gallopLeft = gallopLeft(this.f42270a[(i6 + i7) - 1], this.f42270a, i4, i5, i5 - 1, this.f42271c)) == 0) {
+        if (i7 == 0 || (gallopLeft = gallopLeft(this.a[(i6 + i7) - 1], this.a, i4, i5, i5 - 1, this.c)) == 0) {
             return;
         }
         if (i7 <= gallopLeft) {

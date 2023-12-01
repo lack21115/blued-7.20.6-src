@@ -31,7 +31,7 @@ public abstract class ForwardingCollection<E> extends ForwardingObject implement
     @Override // com.google.common.collect.ForwardingObject
     public abstract Collection<E> delegate();
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     public boolean isEmpty() {
         return delegate().isEmpty();
     }
@@ -52,7 +52,7 @@ public abstract class ForwardingCollection<E> extends ForwardingObject implement
         return delegate().retainAll(collection);
     }
 
-    @Override // java.util.Collection, java.util.List
+    @Override // java.util.Collection
     public int size() {
         return delegate().size();
     }

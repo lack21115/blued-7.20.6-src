@@ -11,11 +11,11 @@ import com.opos.cmn.an.f.a.b.f;
 public class e implements b {
 
     /* renamed from: a  reason: collision with root package name */
-    private HandlerThread f24527a;
+    private HandlerThread f10840a;
     private d b;
 
     /* renamed from: c  reason: collision with root package name */
-    private volatile boolean f24528c = false;
+    private volatile boolean f10841c = false;
 
     private void a(int i, String str, Object obj, Throwable th, int i2) {
         if (str == null) {
@@ -27,7 +27,7 @@ public class e implements b {
             obj2 = com.igexin.push.core.b.l;
         }
         try {
-            if (this.f24528c) {
+            if (this.f10841c) {
                 Message obtain = Message.obtain();
                 com.opos.cmn.an.f.a.b.d a2 = new d.a().a(i).a(obj2).a(str).a(th).a(Thread.currentThread().getId()).b(Thread.currentThread().getName()).b(System.currentTimeMillis()).b(i2).a();
                 obtain.what = 2;
@@ -40,16 +40,16 @@ public class e implements b {
 
     @Override // com.opos.cmn.an.f.a.b
     public void a() {
-        if (this.f24528c) {
-            this.f24528c = false;
+        if (this.f10841c) {
+            this.f10841c = false;
             try {
                 Message obtain = Message.obtain();
-                com.opos.cmn.an.f.a.b.a a2 = new a.C0620a().a();
+                com.opos.cmn.an.f.a.b.a a2 = new a.C0450a().a();
                 obtain.what = 5;
                 obtain.obj = a2;
                 this.b.sendMessage(obtain);
-                this.f24527a.quitSafely();
-                this.f24527a = null;
+                this.f10840a.quitSafely();
+                this.f10840a = null;
             } catch (Exception e) {
             }
         }
@@ -59,22 +59,22 @@ public class e implements b {
     public void a(com.opos.cmn.an.f.b.b bVar) {
         try {
             HandlerThread handlerThread = new HandlerThread("adLoganThread");
-            this.f24527a = handlerThread;
+            this.f10840a = handlerThread;
             handlerThread.start();
-            this.b = new d(this.f24527a.getLooper());
+            this.b = new d(this.f10840a.getLooper());
             Message obtain = Message.obtain();
             com.opos.cmn.an.f.a.b.c a2 = new c.a().a(bVar).a();
             obtain.what = 1;
             obtain.obj = a2;
             this.b.sendMessage(obtain);
-            this.f24528c = true;
+            this.f10841c = true;
         } catch (Exception e) {
         }
     }
 
     @Override // com.opos.cmn.an.f.a.b
     public void a(com.opos.cmn.an.f.b.c cVar, com.opos.cmn.an.f.b.a aVar) {
-        if (this.f24528c) {
+        if (this.f10841c) {
             try {
                 Message obtain = Message.obtain();
                 com.opos.cmn.an.f.a.b.f a2 = new f.a().a(cVar).a(aVar).a();

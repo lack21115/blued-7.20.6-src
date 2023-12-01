@@ -4,9 +4,9 @@ import android.content.Context;
 import android.location.Location;
 import android.os.Handler;
 import android.text.TextUtils;
-import com.amap.api.col.p0003sl.ht;
-import com.amap.api.col.p0003sl.mq;
-import com.amap.api.col.p0003sl.mt;
+import com.amap.api.col.3sl.ht;
+import com.amap.api.col.3sl.mq;
+import com.amap.api.col.3sl.mt;
 import java.io.File;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
@@ -24,14 +24,14 @@ public final class g {
     private boolean f;
 
     /* renamed from: a  reason: collision with root package name */
-    private LinkedList<f> f9254a = new LinkedList<>();
+    private LinkedList<f> f6414a = new LinkedList<>();
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f9255c = false;
+    private boolean f6415c = false;
     private Runnable g = new Runnable() { // from class: com.autonavi.aps.amapapi.restruct.g.1
         @Override // java.lang.Runnable
         public final void run() {
-            if (g.this.f9255c) {
+            if (g.this.f6415c) {
                 return;
             }
             if (g.this.f) {
@@ -65,14 +65,14 @@ public final class g {
     }
 
     private void a() {
-        LinkedList<f> linkedList = this.f9254a;
+        LinkedList<f> linkedList = this.f6414a;
         if (linkedList == null || linkedList.size() <= 0) {
             for (String str : com.autonavi.aps.amapapi.utils.i.a(this.b)) {
                 try {
                     String str2 = new String(com.autonavi.aps.amapapi.security.a.b(ht.b(str), this.e), "UTF-8");
                     f fVar = new f();
                     fVar.a(new JSONObject(str2));
-                    this.f9254a.add(fVar);
+                    this.f6414a.add(fVar);
                 } catch (UnsupportedEncodingException e) {
                     e.printStackTrace();
                 } catch (JSONException e2) {
@@ -85,7 +85,7 @@ public final class g {
     /* JADX INFO: Access modifiers changed from: private */
     public void b() {
         StringBuilder sb = new StringBuilder();
-        Iterator<f> it = this.f9254a.iterator();
+        Iterator<f> it = this.f6414a.iterator();
         while (it.hasNext()) {
             try {
                 String a2 = it.next().a();
@@ -118,7 +118,7 @@ public final class g {
             long currentTimeMillis = System.currentTimeMillis();
             ArrayList arrayList3 = new ArrayList();
             int i = 0;
-            Iterator<f> it = this.f9254a.iterator();
+            Iterator<f> it = this.f6414a.iterator();
             while (it.hasNext()) {
                 f next = it.next();
                 int i2 = i;
@@ -137,13 +137,13 @@ public final class g {
     }
 
     public final void a(f fVar) {
-        Iterator<f> it = this.f9254a.iterator();
+        Iterator<f> it = this.f6414a.iterator();
         f fVar2 = null;
         f fVar3 = null;
         int i = 0;
         while (it.hasNext()) {
             f next = it.next();
-            if (next.f9252a == 1) {
+            if (next.f6412a == 1) {
                 f fVar4 = fVar3;
                 if (fVar3 == null) {
                     fVar4 = next;
@@ -155,17 +155,17 @@ public final class g {
         }
         if (fVar2 != null) {
             new Location("gps");
-            if (fVar.d - fVar2.d < 20000 && com.autonavi.aps.amapapi.utils.i.a(new double[]{fVar.b, fVar.f9253c, fVar2.b, fVar2.f9253c}) < 20.0f) {
+            if (fVar.d - fVar2.d < 20000 && com.autonavi.aps.amapapi.utils.i.a(new double[]{fVar.b, fVar.f6413c, fVar2.b, fVar2.f6413c}) < 20.0f) {
                 return;
             }
         }
         if (i >= 5) {
-            this.f9254a.remove(fVar3);
+            this.f6414a.remove(fVar3);
         }
-        if (this.f9254a.size() >= 10) {
-            this.f9254a.removeFirst();
+        if (this.f6414a.size() >= 10) {
+            this.f6414a.removeFirst();
         }
-        this.f9254a.add(fVar);
+        this.f6414a.add(fVar);
         this.f = true;
     }
 
@@ -177,30 +177,30 @@ public final class g {
         if (handler != null) {
             handler.removeCallbacks(this.g);
         }
-        this.f9255c = true;
+        this.f6415c = true;
     }
 
     public final void b(f fVar) {
-        if (this.f9254a.size() > 0) {
-            if (fVar.f9252a != 6 && fVar.f9252a != 5) {
-                if (this.f9254a.contains(fVar)) {
+        if (this.f6414a.size() > 0) {
+            if (fVar.f6412a != 6 && fVar.f6412a != 5) {
+                if (this.f6414a.contains(fVar)) {
                     return;
                 }
-                if (this.f9254a.size() >= 10) {
-                    this.f9254a.removeFirst();
+                if (this.f6414a.size() >= 10) {
+                    this.f6414a.removeFirst();
                 }
-                this.f9254a.add(fVar);
+                this.f6414a.add(fVar);
                 this.f = true;
                 return;
             }
-            f last = this.f9254a.getLast();
-            if (last.f9253c == fVar.f9253c && last.b == fVar.b && last.e == fVar.e) {
+            f last = this.f6414a.getLast();
+            if (last.f6413c == fVar.f6413c && last.b == fVar.b && last.e == fVar.e) {
                 return;
             }
-            if (this.f9254a.size() >= 10) {
-                this.f9254a.removeFirst();
+            if (this.f6414a.size() >= 10) {
+                this.f6414a.removeFirst();
             }
-            this.f9254a.add(fVar);
+            this.f6414a.add(fVar);
             this.f = true;
         }
     }

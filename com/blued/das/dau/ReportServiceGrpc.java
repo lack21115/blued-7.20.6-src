@@ -38,12 +38,10 @@ public final class ReportServiceGrpc {
             this.methodId = i;
         }
 
-        @Override // io.grpc.stub.ServerCalls.BidiStreamingMethod, io.grpc.stub.ServerCalls.StreamingRequestMethod, io.grpc.stub.ServerCalls.ClientStreamingMethod
         public StreamObserver<Req> invoke(StreamObserver<Resp> streamObserver) {
             throw new AssertionError();
         }
 
-        @Override // io.grpc.stub.ServerCalls.ServerStreamingMethod, io.grpc.stub.ServerCalls.UnaryRequestMethod, io.grpc.stub.ServerCalls.UnaryMethod
         public void invoke(Req req, StreamObserver<Resp> streamObserver) {
             if (this.methodId != 0) {
                 throw new AssertionError();
@@ -57,12 +55,10 @@ public final class ReportServiceGrpc {
         ReportServiceBaseDescriptorSupplier() {
         }
 
-        @Override // io.grpc.protobuf.ProtoFileDescriptorSupplier
         public Descriptors.FileDescriptor getFileDescriptor() {
             return DayActiveUserProtos.getDescriptor();
         }
 
-        @Override // io.grpc.protobuf.ProtoServiceDescriptorSupplier
         public Descriptors.ServiceDescriptor getServiceDescriptor() {
             return getFileDescriptor().findServiceByName("ReportService");
         }
@@ -75,8 +71,8 @@ public final class ReportServiceGrpc {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // io.grpc.stub.AbstractStub
-        public ReportServiceBlockingStub build(Channel channel, CallOptions callOptions) {
+        /* renamed from: build */
+        public ReportServiceBlockingStub m2185build(Channel channel, CallOptions callOptions) {
             return new ReportServiceBlockingStub(channel, callOptions);
         }
 
@@ -99,8 +95,8 @@ public final class ReportServiceGrpc {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // io.grpc.stub.AbstractStub
-        public ReportServiceFutureStub build(Channel channel, CallOptions callOptions) {
+        /* renamed from: build */
+        public ReportServiceFutureStub m2186build(Channel channel, CallOptions callOptions) {
             return new ReportServiceFutureStub(channel, callOptions);
         }
 
@@ -130,7 +126,6 @@ public final class ReportServiceGrpc {
             this.methodName = str;
         }
 
-        @Override // io.grpc.protobuf.ProtoMethodDescriptorSupplier
         public Descriptors.MethodDescriptor getMethodDescriptor() {
             return getServiceDescriptor().findMethodByName(this.methodName);
         }
@@ -143,8 +138,8 @@ public final class ReportServiceGrpc {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // io.grpc.stub.AbstractStub
-        public ReportServiceStub build(Channel channel, CallOptions callOptions) {
+        /* renamed from: build */
+        public ReportServiceStub m2187build(Channel channel, CallOptions callOptions) {
             return new ReportServiceStub(channel, callOptions);
         }
 
@@ -199,30 +194,27 @@ public final class ReportServiceGrpc {
     }
 
     public static ReportServiceBlockingStub newBlockingStub(Channel channel) {
-        return (ReportServiceBlockingStub) ReportServiceBlockingStub.newStub(new AbstractStub.StubFactory<ReportServiceBlockingStub>() { // from class: com.blued.das.dau.ReportServiceGrpc.2
-            /* JADX WARN: Can't rename method to resolve collision */
-            @Override // io.grpc.stub.AbstractStub.StubFactory
-            public ReportServiceBlockingStub newStub(Channel channel2, CallOptions callOptions) {
+        return ReportServiceBlockingStub.newStub(new AbstractStub.StubFactory<ReportServiceBlockingStub>() { // from class: com.blued.das.dau.ReportServiceGrpc.2
+            /* renamed from: newStub */
+            public ReportServiceBlockingStub m2183newStub(Channel channel2, CallOptions callOptions) {
                 return new ReportServiceBlockingStub(channel2, callOptions);
             }
         }, channel);
     }
 
     public static ReportServiceFutureStub newFutureStub(Channel channel) {
-        return (ReportServiceFutureStub) ReportServiceFutureStub.newStub(new AbstractStub.StubFactory<ReportServiceFutureStub>() { // from class: com.blued.das.dau.ReportServiceGrpc.3
-            /* JADX WARN: Can't rename method to resolve collision */
-            @Override // io.grpc.stub.AbstractStub.StubFactory
-            public ReportServiceFutureStub newStub(Channel channel2, CallOptions callOptions) {
+        return ReportServiceFutureStub.newStub(new AbstractStub.StubFactory<ReportServiceFutureStub>() { // from class: com.blued.das.dau.ReportServiceGrpc.3
+            /* renamed from: newStub */
+            public ReportServiceFutureStub m2184newStub(Channel channel2, CallOptions callOptions) {
                 return new ReportServiceFutureStub(channel2, callOptions);
             }
         }, channel);
     }
 
     public static ReportServiceStub newStub(Channel channel) {
-        return (ReportServiceStub) ReportServiceStub.newStub(new AbstractStub.StubFactory<ReportServiceStub>() { // from class: com.blued.das.dau.ReportServiceGrpc.1
-            /* JADX WARN: Can't rename method to resolve collision */
-            @Override // io.grpc.stub.AbstractStub.StubFactory
-            public ReportServiceStub newStub(Channel channel2, CallOptions callOptions) {
+        return ReportServiceStub.newStub(new AbstractStub.StubFactory<ReportServiceStub>() { // from class: com.blued.das.dau.ReportServiceGrpc.1
+            /* renamed from: newStub */
+            public ReportServiceStub m2182newStub(Channel channel2, CallOptions callOptions) {
                 return new ReportServiceStub(channel2, callOptions);
             }
         }, channel);

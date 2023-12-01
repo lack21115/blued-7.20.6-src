@@ -9,24 +9,24 @@ import com.tencent.tencentmap.mapsdk.maps.model.AnimationListener;
 public abstract class j7 implements Animation {
 
     /* renamed from: a  reason: collision with root package name */
-    public a8 f37563a = null;
+    public a8 f23872a = null;
     public a b;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/mapsdk/internal/j7$a.class */
     public static class a implements a8.a {
 
         /* renamed from: a  reason: collision with root package name */
-        private AnimationListener f37564a;
+        private AnimationListener f23873a;
 
         /* renamed from: com.tencent.mapsdk.internal.j7$a$a  reason: collision with other inner class name */
         /* loaded from: source-8829756-dex2jar.jar:com/tencent/mapsdk/internal/j7$a$a.class */
-        public class RunnableC0969a implements Runnable {
-            public RunnableC0969a() {
+        public class RunnableC0799a implements Runnable {
+            public RunnableC0799a() {
             }
 
             @Override // java.lang.Runnable
             public void run() {
-                a.this.f37564a.onAnimationStart();
+                a.this.f23873a.onAnimationStart();
             }
         }
 
@@ -37,25 +37,25 @@ public abstract class j7 implements Animation {
 
             @Override // java.lang.Runnable
             public void run() {
-                a.this.f37564a.onAnimationEnd();
+                a.this.f23873a.onAnimationEnd();
             }
         }
 
         public a(AnimationListener animationListener) {
-            this.f37564a = animationListener;
+            this.f23873a = animationListener;
         }
 
         @Override // com.tencent.mapsdk.internal.a8.a
         public void a() {
-            if (this.f37564a != null) {
+            if (this.f23873a != null) {
                 ca.b(new b());
             }
         }
 
         @Override // com.tencent.mapsdk.internal.a8.a
         public void onAnimationStart() {
-            if (this.f37564a != null) {
-                ca.b(new RunnableC0969a());
+            if (this.f23873a != null) {
+                ca.b(new RunnableC0799a());
             }
         }
     }
@@ -64,14 +64,14 @@ public abstract class j7 implements Animation {
     public AnimationListener getAnimationListener() {
         a aVar = this.b;
         if (aVar != null) {
-            return aVar.f37564a;
+            return aVar.f23873a;
         }
         return null;
     }
 
     @Override // com.tencent.tencentmap.mapsdk.maps.model.Animation
     public long getDuration() {
-        a8 a8Var = this.f37563a;
+        a8 a8Var = this.f23872a;
         if (a8Var != null) {
             return a8Var.c();
         }
@@ -80,7 +80,7 @@ public abstract class j7 implements Animation {
 
     @Override // com.tencent.tencentmap.mapsdk.maps.model.Animation
     public Interpolator getInterpolator() {
-        a8 a8Var = this.f37563a;
+        a8 a8Var = this.f23872a;
         if (a8Var != null) {
             return a8Var.d();
         }
@@ -91,7 +91,7 @@ public abstract class j7 implements Animation {
     public void setAnimationListener(AnimationListener animationListener) {
         a aVar = new a(animationListener);
         this.b = aVar;
-        a8 a8Var = this.f37563a;
+        a8 a8Var = this.f23872a;
         if (a8Var != null) {
             a8Var.a(aVar);
         }

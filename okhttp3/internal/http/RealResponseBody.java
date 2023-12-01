@@ -8,18 +8,14 @@ import okio.BufferedSource;
 /* loaded from: source-3503164-dex2jar.jar:okhttp3/internal/http/RealResponseBody.class */
 public final class RealResponseBody extends ResponseBody {
     @Nullable
-
-    /* renamed from: a  reason: collision with root package name */
-    private final String f43890a;
+    private final String a;
     private final long b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final BufferedSource f43891c;
+    private final BufferedSource c;
 
     public RealResponseBody(@Nullable String str, long j, BufferedSource bufferedSource) {
-        this.f43890a = str;
+        this.a = str;
         this.b = j;
-        this.f43891c = bufferedSource;
+        this.c = bufferedSource;
     }
 
     @Override // okhttp3.ResponseBody
@@ -29,7 +25,7 @@ public final class RealResponseBody extends ResponseBody {
 
     @Override // okhttp3.ResponseBody
     public MediaType contentType() {
-        String str = this.f43890a;
+        String str = this.a;
         if (str != null) {
             return MediaType.parse(str);
         }
@@ -38,6 +34,6 @@ public final class RealResponseBody extends ResponseBody {
 
     @Override // okhttp3.ResponseBody
     public BufferedSource source() {
-        return this.f43891c;
+        return this.c;
     }
 }

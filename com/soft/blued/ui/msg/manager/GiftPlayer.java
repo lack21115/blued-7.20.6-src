@@ -23,11 +23,11 @@ import java.util.List;
 public class GiftPlayer {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f32415a = GiftPlayer.class.getSimpleName();
+    public static final String f18725a = GiftPlayer.class.getSimpleName();
     private ViewStub b;
 
     /* renamed from: c  reason: collision with root package name */
-    private SessionModel f32416c;
+    private SessionModel f18726c;
     private GiftPlayView d;
     private long e;
 
@@ -37,15 +37,14 @@ public class GiftPlayer {
     }
 
     private void a(final long j) {
-        this.f32416c.unreadGiftCnt = 0;
-        ChatManager.getInstance().updateSessionUnreadGiftCnt(this.f32416c.sessionType, this.f32416c.sessionId, 0, this.f32416c.lastMsgId);
+        this.f18726c.unreadGiftCnt = 0;
+        ChatManager.getInstance().updateSessionUnreadGiftCnt(this.f18726c.sessionType, this.f18726c.sessionId, 0, this.f18726c.lastMsgId);
         ThreadManager.a().a(new ThreadExecutor("findAndPlayAnimation") { // from class: com.soft.blued.ui.msg.manager.GiftPlayer.1
-            @Override // com.blued.android.framework.pool.ThreadExecutor
             public void execute() {
-                QueryBuilder<ChattingModelDB, Integer> queryBuilder = ChattingDao.a().b().queryBuilder();
+                QueryBuilder queryBuilder = ChattingDao.a().b().queryBuilder();
                 try {
-                    queryBuilder.where().eq("fromId", Long.valueOf(GiftPlayer.this.f32416c.sessionId)).and().eq(RemoteMessageConst.MSGID, Long.valueOf(j));
-                    final List<ChattingModelDB> query = queryBuilder.query();
+                    queryBuilder.where().eq("fromId", Long.valueOf(GiftPlayer.this.f18726c.sessionId)).and().eq(RemoteMessageConst.MSGID, Long.valueOf(j));
+                    final List query = queryBuilder.query();
                     if (query == null || query.size() <= 0) {
                         return;
                     }
@@ -76,7 +75,7 @@ public class GiftPlayer {
     }
 
     public void a(SessionModel sessionModel) {
-        this.f32416c = sessionModel;
+        this.f18726c = sessionModel;
         if (sessionModel == null || sessionModel.unreadGiftCnt == 0) {
             return;
         }
@@ -108,11 +107,11 @@ public class GiftPlayer {
 
     public void b(ChattingModel chattingModel) {
         a(chattingModel);
-        SessionModel sessionModel = this.f32416c;
+        SessionModel sessionModel = this.f18726c;
         if (sessionModel != null) {
             sessionModel.unreadGiftCnt = 0;
-            this.f32416c.lastGiftMsgId = chattingModel.msgId;
-            ChatManager.getInstance().updateSessionUnreadGiftCnt(this.f32416c.sessionType, this.f32416c.sessionId, 0, chattingModel.msgId);
+            this.f18726c.lastGiftMsgId = chattingModel.msgId;
+            ChatManager.getInstance().updateSessionUnreadGiftCnt(this.f18726c.sessionType, this.f18726c.sessionId, 0, chattingModel.msgId);
         }
     }
 

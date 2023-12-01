@@ -11,28 +11,28 @@ import java.util.List;
 public class gp {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f41451a;
+    private int f27760a;
 
     /* renamed from: a  reason: collision with other field name */
-    private String f525a;
+    private String f478a;
 
     /* renamed from: a  reason: collision with other field name */
-    private List<gi> f526a;
+    private List<gi> f479a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f41452c;
+    private String f27761c;
     private String d;
 
     /* loaded from: source-8829756-dex2jar.jar:com/xiaomi/push/gp$a.class */
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final a f41453a = new a("internal-server-error");
+        public static final a f27762a = new a("internal-server-error");
         public static final a b = new a("forbidden");
 
         /* renamed from: c  reason: collision with root package name */
-        public static final a f41454c = new a("bad-request");
+        public static final a f27763c = new a("bad-request");
         public static final a d = new a("conflict");
         public static final a e = new a("feature-not-implemented");
         public static final a f = new a("gone");
@@ -56,41 +56,41 @@ public class gp {
         public static final a x = new a("request-timeout");
 
         /* renamed from: a  reason: collision with other field name */
-        private String f527a;
+        private String f480a;
 
         public a(String str) {
-            this.f527a = str;
+            this.f480a = str;
         }
 
         public String toString() {
-            return this.f527a;
+            return this.f480a;
         }
     }
 
     public gp(int i, String str, String str2, String str3, String str4, List<gi> list) {
-        this.f526a = null;
-        this.f41451a = i;
-        this.f525a = str;
-        this.f41452c = str2;
+        this.f479a = null;
+        this.f27760a = i;
+        this.f478a = str;
+        this.f27761c = str2;
         this.b = str3;
         this.d = str4;
-        this.f526a = list;
+        this.f479a = list;
     }
 
     public gp(Bundle bundle) {
-        this.f526a = null;
-        this.f41451a = bundle.getInt("ext_err_code");
+        this.f479a = null;
+        this.f27760a = bundle.getInt("ext_err_code");
         if (bundle.containsKey("ext_err_type")) {
-            this.f525a = bundle.getString("ext_err_type");
+            this.f478a = bundle.getString("ext_err_type");
         }
         this.b = bundle.getString("ext_err_cond");
-        this.f41452c = bundle.getString("ext_err_reason");
+        this.f27761c = bundle.getString("ext_err_reason");
         this.d = bundle.getString("ext_err_msg");
         Parcelable[] parcelableArray = bundle.getParcelableArray("ext_exts");
         if (parcelableArray == null) {
             return;
         }
-        this.f526a = new ArrayList(parcelableArray.length);
+        this.f479a = new ArrayList(parcelableArray.length);
         int length = parcelableArray.length;
         int i = 0;
         while (true) {
@@ -100,30 +100,30 @@ public class gp {
             }
             gi a2 = gi.a((Bundle) parcelableArray[i2]);
             if (a2 != null) {
-                this.f526a.add(a2);
+                this.f479a.add(a2);
             }
             i = i2 + 1;
         }
     }
 
     public gp(a aVar) {
-        this.f526a = null;
+        this.f479a = null;
         a(aVar);
         this.d = null;
     }
 
     private void a(a aVar) {
-        this.b = aVar.f527a;
+        this.b = aVar.f480a;
     }
 
     public Bundle a() {
         Bundle bundle = new Bundle();
-        String str = this.f525a;
+        String str = this.f478a;
         if (str != null) {
             bundle.putString("ext_err_type", str);
         }
-        bundle.putInt("ext_err_code", this.f41451a);
-        String str2 = this.f41452c;
+        bundle.putInt("ext_err_code", this.f27760a);
+        String str2 = this.f27761c;
         if (str2 != null) {
             bundle.putString("ext_err_reason", str2);
         }
@@ -135,11 +135,11 @@ public class gp {
         if (str4 != null) {
             bundle.putString("ext_err_msg", str4);
         }
-        List<gi> list = this.f526a;
+        List<gi> list = this.f479a;
         if (list != null) {
             Bundle[] bundleArr = new Bundle[list.size()];
             int i = 0;
-            for (gi giVar : this.f526a) {
+            for (gi giVar : this.f479a) {
                 Bundle a2 = giVar.a();
                 if (a2 != null) {
                     bundleArr[i] = a2;
@@ -152,19 +152,19 @@ public class gp {
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public String m11822a() {
+    public String m8772a() {
         StringBuilder sb = new StringBuilder();
         sb.append("<error code=\"");
-        sb.append(this.f41451a);
+        sb.append(this.f27760a);
         sb.append("\"");
-        if (this.f525a != null) {
+        if (this.f478a != null) {
             sb.append(" type=\"");
-            sb.append(this.f525a);
+            sb.append(this.f478a);
             sb.append("\"");
         }
-        if (this.f41452c != null) {
+        if (this.f27761c != null) {
             sb.append(" reason=\"");
-            sb.append(this.f41452c);
+            sb.append(this.f27761c);
             sb.append("\"");
         }
         sb.append(SimpleComparison.GREATER_THAN_OPERATION);
@@ -178,7 +178,7 @@ public class gp {
             sb.append(this.d);
             sb.append("</text>");
         }
-        for (gi giVar : m11823a()) {
+        for (gi giVar : m8773a()) {
             sb.append(giVar.d());
         }
         sb.append("</error>");
@@ -186,12 +186,12 @@ public class gp {
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public List<gi> m11823a() {
+    public List<gi> m8773a() {
         synchronized (this) {
-            if (this.f526a == null) {
+            if (this.f479a == null) {
                 return Collections.emptyList();
             }
-            return Collections.unmodifiableList(this.f526a);
+            return Collections.unmodifiableList(this.f479a);
         }
     }
 
@@ -202,7 +202,7 @@ public class gp {
             sb.append(str);
         }
         sb.append("(");
-        sb.append(this.f41451a);
+        sb.append(this.f27760a);
         sb.append(")");
         if (this.d != null) {
             sb.append(" ");

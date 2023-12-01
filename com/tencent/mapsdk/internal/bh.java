@@ -4,11 +4,11 @@ package com.tencent.mapsdk.internal;
 public class bh {
 
     /* renamed from: a  reason: collision with root package name */
-    public int f37329a;
+    public int f23638a;
     public int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public int f37330c;
+    public int f23639c;
     public int d;
     public int e;
     public int f;

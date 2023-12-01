@@ -2,7 +2,6 @@ package c.t.m.g;
 
 import android.os.Bundle;
 import android.text.TextUtils;
-import com.amap.api.services.district.DistrictSearchQuery;
 import com.bytedance.sdk.openadsdk.live.TTLiveConstants;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -12,11 +11,11 @@ public class p5 {
     public static final p5 n = new p5();
 
     /* renamed from: a  reason: collision with root package name */
-    public String f3933a;
+    public String f3885a;
     public String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f3934c;
+    public String f3886c;
     public String d;
     public String e;
     public String f;
@@ -36,9 +35,9 @@ public class p5 {
             this.m.putAll(p5Var.m);
             return;
         }
-        this.f3933a = p5Var.f3933a;
+        this.f3885a = p5Var.f3885a;
         this.b = p5Var.b;
-        this.f3934c = p5Var.f3934c;
+        this.f3886c = p5Var.f3886c;
         this.d = p5Var.d;
         this.e = p5Var.e;
         this.f = p5Var.f;
@@ -69,12 +68,12 @@ public class p5 {
             return;
         }
         this.b = jSONObject.optString("name", null);
-        this.f3934c = jSONObject.optString("code", null);
+        this.f3886c = jSONObject.optString("code", null);
         this.d = jSONObject.optString("pncode", null);
-        this.f3933a = jSONObject.optString("nation", null);
-        this.e = jSONObject.optString(DistrictSearchQuery.KEYWORDS_PROVINCE, null);
-        this.f = jSONObject.optString(DistrictSearchQuery.KEYWORDS_CITY, null);
-        this.g = jSONObject.optString(DistrictSearchQuery.KEYWORDS_DISTRICT, null);
+        this.f3885a = jSONObject.optString("nation", null);
+        this.e = jSONObject.optString("province", null);
+        this.f = jSONObject.optString("city", null);
+        this.g = jSONObject.optString("district", null);
         this.h = jSONObject.optString("town", null);
         this.i = jSONObject.optString("village", null);
         this.j = jSONObject.optString("street", null);
@@ -98,6 +97,6 @@ public class p5 {
     }
 
     public String toString() {
-        return "SubnationData{name=" + this.b + ",address=" + this.l + ",code=" + this.f3934c + ",phCode=" + this.d + ",nation=" + this.f3933a + ",province=" + this.e + ",city=" + this.f + ",district=" + this.g + ",town=" + this.h + ",village=" + this.i + ",street=" + this.j + ",street_no=" + this.k + "," + TTLiveConstants.BUNDLE_KEY + this.m + "," + com.alipay.sdk.util.i.d;
+        return "SubnationData{name=" + this.b + ",address=" + this.l + ",code=" + this.f3886c + ",phCode=" + this.d + ",nation=" + this.f3885a + ",province=" + this.e + ",city=" + this.f + ",district=" + this.g + ",town=" + this.h + ",village=" + this.i + ",street=" + this.j + ",street_no=" + this.k + "," + TTLiveConstants.BUNDLE_KEY + this.m + ",}";
     }
 }

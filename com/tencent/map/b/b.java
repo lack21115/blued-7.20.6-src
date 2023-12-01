@@ -10,17 +10,17 @@ public class b {
     private a i;
 
     /* renamed from: c  reason: collision with root package name */
-    private double f37203c = 0.0d;
+    private double f23512c = 0.0d;
     private double d = 0.0d;
     private double e = 0.0d;
     private double f = 0.0d;
     private double g = 0.0d;
     private double h = 0.0d;
-    private C0944b j = null;
+    private C0774b j = null;
     private boolean k = false;
 
     /* renamed from: a  reason: collision with root package name */
-    public String f37202a = "";
+    public String f23511a = "";
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/map/b/b$a.class */
     public interface a {
@@ -29,18 +29,18 @@ public class b {
 
     /* renamed from: com.tencent.map.b.b$b  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/map/b/b$b.class */
-    public final class C0944b extends Thread {
-        public C0944b() {
+    public final class C0774b extends Thread {
+        public C0774b() {
         }
 
         @Override // java.lang.Thread, java.lang.Runnable
         public final void run() {
             try {
-                byte[] a2 = j.a(b.this.f37202a.getBytes());
+                byte[] a2 = j.a(b.this.f23511a.getBytes());
                 b.this.k = true;
                 n a3 = b.a("http://ls.map.soso.com/deflect?c=1", "SOSO MAP LBS SDK", a2);
                 b.this.k = false;
-                b.a(b.this, j.b(a3.f37245a), a3.b);
+                b.a(b.this, j.b(a3.f23554a), a3.b);
             } catch (Exception e) {
                 int i = 0;
                 while (true) {
@@ -55,9 +55,9 @@ public class b {
                     }
                     try {
                         sleep(2000L);
-                        n a4 = b.a("http://ls.map.soso.com/deflect?c=1", "SOSO MAP LBS SDK", j.a(b.this.f37202a.getBytes()));
+                        n a4 = b.a("http://ls.map.soso.com/deflect?c=1", "SOSO MAP LBS SDK", j.a(b.this.f23511a.getBytes()));
                         b.this.k = false;
-                        b.a(b.this, j.b(a4.f37245a), a4.b);
+                        b.a(b.this, j.b(a4.f23554a), a4.b);
                         return;
                     } catch (Exception e2) {
                     }
@@ -100,7 +100,7 @@ public class b {
             double d2 = jSONObject.getDouble("longitude");
             bVar.g = d - bVar.e;
             bVar.h = d2 - bVar.f;
-            bVar.f37203c = bVar.e;
+            bVar.f23512c = bVar.e;
             bVar.d = bVar.f;
             if (bVar.i != null) {
                 bVar.i.a(d, d2);
@@ -121,7 +121,7 @@ public class b {
         this.i = aVar;
         if (this.g != 0.0d && this.h != 0.0d) {
             float[] fArr = new float[10];
-            Location.distanceBetween(d, d2, this.f37203c, this.d, fArr);
+            Location.distanceBetween(d, d2, this.f23512c, this.d, fArr);
             if (fArr[0] < 1500.0f) {
                 this.i.a(d + this.g, d2 + this.h);
                 return;
@@ -130,11 +130,11 @@ public class b {
         if (this.k) {
             return;
         }
-        this.f37202a = "{\"source\":101,\"access_token\":\"160e7bd42dec9428721034e0146fc6dd\",\"location\":{\"latitude\":" + d + ",\"longitude\":" + d2 + "}\t}";
+        this.f23511a = "{\"source\":101,\"access_token\":\"160e7bd42dec9428721034e0146fc6dd\",\"location\":{\"latitude\":" + d + ",\"longitude\":" + d2 + "}\t}";
         this.e = d;
         this.f = d2;
-        C0944b c0944b = new C0944b();
-        this.j = c0944b;
-        c0944b.start();
+        C0774b c0774b = new C0774b();
+        this.j = c0774b;
+        c0774b.start();
     }
 }

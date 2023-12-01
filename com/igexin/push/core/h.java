@@ -12,18 +12,18 @@ import java.util.concurrent.atomic.AtomicLong;
 public final class h implements Application.ActivityLifecycleCallbacks {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23551a = "GALC";
+    private static final String f9943a = "GALC";
     private AtomicLong b = new AtomicLong(0);
 
     /* renamed from: c  reason: collision with root package name */
-    private int f23552c;
+    private int f9944c;
 
     private void a(Activity activity) {
         try {
             Context applicationContext = activity.getApplicationContext();
             activity.getComponentName().getClassName();
-            com.igexin.c.a.c.a.a("GALC|" + activity.getComponentName().getClassName() + " onAStart " + this.f23552c, new Object[0]);
-            if (this.f23552c == 0) {
+            com.igexin.c.a.c.a.a("GALC|" + activity.getComponentName().getClassName() + " onAStart " + this.f9944c, new Object[0]);
+            if (this.f9944c == 0) {
                 Thread.currentThread().getName();
                 com.igexin.c.a.c.a.a("GALC|>>>>>> FG threadName=" + Thread.currentThread().getName(), new Object[0]);
                 if (com.igexin.push.f.j.a(applicationContext) || System.currentTimeMillis() - this.b.get() <= 20000) {
@@ -69,8 +69,8 @@ public final class h implements Application.ActivityLifecycleCallbacks {
         try {
             Context applicationContext = activity.getApplicationContext();
             activity.getComponentName().getClassName();
-            com.igexin.c.a.c.a.a("GALC|" + activity.getComponentName().getClassName() + " onAStart " + this.f23552c, new Object[0]);
-            if (this.f23552c == 0) {
+            com.igexin.c.a.c.a.a("GALC|" + activity.getComponentName().getClassName() + " onAStart " + this.f9944c, new Object[0]);
+            if (this.f9944c == 0) {
                 Thread.currentThread().getName();
                 com.igexin.c.a.c.a.a("GALC|>>>>>> FG threadName=" + Thread.currentThread().getName(), new Object[0]);
                 if (!com.igexin.push.f.j.a(applicationContext) && System.currentTimeMillis() - this.b.get() > 20000) {
@@ -85,7 +85,7 @@ public final class h implements Application.ActivityLifecycleCallbacks {
         } catch (Throwable th) {
             com.igexin.c.a.c.a.a(th);
         }
-        this.f23552c++;
+        this.f9944c++;
     }
 
     @Override // android.app.Application.ActivityLifecycleCallbacks
@@ -93,11 +93,11 @@ public final class h implements Application.ActivityLifecycleCallbacks {
         if (activity == null) {
             return;
         }
-        int i = this.f23552c - 1;
-        this.f23552c = i;
-        this.f23552c = Math.max(i, 0);
-        com.igexin.c.a.c.a.b(f23551a, "|" + activity.getComponentName().getClassName() + " onAStopp " + this.f23552c);
-        if (this.f23552c == 0) {
+        int i = this.f9944c - 1;
+        this.f9944c = i;
+        this.f9944c = Math.max(i, 0);
+        com.igexin.c.a.c.a.b(f9943a, "|" + activity.getComponentName().getClassName() + " onAStopp " + this.f9944c);
+        if (this.f9944c == 0) {
             com.igexin.c.a.c.a.a("GALC|>>>>>> on bg", new Object[0]);
         }
     }

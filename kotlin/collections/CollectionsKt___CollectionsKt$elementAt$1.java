@@ -8,12 +8,10 @@ import kotlin.jvm.internal.Lambda;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/collections/CollectionsKt___CollectionsKt$elementAt$1.class */
 final class CollectionsKt___CollectionsKt$elementAt$1<T> extends Lambda implements Function1<Integer, T> {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ int f42376a;
+    final /* synthetic */ int a;
 
     public final T a(int i) {
-        throw new IndexOutOfBoundsException("Collection doesn't contain element at index " + this.f42376a + '.');
+        throw new IndexOutOfBoundsException("Collection doesn't contain element at index " + this.a + '.');
     }
 
     @Override // kotlin.jvm.functions.Function1

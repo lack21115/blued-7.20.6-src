@@ -7,9 +7,8 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8756600-dex2jar.jar:com/baidu/idl/license/LicenseReader.class */
-public class LicenseReader {
+class LicenseReader {
     public static final String TAG = "License-SDK";
     private static final String URL = "https://aip.baidubce.com/public/2.0/license/face-api/app/querydevicelicense";
     private String path;

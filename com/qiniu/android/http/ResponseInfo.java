@@ -2,8 +2,6 @@ package com.qiniu.android.http;
 
 import android.os.Process;
 import android.security.KeyChain;
-import com.alipay.sdk.cons.c;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.qiniu.android.collect.Config;
 import com.qiniu.android.collect.LogHandler;
 import com.qiniu.android.collect.UploadInfoCollector;
@@ -79,7 +77,7 @@ public final class ResponseInfo {
         bytes_sent += j2;
         requests_count++;
         String str8 = (str6 + "").split(":")[0];
-        final String substring = str8.substring(Math.max(0, str8.indexOf(BridgeUtil.SPLIT_MARK) + 1));
+        final String substring = str8.substring(Math.max(0, str8.indexOf("/") + 1));
         ResponseInfo responseInfo = new ResponseInfo(jSONObject, i, UploadInfoElement.x_log_client_id, str, str2, str3, str4, str5, substring, i2, j, j2, str7, upToken, j3);
         if (Config.isRecord) {
             UploadInfoCollector.handleHttp(upToken, new UploadInfoCollector.RecordMsg() { // from class: com.qiniu.android.http.ResponseInfo.1
@@ -126,11 +124,11 @@ public final class ResponseInfo {
     }
 
     private static String getUpType(String str) {
-        if (str == null || !str.startsWith(BridgeUtil.SPLIT_MARK)) {
+        if (str == null || !str.startsWith("/")) {
             return "";
         }
-        if (BridgeUtil.SPLIT_MARK.equals(str)) {
-            return c.f4616c;
+        if ("/".equals(str)) {
+            return "form";
         }
         int indexOf = str.indexOf(47, 1);
         if (indexOf < 1) {

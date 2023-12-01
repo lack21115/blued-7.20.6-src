@@ -170,7 +170,7 @@ public class AnythinkContainerView extends AnythinkBaseView implements e, h {
 
     private void a(b bVar) {
         if (this.n == null) {
-            this.n = new AnythinkPlayableView(this.f8440a);
+            this.n = new AnythinkPlayableView(this.f5600a);
         }
         this.n.setCloseDelayShowTime(this.z);
         this.n.setPlayCloseBtnTm(this.A);
@@ -194,14 +194,14 @@ public class AnythinkContainerView extends AnythinkBaseView implements e, h {
             if (intValue != 1) {
                 if (intValue == 3) {
                     if (this.t == null) {
-                        this.t = new AnythinkVastEndCardView(this.f8440a);
+                        this.t = new AnythinkVastEndCardView(this.f5600a);
                     }
                     this.t.setCampaign(this.b);
                     this.t.setNotifyListener(new l(this.e));
                     this.t.preLoadData(bVar);
                 } else if (intValue == 4) {
                     if (this.u == null) {
-                        this.u = new AnythinkLandingPageView(this.f8440a);
+                        this.u = new AnythinkLandingPageView(this.f5600a);
                     }
                     this.u.setCampaign(this.b);
                     this.u.setNotifyListener(new i(this.e));
@@ -213,7 +213,7 @@ public class AnythinkContainerView extends AnythinkBaseView implements e, h {
                             if (this.b.j()) {
                                 q();
                             } else {
-                                AnythinkNativeEndCardView anythinkNativeEndCardView2 = new AnythinkNativeEndCardView(this.f8440a, null, false, -1, this.b.f() == 2, c2, this.b.as());
+                                AnythinkNativeEndCardView anythinkNativeEndCardView2 = new AnythinkNativeEndCardView(this.f5600a, null, false, -1, this.b.f() == 2, c2, this.b.as());
                                 this.q = anythinkNativeEndCardView2;
                                 anythinkNativeEndCardView2.setCampaign(this.b);
                             }
@@ -231,7 +231,7 @@ public class AnythinkContainerView extends AnythinkBaseView implements e, h {
                     boolean f = t.f(this.b.I());
                     if ((this.b == null || !j || f) && this.b.f() != 2) {
                         if (this.r == null) {
-                            this.r = new AnythinkH5EndCardView(this.f8440a);
+                            this.r = new AnythinkH5EndCardView(this.f5600a);
                         }
                         if (this.b.k() == 5 && this.e != null && (this.e instanceof k)) {
                             ((k) this.e).a(this.b);
@@ -286,7 +286,7 @@ public class AnythinkContainerView extends AnythinkBaseView implements e, h {
         if (i != -3) {
             if (i != -2) {
                 if (this.o == null) {
-                    this.o = new AnythinkClickCTAView(this.f8440a);
+                    this.o = new AnythinkClickCTAView(this.f5600a);
                 }
                 this.o.setCampaign(this.b);
                 this.o.setUnitId(this.w);
@@ -295,7 +295,7 @@ public class AnythinkContainerView extends AnythinkBaseView implements e, h {
             } else if (this.b == null || this.b.F() != 2) {
             } else {
                 if (this.p == null) {
-                    this.p = new AnythinkClickMiniCardView(this.f8440a);
+                    this.p = new AnythinkClickMiniCardView(this.f5600a);
                 }
                 this.p.setCampaign(this.b);
                 AnythinkClickMiniCardView anythinkClickMiniCardView = this.p;
@@ -311,7 +311,7 @@ public class AnythinkContainerView extends AnythinkBaseView implements e, h {
     private void b(b bVar) {
         this.Q = bVar;
         if (this.s == null) {
-            AnythinkVideoEndCoverView anythinkVideoEndCoverView = new AnythinkVideoEndCoverView(this.f8440a);
+            AnythinkVideoEndCoverView anythinkVideoEndCoverView = new AnythinkVideoEndCoverView(this.f5600a);
             this.s = anythinkVideoEndCoverView;
             anythinkVideoEndCoverView.setCampaign(this.b);
             this.s.setNotifyListener(new i(this.e));
@@ -413,7 +413,7 @@ public class AnythinkContainerView extends AnythinkBaseView implements e, h {
             b bVar = this.Q;
             this.Q = bVar;
             if (anythinkVideoEndCoverView == null) {
-                AnythinkVideoEndCoverView anythinkVideoEndCoverView2 = new AnythinkVideoEndCoverView(this.f8440a);
+                AnythinkVideoEndCoverView anythinkVideoEndCoverView2 = new AnythinkVideoEndCoverView(this.f5600a);
                 this.s = anythinkVideoEndCoverView2;
                 anythinkVideoEndCoverView2.setCampaign(this.b);
                 this.s.setNotifyListener(new i(this.e));
@@ -481,7 +481,7 @@ public class AnythinkContainerView extends AnythinkBaseView implements e, h {
 
     private void o() {
         if (this.v == null) {
-            AnythinkAlertWebview anythinkAlertWebview = new AnythinkAlertWebview(this.f8440a);
+            AnythinkAlertWebview anythinkAlertWebview = new AnythinkAlertWebview(this.f5600a);
             this.v = anythinkAlertWebview;
             anythinkAlertWebview.setUnitId(this.w);
             this.v.setCampaign(this.b);
@@ -546,7 +546,7 @@ public class AnythinkContainerView extends AnythinkBaseView implements e, h {
             r12 = r0
         L33:
             r0 = r11
-            android.content.Context r0 = r0.f8440a
+            android.content.Context r0 = r0.f5600a
             r14 = r0
             r0 = r11
             com.anythink.expressad.foundation.d.c r0 = r0.b
@@ -887,7 +887,7 @@ public class AnythinkContainerView extends AnythinkBaseView implements e, h {
         if (this.b != null) {
             if (this.b.J() == 2) {
                 if (this.n == null) {
-                    this.n = new AnythinkPlayableView(this.f8440a);
+                    this.n = new AnythinkPlayableView(this.f5600a);
                 }
                 this.n.setCloseDelayShowTime(this.z);
                 this.n.setPlayCloseBtnTm(this.A);
@@ -1194,7 +1194,7 @@ public class AnythinkContainerView extends AnythinkBaseView implements e, h {
     }
 
     public void showOrderCampView() {
-        AnyThinkOrderCampView anyThinkOrderCampView = new AnyThinkOrderCampView(this.f8440a);
+        AnyThinkOrderCampView anyThinkOrderCampView = new AnyThinkOrderCampView(this.f5600a);
         this.R = anyThinkOrderCampView;
         anyThinkOrderCampView.setCampaignExes(this.U);
         if (this.e != null && (this.e instanceof k)) {
@@ -1318,7 +1318,7 @@ public class AnythinkContainerView extends AnythinkBaseView implements e, h {
                     this.e.a(112, "");
                     if (this.b != null && !this.b.aw()) {
                         this.b.ax();
-                        com.anythink.expressad.video.module.b.a.e(this.f8440a, this.b);
+                        com.anythink.expressad.video.module.b.a.e(this.f5600a, this.b);
                     }
                     if (this.D) {
                         this.e.a(115, "");
@@ -1343,7 +1343,7 @@ public class AnythinkContainerView extends AnythinkBaseView implements e, h {
             b bVar = this.Q;
             this.Q = bVar;
             if (anythinkVideoEndCoverView == null) {
-                AnythinkVideoEndCoverView anythinkVideoEndCoverView2 = new AnythinkVideoEndCoverView(this.f8440a);
+                AnythinkVideoEndCoverView anythinkVideoEndCoverView2 = new AnythinkVideoEndCoverView(this.f5600a);
                 this.s = anythinkVideoEndCoverView2;
                 anythinkVideoEndCoverView2.setCampaign(this.b);
                 this.s.setNotifyListener(new i(this.e));

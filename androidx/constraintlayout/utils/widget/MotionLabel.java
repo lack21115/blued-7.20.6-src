@@ -31,7 +31,7 @@ import com.google.android.material.badge.BadgeDrawable;
 public class MotionLabel extends View implements FloatLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    static String f2242a = "MotionLabel";
+    static String f2194a = "MotionLabel";
     private Rect A;
     private int B;
     private int C;
@@ -57,7 +57,7 @@ public class MotionLabel extends View implements FloatLayout {
     TextPaint b;
 
     /* renamed from: c  reason: collision with root package name */
-    Path f2243c;
+    Path f2195c;
     ViewOutlineProvider d;
     RectF e;
     boolean f;
@@ -85,7 +85,7 @@ public class MotionLabel extends View implements FloatLayout {
     public MotionLabel(Context context) {
         super(context);
         this.b = new TextPaint();
-        this.f2243c = new Path();
+        this.f2195c = new Path();
         this.p = 65535;
         this.q = 65535;
         this.r = false;
@@ -120,7 +120,7 @@ public class MotionLabel extends View implements FloatLayout {
     public MotionLabel(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         this.b = new TextPaint();
-        this.f2243c = new Path();
+        this.f2195c = new Path();
         this.p = 65535;
         this.q = 65535;
         this.r = false;
@@ -155,7 +155,7 @@ public class MotionLabel extends View implements FloatLayout {
     public MotionLabel(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         this.b = new TextPaint();
-        this.f2243c = new Path();
+        this.f2195c = new Path();
         this.p = 65535;
         this.q = 65535;
         this.r = false;
@@ -443,16 +443,16 @@ public class MotionLabel extends View implements FloatLayout {
 
     void a(float f) {
         if (this.r || f != 1.0f) {
-            this.f2243c.reset();
+            this.f2195c.reset();
             String str = this.z;
             int length = str.length();
             this.b.getTextBounds(str, 0, length, this.A);
-            this.b.getTextPath(str, 0, length, 0.0f, 0.0f, this.f2243c);
+            this.b.getTextPath(str, 0, length, 0.0f, 0.0f, this.f2195c);
             if (f != 1.0f) {
-                Log.v(f2242a, Debug.getLoc() + " scale " + f);
+                Log.v(f2194a, Debug.getLoc() + " scale " + f);
                 Matrix matrix = new Matrix();
                 matrix.postScale(f, f);
-                this.f2243c.transform(matrix);
+                this.f2195c.transform(matrix);
             }
             this.A.right--;
             this.A.left++;
@@ -608,9 +608,8 @@ public class MotionLabel extends View implements FloatLayout {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         float f = Float.isNaN(this.v) ? 1.0f : this.u / this.v;
         super.onDraw(canvas);
         if (!this.r && f == 1.0f) {
@@ -628,14 +627,14 @@ public class MotionLabel extends View implements FloatLayout {
             float verticalOffset = this.D + getVerticalOffset();
             this.g.reset();
             this.g.preTranslate(horizontalOffset, verticalOffset);
-            this.f2243c.transform(this.g);
+            this.f2195c.transform(this.g);
             this.b.setColor(this.p);
             this.b.setStyle(Paint.Style.FILL_AND_STROKE);
             this.b.setStrokeWidth(this.y);
-            canvas.drawPath(this.f2243c, this.b);
+            canvas.drawPath(this.f2195c, this.b);
             this.g.reset();
             this.g.preTranslate(-horizontalOffset, -verticalOffset);
-            this.f2243c.transform(this.g);
+            this.f2195c.transform(this.g);
             return;
         }
         this.h.set(this.b);
@@ -644,7 +643,7 @@ public class MotionLabel extends View implements FloatLayout {
         float verticalOffset2 = this.D + getVerticalOffset();
         this.g.postTranslate(horizontalOffset2, verticalOffset2);
         this.g.preScale(f, f);
-        this.f2243c.transform(this.g);
+        this.f2195c.transform(this.g);
         if (this.P != null) {
             this.b.setFilterBitmap(true);
             this.b.setShader(this.P);
@@ -653,23 +652,22 @@ public class MotionLabel extends View implements FloatLayout {
         }
         this.b.setStyle(Paint.Style.FILL);
         this.b.setStrokeWidth(this.y);
-        canvas.drawPath(this.f2243c, this.b);
+        canvas.drawPath(this.f2195c, this.b);
         if (this.P != null) {
             this.b.setShader(null);
         }
         this.b.setColor(this.q);
         this.b.setStyle(Paint.Style.STROKE);
         this.b.setStrokeWidth(this.y);
-        canvas.drawPath(this.f2243c, this.b);
+        canvas.drawPath(this.f2195c, this.b);
         this.g.reset();
         this.g.postTranslate(-horizontalOffset2, -verticalOffset2);
-        this.f2243c.transform(this.g);
+        this.f2195c.transform(this.g);
         this.b.set(this.h);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         int i3;
         int i4;
         int mode = View.MeasureSpec.getMode(i);
@@ -761,8 +759,8 @@ public class MotionLabel extends View implements FloatLayout {
         boolean z = this.t != f;
         this.t = f;
         if (f != 0.0f) {
-            if (this.f2243c == null) {
-                this.f2243c = new Path();
+            if (this.f2195c == null) {
+                this.f2195c = new Path();
             }
             if (this.e == null) {
                 this.e = new RectF();
@@ -781,8 +779,8 @@ public class MotionLabel extends View implements FloatLayout {
                 setClipToOutline(true);
             }
             this.e.set(0.0f, 0.0f, getWidth(), getHeight());
-            this.f2243c.reset();
-            Path path = this.f2243c;
+            this.f2195c.reset();
+            Path path = this.f2195c;
             RectF rectF = this.e;
             float f3 = this.t;
             path.addRoundRect(rectF, f3, f3, Path.Direction.CW);
@@ -799,8 +797,8 @@ public class MotionLabel extends View implements FloatLayout {
         boolean z = this.s != f;
         this.s = f;
         if (f != 0.0f) {
-            if (this.f2243c == null) {
-                this.f2243c = new Path();
+            if (this.f2195c == null) {
+                this.f2195c = new Path();
             }
             if (this.e == null) {
                 this.e = new RectF();
@@ -824,8 +822,8 @@ public class MotionLabel extends View implements FloatLayout {
             int height = getHeight();
             float min = (Math.min(width, height) * this.s) / 2.0f;
             this.e.set(0.0f, 0.0f, width, height);
-            this.f2243c.reset();
-            this.f2243c.addRoundRect(this.e, min, min, Path.Direction.CW);
+            this.f2195c.reset();
+            this.f2195c.addRoundRect(this.e, min, min, Path.Direction.CW);
         } else if (Build.VERSION.SDK_INT >= 21) {
             setClipToOutline(false);
         }
@@ -901,7 +899,7 @@ public class MotionLabel extends View implements FloatLayout {
 
     public void setTextSize(float f) {
         this.u = f;
-        String str = f2242a;
+        String str = f2194a;
         Log.v(str, Debug.getLoc() + "  " + f + " / " + this.v);
         TextPaint textPaint = this.b;
         if (!Float.isNaN(this.v)) {

@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import com.blued.android.core.AppInfo;
@@ -54,6 +55,7 @@ import com.blued.android.module.yy_china.utils.YYRoomHttpUtils;
 import com.blued.android.module.yy_china.utils.log.EventTrackYY;
 import com.blued.das.client.chatroom.ChatRoomProtos;
 import com.bumptech.glide.request.target.SimpleTarget;
+import com.bumptech.glide.request.target.Target;
 import com.bumptech.glide.request.transition.Transition;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
@@ -71,14 +73,10 @@ import kotlin.jvm.internal.Ref;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYPackGiftDialog.class */
 public final class YYPackGiftDialog extends BaseFullScreenDialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f17355a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private DialogYyPackGiftBinding b;
     private long g;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final PackInfoAdapter f17356c = new PackInfoAdapter(this);
+    private final PackInfoAdapter c = new PackInfoAdapter(this);
     private final PackGiftAdapter d = new PackGiftAdapter(this);
     private final PackUserAdapter e = new PackUserAdapter(this);
     private final PackHandler f = new PackHandler(this);
@@ -103,15 +101,13 @@ public final class YYPackGiftDialog extends BaseFullScreenDialog {
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYPackGiftDialog$PackGiftAdapter.class */
     public final class PackGiftAdapter extends BaseQuickAdapter<YYPackGiftTrueGiftInfoMode, BaseViewHolder> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ YYPackGiftDialog f17357a;
+        final /* synthetic */ YYPackGiftDialog a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public PackGiftAdapter(YYPackGiftDialog this$0) {
             super(R.layout.item_yy_pack_gift);
             Intrinsics.e(this$0, "this$0");
-            this.f17357a = this$0;
+            this.a = this$0;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -141,32 +137,31 @@ public final class YYPackGiftDialog extends BaseFullScreenDialog {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.chad.library.adapter.base.BaseQuickAdapter
         /* renamed from: a */
         public void convert(BaseViewHolder helper, final YYPackGiftTrueGiftInfoMode item) {
             Intrinsics.e(helper, "helper");
             Intrinsics.e(item, "item");
-            ItemYyPackGiftBinding a2 = ItemYyPackGiftBinding.a(helper.itemView);
-            Intrinsics.c(a2, "bind(helper.itemView)");
-            a2.d.setText(item.getInfo().name);
+            ItemYyPackGiftBinding a = ItemYyPackGiftBinding.a(helper.itemView);
+            Intrinsics.c(a, "bind(helper.itemView)");
+            a.d.setText(item.getInfo().name);
             if (item.getSent_num() > 0) {
-                a2.e.setVisibility(0);
+                a.e.setVisibility(0);
             } else {
-                a2.e.setVisibility(8);
+                a.e.setVisibility(8);
             }
-            a2.e.setText(Intrinsics.a("已送x", (Object) Integer.valueOf(item.getSent_num())));
-            a2.f16772c.setText(String.valueOf(item.getInfo().beans));
-            ImageLoader.a(this.f17357a.a(), item.getInfo().images_static).a(a2.f16771a);
+            a.e.setText(Intrinsics.a("已送x", (Object) Integer.valueOf(item.getSent_num())));
+            a.c.setText(String.valueOf(item.getInfo().beans));
+            ImageLoader.a(this.a.a(), item.getInfo().images_static).a(a.a);
             boolean z = false;
-            for (YYPackGiftTrueGiftInfoMode yYPackGiftTrueGiftInfoMode : this.f17357a.f()) {
+            for (YYPackGiftTrueGiftInfoMode yYPackGiftTrueGiftInfoMode : this.a.f()) {
                 if (StringUtils.a(yYPackGiftTrueGiftInfoMode.getInfo().goods_id, item.getInfo().goods_id)) {
                     z = true;
                 }
             }
             if (z) {
-                a2.b.setVisibility(0);
-                ConstraintLayout root = a2.getRoot();
-                final YYPackGiftDialog yYPackGiftDialog = this.f17357a;
+                a.b.setVisibility(0);
+                ConstraintLayout root = a.getRoot();
+                final YYPackGiftDialog yYPackGiftDialog = this.a;
                 root.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYPackGiftDialog$PackGiftAdapter$qnUKmp85pf7Zh-gT6m5-ghV_ikU
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
@@ -175,9 +170,9 @@ public final class YYPackGiftDialog extends BaseFullScreenDialog {
                 });
                 return;
             }
-            a2.b.setVisibility(8);
-            ConstraintLayout root2 = a2.getRoot();
-            final YYPackGiftDialog yYPackGiftDialog2 = this.f17357a;
+            a.b.setVisibility(8);
+            ConstraintLayout root2 = a.getRoot();
+            final YYPackGiftDialog yYPackGiftDialog2 = this.a;
             root2.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYPackGiftDialog$PackGiftAdapter$BdPLuFOtJIfj5tcrGJL64rWQ1UM
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -190,15 +185,13 @@ public final class YYPackGiftDialog extends BaseFullScreenDialog {
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYPackGiftDialog$PackHandler.class */
     public static final class PackHandler extends Handler {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final WeakReference<YYPackGiftDialog> f17358a;
+        private final WeakReference<YYPackGiftDialog> a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public PackHandler(YYPackGiftDialog yyPackGiftDialog) {
             super(Looper.getMainLooper());
             Intrinsics.e(yyPackGiftDialog, "yyPackGiftDialog");
-            this.f17358a = new WeakReference<>(yyPackGiftDialog);
+            this.a = new WeakReference<>(yyPackGiftDialog);
         }
 
         @Override // android.os.Handler
@@ -207,7 +200,7 @@ public final class YYPackGiftDialog extends BaseFullScreenDialog {
             YYPackGiftDialog yYPackGiftDialog;
             Intrinsics.e(msg, "msg");
             super.handleMessage(msg);
-            if (msg.what != 1 || (weakReference = this.f17358a) == null || (yYPackGiftDialog = weakReference.get()) == null) {
+            if (msg.what != 1 || (weakReference = this.a) == null || (yYPackGiftDialog = weakReference.get()) == null) {
                 return;
             }
             yYPackGiftDialog.b(true);
@@ -217,42 +210,37 @@ public final class YYPackGiftDialog extends BaseFullScreenDialog {
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYPackGiftDialog$PackInfoAdapter.class */
     public final class PackInfoAdapter extends BaseQuickAdapter<YYPackGiftInfoItemMode, BaseViewHolder> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ YYPackGiftDialog f17359a;
+        final /* synthetic */ YYPackGiftDialog a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public PackInfoAdapter(YYPackGiftDialog this$0) {
             super(R.layout.item_yy_pack_gift_title);
             Intrinsics.e(this$0, "this$0");
-            this.f17359a = this$0;
+            this.a = this$0;
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.chad.library.adapter.base.BaseQuickAdapter
         /* renamed from: a */
         public void convert(BaseViewHolder helper, YYPackGiftInfoItemMode item) {
             Intrinsics.e(helper, "helper");
             Intrinsics.e(item, "item");
-            ItemYyPackGiftTitleBinding a2 = ItemYyPackGiftTitleBinding.a(helper.itemView);
-            Intrinsics.c(a2, "bind(helper.itemView)");
-            a2.b.setText(item.getName());
-            ImageLoader.a(this.f17359a.a(), item.getIcon()).a(a2.f16773a);
+            ItemYyPackGiftTitleBinding a = ItemYyPackGiftTitleBinding.a(helper.itemView);
+            Intrinsics.c(a, "bind(helper.itemView)");
+            a.b.setText(item.getName());
+            ImageLoader.a(this.a.a(), item.getIcon()).a(a.a);
         }
     }
 
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYPackGiftDialog$PackUserAdapter.class */
     public final class PackUserAdapter extends BaseQuickAdapter<YYPackGiftUserMode, BaseViewHolder> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ YYPackGiftDialog f17360a;
+        final /* synthetic */ YYPackGiftDialog a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public PackUserAdapter(YYPackGiftDialog this$0) {
             super(R.layout.item_yy_pack_gift_user);
             Intrinsics.e(this$0, "this$0");
-            this.f17360a = this$0;
+            this.a = this$0;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -278,7 +266,6 @@ public final class YYPackGiftDialog extends BaseFullScreenDialog {
         /* JADX INFO: Access modifiers changed from: protected */
         /* JADX WARN: Removed duplicated region for block: B:14:0x009a  */
         /* JADX WARN: Removed duplicated region for block: B:16:0x00b7  */
-        @Override // com.chad.library.adapter.base.BaseQuickAdapter
         /* renamed from: a */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -302,11 +289,11 @@ public final class YYPackGiftDialog extends BaseFullScreenDialog {
                 kotlin.jvm.internal.Intrinsics.c(r0, r1)
                 com.blued.android.module.yy_china.manager.YYRoomInfoManager r0 = com.blued.android.module.yy_china.manager.YYRoomInfoManager.e()
                 r1 = r7
-                com.blued.android.module.yy_china.fragment.YYPackGiftDialog r1 = r1.f17360a
+                com.blued.android.module.yy_china.fragment.YYPackGiftDialog r1 = r1.a
                 com.blued.android.core.ui.ActivityFragmentActive r1 = r1.a()
                 com.blued.android.core.net.IRequestHost r1 = (com.blued.android.core.net.IRequestHost) r1
                 r2 = r8
-                com.blued.android.module.common.view.SquareImageView r2 = r2.f16775a
+                com.blued.android.module.common.view.SquareImageView r2 = r2.a
                 android.widget.ImageView r2 = (android.widget.ImageView) r2
                 r3 = r9
                 java.lang.String r3 = r3.getUid()
@@ -339,21 +326,21 @@ public final class YYPackGiftDialog extends BaseFullScreenDialog {
                 r0 = r10
                 if (r0 == 0) goto L7e
                 r0 = r8
-                android.widget.TextView r0 = r0.f16776c
+                android.widget.TextView r0 = r0.c
                 java.lang.String r1 = "主持人"
                 java.lang.CharSequence r1 = (java.lang.CharSequence) r1
                 r0.setText(r1)
                 goto L8c
             L7e:
                 r0 = r8
-                android.widget.TextView r0 = r0.f16776c
+                android.widget.TextView r0 = r0.c
                 r1 = r9
                 java.lang.String r1 = r1.getChatAnchorName()
                 java.lang.CharSequence r1 = (java.lang.CharSequence) r1
                 r0.setText(r1)
             L8c:
                 r0 = r7
-                com.blued.android.module.yy_china.fragment.YYPackGiftDialog r0 = r0.f17360a
+                com.blued.android.module.yy_china.fragment.YYPackGiftDialog r0 = r0.a
                 java.util.HashSet r0 = r0.g()
                 r1 = r9
                 boolean r0 = r0.contains(r1)
@@ -367,7 +354,7 @@ public final class YYPackGiftDialog extends BaseFullScreenDialog {
                 com.blued.android.module.yy_china.fragment.-$$Lambda$YYPackGiftDialog$PackUserAdapter$q1-sgXybYqPRGlP27gkVmFzzKNA r1 = new com.blued.android.module.yy_china.fragment.-$$Lambda$YYPackGiftDialog$PackUserAdapter$q1-sgXybYqPRGlP27gkVmFzzKNA
                 r2 = r1
                 r3 = r7
-                com.blued.android.module.yy_china.fragment.YYPackGiftDialog r3 = r3.f17360a
+                com.blued.android.module.yy_china.fragment.YYPackGiftDialog r3 = r3.a
                 r4 = r9
                 r5 = r7
                 r2.<init>()
@@ -383,7 +370,7 @@ public final class YYPackGiftDialog extends BaseFullScreenDialog {
                 com.blued.android.module.yy_china.fragment.-$$Lambda$YYPackGiftDialog$PackUserAdapter$0mZfJPanDcgLs_iltskBYtpKplg r1 = new com.blued.android.module.yy_china.fragment.-$$Lambda$YYPackGiftDialog$PackUserAdapter$0mZfJPanDcgLs_iltskBYtpKplg
                 r2 = r1
                 r3 = r7
-                com.blued.android.module.yy_china.fragment.YYPackGiftDialog r3 = r3.f17360a
+                com.blued.android.module.yy_china.fragment.YYPackGiftDialog r3 = r3.a
                 r4 = r9
                 r5 = r7
                 r2.<init>()
@@ -436,31 +423,31 @@ public final class YYPackGiftDialog extends BaseFullScreenDialog {
         Intrinsics.c(sendGiftAndUserMode, "wantSel[0]");
         SendGiftAndUserMode sendGiftAndUserMode2 = sendGiftAndUserMode;
         final Ref.ObjectRef objectRef = new Ref.ObjectRef();
-        objectRef.f42545a = this.k.get(Intrinsics.a(sendGiftAndUserMode2.getUid(), (Object) sendGiftAndUserMode2.getSelectedModel().goods_id));
+        objectRef.a = this.k.get(Intrinsics.a(sendGiftAndUserMode2.getUid(), (Object) sendGiftAndUserMode2.getSelectedModel().goods_id));
         final Ref.IntRef intRef = new Ref.IntRef();
         Integer num = this.l.get(Intrinsics.a(sendGiftAndUserMode2.getUid(), (Object) sendGiftAndUserMode2.getSelectedModel().goods_id));
         Integer num2 = num;
         if (num == null) {
             num2 = 0;
         }
-        intRef.f42543a = num2.intValue();
-        if (objectRef.f42545a == 0) {
-            objectRef.f42545a = -1L;
+        intRef.a = num2.intValue();
+        if (objectRef.a == 0) {
+            objectRef.a = -1L;
         }
         if (selectedModel.double_hit == 1) {
             YYGiftModel selectedModel2 = sendGiftAndUserMode2.getSelectedModel();
             if (((selectedModel2 == null || (liveGiftNumberModel = selectedModel2.selectedGiftNumModel) == null) ? 0 : liveGiftNumberModel.count) > 1) {
-                objectRef.f42545a = 0L;
-            } else if (!this.m.contains(selectedModel.goods_id) || ((Number) objectRef.f42545a).longValue() <= 0 || selectedModel.comboWaitTime <= 0) {
-                objectRef.f42545a = Long.valueOf(System.currentTimeMillis());
-                intRef.f42543a = 0;
+                objectRef.a = 0L;
+            } else if (!this.m.contains(selectedModel.goods_id) || ((Number) objectRef.a).longValue() <= 0 || selectedModel.comboWaitTime <= 0) {
+                objectRef.a = Long.valueOf(System.currentTimeMillis());
+                intRef.a = 0;
             } else {
-                objectRef.f42545a = objectRef.f42545a;
+                objectRef.a = objectRef.a;
             }
         } else {
             this.k.clear();
-            intRef.f42543a = 0;
-            objectRef.f42545a = 0L;
+            intRef.a = 0;
+            objectRef.a = 0L;
         }
         YYPayRequestModel yYPayRequestModel = new YYPayRequestModel();
         yYPayRequestModel.gift = selectedModel;
@@ -468,13 +455,13 @@ public final class YYPackGiftDialog extends BaseFullScreenDialog {
         yYPayRequestModel.giftCount = i;
         yYPayRequestModel.goods_id = selectedModel.goods_id;
         yYPayRequestModel.goods_type = selectedModel.goods_type;
-        yYPayRequestModel.hit_id = ((Number) objectRef.f42545a).longValue();
+        yYPayRequestModel.hit_id = ((Number) objectRef.a).longValue();
         yYPayRequestModel.payCode = str;
         yYPayRequestModel.remember_me = z;
         yYPayRequestModel.room_id = b.room_id;
         yYPayRequestModel.target_uid = arrayList.get(0).getUid();
         yYPayRequestModel.isFirstToMicsInTeam = sendGiftAndUserMode2.isFirstToMicsInTeam();
-        YYPayUtils.a(yYPayRequestModel, YYConstants.PayFromSource.Pay_Gift, this, a(), new YYPayUtils.PayGiftStatusListener() { // from class: com.blued.android.module.yy_china.fragment.YYPackGiftDialog$buyGift$1
+        YYPayUtils.a(yYPayRequestModel, YYConstants.PayFromSource.Pay_Gift, (Fragment) this, a(), new YYPayUtils.PayGiftStatusListener() { // from class: com.blued.android.module.yy_china.fragment.YYPackGiftDialog$buyGift$1
             @Override // com.blued.android.module.yy_china.utils.YYPayUtils.PayGiftStatusListener
             public void a(int i2, String errorMessage) {
                 Intrinsics.e(errorMessage, "errorMessage");
@@ -514,11 +501,11 @@ public final class YYPackGiftDialog extends BaseFullScreenDialog {
                     sendGiftAndUserMode3.getSelectedModel().hit_batch = 0;
                     if (sendGiftAndUserMode3.getSelectedModel().double_hit == 1) {
                         arrayMap = this.l;
-                        arrayMap.put(Intrinsics.a(sendGiftAndUserMode3.getUid(), (Object) sendGiftAndUserMode3.getSelectedModel().goods_id), Integer.valueOf(intRef.f42543a + 1));
+                        arrayMap.put(Intrinsics.a(sendGiftAndUserMode3.getUid(), (Object) sendGiftAndUserMode3.getSelectedModel().goods_id), Integer.valueOf(intRef.a + 1));
                     }
                 }
                 arrayMap2 = this.k;
-                arrayMap2.put(Intrinsics.a(sendGiftAndUserMode3.getUid(), (Object) sendGiftAndUserMode3.getSelectedModel().goods_id), objectRef.f42545a);
+                arrayMap2.put(Intrinsics.a(sendGiftAndUserMode3.getUid(), (Object) sendGiftAndUserMode3.getSelectedModel().goods_id), objectRef.a);
                 YYGiftModel selectedModel3 = sendGiftAndUserMode3.getSelectedModel();
                 arrayMap3 = this.k;
                 Long l = (Long) arrayMap3.get(Intrinsics.a(sendGiftAndUserMode3.getUid(), (Object) sendGiftAndUserMode3.getSelectedModel().goods_id));
@@ -577,26 +564,25 @@ public final class YYPackGiftDialog extends BaseFullScreenDialog {
 
     private final void l() {
         k().k.setLayoutManager(new GridLayoutManager(getContext(), 3));
-        k().k.setAdapter(this.f17356c);
+        k().k.setAdapter(this.c);
         k().l.setLayoutManager(new LinearLayoutManager(getContext(), 0, false));
         k().l.setAdapter(this.d);
         k().m.setLayoutManager(new LinearLayoutManager(getContext(), 0, false));
         k().m.setAdapter(this.e);
-        ImageLoader.a(a(), ImgURLMap.f10885a.a("yy_pack_gift_bg_title")).a(k().h);
-        ImageLoader.a(a(), ImgURLMap.f10885a.a("yy_pack_gift_bg_big")).a(k().g);
-        ImageLoader.a(a(), ImgURLMap.f10885a.a("yy_pack_gift_url_card_top")).a(k().b);
-        ImageLoader.a(a(), ImgURLMap.f10885a.a("yy_pack_gift_url_btn_send_gift")).a(new SimpleTarget<Drawable>() { // from class: com.blued.android.module.yy_china.fragment.YYPackGiftDialog$initView$1
-            @Override // com.bumptech.glide.request.target.Target
+        ImageLoader.a(a(), ImgURLMap.a.a("yy_pack_gift_bg_title")).a(k().h);
+        ImageLoader.a(a(), ImgURLMap.a.a("yy_pack_gift_bg_big")).a(k().g);
+        ImageLoader.a(a(), ImgURLMap.a.a("yy_pack_gift_url_card_top")).a(k().b);
+        ImageLoader.a(a(), ImgURLMap.a.a("yy_pack_gift_url_btn_send_gift")).a((Target) new SimpleTarget<Drawable>() { // from class: com.blued.android.module.yy_china.fragment.YYPackGiftDialog$initView$1
             /* renamed from: a */
             public void onResourceReady(Drawable resource, Transition<? super Drawable> transition) {
                 DialogYyPackGiftBinding k;
                 Intrinsics.e(resource, "resource");
                 k = YYPackGiftDialog.this.k();
-                k.f16447c.setBackground(resource);
+                k.c.setBackground(resource);
             }
         });
-        ImageLoader.a(a(), ImgURLMap.f10885a.a("yy_pack_gift_url_start")).a(k().j);
-        ImageLoader.a(a(), ImgURLMap.f10885a.a("yy_pack_gift_url_heart")).a(k().i);
+        ImageLoader.a(a(), ImgURLMap.a.a("yy_pack_gift_url_start")).a(k().j);
+        ImageLoader.a(a(), ImgURLMap.a.a("yy_pack_gift_url_heart")).a(k().i);
         k().n.setScrollViewListener(new ObservableScrollView.ScrollViewListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYPackGiftDialog$M_fbhxGmmF-z0g841eGshH-9z08
             @Override // com.blued.android.module.common.view.ObservableScrollView.ScrollViewListener
             public final void onScrollChanged(ObservableScrollView observableScrollView, int i, int i2, int i3, int i4) {
@@ -639,7 +625,7 @@ public final class YYPackGiftDialog extends BaseFullScreenDialog {
         Iterator<YYSeatMemberModel> it;
         ArrayList<YYPackGiftInfoItemMode> item;
         if (yYPackGiftMode != null) {
-            k().f16447c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYPackGiftDialog$yPzLACaCwLRnaPsx03kR2_pv-lc
+            k().c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYPackGiftDialog$yPzLACaCwLRnaPsx03kR2_pv-lc
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     YYPackGiftDialog.b(YYPackGiftDialog.this, view);
@@ -664,7 +650,7 @@ public final class YYPackGiftDialog extends BaseFullScreenDialog {
             }
             YYPackGiftInfoMode unlock_privileges3 = yYPackGiftMode.getUnlock_privileges();
             if (unlock_privileges3 != null && (item = unlock_privileges3.getItem()) != null) {
-                this.f17356c.setNewData(item);
+                this.c.setNewData(item);
             }
             ArrayList<YYPackGiftTrueGiftInfoMode> true_love_gift_info = yYPackGiftMode.getTrue_love_gift_info();
             if (true_love_gift_info != null) {
@@ -774,7 +760,7 @@ public final class YYPackGiftDialog extends BaseFullScreenDialog {
     }
 
     public final void h() {
-        k().f16447c.setText("0弯豆 送礼");
+        k().c.setText("0弯豆 送礼");
         if (this.j.size() <= 0 || this.i.size() <= 0) {
             return;
         }
@@ -782,7 +768,7 @@ public final class YYPackGiftDialog extends BaseFullScreenDialog {
         for (YYPackGiftTrueGiftInfoMode yYPackGiftTrueGiftInfoMode : this.i) {
             j += g().size() * yYPackGiftTrueGiftInfoMode.getInfo().beans;
         }
-        k().f16447c.setText(j + "弯豆 送礼");
+        k().c.setText(j + "弯豆 送礼");
     }
 
     /* JADX WARN: Type inference failed for: r1v21, types: [T, java.lang.String] */
@@ -796,11 +782,11 @@ public final class YYPackGiftDialog extends BaseFullScreenDialog {
             final ArrayList arrayList = new ArrayList();
             final Ref.ObjectRef objectRef = new Ref.ObjectRef();
             String str = "";
-            objectRef.f42545a = "";
+            objectRef.a = "";
             final Ref.ObjectRef objectRef2 = new Ref.ObjectRef();
-            objectRef2.f42545a = "";
+            objectRef2.a = "";
             for (YYPackGiftTrueGiftInfoMode yYPackGiftTrueGiftInfoMode : this.i) {
-                objectRef2.f42545a = ((String) objectRef2.f42545a) + ((Object) yYPackGiftTrueGiftInfoMode.getInfo().goods_id) + ',';
+                objectRef2.a = ((String) objectRef2.a) + ((Object) yYPackGiftTrueGiftInfoMode.getInfo().goods_id) + ',';
                 Iterator<YYPackGiftUserMode> it = g().iterator();
                 boolean z = true;
                 String str2 = str;
@@ -821,7 +807,7 @@ public final class YYPackGiftDialog extends BaseFullScreenDialog {
                 }
             }
             for (YYPackGiftUserMode yYPackGiftUserMode : this.j) {
-                objectRef.f42545a = ((String) objectRef.f42545a) + yYPackGiftUserMode.getUid() + ',';
+                objectRef.a = ((String) objectRef.a) + yYPackGiftUserMode.getUid() + ',';
             }
             YYRoomModel b = YYRoomInfoManager.e().b();
             if (b == null) {
@@ -831,15 +817,15 @@ public final class YYPackGiftDialog extends BaseFullScreenDialog {
             Iterator<YYPackGiftTrueGiftInfoMode> it2 = this.i.iterator();
             while (it2.hasNext()) {
                 if (it2.next().getInfo().beans > 500) {
-                    booleanRef.f42538a = true;
+                    booleanRef.a = true;
                 }
             }
             YYRoomModel b2 = YYRoomInfoManager.e().b();
             if (b2 != null) {
-                EventTrackYY.k(ChatRoomProtos.Event.YY_LOVE_GIFT_PAGE_ONE_SEND_CLICK, b2.room_id, b2.uid, (String) objectRef2.f42545a);
+                EventTrackYY.k(ChatRoomProtos.Event.YY_LOVE_GIFT_PAGE_ONE_SEND_CLICK, b2.room_id, b2.uid, (String) objectRef2.a);
             }
             final ActivityFragmentActive a2 = a();
-            YYRoomHttpUtils.c(b.room_id, (String) objectRef.f42545a, (String) objectRef2.f42545a, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<YYPayMode>>(a2) { // from class: com.blued.android.module.yy_china.fragment.YYPackGiftDialog$play2$5
+            YYRoomHttpUtils.c(b.room_id, (String) objectRef.a, (String) objectRef2.a, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<YYPayMode>>(a2) { // from class: com.blued.android.module.yy_china.fragment.YYPackGiftDialog$play2$5
                 /* JADX INFO: Access modifiers changed from: protected */
                 @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 /* renamed from: a */
@@ -872,7 +858,7 @@ public final class YYPackGiftDialog extends BaseFullScreenDialog {
                                     if (sendGiftAndUserMode.isFirstToMicsInTeam()) {
                                         yYPayGoodsModel.json_contents_im = yYItemRainMode.getRain();
                                     } else {
-                                        YYMsgJsonGiftExtra yYMsgJsonGiftExtra = (YYMsgJsonGiftExtra) AppInfo.f().fromJson(yYItemRainMode.getRain(), (Class<Object>) YYMsgJsonGiftExtra.class);
+                                        YYMsgJsonGiftExtra yYMsgJsonGiftExtra = (YYMsgJsonGiftExtra) AppInfo.f().fromJson(yYItemRainMode.getRain(), YYMsgJsonGiftExtra.class);
                                         yYMsgJsonGiftExtra.setRain_level_ani_url("");
                                         yYPayGoodsModel.json_contents_im = AppInfo.f().toJson(yYMsgJsonGiftExtra);
                                     }
@@ -886,8 +872,8 @@ public final class YYPackGiftDialog extends BaseFullScreenDialog {
                             b3.enter_effects = singleData.getCurrent_wealth().getEnter_effects();
                             b3.avatar_frame = singleData.getCurrent_wealth().getAvatar_frame();
                         }
-                        LiveLogUtils.a("套系礼物--->buy_all--->" + objectRef3.f42545a + "    " + objectRef4.f42545a);
-                        if (booleanRef2.f42538a) {
+                        LiveLogUtils.a("套系礼物--->buy_all--->" + objectRef3.a + "    " + objectRef4.a);
+                        if (booleanRef2.a) {
                             LiveEventBus.get(LiveEventBusConstant.e).post("");
                         } else {
                             yYPackGiftDialog.a(false);
@@ -946,7 +932,7 @@ public final class YYPackGiftDialog extends BaseFullScreenDialog {
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
         View inflate = LayoutInflater.from(getContext()).inflate(R.layout.dialog_yy_pack_gift, (ViewGroup) null);

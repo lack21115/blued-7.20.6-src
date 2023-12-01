@@ -6,7 +6,6 @@ import com.blued.android.chat.core.pack.ReqAckPackage;
 import com.blued.android.core.AppInfo;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
-import com.soft.blued.ui.find.model.UserFindResult;
 import java.util.Map;
 
 @DatabaseTable(tableName = "ChattingModel")
@@ -26,7 +25,7 @@ public class ChattingModelDB {
     public long fromId;
     @DatabaseField(columnName = "nickName")
     public String fromNickName;
-    @DatabaseField(columnName = UserFindResult.USER_SORT_BY.ONLINE, defaultValue = "1")
+    @DatabaseField(columnName = "online", defaultValue = "1")
     public int fromOnline;
     @DatabaseField(columnName = "vBadge")
     public int fromVBadge;

@@ -30,15 +30,15 @@ public interface IUnusedAppRestrictionsBackportCallback extends IInterface {
             public static IUnusedAppRestrictionsBackportCallback sDefaultImpl;
 
             /* renamed from: a  reason: collision with root package name */
-            private IBinder f2401a;
+            private IBinder f2353a;
 
             Proxy(IBinder iBinder) {
-                this.f2401a = iBinder;
+                this.f2353a = iBinder;
             }
 
             @Override // android.os.IInterface
             public IBinder asBinder() {
-                return this.f2401a;
+                return this.f2353a;
             }
 
             public String getInterfaceDescriptor() {
@@ -56,7 +56,7 @@ public interface IUnusedAppRestrictionsBackportCallback extends IInterface {
                         i = 1;
                     }
                     obtain.writeInt(i);
-                    if (this.f2401a.transact(1, obtain, null, 1) || Stub.getDefaultImpl() == null) {
+                    if (this.f2353a.transact(1, obtain, null, 1) || Stub.getDefaultImpl() == null) {
                         return;
                     }
                     Stub.getDefaultImpl().onIsPermissionRevocationEnabledForAppResult(z, z2);

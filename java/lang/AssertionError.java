@@ -7,8 +7,8 @@ public class AssertionError extends Error {
     public AssertionError() {
     }
 
-    public AssertionError(char c2) {
-        this(String.valueOf(c2));
+    public AssertionError(char c) {
+        this(String.valueOf(c));
     }
 
     public AssertionError(double d) {

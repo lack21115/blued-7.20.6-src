@@ -24,13 +24,9 @@ public final class FragmentYyHomeChatsBinding implements ViewBinding {
     public final TextView A;
     public final BluedMarqueeTextView B;
     private final ConstraintLayout C;
-
-    /* renamed from: a  reason: collision with root package name */
-    public final YYHomeCradAniView f16502a;
+    public final YYHomeCradAniView a;
     public final YYHomeCradAniView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final AppBarLayout f16503c;
+    public final AppBarLayout c;
     public final ConstraintLayout d;
     public final ConstraintLayout e;
     public final FrameLayout f;
@@ -57,9 +53,9 @@ public final class FragmentYyHomeChatsBinding implements ViewBinding {
 
     private FragmentYyHomeChatsBinding(ConstraintLayout constraintLayout, YYHomeCradAniView yYHomeCradAniView, YYHomeCradAniView yYHomeCradAniView2, AppBarLayout appBarLayout, ConstraintLayout constraintLayout2, ConstraintLayout constraintLayout3, FrameLayout frameLayout, ImageView imageView, ImageView imageView2, FrameLayout frameLayout2, FrameLayout frameLayout3, FrameLayout frameLayout4, ImageView imageView3, SVGAImageView sVGAImageView, SVGAImageView sVGAImageView2, LinearLayout linearLayout, LinearLayout linearLayout2, NoDataAndLoadFailView noDataAndLoadFailView, ViewPager viewPager, HomeRotationView homeRotationView, ShapeLinearLayout shapeLinearLayout, YYHomeThemeTabView yYHomeThemeTabView, TextView textView, TextView textView2, BluedMarqueeTextView bluedMarqueeTextView, ShapeTextView shapeTextView, TextView textView3, TextView textView4, BluedMarqueeTextView bluedMarqueeTextView2) {
         this.C = constraintLayout;
-        this.f16502a = yYHomeCradAniView;
+        this.a = yYHomeCradAniView;
         this.b = yYHomeCradAniView2;
-        this.f16503c = appBarLayout;
+        this.c = appBarLayout;
         this.d = constraintLayout2;
         this.e = constraintLayout3;
         this.f = frameLayout;
@@ -93,12 +89,12 @@ public final class FragmentYyHomeChatsBinding implements ViewBinding {
         if (yYHomeCradAniView != null) {
             YYHomeCradAniView yYHomeCradAniView2 = (YYHomeCradAniView) view.findViewById(R.id.ani_2);
             if (yYHomeCradAniView2 != null) {
-                AppBarLayout appBarLayout = (AppBarLayout) view.findViewById(R.id.appbar);
-                if (appBarLayout != null) {
-                    ConstraintLayout constraintLayout = (ConstraintLayout) view.findViewById(R.id.cont);
-                    if (constraintLayout != null) {
-                        ConstraintLayout constraintLayout2 = (ConstraintLayout) view.findViewById(R.id.fra_cons);
-                        if (constraintLayout2 != null) {
+                AppBarLayout findViewById = view.findViewById(R.id.appbar);
+                if (findViewById != null) {
+                    ConstraintLayout findViewById2 = view.findViewById(R.id.cont);
+                    if (findViewById2 != null) {
+                        ConstraintLayout findViewById3 = view.findViewById(R.id.fra_cons);
+                        if (findViewById3 != null) {
                             FrameLayout frameLayout = (FrameLayout) view.findViewById(R.id.fralay);
                             if (frameLayout != null) {
                                 ImageView imageView = (ImageView) view.findViewById(R.id.iv);
@@ -123,8 +119,8 @@ public final class FragmentYyHomeChatsBinding implements ViewBinding {
                                                                     if (linearLayout2 != null) {
                                                                         NoDataAndLoadFailView noDataAndLoadFailView = (NoDataAndLoadFailView) view.findViewById(R.id.no_data_view);
                                                                         if (noDataAndLoadFailView != null) {
-                                                                            ViewPager viewPager = (ViewPager) view.findViewById(R.id.room_view_pager);
-                                                                            if (viewPager != null) {
+                                                                            ViewPager findViewById4 = view.findViewById(R.id.room_view_pager);
+                                                                            if (findViewById4 != null) {
                                                                                 HomeRotationView homeRotationView = (HomeRotationView) view.findViewById(R.id.rota);
                                                                                 if (homeRotationView != null) {
                                                                                     ShapeLinearLayout shapeLinearLayout = (ShapeLinearLayout) view.findViewById(R.id.shall_home_bottoms);
@@ -145,7 +141,7 @@ public final class FragmentYyHomeChatsBinding implements ViewBinding {
                                                                                                                 if (textView4 != null) {
                                                                                                                     BluedMarqueeTextView bluedMarqueeTextView2 = (BluedMarqueeTextView) view.findViewById(R.id.tv_top_right_2);
                                                                                                                     if (bluedMarqueeTextView2 != null) {
-                                                                                                                        return new FragmentYyHomeChatsBinding((ConstraintLayout) view, yYHomeCradAniView, yYHomeCradAniView2, appBarLayout, constraintLayout, constraintLayout2, frameLayout, imageView, imageView2, frameLayout2, frameLayout3, frameLayout4, imageView3, sVGAImageView, sVGAImageView2, linearLayout, linearLayout2, noDataAndLoadFailView, viewPager, homeRotationView, shapeLinearLayout, yYHomeThemeTabView, textView, textView2, bluedMarqueeTextView, shapeTextView, textView3, textView4, bluedMarqueeTextView2);
+                                                                                                                        return new FragmentYyHomeChatsBinding((ConstraintLayout) view, yYHomeCradAniView, yYHomeCradAniView2, findViewById, findViewById2, findViewById3, frameLayout, imageView, imageView2, frameLayout2, frameLayout3, frameLayout4, imageView3, sVGAImageView, sVGAImageView2, linearLayout, linearLayout2, noDataAndLoadFailView, findViewById4, homeRotationView, shapeLinearLayout, yYHomeThemeTabView, textView, textView2, bluedMarqueeTextView, shapeTextView, textView3, textView4, bluedMarqueeTextView2);
                                                                                                                     }
                                                                                                                     str = "tvTopRight2";
                                                                                                                 } else {
@@ -232,7 +228,6 @@ public final class FragmentYyHomeChatsBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.C;

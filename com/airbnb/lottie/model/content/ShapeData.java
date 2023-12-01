@@ -9,22 +9,18 @@ import java.util.List;
 
 /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/model/content/ShapeData.class */
 public class ShapeData {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final List<CubicCurveData> f4360a;
+    private final List<CubicCurveData> a;
     private PointF b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private boolean f4361c;
+    private boolean c;
 
     public ShapeData() {
-        this.f4360a = new ArrayList();
+        this.a = new ArrayList();
     }
 
     public ShapeData(PointF pointF, boolean z, List<CubicCurveData> list) {
         this.b = pointF;
-        this.f4361c = z;
-        this.f4360a = new ArrayList(list);
+        this.c = z;
+        this.a = new ArrayList(list);
     }
 
     private void a(float f, float f2) {
@@ -42,37 +38,37 @@ public class ShapeData {
         if (this.b == null) {
             this.b = new PointF();
         }
-        this.f4361c = shapeData.b() || shapeData2.b();
+        this.c = shapeData.b() || shapeData2.b();
         if (shapeData.c().size() != shapeData2.c().size()) {
             Logger.b("Curves must have the same number of control points. Shape 1: " + shapeData.c().size() + "\tShape 2: " + shapeData2.c().size());
         }
         int min = Math.min(shapeData.c().size(), shapeData2.c().size());
-        if (this.f4360a.size() < min) {
-            int size = this.f4360a.size();
+        if (this.a.size() < min) {
+            int size = this.a.size();
             while (true) {
                 int i = size;
                 if (i >= min) {
                     break;
                 }
-                this.f4360a.add(new CubicCurveData());
+                this.a.add(new CubicCurveData());
                 size = i + 1;
             }
-        } else if (this.f4360a.size() > min) {
-            int size2 = this.f4360a.size();
+        } else if (this.a.size() > min) {
+            int size2 = this.a.size();
             while (true) {
                 int i2 = size2 - 1;
                 if (i2 < min) {
                     break;
                 }
-                List<CubicCurveData> list = this.f4360a;
+                List<CubicCurveData> list = this.a;
                 list.remove(list.size() - 1);
                 size2 = i2;
             }
         }
-        PointF a2 = shapeData.a();
-        PointF a3 = shapeData2.a();
-        a(MiscUtils.a(a2.x, a3.x, f), MiscUtils.a(a2.y, a3.y, f));
-        int size3 = this.f4360a.size();
+        PointF a = shapeData.a();
+        PointF a2 = shapeData2.a();
+        a(MiscUtils.a(a.x, a2.x, f), MiscUtils.a(a.y, a2.y, f));
+        int size3 = this.a.size();
         while (true) {
             int i3 = size3 - 1;
             if (i3 < 0) {
@@ -80,28 +76,28 @@ public class ShapeData {
             }
             CubicCurveData cubicCurveData = shapeData.c().get(i3);
             CubicCurveData cubicCurveData2 = shapeData2.c().get(i3);
-            PointF a4 = cubicCurveData.a();
+            PointF a3 = cubicCurveData.a();
             PointF b = cubicCurveData.b();
-            PointF c2 = cubicCurveData.c();
-            PointF a5 = cubicCurveData2.a();
+            PointF c = cubicCurveData.c();
+            PointF a4 = cubicCurveData2.a();
             PointF b2 = cubicCurveData2.b();
-            PointF c3 = cubicCurveData2.c();
-            this.f4360a.get(i3).a(MiscUtils.a(a4.x, a5.x, f), MiscUtils.a(a4.y, a5.y, f));
-            this.f4360a.get(i3).b(MiscUtils.a(b.x, b2.x, f), MiscUtils.a(b.y, b2.y, f));
-            this.f4360a.get(i3).c(MiscUtils.a(c2.x, c3.x, f), MiscUtils.a(c2.y, c3.y, f));
+            PointF c2 = cubicCurveData2.c();
+            this.a.get(i3).a(MiscUtils.a(a3.x, a4.x, f), MiscUtils.a(a3.y, a4.y, f));
+            this.a.get(i3).b(MiscUtils.a(b.x, b2.x, f), MiscUtils.a(b.y, b2.y, f));
+            this.a.get(i3).c(MiscUtils.a(c.x, c2.x, f), MiscUtils.a(c.y, c2.y, f));
             size3 = i3;
         }
     }
 
     public boolean b() {
-        return this.f4361c;
+        return this.c;
     }
 
     public List<CubicCurveData> c() {
-        return this.f4360a;
+        return this.a;
     }
 
     public String toString() {
-        return "ShapeData{numCurves=" + this.f4360a.size() + "closed=" + this.f4361c + '}';
+        return "ShapeData{numCurves=" + this.a.size() + "closed=" + this.c + '}';
     }
 }

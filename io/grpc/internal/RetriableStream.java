@@ -79,7 +79,6 @@ public abstract class RetriableStream<ReqT> implements ClientStream {
             this.substream = substream;
         }
 
-        @Override // io.grpc.StreamTracer
         public void outboundWireSize(long j) {
             if (RetriableStream.this.state.winningSubstream != null) {
                 return;
@@ -689,7 +688,7 @@ public abstract class RetriableStream<ReqT> implements ClientStream {
         }
 
         public int hashCode() {
-            return Objects.hashCode(Integer.valueOf(this.maxTokens), Integer.valueOf(this.tokenRatio));
+            return Objects.hashCode(new Object[]{Integer.valueOf(this.maxTokens), Integer.valueOf(this.tokenRatio)});
         }
 
         boolean isAboveThreshold() {
@@ -803,7 +802,6 @@ public abstract class RetriableStream<ReqT> implements ClientStream {
         Substream substream = new Substream(i);
         final BufferSizeTracer bufferSizeTracer = new BufferSizeTracer(substream);
         substream.stream = newSubstream(new ClientStreamTracer.Factory() { // from class: io.grpc.internal.RetriableStream.1
-            @Override // io.grpc.ClientStreamTracer.Factory
             public ClientStreamTracer newClientStreamTracer(ClientStreamTracer.StreamInfo streamInfo, Metadata metadata) {
                 return bufferSizeTracer;
             }
@@ -1030,7 +1028,6 @@ public abstract class RetriableStream<ReqT> implements ClientStream {
             state.winningSubstream.stream.writeMessage(this.method.streamRequest(reqt));
         } else {
             delayOrExecute(new BufferEntry() { // from class: io.grpc.internal.RetriableStream.1SendMessageEntry
-                /* JADX WARN: Multi-variable type inference failed */
                 @Override // io.grpc.internal.RetriableStream.BufferEntry
                 public void runWith(Substream substream) {
                     substream.stream.writeMessage(RetriableStream.this.method.streamRequest(reqt));

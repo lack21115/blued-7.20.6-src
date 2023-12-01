@@ -9,11 +9,11 @@ import java.util.Map;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    public int f21749a = -1;
+    public int f8143a = -1;
     String b = "https://";
 
     /* renamed from: c  reason: collision with root package name */
-    String f21750c = "errlog.umeng.com";
+    String f8144c = "errlog.umeng.com";
     long d = 480;
     private Boolean g = null;
     public Map<String, Double> e = new HashMap();
@@ -26,10 +26,10 @@ public final class b {
     public static b a() {
         b bVar = new b();
         if (ControllerCenter.getGlobalEnvStruct().isIntl()) {
-            bVar.f21750c = "errlogos.umeng.com";
+            bVar.f8144c = "errlogos.umeng.com";
             return bVar;
         }
-        bVar.f21750c = "errlog.umeng.com";
+        bVar.f8144c = "errlog.umeng.com";
         return bVar;
     }
 
@@ -38,7 +38,7 @@ public final class b {
         if (map.containsKey("gate_way")) {
             String str = map.get("gate_way");
             if (!TextUtils.isEmpty(str)) {
-                this.f21750c = str;
+                this.f8144c = str;
             }
         }
         if (map.containsKey("gate_way_https")) {

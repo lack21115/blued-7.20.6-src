@@ -134,7 +134,6 @@ public final class QCloudHttpClient {
             }
         };
         this.mDns = new Dns() { // from class: com.tencent.qcloud.core.http.QCloudHttpClient.2
-            @Override // okhttp3.Dns
             public List<InetAddress> lookup(String str) throws UnknownHostException {
                 List<InetAddress> list = QCloudHttpClient.this.dnsMap.containsKey(str) ? (List) QCloudHttpClient.this.dnsMap.get(str) : null;
                 List<InetAddress> list2 = list;
@@ -166,7 +165,6 @@ public final class QCloudHttpClient {
             }
         };
         this.mEventListenerFactory = new EventListener.Factory() { // from class: com.tencent.qcloud.core.http.QCloudHttpClient.3
-            @Override // okhttp3.EventListener.Factory
             public EventListener create(Call call) {
                 return new CallMetricsListener(call);
             }

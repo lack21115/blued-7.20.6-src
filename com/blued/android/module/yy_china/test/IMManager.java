@@ -1,5 +1,6 @@
 package com.blued.android.module.yy_china.test;
 
+import com.android.ims.ImsConferenceState;
 import com.blued.android.chat.ChatManager;
 import com.blued.android.chat.grpc.ClientType;
 import com.blued.android.chat.grpc.PrivateChatManager;
@@ -24,39 +25,33 @@ import com.google.protobuf.Any;
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/test/IMManager.class */
 public class IMManager implements ConnectListener, ReceiveMsgListener {
     private static final String b = IMManager.class.getSimpleName();
-
-    /* renamed from: a  reason: collision with root package name */
-    public String f17804a;
-
-    /* renamed from: c  reason: collision with root package name */
-    private boolean f17805c;
+    public String a;
+    private boolean c;
 
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/test/IMManager$SingletonCreator.class */
     static class SingletonCreator {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static final IMManager f17806a = new IMManager();
+        public static final IMManager a = new IMManager();
 
         private SingletonCreator() {
         }
     }
 
     private IMManager() {
-        this.f17804a = "disconnected";
+        this.a = ImsConferenceState.STATUS_DISCONNECTED;
     }
 
     public static IMManager a() {
-        return SingletonCreator.f17806a;
+        return SingletonCreator.a;
     }
 
     private void d() {
-        this.f17805c = true;
+        this.c = true;
         Logger.c(b, "initIM ======");
         ChatAppInfo chatAppInfo = new ChatAppInfo();
         chatAppInfo.platform = "android_china";
         chatAppInfo.appVersionName = AppInfo.g;
         chatAppInfo.appVersionCode = AppInfo.h;
-        chatAppInfo.channel = AppInfo.f9487c;
+        chatAppInfo.channel = AppInfo.c;
         chatAppInfo.clientType = ClientType.CHINA;
         chatAppInfo.language = LocaleUtils.b();
         chatAppInfo.context = AppInfo.d();
@@ -78,7 +73,7 @@ public class IMManager implements ConnectListener, ReceiveMsgListener {
     }
 
     public void b() {
-        if (!this.f17805c) {
+        if (!this.c) {
             d();
         }
         ChatUserInfo chatUserInfo = new ChatUserInfo();
@@ -92,7 +87,7 @@ public class IMManager implements ConnectListener, ReceiveMsgListener {
     }
 
     public void c() {
-        this.f17805c = false;
+        this.c = false;
         PrivateChatManager.getInstance().stop();
         PrivateChatManager.getInstance().unregisterConnectListener(this);
         PrivateChatManager.getInstance().unregisterExternalMsgListener(this);
@@ -105,17 +100,17 @@ public class IMManager implements ConnectListener, ReceiveMsgListener {
         }
         Logger.c(b, "grpc-链接成功，sync_msg");
         ChatManager.getInstance().syncMsg();
-        this.f17804a = "connected";
+        this.a = ImsConferenceState.STATUS_CONNECTED;
     }
 
     @Override // com.blued.android.chat.grpc.listener.ConnectListener
     public void onConnecting() {
-        this.f17804a = "connecting";
+        this.a = "connecting";
     }
 
     @Override // com.blued.android.chat.grpc.listener.ConnectListener
     public void onDisconnected(int i, String str) {
-        this.f17804a = "Disconnected";
+        this.a = "Disconnected";
         if (YYRoomInfoManager.e().b() != null) {
             YYIMManager.a().onDisconnected();
         }

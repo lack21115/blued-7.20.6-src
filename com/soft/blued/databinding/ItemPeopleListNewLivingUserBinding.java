@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemPeopleListNewLivingUserBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29280a;
+    private final LinearLayout f15590a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29280a;
+        return this.f15590a;
     }
 }

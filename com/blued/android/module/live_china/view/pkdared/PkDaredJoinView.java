@@ -19,17 +19,14 @@ import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.net.IRequestHost;
 import com.blued.android.module.live_china.R;
 import com.blued.android.module.live_china.manager.LiveRoomManager;
+import java.net.HttpURLConnection;
 import javax.xml.datatype.DatatypeConstants;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/pkdared/PkDaredJoinView.class */
 public class PkDaredJoinView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private View f15387a;
+    private View a;
     private View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private View f15388c;
+    private View c;
     private ImageView d;
     private ImageView e;
     private TextView f;
@@ -61,18 +58,18 @@ public class PkDaredJoinView extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: a */
     public void b() {
-        int height = this.f15387a.getHeight();
+        int height = this.a.getHeight();
         int height2 = ((View) getParent()).getHeight();
         a(this.b, true);
-        a(this.f15388c, false);
+        a(this.c, false);
         b(this.j, true);
         b(this.k, false);
         a(this.h);
         a(this.i);
         a(this.l, DatatypeConstants.MIN_TIMEZONE_OFFSET, 330);
-        a(this.m, 400, 560);
+        a(this.m, HttpURLConnection.HTTP_BAD_REQUEST, 560);
         a(this.n, DatatypeConstants.MIN_TIMEZONE_OFFSET, 330);
-        a(this.o, 400, 560);
+        a(this.o, HttpURLConnection.HTTP_BAD_REQUEST, 560);
         setTranslationY((height2 * 0.4f) - (height / 2.0f));
         animate().alpha(1.0f).setDuration(100L);
         ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "alpha", 1.0f, 0.0f);
@@ -121,11 +118,11 @@ public class PkDaredJoinView extends FrameLayout {
     }
 
     private void a(View view, boolean z) {
-        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(view, "translationX", z ? -this.b.getWidth() : this.f15388c.getWidth(), 0.0f);
+        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(view, "translationX", z ? -this.b.getWidth() : this.c.getWidth(), 0.0f);
         ofFloat.setDuration(320L);
         ofFloat.setInterpolator(new OvershootInterpolator(1.2f));
         ofFloat.start();
-        ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(view, "translationX", 0.0f, z ? -this.b.getWidth() : this.f15388c.getWidth());
+        ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(view, "translationX", 0.0f, z ? -this.b.getWidth() : this.c.getWidth());
         ofFloat2.setDuration(320L);
         ofFloat2.setStartDelay(2040L);
         ofFloat2.start();
@@ -149,7 +146,7 @@ public class PkDaredJoinView extends FrameLayout {
         ofFloat3.setDuration(200L);
         ofFloat3.setStartDelay(2120L);
         ofFloat3.start();
-        ObjectAnimator ofFloat4 = ObjectAnimator.ofFloat(view, "translationX", 0.0f, z ? -this.b.getWidth() : this.f15388c.getWidth());
+        ObjectAnimator ofFloat4 = ObjectAnimator.ofFloat(view, "translationX", 0.0f, z ? -this.b.getWidth() : this.c.getWidth());
         ofFloat4.setDuration(160L);
         ofFloat4.setStartDelay(2120L);
         ofFloat4.setInterpolator(new LinearInterpolator());
@@ -158,9 +155,9 @@ public class PkDaredJoinView extends FrameLayout {
 
     protected void a(Context context) {
         LayoutInflater.from(getContext()).inflate(R.layout.live_pk_dared_join, this);
-        this.f15387a = findViewById(R.id.rl_root);
+        this.a = findViewById(R.id.rl_root);
         this.b = findViewById(R.id.rl_root_our);
-        this.f15388c = findViewById(R.id.rl_root_opposite);
+        this.c = findViewById(R.id.rl_root_opposite);
         this.d = (ImageView) findViewById(R.id.iv_avatar_our);
         this.e = (ImageView) findViewById(R.id.iv_avatar_opposite);
         this.f = (TextView) findViewById(R.id.tv_nickname_our);

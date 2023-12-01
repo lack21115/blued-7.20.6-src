@@ -25,11 +25,11 @@ public final class d {
     private static final String n = "GS-M";
 
     /* renamed from: a  reason: collision with root package name */
-    Socket f23224a;
+    Socket f9616a;
     e b;
 
     /* renamed from: c  reason: collision with root package name */
-    g f23225c;
+    g f9617c;
     b d;
     boolean e;
     protected Lock f;
@@ -66,7 +66,7 @@ public final class d {
         public final void a(Socket socket) {
             Message obtain = Message.obtain();
             obtain.obj = socket;
-            obtain.what = j.f23237c - 1;
+            obtain.what = j.f9629c - 1;
             d.this.j.sendMessage(obtain);
         }
 
@@ -151,7 +151,7 @@ public final class d {
     static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final d f23230a = new d((byte) 0);
+        private static final d f9622a = new d((byte) 0);
 
         private a() {
         }
@@ -208,7 +208,7 @@ public final class d {
     }
 
     public static d a() {
-        return a.f23230a;
+        return a.f9622a;
     }
 
     private void a(Object obj) {
@@ -249,19 +249,19 @@ public final class d {
 
     private void c(Socket socket) throws Exception {
         g gVar = new g(new i(socket.getOutputStream()), this.o);
-        this.f23225c = gVar;
+        this.f9617c = gVar;
         gVar.j = new AnonymousClass3();
-        com.igexin.c.a.b.e.a().a((com.igexin.c.a.d.f) this.f23225c, true);
+        com.igexin.c.a.b.e.a().a((com.igexin.c.a.d.f) this.f9617c, true);
     }
 
     private static void k() {
         d.a.a();
-        com.igexin.push.d.a.a(j.f23236a);
+        com.igexin.push.d.a.a(j.f9628a);
     }
 
     private void l() {
         j();
-        if ((this.d == null && this.f23225c == null && this.b == null) || i()) {
+        if ((this.d == null && this.f9617c == null && this.b == null) || i()) {
             b();
         } else {
             h();
@@ -269,7 +269,7 @@ public final class d {
     }
 
     private void m() {
-        Socket socket = this.f23224a;
+        Socket socket = this.f9616a;
         boolean z = (socket == null || socket.isClosed()) ? false : true;
         if (!z && this.d == null) {
             com.igexin.c.a.c.a.a("GS-M|disconnect = true, reconnect", new Object[0]);
@@ -281,10 +281,10 @@ public final class d {
     }
 
     private void n() {
-        g gVar = this.f23225c;
+        g gVar = this.f9617c;
         if (gVar != null) {
             gVar.l = null;
-            this.f23225c = null;
+            this.f9617c = null;
         }
         e eVar = this.b;
         if (eVar != null) {
@@ -292,7 +292,7 @@ public final class d {
             this.b = null;
         }
         this.d = null;
-        this.f23224a = null;
+        this.f9616a = null;
     }
 
     private void o() {
@@ -304,7 +304,7 @@ public final class d {
     }
 
     private boolean p() {
-        Socket socket = this.f23224a;
+        Socket socket = this.f9616a;
         return (socket == null || socket.isClosed()) ? false : true;
     }
 
@@ -344,7 +344,7 @@ public final class d {
         if (eVar != null) {
             eVar.l = dVar;
         }
-        g gVar = this.f23225c;
+        g gVar = this.f9617c;
         if (gVar != null) {
             gVar.k = dVar;
         }
@@ -409,15 +409,15 @@ public final class d {
             if (this.d.g()) {
                 return;
             }
-            this.f23224a = socket;
+            this.f9616a = socket;
             e eVar = new e(new h(socket.getInputStream()), this.o);
             this.b = eVar;
             eVar.k = new AnonymousClass2();
             com.igexin.c.a.b.e.a().a((com.igexin.c.a.d.f) this.b, true);
             g gVar = new g(new i(socket.getOutputStream()), this.o);
-            this.f23225c = gVar;
+            this.f9617c = gVar;
             gVar.j = new AnonymousClass3();
-            com.igexin.c.a.b.e.a().a((com.igexin.c.a.d.f) this.f23225c, true);
+            com.igexin.c.a.b.e.a().a((com.igexin.c.a.d.f) this.f9617c, true);
         } catch (Exception e) {
             com.igexin.c.a.c.a.a("GS-M|" + e.toString(), new Object[0]);
             com.igexin.c.a.c.a.a(n, "tcpConnect exception =" + e.toString());
@@ -436,7 +436,7 @@ public final class d {
         if (this.p.getAndSet(true)) {
             return;
         }
-        this.j.sendEmptyMessage(j.f23236a - 1);
+        this.j.sendEmptyMessage(j.f9628a - 1);
     }
 
     public final void d() {
@@ -478,7 +478,7 @@ public final class d {
         if (bVar != null) {
             bVar.c_();
         }
-        g gVar = this.f23225c;
+        g gVar = this.f9617c;
         if (gVar != null) {
             gVar.c_();
         }
@@ -486,13 +486,13 @@ public final class d {
         if (eVar != null) {
             eVar.c_();
         }
-        Socket socket = this.f23224a;
+        Socket socket = this.f9616a;
         if (socket != null) {
             try {
                 if (socket.isClosed()) {
                     return;
                 }
-                this.f23224a.close();
+                this.f9616a.close();
             } catch (Exception e) {
                 com.igexin.c.a.c.a.a(e);
             }
@@ -505,7 +505,7 @@ public final class d {
         if (bVar == null || bVar.f) {
             e eVar = this.b;
             if (eVar == null || eVar.f) {
-                g gVar = this.f23225c;
+                g gVar = this.f9617c;
                 if (gVar == null || gVar.f) {
                     n();
                     return true;

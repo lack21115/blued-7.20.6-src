@@ -14,17 +14,17 @@ import com.bumptech.glide.load.resource.drawable.ResourceDrawableDecoder;
 public class ResourceBitmapDecoder implements ResourceDecoder<Uri, Bitmap> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ResourceDrawableDecoder f20967a;
+    private final ResourceDrawableDecoder f7361a;
     private final BitmapPool b;
 
     public ResourceBitmapDecoder(ResourceDrawableDecoder resourceDrawableDecoder, BitmapPool bitmapPool) {
-        this.f20967a = resourceDrawableDecoder;
+        this.f7361a = resourceDrawableDecoder;
         this.b = bitmapPool;
     }
 
     @Override // com.bumptech.glide.load.ResourceDecoder
     public Resource<Bitmap> a(Uri uri, int i, int i2, Options options) {
-        Resource<Drawable> a2 = this.f20967a.a(uri, i, i2, options);
+        Resource<Drawable> a2 = this.f7361a.a(uri, i, i2, options);
         if (a2 == null) {
             return null;
         }

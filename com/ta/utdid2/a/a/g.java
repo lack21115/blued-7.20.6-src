@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 public class g {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Pattern f34898a = Pattern.compile("([\t\r\n])+");
+    private static final Pattern f21207a = Pattern.compile("([\t\r\n])+");
 
     public static int a(String str) {
         int i = 0;
@@ -20,7 +20,7 @@ public class g {
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public static boolean m9885a(String str) {
+    public static boolean m6840a(String str) {
         return str == null || str.length() <= 0;
     }
 }

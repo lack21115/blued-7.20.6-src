@@ -7,7 +7,7 @@ import com.opos.exoplayer.core.e.a.a;
 public abstract class y {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final y f25593a = new y() { // from class: com.opos.exoplayer.core.y.1
+    public static final y f11905a = new y() { // from class: com.opos.exoplayer.core.y.1
         @Override // com.opos.exoplayer.core.y
         public int a(Object obj) {
             return -1;
@@ -38,11 +38,11 @@ public abstract class y {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public Object f25594a;
+        public Object f11906a;
         public Object b;
 
         /* renamed from: c  reason: collision with root package name */
-        public int f25595c;
+        public int f11907c;
         public long d;
         private long e;
         private com.opos.exoplayer.core.e.a.a f;
@@ -60,17 +60,17 @@ public abstract class y {
         }
 
         public long a(int i) {
-            return this.f.f25277c[i];
+            return this.f.f11589c[i];
         }
 
         public a a(Object obj, Object obj2, int i, long j, long j2) {
-            return a(obj, obj2, i, j, j2, com.opos.exoplayer.core.e.a.a.f25276a);
+            return a(obj, obj2, i, j, j2, com.opos.exoplayer.core.e.a.a.f11588a);
         }
 
         public a a(Object obj, Object obj2, int i, long j, long j2, com.opos.exoplayer.core.e.a.a aVar) {
-            this.f25594a = obj;
+            this.f11906a = obj;
             this.b = obj2;
-            this.f25595c = i;
+            this.f11907c = i;
             this.d = j;
             this.e = j2;
             this.f = aVar;
@@ -90,8 +90,8 @@ public abstract class y {
         }
 
         public boolean b(int i, int i2) {
-            a.C0658a c0658a = this.f.d[i];
-            return (c0658a.f25280a == -1 || c0658a.f25281c[i2] == 0) ? false : true;
+            a.C0488a c0488a = this.f.d[i];
+            return (c0488a.f11592a == -1 || c0488a.f11593c[i2] == 0) ? false : true;
         }
 
         public long c() {
@@ -99,8 +99,8 @@ public abstract class y {
         }
 
         public long c(int i, int i2) {
-            a.C0658a c0658a = this.f.d[i];
-            return c0658a.f25280a != -1 ? c0658a.d[i2] : com.anythink.expressad.exoplayer.b.b;
+            a.C0488a c0488a = this.f.d[i];
+            return c0488a.f11592a != -1 ? c0488a.d[i2] : com.anythink.expressad.exoplayer.b.b;
         }
 
         public boolean c(int i) {
@@ -112,7 +112,7 @@ public abstract class y {
         }
 
         public int d(int i) {
-            return this.f.d[i].f25280a;
+            return this.f.d[i].f11592a;
         }
 
         public long e() {
@@ -124,11 +124,11 @@ public abstract class y {
     public static final class b {
 
         /* renamed from: a  reason: collision with root package name */
-        public Object f25596a;
+        public Object f11908a;
         public long b;
 
         /* renamed from: c  reason: collision with root package name */
-        public long f25597c;
+        public long f11909c;
         public boolean d;
         public boolean e;
         public int f;
@@ -142,9 +142,9 @@ public abstract class y {
         }
 
         public b a(Object obj, long j, long j2, boolean z, boolean z2, long j3, long j4, int i, int i2, long j5) {
-            this.f25596a = obj;
+            this.f11908a = obj;
             this.b = j;
-            this.f25597c = j2;
+            this.f11909c = j2;
             this.d = z;
             this.e = z2;
             this.h = j3;
@@ -185,7 +185,7 @@ public abstract class y {
     }
 
     public final int a(int i, a aVar, b bVar, int i2, boolean z) {
-        int i3 = a(i, aVar).f25595c;
+        int i3 = a(i, aVar).f11907c;
         if (a(i3, bVar).g == i) {
             int a2 = a(i3, i2, z);
             if (a2 == -1) {

@@ -26,13 +26,9 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/view/stickylistheaders/StickyListHeadersListView.class */
 public class StickyListHeadersListView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private WrapperViewList f10337a;
+    private WrapperViewList a;
     private View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private Long f10338c;
+    private Long c;
     private Integer d;
     private Integer e;
     private AbsListView.OnScrollListener f;
@@ -105,7 +101,7 @@ public class StickyListHeadersListView extends FrameLayout {
                 StickyListHeadersListView.this.f.onScroll(absListView, i, i2, i3);
             }
             StickyListHeadersListView stickyListHeadersListView = StickyListHeadersListView.this;
-            stickyListHeadersListView.b(stickyListHeadersListView.f10337a.a());
+            stickyListHeadersListView.b(stickyListHeadersListView.a.a());
         }
 
         @Override // android.widget.AbsListView.OnScrollListener
@@ -125,7 +121,7 @@ public class StickyListHeadersListView extends FrameLayout {
         public void a(Canvas canvas) {
             if (Build.VERSION.SDK_INT < 8) {
                 StickyListHeadersListView stickyListHeadersListView = StickyListHeadersListView.this;
-                stickyListHeadersListView.b(stickyListHeadersListView.f10337a.a());
+                stickyListHeadersListView.b(stickyListHeadersListView.a.a());
             }
             if (StickyListHeadersListView.this.b != null) {
                 if (!StickyListHeadersListView.this.i) {
@@ -161,11 +157,11 @@ public class StickyListHeadersListView extends FrameLayout {
         this.n = 0;
         this.o = 0;
         WrapperViewList wrapperViewList = new WrapperViewList(context);
-        this.f10337a = wrapperViewList;
+        this.a = wrapperViewList;
         this.t = wrapperViewList.getDivider();
-        this.u = this.f10337a.getDividerHeight();
-        this.f10337a.setDivider(null);
-        this.f10337a.setDividerHeight(0);
+        this.u = this.a.getDividerHeight();
+        this.a.setDivider(null);
+        this.a.setDividerHeight(0);
         if (attributeSet != null) {
             TypedArray obtainStyledAttributes = context.getTheme().obtainStyledAttributes(attributeSet, R.styleable.StickyListHeadersListView, 0, 0);
             try {
@@ -178,53 +174,53 @@ public class StickyListHeadersListView extends FrameLayout {
                 setPadding(this.l, this.m, this.n, dimensionPixelSize2);
                 this.i = obtainStyledAttributes.getBoolean(R.styleable.StickyListHeadersListView_android_clipToPadding, true);
                 super.setClipToPadding(true);
-                this.f10337a.setClipToPadding(this.i);
+                this.a.setClipToPadding(this.i);
                 int i2 = obtainStyledAttributes.getInt(R.styleable.StickyListHeadersListView_android_scrollbars, 512);
-                this.f10337a.setVerticalScrollBarEnabled((i2 & 512) != 0);
-                this.f10337a.setHorizontalScrollBarEnabled((i2 & 256) != 0);
+                this.a.setVerticalScrollBarEnabled((i2 & 512) != 0);
+                this.a.setHorizontalScrollBarEnabled((i2 & 256) != 0);
                 if (Build.VERSION.SDK_INT >= 9) {
-                    this.f10337a.setOverScrollMode(obtainStyledAttributes.getInt(R.styleable.StickyListHeadersListView_android_overScrollMode, 0));
+                    this.a.setOverScrollMode(obtainStyledAttributes.getInt(R.styleable.StickyListHeadersListView_android_overScrollMode, 0));
                 }
-                this.f10337a.setFadingEdgeLength(obtainStyledAttributes.getDimensionPixelSize(R.styleable.StickyListHeadersListView_android_fadingEdgeLength, this.f10337a.getVerticalFadingEdgeLength()));
+                this.a.setFadingEdgeLength(obtainStyledAttributes.getDimensionPixelSize(R.styleable.StickyListHeadersListView_android_fadingEdgeLength, this.a.getVerticalFadingEdgeLength()));
                 int i3 = obtainStyledAttributes.getInt(R.styleable.StickyListHeadersListView_android_requiresFadingEdge, 0);
                 if (i3 == 4096) {
-                    this.f10337a.setVerticalFadingEdgeEnabled(false);
-                    this.f10337a.setHorizontalFadingEdgeEnabled(true);
+                    this.a.setVerticalFadingEdgeEnabled(false);
+                    this.a.setHorizontalFadingEdgeEnabled(true);
                 } else if (i3 == 8192) {
-                    this.f10337a.setVerticalFadingEdgeEnabled(true);
-                    this.f10337a.setHorizontalFadingEdgeEnabled(false);
+                    this.a.setVerticalFadingEdgeEnabled(true);
+                    this.a.setHorizontalFadingEdgeEnabled(false);
                 } else {
-                    this.f10337a.setVerticalFadingEdgeEnabled(false);
-                    this.f10337a.setHorizontalFadingEdgeEnabled(false);
+                    this.a.setVerticalFadingEdgeEnabled(false);
+                    this.a.setHorizontalFadingEdgeEnabled(false);
                 }
-                this.f10337a.setCacheColorHint(obtainStyledAttributes.getColor(R.styleable.StickyListHeadersListView_android_cacheColorHint, this.f10337a.getCacheColorHint()));
+                this.a.setCacheColorHint(obtainStyledAttributes.getColor(R.styleable.StickyListHeadersListView_android_cacheColorHint, this.a.getCacheColorHint()));
                 if (Build.VERSION.SDK_INT >= 11) {
-                    this.f10337a.setChoiceMode(obtainStyledAttributes.getInt(R.styleable.StickyListHeadersListView_android_choiceMode, this.f10337a.getChoiceMode()));
+                    this.a.setChoiceMode(obtainStyledAttributes.getInt(R.styleable.StickyListHeadersListView_android_choiceMode, this.a.getChoiceMode()));
                 }
-                this.f10337a.setDrawSelectorOnTop(obtainStyledAttributes.getBoolean(R.styleable.StickyListHeadersListView_android_drawSelectorOnTop, false));
-                this.f10337a.setFastScrollEnabled(obtainStyledAttributes.getBoolean(R.styleable.StickyListHeadersListView_android_fastScrollEnabled, this.f10337a.isFastScrollEnabled()));
+                this.a.setDrawSelectorOnTop(obtainStyledAttributes.getBoolean(R.styleable.StickyListHeadersListView_android_drawSelectorOnTop, false));
+                this.a.setFastScrollEnabled(obtainStyledAttributes.getBoolean(R.styleable.StickyListHeadersListView_android_fastScrollEnabled, this.a.isFastScrollEnabled()));
                 if (Build.VERSION.SDK_INT >= 11) {
-                    this.f10337a.setFastScrollAlwaysVisible(obtainStyledAttributes.getBoolean(R.styleable.StickyListHeadersListView_android_fastScrollAlwaysVisible, this.f10337a.isFastScrollAlwaysVisible()));
+                    this.a.setFastScrollAlwaysVisible(obtainStyledAttributes.getBoolean(R.styleable.StickyListHeadersListView_android_fastScrollAlwaysVisible, this.a.isFastScrollAlwaysVisible()));
                 }
-                this.f10337a.setScrollBarStyle(obtainStyledAttributes.getInt(R.styleable.StickyListHeadersListView_android_scrollbarStyle, 0));
+                this.a.setScrollBarStyle(obtainStyledAttributes.getInt(R.styleable.StickyListHeadersListView_android_scrollbarStyle, 0));
                 if (obtainStyledAttributes.hasValue(R.styleable.StickyListHeadersListView_android_listSelector)) {
-                    this.f10337a.setSelector(obtainStyledAttributes.getDrawable(R.styleable.StickyListHeadersListView_android_listSelector));
+                    this.a.setSelector(obtainStyledAttributes.getDrawable(R.styleable.StickyListHeadersListView_android_listSelector));
                 }
-                this.f10337a.setScrollingCacheEnabled(obtainStyledAttributes.getBoolean(R.styleable.StickyListHeadersListView_android_scrollingCache, this.f10337a.isScrollingCacheEnabled()));
+                this.a.setScrollingCacheEnabled(obtainStyledAttributes.getBoolean(R.styleable.StickyListHeadersListView_android_scrollingCache, this.a.isScrollingCacheEnabled()));
                 if (obtainStyledAttributes.hasValue(R.styleable.StickyListHeadersListView_android_divider)) {
                     this.t = obtainStyledAttributes.getDrawable(R.styleable.StickyListHeadersListView_android_divider);
                 }
                 this.u = obtainStyledAttributes.getDimensionPixelSize(R.styleable.StickyListHeadersListView_android_dividerHeight, this.u);
-                this.f10337a.setTranscriptMode(obtainStyledAttributes.getInt(R.styleable.StickyListHeadersListView_android_transcriptMode, 0));
+                this.a.setTranscriptMode(obtainStyledAttributes.getInt(R.styleable.StickyListHeadersListView_android_transcriptMode, 0));
                 this.h = obtainStyledAttributes.getBoolean(R.styleable.StickyListHeadersListView_hasStickyHeaders, true);
                 this.j = obtainStyledAttributes.getBoolean(R.styleable.StickyListHeadersListView_isDrawingListUnderStickyHeader, true);
             } finally {
                 obtainStyledAttributes.recycle();
             }
         }
-        this.f10337a.a(new WrapperViewListLifeCycleListener());
-        this.f10337a.setOnScrollListener(new WrapperListScrollListener());
-        addView(this.f10337a);
+        this.a.a(new WrapperViewListLifeCycleListener());
+        this.a.setOnScrollListener(new WrapperListScrollListener());
+        addView(this.a);
     }
 
     private void a(View view) {
@@ -244,10 +240,10 @@ public class StickyListHeadersListView extends FrameLayout {
         if (view != null) {
             removeView(view);
             this.b = null;
-            this.f10338c = null;
+            this.c = null;
             this.d = null;
             this.e = null;
-            this.f10337a.a(0);
+            this.a.a(0);
             c();
         }
     }
@@ -287,20 +283,20 @@ public class StickyListHeadersListView extends FrameLayout {
         L25:
             r0 = r5
             r1 = r4
-            com.blued.android.framework.view.stickylistheaders.WrapperViewList r1 = r1.f10337a
+            com.blued.android.framework.view.stickylistheaders.WrapperViewList r1 = r1.a
             int r1 = r1.getHeaderViewsCount()
             int r0 = r0 - r1
             r7 = r0
             r0 = r7
             r5 = r0
             r0 = r4
-            com.blued.android.framework.view.stickylistheaders.WrapperViewList r0 = r0.f10337a
+            com.blued.android.framework.view.stickylistheaders.WrapperViewList r0 = r0.a
             int r0 = r0.getChildCount()
             if (r0 <= 0) goto L53
             r0 = r7
             r5 = r0
             r0 = r4
-            com.blued.android.framework.view.stickylistheaders.WrapperViewList r0 = r0.f10337a
+            com.blued.android.framework.view.stickylistheaders.WrapperViewList r0 = r0.a
             r1 = 0
             android.view.View r0 = r0.getChildAt(r1)
             int r0 = r0.getBottom()
@@ -313,7 +309,7 @@ public class StickyListHeadersListView extends FrameLayout {
             r5 = r0
         L53:
             r0 = r4
-            com.blued.android.framework.view.stickylistheaders.WrapperViewList r0 = r0.f10337a
+            com.blued.android.framework.view.stickylistheaders.WrapperViewList r0 = r0.a
             int r0 = r0.getChildCount()
             if (r0 == 0) goto L62
             r0 = 1
@@ -326,11 +322,11 @@ public class StickyListHeadersListView extends FrameLayout {
             r0 = r7
             if (r0 == 0) goto L8a
             r0 = r4
-            com.blued.android.framework.view.stickylistheaders.WrapperViewList r0 = r0.f10337a
+            com.blued.android.framework.view.stickylistheaders.WrapperViewList r0 = r0.a
             int r0 = r0.getFirstVisiblePosition()
             if (r0 != 0) goto L8a
             r0 = r4
-            com.blued.android.framework.view.stickylistheaders.WrapperViewList r0 = r0.f10337a
+            com.blued.android.framework.view.stickylistheaders.WrapperViewList r0 = r0.a
             r1 = 0
             android.view.View r0 = r0.getChildAt(r1)
             int r0 = r0.getTop()
@@ -394,14 +390,14 @@ public class StickyListHeadersListView extends FrameLayout {
         } else {
             d = d();
         }
-        int childCount = this.f10337a.getChildCount();
+        int childCount = this.a.getChildCount();
         int i = 0;
         while (true) {
             int i2 = i;
             if (i2 >= childCount) {
                 return;
             }
-            View childAt = this.f10337a.getChildAt(i2);
+            View childAt = this.a.getChildAt(i2);
             if (childAt instanceof WrapperView) {
                 WrapperView wrapperView = (WrapperView) childAt;
                 if (wrapperView.a()) {
@@ -426,10 +422,10 @@ public class StickyListHeadersListView extends FrameLayout {
         Integer num = this.d;
         if (num == null || num.intValue() != i) {
             this.d = Integer.valueOf(i);
-            long a2 = this.g.a(i);
-            Long l = this.f10338c;
-            if (l == null || l.longValue() != a2) {
-                this.f10338c = Long.valueOf(a2);
+            long a = this.g.a(i);
+            Long l = this.c;
+            if (l == null || l.longValue() != a) {
+                this.c = Long.valueOf(a);
                 View b = this.g.b(this.d.intValue(), this.b, this);
                 if (this.b != b) {
                     if (b == null) {
@@ -441,7 +437,7 @@ public class StickyListHeadersListView extends FrameLayout {
                 b(this.b);
                 OnStickyHeaderChangedListener onStickyHeaderChangedListener = this.r;
                 if (onStickyHeaderChangedListener != null) {
-                    onStickyHeaderChangedListener.a(this, this.b, i, this.f10338c.longValue());
+                    onStickyHeaderChangedListener.a(this, this.b, i, this.c.longValue());
                 }
                 this.e = null;
             }
@@ -451,16 +447,16 @@ public class StickyListHeadersListView extends FrameLayout {
         while (true) {
             int i4 = i2;
             i3 = 0;
-            if (i4 >= this.f10337a.getChildCount()) {
+            if (i4 >= this.a.getChildCount()) {
                 break;
             }
-            childAt = this.f10337a.getChildAt(i4);
-            i2 = (childAt.getTop() < d() || !(((childAt instanceof WrapperView) && ((WrapperView) childAt).a()) || this.f10337a.a(childAt))) ? i4 + 1 : 0;
+            childAt = this.a.getChildAt(i4);
+            i2 = (childAt.getTop() < d() || !(((childAt instanceof WrapperView) && ((WrapperView) childAt).a()) || this.a.a(childAt))) ? i4 + 1 : 0;
         }
         i3 = Math.min(childAt.getTop() - (measuredHeight + d), 0);
         setHeaderOffet(i3);
         if (!this.j) {
-            this.f10337a.a(this.b.getMeasuredHeight() + this.e.intValue());
+            this.a.a(this.b.getMeasuredHeight() + this.e.intValue());
         }
         c();
     }
@@ -479,7 +475,7 @@ public class StickyListHeadersListView extends FrameLayout {
                     Tracker.onClick(view3);
                     OnHeaderClickListener onHeaderClickListener = StickyListHeadersListView.this.p;
                     StickyListHeadersListView stickyListHeadersListView = StickyListHeadersListView.this;
-                    onHeaderClickListener.a(stickyListHeadersListView, stickyListHeadersListView.b, StickyListHeadersListView.this.d.intValue(), StickyListHeadersListView.this.f10338c.longValue(), true);
+                    onHeaderClickListener.a(stickyListHeadersListView, stickyListHeadersListView.b, StickyListHeadersListView.this.d.intValue(), StickyListHeadersListView.this.c.longValue(), true);
                 }
             });
         }
@@ -531,7 +527,7 @@ public class StickyListHeadersListView extends FrameLayout {
         if (d(Math.max(0, i - getHeaderViewsCount()))) {
             return 0;
         }
-        View b = this.g.b(i, null, this.f10337a);
+        View b = this.g.b(i, null, this.a);
         if (b != null) {
             a(b);
             b(b);
@@ -542,11 +538,11 @@ public class StickyListHeadersListView extends FrameLayout {
 
     public void a(int i, int i2) {
         int i3 = 0;
-        int a2 = this.g == null ? 0 : a(i);
+        int a = this.g == null ? 0 : a(i);
         if (!this.i) {
             i3 = this.m;
         }
-        this.f10337a.setSelectionFromTop(i, (i2 + a2) - i3);
+        this.a.setSelectionFromTop(i, (i2 + a) - i3);
     }
 
     public boolean a() {
@@ -555,14 +551,14 @@ public class StickyListHeadersListView extends FrameLayout {
 
     @Override // android.view.View
     public boolean canScrollVertically(int i) {
-        return this.f10337a.canScrollVertically(i);
+        return this.a.canScrollVertically(i);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
     public void dispatchDraw(Canvas canvas) {
-        if (this.f10337a.getVisibility() == 0 || this.f10337a.getAnimation() != null) {
-            drawChild(canvas, this.f10337a, 0L);
+        if (this.a.getVisibility() == 0 || this.a.getAnimation() != null) {
+            drawChild(canvas, this.a, 0L);
         }
     }
 
@@ -571,7 +567,7 @@ public class StickyListHeadersListView extends FrameLayout {
         if (adapterWrapper == null) {
             return null;
         }
-        return adapterWrapper.f10326a;
+        return adapterWrapper.a;
     }
 
     @Deprecated
@@ -581,28 +577,28 @@ public class StickyListHeadersListView extends FrameLayout {
 
     public int getCheckedItemCount() {
         if (e(11)) {
-            return this.f10337a.getCheckedItemCount();
+            return this.a.getCheckedItemCount();
         }
         return 0;
     }
 
     public long[] getCheckedItemIds() {
         if (e(8)) {
-            return this.f10337a.getCheckedItemIds();
+            return this.a.getCheckedItemIds();
         }
         return null;
     }
 
     public int getCheckedItemPosition() {
-        return this.f10337a.getCheckedItemPosition();
+        return this.a.getCheckedItemPosition();
     }
 
     public SparseBooleanArray getCheckedItemPositions() {
-        return this.f10337a.getCheckedItemPositions();
+        return this.a.getCheckedItemPositions();
     }
 
     public int getCount() {
-        return this.f10337a.getCount();
+        return this.a.getCount();
     }
 
     public Drawable getDivider() {
@@ -614,33 +610,33 @@ public class StickyListHeadersListView extends FrameLayout {
     }
 
     public View getEmptyView() {
-        return this.f10337a.getEmptyView();
+        return this.a.getEmptyView();
     }
 
     public int getFirstVisiblePosition() {
-        return this.f10337a.getFirstVisiblePosition();
+        return this.a.getFirstVisiblePosition();
     }
 
     public int getFooterViewsCount() {
-        return this.f10337a.getFooterViewsCount();
+        return this.a.getFooterViewsCount();
     }
 
     public int getHeaderViewsCount() {
-        return this.f10337a.getHeaderViewsCount();
+        return this.a.getHeaderViewsCount();
     }
 
     public int getLastVisiblePosition() {
-        return this.f10337a.getLastVisiblePosition();
+        return this.a.getLastVisiblePosition();
     }
 
     public int getListChildCount() {
-        return this.f10337a.getChildCount();
+        return this.a.getChildCount();
     }
 
     @Override // android.view.View
     public int getOverScrollMode() {
         if (e(9)) {
-            return this.f10337a.getOverScrollMode();
+            return this.a.getOverScrollMode();
         }
         return 0;
     }
@@ -667,7 +663,7 @@ public class StickyListHeadersListView extends FrameLayout {
 
     @Override // android.view.View
     public int getScrollBarStyle() {
-        return this.f10337a.getScrollBarStyle();
+        return this.a.getScrollBarStyle();
     }
 
     public int getStickyHeaderTopOffset() {
@@ -675,23 +671,23 @@ public class StickyListHeadersListView extends FrameLayout {
     }
 
     public ListView getWrappedList() {
-        return this.f10337a;
+        return this.a;
     }
 
     @Override // android.view.View
     public boolean isHorizontalScrollBarEnabled() {
-        return this.f10337a.isHorizontalScrollBarEnabled();
+        return this.a.isHorizontalScrollBarEnabled();
     }
 
     @Override // android.view.View
     public boolean isVerticalScrollBarEnabled() {
-        return this.f10337a.isVerticalScrollBarEnabled();
+        return this.a.isVerticalScrollBarEnabled();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        WrapperViewList wrapperViewList = this.f10337a;
+        WrapperViewList wrapperViewList = this.a;
         wrapperViewList.layout(0, 0, wrapperViewList.getMeasuredWidth(), getHeight());
         View view = this.b;
         if (view != null) {
@@ -711,20 +707,20 @@ public class StickyListHeadersListView extends FrameLayout {
     @Override // android.view.View
     public void onRestoreInstanceState(Parcelable parcelable) {
         super.onRestoreInstanceState(View.BaseSavedState.EMPTY_STATE);
-        this.f10337a.onRestoreInstanceState(parcelable);
+        this.a.onRestoreInstanceState(parcelable);
     }
 
     @Override // android.view.View
     public Parcelable onSaveInstanceState() {
         if (super.onSaveInstanceState() == View.BaseSavedState.EMPTY_STATE) {
-            return this.f10337a.onSaveInstanceState();
+            return this.a.onSaveInstanceState();
         }
         throw new IllegalStateException("Handling non empty state of parent class is not implemented");
     }
 
     public void setAdapter(StickyListHeadersAdapter stickyListHeadersAdapter) {
         if (stickyListHeadersAdapter == null) {
-            this.f10337a.setAdapter((ListAdapter) null);
+            this.a.setAdapter((ListAdapter) null);
             b();
             return;
         }
@@ -746,31 +742,31 @@ public class StickyListHeadersListView extends FrameLayout {
             this.g.a((AdapterWrapper.OnHeaderClickListener) null);
         }
         this.g.a(this.t, this.u);
-        this.f10337a.setAdapter((ListAdapter) this.g);
+        this.a.setAdapter((ListAdapter) this.g);
         b();
     }
 
     public void setAreHeadersSticky(boolean z) {
         this.h = z;
         if (z) {
-            b(this.f10337a.a());
+            b(this.a.a());
         } else {
             b();
         }
-        this.f10337a.invalidate();
+        this.a.invalidate();
     }
 
     public void setBlockLayoutChildren(boolean z) {
-        this.f10337a.a(z);
+        this.a.a(z);
     }
 
     public void setChoiceMode(int i) {
-        this.f10337a.setChoiceMode(i);
+        this.a.setChoiceMode(i);
     }
 
     @Override // android.view.ViewGroup
     public void setClipToPadding(boolean z) {
-        WrapperViewList wrapperViewList = this.f10337a;
+        WrapperViewList wrapperViewList = this.a;
         if (wrapperViewList != null) {
             wrapperViewList.setClipToPadding(z);
         }
@@ -795,37 +791,37 @@ public class StickyListHeadersListView extends FrameLayout {
 
     public void setDrawingListUnderStickyHeader(boolean z) {
         this.j = z;
-        this.f10337a.a(0);
+        this.a.a(0);
     }
 
     public void setEmptyView(View view) {
-        this.f10337a.setEmptyView(view);
+        this.a.setEmptyView(view);
     }
 
     public void setFastScrollAlwaysVisible(boolean z) {
         if (e(11)) {
-            this.f10337a.setFastScrollAlwaysVisible(z);
+            this.a.setFastScrollAlwaysVisible(z);
         }
     }
 
     public void setFastScrollEnabled(boolean z) {
-        this.f10337a.setFastScrollEnabled(z);
+        this.a.setFastScrollEnabled(z);
     }
 
     @Override // android.view.View
     public void setHorizontalScrollBarEnabled(boolean z) {
-        this.f10337a.setHorizontalScrollBarEnabled(z);
+        this.a.setHorizontalScrollBarEnabled(z);
     }
 
     public void setMultiChoiceModeListener(AbsListView.MultiChoiceModeListener multiChoiceModeListener) {
         if (e(11)) {
-            this.f10337a.setMultiChoiceModeListener(multiChoiceModeListener);
+            this.a.setMultiChoiceModeListener(multiChoiceModeListener);
         }
     }
 
     @Override // android.view.View
     public void setOnCreateContextMenuListener(View.OnCreateContextMenuListener onCreateContextMenuListener) {
-        this.f10337a.setOnCreateContextMenuListener(onCreateContextMenuListener);
+        this.a.setOnCreateContextMenuListener(onCreateContextMenuListener);
     }
 
     public void setOnHeaderClickListener(OnHeaderClickListener onHeaderClickListener) {
@@ -845,7 +841,7 @@ public class StickyListHeadersListView extends FrameLayout {
                         Tracker.onClick(view2);
                         OnHeaderClickListener onHeaderClickListener2 = StickyListHeadersListView.this.p;
                         StickyListHeadersListView stickyListHeadersListView = StickyListHeadersListView.this;
-                        onHeaderClickListener2.a(stickyListHeadersListView, stickyListHeadersListView.b, StickyListHeadersListView.this.d.intValue(), StickyListHeadersListView.this.f10338c.longValue(), true);
+                        onHeaderClickListener2.a(stickyListHeadersListView, stickyListHeadersListView.b, StickyListHeadersListView.this.d.intValue(), StickyListHeadersListView.this.c.longValue(), true);
                     }
                 });
             }
@@ -853,11 +849,11 @@ public class StickyListHeadersListView extends FrameLayout {
     }
 
     public void setOnItemClickListener(AdapterView.OnItemClickListener onItemClickListener) {
-        this.f10337a.setOnItemClickListener(onItemClickListener);
+        this.a.setOnItemClickListener(onItemClickListener);
     }
 
     public void setOnItemLongClickListener(AdapterView.OnItemLongClickListener onItemLongClickListener) {
-        this.f10337a.setOnItemLongClickListener(onItemLongClickListener);
+        this.a.setOnItemLongClickListener(onItemLongClickListener);
     }
 
     public void setOnScrollListener(AbsListView.OnScrollListener onScrollListener) {
@@ -875,21 +871,21 @@ public class StickyListHeadersListView extends FrameLayout {
     @Override // android.view.View
     public void setOnTouchListener(final View.OnTouchListener onTouchListener) {
         if (onTouchListener != null) {
-            this.f10337a.setOnTouchListener(new View.OnTouchListener() { // from class: com.blued.android.framework.view.stickylistheaders.StickyListHeadersListView.3
+            this.a.setOnTouchListener(new View.OnTouchListener() { // from class: com.blued.android.framework.view.stickylistheaders.StickyListHeadersListView.3
                 @Override // android.view.View.OnTouchListener
                 public boolean onTouch(View view, MotionEvent motionEvent) {
                     return onTouchListener.onTouch(StickyListHeadersListView.this, motionEvent);
                 }
             });
         } else {
-            this.f10337a.setOnTouchListener(null);
+            this.a.setOnTouchListener(null);
         }
     }
 
     @Override // android.view.View
     public void setOverScrollMode(int i) {
         WrapperViewList wrapperViewList;
-        if (!e(9) || (wrapperViewList = this.f10337a) == null) {
+        if (!e(9) || (wrapperViewList = this.a) == null) {
             return;
         }
         wrapperViewList.setOverScrollMode(i);
@@ -901,7 +897,7 @@ public class StickyListHeadersListView extends FrameLayout {
         this.m = i2;
         this.n = i3;
         this.o = i4;
-        WrapperViewList wrapperViewList = this.f10337a;
+        WrapperViewList wrapperViewList = this.a;
         if (wrapperViewList != null) {
             wrapperViewList.setPadding(i, i2, i3, i4);
         }
@@ -911,7 +907,7 @@ public class StickyListHeadersListView extends FrameLayout {
 
     @Override // android.view.View
     public void setScrollBarStyle(int i) {
-        this.f10337a.setScrollBarStyle(i);
+        this.a.setScrollBarStyle(i);
     }
 
     public void setSelection(int i) {
@@ -919,29 +915,29 @@ public class StickyListHeadersListView extends FrameLayout {
     }
 
     public void setSelector(int i) {
-        this.f10337a.setSelector(i);
+        this.a.setSelector(i);
     }
 
     public void setSelector(Drawable drawable) {
-        this.f10337a.setSelector(drawable);
+        this.a.setSelector(drawable);
     }
 
     public void setStickyHeaderTopOffset(int i) {
         this.k = i;
-        b(this.f10337a.a());
+        b(this.a.a());
     }
 
     public void setTranscriptMode(int i) {
-        this.f10337a.setTranscriptMode(i);
+        this.a.setTranscriptMode(i);
     }
 
     @Override // android.view.View
     public void setVerticalScrollBarEnabled(boolean z) {
-        this.f10337a.setVerticalScrollBarEnabled(z);
+        this.a.setVerticalScrollBarEnabled(z);
     }
 
     @Override // android.view.View
     public boolean showContextMenu() {
-        return this.f10337a.showContextMenu();
+        return this.a.showContextMenu();
     }
 }

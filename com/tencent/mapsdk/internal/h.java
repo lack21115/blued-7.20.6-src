@@ -8,7 +8,7 @@ import java.util.Map;
 public final class h extends p {
 
     /* renamed from: c  reason: collision with root package name */
-    public short f37496c;
+    public short f23805c;
     public byte d;
     public int e;
     public int f;
@@ -23,7 +23,7 @@ public final class h extends p {
     public static Map<String, String> n = null;
 
     public h() {
-        this.f37496c = (short) 0;
+        this.f23805c = (short) 0;
         this.d = (byte) 0;
         this.e = 0;
         this.f = 0;
@@ -33,14 +33,14 @@ public final class h extends p {
     }
 
     public h(short s, byte b, int i, int i2, String str, String str2, byte[] bArr, int i3, Map<String, String> map, Map<String, String> map2) {
-        this.f37496c = (short) 0;
+        this.f23805c = (short) 0;
         this.d = (byte) 0;
         this.e = 0;
         this.f = 0;
         this.g = null;
         this.h = null;
         this.j = 0;
-        this.f37496c = s;
+        this.f23805c = s;
         this.d = b;
         this.e = i;
         this.f = i2;
@@ -66,7 +66,7 @@ public final class h extends p {
     @Override // com.tencent.mapsdk.internal.p
     public void display(StringBuilder sb, int i) {
         k kVar = new k(sb, i);
-        kVar.a(this.f37496c, "iVersion");
+        kVar.a(this.f23805c, "iVersion");
         kVar.a(this.d, "cPacketType");
         kVar.a(this.e, "iMessageType");
         kVar.a(this.f, "iRequestId");
@@ -80,13 +80,13 @@ public final class h extends p {
 
     public boolean equals(Object obj) {
         h hVar = (h) obj;
-        return q.b(1, (int) hVar.f37496c) && q.b(1, (int) hVar.d) && q.b(1, hVar.e) && q.b(1, hVar.f) && q.a((Object) 1, (Object) hVar.g) && q.a((Object) 1, (Object) hVar.h) && q.a((Object) 1, (Object) hVar.i) && q.b(1, hVar.j) && q.a((Object) 1, (Object) hVar.k) && q.a((Object) 1, (Object) hVar.l);
+        return q.b(1, (int) hVar.f23805c) && q.b(1, (int) hVar.d) && q.b(1, hVar.e) && q.b(1, hVar.f) && q.a((Object) 1, (Object) hVar.g) && q.a((Object) 1, (Object) hVar.h) && q.a((Object) 1, (Object) hVar.i) && q.b(1, hVar.j) && q.a((Object) 1, (Object) hVar.k) && q.a((Object) 1, (Object) hVar.l);
     }
 
     @Override // com.tencent.mapsdk.internal.p
     public void readFrom(m mVar) {
         try {
-            this.f37496c = mVar.a(this.f37496c, 1, true);
+            this.f23805c = mVar.a(this.f23805c, 1, true);
             this.d = mVar.a(this.d, 2, true);
             this.e = mVar.a(this.e, 3, true);
             this.f = mVar.a(this.f, 4, true);
@@ -119,7 +119,7 @@ public final class h extends p {
 
     @Override // com.tencent.mapsdk.internal.p
     public void writeTo(n nVar) {
-        nVar.a(this.f37496c, 1);
+        nVar.a(this.f23805c, 1);
         nVar.a(this.d, 2);
         nVar.a(this.e, 3);
         nVar.a(this.f, 4);

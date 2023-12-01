@@ -8,9 +8,7 @@ import kotlin.jvm.internal.Lambda;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/sequences/SequencesKt__SequencesKt$flatten$3.class */
 final class SequencesKt__SequencesKt$flatten$3<T> extends Lambda implements Function1<T, T> {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final SequencesKt__SequencesKt$flatten$3 f42651a = new SequencesKt__SequencesKt$flatten$3();
+    public static final SequencesKt__SequencesKt$flatten$3 a = new SequencesKt__SequencesKt$flatten$3();
 
     SequencesKt__SequencesKt$flatten$3() {
         super(1);

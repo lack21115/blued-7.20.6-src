@@ -8,11 +8,11 @@ import com.anythink.expressad.exoplayer.h.s;
 final class s {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final int f7728a = 100;
+    private static final int f4889a = 100;
     private final ae.a b = new ae.a();
 
     /* renamed from: c  reason: collision with root package name */
-    private final ae.b f7729c = new ae.b();
+    private final ae.b f4890c = new ae.b();
     private long d;
     private ae e;
     private int f;
@@ -34,34 +34,34 @@ final class s {
         s.a aVar = new s.a(i, i2, i3, j2);
         boolean b = b(aVar, Long.MIN_VALUE);
         boolean a2 = a(aVar, b);
-        return new r(aVar, i3 == this.b.b(i2) ? this.b.d() : 0L, Long.MIN_VALUE, j, this.e.a(aVar.f7484a, this.b, false).c(aVar.b, aVar.f7485c), b, a2);
+        return new r(aVar, i3 == this.b.b(i2) ? this.b.d() : 0L, Long.MIN_VALUE, j, this.e.a(aVar.f4645a, this.b, false).c(aVar.b, aVar.f4646c), b, a2);
     }
 
     private r a(s.a aVar, long j, long j2) {
-        this.e.a(aVar.f7484a, this.b, false);
+        this.e.a(aVar.f4645a, this.b, false);
         if (aVar.a()) {
-            if (this.b.b(aVar.b, aVar.f7485c)) {
-                return a(aVar.f7484a, aVar.b, aVar.f7485c, j, aVar.d);
+            if (this.b.b(aVar.b, aVar.f4646c)) {
+                return a(aVar.f4645a, aVar.b, aVar.f4646c, j, aVar.d);
             }
             return null;
         }
-        return b(aVar.f7484a, j2, aVar.d);
+        return b(aVar.f4645a, j2, aVar.d);
     }
 
     private r a(q qVar, long j) {
         long j2;
         r rVar = qVar.h;
         if (rVar.f) {
-            int a2 = this.e.a(rVar.f7726a.f7484a, this.b, this.f7729c, this.f, this.g);
+            int a2 = this.e.a(rVar.f4887a.f4645a, this.b, this.f4890c, this.f, this.g);
             if (a2 == -1) {
                 return null;
             }
-            int i = this.e.a(a2, this.b, true).f7162c;
+            int i = this.e.a(a2, this.b, true).f4323c;
             Object obj = this.b.b;
-            long j3 = rVar.f7726a.d;
+            long j3 = rVar.f4887a.d;
             long j4 = 0;
-            if (this.e.a(i, this.f7729c, false).f == a2) {
-                Pair<Integer, Long> a3 = this.e.a(this.f7729c, this.b, i, b.b, Math.max(0L, (qVar.e + rVar.e) - j));
+            if (this.e.a(i, this.f4890c, false).f == a2) {
+                Pair<Integer, Long> a3 = this.e.a(this.f4890c, this.b, i, b.b, Math.max(0L, (qVar.e + rVar.e) - j));
                 if (a3 == null) {
                     return null;
                 }
@@ -71,37 +71,37 @@ final class s {
                     j2 = this.d;
                     this.d = 1 + j2;
                 } else {
-                    j2 = qVar.i.h.f7726a.d;
+                    j2 = qVar.i.h.f4887a.d;
                 }
             } else {
                 j2 = j3;
             }
             return a(a(a2, j4, j2), j4, j4);
         }
-        s.a aVar = rVar.f7726a;
-        this.e.a(aVar.f7484a, this.b, false);
+        s.a aVar = rVar.f4887a;
+        this.e.a(aVar.f4645a, this.b, false);
         if (aVar.a()) {
             int i2 = aVar.b;
             int d = this.b.d(i2);
             if (d == -1) {
                 return null;
             }
-            int a4 = this.b.a(i2, aVar.f7485c);
+            int a4 = this.b.a(i2, aVar.f4646c);
             if (a4 < d) {
                 if (this.b.b(i2, a4)) {
-                    return a(aVar.f7484a, i2, a4, rVar.d, aVar.d);
+                    return a(aVar.f4645a, i2, a4, rVar.d, aVar.d);
                 }
                 return null;
             }
-            return b(aVar.f7484a, rVar.d, aVar.d);
-        } else if (rVar.f7727c != Long.MIN_VALUE) {
-            int a5 = this.b.a(rVar.f7727c);
+            return b(aVar.f4645a, rVar.d, aVar.d);
+        } else if (rVar.f4888c != Long.MIN_VALUE) {
+            int a5 = this.b.a(rVar.f4888c);
             if (a5 == -1) {
-                return b(aVar.f7484a, rVar.f7727c, aVar.d);
+                return b(aVar.f4645a, rVar.f4888c, aVar.d);
             }
             int b = this.b.b(a5);
             if (this.b.b(a5, b)) {
-                return a(aVar.f7484a, a5, b, rVar.f7727c, aVar.d);
+                return a(aVar.f4645a, a5, b, rVar.f4888c, aVar.d);
             }
             return null;
         } else {
@@ -115,7 +115,7 @@ final class s {
             }
             int b2 = this.b.b(i3);
             if (this.b.b(i3, b2)) {
-                return a(aVar.f7484a, i3, b2, this.b.d, aVar.d);
+                return a(aVar.f4645a, i3, b2, this.b.d, aVar.d);
             }
             return null;
         }
@@ -123,32 +123,32 @@ final class s {
 
     private r a(r rVar, s.a aVar) {
         long j = rVar.b;
-        long j2 = rVar.f7727c;
+        long j2 = rVar.f4888c;
         boolean b = b(aVar, j2);
         boolean a2 = a(aVar, b);
-        this.e.a(aVar.f7484a, this.b, false);
-        return new r(aVar, j, j2, rVar.d, aVar.a() ? this.b.c(aVar.b, aVar.f7485c) : j2 == Long.MIN_VALUE ? this.b.d : j2, b, a2);
+        this.e.a(aVar.f4645a, this.b, false);
+        return new r(aVar, j, j2, rVar.d, aVar.a() ? this.b.c(aVar.b, aVar.f4646c) : j2 == Long.MIN_VALUE ? this.b.d : j2, b, a2);
     }
 
     private r a(u uVar) {
-        return a(uVar.f7739c, uVar.e, uVar.d);
+        return a(uVar.f4900c, uVar.e, uVar.d);
     }
 
     private boolean a(s.a aVar, boolean z) {
-        return !this.e.a(this.e.a(aVar.f7484a, this.b, false).f7162c, this.f7729c, false).e && this.e.b(aVar.f7484a, this.b, this.f7729c, this.f, this.g) && z;
+        return !this.e.a(this.e.a(aVar.f4645a, this.b, false).f4323c, this.f4890c, false).e && this.e.b(aVar.f4645a, this.b, this.f4890c, this.f, this.g) && z;
     }
 
     private static boolean a(q qVar, r rVar) {
         r rVar2 = qVar.h;
-        return rVar2.b == rVar.b && rVar2.f7727c == rVar.f7727c && rVar2.f7726a.equals(rVar.f7726a);
+        return rVar2.b == rVar.b && rVar2.f4888c == rVar.f4888c && rVar2.f4887a.equals(rVar.f4887a);
     }
 
     private long b(int i) {
         int a2;
         Object obj = this.e.a(i, this.b, true).b;
-        int i2 = this.b.f7162c;
+        int i2 = this.b.f4323c;
         Object obj2 = this.l;
-        if (obj2 != null && (a2 = this.e.a(obj2)) != -1 && this.e.a(a2, this.b, false).f7162c == i2) {
+        if (obj2 != null && (a2 = this.e.a(obj2)) != -1 && this.e.a(a2, this.b, false).f4323c == i2) {
             return this.m;
         }
         q e = e();
@@ -164,13 +164,13 @@ final class s {
                         return j;
                     }
                     int a3 = this.e.a(qVar2.b);
-                    if (a3 != -1 && this.e.a(a3, this.b, false).f7162c == i2) {
-                        return qVar2.h.f7726a.d;
+                    if (a3 != -1 && this.e.a(a3, this.b, false).f4323c == i2) {
+                        return qVar2.h.f4887a.d;
                     }
                     e2 = qVar2.i;
                 }
             } else if (qVar.b.equals(obj)) {
-                return qVar.h.f7726a.d;
+                return qVar.h.f4887a.d;
             } else {
                 e = qVar.i;
             }
@@ -179,7 +179,7 @@ final class s {
 
     private r b(int i, long j, long j2) {
         s.a aVar = new s.a(i, j2);
-        this.e.a(aVar.f7484a, this.b, false);
+        this.e.a(aVar.f4645a, this.b, false);
         int b = this.b.b(j);
         long a2 = b == -1 ? Long.MIN_VALUE : this.b.a(b);
         boolean b2 = b(aVar, a2);
@@ -187,7 +187,7 @@ final class s {
     }
 
     private boolean b(s.a aVar, long j) {
-        int c2 = this.e.a(aVar.f7484a, this.b, false).c();
+        int c2 = this.e.a(aVar.f4645a, this.b, false).c();
         if (c2 == 0) {
             return true;
         }
@@ -200,7 +200,7 @@ final class s {
         if (d == -1) {
             return false;
         }
-        if (a2 && aVar.b == i && aVar.f7485c == d - 1) {
+        if (a2 && aVar.b == i && aVar.f4646c == d - 1) {
             return true;
         }
         return !a2 && this.b.b(i) == d;
@@ -213,17 +213,17 @@ final class s {
             return true;
         }
         while (true) {
-            int a2 = this.e.a(qVar.h.f7726a.f7484a, this.b, this.f7729c, this.f, this.g);
+            int a2 = this.e.a(qVar.h.f4887a.f4645a, this.b, this.f4890c, this.f, this.g);
             while (qVar.i != null && !qVar.h.f) {
                 qVar = qVar.i;
             }
-            if (a2 == -1 || qVar.i == null || qVar.i.h.f7726a.f7484a != a2) {
+            if (a2 == -1 || qVar.i == null || qVar.i.h.f4887a.f4645a != a2) {
                 break;
             }
             qVar = qVar.i;
         }
         boolean a3 = a(qVar);
-        qVar.h = a(qVar.h, qVar.h.f7726a);
+        qVar.h = a(qVar.h, qVar.h.f4887a);
         return (a3 && f()) ? false : true;
     }
 
@@ -237,16 +237,16 @@ final class s {
         this.l = null;
         this.j = qVar2;
         this.k++;
-        return qVar2.f7724a;
+        return qVar2.f4885a;
     }
 
     public final s.a a(int i, long j) {
         long j2;
         int a2;
         Object obj = this.e.a(i, this.b, true).b;
-        int i2 = this.b.f7162c;
+        int i2 = this.b.f4323c;
         Object obj2 = this.l;
-        if (obj2 == null || (a2 = this.e.a(obj2)) == -1 || this.e.a(a2, this.b, false).f7162c != i2) {
+        if (obj2 == null || (a2 = this.e.a(obj2)) == -1 || this.e.a(a2, this.b, false).f4323c != i2) {
             q e = e();
             while (true) {
                 q qVar = e;
@@ -260,14 +260,14 @@ final class s {
                             break;
                         }
                         int a3 = this.e.a(qVar2.b);
-                        if (a3 != -1 && this.e.a(a3, this.b, false).f7162c == i2) {
-                            j2 = qVar2.h.f7726a.d;
+                        if (a3 != -1 && this.e.a(a3, this.b, false).f4323c == i2) {
+                            j2 = qVar2.h.f4887a.d;
                             break;
                         }
                         e2 = qVar2.i;
                     }
                 } else if (qVar.b.equals(obj)) {
-                    j2 = qVar.h.f7726a.d;
+                    j2 = qVar.h.f4887a.d;
                     break;
                 } else {
                     e = qVar.i;
@@ -281,11 +281,11 @@ final class s {
 
     public final r a(long j, u uVar) {
         q qVar = this.j;
-        return qVar == null ? a(uVar.f7739c, uVar.e, uVar.d) : a(qVar, j);
+        return qVar == null ? a(uVar.f4900c, uVar.e, uVar.d) : a(qVar, j);
     }
 
     public final r a(r rVar, int i) {
-        return a(rVar, rVar.f7726a.a(i));
+        return a(rVar, rVar.f4887a.a(i));
     }
 
     public final void a(long j) {
@@ -293,7 +293,7 @@ final class s {
         if (qVar == null || !qVar.f) {
             return;
         }
-        qVar.f7724a.a_(j - qVar.e);
+        qVar.f4885a.a_(j - qVar.e);
     }
 
     public final void a(ae aeVar) {
@@ -315,11 +315,11 @@ final class s {
 
     public final boolean a(com.anythink.expressad.exoplayer.h.r rVar) {
         q qVar = this.j;
-        return qVar != null && qVar.f7724a == rVar;
+        return qVar != null && qVar.f4885a == rVar;
     }
 
     public final boolean a(s.a aVar, long j) {
-        int i = aVar.f7484a;
+        int i = aVar.f4645a;
         q e = e();
         q qVar = null;
         while (e != null) {
@@ -334,13 +334,13 @@ final class s {
                 }
                 e.h = a(e.h, i);
                 r rVar = e.h;
-                if (!(rVar.b == a2.b && rVar.f7727c == a2.f7727c && rVar.f7726a.equals(a2.f7726a))) {
+                if (!(rVar.b == a2.b && rVar.f4888c == a2.f4888c && rVar.f4887a.equals(a2.f4887a))) {
                     return !a(qVar);
                 }
             }
             int i2 = i;
             if (e.h.f) {
-                i2 = this.e.a(i, this.b, this.f7729c, this.f, this.g);
+                i2 = this.e.a(i, this.b, this.f4890c, this.f, this.g);
             }
             qVar = e;
             e = e.i;
@@ -379,7 +379,7 @@ final class s {
         q e = e();
         if (e != null) {
             this.l = z ? e.b : null;
-            this.m = e.h.f7726a.d;
+            this.m = e.h.f4887a.d;
             e.c();
             a(e);
         } else if (!z) {
@@ -427,7 +427,7 @@ final class s {
             if (i == 0) {
                 this.j = null;
                 this.l = this.h.b;
-                this.m = this.h.h.f7726a.d;
+                this.m = this.h.h.f4887a.d;
             }
             this.h = this.h.i;
         } else {

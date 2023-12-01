@@ -21,11 +21,11 @@ public class d {
     private static DexClassLoader b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static Looper f38936c;
+    private static Looper f25245c;
     private static d d;
 
     /* renamed from: a  reason: collision with root package name */
-    public String f38937a;
+    public String f25246a;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/smtt/utils/d$a.class */
     public interface a {
@@ -37,8 +37,8 @@ public class d {
     }
 
     private d(Context context) {
-        this.f38937a = "";
-        this.f38937a = context.getDir("debugtbs", 0).getAbsolutePath() + File.separator + "plugin";
+        this.f25246a = "";
+        this.f25246a = context.getDir("debugtbs", 0).getAbsolutePath() + File.separator + "plugin";
     }
 
     public static d a(Context context) {
@@ -48,6 +48,7 @@ public class d {
         return d;
     }
 
+    /* JADX WARN: Type inference failed for: r0v0, types: [com.tencent.smtt.utils.d$2] */
     public static void a(final String str, final a aVar) {
         new Thread() { // from class: com.tencent.smtt.utils.d.2
             @Override // java.lang.Thread, java.lang.Runnable
@@ -64,7 +65,7 @@ public class d {
                         FileOutputStream fileOutputStream2 = null;
                         fileOutputStream = null;
                         try {
-                            FileOutputStream d2 = FileUtil.d(new File(String.this));
+                            FileOutputStream d2 = FileUtil.d(new File(str));
                             byte[] bArr = new byte[8192];
                             int i = 0;
                             while (true) {
@@ -142,7 +143,7 @@ public class d {
         textView.setText("加载中，请稍后...");
         relativeLayout.addView(textView, layoutParams);
         webView.addView(relativeLayout, new FrameLayout.LayoutParams(-1, -1));
-        String str2 = this.f38937a + File.separator + "DebugPlugin.tbs";
+        String str2 = this.f25246a + File.separator + "DebugPlugin.tbs";
         FileUtil.b(new File(str2));
         a(str2, new a() { // from class: com.tencent.smtt.utils.d.1
             @Override // com.tencent.smtt.utils.d.a
@@ -152,7 +153,7 @@ public class d {
                     public void run() {
                         Toast.makeText(context, "下载成功", 0).show();
                         relativeLayout.setVisibility(4);
-                        d.this.a(str, webView, context, d.f38936c);
+                        d.this.a(str, webView, context, d.f25245c);
                     }
                 });
             }
@@ -182,10 +183,10 @@ public class d {
 
     public void a(String str, WebView webView, Context context, Looper looper) {
         TbsLog.i("debugtbs", "showPluginView -- url: " + str + "; webview: " + webView + "; context: " + context);
-        String str2 = this.f38937a + File.separator + "DebugPlugin.apk";
-        File file = new File(this.f38937a + File.separator + "DebugPlugin.tbs");
+        String str2 = this.f25246a + File.separator + "DebugPlugin.apk";
+        File file = new File(this.f25246a + File.separator + "DebugPlugin.tbs");
         File file2 = new File(str2);
-        f38936c = looper;
+        f25245c = looper;
         if (file.exists()) {
             file2.delete();
             file.renameTo(file2);
@@ -204,7 +205,7 @@ public class d {
                 file2.delete();
                 return;
             }
-            String str3 = this.f38937a + File.separator + "opt";
+            String str3 = this.f25246a + File.separator + "opt";
             File file3 = new File(str3);
             if (!file3.exists()) {
                 file3.mkdirs();
@@ -216,7 +217,7 @@ public class d {
             hashMap.put("url", str);
             hashMap.put("tbs_version", "" + WebView.getTbsSDKVersion(context));
             hashMap.put("tbs_core_version", "" + WebView.getTbsCoreVersion(context));
-            if (f38936c != null) {
+            if (f25245c != null) {
                 hashMap.put("looper", looper);
             }
             Object newInstance = b.loadClass("com.tencent.tbs.debug.plugin.DebugView").getConstructor(Context.class, Map.class).newInstance(context, hashMap);

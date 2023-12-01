@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class HeaderGroupChooseAtBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29057a;
+    private final LinearLayout f15367a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29057a;
+        return this.f15367a;
     }
 }

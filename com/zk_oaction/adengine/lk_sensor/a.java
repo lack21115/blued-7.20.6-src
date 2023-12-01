@@ -4,16 +4,15 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.os.SystemClock;
 import android.text.TextUtils;
-import com.blued.android.module.common.web.LoaderConstants;
 
 /* loaded from: source-8829756-dex2jar.jar:com/zk_oaction/adengine/lk_sensor/a.class */
 public class a extends d {
 
     /* renamed from: c  reason: collision with root package name */
-    private static float f41972c = 0.8f;
+    private static float f28281c = 0.8f;
 
     /* renamed from: a  reason: collision with root package name */
-    public float[] f41973a;
+    public float[] f28282a;
     public long b;
     private boolean i;
     private long j;
@@ -34,7 +33,7 @@ public class a extends d {
             if (this.f == null) {
                 return;
             }
-            this.f41973a = new float[3];
+            this.f28282a = new float[3];
         } catch (Throwable th) {
         }
     }
@@ -62,16 +61,16 @@ public class a extends d {
                     String[] strArr = this.g;
                     if (strArr[i2] != null) {
                         float[] fArr = this.n;
-                        float f = f41972c;
+                        float f = f28281c;
                         float f2 = fArr[i2];
                         float[] fArr2 = sensorEvent.values;
                         fArr[i2] = ((1.0f - f) * fArr2[i2]) + (f2 * f);
                         this.o[i2] = fArr2[i2] - fArr[i2];
-                        float[] fArr3 = this.f41973a;
+                        float[] fArr3 = this.f28282a;
                         fArr3[i2] = (fArr3[i2] * 0.85f) + (fArr2[i2] * 0.15f);
                         com.zk_oaction.adengine.lk_sdk.b bVar = this.d;
                         String str = strArr[i2];
-                        bVar.a(str, "" + this.f41973a[i2]);
+                        bVar.a(str, "" + this.f28282a[i2]);
                     }
                     i = i2 + 1;
                 }
@@ -89,10 +88,10 @@ public class a extends d {
                     }
                 }
                 if (!this.i && System.currentTimeMillis() - this.b > 500) {
-                    String b3 = this.d.b(LoaderConstants.SHAKE);
+                    String b3 = this.d.b("shake");
                     int parseInt = Integer.parseInt((b3 == null || b3.isEmpty()) ? "0" : "0");
                     com.zk_oaction.adengine.lk_sdk.b bVar2 = this.d;
-                    bVar2.a(LoaderConstants.SHAKE, "" + (parseInt + 1));
+                    bVar2.a("shake", "" + (parseInt + 1));
                     this.i = true;
                     this.j = SystemClock.uptimeMillis();
                 }

@@ -6,11 +6,11 @@ import java.util.List;
 public class p {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f23847a;
+    private int f10239a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f23848c;
+    private String f10240c;
     private int d;
     private int e;
     private String f;
@@ -26,22 +26,22 @@ public class p {
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private int f23849a;
+        private int f10241a;
         private int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private String f23850c;
+        private String f10242c;
 
         public int a() {
-            return this.f23849a;
+            return this.f10241a;
         }
 
         public void a(int i) {
-            this.f23849a = i;
+            this.f10241a = i;
         }
 
         public void a(String str) {
-            this.f23850c = str;
+            this.f10242c = str;
         }
 
         public int b() {
@@ -53,7 +53,7 @@ public class p {
         }
 
         public String c() {
-            return this.f23850c;
+            return this.f10242c;
         }
     }
 
@@ -61,15 +61,15 @@ public class p {
     public static class b {
 
         /* renamed from: a  reason: collision with root package name */
-        private int f23851a;
+        private int f10243a;
         private int b;
 
         public int a() {
-            return this.f23851a;
+            return this.f10243a;
         }
 
         public void a(int i) {
-            this.f23851a = i;
+            this.f10243a = i;
         }
 
         public int b() {
@@ -82,11 +82,11 @@ public class p {
     }
 
     public int a() {
-        return this.f23847a;
+        return this.f10239a;
     }
 
     public void a(int i) {
-        this.f23847a = i;
+        this.f10239a = i;
     }
 
     public void a(b bVar) {
@@ -110,11 +110,11 @@ public class p {
     }
 
     public void b(String str) {
-        this.f23848c = str;
+        this.f10240c = str;
     }
 
     public String c() {
-        return this.f23848c;
+        return this.f10240c;
     }
 
     public void c(int i) {

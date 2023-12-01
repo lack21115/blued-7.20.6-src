@@ -8,7 +8,7 @@ import android.provider.Settings;
 public class f {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f7948a = "DomainSameSDKTool";
+    private static String f5108a = "DomainSameSDKTool";
 
     private static boolean a(Context context) {
         if (context == null) {
@@ -18,7 +18,7 @@ public class f {
             Resources resources = context.getResources();
             return resources.getDimensionPixelSize(resources.getIdentifier(Settings.System.NAVIGATION_BAR_HEIGHT, "dimen", "android")) > 0;
         } catch (Throwable th) {
-            o.b(f7948a, th.getMessage(), th);
+            o.b(f5108a, th.getMessage(), th);
             return false;
         }
     }

@@ -19,7 +19,7 @@ public class CLArray extends CLContainer {
         String json = toJSON();
         if (i2 > 0 || json.length() + i >= e) {
             sb.append("[\n");
-            Iterator<CLElement> it = this.f2071a.iterator();
+            Iterator<CLElement> it = this.f2023a.iterator();
             boolean z = true;
             while (it.hasNext()) {
                 CLElement next = it.next();
@@ -48,7 +48,7 @@ public class CLArray extends CLContainer {
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f2071a.size()) {
+            if (i2 >= this.f2023a.size()) {
                 return ((Object) sb) + "]";
             }
             if (z) {
@@ -56,7 +56,7 @@ public class CLArray extends CLContainer {
             } else {
                 sb.append(", ");
             }
-            sb.append(this.f2071a.get(i2).toJSON());
+            sb.append(this.f2023a.get(i2).toJSON());
             i = i2 + 1;
         }
     }

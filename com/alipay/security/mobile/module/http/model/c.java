@@ -2,9 +2,7 @@ package com.alipay.security.mobile.module.http.model;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alipay/security/mobile/module/http/model/c.class */
 public class c extends a {
-
-    /* renamed from: c  reason: collision with root package name */
-    public static final int f4719c = 1;
+    public static final int c = 1;
     public static final int d = 2;
     public static final int e = 3;
     public static final String f = "APPKEY_ERROR";
@@ -20,7 +18,7 @@ public class c extends a {
     public String p = "";
 
     public int a() {
-        return this.f4718a ? com.alipay.security.mobile.module.a.a.a(this.h) ? 2 : 1 : f.equals(this.b) ? 3 : 2;
+        return this.a ? com.alipay.security.mobile.module.a.a.a(this.h) ? 2 : 1 : f.equals(this.b) ? 3 : 2;
     }
 
     public boolean b() {

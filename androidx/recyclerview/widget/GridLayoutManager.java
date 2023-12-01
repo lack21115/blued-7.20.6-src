@@ -17,11 +17,11 @@ public class GridLayoutManager extends LinearLayoutManager {
     public static final int DEFAULT_SPAN_COUNT = -1;
 
     /* renamed from: a  reason: collision with root package name */
-    boolean f3271a;
+    boolean f3223a;
     int b;
 
     /* renamed from: c  reason: collision with root package name */
-    int[] f3272c;
+    int[] f3224c;
     View[] d;
     final SparseIntArray e;
     final SparseIntArray f;
@@ -47,41 +47,41 @@ public class GridLayoutManager extends LinearLayoutManager {
         public static final int INVALID_SPAN_ID = -1;
 
         /* renamed from: a  reason: collision with root package name */
-        int f3273a;
+        int f3225a;
         int b;
 
         public LayoutParams(int i, int i2) {
             super(i, i2);
-            this.f3273a = -1;
+            this.f3225a = -1;
             this.b = 0;
         }
 
         public LayoutParams(Context context, AttributeSet attributeSet) {
             super(context, attributeSet);
-            this.f3273a = -1;
+            this.f3225a = -1;
             this.b = 0;
         }
 
         public LayoutParams(ViewGroup.LayoutParams layoutParams) {
             super(layoutParams);
-            this.f3273a = -1;
+            this.f3225a = -1;
             this.b = 0;
         }
 
         public LayoutParams(ViewGroup.MarginLayoutParams marginLayoutParams) {
             super(marginLayoutParams);
-            this.f3273a = -1;
+            this.f3225a = -1;
             this.b = 0;
         }
 
         public LayoutParams(RecyclerView.LayoutParams layoutParams) {
             super(layoutParams);
-            this.f3273a = -1;
+            this.f3225a = -1;
             this.b = 0;
         }
 
         public int getSpanIndex() {
-            return this.f3273a;
+            return this.f3225a;
         }
 
         public int getSpanSize() {
@@ -289,7 +289,7 @@ public class GridLayoutManager extends LinearLayoutManager {
 
     public GridLayoutManager(Context context, int i) {
         super(context);
-        this.f3271a = false;
+        this.f3223a = false;
         this.b = -1;
         this.e = new SparseIntArray();
         this.f = new SparseIntArray();
@@ -300,7 +300,7 @@ public class GridLayoutManager extends LinearLayoutManager {
 
     public GridLayoutManager(Context context, int i, int i2, boolean z) {
         super(context, i2, z);
-        this.f3271a = false;
+        this.f3223a = false;
         this.b = -1;
         this.e = new SparseIntArray();
         this.f = new SparseIntArray();
@@ -311,7 +311,7 @@ public class GridLayoutManager extends LinearLayoutManager {
 
     public GridLayoutManager(Context context, AttributeSet attributeSet, int i, int i2) {
         super(context, attributeSet, i, i2);
-        this.f3271a = false;
+        this.f3223a = false;
         this.b = -1;
         this.e = new SparseIntArray();
         this.f = new SparseIntArray();
@@ -361,7 +361,7 @@ public class GridLayoutManager extends LinearLayoutManager {
     }
 
     private void a(int i) {
-        this.f3272c = a(this.f3272c, this.b, i);
+        this.f3224c = a(this.f3224c, this.b, i);
     }
 
     private void a(View view, int i, int i2, boolean z) {
@@ -378,7 +378,7 @@ public class GridLayoutManager extends LinearLayoutManager {
         Rect rect = layoutParams.d;
         int i2 = rect.top + rect.bottom + layoutParams.topMargin + layoutParams.bottomMargin;
         int i3 = rect.left + rect.right + layoutParams.leftMargin + layoutParams.rightMargin;
-        int a2 = a(layoutParams.f3273a, layoutParams.b);
+        int a2 = a(layoutParams.f3225a, layoutParams.b);
         if (this.mOrientation == 1) {
             childMeasureSpec2 = getChildMeasureSpec(a2, i, i3, layoutParams.width, false);
             childMeasureSpec = getChildMeasureSpec(this.mOrientationHelper.getTotalSpace(), getHeightMode(), i2, layoutParams.height, true);
@@ -406,7 +406,7 @@ public class GridLayoutManager extends LinearLayoutManager {
             View view = this.d[i2];
             LayoutParams layoutParams = (LayoutParams) view.getLayoutParams();
             layoutParams.b = c(recycler, state, getPosition(view));
-            layoutParams.f3273a = i4;
+            layoutParams.f3225a = i4;
             i4 += layoutParams.b;
             i2 += i3;
         }
@@ -625,10 +625,10 @@ public class GridLayoutManager extends LinearLayoutManager {
 
     int a(int i, int i2) {
         if (this.mOrientation != 1 || !isLayoutRTL()) {
-            int[] iArr = this.f3272c;
+            int[] iArr = this.f3224c;
             return iArr[i2 + i] - iArr[i];
         }
-        int[] iArr2 = this.f3272c;
+        int[] iArr2 = this.f3224c;
         int i3 = this.b;
         return iArr2[i3 - i] - iArr2[(i3 - i) - i2];
     }
@@ -788,7 +788,7 @@ public class GridLayoutManager extends LinearLayoutManager {
         View a2;
         int modeInOther = this.mOrientationHelper.getModeInOther();
         boolean z = modeInOther != 1073741824;
-        int i9 = getChildCount() > 0 ? this.f3272c[this.b] : 0;
+        int i9 = getChildCount() > 0 ? this.f3224c[this.b] : 0;
         if (z) {
             c();
         }
@@ -886,7 +886,7 @@ public class GridLayoutManager extends LinearLayoutManager {
                 Rect rect = layoutParams.d;
                 int i23 = rect.top + rect.bottom + layoutParams.topMargin + layoutParams.bottomMargin;
                 int i24 = rect.left + rect.right + layoutParams.leftMargin + layoutParams.rightMargin;
-                int a3 = a(layoutParams.f3273a, layoutParams.b);
+                int a3 = a(layoutParams.f3225a, layoutParams.b);
                 if (this.mOrientation == 1) {
                     makeMeasureSpec = getChildMeasureSpec(a3, 1073741824, i24, layoutParams.width, false);
                     childMeasureSpec = View.MeasureSpec.makeMeasureSpec(i16 - i23, 1073741824);
@@ -926,15 +926,15 @@ public class GridLayoutManager extends LinearLayoutManager {
             View view4 = this.d[i25];
             LayoutParams layoutParams2 = (LayoutParams) view4.getLayoutParams();
             if (this.mOrientation != 1) {
-                int paddingTop = getPaddingTop() + this.f3272c[layoutParams2.f3273a];
+                int paddingTop = getPaddingTop() + this.f3224c[layoutParams2.f3225a];
                 i6 = paddingTop;
                 i4 = this.mOrientationHelper.getDecoratedMeasurementInOther(view4) + paddingTop;
             } else if (isLayoutRTL()) {
-                i3 = getPaddingLeft() + this.f3272c[this.b - layoutParams2.f3273a];
+                i3 = getPaddingLeft() + this.f3224c[this.b - layoutParams2.f3225a];
                 i2 = i3 - this.mOrientationHelper.getDecoratedMeasurementInOther(view4);
                 i6 = i5;
             } else {
-                int paddingLeft = getPaddingLeft() + this.f3272c[layoutParams2.f3273a];
+                int paddingLeft = getPaddingLeft() + this.f3224c[layoutParams2.f3225a];
                 i3 = this.mOrientationHelper.getDecoratedMeasurementInOther(view4) + paddingLeft;
                 i7 = i5;
                 i8 = paddingLeft;
@@ -963,8 +963,9 @@ public class GridLayoutManager extends LinearLayoutManager {
         Arrays.fill(this.d, (Object) null);
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     @Override // androidx.recyclerview.widget.LinearLayoutManager
-    void onAnchorReady(RecyclerView.Recycler recycler, RecyclerView.State state, LinearLayoutManager.AnchorInfo anchorInfo, int i) {
+    public void onAnchorReady(RecyclerView.Recycler recycler, RecyclerView.State state, LinearLayoutManager.AnchorInfo anchorInfo, int i) {
         super.onAnchorReady(recycler, state, anchorInfo, i);
         c();
         if (state.getItemCount() > 0 && !state.isPreLayout()) {
@@ -1052,7 +1053,7 @@ public class GridLayoutManager extends LinearLayoutManager {
     @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
     public void onLayoutCompleted(RecyclerView.State state) {
         super.onLayoutCompleted(state);
-        this.f3271a = false;
+        this.f3223a = false;
     }
 
     @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
@@ -1073,20 +1074,20 @@ public class GridLayoutManager extends LinearLayoutManager {
     public void setMeasuredDimension(Rect rect, int i, int i2) {
         int i3;
         int i4;
-        if (this.f3272c == null) {
+        if (this.f3224c == null) {
             super.setMeasuredDimension(rect, i, i2);
         }
         int paddingLeft = getPaddingLeft() + getPaddingRight();
         int paddingTop = getPaddingTop() + getPaddingBottom();
         if (this.mOrientation == 1) {
             int chooseSize = chooseSize(i2, rect.height() + paddingTop, getMinimumHeight());
-            int[] iArr = this.f3272c;
+            int[] iArr = this.f3224c;
             int chooseSize2 = chooseSize(i, iArr[iArr.length - 1] + paddingLeft, getMinimumWidth());
             i4 = chooseSize;
             i3 = chooseSize2;
         } else {
             int chooseSize3 = chooseSize(i, rect.width() + paddingLeft, getMinimumWidth());
-            int[] iArr2 = this.f3272c;
+            int[] iArr2 = this.f3224c;
             int chooseSize4 = chooseSize(i2, iArr2[iArr2.length - 1] + paddingTop, getMinimumHeight());
             i3 = chooseSize3;
             i4 = chooseSize4;
@@ -1098,7 +1099,7 @@ public class GridLayoutManager extends LinearLayoutManager {
         if (i == this.b) {
             return;
         }
-        this.f3271a = true;
+        this.f3223a = true;
         if (i >= 1) {
             this.b = i;
             this.g.invalidateSpanIndexCache();
@@ -1126,6 +1127,6 @@ public class GridLayoutManager extends LinearLayoutManager {
 
     @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
     public boolean supportsPredictiveItemAnimations() {
-        return this.mPendingSavedState == null && !this.f3271a;
+        return this.mPendingSavedState == null && !this.f3223a;
     }
 }

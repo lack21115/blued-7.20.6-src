@@ -24,6 +24,6 @@ final /* synthetic */ class YYHomeMineFragment$liveDataObserver$3 extends Functi
     @Override // kotlin.jvm.functions.Function1
     public /* synthetic */ Unit invoke(List<? extends YYChatRoomFollowedModel> list) {
         a(list);
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

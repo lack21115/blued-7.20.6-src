@@ -19,10 +19,10 @@ public abstract class f implements e {
     private static final String b = f.class.getSimpleName();
 
     /* renamed from: a  reason: collision with root package name */
-    protected Context f4129a;
+    protected Context f4081a;
 
     public f(Context context) {
-        this.f4129a = context;
+        this.f4081a = context;
     }
 
     public static void a(Context context, String str) {
@@ -40,7 +40,7 @@ public abstract class f implements e {
     }
 
     private boolean b() {
-        return cn.com.chinatelecom.account.api.e.g.c(this.f4129a);
+        return cn.com.chinatelecom.account.api.e.g.c(this.f4081a);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -61,7 +61,7 @@ public abstract class f implements e {
     /* JADX INFO: Access modifiers changed from: protected */
     public HttpURLConnection d(String str, String str2, int i, g gVar) {
         URL url = new URL(str);
-        HttpURLConnection httpURLConnection = (HttpURLConnection) ((gVar.f4130a == null || !a()) ? url.openConnection() : gVar.f4130a.openConnection(url));
+        HttpURLConnection httpURLConnection = (HttpURLConnection) ((gVar.f4082a == null || !a()) ? url.openConnection() : gVar.f4082a.openConnection(url));
         httpURLConnection.setRequestProperty("accept", "*/*");
         if (i == 0) {
             httpURLConnection.setRequestMethod("GET");
@@ -78,7 +78,7 @@ public abstract class f implements e {
         }
         httpURLConnection.addRequestProperty(HttpHeaders.ACCEPT_CHARSET, "UTF-8");
         httpURLConnection.addRequestProperty("reqId", gVar.d);
-        httpURLConnection.addRequestProperty("deviceId", cn.com.chinatelecom.account.api.e.d.a(this.f4129a));
+        httpURLConnection.addRequestProperty("deviceId", cn.com.chinatelecom.account.api.e.d.a(this.f4081a));
         if (TextUtils.isEmpty(str2)) {
             httpURLConnection.connect();
             return httpURLConnection;
@@ -93,7 +93,7 @@ public abstract class f implements e {
     /* JADX INFO: Access modifiers changed from: protected */
     public HttpsURLConnection e(String str, String str2, int i, g gVar) {
         URL url = new URL(str);
-        HttpsURLConnection httpsURLConnection = (HttpsURLConnection) ((gVar.f4130a == null || !a()) ? url.openConnection() : gVar.f4130a.openConnection(url));
+        HttpsURLConnection httpsURLConnection = (HttpsURLConnection) ((gVar.f4082a == null || !a()) ? url.openConnection() : gVar.f4082a.openConnection(url));
         httpsURLConnection.setRequestProperty("accept", "*/*");
         if (i == 0) {
             httpsURLConnection.setRequestMethod("GET");
@@ -110,7 +110,7 @@ public abstract class f implements e {
         }
         httpsURLConnection.addRequestProperty(HttpHeaders.ACCEPT_CHARSET, "UTF-8");
         httpsURLConnection.addRequestProperty("reqId", gVar.d);
-        httpsURLConnection.addRequestProperty("deviceId", cn.com.chinatelecom.account.api.e.d.a(this.f4129a));
+        httpsURLConnection.addRequestProperty("deviceId", cn.com.chinatelecom.account.api.e.d.a(this.f4081a));
         if (gVar.i != null && !gVar.i.isEmpty()) {
             for (Map.Entry<String, String> entry : gVar.i.entrySet()) {
                 httpsURLConnection.addRequestProperty(entry.getKey(), entry.getValue());

@@ -40,10 +40,10 @@ public final class d extends com.kwad.sdk.core.download.kwai.b {
         }
     };
 
-    private static String a(a.C0519a c0519a, AdInfo adInfo, String str) {
+    private static String a(a.C0349a c0349a, AdInfo adInfo, String str) {
         String str2;
         if (com.kwad.sdk.core.response.a.a.ba(adInfo)) {
-            String mM = (c0519a.jG() == null || c0519a.jG().getCurrentShowShopItemInfo() == null) ? c0519a.mM() : c0519a.jG().getCurrentShowShopItemInfo().itemId;
+            String mM = (c0349a.jG() == null || c0349a.jG().getCurrentShowShopItemInfo() == null) ? c0349a.mM() : c0349a.jG().getCurrentShowShopItemInfo().itemId;
             if (TextUtils.isEmpty(mM)) {
                 return (str.contains("__itemId__") || str.contains("__simpleItemId__")) ? com.kwad.sdk.core.response.a.a.cs(adInfo) : str;
             }
@@ -57,11 +57,11 @@ public final class d extends com.kwad.sdk.core.download.kwai.b {
         return str;
     }
 
-    public static String a(a.C0519a c0519a, AdTemplate adTemplate) {
+    public static String a(a.C0349a c0349a, AdTemplate adTemplate) {
         AdInfo cb = com.kwad.sdk.core.response.a.d.cb(adTemplate);
         for (AdInfo.AdConversionInfo.DeeplinkItemInfo deeplinkItemInfo : cb.adConversionInfo.deeplinkConf) {
-            boolean contains = deeplinkItemInfo.areaConf.contains(Integer.valueOf(c0519a.de()));
-            boolean contains2 = deeplinkItemInfo.sceneConf.contains(Integer.valueOf(c0519a.mO()));
+            boolean contains = deeplinkItemInfo.areaConf.contains(Integer.valueOf(c0349a.de()));
+            boolean contains2 = deeplinkItemInfo.sceneConf.contains(Integer.valueOf(c0349a.mO()));
             if ((contains && contains2) || ((contains && deeplinkItemInfo.sceneConf.size() == 0) || (contains2 && deeplinkItemInfo.areaConf.size() == 0))) {
                 if (!TextUtils.isEmpty(deeplinkItemInfo.url)) {
                     return deeplinkItemInfo.url + cb.adConversionInfo.deeplinkExtra;
@@ -98,7 +98,7 @@ public final class d extends com.kwad.sdk.core.download.kwai.b {
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences
     */
-    private static java.lang.String a(java.lang.String r4, com.kwad.components.core.d.b.a.C0519a r5, com.kwad.sdk.core.response.model.AdInfo r6) {
+    private static java.lang.String a(java.lang.String r4, com.kwad.components.core.d.b.a.C0349a r5, com.kwad.sdk.core.response.model.AdInfo r6) {
         /*
             r0 = r5
             com.kwad.sdk.core.response.model.AdTemplate r0 = r0.getAdTemplate()
@@ -170,16 +170,16 @@ public final class d extends com.kwad.sdk.core.download.kwai.b {
         Ji = z;
     }
 
-    public static int b(a.C0519a c0519a, int i) {
-        Context context = c0519a.getContext();
-        AdTemplate adTemplate = c0519a.getAdTemplate();
+    public static int b(a.C0349a c0349a, int i) {
+        Context context = c0349a.getContext();
+        AdTemplate adTemplate = c0349a.getAdTemplate();
         if (adTemplate == null || context == null) {
             return 0;
         }
         Jj.setAdTemplate(adTemplate);
         com.kwad.sdk.core.b.b.vS();
         com.kwad.sdk.core.b.b.a(Jj);
-        String a2 = a(a(c0519a, adTemplate), c0519a, com.kwad.sdk.core.response.a.d.cb(adTemplate));
+        String a2 = a(a(c0349a, adTemplate), c0349a, com.kwad.sdk.core.response.a.d.cb(adTemplate));
         com.kwad.sdk.core.report.a.ahQ = ar(a2);
         int g = g(context, a2);
         if (g != 1) {
@@ -189,20 +189,20 @@ public final class d extends com.kwad.sdk.core.download.kwai.b {
             return g;
         }
         BusinessType businessType = null;
-        if (c0519a.getAdTemplate() != null) {
+        if (c0349a.getAdTemplate() != null) {
             businessType = null;
-            if (c0519a.getAdTemplate().mAdScene != null) {
-                businessType = KSLoggerReporter.bv(c0519a.getAdTemplate().mAdScene.getAdStyle());
+            if (c0349a.getAdTemplate().mAdScene != null) {
+                businessType = KSLoggerReporter.bv(c0349a.getAdTemplate().mAdScene.getAdStyle());
             }
         }
         KSLoggerReporter.ReportClient.CONVERT_DPLINK.buildMethodCheck(businessType, "dplinkSuccess");
-        com.kwad.sdk.core.report.a.a(adTemplate, "", i, c0519a.getClientParams());
+        com.kwad.sdk.core.report.a.a(adTemplate, "", i, c0349a.getClientParams());
         e(adTemplate, i);
         return g;
     }
 
-    private static String b(a.C0519a c0519a, AdInfo adInfo, String str) {
-        long j = c0519a.getAdTemplate().getmCurPlayTime();
+    private static String b(a.C0349a c0349a, AdInfo adInfo, String str) {
+        long j = c0349a.getAdTemplate().getmCurPlayTime();
         long j2 = j;
         if (j > 0) {
             j2 = Math.max(j - com.kwad.sdk.core.response.a.a.bc(adInfo), 0L);

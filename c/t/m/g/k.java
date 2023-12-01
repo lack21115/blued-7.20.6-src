@@ -4,7 +4,7 @@ import android.location.Location;
 import android.net.wifi.ScanResult;
 import android.os.Build;
 import android.os.SystemClock;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
+import com.huawei.hms.framework.common.ContainerUtils;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Collection;
@@ -18,11 +18,11 @@ import org.json.JSONObject;
 public class k {
 
     /* renamed from: a  reason: collision with root package name */
-    public static volatile String f3856a = "209";
+    public static volatile String f3808a = "209";
     public static volatile String b = "fc_sdk";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final Comparator<Object> f3857c = new a();
+    public static final Comparator<Object> f3809c = new a();
 
     /* loaded from: source-8756600-dex2jar.jar:c/t/m/g/k$a.class */
     public static final class a implements Comparator<Object> {
@@ -84,12 +84,12 @@ public class k {
                     break;
                 }
                 d dVar = list2.get(i2);
-                sb2.append(i2 == 0 ? "" : ";");
-                sb2.append(dVar.f3781a);
+                sb2.append(i2 == 0 ? "" : com.huawei.openalliance.ad.constant.t.aE);
+                sb2.append(dVar.f3733a);
                 sb2.append(",");
                 sb2.append(dVar.b);
                 sb2.append(",");
-                sb2.append(dVar.f3782c);
+                sb2.append(dVar.f3734c);
                 sb2.append(",");
                 sb2.append(dVar.e);
                 sb2.append(",");
@@ -108,7 +108,7 @@ public class k {
             sb6 = sb3;
             if (list.size() > 0) {
                 Object[] array = list.toArray();
-                Arrays.sort(array, f3857c);
+                Arrays.sort(array, f3809c);
                 long elapsedRealtime = SystemClock.elapsedRealtime() / 1000;
                 int i3 = 0;
                 while (true) {
@@ -118,13 +118,13 @@ public class k {
                         break;
                     }
                     ScanResult scanResult = (ScanResult) array[i3];
-                    sb3.append(i3 == 0 ? "" : "&");
+                    sb3.append(i3 == 0 ? "" : ContainerUtils.FIELD_DELIMITER);
                     sb3.append(scanResult.BSSID.replaceAll(":", "").toLowerCase());
-                    sb3.append("&");
+                    sb3.append(ContainerUtils.FIELD_DELIMITER);
                     sb3.append(scanResult.level);
                     if (Build.VERSION.SDK_INT >= 17) {
                         int i4 = scanResult.timestamp > 0 ? (int) (elapsedRealtime - ((scanResult.timestamp / 1000) / 1000)) : -1;
-                        sb4.append(i3 == 0 ? "" : "&");
+                        sb4.append(i3 == 0 ? "" : ContainerUtils.FIELD_DELIMITER);
                         sb4.append(i4);
                     }
                     i3++;
@@ -136,16 +136,16 @@ public class k {
         if (a2 != null && a2.length() > 5) {
             JSONObject jSONObject = new JSONObject(a2);
             sb7.append(jSONObject.optString("mac").replaceAll(":", "").toLowerCase());
-            sb7.append("&");
+            sb7.append(ContainerUtils.FIELD_DELIMITER);
             sb7.append(jSONObject.optString("ssid"));
-            sb7.append("&");
+            sb7.append(ContainerUtils.FIELD_DELIMITER);
             sb7.append(jSONObject.optString("rssi"));
             if (sb7.length() < 5) {
                 sb7.setLength(0);
             }
         }
-        String str = cVar.b().replaceAll("[| _]", "") + BridgeUtil.UNDERLINE_STR + cVar.c();
-        String str2 = cVar.d().replaceAll("[| _]", "") + BridgeUtil.UNDERLINE_STR + cVar.e().replaceAll("[| _]", "");
+        String str = cVar.b().replaceAll("[| _]", "") + "_" + cVar.c();
+        String str2 = cVar.d().replaceAll("[| _]", "") + "_" + cVar.e().replaceAll("[| _]", "");
         StringBuilder sb8 = new StringBuilder();
         SimpleDateFormat b2 = t2.b("yyyy-MM-dd HH:mm:ss");
         sb8.append("[");
@@ -153,7 +153,7 @@ public class k {
         sb8.append("]:");
         sb8.append(cVar.f());
         sb8.append("|");
-        sb8.append(f3856a);
+        sb8.append(f3808a);
         sb8.append("|");
         sb8.append(cVar.a());
         sb8.append("|");
@@ -266,6 +266,6 @@ public class k {
     }
 
     public static void b(String str) {
-        f3856a = str;
+        f3808a = str;
     }
 }

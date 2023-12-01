@@ -10,9 +10,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/extensions/BluedVBDelegateExtKt$viewBinding$1.class */
 public final /* synthetic */ class BluedVBDelegateExtKt$viewBinding$1 extends FunctionReferenceImpl implements Function1<Activity, View> {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final BluedVBDelegateExtKt$viewBinding$1 f10782a = new BluedVBDelegateExtKt$viewBinding$1();
+    public static final BluedVBDelegateExtKt$viewBinding$1 a = new BluedVBDelegateExtKt$viewBinding$1();
 
     public BluedVBDelegateExtKt$viewBinding$1() {
         super(1, BluedVBDelegateExtKt.class, "findRootView", "findRootView(Landroid/app/Activity;)Landroid/view/View;", 1);

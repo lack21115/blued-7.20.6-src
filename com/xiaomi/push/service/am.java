@@ -10,15 +10,15 @@ import java.util.Queue;
 public class am {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Object f41606a = new Object();
+    private static Object f27915a = new Object();
 
     /* renamed from: a  reason: collision with other field name */
-    private static Map<String, Queue<String>> f974a = new HashMap();
+    private static Map<String, Queue<String>> f927a = new HashMap();
 
     public static boolean a(XMPushService xMPushService, String str, String str2) {
-        synchronized (f41606a) {
+        synchronized (f27915a) {
             SharedPreferences sharedPreferences = xMPushService.getSharedPreferences("push_message_ids", 0);
-            Queue<String> queue = f974a.get(str);
+            Queue<String> queue = f927a.get(str);
             LinkedList linkedList = queue;
             if (queue == null) {
                 String[] split = sharedPreferences.getString(str, "").split(",");
@@ -33,7 +33,7 @@ public class am {
                     linkedList.add(split[i2]);
                     i = i2 + 1;
                 }
-                f974a.put(str, linkedList);
+                f927a.put(str, linkedList);
             }
             if (linkedList.contains(str2)) {
                 return true;

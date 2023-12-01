@@ -48,17 +48,17 @@ public class ServerSetting {
     public static final String URL_PRIZE_QUERY_UNEXCHANGE = "http://fusion.qq.com/cgi-bin/prize_sharing/query_unexchange_prize.cgi";
 
     /* renamed from: a  reason: collision with root package name */
-    private static ServerSetting f38282a;
+    private static ServerSetting f24591a;
     private volatile WeakReference<SharedPreferences> b = null;
 
     public static ServerSetting getInstance() {
         ServerSetting serverSetting;
         synchronized (ServerSetting.class) {
             try {
-                if (f38282a == null) {
-                    f38282a = new ServerSetting();
+                if (f24591a == null) {
+                    f24591a = new ServerSetting();
                 }
-                serverSetting = f38282a;
+                serverSetting = f24591a;
             } catch (Throwable th) {
                 throw th;
             }

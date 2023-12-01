@@ -17,10 +17,10 @@ import java.util.List;
 public class t4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final t3 f3995a;
+    public final t3 f3947a;
 
     /* renamed from: c  reason: collision with root package name */
-    public final LocationManager f3996c;
+    public final LocationManager f3948c;
     public final HandlerThread e;
     public b f;
     public Looper g;
@@ -85,7 +85,7 @@ public class t4 {
                     t4.this.j = false;
                     t4.this.i = false;
                     try {
-                        List<String> allProviders = t4.this.f3996c.getAllProviders();
+                        List<String> allProviders = t4.this.f3948c.getAllProviders();
                         if (allProviders != null) {
                             Iterator<String> it = allProviders.iterator();
                             while (true) {
@@ -98,7 +98,7 @@ public class t4 {
                             }
                         }
                         if (z) {
-                            t4.this.f3996c.requestLocationUpdates("network", 1000L, 0.0f, t4.this.d, t4.this.g);
+                            t4.this.f3948c.requestLocationUpdates("network", 1000L, 0.0f, t4.this.d, t4.this.g);
                         }
                     } catch (Exception e) {
                     }
@@ -108,7 +108,7 @@ public class t4 {
                     t4.this.j = false;
                     t4.this.i = false;
                     removeCallbacksAndMessages(null);
-                    t4.this.f3996c.removeUpdates(t4.this.d);
+                    t4.this.f3948c.removeUpdates(t4.this.d);
                     t4.this.b = 0;
                     return;
                 case 1003:
@@ -117,7 +117,7 @@ public class t4 {
                         return;
                     }
                     try {
-                        Location lastKnownLocation = t4.this.f3996c.getLastKnownLocation("network");
+                        Location lastKnownLocation = t4.this.f3948c.getLastKnownLocation("network");
                         StringBuilder sb = new StringBuilder();
                         sb.append("getLastKownLocation, ");
                         sb.append(lastKnownLocation);
@@ -150,8 +150,8 @@ public class t4 {
     }
 
     public t4(t3 t3Var) {
-        this.f3995a = t3Var;
-        this.f3996c = t3Var.b();
+        this.f3947a = t3Var;
+        this.f3948c = t3Var.b();
         HandlerThread handlerThread = new HandlerThread("loc_nlp_thread");
         this.e = handlerThread;
         handlerThread.start();
@@ -161,7 +161,7 @@ public class t4 {
 
     public Location a(Location location) {
         if (location == null) {
-            return l4.f3873a;
+            return l4.f3825a;
         }
         if (!(this.k && w5.a(location.getLatitude(), location.getLongitude()))) {
             a(location, location.getLatitude(), location.getLongitude(), 0, 0);
@@ -246,7 +246,7 @@ public class t4 {
     public final void b(Location location) {
         b5 b5Var = new b5(location, System.currentTimeMillis(), 0, 0, 0, b5.a.NONE);
         c5 c5Var = new c5(null, null, b5Var, null);
-        String a2 = c5Var.a(this.l, this.m, this.f3995a, true, false, false);
+        String a2 = c5Var.a(this.l, this.m, this.f3947a, true, false, false);
         if (!(a2 == null || !f6.a(a2))) {
             a(a2, c5Var, this.n, b5Var);
             return;

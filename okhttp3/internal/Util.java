@@ -39,12 +39,8 @@ import org.apache.commons.codec.CharEncoding;
 
 /* loaded from: source-3503164-dex2jar.jar:okhttp3/internal/Util.class */
 public final class Util {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final byte[] f43840a;
-
-    /* renamed from: c  reason: collision with root package name */
-    public static final ResponseBody f43841c;
+    public static final byte[] a;
+    public static final ResponseBody c;
     public static final RequestBody d;
     private static final Method r;
     private static final Pattern s;
@@ -71,10 +67,10 @@ public final class Util {
 
     static {
         byte[] bArr = new byte[0];
-        f43840a = bArr;
+        a = bArr;
         Method method = null;
-        f43841c = ResponseBody.create((MediaType) null, bArr);
-        d = RequestBody.create((MediaType) null, f43840a);
+        c = ResponseBody.create((MediaType) null, bArr);
+        d = RequestBody.create((MediaType) null, a);
         try {
             method = Throwable.class.getDeclaredMethod("addSuppressed", Throwable.class);
         } catch (Exception e2) {

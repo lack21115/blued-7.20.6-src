@@ -7,7 +7,6 @@ import android.bluetooth.BluetoothClass;
 import android.graphics.Point;
 import android.media.AudioSystem;
 import android.net.wifi.WifiScanner;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.blued.das.live.LiveProtos;
 import com.kuaishou.pushad.BuildConfig;
 import com.qiniu.android.dns.DnsManager;
@@ -77,7 +76,7 @@ public class StreamingProfile {
     public VideoEncodingSize b;
 
     /* renamed from: c  reason: collision with root package name */
-    public Point f27834c;
+    public Point f14146c;
     public f d;
     public Stream h;
     public String i;
@@ -97,7 +96,7 @@ public class StreamingProfile {
     public static final VideoEncodingSize[] J = {new VideoEncodingSize(0, 320, 240), new VideoEncodingSize(1, 640, 480), new VideoEncodingSize(2, UGCTransitionRules.DEFAULT_IMAGE_WIDTH, LiveProtos.Event.LIVE_GIFT_EFFECT_BTN_CLICK_VALUE), new VideoEncodingSize(3, 960, UGCTransitionRules.DEFAULT_IMAGE_WIDTH), new VideoEncodingSize(4, 1440, BluetoothClass.Device.AUDIO_VIDEO_VIDEO_CONFERENCING)};
 
     /* renamed from: a  reason: collision with root package name */
-    public int f27833a = 0;
+    public int f14145a = 0;
     public int e = -1;
     public int f = -1;
     public int g = -1;
@@ -461,7 +460,7 @@ public class StreamingProfile {
                 int i5 = i4 + i;
                 int i6 = i5;
                 if (i5 >= length) {
-                    e eVar = e.f1361c;
+                    e eVar = e.f1313c;
                     eVar.d("StreamingProfile", "quality have been out of the MAX:" + i5 + ", choose the max quality!");
                     i6 = length - 1;
                 }
@@ -515,7 +514,7 @@ public class StreamingProfile {
                 } else {
                     i = 0;
                 }
-                e eVar = e.f1361c;
+                e eVar = e.f1313c;
                 StringBuilder sb = new StringBuilder();
                 sb.append(z ? "target video quality = " : "target audio quality = ");
                 sb.append(i);
@@ -654,13 +653,13 @@ public class StreamingProfile {
         if (map != null) {
             int i3 = 0;
             for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
-                e.f1361c.c("StreamingProfile", "key:" + entry.getKey().intValue() + ",value:" + entry.getValue().intValue());
+                e.f1313c.c("StreamingProfile", "key:" + entry.getKey().intValue() + ",value:" + entry.getValue().intValue());
                 if (entry.getValue().intValue() >= 2 && i3 <= entry.getValue().intValue()) {
                     i3 = entry.getValue().intValue();
                     i = entry.getKey().intValue();
                 }
             }
-            e.f1361c.c("StreamingProfile", "best:" + i);
+            e.f1313c.c("StreamingProfile", "best:" + i);
             i2 = i;
         }
         return i2;
@@ -691,7 +690,7 @@ public class StreamingProfile {
     }
 
     public int getEncodingSizeLevel() {
-        return this.f27833a;
+        return this.f14145a;
     }
 
     public f getImageSize() {
@@ -731,7 +730,7 @@ public class StreamingProfile {
     }
 
     public Point getStartPoint() {
-        return this.f27834c;
+        return this.f14146c;
     }
 
     public Stream getStream() {
@@ -772,10 +771,10 @@ public class StreamingProfile {
             return videoEncodingSize;
         }
         if (preview_size_ratio == CameraStreamingSetting.PREVIEW_SIZE_RATIO.RATIO_16_9) {
-            return a(I, this.f27833a);
+            return a(I, this.f14145a);
         }
         if (preview_size_ratio == CameraStreamingSetting.PREVIEW_SIZE_RATIO.RATIO_4_3) {
-            return a(J, this.f27833a);
+            return a(J, this.f14145a);
         }
         throw new IllegalArgumentException("Only support 16:9/4:3 ratio!");
     }
@@ -804,12 +803,12 @@ public class StreamingProfile {
     public boolean improveVideoQuality(int i) {
         int i2 = this.e;
         if (i2 == -1 || this.k == null) {
-            e eVar = e.f1361c;
+            e eVar = e.f1313c;
             eVar.e("StreamingProfile", "Fail! mVideoQuality:" + this.e + ",mSendingBufferInfo:" + this.k);
             return false;
         }
         this.e = a(i, i2, G);
-        e eVar2 = e.f1361c;
+        e eVar2 = e.f1313c;
         eVar2.b("StreamingProfile", "improve video quality:" + this.e);
         if (this.n.containsKey(Integer.valueOf(i2))) {
             this.n.put(Integer.valueOf(i2), Integer.valueOf(this.n.get(Integer.valueOf(i2)).intValue() - 1));
@@ -825,12 +824,12 @@ public class StreamingProfile {
     public boolean reduceVideoQuality(int i) {
         int i2 = this.e;
         if (i2 == -1 || this.k == null) {
-            e eVar = e.f1361c;
+            e eVar = e.f1313c;
             eVar.e("StreamingProfile", "Fail! mVideoQuality:" + this.e + ",mSendingBufferInfo:" + this.k);
             return false;
         }
         this.e = b(i, i2, G);
-        e eVar2 = e.f1361c;
+        e eVar2 = e.f1313c;
         eVar2.b("StreamingProfile", "reduce video quality:" + this.e);
         if (this.n.containsKey(Integer.valueOf(i2))) {
             this.n.put(Integer.valueOf(i2), Integer.valueOf(this.n.get(Integer.valueOf(i2)).intValue() - 1));
@@ -853,7 +852,7 @@ public class StreamingProfile {
 
     public StreamingProfile setAdaptiveBitrateAdjustThreshold(int i, int i2) {
         if (i < 1 || i > 10 || i2 < 1 || i2 > 20) {
-            e.f1361c.e("StreamingProfile", "Out of range: tcpSendTimeMsSafeThreshold: 1~10, fpsDangerousThreshold: 1~20");
+            e.f1313c.e("StreamingProfile", "Out of range: tcpSendTimeMsSafeThreshold: 1~10, fpsDangerousThreshold: 1~20");
             return this;
         }
         a.a.a.a.a.m.a.a(i, i2);
@@ -898,7 +897,7 @@ public class StreamingProfile {
             throw new IllegalArgumentException("Illegal encoding size level. The range is:[0,4]");
         }
         if (this.b == null) {
-            this.f27833a = i;
+            this.f14145a = i;
         }
         return this;
     }
@@ -940,9 +939,9 @@ public class StreamingProfile {
     public StreamingProfile setPreferredVideoEncodingSize(int i, int i2, Point point, int i3, int i4) {
         e eVar = e.d;
         eVar.c("StreamingProfile", "setPreferredVideoEncodingSize: width = " + i + ", height = " + i2 + ", image width = " + i3 + ", image height = " + i4);
-        this.f27833a = -1;
+        this.f14145a = -1;
         this.b = new VideoEncodingSize(-1, i, i2);
-        this.f27834c = point;
+        this.f14146c = point;
         if (i3 > 0 && i4 > 0) {
             this.d = new f(i3, i4);
         }
@@ -957,7 +956,7 @@ public class StreamingProfile {
             this.i = uri.getHost();
             String path = uri.getPath();
             this.y = path;
-            if (h.a(path) && this.y.startsWith(BridgeUtil.SPLIT_MARK)) {
+            if (h.a(path) && this.y.startsWith("/")) {
                 this.y = this.y.substring(1);
             }
             return this;
@@ -1020,14 +1019,14 @@ public class StreamingProfile {
         if (i >= i3) {
             this.v = i;
         } else {
-            e eVar = e.f1361c;
+            e eVar = e.f1313c;
             eVar.d("StreamingProfile", "bitrate have been out of the MIN:" + i3 + "!");
         }
         if (i2 <= i4) {
             this.w = i2;
             return this;
         }
-        e eVar2 = e.f1361c;
+        e eVar2 = e.f1313c;
         eVar2.d("StreamingProfile", "bitrate have been out of the MAX:" + i4 + "!");
         return this;
     }
@@ -1048,7 +1047,7 @@ public class StreamingProfile {
                 jSONObject.put("PreferredVideoEncodingWidth", this.b.width);
                 jSONObject.put("PreferredVideoEncodingHeight", this.b.height);
             } else {
-                jSONObject.put("EncodingSizeLevel", this.f27833a);
+                jSONObject.put("EncodingSizeLevel", this.f14145a);
             }
             jSONObject.put("QuicEnable", this.t);
             jSONObject.put("SendTimeout", F);

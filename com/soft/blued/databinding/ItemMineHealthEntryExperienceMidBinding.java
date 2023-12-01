@@ -12,33 +12,33 @@ import com.soft.blued.R;
 public final class ItemMineHealthEntryExperienceMidBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ShapeConstraintLayout f29227a;
+    public final ShapeConstraintLayout f15537a;
     public final ShapeTextView b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final TextView f29228c;
+    public final TextView f15538c;
     public final ViewFlipper d;
     private final ShapeConstraintLayout e;
 
     private ItemMineHealthEntryExperienceMidBinding(ShapeConstraintLayout shapeConstraintLayout, ShapeConstraintLayout shapeConstraintLayout2, ShapeTextView shapeTextView, TextView textView, ViewFlipper viewFlipper) {
         this.e = shapeConstraintLayout;
-        this.f29227a = shapeConstraintLayout2;
+        this.f15537a = shapeConstraintLayout2;
         this.b = shapeTextView;
-        this.f29228c = textView;
+        this.f15538c = textView;
         this.d = viewFlipper;
     }
 
     public static ItemMineHealthEntryExperienceMidBinding a(View view) {
         String str;
-        ShapeConstraintLayout shapeConstraintLayout = (ShapeConstraintLayout) view.findViewById(2131363075);
-        if (shapeConstraintLayout != null) {
-            ShapeTextView shapeTextView = (ShapeTextView) view.findViewById(2131365270);
-            if (shapeTextView != null) {
+        ShapeConstraintLayout findViewById = view.findViewById(2131363075);
+        if (findViewById != null) {
+            ShapeTextView findViewById2 = view.findViewById(R.id.iv_dot);
+            if (findViewById2 != null) {
                 TextView textView = (TextView) view.findViewById(R.id.tv_divider);
                 if (textView != null) {
                     ViewFlipper viewFlipper = (ViewFlipper) view.findViewById(R.id.vf_health_goods);
                     if (viewFlipper != null) {
-                        return new ItemMineHealthEntryExperienceMidBinding((ShapeConstraintLayout) view, shapeConstraintLayout, shapeTextView, textView, viewFlipper);
+                        return new ItemMineHealthEntryExperienceMidBinding((ShapeConstraintLayout) view, findViewById, findViewById2, textView, viewFlipper);
                     }
                     str = "vfHealthGoods";
                 } else {

@@ -10,9 +10,7 @@ import kotlin.jvm.internal.Ref;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt__ErrorsKt$catchImpl$$inlined$collect$1.class */
 public final class FlowKt__ErrorsKt$catchImpl$$inlined$collect$1<T> implements FlowCollector<T> {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ FlowCollector f43169a;
+    final /* synthetic */ FlowCollector a;
     final /* synthetic */ Ref.ObjectRef b;
 
     @Metadata
@@ -20,9 +18,7 @@ public final class FlowKt__ErrorsKt$catchImpl$$inlined$collect$1<T> implements F
     /* renamed from: kotlinx.coroutines.flow.FlowKt__ErrorsKt$catchImpl$$inlined$collect$1$1  reason: invalid class name */
     /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt__ErrorsKt$catchImpl$$inlined$collect$1$1.class */
     public static final class AnonymousClass1 extends ContinuationImpl {
-
-        /* renamed from: a  reason: collision with root package name */
-        /* synthetic */ Object f43170a;
+        /* synthetic */ Object a;
         int b;
         Object d;
 
@@ -32,14 +28,14 @@ public final class FlowKt__ErrorsKt$catchImpl$$inlined$collect$1<T> implements F
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Object invokeSuspend(Object obj) {
-            this.f43170a = obj;
+            this.a = obj;
             this.b |= Integer.MIN_VALUE;
             return FlowKt__ErrorsKt$catchImpl$$inlined$collect$1.this.emit(null, this);
         }
     }
 
     public FlowKt__ErrorsKt$catchImpl$$inlined$collect$1(FlowCollector flowCollector, Ref.ObjectRef objectRef) {
-        this.f43169a = flowCollector;
+        this.a = flowCollector;
         this.b = objectRef;
     }
 
@@ -84,7 +80,7 @@ public final class FlowKt__ErrorsKt$catchImpl$$inlined$collect$1<T> implements F
             r7 = r0
         L35:
             r0 = r7
-            java.lang.Object r0 = r0.f43170a
+            java.lang.Object r0 = r0.a
             r10 = r0
             java.lang.Object r0 = kotlin.coroutines.intrinsics.IntrinsicsKt.a()
             r9 = r0
@@ -119,7 +115,7 @@ public final class FlowKt__ErrorsKt$catchImpl$$inlined$collect$1<T> implements F
             kotlin.coroutines.Continuation r0 = (kotlin.coroutines.Continuation) r0
             r10 = r0
             r0 = r5
-            kotlinx.coroutines.flow.FlowCollector r0 = r0.f43169a     // Catch: java.lang.Throwable -> L9e
+            kotlinx.coroutines.flow.FlowCollector r0 = r0.a     // Catch: java.lang.Throwable -> L9e
             r10 = r0
             r0 = r7
             r1 = r5
@@ -138,7 +134,7 @@ public final class FlowKt__ErrorsKt$catchImpl$$inlined$collect$1<T> implements F
             r0 = r9
             return r0
         L9a:
-            kotlin.Unit r0 = kotlin.Unit.f42314a
+            kotlin.Unit r0 = kotlin.Unit.a
             return r0
         L9e:
             r7 = move-exception
@@ -148,7 +144,7 @@ public final class FlowKt__ErrorsKt$catchImpl$$inlined$collect$1<T> implements F
             r0 = r6
             kotlin.jvm.internal.Ref$ObjectRef r0 = r0.b
             r1 = r7
-            r0.f42545a = r1
+            r0.a = r1
             r0 = r7
             throw r0
         */

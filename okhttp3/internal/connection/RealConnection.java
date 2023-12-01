@@ -1,9 +1,10 @@
 package okhttp3.internal.connection;
 
-import com.anythink.expressad.foundation.g.f.g.c;
+import com.blued.android.module.common.web.LoaderConstants;
 import java.io.IOException;
 import java.lang.ref.Reference;
 import java.net.ConnectException;
+import java.net.HttpURLConnection;
 import java.net.Proxy;
 import java.net.Socket;
 import java.net.SocketException;
@@ -52,13 +53,9 @@ import okio.Source;
 
 /* loaded from: source-3503164-dex2jar.jar:okhttp3/internal/connection/RealConnection.class */
 public final class RealConnection extends Http2Connection.Listener implements Connection {
-
-    /* renamed from: a  reason: collision with root package name */
-    public boolean f43871a;
+    public boolean a;
     public int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public int f43872c = 1;
+    public int c = 1;
     public final List<Reference<StreamAllocation>> d = new ArrayList();
     public long e = Long.MAX_VALUE;
     private final ConnectionPool g;
@@ -86,9 +83,9 @@ public final class RealConnection extends Http2Connection.Listener implements Co
             http1Codec.a(request.headers(), str);
             http1Codec.b();
             build = http1Codec.a(false).request(request).build();
-            long a2 = HttpHeaders.a(build);
-            long j = a2;
-            if (a2 == -1) {
+            long a = HttpHeaders.a(build);
+            long j = a;
+            if (a == -1) {
                 j = 0;
             }
             Source b = http1Codec.b(j);
@@ -108,20 +105,20 @@ public final class RealConnection extends Http2Connection.Listener implements Co
                     throw new IOException("Failed to authenticate with proxy");
                 }
             }
-        } while (!"close".equalsIgnoreCase(build.header("Connection")));
+        } while (!LoaderConstants.CLOSE.equalsIgnoreCase(build.header("Connection")));
         return request;
     }
 
     private void a(int i) throws IOException {
         this.j.setSoTimeout(0);
-        Http2Connection a2 = new Http2Connection.Builder(true).a(this.j, this.h.address().url().host(), this.n, this.o).a(this).a(i).a();
-        this.m = a2;
-        a2.c();
+        Http2Connection a = new Http2Connection.Builder(true).a(this.j, this.h.address().url().host(), this.n, this.o).a(this).a(i).a();
+        this.m = a;
+        a.c();
     }
 
     private void a(int i, int i2, int i3, Call call, EventListener eventListener) throws IOException {
-        Request c2 = c();
-        HttpUrl url = c2.url();
+        Request c = c();
+        HttpUrl url = c.url();
         int i4 = 0;
         while (true) {
             int i5 = i4;
@@ -129,8 +126,8 @@ public final class RealConnection extends Http2Connection.Listener implements Co
                 return;
             }
             a(i, i2, call, eventListener);
-            c2 = a(i2, i3, c2, url);
-            if (c2 == null) {
+            c = a(i2, i3, c, url);
+            if (c == null) {
                 return;
             }
             Util.a(this.i);
@@ -172,8 +169,8 @@ public final class RealConnection extends Http2Connection.Listener implements Co
             try {
                 SSLSocket sSLSocket3 = (SSLSocket) address.sslSocketFactory().createSocket(this.i, address.url().host(), address.url().port(), true);
                 try {
-                    ConnectionSpec a2 = connectionSpecSelector.a(sSLSocket3);
-                    if (a2.supportsTlsExtensions()) {
+                    ConnectionSpec a = connectionSpecSelector.a(sSLSocket3);
+                    if (a.supportsTlsExtensions()) {
                         Platform.e().a(sSLSocket3, address.url().host(), address.protocols());
                     }
                     sSLSocket3.startHandshake();
@@ -182,7 +179,7 @@ public final class RealConnection extends Http2Connection.Listener implements Co
                     if (address.hostnameVerifier().verify(address.url().host(), session)) {
                         address.certificatePinner().check(address.url().host(), handshake.peerCertificates());
                         String str = null;
-                        if (a2.supportsTlsExtensions()) {
+                        if (a.supportsTlsExtensions()) {
                             str = Platform.e().a(sSLSocket3);
                         }
                         this.j = sSLSocket3;
@@ -249,8 +246,8 @@ public final class RealConnection extends Http2Connection.Listener implements Co
     }
 
     private Request c() throws IOException {
-        Request build = new Request.Builder().url(this.h.address().url()).method("CONNECT", null).header("Host", Util.a(this.h.address().url(), true)).header("Proxy-Connection", c.f7906c).header("User-Agent", Version.a()).build();
-        Request authenticate = this.h.address().proxyAuthenticator().authenticate(this.h, new Response.Builder().request(build).protocol(Protocol.HTTP_1_1).code(407).message("Preemptive Authenticate").body(Util.f43841c).sentRequestAtMillis(-1L).receivedResponseAtMillis(-1L).header(com.google.common.net.HttpHeaders.PROXY_AUTHENTICATE, "OkHttp-Preemptive").build());
+        Request build = new Request.Builder().url(this.h.address().url()).method("CONNECT", null).header("Host", Util.a(this.h.address().url(), true)).header("Proxy-Connection", "Keep-Alive").header("User-Agent", Version.a()).build();
+        Request authenticate = this.h.address().proxyAuthenticator().authenticate(this.h, new Response.Builder().request(build).protocol(Protocol.HTTP_1_1).code(HttpURLConnection.HTTP_PROXY_AUTH).message("Preemptive Authenticate").body(Util.c).sentRequestAtMillis(-1L).receivedResponseAtMillis(-1L).header("Proxy-Authenticate", "OkHttp-Preemptive").build());
         if (authenticate != null) {
             build = authenticate;
         }
@@ -305,7 +302,7 @@ public final class RealConnection extends Http2Connection.Listener implements Co
     @Override // okhttp3.internal.http2.Http2Connection.Listener
     public void a(Http2Connection http2Connection) {
         synchronized (this.g) {
-            this.f43872c = http2Connection.a();
+            this.c = http2Connection.a();
         }
     }
 
@@ -315,13 +312,13 @@ public final class RealConnection extends Http2Connection.Listener implements Co
     }
 
     public boolean a(Address address, @Nullable Route route) {
-        if (this.d.size() >= this.f43872c || this.f43871a || !Internal.instance.equalsNonHost(this.h.address(), address)) {
+        if (this.d.size() >= this.c || this.a || !Internal.instance.equalsNonHost(this.h.address(), address)) {
             return false;
         }
         if (address.url().host().equals(route().address().url().host())) {
             return true;
         }
-        if (this.m != null && route != null && route.proxy().type() == Proxy.Type.DIRECT && this.h.proxy().type() == Proxy.Type.DIRECT && this.h.socketAddress().equals(route.socketAddress()) && route.address().hostnameVerifier() == OkHostnameVerifier.f43983a && a(address.url())) {
+        if (this.m != null && route != null && route.proxy().type() == Proxy.Type.DIRECT && this.h.proxy().type() == Proxy.Type.DIRECT && this.h.socketAddress().equals(route.socketAddress()) && route.address().hostnameVerifier() == OkHostnameVerifier.a && a(address.url())) {
             try {
                 address.certificatePinner().check(address.url().host(), handshake().peerCertificates());
                 return true;
@@ -342,7 +339,7 @@ public final class RealConnection extends Http2Connection.Listener implements Co
         boolean z = false;
         if (this.k != null) {
             z = false;
-            if (OkHostnameVerifier.f43983a.a(httpUrl.host(), (X509Certificate) this.k.peerCertificates().get(0))) {
+            if (OkHostnameVerifier.a.a(httpUrl.host(), (X509Certificate) this.k.peerCertificates().get(0))) {
                 z = true;
             }
         }

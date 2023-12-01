@@ -53,32 +53,32 @@ public class KeyCycle extends Key {
     static class Loader {
 
         /* renamed from: a  reason: collision with root package name */
-        private static SparseIntArray f2172a;
+        private static SparseIntArray f2124a;
 
         static {
             SparseIntArray sparseIntArray = new SparseIntArray();
-            f2172a = sparseIntArray;
+            f2124a = sparseIntArray;
             sparseIntArray.append(R.styleable.KeyCycle_motionTarget, 1);
-            f2172a.append(R.styleable.KeyCycle_framePosition, 2);
-            f2172a.append(R.styleable.KeyCycle_transitionEasing, 3);
-            f2172a.append(R.styleable.KeyCycle_curveFit, 4);
-            f2172a.append(R.styleable.KeyCycle_waveShape, 5);
-            f2172a.append(R.styleable.KeyCycle_wavePeriod, 6);
-            f2172a.append(R.styleable.KeyCycle_waveOffset, 7);
-            f2172a.append(R.styleable.KeyCycle_waveVariesBy, 8);
-            f2172a.append(R.styleable.KeyCycle_android_alpha, 9);
-            f2172a.append(R.styleable.KeyCycle_android_elevation, 10);
-            f2172a.append(R.styleable.KeyCycle_android_rotation, 11);
-            f2172a.append(R.styleable.KeyCycle_android_rotationX, 12);
-            f2172a.append(R.styleable.KeyCycle_android_rotationY, 13);
-            f2172a.append(R.styleable.KeyCycle_transitionPathRotate, 14);
-            f2172a.append(R.styleable.KeyCycle_android_scaleX, 15);
-            f2172a.append(R.styleable.KeyCycle_android_scaleY, 16);
-            f2172a.append(R.styleable.KeyCycle_android_translationX, 17);
-            f2172a.append(R.styleable.KeyCycle_android_translationY, 18);
-            f2172a.append(R.styleable.KeyCycle_android_translationZ, 19);
-            f2172a.append(R.styleable.KeyCycle_motionProgress, 20);
-            f2172a.append(R.styleable.KeyCycle_wavePhase, 21);
+            f2124a.append(R.styleable.KeyCycle_framePosition, 2);
+            f2124a.append(R.styleable.KeyCycle_transitionEasing, 3);
+            f2124a.append(R.styleable.KeyCycle_curveFit, 4);
+            f2124a.append(R.styleable.KeyCycle_waveShape, 5);
+            f2124a.append(R.styleable.KeyCycle_wavePeriod, 6);
+            f2124a.append(R.styleable.KeyCycle_waveOffset, 7);
+            f2124a.append(R.styleable.KeyCycle_waveVariesBy, 8);
+            f2124a.append(R.styleable.KeyCycle_android_alpha, 9);
+            f2124a.append(R.styleable.KeyCycle_android_elevation, 10);
+            f2124a.append(R.styleable.KeyCycle_android_rotation, 11);
+            f2124a.append(R.styleable.KeyCycle_android_rotationX, 12);
+            f2124a.append(R.styleable.KeyCycle_android_rotationY, 13);
+            f2124a.append(R.styleable.KeyCycle_transitionPathRotate, 14);
+            f2124a.append(R.styleable.KeyCycle_android_scaleX, 15);
+            f2124a.append(R.styleable.KeyCycle_android_scaleY, 16);
+            f2124a.append(R.styleable.KeyCycle_android_translationX, 17);
+            f2124a.append(R.styleable.KeyCycle_android_translationY, 18);
+            f2124a.append(R.styleable.KeyCycle_android_translationZ, 19);
+            f2124a.append(R.styleable.KeyCycle_motionProgress, 20);
+            f2124a.append(R.styleable.KeyCycle_wavePhase, 21);
         }
 
         private Loader() {
@@ -94,14 +94,14 @@ public class KeyCycle extends Key {
                     return;
                 }
                 int index = typedArray.getIndex(i2);
-                switch (f2172a.get(index)) {
+                switch (f2124a.get(index)) {
                     case 1:
                         if (!MotionLayout.IS_IN_EDIT_MODE) {
                             if (typedArray.peekValue(index).type != 3) {
                                 keyCycle.b = typedArray.getResourceId(index, keyCycle.b);
                                 break;
                             } else {
-                                keyCycle.f2170c = typedArray.getString(index);
+                                keyCycle.f2122c = typedArray.getString(index);
                                 break;
                             }
                         } else {
@@ -109,12 +109,12 @@ public class KeyCycle extends Key {
                             if (keyCycle.b != -1) {
                                 break;
                             } else {
-                                keyCycle.f2170c = typedArray.getString(index);
+                                keyCycle.f2122c = typedArray.getString(index);
                                 break;
                             }
                         }
                     case 2:
-                        keyCycle.f2169a = typedArray.getInt(index, keyCycle.f2169a);
+                        keyCycle.f2121a = typedArray.getInt(index, keyCycle.f2121a);
                         break;
                     case 3:
                         keyCycle.f = typedArray.getString(index);
@@ -189,7 +189,7 @@ public class KeyCycle extends Key {
                         keyCycle.l = typedArray.getFloat(index, keyCycle.l) / 360.0f;
                         break;
                     default:
-                        Log.e(TypedValues.CycleType.NAME, "unused attribute 0x" + Integer.toHexString(index) + "   " + f2172a.get(index));
+                        Log.e(TypedValues.CycleType.NAME, "unused attribute 0x" + Integer.toHexString(index) + "   " + f2124a.get(index));
                         break;
                 }
                 i = i2 + 1;
@@ -209,12 +209,12 @@ public class KeyCycle extends Key {
             if (str.startsWith("CUSTOM")) {
                 ConstraintAttribute constraintAttribute = this.e.get(str.substring(7));
                 if (constraintAttribute != null && constraintAttribute.getType() == ConstraintAttribute.AttributeType.FLOAT_TYPE && (viewOscillator = hashMap.get(str)) != null) {
-                    viewOscillator.setPoint(this.f2169a, this.h, this.i, this.n, this.j, this.k, this.l, constraintAttribute.getValueToInterpolate(), constraintAttribute);
+                    viewOscillator.setPoint(this.f2121a, this.h, this.i, this.n, this.j, this.k, this.l, constraintAttribute.getValueToInterpolate(), constraintAttribute);
                 }
             } else {
                 float value = getValue(str);
                 if (!Float.isNaN(value) && (viewOscillator2 = hashMap.get(str)) != null) {
-                    viewOscillator2.setPoint(this.f2169a, this.h, this.i, this.n, this.j, this.k, this.l, value);
+                    viewOscillator2.setPoint(this.f2121a, this.h, this.i, this.n, this.j, this.k, this.l, value);
                 }
             }
         }
@@ -277,7 +277,7 @@ public class KeyCycle extends Key {
                         }
                         break;
                     case -40300674:
-                        if (str.equals("rotation")) {
+                        if (str.equals(Key.ROTATION)) {
                             z = true;
                             break;
                         }
@@ -315,46 +315,46 @@ public class KeyCycle extends Key {
                 }
                 switch (z) {
                     case false:
-                        viewSpline.setPoint(this.f2169a, this.o);
+                        viewSpline.setPoint(this.f2121a, this.o);
                         continue;
                     case true:
-                        viewSpline.setPoint(this.f2169a, this.p);
+                        viewSpline.setPoint(this.f2121a, this.p);
                         continue;
                     case true:
-                        viewSpline.setPoint(this.f2169a, this.q);
+                        viewSpline.setPoint(this.f2121a, this.q);
                         continue;
                     case true:
-                        viewSpline.setPoint(this.f2169a, this.s);
+                        viewSpline.setPoint(this.f2121a, this.s);
                         continue;
                     case true:
-                        viewSpline.setPoint(this.f2169a, this.t);
+                        viewSpline.setPoint(this.f2121a, this.t);
                         continue;
                     case true:
-                        viewSpline.setPoint(this.f2169a, this.r);
+                        viewSpline.setPoint(this.f2121a, this.r);
                         continue;
                     case true:
-                        viewSpline.setPoint(this.f2169a, this.u);
+                        viewSpline.setPoint(this.f2121a, this.u);
                         continue;
                     case true:
-                        viewSpline.setPoint(this.f2169a, this.v);
+                        viewSpline.setPoint(this.f2121a, this.v);
                         continue;
                     case true:
-                        viewSpline.setPoint(this.f2169a, this.w);
+                        viewSpline.setPoint(this.f2121a, this.w);
                         continue;
                     case true:
-                        viewSpline.setPoint(this.f2169a, this.x);
+                        viewSpline.setPoint(this.f2121a, this.x);
                         continue;
                     case true:
-                        viewSpline.setPoint(this.f2169a, this.y);
+                        viewSpline.setPoint(this.f2121a, this.y);
                         continue;
                     case true:
-                        viewSpline.setPoint(this.f2169a, this.k);
+                        viewSpline.setPoint(this.f2121a, this.k);
                         continue;
                     case true:
-                        viewSpline.setPoint(this.f2169a, this.l);
+                        viewSpline.setPoint(this.f2121a, this.l);
                         continue;
                     case true:
-                        viewSpline.setPoint(this.f2169a, this.m);
+                        viewSpline.setPoint(this.f2121a, this.m);
                         continue;
                     default:
                         if (!str.startsWith("CUSTOM")) {
@@ -370,7 +370,7 @@ public class KeyCycle extends Key {
 
     @Override // androidx.constraintlayout.motion.widget.Key
     /* renamed from: clone */
-    public Key mo1365clone() {
+    public Key mo1228clone() {
         return new KeyCycle().copy(this);
     }
 
@@ -410,7 +410,7 @@ public class KeyCycle extends Key {
             hashSet.add("elevation");
         }
         if (!Float.isNaN(this.q)) {
-            hashSet.add("rotation");
+            hashSet.add(Key.ROTATION);
         }
         if (!Float.isNaN(this.s)) {
             hashSet.add("rotationX");
@@ -504,7 +504,7 @@ public class KeyCycle extends Key {
                 z = true;
                 break;
             case -40300674:
-                if (str.equals("rotation")) {
+                if (str.equals(Key.ROTATION)) {
                     z = true;
                     break;
                 }
@@ -661,7 +661,7 @@ public class KeyCycle extends Key {
                 z = true;
                 break;
             case -40300674:
-                if (str.equals("rotation")) {
+                if (str.equals(Key.ROTATION)) {
                     z = true;
                     break;
                 }

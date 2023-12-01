@@ -8,13 +8,13 @@ public class ei extends JsonComposer {
     @Json(name = "name")
 
     /* renamed from: a  reason: collision with root package name */
-    private String f37420a;
+    private String f23729a;
     @Json(name = "style")
     private int b;
     @Json(name = "scene")
 
     /* renamed from: c  reason: collision with root package name */
-    private int f37421c;
+    private int f23730c;
     @Json(name = "version")
     private int d;
     @Json(name = "url")
@@ -32,7 +32,7 @@ public class ei extends JsonComposer {
     }
 
     public String a() {
-        return this.f37420a;
+        return this.f23729a;
     }
 
     public String a(int i, int i2, int i3, String str) {
@@ -42,11 +42,11 @@ public class ei extends JsonComposer {
     }
 
     public void a(int i) {
-        this.f37421c = i;
+        this.f23730c = i;
     }
 
     public void a(String str) {
-        this.f37420a = str;
+        this.f23729a = str;
     }
 
     public void a(int[] iArr) {
@@ -66,7 +66,7 @@ public class ei extends JsonComposer {
     }
 
     public int c() {
-        return this.f37421c;
+        return this.f23730c;
     }
 
     public void c(int i) {
@@ -88,12 +88,12 @@ public class ei extends JsonComposer {
     public String toString() {
         StringBuffer stringBuffer = new StringBuffer("WorldMapTileSrc{");
         stringBuffer.append("mName='");
-        stringBuffer.append(this.f37420a);
+        stringBuffer.append(this.f23729a);
         stringBuffer.append('\'');
         stringBuffer.append(", mStyle=");
         stringBuffer.append(this.b);
         stringBuffer.append(", mScene=");
-        stringBuffer.append(this.f37421c);
+        stringBuffer.append(this.f23730c);
         stringBuffer.append(", mVersion=");
         stringBuffer.append(this.d);
         stringBuffer.append(", mUrl='");

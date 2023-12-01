@@ -12,13 +12,9 @@ import com.google.android.material.imageview.ShapeableImageView;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ItemYyRelationRankTopBinding.class */
 public final class ItemYyRelationRankTopBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f16791a;
+    public final ImageView a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f16792c;
+    public final ImageView c;
     public final ShapeableImageView d;
     public final ShapeableImageView e;
     public final ShapeableImageView f;
@@ -45,9 +41,9 @@ public final class ItemYyRelationRankTopBinding implements ViewBinding {
 
     private ItemYyRelationRankTopBinding(ConstraintLayout constraintLayout, ImageView imageView, ImageView imageView2, ImageView imageView3, ShapeableImageView shapeableImageView, ShapeableImageView shapeableImageView2, ShapeableImageView shapeableImageView3, ShapeableImageView shapeableImageView4, ShapeableImageView shapeableImageView5, ShapeableImageView shapeableImageView6, YYLivingStreamView yYLivingStreamView, YYLivingStreamView yYLivingStreamView2, YYLivingStreamView yYLivingStreamView3, YYLivingStreamView yYLivingStreamView4, YYLivingStreamView yYLivingStreamView5, YYLivingStreamView yYLivingStreamView6, Group group, Group group2, TextView textView, TextView textView2, TextView textView3, TextView textView4, TextView textView5, TextView textView6, TextView textView7, TextView textView8) {
         this.z = constraintLayout;
-        this.f16791a = imageView;
+        this.a = imageView;
         this.b = imageView2;
-        this.f16792c = imageView3;
+        this.c = imageView3;
         this.d = shapeableImageView;
         this.e = shapeableImageView2;
         this.f = shapeableImageView3;
@@ -80,18 +76,18 @@ public final class ItemYyRelationRankTopBinding implements ViewBinding {
             if (imageView2 != null) {
                 ImageView imageView3 = (ImageView) view.findViewById(R.id.bg_top_3);
                 if (imageView3 != null) {
-                    ShapeableImageView shapeableImageView = (ShapeableImageView) view.findViewById(R.id.iv_user_top_1_1);
-                    if (shapeableImageView != null) {
-                        ShapeableImageView shapeableImageView2 = (ShapeableImageView) view.findViewById(R.id.iv_user_top_1_2);
-                        if (shapeableImageView2 != null) {
-                            ShapeableImageView shapeableImageView3 = (ShapeableImageView) view.findViewById(R.id.iv_user_top_2_1);
-                            if (shapeableImageView3 != null) {
-                                ShapeableImageView shapeableImageView4 = (ShapeableImageView) view.findViewById(R.id.iv_user_top_2_2);
-                                if (shapeableImageView4 != null) {
-                                    ShapeableImageView shapeableImageView5 = (ShapeableImageView) view.findViewById(R.id.iv_user_top_3_1);
-                                    if (shapeableImageView5 != null) {
-                                        ShapeableImageView shapeableImageView6 = (ShapeableImageView) view.findViewById(R.id.iv_user_top_3_2);
-                                        if (shapeableImageView6 != null) {
+                    ShapeableImageView findViewById = view.findViewById(R.id.iv_user_top_1_1);
+                    if (findViewById != null) {
+                        ShapeableImageView findViewById2 = view.findViewById(R.id.iv_user_top_1_2);
+                        if (findViewById2 != null) {
+                            ShapeableImageView findViewById3 = view.findViewById(R.id.iv_user_top_2_1);
+                            if (findViewById3 != null) {
+                                ShapeableImageView findViewById4 = view.findViewById(R.id.iv_user_top_2_2);
+                                if (findViewById4 != null) {
+                                    ShapeableImageView findViewById5 = view.findViewById(R.id.iv_user_top_3_1);
+                                    if (findViewById5 != null) {
+                                        ShapeableImageView findViewById6 = view.findViewById(R.id.iv_user_top_3_2);
+                                        if (findViewById6 != null) {
                                             YYLivingStreamView yYLivingStreamView = (YYLivingStreamView) view.findViewById(R.id.live_top_1_1);
                                             if (yYLivingStreamView != null) {
                                                 YYLivingStreamView yYLivingStreamView2 = (YYLivingStreamView) view.findViewById(R.id.live_top_1_2);
@@ -104,10 +100,10 @@ public final class ItemYyRelationRankTopBinding implements ViewBinding {
                                                             if (yYLivingStreamView5 != null) {
                                                                 YYLivingStreamView yYLivingStreamView6 = (YYLivingStreamView) view.findViewById(R.id.live_top_3_2);
                                                                 if (yYLivingStreamView6 != null) {
-                                                                    Group group = (Group) view.findViewById(R.id.top_2);
-                                                                    if (group != null) {
-                                                                        Group group2 = (Group) view.findViewById(R.id.top_3);
-                                                                        if (group2 != null) {
+                                                                    Group findViewById7 = view.findViewById(R.id.top_2);
+                                                                    if (findViewById7 != null) {
+                                                                        Group findViewById8 = view.findViewById(R.id.top_3);
+                                                                        if (findViewById8 != null) {
                                                                             TextView textView = (TextView) view.findViewById(R.id.tv_top_1_type_name);
                                                                             if (textView != null) {
                                                                                 TextView textView2 = (TextView) view.findViewById(R.id.tv_top_1_type_value);
@@ -124,7 +120,7 @@ public final class ItemYyRelationRankTopBinding implements ViewBinding {
                                                                                                     if (textView7 != null) {
                                                                                                         TextView textView8 = (TextView) view.findViewById(R.id.tv_top_3_value_title);
                                                                                                         if (textView8 != null) {
-                                                                                                            return new ItemYyRelationRankTopBinding((ConstraintLayout) view, imageView, imageView2, imageView3, shapeableImageView, shapeableImageView2, shapeableImageView3, shapeableImageView4, shapeableImageView5, shapeableImageView6, yYLivingStreamView, yYLivingStreamView2, yYLivingStreamView3, yYLivingStreamView4, yYLivingStreamView5, yYLivingStreamView6, group, group2, textView, textView2, textView3, textView4, textView5, textView6, textView7, textView8);
+                                                                                                            return new ItemYyRelationRankTopBinding((ConstraintLayout) view, imageView, imageView2, imageView3, findViewById, findViewById2, findViewById3, findViewById4, findViewById5, findViewById6, yYLivingStreamView, yYLivingStreamView2, yYLivingStreamView3, yYLivingStreamView4, yYLivingStreamView5, yYLivingStreamView6, findViewById7, findViewById8, textView, textView2, textView3, textView4, textView5, textView6, textView7, textView8);
                                                                                                         }
                                                                                                         str = "tvTop3ValueTitle";
                                                                                                     } else {
@@ -202,7 +198,6 @@ public final class ItemYyRelationRankTopBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.z;

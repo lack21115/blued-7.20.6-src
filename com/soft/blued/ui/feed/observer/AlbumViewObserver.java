@@ -7,7 +7,7 @@ import java.util.List;
 public class AlbumViewObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    private static AlbumViewObserver f30037a = new AlbumViewObserver();
+    private static AlbumViewObserver f16347a = new AlbumViewObserver();
     private List<IAblumViewObserver> b = new ArrayList();
 
     /* loaded from: source-8303388-dex2jar.jar:com/soft/blued/ui/feed/observer/AlbumViewObserver$IAblumViewObserver.class */
@@ -19,7 +19,7 @@ public class AlbumViewObserver {
     }
 
     public static AlbumViewObserver a() {
-        return f30037a;
+        return f16347a;
     }
 
     public void a(IAblumViewObserver iAblumViewObserver) {

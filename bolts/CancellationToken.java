@@ -6,18 +6,18 @@ import java.util.Locale;
 public class CancellationToken {
 
     /* renamed from: a  reason: collision with root package name */
-    private final CancellationTokenSource f3686a;
+    private final CancellationTokenSource f3638a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public CancellationToken(CancellationTokenSource cancellationTokenSource) {
-        this.f3686a = cancellationTokenSource;
+        this.f3638a = cancellationTokenSource;
     }
 
     public boolean a() {
-        return this.f3686a.a();
+        return this.f3638a.a();
     }
 
     public String toString() {
-        return String.format(Locale.US, "%s@%s[cancellationRequested=%s]", getClass().getName(), Integer.toHexString(hashCode()), Boolean.toString(this.f3686a.a()));
+        return String.format(Locale.US, "%s@%s[cancellationRequested=%s]", getClass().getName(), Integer.toHexString(hashCode()), Boolean.toString(this.f3638a.a()));
     }
 }

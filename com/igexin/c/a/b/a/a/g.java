@@ -8,7 +8,7 @@ public final class g extends a {
     private static final String P = "GS-W";
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f23233a = -2036;
+    public static final int f9625a = -2036;
     com.igexin.c.a.b.a.a.a.c j;
     protected com.igexin.c.a.b.d k;
     protected i l;
@@ -29,7 +29,7 @@ public final class g extends a {
         com.igexin.c.a.c.a.a(P, "wt dispose");
         com.igexin.c.a.c.a.a("GS-W|wt dispose", new Object[0]);
         if (this.j != null) {
-            if (this.g != a.EnumC0446a.b) {
+            if (this.g != a.EnumC0276a.b) {
                 this.j.a();
             } else if (!TextUtils.isEmpty(this.h)) {
                 this.j.a(new Exception(this.h));
@@ -51,15 +51,15 @@ public final class g extends a {
             }
             f poll = a2.k.poll();
             if (poll != null && this.i && this.l != null && this.i) {
-                this.g = a.EnumC0446a.f23220a;
+                this.g = a.EnumC0276a.f9612a;
                 if (this.j != null && this.i) {
                     this.j.a(poll);
                 }
                 if (poll.d != null) {
                     i iVar = this.l;
                     byte[] bArr = (byte[]) this.k.a(null, poll.d);
-                    iVar.f23235a.write(bArr, 0, bArr.length);
-                    iVar.f23235a.flush();
+                    iVar.f9627a.write(bArr, 0, bArr.length);
+                    iVar.f9627a.flush();
                 }
                 if (poll.d != null) {
                     com.igexin.c.a.c.a.a("GS-W|" + poll.d.getClass().getName() + " -- send success", new Object[0]);
@@ -85,7 +85,7 @@ public final class g extends a {
         boolean z = this.i;
         boolean z2 = this.f;
         this.i = false;
-        this.g = a.EnumC0446a.f23221c;
+        this.g = a.EnumC0276a.f9613c;
         d a2 = d.a();
         try {
             try {

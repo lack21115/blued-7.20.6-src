@@ -10,13 +10,9 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 @DebugMetadata(b = "Reduce.kt", c = {183}, d = "first", e = "kotlinx.coroutines.flow.FlowKt__ReduceKt")
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt__ReduceKt$first$1.class */
 public final class FlowKt__ReduceKt$first$1<T> extends ContinuationImpl {
-
-    /* renamed from: a  reason: collision with root package name */
-    Object f43257a;
+    Object a;
     Object b;
-
-    /* renamed from: c  reason: collision with root package name */
-    /* synthetic */ Object f43258c;
+    /* synthetic */ Object c;
     int d;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -26,7 +22,7 @@ public final class FlowKt__ReduceKt$first$1<T> extends ContinuationImpl {
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        this.f43258c = obj;
+        this.c = obj;
         this.d |= Integer.MIN_VALUE;
         return FlowKt.e(null, this);
     }

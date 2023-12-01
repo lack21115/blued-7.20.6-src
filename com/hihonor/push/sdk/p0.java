@@ -8,18 +8,18 @@ import com.hihonor.push.sdk.common.data.ApiException;
 public abstract class p0<TResult> {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f22318a = getClass().getSimpleName();
+    public final String f8710a = getClass().getSimpleName();
     public final String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final IMessageEntity f22319c;
+    public final IMessageEntity f8711c;
     public final g d;
     public RequestHeader e;
     public x<TResult> f;
 
     public p0(String str, IMessageEntity iMessageEntity) {
         this.b = str;
-        this.f22319c = iMessageEntity;
+        this.f8711c = iMessageEntity;
         this.d = g.a(str);
     }
 

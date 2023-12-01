@@ -11,13 +11,9 @@ import com.mokee.volley.AuthFailureError;
 /* loaded from: source-4181928-dex2jar.jar:com/mokee/volley/toolbox/AndroidAuthenticator.class */
 public class AndroidAuthenticator implements Authenticator {
     private static final String[] e = null;
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Context f24246a;
+    private final Context a;
     private final boolean b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final String f24247c;
+    private final String c;
     private final Account d;
 
     static {
@@ -30,9 +26,9 @@ public class AndroidAuthenticator implements Authenticator {
     }
 
     public AndroidAuthenticator(Context context, Account account, String str, boolean z) {
-        this.f24246a = context;
+        this.a = context;
         this.d = account;
-        this.f24247c = str;
+        this.c = str;
         this.b = z;
     }
 
@@ -42,7 +38,7 @@ public class AndroidAuthenticator implements Authenticator {
 
     @Override // com.mokee.volley.toolbox.Authenticator
     public String getAuthToken() throws AuthFailureError {
-        AccountManagerFuture<Bundle> authToken = AccountManager.get(this.f24246a).getAuthToken(this.d, this.f24247c, this.b, null, null);
+        AccountManagerFuture<Bundle> authToken = AccountManager.get(this.a).getAuthToken(this.d, this.c, this.b, null, null);
         try {
             Bundle result = authToken.getResult();
             String str = null;
@@ -59,7 +55,7 @@ public class AndroidAuthenticator implements Authenticator {
                     }
                     if (str == null) {
                         try {
-                            throw new AuthFailureError(e[1] + this.f24247c);
+                            throw new AuthFailureError(e[1] + this.c);
                         } catch (Exception e2) {
                             throw e2;
                         }
@@ -78,6 +74,6 @@ public class AndroidAuthenticator implements Authenticator {
 
     @Override // com.mokee.volley.toolbox.Authenticator
     public void invalidateAuthToken(String str) {
-        AccountManager.get(this.f24246a).invalidateAuthToken(this.d.type, str);
+        AccountManager.get(this.a).invalidateAuthToken(this.d.type, str);
     }
 }

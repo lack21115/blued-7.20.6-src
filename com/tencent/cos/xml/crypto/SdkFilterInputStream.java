@@ -20,8 +20,8 @@ public class SdkFilterInputStream extends FilterInputStream implements Releasabl
             return;
         }
         this.aborted = true;
-        if (this.f42254in instanceof SdkFilterInputStream) {
-            ((SdkFilterInputStream) this.f42254in).abort();
+        if (this.in instanceof SdkFilterInputStream) {
+            ((SdkFilterInputStream) this.in).abort();
         }
     }
 
@@ -35,12 +35,12 @@ public class SdkFilterInputStream extends FilterInputStream implements Releasabl
     @Override // java.io.FilterInputStream, java.io.InputStream
     public int available() throws IOException {
         abortIfNeeded();
-        return this.f42254in.available();
+        return this.in.available();
     }
 
     @Override // java.io.FilterInputStream, java.io.InputStream, java.io.Closeable, java.lang.AutoCloseable
     public void close() throws IOException {
-        this.f42254in.close();
+        this.in.close();
         abortIfNeeded();
     }
 
@@ -52,32 +52,32 @@ public class SdkFilterInputStream extends FilterInputStream implements Releasabl
     public void mark(int i) {
         synchronized (this) {
             abortIfNeeded();
-            this.f42254in.mark(i);
+            this.in.mark(i);
         }
     }
 
     @Override // java.io.FilterInputStream, java.io.InputStream
     public boolean markSupported() {
         abortIfNeeded();
-        return this.f42254in.markSupported();
+        return this.in.markSupported();
     }
 
     @Override // java.io.FilterInputStream, java.io.InputStream
     public int read() throws IOException {
         abortIfNeeded();
-        return this.f42254in.read();
+        return this.in.read();
     }
 
     @Override // java.io.FilterInputStream, java.io.InputStream
     public int read(byte[] bArr, int i, int i2) throws IOException {
         abortIfNeeded();
-        return this.f42254in.read(bArr, i, i2);
+        return this.in.read(bArr, i, i2);
     }
 
     public void release() {
         IOUtils.closeQuietly(this);
-        if (this.f42254in instanceof Releasable) {
-            ((Releasable) this.f42254in).release();
+        if (this.in instanceof Releasable) {
+            ((Releasable) this.in).release();
         }
     }
 
@@ -85,13 +85,13 @@ public class SdkFilterInputStream extends FilterInputStream implements Releasabl
     public void reset() throws IOException {
         synchronized (this) {
             abortIfNeeded();
-            this.f42254in.reset();
+            this.in.reset();
         }
     }
 
     @Override // java.io.FilterInputStream, java.io.InputStream
     public long skip(long j) throws IOException {
         abortIfNeeded();
-        return this.f42254in.skip(j);
+        return this.in.skip(j);
     }
 }

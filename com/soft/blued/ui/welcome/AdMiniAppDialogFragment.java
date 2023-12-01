@@ -15,9 +15,12 @@ import com.blued.android.core.ui.BaseDialogFragment;
 import com.blued.android.module.common.login.model.BluedADExtra;
 import com.blued.das.login.LoginAndRegisterProtos;
 import com.bytedance.applog.tracker.Tracker;
+import com.cdo.oaps.ad.OapsWrapper;
+import com.soft.blued.R;
 import com.soft.blued.databinding.LayoutAdMiniAppDialogBinding;
 import com.soft.blued.log.track.EventTrackLoginAndRegister;
 import com.soft.blued.utils.WeChatUtils;
+import java.io.Serializable;
 import kotlin.Lazy;
 import kotlin.LazyKt;
 import kotlin.Metadata;
@@ -31,14 +34,13 @@ import kotlin.jvm.internal.Intrinsics;
 public final class AdMiniAppDialogFragment extends BaseDialogFragment {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Companion f34510a = new Companion(null);
+    public static final Companion f20819a = new Companion(null);
     private final Lazy b = LazyKt.a(new Function0<LayoutAdMiniAppDialogBinding>() { // from class: com.soft.blued.ui.welcome.AdMiniAppDialogFragment$vb$2
         /* JADX INFO: Access modifiers changed from: package-private */
         {
             super(0);
         }
 
-        @Override // kotlin.jvm.functions.Function0
         /* renamed from: a */
         public final LayoutAdMiniAppDialogBinding invoke() {
             return LayoutAdMiniAppDialogBinding.a(LayoutInflater.from(AdMiniAppDialogFragment.this.getContext()));
@@ -46,7 +48,7 @@ public final class AdMiniAppDialogFragment extends BaseDialogFragment {
     });
 
     /* renamed from: c  reason: collision with root package name */
-    private String f34511c = "";
+    private String f20820c = "";
     private String d = "";
     private BluedADExtra e;
 
@@ -61,51 +63,51 @@ public final class AdMiniAppDialogFragment extends BaseDialogFragment {
         }
 
         @JvmStatic
-        public final AdMiniAppDialogFragment a(FragmentManager manager, String id, String path, BluedADExtra bluedADExtra) {
-            Intrinsics.e(manager, "manager");
-            Intrinsics.e(id, "id");
-            Intrinsics.e(path, "path");
+        public final AdMiniAppDialogFragment a(FragmentManager fragmentManager, String str, String str2, BluedADExtra bluedADExtra) {
+            Intrinsics.e(fragmentManager, "manager");
+            Intrinsics.e(str, "id");
+            Intrinsics.e(str2, OapsWrapper.KEY_PATH);
             AdMiniAppDialogFragment adMiniAppDialogFragment = new AdMiniAppDialogFragment();
             Bundle bundle = new Bundle();
-            bundle.putString("mini_app_id", id);
-            bundle.putString("mini_app_path", path);
-            bundle.putSerializable("ad_model", bluedADExtra);
+            bundle.putString("mini_app_id", str);
+            bundle.putString("mini_app_path", str2);
+            bundle.putSerializable("ad_model", (Serializable) bluedADExtra);
             adMiniAppDialogFragment.setArguments(bundle);
-            adMiniAppDialogFragment.show(manager, AdMiniAppDialogFragment.class.getSimpleName());
+            adMiniAppDialogFragment.show(fragmentManager, AdMiniAppDialogFragment.class.getSimpleName());
             return adMiniAppDialogFragment;
         }
     }
 
     @JvmStatic
     public static final AdMiniAppDialogFragment a(FragmentManager fragmentManager, String str, String str2, BluedADExtra bluedADExtra) {
-        return f34510a.a(fragmentManager, str, str2, bluedADExtra);
+        return f20819a.a(fragmentManager, str, str2, bluedADExtra);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(AdMiniAppDialogFragment this$0, View view) {
+    public static final void a(AdMiniAppDialogFragment adMiniAppDialogFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        WeChatUtils.a(this$0.getContext(), this$0.f34511c, this$0.d);
-        BluedADExtra bluedADExtra = this$0.e;
+        Intrinsics.e(adMiniAppDialogFragment, "this$0");
+        WeChatUtils.a(adMiniAppDialogFragment.getContext(), adMiniAppDialogFragment.f20820c, adMiniAppDialogFragment.d);
+        BluedADExtra bluedADExtra = adMiniAppDialogFragment.e;
         if (bluedADExtra != null) {
             Log.v("drb", "广告_启动小程序二次确认弹窗_允许_点击");
             EventTrackLoginAndRegister.e(LoginAndRegisterProtos.Event.AD_APPLET_OPEN_POP_YES_CLICK, bluedADExtra);
         }
-        this$0.dismiss();
+        adMiniAppDialogFragment.dismiss();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(AdMiniAppDialogFragment this$0, View view) {
+    public static final void b(AdMiniAppDialogFragment adMiniAppDialogFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.dismiss();
+        Intrinsics.e(adMiniAppDialogFragment, "this$0");
+        adMiniAppDialogFragment.dismiss();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void c(AdMiniAppDialogFragment this$0, View view) {
+    public static final void c(AdMiniAppDialogFragment adMiniAppDialogFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.dismiss();
+        Intrinsics.e(adMiniAppDialogFragment, "this$0");
+        adMiniAppDialogFragment.dismiss();
     }
 
     private final LayoutAdMiniAppDialogBinding d() {
@@ -113,7 +115,7 @@ public final class AdMiniAppDialogFragment extends BaseDialogFragment {
     }
 
     private final void e() {
-        Log.v("drb", Intrinsics.a("启动小程序弹窗 adExtra:", (Object) this.e));
+        Log.v("drb", Intrinsics.a("启动小程序弹窗 adExtra:", this.e));
         BluedADExtra bluedADExtra = this.e;
         if (bluedADExtra != null) {
             Log.v("drb", "广告_启动小程序二次确认弹窗_曝光");
@@ -125,13 +127,13 @@ public final class AdMiniAppDialogFragment extends BaseDialogFragment {
                 AdMiniAppDialogFragment.a(AdMiniAppDialogFragment.this, view);
             }
         });
-        d().f29381c.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.welcome.-$$Lambda$AdMiniAppDialogFragment$Sm7dmyqdBBVNokS9QGH7EC3QIMQ
+        d().f15691c.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.welcome.-$$Lambda$AdMiniAppDialogFragment$Sm7dmyqdBBVNokS9QGH7EC3QIMQ
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 AdMiniAppDialogFragment.b(AdMiniAppDialogFragment.this, view);
             }
         });
-        d().f29380a.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.welcome.-$$Lambda$AdMiniAppDialogFragment$w-o76tKQltD5baDISurPsNKK9-Y
+        d().f15690a.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.welcome.-$$Lambda$AdMiniAppDialogFragment$w-o76tKQltD5baDISurPsNKK9-Y
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 AdMiniAppDialogFragment.c(AdMiniAppDialogFragment.this, view);
@@ -139,9 +141,8 @@ public final class AdMiniAppDialogFragment extends BaseDialogFragment {
         });
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
-        Dialog dialog = new Dialog(requireActivity(), 2131953017);
+        Dialog dialog = new Dialog(requireActivity(), R.style.transparentFrameWindowStyleLive);
         dialog.requestWindowFeature(1);
         dialog.setContentView(d().getRoot(), new ViewGroup.LayoutParams(-1, -1));
         Window window = dialog.getWindow();
@@ -149,7 +150,7 @@ public final class AdMiniAppDialogFragment extends BaseDialogFragment {
             return dialog;
         }
         window.setBackgroundDrawable(new ColorDrawable(0));
-        window.setWindowAnimations(2131952742);
+        window.setWindowAnimations(R.style.alpha_menu_slow_animstyle);
         WindowManager.LayoutParams attributes = window.getAttributes();
         attributes.width = AppInfo.l;
         attributes.height = -1;
@@ -158,21 +159,19 @@ public final class AdMiniAppDialogFragment extends BaseDialogFragment {
         return dialog;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
-    public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
-        Intrinsics.e(inflater, "inflater");
-        return super.onCreateView(inflater, viewGroup, bundle);
+    public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+        Intrinsics.e(layoutInflater, "inflater");
+        return super.onCreateView(layoutInflater, viewGroup, bundle);
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public void setupDialog(Dialog dialog, int i) {
         Intrinsics.e(dialog, "dialog");
         super.setupDialog(dialog, i);
         Bundle arguments = getArguments();
         if (arguments != null) {
-            this.f34511c = arguments.getString("mini_app_id");
+            this.f20820c = arguments.getString("mini_app_id");
             this.d = arguments.getString("mini_app_path");
-            this.e = (BluedADExtra) arguments.getSerializable("ad_model");
+            this.e = arguments.getSerializable("ad_model");
         }
         e();
     }

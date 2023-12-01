@@ -4,10 +4,10 @@ package com.tencent.txcopyrightedmedia.impl.utils;
 public final class ay {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f40080a;
+    public String f26389a;
     public String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f40081c;
+    public String f26390c;
     public String d;
 }

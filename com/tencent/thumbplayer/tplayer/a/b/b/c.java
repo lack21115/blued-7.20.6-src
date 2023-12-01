@@ -4,37 +4,37 @@ import com.tencent.thumbplayer.tplayer.a.b.a;
 
 /* loaded from: source-8829756-dex2jar.jar:com/tencent/thumbplayer/tplayer/a/b/b/c.class */
 public class c extends com.tencent.thumbplayer.tplayer.a.b.a {
-    @a.InterfaceC1025a(a = "retentiondurationms")
+    @a.InterfaceC0855a(a = "retentiondurationms")
 
     /* renamed from: a  reason: collision with root package name */
-    private long f39380a = -1;
-    @a.InterfaceC1025a(a = "errorcode")
+    private long f25689a = -1;
+    @a.InterfaceC0855a(a = "errorcode")
     private int b = -1;
-    @a.InterfaceC1025a(a = "tseekcount")
+    @a.InterfaceC0855a(a = "tseekcount")
 
     /* renamed from: c  reason: collision with root package name */
-    private int f39381c = -1;
-    @a.InterfaceC1025a(a = "tseekbufferingcount")
+    private int f25690c = -1;
+    @a.InterfaceC0855a(a = "tseekbufferingcount")
     private int d = -1;
-    @a.InterfaceC1025a(a = "tseekbufferingdurationms")
+    @a.InterfaceC0855a(a = "tseekbufferingdurationms")
     private long e = -1;
-    @a.InterfaceC1025a(a = "tsecondbufferingcount")
+    @a.InterfaceC0855a(a = "tsecondbufferingcount")
     private int f = -1;
-    @a.InterfaceC1025a(a = "tsecondbufferingdurationms")
+    @a.InterfaceC0855a(a = "tsecondbufferingdurationms")
     private long g = -1;
-    @a.InterfaceC1025a(a = "videodecodertype")
+    @a.InterfaceC0855a(a = "videodecodertype")
     private int h = -1;
-    @a.InterfaceC1025a(a = "audiodecodertype")
+    @a.InterfaceC0855a(a = "audiodecodertype")
     private int i = -1;
-    @a.InterfaceC1025a(a = "demuxertype")
+    @a.InterfaceC0855a(a = "demuxertype")
     private int j = -1;
-    @a.InterfaceC1025a(a = "videorendertype")
+    @a.InterfaceC0855a(a = "videorendertype")
     private int k = -1;
-    @a.InterfaceC1025a(a = "audiorendertype")
+    @a.InterfaceC0855a(a = "audiorendertype")
     private int l = -1;
 
     public void c(long j) {
-        this.f39380a = j;
+        this.f25689a = j;
     }
 
     public void d(long j) {
@@ -50,7 +50,7 @@ public class c extends com.tencent.thumbplayer.tplayer.a.b.a {
     }
 
     public void p(int i) {
-        this.f39381c = i;
+        this.f25690c = i;
     }
 
     public void q(int i) {

@@ -7,13 +7,13 @@ import android.media.AudioManager;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static AudioManager f24560a;
+    private static AudioManager f10873a;
 
     public static AudioManager a(Context context) {
-        if (f24560a == null && context != null) {
-            f24560a = (AudioManager) context.getApplicationContext().getSystemService("audio");
+        if (f10873a == null && context != null) {
+            f10873a = (AudioManager) context.getApplicationContext().getSystemService("audio");
         }
-        return f24560a;
+        return f10873a;
     }
 
     public static int b(Context context) {

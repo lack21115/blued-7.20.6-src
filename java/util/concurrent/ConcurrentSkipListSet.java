@@ -54,7 +54,7 @@ public class ConcurrentSkipListSet<E> extends AbstractSet<E> implements Navigabl
         UNSAFE.putObjectVolatile(this, mapOffset, concurrentNavigableMap);
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean add(E e) {
         return this.m.putIfAbsent(e, Boolean.TRUE) == null;
     }
@@ -64,7 +64,7 @@ public class ConcurrentSkipListSet<E> extends AbstractSet<E> implements Navigabl
         return this.m.ceilingKey(e);
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public void clear() {
         this.m.clear();
     }
@@ -84,7 +84,7 @@ public class ConcurrentSkipListSet<E> extends AbstractSet<E> implements Navigabl
         return this.m.comparator();
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean contains(Object obj) {
         return this.m.containsKey(obj);
     }
@@ -99,7 +99,7 @@ public class ConcurrentSkipListSet<E> extends AbstractSet<E> implements Navigabl
         return new ConcurrentSkipListSet(this.m.descendingMap());
     }
 
-    @Override // java.util.AbstractSet, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractSet, java.util.Collection
     public boolean equals(Object obj) {
         boolean z;
         boolean z2 = false;
@@ -135,7 +135,7 @@ public class ConcurrentSkipListSet<E> extends AbstractSet<E> implements Navigabl
         return this.m.floorKey(e);
     }
 
-    @Override // java.util.NavigableSet
+    @Override // java.util.NavigableSet, java.util.SortedSet
     public NavigableSet<E> headSet(E e) {
         return headSet(e, false);
     }
@@ -146,7 +146,7 @@ public class ConcurrentSkipListSet<E> extends AbstractSet<E> implements Navigabl
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // java.util.NavigableSet
+    @Override // java.util.NavigableSet, java.util.SortedSet
     public /* bridge */ /* synthetic */ SortedSet headSet(Object obj) {
         return headSet((ConcurrentSkipListSet<E>) obj);
     }
@@ -156,7 +156,7 @@ public class ConcurrentSkipListSet<E> extends AbstractSet<E> implements Navigabl
         return this.m.higherKey(e);
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean isEmpty() {
         return this.m.isEmpty();
     }
@@ -194,12 +194,12 @@ public class ConcurrentSkipListSet<E> extends AbstractSet<E> implements Navigabl
         return pollLastEntry.getKey();
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean remove(Object obj) {
         return this.m.remove(obj, Boolean.TRUE);
     }
 
-    @Override // java.util.AbstractSet, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractSet, java.util.AbstractCollection, java.util.Collection
     public boolean removeAll(Collection<?> collection) {
         boolean z = false;
         Iterator<?> it = collection.iterator();
@@ -211,12 +211,12 @@ public class ConcurrentSkipListSet<E> extends AbstractSet<E> implements Navigabl
         return z;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    @Override // java.util.AbstractCollection, java.util.Collection
     public int size() {
         return this.m.size();
     }
 
-    @Override // java.util.NavigableSet
+    @Override // java.util.NavigableSet, java.util.SortedSet
     public NavigableSet<E> subSet(E e, E e2) {
         return subSet(e, true, e2, false);
     }
@@ -226,7 +226,7 @@ public class ConcurrentSkipListSet<E> extends AbstractSet<E> implements Navigabl
         return new ConcurrentSkipListSet(this.m.subMap((boolean) e, z, (boolean) e2, z2));
     }
 
-    @Override // java.util.NavigableSet
+    @Override // java.util.NavigableSet, java.util.SortedSet
     public NavigableSet<E> tailSet(E e) {
         return tailSet(e, true);
     }
@@ -237,7 +237,7 @@ public class ConcurrentSkipListSet<E> extends AbstractSet<E> implements Navigabl
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // java.util.NavigableSet
+    @Override // java.util.NavigableSet, java.util.SortedSet
     public /* bridge */ /* synthetic */ SortedSet tailSet(Object obj) {
         return tailSet((ConcurrentSkipListSet<E>) obj);
     }

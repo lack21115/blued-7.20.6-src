@@ -13,11 +13,11 @@ import java.lang.annotation.RetentionPolicy;
 public final class c implements com.anythink.expressad.exoplayer.j.h {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final long f7555a = 2097152;
+    public static final long f4716a = 2097152;
     public static final int b = 1;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final int f7556c = 2;
+    public static final int f4717c = 2;
     public static final int d = 4;
     public static final int e = 0;
     public static final int f = 1;
@@ -60,7 +60,7 @@ public final class c implements com.anythink.expressad.exoplayer.j.h {
     @Retention(RetentionPolicy.SOURCE)
     /* renamed from: com.anythink.expressad.exoplayer.j.a.c$c  reason: collision with other inner class name */
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/exoplayer/j/a/c$c.class */
-    public @interface InterfaceC0139c {
+    public @interface InterfaceC0068c {
     }
 
     public c(com.anythink.expressad.exoplayer.j.a.a aVar, com.anythink.expressad.exoplayer.j.h hVar) {
@@ -119,7 +119,7 @@ public final class c implements com.anythink.expressad.exoplayer.j.h {
         } else if (a2.d) {
             Uri fromFile = Uri.fromFile(a2.e);
             long j2 = this.w - a2.b;
-            long j3 = a2.f7558c - j2;
+            long j3 = a2.f4719c - j2;
             long j4 = this.x;
             long j5 = j3;
             if (j4 != -1) {
@@ -131,7 +131,7 @@ public final class c implements com.anythink.expressad.exoplayer.j.h {
             if (a2.a()) {
                 j = this.x;
             } else {
-                long j6 = a2.f7558c;
+                long j6 = a2.f4719c;
                 long j7 = this.x;
                 j = j6;
                 if (j7 != -1) {
@@ -204,7 +204,7 @@ public final class c implements com.anythink.expressad.exoplayer.j.h {
     }
 
     private void b(IOException iOException) {
-        if (f() || (iOException instanceof a.C0138a)) {
+        if (f() || (iOException instanceof a.C0067a)) {
             this.z = true;
         }
     }
@@ -328,7 +328,7 @@ public final class c implements com.anythink.expressad.exoplayer.j.h {
     public final long a(com.anythink.expressad.exoplayer.j.k kVar) {
         try {
             this.v = f.a(kVar);
-            Uri uri = kVar.f7584c;
+            Uri uri = kVar.f4745c;
             this.s = uri;
             Uri uri2 = null;
             String a2 = this.i.c(this.v).a("exo_redir", (String) null);

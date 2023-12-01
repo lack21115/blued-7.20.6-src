@@ -22,7 +22,7 @@ public class GroupInfoFragment_ViewBinding implements Unbinder {
     private GroupInfoFragment b;
 
     /* renamed from: c  reason: collision with root package name */
-    private View f32724c;
+    private View f19033c;
     private View d;
     private View e;
     private View f;
@@ -47,12 +47,12 @@ public class GroupInfoFragment_ViewBinding implements Unbinder {
         groupInfoFragment.title = (CommonTopTitleNoTrans) Utils.a(view, 2131370694, "field 'title'", CommonTopTitleNoTrans.class);
         groupInfoFragment.iv_icon = (ImageView) Utils.a(view, 2131365504, "field 'iv_icon'", ImageView.class);
         groupInfoFragment.tv_group_name = (TextView) Utils.a(view, R.id.tv_group_name, "field 'tv_group_name'", TextView.class);
-        groupInfoFragment.tv_member_num = (TextView) Utils.a(view, 2131371936, "field 'tv_member_num'", TextView.class);
+        groupInfoFragment.tv_member_num = (TextView) Utils.a(view, R.id.tv_member_num, "field 'tv_member_num'", TextView.class);
         groupInfoFragment.list_manager = (RecyclerView) Utils.a(view, R.id.list_manager, "field 'list_manager'", RecyclerView.class);
-        groupInfoFragment.iv_arrow_right = (ImageView) Utils.a(view, 2131365073, "field 'iv_arrow_right'", ImageView.class);
+        groupInfoFragment.iv_arrow_right = (ImageView) Utils.a(view, R.id.iv_arrow_right, "field 'iv_arrow_right'", ImageView.class);
         View a2 = Utils.a(view, R.id.tv_go_chat, "field 'tv_go_chat' and method 'onClick'");
         groupInfoFragment.tv_go_chat = (TextView) Utils.b(a2, R.id.tv_go_chat, "field 'tv_go_chat'", TextView.class);
-        this.f32724c = a2;
+        this.f19033c = a2;
         a2.setOnClickListener(new DebouncingOnClickListener() { // from class: com.soft.blued.ui.msg_group.fragment.GroupInfoFragment_ViewBinding.1
             @Override // butterknife.internal.DebouncingOnClickListener
             public void a(View view2) {
@@ -105,8 +105,8 @@ public class GroupInfoFragment_ViewBinding implements Unbinder {
                 groupInfoFragment.onClick(view2);
             }
         });
-        View a8 = Utils.a(view, 2131372428, "field 'tv_report' and method 'onClick'");
-        groupInfoFragment.tv_report = (TextView) Utils.b(a8, 2131372428, "field 'tv_report'", TextView.class);
+        View a8 = Utils.a(view, R.id.tv_report, "field 'tv_report' and method 'onClick'");
+        groupInfoFragment.tv_report = (TextView) Utils.b(a8, R.id.tv_report, "field 'tv_report'", TextView.class);
         this.i = a8;
         a8.setOnClickListener(new DebouncingOnClickListener() { // from class: com.soft.blued.ui.msg_group.fragment.GroupInfoFragment_ViewBinding.7
             @Override // butterknife.internal.DebouncingOnClickListener
@@ -123,8 +123,8 @@ public class GroupInfoFragment_ViewBinding implements Unbinder {
                 groupInfoFragment.onClick(view2);
             }
         });
-        View a10 = Utils.a(view, 2131371378, "field 'tv_exit' and method 'onClick'");
-        groupInfoFragment.tv_exit = (TextView) Utils.b(a10, 2131371378, "field 'tv_exit'", TextView.class);
+        View a10 = Utils.a(view, R.id.tv_exit, "field 'tv_exit' and method 'onClick'");
+        groupInfoFragment.tv_exit = (TextView) Utils.b(a10, R.id.tv_exit, "field 'tv_exit'", TextView.class);
         this.k = a10;
         a10.setOnClickListener(new DebouncingOnClickListener() { // from class: com.soft.blued.ui.msg_group.fragment.GroupInfoFragment_ViewBinding.9
             @Override // butterknife.internal.DebouncingOnClickListener
@@ -207,8 +207,8 @@ public class GroupInfoFragment_ViewBinding implements Unbinder {
         });
         groupInfoFragment.rl_et = (RelativeLayout) Utils.a(view, R.id.rl_et, "field 'rl_et'", RelativeLayout.class);
         groupInfoFragment.tv_apply_hint = (TextView) Utils.a(view, R.id.tv_apply_hint, "field 'tv_apply_hint'", TextView.class);
-        groupInfoFragment.ll_apply = (ShapeLinearLayout) Utils.a(view, 2131367633, "field 'll_apply'", ShapeLinearLayout.class);
-        groupInfoFragment.tv_desc = (TextView) Utils.a(view, 2131371262, "field 'tv_desc'", TextView.class);
+        groupInfoFragment.ll_apply = (ShapeLinearLayout) Utils.a(view, R.id.ll_apply, "field 'll_apply'", ShapeLinearLayout.class);
+        groupInfoFragment.tv_desc = (TextView) Utils.a(view, R.id.tv_desc, "field 'tv_desc'", TextView.class);
         groupInfoFragment.scrollView = (ScrollView) Utils.a(view, 2131369639, "field 'scrollView'", ScrollView.class);
         groupInfoFragment.ll_keyboard = (KeyboardListenLinearLayout) Utils.a(view, R.id.ll_keyboard, "field 'll_keyboard'", KeyboardListenLinearLayout.class);
         groupInfoFragment.ll_freeze = (LinearLayout) Utils.a(view, R.id.ll_freeze, "field 'll_freeze'", LinearLayout.class);
@@ -219,7 +219,7 @@ public class GroupInfoFragment_ViewBinding implements Unbinder {
         groupInfoFragment.rl_group_link = (RelativeLayout) Utils.a(view, R.id.rl_group_link, "field 'rl_group_link'", RelativeLayout.class);
         groupInfoFragment.tv_base_name = (TextView) Utils.a(view, R.id.tv_base_name, "field 'tv_base_name'", TextView.class);
         groupInfoFragment.tv_hint_link = (TextView) Utils.a(view, R.id.tv_hint_link, "field 'tv_hint_link'", TextView.class);
-        groupInfoFragment.iv_user_avatar = (ImageView) Utils.a(view, 2131366006, "field 'iv_user_avatar'", ImageView.class);
+        groupInfoFragment.iv_user_avatar = (ImageView) Utils.a(view, R.id.iv_user_avatar, "field 'iv_user_avatar'", ImageView.class);
         View a18 = Utils.a(view, R.id.rl_announcement, "field 'rl_announcement' and method 'onClick'");
         groupInfoFragment.rl_announcement = (RelativeLayout) Utils.b(a18, R.id.rl_announcement, "field 'rl_announcement'", RelativeLayout.class);
         this.s = a18;
@@ -230,12 +230,12 @@ public class GroupInfoFragment_ViewBinding implements Unbinder {
             }
         });
         groupInfoFragment.tv_announcement = (TextView) Utils.a(view, R.id.tv_announcement, "field 'tv_announcement'", TextView.class);
-        groupInfoFragment.tv_city = (TextView) Utils.a(view, 2131371111, "field 'tv_city'", TextView.class);
+        groupInfoFragment.tv_city = (TextView) Utils.a(view, R.id.tv_city, "field 'tv_city'", TextView.class);
         groupInfoFragment.tv_super = (TextView) Utils.a(view, R.id.tv_super, "field 'tv_super'", TextView.class);
         groupInfoFragment.tv_frozen = (ShapeTextView) Utils.a(view, R.id.tv_frozen, "field 'tv_frozen'", ShapeTextView.class);
         groupInfoFragment.rl_category = (RelativeLayout) Utils.a(view, R.id.rl_category, "field 'rl_category'", RelativeLayout.class);
         groupInfoFragment.tv_category = (TextView) Utils.a(view, R.id.tv_category, "field 'tv_category'", TextView.class);
-        groupInfoFragment.ivOnline = (ImageView) Utils.a(view, 2131365702, "field 'ivOnline'", ImageView.class);
+        groupInfoFragment.ivOnline = (ImageView) Utils.a(view, R.id.iv_online, "field 'ivOnline'", ImageView.class);
         groupInfoFragment.tvOnlineNum = (TextView) Utils.a(view, R.id.tv_online_num, "field 'tvOnlineNum'", TextView.class);
         View a19 = Utils.a(view, R.id.rl_member, "method 'onClick'");
         this.t = a19;
@@ -319,8 +319,8 @@ public class GroupInfoFragment_ViewBinding implements Unbinder {
         groupInfoFragment.tv_category = null;
         groupInfoFragment.ivOnline = null;
         groupInfoFragment.tvOnlineNum = null;
-        this.f32724c.setOnClickListener(null);
-        this.f32724c = null;
+        this.f19033c.setOnClickListener(null);
+        this.f19033c = null;
         this.d.setOnClickListener(null);
         this.d = null;
         this.e.setOnClickListener(null);

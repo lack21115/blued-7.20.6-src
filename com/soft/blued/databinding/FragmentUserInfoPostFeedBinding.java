@@ -14,11 +14,11 @@ import com.soft.blued.R;
 public final class FragmentUserInfoPostFeedBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ShapeFrameLayout f28995a;
+    public final ShapeFrameLayout f15305a;
     public final ShapeTextView b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final ImageView f28996c;
+    public final ImageView f15306c;
     public final ImageView d;
     public final ShapeFrameLayout e;
     public final ShapeLinearLayout f;
@@ -28,9 +28,9 @@ public final class FragmentUserInfoPostFeedBinding implements ViewBinding {
 
     private FragmentUserInfoPostFeedBinding(FrameLayout frameLayout, ShapeFrameLayout shapeFrameLayout, ShapeTextView shapeTextView, ImageView imageView, ImageView imageView2, ShapeFrameLayout shapeFrameLayout2, ShapeLinearLayout shapeLinearLayout, ShapeTextView shapeTextView2, TextView textView) {
         this.i = frameLayout;
-        this.f28995a = shapeFrameLayout;
+        this.f15305a = shapeFrameLayout;
         this.b = shapeTextView;
-        this.f28996c = imageView;
+        this.f15306c = imageView;
         this.d = imageView2;
         this.e = shapeFrameLayout2;
         this.f = shapeLinearLayout;
@@ -40,23 +40,23 @@ public final class FragmentUserInfoPostFeedBinding implements ViewBinding {
 
     public static FragmentUserInfoPostFeedBinding a(View view) {
         String str;
-        ShapeFrameLayout shapeFrameLayout = (ShapeFrameLayout) view.findViewById(R.id.content_View);
-        if (shapeFrameLayout != null) {
-            ShapeTextView shapeTextView = (ShapeTextView) view.findViewById(2131363239);
-            if (shapeTextView != null) {
+        ShapeFrameLayout findViewById = view.findViewById(R.id.content_View);
+        if (findViewById != null) {
+            ShapeTextView findViewById2 = view.findViewById(R.id.discard_btn);
+            if (findViewById2 != null) {
                 ImageView imageView = (ImageView) view.findViewById(R.id.iv_guide_view);
                 if (imageView != null) {
-                    ImageView imageView2 = (ImageView) view.findViewById(2131365761);
+                    ImageView imageView2 = (ImageView) view.findViewById(R.id.iv_pre_topic);
                     if (imageView2 != null) {
-                        ShapeFrameLayout shapeFrameLayout2 = (ShapeFrameLayout) view.findViewById(R.id.layout_title);
-                        if (shapeFrameLayout2 != null) {
-                            ShapeLinearLayout shapeLinearLayout = (ShapeLinearLayout) view.findViewById(R.id.layout_topic);
-                            if (shapeLinearLayout != null) {
-                                ShapeTextView shapeTextView2 = (ShapeTextView) view.findViewById(2131369700);
-                                if (shapeTextView2 != null) {
-                                    TextView textView = (TextView) view.findViewById(2131372816);
+                        ShapeFrameLayout findViewById3 = view.findViewById(R.id.layout_title);
+                        if (findViewById3 != null) {
+                            ShapeLinearLayout findViewById4 = view.findViewById(R.id.layout_topic);
+                            if (findViewById4 != null) {
+                                ShapeTextView findViewById5 = view.findViewById(R.id.send_btn);
+                                if (findViewById5 != null) {
+                                    TextView textView = (TextView) view.findViewById(R.id.tv_topic);
                                     if (textView != null) {
-                                        return new FragmentUserInfoPostFeedBinding((FrameLayout) view, shapeFrameLayout, shapeTextView, imageView, imageView2, shapeFrameLayout2, shapeLinearLayout, shapeTextView2, textView);
+                                        return new FragmentUserInfoPostFeedBinding((FrameLayout) view, findViewById, findViewById2, imageView, imageView2, findViewById3, findViewById4, findViewById5, textView);
                                     }
                                     str = "tvTopic";
                                 } else {

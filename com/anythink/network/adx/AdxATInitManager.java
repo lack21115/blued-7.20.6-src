@@ -11,34 +11,31 @@ import java.util.Map;
 public class AdxATInitManager extends ATInitMediation {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile AdxATInitManager f8834a;
+    private static volatile AdxATInitManager f5994a;
 
     public static AdxATInitManager getInstance() {
-        if (f8834a == null) {
+        if (f5994a == null) {
             synchronized (AdxATInitManager.class) {
                 try {
-                    if (f8834a == null) {
-                        f8834a = new AdxATInitManager();
+                    if (f5994a == null) {
+                        f5994a = new AdxATInitManager();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f8834a;
+        return f5994a;
     }
 
-    @Override // com.anythink.core.api.ATInitMediation
     public String getNetworkName() {
         return "Adx";
     }
 
-    @Override // com.anythink.core.api.ATInitMediation
     public String getNetworkSDKClass() {
         return "com.anythink.core.api.ATSDK";
     }
 
-    @Override // com.anythink.core.api.ATInitMediation
     public List getResourceStatus() {
         ArrayList arrayList = new ArrayList();
         arrayList.add("anythink_myoffer_full_screen");
@@ -46,7 +43,6 @@ public class AdxATInitManager extends ATInitMediation {
         return arrayList;
     }
 
-    @Override // com.anythink.core.api.ATInitMediation
     public void initSDK(Context context, Map<String, Object> map, MediationInitCallback mediationInitCallback) {
     }
 }

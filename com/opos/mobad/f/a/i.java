@@ -8,7 +8,7 @@ import android.widget.ViewSwitcher;
 public class i extends ViewSwitcher {
 
     /* renamed from: a  reason: collision with root package name */
-    private volatile a f26110a;
+    private volatile a f12422a;
     private final b b;
 
     /* loaded from: source-8303388-dex2jar.jar:com/opos/mobad/f/a/i$a.class */
@@ -20,11 +20,11 @@ public class i extends ViewSwitcher {
     public static class b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final int f26111a;
+        public final int f12423a;
         public final int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final int f26112c;
+        public final int f12424c;
         public final int d;
         public final float e;
 
@@ -32,7 +32,7 @@ public class i extends ViewSwitcher {
             this.e = f <= 0.0f ? 6.315f : f;
             int i3 = i > 0 ? i : 171;
             this.b = i3;
-            this.f26111a = (int) (i3 / this.e);
+            this.f12423a = (int) (i3 / this.e);
             int i4 = i;
             if (i2 <= i3) {
                 i4 = i;
@@ -41,7 +41,7 @@ public class i extends ViewSwitcher {
                 }
             }
             this.d = i4;
-            this.f26112c = (int) (i4 / this.e);
+            this.f12424c = (int) (i4 / this.e);
         }
 
         public int a(int i) {
@@ -61,11 +61,11 @@ public class i extends ViewSwitcher {
 
         public int b(int i) {
             int i2;
-            int i3 = this.f26112c;
+            int i3 = this.f12424c;
             if (i <= i3) {
                 i2 = i3;
             } else {
-                int i4 = this.f26111a;
+                int i4 = this.f12423a;
                 if (i < i4) {
                     return i;
                 }
@@ -75,7 +75,7 @@ public class i extends ViewSwitcher {
         }
 
         public String toString() {
-            return "maxH = " + this.f26111a + ",maxW = " + this.b + ",minH = " + this.f26112c + ",minW = " + this.d;
+            return "maxH = " + this.f12423a + ",maxW = " + this.b + ",minH = " + this.f12424c + ",minW = " + this.d;
         }
     }
 
@@ -88,19 +88,18 @@ public class i extends ViewSwitcher {
         if (i == i3 && i2 == i4) {
             return;
         }
-        if (this.f26110a != null) {
-            this.f26110a.a(i, i2);
+        if (this.f12422a != null) {
+            this.f12422a.a(i, i2);
         }
         com.opos.cmn.an.f.a.b("switcher", "w = " + i + ",h = " + i2 + ",oldw = " + i3 + ",oldh = " + i4);
     }
 
     public void a(a aVar) {
-        this.f26110a = aVar;
+        this.f12422a = aVar;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         int makeMeasureSpec;
         int makeMeasureSpec2;
         int mode = View.MeasureSpec.getMode(i2);
@@ -121,9 +120,8 @@ public class i extends ViewSwitcher {
         super.onMeasure(makeMeasureSpec, makeMeasureSpec2);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // android.widget.FrameLayout, android.view.View
-    public void onSizeChanged(int i, int i2, int i3, int i4) {
+    @Override // android.view.View
+    protected void onSizeChanged(int i, int i2, int i3, int i4) {
         super.onSizeChanged(i, i2, i3, i4);
         com.opos.cmn.an.f.a.b("switcher", "onSizeChanged w = " + i + ",h = " + i2 + ",oldw = " + i3 + ",oldh = " + i4);
         a(i, i2, i3, i4);

@@ -8,13 +8,13 @@ import android.text.TextUtils;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static TelephonyManager f24563a;
+    private static TelephonyManager f10876a;
 
     public static TelephonyManager a(Context context) {
-        if (f24563a == null && context != null) {
-            f24563a = (TelephonyManager) context.getApplicationContext().getSystemService("phone");
+        if (f10876a == null && context != null) {
+            f10876a = (TelephonyManager) context.getApplicationContext().getSystemService("phone");
         }
-        return f24563a;
+        return f10876a;
     }
 
     private static String a(String str) {

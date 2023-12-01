@@ -3,6 +3,7 @@ package com.amap.api.services.route;
 import android.content.Context;
 import android.os.Parcel;
 import android.os.Parcelable;
+import com.alipay.sdk.util.i;
 import com.amap.api.col.p0003sl.fe;
 import com.amap.api.col.p0003sl.hb;
 import com.amap.api.services.core.AMapException;
@@ -98,9 +99,7 @@ public class RouteSearch {
     public static final int WALK_MULTI_PATH = 1;
     public static final int WalkDefault = 0;
     public static final int WalkMultipath = 1;
-
-    /* renamed from: a  reason: collision with root package name */
-    private IRouteSearch f5732a;
+    private IRouteSearch a;
 
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/services/route/RouteSearch$BusRouteQuery.class */
     public static class BusRouteQuery implements Parcelable, Cloneable {
@@ -123,13 +122,9 @@ public class RouteSearch {
                 return a(i);
             }
         };
-
-        /* renamed from: a  reason: collision with root package name */
-        private FromAndTo f5733a;
+        private FromAndTo a;
         private int b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private String f5734c;
+        private String c;
         private String d;
         private int e;
         private String f;
@@ -140,9 +135,9 @@ public class RouteSearch {
 
         public BusRouteQuery(Parcel parcel) {
             this.f = "base";
-            this.f5733a = (FromAndTo) parcel.readParcelable(FromAndTo.class.getClassLoader());
+            this.a = (FromAndTo) parcel.readParcelable(FromAndTo.class.getClassLoader());
             this.b = parcel.readInt();
-            this.f5734c = parcel.readString();
+            this.c = parcel.readString();
             this.e = parcel.readInt();
             this.d = parcel.readString();
             this.f = parcel.readString();
@@ -150,20 +145,20 @@ public class RouteSearch {
 
         public BusRouteQuery(FromAndTo fromAndTo, int i, String str, int i2) {
             this.f = "base";
-            this.f5733a = fromAndTo;
+            this.a = fromAndTo;
             this.b = i;
-            this.f5734c = str;
+            this.c = str;
             this.e = i2;
         }
 
         /* renamed from: clone */
-        public BusRouteQuery m2504clone() {
+        public BusRouteQuery m8947clone() {
             try {
                 super.clone();
             } catch (CloneNotSupportedException e) {
                 fe.a(e, "RouteSearch", "BusRouteQueryclone");
             }
-            BusRouteQuery busRouteQuery = new BusRouteQuery(this.f5733a, this.b, this.f5734c, this.e);
+            BusRouteQuery busRouteQuery = new BusRouteQuery(this.a, this.b, this.c, this.e);
             busRouteQuery.setCityd(this.d);
             busRouteQuery.setExtensions(this.f);
             return busRouteQuery;
@@ -180,12 +175,12 @@ public class RouteSearch {
             }
             if (obj != null && getClass() == obj.getClass()) {
                 BusRouteQuery busRouteQuery = (BusRouteQuery) obj;
-                String str = this.f5734c;
+                String str = this.c;
                 if (str == null) {
-                    if (busRouteQuery.f5734c != null) {
+                    if (busRouteQuery.c != null) {
                         return false;
                     }
-                } else if (!str.equals(busRouteQuery.f5734c)) {
+                } else if (!str.equals(busRouteQuery.c)) {
                     return false;
                 }
                 String str2 = this.d;
@@ -204,12 +199,12 @@ public class RouteSearch {
                 } else if (!str3.equals(busRouteQuery.f)) {
                     return false;
                 }
-                FromAndTo fromAndTo = this.f5733a;
+                FromAndTo fromAndTo = this.a;
                 if (fromAndTo == null) {
-                    if (busRouteQuery.f5733a != null) {
+                    if (busRouteQuery.a != null) {
                         return false;
                     }
-                } else if (!fromAndTo.equals(busRouteQuery.f5733a)) {
+                } else if (!fromAndTo.equals(busRouteQuery.a)) {
                     return false;
                 }
                 return this.b == busRouteQuery.b && this.e == busRouteQuery.e;
@@ -218,7 +213,7 @@ public class RouteSearch {
         }
 
         public String getCity() {
-            return this.f5734c;
+            return this.c;
         }
 
         public String getCityd() {
@@ -230,7 +225,7 @@ public class RouteSearch {
         }
 
         public FromAndTo getFromAndTo() {
-            return this.f5733a;
+            return this.a;
         }
 
         public int getMode() {
@@ -242,10 +237,10 @@ public class RouteSearch {
         }
 
         public int hashCode() {
-            String str = this.f5734c;
+            String str = this.c;
             int i = 0;
             int hashCode = str == null ? 0 : str.hashCode();
-            FromAndTo fromAndTo = this.f5733a;
+            FromAndTo fromAndTo = this.a;
             int hashCode2 = fromAndTo == null ? 0 : fromAndTo.hashCode();
             int i2 = this.b;
             int i3 = this.e;
@@ -266,9 +261,9 @@ public class RouteSearch {
 
         @Override // android.os.Parcelable
         public void writeToParcel(Parcel parcel, int i) {
-            parcel.writeParcelable(this.f5733a, i);
+            parcel.writeParcelable(this.a, i);
             parcel.writeInt(this.b);
-            parcel.writeString(this.f5734c);
+            parcel.writeString(this.c);
             parcel.writeInt(this.e);
             parcel.writeString(this.d);
             parcel.writeString(this.f);
@@ -296,20 +291,16 @@ public class RouteSearch {
                 return a(i);
             }
         };
-
-        /* renamed from: a  reason: collision with root package name */
-        private FromAndTo f5735a;
+        private FromAndTo a;
         private String b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private int f5736c;
+        private int c;
         private int d;
         private int e;
         private int f;
         private int g;
 
         public DrivePlanQuery() {
-            this.f5736c = 1;
+            this.c = 1;
             this.d = 0;
             this.e = 0;
             this.f = 0;
@@ -317,14 +308,14 @@ public class RouteSearch {
         }
 
         protected DrivePlanQuery(Parcel parcel) {
-            this.f5736c = 1;
+            this.c = 1;
             this.d = 0;
             this.e = 0;
             this.f = 0;
             this.g = 48;
-            this.f5735a = (FromAndTo) parcel.readParcelable(FromAndTo.class.getClassLoader());
+            this.a = (FromAndTo) parcel.readParcelable(FromAndTo.class.getClassLoader());
             this.b = parcel.readString();
-            this.f5736c = parcel.readInt();
+            this.c = parcel.readInt();
             this.d = parcel.readInt();
             this.e = parcel.readInt();
             this.f = parcel.readInt();
@@ -332,27 +323,27 @@ public class RouteSearch {
         }
 
         public DrivePlanQuery(FromAndTo fromAndTo, int i, int i2, int i3) {
-            this.f5736c = 1;
+            this.c = 1;
             this.d = 0;
             this.e = 0;
             this.f = 0;
             this.g = 48;
-            this.f5735a = fromAndTo;
+            this.a = fromAndTo;
             this.e = i;
             this.f = i2;
             this.g = i3;
         }
 
         /* renamed from: clone */
-        public DrivePlanQuery m2506clone() {
+        public DrivePlanQuery m8949clone() {
             try {
                 super.clone();
             } catch (CloneNotSupportedException e) {
                 fe.a(e, "RouteSearch", "DriveRouteQueryclone");
             }
-            DrivePlanQuery drivePlanQuery = new DrivePlanQuery(this.f5735a, this.e, this.f, this.g);
+            DrivePlanQuery drivePlanQuery = new DrivePlanQuery(this.a, this.e, this.f, this.g);
             drivePlanQuery.setDestParentPoiID(this.b);
-            drivePlanQuery.setMode(this.f5736c);
+            drivePlanQuery.setMode(this.c);
             drivePlanQuery.setCarType(this.d);
             return drivePlanQuery;
         }
@@ -368,12 +359,12 @@ public class RouteSearch {
             }
             if (obj != null && getClass() == obj.getClass()) {
                 DrivePlanQuery drivePlanQuery = (DrivePlanQuery) obj;
-                FromAndTo fromAndTo = this.f5735a;
+                FromAndTo fromAndTo = this.a;
                 if (fromAndTo == null) {
-                    if (drivePlanQuery.f5735a != null) {
+                    if (drivePlanQuery.a != null) {
                         return false;
                     }
-                } else if (!fromAndTo.equals(drivePlanQuery.f5735a)) {
+                } else if (!fromAndTo.equals(drivePlanQuery.a)) {
                     return false;
                 }
                 String str = this.b;
@@ -384,7 +375,7 @@ public class RouteSearch {
                 } else if (!str.equals(drivePlanQuery.b)) {
                     return false;
                 }
-                return this.f5736c == drivePlanQuery.f5736c && this.d == drivePlanQuery.d && this.e == drivePlanQuery.e && this.f == drivePlanQuery.f && this.g == drivePlanQuery.g;
+                return this.c == drivePlanQuery.c && this.d == drivePlanQuery.d && this.e == drivePlanQuery.e && this.f == drivePlanQuery.f && this.g == drivePlanQuery.g;
             }
             return false;
         }
@@ -406,7 +397,7 @@ public class RouteSearch {
         }
 
         public FromAndTo getFromAndTo() {
-            return this.f5735a;
+            return this.a;
         }
 
         public int getInterval() {
@@ -414,18 +405,18 @@ public class RouteSearch {
         }
 
         public int getMode() {
-            return this.f5736c;
+            return this.c;
         }
 
         public int hashCode() {
-            FromAndTo fromAndTo = this.f5735a;
+            FromAndTo fromAndTo = this.a;
             int i = 0;
             int hashCode = fromAndTo == null ? 0 : fromAndTo.hashCode();
             String str = this.b;
             if (str != null) {
                 i = str.hashCode();
             }
-            return ((((((((((((hashCode + 31) * 31) + i) * 31) + this.f5736c) * 31) + this.d) * 31) + this.e) * 31) + this.f) * 31) + this.g;
+            return ((((((((((((hashCode + 31) * 31) + i) * 31) + this.c) * 31) + this.d) * 31) + this.e) * 31) + this.f) * 31) + this.g;
         }
 
         public void setCarType(int i) {
@@ -437,14 +428,14 @@ public class RouteSearch {
         }
 
         public void setMode(int i) {
-            this.f5736c = i;
+            this.c = i;
         }
 
         @Override // android.os.Parcelable
         public void writeToParcel(Parcel parcel, int i) {
-            parcel.writeParcelable(this.f5735a, i);
+            parcel.writeParcelable(this.a, i);
             parcel.writeString(this.b);
-            parcel.writeInt(this.f5736c);
+            parcel.writeInt(this.c);
             parcel.writeInt(this.d);
             parcel.writeInt(this.e);
             parcel.writeInt(this.f);
@@ -473,13 +464,9 @@ public class RouteSearch {
                 return a(i);
             }
         };
-
-        /* renamed from: a  reason: collision with root package name */
-        private FromAndTo f5737a;
+        private FromAndTo a;
         private int b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private List<LatLonPoint> f5738c;
+        private List<LatLonPoint> c;
         private List<List<LatLonPoint>> d;
         private String e;
         private boolean f;
@@ -500,9 +487,9 @@ public class RouteSearch {
             this.g = 0;
             this.h = null;
             this.i = "base";
-            this.f5737a = (FromAndTo) parcel.readParcelable(FromAndTo.class.getClassLoader());
+            this.a = (FromAndTo) parcel.readParcelable(FromAndTo.class.getClassLoader());
             this.b = parcel.readInt();
-            this.f5738c = parcel.createTypedArrayList(LatLonPoint.CREATOR);
+            this.c = parcel.createTypedArrayList(LatLonPoint.CREATOR);
             int readInt = parcel.readInt();
             if (readInt == 0) {
                 this.d = null;
@@ -530,21 +517,21 @@ public class RouteSearch {
             this.g = 0;
             this.h = null;
             this.i = "base";
-            this.f5737a = fromAndTo;
+            this.a = fromAndTo;
             this.b = i;
-            this.f5738c = list;
+            this.c = list;
             this.d = list2;
             this.e = str;
         }
 
         /* renamed from: clone */
-        public DriveRouteQuery m2508clone() {
+        public DriveRouteQuery m8951clone() {
             try {
                 super.clone();
             } catch (CloneNotSupportedException e) {
                 fe.a(e, "RouteSearch", "DriveRouteQueryclone");
             }
-            DriveRouteQuery driveRouteQuery = new DriveRouteQuery(this.f5737a, this.b, this.f5738c, this.d, this.e);
+            DriveRouteQuery driveRouteQuery = new DriveRouteQuery(this.a, this.b, this.c, this.d, this.e);
             driveRouteQuery.setUseFerry(this.f);
             driveRouteQuery.setCarType(this.g);
             driveRouteQuery.setExclude(this.h);
@@ -579,23 +566,23 @@ public class RouteSearch {
                 } else if (!list.equals(driveRouteQuery.d)) {
                     return false;
                 }
-                FromAndTo fromAndTo = this.f5737a;
+                FromAndTo fromAndTo = this.a;
                 if (fromAndTo == null) {
-                    if (driveRouteQuery.f5737a != null) {
+                    if (driveRouteQuery.a != null) {
                         return false;
                     }
-                } else if (!fromAndTo.equals(driveRouteQuery.f5737a)) {
+                } else if (!fromAndTo.equals(driveRouteQuery.a)) {
                     return false;
                 }
                 if (this.b != driveRouteQuery.b) {
                     return false;
                 }
-                List<LatLonPoint> list2 = this.f5738c;
+                List<LatLonPoint> list2 = this.c;
                 if (list2 == null) {
-                    if (driveRouteQuery.f5738c != null) {
+                    if (driveRouteQuery.c != null) {
                         return false;
                     }
-                } else if (!list2.equals(driveRouteQuery.f5738c) || this.f != driveRouteQuery.isUseFerry() || this.g != driveRouteQuery.g) {
+                } else if (!list2.equals(driveRouteQuery.c) || this.f != driveRouteQuery.isUseFerry() || this.g != driveRouteQuery.g) {
                     return false;
                 }
                 String str2 = this.i;
@@ -636,7 +623,7 @@ public class RouteSearch {
                     stringBuffer.append(",");
                     stringBuffer.append(latLonPoint.getLatitude());
                     if (i4 < list2.size() - 1) {
-                        stringBuffer.append(";");
+                        stringBuffer.append(i.b);
                     }
                     i3 = i4 + 1;
                 }
@@ -660,7 +647,7 @@ public class RouteSearch {
         }
 
         public FromAndTo getFromAndTo() {
-            return this.f5737a;
+            return this.a;
         }
 
         public int getMode() {
@@ -668,27 +655,27 @@ public class RouteSearch {
         }
 
         public List<LatLonPoint> getPassedByPoints() {
-            return this.f5738c;
+            return this.c;
         }
 
         public String getPassedPointStr() {
             StringBuffer stringBuffer = new StringBuffer();
-            List<LatLonPoint> list = this.f5738c;
+            List<LatLonPoint> list = this.c;
             if (list == null || list.size() == 0) {
                 return null;
             }
             int i = 0;
             while (true) {
                 int i2 = i;
-                if (i2 >= this.f5738c.size()) {
+                if (i2 >= this.c.size()) {
                     return stringBuffer.toString();
                 }
-                LatLonPoint latLonPoint = this.f5738c.get(i2);
+                LatLonPoint latLonPoint = this.c.get(i2);
                 stringBuffer.append(latLonPoint.getLongitude());
                 stringBuffer.append(",");
                 stringBuffer.append(latLonPoint.getLatitude());
-                if (i2 < this.f5738c.size() - 1) {
-                    stringBuffer.append(";");
+                if (i2 < this.c.size() - 1) {
+                    stringBuffer.append(i.b);
                 }
                 i = i2 + 1;
             }
@@ -712,10 +699,10 @@ public class RouteSearch {
             int hashCode = str == null ? 0 : str.hashCode();
             List<List<LatLonPoint>> list = this.d;
             int hashCode2 = list == null ? 0 : list.hashCode();
-            FromAndTo fromAndTo = this.f5737a;
+            FromAndTo fromAndTo = this.a;
             int hashCode3 = fromAndTo == null ? 0 : fromAndTo.hashCode();
             int i2 = this.b;
-            List<LatLonPoint> list2 = this.f5738c;
+            List<LatLonPoint> list2 = this.c;
             if (list2 != null) {
                 i = list2.hashCode();
             }
@@ -770,13 +757,9 @@ public class RouteSearch {
                 return a(i);
             }
         };
-
-        /* renamed from: a  reason: collision with root package name */
-        private LatLonPoint f5739a;
+        private LatLonPoint a;
         private LatLonPoint b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private String f5740c;
+        private String c;
         private String d;
         private String e;
         private String f;
@@ -787,28 +770,28 @@ public class RouteSearch {
         }
 
         public FromAndTo(Parcel parcel) {
-            this.f5739a = (LatLonPoint) parcel.readParcelable(LatLonPoint.class.getClassLoader());
+            this.a = (LatLonPoint) parcel.readParcelable(LatLonPoint.class.getClassLoader());
             this.b = (LatLonPoint) parcel.readParcelable(LatLonPoint.class.getClassLoader());
-            this.f5740c = parcel.readString();
+            this.c = parcel.readString();
             this.d = parcel.readString();
             this.e = parcel.readString();
             this.f = parcel.readString();
         }
 
         public FromAndTo(LatLonPoint latLonPoint, LatLonPoint latLonPoint2) {
-            this.f5739a = latLonPoint;
+            this.a = latLonPoint;
             this.b = latLonPoint2;
         }
 
         /* renamed from: clone */
-        public FromAndTo m2510clone() {
+        public FromAndTo m8953clone() {
             try {
                 super.clone();
             } catch (CloneNotSupportedException e) {
                 fe.a(e, "RouteSearch", "FromAndToclone");
             }
-            FromAndTo fromAndTo = new FromAndTo(this.f5739a, this.b);
-            fromAndTo.setStartPoiID(this.f5740c);
+            FromAndTo fromAndTo = new FromAndTo(this.a, this.b);
+            fromAndTo.setStartPoiID(this.c);
             fromAndTo.setDestinationPoiID(this.d);
             fromAndTo.setOriginType(this.e);
             fromAndTo.setDestinationType(this.f);
@@ -834,20 +817,20 @@ public class RouteSearch {
                 } else if (!str.equals(fromAndTo.d)) {
                     return false;
                 }
-                LatLonPoint latLonPoint = this.f5739a;
+                LatLonPoint latLonPoint = this.a;
                 if (latLonPoint == null) {
-                    if (fromAndTo.f5739a != null) {
+                    if (fromAndTo.a != null) {
                         return false;
                     }
-                } else if (!latLonPoint.equals(fromAndTo.f5739a)) {
+                } else if (!latLonPoint.equals(fromAndTo.a)) {
                     return false;
                 }
-                String str2 = this.f5740c;
+                String str2 = this.c;
                 if (str2 == null) {
-                    if (fromAndTo.f5740c != null) {
+                    if (fromAndTo.c != null) {
                         return false;
                     }
-                } else if (!str2.equals(fromAndTo.f5740c)) {
+                } else if (!str2.equals(fromAndTo.c)) {
                     return false;
                 }
                 LatLonPoint latLonPoint2 = this.b;
@@ -881,7 +864,7 @@ public class RouteSearch {
         }
 
         public LatLonPoint getFrom() {
-            return this.f5739a;
+            return this.a;
         }
 
         public String getOriginType() {
@@ -897,7 +880,7 @@ public class RouteSearch {
         }
 
         public String getStartPoiID() {
-            return this.f5740c;
+            return this.c;
         }
 
         public LatLonPoint getTo() {
@@ -908,9 +891,9 @@ public class RouteSearch {
             String str = this.d;
             int i = 0;
             int hashCode = str == null ? 0 : str.hashCode();
-            LatLonPoint latLonPoint = this.f5739a;
+            LatLonPoint latLonPoint = this.a;
             int hashCode2 = latLonPoint == null ? 0 : latLonPoint.hashCode();
-            String str2 = this.f5740c;
+            String str2 = this.c;
             int hashCode3 = str2 == null ? 0 : str2.hashCode();
             LatLonPoint latLonPoint2 = this.b;
             int hashCode4 = latLonPoint2 == null ? 0 : latLonPoint2.hashCode();
@@ -944,14 +927,14 @@ public class RouteSearch {
         }
 
         public void setStartPoiID(String str) {
-            this.f5740c = str;
+            this.c = str;
         }
 
         @Override // android.os.Parcelable
         public void writeToParcel(Parcel parcel, int i) {
-            parcel.writeParcelable(this.f5739a, i);
+            parcel.writeParcelable(this.a, i);
             parcel.writeParcelable(this.b, i);
-            parcel.writeString(this.f5740c);
+            parcel.writeString(this.c);
             parcel.writeString(this.d);
             parcel.writeString(this.e);
             parcel.writeString(this.f);
@@ -1000,45 +983,41 @@ public class RouteSearch {
                 return a(i);
             }
         };
-
-        /* renamed from: a  reason: collision with root package name */
-        private FromAndTo f5741a;
+        private FromAndTo a;
         private int b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private String f5742c;
+        private String c;
 
         public RideRouteQuery() {
-            this.f5742c = "base";
+            this.c = "base";
         }
 
         public RideRouteQuery(Parcel parcel) {
-            this.f5742c = "base";
-            this.f5741a = (FromAndTo) parcel.readParcelable(FromAndTo.class.getClassLoader());
+            this.c = "base";
+            this.a = (FromAndTo) parcel.readParcelable(FromAndTo.class.getClassLoader());
             this.b = parcel.readInt();
-            this.f5742c = parcel.readString();
+            this.c = parcel.readString();
         }
 
         public RideRouteQuery(FromAndTo fromAndTo) {
-            this.f5742c = "base";
-            this.f5741a = fromAndTo;
+            this.c = "base";
+            this.a = fromAndTo;
         }
 
         public RideRouteQuery(FromAndTo fromAndTo, int i) {
-            this.f5742c = "base";
-            this.f5741a = fromAndTo;
+            this.c = "base";
+            this.a = fromAndTo;
             this.b = i;
         }
 
         /* renamed from: clone */
-        public RideRouteQuery m2512clone() {
+        public RideRouteQuery m8955clone() {
             try {
                 super.clone();
             } catch (CloneNotSupportedException e) {
                 fe.a(e, "RouteSearch", "RideRouteQueryclone");
             }
-            RideRouteQuery rideRouteQuery = new RideRouteQuery(this.f5741a);
-            rideRouteQuery.setExtensions(this.f5742c);
+            RideRouteQuery rideRouteQuery = new RideRouteQuery(this.a);
+            rideRouteQuery.setExtensions(this.c);
             return rideRouteQuery;
         }
 
@@ -1053,12 +1032,12 @@ public class RouteSearch {
             }
             if (obj != null && getClass() == obj.getClass()) {
                 RideRouteQuery rideRouteQuery = (RideRouteQuery) obj;
-                FromAndTo fromAndTo = this.f5741a;
+                FromAndTo fromAndTo = this.a;
                 if (fromAndTo == null) {
-                    if (rideRouteQuery.f5741a != null) {
+                    if (rideRouteQuery.a != null) {
                         return false;
                     }
-                } else if (!fromAndTo.equals(rideRouteQuery.f5741a)) {
+                } else if (!fromAndTo.equals(rideRouteQuery.a)) {
                     return false;
                 }
                 return this.b == rideRouteQuery.b;
@@ -1067,11 +1046,11 @@ public class RouteSearch {
         }
 
         public String getExtensions() {
-            return this.f5742c;
+            return this.c;
         }
 
         public FromAndTo getFromAndTo() {
-            return this.f5741a;
+            return this.a;
         }
 
         public int getMode() {
@@ -1079,19 +1058,19 @@ public class RouteSearch {
         }
 
         public int hashCode() {
-            FromAndTo fromAndTo = this.f5741a;
+            FromAndTo fromAndTo = this.a;
             return (((fromAndTo == null ? 0 : fromAndTo.hashCode()) + 31) * 31) + this.b;
         }
 
         public void setExtensions(String str) {
-            this.f5742c = str;
+            this.c = str;
         }
 
         @Override // android.os.Parcelable
         public void writeToParcel(Parcel parcel, int i) {
-            parcel.writeParcelable(this.f5741a, i);
+            parcel.writeParcelable(this.a, i);
             parcel.writeInt(this.b);
-            parcel.writeString(this.f5742c);
+            parcel.writeString(this.c);
         }
     }
 
@@ -1116,13 +1095,9 @@ public class RouteSearch {
                 return a(i);
             }
         };
-
-        /* renamed from: a  reason: collision with root package name */
-        private FromAndTo f5743a;
+        private FromAndTo a;
         private int b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private int f5744c;
+        private int c;
         private List<LatLonPoint> d;
         private float e;
         private float f;
@@ -1134,9 +1109,9 @@ public class RouteSearch {
         protected TruckRouteQuery(Parcel parcel) {
             this.b = 2;
             this.j = "base";
-            this.f5743a = (FromAndTo) parcel.readParcelable(FromAndTo.class.getClassLoader());
+            this.a = (FromAndTo) parcel.readParcelable(FromAndTo.class.getClassLoader());
             this.b = parcel.readInt();
-            this.f5744c = parcel.readInt();
+            this.c = parcel.readInt();
             this.d = parcel.createTypedArrayList(LatLonPoint.CREATOR);
             this.e = parcel.readFloat();
             this.f = parcel.readFloat();
@@ -1149,20 +1124,20 @@ public class RouteSearch {
         public TruckRouteQuery(FromAndTo fromAndTo, int i, List<LatLonPoint> list, int i2) {
             this.b = 2;
             this.j = "base";
-            this.f5743a = fromAndTo;
-            this.f5744c = i;
+            this.a = fromAndTo;
+            this.c = i;
             this.d = list;
             this.b = i2;
         }
 
         /* renamed from: clone */
-        public TruckRouteQuery m2514clone() {
+        public TruckRouteQuery m8957clone() {
             try {
                 super.clone();
             } catch (CloneNotSupportedException e) {
                 fe.a(e, "RouteSearch", "TruckRouteQueryclone");
             }
-            TruckRouteQuery truckRouteQuery = new TruckRouteQuery(this.f5743a, this.f5744c, this.d, this.b);
+            TruckRouteQuery truckRouteQuery = new TruckRouteQuery(this.a, this.c, this.d, this.b);
             truckRouteQuery.setExtensions(this.j);
             return truckRouteQuery;
         }
@@ -1177,11 +1152,11 @@ public class RouteSearch {
         }
 
         public FromAndTo getFromAndTo() {
-            return this.f5743a;
+            return this.a;
         }
 
         public int getMode() {
-            return this.f5744c;
+            return this.c;
         }
 
         public List<LatLonPoint> getPassedByPoints() {
@@ -1205,7 +1180,7 @@ public class RouteSearch {
                 stringBuffer.append(",");
                 stringBuffer.append(latLonPoint.getLatitude());
                 if (i2 < this.d.size() - 1) {
-                    stringBuffer.append(";");
+                    stringBuffer.append(i.b);
                 }
                 i = i2 + 1;
             }
@@ -1244,7 +1219,7 @@ public class RouteSearch {
         }
 
         public void setMode(int i) {
-            this.f5744c = i;
+            this.c = i;
         }
 
         public void setTruckAxis(float f) {
@@ -1273,9 +1248,9 @@ public class RouteSearch {
 
         @Override // android.os.Parcelable
         public void writeToParcel(Parcel parcel, int i) {
-            parcel.writeParcelable(this.f5743a, i);
+            parcel.writeParcelable(this.a, i);
             parcel.writeInt(this.b);
-            parcel.writeInt(this.f5744c);
+            parcel.writeInt(this.c);
             parcel.writeTypedList(this.d);
             parcel.writeFloat(this.e);
             parcel.writeFloat(this.f);
@@ -1307,45 +1282,41 @@ public class RouteSearch {
                 return a(i);
             }
         };
-
-        /* renamed from: a  reason: collision with root package name */
-        private FromAndTo f5745a;
+        private FromAndTo a;
         private int b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private String f5746c;
+        private String c;
 
         public WalkRouteQuery() {
-            this.f5746c = "base";
+            this.c = "base";
         }
 
         public WalkRouteQuery(Parcel parcel) {
-            this.f5746c = "base";
-            this.f5745a = (FromAndTo) parcel.readParcelable(FromAndTo.class.getClassLoader());
+            this.c = "base";
+            this.a = (FromAndTo) parcel.readParcelable(FromAndTo.class.getClassLoader());
             this.b = parcel.readInt();
-            this.f5746c = parcel.readString();
+            this.c = parcel.readString();
         }
 
         public WalkRouteQuery(FromAndTo fromAndTo) {
-            this.f5746c = "base";
-            this.f5745a = fromAndTo;
+            this.c = "base";
+            this.a = fromAndTo;
         }
 
         public WalkRouteQuery(FromAndTo fromAndTo, int i) {
-            this.f5746c = "base";
-            this.f5745a = fromAndTo;
+            this.c = "base";
+            this.a = fromAndTo;
             this.b = i;
         }
 
         /* renamed from: clone */
-        public WalkRouteQuery m2516clone() {
+        public WalkRouteQuery m8959clone() {
             try {
                 super.clone();
             } catch (CloneNotSupportedException e) {
                 fe.a(e, "RouteSearch", "WalkRouteQueryclone");
             }
-            WalkRouteQuery walkRouteQuery = new WalkRouteQuery(this.f5745a);
-            walkRouteQuery.setExtensions(this.f5746c);
+            WalkRouteQuery walkRouteQuery = new WalkRouteQuery(this.a);
+            walkRouteQuery.setExtensions(this.c);
             return walkRouteQuery;
         }
 
@@ -1360,20 +1331,20 @@ public class RouteSearch {
             }
             if (obj != null && getClass() == obj.getClass()) {
                 WalkRouteQuery walkRouteQuery = (WalkRouteQuery) obj;
-                FromAndTo fromAndTo = this.f5745a;
+                FromAndTo fromAndTo = this.a;
                 if (fromAndTo == null) {
-                    if (walkRouteQuery.f5745a != null) {
+                    if (walkRouteQuery.a != null) {
                         return false;
                     }
-                } else if (!fromAndTo.equals(walkRouteQuery.f5745a)) {
+                } else if (!fromAndTo.equals(walkRouteQuery.a)) {
                     return false;
                 }
-                String str = this.f5746c;
+                String str = this.c;
                 if (str == null) {
-                    if (walkRouteQuery.f5746c != null) {
+                    if (walkRouteQuery.c != null) {
                         return false;
                     }
-                } else if (!str.equals(walkRouteQuery.f5746c)) {
+                } else if (!str.equals(walkRouteQuery.c)) {
                     return false;
                 }
                 return this.b == walkRouteQuery.b;
@@ -1382,11 +1353,11 @@ public class RouteSearch {
         }
 
         public String getExtensions() {
-            return this.f5746c;
+            return this.c;
         }
 
         public FromAndTo getFromAndTo() {
-            return this.f5745a;
+            return this.a;
         }
 
         public int getMode() {
@@ -1394,26 +1365,26 @@ public class RouteSearch {
         }
 
         public int hashCode() {
-            FromAndTo fromAndTo = this.f5745a;
+            FromAndTo fromAndTo = this.a;
             return (((fromAndTo == null ? 0 : fromAndTo.hashCode()) + 31) * 31) + this.b;
         }
 
         public void setExtensions(String str) {
-            this.f5746c = str;
+            this.c = str;
         }
 
         @Override // android.os.Parcelable
         public void writeToParcel(Parcel parcel, int i) {
-            parcel.writeParcelable(this.f5745a, i);
+            parcel.writeParcelable(this.a, i);
             parcel.writeInt(this.b);
-            parcel.writeString(this.f5746c);
+            parcel.writeString(this.c);
         }
     }
 
     public RouteSearch(Context context) throws AMapException {
-        if (this.f5732a == null) {
+        if (this.a == null) {
             try {
-                this.f5732a = new hb(context);
+                this.a = new hb(context);
             } catch (Exception e) {
                 e.printStackTrace();
                 if (e instanceof AMapException) {
@@ -1424,7 +1395,7 @@ public class RouteSearch {
     }
 
     public BusRouteResult calculateBusRoute(BusRouteQuery busRouteQuery) throws AMapException {
-        IRouteSearch iRouteSearch = this.f5732a;
+        IRouteSearch iRouteSearch = this.a;
         if (iRouteSearch != null) {
             return iRouteSearch.calculateBusRoute(busRouteQuery);
         }
@@ -1432,14 +1403,14 @@ public class RouteSearch {
     }
 
     public void calculateBusRouteAsyn(BusRouteQuery busRouteQuery) {
-        IRouteSearch iRouteSearch = this.f5732a;
+        IRouteSearch iRouteSearch = this.a;
         if (iRouteSearch != null) {
             iRouteSearch.calculateBusRouteAsyn(busRouteQuery);
         }
     }
 
     public DriveRoutePlanResult calculateDrivePlan(DrivePlanQuery drivePlanQuery) throws AMapException {
-        IRouteSearch iRouteSearch = this.f5732a;
+        IRouteSearch iRouteSearch = this.a;
         if (iRouteSearch != null) {
             return iRouteSearch.calculateDrivePlan(drivePlanQuery);
         }
@@ -1447,14 +1418,14 @@ public class RouteSearch {
     }
 
     public void calculateDrivePlanAsyn(DrivePlanQuery drivePlanQuery) {
-        IRouteSearch iRouteSearch = this.f5732a;
+        IRouteSearch iRouteSearch = this.a;
         if (iRouteSearch != null) {
             iRouteSearch.calculateDrivePlanAsyn(drivePlanQuery);
         }
     }
 
     public DriveRouteResult calculateDriveRoute(DriveRouteQuery driveRouteQuery) throws AMapException {
-        IRouteSearch iRouteSearch = this.f5732a;
+        IRouteSearch iRouteSearch = this.a;
         if (iRouteSearch != null) {
             return iRouteSearch.calculateDriveRoute(driveRouteQuery);
         }
@@ -1462,14 +1433,14 @@ public class RouteSearch {
     }
 
     public void calculateDriveRouteAsyn(DriveRouteQuery driveRouteQuery) {
-        IRouteSearch iRouteSearch = this.f5732a;
+        IRouteSearch iRouteSearch = this.a;
         if (iRouteSearch != null) {
             iRouteSearch.calculateDriveRouteAsyn(driveRouteQuery);
         }
     }
 
     public RideRouteResult calculateRideRoute(RideRouteQuery rideRouteQuery) throws AMapException {
-        IRouteSearch iRouteSearch = this.f5732a;
+        IRouteSearch iRouteSearch = this.a;
         if (iRouteSearch != null) {
             return iRouteSearch.calculateRideRoute(rideRouteQuery);
         }
@@ -1477,14 +1448,14 @@ public class RouteSearch {
     }
 
     public void calculateRideRouteAsyn(RideRouteQuery rideRouteQuery) {
-        IRouteSearch iRouteSearch = this.f5732a;
+        IRouteSearch iRouteSearch = this.a;
         if (iRouteSearch != null) {
             iRouteSearch.calculateRideRouteAsyn(rideRouteQuery);
         }
     }
 
     public TruckRouteRestult calculateTruckRoute(TruckRouteQuery truckRouteQuery) throws AMapException {
-        IRouteSearch iRouteSearch = this.f5732a;
+        IRouteSearch iRouteSearch = this.a;
         if (iRouteSearch != null) {
             return iRouteSearch.calculateTruckRoute(truckRouteQuery);
         }
@@ -1492,14 +1463,14 @@ public class RouteSearch {
     }
 
     public void calculateTruckRouteAsyn(TruckRouteQuery truckRouteQuery) {
-        IRouteSearch iRouteSearch = this.f5732a;
+        IRouteSearch iRouteSearch = this.a;
         if (iRouteSearch != null) {
             iRouteSearch.calculateTruckRouteAsyn(truckRouteQuery);
         }
     }
 
     public WalkRouteResult calculateWalkRoute(WalkRouteQuery walkRouteQuery) throws AMapException {
-        IRouteSearch iRouteSearch = this.f5732a;
+        IRouteSearch iRouteSearch = this.a;
         if (iRouteSearch != null) {
             return iRouteSearch.calculateWalkRoute(walkRouteQuery);
         }
@@ -1507,28 +1478,28 @@ public class RouteSearch {
     }
 
     public void calculateWalkRouteAsyn(WalkRouteQuery walkRouteQuery) {
-        IRouteSearch iRouteSearch = this.f5732a;
+        IRouteSearch iRouteSearch = this.a;
         if (iRouteSearch != null) {
             iRouteSearch.calculateWalkRouteAsyn(walkRouteQuery);
         }
     }
 
     public void setOnRoutePlanSearchListener(OnRoutePlanSearchListener onRoutePlanSearchListener) {
-        IRouteSearch iRouteSearch = this.f5732a;
+        IRouteSearch iRouteSearch = this.a;
         if (iRouteSearch != null) {
             iRouteSearch.setOnRoutePlanSearchListener(onRoutePlanSearchListener);
         }
     }
 
     public void setOnTruckRouteSearchListener(OnTruckRouteSearchListener onTruckRouteSearchListener) {
-        IRouteSearch iRouteSearch = this.f5732a;
+        IRouteSearch iRouteSearch = this.a;
         if (iRouteSearch != null) {
             iRouteSearch.setOnTruckRouteSearchListener(onTruckRouteSearchListener);
         }
     }
 
     public void setRouteSearchListener(OnRouteSearchListener onRouteSearchListener) {
-        IRouteSearch iRouteSearch = this.f5732a;
+        IRouteSearch iRouteSearch = this.a;
         if (iRouteSearch != null) {
             iRouteSearch.setRouteSearchListener(onRouteSearchListener);
         }

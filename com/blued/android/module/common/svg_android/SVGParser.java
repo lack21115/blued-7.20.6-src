@@ -10,7 +10,10 @@ import android.graphics.RadialGradient;
 import android.graphics.RectF;
 import android.graphics.Shader;
 import android.util.Log;
-import com.cdo.oaps.ad.OapsWrapper;
+import android.view.View;
+import com.alipay.sdk.util.i;
+import com.amap.api.col.p0003sl.iu;
+import com.anythink.core.common.b.g;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -27,13 +30,9 @@ public class SVGParser {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/svg_android/SVGParser$Gradient.class */
     public static class Gradient {
-
-        /* renamed from: a  reason: collision with root package name */
-        String f10829a;
+        String a;
         String b;
-
-        /* renamed from: c  reason: collision with root package name */
-        boolean f10830c;
+        boolean c;
         float d;
         float e;
         float f;
@@ -53,9 +52,9 @@ public class SVGParser {
 
         public Gradient a(Gradient gradient) {
             Gradient gradient2 = new Gradient();
-            gradient2.f10829a = gradient.f10829a;
-            gradient2.b = this.f10829a;
-            gradient2.f10830c = gradient.f10830c;
+            gradient2.a = gradient.a;
+            gradient2.b = this.a;
+            gradient2.c = gradient.c;
             gradient2.d = gradient.d;
             gradient2.f = gradient.f;
             gradient2.e = gradient.e;
@@ -82,38 +81,34 @@ public class SVGParser {
 
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/svg_android/SVGParser$NumberParse.class */
     public static class NumberParse {
-
-        /* renamed from: a  reason: collision with root package name */
-        private ArrayList<Float> f10831a;
+        private ArrayList<Float> a;
         private int b;
 
         public NumberParse(ArrayList<Float> arrayList, int i) {
-            this.f10831a = arrayList;
+            this.a = arrayList;
             this.b = i;
         }
     }
 
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/svg_android/SVGParser$Properties.class */
     public static class Properties {
-
-        /* renamed from: a  reason: collision with root package name */
-        StyleSet f10832a;
+        StyleSet a;
         Attributes b;
 
         protected Properties(Attributes attributes) {
-            this.f10832a = null;
+            this.a = null;
             this.b = attributes;
             String e = SVGParser.e("style", attributes);
             if (e != null) {
-                this.f10832a = new StyleSet(e);
+                this.a = new StyleSet(e);
             }
         }
 
         public String a(String str) {
-            StyleSet styleSet = this.f10832a;
-            String a2 = styleSet != null ? styleSet.a(str) : null;
-            String str2 = a2;
-            if (a2 == null) {
+            StyleSet styleSet = this.a;
+            String a = styleSet != null ? styleSet.a(str) : null;
+            String str2 = a;
+            if (a == null) {
                 str2 = SVGParser.e(str, this.b);
             }
             return str2;
@@ -124,24 +119,24 @@ public class SVGParser {
         }
 
         public Integer c(String str) {
-            String a2 = a(str);
-            if (a2 == null || !a2.startsWith("#")) {
+            String a = a(str);
+            if (a == null || !a.startsWith("#")) {
                 return null;
             }
             try {
-                return Integer.valueOf(Integer.parseInt(a2.substring(1), 16));
+                return Integer.valueOf(Integer.parseInt(a.substring(1), 16));
             } catch (NumberFormatException e) {
                 return null;
             }
         }
 
         public Float d(String str) {
-            String a2 = a(str);
-            if (a2 == null) {
+            String a = a(str);
+            if (a == null) {
                 return null;
             }
             try {
-                return Float.valueOf(Float.parseFloat(a2));
+                return Float.valueOf(Float.parseFloat(a));
             } catch (NumberFormatException e) {
                 return null;
             }
@@ -150,13 +145,9 @@ public class SVGParser {
 
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/svg_android/SVGParser$SVGHandler.class */
     public static class SVGHandler extends DefaultHandler {
-
-        /* renamed from: a  reason: collision with root package name */
-        Picture f10833a;
+        Picture a;
         Canvas b;
-
-        /* renamed from: c  reason: collision with root package name */
-        Paint f10834c;
+        Paint c;
         RectF d;
         RectF e;
         RectF f;
@@ -187,9 +178,9 @@ public class SVGParser {
             this.p = false;
             this.q = 0;
             this.r = false;
-            this.f10833a = picture;
+            this.a = picture;
             Paint paint = new Paint();
-            this.f10834c = paint;
+            this.c = paint;
             paint.setAntiAlias(true);
         }
 
@@ -203,17 +194,17 @@ public class SVGParser {
             int i3;
             int i4 = this.i;
             if (i4 == 0 || (i3 = this.j) == 0) {
-                return this.f10833a.beginRecording(i, i2);
+                return this.a.beginRecording(i, i2);
             }
-            Canvas beginRecording = this.f10833a.beginRecording(i4, i3);
+            Canvas beginRecording = this.a.beginRecording(i4, i3);
             a(beginRecording, i, i2);
             return beginRecording;
         }
 
         private Gradient a(boolean z, Attributes attributes) {
             Gradient gradient = new Gradient();
-            gradient.f10829a = SVGParser.e("id", attributes);
-            gradient.f10830c = z;
+            gradient.a = SVGParser.e("id", attributes);
+            gradient.c = z;
             Float valueOf = Float.valueOf(0.0f);
             if (z) {
                 gradient.d = SVGParser.b("x1", attributes, valueOf).floatValue();
@@ -223,7 +214,7 @@ public class SVGParser {
             } else {
                 gradient.h = SVGParser.b("cx", attributes, valueOf).floatValue();
                 gradient.i = SVGParser.b("cy", attributes, valueOf).floatValue();
-                gradient.j = SVGParser.b("r", attributes, valueOf).floatValue();
+                gradient.j = SVGParser.b(g.o.o, attributes, valueOf).floatValue();
             }
             String e = SVGParser.e("gradientTransform", attributes);
             if (e != null) {
@@ -285,7 +276,7 @@ public class SVGParser {
         }
 
         private void a(Properties properties, Integer num, boolean z) {
-            int intValue = (num.intValue() & 16777215) | (-16777216);
+            int intValue = (num.intValue() & 16777215) | View.MEASURED_STATE_MASK;
             Integer num2 = this.g;
             int i = intValue;
             if (num2 != null) {
@@ -294,16 +285,16 @@ public class SVGParser {
                     i = this.h.intValue();
                 }
             }
-            this.f10834c.setColor(i);
+            this.c.setColor(i);
             Float d = properties.d("opacity");
             Float f = d;
             if (d == null) {
                 f = properties.d(z ? "fill-opacity" : "stroke-opacity");
             }
             if (f == null) {
-                this.f10834c.setAlpha(255);
+                this.c.setAlpha(255);
             } else {
-                this.f10834c.setAlpha((int) (f.floatValue() * 255.0f));
+                this.c.setAlpha((int) (f.floatValue() * 255.0f));
             }
         }
 
@@ -328,32 +319,32 @@ public class SVGParser {
         }
 
         protected boolean a(Properties properties) {
-            Integer c2;
-            if (this.k || "none".equals(properties.b("display")) || (c2 = properties.c("stroke")) == null) {
+            Integer c;
+            if (this.k || "none".equals(properties.b("display")) || (c = properties.c("stroke")) == null) {
                 return false;
             }
-            a(properties, c2, false);
+            a(properties, c, false);
             Float d = properties.d("stroke-width");
             if (d != null) {
-                this.f10834c.setStrokeWidth(d.floatValue());
+                this.c.setStrokeWidth(d.floatValue());
             }
             String b = properties.b("stroke-linecap");
             if ("round".equals(b)) {
-                this.f10834c.setStrokeCap(Paint.Cap.ROUND);
+                this.c.setStrokeCap(Paint.Cap.ROUND);
             } else if ("square".equals(b)) {
-                this.f10834c.setStrokeCap(Paint.Cap.SQUARE);
+                this.c.setStrokeCap(Paint.Cap.SQUARE);
             } else if ("butt".equals(b)) {
-                this.f10834c.setStrokeCap(Paint.Cap.BUTT);
+                this.c.setStrokeCap(Paint.Cap.BUTT);
             }
             String b2 = properties.b("stroke-linejoin");
             if ("miter".equals(b2)) {
-                this.f10834c.setStrokeJoin(Paint.Join.MITER);
+                this.c.setStrokeJoin(Paint.Join.MITER);
             } else if ("round".equals(b2)) {
-                this.f10834c.setStrokeJoin(Paint.Join.ROUND);
+                this.c.setStrokeJoin(Paint.Join.ROUND);
             } else if ("bevel".equals(b2)) {
-                this.f10834c.setStrokeJoin(Paint.Join.BEVEL);
+                this.c.setStrokeJoin(Paint.Join.BEVEL);
             }
-            this.f10834c.setStyle(Paint.Style.STROKE);
+            this.c.setStyle(Paint.Style.STROKE);
             return true;
         }
 
@@ -362,29 +353,29 @@ public class SVGParser {
                 return false;
             }
             if (this.k) {
-                this.f10834c.setStyle(Paint.Style.FILL);
-                this.f10834c.setColor(-1);
+                this.c.setStyle(Paint.Style.FILL);
+                this.c.setColor(-1);
                 return true;
             }
             String b = properties.b("fill");
             if (b != null && b.startsWith("url(#")) {
                 Shader shader = hashMap.get(b.substring(5, b.length() - 1));
                 if (shader != null) {
-                    this.f10834c.setShader(shader);
-                    this.f10834c.setStyle(Paint.Style.FILL);
+                    this.c.setShader(shader);
+                    this.c.setStyle(Paint.Style.FILL);
                     return true;
                 }
                 return false;
             }
-            this.f10834c.setShader(null);
-            Integer c2 = properties.c("fill");
-            if (c2 != null) {
-                a(properties, c2, true);
-                this.f10834c.setStyle(Paint.Style.FILL);
+            this.c.setShader(null);
+            Integer c = properties.c("fill");
+            if (c != null) {
+                a(properties, c, true);
+                this.c.setStyle(Paint.Style.FILL);
                 return true;
             } else if (properties.b("fill") == null && properties.b("stroke") == null) {
-                this.f10834c.setStyle(Paint.Style.FILL);
-                this.f10834c.setColor(-16777216);
+                this.c.setStyle(Paint.Style.FILL);
+                this.c.setColor(View.MEASURED_STATE_MASK);
                 return true;
             } else {
                 return false;
@@ -405,9 +396,9 @@ public class SVGParser {
             Gradient gradient2;
             Gradient gradient3;
             if (str2.equals("svg")) {
-                this.f10833a.endRecording();
+                this.a.endRecording();
             } else if (str2.equals("linearGradient")) {
-                if (this.o.f10829a != null) {
+                if (this.o.a != null) {
                     if (this.o.b != null && (gradient3 = this.n.get(this.o.b)) != null) {
                         this.o = gradient3.a(this.o);
                     }
@@ -440,11 +431,11 @@ public class SVGParser {
                     if (this.o.m != null) {
                         linearGradient.setLocalMatrix(this.o.m);
                     }
-                    this.m.put(this.o.f10829a, linearGradient);
-                    this.n.put(this.o.f10829a, this.o);
+                    this.m.put(this.o.a, linearGradient);
+                    this.n.put(this.o.a, this.o);
                 }
             } else if (!str2.equals("radialGradient")) {
-                if (str2.equals("g")) {
+                if (str2.equals(iu.f)) {
                     if (this.r) {
                         this.r = false;
                     }
@@ -457,7 +448,7 @@ public class SVGParser {
                     }
                     this.m.clear();
                 }
-            } else if (this.o.f10829a != null) {
+            } else if (this.o.a != null) {
                 if (this.o.b != null && (gradient2 = this.n.get(this.o.b)) != null) {
                     this.o = gradient2.a(this.o);
                 }
@@ -490,8 +481,8 @@ public class SVGParser {
                 if (this.o.m != null) {
                     radialGradient.setLocalMatrix(this.o.m);
                 }
-                this.m.put(this.o.f10829a, radialGradient);
-                this.n.put(this.o.f10829a, this.o);
+                this.m.put(this.o.a, radialGradient);
+                this.n.put(this.o.a, this.o);
             }
         }
 
@@ -501,7 +492,7 @@ public class SVGParser {
 
         @Override // org.xml.sax.helpers.DefaultHandler, org.xml.sax.ContentHandler
         public void startElement(String str, String str2, String str3, Attributes attributes) throws SAXException {
-            this.f10834c.setAlpha(255);
+            this.c.setAlpha(255);
             boolean z = this.r;
             Float valueOf = Float.valueOf(0.0f);
             if (z) {
@@ -531,14 +522,14 @@ public class SVGParser {
                     if (this.o != null) {
                         float floatValue = SVGParser.f("offset", attributes).floatValue();
                         StyleSet styleSet = new StyleSet(SVGParser.e("style", attributes));
-                        String a2 = styleSet.a("stop-color");
-                        int parseInt = a2 != null ? a2.startsWith("#") ? Integer.parseInt(a2.substring(1), 16) : Integer.parseInt(a2, 16) : -16777216;
-                        String a3 = styleSet.a("stop-opacity");
-                        int round = a3 != null ? parseInt | (Math.round(Float.parseFloat(a3) * 255.0f) << 24) : parseInt | (-16777216);
+                        String a = styleSet.a("stop-color");
+                        int parseInt = a != null ? a.startsWith("#") ? Integer.parseInt(a.substring(1), 16) : Integer.parseInt(a, 16) : -16777216;
+                        String a2 = styleSet.a("stop-opacity");
+                        int round = a2 != null ? parseInt | (Math.round(Float.parseFloat(a2) * 255.0f) << 24) : parseInt | View.MEASURED_STATE_MASK;
                         this.o.k.add(Float.valueOf(floatValue));
                         this.o.l.add(Integer.valueOf(round));
                     }
-                } else if (str2.equals("g")) {
+                } else if (str2.equals(iu.f)) {
                     if ("bounds".equalsIgnoreCase(SVGParser.e("id", attributes))) {
                         this.r = true;
                     }
@@ -566,10 +557,10 @@ public class SVGParser {
                     Properties properties = new Properties(attributes);
                     if (a(properties, this.m)) {
                         a(f6.floatValue(), valueOf.floatValue(), f8.floatValue(), f9.floatValue());
-                        this.b.drawRect(f6.floatValue(), valueOf.floatValue(), f6.floatValue() + f8.floatValue(), valueOf.floatValue() + f9.floatValue(), this.f10834c);
+                        this.b.drawRect(f6.floatValue(), valueOf.floatValue(), f6.floatValue() + f8.floatValue(), valueOf.floatValue() + f9.floatValue(), this.c);
                     }
                     if (a(properties)) {
-                        this.b.drawRect(f6.floatValue(), valueOf.floatValue(), f6.floatValue() + f8.floatValue(), valueOf.floatValue() + f9.floatValue(), this.f10834c);
+                        this.b.drawRect(f6.floatValue(), valueOf.floatValue(), f6.floatValue() + f8.floatValue(), valueOf.floatValue() + f9.floatValue(), this.c);
                     }
                     a();
                 } else if (!this.p && str2.equals("line")) {
@@ -581,13 +572,13 @@ public class SVGParser {
                         a(attributes);
                         a(f10.floatValue(), f12.floatValue());
                         a(f11.floatValue(), f13.floatValue());
-                        this.b.drawLine(f10.floatValue(), f12.floatValue(), f11.floatValue(), f13.floatValue(), this.f10834c);
+                        this.b.drawLine(f10.floatValue(), f12.floatValue(), f11.floatValue(), f13.floatValue(), this.c);
                         a();
                     }
                 } else if (!this.p && str2.equals("circle")) {
                     Float f14 = SVGParser.f("cx", attributes);
                     Float f15 = SVGParser.f("cy", attributes);
-                    Float f16 = SVGParser.f("r", attributes);
+                    Float f16 = SVGParser.f(g.o.o, attributes);
                     if (f14 == null || f15 == null || f16 == null) {
                         return;
                     }
@@ -596,10 +587,10 @@ public class SVGParser {
                     if (a(properties2, this.m)) {
                         a(f14.floatValue() - f16.floatValue(), f15.floatValue() - f16.floatValue());
                         a(f14.floatValue() + f16.floatValue(), f15.floatValue() + f16.floatValue());
-                        this.b.drawCircle(f14.floatValue(), f15.floatValue(), f16.floatValue(), this.f10834c);
+                        this.b.drawCircle(f14.floatValue(), f15.floatValue(), f16.floatValue(), this.c);
                     }
                     if (a(properties2)) {
-                        this.b.drawCircle(f14.floatValue(), f15.floatValue(), f16.floatValue(), this.f10834c);
+                        this.b.drawCircle(f14.floatValue(), f15.floatValue(), f16.floatValue(), this.c);
                     }
                     a();
                 } else if (!this.p && str2.equals("ellipse")) {
@@ -616,14 +607,14 @@ public class SVGParser {
                     if (a(properties3, this.m)) {
                         a(f17.floatValue() - f19.floatValue(), f18.floatValue() - f20.floatValue());
                         a(f17.floatValue() + f19.floatValue(), f18.floatValue() + f20.floatValue());
-                        this.b.drawOval(this.d, this.f10834c);
+                        this.b.drawOval(this.d, this.c);
                     }
                     if (a(properties3)) {
-                        this.b.drawOval(this.d, this.f10834c);
+                        this.b.drawOval(this.d, this.c);
                     }
                     a();
                 } else if (this.p || !(str2.equals("polygon") || str2.equals("polyline"))) {
-                    if (this.p || !str2.equals(OapsWrapper.KEY_PATH)) {
+                    if (this.p || !str2.equals("path")) {
                         if (this.p) {
                             return;
                         }
@@ -635,17 +626,17 @@ public class SVGParser {
                     Properties properties4 = new Properties(attributes);
                     if (a(properties4, this.m)) {
                         a(e);
-                        this.b.drawPath(e, this.f10834c);
+                        this.b.drawPath(e, this.c);
                     }
                     if (a(properties4)) {
-                        this.b.drawPath(e, this.f10834c);
+                        this.b.drawPath(e, this.c);
                     }
                     a();
                 } else {
                     NumberParse d = SVGParser.d("points", attributes);
                     if (d != null) {
                         Path path = new Path();
-                        ArrayList arrayList = d.f10831a;
+                        ArrayList arrayList = d.a;
                         if (arrayList.size() > 1) {
                             a(attributes);
                             Properties properties5 = new Properties(attributes);
@@ -664,10 +655,10 @@ public class SVGParser {
                             }
                             if (a(properties5, this.m)) {
                                 a(path);
-                                this.b.drawPath(path, this.f10834c);
+                                this.b.drawPath(path, this.c);
                             }
                             if (a(properties5)) {
-                                this.b.drawPath(path, this.f10834c);
+                                this.b.drawPath(path, this.c);
                             }
                             a();
                         }
@@ -680,13 +671,11 @@ public class SVGParser {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/svg_android/SVGParser$StyleSet.class */
     public static class StyleSet {
-
-        /* renamed from: a  reason: collision with root package name */
-        HashMap<String, String> f10835a;
+        HashMap<String, String> a;
 
         private StyleSet(String str) {
-            this.f10835a = new HashMap<>();
-            String[] split = str.split(";");
+            this.a = new HashMap<>();
+            String[] split = str.split(i.b);
             int length = split.length;
             int i = 0;
             while (true) {
@@ -696,14 +685,14 @@ public class SVGParser {
                 }
                 String[] split2 = split[i2].split(":");
                 if (split2.length == 2) {
-                    this.f10835a.put(split2[0], split2[1]);
+                    this.a.put(split2[0], split2[1]);
                 }
                 i = i2 + 1;
             }
         }
 
         public String a(String str) {
-            return this.f10835a.get(str);
+            return this.a.get(str);
         }
     }
 
@@ -820,66 +809,66 @@ public class SVGParser {
         float f;
         float f2 = 0.0f;
         if (str.startsWith("matrix(")) {
-            NumberParse a2 = a(str.substring(7));
-            if (a2.f10831a.size() == 6) {
+            NumberParse a = a(str.substring(7));
+            if (a.a.size() == 6) {
                 Matrix matrix = new Matrix();
-                matrix.setValues(new float[]{((Float) a2.f10831a.get(0)).floatValue(), ((Float) a2.f10831a.get(2)).floatValue(), ((Float) a2.f10831a.get(4)).floatValue(), ((Float) a2.f10831a.get(1)).floatValue(), ((Float) a2.f10831a.get(3)).floatValue(), ((Float) a2.f10831a.get(5)).floatValue(), 0.0f, 0.0f, 1.0f});
+                matrix.setValues(new float[]{((Float) a.a.get(0)).floatValue(), ((Float) a.a.get(2)).floatValue(), ((Float) a.a.get(4)).floatValue(), ((Float) a.a.get(1)).floatValue(), ((Float) a.a.get(3)).floatValue(), ((Float) a.a.get(5)).floatValue(), 0.0f, 0.0f, 1.0f});
                 return matrix;
             }
             return null;
         } else if (str.startsWith("translate(")) {
-            NumberParse a3 = a(str.substring(10));
-            if (a3.f10831a.isEmpty()) {
+            NumberParse a2 = a(str.substring(10));
+            if (a2.a.isEmpty()) {
                 return null;
             }
-            float floatValue = ((Float) a3.f10831a.get(0)).floatValue();
+            float floatValue = ((Float) a2.a.get(0)).floatValue();
             float f3 = 0.0f;
-            if (a3.f10831a.size() > 1) {
-                f3 = ((Float) a3.f10831a.get(1)).floatValue();
+            if (a2.a.size() > 1) {
+                f3 = ((Float) a2.a.get(1)).floatValue();
             }
             Matrix matrix2 = new Matrix();
             matrix2.postTranslate(floatValue, f3);
             return matrix2;
         } else if (str.startsWith("scale(")) {
-            NumberParse a4 = a(str.substring(6));
-            if (a4.f10831a.isEmpty()) {
+            NumberParse a3 = a(str.substring(6));
+            if (a3.a.isEmpty()) {
                 return null;
             }
-            float floatValue2 = ((Float) a4.f10831a.get(0)).floatValue();
+            float floatValue2 = ((Float) a3.a.get(0)).floatValue();
             float f4 = 0.0f;
-            if (a4.f10831a.size() > 1) {
-                f4 = ((Float) a4.f10831a.get(1)).floatValue();
+            if (a3.a.size() > 1) {
+                f4 = ((Float) a3.a.get(1)).floatValue();
             }
             Matrix matrix3 = new Matrix();
             matrix3.postScale(floatValue2, f4);
             return matrix3;
         } else if (str.startsWith("skewX(")) {
-            NumberParse a5 = a(str.substring(6));
-            if (a5.f10831a.isEmpty()) {
+            NumberParse a4 = a(str.substring(6));
+            if (a4.a.isEmpty()) {
                 return null;
             }
-            float floatValue3 = ((Float) a5.f10831a.get(0)).floatValue();
+            float floatValue3 = ((Float) a4.a.get(0)).floatValue();
             Matrix matrix4 = new Matrix();
             matrix4.postSkew((float) Math.tan(floatValue3), 0.0f);
             return matrix4;
         } else if (str.startsWith("skewY(")) {
-            NumberParse a6 = a(str.substring(6));
-            if (a6.f10831a.isEmpty()) {
+            NumberParse a5 = a(str.substring(6));
+            if (a5.a.isEmpty()) {
                 return null;
             }
-            float floatValue4 = ((Float) a6.f10831a.get(0)).floatValue();
+            float floatValue4 = ((Float) a5.a.get(0)).floatValue();
             Matrix matrix5 = new Matrix();
             matrix5.postSkew(0.0f, (float) Math.tan(floatValue4));
             return matrix5;
         } else if (str.startsWith("rotate(")) {
-            NumberParse a7 = a(str.substring(7));
-            if (a7.f10831a.isEmpty()) {
+            NumberParse a6 = a(str.substring(7));
+            if (a6.a.isEmpty()) {
                 return null;
             }
-            float floatValue5 = ((Float) a7.f10831a.get(0)).floatValue();
-            if (a7.f10831a.size() > 2) {
-                f2 = ((Float) a7.f10831a.get(1)).floatValue();
-                f = ((Float) a7.f10831a.get(2)).floatValue();
+            float floatValue5 = ((Float) a6.a.get(0)).floatValue();
+            if (a6.a.size() > 2) {
+                f2 = ((Float) a6.a.get(1)).floatValue();
+                f = ((Float) a6.a.get(2)).floatValue();
             } else {
                 f = 0.0f;
             }

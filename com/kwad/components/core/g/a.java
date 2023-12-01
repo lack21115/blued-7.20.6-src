@@ -22,7 +22,7 @@ public final class a {
 
     /* renamed from: com.kwad.components.core.g.a$a  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/components/core/g/a$a.class */
-    public interface InterfaceC0523a {
+    public interface InterfaceC0353a {
         void onError(int i, String str);
 
         void onInnerAdLoad(List<c> list);
@@ -30,19 +30,19 @@ public final class a {
         void onRequestResult(int i);
     }
 
-    private static void a(int i, int i2, SceneImpl sceneImpl, final int i3, final InterfaceC0523a interfaceC0523a) {
-        SceneImpl m7847clone = sceneImpl.m7847clone();
+    private static void a(int i, int i2, SceneImpl sceneImpl, final int i3, final InterfaceC0353a interfaceC0353a) {
+        SceneImpl m4840clone = sceneImpl.m4840clone();
         final long elapsedRealtime = SystemClock.elapsedRealtime();
-        m7847clone.setAdStyle(i);
-        m7847clone.setAdNum(i2);
-        a(new com.kwad.components.core.n.kwai.b(m7847clone), null, false, true, new h() { // from class: com.kwad.components.core.g.a.1
+        m4840clone.setAdStyle(i);
+        m4840clone.setAdNum(i2);
+        a(new com.kwad.components.core.n.kwai.b(m4840clone), null, false, true, new h() { // from class: com.kwad.components.core.g.a.1
             @Override // com.kwad.components.core.n.i
             public final void a(final AdResultData adResultData) {
                 bi.runOnUiThread(new Runnable() { // from class: com.kwad.components.core.g.a.1.2
                     @Override // java.lang.Runnable
                     public final void run() {
                         try {
-                            InterfaceC0523a.this.onRequestResult(adResultData.getAdTemplateList().size());
+                            InterfaceC0353a.this.onRequestResult(adResultData.getAdTemplateList().size());
                         } catch (Throwable th) {
                             com.kwad.sdk.core.d.b.printStackTraceOnly(th);
                         }
@@ -51,7 +51,7 @@ public final class a {
                 bi.runOnUiThread(new Runnable() { // from class: com.kwad.components.core.g.a.1.3
                     @Override // java.lang.Runnable
                     public final void run() {
-                        InterfaceC0523a.this.onInnerAdLoad(a.b(adResultData.getAdTemplateList(), i3));
+                        InterfaceC0353a.this.onInnerAdLoad(a.b(adResultData.getAdTemplateList(), i3));
                         a.a(adResultData, elapsedRealtime);
                     }
                 });
@@ -63,7 +63,7 @@ public final class a {
                     @Override // java.lang.Runnable
                     public final void run() {
                         com.kwad.sdk.core.d.b.w("RefluxAdLoadManager", "loadInnerAd onError:" + String.format("code:%s__msg:%s", Integer.valueOf(i4), str));
-                        InterfaceC0523a.this.onError(i4, str);
+                        InterfaceC0353a.this.onError(i4, str);
                     }
                 });
             }
@@ -113,8 +113,8 @@ public final class a {
         com.kwad.components.core.m.a.pb().c(adTemplate, elapsedRealtime - j);
     }
 
-    public static void a(SceneImpl sceneImpl, InterfaceC0523a interfaceC0523a) {
-        a(15, Jw, sceneImpl, e.AGGREGATION, interfaceC0523a);
+    public static void a(SceneImpl sceneImpl, InterfaceC0353a interfaceC0353a) {
+        a(15, Jw, sceneImpl, e.AGGREGATION, interfaceC0353a);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -126,7 +126,7 @@ public final class a {
         return arrayList;
     }
 
-    public static void b(SceneImpl sceneImpl, InterfaceC0523a interfaceC0523a) {
-        a(17, Jx, sceneImpl, e.JH, interfaceC0523a);
+    public static void b(SceneImpl sceneImpl, InterfaceC0353a interfaceC0353a) {
+        a(17, Jx, sceneImpl, e.JH, interfaceC0353a);
     }
 }

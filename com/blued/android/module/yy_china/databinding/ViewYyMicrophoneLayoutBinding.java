@@ -10,17 +10,13 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ViewYyMicrophoneLayoutBinding.class */
 public final class ViewYyMicrophoneLayoutBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f16939a;
+    public final ImageView a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final FrameLayout f16940c;
+    private final FrameLayout c;
 
     private ViewYyMicrophoneLayoutBinding(FrameLayout frameLayout, ImageView imageView, ImageView imageView2) {
-        this.f16940c = frameLayout;
-        this.f16939a = imageView;
+        this.c = frameLayout;
+        this.a = imageView;
         this.b = imageView2;
     }
 
@@ -47,9 +43,8 @@ public final class ViewYyMicrophoneLayoutBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f16940c;
+        return this.c;
     }
 }

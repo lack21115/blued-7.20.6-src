@@ -9,16 +9,17 @@ import com.blued.android.framework.utils.DensityUtils;
 import com.soft.blued.R;
 import com.soft.blued.customview.rangebar.RangeBar;
 import com.soft.blued.ui.home.HomeActivity;
+import com.xiaomi.mipush.sdk.Constants;
 
 /* loaded from: source-8303388-dex2jar.jar:com/soft/blued/ui/find/view/TwoWaysBar.class */
 public class TwoWaysBar extends RangeBar {
 
     /* renamed from: a  reason: collision with root package name */
-    public Context f30734a;
+    public Context f17044a;
     public int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public TwoWaysBarListner f30735c;
+    public TwoWaysBarListner f17045c;
     public int d;
     private boolean e;
     private int f;
@@ -64,7 +65,7 @@ public class TwoWaysBar extends RangeBar {
         this.b = 100;
         this.e = true;
         this.d = 1;
-        this.f30734a = context;
+        this.f17044a = context;
         a();
     }
 
@@ -73,7 +74,7 @@ public class TwoWaysBar extends RangeBar {
         this.b = 100;
         this.e = true;
         this.d = 1;
-        this.f30734a = context;
+        this.f17044a = context;
         a();
     }
 
@@ -82,7 +83,7 @@ public class TwoWaysBar extends RangeBar {
         this.b = 100;
         this.e = true;
         this.d = 1;
-        this.f30734a = context;
+        this.f17044a = context;
         a();
     }
 
@@ -90,13 +91,13 @@ public class TwoWaysBar extends RangeBar {
         String str = "";
         if (i3 == 2) {
             StringBuilder sb = new StringBuilder();
-            sb.append(String.format(context.getResources().getString(2131890633), i + "-" + i2));
+            sb.append(String.format(context.getResources().getString(2131890633), i + Constants.ACCEPT_TIME_SEPARATOR_SERVER + i2));
             sb.append(i2 < 30 ? "" : "+");
             return sb.toString();
         } else if (i3 == 1) {
             StringBuilder sb2 = new StringBuilder();
             sb2.append(i);
-            sb2.append("-");
+            sb2.append(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
             sb2.append(i2);
             sb2.append(context.getResources().getString(R.string.distance_unit));
             sb2.append(i2 < 100 ? "" : "+");
@@ -116,7 +117,7 @@ public class TwoWaysBar extends RangeBar {
                     }
                     StringBuilder sb3 = new StringBuilder();
                     sb3.append(i4);
-                    sb3.append("-");
+                    sb3.append(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
                     int i5 = i4 + 1;
                     sb3.append(i5);
                     sb3.append(context.getResources().getString(R.string.distance_unit));
@@ -125,7 +126,7 @@ public class TwoWaysBar extends RangeBar {
                 }
                 StringBuilder sb4 = new StringBuilder();
                 sb4.append(i);
-                sb4.append("-");
+                sb4.append(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
                 sb4.append(i2);
                 sb4.append(context.getResources().getString(R.string.distance_unit));
                 sb4.append(i2 < 100 ? "" : "+");
@@ -137,8 +138,8 @@ public class TwoWaysBar extends RangeBar {
 
     public static String a(Context context, String str, int i) {
         int i2 = 0;
-        if (str.contains("-")) {
-            String[] split = str.split("-");
+        if (str.contains(Constants.ACCEPT_TIME_SEPARATOR_SERVER)) {
+            String[] split = str.split(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
             if (split.length == 2) {
                 try {
                     i2 = Integer.valueOf(split[0]).intValue();
@@ -161,21 +162,21 @@ public class TwoWaysBar extends RangeBar {
     private void a() {
         setTickCount(this.b);
         setTickHeight(0.0f);
-        this.g = ViewConfiguration.get(this.f30734a).getScaledTouchSlop();
-        setBarColor(BluedSkinUtils.a(this.f30734a, 2131101196));
-        setBarWeight(DensityUtils.a(this.f30734a, 3.0f));
+        this.g = ViewConfiguration.get(this.f17044a).getScaledTouchSlop();
+        setBarColor(BluedSkinUtils.a(this.f17044a, 2131101196));
+        setBarWeight(DensityUtils.a(this.f17044a, 3.0f));
         if (this.e || (getContext() instanceof HomeActivity)) {
-            setConnectingLineColor(this.f30734a.getResources().getColor(2131101190));
+            setConnectingLineColor(this.f17044a.getResources().getColor(2131101190));
         } else {
-            setConnectingLineColor(this.f30734a.getResources().getColor(2131101196));
+            setConnectingLineColor(this.f17044a.getResources().getColor(2131101196));
         }
-        setConnectingLineWeight(DensityUtils.a(this.f30734a, 1.0f));
+        setConnectingLineWeight(DensityUtils.a(this.f17044a, 1.0f));
         setOnRangeBarChangeListener(new RangeBar.OnRangeBarChangeListener() { // from class: com.soft.blued.ui.find.view.TwoWaysBar.1
             @Override // com.soft.blued.customview.rangebar.RangeBar.OnRangeBarChangeListener
             public void a(RangeBar rangeBar, int i, int i2) {
-                if (TwoWaysBar.this.f30735c != null) {
+                if (TwoWaysBar.this.f17045c != null) {
                     if (TwoWaysBar.this.d == 3 || TwoWaysBar.this.d == 4) {
-                        TwoWaysBar.this.f30735c.a(i, i2);
+                        TwoWaysBar.this.f17045c.a(i, i2);
                         return;
                     }
                     int i3 = i;
@@ -186,7 +187,7 @@ public class TwoWaysBar extends RangeBar {
                     if (i2 + 1 > TwoWaysBar.this.b) {
                         i4 = TwoWaysBar.this.b - 1;
                     }
-                    TwoWaysBar.this.f30735c.a(i3, i4 + 1);
+                    TwoWaysBar.this.f17045c.a(i3, i4 + 1);
                 }
             }
         });
@@ -203,10 +204,10 @@ public class TwoWaysBar extends RangeBar {
         int i2 = i - 1;
         int i3 = 0;
         int i4 = i2;
-        if (str.contains("-")) {
+        if (str.contains(Constants.ACCEPT_TIME_SEPARATOR_SERVER)) {
             int i5 = 0;
             try {
-                String[] split = str.split("-");
+                String[] split = str.split(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
                 int intValue = Integer.valueOf(split[0]).intValue();
                 i4 = i2;
                 i3 = intValue;
@@ -238,17 +239,17 @@ public class TwoWaysBar extends RangeBar {
         int actionMasked = motionEvent.getActionMasked();
         if (actionMasked == 0) {
             this.f = (int) motionEvent.getX();
-            TwoWaysBarListner twoWaysBarListner2 = this.f30735c;
+            TwoWaysBarListner twoWaysBarListner2 = this.f17045c;
             if (twoWaysBarListner2 != null) {
                 twoWaysBarListner2.a(this.e);
             }
         } else if (actionMasked == 1) {
             this.h = false;
-            TwoWaysBarListner twoWaysBarListner3 = this.f30735c;
+            TwoWaysBarListner twoWaysBarListner3 = this.f17045c;
             if (twoWaysBarListner3 != null) {
                 twoWaysBarListner3.b(this.e);
             }
-        } else if (actionMasked == 2 && !this.h && Math.abs(this.f - motionEvent.getX()) > this.g && (twoWaysBarListner = this.f30735c) != null) {
+        } else if (actionMasked == 2 && !this.h && Math.abs(this.f - motionEvent.getX()) > this.g && (twoWaysBarListner = this.f17045c) != null) {
             this.h = true;
             twoWaysBarListner.c(this.e);
         }
@@ -264,15 +265,15 @@ public class TwoWaysBar extends RangeBar {
         if (z || (getContext() instanceof HomeActivity)) {
             setThumbImageNormal(R.drawable.icon_two_bars_blue);
             setThumbImagePressed(R.drawable.icon_two_bars_blue);
-            setConnectingLineColor(this.f30734a.getResources().getColor(2131101766));
+            setConnectingLineColor(this.f17044a.getResources().getColor(2131101766));
             return;
         }
         setThumbImageNormal(R.drawable.icon_two_bars_gray);
         setThumbImagePressed(R.drawable.icon_two_bars_gray);
-        setConnectingLineColor(this.f30734a.getResources().getColor(2131101796));
+        setConnectingLineColor(this.f17044a.getResources().getColor(2131101796));
     }
 
     public void setTwoWaysBarListner(TwoWaysBarListner twoWaysBarListner) {
-        this.f30735c = twoWaysBarListner;
+        this.f17045c = twoWaysBarListner;
     }
 }

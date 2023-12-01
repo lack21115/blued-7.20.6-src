@@ -11,7 +11,6 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import com.anythink.expressad.foundation.h.i;
 import com.blued.android.core.imagecache.MemoryRequest;
 import com.blued.android.core.imagecache.RecyclingUtils;
 import com.blued.android.framework.utils.DensityUtils;
@@ -57,7 +56,7 @@ public class BitmapUtils {
         sb.append("rich");
         sb.append(z2 ? "" : "_new_");
         sb.append(str);
-        int identifier = context.getResources().getIdentifier(sb.toString(), i.f7952c, context.getPackageName());
+        int identifier = context.getResources().getIdentifier(sb.toString(), "drawable", context.getPackageName());
         if (imageView != null) {
             if (identifier > 0) {
                 Drawable drawable = context.getResources().getDrawable(identifier);
@@ -65,12 +64,12 @@ public class BitmapUtils {
                     int width = bitmap.getWidth();
                     int height = bitmap.getHeight();
                     if (height > 0) {
-                        int a2 = DensityUtils.a(context, 15.0f);
-                        int i3 = (int) ((a2 * (width * 1.0f)) / height);
+                        int a = DensityUtils.a(context, 15.0f);
+                        int i3 = (int) ((a * (width * 1.0f)) / height);
                         ViewGroup.LayoutParams layoutParams = imageView.getLayoutParams();
                         if (layoutParams != null && i3 > 0) {
                             layoutParams.width = i3;
-                            layoutParams.height = a2;
+                            layoutParams.height = a;
                             imageView.setLayoutParams(layoutParams);
                         }
                     }

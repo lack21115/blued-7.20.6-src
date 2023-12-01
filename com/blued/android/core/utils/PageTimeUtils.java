@@ -13,13 +13,9 @@ import java.util.Map;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/utils/PageTimeUtils.class */
 public class PageTimeUtils {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final String f9735a = PageTimeUtils.class.getSimpleName();
+    private static final String a = PageTimeUtils.class.getSimpleName();
     private static final Map<String, Long> b = new HashMap();
-
-    /* renamed from: c  reason: collision with root package name */
-    private static Map<String, String> f9736c = new HashMap();
+    private static Map<String, String> c = new HashMap();
 
     /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/utils/PageTimeUtils$APMInterface.class */
     public interface APMInterface {
@@ -49,7 +45,7 @@ public class PageTimeUtils {
     }
 
     public static void a(String str) {
-        f9736c = c(str);
+        c = c(str);
     }
 
     private static void a(Object... objArr) {
@@ -62,7 +58,7 @@ public class PageTimeUtils {
         while (true) {
             int i2 = i;
             if (i2 >= length) {
-                Log.b(f9735a, sb.toString());
+                Log.b(a, sb.toString());
                 return;
             }
             sb.append(objArr[i2]);
@@ -193,23 +189,23 @@ public class PageTimeUtils {
     }
 
     public static Map<String, String> c(String str) {
-        return (Map) new Gson().fromJson(b(str), (Class<Object>) Map.class);
+        return (Map) new Gson().fromJson(b(str), Map.class);
     }
 
     public static String d(String str) {
-        Map<String, String> map = f9736c;
+        Map<String, String> map = c;
         String str2 = str;
         if (map != null) {
             str2 = str;
             if (!map.isEmpty()) {
                 str2 = str;
-                if (f9736c.containsKey(str)) {
+                if (c.containsKey(str)) {
                     str2 = str;
-                    if (f9736c.get(str) != null) {
-                        if (TextUtils.isEmpty(f9736c.get(str))) {
+                    if (c.get(str) != null) {
+                        if (TextUtils.isEmpty(c.get(str))) {
                             return str;
                         }
-                        str2 = f9736c.get(str);
+                        str2 = c.get(str);
                     }
                 }
             }

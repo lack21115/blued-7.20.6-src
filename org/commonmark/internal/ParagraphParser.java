@@ -11,9 +11,7 @@ import org.commonmark.parser.block.ParserState;
 
 /* loaded from: source-3503164-dex2jar.jar:org/commonmark/internal/ParagraphParser.class */
 public class ParagraphParser extends AbstractBlockParser {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Paragraph f44037a = new Paragraph();
+    private final Paragraph a = new Paragraph();
     private LinkReferenceDefinitionParser b = new LinkReferenceDefinitionParser();
 
     @Override // org.commonmark.parser.block.BlockParser
@@ -28,9 +26,9 @@ public class ParagraphParser extends AbstractBlockParser {
 
     @Override // org.commonmark.parser.block.AbstractBlockParser, org.commonmark.parser.block.BlockParser
     public void a(InlineParser inlineParser) {
-        CharSequence a2 = this.b.a();
-        if (a2.length() > 0) {
-            inlineParser.parse(a2.toString(), this.f44037a);
+        CharSequence a = this.b.a();
+        if (a.length() > 0) {
+            inlineParser.parse(a.toString(), this.a);
         }
     }
 
@@ -42,13 +40,13 @@ public class ParagraphParser extends AbstractBlockParser {
     @Override // org.commonmark.parser.block.AbstractBlockParser, org.commonmark.parser.block.BlockParser
     public void b() {
         if (this.b.a().length() == 0) {
-            this.f44037a.l();
+            this.a.l();
         }
     }
 
     @Override // org.commonmark.parser.block.BlockParser
     public Block c() {
-        return this.f44037a;
+        return this.a;
     }
 
     public CharSequence e() {

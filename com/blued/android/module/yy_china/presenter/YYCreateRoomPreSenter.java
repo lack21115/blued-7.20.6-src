@@ -4,7 +4,6 @@ import android.os.Bundle;
 import androidx.fragment.app.FragmentActivity;
 import com.blued.android.framework.ui.mvp.IFetchDataListener;
 import com.blued.android.framework.ui.mvp.MvpPresenter;
-import com.soft.blued.ui.mine.model.MineEntryInfo;
 import kotlin.Metadata;
 
 @Metadata
@@ -26,7 +25,7 @@ public final class YYCreateRoomPreSenter extends MvpPresenter {
         }
         d(bundle.getString("data"));
         a(Boolean.valueOf(bundle.getBoolean("isShowRight")));
-        a(bundle.getInt(MineEntryInfo.ColumnsExtra.TYPE_ANCHOR_LEVEL));
+        a(bundle.getInt("anchor_level"));
     }
 
     @Override // com.blued.android.framework.ui.mvp.MvpPresenter

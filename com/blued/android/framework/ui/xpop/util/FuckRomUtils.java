@@ -4,9 +4,8 @@ import android.os.Build;
 import android.os.Environment;
 import android.text.TextUtils;
 import com.alipay.sdk.util.i;
+import com.android.internal.telephony.SmsConstants;
 import com.blued.android.module.common.web.jsbridge.BridgeUtil;
-import com.igexin.assist.util.AssistUtils;
-import com.ss.android.socialbase.downloader.constants.MonitorConstants;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -16,14 +15,10 @@ import java.util.Properties;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/ui/xpop/util/FuckRomUtils.class */
 public final class FuckRomUtils {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final String[] f10011a = {AssistUtils.BRAND_HW};
-    private static final String[] b = {AssistUtils.BRAND_VIVO};
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final String[] f10012c = {AssistUtils.BRAND_XIAOMI};
-    private static final String[] d = {AssistUtils.BRAND_OPPO};
+    private static final String[] a = {"huawei"};
+    private static final String[] b = {"vivo"};
+    private static final String[] c = {"xiaomi"};
+    private static final String[] d = {"oppo"};
     private static final String[] e = {"leeco", "letv"};
     private static final String[] f = {"360", "qiku"};
     private static final String[] g = {"zte"};
@@ -33,7 +28,7 @@ public final class FuckRomUtils {
     private static final String[] k = {"lg", "lge"};
     private static final String[] l = {"google"};
     private static final String[] m = {"samsung"};
-    private static final String[] n = {AssistUtils.BRAND_MZ};
+    private static final String[] n = {"meizu"};
     private static final String[] o = {"lenovo"};
     private static final String[] p = {"smartisan"};
     private static final String[] q = {"htc"};
@@ -44,13 +39,11 @@ public final class FuckRomUtils {
 
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/ui/xpop/util/FuckRomUtils$RomInfo.class */
     public static class RomInfo {
-
-        /* renamed from: a  reason: collision with root package name */
-        private String f10013a;
+        private String a;
         private String b;
 
         public String toString() {
-            return "RomInfo{name=" + this.f10013a + ", version=" + this.b + i.d;
+            return "RomInfo{name=" + this.a + ", version=" + this.b + i.d;
         }
     }
 
@@ -59,7 +52,7 @@ public final class FuckRomUtils {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:9:0x0021, code lost:
-        if (r3.equals("unknown") != false) goto L14;
+        if (r3.equals(com.android.internal.telephony.SmsConstants.FORMAT_UNKNOWN) != false) goto L14;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -118,7 +111,7 @@ public final class FuckRomUtils {
     }
 
     public static boolean a() {
-        return b[0].equals(b().f10013a);
+        return b[0].equals(b().a);
     }
 
     private static boolean a(String str, String str2, String... strArr) {
@@ -145,8 +138,8 @@ public final class FuckRomUtils {
         u = new RomInfo();
         String d2 = d();
         String c2 = c();
-        if (a(d2, c2, f10011a)) {
-            u.f10013a = f10011a[0];
+        if (a(d2, c2, a)) {
+            u.a = a[0];
             String a2 = a("ro.build.version.emui");
             String[] split = a2.split(BridgeUtil.UNDERLINE_STR);
             if (split.length > 1) {
@@ -156,62 +149,62 @@ public final class FuckRomUtils {
             }
             return u;
         } else if (a(d2, c2, b)) {
-            u.f10013a = b[0];
+            u.a = b[0];
             u.b = a("ro.vivo.os.build.display.id");
             return u;
-        } else if (a(d2, c2, f10012c)) {
-            u.f10013a = f10012c[0];
+        } else if (a(d2, c2, c)) {
+            u.a = c[0];
             u.b = a("ro.build.version.incremental");
             return u;
         } else if (a(d2, c2, d)) {
-            u.f10013a = d[0];
+            u.a = d[0];
             u.b = a("ro.build.version.opporom");
             return u;
         } else if (a(d2, c2, e)) {
-            u.f10013a = e[0];
+            u.a = e[0];
             u.b = a("ro.letv.release.version");
             return u;
         } else if (a(d2, c2, f)) {
-            u.f10013a = f[0];
+            u.a = f[0];
             u.b = a("ro.build.uiversion");
             return u;
         } else if (a(d2, c2, g)) {
-            u.f10013a = g[0];
+            u.a = g[0];
             u.b = a("ro.build.MiFavor_version");
             return u;
         } else if (a(d2, c2, h)) {
-            u.f10013a = h[0];
+            u.a = h[0];
             u.b = a("ro.rom.version");
             return u;
         } else if (a(d2, c2, i)) {
-            u.f10013a = i[0];
+            u.a = i[0];
             u.b = a("ro.build.rom.id");
             return u;
         } else {
             if (a(d2, c2, j)) {
-                u.f10013a = j[0];
+                u.a = j[0];
             } else if (a(d2, c2, k)) {
-                u.f10013a = k[0];
+                u.a = k[0];
             } else if (a(d2, c2, l)) {
-                u.f10013a = l[0];
+                u.a = l[0];
             } else if (a(d2, c2, m)) {
-                u.f10013a = m[0];
+                u.a = m[0];
             } else if (a(d2, c2, n)) {
-                u.f10013a = n[0];
+                u.a = n[0];
             } else if (a(d2, c2, o)) {
-                u.f10013a = o[0];
+                u.a = o[0];
             } else if (a(d2, c2, p)) {
-                u.f10013a = p[0];
+                u.a = p[0];
             } else if (a(d2, c2, q)) {
-                u.f10013a = q[0];
+                u.a = q[0];
             } else if (a(d2, c2, r)) {
-                u.f10013a = r[0];
+                u.a = r[0];
             } else if (a(d2, c2, s)) {
-                u.f10013a = s[0];
+                u.a = s[0];
             } else if (a(d2, c2, t)) {
-                u.f10013a = t[0];
+                u.a = t[0];
             } else {
-                u.f10013a = c2;
+                u.a = c2;
             }
             u.b = a("");
             return u;
@@ -233,9 +226,9 @@ public final class FuckRomUtils {
     private static String c() {
         try {
             String str = Build.MANUFACTURER;
-            return !TextUtils.isEmpty(str) ? str.toLowerCase() : "unknown";
+            return !TextUtils.isEmpty(str) ? str.toLowerCase() : SmsConstants.FORMAT_UNKNOWN;
         } catch (Throwable th) {
-            return "unknown";
+            return SmsConstants.FORMAT_UNKNOWN;
         }
     }
 
@@ -288,9 +281,9 @@ public final class FuckRomUtils {
     private static String d() {
         try {
             String str = Build.BRAND;
-            return !TextUtils.isEmpty(str) ? str.toLowerCase() : "unknown";
+            return !TextUtils.isEmpty(str) ? str.toLowerCase() : SmsConstants.FORMAT_UNKNOWN;
         } catch (Throwable th) {
-            return "unknown";
+            return SmsConstants.FORMAT_UNKNOWN;
         }
     }
 
@@ -307,7 +300,7 @@ public final class FuckRomUtils {
     private static String e(String str) {
         try {
             Class<?> cls = Class.forName("android.os.SystemProperties");
-            return (String) cls.getMethod(MonitorConstants.CONNECT_TYPE_GET, String.class, String.class).invoke(cls, str, "");
+            return (String) cls.getMethod("get", String.class, String.class).invoke(cls, str, "");
         } catch (Exception e2) {
             return "";
         }

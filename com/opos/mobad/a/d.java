@@ -22,26 +22,26 @@ import java.util.concurrent.ConcurrentHashMap;
 public class d extends com.opos.mobad.l.a implements com.opos.mobad.ad.a.a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Map<String, Boolean> f25612a = new ConcurrentHashMap();
+    private static Map<String, Boolean> f11924a = new ConcurrentHashMap();
     private Activity b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final Handler f25613c;
+    private final Handler f11925c;
     private com.opos.mobad.a.a.b d;
     private c g;
     private boolean h;
     private String i;
     private int j;
-    private a.C0707a k;
+    private a.C0537a k;
     private boolean l;
     private Context m;
     private a.b n;
-    private b.InterfaceC0687b o;
+    private b.InterfaceC0517b o;
     private a p;
 
     public d(Activity activity, String str, boolean z, com.opos.mobad.cmn.a.d dVar, com.opos.mobad.ad.a.b bVar, com.opos.mobad.cmn.b.c cVar) {
         super(bVar);
-        this.f25613c = new Handler() { // from class: com.opos.mobad.a.d.1
+        this.f11925c = new Handler() { // from class: com.opos.mobad.a.d.1
             @Override // android.os.Handler
             public void handleMessage(Message message) {
                 if (message.what != 0) {
@@ -66,21 +66,21 @@ public class d extends com.opos.mobad.l.a implements com.opos.mobad.ad.a.a {
         };
         this.j = 0;
         this.l = false;
-        this.o = new b.InterfaceC0687b() { // from class: com.opos.mobad.a.d.4
-            @Override // com.opos.mobad.cmn.service.pkginstall.b.InterfaceC0687b
+        this.o = new b.InterfaceC0517b() { // from class: com.opos.mobad.a.d.4
+            @Override // com.opos.mobad.cmn.service.pkginstall.b.InterfaceC0517b
             public void a(AdItemData adItemData, String str2) {
                 com.opos.cmn.an.f.a.b("InterBannerAd", "notifyInstallCompletedEvent:" + str2);
-                if (TextUtils.isEmpty(str2) || TextUtils.isEmpty(d.this.k.f26483c.k()) || !d.this.k.f26483c.k().equals(str2)) {
+                if (TextUtils.isEmpty(str2) || TextUtils.isEmpty(d.this.k.f12795c.k()) || !d.this.k.f12795c.k().equals(str2)) {
                     return;
                 }
                 d.this.g.d();
             }
 
-            @Override // com.opos.mobad.cmn.service.pkginstall.b.InterfaceC0687b
+            @Override // com.opos.mobad.cmn.service.pkginstall.b.InterfaceC0517b
             public void b(AdItemData adItemData, String str2) {
             }
 
-            @Override // com.opos.mobad.cmn.service.pkginstall.b.InterfaceC0687b
+            @Override // com.opos.mobad.cmn.service.pkginstall.b.InterfaceC0517b
             public void c(AdItemData adItemData, String str2) {
             }
         };
@@ -138,8 +138,8 @@ public class d extends com.opos.mobad.l.a implements com.opos.mobad.ad.a.a {
                 }
             }
             com.opos.cmn.an.f.a.b("InterBannerAd", "refreshAdTime=" + i2);
-            if (!this.f25613c.hasMessages(0)) {
-                this.f25613c.sendEmptyMessageDelayed(0, i2 * 1000);
+            if (!this.f11925c.hasMessages(0)) {
+                this.f11925c.sendEmptyMessageDelayed(0, i2 * 1000);
             }
         }
     }
@@ -155,20 +155,20 @@ public class d extends com.opos.mobad.l.a implements com.opos.mobad.ad.a.a {
             i = b(adData);
         }
         com.opos.cmn.an.f.a.b("InterBannerAd", "refreshAdTime=" + i);
-        if (this.f25613c.hasMessages(0)) {
+        if (this.f11925c.hasMessages(0)) {
             return;
         }
-        this.f25613c.sendEmptyMessageDelayed(0, i * 1000);
+        this.f11925c.sendEmptyMessageDelayed(0, i * 1000);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public void a(final a.C0707a c0707a, final com.opos.mobad.n.a aVar) {
+    public void a(final a.C0537a c0537a, final com.opos.mobad.n.a aVar) {
         com.opos.mobad.service.c.a(new Runnable() { // from class: com.opos.mobad.a.d.2
             @Override // java.lang.Runnable
             public void run() {
                 com.opos.cmn.an.f.a.b("InterBannerAd", "show ad view:", d.this.k);
-                if (c0707a != null) {
-                    d.this.g.a(c0707a, aVar);
+                if (c0537a != null) {
+                    d.this.g.a(c0537a, aVar);
                 }
                 d.this.k();
             }
@@ -186,8 +186,8 @@ public class d extends com.opos.mobad.l.a implements com.opos.mobad.ad.a.a {
     /* JADX INFO: Access modifiers changed from: private */
     public void k() {
         if (this.l) {
-            a.C0707a c0707a = this.k;
-            a(c0707a != null ? c0707a.f26482a : null);
+            a.C0537a c0537a = this.k;
+            a(c0537a != null ? c0537a.f12794a : null);
         }
     }
 
@@ -199,19 +199,19 @@ public class d extends com.opos.mobad.l.a implements com.opos.mobad.ad.a.a {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void p() {
-        if (5 == d() || !this.f25613c.hasMessages(0)) {
+        if (5 == d() || !this.f11925c.hasMessages(0)) {
             return;
         }
-        this.f25613c.removeMessages(0);
+        this.f11925c.removeMessages(0);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void q() {
         try {
             com.opos.cmn.an.f.a.b("InterBannerAd", "setBannerCovered posId=" + this.i);
-            f25612a.put(this.i, true);
-            if (this.f25613c.hasMessages(0)) {
-                this.f25613c.removeMessages(0);
+            f11924a.put(this.i, true);
+            if (this.f11925c.hasMessages(0)) {
+                this.f11925c.removeMessages(0);
             }
             this.g.c();
             com.opos.cmn.an.f.a.b("InterBannerAd", "mIBannerPresenter.destroyAd()");
@@ -227,8 +227,8 @@ public class d extends com.opos.mobad.l.a implements com.opos.mobad.ad.a.a {
         } catch (Exception e) {
             com.opos.cmn.an.f.a.a("InterBannerAd", "", (Throwable) e);
         }
-        if (f25612a.containsKey(this.i)) {
-            z = f25612a.get(this.i).booleanValue();
+        if (f11924a.containsKey(this.i)) {
+            z = f11924a.get(this.i).booleanValue();
             com.opos.cmn.an.f.a.b("InterBannerAd", "isBannerCovered=" + z);
             return z;
         }
@@ -272,8 +272,8 @@ public class d extends com.opos.mobad.l.a implements com.opos.mobad.ad.a.a {
     public void b() {
         synchronized (this) {
             com.opos.cmn.an.f.a.b("InterBannerAd", "destroyAd");
-            if (this.f25613c.hasMessages(0)) {
-                this.f25613c.removeMessages(0);
+            if (this.f11925c.hasMessages(0)) {
+                this.f11925c.removeMessages(0);
             }
             this.g.c();
             this.b = null;
@@ -292,10 +292,10 @@ public class d extends com.opos.mobad.l.a implements com.opos.mobad.ad.a.a {
         this.j = 0;
         com.opos.mobad.model.b.a(this.m.getApplicationContext()).a(this.m, this.i, 1, str, i, new b.a() { // from class: com.opos.mobad.a.d.3
             @Override // com.opos.mobad.model.b.a
-            public void a(final int i2, final a.C0707a c0707a) {
-                if (c0707a != null && c0707a.f26482a.a() == 1) {
-                    com.opos.mobad.service.a.a().a(d.this.i, 1, c0707a.b.f(), c0707a.b.b(), c0707a.f26483c.aa(), c0707a.b.a(), c0707a.b.J());
-                    d.this.j = c0707a.f26482a.c();
+            public void a(final int i2, final a.C0537a c0537a) {
+                if (c0537a != null && c0537a.f12794a.a() == 1) {
+                    com.opos.mobad.service.a.a().a(d.this.i, 1, c0537a.b.f(), c0537a.b.b(), c0537a.f12795c.aa(), c0537a.b.a(), c0537a.b.J());
+                    d.this.j = c0537a.f12794a.c();
                     d.this.c(-1, com.opos.cmn.a.a(-1));
                     return;
                 }
@@ -304,8 +304,8 @@ public class d extends com.opos.mobad.l.a implements com.opos.mobad.ad.a.a {
                     /* renamed from: a */
                     public Boolean call() throws Exception {
                         d.this.j = i2;
-                        d.this.k = c0707a;
-                        com.opos.mobad.service.f.a().a(d.this.i, d.this.b(d.this.k.f26482a));
+                        d.this.k = c0537a;
+                        com.opos.mobad.service.f.a().a(d.this.i, d.this.b(d.this.k.f12794a));
                         return true;
                     }
                 });
@@ -314,7 +314,7 @@ public class d extends com.opos.mobad.l.a implements com.opos.mobad.ad.a.a {
                     return;
                 }
                 d dVar2 = d.this;
-                dVar2.a(dVar2.k, e.a(d.this.m, c0707a));
+                dVar2.a(dVar2.k, e.a(d.this.m, c0537a));
             }
 
             @Override // com.opos.mobad.model.b.a
@@ -341,14 +341,14 @@ public class d extends com.opos.mobad.l.a implements com.opos.mobad.ad.a.a {
 
     @Override // com.opos.mobad.ad.g.a, com.opos.mobad.ad.g
     public int f() {
-        a.C0707a c0707a;
-        return (!e() || (c0707a = this.k) == null) ? super.f() : c0707a.b.X();
+        a.C0537a c0537a;
+        return (!e() || (c0537a = this.k) == null) ? super.f() : c0537a.b.X();
     }
 
     @Override // com.opos.mobad.ad.g.a, com.opos.mobad.ad.g
     public int g() {
-        a.C0707a c0707a;
-        return (!e() || (c0707a = this.k) == null) ? super.g() : c0707a.b.Y();
+        a.C0537a c0537a;
+        return (!e() || (c0537a = this.k) == null) ? super.g() : c0537a.b.Y();
     }
 
     @Override // com.opos.mobad.ad.a.a

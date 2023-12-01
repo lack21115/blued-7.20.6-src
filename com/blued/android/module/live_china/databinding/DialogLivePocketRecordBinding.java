@@ -14,13 +14,9 @@ import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/DialogLivePocketRecordBinding.class */
 public final class DialogLivePocketRecordBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f11807a;
+    public final ImageView a;
     public final ListView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final LinearLayout f11808c;
+    public final LinearLayout c;
     public final LinearLayout d;
     public final SmartRefreshLayout e;
     public final TextView f;
@@ -30,9 +26,9 @@ public final class DialogLivePocketRecordBinding implements ViewBinding {
 
     private DialogLivePocketRecordBinding(FrameLayout frameLayout, ImageView imageView, ListView listView, LinearLayout linearLayout, LinearLayout linearLayout2, SmartRefreshLayout smartRefreshLayout, TextView textView, TextView textView2, View view) {
         this.i = frameLayout;
-        this.f11807a = imageView;
+        this.a = imageView;
         this.b = listView;
-        this.f11808c = linearLayout;
+        this.c = linearLayout;
         this.d = linearLayout2;
         this.e = smartRefreshLayout;
         this.f = textView;
@@ -62,15 +58,15 @@ public final class DialogLivePocketRecordBinding implements ViewBinding {
                 if (linearLayout != null) {
                     LinearLayout linearLayout2 = (LinearLayout) view.findViewById(R.id.ll_dialog_root);
                     if (linearLayout2 != null) {
-                        SmartRefreshLayout smartRefreshLayout = (SmartRefreshLayout) view.findViewById(R.id.refresh_layout);
-                        if (smartRefreshLayout != null) {
+                        SmartRefreshLayout findViewById = view.findViewById(R.id.refresh_layout);
+                        if (findViewById != null) {
                             TextView textView = (TextView) view.findViewById(R.id.tv_name);
                             if (textView != null) {
                                 TextView textView2 = (TextView) view.findViewById(R.id.tv_tip);
                                 if (textView2 != null) {
-                                    View findViewById = view.findViewById(R.id.view_bg_top);
-                                    if (findViewById != null) {
-                                        return new DialogLivePocketRecordBinding((FrameLayout) view, imageView, listView, linearLayout, linearLayout2, smartRefreshLayout, textView, textView2, findViewById);
+                                    View findViewById2 = view.findViewById(R.id.view_bg_top);
+                                    if (findViewById2 != null) {
+                                        return new DialogLivePocketRecordBinding((FrameLayout) view, imageView, listView, linearLayout, linearLayout2, findViewById, textView, textView2, findViewById2);
                                     }
                                     str = "viewBgTop";
                                 } else {
@@ -97,7 +93,6 @@ public final class DialogLivePocketRecordBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.i;

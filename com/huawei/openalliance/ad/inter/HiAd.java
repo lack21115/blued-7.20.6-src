@@ -49,10 +49,10 @@ public final class HiAd implements IHiAd {
     private IAppDownloadManager L;
 
     /* renamed from: a  reason: collision with root package name */
-    private ExtensionActionListener f22970a;
+    private ExtensionActionListener f9362a;
 
     /* renamed from: c  reason: collision with root package name */
-    private Integer f22971c;
+    private Integer f9363c;
     private boolean d;
     private Map<BroadcastReceiver, IntentFilter> S = new HashMap();
     private int b = -1;
@@ -309,7 +309,7 @@ public final class HiAd implements IHiAd {
     }
 
     public Integer I() {
-        return this.f22971c;
+        return this.f9363c;
     }
 
     public IMultiMediaPlayingManager V() {
@@ -359,7 +359,7 @@ public final class HiAd implements IHiAd {
 
     @Override // com.huawei.openalliance.ad.inter.IHiAd
     public ExtensionActionListener getExtensionActionListener() {
-        return this.f22970a;
+        return this.f9362a;
     }
 
     @Override // com.huawei.openalliance.ad.inter.IHiAd
@@ -509,7 +509,7 @@ public final class HiAd implements IHiAd {
 
     @Override // com.huawei.openalliance.ad.inter.IHiAd
     public void setBrand(int i) {
-        this.f22971c = Integer.valueOf(i);
+        this.f9363c = Integer.valueOf(i);
     }
 
     @Override // com.huawei.openalliance.ad.inter.IHiAd
@@ -530,7 +530,7 @@ public final class HiAd implements IHiAd {
 
     @Override // com.huawei.openalliance.ad.inter.IHiAd
     public void setExtensionActionListener(ExtensionActionListener extensionActionListener) {
-        this.f22970a = extensionActionListener;
+        this.f9362a = extensionActionListener;
     }
 
     @Override // com.huawei.openalliance.ad.inter.IHiAd

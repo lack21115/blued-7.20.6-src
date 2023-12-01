@@ -9,7 +9,6 @@ import android.graphics.Matrix;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
-import com.anythink.expressad.foundation.h.i;
 import java.io.File;
 import java.lang.ref.WeakReference;
 import java.util.HashMap;
@@ -23,15 +22,11 @@ import skin.support.utils.Slog;
 
 /* loaded from: source-3503164-dex2jar.jar:skin/support/content/res/SkinCompatUserThemeManager.class */
 public class SkinCompatUserThemeManager {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static SkinCompatUserThemeManager f44227a = new SkinCompatUserThemeManager();
+    private static SkinCompatUserThemeManager a = new SkinCompatUserThemeManager();
     private boolean e;
     private boolean i;
     private final HashMap<String, ColorState> b = new HashMap<>();
-
-    /* renamed from: c  reason: collision with root package name */
-    private final Object f44228c = new Object();
+    private final Object c = new Object();
     private final WeakHashMap<Integer, WeakReference<ColorStateList>> d = new WeakHashMap<>();
     private final HashMap<String, String> f = new HashMap<>();
     private final Object g = new Object();
@@ -43,7 +38,7 @@ public class SkinCompatUserThemeManager {
         } catch (JSONException e) {
             this.b.clear();
             this.f.clear();
-            if (Slog.f44252a) {
+            if (Slog.a) {
                 Slog.a("SkinCompatUserThemeManager", "startLoadFromSharedPreferences error: " + e);
             }
         }
@@ -59,7 +54,7 @@ public class SkinCompatUserThemeManager {
 
     private void a(int i, ColorStateList colorStateList) {
         if (colorStateList != null) {
-            synchronized (this.f44228c) {
+            synchronized (this.c) {
                 this.d.put(Integer.valueOf(i), new WeakReference<>(colorStateList));
             }
         }
@@ -74,11 +69,11 @@ public class SkinCompatUserThemeManager {
     }
 
     public static SkinCompatUserThemeManager b() {
-        return f44227a;
+        return a;
     }
 
     private ColorStateList c(int i) {
-        synchronized (this.f44228c) {
+        synchronized (this.c) {
             WeakReference<ColorStateList> weakReference = this.d.get(Integer.valueOf(i));
             if (weakReference != null) {
                 ColorStateList colorStateList = weakReference.get();
@@ -93,7 +88,7 @@ public class SkinCompatUserThemeManager {
 
     private static boolean c(String str) {
         boolean z = !TextUtils.isEmpty(str) && new File(str).exists();
-        if (Slog.f44252a && !z) {
+        if (Slog.a && !z) {
             Slog.a("SkinCompatUserThemeManager", "Invalid drawable path : " + str);
         }
         return z;
@@ -117,7 +112,7 @@ public class SkinCompatUserThemeManager {
         String d = SkinPreference.a().d();
         if (!TextUtils.isEmpty(d)) {
             JSONArray jSONArray = new JSONArray(d);
-            if (Slog.f44252a) {
+            if (Slog.a) {
                 Slog.a("SkinCompatUserThemeManager", "startLoadFromSharedPreferences: " + jSONArray.toString());
             }
             int length = jSONArray.length();
@@ -135,7 +130,7 @@ public class SkinCompatUserThemeManager {
                         if (a2 != null) {
                             this.b.put(a2.b, a2);
                         }
-                    } else if (i.f7952c.equals(string)) {
+                    } else if ("drawable".equals(string)) {
                         String string2 = jSONObject.getString("drawableName");
                         String string3 = jSONObject.getString("drawablePathAndAngle");
                         if (!TextUtils.isEmpty(string2) && !TextUtils.isEmpty(string3)) {
@@ -151,7 +146,7 @@ public class SkinCompatUserThemeManager {
     }
 
     private void i() {
-        synchronized (this.f44228c) {
+        synchronized (this.c) {
             this.d.clear();
         }
     }
@@ -163,14 +158,14 @@ public class SkinCompatUserThemeManager {
     }
 
     public ColorStateList a(int i) {
-        ColorStateList c2 = c(i);
-        ColorStateList colorStateList = c2;
-        if (c2 == null) {
+        ColorStateList c = c(i);
+        ColorStateList colorStateList = c;
+        if (c == null) {
             String a2 = a(i, "color");
-            colorStateList = c2;
+            colorStateList = c;
             if (!TextUtils.isEmpty(a2)) {
                 ColorState colorState = this.b.get(a2);
-                colorStateList = c2;
+                colorStateList = c;
                 if (colorState != null) {
                     ColorStateList b = colorState.b();
                     colorStateList = b;
@@ -198,12 +193,12 @@ public class SkinCompatUserThemeManager {
         }
         for (String str2 : this.f.keySet()) {
             try {
-                jSONArray.put(new JSONObject().putOpt("type", i.f7952c).putOpt("drawableName", str2).putOpt("drawablePathAndAngle", this.f.get(str2)));
+                jSONArray.put(new JSONObject().putOpt("type", "drawable").putOpt("drawableName", str2).putOpt("drawablePathAndAngle", this.f.get(str2)));
             } catch (JSONException e2) {
                 e2.printStackTrace();
             }
         }
-        if (Slog.f44252a) {
+        if (Slog.a) {
             Slog.a("SkinCompatUserThemeManager", "Apply user theme: " + jSONArray.toString());
         }
         SkinPreference.a().b(jSONArray.toString()).e();
@@ -224,7 +219,7 @@ public class SkinCompatUserThemeManager {
         Drawable d = d(i);
         Drawable drawable = d;
         if (d == null) {
-            String a2 = a(i, i.f7952c);
+            String a2 = a(i, "drawable");
             drawable = d;
             if (!TextUtils.isEmpty(a2)) {
                 String str = this.f.get(a2);

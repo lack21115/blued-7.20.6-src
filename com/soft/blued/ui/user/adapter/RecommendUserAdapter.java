@@ -10,6 +10,7 @@ import com.blued.das.profile.PersonalProfileProtos;
 import com.bytedance.applog.tracker.Tracker;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
+import com.soft.blued.R;
 import com.soft.blued.log.bytedance.ProfileEventUtils;
 import com.soft.blued.log.track.EventTrackPersonalProfile;
 import com.soft.blued.ui.find.model.UserFindResult;
@@ -26,15 +27,15 @@ import kotlin.jvm.internal.Intrinsics;
 public final class RecommendUserAdapter extends BaseQuickAdapter<UserFindResult, BaseViewHolder> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final IRequestHost f33749a;
+    private final IRequestHost f20058a;
     private final LogData b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public RecommendUserAdapter(IRequestHost requestHost, LogData logData) {
-        super(2131559958);
-        Intrinsics.e(requestHost, "requestHost");
+    public RecommendUserAdapter(IRequestHost iRequestHost, LogData logData) {
+        super((int) R.layout.item_recommend_user);
+        Intrinsics.e(iRequestHost, "requestHost");
         Intrinsics.e(logData, "logData");
-        this.f33749a = requestHost;
+        this.f20058a = iRequestHost;
         this.b = logData;
     }
 
@@ -55,26 +56,26 @@ public final class RecommendUserAdapter extends BaseQuickAdapter<UserFindResult,
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(UserFindResult item, ImageView iv_attention, RecommendUserAdapter this$0, View view) {
+    public static final void a(UserFindResult userFindResult, ImageView imageView, RecommendUserAdapter recommendUserAdapter, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(item, "$item");
-        Intrinsics.e(this$0, "this$0");
-        UserInfoUtils userInfoUtils = UserInfoUtils.f34333a;
-        Intrinsics.c(iv_attention, "iv_attention");
-        UserInfoUtils.a(userInfoUtils, item, iv_attention, this$0.f33749a, this$0.b, null, 16, null);
-        EventTrackPersonalProfile.d(PersonalProfileProtos.Event.PERSONAL_SAME_POP_USER_FOLLOW_CLICK, item.uid);
+        Intrinsics.e(userFindResult, "$item");
+        Intrinsics.e(recommendUserAdapter, "this$0");
+        UserInfoUtils userInfoUtils = UserInfoUtils.f20642a;
+        Intrinsics.c(imageView, "iv_attention");
+        UserInfoUtils.a(userInfoUtils, userFindResult, imageView, recommendUserAdapter.f20058a, recommendUserAdapter.b, null, 16, null);
+        EventTrackPersonalProfile.d(PersonalProfileProtos.Event.PERSONAL_SAME_POP_USER_FOLLOW_CLICK, userFindResult.uid);
         String name = PersonalProfileProtos.Event.PERSONAL_SAME_POP_USER_FOLLOW_CLICK.name();
-        String str = item.uid;
+        String str = userFindResult.uid;
         Intrinsics.c(str, "item.uid");
         ProfileEventUtils.a(name, str);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(RecommendUserAdapter this$0, UserFindResult item, View view) {
+    public static final void a(RecommendUserAdapter recommendUserAdapter, UserFindResult userFindResult, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        Intrinsics.e(item, "$item");
-        this$0.b(item);
+        Intrinsics.e(recommendUserAdapter, "this$0");
+        Intrinsics.e(userFindResult, "$item");
+        recommendUserAdapter.b(userFindResult);
     }
 
     private final void b(UserFindResult userFindResult) {
@@ -87,11 +88,11 @@ public final class RecommendUserAdapter extends BaseQuickAdapter<UserFindResult,
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(RecommendUserAdapter this$0, UserFindResult item, View view) {
+    public static final void b(RecommendUserAdapter recommendUserAdapter, UserFindResult userFindResult, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        Intrinsics.e(item, "$item");
-        this$0.a(item);
+        Intrinsics.e(recommendUserAdapter, "this$0");
+        Intrinsics.e(userFindResult, "$item");
+        recommendUserAdapter.a(userFindResult);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

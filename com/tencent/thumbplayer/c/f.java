@@ -9,15 +9,15 @@ import java.util.Map;
 public class f implements ITPPreloadProxy.IPreloadListener, ITPPlayListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f39258a;
+    private String f25567a;
 
     public f(String str) {
-        this.f39258a = str;
+        this.f25567a = str;
     }
 
     @Override // com.tencent.thumbplayer.core.downloadproxy.api.ITPPlayListener
     public long getAdvRemainTime() {
-        TPLogUtil.i(this.f39258a, " empty proxy player listener , notify , getAdvRemainTime");
+        TPLogUtil.i(this.f25567a, " empty proxy player listener , notify , getAdvRemainTime");
         return 0L;
     }
 
@@ -28,19 +28,19 @@ public class f implements ITPPreloadProxy.IPreloadListener, ITPPlayListener {
 
     @Override // com.tencent.thumbplayer.core.downloadproxy.api.ITPPlayListener
     public int getCurrentPlayClipNo() {
-        TPLogUtil.i(this.f39258a, " empty proxy player listener , notify , getCurrentPlayClipNo");
+        TPLogUtil.i(this.f25567a, " empty proxy player listener , notify , getCurrentPlayClipNo");
         return 0;
     }
 
     @Override // com.tencent.thumbplayer.core.downloadproxy.api.ITPPlayListener
     public long getCurrentPlayOffset() {
-        TPLogUtil.i(this.f39258a, " empty proxy player listener , notify , getCurrentPlayOffset");
+        TPLogUtil.i(this.f25567a, " empty proxy player listener , notify , getCurrentPlayOffset");
         return -1L;
     }
 
     @Override // com.tencent.thumbplayer.core.downloadproxy.api.ITPPlayListener
     public long getCurrentPosition() {
-        TPLogUtil.i(this.f39258a, " empty proxy player listener , notify , getCurrentPosition");
+        TPLogUtil.i(this.f25567a, " empty proxy player listener , notify , getCurrentPosition");
         return 0L;
     }
 
@@ -56,19 +56,19 @@ public class f implements ITPPreloadProxy.IPreloadListener, ITPPlayListener {
 
     @Override // com.tencent.thumbplayer.core.downloadproxy.api.ITPPlayListener
     public Object getPlayInfo(long j) {
-        TPLogUtil.i(this.f39258a, " empty proxy player listener , notify , getPlayInfo with type : ".concat(String.valueOf(j)));
+        TPLogUtil.i(this.f25567a, " empty proxy player listener , notify , getPlayInfo with type : ".concat(String.valueOf(j)));
         return null;
     }
 
     @Override // com.tencent.thumbplayer.core.downloadproxy.api.ITPPlayListener
     public Object getPlayInfo(String str) {
-        TPLogUtil.i(this.f39258a, " empty proxy player listener , notify , getPlayInfo with key : ".concat(String.valueOf(str)));
+        TPLogUtil.i(this.f25567a, " empty proxy player listener , notify , getPlayInfo with key : ".concat(String.valueOf(str)));
         return null;
     }
 
     @Override // com.tencent.thumbplayer.core.downloadproxy.api.ITPPlayListener
     public long getPlayerBufferLength() {
-        TPLogUtil.i(this.f39258a, " empty proxy player listener , notify , getPlayerBufferLength");
+        TPLogUtil.i(this.f25567a, " empty proxy player listener , notify , getPlayerBufferLength");
         return 0L;
     }
 
@@ -94,7 +94,7 @@ public class f implements ITPPreloadProxy.IPreloadListener, ITPPlayListener {
 
     @Override // com.tencent.thumbplayer.core.downloadproxy.api.ITPPlayListener
     public void onDownloadProgressUpdate(int i, int i2, long j, long j2, String str) {
-        String str2 = this.f39258a;
+        String str2 = this.f25567a;
         TPLogUtil.i(str2, " empty proxy player listener , notify , onPlayProgress, current : " + j + ", total : " + j2);
     }
 
@@ -108,7 +108,7 @@ public class f implements ITPPreloadProxy.IPreloadListener, ITPPlayListener {
 
     @Override // com.tencent.thumbplayer.core.downloadproxy.api.ITPPlayListener
     public Object onPlayCallback(int i, Object obj, Object obj2, Object obj3, Object obj4) {
-        String str = this.f39258a;
+        String str = this.f25567a;
         TPLogUtil.i(str, " empty proxy player listener , notify , onPlayCallback, messageType : " + i + ",ext1:" + obj + ",ext2:" + obj2 + ",ext3" + obj3 + ",ext4" + obj4);
         return null;
     }
@@ -119,12 +119,12 @@ public class f implements ITPPreloadProxy.IPreloadListener, ITPPlayListener {
 
     @Override // com.tencent.thumbplayer.api.proxy.ITPPreloadProxy.IPreloadListener
     public void onPrepareError() {
-        TPLogUtil.i(this.f39258a, " empty proxy player listener , notify , onPrepareError : ");
+        TPLogUtil.i(this.f25567a, " empty proxy player listener , notify , onPrepareError : ");
     }
 
     @Override // com.tencent.thumbplayer.api.proxy.ITPPreloadProxy.IPreloadListener
     public void onPrepareSuccess() {
-        TPLogUtil.i(this.f39258a, " empty proxy player listener , notify , onPrepareSuccess : ");
+        TPLogUtil.i(this.f25567a, " empty proxy player listener , notify , onPrepareSuccess : ");
     }
 
     @Override // com.tencent.thumbplayer.core.downloadproxy.api.ITPPlayListener

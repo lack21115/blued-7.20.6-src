@@ -15,7 +15,6 @@ import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.bytedance.applog.tracker.Tracker;
 import com.bytedance.sdk.openadsdk.live.TTLiveConstants;
 import com.sobot.chat.activity.base.SobotDialogBaseActivity;
@@ -62,7 +61,7 @@ public class SobotCusFieldActivity extends SobotDialogBaseActivity {
     public void finishPageOrSDK() {
         String onlyStringData = SharedPreferencesUtil.getOnlyStringData(getBaseContext(), ZhiChiConstant.sobot_last_current_appkey, "");
         Context applicationContext = getApplicationContext();
-        if (SharedPreferencesUtil.getIntData(applicationContext, onlyStringData + BridgeUtil.UNDERLINE_STR + ZhiChiConstant.initType, -1) == 2) {
+        if (SharedPreferencesUtil.getIntData(applicationContext, onlyStringData + "_" + ZhiChiConstant.initType, -1) == 2) {
             finish();
             sendCloseIntent(1);
             return;

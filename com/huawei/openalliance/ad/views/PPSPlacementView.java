@@ -86,7 +86,7 @@ public class PPSPlacementView extends AutoScaleSizeRelativeLayout implements gs,
     private gt W;
 
     /* renamed from: a  reason: collision with root package name */
-    private p f23024a;
+    private p f9416a;
     private Handler aa;
     private gu ab;
     private View.OnClickListener ac;
@@ -94,7 +94,7 @@ public class PPSPlacementView extends AutoScaleSizeRelativeLayout implements gs,
     private p b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f23025c;
+    private int f9417c;
     private a d;
     private List<View> e;
     private boolean f;
@@ -186,7 +186,7 @@ public class PPSPlacementView extends AutoScaleSizeRelativeLayout implements gs,
         this.V = new hv();
         this.I = new hv();
         this.L = new ArrayList(4);
-        this.f23025c = 0;
+        this.f9417c = 0;
         this.f = false;
         this.g = false;
         this.k = null;
@@ -353,7 +353,7 @@ public class PPSPlacementView extends AutoScaleSizeRelativeLayout implements gs,
         this.V = new hv();
         this.I = new hv();
         this.L = new ArrayList(4);
-        this.f23025c = 0;
+        this.f9417c = 0;
         this.f = false;
         this.g = false;
         this.k = null;
@@ -520,7 +520,7 @@ public class PPSPlacementView extends AutoScaleSizeRelativeLayout implements gs,
         this.V = new hv();
         this.I = new hv();
         this.L = new ArrayList(4);
-        this.f23025c = 0;
+        this.f9417c = 0;
         this.f = false;
         this.g = false;
         this.k = null;
@@ -800,7 +800,7 @@ public class PPSPlacementView extends AutoScaleSizeRelativeLayout implements gs,
             return;
         }
         this.u = -1;
-        ge.Code("PPSPlacementView", "showAd:%s", Integer.valueOf(this.f23025c));
+        ge.Code("PPSPlacementView", "showAd:%s", Integer.valueOf(this.f9417c));
         this.q = placementMediaView;
         placementMediaView.setAlpha(1.0f);
         placementMediaView.Code(true, this.r);
@@ -990,7 +990,7 @@ public class PPSPlacementView extends AutoScaleSizeRelativeLayout implements gs,
     }
 
     private void V(boolean z) {
-        if (this.f23025c < this.L.size() - 1) {
+        if (this.f9417c < this.L.size() - 1) {
             h();
             if (z) {
                 return;
@@ -1016,18 +1016,18 @@ public class PPSPlacementView extends AutoScaleSizeRelativeLayout implements gs,
         p pVar;
         PlacementMediaView placementMediaView;
         ge.Code("PPSPlacementView", "initPlacementView, singlePlayerInst: %s", Boolean.valueOf(this.U.V(bf.a.SINGLE_INST)));
-        this.D.V(this.f23024a.r(), this.f23024a.s());
-        this.F.Code(this.f23024a);
+        this.D.V(this.f9416a.r(), this.f9416a.s());
+        this.F.Code(this.f9416a);
         if (this.U.V(bf.a.SINGLE_INST)) {
-            PlacementMediaView V = V(this.j, this.f23024a);
+            PlacementMediaView V = V(this.j, this.f9416a);
             this.j = V;
             V.setMediaPlayerReleaseListener(this.O);
             bfVar = new bf(bf.a.SINGLE_INST);
-            pVar = this.f23024a;
+            pVar = this.f9416a;
             placementMediaView = this.j;
         } else {
-            this.h = V(this.h, this.f23024a);
-            Code(new bf(bf.a.MAIN_VIEW), this.f23024a, this.h);
+            this.h = V(this.h, this.f9416a);
+            Code(new bf(bf.a.MAIN_VIEW), this.f9416a, this.h);
             this.i = V(this.i, this.b);
             bfVar = new bf(bf.a.BACKUP_VIEW);
             pVar = this.b;
@@ -1090,15 +1090,15 @@ public class PPSPlacementView extends AutoScaleSizeRelativeLayout implements gs,
     }
 
     private boolean f() {
-        return this.f23025c == this.L.size() - 1;
+        return this.f9417c == this.L.size() - 1;
     }
 
     private void g() {
         bf bfVar;
         p pVar;
         PlacementMediaView placementMediaView;
-        this.f23025c++;
-        ge.V("PPSPlacementView", "load " + this.f23025c + " ad");
+        this.f9417c++;
+        ge.V("PPSPlacementView", "load " + this.f9417c + " ad");
         if (getNextAd() == null || this.U.V(bf.a.SINGLE_INST)) {
             return;
         }
@@ -1111,10 +1111,10 @@ public class PPSPlacementView extends AutoScaleSizeRelativeLayout implements gs,
             placementMediaView = this.i;
         } else {
             p nextAd2 = getNextAd();
-            this.f23024a = nextAd2;
+            this.f9416a = nextAd2;
             this.h = V(this.h, nextAd2);
             bfVar = new bf(bf.a.MAIN_VIEW);
-            pVar = this.f23024a;
+            pVar = this.f9416a;
             placementMediaView = this.h;
         }
         Code(bfVar, pVar, placementMediaView);
@@ -1122,8 +1122,8 @@ public class PPSPlacementView extends AutoScaleSizeRelativeLayout implements gs,
 
     /* JADX INFO: Access modifiers changed from: private */
     public p getCurrentAd() {
-        if (this.f23025c < this.L.size()) {
-            return this.L.get(this.f23025c);
+        if (this.f9417c < this.L.size()) {
+            return this.L.get(this.f9417c);
         }
         return null;
     }
@@ -1164,7 +1164,7 @@ public class PPSPlacementView extends AutoScaleSizeRelativeLayout implements gs,
     }
 
     private int getCurrentPlayTime() {
-        int i = this.f23025c;
+        int i = this.f9417c;
         if (i < 1) {
             return 0;
         }
@@ -1173,8 +1173,8 @@ public class PPSPlacementView extends AutoScaleSizeRelativeLayout implements gs,
 
     /* JADX INFO: Access modifiers changed from: private */
     public p getNextAd() {
-        if (this.f23025c < this.L.size() - 1) {
-            return this.L.get(this.f23025c + 1);
+        if (this.f9417c < this.L.size() - 1) {
+            return this.L.get(this.f9417c + 1);
         }
         return null;
     }
@@ -1204,7 +1204,7 @@ public class PPSPlacementView extends AutoScaleSizeRelativeLayout implements gs,
             Code(placementMediaView, false);
         }
         this.D.b();
-        ge.V("PPSPlacementView", "show " + this.f23025c + " ad");
+        ge.V("PPSPlacementView", "show " + this.f9417c + " ad");
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1395,7 +1395,7 @@ public class PPSPlacementView extends AutoScaleSizeRelativeLayout implements gs,
         if (placementMediaView != null) {
             placementMediaView.setAlpha(1.0f);
         }
-        if (this.n != null && this.f23025c == 0) {
+        if (this.n != null && this.f9417c == 0) {
             ge.V("PPSPlacementView", "need notify media start.");
             this.E = true;
         }
@@ -1483,9 +1483,9 @@ public class PPSPlacementView extends AutoScaleSizeRelativeLayout implements gs,
                 if (aa.Code(list) || aa.Code(PPSPlacementView.this.L)) {
                     return;
                 }
-                PPSPlacementView.this.f23025c = 0;
+                PPSPlacementView.this.f9417c = 0;
                 PPSPlacementView pPSPlacementView = PPSPlacementView.this;
-                pPSPlacementView.f23024a = pPSPlacementView.getCurrentAd();
+                pPSPlacementView.f9416a = pPSPlacementView.getCurrentAd();
                 PPSPlacementView pPSPlacementView2 = PPSPlacementView.this;
                 pPSPlacementView2.b = pPSPlacementView2.getNextAd();
                 PPSPlacementView.this.a();
@@ -1521,7 +1521,7 @@ public class PPSPlacementView extends AutoScaleSizeRelativeLayout implements gs,
             currentAd.Z(false);
         }
         b();
-        if (this.f23024a != null) {
+        if (this.f9416a != null) {
             L();
             (this.U.V(bf.a.SINGLE_INST) ? this.I : this.U.V(bf.a.MAIN_VIEW) ? this.Code : this.V).L();
         }
@@ -1714,9 +1714,8 @@ public class PPSPlacementView extends AutoScaleSizeRelativeLayout implements gs,
         return false;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         ge.Code("PPSPlacementView", "onAttachedToWindow");
         this.D.D();
@@ -1737,9 +1736,8 @@ public class PPSPlacementView extends AutoScaleSizeRelativeLayout implements gs,
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         ge.V("PPSPlacementView", "onDetechedFromWindow");
         this.D.L();
@@ -1748,9 +1746,8 @@ public class PPSPlacementView extends AutoScaleSizeRelativeLayout implements gs,
         this.I.I();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onVisibilityChanged(View view, int i) {
+    protected void onVisibilityChanged(View view, int i) {
         super.onVisibilityChanged(view, i);
         this.D.a();
     }

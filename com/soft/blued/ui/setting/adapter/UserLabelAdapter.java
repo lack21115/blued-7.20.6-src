@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class UserLabelAdapter extends BaseMultiItemQuickAdapter<UserTag, BaseViewHolder> {
 
     /* renamed from: a  reason: collision with root package name */
-    private TextView f33311a;
+    private TextView f19620a;
 
     public UserLabelAdapter() {
         super(new ArrayList());
@@ -30,24 +30,24 @@ public class UserLabelAdapter extends BaseMultiItemQuickAdapter<UserTag, BaseVie
 
     private void c(BaseViewHolder baseViewHolder, UserTag userTag) {
         TextView textView = (TextView) baseViewHolder.getView(R.id.user_label_text);
-        this.f33311a = textView;
+        this.f19620a = textView;
         textView.setText(userTag.name);
         Log.v("drb", "bindLabelView:" + userTag.name + " -- " + userTag.checked);
         if (userTag.checked == 1) {
-            this.f33311a.setBackgroundResource(R.drawable.user_job_text_select_bg);
-            this.f33311a.setTextColor(this.mContext.getResources().getColor(2131101780));
+            this.f19620a.setBackgroundResource(R.drawable.user_job_text_select_bg);
+            this.f19620a.setTextColor(this.mContext.getResources().getColor(2131101780));
         } else {
-            this.f33311a.setBackgroundResource(R.drawable.user_job_text_bg);
-            this.f33311a.setTextColor(this.mContext.getResources().getColor(2131102254));
+            this.f19620a.setBackgroundResource(R.drawable.user_job_text_bg);
+            this.f19620a.setTextColor(this.mContext.getResources().getColor(2131102254));
         }
         if (!userTag.chooseable) {
-            this.f33311a.setBackgroundResource(R.drawable.user_job_text_bg);
-            this.f33311a.setTextColor(this.mContext.getResources().getColor(2131102260));
+            this.f19620a.setBackgroundResource(R.drawable.user_job_text_bg);
+            this.f19620a.setTextColor(this.mContext.getResources().getColor(2131102260));
             return;
         }
-        TextView textView2 = this.f33311a;
+        TextView textView2 = this.f19620a;
         textView2.setBackground(textView2.getBackground());
-        TextView textView3 = this.f33311a;
+        TextView textView3 = this.f19620a;
         textView3.setTextColor(textView3.getTextColors());
     }
 

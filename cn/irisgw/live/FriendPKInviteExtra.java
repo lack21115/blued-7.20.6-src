@@ -31,8 +31,8 @@ public final class FriendPKInviteExtra extends GeneratedMessageV3 implements Fri
     private int uid_;
     private static final FriendPKInviteExtra DEFAULT_INSTANCE = new FriendPKInviteExtra();
     private static final Parser<FriendPKInviteExtra> PARSER = new AbstractParser<FriendPKInviteExtra>() { // from class: cn.irisgw.live.FriendPKInviteExtra.1
-        @Override // com.google.protobuf.Parser
-        public FriendPKInviteExtra parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        /* renamed from: parsePartialFrom */
+        public FriendPKInviteExtra m2620parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             return new FriendPKInviteExtra(codedInputStream, extensionRegistryLite);
         }
     };
@@ -68,22 +68,22 @@ public final class FriendPKInviteExtra extends GeneratedMessageV3 implements Fri
             boolean unused = FriendPKInviteExtra.alwaysUseFieldBuilders;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: addRepeatedField */
+        public Builder m2622addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.addRepeatedField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public FriendPKInviteExtra build() {
-            FriendPKInviteExtra buildPartial = buildPartial();
-            if (buildPartial.isInitialized()) {
-                return buildPartial;
+        /* renamed from: build */
+        public FriendPKInviteExtra m2624build() {
+            FriendPKInviteExtra m2626buildPartial = m2626buildPartial();
+            if (m2626buildPartial.isInitialized()) {
+                return m2626buildPartial;
             }
-            throw newUninitializedMessageException((Message) buildPartial);
+            throw newUninitializedMessageException(m2626buildPartial);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public FriendPKInviteExtra buildPartial() {
+        /* renamed from: buildPartial */
+        public FriendPKInviteExtra m2626buildPartial() {
             FriendPKInviteExtra friendPKInviteExtra = new FriendPKInviteExtra(this);
             friendPKInviteExtra.reset_ = this.reset_;
             friendPKInviteExtra.uid_ = this.uid_;
@@ -94,8 +94,8 @@ public final class FriendPKInviteExtra extends GeneratedMessageV3 implements Fri
             return friendPKInviteExtra;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public Builder clear() {
+        /* renamed from: clear */
+        public Builder m2630clear() {
             super.clear();
             this.reset_ = 0;
             this.uid_ = 0;
@@ -111,8 +111,8 @@ public final class FriendPKInviteExtra extends GeneratedMessageV3 implements Fri
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+        /* renamed from: clearField */
+        public Builder m2632clearField(Descriptors.FieldDescriptor fieldDescriptor) {
             return (Builder) super.clearField(fieldDescriptor);
         }
 
@@ -128,8 +128,8 @@ public final class FriendPKInviteExtra extends GeneratedMessageV3 implements Fri
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+        /* renamed from: clearOneof */
+        public Builder m2635clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
             return (Builder) super.clearOneof(oneofDescriptor);
         }
 
@@ -145,10 +145,9 @@ public final class FriendPKInviteExtra extends GeneratedMessageV3 implements Fri
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder m2641clone() {
+            return (Builder) super.clone();
         }
 
         @Override // cn.irisgw.live.FriendPKInviteExtraOrBuilder
@@ -173,12 +172,11 @@ public final class FriendPKInviteExtra extends GeneratedMessageV3 implements Fri
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public FriendPKInviteExtra getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public FriendPKInviteExtra m2643getDefaultInstanceForType() {
             return FriendPKInviteExtra.getDefaultInstance();
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
         public Descriptors.Descriptor getDescriptorForType() {
             return LiveConstants.internal_static_cn_irisgw_live_FriendPKInviteExtra_descriptor;
         }
@@ -237,12 +235,10 @@ public final class FriendPKInviteExtra extends GeneratedMessageV3 implements Fri
             return this.uid_;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_FriendPKInviteExtra_fieldAccessorTable.ensureFieldAccessorsInitialized(FriendPKInviteExtra.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             return true;
         }
@@ -269,18 +265,18 @@ public final class FriendPKInviteExtra extends GeneratedMessageV3 implements Fri
                 this.lid_ = friendPKInviteExtra.lid_;
                 onChanged();
             }
-            mergeUnknownFields(friendPKInviteExtra.unknownFields);
+            m2652mergeUnknownFields(friendPKInviteExtra.unknownFields);
             onChanged();
             return this;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+        /* renamed from: mergeFrom */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
         */
-        public cn.irisgw.live.FriendPKInviteExtra.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+        public cn.irisgw.live.FriendPKInviteExtra.Builder m2649mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
             /*
                 r4 = this;
                 r0 = 0
@@ -325,11 +321,11 @@ public final class FriendPKInviteExtra extends GeneratedMessageV3 implements Fri
                 r0 = r6
                 throw r0
             */
-            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.FriendPKInviteExtra.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.FriendPKInviteExtra$Builder");
+            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.FriendPKInviteExtra.Builder.m2649mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.FriendPKInviteExtra$Builder");
         }
 
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder mergeFrom(Message message) {
+        /* renamed from: mergeFrom */
+        public Builder m2648mergeFrom(Message message) {
             if (message instanceof FriendPKInviteExtra) {
                 return mergeFrom((FriendPKInviteExtra) message);
             }
@@ -337,8 +333,8 @@ public final class FriendPKInviteExtra extends GeneratedMessageV3 implements Fri
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: mergeUnknownFields */
+        public final Builder m2652mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.mergeUnknownFields(unknownFieldSet);
         }
 
@@ -361,8 +357,8 @@ public final class FriendPKInviteExtra extends GeneratedMessageV3 implements Fri
             throw null;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: setField */
+        public Builder m2654setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.setField(fieldDescriptor, obj);
         }
 
@@ -404,8 +400,8 @@ public final class FriendPKInviteExtra extends GeneratedMessageV3 implements Fri
             throw null;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+        /* renamed from: setRepeatedField */
+        public Builder m2656setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
             return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
         }
 
@@ -421,8 +417,8 @@ public final class FriendPKInviteExtra extends GeneratedMessageV3 implements Fri
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: setUnknownFields */
+        public final Builder m2658setUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.setUnknownFields(unknownFieldSet);
         }
     }
@@ -460,10 +456,10 @@ public final class FriendPKInviteExtra extends GeneratedMessageV3 implements Fri
                         }
                     }
                     z = true;
-                } catch (InvalidProtocolBufferException e) {
-                    throw e.setUnfinishedMessage(this);
-                } catch (IOException e2) {
-                    throw new InvalidProtocolBufferException(e2).setUnfinishedMessage(this);
+                } catch (IOException e) {
+                    throw new InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+                } catch (InvalidProtocolBufferException e2) {
+                    throw e2.setUnfinishedMessage(this);
                 }
             } finally {
                 this.unknownFields = newBuilder.build();
@@ -486,66 +482,65 @@ public final class FriendPKInviteExtra extends GeneratedMessageV3 implements Fri
     }
 
     public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
+        return DEFAULT_INSTANCE.m2619toBuilder();
     }
 
     public static Builder newBuilder(FriendPKInviteExtra friendPKInviteExtra) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(friendPKInviteExtra);
+        return DEFAULT_INSTANCE.m2619toBuilder().mergeFrom(friendPKInviteExtra);
     }
 
     public static FriendPKInviteExtra parseDelimitedFrom(InputStream inputStream) throws IOException {
-        return (FriendPKInviteExtra) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
     }
 
     public static FriendPKInviteExtra parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (FriendPKInviteExtra) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static FriendPKInviteExtra parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString);
+        return (FriendPKInviteExtra) PARSER.parseFrom(byteString);
     }
 
     public static FriendPKInviteExtra parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString, extensionRegistryLite);
+        return (FriendPKInviteExtra) PARSER.parseFrom(byteString, extensionRegistryLite);
     }
 
     public static FriendPKInviteExtra parseFrom(CodedInputStream codedInputStream) throws IOException {
-        return (FriendPKInviteExtra) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
     }
 
     public static FriendPKInviteExtra parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (FriendPKInviteExtra) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
     }
 
     public static FriendPKInviteExtra parseFrom(InputStream inputStream) throws IOException {
-        return (FriendPKInviteExtra) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
     }
 
     public static FriendPKInviteExtra parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (FriendPKInviteExtra) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static FriendPKInviteExtra parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer);
+        return (FriendPKInviteExtra) PARSER.parseFrom(byteBuffer);
     }
 
     public static FriendPKInviteExtra parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+        return (FriendPKInviteExtra) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
     }
 
     public static FriendPKInviteExtra parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr);
+        return (FriendPKInviteExtra) PARSER.parseFrom(bArr);
     }
 
     public static FriendPKInviteExtra parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr, extensionRegistryLite);
+        return (FriendPKInviteExtra) PARSER.parseFrom(bArr, extensionRegistryLite);
     }
 
     public static Parser<FriendPKInviteExtra> parser() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
@@ -579,8 +574,8 @@ public final class FriendPKInviteExtra extends GeneratedMessageV3 implements Fri
         return (ByteString) obj;
     }
 
-    @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-    public FriendPKInviteExtra getDefaultInstanceForType() {
+    /* renamed from: getDefaultInstanceForType */
+    public FriendPKInviteExtra m2614getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
     }
 
@@ -628,7 +623,6 @@ public final class FriendPKInviteExtra extends GeneratedMessageV3 implements Fri
         return (ByteString) obj;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
     public Parser<FriendPKInviteExtra> getParserForType() {
         return PARSER;
     }
@@ -638,7 +632,6 @@ public final class FriendPKInviteExtra extends GeneratedMessageV3 implements Fri
         return this.reset_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public int getSerializedSize() {
         int i = this.memoizedSize;
         if (i != -1) {
@@ -676,12 +669,10 @@ public final class FriendPKInviteExtra extends GeneratedMessageV3 implements Fri
         return this.uid_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
     public final UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public int hashCode() {
         if (this.memoizedHashCode != 0) {
             return this.memoizedHashCode;
@@ -691,12 +682,10 @@ public final class FriendPKInviteExtra extends GeneratedMessageV3 implements Fri
         return hashCode;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
         return LiveConstants.internal_static_cn_irisgw_live_FriendPKInviteExtra_fieldAccessorTable.ensureFieldAccessorsInitialized(FriendPKInviteExtra.class, Builder.class);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
     public final boolean isInitialized() {
         byte b = this.memoizedIsInitialized;
         if (b == 1) {
@@ -709,28 +698,26 @@ public final class FriendPKInviteExtra extends GeneratedMessageV3 implements Fri
         return true;
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder newBuilderForType() {
+    /* renamed from: newBuilderForType */
+    public Builder m2617newBuilderForType() {
         return newBuilder();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.protobuf.GeneratedMessageV3
-    public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+    /* renamed from: newBuilderForType */
+    public Builder m2616newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
         return new Builder(builderParent);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
         return new FriendPKInviteExtra();
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder toBuilder() {
+    /* renamed from: toBuilder */
+    public Builder m2619toBuilder() {
         return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
         int i = this.reset_;
         if (i != 0) {

@@ -198,12 +198,12 @@ public final class _PathKt {
     public static final Character commonVolumeLetter(Path path) {
         Intrinsics.e(path, "<this>");
         if (ByteString.indexOf$default(path.getBytes$okio(), SLASH, 0, 2, (Object) null) == -1 && path.getBytes$okio().size() >= 2 && path.getBytes$okio().getByte(1) == ((byte) 58)) {
-            char c2 = (char) path.getBytes$okio().getByte(0);
-            if (!('a' <= c2 && c2 <= 'z')) {
+            char c = (char) path.getBytes$okio().getByte(0);
+            if (!('a' <= c && c <= 'z')) {
                 boolean z = false;
-                if ('A' <= c2) {
+                if ('A' <= c) {
                     z = false;
-                    if (c2 <= 'Z') {
+                    if (c <= 'Z') {
                         z = true;
                     }
                 }
@@ -211,7 +211,7 @@ public final class _PathKt {
                     return null;
                 }
             }
-            return Character.valueOf(c2);
+            return Character.valueOf(c);
         }
         return null;
     }
@@ -273,14 +273,14 @@ public final class _PathKt {
             }
             return i;
         } else if (path.getBytes$okio().size() > 2 && path.getBytes$okio().getByte(1) == ((byte) 58) && path.getBytes$okio().getByte(2) == b) {
-            char c2 = (char) path.getBytes$okio().getByte(0);
-            if ('a' <= c2 && c2 <= 'z') {
+            char c = (char) path.getBytes$okio().getByte(0);
+            if ('a' <= c && c <= 'z') {
                 return 3;
             }
             boolean z = false;
-            if ('A' <= c2) {
+            if ('A' <= c) {
                 z = false;
-                if (c2 <= 'Z') {
+                if (c <= 'Z') {
                     z = true;
                 }
             }

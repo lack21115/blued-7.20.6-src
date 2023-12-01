@@ -10,31 +10,27 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/GiftExhibitionPageAllBinding.class */
 public final class GiftExhibitionPageAllBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f16555a;
+    public final ImageView a;
     public final RecyclerView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final TextView f16556c;
+    public final TextView c;
     private final ConstraintLayout d;
 
     private GiftExhibitionPageAllBinding(ConstraintLayout constraintLayout, ImageView imageView, RecyclerView recyclerView, TextView textView) {
         this.d = constraintLayout;
-        this.f16555a = imageView;
+        this.a = imageView;
         this.b = recyclerView;
-        this.f16556c = textView;
+        this.c = textView;
     }
 
     public static GiftExhibitionPageAllBinding a(View view) {
         String str;
         ImageView imageView = (ImageView) view.findViewById(R.id.img_empty);
         if (imageView != null) {
-            RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rv_gift_list);
-            if (recyclerView != null) {
+            RecyclerView findViewById = view.findViewById(R.id.rv_gift_list);
+            if (findViewById != null) {
                 TextView textView = (TextView) view.findViewById(R.id.tv_empty_text);
                 if (textView != null) {
-                    return new GiftExhibitionPageAllBinding((ConstraintLayout) view, imageView, recyclerView, textView);
+                    return new GiftExhibitionPageAllBinding((ConstraintLayout) view, imageView, findViewById, textView);
                 }
                 str = "tvEmptyText";
             } else {
@@ -46,7 +42,6 @@ public final class GiftExhibitionPageAllBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.d;

@@ -29,11 +29,11 @@ import com.soft.blued.utils.StringUtils;
 public class AvatarWidgetFragment extends BaseFragment implements View.OnClickListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private View f33322a;
+    private View f19631a;
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private View f33323c;
+    private View f19632c;
     private View d;
     private View e;
     private View f;
@@ -69,17 +69,17 @@ public class AvatarWidgetFragment extends BaseFragment implements View.OnClickLi
 
     private void c() {
         this.h = DialogUtils.a(this.b);
-        this.f33323c = this.f33322a.findViewById(R.id.btn_avatar_delete);
-        this.d = this.f33322a.findViewById(R.id.btn_avatar_save);
-        this.e = this.f33322a.findViewById(R.id.btn_avatar_modify);
-        this.f = this.f33322a.findViewById(R.id.btn_avatar_cancel);
-        this.g = (ImageView) this.f33322a.findViewById(2131365082);
-        this.l = (TextView) this.f33322a.findViewById(R.id.tv_avatar_modify);
-        this.n = (ImageView) this.f33322a.findViewById(R.id.avatar_red_point);
+        this.f19632c = this.f19631a.findViewById(R.id.btn_avatar_delete);
+        this.d = this.f19631a.findViewById(R.id.btn_avatar_save);
+        this.e = this.f19631a.findViewById(R.id.btn_avatar_modify);
+        this.f = this.f19631a.findViewById(R.id.btn_avatar_cancel);
+        this.g = (ImageView) this.f19631a.findViewById(R.id.iv_avatar);
+        this.l = (TextView) this.f19631a.findViewById(R.id.tv_avatar_modify);
+        this.n = (ImageView) this.f19631a.findViewById(R.id.avatar_red_point);
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.g.getLayoutParams();
         layoutParams.height = AppInfo.l;
         this.g.setLayoutParams(layoutParams);
-        this.f33323c.setOnClickListener(this);
+        this.f19632c.setOnClickListener(this);
         this.d.setOnClickListener(this);
         this.e.setOnClickListener(this);
         this.f.setOnClickListener(this);
@@ -100,7 +100,6 @@ public class AvatarWidgetFragment extends BaseFragment implements View.OnClickLi
         ImageUtils.a(a(this.g));
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         if (i2 == -1 && i == 178 && intent != null) {
             StringUtils.d(intent.getStringExtra("photo_path"));
@@ -108,7 +107,6 @@ public class AvatarWidgetFragment extends BaseFragment implements View.OnClickLi
         super.onActivityResult(i, i2, intent);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener
     public boolean onBackPressed() {
         a();
         return true;
@@ -134,17 +132,16 @@ public class AvatarWidgetFragment extends BaseFragment implements View.OnClickLi
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.b = getActivity();
-        View view = this.f33322a;
+        View view = this.f19631a;
         if (view == null) {
-            this.f33322a = layoutInflater.inflate(R.layout.fragment_avatar_widget, viewGroup, false);
+            this.f19631a = layoutInflater.inflate(R.layout.fragment_avatar_widget, viewGroup, false);
             b();
             c();
         } else if (view.getParent() != null) {
-            ((ViewGroup) this.f33322a.getParent()).removeView(this.f33322a);
+            ((ViewGroup) this.f19631a.getParent()).removeView(this.f19631a);
         }
-        return this.f33322a;
+        return this.f19631a;
     }
 }

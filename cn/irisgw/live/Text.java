@@ -19,7 +19,6 @@ import com.google.protobuf.UnknownFieldSet;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
-import java.util.List;
 
 /* loaded from: source-6737240-dex2jar.jar:cn/irisgw/live/Text.class */
 public final class Text extends GeneratedMessageV3 implements TextOrBuilder {
@@ -67,8 +66,8 @@ public final class Text extends GeneratedMessageV3 implements TextOrBuilder {
     private int rechargeBadge_;
     private static final Text DEFAULT_INSTANCE = new Text();
     private static final Parser<Text> PARSER = new AbstractParser<Text>() { // from class: cn.irisgw.live.Text.1
-        @Override // com.google.protobuf.Parser
-        public Text parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        /* renamed from: parsePartialFrom */
+        public Text m7644parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             return new Text(codedInputStream, extensionRegistryLite);
         }
     };
@@ -150,14 +149,14 @@ public final class Text extends GeneratedMessageV3 implements TextOrBuilder {
 
         public Builder addAllChatFrameBorderColor(Iterable<String> iterable) {
             ensureChatFrameBorderColorIsMutable();
-            AbstractMessageLite.Builder.addAll((Iterable) iterable, (List) this.chatFrameBorderColor_);
+            AbstractMessageLite.Builder.addAll(iterable, this.chatFrameBorderColor_);
             onChanged();
             return this;
         }
 
         public Builder addAllChatFrameFrameColor(Iterable<String> iterable) {
             ensureChatFrameFrameColorIsMutable();
-            AbstractMessageLite.Builder.addAll((Iterable) iterable, (List) this.chatFrameFrameColor_);
+            AbstractMessageLite.Builder.addAll(iterable, this.chatFrameFrameColor_);
             onChanged();
             return this;
         }
@@ -165,7 +164,7 @@ public final class Text extends GeneratedMessageV3 implements TextOrBuilder {
         public Builder addChatFrameBorderColor(String str) {
             if (str != null) {
                 ensureChatFrameBorderColorIsMutable();
-                this.chatFrameBorderColor_.add((LazyStringList) str);
+                this.chatFrameBorderColor_.add(str);
                 onChanged();
                 return this;
             }
@@ -186,7 +185,7 @@ public final class Text extends GeneratedMessageV3 implements TextOrBuilder {
         public Builder addChatFrameFrameColor(String str) {
             if (str != null) {
                 ensureChatFrameFrameColorIsMutable();
-                this.chatFrameFrameColor_.add((LazyStringList) str);
+                this.chatFrameFrameColor_.add(str);
                 onChanged();
                 return this;
             }
@@ -204,22 +203,22 @@ public final class Text extends GeneratedMessageV3 implements TextOrBuilder {
             throw null;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: addRepeatedField */
+        public Builder m7646addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.addRepeatedField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public Text build() {
-            Text buildPartial = buildPartial();
-            if (buildPartial.isInitialized()) {
-                return buildPartial;
+        /* renamed from: build */
+        public Text m7648build() {
+            Text m7650buildPartial = m7650buildPartial();
+            if (m7650buildPartial.isInitialized()) {
+                return m7650buildPartial;
             }
-            throw newUninitializedMessageException((Message) buildPartial);
+            throw newUninitializedMessageException(m7650buildPartial);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public Text buildPartial() {
+        /* renamed from: buildPartial */
+        public Text m7650buildPartial() {
             Text text = new Text(this);
             text.fanClubName_ = this.fanClubName_;
             text.fanClubLevel_ = this.fanClubLevel_;
@@ -253,8 +252,8 @@ public final class Text extends GeneratedMessageV3 implements TextOrBuilder {
             return text;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public Builder clear() {
+        /* renamed from: clear */
+        public Builder m7654clear() {
             super.clear();
             this.fanClubName_ = "";
             this.fanClubLevel_ = 0;
@@ -379,8 +378,8 @@ public final class Text extends GeneratedMessageV3 implements TextOrBuilder {
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+        /* renamed from: clearField */
+        public Builder m7656clearField(Descriptors.FieldDescriptor fieldDescriptor) {
             return (Builder) super.clearField(fieldDescriptor);
         }
 
@@ -402,8 +401,8 @@ public final class Text extends GeneratedMessageV3 implements TextOrBuilder {
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+        /* renamed from: clearOneof */
+        public Builder m7659clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
             return (Builder) super.clearOneof(oneofDescriptor);
         }
 
@@ -413,10 +412,9 @@ public final class Text extends GeneratedMessageV3 implements TextOrBuilder {
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder m7665clone() {
+            return (Builder) super.clone();
         }
 
         @Override // cn.irisgw.live.TextOrBuilder
@@ -464,7 +462,7 @@ public final class Text extends GeneratedMessageV3 implements TextOrBuilder {
 
         @Override // cn.irisgw.live.TextOrBuilder
         public String getChatFrameBorderColor(int i) {
-            return this.chatFrameBorderColor_.get(i);
+            return (String) this.chatFrameBorderColor_.get(i);
         }
 
         @Override // cn.irisgw.live.TextOrBuilder
@@ -478,7 +476,8 @@ public final class Text extends GeneratedMessageV3 implements TextOrBuilder {
         }
 
         @Override // cn.irisgw.live.TextOrBuilder
-        public ProtocolStringList getChatFrameBorderColorList() {
+        /* renamed from: getChatFrameBorderColorList */
+        public ProtocolStringList mo7635getChatFrameBorderColorList() {
             return this.chatFrameBorderColor_.getUnmodifiableView();
         }
 
@@ -500,7 +499,7 @@ public final class Text extends GeneratedMessageV3 implements TextOrBuilder {
 
         @Override // cn.irisgw.live.TextOrBuilder
         public String getChatFrameFrameColor(int i) {
-            return this.chatFrameFrameColor_.get(i);
+            return (String) this.chatFrameFrameColor_.get(i);
         }
 
         @Override // cn.irisgw.live.TextOrBuilder
@@ -514,7 +513,8 @@ public final class Text extends GeneratedMessageV3 implements TextOrBuilder {
         }
 
         @Override // cn.irisgw.live.TextOrBuilder
-        public ProtocolStringList getChatFrameFrameColorList() {
+        /* renamed from: getChatFrameFrameColorList */
+        public ProtocolStringList mo7636getChatFrameFrameColorList() {
             return this.chatFrameFrameColor_.getUnmodifiableView();
         }
 
@@ -545,12 +545,11 @@ public final class Text extends GeneratedMessageV3 implements TextOrBuilder {
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public Text getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public Text m7667getDefaultInstanceForType() {
             return Text.getDefaultInstance();
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
         public Descriptors.Descriptor getDescriptorForType() {
             return LiveConstants.internal_static_cn_irisgw_live_Text_descriptor;
         }
@@ -681,12 +680,10 @@ public final class Text extends GeneratedMessageV3 implements TextOrBuilder {
             return this.rechargeBadge_;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_Text_fieldAccessorTable.ensureFieldAccessorsInitialized(Text.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             return true;
         }
@@ -775,18 +772,18 @@ public final class Text extends GeneratedMessageV3 implements TextOrBuilder {
             if (text.getEmojiH() != 0) {
                 setEmojiH(text.getEmojiH());
             }
-            mergeUnknownFields(text.unknownFields);
+            m7676mergeUnknownFields(text.unknownFields);
             onChanged();
             return this;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+        /* renamed from: mergeFrom */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
         */
-        public cn.irisgw.live.Text.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+        public cn.irisgw.live.Text.Builder m7673mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
             /*
                 r4 = this;
                 r0 = 0
@@ -831,11 +828,11 @@ public final class Text extends GeneratedMessageV3 implements TextOrBuilder {
                 r0 = r6
                 throw r0
             */
-            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.Text.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.Text$Builder");
+            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.Text.Builder.m7673mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.Text$Builder");
         }
 
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder mergeFrom(Message message) {
+        /* renamed from: mergeFrom */
+        public Builder m7672mergeFrom(Message message) {
             if (message instanceof Text) {
                 return mergeFrom((Text) message);
             }
@@ -843,8 +840,8 @@ public final class Text extends GeneratedMessageV3 implements TextOrBuilder {
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: mergeUnknownFields */
+        public final Builder m7676mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.mergeUnknownFields(unknownFieldSet);
         }
 
@@ -891,7 +888,7 @@ public final class Text extends GeneratedMessageV3 implements TextOrBuilder {
         public Builder setChatFrameBorderColor(int i, String str) {
             if (str != null) {
                 ensureChatFrameBorderColorIsMutable();
-                this.chatFrameBorderColor_.set(i, (int) str);
+                this.chatFrameBorderColor_.set(i, str);
                 onChanged();
                 return this;
             }
@@ -917,7 +914,7 @@ public final class Text extends GeneratedMessageV3 implements TextOrBuilder {
         public Builder setChatFrameFrameColor(int i, String str) {
             if (str != null) {
                 ensureChatFrameFrameColorIsMutable();
-                this.chatFrameFrameColor_.set(i, (int) str);
+                this.chatFrameFrameColor_.set(i, str);
                 onChanged();
                 return this;
             }
@@ -1026,8 +1023,8 @@ public final class Text extends GeneratedMessageV3 implements TextOrBuilder {
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: setField */
+        public Builder m7678setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.setField(fieldDescriptor, obj);
         }
 
@@ -1077,13 +1074,13 @@ public final class Text extends GeneratedMessageV3 implements TextOrBuilder {
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+        /* renamed from: setRepeatedField */
+        public Builder m7680setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
             return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: setUnknownFields */
+        public final Builder m7682setUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.setUnknownFields(unknownFieldSet);
         }
     }
@@ -1158,7 +1155,7 @@ public final class Text extends GeneratedMessageV3 implements TextOrBuilder {
                                 this.chatFrameFrameColor_ = new LazyStringArrayList();
                                 z4 = z2 | true;
                             }
-                            this.chatFrameFrameColor_.add((LazyStringList) readStringRequireUtf8);
+                            this.chatFrameFrameColor_.add(readStringRequireUtf8);
                             z2 = z4;
                             continue;
                         case 106:
@@ -1168,7 +1165,7 @@ public final class Text extends GeneratedMessageV3 implements TextOrBuilder {
                                 this.chatFrameBorderColor_ = new LazyStringArrayList();
                                 z5 = z2 | true;
                             }
-                            this.chatFrameBorderColor_.add((LazyStringList) readStringRequireUtf82);
+                            this.chatFrameBorderColor_.add(readStringRequireUtf82);
                             z2 = z5;
                             continue;
                         case 114:
@@ -1241,73 +1238,72 @@ public final class Text extends GeneratedMessageV3 implements TextOrBuilder {
     }
 
     public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
+        return DEFAULT_INSTANCE.m7643toBuilder();
     }
 
     public static Builder newBuilder(Text text) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(text);
+        return DEFAULT_INSTANCE.m7643toBuilder().mergeFrom(text);
     }
 
     public static Text parseDelimitedFrom(InputStream inputStream) throws IOException {
-        return (Text) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
     }
 
     public static Text parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (Text) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static Text parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString);
+        return (Text) PARSER.parseFrom(byteString);
     }
 
     public static Text parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString, extensionRegistryLite);
+        return (Text) PARSER.parseFrom(byteString, extensionRegistryLite);
     }
 
     public static Text parseFrom(CodedInputStream codedInputStream) throws IOException {
-        return (Text) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
     }
 
     public static Text parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (Text) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
     }
 
     public static Text parseFrom(InputStream inputStream) throws IOException {
-        return (Text) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
     }
 
     public static Text parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (Text) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static Text parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer);
+        return (Text) PARSER.parseFrom(byteBuffer);
     }
 
     public static Text parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+        return (Text) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
     }
 
     public static Text parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr);
+        return (Text) PARSER.parseFrom(bArr);
     }
 
     public static Text parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr, extensionRegistryLite);
+        return (Text) PARSER.parseFrom(bArr, extensionRegistryLite);
     }
 
     public static Parser<Text> parser() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
         }
         if (obj instanceof Text) {
             Text text = (Text) obj;
-            return getFanClubName().equals(text.getFanClubName()) && getFanClubLevel() == text.getFanClubLevel() && getInFanClub() == text.getInFanClub() && this.fansStatus_ == text.fansStatus_ && this.liangType_ == text.liangType_ && getLiangId().equals(text.getLiangId()) && getRechargeBadge() == text.getRechargeBadge() && getChatFrame().equals(text.getChatFrame()) && getChatFrameIcon().equals(text.getChatFrameIcon()) && getChatFrameColorType() == text.getChatFrameColorType() && getChatFrameGradientType() == text.getChatFrameGradientType() && getChatFrameFrameColorList().equals(text.getChatFrameFrameColorList()) && getChatFrameBorderColorList().equals(text.getChatFrameBorderColorList()) && getChatBadgeUrl().equals(text.getChatBadgeUrl()) && getChatBadgeLength() == text.getChatBadgeLength() && getChatBadgeHeight() == text.getChatBadgeHeight() && getEmojiId() == text.getEmojiId() && getEmojiUrl().equals(text.getEmojiUrl()) && getEmojiW() == text.getEmojiW() && getEmojiH() == text.getEmojiH() && this.unknownFields.equals(text.unknownFields);
+            return getFanClubName().equals(text.getFanClubName()) && getFanClubLevel() == text.getFanClubLevel() && getInFanClub() == text.getInFanClub() && this.fansStatus_ == text.fansStatus_ && this.liangType_ == text.liangType_ && getLiangId().equals(text.getLiangId()) && getRechargeBadge() == text.getRechargeBadge() && getChatFrame().equals(text.getChatFrame()) && getChatFrameIcon().equals(text.getChatFrameIcon()) && getChatFrameColorType() == text.getChatFrameColorType() && getChatFrameGradientType() == text.getChatFrameGradientType() && mo7636getChatFrameFrameColorList().equals(text.mo7636getChatFrameFrameColorList()) && mo7635getChatFrameBorderColorList().equals(text.mo7635getChatFrameBorderColorList()) && getChatBadgeUrl().equals(text.getChatBadgeUrl()) && getChatBadgeLength() == text.getChatBadgeLength() && getChatBadgeHeight() == text.getChatBadgeHeight() && getEmojiId() == text.getEmojiId() && getEmojiUrl().equals(text.getEmojiUrl()) && getEmojiW() == text.getEmojiW() && getEmojiH() == text.getEmojiH() && this.unknownFields.equals(text.unknownFields);
         }
         return super.equals(obj);
     }
@@ -1357,7 +1353,7 @@ public final class Text extends GeneratedMessageV3 implements TextOrBuilder {
 
     @Override // cn.irisgw.live.TextOrBuilder
     public String getChatFrameBorderColor(int i) {
-        return this.chatFrameBorderColor_.get(i);
+        return (String) this.chatFrameBorderColor_.get(i);
     }
 
     @Override // cn.irisgw.live.TextOrBuilder
@@ -1371,7 +1367,8 @@ public final class Text extends GeneratedMessageV3 implements TextOrBuilder {
     }
 
     @Override // cn.irisgw.live.TextOrBuilder
-    public ProtocolStringList getChatFrameBorderColorList() {
+    /* renamed from: getChatFrameBorderColorList */
+    public ProtocolStringList mo7635getChatFrameBorderColorList() {
         return this.chatFrameBorderColor_;
     }
 
@@ -1393,7 +1390,7 @@ public final class Text extends GeneratedMessageV3 implements TextOrBuilder {
 
     @Override // cn.irisgw.live.TextOrBuilder
     public String getChatFrameFrameColor(int i) {
-        return this.chatFrameFrameColor_.get(i);
+        return (String) this.chatFrameFrameColor_.get(i);
     }
 
     @Override // cn.irisgw.live.TextOrBuilder
@@ -1407,7 +1404,8 @@ public final class Text extends GeneratedMessageV3 implements TextOrBuilder {
     }
 
     @Override // cn.irisgw.live.TextOrBuilder
-    public ProtocolStringList getChatFrameFrameColorList() {
+    /* renamed from: getChatFrameFrameColorList */
+    public ProtocolStringList mo7636getChatFrameFrameColorList() {
         return this.chatFrameFrameColor_;
     }
 
@@ -1438,8 +1436,8 @@ public final class Text extends GeneratedMessageV3 implements TextOrBuilder {
         return (ByteString) obj;
     }
 
-    @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-    public Text getDefaultInstanceForType() {
+    /* renamed from: getDefaultInstanceForType */
+    public Text m7638getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
     }
 
@@ -1564,7 +1562,6 @@ public final class Text extends GeneratedMessageV3 implements TextOrBuilder {
         return this.liangType_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
     public Parser<Text> getParserForType() {
         return PARSER;
     }
@@ -1574,7 +1571,6 @@ public final class Text extends GeneratedMessageV3 implements TextOrBuilder {
         return this.rechargeBadge_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public int getSerializedSize() {
         int i = this.memoizedSize;
         if (i != -1) {
@@ -1630,7 +1626,7 @@ public final class Text extends GeneratedMessageV3 implements TextOrBuilder {
         for (int i17 = 0; i17 < this.chatFrameFrameColor_.size(); i17++) {
             i16 += computeStringSizeNoTag(this.chatFrameFrameColor_.getRaw(i17));
         }
-        int size = getChatFrameFrameColorList().size();
+        int size = mo7636getChatFrameFrameColorList().size();
         int i18 = 0;
         int i19 = 0;
         while (true) {
@@ -1641,7 +1637,7 @@ public final class Text extends GeneratedMessageV3 implements TextOrBuilder {
             i18 += computeStringSizeNoTag(this.chatFrameBorderColor_.getRaw(i20));
             i19 = i20 + 1;
         }
-        int size2 = i15 + i16 + (size * 1) + i18 + (getChatFrameBorderColorList().size() * 1);
+        int size2 = i15 + i16 + (size * 1) + i18 + (mo7635getChatFrameBorderColorList().size() * 1);
         int i21 = size2;
         if (!getChatBadgeUrlBytes().isEmpty()) {
             i21 = size2 + GeneratedMessageV3.computeStringSize(14, this.chatBadgeUrl_);
@@ -1680,12 +1676,10 @@ public final class Text extends GeneratedMessageV3 implements TextOrBuilder {
         return serializedSize;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
     public final UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public int hashCode() {
         if (this.memoizedHashCode != 0) {
             return this.memoizedHashCode;
@@ -1693,23 +1687,21 @@ public final class Text extends GeneratedMessageV3 implements TextOrBuilder {
         int hashCode = ((((((((((((((((((((((((((((((((((((((((((((779 + getDescriptor().hashCode()) * 37) + 1) * 53) + getFanClubName().hashCode()) * 37) + 2) * 53) + getFanClubLevel()) * 37) + 3) * 53) + Internal.hashBoolean(getInFanClub())) * 37) + 4) * 53) + this.fansStatus_) * 37) + 5) * 53) + this.liangType_) * 37) + 6) * 53) + getLiangId().hashCode()) * 37) + 7) * 53) + getRechargeBadge()) * 37) + 8) * 53) + getChatFrame().hashCode()) * 37) + 9) * 53) + getChatFrameIcon().hashCode()) * 37) + 10) * 53) + getChatFrameColorType()) * 37) + 11) * 53) + getChatFrameGradientType();
         int i = hashCode;
         if (getChatFrameFrameColorCount() > 0) {
-            i = (((hashCode * 37) + 12) * 53) + getChatFrameFrameColorList().hashCode();
+            i = (((hashCode * 37) + 12) * 53) + mo7636getChatFrameFrameColorList().hashCode();
         }
         int i2 = i;
         if (getChatFrameBorderColorCount() > 0) {
-            i2 = (((i * 37) + 13) * 53) + getChatFrameBorderColorList().hashCode();
+            i2 = (((i * 37) + 13) * 53) + mo7635getChatFrameBorderColorList().hashCode();
         }
         int hashCode2 = (((((((((((((((((((((((((((((i2 * 37) + 14) * 53) + getChatBadgeUrl().hashCode()) * 37) + 15) * 53) + getChatBadgeLength()) * 37) + 16) * 53) + getChatBadgeHeight()) * 37) + 17) * 53) + getEmojiId()) * 37) + 18) * 53) + getEmojiUrl().hashCode()) * 37) + 19) * 53) + getEmojiW()) * 37) + 20) * 53) + getEmojiH()) * 29) + this.unknownFields.hashCode();
         this.memoizedHashCode = hashCode2;
         return hashCode2;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
         return LiveConstants.internal_static_cn_irisgw_live_Text_fieldAccessorTable.ensureFieldAccessorsInitialized(Text.class, Builder.class);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
     public final boolean isInitialized() {
         byte b = this.memoizedIsInitialized;
         if (b == 1) {
@@ -1722,28 +1714,26 @@ public final class Text extends GeneratedMessageV3 implements TextOrBuilder {
         return true;
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder newBuilderForType() {
+    /* renamed from: newBuilderForType */
+    public Builder m7641newBuilderForType() {
         return newBuilder();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.protobuf.GeneratedMessageV3
-    public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+    /* renamed from: newBuilderForType */
+    public Builder m7640newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
         return new Builder(builderParent);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
         return new Text();
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder toBuilder() {
+    /* renamed from: toBuilder */
+    public Builder m7643toBuilder() {
         return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
         int i;
         if (!getFanClubNameBytes().isEmpty()) {

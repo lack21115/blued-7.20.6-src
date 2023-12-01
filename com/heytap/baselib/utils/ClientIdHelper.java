@@ -5,9 +5,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.UUID;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-7994992-dex2jar.jar:com/heytap/baselib/utils/ClientIdHelper.class */
-public class ClientIdHelper {
+class ClientIdHelper {
     private static String EXTRAS_KEY_A0 = "A0";
     private static int EXTRAS_KEY_CLIENT_ID_LEN = 15;
     private static String EXTRAS_KEY_GEN = "G0";

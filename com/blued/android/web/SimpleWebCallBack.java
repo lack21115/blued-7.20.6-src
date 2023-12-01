@@ -19,11 +19,11 @@ import com.blued.android.framework.urlroute.BluedUrlParser;
 import com.blued.android.framework.utils.CommonTools;
 import com.blued.android.framework.utils.EncryptTool;
 import com.blued.android.framework.web.BluedWebView;
+import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.blued.android.module.live_china.model.LiveRoomData;
 import com.blued.android.views.WebBtmOptions;
+import com.blued.community.R;
 import com.bytedance.applog.tracker.Tracker;
-import com.huawei.openalliance.ad.constant.s;
-import com.soft.blued.R;
 import com.soft.blued.http.AppHttpUtils;
 import com.soft.blued.log.InstantLog;
 import com.soft.blued.ui.live.LiveRoomInfoChannel;
@@ -39,13 +39,9 @@ import org.json.JSONObject;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/web/SimpleWebCallBack.class */
 public class SimpleWebCallBack implements BluedWebView.WebCallback {
-
-    /* renamed from: a  reason: collision with root package name */
-    public ShareOptionRecyclerAdapter.ShareOptionsItemClickListener f18774a;
+    public ShareOptionRecyclerAdapter.ShareOptionsItemClickListener a;
     public String b = "";
-
-    /* renamed from: c  reason: collision with root package name */
-    public WebBtmOptions f18775c;
+    public WebBtmOptions c;
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void a(View view) {
@@ -74,7 +70,7 @@ public class SimpleWebCallBack implements BluedWebView.WebCallback {
     }
 
     public void a(ShareOptionRecyclerAdapter.ShareOptionsItemClickListener shareOptionsItemClickListener) {
-        this.f18774a = shareOptionsItemClickListener;
+        this.a = shareOptionsItemClickListener;
     }
 
     @Override // com.blued.android.framework.web.BluedWebView.WebCallback
@@ -122,14 +118,14 @@ public class SimpleWebCallBack implements BluedWebView.WebCallback {
         try {
             str6 = new URL(str2).getHost();
         } catch (Exception e) {
-            str6 = d.f6907a;
+            str6 = d.a;
         }
-        String string = AppInfo.d().getString(R.string.web_js_get_share_info);
+        String string = AppInfo.d().getString(2131892784);
         if (bluedWebView.c() != null) {
+            WebView c = bluedWebView.c();
+            Tracker.loadUrl(c, BridgeUtil.JAVASCRIPT_STR + string);
             WebView c2 = bluedWebView.c();
-            Tracker.loadUrl(c2, "javascript:" + string);
-            WebView c3 = bluedWebView.c();
-            Tracker.loadUrl(c3, "javascript:getShareInfoFunction('" + str2 + "','" + str6 + "','" + str3 + "','" + str4 + "','" + str + "','" + i + "','" + str5 + "')");
+            Tracker.loadUrl(c2, "javascript:getShareInfoFunction('" + str2 + "','" + str6 + "','" + str3 + "','" + str4 + "','" + str + "','" + i + "','" + str5 + "')");
         }
     }
 
@@ -141,8 +137,8 @@ public class SimpleWebCallBack implements BluedWebView.WebCallback {
     @Override // com.blued.android.framework.web.BluedWebView.WebCallback
     public void a(String str, String str2, String str3, String str4, String str5, String str6, String str7, String str8, String str9, BluedWebView bluedWebView) {
         try {
-            if (this.f18775c == null) {
-                this.f18775c = new WebBtmOptions(bluedWebView.a().getActivity(), new View.OnClickListener() { // from class: com.blued.android.web.-$$Lambda$SimpleWebCallBack$dOeMybZGPQq_R3nRQ4bp658noT0
+            if (this.c == null) {
+                this.c = new WebBtmOptions(bluedWebView.a().getActivity(), new View.OnClickListener() { // from class: com.blued.android.web.-$$Lambda$SimpleWebCallBack$dOeMybZGPQq_R3nRQ4bp658noT0
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
                         SimpleWebCallBack.a(view);
@@ -164,7 +160,7 @@ public class SimpleWebCallBack implements BluedWebView.WebCallback {
                 string4 = string5;
             }
             int intValue = Integer.valueOf(str3).intValue();
-            String e = !StringUtils.d(str8) ? str8 : !StringUtils.d(string3) ? string3 : !StringUtils.d(bluedWebView.e()) ? bluedWebView.e() : activity.getResources().getString(R.string.biao_common_share);
+            String e = !StringUtils.d(str8) ? str8 : !StringUtils.d(string3) ? string3 : !StringUtils.d(bluedWebView.e()) ? bluedWebView.e() : activity.getResources().getString(2131886585);
             Log.v("drb", "shareTitle:" + e);
             Log.v("drb", "shareContent:" + string3);
             if (!StringUtils.d(str9)) {
@@ -173,16 +169,16 @@ public class SimpleWebCallBack implements BluedWebView.WebCallback {
                 string2 = "";
             }
             if (bluedWebView.b() == 11) {
-                e = activity.getResources().getString(2131892585);
+                e = activity.getResources().getString(R.string.view_point);
             }
             Log.v("drb", "---- shareTitle:" + e);
             Log.v("drb", "---- shareContent:" + string2);
-            ShareEntity a2 = ShareUtils.a().a(string, bluedWebView.c(), string4, e, string2, string2, intValue);
-            a2.o = jSONObject.getString("activity_secret_code");
-            a2.p = jSONObject.getString("activity_secret_text");
-            a2.q = jSONObject.getString("activity_secret_copy");
+            ShareEntity a = ShareUtils.a().a(string, bluedWebView.c(), string4, e, string2, string2, intValue);
+            a.o = jSONObject.getString("activity_secret_code");
+            a.p = jSONObject.getString("activity_secret_text");
+            a.q = jSONObject.getString("activity_secret_copy");
             this.b = jSONObject.getString("activity_secret_text");
-            this.f18775c.a(a2, this.f18774a);
+            this.c.a(a, this.a);
         } catch (JSONException e2) {
             e2.printStackTrace();
         }
@@ -209,7 +205,7 @@ public class SimpleWebCallBack implements BluedWebView.WebCallback {
             String queryParameter4 = f.getQueryParameter("from");
             String str3 = queryParameter4;
             if (TextUtils.isEmpty(queryParameter4)) {
-                str3 = s.B;
+                str3 = "web";
             }
             LiveRoomData liveRoomData = new LiveRoomData(CommonTools.a(queryParameter2), 0, str3, str2, "", "", 0);
             liveRoomData.liveFrom = LiveUtils.a();

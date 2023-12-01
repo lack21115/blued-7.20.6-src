@@ -16,20 +16,14 @@ import com.blued.android.core.utils.Log;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/imagecache/RecyclingImageLoader.class */
 public class RecyclingImageLoader {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final ImageLoadingListener f9596a = new BaseImageLoadingListener();
+    public static final ImageLoadingListener a = new BaseImageLoadingListener();
     public LruBitmapPool b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private LruCache<String, IRecyclingDrawable> f9597c;
+    private LruCache<String, IRecyclingDrawable> c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/imagecache/RecyclingImageLoader$SingletonCreator.class */
     public static class SingletonCreator {
-
-        /* renamed from: a  reason: collision with root package name */
-        private static final RecyclingImageLoader f9600a = new RecyclingImageLoader();
+        private static final RecyclingImageLoader a = new RecyclingImageLoader();
 
         private SingletonCreator() {
         }
@@ -41,14 +35,14 @@ public class RecyclingImageLoader {
 
     public static Drawable a(String str) {
         IRecyclingDrawable iRecyclingDrawable;
-        if (TextUtils.isEmpty(str) || (iRecyclingDrawable = a().f9597c.get(str)) == null || !iRecyclingDrawable.c()) {
+        if (TextUtils.isEmpty(str) || (iRecyclingDrawable = (IRecyclingDrawable) a().c.get(str)) == null || !iRecyclingDrawable.c()) {
             return null;
         }
         return (Drawable) iRecyclingDrawable;
     }
 
     public static LoadJob a(RecyclingImageView recyclingImageView, String str, LoadOptions loadOptions, ImageLoadingListener imageLoadingListener) {
-        if (ImageLoaderUtils.f9582a) {
+        if (ImageLoaderUtils.a) {
             Log.a("IMAGE_LOADER", "RecyclingImageLoader.loadImage(), uri:" + str);
         }
         LoadOptions loadOptions2 = loadOptions;
@@ -57,7 +51,7 @@ public class RecyclingImageLoader {
         }
         ImageLoadingListener imageLoadingListener2 = imageLoadingListener;
         if (imageLoadingListener == null) {
-            imageLoadingListener2 = f9596a;
+            imageLoadingListener2 = a;
         }
         if (loadOptions2.i && !AppMethods.b()) {
             if (AppInfo.m()) {
@@ -73,7 +67,7 @@ public class RecyclingImageLoader {
         }
         ImageLoadEngine.a(recyclingImageView, "");
         if (recyclingImageView != null && !a(recyclingImageView, str)) {
-            if (ImageLoaderUtils.f9582a) {
+            if (ImageLoaderUtils.a) {
                 Log.a("IMAGE_LOADER", "not need reload, uri:" + str);
             }
             imageLoadingListener2.a(str, recyclingImageView, loadOptions2, recyclingImageView.getDrawable(), true);
@@ -93,8 +87,8 @@ public class RecyclingImageLoader {
         }
         if (recyclingImageView != null) {
             boolean z = false;
-            if (!TextUtils.isEmpty(loadOptions2.f9593c)) {
-                Drawable a5 = a(RecyclingUtils.a(loadOptions2.f9593c, loadOptions2));
+            if (!TextUtils.isEmpty(loadOptions2.c)) {
+                Drawable a5 = a(RecyclingUtils.a(loadOptions2.c, loadOptions2));
                 z = false;
                 if (a5 != null) {
                     recyclingImageView.setImageDrawable(a5);
@@ -119,14 +113,14 @@ public class RecyclingImageLoader {
     }
 
     public static RecyclingImageLoader a() {
-        return SingletonCreator.f9600a;
+        return SingletonCreator.a;
     }
 
     public static void a(int i) {
         if (i >= 40) {
-            a().f9597c.trimToSize(0);
+            a().c.trimToSize(0);
         } else if (i >= 20) {
-            a().f9597c.trimToSize(a().f9597c.maxSize() / 2);
+            a().c.trimToSize(a().c.maxSize() / 2);
         }
         synchronized (a().b) {
             a().b.a(i);
@@ -143,7 +137,7 @@ public class RecyclingImageLoader {
     }
 
     public static void a(RecyclingImageView recyclingImageView, int i, LoadOptions loadOptions) {
-        if (ImageLoaderUtils.f9582a) {
+        if (ImageLoaderUtils.a) {
             Log.a("IMAGE_LOADER", "RecyclingImageLoader.loadLocalResSync(), resId:" + i);
         }
         if (i <= 0) {
@@ -193,7 +187,7 @@ public class RecyclingImageLoader {
     }
 
     public static void a(final String str, final IRecyclingDrawable iRecyclingDrawable) {
-        if (a().f9597c == null || iRecyclingDrawable == null || !iRecyclingDrawable.a()) {
+        if (a().c == null || iRecyclingDrawable == null || !iRecyclingDrawable.a()) {
             return;
         }
         if (Looper.getMainLooper() != Looper.myLooper()) {
@@ -201,13 +195,13 @@ public class RecyclingImageLoader {
                 @Override // java.lang.Runnable
                 public void run() {
                     IRecyclingDrawable.this.b(true);
-                    RecyclingImageLoader.a().f9597c.put(str, IRecyclingDrawable.this);
+                    RecyclingImageLoader.a().c.put(str, IRecyclingDrawable.this);
                 }
             });
             return;
         }
         iRecyclingDrawable.b(true);
-        a().f9597c.put(str, iRecyclingDrawable);
+        a().c.put(str, iRecyclingDrawable);
     }
 
     public static boolean a(RecyclingImageView recyclingImageView, String str) {
@@ -228,7 +222,7 @@ public class RecyclingImageLoader {
     }
 
     public static void d() {
-        a().f9597c.evictAll();
+        a().c.evictAll();
         synchronized (a().b) {
             a().b.a();
         }
@@ -241,9 +235,8 @@ public class RecyclingImageLoader {
         if (this.b == null) {
             this.b = new LruBitmapPool(a3);
         }
-        this.f9597c = new LruCache<String, IRecyclingDrawable>(a2) { // from class: com.blued.android.core.imagecache.RecyclingImageLoader.1
+        this.c = new LruCache<String, IRecyclingDrawable>(a2) { // from class: com.blued.android.core.imagecache.RecyclingImageLoader.1
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // androidx.collection.LruCache
             public int a(String str, IRecyclingDrawable iRecyclingDrawable) {
                 int e = iRecyclingDrawable.e();
                 int i = e;
@@ -254,7 +247,6 @@ public class RecyclingImageLoader {
             }
 
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // androidx.collection.LruCache
             public void a(boolean z, String str, IRecyclingDrawable iRecyclingDrawable, IRecyclingDrawable iRecyclingDrawable2) {
                 iRecyclingDrawable.b(false);
             }

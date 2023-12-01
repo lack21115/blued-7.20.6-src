@@ -7,7 +7,6 @@ import android.os.IBinder;
 import android.os.ServiceManager;
 import android.provider.Settings;
 import android.util.Log;
-import com.android.internal.R;
 import dalvik.system.DexClassLoader;
 import java.lang.reflect.Method;
 
@@ -23,10 +22,10 @@ public class WimaxHelper {
     private static String sWimaxManagerClassname;
 
     public static Object createWimaxService(Context context, Handler handler) {
-        Class<?> loadClass;
-        Class<?> loadClass2;
+        Class loadClass;
+        Class loadClass2;
         Object invoke;
-        Class<?> loadClass3;
+        Class loadClass3;
         try {
             DexClassLoader wimaxClassLoader = getWimaxClassLoader(context);
             if (!sWimaxManagerClassname.equals(WIMAX_CONTROLLER_CLASSNAME)) {
@@ -49,7 +48,7 @@ public class WimaxHelper {
     public static DexClassLoader getWimaxClassLoader(Context context) {
         if (isWimaxSupported(context)) {
             if (sWimaxClassLoader == null) {
-                sWimaxManagerClassname = context.getResources().getString(R.string.config_wimaxManagerClassname);
+                sWimaxManagerClassname = context.getResources().getString(17039614);
                 if (sWimaxManagerClassname.equals(WIMAX_CONTROLLER_CLASSNAME)) {
                     sIsWimaxEnabledMethodname = "isWimaxEnabled";
                     sSetWimaxEnabledMethodname = "setWimaxEnabled";
@@ -59,7 +58,7 @@ public class WimaxHelper {
                     sSetWimaxEnabledMethodname = "set4GEnabled";
                     sGetWimaxStateMethodname = "get4GState";
                 }
-                sWimaxClassLoader = new DexClassLoader(context.getResources().getString(R.string.config_wimaxServiceJarLocation), new ContextWrapper(context).getCacheDir().getAbsolutePath(), context.getResources().getString(R.string.config_wimaxNativeLibLocation), ClassLoader.getSystemClassLoader());
+                sWimaxClassLoader = new DexClassLoader(context.getResources().getString(17039612), new ContextWrapper(context).getCacheDir().getAbsolutePath(), context.getResources().getString(17039613), ClassLoader.getSystemClassLoader());
             }
             return sWimaxClassLoader;
         }
@@ -97,7 +96,7 @@ public class WimaxHelper {
     }
 
     public static boolean isWimaxSupported(Context context) {
-        return context.getResources().getBoolean(R.bool.config_wimaxEnabled);
+        return context.getResources().getBoolean(17956974);
     }
 
     public static boolean setWimaxEnabled(Context context, boolean z) {

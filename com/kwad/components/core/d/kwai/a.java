@@ -6,7 +6,7 @@ public final class a {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.kwad.components.core.d.kwai.a$a  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/components/core/d/kwai/a$a.class */
-    public static final class C0520a {
+    public static final class C0350a {
         private static final c Is = c.a(new int[]{7, 8, 4, 2, 0, 3, 6, 9, 1, 8});
     }
 
@@ -15,7 +15,7 @@ public final class a {
     }
 
     private static c mB() {
-        return C0520a.Is;
+        return C0350a.Is;
     }
 
     public static String o(long j) {

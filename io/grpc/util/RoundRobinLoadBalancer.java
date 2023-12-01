@@ -54,13 +54,12 @@ final class RoundRobinLoadBalancer extends LoadBalancer {
             return false;
         }
 
-        @Override // io.grpc.LoadBalancer.SubchannelPicker
         public LoadBalancer.PickResult pickSubchannel(LoadBalancer.PickSubchannelArgs pickSubchannelArgs) {
             return this.status.isOk() ? LoadBalancer.PickResult.withNoResult() : LoadBalancer.PickResult.withError(this.status);
         }
 
         public String toString() {
-            return MoreObjects.toStringHelper((Class<?>) EmptyPicker.class).add("status", this.status).toString();
+            return MoreObjects.toStringHelper(EmptyPicker.class).add("status", this.status).toString();
         }
     }
 
@@ -150,13 +149,12 @@ final class RoundRobinLoadBalancer extends LoadBalancer {
             throw new UnsupportedOperationException("Method not decompiled: io.grpc.util.RoundRobinLoadBalancer.ReadyPicker.isEquivalentTo(io.grpc.util.RoundRobinLoadBalancer$RoundRobinPicker):boolean");
         }
 
-        @Override // io.grpc.LoadBalancer.SubchannelPicker
         public LoadBalancer.PickResult pickSubchannel(LoadBalancer.PickSubchannelArgs pickSubchannelArgs) {
             return LoadBalancer.PickResult.withSubchannel(nextSubchannel());
         }
 
         public String toString() {
-            return MoreObjects.toStringHelper((Class<?>) ReadyPicker.class).add("list", this.list).toString();
+            return MoreObjects.toStringHelper(ReadyPicker.class).add("list", this.list).toString();
         }
     }
 
@@ -359,16 +357,14 @@ final class RoundRobinLoadBalancer extends LoadBalancer {
         return this.subchannels.values();
     }
 
-    @Override // io.grpc.LoadBalancer
     public void handleNameResolutionError(Status status) {
         ConnectivityState connectivityState = ConnectivityState.TRANSIENT_FAILURE;
         RoundRobinPicker roundRobinPicker = this.currentPicker;
         updateBalancingState(connectivityState, roundRobinPicker instanceof ReadyPicker ? roundRobinPicker : new EmptyPicker(status));
     }
 
-    @Override // io.grpc.LoadBalancer
     public void handleResolvedAddresses(LoadBalancer.ResolvedAddresses resolvedAddresses) {
-        List<EquivalentAddressGroup> addresses = resolvedAddresses.getAddresses();
+        List addresses = resolvedAddresses.getAddresses();
         Set<EquivalentAddressGroup> keySet = this.subchannels.keySet();
         Map<EquivalentAddressGroup, EquivalentAddressGroup> stripAttrs = stripAttrs(addresses);
         Set<EquivalentAddressGroup> set = setsDifference(keySet, stripAttrs.keySet());
@@ -381,7 +377,6 @@ final class RoundRobinLoadBalancer extends LoadBalancer {
             } else {
                 final LoadBalancer.Subchannel subchannel2 = (LoadBalancer.Subchannel) Preconditions.checkNotNull(this.helper.createSubchannel(LoadBalancer.CreateSubchannelArgs.newBuilder().setAddresses(value).setAttributes(Attributes.newBuilder().set(STATE_INFO, new Ref(ConnectivityStateInfo.forNonError(ConnectivityState.IDLE))).build()).build()), "subchannel");
                 subchannel2.start(new LoadBalancer.SubchannelStateListener() { // from class: io.grpc.util.RoundRobinLoadBalancer.1
-                    @Override // io.grpc.LoadBalancer.SubchannelStateListener
                     public void onSubchannelState(ConnectivityStateInfo connectivityStateInfo) {
                         RoundRobinLoadBalancer.this.processSubchannelState(subchannel2, connectivityStateInfo);
                     }
@@ -401,7 +396,6 @@ final class RoundRobinLoadBalancer extends LoadBalancer {
         }
     }
 
-    @Override // io.grpc.LoadBalancer
     public void shutdown() {
         for (LoadBalancer.Subchannel subchannel : getSubchannels()) {
             shutdownSubchannel(subchannel);

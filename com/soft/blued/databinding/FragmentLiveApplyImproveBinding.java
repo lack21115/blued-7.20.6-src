@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentLiveApplyImproveBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f28861a;
+    private final LinearLayout f15171a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f28861a;
+        return this.f15171a;
     }
 }

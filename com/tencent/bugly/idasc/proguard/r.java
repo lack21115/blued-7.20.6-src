@@ -12,18 +12,17 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import javax.xml.datatype.DatatypeConstants;
 
 /* loaded from: source-8457232-dex2jar.jar:com/tencent/bugly/idasc/proguard/r.class */
 public final class r {
     private static boolean e = true;
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f35329a;
+    private Context f21638a;
     private long b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f35330c;
+    private int f21639c;
     private boolean d;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -32,10 +31,10 @@ public final class r {
         private boolean b;
 
         /* renamed from: c  reason: collision with root package name */
-        private UserInfoBean f35334c;
+        private UserInfoBean f21643c;
 
         public a(UserInfoBean userInfoBean, boolean z) {
-            this.f35334c = userInfoBean;
+            this.f21643c = userInfoBean;
             this.b = z;
         }
 
@@ -43,10 +42,10 @@ public final class r {
         public final void run() {
             if (r.this.d) {
                 try {
-                    if (this.f35334c != null) {
-                        r.a(this.f35334c);
+                    if (this.f21643c != null) {
+                        r.a(this.f21643c);
                         al.c("[UserInfo] Record user info.", new Object[0]);
-                        r.this.a(this.f35334c, false);
+                        r.this.a(this.f21643c, false);
                     }
                     if (this.b) {
                         r.this.b();
@@ -98,7 +97,7 @@ public final class r {
 
     public r(Context context, boolean z) {
         this.d = true;
-        this.f35329a = context;
+        this.f21638a = context;
         this.d = z;
     }
 
@@ -125,7 +124,7 @@ public final class r {
             long j = cursor.getLong(cursor.getColumnIndex("_id"));
             UserInfoBean userInfoBean = (UserInfoBean) ap.a(blob, UserInfoBean.CREATOR);
             if (userInfoBean != null) {
-                userInfoBean.f35192a = j;
+                userInfoBean.f21501a = j;
             }
             return userInfoBean;
         } catch (Throwable th) {
@@ -214,14 +213,14 @@ public final class r {
         if (userInfoBean == null) {
             return;
         }
-        if (!z && userInfoBean.b != 1 && (a2 = a(aa.a(this.f35329a).d)) != null && a2.size() >= 20) {
+        if (!z && userInfoBean.b != 1 && (a2 = a(aa.a(this.f21638a).d)) != null && a2.size() >= 20) {
             al.a("[UserInfo] There are too many user info in local: %d", Integer.valueOf(a2.size()));
             return;
         }
         long a3 = w.a().a("t_ui", b(userInfoBean), (v) null);
         if (a3 >= 0) {
             al.c("[Database] insert %s success with ID: %d", "t_ui", Long.valueOf(a3));
-            userInfoBean.f35192a = a3;
+            userInfoBean.f21501a = a3;
         }
     }
 
@@ -265,7 +264,7 @@ public final class r {
             al.d("uploadCheck failed", new Object[0]);
             return;
         }
-        int i = this.f35330c == 1 ? 1 : 2;
+        int i = this.f21639c == 1 ? 1 : 2;
         bv bvVar = null;
         if (list != null) {
             if (list.size() == 0) {
@@ -278,7 +277,7 @@ public final class r {
                     b2.o();
                     bvVar = new bv();
                     bvVar.b = b2.d;
-                    bvVar.f35316c = b2.g();
+                    bvVar.f21625c = b2.g();
                     ArrayList<bu> arrayList = new ArrayList<>();
                     for (UserInfoBean userInfoBean2 : list) {
                         bu a2 = ae.a(userInfoBean2);
@@ -321,12 +320,12 @@ public final class r {
                         }
                     }
                     if (i == 1) {
-                        bvVar.f35315a = (byte) 1;
+                        bvVar.f21624a = (byte) 1;
                     } else if (i != 2) {
                         al.e("unknown up type %d ", Integer.valueOf(i));
                         bvVar = null;
                     } else {
-                        bvVar.f35315a = (byte) 2;
+                        bvVar.f21624a = (byte) 2;
                     }
                 }
             }
@@ -340,12 +339,12 @@ public final class r {
             al.d("[UserInfo] Failed to encode data.", new Object[0]);
             return;
         }
-        bq a4 = ae.a(this.f35329a, DatatypeConstants.MIN_TIMEZONE_OFFSET, a3);
+        bq a4 = ae.a(this.f21638a, 840, a3);
         if (a4 == null) {
             al.d("[UserInfo] Request package is null.", new Object[0]);
             return;
         }
-        ai.a().a(1001, a4, ac.a().c().q, StrategyBean.f35196a, new ah() { // from class: com.tencent.bugly.idasc.proguard.r.1
+        ai.a().a(1001, a4, ac.a().c().q, StrategyBean.f21505a, new ah() { // from class: com.tencent.bugly.idasc.proguard.r.1
             @Override // com.tencent.bugly.idasc.proguard.ah
             public final void a(boolean z2, String str) {
                 if (z2) {
@@ -357,7 +356,7 @@ public final class r {
                     }
                 }
             }
-        }, this.f35330c == 1);
+        }, this.f21639c == 1);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -382,13 +381,13 @@ public final class r {
         }
         try {
             ContentValues contentValues = new ContentValues();
-            if (userInfoBean.f35192a > 0) {
-                contentValues.put("_id", Long.valueOf(userInfoBean.f35192a));
+            if (userInfoBean.f21501a > 0) {
+                contentValues.put("_id", Long.valueOf(userInfoBean.f21501a));
             }
             contentValues.put("_tm", Long.valueOf(userInfoBean.e));
             contentValues.put("_ut", Long.valueOf(userInfoBean.f));
             contentValues.put(com.umeng.analytics.pro.bl.e, Integer.valueOf(userInfoBean.b));
-            contentValues.put("_pc", userInfoBean.f35193c);
+            contentValues.put("_pc", userInfoBean.f21502c);
             contentValues.put("_dt", ap.a(userInfoBean));
             return contentValues;
         } catch (Throwable th) {
@@ -412,7 +411,7 @@ public final class r {
                 break;
             }
             sb.append(" or _id = ");
-            sb.append(list.get(i2).f35192a);
+            sb.append(list.get(i2).f21501a);
             i = i2 + 1;
         }
         String sb2 = sb.toString();
@@ -446,7 +445,7 @@ public final class r {
 
     private boolean b(boolean z) {
         if (e) {
-            File file = new File(this.f35329a.getFilesDir(), "bugly_last_us_up_tm");
+            File file = new File(this.f21638a.getFilesDir(), "bugly_last_us_up_tm");
             long currentTimeMillis = System.currentTimeMillis();
             if (z) {
                 am.a(file, String.valueOf(currentTimeMillis), 1024L, false);
@@ -492,12 +491,12 @@ public final class r {
             return;
         }
         if (i == 1 || i == 3) {
-            this.f35330c++;
+            this.f21639c++;
         }
-        aa a3 = aa.a(this.f35329a);
+        aa a3 = aa.a(this.f21638a);
         UserInfoBean userInfoBean = new UserInfoBean();
         userInfoBean.b = i;
-        userInfoBean.f35193c = a3.d;
+        userInfoBean.f21502c = a3.d;
         userInfoBean.d = a3.f();
         userInfoBean.e = System.currentTimeMillis();
         userInfoBean.f = -1L;
@@ -529,12 +528,12 @@ public final class r {
             a2.a(new Runnable() { // from class: com.tencent.bugly.idasc.proguard.r.2
 
                 /* renamed from: a  reason: collision with root package name */
-                final /* synthetic */ boolean f35332a = false;
+                final /* synthetic */ boolean f21641a = false;
 
                 @Override // java.lang.Runnable
                 public final void run() {
                     try {
-                        r.this.a(this.f35332a);
+                        r.this.a(this.f21641a);
                     } catch (Throwable th) {
                         al.a(th);
                     }

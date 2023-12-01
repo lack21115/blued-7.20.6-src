@@ -6,9 +6,9 @@ import java.io.Serializable;
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/e/a/c.class */
 public final class c extends j implements Serializable {
     public c(a aVar, com.anythink.core.common.e.e eVar, int i) {
-        this.f6663a = eVar.j();
+        this.a = eVar.j();
         this.b = eVar.W();
-        this.f6664c = eVar.x();
+        this.c = eVar.x();
         this.d = eVar.X();
         this.f = eVar.H();
         this.g = eVar.T();

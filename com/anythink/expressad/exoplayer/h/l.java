@@ -8,11 +8,11 @@ import java.io.IOException;
 public final class l implements r, r.a {
 
     /* renamed from: a  reason: collision with root package name */
-    public final s f7465a;
+    public final s f4626a;
     public final s.a b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final com.anythink.expressad.exoplayer.j.b f7466c;
+    private final com.anythink.expressad.exoplayer.j.b f4627c;
     private r d;
     private r.a e;
     private long f;
@@ -27,8 +27,8 @@ public final class l implements r, r.a {
 
     public l(s sVar, s.a aVar, com.anythink.expressad.exoplayer.j.b bVar) {
         this.b = aVar;
-        this.f7466c = bVar;
-        this.f7465a = sVar;
+        this.f4627c = bVar;
+        this.f4626a = sVar;
     }
 
     private void h() {
@@ -56,7 +56,7 @@ public final class l implements r, r.a {
             if (this.d != null) {
                 this.d.a();
             } else {
-                this.f7465a.b();
+                this.f4626a.b();
             }
         } catch (IOException e) {
             a aVar = this.g;
@@ -146,7 +146,7 @@ public final class l implements r, r.a {
     }
 
     public final void f() {
-        r a2 = this.f7465a.a(this.b, this.f7466c);
+        r a2 = this.f4626a.a(this.b, this.f4627c);
         this.d = a2;
         if (this.e != null) {
             a2.a(this, this.f);
@@ -156,7 +156,7 @@ public final class l implements r, r.a {
     public final void g() {
         r rVar = this.d;
         if (rVar != null) {
-            this.f7465a.a(rVar);
+            this.f4626a.a(rVar);
         }
     }
 }

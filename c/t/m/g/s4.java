@@ -1,6 +1,7 @@
 package c.t.m.g;
 
 import android.content.Context;
+import android.net.http.Headers;
 import android.os.Bundle;
 import android.text.TextUtils;
 import c.t.m.g.d3;
@@ -18,10 +19,10 @@ public class s4 implements i5 {
     public class a implements d3.c {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ String[] f3981a;
+        public final /* synthetic */ String[] f3933a;
 
         public a(s4 s4Var, String[] strArr) {
-            this.f3981a = strArr;
+            this.f3933a = strArr;
         }
 
         @Override // c.t.m.g.d3.c
@@ -30,7 +31,7 @@ public class s4 implements i5 {
 
         @Override // c.t.m.g.d3.c
         public void b(String str) {
-            String[] strArr = this.f3981a;
+            String[] strArr = this.f3933a;
             strArr[0] = str;
             String str2 = strArr[0];
         }
@@ -41,10 +42,10 @@ public class s4 implements i5 {
         public byte[] b;
 
         /* renamed from: a  reason: collision with root package name */
-        public String f3982a = "gbk";
+        public String f3934a = "gbk";
 
         /* renamed from: c  reason: collision with root package name */
-        public String f3983c = "";
+        public String f3935c = "";
     }
 
     public s4(Context context, String str) {
@@ -90,13 +91,13 @@ public class s4 implements i5 {
                 return null;
             }
             b bVar = new b();
-            String headerField = httpURLConnection.getHeaderField("content-type");
+            String headerField = httpURLConnection.getHeaderField(Headers.CONTENT_TYPE);
             String headerField2 = httpURLConnection.getHeaderField("x-android-sent-millis");
             String b2 = b(headerField);
             byte[] a2 = a(httpURLConnection.getInputStream());
-            bVar.f3982a = b2;
+            bVar.f3934a = b2;
             bVar.b = a2;
-            bVar.f3983c = headerField2;
+            bVar.f3935c = headerField2;
             return bVar;
         } catch (Throwable th) {
             return null;
@@ -107,7 +108,7 @@ public class s4 implements i5 {
         if (str == null) {
             return "GBK";
         }
-        String[] split = str.split(";");
+        String[] split = str.split(com.huawei.openalliance.ad.constant.t.aE);
         int length = split.length;
         int i = 0;
         while (true) {
@@ -136,7 +137,7 @@ public class s4 implements i5 {
             s3.a("NET", "0,0," + com.igexin.push.core.b.l + "," + (currentTimeMillis2 - currentTimeMillis) + "," + j3.a());
             Bundle bundle = new Bundle();
             bundle.putString("req_key", "");
-            String str2 = b2.f3983c;
+            String str2 = b2.f3935c;
             if (!TextUtils.isEmpty(str2)) {
                 bundle.putLong("data_header_time", Long.parseLong(str2));
             }
@@ -145,7 +146,7 @@ public class s4 implements i5 {
                 bundle.putString("data_charset", "utf-8");
                 return bundle;
             }
-            String str3 = b2.f3982a;
+            String str3 = b2.f3934a;
             bundle.putByteArray("data_bytes", b2.b);
             bundle.putString("data_charset", str3);
             return bundle;

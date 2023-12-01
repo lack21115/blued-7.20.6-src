@@ -2,6 +2,7 @@ package com.oplus.log.d;
 
 import android.os.Build;
 import android.text.TextUtils;
+import com.huawei.hms.framework.network.grs.GrsBaseInfo;
 import com.ss.android.socialbase.downloader.constants.MonitorConstants;
 import java.lang.reflect.Method;
 
@@ -9,14 +10,14 @@ import java.lang.reflect.Method;
 public final class f {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f24358a = "";
+    private static String f10671a = "";
     private static String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static int f24359c = -1;
+    private static int f10672c = -1;
 
     public static String a() {
-        return (d() || f()) ? g() : e() ? d.b() : "UNKNOWN";
+        return (d() || f()) ? g() : e() ? d.b() : GrsBaseInfo.CountryCodeSource.UNKNOWN;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:9:0x0028, code lost:
@@ -39,7 +40,7 @@ public final class f {
             r6 = r0
             java.lang.String r0 = android.os.Build.BRAND
             r5 = r0
-            java.lang.String r0 = com.oplus.log.d.g.f24360a
+            java.lang.String r0 = com.oplus.log.d.g.f10673a
             r1 = r5
             boolean r0 = r0.equalsIgnoreCase(r1)
             if (r0 == 0) goto L2e
@@ -126,7 +127,7 @@ public final class f {
     }
 
     private static boolean d() {
-        return g.f24360a.equalsIgnoreCase(TextUtils.isEmpty(b) ? b() : b);
+        return g.f10673a.equalsIgnoreCase(TextUtils.isEmpty(b) ? b() : b);
     }
 
     private static boolean e() {
@@ -138,18 +139,18 @@ public final class f {
     }
 
     private static String g() {
-        if (TextUtils.isEmpty(f24358a)) {
+        if (TextUtils.isEmpty(f10671a)) {
             try {
                 Class<?> cls = Class.forName("android.os.SystemProperties");
                 Method method = cls.getMethod(MonitorConstants.CONNECT_TYPE_GET, String.class, String.class);
-                f24358a = (String) method.invoke(cls, "ro.build.version." + g.b + "rom", "0");
+                f10671a = (String) method.invoke(cls, "ro.build.version." + g.b + "rom", "0");
             } catch (Exception e) {
                 if (com.oplus.log.b.a()) {
                     e.printStackTrace();
                 }
             }
         }
-        return f24358a;
+        return f10671a;
     }
 
     private static String h() {
@@ -169,7 +170,7 @@ public final class f {
         int i;
         String str;
         String str2;
-        int i2 = f24359c;
+        int i2 = f10672c;
         if (i2 >= 0) {
             return i2;
         }
@@ -206,7 +207,7 @@ public final class f {
                 }
             }
         }
-        f24359c = i;
+        f10672c = i;
         return i;
     }
 }

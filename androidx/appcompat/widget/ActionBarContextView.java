@@ -101,9 +101,8 @@ public class ActionBarContextView extends AbsActionBarView {
         super.dismissPopupMenus();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup
-    public ViewGroup.LayoutParams generateDefaultLayoutParams() {
+    protected ViewGroup.LayoutParams generateDefaultLayoutParams() {
         return new ViewGroup.MarginLayoutParams(-1, -2);
     }
 
@@ -164,9 +163,9 @@ public class ActionBarContextView extends AbsActionBarView {
         this.d.setReserveOverflow(true);
         ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(-2, -1);
         menuBuilder.addMenuPresenter(this.d, this.b);
-        this.f1697c = (ActionMenuView) this.d.getMenuView(this);
-        ViewCompat.setBackground(this.f1697c, null);
-        addView(this.f1697c, layoutParams);
+        this.f1649c = (ActionMenuView) this.d.getMenuView(this);
+        ViewCompat.setBackground(this.f1649c, null);
+        addView(this.f1649c, layoutParams);
     }
 
     @Override // androidx.appcompat.widget.AbsActionBarView
@@ -194,7 +193,7 @@ public class ActionBarContextView extends AbsActionBarView {
     public void killMode() {
         removeAllViews();
         this.k = null;
-        this.f1697c = null;
+        this.f1649c = null;
         this.d = null;
         View view = this.j;
         if (view != null) {
@@ -216,9 +215,8 @@ public class ActionBarContextView extends AbsActionBarView {
         return super.onHoverEvent(motionEvent);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z, int i, int i2, int i3, int i4) {
+    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         boolean isLayoutRtl = ViewUtils.isLayoutRtl(this);
         int paddingRight = isLayoutRtl ? (i3 - i) - getPaddingRight() : getPaddingLeft();
         int paddingTop = getPaddingTop();
@@ -251,14 +249,13 @@ public class ActionBarContextView extends AbsActionBarView {
             a(view2, i8, paddingTop, paddingTop2, isLayoutRtl);
         }
         int paddingLeft = isLayoutRtl ? getPaddingLeft() : (i3 - i) - getPaddingRight();
-        if (this.f1697c != null) {
-            a(this.f1697c, paddingLeft, paddingTop, paddingTop2, !isLayoutRtl);
+        if (this.f1649c != null) {
+            a(this.f1649c, paddingLeft, paddingTop, paddingTop2, !isLayoutRtl);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         if (View.MeasureSpec.getMode(i) != 1073741824) {
             throw new IllegalStateException(getClass().getSimpleName() + " can only be used with android:layout_width=\"match_parent\" (or fill_parent)");
         } else if (View.MeasureSpec.getMode(i2) == 0) {
@@ -278,10 +275,10 @@ public class ActionBarContextView extends AbsActionBarView {
                 i4 = a2 - (marginLayoutParams.leftMargin + marginLayoutParams.rightMargin);
             }
             int i5 = i4;
-            if (this.f1697c != null) {
+            if (this.f1649c != null) {
                 i5 = i4;
-                if (this.f1697c.getParent() == this) {
-                    i5 = a(this.f1697c, i4, makeMeasureSpec, 0);
+                if (this.f1649c.getParent() == this) {
+                    i5 = a(this.f1649c, i4, makeMeasureSpec, 0);
                 }
             }
             LinearLayout linearLayout = this.l;

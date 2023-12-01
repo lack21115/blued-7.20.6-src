@@ -64,16 +64,16 @@ public class AnyThinkOrderCampView extends AnythinkBaseView {
     public final class AnonymousClass4 implements View.OnClickListener {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ String f8421a;
+        final /* synthetic */ String f5581a;
 
         AnonymousClass4(String str) {
-            this.f8421a = str;
+            this.f5581a = str;
         }
 
         @Override // android.view.View.OnClickListener
         public final void onClick(View view) {
             Tracker.onClick(view);
-            l.a(AnyThinkOrderCampView.this.f8440a, this.f8421a);
+            l.a(AnyThinkOrderCampView.this.f5600a, this.f5581a);
         }
     }
 
@@ -379,7 +379,6 @@ public class AnyThinkOrderCampView extends AnythinkBaseView {
         this.n = this;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     /* JADX WARN: Removed duplicated region for block: B:18:0x0040  */
     /* JADX WARN: Removed duplicated region for block: B:27:0x004c A[SYNTHETIC] */
     @Override // android.view.ViewGroup, android.view.View
@@ -387,7 +386,7 @@ public class AnyThinkOrderCampView extends AnythinkBaseView {
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences
     */
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         /*
             r4 = this;
             r0 = r4

@@ -6,11 +6,11 @@ import java.io.File;
 public class w implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ File f42219a;
+    public final /* synthetic */ File f28528a;
     public final /* synthetic */ String b;
 
     public w(x xVar, File file, String str) {
-        this.f42219a = file;
+        this.f28528a = file;
         this.b = str;
     }
 

@@ -2,7 +2,7 @@ package com.tencent.thumbplayer.utils;
 
 import android.content.Context;
 import android.os.Process;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -23,30 +23,30 @@ import java.util.concurrent.atomic.AtomicLong;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Map<String, a> f39422a = new HashMap();
-    private C1028a b;
+    private static Map<String, a> f25731a = new HashMap();
+    private C0858a b;
 
     /* renamed from: com.tencent.thumbplayer.utils.a$a  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/thumbplayer/utils/a$a.class */
-    public static class C1028a {
+    public static class C0858a {
 
         /* renamed from: a  reason: collision with root package name */
-        protected File f39423a;
+        protected File f25732a;
         private final AtomicLong b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final AtomicInteger f39424c;
+        private final AtomicInteger f25733c;
         private final long d;
         private final int e;
         private final Map<File, Long> f;
 
-        private C1028a(File file, long j, int i) {
+        private C0858a(File file, long j, int i) {
             this.f = Collections.synchronizedMap(new HashMap());
-            this.f39423a = file;
+            this.f25732a = file;
             this.d = j;
             this.e = i;
             this.b = new AtomicLong();
-            this.f39424c = new AtomicInteger();
+            this.f25733c = new AtomicInteger();
             a();
         }
 
@@ -63,17 +63,17 @@ public class a {
             o.a().d().execute(new Runnable() { // from class: com.tencent.thumbplayer.utils.a.a.1
                 @Override // java.lang.Runnable
                 public void run() {
-                    File[] listFiles = C1028a.this.f39423a.listFiles();
+                    File[] listFiles = C0858a.this.f25732a.listFiles();
                     if (listFiles != null) {
                         int i = 0;
                         int i2 = 0;
                         for (File file : listFiles) {
-                            i = (int) (i + C1028a.this.b(file));
+                            i = (int) (i + C0858a.this.b(file));
                             i2++;
-                            C1028a.this.f.put(file, Long.valueOf(file.lastModified()));
+                            C0858a.this.f.put(file, Long.valueOf(file.lastModified()));
                         }
-                        C1028a.this.b.set(i);
-                        C1028a.this.f39424c.set(i2);
+                        C0858a.this.b.set(i);
+                        C0858a.this.f25733c.set(i2);
                     }
                 }
             });
@@ -81,12 +81,12 @@ public class a {
 
         /* JADX INFO: Access modifiers changed from: private */
         public void a(File file) {
-            int i = this.f39424c.get();
+            int i = this.f25733c.get();
             while (i + 1 > this.e) {
                 this.b.addAndGet(-c());
-                i = this.f39424c.addAndGet(-1);
+                i = this.f25733c.addAndGet(-1);
             }
-            this.f39424c.addAndGet(1);
+            this.f25733c.addAndGet(1);
             long b = b(file);
             long j = this.b.get();
             while (j + b > this.d) {
@@ -108,7 +108,7 @@ public class a {
 
         /* JADX INFO: Access modifiers changed from: private */
         public File b(String str) {
-            File file = this.f39423a;
+            File file = this.f25732a;
             StringBuilder sb = new StringBuilder();
             sb.append(str.hashCode());
             return new File(file, sb.toString());
@@ -118,8 +118,8 @@ public class a {
         public void b() {
             this.f.clear();
             this.b.set(0L);
-            this.f39424c.set(0);
-            File[] listFiles = this.f39423a.listFiles();
+            this.f25733c.set(0);
+            File[] listFiles = this.f25732a.listFiles();
             if (listFiles != null) {
                 for (File file : listFiles) {
                     file.delete();
@@ -164,7 +164,7 @@ public class a {
             File a2 = a(str);
             long b = b(a2);
             if (a2.delete()) {
-                this.f39424c.addAndGet(-1);
+                this.f25733c.addAndGet(-1);
                 this.b.addAndGet(-b);
                 return true;
             }
@@ -196,7 +196,7 @@ public class a {
             while (true) {
                 String str = sb2;
                 if (str.length() >= 13) {
-                    return str + "-" + i + ' ';
+                    return str + Constants.ACCEPT_TIME_SEPARATOR_SERVER + i + ' ';
                 }
                 sb2 = "0".concat(String.valueOf(str));
             }
@@ -206,7 +206,7 @@ public class a {
             int i3 = i2 - i;
             if (i3 >= 0) {
                 byte[] bArr2 = new byte[i3];
-                System.arraycopy((Object) bArr, i, (Object) bArr2, 0, Math.min(bArr.length - i, i3));
+                System.arraycopy(bArr, i, bArr2, 0, Math.min(bArr.length - i, i3));
                 return bArr2;
             }
             throw new IllegalArgumentException(i + " > " + i2);
@@ -216,8 +216,8 @@ public class a {
         public static byte[] b(int i, byte[] bArr) {
             byte[] bytes = a(i).getBytes();
             byte[] bArr2 = new byte[bytes.length + bArr.length];
-            System.arraycopy((Object) bytes, 0, (Object) bArr2, 0, bytes.length);
-            System.arraycopy((Object) bArr, 0, (Object) bArr2, bytes.length, bArr.length);
+            System.arraycopy(bytes, 0, bArr2, 0, bytes.length);
+            System.arraycopy(bArr, 0, bArr2, bytes.length, bArr.length);
             return bArr2;
         }
 
@@ -266,7 +266,7 @@ public class a {
 
     private a(File file, long j, int i) {
         if (file.exists() || file.mkdirs()) {
-            this.b = new C1028a(file, j, i);
+            this.b = new C0858a(file, j, i);
         } else {
             this.b = null;
         }
@@ -279,7 +279,7 @@ public class a {
     public static a a(File file, long j, int i) {
         a aVar;
         try {
-            aVar = f39422a.get(file.getAbsoluteFile() + b());
+            aVar = f25731a.get(file.getAbsoluteFile() + b());
         } catch (Exception e) {
             aVar = null;
         }
@@ -288,7 +288,7 @@ public class a {
             try {
                 aVar2 = new a(file, j, i);
                 try {
-                    f39422a.put(file.getAbsolutePath() + b(), aVar2);
+                    f25731a.put(file.getAbsolutePath() + b(), aVar2);
                 } catch (Throwable th) {
                 }
             } catch (Throwable th2) {
@@ -299,15 +299,15 @@ public class a {
     }
 
     private static String b() {
-        return BridgeUtil.UNDERLINE_STR + Process.myPid();
+        return "_" + Process.myPid();
     }
 
     public void a() {
-        C1028a c1028a = this.b;
-        if (c1028a == null) {
+        C0858a c0858a = this.b;
+        if (c0858a == null) {
             return;
         }
-        c1028a.b();
+        c0858a.b();
     }
 
     public void a(String str, Serializable serializable) {
@@ -378,11 +378,11 @@ public class a {
     public void a(String str, byte[] bArr) {
         FileOutputStream fileOutputStream;
         FileOutputStream fileOutputStream2;
-        C1028a c1028a = this.b;
-        if (c1028a == null) {
+        C0858a c0858a = this.b;
+        if (c0858a == null) {
             return;
         }
-        File b2 = c1028a.b(str);
+        File b2 = c0858a.b(str);
         FileOutputStream fileOutputStream3 = null;
         try {
             try {
@@ -443,21 +443,21 @@ public class a {
 
     public byte[] a(String str) {
         RandomAccessFile randomAccessFile;
-        C1028a c1028a = this.b;
-        AutoCloseable autoCloseable = null;
+        C0858a c0858a = this.b;
+        RandomAccessFile randomAccessFile2 = null;
         try {
-            if (c1028a == null) {
+            if (c0858a == null) {
                 return null;
             }
             try {
-                File a2 = c1028a.a(str);
+                File a2 = c0858a.a(str);
                 if (a2.exists()) {
-                    RandomAccessFile randomAccessFile2 = new RandomAccessFile(a2, "r");
+                    RandomAccessFile randomAccessFile3 = new RandomAccessFile(a2, "r");
                     try {
-                        byte[] bArr = new byte[(int) randomAccessFile2.length()];
-                        if (randomAccessFile2.read(bArr) <= 0) {
+                        byte[] bArr = new byte[(int) randomAccessFile3.length()];
+                        if (randomAccessFile3.read(bArr) <= 0) {
                             try {
-                                randomAccessFile2.close();
+                                randomAccessFile3.close();
                                 return null;
                             } catch (IOException e) {
                                 e.printStackTrace();
@@ -465,7 +465,7 @@ public class a {
                             }
                         } else if (b.c(bArr)) {
                             try {
-                                randomAccessFile2.close();
+                                randomAccessFile3.close();
                             } catch (IOException e2) {
                                 e2.printStackTrace();
                             }
@@ -474,7 +474,7 @@ public class a {
                         } else {
                             byte[] d = b.d(bArr);
                             try {
-                                randomAccessFile2.close();
+                                randomAccessFile3.close();
                                 return d;
                             } catch (IOException e3) {
                                 e3.printStackTrace();
@@ -482,7 +482,7 @@ public class a {
                             }
                         }
                     } catch (Exception e4) {
-                        randomAccessFile = randomAccessFile2;
+                        randomAccessFile = randomAccessFile3;
                         e = e4;
                         e.printStackTrace();
                         if (randomAccessFile != null) {
@@ -505,7 +505,7 @@ public class a {
                 th = th;
                 if (0 != 0) {
                     try {
-                        autoCloseable.close();
+                        randomAccessFile2.close();
                     } catch (IOException e7) {
                         e7.printStackTrace();
                     }
@@ -522,24 +522,24 @@ public class a {
         ByteArrayInputStream byteArrayInputStream;
         ByteArrayInputStream byteArrayInputStream2;
         Throwable th;
-        AutoCloseable autoCloseable;
         ObjectInputStream objectInputStream;
-        ByteArrayInputStream byteArrayInputStream3;
         ObjectInputStream objectInputStream2;
+        ByteArrayInputStream byteArrayInputStream3;
+        ObjectInputStream objectInputStream3;
         byte[] a2 = a(str);
         try {
             if (a2 != null) {
                 try {
                     byteArrayInputStream2 = new ByteArrayInputStream(a2);
                     try {
-                        objectInputStream2 = new ObjectInputStream(byteArrayInputStream2);
+                        objectInputStream3 = new ObjectInputStream(byteArrayInputStream2);
                     } catch (Exception e) {
                         e = e;
                         byteArrayInputStream3 = byteArrayInputStream2;
-                        objectInputStream = null;
+                        objectInputStream2 = null;
                     } catch (Throwable th2) {
                         th = th2;
-                        autoCloseable = null;
+                        objectInputStream = null;
                         if (byteArrayInputStream2 != null) {
                             try {
                                 byteArrayInputStream2.close();
@@ -547,9 +547,9 @@ public class a {
                                 e2.printStackTrace();
                             }
                         }
-                        if (autoCloseable != null) {
+                        if (objectInputStream != null) {
                             try {
-                                autoCloseable.close();
+                                objectInputStream.close();
                             } catch (IOException e3) {
                                 e3.printStackTrace();
                             }
@@ -558,22 +558,22 @@ public class a {
                     }
                 } catch (Exception e4) {
                     e = e4;
-                    objectInputStream = null;
+                    objectInputStream2 = null;
                     byteArrayInputStream3 = null;
                 } catch (Throwable th3) {
                     th = th3;
                     byteArrayInputStream2 = null;
-                    autoCloseable = null;
+                    objectInputStream = null;
                 }
                 try {
-                    Object readObject = objectInputStream2.readObject();
+                    Object readObject = objectInputStream3.readObject();
                     try {
                         byteArrayInputStream2.close();
                     } catch (IOException e5) {
                         e5.printStackTrace();
                     }
                     try {
-                        objectInputStream2.close();
+                        objectInputStream3.close();
                         return readObject;
                     } catch (IOException e6) {
                         e6.printStackTrace();
@@ -582,7 +582,7 @@ public class a {
                 } catch (Exception e7) {
                     e = e7;
                     byteArrayInputStream3 = byteArrayInputStream2;
-                    objectInputStream = objectInputStream2;
+                    objectInputStream2 = objectInputStream3;
                     e.printStackTrace();
                     if (byteArrayInputStream3 != null) {
                         try {
@@ -591,9 +591,9 @@ public class a {
                             e8.printStackTrace();
                         }
                     }
-                    if (objectInputStream != null) {
+                    if (objectInputStream2 != null) {
                         try {
-                            objectInputStream.close();
+                            objectInputStream2.close();
                             return null;
                         } catch (IOException e9) {
                             e9.printStackTrace();
@@ -611,10 +611,10 @@ public class a {
     }
 
     public boolean c(String str) {
-        C1028a c1028a = this.b;
-        if (c1028a == null) {
+        C0858a c0858a = this.b;
+        if (c0858a == null) {
             return false;
         }
-        return c1028a.c(str);
+        return c0858a.c(str);
     }
 }

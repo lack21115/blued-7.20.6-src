@@ -29,7 +29,7 @@ import java.util.Map;
 public class BluedUncaughtExceptionHandler implements Thread.UncaughtExceptionHandler {
 
     /* renamed from: a  reason: collision with root package name */
-    private Map<String, String> f29777a = new HashMap();
+    private Map<String, String> f16087a = new HashMap();
     private final Thread.UncaughtExceptionHandler b = Thread.getDefaultUncaughtExceptionHandler();
 
     private void a(Throwable th) {
@@ -90,7 +90,7 @@ public class BluedUncaughtExceptionHandler implements Thread.UncaughtExceptionHa
     private void b(Throwable th) {
         a(AppInfo.d());
         StringBuffer stringBuffer = new StringBuffer();
-        for (Map.Entry<String, String> entry : this.f29777a.entrySet()) {
+        for (Map.Entry<String, String> entry : this.f16087a.entrySet()) {
             String key = entry.getKey();
             String value = entry.getValue();
             stringBuffer.append(key + "=" + value + "\n");
@@ -117,8 +117,8 @@ public class BluedUncaughtExceptionHandler implements Thread.UncaughtExceptionHa
             PackageInfo packageInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), 1);
             if (packageInfo != null) {
                 String str = packageInfo.versionName == null ? b.l : packageInfo.versionName;
-                this.f29777a.put("versionName", str);
-                this.f29777a.put("versionCode", packageInfo.versionCode + "");
+                this.f16087a.put("versionName", str);
+                this.f16087a.put("versionCode", packageInfo.versionCode + "");
             }
         } catch (PackageManager.NameNotFoundException e) {
             Log.e("UncaughtExHandler", "an error occured when collect package info", e);
@@ -134,7 +134,7 @@ public class BluedUncaughtExceptionHandler implements Thread.UncaughtExceptionHa
             Field field = declaredFields[i2];
             try {
                 field.setAccessible(true);
-                this.f29777a.put(field.getName(), field.get(null).toString());
+                this.f16087a.put(field.getName(), field.get(null).toString());
                 Log.d("UncaughtExHandler", field.getName() + " : " + field.get(null));
             } catch (Exception e2) {
                 Log.e("UncaughtExHandler", "an error occured when collect crash info", e2);

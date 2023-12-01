@@ -76,23 +76,20 @@ public class TXSplashFragment extends TimeoutFragment implements SplashADListene
         }
     }
 
-    @Override // com.blued.android.ui.TimeoutFragment
     public void g() {
         m();
     }
 
-    @Override // com.blued.android.ui.TimeoutFragment
     public View h() {
         return this.n;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment
     public boolean isActivitySwipeBackEnable() {
         return false;
     }
 
     public void j() {
-        getActivity().getWindow().getDecorView().setBackground(BluedSkinUtils.b(this.m, R.drawable.app_loading_bg));
+        getActivity().getWindow().getDecorView().setBackground(BluedSkinUtils.b(this.m, (int) R.drawable.app_loading_bg));
         this.s = (FrameLayout) this.n.findViewById(R.id.fl_ad_content);
         this.t = this.n.findViewById(R.id.ll_click_skip);
         View findViewById = this.n.findViewById(R.id.view_btm_bar);
@@ -139,7 +136,6 @@ public class TXSplashFragment extends TimeoutFragment implements SplashADListene
         Logger.b("AD_DEMO", "SplashADTick " + j + "ms");
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.m = getActivity();
         getActivity().overridePendingTransition(R.anim.activity_switch_none, R.anim.activity_switch_none);
@@ -160,13 +156,11 @@ public class TXSplashFragment extends TimeoutFragment implements SplashADListene
         return this.n;
     }
 
-    @Override // com.blued.android.ui.TimeoutFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
         this.B.removeCallbacksAndMessages(null);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnKeyListener
     public boolean onKeyDown(int i, KeyEvent keyEvent) {
         if (i == 4 || i == 3) {
             return true;
@@ -189,13 +183,11 @@ public class TXSplashFragment extends TimeoutFragment implements SplashADListene
         }, currentTimeMillis > ((long) i) ? 0L : i - currentTimeMillis);
     }
 
-    @Override // com.blued.android.ui.TimeoutFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onPause() {
         super.onPause();
         this.o = false;
     }
 
-    @Override // com.blued.android.ui.TimeoutFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onResume() {
         super.onResume();
         Log.v("drb", "onResume canJump:" + this.o);

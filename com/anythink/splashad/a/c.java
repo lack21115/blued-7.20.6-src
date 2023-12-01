@@ -16,6 +16,7 @@ import com.anythink.core.api.ErrorCode;
 import com.anythink.core.api.IExHandler;
 import com.anythink.core.common.b.l;
 import com.anythink.core.common.b.n;
+import com.anythink.core.common.e.j;
 import com.anythink.core.common.h;
 import com.anythink.core.common.k.s;
 import com.anythink.splashad.api.ATSplashSkipAdListener;
@@ -28,7 +29,7 @@ import java.util.Map;
 public class c extends com.anythink.core.common.f<g> {
 
     /* renamed from: a  reason: collision with root package name */
-    d f9188a;
+    d f6348a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.anythink.splashad.a.c$2  reason: invalid class name */
@@ -36,26 +37,23 @@ public class c extends com.anythink.core.common.f<g> {
     public final class AnonymousClass2 implements l {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ boolean[] f9194a;
+        final /* synthetic */ boolean[] f6354a;
         final /* synthetic */ f b;
 
         AnonymousClass2(boolean[] zArr, f fVar) {
-            this.f9194a = zArr;
+            this.f6354a = zArr;
             this.b = fVar;
         }
 
-        @Override // com.anythink.core.common.b.l
         public final void onAdClicked(View view) {
             this.b.onSplashAdClicked();
         }
 
-        @Override // com.anythink.core.common.b.l
         public final void onAdDislikeButtonClick() {
         }
 
-        @Override // com.anythink.core.common.b.l
         public final void onAdImpressed() {
-            boolean[] zArr = this.f9194a;
+            boolean[] zArr = this.f6354a;
             if (zArr[0]) {
                 return;
             }
@@ -63,24 +61,19 @@ public class c extends com.anythink.core.common.f<g> {
             this.b.onSplashAdShow();
         }
 
-        @Override // com.anythink.core.common.b.l
         public final void onAdVideoEnd() {
         }
 
-        @Override // com.anythink.core.common.b.l
         public final void onAdVideoProgress(int i) {
         }
 
-        @Override // com.anythink.core.common.b.l
         public final void onAdVideoStart() {
         }
 
-        @Override // com.anythink.core.common.b.l
         public final void onDeeplinkCallback(boolean z) {
             this.b.onDeeplinkCallback(z);
         }
 
-        @Override // com.anythink.core.common.b.l
         public final void onDownloadConfirmCallback(Context context, View view, ATNetworkConfirmInfo aTNetworkConfirmInfo) {
             this.b.onDownloadConfirm(context, aTNetworkConfirmInfo);
         }
@@ -92,30 +85,25 @@ public class c extends com.anythink.core.common.f<g> {
     public final class AnonymousClass3 implements com.anythink.basead.e.a {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ f f9196a;
+        final /* synthetic */ f f6356a;
 
         AnonymousClass3(f fVar) {
-            this.f9196a = fVar;
+            this.f6356a = fVar;
         }
 
-        @Override // com.anythink.basead.e.a
         public final void onAdClick(int i) {
         }
 
-        @Override // com.anythink.basead.e.a
         public final void onAdClosed() {
-            this.f9196a.onSplashAdDismiss();
+            this.f6356a.onSplashAdDismiss();
         }
 
-        @Override // com.anythink.basead.e.a
         public final void onAdShow() {
         }
 
-        @Override // com.anythink.basead.e.a
         public final void onDeeplinkCallback(boolean z) {
         }
 
-        @Override // com.anythink.basead.e.a
         public final void onShowFailed(com.anythink.basead.c.e eVar) {
         }
     }
@@ -124,8 +112,7 @@ public class c extends com.anythink.core.common.f<g> {
         super(context, str);
     }
 
-    /* renamed from: a  reason: avoid collision after fix types in other method */
-    private static h a2(g gVar) {
+    private static h a(g gVar) {
         e eVar = new e(gVar.a());
         eVar.T = gVar.h;
         eVar.a(gVar.d);
@@ -174,10 +161,10 @@ public class c extends com.anythink.core.common.f<g> {
     private void a(Activity activity, ViewGroup viewGroup, f fVar, boolean z, BaseAd baseAd, com.anythink.core.common.e.e eVar) {
         ThirdPartySplashAdView thirdPartySplashAdView;
         if (baseAd == null || !(baseAd instanceof com.anythink.core.common.e.a.e)) {
-            Log.e("anythink", "showThirdPartyNativeSplash fail,AdCache return illegal type adObject");
+            Log.e(com.anythink.expressad.d.b.f4297c, "showThirdPartyNativeSplash fail,AdCache return illegal type adObject");
             if (fVar != null) {
                 fVar.a(99);
-                fVar.onSplashAdShowFail(ErrorCode.getErrorCode(ErrorCode.adShowError, "", "showThirdPartyNativeSplash fail,AdCache return illegal type adObject"));
+                fVar.onSplashAdShowFail(ErrorCode.getErrorCode("4006", "", "showThirdPartyNativeSplash fail,AdCache return illegal type adObject"));
                 fVar.onSplashAdDismiss();
                 return;
             }
@@ -185,7 +172,7 @@ public class c extends com.anythink.core.common.f<g> {
         }
         com.anythink.core.common.e.a.b bVar = new com.anythink.core.common.e.a.b((com.anythink.core.common.e.a.e) baseAd);
         com.anythink.core.common.e.a.c cVar = new com.anythink.core.common.e.a.c((com.anythink.core.common.e.a.a) baseAd, eVar, Integer.parseInt("4"));
-        String a2 = a(cVar);
+        String a2 = a((j) cVar);
         baseAd.setNativeEventListener(new AnonymousClass2(new boolean[]{false}, fVar));
         i.a().a(a2, baseAd);
         ThirdPartySplashAdView thirdPartySplashAdView2 = new ThirdPartySplashAdView(activity.getApplicationContext(), cVar, bVar, new AnonymousClass3(fVar), a2);
@@ -203,15 +190,15 @@ public class c extends com.anythink.core.common.f<g> {
     static /* synthetic */ void a(c cVar, Activity activity, ViewGroup viewGroup, f fVar, boolean z, BaseAd baseAd, com.anythink.core.common.e.e eVar) {
         ThirdPartySplashAdView thirdPartySplashAdView;
         if (baseAd == null || !(baseAd instanceof com.anythink.core.common.e.a.e)) {
-            Log.e("anythink", "showThirdPartyNativeSplash fail,AdCache return illegal type adObject");
+            Log.e(com.anythink.expressad.d.b.f4297c, "showThirdPartyNativeSplash fail,AdCache return illegal type adObject");
             fVar.a(99);
-            fVar.onSplashAdShowFail(ErrorCode.getErrorCode(ErrorCode.adShowError, "", "showThirdPartyNativeSplash fail,AdCache return illegal type adObject"));
+            fVar.onSplashAdShowFail(ErrorCode.getErrorCode("4006", "", "showThirdPartyNativeSplash fail,AdCache return illegal type adObject"));
             fVar.onSplashAdDismiss();
             return;
         }
         com.anythink.core.common.e.a.b bVar = new com.anythink.core.common.e.a.b((com.anythink.core.common.e.a.e) baseAd);
         com.anythink.core.common.e.a.c cVar2 = new com.anythink.core.common.e.a.c((com.anythink.core.common.e.a.a) baseAd, eVar, Integer.parseInt("4"));
-        String a2 = a(cVar2);
+        String a2 = a((j) cVar2);
         baseAd.setNativeEventListener(new AnonymousClass2(new boolean[]{false}, fVar));
         i.a().a(a2, baseAd);
         ThirdPartySplashAdView thirdPartySplashAdView2 = new ThirdPartySplashAdView(activity.getApplicationContext(), cVar2, bVar, new AnonymousClass3(fVar), a2);
@@ -226,19 +213,18 @@ public class c extends com.anythink.core.common.f<g> {
         viewGroup.addView(thirdPartySplashAdView);
     }
 
-    /* renamed from: a  reason: avoid collision after fix types in other method */
-    private boolean a2(String str, String str2, g gVar, com.anythink.core.common.b.a aVar) {
+    private boolean a(String str, String str2, g gVar, com.anythink.core.common.b.a aVar) {
         if (aVar == null || !(aVar instanceof b)) {
             return false;
         }
         d dVar = new d(this.b);
-        this.f9188a = dVar;
-        dVar.a(gVar.a(), str, str2, gVar.b, gVar.f6763c, (b) aVar, gVar.h);
+        this.f6348a = dVar;
+        dVar.a(gVar.a(), str, str2, gVar.b, gVar.c, (b) aVar, gVar.h);
         return true;
     }
 
     private void e(String str) {
-        d dVar = this.f9188a;
+        d dVar = this.f6348a;
         if (dVar != null) {
             com.anythink.core.common.e.e eVar = new com.anythink.core.common.e.e();
             eVar.x(dVar.f);
@@ -246,14 +232,14 @@ public class c extends com.anythink.core.common.f<g> {
             eVar.z("4");
             eVar.w("0");
             eVar.a(true);
-            com.anythink.core.common.j.c.a(eVar, ErrorCode.getErrorCode(ErrorCode.timeOutError, "", "Splash FetchAd Timeout."));
-            this.f9188a.b = null;
-            this.f9188a = null;
+            com.anythink.core.common.j.c.a(eVar, ErrorCode.getErrorCode("2001", "", "Splash FetchAd Timeout."));
+            this.f6348a.b = null;
+            this.f6348a = null;
         }
         if (TextUtils.isEmpty(str)) {
             return;
         }
-        h hVar = this.d.get(str);
+        h hVar = (h) this.d.get(str);
         this.d.remove(str);
         if (hVar != null) {
             if (hVar instanceof e) {
@@ -263,17 +249,16 @@ public class c extends com.anythink.core.common.f<g> {
             return;
         }
         com.anythink.core.common.e.e eVar2 = new com.anythink.core.common.e.e();
-        eVar2.x(this.f6687c);
+        eVar2.x(this.c);
         eVar2.y(str);
         eVar2.z("4");
         eVar2.w("0");
         eVar2.a(true);
-        com.anythink.core.common.j.c.a(eVar2, ErrorCode.getErrorCode(ErrorCode.timeOutError, "", "Splash FetchAd Timeout."));
+        com.anythink.core.common.j.c.a(eVar2, ErrorCode.getErrorCode("2001", "", "Splash FetchAd Timeout."));
     }
 
-    @Override // com.anythink.core.common.f
     public final com.anythink.core.common.e.b a(Context context, boolean z, boolean z2, Map<String, Object> map) {
-        d dVar = this.f9188a;
+        d dVar = this.f6348a;
         com.anythink.core.common.e.b bVar = null;
         if (dVar != null) {
             bVar = null;
@@ -294,16 +279,14 @@ public class c extends com.anythink.core.common.f<g> {
         return super.a(context, z, z2, map);
     }
 
-    @Override // com.anythink.core.common.f
-    public final /* synthetic */ h a(g gVar) {
-        g gVar2 = gVar;
-        e eVar = new e(gVar2.a());
-        eVar.T = gVar2.h;
-        eVar.a(gVar2.d);
+    public final /* synthetic */ h a(com.anythink.core.common.j jVar) {
+        g gVar = (g) jVar;
+        e eVar = new e(gVar.a());
+        eVar.T = gVar.h;
+        eVar.a(gVar.d);
         return eVar;
     }
 
-    @Override // com.anythink.core.common.f
     public final String a() {
         return "4";
     }
@@ -312,15 +295,15 @@ public class c extends com.anythink.core.common.f<g> {
         synchronized (this) {
             final com.anythink.core.common.e.b a2 = a((Context) activity, false, true, map);
             if (a2 == null) {
-                Log.e("anythink", "Splash No Cache.");
+                Log.e(com.anythink.expressad.d.b.f4297c, "Splash No Cache.");
                 return;
             }
             if (a2 != null && (a2.e() instanceof CustomSplashAdapter)) {
                 a(a2);
                 f();
                 a2.a(a2.d() + 1);
-                if (this.f9188a != null && this.f9188a.d == a2) {
-                    this.f9188a.d = null;
+                if (this.f6348a != null && this.f6348a.d == a2) {
+                    this.f6348a.d = null;
                 }
                 com.anythink.core.common.k.b.a.a().a(new Runnable() { // from class: com.anythink.splashad.a.c.1
                     @Override // java.lang.Runnable
@@ -347,7 +330,7 @@ public class c extends com.anythink.core.common.f<g> {
                                 IExHandler b = n.a().b();
                                 if (b != null) {
                                     CustomSplashAdapter customSplashAdapter2 = customSplashAdapter;
-                                    customSplashAdapter2.setAdDownloadListener(b.createDownloadListener(customSplashAdapter2, null, aTEventInterface));
+                                    customSplashAdapter2.setAdDownloadListener(b.createDownloadListener(customSplashAdapter2, (BaseAd) null, aTEventInterface));
                                 }
                                 boolean z = aTSplashSkipInfo != null && aTSplashSkipInfo.canUseCustomSkipView();
                                 boolean isSupportCustomSkipView = customSplashAdapter.isSupportCustomSkipView();
@@ -363,7 +346,7 @@ public class c extends com.anythink.core.common.f<g> {
                                 }
                                 if (!z) {
                                     if (aTSplashSkipInfo != null) {
-                                        Log.e("anythink", "This AdSource does't support 'Custom SkipView' or 'SkipView' is null.");
+                                        Log.e(com.anythink.expressad.d.b.f4297c, "This AdSource does't support 'Custom SkipView' or 'SkipView' is null.");
                                         return;
                                     }
                                     return;
@@ -397,15 +380,14 @@ public class c extends com.anythink.core.common.f<g> {
         g gVar = new g();
         gVar.a(context);
         gVar.b = aTMediationRequestInfo;
-        gVar.f6763c = str;
+        gVar.c = str;
         gVar.h = i;
         gVar.d = i2;
         gVar.e = bVar2;
         gVar.g = map;
-        super.a(this.b, "4", this.f6687c, (String) gVar, (com.anythink.core.common.b.a) bVar);
+        super.a(this.b, "4", this.c, gVar, bVar);
     }
 
-    @Override // com.anythink.core.common.f
     public final void a(String str, com.anythink.core.common.b.a aVar) {
         if (aVar == null || !(aVar instanceof b)) {
             return;
@@ -413,27 +395,24 @@ public class c extends com.anythink.core.common.f<g> {
         ((b) aVar).setRequestId(str);
     }
 
-    @Override // com.anythink.core.common.f
-    public final /* synthetic */ boolean a(String str, String str2, g gVar, com.anythink.core.common.b.a aVar) {
-        g gVar2 = gVar;
+    public final /* synthetic */ boolean a(String str, String str2, com.anythink.core.common.j jVar, com.anythink.core.common.b.a aVar) {
+        g gVar = (g) jVar;
         if (aVar == null || !(aVar instanceof b)) {
             return false;
         }
         d dVar = new d(this.b);
-        this.f9188a = dVar;
-        dVar.a(gVar2.a(), str, str2, gVar2.b, gVar2.f6763c, (b) aVar, gVar2.h);
+        this.f6348a = dVar;
+        dVar.a(gVar.a(), str, str2, gVar.b, gVar.c, (b) aVar, gVar.h);
         return true;
     }
 
-    @Override // com.anythink.core.common.f
     public final boolean g() {
-        d dVar = this.f9188a;
+        d dVar = this.f6348a;
         return dVar != null && dVar.a();
     }
 
-    @Override // com.anythink.core.common.f
     public final boolean i() {
-        d dVar = this.f9188a;
+        d dVar = this.f6348a;
         return dVar != null ? !TextUtils.isEmpty(dVar.e) : super.i();
     }
 }

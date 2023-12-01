@@ -28,7 +28,7 @@ public class am {
         Boolean Z;
 
         /* renamed from: a  reason: collision with root package name */
-        Integer f22993a;
+        Integer f9385a;
         Integer b;
 
         /* renamed from: Code */
@@ -44,7 +44,7 @@ public class am {
             aVar.F = this.F;
             aVar.D = this.D;
             aVar.L = this.L;
-            aVar.f22993a = this.f22993a;
+            aVar.f9385a = this.f9385a;
             aVar.b = this.b;
             return aVar;
         }
@@ -159,7 +159,7 @@ public class am {
             if (this.F == null) {
                 return;
             }
-            this.F.f22993a = num;
+            this.F.f9385a = num;
             Code(this.F);
         }
     }
@@ -328,7 +328,7 @@ public class am {
             if (this.F == null) {
                 return null;
             }
-            return this.F.f22993a;
+            return this.F.f9385a;
         }
     }
 

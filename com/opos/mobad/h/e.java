@@ -20,7 +20,7 @@ public class e extends g {
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private s f26203c;
+    private s f12515c;
     private Context d;
     private String e;
     private com.opos.mobad.cmn.a.a f;
@@ -65,20 +65,20 @@ public class e extends g {
             }
         };
         this.d = context;
-        this.f26203c = sVar;
+        this.f12515c = sVar;
         this.e = str;
         this.f = new com.opos.mobad.cmn.a.a(context, str, dVar);
         this.g = cVar;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public List<p> a(a.C0707a c0707a) {
+    public List<p> a(a.C0537a c0537a) {
         ArrayList arrayList = null;
         ArrayList arrayList2 = null;
-        if (c0707a != null) {
+        if (c0537a != null) {
             ArrayList arrayList3 = null;
             try {
-                List<AdItemData> f = c0707a.f26482a.f();
+                List<AdItemData> f = c0537a.f12794a.f();
                 arrayList2 = null;
                 if (f != null) {
                     arrayList2 = null;
@@ -93,7 +93,7 @@ public class e extends g {
                             ArrayList arrayList4 = arrayList;
                             if (it.next() != null) {
                                 ArrayList arrayList5 = arrayList;
-                                p b = b(c0707a);
+                                p b = b(c0537a);
                                 if (b != null) {
                                     ArrayList arrayList6 = arrayList;
                                     if (arrayList == null) {
@@ -115,13 +115,13 @@ public class e extends g {
         return arrayList2;
     }
 
-    private p b(a.C0707a c0707a) {
+    private p b(a.C0537a c0537a) {
         try {
-            com.opos.mobad.n.a a2 = com.opos.mobad.h.d.e.a(this.d, c0707a, null);
+            com.opos.mobad.n.a a2 = com.opos.mobad.h.d.e.a(this.d, c0537a, null);
             if (a2 == null) {
                 return null;
             }
-            return new com.opos.mobad.h.b.e(this.d, c0707a, this.e, this.f, a2, this.h, this.g);
+            return new com.opos.mobad.h.b.e(this.d, c0537a, this.e, this.f, a2, this.h, this.g);
         } catch (Exception e) {
             com.opos.cmn.an.f.a.a("InterNativeTempletAd", "", (Throwable) e);
             return null;
@@ -138,34 +138,34 @@ public class e extends g {
         this.b = 0;
         com.opos.mobad.model.b.a(this.d.getApplicationContext()).a(this.d, this.e, 4, str, i, new b.a() { // from class: com.opos.mobad.h.e.1
             @Override // com.opos.mobad.model.b.a
-            public void a(int i2, a.C0707a c0707a) {
+            public void a(int i2, a.C0537a c0537a) {
                 String str2;
                 String c2;
                 String a2;
                 String str3;
-                if (c0707a != null && c0707a.f26482a.a() == 1) {
-                    com.opos.mobad.service.a.a().a(e.this.e, 4, c0707a.b.f(), c0707a.b.b(), c0707a.f26483c.aa(), c0707a.b.a(), c0707a.b.J());
-                    e.this.b = c0707a.f26482a.c();
+                if (c0537a != null && c0537a.f12794a.a() == 1) {
+                    com.opos.mobad.service.a.a().a(e.this.e, 4, c0537a.b.f(), c0537a.b.b(), c0537a.f12795c.aa(), c0537a.b.a(), c0537a.b.J());
+                    e.this.b = c0537a.f12794a.c();
                     e.this.a(-1, com.opos.cmn.a.a(-1));
                     return;
                 }
                 e.this.b = i2;
-                List a3 = e.this.a(c0707a);
+                List a3 = e.this.a(c0537a);
                 if (a3 != null) {
                     e.this.a(a3);
                     return;
                 }
                 Context context = e.this.d;
-                if (c0707a == null) {
+                if (c0537a == null) {
                     str2 = e.this.e;
                     str3 = "";
                     c2 = "";
                     a2 = "";
                 } else {
-                    String b = c0707a.b.b();
+                    String b = c0537a.b.b();
                     str2 = e.this.e;
-                    c2 = c0707a.b.c();
-                    a2 = c0707a.b.a();
+                    c2 = c0537a.b.c();
+                    a2 = c0537a.b.a();
                     str3 = b;
                 }
                 com.opos.mobad.cmn.a.b.d.a(context, str3, str2, "4", c2, a2, (Map<String, String>) null);
@@ -179,7 +179,7 @@ public class e extends g {
                 }
                 e.this.a(i2, str2);
             }
-        }, com.opos.mobad.model.b.f26382c);
+        }, com.opos.mobad.model.b.f12694c);
         return true;
     }
 

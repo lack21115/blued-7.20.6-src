@@ -15,27 +15,25 @@ import com.anythink.core.common.c.m;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/c/c.class */
 public class c extends b {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static c f6571a;
+    private static c a;
 
     private c(Context context) {
         super(context);
     }
 
     public static c a(Context context) {
-        if (f6571a == null) {
+        if (a == null) {
             synchronized (c.class) {
                 try {
-                    if (f6571a == null) {
-                        f6571a = new c(context.getApplicationContext());
+                    if (a == null) {
+                        a = new c(context.getApplicationContext());
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f6571a;
+        return a;
     }
 
     private void c(SQLiteDatabase sQLiteDatabase) {

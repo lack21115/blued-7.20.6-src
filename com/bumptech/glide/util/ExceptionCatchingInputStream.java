@@ -8,19 +8,19 @@ import java.util.Queue;
 public class ExceptionCatchingInputStream extends InputStream {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Queue<ExceptionCatchingInputStream> f21098a = Util.a(0);
+    private static final Queue<ExceptionCatchingInputStream> f7492a = Util.a(0);
     private InputStream b;
 
     /* renamed from: c  reason: collision with root package name */
-    private IOException f21099c;
+    private IOException f7493c;
 
     ExceptionCatchingInputStream() {
     }
 
     public static ExceptionCatchingInputStream a(InputStream inputStream) {
         ExceptionCatchingInputStream poll;
-        synchronized (f21098a) {
-            poll = f21098a.poll();
+        synchronized (f7492a) {
+            poll = f7492a.poll();
         }
         ExceptionCatchingInputStream exceptionCatchingInputStream = poll;
         if (poll == null) {
@@ -31,7 +31,7 @@ public class ExceptionCatchingInputStream extends InputStream {
     }
 
     public IOException a() {
-        return this.f21099c;
+        return this.f7493c;
     }
 
     @Override // java.io.InputStream
@@ -40,10 +40,10 @@ public class ExceptionCatchingInputStream extends InputStream {
     }
 
     public void b() {
-        this.f21099c = null;
+        this.f7493c = null;
         this.b = null;
-        synchronized (f21098a) {
-            f21098a.offer(this);
+        synchronized (f7492a) {
+            f7492a.offer(this);
         }
     }
 
@@ -71,7 +71,7 @@ public class ExceptionCatchingInputStream extends InputStream {
         try {
             return this.b.read();
         } catch (IOException e) {
-            this.f21099c = e;
+            this.f7493c = e;
             return -1;
         }
     }
@@ -81,7 +81,7 @@ public class ExceptionCatchingInputStream extends InputStream {
         try {
             return this.b.read(bArr);
         } catch (IOException e) {
-            this.f21099c = e;
+            this.f7493c = e;
             return -1;
         }
     }
@@ -91,7 +91,7 @@ public class ExceptionCatchingInputStream extends InputStream {
         try {
             return this.b.read(bArr, i, i2);
         } catch (IOException e) {
-            this.f21099c = e;
+            this.f7493c = e;
             return -1;
         }
     }
@@ -108,7 +108,7 @@ public class ExceptionCatchingInputStream extends InputStream {
         try {
             return this.b.skip(j);
         } catch (IOException e) {
-            this.f21099c = e;
+            this.f7493c = e;
             return 0L;
         }
     }

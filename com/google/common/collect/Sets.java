@@ -1,5 +1,6 @@
 package com.google.common.collect;
 
+import com.cdo.oaps.ad.OapsKey;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Predicate;
 import com.google.common.base.Predicates;
@@ -73,7 +74,7 @@ public final class Sets {
                         return num != null && bitSet.get(num.intValue());
                     }
 
-                    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+                    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
                     public Iterator<E> iterator() {
                         return new AbstractIterator<E>() { // from class: com.google.common.collect.Sets.5.1.1.1
                             int i = -1;
@@ -87,7 +88,7 @@ public final class Sets {
                         };
                     }
 
-                    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+                    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
                     public int size() {
                         return AnonymousClass5.this.val$size;
                     }
@@ -116,12 +117,12 @@ public final class Sets {
             return z;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+        @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
         public Iterator<Set<E>> iterator() {
             return new AnonymousClass1();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
         public int size() {
             return IntMath.binomial(this.val$index.size(), this.val$size);
         }
@@ -262,7 +263,7 @@ public final class Sets {
             return this.forward.tailSet(e, z).descendingSet();
         }
 
-        @Override // com.google.common.collect.ForwardingSortedSet, java.util.SortedSet, java.util.NavigableSet
+        @Override // com.google.common.collect.ForwardingSortedSet, java.util.SortedSet
         public SortedSet<E> headSet(E e) {
             return standardHeadSet(e);
         }
@@ -272,7 +273,7 @@ public final class Sets {
             return this.forward.lower(e);
         }
 
-        @Override // com.google.common.collect.ForwardingCollection, java.util.Collection, java.lang.Iterable
+        @Override // com.google.common.collect.ForwardingCollection, java.util.Collection, java.lang.Iterable, java.util.Set
         public Iterator<E> iterator() {
             return this.forward.descendingIterator();
         }
@@ -302,7 +303,7 @@ public final class Sets {
             return this.forward.subSet(e2, z2, e, z).descendingSet();
         }
 
-        @Override // com.google.common.collect.ForwardingSortedSet, java.util.SortedSet, java.util.NavigableSet
+        @Override // com.google.common.collect.ForwardingSortedSet, java.util.SortedSet
         public SortedSet<E> subSet(E e, E e2) {
             return standardSubSet(e, e2);
         }
@@ -312,7 +313,7 @@ public final class Sets {
             return this.forward.headSet(e, z).descendingSet();
         }
 
-        @Override // com.google.common.collect.ForwardingSortedSet, java.util.SortedSet, java.util.NavigableSet
+        @Override // com.google.common.collect.ForwardingSortedSet, java.util.SortedSet
         public SortedSet<E> tailSet(E e) {
             return standardTailSet(e);
         }
@@ -442,7 +443,7 @@ public final class Sets {
             return (E) Iterators.find(this.unfiltered.iterator(), this.predicate);
         }
 
-        @Override // java.util.SortedSet, java.util.NavigableSet
+        @Override // java.util.SortedSet
         public SortedSet<E> headSet(E e) {
             return new FilteredSortedSet(((SortedSet) this.unfiltered).headSet(e), this.predicate);
         }
@@ -460,20 +461,19 @@ public final class Sets {
             }
         }
 
-        @Override // java.util.SortedSet, java.util.NavigableSet
+        @Override // java.util.SortedSet
         public SortedSet<E> subSet(E e, E e2) {
             return new FilteredSortedSet(((SortedSet) this.unfiltered).subSet(e, e2), this.predicate);
         }
 
-        @Override // java.util.SortedSet, java.util.NavigableSet
+        @Override // java.util.SortedSet
         public SortedSet<E> tailSet(E e) {
             return new FilteredSortedSet(((SortedSet) this.unfiltered).tailSet(e), this.predicate);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8110460-dex2jar.jar:com/google/common/collect/Sets$ImprovedAbstractSet.class */
-    public static abstract class ImprovedAbstractSet<E> extends AbstractSet<E> {
+    static abstract class ImprovedAbstractSet<E> extends AbstractSet<E> {
         @Override // java.util.AbstractSet, java.util.AbstractCollection, java.util.Collection, java.util.Set
         public boolean removeAll(Collection<?> collection) {
             return Sets.removeAllImpl(this, collection);
@@ -518,7 +518,7 @@ public final class Sets {
             return false;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+        @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
         public Iterator<Set<E>> iterator() {
             return new AbstractIndexedListIterator<Set<E>>(size()) { // from class: com.google.common.collect.Sets.PowerSet.1
                 /* JADX INFO: Access modifiers changed from: protected */
@@ -529,7 +529,7 @@ public final class Sets {
             };
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
         public int size() {
             return 1 << this.inputSet.size();
         }
@@ -572,7 +572,7 @@ public final class Sets {
             return ImmutableSet.copyOf((Collection) this);
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+        @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
         public abstract UnmodifiableIterator<E> iterator();
 
         @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
@@ -614,7 +614,7 @@ public final class Sets {
             return false;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+        @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
         public Iterator<E> iterator() {
             return new UnmodifiableIterator<E>() { // from class: com.google.common.collect.Sets.SubSet.1
                 final ImmutableList<E> elements;
@@ -642,7 +642,7 @@ public final class Sets {
             };
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
         public int size() {
             return Integer.bitCount(this.mask);
         }
@@ -745,7 +745,7 @@ public final class Sets {
 
     public static <E> Set<Set<E>> combinations(Set<E> set, int i) {
         ImmutableMap indexMap = Maps.indexMap(set);
-        CollectPreconditions.checkNonnegative(i, "size");
+        CollectPreconditions.checkNonnegative(i, OapsKey.KEY_SIZE);
         Preconditions.checkArgument(i <= indexMap.size(), "size (%s) must be <= set.size() (%s)", i, indexMap.size());
         return i == 0 ? ImmutableSet.of(ImmutableSet.of()) : i == indexMap.size() ? ImmutableSet.of(indexMap.keySet()) : new AnonymousClass5(i, indexMap);
     }
@@ -774,21 +774,21 @@ public final class Sets {
 
             @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
             public boolean contains(Object obj) {
-                return Set.this.contains(obj) && !set2.contains(obj);
+                return set.contains(obj) && !set2.contains(obj);
             }
 
             @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
             public boolean isEmpty() {
-                return set2.containsAll(Set.this);
+                return set2.containsAll(set);
             }
 
-            @Override // com.google.common.collect.Sets.SetView, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+            @Override // com.google.common.collect.Sets.SetView, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
             public UnmodifiableIterator<E> iterator() {
                 return new AbstractIterator<E>() { // from class: com.google.common.collect.Sets.3.1
                     final Iterator<E> itr;
 
                     {
-                        this.itr = Set.this.iterator();
+                        this.itr = set.iterator();
                     }
 
                     @Override // com.google.common.collect.AbstractIterator
@@ -804,10 +804,10 @@ public final class Sets {
                 };
             }
 
-            @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+            @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
             public int size() {
                 int i = 0;
-                for (E e : Set.this) {
+                for (E e : set) {
                     if (!set2.contains(e)) {
                         i++;
                     }
@@ -878,7 +878,7 @@ public final class Sets {
     }
 
     public static <E extends Enum<E>> ImmutableSet<E> immutableEnumSet(E e, E... eArr) {
-        return ImmutableEnumSet.asImmutable(EnumSet.of(e, eArr));
+        return ImmutableEnumSet.asImmutable(EnumSet.of((Enum) e, (Enum[]) eArr));
     }
 
     public static <E extends Enum<E>> ImmutableSet<E> immutableEnumSet(Iterable<E> iterable) {
@@ -891,7 +891,7 @@ public final class Sets {
         }
         Iterator<E> it = iterable.iterator();
         if (it.hasNext()) {
-            EnumSet of = EnumSet.of(it.next());
+            EnumSet of = EnumSet.of((Enum) it.next());
             Iterators.addAll(of, it);
             return ImmutableEnumSet.asImmutable(of);
         }
@@ -909,26 +909,26 @@ public final class Sets {
 
             @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
             public boolean contains(Object obj) {
-                return Set.this.contains(obj) && set2.contains(obj);
+                return set.contains(obj) && set2.contains(obj);
             }
 
             @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
             public boolean containsAll(Collection<?> collection) {
-                return Set.this.containsAll(collection) && set2.containsAll(collection);
+                return set.containsAll(collection) && set2.containsAll(collection);
             }
 
             @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
             public boolean isEmpty() {
-                return Collections.disjoint(set2, Set.this);
+                return Collections.disjoint(set2, set);
             }
 
-            @Override // com.google.common.collect.Sets.SetView, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+            @Override // com.google.common.collect.Sets.SetView, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
             public UnmodifiableIterator<E> iterator() {
                 return new AbstractIterator<E>() { // from class: com.google.common.collect.Sets.2.1
                     final Iterator<E> itr;
 
                     {
-                        this.itr = Set.this.iterator();
+                        this.itr = set.iterator();
                     }
 
                     @Override // com.google.common.collect.AbstractIterator
@@ -944,10 +944,10 @@ public final class Sets {
                 };
             }
 
-            @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+            @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
             public int size() {
                 int i = 0;
-                for (E e : Set.this) {
+                for (E e : set) {
                     if (set2.contains(e)) {
                         i++;
                     }
@@ -1113,17 +1113,17 @@ public final class Sets {
 
             @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
             public boolean contains(Object obj) {
-                return set2.contains(obj) ^ Set.this.contains(obj);
+                return set2.contains(obj) ^ set.contains(obj);
             }
 
             @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
             public boolean isEmpty() {
-                return Set.this.equals(set2);
+                return set.equals(set2);
             }
 
-            @Override // com.google.common.collect.Sets.SetView, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+            @Override // com.google.common.collect.Sets.SetView, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
             public UnmodifiableIterator<E> iterator() {
-                final Iterator<E> it = Set.this.iterator();
+                final Iterator<E> it = set.iterator();
                 final Iterator<E> it2 = set2.iterator();
                 return new AbstractIterator<E>() { // from class: com.google.common.collect.Sets.4.1
                     @Override // com.google.common.collect.AbstractIterator
@@ -1136,7 +1136,7 @@ public final class Sets {
                         }
                         while (it2.hasNext()) {
                             E e2 = (E) it2.next();
-                            if (!Set.this.contains(e2)) {
+                            if (!set.contains(e2)) {
                                 return e2;
                             }
                         }
@@ -1145,16 +1145,16 @@ public final class Sets {
                 };
             }
 
-            @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+            @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
             public int size() {
                 int i = 0;
-                for (E e : Set.this) {
+                for (E e : set) {
                     if (!set2.contains(e)) {
                         i++;
                     }
                 }
                 for (E e2 : set2) {
-                    if (!Set.this.contains(e2)) {
+                    if (!set.contains(e2)) {
                         i++;
                     }
                 }
@@ -1178,34 +1178,34 @@ public final class Sets {
 
             @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
             public boolean contains(Object obj) {
-                return Set.this.contains(obj) || set2.contains(obj);
+                return set.contains(obj) || set2.contains(obj);
             }
 
             @Override // com.google.common.collect.Sets.SetView
             public <S extends Set<E>> S copyInto(S s) {
-                s.addAll(Set.this);
+                s.addAll(set);
                 s.addAll(set2);
                 return s;
             }
 
             @Override // com.google.common.collect.Sets.SetView
             public ImmutableSet<E> immutableCopy() {
-                return new ImmutableSet.Builder().addAll((Iterable) Set.this).addAll((Iterable) set2).build();
+                return new ImmutableSet.Builder().addAll((Iterable) set).addAll((Iterable) set2).build();
             }
 
             @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
             public boolean isEmpty() {
-                return Set.this.isEmpty() && set2.isEmpty();
+                return set.isEmpty() && set2.isEmpty();
             }
 
-            @Override // com.google.common.collect.Sets.SetView, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+            @Override // com.google.common.collect.Sets.SetView, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
             public UnmodifiableIterator<E> iterator() {
                 return new AbstractIterator<E>() { // from class: com.google.common.collect.Sets.1.1
                     final Iterator<? extends E> itr1;
                     final Iterator<? extends E> itr2;
 
                     {
-                        this.itr1 = Set.this.iterator();
+                        this.itr1 = set.iterator();
                         this.itr2 = set2.iterator();
                     }
 
@@ -1216,7 +1216,7 @@ public final class Sets {
                         }
                         while (this.itr2.hasNext()) {
                             E next = this.itr2.next();
-                            if (!Set.this.contains(next)) {
+                            if (!set.contains(next)) {
                                 return next;
                             }
                         }
@@ -1225,11 +1225,11 @@ public final class Sets {
                 };
             }
 
-            @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+            @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
             public int size() {
-                int size = Set.this.size();
+                int size = set.size();
                 for (E e : set2) {
-                    if (!Set.this.contains(e)) {
+                    if (!set.contains(e)) {
                         size++;
                     }
                 }

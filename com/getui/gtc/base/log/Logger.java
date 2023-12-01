@@ -4,6 +4,7 @@ import android.content.Context;
 import com.getui.gtc.base.GtcProvider;
 import com.getui.gtc.base.log.a.a;
 import com.getui.gtc.base.log.a.b;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -138,23 +139,23 @@ public class Logger {
     }
 
     public void setGlobalTag(String str) {
-        this.logcatLogFormatter.f21916a = str;
+        this.logcatLogFormatter.f8309a = str;
         com.getui.gtc.base.log.c.a aVar = this.fileLogFormatter;
         if (aVar != null) {
-            aVar.f21914a = str;
+            aVar.f8307a = str;
         }
     }
 
     public void setLogFileNameSuffix(String str) {
         com.getui.gtc.base.log.b.a aVar = this.fileLogDestnation;
         if (aVar != null) {
-            aVar.f21910c = aVar.f21909a.getPackageName() + "-" + str + "-" + new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date()) + com.anythink.china.common.a.a.f;
-            aVar.b = new File(aVar.f21909a.getExternalFilesDir(null), aVar.f21910c);
+            aVar.f8303c = aVar.f8302a.getPackageName() + Constants.ACCEPT_TIME_SEPARATOR_SERVER + str + Constants.ACCEPT_TIME_SEPARATOR_SERVER + new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date()) + ".log";
+            aVar.b = new File(aVar.f8302a.getExternalFilesDir(null), aVar.f8303c);
         }
     }
 
     public void setLogcatEnable(boolean z) {
-        this.logcatLogController.f21908a = z;
+        this.logcatLogController.f8301a = z;
     }
 
     public void setStackOffset(int i) {

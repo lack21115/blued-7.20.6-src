@@ -8,21 +8,21 @@ import com.tencent.qmsp.sdk.base.f;
 public class a implements com.tencent.qmsp.sdk.base.b {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f38639a;
+    private Context f24948a;
 
     @Override // com.tencent.qmsp.sdk.base.b
     public String a() {
-        return b.b(this.f38639a);
+        return b.b(this.f24948a);
     }
 
     @Override // com.tencent.qmsp.sdk.base.b
     public void a(Context context, IVendorCallback iVendorCallback) {
-        this.f38639a = context;
+        this.f24948a = context;
     }
 
     @Override // com.tencent.qmsp.sdk.base.b
     public String b() {
-        Context context = this.f38639a;
+        Context context = this.f24948a;
         return b.a(context, f.a(context));
     }
 
@@ -37,7 +37,7 @@ public class a implements com.tencent.qmsp.sdk.base.b {
 
     @Override // com.tencent.qmsp.sdk.base.b
     public boolean e() {
-        return b.a(this.f38639a);
+        return b.a(this.f24948a);
     }
 
     @Override // com.tencent.qmsp.sdk.base.b

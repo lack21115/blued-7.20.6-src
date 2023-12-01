@@ -30,11 +30,11 @@ public class ScanningRelativeLayout extends AutoScaleSizeRelativeLayout {
     private Bitmap S;
 
     /* renamed from: a  reason: collision with root package name */
-    private float f23038a;
+    private float f9430a;
     private float b;
 
     /* renamed from: c  reason: collision with root package name */
-    private float f23039c;
+    private float f9431c;
     private ValueAnimator d;
     private PorterDuffXfermode e;
 
@@ -63,7 +63,7 @@ public class ScanningRelativeLayout extends AutoScaleSizeRelativeLayout {
             this.F = decodeResource;
             float f = -decodeResource.getWidth();
             this.b = f;
-            this.f23038a = f;
+            this.f9430a = f;
             Paint paint = new Paint(1);
             this.L = paint;
             paint.setDither(true);
@@ -95,14 +95,14 @@ public class ScanningRelativeLayout extends AutoScaleSizeRelativeLayout {
     /* JADX INFO: Access modifiers changed from: private */
     public void S() {
         try {
-            ValueAnimator ofPropertyValuesHolder = ValueAnimator.ofPropertyValuesHolder(PropertyValuesHolder.ofKeyframe(View.TRANSLATION_X, Keyframe.ofFloat(0.0f, this.b), Keyframe.ofFloat(1.0f, this.f23039c)));
+            ValueAnimator ofPropertyValuesHolder = ValueAnimator.ofPropertyValuesHolder(PropertyValuesHolder.ofKeyframe(View.TRANSLATION_X, Keyframe.ofFloat(0.0f, this.b), Keyframe.ofFloat(1.0f, this.f9431c)));
             this.d = ofPropertyValuesHolder;
             ofPropertyValuesHolder.setInterpolator(new fl(0.2f, 0.0f, 0.2f, 1.0f));
             this.d.setDuration(com.igexin.push.config.c.j);
             this.d.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.huawei.openalliance.ad.views.ScanningRelativeLayout.1
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    ScanningRelativeLayout.this.f23038a = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                    ScanningRelativeLayout.this.f9430a = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                     ScanningRelativeLayout.this.postInvalidate();
                 }
             });
@@ -133,7 +133,7 @@ public class ScanningRelativeLayout extends AutoScaleSizeRelativeLayout {
         } catch (Throwable th) {
             ge.I("ScanningRelativeLayout", "cancel animation exception: %s", th.getClass().getSimpleName());
         }
-        this.f23038a = this.b;
+        this.f9430a = this.b;
         postInvalidate();
     }
 
@@ -156,15 +156,14 @@ public class ScanningRelativeLayout extends AutoScaleSizeRelativeLayout {
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void dispatchDraw(Canvas canvas) {
+    protected void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
         if (this.S == null) {
             return;
         }
         try {
-            canvas.drawBitmap(this.F, this.f23038a, 0.0f, this.L);
+            canvas.drawBitmap(this.F, this.f9430a, 0.0f, this.L);
             int saveLayer = canvas.saveLayer(0.0f, 0.0f, getWidth(), getHeight(), this.L, 31);
             this.L.setXfermode(this.e);
             canvas.drawBitmap(this.S, 0.0f, 0.0f, this.L);
@@ -175,9 +174,8 @@ public class ScanningRelativeLayout extends AutoScaleSizeRelativeLayout {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         ValueAnimator valueAnimator = this.d;
         if (valueAnimator == null || !valueAnimator.isRunning()) {
@@ -186,12 +184,11 @@ public class ScanningRelativeLayout extends AutoScaleSizeRelativeLayout {
         this.d.cancel();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onSizeChanged(int i, int i2, int i3, int i4) {
+    protected void onSizeChanged(int i, int i2, int i3, int i4) {
         super.onSizeChanged(i, i2, i3, i4);
         C();
-        this.f23039c = i;
+        this.f9431c = i;
     }
 
     public void setRadius(int i) {

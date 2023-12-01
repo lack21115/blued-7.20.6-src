@@ -19,7 +19,7 @@ import com.chad.library.adapter.base.BaseViewHolder;
 public class CircleTextVoteEditAdapter extends BaseQuickAdapter<CircleTextVote, BaseViewHolder> {
 
     /* renamed from: a  reason: collision with root package name */
-    private OnEditChangeListener f20488a;
+    private OnEditChangeListener f6882a;
 
     /* loaded from: source-7206380-dex2jar.jar:com/blued/community/widget/vote/text/adapter/CircleTextVoteEditAdapter$OnEditChangeListener.class */
     public interface OnEditChangeListener {
@@ -41,13 +41,13 @@ public class CircleTextVoteEditAdapter extends BaseQuickAdapter<CircleTextVote, 
                 Tracker.onClick(dialogInterface, i2);
                 CircleTextVoteEditAdapter.this.mData.remove(i);
                 CircleTextVoteEditAdapter.this.notifyDataSetChanged();
-                CircleTextVoteEditAdapter.this.f20488a.a();
+                CircleTextVoteEditAdapter.this.f6882a.a();
             }
         }, this.mContext.getString(R.string.biao_v4_cancel), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
     }
 
     public void a(OnEditChangeListener onEditChangeListener) {
-        this.f20488a = onEditChangeListener;
+        this.f6882a = onEditChangeListener;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -65,8 +65,8 @@ public class CircleTextVoteEditAdapter extends BaseQuickAdapter<CircleTextVote, 
             @Override // android.text.TextWatcher
             public void afterTextChanged(Editable editable) {
                 circleTextVote.option = editText.getText().toString();
-                if (CircleTextVoteEditAdapter.this.f20488a != null) {
-                    CircleTextVoteEditAdapter.this.f20488a.a();
+                if (CircleTextVoteEditAdapter.this.f6882a != null) {
+                    CircleTextVoteEditAdapter.this.f6882a.a();
                 }
             }
 

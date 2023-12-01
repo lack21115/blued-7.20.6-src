@@ -18,11 +18,11 @@ import com.tencent.cloud.huiyansdkface.normal.tools.WLogger;
 public class PreviewFrameLayout extends RelativeLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    private com.tencent.cloud.huiyansdkface.a.g.c f35772a;
+    private com.tencent.cloud.huiyansdkface.a.g.c f22081a;
     private float b;
 
     /* renamed from: c  reason: collision with root package name */
-    private double f35773c;
+    private double f22082c;
     private int d;
     private int e;
     private ImageView f;
@@ -33,10 +33,10 @@ public class PreviewFrameLayout extends RelativeLayout {
 
     public PreviewFrameLayout(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f35773c = 1.3333333333333333d;
+        this.f22082c = 1.3333333333333333d;
         ViewGroup.LayoutParams layoutParams = new RelativeLayout.LayoutParams(-1, -1);
         com.tencent.cloud.huiyansdkface.a.g.c cVar = new com.tencent.cloud.huiyansdkface.a.g.c(context.getApplicationContext());
-        this.f35772a = cVar;
+        this.f22081a = cVar;
         addView(cVar, layoutParams);
         this.j = new i(context);
         ImageView imageView = new ImageView(context.getApplicationContext());
@@ -72,7 +72,7 @@ public class PreviewFrameLayout extends RelativeLayout {
         Matrix matrix = new Matrix();
         if (z) {
             float height = getHeight() / this.e;
-            int left2 = (int) (getLeft() - (((getHeight() * this.f35773c) - getWidth()) / 2.0d));
+            int left2 = (int) (getLeft() - (((getHeight() * this.f22082c) - getWidth()) / 2.0d));
             int top2 = getTop();
             matrix.postScale(height, height, 0.0f, 0.0f);
             left = left2;
@@ -90,7 +90,7 @@ public class PreviewFrameLayout extends RelativeLayout {
     }
 
     public com.tencent.cloud.huiyansdkface.a.g.c a() {
-        return this.f35772a;
+        return this.f22081a;
     }
 
     public void a(int i, int i2) {
@@ -114,9 +114,8 @@ public class PreviewFrameLayout extends RelativeLayout {
         return this.j;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.RelativeLayout, android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         int paddingTop;
         int size = View.MeasureSpec.getSize(i);
         int size2 = View.MeasureSpec.getSize(i2);
@@ -130,7 +129,7 @@ public class PreviewFrameLayout extends RelativeLayout {
         }
         double d = i4;
         double d2 = i3;
-        double d3 = this.f35773c;
+        double d3 = this.f22082c;
         if (d < d2 * d3) {
             i4 = (int) (d2 * d3);
         } else {
@@ -155,8 +154,8 @@ public class PreviewFrameLayout extends RelativeLayout {
         if (d <= 0.0d) {
             throw new IllegalArgumentException();
         }
-        if (this.f35773c != d) {
-            this.f35773c = d;
+        if (this.f22082c != d) {
+            this.f22082c = d;
             requestLayout();
         }
     }

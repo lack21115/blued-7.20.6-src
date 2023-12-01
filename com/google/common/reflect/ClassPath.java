@@ -1,7 +1,6 @@
 package com.google.common.reflect;
 
 import android.content.ContentResolver;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.google.common.base.CharMatcher;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Predicate;
@@ -118,12 +117,12 @@ public final class ClassPath {
                 if (file2.isDirectory()) {
                     File canonicalFile = file2.getCanonicalFile();
                     if (set.add(canonicalFile)) {
-                        scanDirectory(canonicalFile, classLoader, str + name + BridgeUtil.SPLIT_MARK, set);
+                        scanDirectory(canonicalFile, classLoader, str + name + "/", set);
                         set.remove(canonicalFile);
                     }
                 } else {
                     String str2 = str + name;
-                    if (!str2.equals(JarFile.MANIFEST_NAME)) {
+                    if (!str2.equals("META-INF/MANIFEST.MF")) {
                         this.resources.get((SetMultimap<ClassLoader, String>) classLoader).add(str2);
                     }
                 }
@@ -151,7 +150,7 @@ public final class ClassPath {
             Enumeration<JarEntry> entries = jarFile.entries();
             while (entries.hasMoreElements()) {
                 JarEntry nextElement = entries.nextElement();
-                if (!nextElement.isDirectory() && !nextElement.getName().equals(JarFile.MANIFEST_NAME)) {
+                if (!nextElement.isDirectory() && !nextElement.getName().equals("META-INF/MANIFEST.MF")) {
                     this.resources.get((SetMultimap<ClassLoader, String>) classLoader).add(nextElement.getName());
                 }
             }
@@ -243,7 +242,7 @@ public final class ClassPath {
                     }
                 }
             }
-            return ImmutableMap.copyOf(newLinkedHashMap);
+            return ImmutableMap.copyOf((Map) newLinkedHashMap);
         }
 
         static URL getClassPathEntry(File file, String str) throws MalformedURLException {

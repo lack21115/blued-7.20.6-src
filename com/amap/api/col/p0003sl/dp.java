@@ -11,13 +11,9 @@ import java.util.List;
 /* renamed from: com.amap.api.col.3sl.dp  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/dp.class */
 public final class dp {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static Rect f4863a = new Rect(188650473, 86189696, 234881023, 132353001);
+    private static Rect a = new Rect(188650473, 86189696, 234881023, 132353001);
     private static Rect[] b = {new Rect(210736889, 100537862, 224827128, 114562566), new Rect(195663608, 100144646, 210212601, 109123078)};
-
-    /* renamed from: c  reason: collision with root package name */
-    private static List<LatLng> f4864c = new ArrayList();
+    private static List<LatLng> c = new ArrayList();
 
     public static boolean a(double d, double d2) {
         int i = (int) ((d2 - 73.0d) / 0.5d);

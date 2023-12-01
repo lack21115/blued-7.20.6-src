@@ -16,11 +16,11 @@ import com.soft.blued.R;
 public final class FragmentVipCenterTabPageNewBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final LinearLayout f29019a;
+    public final LinearLayout f15329a;
     public final FrameLayout b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final LinearLayout f29020c;
+    public final LinearLayout f15330c;
     public final ImageView d;
     public final ImageView e;
     public final LinearLayout f;
@@ -43,9 +43,9 @@ public final class FragmentVipCenterTabPageNewBinding implements ViewBinding {
 
     private FragmentVipCenterTabPageNewBinding(ConstraintLayout constraintLayout, LinearLayout linearLayout, FrameLayout frameLayout, LinearLayout linearLayout2, ImageView imageView, ImageView imageView2, LinearLayout linearLayout3, CommonTopTitleNoTrans commonTopTitleNoTrans, CommonTopTitleNoTrans commonTopTitleNoTrans2, RecyclerView recyclerView, NestedScrollView nestedScrollView, RecyclerView recyclerView2, TextView textView, TextView textView2, TextView textView3, TextView textView4, LinearLayout linearLayout4, LinearLayout linearLayout5, LinearLayout linearLayout6, LinearLayout linearLayout7, LinearLayout linearLayout8, LinearLayout linearLayout9) {
         this.v = constraintLayout;
-        this.f29019a = linearLayout;
+        this.f15329a = linearLayout;
         this.b = frameLayout;
-        this.f29020c = linearLayout2;
+        this.f15330c = linearLayout2;
         this.d = imageView;
         this.e = imageView2;
         this.f = linearLayout3;
@@ -74,19 +74,19 @@ public final class FragmentVipCenterTabPageNewBinding implements ViewBinding {
             if (frameLayout != null) {
                 LinearLayout linearLayout2 = (LinearLayout) view.findViewById(2131364232);
                 if (linearLayout2 != null) {
-                    ImageView imageView = (ImageView) view.findViewById(2131365126);
+                    ImageView imageView = (ImageView) view.findViewById(R.id.iv_bg);
                     if (imageView != null) {
                         ImageView imageView2 = (ImageView) view.findViewById(R.id.iv_buy_btn);
                         if (imageView2 != null) {
                             LinearLayout linearLayout3 = (LinearLayout) view.findViewById(R.id.ll_renewal_statement);
                             if (linearLayout3 != null) {
-                                CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) view.findViewById(R.id.page_title);
-                                if (commonTopTitleNoTrans != null) {
-                                    CommonTopTitleNoTrans commonTopTitleNoTrans2 = (CommonTopTitleNoTrans) view.findViewById(R.id.page_title_hover);
-                                    if (commonTopTitleNoTrans2 != null) {
+                                CommonTopTitleNoTrans findViewById = view.findViewById(R.id.page_title);
+                                if (findViewById != null) {
+                                    CommonTopTitleNoTrans findViewById2 = view.findViewById(R.id.page_title_hover);
+                                    if (findViewById2 != null) {
                                         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.privilege_recycler_view);
                                         if (recyclerView != null) {
-                                            NestedScrollView nestedScrollView = (NestedScrollView) view.findViewById(2131369645);
+                                            NestedScrollView nestedScrollView = (NestedScrollView) view.findViewById(R.id.scroll_view);
                                             if (nestedScrollView != null) {
                                                 RecyclerView recyclerView2 = (RecyclerView) view.findViewById(R.id.tab_recycler_view);
                                                 if (recyclerView2 != null) {
@@ -94,7 +94,7 @@ public final class FragmentVipCenterTabPageNewBinding implements ViewBinding {
                                                     if (textView != null) {
                                                         TextView textView2 = (TextView) view.findViewById(R.id.tv_can_use_privilege);
                                                         if (textView2 != null) {
-                                                            TextView textView3 = (TextView) view.findViewById(2131371384);
+                                                            TextView textView3 = (TextView) view.findViewById(R.id.tv_explain);
                                                             if (textView3 != null) {
                                                                 TextView textView4 = (TextView) view.findViewById(2131372754);
                                                                 if (textView4 != null) {
@@ -110,7 +110,7 @@ public final class FragmentVipCenterTabPageNewBinding implements ViewBinding {
                                                                                     if (linearLayout8 != null) {
                                                                                         LinearLayout linearLayout9 = (LinearLayout) view.findViewById(R.id.vip_service_terms);
                                                                                         if (linearLayout9 != null) {
-                                                                                            return new FragmentVipCenterTabPageNewBinding((ConstraintLayout) view, linearLayout, frameLayout, linearLayout2, imageView, imageView2, linearLayout3, commonTopTitleNoTrans, commonTopTitleNoTrans2, recyclerView, nestedScrollView, recyclerView2, textView, textView2, textView3, textView4, linearLayout4, linearLayout5, linearLayout6, linearLayout7, linearLayout8, linearLayout9);
+                                                                                            return new FragmentVipCenterTabPageNewBinding((ConstraintLayout) view, linearLayout, frameLayout, linearLayout2, imageView, imageView2, linearLayout3, findViewById, findViewById2, recyclerView, nestedScrollView, recyclerView2, textView, textView2, textView3, textView4, linearLayout4, linearLayout5, linearLayout6, linearLayout7, linearLayout8, linearLayout9);
                                                                                         }
                                                                                         str = "vipServiceTerms";
                                                                                     } else {

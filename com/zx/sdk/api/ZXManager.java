@@ -176,7 +176,7 @@ public class ZXManager {
 
     public static void setDebug(boolean z) {
         try {
-            m.f42147a = z;
+            m.f28456a = z;
             ZXApi zXApi = api;
             if (zXApi != null) {
                 zXApi.setDebug(z);

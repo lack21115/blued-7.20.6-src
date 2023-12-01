@@ -26,10 +26,10 @@ public class HmsMsgService extends Service {
     static class a extends Handler {
 
         /* renamed from: a  reason: collision with root package name */
-        private Context f22888a;
+        private Context f9280a;
 
         a(Context context) {
-            this.f22888a = context;
+            this.f9280a = context;
         }
 
         @Override // android.os.Handler
@@ -38,20 +38,20 @@ public class HmsMsgService extends Service {
                 return;
             }
             Bundle data = message.getData();
-            if (Objects.equals(this.f22888a.getApplicationContext().getPackageManager().getNameForUid(message.sendingUid), HMSPackageManager.getInstance(this.f22888a).getHMSPackageName()) && data != null) {
-                if (HMSPackageManager.getInstance(this.f22888a).getHMSPackageStates() != PackageManagerHelper.PackageStates.ENABLED) {
+            if (Objects.equals(this.f9280a.getApplicationContext().getPackageManager().getNameForUid(message.sendingUid), HMSPackageManager.getInstance(this.f9280a).getHMSPackageName()) && data != null) {
+                if (HMSPackageManager.getInstance(this.f9280a).getHMSPackageStates() != PackageManagerHelper.PackageStates.ENABLED) {
                     HMSLog.i("HmsMsgService", "service not start by hms");
                 } else {
                     HMSLog.i("HmsMsgService", "chose push type");
                     if (Objects.equals(b.b(data, "push_action"), "com.huawei.push.msg.NOTIFY_MSG")) {
                         if (ResourceLoaderUtil.getmContext() == null) {
-                            ResourceLoaderUtil.setmContext(this.f22888a.getApplicationContext());
+                            ResourceLoaderUtil.setmContext(this.f9280a.getApplicationContext());
                         }
                         HMSLog.i("HmsMsgService", "invokeSelfShow");
-                        HmsMsgService.c(this.f22888a, data);
+                        HmsMsgService.c(this.f9280a, data);
                     } else if (Objects.equals(b.b(data, "push_action"), "com.huawei.push.msg.PASSBY_MSG")) {
                         HMSLog.i("HmsMsgService", "sendBroadcastToHms");
-                        HmsMsgService.d(this.f22888a, data);
+                        HmsMsgService.d(this.f9280a, data);
                     }
                 }
             }

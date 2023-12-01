@@ -37,17 +37,13 @@ import com.bytedance.applog.tracker.Tracker;
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/widget/menu/ActionSheet.class */
 public class ActionSheet extends BaseFragment implements View.OnClickListener {
     private ActionSheetListener b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private View f11198c;
+    private View c;
     private LinearLayout d;
     private ViewGroup e;
     private View f;
     private Attributes g;
     private LayoutInflater j;
-
-    /* renamed from: a  reason: collision with root package name */
-    private boolean f11197a = true;
+    private boolean a = true;
     private boolean h = true;
     private boolean i = false;
 
@@ -61,13 +57,9 @@ public class ActionSheet extends BaseFragment implements View.OnClickListener {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/widget/menu/ActionSheet$Attributes.class */
     public static class Attributes {
-
-        /* renamed from: a  reason: collision with root package name */
-        Drawable f11200a = new ColorDrawable(0);
-        Drawable b = new ColorDrawable(-16777216);
-
-        /* renamed from: c  reason: collision with root package name */
-        Drawable f11201c;
+        Drawable a = new ColorDrawable(0);
+        Drawable b = new ColorDrawable(View.MEASURED_STATE_MASK);
+        Drawable c;
         Drawable d;
         Drawable e;
         Drawable f;
@@ -82,13 +74,13 @@ public class ActionSheet extends BaseFragment implements View.OnClickListener {
 
         public Attributes(Context context) {
             this.n = context;
-            ColorDrawable colorDrawable = new ColorDrawable((int) Color.GRAY);
-            this.f11201c = colorDrawable;
+            ColorDrawable colorDrawable = new ColorDrawable(-7829368);
+            this.c = colorDrawable;
             this.d = colorDrawable;
             this.e = colorDrawable;
             this.f = colorDrawable;
             this.g = -1;
-            this.h = -16777216;
+            this.h = View.MEASURED_STATE_MASK;
             this.i = a(20);
             this.j = a(2);
             this.k = a(6);
@@ -103,13 +95,9 @@ public class ActionSheet extends BaseFragment implements View.OnClickListener {
 
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/widget/menu/ActionSheet$Builder.class */
     public static class Builder {
-
-        /* renamed from: a  reason: collision with root package name */
-        private Context f11202a;
+        private Context a;
         private FragmentManager b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private String f11203c;
+        private String c;
         private String[] d;
         private boolean f;
         private ActionSheetListener g;
@@ -121,13 +109,13 @@ public class ActionSheet extends BaseFragment implements View.OnClickListener {
         private boolean i = false;
 
         public Builder(Context context, FragmentManager fragmentManager) {
-            this.f11202a = context;
+            this.a = context;
             this.b = fragmentManager;
         }
 
         public Bundle a() {
             Bundle bundle = new Bundle();
-            bundle.putString("cancel_button_title", this.f11203c);
+            bundle.putString("cancel_button_title", this.c);
             bundle.putStringArray("other_button_titles", this.d);
             bundle.putBoolean("cancelable_ontouchoutside", this.f);
             bundle.putInt("arg_selected_index", this.h);
@@ -149,7 +137,7 @@ public class ActionSheet extends BaseFragment implements View.OnClickListener {
         }
 
         public Builder a(String str) {
-            this.f11203c = str;
+            this.c = str;
             return this;
         }
 
@@ -179,7 +167,7 @@ public class ActionSheet extends BaseFragment implements View.OnClickListener {
         }
 
         public ActionSheet b() {
-            ActionSheet actionSheet = (ActionSheet) Fragment.instantiate(this.f11202a, ActionSheet.class.getName(), a());
+            ActionSheet actionSheet = (ActionSheet) Fragment.instantiate(this.a, ActionSheet.class.getName(), a());
             actionSheet.a(this.g);
             actionSheet.a(this.b, this.e);
             return actionSheet;
@@ -334,13 +322,15 @@ public class ActionSheet extends BaseFragment implements View.OnClickListener {
         return frameLayout;
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r0v6, types: [com.blued.android.framework.view.shape.ShapeHelper$ShapeView, com.blued.android.framework.view.shape.ShapeTextView, android.view.View] */
     private void g() {
         h();
         View view = new View(getContext());
         view.setLayoutParams(new ViewGroup.LayoutParams(-1, this.g.k));
         view.setBackgroundColor(BluedSkinUtils.a(getContext(), R.color.syc_x));
         this.d.addView(view);
-        ShapeTextView shapeTextView = new ShapeTextView(getActivity());
+        ?? shapeTextView = new ShapeTextView(getActivity());
         shapeTextView.setTextSize(0, this.g.m);
         shapeTextView.setId(100);
         ShapeHelper.b(shapeTextView, R.color.syc_b);
@@ -351,7 +341,7 @@ public class ActionSheet extends BaseFragment implements View.OnClickListener {
         shapeTextView.setOnClickListener(this);
         LinearLayout.LayoutParams i = i();
         i.height = this.g.l;
-        this.d.addView(shapeTextView, i);
+        this.d.addView((View) shapeTextView, i);
     }
 
     private void h() {
@@ -380,7 +370,7 @@ public class ActionSheet extends BaseFragment implements View.OnClickListener {
         TypedArray obtainStyledAttributes = getActivity().getTheme().obtainStyledAttributes(null, R.styleable.ActionSheet, R.attr.actionSheetStyle, 0);
         Drawable drawable = obtainStyledAttributes.getDrawable(R.styleable.ActionSheet_actionSheetBackground);
         if (drawable != null) {
-            attributes.f11200a = drawable;
+            attributes.a = drawable;
         }
         Drawable drawable2 = obtainStyledAttributes.getDrawable(R.styleable.ActionSheet_cancelButtonBackground);
         if (drawable2 != null) {
@@ -388,7 +378,7 @@ public class ActionSheet extends BaseFragment implements View.OnClickListener {
         }
         Drawable drawable3 = obtainStyledAttributes.getDrawable(R.styleable.ActionSheet_otherButtonTopBackground);
         if (drawable3 != null) {
-            attributes.f11201c = drawable3;
+            attributes.c = drawable3;
         }
         Drawable drawable4 = obtainStyledAttributes.getDrawable(R.styleable.ActionSheet_otherButtonMiddleBackground);
         if (drawable4 != null) {
@@ -450,10 +440,10 @@ public class ActionSheet extends BaseFragment implements View.OnClickListener {
     }
 
     public void a() {
-        if (this.f11197a) {
+        if (this.a) {
             return;
         }
-        this.f11197a = true;
+        this.a = true;
         try {
             if (getFragmentManager() != null) {
                 getFragmentManager().popBackStack();
@@ -468,11 +458,11 @@ public class ActionSheet extends BaseFragment implements View.OnClickListener {
     }
 
     public void a(FragmentManager fragmentManager, String str) {
-        if (this.f11197a) {
-            this.f11197a = false;
+        if (this.a) {
+            this.a = false;
             FragmentTransaction beginTransaction = fragmentManager.beginTransaction();
             beginTransaction.add(this, str);
-            beginTransaction.addToBackStack(null);
+            beginTransaction.addToBackStack((String) null);
             beginTransaction.commitAllowingStateLoss();
         }
     }
@@ -500,16 +490,16 @@ public class ActionSheet extends BaseFragment implements View.OnClickListener {
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         View currentFocus;
         this.j = layoutInflater;
-        InputMethodManager inputMethodManager = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+        InputMethodManager inputMethodManager = (InputMethodManager) getActivity().getSystemService("input_method");
         if (inputMethodManager.isActive() && (currentFocus = getActivity().getCurrentFocus()) != null) {
             inputMethodManager.hideSoftInputFromWindow(currentFocus.getWindowToken(), 0);
         }
         this.g = j();
-        this.f11198c = f();
+        this.c = f();
         ViewGroup viewGroup2 = (ViewGroup) getActivity().getWindow().getDecorView();
         try {
             this.e = (ViewGroup) ((ViewGroup) viewGroup2.getChildAt(0)).getChildAt(1);
@@ -520,20 +510,20 @@ public class ActionSheet extends BaseFragment implements View.OnClickListener {
             this.e = viewGroup2;
         }
         g();
-        this.e.addView(this.f11198c);
+        this.e.addView(this.c);
         this.f.startAnimation(c());
         this.d.startAnimation(b());
         return super.onCreateView(layoutInflater, viewGroup, bundle);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onDestroyView() {
         this.d.startAnimation(d());
         this.f.startAnimation(e());
-        this.f11198c.postDelayed(new Runnable() { // from class: com.blued.android.module.common.widget.menu.ActionSheet.1
+        this.c.postDelayed(new Runnable() { // from class: com.blued.android.module.common.widget.menu.ActionSheet.1
             @Override // java.lang.Runnable
             public void run() {
-                ActionSheet.this.e.removeView(ActionSheet.this.f11198c);
+                ActionSheet.this.e.removeView(ActionSheet.this.c);
             }
         }, 300L);
         ActionSheetListener actionSheetListener = this.b;

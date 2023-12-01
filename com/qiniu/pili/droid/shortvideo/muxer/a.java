@@ -26,7 +26,7 @@ public class a extends c {
                 }
                 this.d = bufferInfo.presentationTimeUs;
             }
-            if (this.f27734c == i) {
+            if (this.f14046c == i) {
                 if (bufferInfo.presentationTimeUs <= this.e) {
                     e eVar2 = e.n;
                     eVar2.d("DroidMP4Muxer", "ignored, audio timestamp fall back, this: " + bufferInfo.presentationTimeUs + " last: " + this.e);
@@ -58,7 +58,7 @@ public class a extends c {
                 return true;
             } catch (IllegalStateException e) {
                 e.n.e("DroidMP4Muxer", e.getMessage());
-                new File(this.f27733a).delete();
+                new File(this.f14045a).delete();
                 this.f = null;
                 e.n.c("DroidMP4Muxer", "stop -");
                 return false;
@@ -77,8 +77,8 @@ public class a extends c {
                 eVar.c("DroidMP4Muxer", "delete existed file: " + str);
             }
             try {
-                this.f27733a = str;
-                MediaMuxer mediaMuxer = new MediaMuxer(this.f27733a, 0);
+                this.f14045a = str;
+                MediaMuxer mediaMuxer = new MediaMuxer(this.f14045a, 0);
                 this.f = mediaMuxer;
                 if (mediaFormat != null) {
                     this.b = mediaMuxer.addTrack(mediaFormat);
@@ -86,9 +86,9 @@ public class a extends c {
                     eVar2.c("DroidMP4Muxer", "addTrack video track: " + this.b);
                 }
                 if (mediaFormat2 != null) {
-                    this.f27734c = this.f.addTrack(mediaFormat2);
+                    this.f14046c = this.f.addTrack(mediaFormat2);
                     e eVar3 = e.n;
-                    eVar3.c("DroidMP4Muxer", "addTrack audio track: " + this.f27734c);
+                    eVar3.c("DroidMP4Muxer", "addTrack audio track: " + this.f14046c);
                 }
                 this.f.setOrientationHint(i);
                 this.f.start();

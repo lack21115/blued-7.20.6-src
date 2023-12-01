@@ -11,7 +11,7 @@ import java.util.Map;
 public abstract class a<K, V> implements e<K, V> {
 
     /* renamed from: a  reason: collision with root package name */
-    protected static final String f7826a = "cache";
+    protected static final String f4986a = "cache";
     private final Map<K, Reference<V>> b = Collections.synchronizedMap(new HashMap());
 
     @Override // com.anythink.expressad.foundation.g.a.e

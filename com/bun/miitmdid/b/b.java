@@ -11,11 +11,11 @@ public class b {
     private static boolean h;
 
     /* renamed from: a  reason: collision with root package name */
-    private String f21127a = null;
-    private InterfaceC0300b b = null;
+    private String f7521a = null;
+    private InterfaceC0130b b = null;
 
     /* renamed from: c  reason: collision with root package name */
-    private Object f21128c = null;
+    private Object f7522c = null;
     private Map<String, String> d = new HashMap();
     private Map<String, String> e = new HashMap();
     private Map<String, String> f = new HashMap();
@@ -25,10 +25,10 @@ public class b {
     class a extends AsyncTask<Void, Void, c> {
 
         /* renamed from: a  reason: collision with root package name */
-        b f21129a;
+        b f7523a;
 
         a() {
-            this.f21129a = b.this;
+            this.f7523a = b.this;
         }
 
         protected native c a(Void... voidArr);
@@ -45,7 +45,7 @@ public class b {
 
     /* renamed from: com.bun.miitmdid.b.b$b  reason: collision with other inner class name */
     /* loaded from: source-7206380-dex2jar.jar:com/bun/miitmdid/b/b$b.class */
-    public interface InterfaceC0300b {
+    public interface InterfaceC0130b {
         void a(Exception exc, int i, String str);
     }
 
@@ -53,15 +53,15 @@ public class b {
     class c {
 
         /* renamed from: a  reason: collision with root package name */
-        private String f21130a;
+        private String f7524a;
         private int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private Exception f21131c;
+        private Exception f7525c;
 
         public c(b bVar, String str, Exception exc, int i) {
-            this.f21130a = str;
-            this.f21131c = exc;
+            this.f7524a = str;
+            this.f7525c = exc;
             this.b = i;
         }
 
@@ -91,13 +91,13 @@ public class b {
 
     static native /* synthetic */ c c(b bVar);
 
-    static native /* synthetic */ InterfaceC0300b d(b bVar);
+    static native /* synthetic */ InterfaceC0130b d(b bVar);
 
     private native String d();
 
     public native b a();
 
-    public native b a(InterfaceC0300b interfaceC0300b);
+    public native b a(InterfaceC0130b interfaceC0130b);
 
     public native b a(Object obj);
 

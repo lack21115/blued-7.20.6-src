@@ -1,43 +1,39 @@
 package com.alipay.android.phone.mrpc.core;
 
 import android.text.format.Time;
+import com.amap.api.services.core.AMapException;
+import com.android.internal.R;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alipay/android/phone/mrpc/core/k.class */
 public final class k {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final Pattern f4526a = Pattern.compile("([0-9]{1,2})[- ]([A-Za-z]{3,9})[- ]([0-9]{2,4})[ ]([0-9]{1,2}:[0-9][0-9]:[0-9][0-9])");
+    private static final Pattern a = Pattern.compile("([0-9]{1,2})[- ]([A-Za-z]{3,9})[- ]([0-9]{2,4})[ ]([0-9]{1,2}:[0-9][0-9]:[0-9][0-9])");
     private static final Pattern b = Pattern.compile("[ ]([A-Za-z]{3,9})[ ]+([0-9]{1,2})[ ]([0-9]{1,2}:[0-9][0-9]:[0-9][0-9])[ ]([0-9]{2,4})");
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-6737240-dex2jar.jar:com/alipay/android/phone/mrpc/core/k$a.class */
     public static final class a {
-
-        /* renamed from: a  reason: collision with root package name */
-        int f4527a;
+        int a;
         int b;
-
-        /* renamed from: c  reason: collision with root package name */
-        int f4528c;
+        int c;
 
         a(int i, int i2, int i3) {
-            this.f4527a = i;
+            this.a = i;
             this.b = i2;
-            this.f4528c = i3;
+            this.c = i3;
         }
     }
 
     public static long a(String str) {
-        int c2;
+        int c;
         int b2;
         a e;
         int d;
-        Matcher matcher = f4526a.matcher(str);
+        Matcher matcher = a.matcher(str);
         if (matcher.find()) {
             b2 = b(matcher.group(1));
-            c2 = c(matcher.group(2));
+            c = c(matcher.group(2));
             d = d(matcher.group(3));
             e = e(matcher.group(4));
         } else {
@@ -45,18 +41,18 @@ public final class k {
             if (!matcher2.find()) {
                 throw new IllegalArgumentException();
             }
-            c2 = c(matcher2.group(1));
+            c = c(matcher2.group(1));
             b2 = b(matcher2.group(2));
             e = e(matcher2.group(3));
             d = d(matcher2.group(4));
         }
         if (d >= 2038) {
             b2 = 1;
-            c2 = 0;
+            c = 0;
             d = 2038;
         }
-        Time time = new Time(Time.TIMEZONE_UTC);
-        time.set(e.f4528c, e.b, e.f4527a, b2, c2, d);
+        Time time = new Time("UTC");
+        time.set(e.c, e.b, e.a, b2, c, d);
         return time.toMillis(false);
     }
 
@@ -66,7 +62,7 @@ public final class k {
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
     private static int c(String str) {
-        int lowerCase = ((Character.toLowerCase(str.charAt(0)) + Character.toLowerCase(str.charAt(1))) + Character.toLowerCase(str.charAt(2))) - 291;
+        int lowerCase = ((Character.toLowerCase(str.charAt(0)) + Character.toLowerCase(str.charAt(1))) + Character.toLowerCase(str.charAt(2))) - R.styleable.Theme_preferencePanelStyle;
         int i = 9;
         if (lowerCase != 9) {
             if (lowerCase != 10) {
@@ -112,9 +108,9 @@ public final class k {
     private static int d(String str) {
         if (str.length() == 2) {
             int charAt = ((str.charAt(0) - '0') * 10) + (str.charAt(1) - '0');
-            return charAt >= 70 ? charAt + 1900 : charAt + 2000;
+            return charAt >= 70 ? charAt + AMapException.CODE_AMAP_CLIENT_UNKNOWN_ERROR : charAt + 2000;
         } else if (str.length() == 3) {
-            return ((str.charAt(0) - '0') * 100) + ((str.charAt(1) - '0') * 10) + (str.charAt(2) - '0') + 1900;
+            return ((str.charAt(0) - '0') * 100) + ((str.charAt(1) - '0') * 10) + (str.charAt(2) - '0') + AMapException.CODE_AMAP_CLIENT_UNKNOWN_ERROR;
         } else {
             if (str.length() == 4) {
                 return ((str.charAt(0) - '0') * 1000) + ((str.charAt(1) - '0') * 100) + ((str.charAt(2) - '0') * 10) + (str.charAt(3) - '0');

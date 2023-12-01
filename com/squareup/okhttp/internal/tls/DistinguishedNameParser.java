@@ -13,7 +13,7 @@ final class DistinguishedNameParser {
     private int pos;
 
     public DistinguishedNameParser(X500Principal x500Principal) {
-        String name = x500Principal.getName(X500Principal.RFC2253);
+        String name = x500Principal.getName("RFC2253");
         this.dn = name;
         this.length = name.length();
     }

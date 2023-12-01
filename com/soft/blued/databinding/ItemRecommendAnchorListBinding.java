@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemRecommendAnchorListBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final CardView f29293a;
+    private final CardView f15603a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public CardView getRoot() {
-        return this.f29293a;
+        return this.f15603a;
     }
 }

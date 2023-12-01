@@ -18,11 +18,11 @@ import skin.support.widget.SkinCompatBackgroundHelper;
 public class RangeBar extends View implements BluedSkinSupportable {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f28624a;
+    private int f14934a;
     private float b;
 
     /* renamed from: c  reason: collision with root package name */
-    private float f28625c;
+    private float f14935c;
     private int d;
     private float e;
     private int f;
@@ -50,9 +50,9 @@ public class RangeBar extends View implements BluedSkinSupportable {
 
     public RangeBar(Context context) {
         super(context);
-        this.f28624a = 3;
+        this.f14934a = 3;
         this.b = 24.0f;
-        this.f28625c = 2.0f;
+        this.f14935c = 2.0f;
         this.d = Color.LTGRAY;
         this.e = 4.0f;
         this.f = -13388315;
@@ -70,9 +70,9 @@ public class RangeBar extends View implements BluedSkinSupportable {
 
     public RangeBar(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f28624a = 3;
+        this.f14934a = 3;
         this.b = 24.0f;
-        this.f28625c = 2.0f;
+        this.f14935c = 2.0f;
         this.d = Color.LTGRAY;
         this.e = 4.0f;
         this.f = -13388315;
@@ -91,9 +91,9 @@ public class RangeBar extends View implements BluedSkinSupportable {
 
     public RangeBar(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f28624a = 3;
+        this.f14934a = 3;
         this.b = 24.0f;
-        this.f28625c = 2.0f;
+        this.f14935c = 2.0f;
         this.d = Color.LTGRAY;
         this.e = 4.0f;
         this.f = -13388315;
@@ -111,7 +111,7 @@ public class RangeBar extends View implements BluedSkinSupportable {
     }
 
     private void a() {
-        this.q = new Bar(getContext(), getMarginLeft(), getYPos(), getBarLength(), this.f28624a, this.b, this.f28625c, this.d);
+        this.q = new Bar(getContext(), getMarginLeft(), getYPos(), getBarLength(), this.f14934a, this.b, this.f14935c, this.d);
         invalidate();
     }
 
@@ -157,7 +157,7 @@ public class RangeBar extends View implements BluedSkinSupportable {
             Integer valueOf = Integer.valueOf(obtainStyledAttributes.getInteger(9, 3));
             if (a(valueOf.intValue())) {
                 int intValue = valueOf.intValue();
-                this.f28624a = intValue;
+                this.f14934a = intValue;
                 this.t = 0;
                 int i = intValue - 1;
                 this.u = i;
@@ -168,7 +168,7 @@ public class RangeBar extends View implements BluedSkinSupportable {
                 Log.e("RangeBar", "tickCount less than 2; invalid tickCount. XML input ignored.");
             }
             this.b = obtainStyledAttributes.getDimension(10, 24.0f);
-            this.f28625c = obtainStyledAttributes.getDimension(1, 2.0f);
+            this.f14935c = obtainStyledAttributes.getDimension(1, 2.0f);
             this.d = obtainStyledAttributes.getColor(0, Color.LTGRAY);
             this.e = obtainStyledAttributes.getDimension(3, 4.0f);
             this.f = obtainStyledAttributes.getColor(2, -13388315);
@@ -245,7 +245,7 @@ public class RangeBar extends View implements BluedSkinSupportable {
 
     private boolean b(int i, int i2) {
         int i3;
-        return i < 0 || i >= (i3 = this.f28624a) || i2 < 0 || i2 >= i3;
+        return i < 0 || i >= (i3 = this.f14934a) || i2 < 0 || i2 >= i3;
     }
 
     private void c() {
@@ -255,8 +255,8 @@ public class RangeBar extends View implements BluedSkinSupportable {
         this.p = new Thumb(context, yPos, this.j, this.k, this.i, this.g, this.h);
         float marginLeft = getMarginLeft();
         float barLength = getBarLength();
-        this.o.a(((this.t / (this.f28624a - 1)) * barLength) + marginLeft);
-        this.p.a(marginLeft + ((this.u / (this.f28624a - 1)) * barLength));
+        this.o.a(((this.t / (this.f14934a - 1)) * barLength) + marginLeft);
+        this.p.a(marginLeft + ((this.u / (this.f14934a - 1)) * barLength));
         invalidate();
     }
 
@@ -279,7 +279,7 @@ public class RangeBar extends View implements BluedSkinSupportable {
     public void a(int i, int i2) {
         if (b(i, i2)) {
             Log.e("RangeBar", "A thumb index is out of bounds. Check that it is between 0 and mTickCount - 1");
-            throw new IllegalArgumentException("A thumb index is out of bounds. Check that it is between 0 and mTickCount - 1, mTickCount = " + this.f28624a);
+            throw new IllegalArgumentException("A thumb index is out of bounds. Check that it is between 0 and mTickCount - 1, mTickCount = " + this.f14934a);
         }
         if (this.l) {
             this.l = false;
@@ -295,7 +295,6 @@ public class RangeBar extends View implements BluedSkinSupportable {
         requestLayout();
     }
 
-    @Override // skin.support.widget.SkinCompatSupportable
     public void applySkin() {
         SkinCompatBackgroundHelper skinCompatBackgroundHelper = this.v;
         if (skinCompatBackgroundHelper != null) {
@@ -311,9 +310,8 @@ public class RangeBar extends View implements BluedSkinSupportable {
         return this.u;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         this.q.a(canvas);
         this.r.a(canvas, this.o, this.p);
@@ -321,9 +319,8 @@ public class RangeBar extends View implements BluedSkinSupportable {
         this.p.a(canvas);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         int mode = View.MeasureSpec.getMode(i);
         int mode2 = View.MeasureSpec.getMode(i2);
         int size = View.MeasureSpec.getSize(i);
@@ -344,9 +341,9 @@ public class RangeBar extends View implements BluedSkinSupportable {
             return;
         }
         Bundle bundle = (Bundle) parcelable;
-        this.f28624a = bundle.getInt("TICK_COUNT");
+        this.f14934a = bundle.getInt("TICK_COUNT");
         this.b = bundle.getFloat("TICK_HEIGHT_DP");
-        this.f28625c = bundle.getFloat("BAR_WEIGHT");
+        this.f14935c = bundle.getFloat("BAR_WEIGHT");
         this.d = bundle.getInt("BAR_COLOR");
         this.e = bundle.getFloat("CONNECTING_LINE_WEIGHT");
         this.f = bundle.getInt("CONNECTING_LINE_COLOR");
@@ -366,9 +363,9 @@ public class RangeBar extends View implements BluedSkinSupportable {
     public Parcelable onSaveInstanceState() {
         Bundle bundle = new Bundle();
         bundle.putParcelable("instanceState", super.onSaveInstanceState());
-        bundle.putInt("TICK_COUNT", this.f28624a);
+        bundle.putInt("TICK_COUNT", this.f14934a);
         bundle.putFloat("TICK_HEIGHT_DP", this.b);
-        bundle.putFloat("BAR_WEIGHT", this.f28625c);
+        bundle.putFloat("BAR_WEIGHT", this.f14935c);
         bundle.putInt("BAR_COLOR", this.d);
         bundle.putFloat("CONNECTING_LINE_WEIGHT", this.e);
         bundle.putInt("CONNECTING_LINE_COLOR", this.f);
@@ -383,9 +380,8 @@ public class RangeBar extends View implements BluedSkinSupportable {
         return bundle;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onSizeChanged(int i, int i2, int i3, int i4) {
+    protected void onSizeChanged(int i, int i2, int i3, int i4) {
         super.onSizeChanged(i, i2, i3, i4);
         Context context = getContext();
         float f = i2 / 2.0f;
@@ -393,9 +389,9 @@ public class RangeBar extends View implements BluedSkinSupportable {
         this.p = new Thumb(context, f, this.j, this.k, this.i, this.g, this.h);
         float a2 = this.o.a();
         float f2 = i - (2.0f * a2);
-        this.q = new Bar(context, a2, f, f2, this.f28624a, this.b, this.f28625c, this.d);
-        this.o.a(((this.t / (this.f28624a - 1)) * f2) + a2);
-        this.p.a(a2 + ((this.u / (this.f28624a - 1)) * f2));
+        this.q = new Bar(context, a2, f, f2, this.f14934a, this.b, this.f14935c, this.d);
+        this.o.a(((this.t / (this.f14934a - 1)) * f2) + a2);
+        this.p.a(a2 + ((this.u / (this.f14934a - 1)) * f2));
         int b = this.q.b(this.o);
         int b2 = this.q.b(this.p);
         if (b != this.t || b2 != this.u) {
@@ -448,7 +444,7 @@ public class RangeBar extends View implements BluedSkinSupportable {
     }
 
     public void setBarWeight(float f) {
-        this.f28625c = f;
+        this.f14935c = f;
         a();
     }
 
@@ -496,7 +492,7 @@ public class RangeBar extends View implements BluedSkinSupportable {
             Log.e("RangeBar", "tickCount less than 2; invalid tickCount.");
             throw new IllegalArgumentException("tickCount less than 2; invalid tickCount.");
         }
-        this.f28624a = i;
+        this.f14934a = i;
         if (this.l) {
             this.t = 0;
             int i2 = i - 1;
@@ -508,7 +504,7 @@ public class RangeBar extends View implements BluedSkinSupportable {
         }
         if (b(this.t, this.u)) {
             this.t = 0;
-            int i3 = this.f28624a - 1;
+            int i3 = this.f14934a - 1;
             this.u = i3;
             OnRangeBarChangeListener onRangeBarChangeListener2 = this.s;
             if (onRangeBarChangeListener2 != null) {

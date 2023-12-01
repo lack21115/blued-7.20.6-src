@@ -1,5 +1,6 @@
 package com.android.internal.os;
 
+import com.anythink.core.common.c.l;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintStream;
@@ -56,9 +57,9 @@ abstract class LoggingPrintStream extends PrintStream {
     }
 
     @Override // java.io.PrintStream, java.lang.Appendable
-    public PrintStream append(char c2) {
+    public PrintStream append(char c) {
         synchronized (this) {
-            print(c2);
+            print(c);
         }
         return this;
     }
@@ -106,7 +107,7 @@ abstract class LoggingPrintStream extends PrintStream {
     public PrintStream format(Locale locale, String str, Object... objArr) {
         synchronized (this) {
             if (str == null) {
-                throw new NullPointerException("format");
+                throw new NullPointerException(l.a.b);
             }
             this.formatter.format(locale, str, objArr);
             flush(false);
@@ -117,10 +118,10 @@ abstract class LoggingPrintStream extends PrintStream {
     protected abstract void log(String str);
 
     @Override // java.io.PrintStream
-    public void print(char c2) {
+    public void print(char c) {
         synchronized (this) {
-            this.builder.append(c2);
-            if (c2 == '\n') {
+            this.builder.append(c);
+            if (c == '\n') {
                 flush(false);
             }
         }
@@ -203,9 +204,9 @@ abstract class LoggingPrintStream extends PrintStream {
     }
 
     @Override // java.io.PrintStream
-    public void println(char c2) {
+    public void println(char c) {
         synchronized (this) {
-            this.builder.append(c2);
+            this.builder.append(c);
             flush(true);
         }
     }

@@ -38,13 +38,9 @@ public final class LayoutUsercardDialogBinding implements ViewBinding {
     public final TextView S;
     public final FrameLayout T;
     private final FrameLayout U;
-
-    /* renamed from: a  reason: collision with root package name */
-    public final CardView f12115a;
+    public final CardView a;
     public final FrameLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final FrameLayout f12116c;
+    public final FrameLayout c;
     public final ImageView d;
     public final ImageView e;
     public final ImageView f;
@@ -71,9 +67,9 @@ public final class LayoutUsercardDialogBinding implements ViewBinding {
 
     private LayoutUsercardDialogBinding(FrameLayout frameLayout, CardView cardView, FrameLayout frameLayout2, FrameLayout frameLayout3, ImageView imageView, ImageView imageView2, ImageView imageView3, ImageView imageView4, ImageView imageView5, ImageView imageView6, ImageView imageView7, ImageView imageView8, ImageView imageView9, ImageView imageView10, LiveGiftAndMedalCardView liveGiftAndMedalCardView, ImageView imageView11, ImageView imageView12, LinearLayout linearLayout, LinearLayout linearLayout2, LinearLayout linearLayout3, LinearLayout linearLayout4, LinearLayout linearLayout5, LinearLayout linearLayout6, LinearLayout linearLayout7, LinearLayout linearLayout8, LiveUserCardModuleView liveUserCardModuleView, RelativeLayout relativeLayout, RelativeLayout relativeLayout2, TextView textView, ShapeTextView shapeTextView, TextView textView2, TextView textView3, TextView textView4, TextView textView5, TextView textView6, TextView textView7, TextView textView8, TextView textView9, TextView textView10, TextView textView11, TextView textView12, TextView textView13, TextView textView14, TextView textView15, ShapeTextView shapeTextView2, TextView textView16, FrameLayout frameLayout4) {
         this.U = frameLayout;
-        this.f12115a = cardView;
+        this.a = cardView;
         this.b = frameLayout2;
-        this.f12116c = frameLayout3;
+        this.c = frameLayout3;
         this.d = imageView;
         this.e = imageView2;
         this.f = imageView3;
@@ -133,8 +129,8 @@ public final class LayoutUsercardDialogBinding implements ViewBinding {
 
     public static LayoutUsercardDialogBinding a(View view) {
         String str;
-        CardView cardView = (CardView) view.findViewById(R.id.cv_background_root);
-        if (cardView != null) {
+        CardView findViewById = view.findViewById(R.id.cv_background_root);
+        if (findViewById != null) {
             FrameLayout frameLayout = (FrameLayout) view.findViewById(R.id.fl_avatar);
             if (frameLayout != null) {
                 FrameLayout frameLayout2 = (FrameLayout) view.findViewById(R.id.fl_rank_top_one);
@@ -225,7 +221,7 @@ public final class LayoutUsercardDialogBinding implements ViewBinding {
                                                                                                                                                                                         if (textView16 != null) {
                                                                                                                                                                                             FrameLayout frameLayout3 = (FrameLayout) view.findViewById(R.id.view_over30_ribbon);
                                                                                                                                                                                             if (frameLayout3 != null) {
-                                                                                                                                                                                                return new LayoutUsercardDialogBinding((FrameLayout) view, cardView, frameLayout, frameLayout2, imageView, imageView2, imageView3, imageView4, imageView5, imageView6, imageView7, imageView8, imageView9, imageView10, liveGiftAndMedalCardView, imageView11, imageView12, linearLayout, linearLayout2, linearLayout3, linearLayout4, linearLayout5, linearLayout6, linearLayout7, linearLayout8, liveUserCardModuleView, relativeLayout, relativeLayout2, textView, shapeTextView, textView2, textView3, textView4, textView5, textView6, textView7, textView8, textView9, textView10, textView11, textView12, textView13, textView14, textView15, shapeTextView2, textView16, frameLayout3);
+                                                                                                                                                                                                return new LayoutUsercardDialogBinding((FrameLayout) view, findViewById, frameLayout, frameLayout2, imageView, imageView2, imageView3, imageView4, imageView5, imageView6, imageView7, imageView8, imageView9, imageView10, liveGiftAndMedalCardView, imageView11, imageView12, linearLayout, linearLayout2, linearLayout3, linearLayout4, linearLayout5, linearLayout6, linearLayout7, linearLayout8, liveUserCardModuleView, relativeLayout, relativeLayout2, textView, shapeTextView, textView2, textView3, textView4, textView5, textView6, textView7, textView8, textView9, textView10, textView11, textView12, textView13, textView14, textView15, shapeTextView2, textView16, frameLayout3);
                                                                                                                                                                                             }
                                                                                                                                                                                             str = "viewOver30Ribbon";
                                                                                                                                                                                         } else {
@@ -366,7 +362,6 @@ public final class LayoutUsercardDialogBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.U;

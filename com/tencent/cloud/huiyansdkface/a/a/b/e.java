@@ -6,7 +6,7 @@ import java.util.List;
 public class e<T> implements com.tencent.cloud.huiyansdkface.a.a.g<T> {
 
     /* renamed from: a  reason: collision with root package name */
-    public static e f35433a = new e();
+    public static e f21742a = new e();
 
     @Override // com.tencent.cloud.huiyansdkface.a.a.g
     public T b(List<T> list, com.tencent.cloud.huiyansdkface.a.c.d dVar) {

@@ -11,19 +11,19 @@ public abstract class a extends k {
     protected volatile int b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected volatile int f27650c;
-    protected InterfaceC0745a d;
+    protected volatile int f13962c;
+    protected InterfaceC0575a d;
     private volatile boolean e;
     private volatile long f;
     private volatile long g = -1;
 
     /* renamed from: a  reason: collision with root package name */
-    protected double f27649a = 1.0d;
+    protected double f13961a = 1.0d;
     private final Object h = new Object();
 
     /* renamed from: com.qiniu.pili.droid.shortvideo.encode.a$a  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/qiniu/pili/droid/shortvideo/encode/a$a.class */
-    public interface InterfaceC0745a {
+    public interface InterfaceC0575a {
         void a(MediaFormat mediaFormat);
 
         void a(Surface surface);
@@ -36,11 +36,11 @@ public abstract class a extends k {
     }
 
     public void a(double d) {
-        this.f27649a = d;
+        this.f13961a = d;
     }
 
-    public void a(InterfaceC0745a interfaceC0745a) {
-        this.d = interfaceC0745a;
+    public void a(InterfaceC0575a interfaceC0575a) {
+        this.d = interfaceC0575a;
     }
 
     @Override // com.qiniu.pili.droid.shortvideo.f.k
@@ -80,7 +80,7 @@ public abstract class a extends k {
         synchronized (this.h) {
             com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.h;
             String j = j();
-            eVar.c(j, "stopping encoder, input frame count: " + this.b + " output frame count: " + this.f27650c + " flush remaining frames: " + (this.b - this.f27650c));
+            eVar.c(j, "stopping encoder, input frame count: " + this.b + " output frame count: " + this.f13962c + " flush remaining frames: " + (this.b - this.f13962c));
         }
         return c2;
     }
@@ -95,7 +95,7 @@ public abstract class a extends k {
     /* JADX INFO: Access modifiers changed from: protected */
     public void e() {
         synchronized (this.h) {
-            this.f27650c++;
+            this.f13962c++;
         }
     }
 
@@ -103,7 +103,7 @@ public abstract class a extends k {
     public boolean f() {
         boolean z;
         synchronized (this.h) {
-            z = this.b > this.f27650c;
+            z = this.b > this.f13962c;
         }
         return z;
     }

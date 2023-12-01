@@ -37,8 +37,8 @@ public class ActionSheetDefaultItem extends ActionSheetItem<ItemActionsheetDeful
 
     public ActionSheetDefaultItem a(boolean z) {
         this.l = z;
-        if (this.f11204a != 0) {
-            ((ItemActionsheetDefulatBinding) this.f11204a).getRoot().setClickable(z);
+        if (this.a != 0) {
+            ((ItemActionsheetDefulatBinding) this.a).getRoot().setClickable(z);
         }
         return this;
     }
@@ -61,10 +61,10 @@ public class ActionSheetDefaultItem extends ActionSheetItem<ItemActionsheetDeful
             itemActionsheetDefulatBinding.b.setVisibility(8);
         }
         if (this.i != 0) {
-            itemActionsheetDefulatBinding.f10730c.setImageResource(this.i);
-            itemActionsheetDefulatBinding.f10730c.setVisibility(0);
+            itemActionsheetDefulatBinding.c.setImageResource(this.i);
+            itemActionsheetDefulatBinding.c.setVisibility(0);
         } else {
-            itemActionsheetDefulatBinding.f10730c.setVisibility(8);
+            itemActionsheetDefulatBinding.c.setVisibility(8);
         }
         if (this.j != 0) {
             itemActionsheetDefulatBinding.e.setImageResource(this.j);
@@ -84,7 +84,6 @@ public class ActionSheetDefaultItem extends ActionSheetItem<ItemActionsheetDeful
         return this;
     }
 
-    @Override // com.chad.library.adapter.base.entity.MultiItemEntity
     public int getItemType() {
         return -1;
     }

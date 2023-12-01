@@ -8,21 +8,21 @@ import org.json.JSONObject;
 public class f extends g {
 
     /* renamed from: a  reason: collision with root package name */
-    private b f21638a;
+    private b f8032a;
     private a b;
 
     /* loaded from: source-7206380-dex2jar.jar:com/cmic/gen/sdk/tencent/c/b/f$a.class */
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private JSONObject f21639a;
+        private JSONObject f8033a;
 
         public JSONObject a() {
-            return this.f21639a;
+            return this.f8033a;
         }
 
         public void a(JSONObject jSONObject) {
-            this.f21639a = jSONObject;
+            this.f8033a = jSONObject;
         }
     }
 
@@ -30,11 +30,11 @@ public class f extends g {
     public static class b extends g {
 
         /* renamed from: a  reason: collision with root package name */
-        private String f21640a;
+        private String f8034a;
         private String b;
 
         /* renamed from: c  reason: collision with root package name */
-        private String f21641c;
+        private String f8035c;
         private String d;
         private String e;
 
@@ -45,7 +45,7 @@ public class f extends g {
 
         @Override // com.cmic.gen.sdk.tencent.c.b.g
         protected String a(String str) {
-            return this.e + this.d + this.f21641c + this.b + "@Fdiwmxy7CBDDQNUI";
+            return this.e + this.d + this.f8035c + this.b + "@Fdiwmxy7CBDDQNUI";
         }
 
         @Override // com.cmic.gen.sdk.tencent.c.b.g
@@ -66,11 +66,11 @@ public class f extends g {
         }
 
         public String d() {
-            return this.f21640a;
+            return this.f8034a;
         }
 
         public void d(String str) {
-            this.f21640a = str;
+            this.f8034a = str;
         }
 
         public String e() {
@@ -82,17 +82,17 @@ public class f extends g {
         }
 
         public String f() {
-            return this.f21641c;
+            return this.f8035c;
         }
 
         public void f(String str) {
-            this.f21641c = str;
+            this.f8035c = str;
         }
     }
 
     @Override // com.cmic.gen.sdk.tencent.c.b.g
     public String a() {
-        return this.f21638a.d;
+        return this.f8032a.d;
     }
 
     @Override // com.cmic.gen.sdk.tencent.c.b.g
@@ -105,7 +105,7 @@ public class f extends g {
     }
 
     public void a(b bVar) {
-        this.f21638a = bVar;
+        this.f8032a = bVar;
     }
 
     @Override // com.cmic.gen.sdk.tencent.c.b.g
@@ -114,11 +114,11 @@ public class f extends g {
         JSONObject jSONObject2 = new JSONObject();
         JSONObject jSONObject3 = new JSONObject();
         try {
-            jSONObject2.put("sign", this.f21638a.d());
-            jSONObject2.put("msgid", this.f21638a.e());
-            jSONObject2.put("systemtime", this.f21638a.f());
-            jSONObject2.put("appid", this.f21638a.a());
-            jSONObject2.put("version", this.f21638a.c());
+            jSONObject2.put(com.anythink.expressad.d.a.b.d, this.f8032a.d());
+            jSONObject2.put("msgid", this.f8032a.e());
+            jSONObject2.put("systemtime", this.f8032a.f());
+            jSONObject2.put("appid", this.f8032a.a());
+            jSONObject2.put("version", this.f8032a.c());
             jSONObject.put("header", jSONObject2);
             jSONObject3.put("log", this.b.a());
             jSONObject.put(TtmlUtils.TAG_BODY, jSONObject3);

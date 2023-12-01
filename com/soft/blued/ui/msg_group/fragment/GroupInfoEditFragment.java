@@ -13,10 +13,10 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import butterknife.BindView;
 import butterknife.OnClick;
-import com.amap.api.services.district.DistrictSearchQuery;
 import com.blued.android.core.AppMethods;
 import com.blued.android.core.BlueAppLocal;
 import com.blued.android.core.image.ImageLoader;
+import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.ui.ActivityFragmentActive;
 import com.blued.android.framework.http.BluedUIHttpResponse;
 import com.blued.android.framework.http.parser.BluedEntityA;
@@ -54,11 +54,11 @@ import java.util.Map;
 public class GroupInfoEditFragment extends MvpFragment<MvpPresenter> {
 
     /* renamed from: a  reason: collision with root package name */
-    private GroupCreateViewModel f32677a;
+    private GroupCreateViewModel f18986a;
     private GroupInfoModel b;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f32678c;
+    private boolean f18987c;
     @BindView
     View category_dot;
     private Map<String, String> d = new HashMap();
@@ -84,23 +84,19 @@ public class GroupInfoEditFragment extends MvpFragment<MvpPresenter> {
     /* JADX INFO: Access modifiers changed from: private */
     public void a(String str, BluedAlbum bluedAlbum) {
         QiniuUploadUtils.a(str, bluedAlbum, new QiniuUploadTools.QiNiuListener() { // from class: com.soft.blued.ui.msg_group.fragment.GroupInfoEditFragment.9
-            @Override // com.blued.android.framework.utils.upload.QiniuUploadTools.QiNiuListener
             public void a(String str2) {
                 GroupInfoEditFragment.this.n();
-                AppMethods.d(2131886544);
+                AppMethods.d((int) R.string.avatar_upload_error);
             }
 
-            @Override // com.blued.android.framework.utils.upload.QiniuUploadTools.QiNiuListener
             public void a(String str2, double d) {
             }
 
-            @Override // com.blued.android.framework.utils.upload.QiniuUploadTools.QiNiuListener
             public void a(String str2, String str3) {
                 GroupInfoEditFragment.this.d.put("group_cover", str2);
                 GroupInfoEditFragment.this.v();
             }
 
-            @Override // com.blued.android.framework.utils.upload.QiniuUploadTools.QiNiuListener
             public boolean a() {
                 return false;
             }
@@ -114,20 +110,20 @@ public class GroupInfoEditFragment extends MvpFragment<MvpPresenter> {
             if (this.iv_icon.getTag() == null || TextUtils.isEmpty(this.tv_description.getText().toString()) || TextUtils.isEmpty(this.tv_group_name.getText().toString()) || this.f == null) {
                 z = false;
             }
-            this.f32678c = z;
+            this.f18987c = z;
         } else {
-            this.f32678c = this.iv_icon.getTag() != null || ((!TextUtils.isEmpty(groupInfoModel.group_desc) ? this.b.group_desc.equals(this.tv_description.getText().toString()) : TextUtils.isEmpty(this.tv_description.getText().toString())) ^ true) || ((!TextUtils.isEmpty(this.b.group_title) ? this.b.group_title.equals(this.tv_group_name.getText().toString()) : TextUtils.isEmpty(this.tv_group_name.getText().toString())) ^ true);
+            this.f18987c = this.iv_icon.getTag() != null || ((!TextUtils.isEmpty(groupInfoModel.group_desc) ? this.b.group_desc.equals(this.tv_description.getText().toString()) : TextUtils.isEmpty(this.tv_description.getText().toString())) ^ true) || ((!TextUtils.isEmpty(this.b.group_title) ? this.b.group_title.equals(this.tv_group_name.getText().toString()) : TextUtils.isEmpty(this.tv_group_name.getText().toString())) ^ true);
             if (this.f == null && TextUtils.isEmpty(this.b.category_zh)) {
-                this.f32678c = false;
+                this.f18987c = false;
             } else {
                 boolean z2 = true;
-                if (!this.f32678c) {
+                if (!this.f18987c) {
                     z2 = c();
                 }
-                this.f32678c = z2;
+                this.f18987c = z2;
             }
         }
-        if (this.f32678c) {
+        if (this.f18987c) {
             this.title.getRightTextView().setVisibility(0);
         } else {
             this.title.getRightTextView().setVisibility(4);
@@ -156,7 +152,7 @@ public class GroupInfoEditFragment extends MvpFragment<MvpPresenter> {
             }
             this.d.put("group_desc", this.tv_description.getText().toString());
             this.d.put("group_title", this.tv_group_name.getText().toString());
-            this.d.put(DistrictSearchQuery.KEYWORDS_CITY, this.e);
+            this.d.put("city", this.e);
             Map<String, String> map = this.d;
             map.put("category", this.f.getId() + "");
         } else if (this.f == null && TextUtils.isEmpty(groupInfoModel.category_zh)) {
@@ -182,47 +178,41 @@ public class GroupInfoEditFragment extends MvpFragment<MvpPresenter> {
     private void e() {
         CommunityHttpUtils.a((Context) null, new BluedUIHttpResponse<BluedEntityA<BluedAlbum>>(getFragmentActive()) { // from class: com.soft.blued.ui.msg_group.fragment.GroupInfoEditFragment.8
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public BluedEntityA<BluedAlbum> parseData(String str) {
-                BluedEntityA<BluedAlbum> bluedEntityA = (BluedEntityA) super.parseData(str);
-                if (bluedEntityA != null) {
+                BluedEntityA<BluedAlbum> parseData = super.parseData(str);
+                if (parseData != null) {
                     try {
-                        if (bluedEntityA.data != null && bluedEntityA.data.size() > 0) {
-                            GroupInfoEditFragment.this.a((String) GroupInfoEditFragment.this.iv_icon.getTag(), bluedEntityA.data.get(0));
-                            return bluedEntityA;
+                        if (parseData.data != null && parseData.data.size() > 0) {
+                            GroupInfoEditFragment.this.a((String) GroupInfoEditFragment.this.iv_icon.getTag(), (BluedAlbum) parseData.data.get(0));
+                            return parseData;
                         }
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
                 }
-                return bluedEntityA;
+                return parseData;
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<BluedAlbum> bluedEntityA) {
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse, com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
             public void onFailure(Throwable th, int i, String str) {
                 super.onFailure(th, i, str);
-                AppMethods.d(2131886544);
+                AppMethods.d((int) R.string.avatar_upload_error);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str) {
                 GroupInfoEditFragment.this.n();
                 return super.onUIFailure(i, str);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish(boolean z) {
                 super.onUIFinish(z);
                 GroupInfoEditFragment.this.n();
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 super.onUIStart();
                 GroupInfoEditFragment.this.m();
@@ -235,22 +225,20 @@ public class GroupInfoEditFragment extends MvpFragment<MvpPresenter> {
         if (this.b == null) {
             this.d.put("longitude", CommonPreferences.u());
             this.d.put("latitude", CommonPreferences.v());
-            this.f32677a.a(this.d);
+            this.f18986a.a(this.d);
             return;
         }
         ActivityFragmentActive fragmentActive = getFragmentActive();
-        MsgGroupHttpUtils.a(fragmentActive, this.b.group_id + "", this.d, new BluedUIHttpResponse<BluedEntityA>(getFragmentActive()) { // from class: com.soft.blued.ui.msg_group.fragment.GroupInfoEditFragment.10
+        MsgGroupHttpUtils.a((IRequestHost) fragmentActive, this.b.group_id + "", this.d, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA>(getFragmentActive()) { // from class: com.soft.blued.ui.msg_group.fragment.GroupInfoEditFragment.10
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA bluedEntityA) {
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish(boolean z) {
                 super.onUIFinish(z);
                 if (z) {
-                    AppMethods.a((CharSequence) GroupInfoEditFragment.this.getString(R.string.group_submitted));
+                    AppMethods.a(GroupInfoEditFragment.this.getString(R.string.group_submitted));
                     LiveEventBus.get("modify_group_info").post(null);
                     GroupInfoEditFragment.this.t();
                 }
@@ -258,25 +246,25 @@ public class GroupInfoEditFragment extends MvpFragment<MvpPresenter> {
         });
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
+    /* JADX WARN: Multi-variable type inference failed */
     public void a(Bundle bundle) {
         super.a(bundle);
         if (getArguments() != null) {
-            this.b = (GroupInfoModel) getArguments().getSerializable(d.K);
-            this.f = (GroupCategoryModel) getArguments().getSerializable("key_data");
+            this.b = getArguments().getSerializable(d.K);
+            this.f = getArguments().getSerializable("key_data");
         }
         GroupCreateViewModel groupCreateViewModel = (GroupCreateViewModel) new ViewModelProvider(this).get(GroupCreateViewModel.class);
-        this.f32677a = groupCreateViewModel;
+        this.f18986a = groupCreateViewModel;
         groupCreateViewModel.d().observe(this, new Observer<GroupInfoModel>() { // from class: com.soft.blued.ui.msg_group.fragment.GroupInfoEditFragment.1
             @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(GroupInfoModel groupInfoModel) {
                 Context context = GroupInfoEditFragment.this.getContext();
-                GroupInfoFragment.a(context, groupInfoModel.group_id + "", (GroupInfoModel) null, SocialNetWorkProtos.SourceType.UNKNOWN_SOURCE_TYPE);
+                GroupInfoFragment.a(context, groupInfoModel.group_id + "", null, SocialNetWorkProtos.SourceType.UNKNOWN_SOURCE_TYPE);
                 GroupInfoEditFragment.this.t();
             }
         });
-        this.f32677a.e().observe(this, new Observer<String>() { // from class: com.soft.blued.ui.msg_group.fragment.GroupInfoEditFragment.2
+        this.f18986a.e().observe(this, new Observer<String>() { // from class: com.soft.blued.ui.msg_group.fragment.GroupInfoEditFragment.2
             @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(String str) {
@@ -355,15 +343,13 @@ public class GroupInfoEditFragment extends MvpFragment<MvpPresenter> {
             }
         });
         this.title.getRightTextView().setVisibility(4);
-        this.f32677a.f();
+        this.f18986a.f();
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public int g() {
         return R.layout.fm_msg_group_edit_info;
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         super.onActivityResult(i, i2, intent);
         if (intent != null && i2 == -1) {
@@ -383,16 +369,17 @@ public class GroupInfoEditFragment extends MvpFragment<MvpPresenter> {
                 this.iv_icon.setTag(stringExtra3);
             }
             if (intent.hasExtra("key_data")) {
-                GroupCategoryModel groupCategoryModel = (GroupCategoryModel) intent.getSerializableExtra("key_data");
-                this.f = groupCategoryModel;
-                if (groupCategoryModel != null) {
-                    this.tv_classify.setText(groupCategoryModel.getName());
+                GroupCategoryModel serializableExtra = intent.getSerializableExtra("key_data");
+                this.f = serializableExtra;
+                if (serializableExtra != null) {
+                    this.tv_classify.setText(serializableExtra.getName());
                 }
             }
             b();
         }
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     @OnClick
     public void onClick(View view) {
         switch (view.getId()) {
@@ -412,12 +399,10 @@ public class GroupInfoEditFragment extends MvpFragment<MvpPresenter> {
                 return;
             case R.id.cl_icon /* 2131362907 */:
                 PermissionUtils.f(new PermissionCallbacks() { // from class: com.soft.blued.ui.msg_group.fragment.GroupInfoEditFragment.7
-                    @Override // com.blued.android.framework.permission.PermissionCallbacks
                     public void U_() {
                         PhotoSelectFragment.a(GroupInfoEditFragment.this, 3, 2);
                     }
 
-                    @Override // com.blued.android.framework.permission.PermissionCallbacks
                     public void a(String[] strArr) {
                     }
                 });

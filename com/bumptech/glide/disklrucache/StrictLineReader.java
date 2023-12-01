@@ -6,16 +6,15 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.Charset;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-7206380-dex2jar.jar:com/bumptech/glide/disklrucache/StrictLineReader.class */
-public class StrictLineReader implements Closeable {
+class StrictLineReader implements Closeable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final InputStream f20681a;
+    private final InputStream f7075a;
     private final Charset b;
 
     /* renamed from: c  reason: collision with root package name */
-    private byte[] f20682c;
+    private byte[] f7076c;
     private int d;
     private int e;
 
@@ -26,12 +25,12 @@ public class StrictLineReader implements Closeable {
         if (i < 0) {
             throw new IllegalArgumentException("capacity <= 0");
         }
-        if (!charset.equals(Util.f20684a)) {
+        if (!charset.equals(Util.f7078a)) {
             throw new IllegalArgumentException("Unsupported encoding");
         }
-        this.f20681a = inputStream;
+        this.f7075a = inputStream;
         this.b = charset;
-        this.f20682c = new byte[i];
+        this.f7076c = new byte[i];
     }
 
     public StrictLineReader(InputStream inputStream, Charset charset) {
@@ -39,8 +38,8 @@ public class StrictLineReader implements Closeable {
     }
 
     private void c() throws IOException {
-        InputStream inputStream = this.f20681a;
-        byte[] bArr = this.f20682c;
+        InputStream inputStream = this.f7075a;
+        byte[] bArr = this.f7076c;
         int read = inputStream.read(bArr, 0, bArr.length);
         if (read == -1) {
             throw new EOFException();
@@ -50,7 +49,7 @@ public class StrictLineReader implements Closeable {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:20:0x004d, code lost:
-        if (r7.f20682c[r9] == 13) goto L23;
+        if (r7.f7076c[r9] == 13) goto L23;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -70,10 +69,10 @@ public class StrictLineReader implements Closeable {
 
     @Override // java.io.Closeable, java.lang.AutoCloseable
     public void close() throws IOException {
-        synchronized (this.f20681a) {
-            if (this.f20682c != null) {
-                this.f20682c = null;
-                this.f20681a.close();
+        synchronized (this.f7075a) {
+            if (this.f7076c != null) {
+                this.f7076c = null;
+                this.f7075a.close();
             }
         }
     }

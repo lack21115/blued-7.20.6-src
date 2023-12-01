@@ -19,7 +19,7 @@ public class ReqWawajiRecoverPackage extends ReqBasePackage {
     protected Map<String, Object> getReqInfo() {
         ArrayMap arrayMap = new ArrayMap();
         arrayMap.put(ReqAckPackage.REQ_RESPONSE_KEY.SESSION_TYPE, (short) 6);
-        arrayMap.put("session_id", Long.valueOf(this.sessionId));
+        arrayMap.put(ReqAckPackage.REQ_RESPONSE_KEY.SESSION_ID, Long.valueOf(this.sessionId));
         return arrayMap;
     }
 

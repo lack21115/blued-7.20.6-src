@@ -1,5 +1,6 @@
 package com.kuaishou.pushad;
 
+import android.R;
 import android.app.Activity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,7 +29,7 @@ public class PushAdViewHelper {
         if (activity2 == null) {
             return null;
         }
-        View findViewById = activity2.getWindow().getDecorView().findViewById(16908290);
+        View findViewById = activity2.getWindow().getDecorView().findViewById(R.id.content);
         if (findViewById instanceof ViewGroup) {
             return (ViewGroup) findViewById;
         }

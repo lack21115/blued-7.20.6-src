@@ -779,7 +779,7 @@ public final class TreeMultiset<E> extends AbstractSortedMultiset<E> implements 
         return 0;
     }
 
-    @Override // com.google.common.collect.AbstractMultiset, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // com.google.common.collect.AbstractMultiset, java.util.AbstractCollection, java.util.Collection
     public void clear() {
         if (this.range.hasLowerBound() || this.range.hasUpperBound()) {
             Iterators.clear(entryIterator());
@@ -809,7 +809,7 @@ public final class TreeMultiset<E> extends AbstractSortedMultiset<E> implements 
         return super.comparator();
     }
 
-    @Override // com.google.common.collect.AbstractMultiset, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // com.google.common.collect.AbstractMultiset, java.util.AbstractCollection, java.util.Collection, com.google.common.collect.Multiset
     public /* bridge */ /* synthetic */ boolean contains(@NullableDecl Object obj) {
         return super.contains(obj);
     }
@@ -956,12 +956,12 @@ public final class TreeMultiset<E> extends AbstractSortedMultiset<E> implements 
         return new TreeMultiset(this.rootReference, this.range.intersect(GeneralRange.upTo(comparator(), e, boundType)), this.header);
     }
 
-    @Override // com.google.common.collect.AbstractMultiset, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // com.google.common.collect.AbstractMultiset, java.util.AbstractCollection, java.util.Collection
     public /* bridge */ /* synthetic */ boolean isEmpty() {
         return super.isEmpty();
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, com.google.common.collect.Multiset
     public Iterator<E> iterator() {
         return Multisets.iteratorImpl(this);
     }
@@ -1049,7 +1049,7 @@ public final class TreeMultiset<E> extends AbstractSortedMultiset<E> implements 
         return z;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    @Override // java.util.AbstractCollection, java.util.Collection, com.google.common.collect.Multiset
     public int size() {
         return Ints.saturatedCast(aggregateForEntries(Aggregate.SIZE));
     }

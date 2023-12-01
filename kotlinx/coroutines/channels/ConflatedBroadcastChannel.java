@@ -24,9 +24,7 @@ import kotlinx.coroutines.selects.SelectInstance;
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/channels/ConflatedBroadcastChannel.class */
 public final class ConflatedBroadcastChannel<E> implements BroadcastChannel<E> {
     private static final /* synthetic */ AtomicReferenceFieldUpdater b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final /* synthetic */ AtomicIntegerFieldUpdater f42991c;
+    private static final /* synthetic */ AtomicIntegerFieldUpdater c;
     private static final /* synthetic */ AtomicReferenceFieldUpdater d;
     @Deprecated
     private static final Symbol f;
@@ -35,9 +33,7 @@ public final class ConflatedBroadcastChannel<E> implements BroadcastChannel<E> {
     private volatile /* synthetic */ Object _state = g;
     private volatile /* synthetic */ int _updating = 0;
     private volatile /* synthetic */ Object onCloseHandler = null;
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final Companion f42990a = new Companion(null);
+    private static final Companion a = new Companion(null);
     @Deprecated
     private static final Closed e = new Closed(null);
 
@@ -45,16 +41,14 @@ public final class ConflatedBroadcastChannel<E> implements BroadcastChannel<E> {
     @Metadata
     /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/channels/ConflatedBroadcastChannel$Closed.class */
     public static final class Closed {
-
-        /* renamed from: a  reason: collision with root package name */
-        public final Throwable f42992a;
+        public final Throwable a;
 
         public Closed(Throwable th) {
-            this.f42992a = th;
+            this.a = th;
         }
 
         public final Throwable a() {
-            Throwable th = this.f42992a;
+            Throwable th = this.a;
             ClosedSendChannelException closedSendChannelException = th;
             if (th == null) {
                 closedSendChannelException = new ClosedSendChannelException("Channel was closed");
@@ -78,13 +72,11 @@ public final class ConflatedBroadcastChannel<E> implements BroadcastChannel<E> {
     @Metadata
     /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/channels/ConflatedBroadcastChannel$State.class */
     public static final class State<E> {
-
-        /* renamed from: a  reason: collision with root package name */
-        public final Object f42993a;
+        public final Object a;
         public final Subscriber<E>[] b;
 
         public State(Object obj, Subscriber<E>[] subscriberArr) {
-            this.f42993a = obj;
+            this.a = obj;
             this.b = subscriberArr;
         }
     }
@@ -119,13 +111,13 @@ public final class ConflatedBroadcastChannel<E> implements BroadcastChannel<E> {
         f = symbol;
         g = new State<>(symbol, null);
         b = AtomicReferenceFieldUpdater.newUpdater(ConflatedBroadcastChannel.class, Object.class, "_state");
-        f42991c = AtomicIntegerFieldUpdater.newUpdater(ConflatedBroadcastChannel.class, "_updating");
+        c = AtomicIntegerFieldUpdater.newUpdater(ConflatedBroadcastChannel.class, "_updating");
         d = AtomicReferenceFieldUpdater.newUpdater(ConflatedBroadcastChannel.class, Object.class, "onCloseHandler");
     }
 
     private final Closed a(E e2) {
         Object obj;
-        if (f42991c.compareAndSet(this, 0, 1)) {
+        if (c.compareAndSet(this, 0, 1)) {
             do {
                 try {
                     obj = this._state;
@@ -180,7 +172,7 @@ public final class ConflatedBroadcastChannel<E> implements BroadcastChannel<E> {
                 throw new IllegalStateException(Intrinsics.a("Invalid state ", obj).toString());
             }
             State state = (State) obj;
-            obj2 = state.f42993a;
+            obj2 = state.a;
             subscriberArr = state.b;
             Intrinsics.a(subscriberArr);
         } while (!b.compareAndSet(this, obj, new State(obj2, b(subscriberArr, subscriber))));
@@ -233,7 +225,7 @@ public final class ConflatedBroadcastChannel<E> implements BroadcastChannel<E> {
             if (IntrinsicsKt.a() == null) {
                 return null;
             }
-            return Unit.f42314a;
+            return Unit.a;
         }
         throw a2.a();
     }
@@ -254,14 +246,14 @@ public final class ConflatedBroadcastChannel<E> implements BroadcastChannel<E> {
         }
         Object obj2 = this._state;
         if ((obj2 instanceof Closed) && d.compareAndSet(this, function1, AbstractChannelKt.f)) {
-            function1.invoke(((Closed) obj2).f42992a);
+            function1.invoke(((Closed) obj2).a);
         }
     }
 
     @Override // kotlinx.coroutines.channels.SendChannel
     public Object a_(E e2) {
         Closed a2 = a((ConflatedBroadcastChannel<E>) e2);
-        return a2 == null ? ChannelResult.f42903a.a((ChannelResult.Companion) Unit.f42314a) : ChannelResult.f42903a.a(a2.a());
+        return a2 == null ? ChannelResult.a.a((ChannelResult.Companion) Unit.a) : ChannelResult.a.a(a2.a());
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -273,17 +265,17 @@ public final class ConflatedBroadcastChannel<E> implements BroadcastChannel<E> {
         do {
             obj = this._state;
             if (obj instanceof Closed) {
-                subscriber.b_(((Closed) obj).f42992a);
+                subscriber.b_(((Closed) obj).a);
                 return subscriber;
             } else if (!(obj instanceof State)) {
                 throw new IllegalStateException(Intrinsics.a("Invalid state ", obj).toString());
             } else {
                 state = (State) obj;
-                if (state.f42993a != f) {
-                    subscriber.a((Subscriber) state.f42993a);
+                if (state.a != f) {
+                    subscriber.a((Subscriber) state.a);
                 }
             }
-        } while (!b.compareAndSet(this, obj, new State(state.f42993a, a(state.b, subscriber))));
+        } while (!b.compareAndSet(this, obj, new State(state.a, a(state.b, subscriber))));
         return subscriber;
     }
 
@@ -318,18 +310,16 @@ public final class ConflatedBroadcastChannel<E> implements BroadcastChannel<E> {
     @Override // kotlinx.coroutines.channels.SendChannel
     public SelectClause2<E, SendChannel<E>> v() {
         return (SelectClause2) ((SelectClause2<E, SendChannel<? super E>>) new SelectClause2<E, SendChannel<? super E>>(this) { // from class: kotlinx.coroutines.channels.ConflatedBroadcastChannel$onSend$1
-
-            /* renamed from: a  reason: collision with root package name */
-            final /* synthetic */ ConflatedBroadcastChannel<E> f42994a;
+            final /* synthetic */ ConflatedBroadcastChannel<E> a;
 
             /* JADX INFO: Access modifiers changed from: package-private */
             {
-                this.f42994a = this;
+                this.a = this;
             }
 
             @Override // kotlinx.coroutines.selects.SelectClause2
             public <R> void a(SelectInstance<? super R> selectInstance, E e2, Function2<? super SendChannel<? super E>, ? super Continuation<? super R>, ? extends Object> function2) {
-                this.f42994a.a(selectInstance, e2, function2);
+                this.a.a(selectInstance, e2, function2);
             }
         });
     }

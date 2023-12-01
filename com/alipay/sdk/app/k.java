@@ -2,7 +2,7 @@ package com.alipay.sdk.app;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alipay/sdk/app/k.class */
 public enum k {
-    SUCCEEDED(9000, "处理成功"),
+    SUCCEEDED(OpenAuthTask.OK, "处理成功"),
     FAILED(4000, "系统繁忙，请稍后再试"),
     CANCELED(6001, "用户取消"),
     NETWORK_ERROR(6002, "网络连接异常"),

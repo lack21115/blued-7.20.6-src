@@ -44,14 +44,14 @@ public final class MultipartBuilder {
         }
 
         private long writeOrCountBytes(BufferedSink bufferedSink, boolean z) throws IOException {
-            Buffer buffer;
-            Buffer buffer2;
+            BufferedSink bufferedSink2;
+            BufferedSink bufferedSink3;
             if (z) {
-                buffer = new Buffer();
-                buffer2 = buffer;
+                bufferedSink2 = new Buffer();
+                bufferedSink3 = bufferedSink2;
             } else {
-                buffer = bufferedSink;
-                buffer2 = null;
+                bufferedSink2 = bufferedSink;
+                bufferedSink3 = null;
             }
             int size = this.partHeaders.size();
             long j = 0;
@@ -59,22 +59,22 @@ public final class MultipartBuilder {
             while (true) {
                 int i2 = i;
                 if (i2 >= size) {
-                    buffer.write(MultipartBuilder.DASHDASH);
-                    buffer.write(this.boundary);
-                    buffer.write(MultipartBuilder.DASHDASH);
-                    buffer.write(MultipartBuilder.CRLF);
+                    bufferedSink2.write(MultipartBuilder.DASHDASH);
+                    bufferedSink2.write(this.boundary);
+                    bufferedSink2.write(MultipartBuilder.DASHDASH);
+                    bufferedSink2.write(MultipartBuilder.CRLF);
                     long j2 = j;
                     if (z) {
-                        j2 = j + buffer2.size();
-                        buffer2.clear();
+                        j2 = j + bufferedSink3.size();
+                        bufferedSink3.clear();
                     }
                     return j2;
                 }
                 Headers headers = this.partHeaders.get(i2);
                 RequestBody requestBody = this.partBodies.get(i2);
-                buffer.write(MultipartBuilder.DASHDASH);
-                buffer.write(this.boundary);
-                buffer.write(MultipartBuilder.CRLF);
+                bufferedSink2.write(MultipartBuilder.DASHDASH);
+                bufferedSink2.write(this.boundary);
+                bufferedSink2.write(MultipartBuilder.CRLF);
                 if (headers != null) {
                     int size2 = headers.size();
                     int i3 = 0;
@@ -83,28 +83,28 @@ public final class MultipartBuilder {
                         if (i4 >= size2) {
                             break;
                         }
-                        buffer.writeUtf8(headers.name(i4)).write(MultipartBuilder.COLONSPACE).writeUtf8(headers.value(i4)).write(MultipartBuilder.CRLF);
+                        bufferedSink2.writeUtf8(headers.name(i4)).write(MultipartBuilder.COLONSPACE).writeUtf8(headers.value(i4)).write(MultipartBuilder.CRLF);
                         i3 = i4 + 1;
                     }
                 }
                 MediaType contentType = requestBody.contentType();
                 if (contentType != null) {
-                    buffer.writeUtf8("Content-Type: ").writeUtf8(contentType.toString()).write(MultipartBuilder.CRLF);
+                    bufferedSink2.writeUtf8("Content-Type: ").writeUtf8(contentType.toString()).write(MultipartBuilder.CRLF);
                 }
                 long contentLength = requestBody.contentLength();
                 if (contentLength != -1) {
-                    buffer.writeUtf8("Content-Length: ").writeDecimalLong(contentLength).write(MultipartBuilder.CRLF);
+                    bufferedSink2.writeUtf8("Content-Length: ").writeDecimalLong(contentLength).write(MultipartBuilder.CRLF);
                 } else if (z) {
-                    buffer2.clear();
+                    bufferedSink3.clear();
                     return -1L;
                 }
-                buffer.write(MultipartBuilder.CRLF);
+                bufferedSink2.write(MultipartBuilder.CRLF);
                 if (z) {
                     j += contentLength;
                 } else {
-                    this.partBodies.get(i2).writeTo(buffer);
+                    this.partBodies.get(i2).writeTo(bufferedSink2);
                 }
-                buffer.write(MultipartBuilder.CRLF);
+                bufferedSink2.write(MultipartBuilder.CRLF);
                 i = i2 + 1;
             }
         }

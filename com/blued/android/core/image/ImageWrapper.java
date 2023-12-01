@@ -9,8 +9,6 @@ import com.blued.android.core.image.apng.AnimationRequestListener;
 import com.blued.android.core.image.http.HttpRequestListener;
 import com.blued.android.core.net.IRequestHost;
 import com.bumptech.glide.RequestBuilder;
-import com.bumptech.glide.TransitionOptions;
-import com.bumptech.glide.load.Option;
 import com.bumptech.glide.load.Transformation;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.resource.bitmap.DownsampleStrategy;
@@ -21,13 +19,9 @@ import java.util.ArrayList;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/image/ImageWrapper.class */
 public class ImageWrapper {
-
-    /* renamed from: a  reason: collision with root package name */
-    private RequestBuilder f9509a;
+    private RequestBuilder a;
     private IRequestHost b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private ImageLoadResult f9510c;
+    private ImageLoadResult c;
     private ImageLoader.OnAnimationStateListener f;
     private int d = 0;
     private int e = 1;
@@ -49,12 +43,12 @@ public class ImageWrapper {
     /* JADX INFO: Access modifiers changed from: protected */
     public ImageWrapper(IRequestHost iRequestHost, RequestBuilder requestBuilder) {
         this.b = iRequestHost;
-        this.f9509a = requestBuilder;
+        this.a = requestBuilder;
     }
 
     private ImageWrapper a(int i, boolean z, int i2) {
         this.d = i;
-        this.f9509a.b(DiskCacheStrategy.e).b((Option<Option<Boolean>>) ImageLoaderOptions.b, (Option<Boolean>) Boolean.valueOf(i == 1)).d(!z).b((Option<Option<Integer>>) ImageLoaderOptions.f9506c, (Option<Integer>) Integer.valueOf(i2));
+        this.a.b(DiskCacheStrategy.e).b(ImageLoaderOptions.b, Boolean.valueOf(i == 1)).d(!z).b(ImageLoaderOptions.c, Integer.valueOf(i2));
         return this;
     }
 
@@ -66,46 +60,46 @@ public class ImageWrapper {
         if (this.h > 0) {
             ArrayList<Transformation> j = j();
             if (j.size() > 0) {
-                this.f9509a.b((Transformation[]) j.toArray(new Transformation[0]));
+                this.a.b((Transformation[]) j.toArray(new Transformation[0]));
             }
             if (4096 == this.h) {
-                this.f9509a.b(DownsampleStrategy.d);
+                this.a.b(DownsampleStrategy.d);
             }
         }
-        ImageLoadResult imageLoadResult = this.f9510c;
+        ImageLoadResult imageLoadResult = this.c;
         if (imageLoadResult != null) {
-            this.f9509a.d(new HttpRequestListener(imageLoadResult));
+            this.a.d(new HttpRequestListener(imageLoadResult));
         }
         if (this.f != null || ((this.d == 1 && this.e != 1) || (this.d == 2 && this.e > 0))) {
             AnimationRequestListener animationRequestListener = new AnimationRequestListener(this.e, this.f);
-            if (this.f9510c != null) {
-                this.f9509a.c(animationRequestListener);
+            if (this.c != null) {
+                this.a.c(animationRequestListener);
             } else {
-                this.f9509a.d(animationRequestListener);
+                this.a.d(animationRequestListener);
             }
         }
         int i = this.r;
         if (i != 0) {
-            this.f9509a.h(i);
+            this.a.h(i);
         } else {
             Drawable drawable = this.s;
             if (drawable != null) {
-                this.f9509a.b(drawable);
+                this.a.b(drawable);
             }
         }
         int i2 = this.q;
         if (i2 != 0) {
-            this.f9509a.f(i2).g(this.q);
+            this.a.f(i2).g(this.q);
         }
         if (!TextUtils.isEmpty(this.t)) {
-            this.f9509a.b(ImageLoader.a(this.b).b(this.t).e(true));
+            this.a.b(ImageLoader.a(this.b).b(this.t).e(true));
         }
         int i3 = this.g;
         if (i3 > 0) {
             if (this.r == 0 && this.s == null) {
-                this.f9509a.b((TransitionOptions) DrawableTransitionOptions.a(i3));
+                this.a.b(DrawableTransitionOptions.a(i3));
             } else {
-                this.f9509a.b((TransitionOptions) DrawableTransitionOptions.a(new DrawableCrossFadeFactory.Builder(this.g).a(true).a()));
+                this.a.b(DrawableTransitionOptions.a(new DrawableCrossFadeFactory.Builder(this.g).a(true).a()));
             }
         }
     }
@@ -126,7 +120,7 @@ public class ImageWrapper {
     }
 
     public ImageWrapper a() {
-        this.f9509a.b(DiskCacheStrategy.b).d(true);
+        this.a.b(DiskCacheStrategy.b).d(true);
         return this;
     }
 
@@ -171,12 +165,12 @@ public class ImageWrapper {
     }
 
     public ImageWrapper a(int i, int i2) {
-        this.f9509a.b(i, i2);
+        this.a.b(i, i2);
         return this;
     }
 
     public ImageWrapper a(ImageLoadResult imageLoadResult) {
-        this.f9510c = imageLoadResult;
+        this.c = imageLoadResult;
         return this;
     }
 
@@ -187,8 +181,8 @@ public class ImageWrapper {
 
     public ImageWrapper a(ImageOptions imageOptions) {
         if (imageOptions != null) {
-            this.r = imageOptions.f9507a;
-            this.q = imageOptions.f9508c;
+            this.r = imageOptions.a;
+            this.q = imageOptions.c;
             this.t = imageOptions.b;
         }
         return this;
@@ -210,19 +204,19 @@ public class ImageWrapper {
     public void a(ImageView imageView) {
         if (imageView != null) {
             i();
-            this.f9509a.a(imageView);
+            this.a.a(imageView);
         }
     }
 
     public void a(Target<Drawable> target) {
         if (target != null) {
             i();
-            this.f9509a.a((RequestBuilder) target);
+            this.a.a(target);
         }
     }
 
     public ImageWrapper b() {
-        this.f9509a.b(DiskCacheStrategy.b);
+        this.a.b(DiskCacheStrategy.b);
         return this;
     }
 
@@ -253,7 +247,7 @@ public class ImageWrapper {
     }
 
     public ImageWrapper e() {
-        this.f9509a.b(DiskCacheStrategy.f20763c).e(Integer.MIN_VALUE);
+        this.a.b(DiskCacheStrategy.c).e(Integer.MIN_VALUE);
         return this;
     }
 

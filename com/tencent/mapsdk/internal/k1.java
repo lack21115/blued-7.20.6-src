@@ -12,7 +12,7 @@ public class k1 {
     private static volatile k1 b;
 
     /* renamed from: a  reason: collision with root package name */
-    private boolean f37581a = false;
+    private boolean f23890a = false;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/mapsdk/internal/k1$a.class */
     public class a extends ca.i<Boolean> {
@@ -61,12 +61,12 @@ public class k1 {
 
     public void a(q1 q1Var) {
         synchronized (this) {
-            if (this.f37581a) {
+            if (this.f23890a) {
                 return;
             }
             if (q1Var != null && !q1Var.v().b()) {
                 ca.a((ca.i) new a()).b((ca.d.b) Boolean.FALSE);
-                this.f37581a = true;
+                this.f23890a = true;
             }
         }
     }

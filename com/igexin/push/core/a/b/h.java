@@ -1,6 +1,7 @@
 package com.igexin.push.core.a.b;
 
 import android.speech.srec.Recognizer;
+import com.heytap.mcssdk.constant.Constants;
 import com.igexin.push.b.a;
 import com.igexin.push.config.SDKUrlConfig;
 import java.util.ArrayList;
@@ -11,14 +12,14 @@ import org.json.JSONObject;
 public final class h extends a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23407a = com.igexin.push.config.c.f23373a + "_RedirectServerAction";
+    private static final String f9799a = com.igexin.push.config.c.f9765a + "_RedirectServerAction";
 
     private static void a(String str, JSONArray jSONArray) {
         try {
-            com.igexin.c.a.c.a.a(f23407a + "|start fetch idc config, url : " + str, new Object[0]);
+            com.igexin.c.a.c.a.a(f9799a + "|start fetch idc config, url : " + str, new Object[0]);
             com.igexin.c.a.b.e.a().a((com.igexin.c.a.d.f) new com.igexin.push.e.a.f(new com.igexin.push.core.h.c(str, jSONArray)), false, true);
         } catch (Exception e) {
-            com.igexin.c.a.c.a.a(f23407a + e.toString(), new Object[0]);
+            com.igexin.c.a.c.a.a(f9799a + e.toString(), new Object[0]);
         }
     }
 
@@ -46,7 +47,7 @@ public final class h extends a {
                 try {
                     long parseLong = Long.parseLong(substring2);
                     a.b bVar = new a.b();
-                    bVar.f23299a = "socket://".concat(String.valueOf(substring));
+                    bVar.f9691a = "socket://".concat(String.valueOf(substring));
                     bVar.b = currentTimeMillis + (parseLong * 1000);
                     arrayList.add(bVar);
                 } catch (NumberFormatException e) {
@@ -76,7 +77,7 @@ public final class h extends a {
                 i = i2 + 1;
             }
         } catch (Exception e) {
-            com.igexin.c.a.c.a.a(f23407a + "|parseIDCConfigURL exception" + e.toString(), new Object[0]);
+            com.igexin.c.a.c.a.a(f9799a + "|parseIDCConfigURL exception" + e.toString(), new Object[0]);
             strArr = strArr2;
         }
         return strArr;
@@ -87,7 +88,7 @@ public final class h extends a {
             try {
                 SDKUrlConfig.setLocation(jSONObject.getString("loc"));
                 String str = com.igexin.push.core.e.f;
-                com.igexin.c.a.c.a.a(f23407a + " set group id : " + com.igexin.push.core.e.f, new Object[0]);
+                com.igexin.c.a.c.a.a(f9799a + " set group id : " + com.igexin.push.core.e.f, new Object[0]);
                 JSONArray jSONArray = jSONObject.getJSONArray(Recognizer.KEY_CONFIDENCE);
                 String[] a2 = a(jSONArray);
                 if (a2 == null || a2.length <= 1) {
@@ -95,18 +96,18 @@ public final class h extends a {
                 }
                 String[] idcConfigUrl = SDKUrlConfig.getIdcConfigUrl();
                 if (idcConfigUrl != null && (idcConfigUrl.length <= 1 || a2[1].equals(idcConfigUrl[1]))) {
-                    com.igexin.c.a.c.a.a(f23407a + "|current idc config url == new idc config url, return", new Object[0]);
+                    com.igexin.c.a.c.a.a(f9799a + "|current idc config url == new idc config url, return", new Object[0]);
                     return;
                 }
                 if (com.igexin.push.core.e.ao == 0) {
                     a(a2[1], jSONArray);
-                } else if (System.currentTimeMillis() - com.igexin.push.core.e.ao > 7200000) {
+                } else if (System.currentTimeMillis() - com.igexin.push.core.e.ao > Constants.MILLS_OF_WATCH_DOG) {
                     a(a2[1], jSONArray);
                 } else {
-                    com.igexin.c.a.c.a.a(f23407a + "|get idc cfg last time less than 2 hours return", new Object[0]);
+                    com.igexin.c.a.c.a.a(f9799a + "|get idc cfg last time less than 2 hours return", new Object[0]);
                 }
             } catch (Exception e) {
-                com.igexin.c.a.c.a.a(f23407a + e.toString(), new Object[0]);
+                com.igexin.c.a.c.a.a(f9799a + e.toString(), new Object[0]);
             }
         }
     }
@@ -114,7 +115,7 @@ public final class h extends a {
     @Override // com.igexin.push.core.a.b.a
     public final boolean a(Object obj, JSONObject jSONObject) {
         String str;
-        com.igexin.c.a.c.a.a(f23407a + "|redirect server resp data : " + jSONObject, new Object[0]);
+        com.igexin.c.a.c.a.a(f9799a + "|redirect server resp data : " + jSONObject, new Object[0]);
         try {
             a(jSONObject);
             com.igexin.c.a.b.a.a.d.a().g();
@@ -122,35 +123,35 @@ public final class h extends a {
                 try {
                     SDKUrlConfig.setLocation(jSONObject.getString("loc"));
                     String str2 = com.igexin.push.core.e.f;
-                    com.igexin.c.a.c.a.a(f23407a + " set group id : " + com.igexin.push.core.e.f, new Object[0]);
+                    com.igexin.c.a.c.a.a(f9799a + " set group id : " + com.igexin.push.core.e.f, new Object[0]);
                     JSONArray jSONArray = jSONObject.getJSONArray(Recognizer.KEY_CONFIDENCE);
                     String[] a2 = a(jSONArray);
                     if (a2 != null && a2.length > 1) {
                         String[] idcConfigUrl = SDKUrlConfig.getIdcConfigUrl();
                         if (idcConfigUrl != null && (idcConfigUrl.length <= 1 || a2[1].equals(idcConfigUrl[1]))) {
-                            com.igexin.c.a.c.a.a(f23407a + "|current idc config url == new idc config url, return", new Object[0]);
+                            com.igexin.c.a.c.a.a(f9799a + "|current idc config url == new idc config url, return", new Object[0]);
                         }
                         if (com.igexin.push.core.e.ao == 0) {
                             str = a2[1];
-                        } else if (System.currentTimeMillis() - com.igexin.push.core.e.ao > 7200000) {
+                        } else if (System.currentTimeMillis() - com.igexin.push.core.e.ao > Constants.MILLS_OF_WATCH_DOG) {
                             str = a2[1];
                         } else {
-                            com.igexin.c.a.c.a.a(f23407a + "|get idc cfg last time less than 2 hours return", new Object[0]);
+                            com.igexin.c.a.c.a.a(f9799a + "|get idc cfg last time less than 2 hours return", new Object[0]);
                         }
                         a(str, jSONArray);
                     }
                 } catch (Exception e) {
-                    com.igexin.c.a.c.a.a(f23407a + e.toString(), new Object[0]);
+                    com.igexin.c.a.c.a.a(f9799a + e.toString(), new Object[0]);
                 }
             }
             if (com.igexin.push.f.g.a()) {
-                com.igexin.c.a.c.a.a(f23407a + "|redirect reInit so ~~~~~", new Object[0]);
+                com.igexin.c.a.c.a.a(f9799a + "|redirect reInit so ~~~~~", new Object[0]);
                 com.igexin.push.f.g.d();
                 return true;
             }
             return true;
         } catch (Exception e2) {
-            com.igexin.c.a.c.a.a(f23407a + e2.toString(), new Object[0]);
+            com.igexin.c.a.c.a.a(f9799a + e2.toString(), new Object[0]);
             return true;
         }
     }

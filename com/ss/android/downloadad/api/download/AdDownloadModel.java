@@ -1,7 +1,6 @@
 package com.ss.android.downloadad.api.download;
 
 import android.text.TextUtils;
-import com.anythink.core.common.c.m;
 import com.qq.e.ads.nativ.NativeUnifiedADAppInfoImpl;
 import com.ss.android.download.api.b.ox;
 import com.ss.android.download.api.constant.BaseConstants;
@@ -426,7 +425,7 @@ public class AdDownloadModel implements DownloadModel {
         }
         Builder builder = new Builder();
         try {
-            builder.setAdId(ox.mb(jSONObject, "id")).setIsAd(jSONObject.optInt("is_ad", 1) == 1).setModelType(jSONObject.optInt("model_type")).setMimeType(jSONObject.optString("mime_type")).setExtraValue(ox.mb(jSONObject, "ext_value")).setLogExtra(jSONObject.optString(BaseConstants.EVENT_LABEL_LOG_EXTRA)).setPackageName(jSONObject.optString("package_name")).setDownloadUrl(jSONObject.optString(EventConstants.ExtraJson.DOWNLOAD_URL)).setAppName(jSONObject.optString("app_name")).setAppIcon(jSONObject.optString("app_icon")).setIsShowToast(jSONObject.optInt("is_show_toast", 1) == 1).setIsShowNotification(jSONObject.optInt("show_notification", 1) == 1).setNeedWifi(jSONObject.optInt("need_wifi") == 1).setMd5(jSONObject.optString("md5")).setExpectFileLength(jSONObject.optLong(EventConstants.ExtraJson.EXPECT_FILE_LENGTH)).setNeedIndependentProcess(jSONObject.optInt("independent_process") == 1).setVersionCode(jSONObject.optInt("version_code")).setVersionName(jSONObject.optString(NativeUnifiedADAppInfoImpl.Keys.VERSION_NAME)).setFilePath(jSONObject.optString(m.a.f6602c)).setFileName(jSONObject.optString(EventConstants.ExtraJson.FILE_NAME)).setNotificationJumpUrl(jSONObject.optString("notification_jump_url")).setAutoInstallWithoutNotification(jSONObject.optInt("auto_install_without_notify") == 1).setExecutorGroup(jSONObject.optInt(DbJsonConstants.DBJSON_KEY_EXECUTOR)).setDownloadSettings(jSONObject.optJSONObject("download_settings")).setExtra(jSONObject.optJSONObject("extra")).setStartToast(jSONObject.optString("start_toast")).setSdkMonitorScene(jSONObject.optString("sdk_monitor_scene")).setAutoInstall(jSONObject.optInt(DbJsonConstants.AUTO_INSTALL, 1) == 1).setDistinctDir(jSONObject.optInt("distinct_dir") == 1).setEnablePause(jSONObject.optInt("enable_pause", 1) == 1);
+            builder.setAdId(ox.mb(jSONObject, "id")).setIsAd(jSONObject.optInt("is_ad", 1) == 1).setModelType(jSONObject.optInt("model_type")).setMimeType(jSONObject.optString("mime_type")).setExtraValue(ox.mb(jSONObject, "ext_value")).setLogExtra(jSONObject.optString(BaseConstants.EVENT_LABEL_LOG_EXTRA)).setPackageName(jSONObject.optString("package_name")).setDownloadUrl(jSONObject.optString(EventConstants.ExtraJson.DOWNLOAD_URL)).setAppName(jSONObject.optString("app_name")).setAppIcon(jSONObject.optString("app_icon")).setIsShowToast(jSONObject.optInt("is_show_toast", 1) == 1).setIsShowNotification(jSONObject.optInt("show_notification", 1) == 1).setNeedWifi(jSONObject.optInt("need_wifi") == 1).setMd5(jSONObject.optString("md5")).setExpectFileLength(jSONObject.optLong(EventConstants.ExtraJson.EXPECT_FILE_LENGTH)).setNeedIndependentProcess(jSONObject.optInt("independent_process") == 1).setVersionCode(jSONObject.optInt("version_code")).setVersionName(jSONObject.optString(NativeUnifiedADAppInfoImpl.Keys.VERSION_NAME)).setFilePath(jSONObject.optString("file_path")).setFileName(jSONObject.optString(EventConstants.ExtraJson.FILE_NAME)).setNotificationJumpUrl(jSONObject.optString("notification_jump_url")).setAutoInstallWithoutNotification(jSONObject.optInt("auto_install_without_notify") == 1).setExecutorGroup(jSONObject.optInt(DbJsonConstants.DBJSON_KEY_EXECUTOR)).setDownloadSettings(jSONObject.optJSONObject("download_settings")).setExtra(jSONObject.optJSONObject("extra")).setStartToast(jSONObject.optString("start_toast")).setSdkMonitorScene(jSONObject.optString("sdk_monitor_scene")).setAutoInstall(jSONObject.optInt(DbJsonConstants.AUTO_INSTALL, 1) == 1).setDistinctDir(jSONObject.optInt("distinct_dir") == 1).setEnablePause(jSONObject.optInt("enable_pause", 1) == 1);
             appendDeepLinkFromJson(jSONObject, builder);
             appendQuickAppUrlFromJson(jSONObject, builder);
             appendTrackUrlFromJson(jSONObject, builder);
@@ -831,7 +830,7 @@ public class AdDownloadModel implements DownloadModel {
             jSONObject.put("independent_process", this.mIndependentProcess ? 1 : 0);
             jSONObject.put("version_code", this.mVersionCode);
             jSONObject.putOpt(NativeUnifiedADAppInfoImpl.Keys.VERSION_NAME, this.mVersionName);
-            jSONObject.putOpt(m.a.f6602c, this.mFilePath);
+            jSONObject.putOpt("file_path", this.mFilePath);
             jSONObject.putOpt(EventConstants.ExtraJson.FILE_NAME, this.mFileName);
             jSONObject.putOpt("notification_jump_url", this.mNotificationJumpUrl);
             jSONObject.putOpt("auto_install_without_notify", Integer.valueOf(this.mAutoInstallWithoutNotification ? 1 : 0));

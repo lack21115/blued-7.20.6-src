@@ -10,11 +10,11 @@ import java.util.concurrent.atomic.AtomicLong;
 public class d {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f24858a;
+    public final String f11170a;
     public final String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final Map<String, String> f24859c;
+    public final Map<String, String> f11171c;
     public final byte[] d;
     public final long e;
     public final boolean f;
@@ -25,11 +25,11 @@ public class d {
         private static AtomicLong e = new AtomicLong(0);
 
         /* renamed from: a  reason: collision with root package name */
-        private String f24860a;
+        private String f11172a;
         private String b;
 
         /* renamed from: c  reason: collision with root package name */
-        private Map<String, String> f24861c;
+        private Map<String, String> f11173c;
         private byte[] d;
         private long f;
         private boolean g = false;
@@ -42,9 +42,9 @@ public class d {
         public a a(d dVar) {
             a aVar = new a();
             if (dVar != null) {
-                aVar.a(dVar.f24858a);
+                aVar.a(dVar.f11170a);
                 aVar.b(dVar.b);
-                aVar.a(dVar.f24859c);
+                aVar.a(dVar.f11171c);
                 aVar.a(dVar.d);
                 aVar.a(dVar.f);
                 aVar.b(dVar.g);
@@ -53,12 +53,12 @@ public class d {
         }
 
         public a a(String str) {
-            this.f24860a = str;
+            this.f11172a = str;
             return this;
         }
 
         public a a(Map<String, String> map) {
-            this.f24861c = map;
+            this.f11173c = map;
             return this;
         }
 
@@ -73,12 +73,12 @@ public class d {
         }
 
         public d a() {
-            if (TextUtils.isEmpty(this.f24860a) || TextUtils.isEmpty(this.b)) {
+            if (TextUtils.isEmpty(this.f11172a) || TextUtils.isEmpty(this.b)) {
                 throw new NullPointerException("httpMethod or url is null.");
             }
             this.f = b();
-            if (this.f24861c == null) {
-                this.f24861c = new HashMap();
+            if (this.f11173c == null) {
+                this.f11173c = new HashMap();
             }
             return new d(this);
         }
@@ -95,9 +95,9 @@ public class d {
     }
 
     public d(a aVar) {
-        this.f24858a = aVar.f24860a;
+        this.f11170a = aVar.f11172a;
         this.b = aVar.b;
-        this.f24859c = aVar.f24861c;
+        this.f11171c = aVar.f11173c;
         this.d = aVar.d;
         this.e = aVar.f;
         this.f = aVar.g;
@@ -105,6 +105,6 @@ public class d {
     }
 
     public String toString() {
-        return "NetRequest{, httpMethod='" + this.f24858a + "', url='" + this.b + "', headerMap=" + this.f24859c + ", data=" + Arrays.toString(this.d) + ", requestId=" + this.e + ", needEnCrypt=" + this.f + ", supportGzipCompress=" + this.g + '}';
+        return "NetRequest{, httpMethod='" + this.f11170a + "', url='" + this.b + "', headerMap=" + this.f11171c + ", data=" + Arrays.toString(this.d) + ", requestId=" + this.e + ", needEnCrypt=" + this.f + ", supportGzipCompress=" + this.g + '}';
     }
 }

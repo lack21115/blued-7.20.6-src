@@ -12,7 +12,7 @@ import java.security.spec.X509EncodedKeySpec;
 public class EncryptUtil {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23139a = "EncryptUtil";
+    private static final String f9531a = "EncryptUtil";
     private static final String b = "RSA";
 
     /* JADX WARN: Removed duplicated region for block: B:25:0x0023 A[EXC_TOP_SPLITTER, SYNTHETIC] */
@@ -33,7 +33,7 @@ public class EncryptUtil {
             r4 = r0
             goto L1d
         L13:
-            java.lang.String r0 = com.huawei.secure.android.common.util.EncryptUtil.f23139a
+            java.lang.String r0 = com.huawei.secure.android.common.util.EncryptUtil.f9531a
             java.lang.String r1 = "getSecureRandomBytes: NoSuchAlgorithmException"
             com.huawei.secure.android.common.util.LogsUtil.e(r0, r1)
         L1b:
@@ -55,7 +55,7 @@ public class EncryptUtil {
             return r0
         L30:
             r4 = move-exception
-            java.lang.String r0 = com.huawei.secure.android.common.util.EncryptUtil.f23139a
+            java.lang.String r0 = com.huawei.secure.android.common.util.EncryptUtil.f9531a
             r5 = r0
             java.lang.StringBuilder r0 = new java.lang.StringBuilder
             r1 = r0
@@ -74,7 +74,7 @@ public class EncryptUtil {
             com.huawei.secure.android.common.util.LogsUtil.e(r0, r1)
             goto L60
         L58:
-            java.lang.String r0 = com.huawei.secure.android.common.util.EncryptUtil.f23139a
+            java.lang.String r0 = com.huawei.secure.android.common.util.EncryptUtil.f9531a
             java.lang.String r1 = "getSecureRandomBytes getInstance: NoSuchAlgorithmException"
             com.huawei.secure.android.common.util.LogsUtil.e(r0, r1)
         L60:
@@ -102,15 +102,15 @@ public class EncryptUtil {
             try {
                 return KeyFactory.getInstance(b).generatePrivate(new PKCS8EncodedKeySpec(Base64.decode(str, 0)));
             } catch (GeneralSecurityException e) {
-                String str2 = f23139a;
+                String str2 = f9531a;
                 LogsUtil.e(str2, "load Key Exception:" + e.getMessage(), true);
                 return null;
             }
         } catch (IllegalArgumentException e2) {
-            LogsUtil.e(f23139a, "base64 decode IllegalArgumentException", true);
+            LogsUtil.e(f9531a, "base64 decode IllegalArgumentException", true);
             return null;
         } catch (Exception e3) {
-            LogsUtil.e(f23139a, "base64 decode Exception", true);
+            LogsUtil.e(f9531a, "base64 decode Exception", true);
             return null;
         }
     }
@@ -121,15 +121,15 @@ public class EncryptUtil {
             try {
                 return (RSAPublicKey) KeyFactory.getInstance(b).generatePublic(new X509EncodedKeySpec(Base64.decode(str, 0)));
             } catch (GeneralSecurityException e) {
-                String str2 = f23139a;
+                String str2 = f9531a;
                 LogsUtil.e(str2, "load Key Exception:" + e.getMessage(), true);
                 return null;
             }
         } catch (IllegalArgumentException e2) {
-            LogsUtil.e(f23139a, "base64 decode IllegalArgumentException", true);
+            LogsUtil.e(f9531a, "base64 decode IllegalArgumentException", true);
             return null;
         } catch (Exception e3) {
-            LogsUtil.e(f23139a, "base64 decode Exception", true);
+            LogsUtil.e(f9531a, "base64 decode Exception", true);
             return null;
         }
     }

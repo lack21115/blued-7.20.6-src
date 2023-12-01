@@ -1,5 +1,6 @@
 package androidx.constraintlayout.core.parser;
 
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.PrintStream;
 
 /* loaded from: source-8756600-dex2jar.jar:androidx/constraintlayout/core/parser/CLElement.class */
@@ -8,16 +9,16 @@ public class CLElement {
     protected static int f = 2;
 
     /* renamed from: a  reason: collision with root package name */
-    private final char[] f2072a;
+    private final char[] f2024a;
     protected long b = -1;
 
     /* renamed from: c  reason: collision with root package name */
-    protected long f2073c = Long.MAX_VALUE;
+    protected long f2025c = Long.MAX_VALUE;
     protected CLContainer d;
     private int g;
 
     public CLElement(char[] cArr) {
-        this.f2072a = cArr;
+        this.f2024a = cArr;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -41,15 +42,15 @@ public class CLElement {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public String b() {
-        if (CLParser.f2077a) {
+        if (CLParser.f2029a) {
             return a() + " -> ";
         }
         return "";
     }
 
     public String content() {
-        String str = new String(this.f2072a);
-        long j = this.f2073c;
+        String str = new String(this.f2024a);
+        long j = this.f2025c;
         if (j != Long.MAX_VALUE) {
             long j2 = this.b;
             if (j >= j2) {
@@ -65,7 +66,7 @@ public class CLElement {
     }
 
     public long getEnd() {
-        return this.f2073c;
+        return this.f2025c;
     }
 
     public float getFloat() {
@@ -91,7 +92,7 @@ public class CLElement {
     }
 
     public boolean isDone() {
-        return this.f2073c != Long.MAX_VALUE;
+        return this.f2025c != Long.MAX_VALUE;
     }
 
     public boolean isStarted() {
@@ -107,11 +108,11 @@ public class CLElement {
     }
 
     public void setEnd(long j) {
-        if (this.f2073c != Long.MAX_VALUE) {
+        if (this.f2025c != Long.MAX_VALUE) {
             return;
         }
-        this.f2073c = j;
-        if (CLParser.f2077a) {
+        this.f2025c = j;
+        if (CLParser.f2029a) {
             PrintStream printStream = System.out;
             printStream.println("closing " + hashCode() + " -> " + this);
         }
@@ -141,11 +142,11 @@ public class CLElement {
 
     public String toString() {
         long j = this.b;
-        long j2 = this.f2073c;
+        long j2 = this.f2025c;
         if (j > j2 || j2 == Long.MAX_VALUE) {
-            return getClass() + " (INVALID, " + this.b + "-" + this.f2073c + ")";
+            return getClass() + " (INVALID, " + this.b + Constants.ACCEPT_TIME_SEPARATOR_SERVER + this.f2025c + ")";
         }
-        String substring = new String(this.f2072a).substring((int) this.b, ((int) this.f2073c) + 1);
-        return a() + " (" + this.b + " : " + this.f2073c + ") <<" + substring + ">>";
+        String substring = new String(this.f2024a).substring((int) this.b, ((int) this.f2025c) + 1);
+        return a() + " (" + this.b + " : " + this.f2025c + ") <<" + substring + ">>";
     }
 }

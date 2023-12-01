@@ -10,9 +10,7 @@ public final class g {
 
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/a/b/g$a.class */
     public static final class a {
-
-        /* renamed from: a  reason: collision with root package name */
-        public int f5851a;
+        public int a;
         public int b;
     }
 
@@ -29,7 +27,7 @@ public final class g {
                 String extractMetadata = mediaMetadataRetriever.extractMetadata(18);
                 String extractMetadata2 = mediaMetadataRetriever.extractMetadata(19);
                 mediaMetadataRetriever.release();
-                aVar2.f5851a = Integer.parseInt(extractMetadata);
+                aVar2.a = Integer.parseInt(extractMetadata);
                 aVar2.b = Integer.parseInt(extractMetadata2);
                 return aVar2;
             } catch (Exception e) {
@@ -49,14 +47,14 @@ public final class g {
         if (a2 == null) {
             return null;
         }
-        float f = (a2.f5851a * 1.0f) / a2.b;
+        float f = (a2.a * 1.0f) / a2.b;
         if (f < (i * 1.0f) / i2) {
             a2.b = i2;
-            a2.f5851a = (int) Math.ceil(a2.b * f);
+            a2.a = (int) Math.ceil(a2.b * f);
             return a2;
         }
-        a2.f5851a = i;
-        a2.b = (int) Math.ceil(a2.f5851a / f);
+        a2.a = i;
+        a2.b = (int) Math.ceil(a2.a / f);
         return a2;
     }
 
@@ -71,7 +69,7 @@ public final class g {
                     String extractMetadata = mediaMetadataRetriever.extractMetadata(18);
                     String extractMetadata2 = mediaMetadataRetriever.extractMetadata(19);
                     mediaMetadataRetriever.release();
-                    aVar2.f5851a = Integer.parseInt(extractMetadata);
+                    aVar2.a = Integer.parseInt(extractMetadata);
                     aVar2.b = Integer.parseInt(extractMetadata2);
                     return aVar2;
                 } catch (Exception e) {
@@ -93,14 +91,14 @@ public final class g {
         if (a2 == null) {
             return null;
         }
-        float f = (a2.f5851a * 1.0f) / a2.b;
+        float f = (a2.a * 1.0f) / a2.b;
         if (f < (i * 1.0f) / i2) {
             a2.b = i2;
-            a2.f5851a = (int) (a2.b * f);
+            a2.a = (int) (a2.b * f);
             return a2;
         }
-        a2.f5851a = i;
-        a2.b = (int) (a2.f5851a / f);
+        a2.a = i;
+        a2.b = (int) (a2.a / f);
         return a2;
     }
 }

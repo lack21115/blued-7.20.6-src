@@ -12,7 +12,7 @@ public final class b implements Closeable {
     private int end;
 
     /* renamed from: in  reason: collision with root package name */
-    private final InputStream f23927in;
+    private final InputStream f10316in;
     private int pos;
 
     private b(InputStream inputStream, int i, Charset charset) {
@@ -22,7 +22,7 @@ public final class b implements Closeable {
         if (!charset.equals(com.kwad.sdk.crash.utils.a.US_ASCII)) {
             throw new IllegalArgumentException("Unsupported encoding");
         }
-        this.f23927in = inputStream;
+        this.f10316in = inputStream;
         this.aeP = charset;
         this.buf = new byte[8192];
     }
@@ -32,7 +32,7 @@ public final class b implements Closeable {
     }
 
     private void vr() {
-        InputStream inputStream = this.f23927in;
+        InputStream inputStream = this.f10316in;
         byte[] bArr = this.buf;
         int read = inputStream.read(bArr, 0, bArr.length);
         if (read == -1) {
@@ -44,10 +44,10 @@ public final class b implements Closeable {
 
     @Override // java.io.Closeable, java.lang.AutoCloseable
     public final void close() {
-        synchronized (this.f23927in) {
+        synchronized (this.f10316in) {
             if (this.buf != null) {
                 this.buf = null;
-                com.kwad.sdk.crash.utils.b.closeQuietly(this.f23927in);
+                com.kwad.sdk.crash.utils.b.closeQuietly(this.f10316in);
             }
         }
     }

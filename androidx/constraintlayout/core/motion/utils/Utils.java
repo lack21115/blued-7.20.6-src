@@ -9,7 +9,7 @@ import java.net.Socket;
 public class Utils {
 
     /* renamed from: a  reason: collision with root package name */
-    static DebugHandle f2068a;
+    static DebugHandle f2020a;
 
     /* loaded from: source-8756600-dex2jar.jar:androidx/constraintlayout/core/motion/utils/Utils$DebugHandle.class */
     public interface DebugHandle {
@@ -26,7 +26,7 @@ public class Utils {
         String substring = (stackTraceElement.getMethodName() + "                  ").substring(0, 17);
         String str2 = ".(" + stackTraceElement.getFileName() + ":" + stackTraceElement.getLineNumber() + ")" + "    ".substring(Integer.toString(stackTraceElement.getLineNumber()).length()) + substring;
         System.out.println(str2 + " " + str);
-        DebugHandle debugHandle = f2068a;
+        DebugHandle debugHandle = f2020a;
         if (debugHandle != null) {
             debugHandle.message(str2 + " " + str);
         }
@@ -67,7 +67,7 @@ public class Utils {
     }
 
     public static void setDebugHandle(DebugHandle debugHandle) {
-        f2068a = debugHandle;
+        f2020a = debugHandle;
     }
 
     public static void socketSend(String str) {

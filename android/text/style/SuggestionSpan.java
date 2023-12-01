@@ -113,13 +113,13 @@ public class SuggestionSpan extends CharacterStyle implements ParcelableSpan {
             this.mAutoCorrectionUnderlineColor = -16777216;
             return;
         }
-        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(null, R.styleable.SuggestionSpan, R.attr.textAppearanceMisspelledSuggestion, 0);
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(null, R.styleable.SuggestionSpan, 18219013, 0);
         this.mMisspelledUnderlineThickness = obtainStyledAttributes.getDimension(1, 0.0f);
         this.mMisspelledUnderlineColor = obtainStyledAttributes.getColor(0, -16777216);
-        TypedArray obtainStyledAttributes2 = context.obtainStyledAttributes(null, R.styleable.SuggestionSpan, R.attr.textAppearanceEasyCorrectSuggestion, 0);
+        TypedArray obtainStyledAttributes2 = context.obtainStyledAttributes(null, R.styleable.SuggestionSpan, 18219012, 0);
         this.mEasyCorrectUnderlineThickness = obtainStyledAttributes2.getDimension(1, 0.0f);
         this.mEasyCorrectUnderlineColor = obtainStyledAttributes2.getColor(0, -16777216);
-        TypedArray obtainStyledAttributes3 = context.obtainStyledAttributes(null, R.styleable.SuggestionSpan, R.attr.textAppearanceAutoCorrectionSuggestion, 0);
+        TypedArray obtainStyledAttributes3 = context.obtainStyledAttributes(null, R.styleable.SuggestionSpan, 18219014, 0);
         this.mAutoCorrectionUnderlineThickness = obtainStyledAttributes3.getDimension(1, 0.0f);
         this.mAutoCorrectionUnderlineColor = obtainStyledAttributes3.getColor(0, -16777216);
     }

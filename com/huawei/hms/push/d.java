@@ -71,7 +71,7 @@ public class d {
 
     public static void a(Context context, int i) {
         if (context == null) {
-            HMSLog.e("PushSelfShowLog", com.anythink.expressad.foundation.g.b.b.f7836a);
+            HMSLog.e("PushSelfShowLog", com.anythink.expressad.foundation.g.b.b.f4996a);
             return;
         }
         try {

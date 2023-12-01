@@ -28,11 +28,11 @@ import com.soft.blued.utils.StringUtils;
 public class LiveTwoLevelFragment extends BaseFragment {
 
     /* renamed from: a  reason: collision with root package name */
-    private View f31225a;
+    private View f17535a;
     private ImageView b;
 
     /* renamed from: c  reason: collision with root package name */
-    private LiveTwoFloorModel f31226c;
+    private LiveTwoFloorModel f17536c;
     private String d = "two_floor_live";
     private LoadOptions e = null;
     private Observer<String> f = new Observer<String>() { // from class: com.soft.blued.ui.live.fragment.LiveTwoLevelFragment.2
@@ -67,28 +67,27 @@ public class LiveTwoLevelFragment extends BaseFragment {
         String str;
         String str2;
         int i;
-        LiveTwoFloorModel liveTwoFloorModel = this.f31226c;
+        LiveTwoFloorModel liveTwoFloorModel = this.f17536c;
         if (liveTwoFloorModel == null || StringUtils.a(liveTwoFloorModel.lid, 0) <= 0) {
             b();
             return;
         }
-        EventTrackLive.b(LiveProtos.Event.LIVE_HOME_REFRESH_LIVE_ENTER, this.f31226c.lid, this.f31226c.uid, this.f31226c.id);
-        long a2 = StringUtils.a(this.f31226c.lid, 0L);
-        if (this.f31226c.anchor != null) {
-            str = this.f31226c.anchor.name;
-            str2 = this.f31226c.anchor.avatar;
-            i = this.f31226c.anchor.vbadge;
+        EventTrackLive.b(LiveProtos.Event.LIVE_HOME_REFRESH_LIVE_ENTER, this.f17536c.lid, this.f17536c.uid, this.f17536c.id);
+        long a2 = StringUtils.a(this.f17536c.lid, 0L);
+        if (this.f17536c.anchor != null) {
+            str = this.f17536c.anchor.name;
+            str2 = this.f17536c.anchor.avatar;
+            i = this.f17536c.anchor.vbadge;
         } else {
             str = "";
             str2 = str;
             i = 0;
         }
-        LiveRoomData liveRoomData = new LiveRoomData(a2, this.f31226c.screen_pattern, this.d, this.f31226c.uid, str, str2, i);
-        liveRoomData.live_url = this.f31226c.live_play;
+        LiveRoomData liveRoomData = new LiveRoomData(a2, this.f17536c.screen_pattern, this.d, this.f17536c.uid, str, str2, i);
+        liveRoomData.live_url = this.f17536c.live_play;
         LiveRoomInfoChannel.a(getContext(), liveRoomData);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         ActivityChangeAnimationUtils.b(getActivity());
         LoadOptions loadOptions = new LoadOptions();
@@ -96,28 +95,26 @@ public class LiveTwoLevelFragment extends BaseFragment {
         loadOptions.d = 2131237310;
         this.e.b = 2131237310;
         if (getArguments() != null) {
-            this.f31226c = (LiveTwoFloorModel) getArguments().getSerializable("liveTwoFloorModel");
+            this.f17536c = getArguments().getSerializable("liveTwoFloorModel");
             this.d = getArguments().getString("from_page", "two_floor_live");
         }
-        if (this.f31226c == null) {
+        if (this.f17536c == null) {
             b();
         }
         super.onCreate(bundle);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        View view = this.f31225a;
+        View view = this.f17535a;
         if (view == null) {
             LiveEventBus.get("live_back_to_two_level", String.class).observeForever(this.f);
             View inflate = layoutInflater.inflate(R.layout.fragment_play_two_level, viewGroup, false);
-            this.f31225a = inflate;
-            this.b = (ImageView) inflate.findViewById(2131364545);
-            if (this.f31226c.anchor == null || TextUtils.isEmpty(this.f31226c.anchor.avatar)) {
+            this.f17535a = inflate;
+            this.b = (ImageView) inflate.findViewById(R.id.img_header_bg);
+            if (this.f17536c.anchor == null || TextUtils.isEmpty(this.f17536c.anchor.avatar)) {
                 a();
             } else {
-                ImageLoader.a(getFragmentActive(), this.f31226c.anchor.avatar).b(2131236500).e().d().a(new ImageLoadResult(getFragmentActive()) { // from class: com.soft.blued.ui.live.fragment.LiveTwoLevelFragment.1
-                    @Override // com.blued.android.core.image.ImageLoadResult
+                ImageLoader.a(getFragmentActive(), this.f17536c.anchor.avatar).b((int) R.drawable.shape_live_bg).e().d().a(new ImageLoadResult(getFragmentActive()) { // from class: com.soft.blued.ui.live.fragment.LiveTwoLevelFragment.1
                     public void a() {
                         super.a();
                         LiveTwoLevelFragment.this.postDelaySafeRunOnUiThread(new Runnable() { // from class: com.soft.blued.ui.live.fragment.LiveTwoLevelFragment.1.1
@@ -128,19 +125,17 @@ public class LiveTwoLevelFragment extends BaseFragment {
                         }, 300L);
                     }
 
-                    @Override // com.blued.android.core.image.ImageLoadResult
                     public void a(int i, Exception exc) {
                         LiveTwoLevelFragment.this.a();
                     }
                 }).a(this.b);
             }
         } else if (view.getParent() != null) {
-            ((ViewGroup) this.f31225a.getParent()).removeView(this.f31225a);
+            ((ViewGroup) this.f17535a.getParent()).removeView(this.f17535a);
         }
-        return this.f31225a;
+        return this.f17535a;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
         LiveEventBus.get("live_back_to_two_level", String.class).removeObserver(this.f);

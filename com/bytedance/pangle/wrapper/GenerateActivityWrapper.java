@@ -611,6 +611,7 @@ public abstract class GenerateActivityWrapper extends Activity implements a {
         this.mOriginActivity.onProvideAssistData(bundle);
     }
 
+    @Override // android.view.Window.Callback
     public void onProvideKeyboardShortcuts(List list, Menu menu, int i) {
         this.mOriginActivity.onProvideKeyboardShortcuts(list, menu, i);
     }
@@ -643,6 +644,7 @@ public abstract class GenerateActivityWrapper extends Activity implements a {
         return this.mOriginActivity.onSearchRequested();
     }
 
+    @Override // android.view.Window.Callback
     public boolean onSearchRequested(SearchEvent searchEvent) {
         return this.mOriginActivity.onSearchRequested(searchEvent);
     }
@@ -690,6 +692,7 @@ public abstract class GenerateActivityWrapper extends Activity implements a {
         return this.mOriginActivity.onWindowStartingActionMode(callback);
     }
 
+    @Override // android.view.Window.Callback
     public ActionMode onWindowStartingActionMode(ActionMode.Callback callback, int i) {
         return this.mOriginActivity.onWindowStartingActionMode(callback, i);
     }

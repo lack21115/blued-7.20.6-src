@@ -17,8 +17,8 @@ public abstract class ExecutorCoroutineDispatcherBase extends ExecutorCoroutineD
 
     private final ScheduledFuture<?> a(Runnable runnable, CoroutineContext coroutineContext, long j) {
         try {
-            Executor a2 = a();
-            ScheduledExecutorService scheduledExecutorService = a2 instanceof ScheduledExecutorService ? (ScheduledExecutorService) a2 : null;
+            Executor a = a();
+            ScheduledExecutorService scheduledExecutorService = a instanceof ScheduledExecutorService ? (ScheduledExecutorService) a : null;
             if (scheduledExecutorService == null) {
                 return null;
             }
@@ -35,15 +35,15 @@ public abstract class ExecutorCoroutineDispatcherBase extends ExecutorCoroutineD
 
     @Override // kotlinx.coroutines.Delay
     public DisposableHandle a(long j, Runnable runnable, CoroutineContext coroutineContext) {
-        ScheduledFuture<?> a2 = this.b ? a(runnable, coroutineContext, j) : null;
-        return a2 != null ? new DisposableFutureHandle(a2) : DefaultExecutor.b.a(j, runnable, coroutineContext);
+        ScheduledFuture<?> a = this.b ? a(runnable, coroutineContext, j) : null;
+        return a != null ? new DisposableFutureHandle(a) : DefaultExecutor.b.a(j, runnable, coroutineContext);
     }
 
     @Override // kotlinx.coroutines.Delay
     public void a(long j, CancellableContinuation<? super Unit> cancellableContinuation) {
-        ScheduledFuture<?> a2 = this.b ? a(new ResumeUndispatchedRunnable(this, cancellableContinuation), cancellableContinuation.getContext(), j) : null;
-        if (a2 != null) {
-            JobKt.a(cancellableContinuation, a2);
+        ScheduledFuture<?> a = this.b ? a(new ResumeUndispatchedRunnable(this, cancellableContinuation), cancellableContinuation.getContext(), j) : null;
+        if (a != null) {
+            JobKt.a(cancellableContinuation, a);
         } else {
             DefaultExecutor.b.a(j, cancellableContinuation);
         }
@@ -51,8 +51,8 @@ public abstract class ExecutorCoroutineDispatcherBase extends ExecutorCoroutineD
 
     @Override // java.io.Closeable, java.lang.AutoCloseable
     public void close() {
-        Executor a2 = a();
-        ExecutorService executorService = a2 instanceof ExecutorService ? (ExecutorService) a2 : null;
+        Executor a = a();
+        ExecutorService executorService = a instanceof ExecutorService ? (ExecutorService) a : null;
         if (executorService == null) {
             return;
         }
@@ -62,16 +62,16 @@ public abstract class ExecutorCoroutineDispatcherBase extends ExecutorCoroutineD
     @Override // kotlinx.coroutines.CoroutineDispatcher
     public void dispatch(CoroutineContext coroutineContext, Runnable runnable) {
         try {
-            Executor a2 = a();
-            AbstractTimeSource a3 = AbstractTimeSourceKt.a();
-            a2.execute(a3 == null ? runnable : a3.a(runnable));
+            Executor a = a();
+            AbstractTimeSource a2 = AbstractTimeSourceKt.a();
+            a.execute(a2 == null ? runnable : a2.a(runnable));
         } catch (RejectedExecutionException e) {
-            AbstractTimeSource a4 = AbstractTimeSourceKt.a();
-            if (a4 != null) {
-                a4.c();
+            AbstractTimeSource a3 = AbstractTimeSourceKt.a();
+            if (a3 != null) {
+                a3.c();
             }
             a(coroutineContext, e);
-            Dispatchers dispatchers = Dispatchers.f42810a;
+            Dispatchers dispatchers = Dispatchers.a;
             Dispatchers.c().dispatch(coroutineContext, runnable);
         }
     }

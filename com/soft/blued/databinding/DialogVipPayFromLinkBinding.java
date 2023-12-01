@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class DialogVipPayFromLinkBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final FrameLayout f28730a;
+    private final FrameLayout f15040a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f28730a;
+        return this.f15040a;
     }
 }

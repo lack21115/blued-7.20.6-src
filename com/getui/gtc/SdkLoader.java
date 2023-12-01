@@ -19,7 +19,7 @@ public class SdkLoader {
             if (file.exists()) {
                 File file2 = new File(str2, a.a(file.getName()));
                 if (file2.exists()) {
-                    File file3 = new File(str2, file.getName().replace(com.getui.gtc.c.a.b, com.getui.gtc.c.a.f21919a));
+                    File file3 = new File(str2, file.getName().replace(com.getui.gtc.c.a.b, com.getui.gtc.c.a.f8312a));
                     if (file3.exists()) {
                         file3.delete();
                     }
@@ -29,7 +29,7 @@ public class SdkLoader {
             ClassLoader classLoader = (ClassLoader) constructor.newInstance(str, str2, null, context.getClassLoader());
             File file4 = new File(str);
             if (file4.exists()) {
-                File file5 = new File(str2, file4.getName().replace(com.getui.gtc.c.a.b, com.getui.gtc.c.a.f21919a));
+                File file5 = new File(str2, file4.getName().replace(com.getui.gtc.c.a.b, com.getui.gtc.c.a.f8312a));
                 if (file5.exists()) {
                     File file6 = new File(str2, a.a(file4.getName()));
                     if (file6.exists()) {

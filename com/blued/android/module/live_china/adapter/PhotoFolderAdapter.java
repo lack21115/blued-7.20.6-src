@@ -10,33 +10,29 @@ import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/adapter/PhotoFolderAdapter.class */
 public class PhotoFolderAdapter extends BaseAdapter {
-
-    /* renamed from: a  reason: collision with root package name */
-    private List<String> f11709a;
+    private List<String> a;
 
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/adapter/PhotoFolderAdapter$PhotoHolder.class */
     static class PhotoHolder {
-
-        /* renamed from: a  reason: collision with root package name */
-        public TextView f11710a;
+        public TextView a;
 
         private PhotoHolder() {
         }
     }
 
     public PhotoFolderAdapter(List<String> list) {
-        this.f11709a = list;
+        this.a = list;
     }
 
     @Override // android.widget.Adapter
     /* renamed from: a */
     public String getItem(int i) {
-        return this.f11709a.get(i);
+        return this.a.get(i);
     }
 
     @Override // android.widget.Adapter
     public int getCount() {
-        List<String> list = this.f11709a;
+        List<String> list = this.a;
         if (list == null) {
             return 0;
         }
@@ -55,11 +51,11 @@ public class PhotoFolderAdapter extends BaseAdapter {
             view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_photo_folder_layout, viewGroup, false);
             photoHolder = new PhotoHolder();
             view.setTag(photoHolder);
-            photoHolder.f11710a = (TextView) view.findViewById(R.id.tv_folder_name);
+            photoHolder.a = (TextView) view.findViewById(R.id.tv_folder_name);
         } else {
             photoHolder = (PhotoHolder) view.getTag();
         }
-        photoHolder.f11710a.setText(this.f11709a.get(i));
+        photoHolder.a.setText(this.a.get(i));
         return view;
     }
 }

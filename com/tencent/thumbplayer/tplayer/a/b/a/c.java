@@ -4,49 +4,49 @@ import com.tencent.thumbplayer.tplayer.a.b.a;
 
 /* loaded from: source-8829756-dex2jar.jar:com/tencent/thumbplayer/tplayer/a/b/a/c.class */
 public class c extends com.tencent.thumbplayer.tplayer.a.b.a {
-    @a.InterfaceC1025a(a = "bufferingdurationms")
+    @a.InterfaceC0855a(a = "bufferingdurationms")
 
     /* renamed from: a  reason: collision with root package name */
-    private long f39372a = -1;
-    @a.InterfaceC1025a(a = "bufferingcount")
+    private long f25681a = -1;
+    @a.InterfaceC0855a(a = "bufferingcount")
     private int b = -1;
-    @a.InterfaceC1025a(a = "playeddurationms")
+    @a.InterfaceC0855a(a = "playeddurationms")
 
     /* renamed from: c  reason: collision with root package name */
-    private long f39373c = -1;
-    @a.InterfaceC1025a(a = "maxstreambitratekbps")
+    private long f25682c = -1;
+    @a.InterfaceC0855a(a = "maxstreambitratekbps")
     private long d = -1;
-    @a.InterfaceC1025a(a = "avgstreambitratekbps")
+    @a.InterfaceC0855a(a = "avgstreambitratekbps")
     private long e = -1;
-    @a.InterfaceC1025a(a = "minstreambitratekbps")
+    @a.InterfaceC0855a(a = "minstreambitratekbps")
     private long f = -1;
-    @a.InterfaceC1025a(a = "maxvideodecodecosttimems")
+    @a.InterfaceC0855a(a = "maxvideodecodecosttimems")
     private long g = -1;
-    @a.InterfaceC1025a(a = "avgvideodecodecosttimems")
+    @a.InterfaceC0855a(a = "avgvideodecodecosttimems")
     private long h = -1;
-    @a.InterfaceC1025a(a = "minvideodecodecosttimems")
+    @a.InterfaceC0855a(a = "minvideodecodecosttimems")
     private long i = -1;
-    @a.InterfaceC1025a(a = "minvideogopsize")
+    @a.InterfaceC0855a(a = "minvideogopsize")
     private int j = -1;
-    @a.InterfaceC1025a(a = "avgvideogopsize")
+    @a.InterfaceC0855a(a = "avgvideogopsize")
     private int k = -1;
-    @a.InterfaceC1025a(a = "maxvideogopsize")
+    @a.InterfaceC0855a(a = "maxvideogopsize")
     private int l = -1;
-    @a.InterfaceC1025a(a = "videodecodeframecount")
+    @a.InterfaceC0855a(a = "videodecodeframecount")
     private int m = -1;
-    @a.InterfaceC1025a(a = "videorenderframecount")
+    @a.InterfaceC0855a(a = "videorenderframecount")
     private int n = -1;
-    @a.InterfaceC1025a(a = "videobuffereddurationms")
+    @a.InterfaceC0855a(a = "videobuffereddurationms")
     private long o = -1;
-    @a.InterfaceC1025a(a = "audiobuffereddurationms")
+    @a.InterfaceC0855a(a = "audiobuffereddurationms")
     private long p = -1;
 
     public void c(long j) {
-        this.f39372a = j;
+        this.f25681a = j;
     }
 
     public void d(long j) {
-        this.f39373c = j;
+        this.f25682c = j;
     }
 
     public void e(long j) {

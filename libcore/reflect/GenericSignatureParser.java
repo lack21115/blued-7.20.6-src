@@ -29,8 +29,8 @@ public final class GenericSignatureParser {
         this.loader = classLoader;
     }
 
-    static boolean isStopSymbol(char c2) {
-        switch (c2) {
+    static boolean isStopSymbol(char c) {
+        switch (c) {
             case '.':
             case '/':
             case ':':
@@ -42,8 +42,8 @@ public final class GenericSignatureParser {
         }
     }
 
-    void expect(char c2) {
-        if (this.symbol != c2) {
+    void expect(char c) {
+        if (this.symbol != c) {
             throw new GenericSignatureFormatError();
         }
         scanSymbol();
@@ -320,13 +320,13 @@ public final class GenericSignatureParser {
         }
         sb.append(this.symbol);
         do {
-            char c2 = this.buffer[this.pos];
-            if ((c2 < 'a' || c2 > 'z') && ((c2 < 'A' || c2 > 'Z') && isStopSymbol(c2))) {
+            char c = this.buffer[this.pos];
+            if ((c < 'a' || c > 'z') && ((c < 'A' || c > 'Z') && isStopSymbol(c))) {
                 this.identifier = sb.toString();
                 scanSymbol();
                 return;
             }
-            sb.append(c2);
+            sb.append(c);
             this.pos++;
         } while (this.pos != this.buffer.length);
         this.identifier = sb.toString();

@@ -2,6 +2,7 @@ package com.sobot.chat.activity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.opengl.GLES10;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -248,7 +249,7 @@ public class SobotVideoActivity extends FragmentActivity implements View.OnClick
     public void onStart() {
         super.onStart();
         if (Build.VERSION.SDK_INT >= 19) {
-            getWindow().getDecorView().setSystemUiVisibility(5380);
+            getWindow().getDecorView().setSystemUiVisibility(GLES10.GL_AND_INVERTED);
         } else if (Build.VERSION.SDK_INT >= 16) {
             getWindow().getDecorView().setSystemUiVisibility(4);
         }

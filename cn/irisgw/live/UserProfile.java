@@ -46,8 +46,8 @@ public final class UserProfile extends GeneratedMessageV3 implements UserProfile
     private int vipLevel_;
     private static final UserProfile DEFAULT_INSTANCE = new UserProfile();
     private static final Parser<UserProfile> PARSER = new AbstractParser<UserProfile>() { // from class: cn.irisgw.live.UserProfile.1
-        @Override // com.google.protobuf.Parser
-        public UserProfile parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        /* renamed from: parsePartialFrom */
+        public UserProfile m7928parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             return new UserProfile(codedInputStream, extensionRegistryLite);
         }
     };
@@ -131,7 +131,7 @@ public final class UserProfile extends GeneratedMessageV3 implements UserProfile
                 return this;
             }
             ensurePrivilegeIsMutable();
-            AbstractMessageLite.Builder.addAll((Iterable) iterable, (List) this.privilege_);
+            AbstractMessageLite.Builder.addAll(iterable, this.privilege_);
             onChanged();
             return this;
         }
@@ -139,11 +139,11 @@ public final class UserProfile extends GeneratedMessageV3 implements UserProfile
         public Builder addPrivilege(int i, UserPrivilege.Builder builder) {
             RepeatedFieldBuilderV3<UserPrivilege, UserPrivilege.Builder, UserPrivilegeOrBuilder> repeatedFieldBuilderV3 = this.privilegeBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.addMessage(i, builder.build());
+                repeatedFieldBuilderV3.addMessage(i, builder.m8026build());
                 return this;
             }
             ensurePrivilegeIsMutable();
-            this.privilege_.add(i, builder.build());
+            this.privilege_.add(i, builder.m8026build());
             onChanged();
             return this;
         }
@@ -166,11 +166,11 @@ public final class UserProfile extends GeneratedMessageV3 implements UserProfile
         public Builder addPrivilege(UserPrivilege.Builder builder) {
             RepeatedFieldBuilderV3<UserPrivilege, UserPrivilege.Builder, UserPrivilegeOrBuilder> repeatedFieldBuilderV3 = this.privilegeBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.addMessage(builder.build());
+                repeatedFieldBuilderV3.addMessage(builder.m8026build());
                 return this;
             }
             ensurePrivilegeIsMutable();
-            this.privilege_.add(builder.build());
+            this.privilege_.add(builder.m8026build());
             onChanged();
             return this;
         }
@@ -198,22 +198,22 @@ public final class UserProfile extends GeneratedMessageV3 implements UserProfile
             return getPrivilegeFieldBuilder().addBuilder(i, UserPrivilege.getDefaultInstance());
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: addRepeatedField */
+        public Builder m7930addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.addRepeatedField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public UserProfile build() {
-            UserProfile buildPartial = buildPartial();
-            if (buildPartial.isInitialized()) {
-                return buildPartial;
+        /* renamed from: build */
+        public UserProfile m7932build() {
+            UserProfile m7934buildPartial = m7934buildPartial();
+            if (m7934buildPartial.isInitialized()) {
+                return m7934buildPartial;
             }
-            throw newUninitializedMessageException((Message) buildPartial);
+            throw newUninitializedMessageException(m7934buildPartial);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public UserProfile buildPartial() {
+        /* renamed from: buildPartial */
+        public UserProfile m7934buildPartial() {
             UserProfile userProfile = new UserProfile(this);
             userProfile.avatar_ = this.avatar_;
             userProfile.name_ = this.name_;
@@ -242,8 +242,8 @@ public final class UserProfile extends GeneratedMessageV3 implements UserProfile
             return userProfile;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public Builder clear() {
+        /* renamed from: clear */
+        public Builder m7938clear() {
             super.clear();
             this.avatar_ = "";
             this.name_ = "";
@@ -274,8 +274,8 @@ public final class UserProfile extends GeneratedMessageV3 implements UserProfile
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+        /* renamed from: clearField */
+        public Builder m7940clearField(Descriptors.FieldDescriptor fieldDescriptor) {
             return (Builder) super.clearField(fieldDescriptor);
         }
 
@@ -302,8 +302,8 @@ public final class UserProfile extends GeneratedMessageV3 implements UserProfile
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+        /* renamed from: clearOneof */
+        public Builder m7943clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
             return (Builder) super.clearOneof(oneofDescriptor);
         }
 
@@ -343,10 +343,9 @@ public final class UserProfile extends GeneratedMessageV3 implements UserProfile
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder m7949clone() {
+            return (Builder) super.clone();
         }
 
         @Override // cn.irisgw.live.UserProfileOrBuilder
@@ -371,12 +370,11 @@ public final class UserProfile extends GeneratedMessageV3 implements UserProfile
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public UserProfile getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public UserProfile m7951getDefaultInstanceForType() {
             return UserProfile.getDefaultInstance();
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
         public Descriptors.Descriptor getDescriptorForType() {
             return LiveConstants.internal_static_cn_irisgw_live_UserProfile_descriptor;
         }
@@ -431,7 +429,7 @@ public final class UserProfile extends GeneratedMessageV3 implements UserProfile
         public NobleOrBuilder getNobleOrBuilder() {
             SingleFieldBuilderV3<Noble, Noble.Builder, NobleOrBuilder> singleFieldBuilderV3 = this.nobleBuilder_;
             if (singleFieldBuilderV3 != null) {
-                return singleFieldBuilderV3.getMessageOrBuilder();
+                return (NobleOrBuilder) singleFieldBuilderV3.getMessageOrBuilder();
             }
             Noble noble = this.noble_;
             Noble noble2 = noble;
@@ -470,7 +468,7 @@ public final class UserProfile extends GeneratedMessageV3 implements UserProfile
         @Override // cn.irisgw.live.UserProfileOrBuilder
         public UserPrivilegeOrBuilder getPrivilegeOrBuilder(int i) {
             RepeatedFieldBuilderV3<UserPrivilege, UserPrivilege.Builder, UserPrivilegeOrBuilder> repeatedFieldBuilderV3 = this.privilegeBuilder_;
-            return repeatedFieldBuilderV3 == null ? this.privilege_.get(i) : repeatedFieldBuilderV3.getMessageOrBuilder(i);
+            return repeatedFieldBuilderV3 == null ? this.privilege_.get(i) : (UserPrivilegeOrBuilder) repeatedFieldBuilderV3.getMessageOrBuilder(i);
         }
 
         @Override // cn.irisgw.live.UserProfileOrBuilder
@@ -531,12 +529,10 @@ public final class UserProfile extends GeneratedMessageV3 implements UserProfile
             return (this.nobleBuilder_ == null && this.noble_ == null) ? false : true;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_UserProfile_fieldAccessorTable.ensureFieldAccessorsInitialized(UserProfile.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             return true;
         }
@@ -598,18 +594,18 @@ public final class UserProfile extends GeneratedMessageV3 implements UserProfile
             if (userProfile.getVipLevel() != 0) {
                 setVipLevel(userProfile.getVipLevel());
             }
-            mergeUnknownFields(userProfile.unknownFields);
+            m7960mergeUnknownFields(userProfile.unknownFields);
             onChanged();
             return this;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+        /* renamed from: mergeFrom */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
         */
-        public cn.irisgw.live.UserProfile.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+        public cn.irisgw.live.UserProfile.Builder m7957mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
             /*
                 r4 = this;
                 r0 = 0
@@ -654,11 +650,11 @@ public final class UserProfile extends GeneratedMessageV3 implements UserProfile
                 r0 = r6
                 throw r0
             */
-            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.UserProfile.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.UserProfile$Builder");
+            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.UserProfile.Builder.m7957mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.UserProfile$Builder");
         }
 
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder mergeFrom(Message message) {
+        /* renamed from: mergeFrom */
+        public Builder m7956mergeFrom(Message message) {
             if (message instanceof UserProfile) {
                 return mergeFrom((UserProfile) message);
             }
@@ -674,7 +670,7 @@ public final class UserProfile extends GeneratedMessageV3 implements UserProfile
             }
             Noble noble2 = this.noble_;
             if (noble2 != null) {
-                this.noble_ = Noble.newBuilder(noble2).mergeFrom(noble).buildPartial();
+                this.noble_ = Noble.newBuilder(noble2).mergeFrom(noble).m7981buildPartial();
             } else {
                 this.noble_ = noble;
             }
@@ -682,8 +678,8 @@ public final class UserProfile extends GeneratedMessageV3 implements UserProfile
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: mergeUnknownFields */
+        public final Builder m7960mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.mergeUnknownFields(unknownFieldSet);
         }
 
@@ -718,8 +714,8 @@ public final class UserProfile extends GeneratedMessageV3 implements UserProfile
             throw null;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: setField */
+        public Builder m7962setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.setField(fieldDescriptor, obj);
         }
 
@@ -751,10 +747,10 @@ public final class UserProfile extends GeneratedMessageV3 implements UserProfile
         public Builder setNoble(Noble.Builder builder) {
             SingleFieldBuilderV3<Noble, Noble.Builder, NobleOrBuilder> singleFieldBuilderV3 = this.nobleBuilder_;
             if (singleFieldBuilderV3 != null) {
-                singleFieldBuilderV3.setMessage(builder.build());
+                singleFieldBuilderV3.setMessage(builder.m7979build());
                 return this;
             }
-            this.noble_ = builder.build();
+            this.noble_ = builder.m7979build();
             onChanged();
             return this;
         }
@@ -776,11 +772,11 @@ public final class UserProfile extends GeneratedMessageV3 implements UserProfile
         public Builder setPrivilege(int i, UserPrivilege.Builder builder) {
             RepeatedFieldBuilderV3<UserPrivilege, UserPrivilege.Builder, UserPrivilegeOrBuilder> repeatedFieldBuilderV3 = this.privilegeBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.setMessage(i, builder.build());
+                repeatedFieldBuilderV3.setMessage(i, builder.m8026build());
                 return this;
             }
             ensurePrivilegeIsMutable();
-            this.privilege_.set(i, builder.build());
+            this.privilege_.set(i, builder.m8026build());
             onChanged();
             return this;
         }
@@ -800,8 +796,8 @@ public final class UserProfile extends GeneratedMessageV3 implements UserProfile
             }
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+        /* renamed from: setRepeatedField */
+        public Builder m7964setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
             return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
         }
 
@@ -811,8 +807,8 @@ public final class UserProfile extends GeneratedMessageV3 implements UserProfile
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: setUnknownFields */
+        public final Builder m7966setUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.setUnknownFields(unknownFieldSet);
         }
 
@@ -873,8 +869,8 @@ public final class UserProfile extends GeneratedMessageV3 implements UserProfile
         private volatile Object nobleName_;
         private static final Noble DEFAULT_INSTANCE = new Noble();
         private static final Parser<Noble> PARSER = new AbstractParser<Noble>() { // from class: cn.irisgw.live.UserProfile.Noble.1
-            @Override // com.google.protobuf.Parser
-            public Noble parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+            /* renamed from: parsePartialFrom */
+            public Noble m7975parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
                 return new Noble(codedInputStream, extensionRegistryLite);
             }
         };
@@ -908,22 +904,22 @@ public final class UserProfile extends GeneratedMessageV3 implements UserProfile
                 boolean unused = Noble.alwaysUseFieldBuilders;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: addRepeatedField */
+            public Builder m7977addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.addRepeatedField(fieldDescriptor, obj);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public Noble build() {
-                Noble buildPartial = buildPartial();
-                if (buildPartial.isInitialized()) {
-                    return buildPartial;
+            /* renamed from: build */
+            public Noble m7979build() {
+                Noble m7981buildPartial = m7981buildPartial();
+                if (m7981buildPartial.isInitialized()) {
+                    return m7981buildPartial;
                 }
-                throw newUninitializedMessageException((Message) buildPartial);
+                throw newUninitializedMessageException(m7981buildPartial);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public Noble buildPartial() {
+            /* renamed from: buildPartial */
+            public Noble m7981buildPartial() {
                 Noble noble = new Noble(this);
                 noble.nobleLevel_ = this.nobleLevel_;
                 noble.nobleName_ = this.nobleName_;
@@ -934,8 +930,8 @@ public final class UserProfile extends GeneratedMessageV3 implements UserProfile
                 return noble;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public Builder clear() {
+            /* renamed from: clear */
+            public Builder m7985clear() {
                 super.clear();
                 this.nobleLevel_ = 0;
                 this.nobleName_ = "";
@@ -945,8 +941,8 @@ public final class UserProfile extends GeneratedMessageV3 implements UserProfile
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+            /* renamed from: clearField */
+            public Builder m7987clearField(Descriptors.FieldDescriptor fieldDescriptor) {
                 return (Builder) super.clearField(fieldDescriptor);
             }
 
@@ -980,23 +976,21 @@ public final class UserProfile extends GeneratedMessageV3 implements UserProfile
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+            /* renamed from: clearOneof */
+            public Builder m7990clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
                 return (Builder) super.clearOneof(oneofDescriptor);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder m7996clone() {
+                return (Builder) super.clone();
             }
 
-            @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-            public Noble getDefaultInstanceForType() {
+            /* renamed from: getDefaultInstanceForType */
+            public Noble m7998getDefaultInstanceForType() {
                 return Noble.getDefaultInstance();
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
             public Descriptors.Descriptor getDescriptorForType() {
                 return LiveConstants.internal_static_cn_irisgw_live_UserProfile_Noble_descriptor;
             }
@@ -1060,12 +1054,10 @@ public final class UserProfile extends GeneratedMessageV3 implements UserProfile
                 return (ByteString) obj;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder
             public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
                 return LiveConstants.internal_static_cn_irisgw_live_UserProfile_Noble_fieldAccessorTable.ensureFieldAccessorsInitialized(Noble.class, Builder.class);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
             public final boolean isInitialized() {
                 return true;
             }
@@ -1091,18 +1083,18 @@ public final class UserProfile extends GeneratedMessageV3 implements UserProfile
                 if (noble.getNameplateImgHeight() != 0) {
                     setNameplateImgHeight(noble.getNameplateImgHeight());
                 }
-                mergeUnknownFields(noble.unknownFields);
+                m8007mergeUnknownFields(noble.unknownFields);
                 onChanged();
                 return this;
             }
 
             /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+            /* renamed from: mergeFrom */
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
                 To view partially-correct code enable 'Show inconsistent code' option in preferences
             */
-            public cn.irisgw.live.UserProfile.Noble.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+            public cn.irisgw.live.UserProfile.Noble.Builder m8004mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
                 /*
                     r4 = this;
                     r0 = 0
@@ -1147,11 +1139,11 @@ public final class UserProfile extends GeneratedMessageV3 implements UserProfile
                     r0 = r6
                     throw r0
                 */
-                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.UserProfile.Noble.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.UserProfile$Noble$Builder");
+                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.UserProfile.Noble.Builder.m8004mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.UserProfile$Noble$Builder");
             }
 
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder mergeFrom(Message message) {
+            /* renamed from: mergeFrom */
+            public Builder m8003mergeFrom(Message message) {
                 if (message instanceof Noble) {
                     return mergeFrom((Noble) message);
                 }
@@ -1159,13 +1151,13 @@ public final class UserProfile extends GeneratedMessageV3 implements UserProfile
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: mergeUnknownFields */
+            public final Builder m8007mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.mergeUnknownFields(unknownFieldSet);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: setField */
+            public Builder m8009setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.setField(fieldDescriptor, obj);
             }
 
@@ -1225,13 +1217,13 @@ public final class UserProfile extends GeneratedMessageV3 implements UserProfile
                 throw null;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+            /* renamed from: setRepeatedField */
+            public Builder m8011setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
                 return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: setUnknownFields */
+            public final Builder m8013setUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.setUnknownFields(unknownFieldSet);
             }
         }
@@ -1268,10 +1260,10 @@ public final class UserProfile extends GeneratedMessageV3 implements UserProfile
                             }
                         }
                         z = true;
-                    } catch (InvalidProtocolBufferException e) {
-                        throw e.setUnfinishedMessage(this);
-                    } catch (IOException e2) {
-                        throw new InvalidProtocolBufferException(e2).setUnfinishedMessage(this);
+                    } catch (IOException e) {
+                        throw new InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+                    } catch (InvalidProtocolBufferException e2) {
+                        throw e2.setUnfinishedMessage(this);
                     }
                 } finally {
                     this.unknownFields = newBuilder.build();
@@ -1294,66 +1286,65 @@ public final class UserProfile extends GeneratedMessageV3 implements UserProfile
         }
 
         public static Builder newBuilder() {
-            return DEFAULT_INSTANCE.toBuilder();
+            return DEFAULT_INSTANCE.m7974toBuilder();
         }
 
         public static Builder newBuilder(Noble noble) {
-            return DEFAULT_INSTANCE.toBuilder().mergeFrom(noble);
+            return DEFAULT_INSTANCE.m7974toBuilder().mergeFrom(noble);
         }
 
         public static Noble parseDelimitedFrom(InputStream inputStream) throws IOException {
-            return (Noble) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
         }
 
         public static Noble parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (Noble) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static Noble parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString);
+            return (Noble) PARSER.parseFrom(byteString);
         }
 
         public static Noble parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString, extensionRegistryLite);
+            return (Noble) PARSER.parseFrom(byteString, extensionRegistryLite);
         }
 
         public static Noble parseFrom(CodedInputStream codedInputStream) throws IOException {
-            return (Noble) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
         }
 
         public static Noble parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (Noble) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
         }
 
         public static Noble parseFrom(InputStream inputStream) throws IOException {
-            return (Noble) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
         }
 
         public static Noble parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (Noble) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static Noble parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer);
+            return (Noble) PARSER.parseFrom(byteBuffer);
         }
 
         public static Noble parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+            return (Noble) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
         }
 
         public static Noble parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr);
+            return (Noble) PARSER.parseFrom(bArr);
         }
 
         public static Noble parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr, extensionRegistryLite);
+            return (Noble) PARSER.parseFrom(bArr, extensionRegistryLite);
         }
 
         public static Parser<Noble> parser() {
             return PARSER;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public boolean equals(Object obj) {
             if (obj == this) {
                 return true;
@@ -1365,8 +1356,8 @@ public final class UserProfile extends GeneratedMessageV3 implements UserProfile
             return super.equals(obj);
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public Noble getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public Noble m7969getDefaultInstanceForType() {
             return DEFAULT_INSTANCE;
         }
 
@@ -1429,12 +1420,10 @@ public final class UserProfile extends GeneratedMessageV3 implements UserProfile
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
         public Parser<Noble> getParserForType() {
             return PARSER;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public int getSerializedSize() {
             int i = this.memoizedSize;
             if (i != -1) {
@@ -1468,12 +1457,10 @@ public final class UserProfile extends GeneratedMessageV3 implements UserProfile
             return serializedSize;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
         public final UnknownFieldSet getUnknownFields() {
             return this.unknownFields;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public int hashCode() {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
@@ -1483,12 +1470,10 @@ public final class UserProfile extends GeneratedMessageV3 implements UserProfile
             return hashCode;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_UserProfile_Noble_fieldAccessorTable.ensureFieldAccessorsInitialized(Noble.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte b = this.memoizedIsInitialized;
             if (b == 1) {
@@ -1501,28 +1486,26 @@ public final class UserProfile extends GeneratedMessageV3 implements UserProfile
             return true;
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder newBuilderForType() {
+        /* renamed from: newBuilderForType */
+        public Builder m7972newBuilderForType() {
             return newBuilder();
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.google.protobuf.GeneratedMessageV3
-        public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+        /* renamed from: newBuilderForType */
+        public Builder m7971newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
             return new Builder(builderParent);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
             return new Noble();
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder toBuilder() {
+        /* renamed from: toBuilder */
+        public Builder m7974toBuilder() {
             return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
             int i = this.nobleLevel_;
             if (i != 0) {
@@ -1567,8 +1550,8 @@ public final class UserProfile extends GeneratedMessageV3 implements UserProfile
     public static final class UserPrivilege extends GeneratedMessageV3 implements UserPrivilegeOrBuilder {
         private static final UserPrivilege DEFAULT_INSTANCE = new UserPrivilege();
         private static final Parser<UserPrivilege> PARSER = new AbstractParser<UserPrivilege>() { // from class: cn.irisgw.live.UserProfile.UserPrivilege.1
-            @Override // com.google.protobuf.Parser
-            public UserPrivilege parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+            /* renamed from: parsePartialFrom */
+            public UserPrivilege m8022parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
                 return new UserPrivilege(codedInputStream, extensionRegistryLite);
             }
         };
@@ -1605,22 +1588,22 @@ public final class UserProfile extends GeneratedMessageV3 implements UserProfile
                 boolean unused = UserPrivilege.alwaysUseFieldBuilders;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: addRepeatedField */
+            public Builder m8024addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.addRepeatedField(fieldDescriptor, obj);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public UserPrivilege build() {
-                UserPrivilege buildPartial = buildPartial();
-                if (buildPartial.isInitialized()) {
-                    return buildPartial;
+            /* renamed from: build */
+            public UserPrivilege m8026build() {
+                UserPrivilege m8028buildPartial = m8028buildPartial();
+                if (m8028buildPartial.isInitialized()) {
+                    return m8028buildPartial;
                 }
-                throw newUninitializedMessageException((Message) buildPartial);
+                throw newUninitializedMessageException(m8028buildPartial);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public UserPrivilege buildPartial() {
+            /* renamed from: buildPartial */
+            public UserPrivilege m8028buildPartial() {
                 UserPrivilege userPrivilege = new UserPrivilege(this);
                 userPrivilege.type_ = this.type_;
                 userPrivilege.status_ = this.status_;
@@ -1628,21 +1611,21 @@ public final class UserProfile extends GeneratedMessageV3 implements UserProfile
                 return userPrivilege;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public Builder clear() {
+            /* renamed from: clear */
+            public Builder m8032clear() {
                 super.clear();
                 this.type_ = 0;
                 this.status_ = 0;
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+            /* renamed from: clearField */
+            public Builder m8034clearField(Descriptors.FieldDescriptor fieldDescriptor) {
                 return (Builder) super.clearField(fieldDescriptor);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+            /* renamed from: clearOneof */
+            public Builder m8037clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
                 return (Builder) super.clearOneof(oneofDescriptor);
             }
 
@@ -1658,18 +1641,16 @@ public final class UserProfile extends GeneratedMessageV3 implements UserProfile
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder m8043clone() {
+                return (Builder) super.clone();
             }
 
-            @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-            public UserPrivilege getDefaultInstanceForType() {
+            /* renamed from: getDefaultInstanceForType */
+            public UserPrivilege m8045getDefaultInstanceForType() {
                 return UserPrivilege.getDefaultInstance();
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
             public Descriptors.Descriptor getDescriptorForType() {
                 return LiveConstants.internal_static_cn_irisgw_live_UserProfile_UserPrivilege_descriptor;
             }
@@ -1704,12 +1685,10 @@ public final class UserProfile extends GeneratedMessageV3 implements UserProfile
                 return this.type_;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder
             public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
                 return LiveConstants.internal_static_cn_irisgw_live_UserProfile_UserPrivilege_fieldAccessorTable.ensureFieldAccessorsInitialized(UserPrivilege.class, Builder.class);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
             public final boolean isInitialized() {
                 return true;
             }
@@ -1724,18 +1703,18 @@ public final class UserProfile extends GeneratedMessageV3 implements UserProfile
                 if (userPrivilege.status_ != 0) {
                     setStatusValue(userPrivilege.getStatusValue());
                 }
-                mergeUnknownFields(userPrivilege.unknownFields);
+                m8054mergeUnknownFields(userPrivilege.unknownFields);
                 onChanged();
                 return this;
             }
 
             /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+            /* renamed from: mergeFrom */
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
                 To view partially-correct code enable 'Show inconsistent code' option in preferences
             */
-            public cn.irisgw.live.UserProfile.UserPrivilege.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+            public cn.irisgw.live.UserProfile.UserPrivilege.Builder m8051mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
                 /*
                     r4 = this;
                     r0 = 0
@@ -1780,11 +1759,11 @@ public final class UserProfile extends GeneratedMessageV3 implements UserProfile
                     r0 = r6
                     throw r0
                 */
-                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.UserProfile.UserPrivilege.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.UserProfile$UserPrivilege$Builder");
+                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.UserProfile.UserPrivilege.Builder.m8051mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.UserProfile$UserPrivilege$Builder");
             }
 
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder mergeFrom(Message message) {
+            /* renamed from: mergeFrom */
+            public Builder m8050mergeFrom(Message message) {
                 if (message instanceof UserPrivilege) {
                     return mergeFrom((UserPrivilege) message);
                 }
@@ -1792,18 +1771,18 @@ public final class UserProfile extends GeneratedMessageV3 implements UserProfile
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: mergeUnknownFields */
+            public final Builder m8054mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.mergeUnknownFields(unknownFieldSet);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: setField */
+            public Builder m8056setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.setField(fieldDescriptor, obj);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+            /* renamed from: setRepeatedField */
+            public Builder m8058setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
                 return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
             }
 
@@ -1837,8 +1816,8 @@ public final class UserProfile extends GeneratedMessageV3 implements UserProfile
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: setUnknownFields */
+            public final Builder m8060setUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.setUnknownFields(unknownFieldSet);
             }
         }
@@ -1897,66 +1876,65 @@ public final class UserProfile extends GeneratedMessageV3 implements UserProfile
         }
 
         public static Builder newBuilder() {
-            return DEFAULT_INSTANCE.toBuilder();
+            return DEFAULT_INSTANCE.m8021toBuilder();
         }
 
         public static Builder newBuilder(UserPrivilege userPrivilege) {
-            return DEFAULT_INSTANCE.toBuilder().mergeFrom(userPrivilege);
+            return DEFAULT_INSTANCE.m8021toBuilder().mergeFrom(userPrivilege);
         }
 
         public static UserPrivilege parseDelimitedFrom(InputStream inputStream) throws IOException {
-            return (UserPrivilege) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
         }
 
         public static UserPrivilege parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (UserPrivilege) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static UserPrivilege parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString);
+            return (UserPrivilege) PARSER.parseFrom(byteString);
         }
 
         public static UserPrivilege parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString, extensionRegistryLite);
+            return (UserPrivilege) PARSER.parseFrom(byteString, extensionRegistryLite);
         }
 
         public static UserPrivilege parseFrom(CodedInputStream codedInputStream) throws IOException {
-            return (UserPrivilege) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
         }
 
         public static UserPrivilege parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (UserPrivilege) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
         }
 
         public static UserPrivilege parseFrom(InputStream inputStream) throws IOException {
-            return (UserPrivilege) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
         }
 
         public static UserPrivilege parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (UserPrivilege) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static UserPrivilege parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer);
+            return (UserPrivilege) PARSER.parseFrom(byteBuffer);
         }
 
         public static UserPrivilege parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+            return (UserPrivilege) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
         }
 
         public static UserPrivilege parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr);
+            return (UserPrivilege) PARSER.parseFrom(bArr);
         }
 
         public static UserPrivilege parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr, extensionRegistryLite);
+            return (UserPrivilege) PARSER.parseFrom(bArr, extensionRegistryLite);
         }
 
         public static Parser<UserPrivilege> parser() {
             return PARSER;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public boolean equals(Object obj) {
             if (obj == this) {
                 return true;
@@ -1968,17 +1946,15 @@ public final class UserProfile extends GeneratedMessageV3 implements UserProfile
             return super.equals(obj);
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public UserPrivilege getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public UserPrivilege m8016getDefaultInstanceForType() {
             return DEFAULT_INSTANCE;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
         public Parser<UserPrivilege> getParserForType() {
             return PARSER;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public int getSerializedSize() {
             int i = this.memoizedSize;
             if (i != -1) {
@@ -2027,12 +2003,10 @@ public final class UserProfile extends GeneratedMessageV3 implements UserProfile
             return this.type_;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
         public final UnknownFieldSet getUnknownFields() {
             return this.unknownFields;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public int hashCode() {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
@@ -2042,12 +2016,10 @@ public final class UserProfile extends GeneratedMessageV3 implements UserProfile
             return hashCode;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_UserProfile_UserPrivilege_fieldAccessorTable.ensureFieldAccessorsInitialized(UserPrivilege.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte b = this.memoizedIsInitialized;
             if (b == 1) {
@@ -2060,28 +2032,26 @@ public final class UserProfile extends GeneratedMessageV3 implements UserProfile
             return true;
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder newBuilderForType() {
+        /* renamed from: newBuilderForType */
+        public Builder m8019newBuilderForType() {
             return newBuilder();
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.google.protobuf.GeneratedMessageV3
-        public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+        /* renamed from: newBuilderForType */
+        public Builder m8018newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
             return new Builder(builderParent);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
             return new UserPrivilege();
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder toBuilder() {
+        /* renamed from: toBuilder */
+        public Builder m8021toBuilder() {
             return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
             if (this.type_ != PrivilegeType.EMPTY_P.getNumber()) {
                 codedOutputStream.writeEnum(1, this.type_);
@@ -2149,17 +2119,17 @@ public final class UserProfile extends GeneratedMessageV3 implements UserProfile
                         } else if (readTag == 58) {
                             if (this.noble_ != null) {
                                 boolean z5 = z2;
-                                builder = this.noble_.toBuilder();
+                                builder = this.noble_.m7974toBuilder();
                             } else {
                                 builder = null;
                             }
-                            Noble noble = (Noble) codedInputStream.readMessage(Noble.parser(), extensionRegistryLite);
+                            Noble readMessage = codedInputStream.readMessage(Noble.parser(), extensionRegistryLite);
                             boolean z6 = z2;
-                            this.noble_ = noble;
+                            this.noble_ = readMessage;
                             if (builder != null) {
-                                builder.mergeFrom(noble);
+                                builder.mergeFrom(readMessage);
                                 boolean z7 = z2;
-                                this.noble_ = builder.buildPartial();
+                                this.noble_ = builder.m7981buildPartial();
                             }
                         } else if (readTag == 66) {
                             this.vipFrame_ = codedInputStream.readStringRequireUtf8();
@@ -2169,10 +2139,10 @@ public final class UserProfile extends GeneratedMessageV3 implements UserProfile
                         }
                     }
                     z = true;
-                } catch (InvalidProtocolBufferException e) {
-                    throw e.setUnfinishedMessage(this);
-                } catch (IOException e2) {
-                    throw new InvalidProtocolBufferException(e2).setUnfinishedMessage(this);
+                } catch (IOException e) {
+                    throw new InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+                } catch (InvalidProtocolBufferException e2) {
+                    throw e2.setUnfinishedMessage(this);
                 }
             } catch (Throwable th) {
                 if (z3 & true) {
@@ -2204,66 +2174,65 @@ public final class UserProfile extends GeneratedMessageV3 implements UserProfile
     }
 
     public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
+        return DEFAULT_INSTANCE.m7927toBuilder();
     }
 
     public static Builder newBuilder(UserProfile userProfile) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(userProfile);
+        return DEFAULT_INSTANCE.m7927toBuilder().mergeFrom(userProfile);
     }
 
     public static UserProfile parseDelimitedFrom(InputStream inputStream) throws IOException {
-        return (UserProfile) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
     }
 
     public static UserProfile parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (UserProfile) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static UserProfile parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString);
+        return (UserProfile) PARSER.parseFrom(byteString);
     }
 
     public static UserProfile parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString, extensionRegistryLite);
+        return (UserProfile) PARSER.parseFrom(byteString, extensionRegistryLite);
     }
 
     public static UserProfile parseFrom(CodedInputStream codedInputStream) throws IOException {
-        return (UserProfile) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
     }
 
     public static UserProfile parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (UserProfile) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
     }
 
     public static UserProfile parseFrom(InputStream inputStream) throws IOException {
-        return (UserProfile) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
     }
 
     public static UserProfile parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (UserProfile) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static UserProfile parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer);
+        return (UserProfile) PARSER.parseFrom(byteBuffer);
     }
 
     public static UserProfile parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+        return (UserProfile) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
     }
 
     public static UserProfile parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr);
+        return (UserProfile) PARSER.parseFrom(bArr);
     }
 
     public static UserProfile parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr, extensionRegistryLite);
+        return (UserProfile) PARSER.parseFrom(bArr, extensionRegistryLite);
     }
 
     public static Parser<UserProfile> parser() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
@@ -2300,8 +2269,8 @@ public final class UserProfile extends GeneratedMessageV3 implements UserProfile
         return (ByteString) obj;
     }
 
-    @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-    public UserProfile getDefaultInstanceForType() {
+    /* renamed from: getDefaultInstanceForType */
+    public UserProfile m7922getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
     }
 
@@ -2347,7 +2316,6 @@ public final class UserProfile extends GeneratedMessageV3 implements UserProfile
         return getNoble();
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
     public Parser<UserProfile> getParserForType() {
         return PARSER;
     }
@@ -2382,7 +2350,6 @@ public final class UserProfile extends GeneratedMessageV3 implements UserProfile
         return this.richLevel_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public int getSerializedSize() {
         int i = this.memoizedSize;
         if (i != -1) {
@@ -2431,7 +2398,6 @@ public final class UserProfile extends GeneratedMessageV3 implements UserProfile
         return serializedSize;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
     public final UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
     }
@@ -2483,7 +2449,6 @@ public final class UserProfile extends GeneratedMessageV3 implements UserProfile
         return this.noble_ != null;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public int hashCode() {
         if (this.memoizedHashCode != 0) {
             return this.memoizedHashCode;
@@ -2502,12 +2467,10 @@ public final class UserProfile extends GeneratedMessageV3 implements UserProfile
         return hashCode2;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
         return LiveConstants.internal_static_cn_irisgw_live_UserProfile_fieldAccessorTable.ensureFieldAccessorsInitialized(UserProfile.class, Builder.class);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
     public final boolean isInitialized() {
         byte b = this.memoizedIsInitialized;
         if (b == 1) {
@@ -2520,28 +2483,26 @@ public final class UserProfile extends GeneratedMessageV3 implements UserProfile
         return true;
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder newBuilderForType() {
+    /* renamed from: newBuilderForType */
+    public Builder m7925newBuilderForType() {
         return newBuilder();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.protobuf.GeneratedMessageV3
-    public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+    /* renamed from: newBuilderForType */
+    public Builder m7924newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
         return new Builder(builderParent);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
         return new UserProfile();
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder toBuilder() {
+    /* renamed from: toBuilder */
+    public Builder m7927toBuilder() {
         return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
         if (!getAvatarBytes().isEmpty()) {
             GeneratedMessageV3.writeString(codedOutputStream, 1, this.avatar_);

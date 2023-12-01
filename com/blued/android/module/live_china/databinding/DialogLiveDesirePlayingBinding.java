@@ -5,13 +5,10 @@ import androidx.viewbinding.ViewBinding;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/DialogLiveDesirePlayingBinding.class */
 public final class DialogLiveDesirePlayingBinding implements ViewBinding {
+    private final RelativeLayout a;
 
-    /* renamed from: a  reason: collision with root package name */
-    private final RelativeLayout f11764a;
-
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
-        return this.f11764a;
+        return this.a;
     }
 }

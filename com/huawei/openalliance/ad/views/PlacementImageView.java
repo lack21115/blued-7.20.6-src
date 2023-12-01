@@ -20,7 +20,7 @@ public class PlacementImageView extends PlacementMediaView implements lk {
     private r L;
 
     /* renamed from: a  reason: collision with root package name */
-    private kf f23032a;
+    private kf f9424a;
     private gs b;
 
     public PlacementImageView(Context context) {
@@ -39,7 +39,7 @@ public class PlacementImageView extends PlacementMediaView implements lk {
     }
 
     private void Code(Context context) {
-        this.f23032a = new js(getContext(), this);
+        this.f9424a = new js(getContext(), this);
         this.D = new ImageView(context);
         addView(this.D, new RelativeLayout.LayoutParams(-1, -1));
         this.D.setScaleType(ImageView.ScaleType.CENTER_CROP);
@@ -134,7 +134,7 @@ public class PlacementImageView extends PlacementMediaView implements lk {
             if (S.V()) {
                 return;
             }
-            this.f23032a.Code(this.Code);
+            this.f9424a.Code(this.Code);
             this.V = this.L.e();
         }
     }

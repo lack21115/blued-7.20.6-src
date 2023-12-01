@@ -3,9 +3,8 @@ package com.squareup.okhttp.internal;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8457232-dex2jar.jar:com/squareup/okhttp/internal/OptionalMethod.class */
-public class OptionalMethod<T> {
+class OptionalMethod<T> {
     private final String methodName;
     private final Class[] methodParams;
     private final Class<?> returnType;

@@ -10,19 +10,19 @@ import java.util.ArrayList;
 public class z implements ag {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f40789a;
+    private String f27098a;
     private ArrayList<aa> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f40790c = "";
+    private String f27099c = "";
     private String d = "";
     private String e = "";
     private String f = "";
 
     public z(String str, ArrayList<aa> arrayList) {
-        this.f40789a = null;
+        this.f27098a = null;
         this.b = new ArrayList<>();
-        this.f40789a = str;
+        this.f27098a = str;
         this.b = arrayList;
     }
 
@@ -32,7 +32,7 @@ public class z implements ag {
         String str3 = "";
         String str4 = str3;
         if (split.length > 0) {
-            ArrayList<String> forbidSdkArray = CcgAgent.getForbidSdkArray(this.f40789a);
+            ArrayList<String> forbidSdkArray = CcgAgent.getForbidSdkArray(this.f27098a);
             int i = 0;
             if (forbidSdkArray != null && forbidSdkArray.size() > 0) {
                 this.f = forbidSdkArray.toString();
@@ -69,7 +69,7 @@ public class z implements ag {
                                 str2 = str3;
                                 if (i4 >= supportAction.length) {
                                     break;
-                                } else if (this.f40789a.equals(supportAction[i4])) {
+                                } else if (this.f27098a.equals(supportAction[i4])) {
                                     str2 = str6;
                                     break;
                                 } else {
@@ -93,7 +93,7 @@ public class z implements ag {
     }
 
     public String a() {
-        return this.f40789a;
+        return this.f27098a;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:14:0x0030, code lost:
@@ -110,10 +110,10 @@ public class z implements ag {
         if (android.text.TextUtils.isEmpty(r0) != false) goto L23;
      */
     /* JADX WARN: Code restructure failed: missing block: B:19:0x0056, code lost:
-        com.umeng.commonsdk.debug.UMRTLog.i(com.umeng.commonsdk.debug.UMRTLog.RTLOG_TAG, "采集项：" + r5.f40789a + "; 选中Module: " + r5.e + "; sdk: " + r5.d);
+        com.umeng.commonsdk.debug.UMRTLog.i(com.umeng.commonsdk.debug.UMRTLog.RTLOG_TAG, "采集项：" + r5.f27098a + "; 选中Module: " + r5.e + "; sdk: " + r5.d);
      */
     /* JADX WARN: Code restructure failed: missing block: B:20:0x009a, code lost:
-        com.umeng.commonsdk.debug.UMRTLog.i(com.umeng.commonsdk.debug.UMRTLog.RTLOG_TAG, "采集项：" + r5.f40789a + "; 未选中可用Module ; sdk: " + r5.d);
+        com.umeng.commonsdk.debug.UMRTLog.i(com.umeng.commonsdk.debug.UMRTLog.RTLOG_TAG, "采集项：" + r5.f27098a + "; 未选中可用Module ; sdk: " + r5.d);
      */
     /* JADX WARN: Code restructure failed: missing block: B:22:0x00cc, code lost:
         r0 = r5.b.get(r0 - 1);
@@ -135,9 +135,9 @@ public class z implements ag {
         r6 = new org.json.JSONObject();
      */
     /* JADX WARN: Code restructure failed: missing block: B:30:0x00fe, code lost:
-        r6.put("actionName", r5.f40789a);
+        r6.put("actionName", r5.f27098a);
         r6.put("sdk", r5.d);
-        r6.put(com.umeng.ccg.a.o, r5.f40790c);
+        r6.put(com.umeng.ccg.a.o, r5.f27099c);
         r6.put("delay", r0);
         r6.put(com.umeng.ccg.a.p, r5.e);
         r6.put(com.umeng.ccg.a.q, r5.f);
@@ -156,11 +156,11 @@ public class z implements ag {
     }
 
     public void a(String str) {
-        this.f40790c = str;
+        this.f27099c = str;
     }
 
     public String b() {
-        return this.f40790c;
+        return this.f27099c;
     }
 
     public void b(String str) {

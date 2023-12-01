@@ -32,7 +32,7 @@ public abstract class FileSystem {
     }
 
     /* renamed from: -write$default  reason: not valid java name */
-    public static /* synthetic */ Object m13287write$default(FileSystem fileSystem, Path file, boolean z, Function1 writerAction, int i, Object obj) throws IOException {
+    public static /* synthetic */ Object m12196write$default(FileSystem fileSystem, Path file, boolean z, Function1 writerAction, int i, Object obj) throws IOException {
         Object obj2;
         if (obj == null) {
             if ((i & 2) != 0) {
@@ -170,7 +170,7 @@ public abstract class FileSystem {
     }
 
     /* renamed from: -read  reason: not valid java name */
-    public final <T> T m13289read(Path file, Function1<? super BufferedSource, ? extends T> readerAction) throws IOException {
+    public final <T> T m12198read(Path file, Function1<? super BufferedSource, ? extends T> readerAction) throws IOException {
         T t;
         Intrinsics.e(file, "file");
         Intrinsics.e(readerAction, "readerAction");
@@ -201,7 +201,7 @@ public abstract class FileSystem {
     }
 
     /* renamed from: -write  reason: not valid java name */
-    public final <T> T m13290write(Path file, boolean z, Function1<? super BufferedSink, ? extends T> writerAction) throws IOException {
+    public final <T> T m12199write(Path file, boolean z, Function1<? super BufferedSink, ? extends T> writerAction) throws IOException {
         T t;
         Intrinsics.e(file, "file");
         Intrinsics.e(writerAction, "writerAction");

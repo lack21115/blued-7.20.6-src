@@ -2,6 +2,7 @@ package com.youzan.androidsdk.tool;
 
 import android.content.Context;
 import android.os.Build;
+import com.anythink.expressad.d.a.b;
 import com.youzan.androidsdk.CheckCallback;
 import com.youzan.androidsdk.LoginCallback;
 import com.youzan.androidsdk.YouzanLog;
@@ -27,7 +28,7 @@ public final class UserAgent {
     public static String httpUA;
 
     public static String buildYouzanHttpUA(Context context, String str) {
-        String format = String.format("Dalvik/%s (%s; %s %s; %s Build/%s; %s)", System.getProperty("java.vm.version"), "Linux", "Android", Build.VERSION.RELEASE, Build.MODEL, Build.DISPLAY, Environment.m12240(context));
+        String format = String.format("Dalvik/%s (%s; %s %s; %s Build/%s; %s)", System.getProperty("java.vm.version"), "Linux", "Android", Build.VERSION.RELEASE, Build.MODEL, Build.DISPLAY, Environment.m9190(context));
         return format + " " + str;
     }
 
@@ -35,13 +36,11 @@ public final class UserAgent {
         OkHttpClient okHttpClient = new OkHttpClient();
         FormBody build = new FormBody.Builder().add("client_id", str).add("type", "1").add("security_code", str4).add("unique_key", str2).add("extra_code", str3).build();
         okHttpClient.newCall(z ? new Request.Builder().url("https://open-pre.youzanyun.com/api/auth_exempt/youzan.cloud.secutity.code.query/1.0.0").post(build).build() : new Request.Builder().url("https://open.youzanyun.com/api/auth_exempt/youzan.cloud.secutity.code.query/1.0.0").post(build).build()).enqueue(new Callback() { // from class: com.youzan.androidsdk.tool.UserAgent.2
-            @Override // okhttp3.Callback
             public final void onFailure(Call call, IOException iOException) {
                 CheckCallback.this.checkBack(0, null);
                 YouzanLog.e("❌❌❌❌❌❌" + iOException.getMessage());
             }
 
-            @Override // okhttp3.Callback
             public final void onResponse(Call call, Response response) throws IOException {
                 String string = response.body().string();
                 YouzanLog.e("✅✅✅  ----" + string);
@@ -80,7 +79,7 @@ public final class UserAgent {
 
     public static void login(boolean z, Map<String, String> map, final LoginCallback loginCallback) {
         OkHttpClient okHttpClient = new OkHttpClient();
-        map.put("sign", AESUtils.encoder(map));
+        map.put(b.d, AESUtils.encoder(map));
         String mapToJson = JsonUtil.mapToJson(map);
         try {
             mapToJson = Base64.encode(mapToJson.getBytes());
@@ -89,13 +88,11 @@ public final class UserAgent {
         }
         FormBody build = new FormBody.Builder().add("user_info", mapToJson).build();
         okHttpClient.newCall(z ? new Request.Builder().url("https://open-pre.youzanyun.com/api/auth_exempt/youzan.cloud.app.shop.apply.login/1.0.0").post(build).build() : new Request.Builder().url("https://open.youzanyun.com/api/auth_exempt/youzan.cloud.app.shop.apply.login/1.0.0").post(build).build()).enqueue(new Callback() { // from class: com.youzan.androidsdk.tool.UserAgent.1
-            @Override // okhttp3.Callback
             public final void onFailure(Call call, IOException iOException) {
                 LoginCallback.this.loginBack(iOException.getMessage());
                 YouzanLog.e("❌❌❌❌❌❌" + iOException.getMessage());
             }
 
-            @Override // okhttp3.Callback
             public final void onResponse(Call call, Response response) throws IOException {
                 String string = response.body().string();
                 YouzanLog.e("✅✅✅  ----" + string);

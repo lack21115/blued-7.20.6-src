@@ -12,17 +12,17 @@ import java.util.Map;
 public final class bd implements NativeExceptionHandler {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Context f35289a;
+    private final Context f21598a;
     private final as b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final aa f35290c;
+    private final aa f21599c;
     private final ac d;
 
     public bd(Context context, aa aaVar, as asVar, ac acVar) {
-        this.f35289a = context;
+        this.f21598a = context;
         this.b = asVar;
-        this.f35290c = aaVar;
+        this.f21599c = aaVar;
         this.d = acVar;
     }
 
@@ -59,7 +59,7 @@ public final class bd implements NativeExceptionHandler {
             return false;
         }
         ay a2 = ay.a();
-        if (a2.f35277a.get()) {
+        if (a2.f21586a.get()) {
             al.c("anr is processing, return", new Object[0]);
             return false;
         }
@@ -113,10 +113,10 @@ public final class bd implements NativeExceptionHandler {
         }
         CrashDetailBean crashDetailBean = new CrashDetailBean();
         crashDetailBean.b = 1;
-        crashDetailBean.e = this.f35290c.g();
-        crashDetailBean.f = this.f35290c.o;
-        crashDetailBean.g = this.f35290c.q();
-        crashDetailBean.m = this.f35290c.f();
+        crashDetailBean.e = this.f21599c.g();
+        crashDetailBean.f = this.f21599c.o;
+        crashDetailBean.g = this.f21599c.q();
+        crashDetailBean.m = this.f21599c.f();
         crashDetailBean.n = str3;
         crashDetailBean.o = i2 ? " This Crash Caused By ANR , PLS To Fix ANR , This Trace May Be Not Useful![Bugly]" : "";
         crashDetailBean.p = str4;
@@ -128,9 +128,9 @@ public final class bd implements NativeExceptionHandler {
         crashDetailBean.u = ap.c(crashDetailBean.q.getBytes());
         crashDetailBean.A = str;
         crashDetailBean.B = str2;
-        crashDetailBean.L = this.f35290c.s();
-        crashDetailBean.h = this.f35290c.p();
-        crashDetailBean.i = this.f35290c.A();
+        crashDetailBean.L = this.f21599c.s();
+        crashDetailBean.h = this.f21599c.p();
+        crashDetailBean.i = this.f21599c.A();
         crashDetailBean.v = str8;
         String dumpFilePath = NativeCrashHandler.getInstance() != null ? NativeCrashHandler.getDumpFilePath() : null;
         String a2 = be.a(dumpFilePath, str8);
@@ -143,10 +143,10 @@ public final class bd implements NativeExceptionHandler {
         crashDetailBean.N = str7;
         crashDetailBean.O = str6;
         crashDetailBean.P = str11;
-        crashDetailBean.F = this.f35290c.k();
-        crashDetailBean.G = this.f35290c.j();
-        crashDetailBean.H = this.f35290c.l();
-        crashDetailBean.I = ab.b(this.f35289a);
+        crashDetailBean.F = this.f21599c.k();
+        crashDetailBean.G = this.f21599c.j();
+        crashDetailBean.H = this.f21599c.l();
+        crashDetailBean.I = ab.b(this.f21598a);
         crashDetailBean.J = ab.g();
         crashDetailBean.K = ab.h();
         if (!z) {
@@ -160,7 +160,7 @@ public final class bd implements NativeExceptionHandler {
             crashDetailBean.U = -1;
             crashDetailBean.V = -1;
             crashDetailBean.W = map;
-            crashDetailBean.X = this.f35290c.y();
+            crashDetailBean.X = this.f21599c.y();
             crashDetailBean.z = null;
             if (str == null) {
                 crashDetailBean.A = "unknown(record)";
@@ -174,9 +174,9 @@ public final class bd implements NativeExceptionHandler {
         crashDetailBean.D = ab.f();
         crashDetailBean.E = ab.l();
         crashDetailBean.y = ao.a();
-        crashDetailBean.Q = this.f35290c.f35211a;
-        crashDetailBean.R = this.f35290c.a();
-        crashDetailBean.z = ap.a(this.f35290c.Q, at.h);
+        crashDetailBean.Q = this.f21599c.f21520a;
+        crashDetailBean.R = this.f21599c.a();
+        crashDetailBean.z = ap.a(this.f21599c.Q, at.h);
         int indexOf2 = crashDetailBean.q.indexOf("java:\n");
         if (indexOf2 > 0 && (i = indexOf2 + 6) < crashDetailBean.q.length()) {
             String str13 = crashDetailBean.q;
@@ -189,12 +189,12 @@ public final class bd implements NativeExceptionHandler {
             }
         }
         if (str == null) {
-            crashDetailBean.A = this.f35290c.d;
+            crashDetailBean.A = this.f21599c.d;
         }
-        crashDetailBean.U = this.f35290c.z();
-        crashDetailBean.V = this.f35290c.x;
-        crashDetailBean.W = this.f35290c.t();
-        crashDetailBean.X = this.f35290c.y();
+        crashDetailBean.U = this.f21599c.z();
+        crashDetailBean.V = this.f21599c.x;
+        crashDetailBean.W = this.f21599c.t();
+        crashDetailBean.X = this.f21599c.y();
         return crashDetailBean;
     }
 }

@@ -2,7 +2,6 @@ package com.umeng.umzid;
 
 import android.content.Context;
 import android.text.TextUtils;
-import com.anythink.core.api.ErrorCode;
 import com.umeng.analytics.pro.bh;
 import org.json.JSONObject;
 
@@ -11,31 +10,31 @@ public class ZIDManager {
     public static ZIDManager d;
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f40973a = false;
+    public boolean f27282a = false;
     public boolean b = false;
 
     /* renamed from: c  reason: collision with root package name */
-    public boolean f40974c;
+    public boolean f27283c;
 
     /* loaded from: source-8829756-dex2jar.jar:com/umeng/umzid/ZIDManager$a.class */
     public class a implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ Context f40975a;
+        public final /* synthetic */ Context f27284a;
         public final /* synthetic */ IZIDCompletionCallback b;
 
         public a(Context context, IZIDCompletionCallback iZIDCompletionCallback) {
-            this.f40975a = context;
+            this.f27284a = context;
             this.b = iZIDCompletionCallback;
         }
 
         @Override // java.lang.Runnable
         public void run() {
-            String a2 = ZIDManager.a(ZIDManager.this, this.f40975a);
+            String a2 = ZIDManager.a(ZIDManager.this, this.f27284a);
             if (TextUtils.isEmpty(a2)) {
                 IZIDCompletionCallback iZIDCompletionCallback = this.b;
                 if (iZIDCompletionCallback != null) {
-                    iZIDCompletionCallback.onFailure(ErrorCode.serverError, "获取zid失败");
+                    iZIDCompletionCallback.onFailure("1002", "获取zid失败");
                     return;
                 }
                 return;
@@ -51,15 +50,15 @@ public class ZIDManager {
     public class b implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ Context f40977a;
+        public final /* synthetic */ Context f27286a;
 
         public b(Context context) {
-            this.f40977a = context;
+            this.f27286a = context;
         }
 
         @Override // java.lang.Runnable
         public void run() {
-            ZIDManager.this.a(this.f40977a);
+            ZIDManager.this.a(this.f27286a);
         }
     }
 
@@ -67,24 +66,24 @@ public class ZIDManager {
     public class c implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ Context f40978a;
+        public final /* synthetic */ Context f27287a;
 
         public c(Context context) {
-            this.f40978a = context;
+            this.f27287a = context;
         }
 
         @Override // java.lang.Runnable
         public void run() {
-            ZIDManager.a(ZIDManager.this, this.f40978a);
+            ZIDManager.a(ZIDManager.this, this.f27287a);
         }
     }
 
     public static /* synthetic */ String a(ZIDManager zIDManager, Context context) {
         String str;
-        if (zIDManager.f40973a) {
+        if (zIDManager.f27282a) {
             return null;
         }
-        zIDManager.f40973a = true;
+        zIDManager.f27282a = true;
         JSONObject jSONObject = new JSONObject();
         String str2 = null;
         try {
@@ -124,7 +123,7 @@ public class ZIDManager {
         } catch (Throwable th) {
             str = str2;
         }
-        zIDManager.f40973a = false;
+        zIDManager.f27282a = false;
         return str;
     }
 

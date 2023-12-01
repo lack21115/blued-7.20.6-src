@@ -1,8 +1,8 @@
 package com.autonavi.aps.amapapi.security;
 
-import com.amap.api.col.p0003sl.hw;
-import com.amap.api.col.p0003sl.ib;
-import com.amap.api.col.p0003sl.mx;
+import com.amap.api.col.3sl.hw;
+import com.amap.api.col.3sl.ib;
+import com.amap.api.col.3sl.mx;
 import com.autonavi.aps.amapapi.utils.b;
 import com.tencent.cos.xml.crypto.JceEncryptionConstants;
 import com.youzan.androidsdk.tool.AppSigning;
@@ -17,12 +17,12 @@ import javax.crypto.spec.SecretKeySpec;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final char[] f9259a = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
+    private static final char[] f6419a = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
     private static final byte[] b = {61, 61, 81, 65, 65, 69, 119, 65, 67, 48, 74, 80, 115, 116, 54, 75, 104, 76, 122, 97, 88, 99, 53, 71, 49, 122, 68, 70, 79, 104, 113, 113, 65, 97, 76, 54, 65, 66, 87, 53, 103, 85, 84, 113, 71, 68, 69, 76, 80, 82, 106, 51, 66, 75, 75, 69, 98, 55, 84, 108, 115, 122, 51, 106, 76, 55, 88, 122, 70, 121, 73, 75, 52, 50, 43, 101, 70, 121, 56, 105, 115, 105, 89, 120, 117, 112, 53, 48, 76, 81, 70, 86, 108, 110, 73, 65, 66, 74, 65, 83, 119, 65, 119, 83, 68, 65, 81, 66, 66, 69, 81, 65, 78, 99, 118, 104, 73, 90, 111, 75, 74, 89, 81, 68, 119, 119, 70, 77};
 
     /* renamed from: c  reason: collision with root package name */
-    private static final byte[] f9260c = {0, 1, 1, 2, 3, 5, 8, 13, 8, 7, 6, 5, 4, 3, 2, 1};
-    private static final IvParameterSpec d = new IvParameterSpec(f9260c);
+    private static final byte[] f6420c = {0, 1, 1, 2, 3, 5, 8, 13, 8, 7, 6, 5, 4, 3, 2, 1};
+    private static final IvParameterSpec d = new IvParameterSpec(f6420c);
 
     public static String a(String str) {
         if (str != null) {
@@ -104,8 +104,8 @@ public final class a {
         try {
             byte[] bArr2 = new byte[16];
             byte[] bArr3 = new byte[bArr.length - 16];
-            System.arraycopy((Object) bArr, 0, (Object) bArr2, 0, 16);
-            System.arraycopy((Object) bArr, 16, (Object) bArr3, 0, bArr.length - 16);
+            System.arraycopy(bArr, 0, bArr2, 0, 16);
+            System.arraycopy(bArr, 16, bArr3, 0, bArr.length - 16);
             SecretKeySpec secretKeySpec = new SecretKeySpec(bArr2, "AES");
             Cipher cipher = Cipher.getInstance(JceEncryptionConstants.SYMMETRIC_CIPHER_METHOD);
             cipher.init(2, secretKeySpec, new IvParameterSpec(ib.c()));
@@ -141,8 +141,8 @@ public final class a {
             if (i2 >= length) {
                 return sb.toString();
             }
-            sb.append(f9259a[(bArr[i2] >> 4) & 15]);
-            sb.append(f9259a[bArr[i2] & 15]);
+            sb.append(f6419a[(bArr[i2] >> 4) & 15]);
+            sb.append(f6419a[bArr[i2] & 15]);
             i = i2 + 1;
         }
     }

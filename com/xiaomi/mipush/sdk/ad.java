@@ -8,16 +8,16 @@ import android.content.Intent;
 class ad extends BroadcastReceiver {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ NotificationClickedActivity f41198a;
+    final /* synthetic */ NotificationClickedActivity f27507a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public ad(NotificationClickedActivity notificationClickedActivity) {
-        this.f41198a = notificationClickedActivity;
+        this.f27507a = notificationClickedActivity;
     }
 
     @Override // android.content.BroadcastReceiver
     public void onReceive(Context context, Intent intent) {
         com.xiaomi.channel.commonutils.logger.b.b("clicked activity finish by normal.");
-        this.f41198a.finish();
+        this.f27507a.finish();
     }
 }

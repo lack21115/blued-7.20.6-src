@@ -81,7 +81,7 @@ public final class Segment {
             take = sharedCopy();
         } else {
             take = SegmentPool.take();
-            System.arraycopy((Object) this.data, this.pos, (Object) take.data, 0, i);
+            System.arraycopy(this.data, this.pos, take.data, 0, i);
         }
         take.limit = take.pos + i;
         this.pos += i;
@@ -108,11 +108,11 @@ public final class Segment {
                 throw new IllegalArgumentException();
             }
             byte[] bArr = segment.data;
-            System.arraycopy((Object) bArr, i3, (Object) bArr, 0, i2 - i3);
+            System.arraycopy(bArr, i3, bArr, 0, i2 - i3);
             segment.limit -= segment.pos;
             segment.pos = 0;
         }
-        System.arraycopy((Object) this.data, this.pos, (Object) segment.data, segment.limit, i);
+        System.arraycopy(this.data, this.pos, segment.data, segment.limit, i);
         segment.limit += i;
         this.pos += i;
     }

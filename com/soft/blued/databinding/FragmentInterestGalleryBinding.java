@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentInterestGalleryBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f28854a;
+    private final LinearLayout f15164a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f28854a;
+        return this.f15164a;
     }
 }

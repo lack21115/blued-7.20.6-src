@@ -9,31 +9,25 @@ import kotlin.jvm.internal.Intrinsics;
 @JvmInline
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/channels/ChannelResult.class */
 public final class ChannelResult<T> {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f42903a = new Companion(null);
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final Failed f42904c = new Failed();
+    public static final Companion a = new Companion(null);
+    private static final Failed c = new Failed();
     private final Object b;
 
     @Metadata
     /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/channels/ChannelResult$Closed.class */
     public static final class Closed extends Failed {
-
-        /* renamed from: a  reason: collision with root package name */
-        public final Throwable f42905a;
+        public final Throwable a;
 
         public Closed(Throwable th) {
-            this.f42905a = th;
+            this.a = th;
         }
 
         public boolean equals(Object obj) {
-            return (obj instanceof Closed) && Intrinsics.a(this.f42905a, ((Closed) obj).f42905a);
+            return (obj instanceof Closed) && Intrinsics.a(this.a, ((Closed) obj).a);
         }
 
         public int hashCode() {
-            Throwable th = this.f42905a;
+            Throwable th = this.a;
             if (th != null) {
                 return th.hashCode();
             }
@@ -42,7 +36,7 @@ public final class ChannelResult<T> {
 
         @Override // kotlinx.coroutines.channels.ChannelResult.Failed
         public String toString() {
-            return "Closed(" + this.f42905a + ')';
+            return "Closed(" + this.a + ')';
         }
     }
 
@@ -57,7 +51,7 @@ public final class ChannelResult<T> {
         }
 
         public final <E> Object a() {
-            return ChannelResult.g(ChannelResult.f42904c);
+            return ChannelResult.g(ChannelResult.c);
         }
 
         public final <E> Object a(E e) {
@@ -102,8 +96,8 @@ public final class ChannelResult<T> {
         if (obj instanceof Failed) {
             if (obj instanceof Closed) {
                 Closed closed = (Closed) obj;
-                if (closed.f42905a != null) {
-                    throw closed.f42905a;
+                if (closed.a != null) {
+                    throw closed.a;
                 }
             }
             throw new IllegalStateException(Intrinsics.a("Trying to call 'getOrThrow' on a failed channel result: ", obj).toString());
@@ -116,7 +110,7 @@ public final class ChannelResult<T> {
         if (closed == null) {
             return null;
         }
-        return closed.f42905a;
+        return closed.a;
     }
 
     public static String e(Object obj) {

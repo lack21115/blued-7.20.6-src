@@ -39,12 +39,12 @@ public final class MatrixKt {
         return scaleMatrix(f, f2);
     }
 
-    public static final Matrix times(Matrix matrix, Matrix m) {
+    public static final Matrix times(Matrix matrix, Matrix matrix2) {
         Intrinsics.e(matrix, "<this>");
-        Intrinsics.e(m, "m");
-        Matrix matrix2 = new Matrix(matrix);
-        matrix2.preConcat(m);
-        return matrix2;
+        Intrinsics.e(matrix2, "m");
+        Matrix matrix3 = new Matrix(matrix);
+        matrix3.preConcat(matrix2);
+        return matrix3;
     }
 
     public static final Matrix translationMatrix(float f, float f2) {

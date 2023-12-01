@@ -9,11 +9,11 @@ import org.json.JSONObject;
 public class ct implements IOAdEventListener {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ cq f9401a;
+    final /* synthetic */ cq f6561a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public ct(cq cqVar) {
-        this.f9401a = cqVar;
+        this.f6561a = cqVar;
     }
 
     @Override // com.baidu.mobads.sdk.api.IOAdEventListener
@@ -39,8 +39,8 @@ public class ct implements IOAdEventListener {
                         } else {
                             jSONObject.put("status", "1");
                         }
-                        this.f9401a.a(jSONObject);
-                        this.f9401a.a(intValue, intValue2, (String) obj3, intValue3, intValue4, str);
+                        this.f6561a.a(jSONObject);
+                        this.f6561a.a(intValue, intValue2, (String) obj3, intValue3, intValue4, str);
                     }
                 }
             } catch (Exception e) {

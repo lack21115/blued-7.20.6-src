@@ -7,9 +7,7 @@ import kotlin.coroutines.CoroutineContext;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/coroutines/jvm/internal/CompletedContinuation.class */
 public final class CompletedContinuation implements Continuation<Object> {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final CompletedContinuation f42470a = new CompletedContinuation();
+    public static final CompletedContinuation a = new CompletedContinuation();
 
     private CompletedContinuation() {
     }

@@ -688,7 +688,7 @@ public final class Metadata {
         ?? r0 = new byte[len()];
         Object[] objArr = this.namesAndValues;
         if (objArr instanceof byte[][]) {
-            System.arraycopy(objArr, 0, (Object) r0, 0, len());
+            System.arraycopy(objArr, 0, r0, 0, len());
             return r0;
         }
         for (int i = 0; i < this.size; i++) {

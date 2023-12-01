@@ -12,11 +12,11 @@ public class h2 {
     public static final Comparator<double[]> f = new a();
 
     /* renamed from: a  reason: collision with root package name */
-    public final List<double[]> f3827a = new ArrayList(32);
+    public final List<double[]> f3779a = new ArrayList(32);
     public final List<double[]> b = new ArrayList(32);
 
     /* renamed from: c  reason: collision with root package name */
-    public int f3828c = 0;
+    public int f3780c = 0;
     public int d = 4096;
 
     /* loaded from: source-8756600-dex2jar.jar:c/t/m/g/h2$a.class */
@@ -37,14 +37,14 @@ public class h2 {
             if (dArr != null) {
                 if (dArr.length <= this.d) {
                     Arrays.fill(dArr, 0.0d);
-                    this.f3827a.add(dArr);
+                    this.f3779a.add(dArr);
                     int binarySearch = Collections.binarySearch(this.b, dArr, f);
                     int i = binarySearch;
                     if (binarySearch < 0) {
                         i = (-binarySearch) - 1;
                     }
                     this.b.add(i, dArr);
-                    this.f3828c += dArr.length;
+                    this.f3780c += dArr.length;
                     b();
                 }
             }
@@ -61,9 +61,9 @@ public class h2 {
                 }
                 double[] dArr = this.b.get(i3);
                 if (dArr.length == i) {
-                    this.f3828c -= dArr.length;
+                    this.f3780c -= dArr.length;
                     this.b.remove(i3);
-                    this.f3827a.remove(dArr);
+                    this.f3779a.remove(dArr);
                     return dArr;
                 }
                 i2 = i3 + 1;
@@ -73,10 +73,10 @@ public class h2 {
 
     public final void b() {
         synchronized (this) {
-            while (this.f3828c > this.d) {
-                double[] remove = this.f3827a.remove(0);
+            while (this.f3780c > this.d) {
+                double[] remove = this.f3779a.remove(0);
                 this.b.remove(remove);
-                this.f3828c -= remove.length;
+                this.f3780c -= remove.length;
             }
         }
     }

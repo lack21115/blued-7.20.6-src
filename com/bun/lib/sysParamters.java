@@ -8,11 +8,11 @@ public class sysParamters {
     private static volatile sysParamters d;
 
     /* renamed from: a  reason: collision with root package name */
-    private String f21120a;
+    private String f7514a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f21121c;
+    private String f7515c;
     private String sdk_version = "10012";
     private String sdk_vname = "1.0.12";
 

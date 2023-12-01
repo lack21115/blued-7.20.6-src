@@ -1,6 +1,5 @@
 package com.ss.android.downloadlib.utils;
 
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.ss.android.downloadlib.constants.EventConstants;
 import com.ss.android.socialbase.downloader.model.DownloadInfo;
 import com.ss.android.socialbase.downloader.utils.DownloadUtils;
@@ -245,7 +244,7 @@ public class h {
     }
 
     public static JSONObject ox(JSONObject jSONObject, com.ss.android.downloadad.api.mb.mb mbVar) {
-        jb.mb(jSONObject, com.ss.android.socialbase.appdownloader.u.hj.lz().replaceAll("\\.", BridgeUtil.UNDERLINE_STR), Integer.valueOf(jb.ox(com.ss.android.downloadlib.addownload.x.getContext(), com.ss.android.socialbase.appdownloader.u.hj.lz())));
+        jb.mb(jSONObject, com.ss.android.socialbase.appdownloader.u.hj.lz().replaceAll("\\.", "_"), Integer.valueOf(jb.ox(com.ss.android.downloadlib.addownload.x.getContext(), com.ss.android.socialbase.appdownloader.u.hj.lz())));
         return jSONObject;
     }
 

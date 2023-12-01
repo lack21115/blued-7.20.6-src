@@ -8,13 +8,13 @@ import com.igexin.push.e.b.d;
 public final class c {
 
     /* renamed from: a */
-    public static final String f23327a = "ConnectModelCoordinator";
+    public static final String f9719a = "ConnectModelCoordinator";
     private static final long i = 20000;
     private static final long j = 200000;
     public boolean b;
 
     /* renamed from: c */
-    public long f23328c;
+    public long f9720c;
     public int d;
     public com.igexin.push.c.b e;
     private int f;
@@ -33,13 +33,13 @@ public final class c {
     public static final class b {
 
         /* renamed from: a */
-        private static final c f23335a = new c((byte) 0);
+        private static final c f9727a = new c((byte) 0);
 
         private b() {
         }
 
         public static /* synthetic */ c a() {
-            return f23335a;
+            return f9727a;
         }
     }
 
@@ -67,7 +67,7 @@ public final class c {
             intent.setPackage(com.igexin.push.core.e.l.getPackageName());
             com.igexin.push.core.e.l.sendBroadcast(intent);
         } catch (Throwable th) {
-            com.igexin.c.a.c.a.a(f23327a, th.toString());
+            com.igexin.c.a.c.a.a(f9719a, th.toString());
         }
     }
 
@@ -75,12 +75,12 @@ public final class c {
         this.b = z;
         com.igexin.c.a.c.a.a("ConnectModelCoordinator|init, current is polling mdl = ".concat(String.valueOf(z)), new Object[0]);
         if (z) {
-            d.a.f23611a.g();
+            d.a.f10003a.g();
         }
     }
 
     private static c e() {
-        return b.f23335a;
+        return b.f9727a;
     }
 
     private com.igexin.push.c.b f() {
@@ -88,14 +88,14 @@ public final class c {
     }
 
     private void g() {
-        this.f23328c = System.currentTimeMillis();
+        this.f9720c = System.currentTimeMillis();
         if (!this.b) {
             b();
             return;
         }
-        com.igexin.c.a.c.a.a(f23327a, "loginRsp| enter polling");
+        com.igexin.c.a.c.a.a(f9719a, "loginRsp| enter polling");
         this.e = new e();
-        d.a.f23611a.g();
+        d.a.f10003a.g();
         this.d = 0;
     }
 
@@ -119,7 +119,7 @@ public final class c {
         synchronized (this) {
             a aVar = com.igexin.push.f.c.b() ? a.WIFI : a.MOBILE;
             if (aVar != this.l) {
-                com.igexin.c.a.c.a.a(f23327a, "net type changed " + this.l + "->" + aVar);
+                com.igexin.c.a.c.a.a(f9719a, "net type changed " + this.l + "->" + aVar);
                 com.igexin.c.a.c.a.a("ConnectModelCoordinator|net type changed " + this.l + "->" + aVar, new Object[0]);
                 b();
                 this.l = aVar;
@@ -133,7 +133,7 @@ public final class c {
         if (bVar != null && !(bVar instanceof d)) {
             this.e = new d();
         }
-        d.a.f23611a.h();
+        d.a.f10003a.h();
         this.d = 0;
         this.h = 0;
         this.b = false;
@@ -145,18 +145,18 @@ public final class c {
             if (this.b) {
                 return;
             }
-            long currentTimeMillis = System.currentTimeMillis() - this.f23328c;
+            long currentTimeMillis = System.currentTimeMillis() - this.f9720c;
             if (currentTimeMillis > i && currentTimeMillis < j) {
                 this.h++;
-                com.igexin.c.a.c.a.a(f23327a, "read len = -1, interval = " + currentTimeMillis + ", tcpDisconnectSuccess =" + this.h);
+                com.igexin.c.a.c.a.a(f9719a, "read len = -1, interval = " + currentTimeMillis + ", tcpDisconnectSuccess =" + this.h);
                 com.igexin.c.a.c.a.a("ConnectModelCoordinator|read len = -1, interval = " + currentTimeMillis + ", tcpDisconnectSuccess =" + this.h, new Object[0]);
                 if (this.h >= this.f) {
-                    com.igexin.c.a.c.a.a(f23327a, "enter polling mode #####");
+                    com.igexin.c.a.c.a.a(f9719a, "enter polling mode #####");
                     com.igexin.c.a.c.a.a("ConnectModelCoordinator|enter polling mode ####", new Object[0]);
                     a(0);
                     this.b = true;
                     this.e = new e();
-                    d.a.f23611a.g();
+                    d.a.f10003a.g();
                     com.igexin.push.core.e.f.a().b(this.b);
                 }
             }
@@ -167,10 +167,10 @@ public final class c {
         synchronized (this) {
             if (this.b) {
                 this.d++;
-                com.igexin.c.a.c.a.a(f23327a, "polling mode, cur hearbeat = " + this.d);
+                com.igexin.c.a.c.a.a(f9719a, "polling mode, cur hearbeat = " + this.d);
                 com.igexin.c.a.c.a.a("ConnectModelCoordinator|polling mode, cur hearbeat =" + this.d, new Object[0]);
                 if (this.d >= this.g) {
-                    com.igexin.c.a.c.a.a(f23327a, "enter normal mode #####");
+                    com.igexin.c.a.c.a.a(f9719a, "enter normal mode #####");
                     com.igexin.c.a.c.a.a("ConnectModelCoordinator|enter normal mode ####", new Object[0]);
                     a(1);
                     com.igexin.push.core.e.O = 0L;

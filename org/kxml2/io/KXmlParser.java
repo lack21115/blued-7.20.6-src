@@ -1,7 +1,8 @@
 package org.kxml2.io;
 
+import com.alipay.sdk.sys.a;
 import com.alipay.sdk.util.i;
-import com.j256.ormlite.stmt.query.SimpleComparison;
+import com.android.internal.telephony.SmsConstants;
 import java.io.Closeable;
 import java.io.IOException;
 import java.io.InputStream;
@@ -118,9 +119,9 @@ public class KXmlParser implements XmlPullParser, Closeable {
     }
 
     static {
-        DEFAULT_ENTITIES.put("lt", SimpleComparison.LESS_THAN_OPERATION);
-        DEFAULT_ENTITIES.put("gt", SimpleComparison.GREATER_THAN_OPERATION);
-        DEFAULT_ENTITIES.put("amp", "&");
+        DEFAULT_ENTITIES.put("lt", "<");
+        DEFAULT_ENTITIES.put("gt", ">");
+        DEFAULT_ENTITIES.put("amp", a.b);
         DEFAULT_ENTITIES.put("apos", "'");
         DEFAULT_ENTITIES.put("quot", "\"");
         START_COMMENT = new char[]{'<', '!', '-', '-'};
@@ -473,7 +474,10 @@ public class KXmlParser implements XmlPullParser, Closeable {
                                 if (this.position + 5 < this.limit || fillBuffer(6)) {
                                     if (this.buffer[this.position + 2] == 'x' || this.buffer[this.position + 2] == 'X') {
                                         if (this.buffer[this.position + 3] == 'm' || this.buffer[this.position + 3] == 'M') {
-                                            return ((this.buffer[this.position + 4] == 'l' || this.buffer[this.position + 4] == 'L') && this.buffer[this.position + 5] == ' ') ? 998 : 8;
+                                            if ((this.buffer[this.position + 4] == 'l' || this.buffer[this.position + 4] == 'L') && this.buffer[this.position + 5] == ' ') {
+                                                return XML_DECLARATION;
+                                            }
+                                            return 8;
                                         }
                                         return 8;
                                     }
@@ -508,10 +512,10 @@ public class KXmlParser implements XmlPullParser, Closeable {
         this.limit = cArr.length;
     }
 
-    private void read(char c2) throws IOException, XmlPullParserException {
+    private void read(char c) throws IOException, XmlPullParserException {
         int peekCharacter = peekCharacter();
-        if (peekCharacter != c2) {
-            checkRelaxed("expected: '" + c2 + "' actual: '" + ((char) peekCharacter) + "'");
+        if (peekCharacter != c) {
+            checkRelaxed("expected: '" + c + "' actual: '" + ((char) peekCharacter) + "'");
             if (peekCharacter == -1) {
                 return;
             }
@@ -774,7 +778,7 @@ public class KXmlParser implements XmlPullParser, Closeable {
                     } else {
                         this.unresolved = true;
                         if (z2) {
-                            checkRelaxed("unresolved: &" + substring + ";");
+                            checkRelaxed("unresolved: &" + substring + i.b);
                             return;
                         }
                         return;
@@ -912,8 +916,8 @@ public class KXmlParser implements XmlPullParser, Closeable {
         }
         int i = this.position;
         StringBuilder sb = null;
-        char c2 = this.buffer[this.position];
-        if ((c2 < 'a' || c2 > 'z') && !((c2 >= 'A' && c2 <= 'Z') || c2 == '_' || c2 == ':' || c2 >= 192 || this.relaxed)) {
+        char c = this.buffer[this.position];
+        if ((c < 'a' || c > 'z') && !((c >= 'A' && c <= 'Z') || c == '_' || c == ':' || c >= 192 || this.relaxed)) {
             checkRelaxed("name expected");
             return "";
         }
@@ -932,8 +936,8 @@ public class KXmlParser implements XmlPullParser, Closeable {
                 }
                 i2 = this.position;
             }
-            char c3 = this.buffer[this.position];
-            if ((c3 < 'a' || c3 > 'z') && ((c3 < 'A' || c3 > 'Z') && !((c3 >= '0' && c3 <= '9') || c3 == '_' || c3 == '-' || c3 == ':' || c3 == '.' || c3 >= 183))) {
+            char c2 = this.buffer[this.position];
+            if ((c2 < 'a' || c2 > 'z') && ((c2 < 'A' || c2 > 'Z') && !((c2 >= '0' && c2 <= '9') || c2 == '_' || c2 == '-' || c2 == ':' || c2 == '.' || c2 >= 183))) {
                 if (sb2 == null) {
                     return this.stringPool.get(this.buffer, i2, this.position - i2);
                 }
@@ -1032,7 +1036,7 @@ public class KXmlParser implements XmlPullParser, Closeable {
         }
     }
 
-    private String readValue(char c2, boolean z, boolean z2, ValueContext valueContext) throws IOException, XmlPullParserException {
+    private String readValue(char c, boolean z, boolean z2, ValueContext valueContext) throws IOException, XmlPullParserException {
         StringBuilder sb;
         int i;
         int i2 = this.position;
@@ -1064,33 +1068,33 @@ public class KXmlParser implements XmlPullParser, Closeable {
                 }
                 i = this.position;
             }
-            char c3 = this.buffer[this.position];
-            if (c3 == c2 || ((c2 == ' ' && (c3 <= ' ' || c3 == '>')) || (c3 == '&' && !z))) {
+            char c2 = this.buffer[this.position];
+            if (c2 == c || ((c == ' ' && (c2 <= ' ' || c2 == '>')) || (c2 == '&' && !z))) {
                 break;
-            } else if (c3 == '\r' || ((c3 == '\n' && valueContext == ValueContext.ATTRIBUTE) || c3 == '&' || c3 == '<' || ((c3 == ']' && valueContext == ValueContext.TEXT) || (c3 == '%' && valueContext == ValueContext.ENTITY_DECLARATION)))) {
+            } else if (c2 == '\r' || ((c2 == '\n' && valueContext == ValueContext.ATTRIBUTE) || c2 == '&' || c2 == '<' || ((c2 == ']' && valueContext == ValueContext.TEXT) || (c2 == '%' && valueContext == ValueContext.ENTITY_DECLARATION)))) {
                 sb2 = sb;
                 if (sb == null) {
                     sb2 = new StringBuilder();
                 }
                 sb2.append(this.buffer, i, this.position - i);
-                if (c3 == '\r') {
+                if (c2 == '\r') {
                     if ((this.position + 1 < this.limit || fillBuffer(2)) && this.buffer[this.position + 1] == '\n') {
                         this.position++;
                     }
-                    c3 = valueContext == ValueContext.ATTRIBUTE ? ' ' : '\n';
-                } else if (c3 == '\n') {
-                    c3 = ' ';
-                } else if (c3 == '&') {
+                    c2 = valueContext == ValueContext.ATTRIBUTE ? ' ' : '\n';
+                } else if (c2 == '\n') {
+                    c2 = ' ';
+                } else if (c2 == '&') {
                     this.isWhitespace = false;
                     readEntity(sb2, false, z2, valueContext);
                     i3 = this.position;
-                } else if (c3 == '<') {
+                } else if (c2 == '<') {
                     if (valueContext == ValueContext.ATTRIBUTE) {
                         checkRelaxed("Illegal: \"<\" inside attribute value");
                     }
                     this.isWhitespace = false;
-                } else if (c3 != ']') {
-                    if (c3 == '%') {
+                } else if (c2 != ']') {
+                    if (c2 == '%') {
                         throw new XmlPullParserException("This parser doesn't support parameter entities", this, null);
                     }
                     throw new AssertionError();
@@ -1101,10 +1105,10 @@ public class KXmlParser implements XmlPullParser, Closeable {
                     this.isWhitespace = false;
                 }
                 this.position++;
-                sb2.append(c3);
+                sb2.append(c2);
                 i3 = this.position;
             } else {
-                this.isWhitespace = (c3 <= ' ') & this.isWhitespace;
+                this.isWhitespace = (c2 <= ' ') & this.isWhitespace;
                 this.position++;
                 sb2 = sb;
                 i3 = i;
@@ -1123,7 +1127,7 @@ public class KXmlParser implements XmlPullParser, Closeable {
         }
         read(START_PROCESSING_INSTRUCTION);
         parseStartTag(true, true);
-        if (this.attributeCount < 1 || !"version".equals(this.attributes[2])) {
+        if (this.attributeCount < 1 || !OutputKeys.VERSION.equals(this.attributes[2])) {
             checkRelaxed("version expected");
         }
         this.version = this.attributes[3];
@@ -1187,12 +1191,12 @@ public class KXmlParser implements XmlPullParser, Closeable {
         this.documentEntities.put(str, str2.toCharArray());
     }
 
-    @Override // org.xmlpull.v1.XmlPullParser, android.util.AttributeSet
+    @Override // org.xmlpull.v1.XmlPullParser
     public int getAttributeCount() {
         return this.attributeCount;
     }
 
-    @Override // org.xmlpull.v1.XmlPullParser, android.util.AttributeSet
+    @Override // org.xmlpull.v1.XmlPullParser
     public String getAttributeName(int i) {
         if (i >= this.attributeCount) {
             throw new IndexOutOfBoundsException();
@@ -1221,7 +1225,7 @@ public class KXmlParser implements XmlPullParser, Closeable {
         return "CDATA";
     }
 
-    @Override // org.xmlpull.v1.XmlPullParser, android.util.AttributeSet
+    @Override // org.xmlpull.v1.XmlPullParser
     public String getAttributeValue(int i) {
         if (i >= this.attributeCount) {
             throw new IndexOutOfBoundsException();
@@ -1229,7 +1233,7 @@ public class KXmlParser implements XmlPullParser, Closeable {
         return this.attributes[(i * 4) + 3];
     }
 
-    @Override // org.xmlpull.v1.XmlPullParser, android.util.AttributeSet
+    @Override // org.xmlpull.v1.XmlPullParser
     public String getAttributeValue(String str, String str2) {
         int i;
         int i2 = this.attributeCount * 4;
@@ -1356,9 +1360,9 @@ public class KXmlParser implements XmlPullParser, Closeable {
         return this.nspStack[(i * 2) + 1];
     }
 
-    @Override // org.xmlpull.v1.XmlPullParser, android.util.AttributeSet
+    @Override // org.xmlpull.v1.XmlPullParser
     public String getPositionDescription() {
-        StringBuilder sb = new StringBuilder(this.type < TYPES.length ? TYPES[this.type] : "unknown");
+        StringBuilder sb = new StringBuilder(this.type < TYPES.length ? TYPES[this.type] : SmsConstants.FORMAT_UNKNOWN);
         sb.append(' ');
         if (this.type == 2 || this.type == 3) {
             if (this.degenerated) {

@@ -13,47 +13,47 @@ import java.util.concurrent.TimeUnit;
 public final class c {
 
     /* renamed from: a  reason: collision with root package name */
-    ThreadPoolExecutor f7935a;
+    ThreadPoolExecutor f5095a;
     HashMap<Long, a> b;
 
     /* renamed from: c  reason: collision with root package name */
-    WeakReference<Context> f7936c;
+    WeakReference<Context> f5096c;
 
     public c(Context context) {
         ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(0, Integer.MAX_VALUE, 15L, TimeUnit.SECONDS, new LinkedBlockingDeque(), new ThreadPoolExecutor.DiscardPolicy());
-        this.f7935a = threadPoolExecutor;
+        this.f5095a = threadPoolExecutor;
         threadPoolExecutor.allowCoreThreadTimeOut(true);
         this.b = new HashMap<>();
-        this.f7936c = new WeakReference<>(context);
+        this.f5096c = new WeakReference<>(context);
     }
 
     private c(Context context, byte b) {
         int availableProcessors = (Runtime.getRuntime().availableProcessors() * 2) + 1;
         ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(availableProcessors, availableProcessors, 1L, TimeUnit.SECONDS, new LinkedBlockingDeque(), new ThreadPoolExecutor.DiscardPolicy());
-        this.f7935a = threadPoolExecutor;
+        this.f5095a = threadPoolExecutor;
         threadPoolExecutor.allowCoreThreadTimeOut(true);
         this.b = new HashMap<>();
-        this.f7936c = new WeakReference<>(context);
+        this.f5096c = new WeakReference<>(context);
     }
 
     public c(Context context, int i) {
         if (i == 0) {
-            this.f7935a = new ThreadPoolExecutor(1, 5, 15L, TimeUnit.SECONDS, new LinkedBlockingDeque(), new ThreadPoolExecutor.DiscardPolicy());
+            this.f5095a = new ThreadPoolExecutor(1, 5, 15L, TimeUnit.SECONDS, new LinkedBlockingDeque(), new ThreadPoolExecutor.DiscardPolicy());
         } else {
-            this.f7935a = new ThreadPoolExecutor(i, (i * 2) + 1, 15L, TimeUnit.SECONDS, new LinkedBlockingDeque(), new ThreadPoolExecutor.DiscardPolicy());
+            this.f5095a = new ThreadPoolExecutor(i, (i * 2) + 1, 15L, TimeUnit.SECONDS, new LinkedBlockingDeque(), new ThreadPoolExecutor.DiscardPolicy());
         }
-        this.f7935a.allowCoreThreadTimeOut(true);
+        this.f5095a.allowCoreThreadTimeOut(true);
         this.b = new HashMap<>();
-        this.f7936c = new WeakReference<>(context);
+        this.f5096c = new WeakReference<>(context);
     }
 
     private void b() {
         for (Map.Entry<Long, a> entry : this.b.entrySet()) {
             a value = entry.getValue();
-            if (value.f7930c == a.EnumC0147a.PAUSE) {
+            if (value.f5090c == a.EnumC0076a.PAUSE) {
                 value.g();
-            } else if (value.f7930c == a.EnumC0147a.READY) {
-                this.f7935a.execute(value);
+            } else if (value.f5090c == a.EnumC0076a.READY) {
+                this.f5095a.execute(value);
             }
         }
     }
@@ -77,17 +77,17 @@ public final class c {
             this.b.put(Long.valueOf(a.e()), aVar);
             aVar.d = new a.b() { // from class: com.anythink.expressad.foundation.g.g.c.1
                 @Override // com.anythink.expressad.foundation.g.g.a.b
-                public final void a(a.EnumC0147a enumC0147a) {
-                    if (enumC0147a == a.EnumC0147a.CANCEL) {
+                public final void a(a.EnumC0076a enumC0076a) {
+                    if (enumC0076a == a.EnumC0076a.CANCEL) {
                         c.this.b.remove(Long.valueOf(a.e()));
-                    } else if (enumC0147a == a.EnumC0147a.FINISH) {
+                    } else if (enumC0076a == a.EnumC0076a.FINISH) {
                         c.this.b.remove(Long.valueOf(a.e()));
-                    } else if (enumC0147a == a.EnumC0147a.RUNNING && c.this.f7936c.get() == null) {
+                    } else if (enumC0076a == a.EnumC0076a.RUNNING && c.this.f5096c.get() == null) {
                         c.this.a();
                     }
                     a.b bVar2 = bVar;
                     if (bVar2 != null) {
-                        bVar2.a(enumC0147a);
+                        bVar2.a(enumC0076a);
                     }
                 }
             };
@@ -108,11 +108,11 @@ public final class c {
 
     public final void a(a aVar) {
         b(aVar, null);
-        this.f7935a.execute(aVar);
+        this.f5095a.execute(aVar);
     }
 
     public final void a(a aVar, a.b bVar) {
         b(aVar, bVar);
-        this.f7935a.execute(aVar);
+        this.f5095a.execute(aVar);
     }
 }

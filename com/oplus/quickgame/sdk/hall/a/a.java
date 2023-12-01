@@ -8,36 +8,36 @@ import java.util.Map;
 public class a extends QuickGame.GameHallRouterBuilder {
 
     /* renamed from: a  reason: collision with root package name */
-    private Map<String, Object> f24429a = new HashMap();
+    private Map<String, Object> f10742a = new HashMap();
 
     @Override // com.oplus.quickgame.sdk.QuickGame.GameHallRouterBuilder
     public String build() {
-        return com.oplus.quickgame.sdk.hall.b.a.a(this.f24429a);
+        return com.oplus.quickgame.sdk.hall.b.a.a(this.f10742a);
     }
 
     @Override // com.oplus.quickgame.sdk.QuickGame.GameHallRouterBuilder
     public QuickGame.GameHallRouterBuilder setHost(String str) {
-        com.oplus.quickgame.sdk.hall.c.b.b(this.f24429a).b(str);
+        com.oplus.quickgame.sdk.hall.c.b.b(this.f10742a).b(str);
         return this;
     }
 
     @Override // com.oplus.quickgame.sdk.QuickGame.GameHallRouterBuilder
     public QuickGame.GameHallRouterBuilder setParams(Map<String, Object> map) {
         if (map != null) {
-            com.oplus.quickgame.sdk.hall.c.b.b(this.f24429a).a(map);
+            com.oplus.quickgame.sdk.hall.c.b.b(this.f10742a).a(map);
         }
         return this;
     }
 
     @Override // com.oplus.quickgame.sdk.QuickGame.GameHallRouterBuilder
     public QuickGame.GameHallRouterBuilder setPath(String str) {
-        com.oplus.quickgame.sdk.hall.c.b.b(this.f24429a).c(str);
+        com.oplus.quickgame.sdk.hall.c.b.b(this.f10742a).c(str);
         return this;
     }
 
     @Override // com.oplus.quickgame.sdk.QuickGame.GameHallRouterBuilder
     public QuickGame.GameHallRouterBuilder setScheme(String str) {
-        com.oplus.quickgame.sdk.hall.c.b.b(this.f24429a).d(str);
+        com.oplus.quickgame.sdk.hall.c.b.b(this.f10742a).d(str);
         return this;
     }
 }

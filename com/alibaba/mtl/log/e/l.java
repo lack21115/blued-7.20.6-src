@@ -9,6 +9,7 @@ import android.net.NetworkInfo;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.text.TextUtils;
+import com.android.internal.util.cm.QSConstants;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alibaba/mtl/log/e/l.class */
 public class l {
@@ -18,36 +19,32 @@ public class l {
 
     /* renamed from: a  reason: collision with other field name */
     private static b f38a = new b();
-
-    /* renamed from: a  reason: collision with root package name */
-    private static a f4498a = new a();
+    private static a a = new a();
 
     /* loaded from: source-6737240-dex2jar.jar:com/alibaba/mtl/log/e/l$a.class */
     static class a implements Runnable {
-
-        /* renamed from: a  reason: collision with root package name */
-        private Context f4499a;
+        private Context a;
 
         private a() {
         }
 
         public a a(Context context) {
-            this.f4499a = context;
+            this.a = context;
             return this;
         }
 
         @Override // java.lang.Runnable
         public void run() {
-            Context context = this.f4499a;
+            Context context = this.a;
             if (context == null) {
                 return;
             }
             try {
-                if (context.getPackageManager().checkPermission("android.permission.ACCESS_NETWORK_STATE", this.f4499a.getPackageName()) != 0) {
+                if (context.getPackageManager().checkPermission("android.permission.ACCESS_NETWORK_STATE", this.a.getPackageName()) != 0) {
                     l.f39a[0] = "Unknown";
                     return;
                 }
-                ConnectivityManager connectivityManager = (ConnectivityManager) this.f4499a.getSystemService(Context.CONNECTIVITY_SERVICE);
+                ConnectivityManager connectivityManager = (ConnectivityManager) this.a.getSystemService("connectivity");
                 if (connectivityManager == null) {
                     l.f39a[0] = "Unknown";
                     return;
@@ -67,14 +64,15 @@ public class l {
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-6737240-dex2jar.jar:com/alibaba/mtl/log/e/l$b.class */
-    static class b extends BroadcastReceiver {
+    public static class b extends BroadcastReceiver {
         private b() {
         }
 
         @Override // android.content.BroadcastReceiver
         public void onReceive(Context context, Intent intent) {
-            r.a().b(l.f4498a.a(context));
+            r.a().b(l.a.a(context));
         }
     }
 
@@ -125,7 +123,7 @@ public class l {
     public static String getWifiAddress(Context context) {
         String str = "00:00:00:00:00:00";
         if (context != null) {
-            WifiInfo connectionInfo = ((WifiManager) context.getSystemService("wifi")).getConnectionInfo();
+            WifiInfo connectionInfo = ((WifiManager) context.getSystemService(QSConstants.TILE_WIFI)).getConnectionInfo();
             str = "00:00:00:00:00:00";
             if (connectionInfo != null) {
                 str = connectionInfo.getMacAddress();
@@ -141,7 +139,7 @@ public class l {
         Context context = com.alibaba.mtl.log.a.getContext();
         if (context != null) {
             try {
-                ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+                ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService("connectivity");
                 if (connectivityManager != null) {
                     NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
                     if (activeNetworkInfo != null) {
@@ -164,7 +162,7 @@ public class l {
             return "Unknown";
         }
         try {
-            return (context.getPackageManager().checkPermission("android.permission.ACCESS_NETWORK_STATE", context.getPackageName()) == 0 && (activeNetworkInfo = ((ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE)).getActiveNetworkInfo()) != null && activeNetworkInfo.isConnected()) ? activeNetworkInfo.getType() == 1 ? "wifi" : activeNetworkInfo.getType() == 0 ? a(activeNetworkInfo.getSubtype()) : "Unknown" : "Unknown";
+            return (context.getPackageManager().checkPermission("android.permission.ACCESS_NETWORK_STATE", context.getPackageName()) == 0 && (activeNetworkInfo = ((ConnectivityManager) context.getSystemService("connectivity")).getActiveNetworkInfo()) != null && activeNetworkInfo.isConnected()) ? activeNetworkInfo.getType() == 1 ? QSConstants.TILE_WIFI : activeNetworkInfo.getType() == 0 ? a(activeNetworkInfo.getSubtype()) : "Unknown" : "Unknown";
         } catch (Throwable th) {
             return "Unknown";
         }

@@ -1,5 +1,6 @@
 package com.google.common.collect;
 
+import com.cdo.oaps.ad.OapsKey;
 import com.google.common.base.Function;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Predicate;
@@ -30,13 +31,13 @@ public final class Collections2 {
             this.predicate = predicate;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean add(E e) {
             Preconditions.checkArgument(this.predicate.apply(e));
             return this.unfiltered.add(e);
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean addAll(Collection<? extends E> collection) {
             for (E e : collection) {
                 Preconditions.checkArgument(this.predicate.apply(e));
@@ -44,12 +45,12 @@ public final class Collections2 {
             return this.unfiltered.addAll(collection);
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public void clear() {
             Iterables.removeIf(this.unfiltered, this.predicate);
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean contains(@NullableDecl Object obj) {
             if (Collections2.safeContains(this.unfiltered, obj)) {
                 return this.predicate.apply(obj);
@@ -57,7 +58,7 @@ public final class Collections2 {
             return false;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean containsAll(Collection<?> collection) {
             return Collections2.containsAllImpl(this, collection);
         }
@@ -66,7 +67,7 @@ public final class Collections2 {
             return new FilteredCollection<>(this.unfiltered, Predicates.and(this.predicate, predicate));
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean isEmpty() {
             return !Iterables.any(this.unfiltered, this.predicate);
         }
@@ -76,12 +77,12 @@ public final class Collections2 {
             return Iterators.filter(this.unfiltered.iterator(), this.predicate);
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean remove(Object obj) {
             return contains(obj) && this.unfiltered.remove(obj);
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean removeAll(Collection<?> collection) {
             Iterator<E> it = this.unfiltered.iterator();
             boolean z = false;
@@ -95,7 +96,7 @@ public final class Collections2 {
             return z;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean retainAll(Collection<?> collection) {
             Iterator<E> it = this.unfiltered.iterator();
             boolean z = false;
@@ -109,7 +110,7 @@ public final class Collections2 {
             return z;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection
         public int size() {
             int i = 0;
             for (E e : this.unfiltered) {
@@ -120,12 +121,12 @@ public final class Collections2 {
             return i;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public Object[] toArray() {
             return Lists.newArrayList(iterator()).toArray();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public <T> T[] toArray(T[] tArr) {
             return (T[]) Lists.newArrayList(iterator()).toArray(tArr);
         }
@@ -167,7 +168,7 @@ public final class Collections2 {
             return IntMath.saturatedMultiply(i2, IntMath.binomial(i, i3));
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean contains(@NullableDecl Object obj) {
             if (obj instanceof List) {
                 return Collections2.isPermutation(this.inputList, (List) obj);
@@ -175,7 +176,7 @@ public final class Collections2 {
             return false;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean isEmpty() {
             return false;
         }
@@ -185,7 +186,7 @@ public final class Collections2 {
             return new OrderedPermutationIterator(this.inputList, this.comparator);
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection
         public int size() {
             return this.size;
         }
@@ -269,7 +270,7 @@ public final class Collections2 {
             this.inputList = immutableList;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean contains(@NullableDecl Object obj) {
             if (obj instanceof List) {
                 return Collections2.isPermutation(this.inputList, (List) obj);
@@ -277,7 +278,7 @@ public final class Collections2 {
             return false;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean isEmpty() {
             return false;
         }
@@ -287,7 +288,7 @@ public final class Collections2 {
             return new PermutationIterator(this.inputList);
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection
         public int size() {
             return IntMath.factorial(this.inputList.size());
         }
@@ -302,7 +303,7 @@ public final class Collections2 {
     static class PermutationIterator<E> extends AbstractIterator<List<E>> {
 
         /* renamed from: c  reason: collision with root package name */
-        final int[] f22215c;
+        final int[] f8608c;
         int j;
         final List<E> list;
         final int[] o;
@@ -311,7 +312,7 @@ public final class Collections2 {
             this.list = new ArrayList(list);
             int size = list.size();
             int[] iArr = new int[size];
-            this.f22215c = iArr;
+            this.f8608c = iArr;
             this.o = new int[size];
             Arrays.fill(iArr, 0);
             Arrays.fill(this.o, 1);
@@ -326,14 +327,14 @@ public final class Collections2 {
             }
             int i = 0;
             while (true) {
-                int[] iArr = this.f22215c;
+                int[] iArr = this.f8608c;
                 int i2 = this.j;
                 int i3 = iArr[i2] + this.o[i2];
                 if (i3 < 0) {
                     switchDirection();
                 } else if (i3 != i2 + 1) {
                     Collections.swap(this.list, (i2 - iArr[i2]) + i, (i2 - i3) + i);
-                    this.f22215c[this.j] = i3;
+                    this.f8608c[this.j] = i3;
                     return;
                 } else if (i2 == 0) {
                     return;
@@ -374,12 +375,12 @@ public final class Collections2 {
             this.function = (Function) Preconditions.checkNotNull(function);
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public void clear() {
             this.fromCollection.clear();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean isEmpty() {
             return this.fromCollection.isEmpty();
         }
@@ -389,7 +390,7 @@ public final class Collections2 {
             return Iterators.transform(this.fromCollection.iterator(), this.function);
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection
         public int size() {
             return this.fromCollection.size();
         }
@@ -451,7 +452,7 @@ public final class Collections2 {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static StringBuilder newStringBuilderForCollection(int i) {
-        CollectPreconditions.checkNonnegative(i, "size");
+        CollectPreconditions.checkNonnegative(i, OapsKey.KEY_SIZE);
         return new StringBuilder((int) Math.min(i * 8, 1073741824L));
     }
 

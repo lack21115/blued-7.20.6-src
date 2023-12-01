@@ -4,7 +4,7 @@ import android.hardware.Camera;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.android.internal.util.cm.QSConstants;
+import com.huawei.hms.framework.network.grs.GrsBaseInfo;
 
 /* loaded from: source-9557208-dex2jar.jar:android/telephony/ServiceState.class */
 public class ServiceState implements Parcelable {
@@ -137,13 +137,13 @@ public class ServiceState implements Parcelable {
             case 0:
                 return "home";
             case 1:
-                return QSConstants.TILE_ROAMING;
+                return "roaming";
             case 2:
                 return "Domestic Roaming";
             case 3:
                 return "International Roaming";
             default:
-                return "UNKNOWN";
+                return GrsBaseInfo.CountryCodeSource.UNKNOWN;
         }
     }
 

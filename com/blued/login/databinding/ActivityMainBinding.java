@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ActivityMainBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ConstraintLayout f20507a;
+    private final ConstraintLayout f6901a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f20507a;
+        return this.f6901a;
     }
 }

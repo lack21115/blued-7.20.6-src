@@ -1,6 +1,5 @@
 package c.t.m.g;
 
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -10,11 +9,11 @@ import java.io.IOException;
 public class r1 {
 
     /* renamed from: a  reason: collision with root package name */
-    public byte[] f3957a;
+    public byte[] f3909a;
     public File b;
 
     /* renamed from: c  reason: collision with root package name */
-    public FileOutputStream f3958c;
+    public FileOutputStream f3910c;
     public BufferedOutputStream d;
     public StringBuilder e;
     public s1 f;
@@ -32,16 +31,16 @@ public class r1 {
     public class a implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ String f3959a;
+        public final /* synthetic */ String f3911a;
 
         public a(String str) {
-            this.f3959a = str;
+            this.f3911a = str;
         }
 
         @Override // java.lang.Runnable
         public void run() {
             try {
-                r2.a(new File(this.f3959a), new File(this.f3959a.substring(0, this.f3959a.length() - r1.this.k.length()) + ".gzip"), true);
+                r2.a(new File(this.f3911a), new File(this.f3911a.substring(0, this.f3911a.length() - r1.this.k.length()) + ".gzip"), true);
             } catch (Throwable th) {
             }
         }
@@ -52,7 +51,7 @@ public class r1 {
     }
 
     public r1(File file, int i) throws IOException {
-        this.f3957a = new byte[0];
+        this.f3909a = new byte[0];
         this.g = "";
         this.h = 0;
         this.i = false;
@@ -66,7 +65,7 @@ public class r1 {
     }
 
     public void a() throws IOException {
-        synchronized (this.f3957a) {
+        synchronized (this.f3909a) {
             if (this.d == null) {
                 return;
             }
@@ -77,18 +76,18 @@ public class r1 {
                 this.b.length();
             }
             this.d.close();
-            this.f3958c.close();
+            this.f3910c.close();
             if (this.i && this.l) {
                 c();
             }
             this.n = 1;
             this.d = null;
-            this.f3958c = null;
+            this.f3910c = null;
         }
     }
 
     public void a(s1 s1Var) {
-        synchronized (this.f3957a) {
+        synchronized (this.f3909a) {
             this.f = s1Var;
         }
     }
@@ -105,12 +104,12 @@ public class r1 {
             file.getAbsolutePath();
         }
         this.e = new StringBuilder(i);
-        this.f3958c = new FileOutputStream(file, true);
-        this.d = new BufferedOutputStream(this.f3958c, 5120);
+        this.f3910c = new FileOutputStream(file, true);
+        this.d = new BufferedOutputStream(this.f3910c, 5120);
     }
 
     public void a(String str) throws IOException {
-        synchronized (this.f3957a) {
+        synchronized (this.f3909a) {
             if (this.e != null) {
                 this.e.append(str);
                 if (this.e.length() >= this.h) {
@@ -122,7 +121,7 @@ public class r1 {
     }
 
     public void a(byte[] bArr) throws IOException {
-        synchronized (this.f3957a) {
+        synchronized (this.f3909a) {
             if (this.d == null) {
                 return;
             }
@@ -135,7 +134,7 @@ public class r1 {
                     File b = b();
                     if ((b == null ? 0L : b.length()) >= this.j) {
                         this.d.close();
-                        this.f3958c.close();
+                        this.f3910c.close();
                         c();
                         a(new File(this.g), this.h);
                     }
@@ -146,7 +145,7 @@ public class r1 {
 
     public File b() {
         File file;
-        synchronized (this.f3957a) {
+        synchronized (this.f3909a) {
             file = this.b;
         }
         return file;
@@ -154,14 +153,14 @@ public class r1 {
 
     public final void c() {
         File file;
-        File file2 = new File(this.g + BridgeUtil.UNDERLINE_STR + this.n + this.k);
+        File file2 = new File(this.g + "_" + this.n + this.k);
         while (true) {
             file = file2;
             if (!file.exists()) {
                 break;
             }
             this.n++;
-            file2 = new File(this.g + BridgeUtil.UNDERLINE_STR + this.n + this.k);
+            file2 = new File(this.g + "_" + this.n + this.k);
         }
         this.b.renameTo(file);
         if (g3.a()) {

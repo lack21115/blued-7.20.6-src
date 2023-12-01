@@ -4,11 +4,11 @@ package com.sdk.tencent.d;
 public class a<T> {
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f28027a = false;
+    public boolean f14339a = false;
     public e<?> b;
 
     /* renamed from: c  reason: collision with root package name */
-    public a<T> f28028c;
+    public a<T> f14340c;
 
     public a(T t) {
         a(t);
@@ -20,7 +20,7 @@ public class a<T> {
         if (r0 == 0) {
             return null;
         }
-        return this.f28027a ? r0 : (T) r0.b;
+        return this.f14339a ? r0 : (T) r0.b;
     }
 
     public void a(T t) {
@@ -30,7 +30,7 @@ public class a<T> {
             this.b = new e<>(b.DEFAULT, t);
         } else {
             this.b = (e) t;
-            this.f28027a = true;
+            this.f14339a = true;
         }
     }
 }

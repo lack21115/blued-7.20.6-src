@@ -6,7 +6,6 @@ import android.os.Looper;
 import android.os.Message;
 import android.text.TextUtils;
 import android.util.Log;
-import com.igexin.push.core.b;
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -254,7 +253,7 @@ public class StateMachine {
             }
 
             public String toString() {
-                return "state=" + this.state.getName() + ",active=" + this.active + ",parent=" + (this.parentStateInfo == null ? b.l : this.parentStateInfo.state.getName());
+                return "state=" + this.state.getName() + ",active=" + this.active + ",parent=" + (this.parentStateInfo == null ? "null" : this.parentStateInfo.state.getName());
             }
         }
 
@@ -611,8 +610,7 @@ public class StateMachine {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    public StateMachine(String str) {
+    protected StateMachine(String str) {
         this.mSmThread = new HandlerThread(str);
         this.mSmThread.start();
         initStateMachine(str, this.mSmThread.getLooper());
@@ -639,13 +637,11 @@ public class StateMachine {
         smHandler.mLogRecords.add(this, smHandler.getCurrentMessage(), str, smHandler.getCurrentState(), smHandler.mStateStack[smHandler.mStateStackTopIndex].state, smHandler.mDestState);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    public final void addState(State state) {
+    protected final void addState(State state) {
         this.mSmHandler.addState(state, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    public final void addState(State state, State state2) {
+    protected final void addState(State state, State state2) {
         this.mSmHandler.addState(state, state2);
     }
 
@@ -816,8 +812,7 @@ public class StateMachine {
     protected void onQuitting() {
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    public final void quit() {
+    protected final void quit() {
         SmHandler smHandler = this.mSmHandler;
         if (smHandler == null) {
             return;
@@ -997,8 +992,7 @@ public class StateMachine {
         smHandler.setDbg(z);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    public final void setInitialState(State state) {
+    protected final void setInitialState(State state) {
         this.mSmHandler.setInitialState(state);
     }
 
@@ -1027,8 +1021,7 @@ public class StateMachine {
         return stringWriter.toString();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    public final void transitionTo(IState iState) {
+    protected final void transitionTo(IState iState) {
         this.mSmHandler.transitionTo(iState);
     }
 

@@ -12,13 +12,9 @@ import com.anythink.core.common.k.h;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/ui/GuideToClickView.class */
 public class GuideToClickView extends RelativeLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    WaveAnimImageView f6115a;
+    WaveAnimImageView a;
     WaveAnimImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    ImageView f6116c;
+    ImageView c;
     float d;
     float e;
     float f;
@@ -57,9 +53,9 @@ public class GuideToClickView extends RelativeLayout {
     }
 
     private void a() {
-        startAnim(this.m, this.f6115a, 0L);
+        startAnim(this.m, this.a, 0L);
         startAnim(this.n, this.b, 800L);
-        this.f6116c.startAnimation(this.o);
+        this.c.startAnimation(this.o);
     }
 
     private void a(Context context) {
@@ -70,11 +66,11 @@ public class GuideToClickView extends RelativeLayout {
         this.g = h.a(context, 18.0f);
         this.h = h.a(context, 2.0f);
         this.i = h.a(context, 40.0f);
-        this.f6115a = (WaveAnimImageView) findViewById(h.a(context, "myoffer_wave_anim_image", "id"));
+        this.a = (WaveAnimImageView) findViewById(h.a(context, "myoffer_wave_anim_image", "id"));
         this.b = (WaveAnimImageView) findViewById(h.a(context, "myoffer_wave_anim_image2", "id"));
         this.m = ValueAnimator.ofFloat(0.0f, 1.0f);
         this.n = ValueAnimator.ofFloat(0.0f, 1.0f);
-        this.f6116c = (ImageView) findViewById(h.a(context, "myoffer_guide_to_click_finger", "id"));
+        this.c = (ImageView) findViewById(h.a(context, "myoffer_guide_to_click_finger", "id"));
         ScaleAnimation scaleAnimation = new ScaleAnimation(1.0f, 1.1f, 1.0f, 1.1f);
         this.o = scaleAnimation;
         scaleAnimation.setRepeatMode(2);
@@ -101,9 +97,9 @@ public class GuideToClickView extends RelativeLayout {
     @Override // android.view.ViewGroup, android.view.View
     public void onAttachedToWindow() {
         super.onAttachedToWindow();
-        startAnim(this.m, this.f6115a, 0L);
+        startAnim(this.m, this.a, 0L);
         startAnim(this.n, this.b, 800L);
-        this.f6116c.startAnimation(this.o);
+        this.c.startAnimation(this.o);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

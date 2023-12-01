@@ -23,11 +23,11 @@ public class PosInfo implements Parcelable {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    public final byte[] f27134a;
+    public final byte[] f13446a;
     public final long b;
 
     public PosInfo(byte[] bArr, long j) {
-        this.f27134a = bArr;
+        this.f13446a = bArr;
         this.b = j;
     }
 
@@ -39,7 +39,7 @@ public class PosInfo implements Parcelable {
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeLong(this.b);
-        parcel.writeInt(this.f27134a.length);
-        parcel.writeByteArray(this.f27134a);
+        parcel.writeInt(this.f13446a.length);
+        parcel.writeByteArray(this.f13446a);
     }
 }

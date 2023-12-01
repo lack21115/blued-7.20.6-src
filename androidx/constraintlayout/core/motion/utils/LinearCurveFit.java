@@ -4,11 +4,11 @@ package androidx.constraintlayout.core.motion.utils;
 public class LinearCurveFit extends CurveFit {
 
     /* renamed from: a  reason: collision with root package name */
-    double[] f2050a;
+    double[] f2002a;
     private double[] b;
 
     /* renamed from: c  reason: collision with root package name */
-    private double[][] f2051c;
+    private double[][] f2003c;
     private double d;
     private boolean e = true;
 
@@ -16,9 +16,9 @@ public class LinearCurveFit extends CurveFit {
         this.d = Double.NaN;
         int length = dArr.length;
         int length2 = dArr2[0].length;
-        this.f2050a = new double[length2];
+        this.f2002a = new double[length2];
         this.b = dArr;
-        this.f2051c = dArr2;
+        this.f2003c = dArr2;
         if (length2 > 2) {
             double d = 0.0d;
             double d2 = 0.0d;
@@ -44,29 +44,29 @@ public class LinearCurveFit extends CurveFit {
         int i2 = 0;
         if (this.e) {
             if (d <= dArr[0]) {
-                return this.f2051c[0][i] + ((d - dArr[0]) * getSlope(dArr[0], i));
+                return this.f2003c[0][i] + ((d - dArr[0]) * getSlope(dArr[0], i));
             }
             int i3 = length - 1;
             if (d >= dArr[i3]) {
-                return this.f2051c[i3][i] + ((d - dArr[i3]) * getSlope(dArr[i3], i));
+                return this.f2003c[i3][i] + ((d - dArr[i3]) * getSlope(dArr[i3], i));
             }
         } else if (d <= dArr[0]) {
-            return this.f2051c[0][i];
+            return this.f2003c[0][i];
         } else {
             int i4 = length - 1;
             if (d >= dArr[i4]) {
-                return this.f2051c[i4][i];
+                return this.f2003c[i4][i];
             }
         }
         while (i2 < length - 1) {
             double[] dArr2 = this.b;
             if (d == dArr2[i2]) {
-                return this.f2051c[i2][i];
+                return this.f2003c[i2][i];
             }
             int i5 = i2 + 1;
             if (d < dArr2[i5]) {
                 double d2 = (d - dArr2[i2]) / (dArr2[i5] - dArr2[i2]);
-                double[][] dArr3 = this.f2051c;
+                double[][] dArr3 = this.f2003c;
                 return (dArr3[i2][i] * (1.0d - d2)) + (dArr3[i5][i] * d2);
             }
             i2 = i5;
@@ -78,25 +78,25 @@ public class LinearCurveFit extends CurveFit {
     public void getPos(double d, double[] dArr) {
         double[] dArr2 = this.b;
         int length = dArr2.length;
-        int length2 = this.f2051c[0].length;
+        int length2 = this.f2003c[0].length;
         if (this.e) {
             if (d <= dArr2[0]) {
-                getSlope(dArr2[0], this.f2050a);
+                getSlope(dArr2[0], this.f2002a);
                 int i = 0;
                 while (true) {
                     int i2 = i;
                     if (i2 >= length2) {
                         return;
                     }
-                    dArr[i2] = this.f2051c[0][i2] + ((d - this.b[0]) * this.f2050a[i2]);
+                    dArr[i2] = this.f2003c[0][i2] + ((d - this.b[0]) * this.f2002a[i2]);
                     i = i2 + 1;
                 }
             } else {
                 int i3 = length - 1;
                 if (d >= dArr2[i3]) {
-                    getSlope(dArr2[i3], this.f2050a);
+                    getSlope(dArr2[i3], this.f2002a);
                     for (int i4 = 0; i4 < length2; i4++) {
-                        dArr[i4] = this.f2051c[i3][i4] + ((d - this.b[i3]) * this.f2050a[i4]);
+                        dArr[i4] = this.f2003c[i3][i4] + ((d - this.b[i3]) * this.f2002a[i4]);
                     }
                     return;
                 }
@@ -108,7 +108,7 @@ public class LinearCurveFit extends CurveFit {
                 if (i6 >= length2) {
                     return;
                 }
-                dArr[i6] = this.f2051c[0][i6];
+                dArr[i6] = this.f2003c[0][i6];
                 i5 = i6 + 1;
             }
         } else {
@@ -120,7 +120,7 @@ public class LinearCurveFit extends CurveFit {
                     if (i9 >= length2) {
                         return;
                     }
-                    dArr[i9] = this.f2051c[i7][i9];
+                    dArr[i9] = this.f2003c[i7][i9];
                     i8 = i9 + 1;
                 }
             }
@@ -138,7 +138,7 @@ public class LinearCurveFit extends CurveFit {
                     if (i13 >= length2) {
                         break;
                     }
-                    dArr[i13] = this.f2051c[i11][i13];
+                    dArr[i13] = this.f2003c[i11][i13];
                     i12 = i13 + 1;
                 }
             }
@@ -152,7 +152,7 @@ public class LinearCurveFit extends CurveFit {
                     if (i16 >= length2) {
                         return;
                     }
-                    double[][] dArr4 = this.f2051c;
+                    double[][] dArr4 = this.f2003c;
                     dArr[i16] = (dArr4[i11][i16] * (1.0d - d2)) + (dArr4[i14][i16] * d2);
                     i15 = i16 + 1;
                 }
@@ -166,25 +166,25 @@ public class LinearCurveFit extends CurveFit {
     public void getPos(double d, float[] fArr) {
         double[] dArr = this.b;
         int length = dArr.length;
-        int length2 = this.f2051c[0].length;
+        int length2 = this.f2003c[0].length;
         if (this.e) {
             if (d <= dArr[0]) {
-                getSlope(dArr[0], this.f2050a);
+                getSlope(dArr[0], this.f2002a);
                 int i = 0;
                 while (true) {
                     int i2 = i;
                     if (i2 >= length2) {
                         return;
                     }
-                    fArr[i2] = (float) (this.f2051c[0][i2] + ((d - this.b[0]) * this.f2050a[i2]));
+                    fArr[i2] = (float) (this.f2003c[0][i2] + ((d - this.b[0]) * this.f2002a[i2]));
                     i = i2 + 1;
                 }
             } else {
                 int i3 = length - 1;
                 if (d >= dArr[i3]) {
-                    getSlope(dArr[i3], this.f2050a);
+                    getSlope(dArr[i3], this.f2002a);
                     for (int i4 = 0; i4 < length2; i4++) {
-                        fArr[i4] = (float) (this.f2051c[i3][i4] + ((d - this.b[i3]) * this.f2050a[i4]));
+                        fArr[i4] = (float) (this.f2003c[i3][i4] + ((d - this.b[i3]) * this.f2002a[i4]));
                     }
                     return;
                 }
@@ -196,7 +196,7 @@ public class LinearCurveFit extends CurveFit {
                 if (i6 >= length2) {
                     return;
                 }
-                fArr[i6] = (float) this.f2051c[0][i6];
+                fArr[i6] = (float) this.f2003c[0][i6];
                 i5 = i6 + 1;
             }
         } else {
@@ -208,7 +208,7 @@ public class LinearCurveFit extends CurveFit {
                     if (i9 >= length2) {
                         return;
                     }
-                    fArr[i9] = (float) this.f2051c[i7][i9];
+                    fArr[i9] = (float) this.f2003c[i7][i9];
                     i8 = i9 + 1;
                 }
             }
@@ -226,7 +226,7 @@ public class LinearCurveFit extends CurveFit {
                     if (i13 >= length2) {
                         break;
                     }
-                    fArr[i13] = (float) this.f2051c[i11][i13];
+                    fArr[i13] = (float) this.f2003c[i11][i13];
                     i12 = i13 + 1;
                 }
             }
@@ -240,7 +240,7 @@ public class LinearCurveFit extends CurveFit {
                     if (i16 >= length2) {
                         return;
                     }
-                    double[][] dArr3 = this.f2051c;
+                    double[][] dArr3 = this.f2003c;
                     fArr[i16] = (float) ((dArr3[i11][i16] * (1.0d - d2)) + (dArr3[i14][i16] * d2));
                     i15 = i16 + 1;
                 }
@@ -275,7 +275,7 @@ public class LinearCurveFit extends CurveFit {
                 double d3 = dArr2[i4];
                 double d4 = dArr2[i2];
                 double d5 = dArr2[i2];
-                double[][] dArr3 = this.f2051c;
+                double[][] dArr3 = this.f2003c;
                 return (dArr3[i4][i] - dArr3[i2][i]) / (d3 - d4);
             }
             i2 = i4;
@@ -288,7 +288,7 @@ public class LinearCurveFit extends CurveFit {
         double d2;
         double[] dArr2 = this.b;
         int length = dArr2.length;
-        int length2 = this.f2051c[0].length;
+        int length2 = this.f2003c[0].length;
         if (d <= dArr2[0]) {
             d2 = dArr2[0];
         } else {
@@ -311,7 +311,7 @@ public class LinearCurveFit extends CurveFit {
                 double d4 = dArr3[i3];
                 double d5 = dArr3[i3];
                 for (int i5 = 0; i5 < length2; i5++) {
-                    double[][] dArr4 = this.f2051c;
+                    double[][] dArr4 = this.f2003c;
                     dArr[i5] = (dArr4[i4][i5] - dArr4[i3][i5]) / (d3 - d4);
                 }
                 return;

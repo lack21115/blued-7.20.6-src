@@ -7,12 +7,12 @@ import android.view.View;
 public class a extends View {
 
     /* renamed from: a  reason: collision with root package name */
-    private InterfaceC0646a f24982a;
+    private InterfaceC0476a f11294a;
     private boolean b;
 
     /* renamed from: com.opos.cmn.j.a$a  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/opos/cmn/j/a$a.class */
-    public interface InterfaceC0646a {
+    public interface InterfaceC0476a {
         void a();
 
         void b();
@@ -23,33 +23,31 @@ public class a extends View {
         this.b = false;
     }
 
-    public void a(InterfaceC0646a interfaceC0646a) {
-        this.f24982a = interfaceC0646a;
-        if (!this.b || interfaceC0646a == null) {
+    public void a(InterfaceC0476a interfaceC0476a) {
+        this.f11294a = interfaceC0476a;
+        if (!this.b || interfaceC0476a == null) {
             return;
         }
-        interfaceC0646a.b();
+        interfaceC0476a.b();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         this.b = true;
-        InterfaceC0646a interfaceC0646a = this.f24982a;
-        if (interfaceC0646a != null) {
-            interfaceC0646a.b();
+        InterfaceC0476a interfaceC0476a = this.f11294a;
+        if (interfaceC0476a != null) {
+            interfaceC0476a.b();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.b = false;
-        InterfaceC0646a interfaceC0646a = this.f24982a;
-        if (interfaceC0646a != null) {
-            interfaceC0646a.a();
+        InterfaceC0476a interfaceC0476a = this.f11294a;
+        if (interfaceC0476a != null) {
+            interfaceC0476a.a();
         }
     }
 }

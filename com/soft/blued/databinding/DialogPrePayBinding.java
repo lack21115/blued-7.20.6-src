@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class DialogPrePayBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final RelativeLayout f28713a;
+    private final RelativeLayout f15023a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
-        return this.f28713a;
+        return this.f15023a;
     }
 }

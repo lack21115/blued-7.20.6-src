@@ -1,8 +1,7 @@
 package android.os;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-9557208-dex2jar.jar:android/os/ZygoteStartFailedEx.class */
-public class ZygoteStartFailedEx extends Exception {
+class ZygoteStartFailedEx extends Exception {
     /* JADX INFO: Access modifiers changed from: package-private */
     public ZygoteStartFailedEx(String str) {
         super(str);

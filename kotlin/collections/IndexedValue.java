@@ -6,18 +6,16 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/collections/IndexedValue.class */
 public final class IndexedValue<T> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final int f42382a;
+    private final int a;
     private final T b;
 
     public IndexedValue(int i, T t) {
-        this.f42382a = i;
+        this.a = i;
         this.b = t;
     }
 
     public final int a() {
-        return this.f42382a;
+        return this.a;
     }
 
     public final T b() {
@@ -30,18 +28,18 @@ public final class IndexedValue<T> {
         }
         if (obj instanceof IndexedValue) {
             IndexedValue indexedValue = (IndexedValue) obj;
-            return this.f42382a == indexedValue.f42382a && Intrinsics.a(this.b, indexedValue.b);
+            return this.a == indexedValue.a && Intrinsics.a(this.b, indexedValue.b);
         }
         return false;
     }
 
     public int hashCode() {
-        int i = this.f42382a;
+        int i = this.a;
         T t = this.b;
         return (i * 31) + (t == null ? 0 : t.hashCode());
     }
 
     public String toString() {
-        return "IndexedValue(index=" + this.f42382a + ", value=" + this.b + ')';
+        return "IndexedValue(index=" + this.a + ", value=" + this.b + ')';
     }
 }

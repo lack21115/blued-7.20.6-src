@@ -14,7 +14,7 @@ import org.json.JSONObject;
 public final class h {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final int f23650a = 10000;
+    private static final int f10042a = 10000;
     private static final String b = "ErrorReport";
 
     /* renamed from: com.igexin.push.f.h$1  reason: invalid class name */
@@ -22,11 +22,11 @@ public final class h {
     public static final class AnonymousClass1 implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ Context f23651a;
+        final /* synthetic */ Context f10043a;
         final /* synthetic */ a b;
 
         public AnonymousClass1(Context context, a aVar) {
-            this.f23651a = context;
+            this.f10043a = context;
             this.b = aVar;
         }
 
@@ -40,7 +40,7 @@ public final class h {
                     jSONObject.put("action", "upload_BI");
                     jSONObject.put("BIType", "25");
                     jSONObject.put("cid", "0");
-                    jSONObject.put("BIData", new String(com.igexin.c.a.b.g.c(h.a(this.f23651a).getBytes()), "UTF-8"));
+                    jSONObject.put("BIData", new String(com.igexin.c.a.b.g.c(h.a(this.f10043a).getBytes()), "UTF-8"));
                     byte[] a2 = r.a(SDKUrlConfig.getBiUploadServiceUrl(), com.igexin.c.b.a.b(jSONObject.toString().getBytes()));
                     if (a2 != null) {
                         new String(a2);
@@ -125,7 +125,7 @@ public final class h {
     }
 
     private static void a(a aVar, Context context) {
-        com.igexin.b.a.a().f23194a.execute(new AnonymousClass1(context, aVar));
+        com.igexin.b.a.a().f9586a.execute(new AnonymousClass1(context, aVar));
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

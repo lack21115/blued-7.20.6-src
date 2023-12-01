@@ -8,13 +8,13 @@ import java.util.List;
 public final class ac {
 
     /* renamed from: a  reason: collision with root package name */
-    public static int f35216a = 1000;
+    public static int f21525a = 1000;
     public static long b = 259200000;
     private static ac d;
     private static String i;
 
     /* renamed from: c  reason: collision with root package name */
-    public final ak f35217c;
+    public final ak f21526c;
     private final List<o> e;
     private final StrategyBean f;
     private StrategyBean g = null;
@@ -30,12 +30,12 @@ public final class ac {
             } else {
                 str = "na_https".equals(str2) ? "https://astat.bugly.cros.wr.pvp.net/:8180/rqd/async" : "https://astat.bugly.cros.wr.pvp.net/:8180/rqd/async";
             }
-            StrategyBean.f35196a = str;
+            StrategyBean.f21505a = str;
             StrategyBean.b = str;
         }
         this.f = new StrategyBean();
         this.e = list;
-        this.f35217c = ak.a();
+        this.f21526c = ak.a();
     }
 
     public static ac a() {
@@ -106,8 +106,8 @@ public final class ac {
         }
         if (this.g == null || btVar.h != this.g.o) {
             StrategyBean strategyBean = new StrategyBean();
-            strategyBean.f = btVar.f35311a;
-            strategyBean.h = btVar.f35312c;
+            strategyBean.f = btVar.f21620a;
+            strategyBean.h = btVar.f21621c;
             strategyBean.g = btVar.b;
             if (ap.b(i) || !ap.d(i)) {
                 if (ap.d(btVar.d)) {
@@ -119,8 +119,8 @@ public final class ac {
                     strategyBean.r = btVar.e;
                 }
             }
-            if (btVar.f != null && !ap.b(btVar.f.f35310a)) {
-                strategyBean.s = btVar.f.f35310a;
+            if (btVar.f != null && !ap.b(btVar.f.f21619a)) {
+                strategyBean.s = btVar.f.f21619a;
             }
             if (btVar.h != 0) {
                 strategyBean.o = btVar.h;
@@ -164,7 +164,7 @@ public final class ac {
             w.a().b(2);
             y yVar = new y();
             yVar.b = 2;
-            yVar.f35353a = strategyBean.d;
+            yVar.f21662a = strategyBean.d;
             yVar.e = strategyBean.e;
             yVar.g = ap.a(strategyBean);
             w.a().a(yVar);
@@ -184,7 +184,7 @@ public final class ac {
         StrategyBean strategyBean = this.g;
         if (strategyBean != null) {
             if (!ap.d(strategyBean.q)) {
-                this.g.q = StrategyBean.f35196a;
+                this.g.q = StrategyBean.f21505a;
             }
             if (!ap.d(this.g.r)) {
                 this.g.r = StrategyBean.b;

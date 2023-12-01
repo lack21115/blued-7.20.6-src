@@ -10,7 +10,7 @@ public class YYCollectorConfigMode {
     private String name;
 
     /* renamed from: skin  reason: collision with root package name */
-    private SkinDTO f17615skin;
+    private SkinDTO f55skin;
 
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/model/YYCollectorConfigMode$BadgeDTO.class */
     public static class BadgeDTO {
@@ -157,7 +157,7 @@ public class YYCollectorConfigMode {
     }
 
     public SkinDTO getSkin() {
-        return this.f17615skin;
+        return this.f55skin;
     }
 
     public void setBadge(BadgeDTO badgeDTO) {
@@ -185,6 +185,6 @@ public class YYCollectorConfigMode {
     }
 
     public void setSkin(SkinDTO skinDTO) {
-        this.f17615skin = skinDTO;
+        this.f55skin = skinDTO;
     }
 }

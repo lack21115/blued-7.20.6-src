@@ -30,11 +30,11 @@ import java.util.Set;
 public abstract class VersionedParcel {
 
     /* renamed from: a  reason: collision with root package name */
-    protected final ArrayMap<String, Method> f3544a;
+    protected final ArrayMap<String, Method> f3496a;
     protected final ArrayMap<String, Method> b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected final ArrayMap<String, Class> f3545c;
+    protected final ArrayMap<String, Class> f3497c;
 
     /* loaded from: source-8756600-dex2jar.jar:androidx/versionedparcelable/VersionedParcel$ParcelException.class */
     public static class ParcelException extends RuntimeException {
@@ -44,9 +44,9 @@ public abstract class VersionedParcel {
     }
 
     public VersionedParcel(ArrayMap<String, Method> arrayMap, ArrayMap<String, Method> arrayMap2, ArrayMap<String, Class> arrayMap3) {
-        this.f3544a = arrayMap;
+        this.f3496a = arrayMap;
         this.b = arrayMap2;
-        this.f3545c = arrayMap3;
+        this.f3497c = arrayMap3;
     }
 
     private Exception a(int i, String str) {
@@ -66,12 +66,12 @@ public abstract class VersionedParcel {
     }
 
     private Method a(String str) throws IllegalAccessException, NoSuchMethodException, ClassNotFoundException {
-        Method method = this.f3544a.get(str);
+        Method method = this.f3496a.get(str);
         Method method2 = method;
         if (method == null) {
             System.currentTimeMillis();
             method2 = Class.forName(str, true, VersionedParcel.class.getClassLoader()).getDeclaredMethod("read", VersionedParcel.class);
-            this.f3544a.put(str, method2);
+            this.f3496a.put(str, method2);
         }
         return method2;
     }
@@ -153,11 +153,11 @@ public abstract class VersionedParcel {
     }
 
     private Class b(Class<? extends VersionedParcelable> cls) throws ClassNotFoundException {
-        Class<?> cls2 = this.f3545c.get(cls.getName());
+        Class<?> cls2 = this.f3497c.get(cls.getName());
         Class<?> cls3 = cls2;
         if (cls2 == null) {
             cls3 = Class.forName(String.format("%s.%sParcelizer", cls.getPackage().getName(), cls.getSimpleName()), false, cls.getClassLoader());
-            this.f3545c.put(cls.getName(), cls3);
+            this.f3497c.put(cls.getName(), cls3);
         }
         return cls3;
     }
@@ -606,9 +606,8 @@ public abstract class VersionedParcel {
         }
         try {
             return (Serializable) new ObjectInputStream(new ByteArrayInputStream(readByteArray())) { // from class: androidx.versionedparcelable.VersionedParcel.1
-                /* JADX INFO: Access modifiers changed from: protected */
                 @Override // java.io.ObjectInputStream
-                public Class<?> resolveClass(ObjectStreamClass objectStreamClass) throws IOException, ClassNotFoundException {
+                protected Class<?> resolveClass(ObjectStreamClass objectStreamClass) throws IOException, ClassNotFoundException {
                     Class<?> cls = Class.forName(objectStreamClass.getName(), false, getClass().getClassLoader());
                     return cls != null ? cls : super.resolveClass(objectStreamClass);
                 }
@@ -731,6 +730,7 @@ public abstract class VersionedParcel {
         return !readField(i) ? jArr : e();
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     public <K, V> Map<K, V> readMap(Map<K, V> map, int i) {
         if (!readField(i)) {
             return map;

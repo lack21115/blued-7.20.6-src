@@ -35,28 +35,28 @@ public class Zip {
                 }
                 str2 = file.getParentFile().getName();
                 FileOutputStream fileOutputStream = new FileOutputStream(file);
-                byte[] a2 = ByteArrayPool.f9730a.a(1024);
+                byte[] a = ByteArrayPool.a.a(1024);
                 while (true) {
-                    int read = zipInputStream.read(a2);
+                    int read = zipInputStream.read(a);
                     if (read == -1) {
                         break;
                     }
-                    fileOutputStream.write(a2, 0, read);
+                    fileOutputStream.write(a, 0, read);
                     fileOutputStream.flush();
                 }
-                ByteArrayPool.f9730a.a(a2);
+                ByteArrayPool.a.a(a);
                 fileOutputStream.close();
             }
         }
     }
 
     public static String a(String str, String str2) throws Exception {
-        String a2 = a(new FileInputStream(str), str2);
+        String a = a(new FileInputStream(str), str2);
         File file = new File(str);
         if (file.exists()) {
             file.delete();
         }
-        return a2;
+        return a;
     }
 
     private static void a(String str, String str2, ZipOutputStream zipOutputStream) throws Exception {
@@ -79,16 +79,16 @@ public class Zip {
         ZipEntry zipEntry = new ZipEntry(str2);
         FileInputStream fileInputStream = new FileInputStream(file);
         zipOutputStream.putNextEntry(zipEntry);
-        byte[] a2 = ByteArrayPool.f9730a.a(1024);
+        byte[] a = ByteArrayPool.a.a(1024);
         while (true) {
-            int read = fileInputStream.read(a2);
+            int read = fileInputStream.read(a);
             if (read == -1) {
                 zipOutputStream.closeEntry();
                 fileInputStream.close();
-                ByteArrayPool.f9730a.a(a2);
+                ByteArrayPool.a.a(a);
                 return;
             }
-            zipOutputStream.write(a2, 0, read);
+            zipOutputStream.write(a, 0, read);
         }
     }
 

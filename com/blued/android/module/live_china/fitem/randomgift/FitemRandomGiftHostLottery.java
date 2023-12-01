@@ -32,35 +32,29 @@ public final class FitemRandomGiftHostLottery extends FreedomItem {
     @Metadata
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fitem/randomgift/FitemRandomGiftHostLottery$RandomGoodsLotteryAdapter.class */
     public static final class RandomGoodsLotteryAdapter extends FragmentPagerAdapter {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final RandomGiftHostDialogDataModel f12686a;
+        private final RandomGiftHostDialogDataModel a;
         private final int b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private ArrayList<String> f12687c;
+        private ArrayList<String> c;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public RandomGoodsLotteryAdapter(FragmentManager fm, RandomGiftHostDialogDataModel model) {
             super(fm);
             Intrinsics.e(fm, "fm");
             Intrinsics.e(model, "model");
-            this.f12686a = model;
+            this.a = model;
             this.b = 2;
-            this.f12687c = CollectionsKt.d("摇奖机会", "摇奖记录");
+            this.c = CollectionsKt.d("摇奖机会", "摇奖记录");
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public int getCount() {
             return this.b;
         }
 
-        @Override // androidx.fragment.app.FragmentPagerAdapter
         public Fragment getItem(int i) {
             if (i == 0) {
                 LiveRandomGiftHostPowerFragment liveRandomGiftHostPowerFragment = new LiveRandomGiftHostPowerFragment();
                 Bundle bundle = new Bundle();
-                bundle.putSerializable("model", this.f12686a);
+                bundle.putSerializable("model", this.a);
                 liveRandomGiftHostPowerFragment.setArguments(bundle);
                 return liveRandomGiftHostPowerFragment;
             } else if (i != 1) {
@@ -68,20 +62,19 @@ public final class FitemRandomGiftHostLottery extends FreedomItem {
             } else {
                 LiveRandomGiftHostRecordFragment liveRandomGiftHostRecordFragment = new LiveRandomGiftHostRecordFragment();
                 Bundle bundle2 = new Bundle();
-                bundle2.putSerializable("model", this.f12686a);
+                bundle2.putSerializable("model", this.a);
                 liveRandomGiftHostRecordFragment.setArguments(bundle2);
                 return liveRandomGiftHostRecordFragment;
             }
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public CharSequence getPageTitle(int i) {
             if (i == 0) {
                 EventTrackLive.b(LiveProtos.Event.LIVE_ANCHOR_RANDOM_GIFT_PAGE_LOTTERY_SHOW, LiveRoomManager.a().e());
             } else if (i == 1) {
                 EventTrackLive.b(LiveProtos.Event.LIVE_ANCHOR_RANDOM_GIFT_PAGE_RECORD_SHOW, LiveRoomManager.a().e());
             }
-            return this.f12687c.get(i);
+            return this.c.get(i);
         }
     }
 
@@ -98,7 +91,7 @@ public final class FitemRandomGiftHostLottery extends FreedomItem {
     @Override // com.blued.android.module.common.utils.freedom.FreedomItem
     public void a(Context context, BaseViewHolder vh, List<FreedomItem> list, int i) {
         Intrinsics.e(vh, "vh");
-        if (vh.f10931a.a("FragmentManager", (String) null) == null) {
+        if (vh.a.a("FragmentManager", (String) null) == null) {
             return;
         }
         TabPageIndicatorWithDot tabPageIndicatorWithDot = (TabPageIndicatorWithDot) vh.a(R.id.tab_layout);
@@ -111,26 +104,23 @@ public final class FitemRandomGiftHostLottery extends FreedomItem {
         if (context != null) {
             tabPageIndicatorWithDot.a(ContextCompat.getColor(context, R.color.syc_dark_222), ContextCompat.getColor(context, R.color.syc_dark_222));
         }
-        Object a2 = vh.f10931a.a("FragmentManager", (String) null);
-        if (a2 == null) {
+        Object a = vh.a.a("FragmentManager", (String) null);
+        if (a == null) {
             throw new NullPointerException("null cannot be cast to non-null type androidx.fragment.app.FragmentManager");
         }
-        FragmentManager fragmentManager = (FragmentManager) a2;
+        FragmentManager fragmentManager = (FragmentManager) a;
         ViewPager viewPager = (ViewPager) vh.a(R.id.view_pager);
         viewPager.setAdapter(new RandomGoodsLotteryAdapter(fragmentManager, this.b));
         tabPageIndicatorWithDot.setViewPager(viewPager);
         viewPager.setCurrentItem(0);
         viewPager.setOffscreenPageLimit(1);
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: com.blued.android.module.live_china.fitem.randomgift.FitemRandomGiftHostLottery$initBindView$2
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageScrollStateChanged(int i2) {
             }
 
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageScrolled(int i2, float f, int i3) {
             }
 
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageSelected(int i2) {
             }
         });

@@ -10,34 +10,34 @@ import java.util.concurrent.TimeUnit;
 public class WeHttp {
 
     /* renamed from: a  reason: collision with root package name */
-    private static WeOkHttp f36129a = new WeOkHttp("WeHttp");
+    private static WeOkHttp f22438a = new WeOkHttp("WeHttp");
 
     public static void cancel(Object obj) {
-        f36129a.cancel(obj);
+        f22438a.cancel(obj);
     }
 
     public static OkHttpClient client() {
-        return f36129a.client();
+        return f22438a.client();
     }
 
     public static WeConfig config() {
-        return f36129a.config();
+        return f22438a.config();
     }
 
     public static BodyReq delete(String str) {
-        return f36129a.delete(str);
+        return f22438a.delete(str);
     }
 
     public static SimpleReq get(String str) {
-        return f36129a.get(str);
+        return f22438a.get(str);
     }
 
     public static SimpleReq head(String str) {
-        return f36129a.head(str);
+        return f22438a.head(str);
     }
 
     public static WeConfig init() {
-        return f36129a.init();
+        return f22438a.init();
     }
 
     public static WeConfig init(Context context, boolean z, String str, String... strArr) {
@@ -50,14 +50,14 @@ public class WeHttp {
     }
 
     public static BodyReq patch(String str) {
-        return f36129a.patch(str);
+        return f22438a.patch(str);
     }
 
     public static BodyReq post(String str) {
-        return f36129a.post(str);
+        return f22438a.post(str);
     }
 
     public static BodyReq put(String str) {
-        return f36129a.put(str);
+        return f22438a.put(str);
     }
 }

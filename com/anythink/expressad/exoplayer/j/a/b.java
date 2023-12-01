@@ -12,11 +12,11 @@ import java.io.OutputStream;
 public final class b implements com.anythink.expressad.exoplayer.j.g {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f7553a = 20480;
+    public static final int f4714a = 20480;
     private final com.anythink.expressad.exoplayer.j.a.a b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final long f7554c;
+    private final long f4715c;
     private final int d;
     private final boolean e;
     private com.anythink.expressad.exoplayer.j.k f;
@@ -28,7 +28,7 @@ public final class b implements com.anythink.expressad.exoplayer.j.g {
     private x l;
 
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/exoplayer/j/a/b$a.class */
-    public static final class a extends a.C0138a {
+    public static final class a extends a.C0067a {
         public a(IOException iOException) {
             super(iOException);
         }
@@ -44,7 +44,7 @@ public final class b implements com.anythink.expressad.exoplayer.j.g {
 
     private b(com.anythink.expressad.exoplayer.j.a.a aVar, long j, int i, boolean z) {
         this.b = (com.anythink.expressad.exoplayer.j.a.a) com.anythink.expressad.exoplayer.k.a.a(aVar);
-        this.f7554c = j;
+        this.f4715c = j;
         this.d = i;
         this.e = z;
     }
@@ -55,7 +55,7 @@ public final class b implements com.anythink.expressad.exoplayer.j.g {
 
     private void b() {
         if (this.f.g != -1) {
-            Math.min(this.f.g - this.k, this.f7554c);
+            Math.min(this.f.g - this.k, this.f4715c);
         }
         this.g = this.b.c(this.f.h, this.f.e + this.k);
         FileOutputStream fileOutputStream = new FileOutputStream(this.g);
@@ -134,11 +134,11 @@ public final class b implements com.anythink.expressad.exoplayer.j.g {
         int i3 = 0;
         while (i3 < i2) {
             try {
-                if (this.j == this.f7554c) {
+                if (this.j == this.f4715c) {
                     c();
                     b();
                 }
-                int min = (int) Math.min(i2 - i3, this.f7554c - this.j);
+                int min = (int) Math.min(i2 - i3, this.f4715c - this.j);
                 this.h.write(bArr, i + i3, min);
                 i3 += min;
                 long j = min;

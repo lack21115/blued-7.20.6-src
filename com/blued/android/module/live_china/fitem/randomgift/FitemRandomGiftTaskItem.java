@@ -20,23 +20,21 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fitem/randomgift/FitemRandomGiftTaskItem.class */
 public final class FitemRandomGiftTaskItem extends FreedomItem {
     private RandomGiftItemTaskModel b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final ArrayList<FitemRandomGiftTaskAwardItem> f12692c;
+    private final ArrayList<FitemRandomGiftTaskAwardItem> c;
     private FreedomAdapter d;
 
     public FitemRandomGiftTaskItem(RandomGiftItemTaskModel model) {
         Intrinsics.e(model, "model");
         this.b = model;
-        this.f12692c = new ArrayList<>();
+        this.c = new ArrayList<>();
     }
 
     private final void e() {
-        RecyclerView recyclerView = (RecyclerView) this.f10935a.a(R.id.rv_list);
-        recyclerView.setLayoutManager(new GridLayoutManager(this.f10935a.f10931a.b, 3));
-        this.d = new FreedomAdapter(this.f10935a.f10931a.b, this.f10935a.b, this.f12692c);
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(this.d);
+        RecyclerView a = this.a.a(R.id.rv_list);
+        a.setLayoutManager(new GridLayoutManager(this.a.a.b, 3));
+        this.d = new FreedomAdapter(this.a.a.b, this.a.b, this.c);
+        a.setItemAnimator(new DefaultItemAnimator());
+        a.setAdapter(this.d);
     }
 
     @Override // com.blued.android.module.common.utils.freedom.FreedomItem
@@ -48,13 +46,13 @@ public final class FitemRandomGiftTaskItem extends FreedomItem {
     public void a(Context context, BaseViewHolder vh, List<FreedomItem> list, int i) {
         Intrinsics.e(vh, "vh");
         vh.a(R.id.tv_title, true).a(R.id.tv_title, (CharSequence) this.b.getTitle()).a(R.id.tv_progress, (CharSequence) AppInfo.d().getString(R.string.live_random_gift_task_not_finish, Integer.valueOf(this.b.getCurrent()), Integer.valueOf(this.b.getFull())));
-        this.f12692c.clear();
+        this.c.clear();
         ArrayList<RandomGiftItemModel> rewards = this.b.getRewards();
         if (rewards == null) {
             return;
         }
         for (RandomGiftItemModel randomGiftItemModel : rewards) {
-            this.f12692c.add(new FitemRandomGiftTaskAwardItem(randomGiftItemModel));
+            this.c.add(new FitemRandomGiftTaskAwardItem(randomGiftItemModel));
         }
         e();
     }

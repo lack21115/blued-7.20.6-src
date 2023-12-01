@@ -7,6 +7,7 @@ import com.tencent.cloud.huiyansdkface.okhttp3.Protocol;
 import com.tencent.cloud.huiyansdkface.okhttp3.internal.Util;
 import com.tencent.cloud.huiyansdkface.okhttp3.internal.tls.CertificateChainCleaner;
 import com.tencent.cloud.huiyansdkface.okhttp3.internal.tls.TrustRootIndex;
+import com.tencent.thumbplayer.api.TPErrorCode;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -22,15 +23,16 @@ import javax.net.ssl.SSLSocket;
 import javax.net.ssl.SSLSocketFactory;
 import javax.net.ssl.X509TrustManager;
 
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8457232-dex2jar.jar:com/tencent/cloud/huiyansdkface/okhttp3/internal/platform/AndroidPlatform.class */
-class AndroidPlatform extends Platform {
+public class AndroidPlatform extends Platform {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Class<?> f36019a;
+    private final Class<?> f22328a;
     private final OptionalMethod<Socket> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final OptionalMethod<Socket> f36020c;
+    private final OptionalMethod<Socket> f22329c;
     private final OptionalMethod<Socket> d;
     private final OptionalMethod<Socket> e;
     private final CloseGuard f = CloseGuard.a();
@@ -39,18 +41,18 @@ class AndroidPlatform extends Platform {
     static final class AndroidCertificateChainCleaner extends CertificateChainCleaner {
 
         /* renamed from: a  reason: collision with root package name */
-        private final Object f36021a;
+        private final Object f22330a;
         private final Method b;
 
         AndroidCertificateChainCleaner(Object obj, Method method) {
-            this.f36021a = obj;
+            this.f22330a = obj;
             this.b = method;
         }
 
         @Override // com.tencent.cloud.huiyansdkface.okhttp3.internal.tls.CertificateChainCleaner
         public List<Certificate> clean(List<Certificate> list, String str) throws SSLPeerUnverifiedException {
             try {
-                return (List) this.b.invoke(this.f36021a, (X509Certificate[]) list.toArray(new X509Certificate[list.size()]), "RSA", str);
+                return (List) this.b.invoke(this.f22330a, (X509Certificate[]) list.toArray(new X509Certificate[list.size()]), "RSA", str);
             } catch (IllegalAccessException e) {
                 throw new AssertionError(e);
             } catch (InvocationTargetException e2) {
@@ -73,12 +75,12 @@ class AndroidPlatform extends Platform {
     static final class AndroidTrustRootIndex implements TrustRootIndex {
 
         /* renamed from: a  reason: collision with root package name */
-        private final X509TrustManager f36022a;
+        private final X509TrustManager f22331a;
         private final Method b;
 
         AndroidTrustRootIndex(X509TrustManager x509TrustManager, Method method) {
             this.b = method;
-            this.f36022a = x509TrustManager;
+            this.f22331a = x509TrustManager;
         }
 
         public boolean equals(Object obj) {
@@ -87,7 +89,7 @@ class AndroidPlatform extends Platform {
             }
             if (obj instanceof AndroidTrustRootIndex) {
                 AndroidTrustRootIndex androidTrustRootIndex = (AndroidTrustRootIndex) obj;
-                return this.f36022a.equals(androidTrustRootIndex.f36022a) && this.b.equals(androidTrustRootIndex.b);
+                return this.f22331a.equals(androidTrustRootIndex.f22331a) && this.b.equals(androidTrustRootIndex.b);
             }
             return false;
         }
@@ -95,7 +97,7 @@ class AndroidPlatform extends Platform {
         @Override // com.tencent.cloud.huiyansdkface.okhttp3.internal.tls.TrustRootIndex
         public X509Certificate findByIssuerAndSignature(X509Certificate x509Certificate) {
             try {
-                TrustAnchor trustAnchor = (TrustAnchor) this.b.invoke(this.f36022a, x509Certificate);
+                TrustAnchor trustAnchor = (TrustAnchor) this.b.invoke(this.f22331a, x509Certificate);
                 X509Certificate x509Certificate2 = null;
                 if (trustAnchor != null) {
                     x509Certificate2 = trustAnchor.getTrustedCert();
@@ -109,7 +111,7 @@ class AndroidPlatform extends Platform {
         }
 
         public int hashCode() {
-            return this.f36022a.hashCode() + (this.b.hashCode() * 31);
+            return this.f22331a.hashCode() + (this.b.hashCode() * 31);
         }
     }
 
@@ -117,16 +119,16 @@ class AndroidPlatform extends Platform {
     static final class CloseGuard {
 
         /* renamed from: a  reason: collision with root package name */
-        private final Method f36023a;
+        private final Method f22332a;
         private final Method b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final Method f36024c;
+        private final Method f22333c;
 
         CloseGuard(Method method, Method method2, Method method3) {
-            this.f36023a = method;
+            this.f22332a = method;
             this.b = method2;
-            this.f36024c = method3;
+            this.f22333c = method3;
         }
 
         static CloseGuard a() {
@@ -147,7 +149,7 @@ class AndroidPlatform extends Platform {
         }
 
         Object a(String str) {
-            Method method = this.f36023a;
+            Method method = this.f22332a;
             if (method != null) {
                 try {
                     Object invoke = method.invoke(null, new Object[0]);
@@ -164,7 +166,7 @@ class AndroidPlatform extends Platform {
             boolean z = false;
             if (obj != null) {
                 try {
-                    this.f36024c.invoke(obj, new Object[0]);
+                    this.f22333c.invoke(obj, new Object[0]);
                     z = true;
                 } catch (Exception e) {
                     return false;
@@ -175,9 +177,9 @@ class AndroidPlatform extends Platform {
     }
 
     AndroidPlatform(Class<?> cls, OptionalMethod<Socket> optionalMethod, OptionalMethod<Socket> optionalMethod2, OptionalMethod<Socket> optionalMethod3, OptionalMethod<Socket> optionalMethod4) {
-        this.f36019a = cls;
+        this.f22328a = cls;
         this.b = optionalMethod;
-        this.f36020c = optionalMethod2;
+        this.f22329c = optionalMethod2;
         this.d = optionalMethod3;
         this.e = optionalMethod4;
     }
@@ -235,9 +237,10 @@ class AndroidPlatform extends Platform {
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.tencent.cloud.huiyansdkface.okhttp3.internal.platform.Platform
-    protected X509TrustManager a(SSLSocketFactory sSLSocketFactory) {
-        Object a2 = a(sSLSocketFactory, this.f36019a, "sslParameters");
+    public X509TrustManager a(SSLSocketFactory sSLSocketFactory) {
+        Object a2 = a(sSLSocketFactory, this.f22328a, "sslParameters");
         Object obj = a2;
         if (a2 == null) {
             try {
@@ -275,7 +278,7 @@ class AndroidPlatform extends Platform {
     public void configureTlsExtensions(SSLSocket sSLSocket, String str, List<Protocol> list) {
         if (str != null) {
             this.b.invokeOptionalWithoutCheckedException(sSLSocket, true);
-            this.f36020c.invokeOptionalWithoutCheckedException(sSLSocket, str);
+            this.f22329c.invokeOptionalWithoutCheckedException(sSLSocket, str);
         }
         OptionalMethod<Socket> optionalMethod = this.e;
         if (optionalMethod == null || !optionalMethod.isSupported(sSLSocket)) {
@@ -422,7 +425,7 @@ class AndroidPlatform extends Platform {
                 indexOf = length;
             }
             while (true) {
-                min = Math.min(indexOf, i3 + 4000);
+                min = Math.min(indexOf, i3 + TPErrorCode.TP_ERROR_TYPE_DOWNLOAD_PROXY);
                 Log.println(i2, "OkHttp", str2.substring(i3, min));
                 if (min >= indexOf) {
                     break;

@@ -159,7 +159,7 @@ public interface IWapPushManager extends IInterface {
             switch (i) {
                 case 1:
                     parcel.enforceInterface(DESCRIPTOR);
-                    int processMessage = processMessage(parcel.readString(), parcel.readString(), parcel.readInt() != 0 ? Intent.CREATOR.createFromParcel(parcel) : null);
+                    int processMessage = processMessage(parcel.readString(), parcel.readString(), parcel.readInt() != 0 ? (Intent) Intent.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     parcel2.writeInt(processMessage);
                     return true;
@@ -193,7 +193,7 @@ public interface IWapPushManager extends IInterface {
                     }
                     parcel2.writeInt(i5);
                     return true;
-                case IBinder.INTERFACE_TRANSACTION /* 1598968902 */:
+                case 1598968902:
                     parcel2.writeString(DESCRIPTOR);
                     return true;
                 default:

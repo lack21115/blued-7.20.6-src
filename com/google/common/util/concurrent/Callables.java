@@ -25,7 +25,7 @@ public final class Callables {
         return new Callable<T>() { // from class: com.google.common.util.concurrent.Callables.1
             @Override // java.util.concurrent.Callable
             public T call() {
-                return (T) Object.this;
+                return (T) t;
             }
         };
     }

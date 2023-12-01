@@ -9,13 +9,9 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/ItemLiveRankBehalfRecordBinding.class */
 public final class ItemLiveRankBehalfRecordBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f12070a;
+    public final ImageView a;
     public final TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final TextView f12071c;
+    public final TextView c;
     public final TextView d;
     public final LinearLayout e;
     public final LinearLayout f;
@@ -24,9 +20,9 @@ public final class ItemLiveRankBehalfRecordBinding implements ViewBinding {
 
     private ItemLiveRankBehalfRecordBinding(LinearLayout linearLayout, ImageView imageView, TextView textView, TextView textView2, TextView textView3, LinearLayout linearLayout2, LinearLayout linearLayout3, TextView textView4) {
         this.h = linearLayout;
-        this.f12070a = imageView;
+        this.a = imageView;
         this.b = textView;
-        this.f12071c = textView2;
+        this.c = textView2;
         this.d = textView3;
         this.e = linearLayout2;
         this.f = linearLayout3;
@@ -73,7 +69,6 @@ public final class ItemLiveRankBehalfRecordBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
         return this.h;

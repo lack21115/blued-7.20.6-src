@@ -11,7 +11,7 @@ import org.json.JSONObject;
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/a/j.class */
 public final class j {
     private static String a(String str, com.anythink.basead.c.b bVar) {
-        return str.replaceAll("\\{__CLICK_ID__\\}", bVar.f5892a == null ? "" : bVar.f5892a);
+        return str.replaceAll("\\{__CLICK_ID__\\}", bVar.a == null ? "" : bVar.a);
     }
 
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:36:0x025d -> B:4:0x004e). Please submit an issue!!! */
@@ -54,13 +54,13 @@ public final class j {
         }
         int i3 = aVar.i ? 1 : 2;
         StringBuilder sb = new StringBuilder();
-        sb.append(aVar.f5890a);
+        sb.append(aVar.a);
         String replaceAll = str.replaceAll("\\{__DOWN_X__\\}", sb.toString());
         StringBuilder sb2 = new StringBuilder();
         sb2.append(aVar.b);
         String replaceAll2 = replaceAll.replaceAll("\\{__DOWN_Y__\\}", sb2.toString());
         StringBuilder sb3 = new StringBuilder();
-        sb3.append(aVar.f5891c);
+        sb3.append(aVar.c);
         String replaceAll3 = replaceAll2.replaceAll("\\{__UP_X__\\}", sb3.toString());
         StringBuilder sb4 = new StringBuilder();
         sb4.append(aVar.d);
@@ -104,11 +104,11 @@ public final class j {
             str4 = a(str3, iVar.i);
         }
         long j2 = j / 1000;
-        if (iVar.f5907c == 0) {
+        if (iVar.c == 0) {
             sb = "__REQ_WIDTH__";
         } else {
             StringBuilder sb3 = new StringBuilder();
-            sb3.append(iVar.f5907c);
+            sb3.append(iVar.c);
             sb = sb3.toString();
         }
         String replaceAll = str4.replaceAll("\\{__REQ_WIDTH__\\}", sb);
@@ -130,13 +130,13 @@ public final class j {
 
     private static String a(String str, com.anythink.basead.c.j jVar) {
         StringBuilder sb = new StringBuilder();
-        sb.append(jVar.f5908a);
+        sb.append(jVar.a);
         String replaceAll = str.replaceAll("\\{__VIDEO_TIME__\\}", sb.toString());
         StringBuilder sb2 = new StringBuilder();
         sb2.append(jVar.b);
         String replaceAll2 = replaceAll.replaceAll("\\{__BEGIN_TIME__\\}", sb2.toString());
         StringBuilder sb3 = new StringBuilder();
-        sb3.append(jVar.f5909c);
+        sb3.append(jVar.c);
         String replaceAll3 = replaceAll2.replaceAll("\\{__END_TIME__\\}", sb3.toString());
         StringBuilder sb4 = new StringBuilder();
         sb4.append(jVar.d);
@@ -304,7 +304,7 @@ public final class j {
         if (X == null) {
             return;
         }
-        Map<String, Object> c2 = com.anythink.core.common.k.h.c(X.c());
+        Map<String, Object> c = com.anythink.core.common.k.h.c(X.c());
         try {
             switch (i) {
                 case 1:
@@ -428,7 +428,7 @@ public final class j {
                 while (true) {
                     int i3 = i2;
                     if (i3 < length) {
-                        com.anythink.basead.g.e eVar = new com.anythink.basead.g.e(i, a(strArr[i3], iVar, currentTimeMillis), aaVar, c2);
+                        com.anythink.basead.g.e eVar = new com.anythink.basead.g.e(i, a(strArr[i3], iVar, currentTimeMillis), aaVar, c);
                         eVar.a(W);
                         eVar.a(0, (com.anythink.core.common.g.i) null);
                         i2 = i3 + 1;
@@ -547,7 +547,7 @@ public final class j {
         if (a(str)) {
             return;
         }
-        com.anythink.basead.g.f fVar = new com.anythink.basead.g.f(i, aaVar, str, c2);
+        com.anythink.basead.g.f fVar = new com.anythink.basead.g.f(i, aaVar, str, c);
         fVar.b(iVar.b);
         fVar.a(0, (com.anythink.core.common.g.i) null);
     }

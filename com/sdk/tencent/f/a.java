@@ -7,43 +7,43 @@ import java.util.List;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public long f28044a = System.currentTimeMillis();
-    public C0758a b = new C0758a();
+    public long f14356a = System.currentTimeMillis();
+    public C0588a b = new C0588a();
 
     /* renamed from: c  reason: collision with root package name */
-    public String f28045c = "";
+    public String f14357c = "";
 
     /* renamed from: com.sdk.tencent.f.a$a  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/sdk/tencent/f/a$a.class */
-    public static class C0758a {
+    public static class C0588a {
 
         /* renamed from: a  reason: collision with root package name */
-        public List<C0759a> f28046a = new ArrayList();
+        public List<C0589a> f14358a = new ArrayList();
         public List<String> b = new ArrayList();
 
         /* renamed from: c  reason: collision with root package name */
-        public List<String> f28047c = new ArrayList();
+        public List<String> f14359c = new ArrayList();
         public String d = "";
 
         /* renamed from: com.sdk.tencent.f.a$a$a  reason: collision with other inner class name */
         /* loaded from: source-8303388-dex2jar.jar:com/sdk/tencent/f/a$a$a.class */
-        public static class C0759a {
+        public static class C0589a {
 
             /* renamed from: a  reason: collision with root package name */
-            public String f28048a = "";
+            public String f14360a = "";
             public long b;
 
             public String toString() {
-                return "_$101005Bean{url='" + this.f28048a + "', time=" + this.b + '}';
+                return "_$101005Bean{url='" + this.f14360a + "', time=" + this.b + '}';
             }
         }
 
         public String toString() {
-            return "StatusBean{_$101005=" + this.f28046a + ", _$302001=" + this.b + ", _$302002=" + this.f28047c + ", _$302003='" + this.d + "'}";
+            return "StatusBean{_$101005=" + this.f14358a + ", _$302001=" + this.b + ", _$302002=" + this.f14359c + ", _$302003='" + this.d + "'}";
         }
     }
 
     public String toString() {
-        return "MobileLog{time=" + this.f28044a + ", status=" + this.b + '}';
+        return "MobileLog{time=" + this.f14356a + ", status=" + this.b + '}';
     }
 }

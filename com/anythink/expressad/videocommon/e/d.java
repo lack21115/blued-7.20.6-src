@@ -13,12 +13,12 @@ import org.json.JSONObject;
 public class d {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f8772a = 2;
+    public static final int f5932a = 2;
     private static com.anythink.expressad.foundation.c.c ak;
     public static final int b = 4;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final int f8773c = 5;
+    public static final int f5933c = 5;
     public static final int d = 6;
     public static final int e = 7;
     public static final int f = -2;
@@ -86,7 +86,7 @@ public class d {
     private String aq = "";
 
     /* renamed from: ar  reason: collision with root package name */
-    private int f8774ar = 1;
+    private int f5934ar = 1;
     private String as = "Virtual Item";
     private int at = 0;
     private int au = 1;
@@ -160,7 +160,7 @@ public class d {
     }
 
     private int ag() {
-        return this.f8774ar;
+        return this.f5934ar;
     }
 
     private int ah() {
@@ -233,7 +233,7 @@ public class d {
                     } catch (Exception e3) {
                         e = e3;
                         linkedList2 = linkedList;
-                        if (com.anythink.expressad.a.f6941a) {
+                        if (com.anythink.expressad.a.f4103a) {
                             e.printStackTrace();
                             linkedList2 = linkedList;
                         }
@@ -335,7 +335,7 @@ public class d {
     }
 
     private void j(int i2) {
-        this.f8774ar = i2;
+        this.f5934ar = i2;
     }
 
     private void k(int i2) {
@@ -517,7 +517,7 @@ public class d {
             jSONObject.put("close_alert", this.E);
             jSONObject.put(b.ac, this.S);
             jSONObject.put(b.aa, this.R);
-            jSONObject.put(b.f8767ar, this.T);
+            jSONObject.put(b.f5927ar, this.T);
             jSONObject.put(b.as, this.U);
             JSONArray jSONArray2 = new JSONArray();
             if (this.V != null) {
@@ -540,7 +540,7 @@ public class d {
             jSONObject.put("virtual_currency", this.ao);
             jSONObject.put("amount", this.ap);
             jSONObject.put("icon", this.aq);
-            jSONObject.put("currency_id", this.f8774ar);
+            jSONObject.put("currency_id", this.f5934ar);
             jSONObject.put("name", this.as);
             jSONObject.put("isDefault", this.at);
             jSONObject.put(b.aN, this.au);

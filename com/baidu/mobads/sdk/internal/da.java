@@ -6,12 +6,12 @@ import android.text.TextUtils;
 public class da {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f9410a = "error_message";
+    public static final String f6570a = "error_message";
     public static final String b = "error_code";
     private static volatile da d;
 
     /* renamed from: c  reason: collision with root package name */
-    protected final bq f9411c = bq.a();
+    protected final bq f6571c = bq.a();
 
     private da() {
     }

@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ViewChatBgListItemBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ConstraintLayout f29613a;
+    private final ConstraintLayout f15923a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f29613a;
+        return this.f15923a;
     }
 }

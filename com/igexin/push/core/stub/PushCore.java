@@ -27,11 +27,11 @@ import java.util.Map;
 public class PushCore implements IPushCore {
 
     /* renamed from: a  reason: collision with root package name */
-    private d f23588a;
+    private d f9980a;
     private Map<Activity, a> b = new HashMap();
 
     /* renamed from: c  reason: collision with root package name */
-    private GtPushInterface.Stub f23589c = new GtPushInterface.Stub() { // from class: com.igexin.push.core.stub.PushCore.1
+    private GtPushInterface.Stub f9981c = new GtPushInterface.Stub() { // from class: com.igexin.push.core.stub.PushCore.1
         @Override // com.igexin.push.GtPushInterface
         public final String getVersion() {
             return "3.2.14.0";
@@ -121,7 +121,7 @@ public class PushCore implements IPushCore {
 
     @Override // com.igexin.sdk.IPushCore
     public IBinder onServiceBind(Intent intent) {
-        return this.f23589c;
+        return this.f9981c;
     }
 
     @Override // com.igexin.sdk.IPushCore
@@ -130,11 +130,11 @@ public class PushCore implements IPushCore {
 
     @Override // com.igexin.sdk.IPushCore
     public int onServiceStartCommand(Intent intent, int i, int i2) {
-        if (this.f23588a != null) {
+        if (this.f9980a != null) {
             Message obtain = Message.obtain();
             obtain.what = com.igexin.push.core.b.M;
             obtain.obj = intent;
-            this.f23588a.a(obtain);
+            this.f9980a.a(obtain);
             return 2;
         }
         return 2;
@@ -143,8 +143,8 @@ public class PushCore implements IPushCore {
     @Override // com.igexin.sdk.IPushCore
     public boolean start(Context context) {
         com.igexin.c.a.c.a.d.a().a("PushCore started");
-        d dVar = d.a.f23474a;
-        this.f23588a = dVar;
+        d dVar = d.a.f9866a;
+        this.f9980a = dVar;
         dVar.a(context);
         return true;
     }

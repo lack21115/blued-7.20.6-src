@@ -14,11 +14,11 @@ import com.opos.exoplayer.core.i.u;
 public final class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private final WindowManager f25572a;
+    private final WindowManager f11884a;
     private final b b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final a f25573c;
+    private final a f11885c;
     private long d;
     private long e;
     private long f;
@@ -62,16 +62,15 @@ public final class d {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8303388-dex2jar.jar:com/opos/exoplayer/core/video/d$b.class */
-    public static final class b implements Handler.Callback, Choreographer.FrameCallback {
+    static final class b implements Handler.Callback, Choreographer.FrameCallback {
         private static final b b = new b();
 
         /* renamed from: a  reason: collision with root package name */
-        public volatile long f25575a = com.anythink.expressad.exoplayer.b.b;
+        public volatile long f11887a = com.anythink.expressad.exoplayer.b.b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final Handler f25576c;
+        private final Handler f11888c;
         private final HandlerThread d;
         private Choreographer e;
         private int f;
@@ -81,7 +80,7 @@ public final class d {
             this.d = handlerThread;
             handlerThread.start();
             Handler handler = new Handler(this.d.getLooper(), this);
-            this.f25576c = handler;
+            this.f11888c = handler;
             handler.sendEmptyMessage(0);
         }
 
@@ -106,21 +105,21 @@ public final class d {
             this.f = i;
             if (i == 0) {
                 this.e.removeFrameCallback(this);
-                this.f25575a = com.anythink.expressad.exoplayer.b.b;
+                this.f11887a = com.anythink.expressad.exoplayer.b.b;
             }
         }
 
         public void b() {
-            this.f25576c.sendEmptyMessage(1);
+            this.f11888c.sendEmptyMessage(1);
         }
 
         public void c() {
-            this.f25576c.sendEmptyMessage(2);
+            this.f11888c.sendEmptyMessage(2);
         }
 
         @Override // android.view.Choreographer.FrameCallback
         public void doFrame(long j) {
-            this.f25575a = j;
+            this.f11887a = j;
             this.e.postFrameCallbackDelayed(this, 500L);
         }
 
@@ -148,12 +147,12 @@ public final class d {
 
     public d(Context context) {
         WindowManager windowManager = context == null ? null : (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
-        this.f25572a = windowManager;
+        this.f11884a = windowManager;
         if (windowManager != null) {
-            this.f25573c = u.f25510a >= 17 ? a(context) : null;
+            this.f11885c = u.f11822a >= 17 ? a(context) : null;
             this.b = b.a();
         } else {
-            this.f25573c = null;
+            this.f11885c = null;
             this.b = null;
         }
         this.d = com.anythink.expressad.exoplayer.b.b;
@@ -187,7 +186,7 @@ public final class d {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void c() {
-        Display defaultDisplay = this.f25572a.getDefaultDisplay();
+        Display defaultDisplay = this.f11884a.getDefaultDisplay();
         if (defaultDisplay != null) {
             long refreshRate = (long) (1.0E9d / defaultDisplay.getRefreshRate());
             this.d = refreshRate;
@@ -214,9 +213,9 @@ public final class d {
 
     public void a() {
         this.i = false;
-        if (this.f25572a != null) {
+        if (this.f11884a != null) {
             this.b.b();
-            a aVar = this.f25573c;
+            a aVar = this.f11885c;
             if (aVar != null) {
                 aVar.a();
             }
@@ -225,8 +224,8 @@ public final class d {
     }
 
     public void b() {
-        if (this.f25572a != null) {
-            a aVar = this.f25573c;
+        if (this.f11884a != null) {
+            a aVar = this.f11885c;
             if (aVar != null) {
                 aVar.b();
             }

@@ -42,11 +42,11 @@ import java.util.List;
 public class SearchAllFragment extends MvpFragment<SearchAllPresenter> {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f33132a;
+    private String f19441a;
     private SearchNewAdapter b;
 
     /* renamed from: c  reason: collision with root package name */
-    private SearchAllAdapter f33133c;
+    private SearchAllAdapter f19442c;
     private SearchCircleAdapter d;
     private SearchSubjectAdapter e;
     @BindView
@@ -100,18 +100,18 @@ public class SearchAllFragment extends MvpFragment<SearchAllPresenter> {
     public /* synthetic */ void a(View view) {
         Tracker.onClick(view);
         Bundle bundle = new Bundle();
-        bundle.putString(SearchIndexablesContract.RawData.COLUMN_KEYWORDS, this.f33132a);
+        bundle.putString(SearchIndexablesContract.RawData.COLUMN_KEYWORDS, this.f19441a);
         TerminalActivity.d(getActivity(), SearchMoreSubjectFragment.class, bundle);
-        EventTrackGuy.b(GuyProtos.Event.SEARCH_ALL_FIRST_RESULT_TOPIC_MORE_CLICK, this.f33132a);
+        EventTrackGuy.b(GuyProtos.Event.SEARCH_ALL_FIRST_RESULT_TOPIC_MORE_CLICK, this.f19441a);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void b(View view) {
         Tracker.onClick(view);
         Bundle bundle = new Bundle();
-        bundle.putString(SearchIndexablesContract.RawData.COLUMN_KEYWORDS, this.f33132a);
+        bundle.putString(SearchIndexablesContract.RawData.COLUMN_KEYWORDS, this.f19441a);
         TerminalActivity.d(getActivity(), SearchMoreCircleFragment.class, bundle);
-        EventTrackGuy.b(GuyProtos.Event.SEARCH_ALL_FIRST_RESULT_CIRCLE_MORE_CLICK, this.f33132a);
+        EventTrackGuy.b(GuyProtos.Event.SEARCH_ALL_FIRST_RESULT_CIRCLE_MORE_CLICK, this.f19441a);
     }
 
     private void d() {
@@ -130,7 +130,7 @@ public class SearchAllFragment extends MvpFragment<SearchAllPresenter> {
         this.listMessage.setLayoutManager(linearLayoutManager);
         this.listMessage.setNestedScrollingEnabled(false);
         SearchAllAdapter searchAllAdapter = new SearchAllAdapter(this);
-        this.f33133c = searchAllAdapter;
+        this.f19442c = searchAllAdapter;
         this.listMessage.setAdapter(searchAllAdapter);
     }
 
@@ -166,42 +166,39 @@ public class SearchAllFragment extends MvpFragment<SearchAllPresenter> {
         this.noDataView.setOnTouchEvent(false);
         this.noDataView.setTopSpace(DensityUtils.a(getContext(), 40.0f));
         this.noDataView.setImageScale(0.7f);
-        this.noDataView.setNoDataStr(R.string.msg_search_no_data_tip);
+        this.noDataView.setNoDataStr((int) R.string.msg_search_no_data_tip);
         this.noDataView.setNoDataImg(2131233637);
     }
 
     private void y() {
-        if (this.f33133c.getData().size() > 0 && this.b.getData().size() == 0) {
+        if (this.f19442c.getData().size() > 0 && this.b.getData().size() == 0) {
             Log.v("drb", "暂无数据");
             this.llUserView.setVisibility(0);
             this.tvNoResults.setVisibility(0);
             this.tvSearchPerson.setVisibility(0);
             this.llLine.setVisibility(8);
-        } else if (this.f33133c.getData().size() == 0 && this.b.getData().size() == 0) {
+        } else if (this.f19442c.getData().size() == 0 && this.b.getData().size() == 0) {
             this.llContentView.setVisibility(8);
             this.noDataView.setVisibility(0);
-        } else if (this.f33133c.getData().size() <= 0 || this.b.getData().size() <= 0) {
+        } else if (this.f19442c.getData().size() <= 0 || this.b.getData().size() <= 0) {
         } else {
             this.llLine.setVisibility(0);
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public void a(Bundle bundle) {
         super.a(bundle);
         this.llLine.setVisibility(8);
         this.llMsgView.setVisibility(8);
         this.llUserView.setVisibility(8);
         this.msgSearchView.setOnSearchInfoListener(new SearchView.OnSearchInfoListener() { // from class: com.soft.blued.ui.search.SearchAllFragment.1
-            @Override // com.blued.android.module.common.view.SearchView.OnSearchInfoListener
             public void a() {
-                SearchAllFragment.this.f33132a = "";
+                SearchAllFragment.this.f19441a = "";
                 SearchAllFragment.this.personLoading.setVisibility(8);
                 SearchAllFragment.this.t();
                 Log.v("drb", "onCancel");
             }
 
-            @Override // com.blued.android.module.common.view.SearchView.OnSearchInfoListener
             public void a(String str) {
                 Log.v("drb", "doSearch:" + str);
                 if (!TextUtils.isEmpty(str)) {
@@ -211,16 +208,16 @@ public class SearchAllFragment extends MvpFragment<SearchAllPresenter> {
                     if (SearchAllFragment.this.noDataView != null) {
                         SearchAllFragment.this.noDataView.setVisibility(8);
                     }
-                    SearchAllFragment.this.f33132a = str;
-                    if (SearchAllFragment.this.j().h) {
-                        EventTrackMessage.d(MessageProtos.Event.MSG_SCREEN_SEARCH_BOX_SUCCESS, SearchAllFragment.this.f33132a);
+                    SearchAllFragment.this.f19441a = str;
+                    if (((SearchAllPresenter) SearchAllFragment.this.j()).h) {
+                        EventTrackMessage.d(MessageProtos.Event.MSG_SCREEN_SEARCH_BOX_SUCCESS, SearchAllFragment.this.f19441a);
                     }
-                    SearchAllFragment.this.j().d(str);
+                    ((SearchAllPresenter) SearchAllFragment.this.j()).d(str);
                     if (SearchAllFragment.this.llLine == null) {
                     }
                     return;
                 }
-                SearchAllFragment.this.f33133c.getData().clear();
+                SearchAllFragment.this.f19442c.getData().clear();
                 SearchAllFragment.this.b.getData().clear();
                 if (SearchAllFragment.this.llContentView != null) {
                     SearchAllFragment.this.llContentView.setVisibility(8);
@@ -233,10 +230,9 @@ public class SearchAllFragment extends MvpFragment<SearchAllPresenter> {
                 Log.v("drb", "--doSearch showEmpty");
             }
 
-            @Override // com.blued.android.module.common.view.SearchView.OnSearchInfoListener
             public void b() {
-                SearchAllFragment.this.f33132a = "";
-                SearchAllFragment.this.f33133c.getData().clear();
+                SearchAllFragment.this.f19441a = "";
+                SearchAllFragment.this.f19442c.getData().clear();
                 SearchAllFragment.this.b.getData().clear();
                 SearchAllFragment.this.personLoading.setVisibility(8);
                 SearchAllFragment.this.llContentView.setVisibility(8);
@@ -248,14 +244,14 @@ public class SearchAllFragment extends MvpFragment<SearchAllPresenter> {
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
-                SearchMessageFragment.a(SearchAllFragment.this.getContext(), SearchAllFragment.this.f33132a);
+                SearchMessageFragment.a(SearchAllFragment.this.getContext(), SearchAllFragment.this.f19441a);
             }
         });
         this.tvMorePerson.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.search.SearchAllFragment.3
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
-                SearchUserFragment.a(SearchAllFragment.this.getContext(), SearchAllFragment.this.f33132a);
+                SearchUserFragment.a(SearchAllFragment.this.getContext(), SearchAllFragment.this.f19441a);
             }
         });
         d();
@@ -265,11 +261,10 @@ public class SearchAllFragment extends MvpFragment<SearchAllPresenter> {
         w();
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void a(String str, boolean z) {
         boolean z2;
         Log.v("drb", "dismissDataLoading type:" + str);
-        Log.v("drb", "dismissDataLoading messageAdapter size :" + this.f33133c.getData().size());
+        Log.v("drb", "dismissDataLoading messageAdapter size :" + this.f19442c.getData().size());
         Log.v("drb", "dismissDataLoading personAdapter size :" + this.b.getData().size());
         int hashCode = str.hashCode();
         if (hashCode != -157516238) {
@@ -291,14 +286,14 @@ public class SearchAllFragment extends MvpFragment<SearchAllPresenter> {
     }
 
     public void a(List<MyCircleModel> list) {
-        this.d.a(this.f33132a);
-        if (TypeUtils.a((List<?>) list)) {
+        this.d.a(this.f19441a);
+        if (TypeUtils.a(list)) {
             this.layoutCircle.setVisibility(8);
             return;
         }
         this.layoutCircle.setVisibility(0);
         this.d.setDataAndNotify(list);
-        if (j().k) {
+        if (((SearchAllPresenter) j()).k) {
             this.tvCircleMore.setVisibility(0);
         } else {
             this.tvCircleMore.setVisibility(8);
@@ -307,20 +302,20 @@ public class SearchAllFragment extends MvpFragment<SearchAllPresenter> {
 
     public void b() {
         Log.v("drb", "notifyPersonEmpty");
-        if (j().h) {
+        if (((SearchAllPresenter) j()).h) {
             this.llLine.setVisibility(8);
         }
     }
 
     public void b(List<BluedTopic> list) {
-        this.e.a(this.f33132a);
-        if (TypeUtils.a((List<?>) list)) {
+        this.e.a(this.f19441a);
+        if (TypeUtils.a(list)) {
             this.layoutSubject.setVisibility(8);
             return;
         }
         this.layoutSubject.setVisibility(0);
         this.e.setDataAndNotify(list);
-        if (j().l) {
+        if (((SearchAllPresenter) j()).l) {
             this.tvSubjectMore.setVisibility(0);
         } else {
             this.tvSubjectMore.setVisibility(8);
@@ -339,32 +334,30 @@ public class SearchAllFragment extends MvpFragment<SearchAllPresenter> {
         this.listPerson.setVisibility(0);
         this.tvNoResults.setVisibility(8);
         if (list.size() <= 3) {
-            this.b.a(list, this.f33132a);
+            this.b.a(list, this.f19441a);
             this.tvMorePerson.setVisibility(8);
             return;
         }
-        this.b.a(list.subList(0, 3), this.f33132a);
+        this.b.a(list.subList(0, 3), this.f19441a);
         this.tvMorePerson.setVisibility(0);
     }
 
     public void d(List<SearchSessionModel> list) {
         this.llMsgView.setVisibility(0);
         if (list.size() <= 3) {
-            this.f33133c.a(list, this.f33132a);
+            this.f19442c.a(list, this.f19441a);
             this.tvMoreMsg.setVisibility(8);
         } else {
-            this.f33133c.a(list.subList(0, 3), this.f33132a);
+            this.f19442c.a(list.subList(0, 3), this.f19441a);
             this.tvMoreMsg.setVisibility(0);
         }
         Log.v("drb", "notifyMessageList");
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public int g() {
         return R.layout.fragment_search_all_layout;
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void g_(String str) {
         boolean z;
         super.g_(str);
@@ -385,7 +378,7 @@ public class SearchAllFragment extends MvpFragment<SearchAllPresenter> {
             if (!z) {
                 return;
             }
-            this.f33133c.getData().clear();
+            this.f19442c.getData().clear();
             return;
         }
         this.b.getData().clear();
@@ -397,14 +390,13 @@ public class SearchAllFragment extends MvpFragment<SearchAllPresenter> {
         this.llLine.setVisibility(8);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, androidx.fragment.app.Fragment
     public void onActivityCreated(Bundle bundle) {
         super.onActivityCreated(bundle);
-        if (j().h) {
+        if (((SearchAllPresenter) j()).h) {
             ((RelativeLayout.LayoutParams) this.llLine.getLayoutParams()).addRule(3, R.id.ll_msg_view);
-            ((RelativeLayout.LayoutParams) this.llUserView.getLayoutParams()).addRule(3, 2131367966);
+            ((RelativeLayout.LayoutParams) this.llUserView.getLayoutParams()).addRule(3, R.id.ll_line);
         } else {
-            ((RelativeLayout.LayoutParams) this.llMsgView.getLayoutParams()).addRule(3, 2131367966);
+            ((RelativeLayout.LayoutParams) this.llMsgView.getLayoutParams()).addRule(3, R.id.ll_line);
             ((RelativeLayout.LayoutParams) this.llLine.getLayoutParams()).addRule(3, R.id.ll_user_view);
         }
         a(new Runnable() { // from class: com.soft.blued.ui.search.SearchAllFragment.4

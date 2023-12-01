@@ -6,9 +6,7 @@ import java.util.Arrays;
 public class BufferedReader extends Reader {
     private char[] buf;
     private int end;
-
-    /* renamed from: in  reason: collision with root package name */
-    private Reader f42252in;
+    private Reader in;
     private boolean lastWasCR;
     private int mark;
     private int markLimit;
@@ -26,7 +24,7 @@ public class BufferedReader extends Reader {
         if (i <= 0) {
             throw new IllegalArgumentException("size <= 0");
         }
-        this.f42252in = reader;
+        this.in = reader;
         this.buf = new char[i];
     }
 
@@ -39,7 +37,7 @@ public class BufferedReader extends Reader {
     private int fillBuf() throws IOException {
         int read;
         if (this.mark == -1 || this.pos - this.mark >= this.markLimit) {
-            read = this.f42252in.read(this.buf, 0, this.buf.length);
+            read = this.in.read(this.buf, 0, this.buf.length);
             if (read > 0) {
                 this.mark = -1;
                 this.pos = 0;
@@ -61,7 +59,7 @@ public class BufferedReader extends Reader {
                 this.end -= this.mark;
                 this.mark = 0;
             }
-            int read2 = this.f42252in.read(this.buf, this.pos, this.buf.length - this.pos);
+            int read2 = this.in.read(this.buf, this.pos, this.buf.length - this.pos);
             read = read2;
             if (read2 != -1) {
                 this.end += read2;
@@ -83,14 +81,14 @@ public class BufferedReader extends Reader {
     }
 
     private int readChar() throws IOException {
-        char c2 = 65535;
+        char c = 65535;
         if (this.pos < this.end || fillBuf() != -1) {
             char[] cArr = this.buf;
             int i = this.pos;
             this.pos = i + 1;
-            c2 = cArr[i];
+            c = cArr[i];
         }
-        return c2;
+        return c;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -104,7 +102,7 @@ public class BufferedReader extends Reader {
     public void close() throws IOException {
         synchronized (this.lock) {
             if (!isClosed()) {
-                this.f42252in.close();
+                this.in.close();
                 this.buf = null;
             }
         }
@@ -175,7 +173,7 @@ public class BufferedReader extends Reader {
                 }
                 i3 = i7;
                 if (i7 != 0) {
-                    if (i7 < i2 && !this.f42252in.ready()) {
+                    if (i7 < i2 && !this.in.ready()) {
                         i3 = i7;
                         break;
                     } else if ((this.mark != -1 && this.pos - this.mark < this.markLimit) || i7 < this.buf.length) {
@@ -186,7 +184,7 @@ public class BufferedReader extends Reader {
                             break;
                         }
                     } else {
-                        int read = this.f42252in.read(cArr, i8, i7);
+                        int read = this.in.read(cArr, i8, i7);
                         i3 = i7;
                         if (read > 0) {
                             i3 = i7 - read;
@@ -242,7 +240,7 @@ public class BufferedReader extends Reader {
         boolean z;
         synchronized (this.lock) {
             checkNotClosed();
-            if (this.end - this.pos <= 0 && !this.f42252in.ready()) {
+            if (this.end - this.pos <= 0 && !this.in.ready()) {
                 z = false;
             }
             z = true;

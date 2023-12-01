@@ -5,20 +5,16 @@ import android.text.TextUtils;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alipay/sdk/util/i.class */
 public class i {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final String f4666a = "pref_trade_token";
+    public static final String a = "pref_trade_token";
     public static final String b = ";";
-
-    /* renamed from: c  reason: collision with root package name */
-    public static final String f4667c = "result={";
+    public static final String c = "result={";
     public static final String d = "}";
     public static final String e = "trade_token=\"";
     public static final String f = "\"";
     public static final String g = "trade_token=";
 
     public static String a(com.alipay.sdk.sys.a aVar, Context context) {
-        String b2 = j.b(aVar, context, f4666a, "");
+        String b2 = j.b(aVar, context, a, "");
         c.a(com.alipay.sdk.cons.a.x, "get trade token: " + b2);
         return b2;
     }
@@ -28,14 +24,14 @@ public class i {
         if (TextUtils.isEmpty(str)) {
             return null;
         }
-        String[] split = str.split(";");
+        String[] split = str.split(b);
         int i = 0;
         while (i < split.length) {
             String str3 = str2;
-            if (split[i].startsWith(f4667c)) {
+            if (split[i].startsWith(c)) {
                 str3 = str2;
                 if (split[i].endsWith(d)) {
-                    String[] split2 = split[i].substring(8, split[i].length() - 1).split("&");
+                    String[] split2 = split[i].substring(8, split[i].length() - 1).split(com.alipay.sdk.sys.a.b);
                     int i2 = 0;
                     while (true) {
                         int i3 = i2;
@@ -69,7 +65,7 @@ public class i {
             if (TextUtils.isEmpty(a2)) {
                 return;
             }
-            j.a(aVar, context, f4666a, a2);
+            j.a(aVar, context, a, a2);
         } catch (Throwable th) {
             com.alipay.sdk.app.statistic.a.a(aVar, com.alipay.sdk.app.statistic.c.b, com.alipay.sdk.app.statistic.c.B, th);
             c.a(th);

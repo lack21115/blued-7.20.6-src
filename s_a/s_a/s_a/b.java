@@ -13,13 +13,11 @@ public interface b extends IInterface {
 
         /* renamed from: s_a.s_a.s_a.b$a$a  reason: collision with other inner class name */
         /* loaded from: source-3503164-dex2jar.jar:s_a/s_a/s_a/b$a$a.class */
-        public static class C1137a implements b {
+        public static class C0182a implements b {
+            public IBinder a;
 
-            /* renamed from: a  reason: collision with root package name */
-            public IBinder f44188a;
-
-            public C1137a(IBinder iBinder) {
-                this.f44188a = iBinder;
+            public C0182a(IBinder iBinder) {
+                this.a = iBinder;
             }
 
             @Override // s_a.s_a.s_a.b
@@ -31,7 +29,7 @@ public interface b extends IInterface {
                     obtain.writeString(str);
                     obtain.writeString(str2);
                     obtain.writeString(str3);
-                    this.f44188a.transact(1, obtain, obtain2, 0);
+                    this.a.transact(1, obtain, obtain2, 0);
                     obtain2.readException();
                     return obtain2.readString();
                 } finally {
@@ -42,7 +40,7 @@ public interface b extends IInterface {
 
             @Override // android.os.IInterface
             public IBinder asBinder() {
-                return this.f44188a;
+                return this.a;
             }
         }
 
@@ -51,7 +49,7 @@ public interface b extends IInterface {
                 return null;
             }
             IInterface queryLocalInterface = iBinder.queryLocalInterface("com.oplus.stdid.IStdID");
-            return (queryLocalInterface == null || !(queryLocalInterface instanceof b)) ? new C1137a(iBinder) : (b) queryLocalInterface;
+            return (queryLocalInterface == null || !(queryLocalInterface instanceof b)) ? new C0182a(iBinder) : (b) queryLocalInterface;
         }
     }
 

@@ -26,16 +26,16 @@ public final class DataType {
         };
 
         /* renamed from: a  reason: collision with root package name */
-        private String f36191a;
+        private String f22500a;
         private String b;
 
         private TextAndMediaPath(Parcel parcel) {
-            this.f36191a = parcel.readString();
+            this.f22500a = parcel.readString();
             this.b = parcel.readString();
         }
 
         public TextAndMediaPath(String str, String str2) {
-            this.f36191a = str;
+            this.f22500a = str;
             this.b = str2;
         }
 
@@ -49,12 +49,12 @@ public final class DataType {
         }
 
         public String getText() {
-            return this.f36191a;
+            return this.f22500a;
         }
 
         @Override // android.os.Parcelable
         public void writeToParcel(Parcel parcel, int i) {
-            parcel.writeString(this.f36191a);
+            parcel.writeString(this.f22500a);
             parcel.writeString(this.b);
         }
     }
@@ -76,14 +76,14 @@ public final class DataType {
         };
 
         /* renamed from: a  reason: collision with root package name */
-        private String f36192a;
+        private String f22501a;
 
         private TextOnly(Parcel parcel) {
-            this.f36192a = parcel.readString();
+            this.f22501a = parcel.readString();
         }
 
         public TextOnly(String str) {
-            this.f36192a = str;
+            this.f22501a = str;
         }
 
         @Override // android.os.Parcelable
@@ -92,12 +92,12 @@ public final class DataType {
         }
 
         public String getText() {
-            return this.f36192a;
+            return this.f22501a;
         }
 
         @Override // android.os.Parcelable
         public void writeToParcel(Parcel parcel, int i) {
-            parcel.writeString(this.f36192a);
+            parcel.writeString(this.f22501a);
         }
     }
 }

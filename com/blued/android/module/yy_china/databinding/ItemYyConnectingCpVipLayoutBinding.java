@@ -12,13 +12,9 @@ import com.blued.android.module.yy_china.view.YYMemberCPView;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ItemYyConnectingCpVipLayoutBinding.class */
 public final class ItemYyConnectingCpVipLayoutBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ShapeTextView f16686a;
+    public final ShapeTextView a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f16687c;
+    public final ImageView c;
     public final ImageView d;
     public final Guideline e;
     public final ShapeLinearLayout f;
@@ -38,9 +34,9 @@ public final class ItemYyConnectingCpVipLayoutBinding implements ViewBinding {
 
     private ItemYyConnectingCpVipLayoutBinding(ConstraintLayout constraintLayout, ShapeTextView shapeTextView, ImageView imageView, ImageView imageView2, ImageView imageView3, Guideline guideline, ShapeLinearLayout shapeLinearLayout, YYMemberCPView yYMemberCPView, YYMemberCPView yYMemberCPView2, YYMemberCPView yYMemberCPView3, YYMemberCPView yYMemberCPView4, YYMemberCPView yYMemberCPView5, YYMemberCPView yYMemberCPView6, YYMemberCPView yYMemberCPView7, YYMemberCPView yYMemberCPView8, YYMemberCPView yYMemberCPView9, YYMemberCPView yYMemberCPView10, ShapeTextView shapeTextView2, ConstraintLayout constraintLayout2) {
         this.s = constraintLayout;
-        this.f16686a = shapeTextView;
+        this.a = shapeTextView;
         this.b = imageView;
-        this.f16687c = imageView2;
+        this.c = imageView2;
         this.d = imageView3;
         this.e = guideline;
         this.f = shapeLinearLayout;
@@ -68,8 +64,8 @@ public final class ItemYyConnectingCpVipLayoutBinding implements ViewBinding {
                 if (imageView2 != null) {
                     ImageView imageView3 = (ImageView) view.findViewById(R.id.img_chair);
                     if (imageView3 != null) {
-                        Guideline guideline = (Guideline) view.findViewById(R.id.ll_guide_line);
-                        if (guideline != null) {
+                        Guideline findViewById = view.findViewById(R.id.ll_guide_line);
+                        if (findViewById != null) {
                             ShapeLinearLayout shapeLinearLayout = (ShapeLinearLayout) view.findViewById(R.id.ll_step_view);
                             if (shapeLinearLayout != null) {
                                 YYMemberCPView yYMemberCPView = (YYMemberCPView) view.findViewById(R.id.member_cp_0);
@@ -94,9 +90,9 @@ public final class ItemYyConnectingCpVipLayoutBinding implements ViewBinding {
                                                                     if (yYMemberCPView10 != null) {
                                                                         ShapeTextView shapeTextView2 = (ShapeTextView) view.findViewById(R.id.tv_action);
                                                                         if (shapeTextView2 != null) {
-                                                                            ConstraintLayout constraintLayout = (ConstraintLayout) view.findViewById(R.id.yy_connectting_root);
-                                                                            if (constraintLayout != null) {
-                                                                                return new ItemYyConnectingCpVipLayoutBinding((ConstraintLayout) view, shapeTextView, imageView, imageView2, imageView3, guideline, shapeLinearLayout, yYMemberCPView, yYMemberCPView2, yYMemberCPView3, yYMemberCPView4, yYMemberCPView5, yYMemberCPView6, yYMemberCPView7, yYMemberCPView8, yYMemberCPView9, yYMemberCPView10, shapeTextView2, constraintLayout);
+                                                                            ConstraintLayout findViewById2 = view.findViewById(R.id.yy_connectting_root);
+                                                                            if (findViewById2 != null) {
+                                                                                return new ItemYyConnectingCpVipLayoutBinding((ConstraintLayout) view, shapeTextView, imageView, imageView2, imageView3, findViewById, shapeLinearLayout, yYMemberCPView, yYMemberCPView2, yYMemberCPView3, yYMemberCPView4, yYMemberCPView5, yYMemberCPView6, yYMemberCPView7, yYMemberCPView8, yYMemberCPView9, yYMemberCPView10, shapeTextView2, findViewById2);
                                                                             }
                                                                             str = "yyConnecttingRoot";
                                                                         } else {
@@ -153,7 +149,6 @@ public final class ItemYyConnectingCpVipLayoutBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.s;

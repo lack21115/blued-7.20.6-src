@@ -1,8 +1,6 @@
 package com.tencent.cos.xml.utils;
 
 import android.util.Log;
-import com.alipay.sdk.util.e;
-import com.anythink.china.common.a.a;
 import com.tencent.cos.xml.CosXmlBaseService;
 import com.tencent.cos.xml.common.ClientErrorCode;
 import com.tencent.cos.xml.exception.CosXmlClientException;
@@ -35,7 +33,7 @@ public class FileUtils {
             clearFile(str);
         }
         File file = new File(str);
-        File file2 = new File(str.concat("." + System.currentTimeMillis() + a.e));
+        File file2 = new File(str.concat("." + System.currentTimeMillis() + ".temp"));
         FileOutputStream fileOutputStream = new FileOutputStream(file2);
         FileInputStream fileInputStream = new FileInputStream(file);
         if (j > 0 && fileInputStream.skip(j) != j) {
@@ -57,7 +55,7 @@ public class FileUtils {
         if (file2.renameTo(file)) {
             return;
         }
-        throw new IOException("rename to " + str + e.f4661a);
+        throw new IOException("rename to " + str + "failed");
     }
 
     public static File[] listFile(File file) {

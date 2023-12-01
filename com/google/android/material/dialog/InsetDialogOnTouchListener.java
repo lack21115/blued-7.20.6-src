@@ -1,5 +1,6 @@
 package com.google.android.material.dialog;
 
+import android.R;
 import android.app.Dialog;
 import android.graphics.Rect;
 import android.graphics.RectF;
@@ -24,7 +25,7 @@ public class InsetDialogOnTouchListener implements View.OnTouchListener {
 
     @Override // android.view.View.OnTouchListener
     public boolean onTouch(View view, MotionEvent motionEvent) {
-        View findViewById = view.findViewById(16908290);
+        View findViewById = view.findViewById(R.id.content);
         int left = this.leftInset + findViewById.getLeft();
         int width = findViewById.getWidth();
         int top = this.topInset + findViewById.getTop();

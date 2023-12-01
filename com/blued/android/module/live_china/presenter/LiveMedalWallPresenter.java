@@ -17,9 +17,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/presenter/LiveMedalWallPresenter.class */
 public final class LiveMedalWallPresenter extends MvpPresenter {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f14040a = new Companion(null);
+    public static final Companion a = new Companion(null);
 
     @Metadata
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/presenter/LiveMedalWallPresenter$Companion.class */

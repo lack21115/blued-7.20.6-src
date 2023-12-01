@@ -36,8 +36,8 @@ public class GameManager {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Date date = new Date();
         weiboParameters.put("updated_time", simpleDateFormat.format(date));
-        if (TextUtils.isEmpty((String) weiboParameters.get("create_time"))) {
-            weiboParameters.put("create_time", simpleDateFormat.format(date));
+        if (TextUtils.isEmpty((String) weiboParameters.get(WBConstants.GAME_PARAMS_GAME_CREATE_TIME))) {
+            weiboParameters.put(WBConstants.GAME_PARAMS_GAME_CREATE_TIME, simpleDateFormat.format(date));
         }
         String readRsponse = HttpManager.readRsponse(requestHttpExecute(context, URL_ACHIEVEMENT_ADD_UPDATE, "POST", weiboParameters));
         LogUtil.d(TAG, "Response : " + readRsponse);
@@ -64,8 +64,8 @@ public class GameManager {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Date date = new Date();
         weiboParameters.put("updated_time", simpleDateFormat.format(date));
-        if (TextUtils.isEmpty((String) weiboParameters.get("create_time"))) {
-            weiboParameters.put("create_time", simpleDateFormat.format(date));
+        if (TextUtils.isEmpty((String) weiboParameters.get(WBConstants.GAME_PARAMS_GAME_CREATE_TIME))) {
+            weiboParameters.put(WBConstants.GAME_PARAMS_GAME_CREATE_TIME, simpleDateFormat.format(date));
         }
         String readRsponse = HttpManager.readRsponse(requestHttpExecute(context, URL_ACHIEVEMENT_SCORE_ADD_UPDATE, "POST", weiboParameters));
         LogUtil.d(TAG, "Response : " + readRsponse);
@@ -76,8 +76,8 @@ public class GameManager {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Date date = new Date();
         weiboParameters.put("updated_time", simpleDateFormat.format(date));
-        if (TextUtils.isEmpty((String) weiboParameters.get("create_time"))) {
-            weiboParameters.put("create_time", simpleDateFormat.format(date));
+        if (TextUtils.isEmpty((String) weiboParameters.get(WBConstants.GAME_PARAMS_GAME_CREATE_TIME))) {
+            weiboParameters.put(WBConstants.GAME_PARAMS_GAME_CREATE_TIME, simpleDateFormat.format(date));
         }
         String readRsponse = HttpManager.readRsponse(requestHttpExecute(context, URL_ACHIEVEMENT_RELATION_ADD_UPDATE, "POST", weiboParameters));
         LogUtil.d(TAG, "Response : " + readRsponse);
@@ -98,7 +98,7 @@ public class GameManager {
         if (!TextUtils.isEmpty(str4)) {
             weiboParameters.put("uid", str4);
         }
-        weiboParameters.put("create_time", new Timestamp(new Date().getTime()));
+        weiboParameters.put(WBConstants.GAME_PARAMS_GAME_CREATE_TIME, new Timestamp(new Date().getTime()));
         String readRsponse = HttpManager.readRsponse(requestHttpExecute(context, URL_ACHIEVEMENT_USER_GAIN, "GET", weiboParameters));
         LogUtil.d(TAG, "Response : " + readRsponse);
         return readRsponse;
@@ -118,7 +118,7 @@ public class GameManager {
         if (!TextUtils.isEmpty(str4)) {
             weiboParameters.put("uid", str4);
         }
-        weiboParameters.put("create_time", new Timestamp(new Date().getTime()));
+        weiboParameters.put(WBConstants.GAME_PARAMS_GAME_CREATE_TIME, new Timestamp(new Date().getTime()));
         String readRsponse = HttpManager.readRsponse(requestHttpExecute(context, URL_ACHIEVEMENT_READ_PLAYER_FRIENDS, "GET", weiboParameters));
         LogUtil.d(TAG, "Response : " + readRsponse);
         return readRsponse;

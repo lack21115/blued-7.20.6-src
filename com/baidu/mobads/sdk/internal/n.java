@@ -12,13 +12,13 @@ import org.json.JSONArray;
 class n implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ IOAdEvent f9436a;
+    final /* synthetic */ IOAdEvent f6596a;
     final /* synthetic */ m b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public n(m mVar, IOAdEvent iOAdEvent) {
         this.b = mVar;
-        this.f9436a = iOAdEvent;
+        this.f6596a = iOAdEvent;
     }
 
     @Override // java.lang.Runnable
@@ -28,20 +28,20 @@ class n implements Runnable {
         CpuChannelListManager.CpuChannelListListener cpuChannelListListener2;
         CpuChannelListManager.CpuChannelListListener cpuChannelListListener3;
         CpuChannelListManager.CpuChannelListListener cpuChannelListListener4;
-        IOAdEvent iOAdEvent = this.f9436a;
+        IOAdEvent iOAdEvent = this.f6596a;
         if (iOAdEvent == null || TextUtils.isEmpty(iOAdEvent.getType())) {
             return;
         }
-        String type = this.f9436a.getType();
+        String type = this.f6596a.getType();
         if (w.an.equals(type)) {
-            List<CpuChannelResponse> a2 = k.a((JSONArray) this.f9436a.getData().get("cpuChannelList"));
-            cpuChannelListListener3 = this.b.f9435a.q;
+            List<CpuChannelResponse> a2 = k.a((JSONArray) this.f6596a.getData().get("cpuChannelList"));
+            cpuChannelListListener3 = this.b.f6595a.q;
             if (cpuChannelListListener3 != null) {
-                cpuChannelListListener4 = this.b.f9435a.q;
+                cpuChannelListListener4 = this.b.f6595a.q;
                 cpuChannelListListener4.onChannelListLoaded(a2);
             }
         } else if (w.ao.equals(type)) {
-            Map<String, Object> data = this.f9436a.getData();
+            Map<String, Object> data = this.f6596a.getData();
             int i = 0;
             if (data != null) {
                 String str2 = (String) data.get("error_message");
@@ -55,9 +55,9 @@ class n implements Runnable {
             } else {
                 str = "";
             }
-            cpuChannelListListener = this.b.f9435a.q;
+            cpuChannelListListener = this.b.f6595a.q;
             if (cpuChannelListListener != null) {
-                cpuChannelListListener2 = this.b.f9435a.q;
+                cpuChannelListListener2 = this.b.f6595a.q;
                 cpuChannelListListener2.onChannelListError(str, i);
             }
         }

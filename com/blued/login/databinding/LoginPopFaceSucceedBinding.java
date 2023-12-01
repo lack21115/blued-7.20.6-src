@@ -11,15 +11,15 @@ import com.blued.login.R;
 public final class LoginPopFaceSucceedBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final TextView f20529a;
+    public final TextView f6923a;
     public final ShapeTextView b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final FrameLayout f20530c;
+    private final FrameLayout f6924c;
 
     private LoginPopFaceSucceedBinding(FrameLayout frameLayout, TextView textView, ShapeTextView shapeTextView) {
-        this.f20530c = frameLayout;
-        this.f20529a = textView;
+        this.f6924c = frameLayout;
+        this.f6923a = textView;
         this.b = shapeTextView;
     }
 
@@ -27,9 +27,9 @@ public final class LoginPopFaceSucceedBinding implements ViewBinding {
         String str;
         TextView textView = (TextView) view.findViewById(R.id.tv_hint);
         if (textView != null) {
-            ShapeTextView shapeTextView = (ShapeTextView) view.findViewById(R.id.tv_identify);
-            if (shapeTextView != null) {
-                return new LoginPopFaceSucceedBinding((FrameLayout) view, textView, shapeTextView);
+            ShapeTextView findViewById = view.findViewById(R.id.tv_identify);
+            if (findViewById != null) {
+                return new LoginPopFaceSucceedBinding((FrameLayout) view, textView, findViewById);
             }
             str = "tvIdentify";
         } else {
@@ -41,6 +41,6 @@ public final class LoginPopFaceSucceedBinding implements ViewBinding {
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f20530c;
+        return this.f6924c;
     }
 }

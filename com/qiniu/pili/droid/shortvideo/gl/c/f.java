@@ -6,13 +6,13 @@ import android.opengl.GLES20;
 public class f extends k {
 
     /* renamed from: c  reason: collision with root package name */
-    private float f27716c = 1.0f;
+    private float f14028c = 1.0f;
     private float d = 1.0f;
     private float e = 1.0f;
     private int f;
 
     public int a(int i, float f, float f2, float f3) {
-        this.f27716c = f;
+        this.f14028c = f;
         this.d = f2;
         this.e = f3;
         return a(i);
@@ -33,6 +33,6 @@ public class f extends k {
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.qiniu.pili.droid.shortvideo.gl.c.g
     public void d() {
-        GLES20.glUniform4f(this.f, this.f27716c, this.d, this.e, 1.0f);
+        GLES20.glUniform4f(this.f, this.f14028c, this.d, this.e, 1.0f);
     }
 }

@@ -1,5 +1,6 @@
 package com.blued.android.module.yy_china.model;
 
+import $r8;
 import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
@@ -122,7 +123,7 @@ public final class YYDailyTaskModel {
     }
 
     public int hashCode() {
-        return (((((((((((this.is_open * 31) + this.status) * 31) + C$r8$backportedMethods$utility$Long$1$hashCode.hashCode(this.start_time)) * 31) + C$r8$backportedMethods$utility$Long$1$hashCode.hashCode(this.end_time)) * 31) + this.item.hashCode()) * 31) + this.condition) * 31) + this.appoint.hashCode();
+        return (((((((((((this.is_open * 31) + this.status) * 31) + $r8.backportedMethods.utility.Long.1.hashCode.hashCode(this.start_time)) * 31) + $r8.backportedMethods.utility.Long.1.hashCode.hashCode(this.end_time)) * 31) + this.item.hashCode()) * 31) + this.condition) * 31) + this.appoint.hashCode();
     }
 
     public final int is_open() {

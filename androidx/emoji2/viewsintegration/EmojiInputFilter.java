@@ -9,12 +9,11 @@ import androidx.emoji2.text.EmojiCompat;
 import java.lang.ref.Reference;
 import java.lang.ref.WeakReference;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8756600-dex2jar.jar:androidx/emoji2/viewsintegration/EmojiInputFilter.class */
-public final class EmojiInputFilter implements InputFilter {
+final class EmojiInputFilter implements InputFilter {
 
     /* renamed from: a  reason: collision with root package name */
-    private final TextView f2884a;
+    private final TextView f2836a;
     private EmojiCompat.InitCallback b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -22,11 +21,11 @@ public final class EmojiInputFilter implements InputFilter {
     public static class InitCallbackImpl extends EmojiCompat.InitCallback {
 
         /* renamed from: a  reason: collision with root package name */
-        private final Reference<TextView> f2885a;
+        private final Reference<TextView> f2837a;
         private final Reference<EmojiInputFilter> b;
 
         InitCallbackImpl(TextView textView, EmojiInputFilter emojiInputFilter) {
-            this.f2885a = new WeakReference(textView);
+            this.f2837a = new WeakReference(textView);
             this.b = new WeakReference(emojiInputFilter);
         }
 
@@ -51,7 +50,7 @@ public final class EmojiInputFilter implements InputFilter {
         @Override // androidx.emoji2.text.EmojiCompat.InitCallback
         public void onInitialized() {
             super.onInitialized();
-            TextView textView = this.f2885a.get();
+            TextView textView = this.f2837a.get();
             if (a(textView, this.b.get()) && textView.isAttachedToWindow()) {
                 CharSequence process = EmojiCompat.get().process(textView.getText());
                 int selectionStart = Selection.getSelectionStart(process);
@@ -66,12 +65,12 @@ public final class EmojiInputFilter implements InputFilter {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public EmojiInputFilter(TextView textView) {
-        this.f2884a = textView;
+        this.f2836a = textView;
     }
 
     private EmojiCompat.InitCallback a() {
         if (this.b == null) {
-            this.b = new InitCallbackImpl(this.f2884a, this);
+            this.b = new InitCallbackImpl(this.f2836a, this);
         }
         return this.b;
     }
@@ -89,7 +88,7 @@ public final class EmojiInputFilter implements InputFilter {
 
     @Override // android.text.InputFilter
     public CharSequence filter(CharSequence charSequence, int i, int i2, Spanned spanned, int i3, int i4) {
-        if (this.f2884a.isInEditMode()) {
+        if (this.f2836a.isInEditMode()) {
             return charSequence;
         }
         int loadState = EmojiCompat.get().getLoadState();
@@ -102,7 +101,7 @@ public final class EmojiInputFilter implements InputFilter {
                         z = true;
                         if (spanned.length() == 0) {
                             z = true;
-                            if (charSequence == this.f2884a.getText()) {
+                            if (charSequence == this.f2836a.getText()) {
                                 z = false;
                             }
                         }

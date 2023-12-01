@@ -1,6 +1,7 @@
 package com.amap.api.col.p0003sl;
 
 import android.text.TextUtils;
+import com.anythink.core.common.k.f;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -33,7 +34,7 @@ public final class hw {
                             fileInputStream.close();
                             return e;
                         } catch (IOException e2) {
-                            it.a(e2, "MD5", "gfm");
+                            it.a(e2, f.a, "gfm");
                             return e;
                         }
                     }
@@ -41,13 +42,13 @@ public final class hw {
                 } catch (Throwable th) {
                     th = th;
                     try {
-                        it.a(th, "MD5", "gfm");
+                        it.a(th, f.a, "gfm");
                         if (fileInputStream != null) {
                             try {
                                 fileInputStream.close();
                                 return null;
                             } catch (IOException e3) {
-                                it.a(e3, "MD5", "gfm");
+                                it.a(e3, f.a, "gfm");
                                 return null;
                             }
                         }
@@ -57,7 +58,7 @@ public final class hw {
                             try {
                                 fileInputStream.close();
                             } catch (IOException e4) {
-                                it.a(e4, "MD5", "gfm");
+                                it.a(e4, f.a, "gfm");
                             }
                         }
                         throw th2;
@@ -80,7 +81,7 @@ public final class hw {
             messageDigest.update(bArr);
             return messageDigest.digest();
         } catch (Throwable th) {
-            it.a(th, "MD5", "gmb");
+            it.a(th, f.a, "gmb");
             return null;
         }
     }
@@ -100,7 +101,7 @@ public final class hw {
         try {
             return f(str);
         } catch (Throwable th) {
-            it.a(th, "MD5", "gmb");
+            it.a(th, f.a, "gmb");
             return new byte[0];
         }
     }

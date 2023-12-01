@@ -6,6 +6,7 @@ import com.airbnb.lottie.LottieComposition;
 import com.airbnb.lottie.model.animatable.AnimatablePointValue;
 import com.airbnb.lottie.model.animatable.AnimatableValue;
 import com.airbnb.lottie.model.content.CircleShape;
+import com.anythink.core.common.g.c;
 import java.io.IOException;
 
 /* JADX INFO: Access modifiers changed from: package-private */
@@ -38,7 +39,7 @@ public class CircleShapeParser {
                     } else if (nextName.equals("s")) {
                         z3 = true;
                     }
-                } else if (nextName.equals("p")) {
+                } else if (nextName.equals(c.W)) {
                     z3 = true;
                 }
             } else if (nextName.equals("d")) {

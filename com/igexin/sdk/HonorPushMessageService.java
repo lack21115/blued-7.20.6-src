@@ -23,7 +23,7 @@ public class HonorPushMessageService extends HonorMessageService {
             if (TextUtils.isEmpty(honorPushDataMsg.getData())) {
                 return;
             }
-            MessageBean messageBean = new MessageBean(getApplicationContext(), "payload", honorPushDataMsg.getData());
+            MessageBean messageBean = new MessageBean(getApplicationContext(), AssistPushConsts.MSG_TYPE_PAYLOAD, honorPushDataMsg.getData());
             messageBean.setMessageSource(AssistPushConsts.HONOR_PREFIX);
             MessageManger.getInstance().addMessage(messageBean);
         } catch (Throwable th) {

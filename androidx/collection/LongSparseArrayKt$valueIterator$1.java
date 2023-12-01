@@ -10,12 +10,12 @@ import kotlin.jvm.internal.markers.KMappedMarker;
 public final class LongSparseArrayKt$valueIterator$1<T> implements Iterator<T>, KMappedMarker {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ LongSparseArray f1950a;
+    final /* synthetic */ LongSparseArray f1902a;
     private int b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public LongSparseArrayKt$valueIterator$1(LongSparseArray<T> longSparseArray) {
-        this.f1950a = longSparseArray;
+        this.f1902a = longSparseArray;
     }
 
     public final int getIndex() {
@@ -24,12 +24,12 @@ public final class LongSparseArrayKt$valueIterator$1<T> implements Iterator<T>, 
 
     @Override // java.util.Iterator
     public boolean hasNext() {
-        return this.b < this.f1950a.size();
+        return this.b < this.f1902a.size();
     }
 
     @Override // java.util.Iterator
     public T next() {
-        LongSparseArray longSparseArray = this.f1950a;
+        LongSparseArray longSparseArray = this.f1902a;
         int i = this.b;
         this.b = i + 1;
         return (T) longSparseArray.valueAt(i);

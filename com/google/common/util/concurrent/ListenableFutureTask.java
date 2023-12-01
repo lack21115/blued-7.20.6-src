@@ -32,9 +32,8 @@ public class ListenableFutureTask<V> extends FutureTask<V> implements Listenable
         this.executionList.add(runnable, executor);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // java.util.concurrent.FutureTask
-    public void done() {
+    protected void done() {
         this.executionList.execute();
     }
 }

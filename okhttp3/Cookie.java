@@ -1,7 +1,8 @@
 package okhttp3;
 
+import com.amap.api.services.core.AMapException;
+import com.android.internal.content.NativeLibraryHelper;
 import com.blued.android.module.common.web.jsbridge.BridgeUtil;
-import com.blued.das.live.LiveProtos;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
@@ -47,9 +48,9 @@ public final class Cookie {
 
         private Builder domain(String str, boolean z) {
             if (str != null) {
-                String a2 = Util.a(str);
-                if (a2 != null) {
-                    this.domain = a2;
+                String a = Util.a(str);
+                if (a != null) {
+                    this.domain = a;
                     this.hostOnly = z;
                     return this;
                 }
@@ -229,9 +230,9 @@ public final class Cookie {
         if (str.startsWith(".")) {
             str2 = str.substring(1);
         }
-        String a2 = Util.a(str2);
-        if (a2 != null) {
-            return a2;
+        String a = Util.a(str2);
+        if (a != null) {
+            return a;
         }
         throw new IllegalArgumentException();
     }
@@ -311,7 +312,7 @@ public final class Cookie {
         if (i9 >= 70) {
             i15 = i9;
             if (i9 <= 99) {
-                i15 = i9 + 1900;
+                i15 = i9 + AMapException.CODE_AMAP_CLIENT_UNKNOWN_ERROR;
             }
         }
         int i16 = i15;
@@ -360,7 +361,7 @@ public final class Cookie {
             return parseLong;
         } catch (NumberFormatException e) {
             if (str.matches("-?\\d+")) {
-                return str.startsWith("-") ? Long.MIN_VALUE : Long.MAX_VALUE;
+                return str.startsWith(NativeLibraryHelper.CLEAR_ABI_OVERRIDE) ? Long.MIN_VALUE : Long.MAX_VALUE;
             }
             throw e;
         }
@@ -427,7 +428,7 @@ public final class Cookie {
         int hashCode3 = this.domain.hashCode();
         int hashCode4 = this.path.hashCode();
         long j = this.expiresAt;
-        return ((((((((((((((((LiveProtos.Event.LIVE_END_PAGE_CLOSE_CLICK_VALUE + hashCode) * 31) + hashCode2) * 31) + hashCode3) * 31) + hashCode4) * 31) + ((int) (j ^ (j >>> 32)))) * 31) + (!this.secure ? 1 : 0)) * 31) + (!this.httpOnly ? 1 : 0)) * 31) + (!this.persistent ? 1 : 0)) * 31) + (!this.hostOnly ? 1 : 0);
+        return ((((((((((((((((527 + hashCode) * 31) + hashCode2) * 31) + hashCode3) * 31) + hashCode4) * 31) + ((int) (j ^ (j >>> 32)))) * 31) + (!this.secure ? 1 : 0)) * 31) + (!this.httpOnly ? 1 : 0)) * 31) + (!this.persistent ? 1 : 0)) * 31) + (!this.hostOnly ? 1 : 0);
     }
 
     public boolean hostOnly() {

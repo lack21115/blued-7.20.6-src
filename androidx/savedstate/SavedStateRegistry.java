@@ -12,13 +12,13 @@ import java.util.Map;
 public final class SavedStateRegistry {
 
     /* renamed from: c  reason: collision with root package name */
-    private Bundle f3370c;
+    private Bundle f3322c;
     private boolean d;
     private Recreator.SavedStateProvider e;
     private SafeIterableMap<String, SavedStateProvider> b = new SafeIterableMap<>();
 
     /* renamed from: a  reason: collision with root package name */
-    boolean f3369a = true;
+    boolean f3321a = true;
 
     /* loaded from: source-8756600-dex2jar.jar:androidx/savedstate/SavedStateRegistry$AutoRecreated.class */
     public interface AutoRecreated {
@@ -33,7 +33,7 @@ public final class SavedStateRegistry {
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a(Bundle bundle) {
         Bundle bundle2 = new Bundle();
-        Bundle bundle3 = this.f3370c;
+        Bundle bundle3 = this.f3322c;
         if (bundle3 != null) {
             bundle2.putAll(bundle3);
         }
@@ -51,15 +51,15 @@ public final class SavedStateRegistry {
             throw new IllegalStateException("SavedStateRegistry was already restored.");
         }
         if (bundle != null) {
-            this.f3370c = bundle.getBundle("androidx.lifecycle.BundlableSavedStateRegistry.key");
+            this.f3322c = bundle.getBundle("androidx.lifecycle.BundlableSavedStateRegistry.key");
         }
         lifecycle.addObserver(new GenericLifecycleObserver() { // from class: androidx.savedstate.SavedStateRegistry.1
             @Override // androidx.lifecycle.LifecycleEventObserver
             public void onStateChanged(LifecycleOwner lifecycleOwner, Lifecycle.Event event) {
                 if (event == Lifecycle.Event.ON_START) {
-                    SavedStateRegistry.this.f3369a = true;
+                    SavedStateRegistry.this.f3321a = true;
                 } else if (event == Lifecycle.Event.ON_STOP) {
-                    SavedStateRegistry.this.f3369a = false;
+                    SavedStateRegistry.this.f3321a = false;
                 }
             }
         });
@@ -68,12 +68,12 @@ public final class SavedStateRegistry {
 
     public Bundle consumeRestoredStateForKey(String str) {
         if (this.d) {
-            Bundle bundle = this.f3370c;
+            Bundle bundle = this.f3322c;
             if (bundle != null) {
                 Bundle bundle2 = bundle.getBundle(str);
-                this.f3370c.remove(str);
-                if (this.f3370c.isEmpty()) {
-                    this.f3370c = null;
+                this.f3322c.remove(str);
+                if (this.f3322c.isEmpty()) {
+                    this.f3322c = null;
                 }
                 return bundle2;
             }
@@ -93,7 +93,7 @@ public final class SavedStateRegistry {
     }
 
     public void runOnNextRecreation(Class<? extends AutoRecreated> cls) {
-        if (!this.f3369a) {
+        if (!this.f3321a) {
             throw new IllegalStateException("Can not perform this action after onSaveInstanceState");
         }
         if (this.e == null) {

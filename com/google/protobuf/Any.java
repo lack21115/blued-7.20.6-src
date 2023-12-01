@@ -1,6 +1,5 @@
 package com.google.protobuf;
 
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.google.protobuf.Descriptors;
 import com.google.protobuf.GeneratedMessageV3;
 import com.google.protobuf.UnknownFieldSet;
@@ -106,8 +105,8 @@ public final class Any extends GeneratedMessageV3 implements AnyOrBuilder {
 
         @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder mo2030clone() {
+            return (Builder) super.mo2030clone();
         }
 
         @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
@@ -344,10 +343,10 @@ public final class Any extends GeneratedMessageV3 implements AnyOrBuilder {
     }
 
     private static String getTypeUrl(String str, Descriptors.Descriptor descriptor) {
-        if (str.endsWith(BridgeUtil.SPLIT_MARK)) {
+        if (str.endsWith("/")) {
             return str + descriptor.getFullName();
         }
-        return str + BridgeUtil.SPLIT_MARK + descriptor.getFullName();
+        return str + "/" + descriptor.getFullName();
     }
 
     public static Builder newBuilder() {
@@ -534,8 +533,9 @@ public final class Any extends GeneratedMessageV3 implements AnyOrBuilder {
         return new Builder(builderParent);
     }
 
+    /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.google.protobuf.GeneratedMessageV3
-    protected Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
+    public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
         return new Any();
     }
 

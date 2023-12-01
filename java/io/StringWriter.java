@@ -1,6 +1,5 @@
 package java.io;
 
-import com.igexin.push.core.b;
 import java.util.Arrays;
 
 /* loaded from: source-2895416-dex2jar.jar:java/io/StringWriter.class */
@@ -21,8 +20,8 @@ public class StringWriter extends Writer {
     }
 
     @Override // java.io.Writer, java.lang.Appendable
-    public StringWriter append(char c2) {
-        write(c2);
+    public StringWriter append(char c) {
+        write(c);
         return this;
     }
 
@@ -30,7 +29,7 @@ public class StringWriter extends Writer {
     public StringWriter append(CharSequence charSequence) {
         CharSequence charSequence2 = charSequence;
         if (charSequence == null) {
-            charSequence2 = b.l;
+            charSequence2 = "null";
         }
         write(charSequence2.toString());
         return this;
@@ -40,7 +39,7 @@ public class StringWriter extends Writer {
     public StringWriter append(CharSequence charSequence, int i, int i2) {
         CharSequence charSequence2 = charSequence;
         if (charSequence == null) {
-            charSequence2 = b.l;
+            charSequence2 = "null";
         }
         String charSequence3 = charSequence2.subSequence(i, i2).toString();
         write(charSequence3, 0, charSequence3.length());

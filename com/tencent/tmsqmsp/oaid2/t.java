@@ -6,11 +6,11 @@ import android.os.AsyncTask;
 public class t extends AsyncTask<Void, Void, Boolean> {
 
     /* renamed from: a  reason: collision with root package name */
-    public q f39663a;
+    public q f25972a;
     public s b;
 
     public t(q qVar, s sVar) {
-        this.f39663a = qVar;
+        this.f25972a = qVar;
         this.b = sVar;
     }
 
@@ -19,13 +19,13 @@ public class t extends AsyncTask<Void, Void, Boolean> {
     public Boolean doInBackground(Void... voidArr) {
         boolean c2;
         s sVar;
-        if (this.f39663a == null) {
+        if (this.f25972a == null) {
             return Boolean.FALSE;
         }
         int i = 0;
         while (true) {
             try {
-                c2 = this.f39663a.c();
+                c2 = this.f25972a.c();
             } catch (InterruptedException e) {
             }
             if (c2) {

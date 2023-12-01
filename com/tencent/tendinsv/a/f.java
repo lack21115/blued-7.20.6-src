@@ -7,11 +7,11 @@ import android.database.sqlite.SQLiteDatabase;
 public class f extends a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f38995a = "login_device";
+    public static final String f25304a = "login_device";
     public static final String b = "login_behavior";
 
     /* renamed from: c  reason: collision with root package name */
-    private static final int f38996c = 1;
+    private static final int f25305c = 1;
     private static final String d = "login_sdk_report";
     private static volatile f e;
 

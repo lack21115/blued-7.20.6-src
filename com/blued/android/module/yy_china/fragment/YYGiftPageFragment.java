@@ -13,10 +13,10 @@ import com.jeremyliao.liveeventbus.LiveEventBus;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYGiftPageFragment.class */
 public class YYGiftPageFragment extends BaseGiftPageFragment {
+    /* JADX WARN: Multi-variable type inference failed */
     @Override // com.blued.android.module.common.fragment.BaseGiftPageFragment
     public void a() {
-        this.f10803a.addItemDecoration(new RecyclerView.ItemDecoration() { // from class: com.blued.android.module.yy_china.fragment.YYGiftPageFragment.1
-            @Override // androidx.recyclerview.widget.RecyclerView.ItemDecoration
+        this.a.addItemDecoration(new RecyclerView.ItemDecoration() { // from class: com.blued.android.module.yy_china.fragment.YYGiftPageFragment.1
             public void getItemOffsets(Rect rect, View view, RecyclerView recyclerView, RecyclerView.State state) {
                 rect.right = DensityUtils.a(YYGiftPageFragment.this.getContext(), 5.0f);
             }
@@ -24,7 +24,6 @@ public class YYGiftPageFragment extends BaseGiftPageFragment {
         this.b = new YYGiftAdapter(this, this.g);
     }
 
-    @Override // com.blued.android.framework.ui.SimpleFragment, androidx.fragment.app.Fragment
     public void onActivityCreated(Bundle bundle) {
         super.onActivityCreated(bundle);
         LiveEventBus.get("gift_free_time", Integer.class).observe(this, new Observer<Integer>() { // from class: com.blued.android.module.yy_china.fragment.YYGiftPageFragment.2
@@ -46,7 +45,6 @@ public class YYGiftPageFragment extends BaseGiftPageFragment {
             /* JADX WARN: Code restructure failed: missing block: B:21:0x00c7, code lost:
                 return;
              */
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
@@ -62,7 +60,7 @@ public class YYGiftPageFragment extends BaseGiftPageFragment {
         });
     }
 
-    @Override // com.blued.android.module.common.fragment.BaseGiftPageFragment, com.blued.android.framework.ui.SimpleFragment
+    @Override // com.blued.android.module.common.fragment.BaseGiftPageFragment
     public int onSetRootViewId() {
         return R.layout.fragment_yy_gift_page;
     }

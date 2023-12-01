@@ -5,28 +5,24 @@ import android.view.View;
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/framework/activity/keyboardpage/SwitchPanelLayoutHandler.class */
 public class SwitchPanelLayoutHandler {
     private final View b;
-
-    /* renamed from: a  reason: collision with root package name */
-    private boolean f9786a = false;
-
-    /* renamed from: c  reason: collision with root package name */
-    private boolean f9787c = false;
+    private boolean a = false;
+    private boolean c = false;
 
     public SwitchPanelLayoutHandler(View view) {
         this.b = view;
     }
 
     public void a(boolean z) {
-        this.f9787c = z;
+        this.c = z;
     }
 
     public boolean a() {
-        return this.f9787c;
+        return this.c;
     }
 
     public boolean a(int i) {
         if (i == 0) {
-            this.f9786a = false;
+            this.a = false;
         }
         if (i == this.b.getVisibility()) {
             return true;
@@ -35,7 +31,7 @@ public class SwitchPanelLayoutHandler {
     }
 
     public int[] a(int i, int i2) {
-        if (this.f9786a) {
+        if (this.a) {
             this.b.setVisibility(8);
             i = View.MeasureSpec.makeMeasureSpec(0, 1073741824);
             i2 = View.MeasureSpec.makeMeasureSpec(0, 1073741824);
@@ -44,6 +40,6 @@ public class SwitchPanelLayoutHandler {
     }
 
     public void b() {
-        this.f9786a = true;
+        this.a = true;
     }
 }

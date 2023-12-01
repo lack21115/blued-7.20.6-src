@@ -4,6 +4,7 @@ import android.content.Context;
 import com.amap.api.services.core.AMapException;
 import com.amap.api.services.district.DistrictResult;
 import com.amap.api.services.district.DistrictSearchQuery;
+import com.android.internal.util.cm.SpamFilter;
 import java.util.ArrayList;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -24,7 +25,7 @@ public final class fg extends ex<DistrictSearchQuery, DistrictResult> {
         DistrictResult districtResult = new DistrictResult((DistrictSearchQuery) this.b, arrayList);
         try {
             JSONObject jSONObject = new JSONObject(str);
-            districtResult.setPageCount(jSONObject.optInt("count"));
+            districtResult.setPageCount(jSONObject.optInt(SpamFilter.SpamContract.NotificationTable.COUNT));
             JSONArray optJSONArray = jSONObject.optJSONArray("districts");
             if (optJSONArray == null) {
                 return districtResult;

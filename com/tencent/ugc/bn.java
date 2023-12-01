@@ -6,11 +6,11 @@ import com.tencent.ugc.TXVideoEditer;
 final /* synthetic */ class bn implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final TXVideoEditer.AnonymousClass4 f40265a;
+    private final TXVideoEditer.AnonymousClass4 f26574a;
     private final float b;
 
     private bn(TXVideoEditer.AnonymousClass4 anonymousClass4, float f) {
-        this.f40265a = anonymousClass4;
+        this.f26574a = anonymousClass4;
         this.b = f;
     }
 
@@ -20,6 +20,6 @@ final /* synthetic */ class bn implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        TXVideoEditer.AnonymousClass4.a(this.f40265a, this.b);
+        TXVideoEditer.AnonymousClass4.a(this.f26574a, this.b);
     }
 }

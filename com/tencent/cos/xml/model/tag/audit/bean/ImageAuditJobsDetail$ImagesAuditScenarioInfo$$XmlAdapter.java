@@ -62,6 +62,7 @@ public class ImageAuditJobsDetail$ImagesAuditScenarioInfo$$XmlAdapter implements
             }
         });
         this.childElementBinders.put("OcrResults", new ChildElementBinder<ImageAuditJobsDetail.ImagesAuditScenarioInfo>() { // from class: com.tencent.cos.xml.model.tag.audit.bean.ImageAuditJobsDetail$ImagesAuditScenarioInfo$$XmlAdapter.7
+            /* JADX WARN: Multi-variable type inference failed */
             @Override // com.tencent.qcloud.qcloudxml.core.ChildElementBinder
             public void fromXml(XmlPullParser xmlPullParser, ImageAuditJobsDetail.ImagesAuditScenarioInfo imagesAuditScenarioInfo, String str) throws IOException, XmlPullParserException {
                 if (imagesAuditScenarioInfo.ocrResults == null) {
@@ -71,6 +72,7 @@ public class ImageAuditJobsDetail$ImagesAuditScenarioInfo$$XmlAdapter implements
             }
         });
         this.childElementBinders.put("ObjectResults", new ChildElementBinder<ImageAuditJobsDetail.ImagesAuditScenarioInfo>() { // from class: com.tencent.cos.xml.model.tag.audit.bean.ImageAuditJobsDetail$ImagesAuditScenarioInfo$$XmlAdapter.8
+            /* JADX WARN: Multi-variable type inference failed */
             @Override // com.tencent.qcloud.qcloudxml.core.ChildElementBinder
             public void fromXml(XmlPullParser xmlPullParser, ImageAuditJobsDetail.ImagesAuditScenarioInfo imagesAuditScenarioInfo, String str) throws IOException, XmlPullParserException {
                 if (imagesAuditScenarioInfo.objectResults == null) {

@@ -6,33 +6,33 @@ import com.tencent.smtt.sdk.TbsMediaPlayer;
 public class e implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    static final /* synthetic */ boolean f40564a = !e.class.desiredAssertionStatus();
+    static final /* synthetic */ boolean f26873a = !e.class.desiredAssertionStatus();
     private final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final Object[] f40565c;
+    private final Object[] f26874c;
 
     public e(int i) {
         this.b = i;
-        this.f40565c = null;
+        this.f26874c = null;
     }
 
     public e(int i, Object[] objArr) {
         this.b = i;
-        this.f40565c = objArr;
+        this.f26874c = objArr;
     }
 
     public final boolean a() {
         int i = this.b;
         if (i == 451 || i == 452) {
-            return com.uc.crashsdk.e.b(this.b, this.f40565c);
+            return com.uc.crashsdk.e.b(this.b, this.f26874c);
         }
         switch (i) {
             case 351:
             case 352:
             case 353:
             case 354:
-                return h.b(i, this.f40565c);
+                return h.b(i, this.f26874c);
             default:
                 switch (i) {
                     case TbsMediaPlayer.TbsMediaPlayerListener.MEDIA_INFO_NO_VIDEO_DATA /* 751 */:
@@ -41,10 +41,10 @@ public class e implements Runnable {
                     case 754:
                     case 755:
                     case 756:
-                        return com.uc.crashsdk.f.a(i, this.f40565c);
+                        return com.uc.crashsdk.f.a(i, this.f26874c);
                     default:
                         a.d("crashsdk", "Unknown sync runnable: " + toString());
-                        if (f40564a) {
+                        if (f26873a) {
                             return false;
                         }
                         throw new AssertionError();
@@ -56,7 +56,7 @@ public class e implements Runnable {
     public void run() {
         int i = this.b;
         if (i == 10) {
-            f.a(i, this.f40565c);
+            f.a(i, this.f26874c);
         } else if (i == 500) {
             d.a(i);
         } else if (i == 700) {
@@ -79,7 +79,7 @@ public class e implements Runnable {
                         case 301:
                         case 302:
                         case 303:
-                            h.a(i, this.f40565c);
+                            h.a(i, this.f26874c);
                             return;
                         default:
                             switch (i) {
@@ -104,13 +104,13 @@ public class e implements Runnable {
                                             break;
                                         default:
                                             a.d("crashsdk", "Unknown async runnable: " + toString());
-                                            if (!f40564a) {
+                                            if (!f26873a) {
                                                 throw new AssertionError();
                                             }
                                             return;
                                     }
                             }
-                            com.uc.crashsdk.e.a(this.b, this.f40565c);
+                            com.uc.crashsdk.e.a(this.b, this.f26874c);
                             return;
                     }
             }

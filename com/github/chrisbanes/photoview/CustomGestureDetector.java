@@ -11,11 +11,11 @@ import android.view.ViewConfiguration;
 public class CustomGestureDetector {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f22041a = -1;
+    private int f8434a = -1;
     private int b = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    private final ScaleGestureDetector f22042c;
+    private final ScaleGestureDetector f8435c;
     private VelocityTracker d;
     private boolean e;
     private float f;
@@ -30,7 +30,7 @@ public class CustomGestureDetector {
         this.i = viewConfiguration.getScaledMinimumFlingVelocity();
         this.h = viewConfiguration.getScaledTouchSlop();
         this.j = onGestureListener;
-        this.f22042c = new ScaleGestureDetector(context, new ScaleGestureDetector.OnScaleGestureListener() { // from class: com.github.chrisbanes.photoview.CustomGestureDetector.1
+        this.f8435c = new ScaleGestureDetector(context, new ScaleGestureDetector.OnScaleGestureListener() { // from class: com.github.chrisbanes.photoview.CustomGestureDetector.1
             @Override // android.view.ScaleGestureDetector.OnScaleGestureListener
             public boolean onScale(ScaleGestureDetector scaleGestureDetector) {
                 float scaleFactor = scaleGestureDetector.getScaleFactor();
@@ -74,7 +74,7 @@ public class CustomGestureDetector {
     private boolean d(MotionEvent motionEvent) {
         int action = motionEvent.getAction() & 255;
         if (action == 0) {
-            this.f22041a = motionEvent.getPointerId(0);
+            this.f8434a = motionEvent.getPointerId(0);
             VelocityTracker obtain = VelocityTracker.obtain();
             this.d = obtain;
             if (obtain != null) {
@@ -84,7 +84,7 @@ public class CustomGestureDetector {
             this.g = c(motionEvent);
             this.e = false;
         } else if (action == 1) {
-            this.f22041a = -1;
+            this.f8434a = -1;
             if (this.e && this.d != null) {
                 this.f = b(motionEvent);
                 this.g = c(motionEvent);
@@ -119,7 +119,7 @@ public class CustomGestureDetector {
                 }
             }
         } else if (action == 3) {
-            this.f22041a = -1;
+            this.f8434a = -1;
             VelocityTracker velocityTracker3 = this.d;
             if (velocityTracker3 != null) {
                 velocityTracker3.recycle();
@@ -127,14 +127,14 @@ public class CustomGestureDetector {
             }
         } else if (action == 6) {
             int a2 = Util.a(motionEvent.getAction());
-            if (motionEvent.getPointerId(a2) == this.f22041a) {
+            if (motionEvent.getPointerId(a2) == this.f8434a) {
                 int i = a2 == 0 ? 1 : 0;
-                this.f22041a = motionEvent.getPointerId(i);
+                this.f8434a = motionEvent.getPointerId(i);
                 this.f = motionEvent.getX(i);
                 this.g = motionEvent.getY(i);
             }
         }
-        int i2 = this.f22041a;
+        int i2 = this.f8434a;
         int i3 = 0;
         if (i2 != -1) {
             i3 = i2;
@@ -144,12 +144,12 @@ public class CustomGestureDetector {
     }
 
     public boolean a() {
-        return this.f22042c.isInProgress();
+        return this.f8435c.isInProgress();
     }
 
     public boolean a(MotionEvent motionEvent) {
         try {
-            this.f22042c.onTouchEvent(motionEvent);
+            this.f8435c.onTouchEvent(motionEvent);
             return d(motionEvent);
         } catch (IllegalArgumentException e) {
             return true;

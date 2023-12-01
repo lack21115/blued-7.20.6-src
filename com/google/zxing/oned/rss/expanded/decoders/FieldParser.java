@@ -6,9 +6,8 @@ import com.huawei.hms.ads.dynamic.a;
 import com.huawei.hms.support.hianalytics.HiAnalyticsConstant;
 import com.tencent.connect.common.Constants;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-7994992-dex2jar.jar:com/google/zxing/oned/rss/expanded/decoders/FieldParser.class */
-public final class FieldParser {
+final class FieldParser {
     private static final Object[][] FOUR_DIGIT_DATA_LENGTH;
     private static final Object[][] THREE_DIGIT_DATA_LENGTH;
     private static final Object[][] THREE_DIGIT_PLUS_DIGIT_DATA_LENGTH;

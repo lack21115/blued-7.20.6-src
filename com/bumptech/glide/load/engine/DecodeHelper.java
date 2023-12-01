@@ -24,11 +24,11 @@ import java.util.Map;
 public final class DecodeHelper<Transcode> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final List<ModelLoader.LoadData<?>> f20745a = new ArrayList();
+    private final List<ModelLoader.LoadData<?>> f7139a = new ArrayList();
     private final List<Key> b = new ArrayList();
 
     /* renamed from: c  reason: collision with root package name */
-    private GlideContext f20746c;
+    private GlideContext f7140c;
     private Object d;
     private int e;
     private int f;
@@ -47,17 +47,17 @@ public final class DecodeHelper<Transcode> {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public <X> Encoder<X> a(X x) throws Registry.NoSourceEncoderAvailableException {
-        return this.f20746c.d().a((Registry) x);
+        return this.f7140c.d().a((Registry) x);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public List<ModelLoader<File, ?>> a(File file) throws Registry.NoModelLoaderAvailableException {
-        return this.f20746c.d().c(file);
+        return this.f7140c.d().c(file);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a() {
-        this.f20746c = null;
+        this.f7140c = null;
         this.d = null;
         this.n = null;
         this.g = null;
@@ -66,7 +66,7 @@ public final class DecodeHelper<Transcode> {
         this.o = null;
         this.j = null;
         this.p = null;
-        this.f20745a.clear();
+        this.f7139a.clear();
         this.l = false;
         this.b.clear();
         this.m = false;
@@ -75,7 +75,7 @@ public final class DecodeHelper<Transcode> {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: Multi-variable type inference failed */
     public <R> void a(GlideContext glideContext, Object obj, Key key, int i, int i2, DiskCacheStrategy diskCacheStrategy, Class<?> cls, Class<R> cls2, Priority priority, Options options, Map<Class<?>, Transformation<?>> map, boolean z, boolean z2, DecodeJob.DiskCacheProvider diskCacheProvider) {
-        this.f20746c = glideContext;
+        this.f7140c = glideContext;
         this.d = obj;
         this.n = key;
         this.e = i;
@@ -101,7 +101,7 @@ public final class DecodeHelper<Transcode> {
             if (i2 >= size) {
                 return false;
             }
-            if (n.get(i2).f20890a.equals(key)) {
+            if (n.get(i2).f7284a.equals(key)) {
                 return true;
             }
             i = i2 + 1;
@@ -110,7 +110,7 @@ public final class DecodeHelper<Transcode> {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public boolean a(Resource<?> resource) {
-        return this.f20746c.d().a(resource);
+        return this.f7140c.d().a(resource);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -121,12 +121,12 @@ public final class DecodeHelper<Transcode> {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public <Z> ResourceEncoder<Z> b(Resource<Z> resource) {
-        return this.f20746c.d().b((Resource) resource);
+        return this.f7140c.d().b((Resource) resource);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public <Data> LoadPath<Data, ?, Transcode> b(Class<Data> cls) {
-        return this.f20746c.d().a(cls, this.g, this.k);
+        return this.f7140c.d().a(cls, this.g, this.k);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -193,7 +193,7 @@ public final class DecodeHelper<Transcode> {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public ArrayPool i() {
-        return this.f20746c.f();
+        return this.f7140c.f();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -208,7 +208,7 @@ public final class DecodeHelper<Transcode> {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public List<Class<?>> l() {
-        return this.f20746c.d().b(this.d.getClass(), this.g, this.k);
+        return this.f7140c.d().b(this.d.getClass(), this.g, this.k);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -220,17 +220,17 @@ public final class DecodeHelper<Transcode> {
     public List<ModelLoader.LoadData<?>> n() {
         if (!this.l) {
             this.l = true;
-            this.f20745a.clear();
-            List c2 = this.f20746c.d().c(this.d);
+            this.f7139a.clear();
+            List c2 = this.f7140c.d().c(this.d);
             int size = c2.size();
             for (int i = 0; i < size; i++) {
                 ModelLoader.LoadData<?> a2 = ((ModelLoader) c2.get(i)).a(this.d, this.e, this.f, this.i);
                 if (a2 != null) {
-                    this.f20745a.add(a2);
+                    this.f7139a.add(a2);
                 }
             }
         }
-        return this.f20745a;
+        return this.f7139a;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -247,8 +247,8 @@ public final class DecodeHelper<Transcode> {
                     break;
                 }
                 ModelLoader.LoadData<?> loadData = n.get(i2);
-                if (!this.b.contains(loadData.f20890a)) {
-                    this.b.add(loadData.f20890a);
+                if (!this.b.contains(loadData.f7284a)) {
+                    this.b.add(loadData.f7284a);
                 }
                 int i3 = 0;
                 while (true) {

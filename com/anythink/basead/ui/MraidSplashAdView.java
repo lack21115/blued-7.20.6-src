@@ -11,9 +11,7 @@ import com.anythink.core.common.k.h;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/ui/MraidSplashAdView.class */
 public class MraidSplashAdView extends BaseSplashAdView {
-
-    /* renamed from: a  reason: collision with root package name */
-    MraidContainerView f6137a;
+    MraidContainerView a;
 
     /* renamed from: com.anythink.basead.ui.MraidSplashAdView$1  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/ui/MraidSplashAdView$1.class */
@@ -68,47 +66,47 @@ public class MraidSplashAdView extends BaseSplashAdView {
     }
 
     static /* synthetic */ void a(MraidSplashAdView mraidSplashAdView) {
-        if (mraidSplashAdView.d.g() && mraidSplashAdView.f6137a == null) {
+        if (mraidSplashAdView.d.g() && mraidSplashAdView.a == null) {
             return;
         }
-        super.a(mraidSplashAdView.f6049c.m.R() < 0 ? 100 : mraidSplashAdView.f6049c.m.R(), new AnonymousClass2());
+        super.a(mraidSplashAdView.c.m.R() < 0 ? 100 : mraidSplashAdView.c.m.R(), new AnonymousClass2());
     }
 
     private void b() {
-        MraidContainerView mraidContainerView = new MraidContainerView(getContext(), this.d, this.f6049c, new AnonymousClass1());
-        this.f6137a = mraidContainerView;
+        MraidContainerView mraidContainerView = new MraidContainerView(getContext(), this.d, this.c, new AnonymousClass1());
+        this.a = mraidContainerView;
         mraidContainerView.setNeedRegisterVolumeChangeReceiver(true);
-        this.f6137a.init();
+        this.a.init();
         FrameLayout frameLayout = (FrameLayout) findViewById(h.a(getContext(), "myoffer_splash_web", "id"));
         if (frameLayout != null) {
-            frameLayout.addView(this.f6137a, new FrameLayout.LayoutParams(-1, -1));
+            frameLayout.addView(this.a, new FrameLayout.LayoutParams(-1, -1));
         }
     }
 
     private void c() {
-        if (this.d.g() && this.f6137a == null) {
+        if (this.d.g() && this.a == null) {
             return;
         }
-        super.a(this.f6049c.m.R() < 0 ? 100 : this.f6049c.m.R(), new AnonymousClass2());
+        super.a(this.c.m.R() < 0 ? 100 : this.c.m.R(), new AnonymousClass2());
     }
 
     @Override // com.anythink.basead.ui.BaseAdView
     protected final void a() {
         LayoutInflater.from(getContext()).inflate(h.a(getContext(), "myoffer_web_splash_ad_layout", "layout"), this);
-        MraidContainerView mraidContainerView = new MraidContainerView(getContext(), this.d, this.f6049c, new AnonymousClass1());
-        this.f6137a = mraidContainerView;
+        MraidContainerView mraidContainerView = new MraidContainerView(getContext(), this.d, this.c, new AnonymousClass1());
+        this.a = mraidContainerView;
         mraidContainerView.setNeedRegisterVolumeChangeReceiver(true);
-        this.f6137a.init();
+        this.a.init();
         FrameLayout frameLayout = (FrameLayout) findViewById(h.a(getContext(), "myoffer_splash_web", "id"));
         if (frameLayout != null) {
-            frameLayout.addView(this.f6137a, new FrameLayout.LayoutParams(-1, -1));
+            frameLayout.addView(this.a, new FrameLayout.LayoutParams(-1, -1));
         }
     }
 
     @Override // com.anythink.basead.ui.BaseSplashAdView, com.anythink.basead.ui.BaseAdView
     public void destroy() {
         super.destroy();
-        MraidContainerView mraidContainerView = this.f6137a;
+        MraidContainerView mraidContainerView = this.a;
         if (mraidContainerView != null) {
             mraidContainerView.release();
         }
@@ -117,7 +115,7 @@ public class MraidSplashAdView extends BaseSplashAdView {
     @Override // android.view.View
     public void onWindowFocusChanged(boolean z) {
         super.onWindowFocusChanged(z);
-        MraidContainerView mraidContainerView = this.f6137a;
+        MraidContainerView mraidContainerView = this.a;
         if (mraidContainerView != null) {
             mraidContainerView.fireMraidIsViewable(z);
         }

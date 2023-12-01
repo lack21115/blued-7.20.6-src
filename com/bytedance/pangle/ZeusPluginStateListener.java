@@ -3,6 +3,7 @@ package com.bytedance.pangle;
 import android.os.Handler;
 import android.os.Looper;
 import android.text.TextUtils;
+import com.huawei.hms.framework.network.grs.GrsBaseInfo;
 import java.util.List;
 
 /* loaded from: source-7206380-dex2jar.jar:com/bytedance/pangle/ZeusPluginStateListener.class */
@@ -29,7 +30,7 @@ public abstract class ZeusPluginStateListener {
                     return;
                 }
                 for (ZeusPluginStateListener zeusPluginStateListener : list) {
-                    zeusPluginStateListener.onPluginStateChange(TextUtils.isEmpty(String.this) ? "UNKNOWN" : String.this, i, objArr);
+                    zeusPluginStateListener.onPluginStateChange(TextUtils.isEmpty(str) ? GrsBaseInfo.CountryCodeSource.UNKNOWN : str, i, objArr);
                 }
             }
         });
@@ -38,7 +39,7 @@ public abstract class ZeusPluginStateListener {
             return;
         }
         for (ZeusPluginStateListener zeusPluginStateListener : list) {
-            zeusPluginStateListener.onStateChangeOnCurThread(TextUtils.isEmpty(str) ? "UNKNOWN" : str, i, objArr);
+            zeusPluginStateListener.onStateChangeOnCurThread(TextUtils.isEmpty(str) ? GrsBaseInfo.CountryCodeSource.UNKNOWN : str, i, objArr);
         }
     }
 

@@ -16,26 +16,18 @@ import okio.Timeout;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-3503164-dex2jar.jar:okhttp3/internal/http2/Http2Reader.class */
 public final class Http2Reader implements Closeable {
-
-    /* renamed from: a  reason: collision with root package name */
-    static final Logger f43944a = Logger.getLogger(Http2.class.getName());
+    static final Logger a = Logger.getLogger(Http2.class.getName());
     final Hpack.Reader b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final BufferedSource f43945c;
+    private final BufferedSource c;
     private final ContinuationSource d;
     private final boolean e;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-3503164-dex2jar.jar:okhttp3/internal/http2/Http2Reader$ContinuationSource.class */
     public static final class ContinuationSource implements Source {
-
-        /* renamed from: a  reason: collision with root package name */
-        int f43946a;
+        int a;
         byte b;
-
-        /* renamed from: c  reason: collision with root package name */
-        int f43947c;
+        int c;
         int d;
         short e;
         private final BufferedSource f;
@@ -45,17 +37,17 @@ public final class Http2Reader implements Closeable {
         }
 
         private void a() throws IOException {
-            int i = this.f43947c;
-            int a2 = Http2Reader.a(this.f);
-            this.d = a2;
-            this.f43946a = a2;
+            int i = this.c;
+            int a = Http2Reader.a(this.f);
+            this.d = a;
+            this.a = a;
             byte readByte = (byte) (this.f.readByte() & 255);
             this.b = (byte) (this.f.readByte() & 255);
-            if (Http2Reader.f43944a.isLoggable(Level.FINE)) {
-                Http2Reader.f43944a.fine(Http2.a(true, this.f43947c, this.f43946a, readByte, this.b));
+            if (Http2Reader.a.isLoggable(Level.FINE)) {
+                Http2Reader.a.fine(Http2.a(true, this.c, this.a, readByte, this.b));
             }
             int readInt = this.f.readInt() & Integer.MAX_VALUE;
-            this.f43947c = readInt;
+            this.c = readInt;
             if (readByte != 9) {
                 throw Http2.b("%s != TYPE_CONTINUATION", Byte.valueOf(readByte));
             }
@@ -121,7 +113,7 @@ public final class Http2Reader implements Closeable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public Http2Reader(BufferedSource bufferedSource, boolean z) {
-        this.f43945c = bufferedSource;
+        this.c = bufferedSource;
         this.e = z;
         ContinuationSource continuationSource = new ContinuationSource(bufferedSource);
         this.d = continuationSource;
@@ -146,17 +138,17 @@ public final class Http2Reader implements Closeable {
     private List<Header> a(int i, short s, byte b, int i2) throws IOException {
         ContinuationSource continuationSource = this.d;
         continuationSource.d = i;
-        continuationSource.f43946a = i;
+        continuationSource.a = i;
         this.d.e = s;
         this.d.b = b;
-        this.d.f43947c = i2;
+        this.d.c = i2;
         this.b.a();
         return this.b.b();
     }
 
     private void a(Handler handler, int i) throws IOException {
-        int readInt = this.f43945c.readInt();
-        handler.a(i, readInt & Integer.MAX_VALUE, (this.f43945c.readByte() & 255) + 1, (Integer.MIN_VALUE & readInt) != 0);
+        int readInt = this.c.readInt();
+        handler.a(i, readInt & Integer.MAX_VALUE, (this.c.readByte() & 255) + 1, (Integer.MIN_VALUE & readInt) != 0);
     }
 
     private void a(Handler handler, int i, byte b, int i2) throws IOException {
@@ -166,7 +158,7 @@ public final class Http2Reader implements Closeable {
         }
         boolean z = (b & 1) != 0;
         if ((b & 8) != 0) {
-            s = (short) (this.f43945c.readByte() & 255);
+            s = (short) (this.c.readByte() & 255);
         }
         int i3 = i;
         if ((b & 32) != 0) {
@@ -190,10 +182,10 @@ public final class Http2Reader implements Closeable {
             throw Http2.b("PROTOCOL_ERROR: FLAG_COMPRESSED without SETTINGS_COMPRESS_DATA", new Object[0]);
         }
         if ((b & 8) != 0) {
-            s = (short) (this.f43945c.readByte() & 255);
+            s = (short) (this.c.readByte() & 255);
         }
-        handler.a(z2, i2, this.f43945c, a(i, b, s));
-        this.f43945c.skip(s);
+        handler.a(z2, i2, this.c, a(i, b, s));
+        this.c.skip(s);
     }
 
     private void c(Handler handler, int i, byte b, int i2) throws IOException {
@@ -213,7 +205,7 @@ public final class Http2Reader implements Closeable {
         if (i2 == 0) {
             throw Http2.b("TYPE_RST_STREAM streamId == 0", new Object[0]);
         }
-        int readInt = this.f43945c.readInt();
+        int readInt = this.c.readInt();
         ErrorCode a2 = ErrorCode.a(readInt);
         if (a2 == null) {
             throw Http2.b("TYPE_RST_STREAM unexpected error code: %d", Integer.valueOf(readInt));
@@ -242,9 +234,9 @@ public final class Http2Reader implements Closeable {
             throw Http2.b("PROTOCOL_ERROR: TYPE_PUSH_PROMISE streamId == 0", new Object[0]);
         }
         if ((b & 8) != 0) {
-            s = (short) (this.f43945c.readByte() & 255);
+            s = (short) (this.c.readByte() & 255);
         }
-        handler.a(i2, this.f43945c.readInt() & Integer.MAX_VALUE, a(a(i - 4, b, s), s, b, i2));
+        handler.a(i2, this.c.readInt() & Integer.MAX_VALUE, a(a(i - 4, b, s), s, b, i2));
     }
 
     private void g(Handler handler, int i, byte b, int i2) throws IOException {
@@ -255,8 +247,8 @@ public final class Http2Reader implements Closeable {
         if (i2 != 0) {
             throw Http2.b("TYPE_PING streamId != 0", new Object[0]);
         }
-        int readInt = this.f43945c.readInt();
-        int readInt2 = this.f43945c.readInt();
+        int readInt = this.c.readInt();
+        int readInt2 = this.c.readInt();
         if ((b & 1) != 0) {
             z = true;
         }
@@ -270,8 +262,8 @@ public final class Http2Reader implements Closeable {
         if (i2 != 0) {
             throw Http2.b("TYPE_GOAWAY streamId != 0", new Object[0]);
         }
-        int readInt = this.f43945c.readInt();
-        int readInt2 = this.f43945c.readInt();
+        int readInt = this.c.readInt();
+        int readInt2 = this.c.readInt();
         int i3 = i - 8;
         ErrorCode a2 = ErrorCode.a(readInt2);
         if (a2 == null) {
@@ -279,7 +271,7 @@ public final class Http2Reader implements Closeable {
         }
         ByteString byteString = ByteString.EMPTY;
         if (i3 > 0) {
-            byteString = this.f43945c.readByteString(i3);
+            byteString = this.c.readByteString(i3);
         }
         handler.a(readInt, a2, byteString);
     }
@@ -288,7 +280,7 @@ public final class Http2Reader implements Closeable {
         if (i != 4) {
             throw Http2.b("TYPE_WINDOW_UPDATE length !=4: %s", Integer.valueOf(i));
         }
-        long readInt = this.f43945c.readInt() & 2147483647L;
+        long readInt = this.c.readInt() & 2147483647L;
         if (readInt == 0) {
             throw Http2.b("windowSizeIncrement was 0", Long.valueOf(readInt));
         }
@@ -302,28 +294,28 @@ public final class Http2Reader implements Closeable {
             }
             return;
         }
-        ByteString readByteString = this.f43945c.readByteString(Http2.f43913a.size());
-        if (f43944a.isLoggable(Level.FINE)) {
-            f43944a.fine(Util.a("<< CONNECTION %s", readByteString.hex()));
+        ByteString readByteString = this.c.readByteString(Http2.a.size());
+        if (a.isLoggable(Level.FINE)) {
+            a.fine(Util.a("<< CONNECTION %s", readByteString.hex()));
         }
-        if (!Http2.f43913a.equals(readByteString)) {
+        if (!Http2.a.equals(readByteString)) {
             throw Http2.b("Expected a connection header but was %s", readByteString.utf8());
         }
     }
 
     public boolean a(boolean z, Handler handler) throws IOException {
         try {
-            this.f43945c.require(9L);
-            int a2 = a(this.f43945c);
+            this.c.require(9L);
+            int a2 = a(this.c);
             if (a2 < 0 || a2 > 16384) {
                 throw Http2.b("FRAME_SIZE_ERROR: %s", Integer.valueOf(a2));
             }
-            byte readByte = (byte) (this.f43945c.readByte() & 255);
+            byte readByte = (byte) (this.c.readByte() & 255);
             if (!z || readByte == 4) {
-                byte readByte2 = (byte) (this.f43945c.readByte() & 255);
-                int readInt = this.f43945c.readInt() & Integer.MAX_VALUE;
-                if (f43944a.isLoggable(Level.FINE)) {
-                    f43944a.fine(Http2.a(true, readInt, a2, readByte, readByte2));
+                byte readByte2 = (byte) (this.c.readByte() & 255);
+                int readInt = this.c.readInt() & Integer.MAX_VALUE;
+                if (a.isLoggable(Level.FINE)) {
+                    a.fine(Http2.a(true, readInt, a2, readByte, readByte2));
                 }
                 switch (readByte) {
                     case 0:
@@ -354,7 +346,7 @@ public final class Http2Reader implements Closeable {
                         i(handler, a2, readByte2, readInt);
                         return true;
                     default:
-                        this.f43945c.skip(a2);
+                        this.c.skip(a2);
                         return true;
                 }
             }
@@ -366,6 +358,6 @@ public final class Http2Reader implements Closeable {
 
     @Override // java.io.Closeable, java.lang.AutoCloseable
     public void close() throws IOException {
-        this.f43945c.close();
+        this.c.close();
     }
 }

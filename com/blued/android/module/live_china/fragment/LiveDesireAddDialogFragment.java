@@ -38,13 +38,9 @@ import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveDesireAddDialogFragment.class */
 public class LiveDesireAddDialogFragment extends BaseDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public Context f12809a;
+    public Context a;
     public Observer<Boolean> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private View f12810c;
+    private View c;
     private View d;
     private View e;
     private TextView f;
@@ -64,7 +60,7 @@ public class LiveDesireAddDialogFragment extends BaseDialogFragment {
     }
 
     public LiveDesireAddDialogFragment(Context context, AddDesireCallBack addDesireCallBack) {
-        this.f12809a = context;
+        this.a = context;
         this.m = addDesireCallBack;
         LiveDesireLiseModel liveDesireLiseModel = new LiveDesireLiseModel();
         this.n = liveDesireLiseModel;
@@ -75,7 +71,7 @@ public class LiveDesireAddDialogFragment extends BaseDialogFragment {
     public /* synthetic */ void a(int i) {
         this.n.count = i;
         this.i.setText(String.valueOf(i));
-        this.i.setTextColor(this.f12809a.getResources().getColor(R.color.syc_dark_0a0a0a));
+        this.i.setTextColor(this.a.getResources().getColor(R.color.syc_dark_0a0a0a));
         e();
     }
 
@@ -145,7 +141,7 @@ public class LiveDesireAddDialogFragment extends BaseDialogFragment {
         this.n.gift_info.name = liveDesireSelectGiftModel.name;
         this.n.gift_info.beans = liveDesireSelectGiftModel.beans;
         this.g.setText(liveDesireSelectGiftModel.name);
-        this.g.setTextColor(this.f12809a.getResources().getColor(R.color.syc_dark_0a0a0a));
+        this.g.setTextColor(this.a.getResources().getColor(R.color.syc_dark_0a0a0a));
         e();
     }
 
@@ -156,7 +152,7 @@ public class LiveDesireAddDialogFragment extends BaseDialogFragment {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void b(View view) {
-        LiveDesireSelectGiftDialogFragment liveDesireSelectGiftDialogFragment = new LiveDesireSelectGiftDialogFragment(this.f12809a, this.n.gift_info.id, new LiveDesireSelectGiftDialogFragment.SelectGiftCallBack() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveDesireAddDialogFragment$fDcz4TrXlDUeCQoMVabscN1sKL8
+        LiveDesireSelectGiftDialogFragment liveDesireSelectGiftDialogFragment = new LiveDesireSelectGiftDialogFragment(this.a, this.n.gift_info.id, new LiveDesireSelectGiftDialogFragment.SelectGiftCallBack() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveDesireAddDialogFragment$fDcz4TrXlDUeCQoMVabscN1sKL8
             @Override // com.blued.android.module.live_china.fragment.LiveDesireSelectGiftDialogFragment.SelectGiftCallBack
             public final void selectGift(LiveDesireSelectGiftModel liveDesireSelectGiftModel) {
                 LiveDesireAddDialogFragment.this.a(liveDesireSelectGiftModel);
@@ -174,7 +170,7 @@ public class LiveDesireAddDialogFragment extends BaseDialogFragment {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void c(View view) {
-        LiveDesireGiftNumberDialogFragment liveDesireGiftNumberDialogFragment = new LiveDesireGiftNumberDialogFragment(this.f12809a, this.n.count, new LiveDesireGiftNumberDialogFragment.SelectGiftNumberCallBack() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveDesireAddDialogFragment$ZDz0RpRoVHdgNm846ALgB-6d7so
+        LiveDesireGiftNumberDialogFragment liveDesireGiftNumberDialogFragment = new LiveDesireGiftNumberDialogFragment(this.a, this.n.count, new LiveDesireGiftNumberDialogFragment.SelectGiftNumberCallBack() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveDesireAddDialogFragment$ZDz0RpRoVHdgNm846ALgB-6d7so
             @Override // com.blued.android.module.live_china.fragment.LiveDesireGiftNumberDialogFragment.SelectGiftNumberCallBack
             public final void selectGiftNumber(int i) {
                 LiveDesireAddDialogFragment.this.a(i);
@@ -191,7 +187,7 @@ public class LiveDesireAddDialogFragment extends BaseDialogFragment {
     }
 
     private void d() {
-        this.f12810c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveDesireAddDialogFragment$M9aaLRdQSo2Bp2s8hHn140rJxq0
+        this.c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveDesireAddDialogFragment$M9aaLRdQSo2Bp2s8hHn140rJxq0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 LiveDesireAddDialogFragment.this.e(view);
@@ -259,7 +255,6 @@ public class LiveDesireAddDialogFragment extends BaseDialogFragment {
         dismiss();
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public void dismiss() {
         LiveEventBus.get("desire_dialog_show", Boolean.class).post(true);
         super.dismiss();
@@ -274,9 +269,8 @@ public class LiveDesireAddDialogFragment extends BaseDialogFragment {
         return super.onBackPressed();
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
-        this.f12809a = getActivity();
+        this.a = getActivity();
         View inflate = getActivity().getLayoutInflater().inflate(R.layout.dialog_live_desire_adddesire, (ViewGroup) null);
         int height = getActivity().getWindowManager().getDefaultDisplay().getHeight();
         Dialog dialog = new Dialog(getActivity(), R.style.transparentFrameWindowStyleLive);
@@ -298,11 +292,11 @@ public class LiveDesireAddDialogFragment extends BaseDialogFragment {
         return dialog;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(0));
         final View inflate = layoutInflater.inflate(R.layout.dialog_live_desire_adddesire, viewGroup);
-        this.f12810c = inflate.findViewById(R.id.rl_root);
+        this.c = inflate.findViewById(R.id.rl_root);
         this.d = inflate.findViewById(R.id.loading);
         this.e = inflate.findViewById(R.id.iv_back);
         this.f = (TextView) inflate.findViewById(R.id.tv_confirm);
@@ -310,16 +304,15 @@ public class LiveDesireAddDialogFragment extends BaseDialogFragment {
         this.h = inflate.findViewById(R.id.iv_select_gift);
         this.i = (TextView) inflate.findViewById(R.id.tv_gift_number);
         this.j = inflate.findViewById(R.id.iv_gift_number);
-        this.l = (SmartRefreshLayout) inflate.findViewById(R.id.smart_refresh);
+        this.l = inflate.findViewById(R.id.smart_refresh);
         this.k = (EditText) inflate.findViewById(R.id.et_repay_mode);
         d();
         this.l.c(false);
-        this.l.l(false);
+        this.l.b(false);
         this.l.f(true);
         this.l.e(true);
         this.l.g(true);
         this.b = new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveDesireAddDialogFragment$PEdy8-JSWKpkJiq1Nb5rdfLbxVQ
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 LiveDesireAddDialogFragment.a(View.this, (Boolean) obj);
             }
@@ -327,12 +320,12 @@ public class LiveDesireAddDialogFragment extends BaseDialogFragment {
         return inflate;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onDestroy() {
         super.onDestroy();
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void show(FragmentManager fragmentManager, String str) {
         try {
             ReflectionUtils.a(this, "mDismissed", false);

@@ -13,13 +13,9 @@ import kotlin.jvm.functions.Function4;
 @DebugMetadata(b = "Errors.kt", c = {124}, d = "invokeSuspend", e = "kotlinx.coroutines.flow.FlowKt__ErrorsKt$retry$3")
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt__ErrorsKt$retry$3.class */
 final class FlowKt__ErrorsKt$retry$3<T> extends SuspendLambda implements Function4<FlowCollector<? super T>, Throwable, Long, Continuation<? super Boolean>, Object> {
-
-    /* renamed from: a  reason: collision with root package name */
-    int f43181a;
+    int a;
     /* synthetic */ Object b;
-
-    /* renamed from: c  reason: collision with root package name */
-    /* synthetic */ long f43182c;
+    /* synthetic */ long c;
     final /* synthetic */ long d;
     final /* synthetic */ Function2<Throwable, Continuation<? super Boolean>, Object> e;
 
@@ -34,8 +30,8 @@ final class FlowKt__ErrorsKt$retry$3<T> extends SuspendLambda implements Functio
     public final Object a(FlowCollector<? super T> flowCollector, Throwable th, long j, Continuation<? super Boolean> continuation) {
         FlowKt__ErrorsKt$retry$3 flowKt__ErrorsKt$retry$3 = new FlowKt__ErrorsKt$retry$3(this.d, this.e, continuation);
         flowKt__ErrorsKt$retry$3.b = th;
-        flowKt__ErrorsKt$retry$3.f43182c = j;
-        return flowKt__ErrorsKt$retry$3.invokeSuspend(Unit.f42314a);
+        flowKt__ErrorsKt$retry$3.c = j;
+        return flowKt__ErrorsKt$retry$3.invokeSuspend(Unit.a);
     }
 
     @Override // kotlin.jvm.functions.Function4
@@ -57,7 +53,7 @@ final class FlowKt__ErrorsKt$retry$3<T> extends SuspendLambda implements Functio
             java.lang.Object r0 = kotlin.coroutines.intrinsics.IntrinsicsKt.a()
             r10 = r0
             r0 = r5
-            int r0 = r0.f43181a
+            int r0 = r0.a
             r7 = r0
             r0 = 1
             r8 = r0
@@ -83,7 +79,7 @@ final class FlowKt__ErrorsKt$retry$3<T> extends SuspendLambda implements Functio
             java.lang.Throwable r0 = (java.lang.Throwable) r0
             r6 = r0
             r0 = r5
-            long r0 = r0.f43182c
+            long r0 = r0.c
             r1 = r5
             long r1 = r1.d
             int r0 = (r0 > r1 ? 1 : (r0 == r1 ? 0 : -1))
@@ -93,7 +89,7 @@ final class FlowKt__ErrorsKt$retry$3<T> extends SuspendLambda implements Functio
             r9 = r0
             r0 = r5
             r1 = 1
-            r0.f43181a = r1
+            r0.a = r1
             r0 = r9
             r1 = r6
             r2 = r5

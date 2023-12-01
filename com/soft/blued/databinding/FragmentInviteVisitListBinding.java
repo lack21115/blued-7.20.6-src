@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentInviteVisitListBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final FrameLayout f28855a;
+    private final FrameLayout f15165a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f28855a;
+        return this.f15165a;
     }
 }

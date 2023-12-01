@@ -10,11 +10,11 @@ import java.util.Iterator;
 public abstract class c implements s {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ArrayList<s.b> f7437a = new ArrayList<>(1);
+    private final ArrayList<s.b> f4598a = new ArrayList<>(1);
     private final t.a b = new t.a();
 
     /* renamed from: c  reason: collision with root package name */
-    private com.anythink.expressad.exoplayer.h f7438c;
+    private com.anythink.expressad.exoplayer.h f4599c;
     private com.anythink.expressad.exoplayer.ae d;
     private Object e;
 
@@ -43,7 +43,7 @@ public abstract class c implements s {
     public final void a(com.anythink.expressad.exoplayer.ae aeVar, Object obj) {
         this.d = aeVar;
         this.e = obj;
-        Iterator<s.b> it = this.f7437a.iterator();
+        Iterator<s.b> it = this.f4598a.iterator();
         while (it.hasNext()) {
             it.next().a(this, aeVar, obj);
         }
@@ -51,9 +51,9 @@ public abstract class c implements s {
 
     @Override // com.anythink.expressad.exoplayer.h.s
     public final void a(s.b bVar) {
-        this.f7437a.remove(bVar);
-        if (this.f7437a.isEmpty()) {
-            this.f7438c = null;
+        this.f4598a.remove(bVar);
+        if (this.f4598a.isEmpty()) {
+            this.f4599c = null;
             this.d = null;
             this.e = null;
             a();
@@ -69,11 +69,11 @@ public abstract class c implements s {
 
     @Override // com.anythink.expressad.exoplayer.h.s
     public final void a(com.anythink.expressad.exoplayer.h hVar, boolean z, s.b bVar) {
-        com.anythink.expressad.exoplayer.h hVar2 = this.f7438c;
+        com.anythink.expressad.exoplayer.h hVar2 = this.f4599c;
         com.anythink.expressad.exoplayer.k.a.a(hVar2 == null || hVar2 == hVar);
-        this.f7437a.add(bVar);
-        if (this.f7438c == null) {
-            this.f7438c = hVar;
+        this.f4598a.add(bVar);
+        if (this.f4599c == null) {
+            this.f4599c = hVar;
             a(hVar, z);
             return;
         }

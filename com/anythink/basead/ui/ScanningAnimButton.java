@@ -8,9 +8,7 @@ import android.widget.Button;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/ui/ScanningAnimButton.class */
 public class ScanningAnimButton extends Button {
-
-    /* renamed from: a  reason: collision with root package name */
-    ValueAnimator f6168a;
+    ValueAnimator a;
 
     public ScanningAnimButton(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
@@ -56,11 +54,11 @@ public class ScanningAnimButton extends Button {
     }
 
     public void startAnimation() {
-        if (this.f6168a == null) {
+        if (this.a == null) {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(1.0f, 0.95f);
-            this.f6168a = ofFloat;
+            this.a = ofFloat;
             ofFloat.setDuration(500L);
-            this.f6168a.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.anythink.basead.ui.ScanningAnimButton.1
+            this.a.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.anythink.basead.ui.ScanningAnimButton.1
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
                     float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
@@ -68,17 +66,17 @@ public class ScanningAnimButton extends Button {
                     ScanningAnimButton.this.setScaleY(floatValue);
                 }
             });
-            this.f6168a.setRepeatMode(2);
-            this.f6168a.setRepeatCount(-1);
+            this.a.setRepeatMode(2);
+            this.a.setRepeatCount(-1);
         }
-        if (this.f6168a.isStarted()) {
+        if (this.a.isStarted()) {
             return;
         }
-        this.f6168a.start();
+        this.a.start();
     }
 
     public void stopAnimation() {
-        ValueAnimator valueAnimator = this.f6168a;
+        ValueAnimator valueAnimator = this.a;
         if (valueAnimator != null) {
             valueAnimator.cancel();
         }

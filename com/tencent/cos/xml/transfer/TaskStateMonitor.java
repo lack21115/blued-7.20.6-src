@@ -28,9 +28,8 @@ public final class TaskStateMonitor implements Runnable {
     private volatile boolean isRunning = false;
     private ExecutorService executorService = Executors.newSingleThreadExecutor();
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/cos/xml/transfer/TaskStateMonitor$StructMsg.class */
-    public class StructMsg {
+    class StructMsg {
         COSXMLTask cosxmlTask;
         Exception exception;
         CosXmlResult result;

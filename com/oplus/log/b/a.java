@@ -10,7 +10,7 @@ import java.util.List;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public List<c> f24314a;
+    public List<c> f10627a;
     public Application.ActivityLifecycleCallbacks b = new Application.ActivityLifecycleCallbacks() { // from class: com.oplus.log.b.a.1
         @Override // android.app.Application.ActivityLifecycleCallbacks
         public final void onActivityCreated(Activity activity, Bundle bundle) {
@@ -26,10 +26,10 @@ public final class a {
 
         @Override // android.app.Application.ActivityLifecycleCallbacks
         public final void onActivityResumed(Activity activity) {
-            if (a.this.f24314a == null || a.this.f24314a.size() <= 0) {
+            if (a.this.f10627a == null || a.this.f10627a.size() <= 0) {
                 return;
             }
-            for (c cVar : a.this.f24314a) {
+            for (c cVar : a.this.f10627a) {
                 cVar.a(activity);
             }
         }
@@ -44,10 +44,10 @@ public final class a {
 
         @Override // android.app.Application.ActivityLifecycleCallbacks
         public final void onActivityStopped(Activity activity) {
-            if (a.this.f24314a == null || a.this.f24314a.size() <= 0) {
+            if (a.this.f10627a == null || a.this.f10627a.size() <= 0) {
                 return;
             }
-            for (c cVar : a.this.f24314a) {
+            for (c cVar : a.this.f10627a) {
                 cVar.b(activity);
             }
         }

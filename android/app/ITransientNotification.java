@@ -15,9 +15,8 @@ public interface ITransientNotification extends IInterface {
         static final int TRANSACTION_hide_1 = 2;
         static final int TRANSACTION_show_0 = 1;
 
-        /* JADX INFO: Access modifiers changed from: private */
         /* loaded from: source-9557208-dex2jar.jar:android/app/ITransientNotification$Stub$Proxy.class */
-        public static class Proxy implements ITransientNotification {
+        private static class Proxy implements ITransientNotification {
             private IBinder mRemote;
 
             Proxy(IBinder iBinder) {

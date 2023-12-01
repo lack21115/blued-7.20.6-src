@@ -34,11 +34,11 @@ public abstract class HuaweiApiClient implements AidlApiClient {
     public static final class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        private final Context f22590a;
+        private final Context f8982a;
         private final List<Scope> b = new ArrayList();
 
         /* renamed from: c  reason: collision with root package name */
-        private final List<PermissionInfo> f22591c = new ArrayList();
+        private final List<PermissionInfo> f8983c = new ArrayList();
         private final Map<Api<?>, Api.ApiOptions> d = new HashMap();
         private OnConnectionFailedListener e;
         private ConnectionCallbacks f;
@@ -48,7 +48,7 @@ public abstract class HuaweiApiClient implements AidlApiClient {
         public Builder(Context context) throws NullPointerException {
             Checker.checkNonNull(context, "context must not be null.");
             Context applicationContext = context.getApplicationContext();
-            this.f22590a = applicationContext;
+            this.f8982a = applicationContext;
             this.g = -1;
             ResourceLoaderUtil.setmContext(applicationContext);
             a(context);
@@ -66,7 +66,7 @@ public abstract class HuaweiApiClient implements AidlApiClient {
             this.d.put(api, null);
             if (HuaweiApiAvailability.HMS_API_NAME_GAME.equals(api.getApiName())) {
                 HiAnalyticsUtil hiAnalyticsUtil = HiAnalyticsUtil.getInstance();
-                Context applicationContext = this.f22590a.getApplicationContext();
+                Context applicationContext = this.f8982a.getApplicationContext();
                 hiAnalyticsUtil.onEvent(applicationContext, HiAnalyticsConstant.KeyAndValue.GAME_INIT_KEY, "|" + System.currentTimeMillis());
             }
             return this;
@@ -78,7 +78,7 @@ public abstract class HuaweiApiClient implements AidlApiClient {
             this.d.put(api, o);
             if (api.getOptions() != null) {
                 this.b.addAll(api.getOptions().getScopeList(o));
-                this.f22591c.addAll(api.getOptions().getPermissionInfoList(o));
+                this.f8983c.addAll(api.getOptions().getPermissionInfoList(o));
             }
             return this;
         }
@@ -90,7 +90,7 @@ public abstract class HuaweiApiClient implements AidlApiClient {
             this.d.put(api, o);
             if (api.getOptions() != null) {
                 this.b.addAll(api.getOptions().getScopeList(o));
-                this.f22591c.addAll(api.getOptions().getPermissionInfoList(o));
+                this.f8983c.addAll(api.getOptions().getPermissionInfoList(o));
             }
             this.b.addAll(new ArrayList(Arrays.asList(scopeArr)));
             return this;
@@ -141,9 +141,9 @@ public abstract class HuaweiApiClient implements AidlApiClient {
 
         public HuaweiApiClient build() {
             addApi(new Api<>("Core.API"));
-            HuaweiApiClientImpl huaweiApiClientImpl = new HuaweiApiClientImpl(this.f22590a);
+            HuaweiApiClientImpl huaweiApiClientImpl = new HuaweiApiClientImpl(this.f8982a);
             huaweiApiClientImpl.setScopes(this.b);
-            huaweiApiClientImpl.setPermissionInfos(this.f22591c);
+            huaweiApiClientImpl.setPermissionInfos(this.f8983c);
             huaweiApiClientImpl.setApiMap(this.d);
             huaweiApiClientImpl.setConnectionCallbacks(this.f);
             huaweiApiClientImpl.setConnectionFailedListener(this.e);

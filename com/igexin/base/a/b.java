@@ -6,12 +6,13 @@ import java.util.List;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-7994992-dex2jar.jar:com/igexin/base/a/b.class */
-final class b implements Runnable {
+public final class b implements Runnable {
     private static b b;
 
     /* renamed from: a  reason: collision with root package name */
-    final List<c> f23205a = new ArrayList();
+    final List<c> f9597a = new ArrayList();
 
     private b() {
         Executors.newScheduledThreadPool(1).scheduleWithFixedDelay(this, 5L, 5L, TimeUnit.SECONDS);
@@ -49,9 +50,9 @@ final class b implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        for (c cVar : this.f23205a) {
+        for (c cVar : this.f9597a) {
             if (cVar.isEnabled()) {
-                if (cVar.f23206a.size() >= cVar.b || SystemClock.elapsedRealtime() - cVar.d >= cVar.f23207c) {
+                if (cVar.f9598a.size() >= cVar.b || SystemClock.elapsedRealtime() - cVar.d >= cVar.f9599c) {
                     a(cVar);
                     cVar.d = SystemClock.elapsedRealtime();
                 }

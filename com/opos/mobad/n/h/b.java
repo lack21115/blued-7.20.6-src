@@ -19,18 +19,18 @@ import com.opos.mobad.n.a;
 public class b extends RelativeLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    private c f26950a;
+    private c f13262a;
     private com.opos.mobad.n.c.f b;
 
     /* renamed from: c  reason: collision with root package name */
-    private RelativeLayout f26951c;
+    private RelativeLayout f13263c;
     private LinearLayout d;
     private TextView e;
     private TextView f;
     private j g;
     private boolean h;
     private boolean i;
-    private a.InterfaceC0708a j;
+    private a.InterfaceC0538a j;
 
     public b(Context context) {
         super(context);
@@ -51,8 +51,8 @@ public class b extends RelativeLayout {
         } else {
             this.i = true;
             int a2 = com.opos.cmn.an.h.f.a.a(getContext(), 44.0f);
-            aVar.a(gVar.f26633a, gVar.b, a2, a2, new a.InterfaceC0676a() { // from class: com.opos.mobad.n.h.b.2
-                @Override // com.opos.mobad.c.a.InterfaceC0676a
+            aVar.a(gVar.f12945a, gVar.b, a2, a2, new a.InterfaceC0506a() { // from class: com.opos.mobad.n.h.b.2
+                @Override // com.opos.mobad.c.a.InterfaceC0506a
                 public void a(int i, final Bitmap bitmap) {
                     if (b.this.h) {
                         return;
@@ -122,20 +122,20 @@ public class b extends RelativeLayout {
         int a2 = com.opos.cmn.an.h.f.a.a(getContext(), 16.0f);
         setPadding(a2, a2, a2, a2);
         RelativeLayout relativeLayout = new RelativeLayout(getContext());
-        this.f26951c = relativeLayout;
+        this.f13263c = relativeLayout;
         relativeLayout.setId(View.generateViewId());
         int a3 = com.opos.cmn.an.h.f.a.a(getContext(), 0.33f);
-        this.f26951c.setPadding(a3, a3, a3, a3);
-        this.f26951c.setBackgroundResource(R.drawable.opos_mobad_drawable_block_icon_stroke);
+        this.f13263c.setPadding(a3, a3, a3, a3);
+        this.f13263c.setBackgroundResource(R.drawable.opos_mobad_drawable_block_icon_stroke);
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(getContext(), 44.0f), com.opos.cmn.an.h.f.a.a(getContext(), 44.0f));
         layoutParams.addRule(15);
-        this.f26951c.setVisibility(0);
+        this.f13263c.setVisibility(0);
         com.opos.mobad.n.c.f fVar = new com.opos.mobad.n.c.f(getContext(), com.opos.cmn.an.h.f.a.a(getContext(), 12.0f));
         this.b = fVar;
         fVar.setScaleType(ImageView.ScaleType.FIT_XY);
         RelativeLayout.LayoutParams layoutParams2 = new RelativeLayout.LayoutParams(-1, -1);
         c a4 = c.a(context, "");
-        this.f26950a = a4;
+        this.f13262a = a4;
         a4.setId(View.generateViewId());
         RelativeLayout.LayoutParams layoutParams3 = new RelativeLayout.LayoutParams(-2, -2);
         layoutParams3.addRule(15);
@@ -145,11 +145,11 @@ public class b extends RelativeLayout {
         layoutParams4.addRule(15);
         layoutParams4.leftMargin = com.opos.cmn.an.h.f.a.a(getContext(), 8.0f);
         layoutParams4.rightMargin = com.opos.cmn.an.h.f.a.a(getContext(), 8.0f);
-        layoutParams4.addRule(1, this.f26951c.getId());
-        layoutParams4.addRule(0, this.f26950a.getId());
-        this.f26951c.addView(this.b, layoutParams2);
-        addView(this.f26951c, layoutParams);
-        addView(this.f26950a, layoutParams3);
+        layoutParams4.addRule(1, this.f13263c.getId());
+        layoutParams4.addRule(0, this.f13262a.getId());
+        this.f13263c.addView(this.b, layoutParams2);
+        addView(this.f13263c, layoutParams);
+        addView(this.f13262a, layoutParams3);
         addView(this.d, layoutParams4);
         com.opos.mobad.n.c.g gVar = new com.opos.mobad.n.c.g() { // from class: com.opos.mobad.n.h.b.1
             @Override // com.opos.mobad.n.c.g
@@ -168,29 +168,29 @@ public class b extends RelativeLayout {
         this.h = true;
     }
 
-    public void a(a.InterfaceC0708a interfaceC0708a) {
-        com.opos.cmn.an.f.a.b("RewardBottomAreaView", "setListener " + interfaceC0708a);
-        this.j = interfaceC0708a;
-        this.f26950a.a(interfaceC0708a);
-        this.g.a(interfaceC0708a);
+    public void a(a.InterfaceC0538a interfaceC0538a) {
+        com.opos.cmn.an.f.a.b("RewardBottomAreaView", "setListener " + interfaceC0538a);
+        this.j = interfaceC0538a;
+        this.f13262a.a(interfaceC0538a);
+        this.g.a(interfaceC0538a);
     }
 
     public void a(com.opos.mobad.n.d.d dVar) {
         com.opos.mobad.n.d.a aVar = dVar.v;
-        if (aVar == null || TextUtils.isEmpty(aVar.f26626a) || TextUtils.isEmpty(aVar.b)) {
+        if (aVar == null || TextUtils.isEmpty(aVar.f12938a) || TextUtils.isEmpty(aVar.b)) {
             this.f.setVisibility(0);
             return;
         }
         j jVar = this.g;
         if (jVar != null) {
             jVar.setVisibility(0);
-            this.g.a(aVar.f26626a, aVar.b);
+            this.g.a(aVar.f12938a, aVar.b);
         }
     }
 
     public void a(com.opos.mobad.n.d.g gVar, String str, String str2, String str3, com.opos.mobad.c.a aVar) {
         if (!TextUtils.isEmpty(str)) {
-            this.f26950a.setText(str);
+            this.f13262a.setText(str);
         }
         if (!TextUtils.isEmpty(str2)) {
             this.e.setText(str2);
@@ -198,12 +198,12 @@ public class b extends RelativeLayout {
         if (!TextUtils.isEmpty(str3)) {
             this.f.setText(str3);
         }
-        if (gVar != null && !TextUtils.isEmpty(gVar.f26633a)) {
-            this.f26951c.setVisibility(0);
+        if (gVar != null && !TextUtils.isEmpty(gVar.f12945a)) {
+            this.f13263c.setVisibility(0);
             a(gVar, aVar);
             return;
         }
-        this.f26951c.setVisibility(8);
+        this.f13263c.setVisibility(8);
         RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) this.d.getLayoutParams();
         layoutParams.leftMargin = 0;
         layoutParams.width = -1;

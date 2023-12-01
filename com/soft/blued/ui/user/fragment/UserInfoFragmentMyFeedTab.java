@@ -21,18 +21,18 @@ import com.blued.community.model.FeedParse;
 import com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView;
 import com.bytedance.applog.tracker.Tracker;
 import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.soft.blued.R;
 import com.soft.blued.http.MineHttpUtils;
-import java.util.Collection;
 
 /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/user/fragment/UserInfoFragmentMyFeedTab.class */
 public class UserInfoFragmentMyFeedTab extends BaseFragment implements View.OnClickListener {
 
     /* renamed from: a  reason: collision with root package name */
-    public Context f34007a;
+    public Context f20316a;
     public View b;
 
     /* renamed from: c  reason: collision with root package name */
-    public PullToRefreshRecyclerView f34008c;
+    public PullToRefreshRecyclerView f20317c;
     public RecyclerView d;
     public FeedListAdapterForRecyclerView e;
     private NoDataAndLoadFailView g;
@@ -42,7 +42,7 @@ public class UserInfoFragmentMyFeedTab extends BaseFragment implements View.OnCl
     BluedUIHttpResponse f = new BluedUIHttpResponse<BluedEntity<BluedIngSelfFeed, BluedEntityBaseExtra>>(getFragmentActive()) { // from class: com.soft.blued.ui.user.fragment.UserInfoFragmentMyFeedTab.3
 
         /* renamed from: a  reason: collision with root package name */
-        boolean f34011a = false;
+        boolean f20320a = false;
 
         private void a(BluedEntity<BluedIngSelfFeed, BluedEntityBaseExtra> bluedEntity, boolean z) {
             if (bluedEntity == null || bluedEntity.data == null || bluedEntity.data.size() <= 0) {
@@ -58,51 +58,45 @@ public class UserInfoFragmentMyFeedTab extends BaseFragment implements View.OnCl
             if (UserInfoFragmentMyFeedTab.this.h == 1) {
                 UserInfoFragmentMyFeedTab.this.e.setNewData(bluedEntity.data);
             } else {
-                UserInfoFragmentMyFeedTab.this.e.addData((Collection<? extends BluedIngSelfFeed>) bluedEntity.data);
+                UserInfoFragmentMyFeedTab.this.e.addData(bluedEntity.data);
             }
             UserInfoFragmentMyFeedTab.this.e.notifyDataSetChanged();
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUICache(BluedEntity<BluedIngSelfFeed, BluedEntityBaseExtra> bluedEntity) {
             a(bluedEntity, true);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public boolean onUIFailure(int i, String str) {
-            this.f34011a = true;
+            this.f20320a = true;
             if (UserInfoFragmentMyFeedTab.this.h != 1) {
                 UserInfoFragmentMyFeedTab.b(UserInfoFragmentMyFeedTab.this);
             }
             return super.onUIFailure(i, str);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIFinish() {
             if (UserInfoFragmentMyFeedTab.this.e.getItemCount() != 1) {
                 UserInfoFragmentMyFeedTab.this.g.d();
-            } else if (this.f34011a) {
+            } else if (this.f20320a) {
                 UserInfoFragmentMyFeedTab.this.g.b();
             } else {
                 UserInfoFragmentMyFeedTab.this.g.a();
             }
-            this.f34011a = false;
+            this.f20320a = false;
             UserInfoFragmentMyFeedTab.this.e.notifyDataSetChanged();
             UserInfoFragmentMyFeedTab.this.e.loadMoreComplete();
-            UserInfoFragmentMyFeedTab.this.f34008c.j();
+            UserInfoFragmentMyFeedTab.this.f20317c.j();
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIStart() {
             super.onUIStart();
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIUpdate(BluedEntity<BluedIngSelfFeed, BluedEntityBaseExtra> bluedEntity) {
             a(bluedEntity, false);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public BluedEntity<BluedIngSelfFeed, BluedEntityBaseExtra> parseData(String str) {
             BluedEntity<BluedIngSelfFeed, BluedEntityBaseExtra> parseData = super.parseData(str);
             if (parseData != null) {
@@ -110,7 +104,7 @@ public class UserInfoFragmentMyFeedTab extends BaseFragment implements View.OnCl
                     return parseData;
                 }
                 for (BluedIngSelfFeed bluedIngSelfFeed : parseData.data) {
-                    bluedIngSelfFeed.feedParse = new FeedParse(UserInfoFragmentMyFeedTab.this.f34007a, bluedIngSelfFeed, 11);
+                    bluedIngSelfFeed.feedParse = new FeedParse(UserInfoFragmentMyFeedTab.this.f20316a, bluedIngSelfFeed, 11);
                 }
             }
             return parseData;
@@ -127,21 +121,21 @@ public class UserInfoFragmentMyFeedTab extends BaseFragment implements View.OnCl
     }
 
     private void b() {
-        NoDataAndLoadFailView noDataAndLoadFailView = new NoDataAndLoadFailView(this.f34007a);
+        NoDataAndLoadFailView noDataAndLoadFailView = new NoDataAndLoadFailView(this.f20316a);
         this.g = noDataAndLoadFailView;
         noDataAndLoadFailView.d();
         this.g.setImageScale(0.7f);
-        this.g.setTopSpace(DensityUtils.a(this.f34007a, 58.0f));
-        PullToRefreshRecyclerView pullToRefreshRecyclerView = (PullToRefreshRecyclerView) this.b.findViewById(2131373425);
-        this.f34008c = pullToRefreshRecyclerView;
-        pullToRefreshRecyclerView.setRefreshEnabled(true);
-        RecyclerView refreshableView = this.f34008c.getRefreshableView();
-        this.d = refreshableView;
-        FeedListAdapterForRecyclerView feedListAdapterForRecyclerView = new FeedListAdapterForRecyclerView(this.f34007a, this, refreshableView, 11);
+        this.g.setTopSpace(DensityUtils.a(this.f20316a, 58.0f));
+        PullToRefreshRecyclerView findViewById = this.b.findViewById(R.id.wrapper);
+        this.f20317c = findViewById;
+        findViewById.setRefreshEnabled(true);
+        RecyclerView recyclerView = (RecyclerView) this.f20317c.getRefreshableView();
+        this.d = recyclerView;
+        RecyclerView.Adapter feedListAdapterForRecyclerView = new FeedListAdapterForRecyclerView(this.f20316a, this, recyclerView, 11);
         this.e = feedListAdapterForRecyclerView;
         this.d.setAdapter(feedListAdapterForRecyclerView);
         this.e.setEmptyView(this.g);
-        this.d.setLayoutManager(new GridLayoutManager(this.f34007a, 1));
+        this.d.setLayoutManager(new GridLayoutManager(this.f20316a, 1));
         this.e.setEnableLoadMore(true);
         this.e.setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() { // from class: com.soft.blued.ui.user.fragment.UserInfoFragmentMyFeedTab.1
             @Override // com.chad.library.adapter.base.BaseQuickAdapter.RequestLoadMoreListener
@@ -149,13 +143,12 @@ public class UserInfoFragmentMyFeedTab extends BaseFragment implements View.OnCl
                 UserInfoFragmentMyFeedTab.this.a(false);
             }
         });
-        this.f34008c.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener<RecyclerView>() { // from class: com.soft.blued.ui.user.fragment.UserInfoFragmentMyFeedTab.2
-            @Override // com.blued.android.framework.view.pulltorefresh.PullToRefreshBase.OnRefreshListener
+        this.f20317c.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener<RecyclerView>() { // from class: com.soft.blued.ui.user.fragment.UserInfoFragmentMyFeedTab.2
             public void onRefresh(PullToRefreshBase<RecyclerView> pullToRefreshBase) {
                 UserInfoFragmentMyFeedTab.this.a(true);
             }
         });
-        this.f34008c.k();
+        this.f20317c.k();
     }
 
     public void a(boolean z) {
@@ -169,7 +162,7 @@ public class UserInfoFragmentMyFeedTab extends BaseFragment implements View.OnCl
             this.h = i - 1;
             return;
         }
-        MineHttpUtils.b(this.f34007a, this.f, UserInfo.getInstance().getLoginUserInfo().uid, this.h + "", this.i + "", getFragmentActive());
+        MineHttpUtils.b(this.f20316a, this.f, UserInfo.getInstance().getLoginUserInfo().uid, this.h + "", this.i + "", getFragmentActive());
     }
 
     @Override // android.view.View.OnClickListener
@@ -181,12 +174,11 @@ public class UserInfoFragmentMyFeedTab extends BaseFragment implements View.OnCl
         getActivity().finish();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.f34007a = getActivity();
+        this.f20316a = getActivity();
         View view = this.b;
         if (view == null) {
-            this.b = layoutInflater.inflate(2131559000, viewGroup, false);
+            this.b = layoutInflater.inflate(R.layout.fragment_circle_pubish_respond, viewGroup, false);
             a();
             b();
         } else if (view.getParent() != null) {

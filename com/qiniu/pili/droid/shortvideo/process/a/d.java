@@ -15,7 +15,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f27767a;
+    private Context f14079a;
     private int d;
     private int e;
     private String f;
@@ -34,12 +34,12 @@ public class d {
     private boolean b = false;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f27768c = true;
+    private boolean f14080c = true;
     private boolean s = true;
     private ConcurrentHashMap<String, Runnable> t = new ConcurrentHashMap<>();
 
     public d(Context context) {
-        this.f27767a = context;
+        this.f14079a = context;
         QosManager.a(context).a(QosManager.KeyPoint.filter_init);
     }
 
@@ -65,7 +65,7 @@ public class d {
         Bitmap bitmap = pLWatermarkSetting.getBitmap();
         Bitmap bitmap2 = bitmap;
         if (bitmap == null) {
-            bitmap2 = BitmapFactory.decodeResource(this.f27767a.getResources(), pLWatermarkSetting.getResourceId());
+            bitmap2 = BitmapFactory.decodeResource(this.f14079a.getResources(), pLWatermarkSetting.getResourceId());
         }
         com.qiniu.pili.droid.shortvideo.gl.c.d dVar = new com.qiniu.pili.droid.shortvideo.gl.c.d(bitmap2);
         dVar.a(pLWatermarkSetting.getAlpha() / 255.0f);
@@ -238,14 +238,14 @@ public class d {
                 String str2 = str;
                 if (str2 != null) {
                     d.this.f = str2;
-                    d.this.f27768c = z;
-                    if (d.this.f27768c) {
+                    d.this.f14080c = z;
+                    if (d.this.f14080c) {
                         d dVar = d.this;
-                        Context context = dVar.f27767a;
+                        Context context = dVar.f14079a;
                         dVar.m = new com.qiniu.pili.droid.shortvideo.c.a.a(context, "filters/" + str + "/filter.png", true);
                     } else {
                         d dVar2 = d.this;
-                        dVar2.m = new com.qiniu.pili.droid.shortvideo.c.a.a(dVar2.f27767a, str, false);
+                        dVar2.m = new com.qiniu.pili.droid.shortvideo.c.a.a(dVar2.f14079a, str, false);
                     }
                     d.this.m.a(d.this.d, d.this.e);
                     if (d.this.m.b()) {
@@ -285,7 +285,7 @@ public class d {
 
     public PLBuiltinFilter[] a() {
         try {
-            String[] list = this.f27767a.getAssets().list("filters");
+            String[] list = this.f14079a.getAssets().list("filters");
             if (list == null) {
                 return null;
             }
@@ -404,7 +404,7 @@ public class d {
     }
 
     public boolean c() {
-        return this.f27768c;
+        return this.f14080c;
     }
 
     public String d() {

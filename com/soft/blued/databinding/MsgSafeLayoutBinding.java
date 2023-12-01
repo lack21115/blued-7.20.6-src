@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class MsgSafeLayoutBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29477a;
+    private final LinearLayout f15787a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29477a;
+        return this.f15787a;
     }
 }

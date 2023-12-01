@@ -2,7 +2,7 @@ package android.net.nsd;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.alipay.sdk.util.i;
+import com.anythink.expressad.exoplayer.b;
 import java.io.UnsupportedEncodingException;
 import java.util.Arrays;
 
@@ -238,7 +238,7 @@ public class DnsSdTxtRecord implements Parcelable {
             i = 0;
         }
         try {
-            byte[] bytes = str.getBytes("US-ASCII");
+            byte[] bytes = str.getBytes(b.i);
             int i2 = 0;
             while (true) {
                 int i3 = i2;
@@ -278,7 +278,7 @@ public class DnsSdTxtRecord implements Parcelable {
             }
             String str2 = "{" + key;
             String valueAsString = getValueAsString(i);
-            String str3 = valueAsString != null ? str2 + "=" + valueAsString + i.d : str2 + i.d;
+            String str3 = valueAsString != null ? str2 + "=" + valueAsString + "}" : str2 + "}";
             if (str != null) {
                 str3 = str + ", " + str3;
             }

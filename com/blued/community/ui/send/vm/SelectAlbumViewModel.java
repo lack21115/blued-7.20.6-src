@@ -18,32 +18,28 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/send/vm/SelectAlbumViewModel.class */
 public final class SelectAlbumViewModel extends BaseViewModel {
-
-    /* renamed from: a  reason: collision with root package name */
-    private int f20098a;
+    private int a;
     private final MutableLiveData<Integer> b = new MutableLiveData<>();
-
-    /* renamed from: c  reason: collision with root package name */
-    private final MutableLiveData<AlbumSelectInfo> f20099c = new MutableLiveData<>();
+    private final MutableLiveData<AlbumSelectInfo> c = new MutableLiveData<>();
     private final MutableLiveData<Intent> d = new MutableLiveData<>();
     private final MutableLiveData<String> e = new MutableLiveData<>();
     private boolean f = true;
     private final MutableLiveData<Boolean> g = new MutableLiveData<>();
 
     public final void a(int i) {
-        this.f20098a = i;
+        this.a = i;
     }
 
     public final void a(String imagePath) {
         Intrinsics.e(imagePath, "imagePath");
-        if (this.f20099c.getValue() == null) {
-            this.f20099c.setValue(new AlbumSelectInfo());
+        if (this.c.getValue() == null) {
+            this.c.setValue(new AlbumSelectInfo());
         }
         MediaInfo mediaInfo = new MediaInfo();
         mediaInfo.imagePath = imagePath;
-        AlbumSelectInfo value = this.f20099c.getValue();
+        Object value = this.c.getValue();
         Intrinsics.a(value);
-        value.b(mediaInfo);
+        ((AlbumSelectInfo) value).b(mediaInfo);
     }
 
     public final void c(boolean z) {
@@ -51,7 +47,7 @@ public final class SelectAlbumViewModel extends BaseViewModel {
     }
 
     public final int d() {
-        int i = this.f20098a;
+        int i = this.a;
         return i > 0 ? i : AppInfo.m - StatusBarHelper.a(AppInfo.d());
     }
 
@@ -60,7 +56,7 @@ public final class SelectAlbumViewModel extends BaseViewModel {
     }
 
     public final MutableLiveData<AlbumSelectInfo> f() {
-        return this.f20099c;
+        return this.c;
     }
 
     public final MutableLiveData<Intent> g() {
@@ -80,11 +76,11 @@ public final class SelectAlbumViewModel extends BaseViewModel {
     }
 
     public final String k() {
-        List<MediaInfo> c2;
+        List<MediaInfo> c;
         StringBuilder sb = new StringBuilder();
-        AlbumSelectInfo value = this.f20099c.getValue();
-        if (value != null && (c2 = value.c()) != null) {
-            for (MediaInfo mediaInfo : c2) {
+        AlbumSelectInfo albumSelectInfo = (AlbumSelectInfo) this.c.getValue();
+        if (albumSelectInfo != null && (c = albumSelectInfo.c()) != null) {
+            for (MediaInfo mediaInfo : c) {
                 if (!TextUtils.isEmpty(mediaInfo.imagePath)) {
                     sb.append(mediaInfo.imagePath);
                     sb.append(",");

@@ -11,20 +11,16 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/LiveGiftGalleryBinding.class */
 public final class LiveGiftGalleryBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final LiveGiftGalleryHeaderBinding f12218a;
+    public final LiveGiftGalleryHeaderBinding a;
     public final LinearLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final RecyclerView f12219c;
+    public final RecyclerView c;
     private final RelativeLayout d;
 
     private LiveGiftGalleryBinding(RelativeLayout relativeLayout, LiveGiftGalleryHeaderBinding liveGiftGalleryHeaderBinding, LinearLayout linearLayout, RecyclerView recyclerView) {
         this.d = relativeLayout;
-        this.f12218a = liveGiftGalleryHeaderBinding;
+        this.a = liveGiftGalleryHeaderBinding;
         this.b = linearLayout;
-        this.f12219c = recyclerView;
+        this.c = recyclerView;
     }
 
     public static LiveGiftGalleryBinding a(LayoutInflater layoutInflater) {
@@ -43,12 +39,12 @@ public final class LiveGiftGalleryBinding implements ViewBinding {
         String str;
         View findViewById = view.findViewById(R.id.header_root);
         if (findViewById != null) {
-            LiveGiftGalleryHeaderBinding a2 = LiveGiftGalleryHeaderBinding.a(findViewById);
+            LiveGiftGalleryHeaderBinding a = LiveGiftGalleryHeaderBinding.a(findViewById);
             LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.ll_default);
             if (linearLayout != null) {
-                RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rv_list);
-                if (recyclerView != null) {
-                    return new LiveGiftGalleryBinding((RelativeLayout) view, a2, linearLayout, recyclerView);
+                RecyclerView findViewById2 = view.findViewById(R.id.rv_list);
+                if (findViewById2 != null) {
+                    return new LiveGiftGalleryBinding((RelativeLayout) view, a, linearLayout, findViewById2);
                 }
                 str = "rvList";
             } else {
@@ -60,7 +56,6 @@ public final class LiveGiftGalleryBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
         return this.d;

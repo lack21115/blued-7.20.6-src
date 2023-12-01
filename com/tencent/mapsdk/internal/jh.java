@@ -17,15 +17,15 @@ public class jh implements lh {
             ArcLineOverlayProvider arcLineOverlayProvider = new ArcLineOverlayProvider();
             if (c4Var.b.b.b != null) {
                 ArrayList arrayList = new ArrayList();
-                for (g4.a.C0957a.AbstractC0958a abstractC0958a : c4Var.b.b.b) {
-                    if (abstractC0958a instanceof g4.a.C0957a.b) {
-                        g4.a.C0957a.b bVar = (g4.a.C0957a.b) abstractC0958a;
-                        arrayList.add(new FromToLatLng(bVar.f37460c.get(0), bVar.f37460c.get(1)));
+                for (g4.a.C0787a.AbstractC0788a abstractC0788a : c4Var.b.b.b) {
+                    if (abstractC0788a instanceof g4.a.C0787a.b) {
+                        g4.a.C0787a.b bVar = (g4.a.C0787a.b) abstractC0788a;
+                        arrayList.add(new FromToLatLng(bVar.f23769c.get(0), bVar.f23769c.get(1)));
                     }
                 }
                 arcLineOverlayProvider.data(arrayList);
             }
-            g4.c.e eVar = c4Var.b.f37339c.f37340c.f37343a.f37347a.f37345c;
+            g4.c.e eVar = c4Var.b.f23648c.f23649c.f23652a.f23656a.f23654c;
             if (eVar != null) {
                 int size = eVar.b.size();
                 int[] iArr = new int[size];
@@ -35,28 +35,28 @@ public class jh implements lh {
                     if (i2 >= size) {
                         break;
                     }
-                    iArr[i2] = c4Var.b.f37339c.f37340c.f37343a.f37347a.f37345c.b.get(i2).intValue();
+                    iArr[i2] = c4Var.b.f23648c.f23649c.f23652a.f23656a.f23654c.b.get(i2).intValue();
                     i = i2 + 1;
                 }
                 arcLineOverlayProvider.gradient(iArr);
             }
-            arcLineOverlayProvider.width(c4Var.b.f37339c.f37340c.f37343a.f37347a.f37344a);
-            arcLineOverlayProvider.radian((float) (c4Var.b.f37339c.f37340c.f37343a.f37347a.b * 90.0d));
-            c4.a.C0951a.C0952a c0952a = c4Var.b.f37339c.d;
-            arcLineOverlayProvider.zoomRange(c0952a.f, c0952a.e);
-            arcLineOverlayProvider.zIndex(c4Var.b.f37339c.d.b);
-            arcLineOverlayProvider.displayLevel(c4Var.b.f37339c.d.f37466a);
-            arcLineOverlayProvider.enable3D(c4Var.b.f37339c.d.h);
-            arcLineOverlayProvider.opacity((float) c4Var.b.f37339c.d.d);
-            arcLineOverlayProvider.visibility(!c4Var.b.f37339c.d.f37467c);
-            c4.a.C0951a.C0952a c0952a2 = c4Var.b.f37339c.d;
-            if (!c0952a2.i) {
+            arcLineOverlayProvider.width(c4Var.b.f23648c.f23649c.f23652a.f23656a.f23653a);
+            arcLineOverlayProvider.radian((float) (c4Var.b.f23648c.f23649c.f23652a.f23656a.b * 90.0d));
+            c4.a.C0781a.C0782a c0782a = c4Var.b.f23648c.d;
+            arcLineOverlayProvider.zoomRange(c0782a.f, c0782a.e);
+            arcLineOverlayProvider.zIndex(c4Var.b.f23648c.d.b);
+            arcLineOverlayProvider.displayLevel(c4Var.b.f23648c.d.f23775a);
+            arcLineOverlayProvider.enable3D(c4Var.b.f23648c.d.h);
+            arcLineOverlayProvider.opacity((float) c4Var.b.f23648c.d.d);
+            arcLineOverlayProvider.visibility(!c4Var.b.f23648c.d.f23776c);
+            c4.a.C0781a.C0782a c0782a2 = c4Var.b.f23648c.d;
+            if (!c0782a2.i) {
                 arcLineOverlayProvider.setAnimateDuration(0);
                 return arcLineOverlayProvider;
             }
-            arcLineOverlayProvider.setAnimateDuration((int) (c0952a2.j.f37342c * 1000.0d));
-            arcLineOverlayProvider.setHighlightDuration((int) (c4Var.b.f37339c.d.j.f37341a * 1000.0d));
-            arcLineOverlayProvider.animateColor(c4Var.b.f37339c.d.j.b);
+            arcLineOverlayProvider.setAnimateDuration((int) (c0782a2.j.f23651c * 1000.0d));
+            arcLineOverlayProvider.setHighlightDuration((int) (c4Var.b.f23648c.d.j.f23650a * 1000.0d));
+            arcLineOverlayProvider.animateColor(c4Var.b.f23648c.d.j.b);
             return arcLineOverlayProvider;
         }
         return null;

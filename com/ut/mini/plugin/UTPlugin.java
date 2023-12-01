@@ -10,11 +10,11 @@ public abstract class UTPlugin {
     public static final int MSG_ID_OUT_AGGREGATED_LOG_MAP = 65536;
 
     /* renamed from: a  reason: collision with root package name */
-    private UTPluginContext f41027a = null;
+    private UTPluginContext f27336a = null;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a(UTPluginContext uTPluginContext) {
-        this.f41027a = uTPluginContext;
+        this.f27336a = uTPluginContext;
     }
 
     public final void deliverMsgToSDK(int i, Object obj) {
@@ -22,7 +22,7 @@ public abstract class UTPlugin {
     }
 
     public final UTPluginContext getPluginContext() {
-        return this.f41027a;
+        return this.f27336a;
     }
 
     public void onPluginContextValueUpdate(int i) {

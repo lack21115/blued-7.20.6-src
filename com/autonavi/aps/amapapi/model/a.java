@@ -260,7 +260,6 @@ public final class a extends AMapLocation {
         return this.k;
     }
 
-    @Override // com.amap.api.location.AMapLocation
     public final JSONObject toJson(int i) {
         try {
             JSONObject json = super.toJson(i);
@@ -287,12 +286,10 @@ public final class a extends AMapLocation {
         }
     }
 
-    @Override // com.amap.api.location.AMapLocation
     public final String toStr() {
         return toStr(1);
     }
 
-    @Override // com.amap.api.location.AMapLocation
     public final String toStr(int i) {
         JSONObject jSONObject;
         try {

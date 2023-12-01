@@ -14,13 +14,9 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/send/view/AlbumTabsView.class */
 public class AlbumTabsView extends FrameLayout implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    private View f20081a;
+    private View a;
     private View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private RelativeLayout f20082c;
+    private RelativeLayout c;
     private RelativeLayout d;
     private RelativeLayout e;
     private TextView f;
@@ -54,7 +50,7 @@ public class AlbumTabsView extends FrameLayout implements View.OnClickListener {
     private void a() {
         View inflate = LayoutInflater.from(getContext()).inflate(R.layout.album_tabs_v, (ViewGroup) null);
         RelativeLayout relativeLayout = (RelativeLayout) inflate.findViewById(R.id.album_tab);
-        this.f20082c = relativeLayout;
+        this.c = relativeLayout;
         relativeLayout.setOnClickListener(this);
         RelativeLayout relativeLayout2 = (RelativeLayout) inflate.findViewById(R.id.shortvideo_tab);
         this.d = relativeLayout2;
@@ -62,14 +58,14 @@ public class AlbumTabsView extends FrameLayout implements View.OnClickListener {
         this.e = (RelativeLayout) inflate.findViewById(R.id.camera_tab);
         this.f = (TextView) inflate.findViewById(R.id.album);
         this.g = (TextView) inflate.findViewById(R.id.shortvideo);
-        this.f20081a = inflate.findViewById(R.id.album_icon);
+        this.a = inflate.findViewById(R.id.album_icon);
         this.b = inflate.findViewById(R.id.shortvideo_icon);
         addView(inflate);
     }
 
     private void b() {
         this.f.setSelected(true);
-        this.f20081a.setVisibility(0);
+        this.a.setVisibility(0);
         this.g.setSelected(false);
         this.b.setVisibility(4);
     }
@@ -78,7 +74,7 @@ public class AlbumTabsView extends FrameLayout implements View.OnClickListener {
         this.g.setSelected(true);
         this.b.setVisibility(0);
         this.f.setSelected(false);
-        this.f20081a.setVisibility(4);
+        this.a.setVisibility(4);
     }
 
     public void a(ITabsClickListener iTabsClickListener, boolean z, int i) {

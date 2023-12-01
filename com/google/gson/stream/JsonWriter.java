@@ -1,5 +1,6 @@
 package com.google.gson.stream;
 
+import com.huawei.hms.ads.fw;
 import com.igexin.push.core.b;
 import java.io.Closeable;
 import java.io.Flushable;
@@ -411,7 +412,7 @@ public class JsonWriter implements Closeable, Flushable {
         }
         writeDeferredName();
         beforeValue();
-        this.out.write(bool.booleanValue() ? "true" : "false");
+        this.out.write(bool.booleanValue() ? fw.Code : "false");
         return this;
     }
 
@@ -442,7 +443,7 @@ public class JsonWriter implements Closeable, Flushable {
     public JsonWriter value(boolean z) throws IOException {
         writeDeferredName();
         beforeValue();
-        this.out.write(z ? "true" : "false");
+        this.out.write(z ? fw.Code : "false");
         return this;
     }
 }

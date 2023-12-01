@@ -14,27 +14,27 @@ public final class a {
     private static int b = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    private static int f7078c = 1;
+    private static int f4240c = 1;
 
     /* renamed from: a  reason: collision with root package name */
-    private String f7079a;
+    private String f4241a;
     private String d;
     private String e;
     private WindVaneWebView f;
 
     /* renamed from: com.anythink.expressad.atsignalcommon.c.a$a  reason: collision with other inner class name */
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/atsignalcommon/c/a$a.class */
-    static final class C0116a {
+    static final class C0045a {
 
         /* renamed from: a  reason: collision with root package name */
-        static a f7080a = new a((byte) 0);
+        static a f4242a = new a((byte) 0);
 
-        private C0116a() {
+        private C0045a() {
         }
     }
 
     private a() {
-        this.f7079a = "ShakeCacheManager";
+        this.f4241a = "ShakeCacheManager";
     }
 
     /* synthetic */ a(byte b2) {
@@ -42,7 +42,7 @@ public final class a {
     }
 
     public static a a() {
-        return C0116a.f7080a;
+        return C0045a.f4242a;
     }
 
     private void a(Object obj, WebView webView, String str, String str2) {
@@ -72,12 +72,12 @@ public final class a {
     private void a(Object obj, String str, JSONObject jSONObject) {
         try {
             JSONObject jSONObject2 = new JSONObject();
-            jSONObject2.put("code", f7078c);
+            jSONObject2.put("code", f4240c);
             jSONObject2.put("message", str);
             jSONObject2.put("data", jSONObject);
             j.a().a(obj, Base64.encodeToString(jSONObject2.toString().getBytes(), 2));
         } catch (Exception e) {
-            o.a(this.f7079a, e.getMessage());
+            o.a(this.f4241a, e.getMessage());
         }
     }
 
@@ -90,7 +90,7 @@ public final class a {
             j.a().a(obj, Base64.encodeToString(jSONObject2.toString().getBytes(), 2));
         } catch (Exception e) {
             a(obj, e.getMessage(), new JSONObject());
-            o.a(this.f7079a, e.getMessage());
+            o.a(this.f4241a, e.getMessage());
         }
     }
 

@@ -18,40 +18,40 @@ public class mh implements lh {
     public BaseOverlayProvider a(g4 g4Var) {
         if ((g4Var instanceof h4) && g4Var.a()) {
             h4 h4Var = (h4) g4Var;
-            g4.a.C0957a.c cVar = (g4.a.C0957a.c) h4Var.b.b.b.get(0);
+            g4.a.C0787a.c cVar = (g4.a.C0787a.c) h4Var.b.b.b.get(0);
             if (TextUtils.isEmpty(cVar.b)) {
                 return null;
             }
-            LatLng latLng = h4Var.b.f37512c.f37513c.f37514a.f37517a.f37515a;
+            LatLng latLng = h4Var.b.f23821c.f23822c.f23823a.f23826a.f23824a;
             GLModelOverlayProvider gLModelOverlayProvider = new GLModelOverlayProvider(cVar.b, new LatLng(latLng.latitude, latLng.longitude, latLng.altitude));
-            List<Double> list = h4Var.b.f37512c.f37513c.f37514a.f37517a.b;
+            List<Double> list = h4Var.b.f23821c.f23822c.f23823a.f23826a.b;
             if (list != null && list.size() == 3) {
                 gLModelOverlayProvider.rotationX(list.get(0).floatValue() + 90.0f).rotationY(list.get(1).floatValue()).rotationZ(list.get(2).floatValue());
             }
-            gLModelOverlayProvider.latLngBounds(h4Var.b.f37512c.f37513c.f37514a.f37517a.f);
-            if (h4Var.b.f37512c.f37513c.f37514a.f37517a.d) {
+            gLModelOverlayProvider.latLngBounds(h4Var.b.f23821c.f23822c.f23823a.f23826a.f);
+            if (h4Var.b.f23821c.f23822c.f23823a.f23826a.d) {
                 gLModelOverlayProvider.coordType(GLModelOverlayProvider.CoordType.GeoGraphicType);
-                gLModelOverlayProvider.scale(h4Var.b.f37512c.f37513c.f37514a.f37517a.f37516c);
+                gLModelOverlayProvider.scale(h4Var.b.f23821c.f23822c.f23823a.f23826a.f23825c);
             } else {
                 gLModelOverlayProvider.coordType(GLModelOverlayProvider.CoordType.PixelType);
-                List<Integer> list2 = h4Var.b.f37512c.f37513c.f37514a.f37517a.e;
+                List<Integer> list2 = h4Var.b.f23821c.f23822c.f23823a.f23826a.e;
                 if (list2 != null && list2.size() == 2) {
                     gLModelOverlayProvider.pixelBounds(list2.get(0).intValue(), list2.get(1).intValue());
                 }
             }
-            int i = h4Var.b.f37512c.f37513c.f37514a.f37517a.g.f37472a;
+            int i = h4Var.b.f23821c.f23822c.f23823a.f23826a.g.f23781a;
             if (i == 0) {
                 gLModelOverlayProvider.animateType(GLModelOverlayProvider.AnimationType.None);
             } else if (i == 1) {
                 gLModelOverlayProvider.animateType(GLModelOverlayProvider.AnimationType.FlattenRise);
             }
-            gLModelOverlayProvider.setExposure((float) h4Var.b.f37512c.f37513c.f37514a.f37517a.h);
-            h4.a.C0961a.C0962a c0962a = h4Var.b.f37512c.d;
-            gLModelOverlayProvider.zoomRange(c0962a.f, c0962a.e);
-            gLModelOverlayProvider.zIndex(h4Var.b.f37512c.d.b);
-            gLModelOverlayProvider.displayLevel(h4Var.b.f37512c.d.f37466a);
-            gLModelOverlayProvider.opacity((float) h4Var.b.f37512c.d.d);
-            gLModelOverlayProvider.visibility(!h4Var.b.f37512c.d.f37467c);
+            gLModelOverlayProvider.setExposure((float) h4Var.b.f23821c.f23822c.f23823a.f23826a.h);
+            h4.a.C0791a.C0792a c0792a = h4Var.b.f23821c.d;
+            gLModelOverlayProvider.zoomRange(c0792a.f, c0792a.e);
+            gLModelOverlayProvider.zIndex(h4Var.b.f23821c.d.b);
+            gLModelOverlayProvider.displayLevel(h4Var.b.f23821c.d.f23775a);
+            gLModelOverlayProvider.opacity((float) h4Var.b.f23821c.d.d);
+            gLModelOverlayProvider.visibility(!h4Var.b.f23821c.d.f23776c);
             return gLModelOverlayProvider;
         }
         return null;
@@ -62,7 +62,7 @@ public class mh implements lh {
         h4 h4Var = g4Var;
         if (g4Var instanceof h4) {
             h4 h4Var2 = (h4) g4Var;
-            g4.a.C0957a.c cVar = (g4.a.C0957a.c) h4Var2.b.b.b.get(0);
+            g4.a.C0787a.c cVar = (g4.a.C0787a.c) h4Var2.b.b.b.get(0);
             String str2 = str + "/model/";
             na.a(ma.x, "# 2次处理数据缓存根目录: [" + str2 + "]");
             StringBuilder sb = new StringBuilder();
@@ -73,13 +73,13 @@ public class mh implements lh {
             na.a(ma.x, "# 2次处理数据缓存目标文件: [" + file.getAbsolutePath() + "]");
             if (!file.exists()) {
                 if (!TextUtils.isEmpty(cVar.d) && !cVar.d.equals(com.igexin.push.core.b.l)) {
-                    cVar.f37461c = cVar.d;
+                    cVar.f23770c = cVar.d;
                 }
-                na.a(ma.x, "2次处理数据请求url: [" + cVar.f37461c + "]");
-                NetResponse doGet = NetManager.getInstance().builder().url(cVar.f37461c).doGet();
+                na.a(ma.x, "2次处理数据请求url: [" + cVar.f23770c + "]");
+                NetResponse doGet = NetManager.getInstance().builder().url(cVar.f23770c).doGet();
                 if (!doGet.available()) {
                     na.a(ma.x, "2次处理数据请求失败");
-                    ((g4.a.C0957a.c) h4Var2.b.b.b.get(0)).b = "";
+                    ((g4.a.C0787a.c) h4Var2.b.b.b.get(0)).b = "";
                     return h4Var2;
                 }
                 ga.e(new File(str2));
@@ -96,11 +96,11 @@ public class mh implements lh {
                 sb3.append(bArr2 != null ? bArr2.length : 0);
                 sb3.append("]");
                 na.a(ma.x, sb3.toString());
-                ((g4.a.C0957a.c) h4Var2.b.b.b.get(0)).b = file.getAbsolutePath();
+                ((g4.a.C0787a.c) h4Var2.b.b.b.get(0)).b = file.getAbsolutePath();
                 return h4Var2;
             }
             na.a(ma.x, "2次处理数据已存在缓存中");
-            ((g4.a.C0957a.c) h4Var2.b.b.b.get(0)).b = file.getAbsolutePath();
+            ((g4.a.C0787a.c) h4Var2.b.b.b.get(0)).b = file.getAbsolutePath();
             h4Var = h4Var2;
         }
         return h4Var;

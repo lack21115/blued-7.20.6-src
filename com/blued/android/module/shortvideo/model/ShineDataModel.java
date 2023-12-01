@@ -17,23 +17,19 @@ public class ShineDataModel extends CommonModel {
 
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/shortvideo/model/ShineDataModel$SerializableData.class */
     public static class SerializableData implements Serializable {
-
-        /* renamed from: a  reason: collision with root package name */
-        public double f15756a = 1.0d;
+        public double a = 1.0d;
         public boolean b = false;
-
-        /* renamed from: c  reason: collision with root package name */
-        public boolean f15757c = false;
+        public boolean c = false;
         public int d = PLCameraSetting.CAMERA_FACING_ID.CAMERA_FACING_FRONT.ordinal();
         public int e;
         public long f;
         public String g;
 
         public void a() {
-            this.f15756a = 1.0d;
+            this.a = 1.0d;
             this.b = false;
             this.d = PLCameraSetting.CAMERA_FACING_ID.CAMERA_FACING_FRONT.ordinal();
-            this.f15757c = false;
+            this.c = false;
             this.e = 0;
             this.f = 0L;
             this.g = null;
@@ -41,10 +37,10 @@ public class ShineDataModel extends CommonModel {
 
         public void a(SerializableData serializableData) {
             if (serializableData != null) {
-                this.f15756a = serializableData.f15756a;
+                this.a = serializableData.a;
                 this.b = serializableData.b;
                 this.d = serializableData.d;
-                this.f15757c = serializableData.f15757c;
+                this.c = serializableData.c;
                 this.e = serializableData.e;
                 this.f = serializableData.f;
                 this.g = serializableData.g;
@@ -99,7 +95,7 @@ public class ShineDataModel extends CommonModel {
     public double getRecordSpeed() {
         double d;
         synchronized (this) {
-            d = this.serializableData.f15756a;
+            d = this.serializableData.a;
         }
         return d;
     }
@@ -153,7 +149,7 @@ public class ShineDataModel extends CommonModel {
     }
 
     public boolean isRecordCompleted() {
-        return this.serializableData.f15757c;
+        return this.serializableData.c;
     }
 
     public boolean isRecordSection() {
@@ -203,12 +199,12 @@ public class ShineDataModel extends CommonModel {
     }
 
     public void setRecordCompleted(boolean z) {
-        this.serializableData.f15757c = z;
+        this.serializableData.c = z;
     }
 
     public void setRecordSpeed(double d) {
         synchronized (this) {
-            this.serializableData.f15756a = d;
+            this.serializableData.a = d;
         }
     }
 

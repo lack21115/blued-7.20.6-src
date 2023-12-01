@@ -63,7 +63,6 @@ public final class HttpLoggingInterceptor implements Interceptor {
         return this.level;
     }
 
-    @Override // okhttp3.Interceptor
     public Response intercept(Interceptor.Chain chain) throws IOException {
         Level level = this.level;
         Request request = chain.request();

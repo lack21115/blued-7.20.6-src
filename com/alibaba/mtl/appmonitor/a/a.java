@@ -1,6 +1,6 @@
 package com.alibaba.mtl.appmonitor.a;
 
-import android.provider.Downloads;
+import com.amap.api.maps.model.MyLocationStyle;
 import java.util.HashMap;
 import java.util.Map;
 import org.json.JSONArray;
@@ -15,30 +15,30 @@ public class a extends d {
 
     @Override // com.alibaba.mtl.appmonitor.a.d
     public JSONObject a() {
-        JSONObject a2;
+        JSONObject a;
         synchronized (this) {
-            a2 = super.a();
+            a = super.a();
             try {
-                a2.put("successCount", this.f);
-                a2.put("failCount", this.g);
+                a.put("successCount", this.f);
+                a.put("failCount", this.g);
                 if (this.e != null) {
                     JSONArray jSONArray = (JSONArray) com.alibaba.mtl.appmonitor.c.a.a().a(com.alibaba.mtl.appmonitor.c.d.class, new Object[0]);
                     for (Map.Entry<String, Integer> entry : this.e.entrySet()) {
                         JSONObject jSONObject = (JSONObject) com.alibaba.mtl.appmonitor.c.a.a().a(com.alibaba.mtl.appmonitor.c.e.class, new Object[0]);
                         String key = entry.getKey();
-                        jSONObject.put("errorCode", key);
+                        jSONObject.put(MyLocationStyle.ERROR_CODE, key);
                         jSONObject.put("errorCount", entry.getValue());
                         if (this.d.containsKey(key)) {
-                            jSONObject.put(Downloads.Impl.COLUMN_ERROR_MSG, this.d.get(key));
+                            jSONObject.put("errorMsg", this.d.get(key));
                         }
                         jSONArray.put(jSONObject);
                     }
-                    a2.put("errors", jSONArray);
+                    a.put("errors", jSONArray);
                 }
             } catch (Exception e) {
             }
         }
-        return a2;
+        return a;
     }
 
     public void a(String str, String str2) {

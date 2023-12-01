@@ -8,9 +8,7 @@ final class GifRenderingExecutor extends ScheduledThreadPoolExecutor {
 
     /* loaded from: source-3503164-dex2jar.jar:pl/droidsonroids/gif/GifRenderingExecutor$InstanceHolder.class */
     static final class InstanceHolder {
-
-        /* renamed from: a  reason: collision with root package name */
-        private static final GifRenderingExecutor f44142a = new GifRenderingExecutor();
+        private static final GifRenderingExecutor a = new GifRenderingExecutor();
 
         private InstanceHolder() {
         }
@@ -22,6 +20,6 @@ final class GifRenderingExecutor extends ScheduledThreadPoolExecutor {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static GifRenderingExecutor a() {
-        return InstanceHolder.f44142a;
+        return InstanceHolder.a;
     }
 }

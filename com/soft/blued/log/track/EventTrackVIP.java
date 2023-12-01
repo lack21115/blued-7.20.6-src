@@ -1,7 +1,6 @@
 package com.soft.blued.log.track;
 
 import com.blued.ad.ADConstants;
-import com.blued.android.chat.core.pack.ReqAckPackage;
 import com.blued.das.vip.VipProtos;
 import com.blued.track.trackUtils.EventTrackUtils;
 
@@ -13,7 +12,7 @@ public class EventTrackVIP {
     static /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f29693a;
+        static final /* synthetic */ int[] f16003a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:19:0x0065 -> B:41:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:21:0x0069 -> B:37:0x001f). Please submit an issue!!! */
@@ -24,37 +23,37 @@ public class EventTrackVIP {
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:31:0x007d -> B:47:0x0058). Please submit an issue!!! */
         static {
             int[] iArr = new int[ADConstants.AD_POSITION.values().length];
-            f29693a = iArr;
+            f16003a = iArr;
             try {
                 iArr[ADConstants.AD_POSITION.USER_PROFILE_TAB.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f29693a[ADConstants.AD_POSITION.VISITOR_ORIGIN.ordinal()] = 2;
+                f16003a[ADConstants.AD_POSITION.VISITOR_ORIGIN.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f29693a[ADConstants.AD_POSITION.VISITOR_BANNER.ordinal()] = 3;
+                f16003a[ADConstants.AD_POSITION.VISITOR_BANNER.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f29693a[ADConstants.AD_POSITION.NEARBY_HOME_LIST_BANNER.ordinal()] = 4;
+                f16003a[ADConstants.AD_POSITION.NEARBY_HOME_LIST_BANNER.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f29693a[ADConstants.AD_POSITION.NEARBY_HOME_GRID_BANNER.ordinal()] = 5;
+                f16003a[ADConstants.AD_POSITION.NEARBY_HOME_GRID_BANNER.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
             try {
-                f29693a[ADConstants.AD_POSITION.NEARBY_HOME_TOP.ordinal()] = 6;
+                f16003a[ADConstants.AD_POSITION.NEARBY_HOME_TOP.ordinal()] = 6;
             } catch (NoSuchFieldError e6) {
             }
             try {
-                f29693a[ADConstants.AD_POSITION.NEARBY_HOME_ORIGIN.ordinal()] = 7;
+                f16003a[ADConstants.AD_POSITION.NEARBY_HOME_ORIGIN.ordinal()] = 7;
             } catch (NoSuchFieldError e7) {
             }
             try {
-                f29693a[ADConstants.AD_POSITION.NEARBY_FLOAT_AD.ordinal()] = 8;
+                f16003a[ADConstants.AD_POSITION.NEARBY_FLOAT_AD.ordinal()] = 8;
             } catch (NoSuchFieldError e8) {
             }
         }
@@ -93,7 +92,7 @@ public class EventTrackVIP {
                 z = true;
                 break;
             case 93610691:
-                if (str.equals(ReqAckPackage.REQ_RESPONSE_KEY.BEANS)) {
+                if (str.equals("beans")) {
                     z = true;
                     break;
                 }
@@ -111,7 +110,7 @@ public class EventTrackVIP {
     }
 
     public static String a(ADConstants.AD_POSITION ad_position) {
-        switch (AnonymousClass1.f29693a[ad_position.ordinal()]) {
+        switch (AnonymousClass1.f16003a[ad_position.ordinal()]) {
             case 1:
                 return "no_ad_personal_page";
             case 2:
@@ -292,7 +291,7 @@ public class EventTrackVIP {
 
     public static VipProtos.AdPage b(ADConstants.AD_POSITION ad_position) {
         VipProtos.AdPage adPage = VipProtos.AdPage.UNKNOWN_AD_PAGE;
-        switch (AnonymousClass1.f29693a[ad_position.ordinal()]) {
+        switch (AnonymousClass1.f16003a[ad_position.ordinal()]) {
             case 1:
                 return VipProtos.AdPage.AD_PERSONAL;
             case 2:

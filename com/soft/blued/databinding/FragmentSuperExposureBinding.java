@@ -45,7 +45,7 @@ public final class FragmentSuperExposureBinding implements ViewBinding {
     public final TextView Z;
 
     /* renamed from: a  reason: collision with root package name */
-    public final ShapeLinearLayout f28982a;
+    public final ShapeLinearLayout f15292a;
     public final TextView aa;
     public final TextView ab;
     public final TextView ac;
@@ -65,7 +65,7 @@ public final class FragmentSuperExposureBinding implements ViewBinding {
     public final TextView aq;
 
     /* renamed from: ar  reason: collision with root package name */
-    public final TextView f28983ar;
+    public final TextView f15293ar;
     public final TextView as;
     public final TextView at;
     public final TextView au;
@@ -77,7 +77,7 @@ public final class FragmentSuperExposureBinding implements ViewBinding {
     public final ImageView b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final ConstraintLayout f28984c;
+    public final ConstraintLayout f15294c;
     public final LinearLayout d;
     public final RelativeLayout e;
     public final ImageView f;
@@ -104,9 +104,9 @@ public final class FragmentSuperExposureBinding implements ViewBinding {
 
     private FragmentSuperExposureBinding(RelativeLayout relativeLayout, ShapeLinearLayout shapeLinearLayout, ImageView imageView, ConstraintLayout constraintLayout, LinearLayout linearLayout, RelativeLayout relativeLayout2, ImageView imageView2, ImageView imageView3, ImageView imageView4, ImageView imageView5, ImageView imageView6, ImageView imageView7, ImageView imageView8, LinearLayout linearLayout2, LinearLayout linearLayout3, LinearLayout linearLayout4, LinearLayout linearLayout5, TextView textView, TextView textView2, ImageView imageView9, LinearLayout linearLayout6, TextView textView3, LinearLayout linearLayout7, TextView textView4, CardView cardView, ImageView imageView10, CardView cardView2, TextView textView5, EditText editText, FrameLayout frameLayout, TextView textView6, ImageView imageView11, TextView textView7, TextView textView8, CardView cardView3, PhotoGridView photoGridView, TextView textView9, ImageView imageView12, TextView textView10, TextView textView11, TextView textView12, TextView textView13, TextView textView14, TextView textView15, TextView textView16, TextView textView17, TextView textView18, TextView textView19, TextView textView20, LinearLayout linearLayout8, ImageView imageView13, LinearLayout linearLayout9, TextView textView21, TextView textView22, TextView textView23, TextView textView24, LinearLayout linearLayout10, ImageView imageView14, LinearLayout linearLayout11, ImageView imageView15, LinearLayout linearLayout12, TextView textView25, TextView textView26, CommonTopTitleNoTrans commonTopTitleNoTrans, TextView textView27, TextView textView28, TextView textView29, TextView textView30, TextView textView31, TextView textView32, TextView textView33, TextView textView34, TextView textView35, TextView textView36, TextView textView37, TextView textView38, TextView textView39, TextView textView40) {
         this.az = relativeLayout;
-        this.f28982a = shapeLinearLayout;
+        this.f15292a = shapeLinearLayout;
         this.b = imageView;
-        this.f28984c = constraintLayout;
+        this.f15294c = constraintLayout;
         this.d = linearLayout;
         this.e = relativeLayout2;
         this.f = imageView2;
@@ -173,7 +173,7 @@ public final class FragmentSuperExposureBinding implements ViewBinding {
         this.ao = textView30;
         this.ap = textView31;
         this.aq = textView32;
-        this.f28983ar = textView33;
+        this.f15293ar = textView33;
         this.as = textView34;
         this.at = textView35;
         this.au = textView36;
@@ -185,8 +185,8 @@ public final class FragmentSuperExposureBinding implements ViewBinding {
 
     public static FragmentSuperExposureBinding a(View view) {
         String str;
-        ShapeLinearLayout shapeLinearLayout = (ShapeLinearLayout) view.findViewById(R.id.fire_bag_buy_btn);
-        if (shapeLinearLayout != null) {
+        ShapeLinearLayout findViewById = view.findViewById(R.id.fire_bag_buy_btn);
+        if (findViewById != null) {
             ImageView imageView = (ImageView) view.findViewById(R.id.fire_bag_img);
             if (imageView != null) {
                 ConstraintLayout constraintLayout = (ConstraintLayout) view.findViewById(R.id.fire_bag_layout);
@@ -309,8 +309,8 @@ public final class FragmentSuperExposureBinding implements ViewBinding {
                                                                                                                                                                                                                                                         if (textView25 != null) {
                                                                                                                                                                                                                                                             TextView textView26 = (TextView) view.findViewById(R.id.super_exposure_user_tv);
                                                                                                                                                                                                                                                             if (textView26 != null) {
-                                                                                                                                                                                                                                                                CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) view.findViewById(2131370694);
-                                                                                                                                                                                                                                                                if (commonTopTitleNoTrans != null) {
+                                                                                                                                                                                                                                                                CommonTopTitleNoTrans findViewById2 = view.findViewById(2131370694);
+                                                                                                                                                                                                                                                                if (findViewById2 != null) {
                                                                                                                                                                                                                                                                     TextView textView27 = (TextView) view.findViewById(R.id.tv_area);
                                                                                                                                                                                                                                                                     if (textView27 != null) {
                                                                                                                                                                                                                                                                         TextView textView28 = (TextView) view.findViewById(R.id.tv_area_all_desc);
@@ -339,7 +339,7 @@ public final class FragmentSuperExposureBinding implements ViewBinding {
                                                                                                                                                                                                                                                                                                                     if (textView39 != null) {
                                                                                                                                                                                                                                                                                                                         TextView textView40 = (TextView) view.findViewById(R.id.tv_fire_bag_total_price);
                                                                                                                                                                                                                                                                                                                         if (textView40 != null) {
-                                                                                                                                                                                                                                                                                                                            return new FragmentSuperExposureBinding((RelativeLayout) view, shapeLinearLayout, imageView, constraintLayout, linearLayout, relativeLayout, imageView2, imageView3, imageView4, imageView5, imageView6, imageView7, imageView8, linearLayout2, linearLayout3, linearLayout4, linearLayout5, textView, textView2, imageView9, linearLayout6, textView3, linearLayout7, textView4, cardView, imageView10, cardView2, textView5, editText, frameLayout, textView6, imageView11, textView7, textView8, cardView3, photoGridView, textView9, imageView12, textView10, textView11, textView12, textView13, textView14, textView15, textView16, textView17, textView18, textView19, textView20, linearLayout8, imageView13, linearLayout9, textView21, textView22, textView23, textView24, linearLayout10, imageView14, linearLayout11, imageView15, linearLayout12, textView25, textView26, commonTopTitleNoTrans, textView27, textView28, textView29, textView30, textView31, textView32, textView33, textView34, textView35, textView36, textView37, textView38, textView39, textView40);
+                                                                                                                                                                                                                                                                                                                            return new FragmentSuperExposureBinding((RelativeLayout) view, findViewById, imageView, constraintLayout, linearLayout, relativeLayout, imageView2, imageView3, imageView4, imageView5, imageView6, imageView7, imageView8, linearLayout2, linearLayout3, linearLayout4, linearLayout5, textView, textView2, imageView9, linearLayout6, textView3, linearLayout7, textView4, cardView, imageView10, cardView2, textView5, editText, frameLayout, textView6, imageView11, textView7, textView8, cardView3, photoGridView, textView9, imageView12, textView10, textView11, textView12, textView13, textView14, textView15, textView16, textView17, textView18, textView19, textView20, linearLayout8, imageView13, linearLayout9, textView21, textView22, textView23, textView24, linearLayout10, imageView14, linearLayout11, imageView15, linearLayout12, textView25, textView26, findViewById2, textView27, textView28, textView29, textView30, textView31, textView32, textView33, textView34, textView35, textView36, textView37, textView38, textView39, textView40);
                                                                                                                                                                                                                                                                                                                         }
                                                                                                                                                                                                                                                                                                                         str = "tvFireBagTotalPrice";
                                                                                                                                                                                                                                                                                                                     } else {

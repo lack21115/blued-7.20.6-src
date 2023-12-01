@@ -1,6 +1,5 @@
 package com.google.gson;
 
-import com.alipay.sdk.util.i;
 import com.google.gson.internal.ConstructorConstructor;
 import com.google.gson.internal.Excluder;
 import com.google.gson.internal.Primitives;
@@ -618,6 +617,6 @@ public final class Gson {
     }
 
     public String toString() {
-        return "{serializeNulls:" + this.serializeNulls + ",factories:" + this.factories + ",instanceCreators:" + this.constructorConstructor + i.d;
+        return "{serializeNulls:" + this.serializeNulls + ",factories:" + this.factories + ",instanceCreators:" + this.constructorConstructor + "}";
     }
 }

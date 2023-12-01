@@ -13,19 +13,14 @@ import androidx.core.view.MotionEventCompat;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 import com.blued.android.framework.view.badgeview.DisplayUtil;
-import com.igexin.push.config.c;
 import java.lang.ref.WeakReference;
 import java.lang.reflect.Field;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveActivityViewPager.class */
 public class LiveActivityViewPager extends ViewPager {
-
-    /* renamed from: a  reason: collision with root package name */
-    private long f14352a;
+    private long a;
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private boolean f14353c;
+    private boolean c;
     private boolean d;
     private int e;
     private boolean f;
@@ -41,14 +36,12 @@ public class LiveActivityViewPager extends ViewPager {
     /* renamed from: com.blued.android.module.live_china.view.LiveActivityViewPager$1  reason: invalid class name */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveActivityViewPager$1.class */
     class AnonymousClass1 implements Animation.AnimationListener {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ int f14354a;
+        final /* synthetic */ int a;
         final /* synthetic */ LiveActivityViewPager b;
 
         @Override // android.view.animation.Animation.AnimationListener
         public void onAnimationEnd(Animation animation) {
-            this.b.setCurrentItem(this.f14354a, false);
+            this.b.setCurrentItem(this.a, false);
             ScaleAnimation scaleAnimation = new ScaleAnimation(0.0f, 1.0f, 1.0f, 1.0f, 1, 0.5f, 1, 0.5f);
             scaleAnimation.setInterpolator(new LinearInterpolator());
             scaleAnimation.setDuration(150L);
@@ -67,32 +60,30 @@ public class LiveActivityViewPager extends ViewPager {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveActivityViewPager$MyHandler.class */
     public static class MyHandler extends Handler {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final WeakReference<LiveActivityViewPager> f14355a;
+        private final WeakReference<LiveActivityViewPager> a;
 
         public MyHandler(LiveActivityViewPager liveActivityViewPager) {
-            this.f14355a = new WeakReference<>(liveActivityViewPager);
+            this.a = new WeakReference<>(liveActivityViewPager);
         }
 
         @Override // android.os.Handler
         public void handleMessage(Message message) {
             LiveActivityViewPager liveActivityViewPager;
             super.handleMessage(message);
-            if (message.what == 0 && (liveActivityViewPager = this.f14355a.get()) != null) {
+            if (message.what == 0 && (liveActivityViewPager = this.a.get()) != null) {
                 liveActivityViewPager.n.a(liveActivityViewPager.g);
                 liveActivityViewPager.c();
                 liveActivityViewPager.n.a(liveActivityViewPager.h);
-                liveActivityViewPager.a(liveActivityViewPager.f14352a + liveActivityViewPager.n.getDuration());
+                liveActivityViewPager.a(liveActivityViewPager.a + liveActivityViewPager.n.getDuration());
             }
         }
     }
 
     public LiveActivityViewPager(Context context) {
         super(context);
-        this.f14352a = c.j;
+        this.a = 1500L;
         this.b = 1;
-        this.f14353c = true;
+        this.c = true;
         this.d = true;
         this.e = 0;
         this.f = true;
@@ -108,9 +99,9 @@ public class LiveActivityViewPager extends ViewPager {
 
     public LiveActivityViewPager(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f14352a = c.j;
+        this.a = 1500L;
         this.b = 1;
-        this.f14353c = true;
+        this.c = true;
         this.d = true;
         this.e = 0;
         this.f = true;
@@ -151,7 +142,7 @@ public class LiveActivityViewPager extends ViewPager {
 
     public void a() {
         this.j = true;
-        a((long) (this.f14352a + ((this.n.getDuration() / this.g) * this.h)));
+        a((long) (this.a + ((this.n.getDuration() / this.g) * this.h)));
     }
 
     public void b() {
@@ -172,7 +163,7 @@ public class LiveActivityViewPager extends ViewPager {
         if (i2 < 0) {
             i = i2;
             z = true;
-            if (this.f14353c) {
+            if (this.c) {
                 i = count - 1;
                 z = this.f;
             }
@@ -182,7 +173,7 @@ public class LiveActivityViewPager extends ViewPager {
             if (i2 == count) {
                 i = i2;
                 z = true;
-                if (this.f14353c) {
+                if (this.c) {
                     i = 0;
                     z = this.f;
                 }
@@ -191,7 +182,6 @@ public class LiveActivityViewPager extends ViewPager {
         setCurrentItem(i, z);
     }
 
-    @Override // android.view.ViewGroup, android.view.View
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
         int actionMasked = MotionEventCompat.getActionMasked(motionEvent);
         if (this.d) {
@@ -232,10 +222,10 @@ public class LiveActivityViewPager extends ViewPager {
             int count2 = adapter.getCount();
             if (Math.abs(this.l - this.m) > DisplayUtil.a(getContext(), 10.0f) && adapter.getCount() > 1) {
                 int i2 = this.l > this.m ? currentItem2 - 1 : currentItem2 + 1;
-                if (i2 < 0 && this.f14353c) {
+                if (i2 < 0 && this.c) {
                     setCurrentItem(count2 - 1, false);
                     return true;
-                } else if (i2 == count2 && this.f14353c) {
+                } else if (i2 == count2 && this.c) {
                     setCurrentItem(0, false);
                     return true;
                 } else {
@@ -257,7 +247,7 @@ public class LiveActivityViewPager extends ViewPager {
     }
 
     public long getInterval() {
-        return this.f14352a;
+        return this.a;
     }
 
     public int getSlideBorderMode() {
@@ -273,7 +263,7 @@ public class LiveActivityViewPager extends ViewPager {
     }
 
     public void setCycle(boolean z) {
-        this.f14353c = z;
+        this.c = z;
     }
 
     public void setDirection(int i) {
@@ -281,7 +271,7 @@ public class LiveActivityViewPager extends ViewPager {
     }
 
     public void setInterval(long j) {
-        this.f14352a = j;
+        this.a = j;
     }
 
     public void setSlideBorderMode(int i) {

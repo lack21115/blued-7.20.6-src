@@ -100,34 +100,34 @@ public class AdWebViewActivityProxy extends com.kwad.components.core.l.d {
 
         /* renamed from: com.kwad.components.core.page.AdWebViewActivityProxy$a$a  reason: collision with other inner class name */
         /* loaded from: source-7994992-dex2jar.jar:com/kwad/components/core/page/AdWebViewActivityProxy$a$a.class */
-        public static final class C0529a {
+        public static final class C0359a {
             private String Ll;
             private String Lm;
             private boolean Lo;
             private boolean Lp;
             private AdTemplate adTemplate;
 
-            public final C0529a L(AdTemplate adTemplate) {
+            public final C0359a L(AdTemplate adTemplate) {
                 this.adTemplate = adTemplate;
                 return this;
             }
 
-            public final C0529a aA(boolean z) {
+            public final C0359a aA(boolean z) {
                 this.Lp = z;
                 return this;
             }
 
-            public final C0529a aB(boolean z) {
+            public final C0359a aB(boolean z) {
                 this.Lo = z;
                 return this;
             }
 
-            public final C0529a au(String str) {
+            public final C0359a au(String str) {
                 this.Ll = str;
                 return this;
             }
 
-            public final C0529a av(String str) {
+            public final C0359a av(String str) {
                 this.Lm = str;
                 return this;
             }
@@ -171,14 +171,14 @@ public class AdWebViewActivityProxy extends com.kwad.components.core.l.d {
     }
 
     private com.kwad.components.core.page.widget.a buildDialog() {
-        return new com.kwad.components.core.page.widget.a(getActivity(), new a.InterfaceC0532a() { // from class: com.kwad.components.core.page.AdWebViewActivityProxy.5
-            @Override // com.kwad.components.core.page.widget.a.InterfaceC0532a
+        return new com.kwad.components.core.page.widget.a(getActivity(), new a.InterfaceC0362a() { // from class: com.kwad.components.core.page.AdWebViewActivityProxy.5
+            @Override // com.kwad.components.core.page.widget.a.InterfaceC0362a
             public final void a(DialogInterface dialogInterface) {
                 com.kwad.sdk.core.report.a.q(AdWebViewActivityProxy.this.mAdTemplate, 104);
                 dialogInterface.dismiss();
             }
 
-            @Override // com.kwad.components.core.page.widget.a.InterfaceC0532a
+            @Override // com.kwad.components.core.page.widget.a.InterfaceC0362a
             public final void b(DialogInterface dialogInterface) {
                 try {
                     AdWebViewActivityProxy.super.onBackPressed();
@@ -187,7 +187,7 @@ public class AdWebViewActivityProxy extends com.kwad.components.core.l.d {
                 com.kwad.sdk.core.report.a.q(AdWebViewActivityProxy.this.mAdTemplate, 105);
             }
 
-            @Override // com.kwad.components.core.page.widget.a.InterfaceC0532a
+            @Override // com.kwad.components.core.page.widget.a.InterfaceC0362a
             public final void c(DialogInterface dialogInterface) {
                 com.kwad.sdk.core.report.a.q(AdWebViewActivityProxy.this.mAdTemplate, 106);
                 dialogInterface.dismiss();
@@ -207,7 +207,7 @@ public class AdWebViewActivityProxy extends com.kwad.components.core.l.d {
 
     private void initContentView() {
         ViewGroup viewGroup = (ViewGroup) findViewById(R.id.ksad_land_page_root);
-        c b = c.b(this.mContext, new a.C0529a().au(this.mPageTitle).av(this.mPageUrl).L(this.mAdTemplate).aA(this.mShowPermission).aB(this.mAutoShow).oc());
+        c b = c.b(this.mContext, new a.C0359a().au(this.mPageTitle).av(this.mPageUrl).L(this.mAdTemplate).aA(this.mShowPermission).aB(this.mAutoShow).oc());
         this.mLandingPageView = b;
         b.setLandPageViewListener(this.mLandPageViewListener);
         this.mLandingPageView.setWebCardCloseListener(this.mWebCardCloseListener);
@@ -249,7 +249,7 @@ public class AdWebViewActivityProxy extends com.kwad.components.core.l.d {
     }
 
     public static void launch(Context context, AdTemplate adTemplate) {
-        launch(context, new a.C0529a().av(com.kwad.sdk.core.response.a.b.bg(adTemplate)).L(adTemplate).oc());
+        launch(context, new a.C0359a().av(com.kwad.sdk.core.response.a.b.bg(adTemplate)).L(adTemplate).oc());
     }
 
     public static void register() {
@@ -333,14 +333,14 @@ public class AdWebViewActivityProxy extends com.kwad.components.core.l.d {
             if (isFormAdExitInterceptEnable()) {
                 try {
                     if (this.mKsExitInterceptDialogV2 == null) {
-                        this.mKsExitInterceptDialogV2 = new com.kwad.components.core.page.widget.a(getActivity(), new a.InterfaceC0532a() { // from class: com.kwad.components.core.page.AdWebViewActivityProxy.4
-                            @Override // com.kwad.components.core.page.widget.a.InterfaceC0532a
+                        this.mKsExitInterceptDialogV2 = new com.kwad.components.core.page.widget.a(getActivity(), new a.InterfaceC0362a() { // from class: com.kwad.components.core.page.AdWebViewActivityProxy.4
+                            @Override // com.kwad.components.core.page.widget.a.InterfaceC0362a
                             public final void a(DialogInterface dialogInterface) {
                                 com.kwad.sdk.core.report.a.q(AdWebViewActivityProxy.this.mAdTemplate, 104);
                                 dialogInterface.dismiss();
                             }
 
-                            @Override // com.kwad.components.core.page.widget.a.InterfaceC0532a
+                            @Override // com.kwad.components.core.page.widget.a.InterfaceC0362a
                             public final void b(DialogInterface dialogInterface) {
                                 if (!AdWebViewActivityProxy.this.destroyed) {
                                     try {
@@ -352,7 +352,7 @@ public class AdWebViewActivityProxy extends com.kwad.components.core.l.d {
                                 com.kwad.sdk.core.report.a.q(AdWebViewActivityProxy.this.mAdTemplate, 105);
                             }
 
-                            @Override // com.kwad.components.core.page.widget.a.InterfaceC0532a
+                            @Override // com.kwad.components.core.page.widget.a.InterfaceC0362a
                             public final void c(DialogInterface dialogInterface) {
                                 com.kwad.sdk.core.report.a.q(AdWebViewActivityProxy.this.mAdTemplate, 106);
                                 dialogInterface.dismiss();

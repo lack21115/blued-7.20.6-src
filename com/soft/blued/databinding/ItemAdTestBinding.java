@@ -10,15 +10,15 @@ import com.soft.blued.R;
 public final class ItemAdTestBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final TextView f29071a;
+    public final TextView f15381a;
     public final TextView b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final LinearLayout f29072c;
+    private final LinearLayout f15382c;
 
     private ItemAdTestBinding(LinearLayout linearLayout, TextView textView, TextView textView2) {
-        this.f29072c = linearLayout;
-        this.f29071a = textView;
+        this.f15382c = linearLayout;
+        this.f15381a = textView;
         this.b = textView2;
     }
 
@@ -26,7 +26,7 @@ public final class ItemAdTestBinding implements ViewBinding {
         String str;
         TextView textView = (TextView) view.findViewById(R.id.btn_delete);
         if (textView != null) {
-            TextView textView2 = (TextView) view.findViewById(2131371943);
+            TextView textView2 = (TextView) view.findViewById(R.id.tv_mess);
             if (textView2 != null) {
                 return new ItemAdTestBinding((LinearLayout) view, textView, textView2);
             }
@@ -40,6 +40,6 @@ public final class ItemAdTestBinding implements ViewBinding {
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29072c;
+        return this.f15382c;
     }
 }

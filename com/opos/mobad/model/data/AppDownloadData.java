@@ -28,19 +28,19 @@ public class AppDownloadData extends a implements Parcelable {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    private String f26466a;
+    private String f12778a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f26467c;
+    private String f12779c;
     private String d;
 
     public String a() {
-        return this.f26466a;
+        return this.f12778a;
     }
 
     public void a(String str) {
-        this.f26466a = str;
+        this.f12778a = str;
     }
 
     public String b() {
@@ -52,11 +52,11 @@ public class AppDownloadData extends a implements Parcelable {
     }
 
     public String c() {
-        return this.f26467c;
+        return this.f12779c;
     }
 
     public void c(String str) {
-        this.f26467c = str;
+        this.f12779c = str;
     }
 
     public String d() {
@@ -73,14 +73,14 @@ public class AppDownloadData extends a implements Parcelable {
     }
 
     public String toString() {
-        return "appDownloadData{url=" + this.f26466a + ", md5=" + this.b + ", pkgName=" + this.f26467c + ", appName=" + this.d + '}';
+        return "appDownloadData{url=" + this.f12778a + ", md5=" + this.b + ", pkgName=" + this.f12779c + ", appName=" + this.d + '}';
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.f26466a);
+        parcel.writeString(this.f12778a);
         parcel.writeString(this.b);
-        parcel.writeString(this.f26467c);
+        parcel.writeString(this.f12779c);
         parcel.writeString(this.d);
     }
 }

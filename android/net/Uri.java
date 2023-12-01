@@ -7,7 +7,7 @@ import android.os.Parcelable;
 import android.os.StrictMode;
 import android.telecom.PhoneAccount;
 import android.util.Log;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
+import com.huawei.hms.framework.common.ContainerUtils;
 import java.io.File;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -244,7 +244,7 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
                 this.query = Part.fromEncoded(str3);
                 return this;
             }
-            this.query = Part.fromEncoded(encoded + "&" + str3);
+            this.query = Part.fromEncoded(encoded + ContainerUtils.FIELD_DELIMITER + str3);
             return this;
         }
 
@@ -763,7 +763,7 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
 
         static PathPart appendEncodedSegment(PathPart pathPart, String str) {
             if (pathPart == null) {
-                return fromEncoded(BridgeUtil.SPLIT_MARK + str);
+                return fromEncoded("/" + str);
             }
             String encoded = pathPart.getEncoded();
             String str2 = encoded;
@@ -771,7 +771,7 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
                 str2 = "";
             }
             int length = str2.length();
-            return fromEncoded(length == 0 ? BridgeUtil.SPLIT_MARK + str : str2.charAt(length - 1) == '/' ? str2 + str : str2 + BridgeUtil.SPLIT_MARK + str);
+            return fromEncoded(length == 0 ? "/" + str : str2.charAt(length - 1) == '/' ? str2 + str : str2 + "/" + str);
         }
 
         static PathPart from(String str, String str2) {
@@ -789,10 +789,10 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
         static PathPart makeAbsolute(PathPart pathPart) {
             boolean z = pathPart.encoded != Uri.NOT_CACHED;
             String str = z ? pathPart.encoded : pathPart.decoded;
-            if (str == null || str.length() == 0 || str.startsWith(BridgeUtil.SPLIT_MARK)) {
+            if (str == null || str.length() == 0 || str.startsWith("/")) {
                 return pathPart;
             }
-            return new PathPart(z ? BridgeUtil.SPLIT_MARK + pathPart.encoded : Uri.NOT_CACHED, pathPart.decoded != Uri.NOT_CACHED ? BridgeUtil.SPLIT_MARK + pathPart.decoded : Uri.NOT_CACHED);
+            return new PathPart(z ? "/" + pathPart.encoded : Uri.NOT_CACHED, pathPart.decoded != Uri.NOT_CACHED ? "/" + pathPart.decoded : Uri.NOT_CACHED);
         }
 
         static PathPart readFrom(Parcel parcel) {
@@ -814,7 +814,7 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
             if (this.encoded != Uri.NOT_CACHED) {
                 return this.encoded;
             }
-            String encode = Uri.encode(this.decoded, BridgeUtil.SPLIT_MARK);
+            String encode = Uri.encode(this.decoded, "/");
             this.encoded = encode;
             return encode;
         }

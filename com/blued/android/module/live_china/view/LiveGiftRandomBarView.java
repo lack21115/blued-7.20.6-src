@@ -35,13 +35,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveGiftRandomBarView.class */
 public final class LiveGiftRandomBarView extends RelativeLayout implements OnClickCallback {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Context f14476a;
+    private final Context a;
     private PlayingOnliveFragment b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private IRequestHost f14477c;
+    private IRequestHost c;
     private LiveGiftRandomBarModel d;
     private String e;
     private final Lazy f;
@@ -66,7 +62,7 @@ public final class LiveGiftRandomBarView extends RelativeLayout implements OnCli
     public LiveGiftRandomBarView(Context mContext, AttributeSet attributeSet, int i) {
         super(mContext, attributeSet, i);
         Intrinsics.e(mContext, "mContext");
-        this.f14476a = mContext;
+        this.a = mContext;
         this.e = "";
         this.f = LazyKt.a(new Function0<LiveRandomGiftBarViewBinding>() { // from class: com.blued.android.module.live_china.view.LiveGiftRandomBarView$vb$2
             /* JADX INFO: Access modifiers changed from: package-private */
@@ -77,9 +73,9 @@ public final class LiveGiftRandomBarView extends RelativeLayout implements OnCli
             @Override // kotlin.jvm.functions.Function0
             /* renamed from: a */
             public final LiveRandomGiftBarViewBinding invoke() {
-                LiveRandomGiftBarViewBinding a2 = LiveRandomGiftBarViewBinding.a(LayoutInflater.from(LiveGiftRandomBarView.this.getMContext()).inflate(R.layout.live_random_gift_bar_view, LiveGiftRandomBarView.this));
-                Intrinsics.c(a2, "bind(\n            Layout…bar_view, this)\n        )");
-                return a2;
+                LiveRandomGiftBarViewBinding a = LiveRandomGiftBarViewBinding.a(LayoutInflater.from(LiveGiftRandomBarView.this.getMContext()).inflate(R.layout.live_random_gift_bar_view, LiveGiftRandomBarView.this));
+                Intrinsics.c(a, "bind(\n            Layout…bar_view, this)\n        )");
+                return a;
             }
         });
         this.g = new ArrayList<>();
@@ -105,26 +101,26 @@ public final class LiveGiftRandomBarView extends RelativeLayout implements OnCli
             freedomAdapter.notifyDataSetChanged();
             return;
         }
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        RecyclerView.LayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setOrientation(0);
-        getVb().f12391c.setLayoutManager(linearLayoutManager);
+        getVb().c.setLayoutManager(linearLayoutManager);
         Context context = getContext();
-        IRequestHost iRequestHost = this.f14477c;
+        IRequestHost iRequestHost = this.c;
         IRequestHost iRequestHost2 = iRequestHost;
         if (iRequestHost == null) {
             Intrinsics.c("mRequestHost");
             iRequestHost2 = null;
         }
         this.h = new FreedomAdapter(context, iRequestHost2, this.g, this);
-        getVb().f12391c.setItemAnimator(new DefaultItemAnimator());
-        getVb().f12391c.setAdapter(this.h);
+        getVb().c.setItemAnimator(new DefaultItemAnimator());
+        getVb().c.setAdapter(this.h);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(String goodId, LiveGiftRandomBarView this$0, View view) {
         Intrinsics.e(goodId, "$goodId");
         Intrinsics.e(this$0, "this$0");
-        LiveRandomGiftDialog.Companion companion = LiveRandomGiftDialog.f13167a;
+        LiveRandomGiftDialog.Companion companion = LiveRandomGiftDialog.a;
         PlayingOnliveFragment playingOnliveFragment = this$0.b;
         PlayingOnliveFragment playingOnliveFragment2 = playingOnliveFragment;
         if (playingOnliveFragment == null) {
@@ -151,25 +147,25 @@ public final class LiveGiftRandomBarView extends RelativeLayout implements OnCli
         this.b = fragment;
         ActivityFragmentActive fragmentActive = fragment.getFragmentActive();
         Intrinsics.c(fragmentActive, "fragment.fragmentActive");
-        this.f14477c = fragmentActive;
+        this.c = fragmentActive;
         this.d = data;
         this.e = goodId;
         ImageLoader.a((IRequestHost) null, data.getFront_img()).a(getVb().b);
-        ImageLoader.a((IRequestHost) null, data.getImg()).a(getVb().f12390a);
+        ImageLoader.a((IRequestHost) null, data.getImg()).a(getVb().a);
         if (data.getRemain_reward_count() > 0) {
             ShapeTextView shapeTextView = getVb().e;
             Intrinsics.c(shapeTextView, "vb.tvRandomGiftBtnLottery");
-            BluedViewExKt.b(shapeTextView);
+            BluedViewExKt.b((View) shapeTextView);
         } else {
             ShapeTextView shapeTextView2 = getVb().e;
             Intrinsics.c(shapeTextView2, "vb.tvRandomGiftBtnLottery");
-            BluedViewExKt.a(shapeTextView2);
+            BluedViewExKt.a((View) shapeTextView2);
         }
         boolean z = false;
         if (data.getLight_times() > 0) {
             ShapeTextView shapeTextView3 = getVb().d;
             Intrinsics.c(shapeTextView3, "vb.tvRandomGiftBtnLighten");
-            BluedViewExKt.b(shapeTextView3);
+            BluedViewExKt.b((View) shapeTextView3);
             getVb().d.setText(AppInfo.d().getString(R.string.live_random_gift_bar_lighten, Integer.valueOf(data.getLight_times())));
             ShapeTextView shapeTextView4 = getVb().d;
             CharSequence text = getVb().d.getText();
@@ -178,13 +174,13 @@ public final class LiveGiftRandomBarView extends RelativeLayout implements OnCli
         } else {
             ShapeTextView shapeTextView5 = getVb().d;
             Intrinsics.c(shapeTextView5, "vb.tvRandomGiftBtnLighten");
-            BluedViewExKt.a(shapeTextView5);
+            BluedViewExKt.a((View) shapeTextView5);
         }
         ArrayList<LiveGiftRandomBarItemModel> goods = data.getGoods();
         if ((goods == null || goods.isEmpty()) ? true : true) {
-            RecyclerView recyclerView = getVb().f12391c;
-            Intrinsics.c(recyclerView, "vb.rvList");
-            BluedViewExKt.a(recyclerView);
+            View view = getVb().c;
+            Intrinsics.c(view, "vb.rvList");
+            BluedViewExKt.a(view);
         } else {
             this.g.clear();
             ArrayList<LiveGiftRandomBarItemModel> goods2 = data.getGoods();
@@ -197,8 +193,8 @@ public final class LiveGiftRandomBarView extends RelativeLayout implements OnCli
         }
         getVb().getRoot().setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.-$$Lambda$LiveGiftRandomBarView$3FMHvgPiM5FKH9fQO1_mSOBuZkU
             @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                LiveGiftRandomBarView.a(String.this, this, view);
+            public final void onClick(View view2) {
+                LiveGiftRandomBarView.a(String.this, this, view2);
             }
         });
     }
@@ -208,7 +204,7 @@ public final class LiveGiftRandomBarView extends RelativeLayout implements OnCli
     }
 
     public final Context getMContext() {
-        return this.f14476a;
+        return this.a;
     }
 
     public final Pattern getPattern() {
@@ -221,7 +217,7 @@ public final class LiveGiftRandomBarView extends RelativeLayout implements OnCli
 
     @Override // com.blued.android.module.common.utils.freedom.clickcallback.OnClickCallback
     public void onClick(View view, int i, BaseViewHolder baseViewHolder) {
-        LiveRandomGiftDialog.Companion companion = LiveRandomGiftDialog.f13167a;
+        LiveRandomGiftDialog.Companion companion = LiveRandomGiftDialog.a;
         String str = this.e;
         PlayingOnliveFragment playingOnliveFragment = this.b;
         PlayingOnliveFragment playingOnliveFragment2 = playingOnliveFragment;

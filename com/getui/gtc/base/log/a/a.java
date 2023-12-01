@@ -12,10 +12,10 @@ public class a implements ILogController {
     private static List<String> b;
 
     /* renamed from: a  reason: collision with root package name */
-    private String f21906a;
+    private String f8299a;
 
     /* renamed from: c  reason: collision with root package name */
-    private ILogFormatter f21907c;
+    private ILogFormatter f8300c;
     private boolean d;
 
     public a() {
@@ -23,9 +23,9 @@ public class a implements ILogController {
     }
 
     public a(ILogFormatter iLogFormatter) {
-        this.f21906a = "sdk.debug";
-        this.f21907c = (ILogFormatter) com.getui.gtc.base.log.e.a.a(iLogFormatter);
-        a(this.f21906a);
+        this.f8299a = "sdk.debug";
+        this.f8300c = (ILogFormatter) com.getui.gtc.base.log.e.a.a(iLogFormatter);
+        a(this.f8299a);
     }
 
     /* JADX WARN: Can't wrap try/catch for region: R(16:4|(3:6|7|8)(7:61|(2:63|64)(2:78|79)|65|66|67|(3:73|74|75)|51)|9|10|11|12|13|14|15|(4:16|17|18|(7:20|21|22|23|24|(5:30|31|32|33|(5:35|36|37|38|39)(1:41))|40)(1:44))|45|(2:54|51)|47|48|50|51) */
@@ -61,7 +61,7 @@ public class a implements ILogController {
     }
 
     public final void a(String str) {
-        this.f21906a = str;
+        this.f8299a = str;
         this.d = b(str);
     }
 
@@ -80,6 +80,6 @@ public class a implements ILogController {
         if ((i & 240) != 0) {
             i2 = i & 15;
         }
-        this.f21907c.log(i2, str, str2, th);
+        this.f8300c.log(i2, str, str2, th);
     }
 }

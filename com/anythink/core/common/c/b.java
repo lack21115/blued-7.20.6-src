@@ -6,14 +6,12 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/c/b.class */
 public abstract class b {
-
-    /* renamed from: a  reason: collision with root package name */
-    private a f6569a;
+    private a a;
 
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/c/b$a.class */
     final class a extends SQLiteOpenHelper {
         public a(Context context, String str) {
-            super(context, str, null, 9);
+            super(context, str, (SQLiteDatabase.CursorFactory) null, 9);
         }
 
         @Override // android.database.sqlite.SQLiteOpenHelper
@@ -33,11 +31,11 @@ public abstract class b {
     }
 
     public b(Context context) {
-        this.f6569a = new a(context, c());
+        this.a = new a(context, c());
     }
 
     public final SQLiteDatabase a() {
-        return this.f6569a.getReadableDatabase();
+        return this.a.getReadableDatabase();
     }
 
     protected abstract void a(SQLiteDatabase sQLiteDatabase);
@@ -48,7 +46,7 @@ public abstract class b {
         SQLiteDatabase sQLiteDatabase;
         synchronized (this) {
             try {
-                sQLiteDatabase = this.f6569a.getWritableDatabase();
+                sQLiteDatabase = this.a.getWritableDatabase();
             } catch (Exception e) {
                 sQLiteDatabase = null;
             }

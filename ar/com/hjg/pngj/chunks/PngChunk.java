@@ -6,11 +6,11 @@ import ar.com.hjg.pngj.ImageInfo;
 public abstract class PngChunk {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f3667a;
+    public final String f3619a;
     public final boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final boolean f3668c;
+    public final boolean f3620c;
     public final boolean d;
     protected final ImageInfo e;
     protected ChunkRaw f;
@@ -29,10 +29,10 @@ public abstract class PngChunk {
     }
 
     public PngChunk(String str, ImageInfo imageInfo) {
-        this.f3667a = str;
+        this.f3619a = str;
         this.e = imageInfo;
         this.b = ChunkHelper.b(str);
-        this.f3668c = ChunkHelper.c(str);
+        this.f3620c = ChunkHelper.c(str);
         this.d = ChunkHelper.d(str);
     }
 
@@ -59,7 +59,7 @@ public abstract class PngChunk {
     public int c() {
         ChunkRaw chunkRaw = this.f;
         if (chunkRaw != null) {
-            return chunkRaw.f3659a;
+            return chunkRaw.f3611a;
         }
         return -1;
     }
@@ -73,6 +73,6 @@ public abstract class PngChunk {
     }
 
     public String toString() {
-        return "chunk id= " + this.f3667a + " (len=" + c() + " offset=" + d() + ")";
+        return "chunk id= " + this.f3619a + " (len=" + c() + " offset=" + d() + ")";
     }
 }

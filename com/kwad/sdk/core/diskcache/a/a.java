@@ -17,7 +17,7 @@ public final class a {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.kwad.sdk.core.diskcache.a.a$a  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/sdk/core/diskcache/a/a$a.class */
-    public static final class C0556a {
+    public static final class C0386a {
         static final a aeS = new a((byte) 0);
     }
 
@@ -48,7 +48,7 @@ public final class a {
     }
 
     public static a vs() {
-        return C0556a.aeS;
+        return C0386a.aeS;
     }
 
     private boolean vt() {
@@ -56,13 +56,13 @@ public final class a {
         return this.aeR == null;
     }
 
-    public final boolean a(String str, a.C0564a c0564a) {
+    public final boolean a(String str, a.C0394a c0394a) {
         File bJ;
         if (vt() || TextUtils.isEmpty(str)) {
             return false;
         }
         String bK = c.bK(str);
-        return b.a(this.aeR, str, bK, c0564a) && (bJ = bJ(bK)) != null && bJ.exists();
+        return b.a(this.aeR, str, bK, c0394a) && (bJ = bJ(bK)) != null && bJ.exists();
     }
 
     public final File aX(String str) {
@@ -72,13 +72,13 @@ public final class a {
         return bJ(c.bK(str));
     }
 
-    public final boolean b(String str, String str2, a.C0564a c0564a) {
+    public final boolean b(String str, String str2, a.C0394a c0394a) {
         File bJ;
         if (vt() || TextUtils.isEmpty(str)) {
             return false;
         }
         String bK = c.bK(str2);
-        return b.a(this.aeR, str, bK, c0564a) && (bJ = bJ(bK)) != null && bJ.exists();
+        return b.a(this.aeR, str, bK, c0394a) && (bJ = bJ(bK)) != null && bJ.exists();
     }
 
     public final void bI(String str) {

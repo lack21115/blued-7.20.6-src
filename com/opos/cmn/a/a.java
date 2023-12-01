@@ -8,18 +8,18 @@ import java.util.concurrent.atomic.AtomicReference;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static AtomicBoolean f24481a = new AtomicBoolean(false);
+    private static AtomicBoolean f10794a = new AtomicBoolean(false);
     private static volatile boolean b = false;
 
     /* renamed from: c  reason: collision with root package name */
-    private static AtomicReference<String> f24482c = new AtomicReference<>(null);
+    private static AtomicReference<String> f10795c = new AtomicReference<>(null);
     private static AtomicBoolean d = new AtomicBoolean(false);
 
     public static void a(boolean z, String str) {
-        if (f24481a.compareAndSet(false, true)) {
+        if (f10794a.compareAndSet(false, true)) {
             b = z;
         }
-        f24482c.compareAndSet(null, str);
+        f10795c.compareAndSet(null, str);
     }
 
     public static boolean a() {
@@ -28,7 +28,7 @@ public class a {
     }
 
     public static String b() {
-        String str = f24482c.get();
+        String str = f10795c.get();
         String str2 = str;
         if (TextUtils.isEmpty(str)) {
             str2 = "CN";

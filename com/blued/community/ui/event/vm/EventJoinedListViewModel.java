@@ -13,7 +13,7 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/event/vm/EventJoinedListViewModel.class */
 public final class EventJoinedListViewModel extends BaseListViewModel<EventDetailsModel> {
     public final void a() {
-        EventHttpUtils.f19079a.a(new BluedUIHttpResponse<BluedEntityA<EventDetailsModel>>() { // from class: com.blued.community.ui.event.vm.EventJoinedListViewModel$getEventListData$1
+        EventHttpUtils.a.a(new BluedUIHttpResponse<BluedEntityA<EventDetailsModel>>() { // from class: com.blued.community.ui.event.vm.EventJoinedListViewModel$getEventListData$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(null);

@@ -25,30 +25,30 @@ public class AppCompatImageButton extends ImageButton implements TintableBackgro
     public final class InspectionCompanion implements android.view.inspector.InspectionCompanion<AppCompatImageButton> {
 
         /* renamed from: a  reason: collision with root package name */
-        private boolean f1761a = false;
+        private boolean f1713a = false;
         private int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f1762c;
+        private int f1714c;
         private int d;
         private int e;
 
         @Override // android.view.inspector.InspectionCompanion
         public void mapProperties(PropertyMapper propertyMapper) {
             this.b = propertyMapper.mapObject("backgroundTint", R.attr.backgroundTint);
-            this.f1762c = propertyMapper.mapObject("backgroundTintMode", R.attr.backgroundTintMode);
+            this.f1714c = propertyMapper.mapObject("backgroundTintMode", R.attr.backgroundTintMode);
             this.d = propertyMapper.mapObject("tint", R.attr.tint);
             this.e = propertyMapper.mapObject("tintMode", R.attr.tintMode);
-            this.f1761a = true;
+            this.f1713a = true;
         }
 
         @Override // android.view.inspector.InspectionCompanion
         public void readProperties(AppCompatImageButton appCompatImageButton, PropertyReader propertyReader) {
-            if (!this.f1761a) {
+            if (!this.f1713a) {
                 throw new InspectionCompanion.UninitializedPropertyMapException();
             }
             propertyReader.readObject(this.b, appCompatImageButton.getBackgroundTintList());
-            propertyReader.readObject(this.f1762c, appCompatImageButton.getBackgroundTintMode());
+            propertyReader.readObject(this.f1714c, appCompatImageButton.getBackgroundTintMode());
             propertyReader.readObject(this.d, appCompatImageButton.getImageTintList());
             propertyReader.readObject(this.e, appCompatImageButton.getImageTintMode());
         }
@@ -74,9 +74,8 @@ public class AppCompatImageButton extends ImageButton implements TintableBackgro
         appCompatImageHelper.loadFromAttributes(attributeSet, i);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.ImageView, android.view.View
-    public void drawableStateChanged() {
+    protected void drawableStateChanged() {
         super.drawableStateChanged();
         AppCompatBackgroundHelper appCompatBackgroundHelper = this.mBackgroundTintHelper;
         if (appCompatBackgroundHelper != null) {

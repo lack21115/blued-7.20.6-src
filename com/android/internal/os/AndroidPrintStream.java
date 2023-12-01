@@ -2,9 +2,8 @@ package com.android.internal.os;
 
 import android.util.Log;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-4181928-dex2jar.jar:com/android/internal/os/AndroidPrintStream.class */
-public class AndroidPrintStream extends LoggingPrintStream {
+class AndroidPrintStream extends LoggingPrintStream {
     private final int priority;
     private final String tag;
 

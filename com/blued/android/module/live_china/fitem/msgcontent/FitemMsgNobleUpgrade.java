@@ -6,6 +6,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import com.anythink.core.common.l;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.utils.skin.BluedSkinUtils;
 import com.blued.android.framework.view.badgeview.DisplayUtil;
@@ -83,14 +84,14 @@ public final class FitemMsgNobleUpgrade extends FitemMsgBase {
     }
 
     private final void a(final Context context, final FrameLayout frameLayout) {
-        final View a2 = this.f10935a.a(R.id.live_msg_content_text);
-        if (a2 == null) {
+        final View a = this.a.a(R.id.live_msg_content_text);
+        if (a == null) {
             return;
         }
-        a2.post(new Runnable() { // from class: com.blued.android.module.live_china.fitem.msgcontent.-$$Lambda$FitemMsgNobleUpgrade$nIde-wO_3LX7w94hhKmx-R4Bdok
+        a.post(new Runnable() { // from class: com.blued.android.module.live_china.fitem.msgcontent.-$$Lambda$FitemMsgNobleUpgrade$nIde-wO_3LX7w94hhKmx-R4Bdok
             @Override // java.lang.Runnable
             public final void run() {
-                FitemMsgNobleUpgrade.a(Context.this, a2, frameLayout, this);
+                FitemMsgNobleUpgrade.a(context, a, frameLayout, this);
             }
         });
     }
@@ -105,14 +106,14 @@ public final class FitemMsgNobleUpgrade extends FitemMsgBase {
         Ref.ObjectRef objectRef = new Ref.ObjectRef();
         Map<String, Object> map = e().msgMapExtra;
         Long l = null;
-        objectRef.f42545a = (map == null || (obj = map.get("nameplate_img")) == null) ? null : obj.toString();
+        objectRef.a = (map == null || (obj = map.get("nameplate_img")) == null) ? null : obj.toString();
         Map<String, Object> map2 = e().msgMapExtra;
         Long valueOf = (map2 == null || (obj2 = map2.get("nameplate_img_width")) == null || (obj3 = obj2.toString()) == null) ? null : Long.valueOf(Long.parseLong(obj3));
         Map<String, Object> map3 = e().msgMapExtra;
         if (map3 != null && (obj4 = map3.get("nameplate_img_height")) != null && (obj5 = obj4.toString()) != null) {
             l = Long.valueOf(Long.parseLong(obj5));
         }
-        CharSequence charSequence = (CharSequence) objectRef.f42545a;
+        CharSequence charSequence = (CharSequence) objectRef.a;
         if ((charSequence == null || charSequence.length() == 0) || valueOf == null || valueOf.longValue() <= 0 || l == null || l.longValue() <= 0) {
             return;
         }
@@ -169,13 +170,13 @@ public final class FitemMsgNobleUpgrade extends FitemMsgBase {
         final Ref.ObjectRef objectRef = new Ref.ObjectRef();
         Map<String, Object> map = e().msgMapExtra;
         List list2 = null;
-        if (map != null && (obj = map.get("content")) != null && (obj2 = obj.toString()) != null) {
+        if (map != null && (obj = map.get(l.y)) != null && (obj2 = obj.toString()) != null) {
             list2 = StringsKt.b((CharSequence) obj2, new String[]{"#username#"}, false, 0, 6, (Object) null);
         }
-        objectRef.f42545a = list2;
-        Collection collection = (Collection) objectRef.f42545a;
-        if ((collection == null || collection.isEmpty()) || ((List) objectRef.f42545a).size() < 2) {
-            objectRef.f42545a = CollectionsKt.d("恭喜 ", " 成为贵族！");
+        objectRef.a = list2;
+        Collection collection = (Collection) objectRef.a;
+        if ((collection == null || collection.isEmpty()) || ((List) objectRef.a).size() < 2) {
+            objectRef.a = CollectionsKt.d("恭喜 ", " 成为贵族！");
         }
         TextView textView = (TextView) vh.a(R.id.live_msg_content_text);
         if (textView != null) {
@@ -189,7 +190,7 @@ public final class FitemMsgNobleUpgrade extends FitemMsgBase {
 
                 public final void a(DslSpannableStringBuilder buildSpannableString) {
                     Intrinsics.e(buildSpannableString, "$this$buildSpannableString");
-                    buildSpannableString.a(objectRef.f42545a.get(0), new Function1<DslSpanBuilder, Unit>() { // from class: com.blued.android.module.live_china.fitem.msgcontent.FitemMsgNobleUpgrade$initBindView$1$1.1
+                    buildSpannableString.a(objectRef.a.get(0), new Function1<DslSpanBuilder, Unit>() { // from class: com.blued.android.module.live_china.fitem.msgcontent.FitemMsgNobleUpgrade$initBindView$1$1.1
                         public final void a(DslSpanBuilder addText) {
                             Intrinsics.e(addText, "$this$addText");
                         }
@@ -197,7 +198,7 @@ public final class FitemMsgNobleUpgrade extends FitemMsgBase {
                         @Override // kotlin.jvm.functions.Function1
                         public /* synthetic */ Unit invoke(DslSpanBuilder dslSpanBuilder) {
                             a(dslSpanBuilder);
-                            return Unit.f42314a;
+                            return Unit.a;
                         }
                     });
                     buildSpannableString.a(this.k(), new Function1<DslSpanBuilder, Unit>() { // from class: com.blued.android.module.live_china.fitem.msgcontent.FitemMsgNobleUpgrade$initBindView$1$1.2
@@ -211,10 +212,10 @@ public final class FitemMsgNobleUpgrade extends FitemMsgBase {
                         @Override // kotlin.jvm.functions.Function1
                         public /* synthetic */ Unit invoke(DslSpanBuilder dslSpanBuilder) {
                             a(dslSpanBuilder);
-                            return Unit.f42314a;
+                            return Unit.a;
                         }
                     });
-                    buildSpannableString.a(objectRef.f42545a.get(objectRef.f42545a.size() - 1), new Function1<DslSpanBuilder, Unit>() { // from class: com.blued.android.module.live_china.fitem.msgcontent.FitemMsgNobleUpgrade$initBindView$1$1.3
+                    buildSpannableString.a(objectRef.a.get(objectRef.a.size() - 1), new Function1<DslSpanBuilder, Unit>() { // from class: com.blued.android.module.live_china.fitem.msgcontent.FitemMsgNobleUpgrade$initBindView$1$1.3
                         public final void a(DslSpanBuilder addText) {
                             Intrinsics.e(addText, "$this$addText");
                         }
@@ -222,7 +223,7 @@ public final class FitemMsgNobleUpgrade extends FitemMsgBase {
                         @Override // kotlin.jvm.functions.Function1
                         public /* synthetic */ Unit invoke(DslSpanBuilder dslSpanBuilder) {
                             a(dslSpanBuilder);
-                            return Unit.f42314a;
+                            return Unit.a;
                         }
                     });
                 }
@@ -230,7 +231,7 @@ public final class FitemMsgNobleUpgrade extends FitemMsgBase {
                 @Override // kotlin.jvm.functions.Function1
                 public /* synthetic */ Unit invoke(DslSpannableStringBuilder dslSpannableStringBuilder) {
                     a(dslSpannableStringBuilder);
-                    return Unit.f42314a;
+                    return Unit.a;
                 }
             });
             textView.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fitem.msgcontent.-$$Lambda$FitemMsgNobleUpgrade$N4YJiS_VZaGN7U1pylLuS602FO8
@@ -240,20 +241,20 @@ public final class FitemMsgNobleUpgrade extends FitemMsgBase {
                 }
             });
         }
-        View a2 = vh.a(R.id.live_msg_content_root);
-        if (a2 != null) {
-            a2.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fitem.msgcontent.-$$Lambda$FitemMsgNobleUpgrade$xiNavMVkERZ-UOSaPCFGeHja1f8
+        View a = vh.a(R.id.live_msg_content_root);
+        if (a != null) {
+            a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fitem.msgcontent.-$$Lambda$FitemMsgNobleUpgrade$xiNavMVkERZ-UOSaPCFGeHja1f8
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     FitemMsgNobleUpgrade.b(FitemMsgNobleUpgrade.this, view);
                 }
             });
-            a2.setBackgroundResource(R.drawable.live_msg_noble_join_item_bg);
-            if (a2 instanceof LiveMsgBgFrameLayout) {
-                ((LiveMsgBgFrameLayout) a2).setValidColors(false);
+            a.setBackgroundResource(R.drawable.live_msg_noble_join_item_bg);
+            if (a instanceof LiveMsgBgFrameLayout) {
+                ((LiveMsgBgFrameLayout) a).setValidColors(false);
             }
         }
-        FrameLayout frameLayout = (FrameLayout) this.f10935a.a(R.id.fl_icon_root);
+        FrameLayout frameLayout = (FrameLayout) this.a.a(R.id.fl_icon_root);
         if (frameLayout != null) {
             a(context, frameLayout);
         }

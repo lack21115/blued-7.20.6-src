@@ -7,11 +7,11 @@ import com.bumptech.glide.util.Preconditions;
 class EngineResource<Z> implements Resource<Z> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final boolean f20782a;
+    private final boolean f7176a;
     private final boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final Resource<Z> f20783c;
+    private final Resource<Z> f7177c;
     private final ResourceListener d;
     private final Key e;
     private int f;
@@ -24,8 +24,8 @@ class EngineResource<Z> implements Resource<Z> {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public EngineResource(Resource<Z> resource, boolean z, boolean z2, Key key, ResourceListener resourceListener) {
-        this.f20783c = (Resource) Preconditions.a(resource);
-        this.f20782a = z;
+        this.f7177c = (Resource) Preconditions.a(resource);
+        this.f7176a = z;
         this.b = z2;
         this.e = key;
         this.d = (ResourceListener) Preconditions.a(resourceListener);
@@ -33,12 +33,12 @@ class EngineResource<Z> implements Resource<Z> {
 
     @Override // com.bumptech.glide.load.engine.Resource
     public Class<Z> a() {
-        return this.f20783c.a();
+        return this.f7177c.a();
     }
 
     @Override // com.bumptech.glide.load.engine.Resource
     public int b() {
-        return this.f20783c.b();
+        return this.f7177c.b();
     }
 
     @Override // com.bumptech.glide.load.engine.Resource
@@ -52,24 +52,24 @@ class EngineResource<Z> implements Resource<Z> {
             }
             this.g = true;
             if (this.b) {
-                this.f20783c.c();
+                this.f7177c.c();
             }
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public Resource<Z> d() {
-        return this.f20783c;
+        return this.f7177c;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public boolean e() {
-        return this.f20782a;
+        return this.f7176a;
     }
 
     @Override // com.bumptech.glide.load.engine.Resource
     public Z f() {
-        return this.f20783c.f();
+        return this.f7177c.f();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -104,7 +104,7 @@ class EngineResource<Z> implements Resource<Z> {
     public String toString() {
         String str;
         synchronized (this) {
-            str = "EngineResource{isMemoryCacheable=" + this.f20782a + ", listener=" + this.d + ", key=" + this.e + ", acquired=" + this.f + ", isRecycled=" + this.g + ", resource=" + this.f20783c + '}';
+            str = "EngineResource{isMemoryCacheable=" + this.f7176a + ", listener=" + this.d + ", key=" + this.e + ", acquired=" + this.f + ", isRecycled=" + this.g + ", resource=" + this.f7177c + '}';
         }
         return str;
     }

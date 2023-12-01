@@ -7,11 +7,9 @@ import android.content.IntentFilter;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.media.AudioManager;
-import android.media.MediaDrm;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.wifi.WifiManager;
-import android.os.BatteryManager;
 import android.os.Build;
 import android.os.Environment;
 import android.os.StatFs;
@@ -20,9 +18,9 @@ import android.provider.Settings;
 import android.telephony.TelephonyManager;
 import android.util.DisplayMetrics;
 import com.android.internal.telephony.PhoneConstants;
+import com.android.internal.telephony.SmsConstants;
 import com.android.internal.telephony.TelephonyProperties;
-import com.ss.android.socialbase.downloader.constants.MonitorConstants;
-import com.tencent.thumbplayer.core.common.TPSystemInfo;
+import com.android.internal.util.cm.QSConstants;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -37,30 +35,29 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.TimeZone;
+import javax.xml.transform.OutputKeys;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alipay/security/mobile/module/b/b.class */
 public final class b {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static b f4705a = new b();
+    private static b a = new b();
 
     private b() {
     }
 
     public static b a() {
-        return f4705a;
+        return a;
     }
 
     public static String a(Context context) {
-        if (a(context, "android.permission.READ_PHONE_STATE")) {
+        if (a(context, com.anythink.china.common.d.a)) {
             return "";
         }
         String str = null;
         if (context != null) {
             try {
-                TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService("phone");
+                TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService(PhoneConstants.PHONE_KEY);
                 str = null;
                 if (telephonyManager != null) {
                     str = telephonyManager.getDeviceId();
@@ -136,7 +133,7 @@ public final class b {
     public static String c() {
         long j = 0;
         try {
-            if (Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())) {
+            if ("mounted".equals(Environment.getExternalStorageState())) {
                 StatFs statFs = new StatFs(com.alipay.security.mobile.module.a.a.a().getPath());
                 j = statFs.getBlockSize() * statFs.getAvailableBlocks();
             }
@@ -193,7 +190,7 @@ public final class b {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:11:0x002c, code lost:
-        if (com.igexin.push.core.b.l.equals(r4) != false) goto L10;
+        if ("null".equals(r4) != false) goto L10;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -349,8 +346,8 @@ public final class b {
                         if (sensor != null) {
                             JSONObject jSONObject = new JSONObject();
                             jSONObject.put("name", sensor.getName());
-                            jSONObject.put("version", sensor.getVersion());
-                            jSONObject.put(MediaDrm.PROPERTY_VENDOR, sensor.getVendor());
+                            jSONObject.put(OutputKeys.VERSION, sensor.getVersion());
+                            jSONObject.put("vendor", sensor.getVendor());
                             jSONArray.put(jSONObject);
                         }
                     }
@@ -501,7 +498,7 @@ public final class b {
     public static String j() {
         long j = 0;
         try {
-            if (Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())) {
+            if ("mounted".equals(Environment.getExternalStorageState())) {
                 StatFs statFs = new StatFs(Environment.getExternalStorageDirectory().getPath());
                 j = statFs.getBlockSize() * statFs.getBlockCount();
             }
@@ -526,7 +523,7 @@ public final class b {
         String str;
         try {
             Class<?> cls = Class.forName("android.os.SystemProperties");
-            str = (String) cls.getMethod(MonitorConstants.CONNECT_TYPE_GET, String.class, String.class).invoke(cls.newInstance(), TelephonyProperties.PROPERTY_BASEBAND_VERSION, "no message");
+            str = (String) cls.getMethod("get", String.class, String.class).invoke(cls.newInstance(), TelephonyProperties.PROPERTY_BASEBAND_VERSION, "no message");
         } catch (Throwable th) {
             str = "";
         }
@@ -539,7 +536,7 @@ public final class b {
             return "";
         }
         try {
-            String macAddress = ((WifiManager) context.getSystemService("wifi")).getConnectionInfo().getMacAddress();
+            String macAddress = ((WifiManager) context.getSystemService(QSConstants.TILE_WIFI)).getConnectionInfo().getMacAddress();
             if (macAddress == null || macAddress.length() == 0 || "02:00:00:00:00:00".equals(macAddress)) {
                 str = macAddress;
                 return u();
@@ -561,11 +558,11 @@ public final class b {
     }
 
     public static String l(Context context) {
-        if (a(context, "android.permission.READ_PHONE_STATE")) {
+        if (a(context, com.anythink.china.common.d.a)) {
             return "";
         }
         try {
-            String simSerialNumber = ((TelephonyManager) context.getSystemService("phone")).getSimSerialNumber();
+            String simSerialNumber = ((TelephonyManager) context.getSystemService(PhoneConstants.PHONE_KEY)).getSimSerialNumber();
             String str = "";
             if (simSerialNumber != null) {
                 if (simSerialNumber != null) {
@@ -617,7 +614,7 @@ public final class b {
 
     public static String n(Context context) {
         try {
-            TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService("phone");
+            TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService(PhoneConstants.PHONE_KEY);
             return telephonyManager != null ? String.valueOf(telephonyManager.getNetworkType()) : "";
         } catch (Throwable th) {
             return "";
@@ -786,7 +783,7 @@ public final class b {
 
     public static String r() {
         LineNumberReader lineNumberReader;
-        char c2;
+        char c;
         StringBuilder sb = new StringBuilder();
         LinkedHashMap linkedHashMap = new LinkedHashMap();
         linkedHashMap.put("/system/build.prop", "ro.product.name=sdk");
@@ -799,11 +796,11 @@ public final class b {
                 while (true) {
                     try {
                         String readLine = lineNumberReader.readLine();
-                        c2 = '0';
+                        c = '0';
                         if (readLine == null) {
                             break;
                         } else if (readLine.toLowerCase().contains((CharSequence) linkedHashMap.get(str))) {
-                            c2 = '1';
+                            c = '1';
                             break;
                         }
                     } catch (Throwable th) {
@@ -813,7 +810,7 @@ public final class b {
                         }
                     }
                 }
-                sb.append(c2);
+                sb.append(c);
                 try {
                     lineNumberReader.close();
                 } catch (Throwable th2) {
@@ -828,7 +825,7 @@ public final class b {
     public static String r(Context context) {
         try {
             long j = 0;
-            if (!((KeyguardManager) context.getSystemService(Context.KEYGUARD_SERVICE)).isKeyguardSecure()) {
+            if (!((KeyguardManager) context.getSystemService("keyguard")).isKeyguardSecure()) {
                 return "0:0";
             }
             int i = 0;
@@ -851,12 +848,12 @@ public final class b {
     }
 
     public static String s() {
-        char c2;
+        char c;
         StringBuilder sb = new StringBuilder();
         sb.append("00:");
         LinkedHashMap linkedHashMap = new LinkedHashMap();
         linkedHashMap.put("BRAND", "generic");
-        linkedHashMap.put("BOARD", "unknown");
+        linkedHashMap.put("BOARD", SmsConstants.FORMAT_UNKNOWN);
         linkedHashMap.put("DEVICE", "generic");
         linkedHashMap.put("HARDWARE", "goldfish");
         linkedHashMap.put("PRODUCT", "sdk");
@@ -866,25 +863,25 @@ public final class b {
                 String str2 = (String) Build.class.getField(str).get(null);
                 String str3 = (String) linkedHashMap.get(str);
                 String lowerCase = str2 != null ? str2.toLowerCase() : null;
-                c2 = '0';
+                c = '0';
                 if (lowerCase != null) {
-                    c2 = '0';
+                    c = '0';
                     if (lowerCase.contains(str3)) {
-                        c2 = '1';
+                        c = '1';
                     }
                 }
             } catch (Throwable th) {
-                c2 = '0';
+                c = '0';
             }
-            sb.append(c2);
+            sb.append(c);
         }
         return sb.toString();
     }
 
     public static String s(Context context) {
         try {
-            Intent registerReceiver = context.registerReceiver(null, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
-            int intExtra = registerReceiver.getIntExtra(BatteryManager.EXTRA_LEVEL, -1);
+            Intent registerReceiver = context.registerReceiver(null, new IntentFilter("android.intent.action.BATTERY_CHANGED"));
+            int intExtra = registerReceiver.getIntExtra("level", -1);
             int intExtra2 = registerReceiver.getIntExtra("status", -1);
             boolean z = intExtra2 == 2 || intExtra2 == 5;
             StringBuilder sb = new StringBuilder();
@@ -903,23 +900,23 @@ public final class b {
         LinkedHashMap linkedHashMap = new LinkedHashMap();
         linkedHashMap.put("ro.hardware", "goldfish");
         linkedHashMap.put("ro.kernel.qemu", "1");
-        linkedHashMap.put(TPSystemInfo.KEY_PROPERTY_DEVICE, "generic");
-        linkedHashMap.put(TPSystemInfo.KEY_PROPERTY_MODEL, "sdk");
+        linkedHashMap.put("ro.product.device", "generic");
+        linkedHashMap.put("ro.product.model", "sdk");
         linkedHashMap.put("ro.product.brand", "generic");
         linkedHashMap.put("ro.product.name", "sdk");
         linkedHashMap.put("ro.build.fingerprint", "test-keys");
-        linkedHashMap.put(TPSystemInfo.KEY_PROPERTY_MANUFACTURER, "unknow");
+        linkedHashMap.put("ro.product.manufacturer", "unknow");
         for (String str : linkedHashMap.keySet()) {
             String str2 = (String) linkedHashMap.get(str);
             String b = com.alipay.security.mobile.module.a.a.b(str, "");
-            char c2 = '0';
+            char c = '0';
             if (b != null) {
-                c2 = '0';
+                c = '0';
                 if (b.contains(str2)) {
-                    c2 = '1';
+                    c = '1';
                 }
             }
-            sb.append(c2);
+            sb.append(c);
         }
         return sb.toString();
     }
@@ -929,7 +926,7 @@ public final class b {
             return "";
         }
         try {
-            NetworkInfo activeNetworkInfo = ((ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE)).getActiveNetworkInfo();
+            NetworkInfo activeNetworkInfo = ((ConnectivityManager) context.getSystemService("connectivity")).getActiveNetworkInfo();
             if (activeNetworkInfo == null) {
                 return null;
             }

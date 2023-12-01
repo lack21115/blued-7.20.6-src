@@ -11,13 +11,9 @@ import com.blued.android.module.yy_china.view.YYHomeThemeTabView;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/DialogRomanticGuidebookBinding.class */
 public final class DialogRomanticGuidebookBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final View f16397a;
+    public final View a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f16398c;
+    public final ImageView c;
     public final ImageView d;
     public final ImageView e;
     public final YYHomeThemeTabView f;
@@ -29,9 +25,9 @@ public final class DialogRomanticGuidebookBinding implements ViewBinding {
 
     private DialogRomanticGuidebookBinding(ConstraintLayout constraintLayout, View view, ImageView imageView, ImageView imageView2, ImageView imageView3, ImageView imageView4, YYHomeThemeTabView yYHomeThemeTabView, ViewPager viewPager, TextView textView, TextView textView2, TextView textView3) {
         this.k = constraintLayout;
-        this.f16397a = view;
+        this.a = view;
         this.b = imageView;
-        this.f16398c = imageView2;
+        this.c = imageView2;
         this.d = imageView3;
         this.e = imageView4;
         this.f = yYHomeThemeTabView;
@@ -55,15 +51,15 @@ public final class DialogRomanticGuidebookBinding implements ViewBinding {
                         if (imageView4 != null) {
                             YYHomeThemeTabView yYHomeThemeTabView = (YYHomeThemeTabView) view.findViewById(R.id.ll_tab_layout);
                             if (yYHomeThemeTabView != null) {
-                                ViewPager viewPager = (ViewPager) view.findViewById(R.id.ll_view_pager);
-                                if (viewPager != null) {
+                                ViewPager findViewById2 = view.findViewById(R.id.ll_view_pager);
+                                if (findViewById2 != null) {
                                     TextView textView = (TextView) view.findViewById(R.id.tv_guidebook);
                                     if (textView != null) {
                                         TextView textView2 = (TextView) view.findViewById(R.id.tv_rule_info);
                                         if (textView2 != null) {
                                             TextView textView3 = (TextView) view.findViewById(R.id.tv_user_name);
                                             if (textView3 != null) {
-                                                return new DialogRomanticGuidebookBinding((ConstraintLayout) view, findViewById, imageView, imageView2, imageView3, imageView4, yYHomeThemeTabView, viewPager, textView, textView2, textView3);
+                                                return new DialogRomanticGuidebookBinding((ConstraintLayout) view, findViewById, imageView, imageView2, imageView3, imageView4, yYHomeThemeTabView, findViewById2, textView, textView2, textView3);
                                             }
                                             str = "tvUserName";
                                         } else {
@@ -96,7 +92,6 @@ public final class DialogRomanticGuidebookBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.k;

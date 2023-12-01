@@ -10,7 +10,7 @@ import com.bumptech.glide.util.Util;
 public class BitmapDrawableResource extends DrawableResource<BitmapDrawable> implements Initializable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final BitmapPool f20937a;
+    private final BitmapPool f7331a;
 
     @Override // com.bumptech.glide.load.engine.Resource
     public Class<BitmapDrawable> a() {
@@ -24,7 +24,7 @@ public class BitmapDrawableResource extends DrawableResource<BitmapDrawable> imp
 
     @Override // com.bumptech.glide.load.engine.Resource
     public void c() {
-        this.f20937a.a(((BitmapDrawable) this.d).getBitmap());
+        this.f7331a.a(((BitmapDrawable) this.d).getBitmap());
     }
 
     @Override // com.bumptech.glide.load.resource.drawable.DrawableResource, com.bumptech.glide.load.engine.Initializable

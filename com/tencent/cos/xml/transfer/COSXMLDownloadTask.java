@@ -3,7 +3,6 @@ package com.tencent.cos.xml.transfer;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.cos.xml.BeaconService;
 import com.tencent.cos.xml.CosXmlSimpleService;
 import com.tencent.cos.xml.exception.CosXmlClientException;
@@ -19,6 +18,7 @@ import com.tencent.cos.xml.utils.DigestUtils;
 import com.tencent.cos.xml.utils.FileUtils;
 import com.tencent.qcloud.core.common.QCloudTaskStateListener;
 import com.tencent.qcloud.core.logger.QCloudLogger;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.File;
 import java.util.List;
 import java.util.Map;
@@ -66,7 +66,7 @@ public final class COSXMLDownloadTask extends COSXMLTask {
         if (this.headers != null && this.headers.containsKey("Range")) {
             String str = this.headers.get("Range").get(0);
             int indexOf = str.indexOf("=");
-            int indexOf2 = str.indexOf("-");
+            int indexOf2 = str.indexOf(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
             this.rangeStart = Long.valueOf(str.substring(indexOf + 1, indexOf2)).longValue();
             String substring = str.substring(indexOf2 + 1);
             if (!TextUtils.isEmpty(substring)) {
@@ -114,10 +114,10 @@ public final class COSXMLDownloadTask extends COSXMLTask {
         int lastIndexOf;
         String str3 = this.localSaveDirPath;
         if (str3 != null) {
-            if (str3.endsWith(BridgeUtil.SPLIT_MARK)) {
+            if (str3.endsWith("/")) {
                 str2 = this.localSaveDirPath;
             } else {
-                str2 = this.localSaveDirPath + BridgeUtil.SPLIT_MARK;
+                str2 = this.localSaveDirPath + "/";
             }
             File file = new File(str2);
             if (!file.exists()) {
@@ -128,7 +128,7 @@ public final class COSXMLDownloadTask extends COSXMLTask {
             }
             str = str2;
             if (this.cosPath != null) {
-                if (this.cosPath.lastIndexOf(BridgeUtil.SPLIT_MARK) >= 0) {
+                if (this.cosPath.lastIndexOf("/") >= 0) {
                     return str2 + this.cosPath.substring(lastIndexOf + 1);
                 }
                 return str2 + this.cosPath;
@@ -142,23 +142,23 @@ public final class COSXMLDownloadTask extends COSXMLTask {
     private String getKey() {
         StringBuffer stringBuffer = new StringBuffer();
         stringBuffer.append("download");
-        stringBuffer.append(BridgeUtil.UNDERLINE_STR);
+        stringBuffer.append("_");
         stringBuffer.append(this.region);
-        stringBuffer.append(BridgeUtil.UNDERLINE_STR);
+        stringBuffer.append("_");
         stringBuffer.append(this.bucket);
-        stringBuffer.append(BridgeUtil.UNDERLINE_STR);
+        stringBuffer.append("_");
         stringBuffer.append(this.cosPath);
-        stringBuffer.append(BridgeUtil.UNDERLINE_STR);
+        stringBuffer.append("_");
         stringBuffer.append(this.rangeStart);
-        stringBuffer.append(BridgeUtil.UNDERLINE_STR);
+        stringBuffer.append("_");
         stringBuffer.append(this.rangeEnd);
-        stringBuffer.append(BridgeUtil.UNDERLINE_STR);
+        stringBuffer.append("_");
         stringBuffer.append(this.fileOffset);
-        stringBuffer.append(BridgeUtil.UNDERLINE_STR);
+        stringBuffer.append("_");
         stringBuffer.append(this.localSaveDirPath);
-        stringBuffer.append(BridgeUtil.UNDERLINE_STR);
+        stringBuffer.append("_");
         stringBuffer.append(this.localSaveFileName);
-        stringBuffer.append(BridgeUtil.UNDERLINE_STR);
+        stringBuffer.append("_");
         stringBuffer.append(this.eTag);
         try {
             return DigestUtils.getSha1(stringBuffer.toString());

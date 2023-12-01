@@ -12,10 +12,10 @@ import java.lang.reflect.Array;
 public final class c implements Application.ActivityLifecycleCallbacks {
 
     /* renamed from: a  reason: collision with root package name */
-    Fragment f21405a;
+    Fragment f7799a;
 
     public c(Fragment fragment) {
-        this.f21405a = fragment;
+        this.f7799a = fragment;
     }
 
     @Override // android.app.Application.ActivityLifecycleCallbacks
@@ -33,7 +33,7 @@ public final class c implements Application.ActivityLifecycleCallbacks {
     public final void onActivityPostSaveInstanceState(Activity activity, Bundle bundle) {
         Object[] objArr;
         Object obj;
-        if (this.f21405a.getActivity() != activity) {
+        if (this.f7799a.getActivity() != activity) {
             return;
         }
         try {
@@ -87,7 +87,7 @@ public final class c implements Application.ActivityLifecycleCallbacks {
     public final void onActivitySaveInstanceState(Activity activity, Bundle bundle) {
         Object[] objArr;
         Object obj;
-        if (this.f21405a.getActivity() != activity) {
+        if (this.f7799a.getActivity() != activity) {
             return;
         }
         try {

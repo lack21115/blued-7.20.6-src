@@ -12,17 +12,17 @@ import java.util.Map;
 public class c {
 
     /* renamed from: a  reason: collision with other field name */
-    private SharedPreferences f63a;
+    private SharedPreferences f16a;
 
     /* renamed from: a  reason: collision with other field name */
-    private b f65a;
+    private b f18a;
 
     /* renamed from: a  reason: collision with other field name */
-    private d f66a;
+    private d f19a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f34901c;
+    private String f21210c;
     private boolean f;
     private boolean g;
     private boolean h;
@@ -30,10 +30,10 @@ public class c {
     private Context mContext;
 
     /* renamed from: a  reason: collision with root package name */
-    private SharedPreferences.Editor f34900a = null;
+    private SharedPreferences.Editor f21209a = null;
 
     /* renamed from: a  reason: collision with other field name */
-    private b.a f64a = null;
+    private b.a f17a = null;
 
     /* JADX WARN: Removed duplicated region for block: B:101:0x0313  */
     /* JADX WARN: Removed duplicated region for block: B:109:0x032f  */
@@ -53,17 +53,17 @@ public class c {
     }
 
     private d a(String str) {
-        File m9887a = m9887a(str);
-        if (m9887a != null) {
-            d dVar = new d(m9887a.getAbsolutePath());
-            this.f66a = dVar;
+        File m6842a = m6842a(str);
+        if (m6842a != null) {
+            d dVar = new d(m6842a.getAbsolutePath());
+            this.f19a = dVar;
             return dVar;
         }
         return null;
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    private File m9887a(String str) {
+    private File m6842a(String str) {
         File externalStorageDirectory = Environment.getExternalStorageDirectory();
         if (externalStorageDirectory != null) {
             File file = new File(String.format("%s%s%s", externalStorageDirectory.getAbsolutePath(), File.separator, str));
@@ -129,17 +129,17 @@ public class c {
     private void b() {
         b bVar;
         SharedPreferences sharedPreferences;
-        if (this.f34900a == null && (sharedPreferences = this.f63a) != null) {
-            this.f34900a = sharedPreferences.edit();
+        if (this.f21209a == null && (sharedPreferences = this.f16a) != null) {
+            this.f21209a = sharedPreferences.edit();
         }
-        if (this.h && this.f64a == null && (bVar = this.f65a) != null) {
-            this.f64a = bVar.a();
+        if (this.h && this.f17a == null && (bVar = this.f18a) != null) {
+            this.f17a = bVar.a();
         }
         c();
     }
 
     private boolean c() {
-        b bVar = this.f65a;
+        b bVar = this.f18a;
         if (bVar != null) {
             boolean b = bVar.b();
             if (!b) {
@@ -158,10 +158,10 @@ public class c {
         r12.printStackTrace();
      */
     /* JADX WARN: Code restructure failed: missing block: B:41:0x00ff, code lost:
-        if (r5.f64a.commit() == false) goto L40;
+        if (r5.f17a.commit() == false) goto L40;
      */
     /* JADX WARN: Code restructure failed: missing block: B:48:0x0125, code lost:
-        if (r5.f65a != null) goto L49;
+        if (r5.f18a != null) goto L49;
      */
     /* JADX WARN: Removed duplicated region for block: B:25:0x007c  */
     /* JADX WARN: Removed duplicated region for block: B:45:0x010f  */
@@ -180,42 +180,42 @@ public class c {
 
     public String getString(String str) {
         c();
-        SharedPreferences sharedPreferences = this.f63a;
+        SharedPreferences sharedPreferences = this.f16a;
         if (sharedPreferences != null) {
             String string = sharedPreferences.getString(str, "");
-            if (!g.m9885a(string)) {
+            if (!g.m6840a(string)) {
                 return string;
             }
         }
-        b bVar = this.f65a;
+        b bVar = this.f18a;
         return bVar != null ? bVar.getString(str, "") : "";
     }
 
     public void putString(String str, String str2) {
-        if (g.m9885a(str) || str.equals("t")) {
+        if (g.m6840a(str) || str.equals("t")) {
             return;
         }
         b();
-        SharedPreferences.Editor editor = this.f34900a;
+        SharedPreferences.Editor editor = this.f21209a;
         if (editor != null) {
             editor.putString(str, str2);
         }
-        b.a aVar = this.f64a;
+        b.a aVar = this.f17a;
         if (aVar != null) {
             aVar.a(str, str2);
         }
     }
 
     public void remove(String str) {
-        if (g.m9885a(str) || str.equals("t")) {
+        if (g.m6840a(str) || str.equals("t")) {
             return;
         }
         b();
-        SharedPreferences.Editor editor = this.f34900a;
+        SharedPreferences.Editor editor = this.f21209a;
         if (editor != null) {
             editor.remove(str);
         }
-        b.a aVar = this.f64a;
+        b.a aVar = this.f17a;
         if (aVar != null) {
             aVar.a(str);
         }

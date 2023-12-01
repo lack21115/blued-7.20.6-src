@@ -1,6 +1,7 @@
 package com.blued.android.statistics.grpc.connect;
 
 import android.os.SystemClock;
+import com.amap.api.fence.GeoFence;
 import com.blued.android.statistics.BluedStatistics;
 import com.blued.android.statistics.StatConfig;
 import com.blued.android.statistics.grpc.ConnectManager;
@@ -8,6 +9,7 @@ import com.blued.android.statistics.grpc.StatThreadManager;
 import com.blued.android.statistics.util.NamedRunnable;
 import com.blued.das.event.CustomEventProtos;
 import com.blued.das.event.ReportServiceGrpc;
+import com.efs.sdk.base.Constants;
 import java.util.concurrent.TimeUnit;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/statistics/grpc/connect/EventManager.class */
@@ -18,7 +20,7 @@ public final class EventManager extends BaseManager<CustomEventProtos.Request> {
         private CustomEventProtos.Requests b;
 
         public EventRunnable(CustomEventProtos.Requests requests) {
-            super(StatConfig.a("event"));
+            super(StatConfig.a(GeoFence.BUNDLE_KEY_FENCESTATUS));
             this.b = requests;
         }
 
@@ -28,11 +30,11 @@ public final class EventManager extends BaseManager<CustomEventProtos.Request> {
             if (StatConfig.g()) {
                 StatConfig.b().b("EVENT start-request \n", this.b);
             }
-            ReportServiceGrpc.ReportServiceBlockingStub reportServiceBlockingStub = (ReportServiceGrpc.ReportServiceBlockingStub) ((ReportServiceGrpc.ReportServiceBlockingStub) ((ReportServiceGrpc.ReportServiceBlockingStub) ConnectManager.a(ReportServiceGrpc.newBlockingStub(ConnectManager.a()))).withCompression("gzip")).withDeadlineAfter(30L, TimeUnit.SECONDS);
+            ReportServiceGrpc.ReportServiceBlockingStub withDeadlineAfter = ConnectManager.a(ReportServiceGrpc.newBlockingStub(ConnectManager.a())).withCompression(Constants.CP_GZIP).withDeadlineAfter(30L, TimeUnit.SECONDS);
             CustomEventProtos.Response response2 = null;
             long uptimeMillis = SystemClock.uptimeMillis();
             try {
-                CustomEventProtos.Response batchReport = reportServiceBlockingStub.batchReport(this.b);
+                CustomEventProtos.Response batchReport = withDeadlineAfter.batchReport(this.b);
                 response = batchReport;
                 if (batchReport != null) {
                     response2 = batchReport;
@@ -56,9 +58,7 @@ public final class EventManager extends BaseManager<CustomEventProtos.Request> {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/statistics/grpc/connect/EventManager$InstanceHolder.class */
     public static class InstanceHolder {
-
-        /* renamed from: a  reason: collision with root package name */
-        private static final EventManager f18723a = new EventManager();
+        private static final EventManager a = new EventManager();
 
         private InstanceHolder() {
         }
@@ -68,7 +68,7 @@ public final class EventManager extends BaseManager<CustomEventProtos.Request> {
     }
 
     public static EventManager a() {
-        return InstanceHolder.f18723a;
+        return InstanceHolder.a;
     }
 
     @Override // com.blued.android.statistics.grpc.connect.BaseManager

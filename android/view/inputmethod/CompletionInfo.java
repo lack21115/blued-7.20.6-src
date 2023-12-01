@@ -42,8 +42,8 @@ public final class CompletionInfo implements Parcelable {
     private CompletionInfo(Parcel parcel) {
         this.mId = parcel.readLong();
         this.mPosition = parcel.readInt();
-        this.mText = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
-        this.mLabel = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
+        this.mText = (CharSequence) TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
+        this.mLabel = (CharSequence) TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
     }
 
     @Override // android.os.Parcelable

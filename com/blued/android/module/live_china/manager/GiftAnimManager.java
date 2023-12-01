@@ -46,9 +46,7 @@ import java.util.Map;
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/manager/GiftAnimManager.class */
 public class GiftAnimManager extends Thread {
     private static long Y = System.currentTimeMillis();
-
-    /* renamed from: c  reason: collision with root package name */
-    public static String f13570c = "";
+    public static String c = "";
     public static long d;
     private ImageView A;
     private ImageView B;
@@ -91,9 +89,7 @@ public class GiftAnimManager extends Thread {
     private boolean e = false;
     private Anim1Runnable K = new Anim1Runnable();
     private Anim2Runnable L = new Anim2Runnable();
-
-    /* renamed from: a  reason: collision with root package name */
-    public boolean f13571a = true;
+    public boolean a = true;
     public boolean b = true;
     private List<LiveChattingModel> O = Collections.synchronizedList(new LinkedList());
     private List<LiveGiftModel> P = Collections.synchronizedList(new LinkedList());
@@ -109,7 +105,7 @@ public class GiftAnimManager extends Thread {
 
         @Override // java.lang.Runnable
         public void run() {
-            GiftAnimManager.this.f13571a = true;
+            GiftAnimManager.this.a = true;
             GiftAnimManager.this.g.setVisibility(4);
             GiftAnimManager.this.C.setText("");
             GiftAnimManager.this.d();
@@ -137,23 +133,21 @@ public class GiftAnimManager extends Thread {
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/manager/GiftAnimManager$BatchCountDownTimer1.class */
     public class BatchCountDownTimer1 extends CountDownTimer {
         private LiveGiftModel b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private int f13588c;
+        private int c;
         private int d;
 
         public BatchCountDownTimer1(long j, long j2, LiveGiftModel liveGiftModel, int i, int i2) {
             super(j, j2);
-            this.f13588c = 0;
+            this.c = 0;
             this.b = liveGiftModel;
-            this.f13588c = i;
+            this.c = i;
             this.d = i2;
         }
 
         @Override // android.os.CountDownTimer
         public void onFinish() {
-            LogUtils.a("onFinish 11 count = ", Integer.valueOf(this.f13588c));
-            int i = this.f13588c;
+            LogUtils.a("onFinish 11 count = ", Integer.valueOf(this.c));
+            int i = this.c;
             int i2 = this.d;
             if (i >= i2) {
                 GiftAnimManager.this.V.postDelayed(GiftAnimManager.this.K, GiftAnimManager.this.a(this.b, false));
@@ -161,13 +155,13 @@ public class GiftAnimManager extends Thread {
                 GiftAnimManager giftAnimManager = GiftAnimManager.this;
                 GiftAnimManager giftAnimManager2 = GiftAnimManager.this;
                 int i3 = this.d;
-                int i4 = this.f13588c;
+                int i4 = this.c;
                 giftAnimManager.W = new BatchCountDownTimer1((i3 - i4) * 100, 100L, this.b, i4, i3);
                 GiftAnimManager.this.W.start();
             } else {
-                this.f13588c = i + 1;
+                this.c = i + 1;
                 TextView textView = GiftAnimManager.this.C;
-                textView.setText(this.f13588c + "");
+                textView.setText(this.c + "");
                 GiftAnimManager giftAnimManager3 = GiftAnimManager.this;
                 giftAnimManager3.a(giftAnimManager3.E, this.b);
                 GiftAnimManager.this.V.postDelayed(GiftAnimManager.this.K, GiftAnimManager.this.a(this.b, false));
@@ -176,8 +170,8 @@ public class GiftAnimManager extends Thread {
 
         @Override // android.os.CountDownTimer
         public void onTick(long j) {
-            this.f13588c++;
-            GiftAnimManager.this.C.setText(this.f13588c + "");
+            this.c++;
+            GiftAnimManager.this.C.setText(this.c + "");
             GiftAnimManager giftAnimManager = GiftAnimManager.this;
             giftAnimManager.a(giftAnimManager.E, this.b);
         }
@@ -187,23 +181,21 @@ public class GiftAnimManager extends Thread {
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/manager/GiftAnimManager$BatchCountDownTimer2.class */
     public class BatchCountDownTimer2 extends CountDownTimer {
         private LiveGiftModel b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private int f13590c;
+        private int c;
         private int d;
 
         public BatchCountDownTimer2(long j, long j2, LiveGiftModel liveGiftModel, int i, int i2) {
             super(j, j2);
-            this.f13590c = 0;
+            this.c = 0;
             this.b = liveGiftModel;
-            this.f13590c = i;
+            this.c = i;
             this.d = i2;
         }
 
         @Override // android.os.CountDownTimer
         public void onFinish() {
-            LogUtils.a("onFinish 22 count = ", Integer.valueOf(this.f13590c));
-            int i = this.f13590c;
+            LogUtils.a("onFinish 22 count = ", Integer.valueOf(this.c));
+            int i = this.c;
             int i2 = this.d;
             if (i >= i2) {
                 GiftAnimManager.this.V.postDelayed(GiftAnimManager.this.L, GiftAnimManager.this.a(this.b, false));
@@ -211,13 +203,13 @@ public class GiftAnimManager extends Thread {
                 GiftAnimManager giftAnimManager = GiftAnimManager.this;
                 GiftAnimManager giftAnimManager2 = GiftAnimManager.this;
                 int i3 = this.d;
-                int i4 = this.f13590c;
+                int i4 = this.c;
                 giftAnimManager.X = new BatchCountDownTimer2((i3 - i4) * 100, 100L, this.b, i4, i3);
                 GiftAnimManager.this.X.start();
             } else {
-                this.f13590c = i + 1;
+                this.c = i + 1;
                 TextView textView = GiftAnimManager.this.D;
-                textView.setText(this.f13590c + "");
+                textView.setText(this.c + "");
                 GiftAnimManager giftAnimManager3 = GiftAnimManager.this;
                 giftAnimManager3.a(giftAnimManager3.F, this.b);
                 GiftAnimManager.this.V.postDelayed(GiftAnimManager.this.L, GiftAnimManager.this.a(this.b, false));
@@ -226,8 +218,8 @@ public class GiftAnimManager extends Thread {
 
         @Override // android.os.CountDownTimer
         public void onTick(long j) {
-            this.f13590c++;
-            GiftAnimManager.this.D.setText(this.f13590c + "");
+            this.c++;
+            GiftAnimManager.this.D.setText(this.c + "");
             GiftAnimManager giftAnimManager = GiftAnimManager.this;
             giftAnimManager.a(giftAnimManager.F, this.b);
         }
@@ -483,14 +475,14 @@ public class GiftAnimManager extends Thread {
             liveGiftModel = (LiveGiftModel) liveChattingModel.msgMapExtra.get("gift_model");
         } else {
             try {
-                liveGiftModel = (LiveGiftModel) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), (Class<Object>) LiveGiftModel.class);
+                liveGiftModel = (LiveGiftModel) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), LiveGiftModel.class);
             } catch (Exception e) {
                 e.printStackTrace();
                 liveGiftModel = null;
             }
         }
         if (liveGiftModel == null) {
-            this.f13571a = true;
+            this.a = true;
             this.b = true;
             return;
         }
@@ -521,7 +513,7 @@ public class GiftAnimManager extends Thread {
     public void e(final LiveChattingModel liveChattingModel) {
         synchronized (this) {
             try {
-                this.f13571a = false;
+                this.a = false;
                 Map<String, Object> map = liveChattingModel.msgMapExtra;
                 if (!((map == null || !map.containsKey("isNobleUpgrade")) ? false : ((Boolean) map.get("isNobleUpgrade")).booleanValue())) {
                     LiveGiftModel liveGiftModel = null;
@@ -530,13 +522,13 @@ public class GiftAnimManager extends Thread {
                             liveGiftModel = (LiveGiftModel) liveChattingModel.msgMapExtra.get("gift_model");
                         } else {
                             try {
-                                liveGiftModel = (LiveGiftModel) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), (Class<Object>) LiveGiftModel.class);
+                                liveGiftModel = (LiveGiftModel) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), LiveGiftModel.class);
                             } catch (Exception e) {
                                 e.printStackTrace();
                             }
                         }
                         if (liveGiftModel == null) {
-                            this.f13571a = true;
+                            this.a = true;
                             return;
                         }
                         if (liveGiftModel.animation != 0 && this.f.getVisibility() != 8) {
@@ -572,7 +564,7 @@ public class GiftAnimManager extends Thread {
                                 LogUtils.c("aniGiftView1 gift_pic_url = ", liveGiftModel.images_static);
                                 this.A.setVisibility(0);
                                 ImageLoader.a(this.J, liveGiftModel.images_static).b(R.drawable.gift_default_icon).a(this.A);
-                                LiveViewUtils.f14195a.a(liveChattingModel, this.i);
+                                LiveViewUtils.a.a(liveChattingModel, this.i);
                                 if (this.i.getVisibility() == 0) {
                                     this.k.setVisibility(8);
                                 } else {
@@ -589,13 +581,13 @@ public class GiftAnimManager extends Thread {
                         }
                         Log.v(ReqAckPackage.REQ_RESPONSE_KEY.BEANS, "普通礼物没动画更新弯豆：" + liveGiftModel.beans_count);
                         BeansRefreshObserver.a().a(liveGiftModel.beans_count, liveGiftModel.beans_current_count);
-                        this.f13571a = true;
+                        this.a = true;
                         return;
                     } catch (Throwable th) {
                         th = th;
                     }
                 } else if (liveChattingModel.nobleModel == null) {
-                    this.f13571a = true;
+                    this.a = true;
                     return;
                 } else {
                     try {
@@ -625,7 +617,7 @@ public class GiftAnimManager extends Thread {
                             liveGiftModel = (LiveGiftModel) liveChattingModel.msgMapExtra.get("gift_model");
                         } else {
                             try {
-                                liveGiftModel = (LiveGiftModel) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), (Class<Object>) LiveGiftModel.class);
+                                liveGiftModel = (LiveGiftModel) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), LiveGiftModel.class);
                             } catch (Exception e) {
                                 e.printStackTrace();
                                 liveGiftModel = null;
@@ -668,7 +660,7 @@ public class GiftAnimManager extends Thread {
                                 LogUtils.c("aniGiftView2 giftModel.bg_img = ", liveGiftModel.bg_img);
                                 this.B.setVisibility(0);
                                 ImageLoader.a(this.J, liveGiftModel.images_static).b(R.drawable.gift_default_icon).a(this.B);
-                                LiveViewUtils.f14195a.a(liveChattingModel, this.j);
+                                LiveViewUtils.a.a(liveChattingModel, this.j);
                                 if (this.j.getVisibility() == 0) {
                                     this.l.setVisibility(8);
                                 } else {
@@ -691,7 +683,7 @@ public class GiftAnimManager extends Thread {
                         th = th;
                     }
                 } else if (liveChattingModel.nobleModel == null) {
-                    this.f13571a = true;
+                    this.a = true;
                     return;
                 } else {
                     try {
@@ -883,7 +875,7 @@ public class GiftAnimManager extends Thread {
     }
 
     public void a() {
-        f13570c = "";
+        c = "";
         d = 0L;
     }
 
@@ -938,7 +930,7 @@ public class GiftAnimManager extends Thread {
         this.H.b = R.drawable.gift_default_icon;
         this.H.l = false;
         this.H.a(AppMethods.a(60), AppMethods.a(60));
-        this.f13571a = true;
+        this.a = true;
         this.b = true;
     }
 
@@ -1066,7 +1058,7 @@ public class GiftAnimManager extends Thread {
         synchronized (this) {
             notify();
         }
-        this.f13571a = true;
+        this.a = true;
         this.b = true;
         this.T = false;
         this.U = false;
@@ -1097,7 +1089,7 @@ public class GiftAnimManager extends Thread {
         }
         this.g.setVisibility(4);
         this.h.setVisibility(4);
-        this.f13571a = true;
+        this.a = true;
         this.b = true;
         this.T = false;
         this.U = false;
@@ -1144,7 +1136,7 @@ public class GiftAnimManager extends Thread {
     public void run() {
         while (!this.e) {
             if (Boolean.valueOf(l()).booleanValue()) {
-                while (!this.f13571a && !this.b && !this.e && !c((LiveChattingModel) null)) {
+                while (!this.a && !this.b && !this.e && !c((LiveChattingModel) null)) {
                     try {
                         synchronized (this) {
                             LogUtils.c("等待任务 wait -----");
@@ -1164,8 +1156,8 @@ public class GiftAnimManager extends Thread {
                     }
                     a(j, 3);
                     LogUtils.c("发送相同任务消息");
-                } else if (this.f13571a) {
-                    this.f13571a = false;
+                } else if (this.a) {
+                    this.a = false;
                     a(j, 1);
                     LogUtils.c("开始弹道一任务");
                 } else if (this.b) {

@@ -1,6 +1,5 @@
 package okhttp3;
 
-import com.blued.das.live.LiveProtos;
 import java.security.cert.Certificate;
 import java.security.cert.X509Certificate;
 import java.util.ArrayList;
@@ -89,7 +88,7 @@ public final class CertificatePinner {
         }
 
         public int hashCode() {
-            return ((((LiveProtos.Event.LIVE_END_PAGE_CLOSE_CLICK_VALUE + this.pattern.hashCode()) * 31) + this.hashAlgorithm.hashCode()) * 31) + this.hash.hashCode();
+            return ((((527 + this.pattern.hashCode()) * 31) + this.hashAlgorithm.hashCode()) * 31) + this.hash.hashCode();
         }
 
         boolean matches(String str) {

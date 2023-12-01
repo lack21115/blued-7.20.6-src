@@ -36,7 +36,7 @@ public class ShortcutManagerCompat {
     public static final int FLAG_MATCH_PINNED = 4;
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile ShortcutInfoCompatSaver<?> f2419a;
+    private static volatile ShortcutInfoCompatSaver<?> f2371a;
     private static volatile List<ShortcutInfoChangeListener> b;
 
     /* loaded from: source-8756600-dex2jar.jar:androidx/core/content/pm/ShortcutManagerCompat$Api25Impl.class */
@@ -73,18 +73,18 @@ public class ShortcutManagerCompat {
     }
 
     private static ShortcutInfoCompatSaver<?> a(Context context) {
-        if (f2419a == null) {
+        if (f2371a == null) {
             if (Build.VERSION.SDK_INT >= 23) {
                 try {
-                    f2419a = (ShortcutInfoCompatSaver) Class.forName("androidx.sharetarget.ShortcutInfoCompatSaverImpl", false, ShortcutManagerCompat.class.getClassLoader()).getMethod("getInstance", Context.class).invoke(null, context);
+                    f2371a = (ShortcutInfoCompatSaver) Class.forName("androidx.sharetarget.ShortcutInfoCompatSaverImpl", false, ShortcutManagerCompat.class.getClassLoader()).getMethod("getInstance", Context.class).invoke(null, context);
                 } catch (Exception e) {
                 }
             }
-            if (f2419a == null) {
-                f2419a = new ShortcutInfoCompatSaver.NoopImpl();
+            if (f2371a == null) {
+                f2371a = new ShortcutInfoCompatSaver.NoopImpl();
             }
         }
-        return f2419a;
+        return f2371a;
     }
 
     private static String a(List<ShortcutInfoCompat> list) {

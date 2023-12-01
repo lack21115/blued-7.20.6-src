@@ -6,8 +6,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.fragment.app.FragmentManager;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import com.blued.android.core.image.ImageLoader;
@@ -46,19 +48,15 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYRoomSettingDialog.class */
 public final class YYRoomSettingDialog extends BaseFullScreenDialog implements ClickRoomBgListener, OnClickRoomTypeListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    private BaseYYStudioFragment f18452a;
+    private BaseYYStudioFragment a;
     private DialogYyRoomSettingBinding b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private SettingRoomLabelAdapter f18453c;
+    private SettingRoomLabelAdapter c;
     private SettingRoomBgAdapter d;
     private String e;
 
     public YYRoomSettingDialog(BaseYYStudioFragment fragment) {
         Intrinsics.e(fragment, "fragment");
-        this.f18452a = fragment;
+        this.a = fragment;
         this.e = "";
     }
 
@@ -84,11 +82,11 @@ public final class YYRoomSettingDialog extends BaseFullScreenDialog implements C
             TextView textView = f().t;
             RoomSettingRoomInfoMode.WelcomeDTO welcomeDTO = room_info.welcome;
             textView.setText(Intrinsics.a("欢迎", (Object) (welcomeDTO == null ? null : welcomeDTO.content)));
-            SettingRoomLabelAdapter settingRoomLabelAdapter = this.f18453c;
+            SettingRoomLabelAdapter settingRoomLabelAdapter = this.c;
             if (settingRoomLabelAdapter != null) {
                 settingRoomLabelAdapter.setNewData(roomSettingMode.theme);
             }
-            SettingRoomLabelAdapter settingRoomLabelAdapter2 = this.f18453c;
+            SettingRoomLabelAdapter settingRoomLabelAdapter2 = this.c;
             if (settingRoomLabelAdapter2 != null) {
                 settingRoomLabelAdapter2.a(roomSettingMode.theme.get(room_info.label_id - 1 < 0 ? 0 : room_info.label_id - 1));
             }
@@ -154,8 +152,8 @@ public final class YYRoomSettingDialog extends BaseFullScreenDialog implements C
     public static final void a(final YYRoomSettingDialog this$0, CompoundButton compoundButton, boolean z) {
         Intrinsics.e(this$0, "this$0");
         if (z) {
-            final ActivityFragmentActive a2 = this$0.a();
-            this$0.a("", "", "2", "", new BluedUIHttpResponse<BluedEntityA<RoomSettingMode>>(a2) { // from class: com.blued.android.module.yy_china.view.YYRoomSettingDialog$initData$4$1
+            final ActivityFragmentActive a = this$0.a();
+            this$0.a("", "", "2", "", new BluedUIHttpResponse<BluedEntityA<RoomSettingMode>>(a) { // from class: com.blued.android.module.yy_china.view.YYRoomSettingDialog$initData$4$1
                 /* JADX INFO: Access modifiers changed from: protected */
                 @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 /* renamed from: a */
@@ -168,8 +166,8 @@ public final class YYRoomSettingDialog extends BaseFullScreenDialog implements C
             });
             return;
         }
-        final ActivityFragmentActive a3 = this$0.a();
-        this$0.a("", "", "1", "", new BluedUIHttpResponse<BluedEntityA<RoomSettingMode>>(a3) { // from class: com.blued.android.module.yy_china.view.YYRoomSettingDialog$initData$4$2
+        final ActivityFragmentActive a2 = this$0.a();
+        this$0.a("", "", "1", "", new BluedUIHttpResponse<BluedEntityA<RoomSettingMode>>(a2) { // from class: com.blued.android.module.yy_china.view.YYRoomSettingDialog$initData$4$2
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
@@ -199,15 +197,15 @@ public final class YYRoomSettingDialog extends BaseFullScreenDialog implements C
         f().f.setVisibility(8);
         if (list.size() > 0) {
             f().d.setVisibility(0);
-            ImageLoader.a(a(), list.get(0).getAvatar()).b(R.drawable.user_bg_round).c().a(f().d);
+            ImageLoader.a(a(), list.get(0).getAvatar()).b(R.drawable.user_bg_round).c().a((ImageView) f().d);
         }
         if (list.size() > 1) {
             f().e.setVisibility(0);
-            ImageLoader.a(a(), list.get(1).getAvatar()).b(R.drawable.user_bg_round).c().a(f().e);
+            ImageLoader.a(a(), list.get(1).getAvatar()).b(R.drawable.user_bg_round).c().a((ImageView) f().e);
         }
         if (list.size() > 2) {
             f().f.setVisibility(0);
-            ImageLoader.a(a(), list.get(2).getAvatar()).b(R.drawable.user_bg_round).c().a(f().f);
+            ImageLoader.a(a(), list.get(2).getAvatar()).b(R.drawable.user_bg_round).c().a((ImageView) f().f);
         }
     }
 
@@ -225,15 +223,15 @@ public final class YYRoomSettingDialog extends BaseFullScreenDialog implements C
     /* JADX INFO: Access modifiers changed from: private */
     public static final void b(YYRoomSettingDialog this$0, View view) {
         Intrinsics.e(this$0, "this$0");
-        this$0.f18452a.k();
+        this$0.a.k();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void b(YYRoomSettingDialog this$0, CompoundButton compoundButton, boolean z) {
         Intrinsics.e(this$0, "this$0");
         if (z) {
-            final ActivityFragmentActive a2 = this$0.a();
-            this$0.a("", "", "", "1", new BluedUIHttpResponse<BluedEntityA<RoomSettingMode>>(a2) { // from class: com.blued.android.module.yy_china.view.YYRoomSettingDialog$initData$5$1
+            final ActivityFragmentActive a = this$0.a();
+            this$0.a("", "", "", "1", new BluedUIHttpResponse<BluedEntityA<RoomSettingMode>>(a) { // from class: com.blued.android.module.yy_china.view.YYRoomSettingDialog$initData$5$1
                 /* JADX INFO: Access modifiers changed from: protected */
                 @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 /* renamed from: a */
@@ -243,8 +241,8 @@ public final class YYRoomSettingDialog extends BaseFullScreenDialog implements C
             });
             return;
         }
-        final ActivityFragmentActive a3 = this$0.a();
-        this$0.a("", "", "", "0", new BluedUIHttpResponse<BluedEntityA<RoomSettingMode>>(a3) { // from class: com.blued.android.module.yy_china.view.YYRoomSettingDialog$initData$5$2
+        final ActivityFragmentActive a2 = this$0.a();
+        this$0.a("", "", "", "0", new BluedUIHttpResponse<BluedEntityA<RoomSettingMode>>(a2) { // from class: com.blued.android.module.yy_china.view.YYRoomSettingDialog$initData$5$2
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
@@ -263,14 +261,14 @@ public final class YYRoomSettingDialog extends BaseFullScreenDialog implements C
     /* JADX INFO: Access modifiers changed from: private */
     public static final void c(YYRoomSettingDialog this$0, View view) {
         Intrinsics.e(this$0, "this$0");
-        this$0.f18452a.H();
+        this$0.a.H();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void d(YYRoomSettingDialog this$0, View view) {
         Intrinsics.e(this$0, "this$0");
-        final ActivityFragmentActive a2 = this$0.a();
-        this$0.a("", "", "3", "", new BluedUIHttpResponse<BluedEntityA<RoomSettingMode>>(a2) { // from class: com.blued.android.module.yy_china.view.YYRoomSettingDialog$initView$4$dia$1$1
+        final ActivityFragmentActive a = this$0.a();
+        this$0.a("", "", "3", "", new BluedUIHttpResponse<BluedEntityA<RoomSettingMode>>(a) { // from class: com.blued.android.module.yy_china.view.YYRoomSettingDialog$initView$4$dia$1$1
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
@@ -322,16 +320,16 @@ public final class YYRoomSettingDialog extends BaseFullScreenDialog implements C
         String str = YYRoomInfoManager.e().b().room_id;
         Intrinsics.c(str, "getInstance().roomModel.room_id");
         this.e = str;
-        f().f16453a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYRoomSettingDialog$ED5lMq9r90ke6f69n0nuov5RCwE
+        f().a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYRoomSettingDialog$ED5lMq9r90ke6f69n0nuov5RCwE
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 YYRoomSettingDialog.a(YYRoomSettingDialog.this, view);
             }
         });
         YYRoomSettingDialog yYRoomSettingDialog = this;
-        this.f18453c = new SettingRoomLabelAdapter(this, yYRoomSettingDialog);
+        this.c = new SettingRoomLabelAdapter(this, yYRoomSettingDialog);
         f().n.setLayoutManager(new LinearLayoutManager(getContext(), 0, false));
-        f().n.setAdapter(this.f18453c);
+        f().n.setAdapter(this.c);
         this.d = new SettingRoomBgAdapter(this, yYRoomSettingDialog, 0, 4, null);
         f().m.setLayoutManager(new LinearLayoutManager(getContext(), 0, false));
         f().m.setAdapter(this.d);
@@ -353,22 +351,20 @@ public final class YYRoomSettingDialog extends BaseFullScreenDialog implements C
                 YYRoomSettingDialog.e(YYRoomSettingDialog.this, view);
             }
         });
-        YYRoomSettingDialog yYRoomSettingDialog2 = this;
-        LiveEventBus.get("notify_room_rename", String.class).observe(yYRoomSettingDialog2, new Observer() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYRoomSettingDialog$rD3JOIkhVd4ut9PdVGfEX-GRsME
-            @Override // androidx.lifecycle.Observer
+        LifecycleOwner lifecycleOwner = (LifecycleOwner) this;
+        LiveEventBus.get("notify_room_rename", String.class).observe(lifecycleOwner, new Observer() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYRoomSettingDialog$rD3JOIkhVd4ut9PdVGfEX-GRsME
             public final void onChanged(Object obj) {
                 YYRoomSettingDialog.a(YYRoomSettingDialog.this, (String) obj);
             }
         });
-        LiveEventBus.get("notify_room_renote", String.class).observe(yYRoomSettingDialog2, new Observer() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYRoomSettingDialog$MNxLE7lzRmuePjd8bHGmg-FH3qY
-            @Override // androidx.lifecycle.Observer
+        LiveEventBus.get("notify_room_renote", String.class).observe(lifecycleOwner, new Observer() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYRoomSettingDialog$MNxLE7lzRmuePjd8bHGmg-FH3qY
             public final void onChanged(Object obj) {
                 YYRoomSettingDialog.b(YYRoomSettingDialog.this, (String) obj);
             }
         });
         String str2 = this.e;
-        final ActivityFragmentActive a2 = a();
-        YYRoomHttpUtils.c(str2, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<RoomSettingMode>>(a2) { // from class: com.blued.android.module.yy_china.view.YYRoomSettingDialog$initView$7
+        final ActivityFragmentActive a = a();
+        YYRoomHttpUtils.c(str2, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<RoomSettingMode>>(a) { // from class: com.blued.android.module.yy_china.view.YYRoomSettingDialog$initView$7
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
@@ -386,7 +382,7 @@ public final class YYRoomSettingDialog extends BaseFullScreenDialog implements C
                 YYRoomSettingDialog.f(YYRoomSettingDialog.this, view);
             }
         });
-        f().f16454c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYRoomSettingDialog$xd06pwPe05N9Gjui808HFhlQdZk
+        f().c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYRoomSettingDialog$xd06pwPe05N9Gjui808HFhlQdZk
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 YYRoomSettingDialog.a(view);
@@ -405,11 +401,11 @@ public final class YYRoomSettingDialog extends BaseFullScreenDialog implements C
         Intrinsics.e(item, "item");
         Intrinsics.e(clic, "clic");
         String bg_id = item.getBg_id();
-        final ActivityFragmentActive a2 = a();
-        a("", bg_id, "", "", new BluedUIHttpResponse<BluedEntityA<RoomSettingMode>>(a2) { // from class: com.blued.android.module.yy_china.view.YYRoomSettingDialog$clickBg$1
+        final ActivityFragmentActive a = a();
+        a("", bg_id, "", "", new BluedUIHttpResponse<BluedEntityA<RoomSettingMode>>(a) { // from class: com.blued.android.module.yy_china.view.YYRoomSettingDialog$clickBg$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
-                super(a2);
+                super(a);
             }
 
             /* JADX INFO: Access modifiers changed from: protected */
@@ -428,11 +424,11 @@ public final class YYRoomSettingDialog extends BaseFullScreenDialog implements C
         Intrinsics.e(clic, "clic");
         String label_id = item.getLabel_id();
         Intrinsics.c(label_id, "item.label_id");
-        final ActivityFragmentActive a2 = a();
-        a(label_id, "", "", "", new BluedUIHttpResponse<BluedEntityA<RoomSettingMode>>(a2) { // from class: com.blued.android.module.yy_china.view.YYRoomSettingDialog$clickType$1
+        final ActivityFragmentActive a = a();
+        a(label_id, "", "", "", new BluedUIHttpResponse<BluedEntityA<RoomSettingMode>>(a) { // from class: com.blued.android.module.yy_china.view.YYRoomSettingDialog$clickType$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
-                super(a2);
+                super(a);
             }
 
             /* JADX INFO: Access modifiers changed from: protected */
@@ -444,7 +440,7 @@ public final class YYRoomSettingDialog extends BaseFullScreenDialog implements C
         });
     }
 
-    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         YYRoomModel b = YYRoomInfoManager.e().b();
@@ -454,7 +450,7 @@ public final class YYRoomSettingDialog extends BaseFullScreenDialog implements C
         EventTrackYY.d(ChatRoomProtos.Event.YY_SETTINGS_PAGE_SHOW, b.room_id, b.uid);
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
         View inflate = inflater.inflate(R.layout.dialog_yy_room_setting, viewGroup, true);

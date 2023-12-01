@@ -10,17 +10,13 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ViewUserCardRelationBinding.class */
 public final class ViewUserCardRelationBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f16882a;
+    public final ImageView a;
     public final TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final View f16883c;
+    private final View c;
 
     private ViewUserCardRelationBinding(View view, ImageView imageView, TextView textView) {
-        this.f16883c = view;
-        this.f16882a = imageView;
+        this.c = view;
+        this.a = imageView;
         this.b = textView;
     }
 
@@ -47,8 +43,7 @@ public final class ViewUserCardRelationBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     public View getRoot() {
-        return this.f16883c;
+        return this.c;
     }
 }

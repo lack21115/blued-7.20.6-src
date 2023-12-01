@@ -1,7 +1,7 @@
 package com.amap.api.col.p0003sl;
 
 import com.amap.api.col.p0003sl.jr;
-import com.baidu.mobads.sdk.api.IAdInterListener;
+import com.anythink.core.common.b.g;
 import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -26,24 +26,24 @@ public final class kf {
             try {
                 if (keVar.f.d()) {
                     keVar.f.c_(true);
-                    jrVar2 = jr.a(new File(keVar.f5266a), keVar.b);
+                    jrVar2 = jr.a(new File(keVar.a), keVar.b);
                     try {
                         ArrayList arrayList = new ArrayList();
-                        byte[] a2 = a(jrVar2, keVar, arrayList);
-                        if (a2 != null && a2.length != 0) {
-                            iv ivVar = new iv(a2, keVar.f5267c);
+                        byte[] a = a(jrVar2, keVar, arrayList);
+                        if (a != null && a.length != 0) {
+                            iv ivVar = new iv(a, keVar.c);
                             ju.a();
-                            JSONObject jSONObject = new JSONObject(new String(ju.a(ivVar).f5264a));
-                            if (jSONObject.has("code") && jSONObject.getInt("code") == 1) {
-                                if (keVar.f != null && a2 != null) {
-                                    keVar.f.b_(a2.length);
+                            JSONObject jSONObject = new JSONObject(new String(ju.a(ivVar).a));
+                            if (jSONObject.has(g.c.b) && jSONObject.getInt(g.c.b) == 1) {
+                                if (keVar.f != null && a != null) {
+                                    keVar.f.b_(a.length);
                                 }
                                 if (keVar.f.a() < Integer.MAX_VALUE) {
                                     a(jrVar2, arrayList);
                                 } else {
                                     jrVar2.d();
                                 }
-                                return a2.length;
+                                return a.length;
                             }
                         }
                         if (jrVar2 != null) {
@@ -110,41 +110,41 @@ public final class kf {
         jr jrVar;
         OutputStream outputStream = null;
         try {
-            if (a(keVar.f5266a, str)) {
+            if (a(keVar.a, str)) {
                 return;
             }
-            File file = new File(keVar.f5266a);
+            File file = new File(keVar.a);
             if (!file.exists()) {
                 file.mkdirs();
             }
-            jr a2 = jr.a(file, keVar.b);
+            jr a = jr.a(file, keVar.b);
             outputStream = null;
             try {
-                a2.a(keVar.d);
+                a.a(keVar.d);
                 byte[] b = keVar.e.b(bArr);
-                jr.a b2 = a2.b(str);
-                OutputStream a3 = b2.a();
-                a3.write(b);
+                jr.a b2 = a.b(str);
+                OutputStream a2 = b2.a();
+                a2.write(b);
                 b2.b();
-                outputStream = a3;
-                a2.c();
-                if (a3 != null) {
+                outputStream = a2;
+                a.c();
+                if (a2 != null) {
                     try {
-                        a3.close();
+                        a2.close();
                     } catch (Throwable th) {
                         th.printStackTrace();
                     }
                 }
-                if (a2 != null) {
+                if (a != null) {
                     try {
-                        a2.close();
+                        a.close();
                     } catch (Throwable th2) {
                         th2.printStackTrace();
                     }
                 }
             } catch (Throwable th3) {
                 th = th3;
-                jrVar = a2;
+                jrVar = a;
                 if (outputStream != null) {
                     try {
                         outputStream.close();
@@ -171,7 +171,7 @@ public final class kf {
         try {
             return new File(str, str2 + ".0").exists();
         } catch (Throwable th) {
-            iw.c(th, "leg", IAdInterListener.AdReqParam.FET);
+            iw.c(th, "leg", "fet");
             return false;
         }
     }
@@ -195,14 +195,14 @@ public final class kf {
                     int i5 = i4;
                     if (str.contains(".0")) {
                         String str2 = str.split("\\.")[0];
-                        byte[] a2 = kl.a(jrVar, str2);
-                        int length2 = i4 + a2.length;
+                        byte[] a = kl.a(jrVar, str2);
+                        int length2 = i4 + a.length;
                         list.add(str2);
                         i = length2;
                         if (length2 > keVar.f.a()) {
                             break;
                         }
-                        keVar.g.b(a2);
+                        keVar.g.b(a);
                         i5 = length2;
                     }
                     i2++;

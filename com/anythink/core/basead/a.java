@@ -5,14 +5,10 @@ public final class a {
 
     /* renamed from: com.anythink.core.basead.a$a  reason: collision with other inner class name */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/basead/a$a.class */
-    public static final class C0092a {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static final String f6390a = "extra_scenario";
+    public static final class C0052a {
+        public static final String a = "extra_scenario";
         public static final String b = "extra_ad_format";
-
-        /* renamed from: c  reason: collision with root package name */
-        public static final String f6391c = "extra_offer_ad";
+        public static final String c = "extra_offer_ad";
         public static final String d = "extra_event_id";
         public static final String e = "extra_request_info";
         public static final String f = "extra_is_show_end_card";

@@ -1,7 +1,7 @@
 package com.tencent.mapsdk.internal;
 
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
+import com.huawei.hms.framework.common.ContainerUtils;
 import com.tencent.map.tools.net.NetManager;
 import com.tencent.map.tools.net.NetMethod;
 import com.tencent.map.tools.net.NetResponse;
@@ -25,11 +25,11 @@ import java.util.Map;
 public abstract class h3<R extends l2.a> implements l2<R> {
 
     /* renamed from: a  reason: collision with root package name */
-    private volatile R f37506a;
+    private volatile R f23815a;
     private boolean b = false;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f37507c = true;
+    private boolean f23816c = true;
     private boolean d = true;
     private Map<String, String> e;
 
@@ -37,19 +37,19 @@ public abstract class h3<R extends l2.a> implements l2<R> {
     public static /* synthetic */ class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final /* synthetic */ int[] f37508a;
+        public static final /* synthetic */ int[] f23817a;
 
         static {
             NetMethod.values();
             int[] iArr = new int[4];
-            f37508a = iArr;
+            f23817a = iArr;
             try {
                 NetMethod netMethod = NetMethod.GET;
                 iArr[1] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                int[] iArr2 = f37508a;
+                int[] iArr2 = f23817a;
                 NetMethod netMethod2 = NetMethod.POST;
                 iArr2[0] = 2;
             } catch (NoSuchFieldError e2) {
@@ -61,11 +61,11 @@ public abstract class h3<R extends l2.a> implements l2<R> {
     public static class b {
 
         /* renamed from: a  reason: collision with root package name */
-        public String f37509a;
+        public String f23818a;
         public String b;
 
         /* renamed from: c  reason: collision with root package name */
-        public String f37510c;
+        public String f23819c;
         public String d;
         public String[] e;
         public HashMap<String, String> f;
@@ -85,7 +85,7 @@ public abstract class h3<R extends l2.a> implements l2<R> {
         }
 
         public String toString() {
-            return "RequestEntity{service='" + this.f37509a + "', request='" + this.b + "', method=" + this.k + ", heads=" + this.f + ", authority=" + this.d + ", queryKeys=" + Arrays.toString(this.e) + ", constQuery='" + this.g + "', useAgent='" + this.h + "', resolver='" + this.l + "', retry=" + this.i + ", useExtraQuery=" + this.j + "\nurl='" + this.f37510c + "'}";
+            return "RequestEntity{service='" + this.f23818a + "', request='" + this.b + "', method=" + this.k + ", heads=" + this.f + ", authority=" + this.d + ", queryKeys=" + Arrays.toString(this.e) + ", constQuery='" + this.g + "', useAgent='" + this.h + "', resolver='" + this.l + "', retry=" + this.i + ", useExtraQuery=" + this.j + "\nurl='" + this.f23819c + "'}";
         }
     }
 
@@ -93,10 +93,10 @@ public abstract class h3<R extends l2.a> implements l2<R> {
     public class c implements InvocationHandler {
 
         /* renamed from: a  reason: collision with root package name */
-        private Class<? extends h3> f37511a;
+        private Class<? extends h3> f23820a;
 
         public c(Class<? extends h3> cls) {
-            this.f37511a = cls;
+            this.f23820a = cls;
         }
 
         private b a(Method method) {
@@ -116,7 +116,7 @@ public abstract class h3<R extends l2.a> implements l2<R> {
                 bVar.m = netJsonResolver.queryRange();
             }
             if (netRequest != null) {
-                bVar.f37509a = this.f37511a.getSimpleName();
+                bVar.f23818a = this.f23820a.getSimpleName();
                 bVar.k = netRequest.method();
                 bVar.b = method.getName();
                 bVar.d = netRequest.authority();
@@ -146,11 +146,11 @@ public abstract class h3<R extends l2.a> implements l2<R> {
                 }
                 String path = netRequest.path();
                 if (path.length() != 0) {
-                    sb.append(BridgeUtil.SPLIT_MARK);
+                    sb.append("/");
                     sb.append(path);
                 }
                 bVar.g = netRequest.constQuery();
-                bVar.f37510c = sb.toString();
+                bVar.f23819c = sb.toString();
             }
             return bVar;
         }
@@ -159,7 +159,7 @@ public abstract class h3<R extends l2.a> implements l2<R> {
         public Object invoke(Object obj, Method method, Object[] objArr) throws Throwable {
             b a2 = a(method);
             if (!h3.this.b()) {
-                na.g(ma.g, "The Service[" + this.f37511a.getSimpleName() + "] is block!!  Please check the ServiceProtocol for corrected, or contact the Tencent MapSdk Office to enable it. ");
+                na.g(ma.g, "The Service[" + this.f23820a.getSimpleName() + "] is block!!  Please check the ServiceProtocol for corrected, or contact the Tencent MapSdk Office to enable it. ");
                 if (a2.k == NetMethod.URL) {
                     return "";
                 }
@@ -171,13 +171,13 @@ public abstract class h3<R extends l2.a> implements l2<R> {
                 }
                 return h3.this.b(a2, objArr);
             } else {
-                String str = a2.f37510c;
+                String str = a2.f23819c;
                 String a3 = h3.this.a(a2, objArr);
                 String str2 = str;
                 if (a3.length() != 0) {
                     str2 = str + "?" + a3;
                 }
-                a2.f37510c = str2;
+                a2.f23819c = str2;
                 na.c(ma.g, a2.toString());
                 return str2;
             }
@@ -200,13 +200,13 @@ public abstract class h3<R extends l2.a> implements l2<R> {
                 sb.append(strArr[i2]);
                 sb.append("=");
                 sb.append("%s");
-                sb.append("&");
+                sb.append(ContainerUtils.FIELD_DELIMITER);
                 i = i2 + 1;
             }
         }
         String str = bVar.g;
         if (!TextUtils.isEmpty(str)) {
-            String[] split = str.split("&");
+            String[] split = str.split(ContainerUtils.FIELD_DELIMITER);
             int length2 = split.length;
             int i3 = 0;
             while (true) {
@@ -219,7 +219,7 @@ public abstract class h3<R extends l2.a> implements l2<R> {
                     sb.append(split2[0]);
                     sb.append("=");
                     sb.append(split2[1]);
-                    sb.append("&");
+                    sb.append(ContainerUtils.FIELD_DELIMITER);
                 }
                 i3 = i4 + 1;
             }
@@ -229,10 +229,10 @@ public abstract class h3<R extends l2.a> implements l2<R> {
                 sb.append(entry.getKey());
                 sb.append("=");
                 sb.append(entry.getValue());
-                sb.append("&");
+                sb.append(ContainerUtils.FIELD_DELIMITER);
             }
         }
-        int lastIndexOf = sb.lastIndexOf("&");
+        int lastIndexOf = sb.lastIndexOf(ContainerUtils.FIELD_DELIMITER);
         if (lastIndexOf >= 0 && lastIndexOf == sb.length() - 1) {
             sb.deleteCharAt(lastIndexOf);
         }
@@ -261,14 +261,14 @@ public abstract class h3<R extends l2.a> implements l2<R> {
     /* JADX INFO: Access modifiers changed from: private */
     public NetResponse b(b bVar, Object... objArr) {
         if (bVar != null) {
-            String str = bVar.f37510c;
+            String str = bVar.f23819c;
             try {
                 String a2 = a(bVar, objArr);
                 String str2 = str;
                 if (!TextUtils.isEmpty(a2)) {
                     str2 = str + "?" + a2;
                 }
-                bVar.f37510c = str2;
+                bVar.f23819c = str2;
                 na.c(ma.g, bVar.toString());
                 int ordinal = bVar.k.ordinal();
                 if (ordinal != 0) {
@@ -352,16 +352,16 @@ public abstract class h3<R extends l2.a> implements l2<R> {
 
     @Override // com.tencent.mapsdk.internal.l2
     public final R d() {
-        if (this.f37506a != null) {
-            return this.f37506a;
+        if (this.f23815a != null) {
+            return this.f23815a;
         }
-        this.f37506a = k();
-        return this.f37506a;
+        this.f23815a = k();
+        return this.f23815a;
     }
 
     @Override // com.tencent.mapsdk.internal.l2
     public boolean e() {
-        return this.f37507c;
+        return this.f23816c;
     }
 
     @Override // com.tencent.mapsdk.internal.l2
@@ -403,7 +403,7 @@ public abstract class h3<R extends l2.a> implements l2<R> {
 
     @Override // com.tencent.mapsdk.internal.k2.a
     public void setUseHttps(boolean z) {
-        this.f37507c = z;
+        this.f23816c = z;
     }
 
     @Override // com.tencent.mapsdk.internal.k2.a

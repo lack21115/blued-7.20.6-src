@@ -8,17 +8,17 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public class e {
 
     /* renamed from: a  reason: collision with root package name */
-    public static AtomicBoolean f35000a = new AtomicBoolean(false);
+    public static AtomicBoolean f21309a = new AtomicBoolean(false);
 
     public static void a(String str) {
         c.b("[strict]  " + str, new Object[0]);
-        if (f35000a.get()) {
+        if (f21309a.get()) {
             throw new IllegalStateException("[strict] " + str);
         }
     }
 
     public static void a(Map map) {
-        if (!f35000a.get() || map == null) {
+        if (!f21309a.get() || map == null) {
             return;
         }
         for (Object obj : map.keySet()) {
@@ -32,7 +32,7 @@ public class e {
     }
 
     private static boolean a() {
-        return f35000a.get() || com.tencent.beacon.a.c.b.d(com.tencent.beacon.a.c.c.d().c());
+        return f21309a.get() || com.tencent.beacon.a.c.b.d(com.tencent.beacon.a.c.c.d().c());
     }
 
     public static boolean a(String str, Object obj) {

@@ -14,13 +14,9 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/FragmentGoodsWallBrandBinding.class */
 public final class FragmentGoodsWallBrandBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ConstraintLayout f11915a;
+    public final ConstraintLayout a;
     public final ConstraintLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f11916c;
+    public final ImageView c;
     public final ImageView d;
     public final ImageView e;
     public final ImageView f;
@@ -38,9 +34,9 @@ public final class FragmentGoodsWallBrandBinding implements ViewBinding {
 
     private FragmentGoodsWallBrandBinding(RelativeLayout relativeLayout, ConstraintLayout constraintLayout, ConstraintLayout constraintLayout2, ImageView imageView, ImageView imageView2, ImageView imageView3, ImageView imageView4, ImageView imageView5, SlopeLoadingView slopeLoadingView, RecyclerView recyclerView, TextView textView, TextView textView2, TextView textView3, TextView textView4, TextView textView5, TextView textView6, TextView textView7) {
         this.q = relativeLayout;
-        this.f11915a = constraintLayout;
+        this.a = constraintLayout;
         this.b = constraintLayout2;
-        this.f11916c = imageView;
+        this.c = imageView;
         this.d = imageView2;
         this.e = imageView3;
         this.f = imageView4;
@@ -66,10 +62,10 @@ public final class FragmentGoodsWallBrandBinding implements ViewBinding {
 
     public static FragmentGoodsWallBrandBinding a(View view) {
         String str;
-        ConstraintLayout constraintLayout = (ConstraintLayout) view.findViewById(R.id.cl_brand_award);
-        if (constraintLayout != null) {
-            ConstraintLayout constraintLayout2 = (ConstraintLayout) view.findViewById(R.id.cl_custom_gallery);
-            if (constraintLayout2 != null) {
+        ConstraintLayout findViewById = view.findViewById(R.id.cl_brand_award);
+        if (findViewById != null) {
+            ConstraintLayout findViewById2 = view.findViewById(R.id.cl_custom_gallery);
+            if (findViewById2 != null) {
                 ImageView imageView = (ImageView) view.findViewById(R.id.iv_avatar);
                 if (imageView != null) {
                     ImageView imageView2 = (ImageView) view.findViewById(R.id.iv_avatar_frame);
@@ -82,8 +78,8 @@ public final class FragmentGoodsWallBrandBinding implements ViewBinding {
                                 if (imageView5 != null) {
                                     SlopeLoadingView slopeLoadingView = (SlopeLoadingView) view.findViewById(R.id.loading);
                                     if (slopeLoadingView != null) {
-                                        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rv_list);
-                                        if (recyclerView != null) {
+                                        RecyclerView findViewById3 = view.findViewById(R.id.rv_list);
+                                        if (findViewById3 != null) {
                                             TextView textView = (TextView) view.findViewById(R.id.tv_brand_award_check);
                                             if (textView != null) {
                                                 TextView textView2 = (TextView) view.findViewById(R.id.tv_brand_award_title);
@@ -98,7 +94,7 @@ public final class FragmentGoodsWallBrandBinding implements ViewBinding {
                                                                 if (textView6 != null) {
                                                                     TextView textView7 = (TextView) view.findViewById(R.id.tv_name_suffix);
                                                                     if (textView7 != null) {
-                                                                        return new FragmentGoodsWallBrandBinding((RelativeLayout) view, constraintLayout, constraintLayout2, imageView, imageView2, imageView3, imageView4, imageView5, slopeLoadingView, recyclerView, textView, textView2, textView3, textView4, textView5, textView6, textView7);
+                                                                        return new FragmentGoodsWallBrandBinding((RelativeLayout) view, findViewById, findViewById2, imageView, imageView2, imageView3, imageView4, imageView5, slopeLoadingView, findViewById3, textView, textView2, textView3, textView4, textView5, textView6, textView7);
                                                                     }
                                                                     str = "tvNameSuffix";
                                                                 } else {
@@ -149,7 +145,6 @@ public final class FragmentGoodsWallBrandBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
         return this.q;

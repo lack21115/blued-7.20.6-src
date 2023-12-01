@@ -13,20 +13,16 @@ import org.json.JSONObject;
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/g/e.class */
 public class e extends com.anythink.core.common.g.a {
     private static String f = e.class.getSimpleName();
-
-    /* renamed from: a  reason: collision with root package name */
-    int f6010a;
+    int a;
     String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    aa f6011c;
+    aa c;
     Map<String, Object> d;
     boolean e = false;
 
     public e(int i, String str, aa aaVar, Map<String, Object> map) {
-        this.f6010a = i;
+        this.a = i;
         this.b = str;
-        this.f6011c = aaVar;
+        this.c = aaVar;
         this.d = map;
     }
 
@@ -37,7 +33,7 @@ public class e extends com.anythink.core.common.g.a {
         } catch (Throwable th) {
             jSONObject = new JSONObject().toString();
         }
-        t.a().a(this.o, jSONObject, this.f6011c.O());
+        t.a().a(this.o, jSONObject, this.c.O());
     }
 
     @Override // com.anythink.core.common.g.a
@@ -91,7 +87,7 @@ public class e extends com.anythink.core.common.g.a {
                 } catch (Throwable th) {
                     jSONObject = new JSONObject().toString();
                 }
-                t.a().a(this.o, jSONObject, this.f6011c.O());
+                t.a().a(this.o, jSONObject, this.c.O());
             }
         }
     }
@@ -102,10 +98,10 @@ public class e extends com.anythink.core.common.g.a {
 
     @Override // com.anythink.core.common.g.a
     public final Map<String, String> c() {
-        if (this.f6011c != null) {
+        if (this.c != null) {
             HashMap hashMap = new HashMap();
-            k k = this.f6011c.k();
-            if (k != null && com.anythink.basead.a.b.a(this.f6010a, k)) {
+            k k = this.c.k();
+            if (k != null && com.anythink.basead.a.b.a(this.a, k)) {
                 String i = com.anythink.core.common.k.d.i();
                 if (!TextUtils.isEmpty(i)) {
                     hashMap.put("User-Agent", i);

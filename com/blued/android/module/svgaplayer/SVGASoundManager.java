@@ -11,13 +11,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/svgaplayer/SVGASoundManager.class */
 public final class SVGASoundManager {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final SVGASoundManager f15975a = new SVGASoundManager();
+    public static final SVGASoundManager a = new SVGASoundManager();
     private static final String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private static SoundPool f15976c;
+    private static SoundPool c;
     private static final Map<Integer, SVGASoundCallBack> d;
     private static float e;
 
@@ -40,17 +36,17 @@ public final class SVGASoundManager {
     private final boolean b() {
         boolean a2 = a();
         if (!a2) {
-            LogUtils.f16034a.d(b, "soundPool is null, you need call init() !!!");
+            LogUtils.a.d(b, "soundPool is null, you need call init() !!!");
         }
         return a2;
     }
 
     public final int a(SVGASoundCallBack sVGASoundCallBack, FileDescriptor fileDescriptor, long j, long j2, int i) {
         if (b()) {
-            SoundPool soundPool = f15976c;
+            SoundPool soundPool = c;
             Intrinsics.a(soundPool);
             int load = soundPool.load(fileDescriptor, j, j2, i);
-            LogUtils logUtils = LogUtils.f16034a;
+            LogUtils logUtils = LogUtils.a;
             String str = b;
             logUtils.b(str, "load soundId=" + load + " callBack=" + sVGASoundCallBack);
             if (sVGASoundCallBack != null && !d.containsKey(Integer.valueOf(load))) {
@@ -63,10 +59,10 @@ public final class SVGASoundManager {
 
     public final void a(int i) {
         if (b()) {
-            LogUtils logUtils = LogUtils.f16034a;
+            LogUtils logUtils = LogUtils.a;
             String str = b;
             logUtils.b(str, "unload soundId=" + i);
-            SoundPool soundPool = f15976c;
+            SoundPool soundPool = c;
             Intrinsics.a(soundPool);
             soundPool.unload(i);
             d.remove(Integer.valueOf(i));
@@ -74,15 +70,15 @@ public final class SVGASoundManager {
     }
 
     public final boolean a() {
-        return f15976c != null;
+        return c != null;
     }
 
     public final int b(int i) {
         if (b()) {
-            LogUtils logUtils = LogUtils.f16034a;
+            LogUtils logUtils = LogUtils.a;
             String str = b;
             logUtils.b(str, "play soundId=" + i);
-            SoundPool soundPool = f15976c;
+            SoundPool soundPool = c;
             Intrinsics.a(soundPool);
             float f = e;
             return soundPool.play(i, f, f, 1, 0, 1.0f);
@@ -92,10 +88,10 @@ public final class SVGASoundManager {
 
     public final void c(int i) {
         if (b()) {
-            LogUtils logUtils = LogUtils.f16034a;
+            LogUtils logUtils = LogUtils.a;
             String str = b;
             logUtils.b(str, "stop soundId=" + i);
-            SoundPool soundPool = f15976c;
+            SoundPool soundPool = c;
             Intrinsics.a(soundPool);
             soundPool.stop(i);
         }

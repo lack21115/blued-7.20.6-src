@@ -1,6 +1,5 @@
 package io.grpc.internal;
 
-import android.provider.ContactsContract;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import io.grpc.Attributes;
@@ -28,7 +27,7 @@ final class CallCredentialsApplyingTransportFactory implements ClientTransportFa
 
         CallCredentialsApplyingTransport(ConnectionClientTransport connectionClientTransport, String str) {
             this.delegate = (ConnectionClientTransport) Preconditions.checkNotNull(connectionClientTransport, "delegate");
-            this.authority = (String) Preconditions.checkNotNull(str, ContactsContract.Directory.DIRECTORY_AUTHORITY);
+            this.authority = (String) Preconditions.checkNotNull(str, "authority");
         }
 
         @Override // io.grpc.internal.ForwardingConnectionClientTransport
@@ -43,22 +42,18 @@ final class CallCredentialsApplyingTransportFactory implements ClientTransportFa
                 MetadataApplierImpl metadataApplierImpl = new MetadataApplierImpl(this.delegate, methodDescriptor, metadata, callOptions);
                 try {
                     credentials.applyRequestMetadata(new CallCredentials.RequestInfo() { // from class: io.grpc.internal.CallCredentialsApplyingTransportFactory.CallCredentialsApplyingTransport.1
-                        @Override // io.grpc.CallCredentials.RequestInfo
                         public String getAuthority() {
                             return (String) MoreObjects.firstNonNull(callOptions.getAuthority(), CallCredentialsApplyingTransport.this.authority);
                         }
 
-                        @Override // io.grpc.CallCredentials.RequestInfo
                         public MethodDescriptor<?, ?> getMethodDescriptor() {
                             return methodDescriptor;
                         }
 
-                        @Override // io.grpc.CallCredentials.RequestInfo
                         public SecurityLevel getSecurityLevel() {
                             return (SecurityLevel) MoreObjects.firstNonNull(CallCredentialsApplyingTransport.this.delegate.getAttributes().get(GrpcAttributes.ATTR_SECURITY_LEVEL), SecurityLevel.NONE);
                         }
 
-                        @Override // io.grpc.CallCredentials.RequestInfo
                         public Attributes getTransportAttrs() {
                             return CallCredentialsApplyingTransport.this.delegate.getAttributes();
                         }

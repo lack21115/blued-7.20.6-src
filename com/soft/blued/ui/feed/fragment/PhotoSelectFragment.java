@@ -65,13 +65,13 @@ import java.util.Map;
 public class PhotoSelectFragment extends BaseFragment implements LoaderManager.LoaderCallbacks<Cursor>, MemoryRequest.MemoryListener {
 
     /* renamed from: a  reason: collision with root package name */
-    public static List<ChildImageInfo> f29974a = new ArrayList();
+    public static List<ChildImageInfo> f16284a = new ArrayList();
     private PauseOnScrollListener A;
     private LoaderManager B;
     private String D;
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f29975c;
+    private Context f16285c;
     private View d;
     private View e;
     private TextView f;
@@ -102,13 +102,13 @@ public class PhotoSelectFragment extends BaseFragment implements LoaderManager.L
     public class CurrentAdapter extends BaseAdapter {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ PhotoSelectFragment f29987a;
+        final /* synthetic */ PhotoSelectFragment f16297a;
 
         /* loaded from: source-8303388-dex2jar.jar:com/soft/blued/ui/feed/fragment/PhotoSelectFragment$CurrentAdapter$ViewHolder.class */
         class ViewHolder {
 
             /* renamed from: a  reason: collision with root package name */
-            ImageView f29988a;
+            ImageView f16298a;
 
             private ViewHolder() {
             }
@@ -134,15 +134,15 @@ public class PhotoSelectFragment extends BaseFragment implements LoaderManager.L
             View view2;
             ViewHolder viewHolder;
             if (view == null) {
-                view2 = LayoutInflater.from(this.f29987a.f29975c).inflate(R.layout.fragment_drag_grid_item, viewGroup, false);
+                view2 = LayoutInflater.from(this.f16297a.f16285c).inflate(R.layout.fragment_drag_grid_item, viewGroup, false);
                 viewHolder = new ViewHolder();
-                viewHolder.f29988a = (ImageView) view2.findViewById(2131364232);
+                viewHolder.f16298a = (ImageView) view2.findViewById(2131364232);
                 view2.setTag(viewHolder);
             } else {
                 view2 = view;
                 viewHolder = (ViewHolder) view.getTag();
             }
-            ImageLoader.a(this.f29987a.getFragmentActive(), (int) R.drawable.photo_background).a(2.0f).a(viewHolder.f29988a);
+            ImageLoader.a(this.f16297a.getFragmentActive(), (int) R.drawable.photo_background).a(2.0f).a(viewHolder.f16298a);
             return view2;
         }
     }
@@ -173,9 +173,9 @@ public class PhotoSelectFragment extends BaseFragment implements LoaderManager.L
             if (view == null) {
                 view = PhotoSelectFragment.this.j.inflate(R.layout.fragment_photo_select_gird_item, viewGroup, false);
                 viewHolder = new ViewHolder();
-                viewHolder.f30001a = (ImageView) view.findViewById(2131364232);
+                viewHolder.f16311a = (ImageView) view.findViewById(2131364232);
                 viewHolder.b = (LinearLayout) view.findViewById(R.id.take_photo_view);
-                viewHolder.f30002c = (ImageView) view.findViewById(2131369696);
+                viewHolder.f16312c = (ImageView) view.findViewById(R.id.select_view);
                 view.setTag(viewHolder);
             } else {
                 viewHolder = (ViewHolder) view.getTag();
@@ -184,8 +184,8 @@ public class PhotoSelectFragment extends BaseFragment implements LoaderManager.L
             if (a2 != null) {
                 if (a2.mTakePhoto) {
                     viewHolder.b.setVisibility(0);
-                    viewHolder.f30002c.setVisibility(8);
-                    viewHolder.f30001a.setVisibility(8);
+                    viewHolder.f16312c.setVisibility(8);
+                    viewHolder.f16311a.setVisibility(8);
                     viewHolder.b.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.feed.fragment.PhotoSelectFragment.FeedPhotoAdapter.1
                         @Override // android.view.View.OnClickListener
                         public void onClick(View view2) {
@@ -195,11 +195,11 @@ public class PhotoSelectFragment extends BaseFragment implements LoaderManager.L
                     });
                     return view;
                 }
-                viewHolder.f30002c.setVisibility(0);
+                viewHolder.f16312c.setVisibility(0);
                 viewHolder.b.setVisibility(8);
-                viewHolder.f30001a.setVisibility(0);
-                (!TextUtils.isEmpty(a2.imgUri) ? ImageLoader.b(PhotoSelectFragment.this.getFragmentActive(), a2.imgUri) : ImageLoader.d(PhotoSelectFragment.this.getFragmentActive(), a2.mImagePath)).b(2131231620).a(viewHolder.f30001a);
-                viewHolder.f30001a.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.feed.fragment.PhotoSelectFragment.FeedPhotoAdapter.2
+                viewHolder.f16311a.setVisibility(0);
+                (!TextUtils.isEmpty(a2.imgUri) ? ImageLoader.b(PhotoSelectFragment.this.getFragmentActive(), a2.imgUri) : ImageLoader.d(PhotoSelectFragment.this.getFragmentActive(), a2.mImagePath)).b(2131231620).a(viewHolder.f16311a);
+                viewHolder.f16311a.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.feed.fragment.PhotoSelectFragment.FeedPhotoAdapter.2
                     @Override // android.view.View.OnClickListener
                     public void onClick(View view2) {
                         Tracker.onClick(view2);
@@ -207,28 +207,28 @@ public class PhotoSelectFragment extends BaseFragment implements LoaderManager.L
                     }
                 });
                 if (a2.mSelect) {
-                    viewHolder.f30002c.setImageResource(R.drawable.photo_selected);
+                    viewHolder.f16312c.setImageResource(R.drawable.photo_selected);
                 } else {
-                    viewHolder.f30002c.setImageResource(R.drawable.photo_unselected);
+                    viewHolder.f16312c.setImageResource(R.drawable.photo_unselected);
                 }
                 final ViewHolder viewHolder2 = viewHolder;
-                viewHolder.f30002c.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.feed.fragment.PhotoSelectFragment.FeedPhotoAdapter.3
+                viewHolder.f16312c.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.feed.fragment.PhotoSelectFragment.FeedPhotoAdapter.3
                     @Override // android.view.View.OnClickListener
                     public void onClick(View view2) {
                         Tracker.onClick(view2);
                         if (a2.mSelect) {
                             a2.mSelect = false;
                             SelectPhotoManager.a().b(a2);
-                            viewHolder2.f30002c.setImageResource(R.drawable.photo_unselected);
+                            viewHolder2.f16312c.setImageResource(R.drawable.photo_unselected);
                             if (SelectPhotoManager.a().b() > 0) {
                                 PhotoSelectFragment.this.h();
                             } else {
                                 PhotoSelectFragment.this.i();
                             }
-                        } else if (SelectPhotoManager.a().b() + PhotoSelectFragment.f29974a.size() >= PhotoConstants.CONFIG.f10707a) {
-                            AppMethods.a((CharSequence) String.format(PhotoSelectFragment.this.getResources().getString(2131890590), Integer.valueOf(PhotoConstants.CONFIG.f10707a)));
+                        } else if (SelectPhotoManager.a().b() + PhotoSelectFragment.f16284a.size() >= PhotoConstants.CONFIG.a) {
+                            AppMethods.a(String.format(PhotoSelectFragment.this.getResources().getString(R.string.max_select_num), Integer.valueOf(PhotoConstants.CONFIG.a)));
                         } else {
-                            PhotoSelectFragment.this.a(viewHolder2.f30002c);
+                            PhotoSelectFragment.this.a(viewHolder2.f16312c);
                             a2.mSelect = true;
                             SelectPhotoManager.a().a(a2);
                             PhotoSelectFragment.this.h();
@@ -247,7 +247,7 @@ public class PhotoSelectFragment extends BaseFragment implements LoaderManager.L
         class ViewHolder {
 
             /* renamed from: a  reason: collision with root package name */
-            ImageView f29996a;
+            ImageView f16306a;
             TextView b;
 
             private ViewHolder() {
@@ -279,16 +279,16 @@ public class PhotoSelectFragment extends BaseFragment implements LoaderManager.L
         public View getView(int i, View view, ViewGroup viewGroup) {
             ViewHolder viewHolder;
             if (view == null) {
-                view = LayoutInflater.from(PhotoSelectFragment.this.f29975c).inflate(R.layout.fragment_photo_select_list_item, viewGroup, false);
+                view = LayoutInflater.from(PhotoSelectFragment.this.f16285c).inflate(R.layout.fragment_photo_select_list_item, viewGroup, false);
                 viewHolder = new ViewHolder();
                 view.setTag(viewHolder);
-                viewHolder.f29996a = (ImageView) view.findViewById(2131364232);
-                viewHolder.b = (TextView) view.findViewById(2131368652);
+                viewHolder.f16306a = (ImageView) view.findViewById(2131364232);
+                viewHolder.b = (TextView) view.findViewById(R.id.name_view);
             } else {
                 viewHolder = (ViewHolder) view.getTag();
             }
             final GroupImageInfo groupImageInfo = (GroupImageInfo) PhotoSelectFragment.this.l.get(i);
-            (!TextUtils.isEmpty(groupImageInfo.topImgUri) ? ImageLoader.b(PhotoSelectFragment.this.getFragmentActive(), groupImageInfo.topImgUri) : ImageLoader.d(PhotoSelectFragment.this.getFragmentActive(), groupImageInfo.getTopImagePath())).b(2131231620).a(viewHolder.f29996a);
+            (!TextUtils.isEmpty(groupImageInfo.topImgUri) ? ImageLoader.b(PhotoSelectFragment.this.getFragmentActive(), groupImageInfo.topImgUri) : ImageLoader.d(PhotoSelectFragment.this.getFragmentActive(), groupImageInfo.getTopImagePath())).b(2131231620).a(viewHolder.f16306a);
             if (TextUtils.isEmpty(groupImageInfo.getFolderName())) {
                 viewHolder.b.setText("");
             } else {
@@ -344,9 +344,9 @@ public class PhotoSelectFragment extends BaseFragment implements LoaderManager.L
             if (view == null) {
                 view = PhotoSelectFragment.this.j.inflate(R.layout.fragment_photo_select_gird_item, viewGroup, false);
                 viewHolder = new ViewHolder();
-                viewHolder.f30001a = (ImageView) view.findViewById(2131364232);
+                viewHolder.f16311a = (ImageView) view.findViewById(2131364232);
                 viewHolder.b = (LinearLayout) view.findViewById(R.id.take_photo_view);
-                viewHolder.f30002c = (ImageView) view.findViewById(2131369696);
+                viewHolder.f16312c = (ImageView) view.findViewById(R.id.select_view);
                 view.setTag(viewHolder);
             } else {
                 viewHolder = (ViewHolder) view.getTag();
@@ -355,8 +355,8 @@ public class PhotoSelectFragment extends BaseFragment implements LoaderManager.L
             if (a2 != null) {
                 if (a2.mTakePhoto) {
                     viewHolder.b.setVisibility(0);
-                    viewHolder.f30002c.setVisibility(8);
-                    viewHolder.f30001a.setVisibility(8);
+                    viewHolder.f16312c.setVisibility(8);
+                    viewHolder.f16311a.setVisibility(8);
                     viewHolder.b.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.feed.fragment.PhotoSelectFragment.SinglePhotoAdapter.1
                         @Override // android.view.View.OnClickListener
                         public void onClick(View view2) {
@@ -366,11 +366,11 @@ public class PhotoSelectFragment extends BaseFragment implements LoaderManager.L
                     });
                     return view;
                 }
-                viewHolder.f30002c.setVisibility(8);
+                viewHolder.f16312c.setVisibility(8);
                 viewHolder.b.setVisibility(8);
-                viewHolder.f30001a.setVisibility(0);
-                (!TextUtils.isEmpty(a2.imgUri) ? ImageLoader.b(PhotoSelectFragment.this.getFragmentActive(), a2.imgUri) : ImageLoader.d(PhotoSelectFragment.this.getFragmentActive(), a2.mImagePath)).b(2131231620).a(viewHolder.f30001a);
-                viewHolder.f30001a.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.feed.fragment.PhotoSelectFragment.SinglePhotoAdapter.2
+                viewHolder.f16311a.setVisibility(0);
+                (!TextUtils.isEmpty(a2.imgUri) ? ImageLoader.b(PhotoSelectFragment.this.getFragmentActive(), a2.imgUri) : ImageLoader.d(PhotoSelectFragment.this.getFragmentActive(), a2.mImagePath)).b(2131231620).a(viewHolder.f16311a);
+                viewHolder.f16311a.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.feed.fragment.PhotoSelectFragment.SinglePhotoAdapter.2
                     @Override // android.view.View.OnClickListener
                     public void onClick(View view2) {
                         Tracker.onClick(view2);
@@ -404,11 +404,11 @@ public class PhotoSelectFragment extends BaseFragment implements LoaderManager.L
     public class ViewHolder {
 
         /* renamed from: a  reason: collision with root package name */
-        public ImageView f30001a;
+        public ImageView f16311a;
         public LinearLayout b;
 
         /* renamed from: c  reason: collision with root package name */
-        public ImageView f30002c;
+        public ImageView f16312c;
 
         public ViewHolder() {
         }
@@ -500,6 +500,7 @@ public class PhotoSelectFragment extends BaseFragment implements LoaderManager.L
         TerminalActivity.a(baseFragment, PhotoSelectFragment.class, bundle, i2);
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private void c() {
         this.z = com.blued.android.framework.utils.AppUtils.b();
         LoaderManager loaderManager = LoaderManager.getInstance(this);
@@ -514,26 +515,26 @@ public class PhotoSelectFragment extends BaseFragment implements LoaderManager.L
         }
         int i = this.w;
         if (i == 5) {
-            PhotoConstants.CONFIG.f10707a = 9;
-            f29974a.addAll(SelectPhotoManager.a().c());
+            PhotoConstants.CONFIG.a = 9;
+            f16284a.addAll(SelectPhotoManager.a().c());
             SelectPhotoManager.a().d();
         } else if (i != 7) {
-            PhotoConstants.CONFIG.f10707a = 9;
+            PhotoConstants.CONFIG.a = 9;
         } else {
-            PhotoConstants.CONFIG.f10707a = 6;
-            f29974a.addAll(SelectPhotoManager.a().c());
+            PhotoConstants.CONFIG.a = 6;
+            f16284a.addAll(SelectPhotoManager.a().c());
             SelectPhotoManager.a().d();
         }
     }
 
     private void d() {
-        this.j = LayoutInflater.from(this.f29975c);
+        this.j = LayoutInflater.from(this.f16285c);
         this.n = (GridView) this.d.findViewById(R.id.gird_view);
-        this.m = DialogUtils.a(this.f29975c);
+        this.m = DialogUtils.a(this.f16285c);
         this.q = (TextView) this.d.findViewById(R.id.pre_view);
-        this.r = (TextView) this.d.findViewById(2131368751);
+        this.r = (TextView) this.d.findViewById(R.id.num_view);
         this.s = (TextView) this.d.findViewById(R.id.next_view);
-        this.t = (LinearLayout) this.d.findViewById(2131362490);
+        this.t = (LinearLayout) this.d.findViewById(R.id.bottom_view);
         int i = this.w;
         if (i == 5) {
             this.o = new FeedPhotoAdapter();
@@ -556,7 +557,7 @@ public class PhotoSelectFragment extends BaseFragment implements LoaderManager.L
                 Tracker.onClick(view);
                 int i2 = PhotoSelectFragment.this.w;
                 if (i2 == 5 || i2 == 7) {
-                    SelectPhotoManager.a().c().addAll(0, PhotoSelectFragment.f29974a);
+                    SelectPhotoManager.a().c().addAll(0, PhotoSelectFragment.f16284a);
                 }
                 for (ChildImageInfo childImageInfo : SelectPhotoManager.a().c()) {
                     if (PhotoSelectFragment.this.z && !TextUtils.isEmpty(childImageInfo.imgUri) && !AppUtils.b(childImageInfo.mImagePath)) {
@@ -571,7 +572,7 @@ public class PhotoSelectFragment extends BaseFragment implements LoaderManager.L
                 if (i3 == 5 || i3 == 7) {
                     return;
                 }
-                FeedAddPostFragment.a(PhotoSelectFragment.this.f29975c);
+                FeedAddPostFragment.a(PhotoSelectFragment.this.f16285c);
             }
         });
         this.q.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.feed.fragment.PhotoSelectFragment.2
@@ -604,12 +605,12 @@ public class PhotoSelectFragment extends BaseFragment implements LoaderManager.L
     }
 
     private void e() {
-        ListView listView = new ListView(this.f29975c);
+        ListView listView = new ListView(this.f16285c);
         listView.setDivider(null);
         PopAdapter popAdapter = new PopAdapter();
         this.v = popAdapter;
         listView.setAdapter((ListAdapter) popAdapter);
-        this.u = new PopMenu(this.f29975c, listView);
+        this.u = new PopMenu(this.f16285c, listView);
     }
 
     private void f() {
@@ -624,26 +625,26 @@ public class PhotoSelectFragment extends BaseFragment implements LoaderManager.L
                 int i = PhotoSelectFragment.this.w;
                 if (i == 5) {
                     SelectPhotoManager.a().d();
-                    SelectPhotoManager.a().c().addAll(PhotoSelectFragment.f29974a);
+                    SelectPhotoManager.a().c().addAll(PhotoSelectFragment.f16284a);
                 } else if (i != 7) {
                     SelectPhotoManager.a().d();
                 } else {
                     SelectPhotoManager.a().d();
-                    SelectPhotoManager.a().c().addAll(PhotoSelectFragment.f29974a);
+                    SelectPhotoManager.a().c().addAll(PhotoSelectFragment.f16284a);
                 }
                 PhotoSelectFragment.this.getActivity().finish();
             }
         });
         this.f = (TextView) this.e.findViewById(2131363108);
         this.h = (ImageView) this.e.findViewById(2131363126);
-        this.i = (ImageView) this.e.findViewById(2131363113);
+        this.i = (ImageView) this.e.findViewById(R.id.ctt_center_right);
         this.h.setVisibility(4);
         this.f.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.feed.fragment.PhotoSelectFragment.5
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
                 PhotoSelectFragment.this.u.a(PhotoSelectFragment.this.e);
-                PhotoSelectFragment.this.i.setImageDrawable(BluedSkinUtils.b(PhotoSelectFragment.this.f29975c, 2131235082));
+                PhotoSelectFragment.this.i.setImageDrawable(BluedSkinUtils.b(PhotoSelectFragment.this.f16285c, (int) R.drawable.live_icon_arrow_up));
             }
         });
         this.i.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.feed.fragment.PhotoSelectFragment.6
@@ -651,21 +652,21 @@ public class PhotoSelectFragment extends BaseFragment implements LoaderManager.L
             public void onClick(View view) {
                 Tracker.onClick(view);
                 PhotoSelectFragment.this.u.a(PhotoSelectFragment.this.e);
-                PhotoSelectFragment.this.i.setImageDrawable(BluedSkinUtils.b(PhotoSelectFragment.this.f29975c, 2131235082));
+                PhotoSelectFragment.this.i.setImageDrawable(BluedSkinUtils.b(PhotoSelectFragment.this.f16285c, (int) R.drawable.live_icon_arrow_up));
             }
         });
         this.u.a(new PopupWindow.OnDismissListener() { // from class: com.soft.blued.ui.feed.fragment.PhotoSelectFragment.7
             @Override // android.widget.PopupWindow.OnDismissListener
             public void onDismiss() {
-                PhotoSelectFragment.this.i.setImageDrawable(BluedSkinUtils.b(PhotoSelectFragment.this.f29975c, 2131235081));
+                PhotoSelectFragment.this.i.setImageDrawable(BluedSkinUtils.b(PhotoSelectFragment.this.f16285c, (int) R.drawable.live_icon_arrow_down));
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void g() {
-        if (SelectPhotoManager.a().b() + f29974a.size() >= PhotoConstants.CONFIG.f10707a) {
-            AppMethods.a((CharSequence) String.format(getResources().getString(2131890590), Integer.valueOf(PhotoConstants.CONFIG.f10707a)));
+        if (SelectPhotoManager.a().b() + f16284a.size() >= PhotoConstants.CONFIG.a) {
+            AppMethods.a(String.format(getResources().getString(R.string.max_select_num), Integer.valueOf(PhotoConstants.CONFIG.a)));
             return;
         }
         int i = this.w;
@@ -686,17 +687,18 @@ public class PhotoSelectFragment extends BaseFragment implements LoaderManager.L
         this.q.setTextColor(getResources().getColor(2131100459));
         TextView textView = this.r;
         textView.setText(SelectPhotoManager.a().b() + "");
-        this.s.setText(getString(2131891266));
+        this.s.setText(getString(R.string.photo_end));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void i() {
         this.r.setVisibility(8);
         this.q.setTextColor(getResources().getColor(2131100458));
-        this.s.setText(getString(2131888050));
+        this.s.setText(getString(R.string.feed_skip));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Multi-variable type inference failed */
     public void j() {
         this.D = CameraUtils.a(this);
     }
@@ -713,7 +715,6 @@ public class PhotoSelectFragment extends BaseFragment implements LoaderManager.L
         }
     }
 
-    @Override // com.blued.android.core.imagecache.MemoryRequest.MemoryListener
     public void a() {
     }
 
@@ -731,7 +732,7 @@ public class PhotoSelectFragment extends BaseFragment implements LoaderManager.L
         this.k.clear();
         LogUtils.c("onLoadFinished start");
         if (cursor != null) {
-            this.k.put(this.f29975c.getResources().getString(R.string.all_photos), new ArrayList());
+            this.k.put(this.f16285c.getResources().getString(R.string.all_photos), new ArrayList());
             while (cursor.moveToNext()) {
                 try {
                     str = cursor.getString(cursor.getColumnIndex("_data"));
@@ -751,12 +752,12 @@ public class PhotoSelectFragment extends BaseFragment implements LoaderManager.L
                     }
                     if (this.k.containsKey(name)) {
                         this.k.get(name).add(childImageInfo);
-                        this.k.get(this.f29975c.getResources().getString(R.string.all_photos)).add(childImageInfo);
+                        this.k.get(this.f16285c.getResources().getString(R.string.all_photos)).add(childImageInfo);
                     } else {
                         ArrayList arrayList = new ArrayList();
                         arrayList.add(childImageInfo);
                         this.k.put(name, arrayList);
-                        this.k.get(this.f29975c.getResources().getString(R.string.all_photos)).add(childImageInfo);
+                        this.k.get(this.f16285c.getResources().getString(R.string.all_photos)).add(childImageInfo);
                     }
                 } catch (Exception e2) {
                 }
@@ -823,7 +824,6 @@ public class PhotoSelectFragment extends BaseFragment implements LoaderManager.L
         super.finalize();
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         if (i2 == 0) {
             if (i != 22) {
@@ -898,25 +898,23 @@ public class PhotoSelectFragment extends BaseFragment implements LoaderManager.L
         super.onActivityResult(i, i2, intent);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener
     public boolean onBackPressed() {
         getActivity().setResult(-1);
         int i = this.w;
         if (i == 5) {
             SelectPhotoManager.a().d();
-            SelectPhotoManager.a().c().addAll(f29974a);
+            SelectPhotoManager.a().c().addAll(f16284a);
             return false;
         } else if (i != 7) {
             SelectPhotoManager.a().d();
             return false;
         } else {
             SelectPhotoManager.a().d();
-            SelectPhotoManager.a().c().addAll(f29974a);
+            SelectPhotoManager.a().c().addAll(f16284a);
             return false;
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
     }
@@ -924,12 +922,11 @@ public class PhotoSelectFragment extends BaseFragment implements LoaderManager.L
     @Override // androidx.loader.app.LoaderManager.LoaderCallbacks
     public Loader<Cursor> onCreateLoader(int i, Bundle bundle) {
         a(this.m);
-        return new CursorLoader(this.f29975c, MediaStore.Images.Media.EXTERNAL_CONTENT_URI, null, null, null, null);
+        return new CursorLoader(this.f16285c, MediaStore.Images.Media.EXTERNAL_CONTENT_URI, null, null, null, null);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.f29975c = getActivity();
+        this.f16285c = getActivity();
         View view = this.d;
         if (view == null) {
             this.d = layoutInflater.inflate(R.layout.fragment_photo_select_gird, viewGroup, false);
@@ -949,14 +946,12 @@ public class PhotoSelectFragment extends BaseFragment implements LoaderManager.L
         return this.d;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
-        f29974a.clear();
+        f16284a.clear();
         MemoryRequest.a().b(this);
         super.onDestroy();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDetach() {
         b();
         super.onDetach();
@@ -966,19 +961,16 @@ public class PhotoSelectFragment extends BaseFragment implements LoaderManager.L
     public void onLoaderReset(Loader<Cursor> loader) {
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onSaveInstanceState(Bundle bundle) {
         bundle.putString(OapsWrapper.KEY_PATH, this.D);
         super.onSaveInstanceState(bundle);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onStart() {
         super.onStart();
         MemoryRequest.a().b(this);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onStop() {
         super.onStop();
         MemoryRequest.a().a(this);

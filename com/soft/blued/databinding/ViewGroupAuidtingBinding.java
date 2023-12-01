@@ -10,25 +10,25 @@ import com.soft.blued.R;
 public final class ViewGroupAuidtingBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ShapeFrameLayout f29619a;
+    public final ShapeFrameLayout f15929a;
     public final TextView b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final ShapeFrameLayout f29620c;
+    private final ShapeFrameLayout f15930c;
 
     private ViewGroupAuidtingBinding(ShapeFrameLayout shapeFrameLayout, ShapeFrameLayout shapeFrameLayout2, TextView textView) {
-        this.f29620c = shapeFrameLayout;
-        this.f29619a = shapeFrameLayout2;
+        this.f15930c = shapeFrameLayout;
+        this.f15929a = shapeFrameLayout2;
         this.b = textView;
     }
 
     public static ViewGroupAuidtingBinding a(View view) {
         String str;
-        ShapeFrameLayout shapeFrameLayout = (ShapeFrameLayout) view.findViewById(R.id.fm_auditing);
-        if (shapeFrameLayout != null) {
+        ShapeFrameLayout findViewById = view.findViewById(R.id.fm_auditing);
+        if (findViewById != null) {
             TextView textView = (TextView) view.findViewById(R.id.tv_auditing);
             if (textView != null) {
-                return new ViewGroupAuidtingBinding((ShapeFrameLayout) view, shapeFrameLayout, textView);
+                return new ViewGroupAuidtingBinding((ShapeFrameLayout) view, findViewById, textView);
             }
             str = "tvAuditing";
         } else {
@@ -40,6 +40,6 @@ public final class ViewGroupAuidtingBinding implements ViewBinding {
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ShapeFrameLayout getRoot() {
-        return this.f29620c;
+        return this.f15930c;
     }
 }

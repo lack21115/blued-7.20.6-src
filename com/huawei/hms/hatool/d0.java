@@ -1,7 +1,6 @@
 package com.huawei.hms.hatool;
 
 import android.nfc.cardemulation.CardEmulation;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.huawei.secure.android.common.encrypt.hash.PBKDF2;
 import com.huawei.secure.android.common.encrypt.utils.EncryptUtil;
 import com.huawei.secure.android.common.encrypt.utils.HexUtil;
@@ -12,7 +11,7 @@ import java.io.IOException;
 public class d0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f22737a = b.i().getFilesDir().getPath();
+    public String f9129a = b.i().getFilesDir().getPath();
 
     public static boolean b(File file) {
         File[] listFiles;
@@ -32,7 +31,7 @@ public class d0 {
     }
 
     public static boolean d() {
-        return b(new File(b.i().getFilesDir().getPath() + BridgeUtil.SPLIT_MARK + "hms"));
+        return b(new File(b.i().getFilesDir().getPath() + "/hms"));
     }
 
     public String a() {
@@ -62,7 +61,7 @@ public class d0 {
     }
 
     public final String a(String str) {
-        return this.f22737a + "/hms/component/".replace(CardEmulation.EXTRA_SERVICE_COMPONENT, str);
+        return this.f9129a + "/hms/component/".replace(CardEmulation.EXTRA_SERVICE_COMPONENT, str);
     }
 
     public final void a(String str, String str2) {

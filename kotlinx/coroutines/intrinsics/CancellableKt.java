@@ -15,33 +15,33 @@ import kotlinx.coroutines.internal.DispatchedContinuationKt;
 public final class CancellableKt {
     public static final void a(Continuation<? super Unit> continuation, Continuation<?> continuation2) {
         try {
-            Continuation a2 = IntrinsicsKt.a(continuation);
-            Result.Companion companion = Result.f42293a;
-            DispatchedContinuationKt.a(a2, Result.f(Unit.f42314a), null, 2, null);
+            Continuation a = IntrinsicsKt.a(continuation);
+            Result.Companion companion = Result.a;
+            DispatchedContinuationKt.a(a, Result.f(Unit.a), null, 2, null);
         } catch (Throwable th) {
-            Result.Companion companion2 = Result.f42293a;
+            Result.Companion companion2 = Result.a;
             continuation2.resumeWith(Result.f(ResultKt.a(th)));
         }
     }
 
     public static final <T> void a(Function1<? super Continuation<? super T>, ? extends Object> function1, Continuation<? super T> continuation) {
         try {
-            Continuation a2 = IntrinsicsKt.a(IntrinsicsKt.a(function1, continuation));
-            Result.Companion companion = Result.f42293a;
-            DispatchedContinuationKt.a(a2, Result.f(Unit.f42314a), null, 2, null);
+            Continuation a = IntrinsicsKt.a(IntrinsicsKt.a(function1, continuation));
+            Result.Companion companion = Result.a;
+            DispatchedContinuationKt.a(a, Result.f(Unit.a), null, 2, null);
         } catch (Throwable th) {
-            Result.Companion companion2 = Result.f42293a;
+            Result.Companion companion2 = Result.a;
             continuation.resumeWith(Result.f(ResultKt.a(th)));
         }
     }
 
     public static final <R, T> void a(Function2<? super R, ? super Continuation<? super T>, ? extends Object> function2, R r, Continuation<? super T> continuation, Function1<? super Throwable, Unit> function1) {
         try {
-            Continuation a2 = IntrinsicsKt.a(IntrinsicsKt.a(function2, r, continuation));
-            Result.Companion companion = Result.f42293a;
-            DispatchedContinuationKt.a(a2, Result.f(Unit.f42314a), function1);
+            Continuation a = IntrinsicsKt.a(IntrinsicsKt.a(function2, r, continuation));
+            Result.Companion companion = Result.a;
+            DispatchedContinuationKt.a(a, Result.f(Unit.a), function1);
         } catch (Throwable th) {
-            Result.Companion companion2 = Result.f42293a;
+            Result.Companion companion2 = Result.a;
             continuation.resumeWith(Result.f(ResultKt.a(th)));
         }
     }

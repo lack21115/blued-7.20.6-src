@@ -15,7 +15,7 @@ public final class e extends d {
         g gVar = new g();
         this.g = gVar;
         this.j = 0;
-        gVar.f35320a = (short) 2;
+        gVar.f21629a = (short) 2;
     }
 
     @Override // com.tencent.bugly.idasc.proguard.d, com.tencent.bugly.idasc.proguard.c
@@ -33,11 +33,11 @@ public final class e extends d {
         }
         try {
             k kVar = new k(bArr, (byte) 0);
-            kVar.a(this.f35318c);
+            kVar.a(this.f21627c);
             this.g.a(kVar);
-            if (this.g.f35320a == 3) {
+            if (this.g.f21629a == 3) {
                 k kVar2 = new k(this.g.g);
-                kVar2.a(this.f35318c);
+                kVar2.a(this.f21627c);
                 if (h == null) {
                     HashMap<String, byte[]> hashMap = new HashMap<>();
                     h = hashMap;
@@ -47,14 +47,14 @@ public final class e extends d {
                 return;
             }
             k kVar3 = new k(this.g.g);
-            kVar3.a(this.f35318c);
+            kVar3.a(this.f21627c);
             if (i == null) {
                 i = new HashMap<>();
                 HashMap<String, byte[]> hashMap2 = new HashMap<>();
                 hashMap2.put("", new byte[0]);
                 i.put("", hashMap2);
             }
-            this.f35317a = kVar3.a((Map) i, 0, false);
+            this.f21626a = kVar3.a((Map) i, 0, false);
             this.b = new HashMap<>();
         } catch (Exception e) {
             throw new RuntimeException(e);
@@ -64,7 +64,7 @@ public final class e extends d {
     /* JADX WARN: Multi-variable type inference failed */
     @Override // com.tencent.bugly.idasc.proguard.d, com.tencent.bugly.idasc.proguard.c
     public final byte[] a() {
-        if (this.g.f35320a != 2) {
+        if (this.g.f21629a != 2) {
             if (this.g.e == null) {
                 this.g.e = "";
             }
@@ -79,13 +79,13 @@ public final class e extends d {
             }
         }
         l lVar = new l(0);
-        lVar.a(this.f35318c);
-        lVar.a((Map) (this.g.f35320a == 2 ? this.f35317a : this.e), 0);
-        this.g.g = n.a(lVar.f35325a);
+        lVar.a(this.f21627c);
+        lVar.a((Map) (this.g.f21629a == 2 ? this.f21626a : this.e), 0);
+        this.g.g = n.a(lVar.f21634a);
         l lVar2 = new l(0);
-        lVar2.a(this.f35318c);
+        lVar2.a(this.f21627c);
         this.g.a(lVar2);
-        byte[] a2 = n.a(lVar2.f35325a);
+        byte[] a2 = n.a(lVar2.f21634a);
         int length = a2.length + 4;
         ByteBuffer allocate = ByteBuffer.allocate(length);
         allocate.putInt(length).put(a2).flip();
@@ -95,7 +95,7 @@ public final class e extends d {
     @Override // com.tencent.bugly.idasc.proguard.d
     public final void b() {
         super.b();
-        this.g.f35320a = (short) 3;
+        this.g.f21629a = (short) 3;
     }
 
     public final void b(String str) {

@@ -13,11 +13,11 @@ import java.nio.FloatBuffer;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final FloatBuffer f1337a = f.a(new float[]{-1.0f, -1.0f, 1.0f, -1.0f, -1.0f, 1.0f, 1.0f, 1.0f});
+    public static final FloatBuffer f1289a = f.a(new float[]{-1.0f, -1.0f, 1.0f, -1.0f, -1.0f, 1.0f, 1.0f, 1.0f});
     public static final FloatBuffer b = f.a(new float[]{0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f});
 
     /* renamed from: c  reason: collision with root package name */
-    public final c f1338c;
+    public final c f1290c;
     public final a.a.a.a.a.b.i.b d;
     public final int e;
     public final int f;
@@ -33,7 +33,7 @@ public class a {
         this.i = bVar;
         this.j = false;
         bVar.a();
-        this.f1338c = new c(6408);
+        this.f1290c = new c(6408);
         a.a.a.a.a.b.i.b bVar2 = new a.a.a.a.a.b.i.b("varying vec2 interp_tc;\nattribute vec4 in_pos;\nattribute vec4 in_tc;\n\nuniform mat4 texMatrix;\n\nvoid main() {\n    gl_Position = in_pos;\n    interp_tc = (texMatrix * in_tc).xy;\n}\n", "precision mediump float;\nvarying vec2 interp_tc;\n\nuniform sampler2D oesTex;\nuniform vec2 xUnit;\nuniform vec4 coeffs;\n\nvoid main() {\n  gl_FragColor.r = coeffs.a + dot(coeffs.rgb,\n      texture2D(oesTex, interp_tc - 1.5 * xUnit).rgb);\n  gl_FragColor.g = coeffs.a + dot(coeffs.rgb,\n      texture2D(oesTex, interp_tc - 0.5 * xUnit).rgb);\n  gl_FragColor.b = coeffs.a + dot(coeffs.rgb,\n      texture2D(oesTex, interp_tc + 0.5 * xUnit).rgb);\n  gl_FragColor.a = coeffs.a + dot(coeffs.rgb,\n      texture2D(oesTex, interp_tc + 1.5 * xUnit).rgb);\n}\n");
         this.d = bVar2;
         bVar2.a();
@@ -42,7 +42,7 @@ public class a {
         this.g = this.d.b("coeffs");
         GLES20.glUniform1i(this.d.b("oesTex"), 0);
         f.a("Initialize fragment shader uniform values.");
-        this.d.a("in_pos", 2, f1337a);
+        this.d.a("in_pos", 2, f1289a);
         this.d.a("in_tc", 2, b);
     }
 
@@ -58,10 +58,10 @@ public class a {
             int i6 = (i2 + 7) / 8;
             int i7 = (i3 + 1) / 2;
             int i8 = i3 + i7;
-            float[] a2 = e.a(f.f1239c, e.a());
+            float[] a2 = e.a(f.f1191c, e.a());
             int i9 = i2 / 4;
-            this.f1338c.a(i9, i8);
-            GLES20.glBindFramebuffer(36160, this.f1338c.a());
+            this.f1290c.a(i9, i8);
+            GLES20.glBindFramebuffer(36160, this.f1290c.a());
             f.a("glBindFramebuffer");
             GLES20.glActiveTexture(33984);
             GLES20.glBindTexture(3553, i);
@@ -144,6 +144,6 @@ public class a {
         this.i.a();
         this.j = true;
         this.d.b();
-        this.f1338c.b();
+        this.f1290c.b();
     }
 }

@@ -14,7 +14,7 @@ public final class RemovalListeners {
         return new RemovalListener<K, V>() { // from class: com.google.common.cache.RemovalListeners.1
             @Override // com.google.common.cache.RemovalListener
             public void onRemoval(final RemovalNotification<K, V> removalNotification) {
-                Executor.this.execute(new Runnable() { // from class: com.google.common.cache.RemovalListeners.1.1
+                executor.execute(new Runnable() { // from class: com.google.common.cache.RemovalListeners.1.1
                     @Override // java.lang.Runnable
                     public void run() {
                         removalListener.onRemoval(removalNotification);

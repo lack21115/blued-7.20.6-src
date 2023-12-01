@@ -4,5 +4,5 @@ package com.tencent.txcopyrightedmedia.impl.utils;
 public abstract class al implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    protected String f40057a = "UTF-8";
+    protected String f26366a = "UTF-8";
 }

@@ -33,11 +33,11 @@ import org.json.JSONObject;
 public class an {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f23725a = "de.robv.android.xposed.XposedHelpers";
+    public static final String f10117a = "de.robv.android.xposed.XposedHelpers";
     public static final String b = "de.robv.android.xposed.XposedBridge";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f23726c = "com.elderdrivers.riru.edxp.config.EdXpConfigGlobal";
+    public static final String f10118c = "com.elderdrivers.riru.edxp.config.EdXpConfigGlobal";
 
     private boolean a(Context context, String str, Set set) {
         TelephonyManager telephonyManager;
@@ -261,7 +261,7 @@ public class an {
     public Set<String> c() {
         Set keySet;
         try {
-            Class<?> loadClass = ClassLoader.getSystemClassLoader().loadClass(f23725a);
+            Class<?> loadClass = ClassLoader.getSystemClassLoader().loadClass(f10117a);
             if (loadClass != null) {
                 Field declaredField = loadClass.getDeclaredField("methodCache");
                 declaredField.setAccessible(true);

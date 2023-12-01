@@ -73,6 +73,7 @@ public class HmsPushManager implements AbstractPushManager {
         return false;
     }
 
+    /* JADX WARN: Type inference failed for: r0v7, types: [com.igexin.assist.control.huawei.HmsPushManager$1] */
     @Override // com.igexin.assist.control.AbstractPushManager
     public void register(final Context context) {
         Log.d("Assist_HW", "Register hmspush, pkg = " + context.getPackageName());
@@ -133,6 +134,7 @@ public class HmsPushManager implements AbstractPushManager {
         });
     }
 
+    /* JADX WARN: Type inference failed for: r0v0, types: [com.igexin.assist.control.huawei.HmsPushManager$2] */
     @Override // com.igexin.assist.control.AbstractPushManager
     public void unregister(final Context context) {
         new Thread() { // from class: com.igexin.assist.control.huawei.HmsPushManager.2

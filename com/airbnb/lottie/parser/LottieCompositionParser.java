@@ -12,14 +12,14 @@ import com.airbnb.lottie.model.Marker;
 import com.airbnb.lottie.model.layer.Layer;
 import com.airbnb.lottie.utils.Logger;
 import com.airbnb.lottie.utils.Utils;
-import com.anythink.expressad.video.dynview.a.a;
-import com.baidu.mobads.sdk.api.IAdInterListener;
-import com.tencent.tendinsv.a.b;
+import com.amap.api.col.p0003sl.iu;
+import com.anythink.core.common.g.c;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.microedition.khronos.opengles.GL10;
 
 /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/parser/LottieCompositionParser.class */
 public class LottieCompositionParser {
@@ -29,7 +29,7 @@ public class LottieCompositionParser {
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
     public static LottieComposition a(JsonReader jsonReader) throws IOException {
         boolean z;
-        float a2 = Utils.a();
+        float a = Utils.a();
         LongSparseArray<Layer> longSparseArray = new LongSparseArray<>();
         ArrayList arrayList = new ArrayList();
         HashMap hashMap = new HashMap();
@@ -62,7 +62,7 @@ public class LottieCompositionParser {
                     z = true;
                     break;
                 case 104:
-                    if (nextName.equals("h")) {
+                    if (nextName.equals(iu.g)) {
                         z = true;
                         break;
                     }
@@ -76,27 +76,27 @@ public class LottieCompositionParser {
                     z = true;
                     break;
                 case 119:
-                    if (nextName.equals(IAdInterListener.AdReqParam.WIDTH)) {
+                    if (nextName.equals("w")) {
                         z = false;
                         break;
                     }
                     z = true;
                     break;
                 case 3276:
-                    if (nextName.equals(a.Z)) {
+                    if (nextName.equals("fr")) {
                         z = true;
                         break;
                     }
                     z = true;
                     break;
                 case 3367:
-                    if (nextName.equals(b.a.q)) {
+                    if (nextName.equals("ip")) {
                         z = true;
                         break;
                     }
                     z = true;
                     break;
-                case 3553:
+                case GL10.GL_TEXTURE_2D /* 3553 */:
                     if (nextName.equals("op")) {
                         z = true;
                         break;
@@ -173,15 +173,15 @@ public class LottieCompositionParser {
             }
         }
         jsonReader.endObject();
-        lottieComposition.a(new Rect(0, 0, (int) (i * a2), (int) (i2 * a2)), f, f2, f3, arrayList, longSparseArray, hashMap, hashMap2, sparseArrayCompat, hashMap3, arrayList2);
+        lottieComposition.a(new Rect(0, 0, (int) (i * a), (int) (i2 * a)), f, f2, f3, arrayList, longSparseArray, hashMap, hashMap2, sparseArrayCompat, hashMap3, arrayList2);
         return lottieComposition;
     }
 
     private static void a(JsonReader jsonReader, LottieComposition lottieComposition, SparseArrayCompat<FontCharacter> sparseArrayCompat) throws IOException {
         jsonReader.beginArray();
         while (jsonReader.hasNext()) {
-            FontCharacter a2 = FontCharacterParser.a(jsonReader, lottieComposition);
-            sparseArrayCompat.put(a2.hashCode(), a2);
+            FontCharacter a = FontCharacterParser.a(jsonReader, lottieComposition);
+            sparseArrayCompat.put(a.hashCode(), a);
         }
         jsonReader.endArray();
     }
@@ -228,13 +228,13 @@ public class LottieCompositionParser {
         jsonReader.beginArray();
         int i = 0;
         while (jsonReader.hasNext()) {
-            Layer a2 = LayerParser.a(jsonReader, lottieComposition);
+            Layer a = LayerParser.a(jsonReader, lottieComposition);
             int i2 = i;
-            if (a2.k() == Layer.LayerType.IMAGE) {
+            if (a.k() == Layer.LayerType.IMAGE) {
                 i2 = i + 1;
             }
-            list.add(a2);
-            longSparseArray.put(a2.e(), a2);
+            list.add(a);
+            longSparseArray.put(a.e(), a);
             i = i2;
             if (i2 > 4) {
                 Logger.b("You have " + i2 + " images. Lottie should primarily be used with shapes. If you are using Adobe Illustrator, convert the Illustrator layers to shape layers.");
@@ -267,16 +267,16 @@ public class LottieCompositionParser {
                                     if (hashCode == 3355 && nextName.equals("id")) {
                                         z = false;
                                     }
-                                } else if (nextName.equals(IAdInterListener.AdReqParam.WIDTH)) {
+                                } else if (nextName.equals("w")) {
                                     z = true;
                                 }
                             } else if (nextName.equals("u")) {
                                 z = true;
                             }
-                        } else if (nextName.equals("p")) {
+                        } else if (nextName.equals(c.W)) {
                             z = true;
                         }
-                    } else if (nextName.equals("h")) {
+                    } else if (nextName.equals(iu.g)) {
                         z = true;
                     }
                 } else if (nextName.equals("layers")) {
@@ -287,9 +287,9 @@ public class LottieCompositionParser {
                 } else if (z) {
                     jsonReader.beginArray();
                     while (jsonReader.hasNext()) {
-                        Layer a2 = LayerParser.a(jsonReader, lottieComposition);
-                        longSparseArray.put(a2.e(), a2);
-                        arrayList.add(a2);
+                        Layer a = LayerParser.a(jsonReader, lottieComposition);
+                        longSparseArray.put(a.e(), a);
+                        arrayList.add(a);
                     }
                     jsonReader.endArray();
                 } else if (z) {
@@ -328,8 +328,8 @@ public class LottieCompositionParser {
             } else {
                 jsonReader.beginArray();
                 while (jsonReader.hasNext()) {
-                    Font a2 = FontParser.a(jsonReader);
-                    map.put(a2.b(), a2);
+                    Font a = FontParser.a(jsonReader);
+                    map.put(a.b(), a);
                 }
                 jsonReader.endArray();
             }

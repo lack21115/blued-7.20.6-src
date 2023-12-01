@@ -25,11 +25,11 @@ public class DropDownListView extends ListView {
     public static final int NO_POSITION = -1;
 
     /* renamed from: a  reason: collision with root package name */
-    ResolveHoverRunnable f1817a;
+    ResolveHoverRunnable f1769a;
     private final Rect b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f1818c;
+    private int f1770c;
     private int d;
     private int e;
     private int f;
@@ -47,41 +47,41 @@ public class DropDownListView extends ListView {
     public static class GateKeeperDrawable extends DrawableWrapper {
 
         /* renamed from: a  reason: collision with root package name */
-        private boolean f1819a;
+        private boolean f1771a;
 
         GateKeeperDrawable(Drawable drawable) {
             super(drawable);
-            this.f1819a = true;
+            this.f1771a = true;
         }
 
         void a(boolean z) {
-            this.f1819a = z;
+            this.f1771a = z;
         }
 
         @Override // androidx.appcompat.graphics.drawable.DrawableWrapper, android.graphics.drawable.Drawable
         public void draw(Canvas canvas) {
-            if (this.f1819a) {
+            if (this.f1771a) {
                 super.draw(canvas);
             }
         }
 
         @Override // androidx.appcompat.graphics.drawable.DrawableWrapper, android.graphics.drawable.Drawable
         public void setHotspot(float f, float f2) {
-            if (this.f1819a) {
+            if (this.f1771a) {
                 super.setHotspot(f, f2);
             }
         }
 
         @Override // androidx.appcompat.graphics.drawable.DrawableWrapper, android.graphics.drawable.Drawable
         public void setHotspotBounds(int i, int i2, int i3, int i4) {
-            if (this.f1819a) {
+            if (this.f1771a) {
                 super.setHotspotBounds(i, i2, i3, i4);
             }
         }
 
         @Override // androidx.appcompat.graphics.drawable.DrawableWrapper, android.graphics.drawable.Drawable
         public boolean setState(int[] iArr) {
-            if (this.f1819a) {
+            if (this.f1771a) {
                 return super.setState(iArr);
             }
             return false;
@@ -89,7 +89,7 @@ public class DropDownListView extends ListView {
 
         @Override // androidx.appcompat.graphics.drawable.DrawableWrapper, android.graphics.drawable.Drawable
         public boolean setVisible(boolean z, boolean z2) {
-            if (this.f1819a) {
+            if (this.f1771a) {
                 return super.setVisible(z, z2);
             }
             return false;
@@ -103,7 +103,7 @@ public class DropDownListView extends ListView {
         }
 
         public void cancel() {
-            DropDownListView.this.f1817a = null;
+            DropDownListView.this.f1769a = null;
             DropDownListView.this.removeCallbacks(this);
         }
 
@@ -113,7 +113,7 @@ public class DropDownListView extends ListView {
 
         @Override // java.lang.Runnable
         public void run() {
-            DropDownListView.this.f1817a = null;
+            DropDownListView.this.f1769a = null;
             DropDownListView.this.drawableStateChanged();
         }
     }
@@ -122,7 +122,7 @@ public class DropDownListView extends ListView {
     public DropDownListView(Context context, boolean z) {
         super(context, null, R.attr.dropDownListViewStyle);
         this.b = new Rect();
-        this.f1818c = 0;
+        this.f1770c = 0;
         this.d = 0;
         this.e = 0;
         this.f = 0;
@@ -232,7 +232,7 @@ public class DropDownListView extends ListView {
     private void b(int i, View view) {
         Rect rect = this.b;
         rect.set(view.getLeft(), view.getTop(), view.getRight(), view.getBottom());
-        rect.left -= this.f1818c;
+        rect.left -= this.f1770c;
         rect.top -= this.d;
         rect.right += this.e;
         rect.bottom += this.f;
@@ -260,17 +260,15 @@ public class DropDownListView extends ListView {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.ListView, android.widget.AbsListView, android.view.ViewGroup, android.view.View
-    public void dispatchDraw(Canvas canvas) {
+    protected void dispatchDraw(Canvas canvas) {
         a(canvas);
         super.dispatchDraw(canvas);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.AbsListView, android.view.ViewGroup, android.view.View
-    public void drawableStateChanged() {
-        if (this.f1817a != null) {
+    protected void drawableStateChanged() {
+        if (this.f1769a != null) {
             return;
         }
         super.drawableStateChanged();
@@ -419,10 +417,9 @@ public class DropDownListView extends ListView {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // android.widget.AbsListView, android.widget.AdapterView, android.view.ViewGroup, android.view.View
-    public void onDetachedFromWindow() {
-        this.f1817a = null;
+    @Override // android.widget.ListView, android.widget.AbsListView, android.widget.AdapterView, android.view.ViewGroup, android.view.View
+    protected void onDetachedFromWindow() {
+        this.f1769a = null;
         super.onDetachedFromWindow();
     }
 
@@ -450,9 +447,9 @@ public class DropDownListView extends ListView {
             return super.onHoverEvent(motionEvent);
         }
         int actionMasked = motionEvent.getActionMasked();
-        if (actionMasked == 10 && this.f1817a == null) {
+        if (actionMasked == 10 && this.f1769a == null) {
             ResolveHoverRunnable resolveHoverRunnable = new ResolveHoverRunnable();
-            this.f1817a = resolveHoverRunnable;
+            this.f1769a = resolveHoverRunnable;
             resolveHoverRunnable.post();
         }
         boolean onHoverEvent = super.onHoverEvent(motionEvent);
@@ -476,7 +473,7 @@ public class DropDownListView extends ListView {
         if (motionEvent.getAction() == 0) {
             this.g = pointToPosition((int) motionEvent.getX(), (int) motionEvent.getY());
         }
-        ResolveHoverRunnable resolveHoverRunnable = this.f1817a;
+        ResolveHoverRunnable resolveHoverRunnable = this.f1769a;
         if (resolveHoverRunnable != null) {
             resolveHoverRunnable.cancel();
         }
@@ -497,7 +494,7 @@ public class DropDownListView extends ListView {
         if (drawable != null) {
             drawable.getPadding(rect);
         }
-        this.f1818c = rect.left;
+        this.f1770c = rect.left;
         this.d = rect.top;
         this.e = rect.right;
         this.f = rect.bottom;

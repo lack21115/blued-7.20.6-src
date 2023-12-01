@@ -1,6 +1,5 @@
 package io.grpc.internal;
 
-import android.provider.Downloads;
 import com.google.common.base.Preconditions;
 import io.grpc.CallCredentials;
 import io.grpc.CallOptions;
@@ -48,10 +47,9 @@ final class MetadataApplierImpl extends CallCredentials.MetadataApplier {
         }
     }
 
-    @Override // io.grpc.CallCredentials.MetadataApplier
     public void apply(Metadata metadata) {
         Preconditions.checkState(!this.finalized, "apply() or fail() already called");
-        Preconditions.checkNotNull(metadata, Downloads.Impl.RequestHeaders.URI_SEGMENT);
+        Preconditions.checkNotNull(metadata, "headers");
         this.origHeaders.merge(metadata);
         Context attach = this.ctx.attach();
         try {
@@ -64,7 +62,6 @@ final class MetadataApplierImpl extends CallCredentials.MetadataApplier {
         }
     }
 
-    @Override // io.grpc.CallCredentials.MetadataApplier
     public void fail(Status status) {
         Preconditions.checkArgument(!status.isOk(), "Cannot fail with OK status");
         Preconditions.checkState(!this.finalized, "apply() or fail() already called");

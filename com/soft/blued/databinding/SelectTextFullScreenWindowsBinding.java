@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class SelectTextFullScreenWindowsBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ConstraintLayout f29583a;
+    private final ConstraintLayout f15893a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f29583a;
+        return this.f15893a;
     }
 }

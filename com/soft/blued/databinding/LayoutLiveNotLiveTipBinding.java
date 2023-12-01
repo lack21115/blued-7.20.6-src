@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class LayoutLiveNotLiveTipBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29397a;
+    private final LinearLayout f15707a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29397a;
+        return this.f15707a;
     }
 }

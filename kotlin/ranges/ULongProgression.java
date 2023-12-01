@@ -11,13 +11,9 @@ import kotlin.jvm.internal.markers.KMappedMarker;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/ranges/ULongProgression.class */
 public class ULongProgression implements Iterable<ULong>, KMappedMarker {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f42591a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private final long b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final long f42592c;
+    private final long c;
     private final long d;
 
     @Metadata
@@ -39,7 +35,7 @@ public class ULongProgression implements Iterable<ULong>, KMappedMarker {
             throw new IllegalArgumentException("Step must be greater than Long.MIN_VALUE to avoid overflow on negation.");
         }
         this.b = j;
-        this.f42592c = UProgressionUtilKt.a(j, j2, j3);
+        this.c = UProgressionUtilKt.a(j, j2, j3);
         this.d = j3;
     }
 
@@ -52,7 +48,7 @@ public class ULongProgression implements Iterable<ULong>, KMappedMarker {
     }
 
     public final long b() {
-        return this.f42592c;
+        return this.c;
     }
 
     public boolean c() {
@@ -76,10 +72,10 @@ public class ULongProgression implements Iterable<ULong>, KMappedMarker {
         if (c()) {
             return -1;
         }
-        int c2 = (int) ULong.c(a() ^ ULong.c(a() >>> 32));
-        int c3 = (int) ULong.c(b() ^ ULong.c(b() >>> 32));
+        int c = (int) ULong.c(a() ^ ULong.c(a() >>> 32));
+        int c2 = (int) ULong.c(b() ^ ULong.c(b() >>> 32));
         long j = this.d;
-        return ((int) (j ^ (j >>> 32))) + (((c2 * 31) + c3) * 31);
+        return ((int) (j ^ (j >>> 32))) + (((c * 31) + c2) * 31);
     }
 
     @Override // java.lang.Iterable

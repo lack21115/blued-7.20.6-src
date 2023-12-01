@@ -10,7 +10,7 @@ import android.view.animation.LinearInterpolator;
 public class PLPositionTransition extends PLTransition {
 
     /* renamed from: c  reason: collision with root package name */
-    private int f27499c;
+    private int f13811c;
     private int d;
     private int e;
     private int f;
@@ -19,7 +19,7 @@ public class PLPositionTransition extends PLTransition {
 
     public PLPositionTransition(long j, long j2, int i, int i2, int i3, int i4) {
         super(j, j2);
-        this.f27499c = i;
+        this.f13811c = i;
         this.d = i2;
         this.e = i3;
         this.f = i4;
@@ -27,25 +27,25 @@ public class PLPositionTransition extends PLTransition {
 
     public float a(long j) {
         long j2 = this.b * 1000000;
-        long j3 = this.f27504a;
+        long j3 = this.f13816a;
         long a2 = a();
         if (j < j2 || j > a2 * 1000000) {
             return 0.0f;
         }
-        float abs = Math.abs(this.f27499c - this.e) * (((float) (j - j2)) / ((float) (j3 * 1000000)));
-        int i = this.f27499c;
+        float abs = Math.abs(this.f13811c - this.e) * (((float) (j - j2)) / ((float) (j3 * 1000000)));
+        int i = this.f13811c;
         return (i < this.e ? i + abs : i - abs) / this.g;
     }
 
     @Override // com.qiniu.pili.droid.shortvideo.PLTransition
     public Animator a(View view) {
-        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(view, "translationX", this.f27499c, this.e);
+        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(view, "translationX", this.f13811c, this.e);
         ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(view, "translationY", this.d, this.f);
         ofFloat.setInterpolator(new LinearInterpolator());
         ofFloat2.setInterpolator(new LinearInterpolator());
-        ofFloat.setDuration(this.f27504a);
+        ofFloat.setDuration(this.f13816a);
         ofFloat.setStartDelay(this.b);
-        ofFloat2.setDuration(this.f27504a);
+        ofFloat2.setDuration(this.f13816a);
         ofFloat2.setStartDelay(this.b);
         AnimatorSet animatorSet = new AnimatorSet();
         animatorSet.playTogether(ofFloat, ofFloat2);
@@ -59,7 +59,7 @@ public class PLPositionTransition extends PLTransition {
 
     public float b(long j) {
         long j2 = this.b * 1000000;
-        long j3 = this.f27504a;
+        long j3 = this.f13816a;
         long a2 = a();
         if (j < j2 || j > a2 * 1000000) {
             return 0.0f;

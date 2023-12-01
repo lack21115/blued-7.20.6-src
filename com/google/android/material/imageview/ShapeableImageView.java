@@ -235,31 +235,27 @@ public class ShapeableImageView extends AppCompatImageView implements Shapeable 
         return this.strokeWidth;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.ImageView, android.view.View
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         setLayerType(2, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.ImageView, android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         setLayerType(0, null);
         super.onDetachedFromWindow();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.ImageView, android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         canvas.drawPath(this.maskPath, this.clearPaint);
         drawStroke(canvas);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.ImageView, android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         super.onMeasure(i, i2);
         if (this.hasAdjustedPaddingAfterLayoutDirectionResolved) {
             return;
@@ -274,9 +270,8 @@ public class ShapeableImageView extends AppCompatImageView implements Shapeable 
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onSizeChanged(int i, int i2, int i3, int i4) {
+    protected void onSizeChanged(int i, int i2, int i3, int i4) {
         super.onSizeChanged(i, i2, i3, i4);
         updateShapeMask(i, i2);
     }

@@ -31,13 +31,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYHostUpMarriageNotice.class */
 public final class YYHostUpMarriageNotice extends ConstraintLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private ViewHostUpMarriageNoticeBinding f18248a;
+    private ViewHostUpMarriageNoticeBinding a;
     private YYVipMarriageNotice.AnimatorEndListener b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private YYHostUpMode f18249c;
+    private YYHostUpMode c;
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
     public YYHostUpMarriageNotice(Context context) {
@@ -55,9 +51,9 @@ public final class YYHostUpMarriageNotice extends ConstraintLayout {
     public YYHostUpMarriageNotice(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         Intrinsics.e(context, "context");
-        ViewHostUpMarriageNoticeBinding a2 = ViewHostUpMarriageNoticeBinding.a(LayoutInflater.from(getContext()), this, true);
-        Intrinsics.c(a2, "inflate(LayoutInflater.from(context), this, true)");
-        this.f18248a = a2;
+        ViewHostUpMarriageNoticeBinding a = ViewHostUpMarriageNoticeBinding.a(LayoutInflater.from(getContext()), (ViewGroup) this, true);
+        Intrinsics.c(a, "inflate(LayoutInflater.from(context), this, true)");
+        this.a = a;
         setVisibility(8);
     }
 
@@ -67,7 +63,7 @@ public final class YYHostUpMarriageNotice extends ConstraintLayout {
             return;
         }
         LogUtils.d("notice", "hideNotify ... ");
-        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this.f18248a.e, "translationX", 0.0f, -getWidth());
+        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this.a.e, "translationX", 0.0f, -getWidth());
         ofFloat.setDuration(500L);
         ofFloat.setInterpolator(new LinearInterpolator());
         ofFloat.addListener(new Animator.AnimatorListener() { // from class: com.blued.android.module.yy_china.view.YYHostUpMarriageNotice$hideNotify$1
@@ -79,7 +75,7 @@ public final class YYHostUpMarriageNotice extends ConstraintLayout {
             public void onAnimationEnd(Animator animator) {
                 YYVipMarriageNotice.AnimatorEndListener animatorEndListener;
                 LogUtils.d("notice", "hide animation ending ... ");
-                ViewGroup.this.removeView(this.getBinding().e);
+                ViewGroup.this.removeView((View) this.getBinding().e);
                 animatorEndListener = this.b;
                 if (animatorEndListener == null) {
                     return;
@@ -101,7 +97,7 @@ public final class YYHostUpMarriageNotice extends ConstraintLayout {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(YYHostUpMarriageNotice this$0, View view) {
         Intrinsics.e(this$0, "this$0");
-        YYHostUpMode yYHostUpMode = this$0.f18249c;
+        YYHostUpMode yYHostUpMode = this$0.c;
         if (yYHostUpMode == null || YYRoomInfoManager.e().y()) {
             return;
         }
@@ -115,7 +111,7 @@ public final class YYHostUpMarriageNotice extends ConstraintLayout {
         Intrinsics.e(attachView, "attachView");
         Intrinsics.e(active, "active");
         setVisibility(0);
-        YYHostUpMode yYHostUpMode = this.f18249c;
+        YYHostUpMode yYHostUpMode = this.c;
         if (yYHostUpMode != null) {
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
             SpannableString spannableString = new SpannableString(String.valueOf(yYHostUpMode.getName()));
@@ -128,7 +124,7 @@ public final class YYHostUpMarriageNotice extends ConstraintLayout {
             spannableStringBuilder.append((CharSequence) spannableString2);
             getBinding().f.setText(spannableStringBuilder);
             ActivityFragmentActive activityFragmentActive = active;
-            ImageLoader.a(activityFragmentActive, yYHostUpMode.getBroadcast_background()).f().g(-1).a(getBinding().f16858a);
+            ImageLoader.a(activityFragmentActive, yYHostUpMode.getBroadcast_background()).f().g(-1).a(getBinding().a);
             ImageLoader.a(activityFragmentActive, yYHostUpMode.getAvatar()).f().b(R.drawable.user_bg_round).c().a(getBinding().d);
             getBinding().e.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYHostUpMarriageNotice$ESYWX18xoRCAiYjpyEBBxVr3AJM
                 @Override // android.view.View.OnClickListener
@@ -137,7 +133,7 @@ public final class YYHostUpMarriageNotice extends ConstraintLayout {
                 }
             });
         }
-        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this.f18248a.e, "translationX", getWidth() + AppInfo.l, 0.0f);
+        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this.a.e, "translationX", getWidth() + AppInfo.l, 0.0f);
         ofFloat.setDuration(500L);
         ofFloat.setInterpolator(new LinearInterpolator());
         ofFloat.addListener(new YYHostUpMarriageNotice$showNotify$2(active, this, attachView));
@@ -146,11 +142,11 @@ public final class YYHostUpMarriageNotice extends ConstraintLayout {
 
     public final void a(YYHostUpMode notify) {
         Intrinsics.e(notify, "notify");
-        this.f18249c = notify;
+        this.c = notify;
     }
 
     public final ViewHostUpMarriageNoticeBinding getBinding() {
-        return this.f18248a;
+        return this.a;
     }
 
     public final void setAnimatorEndListener(YYVipMarriageNotice.AnimatorEndListener callback) {
@@ -160,6 +156,6 @@ public final class YYHostUpMarriageNotice extends ConstraintLayout {
 
     public final void setBinding(ViewHostUpMarriageNoticeBinding viewHostUpMarriageNoticeBinding) {
         Intrinsics.e(viewHostUpMarriageNoticeBinding, "<set-?>");
-        this.f18248a = viewHostUpMarriageNoticeBinding;
+        this.a = viewHostUpMarriageNoticeBinding;
     }
 }

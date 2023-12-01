@@ -36,12 +36,12 @@ public class DataInputStream extends FilterInputStream implements DataInput {
 
     @Override // java.io.FilterInputStream, java.io.InputStream
     public final int read(byte[] bArr, int i, int i2) throws IOException {
-        return this.f42254in.read(bArr, i, i2);
+        return this.in.read(bArr, i, i2);
     }
 
     @Override // java.io.DataInput
     public final boolean readBoolean() throws IOException {
-        int read = this.f42254in.read();
+        int read = this.in.read();
         if (read < 0) {
             throw new EOFException();
         }
@@ -50,7 +50,7 @@ public class DataInputStream extends FilterInputStream implements DataInput {
 
     @Override // java.io.DataInput
     public final byte readByte() throws IOException {
-        int read = this.f42254in.read();
+        int read = this.in.read();
         if (read < 0) {
             throw new EOFException();
         }
@@ -79,12 +79,12 @@ public class DataInputStream extends FilterInputStream implements DataInput {
 
     @Override // java.io.DataInput
     public final void readFully(byte[] bArr, int i, int i2) throws IOException {
-        Streams.readFully(this.f42254in, bArr, i, i2);
+        Streams.readFully(this.in, bArr, i, i2);
     }
 
     @Override // java.io.DataInput
     public final int readInt() throws IOException {
-        Streams.readFully(this.f42254in, this.scratch, 0, 4);
+        Streams.readFully(this.in, this.scratch, 0, 4);
         return Memory.peekInt(this.scratch, 0, ByteOrder.BIG_ENDIAN);
     }
 
@@ -94,7 +94,7 @@ public class DataInputStream extends FilterInputStream implements DataInput {
         StringBuilder sb = new StringBuilder(80);
         boolean z = false;
         while (true) {
-            int read = this.f42254in.read();
+            int read = this.in.read();
             switch (read) {
                 case -1:
                     if (sb.length() != 0 || z) {
@@ -106,15 +106,15 @@ public class DataInputStream extends FilterInputStream implements DataInput {
                 case 13:
                     if (!z) {
                         z = true;
-                        if (this.f42254in.getClass() == PushbackInputStream.class) {
+                        if (this.in.getClass() == PushbackInputStream.class) {
                             break;
                         } else {
-                            this.f42254in = new PushbackInputStream(this.f42254in);
+                            this.in = new PushbackInputStream(this.in);
                             z = true;
                             break;
                         }
                     } else {
-                        ((PushbackInputStream) this.f42254in).unread(read);
+                        ((PushbackInputStream) this.in).unread(read);
                         return sb.toString();
                     }
                 default:
@@ -122,7 +122,7 @@ public class DataInputStream extends FilterInputStream implements DataInput {
                         sb.append((char) read);
                         break;
                     } else {
-                        ((PushbackInputStream) this.f42254in).unread(read);
+                        ((PushbackInputStream) this.in).unread(read);
                         return sb.toString();
                     }
             }
@@ -131,13 +131,13 @@ public class DataInputStream extends FilterInputStream implements DataInput {
 
     @Override // java.io.DataInput
     public final long readLong() throws IOException {
-        Streams.readFully(this.f42254in, this.scratch, 0, 8);
+        Streams.readFully(this.in, this.scratch, 0, 8);
         return Memory.peekLong(this.scratch, 0, ByteOrder.BIG_ENDIAN);
     }
 
     @Override // java.io.DataInput
     public final short readShort() throws IOException {
-        Streams.readFully(this.f42254in, this.scratch, 0, 2);
+        Streams.readFully(this.in, this.scratch, 0, 2);
         return Memory.peekShort(this.scratch, 0, ByteOrder.BIG_ENDIAN);
     }
 
@@ -148,7 +148,7 @@ public class DataInputStream extends FilterInputStream implements DataInput {
 
     @Override // java.io.DataInput
     public final int readUnsignedByte() throws IOException {
-        int read = this.f42254in.read();
+        int read = this.in.read();
         if (read < 0) {
             throw new EOFException();
         }
@@ -169,7 +169,7 @@ public class DataInputStream extends FilterInputStream implements DataInput {
             if (i2 >= i) {
                 break;
             }
-            long skip = this.f42254in.skip(i - i2);
+            long skip = this.in.skip(i - i2);
             if (skip == 0) {
                 break;
             }

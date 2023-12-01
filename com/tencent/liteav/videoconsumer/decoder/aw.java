@@ -1,7 +1,6 @@
 package com.tencent.liteav.videoconsumer.decoder;
 
 import android.os.SystemClock;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.liteav.base.util.LiteavLog;
 import com.tencent.liteav.videobase.common.CodecType;
 import com.tencent.liteav.videobase.common.EncodedVideoFrame;
@@ -23,7 +22,7 @@ public final class aw {
     boolean g;
 
     /* renamed from: a  reason: collision with root package name */
-    String f36768a = "VideoDecodeControllerStatistics";
+    String f23077a = "VideoDecodeControllerStatistics";
     long h = 0;
     long i = 0;
     private boolean k = false;
@@ -31,21 +30,21 @@ public final class aw {
     private long l = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    final a f36769c = new a(this, (byte) 0);
+    final a f23078c = new a(this, (byte) 0);
     final b d = new b((byte) 0);
     final com.tencent.liteav.videobase.utils.f e = new com.tencent.liteav.videobase.utils.f("videoDecoder", 1000, new f.a(this) { // from class: com.tencent.liteav.videoconsumer.decoder.ax
 
         /* renamed from: a  reason: collision with root package name */
-        private final aw f36773a;
+        private final aw f23082a;
 
         /* JADX INFO: Access modifiers changed from: package-private */
         {
-            this.f36773a = this;
+            this.f23082a = this;
         }
 
         @Override // com.tencent.liteav.videobase.utils.f.a
         public final void a(double d) {
-            this.f36773a.b.updateStatus(com.tencent.liteav.videobase.videobase.i.STATUS_VIDEO_DECODER_FRAMERATE, Double.valueOf(d));
+            this.f23082a.b.updateStatus(com.tencent.liteav.videobase.videobase.i.STATUS_VIDEO_DECODER_FRAMERATE, Double.valueOf(d));
         }
     });
 
@@ -54,19 +53,19 @@ public final class aw {
     public final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        long f36770a;
+        long f23079a;
         long b;
 
         /* renamed from: c  reason: collision with root package name */
-        long f36771c;
+        long f23080c;
         long d;
         final Deque<Long> e;
         final List<Long> f;
 
         private a() {
-            this.f36770a = 0L;
+            this.f23079a = 0L;
             this.b = 0L;
-            this.f36771c = 0L;
+            this.f23080c = 0L;
             this.d = 0L;
             this.e = new LinkedList();
             this.f = new ArrayList();
@@ -77,9 +76,9 @@ public final class aw {
         }
 
         public final void a() {
-            this.f36770a = 0L;
+            this.f23079a = 0L;
             this.b = 0L;
-            this.f36771c = 0L;
+            this.f23080c = 0L;
             this.d = 0L;
             this.e.clear();
             this.f.clear();
@@ -98,11 +97,11 @@ public final class aw {
     public static final class b {
 
         /* renamed from: a  reason: collision with root package name */
-        long f36772a;
+        long f23081a;
         long b;
 
         private b() {
-            this.f36772a = 0L;
+            this.f23081a = 0L;
             this.b = 0L;
         }
 
@@ -112,18 +111,18 @@ public final class aw {
 
         public final void a() {
             this.b = 0L;
-            this.f36772a = 0L;
+            this.f23081a = 0L;
         }
     }
 
     public aw(IVideoReporter iVideoReporter) {
         this.b = iVideoReporter;
-        this.f36768a += BridgeUtil.UNDERLINE_STR + hashCode();
+        this.f23077a += "_" + hashCode();
         a();
     }
 
     public final void a() {
-        this.f36769c.a();
+        this.f23078c.a();
         this.d.a();
         this.e.b();
         this.g = false;
@@ -138,12 +137,12 @@ public final class aw {
             this.h = SystemClock.elapsedRealtime();
             this.k = true;
             this.b.notifyEvent(h.b.EVT_VIDEO_DECODE_START_DECODE_FIRST_FRAME, "Start decode first frame", new Object[0]);
-            LiteavLog.d(this.f36768a, "received first I frame.");
+            LiteavLog.d(this.f23077a, "received first I frame.");
         }
         if (!this.g) {
             this.i++;
         }
-        this.f36769c.a(encodedVideoFrame.pts);
+        this.f23078c.a(encodedVideoFrame.pts);
     }
 
     public final void a(ay.a aVar, boolean z) {

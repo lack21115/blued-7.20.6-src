@@ -10,8 +10,7 @@ import android.opengl.GLES31Ext;
 import android.text.format.Time;
 import android.util.Log;
 import android.util.Pair;
-import android.widget.ExpandableListView;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
+import com.anythink.expressad.exoplayer.b;
 import com.blued.das.live.LiveProtos;
 import java.io.BufferedInputStream;
 import java.io.ByteArrayInputStream;
@@ -272,13 +271,13 @@ public class ExifInterface {
     public static final int[] BITS_PER_SAMPLE_GREYSCALE_2 = {8};
 
     /* renamed from: a  reason: collision with root package name */
-    static final byte[] f2895a = {-1, -40, -1};
+    static final byte[] f2847a = {-1, -40, -1};
     private static final byte[] j = {79, 76, 89, 77, 80, 0};
     private static final byte[] k = {79, 76, 89, 77, 80, 85, 83, 0, 73, 73};
     static final String[] b = {"", "BYTE", "STRING", "USHORT", "ULONG", "URATIONAL", "SBYTE", "UNDEFINED", "SSHORT", "SLONG", "SRATIONAL", "SINGLE", "DOUBLE"};
 
     /* renamed from: c  reason: collision with root package name */
-    static final int[] f2896c = {0, 1, 1, 2, 4, 8, 1, 1, 2, 4, 8, 4, 8, 1};
+    static final int[] f2848c = {0, 1, 1, 2, 4, 8, 1, 1, 2, 4, 8, 4, 8, 1};
     static final byte[] d = {65, 83, 67, 73, 73, 0, 0, 0};
     public static final String TAG_NEW_SUBFILE_TYPE = "NewSubfileType";
     public static final String TAG_SUBFILE_TYPE = "SubfileType";
@@ -409,11 +408,11 @@ public class ExifInterface {
     public static class ByteOrderedDataInputStream extends InputStream implements DataInput {
 
         /* renamed from: c  reason: collision with root package name */
-        private static final ByteOrder f2897c = ByteOrder.LITTLE_ENDIAN;
+        private static final ByteOrder f2849c = ByteOrder.LITTLE_ENDIAN;
         private static final ByteOrder d = ByteOrder.BIG_ENDIAN;
 
         /* renamed from: a  reason: collision with root package name */
-        final int f2898a;
+        final int f2850a;
         int b;
         private DataInputStream e;
         private ByteOrder f;
@@ -423,7 +422,7 @@ public class ExifInterface {
             DataInputStream dataInputStream = new DataInputStream(inputStream);
             this.e = dataInputStream;
             int available = dataInputStream.available();
-            this.f2898a = available;
+            this.f2850a = available;
             this.b = 0;
             this.e.mark(available);
         }
@@ -464,7 +463,7 @@ public class ExifInterface {
         public byte readByte() throws IOException {
             int i = this.b + 1;
             this.b = i;
-            if (i <= this.f2898a) {
+            if (i <= this.f2850a) {
                 int read = this.e.read();
                 if (read >= 0) {
                     return (byte) read;
@@ -494,7 +493,7 @@ public class ExifInterface {
         public void readFully(byte[] bArr) throws IOException {
             int length = this.b + bArr.length;
             this.b = length;
-            if (length > this.f2898a) {
+            if (length > this.f2850a) {
                 throw new EOFException();
             }
             if (this.e.read(bArr, 0, bArr.length) != bArr.length) {
@@ -506,7 +505,7 @@ public class ExifInterface {
         public void readFully(byte[] bArr, int i, int i2) throws IOException {
             int i3 = this.b + i2;
             this.b = i3;
-            if (i3 > this.f2898a) {
+            if (i3 > this.f2850a) {
                 throw new EOFException();
             }
             if (this.e.read(bArr, i, i2) != i2) {
@@ -518,14 +517,14 @@ public class ExifInterface {
         public int readInt() throws IOException {
             int i = this.b + 4;
             this.b = i;
-            if (i <= this.f2898a) {
+            if (i <= this.f2850a) {
                 int read = this.e.read();
                 int read2 = this.e.read();
                 int read3 = this.e.read();
                 int read4 = this.e.read();
                 if ((read | read2 | read3 | read4) >= 0) {
                     ByteOrder byteOrder = this.f;
-                    if (byteOrder == f2897c) {
+                    if (byteOrder == f2849c) {
                         return (read4 << 24) + (read3 << 16) + (read2 << 8) + read;
                     }
                     if (byteOrder == d) {
@@ -548,7 +547,7 @@ public class ExifInterface {
         public long readLong() throws IOException {
             int i = this.b + 8;
             this.b = i;
-            if (i <= this.f2898a) {
+            if (i <= this.f2850a) {
                 int read = this.e.read();
                 int read2 = this.e.read();
                 int read3 = this.e.read();
@@ -559,7 +558,7 @@ public class ExifInterface {
                 int read8 = this.e.read();
                 if ((read | read2 | read3 | read4 | read5 | read6 | read7 | read8) >= 0) {
                     ByteOrder byteOrder = this.f;
-                    if (byteOrder == f2897c) {
+                    if (byteOrder == f2849c) {
                         return (read8 << 56) + (read7 << 48) + (read6 << 40) + (read5 << 32) + (read4 << 24) + (read3 << 16) + (read2 << 8) + read;
                     }
                     if (byteOrder == d) {
@@ -576,12 +575,12 @@ public class ExifInterface {
         public short readShort() throws IOException {
             int i = this.b + 2;
             this.b = i;
-            if (i <= this.f2898a) {
+            if (i <= this.f2850a) {
                 int read = this.e.read();
                 int read2 = this.e.read();
                 if ((read | read2) >= 0) {
                     ByteOrder byteOrder = this.f;
-                    if (byteOrder == f2897c) {
+                    if (byteOrder == f2849c) {
                         return (short) ((read2 << 8) + read);
                     }
                     if (byteOrder == d) {
@@ -607,19 +606,19 @@ public class ExifInterface {
         }
 
         public long readUnsignedInt() throws IOException {
-            return readInt() & ExpandableListView.PACKED_POSITION_VALUE_NULL;
+            return readInt() & 4294967295L;
         }
 
         @Override // java.io.DataInput
         public int readUnsignedShort() throws IOException {
             int i = this.b + 2;
             this.b = i;
-            if (i <= this.f2898a) {
+            if (i <= this.f2850a) {
                 int read = this.e.read();
                 int read2 = this.e.read();
                 if ((read | read2) >= 0) {
                     ByteOrder byteOrder = this.f;
-                    if (byteOrder == f2897c) {
+                    if (byteOrder == f2849c) {
                         return (read2 << 8) + read;
                     }
                     if (byteOrder == d) {
@@ -637,7 +636,7 @@ public class ExifInterface {
             if (i > j) {
                 this.b = 0;
                 this.e.reset();
-                this.e.mark(this.f2898a);
+                this.e.mark(this.f2850a);
             } else {
                 j -= i;
             }
@@ -653,7 +652,7 @@ public class ExifInterface {
 
         @Override // java.io.DataInput
         public int skipBytes(int i) throws IOException {
-            int min = Math.min(i, this.f2898a - this.b);
+            int min = Math.min(i, this.f2850a - this.b);
             int i2 = 0;
             while (true) {
                 int i3 = i2;
@@ -671,12 +670,12 @@ public class ExifInterface {
     public static class ByteOrderedDataOutputStream extends FilterOutputStream {
 
         /* renamed from: a  reason: collision with root package name */
-        private final OutputStream f2899a;
+        private final OutputStream f2851a;
         private ByteOrder b;
 
         public ByteOrderedDataOutputStream(OutputStream outputStream, ByteOrder byteOrder) {
             super(outputStream);
-            this.f2899a = outputStream;
+            this.f2851a = outputStream;
             this.b = byteOrder;
         }
 
@@ -684,41 +683,41 @@ public class ExifInterface {
             this.b = byteOrder;
         }
 
-        @Override // java.io.OutputStream
+        @Override // java.io.FilterOutputStream, java.io.OutputStream
         public void write(byte[] bArr) throws IOException {
-            this.f2899a.write(bArr);
+            this.f2851a.write(bArr);
         }
 
         @Override // java.io.FilterOutputStream, java.io.OutputStream
         public void write(byte[] bArr, int i, int i2) throws IOException {
-            this.f2899a.write(bArr, i, i2);
+            this.f2851a.write(bArr, i, i2);
         }
 
         public void writeByte(int i) throws IOException {
-            this.f2899a.write(i);
+            this.f2851a.write(i);
         }
 
         public void writeInt(int i) throws IOException {
             if (this.b == ByteOrder.LITTLE_ENDIAN) {
-                this.f2899a.write((i >>> 0) & 255);
-                this.f2899a.write((i >>> 8) & 255);
-                this.f2899a.write((i >>> 16) & 255);
-                this.f2899a.write((i >>> 24) & 255);
+                this.f2851a.write((i >>> 0) & 255);
+                this.f2851a.write((i >>> 8) & 255);
+                this.f2851a.write((i >>> 16) & 255);
+                this.f2851a.write((i >>> 24) & 255);
             } else if (this.b == ByteOrder.BIG_ENDIAN) {
-                this.f2899a.write((i >>> 24) & 255);
-                this.f2899a.write((i >>> 16) & 255);
-                this.f2899a.write((i >>> 8) & 255);
-                this.f2899a.write((i >>> 0) & 255);
+                this.f2851a.write((i >>> 24) & 255);
+                this.f2851a.write((i >>> 16) & 255);
+                this.f2851a.write((i >>> 8) & 255);
+                this.f2851a.write((i >>> 0) & 255);
             }
         }
 
         public void writeShort(short s) throws IOException {
             if (this.b == ByteOrder.LITTLE_ENDIAN) {
-                this.f2899a.write((s >>> 0) & 255);
-                this.f2899a.write((s >>> 8) & 255);
+                this.f2851a.write((s >>> 0) & 255);
+                this.f2851a.write((s >>> 8) & 255);
             } else if (this.b == ByteOrder.BIG_ENDIAN) {
-                this.f2899a.write((s >>> 8) & 255);
-                this.f2899a.write((s >>> 0) & 255);
+                this.f2851a.write((s >>> 8) & 255);
+                this.f2851a.write((s >>> 0) & 255);
             }
         }
 
@@ -757,7 +756,7 @@ public class ExifInterface {
         }
 
         public static ExifAttribute createDouble(double[] dArr, ByteOrder byteOrder) {
-            ByteBuffer wrap = ByteBuffer.wrap(new byte[ExifInterface.f2896c[12] * dArr.length]);
+            ByteBuffer wrap = ByteBuffer.wrap(new byte[ExifInterface.f2848c[12] * dArr.length]);
             wrap.order(byteOrder);
             int length = dArr.length;
             int i = 0;
@@ -776,7 +775,7 @@ public class ExifInterface {
         }
 
         public static ExifAttribute createSLong(int[] iArr, ByteOrder byteOrder) {
-            ByteBuffer wrap = ByteBuffer.wrap(new byte[ExifInterface.f2896c[9] * iArr.length]);
+            ByteBuffer wrap = ByteBuffer.wrap(new byte[ExifInterface.f2848c[9] * iArr.length]);
             wrap.order(byteOrder);
             int length = iArr.length;
             int i = 0;
@@ -795,7 +794,7 @@ public class ExifInterface {
         }
 
         public static ExifAttribute createSRational(Rational[] rationalArr, ByteOrder byteOrder) {
-            ByteBuffer wrap = ByteBuffer.wrap(new byte[ExifInterface.f2896c[10] * rationalArr.length]);
+            ByteBuffer wrap = ByteBuffer.wrap(new byte[ExifInterface.f2848c[10] * rationalArr.length]);
             wrap.order(byteOrder);
             int length = rationalArr.length;
             int i = 0;
@@ -821,7 +820,7 @@ public class ExifInterface {
         }
 
         public static ExifAttribute createULong(long[] jArr, ByteOrder byteOrder) {
-            ByteBuffer wrap = ByteBuffer.wrap(new byte[ExifInterface.f2896c[4] * jArr.length]);
+            ByteBuffer wrap = ByteBuffer.wrap(new byte[ExifInterface.f2848c[4] * jArr.length]);
             wrap.order(byteOrder);
             int length = jArr.length;
             int i = 0;
@@ -840,7 +839,7 @@ public class ExifInterface {
         }
 
         public static ExifAttribute createURational(Rational[] rationalArr, ByteOrder byteOrder) {
-            ByteBuffer wrap = ByteBuffer.wrap(new byte[ExifInterface.f2896c[5] * rationalArr.length]);
+            ByteBuffer wrap = ByteBuffer.wrap(new byte[ExifInterface.f2848c[5] * rationalArr.length]);
             wrap.order(byteOrder);
             int length = rationalArr.length;
             int i = 0;
@@ -861,7 +860,7 @@ public class ExifInterface {
         }
 
         public static ExifAttribute createUShort(int[] iArr, ByteOrder byteOrder) {
-            ByteBuffer wrap = ByteBuffer.wrap(new byte[ExifInterface.f2896c[3] * iArr.length]);
+            ByteBuffer wrap = ByteBuffer.wrap(new byte[ExifInterface.f2848c[3] * iArr.length]);
             wrap.order(byteOrder);
             int length = iArr.length;
             int i = 0;
@@ -1019,7 +1018,7 @@ public class ExifInterface {
         }
 
         public int size() {
-            return ExifInterface.f2896c[this.format] * this.numberOfComponents;
+            return ExifInterface.f2848c[this.format] * this.numberOfComponents;
         }
 
         public String toString() {
@@ -1095,7 +1094,7 @@ public class ExifInterface {
         }
 
         public String toString() {
-            return this.numerator + BridgeUtil.SPLIT_MARK + this.denominator;
+            return this.numerator + "/" + this.denominator;
         }
     }
 
@@ -1113,7 +1112,7 @@ public class ExifInterface {
         A = new HashMap[exifTagArr3.length];
         B = new HashSet<>(Arrays.asList("FNumber", TAG_DIGITAL_ZOOM_RATIO, "ExposureTime", TAG_SUBJECT_DISTANCE, "GPSTimeStamp"));
         C = new HashMap<>();
-        Charset forName = Charset.forName("US-ASCII");
+        Charset forName = Charset.forName(b.i);
         f = forName;
         g = "Exif����".getBytes(forName);
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy:MM:dd HH:mm:ss");
@@ -1196,11 +1195,11 @@ public class ExifInterface {
     private static double a(String str, String str2) {
         try {
             String[] split = str.split(",", -1);
-            String[] split2 = split[0].split(BridgeUtil.SPLIT_MARK, -1);
+            String[] split2 = split[0].split("/", -1);
             double parseDouble = Double.parseDouble(split2[0].trim()) / Double.parseDouble(split2[1].trim());
-            String[] split3 = split[1].split(BridgeUtil.SPLIT_MARK, -1);
+            String[] split3 = split[1].split("/", -1);
             double parseDouble2 = Double.parseDouble(split3[0].trim()) / Double.parseDouble(split3[1].trim());
-            String[] split4 = split[2].split(BridgeUtil.SPLIT_MARK, -1);
+            String[] split4 = split[2].split("/", -1);
             double parseDouble3 = parseDouble + (parseDouble2 / 60.0d) + ((Double.parseDouble(split4[0].trim()) / Double.parseDouble(split4[1].trim())) / 3600.0d);
             if (!str2.equals(LATITUDE_SOUTH) && !str2.equals("W")) {
                 if (!str2.equals("N") && !str2.equals(LONGITUDE_EAST)) {
@@ -1707,7 +1706,7 @@ public class ExifInterface {
         int i2 = 0;
         while (true) {
             int i3 = i2;
-            byte[] bArr2 = f2895a;
+            byte[] bArr2 = f2847a;
             if (i3 >= bArr2.length) {
                 return true;
             }
@@ -1839,7 +1838,7 @@ public class ExifInterface {
                 byte[] bArr2 = new byte[i9];
                 byteOrderedDataInputStream.read(bArr2);
                 i5 = i5 + i10 + i9;
-                System.arraycopy((Object) bArr2, 0, (Object) bArr, i6, i9);
+                System.arraycopy(bArr2, 0, bArr, i6, i9);
                 i6 += i9;
             }
             this.J = true;
@@ -1907,7 +1906,7 @@ public class ExifInterface {
 
     private static Pair<Integer, Integer> c(String str) {
         if (!str.contains(",")) {
-            if (!str.contains(BridgeUtil.SPLIT_MARK)) {
+            if (!str.contains("/")) {
                 try {
                     Long valueOf = Long.valueOf(Long.parseLong(str));
                     return (valueOf.longValue() < 0 || valueOf.longValue() > 65535) ? valueOf.longValue() < 0 ? new Pair<>(9, -1) : new Pair<>(4, -1) : new Pair<>(3, 4);
@@ -1920,7 +1919,7 @@ public class ExifInterface {
                     }
                 }
             }
-            String[] split = str.split(BridgeUtil.SPLIT_MARK, -1);
+            String[] split = str.split("/", -1);
             if (split.length == 2) {
                 try {
                     long parseDouble = (long) Double.parseDouble(split[0]);
@@ -2683,7 +2682,7 @@ public class ExifInterface {
                                 while (true) {
                                     int i10 = i9;
                                     if (i10 < split3.length) {
-                                        String[] split4 = split3[i10].split(BridgeUtil.SPLIT_MARK, -1);
+                                        String[] split4 = split3[i10].split("/", -1);
                                         rationalArr[i10] = new Rational((long) Double.parseDouble(split4[0]), (long) Double.parseDouble(split4[1]));
                                         i9 = i10 + 1;
                                     } else {
@@ -2725,7 +2724,7 @@ public class ExifInterface {
                                         str3 = str7;
                                         break;
                                     } else {
-                                        String[] split7 = split6[i14].split(BridgeUtil.SPLIT_MARK, -1);
+                                        String[] split7 = split6[i14].split("/", -1);
                                         rationalArr2[i14] = new Rational((long) Double.parseDouble(split7[0]), (long) Double.parseDouble(split7[1]));
                                         i13 = i14 + 1;
                                     }

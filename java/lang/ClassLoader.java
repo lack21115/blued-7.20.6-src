@@ -188,8 +188,7 @@ public abstract class ClassLoader {
         return loadClass(str, false);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    public Class<?> loadClass(String str, boolean z) throws ClassNotFoundException {
+    protected Class<?> loadClass(String str, boolean z) throws ClassNotFoundException {
         Class<?> findLoadedClass = findLoadedClass(str);
         Class<?> cls = findLoadedClass;
         if (findLoadedClass == null) {

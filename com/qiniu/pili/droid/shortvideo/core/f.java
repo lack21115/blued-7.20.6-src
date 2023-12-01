@@ -27,11 +27,11 @@ public final class f extends e {
 
         @Override // java.lang.Runnable
         public void run() {
-            int videoEncodingWidth = f.this.f27545c.getVideoEncodingWidth();
-            int videoEncodingHeight = f.this.f27545c.getVideoEncodingHeight();
-            long videoEncodingFps = 1000000 / f.this.f27545c.getVideoEncodingFps();
+            int videoEncodingWidth = f.this.f13857c.getVideoEncodingWidth();
+            int videoEncodingHeight = f.this.f13857c.getVideoEncodingHeight();
+            long videoEncodingFps = 1000000 / f.this.f13857c.getVideoEncodingFps();
             com.qiniu.pili.droid.shortvideo.gl.a.d dVar = new com.qiniu.pili.droid.shortvideo.gl.a.d(null, 1);
-            com.qiniu.pili.droid.shortvideo.gl.a.f fVar = new com.qiniu.pili.droid.shortvideo.gl.a.f(dVar, f.this.f27544a, false);
+            com.qiniu.pili.droid.shortvideo.gl.a.f fVar = new com.qiniu.pili.droid.shortvideo.gl.a.f(dVar, f.this.f13856a, false);
             fVar.b();
             Bitmap a2 = com.qiniu.pili.droid.shortvideo.f.d.a(f.this.m, f.this.C.getBackgroundImageUri(), videoEncodingWidth, videoEncodingHeight);
             Bitmap a3 = com.qiniu.pili.droid.shortvideo.f.d.a(f.this.m, f.this.C.getRotateImageUri(), f.this.C.getRotateImageWidth(), f.this.C.getRotateImageHeight());
@@ -104,7 +104,7 @@ public final class f extends e {
 
     /* JADX INFO: Access modifiers changed from: private */
     public float w() {
-        return 360.0f / ((((float) this.C.getCircleTimeMs()) / 1000.0f) * this.f27545c.getVideoEncodingFps());
+        return 360.0f / ((((float) this.C.getCircleTimeMs()) / 1000.0f) * this.f13857c.getVideoEncodingFps());
     }
 
     @Override // com.qiniu.pili.droid.shortvideo.core.e
@@ -117,7 +117,7 @@ public final class f extends e {
         l.a(context);
         super.a(context, pLMicrophoneSetting, pLAudioEncodeSetting, pLRecordSetting);
         this.m = context;
-        this.f27545c = pLVideoEncodeSetting;
+        this.f13857c = pLVideoEncodeSetting;
         this.C = pLImageRotateSetting;
         this.b = new com.qiniu.pili.droid.shortvideo.encode.e(pLVideoEncodeSetting);
         this.b.a(this.f);

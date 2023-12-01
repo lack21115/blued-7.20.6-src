@@ -4,19 +4,19 @@ package com.baidu.mobads.sdk.internal;
 public class ci {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final boolean f9380a;
+    public static final boolean f6540a;
     public static final boolean b = false;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final int f9381c;
+    public static final int f6541c;
     public static final String d = "0.0";
     public static String e;
     public static final String f = "4.1.30";
 
     static {
-        boolean booleanValue = cj.f9383c.booleanValue();
-        f9380a = booleanValue;
-        f9381c = booleanValue ? 2 : 4;
+        boolean booleanValue = cj.f6543c.booleanValue();
+        f6540a = booleanValue;
+        f6541c = booleanValue ? 2 : 4;
         e = d;
     }
 }

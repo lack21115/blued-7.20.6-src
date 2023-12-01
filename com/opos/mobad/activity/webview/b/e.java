@@ -7,11 +7,11 @@ import com.opos.mobad.service.event.EventDescription;
 public class e implements com.opos.mobad.service.event.c {
 
     /* renamed from: a  reason: collision with root package name */
-    private EventDescription f25643a;
+    private EventDescription f11955a;
     private d b;
 
     /* renamed from: c  reason: collision with root package name */
-    private c f25644c;
+    private c f11956c;
 
     /* loaded from: source-8303388-dex2jar.jar:com/opos/mobad/activity/webview/b/e$a.class */
     public static final class a extends com.opos.mobad.service.event.a implements c {
@@ -85,10 +85,10 @@ public class e implements com.opos.mobad.service.event.c {
     }
 
     e(EventDescription eventDescription, d dVar) {
-        this.f25643a = eventDescription;
+        this.f11955a = eventDescription;
         this.b = dVar;
         if (dVar instanceof c) {
-            this.f25644c = (c) dVar;
+            this.f11956c = (c) dVar;
         }
     }
 
@@ -103,7 +103,7 @@ public class e implements com.opos.mobad.service.event.c {
 
     @Override // com.opos.mobad.service.event.c
     public EventDescription a() {
-        return this.f25643a;
+        return this.f11955a;
     }
 
     @Override // com.opos.mobad.service.event.c
@@ -126,46 +126,46 @@ public class e implements com.opos.mobad.service.event.c {
                 this.b.e();
                 return;
             case 3:
-                c cVar = this.f25644c;
+                c cVar = this.f11956c;
                 if (cVar != null) {
                     cVar.f_();
                     return;
                 }
                 return;
             case 4:
-                c cVar2 = this.f25644c;
+                c cVar2 = this.f11956c;
                 if (cVar2 != null) {
                     cVar2.b();
                     return;
                 }
                 return;
             case 5:
-                if (this.f25644c != null) {
+                if (this.f11956c != null) {
                     if (parcel != null) {
                         j = parcel.readLong();
                     }
-                    this.f25644c.a(j);
+                    this.f11956c.a(j);
                     return;
                 }
                 return;
             case 6:
-                if (this.f25644c != null) {
+                if (this.f11956c != null) {
                     if (parcel != null) {
                         j = parcel.readLong();
                     }
-                    this.f25644c.b(j);
+                    this.f11956c.b(j);
                     return;
                 }
                 return;
             case 7:
-                c cVar3 = this.f25644c;
+                c cVar3 = this.f11956c;
                 if (cVar3 != null) {
                     cVar3.c();
                     return;
                 }
                 return;
             case 8:
-                if (this.f25644c != null) {
+                if (this.f11956c != null) {
                     if (parcel != null) {
                         i2 = parcel.readInt();
                         str = parcel.readString();
@@ -173,16 +173,16 @@ public class e implements com.opos.mobad.service.event.c {
                         str = "";
                         i2 = 0;
                     }
-                    this.f25644c.a(i2, str);
+                    this.f11956c.a(i2, str);
                     return;
                 }
                 return;
             case 9:
-                if (this.f25644c != null) {
+                if (this.f11956c != null) {
                     if (parcel != null) {
                         j = parcel.readLong();
                     }
-                    this.f25644c.c(j);
+                    this.f11956c.c(j);
                     return;
                 }
                 return;

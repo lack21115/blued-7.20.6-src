@@ -11,14 +11,14 @@ import kotlin.jvm.internal.Intrinsics;
 public final class VipInvisibleToUserState implements UiState {
 
     /* renamed from: a  reason: collision with root package name */
-    private final InvisibleToUserModel f34314a;
+    private final InvisibleToUserModel f20623a;
 
     public VipInvisibleToUserState() {
         this(null, 1, null);
     }
 
     public VipInvisibleToUserState(InvisibleToUserModel invisibleToUserModel) {
-        this.f34314a = invisibleToUserModel;
+        this.f20623a = invisibleToUserModel;
     }
 
     public /* synthetic */ VipInvisibleToUserState(InvisibleToUserModel invisibleToUserModel, int i, DefaultConstructorMarker defaultConstructorMarker) {
@@ -26,7 +26,7 @@ public final class VipInvisibleToUserState implements UiState {
     }
 
     public final InvisibleToUserModel a() {
-        return this.f34314a;
+        return this.f20623a;
     }
 
     public final VipInvisibleToUserState a(InvisibleToUserModel invisibleToUserModel) {
@@ -37,11 +37,11 @@ public final class VipInvisibleToUserState implements UiState {
         if (this == obj) {
             return true;
         }
-        return (obj instanceof VipInvisibleToUserState) && Intrinsics.a(this.f34314a, ((VipInvisibleToUserState) obj).f34314a);
+        return (obj instanceof VipInvisibleToUserState) && Intrinsics.a(this.f20623a, ((VipInvisibleToUserState) obj).f20623a);
     }
 
     public int hashCode() {
-        InvisibleToUserModel invisibleToUserModel = this.f34314a;
+        InvisibleToUserModel invisibleToUserModel = this.f20623a;
         if (invisibleToUserModel == null) {
             return 0;
         }
@@ -49,6 +49,6 @@ public final class VipInvisibleToUserState implements UiState {
     }
 
     public String toString() {
-        return "VipInvisibleToUserState(data=" + this.f34314a + ')';
+        return "VipInvisibleToUserState(data=" + this.f20623a + ')';
     }
 }

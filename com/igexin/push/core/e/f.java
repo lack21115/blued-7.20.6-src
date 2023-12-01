@@ -24,10 +24,10 @@ public class f implements a {
     private static volatile f M;
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f23510a = f.class.getName();
+    public static final String f9902a = f.class.getName();
 
     /* renamed from: c  reason: collision with root package name */
-    private static final int f23511c = 1;
+    private static final int f9903c = 1;
     private static final int d = 2;
     private static final int e = 3;
     private static final int f = 4;
@@ -84,16 +84,16 @@ public class f implements a {
     public final class AnonymousClass13 extends com.igexin.push.a.d {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ String f23516a;
+        final /* synthetic */ String f9908a;
 
         public AnonymousClass13(String str) {
-            this.f23516a = str;
+            this.f9908a = str;
         }
 
         @Override // com.igexin.push.a.d
         public final void a_() throws Exception {
             f.a();
-            f.b(this.d, 3, this.f23516a);
+            f.b(this.d, 3, this.f9908a);
         }
     }
 
@@ -102,19 +102,19 @@ public class f implements a {
     public final class AnonymousClass19 extends com.igexin.push.a.d {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ String f23523a;
+        final /* synthetic */ String f9915a;
         final /* synthetic */ String b;
 
         public AnonymousClass19(String str, String str2) {
-            this.f23523a = str;
+            this.f9915a = str;
             this.b = str2;
         }
 
         @Override // com.igexin.push.a.d
         public final void a_() throws Exception {
-            if (!TextUtils.isEmpty(this.f23523a)) {
+            if (!TextUtils.isEmpty(this.f9915a)) {
                 f.a();
-                f.b(this.d, 53, this.f23523a);
+                f.b(this.d, 53, this.f9915a);
             }
             if (TextUtils.isEmpty(this.b)) {
                 return;
@@ -133,7 +133,7 @@ public class f implements a {
         @Override // com.igexin.push.a.d
         public final void a_() throws Exception {
             f.a();
-            f.b(this.d, 60, String.valueOf(com.igexin.push.core.e.f23497c));
+            f.b(this.d, 60, String.valueOf(com.igexin.push.core.e.f9889c));
         }
     }
 
@@ -490,12 +490,12 @@ public class f implements a {
         if (a2 != null) {
             String str = new String(a2);
             if (TextUtils.isEmpty(str)) {
-                com.igexin.c.a.c.a.a(f23510a, "readRedirectAes null");
+                com.igexin.c.a.c.a.a(f9902a, "readRedirectAes null");
                 return;
             }
-            g.f23649c = str;
-            String str2 = f23510a;
-            com.igexin.c.a.c.a.b(str2, " readRedirectAes set success " + g.f23649c);
+            g.f10041c = str;
+            String str2 = f9902a;
+            com.igexin.c.a.c.a.b(str2, " readRedirectAes set success " + g.f10041c);
         }
     }
 
@@ -514,7 +514,7 @@ public class f implements a {
             } catch (Exception e2) {
                 com.igexin.c.a.c.a.a(e2);
             }
-            com.igexin.c.a.c.a.a(f23510a + "|db version changed, save session = " + com.igexin.push.core.e.z, new Object[0]);
+            com.igexin.c.a.c.a.a(f9902a + "|db version changed, save session = " + com.igexin.push.core.e.z, new Object[0]);
         }
         byte[] a3 = a(sQLiteDatabase, 20);
         if (a3 != null) {
@@ -525,7 +525,7 @@ public class f implements a {
             }
             com.igexin.push.core.e.B = str3;
             com.igexin.push.core.e.A = str3;
-            com.igexin.c.a.c.a.a(f23510a + "|db version changed, save cid = " + str3, new Object[0]);
+            com.igexin.c.a.c.a.a(f9902a + "|db version changed, save cid = " + str3, new Object[0]);
         }
         String b = b(sQLiteDatabase, 3);
         if (!TextUtils.isEmpty(b)) {
@@ -623,13 +623,13 @@ public class f implements a {
 
     private static void h() {
         String str = com.igexin.push.core.e.A;
-        com.igexin.c.a.c.a.a(f23510a + "| found a duplicate cid " + com.igexin.push.core.e.A, new Object[0]);
+        com.igexin.c.a.c.a.a(f9902a + "| found a duplicate cid " + com.igexin.push.core.e.A, new Object[0]);
         com.igexin.push.core.e.L = null;
         d();
         com.igexin.c.a.b.e.a().a((com.igexin.c.a.d.f) new AnonymousClass13(com.igexin.push.core.e.L), false, true);
         a().b();
         com.igexin.push.core.e.r = 0;
-        com.igexin.push.e.b.e.g().f23613a = SystemClock.elapsedRealtime();
+        com.igexin.push.e.b.e.g().f10005a = SystemClock.elapsedRealtime();
     }
 
     private static void h(SQLiteDatabase sQLiteDatabase) {
@@ -697,7 +697,7 @@ public class f implements a {
     }
 
     private void j() {
-        if (TextUtils.isEmpty(g.f23649c)) {
+        if (TextUtils.isEmpty(g.f10041c)) {
             com.igexin.c.a.b.e.a().a((com.igexin.c.a.d.f) new AnonymousClass26(), true, false);
             com.igexin.c.a.b.e.a().a((com.igexin.c.a.d.f) new AnonymousClass27(), true, false);
         }
@@ -716,8 +716,8 @@ public class f implements a {
     }
 
     private boolean j(long j2) {
-        if (com.igexin.push.core.e.f23497c != j2) {
-            com.igexin.push.core.e.f23497c = j2;
+        if (com.igexin.push.core.e.f9889c != j2) {
+            com.igexin.push.core.e.f9889c = j2;
             return com.igexin.c.a.b.e.a().a((com.igexin.c.a.d.f) new AnonymousClass20(), false, true);
         }
         return false;
@@ -748,7 +748,7 @@ public class f implements a {
             } catch (Exception e2) {
                 com.igexin.c.a.c.a.a(e2);
             }
-            com.igexin.c.a.c.a.a(f23510a + "|db version changed, save session = " + com.igexin.push.core.e.z, new Object[0]);
+            com.igexin.c.a.c.a.a(f9902a + "|db version changed, save session = " + com.igexin.push.core.e.z, new Object[0]);
         }
     }
 
@@ -762,7 +762,7 @@ public class f implements a {
             }
             com.igexin.push.core.e.B = str2;
             com.igexin.push.core.e.A = str2;
-            com.igexin.c.a.c.a.a(f23510a + "|db version changed, save cid = " + str2, new Object[0]);
+            com.igexin.c.a.c.a.a(f9902a + "|db version changed, save cid = " + str2, new Object[0]);
         }
     }
 
@@ -771,12 +771,12 @@ public class f implements a {
         if (a2 != null) {
             String str = new String(a2);
             if (TextUtils.isEmpty(str)) {
-                com.igexin.c.a.c.a.a(f23510a, "readRedirectAes null");
+                com.igexin.c.a.c.a.a(f9902a, "readRedirectAes null");
                 return;
             }
-            g.f23649c = str;
-            String str2 = f23510a;
-            com.igexin.c.a.c.a.b(str2, " readRedirectAes set success " + g.f23649c);
+            g.f10041c = str;
+            String str2 = f9902a;
+            com.igexin.c.a.c.a.b(str2, " readRedirectAes set success " + g.f10041c);
         }
     }
 
@@ -844,13 +844,13 @@ public class f implements a {
         }
         String str2 = null;
         if (z2) {
-            if (str.equals(com.igexin.push.core.e.f23496ar)) {
+            if (str.equals(com.igexin.push.core.e.f9888ar)) {
                 return false;
             }
             if (!str.equals(com.igexin.push.core.b.l)) {
                 str2 = str;
             }
-            com.igexin.push.core.e.f23496ar = str2;
+            com.igexin.push.core.e.f9888ar = str2;
             a2 = com.igexin.c.a.b.e.a();
             dVar = new com.igexin.push.a.d() { // from class: com.igexin.push.core.e.f.8
                 @Override // com.igexin.push.a.d
@@ -917,7 +917,7 @@ public class f implements a {
 
     public final boolean b(final long j2) {
         com.igexin.push.core.e.ao = j2;
-        com.igexin.c.a.c.a.a(f23510a + "|save idc config failed time : " + j2, new Object[0]);
+        com.igexin.c.a.c.a.a(f9902a + "|save idc config failed time : " + j2, new Object[0]);
         return com.igexin.c.a.b.e.a().a((com.igexin.c.a.d.f) new com.igexin.push.a.d() { // from class: com.igexin.push.core.e.f.2
             @Override // com.igexin.push.a.d
             public final void a_() {
@@ -1053,7 +1053,7 @@ public class f implements a {
         } else {
             com.igexin.push.core.e.at = str2;
         }
-        com.igexin.c.a.c.a.a(f23510a + "|saveLastRedirectCmList isMobile = " + z2 + ", lastRedirectCmList = " + str, new Object[0]);
+        com.igexin.c.a.c.a.a(f9902a + "|saveLastRedirectCmList isMobile = " + z2 + ", lastRedirectCmList = " + str, new Object[0]);
         return com.igexin.c.a.b.e.a().a((com.igexin.c.a.d.f) new com.igexin.push.a.d() { // from class: com.igexin.push.core.e.f.18
             @Override // com.igexin.push.a.d
             public final void a_() throws Exception {

@@ -8,7 +8,7 @@ import android.widget.AdapterView;
 abstract class BaseFlingAdapterView extends AdapterView {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f28656a;
+    private int f14966a;
     private int b;
 
     public BaseFlingAdapterView(Context context) {
@@ -24,19 +24,18 @@ abstract class BaseFlingAdapterView extends AdapterView {
     }
 
     public int getHeightMeasureSpec() {
-        return this.f28656a;
+        return this.f14966a;
     }
 
     public int getWidthMeasureSpec() {
         return this.b;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         super.onMeasure(i, i2);
         this.b = i;
-        this.f28656a = i2;
+        this.f14966a = i2;
     }
 
     @Override // android.widget.AdapterView

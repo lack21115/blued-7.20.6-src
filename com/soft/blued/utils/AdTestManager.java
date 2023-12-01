@@ -10,6 +10,7 @@ import com.blued.android.module.common.utils.ToastUtils;
 import com.soft.blued.customview.BannerADView;
 import com.soft.blued.ui.ab_test.models.BannerAdExtra;
 import com.soft.blued.ui.find.model.UserFindResult;
+import com.tencent.thumbplayer.api.TPErrorCode;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -24,12 +25,12 @@ import kotlin.jvm.internal.Intrinsics;
 public final class AdTestManager {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Companion f34713a = new Companion(null);
+    public static final Companion f21022a = new Companion(null);
     private static final AdTestManager w = new AdTestManager();
     private static boolean x;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f34714c;
+    private boolean f21023c;
     private boolean d;
     private boolean e;
     private AdTestObserve i;
@@ -79,7 +80,7 @@ public final class AdTestManager {
     public static final class H extends Handler {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final Companion f34715a = new Companion(null);
+        public static final Companion f21024a = new Companion(null);
 
         @Metadata
         /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/utils/AdTestManager$H$Companion.class */
@@ -97,38 +98,38 @@ public final class AdTestManager {
         }
 
         @Override // android.os.Handler
-        public void handleMessage(Message msg) {
-            Intrinsics.e(msg, "msg");
-            int i = msg.what;
+        public void handleMessage(Message message) {
+            Intrinsics.e(message, "msg");
+            int i = message.what;
             if (i == 1) {
-                AdTestManager.w.b(msg);
+                AdTestManager.w.b(message);
             } else if (i == 2) {
-                AdTestManager.w.c(msg);
+                AdTestManager.w.c(message);
             } else if (i == 3) {
-                AdTestManager.w.d(msg);
+                AdTestManager.w.d(message);
             } else if (i == 4) {
-                AdTestManager.w.a(msg);
+                AdTestManager.w.a(message);
             } else if (i != 5) {
             } else {
-                AdTestManager.w.e(msg);
+                AdTestManager.w.e(message);
             }
         }
     }
 
     public AdTestManager() {
-        BannerAdExtra banner1Mode = (BannerAdExtra) AppInfo.f().fromJson(this.s, (Class<Object>) BannerAdExtra.class);
+        BannerAdExtra bannerAdExtra = (BannerAdExtra) AppInfo.f().fromJson(this.s, (Class<Object>) BannerAdExtra.class);
         this.k.put(this.m, new ArrayList<>());
         this.k.put(this.n, new ArrayList<>());
         this.l.put(this.m, 0);
         this.l.put(this.n, 0);
-        List<BluedADExtra> list = banner1Mode.data;
+        List<BluedADExtra> list = bannerAdExtra.data;
         Intrinsics.c(list, "banner1Mode.data");
         for (BluedADExtra bluedADExtra : list) {
             bluedADExtra.third_id = a(e(), d());
         }
         String str = this.m;
-        Intrinsics.c(banner1Mode, "banner1Mode");
-        a(str, banner1Mode);
+        Intrinsics.c(bannerAdExtra, "banner1Mode");
+        a(str, bannerAdExtra);
     }
 
     private final void a(ArrayList<AdTestDataMode> arrayList, Message message) {
@@ -173,7 +174,7 @@ public final class AdTestManager {
             } else {
                 random = Math.random();
             }
-            i = (int) (random * 4000);
+            i = (int) (random * ((double) TPErrorCode.TP_ERROR_TYPE_DOWNLOAD_PROXY));
             j = i + 5000;
             this.b.sendMessageDelayed(obtain, j);
         }
@@ -204,7 +205,7 @@ public final class AdTestManager {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void e(Message message) {
-        HashSet<Long> hashSet;
+        HashSet hashSet;
         ToastUtils.b("刷新banner2");
         Iterator<AdBannerTestObserve> it = this.p.iterator();
         Intrinsics.c(it, "banner2Obs.iterator()");
@@ -256,11 +257,11 @@ public final class AdTestManager {
         a((ArrayList) obj2, message);
     }
 
-    public final String a(String secret_key, String it_origin) {
-        Intrinsics.e(secret_key, "secret_key");
-        Intrinsics.e(it_origin, "it_origin");
-        int length = it_origin.length() / 2;
-        String substring = it_origin.substring(length - (secret_key.length() / 2), length + (secret_key.length() / 2));
+    public final String a(String str, String str2) {
+        Intrinsics.e(str, "secret_key");
+        Intrinsics.e(str2, "it_origin");
+        int length = str2.length() / 2;
+        String substring = str2.substring(length - (str.length() / 2), length + (str.length() / 2));
         Intrinsics.c(substring, "this as java.lang.String…ing(startIndex, endIndex)");
         return substring;
     }
@@ -269,18 +270,18 @@ public final class AdTestManager {
         this.q = i;
     }
 
-    public final void a(Message msg) {
+    public final void a(Message message) {
         List<BluedADExtra> list;
         List<BluedADExtra> list2;
-        Intrinsics.e(msg, "msg");
+        Intrinsics.e(message, "msg");
         ToastUtils.b("刷新banner1");
         AdTestDataMode b = b(this.m);
         if (b == null) {
-            Object obj = msg.obj;
+            Object obj = message.obj;
             if (obj == null) {
                 throw new NullPointerException("null cannot be cast to non-null type java.util.ArrayList<com.soft.blued.utils.AdTestDataMode>{ kotlin.collections.TypeAliasesKt.ArrayList<com.soft.blued.utils.AdTestDataMode> }");
             }
-            a((ArrayList) obj, msg);
+            a((ArrayList) obj, message);
             return;
         }
         BannerAdExtra a2 = b.a();
@@ -316,11 +317,11 @@ public final class AdTestManager {
                 }
             });
         }
-        Object obj2 = msg.obj;
+        Object obj2 = message.obj;
         if (obj2 == null) {
             throw new NullPointerException("null cannot be cast to non-null type java.util.ArrayList<com.soft.blued.utils.AdTestDataMode>{ kotlin.collections.TypeAliasesKt.ArrayList<com.soft.blued.utils.AdTestDataMode> }");
         }
-        a((ArrayList) obj2, msg);
+        a((ArrayList) obj2, message);
     }
 
     public final void a(AdTestObserve adTestObserve) {
@@ -331,25 +332,25 @@ public final class AdTestManager {
         this.r = str;
     }
 
-    public final void a(String type, BluedADExtra da) {
-        Intrinsics.e(type, "type");
-        Intrinsics.e(da, "da");
-        ArrayList<AdTestDataMode> arrayList = this.k.get(type);
+    public final void a(String str, BluedADExtra bluedADExtra) {
+        Intrinsics.e(str, "type");
+        Intrinsics.e(bluedADExtra, "da");
+        ArrayList<AdTestDataMode> arrayList = this.k.get(str);
         if (arrayList != null && arrayList.size() <= 50) {
             AdTestDataMode adTestDataMode = new AdTestDataMode(5);
-            adTestDataMode.a(da);
+            adTestDataMode.a(bluedADExtra);
             arrayList.add(adTestDataMode);
         }
     }
 
-    public final void a(String type, BannerAdExtra da) {
-        Intrinsics.e(type, "type");
-        Intrinsics.e(da, "da");
-        ArrayList<AdTestDataMode> arrayList = this.k.get(type);
+    public final void a(String str, BannerAdExtra bannerAdExtra) {
+        Intrinsics.e(str, "type");
+        Intrinsics.e(bannerAdExtra, "da");
+        ArrayList<AdTestDataMode> arrayList = this.k.get(str);
         if (arrayList != null && arrayList.size() <= 50) {
             AdTestDataMode adTestDataMode = new AdTestDataMode(5);
-            adTestDataMode.a(da);
-            List<BluedADExtra> list = da.data;
+            adTestDataMode.a(bannerAdExtra);
+            List<BluedADExtra> list = bannerAdExtra.data;
             Intrinsics.c(list, "da.data");
             for (BluedADExtra bluedADExtra : list) {
                 ArrayList<BluedADExtra> c2 = adTestDataMode.c();
@@ -361,38 +362,38 @@ public final class AdTestManager {
         }
     }
 
-    public final void a(ArrayList<AdTestDataMode> mDos) {
-        Intrinsics.e(mDos, "mDos");
-        Message msg = Message.obtain();
-        msg.arg1 = 0;
-        msg.obj = mDos;
-        Intrinsics.c(msg, "msg");
-        b(msg);
+    public final void a(ArrayList<AdTestDataMode> arrayList) {
+        Intrinsics.e(arrayList, "mDos");
+        Message obtain = Message.obtain();
+        obtain.arg1 = 0;
+        obtain.obj = arrayList;
+        Intrinsics.c(obtain, "msg");
+        b(obtain);
     }
 
     public final void a(boolean z) {
-        this.f34714c = z;
+        this.f21023c = z;
     }
 
     public final boolean a() {
-        return this.f34714c;
+        return this.f21023c;
     }
 
-    public final boolean a(AdBannerTestObserve ban) {
-        Intrinsics.e(ban, "ban");
+    public final boolean a(AdBannerTestObserve adBannerTestObserve) {
+        Intrinsics.e(adBannerTestObserve, "ban");
         HashSet<AdBannerTestObserve> hashSet = this.o;
-        return (hashSet == null ? null : Boolean.valueOf(hashSet.add(ban))).booleanValue();
+        return (hashSet == null ? null : Boolean.valueOf(hashSet.add(adBannerTestObserve))).booleanValue();
     }
 
-    public final AdTestDataMode b(String type) {
+    public final AdTestDataMode b(String str) {
         AdTestDataMode adTestDataMode;
-        Intrinsics.e(type, "type");
+        Intrinsics.e(str, "type");
         synchronized (this.k) {
-            ArrayList<AdTestDataMode> arrayList = g().get(type);
+            ArrayList<AdTestDataMode> arrayList = g().get(str);
             Intrinsics.a(arrayList);
             Intrinsics.c(arrayList, "aDs.get(type)!!");
             ArrayList<AdTestDataMode> arrayList2 = arrayList;
-            Integer num = this.l.get(type);
+            Integer num = this.l.get(str);
             Intrinsics.a(num);
             Intrinsics.c(num, "aDnum.get(type)!!");
             int intValue = num.intValue();
@@ -400,23 +401,23 @@ public final class AdTestManager {
             AdTestDataMode adTestDataMode2 = arrayList2.get(i);
             Intrinsics.c(adTestDataMode2, "dataMode.get(get)");
             adTestDataMode = adTestDataMode2;
-            this.l.put(type, Integer.valueOf(i));
+            this.l.put(str, Integer.valueOf(i));
         }
         return adTestDataMode;
     }
 
-    public final void b(Message msg) {
-        Intrinsics.e(msg, "msg");
+    public final void b(Message message) {
+        Intrinsics.e(message, "msg");
         ToastUtils.b("刷新列表");
         AdTestObserve adTestObserve = this.i;
         if (adTestObserve != null) {
             adTestObserve.b();
         }
-        Object obj = msg.obj;
+        Object obj = message.obj;
         if (obj == null) {
             throw new NullPointerException("null cannot be cast to non-null type java.util.ArrayList<com.soft.blued.utils.AdTestDataMode>{ kotlin.collections.TypeAliasesKt.ArrayList<com.soft.blued.utils.AdTestDataMode> }");
         }
-        a((ArrayList) obj, msg);
+        a((ArrayList) obj, message);
     }
 
     public final void b(boolean z) {
@@ -427,16 +428,16 @@ public final class AdTestManager {
         return this.d;
     }
 
-    public final boolean b(AdBannerTestObserve ban) {
-        Intrinsics.e(ban, "ban");
+    public final boolean b(AdBannerTestObserve adBannerTestObserve) {
+        Intrinsics.e(adBannerTestObserve, "ban");
         HashSet<AdBannerTestObserve> hashSet = this.o;
-        return (hashSet == null ? null : Boolean.valueOf(hashSet.remove(ban))).booleanValue();
+        return (hashSet == null ? null : Boolean.valueOf(hashSet.remove(adBannerTestObserve))).booleanValue();
     }
 
-    public final void c(Message msg) {
+    public final void c(Message message) {
         Object valueOf;
-        Intrinsics.e(msg, "msg");
-        int i = msg.arg1 % 5;
+        Intrinsics.e(message, "msg");
+        int i = message.arg1 % 5;
         if (i == 0) {
             double d = 5000;
             valueOf = Double.valueOf(d + (Math.random() * d));
@@ -447,16 +448,16 @@ public final class AdTestManager {
             valueOf = Double.valueOf(d2 - (Math.random() * d2));
         }
         int intValue = ((Number) valueOf).intValue();
-        ToastUtils.b(Intrinsics.a("滑动到  ", (Object) Integer.valueOf(intValue)));
+        ToastUtils.b(Intrinsics.a("滑动到  ", Integer.valueOf(intValue)));
         AdTestObserve adTestObserve = this.i;
         if (adTestObserve != null) {
             adTestObserve.a(intValue);
         }
-        Object obj = msg.obj;
+        Object obj = message.obj;
         if (obj == null) {
             throw new NullPointerException("null cannot be cast to non-null type java.util.ArrayList<com.soft.blued.utils.AdTestDataMode>{ kotlin.collections.TypeAliasesKt.ArrayList<com.soft.blued.utils.AdTestDataMode> }");
         }
-        a((ArrayList) obj, msg);
+        a((ArrayList) obj, message);
     }
 
     public final void c(boolean z) {
@@ -467,10 +468,10 @@ public final class AdTestManager {
         return this.e;
     }
 
-    public final boolean c(AdBannerTestObserve ban) {
-        Intrinsics.e(ban, "ban");
+    public final boolean c(AdBannerTestObserve adBannerTestObserve) {
+        Intrinsics.e(adBannerTestObserve, "ban");
         HashSet<AdBannerTestObserve> hashSet = this.p;
-        return (hashSet == null ? null : Boolean.valueOf(hashSet.add(ban))).booleanValue();
+        return (hashSet == null ? null : Boolean.valueOf(hashSet.add(adBannerTestObserve))).booleanValue();
     }
 
     public final String d() {
@@ -481,10 +482,10 @@ public final class AdTestManager {
         this.j = z;
     }
 
-    public final boolean d(AdBannerTestObserve ban) {
-        Intrinsics.e(ban, "ban");
+    public final boolean d(AdBannerTestObserve adBannerTestObserve) {
+        Intrinsics.e(adBannerTestObserve, "ban");
         HashSet<AdBannerTestObserve> hashSet = this.p;
-        return (hashSet == null ? null : Boolean.valueOf(hashSet.remove(ban))).booleanValue();
+        return (hashSet == null ? null : Boolean.valueOf(hashSet.remove(adBannerTestObserve))).booleanValue();
     }
 
     public final String e() {
@@ -520,10 +521,10 @@ public final class AdTestManager {
     }
 
     public final UserFindResult l() {
-        UserFindResult findResult = (UserFindResult) AppInfo.f().fromJson(this.t, (Class<Object>) UserFindResult.class);
-        findResult.third_id = a(this.h, this.g);
-        Intrinsics.c(findResult, "findResult");
-        return findResult;
+        UserFindResult userFindResult = (UserFindResult) AppInfo.f().fromJson(this.t, (Class<Object>) UserFindResult.class);
+        userFindResult.third_id = a(this.h, this.g);
+        Intrinsics.c(userFindResult, "findResult");
+        return userFindResult;
     }
 
     public final void m() {

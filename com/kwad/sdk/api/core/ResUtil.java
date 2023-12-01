@@ -24,12 +24,12 @@ class ResUtil {
     }
 
     static Drawable getDrawable(Context context, String str) {
-        return getResources(context).getDrawable(getIdentifier(context, str, i.f7952c));
+        return getResources(context).getDrawable(getIdentifier(context, str, i.f5112c));
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static int getDrawableId(Context context, String str) {
-        return getIdentifier(context, str, i.f7952c);
+        return getIdentifier(context, str, i.f5112c);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

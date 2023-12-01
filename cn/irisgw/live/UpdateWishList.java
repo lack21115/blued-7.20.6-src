@@ -25,8 +25,8 @@ import java.util.List;
 public final class UpdateWishList extends GeneratedMessageV3 implements UpdateWishListOrBuilder {
     private static final UpdateWishList DEFAULT_INSTANCE = new UpdateWishList();
     private static final Parser<UpdateWishList> PARSER = new AbstractParser<UpdateWishList>() { // from class: cn.irisgw.live.UpdateWishList.1
-        @Override // com.google.protobuf.Parser
-        public UpdateWishList parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        /* renamed from: parsePartialFrom */
+        public UpdateWishList m7785parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             return new UpdateWishList(codedInputStream, extensionRegistryLite);
         }
     };
@@ -89,24 +89,24 @@ public final class UpdateWishList extends GeneratedMessageV3 implements UpdateWi
                 return this;
             }
             ensureWishListIsMutable();
-            AbstractMessageLite.Builder.addAll((Iterable) iterable, (List) this.wishList_);
+            AbstractMessageLite.Builder.addAll(iterable, this.wishList_);
             onChanged();
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: addRepeatedField */
+        public Builder m7787addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.addRepeatedField(fieldDescriptor, obj);
         }
 
         public Builder addWishList(int i, WishList.Builder builder) {
             RepeatedFieldBuilderV3<WishList, WishList.Builder, WishListOrBuilder> repeatedFieldBuilderV3 = this.wishListBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.addMessage(i, builder.build());
+                repeatedFieldBuilderV3.addMessage(i, builder.m7836build());
                 return this;
             }
             ensureWishListIsMutable();
-            this.wishList_.add(i, builder.build());
+            this.wishList_.add(i, builder.m7836build());
             onChanged();
             return this;
         }
@@ -129,11 +129,11 @@ public final class UpdateWishList extends GeneratedMessageV3 implements UpdateWi
         public Builder addWishList(WishList.Builder builder) {
             RepeatedFieldBuilderV3<WishList, WishList.Builder, WishListOrBuilder> repeatedFieldBuilderV3 = this.wishListBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.addMessage(builder.build());
+                repeatedFieldBuilderV3.addMessage(builder.m7836build());
                 return this;
             }
             ensureWishListIsMutable();
-            this.wishList_.add(builder.build());
+            this.wishList_.add(builder.m7836build());
             onChanged();
             return this;
         }
@@ -161,17 +161,17 @@ public final class UpdateWishList extends GeneratedMessageV3 implements UpdateWi
             return getWishListFieldBuilder().addBuilder(i, WishList.getDefaultInstance());
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public UpdateWishList build() {
-            UpdateWishList buildPartial = buildPartial();
-            if (buildPartial.isInitialized()) {
-                return buildPartial;
+        /* renamed from: build */
+        public UpdateWishList m7789build() {
+            UpdateWishList m7791buildPartial = m7791buildPartial();
+            if (m7791buildPartial.isInitialized()) {
+                return m7791buildPartial;
             }
-            throw newUninitializedMessageException((Message) buildPartial);
+            throw newUninitializedMessageException(m7791buildPartial);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public UpdateWishList buildPartial() {
+        /* renamed from: buildPartial */
+        public UpdateWishList m7791buildPartial() {
             UpdateWishList updateWishList = new UpdateWishList(this);
             int i = this.bitField0_;
             RepeatedFieldBuilderV3<WishList, WishList.Builder, WishListOrBuilder> repeatedFieldBuilderV3 = this.wishListBuilder_;
@@ -188,8 +188,8 @@ public final class UpdateWishList extends GeneratedMessageV3 implements UpdateWi
             return updateWishList;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public Builder clear() {
+        /* renamed from: clear */
+        public Builder m7795clear() {
             super.clear();
             RepeatedFieldBuilderV3<WishList, WishList.Builder, WishListOrBuilder> repeatedFieldBuilderV3 = this.wishListBuilder_;
             if (repeatedFieldBuilderV3 != null) {
@@ -201,13 +201,13 @@ public final class UpdateWishList extends GeneratedMessageV3 implements UpdateWi
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+        /* renamed from: clearField */
+        public Builder m7797clearField(Descriptors.FieldDescriptor fieldDescriptor) {
             return (Builder) super.clearField(fieldDescriptor);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+        /* renamed from: clearOneof */
+        public Builder m7800clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
             return (Builder) super.clearOneof(oneofDescriptor);
         }
 
@@ -223,18 +223,16 @@ public final class UpdateWishList extends GeneratedMessageV3 implements UpdateWi
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder m7806clone() {
+            return (Builder) super.clone();
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public UpdateWishList getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public UpdateWishList m7808getDefaultInstanceForType() {
             return UpdateWishList.getDefaultInstance();
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
         public Descriptors.Descriptor getDescriptorForType() {
             return LiveConstants.internal_static_cn_irisgw_live_UpdateWishList_descriptor;
         }
@@ -268,7 +266,7 @@ public final class UpdateWishList extends GeneratedMessageV3 implements UpdateWi
         @Override // cn.irisgw.live.UpdateWishListOrBuilder
         public WishListOrBuilder getWishListOrBuilder(int i) {
             RepeatedFieldBuilderV3<WishList, WishList.Builder, WishListOrBuilder> repeatedFieldBuilderV3 = this.wishListBuilder_;
-            return repeatedFieldBuilderV3 == null ? this.wishList_.get(i) : repeatedFieldBuilderV3.getMessageOrBuilder(i);
+            return repeatedFieldBuilderV3 == null ? this.wishList_.get(i) : (WishListOrBuilder) repeatedFieldBuilderV3.getMessageOrBuilder(i);
         }
 
         @Override // cn.irisgw.live.UpdateWishListOrBuilder
@@ -277,12 +275,10 @@ public final class UpdateWishList extends GeneratedMessageV3 implements UpdateWi
             return repeatedFieldBuilderV3 != null ? repeatedFieldBuilderV3.getMessageOrBuilderList() : Collections.unmodifiableList(this.wishList_);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_UpdateWishList_fieldAccessorTable.ensureFieldAccessorsInitialized(UpdateWishList.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             return true;
         }
@@ -317,18 +313,18 @@ public final class UpdateWishList extends GeneratedMessageV3 implements UpdateWi
                     this.wishListBuilder_.addAllMessages(updateWishList.wishList_);
                 }
             }
-            mergeUnknownFields(updateWishList.unknownFields);
+            m7817mergeUnknownFields(updateWishList.unknownFields);
             onChanged();
             return this;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+        /* renamed from: mergeFrom */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
         */
-        public cn.irisgw.live.UpdateWishList.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+        public cn.irisgw.live.UpdateWishList.Builder m7814mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
             /*
                 r4 = this;
                 r0 = 0
@@ -373,11 +369,11 @@ public final class UpdateWishList extends GeneratedMessageV3 implements UpdateWi
                 r0 = r6
                 throw r0
             */
-            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.UpdateWishList.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.UpdateWishList$Builder");
+            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.UpdateWishList.Builder.m7814mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.UpdateWishList$Builder");
         }
 
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder mergeFrom(Message message) {
+        /* renamed from: mergeFrom */
+        public Builder m7813mergeFrom(Message message) {
             if (message instanceof UpdateWishList) {
                 return mergeFrom((UpdateWishList) message);
             }
@@ -385,8 +381,8 @@ public final class UpdateWishList extends GeneratedMessageV3 implements UpdateWi
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: mergeUnknownFields */
+        public final Builder m7817mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.mergeUnknownFields(unknownFieldSet);
         }
 
@@ -402,29 +398,29 @@ public final class UpdateWishList extends GeneratedMessageV3 implements UpdateWi
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: setField */
+        public Builder m7819setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.setField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+        /* renamed from: setRepeatedField */
+        public Builder m7821setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
             return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: setUnknownFields */
+        public final Builder m7823setUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.setUnknownFields(unknownFieldSet);
         }
 
         public Builder setWishList(int i, WishList.Builder builder) {
             RepeatedFieldBuilderV3<WishList, WishList.Builder, WishListOrBuilder> repeatedFieldBuilderV3 = this.wishListBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.setMessage(i, builder.build());
+                repeatedFieldBuilderV3.setMessage(i, builder.m7836build());
                 return this;
             }
             ensureWishListIsMutable();
-            this.wishList_.set(i, builder.build());
+            this.wishList_.set(i, builder.m7836build());
             onChanged();
             return this;
         }
@@ -463,8 +459,8 @@ public final class UpdateWishList extends GeneratedMessageV3 implements UpdateWi
         private volatile Object type_;
         private static final WishList DEFAULT_INSTANCE = new WishList();
         private static final Parser<WishList> PARSER = new AbstractParser<WishList>() { // from class: cn.irisgw.live.UpdateWishList.WishList.1
-            @Override // com.google.protobuf.Parser
-            public WishList parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+            /* renamed from: parsePartialFrom */
+            public WishList m7832parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
                 return new WishList(codedInputStream, extensionRegistryLite);
             }
         };
@@ -501,22 +497,22 @@ public final class UpdateWishList extends GeneratedMessageV3 implements UpdateWi
                 boolean unused = WishList.alwaysUseFieldBuilders;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: addRepeatedField */
+            public Builder m7834addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.addRepeatedField(fieldDescriptor, obj);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public WishList build() {
-                WishList buildPartial = buildPartial();
-                if (buildPartial.isInitialized()) {
-                    return buildPartial;
+            /* renamed from: build */
+            public WishList m7836build() {
+                WishList m7838buildPartial = m7838buildPartial();
+                if (m7838buildPartial.isInitialized()) {
+                    return m7838buildPartial;
                 }
-                throw newUninitializedMessageException((Message) buildPartial);
+                throw newUninitializedMessageException(m7838buildPartial);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public WishList buildPartial() {
+            /* renamed from: buildPartial */
+            public WishList m7838buildPartial() {
                 WishList wishList = new WishList(this);
                 wishList.id_ = this.id_;
                 wishList.type_ = this.type_;
@@ -528,8 +524,8 @@ public final class UpdateWishList extends GeneratedMessageV3 implements UpdateWi
                 return wishList;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public Builder clear() {
+            /* renamed from: clear */
+            public Builder m7842clear() {
                 super.clear();
                 this.id_ = 0;
                 this.type_ = "";
@@ -546,8 +542,8 @@ public final class UpdateWishList extends GeneratedMessageV3 implements UpdateWi
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+            /* renamed from: clearField */
+            public Builder m7844clearField(Descriptors.FieldDescriptor fieldDescriptor) {
                 return (Builder) super.clearField(fieldDescriptor);
             }
 
@@ -563,8 +559,8 @@ public final class UpdateWishList extends GeneratedMessageV3 implements UpdateWi
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+            /* renamed from: clearOneof */
+            public Builder m7847clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
                 return (Builder) super.clearOneof(oneofDescriptor);
             }
 
@@ -586,10 +582,9 @@ public final class UpdateWishList extends GeneratedMessageV3 implements UpdateWi
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder m7853clone() {
+                return (Builder) super.clone();
             }
 
             @Override // cn.irisgw.live.UpdateWishList.WishListOrBuilder
@@ -597,12 +592,11 @@ public final class UpdateWishList extends GeneratedMessageV3 implements UpdateWi
                 return this.count_;
             }
 
-            @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-            public WishList getDefaultInstanceForType() {
+            /* renamed from: getDefaultInstanceForType */
+            public WishList m7855getDefaultInstanceForType() {
                 return WishList.getDefaultInstance();
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
             public Descriptors.Descriptor getDescriptorForType() {
                 return LiveConstants.internal_static_cn_irisgw_live_UpdateWishList_WishList_descriptor;
             }
@@ -683,12 +677,10 @@ public final class UpdateWishList extends GeneratedMessageV3 implements UpdateWi
                 return (ByteString) obj;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder
             public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
                 return LiveConstants.internal_static_cn_irisgw_live_UpdateWishList_WishList_fieldAccessorTable.ensureFieldAccessorsInitialized(WishList.class, Builder.class);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
             public final boolean isInitialized() {
                 return true;
             }
@@ -718,18 +710,18 @@ public final class UpdateWishList extends GeneratedMessageV3 implements UpdateWi
                 if (wishList.getProgress() != 0) {
                     setProgress(wishList.getProgress());
                 }
-                mergeUnknownFields(wishList.unknownFields);
+                m7864mergeUnknownFields(wishList.unknownFields);
                 onChanged();
                 return this;
             }
 
             /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+            /* renamed from: mergeFrom */
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
                 To view partially-correct code enable 'Show inconsistent code' option in preferences
             */
-            public cn.irisgw.live.UpdateWishList.WishList.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+            public cn.irisgw.live.UpdateWishList.WishList.Builder m7861mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
                 /*
                     r4 = this;
                     r0 = 0
@@ -774,11 +766,11 @@ public final class UpdateWishList extends GeneratedMessageV3 implements UpdateWi
                     r0 = r6
                     throw r0
                 */
-                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.UpdateWishList.WishList.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.UpdateWishList$WishList$Builder");
+                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.UpdateWishList.WishList.Builder.m7861mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.UpdateWishList$WishList$Builder");
             }
 
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder mergeFrom(Message message) {
+            /* renamed from: mergeFrom */
+            public Builder m7860mergeFrom(Message message) {
                 if (message instanceof WishList) {
                     return mergeFrom((WishList) message);
                 }
@@ -786,8 +778,8 @@ public final class UpdateWishList extends GeneratedMessageV3 implements UpdateWi
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: mergeUnknownFields */
+            public final Builder m7864mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.mergeUnknownFields(unknownFieldSet);
             }
 
@@ -797,8 +789,8 @@ public final class UpdateWishList extends GeneratedMessageV3 implements UpdateWi
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: setField */
+            public Builder m7866setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.setField(fieldDescriptor, obj);
             }
 
@@ -852,8 +844,8 @@ public final class UpdateWishList extends GeneratedMessageV3 implements UpdateWi
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+            /* renamed from: setRepeatedField */
+            public Builder m7868setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
                 return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
             }
 
@@ -876,8 +868,8 @@ public final class UpdateWishList extends GeneratedMessageV3 implements UpdateWi
                 throw null;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: setUnknownFields */
+            public final Builder m7870setUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.setUnknownFields(unknownFieldSet);
             }
         }
@@ -943,66 +935,65 @@ public final class UpdateWishList extends GeneratedMessageV3 implements UpdateWi
         }
 
         public static Builder newBuilder() {
-            return DEFAULT_INSTANCE.toBuilder();
+            return DEFAULT_INSTANCE.m7831toBuilder();
         }
 
         public static Builder newBuilder(WishList wishList) {
-            return DEFAULT_INSTANCE.toBuilder().mergeFrom(wishList);
+            return DEFAULT_INSTANCE.m7831toBuilder().mergeFrom(wishList);
         }
 
         public static WishList parseDelimitedFrom(InputStream inputStream) throws IOException {
-            return (WishList) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
         }
 
         public static WishList parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (WishList) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static WishList parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString);
+            return (WishList) PARSER.parseFrom(byteString);
         }
 
         public static WishList parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString, extensionRegistryLite);
+            return (WishList) PARSER.parseFrom(byteString, extensionRegistryLite);
         }
 
         public static WishList parseFrom(CodedInputStream codedInputStream) throws IOException {
-            return (WishList) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
         }
 
         public static WishList parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (WishList) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
         }
 
         public static WishList parseFrom(InputStream inputStream) throws IOException {
-            return (WishList) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
         }
 
         public static WishList parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (WishList) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static WishList parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer);
+            return (WishList) PARSER.parseFrom(byteBuffer);
         }
 
         public static WishList parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+            return (WishList) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
         }
 
         public static WishList parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr);
+            return (WishList) PARSER.parseFrom(bArr);
         }
 
         public static WishList parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr, extensionRegistryLite);
+            return (WishList) PARSER.parseFrom(bArr, extensionRegistryLite);
         }
 
         public static Parser<WishList> parser() {
             return PARSER;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public boolean equals(Object obj) {
             if (obj == this) {
                 return true;
@@ -1019,8 +1010,8 @@ public final class UpdateWishList extends GeneratedMessageV3 implements UpdateWi
             return this.count_;
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public WishList getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public WishList m7826getDefaultInstanceForType() {
             return DEFAULT_INSTANCE;
         }
 
@@ -1051,7 +1042,6 @@ public final class UpdateWishList extends GeneratedMessageV3 implements UpdateWi
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
         public Parser<WishList> getParserForType() {
             return PARSER;
         }
@@ -1083,7 +1073,6 @@ public final class UpdateWishList extends GeneratedMessageV3 implements UpdateWi
             return this.progress_;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public int getSerializedSize() {
             int i = this.memoizedSize;
             if (i != -1) {
@@ -1143,12 +1132,10 @@ public final class UpdateWishList extends GeneratedMessageV3 implements UpdateWi
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
         public final UnknownFieldSet getUnknownFields() {
             return this.unknownFields;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public int hashCode() {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
@@ -1158,12 +1145,10 @@ public final class UpdateWishList extends GeneratedMessageV3 implements UpdateWi
             return hashCode;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_UpdateWishList_WishList_fieldAccessorTable.ensureFieldAccessorsInitialized(WishList.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte b = this.memoizedIsInitialized;
             if (b == 1) {
@@ -1176,28 +1161,26 @@ public final class UpdateWishList extends GeneratedMessageV3 implements UpdateWi
             return true;
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder newBuilderForType() {
+        /* renamed from: newBuilderForType */
+        public Builder m7829newBuilderForType() {
             return newBuilder();
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.google.protobuf.GeneratedMessageV3
-        public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+        /* renamed from: newBuilderForType */
+        public Builder m7828newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
             return new Builder(builderParent);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
             return new WishList();
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder toBuilder() {
+        /* renamed from: toBuilder */
+        public Builder m7831toBuilder() {
             return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
             int i = this.id_;
             if (i != 0) {
@@ -1311,66 +1294,65 @@ public final class UpdateWishList extends GeneratedMessageV3 implements UpdateWi
     }
 
     public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
+        return DEFAULT_INSTANCE.m7784toBuilder();
     }
 
     public static Builder newBuilder(UpdateWishList updateWishList) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(updateWishList);
+        return DEFAULT_INSTANCE.m7784toBuilder().mergeFrom(updateWishList);
     }
 
     public static UpdateWishList parseDelimitedFrom(InputStream inputStream) throws IOException {
-        return (UpdateWishList) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
     }
 
     public static UpdateWishList parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (UpdateWishList) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static UpdateWishList parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString);
+        return (UpdateWishList) PARSER.parseFrom(byteString);
     }
 
     public static UpdateWishList parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString, extensionRegistryLite);
+        return (UpdateWishList) PARSER.parseFrom(byteString, extensionRegistryLite);
     }
 
     public static UpdateWishList parseFrom(CodedInputStream codedInputStream) throws IOException {
-        return (UpdateWishList) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
     }
 
     public static UpdateWishList parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (UpdateWishList) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
     }
 
     public static UpdateWishList parseFrom(InputStream inputStream) throws IOException {
-        return (UpdateWishList) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
     }
 
     public static UpdateWishList parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (UpdateWishList) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static UpdateWishList parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer);
+        return (UpdateWishList) PARSER.parseFrom(byteBuffer);
     }
 
     public static UpdateWishList parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+        return (UpdateWishList) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
     }
 
     public static UpdateWishList parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr);
+        return (UpdateWishList) PARSER.parseFrom(bArr);
     }
 
     public static UpdateWishList parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr, extensionRegistryLite);
+        return (UpdateWishList) PARSER.parseFrom(bArr, extensionRegistryLite);
     }
 
     public static Parser<UpdateWishList> parser() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
@@ -1382,17 +1364,15 @@ public final class UpdateWishList extends GeneratedMessageV3 implements UpdateWi
         return super.equals(obj);
     }
 
-    @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-    public UpdateWishList getDefaultInstanceForType() {
+    /* renamed from: getDefaultInstanceForType */
+    public UpdateWishList m7779getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
     public Parser<UpdateWishList> getParserForType() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public int getSerializedSize() {
         int i = this.memoizedSize;
         if (i != -1) {
@@ -1407,7 +1387,6 @@ public final class UpdateWishList extends GeneratedMessageV3 implements UpdateWi
         return serializedSize;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
     public final UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
     }
@@ -1437,7 +1416,6 @@ public final class UpdateWishList extends GeneratedMessageV3 implements UpdateWi
         return this.wishList_;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public int hashCode() {
         if (this.memoizedHashCode != 0) {
             return this.memoizedHashCode;
@@ -1452,12 +1430,10 @@ public final class UpdateWishList extends GeneratedMessageV3 implements UpdateWi
         return hashCode2;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
         return LiveConstants.internal_static_cn_irisgw_live_UpdateWishList_fieldAccessorTable.ensureFieldAccessorsInitialized(UpdateWishList.class, Builder.class);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
     public final boolean isInitialized() {
         byte b = this.memoizedIsInitialized;
         if (b == 1) {
@@ -1470,28 +1446,26 @@ public final class UpdateWishList extends GeneratedMessageV3 implements UpdateWi
         return true;
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder newBuilderForType() {
+    /* renamed from: newBuilderForType */
+    public Builder m7782newBuilderForType() {
         return newBuilder();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.protobuf.GeneratedMessageV3
-    public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+    /* renamed from: newBuilderForType */
+    public Builder m7781newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
         return new Builder(builderParent);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
         return new UpdateWishList();
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder toBuilder() {
+    /* renamed from: toBuilder */
+    public Builder m7784toBuilder() {
         return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
         int i = 0;
         while (true) {

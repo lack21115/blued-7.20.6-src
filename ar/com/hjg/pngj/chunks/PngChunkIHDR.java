@@ -24,9 +24,9 @@ public class PngChunkIHDR extends PngChunkSingle {
     }
 
     public void a(ImageInfo imageInfo) {
-        b(this.e.f3638a);
+        b(this.e.f3590a);
         c(this.e.b);
-        d(this.e.f3639c);
+        d(this.e.f3591c);
         int i = this.e.e ? 4 : 0;
         int i2 = i;
         if (this.e.g) {
@@ -44,8 +44,8 @@ public class PngChunkIHDR extends PngChunkSingle {
 
     @Override // ar.com.hjg.pngj.chunks.PngChunk
     public void a(ChunkRaw chunkRaw) {
-        if (chunkRaw.f3659a != 13) {
-            throw new PngjException("Bad IDHR len " + chunkRaw.f3659a);
+        if (chunkRaw.f3611a != 13) {
+            throw new PngjException("Bad IDHR len " + chunkRaw.f3611a);
         }
         ByteArrayInputStream c2 = chunkRaw.c();
         this.h = PngHelperInternal.b(c2);
@@ -70,7 +70,7 @@ public class PngChunkIHDR extends PngChunkSingle {
     }
 
     public ChunkRaw e() {
-        ChunkRaw chunkRaw = new ChunkRaw(13, ChunkHelper.f3654a, true);
+        ChunkRaw chunkRaw = new ChunkRaw(13, ChunkHelper.f3606a, true);
         PngHelperInternal.a(this.h, chunkRaw.d, 0);
         PngHelperInternal.a(this.i, chunkRaw.d, 4);
         chunkRaw.d[8] = (byte) this.j;

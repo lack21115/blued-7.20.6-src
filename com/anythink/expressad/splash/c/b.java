@@ -13,11 +13,11 @@ import java.util.concurrent.ConcurrentHashMap;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f8190a = "ResManager";
+    private static String f5350a = "ResManager";
     private static int b = 1;
 
     /* renamed from: c  reason: collision with root package name */
-    private static ConcurrentHashMap<String, Boolean> f8191c = new ConcurrentHashMap<>();
+    private static ConcurrentHashMap<String, Boolean> f5351c = new ConcurrentHashMap<>();
 
     private static com.anythink.expressad.foundation.d.c a(com.anythink.expressad.foundation.d.c cVar) {
         if (!TextUtils.isEmpty(cVar.c()) || (!TextUtils.isEmpty(cVar.d()) && cVar.d().contains("<MBTPLMARK>"))) {
@@ -34,7 +34,7 @@ public final class b {
         com.anythink.expressad.foundation.g.d.b.a(n.a().g()).a(cVar.be(), new com.anythink.expressad.foundation.g.d.c() { // from class: com.anythink.expressad.splash.c.b.1
             @Override // com.anythink.expressad.foundation.g.d.c
             public final void a(Bitmap bitmap, String str) {
-                b.f8191c.put(com.anythink.expressad.foundation.d.c.this.be(), Boolean.TRUE);
+                b.f5351c.put(com.anythink.expressad.foundation.d.c.this.be(), Boolean.TRUE);
                 com.anythink.expressad.splash.view.a aVar2 = aVar;
                 if (aVar2 != null) {
                     aVar2.a();
@@ -47,7 +47,7 @@ public final class b {
 
             @Override // com.anythink.expressad.foundation.g.d.c
             public final void a(String str, String str2) {
-                b.f8191c.put(com.anythink.expressad.foundation.d.c.this.be(), Boolean.FALSE);
+                b.f5351c.put(com.anythink.expressad.foundation.d.c.this.be(), Boolean.FALSE);
                 com.anythink.expressad.splash.view.a aVar2 = aVar;
                 if (aVar2 != null) {
                     aVar2.b();
@@ -85,25 +85,25 @@ public final class b {
     }
 
     public static void a(String str) {
-        f8191c.remove(str);
+        f5351c.remove(str);
     }
 
     public static boolean a(ATSplashView aTSplashView, com.anythink.expressad.foundation.d.c cVar) {
         if (aTSplashView == null) {
-            o.d(f8190a, "mbSplashView  is null");
+            o.d(f5350a, "mbSplashView  is null");
             return false;
         }
         boolean z = true;
         if (!TextUtils.isEmpty(cVar.S())) {
             z = aTSplashView.isVideoReady();
-            o.d(f8190a, "======isReady isVideoReady:".concat(String.valueOf(z)));
+            o.d(f5350a, "======isReady isVideoReady:".concat(String.valueOf(z)));
         }
         boolean z2 = z;
         if (z) {
             z2 = z;
             if (!TextUtils.isEmpty(cVar.c())) {
                 z2 = aTSplashView.isH5Ready();
-                o.d(f8190a, "======isReady getAdZip:".concat(String.valueOf(z2)));
+                o.d(f5350a, "======isReady getAdZip:".concat(String.valueOf(z2)));
             }
         }
         boolean z3 = z2;
@@ -113,7 +113,7 @@ public final class b {
                 z3 = z2;
                 if (!TextUtils.isEmpty(cVar.d())) {
                     z3 = aTSplashView.isH5Ready();
-                    o.d(f8190a, "======isReady getAdHtml:".concat(String.valueOf(z3)));
+                    o.d(f5350a, "======isReady getAdHtml:".concat(String.valueOf(z3)));
                 }
             }
         }
@@ -121,7 +121,7 @@ public final class b {
         if (TextUtils.isEmpty(cVar.c())) {
             z4 = z3;
             if (TextUtils.isEmpty(cVar.d())) {
-                o.d(f8190a, "======isReady getAdHtml  getAdZip all are empty");
+                o.d(f5350a, "======isReady getAdHtml  getAdZip all are empty");
                 z4 = false;
             }
         }
@@ -130,7 +130,7 @@ public final class b {
             if (!TextUtils.isEmpty(cVar.be())) {
                 z4 = aTSplashView.isImageReady();
             }
-            o.d(f8190a, "======isReady DYNAMIC VIEW and image state is : ".concat(String.valueOf(z4)));
+            o.d(f5350a, "======isReady DYNAMIC VIEW and image state is : ".concat(String.valueOf(z4)));
         }
         return z4;
     }

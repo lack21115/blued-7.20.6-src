@@ -5,7 +5,6 @@ import android.util.Pair;
 import android.util.Range;
 import android.util.Rational;
 import android.util.Size;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.blued.das.client.chatroom.ChatRoomProtos;
 import com.cdo.oaps.ad.p;
 import com.huawei.hms.framework.common.ExceptionCode;
@@ -1267,7 +1266,7 @@ public final class MediaCodecInfo {
                                         z3 = false;
                                         break;
                                     default:
-                                        Log.w(TAG, "Unrecognized profile/level " + codecProfileLevel2.profile + BridgeUtil.SPLIT_MARK + codecProfileLevel2.level + " for " + mimeType);
+                                        Log.w(TAG, "Unrecognized profile/level " + codecProfileLevel2.profile + "/" + codecProfileLevel2.level + " for " + mimeType);
                                         i25 |= 1;
                                         break;
                                 }
@@ -1334,7 +1333,7 @@ public final class MediaCodecInfo {
                                         i28 = 8000;
                                         break;
                                     default:
-                                        Log.w(TAG, "Unrecognized profile/level " + codecProfileLevel2.profile + BridgeUtil.SPLIT_MARK + codecProfileLevel2.level + " for " + mimeType);
+                                        Log.w(TAG, "Unrecognized profile/level " + codecProfileLevel2.profile + "/" + codecProfileLevel2.level + " for " + mimeType);
                                         i25 |= 1;
                                         break;
                                 }
@@ -1434,7 +1433,7 @@ public final class MediaCodecInfo {
                             i40 = 1620 * 50;
                             break;
                         default:
-                            Log.w(TAG, "Unrecognized profile/level " + codecProfileLevel3.profile + BridgeUtil.SPLIT_MARK + codecProfileLevel3.level + " for " + mimeType);
+                            Log.w(TAG, "Unrecognized profile/level " + codecProfileLevel3.profile + "/" + codecProfileLevel3.level + " for " + mimeType);
                             i39 |= 1;
                             break;
                     }
@@ -1503,7 +1502,7 @@ public final class MediaCodecInfo {
                         i46 = i47 + 1;
                     } else {
                         int i50 = mimeType.equalsIgnoreCase("video/x-vnd.on2.vp8") ? 16 : 8;
-                        applyMacroBlockLimits(Short.MAX_VALUE, Short.MAX_VALUE, Integer.MAX_VALUE, Integer.MAX_VALUE, i50, i50, 1, 1);
+                        applyMacroBlockLimits(32767, 32767, Integer.MAX_VALUE, Integer.MAX_VALUE, i50, i50, 1, 1);
                         i = 100000000;
                     }
                 }

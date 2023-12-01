@@ -4,7 +4,7 @@ package com.igexin.push.e;
 public abstract class d extends com.igexin.c.a.d.f {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23616a = "OtherBlockTask";
+    private static final String f10008a = "OtherBlockTask";
     public static final int b = -2032;
 
     public d() {

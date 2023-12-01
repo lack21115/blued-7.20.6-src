@@ -76,7 +76,7 @@ public class ShareToChatRecentFragment extends PreloadFragment {
         private TextView b;
 
         /* renamed from: c  reason: collision with root package name */
-        private ShapeTextView f31918c;
+        private ShapeTextView f18228c;
         private ImageView d;
         private ImageView e;
         private int f;
@@ -96,15 +96,15 @@ public class ShareToChatRecentFragment extends PreloadFragment {
                 return;
             }
             this.b = (TextView) baseViewHolder.getView(2131372046);
-            this.f31918c = (ShapeTextView) baseViewHolder.getView(R.id.tv_group_icon);
+            this.f18228c = baseViewHolder.getView(R.id.tv_group_icon);
             this.d = (ImageView) baseViewHolder.getView(R.id.riv_avatar);
             this.e = (ImageView) baseViewHolder.getView(2131364726);
             ConstraintLayout.LayoutParams layoutParams = (ConstraintLayout.LayoutParams) this.b.getLayoutParams();
             if (sessionModel.sessionType == 3) {
-                this.f31918c.setVisibility(0);
+                this.f18228c.setVisibility(0);
                 layoutParams.setMargins(this.g, layoutParams.topMargin, layoutParams.rightMargin, layoutParams.bottomMargin);
             } else {
-                this.f31918c.setVisibility(8);
+                this.f18228c.setVisibility(8);
                 layoutParams.setMargins(this.f, layoutParams.topMargin, layoutParams.rightMargin, layoutParams.bottomMargin);
             }
             this.b.setText(ShareToChatRecentFragment.this.a(sessionModel));
@@ -128,14 +128,13 @@ public class ShareToChatRecentFragment extends PreloadFragment {
         private ShareToSessionListListener() {
         }
 
-        @Override // com.blued.android.chat.StableSessionListListener
         public void onUISessionDataChanged(List<SessionModel> list) {
             if (list == null) {
                 list = new ArrayList();
             } else {
                 ChatHelperV4.b(list);
             }
-            if (BluedConstant.f28239a) {
+            if (BluedConstant.f14549a) {
                 Iterator<SessionModel> it = list.iterator();
                 while (it.hasNext()) {
                     SessionModel next = it.next();
@@ -177,7 +176,7 @@ public class ShareToChatRecentFragment extends PreloadFragment {
         if (sessionModel == null) {
             return "";
         }
-        SessionSettingModel sessionSettingModel = (SessionSettingModel) sessionModel.sessionSettingModel;
+        SessionSettingModel sessionSettingModel = sessionModel.sessionSettingModel;
         String sessinoNote = sessionSettingModel != null ? sessionSettingModel.getSessinoNote() : "";
         if (TextUtils.isEmpty(sessinoNote)) {
             if (TextUtils.isEmpty(sessionModel.nickName)) {
@@ -199,7 +198,7 @@ public class ShareToChatRecentFragment extends PreloadFragment {
         }
         this.x.clear();
         for (SessionModel sessionModel : this.w) {
-            SessionSettingModel sessionSettingModel = (SessionSettingModel) sessionModel.sessionSettingModel;
+            SessionSettingModel sessionSettingModel = sessionModel.sessionSettingModel;
             if ((!TextUtils.isEmpty(sessionModel.nickName) && sessionModel.nickName.contains(str)) || ((!TextUtils.isEmpty(sessionModel.lastMsgFromNickname) && sessionModel.lastMsgFromNickname.contains(str)) || ((!TextUtils.isEmpty(sessionModel.lastMsgContent) && sessionModel.lastMsgContent.contains(str)) || (sessionSettingModel != null && !TextUtils.isEmpty(sessionSettingModel.getSessinoNote()) && sessionSettingModel.getSessinoNote().contains(str))))) {
                 this.x.add(sessionModel);
             }
@@ -232,28 +231,27 @@ public class ShareToChatRecentFragment extends PreloadFragment {
         }
     }
 
-    @Override // com.blued.android.framework.activity.PreloadFragment
     public void a(View view) {
         this.x = new ArrayList();
         this.v = new ArrayList();
         this.w = new ArrayList();
         View inflate = LayoutInflater.from(this.j).inflate(R.layout.fragment_share_to_single, (ViewGroup) view, true);
-        SearchView searchView = (SearchView) LayoutInflater.from(this.j).inflate(R.layout.layout_msg_search_view, (ViewGroup) null);
-        this.s = searchView;
-        searchView.setDelaymillis(0L);
+        SearchView inflate2 = LayoutInflater.from(this.j).inflate(R.layout.layout_msg_search_view, (ViewGroup) null);
+        this.s = inflate2;
+        inflate2.setDelaymillis(0L);
         this.o = this.s.getEditView();
         this.p = (FrameLayout) inflate.findViewById(2131363911);
         ProgressBar progressBar = (ProgressBar) inflate.findViewById(2131368973);
         this.q = progressBar;
         progressBar.setVisibility(8);
-        this.m = inflate.findViewById(2131366095);
-        PullToRefreshRecyclerView pullToRefreshRecyclerView = (PullToRefreshRecyclerView) inflate.findViewById(R.id.ptrrv_list);
-        this.t = pullToRefreshRecyclerView;
-        pullToRefreshRecyclerView.setRefreshEnabled(false);
-        this.r = this.t.getRefreshableView();
-        KeyboardListenLinearLayout keyboardListenLinearLayout = (KeyboardListenLinearLayout) inflate.findViewById(2131366092);
-        this.u = keyboardListenLinearLayout;
-        super.a(keyboardListenLinearLayout);
+        this.m = inflate.findViewById(R.id.keyboard_view);
+        PullToRefreshRecyclerView findViewById = inflate.findViewById(R.id.ptrrv_list);
+        this.t = findViewById;
+        findViewById.setRefreshEnabled(false);
+        this.r = (RecyclerView) this.t.getRefreshableView();
+        KeyboardListenLinearLayout findViewById2 = inflate.findViewById(R.id.keyboard_layout);
+        this.u = findViewById2;
+        super.a(findViewById2);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.j);
         this.k = new ChatListAdapter();
         this.r.setLayoutManager(linearLayoutManager);
@@ -276,7 +274,7 @@ public class ShareToChatRecentFragment extends PreloadFragment {
                 ShareToChatRecentFragment.this.n.setNoDataImg(2131233626);
                 ShareToChatRecentFragment.this.n.setNoDataStr(2131892286);
                 ShareToChatRecentFragment.this.n.a();
-                ShareToChatRecentFragment.this.k.setEmptyView(ShareToChatRecentFragment.this.n);
+                ShareToChatRecentFragment.this.k.setEmptyView((View) ShareToChatRecentFragment.this.n);
             }
         });
         this.k.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() { // from class: com.soft.blued.ui.msg.ShareToChatRecentFragment.2
@@ -305,17 +303,14 @@ public class ShareToChatRecentFragment extends PreloadFragment {
             }
         });
         this.s.setOnSearchInfoListener(new SearchView.OnSearchInfoListener() { // from class: com.soft.blued.ui.msg.ShareToChatRecentFragment.3
-            @Override // com.blued.android.module.common.view.SearchView.OnSearchInfoListener
             public void a() {
                 KeyboardUtils.a((Activity) ShareToChatRecentFragment.this.j);
             }
 
-            @Override // com.blued.android.module.common.view.SearchView.OnSearchInfoListener
             public void a(String str) {
                 ShareToChatRecentFragment.this.a(str);
             }
 
-            @Override // com.blued.android.module.common.view.SearchView.OnSearchInfoListener
             public void b() {
             }
         });
@@ -331,7 +326,6 @@ public class ShareToChatRecentFragment extends PreloadFragment {
         });
     }
 
-    @Override // com.blued.android.framework.activity.keyboardpage.KeyBoardFragment
     public void j_(int i) {
         if (i != -3) {
             if (i != -2) {
@@ -339,7 +333,7 @@ public class ShareToChatRecentFragment extends PreloadFragment {
             }
             this.z = true;
             if (h()) {
-                this.k.setEmptyView(this.n);
+                this.k.setEmptyView((View) this.n);
                 this.k.setNewData(this.v);
             }
             this.m.setVisibility(8);
@@ -354,13 +348,12 @@ public class ShareToChatRecentFragment extends PreloadFragment {
         if (searchView != null) {
             searchView.a(true);
         }
-        NoDataAndLoadFailView noDataAndLoadFailView = this.n;
-        if (noDataAndLoadFailView != null) {
-            this.k.setEmptyView(noDataAndLoadFailView);
+        View view = this.n;
+        if (view != null) {
+            this.k.setEmptyView(view);
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onAttach(Context context) {
         super.onAttach(context);
         this.j = context;

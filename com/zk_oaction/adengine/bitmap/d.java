@@ -1,7 +1,6 @@
 package com.zk_oaction.adengine.bitmap;
 
 import android.graphics.Bitmap;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.lang.ref.WeakReference;
 import java.util.HashMap;
 
@@ -9,25 +8,25 @@ import java.util.HashMap;
 class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private HashMap<String, a> f41874a = new HashMap<>();
+    private HashMap<String, a> f28183a = new HashMap<>();
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8829756-dex2jar.jar:com/zk_oaction/adengine/bitmap/d$a.class */
     public class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private String f41875a;
+        private String f28184a;
         private float b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f41876c;
+        private int f28185c;
         private int d;
         private WeakReference<Bitmap> e;
 
         a(d dVar, String str, float f, int i, int i2) {
-            this.f41875a = str;
+            this.f28184a = str;
             this.b = f;
-            this.f41876c = i;
+            this.f28185c = i;
             this.d = i2;
         }
 
@@ -51,10 +50,10 @@ class d {
         a aVar;
         String a2 = a(str, f);
         synchronized (this) {
-            if (this.f41874a.get(a2) == null) {
-                this.f41874a.put(a2, new a(this, str, f, i, i2));
+            if (this.f28183a.get(a2) == null) {
+                this.f28183a.put(a2, new a(this, str, f, i, i2));
             }
-            aVar = this.f41874a.get(a2);
+            aVar = this.f28183a.get(a2);
         }
         return aVar;
     }
@@ -64,6 +63,6 @@ class d {
     }
 
     protected String a(String str, float f) {
-        return str + BridgeUtil.UNDERLINE_STR + f;
+        return str + "_" + f;
     }
 }

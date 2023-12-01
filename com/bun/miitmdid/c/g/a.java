@@ -13,17 +13,17 @@ public class a {
     private static boolean f;
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f21141a;
+    private Context f7535a;
     private IDeviceidInterface b;
 
     /* renamed from: c  reason: collision with root package name */
-    private ServiceConnection f21142c;
+    private ServiceConnection f7536c;
     private com.bun.miitmdid.c.e.a d;
 
     /* renamed from: com.bun.miitmdid.c.g.a$a  reason: collision with other inner class name */
     /* loaded from: source-7206380-dex2jar.jar:com/bun/miitmdid/c/g/a$a.class */
-    class ServiceConnectionC0302a implements ServiceConnection {
-        ServiceConnectionC0302a() {
+    class ServiceConnectionC0132a implements ServiceConnection {
+        ServiceConnectionC0132a() {
         }
 
         @Override // android.content.ServiceConnection
@@ -34,16 +34,16 @@ public class a {
     }
 
     public a(Context context, com.bun.miitmdid.c.e.a aVar) {
-        this.f21141a = null;
+        this.f7535a = null;
         if (context == null) {
             throw new NullPointerException("Context can not be null.");
         }
-        this.f21141a = context;
+        this.f7535a = context;
         this.d = aVar;
-        this.f21142c = new ServiceConnectionC0302a();
+        this.f7536c = new ServiceConnectionC0132a();
         Intent intent = new Intent();
         intent.setClassName("com.zui.deviceidservice", "com.zui.deviceidservice.DeviceidService");
-        if (this.f21141a.bindService(intent, this.f21142c, 1)) {
+        if (this.f7535a.bindService(intent, this.f7536c, 1)) {
             b("bindService Successful!");
             return;
         }

@@ -7,11 +7,11 @@ import java.lang.annotation.RetentionPolicy;
 public class ChatConstants {
 
     /* renamed from: a  reason: collision with root package name */
-    public static long f28313a = 0;
+    public static long f14623a = 0;
     public static int b = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    public static String f28314c = "0";
+    public static String f14624c = "0";
 
     /* loaded from: source-8303388-dex2jar.jar:com/soft/blued/constant/ChatConstants$CHANNEL.class */
     public interface CHANNEL {

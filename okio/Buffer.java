@@ -1,6 +1,7 @@
 package okio;
 
 import android.widget.ExpandableListView;
+import com.anythink.core.common.k.f;
 import java.io.Closeable;
 import java.io.EOFException;
 import java.io.IOException;
@@ -364,13 +365,13 @@ public final class Buffer implements Cloneable, ByteChannel, BufferedSink, Buffe
 
     @Deprecated
     /* renamed from: -deprecated_getByte  reason: not valid java name */
-    public final byte m13274deprecated_getByte(long j) {
+    public final byte m12183deprecated_getByte(long j) {
         return getByte(j);
     }
 
     @Deprecated
     /* renamed from: -deprecated_size  reason: not valid java name */
-    public final long m13275deprecated_size() {
+    public final long m12184deprecated_size() {
         return this.size;
     }
 
@@ -1019,7 +1020,7 @@ public final class Buffer implements Cloneable, ByteChannel, BufferedSink, Buffe
     }
 
     public final ByteString md5() {
-        return digest("MD5");
+        return digest(f.a);
     }
 
     @Override // okio.BufferedSink

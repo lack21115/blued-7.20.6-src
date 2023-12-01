@@ -33,11 +33,11 @@ public final class MenuItemImpl implements SupportMenuItem {
     private ContextMenu.ContextMenuInfo E;
 
     /* renamed from: a  reason: collision with root package name */
-    MenuBuilder f1679a;
+    MenuBuilder f1631a;
     private final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final int f1680c;
+    private final int f1632c;
     private final int d;
     private final int e;
     private CharSequence f;
@@ -66,9 +66,9 @@ public final class MenuItemImpl implements SupportMenuItem {
     /* JADX INFO: Access modifiers changed from: package-private */
     public MenuItemImpl(MenuBuilder menuBuilder, int i, int i2, int i3, int i4, CharSequence charSequence, int i5) {
         this.z = 0;
-        this.f1679a = menuBuilder;
+        this.f1631a = menuBuilder;
         this.b = i2;
-        this.f1680c = i;
+        this.f1632c = i;
         this.d = i3;
         this.e = i4;
         this.f = charSequence;
@@ -141,7 +141,7 @@ public final class MenuItemImpl implements SupportMenuItem {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public char a() {
-        return this.f1679a.isQwertyMode() ? this.k : this.i;
+        return this.f1631a.isQwertyMode() ? this.k : this.i;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -160,12 +160,12 @@ public final class MenuItemImpl implements SupportMenuItem {
         int i2 = (z ? 2 : 0) | (i & (-3));
         this.y = i2;
         if (i != i2) {
-            this.f1679a.onItemsChanged(false);
+            this.f1631a.onItemsChanged(false);
         }
     }
 
     public void actionFormatChanged() {
-        this.f1679a.onItemActionRequestChanged(this);
+        this.f1631a.onItemActionRequestChanged(this);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -174,12 +174,12 @@ public final class MenuItemImpl implements SupportMenuItem {
         if (a2 == 0) {
             return "";
         }
-        Resources resources = this.f1679a.getContext().getResources();
+        Resources resources = this.f1631a.getContext().getResources();
         StringBuilder sb = new StringBuilder();
-        if (ViewConfiguration.get(this.f1679a.getContext()).hasPermanentMenuKey()) {
+        if (ViewConfiguration.get(this.f1631a.getContext()).hasPermanentMenuKey()) {
             sb.append(resources.getString(R.string.abc_prepend_shortcut_label));
         }
-        int i = this.f1679a.isQwertyMode() ? this.l : this.j;
+        int i = this.f1631a.isQwertyMode() ? this.l : this.j;
         a(sb, i, 65536, resources.getString(R.string.abc_menu_meta_shortcut_label));
         a(sb, i, 4096, resources.getString(R.string.abc_menu_ctrl_shortcut_label));
         a(sb, i, 2, resources.getString(R.string.abc_menu_alt_shortcut_label));
@@ -212,7 +212,7 @@ public final class MenuItemImpl implements SupportMenuItem {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public boolean c() {
-        return this.f1679a.isShortcutsVisible() && a() != 0;
+        return this.f1631a.isShortcutsVisible() && a() != 0;
     }
 
     @Override // androidx.core.internal.view.SupportMenuItem, android.view.MenuItem
@@ -225,7 +225,7 @@ public final class MenuItemImpl implements SupportMenuItem {
         }
         MenuItem.OnActionExpandListener onActionExpandListener = this.C;
         if (onActionExpandListener == null || onActionExpandListener.onMenuItemActionCollapse(this)) {
-            return this.f1679a.collapseItemActionView(this);
+            return this.f1631a.collapseItemActionView(this);
         }
         return false;
     }
@@ -235,7 +235,7 @@ public final class MenuItemImpl implements SupportMenuItem {
         if (hasCollapsibleActionView()) {
             MenuItem.OnActionExpandListener onActionExpandListener = this.C;
             if (onActionExpandListener == null || onActionExpandListener.onMenuItemActionExpand(this)) {
-                return this.f1679a.expandItemActionView(this);
+                return this.f1631a.expandItemActionView(this);
             }
             return false;
         }
@@ -279,7 +279,7 @@ public final class MenuItemImpl implements SupportMenuItem {
 
     @Override // android.view.MenuItem
     public int getGroupId() {
-        return this.f1680c;
+        return this.f1632c;
     }
 
     @Override // android.view.MenuItem
@@ -289,7 +289,7 @@ public final class MenuItemImpl implements SupportMenuItem {
             return a(drawable);
         }
         if (this.n != 0) {
-            Drawable drawable2 = AppCompatResources.getDrawable(this.f1679a.getContext(), this.n);
+            Drawable drawable2 = AppCompatResources.getDrawable(this.f1631a.getContext(), this.n);
             this.n = 0;
             this.m = drawable2;
             return a(drawable2);
@@ -405,7 +405,7 @@ public final class MenuItemImpl implements SupportMenuItem {
     public boolean invoke() {
         MenuItem.OnMenuItemClickListener onMenuItemClickListener = this.q;
         if (onMenuItemClickListener == null || !onMenuItemClickListener.onMenuItemClick(this)) {
-            MenuBuilder menuBuilder = this.f1679a;
+            MenuBuilder menuBuilder = this.f1631a;
             if (menuBuilder.dispatchMenuItemSelected(menuBuilder, this)) {
                 return true;
             }
@@ -416,7 +416,7 @@ public final class MenuItemImpl implements SupportMenuItem {
             }
             if (this.h != null) {
                 try {
-                    this.f1679a.getContext().startActivity(this.h);
+                    this.f1631a.getContext().startActivity(this.h);
                     return true;
                 } catch (ActivityNotFoundException e) {
                     Log.e("MenuItemImpl", "Can't find activity to handle intent; ignoring", e);
@@ -483,7 +483,7 @@ public final class MenuItemImpl implements SupportMenuItem {
 
     @Override // androidx.core.internal.view.SupportMenuItem, android.view.MenuItem
     public SupportMenuItem setActionView(int i) {
-        Context context = this.f1679a.getContext();
+        Context context = this.f1631a.getContext();
         setActionView(LayoutInflater.from(context).inflate(i, (ViewGroup) new LinearLayout(context), false));
         return this;
     }
@@ -496,13 +496,13 @@ public final class MenuItemImpl implements SupportMenuItem {
         if (view != null && view.getId() == -1 && (i = this.b) > 0) {
             view.setId(i);
         }
-        this.f1679a.onItemActionRequestChanged(this);
+        this.f1631a.onItemActionRequestChanged(this);
         return this;
     }
 
     public void setActionViewExpanded(boolean z) {
         this.D = z;
-        this.f1679a.onItemsChanged(false);
+        this.f1631a.onItemsChanged(false);
     }
 
     @Override // android.view.MenuItem
@@ -511,7 +511,7 @@ public final class MenuItemImpl implements SupportMenuItem {
             return this;
         }
         this.k = Character.toLowerCase(c2);
-        this.f1679a.onItemsChanged(false);
+        this.f1631a.onItemsChanged(false);
         return this;
     }
 
@@ -522,7 +522,7 @@ public final class MenuItemImpl implements SupportMenuItem {
         }
         this.k = Character.toLowerCase(c2);
         this.l = KeyEvent.normalizeMetaState(i);
-        this.f1679a.onItemsChanged(false);
+        this.f1631a.onItemsChanged(false);
         return this;
     }
 
@@ -537,7 +537,7 @@ public final class MenuItemImpl implements SupportMenuItem {
         int i2 = (z ? 1 : 0) | (i & (-2));
         this.y = i2;
         if (i != i2) {
-            this.f1679a.onItemsChanged(false);
+            this.f1631a.onItemsChanged(false);
         }
         return this;
     }
@@ -545,7 +545,7 @@ public final class MenuItemImpl implements SupportMenuItem {
     @Override // android.view.MenuItem
     public MenuItem setChecked(boolean z) {
         if ((this.y & 4) != 0) {
-            this.f1679a.setExclusiveItemChecked(this);
+            this.f1631a.setExclusiveItemChecked(this);
             return this;
         }
         a(z);
@@ -555,7 +555,7 @@ public final class MenuItemImpl implements SupportMenuItem {
     @Override // androidx.core.internal.view.SupportMenuItem
     public SupportMenuItem setContentDescription(CharSequence charSequence) {
         this.r = charSequence;
-        this.f1679a.onItemsChanged(false);
+        this.f1631a.onItemsChanged(false);
         return this;
     }
 
@@ -566,7 +566,7 @@ public final class MenuItemImpl implements SupportMenuItem {
         } else {
             this.y &= -17;
         }
-        this.f1679a.onItemsChanged(false);
+        this.f1631a.onItemsChanged(false);
         return this;
     }
 
@@ -579,7 +579,7 @@ public final class MenuItemImpl implements SupportMenuItem {
         this.m = null;
         this.n = i;
         this.x = true;
-        this.f1679a.onItemsChanged(false);
+        this.f1631a.onItemsChanged(false);
         return this;
     }
 
@@ -588,7 +588,7 @@ public final class MenuItemImpl implements SupportMenuItem {
         this.n = 0;
         this.m = drawable;
         this.x = true;
-        this.f1679a.onItemsChanged(false);
+        this.f1631a.onItemsChanged(false);
         return this;
     }
 
@@ -597,7 +597,7 @@ public final class MenuItemImpl implements SupportMenuItem {
         this.t = colorStateList;
         this.v = true;
         this.x = true;
-        this.f1679a.onItemsChanged(false);
+        this.f1631a.onItemsChanged(false);
         return this;
     }
 
@@ -606,7 +606,7 @@ public final class MenuItemImpl implements SupportMenuItem {
         this.u = mode;
         this.w = true;
         this.x = true;
-        this.f1679a.onItemsChanged(false);
+        this.f1631a.onItemsChanged(false);
         return this;
     }
 
@@ -630,7 +630,7 @@ public final class MenuItemImpl implements SupportMenuItem {
             return this;
         }
         this.i = c2;
-        this.f1679a.onItemsChanged(false);
+        this.f1631a.onItemsChanged(false);
         return this;
     }
 
@@ -641,7 +641,7 @@ public final class MenuItemImpl implements SupportMenuItem {
         }
         this.i = c2;
         this.j = KeyEvent.normalizeMetaState(i);
-        this.f1679a.onItemsChanged(false);
+        this.f1631a.onItemsChanged(false);
         return this;
     }
 
@@ -661,7 +661,7 @@ public final class MenuItemImpl implements SupportMenuItem {
     public MenuItem setShortcut(char c2, char c3) {
         this.i = c2;
         this.k = Character.toLowerCase(c3);
-        this.f1679a.onItemsChanged(false);
+        this.f1631a.onItemsChanged(false);
         return this;
     }
 
@@ -671,7 +671,7 @@ public final class MenuItemImpl implements SupportMenuItem {
         this.j = KeyEvent.normalizeMetaState(i);
         this.k = Character.toLowerCase(c3);
         this.l = KeyEvent.normalizeMetaState(i2);
-        this.f1679a.onItemsChanged(false);
+        this.f1631a.onItemsChanged(false);
         return this;
     }
 
@@ -682,7 +682,7 @@ public final class MenuItemImpl implements SupportMenuItem {
             throw new IllegalArgumentException("SHOW_AS_ACTION_ALWAYS, SHOW_AS_ACTION_IF_ROOM, and SHOW_AS_ACTION_NEVER are mutually exclusive.");
         }
         this.z = i;
-        this.f1679a.onItemActionRequestChanged(this);
+        this.f1631a.onItemActionRequestChanged(this);
     }
 
     @Override // androidx.core.internal.view.SupportMenuItem, android.view.MenuItem
@@ -704,13 +704,13 @@ public final class MenuItemImpl implements SupportMenuItem {
         }
         this.A = null;
         this.B = actionProvider;
-        this.f1679a.onItemsChanged(true);
+        this.f1631a.onItemsChanged(true);
         ActionProvider actionProvider3 = this.B;
         if (actionProvider3 != null) {
             actionProvider3.setVisibilityListener(new ActionProvider.VisibilityListener() { // from class: androidx.appcompat.view.menu.MenuItemImpl.1
                 @Override // androidx.core.view.ActionProvider.VisibilityListener
                 public void onActionProviderVisibilityChanged(boolean z) {
-                    MenuItemImpl.this.f1679a.onItemVisibleChanged(MenuItemImpl.this);
+                    MenuItemImpl.this.f1631a.onItemVisibleChanged(MenuItemImpl.this);
                 }
             });
         }
@@ -719,13 +719,13 @@ public final class MenuItemImpl implements SupportMenuItem {
 
     @Override // android.view.MenuItem
     public MenuItem setTitle(int i) {
-        return setTitle(this.f1679a.getContext().getString(i));
+        return setTitle(this.f1631a.getContext().getString(i));
     }
 
     @Override // android.view.MenuItem
     public MenuItem setTitle(CharSequence charSequence) {
         this.f = charSequence;
-        this.f1679a.onItemsChanged(false);
+        this.f1631a.onItemsChanged(false);
         SubMenuBuilder subMenuBuilder = this.o;
         if (subMenuBuilder != null) {
             subMenuBuilder.setHeaderTitle(charSequence);
@@ -736,27 +736,27 @@ public final class MenuItemImpl implements SupportMenuItem {
     @Override // android.view.MenuItem
     public MenuItem setTitleCondensed(CharSequence charSequence) {
         this.g = charSequence;
-        this.f1679a.onItemsChanged(false);
+        this.f1631a.onItemsChanged(false);
         return this;
     }
 
     @Override // androidx.core.internal.view.SupportMenuItem
     public SupportMenuItem setTooltipText(CharSequence charSequence) {
         this.s = charSequence;
-        this.f1679a.onItemsChanged(false);
+        this.f1631a.onItemsChanged(false);
         return this;
     }
 
     @Override // android.view.MenuItem
     public MenuItem setVisible(boolean z) {
         if (b(z)) {
-            this.f1679a.onItemVisibleChanged(this);
+            this.f1631a.onItemVisibleChanged(this);
         }
         return this;
     }
 
     public boolean shouldShowIcon() {
-        return this.f1679a.getOptionalIconsVisible();
+        return this.f1631a.getOptionalIconsVisible();
     }
 
     public boolean showsTextAsAction() {

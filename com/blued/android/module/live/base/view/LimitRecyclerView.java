@@ -9,9 +9,7 @@ import com.blued.android.module.live.base.R;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/live/base/view/LimitRecyclerView.class */
 public class LimitRecyclerView extends RecyclerView {
-
-    /* renamed from: a  reason: collision with root package name */
-    private int f11476a;
+    private int a;
     private int b;
 
     public LimitRecyclerView(Context context) {
@@ -38,7 +36,7 @@ public class LimitRecyclerView extends RecyclerView {
             try {
                 typedArray = getContext().obtainStyledAttributes(attributeSet, R.styleable.LimitRecyclerView);
                 if (typedArray.hasValue(R.styleable.LimitRecyclerView_maxHeight)) {
-                    this.f11476a = typedArray.getDimensionPixelOffset(R.styleable.LimitRecyclerView_maxHeight, -1);
+                    this.a = typedArray.getDimensionPixelOffset(R.styleable.LimitRecyclerView_maxHeight, -1);
                 }
                 if (typedArray.hasValue(R.styleable.LimitRecyclerView_maxWidth)) {
                     typedArray3 = typedArray;
@@ -65,9 +63,8 @@ public class LimitRecyclerView extends RecyclerView {
         }
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView, android.view.View
     public void onMeasure(int i, int i2) {
-        int i3 = this.f11476a;
+        int i3 = this.a;
         if (i3 > 0) {
             i2 = View.MeasureSpec.makeMeasureSpec(i3, Integer.MIN_VALUE);
         }

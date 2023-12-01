@@ -20,11 +20,11 @@ import com.tencent.cloud.huiyansdkface.normal.tools.WLogger;
 public class HeadBorderView extends View {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final RectF f35770a = new RectF(0.0f, 0.0f, 720.0f, 1280.0f);
+    public static final RectF f22079a = new RectF(0.0f, 0.0f, 720.0f, 1280.0f);
     static float b = 1.0f;
 
     /* renamed from: c  reason: collision with root package name */
-    private static RectF f35771c;
+    private static RectF f22080c;
     private Path d;
     private Path e;
     private Paint f;
@@ -110,7 +110,7 @@ public class HeadBorderView extends View {
                 this.i.setStrokeWidth(5.0f);
                 this.i.setAlpha(180);
             }
-            canvas.drawRect(new RectF(f35771c.left, f35771c.top, f35771c.right, f35771c.bottom + 80.0f), this.i);
+            canvas.drawRect(new RectF(f22080c.left, f22080c.top, f22080c.right, f22080c.bottom + 80.0f), this.i);
             if (this.h == null) {
                 Paint paint2 = new Paint();
                 this.h = paint2;
@@ -144,7 +144,7 @@ public class HeadBorderView extends View {
         path.transform(this.j);
         path4.transform(this.j);
         RectF rectF = new RectF();
-        f35771c = rectF;
+        f22080c = rectF;
         path.computeBounds(rectF, true);
         path2.set(path4);
         path2.moveTo(0.0f, 0.0f);
@@ -200,21 +200,19 @@ public class HeadBorderView extends View {
     }
 
     public RectF getBorderRect() {
-        return f35771c;
+        return f22080c;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         System.currentTimeMillis();
         canvas.drawPath(this.d, this.f);
         canvas.drawPath(this.e, this.g);
         a(canvas);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onLayout(boolean z, int i, int i2, int i3, int i4) {
+    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         super.onLayout(z, i, i2, i3, i4);
         int width = getWidth();
         int height = getHeight();
@@ -231,9 +229,8 @@ public class HeadBorderView extends View {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         super.onMeasure(i, i2);
         int mode = View.MeasureSpec.getMode(i);
         int mode2 = View.MeasureSpec.getMode(i2);

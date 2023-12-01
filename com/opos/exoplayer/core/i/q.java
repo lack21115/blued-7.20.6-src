@@ -8,26 +8,26 @@ import java.util.Comparator;
 public class q {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Comparator<a> f25502a = new Comparator<a>() { // from class: com.opos.exoplayer.core.i.q.1
+    private static final Comparator<a> f11814a = new Comparator<a>() { // from class: com.opos.exoplayer.core.i.q.1
         @Override // java.util.Comparator
         /* renamed from: a */
         public int compare(a aVar, a aVar2) {
-            return aVar.f25504a - aVar2.f25504a;
+            return aVar.f11816a - aVar2.f11816a;
         }
     };
     private static final Comparator<a> b = new Comparator<a>() { // from class: com.opos.exoplayer.core.i.q.2
         @Override // java.util.Comparator
         /* renamed from: a */
         public int compare(a aVar, a aVar2) {
-            if (aVar.f25505c < aVar2.f25505c) {
+            if (aVar.f11817c < aVar2.f11817c) {
                 return -1;
             }
-            return aVar2.f25505c < aVar.f25505c ? 1 : 0;
+            return aVar2.f11817c < aVar.f11817c ? 1 : 0;
         }
     };
 
     /* renamed from: c  reason: collision with root package name */
-    private final int f25503c;
+    private final int f11815c;
     private int g;
     private int h;
     private int i;
@@ -40,23 +40,23 @@ public class q {
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public int f25504a;
+        public int f11816a;
         public int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public float f25505c;
+        public float f11817c;
 
         private a() {
         }
     }
 
     public q(int i) {
-        this.f25503c = i;
+        this.f11815c = i;
     }
 
     private void a() {
         if (this.f != 1) {
-            Collections.sort(this.d, f25502a);
+            Collections.sort(this.d, f11814a);
             this.f = 1;
         }
     }
@@ -76,14 +76,14 @@ public class q {
             a aVar = this.d.get(i2);
             i += aVar.b;
             if (i >= f * f2) {
-                return aVar.f25505c;
+                return aVar.f11817c;
             }
         }
         if (this.d.isEmpty()) {
             return Float.NaN;
         }
         ArrayList<a> arrayList = this.d;
-        return arrayList.get(arrayList.size() - 1).f25505c;
+        return arrayList.get(arrayList.size() - 1).f11817c;
     }
 
     public void a(int i, float f) {
@@ -102,16 +102,16 @@ public class q {
         }
         int i5 = this.g;
         this.g = i5 + 1;
-        aVar.f25504a = i5;
+        aVar.f11816a = i5;
         aVar.b = i;
-        aVar.f25505c = f;
+        aVar.f11817c = f;
         this.d.add(aVar);
         int i6 = this.h + i;
         while (true) {
             this.h = i6;
             while (true) {
                 int i7 = this.h;
-                int i8 = this.f25503c;
+                int i8 = this.f11815c;
                 if (i7 <= i8) {
                     return;
                 }

@@ -9,11 +9,11 @@ import android.os.Message;
 class co extends Handler {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ XMPushService f41672a;
+    final /* synthetic */ XMPushService f27981a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public co(XMPushService xMPushService) {
-        this.f41672a = xMPushService;
+        this.f27981a = xMPushService;
     }
 
     @Override // android.os.Handler
@@ -24,14 +24,14 @@ class co extends Handler {
                 int i = message.what;
                 if (i == 17) {
                     if (message.obj != null) {
-                        this.f41672a.onStart((Intent) message.obj, 1);
+                        this.f27981a.onStart((Intent) message.obj, 1);
                     }
                 } else if (i != 18) {
                 } else {
                     Message obtain = Message.obtain((Handler) null, 0);
                     obtain.what = 18;
                     Bundle bundle = new Bundle();
-                    bundle.putString("xmsf_region", a.a(this.f41672a.getApplicationContext()).a());
+                    bundle.putString("xmsf_region", a.a(this.f27981a.getApplicationContext()).a());
                     obtain.setData(bundle);
                     message.replyTo.send(obtain);
                 }

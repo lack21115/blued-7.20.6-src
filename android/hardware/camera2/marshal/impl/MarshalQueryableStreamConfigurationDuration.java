@@ -24,7 +24,7 @@ public class MarshalQueryableStreamConfigurationDuration implements MarshalQuery
 
         @Override // android.hardware.camera2.marshal.Marshaler
         public void marshal(StreamConfigurationDuration streamConfigurationDuration, ByteBuffer byteBuffer) {
-            byteBuffer.putLong(streamConfigurationDuration.getFormat() & 4294967295L);
+            byteBuffer.putLong(streamConfigurationDuration.getFormat() & MarshalQueryableStreamConfigurationDuration.MASK_UNSIGNED_INT);
             byteBuffer.putLong(streamConfigurationDuration.getWidth());
             byteBuffer.putLong(streamConfigurationDuration.getHeight());
             byteBuffer.putLong(streamConfigurationDuration.getDuration());

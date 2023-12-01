@@ -28,10 +28,10 @@ import org.json.JSONObject;
 public class a implements com.opos.cmn.biz.ststrategy.b.a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f24692a = a.class.getSimpleName();
+    private static final String f11004a = a.class.getSimpleName();
 
     /* renamed from: c  reason: collision with root package name */
-    private static ConcurrentHashMap<String, AtomicBoolean> f24693c = new ConcurrentHashMap<>();
+    private static ConcurrentHashMap<String, AtomicBoolean> f11005c = new ConcurrentHashMap<>();
     private static com.opos.cmn.an.j.a d = null;
     private static final byte[] e = new byte[1];
     private Context b;
@@ -53,13 +53,13 @@ public class a implements com.opos.cmn.biz.ststrategy.b.a {
                         int i2 = jSONObject.getInt("code");
                         i = i2 == 0 ? 0 : -3 != i2 ? -1 : -3;
                     } catch (JSONException e2) {
-                        com.opos.cmn.an.f.a.c(f24692a, "", e2);
+                        com.opos.cmn.an.f.a.c(f11004a, "", e2);
                         i = -1;
                     }
                 }
             }
         }
-        String str = f24692a;
+        String str = f11004a;
         StringBuilder sb = new StringBuilder();
         sb.append("isResponseOKByCode result ");
         if (i == 0) {
@@ -74,7 +74,7 @@ public class a implements com.opos.cmn.biz.ststrategy.b.a {
         try {
             return new d.a().b(str2).a(c()).a("POST").a(a(str, z)).a();
         } catch (Exception e2) {
-            com.opos.cmn.an.f.a.c(f24692a, "getSTConfigNetRequest fail", e2);
+            com.opos.cmn.an.f.a.c(f11004a, "getSTConfigNetRequest fail", e2);
             return null;
         }
     }
@@ -120,18 +120,18 @@ public class a implements com.opos.cmn.biz.ststrategy.b.a {
         if (context != null && !TextUtils.isEmpty(str)) {
             try {
             } catch (Exception e2) {
-                com.opos.cmn.an.f.a.c(f24692a, "", e2);
+                com.opos.cmn.an.f.a.c(f11004a, "", e2);
             }
             if (!b(context, str) && !c(context, str)) {
                 if (!d(context, str)) {
                     z = true;
-                    com.opos.cmn.an.f.a.b(f24692a, "isLegalReq :" + z + ",dataType :" + str);
+                    com.opos.cmn.an.f.a.b(f11004a, "isLegalReq :" + z + ",dataType :" + str);
                     return z;
                 }
             }
         }
         z = false;
-        com.opos.cmn.an.f.a.b(f24692a, "isLegalReq :" + z + ",dataType :" + str);
+        com.opos.cmn.an.f.a.b(f11004a, "isLegalReq :" + z + ",dataType :" + str);
         return z;
     }
 
@@ -141,17 +141,17 @@ public class a implements com.opos.cmn.biz.ststrategy.b.a {
         long b = com.opos.cmn.biz.ststrategy.c.d.b(this.b, str);
         long a2 = com.opos.cmn.biz.ststrategy.c.d.a(this.b);
         boolean c2 = e.c(this.b);
-        String str2 = f24692a;
+        String str2 = f11004a;
         com.opos.cmn.an.f.a.b(str2, "isStFileExists=" + c2 + ",ntLimit=" + a2 + ",lastTime=" + b + ",nowTime=" + System.currentTimeMillis());
         boolean z = (c2 && 0 != b && System.currentTimeMillis() < b + (a2 * 60000) && f.c(this.b) && f) ? false : true;
-        String str3 = f24692a;
+        String str3 = f11004a;
         com.opos.cmn.an.f.a.b(str3, "needUpdateStConfigs=" + z + ",pkgName =" + str);
         return z;
     }
 
     private byte[] a(String str, boolean z) {
         String str2;
-        com.opos.cmn.an.f.a.b(f24692a, "getReqConfigContent");
+        com.opos.cmn.an.f.a.b(f11004a, "getReqConfigContent");
         byte[] bArr = null;
         if (this.b != null) {
             bArr = null;
@@ -167,7 +167,7 @@ public class a implements com.opos.cmn.biz.ststrategy.b.a {
                     jSONObject2.put(TtmlUtils.TAG_REGION, com.opos.cmn.biz.a.d.a(this.b));
                     jSONObject2.put("brand", com.opos.cmn.biz.a.b.a(this.b));
                     if (f.b(this.b)) {
-                        jSONObject2.put("gaid", com.opos.cmn.g.a.b.g(this.b));
+                        jSONObject2.put(com.anythink.expressad.foundation.g.a.P, com.opos.cmn.g.a.b.g(this.b));
                     }
                     jSONObject2.put("duId", com.opos.cmn.g.a.b.b(this.b));
                     jSONObject2.put("ouId", com.opos.cmn.g.a.b.a(this.b));
@@ -175,7 +175,7 @@ public class a implements com.opos.cmn.biz.ststrategy.b.a {
                     jSONObject2.put("from", "client");
                     JSONObject jSONObject3 = new JSONObject();
                     if (z) {
-                        if (com.opos.cmn.biz.ststrategy.c.a.f24702c.equals(str)) {
+                        if (com.opos.cmn.biz.ststrategy.c.a.f11014c.equals(str)) {
                             str2 = com.opos.cmn.biz.ststrategy.c.a.b;
                         } else if (com.opos.cmn.biz.ststrategy.c.a.d.equals(str)) {
                             str2 = BrowserContract.AUTHORITY;
@@ -196,7 +196,7 @@ public class a implements com.opos.cmn.biz.ststrategy.b.a {
                     jSONObject.put("head", jSONObject2);
                     jSONObject.put(TtmlUtils.TAG_BODY, jSONObject3);
                     byte[] bytes = jSONObject.toString().getBytes("UTF-8");
-                    String str3 = f24692a;
+                    String str3 = f11004a;
                     StringBuilder sb = new StringBuilder();
                     sb.append("req st config content=");
                     sb.append(jSONObject.toString());
@@ -207,11 +207,11 @@ public class a implements com.opos.cmn.biz.ststrategy.b.a {
                 } catch (UnsupportedEncodingException e2) {
                     e = e2;
                     bArr = bArr2;
-                    com.opos.cmn.an.f.a.c(f24692a, "", e);
+                    com.opos.cmn.an.f.a.c(f11004a, "", e);
                     return bArr;
                 } catch (JSONException e3) {
                     e = e3;
-                    com.opos.cmn.an.f.a.c(f24692a, "", e);
+                    com.opos.cmn.an.f.a.c(f11004a, "", e);
                     return bArr;
                 }
             }
@@ -224,11 +224,11 @@ public class a implements com.opos.cmn.biz.ststrategy.b.a {
         synchronized (this) {
             if (TextUtils.isEmpty(str)) {
                 atomicBoolean = null;
-            } else if (f24693c.containsKey(str)) {
-                atomicBoolean = f24693c.get(str);
+            } else if (f11005c.containsKey(str)) {
+                atomicBoolean = f11005c.get(str);
             } else {
                 AtomicBoolean atomicBoolean2 = new AtomicBoolean(false);
-                f24693c.put(str, atomicBoolean2);
+                f11005c.put(str, atomicBoolean2);
                 atomicBoolean = atomicBoolean2;
             }
         }
@@ -244,19 +244,19 @@ public class a implements com.opos.cmn.biz.ststrategy.b.a {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void b(final String str, final UpdateSTConfigListener updateSTConfigListener) {
-        String str2 = f24692a;
+        String str2 = f11004a;
         com.opos.cmn.an.f.a.b(str2, "update STConfigs by dataType begin:" + str);
         if (TextUtils.isEmpty(str)) {
-            com.opos.cmn.an.f.a.b(f24692a, "updateSTConfigsByDataType Params dataType is null");
+            com.opos.cmn.an.f.a.b(f11004a, "updateSTConfigsByDataType Params dataType is null");
             a(updateSTConfigListener);
             return;
         }
         AtomicBoolean b = b(str);
         if (b == null || !b.compareAndSet(false, true)) {
-            com.opos.cmn.an.f.a.b(f24692a, "is initing. do nothing!!!");
+            com.opos.cmn.an.f.a.b(f11004a, "is initing. do nothing!!!");
             c(updateSTConfigListener);
         } else {
-            com.opos.cmn.an.f.a.b(f24692a, "has no initted.init!!!");
+            com.opos.cmn.an.f.a.b(f11004a, "has no initted.init!!!");
             try {
                 if (a(this.b, str)) {
                     a(str, false, new com.opos.cmn.biz.ststrategy.listener.a() { // from class: com.opos.cmn.biz.ststrategy.a.a.3
@@ -278,7 +278,7 @@ public class a implements com.opos.cmn.biz.ststrategy.b.a {
                                 long currentTimeMillis = System.currentTimeMillis();
                                 a aVar = a.this;
                                 if (aVar.e(aVar.b, str)) {
-                                    String str3 = a.f24692a;
+                                    String str3 = a.f11004a;
                                     com.opos.cmn.an.f.a.b(str3, "set first Req dataType:" + str + ",currTime=" + currentTimeMillis);
                                     com.opos.cmn.biz.ststrategy.c.d.c(a.this.b, str, currentTimeMillis);
                                 }
@@ -294,14 +294,14 @@ public class a implements com.opos.cmn.biz.ststrategy.b.a {
                 b.set(false);
             }
         }
-        String str3 = f24692a;
+        String str3 = f11004a;
         com.opos.cmn.an.f.a.b(str3, "update STConfigs by dataType end:" + str);
     }
 
     private boolean b(Context context, String str) {
         STConfigEntity a2;
         boolean z = (context == null || TextUtils.isEmpty(str) || (a2 = e.a()) == null || a2.dataEntity == null || a2.dataEntity.metaEntityMap == null || !a2.dataEntity.metaEntityMap.containsKey(str)) ? false : true;
-        String str2 = f24692a;
+        String str2 = f11004a;
         com.opos.cmn.an.f.a.b(str2, " dataType:" + str + " is included in strategy result:" + z);
         return z;
     }
@@ -310,7 +310,7 @@ public class a implements com.opos.cmn.biz.ststrategy.b.a {
         HashMap hashMap = new HashMap();
         hashMap.put("Content-type", "application/json");
         hashMap.put(HttpHeaders.ACCEPT_CHARSET, "UTF-8");
-        hashMap.put("Connection", com.anythink.expressad.foundation.g.f.g.c.f7906c);
+        hashMap.put("Connection", com.anythink.expressad.foundation.g.f.g.c.f5066c);
         hashMap.put("Route-Data", com.opos.cmn.biz.a.e.a(this.b));
         return hashMap;
     }
@@ -328,12 +328,12 @@ public class a implements com.opos.cmn.biz.ststrategy.b.a {
             long d2 = com.opos.cmn.biz.ststrategy.c.d.d(context, str);
             if (0 != d2 && System.currentTimeMillis() - d2 > com.opos.cmn.biz.ststrategy.c.d.d(context) * 60000) {
                 z = true;
-                com.opos.cmn.an.f.a.b(f24692a, "isInBlackList :" + z + ",dataType :" + str);
+                com.opos.cmn.an.f.a.b(f11004a, "isInBlackList :" + z + ",dataType :" + str);
                 return z;
             }
         }
         z = false;
-        com.opos.cmn.an.f.a.b(f24692a, "isInBlackList :" + z + ",dataType :" + str);
+        com.opos.cmn.an.f.a.b(f11004a, "isInBlackList :" + z + ",dataType :" + str);
         return z;
     }
 
@@ -341,7 +341,7 @@ public class a implements com.opos.cmn.biz.ststrategy.b.a {
         if (d == null) {
             synchronized (e) {
                 if (d == null) {
-                    d = new a.C0622a().a(1).b(1).a("cmn_strategy_single").a();
+                    d = new a.C0452a().a(1).b(1).a("cmn_strategy_single").a();
                 }
             }
         }
@@ -360,7 +360,7 @@ public class a implements com.opos.cmn.biz.ststrategy.b.a {
                         z = true;
                     }
                 }
-                com.opos.cmn.an.f.a.b(f24692a, "isWithinDTLimitTime firstInDTLimit:" + e2 + ", result :" + z);
+                com.opos.cmn.an.f.a.b(f11004a, "isWithinDTLimitTime firstInDTLimit:" + e2 + ", result :" + z);
             }
         }
         return z;
@@ -369,7 +369,7 @@ public class a implements com.opos.cmn.biz.ststrategy.b.a {
     /* JADX INFO: Access modifiers changed from: private */
     public boolean e(Context context, String str) {
         boolean z = (context == null || TextUtils.isEmpty(str) || com.opos.cmn.biz.ststrategy.c.d.d(context, str) != 0) ? false : true;
-        String str2 = f24692a;
+        String str2 = f11004a;
         com.opos.cmn.an.f.a.b(str2, "isFirstSupplyReq result:" + z);
         return z;
     }
@@ -383,18 +383,18 @@ public class a implements com.opos.cmn.biz.ststrategy.b.a {
     public void a(final UpdateParams updateParams, final UpdateSTConfigListener updateSTConfigListener) {
         String str;
         String str2;
-        com.opos.cmn.an.f.a.b(f24692a, "update STConfigs by PkgName");
+        com.opos.cmn.an.f.a.b(f11004a, "update STConfigs by PkgName");
         if (updateParams == null) {
-            str = f24692a;
+            str = f11004a;
             str2 = "update Params is null";
         } else if (!TextUtils.isEmpty(updateParams.pkgName)) {
             final AtomicBoolean b = b(updateParams.pkgName);
             if (b == null || !b.compareAndSet(false, true)) {
-                com.opos.cmn.an.f.a.b(f24692a, "is initing. do nothing!!!");
+                com.opos.cmn.an.f.a.b(f11004a, "is initing. do nothing!!!");
                 c(updateSTConfigListener);
                 return;
             }
-            com.opos.cmn.an.f.a.b(f24692a, "has no initted.init!!!");
+            com.opos.cmn.an.f.a.b(f11004a, "has no initted.init!!!");
             com.opos.cmn.an.j.b.a().execute(new Runnable() { // from class: com.opos.cmn.biz.ststrategy.a.a.1
                 @Override // java.lang.Runnable
                 public void run() {
@@ -410,7 +410,7 @@ public class a implements com.opos.cmn.biz.ststrategy.b.a {
                                 public void a(com.opos.cmn.func.b.b.e eVar) {
                                     long currentTimeMillis = System.currentTimeMillis();
                                     com.opos.cmn.biz.ststrategy.c.d.a(a.this.b, updateParams.pkgName, currentTimeMillis);
-                                    String str3 = a.f24692a;
+                                    String str3 = a.f11004a;
                                     com.opos.cmn.an.f.a.b(str3, "set pkgName:" + updateParams.pkgName + ",lastTime=" + currentTimeMillis);
                                     JSONObject a2 = e.a(a.this.b, eVar);
                                     if (a.this.a(a2) != 0 || !e.b(a.this.b, a2)) {
@@ -423,7 +423,7 @@ public class a implements com.opos.cmn.biz.ststrategy.b.a {
                                 }
                             });
                         } else {
-                            com.opos.cmn.an.f.a.b(a.f24692a, "don't need update st configs.");
+                            com.opos.cmn.an.f.a.b(a.f11004a, "don't need update st configs.");
                             a.this.c(updateSTConfigListener);
                         }
                     } finally {
@@ -433,7 +433,7 @@ public class a implements com.opos.cmn.biz.ststrategy.b.a {
             });
             return;
         } else {
-            str = f24692a;
+            str = f11004a;
             str2 = "update Params pkgName is null";
         }
         com.opos.cmn.an.f.a.b(str, str2);

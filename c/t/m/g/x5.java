@@ -6,10 +6,10 @@ import java.util.Iterator;
 public class x5 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f4060a;
+    public final String f4012a;
 
     public x5(String str) {
-        this.f4060a = a(str);
+        this.f4012a = a(str);
     }
 
     public static x5 b(String str) {
@@ -39,7 +39,7 @@ public class x5 {
         while (it.hasNext()) {
             Object next2 = it.next();
             if (next2 != null) {
-                sb.append(this.f4060a);
+                sb.append(this.f4012a);
                 sb.append(next2.toString());
             }
         }

@@ -12,7 +12,7 @@ public final class b implements com.kwad.sdk.core.webview.b.a {
     private com.kwad.sdk.core.webview.b.c nN;
     private int nQ;
     private int nR;
-    private InterfaceC0472b nT;
+    private InterfaceC0302b nT;
     private c nS = new c(this, (byte) 0);
     private Runnable nU = null;
 
@@ -24,7 +24,7 @@ public final class b implements com.kwad.sdk.core.webview.b.a {
 
     /* renamed from: com.kwad.components.ad.f.kwai.kwai.b$b  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/components/ad/f/kwai/kwai/b$b.class */
-    public interface InterfaceC0472b {
+    public interface InterfaceC0302b {
         void G(int i);
     }
 
@@ -77,9 +77,9 @@ public final class b implements com.kwad.sdk.core.webview.b.a {
     public void L(int i) {
         com.kwad.sdk.core.d.b.d("RegisterTimer", "updateTimer: " + i + ", mCallBackFunction: " + this.nN);
         if (i >= 0 && this.nN != null) {
-            InterfaceC0472b interfaceC0472b = this.nT;
-            if (interfaceC0472b != null && i == 0) {
-                interfaceC0472b.G(this.nQ);
+            InterfaceC0302b interfaceC0302b = this.nT;
+            if (interfaceC0302b != null && i == 0) {
+                interfaceC0302b.G(this.nQ);
             }
             a aVar = new a();
             aVar.nX = i;
@@ -119,8 +119,8 @@ public final class b implements com.kwad.sdk.core.webview.b.a {
         return null;
     }
 
-    public final void a(InterfaceC0472b interfaceC0472b) {
-        this.nT = interfaceC0472b;
+    public final void a(InterfaceC0302b interfaceC0302b) {
+        this.nT = interfaceC0302b;
     }
 
     public final void fc() {

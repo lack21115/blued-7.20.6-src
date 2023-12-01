@@ -10,55 +10,55 @@ import java.util.concurrent.ThreadPoolExecutor;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static com.opos.cmn.an.j.a f24579a;
+    private static com.opos.cmn.an.j.a f10892a;
     private static com.opos.cmn.an.j.a b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static com.opos.cmn.an.j.a f24580c;
+    private static com.opos.cmn.an.j.a f10893c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8303388-dex2jar.jar:com/opos/cmn/an/j/b$a.class */
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        static final com.opos.cmn.an.j.a f24581a;
+        static final com.opos.cmn.an.j.a f10894a;
         private static final int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private static final int f24582c;
+        private static final int f10895c;
         private static final int d;
 
         static {
             int availableProcessors = Runtime.getRuntime().availableProcessors();
             b = availableProcessors;
-            f24582c = Math.max(2, Math.min(availableProcessors - 1, 4));
+            f10895c = Math.max(2, Math.min(availableProcessors - 1, 4));
             d = (b * 2) + 1;
-            f24581a = new a.C0622a().a(f24582c).b(d).c(30000).a("comp_thread").a();
+            f10894a = new a.C0452a().a(f10895c).b(d).c(30000).a("comp_thread").a();
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.opos.cmn.an.j.b$b  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/opos/cmn/an/j/b$b.class */
-    public static final class C0623b {
+    public static final class C0453b {
 
         /* renamed from: a  reason: collision with root package name */
-        static com.opos.cmn.an.j.a f24585a;
+        static com.opos.cmn.an.j.a f10898a;
         static final com.opos.cmn.an.j.a b;
 
         static {
-            com.opos.cmn.an.j.a a2 = new a.C0622a().a(2).b(20).c(3000).a(new SynchronousQueue()).a("io_thread").a();
+            com.opos.cmn.an.j.a a2 = new a.C0452a().a(2).b(20).c(3000).a(new SynchronousQueue()).a("io_thread").a();
             b = a2;
             a2.setRejectedExecutionHandler(new RejectedExecutionHandler() { // from class: com.opos.cmn.an.j.b.b.1
                 @Override // java.util.concurrent.RejectedExecutionHandler
                 public void rejectedExecution(Runnable runnable, ThreadPoolExecutor threadPoolExecutor) {
                     synchronized (this) {
-                        if (C0623b.f24585a == null) {
-                            C0623b.f24585a = new a.C0622a().a(5).b(5).c(3000).a(new LinkedBlockingQueue()).a("io_backup_thread").a();
-                            C0623b.f24585a.allowCoreThreadTimeOut(true);
+                        if (C0453b.f10898a == null) {
+                            C0453b.f10898a = new a.C0452a().a(5).b(5).c(3000).a(new LinkedBlockingQueue()).a("io_backup_thread").a();
+                            C0453b.f10898a.allowCoreThreadTimeOut(true);
                         }
                     }
-                    C0623b.f24585a.execute(runnable);
+                    C0453b.f10898a.execute(runnable);
                 }
             });
         }
@@ -69,14 +69,14 @@ public class b {
     public static final class c {
 
         /* renamed from: a  reason: collision with root package name */
-        static final com.opos.cmn.an.j.a f24586a = new a.C0622a().a(1).b(1).a("single_thread").a();
+        static final com.opos.cmn.an.j.a f10899a = new a.C0452a().a(1).b(1).a("single_thread").a();
     }
 
     public static com.opos.cmn.an.j.a a() {
-        if (f24579a == null) {
-            f24579a = C0623b.b;
+        if (f10892a == null) {
+            f10892a = C0453b.b;
         }
-        return f24579a;
+        return f10892a;
     }
 
     public static void a(Runnable runnable) {
@@ -85,7 +85,7 @@ public class b {
 
     public static com.opos.cmn.an.j.a b() {
         if (b == null) {
-            b = a.f24581a;
+            b = a.f10894a;
         }
         return b;
     }
@@ -99,10 +99,10 @@ public class b {
     }
 
     public static com.opos.cmn.an.j.a c() {
-        if (f24580c == null) {
-            f24580c = c.f24586a;
+        if (f10893c == null) {
+            f10893c = c.f10899a;
         }
-        return f24580c;
+        return f10893c;
     }
 
     public static void c(Runnable runnable) {

@@ -1,7 +1,5 @@
 package com.igexin.push.c.c;
 
-import org.apache.commons.codec.CharEncoding;
-
 /* loaded from: source-7994992-dex2jar.jar:com/igexin/push/c/c/c.class */
 public abstract class c extends com.igexin.c.a.d.b {
     public static final int p = 1;
@@ -22,13 +20,13 @@ public abstract class c extends com.igexin.c.a.d.b {
         if (str.equals("UTF-8")) {
             return 1;
         }
-        if (str.equals("UTF-16")) {
+        if (str.equals(com.anythink.expressad.exoplayer.b.k)) {
             return 2;
         }
-        if (str.equals(CharEncoding.UTF_16BE)) {
+        if (str.equals("UTF-16BE")) {
             return 16;
         }
-        if (str.equals(CharEncoding.UTF_16LE)) {
+        if (str.equals("UTF-16LE")) {
             return 17;
         }
         if (str.equals("GBK")) {
@@ -65,11 +63,11 @@ public abstract class c extends com.igexin.c.a.d.b {
                         }
                         return "ISO-8859-1";
                     }
-                    return CharEncoding.UTF_16LE;
+                    return "UTF-16LE";
                 }
-                return CharEncoding.UTF_16BE;
+                return "UTF-16BE";
             }
-            str = "UTF-16";
+            str = com.anythink.expressad.exoplayer.b.k;
         }
         return str;
     }

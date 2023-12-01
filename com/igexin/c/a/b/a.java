@@ -7,15 +7,15 @@ import java.io.InputStream;
 public final class a extends InputStream {
 
     /* renamed from: a  reason: collision with root package name */
-    private InputStream f23218a;
+    private InputStream f9610a;
     private int[] b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f23219c = 0;
+    private int f9611c = 0;
     private boolean d = false;
 
     public a(InputStream inputStream) {
-        this.f23218a = inputStream;
+        this.f9610a = inputStream;
     }
 
     private void a() throws IOException {
@@ -26,7 +26,7 @@ public final class a extends InputStream {
         char[] cArr = new char[4];
         int i4 = 0;
         do {
-            int read = this.f23218a.read();
+            int read = this.f9610a.read();
             if (read == -1) {
                 if (i4 != 0) {
                     throw new IOException("Bad base64 stream");
@@ -70,7 +70,7 @@ public final class a extends InputStream {
             } else {
                 if (cArr[3] != '=') {
                     i2 = 3;
-                } else if (this.f23218a.read() != -1) {
+                } else if (this.f9610a.read() != -1) {
                     throw new IOException("Bad base64 stream");
                 } else {
                     this.d = true;
@@ -106,7 +106,7 @@ public final class a extends InputStream {
 
     @Override // java.io.InputStream, java.io.Closeable, java.lang.AutoCloseable
     public final void close() throws IOException {
-        this.f23218a.close();
+        this.f9610a.close();
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:70:0x0174, code lost:
@@ -119,7 +119,7 @@ public final class a extends InputStream {
         return -1;
      */
     /* JADX WARN: Code restructure failed: missing block: B:73:0x017e, code lost:
-        r6.f23219c = 0;
+        r6.f9611c = 0;
      */
     @Override // java.io.InputStream
     /*

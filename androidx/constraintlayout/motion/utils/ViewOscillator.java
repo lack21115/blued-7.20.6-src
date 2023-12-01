@@ -31,20 +31,20 @@ public abstract class ViewOscillator extends KeyCycleOscillator {
         float[] b = new float[1];
 
         /* renamed from: c  reason: collision with root package name */
-        protected ConstraintAttribute f2166c;
+        protected ConstraintAttribute f2118c;
 
         CustomSet() {
         }
 
         @Override // androidx.constraintlayout.core.motion.utils.KeyCycleOscillator
         public void a(Object obj) {
-            this.f2166c = (ConstraintAttribute) obj;
+            this.f2118c = (ConstraintAttribute) obj;
         }
 
         @Override // androidx.constraintlayout.motion.utils.ViewOscillator
         public void setProperty(View view, float f) {
             this.b[0] = get(f);
-            CustomSupport.setInterpolatedValue(this.f2166c, view, this.b);
+            CustomSupport.setInterpolatedValue(this.f2118c, view, this.b);
         }
     }
 
@@ -265,7 +265,7 @@ public abstract class ViewOscillator extends KeyCycleOscillator {
                 }
                 break;
             case -40300674:
-                if (str.equals("rotation")) {
+                if (str.equals(Key.ROTATION)) {
                     z = true;
                     break;
                 }

@@ -64,7 +64,7 @@ public class RecyclingImageView extends ImageView {
 
     @Override // android.widget.ImageView
     public void setImageResource(int i) {
-        if (isInEditMode() || !LoadOptions.f9592a) {
+        if (isInEditMode() || !LoadOptions.a) {
             setImageResourceInner(i);
         } else {
             setImageResourceOverload(i);

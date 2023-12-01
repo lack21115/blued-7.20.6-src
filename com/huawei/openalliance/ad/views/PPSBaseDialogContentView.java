@@ -33,11 +33,11 @@ public abstract class PPSBaseDialogContentView extends LinearLayout {
     protected View V;
 
     /* renamed from: a  reason: collision with root package name */
-    protected int f23013a;
+    protected int f9405a;
     protected int b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected Boolean f23014c;
+    protected Boolean f9406c;
     protected ViewTreeObserver.OnGlobalLayoutListener d;
     private float f;
     private int g;
@@ -178,9 +178,9 @@ public abstract class PPSBaseDialogContentView extends LinearLayout {
     protected abstract void Code();
 
     public void Code(int i2) {
-        int i3 = this.f23013a;
+        int i3 = this.f9405a;
         if (i3 > i2) {
-            this.f23013a = i3 - i2;
+            this.f9405a = i3 - i2;
         }
         int i4 = this.b;
         if (i4 > i2) {
@@ -222,17 +222,17 @@ public abstract class PPSBaseDialogContentView extends LinearLayout {
 
     public void setPaddingStart(int i2) {
         if (ay.I()) {
-            this.f23013a = 0;
+            this.f9405a = 0;
             this.b = i2;
         } else {
-            this.f23013a = i2;
+            this.f9405a = i2;
             this.b = 0;
         }
         Code();
     }
 
     public void setShowWhyThisAd(boolean z) {
-        this.f23014c = Boolean.valueOf(z);
+        this.f9406c = Boolean.valueOf(z);
     }
 
     public void setViewClickListener(gb gbVar) {

@@ -11,13 +11,9 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* renamed from: com.blued.android.module.common.adx.gdt.native.TXNativeServerAdAdapter$loadExpressAd$1  reason: invalid package */
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/adx/gdt/native/TXNativeServerAdAdapter$loadExpressAd$1.class */
 public final class TXNativeServerAdAdapter$loadExpressAd$1 extends ContinuationImpl {
-
-    /* renamed from: a  reason: collision with root package name */
-    Object f10561a;
+    Object a;
     Object b;
-
-    /* renamed from: c  reason: collision with root package name */
-    /* synthetic */ Object f10562c;
+    /* synthetic */ Object c;
     final /* synthetic */ TXNativeServerAdAdapter d;
     int e;
 
@@ -30,10 +26,10 @@ public final class TXNativeServerAdAdapter$loadExpressAd$1 extends ContinuationI
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        Object a2;
-        this.f10562c = obj;
+        Object a;
+        this.c = obj;
         this.e |= Integer.MIN_VALUE;
-        a2 = this.d.a(null, this);
-        return a2;
+        a = this.d.a(null, this);
+        return a;
     }
 }

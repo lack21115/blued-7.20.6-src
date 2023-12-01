@@ -1,19 +1,16 @@
 package com.alipay.sdk.protocol;
 
 import android.text.TextUtils;
+import com.alipay.sdk.util.i;
 import java.util.ArrayList;
 import java.util.List;
 import org.json.JSONObject;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alipay/sdk/protocol/b.class */
 public class b {
-
-    /* renamed from: a  reason: collision with root package name */
-    private a f4645a;
+    private a a;
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String[] f4646c;
+    private String[] c;
 
     public b(String str) {
         this.b = str;
@@ -21,7 +18,7 @@ public class b {
 
     public b(String str, a aVar) {
         this.b = str;
-        this.f4645a = aVar;
+        this.a = aVar;
     }
 
     public static List<b> a(JSONObject jSONObject) {
@@ -36,10 +33,10 @@ public class b {
             if (i2 >= b.length) {
                 return arrayList;
             }
-            a a2 = a.a(b[i2]);
-            if (a2 != a.None) {
-                b bVar = new b(b[i2], a2);
-                bVar.f4646c = a(b[i2]);
+            a a = a.a(b[i2]);
+            if (a != a.None) {
+                b bVar = new b(b[i2], a);
+                bVar.c = a(b[i2]);
                 arrayList.add(bVar);
             }
             i = i2 + 1;
@@ -47,13 +44,13 @@ public class b {
     }
 
     public static void a(b bVar) {
-        String[] c2 = bVar.c();
-        if (c2.length == 3 && TextUtils.equals("tid", c2[0])) {
-            com.alipay.sdk.tid.b a2 = com.alipay.sdk.tid.b.a(com.alipay.sdk.sys.b.a().b());
-            if (TextUtils.isEmpty(c2[1]) || TextUtils.isEmpty(c2[2])) {
+        String[] c = bVar.c();
+        if (c.length == 3 && TextUtils.equals("tid", c[0])) {
+            com.alipay.sdk.tid.b a = com.alipay.sdk.tid.b.a(com.alipay.sdk.sys.b.a().b());
+            if (TextUtils.isEmpty(c[1]) || TextUtils.isEmpty(c[2])) {
                 return;
             }
-            a2.a(c2[1], c2[2]);
+            a.a(c[1], c[2]);
         }
     }
 
@@ -81,7 +78,7 @@ public class b {
         if (TextUtils.isEmpty(str)) {
             return null;
         }
-        return str.split(";");
+        return str.split(i.b);
     }
 
     public String a() {
@@ -89,10 +86,10 @@ public class b {
     }
 
     public a b() {
-        return this.f4645a;
+        return this.a;
     }
 
     public String[] c() {
-        return this.f4646c;
+        return this.c;
     }
 }

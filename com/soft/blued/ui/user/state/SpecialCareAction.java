@@ -15,32 +15,32 @@ public abstract class SpecialCareAction implements UiAction {
     public static final class cancelSpecialCareUser extends SpecialCareAction {
 
         /* renamed from: a  reason: collision with root package name */
-        private final List<String> f34307a;
+        private final List<String> f20616a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public cancelSpecialCareUser(List<String> targetUid) {
+        public cancelSpecialCareUser(List<String> list) {
             super(null);
-            Intrinsics.e(targetUid, "targetUid");
-            this.f34307a = targetUid;
+            Intrinsics.e(list, "targetUid");
+            this.f20616a = list;
         }
 
         public final List<String> a() {
-            return this.f34307a;
+            return this.f20616a;
         }
 
         public boolean equals(Object obj) {
             if (this == obj) {
                 return true;
             }
-            return (obj instanceof cancelSpecialCareUser) && Intrinsics.a(this.f34307a, ((cancelSpecialCareUser) obj).f34307a);
+            return (obj instanceof cancelSpecialCareUser) && Intrinsics.a(this.f20616a, ((cancelSpecialCareUser) obj).f20616a);
         }
 
         public int hashCode() {
-            return this.f34307a.hashCode();
+            return this.f20616a.hashCode();
         }
 
         public String toString() {
-            return "cancelSpecialCareUser(targetUid=" + this.f34307a + ')';
+            return "cancelSpecialCareUser(targetUid=" + this.f20616a + ')';
         }
     }
 
@@ -49,17 +49,17 @@ public abstract class SpecialCareAction implements UiAction {
     public static final class getSpecialCareData extends SpecialCareAction {
 
         /* renamed from: a  reason: collision with root package name */
-        private final int f34308a;
+        private final int f20617a;
         private final int b;
 
         public getSpecialCareData(int i, int i2) {
             super(null);
-            this.f34308a = i;
+            this.f20617a = i;
             this.b = i2;
         }
 
         public final int a() {
-            return this.f34308a;
+            return this.f20617a;
         }
 
         public final int b() {
@@ -72,17 +72,17 @@ public abstract class SpecialCareAction implements UiAction {
             }
             if (obj instanceof getSpecialCareData) {
                 getSpecialCareData getspecialcaredata = (getSpecialCareData) obj;
-                return this.f34308a == getspecialcaredata.f34308a && this.b == getspecialcaredata.b;
+                return this.f20617a == getspecialcaredata.f20617a && this.b == getspecialcaredata.b;
             }
             return false;
         }
 
         public int hashCode() {
-            return (this.f34308a * 31) + this.b;
+            return (this.f20617a * 31) + this.b;
         }
 
         public String toString() {
-            return "getSpecialCareData(page=" + this.f34308a + ", size=" + this.b + ')';
+            return "getSpecialCareData(page=" + this.f20617a + ", size=" + this.b + ')';
         }
     }
 

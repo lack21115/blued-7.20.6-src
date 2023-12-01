@@ -9,11 +9,11 @@ import org.xmlpull.v1.XmlPullParser;
 public class g {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f41915a;
+    public String f28224a;
     private com.zk_oaction.adengine.lk_sdk.c b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f41916c;
+    private String f28225c;
     private String d;
     private String e;
     private com.zk_oaction.adengine.lk_sdk.interfaces.f f;
@@ -33,7 +33,7 @@ public class g {
     }
 
     public void a() {
-        String str = this.f41916c;
+        String str = this.f28225c;
         if (str != null) {
             com.zk_oaction.adengine.lk_sdk.interfaces.f fVar = this.b.p.get(str);
             this.f = fVar;
@@ -48,8 +48,8 @@ public class g {
     }
 
     public boolean a(XmlPullParser xmlPullParser, String str) {
-        this.f41915a = xmlPullParser.getAttributeValue(null, "action");
-        this.f41916c = xmlPullParser.getAttributeValue(null, TypedValues.AttributesType.S_TARGET);
+        this.f28224a = xmlPullParser.getAttributeValue(null, "action");
+        this.f28225c = xmlPullParser.getAttributeValue(null, TypedValues.AttributesType.S_TARGET);
         this.d = xmlPullParser.getAttributeValue(null, "property");
         this.e = xmlPullParser.getAttributeValue(null, "value");
         try {

@@ -56,7 +56,7 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
         private SubMenuBuilder mSubMenu;
 
         public ActionButtonSubmenu(Context context, SubMenuBuilder subMenuBuilder) {
-            super(context, subMenuBuilder, null, false, 16843844);
+            super(context, subMenuBuilder, null, false, R.attr.actionOverflowMenuStyle);
             boolean z;
             this.mSubMenu = subMenuBuilder;
             if (!((MenuItemImpl) subMenuBuilder.getItem()).isActionButton()) {
@@ -123,13 +123,12 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: source-4181928-dex2jar.jar:android/widget/ActionMenuPresenter$OverflowMenuButton.class */
-    public class OverflowMenuButton extends ImageButton implements ActionMenuView.ActionMenuChildView {
+    private class OverflowMenuButton extends ImageButton implements ActionMenuView.ActionMenuChildView {
         private final float[] mTempPts;
 
         public OverflowMenuButton(Context context) {
-            super(context, null, 16843510);
+            super(context, null, R.attr.actionOverflowButtonStyle);
             this.mTempPts = new float[2];
             setClickable(true);
             setFocusable(true);
@@ -209,7 +208,7 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
     /* loaded from: source-4181928-dex2jar.jar:android/widget/ActionMenuPresenter$OverflowPopup.class */
     public class OverflowPopup extends MenuPopupHelper {
         public OverflowPopup(Context context, MenuBuilder menuBuilder, View view, boolean z) {
-            super(context, menuBuilder, view, z, 16843844);
+            super(context, menuBuilder, view, z, R.attr.actionOverflowMenuStyle);
             setGravity(8388613);
             setCallback(ActionMenuPresenter.this.mPopupPresenterCallback);
         }
@@ -504,7 +503,6 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
         return false;
     }
 
-    @Override // android.view.ActionProvider.SubUiVisibilityListener
     public void onSubUiVisibilityChanged(boolean z) {
         if (z) {
             super.onSubMenuSelected(null);

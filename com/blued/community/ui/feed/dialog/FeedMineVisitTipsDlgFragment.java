@@ -21,13 +21,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/community/ui/feed/dialog/FeedMineVisitTipsDlgFragment.class */
 public final class FeedMineVisitTipsDlgFragment extends CommFullScreenDialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Context f19733a;
+    private final Context a;
     private final int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final int f19734c;
+    private final int c;
     private final IRequestHost d;
     private FragmentFeedMineVisitTipsBinding e;
     private int f;
@@ -36,9 +32,9 @@ public final class FeedMineVisitTipsDlgFragment extends CommFullScreenDialog {
     public FeedMineVisitTipsDlgFragment(Context mContext, int i, int i2, IRequestHost fragmentActive) {
         Intrinsics.e(mContext, "mContext");
         Intrinsics.e(fragmentActive, "fragmentActive");
-        this.f19733a = mContext;
+        this.a = mContext;
         this.b = i;
-        this.f19734c = i2;
+        this.c = i2;
         this.d = fragmentActive;
         this.g = true;
     }
@@ -58,12 +54,12 @@ public final class FeedMineVisitTipsDlgFragment extends CommFullScreenDialog {
         ImageView imageView5;
         ImageView imageView6;
         FrameLayout frameLayout2;
-        if (this.f19734c > FeedMethods.c(164) + StatusBarHelper.a(AppInfo.d())) {
+        if (this.c > FeedMethods.c(164) + StatusBarHelper.a(AppInfo.d())) {
             this.g = true;
-            this.f = this.f19734c - FeedMethods.c(96);
+            this.f = this.c - FeedMethods.c(96);
         } else {
             this.g = false;
-            this.f = this.f19734c + FeedMethods.c(4);
+            this.f = this.c + FeedMethods.c(4);
         }
         FragmentFeedMineVisitTipsBinding fragmentFeedMineVisitTipsBinding = this.e;
         if (fragmentFeedMineVisitTipsBinding != null && (frameLayout2 = fragmentFeedMineVisitTipsBinding.d) != null) {
@@ -74,7 +70,7 @@ public final class FeedMineVisitTipsDlgFragment extends CommFullScreenDialog {
                     imageView7.setVisibility(8);
                 }
                 FragmentFeedMineVisitTipsBinding fragmentFeedMineVisitTipsBinding3 = this.e;
-                ImageView imageView8 = fragmentFeedMineVisitTipsBinding3 == null ? null : fragmentFeedMineVisitTipsBinding3.f18874a;
+                ImageView imageView8 = fragmentFeedMineVisitTipsBinding3 == null ? null : fragmentFeedMineVisitTipsBinding3.a;
                 if (imageView8 != null) {
                     imageView8.setVisibility(0);
                 }
@@ -85,7 +81,7 @@ public final class FeedMineVisitTipsDlgFragment extends CommFullScreenDialog {
                     imageView9.setVisibility(0);
                 }
                 FragmentFeedMineVisitTipsBinding fragmentFeedMineVisitTipsBinding5 = this.e;
-                ImageView imageView10 = fragmentFeedMineVisitTipsBinding5 == null ? null : fragmentFeedMineVisitTipsBinding5.f18874a;
+                ImageView imageView10 = fragmentFeedMineVisitTipsBinding5 == null ? null : fragmentFeedMineVisitTipsBinding5.a;
                 if (imageView10 != null) {
                     imageView10.setVisibility(8);
                 }
@@ -99,9 +95,9 @@ public final class FeedMineVisitTipsDlgFragment extends CommFullScreenDialog {
             layoutParams2.leftMargin = j() - FeedMethods.c(99);
             frameLayout2.setLayoutParams(layoutParams2);
         }
-        if (CommunityManager.f19086a.a().s()) {
+        if (CommunityManager.a.a().s()) {
             FragmentFeedMineVisitTipsBinding fragmentFeedMineVisitTipsBinding6 = this.e;
-            if (fragmentFeedMineVisitTipsBinding6 != null && (imageView6 = fragmentFeedMineVisitTipsBinding6.f18875c) != null) {
+            if (fragmentFeedMineVisitTipsBinding6 != null && (imageView6 = fragmentFeedMineVisitTipsBinding6.c) != null) {
                 imageView6.setImageResource(R.drawable.feed_mine_visit_tips_bg_dark);
             }
             FragmentFeedMineVisitTipsBinding fragmentFeedMineVisitTipsBinding7 = this.e;
@@ -109,12 +105,12 @@ public final class FeedMineVisitTipsDlgFragment extends CommFullScreenDialog {
                 imageView5.setImageResource(R.drawable.feed_mine_visit_tips_arrow_up_dark);
             }
             FragmentFeedMineVisitTipsBinding fragmentFeedMineVisitTipsBinding8 = this.e;
-            if (fragmentFeedMineVisitTipsBinding8 != null && (imageView4 = fragmentFeedMineVisitTipsBinding8.f18874a) != null) {
+            if (fragmentFeedMineVisitTipsBinding8 != null && (imageView4 = fragmentFeedMineVisitTipsBinding8.a) != null) {
                 imageView4.setImageResource(R.drawable.feed_mine_visit_tips_arrow_down_dark);
             }
         } else {
             FragmentFeedMineVisitTipsBinding fragmentFeedMineVisitTipsBinding9 = this.e;
-            if (fragmentFeedMineVisitTipsBinding9 != null && (imageView3 = fragmentFeedMineVisitTipsBinding9.f18875c) != null) {
+            if (fragmentFeedMineVisitTipsBinding9 != null && (imageView3 = fragmentFeedMineVisitTipsBinding9.c) != null) {
                 imageView3.setImageResource(R.drawable.feed_mine_visit_tips_bg);
             }
             FragmentFeedMineVisitTipsBinding fragmentFeedMineVisitTipsBinding10 = this.e;
@@ -122,7 +118,7 @@ public final class FeedMineVisitTipsDlgFragment extends CommFullScreenDialog {
                 imageView2.setImageResource(R.drawable.feed_mine_visit_tips_arrow_up);
             }
             FragmentFeedMineVisitTipsBinding fragmentFeedMineVisitTipsBinding11 = this.e;
-            if (fragmentFeedMineVisitTipsBinding11 != null && (imageView = fragmentFeedMineVisitTipsBinding11.f18874a) != null) {
+            if (fragmentFeedMineVisitTipsBinding11 != null && (imageView = fragmentFeedMineVisitTipsBinding11.a) != null) {
                 imageView.setImageResource(R.drawable.feed_mine_visit_tips_arrow_down);
             }
         }
@@ -147,7 +143,7 @@ public final class FeedMineVisitTipsDlgFragment extends CommFullScreenDialog {
         return this.b;
     }
 
-    @Override // com.blued.community.ui.common.CommFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.community.ui.common.CommFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
         View onCreateView = super.onCreateView(inflater, viewGroup, bundle);
@@ -155,7 +151,7 @@ public final class FeedMineVisitTipsDlgFragment extends CommFullScreenDialog {
         return onCreateView;
     }
 
-    @Override // com.blued.community.ui.common.CommFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.community.ui.common.CommFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment
     public void onViewCreated(View view, Bundle bundle) {
         Intrinsics.e(view, "view");
         super.onViewCreated(view, bundle);

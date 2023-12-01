@@ -8,10 +8,10 @@ import java.util.ArrayList;
 public class xd extends TrailOverlayInfo implements vc {
 
     /* renamed from: a  reason: collision with root package name */
-    private TrailOverlayProvider f38111a;
+    private TrailOverlayProvider f24420a;
 
     public xd(TrailOverlayProvider trailOverlayProvider) {
-        this.f38111a = trailOverlayProvider;
+        this.f24420a = trailOverlayProvider;
         ArrayList arrayList = new ArrayList();
         arrayList.add(trailOverlayProvider.getData());
         setDataList(arrayList);
@@ -33,6 +33,6 @@ public class xd extends TrailOverlayInfo implements vc {
     }
 
     public TrailOverlayProvider a() {
-        return this.f38111a;
+        return this.f24420a;
     }
 }

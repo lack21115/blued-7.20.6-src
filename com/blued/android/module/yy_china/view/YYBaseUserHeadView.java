@@ -28,6 +28,7 @@ import com.blued.android.module.yy_china.model.YYImModel;
 import com.blued.android.module.yy_china.model.YYRoomModel;
 import com.blued.android.module.yy_china.model.YYSeatMemberModel;
 import com.bumptech.glide.request.target.SimpleTarget;
+import com.bumptech.glide.request.target.Target;
 import com.bumptech.glide.request.transition.Transition;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -35,13 +36,9 @@ import java.util.Set;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYBaseUserHeadView.class */
 public class YYBaseUserHeadView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private ViewYyUserHeadBaseLayoutBinding f18048a;
+    private ViewYyUserHeadBaseLayoutBinding a;
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f18049c;
+    private int c;
     private int d;
     private boolean e;
     private View f;
@@ -73,10 +70,10 @@ public class YYBaseUserHeadView extends FrameLayout {
         this.j = -1;
         this.k = -1;
         this.l = new int[2];
-        this.f18048a = ViewYyUserHeadBaseLayoutBinding.a(LayoutInflater.from(getContext()), this, true);
+        this.a = ViewYyUserHeadBaseLayoutBinding.a(LayoutInflater.from(getContext()), this, true);
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.YYRoomUsHeadView, i, 0);
         this.b = obtainStyledAttributes.getDimensionPixelSize(R.styleable.YYRoomUsHeadView_head_us_img_width, 0);
-        this.f18049c = obtainStyledAttributes.getDimensionPixelSize(R.styleable.YYRoomUsHeadView_head_ani_img_width, 0);
+        this.c = obtainStyledAttributes.getDimensionPixelSize(R.styleable.YYRoomUsHeadView_head_ani_img_width, 0);
         this.h = obtainStyledAttributes.getBoolean(R.styleable.YYRoomUsHeadView_is_empty_us_head, false);
         obtainStyledAttributes.recycle();
         this.d = (int) (this.b * this.g);
@@ -85,41 +82,41 @@ public class YYBaseUserHeadView extends FrameLayout {
 
     private void b() {
         if (this.b != 0) {
-            ViewGroup.LayoutParams layoutParams = this.f18048a.j.getLayoutParams();
+            ViewGroup.LayoutParams layoutParams = this.a.j.getLayoutParams();
             layoutParams.width = this.b;
             layoutParams.height = this.b;
-            this.f18048a.j.setLayoutParams(layoutParams);
-            ViewGroup.LayoutParams layoutParams2 = this.f18048a.k.getLayoutParams();
+            this.a.j.setLayoutParams(layoutParams);
+            ViewGroup.LayoutParams layoutParams2 = this.a.k.getLayoutParams();
             layoutParams2.width = this.b;
             layoutParams2.height = this.b;
-            this.f18048a.k.setLayoutParams(layoutParams2);
-            ViewGroup.LayoutParams layoutParams3 = this.f18048a.h.getLayoutParams();
+            this.a.k.setLayoutParams(layoutParams2);
+            ViewGroup.LayoutParams layoutParams3 = this.a.h.getLayoutParams();
             layoutParams3.width = this.d;
             layoutParams3.height = this.d;
-            this.f18048a.h.setLayoutParams(layoutParams3);
-            this.f18048a.b.setRadius((this.b - getResources().getDimensionPixelOffset(R.dimen.dp_2)) / 2);
-            this.f18048a.f16967a.getShapeModel().H = this.b / 2;
-            this.f18048a.f16967a.setShapeModel(this.f18048a.f16967a.getShapeModel());
-            this.f18048a.d.setRadius(this.b / 2);
+            this.a.h.setLayoutParams(layoutParams3);
+            this.a.b.setRadius((this.b - getResources().getDimensionPixelOffset(R.dimen.dp_2)) / 2);
+            this.a.a.getShapeModel().H = this.b / 2;
+            this.a.a.setShapeModel(this.a.a.getShapeModel());
+            this.a.d.setRadius(this.b / 2);
         }
-        if (this.f18049c != 0) {
-            ViewGroup.LayoutParams layoutParams4 = this.f18048a.l.getLayoutParams();
-            layoutParams4.width = this.f18049c;
-            layoutParams4.height = this.f18049c;
-            this.f18048a.l.setLayoutParams(layoutParams4);
+        if (this.c != 0) {
+            ViewGroup.LayoutParams layoutParams4 = this.a.l.getLayoutParams();
+            layoutParams4.width = this.c;
+            layoutParams4.height = this.c;
+            this.a.l.setLayoutParams(layoutParams4);
         }
     }
 
     private void b(YYSeatMemberModel yYSeatMemberModel, IRequestHost iRequestHost) {
         if (!YYRoomInfoManager.e().J()) {
-            ImageLoader.a(iRequestHost, yYSeatMemberModel.getAvatar()).b(R.drawable.user_bg_round).a(this.f18048a.g);
+            ImageLoader.a(iRequestHost, yYSeatMemberModel.getAvatar()).b(R.drawable.user_bg_round).a(this.a.g);
             c(yYSeatMemberModel, iRequestHost);
         } else if (!YYRoomInfoManager.e().g(yYSeatMemberModel.getUid()) || YYRoomInfoManager.e().h(yYSeatMemberModel.getUid())) {
-            this.f18048a.h.setVisibility(4);
-            ImageLoader.a(iRequestHost, R.drawable.icon_user_mask_with_text).b(R.drawable.user_bg_round).a(this.f18048a.g);
+            this.a.h.setVisibility(4);
+            ImageLoader.a(iRequestHost, R.drawable.icon_user_mask_with_text).b(R.drawable.user_bg_round).a(this.a.g);
         } else {
-            ImageLoader.a(iRequestHost, yYSeatMemberModel.getAvatar()).b(R.drawable.user_bg_round).a(this.f18048a.g);
-            this.f18048a.h.setVisibility(0);
+            ImageLoader.a(iRequestHost, yYSeatMemberModel.getAvatar()).b(R.drawable.user_bg_round).a(this.a.g);
+            this.a.h.setVisibility(0);
             c(yYSeatMemberModel, iRequestHost);
         }
     }
@@ -129,37 +126,36 @@ public class YYBaseUserHeadView extends FrameLayout {
         if (YYRoomInfoManager.e().b() == null || (voiceSkinInfoMode = YYRoomInfoManager.e().b().voice_skin_info) == null) {
             return;
         }
-        ImageLoader.a((IRequestHost) null, voiceSkinInfoMode.getIcon()).a(new SimpleTarget<Drawable>() { // from class: com.blued.android.module.yy_china.view.YYBaseUserHeadView.1
-            @Override // com.bumptech.glide.request.target.Target
+        ImageLoader.a((IRequestHost) null, voiceSkinInfoMode.getIcon()).a((Target<Drawable>) new SimpleTarget<Drawable>() { // from class: com.blued.android.module.yy_china.view.YYBaseUserHeadView.1
             /* renamed from: a */
             public void onResourceReady(Drawable drawable, Transition<? super Drawable> transition) {
-                YYBaseUserHeadView.this.f18048a.d.setBackgroundDrawable(drawable);
-                YYBaseUserHeadView.this.f18048a.f16968c.setBackgroundDrawable(drawable);
+                YYBaseUserHeadView.this.a.d.setBackgroundDrawable(drawable);
+                YYBaseUserHeadView.this.a.c.setBackgroundDrawable(drawable);
             }
         });
-        ImageLoader.a((IRequestHost) null, voiceSkinInfoMode.getIcon_small()).b(R.drawable.icon_apply_seat).a(this.f18048a.f);
+        ImageLoader.a((IRequestHost) null, voiceSkinInfoMode.getIcon_small()).b(R.drawable.icon_apply_seat).a(this.a.f);
     }
 
     private void c(YYSeatMemberModel yYSeatMemberModel, IRequestHost iRequestHost) {
         if (StringUtils.b(yYSeatMemberModel.avatar_frame)) {
-            this.f18048a.h.setImageResource(R.color.transparent);
+            this.a.h.setImageResource(R.color.transparent);
             return;
         }
-        ImageLoader.a(iRequestHost, this.f18048a.h);
-        ImageLoader.a(iRequestHost, yYSeatMemberModel.avatar_frame).e(StringUtils.a(yYSeatMemberModel.getUid(), 0)).g(-1).a(this.f18048a.h);
+        ImageLoader.a(iRequestHost, this.a.h);
+        ImageLoader.a(iRequestHost, yYSeatMemberModel.avatar_frame).e(StringUtils.a(yYSeatMemberModel.getUid(), 0)).g(-1).a(this.a.h);
     }
 
     public void a() {
-        this.f18048a.h.setVisibility(4);
+        this.a.h.setVisibility(4);
     }
 
     public void a(int i, int i2) {
-        ShapeHelper.a(this.f18048a.f16967a, i, i2);
+        ShapeHelper.a(this.a.a, i, i2);
     }
 
     public void a(int i, int i2, int i3, int i4) {
         try {
-            FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.f18048a.i.getLayoutParams();
+            FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.a.i.getLayoutParams();
             layoutParams.leftMargin = i;
             layoutParams.topMargin = i2;
             layoutParams.rightMargin = i3;
@@ -170,15 +166,15 @@ public class YYBaseUserHeadView extends FrameLayout {
     }
 
     public void a(IRequestHost iRequestHost, String str, String str2) {
-        ImageLoader.a(iRequestHost, this.f18048a.h);
-        ImageLoader.a(iRequestHost, str).b(R.drawable.user_bg_round).a(this.f18048a.g);
+        ImageLoader.a(iRequestHost, this.a.h);
+        ImageLoader.a(iRequestHost, str).b(R.drawable.user_bg_round).a(this.a.g);
         if (str2 == null || "".equals(str2)) {
-            this.f18048a.h.setVisibility(4);
+            this.a.h.setVisibility(4);
         } else {
-            this.f18048a.h.setVisibility(0);
-            ImageLoader.a(iRequestHost, str2).f().g(-1).a(this.f18048a.h);
+            this.a.h.setVisibility(0);
+            ImageLoader.a(iRequestHost, str2).f().g(-1).a(this.a.h);
         }
-        this.f18048a.m.setVisibility(4);
+        this.a.m.setVisibility(4);
     }
 
     public void a(IRequestHost iRequestHost, final String str, String str2, final YYImModel yYImModel) {
@@ -186,7 +182,7 @@ public class YYBaseUserHeadView extends FrameLayout {
         if (b == null) {
             return;
         }
-        this.f18048a.e.setVisibility(0);
+        this.a.e.setVisibility(0);
         ImageLoader.a(iRequestHost, str2).e(StringUtils.a(str, 4)).a().a(new ImageLoader.OnAnimationStateListener() { // from class: com.blued.android.module.yy_china.view.YYBaseUserHeadView.2
             @Override // com.blued.android.core.image.ImageLoader.OnAnimationStateListener
             public void a() {
@@ -199,45 +195,45 @@ public class YYBaseUserHeadView extends FrameLayout {
             public void b() {
                 Logger.e("timer", "onAnimationEnd ... ");
                 Logger.c("YYConnectingAdapter", "apng end ...position：" + str);
-                YYBaseUserHeadView.this.f18048a.e.setVisibility(8);
+                YYBaseUserHeadView.this.a.e.setVisibility(8);
                 if (yYImModel != null) {
                     b.removePlayingEmoji(str);
                     YYImMsgManager.a().v(yYImModel);
                 }
             }
-        }).a(this.f18048a.e);
+        }).a(this.a.e);
     }
 
     public void a(final YYSeatMemberModel yYSeatMemberModel, final IRequestHost iRequestHost) {
         if (this.i && TextUtils.equals(yYSeatMemberModel.chat_anchor, "1")) {
-            this.f18048a.m.setVisibility(0);
-            this.f18048a.m.setText(getResources().getString(R.string.yy_role_host));
+            this.a.m.setVisibility(0);
+            this.a.m.setText(getResources().getString(R.string.yy_role_host));
         } else if (this.i && TextUtils.equals(yYSeatMemberModel.chat_anchor, "2")) {
-            this.f18048a.m.setVisibility(0);
-            this.f18048a.m.setText(getResources().getString(R.string.yy_role_manager));
+            this.a.m.setVisibility(0);
+            this.a.m.setText(getResources().getString(R.string.yy_role_manager));
         } else {
-            this.f18048a.m.setVisibility(8);
+            this.a.m.setVisibility(8);
         }
         b(yYSeatMemberModel, iRequestHost);
-        this.f18048a.l.setVisibility(4);
+        this.a.l.setVisibility(4);
         if (yYSeatMemberModel.speech_ripple == null || StringUtils.b(yYSeatMemberModel.speech_ripple.getImg())) {
-            ImageLoader.c(iRequestHost, yYSeatMemberModel.isVip ? "live_talking_vip.png" : "live_talking.png").g(-1).e(StringUtils.a(yYSeatMemberModel.getUid(), 2)).a(this.f18048a.l);
+            ImageLoader.c(iRequestHost, yYSeatMemberModel.isVip ? "live_talking_vip.png" : "live_talking.png").g(-1).e(StringUtils.a(yYSeatMemberModel.getUid(), 2)).a(this.a.l);
         } else {
             String img = yYSeatMemberModel.speech_ripple.getImg();
             if (img.toLowerCase().endsWith("png")) {
-                ImageLoader.a(iRequestHost, img).f().a(this.f18048a.l);
+                ImageLoader.a(iRequestHost, img).f().a(this.a.l);
             } else {
                 try {
-                    SVGAParser.f15958a.b().a(new URL(img), new SVGAParser.ParseCompletion() { // from class: com.blued.android.module.yy_china.view.YYBaseUserHeadView.3
+                    SVGAParser.a.b().a(new URL(img), new SVGAParser.ParseCompletion() { // from class: com.blued.android.module.yy_china.view.YYBaseUserHeadView.3
                         @Override // com.blued.android.module.svgaplayer.SVGAParser.ParseCompletion
                         public void onComplete(SVGAVideoEntity sVGAVideoEntity) {
-                            YYBaseUserHeadView.this.f18048a.l.setImageDrawable(new SVGADrawable(sVGAVideoEntity));
-                            YYBaseUserHeadView.this.f18048a.l.a();
+                            YYBaseUserHeadView.this.a.l.setImageDrawable(new SVGADrawable(sVGAVideoEntity));
+                            YYBaseUserHeadView.this.a.l.a();
                         }
 
                         @Override // com.blued.android.module.svgaplayer.SVGAParser.ParseCompletion
                         public void onError() {
-                            ImageLoader.c(iRequestHost, yYSeatMemberModel.isVip ? "live_talking_vip.png" : "live_talking.png").g(-1).e(StringUtils.a(yYSeatMemberModel.getUid(), 2)).a(YYBaseUserHeadView.this.f18048a.l);
+                            ImageLoader.c(iRequestHost, yYSeatMemberModel.isVip ? "live_talking_vip.png" : "live_talking.png").g(-1).e(StringUtils.a(yYSeatMemberModel.getUid(), 2)).a(YYBaseUserHeadView.this.a.l);
                         }
                     }, (SVGAParser.PlayCallback) null);
                 } catch (MalformedURLException e) {
@@ -245,9 +241,9 @@ public class YYBaseUserHeadView extends FrameLayout {
             }
         }
         if (this.f == null) {
-            this.f = this.f18048a.d;
+            this.f = this.a.d;
         }
-        ShapeFrameLayout shapeFrameLayout = this.f18048a.f16967a;
+        ShapeFrameLayout shapeFrameLayout = this.a.a;
         int i = this.j;
         int i2 = i;
         if (i <= -1) {
@@ -261,71 +257,71 @@ public class YYBaseUserHeadView extends FrameLayout {
         ShapeHelper.a(shapeFrameLayout, i2, i4);
         int i5 = yYSeatMemberModel.position_status;
         if (i5 == -1) {
-            this.f18048a.f16967a.setVisibility(8);
-            this.f18048a.h.setVisibility(8);
-            this.f18048a.k.setVisibility(8);
-            if (this.f18048a.f16968c != null) {
-                this.f18048a.f16968c.setVisibility(0);
+            this.a.a.setVisibility(8);
+            this.a.h.setVisibility(8);
+            this.a.k.setVisibility(8);
+            if (this.a.c != null) {
+                this.a.c.setVisibility(0);
                 if (yYSeatMemberModel.isBoss) {
-                    this.f18048a.f16968c.setBackgroundResource(R.drawable.icon_yy_entertainment_empty);
+                    this.a.c.setBackgroundResource(R.drawable.icon_yy_entertainment_empty);
                 } else {
-                    ShapeHelper.b(this.f18048a.f16968c, R.color.syc_alpha_3_000000);
+                    ShapeHelper.b(this.a.c, R.color.syc_alpha_3_000000);
                 }
             }
             if (this.f != null && !yYSeatMemberModel.isVip) {
                 this.f.setVisibility(8);
             }
         } else if (i5 == 0) {
-            this.f18048a.f16967a.setVisibility(8);
-            this.f18048a.h.setVisibility(8);
-            this.f18048a.k.setVisibility(8);
-            if (this.f18048a.f16968c != null) {
-                this.f18048a.f16968c.setVisibility(8);
+            this.a.a.setVisibility(8);
+            this.a.h.setVisibility(8);
+            this.a.k.setVisibility(8);
+            if (this.a.c != null) {
+                this.a.c.setVisibility(8);
             }
             View view = this.f;
             if (view != null) {
                 view.setVisibility(0);
             }
         } else if (i5 == 1) {
-            this.f18048a.f16967a.setVisibility(0);
-            this.f18048a.h.setVisibility(0);
-            this.f18048a.k.setVisibility(0);
-            this.f18048a.i.setVisibility(this.e ? 0 : 8);
-            if (this.f18048a.f16968c != null) {
-                this.f18048a.f16968c.setVisibility(8);
+            this.a.a.setVisibility(0);
+            this.a.h.setVisibility(0);
+            this.a.k.setVisibility(0);
+            this.a.i.setVisibility(this.e ? 0 : 8);
+            if (this.a.c != null) {
+                this.a.c.setVisibility(8);
             }
             View view2 = this.f;
             if (view2 != null) {
                 view2.setVisibility(8);
             }
             if (yYSeatMemberModel.is_open_mic == 0) {
-                this.f18048a.i.setImageResource(R.drawable.icon_microphone_close);
+                this.a.i.setImageResource(R.drawable.icon_microphone_close);
             } else if (yYSeatMemberModel.is_open_mic == 1) {
-                this.f18048a.i.setImageResource(R.drawable.icon_microphone_open);
+                this.a.i.setImageResource(R.drawable.icon_microphone_open);
             } else {
-                this.f18048a.l.setVisibility(0);
-                this.f18048a.i.setImageResource(yYSeatMemberModel.isVip ? R.drawable.icon_microphone_vip_open : R.drawable.icon_microphone_connecting);
+                this.a.l.setVisibility(0);
+                this.a.i.setImageResource(yYSeatMemberModel.isVip ? R.drawable.icon_microphone_vip_open : R.drawable.icon_microphone_connecting);
             }
         }
         if (yYSeatMemberModel.isVip) {
-            this.f18048a.d.setBackgroundResource(R.drawable.icon_vip_empty);
-            this.f18048a.f.setVisibility(8);
+            this.a.d.setBackgroundResource(R.drawable.icon_vip_empty);
+            this.a.f.setVisibility(8);
         } else if (!yYSeatMemberModel.isBoss) {
             c();
         } else {
             this.f.setBackgroundResource(R.drawable.icon_yy_entertainment_empty);
             VoiceSkinInfoMode voiceSkinInfoMode = YYRoomInfoManager.e().b().voice_skin_info;
             if (voiceSkinInfoMode != null) {
-                ImageLoader.a((IRequestHost) null, voiceSkinInfoMode.getIcon_small()).b(R.drawable.icon_apply_seat).a(this.f18048a.f);
+                ImageLoader.a((IRequestHost) null, voiceSkinInfoMode.getIcon_small()).b(R.drawable.icon_apply_seat).a(this.a.f);
             } else {
-                ImageLoader.a((IRequestHost) null, R.drawable.icon_apply_seat).a(this.f18048a.f);
+                ImageLoader.a((IRequestHost) null, R.drawable.icon_apply_seat).a(this.a.f);
             }
         }
     }
 
     public void a(GetViewX_Y_W_H getViewX_Y_W_H) {
         if (this.l[0] == 0) {
-            this.f18048a.j.getLocationInWindow(this.l);
+            this.a.j.getLocationInWindow(this.l);
         }
         int[] iArr = this.l;
         if (iArr[0] != 0) {
@@ -337,20 +333,20 @@ public class YYBaseUserHeadView extends FrameLayout {
     }
 
     public void a(Set<String> set, YYSeatMemberModel yYSeatMemberModel) {
-        if (this.f18048a == null) {
+        if (this.a == null) {
             return;
         }
         if (set.contains(yYSeatMemberModel.getUid())) {
-            this.f18048a.l.setVisibility(0);
+            this.a.l.setVisibility(0);
         } else {
-            this.f18048a.l.setVisibility(4);
+            this.a.l.setVisibility(4);
         }
         int i = yYSeatMemberModel.is_open_mic;
         if (i == 1) {
-            this.f18048a.i.setImageResource(R.drawable.icon_microphone_open);
+            this.a.i.setImageResource(R.drawable.icon_microphone_open);
         } else if (i != 2) {
         } else {
-            this.f18048a.i.setImageResource(yYSeatMemberModel.isVip ? R.drawable.icon_microphone_vip_open : R.drawable.icon_microphone_connecting);
+            this.a.i.setImageResource(yYSeatMemberModel.isVip ? R.drawable.icon_microphone_vip_open : R.drawable.icon_microphone_connecting);
         }
     }
 
@@ -392,9 +388,9 @@ public class YYBaseUserHeadView extends FrameLayout {
     }
 
     public void setEmptyHead(int i) {
-        this.f18048a.g.setImageResource(i);
-        this.f18048a.h.setVisibility(4);
-        this.f18048a.m.setVisibility(4);
+        this.a.g.setImageResource(i);
+        this.a.h.setVisibility(4);
+        this.a.m.setVisibility(4);
     }
 
     public void setNoAudienceView(View view) {

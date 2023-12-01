@@ -25,7 +25,7 @@ public class HmsPushMessageService extends HmsMessageService {
             if (TextUtils.isEmpty(remoteMessage.getData())) {
                 return;
             }
-            MessageBean messageBean = new MessageBean(getApplicationContext(), "payload", remoteMessage.getData());
+            MessageBean messageBean = new MessageBean(getApplicationContext(), AssistPushConsts.MSG_TYPE_PAYLOAD, remoteMessage.getData());
             messageBean.setMessageSource(AssistPushConsts.HW_PREFIX);
             MessageManger.getInstance().addMessage(messageBean);
         } catch (Throwable th) {

@@ -14,9 +14,7 @@ import org.json.JSONArray;
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/d/c/c.class */
 public class c {
     private static volatile c b;
-
-    /* renamed from: a  reason: collision with root package name */
-    ConcurrentHashMap<String, ArrayList<String>> f5956a = new ConcurrentHashMap<>();
+    ConcurrentHashMap<String, ArrayList<String>> a = new ConcurrentHashMap<>();
 
     private c() {
     }
@@ -47,7 +45,7 @@ public class c {
                     return;
                 }
                 ab abVar = (ab) kVar;
-                ArrayList<String> arrayList = this.f5956a.get(str);
+                ArrayList<String> arrayList = this.a.get(str);
                 ArrayList<String> arrayList2 = arrayList;
                 if (arrayList == null) {
                     arrayList2 = new ArrayList<>();
@@ -66,7 +64,7 @@ public class c {
                         }
                     } catch (Exception e) {
                     }
-                    this.f5956a.put(str, arrayList2);
+                    this.a.put(str, arrayList2);
                 }
                 if (arrayList2.size() >= abVar.X()) {
                     arrayList2.remove(arrayList2.size() - 1);
@@ -78,7 +76,7 @@ public class c {
     }
 
     public final String[] a(Context context, String str) {
-        ArrayList<String> arrayList = this.f5956a.get(str);
+        ArrayList<String> arrayList = this.a.get(str);
         ArrayList<String> arrayList2 = arrayList;
         if (arrayList == null) {
             try {
@@ -104,7 +102,7 @@ public class c {
             }
         }
         if (arrayList2 != null) {
-            this.f5956a.put(str, arrayList2);
+            this.a.put(str, arrayList2);
             String[] strArr = new String[arrayList2.size()];
             arrayList2.toArray(strArr);
             return strArr;

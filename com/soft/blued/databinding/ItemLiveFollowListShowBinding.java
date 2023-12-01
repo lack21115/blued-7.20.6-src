@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemLiveFollowListShowBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29210a;
+    private final LinearLayout f15520a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29210a;
+        return this.f15520a;
     }
 }

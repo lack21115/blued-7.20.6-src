@@ -6,11 +6,11 @@ import android.opengl.GLES20;
 public final class i {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f36660a;
+    public final String f22969a;
     public final String b;
 
     public i(String str, String str2) {
-        this.f36660a = str;
+        this.f22969a = str;
         this.b = str2;
     }
 

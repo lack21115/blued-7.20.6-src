@@ -9,21 +9,17 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/LiveConnectPkUserItemBinding.class */
 public final class LiveConnectPkUserItemBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f12161a;
+    public final ImageView a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final RelativeLayout f12162c;
+    public final RelativeLayout c;
     public final TextView d;
     private final RelativeLayout e;
 
     private LiveConnectPkUserItemBinding(RelativeLayout relativeLayout, ImageView imageView, ImageView imageView2, RelativeLayout relativeLayout2, TextView textView) {
         this.e = relativeLayout;
-        this.f12161a = imageView;
+        this.a = imageView;
         this.b = imageView2;
-        this.f12162c = relativeLayout2;
+        this.c = relativeLayout2;
         this.d = textView;
     }
 
@@ -52,7 +48,6 @@ public final class LiveConnectPkUserItemBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
         return this.e;

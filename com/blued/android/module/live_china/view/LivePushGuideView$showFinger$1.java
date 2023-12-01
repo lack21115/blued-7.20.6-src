@@ -11,19 +11,15 @@ import kotlin.jvm.internal.Ref;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LivePushGuideView$showFinger$1.class */
 public final class LivePushGuideView$showFinger$1 extends AnimatorListenerAdapter {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ Ref.LongRef f14888a;
+    final /* synthetic */ Ref.LongRef a;
     final /* synthetic */ LivePushGuideView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ int f14889c;
+    final /* synthetic */ int c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public LivePushGuideView$showFinger$1(Ref.LongRef longRef, LivePushGuideView livePushGuideView, int i) {
-        this.f14888a = longRef;
+        this.a = longRef;
         this.b = livePushGuideView;
-        this.f14889c = i;
+        this.c = i;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -38,12 +34,12 @@ public final class LivePushGuideView$showFinger$1 extends AnimatorListenerAdapte
         super.onAnimationEnd(animation);
         Handler n = AppInfo.n();
         final LivePushGuideView livePushGuideView = this.b;
-        final int i = this.f14889c;
+        final int i = this.c;
         n.postDelayed(new Runnable() { // from class: com.blued.android.module.live_china.view.-$$Lambda$LivePushGuideView$showFinger$1$jexTeDSnbkudr28bfmqzDYCldng
             @Override // java.lang.Runnable
             public final void run() {
                 LivePushGuideView$showFinger$1.a(LivePushGuideView.this, i);
             }
-        }, this.f14888a.f42544a);
+        }, this.a.a);
     }
 }

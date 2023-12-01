@@ -4,26 +4,22 @@ import android.app.Dialog;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/ui/dialog/ToastDialog.class */
 public class ToastDialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Dialog f9893a;
+    private Dialog a;
     private OnFinishListener b;
 
     /* renamed from: com.blued.android.framework.ui.dialog.ToastDialog$1  reason: invalid class name */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/ui/dialog/ToastDialog$1.class */
     class AnonymousClass1 implements Runnable {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ ToastDialog f9894a;
+        final /* synthetic */ ToastDialog a;
 
         @Override // java.lang.Runnable
         public void run() {
-            if (this.f9894a.f9893a == null || !this.f9894a.f9893a.isShowing()) {
+            if (this.a.a == null || !this.a.a.isShowing()) {
                 return;
             }
-            this.f9894a.f9893a.dismiss();
-            if (this.f9894a.b != null) {
-                this.f9894a.b.a();
+            this.a.a.dismiss();
+            if (this.a.b != null) {
+                this.a.b.a();
             }
         }
     }

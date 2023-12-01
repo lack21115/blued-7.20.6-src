@@ -15,21 +15,21 @@ import java.io.InputStream;
 public class MediaStoreImageThumbLoader implements ModelLoader<Uri, InputStream> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Context f20920a;
+    private final Context f7314a;
 
     /* loaded from: source-7206380-dex2jar.jar:com/bumptech/glide/load/model/stream/MediaStoreImageThumbLoader$Factory.class */
     public static class Factory implements ModelLoaderFactory<Uri, InputStream> {
 
         /* renamed from: a  reason: collision with root package name */
-        private final Context f20921a;
+        private final Context f7315a;
 
         public Factory(Context context) {
-            this.f20921a = context;
+            this.f7315a = context;
         }
 
         @Override // com.bumptech.glide.load.model.ModelLoaderFactory
         public ModelLoader<Uri, InputStream> a(MultiModelLoaderFactory multiModelLoaderFactory) {
-            return new MediaStoreImageThumbLoader(this.f20921a);
+            return new MediaStoreImageThumbLoader(this.f7315a);
         }
 
         @Override // com.bumptech.glide.load.model.ModelLoaderFactory
@@ -38,13 +38,13 @@ public class MediaStoreImageThumbLoader implements ModelLoader<Uri, InputStream>
     }
 
     public MediaStoreImageThumbLoader(Context context) {
-        this.f20920a = context.getApplicationContext();
+        this.f7314a = context.getApplicationContext();
     }
 
     @Override // com.bumptech.glide.load.model.ModelLoader
     public ModelLoader.LoadData<InputStream> a(Uri uri, int i, int i2, Options options) {
         if (MediaStoreUtil.a(i, i2)) {
-            return new ModelLoader.LoadData<>(new ObjectKey(uri), ThumbFetcher.a(this.f20920a, uri));
+            return new ModelLoader.LoadData<>(new ObjectKey(uri), ThumbFetcher.a(this.f7314a, uri));
         }
         return null;
     }

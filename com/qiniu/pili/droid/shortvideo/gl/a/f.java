@@ -7,20 +7,20 @@ public class f extends e {
     private Surface b;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f27693c;
+    private boolean f14005c;
 
     public f(d dVar, Surface surface, boolean z) {
         super(dVar);
         a(surface);
         this.b = surface;
-        this.f27693c = z;
+        this.f14005c = z;
     }
 
     public void d() {
         a();
         Surface surface = this.b;
         if (surface != null) {
-            if (this.f27693c) {
+            if (this.f14005c) {
                 surface.release();
             }
             this.b = null;

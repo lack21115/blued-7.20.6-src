@@ -7,15 +7,15 @@ import com.bumptech.glide.util.Preconditions;
 public class SimpleResource<T> implements Resource<T> {
 
     /* renamed from: a  reason: collision with root package name */
-    protected final T f20934a;
+    protected final T f7328a;
 
     public SimpleResource(T t) {
-        this.f20934a = (T) Preconditions.a(t);
+        this.f7328a = (T) Preconditions.a(t);
     }
 
     @Override // com.bumptech.glide.load.engine.Resource
     public Class<T> a() {
-        return (Class<T>) this.f20934a.getClass();
+        return (Class<T>) this.f7328a.getClass();
     }
 
     @Override // com.bumptech.glide.load.engine.Resource
@@ -29,6 +29,6 @@ public class SimpleResource<T> implements Resource<T> {
 
     @Override // com.bumptech.glide.load.engine.Resource
     public final T f() {
-        return this.f20934a;
+        return this.f7328a;
     }
 }

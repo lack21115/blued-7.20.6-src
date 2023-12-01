@@ -2,7 +2,6 @@ package com.anythink.expressad.exoplayer.b;
 
 import android.media.AudioTrack;
 import android.os.SystemClock;
-import android.widget.ExpandableListView;
 import com.anythink.expressad.exoplayer.k.af;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -12,11 +11,11 @@ import java.lang.reflect.Method;
 final class j {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final int f7198a = 1;
+    private static final int f4359a = 1;
     private static final int b = 2;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final int f7199c = 3;
+    private static final int f4360c = 3;
     private static final long d = 5000000;
     private static final long e = 5000000;
     private static final long f = 200;
@@ -67,7 +66,7 @@ final class j {
 
     public j(a aVar) {
         this.j = (a) com.anythink.expressad.exoplayer.k.a.a(aVar);
-        if (af.f7632a >= 18) {
+        if (af.f4793a >= 18) {
             try {
                 this.u = AudioTrack.class.getMethod("getLatency", null);
             } catch (NoSuchMethodException e2) {
@@ -93,7 +92,7 @@ final class j {
     }
 
     private static boolean a(int i2) {
-        if (af.f7632a < 23) {
+        if (af.f4793a < 23) {
             return i2 == 5 || i2 == 6;
         }
         return false;
@@ -193,7 +192,7 @@ final class j {
         if (playState == 1) {
             return 0L;
         }
-        long playbackHeadPosition = ExpandableListView.PACKED_POSITION_VALUE_NULL & this.l.getPlaybackHeadPosition();
+        long playbackHeadPosition = 4294967295L & this.l.getPlaybackHeadPosition();
         long j = playbackHeadPosition;
         if (this.q) {
             if (playState == 2 && playbackHeadPosition == 0) {
@@ -201,7 +200,7 @@ final class j {
             }
             j = playbackHeadPosition + this.B;
         }
-        if (af.f7632a <= 28) {
+        if (af.f4793a <= 28) {
             if (j == 0 && this.z > 0 && playState == 3) {
                 if (this.F == com.anythink.expressad.exoplayer.b.b) {
                     this.F = SystemClock.elapsedRealtime();
@@ -285,7 +284,7 @@ final class j {
         this.n = i4;
         this.o = new i(audioTrack);
         this.p = audioTrack.getSampleRate();
-        this.q = af.f7632a < 23 && (i2 == 5 || i2 == 6);
+        this.q = af.f4793a < 23 && (i2 == 5 || i2 == 6);
         boolean b2 = af.b(i2);
         this.x = b2;
         this.r = b2 ? g(i4 / i3) : -9223372036854775807L;

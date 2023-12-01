@@ -13,9 +13,9 @@ import kotlin.sequences.Sequence;
 @Metadata
 /* loaded from: source-8756600-dex2jar.jar:androidx/core/view/MenuKt.class */
 public final class MenuKt {
-    public static final boolean contains(Menu menu, MenuItem item) {
+    public static final boolean contains(Menu menu, MenuItem menuItem) {
         Intrinsics.e(menu, "<this>");
-        Intrinsics.e(item, "item");
+        Intrinsics.e(menuItem, "item");
         int size = menu.size();
         if (size <= 0) {
             return false;
@@ -24,7 +24,7 @@ public final class MenuKt {
         while (true) {
             int i2 = i;
             int i3 = i2 + 1;
-            if (Intrinsics.a(menu.getItem(i2), item)) {
+            if (Intrinsics.a(menu.getItem(i2), menuItem)) {
                 return true;
             }
             if (i3 >= size) {
@@ -34,9 +34,9 @@ public final class MenuKt {
         }
     }
 
-    public static final void forEach(Menu menu, Function1<? super MenuItem, Unit> action) {
+    public static final void forEach(Menu menu, Function1<? super MenuItem, Unit> function1) {
         Intrinsics.e(menu, "<this>");
-        Intrinsics.e(action, "action");
+        Intrinsics.e(function1, "action");
         int size = menu.size();
         if (size <= 0) {
             return;
@@ -47,7 +47,7 @@ public final class MenuKt {
             int i3 = i2 + 1;
             MenuItem item = menu.getItem(i2);
             Intrinsics.c(item, "getItem(index)");
-            action.invoke(item);
+            function1.invoke(item);
             if (i3 >= size) {
                 return;
             }
@@ -55,9 +55,9 @@ public final class MenuKt {
         }
     }
 
-    public static final void forEachIndexed(Menu menu, Function2<? super Integer, ? super MenuItem, Unit> action) {
+    public static final void forEachIndexed(Menu menu, Function2<? super Integer, ? super MenuItem, Unit> function2) {
         Intrinsics.e(menu, "<this>");
-        Intrinsics.e(action, "action");
+        Intrinsics.e(function2, "action");
         int size = menu.size();
         if (size <= 0) {
             return;
@@ -68,7 +68,7 @@ public final class MenuKt {
             int i3 = i2 + 1;
             MenuItem item = menu.getItem(i2);
             Intrinsics.c(item, "getItem(index)");
-            action.invoke(Integer.valueOf(i2), item);
+            function2.invoke(Integer.valueOf(i2), item);
             if (i3 >= size) {
                 return;
             }
@@ -86,7 +86,6 @@ public final class MenuKt {
     public static final Sequence<MenuItem> getChildren(final Menu menu) {
         Intrinsics.e(menu, "<this>");
         return new Sequence<MenuItem>() { // from class: androidx.core.view.MenuKt$children$1
-            @Override // kotlin.sequences.Sequence
             public Iterator<MenuItem> iterator() {
                 return MenuKt.iterator(Menu.this);
             }
@@ -113,9 +112,9 @@ public final class MenuKt {
         return new MenuKt$iterator$1(menu);
     }
 
-    public static final void minusAssign(Menu menu, MenuItem item) {
+    public static final void minusAssign(Menu menu, MenuItem menuItem) {
         Intrinsics.e(menu, "<this>");
-        Intrinsics.e(item, "item");
-        menu.removeItem(item.getItemId());
+        Intrinsics.e(menuItem, "item");
+        menu.removeItem(menuItem.getItemId());
     }
 }

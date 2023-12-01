@@ -3,7 +3,6 @@ package com.meizu.cloud.pushsdk.c.a;
 import android.graphics.Bitmap;
 import android.text.TextUtils;
 import android.widget.ImageView;
-import com.alipay.sdk.util.i;
 import com.meizu.cloud.pushsdk.c.a.b;
 import com.meizu.cloud.pushsdk.c.c.b;
 import com.meizu.cloud.pushsdk.c.c.c;
@@ -24,7 +23,7 @@ import org.json.JSONObject;
 public class b<T extends b> {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23998a = b.class.getSimpleName();
+    private static final String f10387a = b.class.getSimpleName();
     private static final g w = g.a("application/json; charset=utf-8");
     private static final g x = g.a("text/x-markdown; charset=utf-8");
     private static final Object z = new Object();
@@ -43,7 +42,7 @@ public class b<T extends b> {
     private final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final com.meizu.cloud.pushsdk.c.a.d f23999c;
+    private final com.meizu.cloud.pushsdk.c.a.d f10388c;
     private final int d;
     private final String e;
     private int f;
@@ -71,7 +70,7 @@ public class b<T extends b> {
     public static /* synthetic */ class AnonymousClass2 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f24001a;
+        static final /* synthetic */ int[] f10390a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:13:0x0041 -> B:27:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:15:0x0045 -> B:25:0x001f). Please submit an issue!!! */
@@ -79,25 +78,25 @@ public class b<T extends b> {
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:19:0x004d -> B:29:0x0035). Please submit an issue!!! */
         static {
             int[] iArr = new int[e.values().length];
-            f24001a = iArr;
+            f10390a = iArr;
             try {
                 iArr[e.JSON_ARRAY.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f24001a[e.JSON_OBJECT.ordinal()] = 2;
+                f10390a[e.JSON_OBJECT.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f24001a[e.STRING.ordinal()] = 3;
+                f10390a[e.STRING.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f24001a[e.BITMAP.ordinal()] = 4;
+                f10390a[e.BITMAP.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f24001a[e.PREFETCH.ordinal()] = 5;
+                f10390a[e.PREFETCH.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
         }
@@ -108,14 +107,14 @@ public class b<T extends b> {
         private final String b;
 
         /* renamed from: c  reason: collision with root package name */
-        private Object f24003c;
+        private Object f10392c;
         private final String g;
         private final String h;
         private Executor j;
         private String k;
 
         /* renamed from: a  reason: collision with root package name */
-        private com.meizu.cloud.pushsdk.c.a.d f24002a = com.meizu.cloud.pushsdk.c.a.d.MEDIUM;
+        private com.meizu.cloud.pushsdk.c.a.d f10391a = com.meizu.cloud.pushsdk.c.a.d.MEDIUM;
         private final HashMap<String, String> d = new HashMap<>();
         private final HashMap<String, String> e = new HashMap<>();
         private final HashMap<String, String> f = new HashMap<>();
@@ -134,10 +133,10 @@ public class b<T extends b> {
 
     /* renamed from: com.meizu.cloud.pushsdk.c.a.b$b  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/meizu/cloud/pushsdk/c/a/b$b.class */
-    public static class C0606b<T extends C0606b> {
+    public static class C0436b<T extends C0436b> {
 
         /* renamed from: c  reason: collision with root package name */
-        private final String f24005c;
+        private final String f10394c;
         private Object d;
         private Bitmap.Config e;
         private int f;
@@ -147,14 +146,14 @@ public class b<T extends b> {
         private String m;
 
         /* renamed from: a  reason: collision with root package name */
-        private com.meizu.cloud.pushsdk.c.a.d f24004a = com.meizu.cloud.pushsdk.c.a.d.MEDIUM;
+        private com.meizu.cloud.pushsdk.c.a.d f10393a = com.meizu.cloud.pushsdk.c.a.d.MEDIUM;
         private final HashMap<String, String> i = new HashMap<>();
         private final HashMap<String, String> j = new HashMap<>();
         private final HashMap<String, String> k = new HashMap<>();
         private final int b = 0;
 
-        public C0606b(String str) {
-            this.f24005c = str;
+        public C0436b(String str) {
+            this.f10394c = str;
         }
 
         public T a(HashMap<String, String> hashMap) {
@@ -176,13 +175,13 @@ public class b<T extends b> {
         private final String b;
 
         /* renamed from: c  reason: collision with root package name */
-        private Object f24007c;
+        private Object f10396c;
         private Executor j;
         private String k;
         private String l;
 
         /* renamed from: a  reason: collision with root package name */
-        private com.meizu.cloud.pushsdk.c.a.d f24006a = com.meizu.cloud.pushsdk.c.a.d.MEDIUM;
+        private com.meizu.cloud.pushsdk.c.a.d f10395a = com.meizu.cloud.pushsdk.c.a.d.MEDIUM;
         private final HashMap<String, String> d = new HashMap<>();
         private final HashMap<String, String> e = new HashMap<>();
         private final HashMap<String, String> f = new HashMap<>();
@@ -217,14 +216,14 @@ public class b<T extends b> {
     public static class d<T extends d> {
 
         /* renamed from: c  reason: collision with root package name */
-        private final String f24009c;
+        private final String f10398c;
         private Object d;
         private Executor o;
         private String p;
         private String q;
 
         /* renamed from: a  reason: collision with root package name */
-        private com.meizu.cloud.pushsdk.c.a.d f24008a = com.meizu.cloud.pushsdk.c.a.d.MEDIUM;
+        private com.meizu.cloud.pushsdk.c.a.d f10397a = com.meizu.cloud.pushsdk.c.a.d.MEDIUM;
         private JSONObject e = null;
         private JSONArray f = null;
         private String g = null;
@@ -238,7 +237,7 @@ public class b<T extends b> {
         private final int b = 1;
 
         public d(String str) {
-            this.f24009c = str;
+            this.f10398c = str;
         }
 
         public T a(HashMap<String, String> hashMap) {
@@ -270,9 +269,9 @@ public class b<T extends b> {
         this.L = null;
         this.d = 1;
         this.b = 0;
-        this.f23999c = aVar.f24002a;
+        this.f10388c = aVar.f10391a;
         this.e = aVar.b;
-        this.g = aVar.f24003c;
+        this.g = aVar.f10392c;
         this.p = aVar.g;
         this.q = aVar.h;
         this.i = aVar.d;
@@ -283,7 +282,7 @@ public class b<T extends b> {
         this.K = aVar.k;
     }
 
-    public b(C0606b c0606b) {
+    public b(C0436b c0436b) {
         this.j = new HashMap<>();
         this.k = new HashMap<>();
         this.l = new HashMap<>();
@@ -297,19 +296,19 @@ public class b<T extends b> {
         this.D = 0;
         this.L = null;
         this.d = 0;
-        this.b = c0606b.b;
-        this.f23999c = c0606b.f24004a;
-        this.e = c0606b.f24005c;
-        this.g = c0606b.d;
-        this.i = c0606b.i;
-        this.F = c0606b.e;
-        this.H = c0606b.g;
-        this.G = c0606b.f;
-        this.I = c0606b.h;
-        this.m = c0606b.j;
-        this.n = c0606b.k;
-        this.J = c0606b.l;
-        this.K = c0606b.m;
+        this.b = c0436b.b;
+        this.f10388c = c0436b.f10393a;
+        this.e = c0436b.f10394c;
+        this.g = c0436b.d;
+        this.i = c0436b.i;
+        this.F = c0436b.e;
+        this.H = c0436b.g;
+        this.G = c0436b.f;
+        this.I = c0436b.h;
+        this.m = c0436b.j;
+        this.n = c0436b.k;
+        this.J = c0436b.l;
+        this.K = c0436b.m;
     }
 
     public b(c cVar) {
@@ -327,9 +326,9 @@ public class b<T extends b> {
         this.L = null;
         this.d = 2;
         this.b = 1;
-        this.f23999c = cVar.f24006a;
+        this.f10388c = cVar.f10395a;
         this.e = cVar.b;
-        this.g = cVar.f24007c;
+        this.g = cVar.f10396c;
         this.i = cVar.d;
         this.m = cVar.f;
         this.n = cVar.g;
@@ -358,8 +357,8 @@ public class b<T extends b> {
         this.L = null;
         this.d = 0;
         this.b = dVar.b;
-        this.f23999c = dVar.f24008a;
-        this.e = dVar.f24009c;
+        this.f10388c = dVar.f10397a;
+        this.e = dVar.f10398c;
         this.g = dVar.d;
         this.i = dVar.j;
         this.j = dVar.k;
@@ -385,7 +384,7 @@ public class b<T extends b> {
 
     public com.meizu.cloud.pushsdk.c.a.c a(k kVar) {
         com.meizu.cloud.pushsdk.c.a.c<Bitmap> a2;
-        int i = AnonymousClass2.f24001a[this.h.ordinal()];
+        int i = AnonymousClass2.f10390a[this.h.ordinal()];
         if (i == 1) {
             try {
                 return com.meizu.cloud.pushsdk.c.a.c.a(new JSONArray(com.meizu.cloud.pushsdk.c.g.g.a(kVar.b().a()).h()));
@@ -457,7 +456,7 @@ public class b<T extends b> {
     public String e() {
         String str = this.e;
         for (Map.Entry<String, String> entry : this.n.entrySet()) {
-            str = str.replace("{" + entry.getKey() + i.d, String.valueOf(entry.getValue()));
+            str = str.replace("{" + entry.getKey() + "}", String.valueOf(entry.getValue()));
         }
         f.a f = f.c(str).f();
         for (Map.Entry<String, String> entry2 : this.m.entrySet()) {
@@ -590,6 +589,6 @@ public class b<T extends b> {
     }
 
     public String toString() {
-        return "ANRequest{sequenceNumber='" + this.f + ", mMethod=" + this.b + ", mPriority=" + this.f23999c + ", mRequestType=" + this.d + ", mUrl=" + this.e + '}';
+        return "ANRequest{sequenceNumber='" + this.f + ", mMethod=" + this.b + ", mPriority=" + this.f10388c + ", mRequestType=" + this.d + ", mUrl=" + this.e + '}';
     }
 }

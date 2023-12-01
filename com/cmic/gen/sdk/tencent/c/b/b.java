@@ -7,11 +7,11 @@ import org.json.JSONObject;
 public class b extends g {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f21631a;
+    private String f8025a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f21632c;
+    private String f8026c;
     private String d;
     private String e;
     private String f;
@@ -24,21 +24,21 @@ public class b extends g {
 
     @Override // com.cmic.gen.sdk.tencent.c.b.g
     protected String a(String str) {
-        return this.f21631a + this.e + this.f + "iYm0HAnkxQtpvN44";
+        return this.f8025a + this.e + this.f + "iYm0HAnkxQtpvN44";
     }
 
     @Override // com.cmic.gen.sdk.tencent.c.b.g
     public JSONObject b() {
         JSONObject jSONObject = new JSONObject();
         try {
-            jSONObject.put("version", this.f21631a);
+            jSONObject.put("version", this.f8025a);
             jSONObject.put("apptype", this.b);
-            jSONObject.put("phone_ID", this.f21632c);
+            jSONObject.put("phone_ID", this.f8026c);
             jSONObject.put("certflag", this.d);
             jSONObject.put("sdkversion", this.e);
             jSONObject.put("appid", this.f);
             jSONObject.put("expandparams", "");
-            jSONObject.put("sign", this.g);
+            jSONObject.put(com.anythink.expressad.d.a.b.d, this.g);
             return jSONObject;
         } catch (JSONException e) {
             e.printStackTrace();
@@ -47,7 +47,7 @@ public class b extends g {
     }
 
     public void b(String str) {
-        this.f21631a = str;
+        this.f8025a = str;
     }
 
     public void c(String str) {
@@ -55,7 +55,7 @@ public class b extends g {
     }
 
     public void d(String str) {
-        this.f21632c = str;
+        this.f8026c = str;
     }
 
     public void e(String str) {

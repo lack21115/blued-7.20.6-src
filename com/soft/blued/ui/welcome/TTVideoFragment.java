@@ -133,7 +133,7 @@ public class TTVideoFragment extends BaseADVideoFragment {
             public void onRewardVideoCached() {
                 Log.e("drb", "Callback --> onRewardVideoCached");
                 TTVideoFragment.this.k = true;
-                DialogUtils.b(TTVideoFragment.this.f34513a);
+                DialogUtils.b(TTVideoFragment.this.f20822a);
                 TTVideoFragment.this.j.showRewardVideoAd(TTVideoFragment.this.getActivity());
             }
 
@@ -148,7 +148,6 @@ public class TTVideoFragment extends BaseADVideoFragment {
         a(this.b.third_id);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.g = getActivity();
         getActivity().overridePendingTransition(R.anim.activity_switch_none, R.anim.activity_switch_none);
@@ -156,7 +155,7 @@ public class TTVideoFragment extends BaseADVideoFragment {
         if (view == null) {
             this.h = layoutInflater.inflate(R.layout.fragment_ad_video, viewGroup, false);
             k();
-            DialogUtils.a(this.f34513a);
+            DialogUtils.a(this.f20822a);
         } else if (view.getParent() != null) {
             ((ViewGroup) this.h.getParent()).removeView(this.h);
         }

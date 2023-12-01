@@ -2,13 +2,9 @@ package com.anythink.core.common.e;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/e/am.class */
 public final class am {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final int f6645a = 1;
+    public static final int a = 1;
     public static final int b = 2;
-
-    /* renamed from: c  reason: collision with root package name */
-    public static final int f6646c = 3;
+    public static final int c = 3;
     public static final int d = 4;
     public static final int e = 5;
     public static final int f = 6;

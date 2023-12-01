@@ -44,7 +44,6 @@ public class FeedNotice extends UserBasicModel implements MultiItemEntity {
     public String timestamp;
     public int type;
 
-    @Override // com.chad.library.adapter.base.entity.MultiItemEntity
     public int getItemType() {
         int i = this.type;
         return (i == 7 || i == 8 || i == 10) ? 1 : 0;

@@ -11,13 +11,9 @@ import com.autonavi.base.amap.api.mapcore.IGLSurfaceView;
 /* renamed from: com.amap.api.col.3sl.n  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/n.class */
 public final class n extends GLSurfaceView implements IGLSurfaceView {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected boolean f5399a;
+    protected boolean a;
     private IAMapDelegate b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private GLMapRender f5400c;
+    private GLMapRender c;
 
     public n(Context context, boolean z) {
         this(context, z, (byte) 0);
@@ -26,8 +22,8 @@ public final class n extends GLSurfaceView implements IGLSurfaceView {
     private n(Context context, boolean z, byte b) {
         super(context, null);
         this.b = null;
-        this.f5400c = null;
-        this.f5399a = false;
+        this.c = null;
+        this.a = false;
         di.a(this);
         this.b = new l(this, context, z);
     }
@@ -36,14 +32,13 @@ public final class n extends GLSurfaceView implements IGLSurfaceView {
         return this.b;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.opengl.GLSurfaceView, android.view.SurfaceView, android.view.View
-    public final void onAttachedToWindow() {
+    protected final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        dy.a(dx.f4872c, "AMapGLSurfaceView onAttachedToWindow");
+        dy.a(dx.c, "AMapGLSurfaceView onAttachedToWindow");
         try {
-            if (this.f5400c != null) {
-                this.f5400c.onAttachedToWindow();
+            if (this.c != null) {
+                this.c.onAttachedToWindow();
             }
         } catch (Throwable th) {
             th.printStackTrace();
@@ -52,18 +47,17 @@ public final class n extends GLSurfaceView implements IGLSurfaceView {
         onResume();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.opengl.GLSurfaceView, android.view.SurfaceView, android.view.View
-    public final void onDetachedFromWindow() {
-        String str = dx.f4872c;
+    protected final void onDetachedFromWindow() {
+        String str = dx.c;
         dy.a(str, "AMapGLSurfaceView onDetachedFromWindow MapsInitializer.isSupportRecycleView() " + MapsInitializer.isSupportRecycleView());
         if (MapsInitializer.isSupportRecycleView()) {
             return;
         }
         onPause();
         try {
-            if (this.f5400c != null) {
-                this.f5400c.onDetachedFromWindow();
+            if (this.c != null) {
+                this.c.onDetachedFromWindow();
             }
         } catch (Throwable th) {
             th.printStackTrace();
@@ -71,15 +65,14 @@ public final class n extends GLSurfaceView implements IGLSurfaceView {
         super.onDetachedFromWindow();
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IGLSurfaceView
     public final void onDetachedGLThread() {
-        String str = dx.f4872c;
+        String str = dx.c;
         dy.a(str, "AMapGLSurfaceView onDetachedGLThread MapsInitializer.isSupportRecycleView() " + MapsInitializer.isSupportRecycleView());
         if (MapsInitializer.isSupportRecycleView()) {
             onPause();
             try {
-                if (this.f5400c != null) {
-                    this.f5400c.onDetachedFromWindow();
+                if (this.c != null) {
+                    this.c.onDetachedFromWindow();
                 }
             } catch (Throwable th) {
                 th.printStackTrace();
@@ -91,15 +84,15 @@ public final class n extends GLSurfaceView implements IGLSurfaceView {
 
     @Override // android.opengl.GLSurfaceView
     public final void onPause() {
-        String str = dx.f4872c;
-        dy.a(str, "AMapGLSurfaceView onPause mMapRender.mSurfacedestoryed " + this.f5400c.mSurfacedestoryed);
-        if (!this.f5400c.mSurfacedestoryed) {
+        String str = dx.c;
+        dy.a(str, "AMapGLSurfaceView onPause mMapRender.mSurfacedestoryed " + this.c.mSurfacedestoryed);
+        if (!this.c.mSurfacedestoryed) {
             queueEvent(new Runnable() { // from class: com.amap.api.col.3sl.n.1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    if (n.this.f5400c != null) {
+                    if (n.this.c != null) {
                         try {
-                            n.this.f5400c.onSurfaceDestory();
+                            n.this.c.onSurfaceDestory();
                         } catch (Throwable th) {
                             th.printStackTrace();
                             dw.a(th);
@@ -110,7 +103,7 @@ public final class n extends GLSurfaceView implements IGLSurfaceView {
             int i = 0;
             while (true) {
                 int i2 = i;
-                if (this.f5400c.mSurfacedestoryed || i2 >= 50) {
+                if (this.c.mSurfacedestoryed || i2 >= 50) {
                     break;
                 }
                 try {
@@ -126,7 +119,7 @@ public final class n extends GLSurfaceView implements IGLSurfaceView {
     @Override // android.opengl.GLSurfaceView
     public final void onResume() {
         super.onResume();
-        dy.a(dx.f4872c, "AMapGLSurfaceView onPause");
+        dy.a(dx.c, "AMapGLSurfaceView onPause");
     }
 
     @Override // android.view.View
@@ -140,20 +133,19 @@ public final class n extends GLSurfaceView implements IGLSurfaceView {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.SurfaceView, android.view.View
-    public final void onWindowVisibilityChanged(int i) {
+    protected final void onWindowVisibilityChanged(int i) {
         super.onWindowVisibilityChanged(i);
-        dy.a(dx.f4872c, "AMapGLSurfaceView onWindowVisibilityChanged visibility ".concat(String.valueOf(i)));
+        dy.a(dx.c, "AMapGLSurfaceView onWindowVisibilityChanged visibility ".concat(String.valueOf(i)));
         try {
             if (i == 8 || i == 4) {
-                if (this.f5400c != null) {
-                    this.f5400c.renderPause();
-                    this.f5399a = false;
+                if (this.c != null) {
+                    this.c.renderPause();
+                    this.a = false;
                 }
-            } else if (i != 0 || this.f5400c == null) {
+            } else if (i != 0 || this.c == null) {
             } else {
-                this.f5400c.renderResume();
+                this.c.renderResume();
             }
         } catch (Throwable th) {
             th.printStackTrace();
@@ -161,19 +153,17 @@ public final class n extends GLSurfaceView implements IGLSurfaceView {
         }
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IGLSurfaceView
     public final void setEGLConfigChooser(dg dgVar) {
         super.setEGLConfigChooser((GLSurfaceView.EGLConfigChooser) dgVar);
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.IGLSurfaceView
     public final void setEGLContextFactory(dh dhVar) {
         super.setEGLContextFactory((GLSurfaceView.EGLContextFactory) dhVar);
     }
 
-    @Override // android.opengl.GLSurfaceView, com.autonavi.base.amap.api.mapcore.IGLSurfaceView
+    @Override // android.opengl.GLSurfaceView
     public final void setRenderer(GLSurfaceView.Renderer renderer) {
-        this.f5400c = (GLMapRender) renderer;
+        this.c = (GLMapRender) renderer;
         super.setRenderer(renderer);
     }
 }

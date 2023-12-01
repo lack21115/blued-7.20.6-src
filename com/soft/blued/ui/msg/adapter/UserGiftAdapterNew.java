@@ -12,12 +12,12 @@ import java.util.List;
 public class UserGiftAdapterNew extends BaseQuickAdapter<GiftGivingOptionForJsonParse, BaseViewHolder> {
 
     /* renamed from: a  reason: collision with root package name */
-    public int f32196a;
+    public int f18506a;
     private IRequestHost b;
 
     public UserGiftAdapterNew(IRequestHost iRequestHost, List<GiftGivingOptionForJsonParse> list) {
         super(R.layout.item_pop_user_gift_new, list);
-        this.f32196a = 2;
+        this.f18506a = 2;
         this.b = iRequestHost;
     }
 
@@ -26,7 +26,7 @@ public class UserGiftAdapterNew extends BaseQuickAdapter<GiftGivingOptionForJson
     /* renamed from: a */
     public void convert(BaseViewHolder baseViewHolder, GiftGivingOptionForJsonParse giftGivingOptionForJsonParse) {
         GiftGivingOptionViewNew giftGivingOptionViewNew = (GiftGivingOptionViewNew) baseViewHolder.getView(R.id.gif_view);
-        giftGivingOptionViewNew.f32274a = this.f32196a;
+        giftGivingOptionViewNew.f18584a = this.f18506a;
         giftGivingOptionViewNew.a(this.b, giftGivingOptionForJsonParse, giftGivingOptionForJsonParse.chosen);
     }
 }

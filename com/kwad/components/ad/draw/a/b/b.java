@@ -27,7 +27,7 @@ public final class b extends com.kwad.components.ad.draw.kwai.a {
         }
         bVar.a(this.mWebCardClickListener);
         this.cp.a(this.df, this.bW.mRootContainer, this.bW.mAdTemplate, this.bW.mApkDownloadHelper);
-        this.cp.a((b.InterfaceC0479b) null);
+        this.cp.a((b.InterfaceC0309b) null);
     }
 
     @Override // com.kwad.sdk.mvp.Presenter

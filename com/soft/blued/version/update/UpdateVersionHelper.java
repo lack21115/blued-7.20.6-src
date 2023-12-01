@@ -9,6 +9,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import com.blued.android.core.AppInfo;
+import com.blued.android.core.net.HttpResponseHandler;
 import com.blued.android.core.ui.TerminalActivity;
 import com.blued.android.core.ui.TransparentActivity;
 import com.blued.android.framework.download.model.DownloadBaseInfo;
@@ -62,14 +63,13 @@ public class UpdateVersionHelper {
 
     public static void b(final Context context) {
         if (BluedPreferences.aC() == 1 || BluedPreferences.aD()) {
-            MineHttpUtils.a(context, "0", new BluedUIHttpResponse<BluedEntityA<DownloadBaseInfo>>() { // from class: com.soft.blued.version.update.UpdateVersionHelper.1
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
+            MineHttpUtils.a(context, "0", (HttpResponseHandler) new BluedUIHttpResponse<BluedEntityA<DownloadBaseInfo>>() { // from class: com.soft.blued.version.update.UpdateVersionHelper.1
                 /* renamed from: a */
                 public void onUIUpdate(BluedEntityA<DownloadBaseInfo> bluedEntityA) {
                     if (bluedEntityA != null) {
                         try {
                             if (bluedEntityA.hasData()) {
-                                DownloadBaseInfo downloadBaseInfo = bluedEntityA.data.get(0);
+                                DownloadBaseInfo downloadBaseInfo = (DownloadBaseInfo) bluedEntityA.data.get(0);
                                 String str = downloadBaseInfo.type;
                                 if (!TextUtils.isEmpty(downloadBaseInfo.version_code)) {
                                     BluedPreferences.I(downloadBaseInfo.version_code);
@@ -111,12 +111,12 @@ public class UpdateVersionHelper {
 
     public static void c(Context context) {
         Intent intent = new Intent("android.intent.action.VIEW");
-        intent.setData(Uri.parse(BaseConstants.MARKET_PREFIX + AppInfo.f9486a));
+        intent.setData(Uri.parse(BaseConstants.MARKET_PREFIX + AppInfo.a));
         if (intent.resolveActivity(context.getPackageManager()) != null) {
             context.startActivity(intent);
             return;
         }
-        intent.setData(Uri.parse("https://play.google.com/store/apps/details?id=" + AppInfo.f9486a));
+        intent.setData(Uri.parse("https://play.google.com/store/apps/details?id=" + AppInfo.a));
         if (intent.resolveActivity(context.getPackageManager()) != null) {
             context.startActivity(intent);
         }

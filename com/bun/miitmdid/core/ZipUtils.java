@@ -1,6 +1,5 @@
 package com.bun.miitmdid.core;
 
-import android.widget.ExpandableListView;
 import java.io.File;
 import java.io.IOException;
 import java.io.RandomAccessFile;
@@ -64,8 +63,8 @@ public class ZipUtils {
                 randomAccessFile.skipBytes(2);
                 randomAccessFile.skipBytes(2);
                 CentralDirectory centralDirectory = new CentralDirectory();
-                centralDirectory.size = Integer.reverseBytes(randomAccessFile.readInt()) & ExpandableListView.PACKED_POSITION_VALUE_NULL;
-                centralDirectory.offset = Integer.reverseBytes(randomAccessFile.readInt()) & ExpandableListView.PACKED_POSITION_VALUE_NULL;
+                centralDirectory.size = Integer.reverseBytes(randomAccessFile.readInt()) & 4294967295L;
+                centralDirectory.offset = Integer.reverseBytes(randomAccessFile.readInt()) & 4294967295L;
                 return centralDirectory;
             }
             length--;

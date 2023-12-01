@@ -3,7 +3,6 @@ package com.blued.android.module.live_china.fragment;
 import android.app.Dialog;
 import android.content.ClipData;
 import android.content.ClipboardManager;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
@@ -46,9 +45,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveVipUpgradeDialogFragment.class */
 public final class LiveVipUpgradeDialogFragment extends BaseDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f13289a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private final Lazy b = LazyKt.a(new Function0<DialogLiveVipUpgradeBinding>() { // from class: com.blued.android.module.live_china.fragment.LiveVipUpgradeDialogFragment$vb$2
         /* JADX INFO: Access modifiers changed from: package-private */
         {
@@ -61,9 +58,7 @@ public final class LiveVipUpgradeDialogFragment extends BaseDialogFragment {
             return DialogLiveVipUpgradeBinding.a(LayoutInflater.from(LiveVipUpgradeDialogFragment.this.getContext()));
         }
     });
-
-    /* renamed from: c  reason: collision with root package name */
-    private LiveVipUpgradeModel f13290c;
+    private LiveVipUpgradeModel c;
 
     @Metadata
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveVipUpgradeDialogFragment$Companion.class */
@@ -112,7 +107,7 @@ public final class LiveVipUpgradeDialogFragment extends BaseDialogFragment {
     public static final void c(LiveVipUpgradeDialogFragment this$0, View view) {
         Intrinsics.e(this$0, "this$0");
         EventTrackLive.a(LiveProtos.Event.LIVE_EXCHANGE_VIP_POP_DETAIL_CLICK, LiveRoomManager.a().e(), LiveRoomManager.a().g());
-        LiveVipDialogFragment.Companion companion = LiveVipDialogFragment.f13281a;
+        LiveVipDialogFragment.Companion companion = LiveVipDialogFragment.a;
         FragmentManager childFragmentManager = this$0.getChildFragmentManager();
         Intrinsics.c(childFragmentManager, "childFragmentManager");
         companion.a(childFragmentManager, 2);
@@ -131,11 +126,11 @@ public final class LiveVipUpgradeDialogFragment extends BaseDialogFragment {
     }
 
     private final void g() {
-        LiveVipUpgradeModel liveVipUpgradeModel = this.f13290c;
+        LiveVipUpgradeModel liveVipUpgradeModel = this.c;
         if (liveVipUpgradeModel != null) {
-            ImageLoader.a(a(), ImgURLMap.f10885a.a("live_iv_bg")).a(f().b);
-            ImageLoader.a(a(), ImgURLMap.f10885a.a("live_iv_write")).a(f().f);
-            ImageLoader.a(a(), ImgURLMap.f10885a.a("live_iv_ok")).a(f().e);
+            ImageLoader.a(a(), ImgURLMap.a.a("live_iv_bg")).a(f().b);
+            ImageLoader.a(a(), ImgURLMap.a.a("live_iv_write")).a(f().f);
+            ImageLoader.a(a(), ImgURLMap.a.a("live_iv_ok")).a(f().e);
             String a2 = Intrinsics.a(getString(R.string.live_vip_popup_text_2), (Object) liveVipUpgradeModel.getWechat());
             String a3 = Intrinsics.a(" ", (Object) getString(R.string.live_vip_popup_text_3));
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
@@ -153,7 +148,7 @@ public final class LiveVipUpgradeDialogFragment extends BaseDialogFragment {
                 }
             });
             int vip_level = liveVipUpgradeModel.getVip_level();
-            ImageLoader.a(a(), vip_level != 1 ? vip_level != 2 ? vip_level != 3 ? vip_level != 4 ? "" : ImgURLMap.f10885a.a("live_vip_level_4") : ImgURLMap.f10885a.a("live_vip_level_3") : ImgURLMap.f10885a.a("live_vip_level_2") : ImgURLMap.f10885a.a("live_vip_level_1")).a(f().d);
+            ImageLoader.a(a(), vip_level != 1 ? vip_level != 2 ? vip_level != 3 ? vip_level != 4 ? "" : ImgURLMap.a.a("live_vip_level_4") : ImgURLMap.a.a("live_vip_level_3") : ImgURLMap.a.a("live_vip_level_2") : ImgURLMap.a.a("live_vip_level_1")).a(f().d);
             f().e.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveVipUpgradeDialogFragment$Qx9ZGEeEijq2GD0raMdhh_S9p6Y
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -166,8 +161,8 @@ public final class LiveVipUpgradeDialogFragment extends BaseDialogFragment {
                     LiveVipUpgradeDialogFragment.c(LiveVipUpgradeDialogFragment.this, view);
                 }
             });
-            f().f11831c.setVisibility(0);
-            f().f11831c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveVipUpgradeDialogFragment$cBJSbzoZHtvIFHHb4ihJw__EwiQ
+            f().c.setVisibility(0);
+            f().c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveVipUpgradeDialogFragment$cBJSbzoZHtvIFHHb4ihJw__EwiQ
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     LiveVipUpgradeDialogFragment.d(LiveVipUpgradeDialogFragment.this, view);
@@ -179,9 +174,9 @@ public final class LiveVipUpgradeDialogFragment extends BaseDialogFragment {
 
     public final void d() {
         try {
-            LiveVipUpgradeModel liveVipUpgradeModel = this.f13290c;
+            LiveVipUpgradeModel liveVipUpgradeModel = this.c;
             ClipData newPlainText = ClipData.newPlainText(r0, liveVipUpgradeModel == null ? null : liveVipUpgradeModel.getWechat());
-            Object systemService = AppInfo.d().getSystemService(Context.CLIPBOARD_SERVICE);
+            Object systemService = AppInfo.d().getSystemService("clipboard");
             if (systemService == null) {
                 throw new NullPointerException("null cannot be cast to non-null type android.content.ClipboardManager");
             }
@@ -191,13 +186,12 @@ public final class LiveVipUpgradeDialogFragment extends BaseDialogFragment {
         }
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public void dismissAllowingStateLoss() {
         super.dismissAllowingStateLoss();
     }
 
     public final void e() {
-        LiveVipUpgradeModel liveVipUpgradeModel = this.f13290c;
+        LiveVipUpgradeModel liveVipUpgradeModel = this.c;
         if (liveVipUpgradeModel != null) {
             LiveRoomManager.a().p().vip_frame = liveVipUpgradeModel.getVip_frame();
             LiveRoomManager.a().p().vip_level = liveVipUpgradeModel.getVip_level();
@@ -211,7 +205,6 @@ public final class LiveVipUpgradeDialogFragment extends BaseDialogFragment {
         }, null);
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
         int i = AppInfo.l;
         Dialog dialog = new Dialog(requireActivity(), R.style.transparentFrameWindowStyleLive);
@@ -224,7 +217,7 @@ public final class LiveVipUpgradeDialogFragment extends BaseDialogFragment {
             }
         });
         dialog.requestWindowFeature(1);
-        dialog.setContentView(f().getRoot(), new ViewGroup.LayoutParams(i, -1));
+        dialog.setContentView((View) f().getRoot(), new ViewGroup.LayoutParams(i, -1));
         Window window = dialog.getWindow();
         Intrinsics.a(window);
         window.setBackgroundDrawable(new ColorDrawable(0));
@@ -242,12 +235,12 @@ public final class LiveVipUpgradeDialogFragment extends BaseDialogFragment {
         return dialog;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onDestroy() {
         super.onDestroy();
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onStart() {
         super.onStart();
         Dialog dialog = getDialog();
@@ -265,7 +258,6 @@ public final class LiveVipUpgradeDialogFragment extends BaseDialogFragment {
         window2.setAttributes(attributes);
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public void setupDialog(Dialog dialog, int i) {
         Serializable serializable;
         Intrinsics.e(dialog, "dialog");
@@ -274,7 +266,7 @@ public final class LiveVipUpgradeDialogFragment extends BaseDialogFragment {
         if (arguments == null || (serializable = arguments.getSerializable("vipModel")) == null || !(serializable instanceof LiveVipUpgradeModel)) {
             return;
         }
-        this.f13290c = (LiveVipUpgradeModel) serializable;
+        this.c = (LiveVipUpgradeModel) serializable;
         g();
     }
 }

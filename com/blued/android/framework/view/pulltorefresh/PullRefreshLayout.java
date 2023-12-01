@@ -19,13 +19,9 @@ import java.security.InvalidParameterException;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/view/pulltorefresh/PullRefreshLayout.class */
 public class PullRefreshLayout extends ViewGroup {
-
-    /* renamed from: a  reason: collision with root package name */
-    private View f10240a;
+    private View a;
     private ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private Interpolator f10241c;
+    private Interpolator c;
     private int d;
     private int e;
     private int f;
@@ -64,7 +60,7 @@ public class PullRefreshLayout extends ViewGroup {
                 int i = PullRefreshLayout.this.f;
                 int i2 = PullRefreshLayout.this.n;
                 int i3 = (int) ((i - PullRefreshLayout.this.n) * f);
-                PullRefreshLayout.this.a((i2 + i3) - PullRefreshLayout.this.f10240a.getTop(), false);
+                PullRefreshLayout.this.a((i2 + i3) - PullRefreshLayout.this.a.getTop(), false);
             }
         };
         this.t = new Animation.AnimationListener() { // from class: com.blued.android.framework.view.pulltorefresh.PullRefreshLayout.3
@@ -76,7 +72,7 @@ public class PullRefreshLayout extends ViewGroup {
                     PullRefreshLayout.this.b();
                 }
                 PullRefreshLayout pullRefreshLayout = PullRefreshLayout.this;
-                pullRefreshLayout.i = pullRefreshLayout.f10240a.getTop();
+                pullRefreshLayout.i = pullRefreshLayout.a.getTop();
             }
 
             @Override // android.view.animation.Animation.AnimationListener
@@ -100,7 +96,7 @@ public class PullRefreshLayout extends ViewGroup {
                 PullRefreshLayout.this.h.stop();
                 PullRefreshLayout.this.b.setVisibility(8);
                 PullRefreshLayout pullRefreshLayout = PullRefreshLayout.this;
-                pullRefreshLayout.i = pullRefreshLayout.f10240a.getTop();
+                pullRefreshLayout.i = pullRefreshLayout.a.getTop();
             }
 
             @Override // android.view.animation.Animation.AnimationListener
@@ -115,12 +111,12 @@ public class PullRefreshLayout extends ViewGroup {
         int integer = obtainStyledAttributes.getInteger(R.styleable.PullRefreshLayout_type, 0);
         int resourceId = obtainStyledAttributes.getResourceId(R.styleable.PullRefreshLayout_colors, R.array.progress_wheel_colors);
         obtainStyledAttributes.recycle();
-        this.f10241c = new DecelerateInterpolator(2.0f);
+        this.c = new DecelerateInterpolator(2.0f);
         this.d = ViewConfiguration.get(context).getScaledTouchSlop();
-        this.e = getResources().getInteger(17694721);
-        int a2 = a(64);
-        this.g = a2;
-        this.f = a2;
+        this.e = getResources().getInteger(com.android.internal.R.integer.config_mediumAnimTime);
+        int a = a(64);
+        this.g = a;
+        this.f = a;
         this.b = new ImageView(context);
         this.q = context.getResources().getIntArray(resourceId);
         setRefreshStyle(integer);
@@ -142,7 +138,7 @@ public class PullRefreshLayout extends ViewGroup {
     }
 
     private void a() {
-        if (this.f10240a != null || getChildCount() <= 0) {
+        if (this.a != null || getChildCount() <= 0) {
             return;
         }
         int i = 0;
@@ -153,7 +149,7 @@ public class PullRefreshLayout extends ViewGroup {
             }
             View childAt = getChildAt(i2);
             if (childAt != this.b) {
-                this.f10240a = childAt;
+                this.a = childAt;
             }
             i = i2 + 1;
         }
@@ -162,15 +158,15 @@ public class PullRefreshLayout extends ViewGroup {
     /* JADX INFO: Access modifiers changed from: private */
     public void a(float f) {
         int i = this.n;
-        a((i - ((int) (i * f))) - this.f10240a.getTop(), false);
+        a((i - ((int) (i * f))) - this.a.getTop(), false);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void a(int i, boolean z) {
         this.b.bringToFront();
-        this.f10240a.offsetTopAndBottom(i);
+        this.a.offsetTopAndBottom(i);
         this.h.c(i);
-        this.i = this.f10240a.getTop();
+        this.i = this.a.getTop();
     }
 
     private void a(MotionEvent motionEvent) {
@@ -199,7 +195,7 @@ public class PullRefreshLayout extends ViewGroup {
         this.n = this.i;
         this.r.reset();
         this.r.setDuration(this.e);
-        this.r.setInterpolator(this.f10241c);
+        this.r.setInterpolator(this.c);
         this.r.setAnimationListener(this.u);
         this.b.clearAnimation();
         this.b.startAnimation(this.r);
@@ -209,14 +205,14 @@ public class PullRefreshLayout extends ViewGroup {
         this.n = this.i;
         this.s.reset();
         this.s.setDuration(this.e);
-        this.s.setInterpolator(this.f10241c);
+        this.s.setInterpolator(this.c);
         this.s.setAnimationListener(this.t);
         this.b.clearAnimation();
         this.b.startAnimation(this.s);
     }
 
     private boolean d() {
-        return androidx.core.view.ViewCompat.canScrollVertically(this.f10240a, -1);
+        return androidx.core.view.ViewCompat.canScrollVertically(this.a, -1);
     }
 
     public int getFinalOffset() {
@@ -236,11 +232,11 @@ public class PullRefreshLayout extends ViewGroup {
                     if (i == -1) {
                         return false;
                     }
-                    float a2 = a(motionEvent, i);
-                    if (a2 == -1.0f) {
+                    float a = a(motionEvent, i);
+                    if (a == -1.0f) {
                         return false;
                     }
-                    if (a2 - this.m > this.d && !this.l) {
+                    if (a - this.m > this.d && !this.l) {
                         this.l = true;
                     }
                 } else if (actionMasked != 3) {
@@ -256,11 +252,11 @@ public class PullRefreshLayout extends ViewGroup {
             int pointerId = MotionEventCompat.getPointerId(motionEvent, 0);
             this.k = pointerId;
             this.l = false;
-            float a3 = a(motionEvent, pointerId);
-            if (a3 == -1.0f) {
+            float a2 = a(motionEvent, pointerId);
+            if (a2 == -1.0f) {
                 return false;
             }
-            this.m = a3;
+            this.m = a2;
         }
         return this.l;
     }
@@ -269,7 +265,7 @@ public class PullRefreshLayout extends ViewGroup {
     @Override // android.view.ViewGroup, android.view.View
     public void onLayout(boolean z, int i, int i2, int i3, int i4) {
         a();
-        if (this.f10240a == null) {
+        if (this.a == null) {
             return;
         }
         int measuredHeight = getMeasuredHeight();
@@ -278,7 +274,7 @@ public class PullRefreshLayout extends ViewGroup {
         int paddingTop = getPaddingTop();
         int paddingRight = getPaddingRight();
         int paddingBottom = getPaddingBottom();
-        View view = this.f10240a;
+        View view = this.a;
         int i5 = this.i;
         int i6 = (measuredWidth + paddingLeft) - paddingRight;
         int i7 = (measuredHeight + paddingTop) - paddingBottom;
@@ -291,12 +287,12 @@ public class PullRefreshLayout extends ViewGroup {
     public void onMeasure(int i, int i2) {
         super.onMeasure(i, i2);
         a();
-        if (this.f10240a == null) {
+        if (this.a == null) {
             return;
         }
         int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec((getMeasuredWidth() - getPaddingRight()) - getPaddingLeft(), 1073741824);
         int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec((getMeasuredHeight() - getPaddingTop()) - getPaddingBottom(), 1073741824);
-        this.f10240a.measure(makeMeasureSpec, makeMeasureSpec2);
+        this.a.measure(makeMeasureSpec, makeMeasureSpec2);
         this.b.measure(makeMeasureSpec, makeMeasureSpec2);
     }
 

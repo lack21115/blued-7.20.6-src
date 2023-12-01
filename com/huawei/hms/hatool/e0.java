@@ -9,24 +9,24 @@ import com.huawei.secure.android.common.encrypt.utils.EncryptUtil;
 public class e0 {
 
     /* renamed from: c  reason: collision with root package name */
-    public static e0 f22738c;
+    public static e0 f9130c;
 
     /* renamed from: a  reason: collision with root package name */
-    public String f22739a;
+    public String f9131a;
     public String b;
 
     public static e0 f() {
-        if (f22738c == null) {
+        if (f9130c == null) {
             g();
         }
-        return f22738c;
+        return f9130c;
     }
 
     public static void g() {
         synchronized (e0.class) {
             try {
-                if (f22738c == null) {
-                    f22738c = new e0();
+                if (f9130c == null) {
+                    f9130c = new e0();
                 }
             } catch (Throwable th) {
                 throw th;
@@ -35,10 +35,10 @@ public class e0 {
     }
 
     public String a() {
-        if (TextUtils.isEmpty(this.f22739a)) {
-            this.f22739a = c();
+        if (TextUtils.isEmpty(this.f9131a)) {
+            this.f9131a = c();
         }
-        return this.f22739a;
+        return this.f9131a;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:11:0x004a, code lost:
@@ -122,7 +122,7 @@ public class e0 {
     public void b() {
         String generateSecureRandomStr = EncryptUtil.generateSecureRandomStr(16);
         if (c(b(generateSecureRandomStr))) {
-            this.f22739a = generateSecureRandomStr;
+            this.f9131a = generateSecureRandomStr;
         }
     }
 

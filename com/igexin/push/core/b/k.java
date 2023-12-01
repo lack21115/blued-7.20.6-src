@@ -6,7 +6,7 @@ import com.igexin.push.extension.mod.BaseActionBean;
 public final class k extends BaseActionBean {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f23446a;
+    public String f9838a;
     public String b;
     public String i;
     public int m;
@@ -16,7 +16,7 @@ public final class k extends BaseActionBean {
     public long s;
 
     /* renamed from: c  reason: collision with root package name */
-    public boolean f23447c = true;
+    public boolean f9839c = true;
     public boolean d = true;
     public boolean e = true;
     public String f = null;
@@ -125,7 +125,7 @@ public final class k extends BaseActionBean {
     }
 
     private void d(boolean z) {
-        this.f23447c = z;
+        this.f9839c = z;
     }
 
     private int e() {
@@ -169,7 +169,7 @@ public final class k extends BaseActionBean {
     }
 
     private void g(String str) {
-        this.f23446a = str;
+        this.f9838a = str;
     }
 
     private void h(int i) {
@@ -237,7 +237,7 @@ public final class k extends BaseActionBean {
     }
 
     private String o() {
-        return this.f23446a;
+        return this.f9838a;
     }
 
     private String p() {
@@ -277,7 +277,7 @@ public final class k extends BaseActionBean {
     }
 
     private boolean y() {
-        return this.f23447c;
+        return this.f9839c;
     }
 
     private boolean z() {

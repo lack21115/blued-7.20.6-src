@@ -174,9 +174,8 @@ public final class AnimatorSet extends Animator {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: source-9557208-dex2jar.jar:android/animation/AnimatorSet$DependencyListener.class */
-    public static class DependencyListener implements Animator.AnimatorListener {
+    private static class DependencyListener implements Animator.AnimatorListener {
         private AnimatorSet mAnimatorSet;
         private Node mNode;
         private int mRule;

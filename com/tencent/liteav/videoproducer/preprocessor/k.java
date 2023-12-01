@@ -8,11 +8,11 @@ import java.util.List;
 public final /* synthetic */ class k implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final h f37075a;
+    private final h f23384a;
     private final List b;
 
     private k(h hVar, List list) {
-        this.f37075a = hVar;
+        this.f23384a = hVar;
         this.b = list;
     }
 
@@ -22,7 +22,7 @@ public final /* synthetic */ class k implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        h hVar = this.f37075a;
+        h hVar = this.f23384a;
         List<com.tencent.liteav.beauty.b.o> list = this.b;
         if (list == null || list.isEmpty()) {
             hVar.c(h.b.e);
@@ -31,6 +31,6 @@ public final /* synthetic */ class k implements Runnable {
         com.tencent.liteav.beauty.b.n nVar = (com.tencent.liteav.beauty.b.n) hVar.a(h.b.e);
         nVar.enableWatermark(true);
         nVar.setWaterMarkList(list);
-        com.tencent.liteav.beauty.a.h(hVar.f37065a);
+        com.tencent.liteav.beauty.a.h(hVar.f23374a);
     }
 }

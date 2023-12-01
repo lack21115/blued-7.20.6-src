@@ -21,22 +21,22 @@ import java.util.Set;
 public class UriLoader<Data> implements ModelLoader<Uri, Data> {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Set<String> f20912a = Collections.unmodifiableSet(new HashSet(Arrays.asList(ContentResolver.SCHEME_FILE, ContentResolver.SCHEME_ANDROID_RESOURCE, "content")));
+    private static final Set<String> f7306a = Collections.unmodifiableSet(new HashSet(Arrays.asList(ContentResolver.SCHEME_FILE, ContentResolver.SCHEME_ANDROID_RESOURCE, "content")));
     private final LocalUriFetcherFactory<Data> b;
 
     /* loaded from: source-7206380-dex2jar.jar:com/bumptech/glide/load/model/UriLoader$AssetFileDescriptorFactory.class */
     public static final class AssetFileDescriptorFactory implements ModelLoaderFactory<Uri, AssetFileDescriptor>, LocalUriFetcherFactory<AssetFileDescriptor> {
 
         /* renamed from: a  reason: collision with root package name */
-        private final ContentResolver f20913a;
+        private final ContentResolver f7307a;
 
         public AssetFileDescriptorFactory(ContentResolver contentResolver) {
-            this.f20913a = contentResolver;
+            this.f7307a = contentResolver;
         }
 
         @Override // com.bumptech.glide.load.model.UriLoader.LocalUriFetcherFactory
         public DataFetcher<AssetFileDescriptor> a(Uri uri) {
-            return new AssetFileDescriptorLocalUriFetcher(this.f20913a, uri);
+            return new AssetFileDescriptorLocalUriFetcher(this.f7307a, uri);
         }
 
         @Override // com.bumptech.glide.load.model.ModelLoaderFactory
@@ -53,15 +53,15 @@ public class UriLoader<Data> implements ModelLoader<Uri, Data> {
     public static class FileDescriptorFactory implements ModelLoaderFactory<Uri, ParcelFileDescriptor>, LocalUriFetcherFactory<ParcelFileDescriptor> {
 
         /* renamed from: a  reason: collision with root package name */
-        private final ContentResolver f20914a;
+        private final ContentResolver f7308a;
 
         public FileDescriptorFactory(ContentResolver contentResolver) {
-            this.f20914a = contentResolver;
+            this.f7308a = contentResolver;
         }
 
         @Override // com.bumptech.glide.load.model.UriLoader.LocalUriFetcherFactory
         public DataFetcher<ParcelFileDescriptor> a(Uri uri) {
-            return new FileDescriptorLocalUriFetcher(this.f20914a, uri);
+            return new FileDescriptorLocalUriFetcher(this.f7308a, uri);
         }
 
         @Override // com.bumptech.glide.load.model.ModelLoaderFactory
@@ -83,15 +83,15 @@ public class UriLoader<Data> implements ModelLoader<Uri, Data> {
     public static class StreamFactory implements ModelLoaderFactory<Uri, InputStream>, LocalUriFetcherFactory<InputStream> {
 
         /* renamed from: a  reason: collision with root package name */
-        private final ContentResolver f20915a;
+        private final ContentResolver f7309a;
 
         public StreamFactory(ContentResolver contentResolver) {
-            this.f20915a = contentResolver;
+            this.f7309a = contentResolver;
         }
 
         @Override // com.bumptech.glide.load.model.UriLoader.LocalUriFetcherFactory
         public DataFetcher<InputStream> a(Uri uri) {
-            return new StreamLocalUriFetcher(this.f20915a, uri);
+            return new StreamLocalUriFetcher(this.f7309a, uri);
         }
 
         @Override // com.bumptech.glide.load.model.ModelLoaderFactory
@@ -115,6 +115,6 @@ public class UriLoader<Data> implements ModelLoader<Uri, Data> {
 
     @Override // com.bumptech.glide.load.model.ModelLoader
     public boolean a(Uri uri) {
-        return f20912a.contains(uri.getScheme());
+        return f7306a.contains(uri.getScheme());
     }
 }

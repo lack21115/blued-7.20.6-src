@@ -15,18 +15,18 @@ import org.json.JSONObject;
 public class cm {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f23788a;
+    private Context f10180a;
     private int b;
 
     public cm(Context context, int i) {
-        this.f23788a = context;
+        this.f10180a = context;
         this.b = i;
     }
 
     public String a(String str) {
         JSONObject a2;
         try {
-            JSONObject a3 = new cl(str, cj.j).a(this.f23788a);
+            JSONObject a3 = new cl(str, cj.j).a(this.f10180a);
             if (a3 == null || (a2 = a()) == null) {
                 return null;
             }
@@ -42,27 +42,27 @@ public class cm {
         try {
             long currentTimeMillis = System.currentTimeMillis();
             JSONObject jSONObject = new JSONObject();
-            h a2 = h.a(this.f23788a, "re_po_rt");
+            h a2 = h.a(this.f10180a, "re_po_rt");
             boolean e = a2.e("a1_p_s_p_s");
             boolean e2 = a2.e("a1_p_s_p_s_c_b");
             if (a2.b(de.aG, 1) == 1 && (e || e2)) {
-                String a3 = bg.a(this.f23788a);
+                String a3 = bg.a(this.f10180a);
                 if (!TextUtils.isEmpty(a3) && !a3.startsWith("RISK")) {
                     jSONObject.put("01001", a3);
                 }
-                String c2 = bg.c(this.f23788a);
+                String c2 = bg.c(this.f10180a);
                 if (!TextUtils.isEmpty(c2) && !c2.startsWith("RISK")) {
                     jSONObject.put("01003", c2);
                 }
-                String b = bg.b(this.f23788a, 0);
+                String b = bg.b(this.f10180a, 0);
                 if (!TextUtils.isEmpty(b) && !b.startsWith("RISK")) {
                     jSONObject.put("01019", b);
                 }
-                String b2 = bg.b(this.f23788a, 1);
+                String b2 = bg.b(this.f10180a, 1);
                 if (!TextUtils.isEmpty(b2) && !b2.startsWith("RISK")) {
                     jSONObject.put("01004", b2);
                 }
-                String d = bg.d(this.f23788a);
+                String d = bg.d(this.f10180a);
                 if (!TextUtils.isEmpty(d) && !d.startsWith("RISK")) {
                     jSONObject.put("01007", d);
                 }
@@ -70,35 +70,35 @@ public class cm {
             if (a2.b(de.aH, 0) == 1 && (e || e2)) {
                 bf bfVar = new bf();
                 if (a2.b(de.aU, 1) == 1) {
-                    jSONObject.put("10020", bfVar.f(this.f23788a));
+                    jSONObject.put("10020", bfVar.f(this.f10180a));
                 }
             }
             if (a2.b(de.aI, 1) == 1 && (e || e2)) {
-                jSONObject.put("01011", bg.e(this.f23788a));
+                jSONObject.put("01011", bg.e(this.f10180a));
             }
             if (a2.b(de.aJ, 1) == 1 && (e || e2)) {
-                String p = bg.p(this.f23788a);
+                String p = bg.p(this.f10180a);
                 if (!TextUtils.isEmpty(p) && !p.startsWith("RISK")) {
                     jSONObject.put("01016", p);
                 }
             }
             if (a2.b(de.ax, 1) == 1) {
                 if (e || e2) {
-                    String f = bg.f(this.f23788a);
+                    String f = bg.f(this.f10180a);
                     if (!TextUtils.isEmpty(f) && !f.startsWith("RISK")) {
                         jSONObject.put("01013", f);
                     }
-                    jSONObject.put("02042", bg.v(this.f23788a));
+                    jSONObject.put("02042", bg.v(this.f10180a));
                 }
-                jSONObject.put("02054", bg.z(this.f23788a));
+                jSONObject.put("02054", bg.z(this.f10180a));
                 try {
                     if (Engine.loadSuccess) {
                         try {
-                            jSONObject.put("02019", bk.b(this.f23788a));
-                            jSONObject.put("02021", bk.d(this.f23788a));
-                            jSONObject.put("02022", bk.c(this.f23788a));
-                            jSONObject.put("02030", bk.f(this.f23788a));
-                            cd cdVar = new cd(this.f23788a);
+                            jSONObject.put("02019", bk.b(this.f10180a));
+                            jSONObject.put("02021", bk.d(this.f10180a));
+                            jSONObject.put("02022", bk.c(this.f10180a));
+                            jSONObject.put("02030", bk.f(this.f10180a));
+                            cd cdVar = new cd(this.f10180a);
                             jSONObject.put("01014", cdVar.a("01014") != null ? cdVar.a("01014") : "");
                             jSONObject.put("02001", cdVar.a("02001") != null ? cdVar.a("02001") : bk.a());
                             jSONObject.put("02002", cdVar.a("02002") != null ? cdVar.a("02002") : bk.b());
@@ -151,11 +151,11 @@ public class cm {
                         jSONObject.put("02017", bk.r());
                         jSONObject.put("02018", bk.s());
                         try {
-                            jSONObject.put("02019", bk.b(this.f23788a));
+                            jSONObject.put("02019", bk.b(this.f10180a));
                             jSONObject.put("02020", bk.u());
-                            jSONObject.put("02021", bk.d(this.f23788a));
-                            jSONObject.put("02022", bk.c(this.f23788a));
-                            jSONObject.put("02030", bk.f(this.f23788a));
+                            jSONObject.put("02021", bk.d(this.f10180a));
+                            jSONObject.put("02022", bk.c(this.f10180a));
+                            jSONObject.put("02030", bk.f(this.f10180a));
                             jSONObject.put("02031", bk.y());
                             jSONObject.put("02032", bk.o());
                             jSONObject.put("02033", bk.x());
@@ -168,10 +168,10 @@ public class cm {
                             return null;
                         }
                     }
-                    jSONObject.put("02067", this.f23788a.getApplicationContext().getPackageResourcePath().replace("/data/app/", "").replace("/base.apk", ""));
+                    jSONObject.put("02067", this.f10180a.getApplicationContext().getPackageResourcePath().replace("/data/app/", "").replace("/base.apk", ""));
                     jSONObject.put("02039", bg.h());
                     jSONObject.put("02040", bg.i());
-                    jSONObject.put("02041", bg.u(this.f23788a));
+                    jSONObject.put("02041", bg.u(this.f10180a));
                     jSONObject.put("02044", bk.t());
                     jSONObject.put("02046", bk.C());
                     String a4 = bg.a("persist.service.adb.enable");
@@ -239,15 +239,15 @@ public class cm {
                         jSONObject.put("03074", a19 + System.currentTimeMillis());
                     }
                     try {
-                        jSONObject.put("03064", Settings.System.getInt(this.f23788a.getContentResolver(), Settings.System.SCREEN_BRIGHTNESS_MODE));
-                        jSONObject.put("03065", Settings.System.getInt(this.f23788a.getContentResolver(), Settings.System.ACCELEROMETER_ROTATION));
+                        jSONObject.put("03064", Settings.System.getInt(this.f10180a.getContentResolver(), Settings.System.SCREEN_BRIGHTNESS_MODE));
+                        jSONObject.put("03065", Settings.System.getInt(this.f10180a.getContentResolver(), Settings.System.ACCELEROMETER_ROTATION));
                     } catch (Throwable th2) {
                     }
                     jSONObject.put("03081", bk.L());
-                    jSONObject.put("03053", bg.A(this.f23788a));
-                    jSONObject.put("03052", bk.i(this.f23788a));
-                    jSONObject.put("03050", bk.h(this.f23788a));
-                    jSONObject.put("03049", bk.g(this.f23788a));
+                    jSONObject.put("03053", bg.A(this.f10180a));
+                    jSONObject.put("03052", bk.i(this.f10180a));
+                    jSONObject.put("03050", bk.h(this.f10180a));
+                    jSONObject.put("03049", bk.g(this.f10180a));
                     jSONObject.put("02027", bk.H());
                     jSONObject.put("02028", bk.D());
                     jSONObject.put("02029", bk.E());
@@ -264,7 +264,7 @@ public class cm {
                 jSONObject.put("03043", SystemClock.elapsedRealtime());
                 jSONObject.put("03044", SystemClock.uptimeMillis());
                 jSONObject.put("03045", System.currentTimeMillis() - SystemClock.elapsedRealtime());
-                bx bxVar = new bx(this.f23788a);
+                bx bxVar = new bx(this.f10180a);
                 if (Engine.loadSuccess) {
                     jSONObject.put("03004", bxVar.a("03004") != null ? bxVar.a("03004") : "");
                     jSONObject.put("03036", bxVar.b("03036") != null ? bxVar.b("03036") : "");
@@ -275,47 +275,47 @@ public class cm {
                     jSONObject.put("03079", bxVar.a("03079") != null ? bxVar.a("03079") : null);
                     jSONObject.put("03080", bxVar.a("03080") != null ? bxVar.a("03080") : null);
                 }
-                jSONObject.put("03007", bu.a(this.f23788a));
-                jSONObject.put("03008", bu.c(this.f23788a));
-                jSONObject.put("03011", am.b(this.f23788a));
+                jSONObject.put("03007", bu.a(this.f10180a));
+                jSONObject.put("03008", bu.c(this.f10180a));
+                jSONObject.put("03011", am.b(this.f10180a));
                 jSONObject.put("03012", am.b());
-                jSONObject.put("03014", bg.g(this.f23788a));
-                jSONObject.put("03034", bg.h(this.f23788a));
-                jSONObject.put("03020", bu.b(this.f23788a));
+                jSONObject.put("03014", bg.g(this.f10180a));
+                jSONObject.put("03034", bg.h(this.f10180a));
+                jSONObject.put("03020", bu.b(this.f10180a));
                 jSONObject.put("03037", bk.I());
                 jSONObject.put("03038", bk.J());
                 jSONObject.put("03077", bk.K());
                 try {
                     bf bfVar2 = new bf();
-                    jSONObject.put("03006", bfVar2.a(this.f23788a));
-                    jSONObject.put("03010", bfVar2.b(this.f23788a));
-                    jSONObject.put("03033", bfVar2.c(this.f23788a));
+                    jSONObject.put("03006", bfVar2.a(this.f10180a));
+                    jSONObject.put("03010", bfVar2.b(this.f10180a));
+                    jSONObject.put("03033", bfVar2.c(this.f10180a));
                     jSONObject.put("03013", bfVar2.a());
-                    jSONObject.put("03021", bfVar2.e(this.f23788a));
-                    jSONObject.put("03030", bf.d(this.f23788a));
+                    jSONObject.put("03021", bfVar2.e(this.f10180a));
+                    jSONObject.put("03030", bf.d(this.f10180a));
                     jSONObject.put("10031", bfVar2.b());
                 } catch (Exception e4) {
                 }
             }
             if (a2.b(de.aM, 1) == 1) {
-                jSONObject.put("03019", bg.k(this.f23788a));
-                String l = bg.l(this.f23788a);
+                jSONObject.put("03019", bg.k(this.f10180a));
+                String l = bg.l(this.f10180a);
                 if (!TextUtils.isEmpty(l)) {
                     jSONObject.put("03046", l);
                 }
-                String m = bg.m(this.f23788a);
+                String m = bg.m(this.f10180a);
                 if (!TextUtils.isEmpty(m)) {
                     jSONObject.put("03047", m);
                 }
-                jSONObject.put("03018", bg.i(this.f23788a));
+                jSONObject.put("03018", bg.i(this.f10180a));
             }
             if (a2.b(de.aN, 1) == 1) {
-                jSONObject.put("02059", bl.a(this.f23788a));
+                jSONObject.put("02059", bl.a(this.f10180a));
                 jSONObject.put("02060", bl.a());
                 jSONObject.put("02061", bl.b());
                 jSONObject.put("02062", bl.c());
                 if (Engine.loadSuccess) {
-                    bz bzVar = new bz(this.f23788a);
+                    bz bzVar = new bz(this.f10180a);
                     jSONObject.put("08001", bzVar.a("08001") != null ? bzVar.a("08001") : "");
                 }
                 JSONObject d2 = bl.d();
@@ -324,11 +324,11 @@ public class cm {
                 }
             }
             if (a2.b(de.aL, 1) == 1 && (e || e2)) {
-                jSONObject.put("03029", bg.j(this.f23788a));
+                jSONObject.put("03029", bg.j(this.f10180a));
             }
             if (a2.b(de.az, 1) == 1) {
                 if (Engine.loadSuccess) {
-                    by byVar = new by(this.f23788a);
+                    by byVar = new by(this.f10180a);
                     jSONObject.put("04001", byVar.a("04001") != null ? byVar.a("04001") : "");
                     jSONObject.put("04002", byVar.a("04002") != null ? byVar.a("04002") : "");
                     jSONObject.put("04003", byVar.a("04003") != null ? byVar.a("04003") : "");
@@ -350,7 +350,7 @@ public class cm {
                     jSONObject.put("06014", e6);
                 }
                 if (Engine.loadSuccess) {
-                    ce ceVar = new ce(this.f23788a);
+                    ce ceVar = new ce(this.f10180a);
                     jSONObject.put("06015", ceVar.b("06015") != null ? ceVar.b("06015") : "");
                 }
             }
@@ -364,9 +364,9 @@ public class cm {
             }
             if (a2.b(de.aA, 0) == 1 && (e || e2)) {
                 if (Engine.loadSuccess) {
-                    jSONObject.put("07007", new cb(this.f23788a).a("07007"));
+                    jSONObject.put("07007", new cb(this.f10180a).a("07007"));
                 }
-                JSONArray a20 = bq.a(this.f23788a);
+                JSONArray a20 = bq.a(this.f10180a);
                 if (a20 != null && a20.length() > 0) {
                     jSONObject.put("03035", a20);
                 }
@@ -390,10 +390,10 @@ public class cm {
                 }
             }
             if (a2.b(de.aE, 1) == 1 && (e || e2)) {
-                jSONObject.put("10002", new w(this.f23788a).a(1));
+                jSONObject.put("10002", new w(this.f10180a).a(1));
             }
             if (a2.b(de.aB, 1) == 1 && Engine.loadSuccess) {
-                String a22 = new cc(this.f23788a).a("05001");
+                String a22 = new cc(this.f10180a).a("05001");
                 try {
                     if (!TextUtils.isEmpty(a22) && a22.length() > 10) {
                         jSONObject.put("05001", new JSONArray(a22));
@@ -402,7 +402,7 @@ public class cm {
                 }
             }
             if (Engine.loadSuccess) {
-                ca caVar = new ca(this.f23788a);
+                ca caVar = new ca(this.f10180a);
                 jSONObject.put("13001", caVar.a("13001") != null ? caVar.a("13001") : "");
             }
             jSONObject.put(WbFaceError.WBFaceErrorCodeInputParaNull, Engine.loadSuccess ? 1 : 0);
@@ -412,9 +412,9 @@ public class cm {
             jSONObject.put("11006", e ? 1 : 0);
             jSONObject.put("11029", e2 ? 1 : 0);
             jSONObject.put("11008", a2.b(de.g, bp.e));
-            jSONObject.put("11009", br.a(this.f23788a.getApplicationContext()));
+            jSONObject.put("11009", br.a(this.f10180a.getApplicationContext()));
             try {
-                String y = bg.y(this.f23788a);
+                String y = bg.y(this.f10180a);
                 if (!TextUtils.isEmpty(y)) {
                     jSONObject.put("01026", y);
                 }
@@ -463,19 +463,19 @@ public class cm {
                 if (Build.VERSION.SDK_INT > 21) {
                     jSONObject.put("02069", Build.VERSION.SECURITY_PATCH);
                 }
-                String string = Settings.Global.getString(this.f23788a.getContentResolver(), "Phenotype_boot_count");
+                String string = Settings.Global.getString(this.f10180a.getContentResolver(), "Phenotype_boot_count");
                 if (!TextUtils.isEmpty(string)) {
                     jSONObject.put("03085", string);
                 }
-                String string2 = Settings.Global.getString(this.f23788a.getContentResolver(), "boot_count");
+                String string2 = Settings.Global.getString(this.f10180a.getContentResolver(), "boot_count");
                 if (!TextUtils.isEmpty(string2)) {
                     jSONObject.put("03086", string2);
                 }
-                String string3 = Settings.System.getString(this.f23788a.getContentResolver(), "power_on_times");
+                String string3 = Settings.System.getString(this.f10180a.getContentResolver(), "power_on_times");
                 if (!TextUtils.isEmpty(string3)) {
                     jSONObject.put("03091", string3);
                 }
-                String string4 = Settings.System.getString(this.f23788a.getContentResolver(), "first_boot_flag");
+                String string4 = Settings.System.getString(this.f10180a.getContentResolver(), "first_boot_flag");
                 if (!TextUtils.isEmpty(string4)) {
                     jSONObject.put("03104", string4);
                 }

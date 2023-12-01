@@ -88,7 +88,6 @@ public class BluedLiveListDataTest extends BluedADExtra implements MultiItemEnti
         this.lid = str;
     }
 
-    @Override // com.chad.library.adapter.base.entity.MultiItemEntity
     public int getItemType() {
         return this.liveType;
     }

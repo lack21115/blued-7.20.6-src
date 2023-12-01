@@ -30,9 +30,7 @@ import java.util.List;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/send/manager/EventSendManager.class */
 public class EventSendManager {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final String f20040a = EventSendManager.class.getSimpleName();
+    private static final String a = EventSendManager.class.getSimpleName();
     private static volatile EventSendManager b;
 
     public static EventSendManager a() {
@@ -104,19 +102,19 @@ public class EventSendManager {
         }
         MediaSender.a(CommunityHttpUtils.a() + "/blued/qiniu?filter=token&action=ticktocks", (List<Pair<String, String>>) arrayList2, true, true, new SenderListener() { // from class: com.blued.community.ui.send.manager.EventSendManager.3
             private void a(Pair<String, UploadModel> pair, EventPostModel eventPostModel2) {
-                if (TextUtils.isEmpty(pair.second.url)) {
+                if (TextUtils.isEmpty(((UploadModel) pair.second).url)) {
                     return;
                 }
-                String str = pair.second.url;
-                String str2 = EventSendManager.f20040a;
+                String str = ((UploadModel) pair.second).url;
+                String str2 = EventSendManager.a;
                 Logger.e(str2, "图片上传成功===" + str);
-                ImageFileLoader.a((IRequestHost) null).a(pair.second.compressPath, str).a();
+                ImageFileLoader.a((IRequestHost) null).a(((UploadModel) pair.second).compressPath, str).a();
                 StringBuffer stringBuffer = new StringBuffer();
                 int i3 = 0;
                 while (true) {
                     int i4 = i3;
                     if (i4 >= arrayList.size()) {
-                        String str3 = EventSendManager.f20040a;
+                        String str3 = EventSendManager.a;
                         Logger.e(str3, "图片上传成功===" + stringBuffer.toString());
                         eventPostModel2.localSceneImg = stringBuffer.toString();
                         return;
@@ -136,19 +134,19 @@ public class EventSendManager {
 
             @Override // com.blued.android.framework.utils.upload.qiniu.SenderListener
             public void a(String str, int i3) {
-                String str2 = EventSendManager.f20040a;
+                String str2 = EventSendManager.a;
                 Logger.e(str2, "img===progress==" + i3);
             }
 
             @Override // com.blued.android.framework.utils.upload.qiniu.SenderListener
             public void a(String str, Pair<String, UploadModel> pair) {
-                Logger.e(EventSendManager.f20040a, "onPartFinish=======");
+                Logger.e(EventSendManager.a, "onPartFinish=======");
                 a(pair, eventPostModel);
             }
 
             @Override // com.blued.android.framework.utils.upload.qiniu.SenderListener
             public void a(String str, boolean z, List<Pair<String, String>> list) {
-                String str2 = EventSendManager.f20040a;
+                String str2 = EventSendManager.a;
                 Logger.e(str2, "onFinish=======" + z);
                 if (z) {
                     EventSendManager.this.b(context, eventPostModel);
@@ -181,7 +179,7 @@ public class EventSendManager {
                 }
                 if (CommonPreferences.p()) {
                     CommonPreferences.q();
-                    EventSendDialogFragment.f19531a.a(context);
+                    EventSendDialogFragment.a.a(context);
                 }
             }
         }, eventPostModel);

@@ -10,24 +10,21 @@ import kotlin.Metadata;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/adapter/LiveMedalListAdapter.class */
 public final class LiveMedalListAdapter extends BaseQuickAdapter<LiveMedalItemData, BaseViewHolder> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final IRequestHost f11664a;
+    private final IRequestHost a;
 
     public LiveMedalListAdapter(IRequestHost iRequestHost) {
         super(R.layout.item_live_medal_list);
-        this.f11664a = iRequestHost;
+        this.a = iRequestHost;
     }
 
     public final IRequestHost a() {
-        return this.f11664a;
+        return this.a;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     /* JADX WARN: Code restructure failed: missing block: B:17:0x006a, code lost:
         if (r0.length() == 0) goto L20;
      */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     /*
         Code decompiled incorrectly, please refer to instructions dump.

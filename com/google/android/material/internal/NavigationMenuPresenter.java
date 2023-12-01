@@ -480,9 +480,8 @@ public class NavigationMenuPresenter implements MenuPresenter {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8110460-dex2jar.jar:com/google/android/material/internal/NavigationMenuPresenter$NavigationMenuViewAccessibilityDelegate.class */
-    public class NavigationMenuViewAccessibilityDelegate extends RecyclerViewAccessibilityDelegate {
+    class NavigationMenuViewAccessibilityDelegate extends RecyclerViewAccessibilityDelegate {
         NavigationMenuViewAccessibilityDelegate(RecyclerView recyclerView) {
             super(recyclerView);
         }
@@ -673,7 +672,7 @@ public class NavigationMenuPresenter implements MenuPresenter {
     public void onRestoreInstanceState(Parcelable parcelable) {
         if (parcelable instanceof Bundle) {
             Bundle bundle = (Bundle) parcelable;
-            SparseArray<Parcelable> sparseParcelableArray = bundle.getSparseParcelableArray("android:menu:list");
+            SparseArray sparseParcelableArray = bundle.getSparseParcelableArray("android:menu:list");
             if (sparseParcelableArray != null) {
                 this.menuView.restoreHierarchyState(sparseParcelableArray);
             }
@@ -681,7 +680,7 @@ public class NavigationMenuPresenter implements MenuPresenter {
             if (bundle2 != null) {
                 this.adapter.restoreInstanceState(bundle2);
             }
-            SparseArray<Parcelable> sparseParcelableArray2 = bundle.getSparseParcelableArray(STATE_HEADER);
+            SparseArray sparseParcelableArray2 = bundle.getSparseParcelableArray(STATE_HEADER);
             if (sparseParcelableArray2 != null) {
                 this.headerLayout.restoreHierarchyState(sparseParcelableArray2);
             }
@@ -692,7 +691,7 @@ public class NavigationMenuPresenter implements MenuPresenter {
     public Parcelable onSaveInstanceState() {
         Bundle bundle = new Bundle();
         if (this.menuView != null) {
-            SparseArray<Parcelable> sparseArray = new SparseArray<>();
+            SparseArray<? extends Parcelable> sparseArray = new SparseArray<>();
             this.menuView.saveHierarchyState(sparseArray);
             bundle.putSparseParcelableArray("android:menu:list", sparseArray);
         }
@@ -701,7 +700,7 @@ public class NavigationMenuPresenter implements MenuPresenter {
             bundle.putBundle(STATE_ADAPTER, navigationMenuAdapter.createInstanceState());
         }
         if (this.headerLayout != null) {
-            SparseArray<Parcelable> sparseArray2 = new SparseArray<>();
+            SparseArray<? extends Parcelable> sparseArray2 = new SparseArray<>();
             this.headerLayout.saveHierarchyState(sparseArray2);
             bundle.putSparseParcelableArray(STATE_HEADER, sparseArray2);
         }

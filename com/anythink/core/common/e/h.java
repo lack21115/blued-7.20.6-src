@@ -2,6 +2,7 @@ package com.anythink.core.common.e;
 
 import android.text.TextUtils;
 import com.anythink.core.c.d;
+import com.anythink.core.common.c.d;
 import org.json.JSONObject;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/e/h.class */
@@ -10,13 +11,9 @@ public final class h extends q {
     public String B;
     public String C;
     public String D;
-
-    /* renamed from: a  reason: collision with root package name */
-    public String f6660a;
+    public String a;
     public String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public String f6661c;
+    public String c;
     public String d;
     public String e;
     public String f;
@@ -54,8 +51,8 @@ public final class h extends q {
         if (!TextUtils.isEmpty(str)) {
             try {
                 JSONObject jSONObject = new JSONObject(str);
-                if (jSONObject.has("key")) {
-                    hVar.f6660a = jSONObject.optString("key", "");
+                if (jSONObject.has(d.a.b)) {
+                    hVar.a = jSONObject.optString(d.a.b, "");
                 }
                 if (jSONObject.has("requestid")) {
                     hVar.b = jSONObject.optString("requestid", "");
@@ -63,8 +60,8 @@ public final class h extends q {
                 if (jSONObject.has("unitid")) {
                     hVar.d = jSONObject.optString("unitid", "");
                 }
-                if (jSONObject.has(com.anythink.core.common.b.e.f6488c)) {
-                    hVar.e = jSONObject.optString(com.anythink.core.common.b.e.f6488c, "");
+                if (jSONObject.has(com.anythink.core.common.b.e.c)) {
+                    hVar.e = jSONObject.optString(com.anythink.core.common.b.e.c, "");
                 }
                 if (jSONObject.has("sessionid")) {
                     hVar.f = jSONObject.optString("sessionid", "");
@@ -75,20 +72,20 @@ public final class h extends q {
                 if (jSONObject.has("unitgroupid")) {
                     hVar.h = jSONObject.optString("unitgroupid", "");
                 }
-                if (jSONObject.has("timestamp")) {
-                    hVar.i = jSONObject.optString("timestamp", "");
+                if (jSONObject.has(com.alipay.sdk.tid.b.f)) {
+                    hVar.i = jSONObject.optString(com.alipay.sdk.tid.b.f, "");
                 }
                 if (jSONObject.has("asid")) {
                     hVar.j = jSONObject.optString("asid", "");
                 }
-                if (jSONObject.has("refresh")) {
-                    hVar.k = jSONObject.optString("refresh", "");
+                if (jSONObject.has(com.alipay.sdk.widget.j.l)) {
+                    hVar.k = jSONObject.optString(com.alipay.sdk.widget.j.l, "");
                 }
                 if (jSONObject.has("traffic_group_id")) {
                     hVar.l = jSONObject.optString("traffic_group_id", "");
                 }
-                if (jSONObject.has("msg")) {
-                    hVar.m = jSONObject.optString("msg", "");
+                if (jSONObject.has(com.alipay.sdk.cons.c.b)) {
+                    hVar.m = jSONObject.optString(com.alipay.sdk.cons.c.b, "");
                 }
                 if (jSONObject.has("msg1")) {
                     hVar.n = jSONObject.optString("msg1", "");
@@ -147,18 +144,18 @@ public final class h extends q {
     public final JSONObject a() {
         JSONObject jSONObject = new JSONObject();
         try {
-            jSONObject.put("key", this.f6660a);
+            jSONObject.put(d.a.b, this.a);
             jSONObject.put("requestid", this.b);
             jSONObject.put("unitid", this.d);
-            jSONObject.put(com.anythink.core.common.b.e.f6488c, this.e);
+            jSONObject.put(com.anythink.core.common.b.e.c, this.e);
             jSONObject.put("sessionid", this.f);
             jSONObject.put("groupid", this.g);
             jSONObject.put("unitgroupid", this.h);
-            jSONObject.put("timestamp", this.i);
+            jSONObject.put(com.alipay.sdk.tid.b.f, this.i);
             jSONObject.put("asid", this.j);
-            jSONObject.put("refresh", this.k);
+            jSONObject.put(com.alipay.sdk.widget.j.l, this.k);
             jSONObject.put("traffic_group_id", this.l);
-            jSONObject.put("msg", this.m);
+            jSONObject.put(com.alipay.sdk.cons.c.b, this.m);
             jSONObject.put("msg1", this.n);
             jSONObject.put("msg2", this.o);
             jSONObject.put("msg3", this.p);

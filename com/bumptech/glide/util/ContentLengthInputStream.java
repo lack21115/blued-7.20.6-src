@@ -8,22 +8,22 @@ import java.io.InputStream;
 public final class ContentLengthInputStream extends FilterInputStream {
 
     /* renamed from: a  reason: collision with root package name */
-    private final long f21097a;
+    private final long f7491a;
     private int b;
 
     private ContentLengthInputStream(InputStream inputStream, long j) {
         super(inputStream);
-        this.f21097a = j;
+        this.f7491a = j;
     }
 
     private int a(int i) throws IOException {
         if (i >= 0) {
             this.b += i;
             return i;
-        } else if (this.f21097a - this.b <= 0) {
+        } else if (this.f7491a - this.b <= 0) {
             return i;
         } else {
-            throw new IOException("Failed to read all expected data, expected: " + this.f21097a + ", but read: " + this.b);
+            throw new IOException("Failed to read all expected data, expected: " + this.f7491a + ", but read: " + this.b);
         }
     }
 
@@ -35,7 +35,7 @@ public final class ContentLengthInputStream extends FilterInputStream {
     public int available() throws IOException {
         int max;
         synchronized (this) {
-            max = (int) Math.max(this.f21097a - this.b, this.f42254in.available());
+            max = (int) Math.max(this.f7491a - this.b, this.in.available());
         }
         return max;
     }
@@ -50,7 +50,7 @@ public final class ContentLengthInputStream extends FilterInputStream {
         return read;
     }
 
-    @Override // java.io.InputStream
+    @Override // java.io.FilterInputStream, java.io.InputStream
     public int read(byte[] bArr) throws IOException {
         return read(bArr, 0, bArr.length);
     }

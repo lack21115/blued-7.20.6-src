@@ -60,9 +60,8 @@ public class XExecutor extends ThreadPoolExecutor {
         this.taskEndListenerList.add(onTaskEndListener);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // java.util.concurrent.ThreadPoolExecutor
-    public void afterExecute(final Runnable runnable, Throwable th) {
+    protected void afterExecute(final Runnable runnable, Throwable th) {
         List<OnAllTaskEndListener> list;
         super.afterExecute(runnable, th);
         List<OnTaskEndListener> list2 = this.taskEndListenerList;

@@ -46,11 +46,11 @@ public class YAxisRendererHorizontalBarChart extends YAxisRenderer {
                 MPPointD a2 = this.b.a(this.o.f(), this.o.e());
                 MPPointD a3 = this.b.a(this.o.g(), this.o.e());
                 if (z) {
-                    f3 = (float) a3.f22202a;
-                    d = a2.f22202a;
+                    f3 = (float) a3.f8595a;
+                    d = a2.f8595a;
                 } else {
-                    f3 = (float) a2.f22202a;
-                    d = a3.f22202a;
+                    f3 = (float) a2.f8595a;
+                    d = a3.f8595a;
                 }
                 f5 = (float) d;
                 MPPointD.a(a2);
@@ -97,7 +97,7 @@ public class YAxisRendererHorizontalBarChart extends YAxisRenderer {
     @Override // com.github.mikephil.charting.renderer.YAxisRenderer
     public RectF b() {
         this.j.set(this.o.k());
-        this.j.inset(-this.f22168a.f(), 0.0f);
+        this.j.inset(-this.f8561a.f(), 0.0f);
         return this.j;
     }
 
@@ -143,8 +143,8 @@ public class YAxisRendererHorizontalBarChart extends YAxisRenderer {
         this.h.setStrokeWidth(this.g.L());
         Path path = this.r;
         path.reset();
-        path.moveTo(((float) b.f22202a) - 1.0f, this.o.e());
-        path.lineTo(((float) b.f22202a) - 1.0f, this.o.h());
+        path.moveTo(((float) b.f8595a) - 1.0f, this.o.e());
+        path.lineTo(((float) b.f8595a) - 1.0f, this.o.h());
         canvas.drawPath(path, this.h);
         canvas.restoreToCount(save);
     }

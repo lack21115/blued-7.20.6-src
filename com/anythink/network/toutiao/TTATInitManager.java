@@ -32,7 +32,7 @@ public class TTATInitManager extends ATInitMediation {
     private static volatile TTATInitManager e;
 
     /* renamed from: a  reason: collision with root package name */
-    TTCustomController f9100a;
+    TTCustomController f6260a;
     Map<String, Map<String, TTATBiddingInfo>> b;
     private boolean i;
     private List<MediationInitCallback> k;
@@ -41,7 +41,7 @@ public class TTATInitManager extends ATInitMediation {
     private final long m = 100;
 
     /* renamed from: c  reason: collision with root package name */
-    int f9101c = 0;
+    int f6261c = 0;
     String d = OapsKey.KEY_PRICE;
     private Handler f = new Handler(Looper.getMainLooper());
     private boolean g = true;
@@ -53,26 +53,26 @@ public class TTATInitManager extends ATInitMediation {
     public final class AnonymousClass1 implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ String f9102a;
+        final /* synthetic */ String f6262a;
         final /* synthetic */ String b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ int[] f9103c;
+        final /* synthetic */ int[] f6263c;
         final /* synthetic */ Context d;
 
         AnonymousClass1(String str, String str2, int[] iArr, Context context) {
-            this.f9102a = str;
+            this.f6262a = str;
             this.b = str2;
-            this.f9103c = iArr;
+            this.f6263c = iArr;
             this.d = context;
         }
 
         @Override // java.lang.Runnable
         public final void run() {
             try {
-                TTAdConfig.Builder supportMultiProcess = new TTAdConfig.Builder().appId(this.f9102a).useTextureView(true).appName(this.b).titleBarTheme(1).directDownloadNetworkType(this.f9103c).data(TTATInitManager.this.b()).supportMultiProcess(false);
-                if (TTATInitManager.this.f9100a != null) {
-                    supportMultiProcess.customController(TTATInitManager.this.f9100a);
+                TTAdConfig.Builder supportMultiProcess = new TTAdConfig.Builder().appId(this.f6262a).useTextureView(true).appName(this.b).titleBarTheme(1).directDownloadNetworkType(this.f6263c).data(TTATInitManager.this.b()).supportMultiProcess(false);
+                if (TTATInitManager.this.f6260a != null) {
+                    supportMultiProcess.customController(TTATInitManager.this.f6260a);
                 }
                 TTAdSdk.init(this.d, supportMultiProcess.build(), new TTAdSdk.InitCallback() { // from class: com.anythink.network.toutiao.TTATInitManager.1.1
                     @Override // com.bytedance.sdk.openadsdk.TTAdSdk.InitCallback
@@ -103,7 +103,7 @@ public class TTATInitManager extends ATInitMediation {
     private void a() {
         try {
             for (Map.Entry<String, WeakReference> entry : this.h.entrySet()) {
-                if (entry.getValue().get() == 0) {
+                if (entry.getValue().get() == null) {
                     this.h.remove(entry.getKey());
                 }
             }
@@ -162,11 +162,11 @@ public class TTATInitManager extends ATInitMediation {
     /* JADX INFO: Access modifiers changed from: private */
     public String b() {
         try {
-            this.f9101c = ATSDK.getPersionalizedAdStatus();
+            this.f6261c = ATSDK.getPersionalizedAdStatus();
         } catch (Throwable th) {
         }
         try {
-            String str = this.f9101c == 2 ? "0" : "";
+            String str = this.f6261c == 2 ? "0" : "";
             JSONObject jSONObject = new JSONObject();
             jSONObject.put("name", "personal_ads_type");
             jSONObject.put("value", str);
@@ -234,29 +234,24 @@ public class TTATInitManager extends ATInitMediation {
         }
     }
 
-    @Override // com.anythink.core.api.ATInitMediation
     public String getNetworkName() {
         return "CSJ";
     }
 
-    @Override // com.anythink.core.api.ATInitMediation
     public String getNetworkSDKClass() {
         return "com.bytedance.sdk.openadsdk.TTAdSdk";
     }
 
-    @Override // com.anythink.core.api.ATInitMediation
     public String getNetworkVersion() {
         return TTATConst.getNetworkVersion();
     }
 
-    @Override // com.anythink.core.api.ATInitMediation
     public List getPermissionStatus() {
         ArrayList arrayList = new ArrayList();
         arrayList.add(Manifest.permission.WAKE_LOCK);
         return arrayList;
     }
 
-    @Override // com.anythink.core.api.ATInitMediation
     public List getProviderStatus() {
         ArrayList arrayList = new ArrayList();
         arrayList.add("com.bytedance.sdk.openadsdk.multipro.TTMultiProvider");
@@ -268,11 +263,10 @@ public class TTATInitManager extends ATInitMediation {
         initSDK(context, map, null);
     }
 
-    @Override // com.anythink.core.api.ATInitMediation
     public void initSDK(Context context, Map<String, Object> map, MediationInitCallback mediationInitCallback) {
         try {
             for (Map.Entry<String, WeakReference> entry : this.h.entrySet()) {
-                if (entry.getValue().get() == 0) {
+                if (entry.getValue().get() == null) {
                     this.h.remove(entry.getKey());
                 }
             }
@@ -310,6 +304,6 @@ public class TTATInitManager extends ATInitMediation {
     }
 
     public void setTtCustomController(TTCustomController tTCustomController) {
-        this.f9100a = tTCustomController;
+        this.f6260a = tTCustomController;
     }
 }

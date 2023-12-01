@@ -12,12 +12,11 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import com.blued.android.framework.R;
 import com.blued.android.framework.ui.xpop.util.XPopupUtils;
+import javax.microedition.khronos.opengles.GL10;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/ui/xpop/core/FullScreenDialog.class */
 public class FullScreenDialog extends Dialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    BasePopupView f9986a;
+    BasePopupView a;
 
     public FullScreenDialog(Context context) {
         super(context, R.style._XPopup_TransparentDialog);
@@ -32,7 +31,7 @@ public class FullScreenDialog extends Dialog {
     }
 
     public FullScreenDialog a(BasePopupView basePopupView) {
-        this.f9986a = basePopupView;
+        this.a = basePopupView;
         return this;
     }
 
@@ -47,11 +46,11 @@ public class FullScreenDialog extends Dialog {
     }
 
     public void a(MotionEvent motionEvent) {
-        BasePopupView basePopupView = this.f9986a;
+        BasePopupView basePopupView = this.a;
         if (basePopupView == null || !(basePopupView.getContext() instanceof Activity)) {
             return;
         }
-        ((Activity) this.f9986a.getContext()).dispatchTouchEvent(motionEvent);
+        ((Activity) this.a.getContext()).dispatchTouchEvent(motionEvent);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:14:0x003b, code lost:
@@ -115,7 +114,7 @@ public class FullScreenDialog extends Dialog {
         boolean z = false;
         if (Build.VERSION.SDK_INT >= 23) {
             z = false;
-            if ((((Activity) this.f9986a.getContext()).getWindow().getDecorView().getSystemUiVisibility() & 8192) != 0) {
+            if ((((Activity) this.a.getContext()).getWindow().getDecorView().getSystemUiVisibility() & 8192) != 0) {
                 z = true;
             }
         }
@@ -123,7 +122,7 @@ public class FullScreenDialog extends Dialog {
     }
 
     public void c() {
-        if (!this.f9986a.l.u.booleanValue()) {
+        if (!this.a.l.u.booleanValue()) {
             getWindow().setFlags(1024, 1024);
         } else if (Build.VERSION.SDK_INT >= 23) {
             View decorView = getWindow().getDecorView();
@@ -157,14 +156,13 @@ public class FullScreenDialog extends Dialog {
         return super.dispatchTouchEvent(motionEvent);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.app.Dialog
-    public void onCreate(Bundle bundle) {
+    protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         if (getWindow() == null) {
             return;
         }
-        BasePopupView basePopupView = this.f9986a;
+        BasePopupView basePopupView = this.a;
         if (basePopupView != null && basePopupView.l.F) {
             if (Build.VERSION.SDK_INT >= 26) {
                 getWindow().setType(2038);
@@ -182,8 +180,8 @@ public class FullScreenDialog extends Dialog {
         } else {
             getWindow().setLayout(-1, Math.max(XPopupUtils.c(getWindow()), XPopupUtils.b(getContext())));
         }
-        getWindow().getDecorView().setSystemUiVisibility(1280);
-        if (!this.f9986a.l.B) {
+        getWindow().getDecorView().setSystemUiVisibility(GL10.GL_INVALID_ENUM);
+        if (!this.a.l.B) {
             getWindow().setFlags(8, 8);
         }
         if (Build.VERSION.SDK_INT >= 19 && Build.VERSION.SDK_INT < 21) {
@@ -192,16 +190,16 @@ public class FullScreenDialog extends Dialog {
         if (Build.VERSION.SDK_INT >= 21) {
             a(201326592, false);
             getWindow().setStatusBarColor(0);
-            getWindow().setNavigationBarColor(this.f9986a.l.w);
+            getWindow().setNavigationBarColor(this.a.l.w);
             getWindow().addFlags(Integer.MIN_VALUE);
         }
         if (Build.VERSION.SDK_INT == 19) {
             getWindow().clearFlags(67108864);
         }
-        if (!this.f9986a.l.v.booleanValue()) {
+        if (!this.a.l.v.booleanValue()) {
             d();
         }
         c();
-        setContentView(this.f9986a);
+        setContentView(this.a);
     }
 }

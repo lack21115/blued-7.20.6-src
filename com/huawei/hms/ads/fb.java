@@ -47,11 +47,11 @@ public class fb extends Drawable implements Animatable, Drawable.Callback {
     private a w;
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f22479a = S + hashCode();
+    private final String f8871a = S + hashCode();
     private Canvas b = new Canvas();
 
     /* renamed from: c  reason: collision with root package name */
-    private Rect f22480c = new Rect();
+    private Rect f8872c = new Rect();
     private Rect d = new Rect();
     private Rect e = new Rect();
     private boolean g = false;
@@ -372,7 +372,7 @@ public class fb extends Drawable implements Animatable, Drawable.Callback {
                 fb.this.invalidateSelf();
                 fb.this.L();
             }
-        }, this.f22479a, 0L);
+        }, this.f8871a, 0L);
         this.q = System.currentTimeMillis();
     }
 
@@ -500,7 +500,7 @@ public class fb extends Drawable implements Animatable, Drawable.Callback {
     public void V() {
         String e = e();
         ge.V(e, "stop play " + com.huawei.openalliance.ad.utils.bc.Code(this.i));
-        com.huawei.openalliance.ad.utils.ba.Code(this.f22479a);
+        com.huawei.openalliance.ad.utils.ba.Code(this.f8871a);
         Code(true);
         this.j.clear();
         this.t.Code(new Runnable() { // from class: com.huawei.hms.ads.fb.1
@@ -521,10 +521,10 @@ public class fb extends Drawable implements Animatable, Drawable.Callback {
             ge.Code(e(), "draw frame: %d", Integer.valueOf(this.r.Code));
         }
         if (this.s) {
-            Gravity.apply(119, getIntrinsicWidth(), getIntrinsicHeight(), getBounds(), this.f22480c);
+            Gravity.apply(119, getIntrinsicWidth(), getIntrinsicHeight(), getBounds(), this.f8872c);
             this.s = false;
         }
-        canvas.drawBitmap(this.r.V, (Rect) null, this.f22480c, Z());
+        canvas.drawBitmap(this.r.V, (Rect) null, this.f8872c, Z());
     }
 
     protected void finalize() {

@@ -18,12 +18,8 @@ import java.util.Map;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/c/b.class */
 public class b {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final String f6416a = b.class.getSimpleName();
-
-    /* renamed from: c  reason: collision with root package name */
-    private static volatile b f6417c = null;
+    public static final String a = b.class.getSimpleName();
+    private static volatile b c = null;
     private static com.anythink.core.c.a d = null;
     private Context e;
     private Object g = new Object();
@@ -50,7 +46,7 @@ public class b {
     }
 
     private static com.anythink.core.c.a a(Context context, String str) {
-        List<af> a2 = com.anythink.core.common.c.d.a(com.anythink.core.common.c.c.a(context)).a(str, g.o.f6522a);
+        List<af> a2 = com.anythink.core.common.c.d.a(com.anythink.core.common.c.c.a(context)).a(str, g.o.a);
         com.anythink.core.c.a aVar = null;
         if (a2 != null) {
             aVar = null;
@@ -71,7 +67,7 @@ public class b {
     }
 
     public static com.anythink.core.c.a a(Context context, String str, String str2) {
-        com.anythink.core.common.c.d.a(com.anythink.core.common.c.c.a(context)).a(str, str2, g.o.f6522a);
+        com.anythink.core.common.c.d.a(com.anythink.core.common.c.c.a(context)).a(str, str2, g.o.a);
         com.anythink.core.c.a f = com.anythink.core.c.a.f(str2);
         f.a(System.currentTimeMillis());
         p.a(context, g.o, g.o.j, f.U());
@@ -79,18 +75,18 @@ public class b {
     }
 
     public static b a(Context context) {
-        if (f6417c == null) {
+        if (c == null) {
             synchronized (b.class) {
                 try {
-                    if (f6417c == null) {
-                        f6417c = new b(context);
+                    if (c == null) {
+                        c = new b(context);
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f6417c;
+        return c;
     }
 
     static /* synthetic */ void a(Context context, com.anythink.core.c.a aVar) {
@@ -212,7 +208,7 @@ public class b {
                 @Override // com.anythink.core.common.g.i
                 public final void onLoadError(int i, String str3, AdError adError) {
                     b.a(b.this);
-                    String str4 = b.f6416a;
+                    String str4 = b.a;
                     b.c(b.this);
                 }
 
@@ -220,7 +216,7 @@ public class b {
                 public final void onLoadFinish(int i, Object obj) {
                     b.a(b.this);
                     if (obj == null) {
-                        String str3 = b.f6416a;
+                        String str3 = b.a;
                         return;
                     }
                     com.anythink.core.c.a unused = b.d = b.a(b.this.e, str, obj.toString());
@@ -259,7 +255,7 @@ public class b {
             long currentTimeMillis = System.currentTimeMillis();
             boolean z = b.L() + P <= currentTimeMillis;
             boolean z2 = a2 != null && b.L() + a2.a() <= currentTimeMillis;
-            Map<String, Object> map = b.f6412c;
+            Map<String, Object> map = b.c;
             Map<String, Object> m = n.a().m();
             return z || z2 || (map != null ? map.equals(m) ^ true : m != null);
         }
@@ -275,7 +271,7 @@ public class b {
                     if (this.e == null) {
                         this.e = n.a().g();
                     }
-                    List<af> a2 = com.anythink.core.common.c.d.a(com.anythink.core.common.c.c.a(this.e)).a(str, g.o.f6522a);
+                    List<af> a2 = com.anythink.core.common.c.d.a(com.anythink.core.common.c.c.a(this.e)).a(str, g.o.a);
                     com.anythink.core.c.a aVar2 = null;
                     if (a2 != null) {
                         aVar2 = null;

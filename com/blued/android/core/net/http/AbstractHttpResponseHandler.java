@@ -3,6 +3,7 @@ package com.blued.android.core.net.http;
 import android.os.Message;
 import android.os.SystemClock;
 import android.text.TextUtils;
+import com.anythink.core.common.g.g;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.net.HttpManager;
 import com.blued.android.core.net.HttpRequestWrapper;
@@ -217,7 +218,7 @@ public abstract class AbstractHttpResponseHandler<T> {
     public void sendResponseMessage(String str, Response response) {
         T t;
         if (response == null) {
-            sendFailureMessage(str, new Exception("response is null!"), -1001, null);
+            sendFailureMessage(str, new Exception("response is null!"), g.b, null);
             return;
         }
         ResponseBody body = response.body();

@@ -26,7 +26,7 @@ public final class BitArray implements Cloneable {
         if (i > this.bits.length * 32) {
             int[] makeArray = makeArray(i);
             int[] iArr = this.bits;
-            System.arraycopy((Object) iArr, 0, (Object) makeArray, 0, iArr.length);
+            System.arraycopy(iArr, 0, makeArray, 0, iArr.length);
             this.bits = makeArray;
         }
     }
@@ -89,7 +89,7 @@ public final class BitArray implements Cloneable {
     }
 
     /* renamed from: clone */
-    public BitArray m8868clone() {
+    public BitArray m5819clone() {
         return new BitArray((int[]) this.bits.clone(), this.size);
     }
 

@@ -9,10 +9,10 @@ public class LyricsInfo {
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private TreeMap<Integer, LyricsLineInfo> f23694c;
+    private TreeMap<Integer, LyricsLineInfo> f10086c;
 
     /* renamed from: a  reason: collision with root package name */
-    private int f23693a = 1;
+    private int f10085a = 1;
     private Map<String, Object> d = new HashMap();
 
     public Map<String, Object> a() {
@@ -28,14 +28,14 @@ public class LyricsInfo {
     }
 
     public void a(TreeMap<Integer, LyricsLineInfo> treeMap) {
-        this.f23694c = treeMap;
+        this.f10086c = treeMap;
     }
 
     public TreeMap<Integer, LyricsLineInfo> b() {
-        return this.f23694c;
+        return this.f10086c;
     }
 
     public int c() {
-        return this.f23693a;
+        return this.f10085a;
     }
 }

@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class RequestAnchorLiveHeaderBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29577a;
+    private final LinearLayout f15887a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29577a;
+        return this.f15887a;
     }
 }

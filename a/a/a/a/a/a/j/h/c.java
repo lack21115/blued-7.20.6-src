@@ -30,7 +30,7 @@ public class c extends a {
         if (d()) {
             g gVar = this.o;
             if (gVar == null) {
-                e.f1361c.e("YUVPictureStreamingManager", "mYuvDataTransfer is null !!!");
+                e.f1313c.e("YUVPictureStreamingManager", "mYuvDataTransfer is null !!!");
                 return;
             } else {
                 ByteBuffer byteBuffer = this.q;
@@ -41,7 +41,7 @@ public class c extends a {
         if (streamingPreviewCallback != null) {
             byte[] array = this.q.array();
             f.a aVar = this.p;
-            streamingPreviewCallback.onPreviewFrame(array, aVar.b, aVar.f1272c, aVar.e, aVar.f, System.nanoTime());
+            streamingPreviewCallback.onPreviewFrame(array, aVar.b, aVar.f1224c, aVar.e, aVar.f, System.nanoTime());
         }
     }
 
@@ -53,14 +53,14 @@ public class c extends a {
         if (str != null) {
             a(str);
         } else {
-            a(this.f1276c);
+            a(this.f1228c);
         }
     }
 
     @Override // a.a.a.a.a.a.j.h.a
     public void a(Bitmap bitmap) {
         if (this.p == null) {
-            e.f1361c.e("YUVPictureStreamingManager", "mCurrentTransferSessionCfg is null !!!");
+            e.f1313c.e("YUVPictureStreamingManager", "mCurrentTransferSessionCfg is null !!!");
             return;
         }
         if (d()) {
@@ -77,7 +77,7 @@ public class c extends a {
         if (d()) {
             g gVar = this.o;
             if (gVar == null) {
-                e.f1361c.e("YUVPictureStreamingManager", "mYuvDataTransfer is null !!!");
+                e.f1313c.e("YUVPictureStreamingManager", "mYuvDataTransfer is null !!!");
             } else {
                 gVar.b(false);
             }
@@ -94,7 +94,7 @@ public class c extends a {
         Bitmap createBitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), matrix, true);
         f.a aVar = this.p;
         boolean z = true;
-        Bitmap createScaledBitmap = Bitmap.createScaledBitmap(createBitmap, aVar.b, aVar.f1272c, true);
+        Bitmap createScaledBitmap = Bitmap.createScaledBitmap(createBitmap, aVar.b, aVar.f1224c, true);
         int width = createScaledBitmap.getWidth();
         int height = createScaledBitmap.getHeight();
         if (this.p.f != PLFourCC.FOURCC_NV21) {

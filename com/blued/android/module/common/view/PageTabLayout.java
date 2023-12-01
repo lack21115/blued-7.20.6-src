@@ -39,9 +39,9 @@ import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
 import androidx.interpolator.view.animation.LinearOutSlowInInterpolator;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
+import com.android.internal.R;
 import com.blued.android.core.utils.skin.BluedSkinUtils;
 import com.blued.android.core.utils.skin.listener.BluedSkinSupportable;
-import com.blued.android.module.common.R;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.ref.WeakReference;
@@ -62,13 +62,9 @@ public class PageTabLayout extends HorizontalScrollView implements BluedSkinSupp
     private int I;
     private int J;
     private OnPlaceHolderSelectedListener K;
-
-    /* renamed from: a  reason: collision with root package name */
-    final int f11011a;
+    final int a;
     int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    int f11012c;
+    int c;
     int d;
     int e;
     int f;
@@ -105,7 +101,6 @@ public class PageTabLayout extends HorizontalScrollView implements BluedSkinSupp
             this.b = z;
         }
 
-        @Override // androidx.viewpager.widget.ViewPager.OnAdapterChangeListener
         public void onAdapterChanged(ViewPager viewPager, PagerAdapter pagerAdapter, PagerAdapter pagerAdapter2) {
             if (PageTabLayout.this.r == viewPager) {
                 PageTabLayout.this.a(pagerAdapter2, this.b);
@@ -116,13 +111,9 @@ public class PageTabLayout extends HorizontalScrollView implements BluedSkinSupp
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/view/PageTabLayout$AnimationUtils.class */
     public static class AnimationUtils {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static final Interpolator f11015a = new LinearInterpolator();
+        public static final Interpolator a = new LinearInterpolator();
         public static final Interpolator b = new FastOutSlowInInterpolator();
-
-        /* renamed from: c  reason: collision with root package name */
-        public static final Interpolator f11016c = new FastOutLinearInInterpolator();
+        public static final Interpolator c = new FastOutLinearInInterpolator();
         public static final Interpolator d = new LinearOutSlowInInterpolator();
         public static final Interpolator e = new DecelerateInterpolator();
 
@@ -172,9 +163,7 @@ public class PageTabLayout extends HorizontalScrollView implements BluedSkinSupp
 
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/view/PageTabLayout$SlidingTabStrip.class */
     public class SlidingTabStrip extends LinearLayout {
-
-        /* renamed from: a  reason: collision with root package name */
-        int f11018a;
+        int a;
         float b;
         private int d;
         private final Paint e;
@@ -186,7 +175,7 @@ public class PageTabLayout extends HorizontalScrollView implements BluedSkinSupp
 
         SlidingTabStrip(Context context) {
             super(context);
-            this.f11018a = -1;
+            this.a = -1;
             this.g = -1;
             this.h = -1;
             this.i = -1;
@@ -197,7 +186,7 @@ public class PageTabLayout extends HorizontalScrollView implements BluedSkinSupp
         private void b() {
             int i;
             int i2;
-            View childAt = getChildAt(this.f11018a);
+            View childAt = getChildAt(this.a);
             if (childAt == null || childAt.getWidth() <= 0) {
                 i = -1;
                 i2 = -1;
@@ -209,8 +198,8 @@ public class PageTabLayout extends HorizontalScrollView implements BluedSkinSupp
                 if (this.b > 0.0f) {
                     i2 = right;
                     i = left;
-                    if (this.f11018a < getChildCount() - 1) {
-                        View childAt2 = getChildAt(this.f11018a + 1);
+                    if (this.a < getChildCount() - 1) {
+                        View childAt2 = getChildAt(this.a + 1);
                         float f = this.b;
                         float left2 = childAt2.getLeft();
                         float f2 = this.b;
@@ -227,7 +216,7 @@ public class PageTabLayout extends HorizontalScrollView implements BluedSkinSupp
             if (valueAnimator != null && valueAnimator.isRunning()) {
                 this.j.cancel();
             }
-            this.f11018a = i;
+            this.a = i;
             this.b = f;
             b();
         }
@@ -271,7 +260,7 @@ public class PageTabLayout extends HorizontalScrollView implements BluedSkinSupp
             }
             final int left = childAt.getLeft();
             final int right = childAt.getRight();
-            if (Math.abs(i - this.f11018a) <= 1) {
+            if (Math.abs(i - this.a) <= 1) {
                 i3 = this.h;
                 i4 = this.i;
             } else {
@@ -298,7 +287,7 @@ public class PageTabLayout extends HorizontalScrollView implements BluedSkinSupp
             valueAnimator2.addListener(new AnimatorListenerAdapter() { // from class: com.blued.android.module.common.view.PageTabLayout.SlidingTabStrip.2
                 @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                 public void onAnimationEnd(Animator animator) {
-                    SlidingTabStrip.this.f11018a = i;
+                    SlidingTabStrip.this.a = i;
                     SlidingTabStrip.this.b = 0.0f;
                 }
             });
@@ -334,7 +323,7 @@ public class PageTabLayout extends HorizontalScrollView implements BluedSkinSupp
         }
 
         float getIndicatorPosition() {
-            return this.f11018a + this.b;
+            return this.a + this.b;
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
@@ -347,7 +336,7 @@ public class PageTabLayout extends HorizontalScrollView implements BluedSkinSupp
                 return;
             }
             this.j.cancel();
-            b(this.f11018a, Math.round((1.0f - this.j.getAnimatedFraction()) * ((float) this.j.getDuration())));
+            b(this.a, Math.round((1.0f - this.j.getAnimatedFraction()) * ((float) this.j.getDuration())));
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
@@ -437,9 +426,7 @@ public class PageTabLayout extends HorizontalScrollView implements BluedSkinSupp
 
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/view/PageTabLayout$Tab.class */
     public class Tab {
-
-        /* renamed from: a  reason: collision with root package name */
-        PageTabLayout f11023a;
+        PageTabLayout a;
         TabView b;
         private Object d;
         private Drawable e;
@@ -476,7 +463,7 @@ public class PageTabLayout extends HorizontalScrollView implements BluedSkinSupp
         }
 
         public Tab b(int i) {
-            PageTabLayout pageTabLayout = this.f11023a;
+            PageTabLayout pageTabLayout = this.a;
             if (pageTabLayout != null) {
                 return a(pageTabLayout.getResources().getText(i));
             }
@@ -492,7 +479,7 @@ public class PageTabLayout extends HorizontalScrollView implements BluedSkinSupp
         }
 
         public void e() {
-            PageTabLayout pageTabLayout = this.f11023a;
+            PageTabLayout pageTabLayout = this.a;
             if (pageTabLayout == null) {
                 throw new IllegalArgumentException("Tab not attached to a TabLayout");
             }
@@ -500,7 +487,7 @@ public class PageTabLayout extends HorizontalScrollView implements BluedSkinSupp
         }
 
         public boolean f() {
-            PageTabLayout pageTabLayout = this.f11023a;
+            PageTabLayout pageTabLayout = this.a;
             if (pageTabLayout != null) {
                 return pageTabLayout.getSelectedTabPosition() == this.h;
             }
@@ -519,7 +506,7 @@ public class PageTabLayout extends HorizontalScrollView implements BluedSkinSupp
         }
 
         void i() {
-            this.f11023a = null;
+            this.a = null;
             this.b = null;
             this.d = null;
             this.e = null;
@@ -532,53 +519,46 @@ public class PageTabLayout extends HorizontalScrollView implements BluedSkinSupp
 
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/view/PageTabLayout$TabLayoutOnPageChangeListener.class */
     public static class TabLayoutOnPageChangeListener implements ViewPager.OnPageChangeListener {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final WeakReference<PageTabLayout> f11025a;
+        private final WeakReference<PageTabLayout> a;
         private int b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private int f11026c;
+        private int c;
 
         public TabLayoutOnPageChangeListener(PageTabLayout pageTabLayout) {
-            this.f11025a = new WeakReference<>(pageTabLayout);
+            this.a = new WeakReference<>(pageTabLayout);
         }
 
         void a() {
-            this.f11026c = 0;
+            this.c = 0;
             this.b = 0;
         }
 
-        @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
         public void onPageScrollStateChanged(int i) {
-            this.b = this.f11026c;
-            this.f11026c = i;
+            this.b = this.c;
+            this.c = i;
         }
 
-        @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
         public void onPageScrolled(int i, float f, int i2) {
-            PageTabLayout pageTabLayout = this.f11025a.get();
+            PageTabLayout pageTabLayout = this.a.get();
             if (pageTabLayout != null) {
-                if (this.f11026c == 2) {
+                if (this.c == 2) {
                     int i3 = this.b;
                 }
                 boolean z = true;
-                if (this.f11026c == 2) {
+                if (this.c == 2) {
                     z = this.b != 0;
                 }
                 pageTabLayout.a(i, f, false, z);
             }
         }
 
-        @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
         public void onPageSelected(int i) {
-            PageTabLayout pageTabLayout = this.f11025a.get();
+            PageTabLayout pageTabLayout = this.a.get();
             if (pageTabLayout != null) {
                 pageTabLayout.setSelectedTabView(i);
                 if (pageTabLayout.getSelectedTabPosition() == i || i >= pageTabLayout.getTabCount()) {
                     return;
                 }
-                int i2 = this.f11026c;
+                int i2 = this.c;
                 pageTabLayout.a(pageTabLayout.a(i), i2 == 0 || (i2 == 2 && this.b == 0));
             }
         }
@@ -588,9 +568,7 @@ public class PageTabLayout extends HorizontalScrollView implements BluedSkinSupp
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/view/PageTabLayout$TabView.class */
     public class TabView extends LinearLayout {
         private Tab b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private TextView f11028c;
+        private TextView c;
         private ImageView d;
         private View e;
         private View f;
@@ -601,10 +579,10 @@ public class PageTabLayout extends HorizontalScrollView implements BluedSkinSupp
         public TabView(Context context) {
             super(context);
             this.i = 1;
-            if (PageTabLayout.this.f11011a != 0) {
-                ViewCompat.setBackground(this, AppCompatResources.getDrawable(context, PageTabLayout.this.f11011a));
+            if (PageTabLayout.this.a != 0) {
+                ViewCompat.setBackground(this, AppCompatResources.getDrawable(context, PageTabLayout.this.a));
             }
-            ViewCompat.setPaddingRelative(this, PageTabLayout.this.b, PageTabLayout.this.f11012c, PageTabLayout.this.d, PageTabLayout.this.e);
+            ViewCompat.setPaddingRelative(this, PageTabLayout.this.b, PageTabLayout.this.c, PageTabLayout.this.d, PageTabLayout.this.e);
             setGravity(17);
             setOrientation(0);
             setClickable(true);
@@ -726,7 +704,7 @@ public class PageTabLayout extends HorizontalScrollView implements BluedSkinSupp
             if (z2 && z && Build.VERSION.SDK_INT < 16) {
                 sendAccessibilityEvent(4);
             }
-            TextView textView = this.f11028c;
+            TextView textView = this.c;
             if (textView != null) {
                 textView.setSelected(z);
             }
@@ -742,17 +720,17 @@ public class PageTabLayout extends HorizontalScrollView implements BluedSkinSupp
 
         final void update() {
             Tab tab = this.b;
-            View a2 = tab != null ? tab.a() : null;
-            if (a2 != null) {
-                ViewParent parent = a2.getParent();
+            View a = tab != null ? tab.a() : null;
+            if (a != null) {
+                ViewParent parent = a.getParent();
                 if (parent != this) {
                     if (parent != null) {
-                        ((ViewGroup) parent).removeView(a2);
+                        ((ViewGroup) parent).removeView(a);
                     }
-                    addView(a2);
+                    addView(a);
                 }
-                this.f = a2;
-                TextView textView = this.f11028c;
+                this.f = a;
+                TextView textView = this.c;
                 if (textView != null) {
                     textView.setVisibility(8);
                 }
@@ -761,12 +739,12 @@ public class PageTabLayout extends HorizontalScrollView implements BluedSkinSupp
                     imageView.setVisibility(8);
                     this.d.setImageDrawable(null);
                 }
-                TextView textView2 = (TextView) a2.findViewById(16908308);
+                TextView textView2 = (TextView) a.findViewById(R.id.text1);
                 this.g = textView2;
                 if (textView2 != null) {
                     this.i = TextViewCompat.getMaxLines(textView2);
                 }
-                this.h = (ImageView) a2.findViewById(16908294);
+                this.h = (ImageView) a.findViewById(R.id.icon);
             } else {
                 View view = this.f;
                 if (view != null) {
@@ -778,27 +756,27 @@ public class PageTabLayout extends HorizontalScrollView implements BluedSkinSupp
             }
             if (this.f == null) {
                 if (this.d == null) {
-                    ImageView imageView2 = (ImageView) LayoutInflater.from(getContext()).inflate(R.layout.design_layout_tab_icon, (ViewGroup) this, false);
+                    ImageView imageView2 = (ImageView) LayoutInflater.from(getContext()).inflate(com.blued.android.module.common.R.layout.design_layout_tab_icon, (ViewGroup) this, false);
                     addView(imageView2, 0);
                     this.d = imageView2;
                 }
-                if (this.f11028c == null) {
-                    TextView textView3 = (TextView) LayoutInflater.from(getContext()).inflate(R.layout.design_layout_tab_text, (ViewGroup) this, false);
+                if (this.c == null) {
+                    TextView textView3 = (TextView) LayoutInflater.from(getContext()).inflate(com.blued.android.module.common.R.layout.design_layout_tab_text, (ViewGroup) this, false);
                     addView(textView3);
-                    this.f11028c = textView3;
+                    this.c = textView3;
                     textView3.setMaxLines(PageTabLayout.this.B);
-                    this.f11028c.setLines(PageTabLayout.this.B);
-                    this.i = TextViewCompat.getMaxLines(this.f11028c);
+                    this.c.setLines(PageTabLayout.this.B);
+                    this.i = TextViewCompat.getMaxLines(this.c);
                 }
-                TextViewCompat.setTextAppearance(this.f11028c, PageTabLayout.this.l);
+                TextViewCompat.setTextAppearance(this.c, PageTabLayout.this.l);
                 View view2 = this.e;
                 if (view2 != null) {
                     addView(view2);
                 }
                 if (PageTabLayout.this.i != null) {
-                    this.f11028c.setTextColor(PageTabLayout.this.i);
+                    this.c.setTextColor(PageTabLayout.this.i);
                 }
-                a(this.f11028c, this.d);
+                a(this.c, this.d);
             } else if (this.g != null || this.h != null) {
                 a(this.g, this.h);
             }
@@ -815,17 +793,15 @@ public class PageTabLayout extends HorizontalScrollView implements BluedSkinSupp
 
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/view/PageTabLayout$ViewPagerOnTabSelectedListener.class */
     public static class ViewPagerOnTabSelectedListener implements OnTabSelectedListener {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final ViewPager f11029a;
+        private final ViewPager a;
 
         ViewPagerOnTabSelectedListener(ViewPager viewPager) {
-            this.f11029a = viewPager;
+            this.a = viewPager;
         }
 
         @Override // com.blued.android.module.common.view.PageTabLayout.OnTabSelectedListener
         public void a(Tab tab) {
-            this.f11029a.setCurrentItem(tab.c());
+            this.a.setCurrentItem(tab.c());
         }
 
         @Override // com.blued.android.module.common.view.PageTabLayout.OnTabSelectedListener
@@ -1018,10 +994,10 @@ public class PageTabLayout extends HorizontalScrollView implements BluedSkinSupp
             return;
         }
         int scrollX = getScrollX();
-        int a2 = a(i, 0.0f);
-        if (scrollX != a2) {
+        int a = a(i, 0.0f);
+        if (scrollX != a) {
             d();
-            this.D.setIntValues(scrollX, a2);
+            this.D.setIntValues(scrollX, a);
             this.D.start();
         }
         this.w.b(i, 300);
@@ -1041,15 +1017,15 @@ public class PageTabLayout extends HorizontalScrollView implements BluedSkinSupp
 
     private TabView e(Tab tab) {
         Pools.Pool<TabView> pool = this.G;
-        TabView acquire = pool != null ? pool.acquire() : null;
-        TabView tabView = acquire;
-        if (acquire == null) {
-            tabView = new TabView(getContext());
+        TabView tabView = pool != null ? (TabView) pool.acquire() : null;
+        TabView tabView2 = tabView;
+        if (tabView == null) {
+            tabView2 = new TabView(getContext());
         }
-        tabView.a(tab);
-        tabView.setFocusable(true);
-        tabView.setMinimumWidth(getTabMinWidth());
-        return tabView;
+        tabView2.a(tab);
+        tabView2.setFocusable(true);
+        tabView2.setMinimumWidth(getTabMinWidth());
+        return tabView2;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1165,14 +1141,14 @@ public class PageTabLayout extends HorizontalScrollView implements BluedSkinSupp
     }
 
     public Tab a() {
-        Tab acquire = F.acquire();
-        Tab tab = acquire;
-        if (acquire == null) {
-            tab = new Tab();
+        Tab tab = (Tab) F.acquire();
+        Tab tab2 = tab;
+        if (tab == null) {
+            tab2 = new Tab();
         }
-        tab.f11023a = this;
-        tab.b = e(tab);
-        return tab;
+        tab2.a = this;
+        tab2.b = e(tab2);
+        return tab2;
     }
 
     public Tab a(int i) {
@@ -1231,7 +1207,7 @@ public class PageTabLayout extends HorizontalScrollView implements BluedSkinSupp
     }
 
     public void a(Tab tab, int i, boolean z) {
-        if (tab.f11023a != this) {
+        if (tab.a != this) {
             throw new IllegalArgumentException("Tab belongs to a different TabLayout.");
         }
         a(tab, i);
@@ -1252,20 +1228,20 @@ public class PageTabLayout extends HorizontalScrollView implements BluedSkinSupp
             }
             return;
         }
-        int c2 = tab != null ? tab.c() : -1;
-        if (this.J == c2 && (onPlaceHolderSelectedListener = this.K) != null) {
+        int c = tab != null ? tab.c() : -1;
+        if (this.J == c && (onPlaceHolderSelectedListener = this.K) != null) {
             onPlaceHolderSelectedListener.onSelected();
             this.J = -1;
             return;
         }
         if (z) {
-            if ((tab2 == null || tab2.c() == -1) && c2 != -1) {
-                a(c2, 0.0f, true);
+            if ((tab2 == null || tab2.c() == -1) && c != -1) {
+                a(c, 0.0f, true);
             } else {
-                d(c2);
+                d(c);
             }
-            if (c2 != -1) {
-                setSelectedTabView(c2);
+            if (c != -1) {
+                setSelectedTabView(c);
             }
         }
         if (tab2 != null) {

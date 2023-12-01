@@ -33,11 +33,11 @@ import java.util.List;
 public abstract class FloatReddishBag extends LinearLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    public Context f28418a;
+    public Context f14728a;
     public View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private ImageView f28419c;
+    private ImageView f14729c;
     private TextView d;
     private Handler e;
     private List<LiveRewardListModel> f;
@@ -55,18 +55,17 @@ public abstract class FloatReddishBag extends LinearLayout {
     class AnonymousClass2 extends BluedUIHttpResponse<BluedEntity<LiveRewardListModel, LiveRewardStatusExtra>> {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ FloatReddishBag f28421a;
+        final /* synthetic */ FloatReddishBag f14731a;
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIUpdate(BluedEntity<LiveRewardListModel, LiveRewardStatusExtra> bluedEntity) {
             if (bluedEntity == null || !bluedEntity.hasData()) {
-                this.f28421a.a(bluedEntity.data, "");
+                this.f14731a.a(bluedEntity.data, "");
             } else if (bluedEntity.extra != null) {
                 String str = bluedEntity.extra.redirect;
                 if (TextUtils.isEmpty(str)) {
                     return;
                 }
-                this.f28421a.a(bluedEntity.data, str);
+                this.f14731a.a(bluedEntity.data, str);
             }
         }
     }
@@ -76,17 +75,17 @@ public abstract class FloatReddishBag extends LinearLayout {
     public static class MyHandler extends Handler {
 
         /* renamed from: a  reason: collision with root package name */
-        SoftReference<FloatReddishBag> f28425a;
+        SoftReference<FloatReddishBag> f14735a;
 
         public MyHandler(FloatReddishBag floatReddishBag) {
-            this.f28425a = new SoftReference<>(floatReddishBag);
+            this.f14735a = new SoftReference<>(floatReddishBag);
         }
 
         @Override // android.os.Handler
         public void handleMessage(Message message) {
             FloatReddishBag floatReddishBag;
             super.handleMessage(message);
-            if (message.what == 0 && (floatReddishBag = this.f28425a.get()) != null) {
+            if (message.what == 0 && (floatReddishBag = this.f14735a.get()) != null) {
                 floatReddishBag.c();
                 floatReddishBag.a((long) m.ag);
             }
@@ -135,7 +134,7 @@ public abstract class FloatReddishBag extends LinearLayout {
                 }
             }
         };
-        this.f28418a = context;
+        this.f14728a = context;
         d();
     }
 
@@ -181,7 +180,7 @@ public abstract class FloatReddishBag extends LinearLayout {
                 }
             }
         };
-        this.f28418a = context;
+        this.f14728a = context;
         d();
     }
 
@@ -192,7 +191,7 @@ public abstract class FloatReddishBag extends LinearLayout {
     }
 
     private void a(final View view) {
-        ValueAnimator ofInt = ObjectAnimator.ofInt(DensityUtils.a(this.f28418a, -50.0f), DensityUtils.a(this.f28418a, 30.0f));
+        ValueAnimator ofInt = ObjectAnimator.ofInt(DensityUtils.a(this.f14728a, -50.0f), DensityUtils.a(this.f14728a, 30.0f));
         ofInt.setDuration(200L);
         ofInt.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.soft.blued.customview.FloatReddishBag.4
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
@@ -218,14 +217,14 @@ public abstract class FloatReddishBag extends LinearLayout {
             this.i = str;
             setVisibility(0);
             TextView textView = this.d;
-            String string = this.f28418a.getResources().getString(2131890213);
+            String string = this.f14728a.getResources().getString(R.string.live_reddish_bag);
             textView.setText(String.format(string, list.size() + ""));
             a(0L);
         }
     }
 
     private void b(final View view) {
-        ValueAnimator ofInt = ObjectAnimator.ofInt(DensityUtils.a(this.f28418a, 30.0f), DensityUtils.a(this.f28418a, -50.0f));
+        ValueAnimator ofInt = ObjectAnimator.ofInt(DensityUtils.a(this.f14728a, 30.0f), DensityUtils.a(this.f14728a, -50.0f));
         ofInt.setDuration(200L);
         ofInt.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.soft.blued.customview.FloatReddishBag.5
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
@@ -240,9 +239,9 @@ public abstract class FloatReddishBag extends LinearLayout {
     }
 
     private void d() {
-        View inflate = LayoutInflater.from(this.f28418a).inflate(R.layout.live_reddish_bag, this);
+        View inflate = LayoutInflater.from(this.f14728a).inflate(R.layout.live_reddish_bag, this);
         this.b = inflate;
-        this.f28419c = (ImageView) inflate.findViewById(R.id.reddish_bag_header);
+        this.f14729c = (ImageView) inflate.findViewById(R.id.reddish_bag_header);
         this.d = (TextView) this.b.findViewById(R.id.reddish_bag_num);
         this.e = new MyHandler(this);
         setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.customview.FloatReddishBag.1
@@ -250,7 +249,7 @@ public abstract class FloatReddishBag extends LinearLayout {
             public void onClick(View view) {
                 Tracker.onClick(view);
                 FloatReddishBag.this.a();
-                WebViewShowInfoFragment.show(FloatReddishBag.this.f28418a, FloatReddishBag.this.i, 7);
+                WebViewShowInfoFragment.show(FloatReddishBag.this.f14728a, FloatReddishBag.this.i, 7);
             }
         });
     }
@@ -276,7 +275,7 @@ public abstract class FloatReddishBag extends LinearLayout {
             return;
         }
         BaseFragment baseFragment = this.h;
-        ImageLoader.a(baseFragment != null ? baseFragment.getFragmentActive() : null, liveRewardListModel.avatar).b(2131237310).c().a(this.f28419c);
+        ImageLoader.a(baseFragment != null ? baseFragment.getFragmentActive() : null, liveRewardListModel.avatar).b(2131237310).c().a(this.f14729c);
     }
 
     public abstract void b();

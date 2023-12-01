@@ -19,13 +19,13 @@ public final class DateTodayMatchUserModel {
     private final int weight;
     private final List<String> your_like_type;
 
-    public DateTodayMatchUserModel(String uid, String name, String avatar, int i, int i2, int i3, float f, List<String> list, List<String> list2, List<String> list3) {
-        Intrinsics.e(uid, "uid");
-        Intrinsics.e(name, "name");
-        Intrinsics.e(avatar, "avatar");
-        this.uid = uid;
-        this.name = name;
-        this.avatar = avatar;
+    public DateTodayMatchUserModel(String str, String str2, String str3, int i, int i2, int i3, float f, List<String> list, List<String> list2, List<String> list3) {
+        Intrinsics.e(str, "uid");
+        Intrinsics.e(str2, "name");
+        Intrinsics.e(str3, "avatar");
+        this.uid = str;
+        this.name = str2;
+        this.avatar = str3;
         this.age = i;
         this.height = i2;
         this.weight = i3;
@@ -113,11 +113,11 @@ public final class DateTodayMatchUserModel {
         return this.others_evaluation;
     }
 
-    public final DateTodayMatchUserModel copy(String uid, String name, String avatar, int i, int i2, int i3, float f, List<String> list, List<String> list2, List<String> list3) {
-        Intrinsics.e(uid, "uid");
-        Intrinsics.e(name, "name");
-        Intrinsics.e(avatar, "avatar");
-        return new DateTodayMatchUserModel(uid, name, avatar, i, i2, i3, f, list, list2, list3);
+    public final DateTodayMatchUserModel copy(String str, String str2, String str3, int i, int i2, int i3, float f, List<String> list, List<String> list2, List<String> list3) {
+        Intrinsics.e(str, "uid");
+        Intrinsics.e(str2, "name");
+        Intrinsics.e(str3, "avatar");
+        return new DateTodayMatchUserModel(str, str2, str3, i, i2, i3, f, list, list2, list3);
     }
 
     public boolean equals(Object obj) {
@@ -126,7 +126,7 @@ public final class DateTodayMatchUserModel {
         }
         if (obj instanceof DateTodayMatchUserModel) {
             DateTodayMatchUserModel dateTodayMatchUserModel = (DateTodayMatchUserModel) obj;
-            return Intrinsics.a((Object) this.uid, (Object) dateTodayMatchUserModel.uid) && Intrinsics.a((Object) this.name, (Object) dateTodayMatchUserModel.name) && Intrinsics.a((Object) this.avatar, (Object) dateTodayMatchUserModel.avatar) && this.age == dateTodayMatchUserModel.age && this.height == dateTodayMatchUserModel.height && this.weight == dateTodayMatchUserModel.weight && Intrinsics.a(Float.valueOf(this.role), Float.valueOf(dateTodayMatchUserModel.role)) && Intrinsics.a(this.your_like_type, dateTodayMatchUserModel.your_like_type) && Intrinsics.a(this.others_evaluation, dateTodayMatchUserModel.others_evaluation) && Intrinsics.a(this.attestation_info, dateTodayMatchUserModel.attestation_info);
+            return Intrinsics.a(this.uid, dateTodayMatchUserModel.uid) && Intrinsics.a(this.name, dateTodayMatchUserModel.name) && Intrinsics.a(this.avatar, dateTodayMatchUserModel.avatar) && this.age == dateTodayMatchUserModel.age && this.height == dateTodayMatchUserModel.height && this.weight == dateTodayMatchUserModel.weight && Intrinsics.a(Float.valueOf(this.role), Float.valueOf(dateTodayMatchUserModel.role)) && Intrinsics.a(this.your_like_type, dateTodayMatchUserModel.your_like_type) && Intrinsics.a(this.others_evaluation, dateTodayMatchUserModel.others_evaluation) && Intrinsics.a(this.attestation_info, dateTodayMatchUserModel.attestation_info);
         }
         return false;
     }

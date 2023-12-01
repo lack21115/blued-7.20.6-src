@@ -3,13 +3,9 @@ package com.blued.android.module.common.svg_android;
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/svg_android/ParserHelper.class */
 public class ParserHelper {
     private static final double[] e = new double[128];
-
-    /* renamed from: a  reason: collision with root package name */
-    public int f10825a;
+    public int a;
     private char b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private CharSequence f10826c;
+    private CharSequence c;
     private int d;
 
     static {
@@ -26,8 +22,8 @@ public class ParserHelper {
     }
 
     public ParserHelper(CharSequence charSequence, int i) {
-        this.f10826c = charSequence;
-        this.f10825a = i;
+        this.c = charSequence;
+        this.a = i;
         this.d = charSequence.length();
         this.b = charSequence.charAt(i);
     }
@@ -51,26 +47,26 @@ public class ParserHelper {
         }
     }
 
-    private void a(char c2) {
-        throw new RuntimeException("Unexpected char '" + c2 + "'.");
+    private void a(char c) {
+        throw new RuntimeException("Unexpected char '" + c + "'.");
     }
 
     private char f() {
-        int i = this.f10825a;
+        int i = this.a;
         if (i < this.d) {
-            this.f10825a = i + 1;
+            this.a = i + 1;
         }
-        int i2 = this.f10825a;
+        int i2 = this.a;
         if (i2 == this.d) {
             return (char) 0;
         }
-        return this.f10826c.charAt(i2);
+        return this.c.charAt(i2);
     }
 
     public void a() {
         while (true) {
-            int i = this.f10825a;
-            if (i >= this.d || !Character.isWhitespace(this.f10826c.charAt(i))) {
+            int i = this.a;
+            if (i >= this.d || !Character.isWhitespace(this.c.charAt(i))) {
                 return;
             }
             c();
@@ -79,11 +75,11 @@ public class ParserHelper {
 
     public void b() {
         while (true) {
-            int i = this.f10825a;
+            int i = this.a;
             if (i >= this.d) {
                 return;
             }
-            char charAt = this.f10826c.charAt(i);
+            char charAt = this.c.charAt(i);
             if (charAt != '\t' && charAt != '\n' && charAt != ' ' && charAt != ',') {
                 return;
             }

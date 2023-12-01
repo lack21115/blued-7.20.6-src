@@ -7,20 +7,18 @@ import java.util.List;
 
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/maps/model/Circle.class */
 public final class Circle extends BaseOverlay {
-
-    /* renamed from: a  reason: collision with root package name */
-    WeakReference<IGlOverlayLayer> f5521a;
+    WeakReference<IGlOverlayLayer> a;
     private CircleOptions options;
 
     public Circle(IGlOverlayLayer iGlOverlayLayer, CircleOptions circleOptions, String str) {
         super(str);
-        this.f5521a = new WeakReference<>(iGlOverlayLayer);
+        this.a = new WeakReference<>(iGlOverlayLayer);
         this.options = circleOptions;
     }
 
     private void a() {
         try {
-            IGlOverlayLayer iGlOverlayLayer = this.f5521a.get();
+            IGlOverlayLayer iGlOverlayLayer = this.a.get();
             if (TextUtils.isEmpty(this.overlayName) || iGlOverlayLayer == null) {
                 return;
             }
@@ -31,7 +29,7 @@ public final class Circle extends BaseOverlay {
 
     public final boolean contains(LatLng latLng) {
         try {
-            IGlOverlayLayer iGlOverlayLayer = this.f5521a.get();
+            IGlOverlayLayer iGlOverlayLayer = this.a.get();
             if (iGlOverlayLayer != null) {
                 return iGlOverlayLayer.IsCircleContainPoint(this.options, latLng);
             }
@@ -194,7 +192,7 @@ public final class Circle extends BaseOverlay {
 
     public final void remove() {
         try {
-            IGlOverlayLayer iGlOverlayLayer = this.f5521a.get();
+            IGlOverlayLayer iGlOverlayLayer = this.a.get();
             if (iGlOverlayLayer != null) {
                 iGlOverlayLayer.removeOverlay(this.overlayName);
             }

@@ -8,19 +8,15 @@ import com.airbnb.lottie.model.layer.BaseLayer;
 
 /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/model/content/ShapePath.class */
 public class ShapePath implements ContentModel {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final String f4366a;
+    private final String a;
     private final int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final AnimatableShapeValue f4367c;
+    private final AnimatableShapeValue c;
     private final boolean d;
 
     public ShapePath(String str, int i, AnimatableShapeValue animatableShapeValue, boolean z) {
-        this.f4366a = str;
+        this.a = str;
         this.b = i;
-        this.f4367c = animatableShapeValue;
+        this.c = animatableShapeValue;
         this.d = z;
     }
 
@@ -30,11 +26,11 @@ public class ShapePath implements ContentModel {
     }
 
     public String a() {
-        return this.f4366a;
+        return this.a;
     }
 
     public AnimatableShapeValue b() {
-        return this.f4367c;
+        return this.c;
     }
 
     public boolean c() {
@@ -42,6 +38,6 @@ public class ShapePath implements ContentModel {
     }
 
     public String toString() {
-        return "ShapePath{name=" + this.f4366a + ", index=" + this.b + '}';
+        return "ShapePath{name=" + this.a + ", index=" + this.b + '}';
     }
 }

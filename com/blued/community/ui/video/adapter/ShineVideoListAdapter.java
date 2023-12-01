@@ -41,11 +41,11 @@ import java.util.List;
 public class ShineVideoListAdapter extends BaseQuickAdapter<BluedIngSelfFeed, BaseViewHolder> {
 
     /* renamed from: a  reason: collision with root package name */
-    public Context f20295a;
+    public Context f6689a;
     public LayoutInflater b;
 
     /* renamed from: c  reason: collision with root package name */
-    public LoadOptions f20296c;
+    public LoadOptions f6690c;
     public LoadOptions d;
     public IRequestHost e;
     public int f;
@@ -56,13 +56,13 @@ public class ShineVideoListAdapter extends BaseQuickAdapter<BluedIngSelfFeed, Ba
     class AnonymousClass5 implements ValueAnimator.AnimatorUpdateListener {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ View f20303a;
+        final /* synthetic */ View f6697a;
 
         @Override // android.animation.ValueAnimator.AnimatorUpdateListener
         public void onAnimationUpdate(ValueAnimator valueAnimator) {
             float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-            this.f20303a.setScaleX(floatValue);
-            this.f20303a.setScaleY(floatValue);
+            this.f6697a.setScaleX(floatValue);
+            this.f6697a.setScaleY(floatValue);
         }
     }
 
@@ -71,11 +71,11 @@ public class ShineVideoListAdapter extends BaseQuickAdapter<BluedIngSelfFeed, Ba
     class AnonymousClass6 implements ValueAnimator.AnimatorUpdateListener {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ View f20304a;
+        final /* synthetic */ View f6698a;
 
         @Override // android.animation.ValueAnimator.AnimatorUpdateListener
         public void onAnimationUpdate(ValueAnimator valueAnimator) {
-            this.f20304a.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
+            this.f6698a.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
         }
     }
 
@@ -84,7 +84,7 @@ public class ShineVideoListAdapter extends BaseQuickAdapter<BluedIngSelfFeed, Ba
         private ImageView b;
 
         /* renamed from: c  reason: collision with root package name */
-        private ImageView f20306c;
+        private ImageView f6700c;
         private ImageView d;
         private ImageView e;
         private TextView f;
@@ -100,23 +100,23 @@ public class ShineVideoListAdapter extends BaseQuickAdapter<BluedIngSelfFeed, Ba
 
     public ShineVideoListAdapter(Context context, IRequestHost iRequestHost) {
         super(R.layout.item_video_list, new ArrayList());
-        this.f20295a = context;
+        this.f6689a = context;
         this.b = LayoutInflater.from(context);
         int i = AppInfo.l;
         LoadOptions loadOptions = new LoadOptions();
-        this.f20296c = loadOptions;
+        this.f6690c = loadOptions;
         loadOptions.l = false;
-        this.f20296c.d = R.drawable.user_bg_round;
-        this.f20296c.b = R.drawable.user_bg_round;
+        this.f6690c.d = R.drawable.user_bg_round;
+        this.f6690c.b = R.drawable.user_bg_round;
         int i2 = i >> 1;
-        this.f20296c.a(i2, i2);
+        this.f6690c.a(i2, i2);
         LoadOptions loadOptions2 = new LoadOptions();
         this.d = loadOptions2;
         loadOptions2.d = R.drawable.defaultpicture;
         this.d.b = R.drawable.defaultpicture;
         this.e = iRequestHost;
-        this.f = a(this.f20295a)[0];
-        this.g = a(this.f20295a)[1];
+        this.f = a(this.f6689a)[0];
+        this.g = a(this.f6689a)[1];
     }
 
     private void a(TextView textView, String str) {
@@ -159,7 +159,7 @@ public class ShineVideoListAdapter extends BaseQuickAdapter<BluedIngSelfFeed, Ba
             viewHolder.h = (TextView) baseViewHolder.getView(R.id.tv_recomment_text);
             viewHolder.i = (TextView) baseViewHolder.getView(R.id.tv_user_kol);
             viewHolder.j = (RelativeLayout) baseViewHolder.getView(R.id.rl_main);
-            viewHolder.f20306c = (ImageView) baseViewHolder.getView(R.id.img_bg_btm);
+            viewHolder.f6700c = (ImageView) baseViewHolder.getView(R.id.img_bg_btm);
             viewHolder.k = (TextView) baseViewHolder.getView(R.id.tv_long_video);
             if (bluedIngSelfFeed.feed_videos_duration * 1000.0d >= 60000.0d) {
                 viewHolder.k.setVisibility(0);
@@ -174,7 +174,6 @@ public class ShineVideoListAdapter extends BaseQuickAdapter<BluedIngSelfFeed, Ba
                 viewHolder.b.setImageResource(R.drawable.defaultpicture);
             } else {
                 ImageLoader.a(this.e, bluedIngSelfFeed.feed_videos[0]).b(R.color.default_place_color).a(new ImageLoadResult(this.e) { // from class: com.blued.community.ui.video.adapter.ShineVideoListAdapter.1
-                    @Override // com.blued.android.core.image.ImageLoadResult
                     public void a() {
                         Drawable drawable = viewHolder.b.getDrawable();
                         if (drawable == null) {
@@ -197,12 +196,12 @@ public class ShineVideoListAdapter extends BaseQuickAdapter<BluedIngSelfFeed, Ba
                     EventTrackFeed.b(FeedProtos.Event.FLASH_PLAY_LIST_ONE_CLICK, bluedIngSelfFeed.feed_id);
                     CommunityHttpUtils.a(bluedIngSelfFeed.click_url);
                     CommunityServiceManager.d().a("shine_video_list_click", bluedIngSelfFeed.feed_id);
-                    VideoScanFragment.a(ShineVideoListAdapter.this.f20295a, bluedIngSelfFeed);
+                    VideoScanFragment.a(ShineVideoListAdapter.this.f6689a, bluedIngSelfFeed);
                 }
             });
             RelativeLayout.LayoutParams layoutParams2 = (RelativeLayout.LayoutParams) viewHolder.g.getLayoutParams();
             if (TextUtils.isEmpty(bluedIngSelfFeed.feed_content)) {
-                layoutParams2.height = DensityUtils.a(this.f20295a, 5.0f);
+                layoutParams2.height = DensityUtils.a(this.f6689a, 5.0f);
                 viewHolder.g.setText("");
             } else {
                 layoutParams2.height = -2;
@@ -222,11 +221,11 @@ public class ShineVideoListAdapter extends BaseQuickAdapter<BluedIngSelfFeed, Ba
                 viewHolder.h.setText(bluedIngSelfFeed.recommend_text);
             }
             if (!TextUtils.isEmpty(bluedIngSelfFeed.feed_content) || ((bluedIngSelfFeed.is_recommend_ticktocks == 1 && !TextUtils.isEmpty(bluedIngSelfFeed.recommend_text)) || !TextUtils.isEmpty(bluedIngSelfFeed.kol_name))) {
-                viewHolder.f20306c.setVisibility(0);
+                viewHolder.f6700c.setVisibility(0);
             } else {
-                viewHolder.f20306c.setVisibility(8);
+                viewHolder.f6700c.setVisibility(8);
             }
-            ImageLoader.a(this.e, AvatarUtils.a(0, bluedIngSelfFeed.user_avatar)).b(R.drawable.user_bg_round).a(1.0f, this.f20295a.getResources().getColor(R.color.syc_shine_b)).a(viewHolder.d);
+            ImageLoader.a(this.e, AvatarUtils.a(0, bluedIngSelfFeed.user_avatar)).b(R.drawable.user_bg_round).a(1.0f, this.f6689a.getResources().getColor(R.color.syc_shine_b)).a(viewHolder.d);
             viewHolder.d.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.video.adapter.ShineVideoListAdapter.3
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view) {
@@ -237,13 +236,13 @@ public class ShineVideoListAdapter extends BaseQuickAdapter<BluedIngSelfFeed, Ba
                     userBasicModel.name = bluedIngSelfFeed.user_name;
                     LogData logData = new LogData();
                     logData.feed_id = bluedIngSelfFeed.feed_id;
-                    CommunityServiceManager.b().a(ShineVideoListAdapter.this.f20295a, userBasicModel, "shine_video_list", false, (View) null, logData, MessageProtos.StrangerSource.FIND_PLAZA_FLASH);
+                    CommunityServiceManager.b().a(ShineVideoListAdapter.this.f6689a, userBasicModel, "shine_video_list", false, (View) null, logData, MessageProtos.StrangerSource.FIND_PLAZA_FLASH);
                 }
             });
             if (bluedIngSelfFeed.feed_dig == 0) {
                 viewHolder.f.setText("");
             } else {
-                viewHolder.f.setText(DistanceUtils.a(this.f20295a, Long.valueOf(bluedIngSelfFeed.feed_dig)));
+                viewHolder.f.setText(DistanceUtils.a(this.f6689a, Long.valueOf(bluedIngSelfFeed.feed_dig)));
             }
             if ("1".equalsIgnoreCase(bluedIngSelfFeed.relationship) || "3".equalsIgnoreCase(bluedIngSelfFeed.relationship)) {
                 viewHolder.e.setVisibility(8);
@@ -259,24 +258,19 @@ public class ShineVideoListAdapter extends BaseQuickAdapter<BluedIngSelfFeed, Ba
                         CommunityServiceManager.d().a(0, bluedIngSelfFeed.feed_uid);
                         bluedIngSelfFeed.relationship = "1";
                         viewHolder.e.setImageResource(R.drawable.icon_video_list_followed);
-                        CommunityHttpUtils.b(ShineVideoListAdapter.this.f20295a, new CommunityHttpUtils.IAddOrRemoveAttentionDone() { // from class: com.blued.community.ui.video.adapter.ShineVideoListAdapter.4.1
-                            @Override // com.blued.community.http.CommunityHttpUtils.IAddOrRemoveAttentionDone
+                        CommunityHttpUtils.b(ShineVideoListAdapter.this.f6689a, new CommunityHttpUtils.IAddOrRemoveAttentionDone() { // from class: com.blued.community.ui.video.adapter.ShineVideoListAdapter.4.1
                             public void a() {
                             }
 
-                            @Override // com.blued.community.http.CommunityHttpUtils.IAddOrRemoveAttentionDone
                             public void a(String str) {
                             }
 
-                            @Override // com.blued.community.http.CommunityHttpUtils.IAddOrRemoveAttentionDone
                             public void b() {
                             }
 
-                            @Override // com.blued.community.http.CommunityHttpUtils.IAddOrRemoveAttentionDone
                             public void b(String str) {
                             }
 
-                            @Override // com.blued.community.http.CommunityHttpUtils.IAddOrRemoveAttentionDone
                             public void c() {
                                 bluedIngSelfFeed.relationship = "0";
                                 ShineVideoListAdapter.this.notifyDataSetChanged();

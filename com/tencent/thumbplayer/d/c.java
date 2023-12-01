@@ -9,18 +9,18 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private CopyOnWriteArrayList<WeakReference<a>> f39299a = new CopyOnWriteArrayList<>();
+    private CopyOnWriteArrayList<WeakReference<a>> f25608a = new CopyOnWriteArrayList<>();
 
     public void a(a aVar) {
         CopyOnWriteArrayList<WeakReference<a>> copyOnWriteArrayList;
-        if (aVar == null || (copyOnWriteArrayList = this.f39299a) == null || copyOnWriteArrayList.contains(aVar)) {
+        if (aVar == null || (copyOnWriteArrayList = this.f25608a) == null || copyOnWriteArrayList.contains(aVar)) {
             return;
         }
-        this.f39299a.add(new WeakReference<>(aVar));
+        this.f25608a.add(new WeakReference<>(aVar));
     }
 
     public void a(b.a aVar) {
-        CopyOnWriteArrayList<WeakReference<a>> copyOnWriteArrayList = this.f39299a;
+        CopyOnWriteArrayList<WeakReference<a>> copyOnWriteArrayList = this.f25608a;
         if (copyOnWriteArrayList != null) {
             Iterator<WeakReference<a>> it = copyOnWriteArrayList.iterator();
             while (it.hasNext()) {

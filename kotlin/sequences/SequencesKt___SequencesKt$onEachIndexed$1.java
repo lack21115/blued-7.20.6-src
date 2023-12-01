@@ -9,12 +9,10 @@ import kotlin.jvm.internal.Lambda;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/sequences/SequencesKt___SequencesKt$onEachIndexed$1.class */
 final class SequencesKt___SequencesKt$onEachIndexed$1<T> extends Lambda implements Function2<Integer, T, T> {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ Function2<Integer, T, Unit> f42679a;
+    final /* synthetic */ Function2<Integer, T, Unit> a;
 
     public final T a(int i, T t) {
-        this.f42679a.invoke(Integer.valueOf(i), t);
+        this.a.invoke(Integer.valueOf(i), t);
         return t;
     }
 

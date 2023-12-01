@@ -18,28 +18,28 @@ import okio.BufferedSource;
 public class d implements com.opos.mobad.c.a, com.opos.mobad.c.a.a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile d f25981a;
+    private static volatile d f12293a;
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private c f25982c;
+    private c f12294c;
 
     private d() {
     }
 
     public static d a() {
         d dVar;
-        d dVar2 = f25981a;
+        d dVar2 = f12293a;
         if (dVar2 != null) {
             return dVar2;
         }
         synchronized (d.class) {
             try {
-                d dVar3 = f25981a;
+                d dVar3 = f12293a;
                 dVar = dVar3;
                 if (dVar3 == null) {
                     dVar = new d();
-                    f25981a = dVar;
+                    f12293a = dVar;
                 }
             } catch (Throwable th) {
                 throw th;
@@ -105,9 +105,9 @@ public class d implements com.opos.mobad.c.a, com.opos.mobad.c.a.a {
         r12.a(r9, 2);
      */
     /* JADX WARN: Code restructure failed: missing block: B:44:0x014b, code lost:
-        a(r19);
+        a((java.io.Closeable) r19);
         a(r0);
-        a(r18);
+        a((java.io.Closeable) r18);
      */
     /* JADX WARN: Code restructure failed: missing block: B:45:0x015e, code lost:
         if (r21 == null) goto L93;
@@ -131,12 +131,12 @@ public class d implements com.opos.mobad.c.a, com.opos.mobad.c.a.a {
         r0 = r20;
      */
     /* JADX WARN: Code restructure failed: missing block: B:58:0x018d, code lost:
-        r8.f25982c.a(r9, r19, r11);
+        r8.f12294c.a(r9, r19, r11);
      */
     /* JADX WARN: Code restructure failed: missing block: B:59:0x0199, code lost:
-        a(r19);
+        a((java.io.Closeable) r19);
         a(r20);
-        a(r18);
+        a((java.io.Closeable) r18);
      */
     /* JADX WARN: Code restructure failed: missing block: B:60:0x01ac, code lost:
         if (r21 == null) goto L103;
@@ -155,9 +155,9 @@ public class d implements com.opos.mobad.c.a, com.opos.mobad.c.a.a {
         a(r9, r10, r11, r18, r19, r12);
      */
     /* JADX WARN: Code restructure failed: missing block: B:69:0x01ee, code lost:
-        a(r19);
+        a((java.io.Closeable) r19);
         a((java.io.Closeable) null);
-        a(r18);
+        a((java.io.Closeable) r18);
      */
     /* JADX WARN: Code restructure failed: missing block: B:70:0x0200, code lost:
         if (r21 == null) goto L52;
@@ -185,7 +185,7 @@ public class d implements com.opos.mobad.c.a, com.opos.mobad.c.a.a {
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences
     */
-    public void a(java.lang.String r9, java.lang.String r10, java.lang.String r11, com.opos.mobad.c.a.a.InterfaceC0677a r12) {
+    public void a(java.lang.String r9, java.lang.String r10, java.lang.String r11, com.opos.mobad.c.a.a.InterfaceC0507a r12) {
         /*
             Method dump skipped, instructions count: 815
             To view this dump change 'Code comments level' option to 'DEBUG'
@@ -193,36 +193,36 @@ public class d implements com.opos.mobad.c.a, com.opos.mobad.c.a.a {
         throw new UnsupportedOperationException("Method not decompiled: com.opos.mobad.d.d.a(java.lang.String, java.lang.String, java.lang.String, com.opos.mobad.c.a.a$a):void");
     }
 
-    private void a(String str, String str2, String str3, BufferedSource bufferedSource, Buffer buffer, a.InterfaceC0677a interfaceC0677a) {
+    private void a(String str, String str2, String str3, BufferedSource bufferedSource, Buffer buffer, a.InterfaceC0507a interfaceC0507a) {
         int i;
-        int a2 = buffer == null ? this.f25982c.a(str, bufferedSource, str2, str3) : this.f25982c.a(str, bufferedSource, buffer, str2, str3);
+        int a2 = buffer == null ? this.f12294c.a(str, bufferedSource, str2, str3) : this.f12294c.a(str, bufferedSource, buffer, str2, str3);
         if (a2 == 0) {
-            if (interfaceC0677a == null) {
+            if (interfaceC0507a == null) {
                 return;
             }
             i = 0;
         } else if (a2 == 1) {
-            if (interfaceC0677a == null) {
+            if (interfaceC0507a == null) {
                 return;
             }
             i = 2;
-        } else if (interfaceC0677a == null) {
+        } else if (interfaceC0507a == null) {
             return;
         } else {
             i = 3;
         }
-        interfaceC0677a.a(str, i);
+        interfaceC0507a.a(str, i);
     }
 
-    private <T extends a.b> void b(List<T> list, final a.InterfaceC0677a interfaceC0677a, final com.opos.mobad.c.a.b bVar) {
+    private <T extends a.b> void b(List<T> list, final a.InterfaceC0507a interfaceC0507a, final com.opos.mobad.c.a.b bVar) {
         final CountDownLatch countDownLatch = new CountDownLatch(list.size());
         final Set synchronizedSet = Collections.synchronizedSet(new HashSet());
         if (bVar != null && !h.a(bVar, 6, 70)) {
             if (bVar != null) {
                 bVar.b();
             }
-            if (interfaceC0677a != null) {
-                interfaceC0677a.a();
+            if (interfaceC0507a != null) {
+                interfaceC0507a.a();
                 return;
             }
             return;
@@ -240,21 +240,21 @@ public class d implements com.opos.mobad.c.a, com.opos.mobad.c.a.a {
                 public void run() {
                     a.b bVar2 = t;
                     if (bVar2 != null) {
-                        if (synchronizedSet.contains(bVar2.f25806a)) {
-                            com.opos.cmn.an.f.a.b("fLoader", "url repeat:" + t.f25806a);
+                        if (synchronizedSet.contains(bVar2.f12118a)) {
+                            com.opos.cmn.an.f.a.b("fLoader", "url repeat:" + t.f12118a);
                         } else {
-                            synchronizedSet.add(t.f25806a);
-                            a.InterfaceC0677a interfaceC0677a2 = interfaceC0677a;
-                            if (interfaceC0677a2 != null) {
-                                interfaceC0677a2.a(t.f25806a);
+                            synchronizedSet.add(t.f12118a);
+                            a.InterfaceC0507a interfaceC0507a2 = interfaceC0507a;
+                            if (interfaceC0507a2 != null) {
+                                interfaceC0507a2.a(t.f12118a);
                             }
-                            if (d.this.f25982c.a(t.f25806a, t.b, t.f25807c)) {
-                                a.InterfaceC0677a interfaceC0677a3 = interfaceC0677a;
-                                if (interfaceC0677a3 != null) {
-                                    interfaceC0677a3.a(t.f25806a, 1);
+                            if (d.this.f12294c.a(t.f12118a, t.b, t.f12119c)) {
+                                a.InterfaceC0507a interfaceC0507a3 = interfaceC0507a;
+                                if (interfaceC0507a3 != null) {
+                                    interfaceC0507a3.a(t.f12118a, 1);
                                 }
                             } else {
-                                d.this.a(t.f25806a, t.b, t.f25807c, interfaceC0677a);
+                                d.this.a(t.f12118a, t.b, t.f12119c, interfaceC0507a);
                             }
                         }
                     }
@@ -267,8 +267,8 @@ public class d implements com.opos.mobad.c.a, com.opos.mobad.c.a.a {
                             } catch (Exception e) {
                                 com.opos.cmn.an.f.a.b("fLoader", "wait time out ", e);
                             }
-                            if (interfaceC0677a != null) {
-                                interfaceC0677a.a();
+                            if (interfaceC0507a != null) {
+                                interfaceC0507a.a();
                             }
                         } finally {
                             com.opos.mobad.c.a.b bVar3 = bVar;
@@ -286,27 +286,27 @@ public class d implements com.opos.mobad.c.a, com.opos.mobad.c.a.a {
     public void a(Context context) {
         Context applicationContext = context.getApplicationContext();
         this.b = applicationContext;
-        this.f25982c = new c(applicationContext);
+        this.f12294c = new c(applicationContext);
     }
 
     @Override // com.opos.mobad.c.a
-    public void a(String str, String str2, int i, int i2, a.InterfaceC0676a interfaceC0676a) {
+    public void a(String str, String str2, int i, int i2, a.InterfaceC0506a interfaceC0506a) {
         if (this.b != null) {
-            this.f25982c.a(str, str2, i, i2, interfaceC0676a);
-        } else if (interfaceC0676a != null) {
-            interfaceC0676a.a(2, null);
+            this.f12294c.a(str, str2, i, i2, interfaceC0506a);
+        } else if (interfaceC0506a != null) {
+            interfaceC0506a.a(2, null);
         }
     }
 
-    public <T extends a.b> void a(List<T> list, a.InterfaceC0677a interfaceC0677a) {
-        a(list, interfaceC0677a, null);
+    public <T extends a.b> void a(List<T> list, a.InterfaceC0507a interfaceC0507a) {
+        a(list, interfaceC0507a, null);
     }
 
-    public <T extends a.b> void a(List<T> list, a.InterfaceC0677a interfaceC0677a, com.opos.mobad.c.a.b bVar) {
+    public <T extends a.b> void a(List<T> list, a.InterfaceC0507a interfaceC0507a, com.opos.mobad.c.a.b bVar) {
         if (this.b != null && list != null && list.size() > 0) {
-            b(list, interfaceC0677a, bVar);
-        } else if (interfaceC0677a != null) {
-            interfaceC0677a.a();
+            b(list, interfaceC0507a, bVar);
+        } else if (interfaceC0507a != null) {
+            interfaceC0507a.a();
         }
     }
 }

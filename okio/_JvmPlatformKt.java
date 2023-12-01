@@ -17,7 +17,7 @@ public final class _JvmPlatformKt {
     }
 
     /* renamed from: synchronized  reason: not valid java name */
-    public static final <R> R m13309synchronized(Object lock, Function0<? extends R> block) {
+    public static final <R> R m12218synchronized(Object lock, Function0<? extends R> block) {
         R invoke;
         Intrinsics.e(lock, "lock");
         Intrinsics.e(block, "block");

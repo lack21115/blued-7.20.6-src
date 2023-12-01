@@ -16,12 +16,12 @@ import java.util.Map;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static int f35135a = 1000;
+    public static int f21444a = 1000;
     private static a b;
     private static String h;
 
     /* renamed from: c  reason: collision with root package name */
-    private final List<com.tencent.bugly.a> f35136c;
+    private final List<com.tencent.bugly.a> f21445c;
     private final w d;
     private final StrategyBean e;
     private StrategyBean f = null;
@@ -37,11 +37,11 @@ public final class a {
             } else {
                 str = "na_https".equals(str2) ? "https://astat.bugly.cros.wr.pvp.net/:8180/rqd/async" : "https://astat.bugly.cros.wr.pvp.net/:8180/rqd/async";
             }
-            StrategyBean.f35133a = str;
+            StrategyBean.f21442a = str;
             StrategyBean.b = str;
         }
         this.e = new StrategyBean();
-        this.f35136c = list;
+        this.f21445c = list;
         this.d = w.a();
     }
 
@@ -97,7 +97,7 @@ public final class a {
             @Override // java.lang.Thread, java.lang.Runnable
             public final void run() {
                 try {
-                    Map<String, byte[]> a2 = p.a().a(a.f35135a, (o) null, true);
+                    Map<String, byte[]> a2 = p.a().a(a.f21444a, (o) null, true);
                     if (a2 != null) {
                         byte[] bArr = a2.get("device");
                         byte[] bArr2 = a2.get("gateway");
@@ -111,7 +111,7 @@ public final class a {
                     a.this.f = a.d();
                     if (a.this.f != null) {
                         if (z.a(a.h) || !z.c(a.h)) {
-                            a.this.f.p = StrategyBean.f35133a;
+                            a.this.f.p = StrategyBean.f21442a;
                             a.this.f.q = StrategyBean.b;
                         } else {
                             a.this.f.p = a.h;
@@ -132,7 +132,7 @@ public final class a {
     protected final void a(StrategyBean strategyBean, boolean z) {
         x.c("[Strategy] Notify %s", b.class.getName());
         b.a(strategyBean, z);
-        for (com.tencent.bugly.a aVar : this.f35136c) {
+        for (com.tencent.bugly.a aVar : this.f21445c) {
             try {
                 x.c("[Strategy] Notify %s", aVar.getClass().getName());
                 aVar.onServerStrategyChanged(strategyBean);
@@ -150,8 +150,8 @@ public final class a {
         }
         if (this.f == null || apVar.h != this.f.n) {
             StrategyBean strategyBean = new StrategyBean();
-            strategyBean.e = apVar.f35376a;
-            strategyBean.g = apVar.f35377c;
+            strategyBean.e = apVar.f21685a;
+            strategyBean.g = apVar.f21686c;
             strategyBean.f = apVar.b;
             if (z.a(h) || !z.c(h)) {
                 if (z.c(apVar.d)) {
@@ -163,8 +163,8 @@ public final class a {
                     strategyBean.q = apVar.e;
                 }
             }
-            if (apVar.f != null && !z.a(apVar.f.f35375a)) {
-                strategyBean.r = apVar.f.f35375a;
+            if (apVar.f != null && !z.a(apVar.f.f21684a)) {
+                strategyBean.r = apVar.f.f21684a;
             }
             if (apVar.h != 0) {
                 strategyBean.n = apVar.h;
@@ -216,7 +216,7 @@ public final class a {
             p.a().b(2);
             r rVar = new r();
             rVar.b = 2;
-            rVar.f35402a = strategyBean.f35134c;
+            rVar.f21711a = strategyBean.f21443c;
             rVar.e = strategyBean.d;
             rVar.g = z.a(strategyBean);
             p.a().a(rVar);
@@ -236,7 +236,7 @@ public final class a {
         StrategyBean strategyBean = this.f;
         if (strategyBean != null) {
             if (!z.c(strategyBean.p)) {
-                this.f.p = StrategyBean.f35133a;
+                this.f.p = StrategyBean.f21442a;
             }
             if (!z.c(this.f.q)) {
                 this.f.q = StrategyBean.b;

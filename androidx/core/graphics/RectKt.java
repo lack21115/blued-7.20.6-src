@@ -12,20 +12,20 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-8756600-dex2jar.jar:androidx/core/graphics/RectKt.class */
 public final class RectKt {
-    public static final Rect and(Rect rect, Rect r) {
+    public static final Rect and(Rect rect, Rect rect2) {
         Intrinsics.e(rect, "<this>");
-        Intrinsics.e(r, "r");
-        Rect rect2 = new Rect(rect);
-        rect2.intersect(r);
-        return rect2;
+        Intrinsics.e(rect2, "r");
+        Rect rect3 = new Rect(rect);
+        rect3.intersect(rect2);
+        return rect3;
     }
 
-    public static final RectF and(RectF rectF, RectF r) {
+    public static final RectF and(RectF rectF, RectF rectF2) {
         Intrinsics.e(rectF, "<this>");
-        Intrinsics.e(r, "r");
-        RectF rectF2 = new RectF(rectF);
-        rectF2.intersect(r);
-        return rectF2;
+        Intrinsics.e(rectF2, "r");
+        RectF rectF3 = new RectF(rectF);
+        rectF3.intersect(rectF2);
+        return rectF3;
     }
 
     public static final float component1(RectF rectF) {
@@ -68,16 +68,16 @@ public final class RectKt {
         return rect.bottom;
     }
 
-    public static final boolean contains(Rect rect, Point p) {
+    public static final boolean contains(Rect rect, Point point) {
         Intrinsics.e(rect, "<this>");
-        Intrinsics.e(p, "p");
-        return rect.contains(p.x, p.y);
+        Intrinsics.e(point, "p");
+        return rect.contains(point.x, point.y);
     }
 
-    public static final boolean contains(RectF rectF, PointF p) {
+    public static final boolean contains(RectF rectF, PointF pointF) {
         Intrinsics.e(rectF, "<this>");
-        Intrinsics.e(p, "p");
-        return rectF.contains(p.x, p.y);
+        Intrinsics.e(pointF, "p");
+        return rectF.contains(pointF.x, pointF.y);
     }
 
     public static final Rect minus(Rect rect, int i) {
@@ -88,11 +88,11 @@ public final class RectKt {
         return rect2;
     }
 
-    public static final Rect minus(Rect rect, Point xy) {
+    public static final Rect minus(Rect rect, Point point) {
         Intrinsics.e(rect, "<this>");
-        Intrinsics.e(xy, "xy");
+        Intrinsics.e(point, "xy");
         Rect rect2 = new Rect(rect);
-        rect2.offset(-xy.x, -xy.y);
+        rect2.offset(-point.x, -point.y);
         return rect2;
     }
 
@@ -104,48 +104,48 @@ public final class RectKt {
         return rectF2;
     }
 
-    public static final RectF minus(RectF rectF, PointF xy) {
+    public static final RectF minus(RectF rectF, PointF pointF) {
         Intrinsics.e(rectF, "<this>");
-        Intrinsics.e(xy, "xy");
+        Intrinsics.e(pointF, "xy");
         RectF rectF2 = new RectF(rectF);
-        rectF2.offset(-xy.x, -xy.y);
+        rectF2.offset(-pointF.x, -pointF.y);
         return rectF2;
     }
 
-    public static final Region minus(Rect rect, Rect r) {
+    public static final Region minus(Rect rect, Rect rect2) {
         Intrinsics.e(rect, "<this>");
-        Intrinsics.e(r, "r");
+        Intrinsics.e(rect2, "r");
         Region region = new Region(rect);
-        region.op(r, Region.Op.DIFFERENCE);
-        return region;
-    }
-
-    public static final Region minus(RectF rectF, RectF r) {
-        Intrinsics.e(rectF, "<this>");
-        Intrinsics.e(r, "r");
-        Rect rect = new Rect();
-        rectF.roundOut(rect);
-        Region region = new Region(rect);
-        Rect rect2 = new Rect();
-        r.roundOut(rect2);
         region.op(rect2, Region.Op.DIFFERENCE);
         return region;
     }
 
-    public static final Rect or(Rect rect, Rect r) {
-        Intrinsics.e(rect, "<this>");
-        Intrinsics.e(r, "r");
-        Rect rect2 = new Rect(rect);
-        rect2.union(r);
-        return rect2;
+    public static final Region minus(RectF rectF, RectF rectF2) {
+        Intrinsics.e(rectF, "<this>");
+        Intrinsics.e(rectF2, "r");
+        Rect rect = new Rect();
+        rectF.roundOut(rect);
+        Region region = new Region(rect);
+        Rect rect2 = new Rect();
+        rectF2.roundOut(rect2);
+        region.op(rect2, Region.Op.DIFFERENCE);
+        return region;
     }
 
-    public static final RectF or(RectF rectF, RectF r) {
+    public static final Rect or(Rect rect, Rect rect2) {
+        Intrinsics.e(rect, "<this>");
+        Intrinsics.e(rect2, "r");
+        Rect rect3 = new Rect(rect);
+        rect3.union(rect2);
+        return rect3;
+    }
+
+    public static final RectF or(RectF rectF, RectF rectF2) {
         Intrinsics.e(rectF, "<this>");
-        Intrinsics.e(r, "r");
-        RectF rectF2 = new RectF(rectF);
-        rectF2.union(r);
-        return rectF2;
+        Intrinsics.e(rectF2, "r");
+        RectF rectF3 = new RectF(rectF);
+        rectF3.union(rectF2);
+        return rectF3;
     }
 
     public static final Rect plus(Rect rect, int i) {
@@ -155,20 +155,20 @@ public final class RectKt {
         return rect2;
     }
 
-    public static final Rect plus(Rect rect, Point xy) {
+    public static final Rect plus(Rect rect, Point point) {
         Intrinsics.e(rect, "<this>");
-        Intrinsics.e(xy, "xy");
+        Intrinsics.e(point, "xy");
         Rect rect2 = new Rect(rect);
-        rect2.offset(xy.x, xy.y);
+        rect2.offset(point.x, point.y);
         return rect2;
     }
 
-    public static final Rect plus(Rect rect, Rect r) {
+    public static final Rect plus(Rect rect, Rect rect2) {
         Intrinsics.e(rect, "<this>");
-        Intrinsics.e(r, "r");
-        Rect rect2 = new Rect(rect);
-        rect2.union(r);
-        return rect2;
+        Intrinsics.e(rect2, "r");
+        Rect rect3 = new Rect(rect);
+        rect3.union(rect2);
+        return rect3;
     }
 
     public static final RectF plus(RectF rectF, float f) {
@@ -178,20 +178,20 @@ public final class RectKt {
         return rectF2;
     }
 
-    public static final RectF plus(RectF rectF, PointF xy) {
+    public static final RectF plus(RectF rectF, PointF pointF) {
         Intrinsics.e(rectF, "<this>");
-        Intrinsics.e(xy, "xy");
+        Intrinsics.e(pointF, "xy");
         RectF rectF2 = new RectF(rectF);
-        rectF2.offset(xy.x, xy.y);
+        rectF2.offset(pointF.x, pointF.y);
         return rectF2;
     }
 
-    public static final RectF plus(RectF rectF, RectF r) {
+    public static final RectF plus(RectF rectF, RectF rectF2) {
         Intrinsics.e(rectF, "<this>");
-        Intrinsics.e(r, "r");
-        RectF rectF2 = new RectF(rectF);
-        rectF2.union(r);
-        return rectF2;
+        Intrinsics.e(rectF2, "r");
+        RectF rectF3 = new RectF(rectF);
+        rectF3.union(rectF2);
+        return rectF3;
     }
 
     public static final Rect times(Rect rect, int i) {
@@ -249,29 +249,29 @@ public final class RectKt {
         return new Region(rect);
     }
 
-    public static final RectF transform(RectF rectF, Matrix m) {
+    public static final RectF transform(RectF rectF, Matrix matrix) {
         Intrinsics.e(rectF, "<this>");
-        Intrinsics.e(m, "m");
-        m.mapRect(rectF);
+        Intrinsics.e(matrix, "m");
+        matrix.mapRect(rectF);
         return rectF;
     }
 
-    public static final Region xor(Rect rect, Rect r) {
+    public static final Region xor(Rect rect, Rect rect2) {
         Intrinsics.e(rect, "<this>");
-        Intrinsics.e(r, "r");
+        Intrinsics.e(rect2, "r");
         Region region = new Region(rect);
-        region.op(r, Region.Op.XOR);
+        region.op(rect2, Region.Op.XOR);
         return region;
     }
 
-    public static final Region xor(RectF rectF, RectF r) {
+    public static final Region xor(RectF rectF, RectF rectF2) {
         Intrinsics.e(rectF, "<this>");
-        Intrinsics.e(r, "r");
+        Intrinsics.e(rectF2, "r");
         Rect rect = new Rect();
         rectF.roundOut(rect);
         Region region = new Region(rect);
         Rect rect2 = new Rect();
-        r.roundOut(rect2);
+        rectF2.roundOut(rect2);
         region.op(rect2, Region.Op.XOR);
         return region;
     }

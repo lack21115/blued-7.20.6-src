@@ -10,9 +10,9 @@ import kotlin.Metadata;
 public final class VIPPrivilegeViewModel extends BaseViewModel {
 
     /* renamed from: a  reason: collision with root package name */
-    private final MutableLiveData<VIPPrivilegeDataModel> f34360a = new MutableLiveData<>();
+    private final MutableLiveData<VIPPrivilegeDataModel> f20669a = new MutableLiveData<>();
 
     public final MutableLiveData<VIPPrivilegeDataModel> d() {
-        return this.f34360a;
+        return this.f20669a;
     }
 }

@@ -15,11 +15,11 @@ import java.util.UUID;
 public class e implements com.opos.mobad.ad.privacy.b {
 
     /* renamed from: a  reason: collision with root package name */
-    private c f25906a;
+    private c f12218a;
     private b b;
 
     /* renamed from: c  reason: collision with root package name */
-    private com.opos.mobad.service.event.c f25907c;
+    private com.opos.mobad.service.event.c f12219c;
     private String d;
     private Dialog e;
     private b.a f;
@@ -32,7 +32,7 @@ public class e implements com.opos.mobad.ad.privacy.b {
         @Override // com.opos.mobad.activity.webview.b.d
         public void e() {
             com.opos.cmn.an.f.a.b("PrivacyShowManager", "onActivityOnDestory");
-            com.opos.mobad.service.event.b.a().b(e.this.f25907c);
+            com.opos.mobad.service.event.b.a().b(e.this.f12219c);
             e.this.b = null;
             if (e.this.f != null) {
                 e.this.f.a();
@@ -41,7 +41,7 @@ public class e implements com.opos.mobad.ad.privacy.b {
     };
 
     public e(c cVar) {
-        this.f25906a = cVar;
+        this.f12218a = cVar;
     }
 
     private void a(Activity activity, int i, ComplianceInfo complianceInfo, b.a aVar) {
@@ -69,7 +69,7 @@ public class e implements com.opos.mobad.ad.privacy.b {
 
     private void b(Context context, int i, ComplianceInfo complianceInfo, b.a aVar) {
         com.opos.cmn.an.f.a.a("PrivacyShowManager", "showAsProxyContentView " + complianceInfo);
-        if (this.f25906a == null) {
+        if (this.f12218a == null) {
             com.opos.cmn.an.f.a.a("PrivacyShowManager", "null video player");
             return;
         }
@@ -78,18 +78,18 @@ public class e implements com.opos.mobad.ad.privacy.b {
         String uuid = UUID.randomUUID().toString();
         this.d = uuid;
         EventDescription eventDescription = new EventDescription(uuid);
-        this.f25907c = com.opos.mobad.activity.webview.b.e.a(eventDescription, this.h);
-        this.b = new a.C0684a(a.C0684a.a(eventDescription));
+        this.f12219c = com.opos.mobad.activity.webview.b.e.a(eventDescription, this.h);
+        this.b = new a.C0514a(a.C0514a.a(eventDescription));
         if (i == 1) {
-            this.f25906a.b(context, complianceInfo, eventDescription);
+            this.f12218a.b(context, complianceInfo, eventDescription);
         } else {
-            this.f25906a.a(context, complianceInfo, eventDescription);
+            this.f12218a.a(context, complianceInfo, eventDescription);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void c() {
-        com.opos.mobad.service.event.b.a().b(this.f25907c);
+        com.opos.mobad.service.event.b.a().b(this.f12219c);
         b bVar = this.b;
         if (bVar != null) {
             bVar.b();
@@ -103,7 +103,7 @@ public class e implements com.opos.mobad.ad.privacy.b {
         com.opos.mobad.service.c.c(new Runnable() { // from class: com.opos.mobad.cmn.b.e.3
             @Override // java.lang.Runnable
             public void run() {
-                e.this.f25906a = null;
+                e.this.f12218a = null;
                 e.this.b();
                 e.this.c();
             }

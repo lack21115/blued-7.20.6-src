@@ -10,13 +10,9 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/DialogNoAnchorBinding.class */
 public final class DialogNoAnchorBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ShapeTextView f16373a;
+    public final ShapeTextView a;
     public final View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f16374c;
+    public final ImageView c;
     public final ImageView d;
     public final TextView e;
     public final TextView f;
@@ -24,9 +20,9 @@ public final class DialogNoAnchorBinding implements ViewBinding {
 
     private DialogNoAnchorBinding(ConstraintLayout constraintLayout, ShapeTextView shapeTextView, View view, ImageView imageView, ImageView imageView2, TextView textView, TextView textView2) {
         this.g = constraintLayout;
-        this.f16373a = shapeTextView;
+        this.a = shapeTextView;
         this.b = view;
-        this.f16374c = imageView;
+        this.c = imageView;
         this.d = imageView2;
         this.e = textView;
         this.f = textView2;
@@ -67,7 +63,6 @@ public final class DialogNoAnchorBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.g;

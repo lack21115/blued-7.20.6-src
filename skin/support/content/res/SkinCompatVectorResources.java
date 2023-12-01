@@ -9,9 +9,7 @@ import androidx.appcompat.content.res.AppCompatResources;
 
 /* loaded from: source-3503164-dex2jar.jar:skin/support/content/res/SkinCompatVectorResources.class */
 public class SkinCompatVectorResources implements SkinResources {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static SkinCompatVectorResources f44231a;
+    private static SkinCompatVectorResources a;
 
     private SkinCompatVectorResources() {
         SkinCompatResources.a().a(this);
@@ -22,18 +20,18 @@ public class SkinCompatVectorResources implements SkinResources {
     }
 
     public static SkinCompatVectorResources a() {
-        if (f44231a == null) {
+        if (a == null) {
             synchronized (SkinCompatVectorResources.class) {
                 try {
-                    if (f44231a == null) {
-                        f44231a = new SkinCompatVectorResources();
+                    if (a == null) {
+                        a = new SkinCompatVectorResources();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f44231a;
+        return a;
     }
 
     private Drawable b(Context context, int i) {

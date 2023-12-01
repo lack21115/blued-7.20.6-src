@@ -1,6 +1,7 @@
 package com.blued.android.core.image.http;
 
 import android.os.Looper;
+import com.android.internal.telephony.SmsConstants;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.image.ImageLoadResult;
 import com.blued.android.core.image.ImageLoader;
@@ -14,40 +15,38 @@ import java.io.IOException;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/image/http/HttpRequestListener.class */
 public class HttpRequestListener implements RequestListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    private ImageLoadResult f9557a;
+    private ImageLoadResult a;
 
     public HttpRequestListener(ImageLoadResult imageLoadResult) {
-        this.f9557a = imageLoadResult;
+        this.a = imageLoadResult;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void a() {
-        ImageLoadResult imageLoadResult = this.f9557a;
+        ImageLoadResult imageLoadResult = this.a;
         if (imageLoadResult == null || !imageLoadResult.c()) {
             return;
         }
-        this.f9557a.a();
-        this.f9557a.b();
+        this.a.a();
+        this.a.b();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void a(GlideException glideException) {
-        ImageLoadResult imageLoadResult = this.f9557a;
+        ImageLoadResult imageLoadResult = this.a;
         if (imageLoadResult == null || !imageLoadResult.c()) {
             return;
         }
         Exception exc = null;
         int i = 0;
         if (glideException != null) {
-            Exception a2 = glideException.a();
-            if (a2 != null) {
+            Exception a = glideException.a();
+            if (a != null) {
                 i = 0;
-                exc = a2;
-                if (a2 instanceof IOException) {
-                    i = StatusCode.a((IOException) a2);
-                    exc = a2;
+                exc = a;
+                if (a instanceof IOException) {
+                    i = StatusCode.a((IOException) a);
+                    exc = a;
                 }
             } else {
                 exc = new Exception(glideException.getMessage());
@@ -56,16 +55,15 @@ public class HttpRequestListener implements RequestListener {
         }
         Exception exc2 = exc;
         if (exc == null) {
-            exc2 = new Exception("unknown");
+            exc2 = new Exception(SmsConstants.FORMAT_UNKNOWN);
         }
         if (ImageLoader.a()) {
             Log.e("IMAGE", "onLoadFailed : " + i + ", " + exc2);
         }
-        this.f9557a.a(i, exc2);
-        this.f9557a.b();
+        this.a.a(i, exc2);
+        this.a.b();
     }
 
-    @Override // com.bumptech.glide.request.RequestListener
     public boolean onLoadFailed(final GlideException glideException, Object obj, Target target, boolean z) {
         if (ImageLoader.a()) {
             Log.e("IMAGE", "HttpRequestListener onLoadFailed");
@@ -83,7 +81,6 @@ public class HttpRequestListener implements RequestListener {
         return false;
     }
 
-    @Override // com.bumptech.glide.request.RequestListener
     public boolean onResourceReady(Object obj, Object obj2, Target target, DataSource dataSource, boolean z) {
         if (ImageLoader.a()) {
             Log.c("IMAGE", "HttpRequestListener onResourceReady");

@@ -27,16 +27,12 @@ import org.commonmark.renderer.NodeRenderer;
 
 /* loaded from: source-3503164-dex2jar.jar:org/commonmark/renderer/text/CoreTextContentNodeRenderer.class */
 public class CoreTextContentNodeRenderer extends AbstractVisitor implements NodeRenderer {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected final TextContentNodeRendererContext f44084a;
+    protected final TextContentNodeRendererContext a;
     private final TextContentWriter b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private ListHolder f44085c;
+    private ListHolder c;
 
     private void a() {
-        if (this.f44084a.a()) {
+        if (this.a.a()) {
             this.b.a();
         } else {
             this.b.c();
@@ -44,7 +40,7 @@ public class CoreTextContentNodeRenderer extends AbstractVisitor implements Node
     }
 
     private void a(String str) {
-        if (this.f44084a.a()) {
+        if (this.a.a()) {
             this.b.a(str);
         } else {
             this.b.b(str);
@@ -52,7 +48,7 @@ public class CoreTextContentNodeRenderer extends AbstractVisitor implements Node
     }
 
     private void a(Node node, Character ch) {
-        if (!this.f44084a.a()) {
+        if (!this.a.a()) {
             if (node.h() != null) {
                 this.b.c();
                 return;
@@ -109,7 +105,7 @@ public class CoreTextContentNodeRenderer extends AbstractVisitor implements Node
                 return;
             }
             Node h = node2.h();
-            this.f44084a.a(node2);
+            this.a.a(node2);
             j = h;
         }
     }
@@ -129,16 +125,16 @@ public class CoreTextContentNodeRenderer extends AbstractVisitor implements Node
 
     @Override // org.commonmark.node.AbstractVisitor, org.commonmark.node.Visitor
     public void visit(BulletList bulletList) {
-        if (this.f44085c != null) {
+        if (this.c != null) {
             a();
         }
-        this.f44085c = new BulletListHolder(this.f44085c, bulletList);
+        this.c = new BulletListHolder(this.c, bulletList);
         a(bulletList);
         a(bulletList, null);
-        if (this.f44085c.b() != null) {
-            this.f44085c = this.f44085c.b();
+        if (this.c.b() != null) {
+            this.c = this.c.b();
         } else {
-            this.f44085c = null;
+            this.c = null;
         }
     }
 
@@ -156,7 +152,7 @@ public class CoreTextContentNodeRenderer extends AbstractVisitor implements Node
 
     @Override // org.commonmark.node.AbstractVisitor, org.commonmark.node.Visitor
     public void visit(FencedCodeBlock fencedCodeBlock) {
-        if (!this.f44084a.a()) {
+        if (!this.a.a()) {
             this.b.b(fencedCodeBlock.g());
             return;
         }
@@ -192,7 +188,7 @@ public class CoreTextContentNodeRenderer extends AbstractVisitor implements Node
 
     @Override // org.commonmark.node.AbstractVisitor, org.commonmark.node.Visitor
     public void visit(IndentedCodeBlock indentedCodeBlock) {
-        if (!this.f44084a.a()) {
+        if (!this.a.a()) {
             this.b.b(indentedCodeBlock.c());
             return;
         }
@@ -207,23 +203,23 @@ public class CoreTextContentNodeRenderer extends AbstractVisitor implements Node
 
     @Override // org.commonmark.node.AbstractVisitor, org.commonmark.node.Visitor
     public void visit(ListItem listItem) {
-        ListHolder listHolder = this.f44085c;
+        ListHolder listHolder = this.c;
         if (listHolder != null && (listHolder instanceof OrderedListHolder)) {
             OrderedListHolder orderedListHolder = (OrderedListHolder) listHolder;
-            String c2 = this.f44084a.a() ? "" : orderedListHolder.c();
+            String c = this.a.a() ? "" : orderedListHolder.c();
             TextContentWriter textContentWriter = this.b;
-            textContentWriter.b(c2 + orderedListHolder.d() + orderedListHolder.a() + " ");
+            textContentWriter.b(c + orderedListHolder.d() + orderedListHolder.a() + " ");
             a(listItem);
             a(listItem, null);
             orderedListHolder.e();
             return;
         }
-        ListHolder listHolder2 = this.f44085c;
+        ListHolder listHolder2 = this.c;
         if (listHolder2 == null || !(listHolder2 instanceof BulletListHolder)) {
             return;
         }
         BulletListHolder bulletListHolder = (BulletListHolder) listHolder2;
-        if (!this.f44084a.a()) {
+        if (!this.a.a()) {
             TextContentWriter textContentWriter2 = this.b;
             textContentWriter2.b(bulletListHolder.c() + bulletListHolder.a() + " ");
         }
@@ -233,16 +229,16 @@ public class CoreTextContentNodeRenderer extends AbstractVisitor implements Node
 
     @Override // org.commonmark.node.AbstractVisitor, org.commonmark.node.Visitor
     public void visit(OrderedList orderedList) {
-        if (this.f44085c != null) {
+        if (this.c != null) {
             a();
         }
-        this.f44085c = new OrderedListHolder(this.f44085c, orderedList);
+        this.c = new OrderedListHolder(this.c, orderedList);
         a(orderedList);
         a(orderedList, null);
-        if (this.f44085c.b() != null) {
-            this.f44085c = this.f44085c.b();
+        if (this.c.b() != null) {
+            this.c = this.c.b();
         } else {
-            this.f44085c = null;
+            this.c = null;
         }
     }
 
@@ -266,7 +262,7 @@ public class CoreTextContentNodeRenderer extends AbstractVisitor implements Node
 
     @Override // org.commonmark.node.AbstractVisitor, org.commonmark.node.Visitor
     public void visit(ThematicBreak thematicBreak) {
-        if (!this.f44084a.a()) {
+        if (!this.a.a()) {
             this.b.b("***");
         }
         a(thematicBreak, null);

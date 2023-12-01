@@ -34,9 +34,8 @@ public final class MovieParams extends Message<MovieParams, Builder> {
         public Float viewBoxHeight;
         public Float viewBoxWidth;
 
-        /* JADX WARN: Can't rename method to resolve collision */
-        @Override // com.squareup.wire.Message.Builder
-        public MovieParams build() {
+        /* renamed from: build */
+        public MovieParams m10561build() {
             return new MovieParams(this.viewBoxWidth, this.viewBoxHeight, this.fps, this.frames, super.buildUnknownFields());
         }
 
@@ -67,49 +66,46 @@ public final class MovieParams extends Message<MovieParams, Builder> {
             super(FieldEncoding.LENGTH_DELIMITED, MovieParams.class);
         }
 
-        /* JADX WARN: Can't rename method to resolve collision */
-        @Override // com.squareup.wire.ProtoAdapter
-        public MovieParams decode(ProtoReader protoReader) throws IOException {
+        /* renamed from: decode */
+        public MovieParams m10562decode(ProtoReader protoReader) throws IOException {
             Builder builder = new Builder();
             long beginMessage = protoReader.beginMessage();
             while (true) {
                 int nextTag = protoReader.nextTag();
                 if (nextTag == -1) {
                     protoReader.endMessage(beginMessage);
-                    return builder.build();
+                    return builder.m10561build();
                 } else if (nextTag == 1) {
-                    builder.viewBoxWidth(ProtoAdapter.FLOAT.decode(protoReader));
+                    builder.viewBoxWidth((Float) ProtoAdapter.FLOAT.decode(protoReader));
                 } else if (nextTag == 2) {
-                    builder.viewBoxHeight(ProtoAdapter.FLOAT.decode(protoReader));
+                    builder.viewBoxHeight((Float) ProtoAdapter.FLOAT.decode(protoReader));
                 } else if (nextTag == 3) {
-                    builder.fps(ProtoAdapter.INT32.decode(protoReader));
+                    builder.fps((Integer) ProtoAdapter.INT32.decode(protoReader));
                 } else if (nextTag != 4) {
                     FieldEncoding peekFieldEncoding = protoReader.peekFieldEncoding();
                     builder.addUnknownField(nextTag, peekFieldEncoding, peekFieldEncoding.rawProtoAdapter().decode(protoReader));
                 } else {
-                    builder.frames(ProtoAdapter.INT32.decode(protoReader));
+                    builder.frames((Integer) ProtoAdapter.INT32.decode(protoReader));
                 }
             }
         }
 
-        @Override // com.squareup.wire.ProtoAdapter
         public void encode(ProtoWriter protoWriter, MovieParams movieParams) throws IOException {
             if (movieParams.viewBoxWidth != null) {
-                ProtoAdapter.FLOAT.encodeWithTag(protoWriter, 1, (int) movieParams.viewBoxWidth);
+                ProtoAdapter.FLOAT.encodeWithTag(protoWriter, 1, movieParams.viewBoxWidth);
             }
             if (movieParams.viewBoxHeight != null) {
-                ProtoAdapter.FLOAT.encodeWithTag(protoWriter, 2, (int) movieParams.viewBoxHeight);
+                ProtoAdapter.FLOAT.encodeWithTag(protoWriter, 2, movieParams.viewBoxHeight);
             }
             if (movieParams.fps != null) {
-                ProtoAdapter.INT32.encodeWithTag(protoWriter, 3, (int) movieParams.fps);
+                ProtoAdapter.INT32.encodeWithTag(protoWriter, 3, movieParams.fps);
             }
             if (movieParams.frames != null) {
-                ProtoAdapter.INT32.encodeWithTag(protoWriter, 4, (int) movieParams.frames);
+                ProtoAdapter.INT32.encodeWithTag(protoWriter, 4, movieParams.frames);
             }
             protoWriter.writeBytes(movieParams.unknownFields());
         }
 
-        @Override // com.squareup.wire.ProtoAdapter
         public int encodedSize(MovieParams movieParams) {
             int i = 0;
             int encodedSizeWithTag = movieParams.viewBoxWidth != null ? ProtoAdapter.FLOAT.encodedSizeWithTag(1, movieParams.viewBoxWidth) : 0;
@@ -121,11 +117,10 @@ public final class MovieParams extends Message<MovieParams, Builder> {
             return encodedSizeWithTag + encodedSizeWithTag2 + encodedSizeWithTag3 + i + movieParams.unknownFields().size();
         }
 
-        @Override // com.squareup.wire.ProtoAdapter
         public MovieParams redact(MovieParams movieParams) {
-            Builder newBuilder = movieParams.newBuilder();
-            newBuilder.clearUnknownFields();
-            return newBuilder.build();
+            Builder m10560newBuilder = movieParams.m10560newBuilder();
+            m10560newBuilder.clearUnknownFields();
+            return m10560newBuilder.m10561build();
         }
     }
 
@@ -161,7 +156,7 @@ public final class MovieParams extends Message<MovieParams, Builder> {
     }
 
     public int hashCode() {
-        int i = this.hashCode;
+        int i = ((Message) this).hashCode;
         int i2 = i;
         if (i == 0) {
             int hashCode = unknownFields().hashCode();
@@ -177,14 +172,13 @@ public final class MovieParams extends Message<MovieParams, Builder> {
                 i3 = num2.hashCode();
             }
             i2 = (((((((hashCode * 37) + hashCode2) * 37) + hashCode3) * 37) + hashCode4) * 37) + i3;
-            this.hashCode = i2;
+            ((Message) this).hashCode = i2;
         }
         return i2;
     }
 
-    /* JADX WARN: Can't rename method to resolve collision */
-    @Override // com.squareup.wire.Message
-    public Builder newBuilder() {
+    /* renamed from: newBuilder */
+    public Builder m10560newBuilder() {
         Builder builder = new Builder();
         builder.viewBoxWidth = this.viewBoxWidth;
         builder.viewBoxHeight = this.viewBoxHeight;
@@ -194,7 +188,6 @@ public final class MovieParams extends Message<MovieParams, Builder> {
         return builder;
     }
 
-    @Override // com.squareup.wire.Message
     public String toString() {
         StringBuilder sb = new StringBuilder();
         if (this.viewBoxWidth != null) {

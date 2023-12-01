@@ -3,7 +3,6 @@ package com.umeng.analytics.pro;
 import android.content.Context;
 import android.os.Build;
 import android.text.TextUtils;
-import com.amap.api.col.p0003sl.iu;
 import com.huawei.hms.push.constant.RemoteMessageConst;
 import com.umeng.commonsdk.debug.UMRTLog;
 import com.umeng.commonsdk.statistics.common.DeviceConfig;
@@ -33,7 +32,7 @@ public class al {
                     jSONObject3.put("os_version", Build.VERSION.RELEASE);
                     jSONObject3.put(com.umeng.ccg.a.o, str);
                     jSONObject3.put("sdk", jSONArray);
-                    jSONObject3.put(iu.h, i);
+                    jSONObject3.put("e", i);
                     return jSONObject3;
                 }
             } catch (Throwable th) {
@@ -81,8 +80,8 @@ public class al {
             try {
                 JSONObject jSONObject3 = new JSONObject();
                 try {
-                    jSONObject3.put(ak.f40621a, akVar.a());
-                    jSONObject3.put(ak.f40622c, akVar.c());
+                    jSONObject3.put(ak.f26930a, akVar.a());
+                    jSONObject3.put(ak.f26931c, akVar.c());
                     jSONObject3.put(ak.b, akVar.b());
                     jSONObject3.put(ak.d, akVar.d());
                     jSONObject3.put(ak.e, akVar.e());

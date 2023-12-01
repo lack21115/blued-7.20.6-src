@@ -12,17 +12,12 @@ import com.blued.android.framework.view.shape.ShapeTextView;
 import com.blued.android.module.yy_china.R;
 import com.blued.android.module.yy_china.fragment.YYTaskRewardDialog;
 import com.blued.android.module.yy_china.view.DailyPrizeView;
-import com.tencent.cloud.huiyansdkface.facelight.api.WbCloudFaceContant;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/FragmentYyDailyTaskBinding.class */
 public final class FragmentYyDailyTaskBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ShapeTextView f16497a;
+    public final ShapeTextView a;
     public final ShapeTextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ShapeTextView f16498c;
+    public final ShapeTextView c;
     public final ShapeTextView d;
     public final View e;
     public final ProgressBar f;
@@ -43,9 +38,9 @@ public final class FragmentYyDailyTaskBinding implements ViewBinding {
 
     private FragmentYyDailyTaskBinding(ConstraintLayout constraintLayout, ShapeTextView shapeTextView, ShapeTextView shapeTextView2, ShapeTextView shapeTextView3, ShapeTextView shapeTextView4, View view, ProgressBar progressBar, TextView textView, ImageView imageView, ImageView imageView2, ImageView imageView3, DailyPrizeView dailyPrizeView, DailyPrizeView dailyPrizeView2, DailyPrizeView dailyPrizeView3, DailyPrizeView dailyPrizeView4, ShapeConstraintLayout shapeConstraintLayout, ConstraintLayout constraintLayout2, RecyclerView recyclerView, TextView textView2, YYTaskRewardDialog yYTaskRewardDialog) {
         this.t = constraintLayout;
-        this.f16497a = shapeTextView;
+        this.a = shapeTextView;
         this.b = shapeTextView2;
-        this.f16498c = shapeTextView3;
+        this.c = shapeTextView3;
         this.d = shapeTextView4;
         this.e = view;
         this.f = progressBar;
@@ -96,15 +91,15 @@ public final class FragmentYyDailyTaskBinding implements ViewBinding {
                                                             if (dailyPrizeView4 != null) {
                                                                 ShapeConstraintLayout shapeConstraintLayout = (ShapeConstraintLayout) view.findViewById(R.id.root_float_view);
                                                                 if (shapeConstraintLayout != null) {
-                                                                    ConstraintLayout constraintLayout = (ConstraintLayout) view.findViewById(R.id.root_view);
-                                                                    if (constraintLayout != null) {
-                                                                        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rv_daily_list);
-                                                                        if (recyclerView != null) {
+                                                                    ConstraintLayout findViewById2 = view.findViewById(R.id.root_view);
+                                                                    if (findViewById2 != null) {
+                                                                        RecyclerView findViewById3 = view.findViewById(R.id.rv_daily_list);
+                                                                        if (findViewById3 != null) {
                                                                             TextView textView2 = (TextView) view.findViewById(R.id.tv_today_process);
                                                                             if (textView2 != null) {
                                                                                 YYTaskRewardDialog yYTaskRewardDialog = (YYTaskRewardDialog) view.findViewById(R.id.yyTaskReward);
                                                                                 if (yYTaskRewardDialog != null) {
-                                                                                    return new FragmentYyDailyTaskBinding((ConstraintLayout) view, shapeTextView, shapeTextView2, shapeTextView3, shapeTextView4, findViewById, progressBar, textView, imageView, imageView2, imageView3, dailyPrizeView, dailyPrizeView2, dailyPrizeView3, dailyPrizeView4, shapeConstraintLayout, constraintLayout, recyclerView, textView2, yYTaskRewardDialog);
+                                                                                    return new FragmentYyDailyTaskBinding((ConstraintLayout) view, shapeTextView, shapeTextView2, shapeTextView3, shapeTextView4, findViewById, progressBar, textView, imageView, imageView2, imageView3, dailyPrizeView, dailyPrizeView2, dailyPrizeView3, dailyPrizeView4, shapeConstraintLayout, findViewById2, findViewById3, textView2, yYTaskRewardDialog);
                                                                                 }
                                                                                 str = "yyTaskReward";
                                                                             } else {
@@ -141,7 +136,7 @@ public final class FragmentYyDailyTaskBinding implements ViewBinding {
                                         str = "imgBackground";
                                     }
                                 } else {
-                                    str = WbCloudFaceContant.DIALOG_TITLE;
+                                    str = "dialogTitle";
                                 }
                             } else {
                                 str = "dailyBar";
@@ -164,7 +159,6 @@ public final class FragmentYyDailyTaskBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.t;

@@ -27,25 +27,25 @@ public class f {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public int f40521a;
+        public int f26830a;
         public Object b;
 
         public static a a() {
             a aVar = new a();
-            aVar.f40521a = 0;
+            aVar.f26830a = 0;
             return aVar;
         }
 
         public static a a(Object obj) {
             a aVar = new a();
-            aVar.f40521a = 1;
+            aVar.f26830a = 1;
             aVar.b = obj;
             return aVar;
         }
 
         public static a b(Object obj) {
             a aVar = new a();
-            aVar.f40521a = -1;
+            aVar.f26830a = -1;
             aVar.b = obj;
             return aVar;
         }
@@ -151,7 +151,7 @@ public class f {
                     if (obj3 != null) {
                         if (cVar.a(obj3)) {
                             a b2 = cVar.b(obj3);
-                            int i = b2.f40521a;
+                            int i = b2.f26830a;
                             if (i == 0) {
                                 continue;
                             } else if (i == 1) {
@@ -264,7 +264,7 @@ public class f {
             @Override // java.lang.Runnable
             public final void run() {
                 try {
-                    Matcher matcher = Pattern.compile(String.this, 34).matcher(new com.tramini.plugin.a.g.a.a(str));
+                    Matcher matcher = Pattern.compile(str2, 34).matcher(new com.tramini.plugin.a.g.a.a(str));
                     if (matcher.find()) {
                         strArr[0] = matcher.group(i);
                     }

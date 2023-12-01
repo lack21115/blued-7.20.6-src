@@ -46,7 +46,7 @@ public final class InputConnectionCompat {
                         }
                     }
                 }
-                if (ViewCompat.performReceiveContent(View.this, new ContentInfoCompat.Builder(new ClipData(inputContentInfoCompat.getDescription(), new ClipData.Item(inputContentInfoCompat.getContentUri())), 2).setLinkUri(inputContentInfoCompat.getLinkUri()).setExtras(bundle2).build()) == null) {
+                if (ViewCompat.performReceiveContent(view, new ContentInfoCompat.Builder(new ClipData(inputContentInfoCompat.getDescription(), new ClipData.Item(inputContentInfoCompat.getContentUri())), 2).setLinkUri(inputContentInfoCompat.getLinkUri()).setExtras(bundle2).build()) == null) {
                     z = true;
                 }
                 return z;
@@ -115,6 +115,7 @@ public final class InputConnectionCompat {
         ObjectsCompat.requireNonNull(editorInfo, "editorInfo must be non-null");
         ObjectsCompat.requireNonNull(onCommitContentListener, "onCommitContentListener must be non-null");
         return Build.VERSION.SDK_INT >= 25 ? new InputConnectionWrapper(inputConnection, false) { // from class: androidx.core.view.inputmethod.InputConnectionCompat.1
+            @Override // android.view.inputmethod.InputConnectionWrapper, android.view.inputmethod.InputConnection
             public boolean commitContent(InputContentInfo inputContentInfo, int i, Bundle bundle) {
                 if (onCommitContentListener.onCommitContent(InputContentInfoCompat.wrap(inputContentInfo), i, bundle)) {
                     return true;

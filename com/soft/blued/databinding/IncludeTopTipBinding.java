@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class IncludeTopTipBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final RelativeLayout f29070a;
+    private final RelativeLayout f15380a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
-        return this.f29070a;
+        return this.f15380a;
     }
 }

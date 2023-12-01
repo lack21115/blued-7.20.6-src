@@ -124,19 +124,19 @@ public abstract class d extends MessageSnapshot {
 
     /* renamed from: com.kwai.filedownloader.message.d$d  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/kwai/filedownloader/message/d$d.class */
-    public static class C0591d extends d {
+    public static class C0421d extends d {
         private final long aIt;
         private final Throwable aIu;
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        public C0591d(int i, long j, Throwable th) {
+        public C0421d(int i, long j, Throwable th) {
             super(i);
             this.aIt = j;
             this.aIu = th;
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        public C0591d(Parcel parcel) {
+        public C0421d(Parcel parcel) {
             super(parcel);
             this.aIt = parcel.readLong();
             this.aIu = (Throwable) parcel.readSerializable();
@@ -272,7 +272,7 @@ public abstract class d extends MessageSnapshot {
     }
 
     /* loaded from: source-7994992-dex2jar.jar:com/kwai/filedownloader/message/d$h.class */
-    public static final class h extends C0591d {
+    public static final class h extends C0421d {
         private final int aHZ;
 
         /* JADX INFO: Access modifiers changed from: package-private */
@@ -287,7 +287,7 @@ public abstract class d extends MessageSnapshot {
             this.aHZ = parcel.readInt();
         }
 
-        @Override // com.kwai.filedownloader.message.d.C0591d, com.kwai.filedownloader.message.c
+        @Override // com.kwai.filedownloader.message.d.C0421d, com.kwai.filedownloader.message.c
         public final byte Gq() {
             return (byte) 5;
         }
@@ -297,12 +297,12 @@ public abstract class d extends MessageSnapshot {
             return this.aHZ;
         }
 
-        @Override // com.kwai.filedownloader.message.d.C0591d, com.kwai.filedownloader.message.MessageSnapshot, android.os.Parcelable
+        @Override // com.kwai.filedownloader.message.d.C0421d, com.kwai.filedownloader.message.MessageSnapshot, android.os.Parcelable
         public final int describeContents() {
             return 0;
         }
 
-        @Override // com.kwai.filedownloader.message.d.C0591d, com.kwai.filedownloader.message.MessageSnapshot, android.os.Parcelable
+        @Override // com.kwai.filedownloader.message.d.C0421d, com.kwai.filedownloader.message.MessageSnapshot, android.os.Parcelable
         public final void writeToParcel(Parcel parcel, int i) {
             super.writeToParcel(parcel, i);
             parcel.writeInt(this.aHZ);

@@ -15,9 +15,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/manager/YYKtvMusicManager.class */
 public final class YYKtvMusicManager implements RoomManagerController {
-
-    /* renamed from: a  reason: collision with root package name */
-    private ISongScoreListener f17558a;
+    private ISongScoreListener a;
 
     @Metadata
     /* renamed from: com.blued.android.module.yy_china.manager.YYKtvMusicManager$1  reason: invalid class name */
@@ -33,7 +31,7 @@ public final class YYKtvMusicManager implements RoomManagerController {
             trtcSongScoreModel.currentScore = i;
             trtcSongScoreModel.gotTotalScore = i2;
             trtcSongScoreModel.curIndex = i3;
-            trtcSongScoreModel.hitCount = YYMusicManager.f11418a.c().a(i);
+            trtcSongScoreModel.hitCount = YYMusicManager.a.c().a(i);
             LiveEventBus.get("event_update_song_score").post(trtcSongScoreModel);
         }
 
@@ -78,25 +76,25 @@ public final class YYKtvMusicManager implements RoomManagerController {
     }
 
     public YYKtvMusicManager() {
-        YYMusicManager.f11418a.c().a(YYMusicManager.f11418a.c().l(), new AnonymousClass1());
+        YYMusicManager.a.c().a(YYMusicManager.a.c().l(), new AnonymousClass1());
     }
 
     @Override // com.blued.android.module.yy_china.manager.RoomManagerController
     public void a() {
-        YYMusicManager.f11418a.c().e(YYMusicManager.f11418a.c().l());
-        this.f17558a = null;
+        YYMusicManager.a.c().e(YYMusicManager.a.c().l());
+        this.a = null;
     }
 
     public final void a(ISongScoreListener callback) {
         Intrinsics.e(callback, "callback");
-        this.f17558a = callback;
+        this.a = callback;
     }
 
     public final ISongScoreListener b() {
-        return this.f17558a;
+        return this.a;
     }
 
     public final void c() {
-        this.f17558a = null;
+        this.a = null;
     }
 }

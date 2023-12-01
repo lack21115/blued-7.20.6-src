@@ -6,16 +6,14 @@ import java.util.Iterator;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/player/media/observer/EventCallbackObserver.class */
 public class EventCallbackObserver {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static EventCallbackObserver f15654a = new EventCallbackObserver();
+    private static EventCallbackObserver a = new EventCallbackObserver();
     private ArrayList<EventCallBackListener> b = new ArrayList<>();
 
     private EventCallbackObserver() {
     }
 
     public static EventCallbackObserver a() {
-        return f15654a;
+        return a;
     }
 
     public void a(float f, float f2, float f3) {

@@ -18,21 +18,21 @@ import java.io.InputStream;
 public class FileLoader<Data> implements ModelLoader<File, Data> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final FileOpener<Data> f20872a;
+    private final FileOpener<Data> f7266a;
 
     /* loaded from: source-7206380-dex2jar.jar:com/bumptech/glide/load/model/FileLoader$Factory.class */
     public static class Factory<Data> implements ModelLoaderFactory<File, Data> {
 
         /* renamed from: a  reason: collision with root package name */
-        private final FileOpener<Data> f20873a;
+        private final FileOpener<Data> f7267a;
 
         public Factory(FileOpener<Data> fileOpener) {
-            this.f20873a = fileOpener;
+            this.f7267a = fileOpener;
         }
 
         @Override // com.bumptech.glide.load.model.ModelLoaderFactory
         public final ModelLoader<File, Data> a(MultiModelLoaderFactory multiModelLoaderFactory) {
-            return new FileLoader(this.f20873a);
+            return new FileLoader(this.f7267a);
         }
 
         @Override // com.bumptech.glide.load.model.ModelLoaderFactory
@@ -68,20 +68,20 @@ public class FileLoader<Data> implements ModelLoader<File, Data> {
     public static final class FileFetcher<Data> implements DataFetcher<Data> {
 
         /* renamed from: a  reason: collision with root package name */
-        private final File f20874a;
+        private final File f7268a;
         private final FileOpener<Data> b;
 
         /* renamed from: c  reason: collision with root package name */
-        private Data f20875c;
+        private Data f7269c;
 
         FileFetcher(File file, FileOpener<Data> fileOpener) {
-            this.f20874a = file;
+            this.f7268a = file;
             this.b = fileOpener;
         }
 
         @Override // com.bumptech.glide.load.data.DataFetcher
         public void a() {
-            Data data = this.f20875c;
+            Data data = this.f7269c;
             if (data != null) {
                 try {
                     this.b.a(data);
@@ -94,8 +94,8 @@ public class FileLoader<Data> implements ModelLoader<File, Data> {
         @Override // com.bumptech.glide.load.data.DataFetcher
         public void a(Priority priority, DataFetcher.DataCallback<? super Data> dataCallback) {
             try {
-                Data b = this.b.b(this.f20874a);
-                this.f20875c = b;
+                Data b = this.b.b(this.f7268a);
+                this.f7269c = b;
                 dataCallback.a((DataFetcher.DataCallback<? super Data>) b);
             } catch (FileNotFoundException e) {
                 if (Log.isLoggable("FileLoader", 3)) {
@@ -153,12 +153,12 @@ public class FileLoader<Data> implements ModelLoader<File, Data> {
     }
 
     public FileLoader(FileOpener<Data> fileOpener) {
-        this.f20872a = fileOpener;
+        this.f7266a = fileOpener;
     }
 
     @Override // com.bumptech.glide.load.model.ModelLoader
     public ModelLoader.LoadData<Data> a(File file, int i, int i2, Options options) {
-        return new ModelLoader.LoadData<>(new ObjectKey(file), new FileFetcher(file, this.f20872a));
+        return new ModelLoader.LoadData<>(new ObjectKey(file), new FileFetcher(file, this.f7266a));
     }
 
     @Override // com.bumptech.glide.load.model.ModelLoader

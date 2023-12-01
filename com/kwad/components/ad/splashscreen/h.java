@@ -56,7 +56,7 @@ public final class h extends com.kwad.sdk.mvp.a {
 
     public final void a(int i, Context context, final int i2, int i3, final a aVar) {
         com.kwad.sdk.core.response.a.d.cb(this.mAdTemplate);
-        com.kwad.components.core.d.b.a.a(new a.C0519a(context).I(this.mAdTemplate).b(this.mApkDownloadHelper).ap(i3).ao(false).ao(i2).an(i).a(new a.b() { // from class: com.kwad.components.ad.splashscreen.h.1
+        com.kwad.components.core.d.b.a.a(new a.C0349a(context).I(this.mAdTemplate).b(this.mApkDownloadHelper).ap(i3).ao(false).ao(i2).an(i).a(new a.b() { // from class: com.kwad.components.ad.splashscreen.h.1
             @Override // com.kwad.components.core.d.b.a.b
             public final void onAdClicked() {
                 if (h.this.Bx != null) {

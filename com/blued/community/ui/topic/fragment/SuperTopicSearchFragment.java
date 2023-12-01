@@ -1,11 +1,13 @@
 package com.blued.community.ui.topic.fragment;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.blued.android.core.AppMethods;
@@ -32,14 +34,11 @@ import com.blued.community.ui.topic.model.BluedTopic;
 import com.blued.community.ui.topic.model.BluedTopicExtra;
 import com.blued.das.client.feed.FeedProtos;
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import java.util.Collection;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/community/ui/topic/fragment/SuperTopicSearchFragment.class */
 public class SuperTopicSearchFragment extends KeyBoardFragment {
     public SearchEditText b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private Context f20272c;
+    private Context c;
     private LayoutInflater j;
     private KeyboardListenLinearLayout k;
     private PullToRefreshRecyclerView l;
@@ -51,13 +50,11 @@ public class SuperTopicSearchFragment extends KeyBoardFragment {
     private int q = 20;
     private boolean r = true;
     private BluedUIHttpResponse t = new BluedUIHttpResponse<BluedEntity<BluedTopic, BluedTopicExtra>>(getFragmentActive()) { // from class: com.blued.community.ui.topic.fragment.SuperTopicSearchFragment.6
-
-        /* renamed from: a  reason: collision with root package name */
-        boolean f20278a;
+        boolean a;
 
         @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public boolean onUIFailure(int i, String str) {
-            this.f20278a = true;
+            this.a = true;
             return super.onUIFailure(i, str);
         }
 
@@ -65,7 +62,7 @@ public class SuperTopicSearchFragment extends KeyBoardFragment {
         public void onUIFinish() {
             super.onUIFinish();
             SuperTopicSearchFragment.this.l.j();
-            if (!this.f20278a) {
+            if (!this.a) {
                 if (SuperTopicSearchFragment.this.r) {
                     SuperTopicSearchFragment.this.n.loadMoreComplete();
                     return;
@@ -102,7 +99,7 @@ public class SuperTopicSearchFragment extends KeyBoardFragment {
                 }
                 SuperTopicSearchFragment.this.r = bluedEntity.hasMore();
                 if (SuperTopicSearchFragment.this.p != 1 || bluedTopicExtra == null || TextUtils.isEmpty(bluedTopicExtra.q)) {
-                    SuperTopicSearchFragment.this.n.addData((Collection) bluedEntity.data);
+                    SuperTopicSearchFragment.this.n.addData(bluedEntity.data);
                     return;
                 }
                 SuperTopicSearchFragment.this.n.a(bluedTopicExtra.q);
@@ -152,16 +149,17 @@ public class SuperTopicSearchFragment extends KeyBoardFragment {
         return i;
     }
 
+    /* JADX WARN: Type inference failed for: r0v6, types: [com.blued.android.framework.view.SearchEditText, android.widget.EditText] */
     private void h() {
         SearchView searchView = (SearchView) this.k.findViewById(R.id.search_view);
         this.s = searchView;
-        SearchEditText editView = searchView.getEditView();
+        ?? editView = searchView.getEditView();
         this.b = editView;
-        FeedMethods.a(editView);
+        FeedMethods.a((EditText) editView);
         this.s.setOnSearchInfoListener(new SearchView.OnSearchInfoListener() { // from class: com.blued.community.ui.topic.fragment.SuperTopicSearchFragment.1
             @Override // com.blued.android.module.common.view.SearchView.OnSearchInfoListener
             public void a() {
-                KeyboardUtils.a(SuperTopicSearchFragment.this.getActivity());
+                KeyboardUtils.a((Activity) SuperTopicSearchFragment.this.getActivity());
                 SuperTopicSearchFragment.this.getActivity().finish();
             }
 
@@ -200,27 +198,26 @@ public class SuperTopicSearchFragment extends KeyBoardFragment {
         this.m = refreshableView;
         refreshableView.setClipToPadding(false);
         this.m.setScrollBarStyle(33554432);
-        this.m.setLayoutManager(new LinearLayoutManager(this.f20272c));
-        SuperTopicAdapter superTopicAdapter = new SuperTopicAdapter(this.f20272c, getFragmentActive());
+        this.m.setLayoutManager(new LinearLayoutManager(this.c));
+        SuperTopicAdapter superTopicAdapter = new SuperTopicAdapter(this.c, getFragmentActive());
         this.n = superTopicAdapter;
         this.m.setAdapter(superTopicAdapter);
-        NoDataAndLoadFailView noDataAndLoadFailView = new NoDataAndLoadFailView(this.f20272c);
+        NoDataAndLoadFailView noDataAndLoadFailView = new NoDataAndLoadFailView(this.c);
         this.o = noDataAndLoadFailView;
         noDataAndLoadFailView.setNoDataImg(R.drawable.icon_no_data_common);
         this.o.setNoDataStr(R.string.super_topic_no_data);
-        this.o.setTopSpace(DensityUtils.a(this.f20272c, 84.0f));
+        this.o.setTopSpace(DensityUtils.a(this.c, 84.0f));
         this.o.setImageScale(1.0f);
         this.o.d();
         this.n.setEmptyView(this.o);
         this.n.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() { // from class: com.blued.community.ui.topic.fragment.SuperTopicSearchFragment.3
-            @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemClickListener
             public void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
                 if (baseQuickAdapter.getItem(i) == null || !(baseQuickAdapter.getItem(i) instanceof BluedTopic)) {
                     return;
                 }
                 BluedTopic bluedTopic = (BluedTopic) baseQuickAdapter.getItem(i);
                 FeedConstants.b = FeedProtos.DetailFrom.FIND_SUPER_TOPIC_LIST;
-                SuperTopicDetailFragment.a(SuperTopicSearchFragment.this.f20272c, bluedTopic.super_did);
+                SuperTopicDetailFragment.a(SuperTopicSearchFragment.this.c, bluedTopic.super_did);
             }
         });
         this.l.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener<RecyclerView>() { // from class: com.blued.community.ui.topic.fragment.SuperTopicSearchFragment.4
@@ -233,7 +230,6 @@ public class SuperTopicSearchFragment extends KeyBoardFragment {
         });
         this.n.setLoadMoreView(new BluedAdapterLoadMoreView());
         this.n.setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() { // from class: com.blued.community.ui.topic.fragment.SuperTopicSearchFragment.5
-            @Override // com.chad.library.adapter.base.BaseQuickAdapter.RequestLoadMoreListener
             public void onLoadMoreRequested() {
                 SuperTopicSearchFragment.e(SuperTopicSearchFragment.this);
                 SuperTopicSearchFragment superTopicSearchFragment = SuperTopicSearchFragment.this;
@@ -257,10 +253,10 @@ public class SuperTopicSearchFragment extends KeyBoardFragment {
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         getActivity().getWindow().setSoftInputMode(16);
-        this.f20272c = getActivity();
+        this.c = getActivity();
         KeyboardListenLinearLayout keyboardListenLinearLayout = this.k;
         if (keyboardListenLinearLayout == null) {
             KeyboardListenLinearLayout keyboardListenLinearLayout2 = (KeyboardListenLinearLayout) layoutInflater.inflate(R.layout.fragment_hot_topic_search_list, viewGroup, false);
@@ -275,7 +271,7 @@ public class SuperTopicSearchFragment extends KeyBoardFragment {
         return this.k;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onDestroy() {
         super.onDestroy();
     }

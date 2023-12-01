@@ -20,7 +20,7 @@ public class ArcOptionsCreator implements Parcelable.Creator<ArcOptions> {
             z = false;
         }
         arcOptions.visible(z);
-        arcOptions.f5518a = parcel.readString();
+        arcOptions.a = parcel.readString();
         return arcOptions;
     }
 

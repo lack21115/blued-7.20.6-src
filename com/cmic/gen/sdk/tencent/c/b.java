@@ -11,10 +11,10 @@ public class b extends SSLSocketFactory {
     private static final String[] b = {"TLSv1.2"};
 
     /* renamed from: a  reason: collision with root package name */
-    final SSLSocketFactory f21628a;
+    final SSLSocketFactory f8022a;
 
     public b(SSLSocketFactory sSLSocketFactory) {
-        this.f21628a = sSLSocketFactory;
+        this.f8022a = sSLSocketFactory;
     }
 
     private Socket a(Socket socket) {
@@ -39,42 +39,42 @@ public class b extends SSLSocketFactory {
 
     @Override // javax.net.SocketFactory
     public Socket createSocket() {
-        return a(this.f21628a.createSocket());
+        return a(this.f8022a.createSocket());
     }
 
     @Override // javax.net.SocketFactory
     public Socket createSocket(String str, int i) {
-        return a(this.f21628a.createSocket(str, i));
+        return a(this.f8022a.createSocket(str, i));
     }
 
     @Override // javax.net.SocketFactory
     public Socket createSocket(String str, int i, InetAddress inetAddress, int i2) {
-        return a(this.f21628a.createSocket(str, i, inetAddress, i2));
+        return a(this.f8022a.createSocket(str, i, inetAddress, i2));
     }
 
     @Override // javax.net.SocketFactory
     public Socket createSocket(InetAddress inetAddress, int i) {
-        return a(this.f21628a.createSocket(inetAddress, i));
+        return a(this.f8022a.createSocket(inetAddress, i));
     }
 
     @Override // javax.net.SocketFactory
     public Socket createSocket(InetAddress inetAddress, int i, InetAddress inetAddress2, int i2) {
-        return a(this.f21628a.createSocket(inetAddress, i, inetAddress2, i2));
+        return a(this.f8022a.createSocket(inetAddress, i, inetAddress2, i2));
     }
 
     @Override // javax.net.ssl.SSLSocketFactory
     public Socket createSocket(Socket socket, String str, int i, boolean z) {
-        return a(this.f21628a.createSocket(socket, str, i, z));
+        return a(this.f8022a.createSocket(socket, str, i, z));
     }
 
     @Override // javax.net.ssl.SSLSocketFactory
     public String[] getDefaultCipherSuites() {
-        return this.f21628a.getDefaultCipherSuites();
+        return this.f8022a.getDefaultCipherSuites();
     }
 
     @Override // javax.net.ssl.SSLSocketFactory
     public String[] getSupportedCipherSuites() {
-        return this.f21628a.getSupportedCipherSuites();
+        return this.f8022a.getSupportedCipherSuites();
     }
 
     public String toString() {

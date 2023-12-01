@@ -28,16 +28,16 @@ public interface ChannelIterator<E> {
                 kotlinx.coroutines.channels.ChannelIterator$next0$1 r0 = (kotlinx.coroutines.channels.ChannelIterator$next0$1) r0
                 r7 = r0
                 r0 = r7
-                int r0 = r0.f42902c
+                int r0 = r0.c
                 r1 = -2147483648(0xffffffff80000000, float:-0.0)
                 r0 = r0 & r1
                 if (r0 == 0) goto L26
                 r0 = r7
                 r1 = r7
-                int r1 = r1.f42902c
+                int r1 = r1.c
                 r2 = -2147483648(0xffffffff80000000, float:-0.0)
                 int r1 = r1 + r2
-                r0.f42902c = r1
+                r0.c = r1
                 r0 = r7
                 r5 = r0
                 goto L2f
@@ -54,7 +54,7 @@ public interface ChannelIterator<E> {
                 java.lang.Object r0 = kotlin.coroutines.intrinsics.IntrinsicsKt.a()
                 r8 = r0
                 r0 = r5
-                int r0 = r0.f42902c
+                int r0 = r0.c
                 r6 = r0
                 r0 = r6
                 if (r0 == 0) goto L62
@@ -62,7 +62,7 @@ public interface ChannelIterator<E> {
                 r1 = 1
                 if (r0 != r1) goto L58
                 r0 = r5
-                java.lang.Object r0 = r0.f42901a
+                java.lang.Object r0 = r0.a
                 kotlinx.coroutines.channels.ChannelIterator r0 = (kotlinx.coroutines.channels.ChannelIterator) r0
                 r4 = r0
                 r0 = r7
@@ -81,10 +81,10 @@ public interface ChannelIterator<E> {
                 kotlin.ResultKt.a(r0)
                 r0 = r5
                 r1 = r4
-                r0.f42901a = r1
+                r0.a = r1
                 r0 = r5
                 r1 = 1
-                r0.f42902c = r1
+                r0.c = r1
                 r0 = r4
                 r1 = r5
                 java.lang.Object r0 = r0.a(r1)

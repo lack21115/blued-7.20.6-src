@@ -17,6 +17,8 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.core.os.BundleKt;
 import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import com.anythink.core.common.b.e;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.ui.ActivityFragmentActive;
 import com.blued.android.core.ui.BaseFragment;
@@ -49,13 +51,9 @@ import kotlin.text.StringsKt;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYCreateComingEventsDialog.class */
 public final class YYCreateComingEventsDialog extends BaseFullScreenDialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    private DialogCreateComingEventsBinding f17174a;
+    private DialogCreateComingEventsBinding a;
     private ThemeAdapter b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private BaseFragment f17175c;
+    private BaseFragment c;
     private long d;
     private long e;
     private int f;
@@ -66,15 +64,13 @@ public final class YYCreateComingEventsDialog extends BaseFullScreenDialog {
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYCreateComingEventsDialog$ThemeAdapter.class */
     public final class ThemeAdapter extends BaseQuickAdapter<YYEventsThemeModel, BaseViewHolder> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ YYCreateComingEventsDialog f17176a;
+        final /* synthetic */ YYCreateComingEventsDialog a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public ThemeAdapter(YYCreateComingEventsDialog this$0) {
             super(R.layout.item_events_theme_layout);
             Intrinsics.e(this$0, "this$0");
-            this.f17176a = this$0;
+            this.a = this$0;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -92,7 +88,6 @@ public final class YYCreateComingEventsDialog extends BaseFullScreenDialog {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.chad.library.adapter.base.BaseQuickAdapter
         /* renamed from: a */
         public void convert(BaseViewHolder baseViewHolder, final YYEventsThemeModel yYEventsThemeModel) {
             View view;
@@ -104,7 +99,7 @@ public final class YYCreateComingEventsDialog extends BaseFullScreenDialog {
                 frameLayout = (FrameLayout) baseViewHolder.getView(R.id.item_cover_view);
             }
             if (yYEventsThemeModel != null) {
-                YYCreateComingEventsDialog yYCreateComingEventsDialog = this.f17176a;
+                YYCreateComingEventsDialog yYCreateComingEventsDialog = this.a;
                 if (yYEventsThemeModel.getChecked()) {
                     yYCreateComingEventsDialog.g = yYEventsThemeModel.getType_id();
                 }
@@ -137,7 +132,7 @@ public final class YYCreateComingEventsDialog extends BaseFullScreenDialog {
     public YYCreateComingEventsDialog(BaseFragment fragment) {
         Intrinsics.e(fragment, "fragment");
         this.g = "";
-        this.f17175c = fragment;
+        this.c = fragment;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -153,63 +148,63 @@ public final class YYCreateComingEventsDialog extends BaseFullScreenDialog {
             i2 = 0;
         }
         this.f = i2;
-        DialogCreateComingEventsBinding dialogCreateComingEventsBinding = this.f17174a;
+        DialogCreateComingEventsBinding dialogCreateComingEventsBinding = this.a;
         DialogCreateComingEventsBinding dialogCreateComingEventsBinding2 = dialogCreateComingEventsBinding;
         if (dialogCreateComingEventsBinding == null) {
             Intrinsics.c("mBinding");
             dialogCreateComingEventsBinding2 = null;
         }
         dialogCreateComingEventsBinding2.d.setChecked(this.f == 1);
-        DialogCreateComingEventsBinding dialogCreateComingEventsBinding3 = this.f17174a;
+        DialogCreateComingEventsBinding dialogCreateComingEventsBinding3 = this.a;
         DialogCreateComingEventsBinding dialogCreateComingEventsBinding4 = dialogCreateComingEventsBinding3;
         if (dialogCreateComingEventsBinding3 == null) {
             Intrinsics.c("mBinding");
             dialogCreateComingEventsBinding4 = null;
         }
         dialogCreateComingEventsBinding4.e.setChecked(this.f == 2);
-        DialogCreateComingEventsBinding dialogCreateComingEventsBinding5 = this.f17174a;
+        DialogCreateComingEventsBinding dialogCreateComingEventsBinding5 = this.a;
         DialogCreateComingEventsBinding dialogCreateComingEventsBinding6 = dialogCreateComingEventsBinding5;
         if (dialogCreateComingEventsBinding5 == null) {
             Intrinsics.c("mBinding");
             dialogCreateComingEventsBinding6 = null;
         }
         dialogCreateComingEventsBinding6.b.setChecked(this.f == 3);
-        DialogCreateComingEventsBinding dialogCreateComingEventsBinding7 = this.f17174a;
+        DialogCreateComingEventsBinding dialogCreateComingEventsBinding7 = this.a;
         DialogCreateComingEventsBinding dialogCreateComingEventsBinding8 = dialogCreateComingEventsBinding7;
         if (dialogCreateComingEventsBinding7 == null) {
             Intrinsics.c("mBinding");
             dialogCreateComingEventsBinding8 = null;
         }
         dialogCreateComingEventsBinding8.d.setTextColor(getResources().getColor(this.f == 1 ? R.color.syc_dark_000000 : R.color.syc_666666));
-        DialogCreateComingEventsBinding dialogCreateComingEventsBinding9 = this.f17174a;
+        DialogCreateComingEventsBinding dialogCreateComingEventsBinding9 = this.a;
         DialogCreateComingEventsBinding dialogCreateComingEventsBinding10 = dialogCreateComingEventsBinding9;
         if (dialogCreateComingEventsBinding9 == null) {
             Intrinsics.c("mBinding");
             dialogCreateComingEventsBinding10 = null;
         }
         dialogCreateComingEventsBinding10.e.setTextColor(getResources().getColor(this.f == 2 ? R.color.syc_dark_000000 : R.color.syc_666666));
-        DialogCreateComingEventsBinding dialogCreateComingEventsBinding11 = this.f17174a;
+        DialogCreateComingEventsBinding dialogCreateComingEventsBinding11 = this.a;
         DialogCreateComingEventsBinding dialogCreateComingEventsBinding12 = dialogCreateComingEventsBinding11;
         if (dialogCreateComingEventsBinding11 == null) {
             Intrinsics.c("mBinding");
             dialogCreateComingEventsBinding12 = null;
         }
         dialogCreateComingEventsBinding12.b.setTextColor(getResources().getColor(this.f == 3 ? R.color.syc_dark_000000 : R.color.syc_666666));
-        DialogCreateComingEventsBinding dialogCreateComingEventsBinding13 = this.f17174a;
+        DialogCreateComingEventsBinding dialogCreateComingEventsBinding13 = this.a;
         DialogCreateComingEventsBinding dialogCreateComingEventsBinding14 = dialogCreateComingEventsBinding13;
         if (dialogCreateComingEventsBinding13 == null) {
             Intrinsics.c("mBinding");
             dialogCreateComingEventsBinding14 = null;
         }
         dialogCreateComingEventsBinding14.d.setTypeface(Typeface.DEFAULT, this.f == 1 ? 1 : 0);
-        DialogCreateComingEventsBinding dialogCreateComingEventsBinding15 = this.f17174a;
+        DialogCreateComingEventsBinding dialogCreateComingEventsBinding15 = this.a;
         DialogCreateComingEventsBinding dialogCreateComingEventsBinding16 = dialogCreateComingEventsBinding15;
         if (dialogCreateComingEventsBinding15 == null) {
             Intrinsics.c("mBinding");
             dialogCreateComingEventsBinding16 = null;
         }
         dialogCreateComingEventsBinding16.e.setTypeface(Typeface.DEFAULT, this.f == 2 ? 1 : 0);
-        DialogCreateComingEventsBinding dialogCreateComingEventsBinding17 = this.f17174a;
+        DialogCreateComingEventsBinding dialogCreateComingEventsBinding17 = this.a;
         if (dialogCreateComingEventsBinding17 == null) {
             Intrinsics.c("mBinding");
             dialogCreateComingEventsBinding17 = null;
@@ -225,7 +220,7 @@ public final class YYCreateComingEventsDialog extends BaseFullScreenDialog {
 
     private final void a(long j, YYDatePickerDialog.IEventCallback iEventCallback) {
         Bundle bundleOf = BundleKt.bundleOf(new Pair[0]);
-        bundleOf.putLong("start_time", j);
+        bundleOf.putLong(e.a, j);
         YYDatePickerDialog yYDatePickerDialog = new YYDatePickerDialog();
         yYDatePickerDialog.setArguments(bundleOf);
         yYDatePickerDialog.a(iEventCallback);
@@ -278,7 +273,7 @@ public final class YYCreateComingEventsDialog extends BaseFullScreenDialog {
         }
         EventTrackYY.d(event, str2, str);
         YYWebViewDialogFragment yYWebViewDialogFragment = new YYWebViewDialogFragment();
-        yYWebViewDialogFragment.a(this$0.f17175c, YYRoomInfoManager.e().c(16));
+        yYWebViewDialogFragment.a(this$0.c, YYRoomInfoManager.e().c(16));
         FragmentManager childFragmentManager = this$0.getChildFragmentManager();
         Intrinsics.c(childFragmentManager, "childFragmentManager");
         yYWebViewDialogFragment.show(childFragmentManager, "theme_event_rule_dialog");
@@ -287,21 +282,21 @@ public final class YYCreateComingEventsDialog extends BaseFullScreenDialog {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void d(YYCreateComingEventsDialog this$0, View view) {
         Intrinsics.e(this$0, "this$0");
-        DialogCreateComingEventsBinding dialogCreateComingEventsBinding = this$0.f17174a;
+        DialogCreateComingEventsBinding dialogCreateComingEventsBinding = this$0.a;
         DialogCreateComingEventsBinding dialogCreateComingEventsBinding2 = dialogCreateComingEventsBinding;
         if (dialogCreateComingEventsBinding == null) {
             Intrinsics.c("mBinding");
             dialogCreateComingEventsBinding2 = null;
         }
         dialogCreateComingEventsBinding2.q.requestFocus();
-        DialogCreateComingEventsBinding dialogCreateComingEventsBinding3 = this$0.f17174a;
+        DialogCreateComingEventsBinding dialogCreateComingEventsBinding3 = this$0.a;
         DialogCreateComingEventsBinding dialogCreateComingEventsBinding4 = dialogCreateComingEventsBinding3;
         if (dialogCreateComingEventsBinding3 == null) {
             Intrinsics.c("mBinding");
             dialogCreateComingEventsBinding4 = null;
         }
         EditText editText = dialogCreateComingEventsBinding4.q;
-        DialogCreateComingEventsBinding dialogCreateComingEventsBinding5 = this$0.f17174a;
+        DialogCreateComingEventsBinding dialogCreateComingEventsBinding5 = this$0.a;
         if (dialogCreateComingEventsBinding5 == null) {
             Intrinsics.c("mBinding");
             dialogCreateComingEventsBinding5 = null;
@@ -319,7 +314,7 @@ public final class YYCreateComingEventsDialog extends BaseFullScreenDialog {
                 DialogCreateComingEventsBinding dialogCreateComingEventsBinding2;
                 Intrinsics.e(date, "date");
                 YYCreateComingEventsDialog.this.d = j;
-                dialogCreateComingEventsBinding = YYCreateComingEventsDialog.this.f17174a;
+                dialogCreateComingEventsBinding = YYCreateComingEventsDialog.this.a;
                 DialogCreateComingEventsBinding dialogCreateComingEventsBinding3 = dialogCreateComingEventsBinding;
                 if (dialogCreateComingEventsBinding == null) {
                     Intrinsics.c("mBinding");
@@ -327,7 +322,7 @@ public final class YYCreateComingEventsDialog extends BaseFullScreenDialog {
                 }
                 dialogCreateComingEventsBinding3.v.setText(date);
                 YYCreateComingEventsDialog.this.e = 0L;
-                dialogCreateComingEventsBinding2 = YYCreateComingEventsDialog.this.f17174a;
+                dialogCreateComingEventsBinding2 = YYCreateComingEventsDialog.this.a;
                 DialogCreateComingEventsBinding dialogCreateComingEventsBinding4 = dialogCreateComingEventsBinding2;
                 if (dialogCreateComingEventsBinding4 == null) {
                     Intrinsics.c("mBinding");
@@ -339,8 +334,8 @@ public final class YYCreateComingEventsDialog extends BaseFullScreenDialog {
     }
 
     private final void f() {
-        final ActivityFragmentActive a2 = a();
-        YYRoomHttpUtils.w(new BluedUIHttpResponse<BluedEntityA<YYEventsThemeConfig>>(a2) { // from class: com.blued.android.module.yy_china.fragment.YYCreateComingEventsDialog$loadConfig$1
+        final ActivityFragmentActive a = a();
+        YYRoomHttpUtils.w(new BluedUIHttpResponse<BluedEntityA<YYEventsThemeConfig>>(a) { // from class: com.blued.android.module.yy_china.fragment.YYCreateComingEventsDialog$loadConfig$1
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
@@ -375,7 +370,7 @@ public final class YYCreateComingEventsDialog extends BaseFullScreenDialog {
                     DialogCreateComingEventsBinding dialogCreateComingEventsBinding;
                     Intrinsics.e(date, "date");
                     YYCreateComingEventsDialog.this.e = j2;
-                    dialogCreateComingEventsBinding = YYCreateComingEventsDialog.this.f17174a;
+                    dialogCreateComingEventsBinding = YYCreateComingEventsDialog.this.a;
                     DialogCreateComingEventsBinding dialogCreateComingEventsBinding2 = dialogCreateComingEventsBinding;
                     if (dialogCreateComingEventsBinding == null) {
                         Intrinsics.c("mBinding");
@@ -392,7 +387,7 @@ public final class YYCreateComingEventsDialog extends BaseFullScreenDialog {
         if (yYRoomModel == null) {
             return;
         }
-        DialogCreateComingEventsBinding dialogCreateComingEventsBinding = this.f17174a;
+        DialogCreateComingEventsBinding dialogCreateComingEventsBinding = this.a;
         DialogCreateComingEventsBinding dialogCreateComingEventsBinding2 = dialogCreateComingEventsBinding;
         if (dialogCreateComingEventsBinding == null) {
             Intrinsics.c("mBinding");
@@ -413,7 +408,7 @@ public final class YYCreateComingEventsDialog extends BaseFullScreenDialog {
         guideBuilder.a(20.0f);
         guideBuilder.a("以您个人名义发私信通知");
         bluedGuideDialog.a(guideBuilder);
-        DialogCreateComingEventsBinding dialogCreateComingEventsBinding = this$0.f17174a;
+        DialogCreateComingEventsBinding dialogCreateComingEventsBinding = this$0.a;
         DialogCreateComingEventsBinding dialogCreateComingEventsBinding2 = dialogCreateComingEventsBinding;
         if (dialogCreateComingEventsBinding == null) {
             Intrinsics.c("mBinding");
@@ -424,16 +419,16 @@ public final class YYCreateComingEventsDialog extends BaseFullScreenDialog {
 
     private final void h() {
         this.b = new ThemeAdapter(this);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        RecyclerView.LayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setOrientation(0);
-        DialogCreateComingEventsBinding dialogCreateComingEventsBinding = this.f17174a;
+        DialogCreateComingEventsBinding dialogCreateComingEventsBinding = this.a;
         DialogCreateComingEventsBinding dialogCreateComingEventsBinding2 = dialogCreateComingEventsBinding;
         if (dialogCreateComingEventsBinding == null) {
             Intrinsics.c("mBinding");
             dialogCreateComingEventsBinding2 = null;
         }
         dialogCreateComingEventsBinding2.n.setLayoutManager(linearLayoutManager);
-        DialogCreateComingEventsBinding dialogCreateComingEventsBinding3 = this.f17174a;
+        DialogCreateComingEventsBinding dialogCreateComingEventsBinding3 = this.a;
         if (dialogCreateComingEventsBinding3 == null) {
             Intrinsics.c("mBinding");
             dialogCreateComingEventsBinding3 = null;
@@ -444,14 +439,14 @@ public final class YYCreateComingEventsDialog extends BaseFullScreenDialog {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void h(YYCreateComingEventsDialog this$0, View view) {
         Intrinsics.e(this$0, "this$0");
-        DialogCreateComingEventsBinding dialogCreateComingEventsBinding = this$0.f17174a;
+        DialogCreateComingEventsBinding dialogCreateComingEventsBinding = this$0.a;
         DialogCreateComingEventsBinding dialogCreateComingEventsBinding2 = dialogCreateComingEventsBinding;
         if (dialogCreateComingEventsBinding == null) {
             Intrinsics.c("mBinding");
             dialogCreateComingEventsBinding2 = null;
         }
         String obj = StringsKt.b((CharSequence) dialogCreateComingEventsBinding2.q.getText().toString()).toString();
-        DialogCreateComingEventsBinding dialogCreateComingEventsBinding3 = this$0.f17174a;
+        DialogCreateComingEventsBinding dialogCreateComingEventsBinding3 = this$0.a;
         if (dialogCreateComingEventsBinding3 == null) {
             Intrinsics.c("mBinding");
             dialogCreateComingEventsBinding3 = null;
@@ -465,7 +460,7 @@ public final class YYCreateComingEventsDialog extends BaseFullScreenDialog {
     }
 
     private final void i() {
-        DialogCreateComingEventsBinding dialogCreateComingEventsBinding = this.f17174a;
+        DialogCreateComingEventsBinding dialogCreateComingEventsBinding = this.a;
         DialogCreateComingEventsBinding dialogCreateComingEventsBinding2 = dialogCreateComingEventsBinding;
         if (dialogCreateComingEventsBinding == null) {
             Intrinsics.c("mBinding");
@@ -477,7 +472,7 @@ public final class YYCreateComingEventsDialog extends BaseFullScreenDialog {
                 YYCreateComingEventsDialog.i(YYCreateComingEventsDialog.this, view);
             }
         });
-        DialogCreateComingEventsBinding dialogCreateComingEventsBinding3 = this.f17174a;
+        DialogCreateComingEventsBinding dialogCreateComingEventsBinding3 = this.a;
         DialogCreateComingEventsBinding dialogCreateComingEventsBinding4 = dialogCreateComingEventsBinding3;
         if (dialogCreateComingEventsBinding3 == null) {
             Intrinsics.c("mBinding");
@@ -489,7 +484,7 @@ public final class YYCreateComingEventsDialog extends BaseFullScreenDialog {
                 YYCreateComingEventsDialog.j(YYCreateComingEventsDialog.this, view);
             }
         });
-        DialogCreateComingEventsBinding dialogCreateComingEventsBinding5 = this.f17174a;
+        DialogCreateComingEventsBinding dialogCreateComingEventsBinding5 = this.a;
         if (dialogCreateComingEventsBinding5 == null) {
             Intrinsics.c("mBinding");
             dialogCreateComingEventsBinding5 = null;
@@ -526,7 +521,7 @@ public final class YYCreateComingEventsDialog extends BaseFullScreenDialog {
             textView.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYCreateComingEventsDialog$lOSR3c0iVzcgxll3XLLHqZQN-F4
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    YYCreateComingEventsDialog.a(AlertDialog.this, view);
+                    YYCreateComingEventsDialog.a(create, view);
                 }
             });
         }
@@ -551,14 +546,14 @@ public final class YYCreateComingEventsDialog extends BaseFullScreenDialog {
     }
 
     private final void k() {
-        DialogCreateComingEventsBinding dialogCreateComingEventsBinding = this.f17174a;
+        DialogCreateComingEventsBinding dialogCreateComingEventsBinding = this.a;
         DialogCreateComingEventsBinding dialogCreateComingEventsBinding2 = dialogCreateComingEventsBinding;
         if (dialogCreateComingEventsBinding == null) {
             Intrinsics.c("mBinding");
             dialogCreateComingEventsBinding2 = null;
         }
         String obj = StringsKt.b((CharSequence) dialogCreateComingEventsBinding2.q.getText().toString()).toString();
-        DialogCreateComingEventsBinding dialogCreateComingEventsBinding3 = this.f17174a;
+        DialogCreateComingEventsBinding dialogCreateComingEventsBinding3 = this.a;
         DialogCreateComingEventsBinding dialogCreateComingEventsBinding4 = dialogCreateComingEventsBinding3;
         if (dialogCreateComingEventsBinding3 == null) {
             Intrinsics.c("mBinding");
@@ -574,8 +569,8 @@ public final class YYCreateComingEventsDialog extends BaseFullScreenDialog {
         String valueOf = String.valueOf(i);
         String valueOf2 = String.valueOf(j / j2);
         String valueOf3 = String.valueOf(this.e / j2);
-        final ActivityFragmentActive a2 = a();
-        YYRoomHttpUtils.a(str, obj, str2, obj2, valueOf, valueOf2, valueOf3, new BluedUIHttpResponse<BluedEntityA<Object>>(a2) { // from class: com.blued.android.module.yy_china.fragment.YYCreateComingEventsDialog$createThemeEvent$1
+        final ActivityFragmentActive a = a();
+        YYRoomHttpUtils.a(str, obj, str2, obj2, valueOf, valueOf2, valueOf3, new BluedUIHttpResponse<BluedEntityA<Object>>(a) { // from class: com.blued.android.module.yy_china.fragment.YYCreateComingEventsDialog$createThemeEvent$1
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
@@ -591,7 +586,7 @@ public final class YYCreateComingEventsDialog extends BaseFullScreenDialog {
         this$0.a(3);
     }
 
-    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog
     public void onActivityCreated(Bundle bundle) {
         super.onActivityCreated(bundle);
         ChatRoomProtos.Event event = ChatRoomProtos.Event.YY_CREATE_PRE_DONE_CLICK;
@@ -606,18 +601,18 @@ public final class YYCreateComingEventsDialog extends BaseFullScreenDialog {
         f();
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
         DialogCreateComingEventsBinding dialogCreateComingEventsBinding = null;
-        DialogCreateComingEventsBinding a2 = DialogCreateComingEventsBinding.a(LayoutInflater.from(getContext()).inflate(R.layout.dialog_create_coming_events, (ViewGroup) null));
-        Intrinsics.c(a2, "bind(view)");
-        this.f17174a = a2;
+        DialogCreateComingEventsBinding a = DialogCreateComingEventsBinding.a(LayoutInflater.from(getContext()).inflate(R.layout.dialog_create_coming_events, (ViewGroup) null));
+        Intrinsics.c(a, "bind(view)");
+        this.a = a;
         this.h = YYRoomInfoManager.e().b();
         g();
         h();
         i();
-        DialogCreateComingEventsBinding dialogCreateComingEventsBinding2 = this.f17174a;
+        DialogCreateComingEventsBinding dialogCreateComingEventsBinding2 = this.a;
         if (dialogCreateComingEventsBinding2 == null) {
             Intrinsics.c("mBinding");
         } else {
@@ -626,11 +621,11 @@ public final class YYCreateComingEventsDialog extends BaseFullScreenDialog {
         return dialogCreateComingEventsBinding.getRoot();
     }
 
-    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment
     public void onViewCreated(View view, Bundle bundle) {
         Intrinsics.e(view, "view");
         super.onViewCreated(view, bundle);
-        DialogCreateComingEventsBinding dialogCreateComingEventsBinding = this.f17174a;
+        DialogCreateComingEventsBinding dialogCreateComingEventsBinding = this.a;
         DialogCreateComingEventsBinding dialogCreateComingEventsBinding2 = dialogCreateComingEventsBinding;
         if (dialogCreateComingEventsBinding == null) {
             Intrinsics.c("mBinding");
@@ -642,7 +637,7 @@ public final class YYCreateComingEventsDialog extends BaseFullScreenDialog {
                 YYCreateComingEventsDialog.a(YYCreateComingEventsDialog.this, view2);
             }
         });
-        DialogCreateComingEventsBinding dialogCreateComingEventsBinding3 = this.f17174a;
+        DialogCreateComingEventsBinding dialogCreateComingEventsBinding3 = this.a;
         DialogCreateComingEventsBinding dialogCreateComingEventsBinding4 = dialogCreateComingEventsBinding3;
         if (dialogCreateComingEventsBinding3 == null) {
             Intrinsics.c("mBinding");
@@ -654,7 +649,7 @@ public final class YYCreateComingEventsDialog extends BaseFullScreenDialog {
                 YYCreateComingEventsDialog.b(YYCreateComingEventsDialog.this, view2);
             }
         });
-        DialogCreateComingEventsBinding dialogCreateComingEventsBinding5 = this.f17174a;
+        DialogCreateComingEventsBinding dialogCreateComingEventsBinding5 = this.a;
         DialogCreateComingEventsBinding dialogCreateComingEventsBinding6 = dialogCreateComingEventsBinding5;
         if (dialogCreateComingEventsBinding5 == null) {
             Intrinsics.c("mBinding");
@@ -666,7 +661,7 @@ public final class YYCreateComingEventsDialog extends BaseFullScreenDialog {
                 YYCreateComingEventsDialog.c(YYCreateComingEventsDialog.this, view2);
             }
         });
-        DialogCreateComingEventsBinding dialogCreateComingEventsBinding7 = this.f17174a;
+        DialogCreateComingEventsBinding dialogCreateComingEventsBinding7 = this.a;
         DialogCreateComingEventsBinding dialogCreateComingEventsBinding8 = dialogCreateComingEventsBinding7;
         if (dialogCreateComingEventsBinding7 == null) {
             Intrinsics.c("mBinding");
@@ -678,7 +673,7 @@ public final class YYCreateComingEventsDialog extends BaseFullScreenDialog {
                 YYCreateComingEventsDialog.d(YYCreateComingEventsDialog.this, view2);
             }
         });
-        DialogCreateComingEventsBinding dialogCreateComingEventsBinding9 = this.f17174a;
+        DialogCreateComingEventsBinding dialogCreateComingEventsBinding9 = this.a;
         DialogCreateComingEventsBinding dialogCreateComingEventsBinding10 = dialogCreateComingEventsBinding9;
         if (dialogCreateComingEventsBinding9 == null) {
             Intrinsics.c("mBinding");
@@ -690,7 +685,7 @@ public final class YYCreateComingEventsDialog extends BaseFullScreenDialog {
                 YYCreateComingEventsDialog.e(YYCreateComingEventsDialog.this, view2);
             }
         });
-        DialogCreateComingEventsBinding dialogCreateComingEventsBinding11 = this.f17174a;
+        DialogCreateComingEventsBinding dialogCreateComingEventsBinding11 = this.a;
         DialogCreateComingEventsBinding dialogCreateComingEventsBinding12 = dialogCreateComingEventsBinding11;
         if (dialogCreateComingEventsBinding11 == null) {
             Intrinsics.c("mBinding");
@@ -702,7 +697,7 @@ public final class YYCreateComingEventsDialog extends BaseFullScreenDialog {
                 YYCreateComingEventsDialog.f(YYCreateComingEventsDialog.this, view2);
             }
         });
-        DialogCreateComingEventsBinding dialogCreateComingEventsBinding13 = this.f17174a;
+        DialogCreateComingEventsBinding dialogCreateComingEventsBinding13 = this.a;
         DialogCreateComingEventsBinding dialogCreateComingEventsBinding14 = dialogCreateComingEventsBinding13;
         if (dialogCreateComingEventsBinding13 == null) {
             Intrinsics.c("mBinding");
@@ -714,12 +709,12 @@ public final class YYCreateComingEventsDialog extends BaseFullScreenDialog {
                 YYCreateComingEventsDialog.g(YYCreateComingEventsDialog.this, view2);
             }
         });
-        DialogCreateComingEventsBinding dialogCreateComingEventsBinding15 = this.f17174a;
+        DialogCreateComingEventsBinding dialogCreateComingEventsBinding15 = this.a;
         if (dialogCreateComingEventsBinding15 == null) {
             Intrinsics.c("mBinding");
             dialogCreateComingEventsBinding15 = null;
         }
-        dialogCreateComingEventsBinding15.f16323c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYCreateComingEventsDialog$uvznLar7mypRDVcyBQQkVr8YjYk
+        dialogCreateComingEventsBinding15.c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYCreateComingEventsDialog$uvznLar7mypRDVcyBQQkVr8YjYk
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 YYCreateComingEventsDialog.h(YYCreateComingEventsDialog.this, view2);

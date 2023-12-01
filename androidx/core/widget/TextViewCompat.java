@@ -37,11 +37,11 @@ public final class TextViewCompat {
     public static final int AUTO_SIZE_TEXT_TYPE_UNIFORM = 1;
 
     /* renamed from: a  reason: collision with root package name */
-    private static Field f2757a;
+    private static Field f2709a;
     private static boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static Field f2758c;
+    private static Field f2710c;
     private static boolean d;
     private static Field e;
     private static boolean f;
@@ -58,17 +58,17 @@ public final class TextViewCompat {
     public static class OreoCallback implements ActionMode.Callback {
 
         /* renamed from: a  reason: collision with root package name */
-        private final ActionMode.Callback f2759a;
+        private final ActionMode.Callback f2711a;
         private final TextView b;
 
         /* renamed from: c  reason: collision with root package name */
-        private Class<?> f2760c;
+        private Class<?> f2712c;
         private Method d;
         private boolean e;
         private boolean f = false;
 
         OreoCallback(ActionMode.Callback callback, TextView textView) {
-            this.f2759a = callback;
+            this.f2711a = callback;
             this.b = textView;
         }
 
@@ -96,17 +96,17 @@ public final class TextViewCompat {
                 this.f = true;
                 try {
                     Class<?> cls = Class.forName("com.android.internal.view.menu.MenuBuilder");
-                    this.f2760c = cls;
+                    this.f2712c = cls;
                     this.d = cls.getDeclaredMethod("removeItemAt", Integer.TYPE);
                     this.e = true;
                 } catch (ClassNotFoundException | NoSuchMethodException e) {
-                    this.f2760c = null;
+                    this.f2712c = null;
                     this.d = null;
                     this.e = false;
                 }
             }
             try {
-                Method declaredMethod = (this.e && this.f2760c.isInstance(menu)) ? this.d : menu.getClass().getDeclaredMethod("removeItemAt", Integer.TYPE);
+                Method declaredMethod = (this.e && this.f2712c.isInstance(menu)) ? this.d : menu.getClass().getDeclaredMethod("removeItemAt", Integer.TYPE);
                 int size = menu.size();
                 while (true) {
                     int i = size - 1;
@@ -160,28 +160,28 @@ public final class TextViewCompat {
         }
 
         ActionMode.Callback a() {
-            return this.f2759a;
+            return this.f2711a;
         }
 
         @Override // android.view.ActionMode.Callback
         public boolean onActionItemClicked(ActionMode actionMode, MenuItem menuItem) {
-            return this.f2759a.onActionItemClicked(actionMode, menuItem);
+            return this.f2711a.onActionItemClicked(actionMode, menuItem);
         }
 
         @Override // android.view.ActionMode.Callback
         public boolean onCreateActionMode(ActionMode actionMode, Menu menu) {
-            return this.f2759a.onCreateActionMode(actionMode, menu);
+            return this.f2711a.onCreateActionMode(actionMode, menu);
         }
 
         @Override // android.view.ActionMode.Callback
         public void onDestroyActionMode(ActionMode actionMode) {
-            this.f2759a.onDestroyActionMode(actionMode);
+            this.f2711a.onDestroyActionMode(actionMode);
         }
 
         @Override // android.view.ActionMode.Callback
         public boolean onPrepareActionMode(ActionMode actionMode, Menu menu) {
             a(menu);
-            return this.f2759a.onPrepareActionMode(actionMode, menu);
+            return this.f2711a.onPrepareActionMode(actionMode, menu);
         }
     }
 
@@ -362,18 +362,18 @@ public final class TextViewCompat {
             return textView.getMaxLines();
         }
         if (!d) {
-            f2758c = a("mMaxMode");
+            f2710c = a("mMaxMode");
             d = true;
         }
-        Field field = f2758c;
+        Field field = f2710c;
         if (field == null || a(field, textView) != 1) {
             return -1;
         }
         if (!b) {
-            f2757a = a("mMaximum");
+            f2709a = a("mMaximum");
             b = true;
         }
-        Field field2 = f2757a;
+        Field field2 = f2709a;
         if (field2 != null) {
             return a(field2, textView);
         }

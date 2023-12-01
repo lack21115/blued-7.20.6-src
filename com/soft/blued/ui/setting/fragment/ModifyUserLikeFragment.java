@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 import com.blued.android.core.AppMethods;
+import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.ui.BaseFragment;
 import com.blued.android.core.ui.TerminalActivity;
 import com.blued.android.framework.http.BluedUIHttpResponse;
@@ -36,11 +37,11 @@ import java.util.List;
 public class ModifyUserLikeFragment extends BaseFragment implements View.OnClickListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f33499a;
+    private Context f19808a;
     private View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Dialog f33500c;
+    private Dialog f19809c;
     private CustomViewPager d;
     private UserLikeToolBarView e;
     private LabelPagerAdapter h;
@@ -89,19 +90,19 @@ public class ModifyUserLikeFragment extends BaseFragment implements View.OnClick
         @Override // androidx.viewpager.widget.PagerAdapter
         public Object instantiateItem(ViewGroup viewGroup, int i) {
             while (ModifyUserLikeFragment.this.g.size() < ModifyUserLikeFragment.this.f.size()) {
-                ModifyUserLikeFragment.this.g.add(LayoutInflater.from(ModifyUserLikeFragment.this.f33499a).inflate(R.layout.user_label_pager, viewGroup, false));
+                ModifyUserLikeFragment.this.g.add(LayoutInflater.from(ModifyUserLikeFragment.this.f19808a).inflate(R.layout.user_label_pager, viewGroup, false));
             }
             View view = (View) ModifyUserLikeFragment.this.g.get(i);
-            PullToRefreshRecyclerView pullToRefreshRecyclerView = (PullToRefreshRecyclerView) view.findViewById(R.id.user_label_recycler_view);
-            RecyclerView refreshableView = pullToRefreshRecyclerView.getRefreshableView();
-            refreshableView.setLayoutManager(new GridLayoutManager(ModifyUserLikeFragment.this.f33499a, 1));
-            pullToRefreshRecyclerView.setRefreshEnabled(false);
+            PullToRefreshRecyclerView findViewById = view.findViewById(R.id.user_label_recycler_view);
+            RecyclerView recyclerView = (RecyclerView) findViewById.getRefreshableView();
+            recyclerView.setLayoutManager(new GridLayoutManager(ModifyUserLikeFragment.this.f19808a, 1));
+            findViewById.setRefreshEnabled(false);
             if (i != 0) {
-                if (i == 1 && refreshableView.getAdapter() == null) {
-                    refreshableView.setAdapter(ModifyUserLikeFragment.this.l);
+                if (i == 1 && recyclerView.getAdapter() == null) {
+                    recyclerView.setAdapter(ModifyUserLikeFragment.this.l);
                 }
-            } else if (refreshableView.getAdapter() == null) {
-                refreshableView.setAdapter(ModifyUserLikeFragment.this.k);
+            } else if (recyclerView.getAdapter() == null) {
+                recyclerView.setAdapter(ModifyUserLikeFragment.this.k);
             }
             if (view.getParent() != null) {
                 ((ViewGroup) view.getParent()).removeView(view);
@@ -129,7 +130,7 @@ public class ModifyUserLikeFragment extends BaseFragment implements View.OnClick
             this.i.addAll(arguments.getStringArrayList("choosedList"));
         }
         this.j = arguments.getInt(BrowserContract.Bookmarks.POSITION);
-        String[] stringArray = this.f33499a.getResources().getStringArray(R.array.user_like_title);
+        String[] stringArray = this.f19808a.getResources().getStringArray(R.array.user_like_title);
         int length = stringArray.length;
         int i = 0;
         while (true) {
@@ -143,18 +144,18 @@ public class ModifyUserLikeFragment extends BaseFragment implements View.OnClick
     }
 
     private void d() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.b.findViewById(2131370749);
-        commonTopTitleNoTrans.setCenterText(getString(R.string.favorite_types));
-        commonTopTitleNoTrans.setLeftClickListener(this);
-        commonTopTitleNoTrans.setRightClickListener(this);
-        commonTopTitleNoTrans.setRightText(R.string.done);
-        commonTopTitleNoTrans.setRightTextColor(2131102254);
+        CommonTopTitleNoTrans findViewById = this.b.findViewById(R.id.top_title);
+        findViewById.setCenterText(getString(R.string.favorite_types));
+        findViewById.setLeftClickListener(this);
+        findViewById.setRightClickListener(this);
+        findViewById.setRightText((int) R.string.done);
+        findViewById.setRightTextColor(2131102254);
     }
 
     private void e() {
-        this.f33500c = DialogUtils.a(getActivity());
+        this.f19809c = DialogUtils.a(getActivity());
         this.e = (UserLikeToolBarView) this.b.findViewById(R.id.user_like_tool_bar_view);
-        CustomViewPager customViewPager = (CustomViewPager) this.b.findViewById(2131373209);
+        CustomViewPager customViewPager = (CustomViewPager) this.b.findViewById(R.id.view_pager);
         this.d = customViewPager;
         customViewPager.setOnPageChangeListener(this.m);
         LabelPagerAdapter labelPagerAdapter = new LabelPagerAdapter();
@@ -167,19 +168,19 @@ public class ModifyUserLikeFragment extends BaseFragment implements View.OnClick
                 ModifyUserLikeFragment.this.d.setCurrentItem(i);
             }
         });
-        this.k = new UserLabelAdapterNew(this.f33499a);
-        this.l = new UserLabelAdapterNew(this.f33499a);
+        this.k = new UserLabelAdapterNew(this.f19808a);
+        this.l = new UserLabelAdapterNew(this.f19808a);
         this.k.a(new UserLabelAdapterNew.OnItemClickListener() { // from class: com.soft.blued.ui.setting.fragment.ModifyUserLikeFragment.2
             @Override // com.soft.blued.ui.setting.adapter.UserLabelAdapterNew.OnItemClickListener
             public void a(UserTag userTag, int i) {
-                if (userTag.tagList.get(i).chooseable) {
-                    if (userTag.tagList.get(i).checked == 1) {
-                        userTag.tagList.get(i).checked = 0;
+                if (((UserTag) userTag.tagList.get(i)).chooseable) {
+                    if (((UserTag) userTag.tagList.get(i)).checked == 1) {
+                        ((UserTag) userTag.tagList.get(i)).checked = 0;
                     } else {
                         ModifyUserLikeFragment modifyUserLikeFragment = ModifyUserLikeFragment.this;
                         int a2 = modifyUserLikeFragment.a(modifyUserLikeFragment.k);
                         if (a2 < 5) {
-                            userTag.tagList.get(i).checked = 1;
+                            ((UserTag) userTag.tagList.get(i)).checked = 1;
                         } else if (a2 == 5) {
                             AppMethods.d((int) R.string.max_tags_5);
                         }
@@ -191,14 +192,14 @@ public class ModifyUserLikeFragment extends BaseFragment implements View.OnClick
         this.l.a(new UserLabelAdapterNew.OnItemClickListener() { // from class: com.soft.blued.ui.setting.fragment.ModifyUserLikeFragment.3
             @Override // com.soft.blued.ui.setting.adapter.UserLabelAdapterNew.OnItemClickListener
             public void a(UserTag userTag, int i) {
-                if (userTag.tagList.get(i).chooseable) {
-                    if (userTag.tagList.get(i).checked == 1) {
-                        userTag.tagList.get(i).checked = 0;
+                if (((UserTag) userTag.tagList.get(i)).chooseable) {
+                    if (((UserTag) userTag.tagList.get(i)).checked == 1) {
+                        ((UserTag) userTag.tagList.get(i)).checked = 0;
                     } else {
                         ModifyUserLikeFragment modifyUserLikeFragment = ModifyUserLikeFragment.this;
                         int a2 = modifyUserLikeFragment.a(modifyUserLikeFragment.l);
                         if (a2 < 5) {
-                            userTag.tagList.get(i).checked = 1;
+                            ((UserTag) userTag.tagList.get(i)).checked = 1;
                         } else if (a2 == 5) {
                             AppMethods.d((int) R.string.max_tags_5);
                         }
@@ -228,7 +229,7 @@ public class ModifyUserLikeFragment extends BaseFragment implements View.OnClick
                         i4 = i3;
                         if (i5 < userTag.tagList.size()) {
                             int i6 = i3;
-                            if (userTag.tagList.get(i5).checked == 1) {
+                            if (((UserTag) userTag.tagList.get(i5)).checked == 1) {
                                 i6 = i3 + 1;
                             }
                             i5++;
@@ -243,7 +244,6 @@ public class ModifyUserLikeFragment extends BaseFragment implements View.OnClick
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r0v11, types: [java.lang.Object] */
     public ArrayList<String> a(int i) {
         List arrayList = new ArrayList();
         if (i == 0) {
@@ -271,16 +271,15 @@ public class ModifyUserLikeFragment extends BaseFragment implements View.OnClick
     }
 
     public void a() {
-        FindHttpUtils.a(this.f33499a, new BluedUIHttpResponse<BluedEntityA<UserTagAll>>(getFragmentActive()) { // from class: com.soft.blued.ui.setting.fragment.ModifyUserLikeFragment.5
+        FindHttpUtils.a(this.f19808a, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<UserTagAll>>(getFragmentActive()) { // from class: com.soft.blued.ui.setting.fragment.ModifyUserLikeFragment.5
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<UserTagAll> bluedEntityA) {
                 if (bluedEntityA == null || bluedEntityA.data == null || bluedEntityA.data.size() <= 0) {
                     return;
                 }
-                List<UserTag> list = bluedEntityA.data.get(0).love_type;
-                List<UserTag> list2 = bluedEntityA.data.get(0).love_character;
+                List<UserTag> list = ((UserTagAll) bluedEntityA.data.get(0)).love_type;
+                List<UserTag> list2 = ((UserTagAll) bluedEntityA.data.get(0)).love_character;
                 ModifyUserLikeFragment modifyUserLikeFragment = ModifyUserLikeFragment.this;
                 modifyUserLikeFragment.a(modifyUserLikeFragment.i, list);
                 ModifyUserLikeFragment modifyUserLikeFragment2 = ModifyUserLikeFragment.this;
@@ -289,17 +288,15 @@ public class ModifyUserLikeFragment extends BaseFragment implements View.OnClick
                 ModifyUserLikeFragment.this.l.addData((UserLabelAdapterNew) new UserTag(list2));
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
-                DialogUtils.b(ModifyUserLikeFragment.this.f33500c);
+                DialogUtils.b(ModifyUserLikeFragment.this.f19809c);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 super.onUIStart();
-                DialogUtils.a(ModifyUserLikeFragment.this.f33500c);
+                DialogUtils.a(ModifyUserLikeFragment.this.f19809c);
             }
-        }, getFragmentActive());
+        }, (IRequestHost) getFragmentActive());
     }
 
     public void a(ArrayList<String> arrayList, List<UserTag> list) {
@@ -386,9 +383,8 @@ public class ModifyUserLikeFragment extends BaseFragment implements View.OnClick
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.f33499a = getActivity();
+        this.f19808a = getActivity();
         View view = this.b;
         if (view == null) {
             this.b = layoutInflater.inflate(R.layout.fragment_user_like_for_modify, viewGroup, false);

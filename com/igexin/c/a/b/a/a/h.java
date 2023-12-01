@@ -9,18 +9,18 @@ import java.net.Socket;
 public final class h {
 
     /* renamed from: a  reason: collision with root package name */
-    private final BufferedInputStream f23234a;
+    private final BufferedInputStream f9626a;
 
     public h(InputStream inputStream) throws IOException {
-        this.f23234a = new BufferedInputStream(inputStream);
+        this.f9626a = new BufferedInputStream(inputStream);
     }
 
     private h(Socket socket) throws IOException {
-        this.f23234a = new BufferedInputStream(socket.getInputStream());
+        this.f9626a = new BufferedInputStream(socket.getInputStream());
     }
 
     private int a() throws IOException {
-        return this.f23234a.read();
+        return this.f9626a.read();
     }
 
     private int a(byte[] bArr, int i, int i2) throws IOException {
@@ -32,7 +32,7 @@ public final class h {
             if (i4 >= i2) {
                 break;
             }
-            i5 = this.f23234a.read(bArr, i + i4, i2 - i4);
+            i5 = this.f9626a.read(bArr, i + i4, i2 - i4);
             i3 = i5;
             if (i5 <= 0) {
                 break;
@@ -43,11 +43,11 @@ public final class h {
     }
 
     private int b(byte[] bArr) throws IOException {
-        return this.f23234a.read(bArr);
+        return this.f9626a.read(bArr);
     }
 
     private void b() throws IOException {
-        this.f23234a.close();
+        this.f9626a.close();
     }
 
     public final int a(byte[] bArr) throws IOException {
@@ -55,7 +55,7 @@ public final class h {
         int i = 0;
         int i2 = 0;
         while (i < length) {
-            i2 = this.f23234a.read(bArr, i, length - i);
+            i2 = this.f9626a.read(bArr, i, length - i);
             if (i2 <= 0) {
                 throw new IOException("read = -1, end of stream !");
             }

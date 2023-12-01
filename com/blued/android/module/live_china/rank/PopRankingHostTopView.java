@@ -20,7 +20,6 @@ import com.blued.android.module.live_china.msg.LiveEventBusUtil;
 import com.blued.android.module.live_china.utils.LiveRoomHttpUtils;
 import com.blued.android.module.live_china.view.recommend.RecommendRefreshHeader;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
-import com.scwang.smartrefresh.layout.listener.OnMultiPurposeListener;
 import com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener;
 import java.util.ArrayList;
 import java.util.List;
@@ -33,13 +32,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/rank/PopRankingHostTopView.class */
 public final class PopRankingHostTopView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Context f14085a;
+    private final Context a;
     private final int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final IRequestHost f14086c;
+    private final IRequestHost c;
     private final String d;
     private final Lazy e;
     private FreedomAdapter f;
@@ -51,9 +46,9 @@ public final class PopRankingHostTopView extends FrameLayout {
         super(mContext);
         Intrinsics.e(mContext, "mContext");
         Intrinsics.e(requestHost, "requestHost");
-        this.f14085a = mContext;
+        this.a = mContext;
         this.b = i;
-        this.f14086c = requestHost;
+        this.c = requestHost;
         this.d = str;
         this.e = LazyKt.a(new Function0<PopWindowRankingListHostBinding>() { // from class: com.blued.android.module.live_china.rank.PopRankingHostTopView$vb$2
             /* JADX INFO: Access modifiers changed from: package-private */
@@ -64,9 +59,9 @@ public final class PopRankingHostTopView extends FrameLayout {
             @Override // kotlin.jvm.functions.Function0
             /* renamed from: a */
             public final PopWindowRankingListHostBinding invoke() {
-                PopWindowRankingListHostBinding a2 = PopWindowRankingListHostBinding.a(LayoutInflater.from(PopRankingHostTopView.this.getContext()).inflate(R.layout.pop_window_ranking_list_host, PopRankingHostTopView.this));
-                Intrinsics.c(a2, "bind(\n            Layout…ist_host, this)\n        )");
-                return a2;
+                PopWindowRankingListHostBinding a = PopWindowRankingListHostBinding.a(LayoutInflater.from(PopRankingHostTopView.this.getContext()).inflate(R.layout.pop_window_ranking_list_host, PopRankingHostTopView.this));
+                Intrinsics.c(a, "bind(\n            Layout…ist_host, this)\n        )");
+                return a;
             }
         });
         this.g = new ArrayList<>();
@@ -81,16 +76,14 @@ public final class PopRankingHostTopView extends FrameLayout {
     }
 
     private final void a() {
-        getVb().d.k(false);
-        getVb().d.l(false);
-        getVb().d.b(new RecommendRefreshHeader(this.f14085a));
-        getVb().d.b((OnMultiPurposeListener) new SimpleMultiPurposeListener() { // from class: com.blued.android.module.live_china.rank.PopRankingHostTopView$initListener$1
-            @Override // com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener, com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
+        getVb().d.d(false);
+        getVb().d.b(false);
+        getVb().d.a(new RecommendRefreshHeader(this.a));
+        getVb().d.a(new SimpleMultiPurposeListener() { // from class: com.blued.android.module.live_china.rank.PopRankingHostTopView$initListener$1
             public void onLoadMore(RefreshLayout refreshLayout) {
                 Intrinsics.e(refreshLayout, "refreshLayout");
             }
 
-            @Override // com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener, com.scwang.smartrefresh.layout.listener.OnRefreshListener
             public void onRefresh(RefreshLayout refreshLayout) {
                 String str;
                 Intrinsics.e(refreshLayout, "refreshLayout");
@@ -146,7 +139,7 @@ public final class PopRankingHostTopView extends FrameLayout {
     public final void b() {
         String str = !Intrinsics.a((Object) this.d, (Object) "union") ? this.d : "anchor";
         int i = !Intrinsics.a((Object) this.d, (Object) "union") ? this.b : 3;
-        final IRequestHost iRequestHost = this.f14086c;
+        final IRequestHost iRequestHost = this.c;
         LiveRoomHttpUtils.d(str, i, new BluedUIHttpResponse<BluedEntity<RankAllDataModel, RankExtraModel>>(iRequestHost) { // from class: com.blued.android.module.live_china.rank.PopRankingHostTopView$loadData$1
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i2, String str2) {
@@ -156,7 +149,7 @@ public final class PopRankingHostTopView extends FrameLayout {
                 vb = PopRankingHostTopView.this.getVb();
                 vb.b.setVisibility(0);
                 vb2 = PopRankingHostTopView.this.getVb();
-                vb2.f12498c.setVisibility(8);
+                vb2.c.setVisibility(8);
                 str3 = PopRankingHostTopView.this.d;
                 LiveEventBusUtil.a(str3, "");
                 return super.onUIFailure(i2, str2);
@@ -170,7 +163,7 @@ public final class PopRankingHostTopView extends FrameLayout {
                 String str3;
                 super.onUIFinish();
                 vb = PopRankingHostTopView.this.getVb();
-                vb.d.j();
+                vb.d.g();
                 vb2 = PopRankingHostTopView.this.getVb();
                 vb2.d.h();
                 str2 = PopRankingHostTopView.this.d;
@@ -218,12 +211,12 @@ public final class PopRankingHostTopView extends FrameLayout {
                 popRankingHostTopView.a((ArrayList) list3);
                 popRankingHostTopView.h = bluedEntity.extra.getDesc_image();
             }
-        }, this.f14086c);
+        }, this.c);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void c() {
-        final IRequestHost iRequestHost = this.f14086c;
+        final IRequestHost iRequestHost = this.c;
         LiveRoomHttpUtils.L(new BluedUIHttpResponse<BluedEntity<RankAllDataModel, RankExtraModel>>(iRequestHost) { // from class: com.blued.android.module.live_china.rank.PopRankingHostTopView$loadData2$1
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str) {
@@ -233,7 +226,7 @@ public final class PopRankingHostTopView extends FrameLayout {
                 vb = PopRankingHostTopView.this.getVb();
                 vb.b.setVisibility(0);
                 vb2 = PopRankingHostTopView.this.getVb();
-                vb2.f12498c.setVisibility(8);
+                vb2.c.setVisibility(8);
                 str2 = PopRankingHostTopView.this.d;
                 LiveEventBusUtil.a(str2, "");
                 return super.onUIFailure(i, str);
@@ -247,7 +240,7 @@ public final class PopRankingHostTopView extends FrameLayout {
                 String str2;
                 super.onUIFinish();
                 vb = PopRankingHostTopView.this.getVb();
-                vb.d.j();
+                vb.d.g();
                 vb2 = PopRankingHostTopView.this.getVb();
                 vb2.d.h();
                 str = PopRankingHostTopView.this.d;
@@ -295,7 +288,7 @@ public final class PopRankingHostTopView extends FrameLayout {
                 popRankingHostTopView.a((ArrayList) list3);
                 popRankingHostTopView.h = bluedEntity.extra.getDesc_image();
             }
-        }, this.f14086c);
+        }, this.c);
     }
 
     private final void d() {
@@ -309,11 +302,11 @@ public final class PopRankingHostTopView extends FrameLayout {
             freedomAdapter.notifyDataSetChanged();
             return;
         }
-        this.f = new FreedomAdapter(getContext(), this.f14086c, this.g);
-        getVb().f12498c.setLayoutManager(new LinearLayoutManager(getContext()));
-        getVb().f12498c.setItemAnimator(new DefaultItemAnimator());
-        getVb().f12498c.setAdapter(this.f);
-        ViewPropertyAnimator animate = getVb().f12498c.animate();
+        this.f = new FreedomAdapter(getContext(), this.c, this.g);
+        getVb().c.setLayoutManager(new LinearLayoutManager(getContext()));
+        getVb().c.setItemAnimator(new DefaultItemAnimator());
+        getVb().c.setAdapter(this.f);
+        ViewPropertyAnimator animate = getVb().c.animate();
         if (animate == null || (alpha = animate.alpha(1.0f)) == null || (duration = alpha.setDuration(300L)) == null) {
             return;
         }
@@ -336,7 +329,7 @@ public final class PopRankingHostTopView extends FrameLayout {
     }
 
     public final Context getMContext() {
-        return this.f14085a;
+        return this.a;
     }
 
     public final int getPosition() {
@@ -344,6 +337,6 @@ public final class PopRankingHostTopView extends FrameLayout {
     }
 
     public final IRequestHost getRequestHost() {
-        return this.f14086c;
+        return this.c;
     }
 }

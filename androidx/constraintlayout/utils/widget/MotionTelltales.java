@@ -16,7 +16,7 @@ public class MotionTelltales extends MockView {
     MotionLayout b;
 
     /* renamed from: c  reason: collision with root package name */
-    float[] f2246c;
+    float[] f2198c;
     Matrix d;
     int e;
     int f;
@@ -26,7 +26,7 @@ public class MotionTelltales extends MockView {
     public MotionTelltales(Context context) {
         super(context);
         this.h = new Paint();
-        this.f2246c = new float[2];
+        this.f2198c = new float[2];
         this.d = new Matrix();
         this.e = 0;
         this.f = Color.MAGENTA;
@@ -37,7 +37,7 @@ public class MotionTelltales extends MockView {
     public MotionTelltales(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         this.h = new Paint();
-        this.f2246c = new float[2];
+        this.f2198c = new float[2];
         this.d = new Matrix();
         this.e = 0;
         this.f = Color.MAGENTA;
@@ -48,7 +48,7 @@ public class MotionTelltales extends MockView {
     public MotionTelltales(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         this.h = new Paint();
-        this.f2246c = new float[2];
+        this.f2198c = new float[2];
         this.d = new Matrix();
         this.e = 0;
         this.f = Color.MAGENTA;
@@ -82,9 +82,8 @@ public class MotionTelltales extends MockView {
         this.h.setStrokeWidth(5.0f);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         super.onAttachedToWindow();
     }
 
@@ -115,11 +114,11 @@ public class MotionTelltales extends MockView {
                 int i4 = i3;
                 if (i4 < 5) {
                     float f2 = fArr[i4];
-                    this.b.getViewVelocity(this, f2, f, this.f2246c, this.e);
-                    this.d.mapVectors(this.f2246c);
+                    this.b.getViewVelocity(this, f2, f, this.f2198c, this.e);
+                    this.d.mapVectors(this.f2198c);
                     float f3 = width * f2;
                     float f4 = height * f;
-                    float[] fArr2 = this.f2246c;
+                    float[] fArr2 = this.f2198c;
                     float f5 = fArr2[0];
                     float f6 = this.g;
                     float f7 = fArr2[1];
@@ -132,15 +131,14 @@ public class MotionTelltales extends MockView {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onLayout(boolean z, int i, int i2, int i3, int i4) {
+    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         super.onLayout(z, i, i2, i3, i4);
         postInvalidate();
     }
 
     public void setText(CharSequence charSequence) {
-        this.f2236a = charSequence.toString();
+        this.f2188a = charSequence.toString();
         requestLayout();
     }
 }

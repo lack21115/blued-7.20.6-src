@@ -47,7 +47,7 @@ public class ApngExtractFrames {
             fileOutputStream.write(PngHelperInternal.a());
             new PngChunkIHDR(this.i).e().a(this.g);
             for (PngChunk pngChunk : a(false).a()) {
-                String str = pngChunk.f3667a;
+                String str = pngChunk.a;
                 if (!str.equals("IHDR") && !str.equals("fcTL") && !str.equals("acTL")) {
                     if (str.equals("IDAT")) {
                         return;
@@ -59,7 +59,7 @@ public class ApngExtractFrames {
 
         /* JADX INFO: Access modifiers changed from: private */
         public void h() throws IOException {
-            new PngChunkIEND(null).e().a(this.g);
+            new PngChunkIEND((ImageInfo) null).e().a(this.g);
             this.g.close();
             this.g = null;
         }
@@ -68,23 +68,21 @@ public class ApngExtractFrames {
             return new File(this.k.getParent(), ApngExtractFrames.a(this.k, this.j));
         }
 
-        @Override // ar.com.hjg.pngj.PngReader
         public ChunkSeqReaderPng f() {
             return new ChunkSeqReaderPng(false) { // from class: com.blued.android.core.imagecache.drawable.apng.ApngExtractFrames.PngReaderBuffered.1
-                @Override // ar.com.hjg.pngj.ChunkSeqReaderPng, ar.com.hjg.pngj.ChunkSeqReader
                 public void a(ChunkReader chunkReader) {
                     super.a(chunkReader);
                     try {
-                        String str = chunkReader.a().f3660c;
-                        PngChunk pngChunk = this.f.a().get(this.f.a().size() - 1);
+                        String str = chunkReader.a().c;
+                        PngChunkFCTL pngChunkFCTL = (PngChunk) this.f.a().get(this.f.a().size() - 1);
                         if (str.equals("fcTL")) {
                             PngReaderBuffered.this.j++;
-                            PngReaderBuffered.this.i = ((PngChunkFCTL) pngChunk).e();
+                            PngReaderBuffered.this.i = pngChunkFCTL.e();
                             PngReaderBuffered.this.g();
                         }
                         if (str.equals("fdAT") || str.equals("IDAT")) {
                             if (!str.equals("IDAT")) {
-                                ChunkRaw chunkRaw = new ChunkRaw(chunkReader.a().f3659a - 4, ChunkHelper.f3655c, true);
+                                ChunkRaw chunkRaw = new ChunkRaw(chunkReader.a().a - 4, ChunkHelper.c, true);
                                 System.arraycopy((Object) chunkReader.a().d, 4, (Object) chunkRaw.d, 0, chunkRaw.d.length);
                                 chunkRaw.a(PngReaderBuffered.this.g);
                             } else if (PngReaderBuffered.this.g != null) {
@@ -101,12 +99,10 @@ public class ApngExtractFrames {
                     }
                 }
 
-                @Override // ar.com.hjg.pngj.ChunkSeqReaderPng, ar.com.hjg.pngj.ChunkSeqReader
                 public boolean a(String str) {
                     return false;
                 }
 
-                @Override // ar.com.hjg.pngj.ChunkSeqReaderPng, ar.com.hjg.pngj.ChunkSeqReader
                 public boolean b(int i, String str) {
                     return false;
                 }

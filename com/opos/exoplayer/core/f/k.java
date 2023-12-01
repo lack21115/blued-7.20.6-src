@@ -11,11 +11,11 @@ import java.util.List;
 public final class k extends com.opos.exoplayer.core.a implements Handler.Callback {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Handler f25412a;
+    private final Handler f11724a;
     private final j b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final g f25413c;
+    private final g f11725c;
     private final com.opos.exoplayer.core.l d;
     private boolean e;
     private boolean f;
@@ -28,19 +28,19 @@ public final class k extends com.opos.exoplayer.core.a implements Handler.Callba
     private int m;
 
     public k(j jVar, Looper looper) {
-        this(jVar, looper, g.f25387a);
+        this(jVar, looper, g.f11699a);
     }
 
     public k(j jVar, Looper looper, g gVar) {
         super(3);
         this.b = (j) com.opos.exoplayer.core.i.a.a(jVar);
-        this.f25412a = looper == null ? null : new Handler(looper, this);
-        this.f25413c = gVar;
+        this.f11724a = looper == null ? null : new Handler(looper, this);
+        this.f11725c = gVar;
         this.d = new com.opos.exoplayer.core.l();
     }
 
     private void a(List<b> list) {
-        Handler handler = this.f25412a;
+        Handler handler = this.f11724a;
         if (handler != null) {
             handler.obtainMessage(0, list).sendToTarget();
         } else {
@@ -76,7 +76,7 @@ public final class k extends com.opos.exoplayer.core.a implements Handler.Callba
 
     private void x() {
         w();
-        this.i = this.f25413c.b(this.h);
+        this.i = this.f11725c.b(this.h);
     }
 
     private long y() {
@@ -93,7 +93,7 @@ public final class k extends com.opos.exoplayer.core.a implements Handler.Callba
 
     @Override // com.opos.exoplayer.core.t
     public int a(Format format) {
-        return this.f25413c.a(format) ? a((com.opos.exoplayer.core.drm.b<?>) null, format.i) ? 4 : 2 : com.opos.exoplayer.core.i.j.c(format.f) ? 1 : 0;
+        return this.f11725c.a(format) ? a((com.opos.exoplayer.core.drm.b<?>) null, format.i) ? 4 : 2 : com.opos.exoplayer.core.i.j.c(format.f) ? 1 : 0;
     }
 
     @Override // com.opos.exoplayer.core.s
@@ -146,7 +146,7 @@ public final class k extends com.opos.exoplayer.core.a implements Handler.Callba
                     }
                 } else {
                     z3 = z;
-                    if (this.l.f25075a <= j) {
+                    if (this.l.f11387a <= j) {
                         i iVar2 = this.k;
                         if (iVar2 != null) {
                             iVar2.e();
@@ -184,7 +184,7 @@ public final class k extends com.opos.exoplayer.core.a implements Handler.Callba
                             if (this.j.c()) {
                                 this.e = true;
                             } else {
-                                this.j.d = this.d.f25515a.w;
+                                this.j.d = this.d.f11827a.w;
                                 this.j.h();
                             }
                             this.i.a((e) this.j);
@@ -220,7 +220,7 @@ public final class k extends com.opos.exoplayer.core.a implements Handler.Callba
         if (this.i != null) {
             this.g = 1;
         } else {
-            this.i = this.f25413c.b(format);
+            this.i = this.f11725c.b(format);
         }
     }
 

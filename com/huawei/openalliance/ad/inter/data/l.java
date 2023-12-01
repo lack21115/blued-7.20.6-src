@@ -27,7 +27,7 @@ public class l extends c implements f {
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f22972c;
+    private String f9364c;
     private String d;
     private String e;
     private int f;
@@ -187,7 +187,7 @@ public class l extends c implements f {
     }
 
     public void Z(String str) {
-        this.f22972c = str;
+        this.f9364c = str;
     }
 
     public void Z(List<Integer> list) {

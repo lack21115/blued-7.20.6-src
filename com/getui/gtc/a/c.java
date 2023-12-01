@@ -14,11 +14,11 @@ import java.util.Map;
 public final class c implements b {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f21883a;
+    private String f8276a;
     private boolean b = true;
 
     /* renamed from: c  reason: collision with root package name */
-    private long f21884c = 10000;
+    private long f8277c = 10000;
 
     @Override // java.lang.Runnable
     public final void run() {
@@ -41,7 +41,7 @@ public final class c implements b {
             }
             try {
                 if (a2.containsKey("sdk.gtc.type301.interval")) {
-                    this.f21884c = Long.parseLong(a2.get("sdk.gtc.type301.interval")) * 1000;
+                    this.f8277c = Long.parseLong(a2.get("sdk.gtc.type301.interval")) * 1000;
                 }
             } catch (Exception e2) {
                 com.getui.gtc.i.c.a.a(e2);
@@ -51,14 +51,14 @@ public final class c implements b {
             com.getui.gtc.i.c.a.b("type 301 is not enabled");
             return;
         }
-        cVar = c.a.f21997a;
-        String str = cVar.f21995a.f21998a;
+        cVar = c.a.f8390a;
+        String str = cVar.f8388a.f8391a;
         if (!TextUtils.isEmpty(str)) {
             try {
                 String[] split = str.split("\n");
                 if (System.currentTimeMillis() - new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.CHINA).parse(split[0].split("\\|")[0]).getTime() > 604800000 || split.length > 300) {
-                    cVar2 = c.a.f21997a;
-                    cVar2.f21995a.d("");
+                    cVar2 = c.a.f8390a;
+                    cVar2.f8388a.d("");
                     com.getui.gtc.i.c.a.a("type 301 clean stored samples");
                 }
             } catch (Exception e3) {
@@ -71,42 +71,42 @@ public final class c implements b {
         sb.append("|");
         sb.append(a.a(com.getui.gtc.c.b.d));
         sb.append("|");
-        sb.append(a.a(com.getui.gtc.c.b.f21920a));
+        sb.append(a.a(com.getui.gtc.c.b.f8313a));
         sb.append("|android|");
-        unused = b.a.f22037a;
+        unused = b.a.f8430a;
         Calendar calendar = Calendar.getInstance();
         double d = (calendar.get(15) + calendar.get(16)) / 3600000.0d;
         NumberFormat numberInstance = NumberFormat.getNumberInstance();
         numberInstance.setMaximumFractionDigits(2);
         sb.append(a.a(numberInstance.format(d)));
         String sb2 = sb.toString();
-        cVar3 = c.a.f21997a;
-        com.getui.gtc.e.d dVar = cVar3.f21995a;
+        cVar3 = c.a.f8390a;
+        com.getui.gtc.e.d dVar = cVar3.f8388a;
         if (!TextUtils.isEmpty(sb2)) {
             String str2 = sb2;
-            if (!TextUtils.isEmpty(dVar.f21998a)) {
-                str2 = dVar.f21998a + "\n" + sb2;
+            if (!TextUtils.isEmpty(dVar.f8391a)) {
+                str2 = dVar.f8391a + "\n" + sb2;
             }
             if (dVar.a(7, str2)) {
-                dVar.f21998a = str2;
+                dVar.f8391a = str2;
             }
         }
-        cVar4 = c.a.f21997a;
-        this.f21883a = cVar4.f21995a.f21998a;
+        cVar4 = c.a.f8390a;
+        this.f8276a = cVar4.f8388a.f8391a;
         try {
             long currentTimeMillis = System.currentTimeMillis();
-            cVar5 = c.a.f21997a;
-            if (currentTimeMillis - cVar5.f21995a.b < this.f21884c) {
+            cVar5 = c.a.f8390a;
+            if (currentTimeMillis - cVar5.f8388a.b < this.f8277c) {
                 return;
             }
-            com.getui.gtc.h.a.a(this.f21883a, 301);
-            cVar6 = c.a.f21997a;
-            com.getui.gtc.e.d dVar2 = cVar6.f21995a;
+            com.getui.gtc.h.a.a(this.f8276a, 301);
+            cVar6 = c.a.f8390a;
+            com.getui.gtc.e.d dVar2 = cVar6.f8388a;
             if (dVar2.a(6, currentTimeMillis)) {
                 dVar2.b = currentTimeMillis;
             }
-            cVar7 = c.a.f21997a;
-            cVar7.f21995a.d("");
+            cVar7 = c.a.f8390a;
+            cVar7.f8388a.d("");
         } catch (Exception e4) {
             com.getui.gtc.i.c.a.c("type 301 report error: " + e4.toString());
         }

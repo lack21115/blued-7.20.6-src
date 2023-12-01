@@ -4,11 +4,11 @@ package com.blued.login.constant;
 public class LoginConstants {
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f20504a = "re_type_three";
+    public static String f6898a = "re_type_three";
     public static int b = 513;
 
     /* renamed from: c  reason: collision with root package name */
-    public static String f20505c;
+    public static String f6899c;
 
     /* loaded from: source-7206380-dex2jar.jar:com/blued/login/constant/LoginConstants$BIOTRACK.class */
     public interface BIOTRACK {

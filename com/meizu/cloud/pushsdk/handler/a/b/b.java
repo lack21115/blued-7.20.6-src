@@ -1,7 +1,6 @@
 package com.meizu.cloud.pushsdk.handler.a.b;
 
 import android.os.Environment;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.meizu.cloud.pushinternal.DebugLogger;
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -18,10 +17,10 @@ import java.util.zip.ZipOutputStream;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private final File f24136a;
+    private final File f10521a;
 
     public b(String str) {
-        this.f24136a = new File(str);
+        this.f10521a = new File(str);
     }
 
     private void a(File file, ZipOutputStream zipOutputStream, String str) throws Exception {
@@ -38,7 +37,7 @@ public class b {
             }
             return;
         }
-        DebugLogger.i("ZipTask", "current file " + sb2 + BridgeUtil.SPLIT_MARK + file.getName() + " size is " + (file.length() / 1024) + "KB");
+        DebugLogger.i("ZipTask", "current file " + sb2 + "/" + file.getName() + " size is " + (file.length() / 1024) + "KB");
         if (file.length() >= 10485760) {
             return;
         }
@@ -66,8 +65,8 @@ public class b {
     }
 
     public void a(List<String> list) throws Exception {
-        if (!this.f24136a.exists()) {
-            this.f24136a.getParentFile().mkdirs();
+        if (!this.f10521a.exists()) {
+            this.f10521a.getParentFile().mkdirs();
         }
         ArrayList arrayList = new ArrayList();
         String absolutePath = Environment.getExternalStorageDirectory().getAbsolutePath();
@@ -77,6 +76,6 @@ public class b {
                 arrayList.add(file);
             }
         }
-        a(arrayList, this.f24136a);
+        a(arrayList, this.f10521a);
     }
 }

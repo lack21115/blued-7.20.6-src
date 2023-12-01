@@ -13,7 +13,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.huawei.openalliance.ad.constant.ao;
 import com.ss.android.downloadad.api.constant.AdBaseConstants;
 import com.ss.android.downloadlib.constants.EventConstants;
@@ -316,7 +315,7 @@ public class b {
             String str3 = optString;
             if (!TextUtils.isEmpty(optString)) {
                 str3 = optString;
-                if (optString.startsWith(BridgeUtil.SPLIT_MARK)) {
+                if (optString.startsWith("/")) {
                     str3 = optString.substring(1);
                 }
             }

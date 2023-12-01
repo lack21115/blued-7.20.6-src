@@ -14,23 +14,23 @@ import org.json.JSONObject;
 public class be {
 
     /* renamed from: a  reason: collision with root package name */
-    private JSONObject f23745a;
+    private JSONObject f10137a;
 
     public be(Context context, int i) {
         if (Engine.loadSuccess) {
             try {
-                String pqr = Engine.getInstance(context).pqr(Integer.valueOf(cj.f23783c).intValue(), 5, i, "");
+                String pqr = Engine.getInstance(context).pqr(Integer.valueOf(cj.f10175c).intValue(), 5, i, "");
                 if (TextUtils.isEmpty(pqr)) {
                     return;
                 }
-                this.f23745a = new JSONObject(pqr);
+                this.f10137a = new JSONObject(pqr);
             } catch (Throwable th) {
             }
         }
     }
 
     public String a(String str) {
-        JSONObject jSONObject = this.f23745a;
+        JSONObject jSONObject = this.f10137a;
         if (jSONObject != null) {
             try {
                 return jSONObject.getString(str);
@@ -64,7 +64,7 @@ public class be {
     }
 
     public JSONObject a() {
-        return this.f23745a;
+        return this.f10137a;
     }
 
     public JSONObject a(JSONArray jSONArray) {
@@ -124,7 +124,7 @@ public class be {
     }
 
     public JSONArray b(String str) {
-        JSONObject jSONObject = this.f23745a;
+        JSONObject jSONObject = this.f10137a;
         if (jSONObject != null) {
             try {
                 String string = jSONObject.getString(str);

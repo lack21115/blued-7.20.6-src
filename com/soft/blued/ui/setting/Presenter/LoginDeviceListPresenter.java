@@ -15,14 +15,14 @@ import java.util.List;
 public class LoginDeviceListPresenter implements LoginDeviceListContract.IPresenter {
 
     /* renamed from: a  reason: collision with root package name */
-    private LoginDeviceListContract.IView f33227a;
+    private LoginDeviceListContract.IView f19536a;
     private IRequestHost b;
 
     /* renamed from: c  reason: collision with root package name */
-    private List<DeviceModel> f33228c = new ArrayList();
+    private List<DeviceModel> f19537c = new ArrayList();
 
     public LoginDeviceListPresenter(LoginDeviceListContract.IView iView, IRequestHost iRequestHost) {
-        this.f33227a = iView;
+        this.f19536a = iView;
         this.b = iRequestHost;
     }
 
@@ -30,7 +30,6 @@ public class LoginDeviceListPresenter implements LoginDeviceListContract.IPresen
     public void a(final String str, String str2) {
         LoginRegisterHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<LoginProtectionModel>>(this.b) { // from class: com.soft.blued.ui.setting.Presenter.LoginDeviceListPresenter.1
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<LoginProtectionModel> bluedEntityA) {
                 boolean z;
@@ -53,49 +52,45 @@ public class LoginDeviceListPresenter implements LoginDeviceListContract.IPresen
                     z = true;
                 }
                 if (!z) {
-                    LoginDeviceListPresenter.this.f33227a.a((bluedEntityA == null || !bluedEntityA.hasData()) ? "" : bluedEntityA.getSingleData().mobile);
+                    LoginDeviceListPresenter.this.f19536a.a((bluedEntityA == null || !bluedEntityA.hasData()) ? "" : ((LoginProtectionModel) bluedEntityA.getSingleData()).mobile);
                 } else if (bluedEntityA == null || !bluedEntityA.hasData()) {
                 } else {
-                    LoginDeviceListPresenter.this.f33228c = bluedEntityA.getSingleData().devices;
-                    LoginDeviceListPresenter.this.f33227a.a(bluedEntityA.getSingleData());
+                    LoginDeviceListPresenter.this.f19537c = ((LoginProtectionModel) bluedEntityA.getSingleData()).devices;
+                    LoginDeviceListPresenter.this.f19536a.a((LoginProtectionModel) bluedEntityA.getSingleData());
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str3) {
                 if (i == 4035008) {
-                    LoginDeviceListPresenter.this.f33227a.c();
+                    LoginDeviceListPresenter.this.f19536a.c();
                     return true;
                 }
                 if ("set".equals(str)) {
-                    LoginDeviceListPresenter.this.f33227a.a(false);
+                    LoginDeviceListPresenter.this.f19536a.a(false);
                 } else if ("close".equals(str)) {
-                    LoginDeviceListPresenter.this.f33227a.a(true);
+                    LoginDeviceListPresenter.this.f19536a.a(true);
                 }
                 return super.onUIFailure(i, str3);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 super.onUIFinish();
-                LoginDeviceListPresenter.this.f33227a.b();
+                LoginDeviceListPresenter.this.f19536a.b();
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 super.onUIStart();
-                LoginDeviceListPresenter.this.f33227a.a();
+                LoginDeviceListPresenter.this.f19536a.a();
             }
         }, str, "", str2, this.b);
     }
 
-    @Override // com.blued.android.framework.mvp_similarity.BasePresenter
     public void ar_() {
         a(MonitorConstants.CONNECT_TYPE_GET, "");
     }
 
     @Override // com.soft.blued.ui.setting.Contract.LoginDeviceListContract.IPresenter
     public List<DeviceModel> b() {
-        return this.f33228c;
+        return this.f19537c;
     }
 }

@@ -1,6 +1,5 @@
 package io.grpc;
 
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import java.io.InputStream;
@@ -153,7 +152,7 @@ public final class MethodDescriptor<ReqT, RespT> {
     }
 
     public static String generateFullMethodName(String str, String str2) {
-        return ((String) Preconditions.checkNotNull(str, "fullServiceName")) + BridgeUtil.SPLIT_MARK + ((String) Preconditions.checkNotNull(str2, "methodName"));
+        return ((String) Preconditions.checkNotNull(str, "fullServiceName")) + "/" + ((String) Preconditions.checkNotNull(str2, "methodName"));
     }
 
     @CheckReturnValue

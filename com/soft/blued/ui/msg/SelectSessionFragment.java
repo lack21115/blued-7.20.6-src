@@ -25,7 +25,7 @@ import java.util.List;
 public class SelectSessionFragment extends MvpFragment<SelectSessionPresenter> {
 
     /* renamed from: a  reason: collision with root package name */
-    SelectSessionAdapter f31888a;
+    SelectSessionAdapter f18198a;
     @BindView
     RecyclerView recyclerView;
     @BindView
@@ -33,7 +33,6 @@ public class SelectSessionFragment extends MvpFragment<SelectSessionPresenter> {
     @BindView
     TextView tv_all;
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public void a(Bundle bundle) {
         super.a(bundle);
         this.top_title.setCenterText("选择会话");
@@ -41,7 +40,7 @@ public class SelectSessionFragment extends MvpFragment<SelectSessionPresenter> {
         this.recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         RecyclerViewUtil.a(this.recyclerView);
         SelectSessionAdapter selectSessionAdapter = new SelectSessionAdapter(getFragmentActive());
-        this.f31888a = selectSessionAdapter;
+        this.f18198a = selectSessionAdapter;
         selectSessionAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() { // from class: com.soft.blued.ui.msg.SelectSessionFragment.1
             @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemClickListener
             public void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
@@ -50,7 +49,7 @@ public class SelectSessionFragment extends MvpFragment<SelectSessionPresenter> {
                 baseQuickAdapter.notifyItemChanged(i);
             }
         });
-        this.recyclerView.setAdapter(this.f31888a);
+        this.recyclerView.setAdapter(this.f18198a);
         this.top_title.setLeftClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.SelectSessionFragment.2
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
@@ -63,13 +62,13 @@ public class SelectSessionFragment extends MvpFragment<SelectSessionPresenter> {
             public void onClick(View view) {
                 Tracker.onClick(view);
                 ArrayList arrayList = new ArrayList();
-                for (SessionModel sessionModel : SelectSessionFragment.this.f31888a.getData()) {
+                for (SessionModel sessionModel : SelectSessionFragment.this.f18198a.getData()) {
                     if (sessionModel.checked) {
                         arrayList.add(Long.valueOf(sessionModel.sessionId));
                     }
                 }
                 SelectSessionEvent selectSessionEvent = new SelectSessionEvent();
-                selectSessionEvent.f33314a = arrayList;
+                selectSessionEvent.f19623a = arrayList;
                 LiveEventBus.get(EventBusConstant.KEY_EVENT_SELECT_SESSION).post(selectSessionEvent);
                 SelectSessionFragment.this.t();
             }
@@ -78,10 +77,10 @@ public class SelectSessionFragment extends MvpFragment<SelectSessionPresenter> {
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
-                for (SessionModel sessionModel : SelectSessionFragment.this.f31888a.getData()) {
+                for (SessionModel sessionModel : SelectSessionFragment.this.f18198a.getData()) {
                     sessionModel.checked = true;
                 }
-                SelectSessionFragment.this.f31888a.notifyDataSetChanged();
+                SelectSessionFragment.this.f18198a.notifyDataSetChanged();
             }
         });
     }
@@ -90,10 +89,9 @@ public class SelectSessionFragment extends MvpFragment<SelectSessionPresenter> {
         for (SessionModel sessionModel : list) {
             sessionModel.checked = false;
         }
-        this.f31888a.setNewData(list);
+        this.f18198a.setNewData(list);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public int g() {
         return R.layout.fm_select_session;
     }

@@ -12,14 +12,13 @@ import com.anythink.expressad.a.g;
 import com.anythink.expressad.foundation.g.g.a;
 import com.anythink.expressad.foundation.h.o;
 import com.anythink.expressad.foundation.h.s;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.util.concurrent.Semaphore;
 
 /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/a/h.class */
 public final class h extends d implements a.b {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f6978a = 1;
+    public static final int f4140a = 1;
     public static final int i = 2;
     private static final String j = "302";
     private e m;
@@ -222,7 +221,7 @@ public final class h extends d implements a.b {
         }
 
         private static boolean c(String str) {
-            return str.startsWith(BridgeUtil.SPLIT_MARK);
+            return str.startsWith("/");
         }
 
         private void d() {
@@ -275,7 +274,7 @@ public final class h extends d implements a.b {
                 }
                 if (this.l != null) {
                     h.this.n.j();
-                    int i = com.anythink.expressad.c.a.f7121a;
+                    int i = com.anythink.expressad.c.a.f4283a;
                 }
                 if (h.this.s != null) {
                     h.this.n.b(1);
@@ -312,8 +311,8 @@ public final class h extends d implements a.b {
     }
 
     @Override // com.anythink.expressad.foundation.g.g.a.b
-    public final void a(a.EnumC0147a enumC0147a) {
-        if (enumC0147a == a.EnumC0147a.FINISH && this.o) {
+    public final void a(a.EnumC0076a enumC0076a) {
+        if (enumC0076a == a.EnumC0076a.FINISH && this.o) {
             this.t.post(new Runnable() { // from class: com.anythink.expressad.a.h.1
                 @Override // java.lang.Runnable
                 public final void run() {

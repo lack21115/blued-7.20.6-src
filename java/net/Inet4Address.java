@@ -1,6 +1,5 @@
 package java.net;
 
-import android.net.ProxyInfo;
 import android.system.OsConstants;
 import java.io.ObjectStreamException;
 import java.nio.ByteOrder;
@@ -11,7 +10,7 @@ public final class Inet4Address extends InetAddress {
     private static final long serialVersionUID = 3286316764910316507L;
     public static final InetAddress ANY = new Inet4Address(new byte[]{0, 0, 0, 0}, null);
     public static final InetAddress ALL = new Inet4Address(new byte[]{-1, -1, -1, -1}, null);
-    public static final InetAddress LOOPBACK = new Inet4Address(new byte[]{Byte.MAX_VALUE, 0, 0, 1}, ProxyInfo.LOCAL_HOST);
+    public static final InetAddress LOOPBACK = new Inet4Address(new byte[]{Byte.MAX_VALUE, 0, 0, 1}, "localhost");
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public Inet4Address(byte[] bArr, String str) {

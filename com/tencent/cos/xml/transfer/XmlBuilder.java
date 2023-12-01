@@ -1,6 +1,7 @@
 package com.tencent.cos.xml.transfer;
 
 import android.text.TextUtils;
+import com.huawei.hms.ads.fw;
 import com.opos.acs.st.STManager;
 import com.tencent.cos.xml.model.bucket.PutBucketIntelligentTieringRequest;
 import com.tencent.cos.xml.model.tag.AccessControlPolicy;
@@ -23,7 +24,6 @@ import com.tencent.cos.xml.model.tag.eventstreaming.JSONOutput;
 import com.tencent.cos.xml.model.tag.eventstreaming.SelectRequest;
 import java.io.IOException;
 import java.io.StringWriter;
-import javax.xml.XMLConstants;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
 import org.xmlpull.v1.XmlSerializer;
@@ -55,13 +55,13 @@ public class XmlBuilder extends XmlSlimBuilder {
         for (AccessControlPolicy.Grant grant : accessControlPolicy.accessControlList.grants) {
             newSerializer.startTag("", "Grant");
             if (!TextUtils.isEmpty(grant.grantee.uri)) {
-                newSerializer.setPrefix("xsi", XMLConstants.W3C_XML_SCHEMA_INSTANCE_NS_URI);
+                newSerializer.setPrefix("xsi", "http://www.w3.org/2001/XMLSchema-instance");
                 newSerializer.startTag("", "Grantee");
                 newSerializer.attribute("", "xsi:type", "CanonicalUser");
                 addElement(newSerializer, "URI", grant.grantee.uri);
                 newSerializer.endTag("", "Grantee");
             } else if (!TextUtils.isEmpty(grant.grantee.id)) {
-                newSerializer.setPrefix("xsi", XMLConstants.W3C_XML_SCHEMA_INSTANCE_NS_URI);
+                newSerializer.setPrefix("xsi", "http://www.w3.org/2001/XMLSchema-instance");
                 newSerializer.startTag("", "Grantee");
                 newSerializer.attribute("", "xsi:type", "Group");
                 addElement(newSerializer, STManager.REGION_OF_ID, grant.grantee.id);
@@ -218,7 +218,7 @@ public class XmlBuilder extends XmlSlimBuilder {
         if (inventoryConfiguration.id != null) {
             addElement(newSerializer, "Id", inventoryConfiguration.id);
         }
-        addElement(newSerializer, "IsEnabled", inventoryConfiguration.isEnabled ? "true" : "false");
+        addElement(newSerializer, "IsEnabled", inventoryConfiguration.isEnabled ? fw.Code : "false");
         if (inventoryConfiguration.destination != null) {
             newSerializer.startTag("", "Destination");
             if (inventoryConfiguration.destination.cosBucketDestination != null) {

@@ -4,7 +4,6 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.system.OsConstants;
 import android.util.Pair;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.net.Inet4Address;
 import java.net.Inet6Address;
 import java.net.InetAddress;
@@ -61,7 +60,7 @@ public class LinkAddress implements Parcelable {
 
     private void init(InetAddress inetAddress, int i, int i2, int i3) {
         if (inetAddress == null || inetAddress.isMulticastAddress() || i < 0 || (((inetAddress instanceof Inet4Address) && i > 32) || i > 128)) {
-            throw new IllegalArgumentException("Bad LinkAddress params " + inetAddress + BridgeUtil.SPLIT_MARK + i);
+            throw new IllegalArgumentException("Bad LinkAddress params " + inetAddress + "/" + i);
         }
         this.address = inetAddress;
         this.prefixLength = i;
@@ -136,7 +135,7 @@ public class LinkAddress implements Parcelable {
     }
 
     public String toString() {
-        return this.address.getHostAddress() + BridgeUtil.SPLIT_MARK + this.prefixLength;
+        return this.address.getHostAddress() + "/" + this.prefixLength;
     }
 
     @Override // android.os.Parcelable

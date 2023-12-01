@@ -40,11 +40,11 @@ public final class RuntimeMessageAdapter<M, B> extends ProtoAdapter<M> {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public RuntimeMessageAdapter(MessageBinding<M, B> binding) {
-        super(FieldEncoding.LENGTH_DELIMITED, binding.getMessageType(), binding.getTypeUrl(), binding.getSyntax());
-        Intrinsics.e(binding, "binding");
-        this.binding = binding;
-        this.messageType = binding.getMessageType();
+    public RuntimeMessageAdapter(MessageBinding<M, B> messageBinding) {
+        super(FieldEncoding.LENGTH_DELIMITED, messageBinding.getMessageType(), messageBinding.getTypeUrl(), messageBinding.getSyntax());
+        Intrinsics.e(messageBinding, "binding");
+        this.binding = messageBinding;
+        this.messageType = messageBinding.getMessageType();
         Map<Integer, FieldOrOneOfBinding<M, B>> fields = this.binding.getFields();
         this.fields = fields;
         Object[] array = fields.values().toArray(new FieldOrOneOfBinding[0]);
@@ -69,57 +69,57 @@ public final class RuntimeMessageAdapter<M, B> extends ProtoAdapter<M> {
         while (i2 < length2) {
             FieldOrOneOfBinding<M, B> fieldOrOneOfBinding2 = fieldOrOneOfBindingArr2[i2];
             i2++;
-            arrayList2.add(!Intrinsics.a((Object) getJsonName(fieldOrOneOfBinding2), (Object) fieldOrOneOfBinding2.getDeclaredName()) ? fieldOrOneOfBinding2.getDeclaredName() : !Intrinsics.a((Object) getJsonName(fieldOrOneOfBinding2), (Object) fieldOrOneOfBinding2.getName()) ? fieldOrOneOfBinding2.getName() : null);
+            arrayList2.add(!Intrinsics.a(getJsonName(fieldOrOneOfBinding2), fieldOrOneOfBinding2.getDeclaredName()) ? fieldOrOneOfBinding2.getDeclaredName() : !Intrinsics.a(getJsonName(fieldOrOneOfBinding2), fieldOrOneOfBinding2.getName()) ? fieldOrOneOfBinding2.getName() : null);
         }
         this.jsonAlternateNames = arrayList2;
     }
 
     @Override // com.squareup.wire.ProtoAdapter
-    public M decode(ProtoReader reader) {
-        Intrinsics.e(reader, "reader");
+    public M decode(ProtoReader protoReader) {
+        Intrinsics.e(protoReader, "reader");
         B newBuilder = newBuilder();
-        long beginMessage = reader.beginMessage();
+        long beginMessage = protoReader.beginMessage();
         while (true) {
-            int nextTag = reader.nextTag();
+            int nextTag = protoReader.nextTag();
             if (nextTag == -1) {
-                reader.endMessageAndGetUnknownFields(beginMessage);
+                protoReader.endMessageAndGetUnknownFields(beginMessage);
                 return this.binding.build(newBuilder);
             }
             FieldOrOneOfBinding<M, B> fieldOrOneOfBinding = this.fields.get(Integer.valueOf(nextTag));
             if (fieldOrOneOfBinding != null) {
                 try {
-                    Object decode = (fieldOrOneOfBinding.isMap() ? fieldOrOneOfBinding.getAdapter() : fieldOrOneOfBinding.getSingleAdapter()).decode(reader);
+                    Object decode = (fieldOrOneOfBinding.isMap() ? fieldOrOneOfBinding.getAdapter() : fieldOrOneOfBinding.getSingleAdapter()).decode(protoReader);
                     Intrinsics.a(decode);
                     fieldOrOneOfBinding.value(newBuilder, decode);
                 } catch (ProtoAdapter.EnumConstantNotFoundException e) {
                     this.binding.addUnknownField(newBuilder, nextTag, FieldEncoding.VARINT, Long.valueOf(e.value));
                 }
             } else {
-                FieldEncoding peekFieldEncoding = reader.peekFieldEncoding();
+                FieldEncoding peekFieldEncoding = protoReader.peekFieldEncoding();
                 Intrinsics.a(peekFieldEncoding);
-                this.binding.addUnknownField(newBuilder, nextTag, peekFieldEncoding, peekFieldEncoding.rawProtoAdapter().decode(reader));
+                this.binding.addUnknownField(newBuilder, nextTag, peekFieldEncoding, peekFieldEncoding.rawProtoAdapter().decode(protoReader));
             }
         }
     }
 
     @Override // com.squareup.wire.ProtoAdapter
-    public void encode(ProtoWriter writer, M value) {
-        Intrinsics.e(writer, "writer");
-        Intrinsics.e(value, "value");
+    public void encode(ProtoWriter protoWriter, M m) {
+        Intrinsics.e(protoWriter, "writer");
+        Intrinsics.e(m, "value");
         for (FieldOrOneOfBinding<M, B> fieldOrOneOfBinding : this.fields.values()) {
-            Object obj = fieldOrOneOfBinding.get(value);
+            Object obj = fieldOrOneOfBinding.get(m);
             if (obj != null) {
-                fieldOrOneOfBinding.getAdapter().encodeWithTag(writer, fieldOrOneOfBinding.getTag(), (int) obj);
+                fieldOrOneOfBinding.getAdapter().encodeWithTag(protoWriter, fieldOrOneOfBinding.getTag(), (int) obj);
             }
         }
-        writer.writeBytes(this.binding.unknownFields(value));
+        protoWriter.writeBytes(this.binding.unknownFields(m));
     }
 
     @Override // com.squareup.wire.ProtoAdapter
-    public void encode(ReverseProtoWriter writer, M value) {
-        Intrinsics.e(writer, "writer");
-        Intrinsics.e(value, "value");
-        writer.writeBytes(this.binding.unknownFields(value));
+    public void encode(ReverseProtoWriter reverseProtoWriter, M m) {
+        Intrinsics.e(reverseProtoWriter, "writer");
+        Intrinsics.e(m, "value");
+        reverseProtoWriter.writeBytes(this.binding.unknownFields(m));
         int length = this.fieldBindingsArray.length - 1;
         if (length < 0) {
             return;
@@ -127,9 +127,9 @@ public final class RuntimeMessageAdapter<M, B> extends ProtoAdapter<M> {
         while (true) {
             int i = length - 1;
             FieldOrOneOfBinding<M, B> fieldOrOneOfBinding = this.fieldBindingsArray[length];
-            Object obj = fieldOrOneOfBinding.get(value);
+            Object obj = fieldOrOneOfBinding.get(m);
             if (obj != null) {
-                fieldOrOneOfBinding.getAdapter().encodeWithTag(writer, fieldOrOneOfBinding.getTag(), (int) obj);
+                fieldOrOneOfBinding.getAdapter().encodeWithTag(reverseProtoWriter, fieldOrOneOfBinding.getTag(), (int) obj);
             }
             if (i < 0) {
                 return;
@@ -139,21 +139,21 @@ public final class RuntimeMessageAdapter<M, B> extends ProtoAdapter<M> {
     }
 
     @Override // com.squareup.wire.ProtoAdapter
-    public int encodedSize(M value) {
-        Intrinsics.e(value, "value");
-        int cachedSerializedSize = this.binding.getCachedSerializedSize(value);
+    public int encodedSize(M m) {
+        Intrinsics.e(m, "value");
+        int cachedSerializedSize = this.binding.getCachedSerializedSize(m);
         if (cachedSerializedSize != 0) {
             return cachedSerializedSize;
         }
         int i = 0;
         for (FieldOrOneOfBinding<M, B> fieldOrOneOfBinding : this.fields.values()) {
-            Object obj = fieldOrOneOfBinding.get(value);
+            Object obj = fieldOrOneOfBinding.get(m);
             if (obj != null) {
                 i += fieldOrOneOfBinding.getAdapter().encodedSizeWithTag(fieldOrOneOfBinding.getTag(), obj);
             }
         }
-        int size = i + this.binding.unknownFields(value).size();
-        this.binding.setCachedSerializedSize(value, size);
+        int size = i + this.binding.unknownFields(m).size();
+        this.binding.setCachedSerializedSize(m, size);
         return size;
     }
 
@@ -191,8 +191,8 @@ public final class RuntimeMessageAdapter<M, B> extends ProtoAdapter<M> {
     }
 
     @Override // com.squareup.wire.ProtoAdapter
-    public M redact(M value) {
-        Intrinsics.e(value, "value");
+    public M redact(M m) {
+        Intrinsics.e(m, "value");
         B newBuilder = this.binding.newBuilder();
         for (FieldOrOneOfBinding<M, B> fieldOrOneOfBinding : this.fields.values()) {
             if (fieldOrOneOfBinding.getRedacted() && fieldOrOneOfBinding.getLabel() == WireField.Label.REQUIRED) {
@@ -209,7 +209,7 @@ public final class RuntimeMessageAdapter<M, B> extends ProtoAdapter<M> {
                 if (fromBuilder2 == null) {
                     throw new NullPointerException("null cannot be cast to non-null type kotlin.collections.List<kotlin.Any>");
                 }
-                fieldOrOneOfBinding.set(newBuilder, Internal.m9758redactElements((List) fromBuilder2, fieldOrOneOfBinding.getSingleAdapter()));
+                fieldOrOneOfBinding.set(newBuilder, Internal.m6712redactElements((List) fromBuilder2, fieldOrOneOfBinding.getSingleAdapter()));
             }
         }
         this.binding.clearUnknownFields(newBuilder);
@@ -217,14 +217,14 @@ public final class RuntimeMessageAdapter<M, B> extends ProtoAdapter<M> {
     }
 
     @Override // com.squareup.wire.ProtoAdapter
-    public String toString(M value) {
-        Intrinsics.e(value, "value");
+    public String toString(M m) {
+        Intrinsics.e(m, "value");
         StringBuilder sb = new StringBuilder();
         sb.append(this.messageType.b());
         sb.append('{');
         boolean z = true;
         for (FieldOrOneOfBinding<M, B> fieldOrOneOfBinding : getFields().values()) {
-            Object obj = fieldOrOneOfBinding.get(value);
+            Object obj = fieldOrOneOfBinding.get(m);
             if (obj != null) {
                 if (!z) {
                     sb.append(", ");
@@ -244,10 +244,10 @@ public final class RuntimeMessageAdapter<M, B> extends ProtoAdapter<M> {
         return sb2;
     }
 
-    public final <A> void writeAllFields(M m, List<? extends A> jsonAdapters, A a2, Function3<? super String, Object, ? super A, Unit> encodeValue) {
+    public final <A> void writeAllFields(M m, List<? extends A> list, A a2, Function3<? super String, Object, ? super A, Unit> function3) {
         boolean z;
-        Intrinsics.e(jsonAdapters, "jsonAdapters");
-        Intrinsics.e(encodeValue, "encodeValue");
+        Intrinsics.e(list, "jsonAdapters");
+        Intrinsics.e(function3, "encodeValue");
         int length = this.fieldBindingsArray.length;
         ArrayList arrayList = null;
         int i = 0;
@@ -261,7 +261,7 @@ public final class RuntimeMessageAdapter<M, B> extends ProtoAdapter<M> {
             Object obj = fieldOrOneOfBinding.get(m);
             if (!fieldOrOneOfBinding.omitFromJson(getSyntax(), obj)) {
                 if (!fieldOrOneOfBinding.getRedacted() || a2 == null || obj == null) {
-                    encodeValue.a(this.jsonNames.get(i2), obj, (A) jsonAdapters.get(i2));
+                    function3.a(this.jsonNames.get(i2), obj, list.get(i2));
                 } else {
                     ArrayList arrayList2 = arrayList;
                     if (arrayList == null) {
@@ -283,7 +283,7 @@ public final class RuntimeMessageAdapter<M, B> extends ProtoAdapter<M> {
         }
         if (z) {
             Intrinsics.a(a2);
-            encodeValue.a("__redacted_fields", arrayList, a2);
+            function3.a("__redacted_fields", arrayList, a2);
         }
     }
 }

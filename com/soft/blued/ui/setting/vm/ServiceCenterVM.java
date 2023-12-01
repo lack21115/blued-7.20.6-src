@@ -19,18 +19,18 @@ import kotlin.jvm.internal.Intrinsics;
 public final class ServiceCenterVM extends BaseListViewModel<StDocModel> {
 
     /* renamed from: a  reason: collision with root package name */
-    private boolean f33689a;
+    private boolean f19998a;
     private final MutableLiveData<StCategoryModel> b = new MutableLiveData<>();
 
     /* renamed from: c  reason: collision with root package name */
-    private Activity f33690c;
+    private Activity f19999c;
 
     public final void a(Activity activity) {
-        this.f33690c = activity;
+        this.f19999c = activity;
     }
 
     public final boolean a() {
-        return this.f33689a;
+        return this.f19998a;
     }
 
     public final MutableLiveData<StCategoryModel> b() {
@@ -38,19 +38,17 @@ public final class ServiceCenterVM extends BaseListViewModel<StDocModel> {
     }
 
     public final Activity getActivity() {
-        return this.f33690c;
+        return this.f19999c;
     }
 
-    @Override // androidx.lifecycle.ViewModel
     public void onCleared() {
         super.onCleared();
-        this.f33689a = true;
+        this.f19998a = true;
     }
 
-    @Override // com.blued.android.module.common.base.mvi.BaseListViewModel
     public void requestData() {
-        final ZhiChiApi zhiChiApi = SobotMsgManager.getInstance(this.f33690c).getZhiChiApi();
-        zhiChiApi.getCategoryList(this.f33690c, AppInfo.d().getString(R.string.sobot_app_key), (StringResultCallBack) new StringResultCallBack<List<? extends StCategoryModel>>() { // from class: com.soft.blued.ui.setting.vm.ServiceCenterVM$requestData$1
+        final ZhiChiApi zhiChiApi = SobotMsgManager.getInstance(this.f19999c).getZhiChiApi();
+        zhiChiApi.getCategoryList(this.f19999c, AppInfo.d().getString(R.string.sobot_app_key), (StringResultCallBack) new StringResultCallBack<List<? extends StCategoryModel>>() { // from class: com.soft.blued.ui.setting.vm.ServiceCenterVM$requestData$1
             @Override // com.sobot.network.http.callback.StringResultCallBack
             /* renamed from: a */
             public void onSuccess(List<? extends StCategoryModel> list) {
@@ -77,18 +75,18 @@ public final class ServiceCenterVM extends BaseListViewModel<StDocModel> {
                     }
 
                     @Override // com.sobot.network.http.callback.StringResultCallBack
-                    public void onFailure(Exception e, String des) {
-                        Intrinsics.e(e, "e");
-                        Intrinsics.e(des, "des");
+                    public void onFailure(Exception exc, String str) {
+                        Intrinsics.e(exc, "e");
+                        Intrinsics.e(str, "des");
                         ServiceCenterVM.this.loadListFailed();
                     }
                 });
             }
 
             @Override // com.sobot.network.http.callback.StringResultCallBack
-            public void onFailure(Exception e, String des) {
-                Intrinsics.e(e, "e");
-                Intrinsics.e(des, "des");
+            public void onFailure(Exception exc, String str) {
+                Intrinsics.e(exc, "e");
+                Intrinsics.e(str, "des");
                 ServiceCenterVM.this.loadListFailed();
             }
         });

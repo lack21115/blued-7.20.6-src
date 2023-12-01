@@ -6,17 +6,15 @@ import kotlin.Metadata;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/Empty.class */
 public final class Empty implements Incomplete {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final boolean f42815a;
+    private final boolean a;
 
     public Empty(boolean z) {
-        this.f42815a = z;
+        this.a = z;
     }
 
     @Override // kotlinx.coroutines.Incomplete
     public boolean as_() {
-        return this.f42815a;
+        return this.a;
     }
 
     @Override // kotlinx.coroutines.Incomplete

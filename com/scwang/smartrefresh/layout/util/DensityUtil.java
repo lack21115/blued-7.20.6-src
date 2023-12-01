@@ -6,7 +6,7 @@ import android.content.res.Resources;
 public class DensityUtil {
 
     /* renamed from: a  reason: collision with root package name */
-    public float f27998a = Resources.getSystem().getDisplayMetrics().density;
+    public float f14310a = Resources.getSystem().getDisplayMetrics().density;
 
     public static float a(int i) {
         return i / Resources.getSystem().getDisplayMetrics().density;
@@ -17,6 +17,6 @@ public class DensityUtil {
     }
 
     public int b(float f) {
-        return (int) ((f * this.f27998a) + 0.5f);
+        return (int) ((f * this.f14310a) + 0.5f);
     }
 }

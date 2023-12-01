@@ -14,7 +14,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class EventPostedListViewModel extends BaseListViewModel<EventDetailsModel> {
     @Override // com.blued.android.module.common.base.mvi.BaseListViewModel
     public void requestData() {
-        EventHttpUtils.f19079a.a(new BluedUIHttpResponse<BluedEntityA<EventDetailsModel>>() { // from class: com.blued.community.ui.event.vm.EventPostedListViewModel$requestData$1
+        EventHttpUtils.a.a(new BluedUIHttpResponse<BluedEntityA<EventDetailsModel>>() { // from class: com.blued.community.ui.event.vm.EventPostedListViewModel$requestData$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(null);

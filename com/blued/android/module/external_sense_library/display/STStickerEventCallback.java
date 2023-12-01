@@ -7,7 +7,6 @@ import com.sensetime.stmobile.STStickerEvent;
 public class STStickerEventCallback {
     private static String TAG = "STStickerEventCallback";
     private STStickerEvent.StickerEventListener mStickerEventDefaultListener = new STStickerEvent.StickerEventListener() { // from class: com.blued.android.module.external_sense_library.display.STStickerEventCallback.1
-        @Override // com.sensetime.stmobile.STStickerEvent.StickerEventListener
         public void onAnimationEvent(String str, int i, int i2, int i3, int i4, long j) {
             if (str == null) {
                 return;
@@ -28,7 +27,6 @@ public class STStickerEventCallback {
             }
         }
 
-        @Override // com.sensetime.stmobile.STStickerEvent.StickerEventListener
         public void onKeyFrameEvent(String str, int i) {
             if (str == null) {
                 return;
@@ -37,7 +35,6 @@ public class STStickerEventCallback {
             Log.e(str2, "onKeyFrameEvent materialName:" + str + " frame: " + i);
         }
 
-        @Override // com.sensetime.stmobile.STStickerEvent.StickerEventListener
         public void onPackageEvent(String str, int i, int i2, int i3) {
             if (str == null) {
                 return;

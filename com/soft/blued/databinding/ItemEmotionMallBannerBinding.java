@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemEmotionMallBannerBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final FrameLayout f29173a;
+    private final FrameLayout f15483a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f29173a;
+        return this.f15483a;
     }
 }

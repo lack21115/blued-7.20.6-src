@@ -80,9 +80,8 @@ public class LoadingBar extends TextView {
         this.mProgressColor = -11693826;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.TextView, android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         this.mPaint.setColor(this.mProgressColor);
         canvas.drawRect(getRect(), this.mPaint);

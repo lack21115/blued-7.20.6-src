@@ -31,7 +31,7 @@ public final class HeapBufferIterator extends BufferIterator {
     }
 
     public void readByteArray(byte[] bArr, int i, int i2) {
-        System.arraycopy((Object) this.buffer, this.offset + this.position, (Object) bArr, i, i2);
+        System.arraycopy(this.buffer, this.offset + this.position, bArr, i, i2);
         this.position += i2;
     }
 

@@ -6,7 +6,6 @@ import android.os.NullVibrator;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.Vibrator;
-import com.android.internal.inputmethod.InputMethodUtils;
 import com.oplus.quickgame.sdk.hall.Constant;
 import java.util.ArrayList;
 import java.util.List;
@@ -349,7 +348,7 @@ public final class InputDevice implements Parcelable {
         sb.append("\n");
         sb.append("  Has Vibrator: ").append(this.mHasVibrator).append("\n");
         sb.append("  Sources: 0x").append(Integer.toHexString(this.mSources)).append(" (");
-        appendSourceDescriptionIfApplicable(sb, 257, InputMethodUtils.SUBTYPE_MODE_KEYBOARD);
+        appendSourceDescriptionIfApplicable(sb, 257, "keyboard");
         appendSourceDescriptionIfApplicable(sb, 513, "dpad");
         appendSourceDescriptionIfApplicable(sb, 4098, "touchscreen");
         appendSourceDescriptionIfApplicable(sb, 8194, "mouse");

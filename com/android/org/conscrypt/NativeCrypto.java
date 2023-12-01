@@ -1,6 +1,6 @@
 package com.android.org.conscrypt;
 
-import com.youzan.androidsdk.tool.AppSigning;
+import com.anythink.core.common.k.f;
 import java.io.FileDescriptor;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -474,7 +474,7 @@ public final class NativeCrypto {
     public static native void X509_CRL_verify(long j, long j2);
 
     public static int X509_NAME_hash(X500Principal x500Principal) {
-        return X509_NAME_hash(x500Principal, AppSigning.SHA1);
+        return X509_NAME_hash(x500Principal, "SHA1");
     }
 
     private static int X509_NAME_hash(X500Principal x500Principal, String str) {
@@ -490,7 +490,7 @@ public final class NativeCrypto {
     }
 
     public static int X509_NAME_hash_old(X500Principal x500Principal) {
-        return X509_NAME_hash(x500Principal, "MD5");
+        return X509_NAME_hash(x500Principal, f.a);
     }
 
     public static native String X509_NAME_print_ex(long j, long j2);
@@ -740,21 +740,21 @@ public final class NativeCrypto {
             if (str.equals(SUPPORTED_PROTOCOL_SSLV3)) {
                 j4 &= -33554433;
                 j2 = j5;
-                j3 = 33554432;
+                j3 = SSL_OP_NO_SSLv3;
             } else if (str.equals(SUPPORTED_PROTOCOL_TLSV1)) {
                 j4 &= -67108865;
                 j2 = j5;
-                j3 = 67108864;
+                j3 = SSL_OP_NO_TLSv1;
             } else if (str.equals(SUPPORTED_PROTOCOL_TLSV1_1)) {
                 j4 &= -268435457;
                 j2 = j5;
-                j3 = 268435456;
+                j3 = SSL_OP_NO_TLSv1_1;
             } else if (!str.equals(SUPPORTED_PROTOCOL_TLSV1_2)) {
                 throw new IllegalStateException();
             } else {
                 j4 &= -134217729;
                 j2 = j5;
-                j3 = 134217728;
+                j3 = SSL_OP_NO_TLSv1_2;
             }
             j5 = j2 | j3;
             i = i2 + 1;

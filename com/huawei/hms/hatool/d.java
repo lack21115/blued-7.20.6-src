@@ -9,7 +9,7 @@ import java.nio.charset.Charset;
 public class d {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Charset f22736a = Charset.forName("UTF-8");
+    public static final Charset f9128a = Charset.forName("UTF-8");
 
     public static Pair<byte[], String> a(String str) {
         if (str == null || str.length() < 32) {
@@ -21,7 +21,7 @@ public class d {
 
     public static String a(String str, String str2) {
         Pair<byte[], String> a2 = a(str);
-        return new String(AesCbc.decrypt(HexUtil.hexStr2ByteArray(a2.second), HexUtil.hexStr2ByteArray(str2), a2.first), f22736a);
+        return new String(AesCbc.decrypt(HexUtil.hexStr2ByteArray(a2.second), HexUtil.hexStr2ByteArray(str2), a2.first), f9128a);
     }
 
     public static String a(byte[] bArr, String str) {
@@ -40,6 +40,6 @@ public class d {
     }
 
     public static String b(String str, String str2) {
-        return HexUtil.byteArray2HexStr(AesCbc.encrypt(str.getBytes(f22736a), HexUtil.hexStr2ByteArray(str2)));
+        return HexUtil.byteArray2HexStr(AesCbc.encrypt(str.getBytes(f9128a), HexUtil.hexStr2ByteArray(str2)));
     }
 }

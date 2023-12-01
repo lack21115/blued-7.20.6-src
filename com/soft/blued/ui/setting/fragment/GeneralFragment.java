@@ -1,6 +1,5 @@
 package com.soft.blued.ui.setting.fragment;
 
-import android.app.Activity;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -23,6 +22,7 @@ import com.blued.android.chat.grpc.backup.MsgBackupService;
 import com.blued.android.config.FlexDebugSevConfig;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.AppMethods;
+import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.ui.BaseFragment;
 import com.blued.android.core.ui.StatusBarHelper;
 import com.blued.android.core.ui.TerminalActivity;
@@ -42,7 +42,6 @@ import com.blued.android.module.common.user.model.UserInfo;
 import com.blued.android.module.common.utils.DialogUtils;
 import com.blued.android.module.common.utils.ToastUtils;
 import com.blued.android.module.common.view.CommonTopTitleNoTrans;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.blued.android.module.common.widget.dialog.CommonAlertDialog;
 import com.blued.das.settings.SettingsProtos;
 import com.bytedance.applog.tracker.Tracker;
@@ -74,7 +73,7 @@ public class GeneralFragment extends BaseFragment implements View.OnClickListene
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private View f33364c;
+    private View f19673c;
     private ToggleButton d;
     private View e;
     private LinearLayout f;
@@ -100,38 +99,34 @@ public class GeneralFragment extends BaseFragment implements View.OnClickListene
     private TextView z;
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f33363a = false;
+    public boolean f19672a = false;
     private CacheManager E = new CacheManager();
     private BluedUIHttpResponse H = new BluedUIHttpResponse<BluedEntityA<BluedBlackList.privacySettingEntity>>("my_privacy_setting", getFragmentActive()) { // from class: com.soft.blued.ui.setting.fragment.GeneralFragment.10
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public BluedEntityA<BluedBlackList.privacySettingEntity> parseData(String str) {
-            return (BluedEntityA) super.parseData(str);
+            return super.parseData(str);
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public void onUICache(BluedEntityA<BluedBlackList.privacySettingEntity> bluedEntityA) {
             super.onUICache(bluedEntityA);
             GeneralFragment.this.a(bluedEntityA);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: b */
         public void onUIUpdate(BluedEntityA<BluedBlackList.privacySettingEntity> bluedEntityA) {
             GeneralFragment.this.a(bluedEntityA);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse, com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
         public void onFailure(Throwable th, int i, String str) {
             super.onFailure(th, i, str);
         }
     };
 
     public static void a(Context context) {
-        TerminalActivity.d(context, GeneralFragment.class, null);
+        TerminalActivity.d(context, GeneralFragment.class, (Bundle) null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -141,7 +136,7 @@ public class GeneralFragment extends BaseFragment implements View.OnClickListene
             this.D = false;
             this.d.setChecked(false);
         } else {
-            if (bluedEntityA.data.get(0).is_sync_avatar == 1) {
+            if (((BluedBlackList.privacySettingEntity) bluedEntityA.data.get(0)).is_sync_avatar == 1) {
                 z = true;
             }
             this.D = z;
@@ -152,19 +147,18 @@ public class GeneralFragment extends BaseFragment implements View.OnClickListene
             public void onCheckedChanged(CompoundButton compoundButton, boolean z2) {
                 Tracker.onCheckedChanged(compoundButton, z2);
                 String str = z2 ? "1" : "0";
-                Map<String, String> a2 = BluedHttpTools.a();
+                Map a2 = BluedHttpTools.a();
                 a2.put("is_sync_avatar", str);
                 ProfileHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<Object>>() { // from class: com.soft.blued.ui.setting.fragment.GeneralFragment.9.1
-                    @Override // com.blued.android.framework.http.BluedUIHttpResponse
                     /* renamed from: a */
                     public void onUIUpdate(BluedEntityA<Object> bluedEntityA2) {
                         if (bluedEntityA2 == null) {
                             try {
-                                AppMethods.a((CharSequence) AppInfo.d().getResources().getString(2131887272));
+                                AppMethods.a(AppInfo.d().getResources().getString(2131887272));
                                 GeneralFragment.this.d.setChecked(GeneralFragment.this.D);
                             } catch (Exception e) {
                                 e.printStackTrace();
-                                AppMethods.a((CharSequence) AppInfo.d().getResources().getString(2131887272));
+                                AppMethods.a(AppInfo.d().getResources().getString(2131887272));
                                 GeneralFragment.this.d.setChecked(GeneralFragment.this.D);
                             }
                         }
@@ -175,9 +169,9 @@ public class GeneralFragment extends BaseFragment implements View.OnClickListene
     }
 
     private void b() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.f33364c.findViewById(2131370749);
-        this.F = commonTopTitleNoTrans;
-        commonTopTitleNoTrans.f();
+        CommonTopTitleNoTrans findViewById = this.f19673c.findViewById(R.id.top_title);
+        this.F = findViewById;
+        findViewById.f();
         this.F.a();
         this.F.setCenterText(getString(R.string.common_setting));
         this.F.setLeftClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.setting.fragment.GeneralFragment.1
@@ -192,36 +186,36 @@ public class GeneralFragment extends BaseFragment implements View.OnClickListene
     private void c() {
         String str;
         this.G = DialogUtils.a(getContext());
-        ToggleButton toggleButton = (ToggleButton) this.f33364c.findViewById(R.id.tb_sync_profile_photo);
+        ToggleButton toggleButton = (ToggleButton) this.f19673c.findViewById(R.id.tb_sync_profile_photo);
         this.d = toggleButton;
         toggleButton.setOnClickListener(this);
-        this.e = this.f33364c.findViewById(R.id.iv_sync_profile_photo_dot);
+        this.e = this.f19673c.findViewById(R.id.iv_sync_profile_photo_dot);
         if (BluedPreferences.bF()) {
             this.e.setVisibility(0);
         } else {
             this.e.setVisibility(8);
         }
-        this.f = (LinearLayout) this.f33364c.findViewById(R.id.ll_unit_setting);
-        this.i = (TextView) this.f33364c.findViewById(R.id.tv_unit_setted);
-        this.g = (LinearLayout) this.f33364c.findViewById(R.id.ll_language_setting);
-        this.j = (TextView) this.f33364c.findViewById(R.id.tv_language_setted);
-        this.h = (LinearLayout) this.f33364c.findViewById(R.id.ll_change_blued_icon);
-        this.k = this.f33364c.findViewById(R.id.arrow_clear_cache);
-        this.l = (TextView) this.f33364c.findViewById(R.id.tv_img_cache_size);
-        this.n = (ProgressBar) this.f33364c.findViewById(R.id.bar_clearing_cache);
-        this.o = (LinearLayout) this.f33364c.findViewById(R.id.ll_clear_img_cache);
-        this.m = (TextView) this.f33364c.findViewById(R.id.tv_clear_cache_title);
-        this.p = (LinearLayout) this.f33364c.findViewById(R.id.ll_clear_chat_record);
-        LabeledTextView labeledTextView = (LabeledTextView) this.f33364c.findViewById(R.id.chat_setting_bg);
+        this.f = (LinearLayout) this.f19673c.findViewById(R.id.ll_unit_setting);
+        this.i = (TextView) this.f19673c.findViewById(R.id.tv_unit_setted);
+        this.g = (LinearLayout) this.f19673c.findViewById(R.id.ll_language_setting);
+        this.j = (TextView) this.f19673c.findViewById(R.id.tv_language_setted);
+        this.h = (LinearLayout) this.f19673c.findViewById(R.id.ll_change_blued_icon);
+        this.k = this.f19673c.findViewById(R.id.arrow_clear_cache);
+        this.l = (TextView) this.f19673c.findViewById(R.id.tv_img_cache_size);
+        this.n = (ProgressBar) this.f19673c.findViewById(R.id.bar_clearing_cache);
+        this.o = (LinearLayout) this.f19673c.findViewById(R.id.ll_clear_img_cache);
+        this.m = (TextView) this.f19673c.findViewById(R.id.tv_clear_cache_title);
+        this.p = (LinearLayout) this.f19673c.findViewById(R.id.ll_clear_chat_record);
+        LabeledTextView labeledTextView = (LabeledTextView) this.f19673c.findViewById(R.id.chat_setting_bg);
         this.q = labeledTextView;
         labeledTextView.a(Boolean.valueOf(BluedPreferences.e(2)));
-        this.t = (ShapeTextView) this.f33364c.findViewById(R.id.iv_sync_common_return_dot);
-        this.u = (ToggleButton) this.f33364c.findViewById(R.id.tb_common_return);
-        this.v = (ShapeTextView) this.f33364c.findViewById(R.id.iv_sync_common_listen_dot);
-        this.w = (ToggleButton) this.f33364c.findViewById(R.id.tb_sync_common_listen);
-        this.r = (LinearLayout) this.f33364c.findViewById(R.id.ll_backup_chat_record);
-        this.s = (LinearLayout) this.f33364c.findViewById(R.id.ll_restore_chat_record);
-        this.C = (ShapeTextView) this.f33364c.findViewById(R.id.tv_new_function);
+        this.t = this.f19673c.findViewById(R.id.iv_sync_common_return_dot);
+        this.u = (ToggleButton) this.f19673c.findViewById(R.id.tb_common_return);
+        this.v = this.f19673c.findViewById(R.id.iv_sync_common_listen_dot);
+        this.w = (ToggleButton) this.f19673c.findViewById(R.id.tb_sync_common_listen);
+        this.r = (LinearLayout) this.f19673c.findViewById(R.id.ll_backup_chat_record);
+        this.s = (LinearLayout) this.f19673c.findViewById(R.id.ll_restore_chat_record);
+        this.C = this.f19673c.findViewById(R.id.tv_new_function);
         if (!BluedPreferences.eW()) {
             this.C.setVisibility(0);
         }
@@ -282,21 +276,21 @@ public class GeneralFragment extends BaseFragment implements View.OnClickListene
             this.v.setVisibility(0);
             BluedPreferences.cb();
         }
-        this.x = (ShapeTextView) this.f33364c.findViewById(R.id.iv_dark_dot);
+        this.x = this.f19673c.findViewById(R.id.iv_dark_dot);
         if (BluedPreferences.cc()) {
             this.x.setVisibility(8);
         } else {
             this.x.setVisibility(0);
         }
-        LinearLayout linearLayout = (LinearLayout) this.f33364c.findViewById(R.id.ll_skin);
+        LinearLayout linearLayout = (LinearLayout) this.f19673c.findViewById(R.id.ll_skin);
         this.y = linearLayout;
         linearLayout.setOnClickListener(this);
-        this.z = (TextView) this.f33364c.findViewById(R.id.tv_skin_model);
+        this.z = (TextView) this.f19673c.findViewById(R.id.tv_skin_model);
         int i = FlexDebugSevConfig.a().b().android_msg_backup;
         this.r.setVisibility(0);
         this.s.setVisibility(8);
-        this.A = (LinearLayout) this.f33364c.findViewById(R.id.ll_text_size);
-        this.B = this.f33364c.findViewById(R.id.iv_text_size_dot);
+        this.A = (LinearLayout) this.f19673c.findViewById(R.id.ll_text_size);
+        this.B = this.f19673c.findViewById(R.id.iv_text_size_dot);
         if (FlexDebugSevConfig.a().b().android_font_adjust != 1) {
             this.A.setVisibility(8);
             return;
@@ -312,7 +306,7 @@ public class GeneralFragment extends BaseFragment implements View.OnClickListene
 
     /* JADX INFO: Access modifiers changed from: private */
     public void d() {
-        if (this.f33363a) {
+        if (this.f19672a) {
             this.k.setVisibility(8);
             this.l.setVisibility(8);
             this.n.setVisibility(0);
@@ -332,7 +326,6 @@ public class GeneralFragment extends BaseFragment implements View.OnClickListene
     /* JADX INFO: Access modifiers changed from: private */
     public void e() {
         ThreadManager.a().a(new ThreadExecutor("setImageCacheSize") { // from class: com.soft.blued.ui.setting.fragment.GeneralFragment.4
-            @Override // com.blued.android.framework.pool.ThreadExecutor
             public void execute() {
                 final String a2 = GeneralFragment.this.E.a();
                 GeneralFragment.this.postSafeRunOnUiThread(new Runnable() { // from class: com.soft.blued.ui.setting.fragment.GeneralFragment.4.1
@@ -347,15 +340,14 @@ public class GeneralFragment extends BaseFragment implements View.OnClickListene
 
     /* JADX INFO: Access modifiers changed from: private */
     public void f() {
-        ThreadManager.a().a(new ThreadExecutor("clearCache", ThreadPriority.LOW) { // from class: com.soft.blued.ui.setting.fragment.GeneralFragment.5
-            @Override // com.blued.android.framework.pool.ThreadExecutor
+        ThreadManager.a().a(new ThreadExecutor("clearCache", ThreadPriority.a) { // from class: com.soft.blued.ui.setting.fragment.GeneralFragment.5
             public void execute() {
                 GeneralFragment.this.E.b();
                 GeneralFragment.this.postSafeRunOnUiThread(new Runnable() { // from class: com.soft.blued.ui.setting.fragment.GeneralFragment.5.1
                     @Override // java.lang.Runnable
                     public void run() {
                         AppMethods.d((int) R.string.clear_cache_successfully);
-                        GeneralFragment.this.f33363a = false;
+                        GeneralFragment.this.f19672a = false;
                         GeneralFragment.this.d();
                         GeneralFragment.this.e();
                     }
@@ -375,19 +367,18 @@ public class GeneralFragment extends BaseFragment implements View.OnClickListene
     }
 
     public void a() {
-        ProfileHttpUtils.a(this.b, this.H, UserInfo.getInstance().getLoginUserInfo().getUid(), getFragmentActive());
+        ProfileHttpUtils.a(this.b, this.H, UserInfo.getInstance().getLoginUserInfo().getUid(), (IRequestHost) getFragmentActive());
     }
 
-    @Override // skin.support.observe.SkinObserver
     public void a(SkinObservable skinObservable, Object obj) {
         Log.e("skin", "GeneralFragment updateSkin");
         CommonTopTitleNoTrans commonTopTitleNoTrans = this.F;
         if (commonTopTitleNoTrans != null) {
             commonTopTitleNoTrans.setCenterTextColor(2131102254);
-            getActivity().findViewById(16908290).setBackgroundColor(BluedSkinUtils.a(getContext(), 2131101780));
+            getActivity().findViewById(android.R.id.content).setBackgroundColor(BluedSkinUtils.a(getContext(), 2131101780));
         }
         g();
-        StatusBarHelper.a((Activity) getActivity());
+        StatusBarHelper.a(getActivity());
         StatusBarHelper.a(getActivity(), BluedSkinUtils.a(getContext(), AppInfo.k()));
     }
 
@@ -414,7 +405,7 @@ public class GeneralFragment extends BaseFragment implements View.OnClickListene
                 EventTrackSettings.a(SettingsProtos.Event.MINE_BACKUP_RECORD_CLICK);
                 BluedPreferences.eX();
                 this.C.setVisibility(4);
-                TerminalActivity.d(getContext(), MsgBackupFragment.class, null);
+                TerminalActivity.d(getContext(), MsgBackupFragment.class, (Bundle) null);
                 return;
             case R.id.ll_change_blued_icon /* 2131367692 */:
                 if (UserInfo.getInstance().getLoginUserInfo().vip_grade == 0 && BluedConfig.a().g().is_change_blued_icon == 0) {
@@ -434,7 +425,6 @@ public class GeneralFragment extends BaseFragment implements View.OnClickListene
                         final ProgressDialog progressDialog = new ProgressDialog(GeneralFragment.this.getActivity());
                         progressDialog.show();
                         ThreadManager.a().a(new ThreadExecutor("ClearChatRecord") { // from class: com.soft.blued.ui.setting.fragment.GeneralFragment.8.1
-                            @Override // com.blued.android.framework.pool.ThreadExecutor
                             public void execute() {
                                 try {
                                     ChatManager.getInstance().deleteAllChattings();
@@ -460,7 +450,7 @@ public class GeneralFragment extends BaseFragment implements View.OnClickListene
                     @Override // android.content.DialogInterface.OnClickListener
                     public void onClick(DialogInterface dialogInterface, int i) {
                         Tracker.onClick(dialogInterface, i);
-                        GeneralFragment.this.f33363a = true;
+                        GeneralFragment.this.f19672a = true;
                         GeneralFragment.this.d();
                         GeneralFragment.this.f();
                         NewFeedDao.a().e();
@@ -476,7 +466,7 @@ public class GeneralFragment extends BaseFragment implements View.OnClickListene
                     return;
                 } else if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
                     Context context = getContext();
-                    MsgBackupService.startMsgRestoreService(context, 11, 2131232989, "消息恢复", "正在恢复聊天消息，请稍后", "恢复成功", (Environment.getExternalStorageDirectory() + File.separator + "blued" + File.separator + WebParameter.PATH_DATABASE) + File.separator + ("android_" + ChatManager.getInstance().getUid() + BridgeUtil.UNDERLINE_STR + ChatManager.clientType.ordinal()));
+                    MsgBackupService.startMsgRestoreService(context, 11, 2131232989, "消息恢复", "正在恢复聊天消息，请稍后", "恢复成功", (Environment.getExternalStorageDirectory() + File.separator + "blued" + File.separator + WebParameter.PATH_DATABASE) + File.separator + ("android_" + ChatManager.getInstance().getUid() + "_" + ChatManager.clientType.ordinal()));
                     return;
                 } else {
                     return;
@@ -493,7 +483,6 @@ public class GeneralFragment extends BaseFragment implements View.OnClickListene
                 return;
             case R.id.ll_unit_setting /* 2131368318 */:
                 CommonAlertDialog.a(getActivity(), getString(R.string.unit_system), new String[]{"cm/kg", "ft/lb"}, new CommonAlertDialog.TextOnClickListener() { // from class: com.soft.blued.ui.setting.fragment.GeneralFragment.6
-                    @Override // com.blued.android.module.common.widget.dialog.CommonAlertDialog.TextOnClickListener
                     public void a(String str) {
                         if (StringUtils.d(str)) {
                             return;
@@ -516,30 +505,27 @@ public class GeneralFragment extends BaseFragment implements View.OnClickListene
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.b = getActivity();
-        View view = this.f33364c;
+        View view = this.f19673c;
         if (view == null) {
-            this.f33364c = layoutInflater.inflate(R.layout.fragment_general, viewGroup, false);
+            this.f19673c = layoutInflater.inflate(R.layout.fragment_general, viewGroup, false);
             b();
             c();
             a();
             d();
             e();
         } else if (view.getParent() != null) {
-            ((ViewGroup) this.f33364c.getParent()).removeView(this.f33364c);
+            ((ViewGroup) this.f19673c.getParent()).removeView(this.f19673c);
         }
-        return this.f33364c;
+        return this.f19673c;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroyView() {
         super.onDestroyView();
         BluedSkinUtils.b(this);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onResume() {
         super.onResume();
         BluedSkinUtils.a(this);

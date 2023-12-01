@@ -7,17 +7,17 @@ import java.util.concurrent.Executors;
 public final class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static c f41717a;
+    private static c f28026a;
     private ExecutorService b = Executors.newCachedThreadPool();
 
     private c() {
     }
 
     public static c a() {
-        if (f41717a == null) {
-            f41717a = new c();
+        if (f28026a == null) {
+            f28026a = new c();
         }
-        return f41717a;
+        return f28026a;
     }
 
     public final void a(a aVar) {

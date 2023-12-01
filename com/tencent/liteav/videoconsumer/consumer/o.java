@@ -8,16 +8,16 @@ import com.tencent.liteav.videoconsumer.renderer.VideoRenderInterface;
 final /* synthetic */ class o implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final j f36718a;
+    private final j f23027a;
     private final DisplayTarget b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final boolean f36719c;
+    private final boolean f23028c;
 
     private o(j jVar, DisplayTarget displayTarget, boolean z) {
-        this.f36718a = jVar;
+        this.f23027a = jVar;
         this.b = displayTarget;
-        this.f36719c = z;
+        this.f23028c = z;
     }
 
     public static Runnable a(j jVar, DisplayTarget displayTarget, boolean z) {
@@ -26,10 +26,10 @@ final /* synthetic */ class o implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        j jVar = this.f36718a;
+        j jVar = this.f23027a;
         DisplayTarget displayTarget = this.b;
-        boolean z = this.f36719c;
-        String str = jVar.f36705a;
+        boolean z = this.f23028c;
+        String str = jVar.f23014a;
         LiteavLog.i(str, "setDisplayTarget: " + displayTarget + ",clearLastImage=" + z);
         jVar.i = displayTarget;
         if (jVar.i != null && jVar.i.getTXCloudVideoView() != null && jVar.i.getTXCloudVideoView().getOpenGLContext() != null) {

@@ -8,6 +8,7 @@ import android.text.BoringLayout;
 import android.text.Layout;
 import android.text.StaticLayout;
 import android.text.TextPaint;
+import android.view.Window;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -22,13 +23,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/svgaplayer/SVGADynamicEntity.class */
 public final class SVGADynamicEntity {
-
-    /* renamed from: a  reason: collision with root package name */
-    private HashMap<String, Boolean> f15946a = new HashMap<>();
+    private HashMap<String, Boolean> a = new HashMap<>();
     private HashMap<String, Bitmap> b = new HashMap<>();
-
-    /* renamed from: c  reason: collision with root package name */
-    private HashMap<String, String> f15947c = new HashMap<>();
+    private HashMap<String, String> c = new HashMap<>();
     private HashMap<String, TextPaint> d = new HashMap<>();
     private HashMap<String, StaticLayout> e = new HashMap<>();
     private HashMap<String, BoringLayout> f = new HashMap<>();
@@ -60,7 +57,7 @@ public final class SVGADynamicEntity {
                 return;
             }
             try {
-                httpURLConnection.setConnectTimeout(20000);
+                httpURLConnection.setConnectTimeout(Window.PROGRESS_SECONDARY_START);
                 httpURLConnection.setRequestMethod("GET");
                 httpURLConnection.connect();
                 inputStream = httpURLConnection.getInputStream();
@@ -122,7 +119,7 @@ public final class SVGADynamicEntity {
         Intrinsics.e(textPaint, "textPaint");
         Intrinsics.e(forKey, "forKey");
         this.k = true;
-        this.f15947c.put(forKey, text);
+        this.c.put(forKey, text);
         this.d.put(forKey, textPaint);
         return this;
     }
@@ -131,7 +128,7 @@ public final class SVGADynamicEntity {
         Intrinsics.e(url, "url");
         Intrinsics.e(forKey, "forKey");
         final Handler handler = new Handler();
-        SVGAParser.f15958a.a().execute(new Runnable() { // from class: com.blued.android.module.svgaplayer.-$$Lambda$SVGADynamicEntity$vmGI_p_MdHrmA5yUX8Fvz-Q3rSg
+        SVGAParser.a.a().execute(new Runnable() { // from class: com.blued.android.module.svgaplayer.-$$Lambda$SVGADynamicEntity$vmGI_p_MdHrmA5yUX8Fvz-Q3rSg
             @Override // java.lang.Runnable
             public final void run() {
                 SVGADynamicEntity.a(String.this, handler, this, forKey);
@@ -141,7 +138,7 @@ public final class SVGADynamicEntity {
     }
 
     public final HashMap<String, Boolean> a() {
-        return this.f15946a;
+        return this.a;
     }
 
     public final void a(boolean z) {
@@ -153,7 +150,7 @@ public final class SVGADynamicEntity {
     }
 
     public final HashMap<String, String> c() {
-        return this.f15947c;
+        return this.c;
     }
 
     public final HashMap<String, TextPaint> d() {

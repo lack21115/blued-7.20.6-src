@@ -8,7 +8,7 @@ import java.util.Locale;
 public final class HexUtil {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23089a = "";
+    private static final String f9481a = "";
     private static final String b = "HexUtil";
 
     private HexUtil() {

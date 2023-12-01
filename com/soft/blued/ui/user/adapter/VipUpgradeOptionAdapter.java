@@ -27,29 +27,29 @@ public final class VipUpgradeOptionAdapter extends BaseQuickAdapter<VipUpgradeMo
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
-    public void convert(BaseViewHolder helper, VipUpgradeModel item) {
-        Intrinsics.e(helper, "helper");
-        Intrinsics.e(item, "item");
-        ConstraintLayout constraintLayout = (ConstraintLayout) helper.getView(2131364999);
+    public void convert(BaseViewHolder baseViewHolder, VipUpgradeModel vipUpgradeModel) {
+        Intrinsics.e(baseViewHolder, "helper");
+        Intrinsics.e(vipUpgradeModel, "item");
+        ConstraintLayout constraintLayout = (ConstraintLayout) baseViewHolder.getView(R.id.item_view);
         ViewGroup.LayoutParams layoutParams = constraintLayout.getLayoutParams();
         layoutParams.width = (AppInfo.l - DensityUtil.a(28.0f)) / 3;
         constraintLayout.setLayoutParams(layoutParams);
-        ShapeLinearLayout shapeLinearLayout = (ShapeLinearLayout) helper.getView(R.id.ll_item);
-        ShapeModel shapeModel = shapeLinearLayout.getShapeModel();
-        if (item.choose) {
+        ShapeLinearLayout view = baseViewHolder.getView(R.id.ll_item);
+        ShapeModel shapeModel = view.getShapeModel();
+        if (vipUpgradeModel.choose) {
             shapeModel.n = BluedSkinUtils.a(this.mContext, 2131101766);
         } else {
             shapeModel.n = BluedSkinUtils.a(this.mContext, (int) R.color.syc_D1E1FF);
         }
-        shapeLinearLayout.setShapeModel(shapeModel);
-        helper.setText(2131372678, item.market);
-        helper.setText(2131372754, item.product_name);
-        helper.setText(2131372285, String.valueOf(item.money));
-        TextView textView = (TextView) helper.getView(R.id.tv_original_price);
-        StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
+        view.setShapeModel(shapeModel);
+        baseViewHolder.setText(R.id.tv_tag, vipUpgradeModel.market);
+        baseViewHolder.setText(2131372754, vipUpgradeModel.product_name);
+        baseViewHolder.setText(R.id.tv_price, String.valueOf(vipUpgradeModel.money));
+        TextView textView = (TextView) baseViewHolder.getView(R.id.tv_original_price);
+        StringCompanionObject stringCompanionObject = StringCompanionObject.a;
         String string = this.mContext.getString(R.string.vip_upgrade_rmb);
         Intrinsics.c(string, "mContext.getString(R.string.vip_upgrade_rmb)");
-        String format = String.format(string, Arrays.copyOf(new Object[]{String.valueOf(item.original_money)}, 1));
+        String format = String.format(string, Arrays.copyOf(new Object[]{String.valueOf(vipUpgradeModel.original_money)}, 1));
         Intrinsics.c(format, "format(format, *args)");
         textView.setText(format);
         textView.setPaintFlags(textView.getPaintFlags() | 16);

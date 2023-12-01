@@ -5,9 +5,8 @@ import androidx.lifecycle.Lifecycle;
 import androidx.savedstate.SavedStateRegistry;
 import androidx.savedstate.SavedStateRegistryOwner;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8756600-dex2jar.jar:androidx/lifecycle/SavedStateHandleController.class */
-public final class SavedStateHandleController implements LifecycleEventObserver {
+final class SavedStateHandleController implements LifecycleEventObserver {
     static final String TAG_SAVED_STATE_HANDLE_CONTROLLER = "androidx.lifecycle.savedstate.vm.tag";
     private final SavedStateHandle mHandle;
     private boolean mIsAttached = false;

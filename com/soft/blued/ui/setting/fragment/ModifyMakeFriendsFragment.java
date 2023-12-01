@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.blued.android.core.AppMethods;
+import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.ui.BaseFragment;
 import com.blued.android.core.ui.TerminalActivity;
 import com.blued.android.framework.http.BluedUIHttpResponse;
@@ -31,11 +32,11 @@ import java.util.List;
 public class ModifyMakeFriendsFragment extends BaseFragment implements View.OnClickListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f33426a;
+    private Context f19735a;
     private View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private PullToRefreshRecyclerView f33427c;
+    private PullToRefreshRecyclerView f19736c;
     private UserLabelAdapterNew d;
     private Dialog e;
     private List<UserTag> f = new ArrayList();
@@ -56,36 +57,36 @@ public class ModifyMakeFriendsFragment extends BaseFragment implements View.OnCl
     }
 
     private void e() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.b.findViewById(2131370749);
-        commonTopTitleNoTrans.setCenterText(getString(R.string.making_friends));
-        commonTopTitleNoTrans.setLeftClickListener(this);
-        commonTopTitleNoTrans.setRightClickListener(this);
-        commonTopTitleNoTrans.setRightText(R.string.done);
-        commonTopTitleNoTrans.f();
-        commonTopTitleNoTrans.setRightTextColor(2131102254);
+        CommonTopTitleNoTrans findViewById = this.b.findViewById(R.id.top_title);
+        findViewById.setCenterText(getString(R.string.making_friends));
+        findViewById.setLeftClickListener(this);
+        findViewById.setRightClickListener(this);
+        findViewById.setRightText((int) R.string.done);
+        findViewById.f();
+        findViewById.setRightTextColor(2131102254);
     }
 
     private void f() {
         this.e = DialogUtils.a(getActivity());
-        PullToRefreshRecyclerView pullToRefreshRecyclerView = (PullToRefreshRecyclerView) this.b.findViewById(R.id.gv_lookfor_want);
-        this.f33427c = pullToRefreshRecyclerView;
-        RecyclerView refreshableView = pullToRefreshRecyclerView.getRefreshableView();
-        this.f33427c.setRefreshEnabled(false);
-        refreshableView.setLayoutManager(new GridLayoutManager(this.f33426a, 1));
-        UserLabelAdapterNew userLabelAdapterNew = new UserLabelAdapterNew(this.f33426a);
+        PullToRefreshRecyclerView findViewById = this.b.findViewById(R.id.gv_lookfor_want);
+        this.f19736c = findViewById;
+        RecyclerView recyclerView = (RecyclerView) findViewById.getRefreshableView();
+        this.f19736c.setRefreshEnabled(false);
+        recyclerView.setLayoutManager(new GridLayoutManager(this.f19735a, 1));
+        UserLabelAdapterNew userLabelAdapterNew = new UserLabelAdapterNew(this.f19735a);
         this.d = userLabelAdapterNew;
-        refreshableView.setAdapter(userLabelAdapterNew);
+        recyclerView.setAdapter(userLabelAdapterNew);
         this.d.a(new UserLabelAdapterNew.OnItemClickListener() { // from class: com.soft.blued.ui.setting.fragment.ModifyMakeFriendsFragment.1
             @Override // com.soft.blued.ui.setting.adapter.UserLabelAdapterNew.OnItemClickListener
             public void a(UserTag userTag, int i) {
-                if (userTag.tagList.get(i).chooseable) {
-                    if (userTag.tagList.get(i).checked == 1) {
-                        userTag.tagList.get(i).checked = 0;
+                if (((UserTag) userTag.tagList.get(i)).chooseable) {
+                    if (((UserTag) userTag.tagList.get(i)).checked == 1) {
+                        ((UserTag) userTag.tagList.get(i)).checked = 0;
                     } else {
                         ModifyMakeFriendsFragment modifyMakeFriendsFragment = ModifyMakeFriendsFragment.this;
                         int a2 = modifyMakeFriendsFragment.a(modifyMakeFriendsFragment.d);
                         if (a2 < 5) {
-                            userTag.tagList.get(i).checked = 1;
+                            ((UserTag) userTag.tagList.get(i)).checked = 1;
                         } else if (a2 == 5) {
                             AppMethods.d((int) R.string.max_tags_5);
                         }
@@ -115,7 +116,7 @@ public class ModifyMakeFriendsFragment extends BaseFragment implements View.OnCl
                         i4 = i3;
                         if (i5 < userTag.tagList.size()) {
                             int i6 = i3;
-                            if (userTag.tagList.get(i5).checked == 1) {
+                            if (((UserTag) userTag.tagList.get(i5)).checked == 1) {
                                 i6 = i3 + 1;
                             }
                             i5++;
@@ -206,31 +207,28 @@ public class ModifyMakeFriendsFragment extends BaseFragment implements View.OnCl
     }
 
     public void c() {
-        FindHttpUtils.a(this.f33426a, new BluedUIHttpResponse<BluedEntityA<UserTagAll>>(getFragmentActive()) { // from class: com.soft.blued.ui.setting.fragment.ModifyMakeFriendsFragment.2
+        FindHttpUtils.a(this.f19735a, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<UserTagAll>>(getFragmentActive()) { // from class: com.soft.blued.ui.setting.fragment.ModifyMakeFriendsFragment.2
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<UserTagAll> bluedEntityA) {
                 if (bluedEntityA == null || bluedEntityA.data == null || bluedEntityA.data.size() <= 0) {
                     return;
                 }
-                ModifyMakeFriendsFragment.this.f = bluedEntityA.data.get(0).i_want;
+                ModifyMakeFriendsFragment.this.f = ((UserTagAll) bluedEntityA.data.get(0)).i_want;
                 ModifyMakeFriendsFragment modifyMakeFriendsFragment = ModifyMakeFriendsFragment.this;
                 modifyMakeFriendsFragment.a(modifyMakeFriendsFragment.g, ModifyMakeFriendsFragment.this.f);
                 ModifyMakeFriendsFragment.this.d.addData((UserLabelAdapterNew) new UserTag(ModifyMakeFriendsFragment.this.f));
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 DialogUtils.b(ModifyMakeFriendsFragment.this.e);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 super.onUIStart();
                 DialogUtils.a(ModifyMakeFriendsFragment.this.e);
             }
-        }, getFragmentActive());
+        }, (IRequestHost) getFragmentActive());
     }
 
     @Override // android.view.View.OnClickListener
@@ -250,9 +248,8 @@ public class ModifyMakeFriendsFragment extends BaseFragment implements View.OnCl
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.f33426a = getActivity();
+        this.f19735a = getActivity();
         View view = this.b;
         if (view == null) {
             this.b = layoutInflater.inflate(R.layout.fragment_user_makefriends_for_modify, viewGroup, false);

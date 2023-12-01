@@ -29,16 +29,14 @@ public abstract class HardwareRenderer {
     private boolean mEnabled;
     private boolean mRequested = true;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-9557208-dex2jar.jar:android/view/HardwareRenderer$HardwareDrawCallbacks.class */
-    public interface HardwareDrawCallbacks {
+    interface HardwareDrawCallbacks {
         void onHardwarePostDraw(HardwareCanvas hardwareCanvas);
 
         void onHardwarePreDraw(HardwareCanvas hardwareCanvas);
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static HardwareRenderer create(Context context, boolean z) {
+    static HardwareRenderer create(Context context, boolean z) {
         ThreadedRenderer threadedRenderer = null;
         if (GLES20Canvas.isAvailable()) {
             threadedRenderer = new ThreadedRenderer(context, z);
@@ -65,13 +63,11 @@ public abstract class HardwareRenderer {
         ThreadedRenderer.setupShadersDiskCache(new File(file, CACHE_PATH_SHADERS).getAbsolutePath());
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static void trimMemory(int i) {
+    static void trimMemory(int i) {
         ThreadedRenderer.trimMemory(i);
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public abstract void buildLayer(RenderNode renderNode);
+    abstract void buildLayer(RenderNode renderNode);
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public abstract boolean copyLayerInto(HardwareLayer hardwareLayer, Bitmap bitmap);
@@ -79,35 +75,26 @@ public abstract class HardwareRenderer {
     /* JADX INFO: Access modifiers changed from: package-private */
     public abstract HardwareLayer createTextureLayer();
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public abstract void destroy();
+    abstract void destroy();
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public abstract void destroyHardwareResources(View view);
+    abstract void destroyHardwareResources(View view);
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public abstract void detachSurfaceTexture(long j);
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public abstract void draw(View view, View.AttachInfo attachInfo, HardwareDrawCallbacks hardwareDrawCallbacks);
+    abstract void draw(View view, View.AttachInfo attachInfo, HardwareDrawCallbacks hardwareDrawCallbacks);
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public abstract void dumpGfxInfo(PrintWriter printWriter, FileDescriptor fileDescriptor);
+    abstract void dumpGfxInfo(PrintWriter printWriter, FileDescriptor fileDescriptor);
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public abstract void fence();
+    abstract void fence();
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public abstract int getHeight();
+    abstract int getHeight();
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public abstract int getWidth();
+    abstract int getWidth();
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public abstract boolean initialize(Surface surface) throws Surface.OutOfResourcesException;
+    abstract boolean initialize(Surface surface) throws Surface.OutOfResourcesException;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public boolean initializeIfNeeded(int i, int i2, Surface surface, Rect rect) throws Surface.OutOfResourcesException {
+    boolean initializeIfNeeded(int i, int i2, Surface surface, Rect rect) throws Surface.OutOfResourcesException {
         if (isRequested() && !isEnabled() && initialize(surface)) {
             setup(i, i2, rect);
             return true;
@@ -115,62 +102,48 @@ public abstract class HardwareRenderer {
         return false;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public abstract void invalidate(Surface surface);
+    abstract void invalidate(Surface surface);
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public abstract void invalidateRoot();
+    abstract void invalidateRoot();
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public boolean isEnabled() {
+    boolean isEnabled() {
         return this.mEnabled;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public boolean isRequested() {
+    boolean isRequested() {
         return this.mRequested;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public abstract boolean loadSystemProperties();
+    abstract boolean loadSystemProperties();
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public abstract void notifyFramePending();
+    abstract void notifyFramePending();
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public abstract void onLayerDestroyed(HardwareLayer hardwareLayer);
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public abstract boolean pauseSurface(Surface surface);
+    abstract boolean pauseSurface(Surface surface);
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public abstract void pushLayerUpdate(HardwareLayer hardwareLayer);
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public abstract void registerAnimatingRenderNode(RenderNode renderNode);
+    abstract void registerAnimatingRenderNode(RenderNode renderNode);
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void setEnabled(boolean z) {
         this.mEnabled = z;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public abstract void setName(String str);
+    abstract void setName(String str);
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public abstract void setOpaque(boolean z);
+    abstract void setOpaque(boolean z);
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public void setRequested(boolean z) {
+    void setRequested(boolean z) {
         this.mRequested = z;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public abstract void setup(int i, int i2, Rect rect);
+    abstract void setup(int i, int i2, Rect rect);
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public abstract void stopDrawing();
+    abstract void stopDrawing();
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public abstract void updateSurface(Surface surface) throws Surface.OutOfResourcesException;
+    abstract void updateSurface(Surface surface) throws Surface.OutOfResourcesException;
 }

@@ -114,7 +114,7 @@ public final class CharArrayBuffer extends CharBuffer {
     }
 
     @Override // java.nio.CharBuffer
-    public CharBuffer put(char c2) {
+    public CharBuffer put(char c) {
         if (this.isReadOnly) {
             throw new ReadOnlyBufferException();
         }
@@ -125,17 +125,17 @@ public final class CharArrayBuffer extends CharBuffer {
         int i = this.arrayOffset;
         int i2 = this.position;
         this.position = i2 + 1;
-        cArr[i + i2] = c2;
+        cArr[i + i2] = c;
         return this;
     }
 
     @Override // java.nio.CharBuffer
-    public CharBuffer put(int i, char c2) {
+    public CharBuffer put(int i, char c) {
         if (this.isReadOnly) {
             throw new ReadOnlyBufferException();
         }
         checkIndex(i);
-        this.backingArray[this.arrayOffset + i] = c2;
+        this.backingArray[this.arrayOffset + i] = c;
         return this;
     }
 

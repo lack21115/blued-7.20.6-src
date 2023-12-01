@@ -1,5 +1,6 @@
 package com.tencent.tmsbeacon.d;
 
+import com.ss.android.download.api.constant.BaseConstants;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
@@ -9,11 +10,11 @@ import java.util.Set;
 public class b implements com.tencent.tmsbeacon.a.a.d {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile b f39542a;
+    private static volatile b f25851a;
     public int b = 48;
 
     /* renamed from: c  reason: collision with root package name */
-    public int f39543c = 2000;
+    public int f25852c = 2000;
     public int d = 48;
     public int e = 3000;
     public boolean f = true;
@@ -44,18 +45,18 @@ public class b implements com.tencent.tmsbeacon.a.a.d {
     }
 
     public static b a() {
-        if (f39542a == null) {
+        if (f25851a == null) {
             synchronized (b.class) {
                 try {
-                    if (f39542a == null) {
-                        f39542a = new b();
+                    if (f25851a == null) {
+                        f25851a = new b();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f39542a;
+        return f25851a;
     }
 
     private void b(Map<String, String> map) {
@@ -70,8 +71,8 @@ public class b implements com.tencent.tmsbeacon.a.a.d {
                 b(map);
                 try {
                     this.b = com.tencent.tmsbeacon.base.util.b.a(map.get("realtimeUploadNum"), this.b, 24, 100);
-                    this.f39543c = com.tencent.tmsbeacon.base.util.b.a(map.get("realtimePollingTime"), this.f39543c, 1000, 10000);
-                    this.e = com.tencent.tmsbeacon.base.util.b.a(map.get("normalPollingTime"), this.e, 2000, 3600000);
+                    this.f25852c = com.tencent.tmsbeacon.base.util.b.a(map.get("realtimePollingTime"), this.f25852c, 1000, 10000);
+                    this.e = com.tencent.tmsbeacon.base.util.b.a(map.get("normalPollingTime"), this.e, 2000, (int) BaseConstants.Time.HOUR);
                     this.d = com.tencent.tmsbeacon.base.util.b.a(map.get("normalUploadNum"), this.d, 24, 100);
                     this.g = com.tencent.tmsbeacon.base.util.b.a(map.get("heartOnOff"), this.g);
                     this.j = com.tencent.tmsbeacon.base.util.b.a(map.get("tidyEF"), this.j);
@@ -218,7 +219,7 @@ public class b implements com.tencent.tmsbeacon.a.a.d {
 
     @Override // com.tencent.tmsbeacon.a.a.d
     public void onEvent(com.tencent.tmsbeacon.a.a.c cVar) {
-        if (cVar.f39460a != 8) {
+        if (cVar.f25769a != 8) {
             return;
         }
         this.v = cVar.b.containsKey("u_c_a_e") ? ((Boolean) cVar.b.get("u_c_a_e")).booleanValue() : this.v;

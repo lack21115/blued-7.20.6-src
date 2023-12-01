@@ -4,11 +4,11 @@ package com.tencent.mapsdk.internal;
 public final class k4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f37583a = "mapconfig.dat";
+    public static final String f23892a = "mapconfig.dat";
     public static final String b = "indoor_style.dat";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f37584c = "indoor_style_night.dat";
+    public static final String f23893c = "indoor_style_night.dat";
     public static final String d = "poi_icon@2x.png";
     public static final String e = "poi_icon_indoor_ex@2x.png";
     public static final String f = "poi_icon_indoor_ex_night@2x.png";

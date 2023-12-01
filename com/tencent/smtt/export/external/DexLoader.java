@@ -31,9 +31,8 @@ public class DexLoader {
             super(str, str2, str3, classLoader);
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // java.lang.ClassLoader
-        public Class<?> loadClass(String str, boolean z) throws ClassNotFoundException {
+        protected Class<?> loadClass(String str, boolean z) throws ClassNotFoundException {
             if (str != null) {
                 boolean startsWith = str.startsWith(DexLoader.JAVACORE_PACKAGE_PREFIX);
                 boolean z2 = startsWith;

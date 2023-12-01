@@ -122,11 +122,10 @@ public class ProgressDialog extends AlertDialog {
         return this.mProgress != null ? this.mProgress.isIndeterminate() : this.mIndeterminate;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.app.AlertDialog, android.app.Dialog
-    public void onCreate(Bundle bundle) {
+    protected void onCreate(Bundle bundle) {
         LayoutInflater from = LayoutInflater.from(this.mContext);
-        TypedArray obtainStyledAttributes = this.mContext.obtainStyledAttributes(null, R.styleable.AlertDialog, 16842845, 0);
+        TypedArray obtainStyledAttributes = this.mContext.obtainStyledAttributes(null, R.styleable.AlertDialog, android.R.attr.alertDialogStyle, 0);
         if (this.mProgressStyle == 1) {
             this.mViewUpdateHandler = new Handler() { // from class: android.app.ProgressDialog.1
                 @Override // android.os.Handler
@@ -148,15 +147,15 @@ public class ProgressDialog extends AlertDialog {
                     ProgressDialog.this.mProgressPercent.setText(spannableString);
                 }
             };
-            View inflate = from.inflate(obtainStyledAttributes.getResourceId(17, R.layout.alert_dialog_progress), (ViewGroup) null);
-            this.mProgress = (ProgressBar) inflate.findViewById(16908301);
-            this.mProgressNumber = (TextView) inflate.findViewById(R.id.progress_number);
-            this.mProgressPercent = (TextView) inflate.findViewById(R.id.progress_percent);
+            View inflate = from.inflate(obtainStyledAttributes.getResourceId(17, 17367084), (ViewGroup) null);
+            this.mProgress = (ProgressBar) inflate.findViewById(android.R.id.progress);
+            this.mProgressNumber = (TextView) inflate.findViewById(16909008);
+            this.mProgressPercent = (TextView) inflate.findViewById(16909007);
             setView(inflate);
         } else {
-            View inflate2 = from.inflate(obtainStyledAttributes.getResourceId(16, R.layout.progress_dialog), (ViewGroup) null);
-            this.mProgress = (ProgressBar) inflate2.findViewById(16908301);
-            this.mMessageView = (TextView) inflate2.findViewById(16908299);
+            View inflate2 = from.inflate(obtainStyledAttributes.getResourceId(16, 17367207), (ViewGroup) null);
+            this.mProgress = (ProgressBar) inflate2.findViewById(android.R.id.progress);
+            this.mMessageView = (TextView) inflate2.findViewById(android.R.id.message);
             setView(inflate2);
         }
         obtainStyledAttributes.recycle();

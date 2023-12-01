@@ -1,6 +1,7 @@
 package com.opos.exoplayer.core.f.h;
 
 import android.text.TextUtils;
+import com.huawei.openalliance.ad.constant.t;
 import com.opos.exoplayer.core.i.m;
 import java.util.Arrays;
 import java.util.regex.Matcher;
@@ -10,14 +11,14 @@ import java.util.regex.Pattern;
 final class g {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Pattern f25406a = Pattern.compile("\\[voice=\"([^\"]*)\"\\]");
+    private static final Pattern f11718a = Pattern.compile("\\[voice=\"([^\"]*)\"\\]");
     private final m b = new m();
 
     /* renamed from: c  reason: collision with root package name */
-    private final StringBuilder f25407c = new StringBuilder();
+    private final StringBuilder f11719c = new StringBuilder();
 
     private static char a(m mVar, int i) {
-        return (char) mVar.f25496a[i];
+        return (char) mVar.f11808a[i];
     }
 
     static String a(m mVar, StringBuilder sb) {
@@ -39,7 +40,7 @@ final class g {
         int indexOf = str.indexOf(91);
         String str2 = str;
         if (indexOf != -1) {
-            Matcher matcher = f25406a.matcher(str.substring(indexOf));
+            Matcher matcher = f11718a.matcher(str.substring(indexOf));
             if (matcher.matches()) {
                 bVar.c(matcher.group(1));
             }
@@ -70,8 +71,8 @@ final class g {
             }
             int d2 = mVar.d();
             String a2 = a(mVar, sb);
-            if (!";".equals(a2)) {
-                if (!com.alipay.sdk.util.i.d.equals(a2)) {
+            if (!t.aE.equals(a2)) {
+                if (!"}".equals(a2)) {
                     return;
                 }
                 mVar.c(d2);
@@ -149,7 +150,7 @@ final class g {
             if (a2 == null) {
                 return null;
             }
-            if (com.alipay.sdk.util.i.d.equals(a2) || ";".equals(a2)) {
+            if ("}".equals(a2) || t.aE.equals(a2)) {
                 mVar.c(d);
                 z = true;
             } else {
@@ -169,7 +170,7 @@ final class g {
         int c2 = mVar.c();
         boolean z = false;
         while (d < c2 && !z) {
-            z = ((char) mVar.f25496a[d]) == ')';
+            z = ((char) mVar.f11808a[d]) == ')';
             d++;
         }
         return mVar.e((d - 1) - mVar.d()).trim();
@@ -181,7 +182,7 @@ final class g {
         int d = mVar.d();
         int c2 = mVar.c();
         while (d < c2 && !z) {
-            char c3 = (char) mVar.f25496a[d];
+            char c3 = (char) mVar.f11808a[d];
             if ((c3 < 'A' || c3 > 'Z') && ((c3 < 'a' || c3 > 'z') && !((c3 >= '0' && c3 <= '9') || c3 == '#' || c3 == '-' || c3 == '.' || c3 == '_'))) {
                 z = true;
             } else {
@@ -205,7 +206,7 @@ final class g {
     private static boolean f(m mVar) {
         int d = mVar.d();
         int c2 = mVar.c();
-        byte[] bArr = mVar.f25496a;
+        byte[] bArr = mVar.f11808a;
         if (d + 2 > c2) {
             return false;
         }
@@ -232,15 +233,15 @@ final class g {
     }
 
     public b a(m mVar) {
-        this.f25407c.setLength(0);
+        this.f11719c.setLength(0);
         int d = mVar.d();
         c(mVar);
-        this.b.a(mVar.f25496a, mVar.d());
+        this.b.a(mVar.f11808a, mVar.d());
         this.b.c(d);
-        String b = b(this.b, this.f25407c);
+        String b = b(this.b, this.f11719c);
         b bVar = null;
         if (b != null) {
-            if (!"{".equals(a(this.b, this.f25407c))) {
+            if (!"{".equals(a(this.b, this.f11719c))) {
                 return null;
             }
             b bVar2 = new b();
@@ -249,14 +250,14 @@ final class g {
             boolean z = false;
             while (!z) {
                 int d2 = this.b.d();
-                str = a(this.b, this.f25407c);
-                z = str == null || com.alipay.sdk.util.i.d.equals(str);
+                str = a(this.b, this.f11719c);
+                z = str == null || "}".equals(str);
                 if (!z) {
                     this.b.c(d2);
-                    a(this.b, bVar2, this.f25407c);
+                    a(this.b, bVar2, this.f11719c);
                 }
             }
-            if (!com.alipay.sdk.util.i.d.equals(str)) {
+            if (!"}".equals(str)) {
                 return null;
             }
             bVar = bVar2;

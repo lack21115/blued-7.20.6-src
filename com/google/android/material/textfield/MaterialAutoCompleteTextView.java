@@ -209,9 +209,8 @@ public class MaterialAutoCompleteTextView extends AppCompatAutoCompleteTextView 
         return (findTextInputLayoutAncestor == null || !findTextInputLayoutAncestor.isProvidingHint()) ? super.getHint() : findTextInputLayoutAncestor.getHint();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.AutoCompleteTextView, android.widget.TextView, android.view.View
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         TextInputLayout findTextInputLayoutAncestor = findTextInputLayoutAncestor();
         if (findTextInputLayoutAncestor != null && findTextInputLayoutAncestor.isProvidingHint() && super.getHint() == null && ManufacturerUtils.isMeizuDevice()) {
@@ -219,9 +218,8 @@ public class MaterialAutoCompleteTextView extends AppCompatAutoCompleteTextView 
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.TextView, android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         super.onMeasure(i, i2);
         if (View.MeasureSpec.getMode(i) == Integer.MIN_VALUE) {
             setMeasuredDimension(Math.min(Math.max(getMeasuredWidth(), measureContentWidth()), View.MeasureSpec.getSize(i)), getMeasuredHeight());

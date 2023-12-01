@@ -22,11 +22,11 @@ import java.util.List;
 public class GDTATNativeExpressAd extends CustomNativeAd {
 
     /* renamed from: a  reason: collision with root package name */
-    NativeExpressAD f8949a;
+    NativeExpressAD f6109a;
     NativeExpressADView b;
 
     /* renamed from: c  reason: collision with root package name */
-    a f8950c;
+    a f6110c;
     String d;
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -63,29 +63,29 @@ public class GDTATNativeExpressAd extends CustomNativeAd {
                     nativeExpressADView.render();
                     return;
                 }
-                if (GDTATNativeExpressAd.this.f8950c != null) {
-                    GDTATNativeExpressAd.this.f8950c.notifyError("", "GDT Ad request success but no Ad return.");
+                if (GDTATNativeExpressAd.this.f6110c != null) {
+                    GDTATNativeExpressAd.this.f6110c.notifyError("", "GDT Ad request success but no Ad return.");
                 }
-                GDTATNativeExpressAd.this.f8950c = null;
+                GDTATNativeExpressAd.this.f6110c = null;
             }
 
             @Override // com.qq.e.ads.NativeAbstractAD.BasicADListener
             public final void onNoAD(AdError adError) {
-                if (GDTATNativeExpressAd.this.f8950c != null) {
-                    a aVar = GDTATNativeExpressAd.this.f8950c;
+                if (GDTATNativeExpressAd.this.f6110c != null) {
+                    a aVar = GDTATNativeExpressAd.this.f6110c;
                     StringBuilder sb = new StringBuilder();
                     sb.append(adError.getErrorCode());
                     aVar.notifyError(sb.toString(), adError.getErrorMsg());
                 }
-                GDTATNativeExpressAd.this.f8950c = null;
+                GDTATNativeExpressAd.this.f6110c = null;
             }
 
             @Override // com.qq.e.ads.nativ.NativeExpressAD.NativeExpressADListener
             public final void onRenderFail(NativeExpressADView nativeExpressADView) {
-                if (GDTATNativeExpressAd.this.f8950c != null) {
-                    GDTATNativeExpressAd.this.f8950c.notifyError("", "GDT onRenderFail");
+                if (GDTATNativeExpressAd.this.f6110c != null) {
+                    GDTATNativeExpressAd.this.f6110c.notifyError("", "GDT onRenderFail");
                 }
-                GDTATNativeExpressAd.this.f8950c = null;
+                GDTATNativeExpressAd.this.f6110c = null;
             }
 
             @Override // com.qq.e.ads.nativ.NativeExpressAD.NativeExpressADListener
@@ -147,10 +147,10 @@ public class GDTATNativeExpressAd extends CustomNativeAd {
                         GDTATNativeExpressAd.this.notifyAdVideoStart();
                     }
                 });
-                if (GDTATNativeExpressAd.this.f8950c != null) {
-                    GDTATNativeExpressAd.this.f8950c.notifyLoaded(GDTATNativeExpressAd.this);
+                if (GDTATNativeExpressAd.this.f6110c != null) {
+                    GDTATNativeExpressAd.this.f6110c.notifyLoaded(GDTATNativeExpressAd.this);
                 }
-                GDTATNativeExpressAd.this.f8950c = null;
+                GDTATNativeExpressAd.this.f6110c = null;
             }
         };
         if (i > 0) {
@@ -166,27 +166,27 @@ public class GDTATNativeExpressAd extends CustomNativeAd {
             i7 = -2;
         }
         if (TextUtils.isEmpty(str2)) {
-            this.f8949a = new NativeExpressAD(context, new ADSize(i6, i7), str, nativeExpressADListener);
+            this.f6109a = new NativeExpressAD(context, new ADSize(i6, i7), str, nativeExpressADListener);
         } else {
-            this.f8949a = new NativeExpressAD(context, new ADSize(i6, i7), str, nativeExpressADListener, str2);
+            this.f6109a = new NativeExpressAD(context, new ADSize(i6, i7), str, nativeExpressADListener, str2);
         }
-        this.f8949a.setVideoOption(new VideoOption.Builder().setAutoPlayMuted(i3 == 1).setDetailPageMuted(i3 == 1).setAutoPlayPolicy(i4).build());
+        this.f6109a.setVideoOption(new VideoOption.Builder().setAutoPlayMuted(i3 == 1).setDetailPageMuted(i3 == 1).setAutoPlayPolicy(i4).build());
         if (i5 != -1) {
-            this.f8949a.setMaxVideoDuration(i5);
+            this.f6109a.setMaxVideoDuration(i5);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     public final void a(a aVar, LoadAdParams loadAdParams) {
-        this.f8950c = aVar;
+        this.f6110c = aVar;
         if (TextUtils.isEmpty(this.d)) {
-            this.f8949a.loadAD(1, loadAdParams);
+            this.f6109a.loadAD(1, loadAdParams);
         } else {
-            this.f8949a.loadAD(1);
+            this.f6109a.loadAD(1);
         }
     }
 
-    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd, com.anythink.core.api.BaseAd
+    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd
     public void destroy() {
         NativeExpressADView nativeExpressADView = this.b;
         if (nativeExpressADView != null) {
@@ -194,11 +194,11 @@ public class GDTATNativeExpressAd extends CustomNativeAd {
             this.b.destroy();
         }
         this.b = null;
-        this.f8950c = null;
-        this.f8949a = null;
+        this.f6110c = null;
+        this.f6109a = null;
     }
 
-    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd, com.anythink.nativead.unitgroup.a, com.anythink.core.api.IATThirdPartyMaterial
+    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd, com.anythink.nativead.unitgroup.a
     public View getAdMediaView(Object... objArr) {
         return this.b;
     }

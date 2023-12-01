@@ -36,26 +36,21 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/event/adapter/EventReviewAdapter.class */
 public final class EventReviewAdapter extends BaseQuickAdapter<BluedIngSelfFeed, BaseViewHolder> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final BaseFragment f19516a;
+    private final BaseFragment a;
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f19517c;
+    private String c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public EventReviewAdapter(BaseFragment fragment) {
         super(R.layout.item_event_review);
         Intrinsics.e(fragment, "fragment");
-        this.f19516a = fragment;
+        this.a = fragment;
     }
 
     private final CharSequence a(final Context context, String str) {
         return StringUtils.a(AtUserHelper.a(MarkDownLinkHelper.a(context, StringUtils.a(str, DensityUtils.a(context, 14.0f), 0), true, R.color.syc_m, true, (MarkDownLinkHelper.MDLinkOnClickListener) null), BluedSkinUtils.a(context, R.color.syc_m), new AtUserHelper.AtUserLinkOnClickListener() { // from class: com.blued.community.ui.event.adapter.-$$Lambda$EventReviewAdapter$ZKOAbdtButM5IQnUmJJq1wx1dbU
-            @Override // com.blued.community.utils.AtUserHelper.AtUserLinkOnClickListener
             public final void onClick(String str2, String str3) {
-                EventReviewAdapter.a(Context.this, str2, str3);
+                EventReviewAdapter.a(context, str2, str3);
             }
         }), true, new boolean[0]);
     }
@@ -79,7 +74,7 @@ public final class EventReviewAdapter extends BaseQuickAdapter<BluedIngSelfFeed,
         eventLogData.setEventId(item.activity_id);
         eventLogData.setEventManagerUid(item.uid);
         eventLogData.setSourcePage(FeedProtos.SourcePage.ACTIVITY_FEED_DETAIL);
-        EventDetailsFragment.Companion companion = EventDetailsFragment.f19534a;
+        EventDetailsFragment.Companion companion = EventDetailsFragment.a;
         Context mContext = this$0.mContext;
         Intrinsics.c(mContext, "mContext");
         companion.a(mContext, item.activity_data.id, eventLogData);
@@ -90,10 +85,10 @@ public final class EventReviewAdapter extends BaseQuickAdapter<BluedIngSelfFeed,
         Intrinsics.e(this$0, "this$0");
         Intrinsics.e(item, "$item");
         EventLogData eventLogData = new EventLogData();
-        eventLogData.setEventId(this$0.f19517c);
+        eventLogData.setEventId(this$0.c);
         eventLogData.setEventManagerUid(item.feed_uid);
         eventLogData.setSourcePage(FeedProtos.SourcePage.ACTIVITY_DETAIL);
-        EventUserInfoDlgFragment.f19559a.a(this$0.f19516a.getParentFragmentManager(), item.feed_uid, this$0.f19517c, eventLogData);
+        EventUserInfoDlgFragment.a.a(this$0.a.getParentFragmentManager(), item.feed_uid, this$0.c, eventLogData);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -109,13 +104,13 @@ public final class EventReviewAdapter extends BaseQuickAdapter<BluedIngSelfFeed,
         Intrinsics.e(this$0, "this$0");
         String obj = contentView.getText().toString();
         if (Build.VERSION.SDK_INT < 11 || Build.VERSION.SDK_INT == 18) {
-            Object systemService = this$0.mContext.getSystemService(Context.CLIPBOARD_SERVICE);
+            Object systemService = this$0.mContext.getSystemService("clipboard");
             if (systemService == null) {
                 throw new NullPointerException("null cannot be cast to non-null type android.text.ClipboardManager");
             }
             ((ClipboardManager) systemService).setText(RegExpUtils.a(obj));
         } else {
-            Object systemService2 = this$0.mContext.getSystemService(Context.CLIPBOARD_SERVICE);
+            Object systemService2 = this$0.mContext.getSystemService("clipboard");
             if (systemService2 == null) {
                 throw new NullPointerException("null cannot be cast to non-null type android.content.ClipboardManager");
             }
@@ -153,9 +148,9 @@ public final class EventReviewAdapter extends BaseQuickAdapter<BluedIngSelfFeed,
         contain.setOnLongClickListener(new View.OnLongClickListener() { // from class: com.blued.community.ui.event.adapter.-$$Lambda$EventReviewAdapter$X_Iw3FUAmcW7s2dDKpX72WkpV_M
             @Override // android.view.View.OnLongClickListener
             public final boolean onLongClick(View view) {
-                boolean a2;
-                a2 = EventReviewAdapter.a(TextViewFixTouchForDynamic.this, this, view);
-                return a2;
+                boolean a;
+                a = EventReviewAdapter.a(contentView, this, view);
+                return a;
             }
         });
     }
@@ -168,7 +163,6 @@ public final class EventReviewAdapter extends BaseQuickAdapter<BluedIngSelfFeed,
     /* JADX INFO: Access modifiers changed from: protected */
     /* JADX WARN: Removed duplicated region for block: B:69:0x046c  */
     /* JADX WARN: Removed duplicated region for block: B:88:? A[RETURN, SYNTHETIC] */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -187,6 +181,6 @@ public final class EventReviewAdapter extends BaseQuickAdapter<BluedIngSelfFeed,
     }
 
     public final void b(String str) {
-        this.f19517c = str;
+        this.c = str;
     }
 }

@@ -1,5 +1,6 @@
 package java.sql;
 
+import com.amap.api.services.core.AMapException;
 import java.text.ParsePosition;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
@@ -174,7 +175,7 @@ public class Timestamp extends java.util.Date {
     @Override // java.util.Date
     public String toString() {
         StringBuilder sb = new StringBuilder(29);
-        format(getYear() + 1900, 4, sb);
+        format(getYear() + AMapException.CODE_AMAP_CLIENT_UNKNOWN_ERROR, 4, sb);
         sb.append('-');
         format(getMonth() + 1, 2, sb);
         sb.append('-');

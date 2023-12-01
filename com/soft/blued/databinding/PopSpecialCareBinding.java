@@ -10,19 +10,19 @@ import androidx.viewbinding.ViewBinding;
 public final class PopSpecialCareBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ImageView f29555a;
+    public final ImageView f15865a;
     public final ConstraintLayout b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final TextView f29556c;
+    public final TextView f15866c;
     public final TextView d;
     private final ConstraintLayout e;
 
     private PopSpecialCareBinding(ConstraintLayout constraintLayout, ImageView imageView, ConstraintLayout constraintLayout2, TextView textView, TextView textView2) {
         this.e = constraintLayout;
-        this.f29555a = imageView;
+        this.f15865a = imageView;
         this.b = constraintLayout2;
-        this.f29556c = textView;
+        this.f15866c = textView;
         this.d = textView2;
     }
 

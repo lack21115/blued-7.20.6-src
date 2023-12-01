@@ -23,13 +23,9 @@ import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveAnnoFansTimeDialogFragment.class */
 public class LiveAnnoFansTimeDialogFragment extends BaseDialogFragment implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    List<CharSequence> f12699a;
+    List<CharSequence> a;
     IEventCallback b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private View f12700c;
+    private View c;
     private StringScrollPicker d;
     private Context e;
     private int f;
@@ -47,17 +43,17 @@ public class LiveAnnoFansTimeDialogFragment extends BaseDialogFragment implement
     }
 
     private void e() {
-        this.d = (StringScrollPicker) this.f12700c.findViewById(R.id.sp_ahead_time);
-        this.f12700c.findViewById(R.id.tv_cancel).setOnClickListener(this);
-        this.f12700c.findViewById(R.id.tv_save).setOnClickListener(this);
+        this.d = (StringScrollPicker) this.c.findViewById(R.id.sp_ahead_time);
+        this.c.findViewById(R.id.tv_cancel).setOnClickListener(this);
+        this.c.findViewById(R.id.tv_save).setOnClickListener(this);
         f();
     }
 
     private void f() {
-        this.f12699a = new ArrayList();
+        this.a = new ArrayList();
         int i = 0;
         while (i < 12) {
-            List<CharSequence> list = this.f12699a;
+            List<CharSequence> list = this.a;
             StringBuilder sb = new StringBuilder();
             sb.append("开播前");
             i++;
@@ -65,7 +61,7 @@ public class LiveAnnoFansTimeDialogFragment extends BaseDialogFragment implement
             sb.append("0分钟");
             list.add(sb.toString());
         }
-        this.d.setData(this.f12699a);
+        this.d.setData(this.a);
         StringScrollPicker stringScrollPicker = this.d;
         int i2 = this.f;
         stringScrollPicker.setSelectedPosition(i2 < 10 ? 0 : (i2 / 10) - 1);
@@ -95,41 +91,40 @@ public class LiveAnnoFansTimeDialogFragment extends BaseDialogFragment implement
         }
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
         this.e = getContext();
         this.g = true;
         View inflate = getActivity().getLayoutInflater().inflate(R.layout.dialog_live_announce_ahead_time, (ViewGroup) null);
-        int a2 = DensityUtils.a(this.e, 364.0f);
+        int a = DensityUtils.a(this.e, 364.0f);
         Dialog dialog = new Dialog(getActivity(), R.style.transparentFrameWindowStyleLive);
         dialog.requestWindowFeature(1);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
-        dialog.setContentView(inflate, new ViewGroup.LayoutParams(-1, a2));
+        dialog.setContentView(inflate, new ViewGroup.LayoutParams(-1, a));
         Window window = dialog.getWindow();
         window.setWindowAnimations(R.style.main_menu_animstyle);
         WindowManager.LayoutParams attributes = window.getAttributes();
         attributes.width = -1;
-        attributes.height = a2;
+        attributes.height = a;
         attributes.x = 0;
-        attributes.y = getActivity().getWindowManager().getDefaultDisplay().getHeight() - a2;
+        attributes.y = getActivity().getWindowManager().getDefaultDisplay().getHeight() - a;
         dialog.onWindowAttributesChanged(attributes);
         d();
         return dialog;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        View view = this.f12700c;
+        View view = this.c;
         if (view == null) {
-            this.f12700c = layoutInflater.inflate(R.layout.dialog_live_announce_ahead_time, viewGroup, false);
+            this.c = layoutInflater.inflate(R.layout.dialog_live_announce_ahead_time, viewGroup, false);
             e();
         } else if (view.getParent() != null) {
-            ((ViewGroup) this.f12700c.getParent()).removeView(this.f12700c);
+            ((ViewGroup) this.c.getParent()).removeView(this.c);
         }
-        return this.f12700c;
+        return this.c;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onDestroy() {
         super.onDestroy();
         AppInfo.n().postDelayed(new Runnable() { // from class: com.blued.android.module.live_china.fragment.LiveAnnoFansTimeDialogFragment.1
@@ -140,7 +135,7 @@ public class LiveAnnoFansTimeDialogFragment extends BaseDialogFragment implement
         }, 300L);
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void show(FragmentManager fragmentManager, String str) {
         try {
             ReflectionUtils.a(this, "mDismissed", false);

@@ -9,11 +9,11 @@ import java.nio.ByteBuffer;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f7168a = 16;
+    public static final int f4329a = 16;
     public static final int b = 10;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final int f7169c = 256;
+    private static final int f4330c = 256;
     private static final int d = 1536;
     private static final int[] e = {1, 2, 3, 6};
     private static final int[] f = {48000, 44100, 32000};
@@ -24,14 +24,14 @@ public final class a {
 
     /* renamed from: com.anythink.expressad.exoplayer.b.a$a  reason: collision with other inner class name */
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/exoplayer/b/a$a.class */
-    public static final class C0119a {
+    public static final class C0048a {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final int f7170a = -1;
+        public static final int f4331a = -1;
         public static final int b = 0;
 
         /* renamed from: c  reason: collision with root package name */
-        public static final int f7171c = 1;
+        public static final int f4332c = 1;
         public static final int d = 2;
         public final String e;
         public final int f;
@@ -43,10 +43,10 @@ public final class a {
         @Retention(RetentionPolicy.SOURCE)
         /* renamed from: com.anythink.expressad.exoplayer.b.a$a$a  reason: collision with other inner class name */
         /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/exoplayer/b/a$a$a.class */
-        public @interface InterfaceC0120a {
+        public @interface InterfaceC0049a {
         }
 
-        private C0119a(String str, int i, int i2, int i3, int i4, int i5) {
+        private C0048a(String str, int i, int i2, int i3, int i4, int i5) {
             this.e = str;
             this.f = i;
             this.h = i2;
@@ -55,7 +55,7 @@ public final class a {
             this.j = i5;
         }
 
-        /* synthetic */ C0119a(String str, int i, int i2, int i3, int i4, int i5, byte b2) {
+        /* synthetic */ C0048a(String str, int i, int i2, int i3, int i4, int i5, byte b2) {
             this(str, i, i2, i3, i4, i5);
         }
     }
@@ -109,7 +109,7 @@ public final class a {
     }
 
     /* JADX WARN: Type inference failed for: r0v0, types: [java.lang.Throwable, java.lang.Runtime] */
-    private static C0119a a(com.anythink.expressad.exoplayer.k.r rVar) {
+    private static C0048a a(com.anythink.expressad.exoplayer.k.r rVar) {
         throw new Runtime("d2j fail translate: java.lang.RuntimeException: can not merge I and Z\r\n\tat com.googlecode.dex2jar.ir.TypeClass.merge(TypeClass.java:100)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeRef.updateTypeClass(TypeTransformer.java:174)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeAnalyze.copyTypes(TypeTransformer.java:311)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeAnalyze.fixTypes(TypeTransformer.java:226)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeAnalyze.analyze(TypeTransformer.java:207)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer.transform(TypeTransformer.java:44)\r\n\tat com.googlecode.d2j.dex.Dex2jar$2.optimize(Dex2jar.java:162)\r\n\tat com.googlecode.d2j.dex.Dex2Asm.convertCode(Dex2Asm.java:414)\r\n\tat com.googlecode.d2j.dex.ExDex2Asm.convertCode(ExDex2Asm.java:42)\r\n\tat com.googlecode.d2j.dex.Dex2jar$2.convertCode(Dex2jar.java:128)\r\n\tat com.googlecode.d2j.dex.Dex2Asm.convertMethod(Dex2Asm.java:509)\r\n\tat com.googlecode.d2j.dex.Dex2Asm.convertClass(Dex2Asm.java:406)\r\n\tat com.googlecode.d2j.dex.Dex2Asm.convertDex(Dex2Asm.java:422)\r\n\tat com.googlecode.d2j.dex.Dex2jar.doTranslate(Dex2jar.java:172)\r\n\tat com.googlecode.d2j.dex.Dex2jar.to(Dex2jar.java:272)\r\n\tat com.googlecode.dex2jar.tools.Dex2jarCmd.doCommandLine(Dex2jarCmd.java:108)\r\n\tat com.googlecode.dex2jar.tools.BaseCmd.doMain(BaseCmd.java:288)\r\n\tat com.googlecode.dex2jar.tools.Dex2jarCmd.main(Dex2jarCmd.java:32)\r\n");
     }
 

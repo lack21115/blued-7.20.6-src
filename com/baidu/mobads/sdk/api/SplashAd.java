@@ -342,7 +342,7 @@ public class SplashAd {
                     } else if (SplashAd.this.mAdProd == null) {
                         SplashAd.this.callAdFailed("展现失败，请检查splashAd参数是否正确");
                     } else {
-                        SplashAd.this.mAdProd.f9425a = false;
+                        SplashAd.this.mAdProd.f6585a = false;
                         SplashAd.this.mFetchNotShow = false;
                         SplashAd.this.mAdProd.a(coVar);
                         SplashAd.this.mAdProd.f();
@@ -446,7 +446,7 @@ public class SplashAd {
         dnVar2.a(this.mShakeLogoSize);
         this.mAdProd.g(this.mAppSid);
         this.mAdProd.p = this.mBidFloor;
-        this.mAdProd.f9425a = true;
+        this.mAdProd.f6585a = true;
         RequestParameters requestParameters2 = this.mParameter;
         if (requestParameters2 != null) {
             this.mAdProd.a(requestParameters2);
@@ -513,7 +513,7 @@ public class SplashAd {
         dnVar2.a(this.mShakeLogoSize);
         this.mAdProd.g(this.mAppSid);
         this.mAdProd.p = this.mBidFloor;
-        this.mAdProd.f9425a = true;
+        this.mAdProd.f6585a = true;
         RequestParameters requestParameters2 = this.mParameter;
         if (requestParameters2 != null) {
             this.mAdProd.a(requestParameters2);
@@ -598,7 +598,7 @@ public class SplashAd {
                     if (SplashAd.this.mParameter != null) {
                         SplashAd.this.mAdProd.a(SplashAd.this.mParameter);
                     }
-                    SplashAd.this.mAdProd.f9425a = false;
+                    SplashAd.this.mAdProd.f6585a = false;
                     SplashAd.this.mAdProd.a(SplashAd.this.mDownloadDialogListener);
                     SplashAd.this.mAdProd.a();
                 }

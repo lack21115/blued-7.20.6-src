@@ -36,7 +36,7 @@ public final class SingletonImmutableSet<E> extends ImmutableSet<E> {
     /* JADX INFO: Access modifiers changed from: package-private */
     @Override // com.google.common.collect.ImmutableSet
     public ImmutableList<E> createAsList() {
-        return ImmutableList.of(this.element);
+        return ImmutableList.of((Object) this.element);
     }
 
     @Override // com.google.common.collect.ImmutableSet, java.util.Collection, java.util.Set
@@ -61,12 +61,12 @@ public final class SingletonImmutableSet<E> extends ImmutableSet<E> {
         return false;
     }
 
-    @Override // com.google.common.collect.ImmutableSet, com.google.common.collect.ImmutableCollection, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+    @Override // com.google.common.collect.ImmutableSet, com.google.common.collect.ImmutableCollection, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set, com.google.common.collect.SortedIterable, java.util.NavigableSet
     public UnmodifiableIterator<E> iterator() {
         return Iterators.singletonIterator(this.element);
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
     public int size() {
         return 1;
     }

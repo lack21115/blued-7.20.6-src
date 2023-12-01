@@ -16,11 +16,11 @@ import java.util.Map;
 public class HiAnalyticsUtil {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Object f22890a = new Object();
+    private static final Object f9282a = new Object();
     private static HiAnalyticsUtil b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static HiAnalyticsUtils f22891c;
+    private static HiAnalyticsUtils f9283c;
 
     private String a(Context context, String str) {
         String packageName = context.getPackageName();
@@ -29,10 +29,10 @@ public class HiAnalyticsUtil {
 
     public static HiAnalyticsUtil getInstance() {
         HiAnalyticsUtil hiAnalyticsUtil;
-        synchronized (f22890a) {
+        synchronized (f9282a) {
             if (b == null) {
                 b = new HiAnalyticsUtil();
-                f22891c = HiAnalyticsUtils.getInstance();
+                f9283c = HiAnalyticsUtils.getInstance();
             }
             hiAnalyticsUtil = b;
         }
@@ -150,11 +150,11 @@ public class HiAnalyticsUtil {
     }
 
     public boolean hasError(Context context) {
-        return f22891c.hasError(context);
+        return f9283c.hasError(context);
     }
 
     public void onBuoyEvent(Context context, String str, String str2) {
-        f22891c.onBuoyEvent(context, str, str2);
+        f9283c.onBuoyEvent(context, str, str2);
     }
 
     public void onEvent(Context context, String str, String str2) {
@@ -164,14 +164,14 @@ public class HiAnalyticsUtil {
     }
 
     public void onEvent(Context context, String str, Map<String, String> map) {
-        f22891c.onEvent(context, str, map);
+        f9283c.onEvent(context, str, map);
     }
 
     public void onEvent2(Context context, String str, String str2) {
-        f22891c.onEvent2(context, str, str2);
+        f9283c.onEvent2(context, str, str2);
     }
 
     public void onNewEvent(Context context, String str, Map map) {
-        f22891c.onNewEvent(context, str, map);
+        f9283c.onNewEvent(context, str, map);
     }
 }

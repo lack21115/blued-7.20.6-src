@@ -93,8 +93,8 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
     private volatile Object typeName_;
     private static final GoodsLuckBag DEFAULT_INSTANCE = new GoodsLuckBag();
     private static final Parser<GoodsLuckBag> PARSER = new AbstractParser<GoodsLuckBag>() { // from class: cn.irisgw.live.GoodsLuckBag.1
-        @Override // com.google.protobuf.Parser
-        public GoodsLuckBag parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        /* renamed from: parsePartialFrom */
+        public GoodsLuckBag m2767parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             return new GoodsLuckBag(codedInputStream, extensionRegistryLite);
         }
     };
@@ -246,21 +246,21 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
 
         public Builder addAllBgColor(Iterable<String> iterable) {
             ensureBgColorIsMutable();
-            AbstractMessageLite.Builder.addAll((Iterable) iterable, (List) this.bgColor_);
+            AbstractMessageLite.Builder.addAll(iterable, this.bgColor_);
             onChanged();
             return this;
         }
 
         public Builder addAllChatFrameBorderColor(Iterable<String> iterable) {
             ensureChatFrameBorderColorIsMutable();
-            AbstractMessageLite.Builder.addAll((Iterable) iterable, (List) this.chatFrameBorderColor_);
+            AbstractMessageLite.Builder.addAll(iterable, this.chatFrameBorderColor_);
             onChanged();
             return this;
         }
 
         public Builder addAllChatFrameFrameColor(Iterable<String> iterable) {
             ensureChatFrameFrameColorIsMutable();
-            AbstractMessageLite.Builder.addAll((Iterable) iterable, (List) this.chatFrameFrameColor_);
+            AbstractMessageLite.Builder.addAll(iterable, this.chatFrameFrameColor_);
             onChanged();
             return this;
         }
@@ -272,7 +272,7 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
                 return this;
             }
             ensureGoodsIsMutable();
-            AbstractMessageLite.Builder.addAll((Iterable) iterable, (List) this.goods_);
+            AbstractMessageLite.Builder.addAll(iterable, this.goods_);
             onChanged();
             return this;
         }
@@ -284,7 +284,7 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
                 return this;
             }
             ensureLanternImageIsMutable();
-            AbstractMessageLite.Builder.addAll((Iterable) iterable, (List) this.lanternImage_);
+            AbstractMessageLite.Builder.addAll(iterable, this.lanternImage_);
             onChanged();
             return this;
         }
@@ -292,7 +292,7 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
         public Builder addBgColor(String str) {
             if (str != null) {
                 ensureBgColorIsMutable();
-                this.bgColor_.add((LazyStringList) str);
+                this.bgColor_.add(str);
                 onChanged();
                 return this;
             }
@@ -313,7 +313,7 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
         public Builder addChatFrameBorderColor(String str) {
             if (str != null) {
                 ensureChatFrameBorderColorIsMutable();
-                this.chatFrameBorderColor_.add((LazyStringList) str);
+                this.chatFrameBorderColor_.add(str);
                 onChanged();
                 return this;
             }
@@ -334,7 +334,7 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
         public Builder addChatFrameFrameColor(String str) {
             if (str != null) {
                 ensureChatFrameFrameColorIsMutable();
-                this.chatFrameFrameColor_.add((LazyStringList) str);
+                this.chatFrameFrameColor_.add(str);
                 onChanged();
                 return this;
             }
@@ -355,11 +355,11 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
         public Builder addGoods(int i, Goods.Builder builder) {
             RepeatedFieldBuilderV3<Goods, Goods.Builder, GoodsOrBuilder> repeatedFieldBuilderV3 = this.goodsBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.addMessage(i, builder.build());
+                repeatedFieldBuilderV3.addMessage(i, builder.m2818build());
                 return this;
             }
             ensureGoodsIsMutable();
-            this.goods_.add(i, builder.build());
+            this.goods_.add(i, builder.m2818build());
             onChanged();
             return this;
         }
@@ -382,11 +382,11 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
         public Builder addGoods(Goods.Builder builder) {
             RepeatedFieldBuilderV3<Goods, Goods.Builder, GoodsOrBuilder> repeatedFieldBuilderV3 = this.goodsBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.addMessage(builder.build());
+                repeatedFieldBuilderV3.addMessage(builder.m2818build());
                 return this;
             }
             ensureGoodsIsMutable();
-            this.goods_.add(builder.build());
+            this.goods_.add(builder.m2818build());
             onChanged();
             return this;
         }
@@ -417,11 +417,11 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
         public Builder addLanternImage(int i, lantern_resource.Builder builder) {
             RepeatedFieldBuilderV3<lantern_resource, lantern_resource.Builder, lantern_resourceOrBuilder> repeatedFieldBuilderV3 = this.lanternImageBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.addMessage(i, builder.build());
+                repeatedFieldBuilderV3.addMessage(i, builder.m2865build());
                 return this;
             }
             ensureLanternImageIsMutable();
-            this.lanternImage_.add(i, builder.build());
+            this.lanternImage_.add(i, builder.m2865build());
             onChanged();
             return this;
         }
@@ -444,11 +444,11 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
         public Builder addLanternImage(lantern_resource.Builder builder) {
             RepeatedFieldBuilderV3<lantern_resource, lantern_resource.Builder, lantern_resourceOrBuilder> repeatedFieldBuilderV3 = this.lanternImageBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.addMessage(builder.build());
+                repeatedFieldBuilderV3.addMessage(builder.m2865build());
                 return this;
             }
             ensureLanternImageIsMutable();
-            this.lanternImage_.add(builder.build());
+            this.lanternImage_.add(builder.m2865build());
             onChanged();
             return this;
         }
@@ -476,22 +476,22 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
             return getLanternImageFieldBuilder().addBuilder(i, lantern_resource.getDefaultInstance());
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: addRepeatedField */
+        public Builder m2769addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.addRepeatedField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public GoodsLuckBag build() {
-            GoodsLuckBag buildPartial = buildPartial();
-            if (buildPartial.isInitialized()) {
-                return buildPartial;
+        /* renamed from: build */
+        public GoodsLuckBag m2771build() {
+            GoodsLuckBag m2773buildPartial = m2773buildPartial();
+            if (m2773buildPartial.isInitialized()) {
+                return m2773buildPartial;
             }
-            throw newUninitializedMessageException((Message) buildPartial);
+            throw newUninitializedMessageException(m2773buildPartial);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public GoodsLuckBag buildPartial() {
+        /* renamed from: buildPartial */
+        public GoodsLuckBag m2773buildPartial() {
             GoodsLuckBag goodsLuckBag = new GoodsLuckBag(this);
             int i = this.bitField0_;
             RepeatedFieldBuilderV3<Goods, Goods.Builder, GoodsOrBuilder> repeatedFieldBuilderV3 = this.goodsBuilder_;
@@ -559,8 +559,8 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
             return goodsLuckBag;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public Builder clear() {
+        /* renamed from: clear */
+        public Builder m2777clear() {
             super.clear();
             RepeatedFieldBuilderV3<Goods, Goods.Builder, GoodsOrBuilder> repeatedFieldBuilderV3 = this.goodsBuilder_;
             if (repeatedFieldBuilderV3 == null) {
@@ -570,10 +570,10 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
                 repeatedFieldBuilderV3.clear();
             }
             this.hitCount_ = 0;
-            this.hitId_ = 0L;
+            this.hitId_ = GoodsLuckBag.serialVersionUID;
             this.hitBatch_ = 0;
-            this.beansCount_ = 0L;
-            this.beansCurrentCount_ = 0L;
+            this.beansCount_ = GoodsLuckBag.serialVersionUID;
+            this.beansCurrentCount_ = GoodsLuckBag.serialVersionUID;
             this.animCode_ = "";
             this.typeName_ = "";
             this.animation_ = 0;
@@ -630,13 +630,13 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
         }
 
         public Builder clearBeansCount() {
-            this.beansCount_ = 0L;
+            this.beansCount_ = GoodsLuckBag.serialVersionUID;
             onChanged();
             return this;
         }
 
         public Builder clearBeansCurrentCount() {
-            this.beansCurrentCount_ = 0L;
+            this.beansCurrentCount_ = GoodsLuckBag.serialVersionUID;
             onChanged();
             return this;
         }
@@ -728,8 +728,8 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+        /* renamed from: clearField */
+        public Builder m2779clearField(Descriptors.FieldDescriptor fieldDescriptor) {
             return (Builder) super.clearField(fieldDescriptor);
         }
 
@@ -758,7 +758,7 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
         }
 
         public Builder clearHitId() {
-            this.hitId_ = 0L;
+            this.hitId_ = GoodsLuckBag.serialVersionUID;
             onChanged();
             return this;
         }
@@ -805,8 +805,8 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+        /* renamed from: clearOneof */
+        public Builder m2782clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
             return (Builder) super.clearOneof(oneofDescriptor);
         }
 
@@ -822,10 +822,9 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder m2788clone() {
+            return (Builder) super.clone();
         }
 
         @Override // cn.irisgw.live.GoodsLuckBagOrBuilder
@@ -889,7 +888,7 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
 
         @Override // cn.irisgw.live.GoodsLuckBagOrBuilder
         public String getBgColor(int i) {
-            return this.bgColor_.get(i);
+            return (String) this.bgColor_.get(i);
         }
 
         @Override // cn.irisgw.live.GoodsLuckBagOrBuilder
@@ -903,7 +902,8 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
         }
 
         @Override // cn.irisgw.live.GoodsLuckBagOrBuilder
-        public ProtocolStringList getBgColorList() {
+        /* renamed from: getBgColorList */
+        public ProtocolStringList mo2757getBgColorList() {
             return this.bgColor_.getUnmodifiableView();
         }
 
@@ -974,7 +974,7 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
 
         @Override // cn.irisgw.live.GoodsLuckBagOrBuilder
         public String getChatFrameBorderColor(int i) {
-            return this.chatFrameBorderColor_.get(i);
+            return (String) this.chatFrameBorderColor_.get(i);
         }
 
         @Override // cn.irisgw.live.GoodsLuckBagOrBuilder
@@ -988,7 +988,8 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
         }
 
         @Override // cn.irisgw.live.GoodsLuckBagOrBuilder
-        public ProtocolStringList getChatFrameBorderColorList() {
+        /* renamed from: getChatFrameBorderColorList */
+        public ProtocolStringList mo2758getChatFrameBorderColorList() {
             return this.chatFrameBorderColor_.getUnmodifiableView();
         }
 
@@ -1010,7 +1011,7 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
 
         @Override // cn.irisgw.live.GoodsLuckBagOrBuilder
         public String getChatFrameFrameColor(int i) {
-            return this.chatFrameFrameColor_.get(i);
+            return (String) this.chatFrameFrameColor_.get(i);
         }
 
         @Override // cn.irisgw.live.GoodsLuckBagOrBuilder
@@ -1024,7 +1025,8 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
         }
 
         @Override // cn.irisgw.live.GoodsLuckBagOrBuilder
-        public ProtocolStringList getChatFrameFrameColorList() {
+        /* renamed from: getChatFrameFrameColorList */
+        public ProtocolStringList mo2759getChatFrameFrameColorList() {
             return this.chatFrameFrameColor_.getUnmodifiableView();
         }
 
@@ -1055,12 +1057,11 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public GoodsLuckBag getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public GoodsLuckBag m2790getDefaultInstanceForType() {
             return GoodsLuckBag.getDefaultInstance();
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
         public Descriptors.Descriptor getDescriptorForType() {
             return LiveConstants.internal_static_cn_irisgw_live_GoodsLuckBag_descriptor;
         }
@@ -1136,7 +1137,7 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
         @Override // cn.irisgw.live.GoodsLuckBagOrBuilder
         public GoodsOrBuilder getGoodsOrBuilder(int i) {
             RepeatedFieldBuilderV3<Goods, Goods.Builder, GoodsOrBuilder> repeatedFieldBuilderV3 = this.goodsBuilder_;
-            return repeatedFieldBuilderV3 == null ? this.goods_.get(i) : repeatedFieldBuilderV3.getMessageOrBuilder(i);
+            return repeatedFieldBuilderV3 == null ? this.goods_.get(i) : (GoodsOrBuilder) repeatedFieldBuilderV3.getMessageOrBuilder(i);
         }
 
         @Override // cn.irisgw.live.GoodsLuckBagOrBuilder
@@ -1199,7 +1200,7 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
         @Override // cn.irisgw.live.GoodsLuckBagOrBuilder
         public lantern_resourceOrBuilder getLanternImageOrBuilder(int i) {
             RepeatedFieldBuilderV3<lantern_resource, lantern_resource.Builder, lantern_resourceOrBuilder> repeatedFieldBuilderV3 = this.lanternImageBuilder_;
-            return repeatedFieldBuilderV3 == null ? this.lanternImage_.get(i) : repeatedFieldBuilderV3.getMessageOrBuilder(i);
+            return repeatedFieldBuilderV3 == null ? this.lanternImage_.get(i) : (lantern_resourceOrBuilder) repeatedFieldBuilderV3.getMessageOrBuilder(i);
         }
 
         @Override // cn.irisgw.live.GoodsLuckBagOrBuilder
@@ -1277,12 +1278,10 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_GoodsLuckBag_fieldAccessorTable.ensureFieldAccessorsInitialized(GoodsLuckBag.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             return true;
         }
@@ -1316,16 +1315,16 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
             if (goodsLuckBag.getHitCount() != 0) {
                 setHitCount(goodsLuckBag.getHitCount());
             }
-            if (goodsLuckBag.getHitId() != 0) {
+            if (goodsLuckBag.getHitId() != GoodsLuckBag.serialVersionUID) {
                 setHitId(goodsLuckBag.getHitId());
             }
             if (goodsLuckBag.getHitBatch() != 0) {
                 setHitBatch(goodsLuckBag.getHitBatch());
             }
-            if (goodsLuckBag.getBeansCount() != 0) {
+            if (goodsLuckBag.getBeansCount() != GoodsLuckBag.serialVersionUID) {
                 setBeansCount(goodsLuckBag.getBeansCount());
             }
-            if (goodsLuckBag.getBeansCurrentCount() != 0) {
+            if (goodsLuckBag.getBeansCurrentCount() != GoodsLuckBag.serialVersionUID) {
                 setBeansCurrentCount(goodsLuckBag.getBeansCurrentCount());
             }
             if (!goodsLuckBag.getAnimCode().isEmpty()) {
@@ -1456,18 +1455,18 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
             if (goodsLuckBag.getLanternPlayTimes() != 0) {
                 setLanternPlayTimes(goodsLuckBag.getLanternPlayTimes());
             }
-            mergeUnknownFields(goodsLuckBag.unknownFields);
+            m2799mergeUnknownFields(goodsLuckBag.unknownFields);
             onChanged();
             return this;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+        /* renamed from: mergeFrom */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
         */
-        public cn.irisgw.live.GoodsLuckBag.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+        public cn.irisgw.live.GoodsLuckBag.Builder m2796mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
             /*
                 r4 = this;
                 r0 = 0
@@ -1512,11 +1511,11 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
                 r0 = r6
                 throw r0
             */
-            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.GoodsLuckBag.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.GoodsLuckBag$Builder");
+            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.GoodsLuckBag.Builder.m2796mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.GoodsLuckBag$Builder");
         }
 
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder mergeFrom(Message message) {
+        /* renamed from: mergeFrom */
+        public Builder m2795mergeFrom(Message message) {
             if (message instanceof GoodsLuckBag) {
                 return mergeFrom((GoodsLuckBag) message);
             }
@@ -1524,8 +1523,8 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: mergeUnknownFields */
+        public final Builder m2799mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.mergeUnknownFields(unknownFieldSet);
         }
 
@@ -1612,7 +1611,7 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
         public Builder setBgColor(int i, String str) {
             if (str != null) {
                 ensureBgColorIsMutable();
-                this.bgColor_.set(i, (int) str);
+                this.bgColor_.set(i, str);
                 onChanged();
                 return this;
             }
@@ -1681,7 +1680,7 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
         public Builder setChatFrameBorderColor(int i, String str) {
             if (str != null) {
                 ensureChatFrameBorderColorIsMutable();
-                this.chatFrameBorderColor_.set(i, (int) str);
+                this.chatFrameBorderColor_.set(i, str);
                 onChanged();
                 return this;
             }
@@ -1707,7 +1706,7 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
         public Builder setChatFrameFrameColor(int i, String str) {
             if (str != null) {
                 ensureChatFrameFrameColorIsMutable();
-                this.chatFrameFrameColor_.set(i, (int) str);
+                this.chatFrameFrameColor_.set(i, str);
                 onChanged();
                 return this;
             }
@@ -1779,19 +1778,19 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: setField */
+        public Builder m2801setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.setField(fieldDescriptor, obj);
         }
 
         public Builder setGoods(int i, Goods.Builder builder) {
             RepeatedFieldBuilderV3<Goods, Goods.Builder, GoodsOrBuilder> repeatedFieldBuilderV3 = this.goodsBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.setMessage(i, builder.build());
+                repeatedFieldBuilderV3.setMessage(i, builder.m2818build());
                 return this;
             }
             ensureGoodsIsMutable();
-            this.goods_.set(i, builder.build());
+            this.goods_.set(i, builder.m2818build());
             onChanged();
             return this;
         }
@@ -1844,11 +1843,11 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
         public Builder setLanternImage(int i, lantern_resource.Builder builder) {
             RepeatedFieldBuilderV3<lantern_resource, lantern_resource.Builder, lantern_resourceOrBuilder> repeatedFieldBuilderV3 = this.lanternImageBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.setMessage(i, builder.build());
+                repeatedFieldBuilderV3.setMessage(i, builder.m2865build());
                 return this;
             }
             ensureLanternImageIsMutable();
-            this.lanternImage_.set(i, builder.build());
+            this.lanternImage_.set(i, builder.m2865build());
             onChanged();
             return this;
         }
@@ -1914,8 +1913,8 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+        /* renamed from: setRepeatedField */
+        public Builder m2803setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
             return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
         }
 
@@ -1938,8 +1937,8 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
             throw null;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: setUnknownFields */
+        public final Builder m2805setUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.setUnknownFields(unknownFieldSet);
         }
     }
@@ -1976,8 +1975,8 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
         private volatile Object type_;
         private static final Goods DEFAULT_INSTANCE = new Goods();
         private static final Parser<Goods> PARSER = new AbstractParser<Goods>() { // from class: cn.irisgw.live.GoodsLuckBag.Goods.1
-            @Override // com.google.protobuf.Parser
-            public Goods parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+            /* renamed from: parsePartialFrom */
+            public Goods m2814parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
                 return new Goods(codedInputStream, extensionRegistryLite);
             }
         };
@@ -2029,22 +2028,22 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
                 boolean unused = Goods.alwaysUseFieldBuilders;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: addRepeatedField */
+            public Builder m2816addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.addRepeatedField(fieldDescriptor, obj);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public Goods build() {
-                Goods buildPartial = buildPartial();
-                if (buildPartial.isInitialized()) {
-                    return buildPartial;
+            /* renamed from: build */
+            public Goods m2818build() {
+                Goods m2820buildPartial = m2820buildPartial();
+                if (m2820buildPartial.isInitialized()) {
+                    return m2820buildPartial;
                 }
-                throw newUninitializedMessageException((Message) buildPartial);
+                throw newUninitializedMessageException(m2820buildPartial);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public Goods buildPartial() {
+            /* renamed from: buildPartial */
+            public Goods m2820buildPartial() {
                 Goods goods = new Goods(this);
                 goods.giftPicUrl_ = this.giftPicUrl_;
                 goods.giftPicGif_ = this.giftPicGif_;
@@ -2063,8 +2062,8 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
                 return goods;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public Builder clear() {
+            /* renamed from: clear */
+            public Builder m2824clear() {
                 super.clear();
                 this.giftPicUrl_ = "";
                 this.giftPicGif_ = "";
@@ -2088,8 +2087,8 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+            /* renamed from: clearField */
+            public Builder m2826clearField(Descriptors.FieldDescriptor fieldDescriptor) {
                 return (Builder) super.clearField(fieldDescriptor);
             }
 
@@ -2153,8 +2152,8 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+            /* renamed from: clearOneof */
+            public Builder m2829clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
                 return (Builder) super.clearOneof(oneofDescriptor);
             }
 
@@ -2170,10 +2169,9 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder m2835clone() {
+                return (Builder) super.clone();
             }
 
             @Override // cn.irisgw.live.GoodsLuckBag.GoodsOrBuilder
@@ -2181,12 +2179,11 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
                 return this.count_;
             }
 
-            @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-            public Goods getDefaultInstanceForType() {
+            /* renamed from: getDefaultInstanceForType */
+            public Goods m2837getDefaultInstanceForType() {
                 return Goods.getDefaultInstance();
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
             public Descriptors.Descriptor getDescriptorForType() {
                 return LiveConstants.internal_static_cn_irisgw_live_GoodsLuckBag_Goods_descriptor;
             }
@@ -2370,12 +2367,10 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
                 return (ByteString) obj;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder
             public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
                 return LiveConstants.internal_static_cn_irisgw_live_GoodsLuckBag_Goods_fieldAccessorTable.ensureFieldAccessorsInitialized(Goods.class, Builder.class);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
             public final boolean isInitialized() {
                 return true;
             }
@@ -2430,18 +2425,18 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
                 if (goods.getCount() != 0) {
                     setCount(goods.getCount());
                 }
-                mergeUnknownFields(goods.unknownFields);
+                m2846mergeUnknownFields(goods.unknownFields);
                 onChanged();
                 return this;
             }
 
             /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+            /* renamed from: mergeFrom */
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
                 To view partially-correct code enable 'Show inconsistent code' option in preferences
             */
-            public cn.irisgw.live.GoodsLuckBag.Goods.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+            public cn.irisgw.live.GoodsLuckBag.Goods.Builder m2843mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
                 /*
                     r4 = this;
                     r0 = 0
@@ -2486,11 +2481,11 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
                     r0 = r6
                     throw r0
                 */
-                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.GoodsLuckBag.Goods.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.GoodsLuckBag$Goods$Builder");
+                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.GoodsLuckBag.Goods.Builder.m2843mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.GoodsLuckBag$Goods$Builder");
             }
 
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder mergeFrom(Message message) {
+            /* renamed from: mergeFrom */
+            public Builder m2842mergeFrom(Message message) {
                 if (message instanceof Goods) {
                     return mergeFrom((Goods) message);
                 }
@@ -2498,8 +2493,8 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: mergeUnknownFields */
+            public final Builder m2846mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.mergeUnknownFields(unknownFieldSet);
             }
 
@@ -2509,8 +2504,8 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: setField */
+            public Builder m2848setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.setField(fieldDescriptor, obj);
             }
 
@@ -2639,8 +2634,8 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+            /* renamed from: setRepeatedField */
+            public Builder m2850setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
                 return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
             }
 
@@ -2682,8 +2677,8 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
                 throw null;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: setUnknownFields */
+            public final Builder m2852setUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.setUnknownFields(unknownFieldSet);
             }
         }
@@ -2786,66 +2781,65 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
         }
 
         public static Builder newBuilder() {
-            return DEFAULT_INSTANCE.toBuilder();
+            return DEFAULT_INSTANCE.m2813toBuilder();
         }
 
         public static Builder newBuilder(Goods goods) {
-            return DEFAULT_INSTANCE.toBuilder().mergeFrom(goods);
+            return DEFAULT_INSTANCE.m2813toBuilder().mergeFrom(goods);
         }
 
         public static Goods parseDelimitedFrom(InputStream inputStream) throws IOException {
-            return (Goods) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
         }
 
         public static Goods parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (Goods) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static Goods parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString);
+            return (Goods) PARSER.parseFrom(byteString);
         }
 
         public static Goods parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString, extensionRegistryLite);
+            return (Goods) PARSER.parseFrom(byteString, extensionRegistryLite);
         }
 
         public static Goods parseFrom(CodedInputStream codedInputStream) throws IOException {
-            return (Goods) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
         }
 
         public static Goods parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (Goods) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
         }
 
         public static Goods parseFrom(InputStream inputStream) throws IOException {
-            return (Goods) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
         }
 
         public static Goods parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (Goods) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static Goods parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer);
+            return (Goods) PARSER.parseFrom(byteBuffer);
         }
 
         public static Goods parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+            return (Goods) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
         }
 
         public static Goods parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr);
+            return (Goods) PARSER.parseFrom(bArr);
         }
 
         public static Goods parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr, extensionRegistryLite);
+            return (Goods) PARSER.parseFrom(bArr, extensionRegistryLite);
         }
 
         public static Parser<Goods> parser() {
             return PARSER;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public boolean equals(Object obj) {
             if (obj == this) {
                 return true;
@@ -2862,8 +2856,8 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
             return this.count_;
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public Goods getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public Goods m2808getDefaultInstanceForType() {
             return DEFAULT_INSTANCE;
         }
 
@@ -3002,7 +2996,6 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
             return this.isVibrate_;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
         public Parser<Goods> getParserForType() {
             return PARSER;
         }
@@ -3029,7 +3022,6 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public int getSerializedSize() {
             int i = this.memoizedSize;
             if (i != -1) {
@@ -3120,12 +3112,10 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
         public final UnknownFieldSet getUnknownFields() {
             return this.unknownFields;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public int hashCode() {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
@@ -3135,12 +3125,10 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
             return hashCode;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_GoodsLuckBag_Goods_fieldAccessorTable.ensureFieldAccessorsInitialized(Goods.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte b = this.memoizedIsInitialized;
             if (b == 1) {
@@ -3153,28 +3141,26 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
             return true;
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder newBuilderForType() {
+        /* renamed from: newBuilderForType */
+        public Builder m2811newBuilderForType() {
             return newBuilder();
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.google.protobuf.GeneratedMessageV3
-        public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+        /* renamed from: newBuilderForType */
+        public Builder m2810newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
             return new Builder(builderParent);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
             return new Goods();
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder toBuilder() {
+        /* renamed from: toBuilder */
+        public Builder m2813toBuilder() {
             return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
             if (!getGiftPicUrlBytes().isEmpty()) {
                 GeneratedMessageV3.writeString(codedOutputStream, 1, this.giftPicUrl_);
@@ -3276,8 +3262,8 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
         private byte memoizedIsInitialized;
         private static final lantern_resource DEFAULT_INSTANCE = new lantern_resource();
         private static final Parser<lantern_resource> PARSER = new AbstractParser<lantern_resource>() { // from class: cn.irisgw.live.GoodsLuckBag.lantern_resource.1
-            @Override // com.google.protobuf.Parser
-            public lantern_resource parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+            /* renamed from: parsePartialFrom */
+            public lantern_resource m2861parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
                 return new lantern_resource(codedInputStream, extensionRegistryLite);
             }
         };
@@ -3305,37 +3291,37 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
                 boolean unused = lantern_resource.alwaysUseFieldBuilders;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: addRepeatedField */
+            public Builder m2863addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.addRepeatedField(fieldDescriptor, obj);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public lantern_resource build() {
-                lantern_resource buildPartial = buildPartial();
-                if (buildPartial.isInitialized()) {
-                    return buildPartial;
+            /* renamed from: build */
+            public lantern_resource m2865build() {
+                lantern_resource m2867buildPartial = m2867buildPartial();
+                if (m2867buildPartial.isInitialized()) {
+                    return m2867buildPartial;
                 }
-                throw newUninitializedMessageException((Message) buildPartial);
+                throw newUninitializedMessageException(m2867buildPartial);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public lantern_resource buildPartial() {
+            /* renamed from: buildPartial */
+            public lantern_resource m2867buildPartial() {
                 lantern_resource lantern_resourceVar = new lantern_resource(this);
                 lantern_resourceVar.img_ = this.img_;
                 onBuilt();
                 return lantern_resourceVar;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public Builder clear() {
+            /* renamed from: clear */
+            public Builder m2871clear() {
                 super.clear();
                 this.img_ = "";
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+            /* renamed from: clearField */
+            public Builder m2873clearField(Descriptors.FieldDescriptor fieldDescriptor) {
                 return (Builder) super.clearField(fieldDescriptor);
             }
 
@@ -3345,23 +3331,21 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+            /* renamed from: clearOneof */
+            public Builder m2876clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
                 return (Builder) super.clearOneof(oneofDescriptor);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder m2882clone() {
+                return (Builder) super.clone();
             }
 
-            @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-            public lantern_resource getDefaultInstanceForType() {
+            /* renamed from: getDefaultInstanceForType */
+            public lantern_resource m2884getDefaultInstanceForType() {
                 return lantern_resource.getDefaultInstance();
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
             public Descriptors.Descriptor getDescriptorForType() {
                 return LiveConstants.internal_static_cn_irisgw_live_GoodsLuckBag_lantern_resource_descriptor;
             }
@@ -3388,12 +3372,10 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
                 return (ByteString) obj;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder
             public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
                 return LiveConstants.internal_static_cn_irisgw_live_GoodsLuckBag_lantern_resource_fieldAccessorTable.ensureFieldAccessorsInitialized(lantern_resource.class, Builder.class);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
             public final boolean isInitialized() {
                 return true;
             }
@@ -3406,18 +3388,18 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
                     this.img_ = lantern_resourceVar.img_;
                     onChanged();
                 }
-                mergeUnknownFields(lantern_resourceVar.unknownFields);
+                m2893mergeUnknownFields(lantern_resourceVar.unknownFields);
                 onChanged();
                 return this;
             }
 
             /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+            /* renamed from: mergeFrom */
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
                 To view partially-correct code enable 'Show inconsistent code' option in preferences
             */
-            public cn.irisgw.live.GoodsLuckBag.lantern_resource.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+            public cn.irisgw.live.GoodsLuckBag.lantern_resource.Builder m2890mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
                 /*
                     r4 = this;
                     r0 = 0
@@ -3462,11 +3444,11 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
                     r0 = r6
                     throw r0
                 */
-                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.GoodsLuckBag.lantern_resource.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.GoodsLuckBag$lantern_resource$Builder");
+                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.GoodsLuckBag.lantern_resource.Builder.m2890mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.GoodsLuckBag$lantern_resource$Builder");
             }
 
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder mergeFrom(Message message) {
+            /* renamed from: mergeFrom */
+            public Builder m2889mergeFrom(Message message) {
                 if (message instanceof lantern_resource) {
                     return mergeFrom((lantern_resource) message);
                 }
@@ -3474,13 +3456,13 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: mergeUnknownFields */
+            public final Builder m2893mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.mergeUnknownFields(unknownFieldSet);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: setField */
+            public Builder m2895setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.setField(fieldDescriptor, obj);
             }
 
@@ -3503,13 +3485,13 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
                 throw null;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+            /* renamed from: setRepeatedField */
+            public Builder m2897setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
                 return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: setUnknownFields */
+            public final Builder m2899setUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.setUnknownFields(unknownFieldSet);
             }
         }
@@ -3537,10 +3519,10 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
                             }
                         }
                         z = true;
-                    } catch (InvalidProtocolBufferException e) {
-                        throw e.setUnfinishedMessage(this);
-                    } catch (IOException e2) {
-                        throw new InvalidProtocolBufferException(e2).setUnfinishedMessage(this);
+                    } catch (IOException e) {
+                        throw new InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+                    } catch (InvalidProtocolBufferException e2) {
+                        throw e2.setUnfinishedMessage(this);
                     }
                 } finally {
                     this.unknownFields = newBuilder.build();
@@ -3563,66 +3545,65 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
         }
 
         public static Builder newBuilder() {
-            return DEFAULT_INSTANCE.toBuilder();
+            return DEFAULT_INSTANCE.m2860toBuilder();
         }
 
         public static Builder newBuilder(lantern_resource lantern_resourceVar) {
-            return DEFAULT_INSTANCE.toBuilder().mergeFrom(lantern_resourceVar);
+            return DEFAULT_INSTANCE.m2860toBuilder().mergeFrom(lantern_resourceVar);
         }
 
         public static lantern_resource parseDelimitedFrom(InputStream inputStream) throws IOException {
-            return (lantern_resource) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
         }
 
         public static lantern_resource parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (lantern_resource) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static lantern_resource parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString);
+            return (lantern_resource) PARSER.parseFrom(byteString);
         }
 
         public static lantern_resource parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString, extensionRegistryLite);
+            return (lantern_resource) PARSER.parseFrom(byteString, extensionRegistryLite);
         }
 
         public static lantern_resource parseFrom(CodedInputStream codedInputStream) throws IOException {
-            return (lantern_resource) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
         }
 
         public static lantern_resource parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (lantern_resource) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
         }
 
         public static lantern_resource parseFrom(InputStream inputStream) throws IOException {
-            return (lantern_resource) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
         }
 
         public static lantern_resource parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (lantern_resource) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static lantern_resource parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer);
+            return (lantern_resource) PARSER.parseFrom(byteBuffer);
         }
 
         public static lantern_resource parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+            return (lantern_resource) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
         }
 
         public static lantern_resource parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr);
+            return (lantern_resource) PARSER.parseFrom(bArr);
         }
 
         public static lantern_resource parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr, extensionRegistryLite);
+            return (lantern_resource) PARSER.parseFrom(bArr, extensionRegistryLite);
         }
 
         public static Parser<lantern_resource> parser() {
             return PARSER;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public boolean equals(Object obj) {
             if (obj == this) {
                 return true;
@@ -3634,8 +3615,8 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
             return super.equals(obj);
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public lantern_resource getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public lantern_resource m2855getDefaultInstanceForType() {
             return DEFAULT_INSTANCE;
         }
 
@@ -3661,12 +3642,10 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
         public Parser<lantern_resource> getParserForType() {
             return PARSER;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public int getSerializedSize() {
             int i = this.memoizedSize;
             if (i != -1) {
@@ -3681,12 +3660,10 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
             return serializedSize;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
         public final UnknownFieldSet getUnknownFields() {
             return this.unknownFields;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public int hashCode() {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
@@ -3696,12 +3673,10 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
             return hashCode;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_GoodsLuckBag_lantern_resource_fieldAccessorTable.ensureFieldAccessorsInitialized(lantern_resource.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte b = this.memoizedIsInitialized;
             if (b == 1) {
@@ -3714,28 +3689,26 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
             return true;
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder newBuilderForType() {
+        /* renamed from: newBuilderForType */
+        public Builder m2858newBuilderForType() {
             return newBuilder();
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.google.protobuf.GeneratedMessageV3
-        public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+        /* renamed from: newBuilderForType */
+        public Builder m2857newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
             return new Builder(builderParent);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
             return new lantern_resource();
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder toBuilder() {
+        /* renamed from: toBuilder */
+        public Builder m2860toBuilder() {
             return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
             if (!getImgBytes().isEmpty()) {
                 GeneratedMessageV3.writeString(codedOutputStream, 1, this.img_);
@@ -3860,7 +3833,7 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
                                 this.chatFrameFrameColor_ = new LazyStringArrayList();
                                 z5 = z2 | true;
                             }
-                            this.chatFrameFrameColor_.add((LazyStringList) readStringRequireUtf8);
+                            this.chatFrameFrameColor_.add(readStringRequireUtf8);
                             z2 = z5;
                             continue;
                         case 178:
@@ -3870,7 +3843,7 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
                                 this.chatFrameBorderColor_ = new LazyStringArrayList();
                                 z6 = z2 | true;
                             }
-                            this.chatFrameBorderColor_.add((LazyStringList) readStringRequireUtf82);
+                            this.chatFrameBorderColor_.add(readStringRequireUtf82);
                             z2 = z6;
                             continue;
                         case 186:
@@ -3895,7 +3868,7 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
                                 this.bgColor_ = new LazyStringArrayList();
                                 z7 = z2 | true;
                             }
-                            this.bgColor_.add((LazyStringList) readStringRequireUtf83);
+                            this.bgColor_.add(readStringRequireUtf83);
                             z2 = z7;
                             continue;
                         case 234:
@@ -3921,10 +3894,10 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
                             }
                     }
                     z = true;
-                } catch (InvalidProtocolBufferException e) {
-                    throw e.setUnfinishedMessage(this);
-                } catch (IOException e2) {
-                    throw new InvalidProtocolBufferException(e2).setUnfinishedMessage(this);
+                } catch (IOException e) {
+                    throw new InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+                } catch (InvalidProtocolBufferException e2) {
+                    throw e2.setUnfinishedMessage(this);
                 }
             } catch (Throwable th) {
                 if (z3 & true) {
@@ -3980,73 +3953,72 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
     }
 
     public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
+        return DEFAULT_INSTANCE.m2766toBuilder();
     }
 
     public static Builder newBuilder(GoodsLuckBag goodsLuckBag) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(goodsLuckBag);
+        return DEFAULT_INSTANCE.m2766toBuilder().mergeFrom(goodsLuckBag);
     }
 
     public static GoodsLuckBag parseDelimitedFrom(InputStream inputStream) throws IOException {
-        return (GoodsLuckBag) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
     }
 
     public static GoodsLuckBag parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (GoodsLuckBag) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static GoodsLuckBag parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString);
+        return (GoodsLuckBag) PARSER.parseFrom(byteString);
     }
 
     public static GoodsLuckBag parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString, extensionRegistryLite);
+        return (GoodsLuckBag) PARSER.parseFrom(byteString, extensionRegistryLite);
     }
 
     public static GoodsLuckBag parseFrom(CodedInputStream codedInputStream) throws IOException {
-        return (GoodsLuckBag) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
     }
 
     public static GoodsLuckBag parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (GoodsLuckBag) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
     }
 
     public static GoodsLuckBag parseFrom(InputStream inputStream) throws IOException {
-        return (GoodsLuckBag) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
     }
 
     public static GoodsLuckBag parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (GoodsLuckBag) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static GoodsLuckBag parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer);
+        return (GoodsLuckBag) PARSER.parseFrom(byteBuffer);
     }
 
     public static GoodsLuckBag parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+        return (GoodsLuckBag) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
     }
 
     public static GoodsLuckBag parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr);
+        return (GoodsLuckBag) PARSER.parseFrom(bArr);
     }
 
     public static GoodsLuckBag parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr, extensionRegistryLite);
+        return (GoodsLuckBag) PARSER.parseFrom(bArr, extensionRegistryLite);
     }
 
     public static Parser<GoodsLuckBag> parser() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
         }
         if (obj instanceof GoodsLuckBag) {
             GoodsLuckBag goodsLuckBag = (GoodsLuckBag) obj;
-            return getGoodsList().equals(goodsLuckBag.getGoodsList()) && getHitCount() == goodsLuckBag.getHitCount() && getHitId() == goodsLuckBag.getHitId() && getHitBatch() == goodsLuckBag.getHitBatch() && getBeansCount() == goodsLuckBag.getBeansCount() && getBeansCurrentCount() == goodsLuckBag.getBeansCurrentCount() && getAnimCode().equals(goodsLuckBag.getAnimCode()) && getTypeName().equals(goodsLuckBag.getTypeName()) && getAnimation() == goodsLuckBag.getAnimation() && getFanClubName().equals(goodsLuckBag.getFanClubName()) && getFanClubLevel() == goodsLuckBag.getFanClubLevel() && getInFanClub() == goodsLuckBag.getInFanClub() && this.fansStatus_ == goodsLuckBag.fansStatus_ && this.liangType_ == goodsLuckBag.liangType_ && getLiangId().equals(goodsLuckBag.getLiangId()) && getRechargeBadge() == goodsLuckBag.getRechargeBadge() && getChatFrame().equals(goodsLuckBag.getChatFrame()) && getChatFrameIcon().equals(goodsLuckBag.getChatFrameIcon()) && getChatFrameColorType() == goodsLuckBag.getChatFrameColorType() && getChatFrameGradientType() == goodsLuckBag.getChatFrameGradientType() && getChatFrameFrameColorList().equals(goodsLuckBag.getChatFrameFrameColorList()) && getChatFrameBorderColorList().equals(goodsLuckBag.getChatFrameBorderColorList()) && getChatBadgeUrl().equals(goodsLuckBag.getChatBadgeUrl()) && getChatBadgeLength() == goodsLuckBag.getChatBadgeLength() && getChatBadgeHeight() == goodsLuckBag.getChatBadgeHeight() && getAvatarFrameUrl().equals(goodsLuckBag.getAvatarFrameUrl()) && getBgImg().equals(goodsLuckBag.getBgImg()) && getBgColorList().equals(goodsLuckBag.getBgColorList()) && getLanternImageList().equals(goodsLuckBag.getLanternImageList()) && getLanternId() == goodsLuckBag.getLanternId() && getLanternPlayTimes() == goodsLuckBag.getLanternPlayTimes() && this.unknownFields.equals(goodsLuckBag.unknownFields);
+            return getGoodsList().equals(goodsLuckBag.getGoodsList()) && getHitCount() == goodsLuckBag.getHitCount() && getHitId() == goodsLuckBag.getHitId() && getHitBatch() == goodsLuckBag.getHitBatch() && getBeansCount() == goodsLuckBag.getBeansCount() && getBeansCurrentCount() == goodsLuckBag.getBeansCurrentCount() && getAnimCode().equals(goodsLuckBag.getAnimCode()) && getTypeName().equals(goodsLuckBag.getTypeName()) && getAnimation() == goodsLuckBag.getAnimation() && getFanClubName().equals(goodsLuckBag.getFanClubName()) && getFanClubLevel() == goodsLuckBag.getFanClubLevel() && getInFanClub() == goodsLuckBag.getInFanClub() && this.fansStatus_ == goodsLuckBag.fansStatus_ && this.liangType_ == goodsLuckBag.liangType_ && getLiangId().equals(goodsLuckBag.getLiangId()) && getRechargeBadge() == goodsLuckBag.getRechargeBadge() && getChatFrame().equals(goodsLuckBag.getChatFrame()) && getChatFrameIcon().equals(goodsLuckBag.getChatFrameIcon()) && getChatFrameColorType() == goodsLuckBag.getChatFrameColorType() && getChatFrameGradientType() == goodsLuckBag.getChatFrameGradientType() && mo2759getChatFrameFrameColorList().equals(goodsLuckBag.mo2759getChatFrameFrameColorList()) && mo2758getChatFrameBorderColorList().equals(goodsLuckBag.mo2758getChatFrameBorderColorList()) && getChatBadgeUrl().equals(goodsLuckBag.getChatBadgeUrl()) && getChatBadgeLength() == goodsLuckBag.getChatBadgeLength() && getChatBadgeHeight() == goodsLuckBag.getChatBadgeHeight() && getAvatarFrameUrl().equals(goodsLuckBag.getAvatarFrameUrl()) && getBgImg().equals(goodsLuckBag.getBgImg()) && mo2757getBgColorList().equals(goodsLuckBag.mo2757getBgColorList()) && getLanternImageList().equals(goodsLuckBag.getLanternImageList()) && getLanternId() == goodsLuckBag.getLanternId() && getLanternPlayTimes() == goodsLuckBag.getLanternPlayTimes() && this.unknownFields.equals(goodsLuckBag.unknownFields);
         }
         return super.equals(obj);
     }
@@ -4112,7 +4084,7 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
 
     @Override // cn.irisgw.live.GoodsLuckBagOrBuilder
     public String getBgColor(int i) {
-        return this.bgColor_.get(i);
+        return (String) this.bgColor_.get(i);
     }
 
     @Override // cn.irisgw.live.GoodsLuckBagOrBuilder
@@ -4126,7 +4098,8 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
     }
 
     @Override // cn.irisgw.live.GoodsLuckBagOrBuilder
-    public ProtocolStringList getBgColorList() {
+    /* renamed from: getBgColorList */
+    public ProtocolStringList mo2757getBgColorList() {
         return this.bgColor_;
     }
 
@@ -4197,7 +4170,7 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
 
     @Override // cn.irisgw.live.GoodsLuckBagOrBuilder
     public String getChatFrameBorderColor(int i) {
-        return this.chatFrameBorderColor_.get(i);
+        return (String) this.chatFrameBorderColor_.get(i);
     }
 
     @Override // cn.irisgw.live.GoodsLuckBagOrBuilder
@@ -4211,7 +4184,8 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
     }
 
     @Override // cn.irisgw.live.GoodsLuckBagOrBuilder
-    public ProtocolStringList getChatFrameBorderColorList() {
+    /* renamed from: getChatFrameBorderColorList */
+    public ProtocolStringList mo2758getChatFrameBorderColorList() {
         return this.chatFrameBorderColor_;
     }
 
@@ -4233,7 +4207,7 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
 
     @Override // cn.irisgw.live.GoodsLuckBagOrBuilder
     public String getChatFrameFrameColor(int i) {
-        return this.chatFrameFrameColor_.get(i);
+        return (String) this.chatFrameFrameColor_.get(i);
     }
 
     @Override // cn.irisgw.live.GoodsLuckBagOrBuilder
@@ -4247,7 +4221,8 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
     }
 
     @Override // cn.irisgw.live.GoodsLuckBagOrBuilder
-    public ProtocolStringList getChatFrameFrameColorList() {
+    /* renamed from: getChatFrameFrameColorList */
+    public ProtocolStringList mo2759getChatFrameFrameColorList() {
         return this.chatFrameFrameColor_;
     }
 
@@ -4278,8 +4253,8 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
         return (ByteString) obj;
     }
 
-    @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-    public GoodsLuckBag getDefaultInstanceForType() {
+    /* renamed from: getDefaultInstanceForType */
+    public GoodsLuckBag m2761getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
     }
 
@@ -4442,7 +4417,6 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
         return this.liangType_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
     public Parser<GoodsLuckBag> getParserForType() {
         return PARSER;
     }
@@ -4452,7 +4426,6 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
         return this.rechargeBadge_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public int getSerializedSize() {
         int i = this.memoizedSize;
         if (i != -1) {
@@ -4469,7 +4442,7 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
         }
         long j = this.hitId_;
         int i6 = i5;
-        if (j != 0) {
+        if (j != serialVersionUID) {
             i6 = i5 + CodedOutputStream.computeUInt64Size(3, j);
         }
         int i7 = this.hitBatch_;
@@ -4479,12 +4452,12 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
         }
         long j2 = this.beansCount_;
         int i9 = i8;
-        if (j2 != 0) {
+        if (j2 != serialVersionUID) {
             i9 = i8 + CodedOutputStream.computeUInt64Size(5, j2);
         }
         long j3 = this.beansCurrentCount_;
         int i10 = i9;
-        if (j3 != 0) {
+        if (j3 != serialVersionUID) {
             i10 = i9 + CodedOutputStream.computeUInt64Size(6, j3);
         }
         int i11 = i10;
@@ -4553,12 +4526,12 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
         for (int i31 = 0; i31 < this.chatFrameFrameColor_.size(); i31++) {
             i30 += computeStringSizeNoTag(this.chatFrameFrameColor_.getRaw(i31));
         }
-        int size = getChatFrameFrameColorList().size();
+        int size = mo2759getChatFrameFrameColorList().size();
         int i32 = 0;
         for (int i33 = 0; i33 < this.chatFrameBorderColor_.size(); i33++) {
             i32 += computeStringSizeNoTag(this.chatFrameBorderColor_.getRaw(i33));
         }
-        int size2 = i29 + i30 + (size * 2) + i32 + (getChatFrameBorderColorList().size() * 2);
+        int size2 = i29 + i30 + (size * 2) + i32 + (mo2758getChatFrameBorderColorList().size() * 2);
         int i34 = size2;
         if (!getChatBadgeUrlBytes().isEmpty()) {
             i34 = size2 + GeneratedMessageV3.computeStringSize(23, this.chatBadgeUrl_);
@@ -4585,7 +4558,7 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
         for (int i42 = 0; i42 < this.bgColor_.size(); i42++) {
             i41 += computeStringSizeNoTag(this.bgColor_.getRaw(i42));
         }
-        int size3 = i40 + i41 + (getBgColorList().size() * 2);
+        int size3 = i40 + i41 + (mo2757getBgColorList().size() * 2);
         int i43 = 0;
         while (true) {
             int i44 = i43;
@@ -4632,12 +4605,10 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
         return (ByteString) obj;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
     public final UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public int hashCode() {
         if (this.memoizedHashCode != 0) {
             return this.memoizedHashCode;
@@ -4650,16 +4621,16 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
         int hitCount = (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((i * 37) + 2) * 53) + getHitCount()) * 37) + 3) * 53) + Internal.hashLong(getHitId())) * 37) + 4) * 53) + getHitBatch()) * 37) + 5) * 53) + Internal.hashLong(getBeansCount())) * 37) + 6) * 53) + Internal.hashLong(getBeansCurrentCount())) * 37) + 7) * 53) + getAnimCode().hashCode()) * 37) + 8) * 53) + getTypeName().hashCode()) * 37) + 9) * 53) + getAnimation()) * 37) + 10) * 53) + getFanClubName().hashCode()) * 37) + 11) * 53) + getFanClubLevel()) * 37) + 12) * 53) + Internal.hashBoolean(getInFanClub())) * 37) + 13) * 53) + this.fansStatus_) * 37) + 14) * 53) + this.liangType_) * 37) + 15) * 53) + getLiangId().hashCode()) * 37) + 16) * 53) + getRechargeBadge()) * 37) + 17) * 53) + getChatFrame().hashCode()) * 37) + 18) * 53) + getChatFrameIcon().hashCode()) * 37) + 19) * 53) + getChatFrameColorType()) * 37) + 20) * 53) + getChatFrameGradientType();
         int i2 = hitCount;
         if (getChatFrameFrameColorCount() > 0) {
-            i2 = (((hitCount * 37) + 21) * 53) + getChatFrameFrameColorList().hashCode();
+            i2 = (((hitCount * 37) + 21) * 53) + mo2759getChatFrameFrameColorList().hashCode();
         }
         int i3 = i2;
         if (getChatFrameBorderColorCount() > 0) {
-            i3 = (((i2 * 37) + 22) * 53) + getChatFrameBorderColorList().hashCode();
+            i3 = (((i2 * 37) + 22) * 53) + mo2758getChatFrameBorderColorList().hashCode();
         }
         int hashCode2 = (((((((((((((((((((i3 * 37) + 23) * 53) + getChatBadgeUrl().hashCode()) * 37) + 24) * 53) + getChatBadgeLength()) * 37) + 25) * 53) + getChatBadgeHeight()) * 37) + 26) * 53) + getAvatarFrameUrl().hashCode()) * 37) + 27) * 53) + getBgImg().hashCode();
         int i4 = hashCode2;
         if (getBgColorCount() > 0) {
-            i4 = (((hashCode2 * 37) + 28) * 53) + getBgColorList().hashCode();
+            i4 = (((hashCode2 * 37) + 28) * 53) + mo2757getBgColorList().hashCode();
         }
         int i5 = i4;
         if (getLanternImageCount() > 0) {
@@ -4670,12 +4641,10 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
         return lanternId;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
         return LiveConstants.internal_static_cn_irisgw_live_GoodsLuckBag_fieldAccessorTable.ensureFieldAccessorsInitialized(GoodsLuckBag.class, Builder.class);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
     public final boolean isInitialized() {
         byte b = this.memoizedIsInitialized;
         if (b == 1) {
@@ -4688,28 +4657,26 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
         return true;
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder newBuilderForType() {
+    /* renamed from: newBuilderForType */
+    public Builder m2764newBuilderForType() {
         return newBuilder();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.protobuf.GeneratedMessageV3
-    public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+    /* renamed from: newBuilderForType */
+    public Builder m2763newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
         return new Builder(builderParent);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
         return new GoodsLuckBag();
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder toBuilder() {
+    /* renamed from: toBuilder */
+    public Builder m2766toBuilder() {
         return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
         int i;
         int i2 = 0;
@@ -4726,7 +4693,7 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
             codedOutputStream.writeUInt32(2, i4);
         }
         long j = this.hitId_;
-        if (j != 0) {
+        if (j != serialVersionUID) {
             codedOutputStream.writeUInt64(3, j);
         }
         int i5 = this.hitBatch_;
@@ -4734,11 +4701,11 @@ public final class GoodsLuckBag extends GeneratedMessageV3 implements GoodsLuckB
             codedOutputStream.writeUInt32(4, i5);
         }
         long j2 = this.beansCount_;
-        if (j2 != 0) {
+        if (j2 != serialVersionUID) {
             codedOutputStream.writeUInt64(5, j2);
         }
         long j3 = this.beansCurrentCount_;
-        if (j3 != 0) {
+        if (j3 != serialVersionUID) {
             codedOutputStream.writeUInt64(6, j3);
         }
         if (!getAnimCodeBytes().isEmpty()) {

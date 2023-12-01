@@ -27,13 +27,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYHomeTabView.class */
 public final class YYHomeTabView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final List<HomeTopicModel> f18229a;
+    private final List<HomeTopicModel> a;
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f18230c;
+    private int c;
     private int d;
     private RecyclerView e;
     private HomeTabAdapter f;
@@ -42,24 +38,22 @@ public final class YYHomeTabView extends FrameLayout {
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYHomeTabView$HomeTabAdapter.class */
     public static final class HomeTabAdapter extends CommonRecycleAdapter<HomeTopicModel> {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final YYHomeTabView f18232a;
+        private final YYHomeTabView a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public HomeTabAdapter(Context context, YYHomeTabView tabView) {
             super(context);
             Intrinsics.e(context, "context");
             Intrinsics.e(tabView, "tabView");
-            this.f18232a = tabView;
+            this.a = tabView;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
         public static final void a(HomeTabAdapter this$0, int i, View view) {
             ViewPager mPage;
             Intrinsics.e(this$0, "this$0");
-            this$0.f18232a.setToolBtnSelect(i);
-            if (i >= this$0.dataList.size() || (mPage = this$0.f18232a.getMPage()) == null) {
+            this$0.a.setToolBtnSelect(i);
+            if (i >= this$0.dataList.size() || (mPage = this$0.a.getMPage()) == null) {
                 return;
             }
             mPage.setCurrentItem(i);
@@ -71,43 +65,43 @@ public final class YYHomeTabView extends FrameLayout {
         public void onBindViewHolderData(HomeTopicModel model, final int i, CommonRecycleAdapter.CommonAdapterHolder viewHolder) {
             Intrinsics.e(model, "model");
             Intrinsics.e(viewHolder, "viewHolder");
-            ItemYyHomeTabViewBinding a2 = ItemYyHomeTabViewBinding.a(viewHolder.a());
-            Intrinsics.c(a2, "bind(viewHolder.convertView)");
+            ItemYyHomeTabViewBinding a = ItemYyHomeTabViewBinding.a(viewHolder.a());
+            Intrinsics.c(a, "bind(viewHolder.convertView)");
             if (model.getLabel_id() == -10) {
-                a2.f16738c.setVisibility(8);
-                a2.f16737a.setVisibility(8);
-                a2.b.setVisibility(8);
+                a.c.setVisibility(8);
+                a.a.setVisibility(8);
+                a.b.setVisibility(8);
                 return;
             }
             if (StringUtils.b(model.getPendant_after())) {
-                a2.f16737a.setVisibility(8);
-                a2.f16738c.setVisibility(0);
+                a.a.setVisibility(8);
+                a.c.setVisibility(0);
             } else {
-                a2.f16737a.setVisibility(0);
-                a2.f16738c.setVisibility(8);
+                a.a.setVisibility(0);
+                a.c.setVisibility(8);
             }
-            if (this.f18232a.getCurItemIndex() == i) {
-                ViewGroup.LayoutParams layoutParams = a2.f16737a.getLayoutParams();
-                layoutParams.height = a2.getRoot().getResources().getDimensionPixelOffset(R.dimen.dp_20);
-                layoutParams.width = a2.getRoot().getResources().getDimensionPixelOffset(R.dimen.dp_91);
-                a2.f16738c.setTextSize(17.0f);
+            if (this.a.getCurItemIndex() == i) {
+                ViewGroup.LayoutParams layoutParams = a.a.getLayoutParams();
+                layoutParams.height = a.getRoot().getResources().getDimensionPixelOffset(R.dimen.dp_20);
+                layoutParams.width = a.getRoot().getResources().getDimensionPixelOffset(R.dimen.dp_91);
+                a.c.setTextSize(17.0f);
                 if (!StringUtils.b(model.getPendant_after())) {
-                    ImageLoader.a((IRequestHost) null, model.getPendant_after()).e(model.hashCode()).g(-1).a(a2.f16737a);
+                    ImageLoader.a((IRequestHost) null, model.getPendant_after()).e(model.hashCode()).g(-1).a(a.a);
                 }
-                a2.b.setVisibility(0);
-                a2.f16738c.setTextColor(BluedSkinUtils.a(this.mContext, R.color.syc_h));
+                a.b.setVisibility(0);
+                a.c.setTextColor(BluedSkinUtils.a(this.mContext, R.color.syc_h));
             } else {
-                ViewGroup.LayoutParams layoutParams2 = a2.f16737a.getLayoutParams();
-                layoutParams2.height = a2.getRoot().getResources().getDimensionPixelOffset(R.dimen.dp_16);
-                layoutParams2.width = a2.getRoot().getResources().getDimensionPixelOffset(R.dimen.dp_74);
-                a2.f16738c.setTextSize(14.0f);
-                a2.f16738c.setTextColor(BluedSkinUtils.a(this.mContext, R.color.syc_999999));
+                ViewGroup.LayoutParams layoutParams2 = a.a.getLayoutParams();
+                layoutParams2.height = a.getRoot().getResources().getDimensionPixelOffset(R.dimen.dp_16);
+                layoutParams2.width = a.getRoot().getResources().getDimensionPixelOffset(R.dimen.dp_74);
+                a.c.setTextSize(14.0f);
+                a.c.setTextColor(BluedSkinUtils.a(this.mContext, R.color.syc_999999));
                 if (!StringUtils.b(model.getPendant_after())) {
-                    ImageLoader.a((IRequestHost) null, model.getPendant_before()).a(a2.f16737a);
+                    ImageLoader.a((IRequestHost) null, model.getPendant_before()).a(a.a);
                 }
-                a2.b.setVisibility(8);
+                a.b.setVisibility(8);
             }
-            a2.f16738c.setText(model.getLabel_name());
+            a.c.setText(model.getLabel_name());
             viewHolder.a().setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYHomeTabView$HomeTabAdapter$vPNRh52Md-luN_MNdW7YV-fXd1Y
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -138,8 +132,8 @@ public final class YYHomeTabView extends FrameLayout {
     public YYHomeTabView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         Intrinsics.e(context, "context");
-        this.f18229a = new ArrayList();
-        this.e = (RecyclerView) LayoutInflater.from(getContext()).inflate(R.layout.common_tab_view, this).findViewById(R.id.common_tab_view_id);
+        this.a = new ArrayList();
+        this.e = LayoutInflater.from(getContext()).inflate(R.layout.common_tab_view, this).findViewById(R.id.common_tab_view_id);
         this.f = a();
         RecyclerView recyclerView = this.e;
         if (recyclerView != null) {
@@ -148,7 +142,6 @@ public final class YYHomeTabView extends FrameLayout {
         RecyclerView recyclerView2 = this.e;
         if (recyclerView2 != null) {
             recyclerView2.addItemDecoration(new RecyclerView.ItemDecoration() { // from class: com.blued.android.module.yy_china.view.YYHomeTabView.1
-                @Override // androidx.recyclerview.widget.RecyclerView.ItemDecoration
                 public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
                     Intrinsics.e(outRect, "outRect");
                     Intrinsics.e(view, "view");
@@ -189,11 +182,11 @@ public final class YYHomeTabView extends FrameLayout {
     }
 
     public final List<HomeTopicModel> getDataList() {
-        return this.f18229a;
+        return this.a;
     }
 
     public final int getLeftPadding() {
-        return this.f18230c;
+        return this.c;
     }
 
     public final HomeTabAdapter getMAdapter() {
@@ -220,20 +213,20 @@ public final class YYHomeTabView extends FrameLayout {
         if (list == null) {
             return;
         }
-        this.f18229a.clear();
-        this.f18229a.addAll(list);
+        this.a.clear();
+        this.a.addAll(list);
         HomeTopicModel homeTopicModel = new HomeTopicModel();
         homeTopicModel.setLabel_id(-10);
-        this.f18229a.add(homeTopicModel);
+        this.a.add(homeTopicModel);
         HomeTabAdapter homeTabAdapter = this.f;
         if (homeTabAdapter == null) {
             return;
         }
-        homeTabAdapter.setDataAndNotify(this.f18229a);
+        homeTabAdapter.setDataAndNotify(this.a);
     }
 
     public final void setLeftPadding(int i) {
-        this.f18230c = i;
+        this.c = i;
     }
 
     public final void setMAdapter(HomeTabAdapter homeTabAdapter) {
@@ -253,12 +246,12 @@ public final class YYHomeTabView extends FrameLayout {
     }
 
     public final void setToolBtnSelect(int i) {
-        if (i < this.f18229a.size()) {
+        if (i < this.a.size()) {
             this.b = i;
-        } else if (this.b >= this.f18229a.size()) {
+        } else if (this.b >= this.a.size()) {
             this.b = 0;
         }
-        if (i == this.f18229a.size() - 2) {
+        if (i == this.a.size() - 2) {
             RecyclerView recyclerView = this.e;
             if (recyclerView != null) {
                 recyclerView.smoothScrollToPosition(i + 2);

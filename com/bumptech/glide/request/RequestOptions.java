@@ -9,7 +9,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 public class RequestOptions extends BaseRequestOptions<RequestOptions> {
 
     /* renamed from: a  reason: collision with root package name */
-    private static RequestOptions f21047a;
+    private static RequestOptions f7441a;
     private static RequestOptions b;
 
     public static RequestOptions c(Key key) {
@@ -30,10 +30,10 @@ public class RequestOptions extends BaseRequestOptions<RequestOptions> {
 
     public static RequestOptions g(boolean z) {
         if (z) {
-            if (f21047a == null) {
-                f21047a = new RequestOptions().d(true).h();
+            if (f7441a == null) {
+                f7441a = new RequestOptions().d(true).h();
             }
-            return f21047a;
+            return f7441a;
         }
         if (b == null) {
             b = new RequestOptions().d(false).h();

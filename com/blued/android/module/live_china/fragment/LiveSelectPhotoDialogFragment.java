@@ -39,12 +39,10 @@ public class LiveSelectPhotoDialogFragment extends LiveBaseDialogFragment<LiveMa
     @Override // com.blued.android.module.live_china.fragment.LiveBaseDialogFragment
     public FragmentPagerAdapter h() {
         return new FragmentPagerAdapter(getChildFragmentManager()) { // from class: com.blued.android.module.live_china.fragment.LiveSelectPhotoDialogFragment.1
-            @Override // androidx.viewpager.widget.PagerAdapter
             public int getCount() {
                 return 1;
             }
 
-            @Override // androidx.fragment.app.FragmentPagerAdapter
             public Fragment getItem(int i) {
                 return new LiveShowPhotosFragment();
             }

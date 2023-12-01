@@ -9,23 +9,23 @@ import java.util.Arrays;
 public class t8 {
 
     /* renamed from: a  reason: collision with root package name */
-    public int f38021a;
+    public int f24330a;
     public s8 b;
 
     /* renamed from: c  reason: collision with root package name */
-    public s8 f38022c;
+    public s8 f24331c;
     public Interpolator d;
     public ArrayList<s8> e;
     public y8 f;
 
     public t8(s8... s8VarArr) {
-        this.f38021a = s8VarArr.length;
+        this.f24330a = s8VarArr.length;
         ArrayList<s8> arrayList = new ArrayList<>();
         this.e = arrayList;
         arrayList.addAll(Arrays.asList(s8VarArr));
         this.b = this.e.get(0);
-        s8 s8Var = this.e.get(this.f38021a - 1);
-        this.f38022c = s8Var;
+        s8 s8Var = this.e.get(this.f24330a - 1);
+        this.f24331c = s8Var;
         this.d = s8Var.c();
     }
 
@@ -133,14 +133,14 @@ public class t8 {
     }
 
     public Object a(float f) {
-        int i = this.f38021a;
+        int i = this.f24330a;
         if (i == 2) {
             Interpolator interpolator = this.d;
             float f2 = f;
             if (interpolator != null) {
                 f2 = interpolator.getInterpolation(f);
             }
-            return this.f.a(f2, this.b.e(), this.f38022c.e());
+            return this.f.a(f2, this.b.e(), this.f24331c.e());
         }
         int i2 = 1;
         if (f <= 0.0f) {
@@ -154,19 +154,19 @@ public class t8 {
             return this.f.a((f3 - b) / (s8Var.b() - b), this.b.e(), s8Var.e());
         } else if (f >= 1.0f) {
             s8 s8Var2 = this.e.get(i - 2);
-            Interpolator c3 = this.f38022c.c();
+            Interpolator c3 = this.f24331c.c();
             float f4 = f;
             if (c3 != null) {
                 f4 = c3.getInterpolation(f);
             }
             float b2 = s8Var2.b();
-            return this.f.a((f4 - b2) / (this.f38022c.b() - b2), s8Var2.e(), this.f38022c.e());
+            return this.f.a((f4 - b2) / (this.f24331c.b() - b2), s8Var2.e(), this.f24331c.e());
         } else {
             s8 s8Var3 = this.b;
             while (true) {
                 s8 s8Var4 = s8Var3;
-                if (i2 >= this.f38021a) {
-                    return this.f38022c.e();
+                if (i2 >= this.f24330a) {
+                    return this.f24331c.e();
                 }
                 s8 s8Var5 = this.e.get(i2);
                 if (f < s8Var5.b()) {
@@ -193,7 +193,7 @@ public class t8 {
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f38021a) {
+            if (i2 >= this.f24330a) {
                 return str;
             }
             str = str + this.e.get(i2).e() + "  ";

@@ -8,7 +8,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class OneLoginData {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f20560a = "";
+    private String f6954a = "";
     private String b = "";
 
     public final String a() {
@@ -17,7 +17,7 @@ public final class OneLoginData {
 
     public final void a(String str) {
         Intrinsics.e(str, "<set-?>");
-        this.f20560a = str;
+        this.f6954a = str;
     }
 
     public final void b(String str) {

@@ -8,10 +8,10 @@ import java.lang.reflect.Field;
 public final class ac<T> extends IObjectWrapper.Stub {
 
     /* renamed from: a  reason: collision with root package name */
-    private final T f22540a;
+    private final T f8932a;
 
     private ac(T t) {
-        this.f22540a = t;
+        this.f8932a = t;
     }
 
     public static <T> IObjectWrapper a(T t) {
@@ -21,7 +21,7 @@ public final class ac<T> extends IObjectWrapper.Stub {
     public static <T> T a(IObjectWrapper iObjectWrapper) {
         int i;
         if (iObjectWrapper instanceof ac) {
-            return ((ac) iObjectWrapper).f22540a;
+            return ((ac) iObjectWrapper).f8932a;
         }
         IBinder asBinder = iObjectWrapper.asBinder();
         Field[] declaredFields = asBinder.getClass().getDeclaredFields();

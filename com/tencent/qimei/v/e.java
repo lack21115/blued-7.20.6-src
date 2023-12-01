@@ -4,20 +4,20 @@ package com.tencent.qimei.v;
 public class e implements com.tencent.qimei.g.c {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ f f38423a;
+    public final /* synthetic */ f f24732a;
 
     public e(f fVar) {
-        this.f38423a = fVar;
+        this.f24732a = fVar;
     }
 
     @Override // com.tencent.qimei.g.c
     public void a() {
         j jVar;
-        synchronized (this.f38423a) {
-            if (!this.f38423a.a()) {
-                jVar = this.f38423a.d;
+        synchronized (this.f24732a) {
+            if (!this.f24732a.a()) {
+                jVar = this.f24732a.d;
                 if (!jVar.b.get()) {
-                    this.f38423a.b();
+                    this.f24732a.b();
                 }
             }
         }

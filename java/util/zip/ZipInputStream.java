@@ -51,7 +51,7 @@ public class ZipInputStream extends InflaterInputStream implements ZipConstants 
 
     private void readAndVerifyDataDescriptor(int i, int i2) throws IOException {
         if (this.hasDD) {
-            Streams.readFully(this.f42254in, this.hdrBuf, 0, 16);
+            Streams.readFully(this.in, this.hdrBuf, 0, 16);
             int peekInt = Memory.peekInt(this.hdrBuf, 0, ByteOrder.LITTLE_ENDIAN);
             if (peekInt != 134695760) {
                 throw new ZipException(String.format("unknown format (EXTSIG=%x)", Integer.valueOf(peekInt)));
@@ -72,7 +72,7 @@ public class ZipInputStream extends InflaterInputStream implements ZipConstants 
         if (i > this.stringBytesBuf.length) {
             this.stringBytesBuf = new byte[i];
         }
-        Streams.readFully(this.f42254in, this.stringBytesBuf, 0, i);
+        Streams.readFully(this.in, this.stringBytesBuf, 0, i);
         if (i > this.stringCharBuf.length) {
             this.stringCharBuf = new char[i];
         }
@@ -117,7 +117,7 @@ public class ZipInputStream extends InflaterInputStream implements ZipConstants 
         }
         int i3 = this.entryIn - i;
         if (i3 != 0) {
-            ((PushbackInputStream) this.f42254in).unread(this.buf, this.len - i3, i3);
+            ((PushbackInputStream) this.in).unread(this.buf, this.len - i3, i3);
         }
         try {
             readAndVerifyDataDescriptor(i, i2);
@@ -157,15 +157,15 @@ public class ZipInputStream extends InflaterInputStream implements ZipConstants 
         if (this.entriesEnd) {
             return null;
         }
-        Streams.readFully(this.f42254in, this.hdrBuf, 0, 4);
+        Streams.readFully(this.in, this.hdrBuf, 0, 4);
         int peekInt = Memory.peekInt(this.hdrBuf, 0, ByteOrder.LITTLE_ENDIAN);
-        if (peekInt == 33639248) {
+        if (peekInt == ZipConstants.CENSIG) {
             this.entriesEnd = true;
             return null;
-        } else if (peekInt != 67324752) {
+        } else if (peekInt != ZipConstants.LOCSIG) {
             return null;
         } else {
-            Streams.readFully(this.f42254in, this.hdrBuf, 0, 26);
+            Streams.readFully(this.in, this.hdrBuf, 0, 26);
             int peekShort = peekShort(0) & 255;
             if (peekShort > 20) {
                 throw new ZipException("Cannot read local header version " + peekShort);
@@ -202,7 +202,7 @@ public class ZipInputStream extends InflaterInputStream implements ZipConstants 
             }
             if (peekShort7 > 0) {
                 byte[] bArr = new byte[peekShort7];
-                Streams.readFully(this.f42254in, bArr, 0, peekShort7);
+                Streams.readFully(this.in, bArr, 0, peekShort7);
                 this.currentEntry.setExtra(bArr);
             }
             return this.currentEntry;
@@ -238,7 +238,7 @@ public class ZipInputStream extends InflaterInputStream implements ZipConstants 
         if (this.inRead < i3) {
             if (this.lastRead >= this.len) {
                 this.lastRead = 0;
-                int read = this.f42254in.read(this.buf);
+                int read = this.in.read(this.buf);
                 this.len = read;
                 if (read == -1) {
                     this.eof = true;

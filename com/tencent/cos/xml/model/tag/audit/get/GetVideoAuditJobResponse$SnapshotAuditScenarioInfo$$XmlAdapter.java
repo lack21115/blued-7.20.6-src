@@ -49,6 +49,7 @@ public class GetVideoAuditJobResponse$SnapshotAuditScenarioInfo$$XmlAdapter impl
             }
         });
         this.childElementBinders.put("OcrResults", new ChildElementBinder<GetVideoAuditJobResponse.SnapshotAuditScenarioInfo>() { // from class: com.tencent.cos.xml.model.tag.audit.get.GetVideoAuditJobResponse$SnapshotAuditScenarioInfo$$XmlAdapter.5
+            /* JADX WARN: Multi-variable type inference failed */
             @Override // com.tencent.qcloud.qcloudxml.core.ChildElementBinder
             public void fromXml(XmlPullParser xmlPullParser, GetVideoAuditJobResponse.SnapshotAuditScenarioInfo snapshotAuditScenarioInfo, String str) throws IOException, XmlPullParserException {
                 if (snapshotAuditScenarioInfo.ocrResults == null) {
@@ -58,6 +59,7 @@ public class GetVideoAuditJobResponse$SnapshotAuditScenarioInfo$$XmlAdapter impl
             }
         });
         this.childElementBinders.put("ObjectResults", new ChildElementBinder<GetVideoAuditJobResponse.SnapshotAuditScenarioInfo>() { // from class: com.tencent.cos.xml.model.tag.audit.get.GetVideoAuditJobResponse$SnapshotAuditScenarioInfo$$XmlAdapter.6
+            /* JADX WARN: Multi-variable type inference failed */
             @Override // com.tencent.qcloud.qcloudxml.core.ChildElementBinder
             public void fromXml(XmlPullParser xmlPullParser, GetVideoAuditJobResponse.SnapshotAuditScenarioInfo snapshotAuditScenarioInfo, String str) throws IOException, XmlPullParserException {
                 if (snapshotAuditScenarioInfo.objectResults == null) {

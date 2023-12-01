@@ -40,11 +40,11 @@ import java.util.List;
 public abstract class LiveBaseImproveFragment<P extends LiveBaseImprovePresenter> extends MvpFragment<P> implements View.OnClickListener {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f31142a = 0;
+    public final int f17452a = 0;
     public final int b = 1;
 
     /* renamed from: c  reason: collision with root package name */
-    public Context f31143c;
+    public Context f17453c;
     @BindView
     ImageView cover_del_btn1;
     @BindView
@@ -147,7 +147,7 @@ public abstract class LiveBaseImproveFragment<P extends LiveBaseImprovePresenter
         dialog.requestWindowFeature(1);
         this.r.setContentView(inflate, new ViewGroup.LayoutParams(-1, -1));
         Window window = this.r.getWindow();
-        window.setWindowAnimations(2131952889);
+        window.setWindowAnimations(R.style.main_menu_animstyle);
         WindowManager.LayoutParams attributes = window.getAttributes();
         attributes.x = 0;
         attributes.y = getActivity().getWindowManager().getDefaultDisplay().getHeight();
@@ -166,13 +166,13 @@ public abstract class LiveBaseImproveFragment<P extends LiveBaseImprovePresenter
 
     private void b(int i, String str) {
         this.q = i;
-        BasePhotoFragment.a(this.f31143c, new String[]{str}, 0, 8, new LoadOptions());
+        BasePhotoFragment.a(this.f17453c, new String[]{str}, 0, 8, new LoadOptions());
     }
 
     private void c() {
         this.s = DialogUtils.a(getActivity());
         this.top_title.a();
-        this.top_title.setCenterText(getString(2131889245));
+        this.top_title.setCenterText(getString(R.string.live_apply_improve));
         this.top_title.setLeftClickListener(this);
         this.top_title.setCenterTextColor(2131102254);
         c(true);
@@ -219,7 +219,7 @@ public abstract class LiveBaseImproveFragment<P extends LiveBaseImprovePresenter
                 this.cover_del_btn1.setVisibility(8);
             } else {
                 this.live_card1.setVisibility(0);
-                ImageLoader.a(getFragmentActive(), this.l).b(R.drawable.live_id_card_default).a(this.live_card1);
+                ImageLoader.a(getFragmentActive(), this.l).b((int) R.drawable.live_id_card_default).a(this.live_card1);
                 this.n = true;
                 this.cover_del_btn1.setVisibility(0);
             }
@@ -227,7 +227,7 @@ public abstract class LiveBaseImproveFragment<P extends LiveBaseImprovePresenter
                 this.cover_del_btn2.setVisibility(8);
             } else {
                 this.live_card2.setVisibility(0);
-                ImageLoader.a(getFragmentActive(), this.m).b(R.drawable.live_id_card_default).a(this.live_card2);
+                ImageLoader.a(getFragmentActive(), this.m).b((int) R.drawable.live_id_card_default).a(this.live_card2);
                 this.o = true;
                 this.cover_del_btn2.setVisibility(0);
             }
@@ -245,6 +245,7 @@ public abstract class LiveBaseImproveFragment<P extends LiveBaseImprovePresenter
         this.ll_bottom_button.setOnClickListener(null);
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private void e() {
         this.f = CameraUtils.a(this);
     }
@@ -253,14 +254,12 @@ public abstract class LiveBaseImproveFragment<P extends LiveBaseImprovePresenter
 
     public abstract void a(Context context, String str, int i);
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public void a(Bundle bundle) {
         super.a(bundle);
         c();
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void a(String str, List list) {
         boolean z;
         super.a(str, list);
@@ -326,7 +325,7 @@ public abstract class LiveBaseImproveFragment<P extends LiveBaseImprovePresenter
                 this.o = true;
                 this.m = ((LiveIDCardUploadResult) list.get(0)).pic;
                 this.live_card2.setVisibility(0);
-                ImageLoader.d(getFragmentActive(), this.k).b(R.drawable.live_id_card_default).a(this.live_card2);
+                ImageLoader.d(getFragmentActive(), this.k).b((int) R.drawable.live_id_card_default).a(this.live_card2);
                 this.cover_del_btn2.setVisibility(0);
                 InstantLog.b("verify_photo_uploaded", 1);
                 EventTrackSettings.b(SettingsProtos.Event.VERIFY_PHOTO_UPLOADED, 1);
@@ -335,7 +334,7 @@ public abstract class LiveBaseImproveFragment<P extends LiveBaseImprovePresenter
             this.n = true;
             this.l = ((LiveIDCardUploadResult) list.get(0)).pic;
             this.live_card1.setVisibility(0);
-            ImageLoader.d(getFragmentActive(), this.g).b(R.drawable.live_id_card_default).a(this.live_card1);
+            ImageLoader.d(getFragmentActive(), this.g).b((int) R.drawable.live_id_card_default).a(this.live_card1);
             this.cover_del_btn1.setVisibility(0);
             InstantLog.b("verify_photo_uploaded", 0);
             EventTrackSettings.b(SettingsProtos.Event.VERIFY_PHOTO_UPLOADED, 0);
@@ -343,7 +342,6 @@ public abstract class LiveBaseImproveFragment<P extends LiveBaseImprovePresenter
         d();
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void a(String str, boolean z) {
         super.a(str, z);
         DialogUtils.b(this.s);
@@ -352,7 +350,6 @@ public abstract class LiveBaseImproveFragment<P extends LiveBaseImprovePresenter
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public void af_() {
         super.af_();
     }
@@ -363,18 +360,15 @@ public abstract class LiveBaseImproveFragment<P extends LiveBaseImprovePresenter
 
     public abstract void b(boolean z);
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public int g() {
         return R.layout.fragment_live_apply_improve;
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void g_(String str) {
         super.g_(str);
         DialogUtils.a(this.s);
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         if (i2 == -1) {
             if (i == 0) {
@@ -385,10 +379,10 @@ public abstract class LiveBaseImproveFragment<P extends LiveBaseImprovePresenter
                 int i3 = this.q;
                 if (i3 == 0) {
                     this.g = stringExtra;
-                    a(this.f31143c, stringExtra, 0);
+                    a(this.f17453c, stringExtra, 0);
                 } else if (i3 == 1) {
                     this.k = stringExtra;
-                    a(this.f31143c, stringExtra, 1);
+                    a(this.f17453c, stringExtra, 1);
                 }
             }
         }
@@ -421,7 +415,7 @@ public abstract class LiveBaseImproveFragment<P extends LiveBaseImprovePresenter
             case R.id.live_card2 /* 2131366957 */:
                 b(1, this.m);
                 return;
-            case 2131367669:
+            case R.id.ll_bottom_button /* 2131367669 */:
                 b(true);
                 return;
             case R.id.openCamera /* 2131368772 */:
@@ -448,9 +442,8 @@ public abstract class LiveBaseImproveFragment<P extends LiveBaseImprovePresenter
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        this.f31143c = getContext();
+        this.f17453c = getContext();
     }
 }

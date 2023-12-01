@@ -7,9 +7,7 @@ import java.io.IOException;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/imagecache/FailReason.class */
 public class FailReason {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final FailType f9573a;
+    private final FailType a;
     private final Throwable b;
 
     /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/imagecache/FailReason$FailType.class */
@@ -27,7 +25,7 @@ public class FailReason {
     }
 
     public FailReason(FailType failType, Throwable th) {
-        this.f9573a = failType;
+        this.a = failType;
         this.b = th;
     }
 
@@ -60,6 +58,6 @@ public class FailReason {
     }
 
     public FailType getType() {
-        return this.f9573a;
+        return this.a;
     }
 }

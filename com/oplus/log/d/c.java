@@ -7,7 +7,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.telephony.TelephonyManager;
 import android.view.View;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
+import com.efs.sdk.base.core.util.NetworkUtil;
 import java.io.File;
 import java.lang.reflect.Method;
 
@@ -76,7 +76,7 @@ public final class c {
             }
             TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService("phone");
             sb.append(telephonyManager.getNetworkOperatorName());
-            sb.append(BridgeUtil.UNDERLINE_STR);
+            sb.append("_");
             int networkType = telephonyManager.getNetworkType();
             switch (networkType) {
                 case 1:
@@ -110,7 +110,7 @@ public final class c {
             }
             return sb.toString();
         }
-        sb.append("disconnected");
+        sb.append(NetworkUtil.NETWORK_CLASS_DISCONNECTED);
         return sb.toString();
     }
 

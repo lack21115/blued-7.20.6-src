@@ -26,7 +26,6 @@ import java.security.cert.CertificateFactory;
 import java.security.cert.X509Certificate;
 import java.util.List;
 import java.util.Locale;
-import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
 /* loaded from: source-9557208-dex2jar.jar:android/security/KeyChain.class */
@@ -103,7 +102,7 @@ public final class KeyChain {
                 }
                 this.mConnectedAtLeastOnce = true;
                 try {
-                    BlockingQueue.this.put(IKeyChainService.Stub.asInterface(iBinder));
+                    linkedBlockingQueue.put(IKeyChainService.Stub.asInterface(iBinder));
                 } catch (InterruptedException e) {
                 }
             }
@@ -163,7 +162,7 @@ public final class KeyChain {
                         bind.close();
                         return null;
                     }
-                    List<X509Certificate> certificateChain = new TrustedCertificateStore().getCertificateChain(toCertificate(certificate));
+                    List certificateChain = new TrustedCertificateStore().getCertificateChain(toCertificate(certificate));
                     return (X509Certificate[]) certificateChain.toArray(new X509Certificate[certificateChain.size()]);
                 } catch (RemoteException e) {
                     throw new KeyChainException(e);

@@ -9,17 +9,13 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/LiveRankBarTitleBinding.class */
 public final class LiveRankBarTitleBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f12401a;
+    public final ImageView a;
     public final TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final RelativeLayout f12402c;
+    private final RelativeLayout c;
 
     private LiveRankBarTitleBinding(RelativeLayout relativeLayout, ImageView imageView, TextView textView) {
-        this.f12402c = relativeLayout;
-        this.f12401a = imageView;
+        this.c = relativeLayout;
+        this.a = imageView;
         this.b = textView;
     }
 
@@ -38,9 +34,8 @@ public final class LiveRankBarTitleBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
-        return this.f12402c;
+        return this.c;
     }
 }

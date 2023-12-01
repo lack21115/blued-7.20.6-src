@@ -161,7 +161,7 @@ public class WifiP2pManager {
             public void handleMessage(Message message) {
                 Object listener = Channel.this.getListener(message.arg2);
                 switch (message.what) {
-                    case AsyncChannel.CMD_CHANNEL_DISCONNECTED /* 69636 */:
+                    case 69636:
                         if (Channel.this.mChannelListener != null) {
                             Channel.this.mChannelListener.onChannelDisconnected();
                             Channel.this.mChannelListener = null;
@@ -431,54 +431,54 @@ public class WifiP2pManager {
     public void addLocalService(Channel channel, WifiP2pServiceInfo wifiP2pServiceInfo, ActionListener actionListener) {
         checkChannel(channel);
         checkServiceInfo(wifiP2pServiceInfo);
-        channel.mAsyncChannel.sendMessage(ADD_LOCAL_SERVICE, 0, channel.putListener(actionListener), wifiP2pServiceInfo);
+        channel.mAsyncChannel.sendMessage((int) ADD_LOCAL_SERVICE, 0, channel.putListener(actionListener), wifiP2pServiceInfo);
     }
 
     public void addServiceRequest(Channel channel, WifiP2pServiceRequest wifiP2pServiceRequest, ActionListener actionListener) {
         checkChannel(channel);
         checkServiceRequest(wifiP2pServiceRequest);
-        channel.mAsyncChannel.sendMessage(ADD_SERVICE_REQUEST, 0, channel.putListener(actionListener), wifiP2pServiceRequest);
+        channel.mAsyncChannel.sendMessage((int) ADD_SERVICE_REQUEST, 0, channel.putListener(actionListener), wifiP2pServiceRequest);
     }
 
     public void cancelConnect(Channel channel, ActionListener actionListener) {
         checkChannel(channel);
-        channel.mAsyncChannel.sendMessage(CANCEL_CONNECT, 0, channel.putListener(actionListener));
+        channel.mAsyncChannel.sendMessage((int) CANCEL_CONNECT, 0, channel.putListener(actionListener));
     }
 
     public void clearLocalServices(Channel channel, ActionListener actionListener) {
         checkChannel(channel);
-        channel.mAsyncChannel.sendMessage(CLEAR_LOCAL_SERVICES, 0, channel.putListener(actionListener));
+        channel.mAsyncChannel.sendMessage((int) CLEAR_LOCAL_SERVICES, 0, channel.putListener(actionListener));
     }
 
     public void clearServiceRequests(Channel channel, ActionListener actionListener) {
         checkChannel(channel);
-        channel.mAsyncChannel.sendMessage(CLEAR_SERVICE_REQUESTS, 0, channel.putListener(actionListener));
+        channel.mAsyncChannel.sendMessage((int) CLEAR_SERVICE_REQUESTS, 0, channel.putListener(actionListener));
     }
 
     public void connect(Channel channel, WifiP2pConfig wifiP2pConfig, ActionListener actionListener) {
         checkChannel(channel);
         checkP2pConfig(wifiP2pConfig);
-        channel.mAsyncChannel.sendMessage(CONNECT, 0, channel.putListener(actionListener), wifiP2pConfig);
+        channel.mAsyncChannel.sendMessage((int) CONNECT, 0, channel.putListener(actionListener), wifiP2pConfig);
     }
 
     public void createGroup(Channel channel, ActionListener actionListener) {
         checkChannel(channel);
-        channel.mAsyncChannel.sendMessage(CREATE_GROUP, -2, channel.putListener(actionListener));
+        channel.mAsyncChannel.sendMessage((int) CREATE_GROUP, -2, channel.putListener(actionListener));
     }
 
     public void deletePersistentGroup(Channel channel, int i, ActionListener actionListener) {
         checkChannel(channel);
-        channel.mAsyncChannel.sendMessage(DELETE_PERSISTENT_GROUP, i, channel.putListener(actionListener));
+        channel.mAsyncChannel.sendMessage((int) DELETE_PERSISTENT_GROUP, i, channel.putListener(actionListener));
     }
 
     public void discoverPeers(Channel channel, ActionListener actionListener) {
         checkChannel(channel);
-        channel.mAsyncChannel.sendMessage(DISCOVER_PEERS, 0, channel.putListener(actionListener));
+        channel.mAsyncChannel.sendMessage((int) DISCOVER_PEERS, 0, channel.putListener(actionListener));
     }
 
     public void discoverServices(Channel channel, ActionListener actionListener) {
         checkChannel(channel);
-        channel.mAsyncChannel.sendMessage(DISCOVER_SERVICES, 0, channel.putListener(actionListener));
+        channel.mAsyncChannel.sendMessage((int) DISCOVER_SERVICES, 0, channel.putListener(actionListener));
     }
 
     public Messenger getMessenger() {
@@ -491,12 +491,12 @@ public class WifiP2pManager {
 
     public void getNfcHandoverRequest(Channel channel, HandoverMessageListener handoverMessageListener) {
         checkChannel(channel);
-        channel.mAsyncChannel.sendMessage(GET_HANDOVER_REQUEST, 0, channel.putListener(handoverMessageListener));
+        channel.mAsyncChannel.sendMessage((int) GET_HANDOVER_REQUEST, 0, channel.putListener(handoverMessageListener));
     }
 
     public void getNfcHandoverSelect(Channel channel, HandoverMessageListener handoverMessageListener) {
         checkChannel(channel);
-        channel.mAsyncChannel.sendMessage(GET_HANDOVER_SELECT, 0, channel.putListener(handoverMessageListener));
+        channel.mAsyncChannel.sendMessage((int) GET_HANDOVER_SELECT, 0, channel.putListener(handoverMessageListener));
     }
 
     public Messenger getP2pStateMachineMessenger() {
@@ -519,7 +519,7 @@ public class WifiP2pManager {
         checkChannel(channel);
         Bundle bundle = new Bundle();
         bundle.putString(EXTRA_HANDOVER_MESSAGE, str);
-        channel.mAsyncChannel.sendMessage(INITIATOR_REPORT_NFC_HANDOVER, 0, channel.putListener(actionListener), bundle);
+        channel.mAsyncChannel.sendMessage((int) INITIATOR_REPORT_NFC_HANDOVER, 0, channel.putListener(actionListener), bundle);
     }
 
     public void listen(Channel channel, boolean z, ActionListener actionListener) {
@@ -529,53 +529,53 @@ public class WifiP2pManager {
 
     public void removeGroup(Channel channel, ActionListener actionListener) {
         checkChannel(channel);
-        channel.mAsyncChannel.sendMessage(REMOVE_GROUP, 0, channel.putListener(actionListener));
+        channel.mAsyncChannel.sendMessage((int) REMOVE_GROUP, 0, channel.putListener(actionListener));
     }
 
     public void removeLocalService(Channel channel, WifiP2pServiceInfo wifiP2pServiceInfo, ActionListener actionListener) {
         checkChannel(channel);
         checkServiceInfo(wifiP2pServiceInfo);
-        channel.mAsyncChannel.sendMessage(REMOVE_LOCAL_SERVICE, 0, channel.putListener(actionListener), wifiP2pServiceInfo);
+        channel.mAsyncChannel.sendMessage((int) REMOVE_LOCAL_SERVICE, 0, channel.putListener(actionListener), wifiP2pServiceInfo);
     }
 
     public void removeServiceRequest(Channel channel, WifiP2pServiceRequest wifiP2pServiceRequest, ActionListener actionListener) {
         checkChannel(channel);
         checkServiceRequest(wifiP2pServiceRequest);
-        channel.mAsyncChannel.sendMessage(REMOVE_SERVICE_REQUEST, 0, channel.putListener(actionListener), wifiP2pServiceRequest);
+        channel.mAsyncChannel.sendMessage((int) REMOVE_SERVICE_REQUEST, 0, channel.putListener(actionListener), wifiP2pServiceRequest);
     }
 
     public void requestConnectionInfo(Channel channel, ConnectionInfoListener connectionInfoListener) {
         checkChannel(channel);
-        channel.mAsyncChannel.sendMessage(REQUEST_CONNECTION_INFO, 0, channel.putListener(connectionInfoListener));
+        channel.mAsyncChannel.sendMessage((int) REQUEST_CONNECTION_INFO, 0, channel.putListener(connectionInfoListener));
     }
 
     public void requestGroupInfo(Channel channel, GroupInfoListener groupInfoListener) {
         checkChannel(channel);
-        channel.mAsyncChannel.sendMessage(REQUEST_GROUP_INFO, 0, channel.putListener(groupInfoListener));
+        channel.mAsyncChannel.sendMessage((int) REQUEST_GROUP_INFO, 0, channel.putListener(groupInfoListener));
     }
 
     public void requestPeers(Channel channel, PeerListListener peerListListener) {
         checkChannel(channel);
-        channel.mAsyncChannel.sendMessage(REQUEST_PEERS, 0, channel.putListener(peerListListener));
+        channel.mAsyncChannel.sendMessage((int) REQUEST_PEERS, 0, channel.putListener(peerListListener));
     }
 
     public void requestPersistentGroupInfo(Channel channel, PersistentGroupInfoListener persistentGroupInfoListener) {
         checkChannel(channel);
-        channel.mAsyncChannel.sendMessage(REQUEST_PERSISTENT_GROUP_INFO, 0, channel.putListener(persistentGroupInfoListener));
+        channel.mAsyncChannel.sendMessage((int) REQUEST_PERSISTENT_GROUP_INFO, 0, channel.putListener(persistentGroupInfoListener));
     }
 
     public void responderReportNfcHandover(Channel channel, String str, ActionListener actionListener) {
         checkChannel(channel);
         Bundle bundle = new Bundle();
         bundle.putString(EXTRA_HANDOVER_MESSAGE, str);
-        channel.mAsyncChannel.sendMessage(RESPONDER_REPORT_NFC_HANDOVER, 0, channel.putListener(actionListener), bundle);
+        channel.mAsyncChannel.sendMessage((int) RESPONDER_REPORT_NFC_HANDOVER, 0, channel.putListener(actionListener), bundle);
     }
 
     public void setDeviceName(Channel channel, String str, ActionListener actionListener) {
         checkChannel(channel);
         WifiP2pDevice wifiP2pDevice = new WifiP2pDevice();
         wifiP2pDevice.deviceName = str;
-        channel.mAsyncChannel.sendMessage(SET_DEVICE_NAME, 0, channel.putListener(actionListener), wifiP2pDevice);
+        channel.mAsyncChannel.sendMessage((int) SET_DEVICE_NAME, 0, channel.putListener(actionListener), wifiP2pDevice);
     }
 
     public void setDnsSdResponseListeners(Channel channel, DnsSdServiceResponseListener dnsSdServiceResponseListener, DnsSdTxtRecordListener dnsSdTxtRecordListener) {
@@ -603,7 +603,7 @@ public class WifiP2pManager {
 
     public void setWFDInfo(Channel channel, WifiP2pWfdInfo wifiP2pWfdInfo, ActionListener actionListener) {
         checkChannel(channel);
-        channel.mAsyncChannel.sendMessage(SET_WFD_INFO, 0, channel.putListener(actionListener), wifiP2pWfdInfo);
+        channel.mAsyncChannel.sendMessage((int) SET_WFD_INFO, 0, channel.putListener(actionListener), wifiP2pWfdInfo);
     }
 
     public void setWifiP2pChannels(Channel channel, int i, int i2, ActionListener actionListener) {
@@ -611,16 +611,16 @@ public class WifiP2pManager {
         Bundle bundle = new Bundle();
         bundle.putInt("lc", i);
         bundle.putInt("oc", i2);
-        channel.mAsyncChannel.sendMessage(SET_CHANNEL, 0, channel.putListener(actionListener), bundle);
+        channel.mAsyncChannel.sendMessage((int) SET_CHANNEL, 0, channel.putListener(actionListener), bundle);
     }
 
     public void startWps(Channel channel, WpsInfo wpsInfo, ActionListener actionListener) {
         checkChannel(channel);
-        channel.mAsyncChannel.sendMessage(START_WPS, 0, channel.putListener(actionListener), wpsInfo);
+        channel.mAsyncChannel.sendMessage((int) START_WPS, 0, channel.putListener(actionListener), wpsInfo);
     }
 
     public void stopPeerDiscovery(Channel channel, ActionListener actionListener) {
         checkChannel(channel);
-        channel.mAsyncChannel.sendMessage(STOP_DISCOVERY, 0, channel.putListener(actionListener));
+        channel.mAsyncChannel.sendMessage((int) STOP_DISCOVERY, 0, channel.putListener(actionListener));
     }
 }

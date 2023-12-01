@@ -11,11 +11,11 @@ public class b extends FrameLayout {
     private static Handler d;
 
     /* renamed from: a  reason: collision with root package name */
-    private a f24983a;
+    private a f11295a;
     private boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f24984c;
+    private boolean f11296c;
 
     /* loaded from: source-8303388-dex2jar.jar:com/opos/cmn/j/b$a.class */
     public interface a {
@@ -24,9 +24,9 @@ public class b extends FrameLayout {
 
     public b(Context context) {
         super(context);
-        this.f24983a = null;
+        this.f11295a = null;
         this.b = false;
-        this.f24984c = false;
+        this.f11296c = false;
         d = new Handler(Looper.getMainLooper());
     }
 
@@ -43,30 +43,30 @@ public class b extends FrameLayout {
     }
 
     public void a(a aVar) {
-        this.f24983a = aVar;
+        this.f11295a = aVar;
         if (!this.b || aVar == null) {
             return;
         }
         d.post(new Runnable() { // from class: com.opos.cmn.j.b.2
             @Override // java.lang.Runnable
             public void run() {
-                if (!b.this.b || b.this.f24983a == null) {
+                if (!b.this.b || b.this.f11295a == null) {
                     return;
                 }
-                b.this.f24983a.a(b.this.f24984c);
+                b.this.f11295a.a(b.this.f11296c);
             }
         });
     }
 
     protected void a(final boolean z) {
-        if (this.f24984c == (!z)) {
-            this.f24984c = z;
-            if (this.f24983a != null) {
+        if (this.f11296c == (!z)) {
+            this.f11296c = z;
+            if (this.f11295a != null) {
                 d.post(new Runnable() { // from class: com.opos.cmn.j.b.1
                     @Override // java.lang.Runnable
                     public void run() {
-                        if (b.this.f24983a != null) {
-                            b.this.f24983a.a(z);
+                        if (b.this.f11295a != null) {
+                            b.this.f11295a.a(z);
                         }
                     }
                 });
@@ -74,23 +74,20 @@ public class b extends FrameLayout {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         this.b = true;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.b = false;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onVisibilityChanged(View view, int i) {
+    protected void onVisibilityChanged(View view, int i) {
         super.onVisibilityChanged(view, i);
         a(i);
     }
@@ -110,9 +107,8 @@ public class b extends FrameLayout {
         a(z2);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onWindowVisibilityChanged(int i) {
+    protected void onWindowVisibilityChanged(int i) {
         super.onWindowVisibilityChanged(i);
         a(i);
     }

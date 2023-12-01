@@ -1,5 +1,6 @@
 package com.kwad.sdk.core.a.kwai;
 
+import android.accounts.AccountManager;
 import com.huawei.hms.support.hianalytics.HiAnalyticsConstant;
 import org.json.JSONObject;
 
@@ -14,7 +15,7 @@ public final class je implements com.kwad.sdk.core.d<com.kwad.components.core.we
         if (yVar.Vp == JSONObject.NULL) {
             yVar.Vp = "";
         }
-        yVar.errorCode = jSONObject.optInt("errorCode");
+        yVar.errorCode = jSONObject.optInt(AccountManager.KEY_ERROR_CODE);
         yVar.errorReason = jSONObject.optString(HiAnalyticsConstant.HaKey.BI_KEY_ERRORREASON);
         if (yVar.errorReason == JSONObject.NULL) {
             yVar.errorReason = "";
@@ -32,7 +33,7 @@ public final class je implements com.kwad.sdk.core.d<com.kwad.components.core.we
             com.kwad.sdk.utils.t.putValue(jSONObject2, "status", yVar.Vp);
         }
         if (yVar.errorCode != 0) {
-            com.kwad.sdk.utils.t.putValue(jSONObject2, "errorCode", yVar.errorCode);
+            com.kwad.sdk.utils.t.putValue(jSONObject2, AccountManager.KEY_ERROR_CODE, yVar.errorCode);
         }
         if (yVar.errorReason != null && !yVar.errorReason.equals("")) {
             com.kwad.sdk.utils.t.putValue(jSONObject2, HiAnalyticsConstant.HaKey.BI_KEY_ERRORREASON, yVar.errorReason);

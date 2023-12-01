@@ -21,18 +21,18 @@ import java.util.List;
 public class VIPPrivilegeAdapter extends BaseAdapter {
 
     /* renamed from: a  reason: collision with root package name */
-    private LayoutInflater f33803a;
+    private LayoutInflater f20112a;
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private IRequestHost f33804c;
+    private IRequestHost f20113c;
     private List<VIPPrivilegeModel> d;
 
     /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/user/adapter/VIPPrivilegeAdapter$ViewHolder.class */
     class ViewHolder {
 
         /* renamed from: a  reason: collision with root package name */
-        public ImageView f33806a;
+        public ImageView f20115a;
         public TextView b;
 
         ViewHolder() {
@@ -41,8 +41,8 @@ public class VIPPrivilegeAdapter extends BaseAdapter {
 
     public VIPPrivilegeAdapter(Context context, IRequestHost iRequestHost, List<VIPPrivilegeModel> list, GridView gridView) {
         this.b = context;
-        this.f33804c = iRequestHost;
-        this.f33803a = LayoutInflater.from(context);
+        this.f20113c = iRequestHost;
+        this.f20112a = LayoutInflater.from(context);
         this.d = list;
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() { // from class: com.soft.blued.ui.user.adapter.VIPPrivilegeAdapter.1
             @Override // android.widget.AdapterView.OnItemClickListener
@@ -74,8 +74,8 @@ public class VIPPrivilegeAdapter extends BaseAdapter {
         ViewHolder viewHolder;
         if (view == null) {
             ViewHolder viewHolder2 = new ViewHolder();
-            View inflate = this.f33803a.inflate(R.layout.item_vip_privilege, viewGroup, false);
-            viewHolder2.f33806a = (ImageView) inflate.findViewById(R.id.vip_privilege_view);
+            View inflate = this.f20112a.inflate(R.layout.item_vip_privilege, viewGroup, false);
+            viewHolder2.f20115a = (ImageView) inflate.findViewById(R.id.vip_privilege_view);
             viewHolder2.b = (TextView) inflate.findViewById(R.id.vip_privilege_name);
             inflate.setTag(viewHolder2);
             viewHolder = viewHolder2;
@@ -85,7 +85,7 @@ public class VIPPrivilegeAdapter extends BaseAdapter {
         }
         VIPPrivilegeModel vIPPrivilegeModel = this.d.get(i);
         if (vIPPrivilegeModel != null) {
-            ImageLoader.a(this.f33804c, vIPPrivilegeModel.icon).b(2131237310).c().a(viewHolder.f33806a);
+            ImageLoader.a(this.f20113c, vIPPrivilegeModel.icon).b(2131237310).c().a(viewHolder.f20115a);
             viewHolder.b.setText(vIPPrivilegeModel.name);
             Log.v("drb", "model.name:" + vIPPrivilegeModel.name + " -- position");
         }

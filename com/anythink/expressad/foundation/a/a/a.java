@@ -11,28 +11,28 @@ import java.util.Map;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f7749a = a.class.getSimpleName();
+    public static final String f4910a = a.class.getSimpleName();
 
     /* renamed from: c  reason: collision with root package name */
-    private static volatile a f7750c;
+    private static volatile a f4911c;
     SharedPreferences b;
 
     private a() {
     }
 
     public static a a() {
-        if (f7750c == null) {
+        if (f4911c == null) {
             synchronized (a.class) {
                 try {
-                    if (f7750c == null) {
-                        f7750c = new a();
+                    if (f4911c == null) {
+                        f4911c = new a();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f7750c;
+        return f4911c;
     }
 
     private void a(String str, int i) {
@@ -56,7 +56,7 @@ public class a {
         try {
             Context d = com.anythink.expressad.foundation.b.a.b().d();
             if (d == null) {
-                o.d(f7749a, "context is null in put");
+                o.d(f4910a, "context is null in put");
                 return;
             }
             if (this.b == null && d != null) {
@@ -121,7 +121,7 @@ public class a {
         try {
             Context d = com.anythink.expressad.foundation.b.a.b().d();
             if (d == null) {
-                o.d(f7749a, "context is null in get");
+                o.d(f4910a, "context is null in get");
                 return 0L;
             }
             if (this.b == null && d != null) {

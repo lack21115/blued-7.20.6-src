@@ -2,6 +2,7 @@ package com.tencent.cloud.huiyansdkface.facelight.a.a;
 
 import com.anythink.expressad.video.module.a.a.m;
 import com.tencent.cloud.huiyansdkface.facelight.provider.WbUiTips;
+import com.tencent.thumbplayer.api.TPErrorCode;
 
 /* loaded from: source-8457232-dex2jar.jar:com/tencent/cloud/huiyansdkface/facelight/a/a/b.class */
 public class b {
@@ -10,11 +11,11 @@ public class b {
     boolean O;
 
     /* renamed from: a  reason: collision with root package name */
-    String f35509a = "1";
+    String f21818a = "1";
     String b = "150";
 
     /* renamed from: c  reason: collision with root package name */
-    float f35511c = 150.0f;
+    float f21820c = 150.0f;
     float d = 0.2f;
     float e = 0.5f;
     float f = -25.0f;
@@ -54,7 +55,7 @@ public class b {
     float Q = 0.5f;
     int R = 3;
     int S = 6000;
-    int T = 4000;
+    int T = TPErrorCode.TP_ERROR_TYPE_DOWNLOAD_PROXY;
     int U = 15000;
     int V = 15000;
     float W = 2.1f;
@@ -80,7 +81,7 @@ public class b {
     String aq = "取消";
 
     /* renamed from: ar  reason: collision with root package name */
-    String f35510ar = "播报音频中，请勿静音";
+    String f21819ar = "播报音频中，请勿静音";
     String as = "亲，语音回答时请大声一点";
     float at = 0.0f;
     float au = 0.8f;
@@ -122,11 +123,11 @@ public class b {
     }
 
     public String H() {
-        return this.f35509a;
+        return this.f21818a;
     }
 
     public float I() {
-        return this.f35511c;
+        return this.f21820c;
     }
 
     public float J() {
@@ -198,7 +199,7 @@ public class b {
     }
 
     public String a() {
-        return this.f35510ar;
+        return this.f21819ar;
     }
 
     public long aa() {
@@ -382,7 +383,7 @@ public class b {
     }
 
     public String toString() {
-        return "CdnConfig{detectCloseEyeDefault='" + this.f35509a + "', lightDiffScore='" + this.b + "', luxDefault='" + this.f35511c + "', lightFaceAreaMin='" + this.d + "', lightFaceAreaMax='" + this.e + "', lightFaceYawMin='" + this.f + "', lightFaceYawMax='" + this.g + "', lightFacePitchMin='" + this.h + "', lightFacePitchMax='" + this.i + "', lightFaceRollMin='" + this.j + "', lightFaceRollMax='" + this.k + "', lightPointsPercent='" + this.l + "', lightPointsVis='" + this.m + "', cdnEyeOpenRate='" + this.n + "', thresgold=" + this.o + ", outoftime='" + this.p + "', turingTime='" + this.q + "', recordTime='" + this.r + "', authBackVisibleTime='" + this.s + "', verifyBackVisibleTime='" + this.t + "', encodeOutOfTime='" + this.u + "', dialogType='" + this.v + "', returnUserImage=" + this.x + ", isEnableCloseEyes=" + this.y + ", skipGuideTipVoice=" + this.z + ", recordYTVideo=" + this.A + ", uploadYTVideo=" + this.B + ", previewVoiceTime='" + this.C + "', enterDetectWaitTime='" + this.D + "', actCheckNextTime='" + this.E + "', ytVideoValidFrames='" + this.F + "', isUseTuringSdk=" + this.G + ", isFinishInitTuring=" + this.H + ", isDeviceCanPlayVoice=" + this.I + ", isCamCanRetry=" + this.J + ", camTokenWaitTime=" + this.K + ", gradeTimeoutInterval='" + this.S + "', gradeRetryCount='" + this.R + "', gradeQueryInterval='" + this.T + "', isUse720p=" + this.aA + '}';
+        return "CdnConfig{detectCloseEyeDefault='" + this.f21818a + "', lightDiffScore='" + this.b + "', luxDefault='" + this.f21820c + "', lightFaceAreaMin='" + this.d + "', lightFaceAreaMax='" + this.e + "', lightFaceYawMin='" + this.f + "', lightFaceYawMax='" + this.g + "', lightFacePitchMin='" + this.h + "', lightFacePitchMax='" + this.i + "', lightFaceRollMin='" + this.j + "', lightFaceRollMax='" + this.k + "', lightPointsPercent='" + this.l + "', lightPointsVis='" + this.m + "', cdnEyeOpenRate='" + this.n + "', thresgold=" + this.o + ", outoftime='" + this.p + "', turingTime='" + this.q + "', recordTime='" + this.r + "', authBackVisibleTime='" + this.s + "', verifyBackVisibleTime='" + this.t + "', encodeOutOfTime='" + this.u + "', dialogType='" + this.v + "', returnUserImage=" + this.x + ", isEnableCloseEyes=" + this.y + ", skipGuideTipVoice=" + this.z + ", recordYTVideo=" + this.A + ", uploadYTVideo=" + this.B + ", previewVoiceTime='" + this.C + "', enterDetectWaitTime='" + this.D + "', actCheckNextTime='" + this.E + "', ytVideoValidFrames='" + this.F + "', isUseTuringSdk=" + this.G + ", isFinishInitTuring=" + this.H + ", isDeviceCanPlayVoice=" + this.I + ", isCamCanRetry=" + this.J + ", camTokenWaitTime=" + this.K + ", gradeTimeoutInterval='" + this.S + "', gradeRetryCount='" + this.R + "', gradeQueryInterval='" + this.T + "', isUse720p=" + this.aA + '}';
     }
 
     public String u() {

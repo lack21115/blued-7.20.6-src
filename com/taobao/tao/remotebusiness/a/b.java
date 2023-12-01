@@ -11,11 +11,11 @@ import mtopsdk.mtop.domain.MtopResponse;
 public final class b implements Serializable {
 
     /* renamed from: a  reason: collision with root package name */
-    public MtopListener f34911a;
+    public MtopListener f21220a;
     public MtopEvent b;
 
     /* renamed from: c  reason: collision with root package name */
-    public BaseOutDo f34912c;
+    public BaseOutDo f21221c;
     public MtopBusiness d;
     public MtopResponse e;
 
@@ -23,7 +23,7 @@ public final class b implements Serializable {
     }
 
     public b(MtopListener mtopListener, MtopEvent mtopEvent, MtopBusiness mtopBusiness) {
-        this.f34911a = mtopListener;
+        this.f21220a = mtopListener;
         this.b = mtopEvent;
         this.d = mtopBusiness;
     }

@@ -18,14 +18,15 @@ public class SkinCompatEditText extends AppCompatEditText implements SkinCompatS
         this(context, attributeSet, R.attr.editTextStyle);
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     public SkinCompatEditText(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         SkinCompatBackgroundHelper skinCompatBackgroundHelper = new SkinCompatBackgroundHelper(this);
         this.mBackgroundTintHelper = skinCompatBackgroundHelper;
         skinCompatBackgroundHelper.a(attributeSet, i);
-        SkinCompatTextHelper a2 = SkinCompatTextHelper.a(this);
-        this.mTextHelper = a2;
-        a2.a(attributeSet, i);
+        SkinCompatTextHelper a = SkinCompatTextHelper.a(this);
+        this.mTextHelper = a;
+        a.a(attributeSet, i);
     }
 
     @Override // skin.support.widget.SkinCompatSupportable
@@ -48,7 +49,6 @@ public class SkinCompatEditText extends AppCompatEditText implements SkinCompatS
         return 0;
     }
 
-    @Override // androidx.appcompat.widget.AppCompatEditText, android.view.View
     public void setBackgroundResource(int i) {
         super.setBackgroundResource(i);
         SkinCompatBackgroundHelper skinCompatBackgroundHelper = this.mBackgroundTintHelper;
@@ -57,7 +57,6 @@ public class SkinCompatEditText extends AppCompatEditText implements SkinCompatS
         }
     }
 
-    @Override // android.widget.TextView
     public void setCompoundDrawablesRelativeWithIntrinsicBounds(int i, int i2, int i3, int i4) {
         super.setCompoundDrawablesRelativeWithIntrinsicBounds(i, i2, i3, i4);
         SkinCompatTextHelper skinCompatTextHelper = this.mTextHelper;
@@ -66,7 +65,6 @@ public class SkinCompatEditText extends AppCompatEditText implements SkinCompatS
         }
     }
 
-    @Override // android.widget.TextView
     public void setCompoundDrawablesWithIntrinsicBounds(int i, int i2, int i3, int i4) {
         super.setCompoundDrawablesWithIntrinsicBounds(i, i2, i3, i4);
         SkinCompatTextHelper skinCompatTextHelper = this.mTextHelper;
@@ -79,7 +77,6 @@ public class SkinCompatEditText extends AppCompatEditText implements SkinCompatS
         setTextAppearance(getContext(), i);
     }
 
-    @Override // androidx.appcompat.widget.AppCompatEditText, android.widget.TextView
     public void setTextAppearance(Context context, int i) {
         super.setTextAppearance(context, i);
         SkinCompatTextHelper skinCompatTextHelper = this.mTextHelper;

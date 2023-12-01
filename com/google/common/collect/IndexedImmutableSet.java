@@ -33,7 +33,7 @@ public abstract class IndexedImmutableSet<E> extends ImmutableSet<E> {
 
     abstract E get(int i);
 
-    @Override // com.google.common.collect.ImmutableSet, com.google.common.collect.ImmutableCollection, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+    @Override // com.google.common.collect.ImmutableSet, com.google.common.collect.ImmutableCollection, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set, com.google.common.collect.SortedIterable, java.util.NavigableSet
     public UnmodifiableIterator<E> iterator() {
         return asList().iterator();
     }

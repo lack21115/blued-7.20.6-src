@@ -4,11 +4,11 @@ package ar.com.hjg.pngj;
 class RowInfo {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ImageInfo f3650a;
+    public final ImageInfo f3602a;
     public final Deinterlacer b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final boolean f3651c;
+    public final boolean f3603c;
     int d;
     int e;
     int f;
@@ -24,9 +24,9 @@ class RowInfo {
     int p;
 
     public RowInfo(ImageInfo imageInfo, Deinterlacer deinterlacer) {
-        this.f3650a = imageInfo;
+        this.f3602a = imageInfo;
         this.b = deinterlacer;
-        this.f3651c = deinterlacer != null;
+        this.f3603c = deinterlacer != null;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -38,9 +38,9 @@ class RowInfo {
     /* JADX INFO: Access modifiers changed from: package-private */
     public void update(int i) {
         this.h = i;
-        if (this.f3651c) {
+        if (this.f3603c) {
             this.n = this.b.d();
-            this.e = this.b.f3632c;
+            this.e = this.b.f3584c;
             this.d = this.b.b;
             this.g = this.b.e;
             this.f = this.b.d;
@@ -48,7 +48,7 @@ class RowInfo {
             this.j = this.b.b();
             this.k = this.b.e();
             this.l = this.b.f();
-            this.m = ((this.f3650a.i * this.l) + 7) / 8;
+            this.m = ((this.f3602a.i * this.l) + 7) / 8;
             return;
         }
         this.n = 1;
@@ -58,8 +58,8 @@ class RowInfo {
         this.g = 0;
         this.j = i;
         this.i = i;
-        this.k = this.f3650a.b;
-        this.l = this.f3650a.f3638a;
-        this.m = this.f3650a.k;
+        this.k = this.f3602a.b;
+        this.l = this.f3602a.f3590a;
+        this.m = this.f3602a.k;
     }
 }

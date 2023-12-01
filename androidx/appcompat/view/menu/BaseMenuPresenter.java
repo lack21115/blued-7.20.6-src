@@ -12,11 +12,11 @@ import java.util.ArrayList;
 public abstract class BaseMenuPresenter implements MenuPresenter {
 
     /* renamed from: a  reason: collision with root package name */
-    protected Context f1657a;
+    protected Context f1609a;
     protected Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    public MenuBuilder f1658c;
+    public MenuBuilder f1610c;
     protected LayoutInflater d;
     protected LayoutInflater e;
     public MenuView f;
@@ -26,7 +26,7 @@ public abstract class BaseMenuPresenter implements MenuPresenter {
     private int j;
 
     public BaseMenuPresenter(Context context, int i, int i2) {
-        this.f1657a = context;
+        this.f1609a = context;
         this.d = LayoutInflater.from(context);
         this.h = i;
         this.i = i2;
@@ -86,7 +86,7 @@ public abstract class BaseMenuPresenter implements MenuPresenter {
         if (this.f == null) {
             MenuView menuView = (MenuView) this.d.inflate(this.h, viewGroup, false);
             this.f = menuView;
-            menuView.initialize(this.f1658c);
+            menuView.initialize(this.f1610c);
             updateMenuView(true);
         }
         return this.f;
@@ -96,7 +96,7 @@ public abstract class BaseMenuPresenter implements MenuPresenter {
     public void initForMenu(Context context, MenuBuilder menuBuilder) {
         this.b = context;
         this.e = LayoutInflater.from(context);
-        this.f1658c = menuBuilder;
+        this.f1610c = menuBuilder;
     }
 
     @Override // androidx.appcompat.view.menu.MenuPresenter
@@ -114,7 +114,7 @@ public abstract class BaseMenuPresenter implements MenuPresenter {
         MenuPresenter.Callback callback = this.g;
         if (callback != null) {
             if (subMenuBuilder == null) {
-                subMenuBuilder = this.f1658c;
+                subMenuBuilder = this.f1610c;
             }
             return callback.onOpenSubMenu(subMenuBuilder);
         }
@@ -140,11 +140,11 @@ public abstract class BaseMenuPresenter implements MenuPresenter {
         if (viewGroup == null) {
             return;
         }
-        MenuBuilder menuBuilder = this.f1658c;
+        MenuBuilder menuBuilder = this.f1610c;
         int i = 0;
         if (menuBuilder != null) {
             menuBuilder.flagActionItems();
-            ArrayList<MenuItemImpl> visibleItems = this.f1658c.getVisibleItems();
+            ArrayList<MenuItemImpl> visibleItems = this.f1610c.getVisibleItems();
             int size = visibleItems.size();
             int i2 = 0;
             int i3 = 0;

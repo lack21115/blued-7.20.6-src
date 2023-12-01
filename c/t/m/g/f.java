@@ -16,7 +16,7 @@ public class f extends c2 {
     public static class b implements t1, Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        public volatile String f3806a;
+        public volatile String f3758a;
         public volatile int b;
 
         public b() {
@@ -30,9 +30,9 @@ public class f extends c2 {
 
         public void a(String str, int i) {
             if (m3.a(str)) {
-                this.f3806a = "";
+                this.f3758a = "";
             } else {
-                this.f3806a = str;
+                this.f3758a = str;
             }
             this.b = i;
         }
@@ -42,14 +42,14 @@ public class f extends c2 {
             byte[] a3 = o2.a(a2.length);
             byte[] bArr2 = new byte[a3.length + 1 + a2.length];
             bArr2[0] = 1;
-            System.arraycopy((Object) a3, 0, (Object) bArr2, 1, a3.length);
-            System.arraycopy((Object) a2, 0, (Object) bArr2, a3.length + 1, a2.length);
+            System.arraycopy(a3, 0, bArr2, 1, a3.length);
+            System.arraycopy(a2, 0, bArr2, a3.length + 1, a2.length);
             byte[] a4 = v2.a(bArr2, v2.a("fc_gps_for_navi"));
             if (g3.a()) {
                 int length = bArr.length;
                 int length2 = a4.length;
             }
-            u1.f4005a.a("https://rttgpsreport.map.qq.com/report?type=sdk&key=5e1fe70424035ee83066ac22b24f31dc", a4, this);
+            u1.f3957a.a("https://rttgpsreport.map.qq.com/report?type=sdk&key=5e1fe70424035ee83066ac22b24f31dc", a4, this);
         }
 
         @Override // c.t.m.g.t1
@@ -61,11 +61,11 @@ public class f extends c2 {
         @Override // java.lang.Runnable
         public void run() {
             try {
-                if (m3.a(this.f3806a)) {
+                if (m3.a(this.f3758a)) {
                     return;
                 }
-                byte[] bytes = this.f3806a.getBytes("UTF-8");
-                this.f3806a = "";
+                byte[] bytes = this.f3758a.getBytes("UTF-8");
+                this.f3758a = "";
                 a(bytes);
             } catch (Throwable th) {
                 g3.a();

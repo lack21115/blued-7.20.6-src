@@ -15,10 +15,10 @@ import java.util.Set;
 public class ChunkSeqReaderPng extends ChunkSeqReader {
 
     /* renamed from: a  reason: collision with root package name */
-    protected ImageInfo f3621a;
+    protected ImageInfo f3573a;
 
     /* renamed from: c  reason: collision with root package name */
-    protected ImageInfo f3622c;
+    protected ImageInfo f3574c;
     protected Deinterlacer d;
     protected final boolean g;
     protected int e = -1;
@@ -38,18 +38,18 @@ public class ChunkSeqReaderPng extends ChunkSeqReader {
     static /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f3623a;
+        static final /* synthetic */ int[] f3575a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:7:0x0020 -> B:11:0x0014). Please submit an issue!!! */
         static {
             int[] iArr = new int[ChunkLoadBehaviour.values().length];
-            f3623a = iArr;
+            f3575a = iArr;
             try {
                 iArr[ChunkLoadBehaviour.LOAD_CHUNK_IF_SAFE.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f3623a[ChunkLoadBehaviour.LOAD_CHUNK_NEVER.ordinal()] = 2;
+                f3575a[ChunkLoadBehaviour.LOAD_CHUNK_NEVER.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
         }
@@ -117,21 +117,21 @@ public class ChunkSeqReaderPng extends ChunkSeqReader {
     @Override // ar.com.hjg.pngj.ChunkSeqReader
     public void a(ChunkReader chunkReader) {
         super.a(chunkReader);
-        if (chunkReader.a().f3660c.equals("IHDR")) {
+        if (chunkReader.a().f3612c.equals("IHDR")) {
             PngChunkIHDR pngChunkIHDR = new PngChunkIHDR(null);
             pngChunkIHDR.a(chunkReader.a());
             ImageInfo l = pngChunkIHDR.l();
-            this.f3621a = l;
-            this.f3622c = l;
+            this.f3573a = l;
+            this.f3574c = l;
             if (pngChunkIHDR.k()) {
-                this.d = new Deinterlacer(this.f3622c);
+                this.d = new Deinterlacer(this.f3574c);
             }
-            this.f = new ChunksList(this.f3621a);
+            this.f = new ChunksList(this.f3573a);
         }
-        if (chunkReader.f3612a == ChunkReader.ChunkReaderMode.BUFFER && e(chunkReader.a().f3660c)) {
-            this.h += chunkReader.a().f3659a;
+        if (chunkReader.f3564a == ChunkReader.ChunkReaderMode.BUFFER && e(chunkReader.a().f3612c)) {
+            this.h += chunkReader.a().f3611a;
         }
-        if (chunkReader.f3612a == ChunkReader.ChunkReaderMode.BUFFER || this.j) {
+        if (chunkReader.f3564a == ChunkReader.ChunkReaderMode.BUFFER || this.j) {
             this.f.a(this.o.a(chunkReader.a(), k()), this.e);
         }
         if (a()) {
@@ -140,11 +140,11 @@ public class ChunkSeqReaderPng extends ChunkSeqReader {
     }
 
     public void a(ImageInfo imageInfo) {
-        if (!imageInfo.equals(this.f3622c)) {
-            this.f3622c = imageInfo;
+        if (!imageInfo.equals(this.f3574c)) {
+            this.f3574c = imageInfo;
         }
         if (this.d != null) {
-            this.d = new Deinterlacer(this.f3622c);
+            this.d = new Deinterlacer(this.f3574c);
         }
     }
 
@@ -186,7 +186,7 @@ public class ChunkSeqReaderPng extends ChunkSeqReader {
             if (j <= 0 || i <= j) {
                 long j2 = this.n;
                 if (j2 <= 0 || i <= j2 - this.h) {
-                    int i2 = AnonymousClass1.f3623a[this.p.ordinal()];
+                    int i2 = AnonymousClass1.f3575a[this.p.ordinal()];
                     return i2 != 1 ? i2 == 2 : !ChunkHelper.d(str);
                 }
                 return true;
@@ -240,7 +240,7 @@ public class ChunkSeqReaderPng extends ChunkSeqReader {
     }
 
     public ImageInfo k() {
-        return this.f3621a;
+        return this.f3573a;
     }
 
     public Deinterlacer l() {
@@ -252,6 +252,6 @@ public class ChunkSeqReaderPng extends ChunkSeqReader {
     }
 
     public ImageInfo n() {
-        return this.f3622c;
+        return this.f3574c;
     }
 }

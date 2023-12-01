@@ -1,9 +1,10 @@
 package com.blued.android.chat.data;
 
+import com.amap.api.fence.GeoFence;
+import com.anythink.core.common.l;
 import com.blued.android.chat.core.pack.ReqAckPackage;
 import com.blued.android.chat.core.utils.Log;
 import com.blued.android.chat.utils.MsgPackHelper;
-import com.bytedance.sdk.openadsdk.live.TTLiveConstants;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -69,7 +70,7 @@ public class AudioRoomChatExtraData implements Serializable {
                 return;
             }
             this.title = MsgPackHelper.getStringValue(map, "title");
-            this.content = MsgPackHelper.getStringValue(map, "content");
+            this.content = MsgPackHelper.getStringValue(map, l.y);
         }
 
         public String toString() {
@@ -156,7 +157,7 @@ public class AudioRoomChatExtraData implements Serializable {
             return;
         }
         Log.d("AudioRoomChat", "parseData" + map.toString());
-        this.room_id = MsgPackHelper.getLongValue(map, TTLiveConstants.ROOMID_KEY);
+        this.room_id = MsgPackHelper.getLongValue(map, "room_id");
         this.room_name = MsgPackHelper.getStringValue(map, "room_name");
         this.room_create_time = MsgPackHelper.getLongValue(map, "room_create_time");
         this.room_owner = MsgPackHelper.getLongValue(map, "room_owner");
@@ -189,7 +190,7 @@ public class AudioRoomChatExtraData implements Serializable {
         this.tags = audioTagsModel;
         audioTagsModel.parseData(MsgPackHelper.getMapValue(map, "tags"));
         this.room_notice = MsgPackHelper.getStringValue(map, "room_notice");
-        this.event = MsgPackHelper.getIntValue(map, "event");
+        this.event = MsgPackHelper.getIntValue(map, GeoFence.BUNDLE_KEY_FENCESTATUS);
         this.full_effects = MsgPackHelper.getStringValue(map, ReqAckPackage.REQ_RESPONSE_KEY.EFFECT_MP4);
         this.full_effects_time = MsgPackHelper.getLongValue(map, ReqAckPackage.REQ_RESPONSE_KEY.EFFECT_MP4_TIME);
         this.wealth_level = MsgPackHelper.getIntValue(map, "wealth_level");

@@ -39,11 +39,11 @@ import org.xmlpull.v1.XmlPullParserException;
 public class AnimatedStateListDrawableCompat extends StateListDrawable implements TintAwareDrawable {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f1618a = AnimatedStateListDrawableCompat.class.getSimpleName();
+    private static final String f1570a = AnimatedStateListDrawableCompat.class.getSimpleName();
     private AnimatedStateListState b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Transition f1619c;
+    private Transition f1571c;
     private int d;
     private int e;
     private boolean f;
@@ -53,21 +53,21 @@ public class AnimatedStateListDrawableCompat extends StateListDrawable implement
     public static class AnimatableTransition extends Transition {
 
         /* renamed from: a  reason: collision with root package name */
-        private final Animatable f1620a;
+        private final Animatable f1572a;
 
         AnimatableTransition(Animatable animatable) {
             super();
-            this.f1620a = animatable;
+            this.f1572a = animatable;
         }
 
         @Override // androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat.Transition
         public void start() {
-            this.f1620a.start();
+            this.f1572a.start();
         }
 
         @Override // androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat.Transition
         public void stop() {
-            this.f1620a.stop();
+            this.f1572a.stop();
         }
     }
 
@@ -76,17 +76,17 @@ public class AnimatedStateListDrawableCompat extends StateListDrawable implement
     public static class AnimatedStateListState extends StateListDrawable.StateListState {
 
         /* renamed from: a  reason: collision with root package name */
-        LongSparseArray<Long> f1621a;
+        LongSparseArray<Long> f1573a;
         SparseArrayCompat<Integer> b;
 
         AnimatedStateListState(AnimatedStateListState animatedStateListState, AnimatedStateListDrawableCompat animatedStateListDrawableCompat, Resources resources) {
             super(animatedStateListState, animatedStateListDrawableCompat, resources);
             if (animatedStateListState != null) {
-                this.f1621a = animatedStateListState.f1621a;
+                this.f1573a = animatedStateListState.f1573a;
                 this.b = animatedStateListState.b;
                 return;
             }
-            this.f1621a = new LongSparseArray<>();
+            this.f1573a = new LongSparseArray<>();
             this.b = new SparseArrayCompat<>();
         }
 
@@ -102,7 +102,7 @@ public class AnimatedStateListDrawableCompat extends StateListDrawable implement
         }
 
         int a(int i, int i2) {
-            return (int) this.f1621a.get(e(i, i2), -1L).longValue();
+            return (int) this.f1573a.get(e(i, i2), -1L).longValue();
         }
 
         int a(int i, int i2, Drawable drawable, boolean z) {
@@ -110,9 +110,9 @@ public class AnimatedStateListDrawableCompat extends StateListDrawable implement
             long e = e(i, i2);
             long j = z ? 8589934592L : 0L;
             long j2 = addChild;
-            this.f1621a.append(e, Long.valueOf(j2 | j));
+            this.f1573a.append(e, Long.valueOf(j2 | j));
             if (z) {
-                this.f1621a.append(e(i2, i), Long.valueOf(4294967296L | j2 | j));
+                this.f1573a.append(e(i2, i), Long.valueOf(4294967296L | j2 | j));
             }
             return addChild;
         }
@@ -130,16 +130,16 @@ public class AnimatedStateListDrawableCompat extends StateListDrawable implement
 
         @Override // androidx.appcompat.graphics.drawable.StateListDrawable.StateListState, androidx.appcompat.graphics.drawable.DrawableContainer.DrawableContainerState
         void a() {
-            this.f1621a = this.f1621a.m1270clone();
-            this.b = this.b.m1275clone();
+            this.f1573a = this.f1573a.m1132clone();
+            this.b = this.b.m1138clone();
         }
 
         boolean b(int i, int i2) {
-            return (this.f1621a.get(e(i, i2), -1L).longValue() & 4294967296L) != 0;
+            return (this.f1573a.get(e(i, i2), -1L).longValue() & 4294967296L) != 0;
         }
 
         boolean c(int i, int i2) {
-            return (this.f1621a.get(e(i, i2), -1L).longValue() & 8589934592L) != 0;
+            return (this.f1573a.get(e(i, i2), -1L).longValue() & 8589934592L) != 0;
         }
 
         @Override // androidx.appcompat.graphics.drawable.StateListDrawable.StateListState, android.graphics.drawable.Drawable.ConstantState
@@ -158,21 +158,21 @@ public class AnimatedStateListDrawableCompat extends StateListDrawable implement
     public static class AnimatedVectorDrawableTransition extends Transition {
 
         /* renamed from: a  reason: collision with root package name */
-        private final AnimatedVectorDrawableCompat f1622a;
+        private final AnimatedVectorDrawableCompat f1574a;
 
         AnimatedVectorDrawableTransition(AnimatedVectorDrawableCompat animatedVectorDrawableCompat) {
             super();
-            this.f1622a = animatedVectorDrawableCompat;
+            this.f1574a = animatedVectorDrawableCompat;
         }
 
         @Override // androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat.Transition
         public void start() {
-            this.f1622a.start();
+            this.f1574a.start();
         }
 
         @Override // androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat.Transition
         public void stop() {
-            this.f1622a.stop();
+            this.f1574a.stop();
         }
     }
 
@@ -181,7 +181,7 @@ public class AnimatedStateListDrawableCompat extends StateListDrawable implement
     public static class AnimationDrawableTransition extends Transition {
 
         /* renamed from: a  reason: collision with root package name */
-        private final ObjectAnimator f1623a;
+        private final ObjectAnimator f1575a;
         private final boolean b;
 
         AnimationDrawableTransition(AnimationDrawable animationDrawable, boolean z, boolean z2) {
@@ -197,7 +197,7 @@ public class AnimatedStateListDrawableCompat extends StateListDrawable implement
             ofInt.setDuration(frameInterpolator.a());
             ofInt.setInterpolator(frameInterpolator);
             this.b = z2;
-            this.f1623a = ofInt;
+            this.f1575a = ofInt;
         }
 
         @Override // androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat.Transition
@@ -207,17 +207,17 @@ public class AnimatedStateListDrawableCompat extends StateListDrawable implement
 
         @Override // androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat.Transition
         public void reverse() {
-            this.f1623a.reverse();
+            this.f1575a.reverse();
         }
 
         @Override // androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat.Transition
         public void start() {
-            this.f1623a.start();
+            this.f1575a.start();
         }
 
         @Override // androidx.appcompat.graphics.drawable.AnimatedStateListDrawableCompat.Transition
         public void stop() {
-            this.f1623a.cancel();
+            this.f1575a.cancel();
         }
     }
 
@@ -225,44 +225,44 @@ public class AnimatedStateListDrawableCompat extends StateListDrawable implement
     static class FrameInterpolator implements TimeInterpolator {
 
         /* renamed from: a  reason: collision with root package name */
-        private int[] f1624a;
+        private int[] f1576a;
         private int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f1625c;
+        private int f1577c;
 
         FrameInterpolator(AnimationDrawable animationDrawable, boolean z) {
             a(animationDrawable, z);
         }
 
         int a() {
-            return this.f1625c;
+            return this.f1577c;
         }
 
         int a(AnimationDrawable animationDrawable, boolean z) {
             int numberOfFrames = animationDrawable.getNumberOfFrames();
             this.b = numberOfFrames;
-            int[] iArr = this.f1624a;
+            int[] iArr = this.f1576a;
             if (iArr == null || iArr.length < numberOfFrames) {
-                this.f1624a = new int[numberOfFrames];
+                this.f1576a = new int[numberOfFrames];
             }
-            int[] iArr2 = this.f1624a;
+            int[] iArr2 = this.f1576a;
             int i = 0;
             for (int i2 = 0; i2 < numberOfFrames; i2++) {
                 int duration = animationDrawable.getDuration(z ? (numberOfFrames - i2) - 1 : i2);
                 iArr2[i2] = duration;
                 i += duration;
             }
-            this.f1625c = i;
+            this.f1577c = i;
             return i;
         }
 
         @Override // android.animation.TimeInterpolator
         public float getInterpolation(float f) {
             int i;
-            int i2 = (int) ((f * this.f1625c) + 0.5f);
+            int i2 = (int) ((f * this.f1577c) + 0.5f);
             int i3 = this.b;
-            int[] iArr = this.f1624a;
+            int[] iArr = this.f1576a;
             int i4 = 0;
             while (true) {
                 i = i4;
@@ -272,7 +272,7 @@ public class AnimatedStateListDrawableCompat extends StateListDrawable implement
                 i2 -= iArr[i];
                 i4 = i + 1;
             }
-            return (i / i3) + (i < i3 ? i2 / this.f1625c : 0.0f);
+            return (i / i3) + (i < i3 ? i2 / this.f1577c : 0.0f);
         }
     }
 
@@ -372,7 +372,7 @@ public class AnimatedStateListDrawableCompat extends StateListDrawable implement
         int d;
         int a2;
         Transition animatableTransition;
-        Transition transition = this.f1619c;
+        Transition transition = this.f1571c;
         if (transition == null) {
             d = d();
         } else if (i == this.d) {
@@ -387,7 +387,7 @@ public class AnimatedStateListDrawableCompat extends StateListDrawable implement
             d = this.d;
             transition.stop();
         }
-        this.f1619c = null;
+        this.f1571c = null;
         this.e = -1;
         this.d = -1;
         AnimatedStateListState animatedStateListState = this.b;
@@ -409,7 +409,7 @@ public class AnimatedStateListDrawableCompat extends StateListDrawable implement
             animatableTransition = new AnimatableTransition((Animatable) current);
         }
         animatableTransition.start();
-        this.f1619c = animatableTransition;
+        this.f1571c = animatableTransition;
         this.e = d;
         this.d = i;
         return true;
@@ -456,10 +456,10 @@ public class AnimatedStateListDrawableCompat extends StateListDrawable implement
             }
             throw new XmlPullParserException("No start tag found");
         } catch (IOException e) {
-            Log.e(f1618a, "parser error", e);
+            Log.e(f1570a, "parser error", e);
             return null;
         } catch (XmlPullParserException e2) {
-            Log.e(f1618a, "parser error", e2);
+            Log.e(f1570a, "parser error", e2);
             return null;
         }
     }
@@ -612,10 +612,10 @@ public class AnimatedStateListDrawableCompat extends StateListDrawable implement
     @Override // androidx.appcompat.graphics.drawable.DrawableContainer, android.graphics.drawable.Drawable
     public void jumpToCurrentState() {
         super.jumpToCurrentState();
-        Transition transition = this.f1619c;
+        Transition transition = this.f1571c;
         if (transition != null) {
             transition.stop();
-            this.f1619c = null;
+            this.f1571c = null;
             a(this.d);
             this.d = -1;
             this.e = -1;
@@ -706,9 +706,9 @@ public class AnimatedStateListDrawableCompat extends StateListDrawable implement
     @Override // androidx.appcompat.graphics.drawable.DrawableContainer, android.graphics.drawable.Drawable
     public boolean setVisible(boolean z, boolean z2) {
         boolean visible = super.setVisible(z, z2);
-        if (this.f1619c != null && (visible || z2)) {
+        if (this.f1571c != null && (visible || z2)) {
             if (z) {
-                this.f1619c.start();
+                this.f1571c.start();
                 return visible;
             }
             jumpToCurrentState();

@@ -32,11 +32,11 @@ import java.util.List;
 public class ModifyHealthFragment extends BaseFragment implements View.OnClickListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f33420a;
+    private Context f19729a;
     private View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Dialog f33421c;
+    private Dialog f19730c;
     private LinearLayout f;
     private LinearLayout g;
     private LinearLayout h;
@@ -129,14 +129,14 @@ public class ModifyHealthFragment extends BaseFragment implements View.OnClickLi
     }
 
     private void f() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.b.findViewById(2131370749);
-        commonTopTitleNoTrans.setCenterText(getString(R.string.health_information));
-        commonTopTitleNoTrans.setLeftClickListener(this);
-        commonTopTitleNoTrans.a();
+        CommonTopTitleNoTrans findViewById = this.b.findViewById(R.id.top_title);
+        findViewById.setCenterText(getString(R.string.health_information));
+        findViewById.setLeftClickListener(this);
+        findViewById.a();
     }
 
     private void g() {
-        this.f33421c = DialogUtils.a(getActivity());
+        this.f19730c = DialogUtils.a(getActivity());
         this.f = (LinearLayout) this.b.findViewById(R.id.ll_hiv_detection_result);
         this.g = (LinearLayout) this.b.findViewById(R.id.ll_hiv_detection_time);
         this.h = (LinearLayout) this.b.findViewById(R.id.ll_hiv_detection_prep);
@@ -223,8 +223,8 @@ public class ModifyHealthFragment extends BaseFragment implements View.OnClickLi
             if (userTag.select) {
                 boolean z = true;
                 if (TextUtils.equals(userTag.id, "1")) {
-                    this.k.setTextColor(BluedSkinUtils.a(this.f33420a, 2131102263));
-                    this.l.setTextColor(BluedSkinUtils.a(this.f33420a, 2131102263));
+                    this.k.setTextColor(BluedSkinUtils.a(this.f19729a, 2131102263));
+                    this.l.setTextColor(BluedSkinUtils.a(this.f19729a, 2131102263));
                     this.l.setText("");
                     this.l.setHint(R.string.hiv_detection_after);
                     for (UserTag userTag2 : this.p) {
@@ -235,8 +235,8 @@ public class ModifyHealthFragment extends BaseFragment implements View.OnClickLi
                     }
                     return;
                 }
-                this.k.setTextColor(BluedSkinUtils.a(this.f33420a, 2131102254));
-                this.l.setTextColor(BluedSkinUtils.a(this.f33420a, 2131102254));
+                this.k.setTextColor(BluedSkinUtils.a(this.f19729a, 2131102254));
+                this.l.setTextColor(BluedSkinUtils.a(this.f19729a, 2131102254));
                 Iterator<UserTag> it = this.p.iterator();
                 while (true) {
                     if (!it.hasNext()) {
@@ -383,7 +383,6 @@ public class ModifyHealthFragment extends BaseFragment implements View.OnClickLi
         getActivity().finish();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener
     public boolean onBackPressed() {
         j();
         return true;
@@ -404,8 +403,7 @@ public class ModifyHealthFragment extends BaseFragment implements View.OnClickLi
                             arrayList.add(userTag.name);
                         }
                     }
-                    CommonAlertDialog.a(this.f33420a, getString(R.string.hiv_detection_prep), (String[]) arrayList.toArray(new String[arrayList.size()]), new CommonAlertDialog.TextOnClickListener() { // from class: com.soft.blued.ui.setting.fragment.ModifyHealthFragment.3
-                        @Override // com.blued.android.module.common.widget.dialog.CommonAlertDialog.TextOnClickListener
+                    CommonAlertDialog.a(this.f19729a, getString(R.string.hiv_detection_prep), (String[]) arrayList.toArray(new String[arrayList.size()]), new CommonAlertDialog.TextOnClickListener() { // from class: com.soft.blued.ui.setting.fragment.ModifyHealthFragment.3
                         public void a(String str) {
                             ModifyHealthFragment.this.m.setText(str);
                             for (UserTag userTag2 : ModifyHealthFragment.this.q) {
@@ -422,10 +420,9 @@ public class ModifyHealthFragment extends BaseFragment implements View.OnClickLi
                     for (UserTag userTag2 : this.o) {
                         arrayList2.add(userTag2.name);
                     }
-                    CommonAlertDialog.a(this.f33420a, getString(R.string.hiv_detection_result), (String[]) arrayList2.toArray(new String[arrayList2.size()]), new CommonAlertDialog.TextOnClickListener() { // from class: com.soft.blued.ui.setting.fragment.ModifyHealthFragment.1
-                        @Override // com.blued.android.module.common.widget.dialog.CommonAlertDialog.TextOnClickListener
+                    CommonAlertDialog.a(this.f19729a, getString(R.string.hiv_detection_result), (String[]) arrayList2.toArray(new String[arrayList2.size()]), new CommonAlertDialog.TextOnClickListener() { // from class: com.soft.blued.ui.setting.fragment.ModifyHealthFragment.1
                         public void a(final String str) {
-                            CommonAlertDialog.a(ModifyHealthFragment.this.f33420a, ModifyHealthFragment.this.f33420a.getString(R.string.privacy_alert), ModifyHealthFragment.this.f33420a.getString(R.string.privacy_alert_msg), ModifyHealthFragment.this.f33420a.getString(R.string.privacy_alert_confirm), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.setting.fragment.ModifyHealthFragment.1.1
+                            CommonAlertDialog.a(ModifyHealthFragment.this.f19729a, ModifyHealthFragment.this.f19729a.getString(R.string.privacy_alert), ModifyHealthFragment.this.f19729a.getString(R.string.privacy_alert_msg), ModifyHealthFragment.this.f19729a.getString(R.string.privacy_alert_confirm), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.setting.fragment.ModifyHealthFragment.1.1
                                 @Override // android.content.DialogInterface.OnClickListener
                                 public void onClick(DialogInterface dialogInterface, int i) {
                                     Tracker.onClick(dialogInterface, i);
@@ -439,7 +436,7 @@ public class ModifyHealthFragment extends BaseFragment implements View.OnClickLi
                                     ModifyHealthFragment.this.h();
                                     ModifyHealthFragment.this.i();
                                 }
-                            }, ModifyHealthFragment.this.f33420a.getString(2131886718), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
+                            }, ModifyHealthFragment.this.f19729a.getString(2131886718), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
                         }
                     });
                     return;
@@ -453,8 +450,7 @@ public class ModifyHealthFragment extends BaseFragment implements View.OnClickLi
                     for (UserTag userTag4 : this.p) {
                         arrayList3.add(userTag4.name);
                     }
-                    CommonAlertDialog.a(this.f33420a, getString(R.string.hiv_detection_time), (String[]) arrayList3.toArray(new String[arrayList3.size()]), new CommonAlertDialog.TextOnClickListener() { // from class: com.soft.blued.ui.setting.fragment.ModifyHealthFragment.2
-                        @Override // com.blued.android.module.common.widget.dialog.CommonAlertDialog.TextOnClickListener
+                    CommonAlertDialog.a(this.f19729a, getString(R.string.hiv_detection_time), (String[]) arrayList3.toArray(new String[arrayList3.size()]), new CommonAlertDialog.TextOnClickListener() { // from class: com.soft.blued.ui.setting.fragment.ModifyHealthFragment.2
                         public void a(String str) {
                             ModifyHealthFragment.this.l.setText(str);
                             for (UserTag userTag5 : ModifyHealthFragment.this.p) {
@@ -474,9 +470,8 @@ public class ModifyHealthFragment extends BaseFragment implements View.OnClickLi
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.f33420a = getActivity();
+        this.f19729a = getActivity();
         View view = this.b;
         if (view == null) {
             this.b = layoutInflater.inflate(R.layout.fragment_health_for_modify, viewGroup, false);

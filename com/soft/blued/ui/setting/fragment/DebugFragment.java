@@ -23,6 +23,7 @@ import com.blued.android.core.BlueAppLocal;
 import com.blued.android.core.imagecache.RecyclingUtils;
 import com.blued.android.core.net.FileHttpResponseHandler;
 import com.blued.android.core.net.HttpManager;
+import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.net.StringHttpResponseHandler;
 import com.blued.android.core.net.http.FileDownloader;
 import com.blued.android.core.ui.BaseFragment;
@@ -45,7 +46,6 @@ import com.blued.android.module.common.url.BluedHttpUrl;
 import com.blued.android.module.common.user.model.UserInfo;
 import com.blued.android.module.common.utils.NetworkUtils;
 import com.blued.android.module.common.view.CommonTopTitleNoTrans;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.blued.android.module.device_identity.library.BluedDeviceIdentity;
 import com.blued.android.module.im.biz.IMConnectorDebuger;
 import com.blued.android.web.SimpleWebCallBack;
@@ -117,11 +117,11 @@ public class DebugFragment extends BaseFragment implements View.OnClickListener 
     private View z;
 
     /* renamed from: a  reason: collision with root package name */
-    private final String[] f33339a = {"https://www.bldimg.com/test_img_10k.jpg", "https://static.blued.com/test_img_10k.jpg", "https://staticsg.bldimg.com/test_img_10k.jpg", "https://staticus.bldimg.com/test_img_10k.jpg"};
+    private final String[] f19648a = {"https://www.bldimg.com/test_img_10k.jpg", "https://static.blued.com/test_img_10k.jpg", "https://staticsg.bldimg.com/test_img_10k.jpg", "https://staticus.bldimg.com/test_img_10k.jpg"};
     private final String b = "https://" + BluedHttpUrl.t();
 
     /* renamed from: c  reason: collision with root package name */
-    private final String f33340c = "https://" + BluedHttpUrl.z();
+    private final String f19649c = "https://" + BluedHttpUrl.z();
     private final String d = BluedHttpUrl.q();
     private final String e = "https://app.blued.cn/intl/speed-test";
     private final String f = BluedHttpUrl.r();
@@ -142,27 +142,24 @@ public class DebugFragment extends BaseFragment implements View.OnClickListener 
     public class AnonymousClass7 extends StringHttpResponseHandler {
 
         /* renamed from: a  reason: collision with root package name */
-        String f33351a;
+        String f19660a;
 
         AnonymousClass7(boolean z) {
             super(z);
-            this.f33351a = "";
+            this.f19660a = "";
         }
 
-        @Override // com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
         /* renamed from: a */
         public void onSuccess(String str) {
-            this.f33351a = str;
+            this.f19660a = str;
         }
 
-        @Override // com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
         /* renamed from: a */
         public void onFailure(Throwable th, int i, String str) {
             super.onFailure(th, i, str);
-            this.f33351a = "failure, code:" + i;
+            this.f19660a = "failure, code:" + i;
         }
 
-        @Override // com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
         public void onFinish() {
             super.onFinish();
             DebugFragment.this.postSafeRunOnUiThread(new Runnable() { // from class: com.soft.blued.ui.setting.fragment.DebugFragment.7.1
@@ -170,7 +167,7 @@ public class DebugFragment extends BaseFragment implements View.OnClickListener 
                 public void run() {
                     DebugFragment.this.m.b();
                     DebugFragment.this.r.setVisibility(8);
-                    DebugFragment.this.u.setText(AnonymousClass7.this.f33351a);
+                    DebugFragment.this.u.setText(AnonymousClass7.this.f19660a);
                 }
             });
         }
@@ -209,7 +206,7 @@ public class DebugFragment extends BaseFragment implements View.OnClickListener 
 
     /* JADX INFO: Access modifiers changed from: private */
     public void a(final int i) {
-        String[] strArr = this.f33339a;
+        String[] strArr = this.f19648a;
         if (i >= strArr.length) {
             return;
         }
@@ -217,37 +214,34 @@ public class DebugFragment extends BaseFragment implements View.OnClickListener 
         FileDownloader.a(str, RecyclingUtils.e(str), new FileHttpResponseHandler() { // from class: com.soft.blued.ui.setting.fragment.DebugFragment.6
 
             /* renamed from: a  reason: collision with root package name */
-            Long f33348a = Long.valueOf(System.currentTimeMillis());
+            Long f19657a = Long.valueOf(System.currentTimeMillis());
             boolean b = false;
 
-            @Override // com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
             /* renamed from: a */
             public void onSuccess(File file) {
             }
 
-            @Override // com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
             /* renamed from: a */
             public void onFailure(Throwable th, int i2, File file) {
                 this.b = true;
             }
 
-            @Override // com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
             public void onFinish() {
                 super.onFinish();
                 String str2 = this.b ? " ms/failure" : " ms/success";
                 int i2 = i;
                 if (i2 == 0) {
                     DebugFragment debugFragment = DebugFragment.this;
-                    debugFragment.ad = (System.currentTimeMillis() - this.f33348a.longValue()) + str2;
+                    debugFragment.ad = (System.currentTimeMillis() - this.f19657a.longValue()) + str2;
                 } else if (i2 == 1) {
                     DebugFragment debugFragment2 = DebugFragment.this;
-                    debugFragment2.ae = (System.currentTimeMillis() - this.f33348a.longValue()) + str2;
+                    debugFragment2.ae = (System.currentTimeMillis() - this.f19657a.longValue()) + str2;
                 } else if (i2 == 2) {
                     DebugFragment debugFragment3 = DebugFragment.this;
-                    debugFragment3.af = (System.currentTimeMillis() - this.f33348a.longValue()) + str2;
+                    debugFragment3.af = (System.currentTimeMillis() - this.f19657a.longValue()) + str2;
                 } else if (i2 == 3) {
                     DebugFragment debugFragment4 = DebugFragment.this;
-                    debugFragment4.ag = (System.currentTimeMillis() - this.f33348a.longValue()) + str2;
+                    debugFragment4.ag = (System.currentTimeMillis() - this.f19657a.longValue()) + str2;
                 }
                 DebugFragment.this.postSafeRunOnUiThread(new Runnable() { // from class: com.soft.blued.ui.setting.fragment.DebugFragment.6.1
                     @Override // java.lang.Runnable
@@ -258,11 +252,11 @@ public class DebugFragment extends BaseFragment implements View.OnClickListener 
                     }
                 });
             }
-        }, null);
+        }, (IRequestHost) null);
     }
 
     public static void a(Context context) {
-        TerminalActivity.d(context, DebugFragment.class, null);
+        TerminalActivity.d(context, DebugFragment.class, (Bundle) null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -274,8 +268,7 @@ public class DebugFragment extends BaseFragment implements View.OnClickListener 
     }
 
     private void a(final String str) {
-        ThreadManager.a().a(new ThreadExecutor("getIp", ThreadPriority.NORMAL) { // from class: com.soft.blued.ui.setting.fragment.DebugFragment.4
-            @Override // com.blued.android.framework.pool.ThreadExecutor
+        ThreadManager.a().a(new ThreadExecutor("getIp", ThreadPriority.b) { // from class: com.soft.blued.ui.setting.fragment.DebugFragment.4
             public void execute() {
                 String str2;
                 try {
@@ -292,19 +285,19 @@ public class DebugFragment extends BaseFragment implements View.OnClickListener 
                 }
                 if (str.equals(DebugFragment.this.b)) {
                     DebugFragment.this.V = str2;
-                } else if (str.equals(DebugFragment.this.f33340c)) {
+                } else if (str.equals(DebugFragment.this.f19649c)) {
                     DebugFragment.this.W = str2;
                 } else if (str.equals(DebugFragment.this.d)) {
                     DebugFragment.this.X = str2;
                 } else if (str.equals(DebugFragment.this.f) || str.equals("https://pay.blued.com")) {
                     DebugFragment.this.Y = str2;
-                } else if (str.equals(DebugFragment.this.f33339a[0])) {
+                } else if (str.equals(DebugFragment.this.f19648a[0])) {
                     DebugFragment.this.Z = str2;
-                } else if (str.equals(DebugFragment.this.f33339a[1])) {
+                } else if (str.equals(DebugFragment.this.f19648a[1])) {
                     DebugFragment.this.aa = str2;
-                } else if (str.equals(DebugFragment.this.f33339a[2])) {
+                } else if (str.equals(DebugFragment.this.f19648a[2])) {
                     DebugFragment.this.ab = str2;
-                } else if (str.equals(DebugFragment.this.f33339a[3])) {
+                } else if (str.equals(DebugFragment.this.f19648a[3])) {
                     DebugFragment.this.ac = str2;
                 }
                 DebugFragment.this.postSafeRunOnUiThread(new Runnable() { // from class: com.soft.blued.ui.setting.fragment.DebugFragment.4.1
@@ -324,43 +317,42 @@ public class DebugFragment extends BaseFragment implements View.OnClickListener 
         return false;
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private void b() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.l.findViewById(2131370694);
-        this.m = commonTopTitleNoTrans;
-        commonTopTitleNoTrans.setLeftClickListener(this);
+        CommonTopTitleNoTrans findViewById = this.l.findViewById(2131370694);
+        this.m = findViewById;
+        findViewById.setLeftClickListener(this);
         this.m.setRightClickListener(this);
         this.m.setRightTextColor(2131102254);
-        ShapeTextView shapeTextView = (ShapeTextView) this.l.findViewById(R.id.tab_bg);
-        this.w = shapeTextView;
-        ShapeHelper.b(shapeTextView, 2131102360);
-        ShapeTextView shapeTextView2 = (ShapeTextView) this.l.findViewById(R.id.tv_basic_switch);
-        this.n = shapeTextView2;
-        ShapeHelper.b(shapeTextView2, 2131102361);
-        ShapeHelper.a((ShapeHelper.ShapeView) this.n, 2131102254);
+        ShapeTextView findViewById2 = this.l.findViewById(R.id.tab_bg);
+        this.w = findViewById2;
+        ShapeHelper.b(findViewById2, 2131102360);
+        ShapeTextView findViewById3 = this.l.findViewById(R.id.tv_basic_switch);
+        this.n = findViewById3;
+        ShapeHelper.b(findViewById3, 2131102361);
+        ShapeHelper.a(this.n, 2131102254);
         this.n.setOnClickListener(this);
-        ShapeTextView shapeTextView3 = (ShapeTextView) this.l.findViewById(R.id.tv_im_switch);
-        this.p = shapeTextView3;
-        ShapeHelper.b(shapeTextView3, 2131102360);
-        ShapeHelper.a((ShapeHelper.ShapeView) this.p, 2131102254);
+        ShapeTextView findViewById4 = this.l.findViewById(R.id.tv_im_switch);
+        this.p = findViewById4;
+        ShapeHelper.b(findViewById4, 2131102360);
+        ShapeHelper.a(this.p, 2131102254);
         this.p.setOnClickListener(this);
-        ShapeTextView shapeTextView4 = (ShapeTextView) this.l.findViewById(R.id.tv_speed_web_switch);
-        this.o = shapeTextView4;
-        ShapeHelper.b(shapeTextView4, 2131102360);
-        ShapeHelper.a((ShapeHelper.ShapeView) this.o, 2131102254);
+        ShapeTextView findViewById5 = this.l.findViewById(R.id.tv_speed_web_switch);
+        this.o = findViewById5;
+        ShapeHelper.b(findViewById5, 2131102360);
+        ShapeHelper.a(this.o, 2131102254);
         this.o.setOnClickListener(this);
         this.R = (ScrollView) this.l.findViewById(R.id.sv_im_detail);
         this.S = (TextView) this.l.findViewById(R.id.tv_im_detail);
         WebView webView = (WebView) this.l.findViewById(R.id.speed_web_view);
         this.x = webView;
         webView.setBackgroundColor(BluedSkinUtils.a(this.P, 2131101796));
-        this.y = new BluedWebView(this, this.x, null, new SimpleWebCallBack() { // from class: com.soft.blued.ui.setting.fragment.DebugFragment.2
-            @Override // com.blued.android.web.SimpleWebCallBack, com.blued.android.framework.web.BluedWebView.WebCallback
+        this.y = new BluedWebView(this, this.x, (ViewGroup) null, new SimpleWebCallBack() { // from class: com.soft.blued.ui.setting.fragment.DebugFragment.2
             public void a(BluedWebView bluedWebView, int i, String str, String str2) {
                 DebugFragment.this.A = false;
                 AppMethods.d(2131887272);
             }
 
-            @Override // com.blued.android.web.SimpleWebCallBack, com.blued.android.framework.web.BluedWebView.WebCallback
             public void a(BluedWebView bluedWebView, String str, boolean z) {
                 DebugFragment.this.A = true;
             }
@@ -377,9 +369,9 @@ public class DebugFragment extends BaseFragment implements View.OnClickListener 
         this.u = (TextView) this.l.findViewById(R.id.tv_report_view);
         this.q = (ProgressBar) this.l.findViewById(R.id.pb_network);
         this.r = (ProgressBar) this.l.findViewById(R.id.pb_report);
-        ShapeTextView shapeTextView5 = (ShapeTextView) this.l.findViewById(R.id.tv_info_upload);
-        this.v = shapeTextView5;
-        shapeTextView5.setVisibility(8);
+        ShapeTextView findViewById6 = this.l.findViewById(R.id.tv_info_upload);
+        this.v = findViewById6;
+        findViewById6.setVisibility(8);
         a();
     }
 
@@ -396,20 +388,19 @@ public class DebugFragment extends BaseFragment implements View.OnClickListener 
             File file2 = new File(CommonTools.a(), "patch_signed_7zip.apk");
             if (AppMethods.a(file.getAbsolutePath(), file2.getAbsolutePath(), true)) {
                 TinkerInstaller.onReceiveUpgradePatch(AppInfo.d(), file2.getAbsolutePath());
-                AppMethods.a((CharSequence) "patch安装完成，请重启APP验证patch是否生效");
+                AppMethods.a("patch安装完成，请重启APP验证patch是否生效");
                 file.delete();
             } else {
-                AppMethods.a((CharSequence) "patch文件复制失败");
+                AppMethods.a("patch文件复制失败");
             }
         } else {
-            AppMethods.a((CharSequence) "patch文件不存在，请检查路径和文件名");
+            AppMethods.a("patch文件不存在，请检查路径和文件名");
         }
         this.Q = 0;
     }
 
     private void b(final String str) {
         HttpManager.a(str, new StringHttpResponseHandler(true) { // from class: com.soft.blued.ui.setting.fragment.DebugFragment.5
-            @Override // com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
             /* renamed from: a */
             public void onSuccess(String str2) {
                 if (str.equals("https://www.baidu.com") || str.contains("https://www.google.com")) {
@@ -419,7 +410,6 @@ public class DebugFragment extends BaseFragment implements View.OnClickListener 
                 }
             }
 
-            @Override // com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
             /* renamed from: a */
             public void onFailure(Throwable th, int i, String str2) {
                 super.onFailure(th, i, str2);
@@ -430,7 +420,6 @@ public class DebugFragment extends BaseFragment implements View.OnClickListener 
                 }
             }
 
-            @Override // com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
             public void onFinish() {
                 super.onFinish();
                 DebugFragment.this.postSafeRunOnUiThread(new Runnable() { // from class: com.soft.blued.ui.setting.fragment.DebugFragment.5.1
@@ -465,9 +454,9 @@ public class DebugFragment extends BaseFragment implements View.OnClickListener 
         this.E = UserInfo.getInstance().getLoginUserInfo().getName();
         this.F = DeviceUtils.b();
         this.G = TinkerTools.a();
-        this.H = AppInfo.f9487c;
+        this.H = AppInfo.c;
         this.I = TimeZone.getDefault().getID();
-        this.J = AppInfo.d + BridgeUtil.UNDERLINE_STR + AppMethods.a();
+        this.J = AppInfo.d + "_" + AppMethods.a();
         this.K = BlueAppLocal.c().getLanguage();
         String d = NetworkUtils.d();
         this.L = d;
@@ -480,13 +469,13 @@ public class DebugFragment extends BaseFragment implements View.OnClickListener 
         this.N = IMDebuger.getLastReceivePackageInfo();
         this.O = IMConnectorDebuger.c() + ", " + IMConnectorDebuger.d();
         a(this.b);
-        a(this.f33340c);
+        a(this.f19649c);
         a(this.d);
         a("1".equals(this.D) ? this.f : "https://pay.blued.com");
         int i = 0;
         while (true) {
             int i2 = i;
-            String[] strArr = this.f33339a;
+            String[] strArr = this.f19648a;
             if (i2 >= strArr.length) {
                 break;
             }
@@ -508,7 +497,7 @@ public class DebugFragment extends BaseFragment implements View.OnClickListener 
         } else {
             ((android.text.ClipboardManager) this.P.getSystemService(Context.CLIPBOARD_SERVICE)).setText(RegExpUtils.a(str));
         }
-        AppMethods.a((CharSequence) this.P.getResources().getString(2131887353));
+        AppMethods.a(this.P.getResources().getString(R.string.copy));
     }
 
     private void d() {
@@ -541,10 +530,10 @@ public class DebugFragment extends BaseFragment implements View.OnClickListener 
             }
         }
         String str4 = str3;
-        if (AppInfo.f9487c.equalsIgnoreCase("a0031a")) {
+        if (AppInfo.c.equalsIgnoreCase("a0031a")) {
             str4 = str3 + "\nTrackID:" + HuaweiChannelUtils.a(this.P);
         }
-        this.s.setText((str4 + "\nIM gRPC:" + FlexDebugSevConfig.a().d() + ", state:" + IMManager.a().f32237a) + "\nLive gRPC:" + FlexDebugSevConfig.a().e());
+        this.s.setText((str4 + "\nIM gRPC:" + FlexDebugSevConfig.a().d() + ", state:" + IMManager.a().f18547a) + "\nLive gRPC:" + FlexDebugSevConfig.a().e());
         this.s.setOnLongClickListener(new View.OnLongClickListener() { // from class: com.soft.blued.ui.setting.fragment.-$$Lambda$DebugFragment$lno-0VolOaXvWFteWLPtuSZr73c
             @Override // android.view.View.OnLongClickListener
             public final boolean onLongClick(View view) {
@@ -611,19 +600,17 @@ public class DebugFragment extends BaseFragment implements View.OnClickListener 
                 ShapeHelper.b(this.v, 2131102205);
                 this.v.setText("Uploading, please wait.");
                 new LogUploadHelper(getActivity().getApplication()).a(BluedHttpUrl.q(), ((Object) this.s.getText()) + "\n\n" + ((Object) this.t.getText()), new LogUploadHelper.OnUploadListener() { // from class: com.soft.blued.ui.setting.fragment.DebugFragment.3
-                    @Override // com.blued.android.framework.utils.LogUploadHelper.OnUploadListener
                     public void a() {
                         DebugFragment.this.v.setEnabled(true);
                         Log.e("LogUploadHelper", "onFail");
                         DebugFragment.this.v.setText("Operation failed. Please try again.");
-                        AppMethods.a((CharSequence) "upload fail");
+                        AppMethods.a("upload fail");
                     }
 
-                    @Override // com.blued.android.framework.utils.LogUploadHelper.OnUploadListener
                     public void a(String str) {
                         Log.e("LogUploadHelper", "onSuccess");
                         DebugFragment.this.v.setVisibility(8);
-                        AppMethods.a((CharSequence) "upload success");
+                        AppMethods.a("upload success");
                     }
                 });
                 return;
@@ -642,7 +629,6 @@ public class DebugFragment extends BaseFragment implements View.OnClickListener 
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.P = getActivity();
         View view = this.l;

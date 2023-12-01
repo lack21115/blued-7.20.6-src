@@ -19,7 +19,7 @@ import org.xmlpull.v1.XmlPullParser;
 public class Slide extends Visibility {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final TimeInterpolator f3465a = new DecelerateInterpolator();
+    private static final TimeInterpolator f3417a = new DecelerateInterpolator();
     private static final TimeInterpolator b = new AccelerateInterpolator();
     private static final CalculateSlide e = new CalculateSlideHorizontal() { // from class: androidx.transition.Slide.1
         @Override // androidx.transition.Slide.CalculateSlide
@@ -67,7 +67,7 @@ public class Slide extends Visibility {
     };
 
     /* renamed from: c  reason: collision with root package name */
-    private CalculateSlide f3466c;
+    private CalculateSlide f3418c;
     private int d;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -106,20 +106,20 @@ public class Slide extends Visibility {
     }
 
     public Slide() {
-        this.f3466c = j;
+        this.f3418c = j;
         this.d = 80;
         setSlideEdge(80);
     }
 
     public Slide(int i2) {
-        this.f3466c = j;
+        this.f3418c = j;
         this.d = 80;
         setSlideEdge(i2);
     }
 
     public Slide(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f3466c = j;
+        this.f3418c = j;
         this.d = 80;
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, Styleable.h);
         int namedInt = TypedArrayUtils.getNamedInt(obtainStyledAttributes, (XmlPullParser) attributeSet, "slideEdge", 0, 80);
@@ -157,7 +157,7 @@ public class Slide extends Visibility {
         int[] iArr = (int[]) transitionValues2.values.get("android:slide:screenPosition");
         float translationX = view.getTranslationX();
         float translationY = view.getTranslationY();
-        return TranslationAnimationCreator.a(view, transitionValues2, iArr[0], iArr[1], this.f3466c.getGoneX(viewGroup, view), this.f3466c.getGoneY(viewGroup, view), translationX, translationY, f3465a, this);
+        return TranslationAnimationCreator.a(view, transitionValues2, iArr[0], iArr[1], this.f3418c.getGoneX(viewGroup, view), this.f3418c.getGoneY(viewGroup, view), translationX, translationY, f3417a, this);
     }
 
     @Override // androidx.transition.Visibility
@@ -166,24 +166,24 @@ public class Slide extends Visibility {
             return null;
         }
         int[] iArr = (int[]) transitionValues.values.get("android:slide:screenPosition");
-        return TranslationAnimationCreator.a(view, transitionValues, iArr[0], iArr[1], view.getTranslationX(), view.getTranslationY(), this.f3466c.getGoneX(viewGroup, view), this.f3466c.getGoneY(viewGroup, view), b, this);
+        return TranslationAnimationCreator.a(view, transitionValues, iArr[0], iArr[1], view.getTranslationX(), view.getTranslationY(), this.f3418c.getGoneX(viewGroup, view), this.f3418c.getGoneY(viewGroup, view), b, this);
     }
 
     public void setSlideEdge(int i2) {
         if (i2 == 3) {
-            this.f3466c = e;
+            this.f3418c = e;
         } else if (i2 == 5) {
-            this.f3466c = h;
+            this.f3418c = h;
         } else if (i2 == 48) {
-            this.f3466c = g;
+            this.f3418c = g;
         } else if (i2 == 80) {
-            this.f3466c = j;
+            this.f3418c = j;
         } else if (i2 == 8388611) {
-            this.f3466c = f;
+            this.f3418c = f;
         } else if (i2 != 8388613) {
             throw new IllegalArgumentException("Invalid slide direction");
         } else {
-            this.f3466c = i;
+            this.f3418c = i;
         }
         this.d = i2;
         SidePropagation sidePropagation = new SidePropagation();

@@ -6,13 +6,13 @@ import com.sdk.tencent.k.a;
 public class SInfo {
 
     /* renamed from: c  reason: collision with root package name */
-    private int f28023c;
+    private int f14335c;
     private String cm;
     private String n;
     private String v;
 
     public int getC() {
-        return this.f28023c;
+        return this.f14335c;
     }
 
     public String getCm() {
@@ -28,7 +28,7 @@ public class SInfo {
     }
 
     public void setC(int i) {
-        this.f28023c = i;
+        this.f14335c = i;
     }
 
     public void setCm(String str) {

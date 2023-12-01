@@ -9,7 +9,7 @@ import java.lang.reflect.Method;
 public class SubscriptionManagerCompat {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Method f2558a;
+    private static Method f2510a;
 
     /* loaded from: source-8756600-dex2jar.jar:androidx/core/telephony/SubscriptionManagerCompat$Api29Impl.class */
     static class Api29Impl {
@@ -32,15 +32,15 @@ public class SubscriptionManagerCompat {
             return Api29Impl.a(i);
         }
         try {
-            if (f2558a == null) {
+            if (f2510a == null) {
                 if (Build.VERSION.SDK_INT >= 26) {
-                    f2558a = SubscriptionManager.class.getDeclaredMethod("getSlotIndex", Integer.TYPE);
+                    f2510a = SubscriptionManager.class.getDeclaredMethod("getSlotIndex", Integer.TYPE);
                 } else {
-                    f2558a = SubscriptionManager.class.getDeclaredMethod("getSlotId", Integer.TYPE);
+                    f2510a = SubscriptionManager.class.getDeclaredMethod("getSlotId", Integer.TYPE);
                 }
-                f2558a.setAccessible(true);
+                f2510a.setAccessible(true);
             }
-            Integer num = (Integer) f2558a.invoke(null, Integer.valueOf(i));
+            Integer num = (Integer) f2510a.invoke(null, Integer.valueOf(i));
             if (num != null) {
                 return num.intValue();
             }

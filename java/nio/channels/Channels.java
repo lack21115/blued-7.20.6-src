@@ -112,9 +112,8 @@ public final class Channels {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: source-2895416-dex2jar.jar:java/nio/channels/Channels$InputStreamChannel.class */
-    public static class InputStreamChannel extends AbstractInterruptibleChannel implements ReadableByteChannel {
+    private static class InputStreamChannel extends AbstractInterruptibleChannel implements ReadableByteChannel {
         private final InputStream inputStream;
 
         InputStreamChannel(InputStream inputStream) {
@@ -152,9 +151,8 @@ public final class Channels {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: source-2895416-dex2jar.jar:java/nio/channels/Channels$OutputStreamChannel.class */
-    public static class OutputStreamChannel extends AbstractInterruptibleChannel implements WritableByteChannel {
+    private static class OutputStreamChannel extends AbstractInterruptibleChannel implements WritableByteChannel {
         private final OutputStream outputStream;
 
         OutputStreamChannel(OutputStream outputStream) {

@@ -20,13 +20,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYKtvProView.class */
 public final class YYKtvProView extends View {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Paint f18282a;
+    private final Paint a;
     private final Paint b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private Path f18283c;
+    private Path c;
     private int d;
     private int e;
     private int f;
@@ -46,7 +42,7 @@ public final class YYKtvProView extends View {
         paint.setAntiAlias(true);
         paint.setStyle(Paint.Style.FILL);
         paint.setStrokeCap(Paint.Cap.ROUND);
-        this.f18282a = paint;
+        this.a = paint;
         Paint paint2 = new Paint();
         paint2.setColor(getResources().getColor(R.color.purple_200));
         paint2.setAntiAlias(true);
@@ -73,14 +69,14 @@ public final class YYKtvProView extends View {
     }
 
     private final Path getStripPath() {
-        if (this.f18283c == null) {
-            this.f18283c = new Path();
+        if (this.c == null) {
+            this.c = new Path();
         }
-        Path path = this.f18283c;
+        Path path = this.c;
         if (path != null) {
             path.reset();
         }
-        Path path2 = this.f18283c;
+        Path path2 = this.c;
         Path path3 = path2;
         if (path2 == null) {
             path3 = new Path();
@@ -115,17 +111,17 @@ public final class YYKtvProView extends View {
         float f = 5;
         float width = (getWidth() * 4.0f) / f;
         float height = getHeight() - (getWidth() * 1.0f);
-        this.f18282a.setStrokeWidth(width);
-        this.f18282a.setColor(getResources().getColor(R.color.black_alpha30));
+        this.a.setStrokeWidth(width);
+        this.a.setColor(getResources().getColor(R.color.black_alpha30));
         Integer valueOf = canvas == null ? null : Integer.valueOf(canvas.saveLayer(0.0f, 0.0f, getWidth() * 1.0f, getHeight() * 1.0f, null));
         if (canvas != null) {
-            canvas.drawCircle(getWidth() / 2.0f, getHeight() - (getWidth() / 2.0f), getWidth() / 2.0f, this.f18282a);
+            canvas.drawCircle(getWidth() / 2.0f, getHeight() - (getWidth() / 2.0f), getWidth() / 2.0f, this.a);
         }
-        this.f18282a.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC));
+        this.a.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC));
         if (canvas != null) {
-            canvas.drawLine(getWidth() / 2.0f, getWidth() / 2.0f, getWidth() / 2.0f, height, this.f18282a);
+            canvas.drawLine(getWidth() / 2.0f, getWidth() / 2.0f, getWidth() / 2.0f, height, this.a);
         }
-        this.f18282a.setXfermode(null);
+        this.a.setXfermode(null);
         if (canvas != null) {
             Intrinsics.a(valueOf);
             canvas.restoreToCount(valueOf.intValue());
@@ -192,11 +188,11 @@ public final class YYKtvProView extends View {
             return;
         }
         float width5 = (getWidth() - bitmap.getWidth()) / 2.0f;
-        this.f18282a.setColor(getResources().getColor(R.color.black));
+        this.a.setColor(getResources().getColor(R.color.black));
         if (canvas == null) {
             return;
         }
-        canvas.drawBitmap(bitmap, width5, height + width5, this.f18282a);
+        canvas.drawBitmap(bitmap, width5, height + width5, this.a);
     }
 
     public final void setMaxPro(int i) {

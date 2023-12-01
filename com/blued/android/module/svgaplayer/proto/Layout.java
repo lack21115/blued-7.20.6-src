@@ -34,9 +34,8 @@ public final class Layout extends Message<Layout, Builder> {
         public Float x;
         public Float y;
 
-        /* JADX WARN: Can't rename method to resolve collision */
-        @Override // com.squareup.wire.Message.Builder
-        public Layout build() {
+        /* renamed from: build */
+        public Layout m10553build() {
             return new Layout(this.x, this.y, this.width, this.height, super.buildUnknownFields());
         }
 
@@ -67,49 +66,46 @@ public final class Layout extends Message<Layout, Builder> {
             super(FieldEncoding.LENGTH_DELIMITED, Layout.class);
         }
 
-        /* JADX WARN: Can't rename method to resolve collision */
-        @Override // com.squareup.wire.ProtoAdapter
-        public Layout decode(ProtoReader protoReader) throws IOException {
+        /* renamed from: decode */
+        public Layout m10554decode(ProtoReader protoReader) throws IOException {
             Builder builder = new Builder();
             long beginMessage = protoReader.beginMessage();
             while (true) {
                 int nextTag = protoReader.nextTag();
                 if (nextTag == -1) {
                     protoReader.endMessage(beginMessage);
-                    return builder.build();
+                    return builder.m10553build();
                 } else if (nextTag == 1) {
-                    builder.x(ProtoAdapter.FLOAT.decode(protoReader));
+                    builder.x((Float) ProtoAdapter.FLOAT.decode(protoReader));
                 } else if (nextTag == 2) {
-                    builder.y(ProtoAdapter.FLOAT.decode(protoReader));
+                    builder.y((Float) ProtoAdapter.FLOAT.decode(protoReader));
                 } else if (nextTag == 3) {
-                    builder.width(ProtoAdapter.FLOAT.decode(protoReader));
+                    builder.width((Float) ProtoAdapter.FLOAT.decode(protoReader));
                 } else if (nextTag != 4) {
                     FieldEncoding peekFieldEncoding = protoReader.peekFieldEncoding();
                     builder.addUnknownField(nextTag, peekFieldEncoding, peekFieldEncoding.rawProtoAdapter().decode(protoReader));
                 } else {
-                    builder.height(ProtoAdapter.FLOAT.decode(protoReader));
+                    builder.height((Float) ProtoAdapter.FLOAT.decode(protoReader));
                 }
             }
         }
 
-        @Override // com.squareup.wire.ProtoAdapter
         public void encode(ProtoWriter protoWriter, Layout layout) throws IOException {
             if (layout.x != null) {
-                ProtoAdapter.FLOAT.encodeWithTag(protoWriter, 1, (int) layout.x);
+                ProtoAdapter.FLOAT.encodeWithTag(protoWriter, 1, layout.x);
             }
             if (layout.y != null) {
-                ProtoAdapter.FLOAT.encodeWithTag(protoWriter, 2, (int) layout.y);
+                ProtoAdapter.FLOAT.encodeWithTag(protoWriter, 2, layout.y);
             }
             if (layout.width != null) {
-                ProtoAdapter.FLOAT.encodeWithTag(protoWriter, 3, (int) layout.width);
+                ProtoAdapter.FLOAT.encodeWithTag(protoWriter, 3, layout.width);
             }
             if (layout.height != null) {
-                ProtoAdapter.FLOAT.encodeWithTag(protoWriter, 4, (int) layout.height);
+                ProtoAdapter.FLOAT.encodeWithTag(protoWriter, 4, layout.height);
             }
             protoWriter.writeBytes(layout.unknownFields());
         }
 
-        @Override // com.squareup.wire.ProtoAdapter
         public int encodedSize(Layout layout) {
             int i = 0;
             int encodedSizeWithTag = layout.x != null ? ProtoAdapter.FLOAT.encodedSizeWithTag(1, layout.x) : 0;
@@ -121,11 +117,10 @@ public final class Layout extends Message<Layout, Builder> {
             return encodedSizeWithTag + encodedSizeWithTag2 + encodedSizeWithTag3 + i + layout.unknownFields().size();
         }
 
-        @Override // com.squareup.wire.ProtoAdapter
         public Layout redact(Layout layout) {
-            Builder newBuilder = layout.newBuilder();
-            newBuilder.clearUnknownFields();
-            return newBuilder.build();
+            Builder m10552newBuilder = layout.m10552newBuilder();
+            m10552newBuilder.clearUnknownFields();
+            return m10552newBuilder.m10553build();
         }
     }
 
@@ -161,7 +156,7 @@ public final class Layout extends Message<Layout, Builder> {
     }
 
     public int hashCode() {
-        int i = this.hashCode;
+        int i = ((Message) this).hashCode;
         int i2 = i;
         if (i == 0) {
             int hashCode = unknownFields().hashCode();
@@ -177,14 +172,13 @@ public final class Layout extends Message<Layout, Builder> {
                 i3 = f4.hashCode();
             }
             i2 = (((((((hashCode * 37) + hashCode2) * 37) + hashCode3) * 37) + hashCode4) * 37) + i3;
-            this.hashCode = i2;
+            ((Message) this).hashCode = i2;
         }
         return i2;
     }
 
-    /* JADX WARN: Can't rename method to resolve collision */
-    @Override // com.squareup.wire.Message
-    public Builder newBuilder() {
+    /* renamed from: newBuilder */
+    public Builder m10552newBuilder() {
         Builder builder = new Builder();
         builder.x = this.x;
         builder.y = this.y;
@@ -194,7 +188,6 @@ public final class Layout extends Message<Layout, Builder> {
         return builder;
     }
 
-    @Override // com.squareup.wire.Message
     public String toString() {
         StringBuilder sb = new StringBuilder();
         if (this.x != null) {

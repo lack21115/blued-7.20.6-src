@@ -32,11 +32,11 @@ public class LockPatternView extends View {
     private final Matrix F;
 
     /* renamed from: a  reason: collision with root package name */
-    private boolean f28448a;
+    private boolean f14758a;
     private Paint b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Paint f28449c;
+    private Paint f14759c;
     private OnPatternListener d;
     private ArrayList<Cell> e;
     private boolean[][] f;
@@ -65,10 +65,10 @@ public class LockPatternView extends View {
     public static class Cell {
 
         /* renamed from: c  reason: collision with root package name */
-        static Cell[][] f28450c = (Cell[][]) Array.newInstance(Cell.class, 3, 3);
+        static Cell[][] f14760c = (Cell[][]) Array.newInstance(Cell.class, 3, 3);
 
         /* renamed from: a  reason: collision with root package name */
-        int f28451a;
+        int f14761a;
         int b;
 
         static {
@@ -82,7 +82,7 @@ public class LockPatternView extends View {
                 while (true) {
                     int i4 = i3;
                     if (i4 < 3) {
-                        f28450c[i2][i4] = new Cell(i2, i4);
+                        f14760c[i2][i4] = new Cell(i2, i4);
                         i3 = i4 + 1;
                     }
                 }
@@ -92,7 +92,7 @@ public class LockPatternView extends View {
 
         private Cell(int i, int i2) {
             b(i, i2);
-            this.f28451a = i;
+            this.f14761a = i;
             this.b = i2;
         }
 
@@ -101,7 +101,7 @@ public class LockPatternView extends View {
             synchronized (Cell.class) {
                 try {
                     b(i, i2);
-                    cell = f28450c[i][i2];
+                    cell = f14760c[i][i2];
                 } catch (Throwable th) {
                     throw th;
                 }
@@ -119,7 +119,7 @@ public class LockPatternView extends View {
         }
 
         public int a() {
-            return this.f28451a;
+            return this.f14761a;
         }
 
         public int b() {
@@ -127,7 +127,7 @@ public class LockPatternView extends View {
         }
 
         public String toString() {
-            return "(row=" + this.f28451a + ",clmn=" + this.b + ")";
+            return "(row=" + this.f14761a + ",clmn=" + this.b + ")";
         }
     }
 
@@ -167,34 +167,34 @@ public class LockPatternView extends View {
         };
 
         /* renamed from: a  reason: collision with root package name */
-        private final String f28454a;
+        private final String f14764a;
         private final int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final boolean f28455c;
+        private final boolean f14765c;
         private final boolean d;
         private final boolean e;
 
         private SavedState(Parcel parcel) {
             super(parcel);
-            this.f28454a = parcel.readString();
+            this.f14764a = parcel.readString();
             this.b = parcel.readInt();
-            this.f28455c = ((Boolean) parcel.readValue(null)).booleanValue();
+            this.f14765c = ((Boolean) parcel.readValue(null)).booleanValue();
             this.d = ((Boolean) parcel.readValue(null)).booleanValue();
             this.e = ((Boolean) parcel.readValue(null)).booleanValue();
         }
 
         private SavedState(Parcelable parcelable, String str, int i, boolean z, boolean z2, boolean z3) {
             super(parcelable);
-            this.f28454a = str;
+            this.f14764a = str;
             this.b = i;
-            this.f28455c = z;
+            this.f14765c = z;
             this.d = z2;
             this.e = z3;
         }
 
         public String a() {
-            return this.f28454a;
+            return this.f14764a;
         }
 
         public int b() {
@@ -202,7 +202,7 @@ public class LockPatternView extends View {
         }
 
         public boolean c() {
-            return this.f28455c;
+            return this.f14765c;
         }
 
         public boolean d() {
@@ -213,12 +213,12 @@ public class LockPatternView extends View {
             return this.e;
         }
 
-        @Override // android.view.AbsSavedState, android.os.Parcelable
+        @Override // android.view.View.BaseSavedState, android.view.AbsSavedState, android.os.Parcelable
         public void writeToParcel(Parcel parcel, int i) {
             super.writeToParcel(parcel, i);
-            parcel.writeString(this.f28454a);
+            parcel.writeString(this.f14764a);
             parcel.writeInt(this.b);
-            parcel.writeValue(Boolean.valueOf(this.f28455c));
+            parcel.writeValue(Boolean.valueOf(this.f14765c));
             parcel.writeValue(Boolean.valueOf(this.d));
             parcel.writeValue(Boolean.valueOf(this.e));
         }
@@ -230,9 +230,9 @@ public class LockPatternView extends View {
 
     public LockPatternView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f28448a = false;
+        this.f14758a = false;
         this.b = new Paint();
-        this.f28449c = new Paint();
+        this.f14759c = new Paint();
         this.e = new ArrayList<>(9);
         this.f = (boolean[][]) Array.newInstance(Boolean.TYPE, 3, 3);
         this.g = -1.0f;
@@ -262,12 +262,12 @@ public class LockPatternView extends View {
             this.D = 0;
         }
         setClickable(true);
-        this.f28449c.setAntiAlias(true);
-        this.f28449c.setDither(true);
-        this.f28449c.setAlpha(128);
-        this.f28449c.setStyle(Paint.Style.STROKE);
-        this.f28449c.setStrokeJoin(Paint.Join.ROUND);
-        this.f28449c.setStrokeCap(Paint.Cap.ROUND);
+        this.f14759c.setAntiAlias(true);
+        this.f14759c.setDither(true);
+        this.f14759c.setAlpha(128);
+        this.f14759c.setStyle(Paint.Style.STROKE);
+        this.f14759c.setStrokeJoin(Paint.Join.ROUND);
+        this.f14759c.setStrokeCap(Paint.Cap.ROUND);
         this.t = a(R.drawable.circle_default_empty_gray);
         this.u = a(R.drawable.circle_btn_touched_blue);
         this.v = a(R.drawable.circle_btn_touched_red);
@@ -325,15 +325,15 @@ public class LockPatternView extends View {
             ArrayList<Cell> arrayList = this.e;
             if (!arrayList.isEmpty()) {
                 Cell cell2 = arrayList.get(arrayList.size() - 1);
-                int i = b.f28451a - cell2.f28451a;
+                int i = b.f14761a - cell2.f14761a;
                 int i2 = b.b - cell2.b;
-                int i3 = cell2.f28451a;
+                int i3 = cell2.f14761a;
                 int i4 = cell2.b;
                 int i5 = i3;
                 if (Math.abs(i) == 2) {
                     i5 = i3;
                     if (Math.abs(i2) != 1) {
-                        i5 = cell2.f28451a + (i > 0 ? 1 : -1);
+                        i5 = cell2.f14761a + (i > 0 ? 1 : -1);
                     }
                 }
                 int i6 = i4;
@@ -350,7 +350,7 @@ public class LockPatternView extends View {
                 }
                 cell = Cell.a(i5, i6);
             }
-            if (cell != null && !this.f[cell.f28451a][cell.b]) {
+            if (cell != null && !this.f[cell.f14761a][cell.b]) {
                 a(cell);
             }
             a(b);
@@ -397,8 +397,8 @@ public class LockPatternView extends View {
 
     private void a(Canvas canvas, float f, float f2, Cell cell, Cell cell2) {
         boolean z = this.j != DisplayMode.Wrong;
-        int i = cell2.f28451a;
-        int i2 = cell.f28451a;
+        int i = cell2.f14761a;
+        int i2 = cell.f14761a;
         int i3 = cell2.b;
         int i4 = cell.b;
         int i5 = (((int) this.r) - this.B) / 2;
@@ -468,7 +468,7 @@ public class LockPatternView extends View {
             if (this.n && size > 0) {
                 Cell cell = this.e.get(size - 1);
                 float b = b(cell.b);
-                float c2 = c(cell.f28451a);
+                float c2 = c(cell.f14761a);
                 float min = Math.min(b, historicalX) - f;
                 float max = Math.max(b, historicalX) + f;
                 float min2 = Math.min(c2, historicalY) - f;
@@ -481,7 +481,7 @@ public class LockPatternView extends View {
                     float f6 = this.r * 0.5f;
                     float f7 = this.s * 0.5f;
                     float b2 = b(a2.b);
-                    float c3 = c(a2.f28451a);
+                    float c3 = c(a2.f14761a);
                     f5 = Math.min(b2 - f6, min);
                     f2 = Math.max(b2 + f6, max);
                     f4 = Math.min(c3 - f7, min2);
@@ -570,7 +570,7 @@ public class LockPatternView extends View {
         }
         if (a2 != null) {
             float b = b(a2.b);
-            float c2 = c(a2.f28451a);
+            float c2 = c(a2.f14761a);
             float f = this.r / 2.0f;
             float f2 = this.s / 2.0f;
             invalidate((int) (b - f), (int) (c2 - f2), (int) (b + f), (int) (c2 + f2));
@@ -655,21 +655,18 @@ public class LockPatternView extends View {
         this.k = true;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public int getSuggestedMinimumHeight() {
+    protected int getSuggestedMinimumHeight() {
         return this.B * 3;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public int getSuggestedMinimumWidth() {
+    protected int getSuggestedMinimumWidth() {
         return this.B * 3;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         boolean z;
         int elapsedRealtime;
         ArrayList<Cell> arrayList = this.e;
@@ -692,10 +689,10 @@ public class LockPatternView extends View {
                 float f = (elapsedRealtime % 700) / 700.0f;
                 Cell cell2 = arrayList.get(elapsedRealtime2 - 1);
                 float b = b(cell2.b);
-                float c2 = c(cell2.f28451a);
+                float c2 = c(cell2.f14761a);
                 Cell cell3 = arrayList.get(elapsedRealtime2);
                 float b2 = b(cell3.b);
-                float c3 = c(cell3.f28451a);
+                float c3 = c(cell3.f14761a);
                 this.g = b + ((b2 - b) * f);
                 this.h = c2 + (f * (c3 - c2));
             }
@@ -703,7 +700,7 @@ public class LockPatternView extends View {
         }
         float f2 = this.r;
         float f3 = this.s;
-        this.f28449c.setStrokeWidth(3.0f);
+        this.f14759c.setStrokeWidth(3.0f);
         Path path = this.y;
         path.rewind();
         int paddingTop = getPaddingTop();
@@ -720,11 +717,11 @@ public class LockPatternView extends View {
                     break;
                 }
                 Cell cell4 = arrayList.get(i3);
-                if (!zArr[cell4.f28451a][cell4.b]) {
+                if (!zArr[cell4.f14761a][cell4.b]) {
                     break;
                 }
                 float b3 = b(cell4.b);
-                float c4 = c(cell4.f28451a);
+                float c4 = c(cell4.f14761a);
                 if (i3 == 0) {
                     path.moveTo(b3, c4);
                 } else {
@@ -737,11 +734,11 @@ public class LockPatternView extends View {
                 path.lineTo(this.g, this.h);
             }
             if (this.j != DisplayMode.Wrong) {
-                this.f28449c.setColor(Color.parseColor("#3494f4"));
+                this.f14759c.setColor(Color.parseColor("#3494f4"));
             } else {
-                this.f28449c.setColor(Color.parseColor("#fc5255"));
+                this.f14759c.setColor(Color.parseColor("#fc5255"));
             }
-            canvas.drawPath(path, this.f28449c);
+            canvas.drawPath(path, this.f14759c);
         }
         int i4 = 0;
         while (true) {
@@ -772,19 +769,18 @@ public class LockPatternView extends View {
                 Cell cell5 = arrayList.get(i8);
                 i8++;
                 Cell cell6 = arrayList.get(i8);
-                if (!zArr[cell6.f28451a][cell6.b]) {
+                if (!zArr[cell6.f14761a][cell6.b]) {
                     z5 = z3;
                     break;
                 }
-                a(canvas, paddingLeft + (cell5.b * f2), paddingTop + (cell5.f28451a * f3), cell5, cell6);
+                a(canvas, paddingLeft + (cell5.b * f2), paddingTop + (cell5.f14761a * f3), cell5, cell6);
             }
         }
         this.b.setFilterBitmap(z5);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         int suggestedMinimumWidth = getSuggestedMinimumWidth();
         int suggestedMinimumHeight = getSuggestedMinimumHeight();
         int a2 = a(i, suggestedMinimumWidth);
@@ -801,9 +797,8 @@ public class LockPatternView extends View {
         setMeasuredDimension(a2, a3);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onRestoreInstanceState(Parcelable parcelable) {
+    protected void onRestoreInstanceState(Parcelable parcelable) {
         SavedState savedState = (SavedState) parcelable;
         super.onRestoreInstanceState(savedState.getSuperState());
         try {
@@ -817,15 +812,13 @@ public class LockPatternView extends View {
         this.m = savedState.e();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public Parcelable onSaveInstanceState() {
+    protected Parcelable onSaveInstanceState() {
         return new SavedState(super.onSaveInstanceState(), a(this.e), this.j.ordinal(), this.k, this.l, this.m);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onSizeChanged(int i, int i2, int i3, int i4) {
+    protected void onSizeChanged(int i, int i2, int i3, int i4) {
         this.r = ((i - getPaddingLeft()) - getPaddingRight()) / 3.0f;
         this.s = ((i2 - getPaddingTop()) - getPaddingBottom()) / 3.0f;
     }

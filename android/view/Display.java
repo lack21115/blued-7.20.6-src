@@ -6,6 +6,7 @@ import android.graphics.Rect;
 import android.hardware.display.DisplayManagerGlobal;
 import android.os.SystemClock;
 import android.util.DisplayMetrics;
+import com.huawei.hms.framework.network.grs.GrsBaseInfo;
 import java.util.Arrays;
 
 /* loaded from: source-9557208-dex2jar.jar:android/view/Display.class */
@@ -69,7 +70,7 @@ public final class Display {
     public static String stateToString(int i) {
         switch (i) {
             case 0:
-                return "UNKNOWN";
+                return GrsBaseInfo.CountryCodeSource.UNKNOWN;
             case 1:
                 return "OFF";
             case 2:
@@ -86,7 +87,7 @@ public final class Display {
     public static String typeToString(int i) {
         switch (i) {
             case 0:
-                return "UNKNOWN";
+                return GrsBaseInfo.CountryCodeSource.UNKNOWN;
             case 1:
                 return "BUILT_IN";
             case 2:

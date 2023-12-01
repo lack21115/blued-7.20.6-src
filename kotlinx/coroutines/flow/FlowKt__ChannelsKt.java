@@ -15,22 +15,20 @@ public final /* synthetic */ class FlowKt__ChannelsKt {
     @Metadata
     /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt__ChannelsKt$WhenMappings.class */
     public final /* synthetic */ class WhenMappings {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static final /* synthetic */ int[] f43092a;
+        public static final /* synthetic */ int[] a;
 
         static {
             int[] iArr = new int[BufferOverflow.valuesCustom().length];
             iArr[BufferOverflow.SUSPEND.ordinal()] = 1;
             iArr[BufferOverflow.DROP_OLDEST.ordinal()] = 2;
             iArr[BufferOverflow.DROP_LATEST.ordinal()] = 3;
-            f43092a = iArr;
+            a = iArr;
         }
     }
 
     public static final <T> Object a(FlowCollector<? super T> flowCollector, ReceiveChannel<? extends T> receiveChannel, Continuation<? super Unit> continuation) {
         Object b = b(flowCollector, receiveChannel, true, continuation);
-        return b == IntrinsicsKt.a() ? b : Unit.f42314a;
+        return b == IntrinsicsKt.a() ? b : Unit.a;
     }
 
     /* JADX INFO: Access modifiers changed from: private */

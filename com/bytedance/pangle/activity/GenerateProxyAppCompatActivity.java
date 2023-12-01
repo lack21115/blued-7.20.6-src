@@ -1042,6 +1042,7 @@ public abstract class GenerateProxyAppCompatActivity extends AppCompatActivity i
         }
     }
 
+    @Override // android.view.Window.Callback
     public void onProvideKeyboardShortcuts(List list, Menu menu, int i) {
         GeneratePluginAppCompatActivity generatePluginAppCompatActivity = this.mTargetActivity;
         if (generatePluginAppCompatActivity != null) {
@@ -1136,6 +1137,7 @@ public abstract class GenerateProxyAppCompatActivity extends AppCompatActivity i
         return generatePluginAppCompatActivity != null ? generatePluginAppCompatActivity.onSearchRequested() : super.onSearchRequested();
     }
 
+    @Override // android.view.Window.Callback
     public boolean onSearchRequested(SearchEvent searchEvent) {
         GeneratePluginAppCompatActivity generatePluginAppCompatActivity = this.mTargetActivity;
         return generatePluginAppCompatActivity != null ? generatePluginAppCompatActivity.onSearchRequested(searchEvent) : super.onSearchRequested(searchEvent);
@@ -1269,6 +1271,7 @@ public abstract class GenerateProxyAppCompatActivity extends AppCompatActivity i
         return generatePluginAppCompatActivity != null ? generatePluginAppCompatActivity.onWindowStartingActionMode(callback) : super.onWindowStartingActionMode(callback);
     }
 
+    @Override // android.view.Window.Callback
     public ActionMode onWindowStartingActionMode(ActionMode.Callback callback, int i) {
         GeneratePluginAppCompatActivity generatePluginAppCompatActivity = this.mTargetActivity;
         return generatePluginAppCompatActivity != null ? generatePluginAppCompatActivity.onWindowStartingActionMode(callback, i) : super.onWindowStartingActionMode(callback, i);

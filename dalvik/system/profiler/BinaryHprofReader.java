@@ -12,9 +12,7 @@ import java.util.Map;
 /* loaded from: source-2895416-dex2jar.jar:dalvik/system/profiler/BinaryHprofReader.class */
 public final class BinaryHprofReader {
     private static final boolean TRACE = false;
-
-    /* renamed from: in  reason: collision with root package name */
-    private final DataInputStream f42236in;
+    private final DataInputStream in;
     private String version;
     private boolean strict = true;
     private final Map<HprofData.StackTrace, int[]> stackTraces = new HashMap();
@@ -104,7 +102,7 @@ public final class BinaryHprofReader {
     }
 
     public BinaryHprofReader(InputStream inputStream) throws IOException {
-        this.f42236in = new DataInputStream(inputStream);
+        this.in = new DataInputStream(inputStream);
     }
 
     private void checkRead() {
@@ -114,16 +112,16 @@ public final class BinaryHprofReader {
     }
 
     private void parseControlSettings() throws IOException {
-        int readInt = this.f42236in.readInt();
-        short readShort = this.f42236in.readShort();
+        int readInt = this.in.readInt();
+        short readShort = this.in.readShort();
         this.hprofData.setFlags(readInt);
         this.hprofData.setDepth(readShort);
     }
 
     private void parseCpuSamples(int i) throws IOException {
         int i2;
-        int readInt = this.f42236in.readInt();
-        int readInt2 = this.f42236in.readInt();
+        int readInt = this.in.readInt();
+        int readInt2 = this.in.readInt();
         int i3 = (readInt2 * 8) + 8;
         if (i != i3) {
             throw new MalformedHprofException("Expected CPU samples record of size " + i3 + " based on number of samples but header specified a length of  " + i);
@@ -138,8 +136,8 @@ public final class BinaryHprofReader {
                 }
                 return;
             }
-            int readInt3 = this.f42236in.readInt();
-            int readInt4 = this.f42236in.readInt();
+            int readInt3 = this.in.readInt();
+            int readInt4 = this.in.readInt();
             HprofData.StackTrace stackTrace = this.idToStackTrace.get(Integer.valueOf(readInt4));
             if (stackTrace == null) {
                 throw new MalformedHprofException("Unknown stack trace id " + readInt4);
@@ -163,7 +161,7 @@ public final class BinaryHprofReader {
     }
 
     private void parseEndThread() throws IOException {
-        this.hprofData.addThreadEvent(HprofData.ThreadEvent.end(this.f42236in.readInt()));
+        this.hprofData.addThreadEvent(HprofData.ThreadEvent.end(this.in.readInt()));
     }
 
     private void parseHeader() throws IOException {
@@ -173,29 +171,29 @@ public final class BinaryHprofReader {
     }
 
     private void parseIdSize() throws IOException {
-        int readInt = this.f42236in.readInt();
+        int readInt = this.in.readInt();
         if (readInt != 4) {
             throw new MalformedHprofException("Unsupported identifier size: " + readInt);
         }
     }
 
     private void parseLoadClass() throws IOException {
-        int readInt = this.f42236in.readInt();
+        int readInt = this.in.readInt();
         readId();
-        this.f42236in.readInt();
+        this.in.readInt();
         if (this.idToClassName.put(Integer.valueOf(readInt), readString()) != null) {
             throw new MalformedHprofException("Duplicate class id: " + readInt);
         }
     }
 
     private boolean parseRecord() throws IOException {
-        int read = this.f42236in.read();
+        int read = this.in.read();
         if (read == -1) {
             return false;
         }
         byte b = (byte) read;
-        this.f42236in.readInt();
-        int readInt = this.f42236in.readInt();
+        this.in.readInt();
+        int readInt = this.in.readInt();
         BinaryHprof.Tag tag = BinaryHprof.Tag.get(b);
         if (tag == null) {
             skipRecord(tag, readInt);
@@ -245,15 +243,15 @@ public final class BinaryHprofReader {
         int readId = readId();
         String readString = readString();
         readString();
-        if (this.idToStackFrame.put(Integer.valueOf(readId), new StackTraceElement(readClass(), readString, readString(), this.f42236in.readInt())) != null) {
+        if (this.idToStackFrame.put(Integer.valueOf(readId), new StackTraceElement(readClass(), readString, readString(), this.in.readInt())) != null) {
             throw new MalformedHprofException("Duplicate stack frame id: " + readId);
         }
     }
 
     private void parseStackTrace(int i) throws IOException {
-        int readInt = this.f42236in.readInt();
-        int readInt2 = this.f42236in.readInt();
-        int readInt3 = this.f42236in.readInt();
+        int readInt = this.in.readInt();
+        int readInt2 = this.in.readInt();
+        int readInt3 = this.in.readInt();
         int i2 = (readInt3 * 4) + 12;
         if (i != i2) {
             throw new MalformedHprofException("Expected stack trace record of size " + i2 + " based on number of frames but header specified a length of  " + i);
@@ -285,27 +283,27 @@ public final class BinaryHprofReader {
     }
 
     private void parseStartThread() throws IOException {
-        int readInt = this.f42236in.readInt();
+        int readInt = this.in.readInt();
         int readId = readId();
-        this.f42236in.readInt();
+        this.in.readInt();
         this.hprofData.addThreadEvent(HprofData.ThreadEvent.start(readId, readInt, readString(), readString(), readString()));
     }
 
     private void parseStringInUtf8(int i) throws IOException {
-        int readInt = this.f42236in.readInt();
+        int readInt = this.in.readInt();
         byte[] bArr = new byte[i - 4];
-        readFully(this.f42236in, bArr);
+        readFully(this.in, bArr);
         if (this.idToString.put(Integer.valueOf(readInt), new String(bArr, "UTF-8")) != null) {
             throw new MalformedHprofException("Duplicate string id: " + readInt);
         }
     }
 
     private void parseTime() throws IOException {
-        this.hprofData.setStartMillis(this.f42236in.readLong());
+        this.hprofData.setStartMillis(this.in.readLong());
     }
 
     private void parseVersion() throws IOException {
-        String readMagic = BinaryHprof.readMagic(this.f42236in);
+        String readMagic = BinaryHprof.readMagic(this.in);
         if (readMagic == null) {
             throw new MalformedHprofException("Could not find HPROF version");
         }
@@ -339,7 +337,7 @@ public final class BinaryHprofReader {
     }
 
     private int readId() throws IOException {
-        return this.f42236in.readInt();
+        return this.in.readInt();
     }
 
     private String readString() throws IOException {
@@ -358,7 +356,7 @@ public final class BinaryHprofReader {
     }
 
     private void skipRecord(BinaryHprof.Tag tag, long j) throws IOException {
-        long skip = this.f42236in.skip(j);
+        long skip = this.in.skip(j);
         if (skip != j) {
             throw new EOFException("Expected to skip " + j + " bytes but only skipped " + skip + " bytes");
         }

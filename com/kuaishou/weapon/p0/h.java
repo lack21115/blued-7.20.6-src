@@ -8,12 +8,12 @@ import android.text.TextUtils;
 public class h {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f23836a = "re_po_rt";
+    public static final String f10228a = "re_po_rt";
     private static h e;
     private SharedPreferences b;
 
     /* renamed from: c  reason: collision with root package name */
-    private SharedPreferences.Editor f23837c;
+    private SharedPreferences.Editor f10229c;
     private Context d;
 
     public h(Context context) {
@@ -21,7 +21,7 @@ public class h {
             this.d = context;
             SharedPreferences sharedPreferences = context.getSharedPreferences("re_po_rt", 4);
             this.b = sharedPreferences;
-            this.f23837c = sharedPreferences.edit();
+            this.f10229c = sharedPreferences.edit();
         } catch (Throwable th) {
         }
     }
@@ -31,7 +31,7 @@ public class h {
             this.d = context;
             SharedPreferences sharedPreferences = context.getSharedPreferences(str, 4);
             this.b = sharedPreferences;
-            this.f23837c = sharedPreferences.edit();
+            this.f10229c = sharedPreferences.edit();
         } catch (Throwable th) {
         }
     }
@@ -73,25 +73,25 @@ public class h {
 
     public void a(String str, int i) {
         try {
-            this.f23837c.putInt(str, i);
-            this.f23837c.apply();
+            this.f10229c.putInt(str, i);
+            this.f10229c.apply();
         } catch (Throwable th) {
         }
     }
 
     public void a(String str, int i, boolean z) {
         try {
-            this.f23837c.putInt(str, i);
+            this.f10229c.putInt(str, i);
             if (z) {
-                this.f23837c.apply();
+                this.f10229c.apply();
             }
         } catch (Throwable th) {
         }
     }
 
     public void a(String str, Boolean bool) {
-        this.f23837c.putBoolean(str, bool.booleanValue());
-        this.f23837c.apply();
+        this.f10229c.putBoolean(str, bool.booleanValue());
+        this.f10229c.apply();
     }
 
     public void a(String str, String str2) {
@@ -99,8 +99,8 @@ public class h {
             if (TextUtils.isEmpty(str2)) {
                 return;
             }
-            this.f23837c.putString(str, str2);
-            this.f23837c.apply();
+            this.f10229c.putString(str, str2);
+            this.f10229c.apply();
         } catch (Throwable th) {
         }
     }
@@ -110,9 +110,9 @@ public class h {
             if (TextUtils.isEmpty(str2)) {
                 return;
             }
-            this.f23837c.putString(str, str2);
+            this.f10229c.putString(str, str2);
             if (z) {
-                this.f23837c.apply();
+                this.f10229c.apply();
             }
         } catch (Throwable th) {
         }
@@ -154,8 +154,8 @@ public class h {
     }
 
     public void b(String str, long j) {
-        this.f23837c.putLong(str, j);
-        this.f23837c.apply();
+        this.f10229c.putLong(str, j);
+        this.f10229c.apply();
     }
 
     public int c(String str) {
@@ -176,15 +176,15 @@ public class h {
 
     public void c() {
         try {
-            this.f23837c.apply();
+            this.f10229c.apply();
         } catch (Throwable th) {
         }
     }
 
     public void c(String str, String str2) {
         try {
-            this.f23837c.putString(str, str2);
-            this.f23837c.apply();
+            this.f10229c.putString(str, str2);
+            this.f10229c.apply();
         } catch (Exception e2) {
         }
     }
@@ -198,8 +198,8 @@ public class h {
             if (z) {
                 str3 = c.b(str2.getBytes(), 2);
             }
-            this.f23837c.putString(str, str3);
-            this.f23837c.apply();
+            this.f10229c.putString(str, str3);
+            this.f10229c.apply();
         } catch (Throwable th) {
         }
     }
@@ -209,8 +209,8 @@ public class h {
     }
 
     public void d(String str, int i) {
-        this.f23837c.putInt(str, i);
-        this.f23837c.apply();
+        this.f10229c.putInt(str, i);
+        this.f10229c.apply();
     }
 
     public boolean e(String str) {

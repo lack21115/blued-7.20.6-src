@@ -25,7 +25,7 @@ import java.util.List;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final boolean f27748a = h.a().c();
+    private static final boolean f14060a = h.a().c();
     private long A;
     private long B;
     private AudioTransformer D;
@@ -55,7 +55,7 @@ public class b {
     private boolean b = false;
 
     /* renamed from: c  reason: collision with root package name */
-    private final Object f27749c = new Object();
+    private final Object f14061c = new Object();
     private int o = 0;
     private int p = 0;
     private volatile int z = -1;
@@ -85,8 +85,8 @@ public class b {
             eVar.c("MultiVideoComposer", "onSaveVideoSuccess: " + str);
         }
     };
-    private a.InterfaceC0745a J = new a.InterfaceC0745a() { // from class: com.qiniu.pili.droid.shortvideo.process.a.b.4
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+    private a.InterfaceC0575a J = new a.InterfaceC0575a() { // from class: com.qiniu.pili.droid.shortvideo.process.a.b.4
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(MediaFormat mediaFormat) {
             com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.t;
             eVar.c("MultiVideoComposer", "video encode output format retrieved: " + mediaFormat);
@@ -94,13 +94,13 @@ public class b {
             b.this.b();
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(Surface surface) {
             com.qiniu.pili.droid.shortvideo.f.e.t.c("MultiVideoComposer", "encode surface created");
             b.this.s = surface;
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(ByteBuffer byteBuffer, MediaCodec.BufferInfo bufferInfo) {
             com.qiniu.pili.droid.shortvideo.f.e.t.b("MultiVideoComposer", "muxer write video: " + bufferInfo.presentationTimeUs);
             if (b.this.n != null) {
@@ -115,7 +115,7 @@ public class b {
             }
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(boolean z) {
             com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.t;
             eVar.c("MultiVideoComposer", "video encode started result: " + z);
@@ -127,14 +127,14 @@ public class b {
             bVar.a((String) bVar.d.poll());
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void b(boolean z) {
             com.qiniu.pili.droid.shortvideo.f.e.t.c("MultiVideoComposer", "video encode stopped");
             b.this.c();
         }
     };
-    private a.InterfaceC0745a K = new a.InterfaceC0745a() { // from class: com.qiniu.pili.droid.shortvideo.process.a.b.5
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+    private a.InterfaceC0575a K = new a.InterfaceC0575a() { // from class: com.qiniu.pili.droid.shortvideo.process.a.b.5
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(MediaFormat mediaFormat) {
             com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.t;
             eVar.c("MultiVideoComposer", "audio encode output format retrieved: " + mediaFormat);
@@ -142,11 +142,11 @@ public class b {
             b.this.b();
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(Surface surface) {
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(ByteBuffer byteBuffer, MediaCodec.BufferInfo bufferInfo) {
             com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.t;
             eVar.b("MultiVideoComposer", "muxer write audio: " + bufferInfo.presentationTimeUs);
@@ -155,7 +155,7 @@ public class b {
             }
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(boolean z) {
             com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.t;
             eVar.c("MultiVideoComposer", "audio encode started result: " + z);
@@ -167,7 +167,7 @@ public class b {
             bVar.b((String) bVar.e.poll());
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void b(boolean z) {
             com.qiniu.pili.droid.shortvideo.f.e.t.c("MultiVideoComposer", "audio encode stopped");
             b.this.c();
@@ -193,7 +193,7 @@ public class b {
 
         @Override // com.qiniu.pili.droid.shortvideo.gl.b.a.b
         public void a(Object obj, Surface surface) {
-            b.this.k.a(new C0750b());
+            b.this.k.a(new C0580b());
             b.this.k.a(surface);
             b bVar = b.this;
             if (!bVar.a(bVar.G)) {
@@ -259,20 +259,20 @@ public class b {
 
     /* renamed from: com.qiniu.pili.droid.shortvideo.process.a.b$b  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/qiniu/pili/droid/shortvideo/process/a/b$b.class */
-    class C0750b implements b.c {
+    class C0580b implements b.c {
         private long b;
 
         /* renamed from: c  reason: collision with root package name */
-        private long f27758c;
+        private long f14070c;
 
-        private C0750b() {
+        private C0580b() {
         }
 
         @Override // com.qiniu.pili.droid.shortvideo.d.b.c
         public void a(ByteBuffer byteBuffer, int i, long j, long j2, boolean z) {
             if (z) {
-                b.this.A += (this.b - this.f27758c) + (1000000 / b.this.h.getVideoEncodingFps());
-                this.f27758c = 0L;
+                b.this.A += (this.b - this.f14070c) + (1000000 / b.this.h.getVideoEncodingFps());
+                this.f14070c = 0L;
                 b bVar = b.this;
                 if (bVar.a(bVar.G)) {
                     b.this.G.poll();
@@ -288,13 +288,13 @@ public class b {
             }
             this.b = j;
             b bVar3 = b.this;
-            if (bVar3.a(bVar3.G) && this.f27758c == 0) {
-                this.f27758c = j;
+            if (bVar3.a(bVar3.G) && this.f14070c == 0) {
+                this.f14070c = j;
             }
-            synchronized (b.this.f27749c) {
+            synchronized (b.this.f14061c) {
                 while (!b.this.b) {
                     try {
-                        b.this.f27749c.wait();
+                        b.this.f14061c.wait();
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -539,9 +539,9 @@ public class b {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void e() {
-        synchronized (this.f27749c) {
+        synchronized (this.f14061c) {
             this.b = true;
-            this.f27749c.notify();
+            this.f14061c.notify();
         }
     }
 
@@ -606,7 +606,7 @@ public class b {
                 this.i = eVar;
                 eVar.a(this.J);
                 this.i.a();
-                if (mediaFormat != null && f27748a) {
+                if (mediaFormat != null && f14060a) {
                     this.w = 2048 * this.u;
                     this.v = (long) ((1024 * 1000000.0d) / this.t);
                     com.qiniu.pili.droid.shortvideo.f.e.t.c("MultiVideoComposer", "output audio frame size in bytes: " + this.w + " interval in Us: " + this.v);

@@ -7,11 +7,11 @@ import com.tencent.liteav.videobase.utils.Rotation;
 public final /* synthetic */ class i implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final c f36573a;
+    private final c f22882a;
     private final Rotation b;
 
     private i(c cVar, Rotation rotation) {
-        this.f36573a = cVar;
+        this.f22882a = cVar;
         this.b = rotation;
     }
 
@@ -21,6 +21,6 @@ public final /* synthetic */ class i implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        c.a(this.f36573a, this.b);
+        c.a(this.f22882a, this.b);
     }
 }

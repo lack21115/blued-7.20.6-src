@@ -9,27 +9,19 @@ import java.util.Map;
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/c/i.class */
 public class i extends com.anythink.core.common.c.a<i> {
     private static final String b = i.class.getName();
-
-    /* renamed from: c  reason: collision with root package name */
-    private static i f6587c;
+    private static i c;
 
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/c/i$a.class */
     public static final class a {
-
-        /* renamed from: a  reason: collision with root package name */
-        public List<w> f6588a;
+        public List<w> a;
         public Map<String, w> b;
     }
 
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/c/i$b.class */
     public static final class b {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static final String f6589a = "notice_url_fail_info";
+        public static final String a = "notice_url_fail_info";
         public static final String b = "id";
-
-        /* renamed from: c  reason: collision with root package name */
-        public static final String f6590c = "req_type";
+        public static final String c = "req_type";
         public static final String d = "req_url";
         public static final String e = "req_head";
         public static final String f = "first_fail_time";
@@ -43,22 +35,22 @@ public class i extends com.anythink.core.common.c.a<i> {
     }
 
     public static i a(com.anythink.core.common.c.b bVar) {
-        if (f6587c == null) {
+        if (c == null) {
             synchronized (i.class) {
                 try {
-                    if (f6587c == null) {
-                        f6587c = new i(bVar);
+                    if (c == null) {
+                        c = new i(bVar);
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f6587c;
+        return c;
     }
 
     private boolean a(String str) {
-        Cursor query = a().query(b.f6589a, new String[]{"id"}, "id=?", new String[]{str}, "id", null, null);
+        Cursor query = a().query(b.a, new String[]{"id"}, "id=?", new String[]{str}, "id", null, null);
         if (query != null && query.getCount() > 0) {
             query.close();
             return true;
@@ -76,7 +68,7 @@ public class i extends com.anythink.core.common.c.a<i> {
                 if (b() == null) {
                     return;
                 }
-                b().delete(b.f6589a, null, null);
+                b().delete(b.a, null, null);
             } catch (Exception e) {
             }
         }
@@ -90,14 +82,14 @@ public class i extends com.anythink.core.common.c.a<i> {
             }
             try {
                 ContentValues contentValues = new ContentValues();
-                contentValues.put("id", wVar.f6680a);
+                contentValues.put("id", wVar.a);
                 contentValues.put("req_type", Integer.valueOf(wVar.b));
                 contentValues.put("req_url", wVar.d);
-                contentValues.put("req_head", wVar.f6681c);
+                contentValues.put("req_head", wVar.c);
                 contentValues.put(b.f, Long.valueOf(wVar.e));
                 contentValues.put(b.g, Long.valueOf(wVar.f));
-                contentValues.put("retry_count", Integer.valueOf(wVar.g));
-                Cursor query = a().query(b.f6589a, new String[]{"id"}, "id=?", new String[]{wVar.f6680a}, "id", null, null);
+                contentValues.put(b.h, Integer.valueOf(wVar.g));
+                Cursor query = a().query(b.a, new String[]{"id"}, "id=?", new String[]{wVar.a}, "id", null, null);
                 if (query == null || query.getCount() <= 0) {
                     if (query != null) {
                         query.close();
@@ -108,9 +100,9 @@ public class i extends com.anythink.core.common.c.a<i> {
                     z = true;
                 }
                 if (z) {
-                    return b().update(b.f6589a, contentValues, "id = ? ", new String[]{wVar.f6680a});
+                    return b().update(b.a, contentValues, "id = ? ", new String[]{wVar.a});
                 }
-                return b().insert(b.f6589a, null, contentValues);
+                return b().insert(b.a, null, contentValues);
             } catch (Exception e) {
                 return -1L;
             }
@@ -123,7 +115,7 @@ public class i extends com.anythink.core.common.c.a<i> {
                 return -1;
             }
             try {
-                return b().delete(b.f6589a, "id=?", new String[]{wVar.f6680a});
+                return b().delete(b.a, "id=?", new String[]{wVar.a});
             } catch (Throwable th) {
                 return -1;
             }

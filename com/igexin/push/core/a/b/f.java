@@ -7,11 +7,11 @@ import org.json.JSONObject;
 public final class f extends a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23405a = com.igexin.push.config.c.f23373a + "_QueryTagResultAction";
+    private static final String f9797a = com.igexin.push.config.c.f9765a + "_QueryTagResultAction";
 
     @Override // com.igexin.push.core.a.b.a
     public final boolean a(Object obj, JSONObject jSONObject) {
-        com.igexin.c.a.c.a.a(f23405a + "|query tag result resp data = " + jSONObject, new Object[0]);
+        com.igexin.c.a.c.a.a(f9797a + "|query tag result resp data = " + jSONObject, new Object[0]);
         try {
             if (jSONObject.has("action") && jSONObject.getString("action").equals("query_tag_result")) {
                 String string = jSONObject.getString("tags");

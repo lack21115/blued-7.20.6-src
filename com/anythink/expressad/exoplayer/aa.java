@@ -4,7 +4,7 @@ package com.anythink.expressad.exoplayer;
 public final class aa {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final aa f7156a = new aa(0);
+    public static final aa f4317a = new aa(0);
     public final int b;
 
     public aa(int i) {

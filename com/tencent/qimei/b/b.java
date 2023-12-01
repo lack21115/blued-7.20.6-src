@@ -6,16 +6,16 @@ import com.tencent.qimei.j.e;
 public class b implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Runnable f38312a;
+    public final /* synthetic */ Runnable f24621a;
 
     public b(c cVar, Runnable runnable) {
-        this.f38312a = runnable;
+        this.f24621a = runnable;
     }
 
     @Override // java.lang.Runnable
     public void run() {
         try {
-            this.f38312a.run();
+            this.f24621a.run();
         } catch (Throwable th) {
             e.a(th.getMessage());
             com.tencent.qimei.k.a.a(th);

@@ -1,6 +1,5 @@
 package java.util;
 
-import com.igexin.push.core.b;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -88,7 +87,7 @@ public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements 
         public String toString() {
             StringBuilder sb = new StringBuilder(this.enumMap.keys[this.ordinal].toString());
             sb.append("=");
-            sb.append(this.enumMap.values[this.ordinal] == null ? b.l : this.enumMap.values[this.ordinal].toString());
+            sb.append(this.enumMap.values[this.ordinal] == null ? "null" : this.enumMap.values[this.ordinal].toString());
             return sb.toString();
         }
     }
@@ -121,12 +120,12 @@ public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements 
             this.enumMap = enumMap;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public void clear() {
             this.enumMap.clear();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean contains(Object obj) {
             boolean z = false;
             if (obj instanceof Map.Entry) {
@@ -157,7 +156,7 @@ public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements 
             }, this.enumMap);
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean remove(Object obj) {
             if (contains(obj)) {
                 this.enumMap.remove(((Map.Entry) obj).getKey());
@@ -166,17 +165,17 @@ public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements 
             return false;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection
         public int size() {
             return this.enumMap.size();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public Object[] toArray() {
             return toArray(new Object[this.enumMap.size()]);
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public Object[] toArray(Object[] objArr) {
             int size = this.enumMap.size();
             int i = 0;
@@ -257,12 +256,12 @@ public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements 
             this.enumMap = enumMap;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public void clear() {
             this.enumMap.clear();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean contains(Object obj) {
             return this.enumMap.containsKey(obj);
         }
@@ -282,7 +281,7 @@ public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements 
             }, this.enumMap);
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean remove(Object obj) {
             if (contains(obj)) {
                 this.enumMap.remove(obj);
@@ -291,7 +290,7 @@ public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements 
             return false;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection
         public int size() {
             return this.enumMap.size();
         }
@@ -305,12 +304,12 @@ public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements 
             this.enumMap = enumMap;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public void clear() {
             this.enumMap.clear();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean contains(Object obj) {
             return this.enumMap.containsValue(obj);
         }
@@ -325,7 +324,7 @@ public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements 
             }, this.enumMap);
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean remove(Object obj) {
             if (obj == null) {
                 int i = 0;
@@ -356,7 +355,7 @@ public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements 
             }
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection
         public int size() {
             return this.enumMap.size();
         }

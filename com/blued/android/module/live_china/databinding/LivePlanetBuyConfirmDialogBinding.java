@@ -13,13 +13,9 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/LivePlanetBuyConfirmDialogBinding.class */
 public final class LivePlanetBuyConfirmDialogBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final FrameLayout f12362a;
+    public final FrameLayout a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f12363c;
+    public final ImageView c;
     public final ImageView d;
     public final RelativeLayout e;
     public final ShapeTextView f;
@@ -30,9 +26,9 @@ public final class LivePlanetBuyConfirmDialogBinding implements ViewBinding {
 
     private LivePlanetBuyConfirmDialogBinding(FrameLayout frameLayout, FrameLayout frameLayout2, ImageView imageView, ImageView imageView2, ImageView imageView3, RelativeLayout relativeLayout, ShapeTextView shapeTextView, TextView textView, TextView textView2, TextView textView3) {
         this.j = frameLayout;
-        this.f12362a = frameLayout2;
+        this.a = frameLayout2;
         this.b = imageView;
-        this.f12363c = imageView2;
+        this.c = imageView2;
         this.d = imageView3;
         this.e = relativeLayout;
         this.f = shapeTextView;
@@ -103,7 +99,6 @@ public final class LivePlanetBuyConfirmDialogBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.j;

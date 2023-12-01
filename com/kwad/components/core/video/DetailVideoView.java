@@ -289,8 +289,8 @@ public class DetailVideoView extends KSFrameLayout implements View.OnClickListen
                 aVar = new VideoAdapters.b();
             }
             if (aVar != null) {
-                View view = this.QZ;
-                aVar.a(view, (View) view.getParent(), i, i2);
+                com.kwad.components.core.page.widget.b bVar = this.QZ;
+                aVar.a(bVar, (View) bVar.getParent(), i, i2);
             }
         } else if (this.Ri.qs()) {
             com.kwad.sdk.c.kwai.a.B(this.QZ);
@@ -303,12 +303,12 @@ public class DetailVideoView extends KSFrameLayout implements View.OnClickListen
         } else if (this.Ri.qr()) {
             a(this.QZ, i, i2);
         } else {
-            View view2 = (View) this.QZ.getParent();
-            if (view2 == null) {
+            View view = (View) this.QZ.getParent();
+            if (view == null) {
                 return;
             }
-            int width = view2.getWidth();
-            int height = view2.getHeight();
+            int width = view.getWidth();
+            int height = view.getHeight();
             if (width == 0 || height == 0) {
                 return;
             }
@@ -381,7 +381,7 @@ public class DetailVideoView extends KSFrameLayout implements View.OnClickListen
         }
     }
 
-    @Override // com.kwad.sdk.widget.KSFrameLayout, android.widget.FrameLayout, android.view.View
+    @Override // com.kwad.sdk.widget.KSFrameLayout, android.view.View
     public void onSizeChanged(int i, int i2, int i3, int i4) {
         int i5;
         super.onSizeChanged(i, i2, i3, i4);

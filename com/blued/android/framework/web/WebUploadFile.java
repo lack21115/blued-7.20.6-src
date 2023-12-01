@@ -4,27 +4,22 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Environment;
-import android.provider.MediaStore;
 import android.text.TextUtils;
 import android.text.format.DateFormat;
 import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
 import androidx.fragment.app.Fragment;
+import com.alipay.sdk.util.i;
 import com.blued.android.core.AppMethods;
 import com.blued.android.framework.provider.ProviderHolder;
 import com.blued.android.framework.utils.UriUtils;
-import com.zego.zegoliveroom.constants.ZegoConstants;
 import java.io.File;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/web/WebUploadFile.class */
 public class WebUploadFile {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static int f10389a = 1;
+    public static int a = 1;
     private Fragment b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private ValueCallback<Uri> f10390c;
+    private ValueCallback<Uri> c;
     private String d = "";
     private ValueCallback<Uri[]> e;
 
@@ -33,36 +28,36 @@ public class WebUploadFile {
     }
 
     private Intent a() {
-        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-        intent.addCategory(Intent.CATEGORY_OPENABLE);
+        Intent intent = new Intent("android.intent.action.GET_CONTENT");
+        intent.addCategory("android.intent.category.OPENABLE");
         intent.setType("*/*");
         Intent a2 = a(b(), c(), d());
-        a2.putExtra(Intent.EXTRA_INTENT, intent);
+        a2.putExtra("android.intent.extra.INTENT", intent);
         return a2;
     }
 
     private Intent a(String str) {
-        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-        intent.addCategory(Intent.CATEGORY_OPENABLE);
+        Intent intent = new Intent("android.intent.action.GET_CONTENT");
+        intent.addCategory("android.intent.category.OPENABLE");
         intent.setType(str);
         return intent;
     }
 
     private Intent a(Intent... intentArr) {
-        Intent intent = new Intent(Intent.ACTION_CHOOSER);
-        intent.putExtra(Intent.EXTRA_INITIAL_INTENTS, intentArr);
-        intent.putExtra(Intent.EXTRA_TITLE, ProviderHolder.a().c().a());
+        Intent intent = new Intent("android.intent.action.CHOOSER");
+        intent.putExtra("android.intent.extra.INITIAL_INTENTS", intentArr);
+        intent.putExtra("android.intent.extra.TITLE", ProviderHolder.a().c().a());
         return intent;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void a(WebChromeClient.FileChooserParams fileChooserParams) {
-        this.b.startActivityForResult(fileChooserParams.createIntent(), f10389a);
+        this.b.startActivityForResult(fileChooserParams.createIntent(), a);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public Intent b() {
-        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
         File externalStoragePublicDirectory = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM);
         File file = new File(externalStoragePublicDirectory.getAbsolutePath() + File.separator + "Camera");
         file.mkdirs();
@@ -71,22 +66,22 @@ public class WebUploadFile {
         this.d = file.getAbsolutePath() + File.separator + "IMG_" + charSequence + ".jpg";
         intent.addFlags(1);
         intent.addFlags(2);
-        intent.putExtra(MediaStore.EXTRA_OUTPUT, UriUtils.a(this.d));
+        intent.putExtra("output", UriUtils.a(this.d));
         return intent;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public Intent c() {
-        return new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
+        return new Intent("android.media.action.VIDEO_CAPTURE");
     }
 
     private Intent d() {
-        return new Intent(MediaStore.Audio.Media.RECORD_SOUND_ACTION);
+        return new Intent("android.provider.MediaStore.RECORD_SOUND");
     }
 
     public void a(int i, int i2, Intent intent) {
-        if (i == f10389a && i2 == -1) {
-            if (this.f10390c != null) {
+        if (i == a && i2 == -1) {
+            if (this.c != null) {
                 if (intent != null) {
                     String[] strArr = {"_data"};
                     Cursor query = this.b.getActivity().getContentResolver().query(intent.getData(), strArr, null, null, null);
@@ -95,28 +90,28 @@ public class WebUploadFile {
                         String string = query.getString(query.getColumnIndex(strArr[0]));
                         query.close();
                         if (TextUtils.isEmpty(string) || !new File(string).exists()) {
-                            this.f10390c.onReceiveValue((intent == null || i2 != -1) ? null : intent.getData());
+                            this.c.onReceiveValue((intent == null || i2 != -1) ? null : intent.getData());
                         } else {
-                            this.f10390c.onReceiveValue(Uri.fromFile(new File(string)));
+                            this.c.onReceiveValue(Uri.fromFile(new File(string)));
                         }
-                        this.f10390c = null;
+                        this.c = null;
                     }
                 } else {
                     String str = this.d;
                     if (str != null && !str.isEmpty()) {
-                        this.f10390c.onReceiveValue(Uri.fromFile(new File(this.d)));
+                        this.c.onReceiveValue(Uri.fromFile(new File(this.d)));
                         this.d = "";
-                        this.f10390c = null;
+                        this.c = null;
                     }
                 }
             } else if (this.e != null && AppMethods.c(21)) {
                 b(i, i2, intent);
             }
         }
-        ValueCallback<Uri> valueCallback = this.f10390c;
+        ValueCallback<Uri> valueCallback = this.c;
         if (valueCallback != null) {
             valueCallback.onReceiveValue(null);
-            this.f10390c = null;
+            this.c = null;
             this.d = "";
             return;
         }
@@ -136,11 +131,11 @@ public class WebUploadFile {
         if (str2 == null) {
             str4 = "";
         }
-        if (this.f10390c != null) {
+        if (this.c != null) {
             return;
         }
-        this.f10390c = valueCallback;
-        String[] split = str3.split(";");
+        this.c = valueCallback;
+        String[] split = str3.split(i.b);
         String str5 = split[0];
         String str6 = str4.length() > 0 ? str4 : "filesystem";
         String str7 = str6;
@@ -167,28 +162,28 @@ public class WebUploadFile {
         this.d = null;
         if (str5.equals("image/*")) {
             if (str7.equals("camera")) {
-                this.b.startActivityForResult(b(), f10389a);
+                this.b.startActivityForResult(b(), a);
                 return;
             }
             Intent a2 = a(b());
-            a2.putExtra(Intent.EXTRA_INTENT, a("image/*"));
-            this.b.startActivityForResult(a2, f10389a);
+            a2.putExtra("android.intent.extra.INTENT", a("image/*"));
+            this.b.startActivityForResult(a2, a);
         } else if (str5.equals("video/*")) {
             if (str7.equals("camcorder")) {
-                this.b.startActivityForResult(c(), f10389a);
+                this.b.startActivityForResult(c(), a);
                 return;
             }
             Intent a3 = a(c());
-            a3.putExtra(Intent.EXTRA_INTENT, a("video/*"));
-            this.b.startActivityForResult(a3, f10389a);
+            a3.putExtra("android.intent.extra.INTENT", a("video/*"));
+            this.b.startActivityForResult(a3, a);
         } else if (!str5.equals("audio/*")) {
-            this.b.startActivityForResult(a(), f10389a);
-        } else if (str7.equals(ZegoConstants.DeviceNameType.DeviceNameMicrophone)) {
-            this.b.startActivityForResult(d(), f10389a);
+            this.b.startActivityForResult(a(), a);
+        } else if (str7.equals("microphone")) {
+            this.b.startActivityForResult(d(), a);
         } else {
             Intent a4 = a(d());
-            a4.putExtra(Intent.EXTRA_INTENT, a("audio/*"));
-            this.b.startActivityForResult(a4, f10389a);
+            a4.putExtra("android.intent.extra.INTENT", a("audio/*"));
+            this.b.startActivityForResult(a4, a);
         }
     }
 
@@ -293,7 +288,7 @@ public class WebUploadFile {
             androidx.fragment.app.Fragment r0 = r0.b
             r1 = r5
             android.content.Intent r1 = r1.d()
-            int r2 = com.blued.android.framework.web.WebUploadFile.f10389a
+            int r2 = com.blued.android.framework.web.WebUploadFile.a
             r0.startActivityForResult(r1, r2)
             return
         Lb1:

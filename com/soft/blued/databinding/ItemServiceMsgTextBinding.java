@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemServiceMsgTextBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final CardView f29317a;
+    private final CardView f15627a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public CardView getRoot() {
-        return this.f29317a;
+        return this.f15627a;
     }
 }

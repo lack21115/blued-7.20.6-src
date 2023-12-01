@@ -28,24 +28,24 @@ public final class RuntimeEnumAdapter<E extends WireEnum> extends EnumAdapter<E>
         }
 
         @JvmStatic
-        public final <E extends WireEnum> RuntimeEnumAdapter<E> create(Class<E> enumType) {
-            Intrinsics.e(enumType, "enumType");
-            return new RuntimeEnumAdapter<>(enumType, ProtoAdapter.Companion.get(enumType).getSyntax());
+        public final <E extends WireEnum> RuntimeEnumAdapter<E> create(Class<E> cls) {
+            Intrinsics.e(cls, "enumType");
+            return new RuntimeEnumAdapter<>(cls, ProtoAdapter.Companion.get(cls).getSyntax());
         }
     }
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
-    public RuntimeEnumAdapter(Class<E> javaType) {
-        this(javaType, Syntax.PROTO_2);
-        Intrinsics.e(javaType, "javaType");
+    public RuntimeEnumAdapter(Class<E> cls) {
+        this(cls, Syntax.PROTO_2);
+        Intrinsics.e(cls, "javaType");
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public RuntimeEnumAdapter(Class<E> javaType, Syntax syntax) {
-        super(JvmClassMappingKt.a(javaType), syntax, Internal.getIdentityOrNull(javaType));
-        Intrinsics.e(javaType, "javaType");
+    public RuntimeEnumAdapter(Class<E> cls, Syntax syntax) {
+        super(JvmClassMappingKt.a(cls), syntax, Internal.getIdentityOrNull(cls));
+        Intrinsics.e(cls, "javaType");
         Intrinsics.e(syntax, "syntax");
-        this.javaType = javaType;
+        this.javaType = cls;
     }
 
     @JvmStatic

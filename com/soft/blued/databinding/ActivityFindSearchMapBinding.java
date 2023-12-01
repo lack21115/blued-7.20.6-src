@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ActivityFindSearchMapBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ConstraintLayout f28667a;
+    private final ConstraintLayout f14977a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f28667a;
+        return this.f14977a;
     }
 }

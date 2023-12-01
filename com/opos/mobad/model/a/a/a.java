@@ -14,11 +14,11 @@ import java.util.HashMap;
 public class a implements com.opos.mobad.model.a.a {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f26375a;
+    private Context f12687a;
     private com.opos.mobad.model.a.b b;
 
     public a(Context context, com.opos.mobad.model.a.b bVar) {
-        this.f26375a = context.getApplicationContext();
+        this.f12687a = context.getApplicationContext();
         this.b = bVar;
     }
 
@@ -26,7 +26,7 @@ public class a implements com.opos.mobad.model.a.a {
         byte[] bArr;
         com.opos.mobad.model.a.b bVar;
         com.opos.cmn.an.f.a.b("FetchAdEngine", "prepareReqData parser:", this.b, "request:", cVar);
-        if (this.f26375a != null && (bVar = this.b) != null && cVar != null) {
+        if (this.f12687a != null && (bVar = this.b) != null && cVar != null) {
             try {
                 bArr = bVar.a(cVar);
             } catch (Exception e) {
@@ -60,7 +60,7 @@ public class a implements com.opos.mobad.model.a.a {
                 hashMap.put("Content-Type", "application/x-protobuf");
                 hashMap.put("Accept-Encoding", "gzip");
                 hashMap.put(HttpHeaders.ACCEPT, "application/x-protobuf");
-                hashMap.put("Route-Data", e.a(this.f26375a));
+                hashMap.put("Route-Data", e.a(this.f12687a));
                 StringBuilder sb2 = new StringBuilder();
                 sb2.append("");
                 sb2.append(com.opos.mobad.service.f.a.a().o());
@@ -75,13 +75,13 @@ public class a implements com.opos.mobad.model.a.a {
                 com.opos.cmn.func.b.b.e a4 = com.opos.mobad.service.d.a().a(a3);
                 com.opos.cmn.func.b.b.e eVar = a4;
                 if (a4 == null) {
-                    eVar = com.opos.cmn.func.b.b.b.a().a(this.f26375a, a3);
+                    eVar = com.opos.cmn.func.b.b.b.a().a(this.f12687a, a3);
                 }
                 com.opos.mobad.model.b.b bVar4 = bVar2;
                 if (eVar != null) {
                     com.opos.cmn.an.f.a.b("FetchAdEngine", "fetchAd netResponse=", eVar);
                     com.opos.cmn.func.b.b.e eVar2 = eVar;
-                    if (200 == eVar.f24862a) {
+                    if (200 == eVar.f11174a) {
                         com.opos.cmn.func.b.b.e eVar3 = eVar;
                         com.opos.cmn.func.b.b.a aVar = eVar.f;
                         boolean z = false;
@@ -93,9 +93,9 @@ public class a implements com.opos.mobad.model.a.a {
                             }
                         }
                         bVar4 = bVar2;
-                        if (eVar.f24863c != null) {
+                        if (eVar.f11175c != null) {
                             com.opos.cmn.func.b.b.e eVar4 = eVar;
-                            byte[] a6 = com.opos.cmn.an.d.b.a.a(eVar.f24863c);
+                            byte[] a6 = com.opos.cmn.an.d.b.a.a(eVar.f11175c);
                             com.opos.cmn.func.b.b.e eVar5 = eVar;
                             StringBuilder sb3 = new StringBuilder();
                             com.opos.cmn.func.b.b.e eVar6 = eVar;
@@ -141,7 +141,7 @@ public class a implements com.opos.mobad.model.a.a {
                         com.opos.cmn.func.b.b.e eVar12 = eVar;
                         sb4.append("http code=");
                         com.opos.cmn.func.b.b.e eVar13 = eVar;
-                        sb4.append(eVar.f24862a);
+                        sb4.append(eVar.f11174a);
                         com.opos.cmn.func.b.b.e eVar14 = eVar;
                         sb4.append(",msg=");
                         com.opos.cmn.func.b.b.e eVar15 = eVar;
@@ -149,7 +149,7 @@ public class a implements com.opos.mobad.model.a.a {
                         com.opos.cmn.func.b.b.e eVar16 = eVar;
                         com.opos.cmn.an.f.a.c("FetchAdEngine", sb4.toString());
                         com.opos.cmn.func.b.b.e eVar17 = eVar;
-                        bVar4 = new com.opos.mobad.model.b.b(eVar.f24862a, str2);
+                        bVar4 = new com.opos.mobad.model.b.b(eVar.f11174a, str2);
                     }
                 }
                 bVar = bVar4;
@@ -176,12 +176,12 @@ public class a implements com.opos.mobad.model.a.a {
             if (cVar != null) {
                 bVar2 = bVar;
                 try {
-                    if (com.opos.cmn.an.h.c.a.d(this.f26375a)) {
+                    if (com.opos.cmn.an.h.c.a.d(this.f12687a)) {
                         com.opos.mobad.model.b.d b = b(str, cVar, fVar);
                         com.opos.cmn.an.f.a.a("FetchAdEngine", "fetchAd fetchAdResponse=", b);
                         bVar2 = b;
                     } else {
-                        bVar2 = new com.opos.mobad.model.b.b(10100, "no net.");
+                        bVar2 = new com.opos.mobad.model.b.b(Constants.REQUEST_API, "no net.");
                     }
                 } catch (Exception e) {
                     com.opos.cmn.an.f.a.c("FetchAdEngine", SplashAd.KEY_FETCHAD, e);

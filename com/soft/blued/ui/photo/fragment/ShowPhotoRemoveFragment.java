@@ -17,7 +17,6 @@ import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 import com.blued.android.core.imagecache.LoadOptions;
 import com.blued.android.module.common.utils.DialogUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.blued.android.module.common.widget.dialog.CommonAlertDialog;
 import com.blued.community.ui.send.manager.SelectPhotoManager;
 import com.blued.community.ui.send.model.ChildImageInfo;
@@ -33,7 +32,7 @@ import java.util.List;
 public class ShowPhotoRemoveFragment extends BasePhotoFragment implements View.OnClickListener {
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f33105c;
+    private Context f19414c;
     private View d;
     private LayoutInflater e;
     private ImagePagerAdapter f;
@@ -53,14 +52,14 @@ public class ShowPhotoRemoveFragment extends BasePhotoFragment implements View.O
     class AnonymousClass2 implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ PhotoView f33107a;
+        final /* synthetic */ PhotoView f19416a;
         final /* synthetic */ ShowPhotoRemoveFragment b;
 
         @Override // java.lang.Runnable
         public void run() {
             boolean z = false;
-            if (((int) this.f33107a.getScale()) != ((int) this.f33107a.getMinimumScale())) {
-                if (this.b.f33053a) {
+            if (((int) this.f19416a.getScale()) != ((int) this.f19416a.getMinimumScale())) {
+                if (this.b.f19362a) {
                     ShowPhotoRemoveFragment showPhotoRemoveFragment = this.b;
                     ImageView imageView = showPhotoRemoveFragment.l;
                     TextView textView = this.b.p;
@@ -69,7 +68,7 @@ public class ShowPhotoRemoveFragment extends BasePhotoFragment implements View.O
                     }
                     showPhotoRemoveFragment.a(imageView, textView, z);
                 }
-            } else if (this.b.f33053a) {
+            } else if (this.b.f19362a) {
             } else {
                 ShowPhotoRemoveFragment showPhotoRemoveFragment2 = this.b;
                 ImageView imageView2 = showPhotoRemoveFragment2.l;
@@ -110,7 +109,7 @@ public class ShowPhotoRemoveFragment extends BasePhotoFragment implements View.O
         if (arguments != null) {
             this.m = getArguments().getInt("show_photo");
             this.h = arguments.getInt("photo_index", 0);
-            this.g = (LoadOptions) arguments.getSerializable("photo_options");
+            this.g = arguments.getSerializable("photo_options");
             this.i = this.h;
             this.n.clear();
             for (ChildImageInfo childImageInfo : SelectPhotoManager.a().c()) {
@@ -123,12 +122,12 @@ public class ShowPhotoRemoveFragment extends BasePhotoFragment implements View.O
 
     private void i() {
         this.j = DialogUtils.a(getActivity());
-        this.e = LayoutInflater.from(this.f33105c);
+        this.e = LayoutInflater.from(this.f19414c);
         this.k = (HackyViewPager) this.d.findViewById(2131368810);
-        ImageView imageView = (ImageView) this.d.findViewById(2131362969);
+        ImageView imageView = (ImageView) this.d.findViewById(R.id.close_album_btn);
         this.l = imageView;
         imageView.setOnClickListener(this);
-        View findViewById = this.d.findViewById(2131371256);
+        View findViewById = this.d.findViewById(R.id.tv_delete);
         this.o = findViewById;
         findViewById.setOnClickListener(this);
         this.p = (TextView) this.d.findViewById(R.id.tv_position);
@@ -173,17 +172,17 @@ public class ShowPhotoRemoveFragment extends BasePhotoFragment implements View.O
             return;
         }
         TextView textView = this.p;
-        textView.setText((this.h + 1) + BridgeUtil.SPLIT_MARK + this.n.size());
-        if (this.f33053a) {
+        textView.setText((this.h + 1) + "/" + this.n.size());
+        if (this.f19362a) {
             this.p.setVisibility(0);
         }
     }
 
-    @Override // com.soft.blued.ui.photo.fragment.BasePhotoFragment, com.blued.android.module.player.media.observer.EventCallBackListener
+    @Override // com.soft.blued.ui.photo.fragment.BasePhotoFragment
     public void a(int i) {
         super.a(i);
         this.k.getBackground().setAlpha(i);
-        if (this.f33053a) {
+        if (this.f19362a) {
             ImageView imageView = this.l;
             TextView textView = this.p;
             boolean z = true;
@@ -194,16 +193,16 @@ public class ShowPhotoRemoveFragment extends BasePhotoFragment implements View.O
         }
     }
 
-    @Override // com.soft.blued.ui.photo.fragment.BasePhotoFragment, com.blued.android.module.player.media.observer.EventCallBackListener
+    @Override // com.soft.blued.ui.photo.fragment.BasePhotoFragment
     public void a(View view) {
         super.a(view);
         f();
     }
 
-    @Override // com.soft.blued.ui.photo.fragment.BasePhotoFragment, com.blued.android.module.player.media.observer.EventCallBackListener
+    @Override // com.soft.blued.ui.photo.fragment.BasePhotoFragment
     public void al_() {
         super.al_();
-        if (this.f33053a) {
+        if (this.f19362a) {
             return;
         }
         ImageView imageView = this.l;
@@ -215,13 +214,12 @@ public class ShowPhotoRemoveFragment extends BasePhotoFragment implements View.O
         b(imageView, textView, z);
     }
 
-    @Override // com.soft.blued.ui.photo.fragment.BasePhotoFragment, com.blued.android.module.player.media.observer.EventCallBackListener
+    @Override // com.soft.blued.ui.photo.fragment.BasePhotoFragment
     public void b(View view) {
         super.b(view);
         f();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment
     public boolean isActivitySwipeBackEnable() {
         return false;
     }
@@ -248,12 +246,12 @@ public class ShowPhotoRemoveFragment extends BasePhotoFragment implements View.O
                     ShowPhotoRemoveFragment.this.k.setCurrentItem(currentItem);
                     if (currentItem != ShowPhotoRemoveFragment.this.n.size()) {
                         TextView textView = ShowPhotoRemoveFragment.this.p;
-                        textView.setText((currentItem + 1) + BridgeUtil.SPLIT_MARK + ShowPhotoRemoveFragment.this.n.size());
+                        textView.setText((currentItem + 1) + "/" + ShowPhotoRemoveFragment.this.n.size());
                     } else if (ShowPhotoRemoveFragment.this.n.size() == 0) {
                         ShowPhotoRemoveFragment.this.p.setText("1/1");
                     } else {
                         TextView textView2 = ShowPhotoRemoveFragment.this.p;
-                        textView2.setText(ShowPhotoRemoveFragment.this.n.size() + BridgeUtil.SPLIT_MARK + ShowPhotoRemoveFragment.this.n.size());
+                        textView2.setText(ShowPhotoRemoveFragment.this.n.size() + "/" + ShowPhotoRemoveFragment.this.n.size());
                     }
                     if (currentItem == ShowPhotoRemoveFragment.this.n.size() && ShowPhotoRemoveFragment.this.n.size() == 0) {
                         ShowPhotoRemoveFragment.this.getActivity().finish();
@@ -263,7 +261,7 @@ public class ShowPhotoRemoveFragment extends BasePhotoFragment implements View.O
         }
     }
 
-    @Override // com.soft.blued.ui.photo.fragment.BasePhotoFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.soft.blued.ui.photo.fragment.BasePhotoFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         if (Build.VERSION.SDK_INT >= 21) {
@@ -271,9 +269,8 @@ public class ShowPhotoRemoveFragment extends BasePhotoFragment implements View.O
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.f33105c = getActivity();
+        this.f19414c = getActivity();
         View view = this.d;
         if (view == null) {
             this.d = layoutInflater.inflate(R.layout.fragment_show_album, viewGroup, false);
@@ -289,12 +286,11 @@ public class ShowPhotoRemoveFragment extends BasePhotoFragment implements View.O
         return this.d;
     }
 
-    @Override // com.soft.blued.ui.photo.fragment.BasePhotoFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.soft.blued.ui.photo.fragment.BasePhotoFragment
     public void onDestroy() {
         super.onDestroy();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onSaveInstanceState(Bundle bundle) {
         bundle.putInt("state_position", this.k.getCurrentItem());
     }

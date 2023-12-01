@@ -19,17 +19,17 @@ public final class i<TResult> extends Task<TResult> {
     private boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private volatile boolean f22375c;
+    private volatile boolean f8767c;
     private TResult d;
     private Exception e;
 
     /* renamed from: a  reason: collision with root package name */
-    private final Object f22374a = new Object();
+    private final Object f8766a = new Object();
     private List<ExecuteResult<TResult>> f = new ArrayList();
 
     private Task<TResult> a(ExecuteResult<TResult> executeResult) {
         boolean isComplete;
-        synchronized (this.f22374a) {
+        synchronized (this.f8766a) {
             isComplete = isComplete();
             if (!isComplete) {
                 this.f.add(executeResult);
@@ -42,7 +42,7 @@ public final class i<TResult> extends Task<TResult> {
     }
 
     private void b() {
-        synchronized (this.f22374a) {
+        synchronized (this.f8766a) {
             for (ExecuteResult<TResult> executeResult : this.f) {
                 try {
                     executeResult.onComplete(this);
@@ -57,37 +57,37 @@ public final class i<TResult> extends Task<TResult> {
     }
 
     public final void a(Exception exc) {
-        synchronized (this.f22374a) {
+        synchronized (this.f8766a) {
             if (this.b) {
                 return;
             }
             this.b = true;
             this.e = exc;
-            this.f22374a.notifyAll();
+            this.f8766a.notifyAll();
             b();
         }
     }
 
     public final void a(TResult tresult) {
-        synchronized (this.f22374a) {
+        synchronized (this.f8766a) {
             if (this.b) {
                 return;
             }
             this.b = true;
             this.d = tresult;
-            this.f22374a.notifyAll();
+            this.f8766a.notifyAll();
             b();
         }
     }
 
     public final boolean a() {
-        synchronized (this.f22374a) {
+        synchronized (this.f8766a) {
             if (this.b) {
                 return false;
             }
             this.b = true;
-            this.f22375c = true;
-            this.f22374a.notifyAll();
+            this.f8767c = true;
+            this.f8766a.notifyAll();
             b();
             return true;
         }
@@ -228,7 +228,7 @@ public final class i<TResult> extends Task<TResult> {
     @Override // com.huawei.hmf.tasks.Task
     public final Exception getException() {
         Exception exc;
-        synchronized (this.f22374a) {
+        synchronized (this.f8766a) {
             exc = this.e;
         }
         return exc;
@@ -237,7 +237,7 @@ public final class i<TResult> extends Task<TResult> {
     @Override // com.huawei.hmf.tasks.Task
     public final TResult getResult() {
         TResult tresult;
-        synchronized (this.f22374a) {
+        synchronized (this.f8766a) {
             if (this.e != null) {
                 throw new RuntimeException(this.e);
             }
@@ -249,7 +249,7 @@ public final class i<TResult> extends Task<TResult> {
     @Override // com.huawei.hmf.tasks.Task
     public final <E extends Throwable> TResult getResultThrowException(Class<E> cls) throws Throwable {
         TResult tresult;
-        synchronized (this.f22374a) {
+        synchronized (this.f8766a) {
             if (cls != null) {
                 if (cls.isInstance(this.e)) {
                     throw cls.cast(this.e);
@@ -265,13 +265,13 @@ public final class i<TResult> extends Task<TResult> {
 
     @Override // com.huawei.hmf.tasks.Task
     public final boolean isCanceled() {
-        return this.f22375c;
+        return this.f8767c;
     }
 
     @Override // com.huawei.hmf.tasks.Task
     public final boolean isComplete() {
         boolean z;
-        synchronized (this.f22374a) {
+        synchronized (this.f8766a) {
             z = this.b;
         }
         return z;
@@ -280,7 +280,7 @@ public final class i<TResult> extends Task<TResult> {
     @Override // com.huawei.hmf.tasks.Task
     public final boolean isSuccessful() {
         boolean z;
-        synchronized (this.f22374a) {
+        synchronized (this.f8766a) {
             z = this.b && !isCanceled() && this.e == null;
         }
         return z;

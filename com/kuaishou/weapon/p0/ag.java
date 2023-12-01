@@ -11,11 +11,11 @@ import org.json.JSONObject;
 public class ag {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23718a = "YW5kcm9pZC5hcHAuQWN0aXZpdHlUaHJlYWQ=";
+    private static final String f10110a = "YW5kcm9pZC5hcHAuQWN0aXZpdHlUaHJlYWQ=";
     private final String b = "YW5kcm9pZC5hcHAuQWN0aXZpdHlNYW5hZ2Vy";
 
     /* renamed from: c  reason: collision with root package name */
-    private final String f23719c = "YW5kcm9pZC5hcHAuQWN0aXZpdHlNYW5hZ2VyTmF0aXZl";
+    private final String f10111c = "YW5kcm9pZC5hcHAuQWN0aXZpdHlNYW5hZ2VyTmF0aXZl";
     private final String d = "YW5kcm9pZC5hcHAuQWN0aXZpdHlUYXNrTWFuYWdlcg==";
     private final String e = "SUFjdGl2aXR5VGFza01hbmFnZXJTaW5nbGV0b24=";
 
@@ -70,7 +70,7 @@ public class ag {
 
     private void b(JSONObject jSONObject, int i) {
         try {
-            Object a2 = dg.a(new String(c.a(f23718a.getBytes(), 2)), (Object) null, "getPackageManager", new Object[0]);
+            Object a2 = dg.a(new String(c.a(f10110a.getBytes(), 2)), (Object) null, "getPackageManager", new Object[0]);
             if (a2 != null) {
                 a(a2, jSONObject, i);
             }
@@ -93,7 +93,7 @@ public class ag {
     private void d(JSONObject jSONObject, int i) {
         Object a2;
         try {
-            Object a3 = dg.a(new String(c.a(f23718a.getBytes(), 2)), (Object) null, "currentActivityThread", new Object[0]);
+            Object a3 = dg.a(new String(c.a(f10110a.getBytes(), 2)), (Object) null, "currentActivityThread", new Object[0]);
             if (a3 == null || (a2 = dg.a(a3.getClass(), a3, "mInstrumentation")) == null) {
                 return;
             }

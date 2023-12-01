@@ -19,28 +19,28 @@ import kotlin.jvm.internal.Intrinsics;
 public final class VipInvisibleListAdapter extends BaseQuickAdapter<InvisibleToUserModel.InvisibleUser, BaseViewHolder> {
 
     /* renamed from: a  reason: collision with root package name */
-    public InvisibleUserDeleteListener f33813a;
+    public InvisibleUserDeleteListener f20122a;
     private final Context b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public VipInvisibleListAdapter(Context mContext) {
+    public VipInvisibleListAdapter(Context context) {
         super((int) R.layout.item_invisible_to_user);
-        Intrinsics.e(mContext, "mContext");
-        this.b = mContext;
+        Intrinsics.e(context, "mContext");
+        this.b = context;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(VipInvisibleListAdapter this$0, InvisibleToUserModel.InvisibleUser item, View view) {
+    public static final void a(VipInvisibleListAdapter vipInvisibleListAdapter, InvisibleToUserModel.InvisibleUser invisibleUser, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        Intrinsics.e(item, "$item");
-        if (this$0.a() != null) {
-            this$0.a().a(item);
+        Intrinsics.e(vipInvisibleListAdapter, "this$0");
+        Intrinsics.e(invisibleUser, "$item");
+        if (vipInvisibleListAdapter.a() != null) {
+            vipInvisibleListAdapter.a().a(invisibleUser);
         }
     }
 
     public final InvisibleUserDeleteListener a() {
-        InvisibleUserDeleteListener invisibleUserDeleteListener = this.f33813a;
+        InvisibleUserDeleteListener invisibleUserDeleteListener = this.f20122a;
         if (invisibleUserDeleteListener != null) {
             return invisibleUserDeleteListener;
         }
@@ -51,26 +51,26 @@ public final class VipInvisibleListAdapter extends BaseQuickAdapter<InvisibleToU
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
-    public void convert(BaseViewHolder helper, final InvisibleToUserModel.InvisibleUser item) {
-        Intrinsics.e(helper, "helper");
-        Intrinsics.e(item, "item");
-        helper.setText(2131372879, item.name);
-        View view = helper.getView(2131366006);
+    public void convert(BaseViewHolder baseViewHolder, final InvisibleToUserModel.InvisibleUser invisibleUser) {
+        Intrinsics.e(baseViewHolder, "helper");
+        Intrinsics.e(invisibleUser, "item");
+        baseViewHolder.setText(R.id.tv_user_name, invisibleUser.name);
+        View view = baseViewHolder.getView(R.id.iv_user_avatar);
         Intrinsics.c(view, "helper.getView(R.id.iv_user_avatar)");
         ImageView imageView = (ImageView) view;
-        View view2 = helper.getView(R.id.tv_delete_invisible);
+        ShapeTextView view2 = baseViewHolder.getView(R.id.tv_delete_invisible);
         Intrinsics.c(view2, "helper.getView(R.id.tv_delete_invisible)");
-        ImageLoader.a((IRequestHost) null, item.avatar).b(2131237310).c().a(imageView);
-        ((ShapeTextView) view2).setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.adapter.-$$Lambda$VipInvisibleListAdapter$f6o7-NuIXfDbFltv7Z9OPqtlWwo
+        ImageLoader.a((IRequestHost) null, invisibleUser.avatar).b(2131237310).c().a(imageView);
+        view2.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.adapter.-$$Lambda$VipInvisibleListAdapter$f6o7-NuIXfDbFltv7Z9OPqtlWwo
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
-                VipInvisibleListAdapter.a(VipInvisibleListAdapter.this, item, view3);
+                VipInvisibleListAdapter.a(VipInvisibleListAdapter.this, invisibleUser, view3);
             }
         });
     }
 
     public final void a(InvisibleUserDeleteListener invisibleUserDeleteListener) {
         Intrinsics.e(invisibleUserDeleteListener, "<set-?>");
-        this.f33813a = invisibleUserDeleteListener;
+        this.f20122a = invisibleUserDeleteListener;
     }
 }

@@ -8,25 +8,23 @@ import kotlin.jvm.internal.markers.KMappedMarker;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/jvm/internal/ArrayIterator.class */
 final class ArrayIterator<T> implements Iterator<T>, KMappedMarker {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final T[] f42521a;
+    private final T[] a;
     private int b;
 
     public ArrayIterator(T[] array) {
         Intrinsics.e(array, "array");
-        this.f42521a = array;
+        this.a = array;
     }
 
     @Override // java.util.Iterator
     public boolean hasNext() {
-        return this.b < this.f42521a.length;
+        return this.b < this.a.length;
     }
 
     @Override // java.util.Iterator
     public T next() {
         try {
-            T[] tArr = this.f42521a;
+            T[] tArr = this.a;
             int i = this.b;
             this.b = i + 1;
             return tArr[i];

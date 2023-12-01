@@ -2,16 +2,15 @@ package com.huawei.secure.android.common.anonymization;
 
 import android.text.TextUtils;
 import android.util.Log;
-import com.android.internal.telephony.PhoneConstants;
 
 /* loaded from: source-7994992-dex2jar.jar:com/huawei/secure/android/common/anonymization/Anonymizer.class */
 public class Anonymizer {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23054a = "Anonymizer";
+    private static final String f9446a = "Anonymizer";
 
     public static String maskAccountId(String str) {
-        return (str == null || str.length() <= 0) ? "" : str.length() <= 1 ? PhoneConstants.APN_TYPE_ALL : str.length() < 8 ? maskCommonString(str, 0, 1) : maskCommonString(str, 0, 4);
+        return (str == null || str.length() <= 0) ? "" : str.length() <= 1 ? "*" : str.length() < 8 ? maskCommonString(str, 0, 1) : maskCommonString(str, 0, 4);
     }
 
     public static String maskBankAccount(String str) {
@@ -26,7 +25,7 @@ public class Anonymizer {
             return a.a(str, '*');
         }
         String[] a2 = a.a(str, 4);
-        return a.a("", a.a(a2, 0), a.a(a.a(a2, 1), "0123456789", PhoneConstants.APN_TYPE_ALL));
+        return a.a("", a.a(a2, 0), a.a(a.a(a2, 1), "0123456789", "*"));
     }
 
     public static String maskCommonString(String str, int i, int i2) {
@@ -57,7 +56,7 @@ public class Anonymizer {
             return "";
         }
         if (str.length() <= 1) {
-            return PhoneConstants.APN_TYPE_ALL;
+            return "*";
         }
         int indexOf = str.indexOf(64);
         if (indexOf < 0) {
@@ -98,7 +97,7 @@ public class Anonymizer {
         }
         if (b.length != 8) {
             String[] a2 = a.a(str, str.indexOf(58) + 1);
-            return a.a("", a.a(a2, 0), a.a(a.a(a2, 1), "0123456789ABCDEFabcdef", PhoneConstants.APN_TYPE_ALL));
+            return a.a("", a.a(a2, 0), a.a(a.a(a2, 1), "0123456789ABCDEFabcdef", "*"));
         }
         b[2] = maskLower8Bit(b[2]);
         int i = 3;
@@ -114,7 +113,7 @@ public class Anonymizer {
 
     public static String maskLower8Bit(String str) {
         if (TextUtils.isEmpty(str)) {
-            Log.e(f23054a, "maskLower8Bit: s is null");
+            Log.e(f9446a, "maskLower8Bit: s is null");
             return "";
         } else if (str.length() <= 2) {
             return a.a(str, '*');
@@ -130,14 +129,14 @@ public class Anonymizer {
         }
         int a2 = a.a(str, '-', 2);
         if (a2 < 0) {
-            return a.a(str, "0123456789ABCDEFabcdef", PhoneConstants.APN_TYPE_ALL);
+            return a.a(str, "0123456789ABCDEFabcdef", "*");
         }
         String[] a3 = a.a(str, a2);
-        return a.a("", a.a(a3, 0), a.a(a.a(a3, 1), "0123456789ABCDEFabcdef", PhoneConstants.APN_TYPE_ALL));
+        return a.a("", a.a(a3, 0), a.a(a.a(a3, 1), "0123456789ABCDEFabcdef", "*"));
     }
 
     public static String maskName(String str) {
-        return (str == null || str.length() <= 0) ? "" : str.length() <= 1 ? PhoneConstants.APN_TYPE_ALL : maskCommonString(str, 1, 0);
+        return (str == null || str.length() <= 0) ? "" : str.length() <= 1 ? "*" : maskCommonString(str, 1, 0);
     }
 
     public static String maskPhone(String str) {

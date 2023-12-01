@@ -4,6 +4,7 @@ import android.graphics.Rect;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
+import androidx.constraintlayout.motion.widget.Key;
 import com.baidu.mobads.sdk.api.IAdInterListener;
 import com.huawei.hms.ads.jsb.constant.Constant;
 import com.zk_oaction.adengine.lk_expression.a;
@@ -37,11 +38,11 @@ public class b extends FrameLayout implements a.w, com.zk_oaction.adengine.lk_sd
     private HashMap<String, com.zk_oaction.adengine.lk_sdk.interfaces.c<String, com.zk_oaction.adengine.lk_animation.b>> U;
 
     /* renamed from: a  reason: collision with root package name */
-    protected float f42017a;
+    protected float f28326a;
     protected float b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected float f42018c;
+    protected float f28327c;
     protected float d;
     protected com.zk_oaction.adengine.lk_view.f e;
     protected float f;
@@ -82,8 +83,8 @@ public class b extends FrameLayout implements a.w, com.zk_oaction.adengine.lk_sd
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.zk_oaction.adengine.lk_view.b$b  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/zk_oaction/adengine/lk_view/b$b.class */
-    public class C1114b implements com.zk_oaction.adengine.lk_sdk.interfaces.c<Float, Void> {
-        C1114b() {
+    public class C0944b implements com.zk_oaction.adengine.lk_sdk.interfaces.c<Float, Void> {
+        C0944b() {
         }
 
         @Override // com.zk_oaction.adengine.lk_sdk.interfaces.c
@@ -186,14 +187,14 @@ public class b extends FrameLayout implements a.w, com.zk_oaction.adengine.lk_sd
             b bVar = b.this;
             bVar.R = bVar.f;
             bVar.S = bVar.g;
-            bVar.f42017a = f;
+            bVar.f28326a = f;
             bVar.b = f2;
         }
 
         @Override // com.zk_oaction.adengine.lk_sdk.interfaces.a
         public void c(float f, float f2) {
             b bVar = b.this;
-            float f3 = (bVar.R + f) - bVar.f42017a;
+            float f3 = (bVar.R + f) - bVar.f28326a;
             float f4 = (bVar.S + f2) - bVar.b;
             float f5 = f3;
             float f6 = f4;
@@ -247,10 +248,10 @@ public class b extends FrameLayout implements a.w, com.zk_oaction.adengine.lk_sd
     public class j implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ float f42028a;
+        final /* synthetic */ float f28337a;
 
         j(float f) {
-            this.f42028a = f;
+            this.f28337a = f;
         }
 
         @Override // java.lang.Runnable
@@ -260,7 +261,7 @@ public class b extends FrameLayout implements a.w, com.zk_oaction.adengine.lk_sd
             String str2;
             b bVar = b.this;
             float f = bVar.H;
-            float f2 = this.f42028a;
+            float f2 = this.f28337a;
             float f3 = bVar.p;
             com.zk_oaction.adengine.lk_view.f fVar = bVar.e;
             if ((fVar != null ? fVar.q() : 1.0f) * f * f2 * f3 == 0.0f) {
@@ -450,11 +451,11 @@ public class b extends FrameLayout implements a.w, com.zk_oaction.adengine.lk_sd
         this.T.put("height", new p());
         this.T.put("pivotX", new q());
         this.T.put("pivotY", new r());
-        this.T.put("rotation", new s());
+        this.T.put(Key.ROTATION, new s());
         this.T.put("rotationX", new t());
         this.T.put("rotationY", new u());
         this.T.put("alpha", new a());
-        this.T.put("visibility", new C1114b());
+        this.T.put("visibility", new C0944b());
         this.T.put("enableMove", new c());
     }
 
@@ -524,11 +525,11 @@ public class b extends FrameLayout implements a.w, com.zk_oaction.adengine.lk_sd
     /* JADX INFO: Access modifiers changed from: private */
     public void i(float f2) {
         if (this.I != null) {
-            this.f42018c = new l().a((l) Float.valueOf(f2)).floatValue();
+            this.f28327c = new l().a((l) Float.valueOf(f2)).floatValue();
             setTranslationX(this.v.a());
             com.zk_oaction.adengine.lk_expression.a aVar = this.z;
             if (aVar != null && aVar.b == null) {
-                aVar.a(this.f42018c);
+                aVar.a(this.f28327c);
             }
         }
         if (this.u != null) {
@@ -606,7 +607,7 @@ public class b extends FrameLayout implements a.w, com.zk_oaction.adengine.lk_sd
 
     public String a(com.zk_oaction.adengine.lk_expression.a aVar, String str) {
         if (aVar != null) {
-            str = aVar.f41918a;
+            str = aVar.f28227a;
         }
         return str;
     }
@@ -721,12 +722,12 @@ public class b extends FrameLayout implements a.w, com.zk_oaction.adengine.lk_sd
             str4 = xmlPullParser.getAttributeValue(null, "centerY");
         }
         this.A = new com.zk_oaction.adengine.lk_expression.a(this.t, "pivotY", str4, 0.0f, this, true);
-        String attributeValue5 = xmlPullParser.getAttributeValue(null, "rotation");
+        String attributeValue5 = xmlPullParser.getAttributeValue(null, Key.ROTATION);
         String str5 = attributeValue5;
         if (attributeValue5 == null) {
             str5 = xmlPullParser.getAttributeValue(null, "angle");
         }
-        this.B = new com.zk_oaction.adengine.lk_expression.a(this.t, "rotation", str5, 0.0f, this, false);
+        this.B = new com.zk_oaction.adengine.lk_expression.a(this.t, Key.ROTATION, str5, 0.0f, this, false);
         String attributeValue6 = xmlPullParser.getAttributeValue(null, "rotationX");
         String str6 = attributeValue6;
         if (attributeValue6 == null) {
@@ -878,7 +879,7 @@ public class b extends FrameLayout implements a.w, com.zk_oaction.adengine.lk_sd
             setTranslationY(this.w.a());
         } else if (str.equals(a(this.E, "alpha"))) {
             setAlpha((this.n * this.j) / 255.0f);
-        } else if (str.equals("rotation")) {
+        } else if (str.equals(Key.ROTATION)) {
             setRotation(this.B.a() + this.k);
         } else if (str.equals("rotationX")) {
             setRotationX(this.C.a() + this.l);
@@ -1032,9 +1033,8 @@ public class b extends FrameLayout implements a.w, com.zk_oaction.adengine.lk_sd
         return 0.0f;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i2, int i3) {
+    protected void onMeasure(int i2, int i3) {
         int makeMeasureSpec;
         float l2;
         if (i() || d()) {
@@ -1079,7 +1079,7 @@ public class b extends FrameLayout implements a.w, com.zk_oaction.adengine.lk_sd
 
     @Override // android.view.View
     public void setTranslationX(float f2) {
-        float f3 = this.f42018c;
+        float f3 = this.f28327c;
         float f4 = this.h;
         float f5 = this.f;
         com.zk_oaction.adengine.lk_view.f fVar = this.e;

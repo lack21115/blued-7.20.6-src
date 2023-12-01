@@ -12,9 +12,7 @@ public final class Client {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/statistics/biz/Client$InstanceHolder.class */
     public static class InstanceHolder {
-
-        /* renamed from: a  reason: collision with root package name */
-        private static final Client f18683a = new Client();
+        private static final Client a = new Client();
 
         private InstanceHolder() {
         }
@@ -24,7 +22,7 @@ public final class Client {
     }
 
     public static Client a() {
-        return InstanceHolder.f18683a;
+        return InstanceHolder.a;
     }
 
     public void a(Message message, long j) {

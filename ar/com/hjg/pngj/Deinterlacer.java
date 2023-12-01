@@ -4,11 +4,11 @@ package ar.com.hjg.pngj;
 public class Deinterlacer {
 
     /* renamed from: a  reason: collision with root package name */
-    final ImageInfo f3631a;
+    final ImageInfo f3583a;
     int b;
 
     /* renamed from: c  reason: collision with root package name */
-    int f3632c;
+    int f3584c;
     int d;
     int e;
     int f;
@@ -24,7 +24,7 @@ public class Deinterlacer {
 
     public Deinterlacer(ImageInfo imageInfo) {
         this.o = false;
-        this.f3631a = imageInfo;
+        this.f3583a = imageInfo;
         this.o = false;
         a(1);
         c(0);
@@ -55,7 +55,7 @@ public class Deinterlacer {
         this.l = i;
         int i2 = (i * this.b) + this.d;
         this.m = i2;
-        if (i2 < 0 || i2 >= this.f3631a.b) {
+        if (i2 < 0 || i2 >= this.f3583a.b) {
             throw new PngjExceptionInternal("bad row - this should not happen");
         }
     }
@@ -68,21 +68,21 @@ public class Deinterlacer {
         }
         this.i = i;
         byte[] b = b(i);
-        this.f3632c = b[0];
+        this.f3584c = b[0];
         this.b = b[1];
         this.e = b[2];
         this.d = b[3];
-        if (this.f3631a.b > this.d) {
-            int i4 = this.f3631a.b;
+        if (this.f3583a.b > this.d) {
+            int i4 = this.f3583a.b;
             int i5 = this.b;
             i2 = (((i4 + i5) - 1) - this.d) / i5;
         } else {
             i2 = 0;
         }
         this.j = i2;
-        if (this.f3631a.f3638a > this.e) {
-            int i6 = this.f3631a.f3638a;
-            int i7 = this.f3632c;
+        if (this.f3583a.f3590a > this.e) {
+            int i6 = this.f3583a.f3590a;
+            int i7 = this.f3584c;
             i3 = (((i6 + i7) - 1) - this.e) / i7;
         } else {
             i3 = 0;
@@ -91,8 +91,8 @@ public class Deinterlacer {
         if (i3 == 0) {
             this.j = 0;
         }
-        this.g = this.f3632c * this.f3631a.d;
-        this.f = this.e * this.f3631a.d;
+        this.g = this.f3584c * this.f3583a.d;
+        this.f = this.e * this.f3583a.d;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -148,6 +148,6 @@ public class Deinterlacer {
     }
 
     public int h() {
-        return ((this.f3631a.i * g()) + 7) / 8;
+        return ((this.f3583a.i * g()) + 7) / 8;
     }
 }

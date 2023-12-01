@@ -24,24 +24,20 @@ public class CloudImage implements Parcelable {
             return a(i);
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f5595a;
+    private String a;
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f5596c;
+    private String c;
 
     public CloudImage(Parcel parcel) {
-        this.f5595a = parcel.readString();
+        this.a = parcel.readString();
         this.b = parcel.readString();
-        this.f5596c = parcel.readString();
+        this.c = parcel.readString();
     }
 
     public CloudImage(String str, String str2, String str3) {
-        this.f5595a = str;
+        this.a = str;
         this.b = str2;
-        this.f5596c = str3;
+        this.c = str3;
     }
 
     @Override // android.os.Parcelable
@@ -50,7 +46,7 @@ public class CloudImage implements Parcelable {
     }
 
     public String getId() {
-        return this.f5595a;
+        return this.a;
     }
 
     public String getPreurl() {
@@ -58,11 +54,11 @@ public class CloudImage implements Parcelable {
     }
 
     public String getUrl() {
-        return this.f5596c;
+        return this.c;
     }
 
     public void setId(String str) {
-        this.f5595a = str;
+        this.a = str;
     }
 
     public void setPreurl(String str) {
@@ -70,13 +66,13 @@ public class CloudImage implements Parcelable {
     }
 
     public void setUrl(String str) {
-        this.f5596c = str;
+        this.c = str;
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.f5595a);
+        parcel.writeString(this.a);
         parcel.writeString(this.b);
-        parcel.writeString(this.f5596c);
+        parcel.writeString(this.c);
     }
 }

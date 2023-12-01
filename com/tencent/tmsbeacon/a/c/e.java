@@ -13,7 +13,6 @@ import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.view.WindowManager;
-import com.android.internal.telephony.PhoneConstants;
 import com.tencent.tmsbeacon.a.d.a;
 import com.tencent.tmsbeacon.base.net.b.e;
 import com.tencent.tmsbeacon.base.util.d;
@@ -31,11 +30,11 @@ import java.util.regex.Pattern;
 public class e implements e.a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile e f39476a;
+    private static volatile e f25785a;
     private final Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f39477c = "";
+    private String f25786c = "";
     private String d = "";
     private String e = "";
     private String f = "";
@@ -121,18 +120,18 @@ public class e implements e.a {
     }
 
     public static e l() {
-        if (f39476a == null) {
+        if (f25785a == null) {
             synchronized (e.class) {
                 try {
-                    if (f39476a == null) {
-                        f39476a = new e();
+                    if (f25785a == null) {
+                        f25785a = new e();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f39476a;
+        return f25785a;
     }
 
     public String A() {
@@ -144,7 +143,7 @@ public class e implements e.a {
         this.f = string;
         if (TextUtils.isEmpty(string)) {
             this.f = com.tencent.tmsbeacon.base.util.b.a();
-            a.SharedPreferences$EditorC1031a edit = com.tencent.tmsbeacon.a.d.a.a().edit();
+            a.SharedPreferences$EditorC0861a edit = com.tencent.tmsbeacon.a.d.a.a().edit();
             if (com.tencent.tmsbeacon.base.util.b.a((SharedPreferences.Editor) edit)) {
                 edit.putString("BEACON_ANDROID_ID_DENGTA", this.f);
             }
@@ -455,13 +454,13 @@ public class e implements e.a {
     }
 
     public String s() {
-        if (TextUtils.isEmpty(this.f39477c)) {
+        if (TextUtils.isEmpty(this.f25786c)) {
             String str = "Android " + Build.VERSION.RELEASE + ",level " + Build.VERSION.SDK;
-            this.f39477c = str;
+            this.f25786c = str;
             com.tencent.tmsbeacon.base.util.c.a("[DeviceInfo] os version: %s", str);
-            return this.f39477c;
+            return this.f25786c;
         }
-        return this.f39477c;
+        return this.f25786c;
     }
 
     public String t() {
@@ -545,7 +544,7 @@ public class e implements e.a {
         if (i == null) {
             return "";
         }
-        return i.widthPixels + PhoneConstants.APN_TYPE_ALL + i.heightPixels;
+        return i.widthPixels + "*" + i.heightPixels;
     }
 
     public String v() {

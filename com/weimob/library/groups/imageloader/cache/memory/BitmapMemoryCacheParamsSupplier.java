@@ -19,7 +19,7 @@ public class BitmapMemoryCacheParamsSupplier implements Supplier<MemoryCachePara
     }
 
     /* renamed from: get */
-    public MemoryCacheParams m11374get() {
+    public MemoryCacheParams m8331get() {
         int i = this.maxMemoryCacheSize;
         return new MemoryCacheParams(i, 128, i, Integer.MAX_VALUE, Integer.MAX_VALUE);
     }

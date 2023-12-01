@@ -4,32 +4,32 @@ package com.xiaomi.push;
 public class dl {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile dl f41339a;
+    private static volatile dl f27648a;
 
     /* renamed from: a  reason: collision with other field name */
-    private dk f306a;
+    private dk f259a;
 
     public static dl a() {
-        if (f41339a == null) {
+        if (f27648a == null) {
             synchronized (dl.class) {
                 try {
-                    if (f41339a == null) {
-                        f41339a = new dl();
+                    if (f27648a == null) {
+                        f27648a = new dl();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f41339a;
+        return f27648a;
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public dk m11623a() {
-        return this.f306a;
+    public dk m8573a() {
+        return this.f259a;
     }
 
     public void a(dk dkVar) {
-        this.f306a = dkVar;
+        this.f259a = dkVar;
     }
 }

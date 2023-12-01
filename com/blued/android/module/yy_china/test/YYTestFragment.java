@@ -33,13 +33,9 @@ import kotlin.reflect.KProperty;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/test/YYTestFragment.class */
 public final class YYTestFragment extends MVVMBaseFragment<EmptyViewModel> {
-
-    /* renamed from: c  reason: collision with root package name */
-    private final ViewBindingProperty f17816c;
+    private final ViewBindingProperty c;
     static final /* synthetic */ KProperty<Object>[] b = {Reflection.a(new PropertyReference1Impl(YYTestFragment.class, "vb", "getVb()Lcom/blued/android/module/yy_china/databinding/FragmentTestBinding;", 0))};
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f17815a = new Companion(null);
+    public static final Companion a = new Companion(null);
 
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/test/YYTestFragment$Companion.class */
@@ -59,7 +55,7 @@ public final class YYTestFragment extends MVVMBaseFragment<EmptyViewModel> {
 
     public YYTestFragment() {
         super(R.layout.fragment_test);
-        this.f17816c = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<YYTestFragment, FragmentTestBinding>() { // from class: com.blued.android.module.yy_china.test.YYTestFragment$special$$inlined$viewBindingFragment$default$1
+        this.c = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<YYTestFragment, FragmentTestBinding>() { // from class: com.blued.android.module.yy_china.test.YYTestFragment$special$$inlined$viewBindingFragment$default$1
             @Override // kotlin.jvm.functions.Function1
             /* renamed from: a */
             public final FragmentTestBinding invoke(YYTestFragment fragment) {
@@ -78,7 +74,7 @@ public final class YYTestFragment extends MVVMBaseFragment<EmptyViewModel> {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(View view) {
-        YYChatRoomsListFragment.Companion companion = YYChatRoomsListFragment.f17120a;
+        YYChatRoomsListFragment.Companion companion = YYChatRoomsListFragment.a;
         Context context = view.getContext();
         Intrinsics.c(context, "it.context");
         companion.a(context, "home_chat_room");
@@ -87,7 +83,7 @@ public final class YYTestFragment extends MVVMBaseFragment<EmptyViewModel> {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(YYTestFragment this$0, View view) {
         Intrinsics.e(this$0, "this$0");
-        LoginFragment.f20569a.a(this$0.getContext());
+        LoginFragment.a.a(this$0.getContext());
         UserInfo.getInstance().logout(false);
         IMManager.a().c();
         FragmentActivity activity = this$0.getActivity();
@@ -98,7 +94,7 @@ public final class YYTestFragment extends MVVMBaseFragment<EmptyViewModel> {
     }
 
     private final FragmentTestBinding p() {
-        return (FragmentTestBinding) this.f17816c.b(this, b[0]);
+        return (FragmentTestBinding) this.c.b(this, b[0]);
     }
 
     @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
@@ -106,7 +102,7 @@ public final class YYTestFragment extends MVVMBaseFragment<EmptyViewModel> {
         ShapeTextView shapeTextView;
         ShapeTextView shapeTextView2;
         FragmentTestBinding p = p();
-        if (p != null && (shapeTextView2 = p.f16486a) != null) {
+        if (p != null && (shapeTextView2 = p.a) != null) {
             shapeTextView2.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.test.-$$Lambda$YYTestFragment$cjrjJmGOMpT0521bjMM8qI-HrCA
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {

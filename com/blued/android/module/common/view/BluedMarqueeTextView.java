@@ -19,20 +19,16 @@ public class BluedMarqueeTextView extends AppCompatTextView {
         super(context, attributeSet, i);
     }
 
-    @Override // android.view.View
     public boolean isFocused() {
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // android.widget.TextView, android.view.View
-    public void onFocusChanged(boolean z, int i, Rect rect) {
+    protected void onFocusChanged(boolean z, int i, Rect rect) {
         if (z) {
             super.onFocusChanged(z, i, rect);
         }
     }
 
-    @Override // android.widget.TextView, android.view.View
     public void onWindowFocusChanged(boolean z) {
         if (z) {
             super.onWindowFocusChanged(z);

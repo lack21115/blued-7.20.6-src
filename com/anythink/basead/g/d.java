@@ -9,6 +9,8 @@ import com.anythink.core.common.b.n;
 import com.anythink.core.common.e.j;
 import com.anythink.core.common.g.g;
 import com.anythink.core.common.i;
+import com.blued.android.chat.core.pack.ReqAckPackage;
+import com.efs.sdk.base.Constants;
 import java.util.HashMap;
 import java.util.Map;
 import org.json.JSONArray;
@@ -17,13 +19,9 @@ import org.json.JSONObject;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/g/d.class */
 public final class d extends com.anythink.core.common.g.a {
-
-    /* renamed from: a  reason: collision with root package name */
-    String f6008a;
+    String a;
     String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    String f6009c;
+    String c;
     int d;
     int e;
     int f;
@@ -35,9 +33,9 @@ public final class d extends com.anythink.core.common.g.a {
     String l = "OnlineOfferLoader";
 
     public d(j jVar, int i, int i2, String[] strArr, String str) {
-        this.f6008a = jVar.d;
+        this.a = jVar.d;
         this.b = jVar.b;
-        this.f6009c = jVar.f6664c;
+        this.c = jVar.c;
         this.i = jVar.e;
         this.f = i;
         this.g = i2;
@@ -71,7 +69,7 @@ public final class d extends com.anythink.core.common.g.a {
                 super.a(i, obj);
             }
         } catch (Throwable th) {
-            a(i, -99999, obj != null ? obj.toString() : th.getMessage(), ErrorCode.getErrorCode(ErrorCode.noADError, "", obj != null ? obj.toString() : "Online Api Service Error."));
+            a(i, g.l, obj != null ? obj.toString() : th.getMessage(), ErrorCode.getErrorCode(ErrorCode.noADError, "", obj != null ? obj.toString() : "Online Api Service Error."));
         }
     }
 
@@ -97,7 +95,7 @@ public final class d extends com.anythink.core.common.g.a {
     @Override // com.anythink.core.common.g.a
     public final Map<String, String> c() {
         HashMap hashMap = new HashMap();
-        hashMap.put("Content-Encoding", "gzip");
+        hashMap.put("Content-Encoding", Constants.CP_GZIP);
         hashMap.put("Content-Type", "application/json;charset=utf-8");
         return hashMap;
     }
@@ -117,7 +115,7 @@ public final class d extends com.anythink.core.common.g.a {
         try {
             e.put("app_id", n.a().p());
             e.put("pl_id", this.b);
-            e.put("session_id", n.a().g(this.b));
+            e.put(ReqAckPackage.REQ_RESPONSE_KEY.SESSION_ID, n.a().g(this.b));
             e.put("t_g_id", this.d);
             e.put("gro_id", this.e);
             String y = n.a().y();
@@ -135,9 +133,9 @@ public final class d extends com.anythink.core.common.g.a {
                 e.put("deny", com.anythink.core.common.k.d.o(n.a().g()));
             }
             e.put(com.anythink.core.common.g.c.ap, com.anythink.core.common.n.a().c());
-            JSONObject a2 = com.anythink.core.common.g.c.a(this.b);
-            if (a2 != null) {
-                e.put("customs", a2);
+            JSONObject a = com.anythink.core.common.g.c.a(this.b);
+            if (a != null) {
+                e.put("customs", a);
             }
             com.anythink.core.common.g.c.a(e);
             return e;
@@ -164,13 +162,13 @@ public final class d extends com.anythink.core.common.g.a {
     public final String g() {
         boolean z;
         HashMap hashMap = new HashMap();
-        String a2 = com.anythink.core.common.k.c.a(e().toString());
-        String a3 = com.anythink.core.common.k.c.a(f().toString());
-        hashMap.put("p", a2);
-        hashMap.put(com.anythink.core.common.g.c.X, a3);
-        hashMap.put("request_id", this.f6008a);
-        hashMap.put("ad_source_id", Integer.valueOf(Integer.parseInt(this.f6009c)));
-        hashMap.put(com.anythink.expressad.a.g, Integer.valueOf(this.i));
+        String a = com.anythink.core.common.k.c.a(e().toString());
+        String a2 = com.anythink.core.common.k.c.a(f().toString());
+        hashMap.put(com.anythink.core.common.g.c.W, a);
+        hashMap.put(com.anythink.core.common.g.c.X, a2);
+        hashMap.put(ATAdConst.NETWORK_CUSTOM_KEY.NETWORK_REQUEST_ID, this.a);
+        hashMap.put(ATAdConst.NETWORK_REQUEST_PARAMS_KEY.AD_SOURCE_ID, Integer.valueOf(Integer.parseInt(this.c)));
+        hashMap.put("ad_num", Integer.valueOf(this.i));
         String[] strArr = this.h;
         if (strArr != null && strArr.length > 0) {
             JSONArray jSONArray = new JSONArray();
@@ -188,7 +186,7 @@ public final class d extends com.anythink.core.common.g.a {
             hashMap.put("exclude_offers", jSONArray);
         }
         if (n.a().l() != null) {
-            hashMap.put(com.anythink.core.b.a.a.f6343c, com.anythink.core.common.k.c.a(n.a().l().toString()));
+            hashMap.put(com.anythink.core.b.a.a.c, com.anythink.core.common.k.c.a(n.a().l().toString()));
         }
         int i3 = this.f;
         if (i3 > 0 && this.g > 0) {

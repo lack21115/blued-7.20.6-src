@@ -15,10 +15,10 @@ import java.util.List;
 public class ResourceDrawableDecoder implements ResourceDecoder<Uri, Drawable> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Context f20986a;
+    private final Context f7380a;
 
     public ResourceDrawableDecoder(Context context) {
-        this.f20986a = context.getApplicationContext();
+        this.f7380a = context.getApplicationContext();
     }
 
     private int a(Context context, Uri uri) {
@@ -41,14 +41,14 @@ public class ResourceDrawableDecoder implements ResourceDecoder<Uri, Drawable> {
     }
 
     private Context a(Uri uri, String str) {
-        if (str.equals(this.f20986a.getPackageName())) {
-            return this.f20986a;
+        if (str.equals(this.f7380a.getPackageName())) {
+            return this.f7380a;
         }
         try {
-            return this.f20986a.createPackageContext(str, 0);
+            return this.f7380a.createPackageContext(str, 0);
         } catch (PackageManager.NameNotFoundException e) {
-            if (str.contains(this.f20986a.getPackageName())) {
-                return this.f20986a;
+            if (str.contains(this.f7380a.getPackageName())) {
+                return this.f7380a;
             }
             throw new IllegalArgumentException("Failed to obtain context or unrecognized Uri format for: " + uri, e);
         }
@@ -73,7 +73,7 @@ public class ResourceDrawableDecoder implements ResourceDecoder<Uri, Drawable> {
     @Override // com.bumptech.glide.load.ResourceDecoder
     public Resource<Drawable> a(Uri uri, int i, int i2, Options options) {
         Context a2 = a(uri, uri.getAuthority());
-        return NonOwnedDrawableResource.a(DrawableDecoderCompat.a(this.f20986a, a2, a(a2, uri)));
+        return NonOwnedDrawableResource.a(DrawableDecoderCompat.a(this.f7380a, a2, a(a2, uri)));
     }
 
     @Override // com.bumptech.glide.load.ResourceDecoder

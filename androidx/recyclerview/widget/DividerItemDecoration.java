@@ -1,5 +1,6 @@
 package androidx.recyclerview.widget;
 
+import android.R;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
@@ -15,15 +16,15 @@ public class DividerItemDecoration extends RecyclerView.ItemDecoration {
     public static final int VERTICAL = 1;
 
     /* renamed from: a  reason: collision with root package name */
-    private static final int[] f3259a = {16843284};
+    private static final int[] f3211a = {R.attr.listDivider};
     private Drawable b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f3260c;
+    private int f3212c;
     private final Rect d = new Rect();
 
     public DividerItemDecoration(Context context, int i) {
-        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(f3259a);
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(f3211a);
         Drawable drawable = obtainStyledAttributes.getDrawable(0);
         this.b = drawable;
         if (drawable == null) {
@@ -88,7 +89,7 @@ public class DividerItemDecoration extends RecyclerView.ItemDecoration {
         Drawable drawable = this.b;
         if (drawable == null) {
             rect.set(0, 0, 0, 0);
-        } else if (this.f3260c == 1) {
+        } else if (this.f3212c == 1) {
             rect.set(0, 0, 0, drawable.getIntrinsicHeight());
         } else {
             rect.set(0, 0, drawable.getIntrinsicWidth(), 0);
@@ -100,7 +101,7 @@ public class DividerItemDecoration extends RecyclerView.ItemDecoration {
         if (recyclerView.getLayoutManager() == null || this.b == null) {
             return;
         }
-        if (this.f3260c == 1) {
+        if (this.f3212c == 1) {
             a(canvas, recyclerView);
         } else {
             b(canvas, recyclerView);
@@ -118,6 +119,6 @@ public class DividerItemDecoration extends RecyclerView.ItemDecoration {
         if (i != 0 && i != 1) {
             throw new IllegalArgumentException("Invalid orientation. It should be either HORIZONTAL or VERTICAL");
         }
-        this.f3260c = i;
+        this.f3212c = i;
     }
 }

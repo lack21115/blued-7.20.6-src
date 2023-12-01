@@ -4,15 +4,15 @@ package com.oplus.log.core;
 final class f implements g {
 
     /* renamed from: a  reason: collision with root package name */
-    private g f24340a;
+    private g f10653a;
     private boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private i f24341c;
+    private i f10654c;
 
     @Override // com.oplus.log.core.g
     public final void logan_debug(boolean z) {
-        g gVar = this.f24340a;
+        g gVar = this.f10653a;
         if (gVar != null) {
             gVar.logan_debug(z);
         }
@@ -20,7 +20,7 @@ final class f implements g {
 
     @Override // com.oplus.log.core.g
     public final void logan_flush() {
-        g gVar = this.f24340a;
+        g gVar = this.f10653a;
         if (gVar != null) {
             gVar.logan_flush();
         }
@@ -32,19 +32,19 @@ final class f implements g {
             return;
         }
         if (!CLoganProtocol.isCloganSuccess()) {
-            this.f24340a = null;
+            this.f10653a = null;
             return;
         }
         CLoganProtocol cLoganProtocol = new CLoganProtocol();
-        this.f24340a = cLoganProtocol;
-        cLoganProtocol.setOnLoganProtocolStatus(this.f24341c);
-        this.f24340a.logan_init(str, str2, i, str3, str4);
+        this.f10653a = cLoganProtocol;
+        cLoganProtocol.setOnLoganProtocolStatus(this.f10654c);
+        this.f10653a.logan_init(str, str2, i, str3, str4);
         this.b = true;
     }
 
     @Override // com.oplus.log.core.g
     public final void logan_open(String str) {
-        g gVar = this.f24340a;
+        g gVar = this.f10653a;
         if (gVar != null) {
             gVar.logan_open(str);
         }
@@ -52,7 +52,7 @@ final class f implements g {
 
     @Override // com.oplus.log.core.g
     public final void logan_write(int i, String str, long j, String str2, long j2) {
-        g gVar = this.f24340a;
+        g gVar = this.f10653a;
         if (gVar != null) {
             gVar.logan_write(i, str, j, str2, j2);
         }
@@ -60,6 +60,6 @@ final class f implements g {
 
     @Override // com.oplus.log.core.g
     public final void setOnLoganProtocolStatus(i iVar) {
-        this.f24341c = iVar;
+        this.f10654c = iVar;
     }
 }

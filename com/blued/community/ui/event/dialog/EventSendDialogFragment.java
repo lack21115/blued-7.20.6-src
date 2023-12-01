@@ -26,13 +26,9 @@ import kotlin.reflect.KProperty;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/event/dialog/EventSendDialogFragment.class */
 public final class EventSendDialogFragment extends MVVMBaseFragment<EmptyViewModel> {
-
-    /* renamed from: c  reason: collision with root package name */
-    private final ViewBindingProperty f19532c;
+    private final ViewBindingProperty c;
     static final /* synthetic */ KProperty<Object>[] b = {Reflection.a(new PropertyReference1Impl(EventSendDialogFragment.class, "viewBinding", "getViewBinding()Lcom/blued/community/databinding/DialogEventSendBinding;", 0))};
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f19531a = new Companion(null);
+    public static final Companion a = new Companion(null);
 
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/event/dialog/EventSendDialogFragment$Companion.class */
@@ -54,7 +50,7 @@ public final class EventSendDialogFragment extends MVVMBaseFragment<EmptyViewMod
 
     public EventSendDialogFragment() {
         super(R.layout.dialog_event_send);
-        this.f19532c = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<EventSendDialogFragment, DialogEventSendBinding>() { // from class: com.blued.community.ui.event.dialog.EventSendDialogFragment$special$$inlined$viewBindingFragment$default$1
+        this.c = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<EventSendDialogFragment, DialogEventSendBinding>() { // from class: com.blued.community.ui.event.dialog.EventSendDialogFragment$special$$inlined$viewBindingFragment$default$1
             @Override // kotlin.jvm.functions.Function1
             /* renamed from: a */
             public final DialogEventSendBinding invoke(EventSendDialogFragment fragment) {
@@ -82,7 +78,7 @@ public final class EventSendDialogFragment extends MVVMBaseFragment<EmptyViewMod
     }
 
     private final DialogEventSendBinding p() {
-        return (DialogEventSendBinding) this.f19532c.b(this, b[0]);
+        return (DialogEventSendBinding) this.c.b(this, b[0]);
     }
 
     @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
@@ -95,7 +91,7 @@ public final class EventSendDialogFragment extends MVVMBaseFragment<EmptyViewMod
     public void f() {
         ShapeTextView shapeTextView;
         DialogEventSendBinding p = p();
-        if (p == null || (shapeTextView = p.f18796a) == null) {
+        if (p == null || (shapeTextView = p.a) == null) {
             return;
         }
         shapeTextView.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.event.dialog.-$$Lambda$EventSendDialogFragment$B3Mvq-DzC7ArH5LsWmoMCgGUAZE

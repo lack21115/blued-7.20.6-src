@@ -29,13 +29,9 @@ import java.util.ArrayList;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveMakeFriendListView.class */
 public class LiveMakeFriendListView extends FrameLayout implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    public RenrenPullToRefreshListView f14513a;
+    public RenrenPullToRefreshListView a;
     public ListView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public LiveMakeFriendAdapter f14514c;
+    public LiveMakeFriendAdapter c;
     public boolean d;
     public View e;
     public View f;
@@ -75,29 +71,27 @@ public class LiveMakeFriendListView extends FrameLayout implements View.OnClickL
         this.d = true;
         this.q = 0;
         this.w = new BluedUIHttpResponse<BluedEntity<LiveFriendModel, LiveFriendExtraModel>>() { // from class: com.blued.android.module.live_china.view.LiveMakeFriendListView.4
-
-            /* renamed from: a  reason: collision with root package name */
-            boolean f14518a = false;
+            boolean a = false;
 
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i2, String str) {
-                this.f14518a = true;
+                this.a = true;
                 return super.onUIFailure(i2, str);
             }
 
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 super.onUIFinish();
-                if (this.f14518a) {
+                if (this.a) {
                     LiveMakeFriendListView.this.f();
-                } else if (LiveMakeFriendListView.this.f14514c.getCount() == 0) {
+                } else if (LiveMakeFriendListView.this.c.getCount() == 0) {
                     LiveMakeFriendListView.this.d();
                 } else {
                     LiveMakeFriendListView.this.g();
                 }
-                LiveMakeFriendListView.this.f14513a.q();
-                LiveMakeFriendListView.this.f14513a.j();
-                this.f14518a = false;
+                LiveMakeFriendListView.this.a.q();
+                LiveMakeFriendListView.this.a.j();
+                this.a = false;
             }
 
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
@@ -109,9 +103,9 @@ public class LiveMakeFriendListView extends FrameLayout implements View.OnClickL
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity<LiveFriendModel, LiveFriendExtraModel> bluedEntity) {
                 if (bluedEntity == null || bluedEntity.data == null || bluedEntity.data.size() <= 0) {
-                    LiveMakeFriendListView.this.f14514c.a(new ArrayList());
+                    LiveMakeFriendListView.this.c.a(new ArrayList());
                 } else {
-                    LiveMakeFriendListView.this.f14514c.a(bluedEntity.data);
+                    LiveMakeFriendListView.this.c.a(bluedEntity.data);
                 }
             }
         };
@@ -166,11 +160,11 @@ public class LiveMakeFriendListView extends FrameLayout implements View.OnClickL
         this.g = this.j.findViewById(R.id.live_make_friend_loading_view);
         this.n = (TextView) this.k.findViewById(R.id.tv_live_reload);
         RenrenPullToRefreshListView renrenPullToRefreshListView = (RenrenPullToRefreshListView) this.j.findViewById(R.id.rptrlv_live_list);
-        this.f14513a = renrenPullToRefreshListView;
+        this.a = renrenPullToRefreshListView;
         renrenPullToRefreshListView.setRefreshEnabled(false);
-        this.f14513a.p();
-        this.b = (ListView) this.f14513a.getRefreshableView();
-        this.f14513a.setOnPullDownListener(new RenrenPullToRefreshListView.OnPullDownListener() { // from class: com.blued.android.module.live_china.view.LiveMakeFriendListView.2
+        this.a.p();
+        this.b = (ListView) this.a.getRefreshableView();
+        this.a.setOnPullDownListener(new RenrenPullToRefreshListView.OnPullDownListener() { // from class: com.blued.android.module.live_china.view.LiveMakeFriendListView.2
             @Override // com.blued.android.framework.view.pulltorefresh.RenrenPullToRefreshListView.OnPullDownListener
             public void a() {
                 LiveMakeFriendListView.this.a(true);
@@ -203,7 +197,7 @@ public class LiveMakeFriendListView extends FrameLayout implements View.OnClickL
                 LiveMakeFriendListView.this.b(liveFriendModel, textView);
             }
         }, this.p, this.b);
-        this.f14514c = liveMakeFriendAdapter;
+        this.c = liveMakeFriendAdapter;
         this.b.setAdapter((ListAdapter) liveMakeFriendAdapter);
         this.n.setOnClickListener(this);
     }
@@ -259,7 +253,7 @@ public class LiveMakeFriendListView extends FrameLayout implements View.OnClickL
 
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity bluedEntity) {
-                LiveMakeFriendListView.this.f14514c.a(liveFriendModel);
+                LiveMakeFriendListView.this.c.a(liveFriendModel);
             }
         }, liveFriendModel.uid);
     }
@@ -299,7 +293,7 @@ public class LiveMakeFriendListView extends FrameLayout implements View.OnClickL
 
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity bluedEntity) {
-                LiveMakeFriendListView.this.f14514c.a(liveFriendModel);
+                LiveMakeFriendListView.this.c.a(liveFriendModel);
             }
         }, liveFriendModel.uid);
     }
@@ -314,10 +308,10 @@ public class LiveMakeFriendListView extends FrameLayout implements View.OnClickL
             @Override // android.view.animation.Animation.AnimationListener
             public void onAnimationEnd(Animation animation) {
                 if (z) {
-                    LiveMakeFriendListView.this.f14513a.k();
-                } else if (LiveMakeFriendListView.this.f.getVisibility() == 0 || LiveMakeFriendListView.this.e.getVisibility() == 0 || LiveMakeFriendListView.this.f14514c.getCount() != 0) {
+                    LiveMakeFriendListView.this.a.k();
+                } else if (LiveMakeFriendListView.this.f.getVisibility() == 0 || LiveMakeFriendListView.this.e.getVisibility() == 0 || LiveMakeFriendListView.this.c.getCount() != 0) {
                 } else {
-                    LiveMakeFriendListView.this.f14513a.k();
+                    LiveMakeFriendListView.this.a.k();
                 }
             }
 
@@ -338,26 +332,26 @@ public class LiveMakeFriendListView extends FrameLayout implements View.OnClickL
     public void d() {
         this.e.setVisibility(0);
         this.f.setVisibility(8);
-        this.f14513a.setVisibility(8);
+        this.a.setVisibility(8);
         this.g.setVisibility(8);
     }
 
     public void e() {
         this.g.setVisibility(0);
         this.f.setVisibility(8);
-        this.f14513a.setVisibility(8);
+        this.a.setVisibility(8);
         this.e.setVisibility(8);
     }
 
     public void f() {
         this.f.setVisibility(0);
         this.g.setVisibility(8);
-        this.f14513a.setVisibility(8);
+        this.a.setVisibility(8);
         this.e.setVisibility(8);
     }
 
     public void g() {
-        this.f14513a.setVisibility(0);
+        this.a.setVisibility(0);
         this.g.setVisibility(8);
         this.f.setVisibility(8);
         this.e.setVisibility(8);

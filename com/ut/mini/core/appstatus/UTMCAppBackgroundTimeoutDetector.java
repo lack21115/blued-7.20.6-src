@@ -10,7 +10,7 @@ import java.util.HashMap;
 public class UTMCAppBackgroundTimeoutDetector implements UTMCAppStatusCallbacks {
 
     /* renamed from: a  reason: collision with root package name */
-    private static UTMCAppBackgroundTimeoutDetector f41022a;
+    private static UTMCAppBackgroundTimeoutDetector f27331a;
     private long B = 0;
 
     private UTMCAppBackgroundTimeoutDetector() {
@@ -20,10 +20,10 @@ public class UTMCAppBackgroundTimeoutDetector implements UTMCAppStatusCallbacks 
         UTMCAppBackgroundTimeoutDetector uTMCAppBackgroundTimeoutDetector;
         synchronized (UTMCAppBackgroundTimeoutDetector.class) {
             try {
-                if (f41022a == null) {
-                    f41022a = new UTMCAppBackgroundTimeoutDetector();
+                if (f27331a == null) {
+                    f27331a = new UTMCAppBackgroundTimeoutDetector();
                 }
-                uTMCAppBackgroundTimeoutDetector = f41022a;
+                uTMCAppBackgroundTimeoutDetector = f27331a;
             } catch (Throwable th) {
                 throw th;
             }

@@ -14,7 +14,6 @@ public final class c extends h {
         super(context);
     }
 
-    @Override // com.anythink.core.common.h
     public final void a(ATBaseAdAdapter aTBaseAdAdapter) {
         ai unitGroupInfo;
         if (aTBaseAdAdapter == null || (unitGroupInfo = aTBaseAdAdapter.getUnitGroupInfo()) == null || !(aTBaseAdAdapter instanceof CustomNativeAdapter)) {
@@ -23,12 +22,10 @@ public final class c extends h {
         ((CustomNativeAdapter) aTBaseAdAdapter).setRequestNum(unitGroupInfo.r());
     }
 
-    @Override // com.anythink.core.common.h
     public final void a(AdError adError) {
         super.a(adError);
     }
 
-    @Override // com.anythink.core.common.h
     public final void h() {
         super.h();
     }

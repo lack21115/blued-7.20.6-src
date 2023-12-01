@@ -112,10 +112,10 @@ public interface IBackupTransport extends IInterface {
                     obtain.writeInterfaceToken(Stub.DESCRIPTOR);
                     this.mRemote.transact(2, obtain, obtain2, 0);
                     obtain2.readException();
-                    Intent createFromParcel = obtain2.readInt() != 0 ? Intent.CREATOR.createFromParcel(obtain2) : null;
+                    Intent intent = obtain2.readInt() != 0 ? (Intent) Intent.CREATOR.createFromParcel(obtain2) : null;
                     obtain2.recycle();
                     obtain.recycle();
-                    return createFromParcel;
+                    return intent;
                 } catch (Throwable th) {
                     obtain2.recycle();
                     obtain.recycle();
@@ -146,10 +146,10 @@ public interface IBackupTransport extends IInterface {
                     obtain.writeInterfaceToken(Stub.DESCRIPTOR);
                     this.mRemote.transact(4, obtain, obtain2, 0);
                     obtain2.readException();
-                    Intent createFromParcel = obtain2.readInt() != 0 ? Intent.CREATOR.createFromParcel(obtain2) : null;
+                    Intent intent = obtain2.readInt() != 0 ? (Intent) Intent.CREATOR.createFromParcel(obtain2) : null;
                     obtain2.recycle();
                     obtain.recycle();
-                    return createFromParcel;
+                    return intent;
                 } catch (Throwable th) {
                     obtain2.recycle();
                     obtain.recycle();
@@ -315,10 +315,10 @@ public interface IBackupTransport extends IInterface {
                     obtain.writeInterfaceToken(Stub.DESCRIPTOR);
                     this.mRemote.transact(15, obtain, obtain2, 0);
                     obtain2.readException();
-                    RestoreDescription createFromParcel = obtain2.readInt() != 0 ? RestoreDescription.CREATOR.createFromParcel(obtain2) : null;
+                    RestoreDescription restoreDescription = obtain2.readInt() != 0 ? (RestoreDescription) RestoreDescription.CREATOR.createFromParcel(obtain2) : null;
                     obtain2.recycle();
                     obtain.recycle();
-                    return createFromParcel;
+                    return restoreDescription;
                 } catch (Throwable th) {
                     obtain2.recycle();
                     obtain.recycle();
@@ -539,13 +539,13 @@ public interface IBackupTransport extends IInterface {
                     return true;
                 case 9:
                     parcel.enforceInterface(DESCRIPTOR);
-                    int performBackup = performBackup(parcel.readInt() != 0 ? PackageInfo.CREATOR.createFromParcel(parcel) : null, parcel.readInt() != 0 ? ParcelFileDescriptor.CREATOR.createFromParcel(parcel) : null);
+                    int performBackup = performBackup(parcel.readInt() != 0 ? (PackageInfo) PackageInfo.CREATOR.createFromParcel(parcel) : null, parcel.readInt() != 0 ? (ParcelFileDescriptor) ParcelFileDescriptor.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     parcel2.writeInt(performBackup);
                     return true;
                 case 10:
                     parcel.enforceInterface(DESCRIPTOR);
-                    int clearBackupData = clearBackupData(parcel.readInt() != 0 ? PackageInfo.CREATOR.createFromParcel(parcel) : null);
+                    int clearBackupData = clearBackupData(parcel.readInt() != 0 ? (PackageInfo) PackageInfo.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     parcel2.writeInt(clearBackupData);
                     return true;
@@ -586,7 +586,7 @@ public interface IBackupTransport extends IInterface {
                     return true;
                 case 16:
                     parcel.enforceInterface(DESCRIPTOR);
-                    int restoreData = getRestoreData(parcel.readInt() != 0 ? ParcelFileDescriptor.CREATOR.createFromParcel(parcel) : null);
+                    int restoreData = getRestoreData(parcel.readInt() != 0 ? (ParcelFileDescriptor) ParcelFileDescriptor.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     parcel2.writeInt(restoreData);
                     return true;
@@ -603,7 +603,7 @@ public interface IBackupTransport extends IInterface {
                     return true;
                 case 19:
                     parcel.enforceInterface(DESCRIPTOR);
-                    int performFullBackup = performFullBackup(parcel.readInt() != 0 ? PackageInfo.CREATOR.createFromParcel(parcel) : null, parcel.readInt() != 0 ? ParcelFileDescriptor.CREATOR.createFromParcel(parcel) : null);
+                    int performFullBackup = performFullBackup(parcel.readInt() != 0 ? (PackageInfo) PackageInfo.CREATOR.createFromParcel(parcel) : null, parcel.readInt() != 0 ? (ParcelFileDescriptor) ParcelFileDescriptor.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     parcel2.writeInt(performFullBackup);
                     return true;
@@ -620,7 +620,7 @@ public interface IBackupTransport extends IInterface {
                     return true;
                 case 22:
                     parcel.enforceInterface(DESCRIPTOR);
-                    int nextFullRestoreDataChunk = getNextFullRestoreDataChunk(parcel.readInt() != 0 ? ParcelFileDescriptor.CREATOR.createFromParcel(parcel) : null);
+                    int nextFullRestoreDataChunk = getNextFullRestoreDataChunk(parcel.readInt() != 0 ? (ParcelFileDescriptor) ParcelFileDescriptor.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     parcel2.writeInt(nextFullRestoreDataChunk);
                     return true;
@@ -630,7 +630,7 @@ public interface IBackupTransport extends IInterface {
                     parcel2.writeNoException();
                     parcel2.writeInt(abortFullRestore);
                     return true;
-                case IBinder.INTERFACE_TRANSACTION /* 1598968902 */:
+                case 1598968902:
                     parcel2.writeString(DESCRIPTOR);
                     return true;
                 default:

@@ -1,6 +1,5 @@
 package com.alipay.security.mobile.module.a.a;
 
-import com.tencent.cos.xml.crypto.JceEncryptionConstants;
 import java.lang.reflect.Method;
 import java.nio.ByteBuffer;
 import java.util.Arrays;
@@ -12,19 +11,17 @@ import javax.crypto.spec.SecretKeySpec;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alipay/security/mobile/module/a/a/c.class */
 public final class c {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static String f4703a = "idnjfhncnsfuobcnt847y929o449u474w7j3h22aoddc98euk#%&&)*&^%#";
+    private static String a = "idnjfhncnsfuobcnt847y929o449u474w7j3h22aoddc98euk#%&&)*&^%#";
 
     public static String a() {
         String str = new String();
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= f4703a.length() - 1) {
+            if (i2 >= a.length() - 1) {
                 return str;
             }
-            str = str + f4703a.charAt(i2);
+            str = str + a.charAt(i2);
             i = i2 + 4;
         }
     }
@@ -35,7 +32,7 @@ public final class c {
             byte[] bytes = str2.getBytes();
             byte[] b = b();
             SecretKeySpec secretKeySpec = new SecretKeySpec(SecretKeyFactory.getInstance("PBKDF2WithHmacSHA1").generateSecret(a2).getEncoded(), "AES");
-            Cipher cipher = Cipher.getInstance(JceEncryptionConstants.SYMMETRIC_CIPHER_METHOD);
+            Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
             cipher.init(1, secretKeySpec, new IvParameterSpec(b));
             byte[] salt = a2.getSalt();
             ByteBuffer allocate = ByteBuffer.allocate(salt.length + cipher.getOutputSize(bytes.length));
@@ -96,7 +93,7 @@ public final class c {
                 doFinal = null;
             } else {
                 SecretKeySpec secretKeySpec = new SecretKeySpec(SecretKeyFactory.getInstance("PBKDF2WithHmacSHA1").generateSecret(new PBEKeySpec(a2.getPassword(), Arrays.copyOf(bArr, 16), 10, 128)).getEncoded(), "AES");
-                Cipher cipher = Cipher.getInstance(JceEncryptionConstants.SYMMETRIC_CIPHER_METHOD);
+                Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
                 cipher.init(2, secretKeySpec, new IvParameterSpec(b));
                 doFinal = cipher.doFinal(bArr, 16, length - 16);
             }

@@ -6,14 +6,14 @@ import com.hihonor.push.sdk.j;
 public class h implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ j.a f22295a;
+    public final /* synthetic */ j.a f8687a;
 
     public h(j.a aVar) {
-        this.f22295a = aVar;
+        this.f8687a = aVar;
     }
 
     @Override // java.lang.Runnable
     public void run() {
-        this.f22295a.b();
+        this.f8687a.b();
     }
 }

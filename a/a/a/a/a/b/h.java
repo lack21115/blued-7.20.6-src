@@ -16,11 +16,11 @@ import java.nio.ByteBuffer;
 public final class h implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public StreamingPreviewCallback f1312a;
+    public StreamingPreviewCallback f1264a;
     public a.a.a.a.a.a.h.g b;
 
     /* renamed from: c  reason: collision with root package name */
-    public a.a.a.a.a.a.h.d f1313c;
+    public a.a.a.a.a.a.h.d f1265c;
     public o d;
     public i e;
     public byte[] f;
@@ -33,21 +33,21 @@ public final class h implements Runnable {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public final int f1314a;
+        public final int f1266a;
         public final int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final int f1315c;
+        public final int f1267c;
         public final int d;
         public final int e;
         public final Object f;
 
         public a(int i, int i2, int i3, int i4, Object obj) {
-            this.f1314a = i;
+            this.f1266a = i;
             this.b = i2;
             this.d = i3;
             this.e = i4;
-            this.f1315c = ((i3 * i4) * 3) / 2;
+            this.f1267c = ((i3 * i4) * 3) / 2;
             this.f = obj;
         }
     }
@@ -56,17 +56,17 @@ public final class h implements Runnable {
     public static class b extends Handler {
 
         /* renamed from: a  reason: collision with root package name */
-        public WeakReference<h> f1316a;
+        public WeakReference<h> f1268a;
 
         public b(h hVar) {
-            this.f1316a = new WeakReference<>(hVar);
+            this.f1268a = new WeakReference<>(hVar);
         }
 
         @Override // android.os.Handler
         public void handleMessage(Message message) {
             int i = message.what;
             Object obj = message.obj;
-            h hVar = this.f1316a.get();
+            h hVar = this.f1268a.get();
             a.a.a.a.a.e.e eVar = a.a.a.a.a.e.e.g;
             eVar.c("SurfaceDataReader", "EncoderHandler what:" + i + ",reader=" + hVar);
             if (hVar == null) {
@@ -122,12 +122,12 @@ public final class h implements Runnable {
     }
 
     public final void a(a aVar) {
-        this.f = new byte[aVar.f1315c];
+        this.f = new byte[aVar.f1267c];
         b(aVar);
     }
 
     public void a(StreamingPreviewCallback streamingPreviewCallback) {
-        this.f1312a = streamingPreviewCallback;
+        this.f1264a = streamingPreviewCallback;
     }
 
     public void a(Object obj) {
@@ -189,7 +189,7 @@ public final class h implements Runnable {
             }
         }
         this.e.a();
-        StreamingPreviewCallback streamingPreviewCallback = this.f1312a;
+        StreamingPreviewCallback streamingPreviewCallback = this.f1264a;
         if (streamingPreviewCallback != null) {
             streamingPreviewCallback.onPreviewFrame(this.f, this.d.a(), this.d.b(), 0, PLFourCC.FOURCC_I420, surfaceTexture.getTimestamp());
         }
@@ -198,13 +198,13 @@ public final class h implements Runnable {
     public final void b(a aVar) {
         try {
             a.a.a.a.a.a.h.d dVar = new a.a.a.a.a.a.h.d(aVar.f, 0);
-            this.f1313c = dVar;
+            this.f1265c = dVar;
             a.a.a.a.a.a.h.g gVar = new a.a.a.a.a.a.h.g(dVar, 2, 2);
             this.b = gVar;
             gVar.d();
             int i = aVar.d;
             int i2 = aVar.e;
-            int i3 = aVar.f1314a;
+            int i3 = aVar.f1266a;
             int i4 = aVar.b;
             o oVar = new o();
             this.d = oVar;
@@ -221,7 +221,7 @@ public final class h implements Runnable {
 
     public final void c() {
         a.a.a.a.a.e.e.g.c("SurfaceDataReader", "release");
-        this.f1312a = null;
+        this.f1264a = null;
         a.a.a.a.a.a.h.g gVar = this.b;
         if (gVar != null) {
             gVar.g();
@@ -237,10 +237,10 @@ public final class h implements Runnable {
             iVar.b();
             this.e = null;
         }
-        a.a.a.a.a.a.h.d dVar = this.f1313c;
+        a.a.a.a.a.a.h.d dVar = this.f1265c;
         if (dVar != null) {
             dVar.b();
-            this.f1313c = null;
+            this.f1265c = null;
         }
     }
 

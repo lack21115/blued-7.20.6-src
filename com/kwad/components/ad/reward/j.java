@@ -75,7 +75,7 @@ public final class j extends com.kwad.components.core.j.a {
     private RewardRenderResult pJ;
     private List<a> pK;
     private List<b> pL;
-    private List<a.InterfaceC0523a> pM;
+    private List<a.InterfaceC0353a> pM;
     private com.kwad.components.core.webview.a.d.a pa;
     private e.a pb;
     private boolean pc;
@@ -87,9 +87,7 @@ public final class j extends com.kwad.components.core.j.a {
     public boolean pi;
     private boolean pj;
     public boolean pk;
-
-    /* renamed from: pl  reason: collision with root package name */
-    public boolean f23926pl;
+    public boolean pl;
     public List<Integer> pm;
     public int pn;
     public boolean po;
@@ -136,7 +134,7 @@ public final class j extends com.kwad.components.core.j.a {
         this.pj = false;
         this.pk = false;
         this.mRewardVerifyCalled = false;
-        this.f23926pl = false;
+        this.pl = false;
         this.pm = new ArrayList();
         this.mCheckExposureResult = true;
         this.pn = 0;
@@ -528,7 +526,7 @@ public final class j extends com.kwad.components.core.j.a {
     }
 
     public final void a(int i, Context context, final int i2, int i3, long j, boolean z, final com.kwad.sdk.core.report.i iVar) {
-        com.kwad.components.core.d.b.a.a(new a.C0519a(context).I(this.mAdTemplate).b(this.mApkDownloadHelper).ao(false).ap(i3).q(j).ao(i2).an(i).ap(fF()).b(this.oN.jG()).a(new a.b() { // from class: com.kwad.components.ad.reward.j.4
+        com.kwad.components.core.d.b.a.a(new a.C0349a(context).I(this.mAdTemplate).b(this.mApkDownloadHelper).ao(false).ap(i3).q(j).ao(i2).an(i).ap(fF()).b(this.oN.jG()).a(new a.b() { // from class: com.kwad.components.ad.reward.j.4
             @Override // com.kwad.components.core.d.b.a.b
             public final void onAdClicked() {
                 j.this.a(i2, iVar);
@@ -578,10 +576,10 @@ public final class j extends com.kwad.components.core.j.a {
         this.pb = aVar;
     }
 
-    public final void a(a.InterfaceC0523a interfaceC0523a) {
-        List<a.InterfaceC0523a> list = this.pM;
+    public final void a(a.InterfaceC0353a interfaceC0353a) {
+        List<a.InterfaceC0353a> list = this.pM;
         if (list != null) {
-            list.add(interfaceC0523a);
+            list.add(interfaceC0353a);
         }
     }
 
@@ -634,10 +632,10 @@ public final class j extends com.kwad.components.core.j.a {
         this.pL.remove(bVar);
     }
 
-    public final void b(a.InterfaceC0523a interfaceC0523a) {
-        List<a.InterfaceC0523a> list = this.pM;
+    public final void b(a.InterfaceC0353a interfaceC0353a) {
+        List<a.InterfaceC0353a> list = this.pM;
         if (list != null) {
-            list.remove(interfaceC0523a);
+            list.remove(interfaceC0353a);
         }
     }
 
@@ -735,7 +733,7 @@ public final class j extends com.kwad.components.core.j.a {
         return this.ps;
     }
 
-    public final List<a.InterfaceC0523a> fQ() {
+    public final List<a.InterfaceC0353a> fQ() {
         return this.pM;
     }
 

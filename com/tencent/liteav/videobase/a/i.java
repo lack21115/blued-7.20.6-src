@@ -5,10 +5,10 @@ package com.tencent.liteav.videobase.a;
 public final /* synthetic */ class i implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final h f36582a;
+    private final h f22891a;
 
     private i(h hVar) {
-        this.f36582a = hVar;
+        this.f22891a = hVar;
     }
 
     public static Runnable a(h hVar) {
@@ -17,6 +17,6 @@ public final /* synthetic */ class i implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        this.f36582a.initFiltersAndInterceptors();
+        this.f22891a.initFiltersAndInterceptors();
     }
 }

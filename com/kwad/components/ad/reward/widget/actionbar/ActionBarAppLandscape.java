@@ -56,7 +56,7 @@ public class ActionBarAppLandscape extends LinearLayout implements c {
     private void b(View view, final boolean z) {
         boolean z2 = true;
         int i = view == this.AM ? 1 : 2;
-        a.C0519a b = new a.C0519a(view.getContext()).I(this.mAdTemplate).b(this.mApkDownloadHelper);
+        a.C0349a b = new a.C0349a(view.getContext()).I(this.mAdTemplate).b(this.mApkDownloadHelper);
         if (view != this.AL) {
             z2 = false;
         }

@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class LayoutShareFeedBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final CardView f29432a;
+    private final CardView f15742a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public CardView getRoot() {
-        return this.f29432a;
+        return this.f15742a;
     }
 }

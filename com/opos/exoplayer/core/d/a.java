@@ -10,28 +10,28 @@ import com.opos.exoplayer.core.i.u;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f25256a;
+    public final String f11568a;
     public final boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final boolean f25257c;
+    public final boolean f11569c;
     public final boolean d;
     private final String e;
     private final MediaCodecInfo.CodecCapabilities f;
 
     private a(String str, String str2, MediaCodecInfo.CodecCapabilities codecCapabilities, boolean z, boolean z2) {
-        this.f25256a = (String) com.opos.exoplayer.core.i.a.a(str);
+        this.f11568a = (String) com.opos.exoplayer.core.i.a.a(str);
         this.e = str2;
         this.f = codecCapabilities;
         this.b = (z || codecCapabilities == null || !a(codecCapabilities)) ? false : true;
-        this.f25257c = codecCapabilities != null && c(codecCapabilities);
+        this.f11569c = codecCapabilities != null && c(codecCapabilities);
         this.d = z2 ? true : codecCapabilities != null && e(codecCapabilities);
     }
 
     private static int a(String str, String str2, int i) {
         int i2 = i;
         if (i <= 1) {
-            if (u.f25510a >= 26 && i > 0) {
+            if (u.f11822a >= 26 && i > 0) {
                 return i;
             }
             i2 = i;
@@ -57,7 +57,7 @@ public final class a {
                                                     i2 = i;
                                                     if (!"audio/gsm".equals(str2)) {
                                                         i2 = "audio/ac3".equals(str2) ? 6 : "audio/eac3".equals(str2) ? 16 : 30;
-                                                        com.opos.cmn.an.f.a.c(com.anythink.expressad.exoplayer.f.a.f7329a, "AssumedMaxChannelAdjustment: " + str + ", [" + i + " to " + i2 + "]");
+                                                        com.opos.cmn.an.f.a.c(com.anythink.expressad.exoplayer.f.a.f4490a, "AssumedMaxChannelAdjustment: " + str + ", [" + i + " to " + i2 + "]");
                                                     }
                                                 }
                                             }
@@ -82,7 +82,7 @@ public final class a {
     }
 
     private static boolean a(MediaCodecInfo.CodecCapabilities codecCapabilities) {
-        return u.f25510a >= 19 && b(codecCapabilities);
+        return u.f11822a >= 19 && b(codecCapabilities);
     }
 
     private static boolean a(MediaCodecInfo.VideoCapabilities videoCapabilities, int i, int i2, double d) {
@@ -94,15 +94,15 @@ public final class a {
     }
 
     private void c(String str) {
-        com.opos.cmn.an.f.a.b(com.anythink.expressad.exoplayer.f.a.f7329a, "NoSupport [" + str + "] [" + this.f25256a + ", " + this.e + "] [" + u.e + "]");
+        com.opos.cmn.an.f.a.b(com.anythink.expressad.exoplayer.f.a.f4490a, "NoSupport [" + str + "] [" + this.f11568a + ", " + this.e + "] [" + u.e + "]");
     }
 
     private static boolean c(MediaCodecInfo.CodecCapabilities codecCapabilities) {
-        return u.f25510a >= 21 && d(codecCapabilities);
+        return u.f11822a >= 21 && d(codecCapabilities);
     }
 
     private void d(String str) {
-        com.opos.cmn.an.f.a.b(com.anythink.expressad.exoplayer.f.a.f7329a, "AssumedSupport [" + str + "] [" + this.f25256a + ", " + this.e + "] [" + u.e + "]");
+        com.opos.cmn.an.f.a.b(com.anythink.expressad.exoplayer.f.a.f4490a, "AssumedSupport [" + str + "] [" + this.f11568a + ", " + this.e + "] [" + u.e + "]");
     }
 
     private static boolean d(MediaCodecInfo.CodecCapabilities codecCapabilities) {
@@ -110,7 +110,7 @@ public final class a {
     }
 
     private static boolean e(MediaCodecInfo.CodecCapabilities codecCapabilities) {
-        return u.f25510a >= 21 && f(codecCapabilities);
+        return u.f11822a >= 21 && f(codecCapabilities);
     }
 
     private static boolean f(MediaCodecInfo.CodecCapabilities codecCapabilities) {
@@ -191,7 +191,7 @@ public final class a {
             MediaCodecInfo.AudioCapabilities audioCapabilities = codecCapabilities.getAudioCapabilities();
             if (audioCapabilities == null) {
                 str = "channelCount.aCaps";
-            } else if (a(this.f25256a, this.e, audioCapabilities.getMaxInputChannelCount()) >= i) {
+            } else if (a(this.f11568a, this.e, audioCapabilities.getMaxInputChannelCount()) >= i) {
                 return true;
             } else {
                 str = "channelCount.support, " + i;

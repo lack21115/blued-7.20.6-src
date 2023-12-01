@@ -7,17 +7,17 @@ import java.util.List;
 public final /* synthetic */ class ga implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final UGCVideoProcessor f40406a;
+    private final UGCVideoProcessor f26715a;
     private final List b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final int f40407c;
+    private final int f26716c;
     private final int d;
 
     private ga(UGCVideoProcessor uGCVideoProcessor, List list, int i, int i2) {
-        this.f40406a = uGCVideoProcessor;
+        this.f26715a = uGCVideoProcessor;
         this.b = list;
-        this.f40407c = i;
+        this.f26716c = i;
         this.d = i2;
     }
 
@@ -27,6 +27,6 @@ public final /* synthetic */ class ga implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        UGCVideoProcessor.lambda$setSplitScreenList$2(this.f40406a, this.b, this.f40407c, this.d);
+        UGCVideoProcessor.lambda$setSplitScreenList$2(this.f26715a, this.b, this.f26716c, this.d);
     }
 }

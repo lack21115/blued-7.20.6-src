@@ -28,11 +28,11 @@ public final class FitemRandomGiftBar extends FreedomItem {
     public void a(Context context, BaseViewHolder vh, List<FreedomItem> list, int i) {
         Intrinsics.e(vh, "vh");
         boolean z = true;
-        BaseViewHolder a2 = vh.a(R.id.iv_icom, this.b.getGoods_icon()).a(R.id.iv_icom, this.b.getLight() == 1 ? 1.0f : 0.4f);
+        BaseViewHolder a = vh.a(R.id.iv_icom, this.b.getGoods_icon()).a(R.id.iv_icom, this.b.getLight() == 1 ? 1.0f : 0.4f);
         int i2 = R.id.iv_light;
         if (this.b.getLight() != 1) {
             z = false;
         }
-        a2.b(i2, z);
+        a.b(i2, z);
     }
 }

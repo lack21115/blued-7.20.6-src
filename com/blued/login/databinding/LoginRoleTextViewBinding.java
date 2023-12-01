@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class LoginRoleTextViewBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final FrameLayout f20531a;
+    private final FrameLayout f6925a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f20531a;
+        return this.f6925a;
     }
 }

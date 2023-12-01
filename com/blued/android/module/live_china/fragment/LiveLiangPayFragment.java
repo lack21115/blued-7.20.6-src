@@ -14,6 +14,8 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.Observer;
+import com.anythink.core.common.c.j;
+import com.anythink.core.common.l;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.AppMethods;
 import com.blued.android.core.ui.BaseFragment;
@@ -45,13 +47,9 @@ import com.jeremyliao.liveeventbus.LiveEventBus;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveLiangPayFragment.class */
 public class LiveLiangPayFragment extends BaseFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public Context f12992a;
+    public Context a;
     public View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public LayoutInflater f12993c;
+    public LayoutInflater c;
     private Dialog d;
     private String e;
     private int f;
@@ -66,7 +64,7 @@ public class LiveLiangPayFragment extends BaseFragment {
             case 4221002:
                 Bundle bundle = new Bundle();
                 bundle.putString("title", getString(R.string.Live_SendPresent_resetPayPassword));
-                bundle.putString("content", getString(R.string.live_set_6_num));
+                bundle.putString(l.y, getString(R.string.live_set_6_num));
                 bundle.putString("http_host", LiveRoomInfo.a().m());
                 LiveRouteUtil.a(this, bundle, i);
                 return;
@@ -88,7 +86,7 @@ public class LiveLiangPayFragment extends BaseFragment {
                 } else {
                     bundle2.putString("title", str);
                 }
-                bundle2.putString("content", getString(R.string.Live_SendPresent_verifyPasswordText));
+                bundle2.putString(l.y, getString(R.string.Live_SendPresent_verifyPasswordText));
                 LiveRouteUtil.a(this, bundle2, i);
                 return;
             case 4221008:
@@ -101,7 +99,7 @@ public class LiveLiangPayFragment extends BaseFragment {
         Bundle bundle = new Bundle();
         bundle.putString("liang_id", str);
         bundle.putInt("reNew", i);
-        bundle.putLong("expire_time", j);
+        bundle.putLong(j.a.g, j);
         TransparentActivity.a(bundle);
         TransparentActivity.b(context, LiveLiangPayFragment.class, bundle);
     }
@@ -121,6 +119,7 @@ public class LiveLiangPayFragment extends BaseFragment {
         LiveLiangPayedPop.a(this, liveLiangOrderModel.liang_id, liveLiangOrderModel.expire_seconds, this.f);
     }
 
+    /* JADX WARN: Type inference failed for: r2v0, types: [com.blued.android.module.live_china.fragment.LiveLiangPayFragment$3] */
     public static void a(String str) {
         LogUtils.c("checkSavePayToken: " + str);
         if (TextUtils.isEmpty(str)) {
@@ -156,7 +155,7 @@ public class LiveLiangPayFragment extends BaseFragment {
                     LiveLiangPayFragment.this.getActivity().finish();
                     return;
                 }
-                KeyboardUtils.a(LiveLiangPayFragment.this.getActivity());
+                KeyboardUtils.a((Activity) LiveLiangPayFragment.this.getActivity());
                 if (bluedEntityA == null || bluedEntityA.getSingleData() == null) {
                     LiveLiangPayFragment.this.a(0, "");
                     return;
@@ -181,7 +180,7 @@ public class LiveLiangPayFragment extends BaseFragment {
                     LiveLiangPayFragment.this.getActivity().finish();
                     return false;
                 }
-                KeyboardUtils.a(LiveLiangPayFragment.this.getActivity());
+                KeyboardUtils.a((Activity) LiveLiangPayFragment.this.getActivity());
                 LiveLiangPayFragment.this.a(i, str2);
                 return true;
             }
@@ -251,7 +250,7 @@ public class LiveLiangPayFragment extends BaseFragment {
     }
 
     public void a() {
-        this.d = DialogUtils.a(this.f12992a);
+        this.d = DialogUtils.a(this.a);
         a("", false);
     }
 
@@ -259,7 +258,6 @@ public class LiveLiangPayFragment extends BaseFragment {
         return getFragmentActive() != null;
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         super.onActivityResult(i, i2, intent);
         if (i2 != -1) {
@@ -281,27 +279,26 @@ public class LiveLiangPayFragment extends BaseFragment {
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         if (getArguments() != null) {
             this.e = getArguments().getString("liang_id");
             this.f = getArguments().getInt("reNew");
-            this.g = getArguments().getLong("expire_time");
+            this.g = getArguments().getLong(j.a.g);
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         FragmentActivity activity = getActivity();
-        this.f12992a = activity;
-        this.f12993c = LayoutInflater.from(activity);
+        this.a = activity;
+        this.c = LayoutInflater.from(activity);
         if (this.b == null) {
-            this.b = new FrameLayout(this.f12992a);
+            this.b = new FrameLayout(this.a);
             StatusBarHelper.a((Activity) getActivity(), false);
             a();
             LiveEventBus.get("live_tans_activity", Boolean.class).observe(this, new Observer<Boolean>() { // from class: com.blued.android.module.live_china.fragment.LiveLiangPayFragment.1
-                @Override // androidx.lifecycle.Observer
                 /* renamed from: a */
                 public void onChanged(final Boolean bool) {
                     AppInfo.n().postDelayed(new Runnable() { // from class: com.blued.android.module.live_china.fragment.LiveLiangPayFragment.1.1

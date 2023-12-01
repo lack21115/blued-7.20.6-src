@@ -8,7 +8,7 @@ public final class b extends f {
     private static final String b = "anythink_template/";
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f7840c = "anythink_template/res/Movies";
+    private static final String f5000c = "anythink_template/res/Movies";
     private static final String d = "anythink_template/res";
     private static final String e = "anythink_template/res/.Anythink_VC";
     private static final String f = "anythink_template/res/.anythink700";
@@ -28,7 +28,7 @@ public final class b extends f {
     protected final List<e> a() {
         ArrayList arrayList = new ArrayList();
         a(arrayList, a.ANYTHINK_RES_MANAGER_DIR, d);
-        a(arrayList, a.AD_MOVIES, f7840c).a(a.ANYTHINK_VC, e);
+        a(arrayList, a.AD_MOVIES, f5000c).a(a.ANYTHINK_VC, e);
         e a2 = a(arrayList, a.AD_ANYTHINK_700, f);
         a2.a(a.ANYTHINK_700_IMG, g);
         a2.a(a.ANYTHINK_700_XML, j);

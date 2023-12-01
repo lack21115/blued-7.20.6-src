@@ -8,13 +8,13 @@ import com.tencent.liteav.beauty.NativeLoad;
 public final class d extends com.tencent.liteav.videobase.a.b {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f36366a;
+    private int f22675a;
     private int b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public d() {
         super(null, null);
-        this.f36366a = -1;
+        this.f22675a = -1;
         this.b = -1;
     }
 
@@ -26,7 +26,7 @@ public final class d extends com.tencent.liteav.videobase.a.b {
     @Override // com.tencent.liteav.videobase.a.b
     public final void onInit(com.tencent.liteav.videobase.frame.e eVar) {
         super.onInit(eVar);
-        this.f36366a = GLES20.glGetUniformLocation(getProgramId(), "texelWidthOffset");
+        this.f22675a = GLES20.glGetUniformLocation(getProgramId(), "texelWidthOffset");
         this.b = GLES20.glGetUniformLocation(getProgramId(), "texelHeightOffset");
     }
 
@@ -38,7 +38,7 @@ public final class d extends com.tencent.liteav.videobase.a.b {
             f = 4.0f;
         }
         LiteavLog.i("SmoothHorizontal", "m_textureRation ".concat(String.valueOf(f)));
-        setFloatOnDraw(this.f36366a, f / i);
+        setFloatOnDraw(this.f22675a, f / i);
         setFloatOnDraw(this.b, f / i2);
     }
 }

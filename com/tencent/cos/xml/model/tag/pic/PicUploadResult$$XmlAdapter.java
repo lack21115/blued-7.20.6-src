@@ -24,6 +24,7 @@ public class PicUploadResult$$XmlAdapter implements IXmlAdapter<PicUploadResult>
             }
         });
         this.childElementBinders.put("ProcessResults", new ChildElementBinder<PicUploadResult>() { // from class: com.tencent.cos.xml.model.tag.pic.PicUploadResult$$XmlAdapter.2
+            /* JADX WARN: Multi-variable type inference failed */
             @Override // com.tencent.qcloud.qcloudxml.core.ChildElementBinder
             public void fromXml(XmlPullParser xmlPullParser, PicUploadResult picUploadResult, String str) throws IOException, XmlPullParserException {
                 if (picUploadResult.processResults == null) {

@@ -8,7 +8,7 @@ import java.util.List;
 public class j {
 
     /* renamed from: a  reason: collision with root package name */
-    private List<i> f35463a = new ArrayList();
+    private List<i> f21772a = new ArrayList();
 
     public void a(a aVar) {
         Camera a2 = aVar.a();
@@ -18,12 +18,12 @@ public class j {
         int i2 = 0;
         while (true) {
             int i3 = i2;
-            if (i3 >= this.f35463a.size()) {
+            if (i3 >= this.f21772a.size()) {
                 break;
             }
             Camera.Parameters parameters = a2.getParameters();
             try {
-                this.f35463a.get(i3).a(parameters, aVar);
+                this.f21772a.get(i3).a(parameters, aVar);
                 a2.setParameters(parameters);
             } catch (Exception e2) {
                 e = e2;
@@ -38,9 +38,9 @@ public class j {
     }
 
     public void a(i iVar) {
-        if (iVar == null || this.f35463a.contains(iVar)) {
+        if (iVar == null || this.f21772a.contains(iVar)) {
             return;
         }
-        this.f35463a.add(iVar);
+        this.f21772a.add(iVar);
     }
 }

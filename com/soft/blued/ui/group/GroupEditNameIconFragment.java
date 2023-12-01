@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.imagecache.LoadOptions;
 import com.blued.android.core.imagecache.RecyclingUtils;
+import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.ui.BaseFragment;
 import com.blued.android.core.ui.TerminalActivity;
 import com.blued.android.framework.http.BluedUIHttpResponse;
@@ -37,7 +38,7 @@ public class GroupEditNameIconFragment extends BaseFragment implements View.OnCl
     private View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f30774c;
+    private Context f17084c;
     private LinearLayout d;
     private LinearLayout e;
     private ImageView f;
@@ -52,40 +53,35 @@ public class GroupEditNameIconFragment extends BaseFragment implements View.OnCl
     private boolean p;
 
     /* renamed from: a  reason: collision with root package name */
-    private String f30773a = GroupEditNameIconFragment.class.getSimpleName();
+    private String f17083a = GroupEditNameIconFragment.class.getSimpleName();
     private String[] m = new String[2];
 
     private void a(final String str) {
-        GroupHttpUtils.a(this.f30774c, new BluedUIHttpResponse<BluedEntityA<BluedAlbum>>() { // from class: com.soft.blued.ui.group.GroupEditNameIconFragment.1
+        GroupHttpUtils.a(this.f17084c, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<BluedAlbum>>() { // from class: com.soft.blued.ui.group.GroupEditNameIconFragment.1
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<BluedAlbum> bluedEntityA) {
                 if (bluedEntityA == null || !bluedEntityA.hasData()) {
                     return;
                 }
-                GroupEditNameIconFragment.this.a(str, bluedEntityA.getSingleData());
+                GroupEditNameIconFragment.this.a(str, (BluedAlbum) bluedEntityA.getSingleData());
             }
-        }, this.l, getFragmentActive());
+        }, this.l, (IRequestHost) getFragmentActive());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void a(String str, BluedAlbum bluedAlbum) {
         QiniuUploadUtils.a(str, bluedAlbum, new QiniuUploadTools.QiNiuListener() { // from class: com.soft.blued.ui.group.GroupEditNameIconFragment.2
-            @Override // com.blued.android.framework.utils.upload.QiniuUploadTools.QiNiuListener
             public void a(String str2) {
             }
 
-            @Override // com.blued.android.framework.utils.upload.QiniuUploadTools.QiNiuListener
             public void a(String str2, double d) {
             }
 
-            @Override // com.blued.android.framework.utils.upload.QiniuUploadTools.QiNiuListener
             public void a(String str2, String str3) {
                 GroupEditNameIconFragment.this.b(str2);
             }
 
-            @Override // com.blued.android.framework.utils.upload.QiniuUploadTools.QiNiuListener
             public boolean a() {
                 return false;
             }
@@ -93,17 +89,16 @@ public class GroupEditNameIconFragment extends BaseFragment implements View.OnCl
     }
 
     private void b() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.b.findViewById(2131370749);
-        commonTopTitleNoTrans.a();
-        commonTopTitleNoTrans.setCenterText(getString(R.string.group_info));
-        commonTopTitleNoTrans.setLeftClickListener(this);
+        CommonTopTitleNoTrans findViewById = this.b.findViewById(R.id.top_title);
+        findViewById.a();
+        findViewById.setCenterText(getString(R.string.group_info));
+        findViewById.setLeftClickListener(this);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void b(String str) {
-        GroupHttpUtils.j(this.f30774c, new BluedUIHttpResponse<BluedEntityA<BluedAlbum>>() { // from class: com.soft.blued.ui.group.GroupEditNameIconFragment.3
+        GroupHttpUtils.j(this.f17084c, new BluedUIHttpResponse<BluedEntityA<BluedAlbum>>() { // from class: com.soft.blued.ui.group.GroupEditNameIconFragment.3
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<BluedAlbum> bluedEntityA) {
                 if (bluedEntityA == null || !bluedEntityA.hasData()) {
@@ -113,13 +108,11 @@ public class GroupEditNameIconFragment extends BaseFragment implements View.OnCl
                 GroupEditNameIconFragment.this.p = true;
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 super.onUIFinish();
                 DialogUtils.b(GroupEditNameIconFragment.this.h);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 super.onUIStart();
                 DialogUtils.a(GroupEditNameIconFragment.this.h);
@@ -128,9 +121,9 @@ public class GroupEditNameIconFragment extends BaseFragment implements View.OnCl
     }
 
     private void c() {
-        this.h = DialogUtils.a(this.f30774c);
-        this.m[0] = this.f30774c.getResources().getString(2131888666);
-        this.m[1] = this.f30774c.getResources().getString(2131888667);
+        this.h = DialogUtils.a(this.f17084c);
+        this.m[0] = this.f17084c.getResources().getString(R.string.head_pic_update);
+        this.m[1] = this.f17084c.getResources().getString(R.string.head_pic_view);
         LinearLayout linearLayout = (LinearLayout) this.b.findViewById(R.id.ll_groupinfo_edit_icon);
         this.d = linearLayout;
         linearLayout.setOnClickListener(this);
@@ -174,7 +167,6 @@ public class GroupEditNameIconFragment extends BaseFragment implements View.OnCl
         this.k = arguments.getString("icon");
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         if (i2 == -1) {
             if (i != 22) {
@@ -200,12 +192,12 @@ public class GroupEditNameIconFragment extends BaseFragment implements View.OnCl
         super.onActivityResult(i, i2, intent);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener
     public boolean onBackPressed() {
         d();
         return super.onBackPressed();
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     @Override // android.view.View.OnClickListener
     public void onClick(View view) {
         Tracker.onClick(view);
@@ -216,28 +208,26 @@ public class GroupEditNameIconFragment extends BaseFragment implements View.OnCl
             case R.id.ll_groupinfo_edit_icon /* 2131367879 */:
                 if (TextUtils.isEmpty(this.k)) {
                     this.m = r0;
-                    String[] strArr = {this.f30774c.getResources().getString(2131888666)};
+                    String[] strArr = {this.f17084c.getResources().getString(R.string.head_pic_update)};
                 } else {
                     String[] strArr2 = new String[2];
                     this.m = strArr2;
-                    strArr2[0] = this.f30774c.getResources().getString(2131888666);
-                    this.m[1] = this.f30774c.getResources().getString(2131888667);
+                    strArr2[0] = this.f17084c.getResources().getString(R.string.head_pic_update);
+                    this.m[1] = this.f17084c.getResources().getString(R.string.head_pic_view);
                 }
                 CommonShowBottomWindow.a(getActivity(), this.m, new ActionSheet.ActionSheetListener() { // from class: com.soft.blued.ui.group.GroupEditNameIconFragment.4
-                    @Override // com.blued.android.module.common.widget.menu.ActionSheet.ActionSheetListener
                     public void a(ActionSheet actionSheet, int i) {
                         if (i == 0) {
                             PhotoSelectFragment.a(GroupEditNameIconFragment.this, 3, 22);
                         } else if (GroupEditNameIconFragment.this.p) {
-                            BasePhotoFragment.a(GroupEditNameIconFragment.this.f30774c, new String[]{RecyclingUtils.Scheme.FILE.b(GroupEditNameIconFragment.this.n)}, 0, 2, GroupEditNameIconFragment.this.g);
+                            BasePhotoFragment.a(GroupEditNameIconFragment.this.f17084c, new String[]{RecyclingUtils.Scheme.c.b(GroupEditNameIconFragment.this.n)}, 0, 2, GroupEditNameIconFragment.this.g);
                         } else if (StringUtils.d(GroupEditNameIconFragment.this.k)) {
-                            BasePhotoFragment.a(GroupEditNameIconFragment.this.f30774c, new String[]{null}, 0, 2, GroupEditNameIconFragment.this.g);
+                            BasePhotoFragment.a(GroupEditNameIconFragment.this.f17084c, new String[]{null}, 0, 2, GroupEditNameIconFragment.this.g);
                         } else {
-                            BasePhotoFragment.a(GroupEditNameIconFragment.this.f30774c, new String[]{GroupEditNameIconFragment.this.k}, 0, 2, GroupEditNameIconFragment.this.g);
+                            BasePhotoFragment.a(GroupEditNameIconFragment.this.f17084c, new String[]{GroupEditNameIconFragment.this.k}, 0, 2, GroupEditNameIconFragment.this.g);
                         }
                     }
 
-                    @Override // com.blued.android.module.common.widget.menu.ActionSheet.ActionSheetListener
                     public void a(ActionSheet actionSheet, boolean z) {
                     }
                 });
@@ -252,14 +242,12 @@ public class GroupEditNameIconFragment extends BaseFragment implements View.OnCl
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.f30774c = getActivity();
+        this.f17084c = getActivity();
         View view = this.b;
         if (view == null) {
             this.b = layoutInflater.inflate(R.layout.fragment_group_edit_icon_name, viewGroup, false);

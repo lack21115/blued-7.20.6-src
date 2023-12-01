@@ -9,12 +9,8 @@ import java.util.Random;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/utils/upload/qiniu/UploadProcessManager.class */
 public class UploadProcessManager {
-
-    /* renamed from: a  reason: collision with root package name */
-    private double f10156a;
-
-    /* renamed from: c  reason: collision with root package name */
-    private long f10157c;
+    private double a;
+    private long c;
     private long d;
     private long e;
     private Runnable f;
@@ -37,7 +33,7 @@ public class UploadProcessManager {
         this.g = false;
         this.h = iUpdateProcessListener;
         long currentTimeMillis = System.currentTimeMillis();
-        this.f10157c = currentTimeMillis;
+        this.c = currentTimeMillis;
         this.d = currentTimeMillis;
         this.e = currentTimeMillis;
         this.g = false;
@@ -106,8 +102,8 @@ public class UploadProcessManager {
         }
         long currentTimeMillis = System.currentTimeMillis() - this.d;
         if (currentTimeMillis >= 200) {
-            a("autoIncrementProcess | 需要自增处理 currentProcess:" + b() + " | realProcess:" + this.f10156a);
-            if (this.f10156a > 0.0d) {
+            a("autoIncrementProcess | 需要自增处理 currentProcess:" + b() + " | realProcess:" + this.a);
+            if (this.a > 0.0d) {
                 g();
                 a("预估每秒增加的进度：" + (this.i * 1000.0d) + "%");
             } else {
@@ -135,8 +131,8 @@ public class UploadProcessManager {
     }
 
     private double g() {
-        long currentTimeMillis = System.currentTimeMillis() - this.f10157c;
-        this.i = (100.0d - b()) / ((((long) ((100 * currentTimeMillis) / this.f10156a)) - currentTimeMillis) * 1.0d);
+        long currentTimeMillis = System.currentTimeMillis() - this.c;
+        this.i = (100.0d - b()) / ((((long) ((100 * currentTimeMillis) / this.a)) - currentTimeMillis) * 1.0d);
         a("autoIncrementProcess | averageProcess：" + this.i);
         return this.i;
     }
@@ -180,17 +176,17 @@ public class UploadProcessManager {
     }
 
     public void a(double d) {
-        this.f10156a = d;
-        a("setCurrentProcess | realProcess：" + this.f10156a);
-        if (this.f10156a > b()) {
+        this.a = d;
+        a("setCurrentProcess | realProcess：" + this.a);
+        if (this.a > b()) {
             h();
-            b(this.f10156a);
+            b(this.a);
         }
     }
 
     protected void a(String str) {
         if (AppInfo.m()) {
-            Logger.c(MediaSender.f10132a, str);
+            Logger.c(MediaSender.a, str);
         }
     }
 

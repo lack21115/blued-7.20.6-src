@@ -9,23 +9,23 @@ import org.json.JSONObject;
 public class f {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f39675a = "Qp.RPT";
+    private static String f25984a = "Qp.RPT";
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/tmsqmsp/sdk/a/f$a.class */
     public static final class a implements Runnable {
         public final /* synthetic */ int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ JSONObject f39676c;
+        public final /* synthetic */ JSONObject f25985c;
 
         public a(int i, JSONObject jSONObject) {
             this.b = i;
-            this.f39676c = jSONObject;
+            this.f25985c = jSONObject;
         }
 
         @Override // java.lang.Runnable
         public void run() {
-            f.b(this.b, this.f39676c);
+            f.b(this.b, this.f25985c);
         }
     }
 
@@ -34,7 +34,7 @@ public class f {
         @Override // com.tencent.tmsqmsp.sdk.b.e
         public void a(int i, JSONObject jSONObject) {
             if (i == 161) {
-                com.tencent.tmsqmsp.sdk.f.g.a(f.f39675a, 1, String.format("ret: %d", 161));
+                com.tencent.tmsqmsp.sdk.f.g.a(f.f25984a, 1, String.format("ret: %d", 161));
             }
         }
     }
@@ -51,7 +51,7 @@ public class f {
                     jSONObject2.put(e.a(16), new JSONObject().put("log", str));
                     jSONArray.put(jSONObject2);
                     jSONObject.put("arr", jSONArray);
-                    com.tencent.tmsqmsp.sdk.f.g.a(f39675a, 1, jSONObject2.toString());
+                    com.tencent.tmsqmsp.sdk.f.g.a(f25984a, 1, jSONObject2.toString());
                     com.tencent.tmsqmsp.sdk.app.b.e().a(new a(i, jSONObject));
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -78,7 +78,7 @@ public class f {
         if (jSONObject == null) {
             return;
         }
-        String str = f39675a;
+        String str = f25984a;
         com.tencent.tmsqmsp.sdk.f.g.a(str, 0, "Rpt: " + jSONObject);
         com.tencent.tmsqmsp.sdk.b.g b2 = com.tencent.tmsqmsp.sdk.b.g.b();
         appID = oj.getAppID();

@@ -7,7 +7,7 @@ import com.tencent.smtt.export.external.interfaces.IX5WebHistoryItem;
 public class WebHistoryItem {
 
     /* renamed from: a  reason: collision with root package name */
-    private IX5WebHistoryItem f38797a = null;
+    private IX5WebHistoryItem f25106a = null;
     private android.webkit.WebHistoryItem b = null;
 
     private WebHistoryItem() {
@@ -29,27 +29,27 @@ public class WebHistoryItem {
             return null;
         }
         WebHistoryItem webHistoryItem = new WebHistoryItem();
-        webHistoryItem.f38797a = iX5WebHistoryItem;
+        webHistoryItem.f25106a = iX5WebHistoryItem;
         return webHistoryItem;
     }
 
     public Bitmap getFavicon() {
-        IX5WebHistoryItem iX5WebHistoryItem = this.f38797a;
+        IX5WebHistoryItem iX5WebHistoryItem = this.f25106a;
         return iX5WebHistoryItem != null ? iX5WebHistoryItem.getFavicon() : this.b.getFavicon();
     }
 
     public String getOriginalUrl() {
-        IX5WebHistoryItem iX5WebHistoryItem = this.f38797a;
+        IX5WebHistoryItem iX5WebHistoryItem = this.f25106a;
         return iX5WebHistoryItem != null ? iX5WebHistoryItem.getOriginalUrl() : this.b.getOriginalUrl();
     }
 
     public String getTitle() {
-        IX5WebHistoryItem iX5WebHistoryItem = this.f38797a;
+        IX5WebHistoryItem iX5WebHistoryItem = this.f25106a;
         return iX5WebHistoryItem != null ? iX5WebHistoryItem.getTitle() : this.b.getTitle();
     }
 
     public String getUrl() {
-        IX5WebHistoryItem iX5WebHistoryItem = this.f38797a;
+        IX5WebHistoryItem iX5WebHistoryItem = this.f25106a;
         return iX5WebHistoryItem != null ? iX5WebHistoryItem.getUrl() : this.b.getUrl();
     }
 }

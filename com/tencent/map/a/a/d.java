@@ -1,6 +1,5 @@
 package com.tencent.map.a.a;
 
-import com.amap.api.location.AMapLocation;
 import com.tencent.map.b.h;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -10,11 +9,11 @@ public class d {
     private long A;
 
     /* renamed from: a  reason: collision with root package name */
-    public int f37198a;
+    public int f23507a;
     public double b;
 
     /* renamed from: c  reason: collision with root package name */
-    public double f37199c;
+    public double f23508c;
     public double d;
     public double e;
     public double f;
@@ -40,9 +39,9 @@ public class d {
     public int z;
 
     public d() {
-        this.f37198a = 1;
+        this.f23507a = 1;
         this.b = 0.0d;
-        this.f37199c = 0.0d;
+        this.f23508c = 0.0d;
         this.d = -1.0d;
         this.e = 0.0d;
         this.f = 0.0d;
@@ -69,7 +68,7 @@ public class d {
         this.A = -1L;
         this.e = 0.0d;
         this.d = 0.0d;
-        this.f37199c = 0.0d;
+        this.f23508c = 0.0d;
         this.b = 0.0d;
         this.p = null;
         this.o = null;
@@ -83,9 +82,9 @@ public class d {
     }
 
     public d(d dVar) {
-        this.f37198a = 1;
+        this.f23507a = 1;
         this.b = 0.0d;
-        this.f37199c = 0.0d;
+        this.f23508c = 0.0d;
         this.d = -1.0d;
         this.e = 0.0d;
         this.f = 0.0d;
@@ -110,9 +109,9 @@ public class d {
         this.y = 0;
         this.z = -1;
         this.A = -1L;
-        this.f37198a = dVar.f37198a;
+        this.f23507a = dVar.f23507a;
         this.b = dVar.b;
-        this.f37199c = dVar.f37199c;
+        this.f23508c = dVar.f23508c;
         this.d = dVar.d;
         this.e = dVar.e;
         this.x = dVar.x;
@@ -255,13 +254,13 @@ public class d {
         sb.append(" ");
         sb.append(this.y);
         sb.append(" ");
-        sb.append(this.x ? "Mars" : AMapLocation.COORD_TYPE_WGS84);
+        sb.append(this.x ? "Mars" : "WGS84");
         sb.append(" ");
-        sb.append(this.f37198a == 0 ? "GPS" : "Network");
+        sb.append(this.f23507a == 0 ? "GPS" : "Network");
         sb.append("\n");
         sb.append(this.b);
         sb.append(" ");
-        sb.append(this.f37199c);
+        sb.append(this.f23508c);
         sb.append("\n");
         sb.append(this.d);
         sb.append(" ");
@@ -296,11 +295,11 @@ public class d {
             Iterator<c> it = this.w.iterator();
             while (it.hasNext()) {
                 c next = it.next();
-                sb.append(next.f37196a);
+                sb.append(next.f23505a);
                 sb.append(",");
                 sb.append(next.b);
                 sb.append(",");
-                sb.append(next.f37197c);
+                sb.append(next.f23506c);
                 sb.append(",");
                 sb.append(next.d);
                 sb.append(",");

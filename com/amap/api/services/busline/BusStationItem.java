@@ -23,13 +23,9 @@ public class BusStationItem implements Parcelable {
             return null;
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f5588a;
+    private String a;
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private LatLonPoint f5589c;
+    private LatLonPoint c;
     private String d;
     private String e;
     private List<BusLineItem> f;
@@ -41,8 +37,8 @@ public class BusStationItem implements Parcelable {
     private BusStationItem(Parcel parcel) {
         this.f = new ArrayList();
         this.b = parcel.readString();
-        this.f5588a = parcel.readString();
-        this.f5589c = (LatLonPoint) parcel.readValue(LatLonPoint.class.getClassLoader());
+        this.a = parcel.readString();
+        this.c = (LatLonPoint) parcel.readValue(LatLonPoint.class.getClassLoader());
         this.d = parcel.readString();
         this.e = parcel.readString();
         this.f = parcel.readArrayList(BusLineItem.class.getClassLoader());
@@ -82,8 +78,8 @@ public class BusStationItem implements Parcelable {
         }
         if (obj != null && getClass() == obj.getClass()) {
             BusStationItem busStationItem = (BusStationItem) obj;
-            String str = this.f5588a;
-            return str == null ? busStationItem.f5588a == null : str.equals(busStationItem.f5588a);
+            String str = this.a;
+            return str == null ? busStationItem.a == null : str.equals(busStationItem.a);
         }
         return false;
     }
@@ -97,7 +93,7 @@ public class BusStationItem implements Parcelable {
     }
 
     public String getBusStationId() {
-        return this.f5588a;
+        return this.a;
     }
 
     public String getBusStationName() {
@@ -109,11 +105,11 @@ public class BusStationItem implements Parcelable {
     }
 
     public LatLonPoint getLatLonPoint() {
-        return this.f5589c;
+        return this.c;
     }
 
     public int hashCode() {
-        String str = this.f5588a;
+        String str = this.a;
         return (str == null ? 0 : str.hashCode()) + 31;
     }
 
@@ -126,7 +122,7 @@ public class BusStationItem implements Parcelable {
     }
 
     public void setBusStationId(String str) {
-        this.f5588a = str;
+        this.a = str;
     }
 
     public void setBusStationName(String str) {
@@ -138,18 +134,18 @@ public class BusStationItem implements Parcelable {
     }
 
     public void setLatLonPoint(LatLonPoint latLonPoint) {
-        this.f5589c = latLonPoint;
+        this.c = latLonPoint;
     }
 
     public String toString() {
-        return "BusStationName: " + this.b + " LatLonPoint: " + this.f5589c.toString() + " BusLines: " + a(this.f) + " CityCode: " + this.d + " AdCode: " + this.e;
+        return "BusStationName: " + this.b + " LatLonPoint: " + this.c.toString() + " BusLines: " + a(this.f) + " CityCode: " + this.d + " AdCode: " + this.e;
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeString(this.b);
-        parcel.writeString(this.f5588a);
-        parcel.writeValue(this.f5589c);
+        parcel.writeString(this.a);
+        parcel.writeValue(this.c);
         parcel.writeString(this.d);
         parcel.writeString(this.e);
         parcel.writeList(this.f);

@@ -11,14 +11,15 @@ import com.bytedance.applog.tracker.Tracker;
 public class BindingShowActivity extends BaseFragmentActivity {
 
     /* renamed from: c  reason: collision with root package name */
-    private String f31361c = BindingShowActivity.class.getSimpleName();
+    private String f17671c = BindingShowActivity.class.getSimpleName();
 
+    /* JADX WARN: Multi-variable type inference failed */
     private void f() {
         CommonAlertDialog.a(this, "", getResources().getString(2131890504), getResources().getString(2131890499), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.login_register.BindingShowActivity.1
             @Override // android.content.DialogInterface.OnClickListener
             public void onClick(DialogInterface dialogInterface, int i) {
                 Tracker.onClick(dialogInterface, i);
-                TerminalActivity.d(BindingShowActivity.this, LinkMobileFragment.class, null);
+                TerminalActivity.d(BindingShowActivity.this, LinkMobileFragment.class, (Bundle) null);
                 BindingShowActivity.this.finish();
             }
         }, getResources().getString(2131890500), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.login_register.BindingShowActivity.2
@@ -35,7 +36,6 @@ public class BindingShowActivity extends BaseFragmentActivity {
         });
     }
 
-    @Override // com.blued.android.core.ui.BaseFragmentActivity, androidx.fragment.app.FragmentActivity, androidx.activity.ComponentActivity, androidx.core.app.ComponentActivity, android.app.Activity
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         f();

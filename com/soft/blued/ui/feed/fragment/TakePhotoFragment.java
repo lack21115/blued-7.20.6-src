@@ -42,11 +42,11 @@ import java.io.File;
 public class TakePhotoFragment extends BaseFragment {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f30027a;
+    private Context f16337a;
     private View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private TextView f30028c;
+    private TextView f16338c;
     private View d;
     private TextView e;
     private ImageView f;
@@ -67,9 +67,8 @@ public class TakePhotoFragment extends BaseFragment {
         AnonymousClass5() {
         }
 
-        @Override // com.blued.android.framework.permission.PermissionCallbacks
         public void U_() {
-            Logger.a("onActivityResult", "requestCode TAKE_PHOTO");
+            Logger.a("onActivityResult", new Object[]{"requestCode TAKE_PHOTO"});
             final String str = TakePhotoFragment.this.h;
             LogUtils.c("oldPath: " + str);
             if (TakePhotoFragment.this.o == null) {
@@ -82,7 +81,6 @@ public class TakePhotoFragment extends BaseFragment {
             takePhotoFragment2.p = externalStoragePublicDirectory.getAbsolutePath() + File.separator + "blued" + File.separator + TakePhotoFragment.this.i;
             LogUtils.c("oldPath: " + str + ", imgSavePath: " + TakePhotoFragment.this.p + ", mFileName: " + TakePhotoFragment.this.i);
             ThreadManager.a().a(new ThreadExecutor("saveImgToPicDir") { // from class: com.soft.blued.ui.feed.fragment.TakePhotoFragment.5.1
-                @Override // com.blued.android.framework.pool.ThreadExecutor
                 public void execute() {
                     FileUtils.a(str, TakePhotoFragment.this.p, TakePhotoFragment.this.i);
                     Houyi.a().a(TakePhotoFragment.this.h).b();
@@ -101,14 +99,12 @@ public class TakePhotoFragment extends BaseFragment {
             });
         }
 
-        @Override // com.blued.android.framework.permission.PermissionCallbacks
         public void a(String[] strArr) {
         }
     }
 
     public static void a(final BaseFragment baseFragment, final int i, final int i2, final String str) {
         PermissionUtils.b(new PermissionCallbacks() { // from class: com.soft.blued.ui.feed.fragment.TakePhotoFragment.1
-            @Override // com.blued.android.framework.permission.PermissionCallbacks
             public void U_() {
                 Bundle bundle = new Bundle();
                 bundle.putInt("select_photo", i2);
@@ -116,7 +112,6 @@ public class TakePhotoFragment extends BaseFragment {
                 TerminalActivity.a(baseFragment, TakePhotoFragment.class, bundle, i);
             }
 
-            @Override // com.blued.android.framework.permission.PermissionCallbacks
             public void a(String[] strArr) {
             }
         });
@@ -128,12 +123,12 @@ public class TakePhotoFragment extends BaseFragment {
         this.f = (ImageView) findViewById.findViewById(2131363120);
         this.e = (TextView) this.d.findViewById(2131363108);
         this.g = (ImageView) this.d.findViewById(2131363126);
-        this.f30028c = (TextView) this.b.findViewById(R.id.done_view);
+        this.f16338c = (TextView) this.b.findViewById(R.id.done_view);
         this.g.setVisibility(8);
-        this.f30028c.setVisibility(0);
-        this.f30028c.setText(this.f30027a.getResources().getString(2131891266));
-        this.j = (ImageView) this.b.findViewById(2131368859);
-        this.l = (ProgressBar) this.b.findViewById(2131368385);
+        this.f16338c.setVisibility(0);
+        this.f16338c.setText(this.f16337a.getResources().getString(R.string.photo_end));
+        this.j = (ImageView) this.b.findViewById(R.id.photo_view);
+        this.l = (ProgressBar) this.b.findViewById(R.id.loading_view);
         this.k = new PhotoViewAttacher(this.j);
         this.f.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.feed.fragment.TakePhotoFragment.2
             @Override // android.view.View.OnClickListener
@@ -142,7 +137,7 @@ public class TakePhotoFragment extends BaseFragment {
                 TakePhotoFragment.this.getActivity().finish();
             }
         });
-        this.f30028c.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.feed.fragment.TakePhotoFragment.3
+        this.f16338c.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.feed.fragment.TakePhotoFragment.3
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
@@ -154,11 +149,11 @@ public class TakePhotoFragment extends BaseFragment {
                 TakePhotoFragment.this.getActivity().finish();
                 int i = TakePhotoFragment.this.m;
                 if (i == 5) {
-                    SelectPhotoManager.a().c().addAll(0, PhotoSelectFragment.f29974a);
+                    SelectPhotoManager.a().c().addAll(0, PhotoSelectFragment.f16284a);
                 } else if (i != 7) {
-                    FeedAddPostFragment.a(TakePhotoFragment.this.f30027a);
+                    FeedAddPostFragment.a(TakePhotoFragment.this.f16337a);
                 } else {
-                    SelectPhotoManager.a().c().addAll(0, PhotoSelectFragment.f29974a);
+                    SelectPhotoManager.a().c().addAll(0, PhotoSelectFragment.f16284a);
                 }
             }
         });
@@ -167,7 +162,6 @@ public class TakePhotoFragment extends BaseFragment {
     /* JADX INFO: Access modifiers changed from: private */
     public void d() {
         ImageLoader.d(getFragmentActive(), this.h).a(new ImageLoadResult(getFragmentActive()) { // from class: com.soft.blued.ui.feed.fragment.TakePhotoFragment.4
-            @Override // com.blued.android.core.image.ImageLoadResult
             public void a() {
                 TakePhotoFragment.this.k.update();
             }
@@ -197,9 +191,8 @@ public class TakePhotoFragment extends BaseFragment {
         startActivityForResult(intent, 0);
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
-        Logger.a("onActivityResult", "requestCode = ", Integer.valueOf(i));
+        Logger.a("onActivityResult", new Object[]{"requestCode = ", Integer.valueOf(i)});
         if (i2 == 0) {
             if (i == 0) {
                 getActivity().setResult(0, intent);
@@ -213,9 +206,8 @@ public class TakePhotoFragment extends BaseFragment {
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.f30027a = getActivity();
+        this.f16337a = getActivity();
         View view = this.b;
         if (view == null) {
             this.b = layoutInflater.inflate(R.layout.fragment_send_take_photo, viewGroup, false);
@@ -233,7 +225,6 @@ public class TakePhotoFragment extends BaseFragment {
         return this.b;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onSaveInstanceState(Bundle bundle) {
         bundle.putString(OapsWrapper.KEY_PATH, this.h);
         bundle.putString("name", this.i);

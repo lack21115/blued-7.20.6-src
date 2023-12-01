@@ -1,6 +1,5 @@
 package java.util.concurrent;
 
-import com.tencent.tinker.loader.shareutil.ShareElfFile;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -426,7 +425,7 @@ public abstract class ForkJoinTask<V> implements Future<V>, Serializable {
 
     private Throwable getThrowableException() {
         Throwable th;
-        if ((this.status & ShareElfFile.SectionHeader.SHF_MASKPROC) != Integer.MIN_VALUE) {
+        if ((this.status & (-268435456)) != Integer.MIN_VALUE) {
             th = null;
         } else {
             int identityHashCode = System.identityHashCode(this);
@@ -544,11 +543,11 @@ public abstract class ForkJoinTask<V> implements Future<V>, Serializable {
 
     public static void invokeAll(ForkJoinTask<?> forkJoinTask, ForkJoinTask<?> forkJoinTask2) {
         forkJoinTask2.fork();
-        int doInvoke = forkJoinTask.doInvoke() & ShareElfFile.SectionHeader.SHF_MASKPROC;
+        int doInvoke = forkJoinTask.doInvoke() & (-268435456);
         if (doInvoke != -268435456) {
             forkJoinTask.reportException(doInvoke);
         }
-        int doJoin = forkJoinTask2.doJoin() & ShareElfFile.SectionHeader.SHF_MASKPROC;
+        int doJoin = forkJoinTask2.doJoin() & (-268435456);
         if (doJoin != -268435456) {
             forkJoinTask2.reportException(doJoin);
         }
@@ -639,7 +638,7 @@ public abstract class ForkJoinTask<V> implements Future<V>, Serializable {
     }
 
     private void reportException(int i) {
-        if (i == -1073741824) {
+        if (i == CANCELLED) {
             throw new CancellationException();
         }
         if (i == Integer.MIN_VALUE) {
@@ -689,7 +688,7 @@ public abstract class ForkJoinTask<V> implements Future<V>, Serializable {
 
     @Override // java.util.concurrent.Future
     public boolean cancel(boolean z) {
-        return (setCompletion(-1073741824) & ShareElfFile.SectionHeader.SHF_MASKPROC) == -1073741824;
+        return (setCompletion(CANCELLED) & (-268435456)) == CANCELLED;
     }
 
     public final boolean compareAndSetForkJoinTaskTag(short s, short s2) {
@@ -706,7 +705,7 @@ public abstract class ForkJoinTask<V> implements Future<V>, Serializable {
     public void complete(V v) {
         try {
             setRawResult(v);
-            setCompletion(ShareElfFile.SectionHeader.SHF_MASKPROC);
+            setCompletion(-268435456);
         } catch (Throwable th) {
             setExceptionalCompletion(th);
         }
@@ -728,7 +727,7 @@ public abstract class ForkJoinTask<V> implements Future<V>, Serializable {
             try {
                 i2 = i;
                 if (exec()) {
-                    i2 = setCompletion(ShareElfFile.SectionHeader.SHF_MASKPROC);
+                    i2 = setCompletion(-268435456);
                 }
             } catch (Throwable th) {
                 return setExceptionalCompletion(th);
@@ -752,8 +751,8 @@ public abstract class ForkJoinTask<V> implements Future<V>, Serializable {
     @Override // java.util.concurrent.Future
     public final V get() throws InterruptedException, ExecutionException {
         Throwable throwableException;
-        int doJoin = (Thread.currentThread() instanceof ForkJoinWorkerThread ? doJoin() : externalInterruptibleAwaitDone()) & ShareElfFile.SectionHeader.SHF_MASKPROC;
-        if (doJoin == -1073741824) {
+        int doJoin = (Thread.currentThread() instanceof ForkJoinWorkerThread ? doJoin() : externalInterruptibleAwaitDone()) & (-268435456);
+        if (doJoin == CANCELLED) {
             throw new CancellationException();
         }
         if (doJoin != Integer.MIN_VALUE || (throwableException = getThrowableException()) == null) {
@@ -878,9 +877,9 @@ public abstract class ForkJoinTask<V> implements Future<V>, Serializable {
                 }
             }
         }
-        int i5 = i2 & ShareElfFile.SectionHeader.SHF_MASKPROC;
+        int i5 = i2 & (-268435456);
         if (i5 != -268435456) {
-            if (i5 == -1073741824) {
+            if (i5 == CANCELLED) {
                 throw new CancellationException();
             }
             if (i5 != Integer.MIN_VALUE) {
@@ -895,11 +894,11 @@ public abstract class ForkJoinTask<V> implements Future<V>, Serializable {
     }
 
     public final Throwable getException() {
-        int i = this.status & ShareElfFile.SectionHeader.SHF_MASKPROC;
+        int i = this.status & (-268435456);
         if (i >= -268435456) {
             return null;
         }
-        return i == -1073741824 ? new CancellationException() : getThrowableException();
+        return i == CANCELLED ? new CancellationException() : getThrowableException();
     }
 
     public final short getForkJoinTaskTag() {
@@ -912,7 +911,7 @@ public abstract class ForkJoinTask<V> implements Future<V>, Serializable {
     }
 
     public final V invoke() {
-        int doInvoke = doInvoke() & ShareElfFile.SectionHeader.SHF_MASKPROC;
+        int doInvoke = doInvoke() & (-268435456);
         if (doInvoke != -268435456) {
             reportException(doInvoke);
         }
@@ -921,7 +920,7 @@ public abstract class ForkJoinTask<V> implements Future<V>, Serializable {
 
     @Override // java.util.concurrent.Future
     public final boolean isCancelled() {
-        return (this.status & ShareElfFile.SectionHeader.SHF_MASKPROC) == -1073741824;
+        return (this.status & (-268435456)) == CANCELLED;
     }
 
     public final boolean isCompletedAbnormally() {
@@ -929,7 +928,7 @@ public abstract class ForkJoinTask<V> implements Future<V>, Serializable {
     }
 
     public final boolean isCompletedNormally() {
-        return (this.status & ShareElfFile.SectionHeader.SHF_MASKPROC) == -268435456;
+        return (this.status & (-268435456)) == -268435456;
     }
 
     @Override // java.util.concurrent.Future
@@ -938,7 +937,7 @@ public abstract class ForkJoinTask<V> implements Future<V>, Serializable {
     }
 
     public final V join() {
-        int doJoin = doJoin() & ShareElfFile.SectionHeader.SHF_MASKPROC;
+        int doJoin = doJoin() & (-268435456);
         if (doJoin != -268435456) {
             reportException(doJoin);
         }
@@ -946,7 +945,7 @@ public abstract class ForkJoinTask<V> implements Future<V>, Serializable {
     }
 
     public final void quietlyComplete() {
-        setCompletion(ShareElfFile.SectionHeader.SHF_MASKPROC);
+        setCompletion(-268435456);
     }
 
     public final void quietlyInvoke() {
@@ -1040,7 +1039,7 @@ public abstract class ForkJoinTask<V> implements Future<V>, Serializable {
     }
 
     public void reinitialize() {
-        if ((this.status & ShareElfFile.SectionHeader.SHF_MASKPROC) == Integer.MIN_VALUE) {
+        if ((this.status & (-268435456)) == Integer.MIN_VALUE) {
             clearExceptionalCompletion();
         } else {
             this.status = 0;

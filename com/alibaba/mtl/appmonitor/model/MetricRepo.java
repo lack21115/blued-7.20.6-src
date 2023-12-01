@@ -5,9 +5,7 @@ import java.util.List;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alibaba/mtl/appmonitor/model/MetricRepo.class */
 public class MetricRepo {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static MetricRepo f4474a;
+    private static MetricRepo a;
     public List<Metric> metrics;
 
     private MetricRepo(int i) {
@@ -15,10 +13,10 @@ public class MetricRepo {
     }
 
     public static MetricRepo getRepo() {
-        if (f4474a == null) {
-            f4474a = new MetricRepo(3);
+        if (a == null) {
+            a = new MetricRepo(3);
         }
-        return f4474a;
+        return a;
     }
 
     public static MetricRepo getRepo(int i) {

@@ -11,7 +11,7 @@ import java.util.concurrent.Executors;
 public abstract class d implements com.opos.videocache.a.a {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ExecutorService f27431a = Executors.newSingleThreadExecutor();
+    private final ExecutorService f13743a = Executors.newSingleThreadExecutor();
 
     /* loaded from: source-8303388-dex2jar.jar:com/opos/videocache/a/d$a.class */
     class a implements Callable<Void> {
@@ -66,7 +66,7 @@ public abstract class d implements com.opos.videocache.a.a {
 
     @Override // com.opos.videocache.a.a
     public void a(File file) {
-        this.f27431a.submit(new a(file));
+        this.f13743a.submit(new a(file));
     }
 
     protected abstract boolean a(File file, long j, int i);

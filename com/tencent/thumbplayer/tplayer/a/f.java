@@ -18,15 +18,15 @@ public class f extends c {
             return;
         }
         TPGeneralPlayFlowParams a2 = this.b.a();
-        this.i.f39365a.a(this.e.i);
-        this.i.f39365a.f(this.e.g);
-        this.i.f39365a.j(this.e.e);
-        this.i.f39365a.l(TPDownloadProxyHelper.getNativeLibVersion());
-        this.i.f39365a.k(this.i.b);
-        this.i.f39365a.o(this.i.e);
-        this.i.f39365a.m(this.i.d);
-        this.i.f39365a.n(this.i.f39366c);
-        this.i.f39365a.l(this.e.h);
+        this.i.f25674a.a(this.e.i);
+        this.i.f25674a.f(this.e.g);
+        this.i.f25674a.j(this.e.e);
+        this.i.f25674a.l(TPDownloadProxyHelper.getNativeLibVersion());
+        this.i.f25674a.k(this.i.b);
+        this.i.f25674a.o(this.i.e);
+        this.i.f25674a.m(this.i.d);
+        this.i.f25674a.n(this.i.f25675c);
+        this.i.f25674a.l(this.e.h);
         this.h.put("buffermintotaldurationms", Long.valueOf(a2.mPlayerConfigParams.mBufferMinTotalDurationMs));
         this.h.put("buffermaxtotaldurationms", Long.valueOf(a2.mPlayerConfigParams.mBufferMaxTotalDurationMs));
         this.h.put("preloadtotaldurationms", Long.valueOf(a2.mPlayerConfigParams.mPreloadTotalDurationMs));
@@ -37,7 +37,7 @@ public class f extends c {
         this.h.put("reducelatencyspeed", Float.valueOf(a2.mPlayerConfigParams.mReduceLatencyPlaySpeed));
         this.h.put("buffertype", Integer.valueOf(a2.mPlayerConfigParams.mBufferType));
         try {
-            this.i.f39365a.p(new JSONObject(this.h).toString());
+            this.i.f25674a.p(new JSONObject(this.h).toString());
         } catch (NullPointerException e) {
             TPLogUtil.e("TPPrepareFailReporter", e);
         }
@@ -56,8 +56,8 @@ public class f extends c {
         bVar.o(e);
         c();
         b(this.i);
-        this.f.b(this.i.f39365a);
-        bVar.a(this.i.f39365a);
+        this.f.b(this.i.f25674a);
+        bVar.a(this.i.f25674a);
         Map<String, String> b = bVar.b();
         a("onPrepareError", b);
         b("prepare_fail", b);
@@ -83,7 +83,7 @@ public class f extends c {
         String d = dVar.d();
         String e = dVar.e();
         TPLogUtil.i("TPPrepareFailReporter", "Vod onDTCdnUrlUpdate cdnIp:" + d + " uIp:" + e);
-        this.i.f39366c = d;
+        this.i.f25675c = d;
         this.i.d = e;
     }
 
@@ -126,6 +126,6 @@ public class f extends c {
     @Override // com.tencent.thumbplayer.tplayer.a.c, com.tencent.thumbplayer.tplayer.a.a
     public void a(Context context, l lVar) {
         super.a(context, lVar);
-        this.f.a(this.i.f39365a);
+        this.f.a(this.i.f25674a);
     }
 }

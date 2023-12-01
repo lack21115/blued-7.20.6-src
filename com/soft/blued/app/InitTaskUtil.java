@@ -1,5 +1,6 @@
 package com.soft.blued.app;
 
+import android.R;
 import android.app.Application;
 import android.content.Context;
 import android.graphics.Point;
@@ -35,6 +36,7 @@ import com.blued.android.module.live_china.common.ZegoCommonHelper;
 import com.blued.android.modules.ModulesHelper;
 import com.blued.android.pulltorefresh.WaveLoadingLayout;
 import com.blued.android.statistics.BluedStatistics;
+import com.blued.das.live.LiveProtos;
 import com.blued.login.utils.LoginPreLoad;
 import com.blued.track.bytedance.ByteDanceLogHelper;
 import com.heytap.msp.mobad.api.InitParams;
@@ -82,44 +84,37 @@ public class InitTaskUtil {
 
     public static InitTaskManager.OnTaskListBuilder generateTaskListBuilder() {
         return new InitTaskManager.OnTaskListBuilder() { // from class: com.soft.blued.app.InitTaskUtil.1
-            @Override // com.blued.android.framework.init.InitTaskManager.OnTaskListBuilder
             public void onBuild(Application application, ArrayList<InitTask> arrayList) {
                 ArrayList<InitTask> arrayList2 = arrayList;
                 if (arrayList == null) {
                     arrayList2 = new ArrayList<>();
                 }
                 arrayList2.add(new InitTask("BluedConfig") { // from class: com.soft.blued.app.InitTaskUtil.1.1
-                    @Override // com.blued.android.framework.init.InitTask
                     public void b() {
                         BluedConfig.a();
                     }
 
-                    @Override // com.blued.android.framework.init.InitTask
                     public boolean d() {
                         return true;
                     }
                 });
                 arrayList2.add(new InitTask("hookSP") { // from class: com.soft.blued.app.InitTaskUtil.1.2
-                    @Override // com.blued.android.framework.init.InitTask
                     public void b() {
                         SharedPreferencesUtils.c();
                     }
                 });
                 arrayList2.add(new InitTask("refreshUserInfo & 需要用户资料的一些初始化") { // from class: com.soft.blued.app.InitTaskUtil.1.3
-                    @Override // com.blued.android.framework.init.InitTask
                     public void b() {
                         if (BluedPreferences.aC() == 1 || BluedPreferences.aD()) {
                             UserInfo.getInstance().getLoginUserInfo();
                         }
                     }
 
-                    @Override // com.blued.android.framework.init.InitTask
                     public boolean d() {
                         return true;
                     }
                 });
                 arrayList2.add(new InitTask("BluedAPM") { // from class: com.soft.blued.app.InitTaskUtil.1.4
-                    @Override // com.blued.android.framework.init.InitTask
                     public void b() {
                         if (BluedPreferences.aC() == 1 || BluedPreferences.aD()) {
                             InitTaskUtil.initBluedAPM();
@@ -128,20 +123,17 @@ public class InitTaskUtil {
                     }
                 });
                 arrayList2.add(new InitTask("requestLoginSplash") { // from class: com.soft.blued.app.InitTaskUtil.1.5
-                    @Override // com.blued.android.framework.init.InitTask
                     public void b() {
                         if ((BluedPreferences.aC() == 1 || BluedPreferences.aD()) && !UserInfo.getInstance().isLogin()) {
-                            LoginPreLoad.f20592a.b();
+                            LoginPreLoad.f6986a.b();
                         }
                     }
 
-                    @Override // com.blued.android.framework.init.InitTask
                     public boolean d() {
                         return true;
                     }
                 });
                 arrayList2.add(new InitTask("友盟预初始化") { // from class: com.soft.blued.app.InitTaskUtil.1.6
-                    @Override // com.blued.android.framework.init.InitTask
                     public void b() {
                         if (BluedPreferences.aC() == 1 || BluedPreferences.aD()) {
                             InitTaskUtil.initUMeng();
@@ -149,7 +141,6 @@ public class InitTaskUtil {
                     }
                 });
                 arrayList2.add(new InitTask(AccessibleTouchItem.MAP_DEFAULT_CONTENT_DESCRIPTION) { // from class: com.soft.blued.app.InitTaskUtil.1.7
-                    @Override // com.blued.android.framework.init.InitTask
                     public void b() {
                         if (BluedPreferences.aC() == 1 || BluedPreferences.aD()) {
                             InitTaskUtil.initMap();
@@ -157,7 +148,6 @@ public class InitTaskUtil {
                     }
                 });
                 arrayList2.add(new InitTask("语言设置&下拉刷新") { // from class: com.soft.blued.app.InitTaskUtil.1.8
-                    @Override // com.blued.android.framework.init.InitTask
                     public void b() {
                         LocaleUtils.d();
                         BluedApplicationLike.initAppLanguage();
@@ -167,7 +157,7 @@ public class InitTaskUtil {
                         SmartRefreshLayout.setDefaultRefreshHeaderCreator(new DefaultRefreshHeaderCreator() { // from class: com.soft.blued.app.InitTaskUtil.1.8.1
                             @Override // com.scwang.smartrefresh.layout.api.DefaultRefreshHeaderCreator
                             public RefreshHeader createRefreshHeader(Context context, RefreshLayout refreshLayout) {
-                                refreshLayout.c(2131102388, 17170445);
+                                refreshLayout.c(2131102388, R.color.transparent);
                                 return new BluedRefreshView(context);
                             }
                         });
@@ -181,7 +171,6 @@ public class InitTaskUtil {
                     }
                 });
                 arrayList2.add(new InitTask("友盟") { // from class: com.soft.blued.app.InitTaskUtil.1.9
-                    @Override // com.blued.android.framework.init.InitTask
                     public void b() {
                         if (BluedPreferences.aC() == 1 || BluedPreferences.aD()) {
                             YouMengUtils.a();
@@ -190,7 +179,6 @@ public class InitTaskUtil {
                 });
                 if (!PushManager.b()) {
                     arrayList2.add(new InitTask("connectIm") { // from class: com.soft.blued.app.InitTaskUtil.1.10
-                        @Override // com.blued.android.framework.init.InitTask
                         public void b() {
                             try {
                                 BluedChat.getInstance().startIMService(AppInfo.d());
@@ -200,7 +188,6 @@ public class InitTaskUtil {
                     });
                 }
                 arrayList2.add(new InitTask("AutoStartService") { // from class: com.soft.blued.app.InitTaskUtil.1.11
-                    @Override // com.blued.android.framework.init.InitTask
                     public void b() {
                         EmotionManager.b(BluedHttpUrl.q());
                         AppInfo.n().post(new Runnable() { // from class: com.soft.blued.app.InitTaskUtil.1.11.1
@@ -213,13 +200,11 @@ public class InitTaskUtil {
                         });
                     }
 
-                    @Override // com.blued.android.framework.init.InitTask
                     public boolean d() {
                         return true;
                     }
                 });
                 arrayList2.add(new InitTask("广点通") { // from class: com.soft.blued.app.InitTaskUtil.1.12
-                    @Override // com.blued.android.framework.init.InitTask
                     public void b() {
                         if (BluedPreferences.aC() == 1 || BluedPreferences.aD()) {
                             GlobalSetting.setAgreePrivacyStrategy(false);
@@ -228,7 +213,6 @@ public class InitTaskUtil {
                     }
                 });
                 arrayList2.add(new InitTask("穿山甲SDK初始化") { // from class: com.soft.blued.app.InitTaskUtil.1.13
-                    @Override // com.blued.android.framework.init.InitTask
                     public void b() {
                         if (BluedPreferences.aC() == 1 || BluedPreferences.aD()) {
                             Log.v("drb", "InitTask 穿山甲SDK初始化");
@@ -237,7 +221,6 @@ public class InitTaskUtil {
                     }
                 });
                 arrayList2.add(new InitTask("百度SDK初始化") { // from class: com.soft.blued.app.InitTaskUtil.1.14
-                    @Override // com.blued.android.framework.init.InitTask
                     public void b() {
                         if (BluedPreferences.aC() == 1 || BluedPreferences.aD()) {
                             Log.v("drb", "InitTask 百度SDK初始化");
@@ -246,7 +229,6 @@ public class InitTaskUtil {
                     }
                 });
                 arrayList2.add(new InitTask("oppoSDK初始化") { // from class: com.soft.blued.app.InitTaskUtil.1.15
-                    @Override // com.blued.android.framework.init.InitTask
                     public void b() {
                         if (BluedPreferences.aC() == 1 || BluedPreferences.aD()) {
                             InitTaskUtil.initOPPOAdSDK();
@@ -254,9 +236,8 @@ public class InitTaskUtil {
                     }
                 });
                 arrayList2.add(new InitTask("IMEI&AsyncTask") { // from class: com.soft.blued.app.InitTaskUtil.1.16
-                    @Override // com.blued.android.framework.init.InitTask
                     public void b() {
-                        if (BluedPreferences.aD() && PermissionUtils.a("android.permission.READ_PHONE_STATE")) {
+                        if (BluedPreferences.aD() && PermissionUtils.a(new String[]{"android.permission.READ_PHONE_STATE"})) {
                             String str = null;
                             try {
                                 str = ((TelephonyManager) AppInfo.d().getSystemService("phone")).getDeviceId();
@@ -278,7 +259,6 @@ public class InitTaskUtil {
                     }
                 });
                 arrayList2.add(new InitTask("激活统计") { // from class: com.soft.blued.app.InitTaskUtil.1.17
-                    @Override // com.blued.android.framework.init.InitTask
                     public void b() {
                         BluedPreferences.i();
                         if (!BluedPreferences.bm()) {
@@ -287,7 +267,6 @@ public class InitTaskUtil {
                                 public void run() {
                                     if (BluedPreferences.aC() == 1 || BluedPreferences.aD()) {
                                         AppHttpUtils.a(new BluedUIHttpResponse() { // from class: com.soft.blued.app.InitTaskUtil.1.17.1.1
-                                            @Override // com.blued.android.framework.http.BluedUIHttpResponse
                                             public void onUIUpdate(BluedEntity bluedEntity) {
                                                 BluedPreferences.bn();
                                             }
@@ -300,13 +279,11 @@ public class InitTaskUtil {
                     }
                 });
                 arrayList2.add(new InitTask("下拉刷新字符串") { // from class: com.soft.blued.app.InitTaskUtil.1.18
-                    @Override // com.blued.android.framework.init.InitTask
                     public void b() {
                         PullToRefreshHelper.a(2131891361, 2131891364, 2131891363, 2131887218, 2131890386);
                     }
                 });
                 arrayList2.add(new InitTask("Patch更新") { // from class: com.soft.blued.app.InitTaskUtil.1.19
-                    @Override // com.blued.android.framework.init.InitTask
                     public void b() {
                         AppInfo.n().postDelayed(new Runnable() { // from class: com.soft.blued.app.InitTaskUtil.1.19.1
                             @Override // java.lang.Runnable
@@ -319,24 +296,20 @@ public class InitTaskUtil {
                     }
                 });
                 arrayList2.add(new InitTask("其他模块") { // from class: com.soft.blued.app.InitTaskUtil.1.20
-                    @Override // com.blued.android.framework.init.InitTask
                     public void b() {
                         ModulesHelper.a();
                     }
                 });
                 arrayList2.add(new InitTask("页面时长") { // from class: com.soft.blued.app.InitTaskUtil.1.21
-                    @Override // com.blued.android.framework.init.InitTask
                     public void b() {
                         PageTimeUtils.a("pagebiz_table.json");
                     }
 
-                    @Override // com.blued.android.framework.init.InitTask
                     public boolean d() {
                         return true;
                     }
                 });
                 arrayList2.add(new InitTask("zego") { // from class: com.soft.blued.app.InitTaskUtil.1.22
-                    @Override // com.blued.android.framework.init.InitTask
                     public void b() {
                         if (BluedPreferences.aC() == 1 || BluedPreferences.aD()) {
                             InitTaskUtil.initZego();
@@ -344,7 +317,6 @@ public class InitTaskUtil {
                     }
                 });
                 arrayList2.add(new InitTask("设备标识") { // from class: com.soft.blued.app.InitTaskUtil.1.23
-                    @Override // com.blued.android.framework.init.InitTask
                     public void b() {
                         if (BluedPreferences.aC() == 1 || BluedPreferences.aD()) {
                             BluedDeviceIdentity a2 = BluedDeviceIdentity.a();
@@ -354,7 +326,6 @@ public class InitTaskUtil {
                     }
                 });
                 arrayList2.add(new InitTask("TopOn") { // from class: com.soft.blued.app.InitTaskUtil.1.24
-                    @Override // com.blued.android.framework.init.InitTask
                     public void b() {
                         if (BluedPreferences.aC() == 1 || BluedPreferences.aD()) {
                             InitTaskUtil.initTopOnAdSDK();
@@ -362,7 +333,6 @@ public class InitTaskUtil {
                     }
                 });
                 arrayList2.add(new InitTask(GlobalSetting.KS_SDK_WRAPPER) { // from class: com.soft.blued.app.InitTaskUtil.1.25
-                    @Override // com.blued.android.framework.init.InitTask
                     public void b() {
                         if (BluedPreferences.aC() == 1 || BluedPreferences.aD()) {
                             InitTaskUtil.initKSSDK();
@@ -370,7 +340,6 @@ public class InitTaskUtil {
                     }
                 });
                 arrayList2.add(new InitTask("HW") { // from class: com.soft.blued.app.InitTaskUtil.1.26
-                    @Override // com.blued.android.framework.init.InitTask
                     public void b() {
                         if (BluedPreferences.aC() == 1 || BluedPreferences.aD()) {
                             InitTaskUtil.initHWADSDK();
@@ -378,7 +347,6 @@ public class InitTaskUtil {
                     }
                 });
                 arrayList2.add(new InitTask("Bugly") { // from class: com.soft.blued.app.InitTaskUtil.1.27
-                    @Override // com.blued.android.framework.init.InitTask
                     public void b() {
                         if (BluedPreferences.aC() == 1 || BluedPreferences.aD()) {
                             InitTaskUtil.initBuglyCrash(AppInfo.d());
@@ -386,7 +354,6 @@ public class InitTaskUtil {
                     }
                 });
                 arrayList2.add(new InitTask("ByteDanceLog") { // from class: com.soft.blued.app.InitTaskUtil.1.28
-                    @Override // com.blued.android.framework.init.InitTask
                     public void b() {
                         if (BluedPreferences.aC() == 1 || BluedPreferences.aD()) {
                             try {
@@ -397,61 +364,51 @@ public class InitTaskUtil {
                     }
                 });
                 arrayList2.add(new InitTask("推送") { // from class: com.soft.blued.app.InitTaskUtil.1.29
-                    @Override // com.blued.android.framework.init.InitTask
                     public void b() {
                         if (BluedPreferences.aC() == 1 || BluedPreferences.aD()) {
                             InitTaskUtil.initPush();
                         }
                     }
 
-                    @Override // com.blued.android.framework.init.InitTask
                     public boolean d() {
                         return true;
                     }
 
-                    @Override // com.blued.android.framework.init.InitTask
                     public boolean e() {
                         return false;
                     }
                 });
                 arrayList2.add(new InitTask("腾讯一键登录") { // from class: com.soft.blued.app.InitTaskUtil.1.30
-                    @Override // com.blued.android.framework.init.InitTask
                     public void b() {
                         if (BluedPreferences.aC() == 1 || BluedPreferences.aD()) {
                             InitTaskUtil.initTXSDK();
                         }
                     }
 
-                    @Override // com.blued.android.framework.init.InitTask
                     public boolean d() {
                         return true;
                     }
 
-                    @Override // com.blued.android.framework.init.InitTask
                     public boolean e() {
                         return false;
                     }
                 });
                 arrayList2.add(new InitTask("YouZanSDK初始化") { // from class: com.soft.blued.app.InitTaskUtil.1.31
-                    @Override // com.blued.android.framework.init.InitTask
                     public void b() {
                         if (BluedPreferences.aC() == 1 || BluedPreferences.aD()) {
                             InitTaskUtil.initYouZanSDK();
                         }
                     }
 
-                    @Override // com.blued.android.framework.init.InitTask
                     public boolean d() {
                         return true;
                     }
 
-                    @Override // com.blued.android.framework.init.InitTask
                     public boolean e() {
                         return false;
                     }
                 });
                 arrayList2.add(new InitTask("自研设备指纹SDK初始化") { // from class: com.soft.blued.app.InitTaskUtil.1.32
-                    @Override // com.blued.android.framework.init.InitTask
                     public void b() {
                         if (BluedPreferences.aC() == 1 || BluedPreferences.aD()) {
                             BluedFingerPrintUtils.a();
@@ -459,7 +416,6 @@ public class InitTaskUtil {
                     }
                 });
                 arrayList2.add(new InitTask("微盟SDK初始化") { // from class: com.soft.blued.app.InitTaskUtil.1.33
-                    @Override // com.blued.android.framework.init.InitTask
                     public void b() {
                         if (BluedPreferences.aC() == 1 || BluedPreferences.aD()) {
                             InitTaskUtil.initWMSDK();
@@ -467,9 +423,8 @@ public class InitTaskUtil {
                     }
                 });
                 arrayList2.add(new InitTask("网络图片本地映射MAP") { // from class: com.soft.blued.app.InitTaskUtil.1.34
-                    @Override // com.blued.android.framework.init.InitTask
                     public void b() {
-                        ImgURLMap.f10885a.a();
+                        ImgURLMap.a.a();
                     }
                 });
             }
@@ -485,9 +440,9 @@ public class InitTaskUtil {
     }
 
     public static void initBluedAPM() {
-        BluedStatistics.a(AppInfo.d(), BluedHttpUrl.w(), 443, HappyDnsUtils.d());
+        BluedStatistics.a(AppInfo.d(), BluedHttpUrl.w(), (int) LiveProtos.Event.LIVE_CHALLENGE_PK_EXPLAIN_CLICK_VALUE, HappyDnsUtils.d());
         DisplayMetrics displayMetrics = AppInfo.d().getResources().getDisplayMetrics();
-        BluedStatistics.a().g("android_china").e(AppInfo.f9487c).h(AppInfo.g).a(AppInfo.h).b(NetworkUtils.d()).a(DeviceUtils.d()).a(new Point(displayMetrics.widthPixels, displayMetrics.heightPixels));
+        BluedStatistics.a().g("android_china").e(AppInfo.c).h(AppInfo.g).a(AppInfo.h).b(NetworkUtils.d()).a(DeviceUtils.d()).a(new Point(displayMetrics.widthPixels, displayMetrics.heightPixels));
     }
 
     public static void initBuglyCrash(Context context) {
@@ -503,7 +458,7 @@ public class InitTaskUtil {
     }
 
     public static void initByteDanceSDK() {
-        ByteDanceLogHelper.a(AppUtils.a(), AppInfo.f9487c);
+        ByteDanceLogHelper.a(AppUtils.a(), AppInfo.c);
         ByteDanceLogHelper.a(UserInfo.getInstance().getLoginUserInfo().getUid());
     }
 
@@ -528,7 +483,7 @@ public class InitTaskUtil {
     }
 
     public static void initLoginSplash() {
-        LoginPreLoad.f20592a.b();
+        LoginPreLoad.f6986a.b();
     }
 
     public static void initMap() {
@@ -569,14 +524,14 @@ public class InitTaskUtil {
 
     public static void initTopOnAdSDK() {
         GlobalSetting.setAgreePrivacyStrategy(false);
-        ATSDK.deniedUploadDeviceInfo("mac");
+        ATSDK.deniedUploadDeviceInfo(new String[]{"mac"});
         ATSDK.setNetworkLogDebug(AppInfo.m());
         ATSDK.integrationChecking(AppInfo.d());
         ATSDK.init(AppInfo.d(), "a6088f098f2534", "a11c38eb18d1d5ade5bfe7053852313b");
     }
 
     public static void initUMeng() {
-        UMConfigure.preInit(AppInfo.d(), BluedApplicationLike.umengAppKey, AppInfo.f9487c);
+        UMConfigure.preInit(AppInfo.d(), BluedApplicationLike.umengAppKey, AppInfo.c);
     }
 
     public static void initWMSDK() {

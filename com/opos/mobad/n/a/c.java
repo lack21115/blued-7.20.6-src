@@ -9,10 +9,10 @@ import java.util.List;
 public class c<T> implements TypeEvaluator<T> {
 
     /* renamed from: a  reason: collision with root package name */
-    private long f26495a = 0;
+    private long f12807a = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f26496c = 0;
+    private int f12808c = 0;
     private List<a<T>> b = new ArrayList();
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -20,34 +20,34 @@ public class c<T> implements TypeEvaluator<T> {
     public static class a<T> {
 
         /* renamed from: a  reason: collision with root package name */
-        private long f26497a;
+        private long f12809a;
         private TypeEvaluator<T> b;
 
         /* renamed from: c  reason: collision with root package name */
-        private long f26498c;
+        private long f12810c;
 
         public a(TypeEvaluator<T> typeEvaluator, long j, long j2) {
-            this.f26497a = j;
+            this.f12809a = j;
             this.b = typeEvaluator;
-            this.f26498c = j2;
+            this.f12810c = j2;
         }
     }
 
     private a a(float f) {
-        float f2 = ((float) this.f26495a) * f;
-        int i = this.f26496c;
+        float f2 = ((float) this.f12807a) * f;
+        int i = this.f12808c;
         while (true) {
             int i2 = i;
             if (i2 >= this.b.size()) {
-                if (this.f26496c <= 0) {
+                if (this.f12808c <= 0) {
                     return null;
                 }
-                this.f26496c = 0;
+                this.f12808c = 0;
                 return a(f);
             }
             a<T> aVar = this.b.get(i2);
-            if (f2 >= ((float) ((a) aVar).f26498c) && f2 <= ((float) (((a) aVar).f26497a + ((a) aVar).f26498c))) {
-                this.f26496c = i2;
+            if (f2 >= ((float) ((a) aVar).f12810c) && f2 <= ((float) (((a) aVar).f12809a + ((a) aVar).f12810c))) {
+                this.f12808c = i2;
                 return aVar;
             }
             i = i2 + 1;
@@ -55,7 +55,7 @@ public class c<T> implements TypeEvaluator<T> {
     }
 
     public long a() {
-        return this.f26495a;
+        return this.f12807a;
     }
 
     public c a(TypeEvaluator<T> typeEvaluator, long j) {
@@ -63,8 +63,8 @@ public class c<T> implements TypeEvaluator<T> {
             if (typeEvaluator == null) {
                 return this;
             }
-            this.b.add(new a<>(typeEvaluator, j, this.f26495a));
-            this.f26495a += j;
+            this.b.add(new a<>(typeEvaluator, j, this.f12807a));
+            this.f12807a += j;
         }
         return this;
     }
@@ -77,7 +77,7 @@ public class c<T> implements TypeEvaluator<T> {
         }
         a a2 = a(f);
         if (a2 != null) {
-            return (T) a2.b.evaluate((float) (((f * this.f26495a) - a2.f26498c) / a2.f26497a), t, t2);
+            return (T) a2.b.evaluate((float) (((f * this.f12807a) - a2.f12810c) / a2.f12809a), t, t2);
         }
         Log.d("", "null node:" + f);
         return t2;

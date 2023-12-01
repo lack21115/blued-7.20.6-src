@@ -12,9 +12,8 @@ public final class AppOpsManagerCompat {
     public static final int MODE_ERRORED = 2;
     public static final int MODE_IGNORED = 1;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8756600-dex2jar.jar:androidx/core/app/AppOpsManagerCompat$Api29Impl.class */
-    public static class Api29Impl {
+    static class Api29Impl {
         private Api29Impl() {
         }
 

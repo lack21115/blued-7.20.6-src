@@ -6,11 +6,11 @@ import com.tencent.ugc.TXVideoEditer;
 final /* synthetic */ class x implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final TXVideoEditer f40464a;
+    private final TXVideoEditer f26773a;
     private final TXVideoEditer.TXVideoCustomProcessListener b;
 
     private x(TXVideoEditer tXVideoEditer, TXVideoEditer.TXVideoCustomProcessListener tXVideoCustomProcessListener) {
-        this.f40464a = tXVideoEditer;
+        this.f26773a = tXVideoEditer;
         this.b = tXVideoCustomProcessListener;
     }
 
@@ -20,6 +20,6 @@ final /* synthetic */ class x implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        TXVideoEditer.lambda$setCustomVideoProcessListener$3(this.f40464a, this.b);
+        TXVideoEditer.lambda$setCustomVideoProcessListener$3(this.f26773a, this.b);
     }
 }

@@ -9,12 +9,10 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/LayoutOnlineNobleUserHeadViewBinding.class */
 public final class LayoutOnlineNobleUserHeadViewBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final RelativeLayout f12106a;
+    private final RelativeLayout a;
 
     private LayoutOnlineNobleUserHeadViewBinding(RelativeLayout relativeLayout) {
-        this.f12106a = relativeLayout;
+        this.a = relativeLayout;
     }
 
     public static LayoutOnlineNobleUserHeadViewBinding a(LayoutInflater layoutInflater) {
@@ -36,9 +34,8 @@ public final class LayoutOnlineNobleUserHeadViewBinding implements ViewBinding {
         throw new NullPointerException("rootView");
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
-        return this.f12106a;
+        return this.a;
     }
 }

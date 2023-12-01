@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -130,7 +131,7 @@ public class LiveRecommendFragment extends PreloadFragment implements View.OnCli
             final String str = ((BannerModel) LiveRecommendFragment.this.C.get(i)).url;
             while (LiveRecommendFragment.this.D.size() < LiveRecommendFragment.this.C.size()) {
                 BannerViewHolder bannerViewHolder = new BannerViewHolder();
-                View inflate = LayoutInflater.from(LiveRecommendFragment.this.j).inflate(2131559775, viewGroup, false);
+                View inflate = LayoutInflater.from(LiveRecommendFragment.this.j).inflate(R.layout.item_live_banner_new, viewGroup, false);
                 Unbinder a2 = ButterKnife.a(bannerViewHolder, inflate);
                 LiveRecommendFragment.this.D.add(inflate);
                 LiveRecommendFragment.this.E.add(bannerViewHolder);
@@ -184,7 +185,7 @@ public class LiveRecommendFragment extends PreloadFragment implements View.OnCli
 
         public BannerViewHolder_ViewBinding(BannerViewHolder bannerViewHolder, View view) {
             this.b = bannerViewHolder;
-            bannerViewHolder.aariv_banner = (ImageView) Utils.a(view, 2131361890, "field 'aariv_banner'", ImageView.class);
+            bannerViewHolder.aariv_banner = (ImageView) Utils.a(view, R.id.aariv_banner, "field 'aariv_banner'", ImageView.class);
         }
 
         @Override // butterknife.Unbinder
@@ -218,6 +219,7 @@ public class LiveRecommendFragment extends PreloadFragment implements View.OnCli
         liveListAdapter.c();
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private void i() {
         LiveEventBus.get("live_float_dismiss", String.class).observe(this, new Observer() { // from class: com.soft.blued.ui.live.fragment.-$$Lambda$LiveRecommendFragment$sNfnYiAWfU3ApGK0iq1uW1ug5eI
             @Override // androidx.lifecycle.Observer
@@ -243,20 +245,20 @@ public class LiveRecommendFragment extends PreloadFragment implements View.OnCli
     }
 
     private void k() {
-        FrameLayout frameLayout = (FrameLayout) this.b.findViewById(2131362322);
+        FrameLayout frameLayout = (FrameLayout) this.b.findViewById(R.id.asvp_banner_hot_parent);
         this.l = frameLayout;
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) frameLayout.getLayoutParams();
         layoutParams.width = AppInfo.l - DisplayUtil.a(getContext(), 20.0f);
         layoutParams.height = (int) ((layoutParams.width * 125.0f) / 726.0f);
         this.l.setLayoutParams(layoutParams);
-        this.n = (AutoScrollViewPager) this.b.findViewById(2131362321);
-        this.o = (LinePageIndicator) this.b.findViewById(2131368404);
+        this.n = this.b.findViewById(R.id.asvp_banner_hot_new);
+        this.o = this.b.findViewById(2131368404);
         BannerPagerAdapter bannerPagerAdapter = new BannerPagerAdapter();
         this.m = bannerPagerAdapter;
         this.n.setAdapter(bannerPagerAdapter);
-        this.n.setInterval(m.ag);
+        this.n.setInterval((long) m.ag);
         this.o.setViewPager(this.n);
-        SmartRefreshLayout smartRefreshLayout = (SmartRefreshLayout) this.b.findViewById(2131369121);
+        SmartRefreshLayout smartRefreshLayout = (SmartRefreshLayout) this.b.findViewById(R.id.refresh_view);
         this.p = smartRefreshLayout;
         smartRefreshLayout.b((OnMultiPurposeListener) new SimpleMultiPurposeListener() { // from class: com.soft.blued.ui.live.fragment.LiveRecommendFragment.1
             @Override // com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener, com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
@@ -281,14 +283,14 @@ public class LiveRecommendFragment extends PreloadFragment implements View.OnCli
                 }
             }
         });
-        this.q = (RecyclerView) this.b.findViewById(2131364131);
+        this.q = (RecyclerView) this.b.findViewById(R.id.grid_view);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this.j, 2);
         this.q.setLayoutManager(gridLayoutManager);
         this.q.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: com.soft.blued.ui.live.fragment.LiveRecommendFragment.2
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
             public void onScrollStateChanged(RecyclerView recyclerView, int i) {
                 super.onScrollStateChanged(recyclerView, i);
-                LiveRecommendFragment.this.k.onScrollStateChanged(null, i);
+                LiveRecommendFragment.this.k.onScrollStateChanged((AbsListView) null, i);
                 if (i == 0) {
                     if (LiveRecommendFragment.this.r != null) {
                         LiveRecommendFragment.this.r.c(false);
@@ -308,13 +310,13 @@ public class LiveRecommendFragment extends PreloadFragment implements View.OnCli
         });
         LinearLayout linearLayout = (LinearLayout) this.b.findViewById(R.id.ll_default_empty);
         this.s = linearLayout;
-        this.t = (TextView) linearLayout.findViewById(2131371844);
+        this.t = (TextView) linearLayout.findViewById(R.id.tv_live_detail_txt);
         if (BluedPreferences.cK()) {
             this.t.setTextColor(Color.parseColor("#989898"));
         }
-        this.z = (NoDataAndLoadFailView) this.b.findViewById(R.id.ll_no_internet);
-        this.B = (TextView) this.s.findViewById(2131371861);
-        TextView textView = (TextView) this.s.findViewById(2131371860);
+        this.z = this.b.findViewById(R.id.ll_no_internet);
+        this.B = (TextView) this.s.findViewById(R.id.tv_live_start_txt);
+        TextView textView = (TextView) this.s.findViewById(R.id.tv_live_start_btn);
         this.A = textView;
         textView.setOnClickListener(this);
         LiveListAdapter liveListAdapter = new LiveListAdapter(getFragmentActive(), this.j, false, 2, this.v);
@@ -372,7 +374,6 @@ public class LiveRecommendFragment extends PreloadFragment implements View.OnCli
         }
     }
 
-    @Override // com.blued.android.module.live_china.observer.LiveListPositionObserver.ILiveListPositionObserver
     public void a(int i, long j) {
         if (i == -1) {
             return;
@@ -386,7 +387,6 @@ public class LiveRecommendFragment extends PreloadFragment implements View.OnCli
         }
     }
 
-    @Override // com.blued.android.framework.activity.PreloadFragment
     public void a(View view) {
         LayoutInflater.from(this.j).inflate(R.layout.fragment_live_recomend, (ViewGroup) this.b, true);
         k();
@@ -394,19 +394,18 @@ public class LiveRecommendFragment extends PreloadFragment implements View.OnCli
 
     public void a(String str) {
         LiveHttpUtils.a(getContext(), new BluedUIHttpResponse<BluedEntityA<AnchorLiveStateModel>>() { // from class: com.soft.blued.ui.live.fragment.LiveRecommendFragment.5
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<AnchorLiveStateModel> bluedEntityA) {
                 if (bluedEntityA == null || !bluedEntityA.hasData() || bluedEntityA.getSingleData() == null) {
                     return;
                 }
                 try {
-                    AnchorLiveStateModel singleData = bluedEntityA.getSingleData();
-                    if (singleData.is_live != 1) {
-                        BluedURIRouterAdapter.openUserInfoPage(LiveRecommendFragment.this.j, singleData.uid, singleData.name, 0, 1, "live_banner", false, "");
+                    AnchorLiveStateModel anchorLiveStateModel = (AnchorLiveStateModel) bluedEntityA.getSingleData();
+                    if (anchorLiveStateModel.is_live != 1) {
+                        BluedURIRouterAdapter.openUserInfoPage(LiveRecommendFragment.this.j, anchorLiveStateModel.uid, anchorLiveStateModel.name, 0, 1, "live_banner", false, "");
                         return;
                     }
-                    LiveRoomData liveRoomData = new LiveRoomData(singleData.lid, 0, "footprint", singleData.uid, singleData.name, singleData.avatar, 0);
+                    LiveRoomData liveRoomData = new LiveRoomData(anchorLiveStateModel.lid, 0, "footprint", anchorLiveStateModel.uid, anchorLiveStateModel.name, anchorLiveStateModel.avatar, 0);
                     liveRoomData.details = LiveRecommendFragment.this.x;
                     LiveRecommendFragment.this.x = "";
                     LiveRoomInfoChannel.a(AppInfo.d(), liveRoomData, -1, null);
@@ -523,20 +522,17 @@ public class LiveRecommendFragment extends PreloadFragment implements View.OnCli
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         j();
     }
 
-    @Override // com.blued.android.framework.activity.PreloadFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         View onCreateView = super.onCreateView(layoutInflater, viewGroup, bundle);
         i();
         return onCreateView;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
         LiveListPositionObserver.a().b(this);
@@ -547,7 +543,6 @@ public class LiveRecommendFragment extends PreloadFragment implements View.OnCli
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onPause() {
         super.onPause();
         if (this.G) {
@@ -559,7 +554,6 @@ public class LiveRecommendFragment extends PreloadFragment implements View.OnCli
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onResume() {
         super.onResume();
         if (this.G) {
@@ -571,12 +565,10 @@ public class LiveRecommendFragment extends PreloadFragment implements View.OnCli
         }
     }
 
-    @Override // com.blued.android.framework.activity.HomeTabFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onViewCreated(View view, Bundle bundle) {
         super.onViewCreated(view, bundle);
     }
 
-    @Override // com.blued.android.framework.activity.PreloadFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void setUserVisibleHint(boolean z) {
         super.setUserVisibleHint(z);
         this.G = z;

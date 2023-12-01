@@ -23,6 +23,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
+import java.util.Grego;
 import java.util.Locale;
 import java.util.TimeZone;
 import kotlin.Metadata;
@@ -33,16 +34,14 @@ import kotlin.jvm.internal.StringCompanionObject;
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fitem/FitemRankHourFirstThree.class */
 public final class FitemRankHourFirstThree extends FreedomItem {
     private ArrayList<RankHourDataModel> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private boolean f12542c;
+    private boolean c;
     private boolean d;
     private long e;
 
     public FitemRankHourFirstThree(ArrayList<RankHourDataModel> modelList, boolean z, boolean z2, long j) {
         Intrinsics.e(modelList, "modelList");
         this.b = modelList;
-        this.f12542c = z;
+        this.c = z;
         this.d = z2;
         this.e = j;
     }
@@ -63,14 +62,14 @@ public final class FitemRankHourFirstThree extends FreedomItem {
         String str;
         TextView textView = (TextView) baseViewHolder.a(R.id.tv_title);
         if (this.d) {
-            StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
+            StringCompanionObject stringCompanionObject = StringCompanionObject.a;
             String string = context.getResources().getString(R.string.live_rank_summit_time);
             Intrinsics.c(string, "context.getResources().g…ng.live_rank_summit_time)");
             String format = String.format(string, Arrays.copyOf(new Object[]{f(), g()}, 2));
             Intrinsics.c(format, "format(format, *args)");
             str = format;
         } else {
-            StringCompanionObject stringCompanionObject2 = StringCompanionObject.f42549a;
+            StringCompanionObject stringCompanionObject2 = StringCompanionObject.a;
             String string2 = context.getResources().getString(R.string.live_rank_last_summit_time);
             Intrinsics.c(string2, "context.getResources().g…ve_rank_last_summit_time)");
             String format2 = String.format(string2, Arrays.copyOf(new Object[]{e(), f()}, 2));
@@ -78,9 +77,9 @@ public final class FitemRankHourFirstThree extends FreedomItem {
             str = format2;
         }
         textView.setText(str);
-        if (this.f12542c && this.d) {
+        if (this.c && this.d) {
             textView.setBackgroundResource(R.drawable.live_rank_hour_time_tag_top);
-        } else if (this.f12542c || !this.d) {
+        } else if (this.c || !this.d) {
             textView.setBackgroundResource(R.drawable.live_rank_hour_time_tag_previous);
         } else {
             textView.setBackgroundResource(R.drawable.live_rank_hour_time_tag_potential);
@@ -88,7 +87,7 @@ public final class FitemRankHourFirstThree extends FreedomItem {
     }
 
     private final void a(Context context, BaseViewHolder baseViewHolder, RankHourDataModel rankHourDataModel) {
-        baseViewHolder.b(R.id.iv_first_one_wing, this.f12542c).c(R.id.iv_bg, this.f12542c ? R.drawable.live_rank_hour_top_bg : R.drawable.live_rank_hour_potential_bg);
+        baseViewHolder.b(R.id.iv_first_one_wing, this.c).c(R.id.iv_bg, this.c ? R.drawable.live_rank_hour_top_bg : R.drawable.live_rank_hour_potential_bg);
         if (rankHourDataModel == null) {
             baseViewHolder.c(R.id.iv_first_one_avatar, R.drawable.live_rank_hour_default_avatar).a(R.id.tv_first_one_name, R.string.live_rank_vacancy).a(R.id.tv_first_one_name, true).c(R.id.iv_first_one_bounce).a(R.id.tv_first_one_rank, "0");
             return;
@@ -104,16 +103,16 @@ public final class FitemRankHourFirstThree extends FreedomItem {
             return;
         }
         ImageWrapper g = ImageLoader.c(baseViewHolder.b, "live_rank_hour_bounce.png").e(baseViewHolder.a(R.id.iv_first_one_bounce).hashCode()).g(-1);
-        View a2 = baseViewHolder.a(R.id.iv_first_one_bounce);
-        if (a2 == null) {
+        View a = baseViewHolder.a(R.id.iv_first_one_bounce);
+        if (a == null) {
             throw new NullPointerException("null cannot be cast to non-null type android.widget.ImageView");
         }
-        g.a((ImageView) a2);
-        View.OnClickListener a3 = a((BaseFragment) baseViewHolder.f10931a.a("BaseFragment", (String) null), rankHourDataModel);
-        if (a3 == null) {
+        g.a((ImageView) a);
+        View.OnClickListener a2 = a((BaseFragment) baseViewHolder.a.a("BaseFragment", (String) null), rankHourDataModel);
+        if (a2 == null) {
             return;
         }
-        baseViewHolder.a(R.id.rl_first_one_avatar, a3).a(R.id.tv_first_one_name, a3).a(R.id.iv_first_one_bounce, a3).b(R.id.iv_first_one_bounce, true);
+        baseViewHolder.a(R.id.rl_first_one_avatar, a2).a(R.id.tv_first_one_name, a2).a(R.id.iv_first_one_bounce, a2).b(R.id.iv_first_one_bounce, true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -145,16 +144,16 @@ public final class FitemRankHourFirstThree extends FreedomItem {
             return;
         }
         ImageWrapper g = ImageLoader.c(baseViewHolder.b, "live_rank_hour_bounce.png").e(baseViewHolder.a(R.id.iv_first_tow_bounce).hashCode()).g(-1);
-        View a2 = baseViewHolder.a(R.id.iv_first_tow_bounce);
-        if (a2 == null) {
+        View a = baseViewHolder.a(R.id.iv_first_tow_bounce);
+        if (a == null) {
             throw new NullPointerException("null cannot be cast to non-null type android.widget.ImageView");
         }
-        g.a((ImageView) a2);
-        View.OnClickListener a3 = a((BaseFragment) baseViewHolder.f10931a.a("BaseFragment", (String) null), rankHourDataModel);
-        if (a3 == null) {
+        g.a((ImageView) a);
+        View.OnClickListener a2 = a((BaseFragment) baseViewHolder.a.a("BaseFragment", (String) null), rankHourDataModel);
+        if (a2 == null) {
             return;
         }
-        baseViewHolder.a(R.id.rl_first_tow_avatar, a3).a(R.id.tv_first_tow_name, a3).a(R.id.iv_first_tow_bounce, a3).b(R.id.iv_first_tow_bounce, true);
+        baseViewHolder.a(R.id.rl_first_tow_avatar, a2).a(R.id.tv_first_tow_name, a2).a(R.id.iv_first_tow_bounce, a2).b(R.id.iv_first_tow_bounce, true);
     }
 
     private final void c(Context context, BaseViewHolder baseViewHolder, RankHourDataModel rankHourDataModel) {
@@ -173,21 +172,21 @@ public final class FitemRankHourFirstThree extends FreedomItem {
             return;
         }
         ImageWrapper g = ImageLoader.c(baseViewHolder.b, "live_rank_hour_bounce.png").e(baseViewHolder.a(R.id.iv_first_three_bounce).hashCode()).g(-1);
-        View a2 = baseViewHolder.a(R.id.iv_first_three_bounce);
-        if (a2 == null) {
+        View a = baseViewHolder.a(R.id.iv_first_three_bounce);
+        if (a == null) {
             throw new NullPointerException("null cannot be cast to non-null type android.widget.ImageView");
         }
-        g.a((ImageView) a2);
-        View.OnClickListener a3 = a((BaseFragment) baseViewHolder.f10931a.a("BaseFragment", (String) null), rankHourDataModel);
-        if (a3 == null) {
+        g.a((ImageView) a);
+        View.OnClickListener a2 = a((BaseFragment) baseViewHolder.a.a("BaseFragment", (String) null), rankHourDataModel);
+        if (a2 == null) {
             return;
         }
-        baseViewHolder.a(R.id.rl_first_three_avatar, a3).a(R.id.tv_first_three_name, a3).a(R.id.iv_first_three_bounce, a3).b(R.id.iv_first_three_bounce, true);
+        baseViewHolder.a(R.id.rl_first_three_avatar, a2).a(R.id.tv_first_three_name, a2).a(R.id.iv_first_three_bounce, a2).b(R.id.iv_first_three_bounce, true);
     }
 
     private final String e() {
         Calendar calendar = Calendar.getInstance(TimeZone.getDefault());
-        calendar.setTimeInMillis((this.e * 1000) - 3600000);
+        calendar.setTimeInMillis((this.e * 1000) - ((long) Grego.MILLIS_PER_HOUR));
         return BlueAppLocal.d() ? new SimpleDateFormat("HH", BlueAppLocal.c()).format(calendar.getTime()) : new SimpleDateFormat("HH", Locale.ENGLISH).format(calendar.getTime());
     }
 
@@ -199,7 +198,7 @@ public final class FitemRankHourFirstThree extends FreedomItem {
 
     private final String g() {
         Calendar calendar = Calendar.getInstance(TimeZone.getDefault());
-        calendar.setTimeInMillis((this.e * 1000) + 3600000);
+        calendar.setTimeInMillis((this.e * 1000) + ((long) Grego.MILLIS_PER_HOUR));
         return BlueAppLocal.d() ? new SimpleDateFormat("HH", BlueAppLocal.c()).format(calendar.getTime()) : new SimpleDateFormat("HH", Locale.ENGLISH).format(calendar.getTime());
     }
 

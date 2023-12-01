@@ -14,9 +14,8 @@ import org.apache.http.impl.client.RedirectLocations;
 import org.apache.http.params.HttpParams;
 import org.apache.http.protocol.HttpContext;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-7994992-dex2jar.jar:com/loopj/android/http/MyRedirectHandler.class */
-public class MyRedirectHandler extends DefaultRedirectHandler {
+class MyRedirectHandler extends DefaultRedirectHandler {
     private static final String REDIRECT_LOCATIONS = "http.protocol.redirect-locations";
     private final boolean enableRedirects;
 

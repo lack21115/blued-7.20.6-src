@@ -9,17 +9,17 @@ public class i {
     @SerializedName("html_data_pref")
 
     /* renamed from: a  reason: collision with root package name */
-    private Map<String, g> f41840a = new HashMap();
+    private Map<String, g> f28149a = new HashMap();
 
     public final g a(String str) {
-        return this.f41840a.get(str);
+        return this.f28149a.get(str);
     }
 
     public final void a(String str, g gVar) {
-        this.f41840a.put(str, gVar);
+        this.f28149a.put(str, gVar);
     }
 
     public final g b(String str) {
-        return this.f41840a.remove(str);
+        return this.f28149a.remove(str);
     }
 }

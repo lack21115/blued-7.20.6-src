@@ -5,13 +5,10 @@ import androidx.viewbinding.ViewBinding;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ItemCityLayoutBinding.class */
 public final class ItemCityLayoutBinding implements ViewBinding {
+    private final ConstraintLayout a;
 
-    /* renamed from: a  reason: collision with root package name */
-    private final ConstraintLayout f16570a;
-
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f16570a;
+        return this.a;
     }
 }

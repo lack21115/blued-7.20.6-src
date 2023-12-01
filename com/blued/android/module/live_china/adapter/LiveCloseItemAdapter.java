@@ -10,8 +10,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.fragment.app.DialogFragment;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.net.IRequestHost;
 import com.blued.android.module.common.utils.CommonStringUtils;
@@ -27,26 +25,18 @@ import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/adapter/LiveCloseItemAdapter.class */
 public class LiveCloseItemAdapter extends BaseAdapter {
-
-    /* renamed from: a  reason: collision with root package name */
-    private LayoutInflater f11602a;
+    private LayoutInflater a;
     private Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private List<BluedLiveRankListData> f11603c;
+    private List<BluedLiveRankListData> c;
     private boolean d;
     private IRequestHost e;
     private Dialog f;
 
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/adapter/LiveCloseItemAdapter$ViewHolder.class */
     class ViewHolder {
-
-        /* renamed from: a  reason: collision with root package name */
-        public ImageView f11609a;
+        public ImageView a;
         ImageView b;
-
-        /* renamed from: c  reason: collision with root package name */
-        ImageView f11610c;
+        ImageView c;
         TextView d;
         TextView e;
         TextView f;
@@ -62,12 +52,12 @@ public class LiveCloseItemAdapter extends BaseAdapter {
 
     @Override // android.widget.Adapter
     public int getCount() {
-        return this.f11603c.size();
+        return this.c.size();
     }
 
     @Override // android.widget.Adapter
     public Object getItem(int i) {
-        return this.f11603c.get(i);
+        return this.c.get(i);
     }
 
     @Override // android.widget.Adapter
@@ -81,9 +71,9 @@ public class LiveCloseItemAdapter extends BaseAdapter {
         ViewHolder viewHolder;
         if (view == null) {
             viewHolder = new ViewHolder();
-            view2 = this.f11602a.inflate(R.layout.item_live_close_guest, viewGroup, false);
+            view2 = this.a.inflate(R.layout.item_live_close_guest, viewGroup, false);
             viewHolder.b = (ImageView) view2.findViewById(R.id.live_end_user_pic);
-            viewHolder.f11609a = (ImageView) view2.findViewById(R.id.live_end_header_bg);
+            viewHolder.a = (ImageView) view2.findViewById(R.id.live_end_header_bg);
             viewHolder.e = (TextView) view2.findViewById(R.id.live_user_name);
             viewHolder.f = (TextView) view2.findViewById(R.id.live_user_score);
             viewHolder.h = (LinearLayout) view2.findViewById(R.id.ll_live_rank_name);
@@ -91,30 +81,30 @@ public class LiveCloseItemAdapter extends BaseAdapter {
             viewHolder.k = (TextView) view2.findViewById(R.id.tv_attention);
             viewHolder.j = (ImageView) view2.findViewById(R.id.img_attention);
             viewHolder.g = (ImageView) view2.findViewById(R.id.img_viewer);
-            viewHolder.f11610c = (ImageView) view2.findViewById(R.id.img_verify);
+            viewHolder.c = (ImageView) view2.findViewById(R.id.img_verify);
             viewHolder.d = (TextView) view2.findViewById(R.id.tv_live_rank);
             view2.setTag(viewHolder);
         } else {
             view2 = view;
             viewHolder = (ViewHolder) view.getTag();
         }
-        final BluedLiveRankListData bluedLiveRankListData = this.f11603c.get(i);
+        final BluedLiveRankListData bluedLiveRankListData = this.c.get(i);
         if (bluedLiveRankListData != null) {
             if (bluedLiveRankListData.active == 1) {
                 viewHolder.g.setVisibility(0);
             } else {
                 viewHolder.g.setVisibility(8);
             }
-            viewHolder.f11609a.setVisibility(0);
+            viewHolder.a.setVisibility(0);
             viewHolder.d.setVisibility(8);
             if (i == 0) {
-                viewHolder.f11609a.setBackgroundResource(R.drawable.live_close_host_rank_header1);
+                viewHolder.a.setBackgroundResource(R.drawable.live_close_host_rank_header1);
             } else if (i == 1) {
-                viewHolder.f11609a.setBackgroundResource(R.drawable.live_close_host_rank_header2);
+                viewHolder.a.setBackgroundResource(R.drawable.live_close_host_rank_header2);
             } else if (i == 2) {
-                viewHolder.f11609a.setBackgroundResource(R.drawable.live_close_host_rank_header3);
+                viewHolder.a.setBackgroundResource(R.drawable.live_close_host_rank_header3);
             } else {
-                viewHolder.f11609a.setVisibility(4);
+                viewHolder.a.setVisibility(4);
                 viewHolder.d.setVisibility(0);
                 if (i < 9) {
                     TextView textView = viewHolder.d;
@@ -125,11 +115,11 @@ public class LiveCloseItemAdapter extends BaseAdapter {
             }
             ImageLoader.a(this.e, bluedLiveRankListData.avatar).b(R.drawable.user_bg_round).c().a(viewHolder.b);
             if ("0".equals(Integer.valueOf(bluedLiveRankListData.vbadge))) {
-                viewHolder.f11610c.setVisibility(8);
-                viewHolder.f11610c.setImageDrawable(this.b.getResources().getDrawable(R.drawable.v_gray));
+                viewHolder.c.setVisibility(8);
+                viewHolder.c.setImageDrawable(this.b.getResources().getDrawable(R.drawable.v_gray));
             } else {
-                viewHolder.f11610c.setVisibility(0);
-                LiveRoomInfo.a().a(viewHolder.f11610c, bluedLiveRankListData.vbadge);
+                viewHolder.c.setVisibility(0);
+                LiveRoomInfo.a().a(viewHolder.c, bluedLiveRankListData.vbadge);
             }
             viewHolder.b.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.adapter.LiveCloseItemAdapter.1
                 @Override // android.view.View.OnClickListener
@@ -138,7 +128,7 @@ public class LiveCloseItemAdapter extends BaseAdapter {
                     if (LiveCloakingUtil.b(bluedLiveRankListData.privilege)) {
                         return;
                     }
-                    List<Fragment> fragments = ((FragmentActivity) LiveCloseItemAdapter.this.b).getSupportFragmentManager().getFragments();
+                    List fragments = LiveCloseItemAdapter.this.b.getSupportFragmentManager().getFragments();
                     if (fragments != null && fragments.size() >= 2 && (fragments.get(1) instanceof DialogFragment) && fragments.get(1) != null) {
                         ((DialogFragment) fragments.get(1)).dismiss();
                     }
@@ -152,7 +142,7 @@ public class LiveCloseItemAdapter extends BaseAdapter {
                     if (LiveCloakingUtil.b(bluedLiveRankListData.privilege)) {
                         return;
                     }
-                    List<Fragment> fragments = ((FragmentActivity) LiveCloseItemAdapter.this.b).getSupportFragmentManager().getFragments();
+                    List fragments = LiveCloseItemAdapter.this.b.getSupportFragmentManager().getFragments();
                     if (fragments != null && fragments.size() >= 2 && (fragments.get(1) instanceof DialogFragment) && fragments.get(1) != null) {
                         ((DialogFragment) fragments.get(1)).dismiss();
                     }

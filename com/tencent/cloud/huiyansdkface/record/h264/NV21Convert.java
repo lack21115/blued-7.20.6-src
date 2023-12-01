@@ -6,11 +6,11 @@ import java.nio.ByteBuffer;
 public class NV21Convert {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f36063a;
+    private int f22372a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f36064c;
+    private int f22373c;
     private int d;
     private int e;
     private boolean f;
@@ -25,11 +25,11 @@ public class NV21Convert {
     public byte[] convert(byte[] bArr) {
         byte[] bArr2;
         byte[] bArr3 = this.i;
-        if (bArr3 == null || bArr3.length != (((this.f36063a * 3) * this.f36064c) / 2) + this.h) {
-            this.i = new byte[(((this.f36063a * 3) * this.f36064c) / 2) + this.h];
+        if (bArr3 == null || bArr3.length != (((this.f22372a * 3) * this.f22373c) / 2) + this.h) {
+            this.i = new byte[(((this.f22372a * 3) * this.f22373c) / 2) + this.h];
         }
         if (!this.f) {
-            if (this.f36063a == this.b && this.f36064c == this.d) {
+            if (this.f22372a == this.b && this.f22373c == this.d) {
                 if (!this.g) {
                     int i = this.e;
                     while (true) {
@@ -48,15 +48,15 @@ public class NV21Convert {
                 }
                 bArr2 = bArr;
                 if (this.h > 0) {
-                    System.arraycopy((Object) bArr, 0, (Object) this.i, 0, this.e);
+                    System.arraycopy(bArr, 0, this.i, 0, this.e);
                     int i5 = this.e;
-                    System.arraycopy((Object) bArr, i5, (Object) this.i, this.h + i5, i5 / 2);
+                    System.arraycopy(bArr, i5, this.i, this.h + i5, i5 / 2);
                     bArr2 = this.i;
                 }
             }
             return bArr;
         }
-        if (this.f36063a == this.b && this.f36064c == this.d) {
+        if (this.f22372a == this.b && this.f22373c == this.d) {
             if (!this.g) {
                 int i6 = 0;
                 while (true) {
@@ -89,13 +89,13 @@ public class NV21Convert {
             if (this.h == 0) {
                 byte[] bArr7 = this.i;
                 int i14 = this.e;
-                System.arraycopy((Object) bArr7, 0, (Object) bArr, i14, i14 / 2);
+                System.arraycopy(bArr7, 0, bArr, i14, i14 / 2);
                 return bArr;
             }
-            System.arraycopy((Object) bArr, 0, (Object) this.i, 0, this.e);
+            System.arraycopy(bArr, 0, this.i, 0, this.e);
             byte[] bArr8 = this.i;
             int i15 = this.e;
-            System.arraycopy((Object) bArr8, 0, (Object) bArr8, this.h + i15, i15 / 2);
+            System.arraycopy(bArr8, 0, bArr8, this.h + i15, i15 / 2);
             bArr2 = this.i;
         }
         return bArr;
@@ -115,11 +115,11 @@ public class NV21Convert {
     }
 
     public int getSliceHeight() {
-        return this.f36063a;
+        return this.f22372a;
     }
 
     public int getStride() {
-        return this.f36064c;
+        return this.f22373c;
     }
 
     public boolean getUVPanesReversed() {
@@ -160,17 +160,17 @@ public class NV21Convert {
     public void setSize(int i, int i2) {
         this.b = i2;
         this.d = i;
-        this.f36063a = i2;
-        this.f36064c = i;
+        this.f22372a = i2;
+        this.f22373c = i;
         this.e = i * i2;
     }
 
     public void setSliceHeight(int i) {
-        this.f36063a = i;
+        this.f22372a = i;
     }
 
     public void setStride(int i) {
-        this.f36064c = i;
+        this.f22373c = i;
     }
 
     public void setYPadding(int i) {

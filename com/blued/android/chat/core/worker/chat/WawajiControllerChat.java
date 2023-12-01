@@ -12,8 +12,6 @@ import com.blued.android.chat.core.worker.Connector;
 import com.blued.android.chat.core.worker.PackSendHelper;
 import com.blued.android.chat.utils.ChatHelper;
 import com.blued.android.chat.utils.MsgPackHelper;
-import com.bytedance.sdk.openadsdk.live.TTLiveConstants;
-import com.igexin.push.core.b;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/chat/core/worker/chat/WawajiControllerChat.class */
 public class WawajiControllerChat {
@@ -117,7 +115,7 @@ public class WawajiControllerChat {
         if (pushMsgPackage.msgMapExtra != null) {
             long longValue = MsgPackHelper.getLongValue(pushMsgPackage.msgMapExtra, "uid");
             String stringValue = MsgPackHelper.getStringValue(pushMsgPackage.msgMapExtra, "order_id");
-            WawajiControllerHelper.WawajiControllerConfig parseData = WawajiControllerHelper.WawajiControllerConfig.parseData(MsgPackHelper.getMapValue(pushMsgPackage.msgMapExtra, b.U));
+            WawajiControllerHelper.WawajiControllerConfig parseData = WawajiControllerHelper.WawajiControllerConfig.parseData(MsgPackHelper.getMapValue(pushMsgPackage.msgMapExtra, "config"));
             IWawajiControllerCallback iWawajiControllerCallback = this.wawajiControllerCallback;
             if (iWawajiControllerCallback != null) {
                 iWawajiControllerCallback.onPlayConfig(longValue, stringValue, parseData);
@@ -212,7 +210,7 @@ public class WawajiControllerChat {
                 if (basePackage2 instanceof ReqAckPackage) {
                     ReqAckPackage reqAckPackage = (ReqAckPackage) basePackage2;
                     if (reqAckPackage.error == 0) {
-                        WawajiControllerChat.this.initControllerSuccess(MsgPackHelper.getLongValue(reqAckPackage.reqResponse, "session_id"), MsgPackHelper.getStringValue(reqAckPackage.reqResponse, TTLiveConstants.ROOMID_KEY), MsgPackHelper.getStringValue(reqAckPackage.reqResponse, "stream_id1"), MsgPackHelper.getStringValue(reqAckPackage.reqResponse, "stream_id2"));
+                        WawajiControllerChat.this.initControllerSuccess(MsgPackHelper.getLongValue(reqAckPackage.reqResponse, ReqAckPackage.REQ_RESPONSE_KEY.SESSION_ID), MsgPackHelper.getStringValue(reqAckPackage.reqResponse, "room_id"), MsgPackHelper.getStringValue(reqAckPackage.reqResponse, "stream_id1"), MsgPackHelper.getStringValue(reqAckPackage.reqResponse, "stream_id2"));
                         return;
                     }
                     WawajiControllerChat wawajiControllerChat = WawajiControllerChat.this;

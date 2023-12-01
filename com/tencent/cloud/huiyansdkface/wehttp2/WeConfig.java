@@ -5,7 +5,6 @@ import android.os.Build;
 import android.security.KeyChain;
 import android.text.TextUtils;
 import android.util.Log;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.google.common.net.HttpHeaders;
 import com.huawei.hms.support.hianalytics.HiAnalyticsConstant;
 import com.tencent.cloud.huiyansdkface.okhttp3.CertificatePinner;
@@ -53,14 +52,14 @@ import javax.net.ssl.X509TrustManager;
 public class WeConfig {
 
     /* renamed from: a  reason: collision with root package name */
-    private static int f36111a = -1;
+    private static int f22420a = -1;
     private KeyManagerFactory A;
     private WeLog.ILogTag B;
     private Dispatcher C;
     private volatile OkHttpClient b;
 
     /* renamed from: c  reason: collision with root package name */
-    private OkHttpClient.Builder f36112c;
+    private OkHttpClient.Builder f22421c;
     private boolean d;
     private WeConfigLoader e;
     private volatile String f;
@@ -210,7 +209,7 @@ public class WeConfig {
 
     /* JADX INFO: Access modifiers changed from: private */
     public List<InetAddress> a(String str) throws UnknownHostException {
-        List<InetAddress> lookup = this.v != null ? this.v.lookup(str) : Dns.f35848a.lookup(str);
+        List<InetAddress> lookup = this.v != null ? this.v.lookup(str) : Dns.f22157a.lookup(str);
         if (this.u == null || this.u == IpStrategy.DNS_ORDER || lookup == null) {
             return lookup;
         }
@@ -260,7 +259,7 @@ public class WeConfig {
         ConnectionSpec build = new ConnectionSpec.Builder(ConnectionSpec.b).tlsVersions(TlsVersion.TLS_1_2).build();
         ArrayList arrayList = new ArrayList();
         arrayList.add(build);
-        arrayList.add(ConnectionSpec.f35838c);
+        arrayList.add(ConnectionSpec.f22147c);
         arrayList.add(ConnectionSpec.d);
         builder.connectionSpecs(arrayList);
     }
@@ -269,8 +268,8 @@ public class WeConfig {
         int i;
         synchronized (WeConfig.class) {
             try {
-                i = f36111a + 1;
-                f36111a = i;
+                i = f22420a + 1;
+                f22420a = i;
             } catch (Throwable th) {
                 throw th;
             }
@@ -434,8 +433,8 @@ public class WeConfig {
         String str2 = str;
         if (str != null) {
             str2 = str;
-            if (!str.endsWith(BridgeUtil.SPLIT_MARK)) {
-                str2 = str + BridgeUtil.SPLIT_MARK;
+            if (!str.endsWith("/")) {
+                str2 = str + "/";
             }
         }
         this.f = str2;
@@ -515,13 +514,13 @@ public class WeConfig {
     }
 
     public OkHttpClient.Builder clientConfig() {
-        if (this.f36112c == null) {
-            this.f36112c = new OkHttpClient.Builder();
+        if (this.f22421c == null) {
+            this.f22421c = new OkHttpClient.Builder();
         }
         if (this.d) {
             Log.w("WeConfig", "config after request");
         }
-        return this.f36112c;
+        return this.f22421c;
     }
 
     public WeConfig clientKeyManagerFactory(KeyManagerFactory keyManagerFactory) {
@@ -636,7 +635,7 @@ public class WeConfig {
                 return trim;
             }
             String str3 = trim;
-            if (trim.startsWith(BridgeUtil.SPLIT_MARK)) {
+            if (trim.startsWith("/")) {
                 str3 = trim.substring(1);
             }
             str2 = this.f + str3;
@@ -676,8 +675,8 @@ public class WeConfig {
 
     public WeConfig log(WeLog.Builder builder) {
         if (this.p != null) {
-            this.p.setLevel(builder.e).prettyLog(builder.f36133a).logTag(builder.b).setLogger(builder.g);
-            this.p.cutLongStr(builder.f36134c);
+            this.p.setLevel(builder.e).prettyLog(builder.f22442a).logTag(builder.b).setLogger(builder.g);
+            this.p.cutLongStr(builder.f22443c);
             this.p.longStrLength(builder.d);
         }
         this.p = builder.build();
@@ -689,7 +688,7 @@ public class WeConfig {
     }
 
     public WeConfig log(WeLog.Level level) {
-        return log(level, WeLog.f36130a);
+        return log(level, WeLog.f22439a);
     }
 
     public WeConfig log(WeLog.Level level, WeLog.Logger logger) {
@@ -752,9 +751,8 @@ public class WeConfig {
                     List list = (List) hashMap.get(pattern);
                     ArrayList arrayList = list;
                     if (list == null) {
-                        ArrayList arrayList2 = new ArrayList();
-                        hashMap.put(pattern, arrayList2);
-                        arrayList = arrayList2;
+                        arrayList = new ArrayList();
+                        hashMap.put(pattern, arrayList);
                     }
                     arrayList.add(pin.getPin());
                 }

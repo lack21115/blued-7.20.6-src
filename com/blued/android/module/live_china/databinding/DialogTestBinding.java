@@ -5,13 +5,10 @@ import androidx.viewbinding.ViewBinding;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/DialogTestBinding.class */
 public final class DialogTestBinding implements ViewBinding {
+    private final LinearLayout a;
 
-    /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f11835a;
-
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f11835a;
+        return this.a;
     }
 }

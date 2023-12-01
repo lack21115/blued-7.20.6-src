@@ -13,7 +13,6 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 import com.blued.android.framework.permission.PermissionCallbacks;
 import com.blued.android.framework.ui.xpop.XPopup;
-import com.blued.android.framework.ui.xpop.core.BasePopupView;
 import com.blued.android.module.common.utils.PermissionUtils;
 import com.blued.android.module.common.widget.menu.BottomMenuPop;
 import com.blued.android.module.media.selector.utils.Tools;
@@ -29,7 +28,7 @@ import java.util.ArrayList;
 public class ShowVideoFragment extends BasePhotoFragment implements View.OnClickListener {
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f33110c;
+    private Context f19419c;
     private View d;
     private ImagePagerAdapter e;
     private HackyViewPager f;
@@ -63,8 +62,8 @@ public class ShowVideoFragment extends BasePhotoFragment implements View.OnClick
         public Fragment getItem(int i) {
             VideoPlayConfig videoPlayConfig = new VideoPlayConfig();
             videoPlayConfig.b = ShowVideoFragment.this.l;
-            videoPlayConfig.f15652a = ShowVideoFragment.this.m;
-            videoPlayConfig.f15653c = ShowVideoFragment.this.q;
+            videoPlayConfig.a = ShowVideoFragment.this.m;
+            videoPlayConfig.c = ShowVideoFragment.this.q;
             return BizVideoDetailFragment.a(videoPlayConfig, ShowVideoFragment.this.h);
         }
     }
@@ -72,7 +71,7 @@ public class ShowVideoFragment extends BasePhotoFragment implements View.OnClick
     private void a(final String str) {
         ArrayList arrayList = new ArrayList();
         BottomMenuPop.MenuItemInfo menuItemInfo = new BottomMenuPop.MenuItemInfo();
-        menuItemInfo.f11214a = getResources().getString(R.string.save);
+        menuItemInfo.a = getResources().getString(R.string.save);
         menuItemInfo.b = 2131101766;
         menuItemInfo.d = new View.OnClickListener() { // from class: com.soft.blued.ui.photo.fragment.ShowVideoFragment.2
             @Override // android.view.View.OnClickListener
@@ -82,13 +81,11 @@ public class ShowVideoFragment extends BasePhotoFragment implements View.OnClick
                     ShowVideoFragment.this.s.p();
                 }
                 PermissionUtils.f(new PermissionCallbacks() { // from class: com.soft.blued.ui.photo.fragment.ShowVideoFragment.2.1
-                    @Override // com.blued.android.framework.permission.PermissionCallbacks
                     public void U_() {
                         Tools.d(str);
                         EventTrackMessage.a(MessageProtos.Event.MSG_SAVE_VIDEO_CLICK, MessageProtos.StrangerSource.UNKNOWN_STRANGER_SOURCE, ShowVideoFragment.this.r);
                     }
 
-                    @Override // com.blued.android.framework.permission.PermissionCallbacks
                     public void a(String[] strArr) {
                     }
                 });
@@ -98,7 +95,7 @@ public class ShowVideoFragment extends BasePhotoFragment implements View.OnClick
         BottomMenuPop bottomMenuPop = new BottomMenuPop(getContext());
         this.s = bottomMenuPop;
         bottomMenuPop.b = arrayList;
-        new XPopup.Builder(getContext()).a((BasePopupView) this.s).h();
+        new XPopup.Builder(getContext()).a(this.s).h();
     }
 
     private void h() {
@@ -118,10 +115,10 @@ public class ShowVideoFragment extends BasePhotoFragment implements View.OnClick
 
     private void i() {
         this.f = (HackyViewPager) this.d.findViewById(2131368810);
-        ImageView imageView = (ImageView) this.d.findViewById(2131362969);
+        ImageView imageView = (ImageView) this.d.findViewById(R.id.close_album_btn);
         this.g = imageView;
         imageView.setOnClickListener(this);
-        View findViewById = this.d.findViewById(2131371256);
+        View findViewById = this.d.findViewById(R.id.tv_delete);
         this.j = findViewById;
         findViewById.setOnClickListener(this);
         this.k = (TextView) this.d.findViewById(R.id.tv_position);
@@ -143,21 +140,21 @@ public class ShowVideoFragment extends BasePhotoFragment implements View.OnClick
     private void j() {
     }
 
-    @Override // com.soft.blued.ui.photo.fragment.BasePhotoFragment, com.blued.android.module.player.media.observer.EventCallBackListener
+    @Override // com.soft.blued.ui.photo.fragment.BasePhotoFragment
     public void a(int i) {
         super.a(i);
         this.f.getBackground().setAlpha(i);
-        if (this.f33053a) {
+        if (this.f19362a) {
             a((View) this.g, (View) this.k, false);
         }
     }
 
-    @Override // com.soft.blued.ui.photo.fragment.BasePhotoFragment, com.blued.android.module.player.media.observer.EventCallBackListener
+    @Override // com.soft.blued.ui.photo.fragment.BasePhotoFragment
     public void a(View view) {
         super.a(view);
     }
 
-    @Override // com.soft.blued.ui.photo.fragment.BasePhotoFragment, com.blued.android.module.player.media.observer.EventCallBackListener
+    @Override // com.soft.blued.ui.photo.fragment.BasePhotoFragment
     public void a(Object... objArr) {
         super.a(objArr);
         if (this.n.booleanValue() && objArr != null && objArr.length > 0) {
@@ -168,22 +165,21 @@ public class ShowVideoFragment extends BasePhotoFragment implements View.OnClick
         }
     }
 
-    @Override // com.soft.blued.ui.photo.fragment.BasePhotoFragment, com.blued.android.module.player.media.observer.EventCallBackListener
+    @Override // com.soft.blued.ui.photo.fragment.BasePhotoFragment
     public void al_() {
         super.al_();
-        if (this.f33053a) {
+        if (this.f19362a) {
             return;
         }
         b(this.g, this.k, false);
     }
 
-    @Override // com.soft.blued.ui.photo.fragment.BasePhotoFragment, com.blued.android.module.player.media.observer.EventCallBackListener
+    @Override // com.soft.blued.ui.photo.fragment.BasePhotoFragment
     public void b(View view) {
         super.b(view);
         f();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment
     public boolean isActivitySwipeBackEnable() {
         return false;
     }
@@ -197,15 +193,14 @@ public class ShowVideoFragment extends BasePhotoFragment implements View.OnClick
         e();
     }
 
-    @Override // com.soft.blued.ui.photo.fragment.BasePhotoFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.soft.blued.ui.photo.fragment.BasePhotoFragment
     public void onCreate(Bundle bundle) {
         getActivity().getWindow().setFlags(128, 128);
         super.onCreate(bundle);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.f33110c = getActivity();
+        this.f19419c = getActivity();
         View view = this.d;
         if (view == null) {
             this.d = layoutInflater.inflate(R.layout.fragment_show_album, viewGroup, false);
@@ -218,7 +213,7 @@ public class ShowVideoFragment extends BasePhotoFragment implements View.OnClick
         return this.d;
     }
 
-    @Override // com.soft.blued.ui.photo.fragment.BasePhotoFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.soft.blued.ui.photo.fragment.BasePhotoFragment
     public void onDestroy() {
         super.onDestroy();
     }

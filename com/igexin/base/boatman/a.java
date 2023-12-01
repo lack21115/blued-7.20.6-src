@@ -6,14 +6,14 @@ import com.igexin.base.boatman.receive.IBoatResult;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public Object f23209a;
+    public Object f9601a;
     public IBoatResult b;
 
     public a() {
     }
 
     public a(Object obj, IBoatResult iBoatResult) {
-        this.f23209a = obj;
+        this.f9601a = obj;
         this.b = iBoatResult;
     }
 }

@@ -7,16 +7,16 @@ import com.tencent.tencentmap.mapsdk.maps.model.TileProvider;
 public class rg {
 
     /* renamed from: a  reason: collision with root package name */
-    private pg f37754a;
+    private pg f24063a;
 
     public rg(pg pgVar) {
-        this.f37754a = pgVar;
+        this.f24063a = pgVar;
     }
 
     public kg a(TileOverlayOptions tileOverlayOptions) {
         TileProvider tileProvider = tileOverlayOptions.getTileProvider();
-        qg qgVar = tileProvider != null ? tileProvider instanceof vg ? new qg(this.f37754a, tileOverlayOptions) : tileProvider instanceof xh ? new sg(this.f37754a, tileOverlayOptions) : new kg(this.f37754a, tileOverlayOptions) : null;
-        this.f37754a.a(qgVar);
+        qg qgVar = tileProvider != null ? tileProvider instanceof vg ? new qg(this.f24063a, tileOverlayOptions) : tileProvider instanceof xh ? new sg(this.f24063a, tileOverlayOptions) : new kg(this.f24063a, tileOverlayOptions) : null;
+        this.f24063a.a(qgVar);
         return qgVar;
     }
 }

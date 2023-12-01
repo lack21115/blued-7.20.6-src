@@ -1,5 +1,6 @@
 package android.util;
 
+import com.anythink.expressad.exoplayer.b;
 import java.io.UnsupportedEncodingException;
 
 /* loaded from: source-9557208-dex2jar.jar:android/util/Base64.class */
@@ -243,7 +244,7 @@ public class Base64 {
 
     public static String encodeToString(byte[] bArr, int i) {
         try {
-            return new String(encode(bArr, i), "US-ASCII");
+            return new String(encode(bArr, i), b.i);
         } catch (UnsupportedEncodingException e) {
             throw new AssertionError(e);
         }
@@ -251,7 +252,7 @@ public class Base64 {
 
     public static String encodeToString(byte[] bArr, int i, int i2, int i3) {
         try {
-            return new String(encode(bArr, i, i2, i3), "US-ASCII");
+            return new String(encode(bArr, i, i2, i3), b.i);
         } catch (UnsupportedEncodingException e) {
             throw new AssertionError(e);
         }

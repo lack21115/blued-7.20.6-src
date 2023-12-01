@@ -14,13 +14,9 @@ import kotlinx.coroutines.CoroutineScope;
 @DebugMetadata(b = "CommunitySampleViewModel.kt", c = {40, 41}, d = "invokeSuspend", e = "com.blued.community.manager.CommunitySampleViewModel$requestDataWithContext$1$entityA$1")
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/manager/CommunitySampleViewModel$requestDataWithContext$1$entityA$1.class */
 final class CommunitySampleViewModel$requestDataWithContext$1$entityA$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super BluedEntityA<BluedIngSelfFeed>>, Object> {
-
-    /* renamed from: a  reason: collision with root package name */
-    Object f19107a;
+    Object a;
     Object b;
-
-    /* renamed from: c  reason: collision with root package name */
-    int f19108c;
+    int c;
     final /* synthetic */ CommunitySampleViewModel d;
     private /* synthetic */ Object e;
 
@@ -34,7 +30,7 @@ final class CommunitySampleViewModel$requestDataWithContext$1$entityA$1 extends 
     @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super BluedEntityA<BluedIngSelfFeed>> continuation) {
-        return ((CommunitySampleViewModel$requestDataWithContext$1$entityA$1) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+        return ((CommunitySampleViewModel$requestDataWithContext$1$entityA$1) create(coroutineScope, continuation)).invokeSuspend(Unit.a);
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl

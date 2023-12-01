@@ -41,8 +41,8 @@ public final class LiveRoomToolsChange extends GeneratedMessageV3 implements Liv
     private int toolsType_;
     private static final LiveRoomToolsChange DEFAULT_INSTANCE = new LiveRoomToolsChange();
     private static final Parser<LiveRoomToolsChange> PARSER = new AbstractParser<LiveRoomToolsChange>() { // from class: cn.irisgw.live.LiveRoomToolsChange.1
-        @Override // com.google.protobuf.Parser
-        public LiveRoomToolsChange parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        /* renamed from: parsePartialFrom */
+        public LiveRoomToolsChange m5142parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             return new LiveRoomToolsChange(codedInputStream, extensionRegistryLite);
         }
     };
@@ -87,22 +87,22 @@ public final class LiveRoomToolsChange extends GeneratedMessageV3 implements Liv
             boolean unused = LiveRoomToolsChange.alwaysUseFieldBuilders;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: addRepeatedField */
+        public Builder m5144addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.addRepeatedField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public LiveRoomToolsChange build() {
-            LiveRoomToolsChange buildPartial = buildPartial();
-            if (buildPartial.isInitialized()) {
-                return buildPartial;
+        /* renamed from: build */
+        public LiveRoomToolsChange m5146build() {
+            LiveRoomToolsChange m5148buildPartial = m5148buildPartial();
+            if (m5148buildPartial.isInitialized()) {
+                return m5148buildPartial;
             }
-            throw newUninitializedMessageException((Message) buildPartial);
+            throw newUninitializedMessageException(m5148buildPartial);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public LiveRoomToolsChange buildPartial() {
+        /* renamed from: buildPartial */
+        public LiveRoomToolsChange m5148buildPartial() {
             LiveRoomToolsChange liveRoomToolsChange = new LiveRoomToolsChange(this);
             liveRoomToolsChange.badgeText_ = this.badgeText_;
             liveRoomToolsChange.desc_ = this.desc_;
@@ -118,8 +118,8 @@ public final class LiveRoomToolsChange extends GeneratedMessageV3 implements Liv
             return liveRoomToolsChange;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public Builder clear() {
+        /* renamed from: clear */
+        public Builder m5152clear() {
             super.clear();
             this.badgeText_ = "";
             this.desc_ = "";
@@ -170,8 +170,8 @@ public final class LiveRoomToolsChange extends GeneratedMessageV3 implements Liv
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+        /* renamed from: clearField */
+        public Builder m5154clearField(Descriptors.FieldDescriptor fieldDescriptor) {
             return (Builder) super.clearField(fieldDescriptor);
         }
 
@@ -181,8 +181,8 @@ public final class LiveRoomToolsChange extends GeneratedMessageV3 implements Liv
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+        /* renamed from: clearOneof */
+        public Builder m5157clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
             return (Builder) super.clearOneof(oneofDescriptor);
         }
 
@@ -204,10 +204,9 @@ public final class LiveRoomToolsChange extends GeneratedMessageV3 implements Liv
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder m5163clone() {
+            return (Builder) super.clone();
         }
 
         @Override // cn.irisgw.live.LiveRoomToolsChangeOrBuilder
@@ -242,8 +241,8 @@ public final class LiveRoomToolsChange extends GeneratedMessageV3 implements Liv
             return this.countdown_;
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public LiveRoomToolsChange getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public LiveRoomToolsChange m5165getDefaultInstanceForType() {
             return LiveRoomToolsChange.getDefaultInstance();
         }
 
@@ -296,7 +295,6 @@ public final class LiveRoomToolsChange extends GeneratedMessageV3 implements Liv
             return this.descType_;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
         public Descriptors.Descriptor getDescriptorForType() {
             return LiveConstants.internal_static_cn_irisgw_live_LiveRoomToolsChange_descriptor;
         }
@@ -355,12 +353,10 @@ public final class LiveRoomToolsChange extends GeneratedMessageV3 implements Liv
             return this.toolsType_;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_LiveRoomToolsChange_fieldAccessorTable.ensureFieldAccessorsInitialized(LiveRoomToolsChange.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             return true;
         }
@@ -404,18 +400,18 @@ public final class LiveRoomToolsChange extends GeneratedMessageV3 implements Liv
             if (liveRoomToolsChange.getStatus() != 0) {
                 setStatus(liveRoomToolsChange.getStatus());
             }
-            mergeUnknownFields(liveRoomToolsChange.unknownFields);
+            m5174mergeUnknownFields(liveRoomToolsChange.unknownFields);
             onChanged();
             return this;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+        /* renamed from: mergeFrom */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
         */
-        public cn.irisgw.live.LiveRoomToolsChange.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+        public cn.irisgw.live.LiveRoomToolsChange.Builder m5171mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
             /*
                 r4 = this;
                 r0 = 0
@@ -460,11 +456,11 @@ public final class LiveRoomToolsChange extends GeneratedMessageV3 implements Liv
                 r0 = r6
                 throw r0
             */
-            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.LiveRoomToolsChange.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.LiveRoomToolsChange$Builder");
+            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.LiveRoomToolsChange.Builder.m5171mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.LiveRoomToolsChange$Builder");
         }
 
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder mergeFrom(Message message) {
+        /* renamed from: mergeFrom */
+        public Builder m5170mergeFrom(Message message) {
             if (message instanceof LiveRoomToolsChange) {
                 return mergeFrom((LiveRoomToolsChange) message);
             }
@@ -472,8 +468,8 @@ public final class LiveRoomToolsChange extends GeneratedMessageV3 implements Liv
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: mergeUnknownFields */
+        public final Builder m5174mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.mergeUnknownFields(unknownFieldSet);
         }
 
@@ -552,8 +548,8 @@ public final class LiveRoomToolsChange extends GeneratedMessageV3 implements Liv
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: setField */
+        public Builder m5176setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.setField(fieldDescriptor, obj);
         }
 
@@ -576,8 +572,8 @@ public final class LiveRoomToolsChange extends GeneratedMessageV3 implements Liv
             throw null;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+        /* renamed from: setRepeatedField */
+        public Builder m5178setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
             return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
         }
 
@@ -612,8 +608,8 @@ public final class LiveRoomToolsChange extends GeneratedMessageV3 implements Liv
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: setUnknownFields */
+        public final Builder m5180setUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.setUnknownFields(unknownFieldSet);
         }
     }
@@ -679,10 +675,10 @@ public final class LiveRoomToolsChange extends GeneratedMessageV3 implements Liv
                             }
                     }
                     z = true;
-                } catch (InvalidProtocolBufferException e) {
-                    throw e.setUnfinishedMessage(this);
-                } catch (IOException e2) {
-                    throw new InvalidProtocolBufferException(e2).setUnfinishedMessage(this);
+                } catch (IOException e) {
+                    throw new InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+                } catch (InvalidProtocolBufferException e2) {
+                    throw e2.setUnfinishedMessage(this);
                 }
             } finally {
                 this.unknownFields = newBuilder.build();
@@ -705,66 +701,65 @@ public final class LiveRoomToolsChange extends GeneratedMessageV3 implements Liv
     }
 
     public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
+        return DEFAULT_INSTANCE.m5141toBuilder();
     }
 
     public static Builder newBuilder(LiveRoomToolsChange liveRoomToolsChange) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(liveRoomToolsChange);
+        return DEFAULT_INSTANCE.m5141toBuilder().mergeFrom(liveRoomToolsChange);
     }
 
     public static LiveRoomToolsChange parseDelimitedFrom(InputStream inputStream) throws IOException {
-        return (LiveRoomToolsChange) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
     }
 
     public static LiveRoomToolsChange parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (LiveRoomToolsChange) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static LiveRoomToolsChange parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString);
+        return (LiveRoomToolsChange) PARSER.parseFrom(byteString);
     }
 
     public static LiveRoomToolsChange parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString, extensionRegistryLite);
+        return (LiveRoomToolsChange) PARSER.parseFrom(byteString, extensionRegistryLite);
     }
 
     public static LiveRoomToolsChange parseFrom(CodedInputStream codedInputStream) throws IOException {
-        return (LiveRoomToolsChange) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
     }
 
     public static LiveRoomToolsChange parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (LiveRoomToolsChange) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
     }
 
     public static LiveRoomToolsChange parseFrom(InputStream inputStream) throws IOException {
-        return (LiveRoomToolsChange) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
     }
 
     public static LiveRoomToolsChange parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (LiveRoomToolsChange) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static LiveRoomToolsChange parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer);
+        return (LiveRoomToolsChange) PARSER.parseFrom(byteBuffer);
     }
 
     public static LiveRoomToolsChange parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+        return (LiveRoomToolsChange) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
     }
 
     public static LiveRoomToolsChange parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr);
+        return (LiveRoomToolsChange) PARSER.parseFrom(bArr);
     }
 
     public static LiveRoomToolsChange parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr, extensionRegistryLite);
+        return (LiveRoomToolsChange) PARSER.parseFrom(bArr, extensionRegistryLite);
     }
 
     public static Parser<LiveRoomToolsChange> parser() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
@@ -808,8 +803,8 @@ public final class LiveRoomToolsChange extends GeneratedMessageV3 implements Liv
         return this.countdown_;
     }
 
-    @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-    public LiveRoomToolsChange getDefaultInstanceForType() {
+    /* renamed from: getDefaultInstanceForType */
+    public LiveRoomToolsChange m5136getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
     }
 
@@ -884,12 +879,10 @@ public final class LiveRoomToolsChange extends GeneratedMessageV3 implements Liv
         return (ByteString) obj;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
     public Parser<LiveRoomToolsChange> getParserForType() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public int getSerializedSize() {
         int i = this.memoizedSize;
         if (i != -1) {
@@ -977,12 +970,10 @@ public final class LiveRoomToolsChange extends GeneratedMessageV3 implements Liv
         return this.toolsType_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
     public final UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public int hashCode() {
         if (this.memoizedHashCode != 0) {
             return this.memoizedHashCode;
@@ -992,12 +983,10 @@ public final class LiveRoomToolsChange extends GeneratedMessageV3 implements Liv
         return hashCode;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
         return LiveConstants.internal_static_cn_irisgw_live_LiveRoomToolsChange_fieldAccessorTable.ensureFieldAccessorsInitialized(LiveRoomToolsChange.class, Builder.class);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
     public final boolean isInitialized() {
         byte b = this.memoizedIsInitialized;
         if (b == 1) {
@@ -1010,28 +999,26 @@ public final class LiveRoomToolsChange extends GeneratedMessageV3 implements Liv
         return true;
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder newBuilderForType() {
+    /* renamed from: newBuilderForType */
+    public Builder m5139newBuilderForType() {
         return newBuilder();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.protobuf.GeneratedMessageV3
-    public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+    /* renamed from: newBuilderForType */
+    public Builder m5138newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
         return new Builder(builderParent);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
         return new LiveRoomToolsChange();
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder toBuilder() {
+    /* renamed from: toBuilder */
+    public Builder m5141toBuilder() {
         return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
         if (!getBadgeTextBytes().isEmpty()) {
             GeneratedMessageV3.writeString(codedOutputStream, 1, this.badgeText_);

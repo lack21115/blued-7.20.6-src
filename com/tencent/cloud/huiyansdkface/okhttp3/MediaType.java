@@ -18,11 +18,11 @@ public final class MediaType {
     private static final Pattern l = Pattern.compile(";\\s*(?:([a-zA-Z0-9-!#$%&'*+.^_`{|}~]+)=(?:([a-zA-Z0-9-!#$%&'*+.^_`{|}~]+)|\"([^\"]*)\"))?");
 
     /* renamed from: a  reason: collision with root package name */
-    public static final MediaType f35863a = parse(ax.Z);
+    public static final MediaType f22172a = parse(ax.Z);
     public static final MediaType b = parse(ax.I);
 
     /* renamed from: c  reason: collision with root package name */
-    public static final MediaType f35864c = parse(ax.B);
+    public static final MediaType f22173c = parse(ax.B);
     public static final MediaType d = parse("text/plain");
     public static final MediaType e = parse(ClipDescription.MIMETYPE_TEXT_HTML);
     public static final MediaType f = parse("text/xml");

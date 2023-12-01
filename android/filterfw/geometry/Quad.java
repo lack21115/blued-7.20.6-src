@@ -1,6 +1,5 @@
 package android.filterfw.geometry;
 
-import com.alipay.sdk.util.i;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -53,7 +52,7 @@ public class Quad {
     }
 
     public String toString() {
-        return "{" + this.p0 + ", " + this.p1 + ", " + this.p2 + ", " + this.p3 + i.d;
+        return "{" + this.p0 + ", " + this.p1 + ", " + this.p2 + ", " + this.p3 + "}";
     }
 
     public Quad translated(float f, float f2) {

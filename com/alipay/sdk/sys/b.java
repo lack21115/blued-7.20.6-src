@@ -7,19 +7,17 @@ import java.io.File;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alipay/sdk/sys/b.class */
 public class b {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static b f4651a;
+    private static b a;
     private Context b;
 
     private b() {
     }
 
     public static b a() {
-        if (f4651a == null) {
-            f4651a = new b();
+        if (a == null) {
+            a = new b();
         }
-        return f4651a;
+        return a;
     }
 
     public static boolean d() {

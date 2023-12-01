@@ -25,13 +25,9 @@ public class RailwayStationItem implements Parcelable {
             return a(i);
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f5719a;
+    private String a;
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private LatLonPoint f5720c;
+    private LatLonPoint c;
     private String d;
     private String e;
     private boolean f;
@@ -46,9 +42,9 @@ public class RailwayStationItem implements Parcelable {
     protected RailwayStationItem(Parcel parcel) {
         this.f = false;
         this.g = false;
-        this.f5719a = parcel.readString();
+        this.a = parcel.readString();
         this.b = parcel.readString();
-        this.f5720c = (LatLonPoint) parcel.readParcelable(LatLonPoint.class.getClassLoader());
+        this.c = (LatLonPoint) parcel.readParcelable(LatLonPoint.class.getClassLoader());
         this.d = parcel.readString();
         this.e = parcel.readString();
         boolean[] zArr = new boolean[2];
@@ -68,11 +64,11 @@ public class RailwayStationItem implements Parcelable {
     }
 
     public String getID() {
-        return this.f5719a;
+        return this.a;
     }
 
     public LatLonPoint getLocation() {
-        return this.f5720c;
+        return this.c;
     }
 
     public String getName() {
@@ -100,11 +96,11 @@ public class RailwayStationItem implements Parcelable {
     }
 
     public void setID(String str) {
-        this.f5719a = str;
+        this.a = str;
     }
 
     public void setLocation(LatLonPoint latLonPoint) {
-        this.f5720c = latLonPoint;
+        this.c = latLonPoint;
     }
 
     public void setName(String str) {
@@ -129,9 +125,9 @@ public class RailwayStationItem implements Parcelable {
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.f5719a);
+        parcel.writeString(this.a);
         parcel.writeString(this.b);
-        parcel.writeParcelable(this.f5720c, i);
+        parcel.writeParcelable(this.c, i);
         parcel.writeString(this.d);
         parcel.writeString(this.e);
         parcel.writeBooleanArray(new boolean[]{this.f, this.g});

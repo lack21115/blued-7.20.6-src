@@ -6,25 +6,25 @@ import java.security.MessageDigest;
 public class Base64 {
 
     /* renamed from: ˊ  reason: contains not printable characters */
-    private static final char f1112 = (char) Integer.parseInt("00000011", 2);
+    private static final char f1065 = (char) Integer.parseInt("00000011", 2);
 
     /* renamed from: ˋ  reason: contains not printable characters */
-    private static final char f1113 = (char) Integer.parseInt("00001111", 2);
+    private static final char f1066 = (char) Integer.parseInt("00001111", 2);
 
     /* renamed from: ˎ  reason: contains not printable characters */
-    private static final char f1114 = (char) Integer.parseInt("00111111", 2);
+    private static final char f1067 = (char) Integer.parseInt("00111111", 2);
 
     /* renamed from: ˏ  reason: contains not printable characters */
-    private static final char f1115 = (char) Integer.parseInt("11111100", 2);
+    private static final char f1068 = (char) Integer.parseInt("11111100", 2);
 
     /* renamed from: ᐝ  reason: contains not printable characters */
-    private static final char f1116 = (char) Integer.parseInt("11110000", 2);
+    private static final char f1069 = (char) Integer.parseInt("11110000", 2);
 
     /* renamed from: ʻ  reason: contains not printable characters */
-    private static final char f1110 = (char) Integer.parseInt("11000000", 2);
+    private static final char f1063 = (char) Integer.parseInt("11000000", 2);
 
     /* renamed from: ʼ  reason: contains not printable characters */
-    private static final char[] f1111 = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '/'};
+    private static final char[] f1064 = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '/'};
     public static String UTF_8 = "utf-8";
 
     public static String encode(byte[] bArr) {
@@ -40,35 +40,35 @@ public class Base64 {
                 i3 = i5;
                 if (i3 < 8) {
                     if (i3 == 0) {
-                        i = ((char) (bArr[i4] & f1115)) >>> 2;
+                        i = ((char) (bArr[i4] & f1068)) >>> 2;
                     } else if (i3 == 2) {
-                        i = bArr[i4] & f1114;
+                        i = bArr[i4] & f1067;
                     } else if (i3 != 4) {
                         if (i3 == 6) {
-                            c2 = (char) (((char) (bArr[i4] & f1112)) << 4);
+                            c2 = (char) (((char) (bArr[i4] & f1065)) << 4);
                             int i6 = i4 + 1;
                             c3 = c2;
                             if (i6 < bArr.length) {
-                                i2 = (bArr[i6] & f1116) >>> 4;
+                                i2 = (bArr[i6] & f1069) >>> 4;
                                 i = c2 | i2;
                             }
                         }
-                        stringBuffer.append(f1111[c3]);
+                        stringBuffer.append(f1064[c3]);
                         i5 = i3 + 6;
                     } else {
-                        c2 = (char) (((char) (bArr[i4] & f1113)) << 2);
+                        c2 = (char) (((char) (bArr[i4] & f1066)) << 2);
                         int i7 = i4 + 1;
                         c3 = c2;
                         if (i7 < bArr.length) {
-                            i2 = (bArr[i7] & f1110) >>> 6;
+                            i2 = (bArr[i7] & f1063) >>> 6;
                             i = c2 | i2;
                         } else {
-                            stringBuffer.append(f1111[c3]);
+                            stringBuffer.append(f1064[c3]);
                             i5 = i3 + 6;
                         }
                     }
                     c3 = (char) i;
-                    stringBuffer.append(f1111[c3]);
+                    stringBuffer.append(f1064[c3]);
                     i5 = i3 + 6;
                 }
             }

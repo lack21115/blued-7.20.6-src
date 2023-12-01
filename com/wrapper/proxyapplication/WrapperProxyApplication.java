@@ -49,9 +49,8 @@ public abstract class WrapperProxyApplication extends Application {
 
     native void Ooo0ooO0oO();
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.content.ContextWrapper
-    public void attachBaseContext(Context context) {
+    protected void attachBaseContext(Context context) {
         super.attachBaseContext(context);
         baseContext = getBaseContext();
         if (shellApp == null) {

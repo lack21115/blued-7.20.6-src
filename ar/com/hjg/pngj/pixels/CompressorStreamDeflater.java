@@ -21,8 +21,8 @@ public class CompressorStreamDeflater extends CompressorStream {
             }
         }
         this.e = true;
-        if (this.f3673a != null) {
-            this.f3673a.g();
+        if (this.f3625a != null) {
+            this.f3625a.g();
         }
     }
 
@@ -42,10 +42,10 @@ public class CompressorStreamDeflater extends CompressorStream {
         byte[] bArr;
         int i;
         int length;
-        if (this.f3673a != null) {
-            bArr = this.f3673a.h();
-            i = this.f3673a.c();
-            length = this.f3673a.d();
+        if (this.f3625a != null) {
+            bArr = this.f3625a.h();
+            i = this.f3625a.c();
+            length = this.f3625a.d();
         } else {
             if (this.k == null) {
                 this.k = new byte[4096];
@@ -56,8 +56,8 @@ public class CompressorStreamDeflater extends CompressorStream {
         }
         int deflate = this.j.deflate(bArr, i, length);
         if (deflate > 0) {
-            if (this.f3673a != null) {
-                this.f3673a.a(deflate);
+            if (this.f3625a != null) {
+                this.f3625a.a(deflate);
             }
             this.g += deflate;
         }

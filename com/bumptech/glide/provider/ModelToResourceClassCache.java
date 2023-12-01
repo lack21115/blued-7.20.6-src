@@ -9,13 +9,13 @@ import java.util.concurrent.atomic.AtomicReference;
 public class ModelToResourceClassCache {
 
     /* renamed from: a  reason: collision with root package name */
-    private final AtomicReference<MultiClassKey> f21033a = new AtomicReference<>();
+    private final AtomicReference<MultiClassKey> f7427a = new AtomicReference<>();
     private final ArrayMap<MultiClassKey, List<Class<?>>> b = new ArrayMap<>();
 
     public List<Class<?>> a(Class<?> cls, Class<?> cls2, Class<?> cls3) {
         MultiClassKey multiClassKey;
         List<Class<?>> list;
-        MultiClassKey andSet = this.f21033a.getAndSet(null);
+        MultiClassKey andSet = this.f7427a.getAndSet(null);
         if (andSet == null) {
             multiClassKey = new MultiClassKey(cls, cls2, cls3);
         } else {
@@ -25,7 +25,7 @@ public class ModelToResourceClassCache {
         synchronized (this.b) {
             list = this.b.get(multiClassKey);
         }
-        this.f21033a.set(multiClassKey);
+        this.f7427a.set(multiClassKey);
         return list;
     }
 

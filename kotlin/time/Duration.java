@@ -1,6 +1,5 @@
 package kotlin.time;
 
-import com.google.common.primitives.Longs;
 import kotlin.Deprecated;
 import kotlin.Metadata;
 import kotlin.jvm.JvmInline;
@@ -12,12 +11,8 @@ import kotlin.text.StringsKt;
 @JvmInline
 /* loaded from: source-3503164-dex2jar.jar:kotlin/time/Duration.class */
 public final class Duration implements Comparable<Duration> {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f42762a = new Companion(null);
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final long f42763c = s(0);
+    public static final Companion a = new Companion(null);
+    private static final long c = s(0);
     private static final long d;
     private static final long e;
     private final long b;
@@ -33,7 +28,7 @@ public final class Duration implements Comparable<Duration> {
         }
 
         public final long a() {
-            return Duration.f42763c;
+            return Duration.c;
         }
     }
 
@@ -239,7 +234,7 @@ public final class Duration implements Comparable<Duration> {
                 throw new AssertionError(t(j) + " ns is out of nanoseconds range");
             }
             long t2 = t(j);
-            if (!(-4611686018427387903L <= t2 && t2 < Longs.MAX_POWER_OF_TWO)) {
+            if (!(-4611686018427387903L <= t2 && t2 < 4611686018427387904L)) {
                 throw new AssertionError(t(j) + " ms is out of milliseconds range");
             }
             long t3 = t(j);

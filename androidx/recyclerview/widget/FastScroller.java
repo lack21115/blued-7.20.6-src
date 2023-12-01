@@ -1,5 +1,6 @@
 package androidx.recyclerview.widget;
 
+import android.R;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ValueAnimator;
@@ -13,15 +14,15 @@ import androidx.recyclerview.widget.RecyclerView;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8756600-dex2jar.jar:androidx/recyclerview/widget/FastScroller.class */
 public class FastScroller extends RecyclerView.ItemDecoration implements RecyclerView.OnItemTouchListener {
-    private static final int[] k = {16842919};
+    private static final int[] k = {R.attr.state_pressed};
     private static final int[] l = new int[0];
 
     /* renamed from: a  reason: collision with root package name */
-    final StateListDrawable f3261a;
+    final StateListDrawable f3213a;
     final Drawable b;
 
     /* renamed from: c  reason: collision with root package name */
-    int f3262c;
+    int f3214c;
     int d;
     float e;
     int f;
@@ -93,7 +94,7 @@ public class FastScroller extends RecyclerView.ItemDecoration implements Recycle
         @Override // android.animation.ValueAnimator.AnimatorUpdateListener
         public void onAnimationUpdate(ValueAnimator valueAnimator) {
             int floatValue = (int) (((Float) valueAnimator.getAnimatedValue()).floatValue() * 255.0f);
-            FastScroller.this.f3261a.setAlpha(floatValue);
+            FastScroller.this.f3213a.setAlpha(floatValue);
             FastScroller.this.b.setAlpha(floatValue);
             FastScroller.this.a();
         }
@@ -101,7 +102,7 @@ public class FastScroller extends RecyclerView.ItemDecoration implements Recycle
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public FastScroller(RecyclerView recyclerView, StateListDrawable stateListDrawable, Drawable drawable, StateListDrawable stateListDrawable2, Drawable drawable2, int i, int i2, int i3) {
-        this.f3261a = stateListDrawable;
+        this.f3213a = stateListDrawable;
         this.b = drawable;
         this.q = stateListDrawable2;
         this.r = drawable2;
@@ -111,7 +112,7 @@ public class FastScroller extends RecyclerView.ItemDecoration implements Recycle
         this.t = Math.max(i, drawable2.getIntrinsicWidth());
         this.m = i2;
         this.n = i3;
-        this.f3261a.setAlpha(255);
+        this.f3213a.setAlpha(255);
         this.b.setAlpha(255);
         this.i.addListener(new AnimatorListener());
         this.i.addUpdateListener(new AnimatorUpdater());
@@ -151,22 +152,22 @@ public class FastScroller extends RecyclerView.ItemDecoration implements Recycle
         int i2 = this.o;
         int i3 = i - i2;
         int i4 = this.d;
-        int i5 = this.f3262c;
+        int i5 = this.f3214c;
         int i6 = i4 - (i5 / 2);
-        this.f3261a.setBounds(0, 0, i2, i5);
+        this.f3213a.setBounds(0, 0, i2, i5);
         this.b.setBounds(0, 0, this.p, this.v);
         if (!d()) {
             canvas.translate(i3, 0.0f);
             this.b.draw(canvas);
             canvas.translate(0.0f, i6);
-            this.f3261a.draw(canvas);
+            this.f3213a.draw(canvas);
             canvas.translate(-i3, -i6);
             return;
         }
         this.b.draw(canvas);
         canvas.translate(this.o, i6);
         canvas.scale(-1.0f, 1.0f);
-        this.f3261a.draw(canvas);
+        this.f3213a.draw(canvas);
         canvas.scale(1.0f, 1.0f);
         canvas.translate(-this.o, -i6);
     }
@@ -248,7 +249,7 @@ public class FastScroller extends RecyclerView.ItemDecoration implements Recycle
 
     void a(int i) {
         if (i == 2 && this.z != 2) {
-            this.f3261a.setState(k);
+            this.f3213a.setState(k);
             e();
         }
         if (i == 0) {
@@ -257,7 +258,7 @@ public class FastScroller extends RecyclerView.ItemDecoration implements Recycle
             show();
         }
         if (this.z == 2 && i != 2) {
-            this.f3261a.setState(l);
+            this.f3213a.setState(l);
             c(1200);
         } else if (i == 1) {
             c(1500);
@@ -283,7 +284,7 @@ public class FastScroller extends RecyclerView.ItemDecoration implements Recycle
         if (this.x) {
             float f = i3;
             this.d = (int) ((f * (i2 + (f / 2.0f))) / computeVerticalScrollRange);
-            this.f3262c = Math.min(i3, (i3 * i3) / computeVerticalScrollRange);
+            this.f3214c = Math.min(i3, (i3 * i3) / computeVerticalScrollRange);
         }
         if (this.y) {
             float f2 = i4;
@@ -305,7 +306,7 @@ public class FastScroller extends RecyclerView.ItemDecoration implements Recycle
             return false;
         }
         int i = this.d;
-        int i2 = this.f3262c;
+        int i2 = this.f3214c;
         return f2 >= ((float) (i - (i2 / 2))) && f2 <= ((float) (i + (i2 / 2)));
     }
 

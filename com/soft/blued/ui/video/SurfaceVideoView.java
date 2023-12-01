@@ -15,11 +15,11 @@ import com.soft.blued.utils.Logger;
 public class SurfaceVideoView extends SurfaceView implements SurfaceHolder.Callback {
 
     /* renamed from: a  reason: collision with root package name */
-    MediaState f34445a;
+    MediaState f20754a;
     OnStateChangeListener b;
 
     /* renamed from: c  reason: collision with root package name */
-    private MediaPlayer f34446c;
+    private MediaPlayer f20755c;
     private Context d;
     private int e;
     private int f;
@@ -77,10 +77,10 @@ public class SurfaceVideoView extends SurfaceView implements SurfaceHolder.Callb
             @Override // android.media.MediaPlayer.OnBufferingUpdateListener
             public void onBufferingUpdate(MediaPlayer mediaPlayer, int i) {
                 Logger.a("ddrb", "onBufferingUpdate", Integer.valueOf(i));
-                if (SurfaceVideoView.this.b == null || SurfaceVideoView.this.f34445a != MediaState.PLAYING) {
+                if (SurfaceVideoView.this.b == null || SurfaceVideoView.this.f20754a != MediaState.PLAYING) {
                     return;
                 }
-                SurfaceVideoView.this.b.a(SurfaceVideoView.this.f34446c.getDuration(), SurfaceVideoView.this.f34446c.getCurrentPosition());
+                SurfaceVideoView.this.b.a(SurfaceVideoView.this.f20755c.getDuration(), SurfaceVideoView.this.f20755c.getCurrentPosition());
             }
         };
         this.d = context;
@@ -113,10 +113,10 @@ public class SurfaceVideoView extends SurfaceView implements SurfaceHolder.Callb
             @Override // android.media.MediaPlayer.OnBufferingUpdateListener
             public void onBufferingUpdate(MediaPlayer mediaPlayer, int i) {
                 Logger.a("ddrb", "onBufferingUpdate", Integer.valueOf(i));
-                if (SurfaceVideoView.this.b == null || SurfaceVideoView.this.f34445a != MediaState.PLAYING) {
+                if (SurfaceVideoView.this.b == null || SurfaceVideoView.this.f20754a != MediaState.PLAYING) {
                     return;
                 }
-                SurfaceVideoView.this.b.a(SurfaceVideoView.this.f34446c.getDuration(), SurfaceVideoView.this.f34446c.getCurrentPosition());
+                SurfaceVideoView.this.b.a(SurfaceVideoView.this.f20755c.getDuration(), SurfaceVideoView.this.f20755c.getCurrentPosition());
             }
         };
         this.d = context;
@@ -167,18 +167,18 @@ public class SurfaceVideoView extends SurfaceView implements SurfaceHolder.Callb
     }
 
     public void a(String str, boolean z) {
-        if (this.f34445a == MediaState.PREPARING) {
+        if (this.f20754a == MediaState.PREPARING) {
             b();
             return;
         }
         try {
-            this.f34446c.reset();
-            this.f34446c.setLooping(z);
-            this.f34446c.setDataSource(str);
-            this.f34446c.prepareAsync();
-            this.f34445a = MediaState.PREPARING;
+            this.f20755c.reset();
+            this.f20755c.setLooping(z);
+            this.f20755c.setDataSource(str);
+            this.f20755c.prepareAsync();
+            this.f20754a = MediaState.PREPARING;
         } catch (Exception e) {
-            Logger.a("ddrb", "e = ", e, "mediaPlayer = ", this.f34446c);
+            Logger.a("ddrb", "e = ", e, "mediaPlayer = ", this.f20755c);
             e.printStackTrace();
             OnStateChangeListener onStateChangeListener = this.b;
             if (onStateChangeListener != null) {
@@ -189,45 +189,44 @@ public class SurfaceVideoView extends SurfaceView implements SurfaceHolder.Callb
 
     public void b() {
         ThreadManager.a().a(new ThreadExecutor("SurfaceVideoStop") { // from class: com.soft.blued.ui.video.SurfaceVideoView.3
-            @Override // com.blued.android.framework.pool.ThreadExecutor
             public void execute() {
                 try {
                     try {
                     } catch (Exception e) {
-                        SurfaceVideoView.this.f34445a = MediaState.INIT;
+                        SurfaceVideoView.this.f20754a = MediaState.INIT;
                         if (SurfaceVideoView.this.b == null) {
                             return;
                         }
                     }
-                    if (SurfaceVideoView.this.f34445a == MediaState.INIT) {
+                    if (SurfaceVideoView.this.f20754a == MediaState.INIT) {
                         if (SurfaceVideoView.this.b != null) {
                             SurfaceVideoView.this.b.d();
                         }
-                    } else if (SurfaceVideoView.this.f34445a == MediaState.PREPARING) {
-                        SurfaceVideoView.this.f34446c.reset();
-                        SurfaceVideoView.this.f34445a = MediaState.INIT;
+                    } else if (SurfaceVideoView.this.f20754a == MediaState.PREPARING) {
+                        SurfaceVideoView.this.f20755c.reset();
+                        SurfaceVideoView.this.f20754a = MediaState.INIT;
                         System.out.println("prepare->reset");
                         if (SurfaceVideoView.this.b != null) {
                             SurfaceVideoView.this.b.d();
                         }
-                    } else if (SurfaceVideoView.this.f34445a == MediaState.PAUSE) {
-                        SurfaceVideoView.this.f34446c.stop();
-                        SurfaceVideoView.this.f34446c.reset();
-                        SurfaceVideoView.this.f34445a = MediaState.INIT;
+                    } else if (SurfaceVideoView.this.f20754a == MediaState.PAUSE) {
+                        SurfaceVideoView.this.f20755c.stop();
+                        SurfaceVideoView.this.f20755c.reset();
+                        SurfaceVideoView.this.f20754a = MediaState.INIT;
                         System.out.println("pause->init");
                         if (SurfaceVideoView.this.b != null) {
                             SurfaceVideoView.this.b.d();
                         }
-                    } else if (SurfaceVideoView.this.f34445a != MediaState.PLAYING) {
+                    } else if (SurfaceVideoView.this.f20754a != MediaState.PLAYING) {
                         if (SurfaceVideoView.this.b == null) {
                             return;
                         }
                         SurfaceVideoView.this.b.d();
                     } else {
-                        SurfaceVideoView.this.f34446c.pause();
-                        SurfaceVideoView.this.f34446c.stop();
-                        SurfaceVideoView.this.f34446c.reset();
-                        SurfaceVideoView.this.f34445a = MediaState.INIT;
+                        SurfaceVideoView.this.f20755c.pause();
+                        SurfaceVideoView.this.f20755c.stop();
+                        SurfaceVideoView.this.f20755c.reset();
+                        SurfaceVideoView.this.f20754a = MediaState.INIT;
                         System.out.println("playing->init");
                         if (SurfaceVideoView.this.b != null) {
                             SurfaceVideoView.this.b.d();
@@ -244,11 +243,11 @@ public class SurfaceVideoView extends SurfaceView implements SurfaceHolder.Callb
     }
 
     public MediaPlayer getMediaPlayer() {
-        return this.f34446c;
+        return this.f20755c;
     }
 
     public MediaState getState() {
-        return this.f34445a;
+        return this.f20754a;
     }
 
     public void setOnStateChangeListener(OnStateChangeListener onStateChangeListener) {
@@ -261,27 +260,27 @@ public class SurfaceVideoView extends SurfaceView implements SurfaceHolder.Callb
 
     @Override // android.view.SurfaceHolder.Callback
     public void surfaceCreated(SurfaceHolder surfaceHolder) {
-        if (this.f34446c == null) {
+        if (this.f20755c == null) {
             MediaPlayer mediaPlayer = new MediaPlayer();
-            this.f34446c = mediaPlayer;
+            this.f20755c = mediaPlayer;
             mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() { // from class: com.soft.blued.ui.video.SurfaceVideoView.4
                 @Override // android.media.MediaPlayer.OnPreparedListener
                 public void onPrepared(MediaPlayer mediaPlayer2) {
                     mediaPlayer2.start();
-                    SurfaceVideoView.this.f34445a = MediaState.PLAYING;
+                    SurfaceVideoView.this.f20754a = MediaState.PLAYING;
                     Logger.a("ddrb", "start");
                     if (SurfaceVideoView.this.b != null) {
                         SurfaceVideoView.this.b.b();
                     }
                 }
             });
-            this.f34446c.setOnInfoListener(this.i);
+            this.f20755c.setOnInfoListener(this.i);
             Logger.a("dddrb", "setOnInfoListener");
-            this.f34446c.setOnErrorListener(new MediaPlayer.OnErrorListener() { // from class: com.soft.blued.ui.video.SurfaceVideoView.5
+            this.f20755c.setOnErrorListener(new MediaPlayer.OnErrorListener() { // from class: com.soft.blued.ui.video.SurfaceVideoView.5
                 @Override // android.media.MediaPlayer.OnErrorListener
                 public boolean onError(MediaPlayer mediaPlayer2, int i, int i2) {
                     mediaPlayer2.release();
-                    SurfaceVideoView.this.f34445a = MediaState.INIT;
+                    SurfaceVideoView.this.f20754a = MediaState.INIT;
                     if (SurfaceVideoView.this.b != null) {
                         SurfaceVideoView.this.b.e();
                         return false;
@@ -289,8 +288,8 @@ public class SurfaceVideoView extends SurfaceView implements SurfaceHolder.Callb
                     return false;
                 }
             });
-            this.f34446c.setOnBufferingUpdateListener(this.j);
-            this.f34446c.setOnVideoSizeChangedListener(new MediaPlayer.OnVideoSizeChangedListener() { // from class: com.soft.blued.ui.video.SurfaceVideoView.6
+            this.f20755c.setOnBufferingUpdateListener(this.j);
+            this.f20755c.setOnVideoSizeChangedListener(new MediaPlayer.OnVideoSizeChangedListener() { // from class: com.soft.blued.ui.video.SurfaceVideoView.6
                 @Override // android.media.MediaPlayer.OnVideoSizeChangedListener
                 public void onVideoSizeChanged(MediaPlayer mediaPlayer2, int i, int i2) {
                     SurfaceVideoView.this.e = i;
@@ -305,8 +304,8 @@ public class SurfaceVideoView extends SurfaceView implements SurfaceHolder.Callb
                 }
             });
         }
-        this.f34446c.setDisplay(surfaceHolder);
-        this.f34445a = MediaState.INIT;
+        this.f20755c.setDisplay(surfaceHolder);
+        this.f20754a = MediaState.INIT;
         Logger.a("dddrb", "setDisplay");
     }
 

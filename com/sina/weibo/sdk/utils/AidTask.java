@@ -16,7 +16,6 @@ import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.view.WindowManager;
-import com.android.internal.telephony.PhoneConstants;
 import com.cdo.oaps.ad.wrapper.BaseWrapper;
 import com.huawei.hms.support.hianalytics.HiAnalyticsConstant;
 import com.sina.weibo.sdk.exception.WeiboException;
@@ -533,7 +532,7 @@ public class AidTask implements Serializable {
         try {
             DisplayMetrics displayMetrics = new DisplayMetrics();
             ((WindowManager) context.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getMetrics(displayMetrics);
-            return String.valueOf(String.valueOf(displayMetrics.widthPixels)) + PhoneConstants.APN_TYPE_ALL + String.valueOf(displayMetrics.heightPixels);
+            return String.valueOf(String.valueOf(displayMetrics.widthPixels)) + "*" + String.valueOf(displayMetrics.heightPixels);
         } catch (Exception e) {
             return "";
         }

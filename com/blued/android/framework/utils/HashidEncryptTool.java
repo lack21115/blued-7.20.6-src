@@ -9,15 +9,15 @@ public class HashidEncryptTool {
         StringBuilder sb = new StringBuilder();
         if (!TextUtils.isEmpty(str)) {
             try {
-                long[] a2 = new Hashids("1766", 6).a(str);
-                int length = a2.length;
+                long[] a = new Hashids("1766", 6).a(str);
+                int length = a.length;
                 int i = 0;
                 while (true) {
                     int i2 = i;
                     if (i2 >= length) {
                         break;
                     }
-                    sb.append(a2[i2]);
+                    sb.append(a[i2]);
                     i = i2 + 1;
                 }
             } catch (Exception e) {

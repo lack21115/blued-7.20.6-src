@@ -1,8 +1,6 @@
 package com.google.protobuf;
 
-import android.widget.ExpandableListView;
-import com.alipay.sdk.util.i;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
+import android.app.backup.FullBackup;
 import com.google.protobuf.Descriptors;
 import com.google.protobuf.DynamicMessage;
 import com.google.protobuf.ExtensionRegistry;
@@ -10,7 +8,10 @@ import com.google.protobuf.Message;
 import com.google.protobuf.MessageReflection;
 import com.google.protobuf.TextFormatParseInfoTree;
 import com.google.protobuf.UnknownFieldSet;
+import com.huawei.hms.ads.fw;
+import com.huawei.openalliance.ad.constant.t;
 import com.j256.ormlite.stmt.query.SimpleComparison;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.IOException;
 import java.math.BigInteger;
 import java.nio.CharBuffer;
@@ -402,7 +403,7 @@ public final class TextFormat {
                     str = SimpleComparison.GREATER_THAN_OPERATION;
                 } else {
                     tokenizer.consume("{");
-                    str = i.d;
+                    str = "}";
                 }
                 if (fieldDescriptor.getMessageType().getFullName().equals("google.protobuf.Any") && tokenizer.tryConsume("[")) {
                     MessageReflection.MergeTarget newMergeTargetForField = mergeTarget.newMergeTargetForField(fieldDescriptor, DynamicMessage.getDefaultInstance(fieldDescriptor.getMessageType()));
@@ -455,7 +456,7 @@ public final class TextFormat {
                         str = SimpleComparison.GREATER_THAN_OPERATION;
                     } else {
                         tokenizer.consume("{");
-                        str = i.d;
+                        str = "}";
                     }
                     String sb2 = sb.toString();
                     try {
@@ -474,8 +475,8 @@ public final class TextFormat {
                     } catch (InvalidProtocolBufferException e) {
                         throw tokenizer.parseException("Invalid valid type URL. Found: " + sb2);
                     }
-                } else if (tokenizer.tryConsume(BridgeUtil.SPLIT_MARK)) {
-                    sb.append(BridgeUtil.SPLIT_MARK);
+                } else if (tokenizer.tryConsume("/")) {
+                    sb.append("/");
                 } else if (!tokenizer.tryConsume(".")) {
                     throw tokenizer.parseExceptionPreviousToken("Expected a valid type URL.");
                 } else {
@@ -562,7 +563,7 @@ public final class TextFormat {
             if (builder != null) {
                 builder.setLocation(fieldDescriptor, TextFormatParseLocation.create(line, column));
             }
-            if (tokenizer.tryConsume(";")) {
+            if (tokenizer.tryConsume(t.aE)) {
                 return;
             }
             tokenizer.tryConsume(",");
@@ -590,7 +591,7 @@ public final class TextFormat {
             } else {
                 skipFieldValue(tokenizer);
             }
-            if (tokenizer.tryConsume(";")) {
+            if (tokenizer.tryConsume(t.aE)) {
                 return;
             }
             tokenizer.tryConsume(",");
@@ -602,9 +603,9 @@ public final class TextFormat {
                 str = SimpleComparison.GREATER_THAN_OPERATION;
             } else {
                 tokenizer.consume("{");
-                str = i.d;
+                str = "}";
             }
-            while (!tokenizer.lookingAt(SimpleComparison.GREATER_THAN_OPERATION) && !tokenizer.lookingAt(i.d)) {
+            while (!tokenizer.lookingAt(SimpleComparison.GREATER_THAN_OPERATION) && !tokenizer.lookingAt("}")) {
                 skipField(tokenizer);
             }
             tokenizer.consume(str);
@@ -767,7 +768,7 @@ public final class TextFormat {
                 textGenerator.indent();
                 print(newBuilderForType, textGenerator);
                 textGenerator.outdent();
-                textGenerator.print(i.d);
+                textGenerator.print("}");
                 textGenerator.eol();
                 return true;
             } catch (InvalidProtocolBufferException e) {
@@ -882,7 +883,7 @@ public final class TextFormat {
             printFieldValue(fieldDescriptor, obj, textGenerator);
             if (fieldDescriptor.getJavaType() == Descriptors.FieldDescriptor.JavaType.MESSAGE) {
                 textGenerator.outdent();
-                textGenerator.print(i.d);
+                textGenerator.print("}");
             }
             textGenerator.eol();
         }
@@ -918,7 +919,7 @@ public final class TextFormat {
                     textGenerator.indent();
                     printUnknownFields(parseFrom, textGenerator);
                     textGenerator.outdent();
-                    textGenerator.print(i.d);
+                    textGenerator.print("}");
                 } catch (InvalidProtocolBufferException e) {
                     textGenerator.print("\"");
                     textGenerator.print(TextFormat.escapeBytes((ByteString) obj));
@@ -943,7 +944,7 @@ public final class TextFormat {
                     textGenerator.indent();
                     printUnknownFields(unknownFieldSet2, textGenerator);
                     textGenerator.outdent();
-                    textGenerator.print(i.d);
+                    textGenerator.print("}");
                     textGenerator.eol();
                 }
             }
@@ -1169,10 +1170,10 @@ public final class TextFormat {
         }
 
         public boolean consumeBoolean() throws ParseException {
-            if (this.currentToken.equals("true") || this.currentToken.equals("True") || this.currentToken.equals("t") || this.currentToken.equals("1")) {
+            if (this.currentToken.equals(fw.Code) || this.currentToken.equals("True") || this.currentToken.equals("t") || this.currentToken.equals("1")) {
                 nextToken();
                 return true;
-            } else if (this.currentToken.equals("false") || this.currentToken.equals("False") || this.currentToken.equals("f") || this.currentToken.equals("0")) {
+            } else if (this.currentToken.equals("false") || this.currentToken.equals("False") || this.currentToken.equals(FullBackup.DATA_TREE_TOKEN) || this.currentToken.equals("0")) {
                 nextToken();
                 return false;
             } else {
@@ -1193,7 +1194,7 @@ public final class TextFormat {
 
         public double consumeDouble() throws ParseException {
             if (DOUBLE_INFINITY.matcher(this.currentToken).matches()) {
-                boolean startsWith = this.currentToken.startsWith("-");
+                boolean startsWith = this.currentToken.startsWith(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
                 nextToken();
                 return startsWith ? Double.NEGATIVE_INFINITY : Double.POSITIVE_INFINITY;
             } else if (this.currentToken.equalsIgnoreCase("nan")) {
@@ -1212,7 +1213,7 @@ public final class TextFormat {
 
         public float consumeFloat() throws ParseException {
             if (FLOAT_INFINITY.matcher(this.currentToken).matches()) {
-                boolean startsWith = this.currentToken.startsWith("-");
+                boolean startsWith = this.currentToken.startsWith(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
                 nextToken();
                 return startsWith ? Float.NEGATIVE_INFINITY : Float.POSITIVE_INFINITY;
             } else if (FLOAT_NAN.matcher(this.currentToken).matches()) {
@@ -1536,7 +1537,7 @@ public final class TextFormat {
         long longValue;
         int i2 = 0;
         boolean z3 = true;
-        if (!str.startsWith("-", 0)) {
+        if (!str.startsWith(Constants.ACCEPT_TIME_SEPARATOR_SERVER, 0)) {
             z3 = false;
         } else if (!z) {
             throw new NumberFormatException("Number must be positive: " + str);
@@ -1692,7 +1693,7 @@ public final class TextFormat {
                 textGenerator.indent();
                 Printer.printUnknownFields(parseFrom, textGenerator);
                 textGenerator.outdent();
-                textGenerator.print(i.d);
+                textGenerator.print("}");
             } catch (InvalidProtocolBufferException e) {
                 textGenerator.print("\"");
                 textGenerator.print(escapeBytes((ByteString) obj));
@@ -1849,7 +1850,7 @@ public final class TextFormat {
     }
 
     public static String unsignedToString(int i) {
-        return i >= 0 ? Integer.toString(i) : Long.toString(i & ExpandableListView.PACKED_POSITION_VALUE_NULL);
+        return i >= 0 ? Integer.toString(i) : Long.toString(i & 4294967295L);
     }
 
     public static String unsignedToString(long j) {

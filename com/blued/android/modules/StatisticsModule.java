@@ -6,9 +6,7 @@ import com.soft.blued.log.InstantLog;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/modules/StatisticsModule.class */
 public class StatisticsModule {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected static IStatistics f18642a = new IStatistics() { // from class: com.blued.android.modules.StatisticsModule.1
+    protected static IStatistics a = new IStatistics() { // from class: com.blued.android.modules.StatisticsModule.1
         @Override // com.blued.android.module.base.data_statistics.IStatistics
         public void a(int i, String str, int i2) {
         }
@@ -35,6 +33,6 @@ public class StatisticsModule {
     };
 
     public static void a() {
-        StatisticsProxy.a().a((StatisticsProxy) f18642a);
+        StatisticsProxy.a().a((StatisticsProxy) a);
     }
 }

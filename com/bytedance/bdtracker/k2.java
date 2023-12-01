@@ -10,11 +10,11 @@ import java.lang.reflect.Method;
 public class k2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static boolean f21242a = false;
+    public static boolean f7636a = false;
     public static Class b;
 
     /* renamed from: c  reason: collision with root package name */
-    public static Method f21243c;
+    public static Method f7637c;
     public static boolean d = a("com.tencent.smtt.sdk.WebView");
     public static boolean e = a("androidx.recyclerview.widget.RecyclerView");
     public static boolean f = a("androidx.viewpager.widget.ViewPager");
@@ -44,16 +44,16 @@ public class k2 {
     public static Class<?> a(Class<?> cls) {
         while (cls != null && !cls.equals(ViewGroup.class)) {
             try {
-                f21243c = cls.getDeclaredMethod("getChildAdapterPosition", View.class);
+                f7637c = cls.getDeclaredMethod("getChildAdapterPosition", View.class);
             } catch (NoSuchMethodException e2) {
             }
-            if (f21243c == null) {
+            if (f7637c == null) {
                 try {
-                    f21243c = cls.getDeclaredMethod("getChildPosition", View.class);
+                    f7637c = cls.getDeclaredMethod("getChildPosition", View.class);
                 } catch (NoSuchMethodException e3) {
                 }
             }
-            if (f21243c != null) {
+            if (f7637c != null) {
                 return cls;
             }
             cls = cls.getSuperclass();

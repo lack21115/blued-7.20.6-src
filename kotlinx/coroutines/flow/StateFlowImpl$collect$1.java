@@ -1,5 +1,6 @@
 package kotlinx.coroutines.flow;
 
+import com.android.ims.ImsReasonInfo;
 import kotlin.Metadata;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
@@ -7,16 +8,12 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 
 /* JADX INFO: Access modifiers changed from: package-private */
 @Metadata
-@DebugMetadata(b = "StateFlow.kt", c = {336, 348, 353}, d = "collect", e = "kotlinx.coroutines.flow.StateFlowImpl")
+@DebugMetadata(b = "StateFlow.kt", c = {ImsReasonInfo.CODE_SIP_TEMPRARILY_UNAVAILABLE, 348, ImsReasonInfo.CODE_SIP_SERVER_BAD_GATEWAY}, d = "collect", e = "kotlinx.coroutines.flow.StateFlowImpl")
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/StateFlowImpl$collect$1.class */
 public final class StateFlowImpl$collect$1 extends ContinuationImpl {
-
-    /* renamed from: a  reason: collision with root package name */
-    Object f43433a;
+    Object a;
     Object b;
-
-    /* renamed from: c  reason: collision with root package name */
-    Object f43434c;
+    Object c;
     Object d;
     Object e;
     /* synthetic */ Object f;

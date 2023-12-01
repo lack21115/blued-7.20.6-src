@@ -17,10 +17,10 @@ import com.google.android.material.badge.BadgeDrawable;
 public final class NotificationClickedActivity extends Activity {
 
     /* renamed from: a  reason: collision with root package name */
-    private BroadcastReceiver f41192a;
+    private BroadcastReceiver f27501a;
 
     /* renamed from: a  reason: collision with other field name */
-    private Handler f120a;
+    private Handler f73a;
 
     private void a(Intent intent) {
         if (intent != null) {
@@ -55,12 +55,12 @@ public final class NotificationClickedActivity extends Activity {
         attributes.gravity = BadgeDrawable.TOP_START;
         window.setAttributes(attributes);
         Handler handler = new Handler();
-        this.f120a = handler;
+        this.f73a = handler;
         handler.postDelayed(new ac(this), com.anythink.expressad.video.module.a.a.m.ag);
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction("action_clicked_activity_finish");
         ad adVar = new ad(this);
-        this.f41192a = adVar;
+        this.f27501a = adVar;
         try {
             com.xiaomi.push.l.a(this, adVar, intentFilter, d.a(this), null, 4);
         } catch (Exception e) {
@@ -71,9 +71,9 @@ public final class NotificationClickedActivity extends Activity {
     @Override // android.app.Activity
     public final void onDestroy() {
         super.onDestroy();
-        this.f120a.removeCallbacksAndMessages(null);
+        this.f73a.removeCallbacksAndMessages(null);
         try {
-            unregisterReceiver(this.f41192a);
+            unregisterReceiver(this.f27501a);
         } catch (Exception e) {
         }
     }

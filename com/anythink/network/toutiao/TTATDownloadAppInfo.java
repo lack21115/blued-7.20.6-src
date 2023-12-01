@@ -19,42 +19,34 @@ public class TTATDownloadAppInfo extends ATAdAppInfo {
         this.appSize = j;
     }
 
-    @Override // com.anythink.core.api.ATAdAppInfo
     public String getAppDownloadCount() {
         return "";
     }
 
-    @Override // com.anythink.core.api.ATAdAppInfo
     public String getAppName() {
         return this.appName;
     }
 
-    @Override // com.anythink.core.api.ATAdAppInfo
     public String getAppPackageName() {
         return "";
     }
 
-    @Override // com.anythink.core.api.ATAdAppInfo
     public String getAppPermissonUrl() {
         return "";
     }
 
-    @Override // com.anythink.core.api.ATAdAppInfo
     public String getAppPrivacyUrl() {
         return this.appPrivacyLink;
     }
 
-    @Override // com.anythink.core.api.ATAdAppInfo
     public long getAppSize() {
         return this.appSize;
     }
 
-    @Override // com.anythink.core.api.ATAdAppInfo
     public String getAppVersion() {
         return this.appVersion;
     }
 
-    @Override // com.anythink.core.api.ATAdAppInfo
     public String getPublisher() {
         return this.publisher;
     }

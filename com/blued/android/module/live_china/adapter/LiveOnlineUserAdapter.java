@@ -41,13 +41,9 @@ import kotlin.jvm.internal.Ref;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/adapter/LiveOnlineUserAdapter.class */
 public final class LiveOnlineUserAdapter extends BaseQuickAdapter<LiveOnlineUserEntity, BaseViewHolder> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f11667a;
+    private Context a;
     private IRequestHost b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private boolean f11668c;
+    private boolean c;
     private LiveOnLineBehalfExtra d;
     private LiveOnlineUserEntity e;
 
@@ -56,19 +52,19 @@ public final class LiveOnlineUserAdapter extends BaseQuickAdapter<LiveOnlineUser
         super(R.layout.item_live_online_user);
         Intrinsics.e(context, "context");
         Intrinsics.e(fragmentActive, "fragmentActive");
-        this.f11667a = context;
+        this.a = context;
         this.b = fragmentActive;
-        this.f11668c = z;
+        this.c = z;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(final LiveOnlineUserEntity liveOnlineUserEntity, final LiveOnlineUserAdapter this$0, View view) {
         Intrinsics.e(this$0, "this$0");
         final Ref.IntRef intRef = new Ref.IntRef();
-        intRef.f42543a = liveOnlineUserEntity.getBehalf_status() == 1 ? 0 : 1;
-        EventTrackLive.y(this$0.f11668c ? LiveProtos.Event.LIVE_ONLINE_NOBLE_PAGE_SUBSTITUTE_CLICK : LiveProtos.Event.LIVE_ONLINE_USER_PAGE_BTN_CLICK, LiveRoomManager.a().e(), LiveRoomManager.a().g(), String.valueOf(intRef.f42543a));
-        if (intRef.f42543a != 1) {
-            this$0.a(liveOnlineUserEntity, intRef.f42543a);
+        intRef.a = liveOnlineUserEntity.getBehalf_status() == 1 ? 0 : 1;
+        EventTrackLive.y(this$0.c ? LiveProtos.Event.LIVE_ONLINE_NOBLE_PAGE_SUBSTITUTE_CLICK : LiveProtos.Event.LIVE_ONLINE_USER_PAGE_BTN_CLICK, LiveRoomManager.a().e(), LiveRoomManager.a().g(), String.valueOf(intRef.a));
+        if (intRef.a != 1) {
+            this$0.a(liveOnlineUserEntity, intRef.a);
             return;
         }
         Context context = this$0.mContext;
@@ -76,7 +72,7 @@ public final class LiveOnlineUserAdapter extends BaseQuickAdapter<LiveOnlineUser
         new LiveBehalfSendGiftDialogTip(context, liveOnLineBehalfExtra == null ? null : liveOnLineBehalfExtra.getPopover_title(), liveOnlineUserEntity.getName(), new LiveBehalfSendGiftDialogTip.IEventCallback() { // from class: com.blued.android.module.live_china.adapter.LiveOnlineUserAdapter$convert$1$1$1
             @Override // com.blued.android.module.live_china.dialog.LiveBehalfSendGiftDialogTip.IEventCallback
             public void a() {
-                LiveOnlineUserAdapter.this.a(liveOnlineUserEntity, intRef.f42543a);
+                LiveOnlineUserAdapter.this.a(liveOnlineUserEntity, intRef.a);
             }
         }).show();
     }
@@ -122,9 +118,9 @@ public final class LiveOnlineUserAdapter extends BaseQuickAdapter<LiveOnlineUser
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<Object> bluedEntityA) {
-                LiveOnlineUserEntity c2 = LiveOnlineUserAdapter.this.c();
-                if (c2 != null) {
-                    c2.setBehalf_status(0);
+                LiveOnlineUserEntity c = LiveOnlineUserAdapter.this.c();
+                if (c != null) {
+                    c.setBehalf_status(0);
                 }
                 item.setBehalf_status(i);
                 LiveOnlineUserAdapter.this.notifyDataSetChanged();
@@ -138,174 +134,173 @@ public final class LiveOnlineUserAdapter extends BaseQuickAdapter<LiveOnlineUser
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(BaseViewHolder helper, final LiveOnlineUserEntity liveOnlineUserEntity) {
         Intrinsics.e(helper, "helper");
-        ItemLiveOnlineUserBinding a2 = ItemLiveOnlineUserBinding.a(helper.itemView);
-        Intrinsics.c(a2, "bind(helper.itemView)");
-        ShapeModel shapeModel = a2.f12067a.getShapeModel();
+        ItemLiveOnlineUserBinding a = ItemLiveOnlineUserBinding.a(helper.itemView);
+        Intrinsics.c(a, "bind(helper.itemView)");
+        ShapeModel shapeModel = a.a.getShapeModel();
         if (liveOnlineUserEntity == null) {
             return;
         }
         int weight = liveOnlineUserEntity.getWeight();
         if (weight == 0) {
-            ImageView imageView = a2.h;
+            ImageView imageView = a.h;
             Intrinsics.c(imageView, "liveOnlineUserBinding.ivOnlineUserWeight");
             BluedViewExKt.b(imageView);
             shapeModel.t = getContext().getResources().getColor(R.color.syc_FFEED4);
             shapeModel.v = getContext().getResources().getColor(R.color.syc_FFFFFE);
-            a2.h.setImageResource(R.drawable.icon_live_online_user_no1);
+            a.h.setImageResource(R.drawable.icon_live_online_user_no1);
         } else if (weight == 1) {
-            ImageView imageView2 = a2.h;
+            ImageView imageView2 = a.h;
             Intrinsics.c(imageView2, "liveOnlineUserBinding.ivOnlineUserWeight");
             BluedViewExKt.b(imageView2);
             shapeModel.t = getContext().getResources().getColor(R.color.syc_E1F0FA);
             shapeModel.v = getContext().getResources().getColor(R.color.syc_FFFFFE);
-            a2.h.setImageResource(R.drawable.icon_live_online_user_no2);
+            a.h.setImageResource(R.drawable.icon_live_online_user_no2);
         } else if (weight != 2) {
-            ImageView imageView3 = a2.h;
+            ImageView imageView3 = a.h;
             Intrinsics.c(imageView3, "liveOnlineUserBinding.ivOnlineUserWeight");
             BluedViewExKt.a(imageView3);
             shapeModel.t = getContext().getResources().getColor(R.color.white);
             shapeModel.v = getContext().getResources().getColor(R.color.white);
         } else {
-            ImageView imageView4 = a2.h;
+            ImageView imageView4 = a.h;
             Intrinsics.c(imageView4, "liveOnlineUserBinding.ivOnlineUserWeight");
             BluedViewExKt.b(imageView4);
             shapeModel.t = getContext().getResources().getColor(R.color.syc_FFEBE6);
             shapeModel.v = getContext().getResources().getColor(R.color.syc_FFFFFE);
-            a2.h.setImageResource(R.drawable.icon_live_online_user_no3);
+            a.h.setImageResource(R.drawable.icon_live_online_user_no3);
         }
-        a2.d.setVisibility(liveOnlineUserEntity.is_manager() == 1 ? 0 : 8);
-        a2.f12067a.setShapeModel(shapeModel);
-        a2.k.setText(liveOnlineUserEntity.getName());
-        ViewGroup.LayoutParams layoutParams = a2.k.getLayoutParams();
+        a.d.setVisibility(liveOnlineUserEntity.is_manager() == 1 ? 0 : 8);
+        a.a.setShapeModel(shapeModel);
+        a.k.setText(liveOnlineUserEntity.getName());
+        ViewGroup.LayoutParams layoutParams = a.k.getLayoutParams();
         if (layoutParams == null) {
             throw new NullPointerException("null cannot be cast to non-null type androidx.constraintlayout.widget.ConstraintLayout.LayoutParams");
         }
-        ConstraintLayout.LayoutParams layoutParams2 = (ConstraintLayout.LayoutParams) layoutParams;
-        layoutParams2.bottomToBottom = b(liveOnlineUserEntity) ? R.id.iv_online_user_avatar : -1;
-        a2.k.setLayoutParams(layoutParams2);
-        ImageLoader.a((IRequestHost) null, liveOnlineUserEntity.getAvatar()).c().b(R.drawable.user_bg_round).a(a2.f);
+        ViewGroup.LayoutParams layoutParams2 = (ConstraintLayout.LayoutParams) layoutParams;
+        ((ConstraintLayout.LayoutParams) layoutParams2).bottomToBottom = b(liveOnlineUserEntity) ? R.id.iv_online_user_avatar : -1;
+        a.k.setLayoutParams(layoutParams2);
+        ImageLoader.a((IRequestHost) null, liveOnlineUserEntity.getAvatar()).c().b(R.drawable.user_bg_round).a(a.f);
         if (liveOnlineUserEntity.getAvatar_frame().length() > 0) {
-            ImageView imageView5 = a2.g;
+            ImageView imageView5 = a.g;
             Intrinsics.c(imageView5, "liveOnlineUserBinding.ivOnlineUserAvatarFrame");
             BluedViewExKt.b(imageView5);
-            ImageLoader.a((IRequestHost) null, liveOnlineUserEntity.getAvatar_frame()).g().g(-1).a(a2.g);
+            ImageLoader.a((IRequestHost) null, liveOnlineUserEntity.getAvatar_frame()).g().g(-1).a(a.g);
         } else {
-            ImageView imageView6 = a2.g;
+            ImageView imageView6 = a.g;
             Intrinsics.c(imageView6, "liveOnlineUserBinding.ivOnlineUserAvatarFrame");
             BluedViewExKt.a(imageView6);
         }
-        int a3 = AppMethods.a(15);
-        ViewGroup.LayoutParams layoutParams3 = a2.e.getLayoutParams();
+        int a2 = AppMethods.a(15);
+        ViewGroup.LayoutParams layoutParams3 = a.e.getLayoutParams();
         if (layoutParams3 == null) {
             throw new NullPointerException("null cannot be cast to non-null type android.widget.LinearLayout.LayoutParams");
         }
         LinearLayout.LayoutParams layoutParams4 = (LinearLayout.LayoutParams) layoutParams3;
         String chat_badge_url = liveOnlineUserEntity.getChat_badge_url();
         if (chat_badge_url == null || chat_badge_url.length() == 0) {
-            ImageView imageView7 = a2.b;
+            ImageView imageView7 = a.b;
             Intrinsics.c(imageView7, "liveOnlineUserBinding.ivChatMarker");
             BluedViewExKt.a(imageView7);
             int i = layoutParams4.width;
             layoutParams4.height = 0;
         } else {
-            ImageView imageView8 = a2.b;
+            ImageView imageView8 = a.b;
             Intrinsics.c(imageView8, "liveOnlineUserBinding.ivChatMarker");
             BluedViewExKt.b(imageView8);
-            int chat_badge_length = (int) ((a3 * liveOnlineUserEntity.getChat_badge_length()) / liveOnlineUserEntity.getChat_badge_height());
-            ImageLoader.a((IRequestHost) null, liveOnlineUserEntity.getChat_badge_url()).a(chat_badge_length, a3).g().g(-1).a(a2.b);
+            int chat_badge_length = (int) ((a2 * liveOnlineUserEntity.getChat_badge_length()) / liveOnlineUserEntity.getChat_badge_height());
+            ImageLoader.a((IRequestHost) null, liveOnlineUserEntity.getChat_badge_url()).a(chat_badge_length, a2).g().g(-1).a(a.b);
             layoutParams4.width = chat_badge_length;
-            layoutParams4.height = a3;
+            layoutParams4.height = a2;
         }
-        a2.b.setLayoutParams(layoutParams4);
+        a.b.setLayoutParams(layoutParams4);
         if (liveOnlineUserEntity.getRich_level() != 0) {
-            ImageView imageView9 = a2.i;
+            ImageView imageView9 = a.i;
             Intrinsics.c(imageView9, "liveOnlineUserBinding.ivRichLevel");
             BluedViewExKt.b(imageView9);
-            a2.i.setImageDrawable(LiveBitmapUtils.a(AppInfo.d(), liveOnlineUserEntity.getRich_level()));
+            a.i.setImageDrawable(LiveBitmapUtils.a(AppInfo.d(), liveOnlineUserEntity.getRich_level()));
         } else {
-            ImageView imageView10 = a2.i;
+            ImageView imageView10 = a.i;
             Intrinsics.c(imageView10, "liveOnlineUserBinding.ivRichLevel");
             BluedViewExKt.a(imageView10);
         }
-        ShapeModel shapeModel2 = a2.j.getShapeModel();
+        ShapeModel shapeModel2 = a.j.getShapeModel();
         EventTrackLive.y(a() ? LiveProtos.Event.LIVE_ONLINE_NOBLE_PAGE_USER_SHOW : LiveProtos.Event.LIVE_PK_MORE_START_BTN_SHOW, LiveRoomManager.a().e(), LiveRoomManager.a().g(), String.valueOf(liveOnlineUserEntity.getBehalf_status()));
         if (LiveRoomInfo.a().f().equals(String.valueOf(liveOnlineUserEntity.getUid())) || b() == null) {
-            ShapeTextView shapeTextView = a2.j;
+            ShapeTextView shapeTextView = a.j;
             Intrinsics.c(shapeTextView, "liveOnlineUserBinding.tvGiveGiftsBehalf");
-            BluedViewExKt.a(shapeTextView);
+            BluedViewExKt.a((View) shapeTextView);
         } else {
             int behalf_status = liveOnlineUserEntity.getBehalf_status();
             if (behalf_status == 0) {
                 a(liveOnlineUserEntity);
-                ShapeTextView shapeTextView2 = a2.j;
+                ShapeTextView shapeTextView2 = a.j;
                 Intrinsics.c(shapeTextView2, "liveOnlineUserBinding.tvGiveGiftsBehalf");
-                BluedViewExKt.b(shapeTextView2);
-                ShapeTextView shapeTextView3 = a2.j;
+                BluedViewExKt.b((View) shapeTextView2);
+                ShapeTextView shapeTextView3 = a.j;
                 LiveOnLineBehalfExtra b = b();
                 shapeTextView3.setText(b == null ? null : b.getSwitch_enable_name());
                 shapeModel2.t = getContext().getResources().getColor(R.color.syc_dark_922CEE);
                 shapeModel2.v = getContext().getResources().getColor(R.color.syc_dark_FF3AAA);
                 shapeModel2.n = 0;
-                ShapeHelper.a((ShapeHelper.ShapeView) a2.j, R.color.white);
+                ShapeHelper.a((ShapeHelper.ShapeView) a.j, R.color.white);
                 shapeModel2.q = DensityUtils.a(this.mContext, 0.0f);
             } else if (behalf_status == 1) {
-                ShapeTextView shapeTextView4 = a2.j;
+                ShapeTextView shapeTextView4 = a.j;
                 Intrinsics.c(shapeTextView4, "liveOnlineUserBinding.tvGiveGiftsBehalf");
-                BluedViewExKt.b(shapeTextView4);
-                ShapeTextView shapeTextView5 = a2.j;
+                BluedViewExKt.b((View) shapeTextView4);
+                ShapeTextView shapeTextView5 = a.j;
                 LiveOnLineBehalfExtra b2 = b();
                 shapeTextView5.setText(b2 == null ? null : b2.getSwitch_disable_name());
                 shapeModel2.t = 0;
                 shapeModel2.v = 0;
                 shapeModel2.n = getContext().getResources().getColor(R.color.syc_dark_C933CC);
                 shapeModel2.k = getContext().getResources().getColor(R.color.syc_FEF2FF);
-                ShapeHelper.a((ShapeHelper.ShapeView) a2.j, R.color.syc_dark_C933CC);
+                ShapeHelper.a((ShapeHelper.ShapeView) a.j, R.color.syc_dark_C933CC);
                 shapeModel2.q = DensityUtils.a(this.mContext, 1.0f);
             } else if (behalf_status != 2) {
-                ShapeTextView shapeTextView6 = a2.j;
+                ShapeTextView shapeTextView6 = a.j;
                 Intrinsics.c(shapeTextView6, "liveOnlineUserBinding.tvGiveGiftsBehalf");
-                BluedViewExKt.a(shapeTextView6);
+                BluedViewExKt.a((View) shapeTextView6);
             } else {
-                ShapeTextView shapeTextView7 = a2.j;
+                ShapeTextView shapeTextView7 = a.j;
                 Intrinsics.c(shapeTextView7, "liveOnlineUserBinding.tvGiveGiftsBehalf");
-                BluedViewExKt.a(shapeTextView7);
+                BluedViewExKt.a((View) shapeTextView7);
             }
-            a2.j.setShapeModel(shapeModel2);
-            a2.j.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.adapter.-$$Lambda$LiveOnlineUserAdapter$YHLWC_UnlT9wQabTcSIo030se0I
+            a.j.setShapeModel(shapeModel2);
+            a.j.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.adapter.-$$Lambda$LiveOnlineUserAdapter$YHLWC_UnlT9wQabTcSIo030se0I
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     LiveOnlineUserAdapter.a(LiveOnlineUserEntity.this, this, view);
                 }
             });
         }
-        ViewGroup.LayoutParams layoutParams5 = a2.e.getLayoutParams();
+        ViewGroup.LayoutParams layoutParams5 = a.e.getLayoutParams();
         if (layoutParams5 == null) {
             throw new NullPointerException("null cannot be cast to non-null type android.widget.LinearLayout.LayoutParams");
         }
         LinearLayout.LayoutParams layoutParams6 = (LinearLayout.LayoutParams) layoutParams5;
         String nameplate_img = liveOnlineUserEntity.getNameplate_img();
         if (nameplate_img == null || nameplate_img.length() == 0) {
-            ImageView imageView11 = a2.e;
+            ImageView imageView11 = a.e;
             Intrinsics.c(imageView11, "liveOnlineUserBinding.ivNobleMarker");
             BluedViewExKt.a(imageView11);
             layoutParams6.width = 0;
             layoutParams6.height = 0;
         } else {
-            ImageView imageView12 = a2.e;
+            ImageView imageView12 = a.e;
             Intrinsics.c(imageView12, "liveOnlineUserBinding.ivNobleMarker");
             BluedViewExKt.b(imageView12);
-            int nameplate_img_width = (liveOnlineUserEntity.getNameplate_img_width() * a3) / liveOnlineUserEntity.getNameplate_img_height();
-            ImageLoader.a((IRequestHost) null, liveOnlineUserEntity.getNameplate_img()).a(nameplate_img_width, a3).g().g(-1).a(a2.e);
+            int nameplate_img_width = (liveOnlineUserEntity.getNameplate_img_width() * a2) / liveOnlineUserEntity.getNameplate_img_height();
+            ImageLoader.a((IRequestHost) null, liveOnlineUserEntity.getNameplate_img()).a(nameplate_img_width, a2).g().g(-1).a(a.e);
             layoutParams6.width = nameplate_img_width;
-            layoutParams6.height = a3;
+            layoutParams6.height = a2;
         }
-        a2.e.setLayoutParams(layoutParams6);
+        a.e.setLayoutParams(layoutParams6);
         if (liveOnlineUserEntity.getFans_status() == 0) {
-            LiveFansLevelView liveFansLevelView = a2.f12068c;
+            LiveFansLevelView liveFansLevelView = a.c;
             Intrinsics.c(liveFansLevelView, "liveOnlineUserBinding.ivFansLevel");
             BluedViewExKt.a(liveFansLevelView);
             return;
@@ -315,14 +310,14 @@ public final class LiveOnlineUserAdapter extends BaseQuickAdapter<LiveOnlineUser
         liveFansLevelModel.fans_status = liveOnlineUserEntity.getFans_status();
         liveFansLevelModel.fan_club_name = liveOnlineUserEntity.getClub_name();
         liveFansLevelModel.in_fan_club = 1;
-        a2.f12068c.setFansLevel(liveFansLevelModel);
-        LiveFansLevelView liveFansLevelView2 = a2.f12068c;
+        a.c.setFansLevel(liveFansLevelModel);
+        LiveFansLevelView liveFansLevelView2 = a.c;
         Intrinsics.c(liveFansLevelView2, "liveOnlineUserBinding.ivFansLevel");
         BluedViewExKt.b(liveFansLevelView2);
     }
 
     public final boolean a() {
-        return this.f11668c;
+        return this.c;
     }
 
     public final LiveOnLineBehalfExtra b() {
@@ -334,6 +329,6 @@ public final class LiveOnlineUserAdapter extends BaseQuickAdapter<LiveOnlineUser
     }
 
     public final Context getContext() {
-        return this.f11667a;
+        return this.a;
     }
 }

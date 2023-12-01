@@ -11,19 +11,19 @@ public class a implements b {
     private static Class b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static Object f38655c;
+    private static Object f24964c;
     private static Method d;
     private static Method e;
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f38656a;
+    private Context f24965a;
 
     public a() {
         try {
             c.c("xm start");
             Class<?> cls = Class.forName("com.android.id.impl.IdProviderImpl");
             b = cls;
-            f38655c = cls.newInstance();
+            f24964c = cls.newInstance();
             d = b.getMethod("getOAID", Context.class);
             e = b.getMethod("getAAID", Context.class);
         } catch (Exception e2) {
@@ -49,26 +49,26 @@ public class a implements b {
     @Override // com.tencent.qmsp.sdk.base.b
     public String a() {
         Method method;
-        Object obj = f38655c;
+        Object obj = f24964c;
         if (obj == null || (method = d) == null) {
             return null;
         }
-        return a(this.f38656a, obj, method);
+        return a(this.f24965a, obj, method);
     }
 
     @Override // com.tencent.qmsp.sdk.base.b
     public void a(Context context, IVendorCallback iVendorCallback) {
-        this.f38656a = context;
+        this.f24965a = context;
     }
 
     @Override // com.tencent.qmsp.sdk.base.b
     public String b() {
         Method method;
-        Object obj = f38655c;
+        Object obj = f24964c;
         if (obj == null || (method = e) == null) {
             return null;
         }
-        return a(this.f38656a, obj, method);
+        return a(this.f24965a, obj, method);
     }
 
     @Override // com.tencent.qmsp.sdk.base.b
@@ -82,7 +82,7 @@ public class a implements b {
 
     @Override // com.tencent.qmsp.sdk.base.b
     public boolean e() {
-        return (b == null || f38655c == null) ? false : true;
+        return (b == null || f24964c == null) ? false : true;
     }
 
     @Override // com.tencent.qmsp.sdk.base.b

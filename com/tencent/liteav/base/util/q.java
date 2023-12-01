@@ -9,9 +9,9 @@ import com.tencent.liteav.base.util.a;
 public final class q {
 
     /* renamed from: a  reason: collision with root package name */
-    private static boolean f36344a;
-    private static a<CpuUsageMeasurer> b = new a<>(new a.InterfaceC0925a<CpuUsageMeasurer>() { // from class: com.tencent.liteav.base.util.q.1
-        @Override // com.tencent.liteav.base.util.a.InterfaceC0925a
+    private static boolean f22653a;
+    private static a<CpuUsageMeasurer> b = new a<>(new a.InterfaceC0755a<CpuUsageMeasurer>() { // from class: com.tencent.liteav.base.util.q.1
+        @Override // com.tencent.liteav.base.util.a.InterfaceC0755a
         public final /* synthetic */ CpuUsageMeasurer a() {
             return new CpuUsageMeasurer();
         }
@@ -33,11 +33,11 @@ public final class q {
     }
 
     public static int[] a() {
-        if (!f36344a) {
+        if (!f22653a) {
             b.a();
             return CpuUsageMeasurer.a();
         }
-        f36344a = false;
+        f22653a = false;
         b.a();
         CpuUsageMeasurer.a();
         return new int[]{0, 0};

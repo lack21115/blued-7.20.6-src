@@ -16,11 +16,11 @@ public class m1 {
     public static Map<String, Double> g = new HashMap();
 
     /* renamed from: a  reason: collision with root package name */
-    public double f21258a;
+    public double f7652a;
     public WebView b;
 
     /* renamed from: c  reason: collision with root package name */
-    public int[] f21259c = new int[2];
+    public int[] f7653c = new int[2];
     public final boolean d;
     public final IAppLogInstance e;
 
@@ -33,7 +33,7 @@ public class m1 {
     public final l1.b a(JSONObject jSONObject) {
         String optString = jSONObject.optString("nodeName");
         JSONObject optJSONObject = jSONObject.optJSONObject(TypedValues.AttributesType.S_FRAME);
-        l1.a aVar = new l1.a((int) ((optJSONObject.optInt("x") * this.f21258a) + (this.d ? 0 : this.f21259c[0])), (int) ((optJSONObject.optInt("y") * this.f21258a) + (this.d ? 0 : this.f21259c[1])), (int) (optJSONObject.optInt("width") * this.f21258a), (int) (optJSONObject.optInt("height") * this.f21258a));
+        l1.a aVar = new l1.a((int) ((optJSONObject.optInt("x") * this.f7652a) + (this.d ? 0 : this.f7653c[0])), (int) ((optJSONObject.optInt("y") * this.f7652a) + (this.d ? 0 : this.f7653c[1])), (int) (optJSONObject.optInt("width") * this.f7652a), (int) (optJSONObject.optInt("height") * this.f7652a));
         String optString2 = jSONObject.optString("_element_path");
         String optString3 = jSONObject.optString("element_path");
         JSONArray optJSONArray = jSONObject.optJSONArray("positions");

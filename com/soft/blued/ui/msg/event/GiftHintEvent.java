@@ -4,11 +4,11 @@ package com.soft.blued.ui.msg.event;
 public class GiftHintEvent {
 
     /* renamed from: a  reason: collision with root package name */
-    public int f32325a;
+    public int f18635a;
     public String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f32326c;
+    public String f18636c;
     public boolean d;
     public String e;
 }

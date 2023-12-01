@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemMyGroupHeaderBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ConstraintLayout f29257a;
+    private final ConstraintLayout f15567a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f29257a;
+        return this.f15567a;
     }
 }

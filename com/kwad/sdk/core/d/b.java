@@ -1,6 +1,7 @@
 package com.kwad.sdk.core.d;
 
 import android.util.Log;
+import com.tencent.thumbplayer.api.TPErrorCode;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
@@ -51,7 +52,7 @@ public final class b {
         a(new a() { // from class: com.kwad.sdk.core.d.b.6
             @Override // com.kwad.sdk.core.d.b.a
             public final void b(com.kwad.sdk.core.d.kwai.b bVar) {
-                bVar.v(b.access$000(), String.this, true);
+                bVar.v(b.access$000(), str, true);
             }
         });
     }
@@ -65,7 +66,7 @@ public final class b {
         a(new a() { // from class: com.kwad.sdk.core.d.b.11
             @Override // com.kwad.sdk.core.d.b.a
             public final void b(com.kwad.sdk.core.d.kwai.b bVar) {
-                bVar.e(b.access$000(), String.this);
+                bVar.e(b.access$000(), u);
             }
         });
         com.kwad.sdk.core.d.kwai.a aVar = afZ;
@@ -80,7 +81,7 @@ public final class b {
         a(new a() { // from class: com.kwad.sdk.core.d.b.2
             @Override // com.kwad.sdk.core.d.b.a
             public final void b(com.kwad.sdk.core.d.kwai.b bVar) {
-                bVar.e(b.access$000(), String.this);
+                bVar.e(b.access$000(), u);
             }
         });
         com.kwad.sdk.core.d.kwai.a aVar = afZ;
@@ -94,7 +95,7 @@ public final class b {
         a(new a() { // from class: com.kwad.sdk.core.d.b.8
             @Override // com.kwad.sdk.core.d.b.a
             public final void b(com.kwad.sdk.core.d.kwai.b bVar) {
-                bVar.i(b.access$000(), String.this);
+                bVar.i(b.access$000(), u);
             }
         });
     }
@@ -104,7 +105,7 @@ public final class b {
             a(new a() { // from class: com.kwad.sdk.core.d.b.3
                 @Override // com.kwad.sdk.core.d.b.a
                 public final void b(com.kwad.sdk.core.d.kwai.b bVar) {
-                    bVar.printStackTraceOnly(Throwable.this);
+                    bVar.printStackTraceOnly(th);
                 }
             });
         }
@@ -118,7 +119,7 @@ public final class b {
             a(new a() { // from class: com.kwad.sdk.core.d.b.4
                 @Override // com.kwad.sdk.core.d.b.a
                 public final void b(com.kwad.sdk.core.d.kwai.b bVar) {
-                    bVar.printStackTraceOnly(Throwable.this);
+                    bVar.printStackTraceOnly(th);
                 }
             });
         }
@@ -133,7 +134,7 @@ public final class b {
         a(new a() { // from class: com.kwad.sdk.core.d.b.5
             @Override // com.kwad.sdk.core.d.b.a
             public final void b(com.kwad.sdk.core.d.kwai.b bVar) {
-                bVar.v(b.access$000(), String.this);
+                bVar.v(b.access$000(), u);
             }
         });
     }
@@ -147,7 +148,7 @@ public final class b {
         a(new a() { // from class: com.kwad.sdk.core.d.b.9
             @Override // com.kwad.sdk.core.d.b.a
             public final void b(com.kwad.sdk.core.d.kwai.b bVar) {
-                bVar.w(b.access$000(), String.this);
+                bVar.w(b.access$000(), u);
             }
         });
     }
@@ -157,7 +158,7 @@ public final class b {
         a(new a() { // from class: com.kwad.sdk.core.d.b.10
             @Override // com.kwad.sdk.core.d.b.a
             public final void b(com.kwad.sdk.core.d.kwai.b bVar) {
-                bVar.w(b.access$000(), String.this, com.kwad.kwai.kwai.a.bI.booleanValue());
+                bVar.w(b.access$000(), u, com.kwad.kwai.kwai.a.bI.booleanValue());
             }
         });
     }
@@ -183,7 +184,7 @@ public final class b {
         a(new a() { // from class: com.kwad.sdk.core.d.b.1
             @Override // com.kwad.sdk.core.d.b.a
             public final void b(com.kwad.sdk.core.d.kwai.b bVar) {
-                bVar.d(String.this, str2);
+                bVar.d(str, str2);
             }
         });
     }
@@ -193,8 +194,8 @@ public final class b {
             x(str, str2);
             return;
         }
-        x(str, str2.substring(0, 4000));
-        y(str, str2.substring(4000));
+        x(str, str2.substring(0, TPErrorCode.TP_ERROR_TYPE_DOWNLOAD_PROXY));
+        y(str, str2.substring(TPErrorCode.TP_ERROR_TYPE_DOWNLOAD_PROXY));
     }
 
     public static void z(String str, String str2) {
@@ -202,7 +203,7 @@ public final class b {
         a(new a() { // from class: com.kwad.sdk.core.d.b.7
             @Override // com.kwad.sdk.core.d.b.a
             public final void b(com.kwad.sdk.core.d.kwai.b bVar) {
-                bVar.v(b.access$000(), String.this, true);
+                bVar.v(b.access$000(), u, true);
             }
         });
     }

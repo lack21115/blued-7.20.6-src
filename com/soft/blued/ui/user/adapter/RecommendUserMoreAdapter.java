@@ -28,14 +28,14 @@ import kotlin.jvm.internal.Intrinsics;
 public final class RecommendUserMoreAdapter extends BaseQuickAdapter<UserFindResult, BaseViewHolder> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final IRequestHost f33750a;
+    private final IRequestHost f20059a;
     private LogData b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public RecommendUserMoreAdapter(IRequestHost requestHost) {
+    public RecommendUserMoreAdapter(IRequestHost iRequestHost) {
         super((int) R.layout.item_recommend_user_more);
-        Intrinsics.e(requestHost, "requestHost");
-        this.f33750a = requestHost;
+        Intrinsics.e(iRequestHost, "requestHost");
+        this.f20059a = iRequestHost;
         this.b = new LogData();
     }
 
@@ -56,26 +56,26 @@ public final class RecommendUserMoreAdapter extends BaseQuickAdapter<UserFindRes
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(UserFindResult item, ImageView iv_attention, RecommendUserMoreAdapter this$0, ShapeRelativeLayout shapeRelativeLayout, View view) {
+    public static final void a(UserFindResult userFindResult, ImageView imageView, RecommendUserMoreAdapter recommendUserMoreAdapter, ShapeRelativeLayout shapeRelativeLayout, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(item, "$item");
-        Intrinsics.e(this$0, "this$0");
-        UserInfoUtils userInfoUtils = UserInfoUtils.f34333a;
-        Intrinsics.c(iv_attention, "iv_attention");
-        userInfoUtils.a(item, iv_attention, this$0.f33750a, this$0.b, shapeRelativeLayout);
-        EventTrackPersonalProfile.d(PersonalProfileProtos.Event.PERSONAL_SAME_PAGE_USER_FOLLOW_CLICK, item.uid);
+        Intrinsics.e(userFindResult, "$item");
+        Intrinsics.e(recommendUserMoreAdapter, "this$0");
+        UserInfoUtils userInfoUtils = UserInfoUtils.f20642a;
+        Intrinsics.c(imageView, "iv_attention");
+        userInfoUtils.a(userFindResult, imageView, recommendUserMoreAdapter.f20059a, recommendUserMoreAdapter.b, shapeRelativeLayout);
+        EventTrackPersonalProfile.d(PersonalProfileProtos.Event.PERSONAL_SAME_PAGE_USER_FOLLOW_CLICK, userFindResult.uid);
         String name = PersonalProfileProtos.Event.PERSONAL_SAME_PAGE_USER_FOLLOW_CLICK.name();
-        String str = item.uid;
+        String str = userFindResult.uid;
         Intrinsics.c(str, "item.uid");
         ProfileEventUtils.a(name, str);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(RecommendUserMoreAdapter this$0, UserFindResult item, View view) {
+    public static final void a(RecommendUserMoreAdapter recommendUserMoreAdapter, UserFindResult userFindResult, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        Intrinsics.e(item, "$item");
-        this$0.b(item);
+        Intrinsics.e(recommendUserMoreAdapter, "this$0");
+        Intrinsics.e(userFindResult, "$item");
+        recommendUserMoreAdapter.b(userFindResult);
     }
 
     private final void b(UserFindResult userFindResult) {
@@ -88,11 +88,11 @@ public final class RecommendUserMoreAdapter extends BaseQuickAdapter<UserFindRes
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(RecommendUserMoreAdapter this$0, UserFindResult item, View view) {
+    public static final void b(RecommendUserMoreAdapter recommendUserMoreAdapter, UserFindResult userFindResult, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        Intrinsics.e(item, "$item");
-        this$0.a(item);
+        Intrinsics.e(recommendUserMoreAdapter, "this$0");
+        Intrinsics.e(userFindResult, "$item");
+        recommendUserMoreAdapter.a(userFindResult);
     }
 
     public final void a(LogData logData) {

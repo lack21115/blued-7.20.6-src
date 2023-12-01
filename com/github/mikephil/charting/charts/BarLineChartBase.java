@@ -32,7 +32,7 @@ public abstract class BarLineChartBase<T extends BarLineScatterCandleBubbleData<
     protected float[] A;
 
     /* renamed from: a  reason: collision with root package name */
-    private boolean f22063a;
+    private boolean f8456a;
     private boolean aa;
     private boolean ab;
     private boolean ac;
@@ -43,7 +43,7 @@ public abstract class BarLineChartBase<T extends BarLineScatterCandleBubbleData<
     protected int b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected boolean f22064c;
+    protected boolean f8457c;
     protected boolean d;
     protected boolean e;
     protected boolean f;
@@ -73,17 +73,17 @@ public abstract class BarLineChartBase<T extends BarLineScatterCandleBubbleData<
     class AnonymousClass1 implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ float f22065a;
+        final /* synthetic */ float f8458a;
         final /* synthetic */ float b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ float f22066c;
+        final /* synthetic */ float f8459c;
         final /* synthetic */ float d;
         final /* synthetic */ BarLineChartBase e;
 
         @Override // java.lang.Runnable
         public void run() {
-            this.e.Q.a(this.f22065a, this.b, this.f22066c, this.d);
+            this.e.Q.a(this.f8458a, this.b, this.f8459c, this.d);
             this.e.g();
             this.e.f();
         }
@@ -95,11 +95,11 @@ public abstract class BarLineChartBase<T extends BarLineScatterCandleBubbleData<
     public static /* synthetic */ class AnonymousClass2 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f22067a;
+        static final /* synthetic */ int[] f8460a;
         static final /* synthetic */ int[] b;
 
         /* renamed from: c  reason: collision with root package name */
-        static final /* synthetic */ int[] f22068c;
+        static final /* synthetic */ int[] f8461c;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:19:0x0069 -> B:35:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:21:0x006d -> B:6:0x001f). Please submit an issue!!! */
@@ -109,13 +109,13 @@ public abstract class BarLineChartBase<T extends BarLineScatterCandleBubbleData<
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:29:0x007d -> B:43:0x005d). Please submit an issue!!! */
         static {
             int[] iArr = new int[Legend.LegendOrientation.values().length];
-            f22068c = iArr;
+            f8461c = iArr;
             try {
                 iArr[Legend.LegendOrientation.VERTICAL.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f22068c[Legend.LegendOrientation.HORIZONTAL.ordinal()] = 2;
+                f8461c[Legend.LegendOrientation.HORIZONTAL.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             int[] iArr2 = new int[Legend.LegendHorizontalAlignment.values().length];
@@ -133,13 +133,13 @@ public abstract class BarLineChartBase<T extends BarLineScatterCandleBubbleData<
             } catch (NoSuchFieldError e5) {
             }
             int[] iArr3 = new int[Legend.LegendVerticalAlignment.values().length];
-            f22067a = iArr3;
+            f8460a = iArr3;
             try {
                 iArr3[Legend.LegendVerticalAlignment.TOP.ordinal()] = 1;
             } catch (NoSuchFieldError e6) {
             }
             try {
-                f22067a[Legend.LegendVerticalAlignment.BOTTOM.ordinal()] = 2;
+                f8460a[Legend.LegendVerticalAlignment.BOTTOM.ordinal()] = 2;
             } catch (NoSuchFieldError e7) {
             }
         }
@@ -148,11 +148,11 @@ public abstract class BarLineChartBase<T extends BarLineScatterCandleBubbleData<
     public BarLineChartBase(Context context) {
         super(context);
         this.b = 100;
-        this.f22064c = false;
+        this.f8457c = false;
         this.d = false;
         this.e = true;
         this.f = true;
-        this.f22063a = true;
+        this.f8456a = true;
         this.aa = true;
         this.ab = true;
         this.ac = true;
@@ -176,11 +176,11 @@ public abstract class BarLineChartBase<T extends BarLineScatterCandleBubbleData<
     public BarLineChartBase(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         this.b = 100;
-        this.f22064c = false;
+        this.f8457c = false;
         this.d = false;
         this.e = true;
         this.f = true;
-        this.f22063a = true;
+        this.f8456a = true;
         this.aa = true;
         this.ab = true;
         this.ac = true;
@@ -204,11 +204,11 @@ public abstract class BarLineChartBase<T extends BarLineScatterCandleBubbleData<
     public BarLineChartBase(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         this.b = 100;
-        this.f22064c = false;
+        this.f8457c = false;
         this.d = false;
         this.e = true;
         this.f = true;
-        this.f22063a = true;
+        this.f8456a = true;
         this.aa = true;
         this.ab = true;
         this.ac = true;
@@ -283,12 +283,12 @@ public abstract class BarLineChartBase<T extends BarLineScatterCandleBubbleData<
         if (this.K == null || !this.K.z() || this.K.g()) {
             return;
         }
-        int i = AnonymousClass2.f22068c[this.K.f().ordinal()];
+        int i = AnonymousClass2.f8461c[this.K.f().ordinal()];
         if (i != 1) {
             if (i != 2) {
                 return;
             }
-            int i2 = AnonymousClass2.f22067a[this.K.e().ordinal()];
+            int i2 = AnonymousClass2.f8460a[this.K.e().ordinal()];
             if (i2 == 1) {
                 rectF.top += Math.min(this.K.b, this.Q.m() * this.K.q()) + this.K.v();
                 return;
@@ -301,12 +301,12 @@ public abstract class BarLineChartBase<T extends BarLineScatterCandleBubbleData<
         }
         int i3 = AnonymousClass2.b[this.K.d().ordinal()];
         if (i3 == 1) {
-            rectF.left += Math.min(this.K.f22089a, this.Q.n() * this.K.q()) + this.K.u();
+            rectF.left += Math.min(this.K.f8482a, this.Q.n() * this.K.q()) + this.K.u();
         } else if (i3 == 2) {
-            rectF.right += Math.min(this.K.f22089a, this.Q.n() * this.K.q()) + this.K.u();
+            rectF.right += Math.min(this.K.f8482a, this.Q.n() * this.K.q()) + this.K.u();
         } else if (i3 != 3) {
         } else {
-            int i4 = AnonymousClass2.f22067a[this.K.e().ordinal()];
+            int i4 = AnonymousClass2.f8460a[this.K.e().ordinal()];
             if (i4 == 1) {
                 rectF.top += Math.min(this.K.b, this.Q.m() * this.K.q()) + this.K.v();
             } else if (i4 != 2) {
@@ -381,13 +381,13 @@ public abstract class BarLineChartBase<T extends BarLineScatterCandleBubbleData<
     @Override // com.github.mikephil.charting.interfaces.dataprovider.BarLineScatterCandleBubbleDataProvider
     public float getHighestVisibleX() {
         a(YAxis.AxisDependency.LEFT).a(this.Q.g(), this.Q.h(), this.z);
-        return (float) Math.min(this.H.t, this.z.f22202a);
+        return (float) Math.min(this.H.t, this.z.f8595a);
     }
 
     @Override // com.github.mikephil.charting.interfaces.dataprovider.BarLineScatterCandleBubbleDataProvider
     public float getLowestVisibleX() {
         a(YAxis.AxisDependency.LEFT).a(this.Q.f(), this.Q.h(), this.y);
-        return (float) Math.max(this.H.u, this.y.f22202a);
+        return (float) Math.max(this.H.u, this.y.f8595a);
     }
 
     @Override // com.github.mikephil.charting.interfaces.dataprovider.ChartInterface
@@ -541,11 +541,11 @@ public abstract class BarLineChartBase<T extends BarLineScatterCandleBubbleData<
     }
 
     public boolean l() {
-        return this.f22063a || this.aa;
+        return this.f8456a || this.aa;
     }
 
     public boolean m() {
-        return this.f22063a;
+        return this.f8456a;
     }
 
     public boolean n() {
@@ -565,7 +565,7 @@ public abstract class BarLineChartBase<T extends BarLineScatterCandleBubbleData<
         }
         long currentTimeMillis = System.currentTimeMillis();
         a(canvas);
-        if (this.f22064c) {
+        if (this.f8457c) {
             i();
         }
         if (this.o.z()) {
@@ -695,7 +695,7 @@ public abstract class BarLineChartBase<T extends BarLineScatterCandleBubbleData<
     }
 
     public void setAutoScaleMinMaxEnabled(boolean z) {
-        this.f22064c = z;
+        this.f8457c = z;
     }
 
     public void setBorderColor(int i) {
@@ -715,7 +715,7 @@ public abstract class BarLineChartBase<T extends BarLineScatterCandleBubbleData<
     }
 
     public void setDragEnabled(boolean z) {
-        this.f22063a = z;
+        this.f8456a = z;
         this.aa = z;
     }
 
@@ -728,7 +728,7 @@ public abstract class BarLineChartBase<T extends BarLineScatterCandleBubbleData<
     }
 
     public void setDragXEnabled(boolean z) {
-        this.f22063a = z;
+        this.f8456a = z;
     }
 
     public void setDragYEnabled(boolean z) {

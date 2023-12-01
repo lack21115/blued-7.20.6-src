@@ -58,7 +58,7 @@ public class b extends c<RegisterStatus> {
         this.i.schedule(new Runnable() { // from class: com.meizu.cloud.pushsdk.platform.b.b.2
             @Override // java.lang.Runnable
             public void run() {
-                com.meizu.cloud.pushsdk.b.c.a(b.this.f24187a);
+                com.meizu.cloud.pushsdk.b.c.a(b.this.f10572a);
                 b.this.h.sendEmptyMessage(0);
             }
         }, j, TimeUnit.SECONDS);
@@ -66,17 +66,17 @@ public class b extends c<RegisterStatus> {
 
     @Override // com.meizu.cloud.pushsdk.platform.b.c
     public void a(RegisterStatus registerStatus) {
-        PlatformMessageSender.a(this.f24187a, !TextUtils.isEmpty(this.d) ? this.d : this.f24187a.getPackageName(), registerStatus);
+        PlatformMessageSender.a(this.f10572a, !TextUtils.isEmpty(this.d) ? this.d : this.f10572a.getPackageName(), registerStatus);
     }
 
     @Override // com.meizu.cloud.pushsdk.platform.b.c
     public boolean a() {
-        DebugLogger.e("Strategy", "isBrandMeizu " + MzSystemUtils.isBrandMeizu(this.f24187a));
-        return (TextUtils.isEmpty(this.b) || TextUtils.isEmpty(this.f24188c)) ? false : true;
+        DebugLogger.e("Strategy", "isBrandMeizu " + MzSystemUtils.isBrandMeizu(this.f10572a));
+        return (TextUtils.isEmpty(this.b) || TextUtils.isEmpty(this.f10573c)) ? false : true;
     }
 
     protected boolean a(String str, int i) {
-        String a2 = com.meizu.cloud.pushsdk.b.c.a(this.f24187a);
+        String a2 = com.meizu.cloud.pushsdk.b.c.a(this.f10572a);
         boolean a3 = a(a2, str, i);
         boolean z = a3;
         if (a3) {
@@ -89,8 +89,8 @@ public class b extends c<RegisterStatus> {
     public Intent c() {
         Intent intent = new Intent();
         intent.putExtra("app_id", this.b);
-        intent.putExtra("app_key", this.f24188c);
-        intent.putExtra("strategy_package_name", this.f24187a.getPackageName());
+        intent.putExtra("app_key", this.f10573c);
+        intent.putExtra("strategy_package_name", this.f10572a.getPackageName());
         intent.putExtra("strategy_type", g());
         return intent;
     }
@@ -106,10 +106,10 @@ public class b extends c<RegisterStatus> {
     public RegisterStatus b() {
         String str;
         RegisterStatus registerStatus = new RegisterStatus();
-        registerStatus.setCode("20001");
+        registerStatus.setCode(PushConsts.SEND_MESSAGE_ERROR_GENERAL);
         if (TextUtils.isEmpty(this.b)) {
             str = "appId not empty";
-        } else if (!TextUtils.isEmpty(this.f24188c)) {
+        } else if (!TextUtils.isEmpty(this.f10573c)) {
             return registerStatus;
         } else {
             str = "appKey not empty";
@@ -129,8 +129,8 @@ public class b extends c<RegisterStatus> {
     /* renamed from: j */
     public RegisterStatus e() {
         RegisterStatus registerStatus = new RegisterStatus();
-        String a2 = com.meizu.cloud.pushsdk.util.b.a(this.f24187a, this.d);
-        int b = com.meizu.cloud.pushsdk.util.b.b(this.f24187a, this.d);
+        String a2 = com.meizu.cloud.pushsdk.util.b.a(this.f10572a, this.d);
+        int b = com.meizu.cloud.pushsdk.util.b.b(this.f10572a, this.d);
         if (!a(a2, b)) {
             registerStatus.setCode(BasicPushStatus.SUCCESS_CODE);
             registerStatus.setMessage("already register PushId,don't register frequently");
@@ -138,8 +138,8 @@ public class b extends c<RegisterStatus> {
             registerStatus.setExpireTime((int) (b - (System.currentTimeMillis() / 1000)));
             return registerStatus;
         }
-        com.meizu.cloud.pushsdk.util.b.g(this.f24187a, "", this.d);
-        String a3 = com.meizu.cloud.pushsdk.b.c.a(this.f24187a);
+        com.meizu.cloud.pushsdk.util.b.g(this.f10572a, "", this.d);
+        String a3 = com.meizu.cloud.pushsdk.b.c.a(this.f10572a);
         if (TextUtils.isEmpty(a3) && this.j < 3) {
             DebugLogger.i("Strategy", "after " + (this.j * 10) + " seconds start register");
             a((long) (this.j * 10));
@@ -149,14 +149,14 @@ public class b extends c<RegisterStatus> {
             return registerStatus;
         }
         this.j = 0;
-        com.meizu.cloud.pushsdk.c.a.c a4 = this.e.a(this.b, this.f24188c, a3);
+        com.meizu.cloud.pushsdk.c.a.c a4 = this.e.a(this.b, this.f10573c, a3);
         if (a4.b()) {
             RegisterStatus registerStatus2 = new RegisterStatus((String) a4.a());
             DebugLogger.e("Strategy", "registerStatus " + registerStatus2);
             registerStatus = registerStatus2;
             if (!TextUtils.isEmpty(registerStatus2.getPushId())) {
-                com.meizu.cloud.pushsdk.util.b.g(this.f24187a, registerStatus2.getPushId(), this.d);
-                com.meizu.cloud.pushsdk.util.b.a(this.f24187a, (int) ((System.currentTimeMillis() / 1000) + registerStatus2.getExpireTime()), this.d);
+                com.meizu.cloud.pushsdk.util.b.g(this.f10572a, registerStatus2.getPushId(), this.d);
+                com.meizu.cloud.pushsdk.util.b.a(this.f10572a, (int) ((System.currentTimeMillis() / 1000) + registerStatus2.getExpireTime()), this.d);
                 return registerStatus2;
             }
         } else {

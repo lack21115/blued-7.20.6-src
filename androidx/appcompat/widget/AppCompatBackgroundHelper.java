@@ -14,18 +14,18 @@ import androidx.core.view.ViewCompat;
 public class AppCompatBackgroundHelper {
 
     /* renamed from: a  reason: collision with root package name */
-    private final View f1738a;
+    private final View f1690a;
     private TintInfo d;
     private TintInfo e;
     private TintInfo f;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f1739c = -1;
+    private int f1691c = -1;
     private final AppCompatDrawableManager b = AppCompatDrawableManager.get();
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public AppCompatBackgroundHelper(View view) {
-        this.f1738a = view;
+        this.f1690a = view;
     }
 
     private boolean b(Drawable drawable) {
@@ -34,18 +34,18 @@ public class AppCompatBackgroundHelper {
         }
         TintInfo tintInfo = this.f;
         tintInfo.a();
-        ColorStateList backgroundTintList = ViewCompat.getBackgroundTintList(this.f1738a);
+        ColorStateList backgroundTintList = ViewCompat.getBackgroundTintList(this.f1690a);
         if (backgroundTintList != null) {
             tintInfo.mHasTintList = true;
             tintInfo.mTintList = backgroundTintList;
         }
-        PorterDuff.Mode backgroundTintMode = ViewCompat.getBackgroundTintMode(this.f1738a);
+        PorterDuff.Mode backgroundTintMode = ViewCompat.getBackgroundTintMode(this.f1690a);
         if (backgroundTintMode != null) {
             tintInfo.mHasTintMode = true;
             tintInfo.mTintMode = backgroundTintMode;
         }
         if (tintInfo.mHasTintList || tintInfo.mHasTintMode) {
-            AppCompatDrawableManager.a(drawable, tintInfo, this.f1738a.getDrawableState());
+            AppCompatDrawableManager.a(drawable, tintInfo, this.f1690a.getDrawableState());
             return true;
         }
         return false;
@@ -67,9 +67,9 @@ public class AppCompatBackgroundHelper {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a(int i) {
-        this.f1739c = i;
+        this.f1691c = i;
         AppCompatDrawableManager appCompatDrawableManager = this.b;
-        b(appCompatDrawableManager != null ? appCompatDrawableManager.a(this.f1738a.getContext(), i) : null);
+        b(appCompatDrawableManager != null ? appCompatDrawableManager.a(this.f1690a.getContext(), i) : null);
         c();
     }
 
@@ -95,29 +95,29 @@ public class AppCompatBackgroundHelper {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a(Drawable drawable) {
-        this.f1739c = -1;
+        this.f1691c = -1;
         b((ColorStateList) null);
         c();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a(AttributeSet attributeSet, int i) {
-        TintTypedArray obtainStyledAttributes = TintTypedArray.obtainStyledAttributes(this.f1738a.getContext(), attributeSet, R.styleable.ViewBackgroundHelper, i, 0);
-        View view = this.f1738a;
+        TintTypedArray obtainStyledAttributes = TintTypedArray.obtainStyledAttributes(this.f1690a.getContext(), attributeSet, R.styleable.ViewBackgroundHelper, i, 0);
+        View view = this.f1690a;
         ViewCompat.saveAttributeDataForStyleable(view, view.getContext(), R.styleable.ViewBackgroundHelper, attributeSet, obtainStyledAttributes.getWrappedTypeArray(), i, 0);
         try {
             if (obtainStyledAttributes.hasValue(R.styleable.ViewBackgroundHelper_android_background)) {
-                this.f1739c = obtainStyledAttributes.getResourceId(R.styleable.ViewBackgroundHelper_android_background, -1);
-                ColorStateList a2 = this.b.a(this.f1738a.getContext(), this.f1739c);
+                this.f1691c = obtainStyledAttributes.getResourceId(R.styleable.ViewBackgroundHelper_android_background, -1);
+                ColorStateList a2 = this.b.a(this.f1690a.getContext(), this.f1691c);
                 if (a2 != null) {
                     b(a2);
                 }
             }
             if (obtainStyledAttributes.hasValue(R.styleable.ViewBackgroundHelper_backgroundTint)) {
-                ViewCompat.setBackgroundTintList(this.f1738a, obtainStyledAttributes.getColorStateList(R.styleable.ViewBackgroundHelper_backgroundTint));
+                ViewCompat.setBackgroundTintList(this.f1690a, obtainStyledAttributes.getColorStateList(R.styleable.ViewBackgroundHelper_backgroundTint));
             }
             if (obtainStyledAttributes.hasValue(R.styleable.ViewBackgroundHelper_backgroundTintMode)) {
-                ViewCompat.setBackgroundTintMode(this.f1738a, DrawableUtils.parseTintMode(obtainStyledAttributes.getInt(R.styleable.ViewBackgroundHelper_backgroundTintMode, -1), null));
+                ViewCompat.setBackgroundTintMode(this.f1690a, DrawableUtils.parseTintMode(obtainStyledAttributes.getInt(R.styleable.ViewBackgroundHelper_backgroundTintMode, -1), null));
             }
         } finally {
             obtainStyledAttributes.recycle();
@@ -148,19 +148,19 @@ public class AppCompatBackgroundHelper {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void c() {
-        Drawable background = this.f1738a.getBackground();
+        Drawable background = this.f1690a.getBackground();
         if (background != null) {
             if (d() && b(background)) {
                 return;
             }
             TintInfo tintInfo = this.e;
             if (tintInfo != null) {
-                AppCompatDrawableManager.a(background, tintInfo, this.f1738a.getDrawableState());
+                AppCompatDrawableManager.a(background, tintInfo, this.f1690a.getDrawableState());
                 return;
             }
             TintInfo tintInfo2 = this.d;
             if (tintInfo2 != null) {
-                AppCompatDrawableManager.a(background, tintInfo2, this.f1738a.getDrawableState());
+                AppCompatDrawableManager.a(background, tintInfo2, this.f1690a.getDrawableState());
             }
         }
     }

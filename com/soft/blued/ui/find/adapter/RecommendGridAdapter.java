@@ -30,7 +30,7 @@ public class RecommendGridAdapter extends BaseAdapter {
     private static final int[] b = {R.id.header_view1, R.id.header_view2, R.id.header_view3, R.id.header_view4};
 
     /* renamed from: c  reason: collision with root package name */
-    private static final int[] f30112c = {R.id.role_view1, R.id.role_view2, R.id.role_view3, R.id.role_view4};
+    private static final int[] f16422c = {R.id.role_view1, R.id.role_view2, R.id.role_view3, R.id.role_view4};
     private static final int[] d = {R.id.attention_status1, R.id.attention_status2, R.id.attention_status3, R.id.attention_status4};
     private static final int[] e = {R.id.bottom_bg1, R.id.bottom_bg2, R.id.bottom_bg3, R.id.bottom_bg4};
     private Context f;
@@ -44,24 +44,24 @@ public class RecommendGridAdapter extends BaseAdapter {
     private View.OnClickListener o;
 
     /* renamed from: a  reason: collision with root package name */
-    public List<BluedRecommendUsers> f30113a = new ArrayList();
+    public List<BluedRecommendUsers> f16423a = new ArrayList();
     private HashSet<String> k = new HashSet<>();
 
     /* loaded from: source-8303388-dex2jar.jar:com/soft/blued/ui/find/adapter/RecommendGridAdapter$ViewHolder.class */
     class ViewHolder {
 
         /* renamed from: a  reason: collision with root package name */
-        public View f30114a;
+        public View f16424a;
         public ImageView[] b;
 
         /* renamed from: c  reason: collision with root package name */
-        public ImageView[] f30115c;
+        public ImageView[] f16425c;
         public ImageView[] d;
         public ImageView[] e;
 
         private ViewHolder() {
             this.b = new ImageView[RecommendGridAdapter.this.m];
-            this.f30115c = new ImageView[RecommendGridAdapter.this.m];
+            this.f16425c = new ImageView[RecommendGridAdapter.this.m];
             this.d = new ImageView[RecommendGridAdapter.this.m];
             this.e = new ImageView[RecommendGridAdapter.this.m];
         }
@@ -94,13 +94,13 @@ public class RecommendGridAdapter extends BaseAdapter {
 
     public void a(List<BluedRecommendUsers> list) {
         this.k.clear();
-        this.f30113a.clear();
+        this.f16423a.clear();
         this.l = 0;
         if (list != null && list.size() > 0) {
             for (int i = 0; i < list.size(); i++) {
                 BluedRecommendUsers bluedRecommendUsers = list.get(i);
                 if (!this.k.contains(bluedRecommendUsers.uid)) {
-                    this.f30113a.add(bluedRecommendUsers);
+                    this.f16423a.add(bluedRecommendUsers);
                     this.k.add(bluedRecommendUsers.uid);
                 }
             }
@@ -123,7 +123,7 @@ public class RecommendGridAdapter extends BaseAdapter {
             if (this.k.contains(bluedRecommendUsers.uid)) {
                 this.l++;
             } else {
-                this.f30113a.add(bluedRecommendUsers);
+                this.f16423a.add(bluedRecommendUsers);
                 this.k.add(bluedRecommendUsers.uid);
             }
             i = i2 + 1;
@@ -132,7 +132,7 @@ public class RecommendGridAdapter extends BaseAdapter {
 
     @Override // android.widget.Adapter
     public int getCount() {
-        return (int) Math.ceil(this.f30113a.size() / this.m);
+        return (int) Math.ceil(this.f16423a.size() / this.m);
     }
 
     @Override // android.widget.Adapter
@@ -157,17 +157,17 @@ public class RecommendGridAdapter extends BaseAdapter {
             } else if (i3 == 4) {
                 view = this.g.inflate(R.layout.fragment_recommend_gird_4_item, viewGroup, false);
             }
-            viewHolder2.f30114a = view.findViewById(2131366742);
-            viewHolder2.f30114a.setLayoutParams(new FrameLayout.LayoutParams(-1, this.n));
-            viewHolder2.f30114a.requestLayout();
+            viewHolder2.f16424a = view.findViewById(2131366742);
+            viewHolder2.f16424a.setLayoutParams(new FrameLayout.LayoutParams(-1, this.n));
+            viewHolder2.f16424a.requestLayout();
             int i4 = 0;
             while (true) {
                 int i5 = i4;
                 if (i5 >= this.m) {
                     break;
                 }
-                viewHolder2.b[i5] = (ImageView) view.findViewById(f30112c[i5]);
-                viewHolder2.f30115c[i5] = (ImageView) view.findViewById(d[i5]);
+                viewHolder2.b[i5] = (ImageView) view.findViewById(f16422c[i5]);
+                viewHolder2.f16425c[i5] = (ImageView) view.findViewById(d[i5]);
                 viewHolder2.e[i5] = (ImageView) view.findViewById(b[i5]);
                 viewHolder2.d[i5] = (ImageView) view.findViewById(e[i5]);
                 i4 = i5 + 1;
@@ -177,7 +177,7 @@ public class RecommendGridAdapter extends BaseAdapter {
         } else {
             viewHolder = (ViewHolder) view.getTag();
         }
-        int size = this.f30113a.size();
+        int size = this.f16423a.size();
         int i6 = this.m;
         int i7 = size - (i * i6);
         int i8 = i6;
@@ -190,11 +190,11 @@ public class RecommendGridAdapter extends BaseAdapter {
             if (i10 >= i8) {
                 break;
             }
-            viewHolder.f30115c[i10].setVisibility(0);
+            viewHolder.f16425c[i10].setVisibility(0);
             viewHolder.b[i10].setVisibility(0);
             viewHolder.e[i10].setVisibility(0);
             viewHolder.d[i10].setVisibility(0);
-            BluedRecommendUsers bluedRecommendUsers = this.f30113a.get((i * i8) + i10);
+            BluedRecommendUsers bluedRecommendUsers = this.f16423a.get((i * i8) + i10);
             ImageWrapper b2 = ImageLoader.a(this.h, AvatarUtils.a(0, bluedRecommendUsers.avatar)).b(2131237314);
             if (this.m == 4) {
                 b2.c();
@@ -232,16 +232,16 @@ public class RecommendGridAdapter extends BaseAdapter {
             viewHolder.e[i10].setTag(Integer.valueOf((this.m * i) + i10));
             viewHolder.e[i10].setOnClickListener(this.o);
             if (StringUtils.d(bluedRecommendUsers.relationship)) {
-                viewHolder.f30115c[i10].setImageResource(2131237251);
+                viewHolder.f16425c[i10].setImageResource(2131237251);
             } else if ("0".equals(bluedRecommendUsers.relationship)) {
-                viewHolder.f30115c[i10].setImageResource(2131237251);
+                viewHolder.f16425c[i10].setImageResource(2131237251);
             } else {
-                viewHolder.f30115c[i10].setImageResource(2131237254);
+                viewHolder.f16425c[i10].setImageResource(2131237254);
             }
             i9 = i10 + 1;
         }
         for (i2 = i8; i2 < this.m; i2++) {
-            viewHolder.f30115c[i2].setVisibility(4);
+            viewHolder.f16425c[i2].setVisibility(4);
             viewHolder.b[i2].setVisibility(4);
             viewHolder.e[i2].setVisibility(4);
             viewHolder.d[i2].setVisibility(4);

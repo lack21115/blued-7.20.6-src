@@ -1,7 +1,5 @@
 package com.google.common.net;
 
-import com.android.internal.http.multipart.FilePart;
-import com.android.internal.telephony.SmsConstants;
 import com.baidu.mobads.sdk.internal.a;
 import com.google.common.base.Ascii;
 import com.google.common.base.CharMatcher;
@@ -26,7 +24,6 @@ import com.youzan.spiderman.utils.Stone;
 import java.nio.charset.Charset;
 import java.util.Collection;
 import java.util.Map;
-import javax.xml.XMLConstants;
 import org.checkerframework.checker.nullness.compatqual.NullableDecl;
 
 @Immutable
@@ -37,7 +34,6 @@ public final class MediaType {
     private static final String IMAGE_TYPE = "image";
     private static final String TEXT_TYPE = "text";
     private static final String VIDEO_TYPE = "video";
-    private static final String WILDCARD = "*";
     @LazyInit
     private int hashCode;
     private final ImmutableListMultimap<String, String> parameters;
@@ -53,12 +49,13 @@ public final class MediaType {
     private static final CharMatcher QUOTED_TEXT_MATCHER = CharMatcher.ascii().and(CharMatcher.noneOf("\"\\\r"));
     private static final CharMatcher LINEAR_WHITE_SPACE = CharMatcher.anyOf(" \t\r\n");
     private static final Map<MediaType, MediaType> KNOWN_TYPES = Maps.newHashMap();
-    public static final MediaType ANY_TYPE = createConstant("*", "*");
-    public static final MediaType ANY_TEXT_TYPE = createConstant("text", "*");
-    public static final MediaType ANY_IMAGE_TYPE = createConstant("image", "*");
-    public static final MediaType ANY_AUDIO_TYPE = createConstant("audio", "*");
-    public static final MediaType ANY_VIDEO_TYPE = createConstant("video", "*");
-    public static final MediaType ANY_APPLICATION_TYPE = createConstant("application", "*");
+    private static final String WILDCARD = "*";
+    public static final MediaType ANY_TYPE = createConstant(WILDCARD, WILDCARD);
+    public static final MediaType ANY_TEXT_TYPE = createConstant("text", WILDCARD);
+    public static final MediaType ANY_IMAGE_TYPE = createConstant("image", WILDCARD);
+    public static final MediaType ANY_AUDIO_TYPE = createConstant("audio", WILDCARD);
+    public static final MediaType ANY_VIDEO_TYPE = createConstant("video", WILDCARD);
+    public static final MediaType ANY_APPLICATION_TYPE = createConstant("application", WILDCARD);
     public static final MediaType CACHE_MANIFEST_UTF_8 = createConstantUtf8("text", "cache-manifest");
     public static final MediaType CSS_UTF_8 = createConstantUtf8("text", Stone.CSS_SUFFIX);
     public static final MediaType CSV_UTF_8 = createConstantUtf8("text", "csv");
@@ -69,7 +66,7 @@ public final class MediaType {
     public static final MediaType TSV_UTF_8 = createConstantUtf8("text", "tab-separated-values");
     public static final MediaType VCARD_UTF_8 = createConstantUtf8("text", "vcard");
     public static final MediaType WML_UTF_8 = createConstantUtf8("text", "vnd.wap.wml");
-    public static final MediaType XML_UTF_8 = createConstantUtf8("text", XMLConstants.XML_NS_PREFIX);
+    public static final MediaType XML_UTF_8 = createConstantUtf8("text", "xml");
     public static final MediaType VTT_UTF_8 = createConstantUtf8("text", "vtt");
     public static final MediaType BMP = createConstant("image", "bmp");
     public static final MediaType CRW = createConstant("image", "x-canon-crw");
@@ -103,9 +100,9 @@ public final class MediaType {
     public static final MediaType WEBM_VIDEO = createConstant("video", "webm");
     public static final MediaType WMV = createConstant("video", "x-ms-wmv");
     public static final MediaType FLV_VIDEO = createConstant("video", "x-flv");
-    public static final MediaType THREE_GPP_VIDEO = createConstant("video", SmsConstants.FORMAT_3GPP);
-    public static final MediaType THREE_GPP2_VIDEO = createConstant("video", SmsConstants.FORMAT_3GPP2);
-    public static final MediaType APPLICATION_XML_UTF_8 = createConstantUtf8("application", XMLConstants.XML_NS_PREFIX);
+    public static final MediaType THREE_GPP_VIDEO = createConstant("video", "3gpp");
+    public static final MediaType THREE_GPP2_VIDEO = createConstant("video", "3gpp2");
+    public static final MediaType APPLICATION_XML_UTF_8 = createConstantUtf8("application", "xml");
     public static final MediaType ATOM_UTF_8 = createConstantUtf8("application", "atom+xml");
     public static final MediaType BZIP2 = createConstant("application", "x-bzip2");
     public static final MediaType DART_UTF_8 = createConstantUtf8("application", "dart");
@@ -114,7 +111,7 @@ public final class MediaType {
     public static final MediaType EPUB = createConstant("application", "epub+zip");
     public static final MediaType FORM_DATA = createConstant("application", "x-www-form-urlencoded");
     public static final MediaType KEY_ARCHIVE = createConstant("application", "pkcs12");
-    public static final MediaType APPLICATION_BINARY = createConstant("application", FilePart.DEFAULT_TRANSFER_ENCODING);
+    public static final MediaType APPLICATION_BINARY = createConstant("application", "binary");
     public static final MediaType GEO_JSON = createConstant("application", "geo+json");
     public static final MediaType GZIP = createConstant("application", "x-gzip");
     public static final MediaType HAL_JSON = createConstant("application", "hal+json");
@@ -251,7 +248,7 @@ public final class MediaType {
         Preconditions.checkNotNull(multimap);
         String normalizeToken = normalizeToken(str);
         String normalizeToken2 = normalizeToken(str2);
-        Preconditions.checkArgument(!"*".equals(normalizeToken) || "*".equals(normalizeToken2), "A wildcard type cannot be used with a non-wildcard subtype");
+        Preconditions.checkArgument(!WILDCARD.equals(normalizeToken) || WILDCARD.equals(normalizeToken2), "A wildcard type cannot be used with a non-wildcard subtype");
         ImmutableListMultimap.Builder builder = ImmutableListMultimap.builder();
         for (Map.Entry<String, String> entry : multimap.entries()) {
             String normalizeToken3 = normalizeToken(entry.getKey());
@@ -410,7 +407,7 @@ public final class MediaType {
     }
 
     public boolean hasWildcard() {
-        return "*".equals(this.type) || "*".equals(this.subtype);
+        return WILDCARD.equals(this.type) || WILDCARD.equals(this.subtype);
     }
 
     public int hashCode() {
@@ -424,8 +421,8 @@ public final class MediaType {
     }
 
     public boolean is(MediaType mediaType) {
-        if (mediaType.type.equals("*") || mediaType.type.equals(this.type)) {
-            return (mediaType.subtype.equals("*") || mediaType.subtype.equals(this.subtype)) && this.parameters.entries().containsAll(mediaType.parameters.entries());
+        if (mediaType.type.equals(WILDCARD) || mediaType.type.equals(this.type)) {
+            return (mediaType.subtype.equals(WILDCARD) || mediaType.subtype.equals(this.subtype)) && this.parameters.entries().containsAll(mediaType.parameters.entries());
         }
         return false;
     }

@@ -4,11 +4,11 @@ package com.umeng.ccg;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f40812a = "cc";
+    public static final String f27121a = "cc";
     public static final String b = "col_wifi";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f40813c = "col_bs";
+    public static final String f27122c = "col_bs";
     public static final String d = "col_lbs";
     public static final String e = "col_apl";
     public static final String f = "screen_on";

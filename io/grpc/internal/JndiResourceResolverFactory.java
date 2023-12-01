@@ -1,7 +1,6 @@
 package io.grpc.internal;
 
 import com.google.common.base.Verify;
-import com.tencent.cos.xml.model.tag.DomainConfiguration;
 import io.grpc.internal.DnsNameResolver;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -99,7 +98,7 @@ public final class JndiResourceResolverFactory implements DnsNameResolver.Resour
 
         static String unquote(String str) {
             int i;
-            char c2;
+            char c;
             StringBuilder sb = new StringBuilder(str.length());
             int i2 = 0;
             boolean z = false;
@@ -110,21 +109,21 @@ public final class JndiResourceResolverFactory implements DnsNameResolver.Resour
                         z = false;
                     } else {
                         i = i2;
-                        c2 = charAt;
+                        c = charAt;
                         if (charAt == '\\') {
                             i = i2 + 1;
-                            c2 = str.charAt(i);
+                            c = str.charAt(i);
                         }
-                        sb.append(c2);
+                        sb.append(c);
                         i2 = i;
                     }
                 } else if (charAt != ' ') {
                     i = i2;
-                    c2 = charAt;
+                    c = charAt;
                     if (charAt == '\"') {
                         z = true;
                     }
-                    sb.append(c2);
+                    sb.append(c);
                     i2 = i;
                 }
                 i2++;
@@ -174,7 +173,7 @@ public final class JndiResourceResolverFactory implements DnsNameResolver.Resour
                 logger.log(Level.FINER, "About to query TXT records for {0}", new Object[]{str});
             }
             RecordFetcher recordFetcher = this.recordFetcher;
-            List<String> allRecords = recordFetcher.getAllRecords(DomainConfiguration.REPLACE_TXT, "dns:///" + str);
+            List<String> allRecords = recordFetcher.getAllRecords("TXT", "dns:///" + str);
             if (logger.isLoggable(Level.FINER)) {
                 logger.log(Level.FINER, "Found {0} TXT records", new Object[]{Integer.valueOf(allRecords.size())});
             }

@@ -1,6 +1,5 @@
 package com.soft.blued.ui.user.fragment;
 
-import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
@@ -8,9 +7,11 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.LifecycleOwner;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.viewbinding.ViewBinding;
 import com.anythink.expressad.foundation.h.i;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.image.ImageLoader;
@@ -62,7 +63,7 @@ public final class VIPLvlPrivilegeFragment extends MVIBaseFragment<VIPCenterTabP
     private final int e;
 
     /* renamed from: c  reason: collision with root package name */
-    static final /* synthetic */ KProperty<Object>[] f34149c = {Reflection.a(new PropertyReference1Impl(VIPLvlPrivilegeFragment.class, "viewBinding", "getViewBinding()Lcom/soft/blued/databinding/FragmentVipLevelPrivilegeBinding;", 0))};
+    static final /* synthetic */ KProperty<Object>[] f20458c = {(KProperty) Reflection.a(new PropertyReference1Impl(VIPLvlPrivilegeFragment.class, "viewBinding", "getViewBinding()Lcom/soft/blued/databinding/FragmentVipLevelPrivilegeBinding;", 0))};
     public static final Companion b = new Companion(null);
 
     @Metadata
@@ -84,18 +85,18 @@ public final class VIPLvlPrivilegeFragment extends MVIBaseFragment<VIPCenterTabP
     }
 
     public VIPLvlPrivilegeFragment() {
-        super(R.layout.fragment_vip_level_privilege);
-        this.d = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<VIPLvlPrivilegeFragment, FragmentVipLevelPrivilegeBinding>() { // from class: com.soft.blued.ui.user.fragment.VIPLvlPrivilegeFragment$special$$inlined$viewBindingFragment$default$1
-            @Override // kotlin.jvm.functions.Function1
+        super((int) R.layout.fragment_vip_level_privilege);
+        this.d = ((Fragment) this) instanceof DialogFragment ? (ViewBindingProperty) new DialogFragmentViewBindingProperty(new Function1<VIPLvlPrivilegeFragment, FragmentVipLevelPrivilegeBinding>() { // from class: com.soft.blued.ui.user.fragment.VIPLvlPrivilegeFragment$special$$inlined$viewBindingFragment$default$1
+            /* JADX WARN: Incorrect types in method signature: (Lcom/soft/blued/ui/user/fragment/VIPLvlPrivilegeFragment;)Lcom/soft/blued/databinding/FragmentVipLevelPrivilegeBinding; */
             /* renamed from: a */
-            public final FragmentVipLevelPrivilegeBinding invoke(VIPLvlPrivilegeFragment fragment) {
+            public final ViewBinding invoke(Fragment fragment) {
                 Intrinsics.e(fragment, "fragment");
                 return FragmentVipLevelPrivilegeBinding.a(fragment.requireView());
             }
         }) : new FragmentViewBindingProperty(new Function1<VIPLvlPrivilegeFragment, FragmentVipLevelPrivilegeBinding>() { // from class: com.soft.blued.ui.user.fragment.VIPLvlPrivilegeFragment$special$$inlined$viewBindingFragment$default$2
-            @Override // kotlin.jvm.functions.Function1
+            /* JADX WARN: Incorrect types in method signature: (Lcom/soft/blued/ui/user/fragment/VIPLvlPrivilegeFragment;)Lcom/soft/blued/databinding/FragmentVipLevelPrivilegeBinding; */
             /* renamed from: a */
-            public final FragmentVipLevelPrivilegeBinding invoke(VIPLvlPrivilegeFragment fragment) {
+            public final ViewBinding invoke(Fragment fragment) {
                 Intrinsics.e(fragment, "fragment");
                 return FragmentVipLevelPrivilegeBinding.a(fragment.requireView());
             }
@@ -104,7 +105,7 @@ public final class VIPLvlPrivilegeFragment extends MVIBaseFragment<VIPCenterTabP
     }
 
     private final FragmentVipLevelPrivilegeBinding a() {
-        return (FragmentVipLevelPrivilegeBinding) this.d.b(this, f34149c[0]);
+        return (FragmentVipLevelPrivilegeBinding) this.d.b(this, f20458c[0]);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -129,7 +130,7 @@ public final class VIPLvlPrivilegeFragment extends MVIBaseFragment<VIPCenterTabP
         if (imageView == null || i <= 0) {
             return;
         }
-        String a2 = i2 > 0 ? Intrinsics.a("_center_", (Object) "expire_") : "_center_";
+        String a2 = i2 > 0 ? Intrinsics.a("_center_", "expire_") : "_center_";
         if (i3 == 1) {
             imageView.setVisibility(0);
             a2 = "vip" + a2 + i;
@@ -143,15 +144,15 @@ public final class VIPLvlPrivilegeFragment extends MVIBaseFragment<VIPCenterTabP
             imageView.setVisibility(0);
             a2 = "bluedx" + a2 + i;
         }
-        imageView.setImageResource(AppInfo.d().getResources().getIdentifier(a2, i.f7952c, AppInfo.d().getPackageName()));
+        imageView.setImageResource(AppInfo.d().getResources().getIdentifier(a2, i.f5112c, AppInfo.d().getPackageName()));
         imageView.setAdjustViewBounds(true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(VIPLvlPrivilegeFragment this$0, View view) {
+    public static final void a(VIPLvlPrivilegeFragment vIPLvlPrivilegeFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        FragmentActivity activity = this$0.getActivity();
+        Intrinsics.e(vIPLvlPrivilegeFragment, "this$0");
+        FragmentActivity activity = vIPLvlPrivilegeFragment.getActivity();
         if (activity == null) {
             return;
         }
@@ -169,11 +170,11 @@ public final class VIPLvlPrivilegeFragment extends MVIBaseFragment<VIPCenterTabP
             if (context != null) {
                 a2.n.setCenterTextColor(2131102203);
                 a2.n.setBackgroundColor(context.getResources().getColor(2131102170));
-                StatusBarHelper.a((Activity) getActivity(), true);
+                StatusBarHelper.a(getActivity(), true);
                 final Ref.IntRef intRef = new Ref.IntRef();
-                intRef.f42543a = 2;
+                intRef.a = 2;
                 if (vIPCenterNewModel.user_info.grade == 1) {
-                    ImageLoader.a((IRequestHost) null, ImgURLMap.f10885a.a("icon_vip_center_bg")).a(a2.f29026c);
+                    ImageLoader.a((IRequestHost) null, ImgURLMap.a.a("icon_vip_center_bg")).a(a2.f15336c);
                     a2.f.setImageDrawable(context.getResources().getDrawable(R.drawable.icon_vip_center_header_bg));
                     a2.j.a();
                     a2.g.setImageDrawable(context.getResources().getDrawable(R.drawable.icon_vip_center_question));
@@ -181,25 +182,25 @@ public final class VIPLvlPrivilegeFragment extends MVIBaseFragment<VIPCenterTabP
                     a2.s.setTextColor(context.getResources().getColor(R.color.syc_A3623C));
                     a2.r.setTextColor(context.getResources().getColor(R.color.syc_A3623C));
                     a2.o.setTextColor(context.getResources().getColor(R.color.syc_7B401D));
-                    intRef.f42543a = 1;
+                    intRef.a = 1;
                 } else {
-                    ImageLoader.a((IRequestHost) null, ImgURLMap.f10885a.a("icon_svip_center_bg")).a(a2.f29026c);
-                    ImageLoader.a((IRequestHost) null, ImgURLMap.f10885a.a("icon_svip_center_header_bg")).a(a2.f);
+                    ImageLoader.a((IRequestHost) null, ImgURLMap.a.a("icon_svip_center_bg")).a(a2.f15336c);
+                    ImageLoader.a((IRequestHost) null, ImgURLMap.a.a("icon_svip_center_header_bg")).a(a2.f);
                     a2.j.b();
                     a2.g.setImageDrawable(context.getResources().getDrawable(R.drawable.icon_svip_center_question));
                     a2.p.setTextColor(context.getResources().getColor(R.color.syc_2A7BDF));
                     a2.s.setTextColor(context.getResources().getColor(R.color.syc_2A7BDF));
                     a2.r.setTextColor(context.getResources().getColor(R.color.syc_2A7BDF));
                     a2.o.setTextColor(context.getResources().getColor(2131102170));
-                    intRef.f42543a = 2;
+                    intRef.a = 2;
                 }
                 if (vIPCenterNewModel.user_info.expire_type > 0) {
-                    a2.f29025a.setVisibility(0);
+                    a2.f15335a.setVisibility(0);
                     final Ref.ObjectRef objectRef = new Ref.ObjectRef();
-                    objectRef.f42545a = "expire_svip";
+                    objectRef.a = "expire_svip";
                     if (vIPCenterNewModel.user_info.expire_type == 2) {
-                        ImageLoader.a((IRequestHost) null, ImgURLMap.f10885a.a("icon_svip_center_bg")).a(a2.f29026c);
-                        ImageLoader.a((IRequestHost) null, ImgURLMap.f10885a.a("icon_svip_center_header_out_time_bg")).a(a2.f);
+                        ImageLoader.a((IRequestHost) null, ImgURLMap.a.a("icon_svip_center_bg")).a(a2.f15336c);
+                        ImageLoader.a((IRequestHost) null, ImgURLMap.a.a("icon_svip_center_header_out_time_bg")).a(a2.f);
                         a2.j.d();
                         a2.g.setImageDrawable(context.getResources().getDrawable(R.drawable.icon_svip_center_question));
                         a2.p.setTextColor(context.getResources().getColor(R.color.syc_445771));
@@ -207,10 +208,10 @@ public final class VIPLvlPrivilegeFragment extends MVIBaseFragment<VIPCenterTabP
                         a2.r.setTextColor(context.getResources().getColor(R.color.syc_445771));
                         a2.d.setImageDrawable(context.getResources().getDrawable(R.drawable.icon_svip_new_page_buy_btn_bg));
                         a2.o.setTextColor(context.getResources().getColor(2131102170));
-                        intRef.f42543a = 2;
-                        objectRef.f42545a = "expire_svip";
+                        intRef.a = 2;
+                        objectRef.a = "expire_svip";
                     } else {
-                        ImageLoader.a((IRequestHost) null, ImgURLMap.f10885a.a("icon_vip_center_bg")).a(a2.f29026c);
+                        ImageLoader.a((IRequestHost) null, ImgURLMap.a.a("icon_vip_center_bg")).a(a2.f15336c);
                         a2.f.setImageDrawable(context.getResources().getDrawable(R.drawable.icon_vip_center_header_out_time_bg));
                         a2.j.c();
                         a2.g.setImageDrawable(context.getResources().getDrawable(R.drawable.icon_vip_center_question));
@@ -219,17 +220,17 @@ public final class VIPLvlPrivilegeFragment extends MVIBaseFragment<VIPCenterTabP
                         a2.r.setTextColor(context.getResources().getColor(R.color.syc_7D7D7D));
                         a2.d.setImageDrawable(context.getResources().getDrawable(R.drawable.icon_vip_new_page_buy_btn_bg));
                         a2.o.setTextColor(context.getResources().getColor(R.color.syc_7B401D));
-                        intRef.f42543a = 1;
-                        objectRef.f42545a = "expire_vip";
+                        intRef.a = 1;
+                        objectRef.a = "expire_vip";
                     }
-                    a2.f29025a.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$VIPLvlPrivilegeFragment$MhyvPInslGiPO0JShl0C7e9Vw4k
+                    a2.f15335a.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$VIPLvlPrivilegeFragment$MhyvPInslGiPO0JShl0C7e9Vw4k
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
-                            VIPLvlPrivilegeFragment.a(Ref.IntRef.this, objectRef, view);
+                            VIPLvlPrivilegeFragment.a(intRef, objectRef, view);
                         }
                     });
                 } else {
-                    a2.f29025a.setVisibility(8);
+                    a2.f15335a.setVisibility(8);
                 }
                 ImageLoader.a(getFragmentActive(), UserInfo.getInstance().getLoginUserInfo().getAvatar()).c().a(2.0f, context.getResources().getColor(2131102170)).b(2131237310).d(2131237310).a(a2.h);
                 a2.t.setText(UserInfo.getInstance().getLoginUserInfo().name);
@@ -239,14 +240,14 @@ public final class VIPLvlPrivilegeFragment extends MVIBaseFragment<VIPCenterTabP
                 userBasicModel.vip_exp_lvl = vIPCenterNewModel.user_info.vip_exp_lvl;
                 userBasicModel.expire_type = vIPCenterNewModel.user_info.expire_type;
                 UserInfoHelper.a(a2.e, userBasicModel, getFragmentActive());
-                ImageView ivVipGradle = a2.i;
-                Intrinsics.c(ivVipGradle, "ivVipGradle");
-                a(ivVipGradle, vIPCenterNewModel.user_info.vip_exp_lvl, vIPCenterNewModel.user_info.expire_type, vIPCenterNewModel.user_info.grade);
+                ImageView imageView = a2.i;
+                Intrinsics.c(imageView, "ivVipGradle");
+                a(imageView, vIPCenterNewModel.user_info.vip_exp_lvl, vIPCenterNewModel.user_info.expire_type, vIPCenterNewModel.user_info.grade);
                 a2.p.setText(context.getString(R.string.vip_grade_current_exp) + ' ' + (vIPCenterNewModel.user_info.vip_exp > 0 ? String.valueOf(vIPCenterNewModel.user_info.vip_exp) : "0"));
                 ArrayList arrayList = new ArrayList();
                 if (vIPCenterNewModel.user_info.expire_type <= 0) {
                     TextView textView = a2.s;
-                    StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
+                    StringCompanionObject stringCompanionObject = StringCompanionObject.a;
                     String string = context.getString(R.string.vip_grade_page_next_level_exp);
                     Intrinsics.c(string, "context.getString(R.stri…rade_page_next_level_exp)");
                     String format = String.format(string, Arrays.copyOf(new Object[]{String.valueOf(vIPCenterNewModel.user_info.exp_lvl_next)}, 1));
@@ -268,10 +269,10 @@ public final class VIPLvlPrivilegeFragment extends MVIBaseFragment<VIPCenterTabP
                             StringBuilder sb = new StringBuilder();
                             sb.append("Lv.");
                             sb.append(vIPCenterNewModel.user_info.vip_exp_lvl);
-                            StringCompanionObject stringCompanionObject2 = StringCompanionObject.f42549a;
+                            StringCompanionObject stringCompanionObject2 = StringCompanionObject.a;
                             String string2 = context.getString(R.string.vip_new_grade_current_num);
                             Intrinsics.c(string2, "context.getString(R.stri…ip_new_grade_current_num)");
-                            String format2 = String.format(string2, Arrays.copyOf(new Object[]{Intrinsics.a("", (Object) Long.valueOf(vIPCenterNewModel.user_info.vip_exp))}, 1));
+                            String format2 = String.format(string2, Arrays.copyOf(new Object[]{Intrinsics.a("", Long.valueOf(vIPCenterNewModel.user_info.vip_exp))}, 1));
                             Intrinsics.c(format2, "format(format, *args)");
                             sb.append(format2);
                             arrayList.add(sb.toString());
@@ -279,10 +280,10 @@ public final class VIPLvlPrivilegeFragment extends MVIBaseFragment<VIPCenterTabP
                             StringBuilder sb2 = new StringBuilder();
                             sb2.append("Lv.");
                             sb2.append(i);
-                            StringCompanionObject stringCompanionObject3 = StringCompanionObject.f42549a;
+                            StringCompanionObject stringCompanionObject3 = StringCompanionObject.a;
                             String string3 = context.getString(R.string.vip_new_grade_lack_num);
                             Intrinsics.c(string3, "context.getString(\n     …                        )");
-                            String format3 = String.format(string3, Arrays.copyOf(new Object[]{Intrinsics.a("", (Object) Long.valueOf(i4 - vIPCenterNewModel.user_info.vip_exp))}, 1));
+                            String format3 = String.format(string3, Arrays.copyOf(new Object[]{Intrinsics.a("", Long.valueOf(i4 - vIPCenterNewModel.user_info.vip_exp))}, 1));
                             Intrinsics.c(format3, "format(format, *args)");
                             sb2.append(format3);
                             arrayList.add(sb2.toString());
@@ -294,7 +295,7 @@ public final class VIPLvlPrivilegeFragment extends MVIBaseFragment<VIPCenterTabP
                 } else {
                     if (vIPCenterNewModel.user_info.expire_type == 1 || vIPCenterNewModel.user_info.grade == 1) {
                         TextView textView2 = a2.s;
-                        StringCompanionObject stringCompanionObject4 = StringCompanionObject.f42549a;
+                        StringCompanionObject stringCompanionObject4 = StringCompanionObject.a;
                         String string4 = context.getString(R.string.vip_grade_page_out_date);
                         Intrinsics.c(string4, "context.getString(R.stri….vip_grade_page_out_date)");
                         String format4 = String.format(string4, Arrays.copyOf(new Object[]{context.getString(R.string.vip), String.valueOf(vIPCenterNewModel.user_info.vip_exp_lvl)}, 2));
@@ -302,7 +303,7 @@ public final class VIPLvlPrivilegeFragment extends MVIBaseFragment<VIPCenterTabP
                         textView2.setText(format4);
                     } else {
                         TextView textView3 = a2.s;
-                        StringCompanionObject stringCompanionObject5 = StringCompanionObject.f42549a;
+                        StringCompanionObject stringCompanionObject5 = StringCompanionObject.a;
                         String string5 = context.getString(R.string.vip_grade_page_out_date);
                         Intrinsics.c(string5, "context.getString(R.stri….vip_grade_page_out_date)");
                         String format5 = String.format(string5, Arrays.copyOf(new Object[]{context.getString(R.string.svip), String.valueOf(vIPCenterNewModel.user_info.vip_exp_lvl)}, 2));
@@ -318,10 +319,10 @@ public final class VIPLvlPrivilegeFragment extends MVIBaseFragment<VIPCenterTabP
                         sb3.append("Lv.");
                         sb3.append(i5);
                         sb3.append((char) 65288);
-                        StringCompanionObject stringCompanionObject6 = StringCompanionObject.f42549a;
+                        StringCompanionObject stringCompanionObject6 = StringCompanionObject.a;
                         String string6 = context.getString(R.string.vip_new_grade_reduce_num);
                         Intrinsics.c(string6, "context.getString(R.stri…vip_new_grade_reduce_num)");
-                        String format6 = String.format(string6, Arrays.copyOf(new Object[]{Intrinsics.a("", (Object) Integer.valueOf(Math.abs(vIPCenterNewModel.user_info.day_growth_value)))}, 1));
+                        String format6 = String.format(string6, Arrays.copyOf(new Object[]{Intrinsics.a("", Integer.valueOf(Math.abs(vIPCenterNewModel.user_info.day_growth_value)))}, 1));
                         Intrinsics.c(format6, "format(format, *args)");
                         sb3.append(format6);
                         sb3.append((char) 65289);
@@ -332,7 +333,7 @@ public final class VIPLvlPrivilegeFragment extends MVIBaseFragment<VIPCenterTabP
                 a2.j.setSelectIndex(vIPCenterNewModel.user_info.vip_exp_lvl - 1);
                 ActivityFragmentActive fragmentActive = getFragmentActive();
                 Intrinsics.c(fragmentActive, "fragmentActive");
-                final NoVIPPrivilegeAdapter noVIPPrivilegeAdapter = new NoVIPPrivilegeAdapter(fragmentActive, intRef.f42543a, a2.l.getWidth(), 2);
+                final NoVIPPrivilegeAdapter noVIPPrivilegeAdapter = new NoVIPPrivilegeAdapter(fragmentActive, intRef.a, a2.l.getWidth(), 2);
                 noVIPPrivilegeAdapter.a(vIPCenterNewModel.user_info.vip_exp_lvl);
                 if (vIPCenterNewModel.user_info.expire_type > 0) {
                     noVIPPrivilegeAdapter.a(-1);
@@ -346,9 +347,9 @@ public final class VIPLvlPrivilegeFragment extends MVIBaseFragment<VIPCenterTabP
                 int i7 = vIPCenterNewModel.user_info.vip_exp_lvl;
                 int i8 = vIPCenterNewModel.user_info.grade;
                 int i9 = vIPCenterNewModel.user_info.expire_type;
-                TextView tvPrivilegeTitle = a2.q;
-                Intrinsics.c(tvPrivilegeTitle, "tvPrivilegeTitle");
-                a(i7, i8, i9, tvPrivilegeTitle);
+                TextView textView4 = a2.q;
+                Intrinsics.c(textView4, "tvPrivilegeTitle");
+                a(i7, i8, i9, textView4);
                 noVIPPrivilegeAdapter.notifyDataSetChanged();
                 a2.j.setOnDropLickListener(new VipGradeProgress.OnDropLickListener() { // from class: com.soft.blued.ui.user.fragment.VIPLvlPrivilegeFragment$setData$1$1$1$4
                     @Override // com.soft.blued.ui.user.views.VipGradeProgress.OnDropLickListener
@@ -366,63 +367,62 @@ public final class VIPLvlPrivilegeFragment extends MVIBaseFragment<VIPCenterTabP
                             VIPLvlPrivilegeFragment vIPLvlPrivilegeFragment = this;
                             int i13 = vIPCenterNewModel.user_info.grade;
                             int i14 = vIPCenterNewModel.user_info.expire_type;
-                            TextView tvPrivilegeTitle2 = FragmentVipLevelPrivilegeBinding.this.q;
-                            Intrinsics.c(tvPrivilegeTitle2, "tvPrivilegeTitle");
-                            vIPLvlPrivilegeFragment.a(i12, i13, i14, tvPrivilegeTitle2);
+                            TextView textView5 = FragmentVipLevelPrivilegeBinding.this.q;
+                            Intrinsics.c(textView5, "tvPrivilegeTitle");
+                            vIPLvlPrivilegeFragment.a(i12, i13, i14, textView5);
                             noVIPPrivilegeAdapter.notifyDataSetChanged();
                         }
                     }
                 });
-                String a3 = vIPCenterNewModel.user_info.day_growth_value > 0 ? Intrinsics.a("+", (Object) Integer.valueOf(vIPCenterNewModel.user_info.day_growth_value)) : String.valueOf(vIPCenterNewModel.user_info.day_growth_value);
-                TextView textView4 = a2.r;
-                StringCompanionObject stringCompanionObject7 = StringCompanionObject.f42549a;
+                String a3 = vIPCenterNewModel.user_info.day_growth_value > 0 ? Intrinsics.a("+", Integer.valueOf(vIPCenterNewModel.user_info.day_growth_value)) : String.valueOf(vIPCenterNewModel.user_info.day_growth_value);
+                TextView textView5 = a2.r;
+                StringCompanionObject stringCompanionObject7 = StringCompanionObject.a;
                 String string7 = context.getResources().getString(R.string.vip_grade_page_today_exp);
                 Intrinsics.c(string7, "context.resources.getStr…vip_grade_page_today_exp)");
                 String format7 = String.format(string7, Arrays.copyOf(new Object[]{a3}, 1));
                 Intrinsics.c(format7, "format(format, *args)");
-                textView4.setText(format7);
+                textView5.setText(format7);
                 a2.g.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$VIPLvlPrivilegeFragment$St_fxQpATeVZD-bwvsGh8e-FC9U
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
                         VIPLvlPrivilegeFragment.b(VIPLvlPrivilegeFragment.this, view);
                     }
                 });
-                Unit unit = Unit.f42314a;
-                Unit unit2 = Unit.f42314a;
+                Unit unit = Unit.a;
+                Unit unit2 = Unit.a;
             }
-            Unit unit3 = Unit.f42314a;
+            Unit unit3 = Unit.a;
         }
-        Unit unit4 = Unit.f42314a;
+        Unit unit4 = Unit.a;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(Ref.IntRef pageGrade, Ref.ObjectRef vipDetail, View view) {
+    public static final void a(Ref.IntRef intRef, Ref.ObjectRef objectRef, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(pageGrade, "$pageGrade");
-        Intrinsics.e(vipDetail, "$vipDetail");
-        PayUtils.a(AppInfo.d(), pageGrade.f42543a, (String) vipDetail.f42545a, -1, VipProtos.FromType.UNKNOWN_FROM);
+        Intrinsics.e(intRef, "$pageGrade");
+        Intrinsics.e(objectRef, "$vipDetail");
+        PayUtils.a(AppInfo.d(), intRef.a, (String) objectRef.a, -1, VipProtos.FromType.UNKNOWN_FROM);
     }
 
     private final void b() {
-        WebViewShowInfoFragment.show(AppInfo.d(), Intrinsics.a(HostConfig.a("H5"), (Object) "/home/vip/level"), -1);
+        WebViewShowInfoFragment.show(AppInfo.d(), Intrinsics.a(HostConfig.a("H5"), "/home/vip/level"), -1);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(VIPLvlPrivilegeFragment this$0, View view) {
+    public static final void b(VIPLvlPrivilegeFragment vIPLvlPrivilegeFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.b();
+        Intrinsics.e(vIPLvlPrivilegeFragment, "this$0");
+        vIPLvlPrivilegeFragment.b();
     }
 
-    @Override // com.blued.android.module.common.base.mvi.MVIBaseFragment
     public void m() {
         CommonTopTitleNoTrans commonTopTitleNoTrans;
         CommonTopTitleNoTrans commonTopTitleNoTrans2;
-        y().a(1);
-        BluedStructureExtKt.a(this, VIPCenterAction.GetVIPData.f34310a);
+        ((VIPCenterTabPageViewModel) y()).a(1);
+        BluedStructureExtKt.a(this, VIPCenterAction.GetVIPData.f20619a);
         FragmentVipLevelPrivilegeBinding a2 = a();
         if (a2 != null && (commonTopTitleNoTrans2 = a2.n) != null) {
-            commonTopTitleNoTrans2.setCenterText(R.string.vip_exp_lvl);
+            commonTopTitleNoTrans2.setCenterText((int) R.string.vip_exp_lvl);
         }
         FragmentVipLevelPrivilegeBinding a3 = a();
         if (a3 == null || (commonTopTitleNoTrans = a3.n) == null) {
@@ -436,12 +436,10 @@ public final class VIPLvlPrivilegeFragment extends MVIBaseFragment<VIPCenterTabP
         });
     }
 
-    @Override // com.blued.android.module.common.base.mvi.MVIBaseFragment
     public void o() {
         LifecycleOwner viewLifecycleOwner = getViewLifecycleOwner();
         Intrinsics.c(viewLifecycleOwner, "viewLifecycleOwner");
         BluedStructureExtKt.a(this, viewLifecycleOwner, new PropertyReference1Impl() { // from class: com.soft.blued.ui.user.fragment.VIPLvlPrivilegeFragment$liveDataObserver$1
-            @Override // kotlin.jvm.internal.PropertyReference1Impl, kotlin.reflect.KProperty1
             public Object a(Object obj) {
                 return ((VIPCenterState) obj).a();
             }
@@ -451,18 +449,17 @@ public final class VIPLvlPrivilegeFragment extends MVIBaseFragment<VIPCenterTabP
                 super(1);
             }
 
-            public final void a(VIPCenterNewModel it) {
+            public final void a(VIPCenterNewModel vIPCenterNewModel) {
                 Dialog t;
-                Intrinsics.e(it, "it");
+                Intrinsics.e(vIPCenterNewModel, "it");
                 t = VIPLvlPrivilegeFragment.this.t();
                 DialogUtils.b(t);
-                VIPLvlPrivilegeFragment.this.a(it);
+                VIPLvlPrivilegeFragment.this.a(vIPCenterNewModel);
             }
 
-            @Override // kotlin.jvm.functions.Function1
-            public /* synthetic */ Unit invoke(VIPCenterNewModel vIPCenterNewModel) {
-                a(vIPCenterNewModel);
-                return Unit.f42314a;
+            public /* synthetic */ Object invoke(Object obj) {
+                a((VIPCenterNewModel) obj);
+                return Unit.a;
             }
         });
     }

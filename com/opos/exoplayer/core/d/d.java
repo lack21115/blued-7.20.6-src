@@ -22,11 +22,11 @@ public final class d {
     private static final Map<String, Integer> f;
 
     /* renamed from: a  reason: collision with root package name */
-    private static final com.opos.exoplayer.core.d.a f25263a = com.opos.exoplayer.core.d.a.a("OMX.google.raw.decoder");
+    private static final com.opos.exoplayer.core.d.a f11575a = com.opos.exoplayer.core.d.a.a("OMX.google.raw.decoder");
     private static final Pattern b = Pattern.compile("^\\D?(\\d+)$");
 
     /* renamed from: c  reason: collision with root package name */
-    private static final HashMap<b, List<com.opos.exoplayer.core.d.a>> f25264c = new HashMap<>();
+    private static final HashMap<b, List<com.opos.exoplayer.core.d.a>> f11576c = new HashMap<>();
     private static int g = -1;
 
     /* loaded from: source-8303388-dex2jar.jar:com/opos/exoplayer/core/d/d$a.class */
@@ -41,11 +41,11 @@ public final class d {
     public static final class b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final String f25265a;
+        public final String f11577a;
         public final boolean b;
 
         public b(String str, boolean z) {
-            this.f25265a = str;
+            this.f11577a = str;
             this.b = z;
         }
 
@@ -59,7 +59,7 @@ public final class d {
                     }
                     b bVar = (b) obj;
                     z = false;
-                    if (TextUtils.equals(this.f25265a, bVar.f25265a)) {
+                    if (TextUtils.equals(this.f11577a, bVar.f11577a)) {
                         if (this.b != bVar.b) {
                             return false;
                         }
@@ -72,7 +72,7 @@ public final class d {
         }
 
         public int hashCode() {
-            String str = this.f25265a;
+            String str = this.f11577a;
             return (this.b ? 1231 : 1237) + (((str == null ? 0 : str.hashCode()) + 31) * 31);
         }
     }
@@ -92,8 +92,8 @@ public final class d {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.opos.exoplayer.core.d.d$d  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/opos/exoplayer/core/d/d$d.class */
-    public static final class C0655d implements c {
-        private C0655d() {
+    public static final class C0485d implements c {
+        private C0485d() {
         }
 
         @Override // com.opos.exoplayer.core.d.d.c
@@ -122,7 +122,7 @@ public final class d {
     public static final class e implements c {
 
         /* renamed from: a  reason: collision with root package name */
-        private final int f25266a;
+        private final int f11578a;
         private MediaCodecInfo[] b;
 
         /* JADX WARN: Type inference failed for: r0v0, types: [java.lang.Throwable, java.lang.Runtime] */
@@ -132,7 +132,7 @@ public final class d {
 
         private void c() {
             if (this.b == null) {
-                this.b = new MediaCodecList(this.f25266a).getCodecInfos();
+                this.b = new MediaCodecList(this.f11578a).getCodecInfos();
             }
         }
 
@@ -387,7 +387,7 @@ public final class d {
     }
 
     public static com.opos.exoplayer.core.d.a a() {
-        return f25263a;
+        return f11575a;
     }
 
     public static com.opos.exoplayer.core.d.a a(String str, boolean z) {
@@ -414,13 +414,13 @@ public final class d {
     }
 
     private static void a(List<com.opos.exoplayer.core.d.a> list) {
-        if (u.f25510a < 26) {
-            if (list.size() <= 1 || !"OMX.MTK.AUDIO.DECODER.RAW".equals(list.get(0).f25256a)) {
+        if (u.f11822a < 26) {
+            if (list.size() <= 1 || !"OMX.MTK.AUDIO.DECODER.RAW".equals(list.get(0).f11568a)) {
                 return;
             }
             for (int i = 1; i < list.size(); i++) {
                 com.opos.exoplayer.core.d.a aVar = list.get(i);
-                if ("OMX.google.raw.decoder".equals(aVar.f25256a)) {
+                if ("OMX.google.raw.decoder".equals(aVar.f11568a)) {
                     list.remove(i);
                     list.add(0, aVar);
                     return;
@@ -434,27 +434,27 @@ public final class d {
             return false;
         }
         if (z || !str.endsWith(".secure")) {
-            if (u.f25510a >= 21 || !("CIPAACDecoder".equals(str) || "CIPMP3Decoder".equals(str) || "CIPVorbisDecoder".equals(str) || "CIPAMRNBDecoder".equals(str) || "AACDecoder".equals(str) || "MP3Decoder".equals(str))) {
-                if (u.f25510a >= 18 || !"OMX.SEC.MP3.Decoder".equals(str)) {
-                    if (u.f25510a < 18 && "OMX.MTK.AUDIO.DECODER.AAC".equals(str)) {
+            if (u.f11822a >= 21 || !("CIPAACDecoder".equals(str) || "CIPMP3Decoder".equals(str) || "CIPVorbisDecoder".equals(str) || "CIPAMRNBDecoder".equals(str) || "AACDecoder".equals(str) || "MP3Decoder".equals(str))) {
+                if (u.f11822a >= 18 || !"OMX.SEC.MP3.Decoder".equals(str)) {
+                    if (u.f11822a < 18 && "OMX.MTK.AUDIO.DECODER.AAC".equals(str)) {
                         if ("a70".equals(u.b)) {
                             return false;
                         }
-                        if ("Xiaomi".equals(u.f25511c) && u.b.startsWith("HM")) {
+                        if ("Xiaomi".equals(u.f11823c) && u.b.startsWith("HM")) {
                             return false;
                         }
                     }
-                    if (u.f25510a == 16 && "OMX.qcom.audio.decoder.mp3".equals(str) && ("dlxu".equals(u.b) || "protou".equals(u.b) || "ville".equals(u.b) || "villeplus".equals(u.b) || "villec2".equals(u.b) || u.b.startsWith("gee") || "C6602".equals(u.b) || "C6603".equals(u.b) || "C6606".equals(u.b) || "C6616".equals(u.b) || "L36h".equals(u.b) || "SO-02E".equals(u.b))) {
+                    if (u.f11822a == 16 && "OMX.qcom.audio.decoder.mp3".equals(str) && ("dlxu".equals(u.b) || "protou".equals(u.b) || "ville".equals(u.b) || "villeplus".equals(u.b) || "villec2".equals(u.b) || u.b.startsWith("gee") || "C6602".equals(u.b) || "C6603".equals(u.b) || "C6606".equals(u.b) || "C6616".equals(u.b) || "L36h".equals(u.b) || "SO-02E".equals(u.b))) {
                         return false;
                     }
-                    if (u.f25510a == 16 && "OMX.qcom.audio.decoder.aac".equals(str) && ("C1504".equals(u.b) || "C1505".equals(u.b) || "C1604".equals(u.b) || "C1605".equals(u.b))) {
+                    if (u.f11822a == 16 && "OMX.qcom.audio.decoder.aac".equals(str) && ("C1504".equals(u.b) || "C1505".equals(u.b) || "C1604".equals(u.b) || "C1605".equals(u.b))) {
                         return false;
                     }
-                    if (u.f25510a >= 24 || !(("OMX.SEC.aac.dec".equals(str) || "OMX.Exynos.AAC.Decoder".equals(str)) && u.f25511c.equals("samsung") && (u.b.startsWith("zeroflte") || u.b.startsWith("zerolte") || u.b.startsWith("zenlte") || u.b.equals("SC-05G") || u.b.equals("marinelteatt") || u.b.equals("404SC") || u.b.equals("SC-04G") || u.b.equals("SCV31")))) {
-                        if (u.f25510a <= 19 && "OMX.SEC.vp8.dec".equals(str) && "samsung".equals(u.f25511c) && (u.b.startsWith(com.anythink.expressad.foundation.g.a.O) || u.b.startsWith("serrano") || u.b.startsWith("jflte") || u.b.startsWith("santos") || u.b.startsWith("t0"))) {
+                    if (u.f11822a >= 24 || !(("OMX.SEC.aac.dec".equals(str) || "OMX.Exynos.AAC.Decoder".equals(str)) && u.f11823c.equals("samsung") && (u.b.startsWith("zeroflte") || u.b.startsWith("zerolte") || u.b.startsWith("zenlte") || u.b.equals("SC-05G") || u.b.equals("marinelteatt") || u.b.equals("404SC") || u.b.equals("SC-04G") || u.b.equals("SCV31")))) {
+                        if (u.f11822a <= 19 && "OMX.SEC.vp8.dec".equals(str) && "samsung".equals(u.f11823c) && (u.b.startsWith(com.anythink.expressad.foundation.g.a.O) || u.b.startsWith("serrano") || u.b.startsWith("jflte") || u.b.startsWith("santos") || u.b.startsWith("t0"))) {
                             return false;
                         }
-                        if (u.f25510a <= 19 && u.b.startsWith("jflte") && "OMX.qcom.video.decoder.vp8".equals(str)) {
+                        if (u.f11822a <= 19 && u.b.startsWith("jflte") && "OMX.qcom.video.decoder.vp8".equals(str)) {
                             return false;
                         }
                         return (o.B.equals(str2) && "OMX.MTK.AUDIO.DECODER.DSPAC3".equals(str)) ? false : true;
@@ -477,7 +477,7 @@ public final class d {
                 for (MediaCodecInfo.CodecProfileLevel codecProfileLevel : a2.a()) {
                     i2 = Math.max(a(codecProfileLevel.level), i2);
                 }
-                i = Math.max(i2, u.f25510a >= 21 ? 345600 : 172800);
+                i = Math.max(i2, u.f11822a >= 21 ? 345600 : 172800);
             }
             g = i;
         }
@@ -537,11 +537,11 @@ public final class d {
         synchronized (d.class) {
             try {
                 b bVar = new b(str, z);
-                List<com.opos.exoplayer.core.d.a> list = f25264c.get(bVar);
+                List<com.opos.exoplayer.core.d.a> list = f11576c.get(bVar);
                 if (list != null) {
                     unmodifiableList = list;
                 } else {
-                    c eVar = u.f25510a >= 21 ? new e(z) : new C0655d();
+                    c eVar = u.f11822a >= 21 ? new e(z) : new C0485d();
                     ArrayList<com.opos.exoplayer.core.d.a> a2 = a(bVar, eVar, str);
                     c cVar = eVar;
                     ArrayList<com.opos.exoplayer.core.d.a> arrayList = a2;
@@ -551,18 +551,18 @@ public final class d {
                         if (a2.isEmpty()) {
                             cVar = eVar;
                             arrayList = a2;
-                            if (21 <= u.f25510a) {
+                            if (21 <= u.f11822a) {
                                 cVar = eVar;
                                 arrayList = a2;
-                                if (u.f25510a <= 23) {
-                                    c c0655d = new C0655d();
-                                    ArrayList<com.opos.exoplayer.core.d.a> a3 = a(bVar, c0655d, str);
-                                    cVar = c0655d;
+                                if (u.f11822a <= 23) {
+                                    c c0485d = new C0485d();
+                                    ArrayList<com.opos.exoplayer.core.d.a> a3 = a(bVar, c0485d, str);
+                                    cVar = c0485d;
                                     arrayList = a3;
                                     if (!a3.isEmpty()) {
-                                        com.opos.cmn.an.f.a.c("MediaCodecUtil", "MediaCodecList API didn't list secure decoder for: " + str + ". Assuming: " + a3.get(0).f25256a);
+                                        com.opos.cmn.an.f.a.c("MediaCodecUtil", "MediaCodecList API didn't list secure decoder for: " + str + ". Assuming: " + a3.get(0).f11568a);
                                         arrayList = a3;
-                                        cVar = c0655d;
+                                        cVar = c0485d;
                                     }
                                 }
                             }
@@ -573,7 +573,7 @@ public final class d {
                     }
                     a(arrayList);
                     unmodifiableList = Collections.unmodifiableList(arrayList);
-                    f25264c.put(bVar, unmodifiableList);
+                    f11576c.put(bVar, unmodifiableList);
                 }
             } finally {
             }
@@ -582,7 +582,7 @@ public final class d {
     }
 
     private static boolean b(String str) {
-        if (u.f25510a <= 22) {
+        if (u.f11822a <= 22) {
             if (u.d.equals("ODROID-XU3") || u.d.equals("Nexus 10")) {
                 return "OMX.Exynos.AVC.Decoder".equals(str) || "OMX.Exynos.AVC.Decoder.secure".equals(str);
             }

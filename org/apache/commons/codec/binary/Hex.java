@@ -67,12 +67,12 @@ public class Hex implements BinaryDecoder, BinaryEncoder {
         return new String(encodeHex(bArr));
     }
 
-    protected static int toDigit(char c2, int i) throws DecoderException {
-        int digit = Character.digit(c2, 16);
+    protected static int toDigit(char c, int i) throws DecoderException {
+        int digit = Character.digit(c, 16);
         if (digit != -1) {
             return digit;
         }
-        throw new DecoderException("Illegal hexadecimal character " + c2 + " at index " + i);
+        throw new DecoderException("Illegal hexadecimal character " + c + " at index " + i);
     }
 
     @Override // org.apache.commons.codec.Decoder

@@ -1,8 +1,9 @@
 package com.blued.android.chat.core.worker.chat;
 
-import android.media.MediaFormat;
 import androidx.collection.ArrayMap;
+import com.android.internal.content.NativeLibraryHelper;
 import com.android.internal.util.cm.QSConstants;
+import com.android.internal.util.cm.SpamFilter;
 import com.blued.android.chat.ChatManager;
 import com.blued.android.chat.core.pack.BasePackage;
 import com.blued.android.chat.core.pack.PushMsgPackage;
@@ -102,7 +103,7 @@ public class LiveChat extends BaseWorker implements ConnectListener {
 
     private void createLiveChatSuccess(long j, Map<String, Object> map, LiveChatCreateListener liveChatCreateListener) {
         short shortValue = MsgPackHelper.getShortValue(map, ReqAckPackage.REQ_RESPONSE_KEY.SESSION_TYPE);
-        long longValue = MsgPackHelper.getLongValue(map, "session_id");
+        long longValue = MsgPackHelper.getLongValue(map, ReqAckPackage.REQ_RESPONSE_KEY.SESSION_ID);
         if (this.liveChatStartLocalId != j) {
             closeLiveChat(shortValue, longValue);
             return;
@@ -115,11 +116,11 @@ public class LiveChat extends BaseWorker implements ConnectListener {
         liveChatInitData.liveUrl = MsgPackHelper.getStringValue(map, "live_url");
         liveChatInitData.topCardCount = MsgPackHelper.getLongValue(map, ReqAckPackage.REQ_RESPONSE_KEY.TOP_CARD_COUNT);
         liveChatInitData.topCardUrl = MsgPackHelper.getStringValue(map, ReqAckPackage.REQ_RESPONSE_KEY.TOP_CARD_URL);
-        liveChatInitData.rank = MsgPackHelper.getLongValue(map, "rank");
+        liveChatInitData.rank = MsgPackHelper.getLongValue(map, ReqAckPackage.REQ_RESPONSE_KEY.RANK);
         liveChatInitData.beansCount = MsgPackHelper.getDoubleValue(map, ReqAckPackage.REQ_RESPONSE_KEY.BEANS_COUNT);
         liveChatInitData.beansCurrentCount = MsgPackHelper.getDoubleValue(map, ReqAckPackage.REQ_RESPONSE_KEY.BEANS_CURRENT_COUNT);
         liveChatInitData.badges = LiveChatInitData.parseBadgeMap(MsgPackHelper.getListValue(map, ReqAckPackage.REQ_RESPONSE_KEY.BADGES));
-        liveChatInitData.icon = MsgPackHelper.getStringValue(map, "icon");
+        liveChatInitData.icon = MsgPackHelper.getStringValue(map, ReqAckPackage.REQ_RESPONSE_KEY.ICON);
         liveChatInitData.liveType = MsgPackHelper.getIntValue(map, "live_type");
         liveChatInitData.liveDescription = MsgPackHelper.getStringValue(map, "description");
         liveChatInitData.joinLiveConferenceId = MsgPackHelper.getStringValue(map, "conference_id");
@@ -176,9 +177,9 @@ public class LiveChat extends BaseWorker implements ConnectListener {
 
     private void enterLiveChatSuccess(long j, Map<String, Object> map, LiveChatEnterListener liveChatEnterListener) {
         short shortValue = MsgPackHelper.getShortValue(map, ReqAckPackage.REQ_RESPONSE_KEY.SESSION_TYPE);
-        long longValue = MsgPackHelper.getLongValue(map, "session_id");
+        long longValue = MsgPackHelper.getLongValue(map, ReqAckPackage.REQ_RESPONSE_KEY.SESSION_ID);
         if (this.liveChatStartLocalId != j) {
-            Log.v(TAG, "enterLivechat localId not match, " + this.liveChatStartLocalId + "-" + j + ", so leave live");
+            Log.v(TAG, "enterLivechat localId not match, " + this.liveChatStartLocalId + NativeLibraryHelper.CLEAR_ABI_OVERRIDE + j + ", so leave live");
             leaveLiveChat(shortValue, longValue, "");
             return;
         }
@@ -190,19 +191,19 @@ public class LiveChat extends BaseWorker implements ConnectListener {
         liveChatInitData.elapseTimeSec = MsgPackHelper.getLongValue(map, "elapse_time");
         liveChatInitData.topCardCount = MsgPackHelper.getLongValue(map, ReqAckPackage.REQ_RESPONSE_KEY.TOP_CARD_COUNT);
         liveChatInitData.topCardUrl = MsgPackHelper.getStringValue(map, ReqAckPackage.REQ_RESPONSE_KEY.TOP_CARD_URL);
-        liveChatInitData.rank = MsgPackHelper.getLongValue(map, "rank");
+        liveChatInitData.rank = MsgPackHelper.getLongValue(map, ReqAckPackage.REQ_RESPONSE_KEY.RANK);
         liveChatInitData.beansCount = MsgPackHelper.getDoubleValue(map, ReqAckPackage.REQ_RESPONSE_KEY.BEANS_COUNT);
         liveChatInitData.beansCurrentCount = MsgPackHelper.getDoubleValue(map, ReqAckPackage.REQ_RESPONSE_KEY.BEANS_CURRENT_COUNT);
         liveChatInitData.badges = LiveChatInitData.parseBadgeMap(MsgPackHelper.getListValue(map, ReqAckPackage.REQ_RESPONSE_KEY.BADGES));
         liveChatInitData.entranceData = EntranceData.parseEntranceData(MsgPackHelper.getMapValue(map, ReqAckPackage.REQ_RESPONSE_KEY.ENTRANCE_EFFECTS));
         liveChatInitData.bluedBadgePic = MsgPackHelper.getStringValue(map, ReqAckPackage.REQ_RESPONSE_KEY.BLUED_BADGE_PIC);
         liveChatInitData.privateFlag = MsgPackHelper.getIntValue(map, "is_private");
-        liveChatInitData.icon = MsgPackHelper.getStringValue(map, "icon");
+        liveChatInitData.icon = MsgPackHelper.getStringValue(map, ReqAckPackage.REQ_RESPONSE_KEY.ICON);
         liveChatInitData.liveType = MsgPackHelper.getIntValue(map, "live_type");
         liveChatInitData.liveDescription = MsgPackHelper.getStringValue(map, "description");
         liveChatInitData.admin_type = MsgPackHelper.getIntValue(map, "admin_type");
         Map<String, Object> mapValue = MsgPackHelper.getMapValue(map, "extra");
-        Map<String, Object> mapValue2 = MsgPackHelper.getMapValue(map, MediaFormat.KEY_PROFILE);
+        Map<String, Object> mapValue2 = MsgPackHelper.getMapValue(map, "profile");
         if (mapValue2 != null) {
             liveChatInitData.liverProfile = new ProfileData();
             liveChatInitData.liverProfile.parseMsgPackData(mapValue2);
@@ -534,7 +535,7 @@ public class LiveChat extends BaseWorker implements ConnectListener {
                 } else {
                     str = str2;
                     if (!this.liveChatInfo.equalSession(pushMsgPackage.sessionType, pushMsgPackage.sessionId)) {
-                        str = str2 + ", sessionType or sessionId not equal, current:" + ((int) this.liveChatInfo.sessionType) + "-" + this.liveChatInfo.sessionId + ", message:" + ((int) pushMsgPackage.sessionType) + "-" + pushMsgPackage.sessionId;
+                        str = str2 + ", sessionType or sessionId not equal, current:" + ((int) this.liveChatInfo.sessionType) + NativeLibraryHelper.CLEAR_ABI_OVERRIDE + this.liveChatInfo.sessionId + ", message:" + ((int) pushMsgPackage.sessionType) + NativeLibraryHelper.CLEAR_ABI_OVERRIDE + pushMsgPackage.sessionId;
                     }
                 }
                 Log.v(TAG, str);
@@ -548,7 +549,7 @@ public class LiveChat extends BaseWorker implements ConnectListener {
             Log.v(TAG, "recvReqCloseLiveChatPackage()");
         }
         if (reqAckPackage.result == 0) {
-            notifyLiveChatClose(MsgPackHelper.getShortValue(reqAckPackage.reqResponse, ReqAckPackage.REQ_RESPONSE_KEY.SESSION_TYPE), MsgPackHelper.getLongValue(reqAckPackage.reqResponse, "session_id"), LiveCloseReason.CLOSED_BY_SELF, LiveChatStatistics.parseData(reqAckPackage.reqResponse));
+            notifyLiveChatClose(MsgPackHelper.getShortValue(reqAckPackage.reqResponse, ReqAckPackage.REQ_RESPONSE_KEY.SESSION_TYPE), MsgPackHelper.getLongValue(reqAckPackage.reqResponse, ReqAckPackage.REQ_RESPONSE_KEY.SESSION_ID), LiveCloseReason.CLOSED_BY_SELF, LiveChatStatistics.parseData(reqAckPackage.reqResponse));
         }
     }
 
@@ -587,10 +588,10 @@ public class LiveChat extends BaseWorker implements ConnectListener {
         }
         if (reqAckPackage.result == 0 && reqAckPackage.error == 0) {
             short shortValue = MsgPackHelper.getShortValue(reqAckPackage.reqResponse, ReqAckPackage.REQ_RESPONSE_KEY.SESSION_TYPE);
-            long longValue = MsgPackHelper.getLongValue(reqAckPackage.reqResponse, "session_id");
+            long longValue = MsgPackHelper.getLongValue(reqAckPackage.reqResponse, ReqAckPackage.REQ_RESPONSE_KEY.SESSION_ID);
             synchronized (this.sessionLock) {
                 if (this.liveChatInfo != null && this.liveChatInfo.equalSession(shortValue, longValue)) {
-                    this.liveChatInfo.viewerTotalCount = MsgPackHelper.getLongValue(reqAckPackage.reqResponse, "count");
+                    this.liveChatInfo.viewerTotalCount = MsgPackHelper.getLongValue(reqAckPackage.reqResponse, SpamFilter.SpamContract.NotificationTable.COUNT);
                     this.liveChatInfo.viewerOnLineCount = MsgPackHelper.getLongValue(reqAckPackage.reqResponse, "realtime_count");
                     this.liveChatInfo.viewerProfileList = ProfileData.parseProfileList(MsgPackHelper.getListValue(reqAckPackage.reqResponse, QSConstants.TILE_PROFILES));
                     notifyViewerListChanged(this.liveChatInfo);
@@ -602,13 +603,13 @@ public class LiveChat extends BaseWorker implements ConnectListener {
     /* JADX INFO: Access modifiers changed from: protected */
     public void recvReqJoinLivePackage(ReqAckPackage reqAckPackage) {
         String str = reqAckPackage.errorContent;
-        notifyJoinLive(MsgPackHelper.getShortValue(reqAckPackage.reqResponse, ReqAckPackage.REQ_RESPONSE_KEY.SESSION_TYPE), MsgPackHelper.getLongValue(reqAckPackage.reqResponse, "session_id"), reqAckPackage.error, str, MsgPackHelper.getStringValue(reqAckPackage.reqResponse, "conference_id"), MsgPackHelper.getStringValue(reqAckPackage.reqResponse, "token"));
+        notifyJoinLive(MsgPackHelper.getShortValue(reqAckPackage.reqResponse, ReqAckPackage.REQ_RESPONSE_KEY.SESSION_TYPE), MsgPackHelper.getLongValue(reqAckPackage.reqResponse, ReqAckPackage.REQ_RESPONSE_KEY.SESSION_ID), reqAckPackage.error, str, MsgPackHelper.getStringValue(reqAckPackage.reqResponse, "conference_id"), MsgPackHelper.getStringValue(reqAckPackage.reqResponse, "token"));
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     public void recvReqRecoverLiveChatPackage(ReqAckPackage reqAckPackage) {
         if (reqAckPackage.error == 6) {
-            notifyLiveChatClose(MsgPackHelper.getShortValue(reqAckPackage.reqResponse, ReqAckPackage.REQ_RESPONSE_KEY.SESSION_TYPE), MsgPackHelper.getLongValue(reqAckPackage.reqResponse, "session_id"), LiveCloseReason.CLOSED_BY_SELF, LiveChatStatistics.parseData(reqAckPackage.reqResponse));
+            notifyLiveChatClose(MsgPackHelper.getShortValue(reqAckPackage.reqResponse, ReqAckPackage.REQ_RESPONSE_KEY.SESSION_TYPE), MsgPackHelper.getLongValue(reqAckPackage.reqResponse, ReqAckPackage.REQ_RESPONSE_KEY.SESSION_ID), LiveCloseReason.CLOSED_BY_SELF, LiveChatStatistics.parseData(reqAckPackage.reqResponse));
         }
     }
 

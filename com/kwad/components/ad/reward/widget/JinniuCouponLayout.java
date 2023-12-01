@@ -140,9 +140,8 @@ public class JinniuCouponLayout extends LinearLayout {
         this.mPaint.setShader(new LinearGradient(rectF.left, rectF.top, rectF.right, rectF.bottom, this.startColor, this.endColor, Shader.TileMode.CLAMP));
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void dispatchDraw(Canvas canvas) {
+    protected void dispatchDraw(Canvas canvas) {
         this.zX.setEmpty();
         getDrawingRect(this.zX);
         this.zY.set(this.zX);

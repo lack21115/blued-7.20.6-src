@@ -12,26 +12,25 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 public final class MsgBackupVM$getTxCloudInfo$1 extends ContinuationImpl {
 
     /* renamed from: a  reason: collision with root package name */
-    Object f33667a;
+    Object f19976a;
     /* synthetic */ Object b;
 
     /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ MsgBackupVM f33668c;
+    final /* synthetic */ MsgBackupVM f19977c;
     int d;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public MsgBackupVM$getTxCloudInfo$1(MsgBackupVM msgBackupVM, Continuation<? super MsgBackupVM$getTxCloudInfo$1> continuation) {
         super(continuation);
-        this.f33668c = msgBackupVM;
+        this.f19977c = msgBackupVM;
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         Object a2;
         this.b = obj;
         this.d |= Integer.MIN_VALUE;
-        a2 = this.f33668c.a(this);
+        a2 = this.f19977c.a((Continuation) this);
         return a2;
     }
 }

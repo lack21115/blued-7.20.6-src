@@ -7,12 +7,12 @@ import android.os.IBinder;
 public class h implements b, g {
 
     /* renamed from: a  reason: collision with root package name */
-    public IVendorCallback f38470a;
+    public IVendorCallback f24779a;
     public i d;
     public String b = "";
 
     /* renamed from: c  reason: collision with root package name */
-    public String f38471c = "";
+    public String f24780c = "";
     public boolean e = false;
     public boolean f = false;
 
@@ -23,7 +23,7 @@ public class h implements b, g {
 
     @Override // com.tencent.qmsp.oaid2.b
     public void a(Context context, IVendorCallback iVendorCallback) {
-        this.f38470a = iVendorCallback;
+        this.f24779a = iVendorCallback;
         i iVar = new i(context);
         this.d = iVar;
         iVar.a(this);
@@ -41,9 +41,9 @@ public class h implements b, g {
         }
         try {
             String i = fVar.i();
-            this.f38471c = i;
+            this.f24780c = i;
             if (i == null) {
-                this.f38471c = "";
+                this.f24780c = "";
             }
         } catch (Exception e2) {
         }
@@ -52,9 +52,9 @@ public class h implements b, g {
         } catch (Exception e3) {
         }
         this.e = true;
-        IVendorCallback iVendorCallback = this.f38470a;
+        IVendorCallback iVendorCallback = this.f24779a;
         if (iVendorCallback != null) {
-            iVendorCallback.onResult(this.f, this.f38471c, this.b);
+            iVendorCallback.onResult(this.f, this.f24780c, this.b);
         }
     }
 
@@ -65,7 +65,7 @@ public class h implements b, g {
 
     @Override // com.tencent.qmsp.oaid2.g
     public void b() {
-        IVendorCallback iVendorCallback = this.f38470a;
+        IVendorCallback iVendorCallback = this.f24779a;
         if (iVendorCallback != null) {
             iVendorCallback.onResult(false, null, null);
         }
@@ -73,7 +73,7 @@ public class h implements b, g {
 
     @Override // com.tencent.qmsp.oaid2.b
     public String d() {
-        return this.f38471c;
+        return this.f24780c;
     }
 
     @Override // com.tencent.qmsp.oaid2.b

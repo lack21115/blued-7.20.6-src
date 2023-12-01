@@ -7,6 +7,7 @@ import android.os.Process;
 import android.text.TextUtils;
 import com.ss.android.socialbase.downloader.constants.MonitorConstants;
 import com.tencent.tinker.loader.shareutil.ShareConstants;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -26,11 +27,11 @@ import java.util.regex.Pattern;
 public class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f4139a = d.class.getCanonicalName();
+    private static final String f4091a = d.class.getCanonicalName();
     private static String b = "";
 
     /* renamed from: c  reason: collision with root package name */
-    private static final Pattern f4140c = Pattern.compile("^(25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)(\\.(25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$");
+    private static final Pattern f4092c = Pattern.compile("^(25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)(\\.(25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$");
     private static String d = "";
 
     public static String a() {
@@ -42,7 +43,7 @@ public class d {
         }
         String str = uuid;
         if (!TextUtils.isEmpty(uuid)) {
-            str = uuid.replace("-", "");
+            str = uuid.replace(Constants.ACCEPT_TIME_SEPARATOR_SERVER, "");
         }
         return str;
     }
@@ -74,7 +75,7 @@ public class d {
     }
 
     public static boolean a(String str) {
-        return str != null && f4140c.matcher(str).matches();
+        return str != null && f4092c.matcher(str).matches();
     }
 
     private static String b(Context context, String str) {
@@ -375,7 +376,7 @@ public class d {
                         throw th;
                     }
                 }
-                Iterator<E> it = hashSet.iterator();
+                Iterator it = hashSet.iterator();
                 do {
                     if (!it.hasNext()) {
                         try {

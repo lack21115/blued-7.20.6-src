@@ -6,11 +6,11 @@ import com.anythink.expressad.exoplayer.k.af;
 public final class d implements p {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f7233a = 15000;
+    public static final int f4394a = 15000;
     public static final int b = 50000;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final int f7234c = 2500;
+    public static final int f4395c = 2500;
     public static final int d = 5000;
     public static final int e = -1;
     public static final boolean f = true;
@@ -29,11 +29,11 @@ public final class d implements p {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private com.anythink.expressad.exoplayer.j.l f7235a = null;
+        private com.anythink.expressad.exoplayer.j.l f4396a = null;
         private int b = 15000;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f7236c = 50000;
+        private int f4397c = 50000;
         private int d = 2500;
         private int e = 5000;
         private int f = -1;
@@ -47,14 +47,14 @@ public final class d implements p {
 
         private a a(int i, int i2, int i3, int i4) {
             this.b = i;
-            this.f7236c = i2;
+            this.f4397c = i2;
             this.d = i3;
             this.e = i4;
             return this;
         }
 
         private a a(com.anythink.expressad.exoplayer.j.l lVar) {
-            this.f7235a = lVar;
+            this.f4396a = lVar;
             return this;
         }
 
@@ -69,10 +69,10 @@ public final class d implements p {
         }
 
         private d a() {
-            if (this.f7235a == null) {
-                this.f7235a = new com.anythink.expressad.exoplayer.j.l((byte) 0);
+            if (this.f4396a == null) {
+                this.f4396a = new com.anythink.expressad.exoplayer.j.l((byte) 0);
             }
-            return new d(this.f7235a, this.b, this.f7236c, this.d, this.e, this.f, this.g, this.h);
+            return new d(this.f4396a, this.b, this.f4397c, this.d, this.e, this.f, this.g, this.h);
         }
     }
 

@@ -37,13 +37,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/community/ui/feed/dialog/FeedBubbleSayHiDlgFragment.class */
 public final class FeedBubbleSayHiDlgFragment extends CommFullScreenDialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Context f19718a;
+    private final Context a;
     private final BluedIngSelfFeed b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final int f19719c;
+    private final int c;
     private final IRequestHost d;
     private FragmentFeedBubbleSayHiBinding e;
     private CommonRecycleAdapter<BubbleExhibitionModel> f;
@@ -57,9 +53,9 @@ public final class FeedBubbleSayHiDlgFragment extends CommFullScreenDialog {
         Intrinsics.e(mContext, "mContext");
         Intrinsics.e(feedData, "feedData");
         Intrinsics.e(fragmentActive, "fragmentActive");
-        this.f19718a = mContext;
+        this.a = mContext;
         this.b = feedData;
-        this.f19719c = i;
+        this.c = i;
         this.d = fragmentActive;
         this.h = true;
         this.k = new float[2];
@@ -77,7 +73,7 @@ public final class FeedBubbleSayHiDlgFragment extends CommFullScreenDialog {
         logData.feed_id = this.b.feed_id;
         logData.is_call = "1";
         logData.bubble_exhibition_img = bubbleExhibitionModel.getImage();
-        CommunityServiceManager.b().b(this.f19718a, this.b, false, 0, logData, FeedMethods.b(this.j, 0));
+        CommunityServiceManager.b().b(this.a, this.b, false, 0, logData, FeedMethods.b(this.j, 0));
         dismissAllowingStateLoss();
         EventTrackFeed.a(FeedProtos.Event.FEED_PUNCH_EMOJI_POP_ONE_CLICK, this.b, bubbleExhibitionModel.getPid());
     }
@@ -88,14 +84,14 @@ public final class FeedBubbleSayHiDlgFragment extends CommFullScreenDialog {
         FrameLayout frameLayout2;
         Intrinsics.e(this$0, "this$0");
         FragmentFeedBubbleSayHiBinding fragmentFeedBubbleSayHiBinding = this$0.e;
-        if (fragmentFeedBubbleSayHiBinding != null && (frameLayout2 = fragmentFeedBubbleSayHiBinding.f18866a) != null) {
+        if (fragmentFeedBubbleSayHiBinding != null && (frameLayout2 = fragmentFeedBubbleSayHiBinding.a) != null) {
             frameLayout2.setVisibility(0);
             TranslateAnimation translateAnimation = new TranslateAnimation(1, 0.0f, 1, 0.0f, 1, this$0.h ? 1.0f : -1.0f, 1, 0.0f);
             translateAnimation.setDuration(200L);
             frameLayout2.startAnimation(translateAnimation);
         }
         FragmentFeedBubbleSayHiBinding fragmentFeedBubbleSayHiBinding2 = this$0.e;
-        if (fragmentFeedBubbleSayHiBinding2 == null || (frameLayout = fragmentFeedBubbleSayHiBinding2.f18866a) == null) {
+        if (fragmentFeedBubbleSayHiBinding2 == null || (frameLayout = fragmentFeedBubbleSayHiBinding2.a) == null) {
             return;
         }
         ObjectAnimator ofFloat = ObjectAnimator.ofFloat(frameLayout, "alpha", 0.1f, 1.0f);
@@ -127,21 +123,21 @@ public final class FeedBubbleSayHiDlgFragment extends CommFullScreenDialog {
         FrameLayout frameLayout;
         FrameLayout frameLayout2;
         this.i = SystemClock.elapsedRealtime();
-        if (this.f19719c > FeedMethods.c(173) + StatusBarHelper.a(AppInfo.d())) {
+        if (this.c > FeedMethods.c(173) + StatusBarHelper.a(AppInfo.d())) {
             this.h = true;
-            this.g = this.f19719c - FeedMethods.c(107);
+            this.g = this.c - FeedMethods.c(107);
         } else {
             this.h = false;
-            this.g = this.f19719c + FeedMethods.c(21);
+            this.g = this.c + FeedMethods.c(21);
         }
         FragmentFeedBubbleSayHiBinding fragmentFeedBubbleSayHiBinding = this.e;
-        if (fragmentFeedBubbleSayHiBinding != null && (frameLayout2 = fragmentFeedBubbleSayHiBinding.f18866a) != null) {
+        if (fragmentFeedBubbleSayHiBinding != null && (frameLayout2 = fragmentFeedBubbleSayHiBinding.a) != null) {
             if (this.h) {
                 frameLayout2.setPadding(0, 0, 0, FeedMethods.c(3));
             } else {
                 frameLayout2.setPadding(0, FeedMethods.c(3), 0, 0);
             }
-            if (CommunityManager.f19086a.a().s()) {
+            if (CommunityManager.a.a().s()) {
                 if (this.h) {
                     frameLayout2.setBackgroundResource(R.drawable.feed_bubble_say_hi_bg_dark);
                 } else {
@@ -152,14 +148,14 @@ public final class FeedBubbleSayHiDlgFragment extends CommFullScreenDialog {
             } else {
                 frameLayout2.setBackgroundResource(R.drawable.feed_bubble_say_hi_bottom_bg);
             }
-            int c2 = FeedMethods.c(51);
+            int c = FeedMethods.c(51);
             List<BubbleExhibitionModel> O = CommunityServiceManager.a().O();
             if (O != null) {
                 Iterator<BubbleExhibitionModel> it = O.iterator();
-                int i = c2;
+                int i = c;
                 while (true) {
                     int i2 = i;
-                    c2 = i2;
+                    c = i2;
                     if (!it.hasNext()) {
                         break;
                     }
@@ -169,8 +165,8 @@ public final class FeedBubbleSayHiDlgFragment extends CommFullScreenDialog {
                     i = i2 + next.getRealWidth() + FeedMethods.c(12);
                 }
             }
-            int i3 = c2;
-            if (c2 < FeedMethods.c(185)) {
+            int i3 = c;
+            if (c < FeedMethods.c(185)) {
                 i3 = FeedMethods.c(185);
             }
             ViewGroup.LayoutParams layoutParams = frameLayout2.getLayoutParams();
@@ -218,7 +214,7 @@ public final class FeedBubbleSayHiDlgFragment extends CommFullScreenDialog {
     private final void n() {
         FrameLayout frameLayout;
         FragmentFeedBubbleSayHiBinding fragmentFeedBubbleSayHiBinding = this.e;
-        if (fragmentFeedBubbleSayHiBinding == null || (frameLayout = fragmentFeedBubbleSayHiBinding.f18866a) == null) {
+        if (fragmentFeedBubbleSayHiBinding == null || (frameLayout = fragmentFeedBubbleSayHiBinding.a) == null) {
             return;
         }
         frameLayout.postDelayed(new Runnable() { // from class: com.blued.community.ui.feed.dialog.-$$Lambda$FeedBubbleSayHiDlgFragment$5yn6b4u_mzEmGY_Jsffba8wU-Mc
@@ -233,14 +229,14 @@ public final class FeedBubbleSayHiDlgFragment extends CommFullScreenDialog {
         FrameLayout frameLayout;
         FrameLayout frameLayout2;
         FragmentFeedBubbleSayHiBinding fragmentFeedBubbleSayHiBinding = this.e;
-        if (fragmentFeedBubbleSayHiBinding != null && (frameLayout2 = fragmentFeedBubbleSayHiBinding.f18866a) != null) {
+        if (fragmentFeedBubbleSayHiBinding != null && (frameLayout2 = fragmentFeedBubbleSayHiBinding.a) != null) {
             frameLayout2.setVisibility(0);
             TranslateAnimation translateAnimation = new TranslateAnimation(1, 0.0f, 1, 0.0f, 1, 0.0f, 1, 1.0f);
             translateAnimation.setDuration(200L);
             frameLayout2.startAnimation(translateAnimation);
         }
         FragmentFeedBubbleSayHiBinding fragmentFeedBubbleSayHiBinding2 = this.e;
-        if (fragmentFeedBubbleSayHiBinding2 == null || (frameLayout = fragmentFeedBubbleSayHiBinding2.f18866a) == null) {
+        if (fragmentFeedBubbleSayHiBinding2 == null || (frameLayout = fragmentFeedBubbleSayHiBinding2.a) == null) {
             return;
         }
         ObjectAnimator ofFloat = ObjectAnimator.ofFloat(frameLayout, "alpha", 1.0f, 0.0f);
@@ -278,7 +274,7 @@ public final class FeedBubbleSayHiDlgFragment extends CommFullScreenDialog {
         return this.f;
     }
 
-    @Override // com.blued.community.ui.common.CommFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.community.ui.common.CommFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
         View onCreateView = super.onCreateView(inflater, viewGroup, bundle);
@@ -286,7 +282,7 @@ public final class FeedBubbleSayHiDlgFragment extends CommFullScreenDialog {
         return onCreateView;
     }
 
-    @Override // com.blued.community.ui.common.CommFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.community.ui.common.CommFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment
     public void onViewCreated(View view, Bundle bundle) {
         Intrinsics.e(view, "view");
         super.onViewCreated(view, bundle);

@@ -15,9 +15,7 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/pop/LivePKConsumePop.class */
 public class LivePKConsumePop extends CenterPopupView {
-
-    /* renamed from: c  reason: collision with root package name */
-    public Context f13983c;
+    public Context c;
     public final String d;
     private String e;
     private String f;
@@ -32,7 +30,7 @@ public class LivePKConsumePop extends CenterPopupView {
         this.d = "LivePKConsumePop";
         this.e = str;
         this.f = str2;
-        this.f13983c = context;
+        this.c = context;
     }
 
     public static void a(BaseFragment baseFragment, String str, String str2) {
@@ -87,9 +85,9 @@ public class LivePKConsumePop extends CenterPopupView {
         textView2.setText(this.f);
         this.h = findViewById(R.id.iv_close);
         this.i = findViewById(R.id.tv_ok);
-        CardView cardView = (CardView) findViewById(R.id.card_view);
-        this.g = cardView;
-        cardView.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.pop.LivePKConsumePop.2
+        CardView findViewById2 = findViewById(R.id.card_view);
+        this.g = findViewById2;
+        findViewById2.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.pop.LivePKConsumePop.2
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);

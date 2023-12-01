@@ -18,11 +18,11 @@ import java.util.concurrent.LinkedBlockingQueue;
 public class u4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final LinkedBlockingQueue<b> f4008a = new LinkedBlockingQueue<>(3);
+    public final LinkedBlockingQueue<b> f3960a = new LinkedBlockingQueue<>(3);
     public final t3 b;
 
     /* renamed from: c  reason: collision with root package name */
-    public long f4009c;
+    public long f3961c;
     public long d;
     public long e;
     public long f;
@@ -37,7 +37,7 @@ public class u4 {
 
         @Override // java.lang.Runnable
         public void run() {
-            u4.this.f4008a.clear();
+            u4.this.f3960a.clear();
             u4.this.b();
         }
     }
@@ -47,11 +47,11 @@ public class u4 {
         public static final b h = new b();
 
         /* renamed from: a  reason: collision with root package name */
-        public final int f4011a;
+        public final int f3963a;
         public final byte[] b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final String f4012c;
+        public final String f3964c;
         public final Object d;
         public int e;
         public String f;
@@ -59,17 +59,17 @@ public class u4 {
 
         public b() {
             this.e = 1;
-            this.f4011a = 0;
+            this.f3963a = 0;
             this.b = null;
-            this.f4012c = null;
+            this.f3964c = null;
             this.d = null;
         }
 
         public b(int i, byte[] bArr, String str, Object obj) {
             this.e = 1;
-            this.f4011a = i;
+            this.f3963a = i;
             this.b = bArr;
-            this.f4012c = str;
+            this.f3964c = str;
             this.d = obj;
         }
 
@@ -98,7 +98,7 @@ public class u4 {
     }
 
     public final void a() {
-        this.f4009c = 0L;
+        this.f3961c = 0L;
         this.d = 0L;
         this.e = 0L;
         this.f = 0L;
@@ -117,7 +117,7 @@ public class u4 {
 
     public final void a(b bVar, String str) throws FileNotFoundException, IOException {
         byte[] a2;
-        this.f4009c++;
+        this.f3961c++;
         this.d += bVar.b.length;
         this.e += g6.a(str.getBytes("UTF-8")) != null ? a2.length : 0;
     }
@@ -147,7 +147,7 @@ public class u4 {
     }
 
     public final void a(String str, b bVar, Message message) {
-        if (1 == bVar.f4011a) {
+        if (1 == bVar.f3963a) {
             message.obj = Pair.create(str, bVar);
             message.what = 4999;
             message.sendToTarget();
@@ -155,22 +155,22 @@ public class u4 {
     }
 
     public final boolean a(b bVar) {
-        boolean offer = bVar.b != null ? this.f4008a.offer(bVar) : false;
+        boolean offer = bVar.b != null ? this.f3960a.offer(bVar) : false;
         if (offer) {
             return offer;
         }
-        this.f4008a.clear();
-        this.f4008a.offer(bVar);
-        if (bVar.f4011a == 2) {
+        this.f3960a.clear();
+        this.f3960a.offer(bVar);
+        if (bVar.f3963a == 2) {
             return offer;
         }
-        int unused = bVar.f4011a;
+        int unused = bVar.f3963a;
         return offer;
     }
 
     public final void b() {
         b take;
-        LinkedBlockingQueue<b> linkedBlockingQueue = this.f4008a;
+        LinkedBlockingQueue<b> linkedBlockingQueue = this.f3960a;
         while (this.g) {
             try {
                 take = linkedBlockingQueue.take();
@@ -190,7 +190,7 @@ public class u4 {
                 return;
             }
             long currentTimeMillis = System.currentTimeMillis();
-            Bundle a2 = this.b.a(take.f4012c, take.b, true);
+            Bundle a2 = this.b.a(take.f3964c, take.b, true);
             String string = a2.getString("result");
             long currentTimeMillis2 = System.currentTimeMillis() - currentTimeMillis;
             String str = string;
@@ -206,7 +206,7 @@ public class u4 {
                 a(str, take, obtainMessage);
             }
             try {
-                if (take.f4011a == 1 && this.b.a().g() == 0) {
+                if (take.f3963a == 1 && this.b.a().g() == 0) {
                     this.b.a().a(currentTimeMillis2);
                     this.b.a().c(a2.getString("req_key"));
                 }
@@ -218,12 +218,12 @@ public class u4 {
     public final void b(b bVar) {
         boolean z;
         b.e(bVar);
-        Iterator<b> it = this.f4008a.iterator();
+        Iterator<b> it = this.f3960a.iterator();
         while (true) {
             if (!it.hasNext()) {
                 z = false;
                 break;
-            } else if (it.next().f4011a == bVar.f4011a) {
+            } else if (it.next().f3963a == bVar.f3963a) {
                 z = true;
                 break;
             }
@@ -232,17 +232,17 @@ public class u4 {
             return;
         }
         int unused = bVar.e;
-        this.f4008a.offer(bVar);
+        this.f3960a.offer(bVar);
     }
 
     public void c() {
         if (this.g) {
             this.g = false;
-            this.f4008a.clear();
-            this.f4008a.offer(b.h);
+            this.f3960a.clear();
+            this.f3960a.offer(b.h);
             this.i = null;
             if (this.f != 0) {
-                String.format(Locale.ENGLISH, "shutdown: duration=%ds, sent=%dB, recv=%dB, reqCount=%d", Long.valueOf((SystemClock.elapsedRealtime() - this.f) / 1000), Long.valueOf(this.d), Long.valueOf(this.e), Long.valueOf(this.f4009c));
+                String.format(Locale.ENGLISH, "shutdown: duration=%ds, sent=%dB, recv=%dB, reqCount=%d", Long.valueOf((SystemClock.elapsedRealtime() - this.f) / 1000), Long.valueOf(this.d), Long.valueOf(this.e), Long.valueOf(this.f3961c));
             }
             a();
         }

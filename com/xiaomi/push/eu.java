@@ -12,53 +12,53 @@ import com.xiaomi.push.service.XMJobService;
 public class eu implements es.a {
 
     /* renamed from: a  reason: collision with root package name */
-    JobScheduler f41385a;
+    JobScheduler f27694a;
 
     /* renamed from: a  reason: collision with other field name */
-    Context f408a;
+    Context f361a;
 
     /* renamed from: a  reason: collision with other field name */
-    private boolean f409a = false;
+    private boolean f362a = false;
 
     eu(Context context) {
-        this.f408a = context;
-        this.f41385a = (JobScheduler) context.getSystemService(Context.JOB_SCHEDULER_SERVICE);
+        this.f361a = context;
+        this.f27694a = (JobScheduler) context.getSystemService(Context.JOB_SCHEDULER_SERVICE);
     }
 
     @Override // com.xiaomi.push.es.a
     public void a() {
-        this.f409a = false;
-        this.f41385a.cancel(1);
+        this.f362a = false;
+        this.f27694a.cancel(1);
     }
 
     void a(long j) {
-        JobInfo.Builder builder = new JobInfo.Builder(1, new ComponentName(this.f408a.getPackageName(), XMJobService.class.getName()));
+        JobInfo.Builder builder = new JobInfo.Builder(1, new ComponentName(this.f361a.getPackageName(), XMJobService.class.getName()));
         builder.setMinimumLatency(j);
         builder.setOverrideDeadline(j);
         builder.setRequiredNetworkType(1);
         builder.setPersisted(false);
         JobInfo build = builder.build();
         com.xiaomi.channel.commonutils.logger.b.c("schedule Job = " + build.getId() + " in " + j);
-        this.f41385a.schedule(builder.build());
+        this.f27694a.schedule(builder.build());
     }
 
     @Override // com.xiaomi.push.es.a
     public void a(boolean z) {
-        if (z || this.f409a) {
+        if (z || this.f362a) {
             long b = ga.b();
             long j = b;
             if (z) {
                 a();
                 j = b - (SystemClock.elapsedRealtime() % b);
             }
-            this.f409a = true;
+            this.f362a = true;
             a(j);
         }
     }
 
     @Override // com.xiaomi.push.es.a
     /* renamed from: a */
-    public boolean mo11732a() {
-        return this.f409a;
+    public boolean mo8682a() {
+        return this.f362a;
     }
 }

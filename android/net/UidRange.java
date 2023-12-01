@@ -3,6 +3,7 @@ package android.net;
 import android.os.Parcel;
 import android.os.Parcelable;
 import com.blued.das.live.LiveProtos;
+import com.xiaomi.mipush.sdk.Constants;
 
 /* loaded from: source-9557208-dex2jar.jar:android/net/UidRange.class */
 public final class UidRange implements Parcelable {
@@ -65,7 +66,7 @@ public final class UidRange implements Parcelable {
     }
 
     public String toString() {
-        return this.start + "-" + this.stop;
+        return this.start + Constants.ACCEPT_TIME_SEPARATOR_SERVER + this.stop;
     }
 
     @Override // android.os.Parcelable

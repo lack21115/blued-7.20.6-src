@@ -16,13 +16,13 @@ public class SelfDestructiveThread {
     private HandlerThread b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Handler f2551c;
+    private Handler f2503c;
     private final int f;
     private final int g;
     private final String h;
 
     /* renamed from: a  reason: collision with root package name */
-    private final Object f2550a = new Object();
+    private final Object f2502a = new Object();
     private Handler.Callback e = new Handler.Callback() { // from class: androidx.core.provider.SelfDestructiveThread.1
         @Override // android.os.Handler.Callback
         public boolean handleMessage(Message message) {
@@ -52,41 +52,41 @@ public class SelfDestructiveThread {
     }
 
     private void b(Runnable runnable) {
-        synchronized (this.f2550a) {
+        synchronized (this.f2502a) {
             if (this.b == null) {
                 HandlerThread handlerThread = new HandlerThread(this.h, this.g);
                 this.b = handlerThread;
                 handlerThread.start();
-                this.f2551c = new Handler(this.b.getLooper(), this.e);
+                this.f2503c = new Handler(this.b.getLooper(), this.e);
                 this.d++;
             }
-            this.f2551c.removeMessages(0);
-            this.f2551c.sendMessage(this.f2551c.obtainMessage(1, runnable));
+            this.f2503c.removeMessages(0);
+            this.f2503c.sendMessage(this.f2503c.obtainMessage(1, runnable));
         }
     }
 
     void a() {
-        synchronized (this.f2550a) {
-            if (this.f2551c.hasMessages(1)) {
+        synchronized (this.f2502a) {
+            if (this.f2503c.hasMessages(1)) {
                 return;
             }
             this.b.quit();
             this.b = null;
-            this.f2551c = null;
+            this.f2503c = null;
         }
     }
 
     void a(Runnable runnable) {
         runnable.run();
-        synchronized (this.f2550a) {
-            this.f2551c.removeMessages(0);
-            this.f2551c.sendMessageDelayed(this.f2551c.obtainMessage(0), this.f);
+        synchronized (this.f2502a) {
+            this.f2503c.removeMessages(0);
+            this.f2503c.sendMessageDelayed(this.f2503c.obtainMessage(0), this.f);
         }
     }
 
     public int getGeneration() {
         int i;
-        synchronized (this.f2550a) {
+        synchronized (this.f2502a) {
             i = this.d;
         }
         return i;
@@ -94,7 +94,7 @@ public class SelfDestructiveThread {
 
     public boolean isRunning() {
         boolean z;
-        synchronized (this.f2550a) {
+        synchronized (this.f2502a) {
             z = this.b != null;
         }
         return z;

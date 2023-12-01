@@ -24,11 +24,11 @@ import androidx.constraintlayout.widget.R;
 public class ImageFilterView extends AppCompatImageView {
 
     /* renamed from: a  reason: collision with root package name */
-    ViewOutlineProvider f2230a;
+    ViewOutlineProvider f2182a;
     RectF b;
 
     /* renamed from: c  reason: collision with root package name */
-    Drawable[] f2231c;
+    Drawable[] f2183c;
     LayerDrawable d;
     float e;
     float f;
@@ -48,11 +48,11 @@ public class ImageFilterView extends AppCompatImageView {
     public static class ImageMatrix {
 
         /* renamed from: a  reason: collision with root package name */
-        float[] f2234a = new float[20];
+        float[] f2186a = new float[20];
         ColorMatrix b = new ColorMatrix();
 
         /* renamed from: c  reason: collision with root package name */
-        ColorMatrix f2235c = new ColorMatrix();
+        ColorMatrix f2187c = new ColorMatrix();
         float d = 1.0f;
         float e = 1.0f;
         float f = 1.0f;
@@ -63,7 +63,7 @@ public class ImageFilterView extends AppCompatImageView {
             float f3 = 0.2999f * f2;
             float f4 = 0.587f * f2;
             float f5 = f2 * 0.114f;
-            float[] fArr = this.f2234a;
+            float[] fArr = this.f2186a;
             fArr[0] = f3 + f;
             fArr[1] = f4;
             fArr[2] = f5;
@@ -113,7 +113,7 @@ public class ImageFilterView extends AppCompatImageView {
             float f5 = min / min4;
             float f6 = min2 / min5;
             float min6 = min3 / Math.min(255.0f, Math.max((log4 * 138.51773f) - 305.0448f, 0.0f));
-            float[] fArr = this.f2234a;
+            float[] fArr = this.f2186a;
             fArr[0] = f5;
             fArr[1] = 0.0f;
             fArr[2] = 0.0f;
@@ -137,7 +137,7 @@ public class ImageFilterView extends AppCompatImageView {
         }
 
         private void c(float f) {
-            float[] fArr = this.f2234a;
+            float[] fArr = this.f2186a;
             fArr[0] = f;
             fArr[1] = 0.0f;
             fArr[2] = 0.0f;
@@ -167,29 +167,29 @@ public class ImageFilterView extends AppCompatImageView {
             float f = this.e;
             if (f != 1.0f) {
                 a(f);
-                this.b.set(this.f2234a);
+                this.b.set(this.f2186a);
                 z = true;
             } else {
                 z = false;
             }
             float f2 = this.f;
             if (f2 != 1.0f) {
-                this.f2235c.setScale(f2, f2, f2, 1.0f);
-                this.b.postConcat(this.f2235c);
+                this.f2187c.setScale(f2, f2, f2, 1.0f);
+                this.b.postConcat(this.f2187c);
                 z = true;
             }
             float f3 = this.g;
             if (f3 != 1.0f) {
                 b(f3);
-                this.f2235c.set(this.f2234a);
-                this.b.postConcat(this.f2235c);
+                this.f2187c.set(this.f2186a);
+                this.b.postConcat(this.f2187c);
                 z = true;
             }
             float f4 = this.d;
             if (f4 != 1.0f) {
                 c(f4);
-                this.f2235c.set(this.f2234a);
-                this.b.postConcat(this.f2235c);
+                this.f2187c.set(this.f2186a);
+                this.b.postConcat(this.f2187c);
                 z = true;
             }
             if (z) {
@@ -209,7 +209,7 @@ public class ImageFilterView extends AppCompatImageView {
         this.m = 0.0f;
         this.n = 0.0f;
         this.o = Float.NaN;
-        this.f2231c = new Drawable[2];
+        this.f2183c = new Drawable[2];
         this.e = Float.NaN;
         this.f = Float.NaN;
         this.g = Float.NaN;
@@ -226,7 +226,7 @@ public class ImageFilterView extends AppCompatImageView {
         this.m = 0.0f;
         this.n = 0.0f;
         this.o = Float.NaN;
-        this.f2231c = new Drawable[2];
+        this.f2183c = new Drawable[2];
         this.e = Float.NaN;
         this.f = Float.NaN;
         this.g = Float.NaN;
@@ -243,7 +243,7 @@ public class ImageFilterView extends AppCompatImageView {
         this.m = 0.0f;
         this.n = 0.0f;
         this.o = Float.NaN;
-        this.f2231c = new Drawable[2];
+        this.f2183c = new Drawable[2];
         this.e = Float.NaN;
         this.f = Float.NaN;
         this.g = Float.NaN;
@@ -309,7 +309,7 @@ public class ImageFilterView extends AppCompatImageView {
                 Drawable drawable2 = getDrawable();
                 this.l = drawable2;
                 if (drawable2 != null) {
-                    Drawable[] drawableArr = this.f2231c;
+                    Drawable[] drawableArr = this.f2183c;
                     Drawable mutate = drawable2.mutate();
                     this.l = mutate;
                     drawableArr[0] = mutate;
@@ -317,12 +317,12 @@ public class ImageFilterView extends AppCompatImageView {
                 }
                 return;
             }
-            Drawable[] drawableArr2 = this.f2231c;
+            Drawable[] drawableArr2 = this.f2183c;
             Drawable mutate2 = getDrawable().mutate();
             this.l = mutate2;
             drawableArr2[0] = mutate2;
-            this.f2231c[1] = this.k.mutate();
-            LayerDrawable layerDrawable = new LayerDrawable(this.f2231c);
+            this.f2183c[1] = this.k.mutate();
+            LayerDrawable layerDrawable = new LayerDrawable(this.f2183c);
             this.d = layerDrawable;
             layerDrawable.getDrawable(1).setAlpha((int) (this.m * 255.0f));
             if (!this.j) {
@@ -432,10 +432,10 @@ public class ImageFilterView extends AppCompatImageView {
     public void setAltImageResource(int i) {
         Drawable mutate = AppCompatResources.getDrawable(getContext(), i).mutate();
         this.k = mutate;
-        Drawable[] drawableArr = this.f2231c;
+        Drawable[] drawableArr = this.f2183c;
         drawableArr[0] = this.l;
         drawableArr[1] = mutate;
-        LayerDrawable layerDrawable = new LayerDrawable(this.f2231c);
+        LayerDrawable layerDrawable = new LayerDrawable(this.f2183c);
         this.d = layerDrawable;
         super.setImageDrawable(layerDrawable);
         setCrossfade(this.m);
@@ -453,7 +453,7 @@ public class ImageFilterView extends AppCompatImageView {
 
     public void setCrossfade(float f) {
         this.m = f;
-        if (this.f2231c != null) {
+        if (this.f2183c != null) {
             if (!this.j) {
                 this.d.getDrawable(0).setAlpha((int) ((1.0f - this.m) * 255.0f));
             }
@@ -470,10 +470,10 @@ public class ImageFilterView extends AppCompatImageView {
         }
         Drawable mutate = drawable.mutate();
         this.l = mutate;
-        Drawable[] drawableArr = this.f2231c;
+        Drawable[] drawableArr = this.f2183c;
         drawableArr[0] = mutate;
         drawableArr[1] = this.k;
-        LayerDrawable layerDrawable = new LayerDrawable(this.f2231c);
+        LayerDrawable layerDrawable = new LayerDrawable(this.f2183c);
         this.d = layerDrawable;
         super.setImageDrawable(layerDrawable);
         setCrossfade(this.m);
@@ -497,10 +497,10 @@ public class ImageFilterView extends AppCompatImageView {
         }
         Drawable mutate = AppCompatResources.getDrawable(getContext(), i).mutate();
         this.l = mutate;
-        Drawable[] drawableArr = this.f2231c;
+        Drawable[] drawableArr = this.f2183c;
         drawableArr[0] = mutate;
         drawableArr[1] = this.k;
-        LayerDrawable layerDrawable = new LayerDrawable(this.f2231c);
+        LayerDrawable layerDrawable = new LayerDrawable(this.f2183c);
         this.d = layerDrawable;
         super.setImageDrawable(layerDrawable);
         setCrossfade(this.m);
@@ -534,14 +534,14 @@ public class ImageFilterView extends AppCompatImageView {
                 this.b = new RectF();
             }
             if (Build.VERSION.SDK_INT >= 21) {
-                if (this.f2230a == null) {
+                if (this.f2182a == null) {
                     ViewOutlineProvider viewOutlineProvider = new ViewOutlineProvider() { // from class: androidx.constraintlayout.utils.widget.ImageFilterView.2
                         @Override // android.view.ViewOutlineProvider
                         public void getOutline(View view, Outline outline) {
                             outline.setRoundRect(0, 0, ImageFilterView.this.getWidth(), ImageFilterView.this.getHeight(), ImageFilterView.this.o);
                         }
                     };
-                    this.f2230a = viewOutlineProvider;
+                    this.f2182a = viewOutlineProvider;
                     setOutlineProvider(viewOutlineProvider);
                 }
                 setClipToOutline(true);
@@ -572,7 +572,7 @@ public class ImageFilterView extends AppCompatImageView {
                 this.b = new RectF();
             }
             if (Build.VERSION.SDK_INT >= 21) {
-                if (this.f2230a == null) {
+                if (this.f2182a == null) {
                     ViewOutlineProvider viewOutlineProvider = new ViewOutlineProvider() { // from class: androidx.constraintlayout.utils.widget.ImageFilterView.1
                         @Override // android.view.ViewOutlineProvider
                         public void getOutline(View view, Outline outline) {
@@ -581,7 +581,7 @@ public class ImageFilterView extends AppCompatImageView {
                             outline.setRoundRect(0, 0, width, height, (Math.min(width, height) * ImageFilterView.this.n) / 2.0f);
                         }
                     };
-                    this.f2230a = viewOutlineProvider;
+                    this.f2182a = viewOutlineProvider;
                     setOutlineProvider(viewOutlineProvider);
                 }
                 setClipToOutline(true);

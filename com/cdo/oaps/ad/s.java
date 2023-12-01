@@ -25,10 +25,10 @@ public class s {
 
     public static boolean a(Context context, String str) {
         boolean z;
-        if (!u.a(context, a.b(a.f21513a), 2000000)) {
+        if (!u.a(context, a.b(a.f7907a), 2000000)) {
             z = false;
-            if (u.a(context, a.b(a.f21513a), 1)) {
-                String[] strArr = u.f21535c;
+            if (u.a(context, a.b(a.f7907a), 1)) {
+                String[] strArr = u.f7929c;
                 int length = strArr.length;
                 int i = 0;
                 while (true) {
@@ -58,7 +58,7 @@ public class s {
         OapsWrapper wrapper = OapsWrapper.wrapper(map);
         if (wrapper.getPath().equals("/dt")) {
             ResourceWrapper wrapper2 = ResourceWrapper.wrapper(wrapper.getParams());
-            if (u.a(context, a.b(a.f21513a), 1)) {
+            if (u.a(context, a.b(a.f7907a), 1)) {
                 long id = wrapper2.getId();
                 String pkgName = wrapper2.getPkgName();
                 boolean autoDown = wrapper2.getAutoDown();
@@ -74,11 +74,11 @@ public class s {
         }
         if (wrapper.getPath().equals("/search")) {
             SearchWrapper wrapper3 = SearchWrapper.wrapper(wrapper.getParams());
-            if (u.a(context, a.b(a.f21513a), 1)) {
+            if (u.a(context, a.b(a.f7907a), 1)) {
                 return q.a(context, wrapper3.getKeyword(), wrapper3.getPkgName(), a(wrapper3.getEnterId()));
             }
         }
-        if (wrapper.getPath().equals("/home") && u.a(context, a.b(a.f21513a), 1)) {
+        if (wrapper.getPath().equals("/home") && u.a(context, a.b(a.f7907a), 1)) {
             return q.a(context);
         }
         return false;

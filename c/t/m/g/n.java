@@ -12,7 +12,7 @@ import java.util.List;
 public class n {
 
     /* renamed from: a  reason: collision with root package name */
-    public static HashMap f3887a = new HashMap();
+    public static HashMap f3839a = new HashMap();
 
     public static int a(Context context) {
         try {
@@ -93,7 +93,7 @@ public class n {
                 return true;
             }
             try {
-                hashMap = f3887a;
+                hashMap = f3839a;
                 hashMap.clear();
                 for (ScanResult scanResult : list) {
                     hashMap.put(scanResult.BSSID, Integer.valueOf(scanResult.level));

@@ -32,28 +32,28 @@ class DefaultSpecialEffectsController extends SpecialEffectsController {
     static /* synthetic */ class AnonymousClass10 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f2906a;
+        static final /* synthetic */ int[] f2858a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x0036 -> B:21:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:13:0x003a -> B:19:0x001f). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:15:0x003e -> B:25:0x002a). Please submit an issue!!! */
         static {
             int[] iArr = new int[SpecialEffectsController.Operation.State.values().length];
-            f2906a = iArr;
+            f2858a = iArr;
             try {
                 iArr[SpecialEffectsController.Operation.State.GONE.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f2906a[SpecialEffectsController.Operation.State.INVISIBLE.ordinal()] = 2;
+                f2858a[SpecialEffectsController.Operation.State.INVISIBLE.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f2906a[SpecialEffectsController.Operation.State.REMOVED.ordinal()] = 3;
+                f2858a[SpecialEffectsController.Operation.State.REMOVED.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f2906a[SpecialEffectsController.Operation.State.VISIBLE.ordinal()] = 4;
+                f2858a[SpecialEffectsController.Operation.State.VISIBLE.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
         }
@@ -64,24 +64,24 @@ class DefaultSpecialEffectsController extends SpecialEffectsController {
     public static class AnimationInfo extends SpecialEffectsInfo {
 
         /* renamed from: a  reason: collision with root package name */
-        private boolean f2921a;
+        private boolean f2873a;
         private boolean b;
 
         /* renamed from: c  reason: collision with root package name */
-        private FragmentAnim.AnimationOrAnimator f2922c;
+        private FragmentAnim.AnimationOrAnimator f2874c;
 
         AnimationInfo(SpecialEffectsController.Operation operation, CancellationSignal cancellationSignal, boolean z) {
             super(operation, cancellationSignal);
             this.b = false;
-            this.f2921a = z;
+            this.f2873a = z;
         }
 
         FragmentAnim.AnimationOrAnimator a(Context context) {
             if (this.b) {
-                return this.f2922c;
+                return this.f2874c;
             }
-            FragmentAnim.AnimationOrAnimator a2 = FragmentAnim.a(context, a().getFragment(), a().getFinalState() == SpecialEffectsController.Operation.State.VISIBLE, this.f2921a);
-            this.f2922c = a2;
+            FragmentAnim.AnimationOrAnimator a2 = FragmentAnim.a(context, a().getFragment(), a().getFinalState() == SpecialEffectsController.Operation.State.VISIBLE, this.f2873a);
+            this.f2874c = a2;
             this.b = true;
             return a2;
         }
@@ -92,16 +92,16 @@ class DefaultSpecialEffectsController extends SpecialEffectsController {
     public static class SpecialEffectsInfo {
 
         /* renamed from: a  reason: collision with root package name */
-        private final SpecialEffectsController.Operation f2923a;
+        private final SpecialEffectsController.Operation f2875a;
         private final CancellationSignal b;
 
         SpecialEffectsInfo(SpecialEffectsController.Operation operation, CancellationSignal cancellationSignal) {
-            this.f2923a = operation;
+            this.f2875a = operation;
             this.b = cancellationSignal;
         }
 
         SpecialEffectsController.Operation a() {
-            return this.f2923a;
+            return this.f2875a;
         }
 
         CancellationSignal b() {
@@ -109,8 +109,8 @@ class DefaultSpecialEffectsController extends SpecialEffectsController {
         }
 
         boolean c() {
-            SpecialEffectsController.Operation.State a2 = SpecialEffectsController.Operation.State.a(this.f2923a.getFragment().mView);
-            SpecialEffectsController.Operation.State finalState = this.f2923a.getFinalState();
+            SpecialEffectsController.Operation.State a2 = SpecialEffectsController.Operation.State.a(this.f2875a.getFragment().mView);
+            SpecialEffectsController.Operation.State finalState = this.f2875a.getFinalState();
             if (a2 != finalState) {
                 return (a2 == SpecialEffectsController.Operation.State.VISIBLE || finalState == SpecialEffectsController.Operation.State.VISIBLE) ? false : true;
             }
@@ -118,7 +118,7 @@ class DefaultSpecialEffectsController extends SpecialEffectsController {
         }
 
         void d() {
-            this.f2923a.completeSpecialEffect(this.b);
+            this.f2875a.completeSpecialEffect(this.b);
         }
     }
 
@@ -127,27 +127,27 @@ class DefaultSpecialEffectsController extends SpecialEffectsController {
     public static class TransitionInfo extends SpecialEffectsInfo {
 
         /* renamed from: a  reason: collision with root package name */
-        private final Object f2924a;
+        private final Object f2876a;
         private final boolean b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final Object f2925c;
+        private final Object f2877c;
 
         TransitionInfo(SpecialEffectsController.Operation operation, CancellationSignal cancellationSignal, boolean z, boolean z2) {
             super(operation, cancellationSignal);
             if (operation.getFinalState() == SpecialEffectsController.Operation.State.VISIBLE) {
-                this.f2924a = z ? operation.getFragment().getReenterTransition() : operation.getFragment().getEnterTransition();
+                this.f2876a = z ? operation.getFragment().getReenterTransition() : operation.getFragment().getEnterTransition();
                 this.b = z ? operation.getFragment().getAllowReturnTransitionOverlap() : operation.getFragment().getAllowEnterTransitionOverlap();
             } else {
-                this.f2924a = z ? operation.getFragment().getReturnTransition() : operation.getFragment().getExitTransition();
+                this.f2876a = z ? operation.getFragment().getReturnTransition() : operation.getFragment().getExitTransition();
                 this.b = true;
             }
             if (!z2) {
-                this.f2925c = null;
+                this.f2877c = null;
             } else if (z) {
-                this.f2925c = operation.getFragment().getSharedElementReturnTransition();
+                this.f2877c = operation.getFragment().getSharedElementReturnTransition();
             } else {
-                this.f2925c = operation.getFragment().getSharedElementEnterTransition();
+                this.f2877c = operation.getFragment().getSharedElementEnterTransition();
             }
         }
 
@@ -155,17 +155,17 @@ class DefaultSpecialEffectsController extends SpecialEffectsController {
             if (obj == null) {
                 return null;
             }
-            if (FragmentTransition.f3014a == null || !FragmentTransition.f3014a.canHandle(obj)) {
+            if (FragmentTransition.f2966a == null || !FragmentTransition.f2966a.canHandle(obj)) {
                 if (FragmentTransition.b == null || !FragmentTransition.b.canHandle(obj)) {
                     throw new IllegalArgumentException("Transition " + obj + " for fragment " + a().getFragment() + " is not a valid framework Transition or AndroidX Transition");
                 }
                 return FragmentTransition.b;
             }
-            return FragmentTransition.f3014a;
+            return FragmentTransition.f2966a;
         }
 
         Object e() {
-            return this.f2924a;
+            return this.f2876a;
         }
 
         boolean f() {
@@ -173,20 +173,20 @@ class DefaultSpecialEffectsController extends SpecialEffectsController {
         }
 
         FragmentTransitionImpl g() {
-            FragmentTransitionImpl a2 = a(this.f2924a);
-            FragmentTransitionImpl a3 = a(this.f2925c);
+            FragmentTransitionImpl a2 = a(this.f2876a);
+            FragmentTransitionImpl a3 = a(this.f2877c);
             if (a2 == null || a3 == null || a2 == a3) {
                 return a2 != null ? a2 : a3;
             }
-            throw new IllegalArgumentException("Mixing framework transitions and AndroidX transitions is not allowed. Fragment " + a().getFragment() + " returned Transition " + this.f2924a + " which uses a different Transition  type than its shared element transition " + this.f2925c);
+            throw new IllegalArgumentException("Mixing framework transitions and AndroidX transitions is not allowed. Fragment " + a().getFragment() + " returned Transition " + this.f2876a + " which uses a different Transition  type than its shared element transition " + this.f2877c);
         }
 
         public Object getSharedElementTransition() {
-            return this.f2925c;
+            return this.f2877c;
         }
 
         public boolean hasSharedElementTransition() {
-            return this.f2925c != null;
+            return this.f2877c != null;
         }
     }
 
@@ -642,7 +642,7 @@ class DefaultSpecialEffectsController extends SpecialEffectsController {
         SpecialEffectsController.Operation operation2 = null;
         for (SpecialEffectsController.Operation operation3 : list) {
             SpecialEffectsController.Operation.State a2 = SpecialEffectsController.Operation.State.a(operation3.getFragment().mView);
-            int i = AnonymousClass10.f2906a[operation3.getFinalState().ordinal()];
+            int i = AnonymousClass10.f2858a[operation3.getFinalState().ordinal()];
             if (i == 1 || i == 2 || i == 3) {
                 if (a2 == SpecialEffectsController.Operation.State.VISIBLE && operation == null) {
                     operation = operation3;

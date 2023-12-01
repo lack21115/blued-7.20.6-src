@@ -6,7 +6,6 @@ import com.anythink.core.api.ATBaseAdAdapter;
 public abstract class CustomNativeAdapter extends ATBaseAdAdapter {
     public int mRequestNum = 1;
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public final boolean isAdReady() {
         return false;
     }

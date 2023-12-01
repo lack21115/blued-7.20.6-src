@@ -33,26 +33,26 @@ import java.util.List;
 public class ChangeBluedIconFragment extends BaseFragment {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f33334a;
+    private Context f19643a;
     private View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private List<BluedIcon> f33335c;
+    private List<BluedIcon> f19644c;
     private BluedIconAdapter d;
     private RecyclerView e;
     private int f = 2;
 
     private void a() {
         ArrayList arrayList = new ArrayList();
-        this.f33335c = arrayList;
+        this.f19644c = arrayList;
         arrayList.add(new BluedIcon(R.drawable.blued_icon_0, false, "com.soft.blued.icon0"));
-        this.f33335c.add(new BluedIcon(R.drawable.blued_icon_1, false, "com.soft.blued.icon1"));
-        this.f33335c.add(new BluedIcon(R.drawable.blued_icon_2, false, "com.soft.blued.icon2"));
-        this.f33335c.add(new BluedIcon(R.drawable.blued_icon_3, false, "com.soft.blued.icon3"));
-        this.f33335c.add(new BluedIcon(R.drawable.blued_icon_4, false, "com.soft.blued.icon4"));
-        this.f33335c.add(new BluedIcon(R.drawable.blued_icon_5, false, "com.soft.blued.icon5"));
-        this.f33335c.add(new BluedIcon(R.drawable.blued_icon_6, false, "com.soft.blued.icon6"));
-        Iterator<BluedIcon> it = this.f33335c.iterator();
+        this.f19644c.add(new BluedIcon(R.drawable.blued_icon_1, false, "com.soft.blued.icon1"));
+        this.f19644c.add(new BluedIcon(R.drawable.blued_icon_2, false, "com.soft.blued.icon2"));
+        this.f19644c.add(new BluedIcon(R.drawable.blued_icon_3, false, "com.soft.blued.icon3"));
+        this.f19644c.add(new BluedIcon(R.drawable.blued_icon_4, false, "com.soft.blued.icon4"));
+        this.f19644c.add(new BluedIcon(R.drawable.blued_icon_5, false, "com.soft.blued.icon5"));
+        this.f19644c.add(new BluedIcon(R.drawable.blued_icon_6, false, "com.soft.blued.icon6"));
+        Iterator<BluedIcon> it = this.f19644c.iterator();
         while (true) {
             if (!it.hasNext()) {
                 break;
@@ -63,7 +63,7 @@ public class ChangeBluedIconFragment extends BaseFragment {
                 break;
             }
         }
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(this.f33334a, 3) { // from class: com.soft.blued.ui.setting.fragment.ChangeBluedIconFragment.1
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(this.f19643a, 3) { // from class: com.soft.blued.ui.setting.fragment.ChangeBluedIconFragment.1
             @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
             public boolean canScrollVertically() {
                 return false;
@@ -72,7 +72,7 @@ public class ChangeBluedIconFragment extends BaseFragment {
         RecyclerView recyclerView = (RecyclerView) this.b.findViewById(R.id.rv_icon);
         this.e = recyclerView;
         recyclerView.setLayoutManager(gridLayoutManager);
-        BluedIconAdapter bluedIconAdapter = new BluedIconAdapter(this.f33334a, this.f33335c);
+        BluedIconAdapter bluedIconAdapter = new BluedIconAdapter(this.f19643a, this.f19644c);
         this.d = bluedIconAdapter;
         this.e.setAdapter(bluedIconAdapter);
         this.d.a(new BluedIconAdapter.OnItemClickListener() { // from class: com.soft.blued.ui.setting.fragment.ChangeBluedIconFragment.2
@@ -87,27 +87,27 @@ public class ChangeBluedIconFragment extends BaseFragment {
     /* JADX INFO: Access modifiers changed from: private */
     public void a(int i) {
         if (UserInfo.getInstance().getLoginUserInfo().vip_grade == 0) {
-            PayUtils.a(this.f33334a, this.f, "", 14, VipProtos.FromType.UNKNOWN_FROM);
+            PayUtils.a(this.f19643a, this.f, "", 14, VipProtos.FromType.UNKNOWN_FROM);
             return;
         }
         int i2 = 0;
         while (true) {
             int i3 = i2;
-            if (i3 >= this.f33335c.size()) {
+            if (i3 >= this.f19644c.size()) {
                 this.d.notifyDataSetChanged();
                 return;
             }
             if (i3 == i) {
-                this.f33335c.get(i3).setChecked(true);
+                this.f19644c.get(i3).setChecked(true);
             } else {
-                this.f33335c.get(i3).setChecked(false);
+                this.f19644c.get(i3).setChecked(false);
             }
             i2 = i3 + 1;
         }
     }
 
     public static void a(Context context) {
-        TerminalActivity.d(context, ChangeBluedIconFragment.class, null);
+        TerminalActivity.d(context, ChangeBluedIconFragment.class, (Bundle) null);
     }
 
     public static void a(Context context, int i) {
@@ -127,17 +127,17 @@ public class ChangeBluedIconFragment extends BaseFragment {
     }
 
     private void b() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.b.findViewById(2131370749);
-        commonTopTitleNoTrans.setCenterText(getString(R.string.change_blued_icon));
-        commonTopTitleNoTrans.setLeftClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.setting.fragment.-$$Lambda$ChangeBluedIconFragment$f8QShhFKgEGDZWE0t2LrpopiUKQ
+        CommonTopTitleNoTrans findViewById = this.b.findViewById(R.id.top_title);
+        findViewById.setCenterText(getString(R.string.change_blued_icon));
+        findViewById.setLeftClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.setting.fragment.-$$Lambda$ChangeBluedIconFragment$f8QShhFKgEGDZWE0t2LrpopiUKQ
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 ChangeBluedIconFragment.this.b(view);
             }
         });
-        commonTopTitleNoTrans.setRightText(R.string.save);
-        commonTopTitleNoTrans.setRightTextColor(2131102254);
-        commonTopTitleNoTrans.setRightClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.setting.fragment.-$$Lambda$ChangeBluedIconFragment$w8-BsQjyhXtdn5TrRNkhwkHTheE
+        findViewById.setRightText((int) R.string.save);
+        findViewById.setRightTextColor(2131102254);
+        findViewById.setRightClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.setting.fragment.-$$Lambda$ChangeBluedIconFragment$w8-BsQjyhXtdn5TrRNkhwkHTheE
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 ChangeBluedIconFragment.this.a(view);
@@ -155,14 +155,14 @@ public class ChangeBluedIconFragment extends BaseFragment {
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f33335c.size()) {
+            if (i2 >= this.f19644c.size()) {
                 return;
             }
-            if (this.f33335c.get(i2).isChecked()) {
+            if (this.f19644c.get(i2).isChecked()) {
                 VipProtos.Event event = VipProtos.Event.VIP_CHANGE_ICON_SAVE_BTN_CLICK;
                 EventTrackVIP.b(event, i2 + "");
                 InstantLog.b("change_icon_use", i2);
-                a(this.f33335c.get(i2).getLauncherName());
+                a(this.f19644c.get(i2).getLauncherName());
                 AppMethods.d((int) R.string.change_blued_icon_done);
                 getActivity().finish();
                 return;
@@ -179,14 +179,14 @@ public class ChangeBluedIconFragment extends BaseFragment {
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f33335c.size()) {
+            if (i2 >= this.f19644c.size()) {
                 packageManager.setComponentEnabledSetting(new ComponentName(getActivity(), str), 1, 1);
                 BluedPreferences.b(str);
                 PushManager.a().e();
                 return;
             }
             try {
-                packageManager.setComponentEnabledSetting(new ComponentName(getActivity(), this.f33335c.get(i2).getLauncherName()), 2, 1);
+                packageManager.setComponentEnabledSetting(new ComponentName(getActivity(), this.f19644c.get(i2).getLauncherName()), 2, 1);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -194,9 +194,8 @@ public class ChangeBluedIconFragment extends BaseFragment {
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.f33334a = getActivity();
+        this.f19643a = getActivity();
         if (getArguments() != null) {
             this.f = getArguments().getInt("KEY_VIP_GRADE", 2);
         }

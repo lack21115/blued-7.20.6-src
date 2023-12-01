@@ -5,9 +5,7 @@ import kotlin.Metadata;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/ThreadLocalEventLoop.class */
 public final class ThreadLocalEventLoop {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final ThreadLocalEventLoop f42855a = new ThreadLocalEventLoop();
+    public static final ThreadLocalEventLoop a = new ThreadLocalEventLoop();
     private static final ThreadLocal<EventLoop> b = new ThreadLocal<>();
 
     private ThreadLocalEventLoop() {

@@ -44,12 +44,12 @@ public final class ia implements com.kwad.sdk.core.d<SplashMonitorInfo> {
         }
         splashMonitorInfo.count = jSONObject.optInt("count");
         splashMonitorInfo.cacheValidTime = jSONObject.optLong("validity_period_ms");
-        splashMonitorInfo.size = jSONObject.optLong("size");
+        splashMonitorInfo.size = jSONObject.optLong(OapsKey.KEY_SIZE);
         splashMonitorInfo.failUrl = jSONObject.optString("fail_url");
         if (splashMonitorInfo.failUrl == JSONObject.NULL) {
             splashMonitorInfo.failUrl = "";
         }
-        splashMonitorInfo.creativeId = jSONObject.optLong("creative_id");
+        splashMonitorInfo.creativeId = jSONObject.optLong(com.anythink.expressad.foundation.d.c.l);
         splashMonitorInfo.materialType = jSONObject.optInt("material_type");
         splashMonitorInfo.totalCount = jSONObject.optInt("total_count");
         splashMonitorInfo.creativeIds = new ArrayList();
@@ -125,13 +125,13 @@ public final class ia implements com.kwad.sdk.core.d<SplashMonitorInfo> {
             com.kwad.sdk.utils.t.putValue(jSONObject2, "validity_period_ms", splashMonitorInfo.cacheValidTime);
         }
         if (splashMonitorInfo.size != 0) {
-            com.kwad.sdk.utils.t.putValue(jSONObject2, "size", splashMonitorInfo.size);
+            com.kwad.sdk.utils.t.putValue(jSONObject2, OapsKey.KEY_SIZE, splashMonitorInfo.size);
         }
         if (splashMonitorInfo.failUrl != null && !splashMonitorInfo.failUrl.equals("")) {
             com.kwad.sdk.utils.t.putValue(jSONObject2, "fail_url", splashMonitorInfo.failUrl);
         }
         if (splashMonitorInfo.creativeId != 0) {
-            com.kwad.sdk.utils.t.putValue(jSONObject2, "creative_id", splashMonitorInfo.creativeId);
+            com.kwad.sdk.utils.t.putValue(jSONObject2, com.anythink.expressad.foundation.d.c.l, splashMonitorInfo.creativeId);
         }
         if (splashMonitorInfo.materialType != 0) {
             com.kwad.sdk.utils.t.putValue(jSONObject2, "material_type", splashMonitorInfo.materialType);

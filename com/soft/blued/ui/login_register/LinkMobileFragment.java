@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import com.blued.android.core.AppMethods;
+import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.ui.BaseFragment;
 import com.blued.android.core.ui.TerminalActivity;
 import com.blued.android.framework.http.BluedUIHttpResponse;
@@ -27,12 +28,13 @@ import com.soft.blued.R;
 import com.soft.blued.http.LoginRegisterHttpUtils;
 import com.soft.blued.utils.Logger;
 import com.soft.blued.utils.StringUtils;
+import com.xiaomi.mipush.sdk.Constants;
 
 /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/login_register/LinkMobileFragment.class */
 public class LinkMobileFragment extends BaseFragment implements View.OnClickListener {
 
     /* renamed from: c  reason: collision with root package name */
-    private View f31392c;
+    private View f17702c;
     private Context d;
     private ClearEditText e;
     private Dialog f;
@@ -52,30 +54,27 @@ public class LinkMobileFragment extends BaseFragment implements View.OnClickList
     private String b = LinkMobileFragment.class.getSimpleName();
 
     /* renamed from: a  reason: collision with root package name */
-    public BluedUIHttpResponse f31391a = new BluedUIHttpResponse() { // from class: com.soft.blued.ui.login_register.LinkMobileFragment.4
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
+    public BluedUIHttpResponse f17701a = new BluedUIHttpResponse() { // from class: com.soft.blued.ui.login_register.LinkMobileFragment.4
         public void onUIFinish() {
             DialogUtils.b(LinkMobileFragment.this.f);
             super.onUIFinish();
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIStart() {
             DialogUtils.a(LinkMobileFragment.this.f);
             super.onUIStart();
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIUpdate(BluedEntity bluedEntity) {
-            AppMethods.a((CharSequence) LinkMobileFragment.this.d.getResources().getString(2131886716));
+            AppMethods.a(LinkMobileFragment.this.d.getResources().getString(2131886716));
             LinkMobileFragment.this.f();
         }
     };
 
     private void b() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.f31392c.findViewById(2131370749);
-        this.g = commonTopTitleNoTrans;
-        commonTopTitleNoTrans.a();
+        CommonTopTitleNoTrans findViewById = this.f17702c.findViewById(R.id.top_title);
+        this.g = findViewById;
+        findViewById.a();
         this.g.setCenterText("");
         this.g.setLeftClickListener(this);
         this.g.f();
@@ -84,16 +83,16 @@ public class LinkMobileFragment extends BaseFragment implements View.OnClickList
 
     private void c() {
         this.f = DialogUtils.a(this.d);
-        this.g.setCenterText(2131886780);
-        TextView textView = (TextView) this.f31392c.findViewById(R.id.tv_to_register);
+        this.g.setCenterText((int) R.string.binding_cellphone);
+        TextView textView = (TextView) this.f17702c.findViewById(R.id.tv_to_register);
         this.h = textView;
         textView.setOnClickListener(this);
-        CommonEdittextView commonEdittextView = (CommonEdittextView) this.f31392c.findViewById(R.id.edv_password);
-        this.p = commonEdittextView;
-        this.q = commonEdittextView.getEditText();
-        CommonEdittextView commonEdittextView2 = (CommonEdittextView) this.f31392c.findViewById(R.id.edv_areacode_root);
-        this.i = commonEdittextView2;
-        commonEdittextView2.setAreaCodeClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.login_register.LinkMobileFragment.1
+        CommonEdittextView findViewById = this.f17702c.findViewById(R.id.edv_password);
+        this.p = findViewById;
+        this.q = findViewById.getEditText();
+        CommonEdittextView findViewById2 = this.f17702c.findViewById(R.id.edv_areacode_root);
+        this.i = findViewById2;
+        findViewById2.setAreaCodeClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.login_register.LinkMobileFragment.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
@@ -134,8 +133,8 @@ public class LinkMobileFragment extends BaseFragment implements View.OnClickList
             public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
             }
         });
-        this.n = (TextView) this.f31392c.findViewById(R.id.change_phone_notice);
-        this.o = (TextView) this.f31392c.findViewById(R.id.binding_phone_notice);
+        this.n = (TextView) this.f17702c.findViewById(R.id.change_phone_notice);
+        this.o = (TextView) this.f17702c.findViewById(R.id.binding_phone_notice);
         int loginType = UserInfo.getInstance().getLoginType();
         this.s = loginType;
         if (loginType == 2) {
@@ -178,7 +177,7 @@ public class LinkMobileFragment extends BaseFragment implements View.OnClickList
                 this.e.setText(this.m);
                 this.e.b();
                 this.e.setEnabled(false);
-                this.i.setAreaCodeClickListener(null);
+                this.i.setAreaCodeClickListener((View.OnClickListener) null);
             }
         }
         if (!StringUtils.d(this.l)) {
@@ -198,14 +197,14 @@ public class LinkMobileFragment extends BaseFragment implements View.OnClickList
         if (StringUtils.d(this.e.getText().toString())) {
             AppMethods.d(2131886603);
         } else if (!StringUtils.d(this.k) && this.k.equals(LoginRegisterTools.l)) {
-            BluedUIHttpResponse bluedUIHttpResponse = this.f31391a;
-            LoginRegisterHttpUtils.a(bluedUIHttpResponse, this.j.getText().toString() + "-" + this.e.getText().toString(), "mobile", "", this.q.getText().toString(), 1, getFragmentActive());
+            BluedUIHttpResponse bluedUIHttpResponse = this.f17701a;
+            LoginRegisterHttpUtils.a(bluedUIHttpResponse, this.j.getText().toString() + Constants.ACCEPT_TIME_SEPARATOR_SERVER + this.e.getText().toString(), "mobile", "", this.q.getText().toString(), 1, (IRequestHost) getFragmentActive());
         } else if (StringUtils.d(this.k) || !this.k.equals(LoginRegisterTools.o)) {
-            BluedUIHttpResponse bluedUIHttpResponse2 = this.f31391a;
-            LoginRegisterHttpUtils.a(bluedUIHttpResponse2, this.j.getText().toString() + "-" + this.e.getText().toString(), "mobile", "", this.q.getText().toString(), 0, getFragmentActive());
+            BluedUIHttpResponse bluedUIHttpResponse2 = this.f17701a;
+            LoginRegisterHttpUtils.a(bluedUIHttpResponse2, this.j.getText().toString() + Constants.ACCEPT_TIME_SEPARATOR_SERVER + this.e.getText().toString(), "mobile", "", this.q.getText().toString(), 0, (IRequestHost) getFragmentActive());
         } else {
-            BluedUIHttpResponse bluedUIHttpResponse3 = this.f31391a;
-            LoginRegisterHttpUtils.a(bluedUIHttpResponse3, this.j.getText().toString() + "-" + this.e.getText().toString(), "mobile", "", this.q.getText().toString(), 0, getFragmentActive());
+            BluedUIHttpResponse bluedUIHttpResponse3 = this.f17701a;
+            LoginRegisterHttpUtils.a(bluedUIHttpResponse3, this.j.getText().toString() + Constants.ACCEPT_TIME_SEPARATOR_SERVER + this.e.getText().toString(), "mobile", "", this.q.getText().toString(), 0, (IRequestHost) getFragmentActive());
         }
     }
 
@@ -234,7 +233,6 @@ public class LinkMobileFragment extends BaseFragment implements View.OnClickList
         }
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         super.onActivityResult(i, i2, intent);
         if (i == 100 && intent != null) {
@@ -258,18 +256,17 @@ public class LinkMobileFragment extends BaseFragment implements View.OnClickList
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.d = getActivity();
-        View view = this.f31392c;
+        View view = this.f17702c;
         if (view == null) {
-            this.f31392c = layoutInflater.inflate(R.layout.fragment_linkmobile_v1_step1, viewGroup, false);
+            this.f17702c = layoutInflater.inflate(R.layout.fragment_linkmobile_v1_step1, viewGroup, false);
             b();
             c();
             d();
         } else if (view.getParent() != null) {
-            ((ViewGroup) this.f31392c.getParent()).removeView(this.f31392c);
+            ((ViewGroup) this.f17702c.getParent()).removeView(this.f17702c);
         }
-        return this.f31392c;
+        return this.f17702c;
     }
 }

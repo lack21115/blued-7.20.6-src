@@ -8,16 +8,16 @@ import java.util.Map;
 public class a {
 
     /* renamed from: c  reason: collision with root package name */
-    private static a f24402c = new a();
+    private static a f10715c = new a();
 
     /* renamed from: a  reason: collision with root package name */
-    private QuickGame.IStatisticsProvider f24403a = null;
-    private QuickGame.IStatisticsProvider b = new C0616a(this);
+    private QuickGame.IStatisticsProvider f10716a = null;
+    private QuickGame.IStatisticsProvider b = new C0446a(this);
 
     /* renamed from: com.oplus.quickgame.sdk.engine.d.a$a  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/oplus/quickgame/sdk/engine/d/a$a.class */
-    class C0616a implements QuickGame.IStatisticsProvider {
-        C0616a(a aVar) {
+    class C0446a implements QuickGame.IStatisticsProvider {
+        C0446a(a aVar) {
         }
 
         @Override // com.oplus.quickgame.sdk.QuickGame.IStatisticsProvider
@@ -38,15 +38,15 @@ public class a {
     }
 
     public static a b() {
-        return f24402c;
+        return f10715c;
     }
 
     public QuickGame.IStatisticsProvider a() {
-        QuickGame.IStatisticsProvider iStatisticsProvider = this.f24403a;
+        QuickGame.IStatisticsProvider iStatisticsProvider = this.f10716a;
         return iStatisticsProvider != null ? iStatisticsProvider : this.b;
     }
 
     public void a(QuickGame.IStatisticsProvider iStatisticsProvider) {
-        this.f24403a = iStatisticsProvider;
+        this.f10716a = iStatisticsProvider;
     }
 }

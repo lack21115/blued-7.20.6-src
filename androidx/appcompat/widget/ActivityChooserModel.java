@@ -27,13 +27,13 @@ public class ActivityChooserModel extends DataSetObservable {
     public static final int DEFAULT_HISTORY_MAX_LENGTH = 50;
 
     /* renamed from: a  reason: collision with root package name */
-    static final String f1721a = ActivityChooserModel.class.getSimpleName();
+    static final String f1673a = ActivityChooserModel.class.getSimpleName();
     private static final Object e = new Object();
     private static final Map<String, ActivityChooserModel> f = new HashMap();
     final Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    final String f1722c;
+    final String f1674c;
     private Intent j;
     private OnChooseActivityListener p;
     private final Object g = new Object();
@@ -90,14 +90,14 @@ public class ActivityChooserModel extends DataSetObservable {
     static final class DefaultSorter implements ActivitySorter {
 
         /* renamed from: a  reason: collision with root package name */
-        private final Map<ComponentName, ActivityResolveInfo> f1723a = new HashMap();
+        private final Map<ComponentName, ActivityResolveInfo> f1675a = new HashMap();
 
         DefaultSorter() {
         }
 
         @Override // androidx.appcompat.widget.ActivityChooserModel.ActivitySorter
         public void sort(Intent intent, List<ActivityResolveInfo> list, List<HistoricalRecord> list2) {
-            Map<ComponentName, ActivityResolveInfo> map = this.f1723a;
+            Map<ComponentName, ActivityResolveInfo> map = this.f1675a;
             map.clear();
             int size = list.size();
             int i = 0;
@@ -225,22 +225,22 @@ public class ActivityChooserModel extends DataSetObservable {
                             return null;
                         }
                     } catch (IOException e) {
-                        String str2 = ActivityChooserModel.f1721a;
-                        Log.e(str2, "Error writing historical record file: " + ActivityChooserModel.this.f1722c, e);
+                        String str2 = ActivityChooserModel.f1673a;
+                        Log.e(str2, "Error writing historical record file: " + ActivityChooserModel.this.f1674c, e);
                         ActivityChooserModel.this.d = true;
                         if (openFileOutput == null) {
                             return null;
                         }
                     } catch (IllegalArgumentException e2) {
-                        String str3 = ActivityChooserModel.f1721a;
-                        Log.e(str3, "Error writing historical record file: " + ActivityChooserModel.this.f1722c, e2);
+                        String str3 = ActivityChooserModel.f1673a;
+                        Log.e(str3, "Error writing historical record file: " + ActivityChooserModel.this.f1674c, e2);
                         ActivityChooserModel.this.d = true;
                         if (openFileOutput == null) {
                             return null;
                         }
                     } catch (IllegalStateException e3) {
-                        String str4 = ActivityChooserModel.f1721a;
-                        Log.e(str4, "Error writing historical record file: " + ActivityChooserModel.this.f1722c, e3);
+                        String str4 = ActivityChooserModel.f1673a;
+                        Log.e(str4, "Error writing historical record file: " + ActivityChooserModel.this.f1674c, e3);
                         ActivityChooserModel.this.d = true;
                         if (openFileOutput == null) {
                             return null;
@@ -263,7 +263,7 @@ public class ActivityChooserModel extends DataSetObservable {
                     throw th;
                 }
             } catch (FileNotFoundException e6) {
-                String str5 = ActivityChooserModel.f1721a;
+                String str5 = ActivityChooserModel.f1673a;
                 Log.e(str5, "Error writing historical record file: " + str, e6);
                 return null;
             }
@@ -273,10 +273,10 @@ public class ActivityChooserModel extends DataSetObservable {
     private ActivityChooserModel(Context context, String str) {
         this.b = context.getApplicationContext();
         if (TextUtils.isEmpty(str) || str.endsWith(".xml")) {
-            this.f1722c = str;
+            this.f1674c = str;
             return;
         }
-        this.f1722c = str + ".xml";
+        this.f1674c = str + ".xml";
     }
 
     private void a() {
@@ -285,10 +285,10 @@ public class ActivityChooserModel extends DataSetObservable {
         }
         if (this.n) {
             this.n = false;
-            if (TextUtils.isEmpty(this.f1722c)) {
+            if (TextUtils.isEmpty(this.f1674c)) {
                 return;
             }
-            new PersistHistoryAsyncTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, new ArrayList(this.i), this.f1722c);
+            new PersistHistoryAsyncTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, new ArrayList(this.i), this.f1674c);
         }
     }
 
@@ -337,7 +337,7 @@ public class ActivityChooserModel extends DataSetObservable {
     }
 
     private boolean e() {
-        if (this.d && this.n && !TextUtils.isEmpty(this.f1722c)) {
+        if (this.d && this.n && !TextUtils.isEmpty(this.f1674c)) {
             this.d = false;
             this.m = true;
             g();

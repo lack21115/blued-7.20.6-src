@@ -28,11 +28,11 @@ public class AnythinkBaitClickView extends RelativeLayout {
     public static final int ANIMATION_TYPE_SLOW_SCALE_WITH_PAUSE = 3;
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f8428a = "MBridgeAnimationClickView";
+    private static final String f5588a = "MBridgeAnimationClickView";
     private AnyThinkImageView b;
 
     /* renamed from: c  reason: collision with root package name */
-    private AnyThinkImageView f8429c;
+    private AnyThinkImageView f5589c;
     private TextView d;
     private String e;
     private String f;
@@ -53,8 +53,8 @@ public class AnythinkBaitClickView extends RelativeLayout {
 
         @Override // android.view.animation.Animation.AnimationListener
         public final void onAnimationEnd(Animation animation) {
-            if (AnythinkBaitClickView.this.f8429c != null) {
-                AnythinkBaitClickView.this.f8429c.setVisibility(4);
+            if (AnythinkBaitClickView.this.f5589c != null) {
+                AnythinkBaitClickView.this.f5589c.setVisibility(4);
             }
         }
 
@@ -64,8 +64,8 @@ public class AnythinkBaitClickView extends RelativeLayout {
 
         @Override // android.view.animation.Animation.AnimationListener
         public final void onAnimationStart(Animation animation) {
-            if (AnythinkBaitClickView.this.f8429c != null) {
-                AnythinkBaitClickView.this.f8429c.setVisibility(0);
+            if (AnythinkBaitClickView.this.f5589c != null) {
+                AnythinkBaitClickView.this.f5589c.setVisibility(0);
             }
         }
     }
@@ -76,10 +76,10 @@ public class AnythinkBaitClickView extends RelativeLayout {
     public final class AnonymousClass4 implements Animation.AnimationListener {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ AnimationSet f8433a;
+        final /* synthetic */ AnimationSet f5593a;
 
         AnonymousClass4(AnimationSet animationSet) {
-            this.f8433a = animationSet;
+            this.f5593a = animationSet;
         }
 
         @Override // android.view.animation.Animation.AnimationListener
@@ -103,8 +103,8 @@ public class AnythinkBaitClickView extends RelativeLayout {
             AnythinkBaitClickView.this.postDelayed(new Runnable() { // from class: com.anythink.expressad.video.dynview.widget.AnythinkBaitClickView.4.1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    if (AnythinkBaitClickView.this.f8429c != null) {
-                        AnythinkBaitClickView.this.f8429c.startAnimation(AnonymousClass4.this.f8433a);
+                    if (AnythinkBaitClickView.this.f5589c != null) {
+                        AnythinkBaitClickView.this.f5589c.startAnimation(AnonymousClass4.this.f5593a);
                     }
                 }
             }, 550L);
@@ -179,7 +179,7 @@ public class AnythinkBaitClickView extends RelativeLayout {
         try {
             this.g = getContext().getResources().getConfiguration().locale.getLanguage().contains(com.anythink.expressad.video.dynview.a.a.V) ? "点击查看详情" : "Click now for details";
         } catch (Throwable th) {
-            o.d(f8428a, th.getMessage());
+            o.d(f5588a, th.getMessage());
         }
     }
 
@@ -204,7 +204,7 @@ public class AnythinkBaitClickView extends RelativeLayout {
         AnimationSet animationSet = new AnimationSet(true);
         animationSet.addAnimation(this.k);
         animationSet.addAnimation(this.l);
-        AnyThinkImageView anyThinkImageView2 = this.f8429c;
+        AnyThinkImageView anyThinkImageView2 = this.f5589c;
         if (anyThinkImageView2 != null) {
             anyThinkImageView2.startAnimation(animationSet);
         }
@@ -223,7 +223,7 @@ public class AnythinkBaitClickView extends RelativeLayout {
     }
 
     private void d() {
-        AnyThinkImageView anyThinkImageView = this.f8429c;
+        AnyThinkImageView anyThinkImageView = this.f5589c;
         if (anyThinkImageView != null) {
             anyThinkImageView.setVisibility(4);
         }
@@ -284,7 +284,7 @@ public class AnythinkBaitClickView extends RelativeLayout {
         if (anyThinkImageView != null) {
             anyThinkImageView.startAnimation(this.m);
         }
-        AnyThinkImageView anyThinkImageView2 = this.f8429c;
+        AnyThinkImageView anyThinkImageView2 = this.f5589c;
         if (anyThinkImageView2 != null) {
             anyThinkImageView2.startAnimation(animationSet);
         }
@@ -298,13 +298,13 @@ public class AnythinkBaitClickView extends RelativeLayout {
             relativeLayout.setLayoutParams(new RelativeLayout.LayoutParams(-2, -2));
             int b = t.b(getContext(), 55.0f);
             int b2 = t.b(getContext(), 33.0f);
-            this.f8429c = new AnyThinkImageView(getContext());
+            this.f5589c = new AnyThinkImageView(getContext());
             RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(b, b);
             layoutParams.setMargins(b2, b2, 0, 0);
-            this.f8429c.setLayoutParams(layoutParams);
-            final int a2 = i.a(getContext(), "anythink_icon_click_circle", i.f7952c);
+            this.f5589c.setLayoutParams(layoutParams);
+            final int a2 = i.a(getContext(), "anythink_icon_click_circle", i.f5112c);
             if (TextUtils.isEmpty(this.f)) {
-                this.f8429c.setImageResource(a2);
+                this.f5589c.setImageResource(a2);
             } else {
                 b.a(n.a().g()).a(this.e, new c() { // from class: com.anythink.expressad.video.dynview.widget.AnythinkBaitClickView.1
                     @Override // com.anythink.expressad.foundation.g.d.c
@@ -312,12 +312,12 @@ public class AnythinkBaitClickView extends RelativeLayout {
                         if (bitmap.isRecycled()) {
                             return;
                         }
-                        AnythinkBaitClickView.this.f8429c.setImageBitmap(bitmap);
+                        AnythinkBaitClickView.this.f5589c.setImageBitmap(bitmap);
                     }
 
                     @Override // com.anythink.expressad.foundation.g.d.c
                     public final void a(String str, String str2) {
-                        AnythinkBaitClickView.this.f8429c.setImageResource(a2);
+                        AnythinkBaitClickView.this.f5589c.setImageResource(a2);
                     }
                 });
             }
@@ -328,7 +328,7 @@ public class AnythinkBaitClickView extends RelativeLayout {
             RelativeLayout.LayoutParams layoutParams2 = new RelativeLayout.LayoutParams(b3, b3);
             layoutParams2.setMargins(b4, b5, 0, 0);
             this.b.setLayoutParams(layoutParams2);
-            final int a3 = i.a(getContext(), "anythink_icon_click_hand", i.f7952c);
+            final int a3 = i.a(getContext(), "anythink_icon_click_hand", i.f5112c);
             if (TextUtils.isEmpty(this.e)) {
                 this.b.setImageResource(a3);
             } else {
@@ -347,7 +347,7 @@ public class AnythinkBaitClickView extends RelativeLayout {
                     }
                 });
             }
-            relativeLayout.addView(this.f8429c);
+            relativeLayout.addView(this.f5589c);
             relativeLayout.addView(this.b);
             LinearLayout linearLayout = new LinearLayout(getContext());
             RelativeLayout.LayoutParams layoutParams3 = new RelativeLayout.LayoutParams(-2, -2);
@@ -364,7 +364,7 @@ public class AnythinkBaitClickView extends RelativeLayout {
             linearLayout.addView(this.d);
             addView(linearLayout);
         } catch (Throwable th) {
-            o.d(f8428a, th.getMessage());
+            o.d(f5588a, th.getMessage());
         }
     }
 
@@ -388,9 +388,8 @@ public class AnythinkBaitClickView extends RelativeLayout {
         init();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         clearAnimation();
         Animation animation = this.j;
@@ -414,7 +413,7 @@ public class AnythinkBaitClickView extends RelativeLayout {
     public void startAnimation() {
         int i = this.h;
         if (i == 2) {
-            this.f8429c.setVisibility(4);
+            this.f5589c.setVisibility(4);
             ScaleAnimation scaleAnimation = new ScaleAnimation(1.0f, 0.7f, 1.0f, 0.7f, 1, 0.5f, 1, 0.5f);
             this.j = scaleAnimation;
             scaleAnimation.setDuration(500L);
@@ -425,7 +424,7 @@ public class AnythinkBaitClickView extends RelativeLayout {
                 anyThinkImageView.startAnimation(this.j);
             }
         } else if (i == 3) {
-            AnyThinkImageView anyThinkImageView2 = this.f8429c;
+            AnyThinkImageView anyThinkImageView2 = this.f5589c;
             if (anyThinkImageView2 != null) {
                 anyThinkImageView2.setVisibility(4);
             }
@@ -452,7 +451,7 @@ public class AnythinkBaitClickView extends RelativeLayout {
                 anyThinkImageView3.startAnimation(this.j);
             }
         } else if (i == 4) {
-            this.f8429c.setVisibility(4);
+            this.f5589c.setVisibility(4);
             ScaleAnimation scaleAnimation4 = new ScaleAnimation(0.8f, 1.0f, 0.8f, 1.0f, 1, 0.5f, 1, 0.5f);
             this.j = scaleAnimation4;
             scaleAnimation4.setDuration(200L);
@@ -483,7 +482,7 @@ public class AnythinkBaitClickView extends RelativeLayout {
             AnimationSet animationSet2 = new AnimationSet(true);
             animationSet2.addAnimation(this.k);
             animationSet2.addAnimation(this.l);
-            AnyThinkImageView anyThinkImageView6 = this.f8429c;
+            AnyThinkImageView anyThinkImageView6 = this.f5589c;
             if (anyThinkImageView6 != null) {
                 anyThinkImageView6.startAnimation(animationSet2);
             }
@@ -508,7 +507,7 @@ public class AnythinkBaitClickView extends RelativeLayout {
             if (anyThinkImageView7 != null) {
                 anyThinkImageView7.startAnimation(this.m);
             }
-            AnyThinkImageView anyThinkImageView8 = this.f8429c;
+            AnyThinkImageView anyThinkImageView8 = this.f5589c;
             if (anyThinkImageView8 != null) {
                 anyThinkImageView8.startAnimation(animationSet3);
             }

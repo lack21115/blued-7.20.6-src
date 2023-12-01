@@ -47,7 +47,7 @@ public final class FitemMsgTextWishing extends FitemMsgAboutUser {
             return;
         }
         if (!(e() instanceof LiveChattingModel) || e().getObjExtra() == null || !(e().getObjExtra() instanceof LiveGiftModel)) {
-            View view = this.f10935a.itemView;
+            View view = this.a.itemView;
             Intrinsics.c(view, "viewHolder.itemView");
             BluedViewExKt.a(view);
             return;
@@ -85,7 +85,7 @@ public final class FitemMsgTextWishing extends FitemMsgAboutUser {
                     @Override // kotlin.jvm.functions.Function1
                     public /* synthetic */ Unit invoke(DslSpanBuilder dslSpanBuilder) {
                         a(dslSpanBuilder);
-                        return Unit.f42314a;
+                        return Unit.a;
                     }
                 });
                 String str = LiveWishContestContentModel.this.anchorName;
@@ -101,7 +101,7 @@ public final class FitemMsgTextWishing extends FitemMsgAboutUser {
                     @Override // kotlin.jvm.functions.Function1
                     public /* synthetic */ Unit invoke(DslSpanBuilder dslSpanBuilder) {
                         a(dslSpanBuilder);
-                        return Unit.f42314a;
+                        return Unit.a;
                     }
                 });
                 int i = LiveWishContestContentModel.this.type;
@@ -117,7 +117,7 @@ public final class FitemMsgTextWishing extends FitemMsgAboutUser {
                     @Override // kotlin.jvm.functions.Function1
                     public /* synthetic */ Unit invoke(DslSpanBuilder dslSpanBuilder) {
                         a(dslSpanBuilder);
-                        return Unit.f42314a;
+                        return Unit.a;
                     }
                 });
                 StringBuilder sb = new StringBuilder();
@@ -134,7 +134,7 @@ public final class FitemMsgTextWishing extends FitemMsgAboutUser {
                     @Override // kotlin.jvm.functions.Function1
                     public /* synthetic */ Unit invoke(DslSpanBuilder dslSpanBuilder) {
                         a(dslSpanBuilder);
-                        return Unit.f42314a;
+                        return Unit.a;
                     }
                 });
             }
@@ -142,7 +142,7 @@ public final class FitemMsgTextWishing extends FitemMsgAboutUser {
             @Override // kotlin.jvm.functions.Function1
             public /* synthetic */ Unit invoke(DslSpannableStringBuilder dslSpannableStringBuilder) {
                 a(dslSpannableStringBuilder);
-                return Unit.f42314a;
+                return Unit.a;
             }
         });
         textView.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fitem.msgcontent.-$$Lambda$FitemMsgTextWishing$0Fl6HmCWbxpbDNCwpusZ3jb5Y8E
@@ -188,7 +188,7 @@ public final class FitemMsgTextWishing extends FitemMsgAboutUser {
                     @Override // kotlin.jvm.functions.Function1
                     public /* synthetic */ Unit invoke(DslSpanBuilder dslSpanBuilder) {
                         a(dslSpanBuilder);
-                        return Unit.f42314a;
+                        return Unit.a;
                     }
                 });
             }
@@ -196,7 +196,7 @@ public final class FitemMsgTextWishing extends FitemMsgAboutUser {
             @Override // kotlin.jvm.functions.Function1
             public /* synthetic */ Unit invoke(DslSpannableStringBuilder dslSpannableStringBuilder) {
                 a(dslSpannableStringBuilder);
-                return Unit.f42314a;
+                return Unit.a;
             }
         });
     }
@@ -235,12 +235,12 @@ public final class FitemMsgTextWishing extends FitemMsgAboutUser {
                     e.printStackTrace();
                 }
             }
-        }, String.valueOf(msgModel.anchorId), this$0.f10935a.b);
+        }, String.valueOf(msgModel.anchorId), this$0.a.b);
     }
 
     private final void b(Context context, TextView textView) {
         if (!(e() instanceof LiveChattingModel) || e().getObjExtra() == null || !(e().getObjExtra() instanceof LiveWishContestContentModel)) {
-            View view = this.f10935a.itemView;
+            View view = this.a.itemView;
             Intrinsics.c(view, "viewHolder.itemView");
             BluedViewExKt.a(view);
             return;

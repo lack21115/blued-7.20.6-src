@@ -11,11 +11,11 @@ import java.util.UnknownFormatConversionException;
 public class e implements Closeable {
 
     /* renamed from: a  reason: collision with root package name */
-    static final char[] f38944a = {127, 'E', 'L', 'F', 0};
+    static final char[] f25253a = {127, 'E', 'L', 'F', 0};
     final char[] b = new char[16];
 
     /* renamed from: c  reason: collision with root package name */
-    boolean f38945c;
+    boolean f25254c;
     j[] d;
     l[] e;
     byte[] f;
@@ -28,11 +28,11 @@ public class e implements Closeable {
     public static abstract class a {
 
         /* renamed from: a  reason: collision with root package name */
-        short f38946a;
+        short f25255a;
         short b;
 
         /* renamed from: c  reason: collision with root package name */
-        int f38947c;
+        int f25256c;
         int d;
         short e;
         short f;
@@ -71,11 +71,11 @@ public class e implements Closeable {
     public static class c extends j {
 
         /* renamed from: a  reason: collision with root package name */
-        int f38948a;
+        int f25257a;
         int b;
 
         /* renamed from: c  reason: collision with root package name */
-        int f38949c;
+        int f25258c;
         int d;
         int e;
         int f;
@@ -88,11 +88,11 @@ public class e implements Closeable {
     static class d extends k {
 
         /* renamed from: a  reason: collision with root package name */
-        int f38950a;
+        int f25259a;
         int b;
 
         /* renamed from: c  reason: collision with root package name */
-        int f38951c;
+        int f25260c;
         int d;
         int e;
         int f;
@@ -107,20 +107,20 @@ public class e implements Closeable {
 
         @Override // com.tencent.smtt.utils.e.k
         public long b() {
-            return this.f38951c;
+            return this.f25260c;
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.tencent.smtt.utils.e$e  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/smtt/utils/e$e.class */
-    public static class C1007e extends l {
+    public static class C0837e extends l {
 
         /* renamed from: a  reason: collision with root package name */
-        int f38952a;
+        int f25261a;
         int b;
 
-        C1007e() {
+        C0837e() {
         }
     }
 
@@ -149,11 +149,11 @@ public class e implements Closeable {
     public static class g extends j {
 
         /* renamed from: a  reason: collision with root package name */
-        long f38953a;
+        long f25262a;
         long b;
 
         /* renamed from: c  reason: collision with root package name */
-        long f38954c;
+        long f25263c;
         long d;
         long e;
         long f;
@@ -166,11 +166,11 @@ public class e implements Closeable {
     static class h extends k {
 
         /* renamed from: a  reason: collision with root package name */
-        long f38955a;
+        long f25264a;
         long b;
 
         /* renamed from: c  reason: collision with root package name */
-        long f38956c;
+        long f25265c;
         long d;
         long e;
         long f;
@@ -185,7 +185,7 @@ public class e implements Closeable {
 
         @Override // com.tencent.smtt.utils.e.k
         public long b() {
-            return this.f38956c;
+            return this.f25265c;
         }
     }
 
@@ -194,7 +194,7 @@ public class e implements Closeable {
     public static class i extends l {
 
         /* renamed from: a  reason: collision with root package name */
-        long f38957a;
+        long f25266a;
         long b;
 
         i() {
@@ -228,7 +228,7 @@ public class e implements Closeable {
     public static abstract class l {
 
         /* renamed from: c  reason: collision with root package name */
-        int f38958c;
+        int f25267c;
         char d;
         char e;
         short f;
@@ -249,18 +249,18 @@ public class e implements Closeable {
         boolean d2 = d();
         if (d2) {
             f fVar2 = new f();
-            fVar2.f38946a = cVar.a();
+            fVar2.f25255a = cVar.a();
             fVar2.b = cVar.a();
-            fVar2.f38947c = cVar.b();
+            fVar2.f25256c = cVar.b();
             fVar2.k = cVar.c();
             fVar2.l = cVar.c();
             fVar2.m = cVar.c();
             fVar = fVar2;
         } else {
             b bVar = new b();
-            bVar.f38946a = cVar.a();
+            bVar.f25255a = cVar.a();
             bVar.b = cVar.a();
-            bVar.f38947c = cVar.b();
+            bVar.f25256c = cVar.b();
             bVar.k = cVar.b();
             bVar.l = cVar.b();
             bVar.m = cVar.b();
@@ -287,9 +287,9 @@ public class e implements Closeable {
                 h hVar = new h();
                 hVar.g = cVar.b();
                 hVar.h = cVar.b();
-                hVar.f38955a = cVar.c();
+                hVar.f25264a = cVar.c();
                 hVar.b = cVar.c();
-                hVar.f38956c = cVar.c();
+                hVar.f25265c = cVar.c();
                 hVar.d = cVar.c();
                 hVar.i = cVar.b();
                 hVar.j = cVar.b();
@@ -300,9 +300,9 @@ public class e implements Closeable {
                 d dVar = new d();
                 dVar.g = cVar.b();
                 dVar.h = cVar.b();
-                dVar.f38950a = cVar.b();
+                dVar.f25259a = cVar.b();
                 dVar.b = cVar.b();
-                dVar.f38951c = cVar.b();
+                dVar.f25260c = cVar.b();
                 dVar.d = cVar.b();
                 dVar.i = cVar.b();
                 dVar.j = cVar.b();
@@ -323,7 +323,7 @@ public class e implements Closeable {
                 this.j = new byte[kVar.a()];
                 cVar.a(kVar.b());
                 cVar.a(this.j);
-                if (this.f38945c) {
+                if (this.f25254c) {
                     f();
                     return;
                 }
@@ -398,26 +398,26 @@ public class e implements Closeable {
                 }
                 if (d2) {
                     i iVar = new i();
-                    iVar.f38958c = cVar.b();
+                    iVar.f25267c = cVar.b();
                     cVar.a(cArr);
                     iVar.d = cArr[0];
                     cVar.a(cArr);
                     iVar.e = cArr[0];
-                    iVar.f38957a = cVar.c();
+                    iVar.f25266a = cVar.c();
                     iVar.b = cVar.c();
                     iVar.f = cVar.a();
                     this.e[i3] = iVar;
                 } else {
-                    C1007e c1007e = new C1007e();
-                    c1007e.f38958c = cVar.b();
-                    c1007e.f38952a = cVar.b();
-                    c1007e.b = cVar.b();
+                    C0837e c0837e = new C0837e();
+                    c0837e.f25267c = cVar.b();
+                    c0837e.f25261a = cVar.b();
+                    c0837e.b = cVar.b();
                     cVar.a(cArr);
-                    c1007e.d = cArr[0];
+                    c0837e.d = cArr[0];
                     cVar.a(cArr);
-                    c1007e.e = cArr[0];
-                    c1007e.f = cVar.a();
-                    this.e[i3] = c1007e;
+                    c0837e.e = cArr[0];
+                    c0837e.f = cVar.a();
+                    this.e[i3] = c0837e;
                 }
                 i2 = i3 + 1;
             }
@@ -439,9 +439,9 @@ public class e implements Closeable {
                 g gVar = new g();
                 gVar.g = cVar.b();
                 gVar.h = cVar.b();
-                gVar.f38953a = cVar.c();
+                gVar.f25262a = cVar.c();
                 gVar.b = cVar.c();
-                gVar.f38954c = cVar.c();
+                gVar.f25263c = cVar.c();
                 gVar.d = cVar.c();
                 gVar.e = cVar.c();
                 gVar.f = cVar.c();
@@ -450,9 +450,9 @@ public class e implements Closeable {
                 c cVar2 = new c();
                 cVar2.g = cVar.b();
                 cVar2.h = cVar.b();
-                cVar2.f38948a = cVar.b();
+                cVar2.f25257a = cVar.b();
                 cVar2.b = cVar.b();
-                cVar2.f38949c = cVar.b();
+                cVar2.f25258c = cVar.b();
                 cVar2.d = cVar.b();
                 cVar2.e = cVar.b();
                 cVar2.f = cVar.b();
@@ -500,7 +500,7 @@ public class e implements Closeable {
 
     final boolean a() {
         boolean z = false;
-        if (this.b[0] == f38944a[0]) {
+        if (this.b[0] == f25253a[0]) {
             z = true;
         }
         return z;

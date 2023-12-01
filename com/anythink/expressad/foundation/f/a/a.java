@@ -29,17 +29,17 @@ public final class a {
     private static String s;
 
     /* renamed from: a  reason: collision with root package name */
-    private String f7809a;
+    private String f4969a;
     private c b;
 
     /* renamed from: c  reason: collision with root package name */
-    private FeedBackButton f7810c;
+    private FeedBackButton f4970c;
     private int d;
     private int e;
     private String j;
     private String k;
     private com.anythink.expressad.widget.a.c p;
-    private List<C0144a> q;
+    private List<C0073a> q;
     private int f = -1;
     private int g = -1;
     private int h = -1;
@@ -66,21 +66,21 @@ public final class a {
 
     /* renamed from: com.anythink.expressad.foundation.f.a.a$a  reason: collision with other inner class name */
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/foundation/f/a/a$a.class */
-    public static final class C0144a implements b {
+    public static final class C0073a implements b {
 
         /* renamed from: a  reason: collision with root package name */
-        private com.anythink.expressad.foundation.f.a f7816a;
+        private com.anythink.expressad.foundation.f.a f4976a;
         private String b;
 
-        public C0144a(String str, com.anythink.expressad.foundation.f.a aVar) {
-            this.f7816a = aVar;
+        public C0073a(String str, com.anythink.expressad.foundation.f.a aVar) {
+            this.f4976a = aVar;
             this.b = str;
         }
 
         @Override // com.anythink.expressad.widget.a.b
         public final void a() {
-            com.anythink.expressad.foundation.f.b.f7818c = false;
-            com.anythink.expressad.foundation.f.a aVar = this.f7816a;
+            com.anythink.expressad.foundation.f.b.f4978c = false;
+            com.anythink.expressad.foundation.f.a aVar = this.f4976a;
             if (aVar != null) {
                 String unused = a.s;
                 aVar.c();
@@ -88,8 +88,8 @@ public final class a {
         }
 
         public final void a(boolean z) {
-            com.anythink.expressad.foundation.f.b.f7818c = true;
-            com.anythink.expressad.foundation.f.a aVar = this.f7816a;
+            com.anythink.expressad.foundation.f.b.f4978c = true;
+            com.anythink.expressad.foundation.f.a aVar = this.f4976a;
             if (aVar == null || !z) {
                 return;
             }
@@ -98,8 +98,8 @@ public final class a {
 
         @Override // com.anythink.expressad.widget.a.b
         public final void b() {
-            com.anythink.expressad.foundation.f.b.f7818c = false;
-            com.anythink.expressad.foundation.f.a aVar = this.f7816a;
+            com.anythink.expressad.foundation.f.b.f4978c = false;
+            com.anythink.expressad.foundation.f.a aVar = this.f4976a;
             if (aVar != null) {
                 aVar.b();
             }
@@ -112,7 +112,7 @@ public final class a {
 
     public a(String str) {
         this.q = new ArrayList();
-        this.f7809a = str;
+        this.f4969a = str;
         if (this.q == null) {
             this.q = new ArrayList();
         }
@@ -148,11 +148,11 @@ public final class a {
     }
 
     static /* synthetic */ void a(a aVar) {
-        List<C0144a> list = aVar.q;
+        List<C0073a> list = aVar.q;
         if (list != null) {
-            for (C0144a c0144a : list) {
-                if (c0144a != null) {
-                    c0144a.a();
+            for (C0073a c0073a : list) {
+                if (c0073a != null) {
+                    c0073a.a();
                 }
             }
         }
@@ -174,29 +174,29 @@ public final class a {
     }
 
     private void a(boolean z) {
-        List<C0144a> list = this.q;
+        List<C0073a> list = this.q;
         if (list != null) {
-            for (C0144a c0144a : list) {
-                if (c0144a != null) {
-                    c0144a.a(z);
+            for (C0073a c0073a : list) {
+                if (c0073a != null) {
+                    c0073a.a(z);
                 }
             }
         }
     }
 
-    private void b(C0144a c0144a) {
-        List<C0144a> list = this.q;
+    private void b(C0073a c0073a) {
+        List<C0073a> list = this.q;
         if (list != null) {
-            list.remove(c0144a);
+            list.remove(c0073a);
         }
     }
 
     static /* synthetic */ void b(a aVar) {
-        List<C0144a> list = aVar.q;
+        List<C0073a> list = aVar.q;
         if (list != null) {
-            for (C0144a c0144a : list) {
-                if (c0144a != null) {
-                    c0144a.b();
+            for (C0073a c0073a : list) {
+                if (c0073a != null) {
+                    c0073a.b();
                 }
             }
         }
@@ -204,9 +204,9 @@ public final class a {
     }
 
     static /* synthetic */ void c(a aVar) {
-        List<C0144a> list = aVar.q;
+        List<C0073a> list = aVar.q;
         if (list != null) {
-            Iterator<C0144a> it = list.iterator();
+            Iterator<C0073a> it = list.iterator();
             while (it.hasNext()) {
                 it.next();
             }
@@ -268,11 +268,11 @@ public final class a {
     }
 
     private void i() {
-        List<C0144a> list = this.q;
+        List<C0073a> list = this.q;
         if (list != null) {
-            for (C0144a c0144a : list) {
-                if (c0144a != null) {
-                    c0144a.b();
+            for (C0073a c0073a : list) {
+                if (c0073a != null) {
+                    c0073a.b();
                 }
             }
         }
@@ -280,11 +280,11 @@ public final class a {
     }
 
     private void j() {
-        List<C0144a> list = this.q;
+        List<C0073a> list = this.q;
         if (list != null) {
-            for (C0144a c0144a : list) {
-                if (c0144a != null) {
-                    c0144a.a();
+            for (C0073a c0073a : list) {
+                if (c0073a != null) {
+                    c0073a.a();
                 }
             }
         }
@@ -292,9 +292,9 @@ public final class a {
     }
 
     private void k() {
-        List<C0144a> list = this.q;
+        List<C0073a> list = this.q;
         if (list != null) {
-            Iterator<C0144a> it = list.iterator();
+            Iterator<C0073a> it = list.iterator();
             while (it.hasNext()) {
                 it.next();
             }
@@ -302,11 +302,11 @@ public final class a {
     }
 
     private String l() {
-        return this.f7809a;
+        return this.f4969a;
     }
 
     private void m() {
-        FeedBackButton feedBackButton = this.f7810c;
+        FeedBackButton feedBackButton = this.f4970c;
         if (feedBackButton != null) {
             int i = this.f;
             if (i >= 0) {
@@ -314,34 +314,34 @@ public final class a {
             }
             int i2 = this.g;
             if (i2 >= 0) {
-                this.f7810c.setY(i2);
+                this.f4970c.setY(i2);
             }
             float f = this.l;
             if (f >= 0.0f) {
-                this.f7810c.setAlpha(f);
-                this.f7810c.setEnabled(this.l != 0.0f);
+                this.f4970c.setAlpha(f);
+                this.f4970c.setEnabled(this.l != 0.0f);
             }
-            ViewGroup.LayoutParams layoutParams = this.f7810c.getLayoutParams();
+            ViewGroup.LayoutParams layoutParams = this.f4970c.getLayoutParams();
             int i3 = this.h;
             if (i3 > 0) {
-                this.f7810c.setWidth(i3);
+                this.f4970c.setWidth(i3);
                 if (layoutParams != null) {
                     layoutParams.width = this.h;
                 }
             }
             int i4 = this.i;
             if (i4 > 0) {
-                this.f7810c.setHeight(i4);
+                this.f4970c.setHeight(i4);
                 if (layoutParams != null) {
                     layoutParams.height = this.i;
                 }
             }
             if (layoutParams != null) {
-                this.f7810c.setLayoutParams(layoutParams);
+                this.f4970c.setLayoutParams(layoutParams);
             }
             try {
                 if (!TextUtils.isEmpty(this.j)) {
-                    this.f7810c.setTextColor(Color.parseColor(this.j));
+                    this.f4970c.setTextColor(Color.parseColor(this.j));
                 }
             } catch (Exception e) {
                 e.printStackTrace();
@@ -357,7 +357,7 @@ public final class a {
                 gradientDrawable.setColor(Color.parseColor(this.k));
             }
             try {
-                this.f7810c.setBackgroundDrawable(gradientDrawable);
+                this.f4970c.setBackgroundDrawable(gradientDrawable);
             } catch (Throwable th) {
             }
         }
@@ -368,13 +368,13 @@ public final class a {
         if (g != null) {
             try {
                 FeedBackButton feedBackButton = new FeedBackButton(g);
-                this.f7810c = feedBackButton;
+                this.f4970c = feedBackButton;
                 int i = 8;
                 if (this.o != 8) {
                     i = 0;
                 }
                 feedBackButton.setVisibility(i);
-                this.f7810c.setOnClickListener(new View.OnClickListener() { // from class: com.anythink.expressad.foundation.f.a.a.4
+                this.f4970c.setOnClickListener(new View.OnClickListener() { // from class: com.anythink.expressad.foundation.f.a.a.4
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
                         Tracker.onClick(view);
@@ -403,17 +403,17 @@ public final class a {
             h();
         }
         Context g = n.a().g();
-        FeedBackButton feedBackButton = this.f7810c;
+        FeedBackButton feedBackButton = this.f4970c;
         if (feedBackButton != null) {
             g = feedBackButton.getContext();
         }
         com.anythink.expressad.foundation.f.b.a();
         boolean a3 = com.anythink.expressad.foundation.f.b.a(g, this.p);
-        List<C0144a> list = this.q;
+        List<C0073a> list = this.q;
         if (list != null) {
-            for (C0144a c0144a : list) {
-                if (c0144a != null) {
-                    c0144a.a(a3);
+            for (C0073a c0073a : list) {
+                if (c0073a != null) {
+                    c0073a.a(a3);
                 }
             }
         }
@@ -421,7 +421,7 @@ public final class a {
 
     public final void a(int i) {
         this.o = i;
-        FeedBackButton feedBackButton = this.f7810c;
+        FeedBackButton feedBackButton = this.f4970c;
         if (feedBackButton != null) {
             feedBackButton.setVisibility(i);
         }
@@ -443,15 +443,15 @@ public final class a {
         this.b = cVar;
     }
 
-    public final void a(C0144a c0144a) {
+    public final void a(C0073a c0073a) {
         if (this.q == null) {
             this.q = new ArrayList();
         }
-        this.q.add(c0144a);
+        this.q.add(c0073a);
     }
 
     public final void a(FeedBackButton feedBackButton) {
-        FeedBackButton feedBackButton2 = this.f7810c;
+        FeedBackButton feedBackButton2 = this.f4970c;
         int i = 8;
         if (feedBackButton2 != null) {
             feedBackButton2.setVisibility(8);
@@ -463,7 +463,7 @@ public final class a {
                 i = 0;
             }
             feedBackButton.setVisibility(i);
-            this.f7810c = feedBackButton;
+            this.f4970c = feedBackButton;
             c cVar = this.b;
             if (cVar != null && !cVar.j()) {
                 m();
@@ -491,10 +491,10 @@ public final class a {
     }
 
     public final FeedBackButton c() {
-        if (this.f7810c == null) {
+        if (this.f4970c == null) {
             n();
         }
-        return this.f7810c;
+        return this.f4970c;
     }
 
     public final void c(int i) {
@@ -502,13 +502,13 @@ public final class a {
     }
 
     public final void d() {
-        FeedBackButton feedBackButton = this.f7810c;
+        FeedBackButton feedBackButton = this.f4970c;
         if (feedBackButton != null) {
             feedBackButton.setOnClickListener(null);
-            this.f7810c.setVisibility(8);
-            ViewGroup viewGroup = (ViewGroup) this.f7810c.getParent();
+            this.f4970c.setVisibility(8);
+            ViewGroup viewGroup = (ViewGroup) this.f4970c.getParent();
             if (viewGroup != null) {
-                viewGroup.removeView(this.f7810c);
+                viewGroup.removeView(this.f4970c);
             }
         }
         com.anythink.expressad.widget.a.c cVar = this.p;
@@ -517,7 +517,7 @@ public final class a {
         }
         this.p = null;
         this.q = null;
-        this.f7810c = null;
+        this.f4970c = null;
         this.r = null;
     }
 

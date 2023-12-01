@@ -11,15 +11,13 @@ import org.json.JSONObject;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/b/d/a.class */
 public class a {
-
-    /* renamed from: a  reason: collision with root package name */
-    static final String f6365a = a.class.getSimpleName();
+    static final String a = a.class.getSimpleName();
 
     public static void a(final String str, final d dVar, final String str2, final int i, final List<ai> list, final long j, final int i2, final int i3) {
         com.anythink.core.common.k.b.a.a().a(new Runnable() { // from class: com.anythink.core.b.d.a.1
             @Override // java.lang.Runnable
             public final void run() {
-                String str3 = a.f6365a;
+                String str3 = a.a;
                 JSONArray jSONArray = new JSONArray();
                 e eVar = new e();
                 eVar.x(String.this);

@@ -7,11 +7,11 @@ import java.util.Arrays;
 public final class i {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Uri f25449a;
+    public final Uri f11761a;
     public final byte[] b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final long f25450c;
+    public final long f11762c;
     public final long d;
     public final long e;
     public final String f;
@@ -29,9 +29,9 @@ public final class i {
         com.opos.exoplayer.core.i.a.a(j >= 0);
         com.opos.exoplayer.core.i.a.a(j2 >= 0);
         com.opos.exoplayer.core.i.a.a(j3 <= 0 ? j3 == -1 : true);
-        this.f25449a = uri;
+        this.f11761a = uri;
         this.b = bArr;
-        this.f25450c = j;
+        this.f11762c = j;
         this.d = j2;
         this.e = j3;
         this.f = str;
@@ -43,6 +43,6 @@ public final class i {
     }
 
     public String toString() {
-        return "DataSpec[" + this.f25449a + ", " + Arrays.toString(this.b) + ", " + this.f25450c + ", " + this.d + ", " + this.e + ", " + this.f + ", " + this.g + "]";
+        return "DataSpec[" + this.f11761a + ", " + Arrays.toString(this.b) + ", " + this.f11762c + ", " + this.d + ", " + this.e + ", " + this.f + ", " + this.g + "]";
     }
 }

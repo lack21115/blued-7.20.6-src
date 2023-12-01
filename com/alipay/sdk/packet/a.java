@@ -1,6 +1,7 @@
 package com.alipay.sdk.packet;
 
 import android.text.TextUtils;
+import com.alipay.sdk.util.i;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alipay/sdk/packet/a.class */
 public class a {
@@ -8,7 +9,7 @@ public class a {
         if (TextUtils.isEmpty(str)) {
             return "";
         }
-        String[] split = str.split("&");
+        String[] split = str.split(com.alipay.sdk.sys.a.b);
         if (split.length == 0) {
             return "";
         }
@@ -44,20 +45,20 @@ public class a {
         }
         StringBuilder sb = new StringBuilder();
         if (!TextUtils.isEmpty(str2)) {
-            sb.append("biz_type=" + str2 + ";");
+            sb.append("biz_type=" + str2 + i.b);
         }
         if (!TextUtils.isEmpty(str3)) {
-            sb.append("biz_no=" + str3 + ";");
+            sb.append("biz_no=" + str3 + i.b);
         }
         if (!TextUtils.isEmpty(str4)) {
-            sb.append("trade_no=" + str4 + ";");
+            sb.append("trade_no=" + str4 + i.b);
         }
         if (!TextUtils.isEmpty(str5)) {
-            sb.append("app_userid=" + str5 + ";");
+            sb.append("app_userid=" + str5 + i.b);
         }
         String sb2 = sb.toString();
         String str11 = sb2;
-        if (sb2.endsWith(";")) {
+        if (sb2.endsWith(i.b)) {
             str11 = sb2.substring(0, sb2.length() - 1);
         }
         return str11;

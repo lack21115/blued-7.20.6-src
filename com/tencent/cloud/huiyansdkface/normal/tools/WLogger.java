@@ -3,8 +3,6 @@ package com.tencent.cloud.huiyansdkface.normal.tools;
 import android.content.Context;
 import android.os.Environment;
 import android.util.Log;
-import com.anythink.china.common.a.a;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.cloud.huiyansdkface.normal.thread.ThreadOperate;
 import com.tencent.cloud.huiyansdkface.wejson.WeJson;
 import java.io.File;
@@ -70,7 +68,7 @@ public class WLogger {
         if (logInterface != null) {
             logInterface.d(str, str2);
         } else if (isEnable) {
-            Log.d(mName + BridgeUtil.UNDERLINE_STR + str, buildMessage(str, str2, null));
+            Log.d(mName + "_" + str, buildMessage(str, str2, null));
         }
     }
 
@@ -79,7 +77,7 @@ public class WLogger {
         if (logInterface != null) {
             logInterface.e(str, str2);
         } else if (isEnable) {
-            Log.e(mName + BridgeUtil.UNDERLINE_STR + str, buildMessage(str, str2, null));
+            Log.e(mName + "_" + str, buildMessage(str, str2, null));
         }
     }
 
@@ -101,7 +99,7 @@ public class WLogger {
         }
         File file = new File(str3 + File.separator + str);
         if (file.exists() || file.mkdirs()) {
-            File file2 = new File(file.getPath() + File.separator + (dateFormat.format(new Date()) + a.f));
+            File file2 = new File(file.getPath() + File.separator + (dateFormat.format(new Date()) + ".log"));
             if (!file2.exists()) {
                 try {
                     file2.createNewFile();
@@ -119,7 +117,7 @@ public class WLogger {
     protected static File getLogFile(String str) {
         File file = new File(Environment.getExternalStorageDirectory() + File.separator + "TxCloudHuiyanSdkFaceLog" + File.separator + str);
         if (file.exists() || file.mkdirs()) {
-            File file2 = new File(file.getPath() + File.separator + (dateFormat.format(new Date()) + a.f));
+            File file2 = new File(file.getPath() + File.separator + (dateFormat.format(new Date()) + ".log"));
             if (!file2.exists()) {
                 try {
                     file2.createNewFile();
@@ -160,7 +158,7 @@ public class WLogger {
         if (logInterface != null) {
             logInterface.i(str, str2);
         } else if (isEnable) {
-            Log.i(mName + BridgeUtil.UNDERLINE_STR + str, buildMessage(str, str2, null));
+            Log.i(mName + "_" + str, buildMessage(str, str2, null));
         }
     }
 
@@ -196,7 +194,7 @@ public class WLogger {
         if (logInterface != null) {
             logInterface.v(str, str2);
         } else if (isEnable) {
-            Log.v(mName + BridgeUtil.UNDERLINE_STR + str, buildMessage(str, str2, null));
+            Log.v(mName + "_" + str, buildMessage(str, str2, null));
         }
     }
 
@@ -205,7 +203,7 @@ public class WLogger {
         if (logInterface != null) {
             logInterface.w(str, str2);
         } else if (isEnable) {
-            Log.w(mName + BridgeUtil.UNDERLINE_STR + str, buildMessage(str, str2, null));
+            Log.w(mName + "_" + str, buildMessage(str, str2, null));
         }
     }
 
@@ -227,7 +225,7 @@ public class WLogger {
                     java.io.FileWriter r4 = new java.io.FileWriter     // Catch: java.lang.Throwable -> L32 java.lang.Exception -> L38
                     r5 = r4
                     r6 = r9
-                    java.io.File r6 = java.io.File.this     // Catch: java.lang.Throwable -> L32 java.lang.Exception -> L38
+                    java.io.File r6 = r4     // Catch: java.lang.Throwable -> L32 java.lang.Exception -> L38
                     r7 = 1
                     r5.<init>(r6, r7)     // Catch: java.lang.Throwable -> L32 java.lang.Exception -> L38
                     r3.<init>(r4)     // Catch: java.lang.Throwable -> L32 java.lang.Exception -> L38

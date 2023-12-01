@@ -16,13 +16,9 @@ import java.util.Map;
 /* renamed from: com.amap.api.col.3sl.ae  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/ae.class */
 public final class ae implements TileSourceProvider {
-
-    /* renamed from: a  reason: collision with root package name */
-    private int f4734a = 256;
+    private int a = 256;
     private final TileOverlaySource b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final TileOverlaySource f4735c;
+    private final TileOverlaySource c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.amap.api.col.3sl.ae$a */
@@ -56,7 +52,7 @@ public final class ae implements TileSourceProvider {
             StringBuffer stringBuffer = new StringBuffer();
             stringBuffer.append(this.g);
             stringBuffer.append("&key=");
-            stringBuffer.append(ho.f(aa.f4728a));
+            stringBuffer.append(ho.f(aa.a));
             stringBuffer.append("&channel=amapapi");
             return this.b + a(stringBuffer.toString());
         }
@@ -64,7 +60,7 @@ public final class ae implements TileSourceProvider {
 
     public ae(TileOverlaySource tileOverlaySource, TileOverlaySource tileOverlaySource2) {
         this.b = tileOverlaySource;
-        this.f4735c = tileOverlaySource2;
+        this.c = tileOverlaySource2;
     }
 
     private Tile a(TileSourceReq tileSourceReq) {
@@ -75,7 +71,7 @@ public final class ae implements TileSourceProvider {
             FileInputStream fileInputStream = new FileInputStream(new File(str + tileSourceReq.zoom + BridgeUtil.SPLIT_MARK + i + BridgeUtil.SPLIT_MARK + i2 + BridgeUtil.SPLIT_MARK + tileSourceReq.x + BridgeUtil.UNDERLINE_STR + tileSourceReq.y + ".png"));
             byte[] bArr = new byte[fileInputStream.available()];
             fileInputStream.read(bArr);
-            Tile tile = new Tile(this.f4734a, this.f4734a, bArr, true);
+            Tile tile = new Tile(this.a, this.a, bArr, true);
             fileInputStream.close();
             return tile;
         } catch (FileNotFoundException e) {
@@ -86,7 +82,7 @@ public final class ae implements TileSourceProvider {
                     FileInputStream fileInputStream2 = new FileInputStream(new File(str + "default.png"));
                     byte[] bArr2 = new byte[fileInputStream2.available()];
                     fileInputStream2.read(bArr2);
-                    Tile tile2 = new Tile(this.f4734a, this.f4734a, bArr2, true);
+                    Tile tile2 = new Tile(this.a, this.a, bArr2, true);
                     fileInputStream2.close();
                     return tile2;
                 } catch (Exception e2) {
@@ -109,16 +105,13 @@ public final class ae implements TileSourceProvider {
         }
     }
 
-    @Override // com.autonavi.base.ae.gmap.bean.TileSourceProvider
     public final void cancel(TileSourceReq tileSourceReq) {
     }
 
-    @Override // com.amap.api.maps.model.TileProvider
     public final Tile getTile(int i, int i2, int i3) {
         return null;
     }
 
-    @Override // com.autonavi.base.ae.gmap.bean.TileSourceProvider
     public final Tile getTile(TileSourceReq tileSourceReq) {
         Tile tile;
         String url;
@@ -127,7 +120,7 @@ public final class ae implements TileSourceProvider {
         }
         Tile tile2 = TileProvider.NO_TILE;
         try {
-            url = tileSourceReq.sourceType == this.f4735c.getId() ? this.f4735c.getUrl() : this.b.getUrl();
+            url = tileSourceReq.sourceType == this.c.getId() ? this.c.getUrl() : this.b.getUrl();
         } catch (Exception e) {
             tile = TileProvider.NO_TILE;
             e.printStackTrace();
@@ -140,18 +133,16 @@ public final class ae implements TileSourceProvider {
         }
         tile = tile2;
         if (tile2 == TileProvider.NO_TILE) {
-            return new Tile(this.f4734a, this.f4734a, a(tileSourceReq.x, tileSourceReq.y, tileSourceReq.zoom, url), true);
+            return new Tile(this.a, this.a, a(tileSourceReq.x, tileSourceReq.y, tileSourceReq.zoom, url), true);
         }
         return tile;
     }
 
-    @Override // com.amap.api.maps.model.TileProvider
     public final int getTileHeight() {
-        return this.f4734a;
+        return this.a;
     }
 
-    @Override // com.amap.api.maps.model.TileProvider
     public final int getTileWidth() {
-        return this.f4734a;
+        return this.a;
     }
 }

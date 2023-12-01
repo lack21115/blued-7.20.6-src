@@ -34,8 +34,8 @@ public class QuickContactBadge extends ImageView implements View.OnClickListener
     private Bundle mExtras;
     private Drawable mOverlay;
     private QueryHandler mQueryHandler;
-    static final String[] EMAIL_LOOKUP_PROJECTION = {"contact_id", ContactsContract.ContactsColumns.LOOKUP_KEY};
-    static final String[] PHONE_LOOKUP_PROJECTION = {"_id", ContactsContract.ContactsColumns.LOOKUP_KEY};
+    static final String[] EMAIL_LOOKUP_PROJECTION = {"contact_id", "lookup"};
+    static final String[] PHONE_LOOKUP_PROJECTION = {"_id", "lookup"};
 
     /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: source-4181928-dex2jar.jar:android/widget/QuickContactBadge$QueryHandler.class */

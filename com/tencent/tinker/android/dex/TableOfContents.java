@@ -354,7 +354,7 @@ public final class TableOfContents {
         section.write(this.signature);
         section.writeInt(this.fileSize);
         section.writeInt(112);
-        section.writeInt(305419896);
+        section.writeInt(DexFormat.ENDIAN_TAG);
         section.writeInt(this.linkSize);
         section.writeInt(this.linkOff);
         section.writeInt(this.mapList.off);

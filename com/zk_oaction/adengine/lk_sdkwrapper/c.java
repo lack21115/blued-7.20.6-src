@@ -51,7 +51,7 @@ public class c extends a {
 
     private void h() {
         try {
-            ImageView imageView = new ImageView(this.f41957c);
+            ImageView imageView = new ImageView(this.f28266c);
             Bitmap decodeFile = BitmapFactory.decodeFile(this.b + "bj.jpg");
             this.j = decodeFile;
             imageView.setImageBitmap(decodeFile);

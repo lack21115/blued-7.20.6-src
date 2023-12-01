@@ -13,13 +13,9 @@ public final class SVGAPlayer {
     @Metadata
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/svgaplayer/SVGAPlayer$Builder.class */
     public static final class Builder {
-
-        /* renamed from: a  reason: collision with root package name */
-        private String f15971a;
+        private String a;
         private String b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private int f15972c;
+        private int c;
         private boolean d;
         private SVGAImageView.FillMode e;
         private String f;
@@ -57,7 +53,7 @@ public final class SVGAPlayer {
         }
 
         public final Builder a(Integer num) {
-            this.f15972c = num != null ? num.intValue() : 0;
+            this.c = num != null ? num.intValue() : 0;
             return this;
         }
 
@@ -66,7 +62,7 @@ public final class SVGAPlayer {
             if (str2 == null || str2.length() == 0) {
                 return this;
             }
-            this.f15971a = str;
+            this.a = str;
             return this;
         }
 
@@ -82,7 +78,7 @@ public final class SVGAPlayer {
         }
 
         public final String a() {
-            return this.f15971a;
+            return this.a;
         }
 
         public final String b() {
@@ -90,7 +86,7 @@ public final class SVGAPlayer {
         }
 
         public final int c() {
-            return this.f15972c;
+            return this.c;
         }
 
         public final SVGAImageView.FillMode d() {

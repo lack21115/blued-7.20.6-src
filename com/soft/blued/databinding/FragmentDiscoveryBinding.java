@@ -7,11 +7,11 @@ import com.blued.android.framework.view.badgeview.QBadgeContainer;
 public final class FragmentDiscoveryBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final QBadgeContainer f28813a;
+    private final QBadgeContainer f15123a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public QBadgeContainer getRoot() {
-        return this.f28813a;
+        return this.f15123a;
     }
 }

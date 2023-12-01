@@ -14,7 +14,7 @@ public final class CipherSource implements Source {
     private boolean closed;
 
     /* renamed from: final  reason: not valid java name */
-    private boolean f1211final;
+    private boolean f47final;
     private final BufferedSource source;
 
     public CipherSource(BufferedSource source, Cipher cipher) {
@@ -48,7 +48,7 @@ public final class CipherSource implements Source {
     private final void refill() {
         while (this.buffer.size() == 0) {
             if (this.source.exhausted()) {
-                this.f1211final = true;
+                this.f47final = true;
                 doFinal();
                 return;
             }
@@ -104,7 +104,7 @@ public final class CipherSource implements Source {
                 if (i == 0) {
                     return 0L;
                 }
-                if (this.f1211final) {
+                if (this.f47final) {
                     return this.buffer.read(sink, j);
                 }
                 refill();

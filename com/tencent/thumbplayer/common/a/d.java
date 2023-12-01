@@ -4,19 +4,19 @@ package com.tencent.thumbplayer.common.a;
 public class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private b f39269a = new b();
+    private b f25578a = new b();
     private a b = new a();
 
     /* renamed from: c  reason: collision with root package name */
-    private e f39270c = new e();
+    private e f25579c = new e();
     private c d = new c();
-    private C1017d e = new C1017d();
+    private C0847d e = new C0847d();
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/thumbplayer/common/a/d$a.class */
     class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public int f39271a;
+        public int f25580a;
         public int b;
 
         public a() {
@@ -24,12 +24,12 @@ public class d {
         }
 
         public void a() {
-            this.f39271a = -1;
+            this.f25580a = -1;
             this.b = -1;
         }
 
         public void a(com.tencent.thumbplayer.common.a.a aVar) {
-            aVar.a("av1hwdecoderprofile", this.f39271a);
+            aVar.a("av1hwdecoderprofile", this.f25580a);
             aVar.a("av1hwdecoderlevel", this.b);
         }
     }
@@ -38,11 +38,11 @@ public class d {
     class b {
 
         /* renamed from: a  reason: collision with root package name */
-        public String f39273a;
+        public String f25582a;
         public int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public int f39274c;
+        public int f25583c;
         public String d;
         public String e;
         public String f;
@@ -53,9 +53,9 @@ public class d {
         }
 
         public void a() {
-            this.f39273a = "";
+            this.f25582a = "";
             this.b = -1;
-            this.f39274c = -1;
+            this.f25583c = -1;
             this.d = "";
             this.e = "";
             this.f = "";
@@ -63,9 +63,9 @@ public class d {
         }
 
         public void a(com.tencent.thumbplayer.common.a.a aVar) {
-            aVar.a("flowid", this.f39273a);
+            aVar.a("flowid", this.f25582a);
             aVar.a("appplatform", this.b);
-            aVar.a("apilevel", this.f39274c);
+            aVar.a("apilevel", this.f25583c);
             aVar.a("osver", this.d);
             aVar.a("model", this.e);
             aVar.a("serialno", this.f);
@@ -77,7 +77,7 @@ public class d {
     class c {
 
         /* renamed from: a  reason: collision with root package name */
-        public int f39275a;
+        public int f25584a;
         public int b;
 
         public c() {
@@ -85,35 +85,35 @@ public class d {
         }
 
         public void a() {
-            this.f39275a = -1;
+            this.f25584a = -1;
             this.b = -1;
         }
 
         public void a(com.tencent.thumbplayer.common.a.a aVar) {
-            aVar.a("hevchwdecoderprofile", this.f39275a);
+            aVar.a("hevchwdecoderprofile", this.f25584a);
             aVar.a("hevchwdecoderlevel", this.b);
         }
     }
 
     /* renamed from: com.tencent.thumbplayer.common.a.d$d  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/thumbplayer/common/a/d$d.class */
-    class C1017d {
+    class C0847d {
 
         /* renamed from: a  reason: collision with root package name */
-        public int f39277a;
+        public int f25586a;
         public int b;
 
-        public C1017d() {
+        public C0847d() {
             a();
         }
 
         public void a() {
-            this.f39277a = -1;
+            this.f25586a = -1;
             this.b = -1;
         }
 
         public void a(com.tencent.thumbplayer.common.a.a aVar) {
-            aVar.a("vp8hwdecoderprofile", this.f39277a);
+            aVar.a("vp8hwdecoderprofile", this.f25586a);
             aVar.a("vp8hwdecoderlevel", this.b);
         }
     }
@@ -122,7 +122,7 @@ public class d {
     class e {
 
         /* renamed from: a  reason: collision with root package name */
-        public int f39279a;
+        public int f25588a;
         public int b;
 
         public e() {
@@ -130,18 +130,18 @@ public class d {
         }
 
         public void a() {
-            this.f39279a = -1;
+            this.f25588a = -1;
             this.b = -1;
         }
 
         public void a(com.tencent.thumbplayer.common.a.a aVar) {
-            aVar.a("vp9hwdecoderprofile", this.f39279a);
+            aVar.a("vp9hwdecoderprofile", this.f25588a);
             aVar.a("vp9hwdecoderlevel", this.b);
         }
     }
 
     public b a() {
-        return this.f39269a;
+        return this.f25578a;
     }
 
     public a b() {
@@ -149,10 +149,10 @@ public class d {
     }
 
     public e c() {
-        return this.f39270c;
+        return this.f25579c;
     }
 
-    public C1017d d() {
+    public C0847d d() {
         return this.e;
     }
 

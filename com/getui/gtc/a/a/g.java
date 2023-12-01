@@ -4,25 +4,25 @@ package com.getui.gtc.a.a;
 public final class g {
 
     /* renamed from: a  reason: collision with root package name */
-    public int f21881a;
+    public int f8274a;
     public String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f21882c;
+    public String f8275c;
 
     public g(int i) {
-        this.f21881a = -1;
+        this.f8274a = -1;
         this.b = "";
-        this.f21882c = "";
-        this.f21881a = i;
+        this.f8275c = "";
+        this.f8274a = i;
     }
 
     public g(int i, String str, String str2) {
-        this.f21881a = -1;
+        this.f8274a = -1;
         this.b = "";
-        this.f21882c = "";
-        this.f21881a = i;
+        this.f8275c = "";
+        this.f8274a = i;
         this.b = str;
-        this.f21882c = str2;
+        this.f8275c = str2;
     }
 }

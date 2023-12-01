@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemMineAdBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29221a;
+    private final LinearLayout f15531a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29221a;
+        return this.f15531a;
     }
 }

@@ -6,17 +6,17 @@ import java.util.List;
 final /* synthetic */ class bu implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final TXVideoJoiner f40274a;
+    private final TXVideoJoiner f26583a;
     private final List b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final int f40275c;
+    private final int f26584c;
     private final int d;
 
     private bu(TXVideoJoiner tXVideoJoiner, List list, int i, int i2) {
-        this.f40274a = tXVideoJoiner;
+        this.f26583a = tXVideoJoiner;
         this.b = list;
-        this.f40275c = i;
+        this.f26584c = i;
         this.d = i2;
     }
 
@@ -26,6 +26,6 @@ final /* synthetic */ class bu implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        TXVideoJoiner.lambda$setSplitScreenList$8(this.f40274a, this.b, this.f40275c, this.d);
+        TXVideoJoiner.lambda$setSplitScreenList$8(this.f26583a, this.b, this.f26584c, this.d);
     }
 }

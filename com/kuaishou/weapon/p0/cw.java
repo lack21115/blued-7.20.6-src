@@ -9,10 +9,10 @@ public class cw {
     private static volatile cw b;
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f23804a;
+    private Context f10196a;
 
     private cw(Context context) {
-        this.f23804a = context;
+        this.f10196a = context;
     }
 
     public static cw a(Context context) {
@@ -35,9 +35,9 @@ public class cw {
             @Override // java.lang.Runnable
             public void run() {
                 try {
-                    h a2 = h.a(cw.this.f23804a, "re_po_rt");
+                    h a2 = h.a(cw.this.f10196a, "re_po_rt");
                     if (a2.b(de.w, 0) == 1) {
-                        long a3 = de.a(cw.this.f23804a).a(de.aZ);
+                        long a3 = de.a(cw.this.f10196a).a(de.aZ);
                         long currentTimeMillis = System.currentTimeMillis();
                         long b2 = a2.b(de.x, 8);
                         int b3 = a2.b(de.o, 0);
@@ -51,8 +51,8 @@ public class cw {
                             }
                         }
                         if (currentTimeMillis - a3 >= b2 * 3600000 || i == 106 || (i == 100 && b3 == 1)) {
-                            co.a(cw.this.f23804a, new cg(cw.this.f23804a, i).a(cj.i), cj.i, false, true);
-                            de.a(cw.this.f23804a).a(de.aZ, currentTimeMillis);
+                            co.a(cw.this.f10196a, new cg(cw.this.f10196a, i).a(cj.i), cj.i, false, true);
+                            de.a(cw.this.f10196a).a(de.aZ, currentTimeMillis);
                         }
                     }
                 } catch (Throwable th) {

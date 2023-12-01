@@ -6,7 +6,7 @@ import com.umeng.commonsdk.statistics.common.DeviceConfig;
 public class i extends a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f40926a = "serial";
+    private static final String f27235a = "serial";
 
     public i() {
         super("serial");

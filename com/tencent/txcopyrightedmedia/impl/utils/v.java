@@ -21,7 +21,7 @@ public final class v extends u {
     }
 
     public v(List<a> list) {
-        this.f40158a = e;
+        this.f26467a = e;
         this.f = list;
         this.g = new AtomicBoolean(false);
     }
@@ -55,7 +55,7 @@ public final class v extends u {
         if (list != null) {
             for (a aVar : list) {
                 u.n a2 = aVar.a(str, str2, lVar.b());
-                if (a2 != null && a2.f40176a == u.n.c.OK) {
+                if (a2 != null && a2.f26485a == u.n.c.OK) {
                     return a2;
                 }
             }

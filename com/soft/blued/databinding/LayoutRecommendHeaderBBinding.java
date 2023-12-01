@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class LayoutRecommendHeaderBBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29426a;
+    private final LinearLayout f15736a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29426a;
+        return this.f15736a;
     }
 }

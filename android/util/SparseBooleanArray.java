@@ -40,7 +40,7 @@ public class SparseBooleanArray implements Cloneable {
     }
 
     /* renamed from: clone */
-    public SparseBooleanArray m1030clone() {
+    public SparseBooleanArray m1026clone() {
         SparseBooleanArray sparseBooleanArray = null;
         try {
             SparseBooleanArray sparseBooleanArray2 = (SparseBooleanArray) super.clone();

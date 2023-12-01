@@ -8,16 +8,16 @@ import com.tencent.ugc.UGCThumbnailGenerator;
 public final /* synthetic */ class fl implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final UGCThumbnailGenerator f40386a;
+    private final UGCThumbnailGenerator f26695a;
     private final UGCThumbnailGenerator.UGCThumbnailGenerateParams b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final TXVideoEditer.TXThumbnailListener f40387c;
+    private final TXVideoEditer.TXThumbnailListener f26696c;
 
     private fl(UGCThumbnailGenerator uGCThumbnailGenerator, UGCThumbnailGenerator.UGCThumbnailGenerateParams uGCThumbnailGenerateParams, TXVideoEditer.TXThumbnailListener tXThumbnailListener) {
-        this.f40386a = uGCThumbnailGenerator;
+        this.f26695a = uGCThumbnailGenerator;
         this.b = uGCThumbnailGenerateParams;
-        this.f40387c = tXThumbnailListener;
+        this.f26696c = tXThumbnailListener;
     }
 
     public static Runnable a(UGCThumbnailGenerator uGCThumbnailGenerator, UGCThumbnailGenerator.UGCThumbnailGenerateParams uGCThumbnailGenerateParams, TXVideoEditer.TXThumbnailListener tXThumbnailListener) {
@@ -26,6 +26,6 @@ public final /* synthetic */ class fl implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        UGCThumbnailGenerator.lambda$start$3(this.f40386a, this.b, this.f40387c);
+        UGCThumbnailGenerator.lambda$start$3(this.f26695a, this.b, this.f26696c);
     }
 }

@@ -15,19 +15,16 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import com.android.internal.R;
 import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alipay/sdk/widget/p.class */
 public class p extends LinearLayout {
     private static Handler f = new Handler(Looper.getMainLooper());
-
-    /* renamed from: a  reason: collision with root package name */
-    private ImageView f4695a;
+    private ImageView a;
     private TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private ImageView f4696c;
+    private ImageView c;
     private ProgressBar d;
     private WebView e;
     private a g;
@@ -87,12 +84,12 @@ public class p extends LinearLayout {
         linearLayout.setOrientation(0);
         linearLayout.setGravity(16);
         ImageView imageView = new ImageView(context);
-        this.f4695a = imageView;
+        this.a = imageView;
         imageView.setOnClickListener(this.k);
-        this.f4695a.setScaleType(ImageView.ScaleType.CENTER);
-        this.f4695a.setImageDrawable(com.alipay.sdk.util.k.a(com.alipay.sdk.util.k.f4669a, context));
-        this.f4695a.setPadding(a(12), 0, a(12), 0);
-        linearLayout.addView(this.f4695a, new LinearLayout.LayoutParams(-2, -2));
+        this.a.setScaleType(ImageView.ScaleType.CENTER);
+        this.a.setImageDrawable(com.alipay.sdk.util.k.a(com.alipay.sdk.util.k.a, context));
+        this.a.setPadding(a(12), 0, a(12), 0);
+        linearLayout.addView(this.a, new LinearLayout.LayoutParams(-2, -2));
         View view = new View(context);
         view.setBackgroundColor(-2500135);
         linearLayout.addView(view, new LinearLayout.LayoutParams(a(1), a(25)));
@@ -107,19 +104,19 @@ public class p extends LinearLayout {
         layoutParams.weight = 1.0f;
         linearLayout.addView(this.b, layoutParams);
         ImageView imageView2 = new ImageView(context);
-        this.f4696c = imageView2;
+        this.c = imageView2;
         imageView2.setOnClickListener(this.k);
-        this.f4696c.setScaleType(ImageView.ScaleType.CENTER);
-        this.f4696c.setImageDrawable(com.alipay.sdk.util.k.a(com.alipay.sdk.util.k.b, context));
-        this.f4696c.setPadding(a(12), 0, a(12), 0);
-        linearLayout.addView(this.f4696c, new LinearLayout.LayoutParams(-2, -2));
+        this.c.setScaleType(ImageView.ScaleType.CENTER);
+        this.c.setImageDrawable(com.alipay.sdk.util.k.a(com.alipay.sdk.util.k.b, context));
+        this.c.setPadding(a(12), 0, a(12), 0);
+        linearLayout.addView(this.c, new LinearLayout.LayoutParams(-2, -2));
         addView(linearLayout, new LinearLayout.LayoutParams(-1, a(48)));
     }
 
     private void b(Context context) {
-        ProgressBar progressBar = new ProgressBar(context, null, 16973855);
+        ProgressBar progressBar = new ProgressBar(context, null, R.style.Widget_ProgressBar_Horizontal);
         this.d = progressBar;
-        progressBar.setProgressDrawable(context.getResources().getDrawable(17301612));
+        progressBar.setProgressDrawable(context.getResources().getDrawable(R.drawable.progress_horizontal));
         this.d.setMax(100);
         this.d.setBackgroundColor(-218103809);
         addView(this.d, new LinearLayout.LayoutParams(-1, a(2)));
@@ -146,7 +143,7 @@ public class p extends LinearLayout {
         settings.setDomStorageEnabled(true);
         try {
             this.e.removeJavascriptInterface("searchBoxJavaBridge_");
-            this.e.removeJavascriptInterface(Context.ACCESSIBILITY_SERVICE);
+            this.e.removeJavascriptInterface("accessibility");
             this.e.removeJavascriptInterface("accessibilityTraversal");
         } catch (Exception e) {
         }
@@ -177,7 +174,7 @@ public class p extends LinearLayout {
     }
 
     public ImageView getBackButton() {
-        return this.f4695a;
+        return this.a;
     }
 
     public ProgressBar getProgressbar() {
@@ -185,7 +182,7 @@ public class p extends LinearLayout {
     }
 
     public ImageView getRefreshButton() {
-        return this.f4696c;
+        return this.c;
     }
 
     public TextView getTitle() {

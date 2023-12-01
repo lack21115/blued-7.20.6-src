@@ -11,9 +11,7 @@ import java.lang.ref.WeakReference;
 
 /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/parser/KeyframeParser.class */
 class KeyframeParser {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final Interpolator f4404a = new LinearInterpolator();
+    private static final Interpolator a = new LinearInterpolator();
     private static SparseArrayCompat<WeakReference<Interpolator>> b;
 
     KeyframeParser() {
@@ -54,7 +52,7 @@ class KeyframeParser {
         WeakReference<Interpolator> weakReference;
         synchronized (KeyframeParser.class) {
             try {
-                weakReference = a().get(i);
+                weakReference = (WeakReference) a().get(i);
             } catch (Throwable th) {
                 throw th;
             }

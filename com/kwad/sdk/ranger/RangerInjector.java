@@ -2,7 +2,6 @@ package com.kwad.sdk.ranger;
 
 import android.text.TextUtils;
 import android.util.Log;
-import com.blued.android.module.common.web.LoaderConstants;
 import com.bytedance.apm.common.utility.Logger;
 import com.kwad.sdk.utils.s;
 import com.tencent.matrix.Matrix;
@@ -101,7 +100,7 @@ public class RangerInjector {
                                     return null;
                                 }
                             }
-                            if (method.getName().contains(String.this)) {
+                            if (method.getName().contains(str2)) {
                                 Issue issue = (Issue) objArr[0];
                                 com.kwad.sdk.core.d.b.i("perfMonitor.RangerInjector", "originPluginListener callback:" + issue.toString());
                                 try {
@@ -118,7 +117,7 @@ public class RangerInjector {
                                 }
                                 pluginListener.onReportIssue(issue);
                                 return null;
-                            } else if (TextUtils.equals(method.getName(), LoaderConstants.ON_INIT)) {
+                            } else if (TextUtils.equals(method.getName(), "onInit")) {
                                 pluginListener.onInit((Plugin) objArr[0]);
                                 return null;
                             } else if (TextUtils.equals(method.getName(), "onStart")) {

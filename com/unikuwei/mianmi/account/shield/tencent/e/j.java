@@ -23,7 +23,7 @@ import javax.crypto.Cipher;
 public class j {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final char[] f41012a = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
+    private static final char[] f27321a = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
 
     public static int a(Context context) {
         try {
@@ -108,8 +108,8 @@ public class j {
                 byte b = digest[i2];
                 byte b2 = digest[i2];
                 int i3 = i2 * 2;
-                cArr[i3] = f41012a[(b2 & 240) >> 4];
-                cArr[i3 + 1] = f41012a[b & 15];
+                cArr[i3] = f27321a[(b2 & 240) >> 4];
+                cArr[i3 + 1] = f27321a[b & 15];
                 i = i2 + 1;
             }
         } catch (Exception e) {

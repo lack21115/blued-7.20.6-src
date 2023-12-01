@@ -4,9 +4,8 @@ import java.math.BigInteger;
 import java.math.RoundingMode;
 import org.checkerframework.checker.nullness.compatqual.NullableDecl;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8110460-dex2jar.jar:com/google/common/math/MathPreconditions.class */
-public final class MathPreconditions {
+final class MathPreconditions {
     private MathPreconditions() {
     }
 

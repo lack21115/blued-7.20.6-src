@@ -25,7 +25,7 @@ public class LiveRankWebViewFragment extends BaseFragment implements View.OnClic
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private ViewGroup f31212c;
+    private ViewGroup f17522c;
     private View d;
     private ImageView e;
     private ImageView f;
@@ -35,7 +35,7 @@ public class LiveRankWebViewFragment extends BaseFragment implements View.OnClic
     private int j;
 
     /* renamed from: a  reason: collision with root package name */
-    public int f31211a = 2;
+    public int f17521a = 2;
     private String k = "";
     private String l = "";
     private ViewPager.OnPageChangeListener m = new ViewPager.OnPageChangeListener() { // from class: com.soft.blued.ui.live.fragment.LiveRankWebViewFragment.1
@@ -66,15 +66,15 @@ public class LiveRankWebViewFragment extends BaseFragment implements View.OnClic
     public class MyAdapter extends FragmentPagerAdapter {
 
         /* renamed from: a  reason: collision with root package name */
-        FragmentManager f31214a;
+        FragmentManager f17524a;
 
         /* renamed from: c  reason: collision with root package name */
-        private String[] f31215c;
+        private String[] f17525c;
 
         public MyAdapter(FragmentManager fragmentManager) {
             super(fragmentManager);
-            this.f31215c = LiveRankWebViewFragment.this.b.getResources().getStringArray(R.array.live_rank_title);
-            this.f31214a = fragmentManager;
+            this.f17525c = LiveRankWebViewFragment.this.b.getResources().getStringArray(R.array.live_rank_title);
+            this.f17524a = fragmentManager;
         }
 
         @Override // androidx.fragment.app.FragmentPagerAdapter
@@ -96,12 +96,12 @@ public class LiveRankWebViewFragment extends BaseFragment implements View.OnClic
 
         @Override // androidx.viewpager.widget.PagerAdapter
         public int getCount() {
-            return LiveRankWebViewFragment.this.f31211a;
+            return LiveRankWebViewFragment.this.f17521a;
         }
 
         @Override // androidx.viewpager.widget.PagerAdapter
         public CharSequence getPageTitle(int i) {
-            return this.f31215c[i];
+            return this.f17525c[i];
         }
     }
 
@@ -115,13 +115,13 @@ public class LiveRankWebViewFragment extends BaseFragment implements View.OnClic
     }
 
     private void d() {
-        this.d = this.f31212c.findViewById(2131370694);
-        ImageView imageView = (ImageView) this.f31212c.findViewById(2131363120);
+        this.d = this.f17522c.findViewById(2131370694);
+        ImageView imageView = (ImageView) this.f17522c.findViewById(2131363120);
         this.e = imageView;
         imageView.setImageDrawable(BluedSkinUtils.b(this.b, 2131233902));
         this.e.setVisibility(0);
         this.e.setOnClickListener(this);
-        ImageView imageView2 = (ImageView) this.f31212c.findViewById(2131363126);
+        ImageView imageView2 = (ImageView) this.f17522c.findViewById(2131363126);
         this.f = imageView2;
         imageView2.setImageResource(2131233917);
         this.f.setVisibility(0);
@@ -133,12 +133,12 @@ public class LiveRankWebViewFragment extends BaseFragment implements View.OnClic
     }
 
     public void a() {
-        this.h = (NoScrollH5ViewPager) this.f31212c.findViewById(R.id.viewpager);
+        this.h = (NoScrollH5ViewPager) this.f17522c.findViewById(R.id.viewpager);
         MyAdapter myAdapter = new MyAdapter(getChildFragmentManager());
         this.i = myAdapter;
         this.h.setAdapter(myAdapter);
         this.h.setOffscreenPageLimit(2);
-        TabPageIndicatorWithDot tabPageIndicatorWithDot = (TabPageIndicatorWithDot) this.f31212c.findViewById(2131373299);
+        TabPageIndicatorWithDot tabPageIndicatorWithDot = (TabPageIndicatorWithDot) this.f17522c.findViewById(R.id.vp_indicator);
         this.g = tabPageIndicatorWithDot;
         tabPageIndicatorWithDot.setViewPager(this.h);
         this.g.setOnPageChangeListener(this.m);
@@ -166,19 +166,18 @@ public class LiveRankWebViewFragment extends BaseFragment implements View.OnClic
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         getActivity().getWindow().setSoftInputMode(18);
         this.b = getActivity();
-        ViewGroup viewGroup2 = this.f31212c;
+        ViewGroup viewGroup2 = this.f17522c;
         if (viewGroup2 == null) {
-            this.f31212c = a(layoutInflater);
+            this.f17522c = a(layoutInflater);
             c();
             d();
             a();
         } else if (viewGroup2.getParent() != null) {
-            ((ViewGroup) this.f31212c.getParent()).removeView(this.f31212c);
+            ((ViewGroup) this.f17522c.getParent()).removeView(this.f17522c);
         }
-        return this.f31212c;
+        return this.f17522c;
     }
 }

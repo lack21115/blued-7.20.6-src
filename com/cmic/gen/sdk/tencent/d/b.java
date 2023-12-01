@@ -18,7 +18,7 @@ public class b extends g {
     private String b = null;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f21654c = null;
+    private String f8048c = null;
     private String d = null;
     private String e = null;
     private String f = null;
@@ -41,7 +41,7 @@ public class b extends g {
     private String x = null;
 
     /* renamed from: a  reason: collision with root package name */
-    public CopyOnWriteArrayList<Throwable> f21653a = new CopyOnWriteArrayList<>();
+    public CopyOnWriteArrayList<Throwable> f8047a = new CopyOnWriteArrayList<>();
 
     public void A(String str) {
         this.A = str;
@@ -71,7 +71,7 @@ public class b extends g {
         JSONObject jSONObject = new JSONObject();
         try {
             jSONObject.put("appid", this.b);
-            jSONObject.put("traceId", this.f21654c);
+            jSONObject.put("traceId", this.f8048c);
             jSONObject.put("appName", this.d);
             jSONObject.put(AttributionReporter.APP_VERSION, this.e);
             jSONObject.put("sdkVersion", com.cmic.gen.sdk.tencent.auth.c.SDK_VERSION);
@@ -180,7 +180,7 @@ public class b extends g {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void s(String str) {
-        this.f21654c = str;
+        this.f8048c = str;
     }
 
     public void t(String str) {

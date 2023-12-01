@@ -19,9 +19,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.collection.ArrayMap;
 import com.app.share.ShareUtils;
-import com.blued.android.chat.core.pack.ReqAckPackage;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.AppMethods;
+import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.ui.BaseFragment;
 import com.blued.android.core.ui.StatusBarHelper;
 import com.blued.android.core.ui.TerminalActivity;
@@ -41,6 +41,7 @@ import com.blued.android.views.WebBtmOptions;
 import com.blued.android.web.SimpleWebCallBack;
 import com.bytedance.applog.tracker.Tracker;
 import com.google.common.net.HttpHeaders;
+import com.huawei.hms.framework.common.ContainerUtils;
 import com.igexin.push.core.b;
 import com.soft.blued.R;
 import com.soft.blued.app.InitTaskUtil;
@@ -75,11 +76,11 @@ import java.util.Map;
 public class YouZanDetailFragment extends BaseFragment {
 
     /* renamed from: a  reason: collision with root package name */
-    public View f29832a;
+    public View f16142a;
     public Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    public YouzanBrowser f29833c;
+    public YouzanBrowser f16143c;
     public View d;
     public String e;
     public String f;
@@ -102,15 +103,15 @@ public class YouZanDetailFragment extends BaseFragment {
     public class AnonymousClass3 implements YzLoginCallback {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ String f29836a;
+        final /* synthetic */ String f16146a;
 
         AnonymousClass3(String str) {
-            this.f29836a = str;
+            this.f16146a = str;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void a(YouzanToken youzanToken) {
-            YouZanDetailFragment.this.f29833c.sync(youzanToken);
+            YouZanDetailFragment.this.f16143c.sync(youzanToken);
         }
 
         @Override // com.youzan.androidsdk.YzLoginCallback
@@ -121,28 +122,28 @@ public class YouZanDetailFragment extends BaseFragment {
                 if (youZanLoginFailModel == null || youZanLoginFailModel.code != 200 || youZanLoginFailModel.data == null) {
                     return;
                 }
-                YouZanDetailFragment.this.a(this.f29836a, youZanLoginFailModel.data.yz_open_id);
+                YouZanDetailFragment.this.a(this.f16146a, youZanLoginFailModel.data.yz_open_id);
             } catch (Exception e) {
             }
         }
 
         @Override // com.youzan.androidsdk.YzLoginCallback
         public void onSuccess(final YouzanToken youzanToken) {
-            YouZanDetailFragment.this.f29833c.post(new Runnable() { // from class: com.soft.blued.ui.discover.fragment.-$$Lambda$YouZanDetailFragment$3$JtPPozGSpFBow-ltWNhl02GQ2Ww
+            YouZanDetailFragment.this.f16143c.post(new Runnable() { // from class: com.soft.blued.ui.discover.fragment.-$$Lambda$YouZanDetailFragment$3$JtPPozGSpFBow-ltWNhl02GQ2Ww
                 @Override // java.lang.Runnable
                 public final void run() {
                     YouZanDetailFragment.AnonymousClass3.this.a(youzanToken);
                 }
             });
-            BluedStatistics.c().a("YZ_LOGIN_CB", 0L, 0, null);
-            YouZanDetailFragment.this.a(this.f29836a, youzanToken.getYzOpenId());
+            BluedStatistics.c().a("YZ_LOGIN_CB", 0L, 0, (String) null);
+            YouZanDetailFragment.this.a(this.f16146a, youzanToken.getYzOpenId());
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void a(View view) {
         Tracker.onClick(view);
-        this.f29833c.reload();
+        this.f16143c.reload();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -153,7 +154,7 @@ public class YouZanDetailFragment extends BaseFragment {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void b(View view) {
         Tracker.onClick(view);
-        this.f29833c.sharePage();
+        this.f16143c.sharePage();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -164,7 +165,7 @@ public class YouZanDetailFragment extends BaseFragment {
         if (TextUtils.isEmpty(str)) {
             return;
         }
-        String[] split3 = str.split("&");
+        String[] split3 = str.split(ContainerUtils.FIELD_DELIMITER);
         int length = split3.length;
         int i = 0;
         boolean z2 = false;
@@ -180,10 +181,10 @@ public class YouZanDetailFragment extends BaseFragment {
                 z4 = z2;
                 if (!TextUtils.isEmpty(str2)) {
                     z4 = z2;
-                    if (str2.contains(ReqAckPackage.REQ_RESPONSE_KEY.BG_COLOR)) {
+                    if (str2.contains("bg_color")) {
                         if (str2.split("=").length >= 2) {
                             int parseColor = Color.parseColor("#" + split2[1]);
-                            Logger.c("ljx_color", "bg_color=#" + split2[1]);
+                            Logger.c("ljx_color", new Object[]{"bg_color=#" + split2[1]});
                             this.q.setBackground(new ColorDrawable(parseColor));
                         }
                         z4 = true;
@@ -198,7 +199,7 @@ public class YouZanDetailFragment extends BaseFragment {
                     if (str2.contains("font_color")) {
                         if (str2.split("=").length >= 2) {
                             int parseColor2 = Color.parseColor("#" + split[1]);
-                            Logger.c("ljx_color", "font_color=#" + split[1]);
+                            Logger.c("ljx_color", new Object[]{"font_color=#" + split[1]});
                             this.m.setTextColor(parseColor2);
                         }
                         z5 = true;
@@ -210,13 +211,13 @@ public class YouZanDetailFragment extends BaseFragment {
             z3 = z5;
         }
         if (!z2) {
-            Logger.c("ljx_color", "恢复原始背景色");
+            Logger.c("ljx_color", new Object[]{"恢复原始背景色"});
             this.q.setBackgroundColor(BluedSkinUtils.a(this.b, 2131101780));
         }
         if (z) {
             return;
         }
-        Logger.c("ljx_color", "恢复原始字体颜色");
+        Logger.c("ljx_color", new Object[]{"恢复原始字体颜色"});
         this.m.setTextColor(BluedSkinUtils.a(this.b, 2131102254));
     }
 
@@ -260,7 +261,7 @@ public class YouZanDetailFragment extends BaseFragment {
                 String str6 = str3;
                 sb2.append(str3);
                 String str7 = str3;
-                sb2.append("&");
+                sb2.append(ContainerUtils.FIELD_DELIMITER);
                 String str8 = str3;
                 sb = sb2.toString();
             } else {
@@ -304,12 +305,12 @@ public class YouZanDetailFragment extends BaseFragment {
     }
 
     public void a() {
-        this.q = this.f29832a.findViewById(R.id.title_bg);
-        View findViewById = this.f29832a.findViewById(R.id.title_btm_line);
+        this.q = this.f16142a.findViewById(R.id.title_bg);
+        View findViewById = this.f16142a.findViewById(R.id.title_btm_line);
         this.r = findViewById;
         findViewById.setVisibility(8);
         this.q.setPadding(0, StatusBarHelper.a(this.b), 0, 0);
-        ImageView imageView = (ImageView) this.f29832a.findViewById(2131363120);
+        ImageView imageView = (ImageView) this.f16142a.findViewById(2131363120);
         this.i = imageView;
         imageView.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.discover.fragment.-$$Lambda$YouZanDetailFragment$Sq6dgjj-6qjHjX2OAZhyF3IemuI
             @Override // android.view.View.OnClickListener
@@ -317,10 +318,10 @@ public class YouZanDetailFragment extends BaseFragment {
                 YouZanDetailFragment.this.d(view);
             }
         });
-        View findViewById2 = this.f29832a.findViewById(R.id.ctt_close_layout);
+        View findViewById2 = this.f16142a.findViewById(R.id.ctt_close_layout);
         this.j = findViewById2;
         findViewById2.setVisibility(0);
-        ImageView imageView2 = (ImageView) this.f29832a.findViewById(R.id.ctt_close);
+        ImageView imageView2 = (ImageView) this.f16142a.findViewById(R.id.ctt_close);
         this.k = imageView2;
         imageView2.setVisibility(0);
         this.k.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.discover.fragment.-$$Lambda$YouZanDetailFragment$5U45OMLI_zn7GM13wUlXmVMs6R8
@@ -329,7 +330,7 @@ public class YouZanDetailFragment extends BaseFragment {
                 YouZanDetailFragment.this.c(view);
             }
         });
-        ImageView imageView3 = (ImageView) this.f29832a.findViewById(2131363126);
+        ImageView imageView3 = (ImageView) this.f16142a.findViewById(2131363126);
         this.l = imageView3;
         imageView3.setVisibility(0);
         this.l.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.discover.fragment.-$$Lambda$YouZanDetailFragment$XeAHBZt189NUmKA_Vv84wPyXiIE
@@ -338,8 +339,8 @@ public class YouZanDetailFragment extends BaseFragment {
                 YouZanDetailFragment.this.b(view);
             }
         });
-        this.m = (TextView) this.f29832a.findViewById(2131363108);
-        View findViewById3 = this.f29832a.findViewById(R.id.ll_page_not_found);
+        this.m = (TextView) this.f16142a.findViewById(2131363108);
+        View findViewById3 = this.f16142a.findViewById(R.id.ll_page_not_found);
         this.d = findViewById3;
         findViewById3.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.discover.fragment.-$$Lambda$YouZanDetailFragment$agV8jW079YBjjQPGQ0MaEfGxSEo
             @Override // android.view.View.OnClickListener
@@ -347,8 +348,8 @@ public class YouZanDetailFragment extends BaseFragment {
                 YouZanDetailFragment.this.a(view);
             }
         });
-        YouzanBrowser youzanBrowser = (YouzanBrowser) this.f29832a.findViewById(R.id.youzan_browser);
-        this.f29833c = youzanBrowser;
+        YouzanBrowser youzanBrowser = (YouzanBrowser) this.f16142a.findViewById(R.id.youzan_browser);
+        this.f16143c = youzanBrowser;
         youzanBrowser.setWebChromeClient(new WebChromeClient() { // from class: com.soft.blued.ui.discover.fragment.YouZanDetailFragment.1
             @Override // com.tencent.smtt.sdk.WebChromeClient
             public void onProgressChanged(WebView webView, int i) {
@@ -362,7 +363,7 @@ public class YouZanDetailFragment extends BaseFragment {
                 YouZanDetailFragment.this.m.setText(str);
             }
         });
-        this.f29833c.setWebViewClient(new WebViewClient() { // from class: com.soft.blued.ui.discover.fragment.YouZanDetailFragment.2
+        this.f16143c.setWebViewClient(new WebViewClient() { // from class: com.soft.blued.ui.discover.fragment.YouZanDetailFragment.2
             @Override // com.tencent.smtt.sdk.WebViewClient
             public void onPageFinished(WebView webView, String str) {
                 super.onPageFinished(webView, str);
@@ -373,7 +374,7 @@ public class YouZanDetailFragment extends BaseFragment {
             @Override // com.tencent.smtt.sdk.WebViewClient
             public void onPageStarted(WebView webView, String str, Bitmap bitmap) {
                 super.onPageStarted(webView, str, bitmap);
-                YouZanDetailFragment.this.f29833c.setVisibility(0);
+                YouZanDetailFragment.this.f16143c.setVisibility(0);
             }
 
             @Override // com.tencent.smtt.sdk.WebViewClient
@@ -398,7 +399,7 @@ public class YouZanDetailFragment extends BaseFragment {
                 }
                 String d = YouZanDetailFragment.this.d(str);
                 YouZanDetailFragment.this.onBackPressed();
-                YouZanDetailFragment.this.f29833c.loadUrl(d, YouZanDetailFragment.this.o);
+                YouZanDetailFragment.this.f16143c.loadUrl(d, YouZanDetailFragment.this.o);
                 return true;
             }
         });
@@ -406,10 +407,9 @@ public class YouZanDetailFragment extends BaseFragment {
 
     public void a(String str, String str2) {
         LoginRegisterHttpUtils.a(str, str2, new BluedUIHttpResponse(getFragmentActive()) { // from class: com.soft.blued.ui.discover.fragment.YouZanDetailFragment.4
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity bluedEntity) {
             }
-        }, getFragmentActive());
+        }, (IRequestHost) getFragmentActive());
     }
 
     public void b() {
@@ -419,14 +419,14 @@ public class YouZanDetailFragment extends BaseFragment {
 
     public void c() {
         try {
-            if (this.f29833c != null) {
-                this.f29833c.subscribe(new AbsCheckAuthMobileEvent() { // from class: com.soft.blued.ui.discover.fragment.YouZanDetailFragment.5
+            if (this.f16143c != null) {
+                this.f16143c.subscribe(new AbsCheckAuthMobileEvent() { // from class: com.soft.blued.ui.discover.fragment.YouZanDetailFragment.5
                     @Override // com.youzan.androidsdk.event.AbsCheckAuthMobileEvent, com.youzan.androidsdk.event.Event
                     public String subscribe() {
                         return super.subscribe();
                     }
                 });
-                this.f29833c.subscribe(new AbsAuthEvent() { // from class: com.soft.blued.ui.discover.fragment.YouZanDetailFragment.6
+                this.f16143c.subscribe(new AbsAuthEvent() { // from class: com.soft.blued.ui.discover.fragment.YouZanDetailFragment.6
                     @Override // com.youzan.androidsdk.event.AbsAuthEvent
                     public void call(Context context, boolean z) {
                         BluedStatistics.c().a("YZ_LOGIN_CB", 0L, 0, "need login");
@@ -452,7 +452,7 @@ public class YouZanDetailFragment extends BaseFragment {
                                 return;
                             }
                             InstantLog.b("web_page_options_click", 2);
-                            YouZanDetailFragment.this.f29833c.reload();
+                            YouZanDetailFragment.this.f16143c.reload();
                         } else {
                             InstantLog.b("web_page_options_click", 1);
                             Intent intent = new Intent("android.intent.action.VIEW");
@@ -470,21 +470,21 @@ public class YouZanDetailFragment extends BaseFragment {
                         InstantLog.b("web_page_options_click", 3);
                     }
                 });
-                this.f29833c.subscribe(new AbsShareEvent() { // from class: com.soft.blued.ui.discover.fragment.YouZanDetailFragment.9
+                this.f16143c.subscribe(new AbsShareEvent() { // from class: com.soft.blued.ui.discover.fragment.YouZanDetailFragment.9
                     @Override // com.youzan.androidsdk.event.AbsShareEvent
                     public void call(Context context, GoodsShareModel goodsShareModel) {
                         com.soft.blued.utils.Logger.c("YouZanDetailFragment", "share event", goodsShareModel == null ? b.l : goodsShareModel.getTitle());
                         if (goodsShareModel == null || StringUtils.d(goodsShareModel.getLink())) {
-                            AppMethods.a((CharSequence) YouZanDetailFragment.this.b.getResources().getString(R.string.can_not_share_this_page));
+                            AppMethods.a(YouZanDetailFragment.this.b.getResources().getString(R.string.can_not_share_this_page));
                             return;
                         }
                         String d = BluedHttpUrl.d(goodsShareModel.getLink());
                         String string = StringUtils.d(goodsShareModel.getTitle()) ? YouZanDetailFragment.this.b.getResources().getString(R.string.yz_share_default_title) : goodsShareModel.getTitle();
                         String string2 = StringUtils.d(goodsShareModel.getDesc()) ? YouZanDetailFragment.this.b.getResources().getString(R.string.yz_share_default_desc) : goodsShareModel.getDesc();
-                        YouZanDetailFragment.this.h.a(ShareUtils.a().a(StringUtils.d(goodsShareModel.getImgUrl()) ? YouZanDetailFragment.this.n : goodsShareModel.getImgUrl(), YouZanDetailFragment.this.f29833c, d, string, string2, string2, 0), YouZanDetailFragment.this.g);
+                        YouZanDetailFragment.this.h.a(ShareUtils.a().a(StringUtils.d(goodsShareModel.getImgUrl()) ? YouZanDetailFragment.this.n : goodsShareModel.getImgUrl(), YouZanDetailFragment.this.f16143c, d, string, string2, string2, 0), YouZanDetailFragment.this.g);
                     }
                 });
-                this.f29833c.subscribe(new AbsChooserEvent() { // from class: com.soft.blued.ui.discover.fragment.YouZanDetailFragment.10
+                this.f16143c.subscribe(new AbsChooserEvent() { // from class: com.soft.blued.ui.discover.fragment.YouZanDetailFragment.10
                     @Override // com.youzan.androidsdk.event.AbsChooserEvent
                     public void call(Context context, Intent intent, int i) throws ActivityNotFoundException {
                         YouZanDetailFragment.this.startActivityForResult(intent, i);
@@ -500,22 +500,20 @@ public class YouZanDetailFragment extends BaseFragment {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-                this.f29833c.needLoading(false);
-                this.f29833c.loadUrl(this.e, this.o);
+                this.f16143c.needLoading(false);
+                this.f16143c.loadUrl(this.e, this.o);
             }
         } catch (Exception e2) {
         }
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         super.onActivityResult(i, i2, intent);
-        this.f29833c.receiveFile(i, intent);
+        this.f16143c.receiveFile(i, intent);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener
     public boolean onBackPressed() {
-        YouzanBrowser youzanBrowser = this.f29833c;
+        YouzanBrowser youzanBrowser = this.f16143c;
         if (youzanBrowser == null) {
             getActivity().finish();
             return super.onBackPressed();
@@ -523,7 +521,7 @@ public class YouZanDetailFragment extends BaseFragment {
         this.p = true;
         try {
             if (youzanBrowser.pageCanGoBack()) {
-                this.f29833c.pageGoBack();
+                this.f16143c.pageGoBack();
                 return true;
             }
             getActivity().finish();
@@ -534,13 +532,12 @@ public class YouZanDetailFragment extends BaseFragment {
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         InitTaskUtil.initYouZanSDK();
         this.b = getActivity();
-        View view = this.f29832a;
+        View view = this.f16142a;
         if (view == null) {
-            this.f29832a = layoutInflater.inflate(R.layout.fragment_youzan_detail, viewGroup, false);
+            this.f16142a = layoutInflater.inflate(R.layout.fragment_youzan_detail, viewGroup, false);
             a();
             if (getArguments() != null) {
                 String string = getArguments().getString("KEY_URL");
@@ -563,8 +560,8 @@ public class YouZanDetailFragment extends BaseFragment {
                 b();
             }
         } else if (view.getParent() != null) {
-            ((ViewGroup) this.f29832a.getParent()).removeView(this.f29832a);
+            ((ViewGroup) this.f16142a.getParent()).removeView(this.f16142a);
         }
-        return this.f29832a;
+        return this.f16142a;
     }
 }

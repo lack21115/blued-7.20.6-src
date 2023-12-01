@@ -13,13 +13,13 @@ public interface j1 extends IInterface {
 
         /* renamed from: c.t.m.g.j1$a$a  reason: collision with other inner class name */
         /* loaded from: source-8756600-dex2jar.jar:c/t/m/g/j1$a$a.class */
-        public static class C0039a implements j1 {
+        public static class C0037a implements j1 {
 
             /* renamed from: a  reason: collision with root package name */
-            public IBinder f3846a;
+            public IBinder f3798a;
 
-            public C0039a(IBinder iBinder) {
-                this.f3846a = iBinder;
+            public C0037a(IBinder iBinder) {
+                this.f3798a = iBinder;
             }
 
             public String a(String str, String str2, String str3) {
@@ -30,7 +30,7 @@ public interface j1 extends IInterface {
                     obtain.writeString(str);
                     obtain.writeString(str2);
                     obtain.writeString(str3);
-                    this.f3846a.transact(1, obtain, obtain2, 0);
+                    this.f3798a.transact(1, obtain, obtain2, 0);
                     obtain2.readException();
                     String readString = obtain2.readString();
                     obtain.recycle();
@@ -49,7 +49,7 @@ public interface j1 extends IInterface {
 
             @Override // android.os.IInterface
             public IBinder asBinder() {
-                return this.f3846a;
+                return this.f3798a;
             }
         }
 
@@ -58,7 +58,7 @@ public interface j1 extends IInterface {
                 return null;
             }
             IInterface queryLocalInterface = iBinder.queryLocalInterface("com.heytap.openid.IOpenID");
-            return (queryLocalInterface == null || !(queryLocalInterface instanceof j1)) ? new C0039a(iBinder) : (j1) queryLocalInterface;
+            return (queryLocalInterface == null || !(queryLocalInterface instanceof j1)) ? new C0037a(iBinder) : (j1) queryLocalInterface;
         }
     }
 }

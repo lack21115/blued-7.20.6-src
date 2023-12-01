@@ -24,7 +24,7 @@ import java.nio.ByteOrder;
 public class f extends AbstractNetAdapter {
 
     /* renamed from: a  reason: collision with root package name */
-    private com.tencent.beacon.base.net.a.c<byte[], SocketResponsePackage> f34969a = new com.tencent.beacon.base.net.a.e();
+    private com.tencent.beacon.base.net.a.c<byte[], SocketResponsePackage> f21278a = new com.tencent.beacon.base.net.a.e();
     private com.tencent.beacon.base.net.a.c<JceRequestEntity, SocketRequestPackage> b = new com.tencent.beacon.base.net.a.d();
 
     private f() {
@@ -143,7 +143,7 @@ public class f extends AbstractNetAdapter {
                 sb2.append("receivedData: ");
                 sb2.append(a3.length);
                 com.tencent.beacon.base.util.c.a("SocketAdapter", 1, sb2.toString(), new Object[0]);
-                SocketResponsePackage a4 = this.f34969a.a(a3);
+                SocketResponsePackage a4 = this.f21278a.a(a3);
                 if (a4 == null) {
                     callback.onFailure(new com.tencent.beacon.base.net.d(name, "402", -1, "responsePackage == null"));
                     return;

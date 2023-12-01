@@ -134,7 +134,7 @@ public abstract class r extends com.anythink.expressad.exoplayer.a implements co
             this.t.a(a2.w, a2.u, a2.v, null, this.y, this.z);
             this.H = false;
         }
-        if (this.t.a(this.C.f7232c, this.C.f7228a)) {
+        if (this.t.a(this.C.f4393c, this.C.f4389a)) {
             this.w.e++;
             this.C.e();
             this.C = null;
@@ -199,7 +199,7 @@ public abstract class r extends com.anythink.expressad.exoplayer.a implements co
             ad.a();
             long elapsedRealtime2 = SystemClock.elapsedRealtime();
             this.s.a(this.A.a(), elapsedRealtime2, elapsedRealtime2 - elapsedRealtime);
-            this.w.f7224a++;
+            this.w.f4385a++;
         } catch (e e) {
             throw com.anythink.expressad.exoplayer.g.a(e, s());
         }
@@ -305,7 +305,7 @@ public abstract class r extends com.anythink.expressad.exoplayer.a implements co
         if (w <= 2) {
             return w;
         }
-        return w | (af.f7632a >= 21 ? 32 : 0) | 8;
+        return w | (af.f4793a >= 21 ? 32 : 0) | 8;
     }
 
     @Override // com.anythink.expressad.exoplayer.k.n

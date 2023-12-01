@@ -8,16 +8,16 @@ import java.util.Map;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static a f24293a = new a();
+    private static a f10606a = new a();
     private Instant.IStatisticsProvider b = null;
 
     /* renamed from: c  reason: collision with root package name */
-    private Instant.IStatisticsProvider f24294c = new C0612a(this);
+    private Instant.IStatisticsProvider f10607c = new C0442a(this);
 
     /* renamed from: com.oplus.instant.router.f.a$a  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/oplus/instant/router/f/a$a.class */
-    class C0612a implements Instant.IStatisticsProvider {
-        C0612a(a aVar) {
+    class C0442a implements Instant.IStatisticsProvider {
+        C0442a(a aVar) {
         }
 
         @Override // com.oplus.instant.router.Instant.IStatisticsProvider
@@ -38,7 +38,7 @@ public class a {
     }
 
     public static a a() {
-        return f24293a;
+        return f10606a;
     }
 
     public void a(Instant.IStatisticsProvider iStatisticsProvider) {
@@ -47,6 +47,6 @@ public class a {
 
     public Instant.IStatisticsProvider b() {
         Instant.IStatisticsProvider iStatisticsProvider = this.b;
-        return iStatisticsProvider != null ? iStatisticsProvider : this.f24294c;
+        return iStatisticsProvider != null ? iStatisticsProvider : this.f10607c;
     }
 }

@@ -3,8 +3,8 @@ package com.soft.blued.ui.home;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
-import android.app.Activity;
 import android.content.ComponentName;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -24,7 +24,10 @@ import android.widget.LinearLayout;
 import android.widget.TabHost;
 import android.widget.TextView;
 import androidx.collection.ArrayMap;
+import androidx.constraintlayout.motion.widget.Key;
 import androidx.core.app.NotificationManagerCompat;
+import androidx.fragment.app.FragmentActivity;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import com.baidu.mobads.sdk.api.IAdInterListener;
@@ -135,7 +138,7 @@ public class HomeActivity extends BaseFragmentActivity implements View.OnClickLi
     @Deprecated
 
     /* renamed from: c  reason: collision with root package name */
-    public static HomeActivity f30985c;
+    public static HomeActivity f17295c;
     private MyFragmentTabHost e;
     private LinearLayout i;
     private TabHost.TabSpec j;
@@ -166,11 +169,10 @@ public class HomeActivity extends BaseFragmentActivity implements View.OnClickLi
     class AnonymousClass16 extends BluedUIHttpResponse {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ long f30993a;
+        final /* synthetic */ long f17303a;
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIUpdate(BluedEntity bluedEntity) {
-            BluedPreferences.a(this.f30993a);
+            BluedPreferences.a(this.f17303a);
         }
     }
 
@@ -198,15 +200,15 @@ public class HomeActivity extends BaseFragmentActivity implements View.OnClickLi
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
+        /* JADX WARN: Type inference failed for: r0v9, types: [android.content.Context, com.soft.blued.ui.home.HomeActivity] */
         /* renamed from: a */
         public void onUIUpdate(BluedEntityA<PhoneDialogModel> bluedEntityA) {
-            if (bluedEntityA == null || bluedEntityA.getSingleData() == null || bluedEntityA.getSingleData().is_need != 1) {
+            if (bluedEntityA == null || bluedEntityA.getSingleData() == null || ((PhoneDialogModel) bluedEntityA.getSingleData()).is_need != 1) {
                 return;
             }
             EventTrackSystemAuthority.a(SystemAuthorityProtos.Event.PHONE_CONFIRM_POP_SHOW);
-            HomeActivity homeActivity = HomeActivity.this;
-            BluedAlertDialog a2 = CommonAlertDialog.a(homeActivity, 0, homeActivity.getResources().getString(2131890636), "", HomeActivity.this.getResources().getString(2131890638), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.home.-$$Lambda$HomeActivity$9$QOtAHCixKwOsleKCTbeZYmpIEXA
+            ?? r0 = HomeActivity.this;
+            BluedAlertDialog a2 = CommonAlertDialog.a((Context) r0, 0, r0.getResources().getString(2131890636), "", HomeActivity.this.getResources().getString(2131890638), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.home.-$$Lambda$HomeActivity$9$QOtAHCixKwOsleKCTbeZYmpIEXA
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i) {
                     HomeActivity.AnonymousClass9.this.b(dialogInterface, i);
@@ -224,7 +226,7 @@ public class HomeActivity extends BaseFragmentActivity implements View.OnClickLi
             TextView textView = new TextView(HomeActivity.this);
             textView.setTextSize(18.0f);
             textView.setTextColor(BluedSkinUtils.a(HomeActivity.this, 2131102254));
-            textView.setText(bluedEntityA.getSingleData().mobile);
+            textView.setText(((PhoneDialogModel) bluedEntityA.getSingleData()).mobile);
             FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-1, -2);
             layoutParams.topMargin = DensityUtils.a(HomeActivity.this, 5.0f);
             layoutParams.gravity = 1;
@@ -235,7 +237,6 @@ public class HomeActivity extends BaseFragmentActivity implements View.OnClickLi
             frameLayout.addView(textView);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public boolean onUIFailure(int i, String str) {
             return true;
         }
@@ -246,11 +247,11 @@ public class HomeActivity extends BaseFragmentActivity implements View.OnClickLi
         private static boolean k = true;
 
         /* renamed from: a  reason: collision with root package name */
-        public ViewGroup f31010a;
+        public ViewGroup f17320a;
         public ImageView b;
 
         /* renamed from: c  reason: collision with root package name */
-        public String f31011c;
+        public String f17321c;
         public int d;
         public int e;
         public TextView f;
@@ -271,12 +272,10 @@ public class HomeActivity extends BaseFragmentActivity implements View.OnClickLi
                 imageView.setImageDrawable(BluedSkinUtils.b(imageView.getContext(), this.e));
             } else if (!k && this.l) {
                 this.j = false;
-                ImageLoader.c(null, this.f31011c).f().g(1).a(new ImageLoader.OnAnimationStateListener() { // from class: com.soft.blued.ui.home.HomeActivity.TabItem.1
-                    @Override // com.blued.android.core.image.ImageLoader.OnAnimationStateListener
+                ImageLoader.c((IRequestHost) null, this.f17321c).f().g(1).a(new ImageLoader.OnAnimationStateListener() { // from class: com.soft.blued.ui.home.HomeActivity.TabItem.1
                     public void a() {
                     }
 
-                    @Override // com.blued.android.core.image.ImageLoader.OnAnimationStateListener
                     public void b() {
                         if (TabItem.this.j) {
                             return;
@@ -362,6 +361,7 @@ public class HomeActivity extends BaseFragmentActivity implements View.OnClickLi
         }
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private void a(Intent intent) {
         this.p.clear();
         View findViewById = findViewById(2131362488);
@@ -370,22 +370,22 @@ public class HomeActivity extends BaseFragmentActivity implements View.OnClickLi
             findViewById.setBackgroundColor(BluedSkinUtils.a(this, 2131102258));
         }
         this.i = (LinearLayout) findViewById(R.id.main_navigation);
-        MyFragmentTabHost myFragmentTabHost = (MyFragmentTabHost) findViewById(16908306);
+        MyFragmentTabHost myFragmentTabHost = (MyFragmentTabHost) findViewById(android.R.id.tabhost);
         this.e = myFragmentTabHost;
         if (myFragmentTabHost != null) {
-            myFragmentTabHost.setup(this, getSupportFragmentManager(), 16908305);
+            myFragmentTabHost.setup(this, getSupportFragmentManager(), android.R.id.tabcontent);
             TabItem tabItem = new TabItem();
-            tabItem.f31010a = (ViewGroup) findViewById(R.id.ll_main_find);
-            tabItem.g = (QBadgeContainer) findViewById(R.id.find_badge_container);
-            tabItem.g.a(tabItem.f31010a);
+            tabItem.f17320a = (ViewGroup) findViewById(R.id.ll_main_find);
+            tabItem.g = findViewById(R.id.find_badge_container);
+            tabItem.g.a(tabItem.f17320a);
             tabItem.b = (ImageView) findViewById(R.id.iv_main_find);
-            tabItem.f31011c = "icon_find_anim.png";
+            tabItem.f17321c = "icon_find_anim.png";
             tabItem.d = R.drawable.icon_find_sel;
             tabItem.e = R.drawable.icon_find_nor;
             tabItem.f = (TextView) findViewById(R.id.tv_main_find);
             tabItem.i = findViewById(R.id.tv_find_dot);
             tabItem.h = (ImageView) findViewById(R.id.iv_find_mark);
-            tabItem.f31010a.setOnClickListener(this);
+            tabItem.f17320a.setOnClickListener(this);
             tabItem.g.setBackgroundColor(BluedSkinUtils.a(this, 2131101780));
             tabItem.g.a(BluedSkinUtils.a(this, 2131101780), 1.0f, true);
             this.k.put("find", tabItem);
@@ -394,20 +394,20 @@ public class HomeActivity extends BaseFragmentActivity implements View.OnClickLi
             this.e.addTab(indicator, NearbyHomeFragment.class, HomeArgumentHelper.a(intent));
             this.p.add(tabItem.g);
             TabItem tabItem2 = new TabItem();
-            tabItem2.f31010a = (ViewGroup) findViewById(R.id.ll_main_live);
-            this.t = tabItem2.f31010a;
+            tabItem2.f17320a = (ViewGroup) findViewById(R.id.ll_main_live);
+            this.t = tabItem2.f17320a;
             this.v = (ImageView) findViewById(R.id.image_live_bubble);
-            tabItem2.g = (QBadgeContainer) findViewById(R.id.live_badge_container);
-            tabItem2.g.a(tabItem2.f31010a);
-            tabItem2.f31010a.setVisibility(0);
+            tabItem2.g = findViewById(R.id.live_badge_container);
+            tabItem2.g.a(tabItem2.f17320a);
+            tabItem2.f17320a.setVisibility(0);
             tabItem2.b = (ImageView) findViewById(R.id.iv_main_live);
-            tabItem2.f31011c = "icon_live_anim.png";
+            tabItem2.f17321c = "icon_live_anim.png";
             tabItem2.d = R.drawable.icon_live_sel;
             tabItem2.e = R.drawable.icon_live_nor;
             tabItem2.f = (TextView) findViewById(R.id.tv_main_live);
             tabItem2.h = (ImageView) findViewById(R.id.iv_live_mark);
             tabItem2.i = findViewById(R.id.tv_live_dot);
-            tabItem2.f31010a.setOnClickListener(this);
+            tabItem2.f17320a.setOnClickListener(this);
             tabItem2.g.setBackgroundColor(BluedSkinUtils.a(this, 2131101780));
             tabItem2.g.a(BluedSkinUtils.a(this, 2131101780), 1.0f, true);
             this.k.put("live", tabItem2);
@@ -421,20 +421,20 @@ public class HomeActivity extends BaseFragmentActivity implements View.OnClickLi
             }
             this.p.add(tabItem2.g);
             TabItem tabItem3 = new TabItem();
-            tabItem3.f31010a = (ViewGroup) findViewById(R.id.ll_main_feed);
+            tabItem3.f17320a = (ViewGroup) findViewById(R.id.ll_main_feed);
             this.u = findViewById(R.id.ll_main_feed);
             this.w = (ImageView) findViewById(R.id.img_discovery_bubble_avatar);
             this.x = (ImageView) findViewById(R.id.img_discovery_bubble);
-            tabItem3.g = (QBadgeContainer) findViewById(R.id.feed_badge_container);
-            tabItem3.g.a(tabItem3.f31010a);
+            tabItem3.g = findViewById(R.id.feed_badge_container);
+            tabItem3.g.a(tabItem3.f17320a);
             tabItem3.b = (ImageView) findViewById(R.id.iv_main_feed);
-            tabItem3.f31011c = "icon_discovery_anim.png";
+            tabItem3.f17321c = "icon_discovery_anim.png";
             tabItem3.d = R.drawable.icon_discovery_sel;
             tabItem3.e = R.drawable.icon_discovery_nor;
             tabItem3.f = (TextView) findViewById(R.id.tv_main_feed);
             tabItem3.h = (ImageView) findViewById(R.id.iv_feed_mark);
             tabItem3.i = findViewById(R.id.tv_feed_dot);
-            tabItem3.f31010a.setOnClickListener(this);
+            tabItem3.f17320a.setOnClickListener(this);
             tabItem3.g.setBackgroundColor(BluedSkinUtils.a(this, 2131101780));
             tabItem3.g.a(BluedSkinUtils.a(this, 2131101780), 1.0f, true);
             this.k.put(IAdInterListener.AdProdType.PRODUCT_FEEDS, tabItem3);
@@ -443,37 +443,37 @@ public class HomeActivity extends BaseFragmentActivity implements View.OnClickLi
             this.e.addTab(indicator3, DiscoveryPageFragment.class, HomeArgumentHelper.a(intent));
             this.p.add(tabItem3.g);
             TabItem tabItem4 = new TabItem();
-            tabItem4.f31010a = (ViewGroup) findViewById(R.id.ll_main_msg);
-            tabItem4.g = (QBadgeContainer) findViewById(R.id.msg_badge_container);
-            tabItem4.g.a(tabItem4.f31010a);
+            tabItem4.f17320a = (ViewGroup) findViewById(R.id.ll_main_msg);
+            tabItem4.g = findViewById(R.id.msg_badge_container);
+            tabItem4.g.a(tabItem4.f17320a);
             tabItem4.b = (ImageView) findViewById(R.id.iv_main_msg);
-            tabItem4.f31011c = "icon_msg_anim.png";
+            tabItem4.f17321c = "icon_msg_anim.png";
             tabItem4.d = R.drawable.icon_msg_sel;
             tabItem4.e = R.drawable.icon_msg_nor;
             tabItem4.f = (TextView) findViewById(R.id.tv_main_msg);
             tabItem4.i = findViewById(R.id.tv_msg_dot);
             tabItem4.h = (ImageView) findViewById(R.id.iv_msg_mark);
-            tabItem4.f31010a.setOnClickListener(this);
+            tabItem4.f17320a.setOnClickListener(this);
             tabItem4.g.setBackgroundColor(BluedSkinUtils.a(this, 2131101780));
             tabItem4.g.b(5.0f, true);
-            tabItem4.g.f10205a.a(BluedSkinUtils.a(this, 2131101780), 1.0f, true);
+            tabItem4.g.a.a(BluedSkinUtils.a(this, 2131101780), 1.0f, true);
             this.k.put("msg", tabItem4);
             TabHost.TabSpec indicator4 = this.e.newTabSpec("msg").setIndicator("msg");
             this.j = indicator4;
             this.e.addTab(indicator4, MessagePageFragment.class, HomeArgumentHelper.a(intent));
             this.p.add(tabItem4.g);
             TabItem tabItem5 = new TabItem();
-            tabItem5.f31010a = (ViewGroup) findViewById(R.id.ll_main_others);
-            tabItem5.g = (QBadgeContainer) findViewById(R.id.other_badge_container);
-            tabItem5.g.a(tabItem5.f31010a);
+            tabItem5.f17320a = (ViewGroup) findViewById(R.id.ll_main_others);
+            tabItem5.g = findViewById(R.id.other_badge_container);
+            tabItem5.g.a(tabItem5.f17320a);
             tabItem5.b = (ImageView) findViewById(R.id.iv_main_others);
-            tabItem5.f31011c = "icon_mine_anim.png";
+            tabItem5.f17321c = "icon_mine_anim.png";
             tabItem5.d = R.drawable.icon_mine_sel;
             tabItem5.e = R.drawable.icon_mine_nor;
             tabItem5.f = (TextView) findViewById(R.id.tv_main_others);
             tabItem5.h = (ImageView) findViewById(R.id.iv_others_mark);
             tabItem5.i = findViewById(2131372203);
-            tabItem5.f31010a.setOnClickListener(this);
+            tabItem5.f17320a.setOnClickListener(this);
             tabItem5.g.setBackgroundColor(BluedSkinUtils.a(this, 2131101780));
             Log.v("drb", "BluedSkinUtils.getSkinColor(this, R.color.syc_b):" + BluedSkinUtils.a(this, 2131101780));
             tabItem5.g.a(BluedSkinUtils.a(this, 2131101780), 1.0f, true);
@@ -513,7 +513,7 @@ public class HomeActivity extends BaseFragmentActivity implements View.OnClickLi
                     }
                 });
             }
-            ServiceHelper.f33645a.a(this, new ServiceHelper.ZhiChiNewMsgListener() { // from class: com.soft.blued.ui.home.HomeActivity.13
+            ServiceHelper.f19954a.a((Context) this, new ServiceHelper.ZhiChiNewMsgListener() { // from class: com.soft.blued.ui.home.HomeActivity.13
                 @Override // com.soft.blued.ui.setting.tools.ServiceHelper.ZhiChiNewMsgListener
                 public void a() {
                     if (!HomeActivity.this.f.equals("mine")) {
@@ -545,9 +545,8 @@ public class HomeActivity extends BaseFragmentActivity implements View.OnClickLi
             aLinkActionModel.setPopup_image(aLinkActionModel.getPopup_image_min());
         }
         ImageFileLoader.a(a()).a(aLinkActionModel.getPopup_image()).a(new ImageLoadResult(a()) { // from class: com.soft.blued.ui.home.HomeActivity.8
-            @Override // com.blued.android.core.image.ImageLoadResult
             public void a() {
-                DialogALink.a(HomeActivity.this, aLinkActionModel);
+                DialogALink.a((Context) HomeActivity.this, aLinkActionModel);
             }
         }).a();
     }
@@ -562,7 +561,7 @@ public class HomeActivity extends BaseFragmentActivity implements View.OnClickLi
         }
         this.o = bool.booleanValue();
         if (bool.booleanValue()) {
-            this.k.get("find").f.setText(2131887964);
+            this.k.get("find").f.setText(R.string.feed_list_view_refresh_tab_name);
             EventTrackFeed.d(FeedProtos.Event.FEED_BACK_TOP_SHOW);
             str = "home_tab_find_to_refresh.png";
         } else {
@@ -571,11 +570,9 @@ public class HomeActivity extends BaseFragmentActivity implements View.OnClickLi
         }
         final ImageView imageView = this.k.get("find").b;
         ImageLoader.c(a(), str).g().a(new ImageLoader.OnAnimationStateListener() { // from class: com.soft.blued.ui.home.HomeActivity.7
-            @Override // com.blued.android.core.image.ImageLoader.OnAnimationStateListener
             public void a() {
             }
 
-            @Override // com.blued.android.core.image.ImageLoader.OnAnimationStateListener
             public void b() {
                 LogUtils.c("onAnimationEnd: " + bool);
                 if (bool.booleanValue()) {
@@ -609,12 +606,12 @@ public class HomeActivity extends BaseFragmentActivity implements View.OnClickLi
     /* JADX INFO: Access modifiers changed from: private */
     public void a(boolean z) {
         NearbyHttpUtils.a(new BluedUIHttpResponse() { // from class: com.soft.blued.ui.home.HomeActivity.10
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity bluedEntity) {
             }
         }, z);
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private void a(boolean z, Intent intent) {
         if (intent != null) {
             String b = HomeArgumentHelper.b(intent, "arg_select_tab_tag");
@@ -631,8 +628,8 @@ public class HomeActivity extends BaseFragmentActivity implements View.OnClickLi
                     i(b);
                 }
             }
-            HomeArgumentHelper.a(this, intent);
-            HomeArgumentHelper.b(this, intent);
+            HomeArgumentHelper.a((Context) this, intent);
+            HomeArgumentHelper.b((Context) this, intent);
         }
     }
 
@@ -664,6 +661,7 @@ public class HomeActivity extends BaseFragmentActivity implements View.OnClickLi
         a(str, HomeContract.TabRefresh.DEFAULT);
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private void j(String str) {
         Log.e("HomeActivity", "setSelectedTabUI tabsMap size: " + this.k.size());
         for (Map.Entry<String, TabItem> entry : this.k.entrySet()) {
@@ -677,6 +675,7 @@ public class HomeActivity extends BaseFragmentActivity implements View.OnClickLi
         }
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private void o() {
         LiveEventBus.get("aLink_live_dot").observe(this, new Observer<Object>() { // from class: com.soft.blued.ui.home.HomeActivity.4
             @Override // androidx.lifecycle.Observer
@@ -726,8 +725,9 @@ public class HomeActivity extends BaseFragmentActivity implements View.OnClickLi
         NearbyHttpUtils.c(new AnonymousClass9(a()), a());
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private void q() {
-        ((SystemNoticeViewModel) ViewModelProviders.of(this).get(SystemNoticeViewModel.class)).d.observe(this, new Observer<Integer>() { // from class: com.soft.blued.ui.home.HomeActivity.14
+        ((SystemNoticeViewModel) ViewModelProviders.of((FragmentActivity) this).get(SystemNoticeViewModel.class)).d.observe(this, new Observer<Integer>() { // from class: com.soft.blued.ui.home.HomeActivity.14
             @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(Integer num) {
@@ -779,6 +779,7 @@ public class HomeActivity extends BaseFragmentActivity implements View.OnClickLi
         }
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private void u() {
         List<QBadgeContainer> list = this.p;
         if (list == null || list.isEmpty()) {
@@ -816,11 +817,11 @@ public class HomeActivity extends BaseFragmentActivity implements View.OnClickLi
         boolean z2 = z;
         if (!z) {
             z2 = z;
-            if (CommunityManager.f19086a.a().a() != null) {
+            if (CommunityManager.a.a().a() != null) {
                 z2 = z;
-                if (CommunityManager.f19086a.a().a().extra_bubble_type != 3) {
+                if (CommunityManager.a.a().a().extra_bubble_type != 3) {
                     HomeTabBubble homeTabBubble = new HomeTabBubble();
-                    homeTabBubble.bubble_text = CommunityManager.f19086a.a().a().extra_bubble_text;
+                    homeTabBubble.bubble_text = CommunityManager.a.a().a().extra_bubble_text;
                     homeTabBubble.bubble_type = 1102;
                     LiveEventBus.get(EventBusConstant.KEY_EVENT_CITY_NEW).postDelay(homeTabBubble, 2000L);
                     z2 = true;
@@ -837,7 +838,7 @@ public class HomeActivity extends BaseFragmentActivity implements View.OnClickLi
                 LiveEventBus.get(EventBusConstant.KEY_EVENT_CITY_NEW).postDelay(homeTabBubble2, 2000L);
             }
         }
-        if (CommunityManager.f19086a.a().f()) {
+        if (CommunityManager.a.a().f()) {
             this.A = true;
         } else {
             x();
@@ -870,9 +871,10 @@ public class HomeActivity extends BaseFragmentActivity implements View.OnClickLi
         }
         tabItem.g.a(this.s.bubble_experiment_text);
         EventTrackFeed.d(FeedProtos.Event.FIND_DOWN_BUBBLE_SHOW, this.s.bubble_id);
-        AppUtils.a(tabItem.f31010a);
+        AppUtils.a(tabItem.f17320a);
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private void z() {
         HomeTabBubble homeTabBubble = this.s;
         if (homeTabBubble == null || TextUtils.isEmpty(homeTabBubble.bubble_img)) {
@@ -883,7 +885,6 @@ public class HomeActivity extends BaseFragmentActivity implements View.OnClickLi
         ImageView imageView2 = imageView;
         if (!TextUtils.isEmpty(this.s.bubble_img)) {
             ImageLoadResult imageLoadResult = new ImageLoadResult(a()) { // from class: com.soft.blued.ui.home.HomeActivity.19
-                @Override // com.blued.android.core.image.ImageLoadResult
                 public void a() {
                     HomeActivity.this.u.setVisibility(4);
                 }
@@ -916,18 +917,16 @@ public class HomeActivity extends BaseFragmentActivity implements View.OnClickLi
         this.r = new HomeTabBubblePop(this);
         final String str2 = str;
         new XPopup.Builder(this).a(new SimpleCallback() { // from class: com.soft.blued.ui.home.HomeActivity.20
-            @Override // com.blued.android.framework.ui.xpop.interfaces.SimpleCallback, com.blued.android.framework.ui.xpop.interfaces.XPopupCallback
             public void a(BasePopupView basePopupView) {
                 super.a(basePopupView);
                 HomeActivity.this.r.setText(str2);
             }
 
-            @Override // com.blued.android.framework.ui.xpop.interfaces.SimpleCallback, com.blued.android.framework.ui.xpop.interfaces.XPopupCallback
             public void d(BasePopupView basePopupView) {
                 super.d(basePopupView);
                 HomeActivity.this.r = null;
             }
-        }).d((Boolean) false).c(true).b(true).a(PopupPosition.Top).a(imageView2).a(PopupAnimation.ScaleAlphaFromCenter).c((Boolean) false).a((BasePopupView) this.r).h();
+        }).d(false).c(true).b(true).a(PopupPosition.c).a(imageView2).a(PopupAnimation.a).c(false).a(this.r).h();
         this.r.postDelayed(new Runnable() { // from class: com.soft.blued.ui.home.HomeActivity.21
             @Override // java.lang.Runnable
             public void run() {
@@ -943,7 +942,7 @@ public class HomeActivity extends BaseFragmentActivity implements View.OnClickLi
             }
         });
         AppUtils.a(imageView2);
-        AppUtils.a(this.r);
+        AppUtils.a((View) this.r);
     }
 
     public void a(int i) {
@@ -955,7 +954,6 @@ public class HomeActivity extends BaseFragmentActivity implements View.OnClickLi
             TabItem tabItem = this.k.get(str2);
             if (TextUtils.equals(str, str2)) {
                 tabItem.g.a(new Badge.OnDragStateChangedListener() { // from class: com.soft.blued.ui.home.HomeActivity.15
-                    @Override // com.blued.android.framework.view.badgeview.Badge.OnDragStateChangedListener
                     public void a(int i, Badge badge, View view) {
                         int id = view.getId();
                         if (id == 2131368000) {
@@ -966,10 +964,10 @@ public class HomeActivity extends BaseFragmentActivity implements View.OnClickLi
                             }
                         } else if (id == 2131368003 && i == 5) {
                             EventTrackMessage.a(MessageProtos.Event.MSG_UNREAD_DRAG_REMOVE);
-                            SystemNoticeViewModel systemNoticeViewModel = (SystemNoticeViewModel) ViewModelProviders.of(HomeActivity.this).get(SystemNoticeViewModel.class);
+                            SystemNoticeViewModel systemNoticeViewModel = (SystemNoticeViewModel) ViewModelProviders.of((FragmentActivity) HomeActivity.this).get(SystemNoticeViewModel.class);
                             systemNoticeViewModel.b = new ViewpointNoticeCount();
-                            systemNoticeViewModel.f29847c = 0;
-                            systemNoticeViewModel.f29846a = 0;
+                            systemNoticeViewModel.f16157c = 0;
+                            systemNoticeViewModel.f16156a = 0;
                             systemNoticeViewModel.f.postValue(0);
                             LiveEventBus.get(EventBusConstant.KEY_EVENT_CLEAR_MESSAGE_CHAT).post(null);
                             LiveEventBus.get(EventBusConstant.KEY_EVENT_CLEAR_MESSAGE_NOTIFY).post(null);
@@ -1071,9 +1069,9 @@ public class HomeActivity extends BaseFragmentActivity implements View.OnClickLi
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragmentActivity, skin.support.widget.SkinCompatSupportable
+    /* JADX WARN: Multi-variable type inference failed */
     public void applySkin() {
-        StatusBarHelper.a((Activity) this);
+        StatusBarHelper.a(this);
         super.applySkin();
         Log.e("HomeActivity", "HomeActivity apply skin");
         if (this.m != null) {
@@ -1172,7 +1170,6 @@ public class HomeActivity extends BaseFragmentActivity implements View.OnClickLi
         tabItem.g.setBageVisible(0);
     }
 
-    @Override // android.app.Activity
     public void finish() {
         super.finish();
         Logger.e("HomeActivity", "finish ... ");
@@ -1195,7 +1192,7 @@ public class HomeActivity extends BaseFragmentActivity implements View.OnClickLi
             qBadgeContainer.b(4.0f, true);
             qBadgeContainer.a(str);
             qBadgeContainer.a(1.0f, 0.0f, true);
-            ObjectAnimator ofFloat = ObjectAnimator.ofFloat(tabItem.g.getBadgeView(), "rotation", 0.0f, -3.0f, 0.0f, 0.0f, 0.0f, -3.0f, 0.0f);
+            ObjectAnimator ofFloat = ObjectAnimator.ofFloat(tabItem.g.getBadgeView(), Key.ROTATION, 0.0f, -3.0f, 0.0f, 0.0f, 0.0f, -3.0f, 0.0f);
             ofFloat.setDuration(600L);
             ofFloat.start();
         }
@@ -1226,6 +1223,7 @@ public class HomeActivity extends BaseFragmentActivity implements View.OnClickLi
         this.s = new HomeTabBubble();
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     public void j() {
         MarketPraiseGuide s = BluedConfig.a().s();
         if (s == null || s.count <= 0) {
@@ -1240,14 +1238,15 @@ public class HomeActivity extends BaseFragmentActivity implements View.OnClickLi
         a2.a(this, str, str2, str3, str4, s.type + "");
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     public void k() {
         String a2 = BluedPreferences.a("com.soft.blued.icon0");
         if ("com.soft.blued.icon0".equals(a2)) {
             return;
         }
         PackageManager packageManager = getPackageManager();
-        packageManager.setComponentEnabledSetting(new ComponentName(this, a2), 2, 1);
-        packageManager.setComponentEnabledSetting(new ComponentName(this, "com.soft.blued.icon0"), 1, 1);
+        packageManager.setComponentEnabledSetting(new ComponentName((Context) this, a2), 2, 1);
+        packageManager.setComponentEnabledSetting(new ComponentName((Context) this, "com.soft.blued.icon0"), 1, 1);
         BluedPreferences.b("com.soft.blued.icon0");
     }
 
@@ -1268,6 +1267,7 @@ public class HomeActivity extends BaseFragmentActivity implements View.OnClickLi
         return null;
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     public void m() {
         this.v.setTranslationY(0.0f);
         this.v.setAlpha(1.0f);
@@ -1291,18 +1291,16 @@ public class HomeActivity extends BaseFragmentActivity implements View.OnClickLi
         if (homeTabBubblePop == null || !homeTabBubblePop.s()) {
             this.r = new HomeTabBubblePop(this);
             new XPopup.Builder(this).a(new SimpleCallback() { // from class: com.soft.blued.ui.home.HomeActivity.22
-                @Override // com.blued.android.framework.ui.xpop.interfaces.SimpleCallback, com.blued.android.framework.ui.xpop.interfaces.XPopupCallback
                 public void a(BasePopupView basePopupView) {
                     super.a(basePopupView);
                     HomeActivity.this.r.setText(HomeActivity.this.s.bubble_text);
                 }
 
-                @Override // com.blued.android.framework.ui.xpop.interfaces.SimpleCallback, com.blued.android.framework.ui.xpop.interfaces.XPopupCallback
                 public void d(BasePopupView basePopupView) {
                     super.d(basePopupView);
                     HomeActivity.this.r = null;
                 }
-            }).d((Boolean) false).c(true).b(true).a(PopupPosition.Top).a(this.v).a(PopupAnimation.ScaleAlphaFromCenter).c((Boolean) false).c((int) ((-((View) this.v.getParent()).getHeight()) * 0.09f)).a((BasePopupView) this.r).h().a(10000L);
+            }).d(false).c(true).b(true).a(PopupPosition.c).a(this.v).a(PopupAnimation.a).c(false).c((int) ((-((View) this.v.getParent()).getHeight()) * 0.09f)).a(this.r).h().a(10000L);
             this.r.setRootClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.home.-$$Lambda$HomeActivity$kIYerHgsAS-Hpt52ErokiWmM9UI
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -1335,7 +1333,6 @@ public class HomeActivity extends BaseFragmentActivity implements View.OnClickLi
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragmentActivity, androidx.activity.ComponentActivity, android.app.Activity
     public void onBackPressed() {
         this.l.e();
     }
@@ -1378,26 +1375,25 @@ public class HomeActivity extends BaseFragmentActivity implements View.OnClickLi
         }
     }
 
-    @Override // androidx.appcompat.app.AppCompatActivity, androidx.fragment.app.FragmentActivity, android.app.Activity, android.content.ComponentCallbacks
     public void onConfigurationChanged(Configuration configuration) {
         super.onConfigurationChanged(configuration);
         AreaUtils.initArea();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragmentActivity, androidx.fragment.app.FragmentActivity, androidx.activity.ComponentActivity, androidx.core.app.ComponentActivity, android.app.Activity
+    /* JADX WARN: Multi-variable type inference failed */
     public void onCreate(Bundle bundle) {
-        f30985c = this;
-        this.q = (HomeViewModel) ViewModelProviders.of(this).get(HomeViewModel.class);
+        f17295c = this;
+        this.q = (HomeViewModel) ViewModelProviders.of((FragmentActivity) this).get(HomeViewModel.class);
         if (AppInfo.p()) {
             try {
-                this.n = StatusBarHelper.a((Activity) this);
+                this.n = StatusBarHelper.a(this);
             } catch (Exception e) {
             }
         }
-        LiveListManager.a().a(this);
+        LiveListManager.a().a((LifecycleOwner) this);
         super.onCreate(bundle);
         BluedPreferences.X(true);
-        BaseActivity.f9718a = "";
+        BaseActivity.a = "";
         this.l = new HomePresenter(this, HomeArgumentHelper.a(getIntent(), "from_tag_page"), this, a());
         HomeTabClick.a(getClass());
         setContentView(2131558441);
@@ -1418,7 +1414,7 @@ public class HomeActivity extends BaseFragmentActivity implements View.OnClickLi
             }
             BluedPreferences.x();
         }
-        if (!DeviceUtils.b(this)) {
+        if (!DeviceUtils.b((Context) this)) {
             InstantLog.a("close_push");
         }
         if (UserInfo.getInstance().getLoginUserInfo() != null && UserInfo.getInstance().getLoginUserInfo().vip_grade == 0) {
@@ -1465,7 +1461,7 @@ public class HomeActivity extends BaseFragmentActivity implements View.OnClickLi
             @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(String str) {
-                YYRoomInfoManager.e().a((BaseFragmentActivity) HomeActivity.this, str, YYRoomInfoManager.e().f, true);
+                YYRoomInfoManager.e().a(HomeActivity.this, str, YYRoomInfoManager.e().f, true);
             }
         });
         if (TextUtils.equals("armeabi-v7a", Build.CPU_ABI)) {
@@ -1478,11 +1474,10 @@ public class HomeActivity extends BaseFragmentActivity implements View.OnClickLi
                 HomeActivity.this.k((String) obj);
             }
         });
-        DateTodayManager.f32404a.h();
-        WebLinkManager.f34474a.a();
+        DateTodayManager.f18714a.h();
+        WebLinkManager.f20783a.a();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragmentActivity, androidx.appcompat.app.AppCompatActivity, androidx.fragment.app.FragmentActivity, android.app.Activity
     public void onDestroy() {
         AdFloatObserver.a().b(this);
         super.onDestroy();
@@ -1490,24 +1485,22 @@ public class HomeActivity extends BaseFragmentActivity implements View.OnClickLi
         LiveLogUtils.a("HomeActivity --> onDestroy --> closeLiveRoom");
         HomeTabClick.a();
         this.l.c();
-        f30985c = null;
+        f17295c = null;
     }
 
-    @Override // androidx.fragment.app.FragmentActivity, android.app.Activity
     public void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
         setIntent(intent);
         a(false, intent);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragmentActivity, androidx.fragment.app.FragmentActivity, android.app.Activity
+    /* JADX WARN: Multi-variable type inference failed */
     public void onPause() {
         super.onPause();
         MobclickAgent.onPause(this);
         ChatHelperV4.a().d(this);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragmentActivity, androidx.appcompat.app.AppCompatActivity, android.app.Activity
     public void onPostCreate(Bundle bundle) {
         super.onPostCreate(bundle);
         SendFeedFloatManager.a().a(getApplicationContext());
@@ -1519,14 +1512,14 @@ public class HomeActivity extends BaseFragmentActivity implements View.OnClickLi
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragmentActivity, androidx.fragment.app.FragmentActivity, android.app.Activity
+    /* JADX WARN: Multi-variable type inference failed */
     public void onResume() {
         super.onResume();
         Log.v("drb", "跳转首页绘制完成");
         MobclickAgent.onResume(this);
         this.l.d();
-        if (CommonConstants.f28315a.booleanValue()) {
-            TerminalActivity.d(this, LockPatternSetupFragment.class, null);
+        if (CommonConstants.f14625a.booleanValue()) {
+            TerminalActivity.d(this, LockPatternSetupFragment.class, (Bundle) null);
         }
         Log.e("HomeActivity", "bluedAppHandoverListener" + BluedApplicationLike.bluedAppHandoverListener.a());
         if (BluedApplicationLike.bluedAppHandoverListener != null && !BluedApplicationLike.bluedAppHandoverListener.a()) {
@@ -1543,7 +1536,6 @@ public class HomeActivity extends BaseFragmentActivity implements View.OnClickLi
         AppUtils.a(viewGroup, 999);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragmentActivity, androidx.activity.ComponentActivity, androidx.core.app.ComponentActivity, android.app.Activity
     public void onSaveInstanceState(Bundle bundle) {
         try {
             super.onSaveInstanceState(bundle);
@@ -1556,7 +1548,6 @@ public class HomeActivity extends BaseFragmentActivity implements View.OnClickLi
         bundle.putString("current_tag", this.f);
     }
 
-    @Override // com.blued.android.chat.listener.SingleSessionListener
     public void onSessionDataChanged(final SessionModel sessionModel) {
         if (sessionModel.sessionId == 4) {
             AppInfo.n().post(new Runnable() { // from class: com.soft.blued.ui.home.HomeActivity.17
@@ -1573,7 +1564,6 @@ public class HomeActivity extends BaseFragmentActivity implements View.OnClickLi
         }
     }
 
-    @Override // com.blued.android.chat.listener.SingleSessionListener
     public void onSessionRemoved(short s, long j) {
         if (s == 1 && j == 4) {
             AppInfo.n().post(new Runnable() { // from class: com.soft.blued.ui.home.HomeActivity.18
@@ -1585,14 +1575,12 @@ public class HomeActivity extends BaseFragmentActivity implements View.OnClickLi
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragmentActivity, androidx.appcompat.app.AppCompatActivity, androidx.fragment.app.FragmentActivity, android.app.Activity
     public void onStart() {
         super.onStart();
         this.l.d();
         this.l.ar_();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragmentActivity, androidx.appcompat.app.AppCompatActivity, androidx.fragment.app.FragmentActivity, android.app.Activity
     public void onStop() {
         super.onStop();
         this.l.b();

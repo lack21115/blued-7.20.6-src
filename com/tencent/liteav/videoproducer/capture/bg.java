@@ -7,11 +7,11 @@ import android.view.Surface;
 public final /* synthetic */ class bg implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final bd f36920a;
+    private final bd f23229a;
     private final Surface b;
 
     private bg(bd bdVar, Surface surface) {
-        this.f36920a = bdVar;
+        this.f23229a = bdVar;
         this.b = surface;
     }
 
@@ -21,6 +21,6 @@ public final /* synthetic */ class bg implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        bd.a(this.f36920a, this.b);
+        bd.a(this.f23229a, this.b);
     }
 }

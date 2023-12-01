@@ -13,7 +13,7 @@ import java.security.cert.X509Certificate;
 public final class CertificateUtil {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23126a = "CertificateUtil";
+    private static final String f9518a = "CertificateUtil";
 
     private CertificateUtil() {
     }
@@ -39,7 +39,7 @@ public final class CertificateUtil {
                     InputStream inputStream4 = inputStream;
                     sb.append(e.getMessage());
                     inputStream2 = inputStream;
-                    g.b(f23126a, sb.toString());
+                    g.b(f9518a, sb.toString());
                     x509Certificate = null;
                     f.a(inputStream);
                     return x509Certificate;
@@ -51,7 +51,7 @@ public final class CertificateUtil {
                     InputStream inputStream42 = inputStream;
                     sb2.append(e.getMessage());
                     inputStream2 = inputStream;
-                    g.b(f23126a, sb2.toString());
+                    g.b(f9518a, sb2.toString());
                     x509Certificate = null;
                     f.a(inputStream);
                     return x509Certificate;
@@ -63,7 +63,7 @@ public final class CertificateUtil {
                     InputStream inputStream422 = inputStream;
                     sb22.append(e.getMessage());
                     inputStream2 = inputStream;
-                    g.b(f23126a, sb22.toString());
+                    g.b(f9518a, sb22.toString());
                     x509Certificate = null;
                     f.a(inputStream);
                     return x509Certificate;
@@ -75,7 +75,7 @@ public final class CertificateUtil {
                     InputStream inputStream4222 = inputStream;
                     sb222.append(e.getMessage());
                     inputStream2 = inputStream;
-                    g.b(f23126a, sb222.toString());
+                    g.b(f9518a, sb222.toString());
                     x509Certificate = null;
                     f.a(inputStream);
                     return x509Certificate;
@@ -87,7 +87,7 @@ public final class CertificateUtil {
                     InputStream inputStream42222 = inputStream;
                     sb2222.append(e.getMessage());
                     inputStream2 = inputStream;
-                    g.b(f23126a, sb2222.toString());
+                    g.b(f9518a, sb2222.toString());
                     x509Certificate = null;
                     f.a(inputStream);
                     return x509Certificate;
@@ -101,7 +101,7 @@ public final class CertificateUtil {
                 InputStream inputStream422222 = inputStream;
                 sb22222.append(e.getMessage());
                 inputStream2 = inputStream;
-                g.b(f23126a, sb22222.toString());
+                g.b(f9518a, sb22222.toString());
                 x509Certificate = null;
                 f.a(inputStream);
                 return x509Certificate;
@@ -114,7 +114,7 @@ public final class CertificateUtil {
                 InputStream inputStream4222222 = inputStream;
                 sb222222.append(e.getMessage());
                 inputStream2 = inputStream;
-                g.b(f23126a, sb222222.toString());
+                g.b(f9518a, sb222222.toString());
                 x509Certificate = null;
                 f.a(inputStream);
                 return x509Certificate;
@@ -127,7 +127,7 @@ public final class CertificateUtil {
                 InputStream inputStream42222222 = inputStream;
                 sb2222222.append(e.getMessage());
                 inputStream2 = inputStream;
-                g.b(f23126a, sb2222222.toString());
+                g.b(f9518a, sb2222222.toString());
                 x509Certificate = null;
                 f.a(inputStream);
                 return x509Certificate;
@@ -140,7 +140,7 @@ public final class CertificateUtil {
                 InputStream inputStream422222222 = inputStream;
                 sb22222222.append(e.getMessage());
                 inputStream2 = inputStream;
-                g.b(f23126a, sb22222222.toString());
+                g.b(f9518a, sb22222222.toString());
                 x509Certificate = null;
                 f.a(inputStream);
                 return x509Certificate;
@@ -153,7 +153,7 @@ public final class CertificateUtil {
                 InputStream inputStream4222222222 = inputStream;
                 sb222222222.append(e.getMessage());
                 inputStream2 = inputStream;
-                g.b(f23126a, sb222222222.toString());
+                g.b(f9518a, sb222222222.toString());
                 x509Certificate = null;
                 f.a(inputStream);
                 return x509Certificate;

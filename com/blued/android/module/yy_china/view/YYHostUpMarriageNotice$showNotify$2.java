@@ -12,19 +12,15 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYHostUpMarriageNotice$showNotify$2.class */
 public final class YYHostUpMarriageNotice$showNotify$2 implements Animator.AnimatorListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ ActivityFragmentActive f18251a;
+    final /* synthetic */ ActivityFragmentActive a;
     final /* synthetic */ YYHostUpMarriageNotice b;
-
-    /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ ViewGroup f18252c;
+    final /* synthetic */ ViewGroup c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public YYHostUpMarriageNotice$showNotify$2(ActivityFragmentActive activityFragmentActive, YYHostUpMarriageNotice yYHostUpMarriageNotice, ViewGroup viewGroup) {
-        this.f18251a = activityFragmentActive;
+        this.a = activityFragmentActive;
         this.b = yYHostUpMarriageNotice;
-        this.f18252c = viewGroup;
+        this.c = viewGroup;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -45,9 +41,9 @@ public final class YYHostUpMarriageNotice$showNotify$2 implements Animator.Anima
     public void onAnimationEnd(Animator animator) {
         LogUtils.d("notice", "fly in animation ending ... ");
         Handler n = AppInfo.n();
-        final ActivityFragmentActive activityFragmentActive = this.f18251a;
+        final ActivityFragmentActive activityFragmentActive = this.a;
         final YYHostUpMarriageNotice yYHostUpMarriageNotice = this.b;
-        final ViewGroup viewGroup = this.f18252c;
+        final ViewGroup viewGroup = this.c;
         n.postDelayed(new Runnable() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYHostUpMarriageNotice$showNotify$2$1CLSQZu0qsVUFyFFY8Qonl_luRk
             @Override // java.lang.Runnable
             public final void run() {

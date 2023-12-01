@@ -36,7 +36,7 @@ public class RegisterV1AreaCodeFragment extends KeyBoardFragment implements View
     public AreaCodeSelectorAdapter b;
 
     /* renamed from: c  reason: collision with root package name */
-    public EditText f31419c;
+    public EditText f17729c;
     private KeyboardListenLinearLayout m;
     private Context n;
     private CommonTopTitleNoTrans o;
@@ -47,16 +47,16 @@ public class RegisterV1AreaCodeFragment extends KeyBoardFragment implements View
     private List<AreaCode> s = new ArrayList();
 
     private void h() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.m.findViewById(2131370749);
-        this.o = commonTopTitleNoTrans;
-        commonTopTitleNoTrans.a();
+        CommonTopTitleNoTrans findViewById = this.m.findViewById((int) R.id.top_title);
+        this.o = findViewById;
+        findViewById.a();
         this.o.setCenterText(getString(2131886632));
         this.o.setLeftClickListener(this);
     }
 
     private void i() {
-        this.q = (AreaCodeSectionBar) this.m.findViewById(R.id.ac_sb);
-        this.p = (ListView) this.m.findViewById(R.id.ac_lv);
+        this.q = (AreaCodeSectionBar) this.m.findViewById((int) R.id.ac_sb);
+        this.p = (ListView) this.m.findViewById((int) R.id.ac_lv);
         if (getArguments() != null) {
             String string = getArguments().getString(k);
             if (StringUtils.d(string)) {
@@ -71,9 +71,9 @@ public class RegisterV1AreaCodeFragment extends KeyBoardFragment implements View
     }
 
     private void j() {
-        SearchView searchView = (SearchView) this.m.findViewById(2131369680);
-        this.r = searchView;
-        this.f31419c = searchView.getEditView();
+        SearchView findViewById = this.m.findViewById((int) R.id.search_view);
+        this.r = findViewById;
+        this.f17729c = findViewById.getEditView();
         this.r.setMaskLayerOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.login_register.RegisterV1AreaCodeFragment.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
@@ -104,7 +104,6 @@ public class RegisterV1AreaCodeFragment extends KeyBoardFragment implements View
         });
     }
 
-    @Override // com.blued.android.framework.activity.keyboardpage.KeyBoardFragment
     public void j_(int i) {
         SearchView searchView;
         if (i != -3) {
@@ -120,7 +119,6 @@ public class RegisterV1AreaCodeFragment extends KeyBoardFragment implements View
         }
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         super.onActivityResult(i, i2, intent);
         if (i == 100 && intent != null) {
@@ -141,14 +139,13 @@ public class RegisterV1AreaCodeFragment extends KeyBoardFragment implements View
         getActivity().finish();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.n = getActivity();
         KeyboardListenLinearLayout keyboardListenLinearLayout = this.m;
         if (keyboardListenLinearLayout == null) {
-            KeyboardListenLinearLayout keyboardListenLinearLayout2 = (KeyboardListenLinearLayout) layoutInflater.inflate(R.layout.fragment_register_areacode, viewGroup, false);
-            this.m = keyboardListenLinearLayout2;
-            keyboardListenLinearLayout2.setBackgroundColor(BluedSkinUtils.a(this.n, 2131101780));
+            KeyboardListenLinearLayout inflate = layoutInflater.inflate(R.layout.fragment_register_areacode, viewGroup, false);
+            this.m = inflate;
+            inflate.setBackgroundColor(BluedSkinUtils.a(this.n, 2131101780));
             super.a(this.m);
             h();
             i();

@@ -12,7 +12,7 @@ import java.util.logging.Logger;
 public final class g {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Logger f24065a = Logger.getLogger(g.class.getName());
+    private static final Logger f10454a = Logger.getLogger(g.class.getName());
 
     private g() {
     }
@@ -44,23 +44,23 @@ public final class g {
                         o.a(bVar.b, 0L, j);
                         while (j > 0) {
                             n.this.a();
-                            j jVar = bVar.f24060a;
-                            int min = (int) Math.min(j, jVar.f24074c - jVar.b);
-                            outputStream.write(jVar.f24073a, jVar.b, min);
+                            j jVar = bVar.f10449a;
+                            int min = (int) Math.min(j, jVar.f10463c - jVar.b);
+                            outputStream.write(jVar.f10462a, jVar.b, min);
                             jVar.b += min;
                             long j2 = min;
                             long j3 = j - j2;
                             bVar.b -= j2;
                             j = j3;
-                            if (jVar.b == jVar.f24074c) {
-                                bVar.f24060a = jVar.a();
+                            if (jVar.b == jVar.f10463c) {
+                                bVar.f10449a = jVar.a();
                                 k.a(jVar);
                                 j = j3;
                             }
                         }
                     }
 
-                    @Override // com.meizu.cloud.pushsdk.c.g.l, java.io.Closeable, java.lang.AutoCloseable
+                    @Override // com.meizu.cloud.pushsdk.c.g.l, java.io.Closeable, java.lang.AutoCloseable, com.meizu.cloud.pushsdk.c.g.m
                     public void close() throws IOException {
                         outputStream.close();
                     }
@@ -105,18 +105,18 @@ public final class g {
                         } else {
                             n.this.a();
                             j c2 = bVar.c(1);
-                            int read = inputStream.read(c2.f24073a, c2.f24074c, (int) Math.min(j, 2048 - c2.f24074c));
+                            int read = inputStream.read(c2.f10462a, c2.f10463c, (int) Math.min(j, 2048 - c2.f10463c));
                             if (read == -1) {
                                 return -1L;
                             }
-                            c2.f24074c += read;
+                            c2.f10463c += read;
                             long j2 = read;
                             bVar.b += j2;
                             return j2;
                         }
                     }
 
-                    @Override // com.meizu.cloud.pushsdk.c.g.m, java.io.Closeable, java.lang.AutoCloseable
+                    @Override // com.meizu.cloud.pushsdk.c.g.m, java.lang.AutoCloseable
                     public void close() throws IOException {
                         inputStream.close();
                     }

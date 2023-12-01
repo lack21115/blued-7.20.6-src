@@ -70,11 +70,11 @@ public class V2TXLivePlayerJni extends V2TXLivePlayer {
     static final /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f36399a;
+        static final /* synthetic */ int[] f22708a;
         static final /* synthetic */ int[] b;
 
         /* renamed from: c  reason: collision with root package name */
-        static final /* synthetic */ int[] f36400c;
+        static final /* synthetic */ int[] f22709c;
         static final /* synthetic */ int[] d;
         static final /* synthetic */ int[] e;
 
@@ -125,13 +125,13 @@ public class V2TXLivePlayerJni extends V2TXLivePlayer {
             } catch (NoSuchFieldError e8) {
             }
             int[] iArr3 = new int[GLConstants.PixelFormatType.values().length];
-            f36400c = iArr3;
+            f22709c = iArr3;
             try {
                 iArr3[GLConstants.PixelFormatType.I420.ordinal()] = 1;
             } catch (NoSuchFieldError e9) {
             }
             try {
-                f36400c[GLConstants.PixelFormatType.RGBA.ordinal()] = 2;
+                f22709c[GLConstants.PixelFormatType.RGBA.ordinal()] = 2;
             } catch (NoSuchFieldError e10) {
             }
             int[] iArr4 = new int[V2TXLiveDef.V2TXLiveFillMode.values().length];
@@ -145,17 +145,17 @@ public class V2TXLivePlayerJni extends V2TXLivePlayer {
             } catch (NoSuchFieldError e12) {
             }
             int[] iArr5 = new int[V2TXLiveDef.V2TXLiveRotation.values().length];
-            f36399a = iArr5;
+            f22708a = iArr5;
             try {
                 iArr5[V2TXLiveDef.V2TXLiveRotation.V2TXLiveRotation90.ordinal()] = 1;
             } catch (NoSuchFieldError e13) {
             }
             try {
-                f36399a[V2TXLiveDef.V2TXLiveRotation.V2TXLiveRotation180.ordinal()] = 2;
+                f22708a[V2TXLiveDef.V2TXLiveRotation.V2TXLiveRotation180.ordinal()] = 2;
             } catch (NoSuchFieldError e14) {
             }
             try {
-                f36399a[V2TXLiveDef.V2TXLiveRotation.V2TXLiveRotation270.ordinal()] = 3;
+                f22708a[V2TXLiveDef.V2TXLiveRotation.V2TXLiveRotation270.ordinal()] = 3;
             } catch (NoSuchFieldError e15) {
             }
         }
@@ -367,7 +367,7 @@ public class V2TXLivePlayerJni extends V2TXLivePlayer {
 
     public void onRenderVideoFrame(PixelFrame pixelFrame) {
         V2TXLiveDef.V2TXLiveVideoFrame v2TXLiveVideoFrame = new V2TXLiveDef.V2TXLiveVideoFrame();
-        int i = AnonymousClass1.f36400c[pixelFrame.getPixelFormatType().ordinal()];
+        int i = AnonymousClass1.f22709c[pixelFrame.getPixelFormatType().ordinal()];
         if (i == 1) {
             v2TXLiveVideoFrame.pixelFormat = V2TXLiveDef.V2TXLivePixelFormat.V2TXLivePixelFormatI420;
         } else if (i != 2) {
@@ -785,7 +785,7 @@ public class V2TXLivePlayerJni extends V2TXLivePlayer {
     @Override // com.tencent.live2.V2TXLivePlayer
     public int setRenderRotation(V2TXLiveDef.V2TXLiveRotation v2TXLiveRotation) {
         synchronized (this) {
-            int i = AnonymousClass1.f36399a[v2TXLiveRotation.ordinal()];
+            int i = AnonymousClass1.f22708a[v2TXLiveRotation.ordinal()];
             if (i == 1) {
                 this.mRotation = Rotation.ROTATION_90;
             } else if (i == 2) {

@@ -13,7 +13,7 @@ public class nyvKz extends s7Dnc {
     private static final String b = WOMZP.b("XrAtCLyRZD+iVG+xiPkUocfEh7sxA2as2/upDg==");
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f39830c = WOMZP.b("QkyoZDoA2EfeXs1uxHxbayaYRl76hMTg");
+    private static final String f26139c = WOMZP.b("QkyoZDoA2EfeXs1uxHxbayaYRl76hMTg");
     private String d;
     private int e;
     private int f;
@@ -52,11 +52,11 @@ public class nyvKz extends s7Dnc {
             byte[] bArr = spxpg.b;
             byte[] bytes = this.d.getBytes();
             byte[] bArr2 = new byte[bArr.length];
-            System.arraycopy((Object) bArr, 0, (Object) bArr2, 0, bArr.length);
-            System.arraycopy((Object) bytes, 0, (Object) bArr2, 0, bytes.length);
+            System.arraycopy(bArr, 0, bArr2, 0, bArr.length);
+            System.arraycopy(bytes, 0, bArr2, 0, bytes.length);
             WeakReference weakReference = new WeakReference(camera);
-            Class<Integer> cls = Integer.TYPE;
-            if (EQsUZ.a(camera, f39830c, new Class[]{Object.class, cls, cls, cls, Object.class}, new Object[]{weakReference, Integer.valueOf(this.g), 0, 0, bArr2})) {
+            Class cls = Integer.TYPE;
+            if (EQsUZ.a(camera, f26139c, new Class[]{Object.class, cls, cls, cls, Object.class}, new Object[]{weakReference, Integer.valueOf(this.g), 0, 0, bArr2})) {
                 this.h = System.currentTimeMillis();
                 this.f++;
                 return false;
@@ -64,17 +64,17 @@ public class nyvKz extends s7Dnc {
             return true;
         }
         try {
-            if (this.h > spxpg.f39833a) {
+            if (this.h > spxpg.f26142a) {
                 return false;
             }
             int length = this.d.getBytes().length;
             byte[] bArr3 = new byte[length];
-            System.arraycopy((Object) spxpg.b, 0, (Object) bArr3, 0, length);
+            System.arraycopy(spxpg.b, 0, bArr3, 0, length);
             Bi3eT bi3eT = new Bi3eT();
             bi3eT.b = a();
-            bi3eT.f39810c = this.f;
+            bi3eT.f26119c = this.f;
             bi3eT.d = bArr3;
-            wmqhzVar.f39841c.add(bi3eT);
+            wmqhzVar.f26150c.add(bi3eT);
             Arrays.equals(bArr3, this.d.getBytes());
             int i = this.f + 1;
             this.f = i;

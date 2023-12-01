@@ -11,9 +11,8 @@ public class ThreadPoolExcutorEnhance extends ThreadPoolExecutor {
         super(i, i2, j, timeUnit, blockingQueue, threadFactory);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // java.util.concurrent.ThreadPoolExecutor
-    public void beforeExecute(Thread thread, Runnable runnable) {
+    protected void beforeExecute(Thread thread, Runnable runnable) {
         if (runnable instanceof RunnableEnhance) {
             String parentName = ((RunnableEnhance) runnable).getParentName();
             int lastIndexOf = parentName.lastIndexOf(" -->");

@@ -12,6 +12,6 @@ public class PopRewardConfigCenterView extends PopRewardConfigView {
 
     @Override // com.blued.android.module.live_china.view.PopRewardConfigView
     public void b() {
-        this.f15185a = this.f.inflate(R.layout.pop_reward_center, (ViewGroup) null);
+        this.a = this.f.inflate(R.layout.pop_reward_center, (ViewGroup) null);
     }
 }

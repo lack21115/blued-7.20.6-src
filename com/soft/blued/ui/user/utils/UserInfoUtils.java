@@ -19,7 +19,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class UserInfoUtils {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final UserInfoUtils f34333a = new UserInfoUtils();
+    public static final UserInfoUtils f20642a = new UserInfoUtils();
 
     private UserInfoUtils() {
     }
@@ -33,7 +33,7 @@ public final class UserInfoUtils {
             @Override // com.soft.blued.utils.UserRelationshipUtils.IAddOrRemoveAttentionDone
             public void a(String str) {
                 UserFindResult.this.relationship = str;
-                UserInfoUtils userInfoUtils = UserInfoUtils.f34333a;
+                UserInfoUtils userInfoUtils = UserInfoUtils.f20642a;
                 String str2 = str;
                 if (str == null) {
                     str2 = "";
@@ -48,7 +48,7 @@ public final class UserInfoUtils {
             @Override // com.soft.blued.utils.UserRelationshipUtils.IAddOrRemoveAttentionDone
             public void b(String str) {
                 UserFindResult.this.relationship = str;
-                UserInfoUtils userInfoUtils = UserInfoUtils.f34333a;
+                UserInfoUtils userInfoUtils = UserInfoUtils.f20642a;
                 String str2 = str;
                 if (str == null) {
                     str2 = "";
@@ -76,58 +76,58 @@ public final class UserInfoUtils {
         userInfoUtils.a(str, imageView, shapeRelativeLayout);
     }
 
-    public final void a(UserFindResult userinfo, ImageView iv_attention, IRequestHost requestHost, LogData userLogData, ShapeRelativeLayout shapeRelativeLayout) {
-        Intrinsics.e(userinfo, "userinfo");
-        Intrinsics.e(iv_attention, "iv_attention");
-        Intrinsics.e(requestHost, "requestHost");
-        Intrinsics.e(userLogData, "userLogData");
-        if (Intrinsics.a((Object) "1", (Object) userinfo.relationship) || Intrinsics.a((Object) "3", (Object) userinfo.relationship)) {
+    public final void a(UserFindResult userFindResult, ImageView imageView, IRequestHost iRequestHost, LogData logData, ShapeRelativeLayout shapeRelativeLayout) {
+        Intrinsics.e(userFindResult, "userinfo");
+        Intrinsics.e(imageView, "iv_attention");
+        Intrinsics.e(iRequestHost, "requestHost");
+        Intrinsics.e(logData, "userLogData");
+        if (Intrinsics.a("1", userFindResult.relationship) || Intrinsics.a("3", userFindResult.relationship)) {
             return;
         }
-        a(userinfo, iv_attention, userLogData, requestHost, shapeRelativeLayout);
-        userLogData.isAddFollow = true;
-        EventTrackPersonalProfile.a(PersonalProfileProtos.Event.PERSONAL_PROFILE_FOLLOWED_BTN_CLICK, userLogData);
+        a(userFindResult, imageView, logData, iRequestHost, shapeRelativeLayout);
+        logData.isAddFollow = true;
+        EventTrackPersonalProfile.a(PersonalProfileProtos.Event.PERSONAL_PROFILE_FOLLOWED_BTN_CLICK, logData);
     }
 
-    public final void a(String relationship, ImageView img_attention, ShapeRelativeLayout shapeRelativeLayout) {
-        Intrinsics.e(relationship, "relationship");
-        Intrinsics.e(img_attention, "img_attention");
-        if (StringUtils.d(relationship)) {
-            img_attention.setImageResource(R.drawable.icon_user_attention_normal);
+    public final void a(String str, ImageView imageView, ShapeRelativeLayout shapeRelativeLayout) {
+        Intrinsics.e(str, "relationship");
+        Intrinsics.e(imageView, "img_attention");
+        if (StringUtils.d(str)) {
+            imageView.setImageResource(R.drawable.icon_user_attention_normal);
             if (shapeRelativeLayout == null) {
                 return;
             }
-            ShapeHelper.d(shapeRelativeLayout, 2131101766);
-        } else if (Intrinsics.a((Object) "0", (Object) relationship)) {
-            img_attention.setImageResource(R.drawable.icon_user_attention_normal);
+            ShapeHelper.d((ShapeHelper.ShapeView) shapeRelativeLayout, 2131101766);
+        } else if (Intrinsics.a("0", str)) {
+            imageView.setImageResource(R.drawable.icon_user_attention_normal);
             if (shapeRelativeLayout == null) {
                 return;
             }
-            ShapeHelper.d(shapeRelativeLayout, 2131101766);
-        } else if (Intrinsics.a((Object) "1", (Object) relationship)) {
-            img_attention.setImageResource(R.drawable.icon_user_attention_ok);
+            ShapeHelper.d((ShapeHelper.ShapeView) shapeRelativeLayout, 2131101766);
+        } else if (Intrinsics.a("1", str)) {
+            imageView.setImageResource(R.drawable.icon_user_attention_ok);
             if (shapeRelativeLayout == null) {
                 return;
             }
-            ShapeHelper.d(shapeRelativeLayout, 2131102272);
-        } else if (Intrinsics.a((Object) "2", (Object) relationship)) {
-            img_attention.setImageResource(R.drawable.icon_user_attention_normal);
+            ShapeHelper.d((ShapeHelper.ShapeView) shapeRelativeLayout, 2131102272);
+        } else if (Intrinsics.a("2", str)) {
+            imageView.setImageResource(R.drawable.icon_user_attention_normal);
             if (shapeRelativeLayout == null) {
                 return;
             }
-            ShapeHelper.d(shapeRelativeLayout, 2131101766);
-        } else if (Intrinsics.a((Object) "3", (Object) relationship)) {
-            img_attention.setImageResource(R.drawable.icon_user_attention_each);
+            ShapeHelper.d((ShapeHelper.ShapeView) shapeRelativeLayout, 2131101766);
+        } else if (Intrinsics.a("3", str)) {
+            imageView.setImageResource(R.drawable.icon_user_attention_each);
             if (shapeRelativeLayout == null) {
                 return;
             }
-            ShapeHelper.d(shapeRelativeLayout, 2131102272);
+            ShapeHelper.d((ShapeHelper.ShapeView) shapeRelativeLayout, 2131102272);
         } else {
-            img_attention.setImageResource(R.drawable.icon_user_attention_normal);
+            imageView.setImageResource(R.drawable.icon_user_attention_normal);
             if (shapeRelativeLayout == null) {
                 return;
             }
-            ShapeHelper.d(shapeRelativeLayout, 2131101766);
+            ShapeHelper.d((ShapeHelper.ShapeView) shapeRelativeLayout, 2131101766);
         }
     }
 }

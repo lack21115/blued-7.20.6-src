@@ -11,7 +11,7 @@ public final class i extends com.kwad.components.ad.e.kwai.a implements View.OnC
     private DetailVideoView mDetailVideoView;
 
     private void eW() {
-        com.kwad.components.core.d.b.a.a(new a.C0519a(this.mDetailVideoView.getContext()).I(this.ni.mAdTemplate).b(this.ni.mApkDownloadHelper).a(new a.b() { // from class: com.kwad.components.ad.e.a.i.2
+        com.kwad.components.core.d.b.a.a(new a.C0349a(this.mDetailVideoView.getContext()).I(this.ni.mAdTemplate).b(this.ni.mApkDownloadHelper).a(new a.b() { // from class: com.kwad.components.ad.e.a.i.2
             @Override // com.kwad.components.core.d.b.a.b
             public final void onAdClicked() {
                 com.kwad.sdk.core.report.a.a(i.this.ni.mAdTemplate, 2, i.this.ni.nd.getTouchCoords());

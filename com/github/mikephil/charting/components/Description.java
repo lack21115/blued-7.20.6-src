@@ -9,17 +9,17 @@ public class Description extends ComponentBase {
     private MPPointF b;
 
     /* renamed from: a  reason: collision with root package name */
-    private String f22087a = "Description Label";
+    private String f8480a = "Description Label";
 
     /* renamed from: c  reason: collision with root package name */
-    private Paint.Align f22088c = Paint.Align.RIGHT;
+    private Paint.Align f8481c = Paint.Align.RIGHT;
 
     public Description() {
         this.A = Utils.a(8.0f);
     }
 
     public String a() {
-        return this.f22087a;
+        return this.f8480a;
     }
 
     public MPPointF b() {
@@ -27,6 +27,6 @@ public class Description extends ComponentBase {
     }
 
     public Paint.Align c() {
-        return this.f22088c;
+        return this.f8481c;
     }
 }

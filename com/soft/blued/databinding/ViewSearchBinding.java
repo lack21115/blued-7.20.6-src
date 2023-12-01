@@ -11,15 +11,15 @@ import com.soft.blued.R;
 public final class ViewSearchBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ImageView f29628a;
+    public final ImageView f15938a;
     public final ShapeLinearLayout b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final FrameLayout f29629c;
+    private final FrameLayout f15939c;
 
     private ViewSearchBinding(FrameLayout frameLayout, ImageView imageView, ShapeLinearLayout shapeLinearLayout) {
-        this.f29629c = frameLayout;
-        this.f29628a = imageView;
+        this.f15939c = frameLayout;
+        this.f15938a = imageView;
         this.b = shapeLinearLayout;
     }
 
@@ -27,9 +27,9 @@ public final class ViewSearchBinding implements ViewBinding {
         String str;
         ImageView imageView = (ImageView) view.findViewById(2131369672);
         if (imageView != null) {
-            ShapeLinearLayout shapeLinearLayout = (ShapeLinearLayout) view.findViewById(R.id.search_layout);
-            if (shapeLinearLayout != null) {
-                return new ViewSearchBinding((FrameLayout) view, imageView, shapeLinearLayout);
+            ShapeLinearLayout findViewById = view.findViewById(R.id.search_layout);
+            if (findViewById != null) {
+                return new ViewSearchBinding((FrameLayout) view, imageView, findViewById);
             }
             str = "searchLayout";
         } else {
@@ -41,6 +41,6 @@ public final class ViewSearchBinding implements ViewBinding {
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f29629c;
+        return this.f15939c;
     }
 }

@@ -20,11 +20,11 @@ public class BasicMeasure {
     public static final int WRAP_CONTENT = -2;
 
     /* renamed from: a  reason: collision with root package name */
-    private final ArrayList<ConstraintWidget> f2130a = new ArrayList<>();
+    private final ArrayList<ConstraintWidget> f2082a = new ArrayList<>();
     private Measure b = new Measure();
 
     /* renamed from: c  reason: collision with root package name */
-    private ConstraintWidgetContainer f2131c;
+    private ConstraintWidgetContainer f2083c;
 
     /* loaded from: source-8756600-dex2jar.jar:androidx/constraintlayout/core/widgets/analyzer/BasicMeasure$Measure.class */
     public static class Measure {
@@ -51,7 +51,7 @@ public class BasicMeasure {
     }
 
     public BasicMeasure(ConstraintWidgetContainer constraintWidgetContainer) {
-        this.f2131c = constraintWidgetContainer;
+        this.f2083c = constraintWidgetContainer;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:62:0x013d, code lost:
@@ -78,8 +78,8 @@ public class BasicMeasure {
         constraintWidgetContainer.setHeight(i3);
         constraintWidgetContainer.setMinWidth(minWidth);
         constraintWidgetContainer.setMinHeight(minHeight);
-        this.f2131c.setPass(i);
-        this.f2131c.layout();
+        this.f2083c.setPass(i);
+        this.f2083c.layout();
     }
 
     private boolean a(Measurer measurer, ConstraintWidget constraintWidget, int i) {
@@ -188,15 +188,15 @@ public class BasicMeasure {
             a(constraintWidgetContainer);
         }
         updateHierarchy(constraintWidgetContainer);
-        int size2 = this.f2130a.size();
+        int size2 = this.f2082a.size();
         if (size > 0) {
             a(constraintWidgetContainer, "First pass", 0, width, height);
         }
         if (size2 > 0) {
             boolean z7 = constraintWidgetContainer.getHorizontalDimensionBehaviour() == ConstraintWidget.DimensionBehaviour.WRAP_CONTENT;
             boolean z8 = constraintWidgetContainer.getVerticalDimensionBehaviour() == ConstraintWidget.DimensionBehaviour.WRAP_CONTENT;
-            int max = Math.max(constraintWidgetContainer.getWidth(), this.f2131c.getMinWidth());
-            int max2 = Math.max(constraintWidgetContainer.getHeight(), this.f2131c.getMinHeight());
+            int max = Math.max(constraintWidgetContainer.getWidth(), this.f2083c.getMinWidth());
+            int max2 = Math.max(constraintWidgetContainer.getHeight(), this.f2083c.getMinHeight());
             int i15 = 0;
             boolean z9 = false;
             while (true) {
@@ -204,7 +204,7 @@ public class BasicMeasure {
                 if (i15 >= size2) {
                     break;
                 }
-                ConstraintWidget constraintWidget2 = this.f2130a.get(i15);
+                ConstraintWidget constraintWidget2 = this.f2082a.get(i15);
                 if (constraintWidget2 instanceof VirtualLayout) {
                     int width2 = constraintWidget2.getWidth();
                     int height2 = constraintWidget2.getHeight();
@@ -251,7 +251,7 @@ public class BasicMeasure {
             while (i18 < 2) {
                 int i19 = 0;
                 while (i19 < size2) {
-                    ConstraintWidget constraintWidget3 = this.f2130a.get(i19);
+                    ConstraintWidget constraintWidget3 = this.f2082a.get(i19);
                     if (((constraintWidget3 instanceof Helper) && !(constraintWidget3 instanceof VirtualLayout)) || (constraintWidget3 instanceof Guideline) || constraintWidget3.getVisibility() == 8 || ((z6 && constraintWidget3.horizontalRun.e.resolved && constraintWidget3.verticalRun.e.resolved) || (constraintWidget3 instanceof VirtualLayout))) {
                         i11 = max;
                         a2 = z10;
@@ -319,7 +319,7 @@ public class BasicMeasure {
     }
 
     public void updateHierarchy(ConstraintWidgetContainer constraintWidgetContainer) {
-        this.f2130a.clear();
+        this.f2082a.clear();
         int size = constraintWidgetContainer.mChildren.size();
         int i = 0;
         while (true) {
@@ -330,7 +330,7 @@ public class BasicMeasure {
             }
             ConstraintWidget constraintWidget = constraintWidgetContainer.mChildren.get(i2);
             if (constraintWidget.getHorizontalDimensionBehaviour() == ConstraintWidget.DimensionBehaviour.MATCH_CONSTRAINT || constraintWidget.getVerticalDimensionBehaviour() == ConstraintWidget.DimensionBehaviour.MATCH_CONSTRAINT) {
-                this.f2130a.add(constraintWidget);
+                this.f2082a.add(constraintWidget);
             }
             i = i2 + 1;
         }

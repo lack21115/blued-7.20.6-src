@@ -20,13 +20,9 @@ import okhttp3.internal.Util;
 
 /* loaded from: source-3503164-dex2jar.jar:okhttp3/internal/connection/RouteSelector.class */
 public final class RouteSelector {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Address f43876a;
+    private final Address a;
     private final RouteDatabase b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final Call f43877c;
+    private final Call c;
     private final EventListener d;
     private int f;
     private List<Proxy> e = Collections.emptyList();
@@ -35,22 +31,20 @@ public final class RouteSelector {
 
     /* loaded from: source-3503164-dex2jar.jar:okhttp3/internal/connection/RouteSelector$Selection.class */
     public static final class Selection {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final List<Route> f43878a;
+        private final List<Route> a;
         private int b = 0;
 
         Selection(List<Route> list) {
-            this.f43878a = list;
+            this.a = list;
         }
 
         public boolean a() {
-            return this.b < this.f43878a.size();
+            return this.b < this.a.size();
         }
 
         public Route b() {
             if (a()) {
-                List<Route> list = this.f43878a;
+                List<Route> list = this.a;
                 int i = this.b;
                 this.b = i + 1;
                 return list.get(i);
@@ -59,14 +53,14 @@ public final class RouteSelector {
         }
 
         public List<Route> c() {
-            return new ArrayList(this.f43878a);
+            return new ArrayList(this.a);
         }
     }
 
     public RouteSelector(Address address, RouteDatabase routeDatabase, Call call, EventListener eventListener) {
-        this.f43876a = address;
+        this.a = address;
         this.b = routeDatabase;
-        this.f43877c = call;
+        this.c = call;
         this.d = eventListener;
         a(address.url(), address.proxy());
     }
@@ -81,8 +75,8 @@ public final class RouteSelector {
         int port;
         this.g = new ArrayList();
         if (proxy.type() == Proxy.Type.DIRECT || proxy.type() == Proxy.Type.SOCKS) {
-            host = this.f43876a.url().host();
-            port = this.f43876a.url().port();
+            host = this.a.url().host();
+            port = this.a.url().port();
         } else {
             SocketAddress address = proxy.address();
             if (!(address instanceof InetSocketAddress)) {
@@ -97,12 +91,12 @@ public final class RouteSelector {
         } else if (proxy.type() == Proxy.Type.SOCKS) {
             this.g.add(InetSocketAddress.createUnresolved(host, port));
         } else {
-            this.d.dnsStart(this.f43877c, host);
-            List<InetAddress> lookup = this.f43876a.dns().lookup(host);
+            this.d.dnsStart(this.c, host);
+            List<InetAddress> lookup = this.a.dns().lookup(host);
             if (lookup.isEmpty()) {
-                throw new UnknownHostException(this.f43876a.dns() + " returned no addresses for " + host);
+                throw new UnknownHostException(this.a.dns() + " returned no addresses for " + host);
             }
-            this.d.dnsEnd(this.f43877c, host, lookup);
+            this.d.dnsEnd(this.c, host, lookup);
             int size = lookup.size();
             for (int i = 0; i < size; i++) {
                 this.g.add(new InetSocketAddress(lookup.get(i), port));
@@ -114,7 +108,7 @@ public final class RouteSelector {
         if (proxy != null) {
             this.e = Collections.singletonList(proxy);
         } else {
-            List<Proxy> select = this.f43876a.proxySelector().select(httpUrl.uri());
+            List<Proxy> select = this.a.proxySelector().select(httpUrl.uri());
             this.e = (select == null || select.isEmpty()) ? Util.a(Proxy.NO_PROXY) : Util.a(select);
         }
         this.f = 0;
@@ -133,12 +127,12 @@ public final class RouteSelector {
             a(proxy);
             return proxy;
         }
-        throw new SocketException("No route to " + this.f43876a.url().host() + "; exhausted proxy configurations: " + this.e);
+        throw new SocketException("No route to " + this.a.url().host() + "; exhausted proxy configurations: " + this.e);
     }
 
     public void a(Route route, IOException iOException) {
-        if (route.proxy().type() != Proxy.Type.DIRECT && this.f43876a.proxySelector() != null) {
-            this.f43876a.proxySelector().connectFailed(this.f43876a.url().uri(), route.proxy().address(), iOException);
+        if (route.proxy().type() != Proxy.Type.DIRECT && this.a.proxySelector() != null) {
+            this.a.proxySelector().connectFailed(this.a.url().uri(), route.proxy().address(), iOException);
         }
         this.b.a(route);
     }
@@ -154,7 +148,7 @@ public final class RouteSelector {
                 Proxy d = d();
                 int size = this.g.size();
                 for (int i = 0; i < size; i++) {
-                    Route route = new Route(this.f43876a, d, this.g.get(i));
+                    Route route = new Route(this.a, d, this.g.get(i));
                     if (this.b.c(route)) {
                         this.h.add(route);
                     } else {

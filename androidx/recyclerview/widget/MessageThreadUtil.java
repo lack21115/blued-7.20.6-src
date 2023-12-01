@@ -18,12 +18,12 @@ class MessageThreadUtil<T> implements ThreadUtil<T> {
         final /* synthetic */ ThreadUtil.MainThreadCallback b;
 
         /* renamed from: a  reason: collision with root package name */
-        final MessageQueue f3301a = new MessageQueue();
+        final MessageQueue f3253a = new MessageQueue();
         private final Handler d = new Handler(Looper.getMainLooper());
         private Runnable e = new Runnable() { // from class: androidx.recyclerview.widget.MessageThreadUtil.1.1
             @Override // java.lang.Runnable
             public void run() {
-                SyncQueueItem a2 = AnonymousClass1.this.f3301a.a();
+                SyncQueueItem a2 = AnonymousClass1.this.f3253a.a();
                 while (true) {
                     SyncQueueItem syncQueueItem = a2;
                     if (syncQueueItem == null) {
@@ -39,7 +39,7 @@ class MessageThreadUtil<T> implements ThreadUtil<T> {
                     } else {
                         AnonymousClass1.this.b.removeTile(syncQueueItem.arg1, syncQueueItem.arg2);
                     }
-                    a2 = AnonymousClass1.this.f3301a.a();
+                    a2 = AnonymousClass1.this.f3253a.a();
                 }
             }
         };
@@ -49,7 +49,7 @@ class MessageThreadUtil<T> implements ThreadUtil<T> {
         }
 
         private void a(SyncQueueItem syncQueueItem) {
-            this.f3301a.b(syncQueueItem);
+            this.f3253a.b(syncQueueItem);
             this.d.post(this.e);
         }
 
@@ -74,42 +74,42 @@ class MessageThreadUtil<T> implements ThreadUtil<T> {
     class AnonymousClass2 implements ThreadUtil.BackgroundCallback<T> {
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ ThreadUtil.BackgroundCallback f3305c;
+        final /* synthetic */ ThreadUtil.BackgroundCallback f3257c;
 
         /* renamed from: a  reason: collision with root package name */
-        final MessageQueue f3304a = new MessageQueue();
+        final MessageQueue f3256a = new MessageQueue();
         private final Executor e = AsyncTask.THREAD_POOL_EXECUTOR;
         AtomicBoolean b = new AtomicBoolean(false);
         private Runnable f = new Runnable() { // from class: androidx.recyclerview.widget.MessageThreadUtil.2.1
             @Override // java.lang.Runnable
             public void run() {
                 while (true) {
-                    SyncQueueItem a2 = AnonymousClass2.this.f3304a.a();
+                    SyncQueueItem a2 = AnonymousClass2.this.f3256a.a();
                     if (a2 == null) {
                         AnonymousClass2.this.b.set(false);
                         return;
                     }
                     int i = a2.what;
                     if (i == 1) {
-                        AnonymousClass2.this.f3304a.a(1);
-                        AnonymousClass2.this.f3305c.refresh(a2.arg1);
+                        AnonymousClass2.this.f3256a.a(1);
+                        AnonymousClass2.this.f3257c.refresh(a2.arg1);
                     } else if (i == 2) {
-                        AnonymousClass2.this.f3304a.a(2);
-                        AnonymousClass2.this.f3304a.a(3);
-                        AnonymousClass2.this.f3305c.updateRange(a2.arg1, a2.arg2, a2.arg3, a2.arg4, a2.arg5);
+                        AnonymousClass2.this.f3256a.a(2);
+                        AnonymousClass2.this.f3256a.a(3);
+                        AnonymousClass2.this.f3257c.updateRange(a2.arg1, a2.arg2, a2.arg3, a2.arg4, a2.arg5);
                     } else if (i == 3) {
-                        AnonymousClass2.this.f3305c.loadTile(a2.arg1, a2.arg2);
+                        AnonymousClass2.this.f3257c.loadTile(a2.arg1, a2.arg2);
                     } else if (i != 4) {
                         Log.e("ThreadUtil", "Unsupported message, what=" + a2.what);
                     } else {
-                        AnonymousClass2.this.f3305c.recycleTile((TileList.Tile) a2.data);
+                        AnonymousClass2.this.f3257c.recycleTile((TileList.Tile) a2.data);
                     }
                 }
             }
         };
 
         AnonymousClass2(ThreadUtil.BackgroundCallback backgroundCallback) {
-            this.f3305c = backgroundCallback;
+            this.f3257c = backgroundCallback;
         }
 
         private void a() {
@@ -119,12 +119,12 @@ class MessageThreadUtil<T> implements ThreadUtil<T> {
         }
 
         private void a(SyncQueueItem syncQueueItem) {
-            this.f3304a.b(syncQueueItem);
+            this.f3256a.b(syncQueueItem);
             a();
         }
 
         private void b(SyncQueueItem syncQueueItem) {
-            this.f3304a.a(syncQueueItem);
+            this.f3256a.a(syncQueueItem);
             a();
         }
 
@@ -154,40 +154,40 @@ class MessageThreadUtil<T> implements ThreadUtil<T> {
     public static class MessageQueue {
 
         /* renamed from: a  reason: collision with root package name */
-        private SyncQueueItem f3307a;
+        private SyncQueueItem f3259a;
 
         MessageQueue() {
         }
 
         SyncQueueItem a() {
             synchronized (this) {
-                if (this.f3307a == null) {
+                if (this.f3259a == null) {
                     return null;
                 }
-                SyncQueueItem syncQueueItem = this.f3307a;
-                this.f3307a = this.f3307a.f3309a;
+                SyncQueueItem syncQueueItem = this.f3259a;
+                this.f3259a = this.f3259a.f3261a;
                 return syncQueueItem;
             }
         }
 
         void a(int i) {
             synchronized (this) {
-                while (this.f3307a != null && this.f3307a.what == i) {
-                    SyncQueueItem syncQueueItem = this.f3307a;
-                    this.f3307a = this.f3307a.f3309a;
+                while (this.f3259a != null && this.f3259a.what == i) {
+                    SyncQueueItem syncQueueItem = this.f3259a;
+                    this.f3259a = this.f3259a.f3261a;
                     syncQueueItem.a();
                 }
-                if (this.f3307a != null) {
-                    SyncQueueItem syncQueueItem2 = this.f3307a;
-                    SyncQueueItem syncQueueItem3 = syncQueueItem2.f3309a;
+                if (this.f3259a != null) {
+                    SyncQueueItem syncQueueItem2 = this.f3259a;
+                    SyncQueueItem syncQueueItem3 = syncQueueItem2.f3261a;
                     while (true) {
                         SyncQueueItem syncQueueItem4 = syncQueueItem3;
                         if (syncQueueItem4 == null) {
                             break;
                         }
-                        SyncQueueItem syncQueueItem5 = syncQueueItem4.f3309a;
+                        SyncQueueItem syncQueueItem5 = syncQueueItem4.f3261a;
                         if (syncQueueItem4.what == i) {
-                            syncQueueItem2.f3309a = syncQueueItem5;
+                            syncQueueItem2.f3261a = syncQueueItem5;
                             syncQueueItem4.a();
                         } else {
                             syncQueueItem2 = syncQueueItem4;
@@ -200,22 +200,22 @@ class MessageThreadUtil<T> implements ThreadUtil<T> {
 
         void a(SyncQueueItem syncQueueItem) {
             synchronized (this) {
-                syncQueueItem.f3309a = this.f3307a;
-                this.f3307a = syncQueueItem;
+                syncQueueItem.f3261a = this.f3259a;
+                this.f3259a = syncQueueItem;
             }
         }
 
         void b(SyncQueueItem syncQueueItem) {
             synchronized (this) {
-                if (this.f3307a == null) {
-                    this.f3307a = syncQueueItem;
+                if (this.f3259a == null) {
+                    this.f3259a = syncQueueItem;
                     return;
                 }
-                SyncQueueItem syncQueueItem2 = this.f3307a;
-                while (syncQueueItem2.f3309a != null) {
-                    syncQueueItem2 = syncQueueItem2.f3309a;
+                SyncQueueItem syncQueueItem2 = this.f3259a;
+                while (syncQueueItem2.f3261a != null) {
+                    syncQueueItem2 = syncQueueItem2.f3261a;
                 }
-                syncQueueItem2.f3309a = syncQueueItem;
+                syncQueueItem2.f3261a = syncQueueItem;
             }
         }
     }
@@ -226,10 +226,10 @@ class MessageThreadUtil<T> implements ThreadUtil<T> {
         private static SyncQueueItem b;
 
         /* renamed from: c  reason: collision with root package name */
-        private static final Object f3308c = new Object();
+        private static final Object f3260c = new Object();
 
         /* renamed from: a  reason: collision with root package name */
-        SyncQueueItem f3309a;
+        SyncQueueItem f3261a;
         public int arg1;
         public int arg2;
         public int arg3;
@@ -247,13 +247,13 @@ class MessageThreadUtil<T> implements ThreadUtil<T> {
 
         static SyncQueueItem a(int i, int i2, int i3, int i4, int i5, int i6, Object obj) {
             SyncQueueItem syncQueueItem;
-            synchronized (f3308c) {
+            synchronized (f3260c) {
                 if (b == null) {
                     syncQueueItem = new SyncQueueItem();
                 } else {
                     syncQueueItem = b;
-                    b = b.f3309a;
-                    syncQueueItem.f3309a = null;
+                    b = b.f3261a;
+                    syncQueueItem.f3261a = null;
                 }
                 syncQueueItem.what = i;
                 syncQueueItem.arg1 = i2;
@@ -271,7 +271,7 @@ class MessageThreadUtil<T> implements ThreadUtil<T> {
         }
 
         void a() {
-            this.f3309a = null;
+            this.f3261a = null;
             this.arg5 = 0;
             this.arg4 = 0;
             this.arg3 = 0;
@@ -279,9 +279,9 @@ class MessageThreadUtil<T> implements ThreadUtil<T> {
             this.arg1 = 0;
             this.what = 0;
             this.data = null;
-            synchronized (f3308c) {
+            synchronized (f3260c) {
                 if (b != null) {
-                    this.f3309a = b;
+                    this.f3261a = b;
                 }
                 b = this;
             }

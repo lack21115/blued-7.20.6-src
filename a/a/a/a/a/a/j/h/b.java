@@ -19,18 +19,18 @@ public class b extends a.a.a.a.a.a.j.h.a {
     public class a implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ Bitmap f1280a;
+        public final /* synthetic */ Bitmap f1232a;
 
         public a(Bitmap bitmap) {
-            this.f1280a = bitmap;
+            this.f1232a = bitmap;
         }
 
         @Override // java.lang.Runnable
         public void run() {
             Matrix matrix = new Matrix();
-            matrix.postScale(1.0f, -1.0f, this.f1280a.getWidth() / 2.0f, this.f1280a.getHeight() / 2.0f);
-            Bitmap bitmap = this.f1280a;
-            Bitmap createBitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), this.f1280a.getHeight(), matrix, true);
+            matrix.postScale(1.0f, -1.0f, this.f1232a.getWidth() / 2.0f, this.f1232a.getHeight() / 2.0f);
+            Bitmap bitmap = this.f1232a;
+            Bitmap createBitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), this.f1232a.getHeight(), matrix, true);
             ByteBuffer allocateDirect = ByteBuffer.allocateDirect(createBitmap.getWidth() * createBitmap.getHeight() * 4);
             allocateDirect.order(ByteOrder.LITTLE_ENDIAN);
             if (createBitmap.getConfig() == Bitmap.Config.ARGB_8888) {
@@ -54,7 +54,7 @@ public class b extends a.a.a.a.a.a.j.h.a {
     public void a() {
         d dVar = this.p;
         if (dVar == null) {
-            e.f1361c.e("TexturePictureStreamingManager", "mTextureMovieTransfer is null !!!");
+            e.f1313c.e("TexturePictureStreamingManager", "mTextureMovieTransfer is null !!!");
         } else {
             dVar.a(this.o, System.nanoTime(), false);
         }
@@ -64,7 +64,7 @@ public class b extends a.a.a.a.a.a.j.h.a {
     public void a(Bitmap bitmap) {
         d dVar = this.p;
         if (dVar == null) {
-            e.f1361c.e("TexturePictureStreamingManager", "mTextureMovieTransfer is null !!!");
+            e.f1313c.e("TexturePictureStreamingManager", "mTextureMovieTransfer is null !!!");
             return;
         }
         dVar.a(false);
@@ -76,7 +76,7 @@ public class b extends a.a.a.a.a.a.j.h.a {
         this.o = 0;
         d dVar = this.p;
         if (dVar == null) {
-            e.f1361c.e("TexturePictureStreamingManager", "mTextureMovieTransfer is null !!!");
+            e.f1313c.e("TexturePictureStreamingManager", "mTextureMovieTransfer is null !!!");
         } else {
             dVar.b(false);
         }

@@ -23,7 +23,7 @@ public class c implements com.opos.mobad.n.a {
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private a.InterfaceC0708a f27184c;
+    private a.InterfaceC0538a f13496c;
     private RelativeLayout d;
     private FrameLayout e;
     private g f;
@@ -32,7 +32,7 @@ public class c implements com.opos.mobad.n.a {
     private com.opos.mobad.n.d.g j;
 
     /* renamed from: a  reason: collision with root package name */
-    private String f27183a = "#c0000000";
+    private String f13495a = "#c0000000";
     private m g = new m(com.opos.mobad.service.c.a(), new Runnable() { // from class: com.opos.mobad.q.a.f.a.c.1
         @Override // java.lang.Runnable
         public void run() {
@@ -40,13 +40,13 @@ public class c implements com.opos.mobad.n.a {
         }
     });
 
-    public c(Context context, int i, a.InterfaceC0708a interfaceC0708a) {
+    public c(Context context, int i, a.InterfaceC0538a interfaceC0538a) {
         this.b = context;
-        this.f27184c = interfaceC0708a;
+        this.f13496c = interfaceC0538a;
         this.i = i;
         RelativeLayout relativeLayout = new RelativeLayout(context);
         this.d = relativeLayout;
-        relativeLayout.setBackgroundColor(Color.parseColor(this.f27183a));
+        relativeLayout.setBackgroundColor(Color.parseColor(this.f13495a));
         com.opos.cmn.j.b bVar = new com.opos.cmn.j.b(this.b);
         bVar.a(new b.a() { // from class: com.opos.mobad.q.a.f.a.c.2
             @Override // com.opos.cmn.j.b.a
@@ -75,8 +75,8 @@ public class c implements com.opos.mobad.n.a {
         i iVar = new i() { // from class: com.opos.mobad.q.a.f.a.c.3
             @Override // com.opos.mobad.q.a.i
             public void a(View view, int[] iArr) {
-                if (c.this.f27184c != null) {
-                    c.this.f27184c.d(view, (int[]) null);
+                if (c.this.f13496c != null) {
+                    c.this.f13496c.d(view, (int[]) null);
                 }
             }
         };
@@ -85,8 +85,8 @@ public class c implements com.opos.mobad.n.a {
         i iVar2 = new i() { // from class: com.opos.mobad.q.a.f.a.c.4
             @Override // com.opos.mobad.q.a.i
             public void a(View view, int[] iArr) {
-                if (c.this.f27184c != null) {
-                    c.this.f27184c.j(view, iArr);
+                if (c.this.f13496c != null) {
+                    c.this.f13496c.j(view, iArr);
                 }
             }
         };
@@ -98,9 +98,9 @@ public class c implements com.opos.mobad.n.a {
         if (this.f == null) {
             return;
         }
-        String str = (fVar.h == null || fVar.h.size() <= 0 || fVar.h.get(0) == null) ? "" : fVar.h.get(0).f26633a;
+        String str = (fVar.h == null || fVar.h.size() <= 0 || fVar.h.get(0) == null) ? "" : fVar.h.get(0).f12945a;
         this.f.a(fVar.b);
-        this.f.b(fVar.f26632c);
+        this.f.b(fVar.f12944c);
         this.f.c(fVar.d);
         this.f.a((Object) str);
     }
@@ -128,17 +128,17 @@ public class c implements com.opos.mobad.n.a {
     public void b(com.opos.mobad.n.d.f fVar, String str) {
         com.opos.cmn.an.f.a.b("InteractiveFloatLayout", "show");
         this.g.a(com.anythink.expressad.video.module.a.a.m.ag);
-        g a2 = n.a().a(true).a(fVar.b).b(fVar.f26632c).c(fVar.d).a((Object) ((fVar.h == null || fVar.h.size() <= 0 || fVar.h.get(0) == null) ? "" : fVar.h.get(0).f26633a)).a(new com.opos.mobad.e.a.a() { // from class: com.opos.mobad.q.a.f.a.c.7
+        g a2 = n.a().a(true).a(fVar.b).b(fVar.f12944c).c(fVar.d).a((Object) ((fVar.h == null || fVar.h.size() <= 0 || fVar.h.get(0) == null) ? "" : fVar.h.get(0).f12945a)).a(new com.opos.mobad.e.a.a() { // from class: com.opos.mobad.q.a.f.a.c.7
             @Override // com.opos.mobad.e.a.a
             public void a(Map map, String str2, l lVar, int i, String str3, int i2) {
-                int[] iArr = {lVar.f25999c, lVar.d, lVar.f, lVar.g};
+                int[] iArr = {lVar.f12311c, lVar.d, lVar.f, lVar.g};
                 if (i == 0) {
-                    if (c.this.f27184c != null) {
-                        c.this.f27184c.k(c.this.e, iArr);
+                    if (c.this.f13496c != null) {
+                        c.this.f13496c.k(c.this.e, iArr);
                     }
                 } else if (1 == i) {
-                    if (c.this.f27184c != null) {
-                        c.this.f27184c.j(c.this.e, iArr);
+                    if (c.this.f13496c != null) {
+                        c.this.f13496c.j(c.this.e, iArr);
                     }
                 } else {
                     com.opos.cmn.an.f.a.b("InteractiveFloatLayout", "unknown click:" + i);
@@ -173,8 +173,8 @@ public class c implements com.opos.mobad.n.a {
     }
 
     @Override // com.opos.mobad.n.a
-    public void a(a.InterfaceC0708a interfaceC0708a) {
-        this.f27184c = interfaceC0708a;
+    public void a(a.InterfaceC0538a interfaceC0538a) {
+        this.f13496c = interfaceC0538a;
     }
 
     @Override // com.opos.mobad.n.a
@@ -185,7 +185,7 @@ public class c implements com.opos.mobad.n.a {
         }
         com.opos.mobad.n.d.g gVar = e.H;
         com.opos.mobad.n.d.g gVar2 = this.j;
-        if (gVar2 != null && gVar2.f26633a.equals(gVar.f26633a)) {
+        if (gVar2 != null && gVar2.f12945a.equals(gVar.f12945a)) {
             a(e);
             return;
         }
@@ -195,7 +195,7 @@ public class c implements com.opos.mobad.n.a {
             gVar3.d();
         }
         this.j = gVar;
-        a(e, gVar.f26633a);
+        a(e, gVar.f12945a);
     }
 
     @Override // com.opos.mobad.n.a
@@ -212,7 +212,7 @@ public class c implements com.opos.mobad.n.a {
         if (gVar != null) {
             gVar.d();
         }
-        this.f27184c = null;
+        this.f13496c = null;
     }
 
     @Override // com.opos.mobad.n.a

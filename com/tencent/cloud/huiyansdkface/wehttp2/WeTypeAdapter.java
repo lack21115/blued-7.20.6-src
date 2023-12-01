@@ -8,16 +8,16 @@ import java.lang.reflect.Type;
 public class WeTypeAdapter extends TypeAdaptor2 {
 
     /* renamed from: a  reason: collision with root package name */
-    private WeJson f36136a = new WeJson();
+    private WeJson f22445a = new WeJson();
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @Override // com.tencent.cloud.huiyansdkface.wehttp2.TypeAdaptor2
     public <T> T a(String str, Type type) throws WeJsonException {
-        return (T) this.f36136a.fromJson(str, type);
+        return (T) this.f22445a.fromJson(str, type);
     }
 
     @Override // com.tencent.cloud.huiyansdkface.wehttp2.TypeAdapter
     public <T> String to(T t) {
-        return this.f36136a.toJson(t);
+        return this.f22445a.toJson(t);
     }
 }

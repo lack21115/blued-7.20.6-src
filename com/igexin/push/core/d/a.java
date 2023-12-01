@@ -16,7 +16,7 @@ import java.util.Map;
 public final class a implements e {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23473a = "DycSdkConfig";
+    private static final String f9865a = "DycSdkConfig";
     private Map<String, String> b = new HashMap();
 
     private int a(String str, int i) {
@@ -68,7 +68,7 @@ public final class a implements e {
     }
 
     private static Map<String, String> a(Context context, f fVar) {
-        return com.getui.gtc.dyc.b.a.a(context, fVar.f23492a);
+        return com.getui.gtc.dyc.b.a.a(context, fVar.f9884a);
     }
 
     private boolean b(String str) {
@@ -80,45 +80,45 @@ public final class a implements e {
     }
 
     private static void c() {
-        String str = com.igexin.push.core.e.f23495a;
+        String str = com.igexin.push.core.e.f9887a;
         String str2 = com.igexin.push.core.e.A;
-        GtcManager.getInstance().loadSdk(new SdkInfo.Builder().appid(com.igexin.push.core.e.f23495a).cid(com.igexin.push.core.e.A).moduleName(com.igexin.push.core.b.i).version("3.2.14.0").build());
+        GtcManager.getInstance().loadSdk(new SdkInfo.Builder().appid(com.igexin.push.core.e.f9887a).cid(com.igexin.push.core.e.A).moduleName(com.igexin.push.core.b.i).version("3.2.14.0").build());
     }
 
     private static /* synthetic */ void d() {
-        String str = com.igexin.push.core.e.f23495a;
+        String str = com.igexin.push.core.e.f9887a;
         String str2 = com.igexin.push.core.e.A;
-        GtcManager.getInstance().loadSdk(new SdkInfo.Builder().appid(com.igexin.push.core.e.f23495a).cid(com.igexin.push.core.e.A).moduleName(com.igexin.push.core.b.i).version("3.2.14.0").build());
+        GtcManager.getInstance().loadSdk(new SdkInfo.Builder().appid(com.igexin.push.core.e.f9887a).cid(com.igexin.push.core.e.A).moduleName(com.igexin.push.core.b.i).version("3.2.14.0").build());
     }
 
     @Override // com.igexin.push.core.d.e
     public final Map<String, String> a() {
         SDKUrlConfig.getConfigServiceUrl();
-        String str = com.igexin.push.core.e.f23495a;
+        String str = com.igexin.push.core.e.f9887a;
         f.a aVar = new f.a();
-        aVar.f23493a.b(com.igexin.push.core.b.i);
-        aVar.f23493a.a(SDKUrlConfig.getConfigServiceUrl());
-        aVar.f23493a.f("3.2.14.0");
-        aVar.f23493a.c(com.igexin.push.core.e.f23495a);
-        aVar.f23493a.d(com.igexin.push.core.e.A);
-        aVar.f23493a.e("sdkconfig");
-        aVar.f23493a.g(86400000L);
-        aVar.f23493a.h(new g() { // from class: com.igexin.push.core.d.a.1
+        aVar.f9885a.b(com.igexin.push.core.b.i);
+        aVar.f9885a.a(SDKUrlConfig.getConfigServiceUrl());
+        aVar.f9885a.f("3.2.14.0");
+        aVar.f9885a.c(com.igexin.push.core.e.f9887a);
+        aVar.f9885a.d(com.igexin.push.core.e.A);
+        aVar.f9885a.e(com.getui.gtc.dyc.b.b.f8367a);
+        aVar.f9885a.g(86400000L);
+        aVar.f9885a.h(new g() { // from class: com.igexin.push.core.d.a.1
             @Override // com.igexin.push.core.d.g
             public final void a(String str2) {
-                com.igexin.c.a.c.a.a(a.f23473a, str2);
+                com.igexin.c.a.c.a.a(a.f9865a, str2);
                 com.igexin.c.a.c.a.a("DycSdkConfig| get gtc config error ,message is : ".concat(String.valueOf(str2)), new Object[0]);
             }
 
             @Override // com.igexin.push.core.d.g
             public final void a(Map<String, String> map) {
                 a.this.a(map);
-                String str2 = com.igexin.push.core.e.f23495a;
+                String str2 = com.igexin.push.core.e.f9887a;
                 String str3 = com.igexin.push.core.e.A;
-                GtcManager.getInstance().loadSdk(new SdkInfo.Builder().appid(com.igexin.push.core.e.f23495a).cid(com.igexin.push.core.e.A).moduleName(com.igexin.push.core.b.i).version("3.2.14.0").build());
+                GtcManager.getInstance().loadSdk(new SdkInfo.Builder().appid(com.igexin.push.core.e.f9887a).cid(com.igexin.push.core.e.A).moduleName(com.igexin.push.core.b.i).version("3.2.14.0").build());
             }
         }.b);
-        Map<String, String> a2 = com.getui.gtc.dyc.b.a.a(com.igexin.push.core.e.l, new f(aVar, (byte) 0).f23492a);
+        Map<String, String> a2 = com.getui.gtc.dyc.b.a.a(com.igexin.push.core.e.l, new f(aVar, (byte) 0).f9884a);
         a(a2);
         return a2;
     }
@@ -137,7 +137,7 @@ public final class a implements e {
                 com.igexin.push.config.d.g = a("sdk.domainbackup.enable", Boolean.valueOf(com.igexin.push.config.d.g)).booleanValue();
                 boolean booleanValue = a("sdk.feature.setsilenttime.enable", Boolean.valueOf(com.igexin.push.config.d.l)).booleanValue();
                 com.igexin.push.config.d.l = booleanValue;
-                if (!booleanValue && com.igexin.push.config.d.f23376c != 0) {
+                if (!booleanValue && com.igexin.push.config.d.f9768c != 0) {
                     m.a();
                     m.a(12, 0);
                 }
@@ -177,7 +177,7 @@ public final class a implements e {
                 com.igexin.push.config.d.M = a("sdk.multiPuh.stoplist", com.igexin.push.config.d.M);
                 com.igexin.push.config.d.P = a("sdk.startservice.limit", com.igexin.push.config.d.P);
                 com.igexin.push.config.d.D = a("sdk.miui.wakeup.enable", Boolean.valueOf(com.igexin.push.config.d.D)).booleanValue();
-                com.igexin.push.config.d.f23375a = a("sdk.querytag.interval", Long.valueOf(com.igexin.push.config.d.f23375a)).longValue();
+                com.igexin.push.config.d.f9767a = a("sdk.querytag.interval", Long.valueOf(com.igexin.push.config.d.f9767a)).longValue();
                 com.igexin.push.config.d.Q = a("sdk.zxsdk.enable", Boolean.valueOf(com.igexin.push.config.d.Q)).booleanValue();
                 com.igexin.c.a.b.e.a().a((com.igexin.c.a.d.f) new a.AnonymousClass9(com.igexin.push.config.d.Q), true, false);
                 com.igexin.push.config.d.R = a("sdk.type253.enable", com.igexin.push.config.d.R);
@@ -199,7 +199,7 @@ public final class a implements e {
                 return true;
             } catch (Throwable th) {
                 com.igexin.c.a.c.a.a(th);
-                com.igexin.c.a.c.a.a(f23473a, th.toString());
+                com.igexin.c.a.c.a.a(f9865a, th.toString());
                 return true;
             }
         }

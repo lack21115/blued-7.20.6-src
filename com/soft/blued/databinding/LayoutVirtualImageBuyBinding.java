@@ -7,11 +7,11 @@ import com.blued.android.framework.view.shape.ShapeRelativeLayout;
 public final class LayoutVirtualImageBuyBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ShapeRelativeLayout f29442a;
+    private final ShapeRelativeLayout f15752a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ShapeRelativeLayout getRoot() {
-        return this.f29442a;
+        return this.f15752a;
     }
 }

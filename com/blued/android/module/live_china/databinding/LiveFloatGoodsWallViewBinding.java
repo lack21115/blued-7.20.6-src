@@ -10,22 +10,18 @@ import com.blued.android.module.live_china.view.LineProgressView;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/LiveFloatGoodsWallViewBinding.class */
 public final class LiveFloatGoodsWallViewBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final FrameLayout f12209a;
+    public final FrameLayout a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final TextView f12210c;
+    public final TextView c;
     public final TextView d;
     public final LineProgressView e;
     private final FrameLayout f;
 
     private LiveFloatGoodsWallViewBinding(FrameLayout frameLayout, FrameLayout frameLayout2, ImageView imageView, TextView textView, TextView textView2, LineProgressView lineProgressView) {
         this.f = frameLayout;
-        this.f12209a = frameLayout2;
+        this.a = frameLayout2;
         this.b = imageView;
-        this.f12210c = textView;
+        this.c = textView;
         this.d = textView2;
         this.e = lineProgressView;
     }
@@ -60,7 +56,6 @@ public final class LiveFloatGoodsWallViewBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.f;

@@ -8,23 +8,23 @@ import com.tencent.tencentmap.mapsdk.maps.model.LatLng;
 public class l7 extends j7 implements IEmergeAnimation {
 
     /* renamed from: c  reason: collision with root package name */
-    private LatLng f37609c;
+    private LatLng f23918c;
 
     public l7(LatLng latLng) {
-        this.f37609c = null;
-        if (this.f37563a == null) {
-            this.f37563a = new c8(latLng);
+        this.f23918c = null;
+        if (this.f23872a == null) {
+            this.f23872a = new c8(latLng);
         }
-        this.f37609c = latLng;
+        this.f23918c = latLng;
     }
 
     public LatLng a() {
-        return this.f37609c;
+        return this.f23918c;
     }
 
     @Override // com.tencent.tencentmap.mapsdk.maps.model.Animation
     public void setDuration(long j) {
-        a8 a8Var = this.f37563a;
+        a8 a8Var = this.f23872a;
         if (a8Var == null) {
             return;
         }
@@ -33,7 +33,7 @@ public class l7 extends j7 implements IEmergeAnimation {
 
     @Override // com.tencent.tencentmap.mapsdk.maps.model.Animation
     public void setInterpolator(Interpolator interpolator) {
-        a8 a8Var = this.f37563a;
+        a8 a8Var = this.f23872a;
         if (a8Var == null || interpolator == null) {
             return;
         }

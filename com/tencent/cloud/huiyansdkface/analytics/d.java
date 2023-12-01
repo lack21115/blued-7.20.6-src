@@ -28,11 +28,11 @@ public class d {
     private volatile Handler t;
 
     /* renamed from: a  reason: collision with root package name */
-    static final String f35503a = d.class.getSimpleName();
+    static final String f21812a = d.class.getSimpleName();
     private static String q = "subAppId";
 
     /* renamed from: c  reason: collision with root package name */
-    static String f35504c = "ecifNo";
+    static String f21813c = "ecifNo";
     static String d = "unionId";
     static String e = "openId";
     private static String r = AttributionReporter.APP_VERSION;
@@ -65,7 +65,7 @@ public class d {
         arrayList.add(wBSAEvent);
         final b a2 = b.a();
         final WBSAParam wBSAParam = dVar.b;
-        EventSender.requestExec(a2.f35496a, wBSAParam, str, arrayList, new WeReq.Callback<EventSender.sendEventResponse>() { // from class: com.tencent.cloud.huiyansdkface.analytics.b.2
+        EventSender.requestExec(a2.f21805a, wBSAParam, str, arrayList, new WeReq.Callback<EventSender.sendEventResponse>() { // from class: com.tencent.cloud.huiyansdkface.analytics.b.2
             @Override // com.tencent.cloud.huiyansdkface.wehttp2.WeReq.Callback, com.tencent.cloud.huiyansdkface.wehttp2.WeReq.InnerCallback
             public final void onFailed(WeReq weReq, WeReq.ErrType errType, int i, String str2, IOException iOException) {
                 WBSLogger.d("ReportWBAEvents", "WBCF onFailed:" + errType + "," + i + "," + str2, new Object[0]);
@@ -108,12 +108,8 @@ public class d {
                     if (split != null) {
                         String str3 = split[0];
                         WBSLogger.w("ReportWBAEvents", "requestFailExec baseUrl=" + str3 + "/rcrm-codcs/fail-msg", new Object[0]);
-                        WeOkHttp weOkHttp = a2.f35496a;
+                        WeOkHttp weOkHttp = b.this.f21805a;
                         EventSender.requestFailExec(weOkHttp, requestFailParam, str3 + "/rcrm-codcs/fail-msg", new BaseCallback<EventSender.sendEventResponse>() { // from class: com.tencent.cloud.huiyansdkface.analytics.b.2.1
-                            {
-                                AnonymousClass2.this = this;
-                            }
-
                             @Override // com.tencent.cloud.huiyansdkface.wehttp2.WeReq.Callback, com.tencent.cloud.huiyansdkface.wehttp2.WeReq.InnerCallback
                             public final void onFailed(WeReq weReq2, WeReq.ErrType errType, int i, String str4, IOException iOException) {
                                 WBSLogger.e("ReportWBAEvents", "requestFailExec onFailed msg=".concat(String.valueOf(str4)), new Object[0]);
@@ -146,7 +142,7 @@ public class d {
                 }
             }
         } else {
-            WBSLogger.d(f35503a, "initWBASdk null == eventHandler", new Object[0]);
+            WBSLogger.d(f21812a, "initWBASdk null == eventHandler", new Object[0]);
         }
         return this.t;
     }
@@ -166,9 +162,9 @@ public class d {
 
     private void c(final Context context) {
         synchronized (this) {
-            WBSLogger.d(f35503a, "initWBASdk WBAService!", new Object[0]);
+            WBSLogger.d(f21812a, "initWBASdk WBAService!", new Object[0]);
             if (this.t != null) {
-                WBSLogger.e(f35503a, "initWBASdk already has eventHandler,return!", new Object[0]);
+                WBSLogger.e(f21812a, "initWBASdk already has eventHandler,return!", new Object[0]);
                 return;
             }
             this.p.a();
@@ -189,7 +185,7 @@ public class d {
                     d.a(d.this, a2);
                     d.b(d.this, a2);
                     b.a();
-                    WBSLogger.d(d.f35503a, "initWBASdk Init WBAService success!", new Object[0]);
+                    WBSLogger.d(d.f21812a, "initWBASdk Init WBAService success!", new Object[0]);
                     Properties properties = new Properties();
                     properties.put("metrics_device", d.this.k);
                     properties.put("metrics_os_version", Integer.valueOf(d.this.j));
@@ -207,23 +203,23 @@ public class d {
         if (this.h) {
             Context a2 = a(context);
             if (a2 == null) {
-                WBSLogger.e(f35503a, "The Context of StatService.trackCustomKVEvent() can not be null!", new Object[0]);
+                WBSLogger.e(f21812a, "The Context of StatService.trackCustomKVEvent() can not be null!", new Object[0]);
                 return;
             }
             if (!this.s) {
-                WBSLogger.w(f35503a, "sdk未初始化，调用了trackCustomKVEvent", new Object[0]);
+                WBSLogger.w(f21812a, "sdk未初始化，调用了trackCustomKVEvent", new Object[0]);
                 SharedPreferences sharedPreferences = a2.getSharedPreferences(this.b.getAppId(), 0);
                 if (sharedPreferences == null) {
-                    WBSLogger.e(f35503a, "hasInit false,wbwaconfig null", new Object[0]);
+                    WBSLogger.e(f21812a, "hasInit false,wbwaconfig null", new Object[0]);
                     return;
                 }
                 String string = sharedPreferences.getString(q, null);
                 if (TextUtils.isEmpty(string)) {
-                    WBSLogger.e(f35503a, "hasInit false,wbwaconfig subAppId  null", new Object[0]);
+                    WBSLogger.e(f21812a, "hasInit false,wbwaconfig subAppId  null", new Object[0]);
                     return;
                 }
-                WBSLogger.w(f35503a, "hasInit false,wbwaconfig true", new Object[0]);
-                String string2 = sharedPreferences.getString(f35504c, null);
+                WBSLogger.w(f21812a, "hasInit false,wbwaconfig true", new Object[0]);
+                String string2 = sharedPreferences.getString(f21813c, null);
                 String string3 = sharedPreferences.getString(d, null);
                 String string4 = sharedPreferences.getString(e, null);
                 String string5 = sharedPreferences.getString(r, null);
@@ -237,7 +233,7 @@ public class d {
                 this.s = true;
             }
             if (c.a(str, str2, properties)) {
-                WBSLogger.e(f35503a, "The length of event_id/properties for StatService.trackCustomKVEvent() exceeds the limit:61440", new Object[0]);
+                WBSLogger.e(f21812a, "The length of event_id/properties for StatService.trackCustomKVEvent() exceeds the limit:61440", new Object[0]);
             }
             if (b(a2) != null) {
                 this.t.post(new Runnable() { // from class: com.tencent.cloud.huiyansdkface.analytics.d.1
@@ -247,7 +243,7 @@ public class d {
                             d.a(d.this, WBSAEvent.customEvent(str, str2, properties, Boolean.valueOf(z), d.this.p), d.this.i);
                         } catch (Throwable th) {
                             th.printStackTrace();
-                            WBSLogger.e(d.f35503a, th.getMessage(), new Object[0]);
+                            WBSLogger.e(d.f21812a, th.getMessage(), new Object[0]);
                         }
                     }
                 });
@@ -260,7 +256,7 @@ public class d {
         String b;
         try {
             if (!wBSimpleStartParam.isEnableService()) {
-                WBSLogger.e(f35503a, "WBAService is disable.", new Object[0]);
+                WBSLogger.e(f21812a, "WBAService is disable.", new Object[0]);
                 this.h = false;
                 return false;
             } else if (context != null) {
@@ -296,7 +292,7 @@ public class d {
                 wBSAParam.setAppVersion(b);
                 SharedPreferences.Editor edit = context.getSharedPreferences(this.b.getAppId(), 0).edit();
                 edit.putString(q, subAppId);
-                edit.putString(f35504c, ecifNo);
+                edit.putString(f21813c, ecifNo);
                 edit.putString(d, unionId);
                 edit.putString(e, openId);
                 edit.putString(r, this.b.getAppVersion());
@@ -312,14 +308,14 @@ public class d {
                     this.h = true;
                     return true;
                 }
-                WBSLogger.e(f35503a, "Context or sdkVersion in StatService.startStatService() is null, please check it!", new Object[0]);
+                WBSLogger.e(f21812a, "Context or sdkVersion in StatService.startStatService() is null, please check it!", new Object[0]);
                 this.h = false;
                 return false;
             } else {
                 throw new WBSASDKException("context must not be null");
             }
         } catch (Throwable th) {
-            WBSLogger.e(f35503a, th.getMessage(), new Object[0]);
+            WBSLogger.e(f21812a, th.getMessage(), new Object[0]);
             this.h = false;
             return false;
         }

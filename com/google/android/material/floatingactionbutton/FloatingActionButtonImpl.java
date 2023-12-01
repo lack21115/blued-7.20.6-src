@@ -1,5 +1,6 @@
 package com.google.android.material.floatingactionbutton;
 
+import android.R;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
@@ -19,13 +20,11 @@ import android.graphics.drawable.InsetDrawable;
 import android.graphics.drawable.LayerDrawable;
 import android.os.BatteryManager;
 import android.os.Build;
-import android.util.Property;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.core.util.Preconditions;
 import androidx.core.view.ViewCompat;
-import com.google.android.material.R;
 import com.google.android.material.animation.AnimationUtils;
 import com.google.android.material.animation.AnimatorSetCompat;
 import com.google.android.material.animation.ImageMatrixProperty;
@@ -83,11 +82,11 @@ public class FloatingActionButtonImpl {
     private ArrayList<InternalTransformationCallback> transformationCallbacks;
     final FloatingActionButton view;
     static final TimeInterpolator ELEVATION_ANIM_INTERPOLATOR = AnimationUtils.FAST_OUT_LINEAR_IN_INTERPOLATOR;
-    static final int[] PRESSED_ENABLED_STATE_SET = {16842919, 16842910};
-    static final int[] HOVERED_FOCUSED_ENABLED_STATE_SET = {16843623, 16842908, 16842910};
-    static final int[] FOCUSED_ENABLED_STATE_SET = {16842908, 16842910};
-    static final int[] HOVERED_ENABLED_STATE_SET = {16843623, 16842910};
-    static final int[] ENABLED_STATE_SET = {16842910};
+    static final int[] PRESSED_ENABLED_STATE_SET = {R.attr.state_pressed, R.attr.state_enabled};
+    static final int[] HOVERED_FOCUSED_ENABLED_STATE_SET = {R.attr.state_hovered, R.attr.state_focused, R.attr.state_enabled};
+    static final int[] FOCUSED_ENABLED_STATE_SET = {R.attr.state_focused, R.attr.state_enabled};
+    static final int[] HOVERED_ENABLED_STATE_SET = {R.attr.state_hovered, R.attr.state_enabled};
+    static final int[] ENABLED_STATE_SET = {R.attr.state_enabled};
     static final int[] EMPTY_STATE_SET = new int[0];
     boolean shadowPaddingEnabled = true;
     private float imageMatrixScale = 1.0f;
@@ -133,17 +132,15 @@ public class FloatingActionButtonImpl {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8110460-dex2jar.jar:com/google/android/material/floatingactionbutton/FloatingActionButtonImpl$InternalTransformationCallback.class */
-    public interface InternalTransformationCallback {
+    interface InternalTransformationCallback {
         void onScaleChanged();
 
         void onTranslationChanged();
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8110460-dex2jar.jar:com/google/android/material/floatingactionbutton/FloatingActionButtonImpl$InternalVisibilityChangedListener.class */
-    public interface InternalVisibilityChangedListener {
+    interface InternalVisibilityChangedListener {
         void onHidden();
 
         void onShown();
@@ -225,14 +222,14 @@ public class FloatingActionButtonImpl {
 
     private AnimatorSet createAnimator(MotionSpec motionSpec, float f, float f2, float f3) {
         ArrayList arrayList = new ArrayList();
-        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this.view, (Property<FloatingActionButton, Float>) View.ALPHA, f);
+        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this.view, View.ALPHA, f);
         motionSpec.getTiming("opacity").apply(ofFloat);
         arrayList.add(ofFloat);
-        ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(this.view, (Property<FloatingActionButton, Float>) View.SCALE_X, f2);
+        ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(this.view, View.SCALE_X, f2);
         motionSpec.getTiming(BatteryManager.EXTRA_SCALE).apply(ofFloat2);
         workAroundOreoBug(ofFloat2);
         arrayList.add(ofFloat2);
-        ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat(this.view, (Property<FloatingActionButton, Float>) View.SCALE_Y, f2);
+        ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat(this.view, View.SCALE_Y, f2);
         motionSpec.getTiming(BatteryManager.EXTRA_SCALE).apply(ofFloat3);
         workAroundOreoBug(ofFloat3);
         arrayList.add(ofFloat3);
@@ -275,8 +272,8 @@ public class FloatingActionButtonImpl {
         });
         arrayList.add(ofFloat);
         AnimatorSetCompat.playTogether(animatorSet, arrayList);
-        animatorSet.setDuration(MotionUtils.resolveThemeDuration(this.view.getContext(), R.attr.motionDurationLong1, this.view.getContext().getResources().getInteger(R.integer.material_motion_duration_long_1)));
-        animatorSet.setInterpolator(MotionUtils.resolveThemeInterpolator(this.view.getContext(), R.attr.motionEasingStandard, AnimationUtils.FAST_OUT_SLOW_IN_INTERPOLATOR));
+        animatorSet.setDuration(MotionUtils.resolveThemeDuration(this.view.getContext(), com.google.android.material.R.attr.motionDurationLong1, this.view.getContext().getResources().getInteger(com.google.android.material.R.integer.material_motion_duration_long_1)));
+        animatorSet.setInterpolator(MotionUtils.resolveThemeInterpolator(this.view.getContext(), com.google.android.material.R.attr.motionEasingStandard, AnimationUtils.FAST_OUT_SLOW_IN_INTERPOLATOR));
         return animatorSet;
     }
 

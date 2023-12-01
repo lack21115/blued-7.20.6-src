@@ -4,10 +4,10 @@ package com.tencent.liteav.videobase.d;
 final /* synthetic */ class b implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final a f36622a;
+    private final a f22931a;
 
     private b(a aVar) {
-        this.f36622a = aVar;
+        this.f22931a = aVar;
     }
 
     public static Runnable a(a aVar) {
@@ -16,6 +16,6 @@ final /* synthetic */ class b implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        a.a(this.f36622a);
+        a.a(this.f22931a);
     }
 }

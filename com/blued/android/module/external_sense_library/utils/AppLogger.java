@@ -4,7 +4,6 @@ import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
-import com.tencent.qcloud.core.util.IOUtils;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -13,22 +12,18 @@ import java.io.Writer;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/external_sense_library/utils/AppLogger.class */
 public class AppLogger {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static String f11308a;
+    private static String a;
     private static AppLogger b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private Handler f11309c;
+    private Handler c;
     private File d;
     private Writer e;
     private int f = 0;
     private final int g = 20;
 
     private AppLogger() {
-        f11308a = Environment.getExternalStorageDirectory().getPath();
-        if (this.f11309c == null) {
-            this.f11309c = new Handler(ThreadHandlerManager.a().b().getLooper()) { // from class: com.blued.android.module.external_sense_library.utils.AppLogger.1
+        a = Environment.getExternalStorageDirectory().getPath();
+        if (this.c == null) {
+            this.c = new Handler(ThreadHandlerManager.a().b().getLooper()) { // from class: com.blued.android.module.external_sense_library.utils.AppLogger.1
                 @Override // android.os.Handler
                 public void handleMessage(Message message) {
                     String format = String.format("%s %s  %s", TimeUtil.a(), "sense_log", message.obj);
@@ -88,7 +83,7 @@ public class AppLogger {
         if (writer != null) {
             try {
                 writer.write(str);
-                this.e.write(IOUtils.LINE_SEPARATOR_WINDOWS);
+                this.e.write("\r\n");
                 if (this.f >= 20) {
                     this.e.flush();
                 }
@@ -108,11 +103,11 @@ public class AppLogger {
     }
 
     private void d() {
-        this.f11309c.post(new Runnable() { // from class: com.blued.android.module.external_sense_library.utils.AppLogger.2
+        this.c.post(new Runnable() { // from class: com.blued.android.module.external_sense_library.utils.AppLogger.2
             @Override // java.lang.Runnable
             public void run() {
                 AppLogger.this.e();
-                AppLogger.this.d = new File(AppLogger.f11308a, "external_sense.txt");
+                AppLogger.this.d = new File(AppLogger.a, "external_sense.txt");
                 try {
                     if (!AppLogger.this.d.exists()) {
                         AppLogger.this.d.createNewFile();
@@ -126,7 +121,7 @@ public class AppLogger {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void e() {
-        File file = new File(f11308a, "external_sense.txt");
+        File file = new File(a, "external_sense.txt");
         if (!file.exists() || file.length() < 10485760) {
             return;
         }
@@ -136,7 +131,7 @@ public class AppLogger {
             if (i2 > 6) {
                 return;
             }
-            File file2 = new File(f11308a, a(i2));
+            File file2 = new File(a, a(i2));
             if (!file2.exists()) {
                 f();
                 file.renameTo(file2);
@@ -147,7 +142,7 @@ public class AppLogger {
                 while (true) {
                     int i4 = i3;
                     if (i4 <= 6) {
-                        File file3 = new File(f11308a, a(i4));
+                        File file3 = new File(a, a(i4));
                         if (file3.exists()) {
                             file3.delete();
                             if (i4 == 0) {
@@ -181,6 +176,6 @@ public class AppLogger {
         Message obtain = Message.obtain();
         obtain.what = 0;
         obtain.obj = str;
-        this.f11309c.sendMessage(obtain);
+        this.c.sendMessage(obtain);
     }
 }

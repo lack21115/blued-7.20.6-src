@@ -10,9 +10,9 @@ public final class h implements f {
         a unused;
         com.efs.sdk.base.core.d.b b = com.efs.sdk.base.core.util.b.b(file.getName());
         if (b != null) {
-            return ("wa".equals(b.f21764a.f21762a) || com.efs.sdk.base.core.c.b.a().a(b.f21764a.f21762a, file.length())) ? false : true;
+            return ("wa".equals(b.f8158a.f8156a) || com.efs.sdk.base.core.c.b.a().a(b.f8158a.f8156a, file.length())) ? false : true;
         }
-        unused = a.b.f21727a;
+        unused = a.b.f8121a;
         a.b(file);
         return true;
     }

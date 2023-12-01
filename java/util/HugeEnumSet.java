@@ -83,12 +83,12 @@ public final class HugeEnumSet<E extends Enum<E>> extends EnumSet<E> {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public /* bridge */ /* synthetic */ boolean add(Object obj) {
         return add((HugeEnumSet<E>) ((Enum) obj));
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean addAll(Collection<? extends E> collection) {
         boolean z;
         if (collection.isEmpty() || collection == this) {
@@ -120,7 +120,7 @@ public final class HugeEnumSet<E extends Enum<E>> extends EnumSet<E> {
         return z;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public void clear() {
         Arrays.fill(this.bits, 0L);
         this.size = 0;
@@ -128,7 +128,7 @@ public final class HugeEnumSet<E extends Enum<E>> extends EnumSet<E> {
 
     @Override // java.util.EnumSet
     /* renamed from: clone */
-    public HugeEnumSet<E> mo12752clone() {
+    public HugeEnumSet<E> mo11661clone() {
         HugeEnumSet<E> hugeEnumSet = (HugeEnumSet) super.clone();
         hugeEnumSet.bits = (long[]) this.bits.clone();
         return hugeEnumSet;
@@ -149,7 +149,7 @@ public final class HugeEnumSet<E extends Enum<E>> extends EnumSet<E> {
         }
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean contains(Object obj) {
         if (obj == null || !isValidType(obj.getClass())) {
             return false;
@@ -158,7 +158,7 @@ public final class HugeEnumSet<E extends Enum<E>> extends EnumSet<E> {
         return (this.bits[ordinal / 64] & (1 << (ordinal % 64))) != 0;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean containsAll(Collection<?> collection) {
         if (collection.isEmpty()) {
             return true;
@@ -183,7 +183,7 @@ public final class HugeEnumSet<E extends Enum<E>> extends EnumSet<E> {
         return !(collection instanceof EnumSet) && super.containsAll(collection);
     }
 
-    @Override // java.util.AbstractSet, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractSet, java.util.Collection
     public boolean equals(Object obj) {
         if (obj == null) {
             return false;
@@ -196,7 +196,7 @@ public final class HugeEnumSet<E extends Enum<E>> extends EnumSet<E> {
         return new HugeEnumSetIterator();
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean remove(Object obj) {
         if (obj == null || !isValidType(obj.getClass())) {
             return false;
@@ -213,7 +213,7 @@ public final class HugeEnumSet<E extends Enum<E>> extends EnumSet<E> {
         return false;
     }
 
-    @Override // java.util.AbstractSet, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractSet, java.util.AbstractCollection, java.util.Collection
     public boolean removeAll(Collection<?> collection) {
         boolean z = false;
         if (!collection.isEmpty()) {
@@ -245,7 +245,7 @@ public final class HugeEnumSet<E extends Enum<E>> extends EnumSet<E> {
         return z;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean retainAll(Collection<?> collection) {
         boolean z;
         if (collection instanceof EnumSet) {
@@ -314,7 +314,7 @@ public final class HugeEnumSet<E extends Enum<E>> extends EnumSet<E> {
         }
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    @Override // java.util.AbstractCollection, java.util.Collection
     public int size() {
         return this.size;
     }

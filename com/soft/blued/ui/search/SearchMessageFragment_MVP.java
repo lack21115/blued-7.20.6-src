@@ -36,7 +36,6 @@ public final class SearchMessageFragment_MVP implements MvpDispatcher {
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpDispatcher
     public void a(MvpFragment mvpFragment, String str, List list) {
         SearchMessageFragment searchMessageFragment = (SearchMessageFragment) mvpFragment;
         if (list != null && list.size() > 0) {

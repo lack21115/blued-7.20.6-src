@@ -8,20 +8,18 @@ import java.util.Iterator;
 /* renamed from: com.amap.api.col.3sl.ba  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/ba.class */
 public final class ba extends Thread {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f4770a;
+    private Context a;
     private bm b;
 
     public ba(Context context) {
-        this.f4770a = context;
+        this.a = context;
         this.b = bm.a(context);
     }
 
     private static bh a(File file) {
-        String a2 = dw.a(file);
+        String a = dw.a(file);
         bh bhVar = new bh();
-        bhVar.b(a2);
+        bhVar.b(a);
         return bhVar;
     }
 
@@ -30,12 +28,12 @@ public final class ba extends Thread {
         if (str.equals("quanguo")) {
             str2 = "quanguogaiyaotu";
         }
-        ax a2 = ax.a(this.f4770a);
+        ax a = ax.a(this.a);
         bh bhVar = null;
         bh bhVar2 = null;
-        if (a2 != null) {
-            String g = a2.g(str2);
-            File[] listFiles = new File(dw.c(this.f4770a)).listFiles();
+        if (a != null) {
+            String g = a.g(str2);
+            File[] listFiles = new File(dw.c(this.a)).listFiles();
             if (listFiles != null) {
                 int length = listFiles.length;
                 int i = 0;
@@ -47,10 +45,10 @@ public final class ba extends Thread {
                     }
                     File file = listFiles[i2];
                     if ((file.getName().contains(g) || file.getName().contains(str2)) && file.getName().endsWith(".zip.tmp.dt")) {
-                        bh a3 = a(file);
-                        bhVar2 = a3;
-                        if (a3.c() != null) {
-                            return a3;
+                        bh a2 = a(file);
+                        bhVar2 = a2;
+                        if (a2.c() != null) {
+                            return a2;
                         }
                     }
                     i = i2 + 1;
@@ -81,7 +79,7 @@ public final class ba extends Thread {
         File[] listFiles;
         String name;
         int lastIndexOf;
-        File file = new File(dw.b(this.f4770a) + str);
+        File file = new File(dw.b(this.a) + str);
         if (!file.exists() || (listFiles = file.listFiles()) == null) {
             return;
         }
@@ -118,7 +116,7 @@ public final class ba extends Thread {
         String name;
         int lastIndexOf;
         ArrayList<String> arrayList = new ArrayList<>();
-        File file = new File(dw.c(this.f4770a));
+        File file = new File(dw.c(this.a));
         if (file.exists() && (listFiles = file.listFiles()) != null) {
             int length = listFiles.length;
             int i = 0;

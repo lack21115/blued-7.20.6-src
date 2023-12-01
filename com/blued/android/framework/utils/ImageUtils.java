@@ -13,7 +13,6 @@ import android.util.Log;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.AppMethods;
 import com.blued.android.framework.R;
-import com.huawei.openalliance.ad.constant.ax;
 import java.io.BufferedOutputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -82,7 +81,7 @@ public class ImageUtils {
     }
 
     public static void a(Bitmap bitmap, int i) {
-        if (Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())) {
+        if ("mounted".equals(Environment.getExternalStorageState())) {
             File externalStoragePublicDirectory = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
             a(bitmap, externalStoragePublicDirectory.getAbsolutePath() + File.separator + "blued", i);
         }
@@ -97,7 +96,7 @@ public class ImageUtils {
             return;
         }
         String str2 = System.currentTimeMillis() + ".jpg";
-        if (Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())) {
+        if ("mounted".equals(Environment.getExternalStorageState())) {
             String str3 = str;
             if (str == null) {
                 File externalStoragePublicDirectory = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
@@ -121,7 +120,7 @@ public class ImageUtils {
         ContentValues contentValues = new ContentValues();
         contentValues.put("description", "Blued image");
         contentValues.put("_display_name", str);
-        contentValues.put("mime_type", ax.V);
+        contentValues.put("mime_type", "image/jpeg");
         contentValues.put("title", str);
         contentValues.put("relative_path", str2);
         ContentResolver contentResolver = AppInfo.d().getContentResolver();

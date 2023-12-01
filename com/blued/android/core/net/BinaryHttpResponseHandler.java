@@ -21,17 +21,15 @@ public abstract class BinaryHttpResponseHandler extends HttpResponseHandler<byte
     public byte[] parseResponse(int i, ResponseBody responseBody) throws IOException {
         if (responseBody != null) {
             final long contentLength = responseBody.contentLength();
-            byte[] a2 = AppMethods.a(new FilterInputStream(responseBody.byteStream()) { // from class: com.blued.android.core.net.BinaryHttpResponseHandler.1
-
-                /* renamed from: a  reason: collision with root package name */
-                int f9660a = 0;
+            byte[] a = AppMethods.a(new FilterInputStream(responseBody.byteStream()) { // from class: com.blued.android.core.net.BinaryHttpResponseHandler.1
+                int a = 0;
 
                 @Override // java.io.FilterInputStream, java.io.InputStream
                 public int read() throws IOException {
                     int read = super.read();
                     if (read > 0) {
-                        int i2 = this.f9660a + read;
-                        this.f9660a = i2;
+                        int i2 = this.a + read;
+                        this.a = i2;
                         BinaryHttpResponseHandler.this.sendProgressMessage((int) ((i2 * 100.0f) / ((float) contentLength)), i2);
                     }
                     return read;
@@ -41,15 +39,15 @@ public abstract class BinaryHttpResponseHandler extends HttpResponseHandler<byte
                 public int read(byte[] bArr, int i2, int i3) throws IOException {
                     int read = super.read(bArr, i2, i3);
                     if (read > 0) {
-                        int i4 = this.f9660a + read;
-                        this.f9660a = i4;
+                        int i4 = this.a + read;
+                        this.a = i4;
                         BinaryHttpResponseHandler.this.sendProgressMessage((int) ((i4 * 100.0f) / ((float) contentLength)), i4);
                     }
                     return read;
                 }
             }, (int) contentLength);
             responseBody.close();
-            return a2;
+            return a;
         }
         return null;
     }

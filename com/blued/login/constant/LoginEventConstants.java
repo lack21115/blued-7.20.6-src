@@ -7,7 +7,7 @@ import kotlin.Metadata;
 public final class LoginEventConstants {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final LoginEventConstants f20506a = new LoginEventConstants();
+    public static final LoginEventConstants f6900a = new LoginEventConstants();
 
     private LoginEventConstants() {
     }

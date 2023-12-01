@@ -23,7 +23,7 @@ public class EagerForeignCollection<T, ID> extends BaseForeignCollection<T, ID> 
         }
     }
 
-    @Override // com.j256.ormlite.dao.BaseForeignCollection, com.j256.ormlite.dao.ForeignCollection, java.util.Collection, java.util.Set
+    @Override // com.j256.ormlite.dao.BaseForeignCollection, com.j256.ormlite.dao.ForeignCollection, java.util.Collection
     public boolean add(T t) {
         if (this.results.add(t)) {
             return super.add(t);
@@ -31,7 +31,7 @@ public class EagerForeignCollection<T, ID> extends BaseForeignCollection<T, ID> 
         return false;
     }
 
-    @Override // com.j256.ormlite.dao.BaseForeignCollection, java.util.Collection, java.util.Set
+    @Override // com.j256.ormlite.dao.BaseForeignCollection, java.util.Collection
     public boolean addAll(Collection<? extends T> collection) {
         if (this.results.addAll(collection)) {
             return super.addAll(collection);
@@ -57,17 +57,17 @@ public class EagerForeignCollection<T, ID> extends BaseForeignCollection<T, ID> 
         return iteratorThrow(-1);
     }
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     public boolean contains(Object obj) {
         return this.results.contains(obj);
     }
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     public boolean containsAll(Collection<?> collection) {
         return this.results.containsAll(collection);
     }
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     public boolean equals(Object obj) {
         if (obj instanceof EagerForeignCollection) {
             return this.results.equals(((EagerForeignCollection) obj).results);
@@ -85,7 +85,7 @@ public class EagerForeignCollection<T, ID> extends BaseForeignCollection<T, ID> 
         return this;
     }
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     public int hashCode() {
         return this.results.hashCode();
     }
@@ -95,12 +95,12 @@ public class EagerForeignCollection<T, ID> extends BaseForeignCollection<T, ID> 
         return true;
     }
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     public boolean isEmpty() {
         return this.results.isEmpty();
     }
 
-    @Override // java.lang.Iterable
+    @Override // java.lang.Iterable, java.util.Collection
     public CloseableIterator<T> iterator() {
         return iteratorThrow(-1);
     }
@@ -242,7 +242,7 @@ public class EagerForeignCollection<T, ID> extends BaseForeignCollection<T, ID> 
         return query.size();
     }
 
-    @Override // com.j256.ormlite.dao.BaseForeignCollection, java.util.Collection, java.util.Set
+    @Override // com.j256.ormlite.dao.BaseForeignCollection, java.util.Collection
     public boolean remove(Object obj) {
         boolean z = false;
         if (!this.results.remove(obj) || this.dao == null) {
@@ -258,7 +258,7 @@ public class EagerForeignCollection<T, ID> extends BaseForeignCollection<T, ID> 
         }
     }
 
-    @Override // com.j256.ormlite.dao.BaseForeignCollection, java.util.Collection, java.util.Set
+    @Override // com.j256.ormlite.dao.BaseForeignCollection, java.util.Collection
     public boolean removeAll(Collection<?> collection) {
         Iterator<?> it = collection.iterator();
         boolean z = false;
@@ -270,22 +270,22 @@ public class EagerForeignCollection<T, ID> extends BaseForeignCollection<T, ID> 
         return z;
     }
 
-    @Override // com.j256.ormlite.dao.BaseForeignCollection, java.util.Collection, java.util.Set
+    @Override // com.j256.ormlite.dao.BaseForeignCollection, java.util.Collection
     public boolean retainAll(Collection<?> collection) {
         return super.retainAll(collection);
     }
 
-    @Override // java.util.Collection, java.util.List
+    @Override // java.util.Collection
     public int size() {
         return this.results.size();
     }
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     public Object[] toArray() {
         return this.results.toArray();
     }
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     public <E> E[] toArray(E[] eArr) {
         return (E[]) this.results.toArray(eArr);
     }

@@ -7,14 +7,10 @@ import java.util.Map;
 /* renamed from: com.amap.api.col.3sl.mu  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/mu.class */
 public final class mu {
-
-    /* renamed from: a  reason: collision with root package name */
-    public String f5391a;
+    public String a;
     public byte[] d;
     public Map<String, String> b = new HashMap();
-
-    /* renamed from: c  reason: collision with root package name */
-    boolean f5392c = true;
+    boolean c = true;
     public int e = 10000;
 
     public static String a() {

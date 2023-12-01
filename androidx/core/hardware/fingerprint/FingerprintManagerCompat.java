@@ -15,7 +15,7 @@ import javax.crypto.Mac;
 public class FingerprintManagerCompat {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Context f2478a;
+    private final Context f2430a;
 
     /* loaded from: source-8756600-dex2jar.jar:androidx/core/hardware/fingerprint/FingerprintManagerCompat$AuthenticationCallback.class */
     public static abstract class AuthenticationCallback {
@@ -36,14 +36,14 @@ public class FingerprintManagerCompat {
     public static final class AuthenticationResult {
 
         /* renamed from: a  reason: collision with root package name */
-        private final CryptoObject f2480a;
+        private final CryptoObject f2432a;
 
         public AuthenticationResult(CryptoObject cryptoObject) {
-            this.f2480a = cryptoObject;
+            this.f2432a = cryptoObject;
         }
 
         public CryptoObject getCryptoObject() {
-            return this.f2480a;
+            return this.f2432a;
         }
     }
 
@@ -51,28 +51,28 @@ public class FingerprintManagerCompat {
     public static class CryptoObject {
 
         /* renamed from: a  reason: collision with root package name */
-        private final Signature f2481a;
+        private final Signature f2433a;
         private final Cipher b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final Mac f2482c;
+        private final Mac f2434c;
 
         public CryptoObject(Signature signature) {
-            this.f2481a = signature;
+            this.f2433a = signature;
             this.b = null;
-            this.f2482c = null;
+            this.f2434c = null;
         }
 
         public CryptoObject(Cipher cipher) {
             this.b = cipher;
-            this.f2481a = null;
-            this.f2482c = null;
+            this.f2433a = null;
+            this.f2434c = null;
         }
 
         public CryptoObject(Mac mac) {
-            this.f2482c = mac;
+            this.f2434c = mac;
             this.b = null;
-            this.f2481a = null;
+            this.f2433a = null;
         }
 
         public Cipher getCipher() {
@@ -80,16 +80,16 @@ public class FingerprintManagerCompat {
         }
 
         public Mac getMac() {
-            return this.f2482c;
+            return this.f2434c;
         }
 
         public Signature getSignature() {
-            return this.f2481a;
+            return this.f2433a;
         }
     }
 
     private FingerprintManagerCompat(Context context) {
-        this.f2478a = context;
+        this.f2430a = context;
     }
 
     private static FingerprintManager.AuthenticationCallback a(final AuthenticationCallback authenticationCallback) {
@@ -166,7 +166,7 @@ public class FingerprintManagerCompat {
 
     public void authenticate(CryptoObject cryptoObject, int i, CancellationSignal cancellationSignal, AuthenticationCallback authenticationCallback, Handler handler) {
         FingerprintManager a2;
-        if (Build.VERSION.SDK_INT < 23 || (a2 = a(this.f2478a)) == null) {
+        if (Build.VERSION.SDK_INT < 23 || (a2 = a(this.f2430a)) == null) {
             return;
         }
         a2.authenticate(a(cryptoObject), cancellationSignal != null ? (android.os.CancellationSignal) cancellationSignal.getCancellationSignalObject() : null, i, a(authenticationCallback), handler);
@@ -175,7 +175,7 @@ public class FingerprintManagerCompat {
     public boolean hasEnrolledFingerprints() {
         boolean z = false;
         if (Build.VERSION.SDK_INT >= 23) {
-            FingerprintManager a2 = a(this.f2478a);
+            FingerprintManager a2 = a(this.f2430a);
             z = false;
             if (a2 != null) {
                 z = false;
@@ -190,7 +190,7 @@ public class FingerprintManagerCompat {
     public boolean isHardwareDetected() {
         boolean z = false;
         if (Build.VERSION.SDK_INT >= 23) {
-            FingerprintManager a2 = a(this.f2478a);
+            FingerprintManager a2 = a(this.f2430a);
             z = false;
             if (a2 != null) {
                 z = false;

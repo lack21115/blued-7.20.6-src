@@ -9,7 +9,7 @@ public final class a implements com.kwad.sdk.core.webview.b.a {
 
     /* renamed from: com.kwad.components.core.webview.jshandler.a$a  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/components/core/webview/jshandler/a$a.class */
-    public static final class C0537a extends com.kwad.sdk.core.response.kwai.a {
+    public static final class C0367a extends com.kwad.sdk.core.response.kwai.a {
         public boolean Sa;
 
         @Override // com.kwad.sdk.core.response.kwai.a, com.kwad.sdk.core.b
@@ -45,9 +45,9 @@ public final class a implements com.kwad.sdk.core.webview.b.a {
             bVar.parseJson(new JSONObject(str));
         } catch (Exception e) {
         }
-        C0537a c0537a = new C0537a();
-        c0537a.Sa = aJ(bVar.packageName);
-        cVar.a(c0537a);
+        C0367a c0367a = new C0367a();
+        c0367a.Sa = aJ(bVar.packageName);
+        cVar.a(c0367a);
     }
 
     @Override // com.kwad.sdk.core.webview.b.a

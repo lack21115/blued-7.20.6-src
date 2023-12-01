@@ -4,11 +4,11 @@ package com.anythink.expressad.foundation.g.f;
 public class f<T> implements e<T> {
 
     /* renamed from: a  reason: collision with root package name */
-    private long f7893a;
+    private long f5053a;
     public String b = "";
 
     /* renamed from: c  reason: collision with root package name */
-    public String f7894c = "";
+    public String f5054c = "";
     public int d = 0;
 
     private void a(int i) {
@@ -20,7 +20,7 @@ public class f<T> implements e<T> {
     }
 
     private void b(String str) {
-        this.f7894c = str;
+        this.f5054c = str;
     }
 
     private static void f() {
@@ -51,7 +51,7 @@ public class f<T> implements e<T> {
 
     @Override // com.anythink.expressad.foundation.g.f.e
     public void b() {
-        this.f7893a = System.currentTimeMillis();
+        this.f5053a = System.currentTimeMillis();
     }
 
     @Override // com.anythink.expressad.foundation.g.f.e

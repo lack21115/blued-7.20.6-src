@@ -12,7 +12,7 @@ public final class b {
     private static b b;
 
     /* renamed from: a  reason: collision with root package name */
-    private Map<Long, a> f23562a = new HashMap();
+    private Map<Long, a> f9954a = new HashMap();
 
     private b() {
     }
@@ -27,7 +27,7 @@ public final class b {
     private void b(a aVar) {
         if (aVar != null) {
             if (aVar != null) {
-                this.f23562a.put(aVar.a(), aVar);
+                this.f9954a.put(aVar.a(), aVar);
             }
             Intent intent = new Intent(e.l, PushActivity.class);
             intent.putExtra(GameAppOperation.SHARE_PRIZE_ACTIVITY_ID, aVar.a());
@@ -44,17 +44,17 @@ public final class b {
 
     private void d(a aVar) {
         if (aVar != null) {
-            this.f23562a.put(aVar.a(), aVar);
+            this.f9954a.put(aVar.a(), aVar);
         }
     }
 
     public final a a(Long l) {
-        return this.f23562a.get(l);
+        return this.f9954a.get(l);
     }
 
     public final void a(a aVar) {
         if (aVar != null) {
-            this.f23562a.remove(aVar.a());
+            this.f9954a.remove(aVar.a());
         }
     }
 }

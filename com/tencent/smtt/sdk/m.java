@@ -11,7 +11,7 @@ import java.util.Properties;
 public class m {
 
     /* renamed from: a  reason: collision with root package name */
-    private static m f38862a;
+    private static m f25171a;
     private static Context b;
 
     private m() {
@@ -19,11 +19,11 @@ public class m {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static m a(Context context) {
-        if (f38862a == null) {
+        if (f25171a == null) {
             synchronized (m.class) {
                 try {
-                    if (f38862a == null) {
-                        f38862a = new m();
+                    if (f25171a == null) {
+                        f25171a = new m();
                     }
                 } catch (Throwable th) {
                     throw th;
@@ -31,7 +31,7 @@ public class m {
             }
         }
         b = context.getApplicationContext();
-        return f38862a;
+        return f25171a;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:50:0x0077 A[EXC_TOP_SPLITTER, SYNTHETIC] */

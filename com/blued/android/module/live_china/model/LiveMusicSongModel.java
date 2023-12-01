@@ -19,7 +19,6 @@ public class LiveMusicSongModel implements MultiItemEntity {
     public String sheetId;
     public int type = 0;
 
-    @Override // com.chad.library.adapter.base.entity.MultiItemEntity
     public int getItemType() {
         return this.type;
     }

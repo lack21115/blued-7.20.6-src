@@ -7,11 +7,11 @@ import com.blued.android.framework.ui.custom.KeyboardListenLinearLayout;
 public final class FmMsgGroupInfoBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final KeyboardListenLinearLayout f28754a;
+    private final KeyboardListenLinearLayout f15064a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public KeyboardListenLinearLayout getRoot() {
-        return this.f28754a;
+        return this.f15064a;
     }
 }

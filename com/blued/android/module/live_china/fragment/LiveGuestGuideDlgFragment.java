@@ -73,7 +73,7 @@ public class LiveGuestGuideDlgFragment extends com.blued.android.module.common.f
 
     @Override // com.blued.android.module.common.fragment.LiveBaseDialogFragment
     public void f() {
-        this.l = this.f10822c.getInt("type");
+        this.l = this.c.getInt("type");
     }
 
     @Override // com.blued.android.core.ui.BaseDialogFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener

@@ -7,12 +7,10 @@ import kotlin.Metadata;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/debug/internal/HashedWeakRef.class */
 public final class HashedWeakRef<T> extends WeakReference<T> {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final int f43040a;
+    public final int a;
 
     public HashedWeakRef(T t, ReferenceQueue<T> referenceQueue) {
         super(t, referenceQueue);
-        this.f43040a = t != null ? t.hashCode() : 0;
+        this.a = t != null ? t.hashCode() : 0;
     }
 }

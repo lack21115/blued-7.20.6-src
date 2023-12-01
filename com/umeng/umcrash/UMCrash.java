@@ -11,8 +11,6 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.webkit.WebView;
-import com.alipay.sdk.cons.b;
-import com.efs.sdk.base.EfsConstant;
 import com.efs.sdk.base.EfsReporter;
 import com.efs.sdk.base.core.util.NetworkUtil;
 import com.efs.sdk.base.core.util.concurrent.WorkThreadUtil;
@@ -27,6 +25,7 @@ import com.efs.sdk.pa.PAFactory;
 import com.efs.sdk.pa.config.IEfsReporter;
 import com.efs.sdk.pa.config.PackageLevel;
 import com.huawei.hms.framework.common.hianalytics.CrashHianalyticsData;
+import com.kwad.components.offline.api.tk.model.report.TKDownloadReason;
 import com.uc.crashsdk.export.CrashApi;
 import com.uc.crashsdk.export.CustomLogInfo;
 import com.uc.crashsdk.export.ICrashClient;
@@ -36,6 +35,7 @@ import com.umeng.commonsdk.framework.UMEnvelopeBuild;
 import com.umeng.commonsdk.statistics.idtracking.ImprintHandler;
 import com.umeng.commonsdk.statistics.internal.UMImprintChangeCallback;
 import com.umeng.commonsdk.utils.UMUtils;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.File;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -115,7 +115,7 @@ public class UMCrash {
     private static boolean isZip = true;
     private static boolean isIntl = false;
     private static boolean isBuildId = true;
-    private static String crashSdkVersion = EfsConstant.UM_SDK_VERSION;
+    private static String crashSdkVersion = "1.6.4";
     private static Object pageArrayLock = new Object();
     private static ArrayList<String> mArrayList = new ArrayList<>(10);
     private static boolean isPA = false;
@@ -345,9 +345,9 @@ public class UMCrash {
                 jSONObject.put(LogType.ANR_TYPE, 0);
             }
             if (isPA) {
-                jSONObject.put(b.k, 1);
+                jSONObject.put("pa", 1);
             } else {
-                jSONObject.put(b.k, 0);
+                jSONObject.put("pa", 0);
             }
             if (isLa) {
                 jSONObject.put("la", 1);
@@ -360,9 +360,9 @@ public class UMCrash {
                 jSONObject.put("mem", 0);
             }
             if (isNet) {
-                jSONObject.put("net", 1);
+                jSONObject.put(TKDownloadReason.KSAD_TK_NET, 1);
             } else {
-                jSONObject.put("net", 0);
+                jSONObject.put(TKDownloadReason.KSAD_TK_NET, 0);
             }
             if (H5Manager.getH5ConfigMananger() == null || !H5Manager.getH5ConfigMananger().isH5TracerEnable()) {
                 jSONObject.put("h5", 0);
@@ -573,7 +573,7 @@ public class UMCrash {
                                 if (UMCrash.index != 0 || (intent = activity.getIntent()) == null || (data = intent.getData()) == null || (scheme = data.getScheme()) == null || scheme.isEmpty()) {
                                     return;
                                 }
-                                if (scheme.contains("um." + String.this)) {
+                                if (scheme.contains("um." + str)) {
                                     Set<String> queryParameterNames = data.getQueryParameterNames();
                                     if (queryParameterNames.contains(UMCrash.IT_DEBUGKEY) && queryParameterNames.contains(UMCrash.IT_SENDAGING)) {
                                         String queryParameter = data.getQueryParameter(UMCrash.IT_DEBUGKEY);
@@ -952,7 +952,7 @@ public class UMCrash {
                     mArrayList.remove(0);
                 }
                 ArrayList<String> arrayList = mArrayList;
-                arrayList.add(str + "-" + System.currentTimeMillis() + "-" + str2);
+                arrayList.add(str + Constants.ACCEPT_TIME_SEPARATOR_SERVER + System.currentTimeMillis() + Constants.ACCEPT_TIME_SEPARATOR_SERVER + str2);
             }
         } catch (Throwable th) {
         }

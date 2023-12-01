@@ -14,6 +14,7 @@ import com.hihonor.android.os.Build;
 import com.huawei.hms.ads.ge;
 import com.huawei.openalliance.ad.ipc.CallResult;
 import com.huawei.openalliance.ad.ipc.RemoteCallResultCallback;
+import com.xiaomi.mipush.sdk.Constants;
 import java.util.Arrays;
 import java.util.Locale;
 
@@ -31,11 +32,11 @@ public abstract class c {
     private static final int Z = 60;
 
     /* renamed from: a  reason: collision with root package name */
-    private static final int f22994a = 526;
+    private static final int f9386a = 526;
     private static final int b = 432;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final int f22995c = 320;
+    private static final int f9387c = 320;
     private static final int d = 468;
     private static final int e = 728;
     private static final float f = 0.15f;
@@ -212,12 +213,12 @@ public abstract class c {
             }
             try {
                 String string = Settings.Global.getString(context.getContentResolver(), l);
-                if ((TextUtils.isEmpty(string) || !Arrays.asList(string.split(";")).contains(packageName)) && Settings.Global.getInt(context.getContentResolver(), j, 0) != 0) {
+                if ((TextUtils.isEmpty(string) || !Arrays.asList(string.split(com.huawei.openalliance.ad.constant.t.aE)).contains(packageName)) && Settings.Global.getInt(context.getContentResolver(), j, 0) != 0) {
                     String string2 = Settings.Global.getString(context.getContentResolver(), k);
                     if (TextUtils.isEmpty(string2)) {
                         return false;
                     }
-                    return Arrays.asList(string2.split(";")).contains(packageName);
+                    return Arrays.asList(string2.split(com.huawei.openalliance.ad.constant.t.aE)).contains(packageName);
                 }
                 return false;
             } catch (Throwable th) {
@@ -254,7 +255,7 @@ public abstract class c {
     }
 
     public static String V() {
-        return Locale.getDefault().getLanguage() + "-" + Locale.getDefault().getCountry();
+        return Locale.getDefault().getLanguage() + Constants.ACCEPT_TIME_SEPARATOR_SERVER + Locale.getDefault().getCountry();
     }
 
     public static int Z(Context context) {

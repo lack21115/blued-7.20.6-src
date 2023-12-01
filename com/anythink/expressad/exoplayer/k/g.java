@@ -15,12 +15,12 @@ import java.lang.annotation.RetentionPolicy;
 public final class g implements SurfaceTexture.OnFrameAvailableListener, Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f7650a = 0;
+    public static final int f4811a = 0;
     public static final int b = 1;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final int f7651c = 2;
-    private static final int[] d = {12352, 4, 12324, 8, 12323, 8, 12322, 8, 12321, 8, 12325, 0, 12327, 12344, 12339, 4, 12344};
+    public static final int f4812c = 2;
+    private static final int[] d = {EGL14.EGL_RENDERABLE_TYPE, 4, EGL14.EGL_RED_SIZE, 8, EGL14.EGL_GREEN_SIZE, 8, EGL14.EGL_BLUE_SIZE, 8, EGL14.EGL_ALPHA_SIZE, 8, EGL14.EGL_DEPTH_SIZE, 0, EGL14.EGL_CONFIG_CAVEAT, EGL14.EGL_NONE, EGL14.EGL_SURFACE_TYPE, 4, EGL14.EGL_NONE};
     private static final int e = 12992;
     private final Handler f;
     private final int[] g = new int[1];
@@ -60,7 +60,7 @@ public final class g implements SurfaceTexture.OnFrameAvailableListener, Runnabl
     }
 
     private static EGLContext a(EGLDisplay eGLDisplay, EGLConfig eGLConfig, int i) {
-        EGLContext eglCreateContext = EGL14.eglCreateContext(eGLDisplay, eGLConfig, EGL14.EGL_NO_CONTEXT, i == 0 ? new int[]{12440, 2, 12344} : new int[]{12440, 2, e, 1, 12344}, 0);
+        EGLContext eglCreateContext = EGL14.eglCreateContext(eGLDisplay, eGLConfig, EGL14.EGL_NO_CONTEXT, i == 0 ? new int[]{12440, 2, EGL14.EGL_NONE} : new int[]{12440, 2, e, 1, EGL14.EGL_NONE}, 0);
         if (eglCreateContext != null) {
             return eglCreateContext;
         }
@@ -72,7 +72,7 @@ public final class g implements SurfaceTexture.OnFrameAvailableListener, Runnabl
         if (i == 1) {
             eglCreatePbufferSurface = EGL14.EGL_NO_SURFACE;
         } else {
-            eglCreatePbufferSurface = EGL14.eglCreatePbufferSurface(eGLDisplay, eGLConfig, i == 2 ? new int[]{12375, 1, 12374, 1, e, 1, 12344} : new int[]{12375, 1, 12374, 1, 12344}, 0);
+            eglCreatePbufferSurface = EGL14.eglCreatePbufferSurface(eGLDisplay, eGLConfig, i == 2 ? new int[]{EGL14.EGL_WIDTH, 1, EGL14.EGL_HEIGHT, 1, e, 1, EGL14.EGL_NONE} : new int[]{EGL14.EGL_WIDTH, 1, EGL14.EGL_HEIGHT, 1, EGL14.EGL_NONE}, 0);
             if (eglCreatePbufferSurface == null) {
                 throw new a("eglCreatePbufferSurface failed", (byte) 0);
             }
@@ -125,7 +125,7 @@ public final class g implements SurfaceTexture.OnFrameAvailableListener, Runnabl
             if (eGLContext != null) {
                 EGL14.eglDestroyContext(this.h, eGLContext);
             }
-            if (af.f7632a >= 19) {
+            if (af.f4793a >= 19) {
                 EGL14.eglReleaseThread();
             }
             this.h = null;
@@ -147,7 +147,7 @@ public final class g implements SurfaceTexture.OnFrameAvailableListener, Runnabl
             if (eGLContext2 != null) {
                 EGL14.eglDestroyContext(this.h, eGLContext2);
             }
-            if (af.f7632a >= 19) {
+            if (af.f4793a >= 19) {
                 EGL14.eglReleaseThread();
             }
             this.h = null;
@@ -176,7 +176,7 @@ public final class g implements SurfaceTexture.OnFrameAvailableListener, Runnabl
             throw new a(af.a("eglChooseConfig failed: success=%b, numConfigs[0]=%d, configs[0]=%s", Boolean.valueOf(eglChooseConfig), Integer.valueOf(iArr2[0]), eGLConfigArr[0]), (byte) 0);
         }
         EGLConfig eGLConfig = eGLConfigArr[0];
-        EGLContext eglCreateContext = EGL14.eglCreateContext(this.h, eGLConfig, EGL14.EGL_NO_CONTEXT, i == 0 ? new int[]{12440, 2, 12344} : new int[]{12440, 2, e, 1, 12344}, 0);
+        EGLContext eglCreateContext = EGL14.eglCreateContext(this.h, eGLConfig, EGL14.EGL_NO_CONTEXT, i == 0 ? new int[]{12440, 2, EGL14.EGL_NONE} : new int[]{12440, 2, e, 1, EGL14.EGL_NONE}, 0);
         if (eglCreateContext == null) {
             throw new a("eglCreateContext failed", (byte) 0);
         }
@@ -185,7 +185,7 @@ public final class g implements SurfaceTexture.OnFrameAvailableListener, Runnabl
         if (i == 1) {
             eglCreatePbufferSurface = EGL14.EGL_NO_SURFACE;
         } else {
-            eglCreatePbufferSurface = EGL14.eglCreatePbufferSurface(eGLDisplay, eGLConfig, i == 2 ? new int[]{12375, 1, 12374, 1, e, 1, 12344} : new int[]{12375, 1, 12374, 1, 12344}, 0);
+            eglCreatePbufferSurface = EGL14.eglCreatePbufferSurface(eGLDisplay, eGLConfig, i == 2 ? new int[]{EGL14.EGL_WIDTH, 1, EGL14.EGL_HEIGHT, 1, e, 1, EGL14.EGL_NONE} : new int[]{EGL14.EGL_WIDTH, 1, EGL14.EGL_HEIGHT, 1, EGL14.EGL_NONE}, 0);
             if (eglCreatePbufferSurface == null) {
                 throw new a("eglCreatePbufferSurface failed", (byte) 0);
             }

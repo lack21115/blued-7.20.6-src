@@ -2,7 +2,6 @@ package com.tencent.tinker.loader;
 
 import android.content.Context;
 import android.content.Intent;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.tinker.loader.app.TinkerApplication;
 import com.tencent.tinker.loader.shareutil.ShareIntentUtil;
 import com.tencent.tinker.loader.shareutil.SharePatchFileUtil;
@@ -36,7 +35,7 @@ public class TinkerResourceLoader {
             ShareIntentUtil.setIntentReturnCode(intent, -8);
             return false;
         }
-        String str3 = str + BridgeUtil.SPLIT_MARK + "res" + BridgeUtil.SPLIT_MARK;
+        String str3 = str + "/res/";
         File file = new File(str3);
         if (!file.exists() || !file.isDirectory()) {
             ShareIntentUtil.setIntentReturnCode(intent, -21);
@@ -62,7 +61,7 @@ public class TinkerResourceLoader {
         if (shareResPatchInfo == null || shareResPatchInfo.resArscMd5 == null) {
             return true;
         }
-        String str2 = str + BridgeUtil.SPLIT_MARK + "res" + BridgeUtil.SPLIT_MARK + "resources.apk";
+        String str2 = str + "/res/resources.apk";
         File file = new File(str2);
         long currentTimeMillis = System.currentTimeMillis();
         if (tinkerApplication.isTinkerLoadVerifyFlag()) {

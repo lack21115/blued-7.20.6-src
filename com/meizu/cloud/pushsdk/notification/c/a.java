@@ -1,9 +1,9 @@
 package com.meizu.cloud.pushsdk.notification.c;
 
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.huawei.openalliance.ad.utils.p;
 import com.meizu.cloud.pushinternal.DebugLogger;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.File;
 import java.io.FileFilter;
 import java.io.FileInputStream;
@@ -31,7 +31,7 @@ public class a {
                 }
                 if (file.isFile()) {
                     FileInputStream fileInputStream = new FileInputStream(file);
-                    FileOutputStream fileOutputStream = new FileOutputStream(str2 + BridgeUtil.SPLIT_MARK + file.getName());
+                    FileOutputStream fileOutputStream = new FileOutputStream(str2 + "/" + file.getName());
                     byte[] bArr = new byte[5120];
                     while (true) {
                         int read = fileInputStream.read(bArr);
@@ -44,7 +44,7 @@ public class a {
                     fileOutputStream.close();
                     fileInputStream.close();
                 } else if (file.isDirectory()) {
-                    a(str + BridgeUtil.SPLIT_MARK + str3, str2 + BridgeUtil.SPLIT_MARK + str3);
+                    a(str + "/" + str3, str2 + "/" + str3);
                 }
                 i = i2 + 1;
             }
@@ -120,7 +120,7 @@ public class a {
                 @Override // java.io.FileFilter
                 public boolean accept(File file2) {
                     try {
-                        return Long.valueOf(String.this).longValue() > Long.valueOf(file2.getName().split("-")[1]).longValue();
+                        return Long.valueOf(str2).longValue() > Long.valueOf(file2.getName().split(Constants.ACCEPT_TIME_SEPARATOR_SERVER)[1]).longValue();
                     } catch (Exception e) {
                         DebugLogger.e(p.Code, "filters file error " + e.getMessage());
                         return true;

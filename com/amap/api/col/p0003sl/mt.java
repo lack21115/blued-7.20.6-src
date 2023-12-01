@@ -8,7 +8,7 @@ import java.net.UnknownHostException;
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/mt.class */
 public final class mt {
     public static void a(Throwable th) {
-        if (mi.f5382a) {
+        if (mi.a) {
             b(th);
         }
     }

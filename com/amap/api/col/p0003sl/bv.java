@@ -9,21 +9,17 @@ import org.json.JSONObject;
 /* renamed from: com.amap.api.col.3sl.bv  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/bv.class */
 public abstract class bv<T, V> {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected T f4797a;
+    protected T a;
     protected int b = 3;
-
-    /* renamed from: c  reason: collision with root package name */
-    protected Context f4798c;
+    protected Context c;
 
     public bv(Context context, T t) {
         a(context, t);
     }
 
     private void a(Context context, T t) {
-        this.f4798c = context;
-        this.f4797a = t;
+        this.c = context;
+        this.a = t;
     }
 
     private V d() throws AMapException {
@@ -38,7 +34,7 @@ public abstract class bv<T, V> {
             V v2 = v;
             hp.b bVar2 = bVar;
             try {
-                bVar = hp.a(this.f4798c, dw.a(), a(), b());
+                bVar = hp.a(this.c, dw.a(), a(), b());
                 V v3 = v;
                 v = a(a(bVar));
                 i3 = this.b;
@@ -60,7 +56,7 @@ public abstract class bv<T, V> {
     protected abstract Map<String, String> b();
 
     public final V c() throws AMapException {
-        if (this.f4797a != null) {
+        if (this.a != null) {
             return d();
         }
         return null;

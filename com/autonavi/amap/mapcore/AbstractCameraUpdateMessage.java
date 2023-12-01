@@ -1,7 +1,7 @@
 package com.autonavi.amap.mapcore;
 
 import android.graphics.Point;
-import com.amap.api.col.p0003sl.dw;
+import com.amap.api.col.3sl.dw;
 import com.amap.api.maps.AMap;
 import com.amap.api.maps.model.CameraPosition;
 import com.amap.api.maps.model.LatLngBounds;
@@ -87,8 +87,7 @@ public abstract class AbstractCameraUpdateMessage {
 
     public abstract void mergeCameraUpdateDelegate(AbstractCameraUpdateMessage abstractCameraUpdateMessage);
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    public void normalChange(IGLMapState iGLMapState) {
+    protected void normalChange(IGLMapState iGLMapState) {
         this.zoom = Float.isNaN(this.zoom) ? iGLMapState.getMapZoomer() : this.zoom;
         this.bearing = Float.isNaN(this.bearing) ? iGLMapState.getMapAngle() : this.bearing;
         this.tilt = Float.isNaN(this.tilt) ? iGLMapState.getCameraDegree() : this.tilt;

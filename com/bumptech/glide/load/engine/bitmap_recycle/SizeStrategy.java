@@ -8,18 +8,18 @@ import java.util.NavigableMap;
 final class SizeStrategy implements LruPoolStrategy {
 
     /* renamed from: a  reason: collision with root package name */
-    private final KeyPool f20818a = new KeyPool();
+    private final KeyPool f7212a = new KeyPool();
     private final GroupedLinkedMap<Key, Bitmap> b = new GroupedLinkedMap<>();
 
     /* renamed from: c  reason: collision with root package name */
-    private final NavigableMap<Integer, Integer> f20819c = new PrettyPrintTreeMap();
+    private final NavigableMap<Integer, Integer> f7213c = new PrettyPrintTreeMap();
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-7206380-dex2jar.jar:com/bumptech/glide/load/engine/bitmap_recycle/SizeStrategy$Key.class */
     public static final class Key implements Poolable {
 
         /* renamed from: a  reason: collision with root package name */
-        int f20820a;
+        int f7214a;
         private final KeyPool b;
 
         Key(KeyPool keyPool) {
@@ -32,14 +32,14 @@ final class SizeStrategy implements LruPoolStrategy {
         }
 
         public void a(int i) {
-            this.f20820a = i;
+            this.f7214a = i;
         }
 
         public boolean equals(Object obj) {
             boolean z = false;
             if (obj instanceof Key) {
                 z = false;
-                if (this.f20820a == ((Key) obj).f20820a) {
+                if (this.f7214a == ((Key) obj).f7214a) {
                     z = true;
                 }
             }
@@ -47,11 +47,11 @@ final class SizeStrategy implements LruPoolStrategy {
         }
 
         public int hashCode() {
-            return this.f20820a;
+            return this.f7214a;
         }
 
         public String toString() {
-            return SizeStrategy.a(this.f20820a);
+            return SizeStrategy.a(this.f7214a);
         }
     }
 
@@ -82,11 +82,11 @@ final class SizeStrategy implements LruPoolStrategy {
     }
 
     private void a(Integer num) {
-        Integer num2 = this.f20819c.get(num);
+        Integer num2 = (Integer) this.f7213c.get(num);
         if (num2.intValue() == 1) {
-            this.f20819c.remove(num);
+            this.f7213c.remove(num);
         } else {
-            this.f20819c.put(num, Integer.valueOf(num2.intValue() - 1));
+            this.f7213c.put(num, Integer.valueOf(num2.intValue() - 1));
         }
     }
 
@@ -106,16 +106,16 @@ final class SizeStrategy implements LruPoolStrategy {
     @Override // com.bumptech.glide.load.engine.bitmap_recycle.LruPoolStrategy
     public Bitmap a(int i, int i2, Bitmap.Config config) {
         int a2 = Util.a(i, i2, config);
-        Key a3 = this.f20818a.a(a2);
-        Integer ceilingKey = this.f20819c.ceilingKey(Integer.valueOf(a2));
+        Key a3 = this.f7212a.a(a2);
+        Integer ceilingKey = this.f7213c.ceilingKey(Integer.valueOf(a2));
         Key key = a3;
         if (ceilingKey != null) {
             key = a3;
             if (ceilingKey.intValue() != a2) {
                 key = a3;
                 if (ceilingKey.intValue() <= a2 * 8) {
-                    this.f20818a.a((KeyPool) a3);
-                    key = this.f20818a.a(ceilingKey.intValue());
+                    this.f7212a.a((KeyPool) a3);
+                    key = this.f7212a.a(ceilingKey.intValue());
                 }
             }
         }
@@ -129,11 +129,11 @@ final class SizeStrategy implements LruPoolStrategy {
 
     @Override // com.bumptech.glide.load.engine.bitmap_recycle.LruPoolStrategy
     public void a(Bitmap bitmap) {
-        Key a2 = this.f20818a.a(Util.a(bitmap));
+        Key a2 = this.f7212a.a(Util.a(bitmap));
         this.b.a(a2, bitmap);
-        Integer num = this.f20819c.get(Integer.valueOf(a2.f20820a));
-        NavigableMap<Integer, Integer> navigableMap = this.f20819c;
-        int i = a2.f20820a;
+        Integer num = (Integer) this.f7213c.get(Integer.valueOf(a2.f7214a));
+        NavigableMap<Integer, Integer> navigableMap = this.f7213c;
+        int i = a2.f7214a;
         int i2 = 1;
         if (num != null) {
             i2 = 1 + num.intValue();
@@ -157,6 +157,6 @@ final class SizeStrategy implements LruPoolStrategy {
     }
 
     public String toString() {
-        return "SizeStrategy:\n  " + this.b + "\n  SortedSizes" + this.f20819c;
+        return "SizeStrategy:\n  " + this.b + "\n  SortedSizes" + this.f7213c;
     }
 }

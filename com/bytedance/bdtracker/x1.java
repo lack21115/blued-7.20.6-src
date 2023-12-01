@@ -2,6 +2,7 @@ package com.bytedance.bdtracker;
 
 import android.content.ContentValues;
 import android.database.Cursor;
+import android.provider.SearchIndexablesContract;
 import android.text.TextUtils;
 import androidx.constraintlayout.core.motion.utils.TypedValues;
 import com.bytedance.bdtracker.s2;
@@ -49,7 +50,7 @@ public class x1 extends t1 {
     @Override // com.bytedance.bdtracker.t1
     public t1 a(JSONObject jSONObject) {
         super.a(jSONObject);
-        this.f21309c = jSONObject.optLong("tea_event_index", 0L);
+        this.f7703c = jSONObject.optLong("tea_event_index", 0L);
         this.p = jSONObject.optString("category", null);
         this.q = jSONObject.optString("tag", null);
         this.t = jSONObject.optLong("value", 0L);
@@ -91,7 +92,7 @@ public class x1 extends t1 {
     @Override // com.bytedance.bdtracker.t1
     public void c(JSONObject jSONObject) {
         super.c(jSONObject);
-        jSONObject.put("tea_event_index", this.f21309c);
+        jSONObject.put("tea_event_index", this.f7703c);
         jSONObject.put("category", this.p);
         jSONObject.put("tag", this.q);
         jSONObject.put("value", this.t);
@@ -118,14 +119,14 @@ public class x1 extends t1 {
             jSONObject2 = new JSONObject();
         }
         jSONObject2.put("local_time_ms", this.b);
-        jSONObject2.put("tea_event_index", this.f21309c);
+        jSONObject2.put("tea_event_index", this.f7703c);
         jSONObject2.put("session_id", this.d);
         long j = this.e;
         if (j > 0) {
-            jSONObject2.put("user_id", j);
+            jSONObject2.put(SearchIndexablesContract.RawData.COLUMN_USER_ID, j);
         }
         int i = this.i;
-        if (i != s2.a.UNKNOWN.f21304a) {
+        if (i != s2.a.UNKNOWN.f7698a) {
             jSONObject2.put("nt", i);
         }
         jSONObject2.put("user_unique_id", TextUtils.isEmpty(this.f) ? JSONObject.NULL : this.f);

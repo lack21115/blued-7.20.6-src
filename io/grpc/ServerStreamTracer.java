@@ -10,10 +10,9 @@ public abstract class ServerStreamTracer extends StreamTracer {
         public abstract ServerStreamTracer newServerStreamTracer(String str, Metadata metadata);
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     @Deprecated
     /* loaded from: source-8829756-dex2jar.jar:io/grpc/ServerStreamTracer$ReadOnlyServerCall.class */
-    public static final class ReadOnlyServerCall<ReqT, RespT> extends ForwardingServerCall<ReqT, RespT> {
+    static final class ReadOnlyServerCall<ReqT, RespT> extends ForwardingServerCall<ReqT, RespT> {
         private final ServerCallInfo<ReqT, RespT> callInfo;
 
         private ReadOnlyServerCall(ServerCallInfo<ReqT, RespT> serverCallInfo) {

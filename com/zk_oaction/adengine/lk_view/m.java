@@ -7,6 +7,7 @@ import android.os.Build;
 import android.text.Layout;
 import android.text.StaticLayout;
 import android.text.TextPaint;
+import com.cdo.oaps.ad.OapsKey;
 import com.zk_oaction.adengine.lk_expression.c;
 
 /* loaded from: source-8829756-dex2jar.jar:com/zk_oaction/adengine/lk_view/m.class */
@@ -54,7 +55,7 @@ public class m extends b implements c.b {
     @Override // com.zk_oaction.adengine.lk_view.b, com.zk_oaction.adengine.lk_expression.a.w
     public void a(String str, float f) {
         com.zk_oaction.adengine.lk_expression.a aVar;
-        if (str != null && str.equals("size")) {
+        if (str != null && str.equals(OapsKey.KEY_SIZE)) {
             this.T.setTextSize(f);
         } else if ((str.equals("shadowRadius") && this.ac != null) || ((str.equals("shadowDx") && this.ad != null) || (str.equals("shadowDy") && this.ae != null))) {
             TextPaint textPaint = this.T;
@@ -83,7 +84,7 @@ public class m extends b implements c.b {
         throw new UnsupportedOperationException("Method not decompiled: com.zk_oaction.adengine.lk_view.m.b(org.xmlpull.v1.XmlPullParser, java.lang.String):boolean");
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
+    @Override // android.view.View
     public void draw(Canvas canvas) {
         this.T.setAlpha((int) (this.n * this.j));
         if (!this.aa) {
@@ -154,9 +155,8 @@ public class m extends b implements c.b {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z, int i, int i2, int i3, int i4) {
+    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         super.onLayout(z, i, i2, i3, i4);
     }
 

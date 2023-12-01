@@ -18,11 +18,11 @@ import java.util.List;
 public abstract class BaseDataSet<T extends Entry> implements IDataSet<T> {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f22121a;
+    private String f8514a;
     protected List<Integer> b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected GradientColor f22122c;
+    protected GradientColor f8515c;
     protected List<GradientColor> d;
     protected List<Integer> e;
     protected YAxis.AxisDependency f;
@@ -41,10 +41,10 @@ public abstract class BaseDataSet<T extends Entry> implements IDataSet<T> {
 
     public BaseDataSet() {
         this.b = null;
-        this.f22122c = null;
+        this.f8515c = null;
         this.d = null;
         this.e = null;
-        this.f22121a = "DataSet";
+        this.f8514a = "DataSet";
         this.f = YAxis.AxisDependency.LEFT;
         this.g = true;
         this.o = Legend.LegendForm.DEFAULT;
@@ -64,7 +64,7 @@ public abstract class BaseDataSet<T extends Entry> implements IDataSet<T> {
 
     public BaseDataSet(String str) {
         this();
-        this.f22121a = str;
+        this.f8514a = str;
     }
 
     @Override // com.github.mikephil.charting.interfaces.datasets.IDataSet
@@ -143,7 +143,7 @@ public abstract class BaseDataSet<T extends Entry> implements IDataSet<T> {
 
     @Override // com.github.mikephil.charting.interfaces.datasets.IDataSet
     public GradientColor l() {
-        return this.f22122c;
+        return this.f8515c;
     }
 
     @Override // com.github.mikephil.charting.interfaces.datasets.IDataSet
@@ -160,7 +160,7 @@ public abstract class BaseDataSet<T extends Entry> implements IDataSet<T> {
 
     @Override // com.github.mikephil.charting.interfaces.datasets.IDataSet
     public String o() {
-        return this.f22121a;
+        return this.f8514a;
     }
 
     @Override // com.github.mikephil.charting.interfaces.datasets.IDataSet

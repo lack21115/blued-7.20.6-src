@@ -3,7 +3,6 @@ package com.tencent.bugly.proguard;
 import android.content.Context;
 import android.text.TextUtils;
 import androidx.constraintlayout.core.motion.utils.TypedValues;
-import com.android.internal.util.cm.QSConstants;
 import com.baidu.mobads.sdk.api.IAdInterListener;
 import com.j256.ormlite.stmt.query.SimpleComparison;
 import com.tencent.bugly.crashreport.biz.UserInfoBean;
@@ -26,11 +25,11 @@ public class a {
     private static Proxy e;
 
     /* renamed from: a  reason: collision with root package name */
-    protected HashMap<String, HashMap<String, byte[]>> f35356a = new HashMap<>();
+    protected HashMap<String, HashMap<String, byte[]>> f21665a = new HashMap<>();
     protected String b;
 
     /* renamed from: c  reason: collision with root package name */
-    i f35357c;
+    i f21666c;
     private HashMap<String, Object> d;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -38,7 +37,7 @@ public class a {
         new HashMap();
         this.d = new HashMap<>();
         this.b = "GBK";
-        this.f35357c = new i();
+        this.f21666c = new i();
     }
 
     public static am a(Context context, int i, byte[] bArr) {
@@ -51,9 +50,9 @@ public class a {
         try {
             am amVar = new am();
             synchronized (b) {
-                amVar.f35371a = 1;
+                amVar.f21680a = 1;
                 amVar.b = b.f();
-                amVar.f35372c = b.f35130c;
+                amVar.f21681c = b.f21439c;
                 amVar.d = b.k;
                 amVar.e = b.m;
                 amVar.f = b.f;
@@ -127,10 +126,10 @@ public class a {
             return null;
         }
         aq aqVar = new aq();
-        aqVar.f35378a = userInfoBean.e;
+        aqVar.f21687a = userInfoBean.e;
         aqVar.e = userInfoBean.j;
-        aqVar.d = userInfoBean.f35114c;
-        aqVar.f35379c = userInfoBean.d;
+        aqVar.d = userInfoBean.f21423c;
+        aqVar.f21688c = userInfoBean.d;
         aqVar.g = userInfoBean.o == 1;
         int i = userInfoBean.b;
         if (i == 1) {
@@ -208,7 +207,7 @@ public class a {
         b.o();
         ar arVar = new ar();
         arVar.b = b.d;
-        arVar.f35381c = b.h();
+        arVar.f21690c = b.h();
         ArrayList<aq> arrayList = new ArrayList<>();
         for (UserInfoBean userInfoBean : list) {
             aq a2 = a(userInfoBean);
@@ -256,13 +255,13 @@ public class a {
             }
         }
         if (i == 1) {
-            arVar.f35380a = (byte) 1;
+            arVar.f21689a = (byte) 1;
             return arVar;
         } else if (i != 2) {
             x.e("unknown up type %d ", Integer.valueOf(i));
             return null;
         } else {
-            arVar.f35380a = (byte) 2;
+            arVar.f21689a = (byte) 2;
             return arVar;
         }
     }
@@ -433,7 +432,7 @@ public class a {
             dVar.a("utf-8");
             dVar.a(1);
             dVar.b("RqdServer");
-            dVar.c(QSConstants.TILE_SYNC);
+            dVar.c("sync");
             dVar.a("detail", (String) obj);
             return dVar.a();
         } catch (Throwable th) {
@@ -496,23 +495,23 @@ public class a {
         a(arrayList, t);
         hashMap.put(a(arrayList), a2);
         this.d.remove(str);
-        this.f35356a.put(str, hashMap);
+        this.f21665a.put(str, hashMap);
     }
 
     public void a(byte[] bArr) {
-        this.f35357c.a(bArr);
-        this.f35357c.a(this.b);
+        this.f21666c.a(bArr);
+        this.f21666c.a(this.b);
         HashMap hashMap = new HashMap(1);
         HashMap hashMap2 = new HashMap(1);
         hashMap2.put("", new byte[0]);
         hashMap.put("", hashMap2);
-        this.f35356a = this.f35357c.a((Map) hashMap, 0, false);
+        this.f21665a = this.f21666c.a((Map) hashMap, 0, false);
     }
 
     public byte[] a() {
         j jVar = new j(0);
         jVar.a(this.b);
-        jVar.a((Map) this.f35356a, 0);
+        jVar.a((Map) this.f21665a, 0);
         return l.a(jVar.a());
     }
 }

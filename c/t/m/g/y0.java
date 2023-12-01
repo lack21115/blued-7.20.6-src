@@ -10,10 +10,10 @@ import c.t.m.g.v0;
 public class y0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public Context f4063a;
+    public Context f4015a;
 
     public y0(Context context) {
-        this.f4063a = context;
+        this.f4015a = context;
     }
 
     public final String a(Cursor cursor) {
@@ -44,11 +44,11 @@ public class y0 {
 
     public void a(v0.b bVar) {
         try {
-            this.f4063a.getPackageManager().getPackageInfo("com.meizu.flyme.openidsdk", 0);
+            this.f4015a.getPackageManager().getPackageInfo("com.meizu.flyme.openidsdk", 0);
         } catch (Exception e) {
         }
         try {
-            Cursor query = this.f4063a.getContentResolver().query(Uri.parse("content://com.meizu.flyme.openidsdk/"), null, null, new String[]{"oaid"}, null);
+            Cursor query = this.f4015a.getContentResolver().query(Uri.parse("content://com.meizu.flyme.openidsdk/"), null, null, new String[]{"oaid"}, null);
             String a2 = a(query);
             boolean a3 = a();
             if (bVar != null) {
@@ -61,7 +61,7 @@ public class y0 {
 
     public boolean a() {
         try {
-            PackageManager packageManager = this.f4063a.getPackageManager();
+            PackageManager packageManager = this.f4015a.getPackageManager();
             boolean z = false;
             if (packageManager != null) {
                 z = false;

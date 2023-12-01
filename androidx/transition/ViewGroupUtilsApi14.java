@@ -7,16 +7,15 @@ import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8756600-dex2jar.jar:androidx/transition/ViewGroupUtilsApi14.class */
-public class ViewGroupUtilsApi14 {
+class ViewGroupUtilsApi14 {
 
     /* renamed from: a  reason: collision with root package name */
-    private static LayoutTransition f3495a;
+    private static LayoutTransition f3447a;
     private static Field b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static boolean f3496c;
+    private static boolean f3448c;
     private static Method d;
     private static boolean e;
 

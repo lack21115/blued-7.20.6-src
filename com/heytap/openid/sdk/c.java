@@ -7,11 +7,11 @@ import android.content.ServiceConnection;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    public com.heytap.openid.a f22270a = null;
+    public com.heytap.openid.a f8662a = null;
     public String b = null;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f22271c = null;
+    public String f8663c = null;
     public final Object d = new Object();
     public ServiceConnection e = new b(this);
 
@@ -19,7 +19,7 @@ public class c {
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final c f22272a = new c(null);
+        public static final c f8664a = new c(null);
     }
 
     public /* synthetic */ c(b bVar) {

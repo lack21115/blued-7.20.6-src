@@ -26,6 +26,7 @@ import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.RemoteViews;
 import com.android.internal.R;
+import com.anythink.core.common.l;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -344,7 +345,7 @@ public class ImageView extends View {
                 return;
             } else {
                 String scheme = this.mUri.getScheme();
-                if (ContentResolver.SCHEME_ANDROID_RESOURCE.equals(scheme)) {
+                if ("android.resource".equals(scheme)) {
                     try {
                         ContentResolver.OpenResourceIdResult resourceId = this.mContext.getContentResolver().getResourceId(this.mUri);
                         drawable = resourceId.r.getDrawable(resourceId.id, this.mContext.getTheme());
@@ -352,7 +353,7 @@ public class ImageView extends View {
                         Log.w("ImageView", "Unable to open content: " + this.mUri, e2);
                         drawable = null;
                     }
-                } else if ("content".equals(scheme) || ContentResolver.SCHEME_FILE.equals(scheme)) {
+                } else if (l.y.equals(scheme) || "file".equals(scheme)) {
                     InputStream inputStream = null;
                     InputStream inputStream2 = null;
                     try {

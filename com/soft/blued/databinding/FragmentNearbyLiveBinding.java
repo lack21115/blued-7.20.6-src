@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentNearbyLiveBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f28917a;
+    private final LinearLayout f15227a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f28917a;
+        return this.f15227a;
     }
 }

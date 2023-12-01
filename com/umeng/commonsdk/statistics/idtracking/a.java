@@ -8,16 +8,16 @@ import java.util.Locale;
 public abstract class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private final int f40914a = 10;
+    private final int f27223a = 10;
     private final int b = 100;
 
     /* renamed from: c  reason: collision with root package name */
-    private final String f40915c;
+    private final String f27224c;
     private List<com.umeng.commonsdk.statistics.proto.a> d;
     private com.umeng.commonsdk.statistics.proto.b e;
 
     public a(String str) {
-        this.f40915c = str;
+        this.f27224c = str;
     }
 
     private boolean g() {
@@ -36,7 +36,7 @@ public abstract class a {
         bVar2.a(System.currentTimeMillis());
         bVar2.a(h + 1);
         com.umeng.commonsdk.statistics.proto.a aVar = new com.umeng.commonsdk.statistics.proto.a();
-        aVar.a(this.f40915c);
+        aVar.a(this.f27224c);
         aVar.c(a2);
         aVar.b(b);
         aVar.a(bVar2.e());
@@ -67,7 +67,7 @@ public abstract class a {
     }
 
     public void a(com.umeng.commonsdk.statistics.proto.c cVar) {
-        this.e = cVar.c().get(this.f40915c);
+        this.e = cVar.c().get(this.f27224c);
         List<com.umeng.commonsdk.statistics.proto.a> h = cVar.h();
         if (h == null || h.size() <= 0) {
             return;
@@ -76,7 +76,7 @@ public abstract class a {
             this.d = new ArrayList();
         }
         for (com.umeng.commonsdk.statistics.proto.a aVar : h) {
-            if (this.f40915c.equals(aVar.f40939a)) {
+            if (this.f27224c.equals(aVar.f27248a)) {
                 this.d.add(aVar);
             }
         }
@@ -91,7 +91,7 @@ public abstract class a {
     }
 
     public String b() {
-        return this.f40915c;
+        return this.f27224c;
     }
 
     public boolean c() {

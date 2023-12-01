@@ -9,17 +9,17 @@ import com.oplus.log.e;
 public class b implements a {
 
     /* renamed from: a  reason: collision with root package name */
-    private d f24310a;
+    private d f10623a;
 
     public b(c cVar) {
         e eVar = new e();
-        this.f24310a = eVar;
+        this.f10623a = eVar;
         eVar.a(cVar);
     }
 
     @Override // com.oplus.log.a.a
     public final void a() {
-        d dVar = this.f24310a;
+        d dVar = this.f10623a;
         if (dVar != null) {
             dVar.a();
         }
@@ -27,7 +27,7 @@ public class b implements a {
 
     @Override // com.oplus.log.a.a
     public final void a(e.b bVar) {
-        d dVar = this.f24310a;
+        d dVar = this.f10623a;
         if (dVar != null) {
             dVar.a(bVar);
         }
@@ -35,7 +35,7 @@ public class b implements a {
 
     @Override // com.oplus.log.a.a
     public final void a(String str, String str2, byte b, int i) {
-        d dVar = this.f24310a;
+        d dVar = this.f10623a;
         if (dVar != null) {
             dVar.a(str, str2, b, i);
         }

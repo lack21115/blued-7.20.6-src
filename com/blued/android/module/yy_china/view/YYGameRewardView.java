@@ -15,13 +15,9 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYGameRewardView.class */
 public class YYGameRewardView extends RelativeLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private TextView f18169a;
+    private TextView a;
     private TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private ImageView f18170c;
+    private ImageView c;
     private ImageView d;
     private BaseYYStudioFragment e;
 
@@ -42,9 +38,9 @@ public class YYGameRewardView extends RelativeLayout {
 
     private void a() {
         LayoutInflater.from(getContext()).inflate(R.layout.dialog_game_reward_layout, (ViewGroup) this, true);
-        this.f18169a = (TextView) findViewById(R.id.tv_winner_num);
+        this.a = (TextView) findViewById(R.id.tv_winner_num);
         this.b = (TextView) findViewById(R.id.tv_reward_name);
-        this.f18170c = (ImageView) findViewById(R.id.iv_reward_img);
+        this.c = (ImageView) findViewById(R.id.iv_reward_img);
         ImageView imageView = (ImageView) findViewById(R.id.iv_close);
         this.d = imageView;
         imageView.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.YYGameRewardView.1
@@ -58,8 +54,8 @@ public class YYGameRewardView extends RelativeLayout {
 
     public void a(BaseYYStudioFragment baseYYStudioFragment, int i, String str, String str2) {
         this.e = baseYYStudioFragment;
-        ImageLoader.a(baseYYStudioFragment.getFragmentActive(), str).b(R.drawable.gift_default_icon).a(this.f18170c);
-        TextView textView = this.f18169a;
+        ImageLoader.a(baseYYStudioFragment.getFragmentActive(), str).b(R.drawable.gift_default_icon).a(this.c);
+        TextView textView = this.a;
         textView.setText("第" + i + "队队员奖励");
         this.b.setText(str2);
     }

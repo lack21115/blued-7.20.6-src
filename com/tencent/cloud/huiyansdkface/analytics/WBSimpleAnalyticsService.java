@@ -10,46 +10,46 @@ import java.util.Properties;
 public class WBSimpleAnalyticsService {
 
     /* renamed from: a  reason: collision with root package name */
-    private d f35493a = new d();
+    private d f21802a = new d();
 
     public void init(String str, String str2) {
-        this.f35493a.b.setAppId(str);
-        this.f35493a.i = str2;
+        this.f21802a.b.setAppId(str);
+        this.f21802a.i = str2;
     }
 
     public boolean startStatService(Context context, WBSimpleStartParam wBSimpleStartParam) {
-        return this.f35493a.a(context, wBSimpleStartParam);
+        return this.f21802a.a(context, wBSimpleStartParam);
     }
 
     public void trackCustomKVEvent(Context context, String str, String str2, Properties properties) {
-        this.f35493a.a(context, str, str2, properties, false);
+        this.f21802a.a(context, str, str2, properties, false);
     }
 
     public void trackIMSWarnVEvent(Context context, String str, String str2, Properties properties) {
-        this.f35493a.a(context, str, str2, properties, true);
+        this.f21802a.a(context, str, str2, properties, true);
     }
 
     @Deprecated
     public void trackIMSWarnVEvent(Context context, String str, Properties properties) {
-        this.f35493a.a(context, "IMSWarn", str, properties, true);
+        this.f21802a.a(context, "IMSWarn", str, properties, true);
     }
 
     public void updateEcifNo(String str) {
-        d dVar = this.f35493a;
+        d dVar = this.f21802a;
         dVar.b.setEcifNo(str);
         if (d.g != null) {
             SharedPreferences.Editor edit = d.g.getSharedPreferences(dVar.b.getAppId(), 0).edit();
-            edit.putString(d.f35504c, str);
+            edit.putString(d.f21813c, str);
             edit.commit();
         }
     }
 
     public void updateEnableWBAService(boolean z) {
-        this.f35493a.h = z;
+        this.f21802a.h = z;
     }
 
     public boolean updateFieldValue(String str, String str2) {
-        d dVar = this.f35493a;
+        d dVar = this.f21802a;
         if (TextUtils.isEmpty(str) || !str.startsWith("field_y_")) {
             return false;
         }
@@ -182,8 +182,8 @@ public class WBSimpleAnalyticsService {
         }
         switch (z) {
             case false:
-                Log.d(d.f35503a, "fieldKey=".concat(String.valueOf(str)));
-                Log.d(d.f35503a, "fieldValue=".concat(String.valueOf(str2)));
+                Log.d(d.f21812a, "fieldKey=".concat(String.valueOf(str)));
+                Log.d(d.f21812a, "fieldValue=".concat(String.valueOf(str2)));
                 dVar.b.setField_y_0(str2);
                 if (d.g != null) {
                     SharedPreferences.Editor edit = d.g.getSharedPreferences(dVar.b.getAppId(), 0).edit();
@@ -255,7 +255,7 @@ public class WBSimpleAnalyticsService {
     }
 
     public void updateOpenId(String str) {
-        d dVar = this.f35493a;
+        d dVar = this.f21802a;
         dVar.b.setOpenId(str);
         if (d.g != null) {
             SharedPreferences.Editor edit = d.g.getSharedPreferences(dVar.b.getAppId(), 0).edit();
@@ -265,7 +265,7 @@ public class WBSimpleAnalyticsService {
     }
 
     public void updateUnionId(String str) {
-        d dVar = this.f35493a;
+        d dVar = this.f21802a;
         dVar.b.setUnionId(str);
         if (d.g != null) {
             SharedPreferences.Editor edit = d.g.getSharedPreferences(dVar.b.getAppId(), 0).edit();

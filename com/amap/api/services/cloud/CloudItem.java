@@ -28,13 +28,9 @@ public class CloudItem implements Parcelable {
             return a(i);
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f5597a;
+    private String a;
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f5598c;
+    private String c;
     private String d;
     private HashMap<String, String> e;
     private List<CloudImage> f;
@@ -45,12 +41,12 @@ public class CloudItem implements Parcelable {
     /* JADX INFO: Access modifiers changed from: protected */
     public CloudItem(Parcel parcel) {
         this.b = -1;
-        this.f5597a = parcel.readString();
+        this.a = parcel.readString();
         this.b = parcel.readInt();
         this.mPoint = (LatLonPoint) parcel.readValue(LatLonPoint.class.getClassLoader());
         this.mTitle = parcel.readString();
         this.mSnippet = parcel.readString();
-        this.f5598c = parcel.readString();
+        this.c = parcel.readString();
         this.d = parcel.readString();
         HashMap<String, String> hashMap = new HashMap<>();
         this.e = hashMap;
@@ -62,7 +58,7 @@ public class CloudItem implements Parcelable {
 
     public CloudItem(String str, LatLonPoint latLonPoint, String str2, String str3) {
         this.b = -1;
-        this.f5597a = str;
+        this.a = str;
         this.mPoint = latLonPoint;
         this.mTitle = str2;
         this.mSnippet = str3;
@@ -79,8 +75,8 @@ public class CloudItem implements Parcelable {
         }
         if (obj != null && (obj instanceof CloudItem)) {
             CloudItem cloudItem = (CloudItem) obj;
-            String str = this.f5597a;
-            return str == null ? cloudItem.f5597a == null : str.equals(cloudItem.f5597a);
+            String str = this.a;
+            return str == null ? cloudItem.a == null : str.equals(cloudItem.a);
         }
         return false;
     }
@@ -90,7 +86,7 @@ public class CloudItem implements Parcelable {
     }
 
     public String getCreatetime() {
-        return this.f5598c;
+        return this.c;
     }
 
     public HashMap<String, String> getCustomfield() {
@@ -102,7 +98,7 @@ public class CloudItem implements Parcelable {
     }
 
     public String getID() {
-        return this.f5597a;
+        return this.a;
     }
 
     public LatLonPoint getLatLonPoint() {
@@ -122,12 +118,12 @@ public class CloudItem implements Parcelable {
     }
 
     public int hashCode() {
-        String str = this.f5597a;
+        String str = this.a;
         return (str == null ? 0 : str.hashCode()) + 31;
     }
 
     public void setCreatetime(String str) {
-        this.f5598c = str;
+        this.c = str;
     }
 
     public void setCustomfield(HashMap<String, String> hashMap) {
@@ -152,12 +148,12 @@ public class CloudItem implements Parcelable {
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.f5597a);
+        parcel.writeString(this.a);
         parcel.writeInt(this.b);
         parcel.writeValue(this.mPoint);
         parcel.writeString(this.mTitle);
         parcel.writeString(this.mSnippet);
-        parcel.writeString(this.f5598c);
+        parcel.writeString(this.c);
         parcel.writeString(this.d);
         parcel.writeMap(this.e);
         parcel.writeList(this.f);

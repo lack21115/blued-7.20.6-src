@@ -44,12 +44,12 @@ public class HashMap<K, V> extends AbstractMap<K, V> implements Cloneable, Seria
         private EntrySet() {
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public void clear() {
             HashMap.this.clear();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean contains(Object obj) {
             if (obj instanceof Map.Entry) {
                 Map.Entry entry = (Map.Entry) obj;
@@ -58,7 +58,7 @@ public class HashMap<K, V> extends AbstractMap<K, V> implements Cloneable, Seria
             return false;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean isEmpty() {
             return HashMap.this.size == 0;
         }
@@ -68,7 +68,7 @@ public class HashMap<K, V> extends AbstractMap<K, V> implements Cloneable, Seria
             return HashMap.this.newEntryIterator();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean remove(Object obj) {
             if (obj instanceof Map.Entry) {
                 Map.Entry entry = (Map.Entry) obj;
@@ -77,7 +77,7 @@ public class HashMap<K, V> extends AbstractMap<K, V> implements Cloneable, Seria
             return false;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection
         public int size() {
             return HashMap.this.size;
         }
@@ -229,17 +229,17 @@ public class HashMap<K, V> extends AbstractMap<K, V> implements Cloneable, Seria
         private KeySet() {
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public void clear() {
             HashMap.this.clear();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean contains(Object obj) {
             return HashMap.this.containsKey(obj);
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean isEmpty() {
             return HashMap.this.size == 0;
         }
@@ -249,14 +249,14 @@ public class HashMap<K, V> extends AbstractMap<K, V> implements Cloneable, Seria
             return HashMap.this.newKeyIterator();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean remove(Object obj) {
             int i = HashMap.this.size;
             HashMap.this.remove(obj);
             return HashMap.this.size != i;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection
         public int size() {
             return HashMap.this.size;
         }
@@ -280,17 +280,17 @@ public class HashMap<K, V> extends AbstractMap<K, V> implements Cloneable, Seria
         private Values() {
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public void clear() {
             HashMap.this.clear();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean contains(Object obj) {
             return HashMap.this.containsValue(obj);
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean isEmpty() {
             return HashMap.this.size == 0;
         }
@@ -300,7 +300,7 @@ public class HashMap<K, V> extends AbstractMap<K, V> implements Cloneable, Seria
             return HashMap.this.newValueIterator();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection
         public int size() {
             return HashMap.this.size;
         }
@@ -590,7 +590,7 @@ public class HashMap<K, V> extends AbstractMap<K, V> implements Cloneable, Seria
     }
 
     private void writeObject(ObjectOutputStream objectOutputStream) throws IOException {
-        objectOutputStream.putFields().put("loadFactor", 0.75f);
+        objectOutputStream.putFields().put("loadFactor", DEFAULT_LOAD_FACTOR);
         objectOutputStream.writeFields();
         objectOutputStream.writeInt(this.table.length);
         objectOutputStream.writeInt(this.size);

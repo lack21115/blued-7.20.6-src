@@ -17,26 +17,20 @@ import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/adapter/UserMedalsAdapter.class */
 public class UserMedalsAdapter extends RecyclerView.Adapter<MedalViewHolder> implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    private LayoutInflater f11716a;
+    private LayoutInflater a;
     private List<AnchorMedal> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private Context f11717c;
+    private Context c;
     private RecyclerViewItemClickListener d;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/adapter/UserMedalsAdapter$MedalViewHolder.class */
     public class MedalViewHolder extends RecyclerView.ViewHolder {
-
-        /* renamed from: a  reason: collision with root package name */
-        public ImageView f11718a;
+        public ImageView a;
         public LinearLayout b;
 
         public MedalViewHolder(View view) {
             super(view);
-            this.f11718a = (ImageView) view.findViewById(R.id.img_medal);
+            this.a = (ImageView) view.findViewById(R.id.img_medal);
             this.b = (LinearLayout) view.findViewById(R.id.ll_content);
         }
     }
@@ -47,24 +41,22 @@ public class UserMedalsAdapter extends RecyclerView.Adapter<MedalViewHolder> imp
     }
 
     public UserMedalsAdapter(Context context, List<AnchorMedal> list) {
-        this.f11717c = context;
-        this.f11716a = LayoutInflater.from(context);
+        this.c = context;
+        this.a = LayoutInflater.from(context);
         this.b = list;
     }
 
     public View a() {
-        return this.f11716a.inflate(R.layout.item_user_anchor_medal4card, (ViewGroup) null);
+        return this.a.inflate(R.layout.item_user_anchor_medal4card, (ViewGroup) null);
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     /* renamed from: a */
     public MedalViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        View a2 = a();
-        a2.setOnClickListener(this);
-        return new MedalViewHolder(a2);
+        View a = a();
+        a.setOnClickListener(this);
+        return new MedalViewHolder(a);
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     /* renamed from: a */
     public void onBindViewHolder(MedalViewHolder medalViewHolder, int i) {
         if (medalViewHolder != null) {
@@ -72,7 +64,7 @@ public class UserMedalsAdapter extends RecyclerView.Adapter<MedalViewHolder> imp
             if (TextUtils.isEmpty(anchorMedal.pic)) {
                 return;
             }
-            ImageLoader.a((IRequestHost) null, anchorMedal.pic).a(medalViewHolder.f11718a);
+            ImageLoader.a((IRequestHost) null, anchorMedal.pic).a(medalViewHolder.a);
             medalViewHolder.b.setTag(Integer.valueOf(i));
         }
     }
@@ -81,7 +73,6 @@ public class UserMedalsAdapter extends RecyclerView.Adapter<MedalViewHolder> imp
         this.d = recyclerViewItemClickListener;
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     public int getItemCount() {
         return this.b.size();
     }

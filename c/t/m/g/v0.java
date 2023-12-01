@@ -9,37 +9,37 @@ import com.ss.android.socialbase.downloader.constants.MonitorConstants;
 public class v0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public b f4017a;
+    public b f3969a;
 
     /* loaded from: source-8756600-dex2jar.jar:c/t/m/g/v0$a.class */
     public class a implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ String f4018a;
+        public final /* synthetic */ String f3970a;
         public final /* synthetic */ Context b;
 
         public a(String str, Context context) {
-            this.f4018a = str;
+            this.f3970a = str;
             this.b = context;
         }
 
         @Override // java.lang.Runnable
         public void run() {
             try {
-                if ("ASUS".equals(this.f4018a)) {
-                    new u0(this.b).a(v0.this.f4017a);
-                } else if ("HUAWEI".equals(this.f4018a)) {
-                    new w0(this.b).a(v0.this.f4017a);
-                } else if (com.tencent.tendinsv.utils.r.d.equals(this.f4018a)) {
-                    new b1(this.b).a(v0.this.f4017a);
-                } else if ("ONEPLUS".equals(this.f4018a)) {
-                    new a1(this.b).a(v0.this.f4017a);
-                } else if ("ZTE".equals(this.f4018a)) {
-                    new e1(this.b).a(v0.this.f4017a);
-                } else if ("FERRMEOS".equals(this.f4018a) || v0.this.b()) {
-                    new e1(this.b).a(v0.this.f4017a);
-                } else if ("SSUI".equals(this.f4018a) || v0.this.c()) {
-                    new e1(this.b).a(v0.this.f4017a);
+                if ("ASUS".equals(this.f3970a)) {
+                    new u0(this.b).a(v0.this.f3969a);
+                } else if ("HUAWEI".equals(this.f3970a)) {
+                    new w0(this.b).a(v0.this.f3969a);
+                } else if (com.tencent.tendinsv.utils.r.d.equals(this.f3970a)) {
+                    new b1(this.b).a(v0.this.f3969a);
+                } else if ("ONEPLUS".equals(this.f3970a)) {
+                    new a1(this.b).a(v0.this.f3969a);
+                } else if ("ZTE".equals(this.f3970a)) {
+                    new e1(this.b).a(v0.this.f3969a);
+                } else if ("FERRMEOS".equals(this.f3970a) || v0.this.b()) {
+                    new e1(this.b).a(v0.this.f3969a);
+                } else if ("SSUI".equals(this.f3970a) || v0.this.c()) {
+                    new e1(this.b).a(v0.this.f3969a);
                 }
             } catch (Exception e) {
                 String str = "getIDFromNewThead error: " + e;
@@ -53,7 +53,7 @@ public class v0 {
     }
 
     public v0(b bVar) {
-        this.f4017a = bVar;
+        this.f3969a = bVar;
     }
 
     public final String a() {
@@ -103,7 +103,7 @@ public class v0 {
     }
 
     public final void d() {
-        b bVar = this.f4017a;
+        b bVar = this.f3969a;
         if (bVar != null) {
             bVar.a(null, false);
         }

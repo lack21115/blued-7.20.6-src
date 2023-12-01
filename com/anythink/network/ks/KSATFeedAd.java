@@ -11,11 +11,11 @@ import java.lang.ref.WeakReference;
 public class KSATFeedAd extends CustomNativeAd {
 
     /* renamed from: a  reason: collision with root package name */
-    Context f8984a;
+    Context f6144a;
     KsFeedAd b;
 
     /* renamed from: c  reason: collision with root package name */
-    View f8985c;
+    View f6145c;
 
     /* renamed from: com.anythink.network.ks.KSATFeedAd$1  reason: invalid class name */
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/network/ks/KSATFeedAd$1.class */
@@ -49,7 +49,7 @@ public class KSATFeedAd extends CustomNativeAd {
     }
 
     public KSATFeedAd(Context context, KsFeedAd ksFeedAd, boolean z) {
-        this.f8984a = context.getApplicationContext();
+        this.f6144a = context.getApplicationContext();
         this.b = ksFeedAd;
         try {
             ksFeedAd.setVideoSoundEnable(z);
@@ -91,23 +91,23 @@ public class KSATFeedAd extends CustomNativeAd {
     public void clear(View view) {
     }
 
-    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd, com.anythink.core.api.BaseAd
+    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd
     public void destroy() {
         KsFeedAd ksFeedAd = this.b;
         if (ksFeedAd != null) {
             ksFeedAd.setAdInteractionListener(null);
             this.b = null;
         }
-        this.f8984a = null;
+        this.f6144a = null;
     }
 
-    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd, com.anythink.nativead.unitgroup.a, com.anythink.core.api.IATThirdPartyMaterial
+    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd, com.anythink.nativead.unitgroup.a
     public View getAdMediaView(Object... objArr) {
         try {
-            if (this.f8985c == null) {
-                this.f8985c = this.b.getFeedView(this.f8984a);
+            if (this.f6145c == null) {
+                this.f6145c = this.b.getFeedView(this.f6144a);
             }
-            return this.f8985c;
+            return this.f6145c;
         } catch (Exception e) {
             return null;
         }

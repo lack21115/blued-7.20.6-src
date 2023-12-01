@@ -9,7 +9,6 @@ import android.graphics.ColorFilter;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
-import android.media.MediaMetadataEditor;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
@@ -24,13 +23,9 @@ import java.util.List;
 /* renamed from: com.amap.api.col.3sl.ee  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/ee.class */
 public class ee extends ScrollView {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final String f4886a = ee.class.getSimpleName();
+    public static final String a = ee.class.getSimpleName();
     int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private Context f4887c;
+    private Context c;
     private LinearLayout d;
     private int e;
     private List<String> f;
@@ -114,7 +109,7 @@ public class ee extends ScrollView {
 
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:9:0x004f -> B:6:0x0027). Please submit an issue!!! */
     private void a(Context context) {
-        this.f4887c = context;
+        this.c = context;
         setVerticalScrollBarEnabled(false);
         try {
             if (this.i == null) {
@@ -169,15 +164,15 @@ public class ee extends ScrollView {
     }
 
     private TextView b(String str) {
-        TextView textView = new TextView(this.f4887c);
+        TextView textView = new TextView(this.c);
         textView.setLayoutParams(new FrameLayout.LayoutParams(-1, -2));
         textView.setSingleLine(true);
         textView.setTextSize(2, 16.0f);
         textView.setText(str);
         textView.setGravity(17);
         textView.getPaint().setFakeBoldText(true);
-        int a2 = a(this.f4887c, 8.0f);
-        int a3 = a(this.f4887c, 6.0f);
+        int a2 = a(this.c, 8.0f);
+        int a3 = a(this.c, 6.0f);
         textView.setPadding(a2, a3, a2, a3);
         if (this.e == 0) {
             this.e = a(textView);
@@ -188,7 +183,7 @@ public class ee extends ScrollView {
     }
 
     private static void b(View view) {
-        view.measure(View.MeasureSpec.makeMeasureSpec(0, 0), View.MeasureSpec.makeMeasureSpec(MediaMetadataEditor.KEY_EDITABLE_MASK, Integer.MIN_VALUE));
+        view.measure(View.MeasureSpec.makeMeasureSpec(0, 0), View.MeasureSpec.makeMeasureSpec(536870911, Integer.MIN_VALUE));
     }
 
     private void c() {
@@ -359,7 +354,7 @@ public class ee extends ScrollView {
     public void setBackgroundDrawable(Drawable drawable) {
         if (this.h == 0) {
             try {
-                WindowManager windowManager = (WindowManager) this.f4887c.getSystemService(Context.WINDOW_SERVICE);
+                WindowManager windowManager = (WindowManager) this.c.getSystemService("window");
                 if (windowManager != null) {
                     this.h = windowManager.getDefaultDisplay().getWidth();
                 }

@@ -112,7 +112,7 @@ public final class ImmutableRangeSet<C extends Comparable> extends AbstractRange
             return ImmutableRangeSet.this.ranges.isPartialView();
         }
 
-        @Override // com.google.common.collect.ImmutableSortedSet, com.google.common.collect.ImmutableSet, com.google.common.collect.ImmutableCollection, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+        @Override // com.google.common.collect.ImmutableSortedSet, com.google.common.collect.ImmutableSet, com.google.common.collect.ImmutableCollection, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set, com.google.common.collect.SortedIterable, java.util.NavigableSet
         public UnmodifiableIterator<C> iterator() {
             return new AbstractIterator<C>() { // from class: com.google.common.collect.ImmutableRangeSet.AsSet.1
                 Iterator<C> elemItr = Iterators.emptyIterator();
@@ -136,7 +136,7 @@ public final class ImmutableRangeSet<C extends Comparable> extends AbstractRange
             };
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
         public int size() {
             long j;
             Integer num = this.size;

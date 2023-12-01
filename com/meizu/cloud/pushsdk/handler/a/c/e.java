@@ -11,11 +11,11 @@ import org.json.JSONObject;
 public class e {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f24147a;
+    private int f10532a;
     private String b = String.valueOf(-1);
 
     /* renamed from: c  reason: collision with root package name */
-    private String f24148c = "";
+    private String f10533c = "";
     private String d = "";
     private int e = -1;
     private String f = "";
@@ -24,11 +24,11 @@ public class e {
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public String f24149a;
+        public String f10534a;
         public String b;
 
         /* renamed from: c  reason: collision with root package name */
-        String f24150c;
+        String f10535c;
 
         public a(String str) {
             if (TextUtils.isEmpty(str)) {
@@ -52,11 +52,11 @@ public class e {
         }
 
         public String a() {
-            return this.f24150c;
+            return this.f10535c;
         }
 
         public void a(String str) {
-            this.f24149a = str;
+            this.f10534a = str;
         }
 
         public void b(String str) {
@@ -64,11 +64,11 @@ public class e {
         }
 
         public void c(String str) {
-            this.f24150c = str;
+            this.f10535c = str;
         }
 
         public String toString() {
-            return "PublicKeyStatus{code='" + this.f24149a + "', message='" + this.b + "', publicKey='" + this.f24150c + "'}";
+            return "PublicKeyStatus{code='" + this.f10534a + "', message='" + this.b + "', publicKey='" + this.f10535c + "'}";
         }
     }
 
@@ -192,11 +192,11 @@ public class e {
     }
 
     public int a() {
-        return this.f24147a;
+        return this.f10532a;
     }
 
     public void a(int i) {
-        this.f24147a = i;
+        this.f10532a = i;
     }
 
     public void a(String str) {
@@ -212,11 +212,11 @@ public class e {
     }
 
     public void b(String str) {
-        this.f24148c = str;
+        this.f10533c = str;
     }
 
     public String c() {
-        return this.f24148c;
+        return this.f10533c;
     }
 
     public void c(String str) {
@@ -240,6 +240,6 @@ public class e {
     }
 
     public String toString() {
-        return "SecurityMessage{timestamp=" + this.f24147a + ", taskId='" + this.b + "', title='" + this.f24148c + "', content='" + this.d + "', clickType=" + this.e + ", params='" + this.f + "'}";
+        return "SecurityMessage{timestamp=" + this.f10532a + ", taskId='" + this.b + "', title='" + this.f10533c + "', content='" + this.d + "', clickType=" + this.e + ", params='" + this.f + "'}";
     }
 }

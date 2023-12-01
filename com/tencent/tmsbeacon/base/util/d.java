@@ -12,7 +12,7 @@ import java.util.Iterator;
 public class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private static boolean f39529a;
+    private static boolean f25838a;
 
     public static boolean a() {
         ArrayList<String> e = e();
@@ -55,7 +55,7 @@ public class d {
     }
 
     public static boolean d() {
-        if (f39529a) {
+        if (f25838a) {
             return true;
         }
         boolean z = true;
@@ -65,7 +65,7 @@ public class d {
                 z = a();
             }
         }
-        f39529a = z;
+        f25838a = z;
         return z;
     }
 

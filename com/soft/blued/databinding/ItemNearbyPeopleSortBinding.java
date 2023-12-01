@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemNearbyPeopleSortBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29266a;
+    private final LinearLayout f15576a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29266a;
+        return this.f15576a;
     }
 }

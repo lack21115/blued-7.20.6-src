@@ -9,17 +9,17 @@ import java.util.regex.Pattern;
 public class g {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Pattern f24031a = Pattern.compile("([a-zA-Z0-9-!#$%&'*+.^_`{|}~]+)/([a-zA-Z0-9-!#$%&'*+.^_`{|}~]+)");
+    private static final Pattern f10420a = Pattern.compile("([a-zA-Z0-9-!#$%&'*+.^_`{|}~]+)/([a-zA-Z0-9-!#$%&'*+.^_`{|}~]+)");
     private static final Pattern b = Pattern.compile(";\\s*(?:([a-zA-Z0-9-!#$%&'*+.^_`{|}~]+)=(?:([a-zA-Z0-9-!#$%&'*+.^_`{|}~]+)|\"([^\"]*)\"))?");
 
     /* renamed from: c  reason: collision with root package name */
-    private final String f24032c;
+    private final String f10421c;
     private final String d;
     private final String e;
     private final String f;
 
     private g(String str, String str2, String str3, String str4) {
-        this.f24032c = str;
+        this.f10421c = str;
         this.d = str2;
         this.e = str3;
         this.f = str4;
@@ -27,7 +27,7 @@ public class g {
 
     public static g a(String str) {
         String group;
-        Matcher matcher = f24031a.matcher(str);
+        Matcher matcher = f10420a.matcher(str);
         if (!matcher.lookingAt()) {
             return null;
         }
@@ -71,14 +71,14 @@ public class g {
     }
 
     public boolean equals(Object obj) {
-        return (obj instanceof g) && ((g) obj).f24032c.equals(this.f24032c);
+        return (obj instanceof g) && ((g) obj).f10421c.equals(this.f10421c);
     }
 
     public int hashCode() {
-        return this.f24032c.hashCode();
+        return this.f10421c.hashCode();
     }
 
     public String toString() {
-        return this.f24032c;
+        return this.f10421c;
     }
 }

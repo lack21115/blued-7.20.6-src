@@ -12,11 +12,11 @@ import java.util.logging.Logger;
 public final class PngHelperInternal {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Logger f3645a = Logger.getLogger("ar.com.pngj");
+    public static final Logger f3597a = Logger.getLogger("ar.com.pngj");
     public static String b = "ISO-8859-1";
 
     /* renamed from: c  reason: collision with root package name */
-    public static Charset f3646c = Charset.forName("ISO-8859-1");
+    public static Charset f3598c = Charset.forName("ISO-8859-1");
     public static String d = "UTF-8";
     public static Charset e = Charset.forName("UTF-8");
     private static ThreadLocal<Boolean> f = new ThreadLocal<Boolean>() { // from class: ar.com.hjg.pngj.PngHelperInternal.1

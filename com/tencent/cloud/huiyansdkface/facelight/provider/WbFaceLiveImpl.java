@@ -6,6 +6,7 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
 import android.text.TextUtils;
+import com.huawei.openalliance.ad.constant.t;
 import com.tencent.cloud.huiyansdkface.R;
 import com.tencent.cloud.huiyansdkface.facelight.api.result.WbFaceError;
 import com.tencent.cloud.huiyansdkface.facelight.common.CloudFaceCountDownTimer;
@@ -42,11 +43,11 @@ import java.util.TimerTask;
 public class WbFaceLiveImpl implements WbFaceModeInterface {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f35642a;
+    private Context f21951a;
     private d b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f35643c;
+    private int f21952c;
     private int d;
     private int e;
     private boolean f;
@@ -69,11 +70,11 @@ public class WbFaceLiveImpl implements WbFaceModeInterface {
     public class AnonymousClass4 implements WeReq.Callback<GetGradeFaceCompareResult.GetResultReflectModeResponse> {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ byte[] f35649a;
+        final /* synthetic */ byte[] f21958a;
         final /* synthetic */ byte[] b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ String f35650c;
+        final /* synthetic */ String f21959c;
         final /* synthetic */ String d;
         final /* synthetic */ String e;
         final /* synthetic */ FlashReq f;
@@ -82,9 +83,9 @@ public class WbFaceLiveImpl implements WbFaceModeInterface {
         final /* synthetic */ String i;
 
         AnonymousClass4(byte[] bArr, byte[] bArr2, String str, String str2, String str3, FlashReq flashReq, boolean z, String str4, String str5) {
-            this.f35649a = bArr;
+            this.f21958a = bArr;
             this.b = bArr2;
-            this.f35650c = str;
+            this.f21959c = str;
             this.d = str2;
             this.e = str3;
             this.f = flashReq;
@@ -104,7 +105,7 @@ public class WbFaceLiveImpl implements WbFaceModeInterface {
             if (getResultReflectModeResponse == null) {
                 WLogger.i("WbFaceLiveImpl", "Reflect Mode upload failed! baseResponse is null！");
                 WbFaceLiveImpl.this.a(false, (FaceWillResult) null, WbFaceInnerError.create(WbFaceError.WBFaceErrorDomainSeverFailed, WbFaceError.WBFaceErrorCodeCompareServerError, "报文解析异常", "Reflect Mode upload failed! baseResponse is null！"));
-                KycWaSDK.getInstance().trackCustomKVEvent(WbFaceLiveImpl.this.f35642a, "facepage_upload_server_error", "51200+Reflect Mode upload failed! baseResponse is null！", null);
+                KycWaSDK.getInstance().trackCustomKVEvent(WbFaceLiveImpl.this.f21951a, "facepage_upload_server_error", "51200+Reflect Mode upload failed! baseResponse is null！", null);
                 return;
             }
             String str = this.g ? getResultReflectModeResponse.encryptBody : getResultReflectModeResponse.enMsg;
@@ -113,7 +114,7 @@ public class WbFaceLiveImpl implements WbFaceModeInterface {
                 String str2 = "upload failed!enMsg is null！" + getResultReflectModeResponse.code + "," + getResultReflectModeResponse.msg + "," + getResultReflectModeResponse.debugMsg;
                 WbFaceLiveImpl.this.a(false, (FaceWillResult) null, WbFaceInnerError.create(WbFaceError.WBFaceErrorDomainSeverFailed, WbFaceError.WBFaceErrorCodeCompareServerError, "报文解析异常", str2));
                 String encryptAESKey = WbCloudNetSecurityManger.encryptAESKey(this.g, this.h, "faceCompare:");
-                KycWaSDK.getInstance().trackCustomKVEvent(WbFaceLiveImpl.this.f35642a, "facepage_upload_server_error", "51200+" + str2 + ";" + this.i + ";" + encryptAESKey, null);
+                KycWaSDK.getInstance().trackCustomKVEvent(WbFaceLiveImpl.this.f21951a, "facepage_upload_server_error", "51200+" + str2 + t.aE + this.i + t.aE + encryptAESKey, null);
                 return;
             }
             try {
@@ -138,11 +139,11 @@ public class WbFaceLiveImpl implements WbFaceModeInterface {
                     String str10 = compareResult.isRecorded;
                     if (TextUtils.isEmpty(valueOf)) {
                         WLogger.e("WbFaceLiveImpl", "Reflect Mode upload failed! faceCode is null!");
-                        KycWaSDK.getInstance().trackCustomKVEvent(WbFaceLiveImpl.this.f35642a, "facepage_upload_server_error", "51200+Reflect Mode upload failed! faceCode is null!", null);
+                        KycWaSDK.getInstance().trackCustomKVEvent(WbFaceLiveImpl.this.f21951a, "facepage_upload_server_error", "51200+Reflect Mode upload failed! faceCode is null!", null);
                         WbFaceLiveImpl.this.a(false, (FaceWillResult) null, WbFaceInnerError.create(WbFaceLiveImpl.this.a(WbFaceError.WBFaceErrorDomainCompareServer, str10), WbFaceError.WBFaceErrorCodeCompareServerError, "报文解析异常", "Reflect Mode upload failed! faceCode is null!"));
                     } else if ("0".equals(valueOf)) {
                         WLogger.i("WbFaceLiveImpl", "Reflect Mode verify success!");
-                        KycWaSDK.getInstance().trackCustomKVEvent(WbFaceLiveImpl.this.f35642a, "facepage_upload_response", null, null);
+                        KycWaSDK.getInstance().trackCustomKVEvent(WbFaceLiveImpl.this.f21951a, "facepage_upload_response", null, null);
                         WbFaceLiveImpl.this.a(true, new FaceWillResult(valueOf, str3, str9, str7, str5, riskInfo, str6, str10), (WbFaceInnerError) null);
                     } else {
                         WLogger.i("WbFaceLiveImpl", "Reflect Mode verify failed!");
@@ -151,7 +152,7 @@ public class WbFaceLiveImpl implements WbFaceModeInterface {
                             WbFaceLiveImpl.this.a(valueOf);
                             return;
                         }
-                        KycWaSDK.getInstance().trackCustomKVEvent(WbFaceLiveImpl.this.f35642a, "facepage_upload_server_error", valueOf + "+" + str3, null);
+                        KycWaSDK.getInstance().trackCustomKVEvent(WbFaceLiveImpl.this.f21951a, "facepage_upload_server_error", valueOf + "+" + str3, null);
                         WbFaceLiveImpl.this.a(false, (FaceWillResult) null, WbFaceInnerError.create(WbFaceLiveImpl.this.a(WbFaceError.WBFaceErrorDomainCompareServer, str10), valueOf, str4, str3, str9, str7, str5, riskInfo, str6, str10));
                     }
                 }
@@ -161,8 +162,8 @@ public class WbFaceLiveImpl implements WbFaceModeInterface {
                 String str11 = "Compare Result decry failed！ " + e.toString();
                 Properties properties = new Properties();
                 properties.setProperty("enKey", this.i);
-                KycWaSDK.getInstance().trackCustomKVEvent(WbFaceLiveImpl.this.f35642a, "faceservice_data_serialize_decry_fail", str11, properties);
-                KycWaSDK.getInstance().trackCustomKVEvent(WbFaceLiveImpl.this.f35642a, "facepage_upload_server_error", str11, null);
+                KycWaSDK.getInstance().trackCustomKVEvent(WbFaceLiveImpl.this.f21951a, "faceservice_data_serialize_decry_fail", str11, properties);
+                KycWaSDK.getInstance().trackCustomKVEvent(WbFaceLiveImpl.this.f21951a, "facepage_upload_server_error", str11, null);
                 WbFaceLiveImpl.this.a(false, (FaceWillResult) null, WbFaceInnerError.create(WbFaceError.WBFaceErrorDomainSeverFailed, WbFaceError.WBFaceErrorCodeDataSerilizerError, "报文解析异常", str11));
             }
         }
@@ -176,11 +177,11 @@ public class WbFaceLiveImpl implements WbFaceModeInterface {
             WLogger.e("WbFaceLiveImpl", "upload onFailed！" + errType + "," + i + "," + str);
             if (WbFaceLiveImpl.this.d == 0) {
                 KycWaSDK kycWaSDK = KycWaSDK.getInstance();
-                Context context = WbFaceLiveImpl.this.f35642a;
+                Context context = WbFaceLiveImpl.this.f21951a;
                 kycWaSDK.trackIMSWarnVEvent(context, "facepage_upload_network_error", errType + "," + i + "+" + str, null);
             } else {
                 KycWaSDK kycWaSDK2 = KycWaSDK.getInstance();
-                Context context2 = WbFaceLiveImpl.this.f35642a;
+                Context context2 = WbFaceLiveImpl.this.f21951a;
                 kycWaSDK2.trackCustomKVEvent(context2, "facepage_upload_retry", "retry=" + WbFaceLiveImpl.this.d + errType + "," + i + "+" + str, null);
             }
             if (errType == WeReq.ErrType.NETWORK) {
@@ -192,7 +193,7 @@ public class WbFaceLiveImpl implements WbFaceModeInterface {
                         WLogger.d("WbFaceLiveImpl", "need retry");
                         WbFaceLiveImpl.h(WbFaceLiveImpl.this);
                         WbFaceLiveImpl.this.i.onUiNetworkRetryTip();
-                        WbFaceLiveImpl.this.a(this.f35649a, this.b, this.f35650c, this.d, this.e, this.f);
+                        WbFaceLiveImpl.this.a(this.f21958a, this.b, this.f21959c, this.d, this.e, this.f);
                         return;
                     }
                     return;
@@ -262,7 +263,7 @@ public class WbFaceLiveImpl implements WbFaceModeInterface {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void a(final String str) {
-        if (this.f35643c == 9) {
+        if (this.f21952c == 9) {
             WLogger.d("WbFaceLiveImpl", "On finish Step,No more queryFaceResult!");
         } else if (this.f) {
             WLogger.e("WbFaceLiveImpl", "isAlreadyGetFaceResult!no more query!");
@@ -300,7 +301,7 @@ public class WbFaceLiveImpl implements WbFaceModeInterface {
                                 WLogger.w("WbFaceLiveImpl", "query no result;Go on RETRY!");
                                 return;
                             }
-                            KycWaSDK.getInstance().trackCustomKVEvent(WbFaceLiveImpl.this.f35642a, "facepage_upload_server_error", "51100+FACEID_INVALID+QUERY_NO_RESULT", null);
+                            KycWaSDK.getInstance().trackCustomKVEvent(WbFaceLiveImpl.this.f21951a, "facepage_upload_server_error", "51100+FACEID_INVALID+QUERY_NO_RESULT", null);
                             WbFaceLiveImpl.this.a(false, (FaceWillResult) null, WbFaceInnerError.create(WbFaceError.WBFaceErrorDomainCompareNetwork, WbFaceError.WBFaceErrorCodeCompareNetworkError, "网络异常", "Query response error!"));
                         } else {
                             String str3 = "1".equals(queryResult.retry) ? "1" : "0";
@@ -315,12 +316,12 @@ public class WbFaceLiveImpl implements WbFaceModeInterface {
                             String str6 = queryResult.isRecorded;
                             if ("0".equals(valueOf)) {
                                 WLogger.i("WbFaceLiveImpl", "verify success!");
-                                KycWaSDK.getInstance().trackCustomKVEvent(WbFaceLiveImpl.this.f35642a, "facepage_upload_query_response", "0", null);
+                                KycWaSDK.getInstance().trackCustomKVEvent(WbFaceLiveImpl.this.f21951a, "facepage_upload_query_response", "0", null);
                                 WbFaceLiveImpl.this.a(true, new FaceWillResult(valueOf, queryResult.msg, str5, str4, str3, queryResult.riskInfo, queryResult.sign, str6), (WbFaceInnerError) null);
                                 return;
                             }
                             WLogger.i("WbFaceLiveImpl", "verify failed!");
-                            KycWaSDK.getInstance().trackCustomKVEvent(WbFaceLiveImpl.this.f35642a, "facepage_upload_query_response", valueOf, null);
+                            KycWaSDK.getInstance().trackCustomKVEvent(WbFaceLiveImpl.this.f21951a, "facepage_upload_query_response", valueOf, null);
                             WbFaceLiveImpl.this.a(false, (FaceWillResult) null, WbFaceInnerError.create(WbFaceLiveImpl.this.a(WbFaceError.WBFaceErrorDomainCompareServer, str6), valueOf, queryResult.msg, queryResult.msg, str5, str4, str3, queryResult.riskInfo, queryResult.sign, str6));
                         }
                     } catch (Exception e) {
@@ -329,7 +330,7 @@ public class WbFaceLiveImpl implements WbFaceModeInterface {
                         Properties properties = new Properties();
                         properties.setProperty("enKey", encryptAESKey);
                         KycWaSDK kycWaSDK = KycWaSDK.getInstance();
-                        Context context = WbFaceLiveImpl.this.f35642a;
+                        Context context = WbFaceLiveImpl.this.f21951a;
                         kycWaSDK.trackCustomKVEvent(context, "faceservice_data_serialize_decry_fail", "Query Result decry failed！ " + e.toString(), properties);
                     }
                 }
@@ -397,14 +398,14 @@ public class WbFaceLiveImpl implements WbFaceModeInterface {
         final String generateAESKey = WbCloudNetSecurityManger.generateAESKey();
         final boolean isUseGm = WbSecureProviders.isUseGm();
         final String encryptAESKey = WbCloudNetSecurityManger.encryptAESKey(isUseGm, generateAESKey, "getActRes:");
-        KycWaSDK.getInstance().trackCustomKVEvent(this.f35642a, "facepage_get_flash_res", null, null);
+        KycWaSDK.getInstance().trackCustomKVEvent(this.f21951a, "facepage_get_flash_res", null, null);
         GetFaceActiveCompareType.requestExec(this.b.a(), generateAESKey, encryptAESKey, isUseGm, Param.getGradeCompareType(), selectData, new BaseCallback<GetFaceActiveCompareType.GetFaceCompareTypeResponse>() { // from class: com.tencent.cloud.huiyansdkface.facelight.provider.WbFaceLiveImpl.3
             @Override // com.tencent.cloud.huiyansdkface.wehttp2.WeReq.Callback, com.tencent.cloud.huiyansdkface.wehttp2.WeReq.InnerCallback
             /* renamed from: a */
             public void onSuccess(WeReq weReq, GetFaceActiveCompareType.GetFaceCompareTypeResponse getFaceCompareTypeResponse) {
                 if (getFaceCompareTypeResponse == null) {
                     WLogger.w("WbFaceLiveImpl", "baseResponse is null!");
-                    KycWaSDK.getInstance().trackCustomKVEvent(WbFaceLiveImpl.this.f35642a, "facepage_get_flash_res_server_error", "baseResponse is null!", null);
+                    KycWaSDK.getInstance().trackCustomKVEvent(WbFaceLiveImpl.this.f21951a, "facepage_get_flash_res_server_error", "baseResponse is null!", null);
                     processCallback.onFailed(WbFaceInnerError.create(WbFaceError.WBFaceErrorDomainGetInfoServer, WbFaceError.WBFaceErrorCodeGetInfoServerError, WbFaceLiveImpl.this.b.f().kyc_get_error, "baseResponse is null!"));
                     return;
                 }
@@ -412,7 +413,7 @@ public class WbFaceLiveImpl implements WbFaceModeInterface {
                 if (TextUtils.isEmpty(str2)) {
                     WLogger.w("WbFaceLiveImpl", "enMsg is null!" + getFaceCompareTypeResponse.code + "," + getFaceCompareTypeResponse.msg + "," + getFaceCompareTypeResponse.debugMsg);
                     KycWaSDK kycWaSDK = KycWaSDK.getInstance();
-                    Context context = WbFaceLiveImpl.this.f35642a;
+                    Context context = WbFaceLiveImpl.this.f21951a;
                     kycWaSDK.trackCustomKVEvent(context, "facepage_get_flash_res_server_error", "enMsg is null!" + getFaceCompareTypeResponse.code + "," + getFaceCompareTypeResponse.msg + "," + getFaceCompareTypeResponse.debugMsg, null);
                     ProcessCallback processCallback2 = processCallback;
                     String str3 = WbFaceLiveImpl.this.b.f().kyc_get_error;
@@ -427,7 +428,7 @@ public class WbFaceLiveImpl implements WbFaceModeInterface {
                         if (TextUtils.isEmpty(getActResult.code)) {
                             WLogger.w("WbFaceLiveImpl", "code is null!");
                             KycWaSDK kycWaSDK2 = KycWaSDK.getInstance();
-                            Context context2 = WbFaceLiveImpl.this.f35642a;
+                            Context context2 = WbFaceLiveImpl.this.f21951a;
                             kycWaSDK2.trackCustomKVEvent(context2, "facepage_get_flash_res_server_error", "code is null!" + getActResult.msg, null);
                             ProcessCallback processCallback3 = processCallback;
                             String str4 = WbFaceLiveImpl.this.b.f().kyc_get_error;
@@ -435,7 +436,7 @@ public class WbFaceLiveImpl implements WbFaceModeInterface {
                         } else if (!getActResult.code.equals("0")) {
                             WLogger.w("WbFaceLiveImpl", "code:" + getActResult.code + "; Msg: " + getActResult.msg);
                             KycWaSDK kycWaSDK3 = KycWaSDK.getInstance();
-                            Context context3 = WbFaceLiveImpl.this.f35642a;
+                            Context context3 = WbFaceLiveImpl.this.f21951a;
                             kycWaSDK3.trackCustomKVEvent(context3, "facepage_get_flash_res_server_error", "code:" + getActResult.code + "; Msg: " + getActResult.msg, null);
                             processCallback.onFailed(WbFaceInnerError.create(WbFaceError.WBFaceErrorDomainGetInfoServer, getActResult.code, WbFaceLiveImpl.this.b.f().kyc_get_error, getActResult.msg));
                         } else {
@@ -443,7 +444,7 @@ public class WbFaceLiveImpl implements WbFaceModeInterface {
                                 if (TextUtils.isEmpty(getActResult.activeType)) {
                                     WLogger.w("WbFaceLiveImpl", "act mode but no activeType!");
                                     KycWaSDK kycWaSDK4 = KycWaSDK.getInstance();
-                                    Context context4 = WbFaceLiveImpl.this.f35642a;
+                                    Context context4 = WbFaceLiveImpl.this.f21951a;
                                     kycWaSDK4.trackCustomKVEvent(context4, "facepage_get_flash_res_server_error", "act mode but no activeType!" + getActResult.msg, null);
                                     ProcessCallback processCallback4 = processCallback;
                                     String str5 = WbFaceLiveImpl.this.b.f().kyc_get_error;
@@ -457,7 +458,7 @@ public class WbFaceLiveImpl implements WbFaceModeInterface {
                                 if (TextUtils.isEmpty(getActResult.colorData)) {
                                     WLogger.w("WbFaceLiveImpl", "light mode but no colorData!");
                                     KycWaSDK kycWaSDK5 = KycWaSDK.getInstance();
-                                    Context context5 = WbFaceLiveImpl.this.f35642a;
+                                    Context context5 = WbFaceLiveImpl.this.f21951a;
                                     kycWaSDK5.trackCustomKVEvent(context5, "facepage_get_flash_res_server_error", "light mode but no colorData!" + getActResult.msg, null);
                                     ProcessCallback processCallback5 = processCallback;
                                     String str6 = WbFaceLiveImpl.this.b.f().kyc_get_error;
@@ -467,7 +468,7 @@ public class WbFaceLiveImpl implements WbFaceModeInterface {
                                 WLogger.d("WbFaceLiveImpl", "getFlashRes set result.colordata");
                                 WbFaceLiveImpl.this.b.x().j(getActResult.colorData);
                             }
-                            KycWaSDK.getInstance().trackCustomKVEvent(WbFaceLiveImpl.this.f35642a, "facepage_get_flash_res_success", null, null);
+                            KycWaSDK.getInstance().trackCustomKVEvent(WbFaceLiveImpl.this.f21951a, "facepage_get_flash_res_success", null, null);
                             processCallback.onSuccess(null);
                         }
                     }
@@ -477,7 +478,7 @@ public class WbFaceLiveImpl implements WbFaceModeInterface {
                     Properties properties = new Properties();
                     properties.setProperty("enKey", encryptAESKey);
                     KycWaSDK kycWaSDK6 = KycWaSDK.getInstance();
-                    Context context6 = WbFaceLiveImpl.this.f35642a;
+                    Context context6 = WbFaceLiveImpl.this.f21951a;
                     kycWaSDK6.trackCustomKVEvent(context6, "faceservice_data_serialize_decry_fail", "decry GetActType failed!" + e.toString(), properties);
                     ProcessCallback processCallback6 = processCallback;
                     String str7 = WbFaceLiveImpl.this.b.f().kyc_get_error;
@@ -487,10 +488,10 @@ public class WbFaceLiveImpl implements WbFaceModeInterface {
 
             @Override // com.tencent.cloud.huiyansdkface.wehttp2.WeReq.Callback, com.tencent.cloud.huiyansdkface.wehttp2.WeReq.InnerCallback
             public void onFailed(WeReq weReq, WeReq.ErrType errType, int i, String str2, IOException iOException) {
-                WLogger.w("WbFaceLiveImpl", "getflashresourceEn onfail：" + errType + ";" + i + ";" + str2);
+                WLogger.w("WbFaceLiveImpl", "getflashresourceEn onfail：" + errType + t.aE + i + t.aE + str2);
                 KycWaSDK kycWaSDK = KycWaSDK.getInstance();
-                Context context = WbFaceLiveImpl.this.f35642a;
-                kycWaSDK.trackIMSWarnVEvent(context, "facepage_get_flash_res_network_error", "getflashresourceEn onfail：" + errType + ";" + i + ";" + str2, null);
+                Context context = WbFaceLiveImpl.this.f21951a;
+                kycWaSDK.trackIMSWarnVEvent(context, "facepage_get_flash_res_network_error", "getflashresourceEn onfail：" + errType + t.aE + i + t.aE + str2, null);
                 ProcessCallback processCallback2 = processCallback;
                 String str3 = WbFaceLiveImpl.this.b.f().kyc_internet_check;
                 processCallback2.onFailed(WbFaceInnerError.create(WbFaceError.WBFaceErrorDomainGetInfoNetwork, WbFaceError.WBFaceErrorCodeGetInfoNetworkError, str3, errType + "," + i + "+" + str2));
@@ -583,7 +584,7 @@ public class WbFaceLiveImpl implements WbFaceModeInterface {
                             WLogger.w("WbFaceLiveImpl", "decry LoginResult failed!" + e.toString());
                             Properties properties = new Properties();
                             properties.setProperty("enKey", encryptAESKey);
-                            KycWaSDK.getInstance().trackCustomKVEvent(WbFaceLiveImpl.this.f35642a, "faceservice_data_serialize_decry_fail", "decry LoginResult failed!" + e.toString(), properties);
+                            KycWaSDK.getInstance().trackCustomKVEvent(WbFaceLiveImpl.this.f21951a, "faceservice_data_serialize_decry_fail", "decry LoginResult failed!" + e.toString(), properties);
                             processCallback2 = processCallback;
                             str3 = "decry LoginResult failed!" + e.toString();
                             str7 = WbFaceError.WBFaceErrorCodeDataSerilizerError;
@@ -629,7 +630,7 @@ public class WbFaceLiveImpl implements WbFaceModeInterface {
 
     @Override // com.tencent.cloud.huiyansdkface.facelight.provider.WbFaceModeInterface
     public void onFaceStatusChanged(int i) {
-        this.f35643c = i;
+        this.f21952c = i;
         if (i == 2) {
             this.h.reset();
         } else if (i == 9) {
@@ -651,7 +652,7 @@ public class WbFaceLiveImpl implements WbFaceModeInterface {
 
     @Override // com.tencent.cloud.huiyansdkface.facelight.provider.WbFaceModeInterface
     public void onStartFaceVerify(Context context) {
-        this.f35642a = context;
+        this.f21951a = context;
         this.b = d.z();
         this.d = 0;
         this.e = 0;

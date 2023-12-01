@@ -9,8 +9,9 @@ import java.lang.reflect.Method;
 public class ExternalLiveData<T> extends MutableLiveData<T> {
     public static final int START_VERSION = -1;
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8756600-dex2jar.jar:androidx/lifecycle/ExternalLiveData$ExternalLifecycleBoundObserver.class */
-    class ExternalLifecycleBoundObserver extends LiveData<T>.LifecycleBoundObserver {
+    public class ExternalLifecycleBoundObserver extends LiveData<T>.LifecycleBoundObserver {
         ExternalLifecycleBoundObserver(LifecycleOwner lifecycleOwner, Observer<? super T> observer) {
             super(lifecycleOwner, observer);
         }

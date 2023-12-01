@@ -16,9 +16,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/utils/VipDataUtil.class */
 public final class VipDataUtil {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f14199a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private static final ArrayList<VipModel> b = new ArrayList<>();
 
     @Metadata

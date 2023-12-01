@@ -9,11 +9,11 @@ import java.util.concurrent.atomic.AtomicInteger;
 public final class c implements Handler.Callback {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ b f41060a;
+    final /* synthetic */ b f27369a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public c(b bVar) {
-        this.f41060a = bVar;
+        this.f27369a = bVar;
     }
 
     @Override // android.os.Handler.Callback
@@ -27,7 +27,7 @@ public final class c implements Handler.Callback {
         int i = message.what;
         if (i == 1) {
             com.vivo.push.util.p.a("AidlManager", "In connect, bind core service time out");
-            atomicInteger = this.f41060a.f;
+            atomicInteger = this.f27369a.f;
             if (atomicInteger.get() != 2) {
                 return true;
             }
@@ -35,12 +35,12 @@ public final class c implements Handler.Callback {
             com.vivo.push.util.p.b("AidlManager", "unknow msg what [" + message.what + "]");
             return true;
         } else {
-            atomicInteger2 = this.f41060a.f;
+            atomicInteger2 = this.f27369a.f;
             if (atomicInteger2.get() == 4) {
-                this.f41060a.f();
+                this.f27369a.f();
             }
         }
-        this.f41060a.a(1);
+        this.f27369a.a(1);
         return true;
     }
 }

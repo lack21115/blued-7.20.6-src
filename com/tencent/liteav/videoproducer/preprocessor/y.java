@@ -7,11 +7,11 @@ import com.tencent.liteav.videoproducer.capture.CaptureSourceInterface;
 public final /* synthetic */ class y implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final VideoPreprocessor f37094a;
+    private final VideoPreprocessor f23403a;
     private final CaptureSourceInterface.SourceType b;
 
     private y(VideoPreprocessor videoPreprocessor, CaptureSourceInterface.SourceType sourceType) {
-        this.f37094a = videoPreprocessor;
+        this.f23403a = videoPreprocessor;
         this.b = sourceType;
     }
 
@@ -21,6 +21,6 @@ public final /* synthetic */ class y implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        this.f37094a.mPreprocessor.h = this.b;
+        this.f23403a.mPreprocessor.h = this.b;
     }
 }

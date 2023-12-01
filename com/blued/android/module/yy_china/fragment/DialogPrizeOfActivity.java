@@ -17,13 +17,11 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/DialogPrizeOfActivity.class */
 public final class DialogPrizeOfActivity extends BaseFullScreenDialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final YYDrawActivityModel f17037a;
+    private final YYDrawActivityModel a;
     private DialogPrizeOfActivityBinding b;
 
     public DialogPrizeOfActivity(YYDrawActivityModel yYDrawActivityModel) {
-        this.f17037a = yYDrawActivityModel;
+        this.a = yYDrawActivityModel;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -43,7 +41,7 @@ public final class DialogPrizeOfActivity extends BaseFullScreenDialog {
     }
 
     private final void f() {
-        YYDrawActivityModel yYDrawActivityModel = this.f17037a;
+        YYDrawActivityModel yYDrawActivityModel = this.a;
         if (yYDrawActivityModel == null) {
             return;
         }
@@ -52,12 +50,12 @@ public final class DialogPrizeOfActivity extends BaseFullScreenDialog {
         if (textView != null) {
             textView.setText(Intrinsics.a("恭喜抢到", (Object) yYDrawActivityModel.name));
         }
-        ImageWrapper a2 = ImageLoader.a(a(), yYDrawActivityModel.image);
+        ImageWrapper a = ImageLoader.a(a(), yYDrawActivityModel.image);
         DialogPrizeOfActivityBinding dialogPrizeOfActivityBinding2 = this.b;
-        a2.a(dialogPrizeOfActivityBinding2 == null ? null : dialogPrizeOfActivityBinding2.f16382c);
+        a.a(dialogPrizeOfActivityBinding2 == null ? null : dialogPrizeOfActivityBinding2.c);
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
         View inflate = inflater.inflate(R.layout.dialog_prize_of_activity, (ViewGroup) null);
@@ -66,14 +64,14 @@ public final class DialogPrizeOfActivity extends BaseFullScreenDialog {
         return inflate;
     }
 
-    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment
     public void onViewCreated(View view, Bundle bundle) {
         ShapeTextView shapeTextView;
         View view2;
         Intrinsics.e(view, "view");
         super.onViewCreated(view, bundle);
         DialogPrizeOfActivityBinding dialogPrizeOfActivityBinding = this.b;
-        if (dialogPrizeOfActivityBinding != null && (view2 = dialogPrizeOfActivityBinding.f16381a) != null) {
+        if (dialogPrizeOfActivityBinding != null && (view2 = dialogPrizeOfActivityBinding.a) != null) {
             view2.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$DialogPrizeOfActivity$63PJZ6x2IZoX_-m9EL2shUtkOzo
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view3) {
@@ -90,7 +88,7 @@ public final class DialogPrizeOfActivity extends BaseFullScreenDialog {
                 }
             });
         }
-        YYDrawActivityModel yYDrawActivityModel = this.f17037a;
+        YYDrawActivityModel yYDrawActivityModel = this.a;
         if (yYDrawActivityModel == null) {
             return;
         }

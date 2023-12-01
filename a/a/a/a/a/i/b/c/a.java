@@ -9,10 +9,10 @@ public final class a {
     public int b;
 
     /* renamed from: a  reason: collision with root package name */
-    public int f1389a = -1;
+    public int f1341a = -1;
 
     /* renamed from: c  reason: collision with root package name */
-    public boolean f1390c = false;
+    public boolean f1342c = false;
 
     public int a(int i, int i2, int i3) {
         JNIControl.setSurfaceTextureID(i);
@@ -23,11 +23,11 @@ public final class a {
     }
 
     public void a() {
-        if (this.f1390c) {
+        if (this.f1342c) {
             JNIControl.reInit();
         }
-        this.f1390c = false;
-        this.f1389a = -1;
+        this.f1342c = false;
+        this.f1341a = -1;
     }
 
     public void a(float f) {
@@ -35,8 +35,8 @@ public final class a {
     }
 
     public void a(Context context, int i, int i2) {
-        this.f1390c = true;
-        if (this.f1389a == -1) {
+        this.f1342c = true;
+        if (this.f1341a == -1) {
             if (i == 3) {
                 JNIControl.setGLES(3);
             } else {

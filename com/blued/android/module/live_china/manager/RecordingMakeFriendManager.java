@@ -20,13 +20,9 @@ import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/manager/RecordingMakeFriendManager.class */
 public class RecordingMakeFriendManager {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static int f13752a = 0;
+    public static int a = 0;
     public static int b = 0;
-
-    /* renamed from: c  reason: collision with root package name */
-    public static double f13753c = 0.9d;
+    public static double c = 0.9d;
     public List<LiveFriendModel> d = new ArrayList();
     private Context e;
     private RecordingOnliveFragment f;
@@ -37,7 +33,7 @@ public class RecordingMakeFriendManager {
         this.e = recordingOnliveFragment.getContext();
         int i = AppInfo.l / 2;
         this.g = i;
-        f13752a = (int) (i * f13753c);
+        a = (int) (i * c);
         b = DensityUtils.a(this.e, 148);
     }
 
@@ -88,19 +84,19 @@ public class RecordingMakeFriendManager {
         this.f.bC.setLayoutParams(layoutParams);
         LinearLayout.LayoutParams layoutParams2 = (LinearLayout.LayoutParams) this.f.bD.getLayoutParams();
         layoutParams2.width = -1;
-        layoutParams2.height = f13752a * 2;
+        layoutParams2.height = a * 2;
         this.f.bD.setLayoutParams(layoutParams2);
-        this.f.L.setLayoutParams(new FrameLayout.LayoutParams(this.g, f13752a));
-        FrameLayout.LayoutParams layoutParams3 = new FrameLayout.LayoutParams(this.g, f13752a);
+        this.f.L.setLayoutParams(new FrameLayout.LayoutParams(this.g, a));
+        FrameLayout.LayoutParams layoutParams3 = new FrameLayout.LayoutParams(this.g, a);
         layoutParams3.leftMargin = this.g;
         this.f.bQ.setLayoutParams(layoutParams3);
         this.f.bV.setLayoutParams(layoutParams3);
-        FrameLayout.LayoutParams layoutParams4 = new FrameLayout.LayoutParams(this.g, f13752a);
-        layoutParams4.topMargin = f13752a;
+        FrameLayout.LayoutParams layoutParams4 = new FrameLayout.LayoutParams(this.g, a);
+        layoutParams4.topMargin = a;
         this.f.bR.setLayoutParams(layoutParams4);
         this.f.bW.setLayoutParams(layoutParams4);
-        FrameLayout.LayoutParams layoutParams5 = new FrameLayout.LayoutParams(this.g, f13752a);
-        layoutParams5.topMargin = f13752a;
+        FrameLayout.LayoutParams layoutParams5 = new FrameLayout.LayoutParams(this.g, a);
+        layoutParams5.topMargin = a;
         layoutParams5.leftMargin = this.g;
         this.f.bS.setLayoutParams(layoutParams5);
         this.f.bX.setLayoutParams(layoutParams5);

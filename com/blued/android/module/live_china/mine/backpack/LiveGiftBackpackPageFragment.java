@@ -14,10 +14,10 @@ import com.jeremyliao.liveeventbus.LiveEventBus;
 public class LiveGiftBackpackPageFragment extends BaseGiftBagPageFragment implements LiveGiftBackpackItemObserver.ILiveBackpackObserver {
     private int h = 0;
 
+    /* JADX WARN: Multi-variable type inference failed */
     @Override // com.blued.android.module.live_china.mine.backpack.BaseGiftBagPageFragment
     public void a() {
-        this.f13883a.addItemDecoration(new RecyclerView.ItemDecoration() { // from class: com.blued.android.module.live_china.mine.backpack.LiveGiftBackpackPageFragment.1
-            @Override // androidx.recyclerview.widget.RecyclerView.ItemDecoration
+        this.a.addItemDecoration(new RecyclerView.ItemDecoration() { // from class: com.blued.android.module.live_china.mine.backpack.LiveGiftBackpackPageFragment.1
             public void getItemOffsets(Rect rect, View view, RecyclerView recyclerView, RecyclerView.State state) {
                 rect.left = LiveGiftBackpackPageFragment.this.h;
                 rect.right = LiveGiftBackpackPageFragment.this.h;
@@ -97,20 +97,19 @@ public class LiveGiftBackpackPageFragment extends BaseGiftBagPageFragment implem
         }
     }
 
-    @Override // com.blued.android.framework.ui.SimpleFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
         LiveGiftBackpackItemObserver.a().b(this);
     }
 
-    @Override // com.blued.android.module.live_china.mine.backpack.BaseGiftBagPageFragment, com.blued.android.framework.ui.SimpleFragment
+    @Override // com.blued.android.module.live_china.mine.backpack.BaseGiftBagPageFragment
     public void onInitView() {
         super.onInitView();
         this.h = DensityUtils.a(getContext(), 2.0f);
         LiveGiftBackpackItemObserver.a().a((LiveGiftBackpackItemObserver.ILiveBackpackObserver) this);
     }
 
-    @Override // com.blued.android.module.live_china.mine.backpack.BaseGiftBagPageFragment, com.blued.android.framework.ui.SimpleFragment
+    @Override // com.blued.android.module.live_china.mine.backpack.BaseGiftBagPageFragment
     public int onSetRootViewId() {
         return R.layout.fragment_live_gift_page;
     }

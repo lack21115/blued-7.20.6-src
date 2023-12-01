@@ -1,5 +1,6 @@
 package com.kwad.sdk.c.kwai;
 
+import android.R;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -18,7 +19,6 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import com.android.internal.telephony.PhoneConstants;
 import com.kwad.sdk.utils.s;
 
 /* loaded from: source-7994992-dex2jar.jar:com/kwad/sdk/c/kwai/a.class */
@@ -132,7 +132,7 @@ public final class a {
                 }
             }
         }
-        String str4 = str3 + PhoneConstants.APN_TYPE_ALL;
+        String str4 = str3 + "*";
         SpannableString spannableString = new SpannableString(str4);
         spannableString.setSpan(new com.kwad.sdk.core.view.a(textView.getContext(), bitmap), str4.length() - 1, str4.length(), 33);
         textView.setText(spannableString);
@@ -176,7 +176,7 @@ public final class a {
     }
 
     private static View b(Window window) {
-        return window.getDecorView().findViewById(16908290);
+        return window.getDecorView().findViewById(R.id.content);
     }
 
     public static void b(View view, int i, int i2, int i3, int i4) {

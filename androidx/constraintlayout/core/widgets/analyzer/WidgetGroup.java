@@ -13,11 +13,11 @@ public class WidgetGroup {
     static int b;
 
     /* renamed from: c  reason: collision with root package name */
-    int f2147c;
+    int f2099c;
     int e;
 
     /* renamed from: a  reason: collision with root package name */
-    ArrayList<ConstraintWidget> f2146a = new ArrayList<>();
+    ArrayList<ConstraintWidget> f2098a = new ArrayList<>();
     boolean d = false;
     ArrayList<MeasureResult> f = null;
     private int g = -1;
@@ -27,20 +27,20 @@ public class WidgetGroup {
     public class MeasureResult {
 
         /* renamed from: a  reason: collision with root package name */
-        WeakReference<ConstraintWidget> f2148a;
+        WeakReference<ConstraintWidget> f2100a;
         int b;
 
         /* renamed from: c  reason: collision with root package name */
-        int f2149c;
+        int f2101c;
         int d;
         int e;
         int f;
         int g;
 
         public MeasureResult(ConstraintWidget constraintWidget, LinearSystem linearSystem, int i) {
-            this.f2148a = new WeakReference<>(constraintWidget);
+            this.f2100a = new WeakReference<>(constraintWidget);
             this.b = linearSystem.getObjectVariableValue(constraintWidget.mLeft);
-            this.f2149c = linearSystem.getObjectVariableValue(constraintWidget.mTop);
+            this.f2101c = linearSystem.getObjectVariableValue(constraintWidget.mTop);
             this.d = linearSystem.getObjectVariableValue(constraintWidget.mRight);
             this.e = linearSystem.getObjectVariableValue(constraintWidget.mBottom);
             this.f = linearSystem.getObjectVariableValue(constraintWidget.mBaseline);
@@ -48,19 +48,19 @@ public class WidgetGroup {
         }
 
         public void apply() {
-            ConstraintWidget constraintWidget = this.f2148a.get();
+            ConstraintWidget constraintWidget = this.f2100a.get();
             if (constraintWidget != null) {
-                constraintWidget.setFinalFrame(this.b, this.f2149c, this.d, this.e, this.f, this.g);
+                constraintWidget.setFinalFrame(this.b, this.f2101c, this.d, this.e, this.f, this.g);
             }
         }
     }
 
     public WidgetGroup(int i) {
-        this.f2147c = -1;
+        this.f2099c = -1;
         this.e = 0;
         int i2 = b;
         b = i2 + 1;
-        this.f2147c = i2;
+        this.f2099c = i2;
         this.e = i;
     }
 
@@ -118,14 +118,14 @@ public class WidgetGroup {
     }
 
     private boolean a(ConstraintWidget constraintWidget) {
-        return this.f2146a.contains(constraintWidget);
+        return this.f2098a.contains(constraintWidget);
     }
 
     public boolean add(ConstraintWidget constraintWidget) {
-        if (this.f2146a.contains(constraintWidget)) {
+        if (this.f2098a.contains(constraintWidget)) {
             return false;
         }
-        this.f2146a.add(constraintWidget);
+        this.f2098a.add(constraintWidget);
         return true;
     }
 
@@ -145,7 +145,7 @@ public class WidgetGroup {
     }
 
     public void cleanup(ArrayList<WidgetGroup> arrayList) {
-        int size = this.f2146a.size();
+        int size = this.f2098a.size();
         if (this.g != -1 && size > 0) {
             int i = 0;
             while (true) {
@@ -154,7 +154,7 @@ public class WidgetGroup {
                     break;
                 }
                 WidgetGroup widgetGroup = arrayList.get(i2);
-                if (this.g == widgetGroup.f2147c) {
+                if (this.g == widgetGroup.f2099c) {
                     moveTo(this.e, widgetGroup);
                 }
                 i = i2 + 1;
@@ -166,11 +166,11 @@ public class WidgetGroup {
     }
 
     public void clear() {
-        this.f2146a.clear();
+        this.f2098a.clear();
     }
 
     public int getId() {
-        return this.f2147c;
+        return this.f2099c;
     }
 
     public int getOrientation() {
@@ -181,10 +181,10 @@ public class WidgetGroup {
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f2146a.size()) {
+            if (i2 >= this.f2098a.size()) {
                 return false;
             }
-            if (widgetGroup.a(this.f2146a.get(i2))) {
+            if (widgetGroup.a(this.f2098a.get(i2))) {
                 return true;
             }
             i = i2 + 1;
@@ -196,14 +196,14 @@ public class WidgetGroup {
     }
 
     public int measureWrap(LinearSystem linearSystem, int i) {
-        if (this.f2146a.size() == 0) {
+        if (this.f2098a.size() == 0) {
             return 0;
         }
-        return a(linearSystem, this.f2146a, i);
+        return a(linearSystem, this.f2098a, i);
     }
 
     public void moveTo(int i, WidgetGroup widgetGroup) {
-        Iterator<ConstraintWidget> it = this.f2146a.iterator();
+        Iterator<ConstraintWidget> it = this.f2098a.iterator();
         while (it.hasNext()) {
             ConstraintWidget next = it.next();
             widgetGroup.add(next);
@@ -213,7 +213,7 @@ public class WidgetGroup {
                 next.verticalGroup = widgetGroup.getId();
             }
         }
-        this.g = widgetGroup.f2147c;
+        this.g = widgetGroup.f2099c;
     }
 
     public void setAuthoritative(boolean z) {
@@ -225,12 +225,12 @@ public class WidgetGroup {
     }
 
     public int size() {
-        return this.f2146a.size();
+        return this.f2098a.size();
     }
 
     public String toString() {
-        String str = a() + " [" + this.f2147c + "] <";
-        Iterator<ConstraintWidget> it = this.f2146a.iterator();
+        String str = a() + " [" + this.f2099c + "] <";
+        Iterator<ConstraintWidget> it = this.f2098a.iterator();
         while (it.hasNext()) {
             ConstraintWidget next = it.next();
             str = str + " " + next.getDebugName();

@@ -14,10 +14,10 @@ import com.tencent.tendinsv.utils.t;
 public class b implements GetPhoneInfoCallbacks {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f39014a;
+    private Context f25323a;
 
     public b(Context context) {
-        this.f39014a = context;
+        this.f25323a = context;
     }
 
     private void a(long j, long j2, long j3) {
@@ -28,14 +28,14 @@ public class b implements GetPhoneInfoCallbacks {
             return;
         }
         String str2 = "";
-        String b = t.b(this.f39014a, com.tencent.tendinsv.b.w, "");
+        String b = t.b(this.f25323a, com.tencent.tendinsv.b.w, "");
         if (com.tencent.tendinsv.b.h.equals(com.tencent.tendinsv.b.p)) {
-            str2 = t.b(this.f39014a, t.g, "");
+            str2 = t.b(this.f25323a, t.g, "");
             str = "3";
-        } else if (1 == t.b(this.f39014a, t.D, 1)) {
+        } else if (1 == t.b(this.f25323a, t.D, 1)) {
             str = "4";
         } else {
-            ToolUtils.clearCache(this.f39014a);
+            ToolUtils.clearCache(this.f25323a);
             str = "2";
         }
         i.a().a(str, com.tencent.tendinsv.b.p, b, str2, j, j2, j3);
@@ -46,14 +46,14 @@ public class b implements GetPhoneInfoCallbacks {
         try {
             o.a();
             l.a(com.tencent.tendinsv.b.H, "getPhoneInfoFailed--code==", Integer.valueOf(i), "__processName== ", Integer.valueOf(i3), "__isGetToken==", Boolean.valueOf(com.tencent.tendinsv.b.Q.get()));
-            t.a(this.f39014a, t.U, false);
+            t.a(this.f25323a, t.U, false);
             com.tencent.tendinsv.b.W.set(com.tencent.tendinsv.b.S);
             String a2 = com.tencent.tendinsv.utils.d.a(i2, str2, str, str3);
             long uptimeMillis = SystemClock.uptimeMillis() - j3;
             long uptimeMillis2 = SystemClock.uptimeMillis() - j2;
-            long b = t.b(this.f39014a, t.f, 3L);
+            long b = t.b(this.f25323a, t.f, 3L);
             if (!"cache".equals(str2)) {
-                t.a(this.f39014a, t.e, System.currentTimeMillis() + (b * 1000));
+                t.a(this.f25323a, t.e, System.currentTimeMillis() + (b * 1000));
             }
             try {
                 if (i3 == 4) {
@@ -82,10 +82,10 @@ public class b implements GetPhoneInfoCallbacks {
             o.a();
             l.a(com.tencent.tendinsv.b.H, "getPhoneInfoSuccessed--code==", Integer.valueOf(i), "__processName== ", Integer.valueOf(i3), "__isGetToken==", Boolean.valueOf(com.tencent.tendinsv.b.Q.get()));
             com.tencent.tendinsv.b.W.set(com.tencent.tendinsv.b.T);
-            t.a(this.f39014a, t.U, true);
-            t.a(this.f39014a, t.R, true);
-            t.a(this.f39014a, t.d, com.tencent.tendinsv.tool.d.a().a(this.f39014a));
-            String a2 = com.tencent.tendinsv.utils.d.a(i2, str2, str, this.f39014a);
+            t.a(this.f25323a, t.U, true);
+            t.a(this.f25323a, t.R, true);
+            t.a(this.f25323a, t.d, com.tencent.tendinsv.tool.d.a().a(this.f25323a));
+            String a2 = com.tencent.tendinsv.utils.d.a(i2, str2, str, this.f25323a);
             long uptimeMillis = SystemClock.uptimeMillis() - j3;
             long uptimeMillis2 = SystemClock.uptimeMillis() - j2;
             if (i3 == 4) {

@@ -10,9 +10,7 @@ import java.util.concurrent.ConcurrentHashMap;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-6737240-dex2jar.jar:com/alibaba/mtl/appmonitor/c.class */
 public class c implements Runnable {
-
-    /* renamed from: c  reason: collision with root package name */
-    private static Map<Integer, c> f4461c;
+    private static Map<Integer, c> c;
     private static boolean j = false;
     private int d;
     private int e;
@@ -43,12 +41,12 @@ public class c implements Runnable {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static void a(int i, int i2) {
         i.a("CommitTask", "[setStatisticsInterval] eventId" + i + " statisticsInterval:" + i2);
-        synchronized (f4461c) {
-            c cVar = f4461c.get(Integer.valueOf(i));
+        synchronized (c) {
+            c cVar = c.get(Integer.valueOf(i));
             if (cVar == null) {
                 if (i2 > 0) {
                     c cVar2 = new c(i, i2 * 1000);
-                    f4461c.put(Integer.valueOf(i), cVar2);
+                    c.put(Integer.valueOf(i), cVar2);
                     i.a("CommitTask", "post next eventId" + i + ": uploadTask.interval " + cVar2.d);
                     r.a().a(a(i), cVar2, (long) cVar2.d);
                 }
@@ -69,9 +67,9 @@ public class c implements Runnable {
                     cVar.startTime = currentTimeMillis;
                 }
             } else {
-                i.a("CommitTask", "uploadTasks.size:" + f4461c.size());
-                f4461c.remove(Integer.valueOf(i));
-                i.a("CommitTask", "uploadTasks.size:" + f4461c.size());
+                i.a("CommitTask", "uploadTasks.size:" + c.size());
+                c.remove(Integer.valueOf(i));
+                i.a("CommitTask", "uploadTasks.size:" + c.size());
             }
         }
     }
@@ -85,10 +83,10 @@ public class c implements Runnable {
             int i2 = i;
             if (i2 >= length) {
                 j = false;
-                f4461c = null;
+                c = null;
                 return;
             }
-            r.a().f(a(values[i2].m2139a()));
+            r.a().f(a(values[i2].m8582a()));
             i = i2 + 1;
         }
     }
@@ -103,7 +101,7 @@ public class c implements Runnable {
             if (i2 >= length) {
                 return;
             }
-            e.a().m2137a(values[i2].m2139a());
+            e.a().m8580a(values[i2].m8582a());
             i = i2 + 1;
         }
     }
@@ -115,13 +113,13 @@ public class c implements Runnable {
             return;
         }
         i.a("CommitTask", "init StatisticsAlarmEvent");
-        f4461c = new ConcurrentHashMap();
+        c = new ConcurrentHashMap();
         for (f fVar : f.values()) {
             if (fVar.isOpen()) {
-                int m2139a = fVar.m2139a();
-                c cVar = new c(m2139a, fVar.c() * 1000);
-                f4461c.put(Integer.valueOf(m2139a), cVar);
-                r.a().a(a(m2139a), cVar, cVar.d);
+                int m8582a = fVar.m8582a();
+                c cVar = new c(m8582a, fVar.c() * 1000);
+                c.put(Integer.valueOf(m8582a), cVar);
+                r.a().a(a(m8582a), cVar, cVar.d);
             }
         }
         j = true;
@@ -130,8 +128,8 @@ public class c implements Runnable {
     @Override // java.lang.Runnable
     public void run() {
         i.a("CommitTask", "check&commit event:", Integer.valueOf(this.e));
-        e.a().m2137a(this.e);
-        if (f4461c.containsValue(this)) {
+        e.a().m8580a(this.e);
+        if (c.containsValue(this)) {
             this.startTime = System.currentTimeMillis();
             i.a("CommitTask", "next:" + this.e);
             r.a().a(a(this.e), this, (long) this.d);

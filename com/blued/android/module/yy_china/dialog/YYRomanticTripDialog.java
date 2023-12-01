@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.os.BundleKt;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -54,15 +55,11 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/dialog/YYRomanticTripDialog.class */
 public final class YYRomanticTripDialog extends BaseFullScreenDialog {
-
-    /* renamed from: c  reason: collision with root package name */
-    private DialogRomanticTripLayoutBinding f16995c;
+    private DialogRomanticTripLayoutBinding c;
     private CityAdapter d;
     private ReceiveCityAdapter e;
     private YYGiftModel f;
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f16994a = "https://web.bldimg.com/image-manager/1687333382_65703.png";
+    private String a = "https://web.bldimg.com/image-manager/1687333382_65703.png";
     private String b = "https://web.bldimg.com/image-manager/1687920355_97281.png";
     private String g = "";
     private String h = "";
@@ -71,13 +68,9 @@ public final class YYRomanticTripDialog extends BaseFullScreenDialog {
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/dialog/YYRomanticTripDialog$CityAdapter.class */
     public final class CityAdapter extends BaseMultiItemQuickAdapter<YYRomanticCityModel, BaseViewHolder> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ YYRomanticTripDialog f16996a;
+        final /* synthetic */ YYRomanticTripDialog a;
         private final int b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private final int f16997c;
+        private final int c;
         private final int d;
         private boolean e;
 
@@ -85,10 +78,10 @@ public final class YYRomanticTripDialog extends BaseFullScreenDialog {
         public CityAdapter(YYRomanticTripDialog this$0) {
             super(new ArrayList());
             Intrinsics.e(this$0, "this$0");
-            this.f16996a = this$0;
-            this.b = DensityUtils.a(this.f16996a.getContext(), 23.0f);
-            this.f16997c = DensityUtils.a(this.f16996a.getContext(), 19.0f);
-            this.d = DensityUtils.a(this.f16996a.getContext(), 14.0f);
+            this.a = this$0;
+            this.b = DensityUtils.a(this.a.getContext(), 23.0f);
+            this.c = DensityUtils.a(this.a.getContext(), 19.0f);
+            this.d = DensityUtils.a(this.a.getContext(), 14.0f);
             addItemType(1, R.layout.item_city_layout);
             addItemType(0, R.layout.item_city_notice_layout);
         }
@@ -101,7 +94,7 @@ public final class YYRomanticTripDialog extends BaseFullScreenDialog {
             if (yYRomanticCityModel == null) {
                 return;
             }
-            ImageLoader.a(this.f16996a.a(), yYRomanticCityModel.getImage()).a(imageView);
+            ImageLoader.a(this.a.a(), yYRomanticCityModel.getImage()).a(imageView);
             if (yYRomanticCityModel.getTotal_count() <= 0) {
                 if (imageView3 != null) {
                     imageView3.setVisibility(8);
@@ -141,7 +134,7 @@ public final class YYRomanticTripDialog extends BaseFullScreenDialog {
                 textView.setPadding(0, 0, 0, this.d);
             } else {
                 if (textView != null) {
-                    textView.setPadding(0, this.f16997c, 0, this.d);
+                    textView.setPadding(0, this.c, 0, this.d);
                 }
                 this.e = true;
             }
@@ -152,7 +145,6 @@ public final class YYRomanticTripDialog extends BaseFullScreenDialog {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.chad.library.adapter.base.BaseQuickAdapter
         /* renamed from: a */
         public void convert(BaseViewHolder baseViewHolder, YYRomanticCityModel yYRomanticCityModel) {
             if (baseViewHolder != null) {
@@ -194,7 +186,7 @@ public final class YYRomanticTripDialog extends BaseFullScreenDialog {
             Intrinsics.c("userAdapter");
             receiveCityAdapter2 = null;
         }
-        receiveCityAdapter2.getData().get(i).isSelected = !yYSeatMemberModel.isSelected;
+        ((YYSeatMemberModel) receiveCityAdapter2.getData().get(i)).isSelected = !yYSeatMemberModel.isSelected;
         ReceiveCityAdapter receiveCityAdapter3 = this$0.e;
         if (receiveCityAdapter3 == null) {
             Intrinsics.c("userAdapter");
@@ -225,7 +217,7 @@ public final class YYRomanticTripDialog extends BaseFullScreenDialog {
         yYPayRequestModel.room_id = b == null ? null : b.room_id;
         yYPayRequestModel.target_uid = arrayList.get(0).getUid();
         yYPayRequestModel.pay_from = 1;
-        YYPayUtils.a(yYPayRequestModel, YYConstants.PayFromSource.Pay_Gift, this, a(), new YYPayUtils.PayGiftStatusListener() { // from class: com.blued.android.module.yy_china.dialog.YYRomanticTripDialog$toPayBill$2
+        YYPayUtils.a(yYPayRequestModel, YYConstants.PayFromSource.Pay_Gift, (Fragment) this, a(), new YYPayUtils.PayGiftStatusListener() { // from class: com.blued.android.module.yy_china.dialog.YYRomanticTripDialog$toPayBill$2
             @Override // com.blued.android.module.yy_china.utils.YYPayUtils.PayGiftStatusListener
             public void a(int i, String str2) {
             }
@@ -237,9 +229,9 @@ public final class YYRomanticTripDialog extends BaseFullScreenDialog {
                 Intrinsics.c(remove, "targetUsers.removeAt(0)");
                 YYSeatMemberModel yYSeatMemberModel = remove;
                 yYSeatMemberModel.isSelected = false;
-                YYImMsgManager a2 = YYImMsgManager.a();
+                YYImMsgManager a = YYImMsgManager.a();
                 yYGiftModel2 = this.f;
-                a2.a(yYGiftModel2, yYSeatMemberModel, yYPayGoodsModel, false);
+                a.a(yYGiftModel2, yYSeatMemberModel, yYPayGoodsModel, false);
                 if (arrayList.size() > 0) {
                     this.a(str, z, arrayList, false);
                 } else {
@@ -299,9 +291,8 @@ public final class YYRomanticTripDialog extends BaseFullScreenDialog {
 
     private final void f() {
         this.d = new CityAdapter(this);
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2);
+        RecyclerView.LayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2);
         gridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() { // from class: com.blued.android.module.yy_china.dialog.YYRomanticTripDialog$initRecyclerView$1
-            @Override // androidx.recyclerview.widget.GridLayoutManager.SpanSizeLookup
             public int getSpanSize(int i) {
                 YYRomanticTripDialog.CityAdapter cityAdapter;
                 cityAdapter = YYRomanticTripDialog.this.d;
@@ -313,21 +304,21 @@ public final class YYRomanticTripDialog extends BaseFullScreenDialog {
                 return cityAdapter2.a(i);
             }
         });
-        DialogRomanticTripLayoutBinding dialogRomanticTripLayoutBinding = this.f16995c;
+        DialogRomanticTripLayoutBinding dialogRomanticTripLayoutBinding = this.c;
         DialogRomanticTripLayoutBinding dialogRomanticTripLayoutBinding2 = dialogRomanticTripLayoutBinding;
         if (dialogRomanticTripLayoutBinding == null) {
             Intrinsics.c("mBinding");
             dialogRomanticTripLayoutBinding2 = null;
         }
         RecyclerView recyclerView = dialogRomanticTripLayoutBinding2.k;
-        CityAdapter cityAdapter = this.d;
-        CityAdapter cityAdapter2 = cityAdapter;
-        if (cityAdapter == null) {
+        RecyclerView.Adapter adapter = this.d;
+        CityAdapter cityAdapter = adapter;
+        if (adapter == null) {
             Intrinsics.c("cityAdapter");
-            cityAdapter2 = null;
+            cityAdapter = null;
         }
-        recyclerView.setAdapter(cityAdapter2);
-        DialogRomanticTripLayoutBinding dialogRomanticTripLayoutBinding3 = this.f16995c;
+        recyclerView.setAdapter(cityAdapter);
+        DialogRomanticTripLayoutBinding dialogRomanticTripLayoutBinding3 = this.c;
         if (dialogRomanticTripLayoutBinding3 == null) {
             Intrinsics.c("mBinding");
             dialogRomanticTripLayoutBinding3 = null;
@@ -337,9 +328,9 @@ public final class YYRomanticTripDialog extends BaseFullScreenDialog {
 
     private final void g() {
         List<YYSeatMemberModel> hasPeopleMicsExceptMyself;
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        RecyclerView.LayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setOrientation(0);
-        DialogRomanticTripLayoutBinding dialogRomanticTripLayoutBinding = this.f16995c;
+        DialogRomanticTripLayoutBinding dialogRomanticTripLayoutBinding = this.c;
         DialogRomanticTripLayoutBinding dialogRomanticTripLayoutBinding2 = dialogRomanticTripLayoutBinding;
         if (dialogRomanticTripLayoutBinding == null) {
             Intrinsics.c("mBinding");
@@ -350,35 +341,34 @@ public final class YYRomanticTripDialog extends BaseFullScreenDialog {
         ActivityFragmentActive fragmentActive = a();
         Intrinsics.c(fragmentActive, "fragmentActive");
         this.e = new ReceiveCityAdapter(context, fragmentActive);
-        DialogRomanticTripLayoutBinding dialogRomanticTripLayoutBinding3 = this.f16995c;
+        DialogRomanticTripLayoutBinding dialogRomanticTripLayoutBinding3 = this.c;
         DialogRomanticTripLayoutBinding dialogRomanticTripLayoutBinding4 = dialogRomanticTripLayoutBinding3;
         if (dialogRomanticTripLayoutBinding3 == null) {
             Intrinsics.c("mBinding");
             dialogRomanticTripLayoutBinding4 = null;
         }
         RecyclerView recyclerView = dialogRomanticTripLayoutBinding4.l;
-        ReceiveCityAdapter receiveCityAdapter = this.e;
-        ReceiveCityAdapter receiveCityAdapter2 = receiveCityAdapter;
-        if (receiveCityAdapter == null) {
+        RecyclerView.Adapter adapter = this.e;
+        ReceiveCityAdapter receiveCityAdapter = adapter;
+        if (adapter == null) {
             Intrinsics.c("userAdapter");
-            receiveCityAdapter2 = null;
+            receiveCityAdapter = null;
         }
-        recyclerView.setAdapter(receiveCityAdapter2);
-        DialogRomanticTripLayoutBinding dialogRomanticTripLayoutBinding5 = this.f16995c;
+        recyclerView.setAdapter(receiveCityAdapter);
+        DialogRomanticTripLayoutBinding dialogRomanticTripLayoutBinding5 = this.c;
         DialogRomanticTripLayoutBinding dialogRomanticTripLayoutBinding6 = dialogRomanticTripLayoutBinding5;
         if (dialogRomanticTripLayoutBinding5 == null) {
             Intrinsics.c("mBinding");
             dialogRomanticTripLayoutBinding6 = null;
         }
         dialogRomanticTripLayoutBinding6.l.setLayoutManager(linearLayoutManager);
-        ReceiveCityAdapter receiveCityAdapter3 = this.e;
-        ReceiveCityAdapter receiveCityAdapter4 = receiveCityAdapter3;
-        if (receiveCityAdapter3 == null) {
+        ReceiveCityAdapter receiveCityAdapter2 = this.e;
+        ReceiveCityAdapter receiveCityAdapter3 = receiveCityAdapter2;
+        if (receiveCityAdapter2 == null) {
             Intrinsics.c("userAdapter");
-            receiveCityAdapter4 = null;
+            receiveCityAdapter3 = null;
         }
-        receiveCityAdapter4.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() { // from class: com.blued.android.module.yy_china.dialog.-$$Lambda$YYRomanticTripDialog$JNmExDRNc6CUZBwamP8UIcuQVMc
-            @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemClickListener
+        receiveCityAdapter3.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() { // from class: com.blued.android.module.yy_china.dialog.-$$Lambda$YYRomanticTripDialog$JNmExDRNc6CUZBwamP8UIcuQVMc
             public final void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
                 YYRomanticTripDialog.a(YYRomanticTripDialog.this, baseQuickAdapter, view, i);
             }
@@ -394,20 +384,20 @@ public final class YYRomanticTripDialog extends BaseFullScreenDialog {
             } else if (hasPeopleMicsExceptMyself.size() > 1) {
                 hasPeopleMicsExceptMyself.get(1).isSelected = true;
             }
-            ReceiveCityAdapter receiveCityAdapter5 = this.e;
-            ReceiveCityAdapter receiveCityAdapter6 = receiveCityAdapter5;
-            if (receiveCityAdapter5 == null) {
+            ReceiveCityAdapter receiveCityAdapter4 = this.e;
+            ReceiveCityAdapter receiveCityAdapter5 = receiveCityAdapter4;
+            if (receiveCityAdapter4 == null) {
                 Intrinsics.c("userAdapter");
-                receiveCityAdapter6 = null;
+                receiveCityAdapter5 = null;
             }
-            receiveCityAdapter6.setNewData(hasPeopleMicsExceptMyself);
+            receiveCityAdapter5.setNewData(hasPeopleMicsExceptMyself);
         }
-        ReceiveCityAdapter receiveCityAdapter7 = this.e;
-        if (receiveCityAdapter7 == null) {
+        ReceiveCityAdapter receiveCityAdapter6 = this.e;
+        if (receiveCityAdapter6 == null) {
             Intrinsics.c("userAdapter");
-            receiveCityAdapter7 = null;
+            receiveCityAdapter6 = null;
         }
-        if (receiveCityAdapter7.getData().size() <= 1) {
+        if (receiveCityAdapter6.getData().size() <= 1) {
             i();
         } else {
             j();
@@ -431,98 +421,98 @@ public final class YYRomanticTripDialog extends BaseFullScreenDialog {
     }
 
     private final void i() {
-        DialogRomanticTripLayoutBinding dialogRomanticTripLayoutBinding = this.f16995c;
+        DialogRomanticTripLayoutBinding dialogRomanticTripLayoutBinding = this.c;
         DialogRomanticTripLayoutBinding dialogRomanticTripLayoutBinding2 = dialogRomanticTripLayoutBinding;
         if (dialogRomanticTripLayoutBinding == null) {
             Intrinsics.c("mBinding");
             dialogRomanticTripLayoutBinding2 = null;
         }
         dialogRomanticTripLayoutBinding2.o.setVisibility(8);
-        DialogRomanticTripLayoutBinding dialogRomanticTripLayoutBinding3 = this.f16995c;
+        DialogRomanticTripLayoutBinding dialogRomanticTripLayoutBinding3 = this.c;
         DialogRomanticTripLayoutBinding dialogRomanticTripLayoutBinding4 = dialogRomanticTripLayoutBinding3;
         if (dialogRomanticTripLayoutBinding3 == null) {
             Intrinsics.c("mBinding");
             dialogRomanticTripLayoutBinding4 = null;
         }
         dialogRomanticTripLayoutBinding4.l.setVisibility(8);
-        DialogRomanticTripLayoutBinding dialogRomanticTripLayoutBinding5 = this.f16995c;
+        DialogRomanticTripLayoutBinding dialogRomanticTripLayoutBinding5 = this.c;
         DialogRomanticTripLayoutBinding dialogRomanticTripLayoutBinding6 = dialogRomanticTripLayoutBinding5;
         if (dialogRomanticTripLayoutBinding5 == null) {
             Intrinsics.c("mBinding");
             dialogRomanticTripLayoutBinding6 = null;
         }
         dialogRomanticTripLayoutBinding6.h.setVisibility(8);
-        DialogRomanticTripLayoutBinding dialogRomanticTripLayoutBinding7 = this.f16995c;
+        DialogRomanticTripLayoutBinding dialogRomanticTripLayoutBinding7 = this.c;
         DialogRomanticTripLayoutBinding dialogRomanticTripLayoutBinding8 = dialogRomanticTripLayoutBinding7;
         if (dialogRomanticTripLayoutBinding7 == null) {
             Intrinsics.c("mBinding");
             dialogRomanticTripLayoutBinding8 = null;
         }
-        ViewGroup.LayoutParams layoutParams = dialogRomanticTripLayoutBinding8.b.getLayoutParams();
+        ConstraintLayout.LayoutParams layoutParams = dialogRomanticTripLayoutBinding8.b.getLayoutParams();
         if (layoutParams == null) {
             throw new NullPointerException("null cannot be cast to non-null type androidx.constraintlayout.widget.ConstraintLayout.LayoutParams");
         }
-        ((ConstraintLayout.LayoutParams) layoutParams).topMargin = DensityUtils.a(getContext(), 26.0f);
-        DialogRomanticTripLayoutBinding dialogRomanticTripLayoutBinding9 = this.f16995c;
+        layoutParams.topMargin = DensityUtils.a(getContext(), 26.0f);
+        DialogRomanticTripLayoutBinding dialogRomanticTripLayoutBinding9 = this.c;
         if (dialogRomanticTripLayoutBinding9 == null) {
             Intrinsics.c("mBinding");
             dialogRomanticTripLayoutBinding9 = null;
         }
-        ViewGroup.LayoutParams layoutParams2 = dialogRomanticTripLayoutBinding9.f16399a.getLayoutParams();
+        ConstraintLayout.LayoutParams layoutParams2 = dialogRomanticTripLayoutBinding9.a.getLayoutParams();
         if (layoutParams2 == null) {
             throw new NullPointerException("null cannot be cast to non-null type androidx.constraintlayout.widget.ConstraintLayout.LayoutParams");
         }
-        ((ConstraintLayout.LayoutParams) layoutParams2).height = DensityUtils.a(getContext(), 24.5f);
+        layoutParams2.height = DensityUtils.a(getContext(), 24.5f);
     }
 
     private final void j() {
-        DialogRomanticTripLayoutBinding dialogRomanticTripLayoutBinding = this.f16995c;
+        DialogRomanticTripLayoutBinding dialogRomanticTripLayoutBinding = this.c;
         DialogRomanticTripLayoutBinding dialogRomanticTripLayoutBinding2 = dialogRomanticTripLayoutBinding;
         if (dialogRomanticTripLayoutBinding == null) {
             Intrinsics.c("mBinding");
             dialogRomanticTripLayoutBinding2 = null;
         }
         dialogRomanticTripLayoutBinding2.o.setVisibility(0);
-        DialogRomanticTripLayoutBinding dialogRomanticTripLayoutBinding3 = this.f16995c;
+        DialogRomanticTripLayoutBinding dialogRomanticTripLayoutBinding3 = this.c;
         DialogRomanticTripLayoutBinding dialogRomanticTripLayoutBinding4 = dialogRomanticTripLayoutBinding3;
         if (dialogRomanticTripLayoutBinding3 == null) {
             Intrinsics.c("mBinding");
             dialogRomanticTripLayoutBinding4 = null;
         }
         dialogRomanticTripLayoutBinding4.l.setVisibility(0);
-        DialogRomanticTripLayoutBinding dialogRomanticTripLayoutBinding5 = this.f16995c;
+        DialogRomanticTripLayoutBinding dialogRomanticTripLayoutBinding5 = this.c;
         DialogRomanticTripLayoutBinding dialogRomanticTripLayoutBinding6 = dialogRomanticTripLayoutBinding5;
         if (dialogRomanticTripLayoutBinding5 == null) {
             Intrinsics.c("mBinding");
             dialogRomanticTripLayoutBinding6 = null;
         }
         dialogRomanticTripLayoutBinding6.h.setVisibility(0);
-        DialogRomanticTripLayoutBinding dialogRomanticTripLayoutBinding7 = this.f16995c;
+        DialogRomanticTripLayoutBinding dialogRomanticTripLayoutBinding7 = this.c;
         DialogRomanticTripLayoutBinding dialogRomanticTripLayoutBinding8 = dialogRomanticTripLayoutBinding7;
         if (dialogRomanticTripLayoutBinding7 == null) {
             Intrinsics.c("mBinding");
             dialogRomanticTripLayoutBinding8 = null;
         }
-        ViewGroup.LayoutParams layoutParams = dialogRomanticTripLayoutBinding8.b.getLayoutParams();
+        ConstraintLayout.LayoutParams layoutParams = dialogRomanticTripLayoutBinding8.b.getLayoutParams();
         if (layoutParams == null) {
             throw new NullPointerException("null cannot be cast to non-null type androidx.constraintlayout.widget.ConstraintLayout.LayoutParams");
         }
-        ((ConstraintLayout.LayoutParams) layoutParams).topMargin = DensityUtils.a(getContext(), 18.0f);
-        DialogRomanticTripLayoutBinding dialogRomanticTripLayoutBinding9 = this.f16995c;
+        layoutParams.topMargin = DensityUtils.a(getContext(), 18.0f);
+        DialogRomanticTripLayoutBinding dialogRomanticTripLayoutBinding9 = this.c;
         if (dialogRomanticTripLayoutBinding9 == null) {
             Intrinsics.c("mBinding");
             dialogRomanticTripLayoutBinding9 = null;
         }
-        ViewGroup.LayoutParams layoutParams2 = dialogRomanticTripLayoutBinding9.f16399a.getLayoutParams();
+        ConstraintLayout.LayoutParams layoutParams2 = dialogRomanticTripLayoutBinding9.a.getLayoutParams();
         if (layoutParams2 == null) {
             throw new NullPointerException("null cannot be cast to non-null type androidx.constraintlayout.widget.ConstraintLayout.LayoutParams");
         }
-        ((ConstraintLayout.LayoutParams) layoutParams2).height = DensityUtils.a(getContext(), 26.0f);
+        layoutParams2.height = DensityUtils.a(getContext(), 26.0f);
     }
 
     private final void k() {
-        final ActivityFragmentActive a2 = a();
-        YYRoomHttpUtils.x(new BluedUIHttpResponse<BluedEntityA<YYRomanticCityListModel>>(a2) { // from class: com.blued.android.module.yy_china.dialog.YYRomanticTripDialog$loadCityList$1
+        final ActivityFragmentActive a = a();
+        YYRoomHttpUtils.x(new BluedUIHttpResponse<BluedEntityA<YYRomanticCityListModel>>(a) { // from class: com.blued.android.module.yy_china.dialog.YYRomanticTripDialog$loadCityList$1
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
@@ -547,7 +537,7 @@ public final class YYRomanticTripDialog extends BaseFullScreenDialog {
         }, a());
     }
 
-    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         if (getArguments() != null) {
@@ -565,13 +555,13 @@ public final class YYRomanticTripDialog extends BaseFullScreenDialog {
         this.h = l;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
         View inflate = LayoutInflater.from(getContext()).inflate(R.layout.dialog_romantic_trip_layout, (ViewGroup) null);
-        DialogRomanticTripLayoutBinding a2 = DialogRomanticTripLayoutBinding.a(inflate);
-        Intrinsics.c(a2, "bind(view)");
-        this.f16995c = a2;
+        DialogRomanticTripLayoutBinding a = DialogRomanticTripLayoutBinding.a(inflate);
+        Intrinsics.c(a, "bind(view)");
+        this.c = a;
         f();
         g();
         YYRoomModel b = YYRoomInfoManager.e().b();
@@ -582,19 +572,19 @@ public final class YYRomanticTripDialog extends BaseFullScreenDialog {
         return inflate;
     }
 
-    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment
     public void onViewCreated(View view, Bundle bundle) {
         Intrinsics.e(view, "view");
         super.onViewCreated(view, bundle);
-        ImageWrapper a2 = ImageLoader.a(a(), this.f16994a);
-        DialogRomanticTripLayoutBinding dialogRomanticTripLayoutBinding = this.f16995c;
+        ImageWrapper a = ImageLoader.a(a(), this.a);
+        DialogRomanticTripLayoutBinding dialogRomanticTripLayoutBinding = this.c;
         DialogRomanticTripLayoutBinding dialogRomanticTripLayoutBinding2 = dialogRomanticTripLayoutBinding;
         if (dialogRomanticTripLayoutBinding == null) {
             Intrinsics.c("mBinding");
             dialogRomanticTripLayoutBinding2 = null;
         }
-        a2.a(dialogRomanticTripLayoutBinding2.e);
-        DialogRomanticTripLayoutBinding dialogRomanticTripLayoutBinding3 = this.f16995c;
+        a.a(dialogRomanticTripLayoutBinding2.e);
+        DialogRomanticTripLayoutBinding dialogRomanticTripLayoutBinding3 = this.c;
         DialogRomanticTripLayoutBinding dialogRomanticTripLayoutBinding4 = dialogRomanticTripLayoutBinding3;
         if (dialogRomanticTripLayoutBinding3 == null) {
             Intrinsics.c("mBinding");
@@ -606,7 +596,7 @@ public final class YYRomanticTripDialog extends BaseFullScreenDialog {
                 YYRomanticTripDialog.a(view2);
             }
         });
-        DialogRomanticTripLayoutBinding dialogRomanticTripLayoutBinding5 = this.f16995c;
+        DialogRomanticTripLayoutBinding dialogRomanticTripLayoutBinding5 = this.c;
         DialogRomanticTripLayoutBinding dialogRomanticTripLayoutBinding6 = dialogRomanticTripLayoutBinding5;
         if (dialogRomanticTripLayoutBinding5 == null) {
             Intrinsics.c("mBinding");
@@ -618,19 +608,19 @@ public final class YYRomanticTripDialog extends BaseFullScreenDialog {
                 YYRomanticTripDialog.a(YYRomanticTripDialog.this, view2);
             }
         });
-        DialogRomanticTripLayoutBinding dialogRomanticTripLayoutBinding7 = this.f16995c;
+        DialogRomanticTripLayoutBinding dialogRomanticTripLayoutBinding7 = this.c;
         DialogRomanticTripLayoutBinding dialogRomanticTripLayoutBinding8 = dialogRomanticTripLayoutBinding7;
         if (dialogRomanticTripLayoutBinding7 == null) {
             Intrinsics.c("mBinding");
             dialogRomanticTripLayoutBinding8 = null;
         }
-        dialogRomanticTripLayoutBinding8.f16400c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.dialog.-$$Lambda$YYRomanticTripDialog$2lA18pfJqis5dX9ep8vyD7auDH8
+        dialogRomanticTripLayoutBinding8.c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.dialog.-$$Lambda$YYRomanticTripDialog$2lA18pfJqis5dX9ep8vyD7auDH8
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 YYRomanticTripDialog.b(YYRomanticTripDialog.this, view2);
             }
         });
-        DialogRomanticTripLayoutBinding dialogRomanticTripLayoutBinding9 = this.f16995c;
+        DialogRomanticTripLayoutBinding dialogRomanticTripLayoutBinding9 = this.c;
         DialogRomanticTripLayoutBinding dialogRomanticTripLayoutBinding10 = dialogRomanticTripLayoutBinding9;
         if (dialogRomanticTripLayoutBinding9 == null) {
             Intrinsics.c("mBinding");
@@ -642,7 +632,7 @@ public final class YYRomanticTripDialog extends BaseFullScreenDialog {
                 YYRomanticTripDialog.c(YYRomanticTripDialog.this, view2);
             }
         });
-        DialogRomanticTripLayoutBinding dialogRomanticTripLayoutBinding11 = this.f16995c;
+        DialogRomanticTripLayoutBinding dialogRomanticTripLayoutBinding11 = this.c;
         if (dialogRomanticTripLayoutBinding11 == null) {
             Intrinsics.c("mBinding");
             dialogRomanticTripLayoutBinding11 = null;

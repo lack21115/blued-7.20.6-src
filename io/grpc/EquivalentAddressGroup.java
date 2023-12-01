@@ -1,6 +1,5 @@
 package io.grpc;
 
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.google.common.base.Preconditions;
 import io.grpc.Attributes;
 import java.lang.annotation.Documented;
@@ -77,6 +76,6 @@ public final class EquivalentAddressGroup {
     }
 
     public String toString() {
-        return "[" + this.addrs + BridgeUtil.SPLIT_MARK + this.attrs + "]";
+        return "[" + this.addrs + "/" + this.attrs + "]";
     }
 }

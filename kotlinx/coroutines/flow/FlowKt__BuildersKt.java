@@ -20,7 +20,7 @@ public final /* synthetic */ class FlowKt__BuildersKt {
             @Override // kotlinx.coroutines.flow.Flow
             public Object a(FlowCollector<? super T> flowCollector, Continuation<? super Unit> continuation) {
                 Object emit = flowCollector.emit((Object) Object.this, continuation);
-                return emit == IntrinsicsKt.a() ? emit : Unit.f42314a;
+                return emit == IntrinsicsKt.a() ? emit : Unit.a;
             }
         };
     }

@@ -9,11 +9,12 @@ import android.media.MediaFormat;
 import com.opos.videocache.f;
 import com.opos.videocache.j;
 
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8303388-dex2jar.jar:com/opos/videocache/c/d.class */
-class d extends SQLiteOpenHelper implements b {
+public class d extends SQLiteOpenHelper implements b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String[] f27441a = {"_id", "url", "length", MediaFormat.KEY_MIME};
+    private static final String[] f13753a = {"_id", "url", "length", MediaFormat.KEY_MIME};
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public d(Context context) {
@@ -23,9 +24,9 @@ class d extends SQLiteOpenHelper implements b {
 
     private ContentValues a(j jVar) {
         ContentValues contentValues = new ContentValues();
-        contentValues.put("url", jVar.f27444a);
+        contentValues.put("url", jVar.f13756a);
         contentValues.put("length", Long.valueOf(jVar.b));
-        contentValues.put(MediaFormat.KEY_MIME, jVar.f27445c);
+        contentValues.put(MediaFormat.KEY_MIME, jVar.f13757c);
         return contentValues;
     }
 
@@ -38,7 +39,7 @@ class d extends SQLiteOpenHelper implements b {
         Cursor cursor;
         f.a(str);
         try {
-            Cursor query = getReadableDatabase().query("SourceInfo", f27441a, "url=?", new String[]{str}, null, null, null);
+            Cursor query = getReadableDatabase().query("SourceInfo", f13753a, "url=?", new String[]{str}, null, null, null);
             j jVar = null;
             if (query != null) {
                 try {

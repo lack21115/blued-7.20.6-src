@@ -7,11 +7,11 @@ import com.tencent.liteav.videoconsumer.decoder.VideoDecodeController;
 final /* synthetic */ class n implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final j f36717a;
+    private final j f23026a;
     private final VideoDecodeController.DecodeStrategy b;
 
     private n(j jVar, VideoDecodeController.DecodeStrategy decodeStrategy) {
-        this.f36717a = jVar;
+        this.f23026a = jVar;
         this.b = decodeStrategy;
     }
 
@@ -21,27 +21,27 @@ final /* synthetic */ class n implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        j jVar = this.f36717a;
+        j jVar = this.f23026a;
         final VideoDecodeController.DecodeStrategy decodeStrategy = this.b;
-        LiteavLog.i(jVar.f36705a, "setDecoderType: ".concat(String.valueOf(decodeStrategy)));
+        LiteavLog.i(jVar.f23014a, "setDecoderType: ".concat(String.valueOf(decodeStrategy)));
         if (jVar.f != null) {
             final VideoDecodeController videoDecodeController = jVar.f;
             videoDecodeController.a(new Runnable(videoDecodeController, decodeStrategy) { // from class: com.tencent.liteav.videoconsumer.decoder.ac
 
                 /* renamed from: a  reason: collision with root package name */
-                private final VideoDecodeController f36747a;
+                private final VideoDecodeController f23056a;
                 private final VideoDecodeController.DecodeStrategy b;
 
                 {
-                    this.f36747a = videoDecodeController;
+                    this.f23056a = videoDecodeController;
                     this.b = decodeStrategy;
                 }
 
                 @Override // java.lang.Runnable
                 public final void run() {
-                    VideoDecodeController videoDecodeController2 = this.f36747a;
+                    VideoDecodeController videoDecodeController2 = this.f23056a;
                     VideoDecodeController.DecodeStrategy decodeStrategy2 = this.b;
-                    d dVar = videoDecodeController2.f36735c;
+                    d dVar = videoDecodeController2.f23044c;
                     if (dVar.g != decodeStrategy2) {
                         dVar.g = decodeStrategy2;
                         dVar.h = null;
@@ -50,7 +50,7 @@ final /* synthetic */ class n implements Runnable {
                         } else {
                             dVar.D = 1;
                         }
-                        LiteavLog.i(dVar.f36779a, "set decode strategy to %s", dVar.g);
+                        LiteavLog.i(dVar.f23088a, "set decode strategy to %s", dVar.g);
                     }
                 }
             });

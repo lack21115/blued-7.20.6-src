@@ -14,15 +14,14 @@ import skin.support.widget.SkinCompatHelper;
 @Deprecated
 /* loaded from: source-3503164-dex2jar.jar:skin/support/app/SkinCompatActivity.class */
 public class SkinCompatActivity extends AppCompatActivity implements SkinObserver {
+    private SkinCompatDelegate a;
 
-    /* renamed from: a  reason: collision with root package name */
-    private SkinCompatDelegate f44197a;
-
+    /* JADX WARN: Multi-variable type inference failed */
     public SkinCompatDelegate a() {
-        if (this.f44197a == null) {
-            this.f44197a = SkinCompatDelegate.a(this);
+        if (this.a == null) {
+            this.a = SkinCompatDelegate.a(this);
         }
-        return this.f44197a;
+        return this.a;
     }
 
     @Override // skin.support.observe.SkinObserver
@@ -35,16 +34,16 @@ public class SkinCompatActivity extends AppCompatActivity implements SkinObserve
     protected void b() {
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     protected void c() {
-        Drawable a2;
+        Drawable a;
         int b = SkinCompatThemeUtils.b(this);
-        if (SkinCompatHelper.b(b) == 0 || (a2 = SkinCompatVectorResources.a(this, b)) == null) {
+        if (SkinCompatHelper.b(b) == 0 || (a = SkinCompatVectorResources.a(this, b)) == null) {
             return;
         }
-        getWindow().setBackgroundDrawable(a2);
+        getWindow().setBackgroundDrawable(a);
     }
 
-    @Override // androidx.fragment.app.FragmentActivity, androidx.activity.ComponentActivity, androidx.core.app.ComponentActivity, android.app.Activity
     public void onCreate(Bundle bundle) {
         LayoutInflaterCompat.setFactory2(getLayoutInflater(), a());
         super.onCreate(bundle);
@@ -52,13 +51,11 @@ public class SkinCompatActivity extends AppCompatActivity implements SkinObserve
         c();
     }
 
-    @Override // androidx.appcompat.app.AppCompatActivity, androidx.fragment.app.FragmentActivity, android.app.Activity
     public void onDestroy() {
         super.onDestroy();
         SkinCompatManager.a().b(this);
     }
 
-    @Override // androidx.fragment.app.FragmentActivity, android.app.Activity
     public void onResume() {
         super.onResume();
         SkinCompatManager.a().a((SkinObserver) this);

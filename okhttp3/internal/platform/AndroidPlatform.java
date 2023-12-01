@@ -2,7 +2,6 @@ package okhttp3.internal.platform;
 
 import android.os.Build;
 import android.util.Log;
-import com.ss.android.socialbase.downloader.constants.MonitorConstants;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -26,33 +25,27 @@ import okhttp3.internal.tls.TrustRootIndex;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-3503164-dex2jar.jar:okhttp3/internal/platform/AndroidPlatform.class */
 public class AndroidPlatform extends Platform {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Class<?> f43965a;
+    private final Class<?> a;
     private final OptionalMethod<Socket> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final OptionalMethod<Socket> f43966c;
+    private final OptionalMethod<Socket> c;
     private final OptionalMethod<Socket> d;
     private final OptionalMethod<Socket> e;
     private final CloseGuard f = CloseGuard.a();
 
     /* loaded from: source-3503164-dex2jar.jar:okhttp3/internal/platform/AndroidPlatform$AndroidCertificateChainCleaner.class */
     static final class AndroidCertificateChainCleaner extends CertificateChainCleaner {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final Object f43967a;
+        private final Object a;
         private final Method b;
 
         AndroidCertificateChainCleaner(Object obj, Method method) {
-            this.f43967a = obj;
+            this.a = obj;
             this.b = method;
         }
 
         @Override // okhttp3.internal.tls.CertificateChainCleaner
         public List<Certificate> a(List<Certificate> list, String str) throws SSLPeerUnverifiedException {
             try {
-                return (List) this.b.invoke(this.f43967a, (X509Certificate[]) list.toArray(new X509Certificate[list.size()]), "RSA", str);
+                return (List) this.b.invoke(this.a, (X509Certificate[]) list.toArray(new X509Certificate[list.size()]), "RSA", str);
             } catch (IllegalAccessException e) {
                 throw new AssertionError(e);
             } catch (InvocationTargetException e2) {
@@ -73,20 +66,18 @@ public class AndroidPlatform extends Platform {
 
     /* loaded from: source-3503164-dex2jar.jar:okhttp3/internal/platform/AndroidPlatform$AndroidTrustRootIndex.class */
     static final class AndroidTrustRootIndex implements TrustRootIndex {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final X509TrustManager f43968a;
+        private final X509TrustManager a;
         private final Method b;
 
         AndroidTrustRootIndex(X509TrustManager x509TrustManager, Method method) {
             this.b = method;
-            this.f43968a = x509TrustManager;
+            this.a = x509TrustManager;
         }
 
         @Override // okhttp3.internal.tls.TrustRootIndex
         public X509Certificate a(X509Certificate x509Certificate) {
             try {
-                TrustAnchor trustAnchor = (TrustAnchor) this.b.invoke(this.f43968a, x509Certificate);
+                TrustAnchor trustAnchor = (TrustAnchor) this.b.invoke(this.a, x509Certificate);
                 X509Certificate x509Certificate2 = null;
                 if (trustAnchor != null) {
                     x509Certificate2 = trustAnchor.getTrustedCert();
@@ -105,30 +96,26 @@ public class AndroidPlatform extends Platform {
             }
             if (obj instanceof AndroidTrustRootIndex) {
                 AndroidTrustRootIndex androidTrustRootIndex = (AndroidTrustRootIndex) obj;
-                return this.f43968a.equals(androidTrustRootIndex.f43968a) && this.b.equals(androidTrustRootIndex.b);
+                return this.a.equals(androidTrustRootIndex.a) && this.b.equals(androidTrustRootIndex.b);
             }
             return false;
         }
 
         public int hashCode() {
-            return this.f43968a.hashCode() + (this.b.hashCode() * 31);
+            return this.a.hashCode() + (this.b.hashCode() * 31);
         }
     }
 
     /* loaded from: source-3503164-dex2jar.jar:okhttp3/internal/platform/AndroidPlatform$CloseGuard.class */
     static final class CloseGuard {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final Method f43969a;
+        private final Method a;
         private final Method b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private final Method f43970c;
+        private final Method c;
 
         CloseGuard(Method method, Method method2, Method method3) {
-            this.f43969a = method;
+            this.a = method;
             this.b = method2;
-            this.f43970c = method3;
+            this.c = method3;
         }
 
         static CloseGuard a() {
@@ -137,7 +124,7 @@ public class AndroidPlatform extends Platform {
             Method method3 = null;
             try {
                 Class<?> cls = Class.forName("dalvik.system.CloseGuard");
-                Method method4 = cls.getMethod(MonitorConstants.CONNECT_TYPE_GET, new Class[0]);
+                Method method4 = cls.getMethod("get", new Class[0]);
                 method2 = cls.getMethod("open", String.class);
                 method = cls.getMethod("warnIfOpen", new Class[0]);
                 method3 = method4;
@@ -149,7 +136,7 @@ public class AndroidPlatform extends Platform {
         }
 
         Object a(String str) {
-            Method method = this.f43969a;
+            Method method = this.a;
             if (method != null) {
                 try {
                     Object invoke = method.invoke(null, new Object[0]);
@@ -166,7 +153,7 @@ public class AndroidPlatform extends Platform {
             boolean z = false;
             if (obj != null) {
                 try {
-                    this.f43970c.invoke(obj, new Object[0]);
+                    this.c.invoke(obj, new Object[0]);
                     z = true;
                 } catch (Exception e) {
                     return false;
@@ -178,9 +165,9 @@ public class AndroidPlatform extends Platform {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public AndroidPlatform(Class<?> cls, OptionalMethod<Socket> optionalMethod, OptionalMethod<Socket> optionalMethod2, OptionalMethod<Socket> optionalMethod3, OptionalMethod<Socket> optionalMethod4) {
-        this.f43965a = cls;
+        this.a = cls;
         this.b = optionalMethod;
-        this.f43966c = optionalMethod2;
+        this.c = optionalMethod2;
         this.d = optionalMethod3;
         this.e = optionalMethod4;
     }
@@ -273,9 +260,9 @@ public class AndroidPlatform extends Platform {
     @Override // okhttp3.internal.platform.Platform
     @Nullable
     protected X509TrustManager a(SSLSocketFactory sSLSocketFactory) {
-        Object a2 = a(sSLSocketFactory, this.f43965a, "sslParameters");
-        Object obj = a2;
-        if (a2 == null) {
+        Object a = a(sSLSocketFactory, this.a, "sslParameters");
+        Object obj = a;
+        if (a == null) {
             try {
                 obj = a(sSLSocketFactory, Class.forName("com.google.android.gms.org.conscrypt.SSLParametersImpl", false, sSLSocketFactory.getClass().getClassLoader()), "sslParameters");
             } catch (ClassNotFoundException e) {
@@ -361,7 +348,7 @@ public class AndroidPlatform extends Platform {
     public void a(SSLSocket sSLSocket, String str, List<Protocol> list) throws IOException {
         if (str != null) {
             this.b.b(sSLSocket, true);
-            this.f43966c.b(sSLSocket, str);
+            this.c.b(sSLSocket, str);
         }
         OptionalMethod<Socket> optionalMethod = this.e;
         if (optionalMethod == null || !optionalMethod.a((OptionalMethod<Socket>) sSLSocket)) {

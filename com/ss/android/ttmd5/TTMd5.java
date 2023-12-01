@@ -1,5 +1,7 @@
 package com.ss.android.ttmd5;
 
+import com.cdo.oaps.ad.OapsKey;
+import com.huawei.openalliance.ad.constant.t;
 import java.io.File;
 import java.io.IOException;
 import java.lang.annotation.Retention;
@@ -148,7 +150,7 @@ public class TTMd5 {
     }
 
     private static String generateTTMd5Tag(int i, long j) {
-        return "ttmd5:1:1:" + encryptionNum(i) + "g" + encryptionNum(j);
+        return "ttmd5:1:1:" + encryptionNum(i) + OapsKey.KEY_GRADE + encryptionNum(j);
     }
 
     public static String md5(File file) {
@@ -157,7 +159,7 @@ public class TTMd5 {
 
     private static TTMd5Args parserTTMd5Args(String str) throws Exception {
         if (str.startsWith("ttmd5:")) {
-            String[] split = str.split(";");
+            String[] split = str.split(t.aE);
             String[] split2 = split[0].split(":");
             TTMd5Args tTMd5Args = new TTMd5Args();
             tTMd5Args.versionMain = Integer.parseInt(split2[1]);
@@ -165,7 +167,7 @@ public class TTMd5 {
                 return tTMd5Args;
             }
             tTMd5Args.versionSub = Integer.parseInt(split2[2]);
-            String[] split3 = split2[3].split("g");
+            String[] split3 = split2[3].split(OapsKey.KEY_GRADE);
             tTMd5Args.sampleCount = (int) decryptNum(split3[0]);
             tTMd5Args.sampleSize = decryptNum(split3[1]);
             tTMd5Args.realMd5 = split[1];

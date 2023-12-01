@@ -2,7 +2,6 @@ package com.blued.android.core.utils.toast;
 
 import android.app.Activity;
 import android.app.Application;
-import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.WindowManager;
@@ -10,17 +9,13 @@ import android.view.WindowManager;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/utils/toast/WindowLifecycle.class */
 public final class WindowLifecycle implements Application.ActivityLifecycleCallbacks {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Activity f9767a;
+    private Activity a;
     private Application b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private ToastImpl f9768c;
+    private ToastImpl c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public WindowLifecycle(Activity activity) {
-        this.f9767a = activity;
+        this.a = activity;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -29,42 +24,42 @@ public final class WindowLifecycle implements Application.ActivityLifecycleCallb
     }
 
     public WindowManager a() {
-        if (this.f9767a != null) {
-            if (Build.VERSION.SDK_INT < 17 || !this.f9767a.isDestroyed()) {
-                return this.f9767a.getWindowManager();
+        if (this.a != null) {
+            if (Build.VERSION.SDK_INT < 17 || !this.a.isDestroyed()) {
+                return this.a.getWindowManager();
             }
             return null;
         }
         Application application = this.b;
         if (application != null) {
-            return (WindowManager) application.getSystemService(Context.WINDOW_SERVICE);
+            return (WindowManager) application.getSystemService("window");
         }
         return null;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a(ToastImpl toastImpl) {
-        this.f9768c = toastImpl;
-        if (this.f9767a == null) {
+        this.c = toastImpl;
+        if (this.a == null) {
             return;
         }
         if (Build.VERSION.SDK_INT >= 29) {
-            this.f9767a.registerActivityLifecycleCallbacks(this);
+            this.a.registerActivityLifecycleCallbacks(this);
         } else {
-            this.f9767a.getApplication().registerActivityLifecycleCallbacks(this);
+            this.a.getApplication().registerActivityLifecycleCallbacks(this);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void b() {
-        this.f9768c = null;
-        if (this.f9767a == null) {
+        this.c = null;
+        if (this.a == null) {
             return;
         }
         if (Build.VERSION.SDK_INT >= 29) {
-            this.f9767a.unregisterActivityLifecycleCallbacks(this);
+            this.a.unregisterActivityLifecycleCallbacks(this);
         } else {
-            this.f9767a.getApplication().unregisterActivityLifecycleCallbacks(this);
+            this.a.getApplication().unregisterActivityLifecycleCallbacks(this);
         }
     }
 
@@ -74,21 +69,21 @@ public final class WindowLifecycle implements Application.ActivityLifecycleCallb
 
     @Override // android.app.Application.ActivityLifecycleCallbacks
     public void onActivityDestroyed(Activity activity) {
-        if (this.f9767a != activity) {
+        if (this.a != activity) {
             return;
         }
-        ToastImpl toastImpl = this.f9768c;
+        ToastImpl toastImpl = this.c;
         if (toastImpl != null) {
             toastImpl.c();
         }
         b();
-        this.f9767a = null;
+        this.a = null;
     }
 
     @Override // android.app.Application.ActivityLifecycleCallbacks
     public void onActivityPaused(Activity activity) {
         ToastImpl toastImpl;
-        if (this.f9767a == activity && (toastImpl = this.f9768c) != null) {
+        if (this.a == activity && (toastImpl = this.c) != null) {
             toastImpl.c();
         }
     }

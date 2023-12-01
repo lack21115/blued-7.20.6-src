@@ -41,7 +41,7 @@ public class YAxisRendererRadarChart extends YAxisRenderer {
             int i = this.g.E() ? this.g.d : this.g.d - 1;
             for (int i2 = !this.g.F(); i2 < i; i2++) {
                 Utils.a(centerOffsets, (this.g.b[i2] - this.g.u) * factor, this.r.getRotationAngle(), a2);
-                canvas.drawText(this.g.b(i2), a2.f22204a + 10.0f, a2.b, this.d);
+                canvas.drawText(this.g.b(i2), a2.f8597a + 10.0f, a2.b, this.d);
             }
             MPPointF.b(centerOffsets);
             MPPointF.b(a2);
@@ -83,9 +83,9 @@ public class YAxisRendererRadarChart extends YAxisRenderer {
                     }
                     Utils.a(centerOffsets, (a3 - yChartMin) * factor, (i4 * sliceAngle) + this.r.getRotationAngle(), a2);
                     if (i4 == 0) {
-                        path.moveTo(a2.f22204a, a2.b);
+                        path.moveTo(a2.f8597a, a2.b);
                     } else {
-                        path.lineTo(a2.f22204a, a2.b);
+                        path.lineTo(a2.f8597a, a2.b);
                     }
                     i3 = i4 + 1;
                 }

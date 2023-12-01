@@ -1,7 +1,5 @@
 package libcore.net.url;
 
-import android.net.ProxyInfo;
-import com.cdo.oaps.ad.OapsKey;
 import java.io.IOException;
 import java.net.Proxy;
 import java.net.URL;
@@ -21,10 +19,10 @@ public class FileHandler extends URLStreamHandler {
             throw new IllegalArgumentException("url == null");
         }
         String host = url.getHost();
-        if (host == null || host.isEmpty() || host.equalsIgnoreCase(ProxyInfo.LOCAL_HOST)) {
+        if (host == null || host.isEmpty() || host.equalsIgnoreCase("localhost")) {
             return new FileURLConnection(url);
         }
-        URL url2 = new URL(OapsKey.KEY_FILE_TYPE, host, url.getFile());
+        URL url2 = new URL("ftp", host, url.getFile());
         return proxy == null ? url2.openConnection() : url2.openConnection(proxy);
     }
 

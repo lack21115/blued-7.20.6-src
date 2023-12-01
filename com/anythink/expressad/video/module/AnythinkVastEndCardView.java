@@ -67,7 +67,7 @@ public class AnythinkVastEndCardView extends AnythinkBaseView implements f {
     public void init(Context context) {
         int findLayout = findLayout(n);
         if (findLayout >= 0) {
-            this.f8441c.inflate(findLayout, this);
+            this.f5601c.inflate(findLayout, this);
             this.o = (ViewGroup) findViewById(findID("anythink_rl_content"));
             this.p = findViewById(findID("anythink_iv_vastclose"));
             View findViewById = findViewById(findID("anythink_iv_vastok"));

@@ -4,22 +4,22 @@ package com.xiaomi.push.service;
 public class an {
 
     /* renamed from: a  reason: collision with root package name */
-    public int f41607a;
+    public int f27916a;
 
     /* renamed from: a  reason: collision with other field name */
-    public long f975a;
+    public long f928a;
 
     /* renamed from: a  reason: collision with other field name */
-    public boolean f976a;
+    public boolean f929a;
     public int b;
 
     /* renamed from: b  reason: collision with other field name */
-    public long f977b;
+    public long f930b;
 
     /* renamed from: b  reason: collision with other field name */
-    public boolean f978b;
+    public boolean f931b;
 
     /* renamed from: c  reason: collision with root package name */
-    public long f41608c;
+    public long f27917c;
     public long d;
 }

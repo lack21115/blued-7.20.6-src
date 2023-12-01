@@ -14,11 +14,11 @@ public interface p {
     public static final String Z = "rptVideoStateEvent";
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f22952a = "openDetailPage";
+    public static final String f9344a = "openDetailPage";
     public static final String b = "adOnRewarded";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f22953c = "apistatistics";
+    public static final String f9345c = "apistatistics";
     public static final String d = "rptAdServe";
     public static final String e = "rptVastProgress";
     public static final String f = "message_notify_handler";

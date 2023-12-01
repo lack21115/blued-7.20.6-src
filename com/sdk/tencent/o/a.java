@@ -10,29 +10,29 @@ import com.sdk.tencent.o.b;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f28065a = "com.sdk.tencent.o.a";
+    public static final String f14377a = "com.sdk.tencent.o.a";
     public static final Boolean b = Boolean.valueOf(c.b);
 
-    public static b.EnumC0761b a(Context context) {
-        b.EnumC0761b enumC0761b;
-        b.EnumC0761b enumC0761b2 = b.EnumC0761b.f28068c;
+    public static b.EnumC0591b a(Context context) {
+        b.EnumC0591b enumC0591b;
+        b.EnumC0591b enumC0591b2 = b.EnumC0591b.f14380c;
         if (context == null) {
-            return enumC0761b2;
+            return enumC0591b2;
         }
         try {
             NetworkInfo activeNetworkInfo = ((ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE)).getActiveNetworkInfo();
             if (activeNetworkInfo != null && activeNetworkInfo.isConnected()) {
                 String typeName = activeNetworkInfo.getTypeName();
                 if ("MOBILE".equalsIgnoreCase(typeName)) {
-                    enumC0761b = b.EnumC0761b.b;
+                    enumC0591b = b.EnumC0591b.b;
                 } else if ("WIFI".equalsIgnoreCase(typeName)) {
-                    enumC0761b = b.EnumC0761b.f28067a;
+                    enumC0591b = b.EnumC0591b.f14379a;
                 }
-                return enumC0761b;
+                return enumC0591b;
             }
         } catch (Throwable th) {
-            com.sdk.tencent.n.b.a(f28065a, th.getMessage(), b);
+            com.sdk.tencent.n.b.a(f14377a, th.getMessage(), b);
         }
-        return enumC0761b2;
+        return enumC0591b2;
     }
 }

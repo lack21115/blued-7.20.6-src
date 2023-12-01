@@ -46,19 +46,19 @@ final class ChannelAsFlow<T> extends ChannelFlow<T> {
     public Object a(ProducerScope<? super T> producerScope, Continuation<? super Unit> continuation) {
         Object b;
         b = FlowKt__ChannelsKt.b(new SendingCollector(producerScope), this.d, this.e, continuation);
-        return b == IntrinsicsKt.a() ? b : Unit.f42314a;
+        return b == IntrinsicsKt.a() ? b : Unit.a;
     }
 
     @Override // kotlinx.coroutines.flow.internal.ChannelFlow, kotlinx.coroutines.flow.Flow
     public Object a(FlowCollector<? super T> flowCollector, Continuation<? super Unit> continuation) {
         Object b;
         if (this.b != -3) {
-            Object a2 = super.a(flowCollector, continuation);
-            return a2 == IntrinsicsKt.a() ? a2 : Unit.f42314a;
+            Object a = super.a(flowCollector, continuation);
+            return a == IntrinsicsKt.a() ? a : Unit.a;
         }
         d();
         b = FlowKt__ChannelsKt.b(flowCollector, this.d, this.e, continuation);
-        return b == IntrinsicsKt.a() ? b : Unit.f42314a;
+        return b == IntrinsicsKt.a() ? b : Unit.a;
     }
 
     @Override // kotlinx.coroutines.flow.internal.ChannelFlow

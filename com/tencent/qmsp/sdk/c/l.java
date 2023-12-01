@@ -7,14 +7,14 @@ import java.util.HashMap;
 public class l implements c {
 
     /* renamed from: a  reason: collision with root package name */
-    private HashMap<String, e> f38576a = new HashMap<>();
+    private HashMap<String, e> f24885a = new HashMap<>();
 
     public void a(e eVar) {
         String a2 = eVar.a();
-        if (a2 == null || this.f38576a.containsKey(a2)) {
+        if (a2 == null || this.f24885a.containsKey(a2)) {
             return;
         }
-        this.f38576a.put(a2, eVar);
+        this.f24885a.put(a2, eVar);
     }
 
     @Override // com.tencent.qmsp.sdk.c.c
@@ -34,7 +34,7 @@ public class l implements c {
         if (str == null) {
             return null;
         }
-        e eVar = this.f38576a.get(str);
+        e eVar = this.f24885a.get(str);
         if (eVar == null || str.equals(eVar.a())) {
             return eVar;
         }

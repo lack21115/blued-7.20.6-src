@@ -43,7 +43,6 @@ public final class RepeatOnLifecycleKt$repeatOnLifecycle$3 extends SuspendLambda
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        /* JADX WARN: Multi-variable type inference failed */
         AnonymousClass1(Lifecycle lifecycle, Lifecycle.State state, CoroutineScope coroutineScope, Function2<? super CoroutineScope, ? super Continuation<? super Unit>, ? extends Object> function2, Continuation<? super AnonymousClass1> continuation) {
             super(2, continuation);
             this.$this_repeatOnLifecycle = lifecycle;
@@ -52,20 +51,16 @@ public final class RepeatOnLifecycleKt$repeatOnLifecycle$3 extends SuspendLambda
             this.$block = function2;
         }
 
-        @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
             return new AnonymousClass1(this.$this_repeatOnLifecycle, this.$state, this.$$this$coroutineScope, this.$block, continuation);
         }
 
-        @Override // kotlin.jvm.functions.Function2
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-            return ((AnonymousClass1) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+            return create(coroutineScope, continuation).invokeSuspend(Unit.a);
         }
 
         /* JADX WARN: Removed duplicated region for block: B:45:0x018d  */
         /* JADX WARN: Removed duplicated region for block: B:49:0x01a4  */
-        /* JADX WARN: Type inference failed for: r1v11, types: [androidx.lifecycle.RepeatOnLifecycleKt$repeatOnLifecycle$3$1$1$1, T] */
-        @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
@@ -81,7 +76,6 @@ public final class RepeatOnLifecycleKt$repeatOnLifecycle$3 extends SuspendLambda
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    /* JADX WARN: Multi-variable type inference failed */
     public RepeatOnLifecycleKt$repeatOnLifecycle$3(Lifecycle lifecycle, Lifecycle.State state, Function2<? super CoroutineScope, ? super Continuation<? super Unit>, ? extends Object> function2, Continuation<? super RepeatOnLifecycleKt$repeatOnLifecycle$3> continuation) {
         super(2, continuation);
         this.$this_repeatOnLifecycle = lifecycle;
@@ -89,19 +83,16 @@ public final class RepeatOnLifecycleKt$repeatOnLifecycle$3 extends SuspendLambda
         this.$block = function2;
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        RepeatOnLifecycleKt$repeatOnLifecycle$3 repeatOnLifecycleKt$repeatOnLifecycle$3 = new RepeatOnLifecycleKt$repeatOnLifecycle$3(this.$this_repeatOnLifecycle, this.$state, this.$block, continuation);
+        Continuation<Unit> repeatOnLifecycleKt$repeatOnLifecycle$3 = new RepeatOnLifecycleKt$repeatOnLifecycle$3(this.$this_repeatOnLifecycle, this.$state, this.$block, continuation);
         repeatOnLifecycleKt$repeatOnLifecycle$3.L$0 = obj;
         return repeatOnLifecycleKt$repeatOnLifecycle$3;
     }
 
-    @Override // kotlin.jvm.functions.Function2
     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-        return ((RepeatOnLifecycleKt$repeatOnLifecycle$3) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+        return create(coroutineScope, continuation).invokeSuspend(Unit.a);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         Object a2 = IntrinsicsKt.a();
         int i = this.label;
@@ -109,7 +100,7 @@ public final class RepeatOnLifecycleKt$repeatOnLifecycle$3 extends SuspendLambda
             ResultKt.a(obj);
             CoroutineScope coroutineScope = (CoroutineScope) this.L$0;
             this.label = 1;
-            if (BuildersKt.a(Dispatchers.b().a(), new AnonymousClass1(this.$this_repeatOnLifecycle, this.$state, coroutineScope, this.$block, null), this) == a2) {
+            if (BuildersKt.a(Dispatchers.b().a(), new AnonymousClass1(this.$this_repeatOnLifecycle, this.$state, coroutineScope, this.$block, null), (Continuation) this) == a2) {
                 return a2;
             }
         } else if (i != 1) {
@@ -117,6 +108,6 @@ public final class RepeatOnLifecycleKt$repeatOnLifecycle$3 extends SuspendLambda
         } else {
             ResultKt.a(obj);
         }
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

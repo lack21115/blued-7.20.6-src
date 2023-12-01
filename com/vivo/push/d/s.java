@@ -13,16 +13,16 @@ import java.util.HashMap;
 public final class s implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ InsideNotificationItem f41084a;
+    final /* synthetic */ InsideNotificationItem f27393a;
     final /* synthetic */ com.vivo.push.b.q b;
 
     /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ r f41085c;
+    final /* synthetic */ r f27394c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public s(r rVar, InsideNotificationItem insideNotificationItem, com.vivo.push.b.q qVar) {
-        this.f41085c = rVar;
-        this.f41084a = insideNotificationItem;
+        this.f27394c = rVar;
+        this.f27393a = insideNotificationItem;
         this.b = qVar;
     }
 
@@ -43,20 +43,20 @@ public final class s implements Runnable {
         Context context12;
         Context context13;
         Context context14;
-        PushMessageCallback pushMessageCallback = this.f41085c.b;
-        context = this.f41085c.f41105a;
-        if (pushMessageCallback.onNotificationMessageArrived(context, com.vivo.push.util.q.a(this.f41084a))) {
+        PushMessageCallback pushMessageCallback = this.f27394c.b;
+        context = this.f27394c.f27414a;
+        if (pushMessageCallback.onNotificationMessageArrived(context, com.vivo.push.util.q.a(this.f27393a))) {
             StringBuilder sb = new StringBuilder("pkg name : ");
-            context11 = this.f41085c.f41105a;
+            context11 = this.f27394c.f27414a;
             sb.append(context11.getPackageName());
             sb.append(" 应用主动拦截通知");
             com.vivo.push.util.p.b("OnNotificationArrivedTask", sb.toString());
-            context12 = this.f41085c.f41105a;
+            context12 = this.f27394c.f27414a;
             com.vivo.push.util.p.b(context12, "应用主动拦截通知，导致通知无法展示，如需打开请在onNotificationMessageArrived中返回false");
             HashMap hashMap = new HashMap();
             hashMap.put(IntentConstant.MESSAGE_ID, String.valueOf(this.b.f()));
-            context13 = this.f41085c.f41105a;
-            context14 = this.f41085c.f41105a;
+            context13 = this.f27394c.f27414a;
+            context14 = this.f27394c.f27414a;
             String b = com.vivo.push.util.z.b(context13, context14.getPackageName());
             if (!TextUtils.isEmpty(b)) {
                 hashMap.put("remoteAppId", b);
@@ -64,20 +64,20 @@ public final class s implements Runnable {
             com.vivo.push.util.e.a(2120L, hashMap);
             return;
         }
-        int b2 = this.f41085c.b();
+        int b2 = this.f27394c.b();
         if (b2 > 0) {
             StringBuilder sb2 = new StringBuilder("pkg name : ");
-            context7 = this.f41085c.f41105a;
+            context7 = this.f27394c.f27414a;
             sb2.append(context7.getPackageName());
             sb2.append(" notify channel switch is ");
             sb2.append(b2);
             com.vivo.push.util.p.b("OnNotificationArrivedTask", sb2.toString());
-            context8 = this.f41085c.f41105a;
+            context8 = this.f27394c.f27414a;
             com.vivo.push.util.p.b(context8, "允许通知开关或者推送通知渠道开关关闭，导致通知无法展示，请到设置页打开应用通知开关 ".concat(String.valueOf(b2)));
             HashMap hashMap2 = new HashMap();
             hashMap2.put(IntentConstant.MESSAGE_ID, String.valueOf(this.b.f()));
-            context9 = this.f41085c.f41105a;
-            context10 = this.f41085c.f41105a;
+            context9 = this.f27394c.f27414a;
+            context10 = this.f27394c.f27414a;
             String b3 = com.vivo.push.util.z.b(context9, context10.getPackageName());
             if (!TextUtils.isEmpty(b3)) {
                 hashMap2.put("remoteAppId", b3);
@@ -85,29 +85,29 @@ public final class s implements Runnable {
             com.vivo.push.util.e.a(b2, hashMap2);
             return;
         }
-        context2 = this.f41085c.f41105a;
-        InsideNotificationItem insideNotificationItem = this.f41084a;
+        context2 = this.f27394c.f27414a;
+        InsideNotificationItem insideNotificationItem = this.f27393a;
         long f = this.b.f();
-        PushMessageCallback pushMessageCallback2 = this.f41085c.b;
-        context3 = this.f41085c.f41105a;
+        PushMessageCallback pushMessageCallback2 = this.f27394c.b;
+        context3 = this.f27394c.f27414a;
         com.vivo.push.util.k kVar = new com.vivo.push.util.k(context2, insideNotificationItem, f, pushMessageCallback2.isAllowNet(context3), new t(this));
-        boolean isShowBigPicOnMobileNet = this.f41084a.isShowBigPicOnMobileNet();
-        String purePicUrl = this.f41084a.getPurePicUrl();
+        boolean isShowBigPicOnMobileNet = this.f27393a.isShowBigPicOnMobileNet();
+        String purePicUrl = this.f27393a.getPurePicUrl();
         String str = purePicUrl;
         if (TextUtils.isEmpty(purePicUrl)) {
-            str = this.f41084a.getCoverUrl();
+            str = this.f27393a.getCoverUrl();
         }
         String str2 = str;
         if (!TextUtils.isEmpty(str)) {
             com.vivo.push.util.p.c("OnNotificationArrivedTask", "showCode=".concat(String.valueOf(isShowBigPicOnMobileNet)));
             if (isShowBigPicOnMobileNet) {
-                context4 = this.f41085c.f41105a;
+                context4 = this.f27394c.f27414a;
                 com.vivo.push.util.p.a(context4, "mobile net show");
                 str2 = str;
             } else {
-                context5 = this.f41085c.f41105a;
+                context5 = this.f27394c.f27414a;
                 com.vivo.push.util.p.a(context5, "mobile net unshow");
-                context6 = this.f41085c.f41105a;
+                context6 = this.f27394c.f27414a;
                 NetworkInfo a2 = com.vivo.push.util.r.a(context6);
                 if (a2 != null && a2.getState() == NetworkInfo.State.CONNECTED) {
                     int type = a2.getType();
@@ -118,11 +118,11 @@ public final class s implements Runnable {
                 str2 = str;
                 if (z) {
                     str2 = null;
-                    this.f41084a.clearCoverUrl();
-                    this.f41084a.clearPurePicUrl();
+                    this.f27393a.clearCoverUrl();
+                    this.f27393a.clearPurePicUrl();
                 }
             }
         }
-        kVar.execute(this.f41084a.getIconUrl(), str2);
+        kVar.execute(this.f27393a.getIconUrl(), str2);
     }
 }

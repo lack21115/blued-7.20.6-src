@@ -31,7 +31,7 @@ public class DialogTitle extends AppCompatTextView {
         }
         setSingleLine(false);
         setMaxLines(2);
-        TypedArray obtainStyledAttributes = getContext().obtainStyledAttributes(null, R.styleable.TextAppearance, 16842817, 16973892);
+        TypedArray obtainStyledAttributes = getContext().obtainStyledAttributes(null, R.styleable.TextAppearance, android.R.attr.textAppearanceMedium, android.R.style.TextAppearance_Medium);
         int dimensionPixelSize = obtainStyledAttributes.getDimensionPixelSize(R.styleable.TextAppearance_android_textSize, 0);
         if (dimensionPixelSize != 0) {
             setTextSize(0, dimensionPixelSize);

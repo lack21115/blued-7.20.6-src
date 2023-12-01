@@ -4,13 +4,13 @@ package com.umeng.analytics.pro;
 public final class cu {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f40712a;
+    public final String f27021a;
 
     public cu() {
         this("");
     }
 
     public cu(String str) {
-        this.f40712a = str;
+        this.f27021a = str;
     }
 }

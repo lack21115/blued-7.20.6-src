@@ -30,11 +30,11 @@ public class MarkDownLinkHelper {
     public static class MDLinkForegroundColorSpan extends ForegroundColorSpan {
 
         /* renamed from: a  reason: collision with root package name */
-        public String f20472a;
+        public String f6866a;
         public String b;
 
         /* renamed from: c  reason: collision with root package name */
-        public String f20473c;
+        public String f6867c;
 
         public MDLinkForegroundColorSpan(int i) {
             super(i);
@@ -54,7 +54,7 @@ public class MarkDownLinkHelper {
         if (editable instanceof SpannableStringBuilder) {
             SpannableStringBuilder spannableStringBuilder = (SpannableStringBuilder) editable;
             for (MDLinkForegroundColorSpan mDLinkForegroundColorSpan : (MDLinkForegroundColorSpan[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), MDLinkForegroundColorSpan.class)) {
-                editable.replace(spannableStringBuilder.getSpanStart(mDLinkForegroundColorSpan), spannableStringBuilder.getSpanEnd(mDLinkForegroundColorSpan), mDLinkForegroundColorSpan.f20473c);
+                editable.replace(spannableStringBuilder.getSpanStart(mDLinkForegroundColorSpan), spannableStringBuilder.getSpanEnd(mDLinkForegroundColorSpan), mDLinkForegroundColorSpan.f6867c);
             }
         }
         return editable;
@@ -107,9 +107,9 @@ public class MarkDownLinkHelper {
                     spannableStringBuilder2.setSpan(new VerticalCenterImageSpan(drawable, 2), length, length2, 33);
                 } else if (z) {
                     MDLinkForegroundColorSpan mDLinkForegroundColorSpan = new MDLinkForegroundColorSpan(BluedSkinUtils.a(context, i));
-                    mDLinkForegroundColorSpan.f20472a = group;
+                    mDLinkForegroundColorSpan.f6866a = group;
                     mDLinkForegroundColorSpan.b = group2;
-                    mDLinkForegroundColorSpan.f20473c = matcher.group();
+                    mDLinkForegroundColorSpan.f6867c = matcher.group();
                     spannableStringBuilder2.setSpan(mDLinkForegroundColorSpan, length, length2, 33);
                 }
                 if (z2) {
@@ -121,7 +121,7 @@ public class MarkDownLinkHelper {
                             if (mDLinkOnClickListener2 != null) {
                                 mDLinkOnClickListener2.a(group2);
                             } else {
-                                CommunityServiceManager.b().a(context, group2, CommunityConstants.WebShowType.DEFAULT);
+                                CommunityServiceManager.b().a(context, group2, CommunityConstants.WebShowType.a);
                             }
                         }
 

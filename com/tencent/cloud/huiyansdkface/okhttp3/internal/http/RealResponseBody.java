@@ -8,16 +8,16 @@ import com.tencent.cloud.huiyansdkface.okio.BufferedSource;
 public final class RealResponseBody extends ResponseBody {
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f35954a;
+    private final String f22263a;
     private final long b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final BufferedSource f35955c;
+    private final BufferedSource f22264c;
 
     public RealResponseBody(String str, long j, BufferedSource bufferedSource) {
-        this.f35954a = str;
+        this.f22263a = str;
         this.b = j;
-        this.f35955c = bufferedSource;
+        this.f22264c = bufferedSource;
     }
 
     @Override // com.tencent.cloud.huiyansdkface.okhttp3.ResponseBody
@@ -27,7 +27,7 @@ public final class RealResponseBody extends ResponseBody {
 
     @Override // com.tencent.cloud.huiyansdkface.okhttp3.ResponseBody
     public MediaType contentType() {
-        String str = this.f35954a;
+        String str = this.f22263a;
         if (str != null) {
             return MediaType.parse(str);
         }
@@ -36,6 +36,6 @@ public final class RealResponseBody extends ResponseBody {
 
     @Override // com.tencent.cloud.huiyansdkface.okhttp3.ResponseBody
     public BufferedSource source() {
-        return this.f35955c;
+        return this.f22264c;
     }
 }

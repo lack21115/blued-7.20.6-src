@@ -6,29 +6,27 @@ import android.text.TextUtils;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alipay/sdk/util/j.class */
 public class j {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static String f4668a;
+    private static String a;
 
     private static String a(Context context) {
         String str;
-        if (TextUtils.isEmpty(f4668a)) {
+        if (TextUtils.isEmpty(a)) {
             try {
                 str = context.getApplicationContext().getPackageName();
             } catch (Throwable th) {
                 c.a(th);
                 str = "";
             }
-            f4668a = (str + "0000000000000000000000000000").substring(0, 24);
+            a = (str + "0000000000000000000000000000").substring(0, 24);
         }
-        return f4668a;
+        return a;
     }
 
     public static void a(com.alipay.sdk.sys.a aVar, Context context, String str, String str2) {
         try {
             String a2 = com.alipay.sdk.encrypt.f.a(a(context), str2, str);
             if (!TextUtils.isEmpty(str2) && TextUtils.isEmpty(a2)) {
-                com.alipay.sdk.app.statistic.a.a(aVar, com.alipay.sdk.app.statistic.c.f4610c, com.alipay.sdk.app.statistic.c.z, String.format("%s,%s", str, str2));
+                com.alipay.sdk.app.statistic.a.a(aVar, com.alipay.sdk.app.statistic.c.c, com.alipay.sdk.app.statistic.c.z, String.format("%s,%s", str, str2));
             }
             PreferenceManager.getDefaultSharedPreferences(context).edit().putString(str, a2).apply();
         } catch (Throwable th) {
@@ -61,7 +59,7 @@ public class j {
                 str3 = str5;
                 if (TextUtils.isEmpty(str5)) {
                     str4 = str5;
-                    com.alipay.sdk.app.statistic.a.a(aVar, com.alipay.sdk.app.statistic.c.f4610c, com.alipay.sdk.app.statistic.c.y, String.format("%s,%s", str, string));
+                    com.alipay.sdk.app.statistic.a.a(aVar, com.alipay.sdk.app.statistic.c.c, com.alipay.sdk.app.statistic.c.y, String.format("%s,%s", str, string));
                     return str5;
                 }
             }

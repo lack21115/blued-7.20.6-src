@@ -6,13 +6,13 @@ import java.util.HashMap;
 public class o {
 
     /* renamed from: a  reason: collision with root package name */
-    private static HashMap<String, String> f37672a = new HashMap<>();
+    private static HashMap<String, String> f23981a = new HashMap<>();
 
     private o() {
     }
 
     public static String a(String str) {
-        return f37672a.get(str);
+        return f23981a.get(str);
     }
 
     public static <T extends p> void a(Class<T> cls) {
@@ -24,7 +24,7 @@ public class o {
                 if ("".equals(className)) {
                     str = cls.getName();
                 }
-                f37672a.put(str, cls.getName());
+                f23981a.put(str, cls.getName());
             }
         } catch (IllegalAccessException e) {
             e.printStackTrace();

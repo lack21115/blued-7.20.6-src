@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class PopMsgBoxDeleteGuideBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final RelativeLayout f29540a;
+    private final RelativeLayout f15850a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
-        return this.f29540a;
+        return this.f15850a;
     }
 }

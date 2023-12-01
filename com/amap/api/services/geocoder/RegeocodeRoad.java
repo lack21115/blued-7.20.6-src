@@ -21,13 +21,9 @@ public final class RegeocodeRoad implements Parcelable {
             return null;
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f5640a;
+    private String a;
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private float f5641c;
+    private float c;
     private String d;
     private LatLonPoint e;
 
@@ -35,9 +31,9 @@ public final class RegeocodeRoad implements Parcelable {
     }
 
     private RegeocodeRoad(Parcel parcel) {
-        this.f5640a = parcel.readString();
+        this.a = parcel.readString();
         this.b = parcel.readString();
-        this.f5641c = parcel.readFloat();
+        this.c = parcel.readFloat();
         this.d = parcel.readString();
         this.e = (LatLonPoint) parcel.readValue(LatLonPoint.class.getClassLoader());
     }
@@ -56,11 +52,11 @@ public final class RegeocodeRoad implements Parcelable {
     }
 
     public final float getDistance() {
-        return this.f5641c;
+        return this.c;
     }
 
     public final String getId() {
-        return this.f5640a;
+        return this.a;
     }
 
     public final LatLonPoint getLatLngPoint() {
@@ -76,11 +72,11 @@ public final class RegeocodeRoad implements Parcelable {
     }
 
     public final void setDistance(float f) {
-        this.f5641c = f;
+        this.c = f;
     }
 
     public final void setId(String str) {
-        this.f5640a = str;
+        this.a = str;
     }
 
     public final void setLatLngPoint(LatLonPoint latLonPoint) {
@@ -93,9 +89,9 @@ public final class RegeocodeRoad implements Parcelable {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.f5640a);
+        parcel.writeString(this.a);
         parcel.writeString(this.b);
-        parcel.writeFloat(this.f5641c);
+        parcel.writeFloat(this.c);
         parcel.writeString(this.d);
         parcel.writeValue(this.e);
     }

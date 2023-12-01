@@ -3,7 +3,7 @@ package com.zx.a.I8b7;
 import android.os.Process;
 import android.text.TextUtils;
 import androidx.exifinterface.media.ExifInterface;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStream;
 import java.io.PrintWriter;
@@ -17,15 +17,15 @@ import org.json.JSONObject;
 public class y implements e0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public d0 f42229a;
+    public d0 f28538a;
     public SimpleDateFormat b = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
 
     /* renamed from: c  reason: collision with root package name */
-    public String f42230c = "";
+    public String f28539c = "";
     public int d = 8;
 
     public y(d0 d0Var) {
-        this.f42229a = (d0) o1.a(d0Var);
+        this.f28538a = (d0) o1.a(d0Var);
     }
 
     public static String a(Throwable th) {
@@ -52,7 +52,7 @@ public class y implements e0 {
         sb.append(this.b.format(new Date()));
         sb.append(" ");
         sb.append(Process.myPid());
-        sb.append(BridgeUtil.SPLIT_MARK);
+        sb.append("/");
         sb.append(Process.myPid());
         sb.append(" ");
         if (i == 1) {
@@ -68,7 +68,7 @@ public class y implements e0 {
         } else {
             sb.append(ExifInterface.LONGITUDE_EAST);
         }
-        sb.append(BridgeUtil.SPLIT_MARK);
+        sb.append("/");
         try {
             StackTraceElement stackTraceElement = Thread.currentThread().getStackTrace()[this.d];
             String className = stackTraceElement.getClassName();
@@ -76,9 +76,9 @@ public class y implements e0 {
         } catch (Throwable th2) {
             str3 = "";
         }
-        String str5 = TextUtils.isEmpty(str) ? this.f42230c : str;
+        String str5 = TextUtils.isEmpty(str) ? this.f28539c : str;
         if (!TextUtils.isEmpty(str5)) {
-            str3 = str5 + "-" + str3;
+            str3 = str5 + Constants.ACCEPT_TIME_SEPARATOR_SERVER + str3;
         }
         sb.append(str3);
         sb.append(": ");
@@ -104,7 +104,7 @@ public class y implements e0 {
         String str9 = trim;
         if (trim.startsWith("{")) {
             str9 = trim;
-            if (trim.endsWith(com.alipay.sdk.util.i.d)) {
+            if (trim.endsWith("}")) {
                 try {
                     str9 = new JSONObject(trim).toString(2);
                 } catch (Throwable th3) {
@@ -140,6 +140,6 @@ public class y implements e0 {
         if (!sb2.endsWith("\n")) {
             str12 = sb2 + "\n";
         }
-        this.f42229a.a(i, str, str12);
+        this.f28538a.a(i, str, str12);
     }
 }

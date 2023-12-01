@@ -31,17 +31,12 @@ import com.blued.android.module.yy_china.utils.log.EventTrackYY;
 import com.blued.das.client.chatroom.ChatRoomProtos;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnRefreshLoadMoreListener;
-import java.util.Collection;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/WaitingListView.class */
 public class WaitingListView extends LinearLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private ViewYyWaittingListViewBinding f18021a;
+    private ViewYyWaittingListViewBinding a;
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private WaitingAdapter f18022c;
+    private WaitingAdapter c;
     private BaseYYStudioFragment d;
     private YYNoDataView e;
     private int f;
@@ -66,7 +61,7 @@ public class WaitingListView extends LinearLayout {
     }
 
     private void a() {
-        this.f18021a = ViewYyWaittingListViewBinding.a(LayoutInflater.from(getContext()), this, true);
+        this.a = ViewYyWaittingListViewBinding.a(LayoutInflater.from(getContext()), this, true);
         this.b = DensityUtils.a(getContext(), 16.0f);
         YYRoomModel b = YYRoomInfoManager.e().b();
         this.g = b;
@@ -82,11 +77,11 @@ public class WaitingListView extends LinearLayout {
                 z = true;
             }
             if (!z) {
-                this.f18021a.d.setText("粉丝麦位排队通道");
+                this.a.d.setText("粉丝麦位排队通道");
             } else if (!z) {
-                this.f18021a.d.setText(R.string.yy_up_list_title);
+                this.a.d.setText(R.string.yy_up_list_title);
             } else {
-                this.f18021a.d.setText(R.string.yy_up_list);
+                this.a.d.setText(R.string.yy_up_list);
             }
         }
         YYNoDataView yYNoDataView = new YYNoDataView(getContext());
@@ -95,9 +90,8 @@ public class WaitingListView extends LinearLayout {
         this.e.setNoDataStr(R.string.yy_no_person);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setOrientation(1);
-        this.f18021a.f16972a.setLayoutManager(linearLayoutManager);
-        this.f18021a.f16972a.addItemDecoration(new RecyclerView.ItemDecoration() { // from class: com.blued.android.module.yy_china.view.WaitingListView.1
-            @Override // androidx.recyclerview.widget.RecyclerView.ItemDecoration
+        this.a.a.setLayoutManager(linearLayoutManager);
+        this.a.a.addItemDecoration(new RecyclerView.ItemDecoration() { // from class: com.blued.android.module.yy_china.view.WaitingListView.1
             public void getItemOffsets(Rect rect, View view, RecyclerView recyclerView, RecyclerView.State state) {
                 if (recyclerView.getChildAdapterPosition(view) == 0) {
                     rect.top = WaitingListView.this.b;
@@ -107,14 +101,12 @@ public class WaitingListView extends LinearLayout {
         });
         BluedLoadMoreView bluedLoadMoreView = new BluedLoadMoreView(getContext());
         bluedLoadMoreView.setBackgroundColorRes(R.color.transparent);
-        this.f18021a.b.a(bluedLoadMoreView);
-        this.f18021a.b.a(new OnRefreshLoadMoreListener() { // from class: com.blued.android.module.yy_china.view.WaitingListView.2
-            @Override // com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
+        this.a.b.a(bluedLoadMoreView);
+        this.a.b.a(new OnRefreshLoadMoreListener() { // from class: com.blued.android.module.yy_china.view.WaitingListView.2
             public void onLoadMore(RefreshLayout refreshLayout) {
                 WaitingListView.this.getWattingList();
             }
 
-            @Override // com.scwang.smartrefresh.layout.listener.OnRefreshListener
             public void onRefresh(RefreshLayout refreshLayout) {
                 WaitingListView.this.f = 1;
                 WaitingListView.this.getWattingList();
@@ -148,16 +140,16 @@ public class WaitingListView extends LinearLayout {
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<Object> bluedEntityA) {
-                WaitingListView.this.f18022c.a(i2);
-                YYObserverManager.a().b(WaitingListView.this.f18022c.getData().size());
+                WaitingListView.this.c.a(i2);
+                YYObserverManager.a().b(WaitingListView.this.c.getData().size());
             }
 
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i3, String str, String str2) {
-                WaitingListView.this.f18022c.b(i2);
+                WaitingListView.this.c.b(i2);
                 if (i3 == 40380009) {
-                    WaitingListView.this.f18022c.a(i2);
-                    YYObserverManager.a().b(WaitingListView.this.f18022c.getData().size());
+                    WaitingListView.this.c.a(i2);
+                    YYObserverManager.a().b(WaitingListView.this.c.getData().size());
                 }
                 return super.onUIFailure(i3, str, str2);
             }
@@ -178,8 +170,8 @@ public class WaitingListView extends LinearLayout {
                 if (bluedEntityA == null || !bluedEntityA.hasData()) {
                     return;
                 }
-                WaitingListView.this.f18021a.f16973c.setVisibility(0);
-                WaitingListView.this.f18021a.f16973c.setText(String.format(WaitingListView.this.getResources().getString(R.string.yy_solo_gift_info), bluedEntityA.getSingleData().name, bluedEntityA.getSingleData().beans));
+                WaitingListView.this.a.c.setVisibility(0);
+                WaitingListView.this.a.c.setText(String.format(WaitingListView.this.getResources().getString(R.string.yy_solo_gift_info), bluedEntityA.getSingleData().name, bluedEntityA.getSingleData().beans));
             }
 
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
@@ -203,8 +195,8 @@ public class WaitingListView extends LinearLayout {
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish(boolean z) {
                 super.onUIFinish(z);
-                WaitingListView.this.f18021a.b.j();
-                WaitingListView.this.f18021a.b.h();
+                WaitingListView.this.a.b.g();
+                WaitingListView.this.a.b.h();
             }
 
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
@@ -216,7 +208,7 @@ public class WaitingListView extends LinearLayout {
                     if (TextUtils.equals("5", WaitingListView.this.g.chat_type)) {
                         WaitingListView.this.b();
                     } else {
-                        WaitingListView.this.f18021a.f16973c.setVisibility(8);
+                        WaitingListView.this.a.c.setVisibility(8);
                     }
                     WaitingListView.this.g.setWaittingCount(bluedEntity.extra.total);
                     YYObserverManager.a().b(bluedEntity.extra.total);
@@ -225,16 +217,16 @@ public class WaitingListView extends LinearLayout {
                     return;
                 }
                 if (WaitingListView.this.f == 1) {
-                    WaitingListView.this.f18022c.setNewData(bluedEntity.data);
+                    WaitingListView.this.c.setNewData(bluedEntity.data);
                 } else {
-                    WaitingListView.this.f18022c.addData((Collection) bluedEntity.data);
+                    WaitingListView.this.c.addData(bluedEntity.data);
                 }
                 if (!bluedEntity.hasMore()) {
-                    WaitingListView.this.f18021a.b.l(false);
+                    WaitingListView.this.a.b.b(false);
                     return;
                 }
                 WaitingListView.h(WaitingListView.this);
-                WaitingListView.this.f18021a.b.l(true);
+                WaitingListView.this.a.b.b(true);
             }
         }, this.d.getFragmentActive());
     }
@@ -247,11 +239,11 @@ public class WaitingListView extends LinearLayout {
 
     public void a(BaseYYStudioFragment baseYYStudioFragment) {
         this.d = baseYYStudioFragment;
-        this.f18022c = new WaitingAdapter(baseYYStudioFragment);
-        this.f18021a.f16972a.setAdapter(this.f18022c);
-        this.f18022c.setEmptyView(this.e);
-        this.f18022c.bindToRecyclerView(this.f18021a.f16972a);
-        this.f18022c.a(new ClickApplyHandleListener() { // from class: com.blued.android.module.yy_china.view.WaitingListView.3
+        this.c = new WaitingAdapter(baseYYStudioFragment);
+        this.a.a.setAdapter(this.c);
+        this.c.setEmptyView(this.e);
+        this.c.bindToRecyclerView(this.a.a);
+        this.c.a(new ClickApplyHandleListener() { // from class: com.blued.android.module.yy_china.view.WaitingListView.3
             @Override // com.blued.android.module.yy_china.listener.ClickApplyHandleListener
             public void a(YYAudienceModel yYAudienceModel, int i, int i2) {
                 WaitingListView.this.a(yYAudienceModel, i, i2);
@@ -260,7 +252,7 @@ public class WaitingListView extends LinearLayout {
         baseYYStudioFragment.postDelaySafeRunOnUiThread(new Runnable() { // from class: com.blued.android.module.yy_china.view.WaitingListView.4
             @Override // java.lang.Runnable
             public void run() {
-                WaitingListView.this.f18021a.b.i();
+                WaitingListView.this.a.b.i();
             }
         }, 300L);
     }

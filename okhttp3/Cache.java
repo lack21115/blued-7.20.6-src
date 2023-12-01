@@ -61,9 +61,9 @@ public final class Cache implements Closeable, Flushable {
 
         CacheRequestImpl(final DiskLruCache.Editor editor) {
             this.editor = editor;
-            Sink a2 = editor.a(1);
-            this.cacheOut = a2;
-            this.body = new ForwardingSink(a2) { // from class: okhttp3.Cache.CacheRequestImpl.1
+            Sink a = editor.a(1);
+            this.cacheOut = a;
+            this.body = new ForwardingSink(a) { // from class: okhttp3.Cache.CacheRequestImpl.1
                 @Override // okio.ForwardingSink, okio.Sink, java.io.Closeable, java.lang.AutoCloseable
                 public void close() throws IOException {
                     synchronized (Cache.this) {
@@ -199,10 +199,10 @@ public final class Cache implements Closeable, Flushable {
                     i = i2 + 1;
                 }
                 this.varyHeaders = builder.build();
-                StatusLine a2 = StatusLine.a(buffer.readUtf8LineStrict());
-                this.protocol = a2.f43894a;
-                this.code = a2.b;
-                this.message = a2.f43895c;
+                StatusLine a = StatusLine.a(buffer.readUtf8LineStrict());
+                this.protocol = a.a;
+                this.code = a.b;
+                this.message = a.c;
                 Headers.Builder builder2 = new Headers.Builder();
                 int readInt2 = Cache.readInt(buffer);
                 int i3 = 0;
@@ -327,7 +327,7 @@ public final class Cache implements Closeable, Flushable {
     }
 
     public Cache(File file, long j) {
-        this(file, j, FileSystem.f43964a);
+        this(file, j, FileSystem.a);
     }
 
     Cache(File file, long j, FileSystem fileSystem) {
@@ -416,20 +416,20 @@ public final class Cache implements Closeable, Flushable {
     @Nullable
     Response get(Request request) {
         try {
-            DiskLruCache.Snapshot a2 = this.cache.a(key(request.url()));
-            if (a2 == null) {
+            DiskLruCache.Snapshot a = this.cache.a(key(request.url()));
+            if (a == null) {
                 return null;
             }
             try {
-                Entry entry = new Entry(a2.a(0));
-                Response response = entry.response(a2);
+                Entry entry = new Entry(a.a(0));
+                Response response = entry.response(a);
                 if (entry.matches(request, response)) {
                     return response;
                 }
                 Util.a(response.body());
                 return null;
             } catch (IOException e) {
-                Util.a(a2);
+                Util.a(a);
                 return null;
             }
         } catch (IOException e2) {
@@ -523,7 +523,7 @@ public final class Cache implements Closeable, Flushable {
     void trackResponse(CacheStrategy cacheStrategy) {
         synchronized (this) {
             this.requestCount++;
-            if (cacheStrategy.f43846a != null) {
+            if (cacheStrategy.a != null) {
                 this.networkCount++;
             } else if (cacheStrategy.b != null) {
                 this.hitCount++;

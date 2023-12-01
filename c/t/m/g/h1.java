@@ -7,10 +7,10 @@ import android.os.Parcel;
 public class h1 implements i1 {
 
     /* renamed from: a  reason: collision with root package name */
-    public IBinder f3826a;
+    public IBinder f3778a;
 
     public h1(IBinder iBinder) {
-        this.f3826a = iBinder;
+        this.f3778a = iBinder;
     }
 
     @Override // android.os.IInterface
@@ -24,7 +24,7 @@ public class h1 implements i1 {
         Parcel obtain2 = Parcel.obtain();
         try {
             obtain.writeInterfaceToken("com.zui.deviceidservice.IDeviceidInterface");
-            this.f3826a.transact(1, obtain, obtain2, 0);
+            this.f3778a.transact(1, obtain, obtain2, 0);
             obtain2.readException();
             String readString = obtain2.readString();
             obtain2.recycle();
@@ -49,7 +49,7 @@ public class h1 implements i1 {
         boolean z2 = false;
         try {
             obtain.writeInterfaceToken("com.zui.deviceidservice.IDeviceidInterface");
-            this.f3826a.transact(3, obtain, obtain2, 0);
+            this.f3778a.transact(3, obtain, obtain2, 0);
             obtain2.readException();
             if (obtain2.readInt() != 0) {
                 z = true;

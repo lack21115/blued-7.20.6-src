@@ -24,13 +24,9 @@ import kotlin.text.StringsKt;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/DialogKtvCommonView.class */
 public final class DialogKtvCommonView extends BaseFullScreenDialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    private CountDownTimer f17920a;
+    private CountDownTimer a;
     private DialogKtvCommonLayoutBinding b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private KtvDialogBuilder f17921c;
+    private KtvDialogBuilder c;
 
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/DialogKtvCommonView$DialogListener.class */
@@ -43,13 +39,9 @@ public final class DialogKtvCommonView extends BaseFullScreenDialog {
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/DialogKtvCommonView$KtvDialogBuilder.class */
     public static class KtvDialogBuilder {
-
-        /* renamed from: a  reason: collision with root package name */
-        private boolean f17922a;
+        private boolean a;
         private DialogListener b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private String f17923c;
+        private String c;
         private String d;
         private String e;
         private String f;
@@ -59,15 +51,15 @@ public final class DialogKtvCommonView extends BaseFullScreenDialog {
         }
 
         public final void a(String str) {
-            this.f17923c = str;
+            this.c = str;
         }
 
         public final void a(boolean z) {
-            this.f17922a = z;
+            this.a = z;
         }
 
         public final boolean a() {
-            return this.f17922a;
+            return this.a;
         }
 
         public final DialogListener b() {
@@ -79,7 +71,7 @@ public final class DialogKtvCommonView extends BaseFullScreenDialog {
         }
 
         public final String c() {
-            return this.f17923c;
+            return this.c;
         }
 
         public final void c(String str) {
@@ -108,7 +100,7 @@ public final class DialogKtvCommonView extends BaseFullScreenDialog {
     }
 
     private DialogKtvCommonView(KtvDialogBuilder ktvDialogBuilder) {
-        this.f17921c = ktvDialogBuilder;
+        this.c = ktvDialogBuilder;
     }
 
     public /* synthetic */ DialogKtvCommonView(KtvDialogBuilder ktvDialogBuilder, DefaultConstructorMarker defaultConstructorMarker) {
@@ -123,7 +115,7 @@ public final class DialogKtvCommonView extends BaseFullScreenDialog {
     public static final void a(DialogKtvCommonView this$0, View view) {
         DialogListener b;
         Intrinsics.e(this$0, "this$0");
-        KtvDialogBuilder ktvDialogBuilder = this$0.f17921c;
+        KtvDialogBuilder ktvDialogBuilder = this$0.c;
         if (ktvDialogBuilder != null && (b = ktvDialogBuilder.b()) != null) {
             b.b();
         }
@@ -134,7 +126,7 @@ public final class DialogKtvCommonView extends BaseFullScreenDialog {
     public static final void b(DialogKtvCommonView this$0, View view) {
         DialogListener b;
         Intrinsics.e(this$0, "this$0");
-        KtvDialogBuilder ktvDialogBuilder = this$0.f17921c;
+        KtvDialogBuilder ktvDialogBuilder = this$0.c;
         if (ktvDialogBuilder != null && (b = ktvDialogBuilder.b()) != null) {
             b.a();
         }
@@ -145,19 +137,19 @@ public final class DialogKtvCommonView extends BaseFullScreenDialog {
         DialogKtvCommonLayoutBinding dialogKtvCommonLayoutBinding = this.b;
         TextView textView = dialogKtvCommonLayoutBinding == null ? null : dialogKtvCommonLayoutBinding.d;
         if (textView != null) {
-            KtvDialogBuilder ktvDialogBuilder = this.f17921c;
+            KtvDialogBuilder ktvDialogBuilder = this.c;
             textView.setText(ktvDialogBuilder == null ? null : ktvDialogBuilder.c());
         }
         DialogKtvCommonLayoutBinding dialogKtvCommonLayoutBinding2 = this.b;
-        TextView textView2 = dialogKtvCommonLayoutBinding2 == null ? null : dialogKtvCommonLayoutBinding2.f16358c;
+        TextView textView2 = dialogKtvCommonLayoutBinding2 == null ? null : dialogKtvCommonLayoutBinding2.c;
         if (textView2 != null) {
-            KtvDialogBuilder ktvDialogBuilder2 = this.f17921c;
+            KtvDialogBuilder ktvDialogBuilder2 = this.c;
             textView2.setText(ktvDialogBuilder2 == null ? null : ktvDialogBuilder2.d());
         }
         DialogKtvCommonLayoutBinding dialogKtvCommonLayoutBinding3 = this.b;
-        TextView textView3 = dialogKtvCommonLayoutBinding3 == null ? null : dialogKtvCommonLayoutBinding3.f16357a;
+        TextView textView3 = dialogKtvCommonLayoutBinding3 == null ? null : dialogKtvCommonLayoutBinding3.a;
         if (textView3 != null) {
-            KtvDialogBuilder ktvDialogBuilder3 = this.f17921c;
+            KtvDialogBuilder ktvDialogBuilder3 = this.c;
             textView3.setText(ktvDialogBuilder3 == null ? null : ktvDialogBuilder3.e());
         }
         DialogKtvCommonLayoutBinding dialogKtvCommonLayoutBinding4 = this.b;
@@ -165,7 +157,7 @@ public final class DialogKtvCommonView extends BaseFullScreenDialog {
         if (textView4 == null) {
             return;
         }
-        KtvDialogBuilder ktvDialogBuilder4 = this.f17921c;
+        KtvDialogBuilder ktvDialogBuilder4 = this.c;
         textView4.setText(ktvDialogBuilder4 == null ? null : ktvDialogBuilder4.f());
     }
 
@@ -174,7 +166,7 @@ public final class DialogKtvCommonView extends BaseFullScreenDialog {
         if (b == null) {
             return;
         }
-        KtvDialogBuilder ktvDialogBuilder = this.f17921c;
+        KtvDialogBuilder ktvDialogBuilder = this.c;
         boolean z = false;
         if (ktvDialogBuilder != null && ktvDialogBuilder.a()) {
             z = true;
@@ -189,23 +181,23 @@ public final class DialogKtvCommonView extends BaseFullScreenDialog {
     }
 
     /* JADX WARN: Type inference failed for: r1v2, types: [T, java.lang.StringBuilder] */
-    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog
     public void onActivityCreated(Bundle bundle) {
         super.onActivityCreated(bundle);
-        KtvDialogBuilder ktvDialogBuilder = this.f17921c;
+        KtvDialogBuilder ktvDialogBuilder = this.c;
         boolean z = false;
         if (ktvDialogBuilder != null && ktvDialogBuilder.a()) {
             z = true;
         }
         if (z) {
             final Ref.ObjectRef objectRef = new Ref.ObjectRef();
-            objectRef.f42545a = new StringBuilder();
+            objectRef.a = new StringBuilder();
             CountDownTimer countDownTimer = new CountDownTimer(10000L) { // from class: com.blued.android.module.yy_china.view.DialogKtvCommonView$onActivityCreated$1
                 @Override // android.os.CountDownTimer
                 public void onFinish() {
                     DialogKtvCommonView.KtvDialogBuilder ktvDialogBuilder2;
                     DialogKtvCommonView.DialogListener b;
-                    ktvDialogBuilder2 = this.f17921c;
+                    ktvDialogBuilder2 = this.c;
                     if (ktvDialogBuilder2 != null && (b = ktvDialogBuilder2.b()) != null) {
                         b.b();
                     }
@@ -223,20 +215,20 @@ public final class DialogKtvCommonView extends BaseFullScreenDialog {
                 @Override // android.os.CountDownTimer
                 public void onTick(long j) {
                     DialogKtvCommonLayoutBinding dialogKtvCommonLayoutBinding;
-                    StringsKt.a(objectRef.f42545a);
-                    StringBuilder sb = objectRef.f42545a;
+                    StringsKt.a(objectRef.a);
+                    StringBuilder sb = objectRef.a;
                     sb.append("请在");
                     sb.append((j / 1000) + 1);
                     sb.append("s内确定是否进行演唱，否则将自动放弃此次机会");
                     dialogKtvCommonLayoutBinding = this.b;
-                    TextView textView = dialogKtvCommonLayoutBinding == null ? null : dialogKtvCommonLayoutBinding.f16358c;
+                    TextView textView = dialogKtvCommonLayoutBinding == null ? null : dialogKtvCommonLayoutBinding.c;
                     if (textView == null) {
                         return;
                     }
-                    textView.setText(objectRef.f42545a.toString());
+                    textView.setText(objectRef.a.toString());
                 }
             };
-            this.f17920a = countDownTimer;
+            this.a = countDownTimer;
             if (countDownTimer != null) {
                 countDownTimer.start();
             }
@@ -244,7 +236,7 @@ public final class DialogKtvCommonView extends BaseFullScreenDialog {
         g();
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
         View inflate = inflater.inflate(R.layout.dialog_ktv_common_layout, viewGroup, true);
@@ -253,18 +245,18 @@ public final class DialogKtvCommonView extends BaseFullScreenDialog {
         return inflate;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onDestroyView() {
         super.onDestroyView();
-        CountDownTimer countDownTimer = this.f17920a;
+        CountDownTimer countDownTimer = this.a;
         if (countDownTimer == null) {
             return;
         }
         countDownTimer.cancel();
-        this.f17920a = null;
+        this.a = null;
     }
 
-    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment
     public void onViewCreated(View view, Bundle bundle) {
         TextView textView;
         TextView textView2;
@@ -281,7 +273,7 @@ public final class DialogKtvCommonView extends BaseFullScreenDialog {
             });
         }
         DialogKtvCommonLayoutBinding dialogKtvCommonLayoutBinding2 = this.b;
-        if (dialogKtvCommonLayoutBinding2 != null && (textView2 = dialogKtvCommonLayoutBinding2.f16357a) != null) {
+        if (dialogKtvCommonLayoutBinding2 != null && (textView2 = dialogKtvCommonLayoutBinding2.a) != null) {
             textView2.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$DialogKtvCommonView$5-Jrk-TFIKtgeukwL6swaLvdHgE
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view3) {

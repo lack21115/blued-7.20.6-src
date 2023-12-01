@@ -6,7 +6,7 @@ import android.content.Context;
 public class f {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f40881a = "info";
+    private static final String f27190a = "info";
     private static final String b = "ua";
 
     public static String a(Context context) {

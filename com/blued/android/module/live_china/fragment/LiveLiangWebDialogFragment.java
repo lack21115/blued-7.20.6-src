@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
@@ -25,13 +26,9 @@ import com.jeremyliao.liveeventbus.LiveEventBus;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveLiangWebDialogFragment.class */
 public class LiveLiangWebDialogFragment extends BaseDialogFragment implements PopLiveActivityWebView.PopLiveWebEvent {
-
-    /* renamed from: a  reason: collision with root package name */
-    public Context f13000a;
+    public Context a;
     public PopLiveActivityWebView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public ImageView f13001c;
+    public ImageView c;
     public ImageView d;
     public ImageView e;
     private ILiveWebDialog f;
@@ -52,7 +49,6 @@ public class LiveLiangWebDialogFragment extends BaseDialogFragment implements Po
 
     private void f() {
         LiveEventBus.get("LIVE_WEB_PAGE_REFRESH", String.class).observe(this, new Observer<String>() { // from class: com.blued.android.module.live_china.fragment.LiveLiangWebDialogFragment.4
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(String str) {
                 if (LiveLiangWebDialogFragment.this.b != null) {
@@ -67,11 +63,10 @@ public class LiveLiangWebDialogFragment extends BaseDialogFragment implements Po
         dismiss();
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
-        this.f13000a = getActivity();
+        this.a = getActivity();
         View inflate = getActivity().getLayoutInflater().inflate(R.layout.dialog_live_liang_web, (ViewGroup) null);
-        int height = (getActivity().getWindowManager().getDefaultDisplay().getHeight() - DensityUtils.a(getActivity())) - DensityUtils.a(this.f13000a, 200.0f);
+        int height = (getActivity().getWindowManager().getDefaultDisplay().getHeight() - DensityUtils.a(getActivity())) - DensityUtils.a(this.a, 200.0f);
         Dialog dialog = new Dialog(getActivity(), R.style.transparentFrameWindowStyleLive);
         dialog.requestWindowFeature(1);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
@@ -88,13 +83,13 @@ public class LiveLiangWebDialogFragment extends BaseDialogFragment implements Po
         return dialog;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(0));
         View inflate = layoutInflater.inflate(R.layout.dialog_live_liang_web, viewGroup);
         PopLiveActivityWebView popLiveActivityWebView = (PopLiveActivityWebView) inflate.findViewById(R.id.live_activity_web_view);
         this.b = popLiveActivityWebView;
-        popLiveActivityWebView.a(this);
+        popLiveActivityWebView.a((Fragment) this);
         this.b.setPopLiveWebEvent(this);
         String E = LiveRoomInfo.a().E();
         String str = E;
@@ -109,14 +104,14 @@ public class LiveLiangWebDialogFragment extends BaseDialogFragment implements Po
             }
         }
         this.b.a(str, -1, false);
-        this.f13001c = (ImageView) inflate.findViewById(R.id.liang_back);
+        this.c = (ImageView) inflate.findViewById(R.id.liang_back);
         this.d = (ImageView) inflate.findViewById(R.id.liang_share);
         this.e = (ImageView) inflate.findViewById(R.id.liang_close);
         ILiveWebDialog iLiveWebDialog = this.f;
         if (iLiveWebDialog != null) {
             iLiveWebDialog.a();
         }
-        this.f13001c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.LiveLiangWebDialogFragment.1
+        this.c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.LiveLiangWebDialogFragment.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
@@ -143,18 +138,18 @@ public class LiveLiangWebDialogFragment extends BaseDialogFragment implements Po
         return inflate;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onDestroy() {
         super.onDestroy();
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onViewCreated(View view, Bundle bundle) {
         super.onViewCreated(view, bundle);
         f();
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void show(FragmentManager fragmentManager, String str) {
         try {
             ReflectionUtils.a(this, "mDismissed", false);

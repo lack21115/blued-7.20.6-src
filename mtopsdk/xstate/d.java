@@ -7,9 +7,7 @@ import mtopsdk.common.util.TBSdkLog;
 
 /* loaded from: source-3503164-dex2jar.jar:mtopsdk/xstate/d.class */
 public class d extends Service {
-
-    /* renamed from: a  reason: collision with root package name */
-    private mtopsdk.xstate.a.b f43799a = null;
+    private mtopsdk.xstate.a.b a = null;
     private Object b = new Object();
 
     /* JADX WARN: Removed duplicated region for block: B:17:0x003c  */
@@ -27,7 +25,7 @@ public class d extends Service {
             r0 = r7
             monitor-enter(r0)
             r0 = r4
-            mtopsdk.xstate.a.b r0 = r0.f43799a     // Catch: java.lang.Throwable -> L60
+            mtopsdk.xstate.a.b r0 = r0.a     // Catch: java.lang.Throwable -> L60
             if (r0 != 0) goto L31
             mtopsdk.xstate.e r0 = new mtopsdk.xstate.e     // Catch: java.lang.Throwable -> L60
             r1 = r0
@@ -36,7 +34,7 @@ public class d extends Service {
             r5 = r0
             r0 = r4
             r1 = r5
-            r0.f43799a = r1     // Catch: java.lang.Throwable -> L60
+            r0.a = r1     // Catch: java.lang.Throwable -> L60
             r0 = r5
             r0.a()     // Catch: java.lang.Throwable -> L23 android.os.RemoteException -> L65
             goto L31
@@ -63,7 +61,7 @@ public class d extends Service {
             r5 = r0
             r0 = r5
             r1 = r4
-            mtopsdk.xstate.a.b r1 = r1.f43799a
+            mtopsdk.xstate.a.b r1 = r1.a
             int r1 = r1.hashCode()
             java.lang.StringBuilder r0 = r0.append(r1)
             java.lang.String r0 = "mtopsdk.XStateService"
@@ -72,7 +70,7 @@ public class d extends Service {
             mtopsdk.common.util.TBSdkLog.b(r0, r1)
         L5b:
             r0 = r4
-            mtopsdk.xstate.a.b r0 = r0.f43799a
+            mtopsdk.xstate.a.b r0 = r0.a
             return r0
         L60:
             r5 = move-exception
@@ -94,9 +92,9 @@ public class d extends Service {
         String str;
         super.onDestroy();
         synchronized (this.b) {
-            if (this.f43799a != null) {
+            if (this.a != null) {
                 try {
-                    this.f43799a.b();
+                    this.a.b();
                 } catch (RemoteException e) {
                     e = e;
                     str = "[onDestroy]unInit() exception";

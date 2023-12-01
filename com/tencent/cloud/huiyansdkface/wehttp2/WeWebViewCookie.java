@@ -3,6 +3,7 @@ package com.tencent.cloud.huiyansdkface.wehttp2;
 import android.content.Context;
 import android.webkit.CookieManager;
 import android.webkit.CookieSyncManager;
+import com.huawei.openalliance.ad.constant.t;
 import com.tencent.cloud.huiyansdkface.okhttp3.Cookie;
 import com.tencent.cloud.huiyansdkface.okhttp3.HttpUrl;
 import java.util.ArrayList;
@@ -35,7 +36,7 @@ public class WeWebViewCookie implements WeCookie {
             if (cookie == null) {
                 return Collections.emptyList();
             }
-            String[] split = cookie.split(";");
+            String[] split = cookie.split(t.aE);
             ArrayList arrayList = new ArrayList();
             int length = split.length;
             int i = 0;

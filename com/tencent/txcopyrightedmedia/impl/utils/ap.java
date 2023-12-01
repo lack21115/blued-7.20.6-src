@@ -20,13 +20,13 @@ public final class ap {
     private static ap h;
 
     /* renamed from: a  reason: collision with root package name */
-    public Context f40059a;
+    public Context f26368a;
     private String f = "YTFaceSDK.licence";
     private String g = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAq4teqkW/TUruU89ElNVd\nKrpSL+HCITruyb6BS9mW6M4mqmxDhazDmQgMKNfsA0d2kxFucCsXTyesFNajaisk\nrAzVJpNGO75bQFap4jYzJYskIuas6fgIS7zSmGXgRcp6i0ZBH3pkVCXcgfLfsVCO\n+sN01jFhFgOC0LY2f1pJ+3jqktAlMIxy8Q9t7XwwL5/n8/Sledp7TwuRdnl2OPl3\nycCTRkXtOIoRNB9vgd9XooTKiEdCXC7W9ryvtwCiAB82vEfHWXXgzhsPC13URuFy\n1JqbWJtTCCcfsCVxuBplhVJAQ7JsF5SMntdJDkp7rJLhprgsaim2CRjcVseNmw97\nbwIDAQAB";
     public int b = -1;
 
     /* renamed from: c  reason: collision with root package name */
-    final CountDownLatch f40060c = new CountDownLatch(1);
+    final CountDownLatch f26369c = new CountDownLatch(1);
     private boolean i = false;
     public a d = new a();
     public b e = new b("TXCopyrightedMedia.licence");
@@ -35,22 +35,22 @@ public final class ap {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public String f40062a;
+        public String f26371a;
         public String b;
 
         /* renamed from: c  reason: collision with root package name */
-        public String f40063c;
+        public String f26372c;
     }
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/txcopyrightedmedia/impl/utils/ap$b.class */
     public final class b {
 
         /* renamed from: a  reason: collision with root package name */
-        public String f40064a;
+        public String f26373a;
         String b;
 
         /* renamed from: c  reason: collision with root package name */
-        public String f40065c = "";
+        public String f26374c = "";
         public String d = "";
         public String e = "";
         boolean f = false;
@@ -59,7 +59,7 @@ public final class ap {
         String i = "";
 
         public b(String str) {
-            this.f40064a = str;
+            this.f26373a = str;
             this.b = str + ".tmp";
         }
     }
@@ -76,8 +76,8 @@ public final class ap {
     /* JADX WARN: Code restructure failed: missing block: B:42:0x011a, code lost:
         r0 = new org.json.JSONObject(r0);
         r5.d.b = r0.optString("AuthKey");
-        r5.d.f40062a = r0.optString("Pid");
-        r5.d.f40063c = r0.optString("AppName");
+        r5.d.f26371a = r0.optString("Pid");
+        r5.d.f26372c = r0.optString("AppName");
      */
     /* JADX WARN: Code restructure failed: missing block: B:44:0x014b, code lost:
         r13 = true;
@@ -114,17 +114,17 @@ public final class ap {
     }
 
     private String b(b bVar) {
-        Context context = this.f40059a;
+        Context context = this.f26368a;
         if (context == null) {
             return null;
         }
         SharedPreferences sharedPreferences = context.getSharedPreferences("LicenceCheck.lastModified", 0);
-        return sharedPreferences.getString(bVar.f40064a + ".lastModified", null);
+        return sharedPreferences.getString(bVar.f26373a + ".lastModified", null);
     }
 
     private int c(b bVar) {
         String str;
-        String str2 = b() + File.separator + bVar.f40064a;
+        String str2 = b() + File.separator + bVar.f26373a;
         if (ak.a(str2)) {
             try {
                 str = ak.b(str2);
@@ -155,7 +155,7 @@ public final class ap {
         byte[] bytes = bVar.d.getBytes();
         SecretKeySpec secretKeySpec = new SecretKeySpec(bytes, "AES");
         byte[] bArr = new byte[16];
-        System.arraycopy((Object) bytes, 0, (Object) bArr, 0, 16);
+        System.arraycopy(bytes, 0, bArr, 0, 16);
         IvParameterSpec ivParameterSpec = new IvParameterSpec(bArr);
         byte[] decode = Base64.decode(str, 0);
         try {
@@ -191,7 +191,7 @@ public final class ap {
             @Override // com.tencent.txcopyrightedmedia.impl.utils.am
             public final void a() {
                 bVar.f = false;
-                ap.this.f40060c.countDown();
+                ap.this.f26369c.countDown();
             }
 
             @Override // com.tencent.txcopyrightedmedia.impl.utils.am
@@ -202,48 +202,48 @@ public final class ap {
                 }
                 ap.this.a(bVar, str);
                 b bVar2 = bVar;
-                String b2 = ak.b(new File(bVar2.f40065c + File.separator + bVar2.b).getAbsolutePath());
+                String b2 = ak.b(new File(bVar2.f26374c + File.separator + bVar2.b).getAbsolutePath());
                 if (TextUtils.isEmpty(b2)) {
                     return;
                 }
                 if (ap.this.b(bVar, b2) == 0) {
                     ap apVar = ap.this;
                     b bVar3 = bVar;
-                    File file2 = new File(apVar.b() + File.separator + bVar3.f40064a);
+                    File file2 = new File(apVar.b() + File.separator + bVar3.f26373a);
                     if (file2.exists()) {
                         file2.delete();
                     }
-                    File file3 = new File(bVar3.f40065c + File.separator + bVar3.b);
+                    File file3 = new File(bVar3.f26374c + File.separator + bVar3.b);
                     if (file3.exists()) {
                         file3.renameTo(file2);
                     }
                     bVar3.g = true;
                 }
-                ap.this.f40060c.countDown();
+                ap.this.f26369c.countDown();
             }
 
             @Override // com.tencent.txcopyrightedmedia.impl.utils.am
             public final void b() {
                 bVar.f = false;
-                ap.this.f40060c.countDown();
+                ap.this.f26369c.countDown();
             }
         };
-        if (this.f40059a == null) {
+        if (this.f26368a == null) {
             return;
         }
         this.i = true;
-        bVar.f40065c = b();
-        new Thread(new an(this.f40059a, bVar.e, bVar.f40065c, bVar.b, amVar, b(bVar))).start();
+        bVar.f26374c = b();
+        new Thread(new an(this.f26368a, bVar.e, bVar.f26374c, bVar.b, amVar, b(bVar))).start();
         bVar.f = true;
     }
 
     public final void a(b bVar, String str) {
-        Context context = this.f40059a;
+        Context context = this.f26368a;
         if (context == null) {
             return;
         }
         SharedPreferences.Editor edit = context.getSharedPreferences("LicenceCheck.lastModified", 0).edit();
-        edit.putString(bVar.f40064a + ".lastModified", str);
+        edit.putString(bVar.f26373a + ".lastModified", str);
         edit.apply();
     }
 
@@ -262,7 +262,7 @@ public final class ap {
     }
 
     public final String b() {
-        File filesDir = this.f40059a.getFilesDir();
+        File filesDir = this.f26368a.getFilesDir();
         File file = new File(filesDir + File.separator + "liteav/licence");
         if (!file.exists()) {
             file.mkdirs();

@@ -13,10 +13,10 @@ public class ah {
     private static ah b;
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f40048a;
+    public boolean f26357a;
 
     /* renamed from: c  reason: collision with root package name */
-    private Timer f40049c;
+    private Timer f26358c;
     private final List<b> d = new ArrayList();
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -38,7 +38,7 @@ public class ah {
                         Iterator it = ah.this.d.iterator();
                         while (it.hasNext()) {
                             b bVar = (b) it.next();
-                            if (bVar.f40052a >= 5 || bVar.b) {
+                            if (bVar.f26361a >= 5 || bVar.b) {
                                 it.remove();
                             } else {
                                 ArrayList arrayList2 = arrayList;
@@ -59,8 +59,8 @@ public class ah {
                 }
                 synchronized (ah.class) {
                     try {
-                        if (ah.this.f40048a && ah.this.d.size() == 0) {
-                            ah.this.f40049c.cancel();
+                        if (ah.this.f26357a && ah.this.d.size() == 0) {
+                            ah.this.f26358c.cancel();
                             ah.d(ah.this);
                             ah.e(ah.this);
                         }
@@ -76,14 +76,14 @@ public class ah {
     public static final class b {
 
         /* renamed from: a  reason: collision with root package name */
-        int f40052a = 0;
+        int f26361a = 0;
         boolean b;
 
         /* renamed from: c  reason: collision with root package name */
-        aw f40053c;
+        aw f26362c;
 
         public b(aw awVar) {
-            this.f40053c = (aw) awVar.clone();
+            this.f26362c = (aw) awVar.clone();
         }
     }
 
@@ -110,17 +110,17 @@ public class ah {
             if (bVar.b) {
                 return;
             }
-            bVar.f40052a++;
-            String a2 = bVar.f40053c.a();
+            bVar.f26361a++;
+            String a2 = bVar.f26362c.a();
             if (a2 == null) {
                 return;
             }
             StringBuilder sb = new StringBuilder("report music->request url:");
-            sb.append(bVar.f40053c.b());
+            sb.append(bVar.f26362c.b());
             sb.append(" body:");
             sb.append(a2);
-            w wVar = w.c.f40184a;
-            w.d a3 = w.a(bVar.f40053c.b(), a2.getBytes(), "application/json");
+            w wVar = w.c.f26493a;
+            w.d a3 = w.a(bVar.f26362c.b(), a2.getBytes(), "application/json");
             if (a3 == null || a3.b == null) {
                 return;
             }
@@ -132,12 +132,12 @@ public class ah {
     }
 
     static /* synthetic */ Timer d(ah ahVar) {
-        ahVar.f40049c = null;
+        ahVar.f26358c = null;
         return null;
     }
 
     static /* synthetic */ boolean e(ah ahVar) {
-        ahVar.f40048a = false;
+        ahVar.f26357a = false;
         return false;
     }
 
@@ -145,17 +145,17 @@ public class ah {
         final b bVar = new b(awVar);
         synchronized (ah.class) {
             try {
-                if (this.f40049c == null) {
-                    this.f40048a = false;
+                if (this.f26358c == null) {
+                    this.f26357a = false;
                     Timer timer = new Timer();
-                    this.f40049c = timer;
+                    this.f26358c = timer;
                     timer.schedule(new a(this, (byte) 0), 0L, 8000L);
                 }
                 if (this.d.size() > 200) {
                     this.d.remove(0);
                 }
                 this.d.add(bVar);
-                this.f40049c.schedule(new TimerTask() { // from class: com.tencent.txcopyrightedmedia.impl.utils.ah.1
+                this.f26358c.schedule(new TimerTask() { // from class: com.tencent.txcopyrightedmedia.impl.utils.ah.1
                     @Override // java.util.TimerTask, java.lang.Runnable
                     public final void run() {
                         ah.a(bVar);

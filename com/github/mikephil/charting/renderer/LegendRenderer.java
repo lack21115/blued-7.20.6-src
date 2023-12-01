@@ -22,11 +22,11 @@ import java.util.List;
 public class LegendRenderer extends Renderer {
 
     /* renamed from: a  reason: collision with root package name */
-    protected Paint f22181a;
+    protected Paint f8574a;
     protected Paint b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected Legend f22182c;
+    protected Legend f8575c;
     protected List<LegendEntry> d;
     protected Paint.FontMetrics e;
     private Path f;
@@ -37,11 +37,11 @@ public class LegendRenderer extends Renderer {
     public static /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f22183a;
+        static final /* synthetic */ int[] f8576a;
         static final /* synthetic */ int[] b;
 
         /* renamed from: c  reason: collision with root package name */
-        static final /* synthetic */ int[] f22184c;
+        static final /* synthetic */ int[] f8577c;
         static final /* synthetic */ int[] d;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:34:0x00c0 -> B:84:0x0014). Please submit an issue!!! */
@@ -85,13 +85,13 @@ public class LegendRenderer extends Renderer {
             } catch (NoSuchFieldError e6) {
             }
             int[] iArr2 = new int[Legend.LegendOrientation.values().length];
-            f22184c = iArr2;
+            f8577c = iArr2;
             try {
                 iArr2[Legend.LegendOrientation.HORIZONTAL.ordinal()] = 1;
             } catch (NoSuchFieldError e7) {
             }
             try {
-                f22184c[Legend.LegendOrientation.VERTICAL.ordinal()] = 2;
+                f8577c[Legend.LegendOrientation.VERTICAL.ordinal()] = 2;
             } catch (NoSuchFieldError e8) {
             }
             int[] iArr3 = new int[Legend.LegendVerticalAlignment.values().length];
@@ -109,17 +109,17 @@ public class LegendRenderer extends Renderer {
             } catch (NoSuchFieldError e11) {
             }
             int[] iArr4 = new int[Legend.LegendHorizontalAlignment.values().length];
-            f22183a = iArr4;
+            f8576a = iArr4;
             try {
                 iArr4[Legend.LegendHorizontalAlignment.LEFT.ordinal()] = 1;
             } catch (NoSuchFieldError e12) {
             }
             try {
-                f22183a[Legend.LegendHorizontalAlignment.RIGHT.ordinal()] = 2;
+                f8576a[Legend.LegendHorizontalAlignment.RIGHT.ordinal()] = 2;
             } catch (NoSuchFieldError e13) {
             }
             try {
-                f22183a[Legend.LegendHorizontalAlignment.CENTER.ordinal()] = 3;
+                f8576a[Legend.LegendHorizontalAlignment.CENTER.ordinal()] = 3;
             } catch (NoSuchFieldError e14) {
             }
         }
@@ -130,18 +130,18 @@ public class LegendRenderer extends Renderer {
         this.d = new ArrayList(16);
         this.e = new Paint.FontMetrics();
         this.f = new Path();
-        this.f22182c = legend;
+        this.f8575c = legend;
         Paint paint = new Paint(1);
-        this.f22181a = paint;
+        this.f8574a = paint;
         paint.setTextSize(Utils.a(9.0f));
-        this.f22181a.setTextAlign(Paint.Align.LEFT);
+        this.f8574a.setTextAlign(Paint.Align.LEFT);
         Paint paint2 = new Paint(1);
         this.b = paint2;
         paint2.setStyle(Paint.Style.FILL);
     }
 
     public Paint a() {
-        return this.f22181a;
+        return this.f8574a;
     }
 
     public void a(Canvas canvas) {
@@ -152,52 +152,52 @@ public class LegendRenderer extends Renderer {
         float f4;
         float f5;
         float f6;
-        if (this.f22182c.z()) {
-            Typeface w = this.f22182c.w();
+        if (this.f8575c.z()) {
+            Typeface w = this.f8575c.w();
             if (w != null) {
-                this.f22181a.setTypeface(w);
+                this.f8574a.setTypeface(w);
             }
-            this.f22181a.setTextSize(this.f22182c.x());
-            this.f22181a.setColor(this.f22182c.y());
-            float a2 = Utils.a(this.f22181a, this.e);
-            float b = Utils.b(this.f22181a, this.e) + Utils.a(this.f22182c.n());
-            float b2 = a2 - (Utils.b(this.f22181a, "ABC") / 2.0f);
-            LegendEntry[] a3 = this.f22182c.a();
-            float a4 = Utils.a(this.f22182c.o());
-            float a5 = Utils.a(this.f22182c.m());
-            Legend.LegendOrientation f7 = this.f22182c.f();
-            Legend.LegendHorizontalAlignment d = this.f22182c.d();
-            Legend.LegendVerticalAlignment e2 = this.f22182c.e();
-            Legend.LegendDirection h = this.f22182c.h();
-            float a6 = Utils.a(this.f22182c.j());
-            float a7 = Utils.a(this.f22182c.p());
-            float v = this.f22182c.v();
-            float u = this.f22182c.u();
-            int i = AnonymousClass1.f22183a[d.ordinal()];
+            this.f8574a.setTextSize(this.f8575c.x());
+            this.f8574a.setColor(this.f8575c.y());
+            float a2 = Utils.a(this.f8574a, this.e);
+            float b = Utils.b(this.f8574a, this.e) + Utils.a(this.f8575c.n());
+            float b2 = a2 - (Utils.b(this.f8574a, "ABC") / 2.0f);
+            LegendEntry[] a3 = this.f8575c.a();
+            float a4 = Utils.a(this.f8575c.o());
+            float a5 = Utils.a(this.f8575c.m());
+            Legend.LegendOrientation f7 = this.f8575c.f();
+            Legend.LegendHorizontalAlignment d = this.f8575c.d();
+            Legend.LegendVerticalAlignment e2 = this.f8575c.e();
+            Legend.LegendDirection h = this.f8575c.h();
+            float a6 = Utils.a(this.f8575c.j());
+            float a7 = Utils.a(this.f8575c.p());
+            float v = this.f8575c.v();
+            float u = this.f8575c.u();
+            int i = AnonymousClass1.f8576a[d.ordinal()];
             if (i == 1) {
                 if (f7 != Legend.LegendOrientation.VERTICAL) {
                     u += this.o.f();
                 }
                 if (h == Legend.LegendDirection.RIGHT_TO_LEFT) {
-                    u = this.f22182c.f22089a + u;
+                    u = this.f8575c.f8482a + u;
                 }
             } else if (i == 2) {
                 float n = (f7 == Legend.LegendOrientation.VERTICAL ? this.o.n() : this.o.g()) - u;
                 u = n;
                 if (h == Legend.LegendDirection.LEFT_TO_RIGHT) {
-                    u = n - this.f22182c.f22089a;
+                    u = n - this.f8575c.f8482a;
                 }
             } else if (i != 3) {
                 u = 0.0f;
             } else {
                 float n2 = (f7 == Legend.LegendOrientation.VERTICAL ? this.o.n() / 2.0f : this.o.f() + (this.o.i() / 2.0f)) + (h == Legend.LegendDirection.LEFT_TO_RIGHT ? u : -u);
                 if (f7 == Legend.LegendOrientation.VERTICAL) {
-                    u = (float) (n2 + (h == Legend.LegendDirection.LEFT_TO_RIGHT ? ((-this.f22182c.f22089a) / 2.0d) + u : (this.f22182c.f22089a / 2.0d) - u));
+                    u = (float) (n2 + (h == Legend.LegendDirection.LEFT_TO_RIGHT ? ((-this.f8575c.f8482a) / 2.0d) + u : (this.f8575c.f8482a / 2.0d) - u));
                 } else {
                     u = n2;
                 }
             }
-            int i2 = AnonymousClass1.f22184c[f7.ordinal()];
+            int i2 = AnonymousClass1.f8577c[f7.ordinal()];
             if (i2 != 1) {
                 if (i2 != 2) {
                     return;
@@ -206,9 +206,9 @@ public class LegendRenderer extends Renderer {
                 if (i3 == 1) {
                     e = (d == Legend.LegendHorizontalAlignment.CENTER ? 0.0f : this.o.e()) + v;
                 } else if (i3 != 2) {
-                    e = i3 != 3 ? 0.0f : ((this.o.m() / 2.0f) - (this.f22182c.b / 2.0f)) + this.f22182c.v();
+                    e = i3 != 3 ? 0.0f : ((this.o.m() / 2.0f) - (this.f8575c.b / 2.0f)) + this.f8575c.v();
                 } else {
-                    e = (d == Legend.LegendHorizontalAlignment.CENTER ? this.o.m() : this.o.h()) - (this.f22182c.b + v);
+                    e = (d == Legend.LegendHorizontalAlignment.CENTER ? this.o.m() : this.o.h()) - (this.f8575c.b + v);
                 }
                 float f8 = e;
                 boolean z = false;
@@ -219,10 +219,10 @@ public class LegendRenderer extends Renderer {
                 while (i4 < a3.length) {
                     LegendEntry legendEntry = a3[i4];
                     boolean z2 = legendEntry.b != Legend.LegendForm.NONE;
-                    float a8 = Float.isNaN(legendEntry.f22103c) ? a6 : Utils.a(legendEntry.f22103c);
+                    float a8 = Float.isNaN(legendEntry.f8496c) ? a6 : Utils.a(legendEntry.f8496c);
                     if (z2) {
                         float f12 = h == Legend.LegendDirection.LEFT_TO_RIGHT ? u + f9 : u - (a8 - f9);
-                        a(canvas, f12, f11 + b2, legendEntry, this.f22182c);
+                        a(canvas, f12, f11 + b2, legendEntry, this.f8575c);
                         f4 = f12;
                         if (h == Legend.LegendDirection.LEFT_TO_RIGHT) {
                             f4 = f12 + a8;
@@ -231,7 +231,7 @@ public class LegendRenderer extends Renderer {
                         f4 = u;
                     }
                     float f13 = f10;
-                    if (legendEntry.f22102a != null) {
+                    if (legendEntry.f8495a != null) {
                         if (!z2 || z) {
                             f6 = f4;
                             if (z) {
@@ -242,13 +242,13 @@ public class LegendRenderer extends Renderer {
                         }
                         float f14 = f6;
                         if (h == Legend.LegendDirection.RIGHT_TO_LEFT) {
-                            f14 = f6 - Utils.a(this.f22181a, legendEntry.f22102a);
+                            f14 = f6 - Utils.a(this.f8574a, legendEntry.f8495a);
                         }
                         if (z) {
                             f11 += a2 + b;
-                            a(canvas, f14, f11 + a2, legendEntry.f22102a);
+                            a(canvas, f14, f11 + a2, legendEntry.f8495a);
                         } else {
-                            a(canvas, f14, f11 + a2, legendEntry.f22102a);
+                            a(canvas, f14, f11 + a2, legendEntry.f8495a);
                         }
                         f11 += a2 + b;
                         f5 = 0.0f;
@@ -262,13 +262,13 @@ public class LegendRenderer extends Renderer {
                 }
                 return;
             }
-            List<FSize> t = this.f22182c.t();
-            List<FSize> r = this.f22182c.r();
-            List<Boolean> s = this.f22182c.s();
+            List<FSize> t = this.f8575c.t();
+            List<FSize> r = this.f8575c.r();
+            List<Boolean> s = this.f8575c.s();
             int i5 = AnonymousClass1.b[e2.ordinal()];
             float f15 = v;
             if (i5 != 1) {
-                f15 = i5 != 2 ? i5 != 3 ? 0.0f : v + ((this.o.m() - this.f22182c.b) / 2.0f) : (this.o.m() - v) - this.f22182c.b;
+                f15 = i5 != 2 ? i5 != 3 ? 0.0f : v + ((this.o.m() - this.f8575c.b) / 2.0f) : (this.o.m() - v) - this.f8575c.b;
             }
             int length = a3.length;
             float f16 = u;
@@ -278,7 +278,7 @@ public class LegendRenderer extends Renderer {
             while (i6 < length) {
                 LegendEntry legendEntry2 = a3[i6];
                 boolean z3 = legendEntry2.b != Legend.LegendForm.NONE;
-                float a9 = Float.isNaN(legendEntry2.f22103c) ? a6 : Utils.a(legendEntry2.f22103c);
+                float a9 = Float.isNaN(legendEntry2.f8496c) ? a6 : Utils.a(legendEntry2.f8496c);
                 if (i6 >= s.size() || !s.get(i6).booleanValue()) {
                     f = f16;
                 } else {
@@ -286,16 +286,16 @@ public class LegendRenderer extends Renderer {
                     f = f17;
                 }
                 if (f == f17 && d == Legend.LegendHorizontalAlignment.CENTER && i7 < t.size()) {
-                    f += (h == Legend.LegendDirection.RIGHT_TO_LEFT ? t.get(i7).f22200a : -t.get(i7).f22200a) / 2.0f;
+                    f += (h == Legend.LegendDirection.RIGHT_TO_LEFT ? t.get(i7).f8593a : -t.get(i7).f8593a) / 2.0f;
                     i7++;
                 }
-                boolean z4 = legendEntry2.f22102a == null;
+                boolean z4 = legendEntry2.f8495a == null;
                 if (z3) {
                     float f18 = f;
                     if (h == Legend.LegendDirection.RIGHT_TO_LEFT) {
                         f18 = f - a9;
                     }
-                    a(canvas, f18, f15 + b2, legendEntry2, this.f22182c);
+                    a(canvas, f18, f15 + b2, legendEntry2, this.f8575c);
                     f = h == Legend.LegendDirection.LEFT_TO_RIGHT ? f18 + a9 : f18;
                 }
                 if (z4) {
@@ -309,12 +309,12 @@ public class LegendRenderer extends Renderer {
                     }
                     float f21 = f20;
                     if (h == Legend.LegendDirection.RIGHT_TO_LEFT) {
-                        f21 = f20 - r.get(i6).f22200a;
+                        f21 = f20 - r.get(i6).f8593a;
                     }
-                    a(canvas, f21, f15 + a2, legendEntry2.f22102a);
+                    a(canvas, f21, f15 + a2, legendEntry2.f8495a);
                     float f22 = f21;
                     if (h == Legend.LegendDirection.LEFT_TO_RIGHT) {
-                        f22 = f21 + r.get(i6).f22200a;
+                        f22 = f21 + r.get(i6).f8593a;
                     }
                     float f23 = h == Legend.LegendDirection.RIGHT_TO_LEFT ? -a5 : a5;
                     f2 = f22;
@@ -337,7 +337,7 @@ public class LegendRenderer extends Renderer {
             legendForm2 = legend.i();
         }
         this.b.setColor(legendEntry.f);
-        float a2 = Utils.a(Float.isNaN(legendEntry.f22103c) ? legend.j() : legendEntry.f22103c);
+        float a2 = Utils.a(Float.isNaN(legendEntry.f8496c) ? legend.j() : legendEntry.f8496c);
         float f3 = a2 / 2.0f;
         int i = AnonymousClass1.d[legendForm2.ordinal()];
         if (i == 3 || i == 4) {
@@ -361,14 +361,14 @@ public class LegendRenderer extends Renderer {
     }
 
     protected void a(Canvas canvas, float f, float f2, String str) {
-        canvas.drawText(str, f, f2, this.f22181a);
+        canvas.drawText(str, f, f2, this.f8574a);
     }
 
     /* JADX WARN: Type inference failed for: r0v31, types: [com.github.mikephil.charting.interfaces.datasets.IDataSet] */
     /* JADX WARN: Type inference failed for: r0v48, types: [com.github.mikephil.charting.interfaces.datasets.IDataSet] */
     public void a(ChartData<?> chartData) {
         ChartData<?> chartData2 = chartData;
-        if (!this.f22182c.c()) {
+        if (!this.f8575c.c()) {
             this.d.clear();
             int i = 0;
             while (true) {
@@ -435,17 +435,17 @@ public class LegendRenderer extends Renderer {
                 chartData2 = chartData;
                 i = i2 + 1;
             }
-            if (this.f22182c.b() != null) {
-                Collections.addAll(this.d, this.f22182c.b());
+            if (this.f8575c.b() != null) {
+                Collections.addAll(this.d, this.f8575c.b());
             }
-            this.f22182c.a(this.d);
+            this.f8575c.a(this.d);
         }
-        Typeface w = this.f22182c.w();
+        Typeface w = this.f8575c.w();
         if (w != null) {
-            this.f22181a.setTypeface(w);
+            this.f8574a.setTypeface(w);
         }
-        this.f22181a.setTextSize(this.f22182c.x());
-        this.f22181a.setColor(this.f22182c.y());
-        this.f22182c.a(this.f22181a, this.o);
+        this.f8574a.setTextSize(this.f8575c.x());
+        this.f8574a.setColor(this.f8575c.y());
+        this.f8575c.a(this.f8574a, this.o);
     }
 }

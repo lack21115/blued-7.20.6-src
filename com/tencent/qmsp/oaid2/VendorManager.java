@@ -2,7 +2,6 @@ package com.tencent.qmsp.oaid2;
 
 import android.content.Context;
 import android.os.Build;
-import com.android.internal.util.cm.QSConstants;
 
 /* loaded from: source-8829756-dex2jar.jar:com/tencent/qmsp/oaid2/VendorManager.class */
 public class VendorManager implements IVendorCallback {
@@ -13,7 +12,7 @@ public class VendorManager implements IVendorCallback {
     public static /* synthetic */ class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final /* synthetic */ int[] f38455a;
+        public static final /* synthetic */ int[] f24764a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:35:0x00c5 -> B:73:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:37:0x00c9 -> B:69:0x001f). Please submit an issue!!! */
@@ -32,69 +31,69 @@ public class VendorManager implements IVendorCallback {
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:63:0x00fd -> B:95:0x00b8). Please submit an issue!!! */
         static {
             int[] iArr = new int[d.values().length];
-            f38455a = iArr;
+            f24764a = iArr;
             try {
                 iArr[d.XIAOMI.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f38455a[d.BLACKSHARK.ordinal()] = 2;
+                f24764a[d.BLACKSHARK.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f38455a[d.VIVO.ordinal()] = 3;
+                f24764a[d.VIVO.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f38455a[d.HUA_WEI.ordinal()] = 4;
+                f24764a[d.HUA_WEI.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f38455a[d.OPPO.ordinal()] = 5;
+                f24764a[d.OPPO.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
             try {
-                f38455a[d.ONEPLUS.ordinal()] = 6;
+                f24764a[d.ONEPLUS.ordinal()] = 6;
             } catch (NoSuchFieldError e6) {
             }
             try {
-                f38455a[d.MOTO.ordinal()] = 7;
+                f24764a[d.MOTO.ordinal()] = 7;
             } catch (NoSuchFieldError e7) {
             }
             try {
-                f38455a[d.LENOVO.ordinal()] = 8;
+                f24764a[d.LENOVO.ordinal()] = 8;
             } catch (NoSuchFieldError e8) {
             }
             try {
-                f38455a[d.ASUS.ordinal()] = 9;
+                f24764a[d.ASUS.ordinal()] = 9;
             } catch (NoSuchFieldError e9) {
             }
             try {
-                f38455a[d.SAMSUNG.ordinal()] = 10;
+                f24764a[d.SAMSUNG.ordinal()] = 10;
             } catch (NoSuchFieldError e10) {
             }
             try {
-                f38455a[d.MEIZU.ordinal()] = 11;
+                f24764a[d.MEIZU.ordinal()] = 11;
             } catch (NoSuchFieldError e11) {
             }
             try {
-                f38455a[d.ALPS.ordinal()] = 12;
+                f24764a[d.ALPS.ordinal()] = 12;
             } catch (NoSuchFieldError e12) {
             }
             try {
-                f38455a[d.NUBIA.ordinal()] = 13;
+                f24764a[d.NUBIA.ordinal()] = 13;
             } catch (NoSuchFieldError e13) {
             }
             try {
-                f38455a[d.ZTE.ordinal()] = 14;
+                f24764a[d.ZTE.ordinal()] = 14;
             } catch (NoSuchFieldError e14) {
             }
             try {
-                f38455a[d.FREEMEOS.ordinal()] = 15;
+                f24764a[d.FREEMEOS.ordinal()] = 15;
             } catch (NoSuchFieldError e15) {
             }
             try {
-                f38455a[d.SSUIOS.ordinal()] = 16;
+                f24764a[d.SSUIOS.ordinal()] = 16;
             } catch (NoSuchFieldError e16) {
             }
         }
@@ -105,9 +104,9 @@ public class VendorManager implements IVendorCallback {
         d a2 = d.a(Build.MANUFACTURER);
         if (a2 == d.UNSUPPORT) {
             onResult(false, com.igexin.push.core.b.l, com.igexin.push.core.b.l);
-            return com.tencent.qmsp.oaid2.a.f38456a;
+            return com.tencent.qmsp.oaid2.a.f24765a;
         }
-        switch (a.f38455a[a2.ordinal()]) {
+        switch (a.f24764a[a2.ordinal()]) {
             case 1:
             case 2:
                 this.vendorInfo = new n0();
@@ -158,10 +157,10 @@ public class VendorManager implements IVendorCallback {
                     return 0;
                 } catch (Exception e) {
                     onResult(false, com.igexin.push.core.b.l, com.igexin.push.core.b.l);
-                    return com.tencent.qmsp.oaid2.a.f38457c;
+                    return com.tencent.qmsp.oaid2.a.f24766c;
                 }
             }
-            c.b(QSConstants.TILE_SYNC);
+            c.b("sync");
             try {
                 onResult(this.vendorInfo.e(), this.vendorInfo.d(), this.vendorInfo.a());
                 return 0;
@@ -171,7 +170,7 @@ public class VendorManager implements IVendorCallback {
             }
         } catch (Exception e3) {
             onResult(false, com.igexin.push.core.b.l, com.igexin.push.core.b.l);
-            return com.tencent.qmsp.oaid2.a.f38457c;
+            return com.tencent.qmsp.oaid2.a.f24766c;
         }
     }
 

@@ -13,7 +13,7 @@ public abstract class GroupClassifyStateAction implements UiAction {
     public static final class GetClassify extends GroupClassifyStateAction {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final GetClassify f32826a = new GetClassify();
+        public static final GetClassify f19135a = new GetClassify();
 
         private GetClassify() {
             super(null);

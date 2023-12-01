@@ -25,7 +25,7 @@ import java.util.zip.ZipOutputStream;
 public class ja {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final int f37565a = 49152;
+    private static final int f23874a = 49152;
 
     public static void a(File file, String str) throws ZipException, IOException, ZipError {
         a(file, str, (FilenameFilter) null);
@@ -37,7 +37,7 @@ public class ja {
             file2.mkdirs();
         }
         ZipFile zipFile = new ZipFile(file);
-        byte[] bArr = new byte[f37565a];
+        byte[] bArr = new byte[f23874a];
         Enumeration<? extends ZipEntry> entries = zipFile.entries();
         while (entries.hasMoreElements()) {
             ZipEntry nextElement = entries.nextElement();
@@ -96,7 +96,7 @@ public class ja {
             }
             return;
         }
-        byte[] bArr = new byte[f37565a];
+        byte[] bArr = new byte[f23874a];
         FileInputStream fileInputStream = new FileInputStream(file);
         zipOutputStream.setLevel(9);
         zipOutputStream.setMethod(8);
@@ -117,7 +117,7 @@ public class ja {
             file.mkdirs();
         }
         ZipInputStream zipInputStream = new ZipInputStream(inputStream);
-        byte[] bArr = new byte[f37565a];
+        byte[] bArr = new byte[f23874a];
         ZipEntry nextEntry = zipInputStream.getNextEntry();
         while (nextEntry != null) {
             String name = nextEntry.getName();

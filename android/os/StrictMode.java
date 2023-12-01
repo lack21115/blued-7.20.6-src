@@ -20,8 +20,8 @@ import com.blued.das.live.LiveProtos;
 import dalvik.system.BlockGuard;
 import dalvik.system.CloseGuard;
 import dalvik.system.VMDebug;
+import java.io.PrintWriter;
 import java.io.StringWriter;
-import java.io.Writer;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -144,7 +144,6 @@ public final class StrictMode {
             this.mPolicyMask = i;
         }
 
-        @Override // dalvik.system.BlockGuard.Policy
         public int getPolicyMask() {
             return this.mPolicyMask;
         }
@@ -290,7 +289,6 @@ public final class StrictMode {
             startHandlingViolationException(strictModeCustomViolation);
         }
 
-        @Override // dalvik.system.BlockGuard.Policy
         public void onNetwork() {
             if ((this.mPolicyMask & 4) == 0) {
                 return;
@@ -306,7 +304,6 @@ public final class StrictMode {
             startHandlingViolationException(strictModeNetworkViolation);
         }
 
-        @Override // dalvik.system.BlockGuard.Policy
         public void onReadFromDisk() {
             if ((this.mPolicyMask & 2) == 0 || StrictMode.access$400()) {
                 return;
@@ -316,7 +313,6 @@ public final class StrictMode {
             startHandlingViolationException(strictModeDiskReadViolation);
         }
 
-        @Override // dalvik.system.BlockGuard.Policy
         public void onWriteToDisk() {
             if ((this.mPolicyMask & 1) == 0 || StrictMode.access$400()) {
                 return;
@@ -331,7 +327,7 @@ public final class StrictMode {
         }
 
         void startHandlingViolationException(BlockGuard.BlockGuardPolicyException blockGuardPolicyException) {
-            ViolationInfo violationInfo = new ViolationInfo(blockGuardPolicyException, blockGuardPolicyException.getPolicy());
+            ViolationInfo violationInfo = new ViolationInfo((Throwable) blockGuardPolicyException, blockGuardPolicyException.getPolicy());
             violationInfo.violationUptimeMillis = SystemClock.uptimeMillis();
             handleViolationWithTimingAttempt(violationInfo);
         }
@@ -347,7 +343,6 @@ public final class StrictMode {
         private AndroidCloseGuardReporter() {
         }
 
-        @Override // dalvik.system.CloseGuard.Reporter
         public void report(String str, Throwable th) {
             StrictMode.onVmPolicyViolation(str, th);
         }
@@ -1101,6 +1096,7 @@ public final class StrictMode {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Type inference failed for: r0v4, types: [android.os.StrictMode$5] */
     public static void dropboxViolationAsync(final int i, final ViolationInfo violationInfo) {
         int incrementAndGet = sDropboxCallsInFlight.incrementAndGet();
         if (incrementAndGet > 20) {
@@ -1348,7 +1344,7 @@ public final class StrictMode {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static void readAndHandleBinderCallViolations(Parcel parcel) {
         StringWriter stringWriter = new StringWriter();
-        FastPrintWriter fastPrintWriter = new FastPrintWriter((Writer) stringWriter, false, 256);
+        PrintWriter fastPrintWriter = new FastPrintWriter(stringWriter, false, 256);
         new LogStackTrace().printStackTrace(fastPrintWriter);
         fastPrintWriter.flush();
         String stringWriter2 = stringWriter.toString();

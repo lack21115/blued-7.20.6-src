@@ -19,10 +19,10 @@ public final class KBLayoutParams extends ConstraintLayout.LayoutParams implemen
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public KBLayoutParams(Context c2, AttributeSet attributeSet) {
-        super(c2, attributeSet);
-        Intrinsics.e(c2, "c");
-        TypedArray obtainStyledAttributes = c2.obtainStyledAttributes(attributeSet, R.styleable.KeyboardConstraintLayout_LP);
+    public KBLayoutParams(Context c, AttributeSet attributeSet) {
+        super(c, attributeSet);
+        Intrinsics.e(c, "c");
+        TypedArray obtainStyledAttributes = c.obtainStyledAttributes(attributeSet, R.styleable.KeyboardConstraintLayout_LP);
         Intrinsics.c(obtainStyledAttributes, "c.obtainStyledAttributes…boardConstraintLayout_LP)");
         a(obtainStyledAttributes.getInt(R.styleable.KeyboardConstraintLayout_LP_kb_layout_type, 0));
         b(obtainStyledAttributes.getResourceId(R.styleable.KeyboardConstraintLayout_LP_kb_panel_layout_id, 0));

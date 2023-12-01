@@ -83,7 +83,7 @@ public final class Code128Reader extends OneDReader {
                     }
                     i2 += iArr[0] + iArr[1];
                     int i7 = i4 - 1;
-                    System.arraycopy((Object) iArr, 2, (Object) iArr, 0, i7);
+                    System.arraycopy(iArr, 2, iArr, 0, i7);
                     iArr[i7] = 0;
                     iArr[i4] = 0;
                     i = i4 - 1;

@@ -18,13 +18,13 @@ public class b extends c {
     @Override // com.meizu.cloud.pushsdk.notification.a
     public void a(Notification notification, MessageV3 messageV3, PendingIntent pendingIntent) {
         if (MinSdkChecker.isSupportNotificationBuild()) {
-            RemoteViews remoteViews = new RemoteViews(this.f24165a.getPackageName(), com.meizu.cloud.pushsdk.notification.c.c.b(this.f24165a));
-            remoteViews.setTextViewText(com.meizu.cloud.pushsdk.notification.c.c.d(this.f24165a), messageV3.getTitle());
-            remoteViews.setLong(com.meizu.cloud.pushsdk.notification.c.c.f(this.f24165a), "setTime", System.currentTimeMillis());
+            RemoteViews remoteViews = new RemoteViews(this.f10550a.getPackageName(), com.meizu.cloud.pushsdk.notification.c.c.b(this.f10550a));
+            remoteViews.setTextViewText(com.meizu.cloud.pushsdk.notification.c.c.d(this.f10550a), messageV3.getTitle());
+            remoteViews.setLong(com.meizu.cloud.pushsdk.notification.c.c.f(this.f10550a), "setTime", System.currentTimeMillis());
             a(remoteViews, messageV3);
             if (messageV3.getNotificationStyle() != null && !TextUtils.isEmpty(messageV3.getNotificationStyle().getExpandableText())) {
-                remoteViews.setViewVisibility(com.meizu.cloud.pushsdk.notification.c.c.h(this.f24165a), 0);
-                remoteViews.setTextViewText(com.meizu.cloud.pushsdk.notification.c.c.h(this.f24165a), messageV3.getNotificationStyle().getExpandableText());
+                remoteViews.setViewVisibility(com.meizu.cloud.pushsdk.notification.c.c.h(this.f10550a), 0);
+                remoteViews.setTextViewText(com.meizu.cloud.pushsdk.notification.c.c.h(this.f10550a), messageV3.getNotificationStyle().getExpandableText());
             }
             notification.bigContentView = remoteViews;
         }

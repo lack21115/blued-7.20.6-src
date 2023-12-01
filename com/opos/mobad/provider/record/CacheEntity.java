@@ -20,11 +20,11 @@ public class CacheEntity implements Parcelable {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f27123a;
+    public final int f13435a;
     public final int b;
 
     public CacheEntity(int i, int i2) {
-        this.f27123a = i;
+        this.f13435a = i;
         this.b = i2;
     }
 
@@ -35,7 +35,7 @@ public class CacheEntity implements Parcelable {
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeInt(this.f27123a);
+        parcel.writeInt(this.f13435a);
         parcel.writeInt(this.b);
     }
 }

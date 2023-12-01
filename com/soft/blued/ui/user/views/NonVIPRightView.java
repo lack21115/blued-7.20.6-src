@@ -20,11 +20,11 @@ import java.util.ArrayList;
 public class NonVIPRightView extends LinearLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    TextView f34370a;
+    TextView f20679a;
     TextView b;
 
     /* renamed from: c  reason: collision with root package name */
-    RecyclerView f34371c;
+    RecyclerView f20680c;
     Context d;
     View e;
 
@@ -50,13 +50,13 @@ public class NonVIPRightView extends LinearLayout {
     }
 
     private void c() {
-        this.f34370a = (TextView) findViewById(2131372809);
+        this.f20679a = (TextView) findViewById(R.id.tv_top_line);
         this.b = (TextView) findViewById(R.id.tv_group_title);
-        this.f34371c = (RecyclerView) findViewById(R.id.rv_right_items);
+        this.f20680c = (RecyclerView) findViewById(R.id.rv_right_items);
     }
 
     public void a() {
-        this.f34370a.setVisibility(8);
+        this.f20679a.setVisibility(8);
     }
 
     public void a(IRequestHost iRequestHost, VIPCenterForJsonParse.NonVIPPriviledge nonVIPPriviledge, int i, FragmentManager fragmentManager) {
@@ -72,8 +72,8 @@ public class NonVIPRightView extends LinearLayout {
                 VIPCenterVIPRightHoriAdapter vIPCenterVIPRightHoriAdapter = new VIPCenterVIPRightHoriAdapter(iRequestHost, arrayList, i, fragmentManager);
                 LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.d);
                 linearLayoutManager.setOrientation(0);
-                this.f34371c.setLayoutManager(linearLayoutManager);
-                this.f34371c.setAdapter(vIPCenterVIPRightHoriAdapter);
+                this.f20680c.setLayoutManager(linearLayoutManager);
+                this.f20680c.setAdapter(vIPCenterVIPRightHoriAdapter);
                 return;
             }
             VIPRightOption vIPRightOption = nonVIPPriviledge.privilege_list.get(i3);
@@ -87,6 +87,6 @@ public class NonVIPRightView extends LinearLayout {
     }
 
     public void b() {
-        this.f34370a.setVisibility(0);
+        this.f20679a.setVisibility(0);
     }
 }

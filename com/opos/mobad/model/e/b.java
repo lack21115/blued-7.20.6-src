@@ -8,11 +8,11 @@ import java.util.concurrent.ConcurrentHashMap;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private Map<String, Long> f26484a = new ConcurrentHashMap();
+    private Map<String, Long> f12796a = new ConcurrentHashMap();
     private Map<String, Integer> b = new ConcurrentHashMap();
 
     public void a(String str) {
-        this.f26484a.put(str, Long.valueOf(SystemClock.elapsedRealtime()));
+        this.f12796a.put(str, Long.valueOf(SystemClock.elapsedRealtime()));
     }
 
     public void a(String str, int i) {
@@ -22,7 +22,7 @@ public class b {
     public boolean b(String str) {
         Integer num;
         long elapsedRealtime = SystemClock.elapsedRealtime();
-        Long l = this.f26484a.get(str);
+        Long l = this.f12796a.get(str);
         long longValue = l != null ? l.longValue() : 0L;
         boolean z = false;
         if (elapsedRealtime >= Integer.valueOf(this.b.get(str) != null ? num.intValue() : 0).intValue() + Long.valueOf(longValue).longValue()) {

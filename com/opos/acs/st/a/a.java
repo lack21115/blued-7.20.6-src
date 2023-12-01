@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public final class a extends SQLiteOpenHelper {
 
     /* renamed from: a  reason: collision with root package name */
-    private static SQLiteDatabase f24448a;
+    private static SQLiteDatabase f10761a;
 
     private a(Context context) {
         super(context, "acs_st.db", null, 8);
@@ -19,26 +19,26 @@ public final class a extends SQLiteOpenHelper {
         String str;
         synchronized (a.class) {
             try {
-                if (f24448a == null || !f24448a.isOpen()) {
+                if (f10761a == null || !f10761a.isOpen()) {
                     try {
-                        f24448a = new a(context).getWritableDatabase();
+                        f10761a = new a(context).getWritableDatabase();
                     } catch (SQLiteException e) {
                         e = e;
                         str = "getInstance SQLiteException";
                         com.opos.cmn.an.f.a.d("SQLiteHelper", str, e);
-                        return f24448a;
+                        return f10761a;
                     } catch (Exception e2) {
                         e = e2;
                         str = "getInstance Exception";
                         com.opos.cmn.an.f.a.d("SQLiteHelper", str, e);
-                        return f24448a;
+                        return f10761a;
                     }
                 }
             } catch (Throwable th) {
                 throw th;
             }
         }
-        return f24448a;
+        return f10761a;
     }
 
     @Override // android.database.sqlite.SQLiteOpenHelper

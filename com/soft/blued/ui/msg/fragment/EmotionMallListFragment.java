@@ -34,7 +34,7 @@ public class EmotionMallListFragment extends EmotionBaseListFragment {
         private List<EmotionBannerModel> b = new ArrayList();
 
         /* renamed from: c  reason: collision with root package name */
-        private List<View> f32357c = new ArrayList();
+        private List<View> f18667c = new ArrayList();
 
         BannerPagerAdapter() {
         }
@@ -50,8 +50,8 @@ public class EmotionMallListFragment extends EmotionBaseListFragment {
                 this.b.clear();
                 this.b.addAll(list);
             }
-            while (this.f32357c.size() < this.b.size()) {
-                this.f32357c.add(LayoutInflater.from(EmotionMallListFragment.this.getActivity()).inflate(R.layout.item_emotion_mall_banner, (ViewGroup) null));
+            while (this.f18667c.size() < this.b.size()) {
+                this.f18667c.add(LayoutInflater.from(EmotionMallListFragment.this.getActivity()).inflate(R.layout.item_emotion_mall_banner, (ViewGroup) null));
             }
             notifyDataSetChanged();
         }
@@ -74,9 +74,9 @@ public class EmotionMallListFragment extends EmotionBaseListFragment {
         @Override // androidx.viewpager.widget.PagerAdapter
         public Object instantiateItem(ViewGroup viewGroup, int i) {
             final EmotionBannerModel emotionBannerModel = this.b.get(i);
-            View view = this.f32357c.get(i);
+            View view = this.f18667c.get(i);
             viewGroup.addView(view);
-            ImageView imageView = (ImageView) this.f32357c.get(i).findViewById(R.id.item_emotion_mall_banner_iv);
+            ImageView imageView = (ImageView) this.f18667c.get(i).findViewById(R.id.item_emotion_mall_banner_iv);
             ImageLoader.a(EmotionMallListFragment.this.getFragmentActive(), emotionBannerModel.banner).b(2131231620).a(imageView);
             imageView.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.fragment.-$$Lambda$EmotionMallListFragment$BannerPagerAdapter$y6njuwmfJeTciEOO3rSwAthqmKw
                 @Override // android.view.View.OnClickListener
@@ -95,7 +95,7 @@ public class EmotionMallListFragment extends EmotionBaseListFragment {
 
     @Override // com.soft.blued.ui.msg.fragment.EmotionBaseListFragment
     public void a() {
-        this.f32337c.a(EmotionDataManager.a().c());
+        this.f18647c.a(EmotionDataManager.a().c());
     }
 
     @Override // com.soft.blued.ui.msg.fragment.EmotionBaseListFragment
@@ -118,18 +118,18 @@ public class EmotionMallListFragment extends EmotionBaseListFragment {
     @Override // com.soft.blued.ui.msg.fragment.EmotionBaseListFragment, com.blued.android.framework.ui.SimpleFragment
     public void onInitView() {
         super.onInitView();
-        this.f32336a.setVisibility(0);
-        this.d = (AutoScrollViewPager) this.rootView.findViewById(R.id.emotion_list_banner_vp);
+        this.f18646a.setVisibility(0);
+        this.d = this.rootView.findViewById(R.id.emotion_list_banner_vp);
         BannerPagerAdapter bannerPagerAdapter = new BannerPagerAdapter();
         this.f = bannerPagerAdapter;
         this.d.setAdapter(bannerPagerAdapter);
-        this.d.setInterval(m.ag);
-        LinePageIndicator linePageIndicator = (LinePageIndicator) this.rootView.findViewById(R.id.emotion_list_banner_indicator);
-        this.e = linePageIndicator;
-        linePageIndicator.setViewPager(this.d);
-        ViewGroup.LayoutParams layoutParams = this.f32336a.getLayoutParams();
+        this.d.setInterval((long) m.ag);
+        LinePageIndicator findViewById = this.rootView.findViewById(R.id.emotion_list_banner_indicator);
+        this.e = findViewById;
+        findViewById.setViewPager(this.d);
+        ViewGroup.LayoutParams layoutParams = this.f18646a.getLayoutParams();
         layoutParams.height = (int) ((AppInfo.l / 320.0f) * 120.0f);
-        this.f32336a.setLayoutParams(layoutParams);
+        this.f18646a.setLayoutParams(layoutParams);
     }
 
     @Override // com.blued.android.framework.ui.SimpleFragment
@@ -137,14 +137,13 @@ public class EmotionMallListFragment extends EmotionBaseListFragment {
         super.onLoadData();
         ChatHttpUtils.b(new BluedUIHttpResponse<BluedEntityA<EmotionBannerModel>>(getFragmentActive()) { // from class: com.soft.blued.ui.msg.fragment.EmotionMallListFragment.1
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<EmotionBannerModel> bluedEntityA) {
                 if (bluedEntityA == null || bluedEntityA.getSingleData() == null) {
-                    EmotionMallListFragment.this.f32336a.setVisibility(8);
+                    EmotionMallListFragment.this.f18646a.setVisibility(8);
                     return;
                 }
-                EmotionMallListFragment.this.f32336a.setVisibility(0);
+                EmotionMallListFragment.this.f18646a.setVisibility(0);
                 if (bluedEntityA.data.size() == 1) {
                     EmotionMallListFragment.this.e.setVisibility(8);
                 } else {

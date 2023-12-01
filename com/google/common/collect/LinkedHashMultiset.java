@@ -23,7 +23,7 @@ public final class LinkedHashMultiset<E> extends AbstractMapBasedMultiset<E> {
         return create;
     }
 
-    @Override // com.google.common.collect.AbstractMultiset, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // com.google.common.collect.AbstractMultiset, java.util.AbstractCollection, java.util.Collection, com.google.common.collect.Multiset
     public /* bridge */ /* synthetic */ boolean contains(@NullableDecl Object obj) {
         return super.contains(obj);
     }
@@ -43,7 +43,7 @@ public final class LinkedHashMultiset<E> extends AbstractMapBasedMultiset<E> {
         this.backingMap = new ObjectCountLinkedHashMap(i);
     }
 
-    @Override // com.google.common.collect.AbstractMultiset, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // com.google.common.collect.AbstractMultiset, java.util.AbstractCollection, java.util.Collection
     public /* bridge */ /* synthetic */ boolean isEmpty() {
         return super.isEmpty();
     }

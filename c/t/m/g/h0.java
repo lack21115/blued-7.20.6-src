@@ -9,7 +9,7 @@ public class h0 extends g0 implements o {
     public int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public double f3825c;
+    public double f3777c;
     public int d;
     public double e;
     public double[] f = new double[7];
@@ -78,13 +78,13 @@ public class h0 extends g0 implements o {
 
     public void b(double[] dArr) {
         double[] dArr2 = this.f;
-        System.arraycopy((Object) dArr, 0, (Object) dArr2, 0, dArr2.length);
+        System.arraycopy(dArr, 0, dArr2, 0, dArr2.length);
         boolean a2 = a(dArr);
         double[] dArr3 = this.f;
         if (dArr3[0] == 1.0d || dArr3[6] == 1.0d || a2) {
             int i = (this.f[0] == 1.0d || a2) ? 0 : 400;
             this.b = i;
-            this.f3825c = i == 0 ? 0.0d : 1.0d;
+            this.f3777c = i == 0 ? 0.0d : 1.0d;
             int i2 = 0;
             if (this.f[0] != 1.0d) {
                 i2 = a2 ? 0 : 6;
@@ -111,7 +111,7 @@ public class h0 extends g0 implements o {
             i4 = 200;
             d5 = d4;
         }
-        this.f3825c = d5;
+        this.f3777c = d5;
         if (d5 < 0.4d) {
             i4 = 0;
         }
@@ -180,7 +180,7 @@ public class h0 extends g0 implements o {
 
     @Deprecated
     public double d() {
-        return this.b == 0 ? 1.0d - this.f3825c : this.f3825c;
+        return this.b == 0 ? 1.0d - this.f3777c : this.f3777c;
     }
 
     @Deprecated

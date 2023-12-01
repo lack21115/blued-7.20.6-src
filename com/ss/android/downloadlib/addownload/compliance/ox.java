@@ -3,6 +3,8 @@ package com.ss.android.downloadlib.addownload.compliance;
 import android.app.Activity;
 import android.text.TextUtils;
 import android.util.Pair;
+import com.anythink.expressad.foundation.d.c;
+import com.huawei.hms.framework.common.ContainerUtils;
 import com.qq.e.ads.nativ.NativeUnifiedADAppInfoImpl;
 import com.ss.android.download.api.config.l;
 import com.ss.android.download.api.download.DownloadModel;
@@ -44,7 +46,7 @@ public class ox {
                 com.ss.android.downloadlib.addownload.model.ox oxVar = new com.ss.android.downloadlib.addownload.model.ox();
                 oxVar.mb = j;
                 oxVar.ox = j2;
-                oxVar.hj = optJSONObject.optString("icon_url");
+                oxVar.hj = optJSONObject.optString(c.H);
                 oxVar.h = optJSONObject.optString("app_name");
                 oxVar.b = optJSONObject.optString("package_name");
                 oxVar.u = optJSONObject.optString(NativeUnifiedADAppInfoImpl.Keys.VERSION_NAME);
@@ -124,7 +126,7 @@ public class ox {
         }
         if (!TextUtils.isEmpty(hVar.ox.getPackageName())) {
             if (sb.length() > 0) {
-                sb.append("&");
+                sb.append(ContainerUtils.FIELD_DELIMITER);
             }
             sb.append("package_name=");
             sb.append(hVar.ox.getPackageName());

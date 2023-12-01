@@ -16,11 +16,11 @@ import org.json.JSONObject;
 public class r {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f27615a;
+    private Context f13927a;
     private q b;
 
     /* renamed from: c  reason: collision with root package name */
-    private PLShortVideoTrimmer.TRIM_MODE f27616c;
+    private PLShortVideoTrimmer.TRIM_MODE f13928c;
     private volatile boolean d;
     private String e;
     private String f;
@@ -34,59 +34,59 @@ public class r {
         private FFMP4Muxer b;
 
         /* renamed from: c  reason: collision with root package name */
-        private FFMP4Demuxer f27618c;
+        private FFMP4Demuxer f13930c;
         private long d;
         private long e;
 
         public a(FFMP4Muxer fFMP4Muxer, FFMP4Demuxer fFMP4Demuxer, long j, long j2) {
             this.b = fFMP4Muxer;
-            this.f27618c = fFMP4Demuxer;
+            this.f13930c = fFMP4Demuxer;
             this.d = j;
             this.e = j2;
         }
 
         @Override // java.lang.Runnable
         public void run() {
-            int a2 = this.f27618c.a();
-            int b = this.f27618c.b();
+            int a2 = this.f13930c.a();
+            int b = this.f13930c.b();
             if (a2 >= 0) {
-                this.f27618c.a(a2, this.d / 1000, 1);
+                this.f13930c.a(a2, this.d / 1000, 1);
             } else if (b >= 0) {
-                this.f27618c.a(b, this.d / 1000, 1);
+                this.f13930c.a(b, this.d / 1000, 1);
             }
             while (true) {
-                long i = this.f27618c.i();
+                long i = this.f13930c.i();
                 if (i != 0) {
                     if (!r.this.d) {
-                        int a3 = this.f27618c.a(i);
-                        byte[] b2 = this.f27618c.b(i);
-                        int c2 = this.f27618c.c(i);
-                        boolean z = this.f27618c.d(i) == 1;
-                        long e = this.f27618c.e(i);
-                        long f = this.f27618c.f(i);
-                        int g = (int) this.f27618c.g(i);
-                        long a4 = this.f27618c.a(a3, e);
-                        int g2 = this.f27618c.g();
-                        int h = this.f27618c.h();
-                        if (a3 == this.f27618c.b()) {
-                            g2 = this.f27618c.e();
-                            h = this.f27618c.f();
+                        int a3 = this.f13930c.a(i);
+                        byte[] b2 = this.f13930c.b(i);
+                        int c2 = this.f13930c.c(i);
+                        boolean z = this.f13930c.d(i) == 1;
+                        long e = this.f13930c.e(i);
+                        long f = this.f13930c.f(i);
+                        int g = (int) this.f13930c.g(i);
+                        long a4 = this.f13930c.a(a3, e);
+                        int g2 = this.f13930c.g();
+                        int h = this.f13930c.h();
+                        if (a3 == this.f13930c.b()) {
+                            g2 = this.f13930c.e();
+                            h = this.f13930c.f();
                         }
-                        if (a4 >= this.e && a3 == this.f27618c.a()) {
+                        if (a4 >= this.e && a3 == this.f13930c.a()) {
                             break;
                         }
                         ByteBuffer allocateDirect = ByteBuffer.allocateDirect(c2);
                         allocateDirect.put(b2);
                         allocateDirect.clear();
                         this.b.a(a3, allocateDirect, allocateDirect.capacity(), z, e, f, g, g2, h);
-                        if (r.this.i != null && a3 == this.f27618c.a()) {
+                        if (r.this.i != null && a3 == this.f13930c.a()) {
                             PLVideoSaveListener pLVideoSaveListener = r.this.i;
                             long j = this.d;
                             pLVideoSaveListener.onProgressUpdate((((float) (a4 - j)) * 1.0f) / ((float) (this.e - j)));
                         }
                     } else {
                         com.qiniu.pili.droid.shortvideo.f.e.n.c("ShortVideoTrimmerCore", "trim video canceled");
-                        this.f27618c.l();
+                        this.f13930c.l();
                         this.b.a();
                         new File(r.this.f).delete();
                         if (r.this.i != null) {
@@ -102,7 +102,7 @@ public class r {
             if (r.this.i != null) {
                 r.this.i.onProgressUpdate(1.0f);
             }
-            this.f27618c.l();
+            this.f13930c.l();
             if (this.b.a()) {
                 if (r.this.i != null) {
                     r.this.i.onSaveVideoSuccess(r.this.f);
@@ -118,7 +118,7 @@ public class r {
         com.qiniu.pili.droid.shortvideo.f.e.p.c("ShortVideoTrimmerCore", "init +");
         Context applicationContext = context.getApplicationContext();
         l.a(applicationContext);
-        this.f27615a = applicationContext;
+        this.f13927a = applicationContext;
         this.e = str;
         this.f = l.a(applicationContext, str2);
         this.g = com.qiniu.pili.droid.shortvideo.f.g.a((Object) str);
@@ -149,7 +149,7 @@ public class r {
     }
 
     private void b(long j, long j2) {
-        q qVar = new q(this.f27615a, this.e, this.f);
+        q qVar = new q(this.f13927a, this.e, this.f);
         this.b = qVar;
         qVar.a(j, j2);
         this.b.a(this.h);
@@ -158,7 +158,7 @@ public class r {
 
     public void a() {
         synchronized (this) {
-            if (this.f27616c == PLShortVideoTrimmer.TRIM_MODE.FAST) {
+            if (this.f13928c == PLShortVideoTrimmer.TRIM_MODE.FAST) {
                 this.d = true;
             } else if (this.b != null) {
                 this.b.a();
@@ -193,7 +193,7 @@ public class r {
                 }
                 long j3 = j * 1000;
                 long j4 = j2 * 1000;
-                this.f27616c = trim_mode;
+                this.f13928c = trim_mode;
                 com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.p;
                 eVar.c("ShortVideoTrimmerCore", "except trim from time Us: " + j3 + " - " + j4 + " mode: " + trim_mode);
                 if (trim_mode == PLShortVideoTrimmer.TRIM_MODE.FAST) {

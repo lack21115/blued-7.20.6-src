@@ -11,13 +11,13 @@ import java.util.Observer;
 public class cf implements Observer {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f9375a = "APKParser";
+    private static final String f6535a = "APKParser";
     private static final String g = "__xadsdk_downloaded__version__";
     private static final String h = "version";
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private URL f9376c;
+    private URL f6536c;
     private String d;
     private final bu e;
     private a f;
@@ -32,7 +32,7 @@ public class cf implements Observer {
     }
 
     public cf(Context context, String str, bu buVar, a aVar) {
-        this.f9376c = null;
+        this.f6536c = null;
         this.d = null;
         this.j = new cg(this);
         this.d = str;
@@ -41,10 +41,10 @@ public class cf implements Observer {
     }
 
     public cf(Context context, URL url, bu buVar, a aVar) {
-        this.f9376c = null;
+        this.f6536c = null;
         this.d = null;
         this.j = new cg(this);
-        this.f9376c = url;
+        this.f6536c = url;
         this.e = buVar;
         a(context, aVar);
     }
@@ -58,7 +58,7 @@ public class cf implements Observer {
     }
 
     public void a(String str, String str2) {
-        al alVar = new al(this.b, this.d != null ? new URL(this.d) : this.f9376c, str, str2, false);
+        al alVar = new al(this.b, this.d != null ? new URL(this.d) : this.f6536c, str, str2, false);
         alVar.addObserver(this);
         alVar.a();
         SharedPreferences.Editor edit = this.i.edit();

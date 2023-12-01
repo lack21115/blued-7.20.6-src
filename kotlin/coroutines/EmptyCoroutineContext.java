@@ -9,16 +9,14 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/coroutines/EmptyCoroutineContext.class */
 public final class EmptyCoroutineContext implements Serializable, CoroutineContext {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final EmptyCoroutineContext f42457a = new EmptyCoroutineContext();
+    public static final EmptyCoroutineContext a = new EmptyCoroutineContext();
     private static final long serialVersionUID = 0;
 
     private EmptyCoroutineContext() {
     }
 
     private final Object readResolve() {
-        return f42457a;
+        return a;
     }
 
     @Override // kotlin.coroutines.CoroutineContext

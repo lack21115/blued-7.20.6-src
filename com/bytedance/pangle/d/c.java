@@ -14,11 +14,11 @@ import java.io.File;
 public final class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static File f21370a;
+    private static File f7764a;
     private static File b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static File f21371c;
+    private static File f7765c;
 
     public static String a() {
         Application appApplication = Zeus.getAppApplication();
@@ -50,7 +50,7 @@ public final class c {
 
     public static String a(String str, int i) {
         d();
-        File file = f21370a;
+        File file = f7764a;
         String concat = "version-".concat(String.valueOf(i));
         int i2 = 0;
         while (i2 < 2) {
@@ -70,7 +70,7 @@ public final class c {
 
     private static String a(String... strArr) {
         d();
-        File file = f21370a;
+        File file = f7764a;
         File file2 = file;
         if (strArr.length > 0) {
             int length = strArr.length;
@@ -94,11 +94,11 @@ public final class c {
 
     public static String b() {
         Application appApplication = Zeus.getAppApplication();
-        if (f21371c == null) {
+        if (f7765c == null) {
             File filesDir = appApplication.getFilesDir();
-            f21371c = new File(filesDir, ".pangle" + g.f21406a);
+            f7765c = new File(filesDir, ".pangle" + g.f7800a);
         }
-        return a(f21371c);
+        return a(f7765c);
     }
 
     public static String b(String str, int i) {
@@ -127,14 +127,14 @@ public final class c {
     }
 
     public static String d(String str, int i) {
-        return a(str, "version-".concat(String.valueOf(i)), "lib");
+        return a(str, "version-".concat(String.valueOf(i)), ShareConstants.SO_PATH);
     }
 
     private static void d() {
-        if (f21370a == null) {
+        if (f7764a == null) {
             File filesDir = Zeus.getAppApplication().getFilesDir();
-            File file = new File(filesDir, "pangle" + g.f21407c);
-            f21370a = file;
+            File file = new File(filesDir, "pangle" + g.f7801c);
+            f7764a = file;
             a(file);
         }
     }

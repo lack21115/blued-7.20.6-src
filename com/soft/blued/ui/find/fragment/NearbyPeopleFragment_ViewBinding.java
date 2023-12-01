@@ -29,7 +29,7 @@ public class NearbyPeopleFragment_ViewBinding implements Unbinder {
 
     public NearbyPeopleFragment_ViewBinding(NearbyPeopleFragment nearbyPeopleFragment, View view) {
         this.b = nearbyPeopleFragment;
-        nearbyPeopleFragment.mRefreshLayout = (SmartRefreshLayout) Utils.a(view, 2131369119, "field 'mRefreshLayout'", SmartRefreshLayout.class);
+        nearbyPeopleFragment.mRefreshLayout = (SmartRefreshLayout) Utils.a(view, R.id.refresh_layout, "field 'mRefreshLayout'", SmartRefreshLayout.class);
         nearbyPeopleFragment.mRecyclerView = (RecyclerView) Utils.a(view, 2131369105, "field 'mRecyclerView'", RecyclerView.class);
         nearbyPeopleFragment.tabBar = (LinearLayout) Utils.a(view, R.id.tab_bar, "field 'tabBar'", LinearLayout.class);
         nearbyPeopleFragment.sortTabBar = (LinearLayout) Utils.a(view, R.id.sort_tab_bar, "field 'sortTabBar'", LinearLayout.class);
@@ -41,14 +41,14 @@ public class NearbyPeopleFragment_ViewBinding implements Unbinder {
         nearbyPeopleFragment.rl_location_root = (RelativeLayout) Utils.a(view, R.id.rl_location_root, "field 'rl_location_root'", RelativeLayout.class);
         nearbyPeopleFragment.iv_icon = (ImageView) Utils.a(view, 2131365504, "field 'iv_icon'", ImageView.class);
         nearbyPeopleFragment.iv_close = (ImageView) Utils.a(view, 2131365207, "field 'iv_close'", ImageView.class);
-        nearbyPeopleFragment.tv_distance = (TextView) Utils.a(view, 2131371285, "field 'tv_distance'", TextView.class);
-        nearbyPeopleFragment.tv_location = (TextView) Utils.a(view, 2131371868, "field 'tv_location'", TextView.class);
+        nearbyPeopleFragment.tv_distance = (TextView) Utils.a(view, R.id.tv_distance, "field 'tv_distance'", TextView.class);
+        nearbyPeopleFragment.tv_location = (TextView) Utils.a(view, R.id.tv_location, "field 'tv_location'", TextView.class);
         nearbyPeopleFragment.coordinator = (CoordinatorLayout) Utils.a(view, 2131363084, "field 'coordinator'", CoordinatorLayout.class);
-        nearbyPeopleFragment.appbar = (AppBarLayout) Utils.a(view, 2131362292, "field 'appbar'", AppBarLayout.class);
-        nearbyPeopleFragment.header = (CustomTwoLevelHeader) Utils.a(view, 2131364224, "field 'header'", CustomTwoLevelHeader.class);
-        nearbyPeopleFragment.refresh_view = (TwoLevelNearbyRefreshView) Utils.a(view, 2131369121, "field 'refresh_view'", TwoLevelNearbyRefreshView.class);
-        nearbyPeopleFragment.llRefresh = (LinearLayout) Utils.a(view, 2131368176, "field 'llRefresh'", LinearLayout.class);
-        nearbyPeopleFragment.flBanner = (FrameLayout) Utils.a(view, 2131363756, "field 'flBanner'", FrameLayout.class);
+        nearbyPeopleFragment.appbar = (AppBarLayout) Utils.a(view, R.id.appbar, "field 'appbar'", AppBarLayout.class);
+        nearbyPeopleFragment.header = (CustomTwoLevelHeader) Utils.a(view, R.id.header, "field 'header'", CustomTwoLevelHeader.class);
+        nearbyPeopleFragment.refresh_view = (TwoLevelNearbyRefreshView) Utils.a(view, R.id.refresh_view, "field 'refresh_view'", TwoLevelNearbyRefreshView.class);
+        nearbyPeopleFragment.llRefresh = (LinearLayout) Utils.a(view, R.id.ll_refresh, "field 'llRefresh'", LinearLayout.class);
+        nearbyPeopleFragment.flBanner = (FrameLayout) Utils.a(view, R.id.fl_banner, "field 'flBanner'", FrameLayout.class);
         nearbyPeopleFragment.nearbyChatRoomView = (NearbyChatRoomView) Utils.a(view, R.id.nearby_chat_room, "field 'nearbyChatRoomView'", NearbyChatRoomView.class);
         nearbyPeopleFragment.nearbyChatRoomHostView = (NearbyChatHostRoomView) Utils.a(view, R.id.nearby_chat_room_host, "field 'nearbyChatRoomHostView'", NearbyChatHostRoomView.class);
         nearbyPeopleFragment.noDataAndLoadFailView = (NoDataAndLoadFailView) Utils.a(view, R.id.nodataview, "field 'noDataAndLoadFailView'", NoDataAndLoadFailView.class);

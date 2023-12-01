@@ -8,13 +8,9 @@ import java.util.List;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/o.class */
 public abstract class o<T extends com.anythink.core.common.e.q> {
-
-    /* renamed from: c  reason: collision with root package name */
-    protected CountDownTimer f6865c;
+    protected CountDownTimer c;
     public Context e;
-
-    /* renamed from: a  reason: collision with root package name */
-    final String f6864a = getClass().getSimpleName();
+    final String a = getClass().getSimpleName();
     ArrayList<T> b = new ArrayList<>();
     String d = com.anythink.core.common.b.n.a().p();
 
@@ -54,10 +50,10 @@ public abstract class o<T extends com.anythink.core.common.e.q> {
             com.anythink.core.common.b.n.a().a(new Runnable() { // from class: com.anythink.core.common.o.2
                 @Override // java.lang.Runnable
                 public final void run() {
-                    if (!o.this.b.isEmpty() || o.this.f6865c == null) {
+                    if (!o.this.b.isEmpty() || o.this.c == null) {
                         return;
                     }
-                    o.this.f6865c.cancel();
+                    o.this.c.cancel();
                 }
             });
         }
@@ -78,7 +74,7 @@ public abstract class o<T extends com.anythink.core.common.e.q> {
                     com.anythink.core.common.b.n.a().a(new Runnable() { // from class: com.anythink.core.common.o.1
                         @Override // java.lang.Runnable
                         public final void run() {
-                            o.this.f6865c = new CountDownTimer(b.aa(), b.aa()) { // from class: com.anythink.core.common.o.1.1
+                            o.this.c = new CountDownTimer(b.aa(), b.aa()) { // from class: com.anythink.core.common.o.1.1
                                 @Override // android.os.CountDownTimer
                                 public final void onFinish() {
                                     o.this.a(true);
@@ -88,7 +84,7 @@ public abstract class o<T extends com.anythink.core.common.e.q> {
                                 public final void onTick(long j) {
                                 }
                             };
-                            o.this.f6865c.start();
+                            o.this.c.start();
                         }
                     });
                 }

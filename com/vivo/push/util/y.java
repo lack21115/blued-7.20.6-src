@@ -7,11 +7,11 @@ import java.util.HashMap;
 public final class y implements d {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final HashMap<String, Integer> f41149a = new HashMap<>();
+    private static final HashMap<String, Integer> f27458a = new HashMap<>();
     private static final HashMap<String, Long> b = new HashMap<>();
 
     /* renamed from: c  reason: collision with root package name */
-    private static final HashMap<String, String> f41150c = new HashMap<>();
+    private static final HashMap<String, String> f27459c = new HashMap<>();
     private static y d;
     private Context e;
     private d f;
@@ -42,7 +42,7 @@ public final class y implements d {
     @Override // com.vivo.push.util.d
     public final String a(String str, String str2) {
         d dVar;
-        String str3 = f41150c.get(str);
+        String str3 = f27459c.get(str);
         if (str3 == null && (dVar = this.f) != null) {
             return dVar.a(str, str2);
         }
@@ -77,7 +77,7 @@ public final class y implements d {
     @Override // com.vivo.push.util.d
     public final void b(String str, String str2) {
         d dVar;
-        f41150c.put(str, str2);
+        f27459c.put(str, str2);
         if (!this.g || (dVar = this.f) == null) {
             return;
         }

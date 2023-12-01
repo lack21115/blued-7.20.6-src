@@ -1,5 +1,6 @@
 package com.tencent.qcloud.core.auth;
 
+import com.huawei.openalliance.ad.constant.t;
 import com.tencent.qcloud.core.common.QCloudClientException;
 import com.tencent.qcloud.core.http.HttpConfiguration;
 
@@ -28,7 +29,7 @@ public class ShortTimeCredentialProvider extends BasicLifecycleCredentialProvide
     protected QCloudLifecycleCredentials fetchNewCredentials() throws QCloudClientException {
         long deviceTimeWithOffset = HttpConfiguration.getDeviceTimeWithOffset();
         long j = this.duration;
-        String str = deviceTimeWithOffset + ";" + (j + deviceTimeWithOffset);
+        String str = deviceTimeWithOffset + t.aE + (j + deviceTimeWithOffset);
         return new BasicQCloudCredentials(this.secretId, this.secretKey, secretKey2SignKey(this.secretKey, str), str);
     }
 

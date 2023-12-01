@@ -112,21 +112,21 @@ final class ByteBufferAsCharBuffer extends CharBuffer {
     }
 
     @Override // java.nio.CharBuffer
-    public CharBuffer put(char c2) {
+    public CharBuffer put(char c) {
         if (this.position == this.limit) {
             throw new BufferOverflowException();
         }
         ByteBuffer byteBuffer = this.byteBuffer;
         int i = this.position;
         this.position = i + 1;
-        byteBuffer.putChar(i * 2, c2);
+        byteBuffer.putChar(i * 2, c);
         return this;
     }
 
     @Override // java.nio.CharBuffer
-    public CharBuffer put(int i, char c2) {
+    public CharBuffer put(int i, char c) {
         checkIndex(i);
-        this.byteBuffer.putChar(i * 2, c2);
+        this.byteBuffer.putChar(i * 2, c);
         return this;
     }
 

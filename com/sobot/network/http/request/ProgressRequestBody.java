@@ -29,7 +29,6 @@ public class ProgressRequestBody extends RequestBody {
             sobotProgress.totalSize = ProgressRequestBody.this.contentLength();
         }
 
-        @Override // okio.ForwardingSink, okio.Sink
         public void write(Buffer buffer, long j) throws IOException {
             super.write(buffer, j);
             SobotProgress.changeProgress(this.progress, j, new SobotProgress.Action() { // from class: com.sobot.network.http.request.ProgressRequestBody.CountingSink.1
@@ -68,7 +67,6 @@ public class ProgressRequestBody extends RequestBody {
         });
     }
 
-    @Override // okhttp3.RequestBody
     public long contentLength() {
         try {
             return this.requestBody.contentLength();
@@ -77,7 +75,6 @@ public class ProgressRequestBody extends RequestBody {
         }
     }
 
-    @Override // okhttp3.RequestBody
     public MediaType contentType() {
         return this.requestBody.contentType();
     }
@@ -86,7 +83,6 @@ public class ProgressRequestBody extends RequestBody {
         this.interceptor = uploadInterceptor;
     }
 
-    @Override // okhttp3.RequestBody
     public void writeTo(BufferedSink bufferedSink) throws IOException {
         BufferedSink buffer = Okio.buffer(new CountingSink(bufferedSink));
         this.requestBody.writeTo(buffer);

@@ -9,11 +9,11 @@ public final class af implements Parcelable {
     public final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final ae[] f7420c;
+    private final ae[] f4581c;
     private int d;
 
     /* renamed from: a  reason: collision with root package name */
-    public static final af f7419a = new af(new ae[0]);
+    public static final af f4580a = new af(new ae[0]);
     public static final Parcelable.Creator<af> CREATOR = new Parcelable.Creator<af>() { // from class: com.anythink.expressad.exoplayer.h.af.1
         private static af a(Parcel parcel) {
             return new af(parcel);
@@ -37,20 +37,20 @@ public final class af implements Parcelable {
     af(Parcel parcel) {
         int readInt = parcel.readInt();
         this.b = readInt;
-        this.f7420c = new ae[readInt];
+        this.f4581c = new ae[readInt];
         int i = 0;
         while (true) {
             int i2 = i;
             if (i2 >= this.b) {
                 return;
             }
-            this.f7420c[i2] = (ae) parcel.readParcelable(ae.class.getClassLoader());
+            this.f4581c[i2] = (ae) parcel.readParcelable(ae.class.getClassLoader());
             i = i2 + 1;
         }
     }
 
     public af(ae... aeVarArr) {
-        this.f7420c = aeVarArr;
+        this.f4581c = aeVarArr;
         this.b = aeVarArr.length;
     }
 
@@ -65,7 +65,7 @@ public final class af implements Parcelable {
             if (i2 >= this.b) {
                 return -1;
             }
-            if (this.f7420c[i2] == aeVar) {
+            if (this.f4581c[i2] == aeVar) {
                 return i2;
             }
             i = i2 + 1;
@@ -73,7 +73,7 @@ public final class af implements Parcelable {
     }
 
     public final ae a(int i) {
-        return this.f7420c[i];
+        return this.f4581c[i];
     }
 
     @Override // android.os.Parcelable
@@ -89,12 +89,12 @@ public final class af implements Parcelable {
             return false;
         }
         af afVar = (af) obj;
-        return this.b == afVar.b && Arrays.equals(this.f7420c, afVar.f7420c);
+        return this.b == afVar.b && Arrays.equals(this.f4581c, afVar.f4581c);
     }
 
     public final int hashCode() {
         if (this.d == 0) {
-            this.d = Arrays.hashCode(this.f7420c);
+            this.d = Arrays.hashCode(this.f4581c);
         }
         return this.d;
     }
@@ -108,7 +108,7 @@ public final class af implements Parcelable {
             if (i3 >= this.b) {
                 return;
             }
-            parcel.writeParcelable(this.f7420c[i3], 0);
+            parcel.writeParcelable(this.f4581c[i3], 0);
             i2 = i3 + 1;
         }
     }
